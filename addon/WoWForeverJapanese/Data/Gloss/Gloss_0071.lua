@@ -648,7 +648,6 @@ WFJ.Data.add("gloss", {
   [71645] = "彼方\tかなた\toff (yonder)",
   [71646] = "彼方\tかなた\ton (far beyond)",
   [71647] = "彼方\tかなた\treaches (beyond)",
-  [71648] = "彼自身\tかれじしん\thimself",
   [71649] = "彼自身\tかれじしん\this (own)",
   [71650] = "彼自身\tかれじしん\this own",
   [71651] = "往復する\tおうふくする\tback and forth",

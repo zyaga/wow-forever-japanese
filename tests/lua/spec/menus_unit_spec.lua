@@ -32,6 +32,8 @@ local UI = {
   AGE_RESTRICTED_CHAT_MINOR_TOOLTIP = { "Chat and other social features are unavailable on accounts belonging to "
     .. "minors.", "未成年者のアカウントでは、チャットやその他のソーシャル機能を利用できません。" },
   TRADE = { "Trade", "取引" }, -- a level-1 entry the club menus never show
+  -- the Interact submenu's talent inspect (camelot unitpopupmenus.lua:46–56, unitpopupsharedbuttonmixins.lua:296–300)
+  INSPECT_TALENTS = { "View Talents", "タレントを表示" },
 }
 
 -- which → { an entry key it lists }
@@ -142,6 +144,20 @@ describe("UI/MenusUnit: the unit menus outside level 1", function()
         Stub.keys.alt = false; WFJ.Modifier.refresh()
         _G.GameTooltip:Hide()
       end
+    end)
+
+  it("View Talents translates in a level-1 menu and the raid player menu; Alt shows English; a club stays English",
+    function()
+      for _, which in ipairs({ "PARTY", "RAID_PLAYER" }) do
+        local root, frames = generate(which, "Jaina", { UI.INSPECT_TALENTS[1] }, { name = "Jaina" })
+        local fs = frames[root.children[2]].fontString
+        assert.are.equal("タレントを表示", fs:GetText(), which)
+        Stub.keys.alt = true; WFJ.Modifier.refresh()
+        assert.are.equal("View Talents", fs:GetText(), which)
+        Stub.keys.alt = false; WFJ.Modifier.refresh()
+      end
+      local root, frames = generate("COMMUNITIES_COMMUNITY", "Club", { UI.INSPECT_TALENTS[1] }, { name = "Club" })
+      assert.are.equal("View Talents", frames[root.children[2]].fontString:GetText())
     end)
 
   it("a friend's tag count keeps its number", function()

@@ -1,38 +1,38 @@
-{"id": 1283082, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70245"}
-{"id": 1283082, "field": "aura", "en": "Full of boar meat.", "hash": "024a1c6e37f7292a", "src": "db2@1.60.1.70245"}
-{"id": 1283098, "field": "name", "en": "Meat Tracking", "hash": "c07716c1e7c7c1d1", "src": "db2@1.60.1.70245"}
-{"id": 1283101, "field": "name", "en": "Scolded", "hash": "851e67fd249e657d", "src": "db2@1.60.1.70245"}
-{"id": 1283101, "field": "aura", "en": "Scolded for eating too much boar meat.", "hash": "05d5834247168f3f", "src": "db2@1.60.1.70245"}
-{"id": 1283133, "field": "name", "en": "Capture Twilight Thrall", "hash": "450ee10e20435a96", "src": "db2@1.60.1.70245"}
-{"id": 1283133, "field": "description", "en": "Captures a subdued Twilight's Thrall. Only works on weakened enemies.", "hash": "a33005e4429f6a1b", "src": "db2@1.60.1.70245"}
-{"id": 1283137, "field": "name", "en": "Set Bait", "hash": "36e89fb69b126fda", "src": "db2@1.60.1.70245"}
-{"id": 1283137, "field": "description", "en": "Place bait to attract the sea monster.", "hash": "c2f265f5b4ae0aba", "src": "db2@1.60.1.70245"}
-{"id": 1283375, "field": "name", "en": "Clear Transmog Outfit", "hash": "c39c477b4c54f433", "src": "db2@1.60.1.70245"}
-{"id": 1283376, "field": "name", "en": "Equip Transmog Outfit", "hash": "fc32132a6c7f99a7", "src": "db2@1.60.1.70245"}
-{"id": 1283391, "field": "name", "en": "Campfire Nearby", "hash": "4d121caa1e5da82e", "src": "db2@1.60.1.70245"}
-{"id": 1283391, "field": "aura", "en": "The pleasant smoke of a campfire drifts in the air from somewhere nearby.", "hash": "9f6c6ac92155f27a", "src": "db2@1.60.1.70245"}
-{"id": 1283400, "field": "name", "en": "Journeyman Campfire", "hash": "b36a498adc5d9ec8", "src": "db2@1.60.1.70245"}
-{"id": 1283400, "field": "description", "en": "Craft a Journeyman Campfire.", "hash": "d3ced4e90e1b3ec5", "src": "db2@1.60.1.70245"}
-{"id": 1283523, "field": "name", "en": "Destroy", "hash": "2cfb7a99e25d8dc8", "src": "db2@1.60.1.70245"}
-{"id": 1283583, "field": "name", "en": "Destroy", "hash": "2cfb7a99e25d8dc8", "src": "db2@1.60.1.70245"}
-{"id": 1283593, "field": "name", "en": "Destroy", "hash": "2cfb7a99e25d8dc8", "src": "db2@1.60.1.70245"}
-{"id": 1283601, "field": "name", "en": "Destroy", "hash": "2cfb7a99e25d8dc8", "src": "db2@1.60.1.70245"}
-{"id": 1283620, "field": "name", "en": "DEBUG - Projected Texture", "hash": "1a3dee625dfdb933", "src": "db2@1.60.1.70245"}
-{"id": 1283620, "field": "description", "en": "Create an Area Trigger with a Projected Texture at the targeted location. Lasts forever or until you leave the world, whichever is sooner.", "hash": "1cbd6e8dcf1480be", "src": "db2@1.60.1.70245"}
-{"id": 1283701, "field": "name", "en": "Boosted Disenchanting", "hash": "cb14401dabb0e783", "src": "db2@1.60.1.70245"}
-{"id": 1283701, "field": "aura", "en": "Disenchanting boosted from time spent near Arcane Salvager. While near Arcane Salvager, chance of bonus disenchanting output is increased.", "hash": "df677a13a109d92b", "src": "db2@1.60.1.70245"}
-{"id": 1283792, "field": "name", "en": "Dark Binding", "hash": "8b7d8346ba0c62fc", "src": "db2@1.60.1.70245"}
-{"id": 1283793, "field": "name", "en": "Fel Smoke", "hash": "0b5d9c978af884c3", "src": "db2@1.60.1.70245"}
-{"id": 1283822, "field": "name", "en": "Chef's Hat", "hash": "be3ec0755bb1fe72", "src": "db2@1.60.1.70245"}
-{"id": 1283825, "field": "name", "en": "Chef's Hat", "hash": "be3ec0755bb1fe72", "src": "db2@1.60.1.70245"}
-{"id": 1283884, "field": "name", "en": "[DNT] Cooldown Always Secret Test Spell", "hash": "8d46308d16854893", "src": "db2@1.60.1.70245"}
-{"id": 1283885, "field": "name", "en": "[DNT] Cooldown Never Secret Test Spell", "hash": "c8ae1adddcc9bacb", "src": "db2@1.60.1.70245"}
-{"id": 1283888, "field": "name", "en": "[DNT] Aura Never Secret Test Spell", "hash": "322f51bfbba0f124", "src": "db2@1.60.1.70245"}
-{"id": 1283894, "field": "name", "en": "[DNT] Aura Always Secret Test Spell", "hash": "8a6544b201408d9b", "src": "db2@1.60.1.70245"}
-{"id": 1283895, "field": "name", "en": "[DNT] Spell Cast Always Secret Test Spell", "hash": "8bda8f98140b15fe", "src": "db2@1.60.1.70245"}
-{"id": 1283896, "field": "name", "en": "[DNT] Spell Cast Never Secret Test Spell", "hash": "3debd15720e3a01c", "src": "db2@1.60.1.70245"}
-{"id": 1283919, "field": "name", "en": "Totally A Warlock", "hash": "491e403e02339407", "src": "db2@1.60.1.70245"}
-{"id": 1283919, "field": "description", "en": "A 'convincing' disguise Jereman put together so you will be able to infiltrate the warlock camp in the Tainted Foothills. Suspicious activity will break the disguise.", "hash": "206392d87f2c4631", "src": "db2@1.60.1.70245"}
-{"id": 1283919, "field": "aura", "en": "Disguised as a member of the Ashen Reign. Suspicious activity will break the disguise.", "hash": "b9ac729c26be86d5", "src": "db2@1.60.1.70245"}
-{"id": 1283932, "field": "name", "en": "Summon Uber Diablo", "hash": "04051b28145f45a1", "src": "db2@1.60.1.70245"}
-{"id": 1283932, "field": "description", "en": "Right Click to summon and dismiss Diablo.", "hash": "f1cae78ac3234fe2", "src": "db2@1.60.1.70245"}
+{"id": 1283082, "field": "name", "en": "Well Fed", "hash": "6a090b3cdf0900df", "src": "db2@1.60.1.70291"}
+{"id": 1283082, "field": "aura", "en": "Full of boar meat.", "hash": "024a1c6e37f7292a", "src": "db2@1.60.1.70291"}
+{"id": 1283098, "field": "name", "en": "Meat Tracking", "hash": "c07716c1e7c7c1d1", "src": "db2@1.60.1.70291"}
+{"id": 1283101, "field": "name", "en": "Scolded", "hash": "851e67fd249e657d", "src": "db2@1.60.1.70291"}
+{"id": 1283101, "field": "aura", "en": "Scolded for eating too much boar meat.", "hash": "05d5834247168f3f", "src": "db2@1.60.1.70291"}
+{"id": 1283133, "field": "name", "en": "Capture Twilight Thrall", "hash": "450ee10e20435a96", "src": "db2@1.60.1.70291"}
+{"id": 1283133, "field": "description", "en": "Captures a subdued Twilight's Thrall. Only works on weakened enemies.", "hash": "a33005e4429f6a1b", "src": "db2@1.60.1.70291"}
+{"id": 1283137, "field": "name", "en": "Set Bait", "hash": "36e89fb69b126fda", "src": "db2@1.60.1.70291"}
+{"id": 1283137, "field": "description", "en": "Place bait to attract the sea monster.", "hash": "c2f265f5b4ae0aba", "src": "db2@1.60.1.70291"}
+{"id": 1283375, "field": "name", "en": "Clear Transmog Outfit", "hash": "c39c477b4c54f433", "src": "db2@1.60.1.70291"}
+{"id": 1283376, "field": "name", "en": "Equip Transmog Outfit", "hash": "fc32132a6c7f99a7", "src": "db2@1.60.1.70291"}
+{"id": 1283391, "field": "name", "en": "Campfire Nearby", "hash": "4d121caa1e5da82e", "src": "db2@1.60.1.70291"}
+{"id": 1283391, "field": "aura", "en": "The pleasant smoke of a campfire drifts in the air from somewhere nearby.", "hash": "9f6c6ac92155f27a", "src": "db2@1.60.1.70291"}
+{"id": 1283400, "field": "name", "en": "Journeyman Campfire", "hash": "b36a498adc5d9ec8", "src": "db2@1.60.1.70291"}
+{"id": 1283400, "field": "description", "en": "Craft a Journeyman Campfire.", "hash": "d3ced4e90e1b3ec5", "src": "db2@1.60.1.70291"}
+{"id": 1283523, "field": "name", "en": "Destroy", "hash": "2cfb7a99e25d8dc8", "src": "db2@1.60.1.70291"}
+{"id": 1283583, "field": "name", "en": "Destroy", "hash": "2cfb7a99e25d8dc8", "src": "db2@1.60.1.70291"}
+{"id": 1283593, "field": "name", "en": "Destroy", "hash": "2cfb7a99e25d8dc8", "src": "db2@1.60.1.70291"}
+{"id": 1283601, "field": "name", "en": "Destroy", "hash": "2cfb7a99e25d8dc8", "src": "db2@1.60.1.70291"}
+{"id": 1283620, "field": "name", "en": "DEBUG - Projected Texture", "hash": "1a3dee625dfdb933", "src": "db2@1.60.1.70291"}
+{"id": 1283620, "field": "description", "en": "Create an Area Trigger with a Projected Texture at the targeted location. Lasts forever or until you leave the world, whichever is sooner.", "hash": "1cbd6e8dcf1480be", "src": "db2@1.60.1.70291"}
+{"id": 1283701, "field": "name", "en": "Boosted Disenchanting", "hash": "cb14401dabb0e783", "src": "db2@1.60.1.70291"}
+{"id": 1283701, "field": "aura", "en": "Disenchanting boosted from time spent near Arcane Salvager. While near Arcane Salvager, chance of bonus disenchanting output is increased.", "hash": "df677a13a109d92b", "src": "db2@1.60.1.70291"}
+{"id": 1283792, "field": "name", "en": "Dark Binding", "hash": "8b7d8346ba0c62fc", "src": "db2@1.60.1.70291"}
+{"id": 1283793, "field": "name", "en": "Fel Smoke", "hash": "0b5d9c978af884c3", "src": "db2@1.60.1.70291"}
+{"id": 1283822, "field": "name", "en": "Chef's Hat", "hash": "be3ec0755bb1fe72", "src": "db2@1.60.1.70291"}
+{"id": 1283825, "field": "name", "en": "Chef's Hat", "hash": "be3ec0755bb1fe72", "src": "db2@1.60.1.70291"}
+{"id": 1283884, "field": "name", "en": "[DNT] Cooldown Always Secret Test Spell", "hash": "8d46308d16854893", "src": "db2@1.60.1.70291"}
+{"id": 1283885, "field": "name", "en": "[DNT] Cooldown Never Secret Test Spell", "hash": "c8ae1adddcc9bacb", "src": "db2@1.60.1.70291"}
+{"id": 1283888, "field": "name", "en": "[DNT] Aura Never Secret Test Spell", "hash": "322f51bfbba0f124", "src": "db2@1.60.1.70291"}
+{"id": 1283894, "field": "name", "en": "[DNT] Aura Always Secret Test Spell", "hash": "8a6544b201408d9b", "src": "db2@1.60.1.70291"}
+{"id": 1283895, "field": "name", "en": "[DNT] Spell Cast Always Secret Test Spell", "hash": "8bda8f98140b15fe", "src": "db2@1.60.1.70291"}
+{"id": 1283896, "field": "name", "en": "[DNT] Spell Cast Never Secret Test Spell", "hash": "3debd15720e3a01c", "src": "db2@1.60.1.70291"}
+{"id": 1283919, "field": "name", "en": "Totally A Warlock", "hash": "491e403e02339407", "src": "db2@1.60.1.70291"}
+{"id": 1283919, "field": "description", "en": "A 'convincing' disguise Jereman put together so you will be able to infiltrate the warlock camp in the Tainted Foothills. Suspicious activity will break the disguise.", "hash": "206392d87f2c4631", "src": "db2@1.60.1.70291"}
+{"id": 1283919, "field": "aura", "en": "Disguised as a member of the Ashen Reign. Suspicious activity will break the disguise.", "hash": "b9ac729c26be86d5", "src": "db2@1.60.1.70291"}
+{"id": 1283932, "field": "name", "en": "Summon Uber Diablo", "hash": "04051b28145f45a1", "src": "db2@1.60.1.70291"}
+{"id": 1283932, "field": "description", "en": "Right Click to summon and dismiss Diablo.", "hash": "f1cae78ac3234fe2", "src": "db2@1.60.1.70291"}

@@ -434,6 +434,10 @@ _SERVED_TEXT_TABLES = (
         "SpellFlyout", 1146819, 0xBE7036C6, 6, (_c("ID", ID), _c("Name_lang", 0), _c("Description_lang", 1))
     ),
     _forever_text("ServerMessages", 1301141, 0x022C43AA, 1, (_c("ID", ID), _c("Text_lang", 0))),
+    # the scoreboard's stat names; on 1.60.1.70291 it names stats PVPScoreboardColumnHeader does not (Alterac
+    # Valley's towers and graveyards). Fields: Description_lang, the inline ID, MapID; matched to wago.tools'
+    # export of 1.60.1.70291 row for row (12 rows)
+    _forever_text("PVPStat", 2992919, 0x5FE7D861, 3, (_c("ID", ID), _c("Description_lang", 0))),
     _forever_text("TransmogSituation", 7211446, 0xFA6B434F, 6, (_c("ID", ID), _c("Name_lang", 0))),
     _forever_text(
         "TransmogSituationTrigger",

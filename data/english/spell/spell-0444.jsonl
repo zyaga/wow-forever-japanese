@@ -1,248 +1,248 @@
-{"id": 444039, "field": "name", "en": "Insanity", "hash": "6620413abce59490", "src": "db2@1.60.1.70245"}
-{"id": 444039, "field": "description", "en": "Drives the target insane, turning them hostile to their allies and increasing their maximum health by $s1%.", "hash": "03003b41976ac65f", "src": "db2@1.60.1.70245"}
-{"id": 444039, "field": "aura", "en": "Hostile to everyone!\r\nMaximum health increased by $s1%.", "hash": "6c336b2a8ae2f356", "src": "db2@1.60.1.70245"}
-{"id": 444046, "field": "name", "en": "Curse of Tongues", "hash": "0e91974050998503", "src": "db2@1.60.1.70245"}
-{"id": 444046, "field": "description", "en": "Forces nearby enemies to speak in Demonic, reducing their casting speed by $s1% for $d. ", "hash": "3a543ac8878144ce", "src": "db2@1.60.1.70245"}
-{"id": 444046, "field": "aura", "en": "Casting speed reduced by $s1%.", "hash": "7aa99f7562b9c098", "src": "db2@1.60.1.70245"}
-{"id": 444050, "field": "name", "en": "Blood Nova", "hash": "9adfb2bd27256adb", "src": "db2@1.60.1.70245"}
-{"id": 444050, "field": "description", "en": "Blasts players with blood, inflicting $s1 Shadow damage.", "hash": "ed0017107bec23c0", "src": "db2@1.60.1.70245"}
-{"id": 444132, "field": "name", "en": "Drain Blood", "hash": "1546d765c27ba5d1", "src": "db2@1.60.1.70245"}
-{"id": 444139, "field": "name", "en": "Drain Blood", "hash": "1546d765c27ba5d1", "src": "db2@1.60.1.70245"}
-{"id": 444165, "field": "name", "en": "Skeletal", "hash": "f1201431a3c93513", "src": "db2@1.60.1.70245"}
-{"id": 444165, "field": "description", "en": "Drains the flesh and blood out of a target, turning them into a skeleton for $d. While under this effect, the target receives $s1% less healing and gains $2% increased movement speed.", "hash": "a8502e85e4e4d1f9", "src": "db2@1.60.1.70245"}
-{"id": 444165, "field": "aura", "en": "All healing received reduced by $s1%.\r\nMovement speed increased by $s2%.\r\n\r\nYour flesh and blood has been drained!", "hash": "7cdfdd0149fc2441", "src": "db2@1.60.1.70245"}
-{"id": 444253, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70245"}
-{"id": 444253, "field": "description", "en": "Spits corrupted blood, inflicting $444261s1 Shadow damage every $444255t1 sec. This has a chance to spread to nearby players.", "hash": "93fc6debfcdfefb6", "src": "db2@1.60.1.70245"}
-{"id": 444253, "field": "aura", "en": "$444261s1 Shadow damage inflicted every $444255t1 sec.\r\nHas a chance to spread to nearby players.", "hash": "7b8ae486c61f42f7", "src": "db2@1.60.1.70245"}
-{"id": 444255, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70245"}
-{"id": 444255, "field": "description", "en": "$@spelldesc444253", "hash": "b34452ae9327589b", "src": "db2@1.60.1.70245"}
-{"id": 444255, "field": "aura", "en": "$@spellaura444253", "hash": "0b2962e42dfa923f", "src": "db2@1.60.1.70245"}
-{"id": 444261, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70245"}
-{"id": 444261, "field": "description", "en": "$@spelldesc444253", "hash": "b34452ae9327589b", "src": "db2@1.60.1.70245"}
-{"id": 444261, "field": "aura", "en": "$@spellaura444253", "hash": "0b2962e42dfa923f", "src": "db2@1.60.1.70245"}
-{"id": 444273, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70245"}
-{"id": 444273, "field": "description", "en": "Spits corrupted blood, inflicting $444284s1 Shadow damage every $t1 sec. This has a chance to spread to nearby players.", "hash": "174ed624bd8efcc1", "src": "db2@1.60.1.70245"}
-{"id": 444273, "field": "aura", "en": "$444284s1 Shadow damage inflicted every $t1 sec.\r\nHas a chance to spread to nearby players.", "hash": "d27030f147f278e4", "src": "db2@1.60.1.70245"}
-{"id": 444280, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70245"}
-{"id": 444280, "field": "description", "en": "$@spelldesc444253", "hash": "b34452ae9327589b", "src": "db2@1.60.1.70245"}
-{"id": 444280, "field": "aura", "en": "$@spellaura444253", "hash": "0b2962e42dfa923f", "src": "db2@1.60.1.70245"}
-{"id": 444284, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70245"}
-{"id": 444284, "field": "description", "en": "$@spelldesc444273", "hash": "b34453b49327985d", "src": "db2@1.60.1.70245"}
-{"id": 444284, "field": "aura", "en": "$@spellaura444273", "hash": "0b2963ea2dfad201", "src": "db2@1.60.1.70245"}
-{"id": 444285, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70245"}
-{"id": 444285, "field": "description", "en": "Spits corrupted blood, inflicting $444284s1 Shadow damage every $t1 sec. This has a chance to spread to nearby players.\r\n", "hash": "174ed624bd8efcc1", "src": "db2@1.60.1.70245"}
-{"id": 444285, "field": "aura", "en": "$444284s1 Shadow damage inflicted every $t1 sec.\r\nHas a chance to spread to nearby players.", "hash": "d27030f147f278e4", "src": "db2@1.60.1.70245"}
-{"id": 444286, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70245"}
-{"id": 444286, "field": "description", "en": "$@spelldesc444273", "hash": "b34453b49327985d", "src": "db2@1.60.1.70245"}
-{"id": 444286, "field": "aura", "en": "$@spellaura444273", "hash": "0b2963ea2dfad201", "src": "db2@1.60.1.70245"}
-{"id": 444290, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70245"}
-{"id": 444290, "field": "description", "en": "$@spelldesc444273", "hash": "b34453b49327985d", "src": "db2@1.60.1.70245"}
-{"id": 444290, "field": "aura", "en": "$@spellaura444273", "hash": "0b2963ea2dfad201", "src": "db2@1.60.1.70245"}
-{"id": 444291, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70245"}
-{"id": 444291, "field": "description", "en": "$@spelldesc444273", "hash": "b34453b49327985d", "src": "db2@1.60.1.70245"}
-{"id": 444291, "field": "aura", "en": "$@spellaura444273", "hash": "0b2963ea2dfad201", "src": "db2@1.60.1.70245"}
-{"id": 444313, "field": "name", "en": "[DNT] Emerald Decay Visuals", "hash": "363b22b81e8ea3ce", "src": "db2@1.60.1.70245"}
-{"id": 444368, "field": "name", "en": "Fight Impostors", "hash": "8ee4b50d461abb57", "src": "db2@1.60.1.70245"}
-{"id": 444509, "field": "name", "en": "Shield of the Elements", "hash": "32b39ced83c06d89", "src": "db2@1.60.1.70245"}
-{"id": 444509, "field": "aura", "en": "The elements whisper to you, eager to aid you in combat.", "hash": "c7eda483e1c66ee0", "src": "db2@1.60.1.70245"}
-{"id": 444515, "field": "name", "en": "Combat Pulse", "hash": "ff93f6f60c23ad71", "src": "db2@1.60.1.70245"}
-{"id": 444519, "field": "name", "en": "Deputize: Duskwood Mission I", "hash": "7cc43fb6be6cfa31", "src": "db2@1.60.1.70245"}
-{"id": 444519, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444522, "field": "name", "en": "Threatening Roar", "hash": "ea263c3f481f8ba6", "src": "db2@1.60.1.70245"}
-{"id": 444522, "field": "description", "en": "Threatens an enemy, causing them to panic.", "hash": "d84e1b54f689b2a0", "src": "db2@1.60.1.70245"}
-{"id": 444522, "field": "aura", "en": "Fleeing for your life.", "hash": "aab01ab438908150", "src": "db2@1.60.1.70245"}
-{"id": 444524, "field": "name", "en": "Deputize: Duskwood Mission II", "hash": "d86c9ba690156770", "src": "db2@1.60.1.70245"}
-{"id": 444524, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444527, "field": "name", "en": "Deputize: Duskwood Mission III", "hash": "bf93a8613a57aaba", "src": "db2@1.60.1.70245"}
-{"id": 444527, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444528, "field": "name", "en": "Deputize: Duskwood Mission IV", "hash": "d86c9bb39015677d", "src": "db2@1.60.1.70245"}
-{"id": 444528, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444530, "field": "name", "en": "Deputize: Duskwood Mission V", "hash": "7cc43fc3be6cfa3e", "src": "db2@1.60.1.70245"}
-{"id": 444530, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444531, "field": "name", "en": "Deputize: Duskwood Mission VI", "hash": "d86ca24d901705dd", "src": "db2@1.60.1.70245"}
-{"id": 444531, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444532, "field": "name", "en": "Deputize: Duskwood Mission VII", "hash": "bf970fd66df31b87", "src": "db2@1.60.1.70245"}
-{"id": 444532, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444533, "field": "name", "en": "Deputize: Duskwood Mission VIII", "hash": "0a4d1cb5130173b1", "src": "db2@1.60.1.70245"}
-{"id": 444533, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444534, "field": "name", "en": "Deputize: Duskwood Mission IX", "hash": "d86c9bb59015677f", "src": "db2@1.60.1.70245"}
-{"id": 444534, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444535, "field": "name", "en": "Deputize: Duskwood Mission X", "hash": "7cc43fc5be6cfa40", "src": "db2@1.60.1.70245"}
-{"id": 444535, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444537, "field": "name", "en": "Deputize: Duskwood Mission XI", "hash": "d86ca3539017459f", "src": "db2@1.60.1.70245"}
-{"id": 444537, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444539, "field": "name", "en": "Deputize: Duskwood Mission XII", "hash": "bf9795e875e3a309", "src": "db2@1.60.1.70245"}
-{"id": 444539, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444540, "field": "name", "en": "Deputize: Duskwood Mission XIII", "hash": "0a91b7eb2dd15bc0", "src": "db2@1.60.1.70245"}
-{"id": 444540, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444541, "field": "name", "en": "Deputize: Duskwood Mission XIV", "hash": "bf9795f575e3a316", "src": "db2@1.60.1.70245"}
-{"id": 444541, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444542, "field": "name", "en": "Deputize: Duskwood Mission XV", "hash": "d86ca360901745ac", "src": "db2@1.60.1.70245"}
-{"id": 444542, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444543, "field": "name", "en": "Deputize: Duskwood Mission XVI", "hash": "bf979c8f75e54176", "src": "db2@1.60.1.70245"}
-{"id": 444543, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444544, "field": "name", "en": "Deputize: Duskwood Mission XVII", "hash": "0a951f60616ccc8d", "src": "db2@1.60.1.70245"}
-{"id": 444544, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444545, "field": "name", "en": "Deputize: Duskwood Mission XVIII", "hash": "6a4f0e82cd65a967", "src": "db2@1.60.1.70245"}
-{"id": 444545, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444549, "field": "name", "en": "Activate Defender", "hash": "75d8ad82436b361d", "src": "db2@1.60.1.70245"}
-{"id": 444550, "field": "name", "en": "Deputize: Ashenvale Mission I", "hash": "620cc9d13e232ed4", "src": "db2@1.60.1.70245"}
-{"id": 444550, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444551, "field": "name", "en": "Deputize: Ashenvale Mission II", "hash": "2c8b4736df985819", "src": "db2@1.60.1.70245"}
-{"id": 444551, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444552, "field": "name", "en": "Deputize: Ashenvale Mission III", "hash": "cb457159f7924e89", "src": "db2@1.60.1.70245"}
-{"id": 444552, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444553, "field": "name", "en": "Deputize: Ashenvale Mission IV", "hash": "2c8b4743df985826", "src": "db2@1.60.1.70245"}
-{"id": 444553, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444554, "field": "name", "en": "Deputize: Ashenvale Mission V", "hash": "620cc9de3e232ee1", "src": "db2@1.60.1.70245"}
-{"id": 444554, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444555, "field": "name", "en": "Deputize: Ashenvale Mission VI", "hash": "2c8b4ddddf99f686", "src": "db2@1.60.1.70245"}
-{"id": 444555, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444556, "field": "name", "en": "Deputize: Ashenvale Mission VII", "hash": "cb48d8ce2b2dbf67", "src": "db2@1.60.1.70245"}
-{"id": 444556, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444557, "field": "name", "en": "Deputize: Ashenvale Mission VIII", "hash": "0646f3bb7d630e30", "src": "db2@1.60.1.70245"}
-{"id": 444557, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444558, "field": "name", "en": "Deputize: Ashenvale Mission IX", "hash": "2c8b4745df985828", "src": "db2@1.60.1.70245"}
-{"id": 444558, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444559, "field": "name", "en": "Deputize: Ashenvale Mission X", "hash": "620cc9e03e232ee3", "src": "db2@1.60.1.70245"}
-{"id": 444559, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444561, "field": "name", "en": "Deputize: Ashenvale Mission XI", "hash": "2c8b4ee3df9a3648", "src": "db2@1.60.1.70245"}
-{"id": 444561, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444563, "field": "name", "en": "Deputize: Ashenvale Mission XII", "hash": "cb495ee0331e46e9", "src": "db2@1.60.1.70245"}
-{"id": 444563, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444565, "field": "name", "en": "Deputize: Ashenvale Mission XIII", "hash": "068b8ef19832f63f", "src": "db2@1.60.1.70245"}
-{"id": 444565, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444566, "field": "name", "en": "Deputize: Ashenvale Mission XIV", "hash": "cb495eed331e46f6", "src": "db2@1.60.1.70245"}
-{"id": 444566, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444567, "field": "name", "en": "Deputize: Ashenvale Mission XV", "hash": "2c8b4ef0df9a3655", "src": "db2@1.60.1.70245"}
-{"id": 444567, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444568, "field": "name", "en": "Deputize: Ashenvale Mission XVI", "hash": "cb496587331fe556", "src": "db2@1.60.1.70245"}
-{"id": 444568, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444569, "field": "name", "en": "Deputize: Ashenvale Mission XVII", "hash": "068ef666cbce670c", "src": "db2@1.60.1.70245"}
-{"id": 444569, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444570, "field": "name", "en": "Deputize: Ashenvale Mission XVIII", "hash": "5b28168a1ee4b546", "src": "db2@1.60.1.70245"}
-{"id": 444570, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444571, "field": "name", "en": "Deputize: Hinterlands Mission I", "hash": "74bc3f3e86630890", "src": "db2@1.60.1.70245"}
-{"id": 444571, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444573, "field": "name", "en": "Deputize: Hinterlands Mission II", "hash": "bc545e2a1b151355", "src": "db2@1.60.1.70245"}
-{"id": 444573, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444574, "field": "name", "en": "Deputize: Hinterlands Mission III", "hash": "5f2c31a75add824d", "src": "db2@1.60.1.70245"}
-{"id": 444574, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444575, "field": "name", "en": "Deputize: Hinterlands Mission IV", "hash": "bc545e371b151362", "src": "db2@1.60.1.70245"}
-{"id": 444575, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444576, "field": "name", "en": "Deputize: Hinterlands Mission V", "hash": "74bc3f4b8663089d", "src": "db2@1.60.1.70245"}
-{"id": 444576, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444577, "field": "name", "en": "Deputize: Hinterlands Mission VI", "hash": "bc5464d11b16b1c2", "src": "db2@1.60.1.70245"}
-{"id": 444577, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444578, "field": "name", "en": "Deputize: Hinterlands Mission VII", "hash": "5f2f991c8e78f31a", "src": "db2@1.60.1.70245"}
-{"id": 444578, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444579, "field": "name", "en": "Deputize: Hinterlands Mission VIII", "hash": "b55b5a8dddbefdb0", "src": "db2@1.60.1.70245"}
-{"id": 444579, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444580, "field": "name", "en": "Deputize: Hinterlands Mission IX", "hash": "bc545e391b151364", "src": "db2@1.60.1.70245"}
-{"id": 444580, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444581, "field": "name", "en": "Deputize: Hinterlands Mission X", "hash": "74bc3f4d8663089f", "src": "db2@1.60.1.70245"}
-{"id": 444581, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444582, "field": "name", "en": "Deputize: Hinterlands Mission XI", "hash": "bc5465d71b16f184", "src": "db2@1.60.1.70245"}
-{"id": 444582, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444583, "field": "name", "en": "Deputize: Hinterlands Mission XII", "hash": "5f301f2e96697a9c", "src": "db2@1.60.1.70245"}
-{"id": 444583, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444584, "field": "name", "en": "Deputize: Hinterlands Mission XIII", "hash": "b59ff5c3f88ee5bf", "src": "db2@1.60.1.70245"}
-{"id": 444584, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444585, "field": "name", "en": "Deputize: Hinterlands Mission XIV", "hash": "5f301f3b96697aa9", "src": "db2@1.60.1.70245"}
-{"id": 444585, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444586, "field": "name", "en": "Deputize: Hinterlands Mission XV", "hash": "bc5465e41b16f191", "src": "db2@1.60.1.70245"}
-{"id": 444586, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444587, "field": "name", "en": "Deputize: Hinterlands Mission XVI", "hash": "5f3025d5966b1909", "src": "db2@1.60.1.70245"}
-{"id": 444587, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444588, "field": "name", "en": "Deputize: Hinterlands Mission XVII", "hash": "b5a35d382c2a569d", "src": "db2@1.60.1.70245"}
-{"id": 444588, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444589, "field": "name", "en": "Deputize: Hinterlands Mission XVIII", "hash": "f298b5bdf1b380b5", "src": "db2@1.60.1.70245"}
-{"id": 444589, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444590, "field": "name", "en": "Deputize: Feralas Mission I", "hash": "3e72f3d2f6cc909b", "src": "db2@1.60.1.70245"}
-{"id": 444590, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444591, "field": "name", "en": "Deputize: Feralas Mission II", "hash": "f4d2c55aaf4fe7ef", "src": "db2@1.60.1.70245"}
-{"id": 444591, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444592, "field": "name", "en": "Deputize: Feralas Mission III", "hash": "47daffc8c2523d6c", "src": "db2@1.60.1.70245"}
-{"id": 444592, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444593, "field": "name", "en": "Deputize: Feralas Mission IV", "hash": "f4d2c567af4fe7fc", "src": "db2@1.60.1.70245"}
-{"id": 444593, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444594, "field": "name", "en": "Deputize: Feralas Mission V", "hash": "3e72f3dff6cc90a8", "src": "db2@1.60.1.70245"}
-{"id": 444594, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444595, "field": "name", "en": "Deputize: Feralas Mission VI", "hash": "f4d2cc01af51865c", "src": "db2@1.60.1.70245"}
-{"id": 444595, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444596, "field": "name", "en": "Deputize: Feralas Mission VII", "hash": "47de673df5edae39", "src": "db2@1.60.1.70245"}
-{"id": 444596, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444597, "field": "name", "en": "Deputize: Feralas Mission VIII", "hash": "c6ced534ee010ff1", "src": "db2@1.60.1.70245"}
-{"id": 444597, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444598, "field": "name", "en": "Deputize: Feralas Mission IX", "hash": "f4d2c569af4fe7fe", "src": "db2@1.60.1.70245"}
-{"id": 444598, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444599, "field": "name", "en": "Deputize: Feralas Mission X", "hash": "3e72f3e1f6cc90aa", "src": "db2@1.60.1.70245"}
-{"id": 444599, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444600, "field": "name", "en": "Deputize: Feralas Mission XI", "hash": "f4d2cd07af51c61e", "src": "db2@1.60.1.70245"}
-{"id": 444600, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444601, "field": "name", "en": "Deputize: Feralas Mission XII", "hash": "47deed4ffdde35bb", "src": "db2@1.60.1.70245"}
-{"id": 444601, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444602, "field": "name", "en": "Deputize: Feralas Mission XIII", "hash": "c713706a08d0f811", "src": "db2@1.60.1.70245"}
-{"id": 444602, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444603, "field": "name", "en": "Deputize: Feralas Mission XIV", "hash": "47deed5cfdde35c8", "src": "db2@1.60.1.70245"}
-{"id": 444603, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444604, "field": "name", "en": "Deputize: Feralas Mission XV", "hash": "f4d2cd14af51c62b", "src": "db2@1.60.1.70245"}
-{"id": 444604, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444605, "field": "name", "en": "Deputize: Feralas Mission XVI", "hash": "47def3f6fddfd428", "src": "db2@1.60.1.70245"}
-{"id": 444605, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444606, "field": "name", "en": "Deputize: Feralas Mission XVII", "hash": "c716d7df3c6c68de", "src": "db2@1.60.1.70245"}
-{"id": 444606, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444607, "field": "name", "en": "Deputize: Feralas Mission XVIII", "hash": "e0b0795f3bfb8d4d", "src": "db2@1.60.1.70245"}
-{"id": 444607, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70245"}
-{"id": 444651, "field": "name", "en": "S03 - Flag Tracking Quest - Paladin 50 Quest -  Aeonas Traveling (DNT", "hash": "df7c05e5aa46a40a", "src": "db2@1.60.1.70245"}
-{"id": 444652, "field": "name", "en": "S03 - Un-Flag Tracking Quest - Paladin 50 Quest -  Aeonas Traveling (DNT", "hash": "f3e4f6ba05a3c926", "src": "db2@1.60.1.70245"}
-{"id": 444678, "field": "name", "en": "Lava Breath", "hash": "bb889855645b29cb", "src": "db2@1.60.1.70245"}
-{"id": 444678, "field": "description", "en": "Breathes molten lava at $x1 nearby enemies, instantly dealing $s1 Fire damage and reducing the target's casting speed by $s2% for $d.", "hash": "63f05e464bf29752", "src": "db2@1.60.1.70245"}
-{"id": 444678, "field": "aura", "en": "Casting speed reduced by $s2%.", "hash": "7aa9e27e66b20459", "src": "db2@1.60.1.70245"}
-{"id": 444680, "field": "name", "en": "Lava Breath", "hash": "bb889855645b29cb", "src": "db2@1.60.1.70245"}
-{"id": 444680, "field": "description", "en": "Breathes molten lava at the target, instantly dealing $444678s1 Fire damage and reducing the target's casting speed by $444678s2% for $444678d.", "hash": "7c97c2aa64add025", "src": "db2@1.60.1.70245"}
-{"id": 444681, "field": "name", "en": "Lava Breath", "hash": "bb889855645b29cb", "src": "db2@1.60.1.70245"}
-{"id": 444681, "field": "description", "en": "Breathes molten lava at $x1 nearby enemies, instantly dealing $s1 Fire damage and reducing the target's casting speed by $s2% for $d.", "hash": "63f05e464bf29752", "src": "db2@1.60.1.70245"}
-{"id": 444681, "field": "aura", "en": "Casting speed reduced by $s2%.", "hash": "7aa9e27e66b20459", "src": "db2@1.60.1.70245"}
-{"id": 444682, "field": "name", "en": "Lava Breath", "hash": "bb889855645b29cb", "src": "db2@1.60.1.70245"}
-{"id": 444682, "field": "description", "en": "Breathes molten lava at the target, instantly dealing $444681s1 Fire damage and reducing the target's casting speed by $$444681s2% for $444681d.", "hash": "a75b6bdc715adaaa", "src": "db2@1.60.1.70245"}
-{"id": 444747, "field": "name", "en": "Summon Gasher", "hash": "5e47b2c65c00d651", "src": "db2@1.60.1.70245"}
-{"id": 444758, "field": "name", "en": "Emerald Nightmare", "hash": "26279973a2e46f04", "src": "db2@1.60.1.70245"}
-{"id": 444759, "field": "name", "en": "Emerald Nightmare", "hash": "26279973a2e46f04", "src": "db2@1.60.1.70245"}
-{"id": 444760, "field": "name", "en": "Emerald Nightmare", "hash": "26279973a2e46f04", "src": "db2@1.60.1.70245"}
-{"id": 444761, "field": "name", "en": "Hakkar", "hash": "725a006b28d587a5", "src": "db2@1.60.1.70245"}
-{"id": 444762, "field": "name", "en": "Emerald Nightmare", "hash": "26279973a2e46f04", "src": "db2@1.60.1.70245"}
-{"id": 444768, "field": "name", "en": "Avatar of Hakkar", "hash": "7ca118c026eb85b6", "src": "db2@1.60.1.70245"}
-{"id": 444781, "field": "name", "en": "Avatar of Hakkar", "hash": "7ca118c026eb85b6", "src": "db2@1.60.1.70245"}
-{"id": 444783, "field": "name", "en": "Avatar of Hakkar", "hash": "7ca118c026eb85b6", "src": "db2@1.60.1.70245"}
-{"id": 444812, "field": "name", "en": "Avatar of Hakkar", "hash": "7ca118c026eb85b6", "src": "db2@1.60.1.70245"}
-{"id": 444816, "field": "name", "en": "Avatar of Hakkar", "hash": "7ca118c026eb85b6", "src": "db2@1.60.1.70245"}
-{"id": 444831, "field": "name", "en": "Tamed Pet Passive (DND)", "hash": "7127429cf58bb8b7", "src": "db2@1.60.1.70245"}
-{"id": 444844, "field": "name", "en": "Create Duskwood Field Report", "hash": "ac0b63d072047999", "src": "db2@1.60.1.70245"}
-{"id": 444890, "field": "name", "en": "S03 - Flag Tracking Quest - Paladin 50 Quest -  Spoken to Aeonas in Felwood (DNT", "hash": "8294e8b4a686cbf5", "src": "db2@1.60.1.70245"}
-{"id": 444891, "field": "name", "en": "S03 - Flag Tracking Quest - Paladin 50 Quest -  Spoken to Gregory in Felwood (DNT", "hash": "ff2b6026375dc7ad", "src": "db2@1.60.1.70245"}
-{"id": 444892, "field": "name", "en": "Deathly Chill", "hash": "9bfae3234e02439c", "src": "db2@1.60.1.70245"}
-{"id": 444892, "field": "description", "en": "You are siezed by darkness!", "hash": "c9acf240cb7b9d27", "src": "db2@1.60.1.70245"}
-{"id": 444892, "field": "aura", "en": "You are incapacitated by a deathly chill! Unable to move or perform actions.", "hash": "34b9971b063b347b", "src": "db2@1.60.1.70245"}
-{"id": 444893, "field": "name", "en": "Shadow Ritual", "hash": "509ac249e82734bb", "src": "db2@1.60.1.70245"}
-{"id": 444894, "field": "name", "en": "Holy Shock", "hash": "c5a021f4a09402c9", "src": "db2@1.60.1.70245"}
-{"id": 444894, "field": "description", "en": "A blast of Holy Power.", "hash": "093191fd3267704d", "src": "db2@1.60.1.70245"}
-{"id": 444895, "field": "name", "en": "Holy Smite", "hash": "c64a1c724bcc4e5c", "src": "db2@1.60.1.70245"}
-{"id": 444895, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70245"}
-{"id": 444904, "field": "name", "en": "Bloody Tears", "hash": "c1c6f878a1af8d10", "src": "db2@1.60.1.70245"}
-{"id": 444906, "field": "name", "en": "Bloody Tears", "hash": "c1c6f878a1af8d10", "src": "db2@1.60.1.70245"}
-{"id": 444935, "field": "name", "en": "Parasomnia", "hash": "a816fc140f941998", "src": "db2@1.60.1.70245"}
-{"id": 444935, "field": "description", "en": "Teleports you to another area engulfed in nightmare.", "hash": "4bb59a854e4b3d79", "src": "db2@1.60.1.70245"}
-{"id": 444938, "field": "name", "en": "Parasomnia", "hash": "a816fc140f941998", "src": "db2@1.60.1.70245"}
-{"id": 444938, "field": "description", "en": "Submerge yourself in nightmare. ", "hash": "a9de2ad7ca25060a", "src": "db2@1.60.1.70245"}
-{"id": 444938, "field": "aura", "en": "Submerged in nightmare.", "hash": "6dee469596315ee9", "src": "db2@1.60.1.70245"}
-{"id": 444960, "field": "name", "en": "Summon Loro", "hash": "869ac6d9b0379f05", "src": "db2@1.60.1.70245"}
-{"id": 444961, "field": "name", "en": "Summon Hukku", "hash": "9bc8e3e756213462", "src": "db2@1.60.1.70245"}
-{"id": 444962, "field": "name", "en": "Summon Zul'Lor", "hash": "caad6cf74c91dad2", "src": "db2@1.60.1.70245"}
-{"id": 444963, "field": "name", "en": "Summon Mijan", "hash": "f1f1880a0bdcbecc", "src": "db2@1.60.1.70245"}
-{"id": 444964, "field": "name", "en": "Summon Zolo", "hash": "887b02416be63839", "src": "db2@1.60.1.70245"}
-{"id": 444973, "field": "name", "en": "Statue Empowerment", "hash": "f8b06f36658674b6", "src": "db2@1.60.1.70245"}
-{"id": 444975, "field": "name", "en": "Statue Empowerment", "hash": "f8b06f36658674b6", "src": "db2@1.60.1.70245"}
-{"id": 444987, "field": "name", "en": "Statue Destruction", "hash": "c0273cde105553d9", "src": "db2@1.60.1.70245"}
-{"id": 444991, "field": "name", "en": "Statue Destruction", "hash": "c0273cde105553d9", "src": "db2@1.60.1.70245"}
-{"id": 444996, "field": "name", "en": "Pillars of Might", "hash": "39e3fa5ea5616dcc", "src": "db2@1.60.1.70245"}
+{"id": 444039, "field": "name", "en": "Insanity", "hash": "6620413abce59490", "src": "db2@1.60.1.70291"}
+{"id": 444039, "field": "description", "en": "Drives the target insane, turning them hostile to their allies and increasing their maximum health by $s1%.", "hash": "03003b41976ac65f", "src": "db2@1.60.1.70291"}
+{"id": 444039, "field": "aura", "en": "Hostile to everyone!\r\nMaximum health increased by $s1%.", "hash": "6c336b2a8ae2f356", "src": "db2@1.60.1.70291"}
+{"id": 444046, "field": "name", "en": "Curse of Tongues", "hash": "0e91974050998503", "src": "db2@1.60.1.70291"}
+{"id": 444046, "field": "description", "en": "Forces nearby enemies to speak in Demonic, reducing their casting speed by $s1% for $d. ", "hash": "3a543ac8878144ce", "src": "db2@1.60.1.70291"}
+{"id": 444046, "field": "aura", "en": "Casting speed reduced by $s1%.", "hash": "7aa99f7562b9c098", "src": "db2@1.60.1.70291"}
+{"id": 444050, "field": "name", "en": "Blood Nova", "hash": "9adfb2bd27256adb", "src": "db2@1.60.1.70291"}
+{"id": 444050, "field": "description", "en": "Blasts players with blood, inflicting $s1 Shadow damage.", "hash": "ed0017107bec23c0", "src": "db2@1.60.1.70291"}
+{"id": 444132, "field": "name", "en": "Drain Blood", "hash": "1546d765c27ba5d1", "src": "db2@1.60.1.70291"}
+{"id": 444139, "field": "name", "en": "Drain Blood", "hash": "1546d765c27ba5d1", "src": "db2@1.60.1.70291"}
+{"id": 444165, "field": "name", "en": "Skeletal", "hash": "f1201431a3c93513", "src": "db2@1.60.1.70291"}
+{"id": 444165, "field": "description", "en": "Drains the flesh and blood out of a target, turning them into a skeleton for $d. While under this effect, the target receives $s1% less healing and gains $2% increased movement speed.", "hash": "a8502e85e4e4d1f9", "src": "db2@1.60.1.70291"}
+{"id": 444165, "field": "aura", "en": "All healing received reduced by $s1%.\r\nMovement speed increased by $s2%.\r\n\r\nYour flesh and blood has been drained!", "hash": "7cdfdd0149fc2441", "src": "db2@1.60.1.70291"}
+{"id": 444253, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70291"}
+{"id": 444253, "field": "description", "en": "Spits corrupted blood, inflicting $444261s1 Shadow damage every $444255t1 sec. This has a chance to spread to nearby players.", "hash": "93fc6debfcdfefb6", "src": "db2@1.60.1.70291"}
+{"id": 444253, "field": "aura", "en": "$444261s1 Shadow damage inflicted every $444255t1 sec.\r\nHas a chance to spread to nearby players.", "hash": "7b8ae486c61f42f7", "src": "db2@1.60.1.70291"}
+{"id": 444255, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70291"}
+{"id": 444255, "field": "description", "en": "$@spelldesc444253", "hash": "b34452ae9327589b", "src": "db2@1.60.1.70291"}
+{"id": 444255, "field": "aura", "en": "$@spellaura444253", "hash": "0b2962e42dfa923f", "src": "db2@1.60.1.70291"}
+{"id": 444261, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70291"}
+{"id": 444261, "field": "description", "en": "$@spelldesc444253", "hash": "b34452ae9327589b", "src": "db2@1.60.1.70291"}
+{"id": 444261, "field": "aura", "en": "$@spellaura444253", "hash": "0b2962e42dfa923f", "src": "db2@1.60.1.70291"}
+{"id": 444273, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70291"}
+{"id": 444273, "field": "description", "en": "Spits corrupted blood, inflicting $444284s1 Shadow damage every $t1 sec. This has a chance to spread to nearby players.", "hash": "174ed624bd8efcc1", "src": "db2@1.60.1.70291"}
+{"id": 444273, "field": "aura", "en": "$444284s1 Shadow damage inflicted every $t1 sec.\r\nHas a chance to spread to nearby players.", "hash": "d27030f147f278e4", "src": "db2@1.60.1.70291"}
+{"id": 444280, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70291"}
+{"id": 444280, "field": "description", "en": "$@spelldesc444253", "hash": "b34452ae9327589b", "src": "db2@1.60.1.70291"}
+{"id": 444280, "field": "aura", "en": "$@spellaura444253", "hash": "0b2962e42dfa923f", "src": "db2@1.60.1.70291"}
+{"id": 444284, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70291"}
+{"id": 444284, "field": "description", "en": "$@spelldesc444273", "hash": "b34453b49327985d", "src": "db2@1.60.1.70291"}
+{"id": 444284, "field": "aura", "en": "$@spellaura444273", "hash": "0b2963ea2dfad201", "src": "db2@1.60.1.70291"}
+{"id": 444285, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70291"}
+{"id": 444285, "field": "description", "en": "Spits corrupted blood, inflicting $444284s1 Shadow damage every $t1 sec. This has a chance to spread to nearby players.\r\n", "hash": "174ed624bd8efcc1", "src": "db2@1.60.1.70291"}
+{"id": 444285, "field": "aura", "en": "$444284s1 Shadow damage inflicted every $t1 sec.\r\nHas a chance to spread to nearby players.", "hash": "d27030f147f278e4", "src": "db2@1.60.1.70291"}
+{"id": 444286, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70291"}
+{"id": 444286, "field": "description", "en": "$@spelldesc444273", "hash": "b34453b49327985d", "src": "db2@1.60.1.70291"}
+{"id": 444286, "field": "aura", "en": "$@spellaura444273", "hash": "0b2963ea2dfad201", "src": "db2@1.60.1.70291"}
+{"id": 444290, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70291"}
+{"id": 444290, "field": "description", "en": "$@spelldesc444273", "hash": "b34453b49327985d", "src": "db2@1.60.1.70291"}
+{"id": 444290, "field": "aura", "en": "$@spellaura444273", "hash": "0b2963ea2dfad201", "src": "db2@1.60.1.70291"}
+{"id": 444291, "field": "name", "en": "Corrupted Blood", "hash": "42f54086e27c88e7", "src": "db2@1.60.1.70291"}
+{"id": 444291, "field": "description", "en": "$@spelldesc444273", "hash": "b34453b49327985d", "src": "db2@1.60.1.70291"}
+{"id": 444291, "field": "aura", "en": "$@spellaura444273", "hash": "0b2963ea2dfad201", "src": "db2@1.60.1.70291"}
+{"id": 444313, "field": "name", "en": "[DNT] Emerald Decay Visuals", "hash": "363b22b81e8ea3ce", "src": "db2@1.60.1.70291"}
+{"id": 444368, "field": "name", "en": "Fight Impostors", "hash": "8ee4b50d461abb57", "src": "db2@1.60.1.70291"}
+{"id": 444509, "field": "name", "en": "Shield of the Elements", "hash": "32b39ced83c06d89", "src": "db2@1.60.1.70291"}
+{"id": 444509, "field": "aura", "en": "The elements whisper to you, eager to aid you in combat.", "hash": "c7eda483e1c66ee0", "src": "db2@1.60.1.70291"}
+{"id": 444515, "field": "name", "en": "Combat Pulse", "hash": "ff93f6f60c23ad71", "src": "db2@1.60.1.70291"}
+{"id": 444519, "field": "name", "en": "Deputize: Duskwood Mission I", "hash": "7cc43fb6be6cfa31", "src": "db2@1.60.1.70291"}
+{"id": 444519, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444522, "field": "name", "en": "Threatening Roar", "hash": "ea263c3f481f8ba6", "src": "db2@1.60.1.70291"}
+{"id": 444522, "field": "description", "en": "Threatens an enemy, causing them to panic.", "hash": "d84e1b54f689b2a0", "src": "db2@1.60.1.70291"}
+{"id": 444522, "field": "aura", "en": "Fleeing for your life.", "hash": "aab01ab438908150", "src": "db2@1.60.1.70291"}
+{"id": 444524, "field": "name", "en": "Deputize: Duskwood Mission II", "hash": "d86c9ba690156770", "src": "db2@1.60.1.70291"}
+{"id": 444524, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444527, "field": "name", "en": "Deputize: Duskwood Mission III", "hash": "bf93a8613a57aaba", "src": "db2@1.60.1.70291"}
+{"id": 444527, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444528, "field": "name", "en": "Deputize: Duskwood Mission IV", "hash": "d86c9bb39015677d", "src": "db2@1.60.1.70291"}
+{"id": 444528, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444530, "field": "name", "en": "Deputize: Duskwood Mission V", "hash": "7cc43fc3be6cfa3e", "src": "db2@1.60.1.70291"}
+{"id": 444530, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444531, "field": "name", "en": "Deputize: Duskwood Mission VI", "hash": "d86ca24d901705dd", "src": "db2@1.60.1.70291"}
+{"id": 444531, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444532, "field": "name", "en": "Deputize: Duskwood Mission VII", "hash": "bf970fd66df31b87", "src": "db2@1.60.1.70291"}
+{"id": 444532, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444533, "field": "name", "en": "Deputize: Duskwood Mission VIII", "hash": "0a4d1cb5130173b1", "src": "db2@1.60.1.70291"}
+{"id": 444533, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444534, "field": "name", "en": "Deputize: Duskwood Mission IX", "hash": "d86c9bb59015677f", "src": "db2@1.60.1.70291"}
+{"id": 444534, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444535, "field": "name", "en": "Deputize: Duskwood Mission X", "hash": "7cc43fc5be6cfa40", "src": "db2@1.60.1.70291"}
+{"id": 444535, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444537, "field": "name", "en": "Deputize: Duskwood Mission XI", "hash": "d86ca3539017459f", "src": "db2@1.60.1.70291"}
+{"id": 444537, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444539, "field": "name", "en": "Deputize: Duskwood Mission XII", "hash": "bf9795e875e3a309", "src": "db2@1.60.1.70291"}
+{"id": 444539, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444540, "field": "name", "en": "Deputize: Duskwood Mission XIII", "hash": "0a91b7eb2dd15bc0", "src": "db2@1.60.1.70291"}
+{"id": 444540, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444541, "field": "name", "en": "Deputize: Duskwood Mission XIV", "hash": "bf9795f575e3a316", "src": "db2@1.60.1.70291"}
+{"id": 444541, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444542, "field": "name", "en": "Deputize: Duskwood Mission XV", "hash": "d86ca360901745ac", "src": "db2@1.60.1.70291"}
+{"id": 444542, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444543, "field": "name", "en": "Deputize: Duskwood Mission XVI", "hash": "bf979c8f75e54176", "src": "db2@1.60.1.70291"}
+{"id": 444543, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444544, "field": "name", "en": "Deputize: Duskwood Mission XVII", "hash": "0a951f60616ccc8d", "src": "db2@1.60.1.70291"}
+{"id": 444544, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444545, "field": "name", "en": "Deputize: Duskwood Mission XVIII", "hash": "6a4f0e82cd65a967", "src": "db2@1.60.1.70291"}
+{"id": 444545, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444549, "field": "name", "en": "Activate Defender", "hash": "75d8ad82436b361d", "src": "db2@1.60.1.70291"}
+{"id": 444550, "field": "name", "en": "Deputize: Ashenvale Mission I", "hash": "620cc9d13e232ed4", "src": "db2@1.60.1.70291"}
+{"id": 444550, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444551, "field": "name", "en": "Deputize: Ashenvale Mission II", "hash": "2c8b4736df985819", "src": "db2@1.60.1.70291"}
+{"id": 444551, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444552, "field": "name", "en": "Deputize: Ashenvale Mission III", "hash": "cb457159f7924e89", "src": "db2@1.60.1.70291"}
+{"id": 444552, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444553, "field": "name", "en": "Deputize: Ashenvale Mission IV", "hash": "2c8b4743df985826", "src": "db2@1.60.1.70291"}
+{"id": 444553, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444554, "field": "name", "en": "Deputize: Ashenvale Mission V", "hash": "620cc9de3e232ee1", "src": "db2@1.60.1.70291"}
+{"id": 444554, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444555, "field": "name", "en": "Deputize: Ashenvale Mission VI", "hash": "2c8b4ddddf99f686", "src": "db2@1.60.1.70291"}
+{"id": 444555, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444556, "field": "name", "en": "Deputize: Ashenvale Mission VII", "hash": "cb48d8ce2b2dbf67", "src": "db2@1.60.1.70291"}
+{"id": 444556, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444557, "field": "name", "en": "Deputize: Ashenvale Mission VIII", "hash": "0646f3bb7d630e30", "src": "db2@1.60.1.70291"}
+{"id": 444557, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444558, "field": "name", "en": "Deputize: Ashenvale Mission IX", "hash": "2c8b4745df985828", "src": "db2@1.60.1.70291"}
+{"id": 444558, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444559, "field": "name", "en": "Deputize: Ashenvale Mission X", "hash": "620cc9e03e232ee3", "src": "db2@1.60.1.70291"}
+{"id": 444559, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444561, "field": "name", "en": "Deputize: Ashenvale Mission XI", "hash": "2c8b4ee3df9a3648", "src": "db2@1.60.1.70291"}
+{"id": 444561, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444563, "field": "name", "en": "Deputize: Ashenvale Mission XII", "hash": "cb495ee0331e46e9", "src": "db2@1.60.1.70291"}
+{"id": 444563, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444565, "field": "name", "en": "Deputize: Ashenvale Mission XIII", "hash": "068b8ef19832f63f", "src": "db2@1.60.1.70291"}
+{"id": 444565, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444566, "field": "name", "en": "Deputize: Ashenvale Mission XIV", "hash": "cb495eed331e46f6", "src": "db2@1.60.1.70291"}
+{"id": 444566, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444567, "field": "name", "en": "Deputize: Ashenvale Mission XV", "hash": "2c8b4ef0df9a3655", "src": "db2@1.60.1.70291"}
+{"id": 444567, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444568, "field": "name", "en": "Deputize: Ashenvale Mission XVI", "hash": "cb496587331fe556", "src": "db2@1.60.1.70291"}
+{"id": 444568, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444569, "field": "name", "en": "Deputize: Ashenvale Mission XVII", "hash": "068ef666cbce670c", "src": "db2@1.60.1.70291"}
+{"id": 444569, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444570, "field": "name", "en": "Deputize: Ashenvale Mission XVIII", "hash": "5b28168a1ee4b546", "src": "db2@1.60.1.70291"}
+{"id": 444570, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444571, "field": "name", "en": "Deputize: Hinterlands Mission I", "hash": "74bc3f3e86630890", "src": "db2@1.60.1.70291"}
+{"id": 444571, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444573, "field": "name", "en": "Deputize: Hinterlands Mission II", "hash": "bc545e2a1b151355", "src": "db2@1.60.1.70291"}
+{"id": 444573, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444574, "field": "name", "en": "Deputize: Hinterlands Mission III", "hash": "5f2c31a75add824d", "src": "db2@1.60.1.70291"}
+{"id": 444574, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444575, "field": "name", "en": "Deputize: Hinterlands Mission IV", "hash": "bc545e371b151362", "src": "db2@1.60.1.70291"}
+{"id": 444575, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444576, "field": "name", "en": "Deputize: Hinterlands Mission V", "hash": "74bc3f4b8663089d", "src": "db2@1.60.1.70291"}
+{"id": 444576, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444577, "field": "name", "en": "Deputize: Hinterlands Mission VI", "hash": "bc5464d11b16b1c2", "src": "db2@1.60.1.70291"}
+{"id": 444577, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444578, "field": "name", "en": "Deputize: Hinterlands Mission VII", "hash": "5f2f991c8e78f31a", "src": "db2@1.60.1.70291"}
+{"id": 444578, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444579, "field": "name", "en": "Deputize: Hinterlands Mission VIII", "hash": "b55b5a8dddbefdb0", "src": "db2@1.60.1.70291"}
+{"id": 444579, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444580, "field": "name", "en": "Deputize: Hinterlands Mission IX", "hash": "bc545e391b151364", "src": "db2@1.60.1.70291"}
+{"id": 444580, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444581, "field": "name", "en": "Deputize: Hinterlands Mission X", "hash": "74bc3f4d8663089f", "src": "db2@1.60.1.70291"}
+{"id": 444581, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444582, "field": "name", "en": "Deputize: Hinterlands Mission XI", "hash": "bc5465d71b16f184", "src": "db2@1.60.1.70291"}
+{"id": 444582, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444583, "field": "name", "en": "Deputize: Hinterlands Mission XII", "hash": "5f301f2e96697a9c", "src": "db2@1.60.1.70291"}
+{"id": 444583, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444584, "field": "name", "en": "Deputize: Hinterlands Mission XIII", "hash": "b59ff5c3f88ee5bf", "src": "db2@1.60.1.70291"}
+{"id": 444584, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444585, "field": "name", "en": "Deputize: Hinterlands Mission XIV", "hash": "5f301f3b96697aa9", "src": "db2@1.60.1.70291"}
+{"id": 444585, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444586, "field": "name", "en": "Deputize: Hinterlands Mission XV", "hash": "bc5465e41b16f191", "src": "db2@1.60.1.70291"}
+{"id": 444586, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444587, "field": "name", "en": "Deputize: Hinterlands Mission XVI", "hash": "5f3025d5966b1909", "src": "db2@1.60.1.70291"}
+{"id": 444587, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444588, "field": "name", "en": "Deputize: Hinterlands Mission XVII", "hash": "b5a35d382c2a569d", "src": "db2@1.60.1.70291"}
+{"id": 444588, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444589, "field": "name", "en": "Deputize: Hinterlands Mission XVIII", "hash": "f298b5bdf1b380b5", "src": "db2@1.60.1.70291"}
+{"id": 444589, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444590, "field": "name", "en": "Deputize: Feralas Mission I", "hash": "3e72f3d2f6cc909b", "src": "db2@1.60.1.70291"}
+{"id": 444590, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444591, "field": "name", "en": "Deputize: Feralas Mission II", "hash": "f4d2c55aaf4fe7ef", "src": "db2@1.60.1.70291"}
+{"id": 444591, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444592, "field": "name", "en": "Deputize: Feralas Mission III", "hash": "47daffc8c2523d6c", "src": "db2@1.60.1.70291"}
+{"id": 444592, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444593, "field": "name", "en": "Deputize: Feralas Mission IV", "hash": "f4d2c567af4fe7fc", "src": "db2@1.60.1.70291"}
+{"id": 444593, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444594, "field": "name", "en": "Deputize: Feralas Mission V", "hash": "3e72f3dff6cc90a8", "src": "db2@1.60.1.70291"}
+{"id": 444594, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444595, "field": "name", "en": "Deputize: Feralas Mission VI", "hash": "f4d2cc01af51865c", "src": "db2@1.60.1.70291"}
+{"id": 444595, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444596, "field": "name", "en": "Deputize: Feralas Mission VII", "hash": "47de673df5edae39", "src": "db2@1.60.1.70291"}
+{"id": 444596, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444597, "field": "name", "en": "Deputize: Feralas Mission VIII", "hash": "c6ced534ee010ff1", "src": "db2@1.60.1.70291"}
+{"id": 444597, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444598, "field": "name", "en": "Deputize: Feralas Mission IX", "hash": "f4d2c569af4fe7fe", "src": "db2@1.60.1.70291"}
+{"id": 444598, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444599, "field": "name", "en": "Deputize: Feralas Mission X", "hash": "3e72f3e1f6cc90aa", "src": "db2@1.60.1.70291"}
+{"id": 444599, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444600, "field": "name", "en": "Deputize: Feralas Mission XI", "hash": "f4d2cd07af51c61e", "src": "db2@1.60.1.70291"}
+{"id": 444600, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444601, "field": "name", "en": "Deputize: Feralas Mission XII", "hash": "47deed4ffdde35bb", "src": "db2@1.60.1.70291"}
+{"id": 444601, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444602, "field": "name", "en": "Deputize: Feralas Mission XIII", "hash": "c713706a08d0f811", "src": "db2@1.60.1.70291"}
+{"id": 444602, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444603, "field": "name", "en": "Deputize: Feralas Mission XIV", "hash": "47deed5cfdde35c8", "src": "db2@1.60.1.70291"}
+{"id": 444603, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444604, "field": "name", "en": "Deputize: Feralas Mission XV", "hash": "f4d2cd14af51c62b", "src": "db2@1.60.1.70291"}
+{"id": 444604, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444605, "field": "name", "en": "Deputize: Feralas Mission XVI", "hash": "47def3f6fddfd428", "src": "db2@1.60.1.70291"}
+{"id": 444605, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444606, "field": "name", "en": "Deputize: Feralas Mission XVII", "hash": "c716d7df3c6c68de", "src": "db2@1.60.1.70291"}
+{"id": 444606, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444607, "field": "name", "en": "Deputize: Feralas Mission XVIII", "hash": "e0b0795f3bfb8d4d", "src": "db2@1.60.1.70291"}
+{"id": 444607, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.", "hash": "b0c8d355b32a5d1d", "src": "db2@1.60.1.70291"}
+{"id": 444651, "field": "name", "en": "S03 - Flag Tracking Quest - Paladin 50 Quest -  Aeonas Traveling (DNT", "hash": "df7c05e5aa46a40a", "src": "db2@1.60.1.70291"}
+{"id": 444652, "field": "name", "en": "S03 - Un-Flag Tracking Quest - Paladin 50 Quest -  Aeonas Traveling (DNT", "hash": "f3e4f6ba05a3c926", "src": "db2@1.60.1.70291"}
+{"id": 444678, "field": "name", "en": "Lava Breath", "hash": "bb889855645b29cb", "src": "db2@1.60.1.70291"}
+{"id": 444678, "field": "description", "en": "Breathes molten lava at $x1 nearby enemies, instantly dealing $s1 Fire damage and reducing the target's casting speed by $s2% for $d.", "hash": "63f05e464bf29752", "src": "db2@1.60.1.70291"}
+{"id": 444678, "field": "aura", "en": "Casting speed reduced by $s2%.", "hash": "7aa9e27e66b20459", "src": "db2@1.60.1.70291"}
+{"id": 444680, "field": "name", "en": "Lava Breath", "hash": "bb889855645b29cb", "src": "db2@1.60.1.70291"}
+{"id": 444680, "field": "description", "en": "Breathes molten lava at the target, instantly dealing $444678s1 Fire damage and reducing the target's casting speed by $444678s2% for $444678d.", "hash": "7c97c2aa64add025", "src": "db2@1.60.1.70291"}
+{"id": 444681, "field": "name", "en": "Lava Breath", "hash": "bb889855645b29cb", "src": "db2@1.60.1.70291"}
+{"id": 444681, "field": "description", "en": "Breathes molten lava at $x1 nearby enemies, instantly dealing $s1 Fire damage and reducing the target's casting speed by $s2% for $d.", "hash": "63f05e464bf29752", "src": "db2@1.60.1.70291"}
+{"id": 444681, "field": "aura", "en": "Casting speed reduced by $s2%.", "hash": "7aa9e27e66b20459", "src": "db2@1.60.1.70291"}
+{"id": 444682, "field": "name", "en": "Lava Breath", "hash": "bb889855645b29cb", "src": "db2@1.60.1.70291"}
+{"id": 444682, "field": "description", "en": "Breathes molten lava at the target, instantly dealing $444681s1 Fire damage and reducing the target's casting speed by $$444681s2% for $444681d.", "hash": "a75b6bdc715adaaa", "src": "db2@1.60.1.70291"}
+{"id": 444747, "field": "name", "en": "Summon Gasher", "hash": "5e47b2c65c00d651", "src": "db2@1.60.1.70291"}
+{"id": 444758, "field": "name", "en": "Emerald Nightmare", "hash": "26279973a2e46f04", "src": "db2@1.60.1.70291"}
+{"id": 444759, "field": "name", "en": "Emerald Nightmare", "hash": "26279973a2e46f04", "src": "db2@1.60.1.70291"}
+{"id": 444760, "field": "name", "en": "Emerald Nightmare", "hash": "26279973a2e46f04", "src": "db2@1.60.1.70291"}
+{"id": 444761, "field": "name", "en": "Hakkar", "hash": "725a006b28d587a5", "src": "db2@1.60.1.70291"}
+{"id": 444762, "field": "name", "en": "Emerald Nightmare", "hash": "26279973a2e46f04", "src": "db2@1.60.1.70291"}
+{"id": 444768, "field": "name", "en": "Avatar of Hakkar", "hash": "7ca118c026eb85b6", "src": "db2@1.60.1.70291"}
+{"id": 444781, "field": "name", "en": "Avatar of Hakkar", "hash": "7ca118c026eb85b6", "src": "db2@1.60.1.70291"}
+{"id": 444783, "field": "name", "en": "Avatar of Hakkar", "hash": "7ca118c026eb85b6", "src": "db2@1.60.1.70291"}
+{"id": 444812, "field": "name", "en": "Avatar of Hakkar", "hash": "7ca118c026eb85b6", "src": "db2@1.60.1.70291"}
+{"id": 444816, "field": "name", "en": "Avatar of Hakkar", "hash": "7ca118c026eb85b6", "src": "db2@1.60.1.70291"}
+{"id": 444831, "field": "name", "en": "Tamed Pet Passive (DND)", "hash": "7127429cf58bb8b7", "src": "db2@1.60.1.70291"}
+{"id": 444844, "field": "name", "en": "Create Duskwood Field Report", "hash": "ac0b63d072047999", "src": "db2@1.60.1.70291"}
+{"id": 444890, "field": "name", "en": "S03 - Flag Tracking Quest - Paladin 50 Quest -  Spoken to Aeonas in Felwood (DNT", "hash": "8294e8b4a686cbf5", "src": "db2@1.60.1.70291"}
+{"id": 444891, "field": "name", "en": "S03 - Flag Tracking Quest - Paladin 50 Quest -  Spoken to Gregory in Felwood (DNT", "hash": "ff2b6026375dc7ad", "src": "db2@1.60.1.70291"}
+{"id": 444892, "field": "name", "en": "Deathly Chill", "hash": "9bfae3234e02439c", "src": "db2@1.60.1.70291"}
+{"id": 444892, "field": "description", "en": "You are siezed by darkness!", "hash": "c9acf240cb7b9d27", "src": "db2@1.60.1.70291"}
+{"id": 444892, "field": "aura", "en": "You are incapacitated by a deathly chill! Unable to move or perform actions.", "hash": "34b9971b063b347b", "src": "db2@1.60.1.70291"}
+{"id": 444893, "field": "name", "en": "Shadow Ritual", "hash": "509ac249e82734bb", "src": "db2@1.60.1.70291"}
+{"id": 444894, "field": "name", "en": "Holy Shock", "hash": "c5a021f4a09402c9", "src": "db2@1.60.1.70291"}
+{"id": 444894, "field": "description", "en": "A blast of Holy Power.", "hash": "093191fd3267704d", "src": "db2@1.60.1.70291"}
+{"id": 444895, "field": "name", "en": "Holy Smite", "hash": "c64a1c724bcc4e5c", "src": "db2@1.60.1.70291"}
+{"id": 444895, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70291"}
+{"id": 444904, "field": "name", "en": "Bloody Tears", "hash": "c1c6f878a1af8d10", "src": "db2@1.60.1.70291"}
+{"id": 444906, "field": "name", "en": "Bloody Tears", "hash": "c1c6f878a1af8d10", "src": "db2@1.60.1.70291"}
+{"id": 444935, "field": "name", "en": "Parasomnia", "hash": "a816fc140f941998", "src": "db2@1.60.1.70291"}
+{"id": 444935, "field": "description", "en": "Teleports you to another area engulfed in nightmare.", "hash": "4bb59a854e4b3d79", "src": "db2@1.60.1.70291"}
+{"id": 444938, "field": "name", "en": "Parasomnia", "hash": "a816fc140f941998", "src": "db2@1.60.1.70291"}
+{"id": 444938, "field": "description", "en": "Submerge yourself in nightmare. ", "hash": "a9de2ad7ca25060a", "src": "db2@1.60.1.70291"}
+{"id": 444938, "field": "aura", "en": "Submerged in nightmare.", "hash": "6dee469596315ee9", "src": "db2@1.60.1.70291"}
+{"id": 444960, "field": "name", "en": "Summon Loro", "hash": "869ac6d9b0379f05", "src": "db2@1.60.1.70291"}
+{"id": 444961, "field": "name", "en": "Summon Hukku", "hash": "9bc8e3e756213462", "src": "db2@1.60.1.70291"}
+{"id": 444962, "field": "name", "en": "Summon Zul'Lor", "hash": "caad6cf74c91dad2", "src": "db2@1.60.1.70291"}
+{"id": 444963, "field": "name", "en": "Summon Mijan", "hash": "f1f1880a0bdcbecc", "src": "db2@1.60.1.70291"}
+{"id": 444964, "field": "name", "en": "Summon Zolo", "hash": "887b02416be63839", "src": "db2@1.60.1.70291"}
+{"id": 444973, "field": "name", "en": "Statue Empowerment", "hash": "f8b06f36658674b6", "src": "db2@1.60.1.70291"}
+{"id": 444975, "field": "name", "en": "Statue Empowerment", "hash": "f8b06f36658674b6", "src": "db2@1.60.1.70291"}
+{"id": 444987, "field": "name", "en": "Statue Destruction", "hash": "c0273cde105553d9", "src": "db2@1.60.1.70291"}
+{"id": 444991, "field": "name", "en": "Statue Destruction", "hash": "c0273cde105553d9", "src": "db2@1.60.1.70291"}
+{"id": 444996, "field": "name", "en": "Pillars of Might", "hash": "39e3fa5ea5616dcc", "src": "db2@1.60.1.70291"}

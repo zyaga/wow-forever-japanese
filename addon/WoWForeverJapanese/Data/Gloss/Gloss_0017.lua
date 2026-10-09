@@ -343,7 +343,6 @@ WFJ.Data.add("gloss", {
   [17340] = "つい先ほど\tついさきほど\tjust recently",
   [17341] = "つい先ほど\tついさきほど\tmoments ago",
   [17342] = "つい先ほど\tついさきほど\tnot long ago",
-  [17343] = "つい先日\tついせんじつ\tnot long ago",
   [17344] = "つい先日\tついせんじつ\trecently (just the other day)",
   [17345] = "つい最近\tついさいきん\tjust recently",
   [17346] = "つい最近\tついさいきん\tnot too long ago",

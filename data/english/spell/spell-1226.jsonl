@@ -1,224 +1,224 @@
-{"id": 1226001, "field": "name", "en": "Tinker: Magnetic Displacement", "hash": "460a4bee692386a4", "src": "db2@1.60.1.70245"}
-{"id": 1226001, "field": "description", "en": "$@spelldesc1226007", "hash": "84421a5fd96ae812", "src": "db2@1.60.1.70245"}
-{"id": 1226007, "field": "name", "en": "Tinker: Magnetic Displacement", "hash": "460a4bee692386a4", "src": "db2@1.60.1.70245"}
-{"id": 1226007, "field": "description", "en": "Disrupt a magnetic field between you and your nearby enemy target, knocking you both away.\r\n\r\nCan only affect targets up to $s1 levels higher than you. Some targets cannot be displaced. Targets can only be affected by this effect once every $1226045d.", "hash": "f3b3d2c1e4113fbe", "src": "db2@1.60.1.70245"}
-{"id": 1226013, "field": "name", "en": "Tinker: Magnetic Displacement", "hash": "460a4bee692386a4", "src": "db2@1.60.1.70245"}
-{"id": 1226013, "field": "description", "en": "$@spelldesc1226007", "hash": "84421a5fd96ae812", "src": "db2@1.60.1.70245"}
-{"id": 1226022, "field": "name", "en": "Tinker: Magnetic Displacement", "hash": "460a4bee692386a4", "src": "db2@1.60.1.70245"}
-{"id": 1226022, "field": "description", "en": "$@spelldesc1226007", "hash": "84421a5fd96ae812", "src": "db2@1.60.1.70245"}
-{"id": 1226032, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Restoration 2P Bonus", "hash": "b87b422ed494db42", "src": "db2@1.60.1.70245"}
-{"id": 1226032, "field": "description", "en": "Each time your Lifebloom heals a target, it has a $h% chance to make your next Healing Touch, Nourish, or Regrowth within $1226035d instant cast.", "hash": "ffe8670069630065", "src": "db2@1.60.1.70245"}
-{"id": 1226035, "field": "name", "en": "Swiftbloom", "hash": "784b7e48ec988d86", "src": "db2@1.60.1.70245"}
-{"id": 1226035, "field": "description", "en": "Reduces the cast time of your next Healing Touch, Regrowth, or Nourish by $s1%.", "hash": "240482bc1c72a3d6", "src": "db2@1.60.1.70245"}
-{"id": 1226035, "field": "aura", "en": "Cast time of your next Healing Touch, Regrowth, or Nourish reduced by $s1%.", "hash": "3ab69cad861907ed", "src": "db2@1.60.1.70245"}
-{"id": 1226038, "field": "name", "en": "Rejuvenating", "hash": "89ec42821b7bdf6d", "src": "db2@1.60.1.70245"}
-{"id": 1226038, "field": "description", "en": "Reduces the cast time of your next Healing Touch, Regrowth, or Nourish by $s1%.", "hash": "240482bc1c72a3d6", "src": "db2@1.60.1.70245"}
-{"id": 1226038, "field": "aura", "en": "Healing received from this Rejuvenation's owner is increased by $s1%.", "hash": "cf0f5f9e3a8ea9f1", "src": "db2@1.60.1.70245"}
-{"id": 1226040, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Restoration 4P Bonus", "hash": "a75e47b1bf66e729", "src": "db2@1.60.1.70245"}
-{"id": 1226040, "field": "description", "en": "Targets with your active Rejuvenation Rank 10 or Rank 11 receive $1226038s1% increased healing from your spells.", "hash": "58ef5859056ca51c", "src": "db2@1.60.1.70245"}
-{"id": 1226044, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Restoration 6P Bonus", "hash": "96414d34aa38f310", "src": "db2@1.60.1.70245"}
-{"id": 1226044, "field": "description", "en": "Your non-periodic heals from Regrowth Rank 8 or Rank 9 have a $h% chance to spread your Rejuvenation on that target to all members of the target's party within $1226046a1 yards not already affected by your Rejuvenation.", "hash": "51b44b42c50c3cfd", "src": "db2@1.60.1.70245"}
-{"id": 1226045, "field": "name", "en": "Demagnetized", "hash": "c5a50648df2762eb", "src": "db2@1.60.1.70245"}
-{"id": 1226045, "field": "description", "en": "$@spelldesc1226007", "hash": "84421a5fd96ae812", "src": "db2@1.60.1.70245"}
-{"id": 1226045, "field": "aura", "en": "An enemy recently disrupted your magnetic field so it cannot be used against you for a short while.", "hash": "57c0ecaf1967b85c", "src": "db2@1.60.1.70245"}
-{"id": 1226046, "field": "name", "en": "Wild Rejuvenation", "hash": "e861232b0c0a16bb", "src": "db2@1.60.1.70245"}
-{"id": 1226092, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Balance 2P Bonus", "hash": "0c4db8e4eb4c7a8c", "src": "db2@1.60.1.70245"}
-{"id": 1226092, "field": "description", "en": "Your Starfire deals $s1% more damage to targets with your Moonfire, and your Wrath deals $s2% more damage to targets with your Sunfire.", "hash": "e8d829cac6a8d345", "src": "db2@1.60.1.70245"}
-{"id": 1226103, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Balance 4P Bonus", "hash": "fb30be62d61e8673", "src": "db2@1.60.1.70245"}
-{"id": 1226103, "field": "description", "en": "Your Starsurge now increases the damage of your next ${$m1+1} Starfires.", "hash": "2dc919bb54a97bfb", "src": "db2@1.60.1.70245"}
-{"id": 1226105, "field": "name", "en": "Sunsurge", "hash": "54c60c03c07af7d5", "src": "db2@1.60.1.70245"}
-{"id": 1226105, "field": "aura", "en": "Increases damage done by your next Wrath by $s1%.", "hash": "5b9f4263c3514c13", "src": "db2@1.60.1.70245"}
-{"id": 1226106, "field": "name", "en": "Moonsurge", "hash": "829737f1ad6e93cd", "src": "db2@1.60.1.70245"}
-{"id": 1226106, "field": "aura", "en": "Increases damage done by your next Starfire by $s1%.", "hash": "7bbe5aa0446e5aad", "src": "db2@1.60.1.70245"}
-{"id": 1226108, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Balance 6P Bonus", "hash": "ea13c3e5c0f0925a", "src": "db2@1.60.1.70245"}
-{"id": 1226108, "field": "description", "en": "Each time your Sunfire deals periodic damage, you gain $1226105s1% increased damage to your next Wrath, stacking up to $1226105u times. Each time your Moonfire deals periodic damage, you gain $1226106s1% increased damage to your next Starfire, stacking up to $1226106u times. These bonuses do not apply to Starsurge.", "hash": "308c40d326b6951f", "src": "db2@1.60.1.70245"}
-{"id": 1226109, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Feral 2P Bonus", "hash": "50fd871e96e9fad8", "src": "db2@1.60.1.70245"}
-{"id": 1226109, "field": "description", "en": "You gain $1226113s1 Energy each time Rake or Rip deals periodic damage.", "hash": "317e6f05ed31757b", "src": "db2@1.60.1.70245"}
-{"id": 1226113, "field": "name", "en": "Scent of Blood", "hash": "f13a64ab36835d7e", "src": "db2@1.60.1.70245"}
-{"id": 1226116, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Feral 4P Bonus", "hash": "3fe08ca181bc06bf", "src": "db2@1.60.1.70245"}
-{"id": 1226116, "field": "description", "en": "Multiplies the damage bonus from Tiger's Fury by ${1+$m2/100}.0.", "hash": "78baa10189d369b6", "src": "db2@1.60.1.70245"}
-{"id": 1226118, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Feral 6P Bonus Trigger", "hash": "a65fca7f3e37d09d", "src": "db2@1.60.1.70245"}
-{"id": 1226119, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Feral 6P Bonus", "hash": "2ec392246c8e12a6", "src": "db2@1.60.1.70245"}
-{"id": 1226119, "field": "description", "en": "Your Finishing Moves have a $s2% chance per combo point spent to trigger Clearcasting and extend the duration of your active Tiger's Fury by $1226118s1 sec.", "hash": "0bb9bdeb8ebaceb2", "src": "db2@1.60.1.70245"}
-{"id": 1226121, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Guardian 2P Bonus", "hash": "86d140bcee6ae0e0", "src": "db2@1.60.1.70245"}
-{"id": 1226121, "field": "description", "en": "Your melee critical strikes in Bear Form or Dire Bear Form grant you a shield lasting $410144d that absorbs Physical damage equal to $410144s1% of your Attack Power the next time you take Physical damage. Stacks up to $410144u times.", "hash": "6a8c7b34494fdba5", "src": "db2@1.60.1.70245"}
-{"id": 1226125, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Guardian 4P Bonus", "hash": "75b4463fd93cecc7", "src": "db2@1.60.1.70245"}
-{"id": 1226125, "field": "description", "en": "Increases the duration of your Berserk ability by ${$m1/1000} sec.", "hash": "80f97bb5873b1035", "src": "db2@1.60.1.70245"}
-{"id": 1226126, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Guardian 6P Bonus", "hash": "64974bc2c40ef8ae", "src": "db2@1.60.1.70245"}
-{"id": 1226126, "field": "description", "en": "You gain $1226127s1% increased attack speed for $1226127d every time you deal a critical strike.", "hash": "b0e96ef5bc98b1ba", "src": "db2@1.60.1.70245"}
-{"id": 1226127, "field": "name", "en": "Savage Flurry", "hash": "932a1baaecbac088", "src": "db2@1.60.1.70245"}
-{"id": 1226127, "field": "aura", "en": "Melee attack speed increased by $s1%.", "hash": "d471470cfe1c0fcc", "src": "db2@1.60.1.70245"}
-{"id": 1226132, "field": "name", "en": "S03 - Item - Scarlet Enclave - Hunter - Ranged 2P Bonus", "hash": "800f3a626c7acac0", "src": "db2@1.60.1.70245"}
-{"id": 1226132, "field": "description", "en": "Your Shots deal $s1% increased damage to targets afflicted with your Serpent Sting.", "hash": "2ccc126fe382e750", "src": "db2@1.60.1.70245"}
-{"id": 1226136, "field": "name", "en": "Wicked Shot", "hash": "ec0933029f16eda6", "src": "db2@1.60.1.70245"}
-{"id": 1226136, "field": "aura", "en": "Attack Power increased by $s1%.", "hash": "fe0a7d88fb252501", "src": "db2@1.60.1.70245"}
-{"id": 1226137, "field": "name", "en": "S03 - Item - Scarlet Enclave - Hunter - Ranged 4P Bonus", "hash": "6ef23fe5574cd6a7", "src": "db2@1.60.1.70245"}
-{"id": 1226137, "field": "description", "en": "Your ranged critical strikes increase your Attack Power by $1226136s1% for $1226136d.", "hash": "0dd02dbc51a0b0ed", "src": "db2@1.60.1.70245"}
-{"id": 1226138, "field": "name", "en": "S03 - Item - Scarlet Enclave - Hunter - Ranged 6P Bonus", "hash": "5dd54568421ee28e", "src": "db2@1.60.1.70245"}
-{"id": 1226138, "field": "description", "en": "Your Multi-Shot hits $s1 additional targets, and your Kill Shot and Chimera Shot hits increase the damage done by your next Multi-Shot cast within $1233451d by $s2%, stacking up to $1233451u times.", "hash": "88a55aa63a9f13ee", "src": "db2@1.60.1.70245"}
-{"id": 1226206, "field": "name", "en": "Tinkerbox", "hash": "f21ce290e96532b9", "src": "db2@1.60.1.70245"}
-{"id": 1226207, "field": "name", "en": "Tinkerbox: Teleport", "hash": "dac1878bf29d26e8", "src": "db2@1.60.1.70245"}
-{"id": 1226208, "field": "name", "en": "Tinkerbox: Nitro Boosts", "hash": "5d9e46a053e658c1", "src": "db2@1.60.1.70245"}
-{"id": 1226209, "field": "name", "en": "Tinkerbox: Magnetic Displacement", "hash": "36460cb58563adfd", "src": "db2@1.60.1.70245"}
-{"id": 1226210, "field": "name", "en": "Tinker: Teleport", "hash": "2b239a2d8a7fcb85", "src": "db2@1.60.1.70245"}
-{"id": 1226210, "field": "description", "en": "Augment your belt to give the following effect:\r\n\r\n$@spelldesc1225951\r\n\r\n$?pc138518[This enhancement is permanent and cannot be removed or replaced.][]", "hash": "2f36e00ddbad6b0a", "src": "db2@1.60.1.70245"}
-{"id": 1226211, "field": "name", "en": "Tinker: Nitro Boosts", "hash": "4ee9d4cd3fb45206", "src": "db2@1.60.1.70245"}
-{"id": 1226211, "field": "description", "en": "Augment your belt to give the following effect:\r\n\r\n$@spelldesc1225982\r\n\r\n$?pc138518[This enhancement is permanent and cannot be removed or replaced.][]", "hash": "aa21fad9f08a7f6f", "src": "db2@1.60.1.70245"}
-{"id": 1226212, "field": "name", "en": "Tinker: Magnetic Displacement", "hash": "460a4bee692386a4", "src": "db2@1.60.1.70245"}
-{"id": 1226212, "field": "description", "en": "Augment your belt to give the following effect:\r\n\r\n$@spelldesc1226001\r\n\r\n$?pc138518[This enhancement is permanent and cannot be removed or replaced.][]", "hash": "c1bfd040f416bd68", "src": "db2@1.60.1.70245"}
-{"id": 1226213, "field": "name", "en": "Semisafe Transporter: New Avalon", "hash": "26368482a10066a5", "src": "db2@1.60.1.70245"}
-{"id": 1226215, "field": "name", "en": "Semisafe Transporter: New Avalon", "hash": "26368482a10066a5", "src": "db2@1.60.1.70245"}
-{"id": 1226215, "field": "description", "en": "Throw caution to the wind and test a goblin's attempt at a teleportation device. Hopefully you will arrive at New Avalon in one piece.", "hash": "80d2cc129793081c", "src": "db2@1.60.1.70245"}
-{"id": 1226217, "field": "name", "en": "Semisafe Transporter: New Avalon", "hash": "26368482a10066a5", "src": "db2@1.60.1.70245"}
-{"id": 1226217, "field": "description", "en": "$@spelldesc1226215", "hash": "8442a0f2e15b8f73", "src": "db2@1.60.1.70245"}
-{"id": 1226218, "field": "name", "en": "Mark of Zeliek", "hash": "4b954d17d4e5bb72", "src": "db2@1.60.1.70245"}
-{"id": 1226218, "field": "aura", "en": "Additional damage taken from Mark of Zeliek.", "hash": "68fb058fa9119a42", "src": "db2@1.60.1.70245"}
-{"id": 1226219, "field": "name", "en": "Mark of Blaumeux", "hash": "7eb2225c60a69cdd", "src": "db2@1.60.1.70245"}
-{"id": 1226219, "field": "aura", "en": "Additional damage taken from Mark of Blaumeux.", "hash": "4f8d77beb7300546", "src": "db2@1.60.1.70245"}
-{"id": 1226220, "field": "name", "en": "Mark of Mograine", "hash": "6d80e12c2868db2e", "src": "db2@1.60.1.70245"}
-{"id": 1226220, "field": "aura", "en": "Additional damage taken from Mark of Mograine.", "hash": "83591c01ce742266", "src": "db2@1.60.1.70245"}
-{"id": 1226221, "field": "name", "en": "Mark of Korth'azz", "hash": "f7824d232535c4eb", "src": "db2@1.60.1.70245"}
-{"id": 1226221, "field": "aura", "en": "Additional damage taken from Mark of Korth'azz.", "hash": "49cfbbede9b206b2", "src": "db2@1.60.1.70245"}
-{"id": 1226282, "field": "name", "en": "Shadow Bolt", "hash": "ea2555140aa56399", "src": "db2@1.60.1.70245"}
-{"id": 1226282, "field": "description", "en": "Hurls a bolt of dark magic at an enemy, inflicting Shadow damage.", "hash": "42ce84488001b714", "src": "db2@1.60.1.70245"}
-{"id": 1226300, "field": "name", "en": "[DNT] Clear Charges", "hash": "a5e08a7d1a3d8b33", "src": "db2@1.60.1.70245"}
-{"id": 1226310, "field": "name", "en": "Acidic Burn", "hash": "940fa69f41756aaa", "src": "db2@1.60.1.70245"}
-{"id": 1226310, "field": "aura", "en": "Acid damage every $t1 sec.", "hash": "f0303063ca754c94", "src": "db2@1.60.1.70245"}
-{"id": 1226340, "field": "name", "en": "S03 - Item - Scarlet Enclave - Hunter - Melee 2P Bonus", "hash": "6621ce213a9d8d26", "src": "db2@1.60.1.70245"}
-{"id": 1226340, "field": "description", "en": "Your Strikes and Mongoose Bite deal $s1% increased damage to targets afflicted with your Serpent Sting or Wyvern Strike.", "hash": "18ac3d558f8c4646", "src": "db2@1.60.1.70245"}
-{"id": 1226343, "field": "name", "en": "Corrupted Vine", "hash": "6cb6f6d024b08ff2", "src": "db2@1.60.1.70245"}
-{"id": 1226350, "field": "name", "en": "Agitate Corrupted Vine", "hash": "1078df4f3e50f2f1", "src": "db2@1.60.1.70245"}
-{"id": 1226350, "field": "description", "en": "Use on a Corrupted Vine.", "hash": "02d7c631ad85fa28", "src": "db2@1.60.1.70245"}
-{"id": 1226357, "field": "name", "en": "Wicked Fast", "hash": "ea496ef055062e79", "src": "db2@1.60.1.70245"}
-{"id": 1226357, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70245"}
-{"id": 1226359, "field": "name", "en": "S03 - Item - Scarlet Enclave - Hunter - Melee 4P Bonus", "hash": "5504d3a4256f990d", "src": "db2@1.60.1.70245"}
-{"id": 1226359, "field": "description", "en": "Your melee critical strikes increase your attack speed by $1226357s1% for $1226357d.", "hash": "39d2c346e757ba2b", "src": "db2@1.60.1.70245"}
-{"id": 1226365, "field": "name", "en": "S03 - Item - Scarlet Enclave - Hunter - Melee 6P Bonus", "hash": "43e7d9271041a4f4", "src": "db2@1.60.1.70245"}
-{"id": 1226365, "field": "description", "en": "Increases the bonus damage from Raptor Fury by an additional $s1% per stack.", "hash": "cda81970cb8b7b16", "src": "db2@1.60.1.70245"}
-{"id": 1226369, "field": "name", "en": "(DNT) Empower Quarter Visuals", "hash": "ff5920f29fd536d6", "src": "db2@1.60.1.70245"}
-{"id": 1226372, "field": "name", "en": "(DNT) Empower Quarter Visuals", "hash": "ff5920f29fd536d6", "src": "db2@1.60.1.70245"}
-{"id": 1226373, "field": "name", "en": "(DNT) Empower Quarter Visuals", "hash": "ff5920f29fd536d6", "src": "db2@1.60.1.70245"}
-{"id": 1226377, "field": "name", "en": "Timey-Bearimy", "hash": "d9ca812bf3f044d4", "src": "db2@1.60.1.70245"}
-{"id": 1226377, "field": "aura", "en": "Healing from casting Mage increased by $s1%.", "hash": "2d491f2eb92641c0", "src": "db2@1.60.1.70245"}
-{"id": 1226378, "field": "name", "en": "S03 - Item - Scarlet Enclave - Mage - Healer 6P Bonus", "hash": "077d3d3ec1a065db", "src": "db2@1.60.1.70245"}
-{"id": 1226378, "field": "description", "en": "Reduces the cooldown of your Arcane Power by ${$m1/-1000} sec and increases its duration by ${$m2/1000} sec. While Arcane Power is active, your chance to gain Arcane Tunneling is increased by $s3% and each cast of Arcane Blast reduces the remaining cooldown on Mass Regeneration by ${$m4/1000}.1 sec.", "hash": "a68805e995f37bab", "src": "db2@1.60.1.70245"}
-{"id": 1226388, "field": "name", "en": "Apple", "hash": "841aca0e33b03933", "src": "db2@1.60.1.70245"}
-{"id": 1226396, "field": "name", "en": "Apple Scope", "hash": "d130d0391a2e5a60", "src": "db2@1.60.1.70245"}
-{"id": 1226396, "field": "description", "en": "Allows you to look far into the distance in the pursuit of apples.", "hash": "e9331d6c5730c671", "src": "db2@1.60.1.70245"}
-{"id": 1226396, "field": "aura", "en": "Spying on apples.", "hash": "2d890a31d5df7a3a", "src": "db2@1.60.1.70245"}
-{"id": 1226402, "field": "name", "en": "Grab Apple", "hash": "a1d8ddfec603bd2b", "src": "db2@1.60.1.70245"}
-{"id": 1226402, "field": "description", "en": "Steal an apple from a safe distance.", "hash": "ceded9ff46edd375", "src": "db2@1.60.1.70245"}
-{"id": 1226406, "field": "name", "en": "Arcane Tunneling", "hash": "5d973727b807a0a3", "src": "db2@1.60.1.70245"}
-{"id": 1226406, "field": "aura", "en": "Your next Arcane damage or healing spell will not consume your Arcane Blast effect.", "hash": "3c528f9104df45c3", "src": "db2@1.60.1.70245"}
-{"id": 1226407, "field": "name", "en": "S03 - Item - Scarlet Enclave - Mage - Healer 2P Bonus", "hash": "29b73238ebfc4e0d", "src": "db2@1.60.1.70245"}
-{"id": 1226407, "field": "description", "en": "Your Arcane Blast has a $s2% chance to cause Arcane Tunneling. Arcane Tunneling prevents your Arcane Blast effect from being consumed by the next other Arcane damage spell you cast. In addition, activating Arcane Power resets the cooldown on your Mass Regeneration. ", "hash": "654139903eb733c0", "src": "db2@1.60.1.70245"}
-{"id": 1226414, "field": "name", "en": "Temporal Anchor", "hash": "f9252c7cfdaf62af", "src": "db2@1.60.1.70245"}
-{"id": 1226414, "field": "aura", "en": "Damage taken decreased by $s1%.", "hash": "0a59333540c0b979", "src": "db2@1.60.1.70245"}
-{"id": 1226415, "field": "name", "en": "S03 - Item - Scarlet Enclave - Mage - Healer 4P Bonus", "hash": "189a37bbd6ce59f4", "src": "db2@1.60.1.70245"}
-{"id": 1226415, "field": "description", "en": "Rewind Time also reduces all damage taken by your target by $1226414s1% for $1226414d.", "hash": "ac70f14112a5763d", "src": "db2@1.60.1.70245"}
-{"id": 1226423, "field": "name", "en": "S03 - Item - Scarlet Enclave - Mage - Damage 2P Bonus", "hash": "46a5004eb7089ba8", "src": "db2@1.60.1.70245"}
-{"id": 1226423, "field": "description", "en": "Your Living Bomb now deals damage every $s1 sec, and will detonate if the target dies. In addition, the effect of Glaciate from the rune of Ice Lance now stacks up to $s2 times, and Spellfrost Bolt grants $s3 stacks each time it hits.", "hash": "94a0866d721cccd0", "src": "db2@1.60.1.70245"}
-{"id": 1226432, "field": "name", "en": "S03 - Item - Scarlet Enclave - Mage - Damage 6P Bonus", "hash": "246b0b548cacb376", "src": "db2@1.60.1.70245"}
-{"id": 1226432, "field": "description", "en": "Reduces the cooldown on your Frozen Orb spell by ${$m4/-1000} sec. Each time Glaciate is consumed, the cooldown on your Deep Freeze is reduced by ${$m5/1000}.1 sec per stack consumed. Reduces the cooldown on Fire Blast by ${$m2/-1000} sec and Fire Blast now refreshes the duration of your Living Bomb on the target.", "hash": "02e5e2639800c4b5", "src": "db2@1.60.1.70245"}
-{"id": 1226446, "field": "name", "en": "S03 - Item - Scarlet Enclave - Mage - Damage 4P Bonus", "hash": "358805d1a1daa78f", "src": "db2@1.60.1.70245"}
-{"id": 1226446, "field": "description", "en": "Casting Deep Freeze increases the remaining duration of your Icy Veins spell by ${$m1/1000} sec. Casting Pyroblast cancels $s2 $lstack:stacks; of the effect from your Balefire Bolt.", "hash": "8e5bb0cbe3a62a16", "src": "db2@1.60.1.70245"}
-{"id": 1226451, "field": "name", "en": "Emergency", "hash": "a550a98f0f4d8b38", "src": "db2@1.60.1.70245"}
-{"id": 1226451, "field": "aura", "en": "Spellcasting speed increased by $s~1%.\r\n\r\nGlobal Cooldown of your Divine Light, Holy Light, Flash of Light, and Holy Shock reduced by ${$m~2/-1000}.1 seconds.", "hash": "16d3929f49e1dde4", "src": "db2@1.60.1.70245"}
-{"id": 1226452, "field": "name", "en": "S03 - Item - Scarlet Enclave - Paladin - Holy 2P Bonus", "hash": "6b26acefa771d08e", "src": "db2@1.60.1.70245"}
-{"id": 1226452, "field": "description", "en": "Lay on Hands grants you $1226451s1% Spell Haste for $1226451d and reduces the Global Cooldown of your next $1226451n Divine Light, Holy Light, Flash of Light, or Holy Shock spells by ${$1226451m2/-1000}.1 seconds.", "hash": "1169d16365a29322", "src": "db2@1.60.1.70245"}
-{"id": 1226454, "field": "name", "en": "S03 - Item - Scarlet Enclave - Paladin - Holy 4P Bonus", "hash": "5a09b2729243dc75", "src": "db2@1.60.1.70245"}
-{"id": 1226454, "field": "description", "en": "Your Beacon of Light now also triggers when you heal your Beacon of Light target, but at $s1% reduced effectiveness.", "hash": "aed4710971b59d5e", "src": "db2@1.60.1.70245"}
-{"id": 1226455, "field": "name", "en": "Charity", "hash": "2e97e4f4965d55e3", "src": "db2@1.60.1.70245"}
-{"id": 1226459, "field": "name", "en": "S03 - Item - Scarlet Enclave - Paladin - Holy 6P Bonus", "hash": "48ecb7f57d15e85c", "src": "db2@1.60.1.70245"}
-{"id": 1226459, "field": "description", "en": "An additional $s1% of your healing is transferred to your Beacon of Light target.", "hash": "68f11c7786e0eb8f", "src": "db2@1.60.1.70245"}
-{"id": 1226460, "field": "name", "en": "S03 - Item - Scarlet Enclave - Paladin - Retribution 2P Bonus", "hash": "28463badf8b0f1a5", "src": "db2@1.60.1.70245"}
-{"id": 1226460, "field": "description", "en": "While you have a two-handed weapon equipped, Crusader Strike and Exorcism grant you Holy Power, increasing all Holy damage you deal by $1226461s1%, stacking up to $1226461u times.", "hash": "ab6bcd9e693fc20a", "src": "db2@1.60.1.70245"}
-{"id": 1226461, "field": "name", "en": "Holy Power", "hash": "91e93793016e8e77", "src": "db2@1.60.1.70245"}
-{"id": 1226461, "field": "aura", "en": "Increases all Holy damage you deal by $s1%.", "hash": "e7943df960fcf3b5", "src": "db2@1.60.1.70245"}
-{"id": 1226462, "field": "name", "en": "S03 - Item - Scarlet Enclave - Paladin - Retribution 4P Bonus", "hash": "17294130e382fd8c", "src": "db2@1.60.1.70245"}
-{"id": 1226462, "field": "description", "en": "Divine Storm, Holy Shock, and Holy Wrath consume all your Holy Power, dealing $s1% increased damage per Holy Power you have accumulated, $s2% effective against player controlled targets.", "hash": "add6ae7dfa2c98e1", "src": "db2@1.60.1.70245"}
-{"id": 1226463, "field": "name", "en": "S03 - Item - Scarlet Enclave - Paladin - Retribution 6P Bonus", "hash": "060c46b3ce550973", "src": "db2@1.60.1.70245"}
-{"id": 1226463, "field": "description", "en": "Consuming Holy Power increases your Attack Power by $1226464s1% per Holy Power consumed for $1226464d.", "hash": "82e61b297c5b2ae5", "src": "db2@1.60.1.70245"}
-{"id": 1226464, "field": "name", "en": "Templar", "hash": "0e499227b4d4be83", "src": "db2@1.60.1.70245"}
-{"id": 1226464, "field": "aura", "en": "Increases Attack Power by $w1%.", "hash": "0dd3c23b90e95209", "src": "db2@1.60.1.70245"}
-{"id": 1226466, "field": "name", "en": "Righteous Shield", "hash": "9efc46d762095fab", "src": "db2@1.60.1.70245"}
-{"id": 1226466, "field": "aura", "en": "Increases Block Value by $s1%.", "hash": "6f336ed69ae8b28e", "src": "db2@1.60.1.70245"}
-{"id": 1226467, "field": "name", "en": "S03 - Item - Scarlet Enclave - Paladin - Protection 2P Bonus", "hash": "b84f5f8c4f7eef44", "src": "db2@1.60.1.70245"}
-{"id": 1226467, "field": "description", "en": "Shield of Righteousness also increases your Block Value by $1226466s1% for $1226466d.", "hash": "5e3d3c30487dff38", "src": "db2@1.60.1.70245"}
-{"id": 1226477, "field": "name", "en": "S03 - Item - Scarlet Enclave - Paladin - Protection 4P Bonus", "hash": "a732650f3a50fb2b", "src": "db2@1.60.1.70245"}
-{"id": 1226477, "field": "description", "en": "Shield of Righteousness deals percentage increased damage equal to your Block Chance.", "hash": "bd9301923a272ba9", "src": "db2@1.60.1.70245"}
-{"id": 1226479, "field": "name", "en": "S03 - Item - Scarlet Enclave - Paladin - Protection 6P Bonus", "hash": "96156a9225230712", "src": "db2@1.60.1.70245"}
-{"id": 1226479, "field": "description", "en": "Your Avenging Wrath no longer triggers Forbearance, lasts ${$m1/1000} sec longer, and increases your Block Value by $1233525s1%.", "hash": "c623b96843665795", "src": "db2@1.60.1.70245"}
-{"id": 1226480, "field": "name", "en": "Righteous Block", "hash": "c1d956be408c6872", "src": "db2@1.60.1.70245"}
-{"id": 1226499, "field": "name", "en": "S03 - Item - Scarlet Enclave - Priest - Healer 2P Bonus", "hash": "d8f5e13bf002894f", "src": "db2@1.60.1.70245"}
-{"id": 1226499, "field": "description", "en": "Reduces the cooldown of Power Word: Barrier by ${$m2/-1000} sec and Surge of Light now also makes Prayer of Healing and Greater Heal instant cast.", "hash": "c045dc38680b63c2", "src": "db2@1.60.1.70245"}
-{"id": 1226500, "field": "name", "en": "Absolution", "hash": "0eda479fbbf711b5", "src": "db2@1.60.1.70245"}
-{"id": 1226500, "field": "aura", "en": "Cast time of your next Lesser Heal, Heal, Greater Heal, Flash Heal, Binding Heal, or Prayer of Healing spell reduced by $s1%.", "hash": "b68354a5f7f91dfb", "src": "db2@1.60.1.70245"}
-{"id": 1226501, "field": "name", "en": "S03 - Item - Scarlet Enclave - Priest - Healer 6P Bonus", "hash": "b6bbec41c5a6a11d", "src": "db2@1.60.1.70245"}
-{"id": 1226501, "field": "description", "en": "Increases the healing of Circle of Healing and Penance by $s3%. Additionally, the cooldown of your Spirit of the Redeemer is reduced by ${$m1/-1000} sec and your healing is increased by $s2% while your Spirit of the Redeemer is active.", "hash": "d0a9b1c31483a6b1", "src": "db2@1.60.1.70245"}
-{"id": 1226502, "field": "name", "en": "Devotion", "hash": "9fbb1454e56c47f3", "src": "db2@1.60.1.70245"}
-{"id": 1226502, "field": "aura", "en": "Healing ${$w1/2} damage every $t1 seconds.", "hash": "9b5d58881d7c9ee5", "src": "db2@1.60.1.70245"}
-{"id": 1226503, "field": "name", "en": "Overcharged", "hash": "99013bf9cd25d749", "src": "db2@1.60.1.70245"}
-{"id": 1226504, "field": "name", "en": "Devotion", "hash": "9fbb1454e56c47f3", "src": "db2@1.60.1.70245"}
-{"id": 1226529, "field": "name", "en": "Fish Barrel", "hash": "c50670a0d24179e5", "src": "db2@1.60.1.70245"}
-{"id": 1226529, "field": "aura", "en": "This barrel still has fish!", "hash": "6d9b69d4982249dc", "src": "db2@1.60.1.70245"}
-{"id": 1226534, "field": "name", "en": "Fling Fish", "hash": "abd59a16f3fa4e9f", "src": "db2@1.60.1.70245"}
-{"id": 1226537, "field": "name", "en": "Summon Fish", "hash": "85cb637d47f6702c", "src": "db2@1.60.1.70245"}
-{"id": 1226565, "field": "name", "en": "S03 - Item - Scarlet Enclave - Priest - Healer 4P Bonus", "hash": "c7d8e6bedad49536", "src": "db2@1.60.1.70245"}
-{"id": 1226565, "field": "description", "en": "Power Word: Shield casts instantly heal the target for $s1% of the absorb value and Serendipity empowered spells have their healing increased by $s2% per stack.", "hash": "957edc9f7705716a", "src": "db2@1.60.1.70245"}
-{"id": 1226566, "field": "name", "en": "Power Word: Shield", "hash": "08517dab040e07b6", "src": "db2@1.60.1.70245"}
-{"id": 1226585, "field": "name", "en": "S03 - Item - Scarlet Enclave - Priest - Shadow 2P Bonus", "hash": "887107db6ba92060", "src": "db2@1.60.1.70245"}
-{"id": 1226585, "field": "description", "en": "Your Mind Flay and Mind Sear no longer lose duration from taking damage during their channel. In addition, they deal $s2% increased damage per other periodic Shadow effect you have on the target, up to a maximum increase of ${$m2*3}%.", "hash": "030c250c4fc4cc04", "src": "db2@1.60.1.70245"}
-{"id": 1226589, "field": "name", "en": "Shadow Word: Pain", "hash": "56589cc85ee98b42", "src": "db2@1.60.1.70245"}
-{"id": 1226591, "field": "name", "en": "S03 - Item - Scarlet Enclave - Priest - Shadow 4P Bonus", "hash": "77540d5e567b2c47", "src": "db2@1.60.1.70245"}
-{"id": 1226591, "field": "description", "en": "Your Mind Blast deals $s1% reduced threat, and gains $s2% damage increase from each stack of Mind Spike on the target.", "hash": "2719cceb7f923649", "src": "db2@1.60.1.70245"}
-{"id": 1226595, "field": "name", "en": "S03 - Item - Scarlet Enclave - Priest - Shadow 6P Bonus", "hash": "663712e1414d382e", "src": "db2@1.60.1.70245"}
-{"id": 1226595, "field": "description", "en": "Damage done by your Mind Flay now increases the longer you channel the spell. Each time it deals damage, subsequent damage will increase by $s1%. This resets on each new channel.", "hash": "67a4aa9c834de5fb", "src": "db2@1.60.1.70245"}
-{"id": 1226689, "field": "name", "en": "Scarlet Quiver", "hash": "8ad0bc3aba4b2a4b", "src": "db2@1.60.1.70245"}
-{"id": 1226690, "field": "name", "en": "Scarlet Ammo Pouch", "hash": "67baf1a0e1ac4c8c", "src": "db2@1.60.1.70245"}
-{"id": 1226739, "field": "name", "en": "Undead Slaying", "hash": "5c2c0413f79b9e47", "src": "db2@1.60.1.70245"}
-{"id": 1226739, "field": "aura", "en": "Damage and critical damage done to Undead increased by $s1%.", "hash": "d6f5d1053789e3f5", "src": "db2@1.60.1.70245"}
-{"id": 1226780, "field": "name", "en": "(DNT) Sword With Stone - Stone Visual", "hash": "e2afd5efab1acdf8", "src": "db2@1.60.1.70245"}
-{"id": 1226800, "field": "name", "en": "Crate Item", "hash": "37bbc0231c2e6ff3", "src": "db2@1.60.1.70245"}
-{"id": 1226800, "field": "description", "en": "Stash a piece of crafted Scarlet Crusade equipment in the crate. This will permanently destroy the item.", "hash": "ef045547fc2d03b4", "src": "db2@1.60.1.70245"}
-{"id": 1226808, "field": "name", "en": "Food", "hash": "097e827a631fee04", "src": "db2@1.60.1.70245"}
-{"id": 1226808, "field": "description", "en": "Restores $s1% of your health and mana per second for $d.  Must remain seated while eating.", "hash": "9265d95ae6d4902d", "src": "db2@1.60.1.70245"}
-{"id": 1226808, "field": "aura", "en": "Restores $s1% of your health and mana per second.", "hash": "68f162743673b582", "src": "db2@1.60.1.70245"}
-{"id": 1226810, "field": "name", "en": "Boulder on your Shoulder", "hash": "20e4557b0bdcee4d", "src": "db2@1.60.1.70245"}
-{"id": 1226810, "field": "description", "en": "Movement speed reduced by $s1%.", "hash": "08fe36e785e78519", "src": "db2@1.60.1.70245"}
-{"id": 1226814, "field": "name", "en": "Enriched Manna Biscuit", "hash": "77dd71d92909851c", "src": "db2@1.60.1.70245"}
-{"id": 1226814, "field": "description", "en": "Restores $25695o1 health and $25696o2 mana over $25695d. $?s446847[Tastes even better inside of Naxxramas, restoring $1226808o1% health and $1226808o2% mana over $1226808d instead.][] Must remain seated while eating.", "hash": "dceec844d92dafb2", "src": "db2@1.60.1.70245"}
-{"id": 1226814, "field": "aura", "en": "Restores $/5;s1 health and $/5;s2 mana per second.", "hash": "41faa5202f91ed91", "src": "db2@1.60.1.70245"}
-{"id": 1226833, "field": "name", "en": "(DNT) Transform Caladboulder", "hash": "3ee19143dc75d4c2", "src": "db2@1.60.1.70245"}
-{"id": 1226843, "field": "name", "en": "S03 - Item - Scarlet Enclave - Rogue - Damage 2P Bonus", "hash": "08cb32189c7b7547", "src": "db2@1.60.1.70245"}
-{"id": 1226843, "field": "description", "en": "While Just a Flesh Wound is not active, your Backstab, Sinister Strike, Saber Slash, and Mutilate deal $s1% increased damage per your active Poison or Bleed effect afflicting the target, up to a maximum increase of $m2%.", "hash": "d71a835ff6c2bd89", "src": "db2@1.60.1.70245"}
-{"id": 1226868, "field": "name", "en": "Combo!", "hash": "7ec6c57cb90f7222", "src": "db2@1.60.1.70245"}
-{"id": 1226869, "field": "name", "en": "S03 - Item - Scarlet Enclave - Rogue - Damage 4P Bonus", "hash": "f7ae3796874d812e", "src": "db2@1.60.1.70245"}
-{"id": 1226869, "field": "description", "en": "Your Poison and autoattack critical strikes have a $h% chance to grant you a combo point.", "hash": "eca306998aad91e0", "src": "db2@1.60.1.70245"}
-{"id": 1226871, "field": "name", "en": "S03 - Item - Scarlet Enclave - Rogue - Damage 6P Bonus", "hash": "e6913d19721f8d15", "src": "db2@1.60.1.70245"}
-{"id": 1226871, "field": "description", "en": "Increases Ambush, Eviscerate, Crimson Tempest, and Envenom damage by $s1%.", "hash": "0fa58f03af70673e", "src": "db2@1.60.1.70245"}
-{"id": 1226874, "field": "name", "en": "S03 - Item - Scarlet Enclave - Rogue - Tank 2P Bonus", "hash": "e8fa8f8f809da5b4", "src": "db2@1.60.1.70245"}
-{"id": 1226874, "field": "description", "en": "Your stacks of Rolling with the Punches also increase all damage you deal by $1234069s1%.", "hash": "31fa5d4319bc5431", "src": "db2@1.60.1.70245"}
-{"id": 1226882, "field": "name", "en": "S03 - Item - Scarlet Enclave - Rogue - Tank 4P Bonus", "hash": "d7dd95126b6fb19b", "src": "db2@1.60.1.70245"}
-{"id": 1226882, "field": "description", "en": "Your Blade Flurry now also strikes a third target and increases your attack speed by an additional $s1%. In addition, each combo point you spend reduces the remaining cooldown on your Blade Flurry by ${$m2/1000}.1 sec.", "hash": "59329a26cc075778", "src": "db2@1.60.1.70245"}
-{"id": 1226883, "field": "name", "en": "Blade Flurry", "hash": "5b462e5ee02f0510", "src": "db2@1.60.1.70245"}
-{"id": 1226883, "field": "aura", "en": "Blade Flurry.", "hash": "b4e9bb2ebaf23dc8", "src": "db2@1.60.1.70245"}
-{"id": 1226956, "field": "name", "en": "S03 - Item - Scarlet Enclave - Rogue - Tank 6P Bonus", "hash": "c6c09a955641bd82", "src": "db2@1.60.1.70245"}
-{"id": 1226956, "field": "description", "en": "Your Rolling with the Punches now grants $s2% more health and $s1% more damage per stack. At $s3 stacks, each time you Dodge or Parry you will gain $1226957s3 Energy. ", "hash": "4cf3ca3b6831760c", "src": "db2@1.60.1.70245"}
-{"id": 1226957, "field": "name", "en": "Float Like a Butterfly, Sting Like a Bee", "hash": "5867510d4ecf802b", "src": "db2@1.60.1.70245"}
-{"id": 1226961, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Elemental 2P Bonus", "hash": "61e9adeaf86bd228", "src": "db2@1.60.1.70245"}
-{"id": 1226961, "field": "description", "en": "When your Lava Burst, Chain Lightning, or Lightning Bolt strikes a target afflicted with your Flame Shock Rank 5 or Rank 6, it also deals one pulse of Flame Shock's damage.", "hash": "e3c1286e6f77f20d", "src": "db2@1.60.1.70245"}
-{"id": 1226963, "field": "name", "en": "Flame Shock", "hash": "f8d691540a59fd4f", "src": "db2@1.60.1.70245"}
-{"id": 1226972, "field": "name", "en": "Flame Shock", "hash": "f8d691540a59fd4f", "src": "db2@1.60.1.70245"}
-{"id": 1226977, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Elemental 4P Bonus", "hash": "50ccb36de33dde0f", "src": "db2@1.60.1.70245"}
-{"id": 1226977, "field": "description", "en": "Chance to trigger Overload increased by an additional $s1% and Lava Bursts damage is increased by a percentage equal to your spell critical strike chance. When Lightning Bolt or Chain Lightning deal damage, increase the damage dealt by your next Lava Burst cast within $1233835d by $1233835s1%, stacking up to $1233835u times.", "hash": "5e2b493a89adef21", "src": "db2@1.60.1.70245"}
-{"id": 1226978, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Elemental 6P Bonus", "hash": "3fafb8f0ce0fe9f6", "src": "db2@1.60.1.70245"}
-{"id": 1226978, "field": "description", "en": "When your Chain Lightning damages fewer than $s1 targets, it deals $s2% increased damage for each target less than $s1.", "hash": "850336b6cfc9f57e", "src": "db2@1.60.1.70245"}
-{"id": 1226981, "field": "name", "en": "Grimoire of Synergy", "hash": "e2fdc6ab6333a5c2", "src": "db2@1.60.1.70245"}
-{"id": 1226981, "field": "description", "en": "Damage done by you or your summoned demon has a $426301h% chance to increase the damage done by the other by $426303s1% for $426303d. ", "hash": "3d3f4a2ea7fe6e8c", "src": "db2@1.60.1.70245"}
-{"id": 1226984, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Enhancement 2P Bonus", "hash": "79eca3848f004345", "src": "db2@1.60.1.70245"}
-{"id": 1226984, "field": "description", "en": "While Static Shock is active, Lava Lash, Lava Burst, and Stormstrike have a $h% chance to add a charge to your Lightning Shield. If charges exceed $s1, Lightning Shield will immediately deal damage to your target instead of adding charges.", "hash": "168b9084acf8ca6b", "src": "db2@1.60.1.70245"}
-{"id": 1226986, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Enhancement 4P Bonus", "hash": "68cfa90779d24f2c", "src": "db2@1.60.1.70245"}
-{"id": 1226986, "field": "description", "en": "Reduces the cooldown on your Fire Nova Totem by $s1%, increases its damage by $s4%, and reduces its mana cost by $s5%. Additionally, your Fire Nova Totem now activates instantly on cast.", "hash": "2812c13b406a9fdd", "src": "db2@1.60.1.70245"}
-{"id": 1226997, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Enhancement 6P Bonus", "hash": "57b2ae8a64a45b13", "src": "db2@1.60.1.70245"}
-{"id": 1226997, "field": "description", "en": "Maelstrom Weapon can now stack up to ${$m1+5} charges. When using a two-handed weapon, gain $s4 charges at a time. Casts with over $s1 charges increase that spell's damage or healing dealt by $s2% per excess charge. Casts while at ${$m1+5} charges will consume all charges and cast twice.", "hash": "b75eaa2cfff96acc", "src": "db2@1.60.1.70245"}
+{"id": 1226001, "field": "name", "en": "Tinker: Magnetic Displacement", "hash": "460a4bee692386a4", "src": "db2@1.60.1.70291"}
+{"id": 1226001, "field": "description", "en": "$@spelldesc1226007", "hash": "84421a5fd96ae812", "src": "db2@1.60.1.70291"}
+{"id": 1226007, "field": "name", "en": "Tinker: Magnetic Displacement", "hash": "460a4bee692386a4", "src": "db2@1.60.1.70291"}
+{"id": 1226007, "field": "description", "en": "Disrupt a magnetic field between you and your nearby enemy target, knocking you both away.\r\n\r\nCan only affect targets up to $s1 levels higher than you. Some targets cannot be displaced. Targets can only be affected by this effect once every $1226045d.", "hash": "f3b3d2c1e4113fbe", "src": "db2@1.60.1.70291"}
+{"id": 1226013, "field": "name", "en": "Tinker: Magnetic Displacement", "hash": "460a4bee692386a4", "src": "db2@1.60.1.70291"}
+{"id": 1226013, "field": "description", "en": "$@spelldesc1226007", "hash": "84421a5fd96ae812", "src": "db2@1.60.1.70291"}
+{"id": 1226022, "field": "name", "en": "Tinker: Magnetic Displacement", "hash": "460a4bee692386a4", "src": "db2@1.60.1.70291"}
+{"id": 1226022, "field": "description", "en": "$@spelldesc1226007", "hash": "84421a5fd96ae812", "src": "db2@1.60.1.70291"}
+{"id": 1226032, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Restoration 2P Bonus", "hash": "b87b422ed494db42", "src": "db2@1.60.1.70291"}
+{"id": 1226032, "field": "description", "en": "Each time your Lifebloom heals a target, it has a $h% chance to make your next Healing Touch, Nourish, or Regrowth within $1226035d instant cast.", "hash": "ffe8670069630065", "src": "db2@1.60.1.70291"}
+{"id": 1226035, "field": "name", "en": "Swiftbloom", "hash": "784b7e48ec988d86", "src": "db2@1.60.1.70291"}
+{"id": 1226035, "field": "description", "en": "Reduces the cast time of your next Healing Touch, Regrowth, or Nourish by $s1%.", "hash": "240482bc1c72a3d6", "src": "db2@1.60.1.70291"}
+{"id": 1226035, "field": "aura", "en": "Cast time of your next Healing Touch, Regrowth, or Nourish reduced by $s1%.", "hash": "3ab69cad861907ed", "src": "db2@1.60.1.70291"}
+{"id": 1226038, "field": "name", "en": "Rejuvenating", "hash": "89ec42821b7bdf6d", "src": "db2@1.60.1.70291"}
+{"id": 1226038, "field": "description", "en": "Reduces the cast time of your next Healing Touch, Regrowth, or Nourish by $s1%.", "hash": "240482bc1c72a3d6", "src": "db2@1.60.1.70291"}
+{"id": 1226038, "field": "aura", "en": "Healing received from this Rejuvenation's owner is increased by $s1%.", "hash": "cf0f5f9e3a8ea9f1", "src": "db2@1.60.1.70291"}
+{"id": 1226040, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Restoration 4P Bonus", "hash": "a75e47b1bf66e729", "src": "db2@1.60.1.70291"}
+{"id": 1226040, "field": "description", "en": "Targets with your active Rejuvenation Rank 10 or Rank 11 receive $1226038s1% increased healing from your spells.", "hash": "58ef5859056ca51c", "src": "db2@1.60.1.70291"}
+{"id": 1226044, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Restoration 6P Bonus", "hash": "96414d34aa38f310", "src": "db2@1.60.1.70291"}
+{"id": 1226044, "field": "description", "en": "Your non-periodic heals from Regrowth Rank 8 or Rank 9 have a $h% chance to spread your Rejuvenation on that target to all members of the target's party within $1226046a1 yards not already affected by your Rejuvenation.", "hash": "51b44b42c50c3cfd", "src": "db2@1.60.1.70291"}
+{"id": 1226045, "field": "name", "en": "Demagnetized", "hash": "c5a50648df2762eb", "src": "db2@1.60.1.70291"}
+{"id": 1226045, "field": "description", "en": "$@spelldesc1226007", "hash": "84421a5fd96ae812", "src": "db2@1.60.1.70291"}
+{"id": 1226045, "field": "aura", "en": "An enemy recently disrupted your magnetic field so it cannot be used against you for a short while.", "hash": "57c0ecaf1967b85c", "src": "db2@1.60.1.70291"}
+{"id": 1226046, "field": "name", "en": "Wild Rejuvenation", "hash": "e861232b0c0a16bb", "src": "db2@1.60.1.70291"}
+{"id": 1226092, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Balance 2P Bonus", "hash": "0c4db8e4eb4c7a8c", "src": "db2@1.60.1.70291"}
+{"id": 1226092, "field": "description", "en": "Your Starfire deals $s1% more damage to targets with your Moonfire, and your Wrath deals $s2% more damage to targets with your Sunfire.", "hash": "e8d829cac6a8d345", "src": "db2@1.60.1.70291"}
+{"id": 1226103, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Balance 4P Bonus", "hash": "fb30be62d61e8673", "src": "db2@1.60.1.70291"}
+{"id": 1226103, "field": "description", "en": "Your Starsurge now increases the damage of your next ${$m1+1} Starfires.", "hash": "2dc919bb54a97bfb", "src": "db2@1.60.1.70291"}
+{"id": 1226105, "field": "name", "en": "Sunsurge", "hash": "54c60c03c07af7d5", "src": "db2@1.60.1.70291"}
+{"id": 1226105, "field": "aura", "en": "Increases damage done by your next Wrath by $s1%.", "hash": "5b9f4263c3514c13", "src": "db2@1.60.1.70291"}
+{"id": 1226106, "field": "name", "en": "Moonsurge", "hash": "829737f1ad6e93cd", "src": "db2@1.60.1.70291"}
+{"id": 1226106, "field": "aura", "en": "Increases damage done by your next Starfire by $s1%.", "hash": "7bbe5aa0446e5aad", "src": "db2@1.60.1.70291"}
+{"id": 1226108, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Balance 6P Bonus", "hash": "ea13c3e5c0f0925a", "src": "db2@1.60.1.70291"}
+{"id": 1226108, "field": "description", "en": "Each time your Sunfire deals periodic damage, you gain $1226105s1% increased damage to your next Wrath, stacking up to $1226105u times. Each time your Moonfire deals periodic damage, you gain $1226106s1% increased damage to your next Starfire, stacking up to $1226106u times. These bonuses do not apply to Starsurge.", "hash": "308c40d326b6951f", "src": "db2@1.60.1.70291"}
+{"id": 1226109, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Feral 2P Bonus", "hash": "50fd871e96e9fad8", "src": "db2@1.60.1.70291"}
+{"id": 1226109, "field": "description", "en": "You gain $1226113s1 Energy each time Rake or Rip deals periodic damage.", "hash": "317e6f05ed31757b", "src": "db2@1.60.1.70291"}
+{"id": 1226113, "field": "name", "en": "Scent of Blood", "hash": "f13a64ab36835d7e", "src": "db2@1.60.1.70291"}
+{"id": 1226116, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Feral 4P Bonus", "hash": "3fe08ca181bc06bf", "src": "db2@1.60.1.70291"}
+{"id": 1226116, "field": "description", "en": "Multiplies the damage bonus from Tiger's Fury by ${1+$m2/100}.0.", "hash": "78baa10189d369b6", "src": "db2@1.60.1.70291"}
+{"id": 1226118, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Feral 6P Bonus Trigger", "hash": "a65fca7f3e37d09d", "src": "db2@1.60.1.70291"}
+{"id": 1226119, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Feral 6P Bonus", "hash": "2ec392246c8e12a6", "src": "db2@1.60.1.70291"}
+{"id": 1226119, "field": "description", "en": "Your Finishing Moves have a $s2% chance per combo point spent to trigger Clearcasting and extend the duration of your active Tiger's Fury by $1226118s1 sec.", "hash": "0bb9bdeb8ebaceb2", "src": "db2@1.60.1.70291"}
+{"id": 1226121, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Guardian 2P Bonus", "hash": "86d140bcee6ae0e0", "src": "db2@1.60.1.70291"}
+{"id": 1226121, "field": "description", "en": "Your melee critical strikes in Bear Form or Dire Bear Form grant you a shield lasting $410144d that absorbs Physical damage equal to $410144s1% of your Attack Power the next time you take Physical damage. Stacks up to $410144u times.", "hash": "6a8c7b34494fdba5", "src": "db2@1.60.1.70291"}
+{"id": 1226125, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Guardian 4P Bonus", "hash": "75b4463fd93cecc7", "src": "db2@1.60.1.70291"}
+{"id": 1226125, "field": "description", "en": "Increases the duration of your Berserk ability by ${$m1/1000} sec.", "hash": "80f97bb5873b1035", "src": "db2@1.60.1.70291"}
+{"id": 1226126, "field": "name", "en": "S03 - Item - Scarlet Enclave - Druid - Guardian 6P Bonus", "hash": "64974bc2c40ef8ae", "src": "db2@1.60.1.70291"}
+{"id": 1226126, "field": "description", "en": "You gain $1226127s1% increased attack speed for $1226127d every time you deal a critical strike.", "hash": "b0e96ef5bc98b1ba", "src": "db2@1.60.1.70291"}
+{"id": 1226127, "field": "name", "en": "Savage Flurry", "hash": "932a1baaecbac088", "src": "db2@1.60.1.70291"}
+{"id": 1226127, "field": "aura", "en": "Melee attack speed increased by $s1%.", "hash": "d471470cfe1c0fcc", "src": "db2@1.60.1.70291"}
+{"id": 1226132, "field": "name", "en": "S03 - Item - Scarlet Enclave - Hunter - Ranged 2P Bonus", "hash": "800f3a626c7acac0", "src": "db2@1.60.1.70291"}
+{"id": 1226132, "field": "description", "en": "Your Shots deal $s1% increased damage to targets afflicted with your Serpent Sting.", "hash": "2ccc126fe382e750", "src": "db2@1.60.1.70291"}
+{"id": 1226136, "field": "name", "en": "Wicked Shot", "hash": "ec0933029f16eda6", "src": "db2@1.60.1.70291"}
+{"id": 1226136, "field": "aura", "en": "Attack Power increased by $s1%.", "hash": "fe0a7d88fb252501", "src": "db2@1.60.1.70291"}
+{"id": 1226137, "field": "name", "en": "S03 - Item - Scarlet Enclave - Hunter - Ranged 4P Bonus", "hash": "6ef23fe5574cd6a7", "src": "db2@1.60.1.70291"}
+{"id": 1226137, "field": "description", "en": "Your ranged critical strikes increase your Attack Power by $1226136s1% for $1226136d.", "hash": "0dd02dbc51a0b0ed", "src": "db2@1.60.1.70291"}
+{"id": 1226138, "field": "name", "en": "S03 - Item - Scarlet Enclave - Hunter - Ranged 6P Bonus", "hash": "5dd54568421ee28e", "src": "db2@1.60.1.70291"}
+{"id": 1226138, "field": "description", "en": "Your Multi-Shot hits $s1 additional targets, and your Kill Shot and Chimera Shot hits increase the damage done by your next Multi-Shot cast within $1233451d by $s2%, stacking up to $1233451u times.", "hash": "88a55aa63a9f13ee", "src": "db2@1.60.1.70291"}
+{"id": 1226206, "field": "name", "en": "Tinkerbox", "hash": "f21ce290e96532b9", "src": "db2@1.60.1.70291"}
+{"id": 1226207, "field": "name", "en": "Tinkerbox: Teleport", "hash": "dac1878bf29d26e8", "src": "db2@1.60.1.70291"}
+{"id": 1226208, "field": "name", "en": "Tinkerbox: Nitro Boosts", "hash": "5d9e46a053e658c1", "src": "db2@1.60.1.70291"}
+{"id": 1226209, "field": "name", "en": "Tinkerbox: Magnetic Displacement", "hash": "36460cb58563adfd", "src": "db2@1.60.1.70291"}
+{"id": 1226210, "field": "name", "en": "Tinker: Teleport", "hash": "2b239a2d8a7fcb85", "src": "db2@1.60.1.70291"}
+{"id": 1226210, "field": "description", "en": "Augment your belt to give the following effect:\r\n\r\n$@spelldesc1225951\r\n\r\n$?pc138518[This enhancement is permanent and cannot be removed or replaced.][]", "hash": "2f36e00ddbad6b0a", "src": "db2@1.60.1.70291"}
+{"id": 1226211, "field": "name", "en": "Tinker: Nitro Boosts", "hash": "4ee9d4cd3fb45206", "src": "db2@1.60.1.70291"}
+{"id": 1226211, "field": "description", "en": "Augment your belt to give the following effect:\r\n\r\n$@spelldesc1225982\r\n\r\n$?pc138518[This enhancement is permanent and cannot be removed or replaced.][]", "hash": "aa21fad9f08a7f6f", "src": "db2@1.60.1.70291"}
+{"id": 1226212, "field": "name", "en": "Tinker: Magnetic Displacement", "hash": "460a4bee692386a4", "src": "db2@1.60.1.70291"}
+{"id": 1226212, "field": "description", "en": "Augment your belt to give the following effect:\r\n\r\n$@spelldesc1226001\r\n\r\n$?pc138518[This enhancement is permanent and cannot be removed or replaced.][]", "hash": "c1bfd040f416bd68", "src": "db2@1.60.1.70291"}
+{"id": 1226213, "field": "name", "en": "Semisafe Transporter: New Avalon", "hash": "26368482a10066a5", "src": "db2@1.60.1.70291"}
+{"id": 1226215, "field": "name", "en": "Semisafe Transporter: New Avalon", "hash": "26368482a10066a5", "src": "db2@1.60.1.70291"}
+{"id": 1226215, "field": "description", "en": "Throw caution to the wind and test a goblin's attempt at a teleportation device. Hopefully you will arrive at New Avalon in one piece.", "hash": "80d2cc129793081c", "src": "db2@1.60.1.70291"}
+{"id": 1226217, "field": "name", "en": "Semisafe Transporter: New Avalon", "hash": "26368482a10066a5", "src": "db2@1.60.1.70291"}
+{"id": 1226217, "field": "description", "en": "$@spelldesc1226215", "hash": "8442a0f2e15b8f73", "src": "db2@1.60.1.70291"}
+{"id": 1226218, "field": "name", "en": "Mark of Zeliek", "hash": "4b954d17d4e5bb72", "src": "db2@1.60.1.70291"}
+{"id": 1226218, "field": "aura", "en": "Additional damage taken from Mark of Zeliek.", "hash": "68fb058fa9119a42", "src": "db2@1.60.1.70291"}
+{"id": 1226219, "field": "name", "en": "Mark of Blaumeux", "hash": "7eb2225c60a69cdd", "src": "db2@1.60.1.70291"}
+{"id": 1226219, "field": "aura", "en": "Additional damage taken from Mark of Blaumeux.", "hash": "4f8d77beb7300546", "src": "db2@1.60.1.70291"}
+{"id": 1226220, "field": "name", "en": "Mark of Mograine", "hash": "6d80e12c2868db2e", "src": "db2@1.60.1.70291"}
+{"id": 1226220, "field": "aura", "en": "Additional damage taken from Mark of Mograine.", "hash": "83591c01ce742266", "src": "db2@1.60.1.70291"}
+{"id": 1226221, "field": "name", "en": "Mark of Korth'azz", "hash": "f7824d232535c4eb", "src": "db2@1.60.1.70291"}
+{"id": 1226221, "field": "aura", "en": "Additional damage taken from Mark of Korth'azz.", "hash": "49cfbbede9b206b2", "src": "db2@1.60.1.70291"}
+{"id": 1226282, "field": "name", "en": "Shadow Bolt", "hash": "ea2555140aa56399", "src": "db2@1.60.1.70291"}
+{"id": 1226282, "field": "description", "en": "Hurls a bolt of dark magic at an enemy, inflicting Shadow damage.", "hash": "42ce84488001b714", "src": "db2@1.60.1.70291"}
+{"id": 1226300, "field": "name", "en": "[DNT] Clear Charges", "hash": "a5e08a7d1a3d8b33", "src": "db2@1.60.1.70291"}
+{"id": 1226310, "field": "name", "en": "Acidic Burn", "hash": "940fa69f41756aaa", "src": "db2@1.60.1.70291"}
+{"id": 1226310, "field": "aura", "en": "Acid damage every $t1 sec.", "hash": "f0303063ca754c94", "src": "db2@1.60.1.70291"}
+{"id": 1226340, "field": "name", "en": "S03 - Item - Scarlet Enclave - Hunter - Melee 2P Bonus", "hash": "6621ce213a9d8d26", "src": "db2@1.60.1.70291"}
+{"id": 1226340, "field": "description", "en": "Your Strikes and Mongoose Bite deal $s1% increased damage to targets afflicted with your Serpent Sting or Wyvern Strike.", "hash": "18ac3d558f8c4646", "src": "db2@1.60.1.70291"}
+{"id": 1226343, "field": "name", "en": "Corrupted Vine", "hash": "6cb6f6d024b08ff2", "src": "db2@1.60.1.70291"}
+{"id": 1226350, "field": "name", "en": "Agitate Corrupted Vine", "hash": "1078df4f3e50f2f1", "src": "db2@1.60.1.70291"}
+{"id": 1226350, "field": "description", "en": "Use on a Corrupted Vine.", "hash": "02d7c631ad85fa28", "src": "db2@1.60.1.70291"}
+{"id": 1226357, "field": "name", "en": "Wicked Fast", "hash": "ea496ef055062e79", "src": "db2@1.60.1.70291"}
+{"id": 1226357, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70291"}
+{"id": 1226359, "field": "name", "en": "S03 - Item - Scarlet Enclave - Hunter - Melee 4P Bonus", "hash": "5504d3a4256f990d", "src": "db2@1.60.1.70291"}
+{"id": 1226359, "field": "description", "en": "Your melee critical strikes increase your attack speed by $1226357s1% for $1226357d.", "hash": "39d2c346e757ba2b", "src": "db2@1.60.1.70291"}
+{"id": 1226365, "field": "name", "en": "S03 - Item - Scarlet Enclave - Hunter - Melee 6P Bonus", "hash": "43e7d9271041a4f4", "src": "db2@1.60.1.70291"}
+{"id": 1226365, "field": "description", "en": "Increases the bonus damage from Raptor Fury by an additional $s1% per stack.", "hash": "cda81970cb8b7b16", "src": "db2@1.60.1.70291"}
+{"id": 1226369, "field": "name", "en": "(DNT) Empower Quarter Visuals", "hash": "ff5920f29fd536d6", "src": "db2@1.60.1.70291"}
+{"id": 1226372, "field": "name", "en": "(DNT) Empower Quarter Visuals", "hash": "ff5920f29fd536d6", "src": "db2@1.60.1.70291"}
+{"id": 1226373, "field": "name", "en": "(DNT) Empower Quarter Visuals", "hash": "ff5920f29fd536d6", "src": "db2@1.60.1.70291"}
+{"id": 1226377, "field": "name", "en": "Timey-Bearimy", "hash": "d9ca812bf3f044d4", "src": "db2@1.60.1.70291"}
+{"id": 1226377, "field": "aura", "en": "Healing from casting Mage increased by $s1%.", "hash": "2d491f2eb92641c0", "src": "db2@1.60.1.70291"}
+{"id": 1226378, "field": "name", "en": "S03 - Item - Scarlet Enclave - Mage - Healer 6P Bonus", "hash": "077d3d3ec1a065db", "src": "db2@1.60.1.70291"}
+{"id": 1226378, "field": "description", "en": "Reduces the cooldown of your Arcane Power by ${$m1/-1000} sec and increases its duration by ${$m2/1000} sec. While Arcane Power is active, your chance to gain Arcane Tunneling is increased by $s3% and each cast of Arcane Blast reduces the remaining cooldown on Mass Regeneration by ${$m4/1000}.1 sec.", "hash": "a68805e995f37bab", "src": "db2@1.60.1.70291"}
+{"id": 1226388, "field": "name", "en": "Apple", "hash": "841aca0e33b03933", "src": "db2@1.60.1.70291"}
+{"id": 1226396, "field": "name", "en": "Apple Scope", "hash": "d130d0391a2e5a60", "src": "db2@1.60.1.70291"}
+{"id": 1226396, "field": "description", "en": "Allows you to look far into the distance in the pursuit of apples.", "hash": "e9331d6c5730c671", "src": "db2@1.60.1.70291"}
+{"id": 1226396, "field": "aura", "en": "Spying on apples.", "hash": "2d890a31d5df7a3a", "src": "db2@1.60.1.70291"}
+{"id": 1226402, "field": "name", "en": "Grab Apple", "hash": "a1d8ddfec603bd2b", "src": "db2@1.60.1.70291"}
+{"id": 1226402, "field": "description", "en": "Steal an apple from a safe distance.", "hash": "ceded9ff46edd375", "src": "db2@1.60.1.70291"}
+{"id": 1226406, "field": "name", "en": "Arcane Tunneling", "hash": "5d973727b807a0a3", "src": "db2@1.60.1.70291"}
+{"id": 1226406, "field": "aura", "en": "Your next Arcane damage or healing spell will not consume your Arcane Blast effect.", "hash": "3c528f9104df45c3", "src": "db2@1.60.1.70291"}
+{"id": 1226407, "field": "name", "en": "S03 - Item - Scarlet Enclave - Mage - Healer 2P Bonus", "hash": "29b73238ebfc4e0d", "src": "db2@1.60.1.70291"}
+{"id": 1226407, "field": "description", "en": "Your Arcane Blast has a $s2% chance to cause Arcane Tunneling. Arcane Tunneling prevents your Arcane Blast effect from being consumed by the next other Arcane damage spell you cast. In addition, activating Arcane Power resets the cooldown on your Mass Regeneration. ", "hash": "654139903eb733c0", "src": "db2@1.60.1.70291"}
+{"id": 1226414, "field": "name", "en": "Temporal Anchor", "hash": "f9252c7cfdaf62af", "src": "db2@1.60.1.70291"}
+{"id": 1226414, "field": "aura", "en": "Damage taken decreased by $s1%.", "hash": "0a59333540c0b979", "src": "db2@1.60.1.70291"}
+{"id": 1226415, "field": "name", "en": "S03 - Item - Scarlet Enclave - Mage - Healer 4P Bonus", "hash": "189a37bbd6ce59f4", "src": "db2@1.60.1.70291"}
+{"id": 1226415, "field": "description", "en": "Rewind Time also reduces all damage taken by your target by $1226414s1% for $1226414d.", "hash": "ac70f14112a5763d", "src": "db2@1.60.1.70291"}
+{"id": 1226423, "field": "name", "en": "S03 - Item - Scarlet Enclave - Mage - Damage 2P Bonus", "hash": "46a5004eb7089ba8", "src": "db2@1.60.1.70291"}
+{"id": 1226423, "field": "description", "en": "Your Living Bomb now deals damage every $s1 sec, and will detonate if the target dies. In addition, the effect of Glaciate from the rune of Ice Lance now stacks up to $s2 times, and Spellfrost Bolt grants $s3 stacks each time it hits.", "hash": "94a0866d721cccd0", "src": "db2@1.60.1.70291"}
+{"id": 1226432, "field": "name", "en": "S03 - Item - Scarlet Enclave - Mage - Damage 6P Bonus", "hash": "246b0b548cacb376", "src": "db2@1.60.1.70291"}
+{"id": 1226432, "field": "description", "en": "Reduces the cooldown on your Frozen Orb spell by ${$m4/-1000} sec. Each time Glaciate is consumed, the cooldown on your Deep Freeze is reduced by ${$m5/1000}.1 sec per stack consumed. Reduces the cooldown on Fire Blast by ${$m2/-1000} sec and Fire Blast now refreshes the duration of your Living Bomb on the target.", "hash": "02e5e2639800c4b5", "src": "db2@1.60.1.70291"}
+{"id": 1226446, "field": "name", "en": "S03 - Item - Scarlet Enclave - Mage - Damage 4P Bonus", "hash": "358805d1a1daa78f", "src": "db2@1.60.1.70291"}
+{"id": 1226446, "field": "description", "en": "Casting Deep Freeze increases the remaining duration of your Icy Veins spell by ${$m1/1000} sec. Casting Pyroblast cancels $s2 $lstack:stacks; of the effect from your Balefire Bolt.", "hash": "8e5bb0cbe3a62a16", "src": "db2@1.60.1.70291"}
+{"id": 1226451, "field": "name", "en": "Emergency", "hash": "a550a98f0f4d8b38", "src": "db2@1.60.1.70291"}
+{"id": 1226451, "field": "aura", "en": "Spellcasting speed increased by $s~1%.\r\n\r\nGlobal Cooldown of your Divine Light, Holy Light, Flash of Light, and Holy Shock reduced by ${$m~2/-1000}.1 seconds.", "hash": "16d3929f49e1dde4", "src": "db2@1.60.1.70291"}
+{"id": 1226452, "field": "name", "en": "S03 - Item - Scarlet Enclave - Paladin - Holy 2P Bonus", "hash": "6b26acefa771d08e", "src": "db2@1.60.1.70291"}
+{"id": 1226452, "field": "description", "en": "Lay on Hands grants you $1226451s1% Spell Haste for $1226451d and reduces the Global Cooldown of your next $1226451n Divine Light, Holy Light, Flash of Light, or Holy Shock spells by ${$1226451m2/-1000}.1 seconds.", "hash": "1169d16365a29322", "src": "db2@1.60.1.70291"}
+{"id": 1226454, "field": "name", "en": "S03 - Item - Scarlet Enclave - Paladin - Holy 4P Bonus", "hash": "5a09b2729243dc75", "src": "db2@1.60.1.70291"}
+{"id": 1226454, "field": "description", "en": "Your Beacon of Light now also triggers when you heal your Beacon of Light target, but at $s1% reduced effectiveness.", "hash": "aed4710971b59d5e", "src": "db2@1.60.1.70291"}
+{"id": 1226455, "field": "name", "en": "Charity", "hash": "2e97e4f4965d55e3", "src": "db2@1.60.1.70291"}
+{"id": 1226459, "field": "name", "en": "S03 - Item - Scarlet Enclave - Paladin - Holy 6P Bonus", "hash": "48ecb7f57d15e85c", "src": "db2@1.60.1.70291"}
+{"id": 1226459, "field": "description", "en": "An additional $s1% of your healing is transferred to your Beacon of Light target.", "hash": "68f11c7786e0eb8f", "src": "db2@1.60.1.70291"}
+{"id": 1226460, "field": "name", "en": "S03 - Item - Scarlet Enclave - Paladin - Retribution 2P Bonus", "hash": "28463badf8b0f1a5", "src": "db2@1.60.1.70291"}
+{"id": 1226460, "field": "description", "en": "While you have a two-handed weapon equipped, Crusader Strike and Exorcism grant you Holy Power, increasing all Holy damage you deal by $1226461s1%, stacking up to $1226461u times.", "hash": "ab6bcd9e693fc20a", "src": "db2@1.60.1.70291"}
+{"id": 1226461, "field": "name", "en": "Holy Power", "hash": "91e93793016e8e77", "src": "db2@1.60.1.70291"}
+{"id": 1226461, "field": "aura", "en": "Increases all Holy damage you deal by $s1%.", "hash": "e7943df960fcf3b5", "src": "db2@1.60.1.70291"}
+{"id": 1226462, "field": "name", "en": "S03 - Item - Scarlet Enclave - Paladin - Retribution 4P Bonus", "hash": "17294130e382fd8c", "src": "db2@1.60.1.70291"}
+{"id": 1226462, "field": "description", "en": "Divine Storm, Holy Shock, and Holy Wrath consume all your Holy Power, dealing $s1% increased damage per Holy Power you have accumulated, $s2% effective against player controlled targets.", "hash": "add6ae7dfa2c98e1", "src": "db2@1.60.1.70291"}
+{"id": 1226463, "field": "name", "en": "S03 - Item - Scarlet Enclave - Paladin - Retribution 6P Bonus", "hash": "060c46b3ce550973", "src": "db2@1.60.1.70291"}
+{"id": 1226463, "field": "description", "en": "Consuming Holy Power increases your Attack Power by $1226464s1% per Holy Power consumed for $1226464d.", "hash": "82e61b297c5b2ae5", "src": "db2@1.60.1.70291"}
+{"id": 1226464, "field": "name", "en": "Templar", "hash": "0e499227b4d4be83", "src": "db2@1.60.1.70291"}
+{"id": 1226464, "field": "aura", "en": "Increases Attack Power by $w1%.", "hash": "0dd3c23b90e95209", "src": "db2@1.60.1.70291"}
+{"id": 1226466, "field": "name", "en": "Righteous Shield", "hash": "9efc46d762095fab", "src": "db2@1.60.1.70291"}
+{"id": 1226466, "field": "aura", "en": "Increases Block Value by $s1%.", "hash": "6f336ed69ae8b28e", "src": "db2@1.60.1.70291"}
+{"id": 1226467, "field": "name", "en": "S03 - Item - Scarlet Enclave - Paladin - Protection 2P Bonus", "hash": "b84f5f8c4f7eef44", "src": "db2@1.60.1.70291"}
+{"id": 1226467, "field": "description", "en": "Shield of Righteousness also increases your Block Value by $1226466s1% for $1226466d.", "hash": "5e3d3c30487dff38", "src": "db2@1.60.1.70291"}
+{"id": 1226477, "field": "name", "en": "S03 - Item - Scarlet Enclave - Paladin - Protection 4P Bonus", "hash": "a732650f3a50fb2b", "src": "db2@1.60.1.70291"}
+{"id": 1226477, "field": "description", "en": "Shield of Righteousness deals percentage increased damage equal to your Block Chance.", "hash": "bd9301923a272ba9", "src": "db2@1.60.1.70291"}
+{"id": 1226479, "field": "name", "en": "S03 - Item - Scarlet Enclave - Paladin - Protection 6P Bonus", "hash": "96156a9225230712", "src": "db2@1.60.1.70291"}
+{"id": 1226479, "field": "description", "en": "Your Avenging Wrath no longer triggers Forbearance, lasts ${$m1/1000} sec longer, and increases your Block Value by $1233525s1%.", "hash": "c623b96843665795", "src": "db2@1.60.1.70291"}
+{"id": 1226480, "field": "name", "en": "Righteous Block", "hash": "c1d956be408c6872", "src": "db2@1.60.1.70291"}
+{"id": 1226499, "field": "name", "en": "S03 - Item - Scarlet Enclave - Priest - Healer 2P Bonus", "hash": "d8f5e13bf002894f", "src": "db2@1.60.1.70291"}
+{"id": 1226499, "field": "description", "en": "Reduces the cooldown of Power Word: Barrier by ${$m2/-1000} sec and Surge of Light now also makes Prayer of Healing and Greater Heal instant cast.", "hash": "c045dc38680b63c2", "src": "db2@1.60.1.70291"}
+{"id": 1226500, "field": "name", "en": "Absolution", "hash": "0eda479fbbf711b5", "src": "db2@1.60.1.70291"}
+{"id": 1226500, "field": "aura", "en": "Cast time of your next Lesser Heal, Heal, Greater Heal, Flash Heal, Binding Heal, or Prayer of Healing spell reduced by $s1%.", "hash": "b68354a5f7f91dfb", "src": "db2@1.60.1.70291"}
+{"id": 1226501, "field": "name", "en": "S03 - Item - Scarlet Enclave - Priest - Healer 6P Bonus", "hash": "b6bbec41c5a6a11d", "src": "db2@1.60.1.70291"}
+{"id": 1226501, "field": "description", "en": "Increases the healing of Circle of Healing and Penance by $s3%. Additionally, the cooldown of your Spirit of the Redeemer is reduced by ${$m1/-1000} sec and your healing is increased by $s2% while your Spirit of the Redeemer is active.", "hash": "d0a9b1c31483a6b1", "src": "db2@1.60.1.70291"}
+{"id": 1226502, "field": "name", "en": "Devotion", "hash": "9fbb1454e56c47f3", "src": "db2@1.60.1.70291"}
+{"id": 1226502, "field": "aura", "en": "Healing ${$w1/2} damage every $t1 seconds.", "hash": "9b5d58881d7c9ee5", "src": "db2@1.60.1.70291"}
+{"id": 1226503, "field": "name", "en": "Overcharged", "hash": "99013bf9cd25d749", "src": "db2@1.60.1.70291"}
+{"id": 1226504, "field": "name", "en": "Devotion", "hash": "9fbb1454e56c47f3", "src": "db2@1.60.1.70291"}
+{"id": 1226529, "field": "name", "en": "Fish Barrel", "hash": "c50670a0d24179e5", "src": "db2@1.60.1.70291"}
+{"id": 1226529, "field": "aura", "en": "This barrel still has fish!", "hash": "6d9b69d4982249dc", "src": "db2@1.60.1.70291"}
+{"id": 1226534, "field": "name", "en": "Fling Fish", "hash": "abd59a16f3fa4e9f", "src": "db2@1.60.1.70291"}
+{"id": 1226537, "field": "name", "en": "Summon Fish", "hash": "85cb637d47f6702c", "src": "db2@1.60.1.70291"}
+{"id": 1226565, "field": "name", "en": "S03 - Item - Scarlet Enclave - Priest - Healer 4P Bonus", "hash": "c7d8e6bedad49536", "src": "db2@1.60.1.70291"}
+{"id": 1226565, "field": "description", "en": "Power Word: Shield casts instantly heal the target for $s1% of the absorb value and Serendipity empowered spells have their healing increased by $s2% per stack.", "hash": "957edc9f7705716a", "src": "db2@1.60.1.70291"}
+{"id": 1226566, "field": "name", "en": "Power Word: Shield", "hash": "08517dab040e07b6", "src": "db2@1.60.1.70291"}
+{"id": 1226585, "field": "name", "en": "S03 - Item - Scarlet Enclave - Priest - Shadow 2P Bonus", "hash": "887107db6ba92060", "src": "db2@1.60.1.70291"}
+{"id": 1226585, "field": "description", "en": "Your Mind Flay and Mind Sear no longer lose duration from taking damage during their channel. In addition, they deal $s2% increased damage per other periodic Shadow effect you have on the target, up to a maximum increase of ${$m2*3}%.", "hash": "030c250c4fc4cc04", "src": "db2@1.60.1.70291"}
+{"id": 1226589, "field": "name", "en": "Shadow Word: Pain", "hash": "56589cc85ee98b42", "src": "db2@1.60.1.70291"}
+{"id": 1226591, "field": "name", "en": "S03 - Item - Scarlet Enclave - Priest - Shadow 4P Bonus", "hash": "77540d5e567b2c47", "src": "db2@1.60.1.70291"}
+{"id": 1226591, "field": "description", "en": "Your Mind Blast deals $s1% reduced threat, and gains $s2% damage increase from each stack of Mind Spike on the target.", "hash": "2719cceb7f923649", "src": "db2@1.60.1.70291"}
+{"id": 1226595, "field": "name", "en": "S03 - Item - Scarlet Enclave - Priest - Shadow 6P Bonus", "hash": "663712e1414d382e", "src": "db2@1.60.1.70291"}
+{"id": 1226595, "field": "description", "en": "Damage done by your Mind Flay now increases the longer you channel the spell. Each time it deals damage, subsequent damage will increase by $s1%. This resets on each new channel.", "hash": "67a4aa9c834de5fb", "src": "db2@1.60.1.70291"}
+{"id": 1226689, "field": "name", "en": "Scarlet Quiver", "hash": "8ad0bc3aba4b2a4b", "src": "db2@1.60.1.70291"}
+{"id": 1226690, "field": "name", "en": "Scarlet Ammo Pouch", "hash": "67baf1a0e1ac4c8c", "src": "db2@1.60.1.70291"}
+{"id": 1226739, "field": "name", "en": "Undead Slaying", "hash": "5c2c0413f79b9e47", "src": "db2@1.60.1.70291"}
+{"id": 1226739, "field": "aura", "en": "Damage and critical damage done to Undead increased by $s1%.", "hash": "d6f5d1053789e3f5", "src": "db2@1.60.1.70291"}
+{"id": 1226780, "field": "name", "en": "(DNT) Sword With Stone - Stone Visual", "hash": "e2afd5efab1acdf8", "src": "db2@1.60.1.70291"}
+{"id": 1226800, "field": "name", "en": "Crate Item", "hash": "37bbc0231c2e6ff3", "src": "db2@1.60.1.70291"}
+{"id": 1226800, "field": "description", "en": "Stash a piece of crafted Scarlet Crusade equipment in the crate. This will permanently destroy the item.", "hash": "ef045547fc2d03b4", "src": "db2@1.60.1.70291"}
+{"id": 1226808, "field": "name", "en": "Food", "hash": "097e827a631fee04", "src": "db2@1.60.1.70291"}
+{"id": 1226808, "field": "description", "en": "Restores $s1% of your health and mana per second for $d.  Must remain seated while eating.", "hash": "9265d95ae6d4902d", "src": "db2@1.60.1.70291"}
+{"id": 1226808, "field": "aura", "en": "Restores $s1% of your health and mana per second.", "hash": "68f162743673b582", "src": "db2@1.60.1.70291"}
+{"id": 1226810, "field": "name", "en": "Boulder on your Shoulder", "hash": "20e4557b0bdcee4d", "src": "db2@1.60.1.70291"}
+{"id": 1226810, "field": "description", "en": "Movement speed reduced by $s1%.", "hash": "08fe36e785e78519", "src": "db2@1.60.1.70291"}
+{"id": 1226814, "field": "name", "en": "Enriched Manna Biscuit", "hash": "77dd71d92909851c", "src": "db2@1.60.1.70291"}
+{"id": 1226814, "field": "description", "en": "Restores $25695o1 health and $25696o2 mana over $25695d. $?s446847[Tastes even better inside of Naxxramas, restoring $1226808o1% health and $1226808o2% mana over $1226808d instead.][] Must remain seated while eating.", "hash": "dceec844d92dafb2", "src": "db2@1.60.1.70291"}
+{"id": 1226814, "field": "aura", "en": "Restores $/5;s1 health and $/5;s2 mana per second.", "hash": "41faa5202f91ed91", "src": "db2@1.60.1.70291"}
+{"id": 1226833, "field": "name", "en": "(DNT) Transform Caladboulder", "hash": "3ee19143dc75d4c2", "src": "db2@1.60.1.70291"}
+{"id": 1226843, "field": "name", "en": "S03 - Item - Scarlet Enclave - Rogue - Damage 2P Bonus", "hash": "08cb32189c7b7547", "src": "db2@1.60.1.70291"}
+{"id": 1226843, "field": "description", "en": "While Just a Flesh Wound is not active, your Backstab, Sinister Strike, Saber Slash, and Mutilate deal $s1% increased damage per your active Poison or Bleed effect afflicting the target, up to a maximum increase of $m2%.", "hash": "d71a835ff6c2bd89", "src": "db2@1.60.1.70291"}
+{"id": 1226868, "field": "name", "en": "Combo!", "hash": "7ec6c57cb90f7222", "src": "db2@1.60.1.70291"}
+{"id": 1226869, "field": "name", "en": "S03 - Item - Scarlet Enclave - Rogue - Damage 4P Bonus", "hash": "f7ae3796874d812e", "src": "db2@1.60.1.70291"}
+{"id": 1226869, "field": "description", "en": "Your Poison and autoattack critical strikes have a $h% chance to grant you a combo point.", "hash": "eca306998aad91e0", "src": "db2@1.60.1.70291"}
+{"id": 1226871, "field": "name", "en": "S03 - Item - Scarlet Enclave - Rogue - Damage 6P Bonus", "hash": "e6913d19721f8d15", "src": "db2@1.60.1.70291"}
+{"id": 1226871, "field": "description", "en": "Increases Ambush, Eviscerate, Crimson Tempest, and Envenom damage by $s1%.", "hash": "0fa58f03af70673e", "src": "db2@1.60.1.70291"}
+{"id": 1226874, "field": "name", "en": "S03 - Item - Scarlet Enclave - Rogue - Tank 2P Bonus", "hash": "e8fa8f8f809da5b4", "src": "db2@1.60.1.70291"}
+{"id": 1226874, "field": "description", "en": "Your stacks of Rolling with the Punches also increase all damage you deal by $1234069s1%.", "hash": "31fa5d4319bc5431", "src": "db2@1.60.1.70291"}
+{"id": 1226882, "field": "name", "en": "S03 - Item - Scarlet Enclave - Rogue - Tank 4P Bonus", "hash": "d7dd95126b6fb19b", "src": "db2@1.60.1.70291"}
+{"id": 1226882, "field": "description", "en": "Your Blade Flurry now also strikes a third target and increases your attack speed by an additional $s1%. In addition, each combo point you spend reduces the remaining cooldown on your Blade Flurry by ${$m2/1000}.1 sec.", "hash": "59329a26cc075778", "src": "db2@1.60.1.70291"}
+{"id": 1226883, "field": "name", "en": "Blade Flurry", "hash": "5b462e5ee02f0510", "src": "db2@1.60.1.70291"}
+{"id": 1226883, "field": "aura", "en": "Blade Flurry.", "hash": "b4e9bb2ebaf23dc8", "src": "db2@1.60.1.70291"}
+{"id": 1226956, "field": "name", "en": "S03 - Item - Scarlet Enclave - Rogue - Tank 6P Bonus", "hash": "c6c09a955641bd82", "src": "db2@1.60.1.70291"}
+{"id": 1226956, "field": "description", "en": "Your Rolling with the Punches now grants $s2% more health and $s1% more damage per stack. At $s3 stacks, each time you Dodge or Parry you will gain $1226957s3 Energy. ", "hash": "4cf3ca3b6831760c", "src": "db2@1.60.1.70291"}
+{"id": 1226957, "field": "name", "en": "Float Like a Butterfly, Sting Like a Bee", "hash": "5867510d4ecf802b", "src": "db2@1.60.1.70291"}
+{"id": 1226961, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Elemental 2P Bonus", "hash": "61e9adeaf86bd228", "src": "db2@1.60.1.70291"}
+{"id": 1226961, "field": "description", "en": "When your Lava Burst, Chain Lightning, or Lightning Bolt strikes a target afflicted with your Flame Shock Rank 5 or Rank 6, it also deals one pulse of Flame Shock's damage.", "hash": "e3c1286e6f77f20d", "src": "db2@1.60.1.70291"}
+{"id": 1226963, "field": "name", "en": "Flame Shock", "hash": "f8d691540a59fd4f", "src": "db2@1.60.1.70291"}
+{"id": 1226972, "field": "name", "en": "Flame Shock", "hash": "f8d691540a59fd4f", "src": "db2@1.60.1.70291"}
+{"id": 1226977, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Elemental 4P Bonus", "hash": "50ccb36de33dde0f", "src": "db2@1.60.1.70291"}
+{"id": 1226977, "field": "description", "en": "Chance to trigger Overload increased by an additional $s1% and Lava Bursts damage is increased by a percentage equal to your spell critical strike chance. When Lightning Bolt or Chain Lightning deal damage, increase the damage dealt by your next Lava Burst cast within $1233835d by $1233835s1%, stacking up to $1233835u times.", "hash": "5e2b493a89adef21", "src": "db2@1.60.1.70291"}
+{"id": 1226978, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Elemental 6P Bonus", "hash": "3fafb8f0ce0fe9f6", "src": "db2@1.60.1.70291"}
+{"id": 1226978, "field": "description", "en": "When your Chain Lightning damages fewer than $s1 targets, it deals $s2% increased damage for each target less than $s1.", "hash": "850336b6cfc9f57e", "src": "db2@1.60.1.70291"}
+{"id": 1226981, "field": "name", "en": "Grimoire of Synergy", "hash": "e2fdc6ab6333a5c2", "src": "db2@1.60.1.70291"}
+{"id": 1226981, "field": "description", "en": "Damage done by you or your summoned demon has a $426301h% chance to increase the damage done by the other by $426303s1% for $426303d. ", "hash": "3d3f4a2ea7fe6e8c", "src": "db2@1.60.1.70291"}
+{"id": 1226984, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Enhancement 2P Bonus", "hash": "79eca3848f004345", "src": "db2@1.60.1.70291"}
+{"id": 1226984, "field": "description", "en": "While Static Shock is active, Lava Lash, Lava Burst, and Stormstrike have a $h% chance to add a charge to your Lightning Shield. If charges exceed $s1, Lightning Shield will immediately deal damage to your target instead of adding charges.", "hash": "168b9084acf8ca6b", "src": "db2@1.60.1.70291"}
+{"id": 1226986, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Enhancement 4P Bonus", "hash": "68cfa90779d24f2c", "src": "db2@1.60.1.70291"}
+{"id": 1226986, "field": "description", "en": "Reduces the cooldown on your Fire Nova Totem by $s1%, increases its damage by $s4%, and reduces its mana cost by $s5%. Additionally, your Fire Nova Totem now activates instantly on cast.", "hash": "2812c13b406a9fdd", "src": "db2@1.60.1.70291"}
+{"id": 1226997, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Enhancement 6P Bonus", "hash": "57b2ae8a64a45b13", "src": "db2@1.60.1.70291"}
+{"id": 1226997, "field": "description", "en": "Maelstrom Weapon can now stack up to ${$m1+5} charges. When using a two-handed weapon, gain $s4 charges at a time. Casts with over $s1 charges increase that spell's damage or healing dealt by $s2% per excess charge. Casts while at ${$m1+5} charges will consume all charges and cast twice.", "hash": "b75eaa2cfff96acc", "src": "db2@1.60.1.70291"}

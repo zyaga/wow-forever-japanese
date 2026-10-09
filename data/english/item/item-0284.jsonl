@@ -1,98 +1,99 @@
-{"id": 284041, "field": "name", "en": "Ironback Signet", "hash": "5a026be6e275a643", "src": "db2@1.60.1.70245"}
-{"id": 284063, "field": "name", "en": "Witherbark Hatecleaver", "hash": "fbe30402f3d894e0", "src": "db2@1.60.1.70245"}
-{"id": 284067, "field": "name", "en": "Rusted Family Memento", "hash": "1849101b6bca0e3a", "src": "db2@1.60.1.70245"}
-{"id": 284067, "field": "description", "en": "Memories of a time before tragedy.", "hash": "576000cb9991f391", "src": "db2@1.60.1.70245"}
-{"id": 284092, "field": "name", "en": "Keystone Fragment", "hash": "eb017993a07e81fa", "src": "db2@1.60.1.70245"}
-{"id": 284093, "field": "name", "en": "Keystone Fragment", "hash": "eb017993a07e81fa", "src": "db2@1.60.1.70245"}
-{"id": 284100, "field": "name", "en": "Horseman's Unyielding Shroud", "hash": "637843c451a25ed4", "src": "db2@1.60.1.70245"}
-{"id": 284101, "field": "name", "en": "Blade of Senseless Slaughter", "hash": "2b48e96438b87ca7", "src": "db2@1.60.1.70245"}
-{"id": 284102, "field": "name", "en": "Signet of the Soulless Rider", "hash": "355721d16726e012", "src": "db2@1.60.1.70245"}
-{"id": 284146, "field": "name", "en": "Essene's Waterskin", "hash": "12984381e363ccd4", "src": "db2@1.60.1.70245"}
-{"id": 284150, "field": "name", "en": "Essene's Spellbook", "hash": "74748204c9dd27aa", "src": "db2@1.60.1.70245"}
-{"id": 284151, "field": "name", "en": "Essene's Note", "hash": "06b9c1c883068abb", "src": "db2@1.60.1.70245"}
-{"id": 284154, "field": "name", "en": "Unmovable Sabatons", "hash": "58ffa42c3af283ab", "src": "db2@1.60.1.70245"}
-{"id": 284165, "field": "name", "en": "Duskstalker's Hide", "hash": "fda9a3bca79dd1d5", "src": "db2@1.60.1.70245"}
-{"id": 284166, "field": "name", "en": "Gnarlpine War Staff", "hash": "f965e094eee58779", "src": "db2@1.60.1.70245"}
-{"id": 284167, "field": "name", "en": "Blackmoss Robes", "hash": "0fbb4027c8d43699", "src": "db2@1.60.1.70245"}
-{"id": 284173, "field": "name", "en": "Impcaster's Staff", "hash": "e029ee3ba74a8337", "src": "db2@1.60.1.70245"}
-{"id": 284174, "field": "name", "en": "Serrated Shadowclaw", "hash": "4f01c75fba810221", "src": "db2@1.60.1.70245"}
-{"id": 284176, "field": "name", "en": "Tallstrider Hatchling", "hash": "037ad2366a7a51ed", "src": "db2@1.60.1.70245"}
-{"id": 284176, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70245"}
-{"id": 284177, "field": "name", "en": "Sinslayer's Smasher", "hash": "31e79ebf9e75f764", "src": "db2@1.60.1.70245"}
-{"id": 284185, "field": "name", "en": "Greymist Gauntlets", "hash": "c7faf72470d891e9", "src": "db2@1.60.1.70245"}
-{"id": 284187, "field": "name", "en": "Crazed Firecaller's Cloak", "hash": "186b506ad2e5ee67", "src": "db2@1.60.1.70245"}
-{"id": 284192, "field": "name", "en": "Furbolg Loincloth", "hash": "02c253c034323622", "src": "db2@1.60.1.70245"}
-{"id": 284193, "field": "name", "en": "Moongazer's Wand", "hash": "40ce6b695f4f2b8c", "src": "db2@1.60.1.70245"}
-{"id": 284193, "field": "description", "en": "Increases intellect by $s1 at night.", "hash": "eb59d09ce71c214a", "src": "db2@1.60.1.70245"}
-{"id": 284214, "field": "name", "en": "Minfernal", "hash": "2ef127242227e779", "src": "db2@1.60.1.70245"}
-{"id": 284214, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70245"}
-{"id": 284228, "field": "name", "en": "Vial of Vile Liquid", "hash": "ae5d8efe3e55af01", "src": "db2@1.60.1.70245"}
-{"id": 284228, "field": "description", "en": "Maybe don't drink this one.", "hash": "563b5703bde8244b", "src": "db2@1.60.1.70245"}
-{"id": 284230, "field": "name", "en": "Rage Paw", "hash": "dd93d829b539e5f8", "src": "db2@1.60.1.70245"}
-{"id": 284253, "field": "name", "en": "Eternally Frozen Band", "hash": "143ab3b3433b609d", "src": "db2@1.60.1.70245"}
-{"id": 284257, "field": "name", "en": "Icesworn Decapitator", "hash": "06f8c652afad782d", "src": "db2@1.60.1.70245"}
-{"id": 284261, "field": "name", "en": "Magically Fortified Legguards", "hash": "1880bf7f5a4af7d3", "src": "db2@1.60.1.70245"}
-{"id": 284262, "field": "name", "en": "Howling Hide", "hash": "f61578415ac70953", "src": "db2@1.60.1.70245"}
-{"id": 284262, "field": "description", "en": "Reduces the target enemy's attack power by $s1 for $d.", "hash": "68d8d99c07fee091", "src": "db2@1.60.1.70245"}
-{"id": 284266, "field": "name", "en": "Wintersaber Hide Lined Gloves", "hash": "7e779026f4ebf7a6", "src": "db2@1.60.1.70245"}
-{"id": 284266, "field": "description", "en": "Increases movement speed while mounted by $s1% in Winterspring.", "hash": "46e8d69fb1d6db44", "src": "db2@1.60.1.70245"}
-{"id": 284268, "field": "name", "en": "Furbolg Shaman's Girdle", "hash": "61f3c95cb0b941eb", "src": "db2@1.60.1.70245"}
-{"id": 284271, "field": "name", "en": "Emergency Cache", "hash": "db5820c6617296f4", "src": "db2@1.60.1.70245"}
-{"id": 284272, "field": "name", "en": "Chimaera Hide Legs", "hash": "efed4b6642f93197", "src": "db2@1.60.1.70245"}
-{"id": 284282, "field": "name", "en": "Queen Guard's Royal Seal", "hash": "43a6c7816c3190d7", "src": "db2@1.60.1.70245"}
-{"id": 284282, "field": "description", "en": "Azshara's most faithful bore a signet signifying their undying loyalty.", "hash": "2a5dc3600c679253", "src": "db2@1.60.1.70245"}
-{"id": 284286, "field": "name", "en": "Battleguard Captain's Sticker", "hash": "d0d60cdbad921866", "src": "db2@1.60.1.70245"}
-{"id": 284287, "field": "name", "en": "Felweaver's Staff", "hash": "45abdde48a77f58d", "src": "db2@1.60.1.70245"}
-{"id": 284320, "field": "name", "en": "Flayed Scorpid Bands", "hash": "c236bd40e92b8deb", "src": "db2@1.60.1.70245"}
-{"id": 284321, "field": "name", "en": "Centaur Raider's Axe", "hash": "f6500ee561e612a1", "src": "db2@1.60.1.70245"}
-{"id": 284322, "field": "name", "en": "Invading Marine's Shield", "hash": "6c1baab7024636f4", "src": "db2@1.60.1.70245"}
-{"id": 284323, "field": "name", "en": "Geolord's Mitts", "hash": "4a33c99cb3c0d7d3", "src": "db2@1.60.1.70245"}
-{"id": 284361, "field": "name", "en": "Venture Company Legguards", "hash": "1d88683e94163933", "src": "db2@1.60.1.70245"}
-{"id": 284382, "field": "name", "en": "Budding Leaf Belt", "hash": "59241db035c3eb88", "src": "db2@1.60.1.70245"}
-{"id": 284383, "field": "name", "en": "Faerie Dragon's Skin", "hash": "c8308e3957f68d01", "src": "db2@1.60.1.70245"}
-{"id": 284386, "field": "name", "en": "Whipfang's Skinsearer", "hash": "e3c500d46af79a30", "src": "db2@1.60.1.70245"}
-{"id": 284386, "field": "description", "en": "Sear your target's flesh, dealing $s1 Fire damage.", "hash": "f81f284debd32e39", "src": "db2@1.60.1.70245"}
-{"id": 284399, "field": "name", "en": "Seared Grove Shoulderpads", "hash": "260fda559965beb4", "src": "db2@1.60.1.70245"}
-{"id": 284400, "field": "name", "en": "Foreman's Helm", "hash": "a3efb32107d46c5f", "src": "db2@1.60.1.70245"}
-{"id": 284401, "field": "name", "en": "Sorrow's Shroud", "hash": "0d0617eb98cc8155", "src": "db2@1.60.1.70245"}
-{"id": 284403, "field": "name", "en": "Shapeshifting Sentinel's Strides", "hash": "57eb49ceeb2fb26a", "src": "db2@1.60.1.70245"}
-{"id": 284459, "field": "name", "en": "Dendweller's Hammer", "hash": "1b5c2ee792d96f54", "src": "db2@1.60.1.70245"}
-{"id": 284573, "field": "name", "en": "Ursol'lok's Paws", "hash": "6efdf7189a3fcdb8", "src": "db2@1.60.1.70245"}
-{"id": 284574, "field": "name", "en": "Snapped Branch Wand", "hash": "9d099f7dca47dfd1", "src": "db2@1.60.1.70245"}
-{"id": 284583, "field": "name", "en": "Coin Pouch", "hash": "ded77e8ade1e8a6d", "src": "db2@1.60.1.70245"}
-{"id": 284584, "field": "name", "en": "Coin Pouch", "hash": "ded77e8ade1e8a6d", "src": "db2@1.60.1.70245"}
-{"id": 284585, "field": "name", "en": "Coin Pouch", "hash": "ded77e8ade1e8a6d", "src": "db2@1.60.1.70245"}
-{"id": 284586, "field": "name", "en": "Coin Pouch", "hash": "ded77e8ade1e8a6d", "src": "db2@1.60.1.70245"}
-{"id": 284597, "field": "name", "en": "Monster - Mace, Thaurissan Hammer", "hash": "1a2c375fc4e0c7d7", "src": "db2@1.60.1.70245"}
-{"id": 284664, "field": "name", "en": "Packmule Treat", "hash": "e32c6bb364456445", "src": "db2@1.60.1.70245"}
-{"id": 284664, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70245"}
-{"id": 284666, "field": "name", "en": "Wolf Whistle", "hash": "2fc763385fcb766c", "src": "db2@1.60.1.70245"}
-{"id": 284666, "field": "description", "en": "Summons a wolf that will protect you for $d.", "hash": "d462c5fc37da3f12", "src": "db2@1.60.1.70245"}
-{"id": 284667, "field": "name", "en": "Flame Seared Sword", "hash": "b3482f64fe1e6ad2", "src": "db2@1.60.1.70245"}
-{"id": 284667, "field": "description", "en": "Burns the target for $s1 Fire damage every $t1 sec for $d.", "hash": "9a11784e89af553a", "src": "db2@1.60.1.70245"}
-{"id": 284668, "field": "name", "en": "Apothecary's Concoction", "hash": "3fe5efd46438954f", "src": "db2@1.60.1.70245"}
-{"id": 284696, "field": "name", "en": "Carved Furbolg Tooth", "hash": "fea0535c13332dc3", "src": "db2@1.60.1.70245"}
-{"id": 284697, "field": "name", "en": "Arcane Charged Robes", "hash": "9dabb9398ca144b1", "src": "db2@1.60.1.70245"}
-{"id": 284699, "field": "name", "en": "Still Water Band", "hash": "de9fd36acfbbf173", "src": "db2@1.60.1.70245"}
-{"id": 284699, "field": "description", "en": "Underwater breath lasts $s1% longer than normal.", "hash": "8f8e90b191cb5bf7", "src": "db2@1.60.1.70245"}
-{"id": 284700, "field": "name", "en": "Den Guardian's Crusher", "hash": "88d1b3ecae23ff44", "src": "db2@1.60.1.70245"}
-{"id": 284702, "field": "name", "en": "Slimy Sword", "hash": "d205acfe36388870", "src": "db2@1.60.1.70245"}
-{"id": 284702, "field": "description", "en": "Clearly stolen.", "hash": "cddebb90c763fb24", "src": "db2@1.60.1.70245"}
-{"id": 284704, "field": "name", "en": "Frostbitten Staff", "hash": "ecae1c26537625fa", "src": "db2@1.60.1.70245"}
-{"id": 284705, "field": "name", "en": "Essene's Necklace", "hash": "eb2165f4ac7ad29d", "src": "db2@1.60.1.70245"}
-{"id": 284707, "field": "name", "en": "Basilisk Sinew Belt", "hash": "754bb23ef6694beb", "src": "db2@1.60.1.70245"}
-{"id": 284712, "field": "name", "en": "Hyena Hide Helm", "hash": "3340a5c8c94da027", "src": "db2@1.60.1.70245"}
-{"id": 284715, "field": "name", "en": "First Mate Band", "hash": "9f16656cf6eec4b4", "src": "db2@1.60.1.70245"}
-{"id": 284716, "field": "name", "en": "Band of the Better Half", "hash": "e6ad1e9582f9f641", "src": "db2@1.60.1.70245"}
-{"id": 284717, "field": "name", "en": "Royal Satyr Slicer", "hash": "33df1b99ff430e05", "src": "db2@1.60.1.70245"}
-{"id": 284844, "field": "name", "en": "Dragonmaw Dispatch", "hash": "22f76e98a2362606", "src": "db2@1.60.1.70245"}
-{"id": 284845, "field": "name", "en": "Thicket Raptor Hide", "hash": "f7febe5b71dcc2ad", "src": "db2@1.60.1.70245"}
-{"id": 284866, "field": "name", "en": "Windserpent Scaled Cloak", "hash": "26c651fea5f12379", "src": "db2@1.60.1.70245"}
-{"id": 284868, "field": "name", "en": "Holy Hand Grenade of Alterac", "hash": "850f7c2db719040d", "src": "db2@1.60.1.70245"}
-{"id": 284868, "field": "description", "en": "Inflicts $s1 Holy damage to targets in a $a1 yds radius. May occasionally backfire and imbue targets with the power of the Light.\nOne, two, five? No, three.", "hash": "2cc52d7bfbf4786c", "src": "db2@1.60.1.70245"}
-{"id": 284869, "field": "name", "en": "Unsanctified Grenade", "hash": "25c9cd2dbe392483", "src": "db2@1.60.1.70245"}
-{"id": 284869, "field": "description", "en": "Bless the grenade with the Light.\nCompletely inert and inactive.", "hash": "511341a4f81b2ae1", "src": "db2@1.60.1.70245"}
-{"id": 284870, "field": "name", "en": "Schematic: Unsanctified Grenade", "hash": "822954807e892665", "src": "db2@1.60.1.70245"}
-{"id": 284870, "field": "description", "en": "Teaches you how to make an Unsanctified Grenade.", "hash": "567aa33e4bdfe27b", "src": "db2@1.60.1.70245"}
-{"id": 284871, "field": "name", "en": "Recipe: Transmute Legionite", "hash": "d90bbe8e9b5a1afe", "src": "db2@1.60.1.70245"}
-{"id": 284871, "field": "description", "en": "Teaches you how to transmute Heavy Thorium and Fel Crystals into Legionite.", "hash": "7f21d325c0c26298", "src": "db2@1.60.1.70245"}
+{"id": 284041, "field": "name", "en": "Ironback Signet", "hash": "5a026be6e275a643", "src": "db2@1.60.1.70291"}
+{"id": 284063, "field": "name", "en": "Witherbark Hatecleaver", "hash": "fbe30402f3d894e0", "src": "db2@1.60.1.70291"}
+{"id": 284067, "field": "name", "en": "Rusted Family Memento", "hash": "1849101b6bca0e3a", "src": "db2@1.60.1.70291"}
+{"id": 284067, "field": "description", "en": "Memories of a time before tragedy.", "hash": "576000cb9991f391", "src": "db2@1.60.1.70291"}
+{"id": 284092, "field": "name", "en": "Keystone Fragment", "hash": "eb017993a07e81fa", "src": "db2@1.60.1.70291"}
+{"id": 284093, "field": "name", "en": "Keystone Fragment", "hash": "eb017993a07e81fa", "src": "db2@1.60.1.70291"}
+{"id": 284100, "field": "name", "en": "Horseman's Unyielding Shroud", "hash": "637843c451a25ed4", "src": "db2@1.60.1.70291"}
+{"id": 284101, "field": "name", "en": "Blade of Senseless Slaughter", "hash": "2b48e96438b87ca7", "src": "db2@1.60.1.70291"}
+{"id": 284102, "field": "name", "en": "Signet of the Soulless Rider", "hash": "355721d16726e012", "src": "db2@1.60.1.70291"}
+{"id": 284146, "field": "name", "en": "Essene's Waterskin", "hash": "12984381e363ccd4", "src": "db2@1.60.1.70291"}
+{"id": 284150, "field": "name", "en": "Essene's Spellbook", "hash": "74748204c9dd27aa", "src": "db2@1.60.1.70291"}
+{"id": 284151, "field": "name", "en": "Essene's Note", "hash": "06b9c1c883068abb", "src": "db2@1.60.1.70291"}
+{"id": 284154, "field": "name", "en": "Unmovable Sabatons", "hash": "58ffa42c3af283ab", "src": "db2@1.60.1.70291"}
+{"id": 284165, "field": "name", "en": "Duskstalker's Hide", "hash": "fda9a3bca79dd1d5", "src": "db2@1.60.1.70291"}
+{"id": 284166, "field": "name", "en": "Gnarlpine War Staff", "hash": "f965e094eee58779", "src": "db2@1.60.1.70291"}
+{"id": 284167, "field": "name", "en": "Blackmoss Robes", "hash": "0fbb4027c8d43699", "src": "db2@1.60.1.70291"}
+{"id": 284173, "field": "name", "en": "Impcaster's Staff", "hash": "e029ee3ba74a8337", "src": "db2@1.60.1.70291"}
+{"id": 284174, "field": "name", "en": "Serrated Shadowclaw", "hash": "4f01c75fba810221", "src": "db2@1.60.1.70291"}
+{"id": 284176, "field": "name", "en": "Tallstrider Hatchling", "hash": "037ad2366a7a51ed", "src": "db2@1.60.1.70291"}
+{"id": 284176, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70291"}
+{"id": 284177, "field": "name", "en": "Sinslayer's Smasher", "hash": "31e79ebf9e75f764", "src": "db2@1.60.1.70291"}
+{"id": 284185, "field": "name", "en": "Greymist Gauntlets", "hash": "c7faf72470d891e9", "src": "db2@1.60.1.70291"}
+{"id": 284187, "field": "name", "en": "Crazed Firecaller's Cloak", "hash": "186b506ad2e5ee67", "src": "db2@1.60.1.70291"}
+{"id": 284192, "field": "name", "en": "Furbolg Loincloth", "hash": "02c253c034323622", "src": "db2@1.60.1.70291"}
+{"id": 284193, "field": "name", "en": "Moongazer's Wand", "hash": "40ce6b695f4f2b8c", "src": "db2@1.60.1.70291"}
+{"id": 284193, "field": "description", "en": "Increases intellect by $s1 at night.", "hash": "eb59d09ce71c214a", "src": "db2@1.60.1.70291"}
+{"id": 284214, "field": "name", "en": "Minfernal", "hash": "2ef127242227e779", "src": "db2@1.60.1.70291"}
+{"id": 284214, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70291"}
+{"id": 284228, "field": "name", "en": "Vial of Vile Liquid", "hash": "ae5d8efe3e55af01", "src": "db2@1.60.1.70291"}
+{"id": 284228, "field": "description", "en": "Maybe don't drink this one.", "hash": "563b5703bde8244b", "src": "db2@1.60.1.70291"}
+{"id": 284230, "field": "name", "en": "Rage Paw", "hash": "dd93d829b539e5f8", "src": "db2@1.60.1.70291"}
+{"id": 284253, "field": "name", "en": "Eternally Frozen Band", "hash": "143ab3b3433b609d", "src": "db2@1.60.1.70291"}
+{"id": 284257, "field": "name", "en": "Icesworn Decapitator", "hash": "06f8c652afad782d", "src": "db2@1.60.1.70291"}
+{"id": 284261, "field": "name", "en": "Magically Fortified Legguards", "hash": "1880bf7f5a4af7d3", "src": "db2@1.60.1.70291"}
+{"id": 284262, "field": "name", "en": "Howling Hide", "hash": "f61578415ac70953", "src": "db2@1.60.1.70291"}
+{"id": 284262, "field": "description", "en": "Reduces the target enemy's attack power by $s1 for $d.", "hash": "68d8d99c07fee091", "src": "db2@1.60.1.70291"}
+{"id": 284266, "field": "name", "en": "Wintersaber Hide Lined Gloves", "hash": "7e779026f4ebf7a6", "src": "db2@1.60.1.70291"}
+{"id": 284266, "field": "description", "en": "Increases movement speed while mounted by $s1% in Winterspring.", "hash": "46e8d69fb1d6db44", "src": "db2@1.60.1.70291"}
+{"id": 284268, "field": "name", "en": "Furbolg Shaman's Girdle", "hash": "61f3c95cb0b941eb", "src": "db2@1.60.1.70291"}
+{"id": 284271, "field": "name", "en": "Emergency Cache", "hash": "db5820c6617296f4", "src": "db2@1.60.1.70291"}
+{"id": 284272, "field": "name", "en": "Chimaera Hide Legs", "hash": "efed4b6642f93197", "src": "db2@1.60.1.70291"}
+{"id": 284282, "field": "name", "en": "Queen Guard's Royal Seal", "hash": "43a6c7816c3190d7", "src": "db2@1.60.1.70291"}
+{"id": 284282, "field": "description", "en": "Azshara's most faithful bore a signet signifying their undying loyalty.", "hash": "2a5dc3600c679253", "src": "db2@1.60.1.70291"}
+{"id": 284286, "field": "name", "en": "Battleguard Captain's Sticker", "hash": "d0d60cdbad921866", "src": "db2@1.60.1.70291"}
+{"id": 284287, "field": "name", "en": "Felweaver's Staff", "hash": "45abdde48a77f58d", "src": "db2@1.60.1.70291"}
+{"id": 284320, "field": "name", "en": "Flayed Scorpid Bands", "hash": "c236bd40e92b8deb", "src": "db2@1.60.1.70291"}
+{"id": 284321, "field": "name", "en": "Centaur Raider's Axe", "hash": "f6500ee561e612a1", "src": "db2@1.60.1.70291"}
+{"id": 284322, "field": "name", "en": "Invading Marine's Shield", "hash": "6c1baab7024636f4", "src": "db2@1.60.1.70291"}
+{"id": 284323, "field": "name", "en": "Geolord's Mitts", "hash": "4a33c99cb3c0d7d3", "src": "db2@1.60.1.70291"}
+{"id": 284361, "field": "name", "en": "Venture Company Legguards", "hash": "1d88683e94163933", "src": "db2@1.60.1.70291"}
+{"id": 284382, "field": "name", "en": "Budding Leaf Belt", "hash": "59241db035c3eb88", "src": "db2@1.60.1.70291"}
+{"id": 284383, "field": "name", "en": "Faerie Dragon's Skin", "hash": "c8308e3957f68d01", "src": "db2@1.60.1.70291"}
+{"id": 284386, "field": "name", "en": "Whipfang's Skinsearer", "hash": "e3c500d46af79a30", "src": "db2@1.60.1.70291"}
+{"id": 284386, "field": "description", "en": "Sear your target's flesh, dealing $s1 Fire damage.", "hash": "f81f284debd32e39", "src": "db2@1.60.1.70291"}
+{"id": 284399, "field": "name", "en": "Seared Grove Shoulderpads", "hash": "260fda559965beb4", "src": "db2@1.60.1.70291"}
+{"id": 284400, "field": "name", "en": "Foreman's Helm", "hash": "a3efb32107d46c5f", "src": "db2@1.60.1.70291"}
+{"id": 284401, "field": "name", "en": "Sorrow's Shroud", "hash": "0d0617eb98cc8155", "src": "db2@1.60.1.70291"}
+{"id": 284403, "field": "name", "en": "Shapeshifting Sentinel's Strides", "hash": "57eb49ceeb2fb26a", "src": "db2@1.60.1.70291"}
+{"id": 284459, "field": "name", "en": "Dendweller's Hammer", "hash": "1b5c2ee792d96f54", "src": "db2@1.60.1.70291"}
+{"id": 284573, "field": "name", "en": "Ursol'lok's Paws", "hash": "6efdf7189a3fcdb8", "src": "db2@1.60.1.70291"}
+{"id": 284574, "field": "name", "en": "Snapped Branch Wand", "hash": "9d099f7dca47dfd1", "src": "db2@1.60.1.70291"}
+{"id": 284583, "field": "name", "en": "Coin Pouch", "hash": "ded77e8ade1e8a6d", "src": "db2@1.60.1.70291"}
+{"id": 284584, "field": "name", "en": "Coin Pouch", "hash": "ded77e8ade1e8a6d", "src": "db2@1.60.1.70291"}
+{"id": 284585, "field": "name", "en": "Coin Pouch", "hash": "ded77e8ade1e8a6d", "src": "db2@1.60.1.70291"}
+{"id": 284586, "field": "name", "en": "Coin Pouch", "hash": "ded77e8ade1e8a6d", "src": "db2@1.60.1.70291"}
+{"id": 284597, "field": "name", "en": "Monster - Mace, Thaurissan Hammer", "hash": "1a2c375fc4e0c7d7", "src": "db2@1.60.1.70291"}
+{"id": 284664, "field": "name", "en": "Packmule Treat", "hash": "e32c6bb364456445", "src": "db2@1.60.1.70291"}
+{"id": 284664, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70291"}
+{"id": 284666, "field": "name", "en": "Wolf Whistle", "hash": "2fc763385fcb766c", "src": "db2@1.60.1.70291"}
+{"id": 284666, "field": "description", "en": "Summons a wolf that will protect you for $d.", "hash": "d462c5fc37da3f12", "src": "db2@1.60.1.70291"}
+{"id": 284667, "field": "name", "en": "Flame Seared Sword", "hash": "b3482f64fe1e6ad2", "src": "db2@1.60.1.70291"}
+{"id": 284667, "field": "description", "en": "Burns the target for $s1 Fire damage every $t1 sec for $d.", "hash": "9a11784e89af553a", "src": "db2@1.60.1.70291"}
+{"id": 284668, "field": "name", "en": "Apothecary's Concoction", "hash": "3fe5efd46438954f", "src": "db2@1.60.1.70291"}
+{"id": 284696, "field": "name", "en": "Carved Furbolg Tooth", "hash": "fea0535c13332dc3", "src": "db2@1.60.1.70291"}
+{"id": 284697, "field": "name", "en": "Arcane Charged Robes", "hash": "9dabb9398ca144b1", "src": "db2@1.60.1.70291"}
+{"id": 284699, "field": "name", "en": "Still Water Band", "hash": "de9fd36acfbbf173", "src": "db2@1.60.1.70291"}
+{"id": 284699, "field": "description", "en": "Underwater breath lasts $s1% longer than normal.", "hash": "8f8e90b191cb5bf7", "src": "db2@1.60.1.70291"}
+{"id": 284700, "field": "name", "en": "Den Guardian's Crusher", "hash": "88d1b3ecae23ff44", "src": "db2@1.60.1.70291"}
+{"id": 284702, "field": "name", "en": "Slimy Sword", "hash": "d205acfe36388870", "src": "db2@1.60.1.70291"}
+{"id": 284702, "field": "description", "en": "Clearly stolen.", "hash": "cddebb90c763fb24", "src": "db2@1.60.1.70291"}
+{"id": 284704, "field": "name", "en": "Frostbitten Staff", "hash": "ecae1c26537625fa", "src": "db2@1.60.1.70291"}
+{"id": 284705, "field": "name", "en": "Essene's Necklace", "hash": "eb2165f4ac7ad29d", "src": "db2@1.60.1.70291"}
+{"id": 284707, "field": "name", "en": "Basilisk Sinew Belt", "hash": "754bb23ef6694beb", "src": "db2@1.60.1.70291"}
+{"id": 284712, "field": "name", "en": "Hyena Hide Helm", "hash": "3340a5c8c94da027", "src": "db2@1.60.1.70291"}
+{"id": 284713, "field": "name", "en": "Accursed Legguards", "hash": "64fd3ee0f034ea8f", "src": "db2@1.60.1.70291"}
+{"id": 284715, "field": "name", "en": "First Mate Band", "hash": "9f16656cf6eec4b4", "src": "db2@1.60.1.70291"}
+{"id": 284716, "field": "name", "en": "Band of the Better Half", "hash": "e6ad1e9582f9f641", "src": "db2@1.60.1.70291"}
+{"id": 284717, "field": "name", "en": "Royal Satyr Slicer", "hash": "33df1b99ff430e05", "src": "db2@1.60.1.70291"}
+{"id": 284844, "field": "name", "en": "Dragonmaw Dispatch", "hash": "22f76e98a2362606", "src": "db2@1.60.1.70291"}
+{"id": 284845, "field": "name", "en": "Thicket Raptor Hide", "hash": "f7febe5b71dcc2ad", "src": "db2@1.60.1.70291"}
+{"id": 284866, "field": "name", "en": "Windserpent Scaled Cloak", "hash": "26c651fea5f12379", "src": "db2@1.60.1.70291"}
+{"id": 284868, "field": "name", "en": "Holy Hand Grenade of Alterac", "hash": "850f7c2db719040d", "src": "db2@1.60.1.70291"}
+{"id": 284868, "field": "description", "en": "Inflicts $s1 Holy damage to targets in a $a1 yds radius. May occasionally backfire and imbue targets with the power of the Light.\nOne, two, five? No, three.", "hash": "2cc52d7bfbf4786c", "src": "db2@1.60.1.70291"}
+{"id": 284869, "field": "name", "en": "Unsanctified Grenade", "hash": "25c9cd2dbe392483", "src": "db2@1.60.1.70291"}
+{"id": 284869, "field": "description", "en": "Bless the grenade with the Light.\nCompletely inert and inactive.", "hash": "511341a4f81b2ae1", "src": "db2@1.60.1.70291"}
+{"id": 284870, "field": "name", "en": "Schematic: Unsanctified Grenade", "hash": "822954807e892665", "src": "db2@1.60.1.70291"}
+{"id": 284870, "field": "description", "en": "Teaches you how to make an Unsanctified Grenade.", "hash": "567aa33e4bdfe27b", "src": "db2@1.60.1.70291"}
+{"id": 284871, "field": "name", "en": "Recipe: Transmute Legionite", "hash": "d90bbe8e9b5a1afe", "src": "db2@1.60.1.70291"}
+{"id": 284871, "field": "description", "en": "Teaches you how to transmute Heavy Thorium and Fel Crystals into Legionite.", "hash": "7f21d325c0c26298", "src": "db2@1.60.1.70291"}

@@ -622,7 +622,6 @@ WFJ.Data.add("gloss", {
   [76619] = "成し遂げる\tなしとげる\tneed doing (must accomplish)",
   [76620] = "成し遂げる\tなしとげる\tonce (it) has been done",
   [76621] = "成し遂げる\tなしとげる\tonce done (accomplish)",
-  [76622] = "成し遂げる\tなしとげる\tonce you have done",
   [76623] = "成し遂げる\tなしとげる\tovercame (accomplished)",
   [76624] = "成し遂げる\tなしとげる\tsucceed (accomplished)",
   [76625] = "成し遂げる\tなしとげる\tsucceed (if you accomplish it)",

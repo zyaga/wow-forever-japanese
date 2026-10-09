@@ -360,7 +360,6 @@ WFJ.Data.add("gloss", {
   [113357] = "腕輪\tうでわ\tarmbands",
   [113358] = "腕輪\tうでわ\tbangle",
   [113359] = "腕輪\tうでわ\tbracers",
-  [113360] = "腕輪\tうでわ\tbracers (armlet)",
   [113361] = "腕輪\tうでわ\tbracers (armlets)",
   [113362] = "腕輪\tうでわ\twraps (bracelet)",
   [113363] = "腫れ上がる\tはれあがる\tswollen",

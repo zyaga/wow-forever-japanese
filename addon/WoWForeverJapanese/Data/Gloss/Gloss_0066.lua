@@ -748,7 +748,6 @@ WFJ.Data.add("gloss", {
   [66746] = "寝返り\tねがえり\ttossing (turning over in sleep)",
   [66747] = "寝返る\tねがえる\tdefect",
   [66748] = "寝返る\tねがえる\twant to come in (defect)",
-  [66749] = "寝返る\tねがえる\twants to come in (defect)",
   [66750] = "寝過ごす\tねすごす\toverslept",
   [66751] = "寝間着\tねまき\tbedclothes",
   [66752] = "察し\tさっし\tguess (察しがつく: to figure out)",

@@ -1,160 +1,160 @@
-{"id": 370066, "field": "name", "en": "Visions of Madness", "hash": "10acdb986fd051c1", "src": "db2@1.60.1.70245"}
-{"id": 370066, "field": "aura", "en": "Driven mad by the Eye of C'Thun, inflicting damage to nearby enemies.", "hash": "917a6fe6e78d12b5", "src": "db2@1.60.1.70245"}
-{"id": 370067, "field": "name", "en": "Visions of Madness", "hash": "10acdb986fd051c1", "src": "db2@1.60.1.70245"}
-{"id": 370091, "field": "name", "en": "Uber Invis", "hash": "188cecdae5aa19a7", "src": "db2@1.60.1.70245"}
-{"id": 370092, "field": "name", "en": "Uber Invis", "hash": "188cecdae5aa19a7", "src": "db2@1.60.1.70245"}
-{"id": 370093, "field": "name", "en": "Uber Invis", "hash": "188cecdae5aa19a7", "src": "db2@1.60.1.70245"}
-{"id": 370099, "field": "name", "en": "Arcane Rot", "hash": "7a4098573a95cf5d", "src": "db2@1.60.1.70245"}
-{"id": 370100, "field": "name", "en": "Illusionary Rot", "hash": "f1efe8c26a1736f1", "src": "db2@1.60.1.70245"}
-{"id": 370100, "field": "aura", "en": "Increases damage taken by $s1%.", "hash": "aac496b33fc69b76", "src": "db2@1.60.1.70245"}
-{"id": 370101, "field": "name", "en": "Visions of Madness", "hash": "10acdb986fd051c1", "src": "db2@1.60.1.70245"}
-{"id": 370102, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70245"}
-{"id": 370142, "field": "name", "en": "Real Clone", "hash": "399d217c84799eba", "src": "db2@1.60.1.70245"}
-{"id": 370146, "field": "name", "en": "Real Clone", "hash": "399d217c84799eba", "src": "db2@1.60.1.70245"}
-{"id": 370148, "field": "name", "en": "Illusionary Shatter", "hash": "1a68b4ba39afedd2", "src": "db2@1.60.1.70245"}
-{"id": 370156, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70245"}
-{"id": 370156, "field": "description", "en": "Blasts an enemy with lightning, inflicting Nature damage.", "hash": "86118ec0e525b93e", "src": "db2@1.60.1.70245"}
-{"id": 370171, "field": "name", "en": "Summon Eye of C'Thun", "hash": "a96ea3198da7f8a9", "src": "db2@1.60.1.70245"}
-{"id": 370172, "field": "name", "en": "Summon Eye of C'Thun", "hash": "a96ea3198da7f8a9", "src": "db2@1.60.1.70245"}
-{"id": 370175, "field": "name", "en": "Summon Eye of C'Thun", "hash": "a96ea3198da7f8a9", "src": "db2@1.60.1.70245"}
-{"id": 370179, "field": "name", "en": "Eye Beam", "hash": "0fea0b6527e6dcb9", "src": "db2@1.60.1.70245"}
-{"id": 370180, "field": "name", "en": "Summon Claw Tentacles", "hash": "bf89db85e754e106", "src": "db2@1.60.1.70245"}
-{"id": 370181, "field": "name", "en": "Summon Claw Tentacles", "hash": "bf89db85e754e106", "src": "db2@1.60.1.70245"}
-{"id": 370182, "field": "name", "en": "Summon Claw Tentacles", "hash": "bf89db85e754e106", "src": "db2@1.60.1.70245"}
-{"id": 370187, "field": "name", "en": "Summon Eye Tentacles", "hash": "199164090dde33bb", "src": "db2@1.60.1.70245"}
-{"id": 370188, "field": "name", "en": "Summon Eye Tentacles", "hash": "199164090dde33bb", "src": "db2@1.60.1.70245"}
-{"id": 370189, "field": "name", "en": "Summon Eye Tentacles", "hash": "199164090dde33bb", "src": "db2@1.60.1.70245"}
-{"id": 370190, "field": "name", "en": "Summon Giant Claw Tentacles", "hash": "618ac6ce50356b81", "src": "db2@1.60.1.70245"}
-{"id": 370191, "field": "name", "en": "Summon Giant Claw Tentacles", "hash": "618ac6ce50356b81", "src": "db2@1.60.1.70245"}
-{"id": 370192, "field": "name", "en": "Summon Giant Claw Tentacles", "hash": "618ac6ce50356b81", "src": "db2@1.60.1.70245"}
-{"id": 370205, "field": "name", "en": "Despawn AQ40 Bonus Difficulty Trigger", "hash": "0833694dba29c7f3", "src": "db2@1.60.1.70245"}
-{"id": 370273, "field": "name", "en": "Lesser Deathstone", "hash": "05e38162df3beddc", "src": "db2@1.60.1.70245"}
-{"id": 370287, "field": "name", "en": "Undying Vanquisher", "hash": "f705935b25d47869", "src": "db2@1.60.1.70245"}
-{"id": 370287, "field": "aura", "en": "You have not yet died at the hands of a powerful foe in Naxxramas.\r\nAbsorbing deathstones from slain enemies.", "hash": "0ecbca65d9f54126", "src": "db2@1.60.1.70245"}
-{"id": 370289, "field": "name", "en": "Greater Deathstone", "hash": "2dc8a4f5b5659f8e", "src": "db2@1.60.1.70245"}
-{"id": 370289, "field": "description", "en": "Turn $s2 lesser deathstones into a greater one.", "hash": "1ba9fc0d93a9371e", "src": "db2@1.60.1.70245"}
-{"id": 370290, "field": "name", "en": "Bonus Difficulty - Friendly (Green)", "hash": "c99add38d7e00d77", "src": "db2@1.60.1.70245"}
-{"id": 370293, "field": "name", "en": "Bonus Difficulty - Honored (Blue)", "hash": "38eb819e651f2a3f", "src": "db2@1.60.1.70245"}
-{"id": 370294, "field": "name", "en": "Bonus Difficulty - Revered (Purple)", "hash": "0fdf7b32957d39b4", "src": "db2@1.60.1.70245"}
-{"id": 370295, "field": "name", "en": "Bonus Difficulty - Exalted (Red)", "hash": "0e1a5e94706811b0", "src": "db2@1.60.1.70245"}
-{"id": 370296, "field": "name", "en": "Deathstone Powers", "hash": "5d6e60d1b9811ef8", "src": "db2@1.60.1.70245"}
-{"id": 370296, "field": "description", "en": "Teaches Archmage Tarsis Kir-Moldir how to extract power from deathstones.", "hash": "82f0c78cc7205f08", "src": "db2@1.60.1.70245"}
-{"id": 370301, "field": "name", "en": "Rune of Teleportation: Antechamber", "hash": "8f86253d15d10621", "src": "db2@1.60.1.70245"}
-{"id": 370301, "field": "description", "en": "Transports you to the Antechamber in Naxxramas.", "hash": "d17b9798f30cf618", "src": "db2@1.60.1.70245"}
-{"id": 370303, "field": "name", "en": "Orb of Corruption", "hash": "9080d953d6e82553", "src": "db2@1.60.1.70245"}
-{"id": 370303, "field": "description", "en": "Crush the orb, increasing the amount of lesser deathstones absorbed from Kel'Thuzad's minions by $s1% for $d.", "hash": "874fe1b36e9a7499", "src": "db2@1.60.1.70245"}
-{"id": 370303, "field": "aura", "en": "Increases the amount of lesser deathstones absorbed from Kel'Thuzad's minions by $s1%.", "hash": "be9e2a6588cd69e2", "src": "db2@1.60.1.70245"}
-{"id": 370308, "field": "name", "en": "Rod of Necromancy", "hash": "06102996719ee660", "src": "db2@1.60.1.70245"}
-{"id": 370308, "field": "description", "en": "Subdues the will of an undead target within Naxxramas, causing them to become charmed for $d.", "hash": "b7b161cd806e2779", "src": "db2@1.60.1.70245"}
-{"id": 370308, "field": "aura", "en": "Controlled by $@auracaster.", "hash": "55d89072505e216e", "src": "db2@1.60.1.70245"}
-{"id": 370309, "field": "name", "en": "Greater Deathstone", "hash": "2dc8a4f5b5659f8e", "src": "db2@1.60.1.70245"}
-{"id": 370336, "field": "name", "en": "Fungal Spore Cluster", "hash": "61bc2ed5c93fb3a6", "src": "db2@1.60.1.70245"}
-{"id": 370336, "field": "description", "en": "Grants your offensive abilities a chance to summon a spore that affects nearby players with Fungal Bloom when killed. This effect lasts for $d.\r\n\r\n$@spellicon370337$@spellname370337 \r\n$@spellaura370337", "hash": "ae02ef9c1996a1e1", "src": "db2@1.60.1.70245"}
-{"id": 370336, "field": "aura", "en": "Your offensive abilities have a chance to summon a spore.", "hash": "ad4f0db223d1637c", "src": "db2@1.60.1.70245"}
-{"id": 370337, "field": "name", "en": "Fungal Bloom", "hash": "e8215afb1bd648e6", "src": "db2@1.60.1.70245"}
-{"id": 370337, "field": "description", "en": "Inflicts $s1 Nature damage every $t1 sec while also increasing the chance for a melee, ranged, or spell critical by $s2% for $d.", "hash": "cbec1d874404a1ec", "src": "db2@1.60.1.70245"}
-{"id": 370337, "field": "aura", "en": "Inflicts $s1 Nature damage every $t1 sec while increasing the chance for a melee, ranged, or spell critical by $s2%.", "hash": "7a3c3de1ba22e37b", "src": "db2@1.60.1.70245"}
-{"id": 370343, "field": "name", "en": "Rune of Teleportation: Frostwyrm's Lair", "hash": "23ea03572c55ee61", "src": "db2@1.60.1.70245"}
-{"id": 370343, "field": "description", "en": "Transports you to Frostwyrm's Lair in Naxxramas.", "hash": "2446707d5a1b5130", "src": "db2@1.60.1.70245"}
-{"id": 370347, "field": "name", "en": "Ritual Dagger", "hash": "1a60a06a9fb54f21", "src": "db2@1.60.1.70245"}
-{"id": 370347, "field": "description", "en": "Absorb the life force of those around you, increasing stamina by $370877s1 for each target hit. This effect stacks up to $370877u and lasts for $370877d.", "hash": "ff924be91dde7e52", "src": "db2@1.60.1.70245"}
-{"id": 370364, "field": "name", "en": "Summon Spore", "hash": "5c354509370ed887", "src": "db2@1.60.1.70245"}
-{"id": 370391, "field": "name", "en": "Failsafe Phylactery", "hash": "743f9933316bdb52", "src": "db2@1.60.1.70245"}
-{"id": 370391, "field": "description", "en": "Prevents an attack that would otherwise kill you. Triggering this effect also grants you $370417d of damage immunity and shatters the phylactery.", "hash": "78af810802c7bccd", "src": "db2@1.60.1.70245"}
-{"id": 370406, "field": "name", "en": "Fungal Spore Cluster", "hash": "61bc2ed5c93fb3a6", "src": "db2@1.60.1.70245"}
-{"id": 370417, "field": "name", "en": "Failsafe Phylactery", "hash": "743f9933316bdb52", "src": "db2@1.60.1.70245"}
-{"id": 370417, "field": "aura", "en": "Immune to all damage.", "hash": "ec662d6c9a23e268", "src": "db2@1.60.1.70245"}
-{"id": 370423, "field": "name", "en": "Mask of Death", "hash": "38b73e228f800023", "src": "db2@1.60.1.70245"}
-{"id": 370423, "field": "description", "en": "Adopt the visage of a denizen of Naxxramas.", "hash": "ec0924c49eee4dc1", "src": "db2@1.60.1.70245"}
-{"id": 370427, "field": "name", "en": "Mask of Death", "hash": "38b73e228f800023", "src": "db2@1.60.1.70245"}
-{"id": 370427, "field": "aura", "en": "For science!", "hash": "1e8e8e093d2875fd", "src": "db2@1.60.1.70245"}
-{"id": 370431, "field": "name", "en": "Mask of Death", "hash": "38b73e228f800023", "src": "db2@1.60.1.70245"}
-{"id": 370431, "field": "aura", "en": "Suffer well...", "hash": "c4d70020cfddb191", "src": "db2@1.60.1.70245"}
-{"id": 370434, "field": "name", "en": "Mask of Death", "hash": "38b73e228f800023", "src": "db2@1.60.1.70245"}
-{"id": 370434, "field": "aura", "en": "Bring the pain!", "hash": "8bfd52ca794e0694", "src": "db2@1.60.1.70245"}
-{"id": 370435, "field": "name", "en": "Mask of Death", "hash": "38b73e228f800023", "src": "db2@1.60.1.70245"}
-{"id": 370435, "field": "aura", "en": "What happened to... me....", "hash": "6091b33b0fc5c779", "src": "db2@1.60.1.70245"}
-{"id": 370436, "field": "name", "en": "Mask of Death", "hash": "38b73e228f800023", "src": "db2@1.60.1.70245"}
-{"id": 370436, "field": "aura", "en": "Sticky and stinky!", "hash": "b19ebf991361cdfe", "src": "db2@1.60.1.70245"}
-{"id": 370439, "field": "name", "en": "Gooped", "hash": "6d2034d55198788a", "src": "db2@1.60.1.70245"}
-{"id": 370439, "field": "aura", "en": "Gooped by $@auracaster.", "hash": "55cb210a77edd0da", "src": "db2@1.60.1.70245"}
-{"id": 370444, "field": "name", "en": "Naxxramas", "hash": "32ae1f685d7f22a1", "src": "db2@1.60.1.70245"}
-{"id": 370444, "field": "description", "en": "Health increased by $s1% and damage increased by $s2%.", "hash": "d1890c532efce712", "src": "db2@1.60.1.70245"}
-{"id": 370444, "field": "aura", "en": "|cFFffd200Bonus Event: Season of Mastery|r\r\n\r\nHealth increased by $s1% and damage increased by $s2%.", "hash": "e85aab66ed5a67ad", "src": "db2@1.60.1.70245"}
-{"id": 370490, "field": "name", "en": "Skeletal Artifact", "hash": "e27b55efbae9520e", "src": "db2@1.60.1.70245"}
-{"id": 370490, "field": "description", "en": "Increases movement speed by $s1%.", "hash": "f152500fc71ad52c", "src": "db2@1.60.1.70245"}
-{"id": 370490, "field": "aura", "en": "Increases movement speed by $s1%.", "hash": "f152500fc71ad52c", "src": "db2@1.60.1.70245"}
-{"id": 370496, "field": "name", "en": "Glyph of Madness", "hash": "3a0beabcd39fbfb4", "src": "db2@1.60.1.70245"}
-{"id": 370496, "field": "aura", "en": "You are being watched.", "hash": "fe0fe00f276e4b85", "src": "db2@1.60.1.70245"}
-{"id": 370497, "field": "name", "en": "Glyph of Darkness", "hash": "0edf962fd0ca8253", "src": "db2@1.60.1.70245"}
-{"id": 370497, "field": "aura", "en": "You are being watched.", "hash": "fe0fe00f276e4b85", "src": "db2@1.60.1.70245"}
-{"id": 370498, "field": "name", "en": "Glyph of Chaos", "hash": "2fcb1eadd53dc579", "src": "db2@1.60.1.70245"}
-{"id": 370498, "field": "aura", "en": "You are being watched.", "hash": "fe0fe00f276e4b85", "src": "db2@1.60.1.70245"}
-{"id": 370507, "field": "name", "en": "Glyph of the Void", "hash": "779a0fee9edb3e9d", "src": "db2@1.60.1.70245"}
-{"id": 370507, "field": "aura", "en": "You are being watched.", "hash": "fe0fe00f276e4b85", "src": "db2@1.60.1.70245"}
-{"id": 370513, "field": "name", "en": "Pet", "hash": "001526f33da1c09a", "src": "db2@1.60.1.70245"}
-{"id": 370514, "field": "name", "en": "[DNT] Update Bonus Difficulty", "hash": "ee6bbc55f4c96be2", "src": "db2@1.60.1.70245"}
-{"id": 370515, "field": "name", "en": "Pet", "hash": "001526f33da1c09a", "src": "db2@1.60.1.70245"}
-{"id": 370520, "field": "name", "en": "[DNT] Bonus Boss Difficulty", "hash": "8a503a633e07ed57", "src": "db2@1.60.1.70245"}
-{"id": 370520, "field": "aura", "en": "Damage increased by $s1%.\r\nHealth increased by $s2%.", "hash": "9915aaeee3f58526", "src": "db2@1.60.1.70245"}
-{"id": 370531, "field": "name", "en": "Skeletal Artifact", "hash": "e27b55efbae9520e", "src": "db2@1.60.1.70245"}
-{"id": 370531, "field": "description", "en": "Entraps the soul of the dead target, granting you a beneficial effect. This effect lasts for $370552d.", "hash": "040837061cb28493", "src": "db2@1.60.1.70245"}
-{"id": 370538, "field": "name", "en": "[DNT] Teleport to AQ40", "hash": "0336168c79b4878a", "src": "db2@1.60.1.70245"}
-{"id": 370538, "field": "description", "en": "Teleport player to Ahn'Qiraj.", "hash": "ebae91fd017fd6a0", "src": "db2@1.60.1.70245"}
-{"id": 370541, "field": "name", "en": "[DNT] Teleport to Naxxramas", "hash": "646a39fbbc7dcf71", "src": "db2@1.60.1.70245"}
-{"id": 370541, "field": "description", "en": "Teleport player to Naxxramas.", "hash": "92c3fd3705cd5357", "src": "db2@1.60.1.70245"}
-{"id": 370544, "field": "name", "en": "Skeletal Artifact", "hash": "e27b55efbae9520e", "src": "db2@1.60.1.70245"}
-{"id": 370544, "field": "description", "en": "Reduces damage taken by $s1%.", "hash": "9b1a4c664f2d535b", "src": "db2@1.60.1.70245"}
-{"id": 370544, "field": "aura", "en": "Reduces damage taken by $s1%.", "hash": "9b1a4c664f2d535b", "src": "db2@1.60.1.70245"}
-{"id": 370548, "field": "name", "en": "Skeletal Artifact", "hash": "e27b55efbae9520e", "src": "db2@1.60.1.70245"}
-{"id": 370548, "field": "description", "en": "$1 mana regen every 5 seconds.", "hash": "a6ea72c67de58bd5", "src": "db2@1.60.1.70245"}
-{"id": 370548, "field": "aura", "en": "$1 mana regen every 5 seconds.", "hash": "a6ea72c67de58bd5", "src": "db2@1.60.1.70245"}
-{"id": 370550, "field": "name", "en": "Skeletal Artifact", "hash": "e27b55efbae9520e", "src": "db2@1.60.1.70245"}
-{"id": 370550, "field": "description", "en": "Attack power increased by $s1.\r\n", "hash": "564bbf31a94e7e0a", "src": "db2@1.60.1.70245"}
-{"id": 370550, "field": "aura", "en": "Attack power increased by $s1.", "hash": "564bbf31a94e7e0a", "src": "db2@1.60.1.70245"}
-{"id": 370552, "field": "name", "en": "Skeletal Artifact", "hash": "e27b55efbae9520e", "src": "db2@1.60.1.70245"}
-{"id": 370552, "field": "description", "en": "Increases all stats by $s1%.", "hash": "59503d6b9929b6c4", "src": "db2@1.60.1.70245"}
-{"id": 370552, "field": "aura", "en": "Increases all stats by $s1%.", "hash": "59503d6b9929b6c4", "src": "db2@1.60.1.70245"}
-{"id": 370575, "field": "name", "en": "Corrupted Whetstone", "hash": "b2d2219a8090d0eb", "src": "db2@1.60.1.70245"}
-{"id": 370575, "field": "description", "en": "Corrupts your weapon, summoning a copy of it that will aid you in combat for $d.", "hash": "0479fc693c87a9d7", "src": "db2@1.60.1.70245"}
-{"id": 370578, "field": "name", "en": "Corrupted Whetstone", "hash": "b2d2219a8090d0eb", "src": "db2@1.60.1.70245"}
-{"id": 370579, "field": "name", "en": "Corrupted Whetstone", "hash": "b2d2219a8090d0eb", "src": "db2@1.60.1.70245"}
-{"id": 370603, "field": "name", "en": "Rune of Fortune", "hash": "150c5bb88aad8b78", "src": "db2@1.60.1.70245"}
-{"id": 370603, "field": "aura", "en": "Kel'Thuzad and his lieutenants are empowered with necromantic energy, granting them increased health and damage. Empowered foes will yield additional rewards upon defeat.", "hash": "0eeed3b08b33dc92", "src": "db2@1.60.1.70245"}
-{"id": 370630, "field": "name", "en": "Rune of Fortune", "hash": "150c5bb88aad8b78", "src": "db2@1.60.1.70245"}
-{"id": 370630, "field": "description", "en": "Empowers Kel'Thuzad and his lieutenants with necromantic energy, granting them increased health and damage. Empowered foes will yield additional rewards upon defeat.\r\n\r\nThis effect stacks and lasts for an entire week.", "hash": "30663505be1c27e7", "src": "db2@1.60.1.70245"}
-{"id": 370637, "field": "name", "en": "Summon Skeletal Steed", "hash": "e376f6bea9ef8569", "src": "db2@1.60.1.70245"}
-{"id": 370637, "field": "description", "en": "Summons and dismisses a skeletal steed.  This steed is obedient to the summoner and can be used as a mount within Naxxramas.  Any hostile action towards the rider forces the steed to run away in fear.\r\n", "hash": "67eeda0f402d742e", "src": "db2@1.60.1.70245"}
-{"id": 370637, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70245"}
-{"id": 370647, "field": "name", "en": "Skeletal Hitching Post", "hash": "be6253678e6e0998", "src": "db2@1.60.1.70245"}
-{"id": 370647, "field": "description", "en": "Summons a skeletal hitching post.\r\n\r\nParty members may use the post to acquire a Skeletal Steed.\r\n", "hash": "132d66d81f151be5", "src": "db2@1.60.1.70245"}
-{"id": 370654, "field": "name", "en": "Skeletal Hitching Post", "hash": "be6253678e6e0998", "src": "db2@1.60.1.70245"}
-{"id": 370759, "field": "name", "en": "Vanquisher", "hash": "1543d9bcdf8c9d1c", "src": "db2@1.60.1.70245"}
-{"id": 370759, "field": "aura", "en": "You have died at the hands of a powerful foe in Naxxramas.\r\nAbsorbing deathstones from slain enemies.", "hash": "1416c0cc159a2a03", "src": "db2@1.60.1.70245"}
-{"id": 370767, "field": "name", "en": "Essence of C'Thun", "hash": "2fd169242c37ec9b", "src": "db2@1.60.1.70245"}
-{"id": 370767, "field": "aura", "en": "Slowly losing control of your mind.", "hash": "ee10336009987f26", "src": "db2@1.60.1.70245"}
-{"id": 370785, "field": "name", "en": "Vanquisher", "hash": "1543d9bcdf8c9d1c", "src": "db2@1.60.1.70245"}
-{"id": 370831, "field": "name", "en": "Thaddius' Lightning Bolts", "hash": "9e8f505764e26acf", "src": "db2@1.60.1.70245"}
-{"id": 370831, "field": "description", "en": "Affix the bolts to your neck, applying a positive or negative charge at random that grants $s1% increased damage and healing. \r\n\r\nThis effect stacks while near allies who have a similar charge, and deals Nature damage to allies who have an opposite charge.", "hash": "6cee5eadeb9ac4dd", "src": "db2@1.60.1.70245"}
-{"id": 370831, "field": "aura", "en": "Harnessing the power of lightning.", "hash": "7bb9bc81a1cf82e6", "src": "db2@1.60.1.70245"}
-{"id": 370832, "field": "name", "en": "Gift of the Spider", "hash": "57dabc018524ee49", "src": "db2@1.60.1.70245"}
-{"id": 370832, "field": "description", "en": "Pierce yourself with the fang, increasing movement speed, attack speed, and cast speed by $s1% for $d.", "hash": "ddf08871c0bf1109", "src": "db2@1.60.1.70245"}
-{"id": 370832, "field": "aura", "en": "Movement speed, attack speed, and cast speed are increased by $s1%.\r\n\r\nYou feel uneasy...", "hash": "b5d3827fc9265b7f", "src": "db2@1.60.1.70245"}
-{"id": 370834, "field": "name", "en": "Thaddius' Lightning Bolts", "hash": "9e8f505764e26acf", "src": "db2@1.60.1.70245"}
-{"id": 370835, "field": "name", "en": "Positive Charge", "hash": "35bbd97f1e5bde38", "src": "db2@1.60.1.70245"}
-{"id": 370835, "field": "aura", "en": "Damage and healing done increased by $s1%. This effect is increased by nearby positively charged allies.\r\n\r\nDeals $370852s1 damage to nearby allies that are not positively charged every $t3 sec.", "hash": "89bafeff35889246", "src": "db2@1.60.1.70245"}
-{"id": 370836, "field": "name", "en": "Negative Charge", "hash": "30e87152316baab6", "src": "db2@1.60.1.70245"}
-{"id": 370836, "field": "aura", "en": "Damage and healing done increased by $s1%. This effect is increased by nearby negatively charged allies.\r\n\r\nDeals $370854s1 damage to nearby allies that are not negatively charged every $t3 sec.", "hash": "0c2bf7104349abce", "src": "db2@1.60.1.70245"}
-{"id": 370852, "field": "name", "en": "Positive Charge", "hash": "35bbd97f1e5bde38", "src": "db2@1.60.1.70245"}
-{"id": 370854, "field": "name", "en": "Negative Charge", "hash": "30e87152316baab6", "src": "db2@1.60.1.70245"}
-{"id": 370863, "field": "name", "en": "Mask of Death", "hash": "38b73e228f800023", "src": "db2@1.60.1.70245"}
-{"id": 370863, "field": "aura", "en": "Aauuugh!", "hash": "d48b7eac9c42c152", "src": "db2@1.60.1.70245"}
-{"id": 370864, "field": "name", "en": "Mask of Death", "hash": "38b73e228f800023", "src": "db2@1.60.1.70245"}
-{"id": 370864, "field": "aura", "en": "Brains...", "hash": "6f8465a34116c0fc", "src": "db2@1.60.1.70245"}
-{"id": 370877, "field": "name", "en": "Ritual Dagger", "hash": "1a60a06a9fb54f21", "src": "db2@1.60.1.70245"}
-{"id": 370877, "field": "aura", "en": "Stamina increased by $w1.", "hash": "4e3c4e5f7eaee49a", "src": "db2@1.60.1.70245"}
-{"id": 370903, "field": "name", "en": "Summon Spider", "hash": "2e70d8d8a841afd8", "src": "db2@1.60.1.70245"}
-{"id": 370904, "field": "name", "en": "Web Wrap", "hash": "683626b0920b17e6", "src": "db2@1.60.1.70245"}
-{"id": 370905, "field": "name", "en": "Dread Stalker", "hash": "061a64c7d2b00e49", "src": "db2@1.60.1.70245"}
-{"id": 370909, "field": "name", "en": "Summon Essence of C'Thun", "hash": "c85de91dc29c3ca2", "src": "db2@1.60.1.70245"}
-{"id": 370961, "field": "name", "en": "[DNT] Essence of C'Thun", "hash": "186ffe055e6337e9", "src": "db2@1.60.1.70245"}
+{"id": 370066, "field": "name", "en": "Visions of Madness", "hash": "10acdb986fd051c1", "src": "db2@1.60.1.70291"}
+{"id": 370066, "field": "aura", "en": "Driven mad by the Eye of C'Thun, inflicting damage to nearby enemies.", "hash": "917a6fe6e78d12b5", "src": "db2@1.60.1.70291"}
+{"id": 370067, "field": "name", "en": "Visions of Madness", "hash": "10acdb986fd051c1", "src": "db2@1.60.1.70291"}
+{"id": 370091, "field": "name", "en": "Uber Invis", "hash": "188cecdae5aa19a7", "src": "db2@1.60.1.70291"}
+{"id": 370092, "field": "name", "en": "Uber Invis", "hash": "188cecdae5aa19a7", "src": "db2@1.60.1.70291"}
+{"id": 370093, "field": "name", "en": "Uber Invis", "hash": "188cecdae5aa19a7", "src": "db2@1.60.1.70291"}
+{"id": 370099, "field": "name", "en": "Arcane Rot", "hash": "7a4098573a95cf5d", "src": "db2@1.60.1.70291"}
+{"id": 370100, "field": "name", "en": "Illusionary Rot", "hash": "f1efe8c26a1736f1", "src": "db2@1.60.1.70291"}
+{"id": 370100, "field": "aura", "en": "Increases damage taken by $s1%.", "hash": "aac496b33fc69b76", "src": "db2@1.60.1.70291"}
+{"id": 370101, "field": "name", "en": "Visions of Madness", "hash": "10acdb986fd051c1", "src": "db2@1.60.1.70291"}
+{"id": 370102, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70291"}
+{"id": 370142, "field": "name", "en": "Real Clone", "hash": "399d217c84799eba", "src": "db2@1.60.1.70291"}
+{"id": 370146, "field": "name", "en": "Real Clone", "hash": "399d217c84799eba", "src": "db2@1.60.1.70291"}
+{"id": 370148, "field": "name", "en": "Illusionary Shatter", "hash": "1a68b4ba39afedd2", "src": "db2@1.60.1.70291"}
+{"id": 370156, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70291"}
+{"id": 370156, "field": "description", "en": "Blasts an enemy with lightning, inflicting Nature damage.", "hash": "86118ec0e525b93e", "src": "db2@1.60.1.70291"}
+{"id": 370171, "field": "name", "en": "Summon Eye of C'Thun", "hash": "a96ea3198da7f8a9", "src": "db2@1.60.1.70291"}
+{"id": 370172, "field": "name", "en": "Summon Eye of C'Thun", "hash": "a96ea3198da7f8a9", "src": "db2@1.60.1.70291"}
+{"id": 370175, "field": "name", "en": "Summon Eye of C'Thun", "hash": "a96ea3198da7f8a9", "src": "db2@1.60.1.70291"}
+{"id": 370179, "field": "name", "en": "Eye Beam", "hash": "0fea0b6527e6dcb9", "src": "db2@1.60.1.70291"}
+{"id": 370180, "field": "name", "en": "Summon Claw Tentacles", "hash": "bf89db85e754e106", "src": "db2@1.60.1.70291"}
+{"id": 370181, "field": "name", "en": "Summon Claw Tentacles", "hash": "bf89db85e754e106", "src": "db2@1.60.1.70291"}
+{"id": 370182, "field": "name", "en": "Summon Claw Tentacles", "hash": "bf89db85e754e106", "src": "db2@1.60.1.70291"}
+{"id": 370187, "field": "name", "en": "Summon Eye Tentacles", "hash": "199164090dde33bb", "src": "db2@1.60.1.70291"}
+{"id": 370188, "field": "name", "en": "Summon Eye Tentacles", "hash": "199164090dde33bb", "src": "db2@1.60.1.70291"}
+{"id": 370189, "field": "name", "en": "Summon Eye Tentacles", "hash": "199164090dde33bb", "src": "db2@1.60.1.70291"}
+{"id": 370190, "field": "name", "en": "Summon Giant Claw Tentacles", "hash": "618ac6ce50356b81", "src": "db2@1.60.1.70291"}
+{"id": 370191, "field": "name", "en": "Summon Giant Claw Tentacles", "hash": "618ac6ce50356b81", "src": "db2@1.60.1.70291"}
+{"id": 370192, "field": "name", "en": "Summon Giant Claw Tentacles", "hash": "618ac6ce50356b81", "src": "db2@1.60.1.70291"}
+{"id": 370205, "field": "name", "en": "Despawn AQ40 Bonus Difficulty Trigger", "hash": "0833694dba29c7f3", "src": "db2@1.60.1.70291"}
+{"id": 370273, "field": "name", "en": "Lesser Deathstone", "hash": "05e38162df3beddc", "src": "db2@1.60.1.70291"}
+{"id": 370287, "field": "name", "en": "Undying Vanquisher", "hash": "f705935b25d47869", "src": "db2@1.60.1.70291"}
+{"id": 370287, "field": "aura", "en": "You have not yet died at the hands of a powerful foe in Naxxramas.\r\nAbsorbing deathstones from slain enemies.", "hash": "0ecbca65d9f54126", "src": "db2@1.60.1.70291"}
+{"id": 370289, "field": "name", "en": "Greater Deathstone", "hash": "2dc8a4f5b5659f8e", "src": "db2@1.60.1.70291"}
+{"id": 370289, "field": "description", "en": "Turn $s2 lesser deathstones into a greater one.", "hash": "1ba9fc0d93a9371e", "src": "db2@1.60.1.70291"}
+{"id": 370290, "field": "name", "en": "Bonus Difficulty - Friendly (Green)", "hash": "c99add38d7e00d77", "src": "db2@1.60.1.70291"}
+{"id": 370293, "field": "name", "en": "Bonus Difficulty - Honored (Blue)", "hash": "38eb819e651f2a3f", "src": "db2@1.60.1.70291"}
+{"id": 370294, "field": "name", "en": "Bonus Difficulty - Revered (Purple)", "hash": "0fdf7b32957d39b4", "src": "db2@1.60.1.70291"}
+{"id": 370295, "field": "name", "en": "Bonus Difficulty - Exalted (Red)", "hash": "0e1a5e94706811b0", "src": "db2@1.60.1.70291"}
+{"id": 370296, "field": "name", "en": "Deathstone Powers", "hash": "5d6e60d1b9811ef8", "src": "db2@1.60.1.70291"}
+{"id": 370296, "field": "description", "en": "Teaches Archmage Tarsis Kir-Moldir how to extract power from deathstones.", "hash": "82f0c78cc7205f08", "src": "db2@1.60.1.70291"}
+{"id": 370301, "field": "name", "en": "Rune of Teleportation: Antechamber", "hash": "8f86253d15d10621", "src": "db2@1.60.1.70291"}
+{"id": 370301, "field": "description", "en": "Transports you to the Antechamber in Naxxramas.", "hash": "d17b9798f30cf618", "src": "db2@1.60.1.70291"}
+{"id": 370303, "field": "name", "en": "Orb of Corruption", "hash": "9080d953d6e82553", "src": "db2@1.60.1.70291"}
+{"id": 370303, "field": "description", "en": "Crush the orb, increasing the amount of lesser deathstones absorbed from Kel'Thuzad's minions by $s1% for $d.", "hash": "874fe1b36e9a7499", "src": "db2@1.60.1.70291"}
+{"id": 370303, "field": "aura", "en": "Increases the amount of lesser deathstones absorbed from Kel'Thuzad's minions by $s1%.", "hash": "be9e2a6588cd69e2", "src": "db2@1.60.1.70291"}
+{"id": 370308, "field": "name", "en": "Rod of Necromancy", "hash": "06102996719ee660", "src": "db2@1.60.1.70291"}
+{"id": 370308, "field": "description", "en": "Subdues the will of an undead target within Naxxramas, causing them to become charmed for $d.", "hash": "b7b161cd806e2779", "src": "db2@1.60.1.70291"}
+{"id": 370308, "field": "aura", "en": "Controlled by $@auracaster.", "hash": "55d89072505e216e", "src": "db2@1.60.1.70291"}
+{"id": 370309, "field": "name", "en": "Greater Deathstone", "hash": "2dc8a4f5b5659f8e", "src": "db2@1.60.1.70291"}
+{"id": 370336, "field": "name", "en": "Fungal Spore Cluster", "hash": "61bc2ed5c93fb3a6", "src": "db2@1.60.1.70291"}
+{"id": 370336, "field": "description", "en": "Grants your offensive abilities a chance to summon a spore that affects nearby players with Fungal Bloom when killed. This effect lasts for $d.\r\n\r\n$@spellicon370337$@spellname370337 \r\n$@spellaura370337", "hash": "ae02ef9c1996a1e1", "src": "db2@1.60.1.70291"}
+{"id": 370336, "field": "aura", "en": "Your offensive abilities have a chance to summon a spore.", "hash": "ad4f0db223d1637c", "src": "db2@1.60.1.70291"}
+{"id": 370337, "field": "name", "en": "Fungal Bloom", "hash": "e8215afb1bd648e6", "src": "db2@1.60.1.70291"}
+{"id": 370337, "field": "description", "en": "Inflicts $s1 Nature damage every $t1 sec while also increasing the chance for a melee, ranged, or spell critical by $s2% for $d.", "hash": "cbec1d874404a1ec", "src": "db2@1.60.1.70291"}
+{"id": 370337, "field": "aura", "en": "Inflicts $s1 Nature damage every $t1 sec while increasing the chance for a melee, ranged, or spell critical by $s2%.", "hash": "7a3c3de1ba22e37b", "src": "db2@1.60.1.70291"}
+{"id": 370343, "field": "name", "en": "Rune of Teleportation: Frostwyrm's Lair", "hash": "23ea03572c55ee61", "src": "db2@1.60.1.70291"}
+{"id": 370343, "field": "description", "en": "Transports you to Frostwyrm's Lair in Naxxramas.", "hash": "2446707d5a1b5130", "src": "db2@1.60.1.70291"}
+{"id": 370347, "field": "name", "en": "Ritual Dagger", "hash": "1a60a06a9fb54f21", "src": "db2@1.60.1.70291"}
+{"id": 370347, "field": "description", "en": "Absorb the life force of those around you, increasing stamina by $370877s1 for each target hit. This effect stacks up to $370877u and lasts for $370877d.", "hash": "ff924be91dde7e52", "src": "db2@1.60.1.70291"}
+{"id": 370364, "field": "name", "en": "Summon Spore", "hash": "5c354509370ed887", "src": "db2@1.60.1.70291"}
+{"id": 370391, "field": "name", "en": "Failsafe Phylactery", "hash": "743f9933316bdb52", "src": "db2@1.60.1.70291"}
+{"id": 370391, "field": "description", "en": "Prevents an attack that would otherwise kill you. Triggering this effect also grants you $370417d of damage immunity and shatters the phylactery.", "hash": "78af810802c7bccd", "src": "db2@1.60.1.70291"}
+{"id": 370406, "field": "name", "en": "Fungal Spore Cluster", "hash": "61bc2ed5c93fb3a6", "src": "db2@1.60.1.70291"}
+{"id": 370417, "field": "name", "en": "Failsafe Phylactery", "hash": "743f9933316bdb52", "src": "db2@1.60.1.70291"}
+{"id": 370417, "field": "aura", "en": "Immune to all damage.", "hash": "ec662d6c9a23e268", "src": "db2@1.60.1.70291"}
+{"id": 370423, "field": "name", "en": "Mask of Death", "hash": "38b73e228f800023", "src": "db2@1.60.1.70291"}
+{"id": 370423, "field": "description", "en": "Adopt the visage of a denizen of Naxxramas.", "hash": "ec0924c49eee4dc1", "src": "db2@1.60.1.70291"}
+{"id": 370427, "field": "name", "en": "Mask of Death", "hash": "38b73e228f800023", "src": "db2@1.60.1.70291"}
+{"id": 370427, "field": "aura", "en": "For science!", "hash": "1e8e8e093d2875fd", "src": "db2@1.60.1.70291"}
+{"id": 370431, "field": "name", "en": "Mask of Death", "hash": "38b73e228f800023", "src": "db2@1.60.1.70291"}
+{"id": 370431, "field": "aura", "en": "Suffer well...", "hash": "c4d70020cfddb191", "src": "db2@1.60.1.70291"}
+{"id": 370434, "field": "name", "en": "Mask of Death", "hash": "38b73e228f800023", "src": "db2@1.60.1.70291"}
+{"id": 370434, "field": "aura", "en": "Bring the pain!", "hash": "8bfd52ca794e0694", "src": "db2@1.60.1.70291"}
+{"id": 370435, "field": "name", "en": "Mask of Death", "hash": "38b73e228f800023", "src": "db2@1.60.1.70291"}
+{"id": 370435, "field": "aura", "en": "What happened to... me....", "hash": "6091b33b0fc5c779", "src": "db2@1.60.1.70291"}
+{"id": 370436, "field": "name", "en": "Mask of Death", "hash": "38b73e228f800023", "src": "db2@1.60.1.70291"}
+{"id": 370436, "field": "aura", "en": "Sticky and stinky!", "hash": "b19ebf991361cdfe", "src": "db2@1.60.1.70291"}
+{"id": 370439, "field": "name", "en": "Gooped", "hash": "6d2034d55198788a", "src": "db2@1.60.1.70291"}
+{"id": 370439, "field": "aura", "en": "Gooped by $@auracaster.", "hash": "55cb210a77edd0da", "src": "db2@1.60.1.70291"}
+{"id": 370444, "field": "name", "en": "Naxxramas", "hash": "32ae1f685d7f22a1", "src": "db2@1.60.1.70291"}
+{"id": 370444, "field": "description", "en": "Health increased by $s1% and damage increased by $s2%.", "hash": "d1890c532efce712", "src": "db2@1.60.1.70291"}
+{"id": 370444, "field": "aura", "en": "|cFFffd200Bonus Event: Season of Mastery|r\r\n\r\nHealth increased by $s1% and damage increased by $s2%.", "hash": "e85aab66ed5a67ad", "src": "db2@1.60.1.70291"}
+{"id": 370490, "field": "name", "en": "Skeletal Artifact", "hash": "e27b55efbae9520e", "src": "db2@1.60.1.70291"}
+{"id": 370490, "field": "description", "en": "Increases movement speed by $s1%.", "hash": "f152500fc71ad52c", "src": "db2@1.60.1.70291"}
+{"id": 370490, "field": "aura", "en": "Increases movement speed by $s1%.", "hash": "f152500fc71ad52c", "src": "db2@1.60.1.70291"}
+{"id": 370496, "field": "name", "en": "Glyph of Madness", "hash": "3a0beabcd39fbfb4", "src": "db2@1.60.1.70291"}
+{"id": 370496, "field": "aura", "en": "You are being watched.", "hash": "fe0fe00f276e4b85", "src": "db2@1.60.1.70291"}
+{"id": 370497, "field": "name", "en": "Glyph of Darkness", "hash": "0edf962fd0ca8253", "src": "db2@1.60.1.70291"}
+{"id": 370497, "field": "aura", "en": "You are being watched.", "hash": "fe0fe00f276e4b85", "src": "db2@1.60.1.70291"}
+{"id": 370498, "field": "name", "en": "Glyph of Chaos", "hash": "2fcb1eadd53dc579", "src": "db2@1.60.1.70291"}
+{"id": 370498, "field": "aura", "en": "You are being watched.", "hash": "fe0fe00f276e4b85", "src": "db2@1.60.1.70291"}
+{"id": 370507, "field": "name", "en": "Glyph of the Void", "hash": "779a0fee9edb3e9d", "src": "db2@1.60.1.70291"}
+{"id": 370507, "field": "aura", "en": "You are being watched.", "hash": "fe0fe00f276e4b85", "src": "db2@1.60.1.70291"}
+{"id": 370513, "field": "name", "en": "Pet", "hash": "001526f33da1c09a", "src": "db2@1.60.1.70291"}
+{"id": 370514, "field": "name", "en": "[DNT] Update Bonus Difficulty", "hash": "ee6bbc55f4c96be2", "src": "db2@1.60.1.70291"}
+{"id": 370515, "field": "name", "en": "Pet", "hash": "001526f33da1c09a", "src": "db2@1.60.1.70291"}
+{"id": 370520, "field": "name", "en": "[DNT] Bonus Boss Difficulty", "hash": "8a503a633e07ed57", "src": "db2@1.60.1.70291"}
+{"id": 370520, "field": "aura", "en": "Damage increased by $s1%.\r\nHealth increased by $s2%.", "hash": "9915aaeee3f58526", "src": "db2@1.60.1.70291"}
+{"id": 370531, "field": "name", "en": "Skeletal Artifact", "hash": "e27b55efbae9520e", "src": "db2@1.60.1.70291"}
+{"id": 370531, "field": "description", "en": "Entraps the soul of the dead target, granting you a beneficial effect. This effect lasts for $370552d.", "hash": "040837061cb28493", "src": "db2@1.60.1.70291"}
+{"id": 370538, "field": "name", "en": "[DNT] Teleport to AQ40", "hash": "0336168c79b4878a", "src": "db2@1.60.1.70291"}
+{"id": 370538, "field": "description", "en": "Teleport player to Ahn'Qiraj.", "hash": "ebae91fd017fd6a0", "src": "db2@1.60.1.70291"}
+{"id": 370541, "field": "name", "en": "[DNT] Teleport to Naxxramas", "hash": "646a39fbbc7dcf71", "src": "db2@1.60.1.70291"}
+{"id": 370541, "field": "description", "en": "Teleport player to Naxxramas.", "hash": "92c3fd3705cd5357", "src": "db2@1.60.1.70291"}
+{"id": 370544, "field": "name", "en": "Skeletal Artifact", "hash": "e27b55efbae9520e", "src": "db2@1.60.1.70291"}
+{"id": 370544, "field": "description", "en": "Reduces damage taken by $s1%.", "hash": "9b1a4c664f2d535b", "src": "db2@1.60.1.70291"}
+{"id": 370544, "field": "aura", "en": "Reduces damage taken by $s1%.", "hash": "9b1a4c664f2d535b", "src": "db2@1.60.1.70291"}
+{"id": 370548, "field": "name", "en": "Skeletal Artifact", "hash": "e27b55efbae9520e", "src": "db2@1.60.1.70291"}
+{"id": 370548, "field": "description", "en": "$1 mana regen every 5 seconds.", "hash": "a6ea72c67de58bd5", "src": "db2@1.60.1.70291"}
+{"id": 370548, "field": "aura", "en": "$1 mana regen every 5 seconds.", "hash": "a6ea72c67de58bd5", "src": "db2@1.60.1.70291"}
+{"id": 370550, "field": "name", "en": "Skeletal Artifact", "hash": "e27b55efbae9520e", "src": "db2@1.60.1.70291"}
+{"id": 370550, "field": "description", "en": "Attack power increased by $s1.\r\n", "hash": "564bbf31a94e7e0a", "src": "db2@1.60.1.70291"}
+{"id": 370550, "field": "aura", "en": "Attack power increased by $s1.", "hash": "564bbf31a94e7e0a", "src": "db2@1.60.1.70291"}
+{"id": 370552, "field": "name", "en": "Skeletal Artifact", "hash": "e27b55efbae9520e", "src": "db2@1.60.1.70291"}
+{"id": 370552, "field": "description", "en": "Increases all stats by $s1%.", "hash": "59503d6b9929b6c4", "src": "db2@1.60.1.70291"}
+{"id": 370552, "field": "aura", "en": "Increases all stats by $s1%.", "hash": "59503d6b9929b6c4", "src": "db2@1.60.1.70291"}
+{"id": 370575, "field": "name", "en": "Corrupted Whetstone", "hash": "b2d2219a8090d0eb", "src": "db2@1.60.1.70291"}
+{"id": 370575, "field": "description", "en": "Corrupts your weapon, summoning a copy of it that will aid you in combat for $d.", "hash": "0479fc693c87a9d7", "src": "db2@1.60.1.70291"}
+{"id": 370578, "field": "name", "en": "Corrupted Whetstone", "hash": "b2d2219a8090d0eb", "src": "db2@1.60.1.70291"}
+{"id": 370579, "field": "name", "en": "Corrupted Whetstone", "hash": "b2d2219a8090d0eb", "src": "db2@1.60.1.70291"}
+{"id": 370603, "field": "name", "en": "Rune of Fortune", "hash": "150c5bb88aad8b78", "src": "db2@1.60.1.70291"}
+{"id": 370603, "field": "aura", "en": "Kel'Thuzad and his lieutenants are empowered with necromantic energy, granting them increased health and damage. Empowered foes will yield additional rewards upon defeat.", "hash": "0eeed3b08b33dc92", "src": "db2@1.60.1.70291"}
+{"id": 370630, "field": "name", "en": "Rune of Fortune", "hash": "150c5bb88aad8b78", "src": "db2@1.60.1.70291"}
+{"id": 370630, "field": "description", "en": "Empowers Kel'Thuzad and his lieutenants with necromantic energy, granting them increased health and damage. Empowered foes will yield additional rewards upon defeat.\r\n\r\nThis effect stacks and lasts for an entire week.", "hash": "30663505be1c27e7", "src": "db2@1.60.1.70291"}
+{"id": 370637, "field": "name", "en": "Summon Skeletal Steed", "hash": "e376f6bea9ef8569", "src": "db2@1.60.1.70291"}
+{"id": 370637, "field": "description", "en": "Summons and dismisses a skeletal steed.  This steed is obedient to the summoner and can be used as a mount within Naxxramas.  Any hostile action towards the rider forces the steed to run away in fear.\r\n", "hash": "67eeda0f402d742e", "src": "db2@1.60.1.70291"}
+{"id": 370637, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
+{"id": 370647, "field": "name", "en": "Skeletal Hitching Post", "hash": "be6253678e6e0998", "src": "db2@1.60.1.70291"}
+{"id": 370647, "field": "description", "en": "Summons a skeletal hitching post.\r\n\r\nParty members may use the post to acquire a Skeletal Steed.\r\n", "hash": "132d66d81f151be5", "src": "db2@1.60.1.70291"}
+{"id": 370654, "field": "name", "en": "Skeletal Hitching Post", "hash": "be6253678e6e0998", "src": "db2@1.60.1.70291"}
+{"id": 370759, "field": "name", "en": "Vanquisher", "hash": "1543d9bcdf8c9d1c", "src": "db2@1.60.1.70291"}
+{"id": 370759, "field": "aura", "en": "You have died at the hands of a powerful foe in Naxxramas.\r\nAbsorbing deathstones from slain enemies.", "hash": "1416c0cc159a2a03", "src": "db2@1.60.1.70291"}
+{"id": 370767, "field": "name", "en": "Essence of C'Thun", "hash": "2fd169242c37ec9b", "src": "db2@1.60.1.70291"}
+{"id": 370767, "field": "aura", "en": "Slowly losing control of your mind.", "hash": "ee10336009987f26", "src": "db2@1.60.1.70291"}
+{"id": 370785, "field": "name", "en": "Vanquisher", "hash": "1543d9bcdf8c9d1c", "src": "db2@1.60.1.70291"}
+{"id": 370831, "field": "name", "en": "Thaddius' Lightning Bolts", "hash": "9e8f505764e26acf", "src": "db2@1.60.1.70291"}
+{"id": 370831, "field": "description", "en": "Affix the bolts to your neck, applying a positive or negative charge at random that grants $s1% increased damage and healing. \r\n\r\nThis effect stacks while near allies who have a similar charge, and deals Nature damage to allies who have an opposite charge.", "hash": "6cee5eadeb9ac4dd", "src": "db2@1.60.1.70291"}
+{"id": 370831, "field": "aura", "en": "Harnessing the power of lightning.", "hash": "7bb9bc81a1cf82e6", "src": "db2@1.60.1.70291"}
+{"id": 370832, "field": "name", "en": "Gift of the Spider", "hash": "57dabc018524ee49", "src": "db2@1.60.1.70291"}
+{"id": 370832, "field": "description", "en": "Pierce yourself with the fang, increasing movement speed, attack speed, and cast speed by $s1% for $d.", "hash": "ddf08871c0bf1109", "src": "db2@1.60.1.70291"}
+{"id": 370832, "field": "aura", "en": "Movement speed, attack speed, and cast speed are increased by $s1%.\r\n\r\nYou feel uneasy...", "hash": "b5d3827fc9265b7f", "src": "db2@1.60.1.70291"}
+{"id": 370834, "field": "name", "en": "Thaddius' Lightning Bolts", "hash": "9e8f505764e26acf", "src": "db2@1.60.1.70291"}
+{"id": 370835, "field": "name", "en": "Positive Charge", "hash": "35bbd97f1e5bde38", "src": "db2@1.60.1.70291"}
+{"id": 370835, "field": "aura", "en": "Damage and healing done increased by $s1%. This effect is increased by nearby positively charged allies.\r\n\r\nDeals $370852s1 damage to nearby allies that are not positively charged every $t3 sec.", "hash": "89bafeff35889246", "src": "db2@1.60.1.70291"}
+{"id": 370836, "field": "name", "en": "Negative Charge", "hash": "30e87152316baab6", "src": "db2@1.60.1.70291"}
+{"id": 370836, "field": "aura", "en": "Damage and healing done increased by $s1%. This effect is increased by nearby negatively charged allies.\r\n\r\nDeals $370854s1 damage to nearby allies that are not negatively charged every $t3 sec.", "hash": "0c2bf7104349abce", "src": "db2@1.60.1.70291"}
+{"id": 370852, "field": "name", "en": "Positive Charge", "hash": "35bbd97f1e5bde38", "src": "db2@1.60.1.70291"}
+{"id": 370854, "field": "name", "en": "Negative Charge", "hash": "30e87152316baab6", "src": "db2@1.60.1.70291"}
+{"id": 370863, "field": "name", "en": "Mask of Death", "hash": "38b73e228f800023", "src": "db2@1.60.1.70291"}
+{"id": 370863, "field": "aura", "en": "Aauuugh!", "hash": "d48b7eac9c42c152", "src": "db2@1.60.1.70291"}
+{"id": 370864, "field": "name", "en": "Mask of Death", "hash": "38b73e228f800023", "src": "db2@1.60.1.70291"}
+{"id": 370864, "field": "aura", "en": "Brains...", "hash": "6f8465a34116c0fc", "src": "db2@1.60.1.70291"}
+{"id": 370877, "field": "name", "en": "Ritual Dagger", "hash": "1a60a06a9fb54f21", "src": "db2@1.60.1.70291"}
+{"id": 370877, "field": "aura", "en": "Stamina increased by $w1.", "hash": "4e3c4e5f7eaee49a", "src": "db2@1.60.1.70291"}
+{"id": 370903, "field": "name", "en": "Summon Spider", "hash": "2e70d8d8a841afd8", "src": "db2@1.60.1.70291"}
+{"id": 370904, "field": "name", "en": "Web Wrap", "hash": "683626b0920b17e6", "src": "db2@1.60.1.70291"}
+{"id": 370905, "field": "name", "en": "Dread Stalker", "hash": "061a64c7d2b00e49", "src": "db2@1.60.1.70291"}
+{"id": 370909, "field": "name", "en": "Summon Essence of C'Thun", "hash": "c85de91dc29c3ca2", "src": "db2@1.60.1.70291"}
+{"id": 370961, "field": "name", "en": "[DNT] Essence of C'Thun", "hash": "186ffe055e6337e9", "src": "db2@1.60.1.70291"}

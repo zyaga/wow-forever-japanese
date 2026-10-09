@@ -990,7 +990,6 @@ WFJ.Data.add("gloss", {
   [9987] = "させる\tさせる\tdon't let (them) do",
   [9988] = "させる\tさせる\tensure (it) does not happen",
   [9989] = "させる\tさせる\tforcing (made me do)",
-  [9990] = "させる\tさせる\thad (them) serve as",
   [9991] = "させる\tさせる\thas (them) do",
   [9992] = "させる\tさせる\thave (them) do",
   [9993] = "させる\tさせる\thave to get (them to do)",

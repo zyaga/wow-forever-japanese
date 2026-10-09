@@ -86,7 +86,8 @@ def _base_classes(repo: Path, ref: str) -> dict[tuple[str, int | str, str], tupl
     classes: dict[tuple[str, int | str, str], tuple[str, str]] = {}
     for path in listing:
         parts = path.split("/")
-        if len(parts) != 3 or parts[1] == "english" or not path.endswith(".jsonl"):
+        # data/voice holds speakers and audio records, not translations: they have no provenance class
+        if len(parts) != 3 or parts[1] in ("english", "voice") or not path.endswith(".jsonl"):
             continue
         blob = subprocess.run(
             ["git", "-C", str(repo), "show", f"{ref}:{path}"], capture_output=True, text=True, check=True

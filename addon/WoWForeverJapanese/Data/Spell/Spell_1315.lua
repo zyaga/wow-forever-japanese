@@ -10,7 +10,7 @@ WFJ.Data.add("spell", {
   [1315218] = { "ターゲットを祝祭の喜びで満たします。", nil, 0x0d3345d6, nil, "um" },
   [1315237] = { "腐敗と腐朽の息を吐き、$N2ヤード以内のすべてのプレイヤーに$N1のNatureダメージを与えます。", nil, 0x8a69f23d, nil, "um" },
   [1315267] = { "Right ClickでTallstrider Hatchlingを召喚、または解放します。", nil, 0x097b71e8, nil, "um" },
-  [1315286] = { nil, "スタンしています。受けるFireダメージが$N1%増加します。", nil, 0x00af6939, "mu" },
+  [1315286] = { nil, "スタン状態。受けるFireダメージが$N1%増加します。", nil, 0xec527bc0, "mu" },
   [1315307] = { "ランダムな場所にMist-Forgotten Horrorを召喚します。", nil, 0xf0755ac2, nil, "um" },
   [1315330] = { "夜間に知力が$N1増加します。", nil, 0x2ca27d14, nil, "um" },
   [1315339] = { "夜間、知力が$N1増加します。", nil, 0xeb59d09c, nil, "um" },

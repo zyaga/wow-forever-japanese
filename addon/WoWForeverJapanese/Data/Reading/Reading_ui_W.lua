@@ -58,6 +58,8 @@ WFJ.Data.add("reading", {
   ["ui:WORLD_MAP_CURSOR_COORDS_INTEGER"] = { text = "カーソル=カーソル=32448" },
   ["ui:WORLD_MAP_FILTER_LABEL_SHOW"] = { text = "表示=ひょうじ=116522" },
   ["ui:WORLD_MAP_FILTER_LABEL_WORLD_QUESTS_SUBMENU_TYPE"] = { text = "タイプ=タイプ=33452" },
+  ["ui:WORLD_MAP_FILTER_TITLE_SHOW_MAP"] = { text = "マップ=マップ=35061 表示=ひょうじ=116521" },
+  ["ui:WORLD_MAP_FILTER_TITLE_SHOW_QUEST_LOG"] = { text = "クエスト=クエスト=32656 ログ=ログ=35566 表示=ひょうじ=116521" },
   ["ui:WORLD_MAP_PLAYER_COORDS"] = { text = "プレイヤー=プレイヤー=34799" },
   ["ui:WORLD_MAP_PLAYER_COORDS_INTEGER"] = { text = "プレイヤー=プレイヤー=34799" },
   ["ui:WORLD_MAP_PLAYER_COORDS_MAP_NAME"] = { text = "プレイヤー=プレイヤー=34799" },

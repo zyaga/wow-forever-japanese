@@ -1,213 +1,213 @@
-{"id": 211205, "field": "name", "en": "Rune of Cobra Slayer", "hash": "0d4e508e18a57828", "src": "db2@1.60.1.70245"}
-{"id": 211205, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
-{"id": 211247, "field": "name", "en": "Pattern: Phoenix Bindings", "hash": "0403b53941c84c88", "src": "db2@1.60.1.70245"}
-{"id": 211247, "field": "description", "en": "Teaches you how to sew Phoenix Bindings.", "hash": "361e2d8cac8aa993", "src": "db2@1.60.1.70245"}
-{"id": 211269, "field": "name", "en": "Primitive Drawing", "hash": "8b7f32a53c051864", "src": "db2@1.60.1.70245"}
-{"id": 211272, "field": "name", "en": "Empty Bait Cage", "hash": "772c67dd81940742", "src": "db2@1.60.1.70245"}
-{"id": 211272, "field": "description", "en": "Catch a critter to be used as bait.", "hash": "72483e0745501edb", "src": "db2@1.60.1.70245"}
-{"id": 211273, "field": "name", "en": "Trapped Critter", "hash": "9bc7937ed9ceab7d", "src": "db2@1.60.1.70245"}
-{"id": 211273, "field": "description", "en": "Place critter as bait.", "hash": "9480a4dba0e35cd5", "src": "db2@1.60.1.70245"}
-{"id": 211293, "field": "name", "en": "Crimson Trophy Quill", "hash": "a4600b31c6ee1a37", "src": "db2@1.60.1.70245"}
-{"id": 211301, "field": "name", "en": "Rune of Expose Weakness", "hash": "7432252a6328000b", "src": "db2@1.60.1.70245"}
-{"id": 211301, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
-{"id": 211315, "field": "name", "en": "Waylaid Supplies: Light Leather", "hash": "29690b6628bbfac1", "src": "db2@1.60.1.70245"}
-{"id": 211315, "field": "description", "en": "Add $q2 Light Leather to complete the shipment.", "hash": "7a0e45b24050cd76", "src": "db2@1.60.1.70245"}
-{"id": 211316, "field": "name", "en": "Waylaid Supplies: Peacebloom", "hash": "907286e1301a7f00", "src": "db2@1.60.1.70245"}
-{"id": 211316, "field": "description", "en": "Add $q2 Peacebloom to complete the shipment.", "hash": "f297f7714ebf03e1", "src": "db2@1.60.1.70245"}
-{"id": 211317, "field": "name", "en": "Waylaid Supplies: Silverleaf", "hash": "69696488d5d9921c", "src": "db2@1.60.1.70245"}
-{"id": 211317, "field": "description", "en": "Add $q2 Silverleaf to complete the shipment.", "hash": "6d8888a0fd2aeee2", "src": "db2@1.60.1.70245"}
-{"id": 211318, "field": "name", "en": "Waylaid Supplies: Minor Healing Potions", "hash": "cc8eecaebb06a4f6", "src": "db2@1.60.1.70245"}
-{"id": 211318, "field": "description", "en": "Add $q2 Minor Healing Potions to complete the shipment.", "hash": "f877dcba41b11730", "src": "db2@1.60.1.70245"}
-{"id": 211319, "field": "name", "en": "Waylaid Supplies: Copper Shortswords", "hash": "58dbfd9ad0ad2f16", "src": "db2@1.60.1.70245"}
-{"id": 211319, "field": "description", "en": "Add $q2 Copper Shortswords to complete the shipment.", "hash": "b80648aef6e87154", "src": "db2@1.60.1.70245"}
-{"id": 211320, "field": "name", "en": "Waylaid Supplies: Runed Copper Pants", "hash": "7a528e5b6bd70b91", "src": "db2@1.60.1.70245"}
-{"id": 211320, "field": "description", "en": "Add $q2 Runed Copper Pants to complete the shipment.", "hash": "d4542fc8f4c465f8", "src": "db2@1.60.1.70245"}
-{"id": 211321, "field": "name", "en": "Waylaid Supplies: Lesser Magic Wands", "hash": "8a6a53f4652fbb27", "src": "db2@1.60.1.70245"}
-{"id": 211321, "field": "description", "en": "Add $q2 Lesser Magic Wands to complete the shipment.", "hash": "5b7e14eb41286f0a", "src": "db2@1.60.1.70245"}
-{"id": 211322, "field": "name", "en": "Waylaid Supplies: Minor Wizard Oil", "hash": "e17f721d0678f6a6", "src": "db2@1.60.1.70245"}
-{"id": 211322, "field": "description", "en": "Add $q2 Minor Wizard Oil to complete the shipment.", "hash": "7a19cb6ce537a812", "src": "db2@1.60.1.70245"}
-{"id": 211323, "field": "name", "en": "Waylaid Supplies: Rough Copper Bombs", "hash": "338966422a214943", "src": "db2@1.60.1.70245"}
-{"id": 211323, "field": "description", "en": "Add $q2 Rough Copper Bombs to complete the shipment.", "hash": "08f90955b5229687", "src": "db2@1.60.1.70245"}
-{"id": 211324, "field": "name", "en": "Waylaid Supplies: Rough Boomsticks", "hash": "7ea854cf569e51f4", "src": "db2@1.60.1.70245"}
-{"id": 211324, "field": "description", "en": "Add $q2 Rough Boomsticks to complete the shipment.", "hash": "2688911fd1c49be5", "src": "db2@1.60.1.70245"}
-{"id": 211325, "field": "name", "en": "Waylaid Supplies: Handstitched Leather Belts", "hash": "13cfefbe08a154e7", "src": "db2@1.60.1.70245"}
-{"id": 211325, "field": "description", "en": "Add $q2 Handstitched Leather Belts to complete the shipment.", "hash": "2972836133f0d525", "src": "db2@1.60.1.70245"}
-{"id": 211326, "field": "name", "en": "Waylaid Supplies: Embossed Leather Vests", "hash": "53a6e888293ed848", "src": "db2@1.60.1.70245"}
-{"id": 211326, "field": "description", "en": "Add $q2 Embossed Leather Vests to complete the shipment.", "hash": "2d577b122e10fc89", "src": "db2@1.60.1.70245"}
-{"id": 211327, "field": "name", "en": "Waylaid Supplies: Brown Linen Pants", "hash": "fbc054304fbc4d63", "src": "db2@1.60.1.70245"}
-{"id": 211327, "field": "description", "en": "Add $q2 Brown Linen Pants to complete the shipment.", "hash": "f2488b2aae3b24ef", "src": "db2@1.60.1.70245"}
-{"id": 211328, "field": "name", "en": "Waylaid Supplies: Brown Linen Robes", "hash": "20b8d338999b9987", "src": "db2@1.60.1.70245"}
-{"id": 211328, "field": "description", "en": "Add $q2 Brown Linen Robes to complete the shipment.", "hash": "7cddac62a175a59c", "src": "db2@1.60.1.70245"}
-{"id": 211329, "field": "name", "en": "Waylaid Supplies: Herb Baked Eggs", "hash": "40291fefdac74465", "src": "db2@1.60.1.70245"}
-{"id": 211329, "field": "description", "en": "Add $q2 Herb Baked Eggs to complete the shipment.", "hash": "4b1ea0254d34b107", "src": "db2@1.60.1.70245"}
-{"id": 211330, "field": "name", "en": "Waylaid Supplies: Spiced Wolf Meat", "hash": "5c7f62bf99c9d0fc", "src": "db2@1.60.1.70245"}
-{"id": 211330, "field": "description", "en": "Add $q2 Spiced Wolf Meat to complete the shipment.", "hash": "0eea74a239bc22ff", "src": "db2@1.60.1.70245"}
-{"id": 211331, "field": "name", "en": "Waylaid Supplies: Brilliant Smallfish", "hash": "c458f6575f1bdb99", "src": "db2@1.60.1.70245"}
-{"id": 211331, "field": "description", "en": "Add $q2 Brilliant Smallfish to complete the shipment.", "hash": "277cbe9e92e7afc3", "src": "db2@1.60.1.70245"}
-{"id": 211332, "field": "name", "en": "Waylaid Supplies: Heavy Linen Bandages", "hash": "02fef8a6c6fa6fbf", "src": "db2@1.60.1.70245"}
-{"id": 211332, "field": "description", "en": "Add $q2 Heavy Linen Bandages to complete the shipment.", "hash": "0da3bb2e89780a6f", "src": "db2@1.60.1.70245"}
-{"id": 211365, "field": "name", "en": "Supply Shipment", "hash": "8ad7d1ea61b98c89", "src": "db2@1.60.1.70245"}
-{"id": 211365, "field": "description", "en": "Deliver to a supply officer for a substantial reward.", "hash": "c49cf70cacacb899", "src": "db2@1.60.1.70245"}
-{"id": 211367, "field": "name", "en": "Supply Shipment", "hash": "8ad7d1ea61b98c89", "src": "db2@1.60.1.70245"}
-{"id": 211367, "field": "description", "en": "Deliver to a supply officer for a substantial reward.", "hash": "c49cf70cacacb899", "src": "db2@1.60.1.70245"}
-{"id": 211368, "field": "name", "en": "Supply Shipment", "hash": "8ad7d1ea61b98c89", "src": "db2@1.60.1.70245"}
-{"id": 211368, "field": "description", "en": "Deliver to a supply officer for a substantial reward.", "hash": "c49cf70cacacb899", "src": "db2@1.60.1.70245"}
-{"id": 211385, "field": "name", "en": "Rune of Serpent Spread", "hash": "866d450c598a3fac", "src": "db2@1.60.1.70245"}
-{"id": 211385, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
-{"id": 211386, "field": "name", "en": "Spell Notes: Arcane Surge", "hash": "f0ae7d41abbccaa7", "src": "db2@1.60.1.70245"}
-{"id": 211386, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
-{"id": 211387, "field": "name", "en": "Rune of Beckoning Light", "hash": "2b23347af326eb72", "src": "db2@1.60.1.70245"}
-{"id": 211387, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
-{"id": 211390, "field": "name", "en": "Rune of Teasing", "hash": "f918a1a87eeb76e9", "src": "db2@1.60.1.70245"}
-{"id": 211390, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
-{"id": 211391, "field": "name", "en": "Rune of Healing Rain", "hash": "1a900b48326efe96", "src": "db2@1.60.1.70245"}
-{"id": 211391, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
-{"id": 211392, "field": "name", "en": "Rune of Everlasting Affliction", "hash": "158be1e41fa163cd", "src": "db2@1.60.1.70245"}
-{"id": 211392, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
-{"id": 211393, "field": "name", "en": "Rune of Single-Minded Fury", "hash": "111aed69faa778dd", "src": "db2@1.60.1.70245"}
-{"id": 211393, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
-{"id": 211419, "field": "name", "en": "Handful of Shifting Scales", "hash": "2c7c1bd94abdc74e", "src": "db2@1.60.1.70245"}
-{"id": 211419, "field": "description", "en": "These curious scales seem to shimmer slightly, as if they are not fully corporeal. There is clearly wonderous magic at play here... if only you could find someone who knows more about them.", "hash": "f78d169c988cd8d3", "src": "db2@1.60.1.70245"}
-{"id": 211427, "field": "name", "en": "Soul Vessel", "hash": "ff7414617a8c52c9", "src": "db2@1.60.1.70245"}
-{"id": 211427, "field": "description", "en": "Traps demon souls and siphons them for power.", "hash": "77247768c7404fce", "src": "db2@1.60.1.70245"}
-{"id": 211447, "field": "name", "en": "Arms Shipment", "hash": "e527638ab1ef1a4b", "src": "db2@1.60.1.70245"}
-{"id": 211448, "field": "name", "en": "Signed Procurement Contract", "hash": "570d76cc694dacdd", "src": "db2@1.60.1.70245"}
-{"id": 211471, "field": "name", "en": "Cliffspring Key", "hash": "cc9becb43cc2711e", "src": "db2@1.60.1.70245"}
-{"id": 211472, "field": "name", "en": "Libram of Banishment", "hash": "fcfb4b5248fb63a1", "src": "db2@1.60.1.70245"}
-{"id": 211472, "field": "description", "en": "Learn a new ability after casting Turn Undead on 5 enemies, and slaying them with Exorcism.", "hash": "f1e9e5c3cdfcd55f", "src": "db2@1.60.1.70245"}
-{"id": 211476, "field": "name", "en": "Rune of Fires Wake", "hash": "01974585e6b01000", "src": "db2@1.60.1.70245"}
-{"id": 211476, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
-{"id": 211477, "field": "name", "en": "Rune of Incinerate", "hash": "fe0668352580bd9a", "src": "db2@1.60.1.70245"}
-{"id": 211477, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
-{"id": 211482, "field": "name", "en": "Shatterspear Offering", "hash": "717b1ff74b6e9f02", "src": "db2@1.60.1.70245"}
-{"id": 211487, "field": "name", "en": "Demolition Explosives", "hash": "cf829cb1c423780f", "src": "db2@1.60.1.70245"}
-{"id": 211487, "field": "description", "en": "Place a bomb with a short fuse on the ground in front of you.\nOnly seems useful for clearing out debris and rubble.", "hash": "ed66e3748c8f1637", "src": "db2@1.60.1.70245"}
-{"id": 211488, "field": "name", "en": "Rune of the Avenger", "hash": "593bf3a80f36c3fd", "src": "db2@1.60.1.70245"}
-{"id": 211488, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
-{"id": 211490, "field": "name", "en": "Prophecy of a Thousand Lights", "hash": "9fa9dc99fdc4e6ea", "src": "db2@1.60.1.70245"}
-{"id": 211490, "field": "description", "en": "Focus on the Prophecy to learn a new spell.  Requires a mind focused by meditating on two spiritual mysteries of Azeroth.\nLearn a new Engraving ability.", "hash": "1e1904ac85071cea", "src": "db2@1.60.1.70245"}
-{"id": 211498, "field": "name", "en": "Trainee's Sentinel Nightsaber", "hash": "c27aa16e0d6cf720", "src": "db2@1.60.1.70245"}
+{"id": 211205, "field": "name", "en": "Rune of Cobra Slayer", "hash": "0d4e508e18a57828", "src": "db2@1.60.1.70291"}
+{"id": 211205, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
+{"id": 211247, "field": "name", "en": "Pattern: Phoenix Bindings", "hash": "0403b53941c84c88", "src": "db2@1.60.1.70291"}
+{"id": 211247, "field": "description", "en": "Teaches you how to sew Phoenix Bindings.", "hash": "361e2d8cac8aa993", "src": "db2@1.60.1.70291"}
+{"id": 211269, "field": "name", "en": "Primitive Drawing", "hash": "8b7f32a53c051864", "src": "db2@1.60.1.70291"}
+{"id": 211272, "field": "name", "en": "Empty Bait Cage", "hash": "772c67dd81940742", "src": "db2@1.60.1.70291"}
+{"id": 211272, "field": "description", "en": "Catch a critter to be used as bait.", "hash": "72483e0745501edb", "src": "db2@1.60.1.70291"}
+{"id": 211273, "field": "name", "en": "Trapped Critter", "hash": "9bc7937ed9ceab7d", "src": "db2@1.60.1.70291"}
+{"id": 211273, "field": "description", "en": "Place critter as bait.", "hash": "9480a4dba0e35cd5", "src": "db2@1.60.1.70291"}
+{"id": 211293, "field": "name", "en": "Crimson Trophy Quill", "hash": "a4600b31c6ee1a37", "src": "db2@1.60.1.70291"}
+{"id": 211301, "field": "name", "en": "Rune of Expose Weakness", "hash": "7432252a6328000b", "src": "db2@1.60.1.70291"}
+{"id": 211301, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
+{"id": 211315, "field": "name", "en": "Waylaid Supplies: Light Leather", "hash": "29690b6628bbfac1", "src": "db2@1.60.1.70291"}
+{"id": 211315, "field": "description", "en": "Add $q2 Light Leather to complete the shipment.", "hash": "7a0e45b24050cd76", "src": "db2@1.60.1.70291"}
+{"id": 211316, "field": "name", "en": "Waylaid Supplies: Peacebloom", "hash": "907286e1301a7f00", "src": "db2@1.60.1.70291"}
+{"id": 211316, "field": "description", "en": "Add $q2 Peacebloom to complete the shipment.", "hash": "f297f7714ebf03e1", "src": "db2@1.60.1.70291"}
+{"id": 211317, "field": "name", "en": "Waylaid Supplies: Silverleaf", "hash": "69696488d5d9921c", "src": "db2@1.60.1.70291"}
+{"id": 211317, "field": "description", "en": "Add $q2 Silverleaf to complete the shipment.", "hash": "6d8888a0fd2aeee2", "src": "db2@1.60.1.70291"}
+{"id": 211318, "field": "name", "en": "Waylaid Supplies: Minor Healing Potions", "hash": "cc8eecaebb06a4f6", "src": "db2@1.60.1.70291"}
+{"id": 211318, "field": "description", "en": "Add $q2 Minor Healing Potions to complete the shipment.", "hash": "f877dcba41b11730", "src": "db2@1.60.1.70291"}
+{"id": 211319, "field": "name", "en": "Waylaid Supplies: Copper Shortswords", "hash": "58dbfd9ad0ad2f16", "src": "db2@1.60.1.70291"}
+{"id": 211319, "field": "description", "en": "Add $q2 Copper Shortswords to complete the shipment.", "hash": "b80648aef6e87154", "src": "db2@1.60.1.70291"}
+{"id": 211320, "field": "name", "en": "Waylaid Supplies: Runed Copper Pants", "hash": "7a528e5b6bd70b91", "src": "db2@1.60.1.70291"}
+{"id": 211320, "field": "description", "en": "Add $q2 Runed Copper Pants to complete the shipment.", "hash": "d4542fc8f4c465f8", "src": "db2@1.60.1.70291"}
+{"id": 211321, "field": "name", "en": "Waylaid Supplies: Lesser Magic Wands", "hash": "8a6a53f4652fbb27", "src": "db2@1.60.1.70291"}
+{"id": 211321, "field": "description", "en": "Add $q2 Lesser Magic Wands to complete the shipment.", "hash": "5b7e14eb41286f0a", "src": "db2@1.60.1.70291"}
+{"id": 211322, "field": "name", "en": "Waylaid Supplies: Minor Wizard Oil", "hash": "e17f721d0678f6a6", "src": "db2@1.60.1.70291"}
+{"id": 211322, "field": "description", "en": "Add $q2 Minor Wizard Oil to complete the shipment.", "hash": "7a19cb6ce537a812", "src": "db2@1.60.1.70291"}
+{"id": 211323, "field": "name", "en": "Waylaid Supplies: Rough Copper Bombs", "hash": "338966422a214943", "src": "db2@1.60.1.70291"}
+{"id": 211323, "field": "description", "en": "Add $q2 Rough Copper Bombs to complete the shipment.", "hash": "08f90955b5229687", "src": "db2@1.60.1.70291"}
+{"id": 211324, "field": "name", "en": "Waylaid Supplies: Rough Boomsticks", "hash": "7ea854cf569e51f4", "src": "db2@1.60.1.70291"}
+{"id": 211324, "field": "description", "en": "Add $q2 Rough Boomsticks to complete the shipment.", "hash": "2688911fd1c49be5", "src": "db2@1.60.1.70291"}
+{"id": 211325, "field": "name", "en": "Waylaid Supplies: Handstitched Leather Belts", "hash": "13cfefbe08a154e7", "src": "db2@1.60.1.70291"}
+{"id": 211325, "field": "description", "en": "Add $q2 Handstitched Leather Belts to complete the shipment.", "hash": "2972836133f0d525", "src": "db2@1.60.1.70291"}
+{"id": 211326, "field": "name", "en": "Waylaid Supplies: Embossed Leather Vests", "hash": "53a6e888293ed848", "src": "db2@1.60.1.70291"}
+{"id": 211326, "field": "description", "en": "Add $q2 Embossed Leather Vests to complete the shipment.", "hash": "2d577b122e10fc89", "src": "db2@1.60.1.70291"}
+{"id": 211327, "field": "name", "en": "Waylaid Supplies: Brown Linen Pants", "hash": "fbc054304fbc4d63", "src": "db2@1.60.1.70291"}
+{"id": 211327, "field": "description", "en": "Add $q2 Brown Linen Pants to complete the shipment.", "hash": "f2488b2aae3b24ef", "src": "db2@1.60.1.70291"}
+{"id": 211328, "field": "name", "en": "Waylaid Supplies: Brown Linen Robes", "hash": "20b8d338999b9987", "src": "db2@1.60.1.70291"}
+{"id": 211328, "field": "description", "en": "Add $q2 Brown Linen Robes to complete the shipment.", "hash": "7cddac62a175a59c", "src": "db2@1.60.1.70291"}
+{"id": 211329, "field": "name", "en": "Waylaid Supplies: Herb Baked Eggs", "hash": "40291fefdac74465", "src": "db2@1.60.1.70291"}
+{"id": 211329, "field": "description", "en": "Add $q2 Herb Baked Eggs to complete the shipment.", "hash": "4b1ea0254d34b107", "src": "db2@1.60.1.70291"}
+{"id": 211330, "field": "name", "en": "Waylaid Supplies: Spiced Wolf Meat", "hash": "5c7f62bf99c9d0fc", "src": "db2@1.60.1.70291"}
+{"id": 211330, "field": "description", "en": "Add $q2 Spiced Wolf Meat to complete the shipment.", "hash": "0eea74a239bc22ff", "src": "db2@1.60.1.70291"}
+{"id": 211331, "field": "name", "en": "Waylaid Supplies: Brilliant Smallfish", "hash": "c458f6575f1bdb99", "src": "db2@1.60.1.70291"}
+{"id": 211331, "field": "description", "en": "Add $q2 Brilliant Smallfish to complete the shipment.", "hash": "277cbe9e92e7afc3", "src": "db2@1.60.1.70291"}
+{"id": 211332, "field": "name", "en": "Waylaid Supplies: Heavy Linen Bandages", "hash": "02fef8a6c6fa6fbf", "src": "db2@1.60.1.70291"}
+{"id": 211332, "field": "description", "en": "Add $q2 Heavy Linen Bandages to complete the shipment.", "hash": "0da3bb2e89780a6f", "src": "db2@1.60.1.70291"}
+{"id": 211365, "field": "name", "en": "Supply Shipment", "hash": "8ad7d1ea61b98c89", "src": "db2@1.60.1.70291"}
+{"id": 211365, "field": "description", "en": "Deliver to a supply officer for a substantial reward.", "hash": "c49cf70cacacb899", "src": "db2@1.60.1.70291"}
+{"id": 211367, "field": "name", "en": "Supply Shipment", "hash": "8ad7d1ea61b98c89", "src": "db2@1.60.1.70291"}
+{"id": 211367, "field": "description", "en": "Deliver to a supply officer for a substantial reward.", "hash": "c49cf70cacacb899", "src": "db2@1.60.1.70291"}
+{"id": 211368, "field": "name", "en": "Supply Shipment", "hash": "8ad7d1ea61b98c89", "src": "db2@1.60.1.70291"}
+{"id": 211368, "field": "description", "en": "Deliver to a supply officer for a substantial reward.", "hash": "c49cf70cacacb899", "src": "db2@1.60.1.70291"}
+{"id": 211385, "field": "name", "en": "Rune of Serpent Spread", "hash": "866d450c598a3fac", "src": "db2@1.60.1.70291"}
+{"id": 211385, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
+{"id": 211386, "field": "name", "en": "Spell Notes: Arcane Surge", "hash": "f0ae7d41abbccaa7", "src": "db2@1.60.1.70291"}
+{"id": 211386, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
+{"id": 211387, "field": "name", "en": "Rune of Beckoning Light", "hash": "2b23347af326eb72", "src": "db2@1.60.1.70291"}
+{"id": 211387, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
+{"id": 211390, "field": "name", "en": "Rune of Teasing", "hash": "f918a1a87eeb76e9", "src": "db2@1.60.1.70291"}
+{"id": 211390, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
+{"id": 211391, "field": "name", "en": "Rune of Healing Rain", "hash": "1a900b48326efe96", "src": "db2@1.60.1.70291"}
+{"id": 211391, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
+{"id": 211392, "field": "name", "en": "Rune of Everlasting Affliction", "hash": "158be1e41fa163cd", "src": "db2@1.60.1.70291"}
+{"id": 211392, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
+{"id": 211393, "field": "name", "en": "Rune of Single-Minded Fury", "hash": "111aed69faa778dd", "src": "db2@1.60.1.70291"}
+{"id": 211393, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
+{"id": 211419, "field": "name", "en": "Handful of Shifting Scales", "hash": "2c7c1bd94abdc74e", "src": "db2@1.60.1.70291"}
+{"id": 211419, "field": "description", "en": "These curious scales seem to shimmer slightly, as if they are not fully corporeal. There is clearly wonderous magic at play here... if only you could find someone who knows more about them.", "hash": "f78d169c988cd8d3", "src": "db2@1.60.1.70291"}
+{"id": 211427, "field": "name", "en": "Soul Vessel", "hash": "ff7414617a8c52c9", "src": "db2@1.60.1.70291"}
+{"id": 211427, "field": "description", "en": "Traps demon souls and siphons them for power.", "hash": "77247768c7404fce", "src": "db2@1.60.1.70291"}
+{"id": 211447, "field": "name", "en": "Arms Shipment", "hash": "e527638ab1ef1a4b", "src": "db2@1.60.1.70291"}
+{"id": 211448, "field": "name", "en": "Signed Procurement Contract", "hash": "570d76cc694dacdd", "src": "db2@1.60.1.70291"}
+{"id": 211471, "field": "name", "en": "Cliffspring Key", "hash": "cc9becb43cc2711e", "src": "db2@1.60.1.70291"}
+{"id": 211472, "field": "name", "en": "Libram of Banishment", "hash": "fcfb4b5248fb63a1", "src": "db2@1.60.1.70291"}
+{"id": 211472, "field": "description", "en": "Learn a new ability after casting Turn Undead on 5 enemies, and slaying them with Exorcism.", "hash": "f1e9e5c3cdfcd55f", "src": "db2@1.60.1.70291"}
+{"id": 211476, "field": "name", "en": "Rune of Fires Wake", "hash": "01974585e6b01000", "src": "db2@1.60.1.70291"}
+{"id": 211476, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
+{"id": 211477, "field": "name", "en": "Rune of Incinerate", "hash": "fe0668352580bd9a", "src": "db2@1.60.1.70291"}
+{"id": 211477, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
+{"id": 211482, "field": "name", "en": "Shatterspear Offering", "hash": "717b1ff74b6e9f02", "src": "db2@1.60.1.70291"}
+{"id": 211487, "field": "name", "en": "Demolition Explosives", "hash": "cf829cb1c423780f", "src": "db2@1.60.1.70291"}
+{"id": 211487, "field": "description", "en": "Place a bomb with a short fuse on the ground in front of you.\nOnly seems useful for clearing out debris and rubble.", "hash": "ed66e3748c8f1637", "src": "db2@1.60.1.70291"}
+{"id": 211488, "field": "name", "en": "Rune of the Avenger", "hash": "593bf3a80f36c3fd", "src": "db2@1.60.1.70291"}
+{"id": 211488, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
+{"id": 211490, "field": "name", "en": "Prophecy of a Thousand Lights", "hash": "9fa9dc99fdc4e6ea", "src": "db2@1.60.1.70291"}
+{"id": 211490, "field": "description", "en": "Focus on the Prophecy to learn a new spell.  Requires a mind focused by meditating on two spiritual mysteries of Azeroth.\nLearn a new Engraving ability.", "hash": "1e1904ac85071cea", "src": "db2@1.60.1.70291"}
+{"id": 211498, "field": "name", "en": "Trainee's Sentinel Nightsaber", "hash": "c27aa16e0d6cf720", "src": "db2@1.60.1.70291"}
 {"id": 211498, "field": "description", "en": "Summons a Trainee's Sentinel Nightsaber. Only usable in Ashenvale.", "hash": "43dc9742d534c738", "src": "wago@1.15.9.69722"}
-{"id": 211499, "field": "name", "en": "Trainee's Outrider Wolf", "hash": "a67ef8fb44d34145", "src": "db2@1.60.1.70245"}
+{"id": 211499, "field": "name", "en": "Trainee's Outrider Wolf", "hash": "a67ef8fb44d34145", "src": "db2@1.60.1.70291"}
 {"id": 211499, "field": "description", "en": "Summons a Trainee's Outrider Wolf. Only usable in Ashenvale.", "hash": "7c4049a65f22b219", "src": "wago@1.15.9.69722"}
-{"id": 211500, "field": "name", "en": "Resilient Cloth Headband", "hash": "77afbdcdbeb4cce7", "src": "db2@1.60.1.70245"}
-{"id": 211500, "field": "description", "en": "Reduces all damage taken and chance to be critically hit by $s1% in Warsong Gulch.", "hash": "96c116adb59baf46", "src": "db2@1.60.1.70245"}
-{"id": 211514, "field": "name", "en": "Spell Notes: Mass Regeneration", "hash": "95066bb31fea29a3", "src": "db2@1.60.1.70245"}
-{"id": 211514, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
-{"id": 211527, "field": "name", "en": "Cozy Sleeping Bag", "hash": "156f440503fc90a1", "src": "db2@1.60.1.70245"}
-{"id": 211527, "field": "description", "en": "Unfurl a sleeping bag. Resting inside for at least one minute will provide a bonus to experience earned, stacking up to 3 times.\nOld, but still good", "hash": "07636dc44369f64c", "src": "db2@1.60.1.70245"}
-{"id": 211528, "field": "name", "en": "Dark Insight", "hash": "be656bbbbe85c43a", "src": "db2@1.60.1.70245"}
-{"id": 211528, "field": "description", "en": "Consider at a certain secluded grave in Duskwood to receive a prophecy.", "hash": "df05057e61c3f442", "src": "db2@1.60.1.70245"}
-{"id": 211530, "field": "name", "en": "Prophecy of a City Enthralled", "hash": "3fd57a8b4afe3fc1", "src": "db2@1.60.1.70245"}
-{"id": 211530, "field": "description", "en": "Focus on the Prophecy to learn a new spell.  Requires a mind focused by meditating on two spiritual mysteries of Azeroth.", "hash": "e0dfb45b8bc75380", "src": "db2@1.60.1.70245"}
-{"id": 211531, "field": "name", "en": "Prophecy of Seven Visitors", "hash": "1cfb759862caacc0", "src": "db2@1.60.1.70245"}
-{"id": 211531, "field": "description", "en": "Focus on the Prophecy to learn a new spell.  Requires a mind focused by meditating on two spiritual mysteries of Azeroth.", "hash": "e0dfb45b8bc75380", "src": "db2@1.60.1.70245"}
-{"id": 211534, "field": "name", "en": "Primal Insight", "hash": "901e127992fd60da", "src": "db2@1.60.1.70245"}
-{"id": 211534, "field": "description", "en": "Consider at a Thistlefur dreamcatcher high in the canopy to receive a prophecy.", "hash": "b0a15c39998e4de7", "src": "db2@1.60.1.70245"}
-{"id": 211691, "field": "name", "en": "Spell Notes: Arcane Blast", "hash": "c50c3a02a207be1c", "src": "db2@1.60.1.70245"}
-{"id": 211691, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
-{"id": 211777, "field": "name", "en": "Naga Manuscript", "hash": "9e84cc1b81d43482", "src": "db2@1.60.1.70245"}
-{"id": 211779, "field": "name", "en": "Comprehension Charm", "hash": "78af2a658d6a07ca", "src": "db2@1.60.1.70245"}
-{"id": 211779, "field": "description", "en": "Aids the translation of scrolls and spell notes.", "hash": "0a63ad6859ad4827", "src": "db2@1.60.1.70245"}
-{"id": 211780, "field": "name", "en": "Scroll: KWYJIBO", "hash": "d978122c3eca641b", "src": "db2@1.60.1.70245"}
-{"id": 211780, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70245"}
-{"id": 211784, "field": "name", "en": "Scroll: WUBBA WUBBA", "hash": "854a4c98b77cde48", "src": "db2@1.60.1.70245"}
-{"id": 211784, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70245"}
-{"id": 211785, "field": "name", "en": "Scroll: CWAL", "hash": "76ab020af4ce5a77", "src": "db2@1.60.1.70245"}
-{"id": 211785, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70245"}
-{"id": 211786, "field": "name", "en": "Scroll: CHAP BALK WELLES", "hash": "aae032bf662359ef", "src": "db2@1.60.1.70245"}
-{"id": 211786, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70245"}
-{"id": 211787, "field": "name", "en": "Scroll: LOWER PING WHOMEVER", "hash": "f1c17c55460c6ffd", "src": "db2@1.60.1.70245"}
-{"id": 211787, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70245"}
-{"id": 211799, "field": "name", "en": "Sack of Stolen Goods", "hash": "835a5e7b43970a41", "src": "db2@1.60.1.70245"}
-{"id": 211799, "field": "description", "en": "Likely taken from the cathedral when Ada ran away.", "hash": "2bc1b16b646360f7", "src": "db2@1.60.1.70245"}
-{"id": 211800, "field": "name", "en": "Scroll of Reintegration", "hash": "d6e006218d6506a8", "src": "db2@1.60.1.70245"}
-{"id": 211800, "field": "description", "en": "Brings a dead player back to life with $s1% of their health and mana.  Cannot be used when in combat.", "hash": "71cd66d448b71132", "src": "db2@1.60.1.70245"}
-{"id": 211809, "field": "name", "en": "Comprehension Primer", "hash": "37f4c33451af6664", "src": "db2@1.60.1.70245"}
-{"id": 211809, "field": "description", "en": "Aids in translation of elementary spell notes.", "hash": "402a974b77e63f5d", "src": "db2@1.60.1.70245"}
-{"id": 211813, "field": "name", "en": "Silverwing Sentinel Charm", "hash": "29a7b5a8b6ef7a02", "src": "db2@1.60.1.70245"}
-{"id": 211813, "field": "description", "en": "You acquired this from a fallen Silverwing Sentinel combatant. Perhaps the Far Seer would be interested.", "hash": "fbf15fdfefb6ac31", "src": "db2@1.60.1.70245"}
-{"id": 211814, "field": "name", "en": "Warsong Outrider Mark", "hash": "fdc7e7751f02e0d1", "src": "db2@1.60.1.70245"}
-{"id": 211814, "field": "description", "en": "You acquired this from a fallen Warsong Outrider combatant. Perhaps the Priestess of the Moon would be interested.", "hash": "7e5e83bc203086f0", "src": "db2@1.60.1.70245"}
-{"id": 211815, "field": "name", "en": "Silverwing Battle Hymn", "hash": "079206d68d5403e4", "src": "db2@1.60.1.70245"}
-{"id": 211815, "field": "description", "en": "Increases all damage and healing done by $s1% for $d.\nA stirring arrangement to rally morale before battle.", "hash": "fb981d1f2d3a8c65", "src": "db2@1.60.1.70245"}
-{"id": 211816, "field": "name", "en": "Warsong Battle Drum", "hash": "6d6114a5fb01e697", "src": "db2@1.60.1.70245"}
-{"id": 211816, "field": "description", "en": "Increases all damage and healing done by $s1% for $d.\nDrums of war to prepare for battle.", "hash": "42b944a30d2dee3b", "src": "db2@1.60.1.70245"}
-{"id": 211819, "field": "name", "en": "Waylaid Supplies: Bronze Bars", "hash": "7f4424b7424c26d3", "src": "db2@1.60.1.70245"}
-{"id": 211819, "field": "description", "en": "Add $q2 Bronze Bars to complete the shipment.", "hash": "2b6c94b0e095b474", "src": "db2@1.60.1.70245"}
-{"id": 211820, "field": "name", "en": "Waylaid Supplies: Silver Bars", "hash": "b62bbce2ca19dd41", "src": "db2@1.60.1.70245"}
-{"id": 211820, "field": "description", "en": "Add $q2 Silver Bars to complete the shipment.", "hash": "37cac78c33e719c5", "src": "db2@1.60.1.70245"}
-{"id": 211821, "field": "name", "en": "Waylaid Supplies: Medium Leather", "hash": "c64520920ea36487", "src": "db2@1.60.1.70245"}
-{"id": 211821, "field": "description", "en": "Add $q2 Medium Leather to complete the shipment.", "hash": "6289ead22ddbe792", "src": "db2@1.60.1.70245"}
-{"id": 211822, "field": "name", "en": "Waylaid Supplies: Bruiseweed", "hash": "fa02fd88a4894d76", "src": "db2@1.60.1.70245"}
-{"id": 211822, "field": "description", "en": "Add $q2 Bruiseweed to complete the shipment.", "hash": "d714841dffb62889", "src": "db2@1.60.1.70245"}
-{"id": 211823, "field": "name", "en": "Waylaid Supplies: Swiftthistle", "hash": "f7e5815075396000", "src": "db2@1.60.1.70245"}
-{"id": 211823, "field": "description", "en": "Add $q2 Swiftthistle to complete the shipment.", "hash": "91060fbd2e4f9a70", "src": "db2@1.60.1.70245"}
-{"id": 211824, "field": "name", "en": "Waylaid Supplies: Lesser Mana Potions", "hash": "b54458009f713712", "src": "db2@1.60.1.70245"}
-{"id": 211824, "field": "description", "en": "Add $q2 Lesser Mana Potions to complete the shipment.", "hash": "ecadaa1608a63c47", "src": "db2@1.60.1.70245"}
-{"id": 211825, "field": "name", "en": "Waylaid Supplies: Rough Bronze Boots", "hash": "ce930e10a248ff23", "src": "db2@1.60.1.70245"}
-{"id": 211825, "field": "description", "en": "Add $q2 Rough Bronze Boots to complete the shipment.", "hash": "e86fb9546a30f4c3", "src": "db2@1.60.1.70245"}
-{"id": 211826, "field": "name", "en": "Waylaid Supplies: Silver Skeleton Keys", "hash": "2b778a7d4dcea1ce", "src": "db2@1.60.1.70245"}
-{"id": 211826, "field": "description", "en": "Add $q2 Silver Skeleton Keys to complete the shipment.", "hash": "98d48549c354f1d4", "src": "db2@1.60.1.70245"}
-{"id": 211827, "field": "name", "en": "Waylaid Supplies: Runed Silver Rods", "hash": "83904d505fc0586a", "src": "db2@1.60.1.70245"}
-{"id": 211827, "field": "description", "en": "Add $q2 Runed Silver Rods to complete the shipment.", "hash": "d407c5bdf60e794b", "src": "db2@1.60.1.70245"}
-{"id": 211828, "field": "name", "en": "Waylaid Supplies: Minor Mana Oil", "hash": "f7b1ec9c7f9ae7f8", "src": "db2@1.60.1.70245"}
-{"id": 211828, "field": "description", "en": "Add $q2 Minor Mana Oil to complete the shipment.", "hash": "1c08372e1d986bf1", "src": "db2@1.60.1.70245"}
-{"id": 211829, "field": "name", "en": "Waylaid Supplies: Small Bronze Bombs", "hash": "5a28bb6118839cbd", "src": "db2@1.60.1.70245"}
-{"id": 211829, "field": "description", "en": "Add $q2 Small Bronze Bombs to complete the shipment.", "hash": "f052d4cd82449f0b", "src": "db2@1.60.1.70245"}
-{"id": 211830, "field": "name", "en": "Waylaid Supplies: Ornate Spyglasses", "hash": "7a91f3e90b0b8ead", "src": "db2@1.60.1.70245"}
-{"id": 211830, "field": "description", "en": "Add $q2 Ornate Spyglasses to complete the shipment.", "hash": "119e3188a24a5f32", "src": "db2@1.60.1.70245"}
-{"id": 211831, "field": "name", "en": "Waylaid Supplies: Dark Leather Cloaks", "hash": "87d7afe480de4a20", "src": "db2@1.60.1.70245"}
-{"id": 211831, "field": "description", "en": "Add $q2 Dark Leather Cloaks to complete the shipment.", "hash": "a781f34349a08196", "src": "db2@1.60.1.70245"}
-{"id": 211832, "field": "name", "en": "Waylaid Supplies: Hillman's Shoulders", "hash": "56b004977bb35dec", "src": "db2@1.60.1.70245"}
-{"id": 211832, "field": "description", "en": "Add $q2 Hillman's Shoulders to complete the shipment.", "hash": "dd7b1c8a568edaf3", "src": "db2@1.60.1.70245"}
-{"id": 211833, "field": "name", "en": "Waylaid Supplies: Gray Woolen Shirts", "hash": "0fc8107c6fa3b7d3", "src": "db2@1.60.1.70245"}
-{"id": 211833, "field": "description", "en": "Add $q2 Gray Woolen Shirts to complete the shipment.", "hash": "e0d23c1ba5d3fe5d", "src": "db2@1.60.1.70245"}
-{"id": 211834, "field": "name", "en": "Waylaid Supplies: Pearl-clasped Cloaks", "hash": "40f8a360038c6a28", "src": "db2@1.60.1.70245"}
-{"id": 211834, "field": "description", "en": "Add $q2 Pearl-clasped Cloaks to complete the shipment.", "hash": "d58ca070d0ab0143", "src": "db2@1.60.1.70245"}
-{"id": 211835, "field": "name", "en": "Waylaid Supplies: Smoked Sagefish", "hash": "8a54445e75f3a55b", "src": "db2@1.60.1.70245"}
-{"id": 211835, "field": "description", "en": "Add $q2 Smoked Sagefish to complete the shipment.", "hash": "2e0719f58bbd15ca", "src": "db2@1.60.1.70245"}
-{"id": 211836, "field": "name", "en": "Waylaid Supplies: Smoked Bear Meat", "hash": "4f7431fa07c2bd8f", "src": "db2@1.60.1.70245"}
-{"id": 211836, "field": "description", "en": "Add $q2 Smoked Bear Meat to complete the shipment.", "hash": "2a8a60afef999692", "src": "db2@1.60.1.70245"}
-{"id": 211837, "field": "name", "en": "Waylaid Supplies: Goblin Deviled Clams", "hash": "02d16f242c6a9e80", "src": "db2@1.60.1.70245"}
-{"id": 211837, "field": "description", "en": "Add $q2 Goblin Deviled Clams to complete the shipment.", "hash": "fcc3a5db02bf42cb", "src": "db2@1.60.1.70245"}
-{"id": 211838, "field": "name", "en": "Waylaid Supplies: Heavy Wool Bandages", "hash": "8ff6acb665687bc7", "src": "db2@1.60.1.70245"}
-{"id": 211838, "field": "description", "en": "Add $q2 Heavy Wool Bandages to complete the shipment.", "hash": "0446fd9677f103fa", "src": "db2@1.60.1.70245"}
-{"id": 211839, "field": "name", "en": "Supply Shipment", "hash": "8ad7d1ea61b98c89", "src": "db2@1.60.1.70245"}
-{"id": 211839, "field": "description", "en": "Deliver to a supply officer for a substantial reward.", "hash": "c49cf70cacacb899", "src": "db2@1.60.1.70245"}
-{"id": 211840, "field": "name", "en": "Supply Shipment", "hash": "8ad7d1ea61b98c89", "src": "db2@1.60.1.70245"}
-{"id": 211840, "field": "description", "en": "Deliver to a supply officer for a substantial reward.", "hash": "c49cf70cacacb899", "src": "db2@1.60.1.70245"}
-{"id": 211841, "field": "name", "en": "Supply Shipment", "hash": "8ad7d1ea61b98c89", "src": "db2@1.60.1.70245"}
-{"id": 211841, "field": "description", "en": "Deliver to a supply officer for a substantial reward.", "hash": "c49cf70cacacb899", "src": "db2@1.60.1.70245"}
-{"id": 211845, "field": "name", "en": "Blackfathom Sharpening Stone", "hash": "7da601c34c5e2e7f", "src": "db2@1.60.1.70245"}
-{"id": 211845, "field": "description", "en": "While applied to the target weapon increases Hit Chance by 2% for 30 minutes. This has no effect outside of Blackfathom Deeps.\nThese mysterious enchanted stones seem to glow more brightly the deeper you descend into Blackfathom.", "hash": "1a2a7f0de14d06f3", "src": "db2@1.60.1.70245"}
-{"id": 211853, "field": "name", "en": "Scroll: VOCE WELL", "hash": "6e8b0b9dce2d0f67", "src": "db2@1.60.1.70245"}
-{"id": 211853, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70245"}
-{"id": 211854, "field": "name", "en": "Scroll: OMIT KESA", "hash": "9d63a733abe68089", "src": "db2@1.60.1.70245"}
-{"id": 211854, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70245"}
-{"id": 211855, "field": "name", "en": "Scroll: STHENIC LUNATE", "hash": "3bc106058b4e3a1c", "src": "db2@1.60.1.70245"}
-{"id": 211855, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70245"}
-{"id": 211856, "field": "name", "en": "Resilient Mail Coif", "hash": "d583452f7117db6d", "src": "db2@1.60.1.70245"}
-{"id": 211856, "field": "description", "en": "Reduces all damage taken and chance to be critically hit by $s1% in Warsong Gulch.", "hash": "96c116adb59baf46", "src": "db2@1.60.1.70245"}
-{"id": 211857, "field": "name", "en": "Resilient Leather Mask", "hash": "258b5e3bfb94aef6", "src": "db2@1.60.1.70245"}
-{"id": 211857, "field": "description", "en": "Reduces all damage taken and chance to be critically hit by $s1% in Warsong Gulch.", "hash": "96c116adb59baf46", "src": "db2@1.60.1.70245"}
-{"id": 211933, "field": "name", "en": "Waylaid Supplies: Rough Stone", "hash": "7f7dcf9e22283454", "src": "db2@1.60.1.70245"}
-{"id": 211933, "field": "description", "en": "Add $q2 Rough Stone to complete the shipment.", "hash": "79e2e22d7233337f", "src": "db2@1.60.1.70245"}
-{"id": 211934, "field": "name", "en": "Waylaid Supplies: Healing Potions", "hash": "221b8f2ae1bc4257", "src": "db2@1.60.1.70245"}
-{"id": 211934, "field": "description", "en": "Add $q2 Healing Potions to complete the shipment.", "hash": "b779cd03f87c3b44", "src": "db2@1.60.1.70245"}
-{"id": 211935, "field": "name", "en": "Waylaid Supplies: Elixir of Firepower", "hash": "aa6656288c8bc1a2", "src": "db2@1.60.1.70245"}
-{"id": 211935, "field": "description", "en": "Add $q2 Elixir of Firepower to complete the shipment.", "hash": "fe005c23aee7e9e6", "src": "db2@1.60.1.70245"}
-{"id": 211940, "field": "name", "en": "Ecks'av's Tribal Guardian", "hash": "0f3152ce31c8c47f", "src": "db2@1.60.1.70245"}
-{"id": 211940, "field": "description", "en": "Gives $s1 additional armor to nearby party members for $d. Players may only have one aura on them per paladin at any one time.", "hash": "6d8fef2ae34c27a4", "src": "db2@1.60.1.70245"}
-{"id": 211941, "field": "name", "en": "Windwalker's Yari", "hash": "637ab8d3b9e0209e", "src": "db2@1.60.1.70245"}
-{"id": 211941, "field": "description", "en": "Blasts enemies in front of you with the power of wind, fire, all that kind of thing!", "hash": "aab22c2b828754fc", "src": "db2@1.60.1.70245"}
-{"id": 211953, "field": "name", "en": "Scroll of Arcane Recovery I", "hash": "165f0bf84f87faff", "src": "db2@1.60.1.70245"}
-{"id": 211953, "field": "description", "en": "Restores $s1 mana per $t1 sec.", "hash": "6c7dd0eb4e1cedac", "src": "db2@1.60.1.70245"}
-{"id": 211954, "field": "name", "en": "Scroll of Arcane Accuracy I", "hash": "727f8388126be472", "src": "db2@1.60.1.70245"}
-{"id": 211954, "field": "description", "en": "Increases your chance to hit with spells by $s1%. ", "hash": "34eef4035e6f1b3c", "src": "db2@1.60.1.70245"}
-{"id": 211955, "field": "name", "en": "Scroll of Arcane Protection - Fire I", "hash": "dafecb15450399d6", "src": "db2@1.60.1.70245"}
-{"id": 211955, "field": "description", "en": "Increases your fire resistance by $s1 for $d1. ", "hash": "27b13d3a75b1ea1f", "src": "db2@1.60.1.70245"}
-{"id": 211956, "field": "name", "en": "Scroll of Arcane Protection - Frost I", "hash": "b5559c536203a67b", "src": "db2@1.60.1.70245"}
-{"id": 211956, "field": "description", "en": "Increases your frost resistance by $s1 for $d1. ", "hash": "e45c5522ad95feb1", "src": "db2@1.60.1.70245"}
-{"id": 211957, "field": "name", "en": "Scroll of Arcane Power I", "hash": "b49c32c02d67099f", "src": "db2@1.60.1.70245"}
-{"id": 211957, "field": "description", "en": "Improves your chance to get a critical strike with spells by ${$s1}.1%.", "hash": "d715ed9529f6f64e", "src": "db2@1.60.1.70245"}
+{"id": 211500, "field": "name", "en": "Resilient Cloth Headband", "hash": "77afbdcdbeb4cce7", "src": "db2@1.60.1.70291"}
+{"id": 211500, "field": "description", "en": "Reduces all damage taken and chance to be critically hit by $s1% in Warsong Gulch.", "hash": "96c116adb59baf46", "src": "db2@1.60.1.70291"}
+{"id": 211514, "field": "name", "en": "Spell Notes: Mass Regeneration", "hash": "95066bb31fea29a3", "src": "db2@1.60.1.70291"}
+{"id": 211514, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
+{"id": 211527, "field": "name", "en": "Cozy Sleeping Bag", "hash": "156f440503fc90a1", "src": "db2@1.60.1.70291"}
+{"id": 211527, "field": "description", "en": "Unfurl a sleeping bag. Resting inside for at least one minute will provide a bonus to experience earned, stacking up to 3 times.\nOld, but still good", "hash": "07636dc44369f64c", "src": "db2@1.60.1.70291"}
+{"id": 211528, "field": "name", "en": "Dark Insight", "hash": "be656bbbbe85c43a", "src": "db2@1.60.1.70291"}
+{"id": 211528, "field": "description", "en": "Consider at a certain secluded grave in Duskwood to receive a prophecy.", "hash": "df05057e61c3f442", "src": "db2@1.60.1.70291"}
+{"id": 211530, "field": "name", "en": "Prophecy of a City Enthralled", "hash": "3fd57a8b4afe3fc1", "src": "db2@1.60.1.70291"}
+{"id": 211530, "field": "description", "en": "Focus on the Prophecy to learn a new spell.  Requires a mind focused by meditating on two spiritual mysteries of Azeroth.", "hash": "e0dfb45b8bc75380", "src": "db2@1.60.1.70291"}
+{"id": 211531, "field": "name", "en": "Prophecy of Seven Visitors", "hash": "1cfb759862caacc0", "src": "db2@1.60.1.70291"}
+{"id": 211531, "field": "description", "en": "Focus on the Prophecy to learn a new spell.  Requires a mind focused by meditating on two spiritual mysteries of Azeroth.", "hash": "e0dfb45b8bc75380", "src": "db2@1.60.1.70291"}
+{"id": 211534, "field": "name", "en": "Primal Insight", "hash": "901e127992fd60da", "src": "db2@1.60.1.70291"}
+{"id": 211534, "field": "description", "en": "Consider at a Thistlefur dreamcatcher high in the canopy to receive a prophecy.", "hash": "b0a15c39998e4de7", "src": "db2@1.60.1.70291"}
+{"id": 211691, "field": "name", "en": "Spell Notes: Arcane Blast", "hash": "c50c3a02a207be1c", "src": "db2@1.60.1.70291"}
+{"id": 211691, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
+{"id": 211777, "field": "name", "en": "Naga Manuscript", "hash": "9e84cc1b81d43482", "src": "db2@1.60.1.70291"}
+{"id": 211779, "field": "name", "en": "Comprehension Charm", "hash": "78af2a658d6a07ca", "src": "db2@1.60.1.70291"}
+{"id": 211779, "field": "description", "en": "Aids the translation of scrolls and spell notes.", "hash": "0a63ad6859ad4827", "src": "db2@1.60.1.70291"}
+{"id": 211780, "field": "name", "en": "Scroll: KWYJIBO", "hash": "d978122c3eca641b", "src": "db2@1.60.1.70291"}
+{"id": 211780, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70291"}
+{"id": 211784, "field": "name", "en": "Scroll: WUBBA WUBBA", "hash": "854a4c98b77cde48", "src": "db2@1.60.1.70291"}
+{"id": 211784, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70291"}
+{"id": 211785, "field": "name", "en": "Scroll: CWAL", "hash": "76ab020af4ce5a77", "src": "db2@1.60.1.70291"}
+{"id": 211785, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70291"}
+{"id": 211786, "field": "name", "en": "Scroll: CHAP BALK WELLES", "hash": "aae032bf662359ef", "src": "db2@1.60.1.70291"}
+{"id": 211786, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70291"}
+{"id": 211787, "field": "name", "en": "Scroll: LOWER PING WHOMEVER", "hash": "f1c17c55460c6ffd", "src": "db2@1.60.1.70291"}
+{"id": 211787, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70291"}
+{"id": 211799, "field": "name", "en": "Sack of Stolen Goods", "hash": "835a5e7b43970a41", "src": "db2@1.60.1.70291"}
+{"id": 211799, "field": "description", "en": "Likely taken from the cathedral when Ada ran away.", "hash": "2bc1b16b646360f7", "src": "db2@1.60.1.70291"}
+{"id": 211800, "field": "name", "en": "Scroll of Reintegration", "hash": "d6e006218d6506a8", "src": "db2@1.60.1.70291"}
+{"id": 211800, "field": "description", "en": "Brings a dead player back to life with $s1% of their health and mana.  Cannot be used when in combat.", "hash": "71cd66d448b71132", "src": "db2@1.60.1.70291"}
+{"id": 211809, "field": "name", "en": "Comprehension Primer", "hash": "37f4c33451af6664", "src": "db2@1.60.1.70291"}
+{"id": 211809, "field": "description", "en": "Aids in translation of elementary spell notes.", "hash": "402a974b77e63f5d", "src": "db2@1.60.1.70291"}
+{"id": 211813, "field": "name", "en": "Silverwing Sentinel Charm", "hash": "29a7b5a8b6ef7a02", "src": "db2@1.60.1.70291"}
+{"id": 211813, "field": "description", "en": "You acquired this from a fallen Silverwing Sentinel combatant. Perhaps the Far Seer would be interested.", "hash": "fbf15fdfefb6ac31", "src": "db2@1.60.1.70291"}
+{"id": 211814, "field": "name", "en": "Warsong Outrider Mark", "hash": "fdc7e7751f02e0d1", "src": "db2@1.60.1.70291"}
+{"id": 211814, "field": "description", "en": "You acquired this from a fallen Warsong Outrider combatant. Perhaps the Priestess of the Moon would be interested.", "hash": "7e5e83bc203086f0", "src": "db2@1.60.1.70291"}
+{"id": 211815, "field": "name", "en": "Silverwing Battle Hymn", "hash": "079206d68d5403e4", "src": "db2@1.60.1.70291"}
+{"id": 211815, "field": "description", "en": "Increases all damage and healing done by $s1% for $d.\nA stirring arrangement to rally morale before battle.", "hash": "fb981d1f2d3a8c65", "src": "db2@1.60.1.70291"}
+{"id": 211816, "field": "name", "en": "Warsong Battle Drum", "hash": "6d6114a5fb01e697", "src": "db2@1.60.1.70291"}
+{"id": 211816, "field": "description", "en": "Increases all damage and healing done by $s1% for $d.\nDrums of war to prepare for battle.", "hash": "42b944a30d2dee3b", "src": "db2@1.60.1.70291"}
+{"id": 211819, "field": "name", "en": "Waylaid Supplies: Bronze Bars", "hash": "7f4424b7424c26d3", "src": "db2@1.60.1.70291"}
+{"id": 211819, "field": "description", "en": "Add $q2 Bronze Bars to complete the shipment.", "hash": "2b6c94b0e095b474", "src": "db2@1.60.1.70291"}
+{"id": 211820, "field": "name", "en": "Waylaid Supplies: Silver Bars", "hash": "b62bbce2ca19dd41", "src": "db2@1.60.1.70291"}
+{"id": 211820, "field": "description", "en": "Add $q2 Silver Bars to complete the shipment.", "hash": "37cac78c33e719c5", "src": "db2@1.60.1.70291"}
+{"id": 211821, "field": "name", "en": "Waylaid Supplies: Medium Leather", "hash": "c64520920ea36487", "src": "db2@1.60.1.70291"}
+{"id": 211821, "field": "description", "en": "Add $q2 Medium Leather to complete the shipment.", "hash": "6289ead22ddbe792", "src": "db2@1.60.1.70291"}
+{"id": 211822, "field": "name", "en": "Waylaid Supplies: Bruiseweed", "hash": "fa02fd88a4894d76", "src": "db2@1.60.1.70291"}
+{"id": 211822, "field": "description", "en": "Add $q2 Bruiseweed to complete the shipment.", "hash": "d714841dffb62889", "src": "db2@1.60.1.70291"}
+{"id": 211823, "field": "name", "en": "Waylaid Supplies: Swiftthistle", "hash": "f7e5815075396000", "src": "db2@1.60.1.70291"}
+{"id": 211823, "field": "description", "en": "Add $q2 Swiftthistle to complete the shipment.", "hash": "91060fbd2e4f9a70", "src": "db2@1.60.1.70291"}
+{"id": 211824, "field": "name", "en": "Waylaid Supplies: Lesser Mana Potions", "hash": "b54458009f713712", "src": "db2@1.60.1.70291"}
+{"id": 211824, "field": "description", "en": "Add $q2 Lesser Mana Potions to complete the shipment.", "hash": "ecadaa1608a63c47", "src": "db2@1.60.1.70291"}
+{"id": 211825, "field": "name", "en": "Waylaid Supplies: Rough Bronze Boots", "hash": "ce930e10a248ff23", "src": "db2@1.60.1.70291"}
+{"id": 211825, "field": "description", "en": "Add $q2 Rough Bronze Boots to complete the shipment.", "hash": "e86fb9546a30f4c3", "src": "db2@1.60.1.70291"}
+{"id": 211826, "field": "name", "en": "Waylaid Supplies: Silver Skeleton Keys", "hash": "2b778a7d4dcea1ce", "src": "db2@1.60.1.70291"}
+{"id": 211826, "field": "description", "en": "Add $q2 Silver Skeleton Keys to complete the shipment.", "hash": "98d48549c354f1d4", "src": "db2@1.60.1.70291"}
+{"id": 211827, "field": "name", "en": "Waylaid Supplies: Runed Silver Rods", "hash": "83904d505fc0586a", "src": "db2@1.60.1.70291"}
+{"id": 211827, "field": "description", "en": "Add $q2 Runed Silver Rods to complete the shipment.", "hash": "d407c5bdf60e794b", "src": "db2@1.60.1.70291"}
+{"id": 211828, "field": "name", "en": "Waylaid Supplies: Minor Mana Oil", "hash": "f7b1ec9c7f9ae7f8", "src": "db2@1.60.1.70291"}
+{"id": 211828, "field": "description", "en": "Add $q2 Minor Mana Oil to complete the shipment.", "hash": "1c08372e1d986bf1", "src": "db2@1.60.1.70291"}
+{"id": 211829, "field": "name", "en": "Waylaid Supplies: Small Bronze Bombs", "hash": "5a28bb6118839cbd", "src": "db2@1.60.1.70291"}
+{"id": 211829, "field": "description", "en": "Add $q2 Small Bronze Bombs to complete the shipment.", "hash": "f052d4cd82449f0b", "src": "db2@1.60.1.70291"}
+{"id": 211830, "field": "name", "en": "Waylaid Supplies: Ornate Spyglasses", "hash": "7a91f3e90b0b8ead", "src": "db2@1.60.1.70291"}
+{"id": 211830, "field": "description", "en": "Add $q2 Ornate Spyglasses to complete the shipment.", "hash": "119e3188a24a5f32", "src": "db2@1.60.1.70291"}
+{"id": 211831, "field": "name", "en": "Waylaid Supplies: Dark Leather Cloaks", "hash": "87d7afe480de4a20", "src": "db2@1.60.1.70291"}
+{"id": 211831, "field": "description", "en": "Add $q2 Dark Leather Cloaks to complete the shipment.", "hash": "a781f34349a08196", "src": "db2@1.60.1.70291"}
+{"id": 211832, "field": "name", "en": "Waylaid Supplies: Hillman's Shoulders", "hash": "56b004977bb35dec", "src": "db2@1.60.1.70291"}
+{"id": 211832, "field": "description", "en": "Add $q2 Hillman's Shoulders to complete the shipment.", "hash": "dd7b1c8a568edaf3", "src": "db2@1.60.1.70291"}
+{"id": 211833, "field": "name", "en": "Waylaid Supplies: Gray Woolen Shirts", "hash": "0fc8107c6fa3b7d3", "src": "db2@1.60.1.70291"}
+{"id": 211833, "field": "description", "en": "Add $q2 Gray Woolen Shirts to complete the shipment.", "hash": "e0d23c1ba5d3fe5d", "src": "db2@1.60.1.70291"}
+{"id": 211834, "field": "name", "en": "Waylaid Supplies: Pearl-clasped Cloaks", "hash": "40f8a360038c6a28", "src": "db2@1.60.1.70291"}
+{"id": 211834, "field": "description", "en": "Add $q2 Pearl-clasped Cloaks to complete the shipment.", "hash": "d58ca070d0ab0143", "src": "db2@1.60.1.70291"}
+{"id": 211835, "field": "name", "en": "Waylaid Supplies: Smoked Sagefish", "hash": "8a54445e75f3a55b", "src": "db2@1.60.1.70291"}
+{"id": 211835, "field": "description", "en": "Add $q2 Smoked Sagefish to complete the shipment.", "hash": "2e0719f58bbd15ca", "src": "db2@1.60.1.70291"}
+{"id": 211836, "field": "name", "en": "Waylaid Supplies: Smoked Bear Meat", "hash": "4f7431fa07c2bd8f", "src": "db2@1.60.1.70291"}
+{"id": 211836, "field": "description", "en": "Add $q2 Smoked Bear Meat to complete the shipment.", "hash": "2a8a60afef999692", "src": "db2@1.60.1.70291"}
+{"id": 211837, "field": "name", "en": "Waylaid Supplies: Goblin Deviled Clams", "hash": "02d16f242c6a9e80", "src": "db2@1.60.1.70291"}
+{"id": 211837, "field": "description", "en": "Add $q2 Goblin Deviled Clams to complete the shipment.", "hash": "fcc3a5db02bf42cb", "src": "db2@1.60.1.70291"}
+{"id": 211838, "field": "name", "en": "Waylaid Supplies: Heavy Wool Bandages", "hash": "8ff6acb665687bc7", "src": "db2@1.60.1.70291"}
+{"id": 211838, "field": "description", "en": "Add $q2 Heavy Wool Bandages to complete the shipment.", "hash": "0446fd9677f103fa", "src": "db2@1.60.1.70291"}
+{"id": 211839, "field": "name", "en": "Supply Shipment", "hash": "8ad7d1ea61b98c89", "src": "db2@1.60.1.70291"}
+{"id": 211839, "field": "description", "en": "Deliver to a supply officer for a substantial reward.", "hash": "c49cf70cacacb899", "src": "db2@1.60.1.70291"}
+{"id": 211840, "field": "name", "en": "Supply Shipment", "hash": "8ad7d1ea61b98c89", "src": "db2@1.60.1.70291"}
+{"id": 211840, "field": "description", "en": "Deliver to a supply officer for a substantial reward.", "hash": "c49cf70cacacb899", "src": "db2@1.60.1.70291"}
+{"id": 211841, "field": "name", "en": "Supply Shipment", "hash": "8ad7d1ea61b98c89", "src": "db2@1.60.1.70291"}
+{"id": 211841, "field": "description", "en": "Deliver to a supply officer for a substantial reward.", "hash": "c49cf70cacacb899", "src": "db2@1.60.1.70291"}
+{"id": 211845, "field": "name", "en": "Blackfathom Sharpening Stone", "hash": "7da601c34c5e2e7f", "src": "db2@1.60.1.70291"}
+{"id": 211845, "field": "description", "en": "While applied to the target weapon increases Hit Chance by 2% for 30 minutes. This has no effect outside of Blackfathom Deeps.\nThese mysterious enchanted stones seem to glow more brightly the deeper you descend into Blackfathom.", "hash": "1a2a7f0de14d06f3", "src": "db2@1.60.1.70291"}
+{"id": 211853, "field": "name", "en": "Scroll: VOCE WELL", "hash": "6e8b0b9dce2d0f67", "src": "db2@1.60.1.70291"}
+{"id": 211853, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70291"}
+{"id": 211854, "field": "name", "en": "Scroll: OMIT KESA", "hash": "9d63a733abe68089", "src": "db2@1.60.1.70291"}
+{"id": 211854, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70291"}
+{"id": 211855, "field": "name", "en": "Scroll: STHENIC LUNATE", "hash": "3bc106058b4e3a1c", "src": "db2@1.60.1.70291"}
+{"id": 211855, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70291"}
+{"id": 211856, "field": "name", "en": "Resilient Mail Coif", "hash": "d583452f7117db6d", "src": "db2@1.60.1.70291"}
+{"id": 211856, "field": "description", "en": "Reduces all damage taken and chance to be critically hit by $s1% in Warsong Gulch.", "hash": "96c116adb59baf46", "src": "db2@1.60.1.70291"}
+{"id": 211857, "field": "name", "en": "Resilient Leather Mask", "hash": "258b5e3bfb94aef6", "src": "db2@1.60.1.70291"}
+{"id": 211857, "field": "description", "en": "Reduces all damage taken and chance to be critically hit by $s1% in Warsong Gulch.", "hash": "96c116adb59baf46", "src": "db2@1.60.1.70291"}
+{"id": 211933, "field": "name", "en": "Waylaid Supplies: Rough Stone", "hash": "7f7dcf9e22283454", "src": "db2@1.60.1.70291"}
+{"id": 211933, "field": "description", "en": "Add $q2 Rough Stone to complete the shipment.", "hash": "79e2e22d7233337f", "src": "db2@1.60.1.70291"}
+{"id": 211934, "field": "name", "en": "Waylaid Supplies: Healing Potions", "hash": "221b8f2ae1bc4257", "src": "db2@1.60.1.70291"}
+{"id": 211934, "field": "description", "en": "Add $q2 Healing Potions to complete the shipment.", "hash": "b779cd03f87c3b44", "src": "db2@1.60.1.70291"}
+{"id": 211935, "field": "name", "en": "Waylaid Supplies: Elixir of Firepower", "hash": "aa6656288c8bc1a2", "src": "db2@1.60.1.70291"}
+{"id": 211935, "field": "description", "en": "Add $q2 Elixir of Firepower to complete the shipment.", "hash": "fe005c23aee7e9e6", "src": "db2@1.60.1.70291"}
+{"id": 211940, "field": "name", "en": "Ecks'av's Tribal Guardian", "hash": "0f3152ce31c8c47f", "src": "db2@1.60.1.70291"}
+{"id": 211940, "field": "description", "en": "Gives $s1 additional armor to nearby party members for $d. Players may only have one aura on them per paladin at any one time.", "hash": "6d8fef2ae34c27a4", "src": "db2@1.60.1.70291"}
+{"id": 211941, "field": "name", "en": "Windwalker's Yari", "hash": "637ab8d3b9e0209e", "src": "db2@1.60.1.70291"}
+{"id": 211941, "field": "description", "en": "Blasts enemies in front of you with the power of wind, fire, all that kind of thing!", "hash": "aab22c2b828754fc", "src": "db2@1.60.1.70291"}
+{"id": 211953, "field": "name", "en": "Scroll of Arcane Recovery I", "hash": "165f0bf84f87faff", "src": "db2@1.60.1.70291"}
+{"id": 211953, "field": "description", "en": "Restores $s1 mana per $t1 sec.", "hash": "6c7dd0eb4e1cedac", "src": "db2@1.60.1.70291"}
+{"id": 211954, "field": "name", "en": "Scroll of Arcane Accuracy I", "hash": "727f8388126be472", "src": "db2@1.60.1.70291"}
+{"id": 211954, "field": "description", "en": "Increases your chance to hit with spells by $s1%. ", "hash": "34eef4035e6f1b3c", "src": "db2@1.60.1.70291"}
+{"id": 211955, "field": "name", "en": "Scroll of Arcane Protection - Fire I", "hash": "dafecb15450399d6", "src": "db2@1.60.1.70291"}
+{"id": 211955, "field": "description", "en": "Increases your fire resistance by $s1 for $d1. ", "hash": "27b13d3a75b1ea1f", "src": "db2@1.60.1.70291"}
+{"id": 211956, "field": "name", "en": "Scroll of Arcane Protection - Frost I", "hash": "b5559c536203a67b", "src": "db2@1.60.1.70291"}
+{"id": 211956, "field": "description", "en": "Increases your frost resistance by $s1 for $d1. ", "hash": "e45c5522ad95feb1", "src": "db2@1.60.1.70291"}
+{"id": 211957, "field": "name", "en": "Scroll of Arcane Power I", "hash": "b49c32c02d67099f", "src": "db2@1.60.1.70291"}
+{"id": 211957, "field": "description", "en": "Improves your chance to get a critical strike with spells by ${$s1}.1%.", "hash": "d715ed9529f6f64e", "src": "db2@1.60.1.70291"}

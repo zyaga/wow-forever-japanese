@@ -1,77 +1,77 @@
-{"id": 278002, "field": "name", "en": "Valley Cosh", "hash": "0589e3fb955a6de2", "src": "db2@1.60.1.70245"}
-{"id": 278017, "field": "name", "en": "Refunded Ring", "hash": "a78536016254ff64", "src": "db2@1.60.1.70245"}
-{"id": 278018, "field": "name", "en": "Renegotiated Ring", "hash": "ffbbe616f20c2cfd", "src": "db2@1.60.1.70245"}
-{"id": 278019, "field": "name", "en": "Apology Ring", "hash": "a56af94bf8b7d455", "src": "db2@1.60.1.70245"}
-{"id": 278029, "field": "name", "en": "Dark Purple Berries", "hash": "cbf4de718e9fecd0", "src": "db2@1.60.1.70245"}
-{"id": 278030, "field": "name", "en": "Scarlet Banner", "hash": "6fa77b402c2de3ff", "src": "db2@1.60.1.70245"}
-{"id": 278030, "field": "description", "en": "Raise a Scarlet Banner at a campsite. Requires a Campfire nearby.", "hash": "c1dc1b97f061c612", "src": "db2@1.60.1.70245"}
-{"id": 278049, "field": "name", "en": "Excavation Tools", "hash": "417702d1ada17ac2", "src": "db2@1.60.1.70245"}
-{"id": 278051, "field": "name", "en": "Monogrammed Silver Hair Clip", "hash": "fb225202d10cb882", "src": "db2@1.60.1.70245"}
-{"id": 278051, "field": "description", "en": "K.D.", "hash": "0a18eb012419231f", "src": "db2@1.60.1.70245"}
-{"id": 278066, "field": "name", "en": "Level 60 Tradeskill Supplies", "hash": "9fa870ff182c53c6", "src": "db2@1.60.1.70245"}
-{"id": 278066, "field": "description", "en": "Contains money and currency needed to test tradeskills at level 60.", "hash": "0b9c54632ca878a9", "src": "db2@1.60.1.70245"}
-{"id": 278069, "field": "name", "en": "Potion of Tradeskill Testing - Level 60", "hash": "4ef95de595673997", "src": "db2@1.60.1.70245"}
-{"id": 278069, "field": "description", "en": "Provides a mountain of tradeskill materials to test tradeskills, as well as money and tokens needed to purchase recipes and materials.", "hash": "925578ddecd0466d", "src": "db2@1.60.1.70245"}
-{"id": 278078, "field": "name", "en": "Prepared Incense", "hash": "d95dd71420f4b565", "src": "db2@1.60.1.70245"}
-{"id": 278078, "field": "description", "en": "Spread the incense over the southern cliff of Hunter Rise.", "hash": "55017d5c0ab6fb20", "src": "db2@1.60.1.70245"}
-{"id": 278079, "field": "name", "en": "Bundle of Herbs", "hash": "764506f11573d12f", "src": "db2@1.60.1.70245"}
-{"id": 278079, "field": "description", "en": "Combine a Bundle of Herbs, a Bundle of Dried Cedar Twigs, Sinew Thread, and Ceremonial Flint and Tinder to create Prepared Incense.", "hash": "8e38e0e9a4158938", "src": "db2@1.60.1.70245"}
-{"id": 278080, "field": "name", "en": "Bundle of Dried Cedar Twigs", "hash": "b66654b9c3c740d4", "src": "db2@1.60.1.70245"}
-{"id": 278080, "field": "description", "en": "Combine a Bundle of Herbs, a Bundle of Dried Cedar Twigs, Sinew Thread, and Ceremonial Flint and Tinder to create Prepared Incense.", "hash": "8e38e0e9a4158938", "src": "db2@1.60.1.70245"}
-{"id": 278081, "field": "name", "en": "Sinew Thread", "hash": "93cb6978c762611b", "src": "db2@1.60.1.70245"}
-{"id": 278081, "field": "description", "en": "Combine a Bundle of Herbs, a Bundle of Dried Cedar Twigs, Sinew Thread, and Ceremonial Flint and Tinder to create Prepared Incense.", "hash": "8e38e0e9a4158938", "src": "db2@1.60.1.70245"}
-{"id": 278083, "field": "name", "en": "Ceremonial Flint and Tinder", "hash": "e987d61742474724", "src": "db2@1.60.1.70245"}
-{"id": 278083, "field": "description", "en": "Combine a Bundle of Herbs, a Bundle of Dried Cedar Twigs, Sinew Thread, and Ceremonial Flint and Tinder to create Prepared Incense.", "hash": "8e38e0e9a4158938", "src": "db2@1.60.1.70245"}
-{"id": 278091, "field": "name", "en": "Hailspite Frostmoss", "hash": "803c7e7b2f1bd645", "src": "db2@1.60.1.70245"}
-{"id": 278097, "field": "name", "en": "Kuroma's Head", "hash": "491dd7a18ed88492", "src": "db2@1.60.1.70245"}
-{"id": 278098, "field": "name", "en": "Kamuro's Head", "hash": "c702a4bf4c36948c", "src": "db2@1.60.1.70245"}
-{"id": 278117, "field": "name", "en": "Hard Boiled Eggs", "hash": "efcbfa8888ab4e3e", "src": "db2@1.60.1.70245"}
-{"id": 278117, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70245"}
-{"id": 278118, "field": "name", "en": "Rich Broth", "hash": "c14d1dca2e91d267", "src": "db2@1.60.1.70245"}
-{"id": 278118, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70245"}
-{"id": 278119, "field": "name", "en": "Bread with Butter", "hash": "16c593b3c461488c", "src": "db2@1.60.1.70245"}
-{"id": 278119, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70245"}
-{"id": 278120, "field": "name", "en": "Fruit Platter", "hash": "964b7792fd0dcc38", "src": "db2@1.60.1.70245"}
-{"id": 278120, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70245"}
-{"id": 278121, "field": "name", "en": "Smoked Sausage", "hash": "330b60d464b72721", "src": "db2@1.60.1.70245"}
-{"id": 278121, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70245"}
-{"id": 278122, "field": "name", "en": "Carrot Salad", "hash": "9feec5a5f87e8127", "src": "db2@1.60.1.70245"}
-{"id": 278122, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70245"}
-{"id": 278157, "field": "name", "en": "Premier Grand Marshal's Tome of Restoration", "hash": "695eef03f40bcb38", "src": "db2@1.60.1.70245"}
-{"id": 278158, "field": "name", "en": "Premier Grand Marshal's Tome of Power", "hash": "99de7bb59afd8675", "src": "db2@1.60.1.70245"}
-{"id": 278159, "field": "name", "en": "Lean Worg Flank", "hash": "874dc130ae54a31b", "src": "db2@1.60.1.70245"}
-{"id": 278160, "field": "name", "en": "Twitching Spider Carcass", "hash": "ea6d154a5e11be97", "src": "db2@1.60.1.70245"}
-{"id": 278161, "field": "name", "en": "Dark Iron Delight", "hash": "03cf92e49351aa61", "src": "db2@1.60.1.70245"}
-{"id": 278162, "field": "name", "en": "Pouch of Chipped Hearthstones", "hash": "581ae3ccf01a063e", "src": "db2@1.60.1.70245"}
-{"id": 278162, "field": "description", "en": "Toss a Hearthstone to a wounded Slave Worker, after knocking some sense into them.", "hash": "2d946e0d25c7b9ff", "src": "db2@1.60.1.70245"}
-{"id": 278186, "field": "name", "en": "Brilliantly Polished Bangle", "hash": "d857ce99c59c9a62", "src": "db2@1.60.1.70245"}
-{"id": 278191, "field": "name", "en": "Desert Debris", "hash": "b6e7cfc9ca3d8c48", "src": "db2@1.60.1.70245"}
-{"id": 278194, "field": "name", "en": "Crate of Radioactive Refuse", "hash": "7e076aa52db9991e", "src": "db2@1.60.1.70245"}
-{"id": 278194, "field": "description", "en": "Discard hazardous materials a safe distance away from Gadgetzan and other garbage.", "hash": "c144223edb527891", "src": "db2@1.60.1.70245"}
-{"id": 278201, "field": "name", "en": "Mirkweed Pods", "hash": "b2d93b95a16c18d5", "src": "db2@1.60.1.70245"}
-{"id": 278225, "field": "name", "en": "Surgical Spidersilk", "hash": "da627ee4a102073e", "src": "db2@1.60.1.70245"}
-{"id": 278242, "field": "name", "en": "Duskbat Wing Membrane", "hash": "1426213fec6bed5b", "src": "db2@1.60.1.70245"}
-{"id": 278243, "field": "name", "en": "Darkhound Hide", "hash": "19b007b673410620", "src": "db2@1.60.1.70245"}
-{"id": 278244, "field": "name", "en": "Vile Fin Murloc Skin", "hash": "76e53e9d8b096b1c", "src": "db2@1.60.1.70245"}
-{"id": 278265, "field": "name", "en": "Nutritious Slime Sludge", "hash": "99a68a338f01b72a", "src": "db2@1.60.1.70245"}
-{"id": 278265, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70245"}
-{"id": 278398, "field": "name", "en": "Excavation Tools", "hash": "417702d1ada17ac2", "src": "db2@1.60.1.70245"}
-{"id": 278402, "field": "name", "en": "Unstudied Artifact", "hash": "4dd2ce31d6352fca", "src": "db2@1.60.1.70245"}
-{"id": 278403, "field": "name", "en": "Explorers' League Mining Helmet", "hash": "1657170eb33da642", "src": "db2@1.60.1.70245"}
-{"id": 278404, "field": "name", "en": "Pristine Mattock", "hash": "5922ac1d396c2770", "src": "db2@1.60.1.70245"}
-{"id": 278423, "field": "name", "en": "Monster - Mining Pick", "hash": "0a105a9662c8a768", "src": "db2@1.60.1.70245"}
-{"id": 278462, "field": "name", "en": "Packaged Tonics", "hash": "1b7b82ea7b03619e", "src": "db2@1.60.1.70245"}
-{"id": 278468, "field": "name", "en": "Premier Grand Marshal's Barricade", "hash": "a8cc8f55a37ae667", "src": "db2@1.60.1.70245"}
-{"id": 278469, "field": "name", "en": "Premier High Warlord's Barricade", "hash": "6638d4ae7652db41", "src": "db2@1.60.1.70245"}
-{"id": 278515, "field": "name", "en": "Mus'hale's Stolen Supplies", "hash": "dd04a7f325b95d86", "src": "db2@1.60.1.70245"}
-{"id": 278515, "field": "description", "en": "Contains a variety of useful adventuring resources, including those needed to take rubbings of rocks!", "hash": "7ee77e29580a5ed6", "src": "db2@1.60.1.70245"}
-{"id": 278543, "field": "name", "en": "Pouch of Tomb Dust", "hash": "c0ce9a5679fff241", "src": "db2@1.60.1.70245"}
-{"id": 278543, "field": "description", "en": "Throw the loosely tied pouch of tomb dust into The Great Sea.", "hash": "ce53b4ddf1e71a45", "src": "db2@1.60.1.70245"}
-{"id": 278569, "field": "name", "en": "Yesterday's Leftovers", "hash": "c2b906a44ef728a6", "src": "db2@1.60.1.70245"}
-{"id": 278569, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70245"}
-{"id": 278744, "field": "name", "en": "Mirage Mirror", "hash": "6847d38af54cf414", "src": "db2@1.60.1.70245"}
-{"id": 278796, "field": "name", "en": "Condensed Elemental Fragment", "hash": "d7be45d78cd777dd", "src": "db2@1.60.1.70245"}
-{"id": 278797, "field": "name", "en": "Crystallized Elemental Shard", "hash": "e762fa5fb907b278", "src": "db2@1.60.1.70245"}
-{"id": 278836, "field": "name", "en": "Head of Rend Blackhand", "hash": "6789e0f839deb758", "src": "db2@1.60.1.70245"}
-{"id": 278836, "field": "description", "en": "Proof of demise of the Warchief of Blackrock Mountain", "hash": "2a47a693be130b2f", "src": "db2@1.60.1.70245"}
-{"id": 278868, "field": "name", "en": "Tremayne Family Blacksmithing Techniques", "hash": "1b38379721b4df5f", "src": "db2@1.60.1.70245"}
+{"id": 278002, "field": "name", "en": "Valley Cosh", "hash": "0589e3fb955a6de2", "src": "db2@1.60.1.70291"}
+{"id": 278017, "field": "name", "en": "Refunded Ring", "hash": "a78536016254ff64", "src": "db2@1.60.1.70291"}
+{"id": 278018, "field": "name", "en": "Renegotiated Ring", "hash": "ffbbe616f20c2cfd", "src": "db2@1.60.1.70291"}
+{"id": 278019, "field": "name", "en": "Apology Ring", "hash": "a56af94bf8b7d455", "src": "db2@1.60.1.70291"}
+{"id": 278029, "field": "name", "en": "Dark Purple Berries", "hash": "cbf4de718e9fecd0", "src": "db2@1.60.1.70291"}
+{"id": 278030, "field": "name", "en": "Scarlet Banner", "hash": "6fa77b402c2de3ff", "src": "db2@1.60.1.70291"}
+{"id": 278030, "field": "description", "en": "Raise a Scarlet Banner at a campsite. Requires a Campfire nearby.", "hash": "c1dc1b97f061c612", "src": "db2@1.60.1.70291"}
+{"id": 278049, "field": "name", "en": "Excavation Tools", "hash": "417702d1ada17ac2", "src": "db2@1.60.1.70291"}
+{"id": 278051, "field": "name", "en": "Monogrammed Silver Hair Clip", "hash": "fb225202d10cb882", "src": "db2@1.60.1.70291"}
+{"id": 278051, "field": "description", "en": "K.D.", "hash": "0a18eb012419231f", "src": "db2@1.60.1.70291"}
+{"id": 278066, "field": "name", "en": "Level 60 Tradeskill Supplies", "hash": "9fa870ff182c53c6", "src": "db2@1.60.1.70291"}
+{"id": 278066, "field": "description", "en": "Contains money and currency needed to test tradeskills at level 60.", "hash": "0b9c54632ca878a9", "src": "db2@1.60.1.70291"}
+{"id": 278069, "field": "name", "en": "Potion of Tradeskill Testing - Level 60", "hash": "4ef95de595673997", "src": "db2@1.60.1.70291"}
+{"id": 278069, "field": "description", "en": "Provides a mountain of tradeskill materials to test tradeskills, as well as money and tokens needed to purchase recipes and materials.", "hash": "925578ddecd0466d", "src": "db2@1.60.1.70291"}
+{"id": 278078, "field": "name", "en": "Prepared Incense", "hash": "d95dd71420f4b565", "src": "db2@1.60.1.70291"}
+{"id": 278078, "field": "description", "en": "Spread the incense over the southern cliff of Hunter Rise.", "hash": "55017d5c0ab6fb20", "src": "db2@1.60.1.70291"}
+{"id": 278079, "field": "name", "en": "Bundle of Herbs", "hash": "764506f11573d12f", "src": "db2@1.60.1.70291"}
+{"id": 278079, "field": "description", "en": "Combine a Bundle of Herbs, a Bundle of Dried Cedar Twigs, Sinew Thread, and Ceremonial Flint and Tinder to create Prepared Incense.", "hash": "8e38e0e9a4158938", "src": "db2@1.60.1.70291"}
+{"id": 278080, "field": "name", "en": "Bundle of Dried Cedar Twigs", "hash": "b66654b9c3c740d4", "src": "db2@1.60.1.70291"}
+{"id": 278080, "field": "description", "en": "Combine a Bundle of Herbs, a Bundle of Dried Cedar Twigs, Sinew Thread, and Ceremonial Flint and Tinder to create Prepared Incense.", "hash": "8e38e0e9a4158938", "src": "db2@1.60.1.70291"}
+{"id": 278081, "field": "name", "en": "Sinew Thread", "hash": "93cb6978c762611b", "src": "db2@1.60.1.70291"}
+{"id": 278081, "field": "description", "en": "Combine a Bundle of Herbs, a Bundle of Dried Cedar Twigs, Sinew Thread, and Ceremonial Flint and Tinder to create Prepared Incense.", "hash": "8e38e0e9a4158938", "src": "db2@1.60.1.70291"}
+{"id": 278083, "field": "name", "en": "Ceremonial Flint and Tinder", "hash": "e987d61742474724", "src": "db2@1.60.1.70291"}
+{"id": 278083, "field": "description", "en": "Combine a Bundle of Herbs, a Bundle of Dried Cedar Twigs, Sinew Thread, and Ceremonial Flint and Tinder to create Prepared Incense.", "hash": "8e38e0e9a4158938", "src": "db2@1.60.1.70291"}
+{"id": 278091, "field": "name", "en": "Hailspite Frostmoss", "hash": "803c7e7b2f1bd645", "src": "db2@1.60.1.70291"}
+{"id": 278097, "field": "name", "en": "Kuroma's Head", "hash": "491dd7a18ed88492", "src": "db2@1.60.1.70291"}
+{"id": 278098, "field": "name", "en": "Kamuro's Head", "hash": "c702a4bf4c36948c", "src": "db2@1.60.1.70291"}
+{"id": 278117, "field": "name", "en": "Hard Boiled Eggs", "hash": "efcbfa8888ab4e3e", "src": "db2@1.60.1.70291"}
+{"id": 278117, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70291"}
+{"id": 278118, "field": "name", "en": "Rich Broth", "hash": "c14d1dca2e91d267", "src": "db2@1.60.1.70291"}
+{"id": 278118, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70291"}
+{"id": 278119, "field": "name", "en": "Bread with Butter", "hash": "16c593b3c461488c", "src": "db2@1.60.1.70291"}
+{"id": 278119, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70291"}
+{"id": 278120, "field": "name", "en": "Fruit Platter", "hash": "964b7792fd0dcc38", "src": "db2@1.60.1.70291"}
+{"id": 278120, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70291"}
+{"id": 278121, "field": "name", "en": "Smoked Sausage", "hash": "330b60d464b72721", "src": "db2@1.60.1.70291"}
+{"id": 278121, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70291"}
+{"id": 278122, "field": "name", "en": "Carrot Salad", "hash": "9feec5a5f87e8127", "src": "db2@1.60.1.70291"}
+{"id": 278122, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70291"}
+{"id": 278157, "field": "name", "en": "Premier Grand Marshal's Tome of Restoration", "hash": "695eef03f40bcb38", "src": "db2@1.60.1.70291"}
+{"id": 278158, "field": "name", "en": "Premier Grand Marshal's Tome of Power", "hash": "99de7bb59afd8675", "src": "db2@1.60.1.70291"}
+{"id": 278159, "field": "name", "en": "Lean Worg Flank", "hash": "874dc130ae54a31b", "src": "db2@1.60.1.70291"}
+{"id": 278160, "field": "name", "en": "Twitching Spider Carcass", "hash": "ea6d154a5e11be97", "src": "db2@1.60.1.70291"}
+{"id": 278161, "field": "name", "en": "Dark Iron Delight", "hash": "03cf92e49351aa61", "src": "db2@1.60.1.70291"}
+{"id": 278162, "field": "name", "en": "Pouch of Chipped Hearthstones", "hash": "581ae3ccf01a063e", "src": "db2@1.60.1.70291"}
+{"id": 278162, "field": "description", "en": "Toss a Hearthstone to a wounded Slave Worker, after knocking some sense into them.", "hash": "2d946e0d25c7b9ff", "src": "db2@1.60.1.70291"}
+{"id": 278186, "field": "name", "en": "Brilliantly Polished Bangle", "hash": "d857ce99c59c9a62", "src": "db2@1.60.1.70291"}
+{"id": 278191, "field": "name", "en": "Desert Debris", "hash": "b6e7cfc9ca3d8c48", "src": "db2@1.60.1.70291"}
+{"id": 278194, "field": "name", "en": "Crate of Radioactive Refuse", "hash": "7e076aa52db9991e", "src": "db2@1.60.1.70291"}
+{"id": 278194, "field": "description", "en": "Discard hazardous materials a safe distance away from Gadgetzan and other garbage.", "hash": "c144223edb527891", "src": "db2@1.60.1.70291"}
+{"id": 278201, "field": "name", "en": "Mirkweed Pods", "hash": "b2d93b95a16c18d5", "src": "db2@1.60.1.70291"}
+{"id": 278225, "field": "name", "en": "Surgical Spidersilk", "hash": "da627ee4a102073e", "src": "db2@1.60.1.70291"}
+{"id": 278242, "field": "name", "en": "Duskbat Wing Membrane", "hash": "1426213fec6bed5b", "src": "db2@1.60.1.70291"}
+{"id": 278243, "field": "name", "en": "Darkhound Hide", "hash": "19b007b673410620", "src": "db2@1.60.1.70291"}
+{"id": 278244, "field": "name", "en": "Vile Fin Murloc Skin", "hash": "76e53e9d8b096b1c", "src": "db2@1.60.1.70291"}
+{"id": 278265, "field": "name", "en": "Nutritious Slime Sludge", "hash": "99a68a338f01b72a", "src": "db2@1.60.1.70291"}
+{"id": 278265, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70291"}
+{"id": 278398, "field": "name", "en": "Excavation Tools", "hash": "417702d1ada17ac2", "src": "db2@1.60.1.70291"}
+{"id": 278402, "field": "name", "en": "Unstudied Artifact", "hash": "4dd2ce31d6352fca", "src": "db2@1.60.1.70291"}
+{"id": 278403, "field": "name", "en": "Explorers' League Mining Helmet", "hash": "1657170eb33da642", "src": "db2@1.60.1.70291"}
+{"id": 278404, "field": "name", "en": "Pristine Mattock", "hash": "5922ac1d396c2770", "src": "db2@1.60.1.70291"}
+{"id": 278423, "field": "name", "en": "Monster - Mining Pick", "hash": "0a105a9662c8a768", "src": "db2@1.60.1.70291"}
+{"id": 278462, "field": "name", "en": "Packaged Tonics", "hash": "1b7b82ea7b03619e", "src": "db2@1.60.1.70291"}
+{"id": 278468, "field": "name", "en": "Premier Grand Marshal's Barricade", "hash": "a8cc8f55a37ae667", "src": "db2@1.60.1.70291"}
+{"id": 278469, "field": "name", "en": "Premier High Warlord's Barricade", "hash": "6638d4ae7652db41", "src": "db2@1.60.1.70291"}
+{"id": 278515, "field": "name", "en": "Mus'hale's Stolen Supplies", "hash": "dd04a7f325b95d86", "src": "db2@1.60.1.70291"}
+{"id": 278515, "field": "description", "en": "Contains a variety of useful adventuring resources, including those needed to take rubbings of rocks!", "hash": "7ee77e29580a5ed6", "src": "db2@1.60.1.70291"}
+{"id": 278543, "field": "name", "en": "Pouch of Tomb Dust", "hash": "c0ce9a5679fff241", "src": "db2@1.60.1.70291"}
+{"id": 278543, "field": "description", "en": "Throw the loosely tied pouch of tomb dust into The Great Sea.", "hash": "ce53b4ddf1e71a45", "src": "db2@1.60.1.70291"}
+{"id": 278569, "field": "name", "en": "Yesterday's Leftovers", "hash": "c2b906a44ef728a6", "src": "db2@1.60.1.70291"}
+{"id": 278569, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70291"}
+{"id": 278744, "field": "name", "en": "Mirage Mirror", "hash": "6847d38af54cf414", "src": "db2@1.60.1.70291"}
+{"id": 278796, "field": "name", "en": "Condensed Elemental Fragment", "hash": "d7be45d78cd777dd", "src": "db2@1.60.1.70291"}
+{"id": 278797, "field": "name", "en": "Crystallized Elemental Shard", "hash": "e762fa5fb907b278", "src": "db2@1.60.1.70291"}
+{"id": 278836, "field": "name", "en": "Head of Rend Blackhand", "hash": "6789e0f839deb758", "src": "db2@1.60.1.70291"}
+{"id": 278836, "field": "description", "en": "Proof of demise of the Warchief of Blackrock Mountain", "hash": "2a47a693be130b2f", "src": "db2@1.60.1.70291"}
+{"id": 278868, "field": "name", "en": "Tremayne Family Blacksmithing Techniques", "hash": "1b38379721b4df5f", "src": "db2@1.60.1.70291"}

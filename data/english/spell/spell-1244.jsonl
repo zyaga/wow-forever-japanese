@@ -1,56 +1,56 @@
-{"id": 1244245, "field": "name", "en": "Test Crocolisk Gumbo", "hash": "9911193ca53288f6", "src": "db2@1.60.1.70245"}
-{"id": 1244245, "field": "description", "en": "$@spelldesc435 $@spelldesc19708 $@spelldesc1243969", "hash": "ccd053f543ef5326", "src": "db2@1.60.1.70245"}
-{"id": 1244396, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70245"}
-{"id": 1244396, "field": "description", "en": "Strikes an enemy with a lightning bolt that arcs to another nearby enemy. The spell affects up to $x1 targets, inflicting greater Nature damage to each successive target.\r\n", "hash": "245b0721929b5b67", "src": "db2@1.60.1.70245"}
-{"id": 1244416, "field": "name", "en": "Stomp", "hash": "c09a8fb611d4dc00", "src": "db2@1.60.1.70245"}
-{"id": 1244416, "field": "description", "en": "Deals $S2 Physical damage to all players within $r, stunning them for $d.", "hash": "a937ebb28ccffa33", "src": "db2@1.60.1.70245"}
-{"id": 1244416, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70245"}
-{"id": 1244421, "field": "name", "en": "Distilled Firewater", "hash": "16a0280c50b653a5", "src": "db2@1.60.1.70245"}
-{"id": 1244431, "field": "name", "en": "Minor Healing Potion", "hash": "0908d26848b51315", "src": "db2@1.60.1.70245"}
-{"id": 1244432, "field": "name", "en": "Lesser Healing Potion", "hash": "ae62462ad4c3e38d", "src": "db2@1.60.1.70245"}
-{"id": 1244433, "field": "name", "en": "Healing Potion", "hash": "61b64dc74c0bc45e", "src": "db2@1.60.1.70245"}
-{"id": 1244434, "field": "name", "en": "Greater Healing Potion", "hash": "9dd18a948e91f0a1", "src": "db2@1.60.1.70245"}
-{"id": 1244435, "field": "name", "en": "Superior Healing Potion", "hash": "3a0ba897fefbbc64", "src": "db2@1.60.1.70245"}
-{"id": 1244436, "field": "name", "en": "Major Healing Potion", "hash": "7c81100c52c5ba77", "src": "db2@1.60.1.70245"}
-{"id": 1244447, "field": "name", "en": "[DNT] Leyline Rift Visual Aura", "hash": "4fe23d3b76edac86", "src": "db2@1.60.1.70245"}
-{"id": 1244482, "field": "name", "en": "Improvised Weapon", "hash": "31c8fd80f9475289", "src": "db2@1.60.1.70245"}
-{"id": 1244482, "field": "description", "en": "Wielding an improvised and reluctant weapon, increasing damage dealt by $S3% and reducing damage received by $S2%.\r\n", "hash": "84c8d6fa2ae3257f", "src": "db2@1.60.1.70245"}
-{"id": 1244482, "field": "aura", "en": "Increases damage dealt by $S3% and reduces damage received by $S2%.", "hash": "bb3e0617ba2143d6", "src": "db2@1.60.1.70245"}
-{"id": 1244484, "field": "name", "en": "Whirlwind", "hash": "ac9b02bdb51dc78d", "src": "db2@1.60.1.70245"}
-{"id": 1244484, "field": "description", "en": "Deals $15578s1 Physical damage to all players within $15578d1 yds. Also inflicts an aura that slows movement speed by $s2 for $d2.", "hash": "6b95ac298a67e109", "src": "db2@1.60.1.70245"}
-{"id": 1244484, "field": "aura", "en": "Movement speed slowed by $s2 for $d2.", "hash": "4e56a342e13e5639", "src": "db2@1.60.1.70245"}
-{"id": 1244493, "field": "name", "en": "Best Served Cold", "hash": "df556102a39e8ce7", "src": "db2@1.60.1.70245"}
-{"id": 1244493, "field": "description", "en": "Absorbs Clawbert's unusual powers, modifying certain abilities.", "hash": "0829e231221579a1", "src": "db2@1.60.1.70245"}
-{"id": 1244493, "field": "aura", "en": "Enraged.", "hash": "8be4b6b8a7fd191a", "src": "db2@1.60.1.70245"}
-{"id": 1244625, "field": "name", "en": "Siphon Ley Line", "hash": "95c344eb0258f852", "src": "db2@1.60.1.70245"}
-{"id": 1244625, "field": "description", "en": "Siphon magic from a Ley Line Rift.", "hash": "c3bcd1fdd5efe1cc", "src": "db2@1.60.1.70245"}
-{"id": 1244645, "field": "name", "en": "Lesser Discolored Healing Potion", "hash": "53f4e8d431d7d21a", "src": "db2@1.60.1.70245"}
-{"id": 1244646, "field": "name", "en": "Discolored Healing Potion", "hash": "32796bdac4d54c0a", "src": "db2@1.60.1.70245"}
-{"id": 1244647, "field": "name", "en": "Greater Discolored Healing Potion", "hash": "a1c3c95f86416d83", "src": "db2@1.60.1.70245"}
-{"id": 1244648, "field": "name", "en": "Superior Discolored Healing Potion", "hash": "1edc55adb0dac627", "src": "db2@1.60.1.70245"}
-{"id": 1244671, "field": "name", "en": "Flaming Bolts", "hash": "14f6a1d3503a208c", "src": "db2@1.60.1.70245"}
-{"id": 1244674, "field": "name", "en": "Flaming Bolts", "hash": "14f6a1d3503a208c", "src": "db2@1.60.1.70245"}
-{"id": 1244863, "field": "name", "en": "Minor Discolored Healing Potion", "hash": "8436416e5556f27f", "src": "db2@1.60.1.70245"}
-{"id": 1244863, "field": "description", "en": "Restores $s1 health instantly; however you also suffer $s2% of that amount over time.\r\n\r\nThe symptoms of this effect can manifest as either a $1231579d poison or a $1231580d disease.", "hash": "47c52fb17a87c239", "src": "db2@1.60.1.70245"}
-{"id": 1244864, "field": "name", "en": "Lesser Discolored Healing Potion", "hash": "53f4e8d431d7d21a", "src": "db2@1.60.1.70245"}
-{"id": 1244864, "field": "description", "en": "Restores $s1 health instantly; however you also suffer $s2% of that amount over time.\r\n\r\nThe symptoms of this effect can manifest as either a $1231579d poison or a $1231580d disease.", "hash": "47c52fb17a87c239", "src": "db2@1.60.1.70245"}
-{"id": 1244865, "field": "name", "en": "Discolored Healing Potion", "hash": "32796bdac4d54c0a", "src": "db2@1.60.1.70245"}
-{"id": 1244865, "field": "description", "en": "Restores $s1 health instantly; however you also suffer $s2% of that amount over time.\r\n\r\nThe symptoms of this effect can manifest as either a $1231579d poison or a $1231580d disease.", "hash": "47c52fb17a87c239", "src": "db2@1.60.1.70245"}
-{"id": 1244866, "field": "name", "en": "Greater Discolored Healing Potion", "hash": "a1c3c95f86416d83", "src": "db2@1.60.1.70245"}
-{"id": 1244866, "field": "description", "en": "Restores $s1 health instantly; however you also suffer $s2% of that amount over time.\r\n\r\nThe symptoms of this effect can manifest as either a $1231579d poison or a $1231580d disease.", "hash": "47c52fb17a87c239", "src": "db2@1.60.1.70245"}
-{"id": 1244867, "field": "name", "en": "Superior Discolored Healing Potion", "hash": "1edc55adb0dac627", "src": "db2@1.60.1.70245"}
-{"id": 1244867, "field": "description", "en": "Restores $s1 health instantly; however you also suffer $s2% of that amount over time.\r\n\r\nThe symptoms of this effect can manifest as either a $1231579d poison or a $1231580d disease.", "hash": "47c52fb17a87c239", "src": "db2@1.60.1.70245"}
-{"id": 1244896, "field": "name", "en": "Flaming Bolts", "hash": "14f6a1d3503a208c", "src": "db2@1.60.1.70245"}
-{"id": 1244896, "field": "description", "en": "Inflicts $S1 Fire damage to all players within $a1 yds.", "hash": "7659c09fcafd01c8", "src": "db2@1.60.1.70245"}
-{"id": 1244951, "field": "name", "en": "Restore", "hash": "0ec07a9384b14a53", "src": "db2@1.60.1.70245"}
-{"id": 1244951, "field": "description", "en": "Heals the target by 100% of their maximum health.", "hash": "2938f2f72891f049", "src": "db2@1.60.1.70245"}
-{"id": 1244960, "field": "name", "en": "Fireball", "hash": "c16308c21a375f45", "src": "db2@1.60.1.70245"}
-{"id": 1244960, "field": "description", "en": "Inflicts Fire damage to an enemy.", "hash": "6c37171098f8f4a6", "src": "db2@1.60.1.70245"}
-{"id": 1244967, "field": "name", "en": "Hallow's Curse", "hash": "1563211161434448", "src": "db2@1.60.1.70245"}
-{"id": 1244967, "field": "description", "en": "Increases the Physical damage taken by an enemy by $s1% for $d.", "hash": "6d5b76627c3a401f", "src": "db2@1.60.1.70245"}
-{"id": 1244967, "field": "aura", "en": "Physical damage taken is increased by $s1%.", "hash": "ed6770df4f35b0b3", "src": "db2@1.60.1.70245"}
-{"id": 1244970, "field": "name", "en": "Frostbolt", "hash": "07e909249a76c75c", "src": "db2@1.60.1.70245"}
-{"id": 1244970, "field": "description", "en": "Inflicts Frost damage to an enemy and reduces its movement speed for $d.", "hash": "025dbef14d3459ab", "src": "db2@1.60.1.70245"}
-{"id": 1244970, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70245"}
-{"id": 1244981, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70245"}
-{"id": 1244981, "field": "description", "en": "Blasts an enemy with lightning, inflicting Nature damage.", "hash": "86118ec0e525b93e", "src": "db2@1.60.1.70245"}
+{"id": 1244245, "field": "name", "en": "Test Crocolisk Gumbo", "hash": "9911193ca53288f6", "src": "db2@1.60.1.70291"}
+{"id": 1244245, "field": "description", "en": "$@spelldesc435 $@spelldesc19708 $@spelldesc1243969", "hash": "ccd053f543ef5326", "src": "db2@1.60.1.70291"}
+{"id": 1244396, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70291"}
+{"id": 1244396, "field": "description", "en": "Strikes an enemy with a lightning bolt that arcs to another nearby enemy. The spell affects up to $x1 targets, inflicting greater Nature damage to each successive target.\r\n", "hash": "245b0721929b5b67", "src": "db2@1.60.1.70291"}
+{"id": 1244416, "field": "name", "en": "Stomp", "hash": "c09a8fb611d4dc00", "src": "db2@1.60.1.70291"}
+{"id": 1244416, "field": "description", "en": "Deals $S2 Physical damage to all players within $r, stunning them for $d.", "hash": "a937ebb28ccffa33", "src": "db2@1.60.1.70291"}
+{"id": 1244416, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70291"}
+{"id": 1244421, "field": "name", "en": "Distilled Firewater", "hash": "16a0280c50b653a5", "src": "db2@1.60.1.70291"}
+{"id": 1244431, "field": "name", "en": "Minor Healing Potion", "hash": "0908d26848b51315", "src": "db2@1.60.1.70291"}
+{"id": 1244432, "field": "name", "en": "Lesser Healing Potion", "hash": "ae62462ad4c3e38d", "src": "db2@1.60.1.70291"}
+{"id": 1244433, "field": "name", "en": "Healing Potion", "hash": "61b64dc74c0bc45e", "src": "db2@1.60.1.70291"}
+{"id": 1244434, "field": "name", "en": "Greater Healing Potion", "hash": "9dd18a948e91f0a1", "src": "db2@1.60.1.70291"}
+{"id": 1244435, "field": "name", "en": "Superior Healing Potion", "hash": "3a0ba897fefbbc64", "src": "db2@1.60.1.70291"}
+{"id": 1244436, "field": "name", "en": "Major Healing Potion", "hash": "7c81100c52c5ba77", "src": "db2@1.60.1.70291"}
+{"id": 1244447, "field": "name", "en": "[DNT] Leyline Rift Visual Aura", "hash": "4fe23d3b76edac86", "src": "db2@1.60.1.70291"}
+{"id": 1244482, "field": "name", "en": "Improvised Weapon", "hash": "31c8fd80f9475289", "src": "db2@1.60.1.70291"}
+{"id": 1244482, "field": "description", "en": "Wielding an improvised and reluctant weapon, increasing damage dealt by $S3% and reducing damage received by $S2%.\r\n", "hash": "84c8d6fa2ae3257f", "src": "db2@1.60.1.70291"}
+{"id": 1244482, "field": "aura", "en": "Increases damage dealt by $S3% and reduces damage received by $S2%.", "hash": "bb3e0617ba2143d6", "src": "db2@1.60.1.70291"}
+{"id": 1244484, "field": "name", "en": "Whirlwind", "hash": "ac9b02bdb51dc78d", "src": "db2@1.60.1.70291"}
+{"id": 1244484, "field": "description", "en": "Deals $15578s1 Physical damage to all players within $15578d1 yds. Also inflicts an aura that slows movement speed by $s2 for $d2.", "hash": "6b95ac298a67e109", "src": "db2@1.60.1.70291"}
+{"id": 1244484, "field": "aura", "en": "Movement speed slowed by $s2 for $d2.", "hash": "4e56a342e13e5639", "src": "db2@1.60.1.70291"}
+{"id": 1244493, "field": "name", "en": "Best Served Cold", "hash": "df556102a39e8ce7", "src": "db2@1.60.1.70291"}
+{"id": 1244493, "field": "description", "en": "Absorbs Clawbert's unusual powers, modifying certain abilities.", "hash": "0829e231221579a1", "src": "db2@1.60.1.70291"}
+{"id": 1244493, "field": "aura", "en": "Enraged.", "hash": "8be4b6b8a7fd191a", "src": "db2@1.60.1.70291"}
+{"id": 1244625, "field": "name", "en": "Siphon Ley Line", "hash": "95c344eb0258f852", "src": "db2@1.60.1.70291"}
+{"id": 1244625, "field": "description", "en": "Siphon magic from a Ley Line Rift.", "hash": "c3bcd1fdd5efe1cc", "src": "db2@1.60.1.70291"}
+{"id": 1244645, "field": "name", "en": "Lesser Discolored Healing Potion", "hash": "53f4e8d431d7d21a", "src": "db2@1.60.1.70291"}
+{"id": 1244646, "field": "name", "en": "Discolored Healing Potion", "hash": "32796bdac4d54c0a", "src": "db2@1.60.1.70291"}
+{"id": 1244647, "field": "name", "en": "Greater Discolored Healing Potion", "hash": "a1c3c95f86416d83", "src": "db2@1.60.1.70291"}
+{"id": 1244648, "field": "name", "en": "Superior Discolored Healing Potion", "hash": "1edc55adb0dac627", "src": "db2@1.60.1.70291"}
+{"id": 1244671, "field": "name", "en": "Flaming Bolts", "hash": "14f6a1d3503a208c", "src": "db2@1.60.1.70291"}
+{"id": 1244674, "field": "name", "en": "Flaming Bolts", "hash": "14f6a1d3503a208c", "src": "db2@1.60.1.70291"}
+{"id": 1244863, "field": "name", "en": "Minor Discolored Healing Potion", "hash": "8436416e5556f27f", "src": "db2@1.60.1.70291"}
+{"id": 1244863, "field": "description", "en": "Restores $s1 health instantly; however you also suffer $s2% of that amount over time.\r\n\r\nThe symptoms of this effect can manifest as either a $1231579d poison or a $1231580d disease.", "hash": "47c52fb17a87c239", "src": "db2@1.60.1.70291"}
+{"id": 1244864, "field": "name", "en": "Lesser Discolored Healing Potion", "hash": "53f4e8d431d7d21a", "src": "db2@1.60.1.70291"}
+{"id": 1244864, "field": "description", "en": "Restores $s1 health instantly; however you also suffer $s2% of that amount over time.\r\n\r\nThe symptoms of this effect can manifest as either a $1231579d poison or a $1231580d disease.", "hash": "47c52fb17a87c239", "src": "db2@1.60.1.70291"}
+{"id": 1244865, "field": "name", "en": "Discolored Healing Potion", "hash": "32796bdac4d54c0a", "src": "db2@1.60.1.70291"}
+{"id": 1244865, "field": "description", "en": "Restores $s1 health instantly; however you also suffer $s2% of that amount over time.\r\n\r\nThe symptoms of this effect can manifest as either a $1231579d poison or a $1231580d disease.", "hash": "47c52fb17a87c239", "src": "db2@1.60.1.70291"}
+{"id": 1244866, "field": "name", "en": "Greater Discolored Healing Potion", "hash": "a1c3c95f86416d83", "src": "db2@1.60.1.70291"}
+{"id": 1244866, "field": "description", "en": "Restores $s1 health instantly; however you also suffer $s2% of that amount over time.\r\n\r\nThe symptoms of this effect can manifest as either a $1231579d poison or a $1231580d disease.", "hash": "47c52fb17a87c239", "src": "db2@1.60.1.70291"}
+{"id": 1244867, "field": "name", "en": "Superior Discolored Healing Potion", "hash": "1edc55adb0dac627", "src": "db2@1.60.1.70291"}
+{"id": 1244867, "field": "description", "en": "Restores $s1 health instantly; however you also suffer $s2% of that amount over time.\r\n\r\nThe symptoms of this effect can manifest as either a $1231579d poison or a $1231580d disease.", "hash": "47c52fb17a87c239", "src": "db2@1.60.1.70291"}
+{"id": 1244896, "field": "name", "en": "Flaming Bolts", "hash": "14f6a1d3503a208c", "src": "db2@1.60.1.70291"}
+{"id": 1244896, "field": "description", "en": "Inflicts $S1 Fire damage to all players within $a1 yds.", "hash": "7659c09fcafd01c8", "src": "db2@1.60.1.70291"}
+{"id": 1244951, "field": "name", "en": "Restore", "hash": "0ec07a9384b14a53", "src": "db2@1.60.1.70291"}
+{"id": 1244951, "field": "description", "en": "Heals the target by 100% of their maximum health.", "hash": "2938f2f72891f049", "src": "db2@1.60.1.70291"}
+{"id": 1244960, "field": "name", "en": "Fireball", "hash": "c16308c21a375f45", "src": "db2@1.60.1.70291"}
+{"id": 1244960, "field": "description", "en": "Inflicts Fire damage to an enemy.", "hash": "6c37171098f8f4a6", "src": "db2@1.60.1.70291"}
+{"id": 1244967, "field": "name", "en": "Hallow's Curse", "hash": "1563211161434448", "src": "db2@1.60.1.70291"}
+{"id": 1244967, "field": "description", "en": "Increases the Physical damage taken by an enemy by $s1% for $d.", "hash": "6d5b76627c3a401f", "src": "db2@1.60.1.70291"}
+{"id": 1244967, "field": "aura", "en": "Physical damage taken is increased by $s1%.", "hash": "ed6770df4f35b0b3", "src": "db2@1.60.1.70291"}
+{"id": 1244970, "field": "name", "en": "Frostbolt", "hash": "07e909249a76c75c", "src": "db2@1.60.1.70291"}
+{"id": 1244970, "field": "description", "en": "Inflicts Frost damage to an enemy and reduces its movement speed for $d.", "hash": "025dbef14d3459ab", "src": "db2@1.60.1.70291"}
+{"id": 1244970, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70291"}
+{"id": 1244981, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70291"}
+{"id": 1244981, "field": "description", "en": "Blasts an enemy with lightning, inflicting Nature damage.", "hash": "86118ec0e525b93e", "src": "db2@1.60.1.70291"}

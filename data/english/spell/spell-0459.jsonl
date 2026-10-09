@@ -1,214 +1,214 @@
-{"id": 459005, "field": "name", "en": "Interrupt", "hash": "2cb115a1e6cc874d", "src": "db2@1.60.1.70245"}
-{"id": 459107, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70245"}
-{"id": 459153, "field": "name", "en": "Fireworks", "hash": "682f427fdbf1928e", "src": "db2@1.60.1.70245"}
-{"id": 459153, "field": "description", "en": "Victory!", "hash": "84cae0122b39c1e4", "src": "db2@1.60.1.70245"}
-{"id": 459160, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70245"}
-{"id": 459160, "field": "description", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70245"}
-{"id": 459160, "field": "aura", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70245"}
-{"id": 459161, "field": "name", "en": "Omni Diffusion Armor", "hash": "3b32e56981dbc821", "src": "db2@1.60.1.70245"}
-{"id": 459161, "field": "aura", "en": "Absorbing $s1 damage.", "hash": "3f9b4a375205c486", "src": "db2@1.60.1.70245"}
-{"id": 459162, "field": "name", "en": "Omni Diffusion Armor", "hash": "3b32e56981dbc821", "src": "db2@1.60.1.70245"}
-{"id": 459163, "field": "name", "en": "Interrupt", "hash": "2cb115a1e6cc874d", "src": "db2@1.60.1.70245"}
-{"id": 459164, "field": "name", "en": "Reployer Malfunction", "hash": "1000f684aab2b618", "src": "db2@1.60.1.70245"}
-{"id": 459164, "field": "description", "en": "Blow a fuse, inflicting $s1 fire damage.", "hash": "c98c626b80755e4a", "src": "db2@1.60.1.70245"}
-{"id": 459164, "field": "aura", "en": "Recalibrating.", "hash": "9b5063ef4a984ae5", "src": "db2@1.60.1.70245"}
-{"id": 459165, "field": "name", "en": "Force Dampeners", "hash": "ef8760065be37b38", "src": "db2@1.60.1.70245"}
-{"id": 459165, "field": "description", "en": "Reduces the melee and ranged attack power of nearby enemies by $s1 for $d.", "hash": "2eacb3df1ae5d59f", "src": "db2@1.60.1.70245"}
-{"id": 459165, "field": "aura", "en": "Melee and ranged attack power reduced by $s1.", "hash": "25ffd6c8bc7ae7f2", "src": "db2@1.60.1.70245"}
-{"id": 459166, "field": "name", "en": "Central Reaping Function 9000", "hash": "dd9c5d86fe7970de", "src": "db2@1.60.1.70245"}
-{"id": 459166, "field": "description", "en": "Increases attack power by $s1.", "hash": "7d819cdcf45419f1", "src": "db2@1.60.1.70245"}
-{"id": 459166, "field": "aura", "en": "Increases attack power by $s1.", "hash": "7d819cdcf45419f1", "src": "db2@1.60.1.70245"}
-{"id": 459170, "field": "name", "en": "Summon Squire", "hash": "419b88343be690e3", "src": "db2@1.60.1.70245"}
-{"id": 459170, "field": "description", "en": "Sound Dalton's Horn to summon your squire. Your squire will assist you in battle and learn from you as you adventure together. ", "hash": "d2e92d41ffbb9549", "src": "db2@1.60.1.70245"}
-{"id": 459170, "field": "aura", "en": "Your squire is accompanying you.", "hash": "d9b5219ea9e5880b", "src": "db2@1.60.1.70245"}
-{"id": 459173, "field": "name", "en": "Squire Despawn", "hash": "f4b47f09ceaf7665", "src": "db2@1.60.1.70245"}
-{"id": 459178, "field": "name", "en": "Self Explosion", "hash": "2d81b3ec8f355250", "src": "db2@1.60.1.70245"}
-{"id": 459178, "field": "description", "en": "Oops!", "hash": "79b87837d71c1c9e", "src": "db2@1.60.1.70245"}
-{"id": 459197, "field": "name", "en": "Bolster Girdle-Jerry Bolts", "hash": "6fcfe7d14edb1a6c", "src": "db2@1.60.1.70245"}
-{"id": 459197, "field": "description", "en": "Recover mana.", "hash": "d2c09394459d05b2", "src": "db2@1.60.1.70245"}
-{"id": 459197, "field": "aura", "en": "Drawing in energy.", "hash": "87d0b35a87e6a133", "src": "db2@1.60.1.70245"}
-{"id": 459198, "field": "name", "en": "Flex Tandem Press Task Apparatus", "hash": "9e5b8980a069758e", "src": "db2@1.60.1.70245"}
-{"id": 459198, "field": "description", "en": "Recover mana.", "hash": "d2c09394459d05b2", "src": "db2@1.60.1.70245"}
-{"id": 459198, "field": "aura", "en": "Drawing in energy.", "hash": "87d0b35a87e6a133", "src": "db2@1.60.1.70245"}
-{"id": 459200, "field": "name", "en": "Full-field System Flap Latch", "hash": "fb9faa2f6b58fd44", "src": "db2@1.60.1.70245"}
-{"id": 459200, "field": "description", "en": "Recover mana.", "hash": "d2c09394459d05b2", "src": "db2@1.60.1.70245"}
-{"id": 459200, "field": "aura", "en": "Drawing in energy.", "hash": "87d0b35a87e6a133", "src": "db2@1.60.1.70245"}
-{"id": 459207, "field": "name", "en": "Summon Squire", "hash": "419b88343be690e3", "src": "db2@1.60.1.70245"}
-{"id": 459207, "field": "description", "en": "Sound Dalton's Horn to summon your squire. Your squire will assist you in battle and learn from you as you adventure together. ", "hash": "d2e92d41ffbb9549", "src": "db2@1.60.1.70245"}
-{"id": 459207, "field": "aura", "en": "Your squire is accompanying you.", "hash": "d9b5219ea9e5880b", "src": "db2@1.60.1.70245"}
-{"id": 459217, "field": "name", "en": "Desert Sonar", "hash": "04306e8ba4c4bd69", "src": "db2@1.60.1.70245"}
-{"id": 459217, "field": "description", "en": "Detect large objects beneath the sand.", "hash": "7c2476eab14760d6", "src": "db2@1.60.1.70245"}
-{"id": 459217, "field": "aura", "en": "Detect large objects beneath the sand.", "hash": "7c2476eab14760d6", "src": "db2@1.60.1.70245"}
-{"id": 459221, "field": "name", "en": "Desert Sonar", "hash": "04306e8ba4c4bd69", "src": "db2@1.60.1.70245"}
-{"id": 459221, "field": "description", "en": "Emit a high-pitched sonar frequency.", "hash": "635d1e60037baaa3", "src": "db2@1.60.1.70245"}
-{"id": 459232, "field": "name", "en": "Summon Squire", "hash": "419b88343be690e3", "src": "db2@1.60.1.70245"}
-{"id": 459232, "field": "description", "en": "Sound Dalton's Horn to summon your squire. Your squire will assist you in battle and learn from you as you adventure together. ", "hash": "d2e92d41ffbb9549", "src": "db2@1.60.1.70245"}
-{"id": 459232, "field": "aura", "en": "Your squire is accompanying you.", "hash": "d9b5219ea9e5880b", "src": "db2@1.60.1.70245"}
-{"id": 459261, "field": "name", "en": "Capture Echo", "hash": "b89c196e9d74e06b", "src": "db2@1.60.1.70245"}
-{"id": 459261, "field": "description", "en": "Capture the echo of a powerful denizen of Stratholme. Only usable on corpses.", "hash": "1cb2d8f8a185feb4", "src": "db2@1.60.1.70245"}
-{"id": 459280, "field": "name", "en": "Transiting Realities", "hash": "67cfaa809929c79c", "src": "db2@1.60.1.70245"}
-{"id": 459280, "field": "aura", "en": "You cannot fight or be damaged while transiting between realities.", "hash": "6a499d626a6b36c9", "src": "db2@1.60.1.70245"}
-{"id": 459290, "field": "name", "en": "Thunder Stomp", "hash": "fdf2c43c7e65eb73", "src": "db2@1.60.1.70245"}
-{"id": 459290, "field": "description", "en": "Discharge power with the impact of your stomp, knocking back and damaging nearby enemies.", "hash": "f45894b7c5af8d31", "src": "db2@1.60.1.70245"}
-{"id": 459290, "field": "aura", "en": "Nudged a little bit.", "hash": "de24885e9e2bd885", "src": "db2@1.60.1.70245"}
-{"id": 459293, "field": "name", "en": "Activate Auxiliary Anti-Tamper Grapplers", "hash": "df99ed79392a49ad", "src": "db2@1.60.1.70245"}
-{"id": 459293, "field": "description", "en": "Adapt to increasing hostility and preserve known footprint.", "hash": "2d8a011645e43f31", "src": "db2@1.60.1.70245"}
-{"id": 459293, "field": "aura", "en": "Footprint preserving adaptive aggression.\r\nDamage increased by $s2%.\r\nMovement speed decreased by $s3%.", "hash": "8e71bbc0f2c44662", "src": "db2@1.60.1.70245"}
-{"id": 459312, "field": "name", "en": "Defense Specialization", "hash": "a22cd1fb1ecbaf4a", "src": "db2@1.60.1.70245"}
-{"id": 459312, "field": "description", "en": "Defense skill increased by $s1. Not cumulative with other ring runes.", "hash": "3ab0396de0d58138", "src": "db2@1.60.1.70245"}
-{"id": 459313, "field": "name", "en": "Engrave Ring - Defense Specialization", "hash": "68aa0050f3f28a70", "src": "db2@1.60.1.70245"}
-{"id": 459313, "field": "description", "en": "Engrave your ring with the Defense Specialization rune:\r\n\r\n$@spellicon459312\r\n$@spelldesc459312", "hash": "ef86bf947866999b", "src": "db2@1.60.1.70245"}
-{"id": 459340, "field": "name", "en": "[DNT] Edu Copperbolt - Give Sonar", "hash": "0ca9ae27608d446e", "src": "db2@1.60.1.70245"}
-{"id": 459360, "field": "name", "en": "Hanging Bat", "hash": "37e7eb330edfebd0", "src": "db2@1.60.1.70245"}
-{"id": 459369, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459370, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459371, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459372, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459373, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459374, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459375, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459377, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459378, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459380, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459381, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459382, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459383, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459384, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459385, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459386, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459387, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459388, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459389, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459390, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459392, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459393, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459394, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459396, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459398, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459399, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459400, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459401, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459402, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459403, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459405, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459406, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459414, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459415, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459416, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459417, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459418, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459420, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459423, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459424, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459425, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459426, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459427, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459429, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459430, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459431, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459432, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459433, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459434, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459435, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459436, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459437, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459438, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70245"}
-{"id": 459467, "field": "name", "en": "Rumbling Sand", "hash": "29e92d74409f4a0b", "src": "db2@1.60.1.70245"}
-{"id": 459481, "field": "name", "en": "Rumbling Sand", "hash": "29e92d74409f4a0b", "src": "db2@1.60.1.70245"}
-{"id": 459481, "field": "aura", "en": "Something's moving under the ground!", "hash": "4108eed357ac68d8", "src": "db2@1.60.1.70245"}
-{"id": 459487, "field": "name", "en": "[DNT] Summon Sandworm", "hash": "6b40c319f7cd23c0", "src": "db2@1.60.1.70245"}
-{"id": 459498, "field": "name", "en": "Self-sufficient Slicing Scythe-Hooks", "hash": "ee1f3b36ce6c1ca1", "src": "db2@1.60.1.70245"}
-{"id": 459499, "field": "name", "en": "Crippling Clip", "hash": "6eed4bafcfaebf65", "src": "db2@1.60.1.70245"}
-{"id": 459499, "field": "aura", "en": "Rooted.", "hash": "9bb1efcf10b38d14", "src": "db2@1.60.1.70245"}
-{"id": 459584, "field": "name", "en": "Wing Clip Duration", "hash": "5914c4ef3a82cceb", "src": "db2@1.60.1.70245"}
-{"id": 459584, "field": "description", "en": "Increases the duration of your Wing Clip by $/1000;s1 sec.", "hash": "7cd7368e8966c513", "src": "db2@1.60.1.70245"}
-{"id": 459591, "field": "name", "en": "Cropchop", "hash": "8404e0fe04f035d1", "src": "db2@1.60.1.70245"}
-{"id": 459592, "field": "name", "en": "Cropchop", "hash": "8404e0fe04f035d1", "src": "db2@1.60.1.70245"}
-{"id": 459592, "field": "description", "en": "Attacks nearby enemies in a whirlwind of steel that lasts $d. and inflicts normal damage plus $15576s1.", "hash": "b90dc6288fd80aae", "src": "db2@1.60.1.70245"}
-{"id": 459592, "field": "aura", "en": "Attacking all nearby enemies for normal damage plus $15576s1.\r\nImmune to stun.", "hash": "9a63fa2870088948", "src": "db2@1.60.1.70245"}
-{"id": 459593, "field": "name", "en": "Multi-Shot Damage Increase", "hash": "92798dc522b7800d", "src": "db2@1.60.1.70245"}
-{"id": 459593, "field": "description", "en": "Increases the damage done by your Multi-Shot by $s1%.", "hash": "6c155d83d4c3ec46", "src": "db2@1.60.1.70245"}
-{"id": 459594, "field": "name", "en": "Shapeshift Cost Reduction", "hash": "05d34c92b65175a4", "src": "db2@1.60.1.70245"}
-{"id": 459594, "field": "description", "en": "Reduces the mana cost of your shapeshifts by $s1.", "hash": "d3e6c51b983d0b71", "src": "db2@1.60.1.70245"}
-{"id": 459595, "field": "name", "en": "Wrath Cast Pushback Reduction", "hash": "bc33e223488c9771", "src": "db2@1.60.1.70245"}
-{"id": 459595, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Wrath.", "hash": "62fc21714cd03512", "src": "db2@1.60.1.70245"}
-{"id": 459596, "field": "name", "en": "Barkskin Duration Increase", "hash": "bc2f2b4fc5f383c4", "src": "db2@1.60.1.70245"}
-{"id": 459596, "field": "description", "en": "Increases the duration of your Barkskin by ${$m1/1000} sec.", "hash": "8598ff6f45f44932", "src": "db2@1.60.1.70245"}
-{"id": 459598, "field": "name", "en": "Raptor Strike Damage Increase", "hash": "2d1e6c8f9965ab84", "src": "db2@1.60.1.70245"}
-{"id": 459598, "field": "description", "en": "Increases the damage done by your Raptor Strike by $s1%.", "hash": "ef4467a5a4b11bf4", "src": "db2@1.60.1.70245"}
-{"id": 459599, "field": "name", "en": "Mana Shield Absorb Increase", "hash": "3df47deb037419c6", "src": "db2@1.60.1.70245"}
-{"id": 459599, "field": "description", "en": "Increases the damage absorbed by your Mana Shield by $s1.", "hash": "56c4b35d74b1ab9c", "src": "db2@1.60.1.70245"}
-{"id": 459600, "field": "name", "en": "Arcane Blast Cast Pushback Reduction", "hash": "5932969c74172777", "src": "db2@1.60.1.70245"}
-{"id": 459600, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Arcane Blast.", "hash": "a28ca1371dff8ac8", "src": "db2@1.60.1.70245"}
-{"id": 459601, "field": "name", "en": "Judgement Damage Increase", "hash": "53656be9e12fc9a9", "src": "db2@1.60.1.70245"}
-{"id": 459601, "field": "description", "en": "Your damaging Judgements deal $s1 additional damage.", "hash": "71c97da06f3216d7", "src": "db2@1.60.1.70245"}
-{"id": 459602, "field": "name", "en": "Holy Shock Critical Chance Increase", "hash": "b83650a3ca8f437a", "src": "db2@1.60.1.70245"}
-{"id": 459602, "field": "description", "en": "Increases the critical strike chance of your Holy Shock by $s1%.", "hash": "80b211150e5254f8", "src": "db2@1.60.1.70245"}
-{"id": 459603, "field": "name", "en": "Weakened Soul Duration Decrease", "hash": "1ed986b651817d33", "src": "db2@1.60.1.70245"}
-{"id": 459603, "field": "description", "en": "Reduces the duration of your Weakened Soul by ${$m1/-1000} sec.", "hash": "8a93c1226dcc084e", "src": "db2@1.60.1.70245"}
-{"id": 459604, "field": "name", "en": "Mind Blast Cast Pushback Reduction", "hash": "56c3e426a5cbc30c", "src": "db2@1.60.1.70245"}
-{"id": 459604, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Mind Blast.", "hash": "b2bcf464a8b1a90d", "src": "db2@1.60.1.70245"}
-{"id": 459605, "field": "name", "en": "Sprint Duration Increase", "hash": "28db21bdba1c48fc", "src": "db2@1.60.1.70245"}
-{"id": 459605, "field": "description", "en": "Increases the duration of your Sprint ability by $/1000;s1 sec.", "hash": "6fa7b4485a0185d5", "src": "db2@1.60.1.70245"}
-{"id": 459606, "field": "name", "en": "Ghost Wolf Speed", "hash": "27b55c4ba1a36d70", "src": "db2@1.60.1.70245"}
-{"id": 459606, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70245"}
-{"id": 459607, "field": "name", "en": "Searing Pain Cast Pushback Reduction", "hash": "07cd8b5d5eb8ae22", "src": "db2@1.60.1.70245"}
-{"id": 459607, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Searing Pain.", "hash": "326fd9774abc03cd", "src": "db2@1.60.1.70245"}
-{"id": 459608, "field": "name", "en": "Hamstring Rage Reduction", "hash": "5dda96762e0477d9", "src": "db2@1.60.1.70245"}
-{"id": 459608, "field": "description", "en": "Hamstring Rage cost reduced by $/10;s1.", "hash": "1c20335d00f6f368", "src": "db2@1.60.1.70245"}
-{"id": 459610, "field": "name", "en": "Wanderer's Resolve", "hash": "38931957e721cde5", "src": "db2@1.60.1.70245"}
-{"id": 459610, "field": "description", "en": "Increases movement speed by 10% and all stats by 15% for 2 hours.", "hash": "36b19267b475f300", "src": "db2@1.60.1.70245"}
-{"id": 459610, "field": "aura", "en": "Increases movement speed by 10% and all stats by 15% for 2 hours.", "hash": "36b19267b475f300", "src": "db2@1.60.1.70245"}
-{"id": 459611, "field": "name", "en": "Astral Victory", "hash": "db63ac8832f35cf0", "src": "db2@1.60.1.70245"}
-{"id": 459611, "field": "description", "en": "Undefeated victories\r\n$w $?$w=1[trophy][trophies] gathered.", "hash": "638e97dae68048d8", "src": "db2@1.60.1.70245"}
-{"id": 459611, "field": "aura", "en": "$w $?$w=1 flawless [duel][duels] without defeat against Khonshu.", "hash": "0690937a982abf97", "src": "db2@1.60.1.70245"}
-{"id": 459612, "field": "name", "en": "Astral Perfect Victory", "hash": "c54b7bae73168134", "src": "db2@1.60.1.70245"}
-{"id": 459612, "field": "aura", "en": "$w flawless $?$w=1[duel][duels] without defeat against Khonsu.", "hash": "c25eb1fb389d788d", "src": "db2@1.60.1.70245"}
-{"id": 459613, "field": "name", "en": "Guided Buoyancy Accelerant", "hash": "3fb33fe17443352c", "src": "db2@1.60.1.70245"}
-{"id": 459613, "field": "description", "en": "Increases swim speed by $s1% for $d1.", "hash": "9b1abba6224e8335", "src": "db2@1.60.1.70245"}
-{"id": 459613, "field": "aura", "en": "Increases swim speed by $s1%.", "hash": "e184d52ae28bab2e", "src": "db2@1.60.1.70245"}
-{"id": 459614, "field": "name", "en": "Dedication", "hash": "b22ed76b2133d474", "src": "db2@1.60.1.70245"}
-{"id": 459615, "field": "name", "en": "Dedication", "hash": "b22ed76b2133d474", "src": "db2@1.60.1.70245"}
-{"id": 459615, "field": "description", "en": "On landing a killing blow that grants experience or honor, your next attack will critically strike.", "hash": "11413859fd31cea1", "src": "db2@1.60.1.70245"}
-{"id": 459615, "field": "aura", "en": "On landing a killing blow that grants experience or honor, your next attack will critically strike.", "hash": "11413859fd31cea1", "src": "db2@1.60.1.70245"}
-{"id": 459616, "field": "name", "en": "Rhythm of War", "hash": "da5097ff89874f0a", "src": "db2@1.60.1.70245"}
-{"id": 459616, "field": "aura", "en": "You sense the wisdom and tactics of ancestral warriors, who mastered their craft on this terrain.", "hash": "6b9feaf3e2aeb460", "src": "db2@1.60.1.70245"}
-{"id": 459617, "field": "name", "en": "Legacy of Valor", "hash": "f7a271bc510feaec", "src": "db2@1.60.1.70245"}
-{"id": 459618, "field": "name", "en": "Legacy of Valor", "hash": "f7a271bc510feaec", "src": "db2@1.60.1.70245"}
-{"id": 459619, "field": "name", "en": "Smite", "hash": "bfa8e1cd1c2c7859", "src": "db2@1.60.1.70245"}
-{"id": 459619, "field": "description", "en": "Smite the disrespectful with $s1 Holy damage.", "hash": "f45ef142a079d535", "src": "db2@1.60.1.70245"}
-{"id": 459619, "field": "aura", "en": "Worm!", "hash": "0626adc4d65fe0a1", "src": "db2@1.60.1.70245"}
-{"id": 459620, "field": "name", "en": "[DNT] Spawn Challenge", "hash": "da852efd0e40c273", "src": "db2@1.60.1.70245"}
-{"id": 459621, "field": "name", "en": "Whirlwind", "hash": "ac9b02bdb51dc78d", "src": "db2@1.60.1.70245"}
-{"id": 459622, "field": "name", "en": "Holy Fire", "hash": "e0802123409dd8ca", "src": "db2@1.60.1.70245"}
-{"id": 459622, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70245"}
-{"id": 459623, "field": "name", "en": "[DNT] Arena Victory", "hash": "e3e49166ee17039a", "src": "db2@1.60.1.70245"}
-{"id": 459625, "field": "name", "en": "[DNT] Arena Victory", "hash": "e3e49166ee17039a", "src": "db2@1.60.1.70245"}
-{"id": 459692, "field": "name", "en": "Swimming", "hash": "6a2eed120b7fb021", "src": "db2@1.60.1.70245"}
-{"id": 459695, "field": "name", "en": "Priest Racial Ability", "hash": "1cc87e8184e4a957", "src": "db2@1.60.1.70245"}
-{"id": 459695, "field": "description", "en": "Learn a Priest spell from another race to activate an ability in this slot.", "hash": "50ae5b373658afbe", "src": "db2@1.60.1.70245"}
-{"id": 459699, "field": "name", "en": "Fear Ward", "hash": "55de823c345f6268", "src": "db2@1.60.1.70245"}
-{"id": 459699, "field": "description", "en": "Gain the Fear Ward ability:\r\n\r\n$@spellicon6346\r\n$@spelldesc6346", "hash": "3eb91ccc43326b4f", "src": "db2@1.60.1.70245"}
-{"id": 459702, "field": "name", "en": "Desperate Prayer", "hash": "5e463cb3bca5f0e1", "src": "db2@1.60.1.70245"}
-{"id": 459702, "field": "description", "en": "Gain the Desperate Prayer ability:\r\n\r\n$@spellicon19243\r\n$@spelldesc19243", "hash": "cde4c4fb0459b2e3", "src": "db2@1.60.1.70245"}
-{"id": 459703, "field": "name", "en": "Feedback", "hash": "1752ab67c0f3c952", "src": "db2@1.60.1.70245"}
-{"id": 459703, "field": "description", "en": "Gain the Feedback ability:\r\n\r\n$@spellicon19275\r\n$@spelldesc19275", "hash": "44156cb369d0023a", "src": "db2@1.60.1.70245"}
-{"id": 459705, "field": "name", "en": "Starshards", "hash": "4433778869b0bb9d", "src": "db2@1.60.1.70245"}
-{"id": 459705, "field": "description", "en": "Gain the Starshards ability:\r\n\r\n$@spellicon19305\r\n$@spelldesc19305", "hash": "4a9848846629abe5", "src": "db2@1.60.1.70245"}
-{"id": 459706, "field": "name", "en": "Elune's Grace", "hash": "2e4562779402b0df", "src": "db2@1.60.1.70245"}
-{"id": 459706, "field": "description", "en": "Gain the Elune's Grace ability:\r\n\r\n$@spellicon19293\r\n$@spelldesc19293", "hash": "b84373ff97bcb448", "src": "db2@1.60.1.70245"}
-{"id": 459709, "field": "name", "en": "Shadowguard", "hash": "cf44b409d1d1665d", "src": "db2@1.60.1.70245"}
-{"id": 459709, "field": "description", "en": "Gain the Shadowguard ability:\r\n\r\n$@spellicon19312\r\n$@spelldesc19312", "hash": "3902ce5c00837085", "src": "db2@1.60.1.70245"}
-{"id": 459710, "field": "name", "en": "Hex of Weakness", "hash": "7764cf64269d54d5", "src": "db2@1.60.1.70245"}
-{"id": 459710, "field": "description", "en": "Gain the Hex of Weakness ability:\r\n\r\n$@spellicon19285\r\n$@spelldesc19285", "hash": "8b3300f10b69757c", "src": "db2@1.60.1.70245"}
-{"id": 459713, "field": "name", "en": "Devouring Plague", "hash": "4eccc5d96e2aba2c", "src": "db2@1.60.1.70245"}
-{"id": 459713, "field": "description", "en": "Gain the Devouring Plague ability:\r\n\r\n$@spellicon19280\r\n$@spelldesc19280", "hash": "36ead55a258d9d09", "src": "db2@1.60.1.70245"}
-{"id": 459714, "field": "name", "en": "Touch of Weakness", "hash": "dccff77220b4ed50", "src": "db2@1.60.1.70245"}
-{"id": 459714, "field": "description", "en": "Gain the Touch of Weakness ability:\r\n\r\n$@spellicon19266\r\n$@spelldesc19266", "hash": "c804a15e30562a13", "src": "db2@1.60.1.70245"}
-{"id": 459736, "field": "name", "en": "Warmed Rumsey with Cream", "hash": "f3144f6402fb0b8f", "src": "db2@1.60.1.70245"}
-{"id": 459736, "field": "description", "en": "Increases Stamina by $s1 for $d and gets you drunk to boot!", "hash": "faf19c38b8f31965", "src": "db2@1.60.1.70245"}
-{"id": 459736, "field": "aura", "en": "Stamina increased by $s1.", "hash": "4e3b423b6ecdd596", "src": "db2@1.60.1.70245"}
-{"id": 459837, "field": "name", "en": "Shadow Ritual of Great Sacrifice", "hash": "c8ecfb817d36c639", "src": "db2@1.60.1.70245"}
-{"id": 459837, "field": "aura", "en": "Offer yourself as a willing sacrifice to the Shadows.", "hash": "b1e42a42737a25e2", "src": "db2@1.60.1.70245"}
-{"id": 459845, "field": "name", "en": "Shadow Ritual of Great Sacrifice", "hash": "c8ecfb817d36c639", "src": "db2@1.60.1.70245"}
-{"id": 459845, "field": "aura", "en": "Offer yourself as a willing sacrifice to the Shadows.", "hash": "b1e42a42737a25e2", "src": "db2@1.60.1.70245"}
+{"id": 459005, "field": "name", "en": "Interrupt", "hash": "2cb115a1e6cc874d", "src": "db2@1.60.1.70291"}
+{"id": 459107, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70291"}
+{"id": 459153, "field": "name", "en": "Fireworks", "hash": "682f427fdbf1928e", "src": "db2@1.60.1.70291"}
+{"id": 459153, "field": "description", "en": "Victory!", "hash": "84cae0122b39c1e4", "src": "db2@1.60.1.70291"}
+{"id": 459160, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70291"}
+{"id": 459160, "field": "description", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70291"}
+{"id": 459160, "field": "aura", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70291"}
+{"id": 459161, "field": "name", "en": "Omni Diffusion Armor", "hash": "3b32e56981dbc821", "src": "db2@1.60.1.70291"}
+{"id": 459161, "field": "aura", "en": "Absorbing $s1 damage.", "hash": "3f9b4a375205c486", "src": "db2@1.60.1.70291"}
+{"id": 459162, "field": "name", "en": "Omni Diffusion Armor", "hash": "3b32e56981dbc821", "src": "db2@1.60.1.70291"}
+{"id": 459163, "field": "name", "en": "Interrupt", "hash": "2cb115a1e6cc874d", "src": "db2@1.60.1.70291"}
+{"id": 459164, "field": "name", "en": "Reployer Malfunction", "hash": "1000f684aab2b618", "src": "db2@1.60.1.70291"}
+{"id": 459164, "field": "description", "en": "Blow a fuse, inflicting $s1 fire damage.", "hash": "c98c626b80755e4a", "src": "db2@1.60.1.70291"}
+{"id": 459164, "field": "aura", "en": "Recalibrating.", "hash": "9b5063ef4a984ae5", "src": "db2@1.60.1.70291"}
+{"id": 459165, "field": "name", "en": "Force Dampeners", "hash": "ef8760065be37b38", "src": "db2@1.60.1.70291"}
+{"id": 459165, "field": "description", "en": "Reduces the melee and ranged attack power of nearby enemies by $s1 for $d.", "hash": "2eacb3df1ae5d59f", "src": "db2@1.60.1.70291"}
+{"id": 459165, "field": "aura", "en": "Melee and ranged attack power reduced by $s1.", "hash": "25ffd6c8bc7ae7f2", "src": "db2@1.60.1.70291"}
+{"id": 459166, "field": "name", "en": "Central Reaping Function 9000", "hash": "dd9c5d86fe7970de", "src": "db2@1.60.1.70291"}
+{"id": 459166, "field": "description", "en": "Increases attack power by $s1.", "hash": "7d819cdcf45419f1", "src": "db2@1.60.1.70291"}
+{"id": 459166, "field": "aura", "en": "Increases attack power by $s1.", "hash": "7d819cdcf45419f1", "src": "db2@1.60.1.70291"}
+{"id": 459170, "field": "name", "en": "Summon Squire", "hash": "419b88343be690e3", "src": "db2@1.60.1.70291"}
+{"id": 459170, "field": "description", "en": "Sound Dalton's Horn to summon your squire. Your squire will assist you in battle and learn from you as you adventure together. ", "hash": "d2e92d41ffbb9549", "src": "db2@1.60.1.70291"}
+{"id": 459170, "field": "aura", "en": "Your squire is accompanying you.", "hash": "d9b5219ea9e5880b", "src": "db2@1.60.1.70291"}
+{"id": 459173, "field": "name", "en": "Squire Despawn", "hash": "f4b47f09ceaf7665", "src": "db2@1.60.1.70291"}
+{"id": 459178, "field": "name", "en": "Self Explosion", "hash": "2d81b3ec8f355250", "src": "db2@1.60.1.70291"}
+{"id": 459178, "field": "description", "en": "Oops!", "hash": "79b87837d71c1c9e", "src": "db2@1.60.1.70291"}
+{"id": 459197, "field": "name", "en": "Bolster Girdle-Jerry Bolts", "hash": "6fcfe7d14edb1a6c", "src": "db2@1.60.1.70291"}
+{"id": 459197, "field": "description", "en": "Recover mana.", "hash": "d2c09394459d05b2", "src": "db2@1.60.1.70291"}
+{"id": 459197, "field": "aura", "en": "Drawing in energy.", "hash": "87d0b35a87e6a133", "src": "db2@1.60.1.70291"}
+{"id": 459198, "field": "name", "en": "Flex Tandem Press Task Apparatus", "hash": "9e5b8980a069758e", "src": "db2@1.60.1.70291"}
+{"id": 459198, "field": "description", "en": "Recover mana.", "hash": "d2c09394459d05b2", "src": "db2@1.60.1.70291"}
+{"id": 459198, "field": "aura", "en": "Drawing in energy.", "hash": "87d0b35a87e6a133", "src": "db2@1.60.1.70291"}
+{"id": 459200, "field": "name", "en": "Full-field System Flap Latch", "hash": "fb9faa2f6b58fd44", "src": "db2@1.60.1.70291"}
+{"id": 459200, "field": "description", "en": "Recover mana.", "hash": "d2c09394459d05b2", "src": "db2@1.60.1.70291"}
+{"id": 459200, "field": "aura", "en": "Drawing in energy.", "hash": "87d0b35a87e6a133", "src": "db2@1.60.1.70291"}
+{"id": 459207, "field": "name", "en": "Summon Squire", "hash": "419b88343be690e3", "src": "db2@1.60.1.70291"}
+{"id": 459207, "field": "description", "en": "Sound Dalton's Horn to summon your squire. Your squire will assist you in battle and learn from you as you adventure together. ", "hash": "d2e92d41ffbb9549", "src": "db2@1.60.1.70291"}
+{"id": 459207, "field": "aura", "en": "Your squire is accompanying you.", "hash": "d9b5219ea9e5880b", "src": "db2@1.60.1.70291"}
+{"id": 459217, "field": "name", "en": "Desert Sonar", "hash": "04306e8ba4c4bd69", "src": "db2@1.60.1.70291"}
+{"id": 459217, "field": "description", "en": "Detect large objects beneath the sand.", "hash": "7c2476eab14760d6", "src": "db2@1.60.1.70291"}
+{"id": 459217, "field": "aura", "en": "Detect large objects beneath the sand.", "hash": "7c2476eab14760d6", "src": "db2@1.60.1.70291"}
+{"id": 459221, "field": "name", "en": "Desert Sonar", "hash": "04306e8ba4c4bd69", "src": "db2@1.60.1.70291"}
+{"id": 459221, "field": "description", "en": "Emit a high-pitched sonar frequency.", "hash": "635d1e60037baaa3", "src": "db2@1.60.1.70291"}
+{"id": 459232, "field": "name", "en": "Summon Squire", "hash": "419b88343be690e3", "src": "db2@1.60.1.70291"}
+{"id": 459232, "field": "description", "en": "Sound Dalton's Horn to summon your squire. Your squire will assist you in battle and learn from you as you adventure together. ", "hash": "d2e92d41ffbb9549", "src": "db2@1.60.1.70291"}
+{"id": 459232, "field": "aura", "en": "Your squire is accompanying you.", "hash": "d9b5219ea9e5880b", "src": "db2@1.60.1.70291"}
+{"id": 459261, "field": "name", "en": "Capture Echo", "hash": "b89c196e9d74e06b", "src": "db2@1.60.1.70291"}
+{"id": 459261, "field": "description", "en": "Capture the echo of a powerful denizen of Stratholme. Only usable on corpses.", "hash": "1cb2d8f8a185feb4", "src": "db2@1.60.1.70291"}
+{"id": 459280, "field": "name", "en": "Transiting Realities", "hash": "67cfaa809929c79c", "src": "db2@1.60.1.70291"}
+{"id": 459280, "field": "aura", "en": "You cannot fight or be damaged while transiting between realities.", "hash": "6a499d626a6b36c9", "src": "db2@1.60.1.70291"}
+{"id": 459290, "field": "name", "en": "Thunder Stomp", "hash": "fdf2c43c7e65eb73", "src": "db2@1.60.1.70291"}
+{"id": 459290, "field": "description", "en": "Discharge power with the impact of your stomp, knocking back and damaging nearby enemies.", "hash": "f45894b7c5af8d31", "src": "db2@1.60.1.70291"}
+{"id": 459290, "field": "aura", "en": "Nudged a little bit.", "hash": "de24885e9e2bd885", "src": "db2@1.60.1.70291"}
+{"id": 459293, "field": "name", "en": "Activate Auxiliary Anti-Tamper Grapplers", "hash": "df99ed79392a49ad", "src": "db2@1.60.1.70291"}
+{"id": 459293, "field": "description", "en": "Adapt to increasing hostility and preserve known footprint.", "hash": "2d8a011645e43f31", "src": "db2@1.60.1.70291"}
+{"id": 459293, "field": "aura", "en": "Footprint preserving adaptive aggression.\r\nDamage increased by $s2%.\r\nMovement speed decreased by $s3%.", "hash": "8e71bbc0f2c44662", "src": "db2@1.60.1.70291"}
+{"id": 459312, "field": "name", "en": "Defense Specialization", "hash": "a22cd1fb1ecbaf4a", "src": "db2@1.60.1.70291"}
+{"id": 459312, "field": "description", "en": "Defense skill increased by $s1. Not cumulative with other ring runes.", "hash": "3ab0396de0d58138", "src": "db2@1.60.1.70291"}
+{"id": 459313, "field": "name", "en": "Engrave Ring - Defense Specialization", "hash": "68aa0050f3f28a70", "src": "db2@1.60.1.70291"}
+{"id": 459313, "field": "description", "en": "Engrave your ring with the Defense Specialization rune:\r\n\r\n$@spellicon459312\r\n$@spelldesc459312", "hash": "ef86bf947866999b", "src": "db2@1.60.1.70291"}
+{"id": 459340, "field": "name", "en": "[DNT] Edu Copperbolt - Give Sonar", "hash": "0ca9ae27608d446e", "src": "db2@1.60.1.70291"}
+{"id": 459360, "field": "name", "en": "Hanging Bat", "hash": "37e7eb330edfebd0", "src": "db2@1.60.1.70291"}
+{"id": 459369, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459370, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459371, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459372, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459373, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459374, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459375, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459377, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459378, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459380, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459381, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459382, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459383, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459384, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459385, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459386, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459387, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459388, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459389, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459390, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459392, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459393, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459394, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459396, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459398, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459399, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459400, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459401, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459402, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459403, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459405, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459406, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459414, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459415, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459416, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459417, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459418, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459420, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459423, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459424, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459425, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459426, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459427, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459429, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459430, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459431, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459432, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459433, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459434, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459435, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459436, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459437, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459438, "field": "name", "en": "Boss Kill Tracking [DNT]", "hash": "7d6ad291b91a8c0e", "src": "db2@1.60.1.70291"}
+{"id": 459467, "field": "name", "en": "Rumbling Sand", "hash": "29e92d74409f4a0b", "src": "db2@1.60.1.70291"}
+{"id": 459481, "field": "name", "en": "Rumbling Sand", "hash": "29e92d74409f4a0b", "src": "db2@1.60.1.70291"}
+{"id": 459481, "field": "aura", "en": "Something's moving under the ground!", "hash": "4108eed357ac68d8", "src": "db2@1.60.1.70291"}
+{"id": 459487, "field": "name", "en": "[DNT] Summon Sandworm", "hash": "6b40c319f7cd23c0", "src": "db2@1.60.1.70291"}
+{"id": 459498, "field": "name", "en": "Self-sufficient Slicing Scythe-Hooks", "hash": "ee1f3b36ce6c1ca1", "src": "db2@1.60.1.70291"}
+{"id": 459499, "field": "name", "en": "Crippling Clip", "hash": "6eed4bafcfaebf65", "src": "db2@1.60.1.70291"}
+{"id": 459499, "field": "aura", "en": "Rooted.", "hash": "9bb1efcf10b38d14", "src": "db2@1.60.1.70291"}
+{"id": 459584, "field": "name", "en": "Wing Clip Duration", "hash": "5914c4ef3a82cceb", "src": "db2@1.60.1.70291"}
+{"id": 459584, "field": "description", "en": "Increases the duration of your Wing Clip by $/1000;s1 sec.", "hash": "7cd7368e8966c513", "src": "db2@1.60.1.70291"}
+{"id": 459591, "field": "name", "en": "Cropchop", "hash": "8404e0fe04f035d1", "src": "db2@1.60.1.70291"}
+{"id": 459592, "field": "name", "en": "Cropchop", "hash": "8404e0fe04f035d1", "src": "db2@1.60.1.70291"}
+{"id": 459592, "field": "description", "en": "Attacks nearby enemies in a whirlwind of steel that lasts $d. and inflicts normal damage plus $15576s1.", "hash": "b90dc6288fd80aae", "src": "db2@1.60.1.70291"}
+{"id": 459592, "field": "aura", "en": "Attacking all nearby enemies for normal damage plus $15576s1.\r\nImmune to stun.", "hash": "9a63fa2870088948", "src": "db2@1.60.1.70291"}
+{"id": 459593, "field": "name", "en": "Multi-Shot Damage Increase", "hash": "92798dc522b7800d", "src": "db2@1.60.1.70291"}
+{"id": 459593, "field": "description", "en": "Increases the damage done by your Multi-Shot by $s1%.", "hash": "6c155d83d4c3ec46", "src": "db2@1.60.1.70291"}
+{"id": 459594, "field": "name", "en": "Shapeshift Cost Reduction", "hash": "05d34c92b65175a4", "src": "db2@1.60.1.70291"}
+{"id": 459594, "field": "description", "en": "Reduces the mana cost of your shapeshifts by $s1.", "hash": "d3e6c51b983d0b71", "src": "db2@1.60.1.70291"}
+{"id": 459595, "field": "name", "en": "Wrath Cast Pushback Reduction", "hash": "bc33e223488c9771", "src": "db2@1.60.1.70291"}
+{"id": 459595, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Wrath.", "hash": "62fc21714cd03512", "src": "db2@1.60.1.70291"}
+{"id": 459596, "field": "name", "en": "Barkskin Duration Increase", "hash": "bc2f2b4fc5f383c4", "src": "db2@1.60.1.70291"}
+{"id": 459596, "field": "description", "en": "Increases the duration of your Barkskin by ${$m1/1000} sec.", "hash": "8598ff6f45f44932", "src": "db2@1.60.1.70291"}
+{"id": 459598, "field": "name", "en": "Raptor Strike Damage Increase", "hash": "2d1e6c8f9965ab84", "src": "db2@1.60.1.70291"}
+{"id": 459598, "field": "description", "en": "Increases the damage done by your Raptor Strike by $s1%.", "hash": "ef4467a5a4b11bf4", "src": "db2@1.60.1.70291"}
+{"id": 459599, "field": "name", "en": "Mana Shield Absorb Increase", "hash": "3df47deb037419c6", "src": "db2@1.60.1.70291"}
+{"id": 459599, "field": "description", "en": "Increases the damage absorbed by your Mana Shield by $s1.", "hash": "56c4b35d74b1ab9c", "src": "db2@1.60.1.70291"}
+{"id": 459600, "field": "name", "en": "Arcane Blast Cast Pushback Reduction", "hash": "5932969c74172777", "src": "db2@1.60.1.70291"}
+{"id": 459600, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Arcane Blast.", "hash": "a28ca1371dff8ac8", "src": "db2@1.60.1.70291"}
+{"id": 459601, "field": "name", "en": "Judgement Damage Increase", "hash": "53656be9e12fc9a9", "src": "db2@1.60.1.70291"}
+{"id": 459601, "field": "description", "en": "Your damaging Judgements deal $s1 additional damage.", "hash": "71c97da06f3216d7", "src": "db2@1.60.1.70291"}
+{"id": 459602, "field": "name", "en": "Holy Shock Critical Chance Increase", "hash": "b83650a3ca8f437a", "src": "db2@1.60.1.70291"}
+{"id": 459602, "field": "description", "en": "Increases the critical strike chance of your Holy Shock by $s1%.", "hash": "80b211150e5254f8", "src": "db2@1.60.1.70291"}
+{"id": 459603, "field": "name", "en": "Weakened Soul Duration Decrease", "hash": "1ed986b651817d33", "src": "db2@1.60.1.70291"}
+{"id": 459603, "field": "description", "en": "Reduces the duration of your Weakened Soul by ${$m1/-1000} sec.", "hash": "8a93c1226dcc084e", "src": "db2@1.60.1.70291"}
+{"id": 459604, "field": "name", "en": "Mind Blast Cast Pushback Reduction", "hash": "56c3e426a5cbc30c", "src": "db2@1.60.1.70291"}
+{"id": 459604, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Mind Blast.", "hash": "b2bcf464a8b1a90d", "src": "db2@1.60.1.70291"}
+{"id": 459605, "field": "name", "en": "Sprint Duration Increase", "hash": "28db21bdba1c48fc", "src": "db2@1.60.1.70291"}
+{"id": 459605, "field": "description", "en": "Increases the duration of your Sprint ability by $/1000;s1 sec.", "hash": "6fa7b4485a0185d5", "src": "db2@1.60.1.70291"}
+{"id": 459606, "field": "name", "en": "Ghost Wolf Speed", "hash": "27b55c4ba1a36d70", "src": "db2@1.60.1.70291"}
+{"id": 459606, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70291"}
+{"id": 459607, "field": "name", "en": "Searing Pain Cast Pushback Reduction", "hash": "07cd8b5d5eb8ae22", "src": "db2@1.60.1.70291"}
+{"id": 459607, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Searing Pain.", "hash": "326fd9774abc03cd", "src": "db2@1.60.1.70291"}
+{"id": 459608, "field": "name", "en": "Hamstring Rage Reduction", "hash": "5dda96762e0477d9", "src": "db2@1.60.1.70291"}
+{"id": 459608, "field": "description", "en": "Hamstring Rage cost reduced by $/10;s1.", "hash": "1c20335d00f6f368", "src": "db2@1.60.1.70291"}
+{"id": 459610, "field": "name", "en": "Wanderer's Resolve", "hash": "38931957e721cde5", "src": "db2@1.60.1.70291"}
+{"id": 459610, "field": "description", "en": "Increases movement speed by 10% and all stats by 15% for 2 hours.", "hash": "36b19267b475f300", "src": "db2@1.60.1.70291"}
+{"id": 459610, "field": "aura", "en": "Increases movement speed by 10% and all stats by 15% for 2 hours.", "hash": "36b19267b475f300", "src": "db2@1.60.1.70291"}
+{"id": 459611, "field": "name", "en": "Astral Victory", "hash": "db63ac8832f35cf0", "src": "db2@1.60.1.70291"}
+{"id": 459611, "field": "description", "en": "Undefeated victories\r\n$w $?$w=1[trophy][trophies] gathered.", "hash": "638e97dae68048d8", "src": "db2@1.60.1.70291"}
+{"id": 459611, "field": "aura", "en": "$w $?$w=1 flawless [duel][duels] without defeat against Khonshu.", "hash": "0690937a982abf97", "src": "db2@1.60.1.70291"}
+{"id": 459612, "field": "name", "en": "Astral Perfect Victory", "hash": "c54b7bae73168134", "src": "db2@1.60.1.70291"}
+{"id": 459612, "field": "aura", "en": "$w flawless $?$w=1[duel][duels] without defeat against Khonsu.", "hash": "c25eb1fb389d788d", "src": "db2@1.60.1.70291"}
+{"id": 459613, "field": "name", "en": "Guided Buoyancy Accelerant", "hash": "3fb33fe17443352c", "src": "db2@1.60.1.70291"}
+{"id": 459613, "field": "description", "en": "Increases swim speed by $s1% for $d1.", "hash": "9b1abba6224e8335", "src": "db2@1.60.1.70291"}
+{"id": 459613, "field": "aura", "en": "Increases swim speed by $s1%.", "hash": "e184d52ae28bab2e", "src": "db2@1.60.1.70291"}
+{"id": 459614, "field": "name", "en": "Dedication", "hash": "b22ed76b2133d474", "src": "db2@1.60.1.70291"}
+{"id": 459615, "field": "name", "en": "Dedication", "hash": "b22ed76b2133d474", "src": "db2@1.60.1.70291"}
+{"id": 459615, "field": "description", "en": "On landing a killing blow that grants experience or honor, your next attack will critically strike.", "hash": "11413859fd31cea1", "src": "db2@1.60.1.70291"}
+{"id": 459615, "field": "aura", "en": "On landing a killing blow that grants experience or honor, your next attack will critically strike.", "hash": "11413859fd31cea1", "src": "db2@1.60.1.70291"}
+{"id": 459616, "field": "name", "en": "Rhythm of War", "hash": "da5097ff89874f0a", "src": "db2@1.60.1.70291"}
+{"id": 459616, "field": "aura", "en": "You sense the wisdom and tactics of ancestral warriors, who mastered their craft on this terrain.", "hash": "6b9feaf3e2aeb460", "src": "db2@1.60.1.70291"}
+{"id": 459617, "field": "name", "en": "Legacy of Valor", "hash": "f7a271bc510feaec", "src": "db2@1.60.1.70291"}
+{"id": 459618, "field": "name", "en": "Legacy of Valor", "hash": "f7a271bc510feaec", "src": "db2@1.60.1.70291"}
+{"id": 459619, "field": "name", "en": "Smite", "hash": "bfa8e1cd1c2c7859", "src": "db2@1.60.1.70291"}
+{"id": 459619, "field": "description", "en": "Smite the disrespectful with $s1 Holy damage.", "hash": "f45ef142a079d535", "src": "db2@1.60.1.70291"}
+{"id": 459619, "field": "aura", "en": "Worm!", "hash": "0626adc4d65fe0a1", "src": "db2@1.60.1.70291"}
+{"id": 459620, "field": "name", "en": "[DNT] Spawn Challenge", "hash": "da852efd0e40c273", "src": "db2@1.60.1.70291"}
+{"id": 459621, "field": "name", "en": "Whirlwind", "hash": "ac9b02bdb51dc78d", "src": "db2@1.60.1.70291"}
+{"id": 459622, "field": "name", "en": "Holy Fire", "hash": "e0802123409dd8ca", "src": "db2@1.60.1.70291"}
+{"id": 459622, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70291"}
+{"id": 459623, "field": "name", "en": "[DNT] Arena Victory", "hash": "e3e49166ee17039a", "src": "db2@1.60.1.70291"}
+{"id": 459625, "field": "name", "en": "[DNT] Arena Victory", "hash": "e3e49166ee17039a", "src": "db2@1.60.1.70291"}
+{"id": 459692, "field": "name", "en": "Swimming", "hash": "6a2eed120b7fb021", "src": "db2@1.60.1.70291"}
+{"id": 459695, "field": "name", "en": "Priest Racial Ability", "hash": "1cc87e8184e4a957", "src": "db2@1.60.1.70291"}
+{"id": 459695, "field": "description", "en": "Learn a Priest spell from another race to activate an ability in this slot.", "hash": "50ae5b373658afbe", "src": "db2@1.60.1.70291"}
+{"id": 459699, "field": "name", "en": "Fear Ward", "hash": "55de823c345f6268", "src": "db2@1.60.1.70291"}
+{"id": 459699, "field": "description", "en": "Gain the Fear Ward ability:\r\n\r\n$@spellicon6346\r\n$@spelldesc6346", "hash": "3eb91ccc43326b4f", "src": "db2@1.60.1.70291"}
+{"id": 459702, "field": "name", "en": "Desperate Prayer", "hash": "5e463cb3bca5f0e1", "src": "db2@1.60.1.70291"}
+{"id": 459702, "field": "description", "en": "Gain the Desperate Prayer ability:\r\n\r\n$@spellicon19243\r\n$@spelldesc19243", "hash": "cde4c4fb0459b2e3", "src": "db2@1.60.1.70291"}
+{"id": 459703, "field": "name", "en": "Feedback", "hash": "1752ab67c0f3c952", "src": "db2@1.60.1.70291"}
+{"id": 459703, "field": "description", "en": "Gain the Feedback ability:\r\n\r\n$@spellicon19275\r\n$@spelldesc19275", "hash": "44156cb369d0023a", "src": "db2@1.60.1.70291"}
+{"id": 459705, "field": "name", "en": "Starshards", "hash": "4433778869b0bb9d", "src": "db2@1.60.1.70291"}
+{"id": 459705, "field": "description", "en": "Gain the Starshards ability:\r\n\r\n$@spellicon19305\r\n$@spelldesc19305", "hash": "4a9848846629abe5", "src": "db2@1.60.1.70291"}
+{"id": 459706, "field": "name", "en": "Elune's Grace", "hash": "2e4562779402b0df", "src": "db2@1.60.1.70291"}
+{"id": 459706, "field": "description", "en": "Gain the Elune's Grace ability:\r\n\r\n$@spellicon19293\r\n$@spelldesc19293", "hash": "b84373ff97bcb448", "src": "db2@1.60.1.70291"}
+{"id": 459709, "field": "name", "en": "Shadowguard", "hash": "cf44b409d1d1665d", "src": "db2@1.60.1.70291"}
+{"id": 459709, "field": "description", "en": "Gain the Shadowguard ability:\r\n\r\n$@spellicon19312\r\n$@spelldesc19312", "hash": "3902ce5c00837085", "src": "db2@1.60.1.70291"}
+{"id": 459710, "field": "name", "en": "Hex of Weakness", "hash": "7764cf64269d54d5", "src": "db2@1.60.1.70291"}
+{"id": 459710, "field": "description", "en": "Gain the Hex of Weakness ability:\r\n\r\n$@spellicon19285\r\n$@spelldesc19285", "hash": "8b3300f10b69757c", "src": "db2@1.60.1.70291"}
+{"id": 459713, "field": "name", "en": "Devouring Plague", "hash": "4eccc5d96e2aba2c", "src": "db2@1.60.1.70291"}
+{"id": 459713, "field": "description", "en": "Gain the Devouring Plague ability:\r\n\r\n$@spellicon19280\r\n$@spelldesc19280", "hash": "36ead55a258d9d09", "src": "db2@1.60.1.70291"}
+{"id": 459714, "field": "name", "en": "Touch of Weakness", "hash": "dccff77220b4ed50", "src": "db2@1.60.1.70291"}
+{"id": 459714, "field": "description", "en": "Gain the Touch of Weakness ability:\r\n\r\n$@spellicon19266\r\n$@spelldesc19266", "hash": "c804a15e30562a13", "src": "db2@1.60.1.70291"}
+{"id": 459736, "field": "name", "en": "Warmed Rumsey with Cream", "hash": "f3144f6402fb0b8f", "src": "db2@1.60.1.70291"}
+{"id": 459736, "field": "description", "en": "Increases Stamina by $s1 for $d and gets you drunk to boot!", "hash": "faf19c38b8f31965", "src": "db2@1.60.1.70291"}
+{"id": 459736, "field": "aura", "en": "Stamina increased by $s1.", "hash": "4e3b423b6ecdd596", "src": "db2@1.60.1.70291"}
+{"id": 459837, "field": "name", "en": "Shadow Ritual of Great Sacrifice", "hash": "c8ecfb817d36c639", "src": "db2@1.60.1.70291"}
+{"id": 459837, "field": "aura", "en": "Offer yourself as a willing sacrifice to the Shadows.", "hash": "b1e42a42737a25e2", "src": "db2@1.60.1.70291"}
+{"id": 459845, "field": "name", "en": "Shadow Ritual of Great Sacrifice", "hash": "c8ecfb817d36c639", "src": "db2@1.60.1.70291"}
+{"id": 459845, "field": "aura", "en": "Offer yourself as a willing sacrifice to the Shadows.", "hash": "b1e42a42737a25e2", "src": "db2@1.60.1.70291"}

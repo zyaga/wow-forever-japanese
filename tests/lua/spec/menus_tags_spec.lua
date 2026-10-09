@@ -54,6 +54,7 @@ local UI = {
   TRANSMOG_SET_PVP = { "PvP", "PvP" },
   TRANSMOG_ITEM_SET_FAVORITE = { "Set Favorite", FAV },
   SOCIAL_SHARE_TEXT = { "Share", "共有" },
+  VOICE_CHAT_MODE_LEGACY = { "In-Game Voice (Legacy)", "ゲーム内ボイス(レガシー)" },
   -- the keys added to shipped tags
   LEAVE_ARENA = { "Leave Arena", "アリーナから退出" },
   SHOW_WORLD_QUESTS_ON_MAP_TEXT = { "World Quests", "ワールドクエスト" },
@@ -117,6 +118,7 @@ local CASES = {
   { "MENU_WARDROBE_SETS_SET_DETAIL", "TRANSMOG_ITEM_SET_FAVORITE" },
   { "MENU_WARDROBE_ITEMS_MODEL_FILTER", "TRANSMOG_ITEM_SET_FAVORITE" },
   { "MORE_CONTEXT_ACTIONS", "SOCIAL_SHARE_TEXT" },
+  { "MENU_LFG_LISTING_VOICE_CHAT", "VOICE_CHAT_MODE_LEGACY" },
   -- the keys added to shipped tags
   { "MENU_QUEUE_STATUS_FRAME", "LEAVE_ARENA" },
   { "MENU_WORLD_MAP_TRACKING", "SHOW_WORLD_QUESTS_ON_MAP_TEXT" },

@@ -452,7 +452,6 @@ WFJ.Data.add("gloss", {
   [125449] = "貸す\tかす\tlend (手を貸す: provide assistance)",
   [125450] = "貸す\tかす\tlend me",
   [125451] = "貸す\tかす\tlend us",
-  [125452] = "貸す\tかす\tlend you",
   [125453] = "貸す\tかす\tlending (me)",
   [125454] = "貸す\tかす\tlending (力を貸す: aid)",
   [125455] = "貸す\tかす\tlent",

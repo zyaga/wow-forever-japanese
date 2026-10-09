@@ -830,7 +830,6 @@ WFJ.Data.add("gloss", {
   [95828] = "洞窟群\tどうくつぐん\tcavern complex",
   [95829] = "洞窟群\tどうくつぐん\tcaverns",
   [95830] = "活かす\tいかす\tapply (make use of)",
-  [95831] = "活かす\tいかす\tapply (put to use)",
   [95832] = "活かす\tいかす\tapply; make use of",
   [95833] = "活かす\tいかす\tbe able to put to use",
   [95834] = "活かす\tいかす\tcan be salvaged (put to use)",

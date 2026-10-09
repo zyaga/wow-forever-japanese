@@ -911,7 +911,6 @@ WFJ.Data.add("gloss", {
   [7908] = "こちら\tこちら\tthis way",
   [7909] = "こちら\tこちら\tthis way (here)",
   [7910] = "こちら\tこちら\tus",
-  [7911] = "こちら\tこちら\tus (our side)",
   [7912] = "こちら\tこちら\tus (this side)",
   [7913] = "こちら\tこちら\twe (this side)",
   [7914] = "こちらこそ\tこちらこそ\tmine (it is I who)",

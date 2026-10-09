@@ -28,7 +28,7 @@ def test_every_forever_error_key_is_inventoried_for_the_errors_surface(root: Pat
     inventory = _inventory(root)
     for surface in ("errors", "chatsystem"):  # the frame, and the same keys as SYSTEM chat lines (re-plan)
         keys = {k for k, surfaces in inventory.items() if surface in surfaces and ERROR_KEY.match(k)}
-        assert len(keys) == 2723, surface  # every Forever 1.60.1.70170 ERR_* / SPELL_FAILED_* key with English (2,722 on 70009)
+        assert len(keys) == 2724, surface  # every ERR_* / SPELL_FAILED_* key with English on the pinned Forever build
 
 
 def test_the_keys_blizzards_lua_puts_in_the_frame_are_inventoried(root: Path):

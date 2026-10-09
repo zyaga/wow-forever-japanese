@@ -29,6 +29,12 @@ local UI = {
   CONFIRM_TALENT_WIPE_1 = { "Do you want to unlearn all of your talents?", "すべてのタレントを忘れますか？" },
   CANCEL = { "Cancel", "キャンセル" },
   ACCEPT = { "Accept", "承諾" }, DECLINE = { "Decline", "辞退" },
+  -- the group voice-chat join (gamedialogdefs.lua:1571–1593): text "", its OnShow writes the line
+  VOICE_CHAT_JOIN_GROUP_TEXT = { "This group is using voice chat for easier communication.",
+    "このグループは連絡を取りやすくするためにボイスチャットを使っています。" },
+  VOICE_CHAT_JOIN_GROUP_DISCORD_TEXT = { "Text-to-Speech and Speech-to-Text are not supported in this channel.",
+    "このチャンネルでは読み上げと音声入力は使えません。" },
+  VOICE_CHAT_JOIN_GROUP_BUTTON = { "Join Voice Chat", "ボイスチャットに参加" },
   CONFIRM_LEAVE_INSTANCE_PARTY = { "Are you sure you want to leave the instance group?",
     "インスタンスグループから離れますか？" },
 }
@@ -84,9 +90,12 @@ local function install()
   end
 end
 
+local C = {}
+
 describe("the StaticPopup dialogs on Forever", function()
   local WFJ
   before_each(function()
+    C.discord, C.other = nil, nil
     WFJ = X.load("UI/Popups.lua", UI, { before = install })
     local D = _G.StaticPopupDialogs
     D.DELETE_ITEM = { text = _G.DELETE_ITEM, button1 = _G.YES, button2 = _G.NO }
@@ -102,6 +111,12 @@ describe("the StaticPopup dialogs on Forever", function()
       OnShow = function(d) d.ButtonContainer.Buttons[2]:SetText(_G.DECLINE .. " (1s)") end }
     D.CONFIRM_TALENT_WIPE = { text = "%s", button1 = _G.ACCEPT, button2 = _G.CANCEL }
     D.CONFIRM_LEAVE_INSTANCE_PARTY = { text = "%s", button1 = _G.YES, button2 = _G.NO }
+    D.VOICE_CHAT_JOIN_GROUP = { text = "", button1 = _G.VOICE_CHAT_JOIN_GROUP_BUTTON, button2 = _G.CANCEL,
+      OnShow = function(d)
+        local text = _G.VOICE_CHAT_JOIN_GROUP_TEXT
+        if C.discord then text = text .. "\n\n" .. _G.VOICE_CHAT_JOIN_GROUP_DISCORD_TEXT end
+        d.Text:SetText(C.other or text)
+      end }
     D.AGE_VERIFICATION_RESTRICTED_MINOR = { text = _G.SOCIAL_FEATURES_UNAVAILABLE,
       subText = _G.SOCIAL_FEATURES_UNAVAILABLE_DESCRIPTION, button1 = _G.OKAY }
     assert.is_true(WFJ.Popups.init())
@@ -209,6 +224,27 @@ describe("the StaticPopup dialogs on Forever", function()
     _G.StaticPopup_OnUpdate(e, 0.1)
     assert.are.equal("Yesがあなたをグループに招待しています。\n\nこのグループに参加すると、現在のキューからすべて外れます。",
       e.Text:GetText())
+  end)
+
+  it("the group voice-chat join: OnShow's line, the Discord paragraph and the button; Alt shows English", function()
+    local d = _G.StaticPopup_Show("VOICE_CHAT_JOIN_GROUP")
+    assert.are.equal(UI.VOICE_CHAT_JOIN_GROUP_TEXT[2], d.Text:GetText())
+    assert.are.equal("ボイスチャットに参加", d.ButtonContainer.Buttons[1]:GetText())
+    assert.are.equal("キャンセル", d.ButtonContainer.Buttons[2]:GetText())
+    _G.StaticPopup1.shown = false
+    C.discord = true
+    local e = _G.StaticPopup_Show("VOICE_CHAT_JOIN_GROUP")
+    local en = UI.VOICE_CHAT_JOIN_GROUP_TEXT[1] .. "\n\n" .. UI.VOICE_CHAT_JOIN_GROUP_DISCORD_TEXT[1]
+    assert.are.equal(UI.VOICE_CHAT_JOIN_GROUP_TEXT[2] .. "\n\n" .. UI.VOICE_CHAT_JOIN_GROUP_DISCORD_TEXT[2],
+      e.Text:GetText())
+    X.alt(WFJ, true)
+    assert.are.equal(en, e.Text:GetText())
+    assert.are.equal("Join Voice Chat", e.ButtonContainer.Buttons[1]:GetText())
+    X.alt(WFJ, false)
+    _G.StaticPopup1.shown, _G.StaticPopup2.shown = false, false
+    C.other = "A line this file does not know."
+    local f = _G.StaticPopup_Show("VOICE_CHAT_JOIN_GROUP")
+    assert.are.equal("A line this file does not know.", f.Text:GetText())
   end)
 
   it("the cross-realm invite, alone and with the queue paragraph", function()

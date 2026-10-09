@@ -48,6 +48,11 @@ local UI = {
   -- the listing's client-table words
   ["LfgCategory:2"] = { "Dungeons", "ダンジョン" }, ["LfgActivityGroup:12"] = { "World PvP", "ワールドPvP" },
   ["LfgActivity:285"] = { "Custom", "カスタム" },
+  -- the listing's voice chat row and a result tooltip's voice line (listing.xml:554, 631; listing.lua:48–69;
+  -- browse.lua:674–682)
+  VOICE_CHAT = { "Voice Chat", "ボイスチャット" },
+  VOICE_CHAT_MODE_NONE = { "None", "なし" }, VOICE_CHAT_MODE_LEGACY = { "In-Game Voice (Legacy)", "ゲーム内ボイス(レガシー)" },
+  VOICE_CHAT_MODE_FORMAT = { "Voice Chat: |cnHIGHLIGHT_FONT_COLOR:%s|r", "ボイスチャット: |cnHIGHLIGHT_FONT_COLOR:%s|r" },
 }
 
 local C = {} -- replayed client state
@@ -76,6 +81,8 @@ local function loadGroupFinder(o)
   listing.LockedView.ActivityText = S.fs(en("LFG_LIST_MY_ACTIVITY_LIST_HEADER"))
   listing.ActivityView = S.frame(nil, "ActivityView")
   listing.ActivityView.PlayStyleDropdown = S.dropdown("PlayStyleDropdown")
+  listing.ActivityView.VoiceChatLabel = S.fs(en("VOICE_CHAT"))
+  listing.ActivityView.VoiceChatDropdown = S.dropdown("VoiceChatDropdown")
   local comment = S.frame("LFGListingComment")
   comment.EditBox = CreateFrame("EditBox")
   comment.EditBox.Instructions = S.fs("")
@@ -136,6 +143,7 @@ local function loadGroupFinder(o)
   tip.Delisted = S.fs(en("LFG_LIST_ENTRY_DELISTED"))
   tip.NewPlayerFriendlyText, tip.CompletedEncounterHeader, tip.MemberCount, tip.Comment = S.fs(), S.fs(), S.fs(), S.fs()
   tip.Leader = { Name = S.fs() }
+  tip.VoiceChat = S.fs()
   -- an activity row's init (listing.lua:989–1029): its lockout warning icon owns a BOSSES_KILLED tooltip
   _G.LFGListingActivityView_InitActivityButton = function(button, data)
     if button.InstanceLockWarningIcon then button.InstanceLockWarningIcon.encountersCompleted = data.done end
@@ -153,8 +161,9 @@ local function loadGroupFinder(o)
     self.CategoryButtons[index] = self.CategoryButtons[index] or S.button(nil, "")
     S.write(self.CategoryButtons[index], C.categoryNames[categoryID])
   end
-  _G.LFGBrowseSearchEntryTooltip_UpdateAndShow = function(self, n, roles)
+  _G.LFGBrowseSearchEntryTooltip_UpdateAndShow = function(self, n, roles, voice)
     self.Leader.Name.text = "Close"
+    if voice then self.VoiceChat.text = ("Voice Chat: |cnHIGHLIGHT_FONT_COLOR:%s|r"):format(voice) end
     self.MemberCount.text = roles and ("Members: |cffffffff%d (%d/%d/%d)|r"):format(n, unpack(roles))
       or ("Members: |cffffffff%d|r"):format(n)
   end
@@ -261,6 +270,35 @@ describe("the group finder on Forever", function()
         assert.are.equal("メンバー: |cffffffff1|r", tip.MemberCount:GetText())
         assert.are.equal("Close", tip.Leader.Name:GetText())
         assert.is_true(S.unrecorded(WFJ, tip.Leader.Name))
+      end)
+
+      it("the voice chat label, dropdown and tooltip line translate; Alt shows English; another mode stays", function()
+        local view, tip = _G.LFGListingFrame.ActivityView, _G.LFGBrowseSearchEntryTooltip
+        assert.are.equal("ボイスチャット", view.VoiceChatLabel:GetText())
+        view.VoiceChatDropdown:SetSelectionText("In-Game Voice (Legacy)")
+        assert.are.equal("ゲーム内ボイス(レガシー)", view.VoiceChatDropdown.Text:GetText())
+        _G.LFGBrowseSearchEntryTooltip_UpdateAndShow(tip, 1, nil, "In-Game Voice (Legacy)")
+        assert.are.equal("ボイスチャット: |cnHIGHLIGHT_FONT_COLOR:ゲーム内ボイス(レガシー)|r", tip.VoiceChat:GetText())
+        Stub.keys.alt = true; WFJ.Modifier.refresh()
+        assert.are.equal("Voice Chat: |cnHIGHLIGHT_FONT_COLOR:In-Game Voice (Legacy)|r", tip.VoiceChat:GetText())
+        assert.are.equal("Voice Chat", view.VoiceChatLabel:GetText())
+        Stub.keys.alt = false; WFJ.Modifier.refresh()
+        _G.LFGBrowseSearchEntryTooltip_UpdateAndShow(tip, 1, nil, "Other") -- not an entry here
+        assert.are.equal("Voice Chat: |cnHIGHLIGHT_FONT_COLOR:Other|r", tip.VoiceChat:GetText())
+      end)
+
+      it("a Japanese voice line wider than the tooltip widens it; a narrower one leaves the width", function()
+        local tip = _G.LFGBrowseSearchEntryTooltip
+        local width = 100
+        tip.GetWidth = function() return width end
+        tip.SetWidth = function(_, w) width = w end
+        tip.VoiceChat.GetParent = function() return tip end
+        tip.VoiceChat.GetStringWidth = function() return 300 end
+        _G.LFGBrowseSearchEntryTooltip_UpdateAndShow(tip, 1, nil, "In-Game Voice (Legacy)")
+        assert.are.equal(322, width)
+        tip.VoiceChat.GetStringWidth = function() return 50 end
+        _G.LFGBrowseSearchEntryTooltip_UpdateAndShow(tip, 1, nil, "In-Game Voice (Legacy)")
+        assert.are.equal(322, width)
       end)
 
       it("dropdown buttons: default and fixed selections translate; a category name does not", function()

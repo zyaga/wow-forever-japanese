@@ -169,7 +169,6 @@ WFJ.Data.add("gloss", {
   [132166] = "重要\tじゅうよう\tvital",
   [132167] = "重要\tじゅうよう\tvital (important)",
   [132168] = "重要さ\tじゅうようさ\timport (importance)",
-  [132169] = "重要だ\tじゅうようだ\tif important",
   [132170] = "重要だ\tじゅうようだ\timportant",
   [132171] = "重要だ\tじゅうようだ\timportant(ly)",
   [132172] = "重要だ\tじゅうようだ\tis important",

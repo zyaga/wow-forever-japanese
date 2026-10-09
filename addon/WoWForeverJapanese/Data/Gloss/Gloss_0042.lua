@@ -223,7 +223,6 @@ WFJ.Data.add("gloss", {
   [42220] = "伝える\tつたえる\tplease bring (tell)",
   [42221] = "伝える\tつたえる\tplease express (convey)",
   [42222] = "伝える\tつたえる\tplease extend",
-  [42223] = "伝える\tつたえる\tplease extend (convey)",
   [42224] = "伝える\tつたえる\tplease extend (tell)",
   [42225] = "伝える\tつたえる\tplease give (convey)",
   [42226] = "伝える\tつたえる\tplease give (tell)",

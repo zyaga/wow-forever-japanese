@@ -388,6 +388,36 @@ def test_union_keeps_the_earlier_builds_quests_a_newer_cache_never_served(tmp_pa
             assert area[q.id]["src"] == f"wdb@{FOREVER_BUILD}" and area[q.id]["en"] == q.area
 
 
+def test_an_older_clients_cache_leaves_a_newer_clients_quests_alone(tmp_path, monkeypatch, capsys):
+    """`make import-english` imports Classic Era's cache before Forever's. A quest Forever served on an earlier
+    build and the current Forever cache did not answer keeps Forever's English: Era's cache must neither
+    replace it nor, by taking the quest whole, drop a field Era has and Forever had not (ADR-050)."""
+    from wfj.core.hashing import key
+    from wfj.core.model import english_line
+    from wfj.core.normalize import normalize_v1
+
+    data = _data(tmp_path, monkeypatch)
+    qid = read_quests(FIXTURE).quests[0].id
+    title = "Forever's own title"
+    held = english_line(qid, "title", title, key(normalize_v1(title)), "wdb@1.60.1.70245")
+    Store(data, english=True).save("quest", [held])
+    assert _run("--merge", "union") == 0
+    assert "quests left to a newer client's English: 1" in capsys.readouterr().out
+    now = [ln for ln in Store(data, english=True).load("quest") if ln["id"] == qid]
+    assert now == [held]  # Era's title did not replace it and Era's other fields were not added
+
+
+def test_a_newer_client_is_told_by_its_game_line():
+    from wfj.cmd.import_english import _newer_client, held_by_newer_cache
+
+    assert _newer_client("wdb@1.60.1.70245", "1.15.9.69722")
+    assert not _newer_client("wdb@1.15.9.69722", "1.60.1.70291")
+    assert not _newer_client("wdb@1.60.1.70245", "1.60.1.70291")  # the same client: its own union rules apply
+    lines = [{"id": 1, "field": "title", "src": "wdb@1.60.1.70245"}, {"id": 2, "field": "title", "src": "pfquest@x"},
+             {"id": 3, "field": "title", "src": "wdb@1.15.9.69722"}]
+    assert held_by_newer_cache(lines, "1.15.9.69722") == {1}
+
+
 def test_replace_is_the_default_and_still_drops_the_earlier_build(tmp_path, monkeypatch, capsys):
     data = _data(tmp_path, monkeypatch)
     assert _run() == 0

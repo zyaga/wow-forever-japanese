@@ -1,9 +1,10 @@
 -- UI/MenusUnit.lua: the keys the unit right-click menus may show (data; UI/Menus reads it).
 -- One key set for every level-1 `which` (SELF, TARGET, PLAYER, ENEMY_PLAYER, PARTY, PET, FOCUS, FRIEND): each entry's
 -- text is a UnitPopup button's GetText (blizzard_unitpopupshared/unitpopupsharedbuttonmixins.lua; mainline/
--- unitpopupbuttons.lua; camelot overrides blizzard_unitpopup/camelot/unitpopupmenus.lua:2–43); the title is the
--- unit's name (unitpopupshared.lua:110–116). In a group the self and party menus add the loot, role and group entries:
--- the loot method's title is the chosen method's name, the threshold's the quality's (_G["ITEM_QUALITY"..n.."_DESC"],
+-- unitpopupbuttons.lua; camelot overrides blizzard_unitpopup/camelot/unitpopupmenus.lua:2–56, whose Interact
+-- submenu adds View Talents, :46–56); the title is the unit's name (unitpopupshared.lua:110–116). In a group the
+-- self and party menus add the loot, role and group entries: the loot method's title is the chosen method's name,
+-- the threshold's the quality's (_G["ITEM_QUALITY"..n.."_DESC"],
 -- unitpopupbuttons.lua:609–616, 773–774), a role radio is INLINE_<ROLE>_ICON .. " " .. <ROLE> (the `icon` label form,
 -- unitpopupsharedbuttonmixins.lua:3549–3589), the loot opt-out is "Pass on Loot: %s" around Yes / No (:3339).
 local _, WFJ = ...
@@ -14,8 +15,9 @@ WFJ.MenusUnit = {
     "DISABLE", "UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_LOOT", "UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_INSTANCE",
     "UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_OTHER", "UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_INTERACT", "RESET_INSTANCES",
     "VOICE_CHAT", "OTHER", "HUD_EDIT_MODE_MENU", "SEND_BATTLETAG_REQUEST", "ADD_WOW_FRIEND", "ADD_CHARACTER_FRIEND",
-    "ADD_FRIEND", "PARTY_INVITE", "SUGGEST_INVITE", "REQUEST_INVITE", "INSPECT", "COMPARE_ACHIEVEMENTS", "FOLLOW",
-    "DUEL", "DUEL_TO_DEATH", "REPORT_IN_WORLD_PLAYER", "COPY_CHARACTER_NAME", "PVP_REPORT_AFK", "WHISPER", "TRADE",
+    "ADD_FRIEND", "PARTY_INVITE", "SUGGEST_INVITE", "REQUEST_INVITE", "INSPECT", "INSPECT_TALENTS",
+    "COMPARE_ACHIEVEMENTS", "FOLLOW", "DUEL", "DUEL_TO_DEATH", "REPORT_IN_WORLD_PLAYER", "COPY_CHARACTER_NAME",
+    "PVP_REPORT_AFK", "WHISPER", "TRADE",
     "IGNORE", "MOVE_TO_WHISPER_WINDOW", "TARGET", "SET_NOTE", "COMMUNITY_MESSAGE_DROP_DOWN_DELETE", "IGNORE_REMOVE",
     "REMOVE_FRIEND", "REPORT_CHAT", "PET_RENAME", "PET_DISMISS", "RELEASE_PET_BUTTON_LABEL",
     "BINDING_NAME_INTERACTTARGET", "PARTY_LEAVE", "PARTY_UNINVITE", "PARTY_PROMOTE", "VOTE_TO_KICK",
@@ -60,7 +62,8 @@ WFJ.MenusUnit = {
       "RAID_TARGET_5", "RAID_TARGET_6", "RAID_TARGET_7", "RAID_TARGET_8", "RAID_TARGET_NONE", "SET_FOCUS", "ADD_FRIEND",
       "SEND_BATTLETAG_REQUEST", "ADD_CHARACTER_FRIEND", "ADD_WOW_FRIEND",
       "UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_INTERACT",
-      "SET_RAID_LEADER", "SET_RAID_ASSISTANT", "DEMOTE", "WHISPER", "INSPECT", "COMPARE_ACHIEVEMENTS", "TRADE",
+      "SET_RAID_LEADER", "SET_RAID_ASSISTANT", "DEMOTE", "WHISPER", "INSPECT", "INSPECT_TALENTS",
+      "COMPARE_ACHIEVEMENTS", "TRADE",
       "FOLLOW", "DUEL", "UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_OTHER", "VOICE_CHAT", "SET_ROLE", "TANK", "HEALER",
       "DAMAGER", "NO_ROLE", "HUD_EDIT_MODE_MENU", "REPORT_GROUP_MEMBER", "REPORT_IN_WORLD_PLAYER",
       "COPY_CHARACTER_NAME", "PVP_REPORT_AFK", "VOTE_TO_KICK", "REMOVE" },

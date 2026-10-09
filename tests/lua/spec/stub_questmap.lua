@@ -1,12 +1,16 @@
 -- The camelot (Forever) quest log as the mainline UI builds it: QuestMapFrame's details pane and quest list,
 -- the tracker's popup (QuestLogPopupDetailFrame) and the objective tracker's quest module, replaying the writes of
 -- forever Blizzard_UIPanels_Game/mainline/questmapframe.{lua,xml}, mainline/questinfo.lua,
--- camelot/questmapframeoverrides.lua and Blizzard_ObjectiveTracker/blizzard_questobjectivetracker.lua. A client write
+-- Blizzard_FrameXMLUtil/camelot/questutilsoverrides.lua and
+-- Blizzard_ObjectiveTracker/blizzard_questobjectivetracker.lua with its camelot override. A client write
 -- is a plain fs:SetText outside the addon (not counted as ours). Requires Stub.install and Stub.installQuestAPI first
 -- (the QuestInfo widgets are the quest window's), and must run before the addon hooks QuestInfo_Display.
---   Q.quests[id] = { title, description, objectives, level, elite, failed, decorated }
+--   Q.quests[id] = { title, description, objectives, level, elite, tag, failed, decorated }
+--     tag: the quest tag's word key ("ELITE", "CALENDAR_TYPE_DUNGEON", "CALENDAR_TYPE_PVP", "RAID"); an elite quest
+--     with no tag set is tagged ELITE
 --   Q.log = { id, … } (list order) · Q.watched = { [id] = true } · Q.party = { [id] = n } (party-count prefix)
---   Q.trackerLevel (showQuestLevel CVar) · Q.trackerColor (showQuestDifficultyColor CVar)
+--   Q.trackerLevel (the tracker's level prefix, always on on camelot; off lets a spec read a bare title)
+--   · Q.trackerColor (showQuestDifficultyColor CVar)
 -- Drivers: Q.showDetails(id), Q.closeDetails(), Q.showPopup(id), Q.hidePopup(), Q.updateList(), Q.hideMap(),
 -- Q.updateTracker(), Q.setWatched(id, bool).
 local Stub = require("tests.lua.spec.wow_stub")
@@ -24,10 +28,17 @@ local EN = {
   REWARD_TITLE = "You shall be granted the title:", TRACKER_HEADER_QUESTS = "Quests",
   TRACKER_ALL_OBJECTIVES = "All Objectives", INVTYPE_CLOAK = "Back", COMPLETE = "Complete",
   QUEST_WAYPOINT_FINAL = "Show Final Destination", QUEST_WAYPOINT_ROUTE = "Show Travel Route",
-  PARENS_TEMPLATE = "(%s)", ELITE = "Elite",
+  PARENS_TEMPLATE = "(%s)", ELITE = "Elite", CALENDAR_TYPE_DUNGEON = "Dungeon", CALENDAR_TYPE_PVP = "PvP",
+  RAID = "Raid",
 }
 Q.EN = EN
 local function S(key) return _G[key] or EN[key] end
+
+-- QuestUtilsOverrides.GetQuestTagText (blizzard_framexmlutil/camelot/questutilsoverrides.lua:20–35). → text | nil
+local function tagText(q)
+  local word = q.tag or (q.elite and "ELITE") or nil
+  return word and S("PARENS_TEMPLATE"):format(S(word)) or nil
+end
 
 local function fs(text) return Stub.fontString(text or "") end
 
@@ -84,7 +95,7 @@ function Q.install()
       b = CreateFrame("Button")
       b.Text = fs("")
       b.Text.width = 200
-      b.TagText = fs("") -- camelot's elite tag (camelot/questmapframeoverrides.lua:19–21; :1833–1836)
+      b.TagText = fs("") -- camelot's quest tag (camelot/questutilsoverrides.lua:20–35; questmapframe.lua:1833–1836)
       function b.SetHeight(row, h) row.h = h end
       function b.GetHeight(row) return row.h end
       b.rowIndex = self.made
@@ -240,7 +251,8 @@ function Q.install()
   end
 
   -- QuestLogQuests_Update (:2104) with QuestLogQuests_AddQuestButton (:1808–1836) and camelot's title prefix
-  -- (camelot/questmapframeoverrides.lua:13–16), the party count (:1639) and the count (camelot/questmapframeutils.lua)
+  -- (:1631, blizzard_framexmlutil/camelot/questutilsoverrides.lua:6–9), the party count (:1639) and the count
+  -- (camelot/questmapframeutils.lua)
   _G.QuestLogQuests_Update = function()
     pool:ReleaseAll()
     opool:ReleaseAll()
@@ -253,7 +265,7 @@ function Q.install()
       if Q.party[id] then title = "[" .. Q.party[id] .. "] " .. title end
       if q.decorated then title = "|A:questlog-questtypeicon-dungeon:16:16|a" .. title end
       b.Text.text = title
-      b.TagText.text = q.elite and S("PARENS_TEMPLATE"):format(S("ELITE")) or ""
+      b.TagText.text = tagText(q) or ""
       local total = 8 + b.Text:GetHeight() -- the button's height: the sum of its English heights (:1885–1961)
       for _, line in ipairs(q.leaderboard or {}) do -- unfinished leaderboard lines (:1904–1926)
         if not line.done then
@@ -276,8 +288,9 @@ function Q.install()
     return out
   end
 
-  -- the objective tracker's quest module (blizzard_questobjectivetracker.lua:197–204, 289–307;
-  -- blizzard_objectivetrackermodule.lua:254–300; difficultyutil.lua:84–96)
+  -- the objective tracker's quest module (blizzard_questobjectivetracker.lua:197–204, 291–307 with
+  -- camelot/blizzard_questobjectivetrackeroverride.lua:5–7; blizzard_objectivetrackermodule.lua:254–300;
+  -- difficultyutil.lua:84–99 through camelot/questutilsoverrides.lua:6–18)
   local tracker = CreateFrame("Frame", "QuestObjectiveTracker")
   tracker.name = "QuestObjectiveTracker"
   tracker.usedBlocks = {}
@@ -336,7 +349,12 @@ function Q.install()
     local id = quest:GetID()
     local block = self:GetBlock(id)
     local title = quest.title
-    if Q.trackerLevel then title = "[" .. _G.C_QuestLog.GetQuestDifficultyLevel(id) .. "] " .. title end
+    local tag = Q.quests[id] and tagText(Q.quests[id])
+    if tag then title = title .. " " .. tag end
+    if Q.trackerLevel then
+      title = "[" .. _G.C_QuestLog.GetQuestDifficultyLevel(id) .. (_G.C_QuestLog.IsEliteQuest(id) and "+" or "")
+        .. "] " .. title
+    end
     if Q.trackerColor then title = "|cffffff00" .. title .. "|r" end
     block:SetHeader(title)
     local board = Q.quests[id] and Q.quests[id].leaderboard

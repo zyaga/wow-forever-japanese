@@ -19,7 +19,7 @@ TEXT_TABLES = (
     "HolidayDescriptions", "CurrencyTypes", "CurrencyCategory", "SpellDispelType", "CreatureType", "QuestSort",
     # the second set of family tables
     "ChrCustomizationCategory", "ChrCustomizationOption", "ChrCustomizationChoice", "ChrCustomizationReq",
-    "PVPScoreboardColumnHeader", "GroupFinderCategory", "GroupFinderActivityGrp", "GroupFinderActivity",
+    "PVPScoreboardColumnHeader", "PVPStat", "GroupFinderCategory", "GroupFinderActivityGrp", "GroupFinderActivity",
     "UiWidgetStringSource", "ItemNameDescription",
     # the tables the served-text inventory found shown on Forever (ADR-052)
     "CriteriaTree", "RenownRewards", "SharedString", "TradeSkillCategory", "MailTemplate", "QuestInfo", "AreaPOI",

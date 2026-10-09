@@ -716,7 +716,6 @@ WFJ.Data.add("gloss", {
   [104713] = "知らぬ間\tしらぬま\tunknowingly (without knowing)",
   [104714] = "知らぬ間\tしらぬま\tunwitting (without knowing)",
   [104715] = "知られざる\tしられざる\tunknown",
-  [104716] = "知られる\tしられる\tare known",
   [104717] = "知られる\tしられる\thave come to be known",
   [104718] = "知られる\tしられる\tknown",
   [104719] = "知られる\tしられる\tknown for",

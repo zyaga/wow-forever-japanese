@@ -34,6 +34,8 @@ local UI = {
   -- A stat column's name and tooltip (C_PvP.GetMatchPVPStatColumns, client-table text)
   ["PvpColumn:1"] = { "Flag Captures", "旗の奪取" },
   ["PvpColumnTooltip:1"] = { "Number of times you have captured the flag", "旗を奪った回数" },
+  -- a stat the column-header table does not name (PVPStat, Alterac Valley)
+  ["PvpStat:61"] = { "Towers Assaulted", "塔への攻撃" },
 }
 
 local function en(key) return _G[key] end
@@ -159,6 +161,7 @@ local function installPvPMatch()
     if P.flag then -- a stat column (pvpmatchtable.lua:371–386): its name, title and tooltip text
       tb:header("Flag Captures", "Flag Captures", "Number of times you have captured the flag")
       tb:header("Flag Returns", "Flag Returns", "Number of times you have returned the flag") -- no row
+      tb:header("Towers Assaulted") -- a PVPStat name
     end
   end
   return results, scoreboard
@@ -296,13 +299,13 @@ describe("the PvP scoreboard and match results on Forever", function()
       assert.is_true(unrecorded(name.text))
     end)
 
-  it("a stat column's header and its tooltip are Japanese; a column with no row stays; Alt English",
+  it("a stat column's header (either table) and its tooltip are Japanese; a column with no row stays; Alt English",
     function()
       P.flag = true
       local r = _G.PVPMatchResults
       r:Init()
       assert.are.same({ "<icon>", "名前", "Guild", "キリング\nブロー", "死亡回数", "与\nダメージ", "旗の奪取",
-        "Flag Returns" }, headers(r.tableBuilder))
+        "Flag Returns", "塔への攻撃" }, headers(r.tableBuilder))
       local flag, returns
       for h in r.tableBuilder:EnumerateHeaders() do
         if h.tooltipTitle == "Flag Captures" then flag = h end
@@ -319,6 +322,7 @@ describe("the PvP scoreboard and match results on Forever", function()
       alt(false)
       assert.are.equal("旗の奪取", headers(r.tableBuilder)[7])
       assert.is_nil(WFJ.UIIndex:match("Flag Captures")) -- the family only where the headers name it
+      assert.is_nil(WFJ.UIIndex:match("Towers Assaulted"))
     end)
 
   it("client names bound to the wrong type degrade to English with no error", function()

@@ -1,9 +1,9 @@
-{"id": 63624, "field": "name", "en": "Learn a Second Talent Specialization", "hash": "232bf0b6b315aa1e", "src": "db2@1.60.1.70245"}
-{"id": 63624, "field": "description", "en": "Learn a Second Talent Specialization.", "hash": "ff7c2da505a5a1a9", "src": "db2@1.60.1.70245"}
-{"id": 63624, "field": "aura", "en": "Learn a Second Talent Specialization.", "hash": "ff7c2da505a5a1a9", "src": "db2@1.60.1.70245"}
-{"id": 63644, "field": "name", "en": "Activate Secondary Spec", "hash": "69ccad7053c14546", "src": "db2@1.60.1.70245"}
-{"id": 63644, "field": "description", "en": "Switch to your Secondary Talent Specialization.", "hash": "9e9d4a4e5439b5cd", "src": "db2@1.60.1.70245"}
-{"id": 63644, "field": "aura", "en": "Switch to your Secondary Talent Specialization.", "hash": "9e9d4a4e5439b5cd", "src": "db2@1.60.1.70245"}
-{"id": 63645, "field": "name", "en": "Activate Primary Spec", "hash": "312943715cb2c5e4", "src": "db2@1.60.1.70245"}
-{"id": 63645, "field": "description", "en": "Switch to your Primary Talent Specialization.", "hash": "10b2821a70da9d00", "src": "db2@1.60.1.70245"}
-{"id": 63645, "field": "aura", "en": "Switch to your Primary Talent Specialization.", "hash": "10b2821a70da9d00", "src": "db2@1.60.1.70245"}
+{"id": 63624, "field": "name", "en": "Learn a Second Talent Specialization", "hash": "232bf0b6b315aa1e", "src": "db2@1.60.1.70291"}
+{"id": 63624, "field": "description", "en": "Learn a Second Talent Specialization.", "hash": "ff7c2da505a5a1a9", "src": "db2@1.60.1.70291"}
+{"id": 63624, "field": "aura", "en": "Learn a Second Talent Specialization.", "hash": "ff7c2da505a5a1a9", "src": "db2@1.60.1.70291"}
+{"id": 63644, "field": "name", "en": "Activate Secondary Spec", "hash": "69ccad7053c14546", "src": "db2@1.60.1.70291"}
+{"id": 63644, "field": "description", "en": "Switch to your Secondary Talent Specialization.", "hash": "9e9d4a4e5439b5cd", "src": "db2@1.60.1.70291"}
+{"id": 63644, "field": "aura", "en": "Switch to your Secondary Talent Specialization.", "hash": "9e9d4a4e5439b5cd", "src": "db2@1.60.1.70291"}
+{"id": 63645, "field": "name", "en": "Activate Primary Spec", "hash": "312943715cb2c5e4", "src": "db2@1.60.1.70291"}
+{"id": 63645, "field": "description", "en": "Switch to your Primary Talent Specialization.", "hash": "10b2821a70da9d00", "src": "db2@1.60.1.70291"}
+{"id": 63645, "field": "aura", "en": "Switch to your Primary Talent Specialization.", "hash": "10b2821a70da9d00", "src": "db2@1.60.1.70291"}

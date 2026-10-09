@@ -385,7 +385,6 @@ WFJ.Data.add("gloss", {
   [39383] = "事\tこと\t(to be able to)",
   [39384] = "事\tこと\taffairs (matters)",
   [39385] = "事\tこと\tdeed",
-  [39386] = "事\tこと\tdeed (matter)",
   [39387] = "事\tこと\tdetails (things)",
   [39388] = "事\tこと\tfavor (thing)",
   [39389] = "事\tこと\tit (things)",

@@ -79,6 +79,8 @@ WFJ.Data.add("ui", {
   ["WORLD_MAP_CURSOR_COORDS_INTEGER"] = { "カーソル: %d, %d", 0x577e8d02, "." },
   ["WORLD_MAP_FILTER_LABEL_SHOW"] = { "表示：", 0xbefef15a, "." },
   ["WORLD_MAP_FILTER_LABEL_WORLD_QUESTS_SUBMENU_TYPE"] = { "タイプ:", 0xd2d408c9, "." },
+  ["WORLD_MAP_FILTER_TITLE_SHOW_MAP"] = { "マップに表示：", 0x9a00447e, "." },
+  ["WORLD_MAP_FILTER_TITLE_SHOW_QUEST_LOG"] = { "クエストログに表示：", 0x4dbe34f6, "." },
   ["WORLD_MAP_PLAYER_COORDS"] = { "プレイヤー: %.1f, %.1f", 0x0bc5357c, "." },
   ["WORLD_MAP_PLAYER_COORDS_INTEGER"] = { "プレイヤー: %d, %d", 0x291f4588, "." },
   ["WORLD_MAP_PLAYER_COORDS_MAP_NAME"] = { "プレイヤー: %.1f, %.1f (%s)", 0x7ff1bec7, "." },

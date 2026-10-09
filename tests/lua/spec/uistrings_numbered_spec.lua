@@ -36,7 +36,7 @@ describe("numbered rows and the widget-text families in UIStrings", function()
 
   it("every second-round family is a restricted fingerprint key; only WidgetText is numbered", function()
     for _, family in ipairs({ "ItemSubClassName", "CustomizationCategory", "CustomizationOption",
-      "CustomizationChoice", "CustomizationSource", "PvpColumn", "PvpColumnTooltip", "LfgCategory",
+      "CustomizationChoice", "CustomizationSource", "PvpColumn", "PvpColumnTooltip", "PvpStat", "LfgCategory",
       "LfgActivityGroup", "LfgActivity", "ItemNameDescription", "WidgetText" }) do
       local key = family .. ":1"
       assert.is_true(WFJ.UIStrings.isFingerprintKey(key), key)

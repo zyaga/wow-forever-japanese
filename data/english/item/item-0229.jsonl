@@ -1,17 +1,17 @@
-{"id": 229008, "field": "name", "en": "Formula: Enchant Cloak - Greater Fire Resistance", "hash": "73f8ebf76ceb5e9e", "src": "db2@1.60.1.70245"}
-{"id": 229008, "field": "description", "en": "Teaches you how to permanently enchant a cloak to increase Fire Resistance by 15 .", "hash": "a0f595b61f58b2b5", "src": "db2@1.60.1.70245"}
-{"id": 229009, "field": "name", "en": "Formula: Enchant Cloak - Greater Nature Resistance", "hash": "f1545c73132dee6f", "src": "db2@1.60.1.70245"}
-{"id": 229009, "field": "description", "en": "Teaches you how to permanently enchant a cloak to increase Nature Resistance by 15 .", "hash": "1165b88173ffd653", "src": "db2@1.60.1.70245"}
-{"id": 229055, "field": "name", "en": "Frayed Aranasi Silk", "hash": "5cb2d38c6d9a8775", "src": "db2@1.60.1.70245"}
-{"id": 229056, "field": "name", "en": "Pumice Chunk", "hash": "c7499fb8b0e46964", "src": "db2@1.60.1.70245"}
-{"id": 229057, "field": "name", "en": "Impounded Goods", "hash": "2e1c0873591d7616", "src": "db2@1.60.1.70245"}
-{"id": 229362, "field": "name", "en": "Storehouse Key", "hash": "bd8018d058aded18", "src": "db2@1.60.1.70245"}
-{"id": 229415, "field": "name", "en": "Survival Supplies", "hash": "c5311b28878a3a98", "src": "db2@1.60.1.70245"}
-{"id": 229415, "field": "description", "en": "Builds a foundation for a survival campsite. Bring additional supplies to this campsite to construct a shelter.", "hash": "ac130273fd850288", "src": "db2@1.60.1.70245"}
-{"id": 229416, "field": "name", "en": "Warm Fur", "hash": "8de5c43850d52645", "src": "db2@1.60.1.70245"}
-{"id": 229894, "field": "name", "en": "Dream Emerald", "hash": "a27dcc3dbf53d915", "src": "db2@1.60.1.70245"}
-{"id": 229894, "field": "description", "en": "Increase your reputation permanently with the Cenarion Circle.", "hash": "8f12afce553d0beb", "src": "db2@1.60.1.70245"}
-{"id": 229897, "field": "name", "en": "Scroll: Create Signet of Beckoning", "hash": "fc8271ab7e92f4a7", "src": "db2@1.60.1.70245"}
-{"id": 229897, "field": "description", "en": "Combine with 1 Dark Rune and 5 Firebloom to create a Signet of Beckoning: Fire.", "hash": "ae0da25f00878a22", "src": "db2@1.60.1.70245"}
-{"id": 229965, "field": "name", "en": "The Eye of Az'olgothal", "hash": "3880f800a376630e", "src": "db2@1.60.1.70245"}
-{"id": 229965, "field": "description", "en": "The final echoing orb seethes with fel energy. It's as if it knows you mean to end it, and it radiates a disdainful hatred towards you in kind.", "hash": "6565e01304021d46", "src": "db2@1.60.1.70245"}
+{"id": 229008, "field": "name", "en": "Formula: Enchant Cloak - Greater Fire Resistance", "hash": "73f8ebf76ceb5e9e", "src": "db2@1.60.1.70291"}
+{"id": 229008, "field": "description", "en": "Teaches you how to permanently enchant a cloak to increase Fire Resistance by 15 .", "hash": "a0f595b61f58b2b5", "src": "db2@1.60.1.70291"}
+{"id": 229009, "field": "name", "en": "Formula: Enchant Cloak - Greater Nature Resistance", "hash": "f1545c73132dee6f", "src": "db2@1.60.1.70291"}
+{"id": 229009, "field": "description", "en": "Teaches you how to permanently enchant a cloak to increase Nature Resistance by 15 .", "hash": "1165b88173ffd653", "src": "db2@1.60.1.70291"}
+{"id": 229055, "field": "name", "en": "Frayed Aranasi Silk", "hash": "5cb2d38c6d9a8775", "src": "db2@1.60.1.70291"}
+{"id": 229056, "field": "name", "en": "Pumice Chunk", "hash": "c7499fb8b0e46964", "src": "db2@1.60.1.70291"}
+{"id": 229057, "field": "name", "en": "Impounded Goods", "hash": "2e1c0873591d7616", "src": "db2@1.60.1.70291"}
+{"id": 229362, "field": "name", "en": "Storehouse Key", "hash": "bd8018d058aded18", "src": "db2@1.60.1.70291"}
+{"id": 229415, "field": "name", "en": "Survival Supplies", "hash": "c5311b28878a3a98", "src": "db2@1.60.1.70291"}
+{"id": 229415, "field": "description", "en": "Builds a foundation for a survival campsite. Bring additional supplies to this campsite to construct a shelter.", "hash": "ac130273fd850288", "src": "db2@1.60.1.70291"}
+{"id": 229416, "field": "name", "en": "Warm Fur", "hash": "8de5c43850d52645", "src": "db2@1.60.1.70291"}
+{"id": 229894, "field": "name", "en": "Dream Emerald", "hash": "a27dcc3dbf53d915", "src": "db2@1.60.1.70291"}
+{"id": 229894, "field": "description", "en": "Increase your reputation permanently with the Cenarion Circle.", "hash": "8f12afce553d0beb", "src": "db2@1.60.1.70291"}
+{"id": 229897, "field": "name", "en": "Scroll: Create Signet of Beckoning", "hash": "fc8271ab7e92f4a7", "src": "db2@1.60.1.70291"}
+{"id": 229897, "field": "description", "en": "Combine with 1 Dark Rune and 5 Firebloom to create a Signet of Beckoning: Fire.", "hash": "ae0da25f00878a22", "src": "db2@1.60.1.70291"}
+{"id": 229965, "field": "name", "en": "The Eye of Az'olgothal", "hash": "3880f800a376630e", "src": "db2@1.60.1.70291"}
+{"id": 229965, "field": "description", "en": "The final echoing orb seethes with fel energy. It's as if it knows you mean to end it, and it radiates a disdainful hatred towards you in kind.", "hash": "6565e01304021d46", "src": "db2@1.60.1.70291"}

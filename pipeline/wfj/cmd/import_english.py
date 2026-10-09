@@ -386,6 +386,29 @@ def _same_client(src: str, build: str) -> bool:
     return bool(theirs and ours and theirs.group(1) == ours.group(1))
 
 
+def _newer_client(src: str, build: str) -> bool:
+    """True when `src` was read from a newer game line than `build` (`1.60.…` over `1.15.…`)."""
+    theirs, ours = _VERSION.match(src.split("@", 1)[-1]), _VERSION.match(build)
+    if not (theirs and ours):
+        return False
+    return tuple(int(x) for x in theirs.group(1).split(".")) > tuple(int(x) for x in ours.group(1).split("."))
+
+
+def _answered_earlier(lines: Iterable[dict[str, Any]], build: str) -> set[Any]:
+    """The quests an earlier build of this client's cache answered: each stays that build's whole quest."""
+    return {ln["id"] for ln in lines if source_name(ln) == "wdb" and _same_client(str(ln["src"]), build)}
+
+
+def held_by_newer_cache(existing: Iterable[dict[str, Any]], build: str) -> set[Any]:
+    """The quests that hold English from a newer client's quest cache. An older client's cache leaves them
+    alone: what Forever served stays when a later Forever build does not answer the quest (ADR-050), and an
+    Era cache taking such a quest whole would replace or drop that English."""
+    return {
+        ln["id"] for ln in existing
+        if source_name(ln) == "wdb" and _newer_client(str(ln["src"]), build)
+    }
+
+
 def _restore_literals(recorded: str, stand_in: str, player: tuple[str, str] | None) -> str:
     """The collector writes the recording player's class and race as `$C` / `$R` wherever the words occur,
     so "a wise druid", recorded by a druid, comes back as "a wise $C". Where the stand-in has that player's
@@ -650,6 +673,25 @@ def take_answered_whole(lines: list[dict[str, Any]], answered: set[Any]) -> list
     ]
 
 
+def _print_cache_report(
+    src: str, cache: wdb.WdbCache, dry_run: bool, held: int, gone: int, same_build: bool, union: bool
+) -> None:
+    records = len(cache.quests) + len(cache.placeholders)
+    print(
+        f"english quest ({src}){' [dry run: nothing written]' if dry_run else ''}: {records} records · "
+        f"{len(cache.quests)} quests · {len(cache.placeholders)} placeholders dropped"
+    )
+    if held:
+        print(f"quests left to a newer client's English: {held}")
+    if gone:
+        how = "their English deleted, --allow-shrink"
+        if not same_build:
+            how = "earlier build; kept at that build's src" if union else (
+                "earlier build; they fall back to pfQuest"
+            )
+        print(f"quests with earlier wdb English not in this cache: {gone} ({how})")
+
+
 def run_wdb(a: argparse.Namespace) -> int:
     """Blizzard's cached quest text (ADR-020): title / objectives / description from the client's
     `questcache.wdb`, `src wdb@<build>`, plus each objective's own text as English type `objective` keyed by
@@ -679,20 +721,23 @@ def run_wdb(a: argparse.Namespace) -> int:
         raise ValueError(f"wdb: {path.name} is build {cache.build}, --build is {a.build}")
     questv2 = wago.read_ids(Path(a.questv2)) if a.questv2 else None
     src = f"wdb@{a.build}"
-    lines, area_lines, objective_lines = _wdb_lines(cache, src)
-    if not lines:
-        raise ValueError(f"wdb: {path.name} holds no quest text")
     store = Store(data_root(), english=True)
     existing = store.load("quest")
+    held = held_by_newer_cache(existing, a.build)
+    own = dataclasses.replace(cache, quests=[q for q in cache.quests if q.id not in held])
+    every = {q.id for q in cache.quests} | set(cache.placeholders)
+    lines, area_lines, objective_lines = _wdb_lines(own, src)
+    if not lines:
+        raise ValueError(f"wdb: {path.name} holds no quest text")
     before = {(ln["id"], ln["field"]): ln["hash"] for ln in existing}
-    cached = {q.id for q in cache.quests} | set(cache.placeholders)
-    gone, same_build = _check_shrink(existing, cached, src, path.name, a.allow_shrink)
+    cached = {q.id for q in own.quests} | (set(cache.placeholders) - held)
+    gone, same_build = _check_shrink(existing, every, src, path.name, a.allow_shrink)
     union = getattr(a, "merge", "replace") == "union"
     # what a client recorded in game outranks an older client's cache
     lines = _without_recorded(existing, lines)
     merged = merge_source("quest", existing, lines, "wdb", union, answered=set(cached))
     if union:
-        merged = take_answered_whole(merged, cached)
+        merged = take_answered_whole(merged, cached | _answered_earlier(merged, a.build))
     merged_objectives = _merge_objectives(store.load("objective"), objective_lines, union)
     gossip_lines = _wdb_keyed_lines(cache, src)
     merged_gossip, added_gossip = _add_keyed(store.load("gossip"), gossip_lines)
@@ -706,7 +751,7 @@ def run_wdb(a: argparse.Namespace) -> int:
         counts[AREA_TYPE][_change_kind(before_area, ln)] += 1
     unanswered: list[int] = []
     if questv2 is not None:
-        unanswered = sorted(questv2 - cached)
+        unanswered = sorted(questv2 - every)
         if a.missing and not a.dry_run:
             Path(a.missing).write_text("".join(f"{i}\n" for i in unanswered), encoding="utf-8")
     if not a.dry_run:
@@ -714,18 +759,7 @@ def run_wdb(a: argparse.Namespace) -> int:
         store.save("objective", merged_objectives, allow_empty=True)
         store.save(AREA_TYPE, merged_area, allow_empty=True)
         store.save("gossip", merged_gossip, allow_empty=True)
-    records = len(cache.quests) + len(cache.placeholders)
-    print(
-        f"english quest ({src}){' [dry run: nothing written]' if a.dry_run else ''}: {records} records · "
-        f"{len(cache.quests)} quests · {len(cache.placeholders)} placeholders dropped"
-    )
-    if gone:
-        how = "their English deleted, --allow-shrink"
-        if not same_build:
-            how = "earlier build; kept at that build's src" if union else (
-                "earlier build; they fall back to pfQuest"
-            )
-        print(f"quests with earlier wdb English not in this cache: {len(gone)} ({how})")
+    _print_cache_report(src, cache, a.dry_run, len(held & every), len(gone), same_build, union)
     print(f"{'field':12} {'same':>6} {'changed':>7} {'new':>6}")
     for f in (*WDB_FIELDS, AREA_TYPE):
         c = counts[f]
@@ -734,7 +768,7 @@ def run_wdb(a: argparse.Namespace) -> int:
     kinds = "conditional descriptions, completion logs"
     print(f"english gossip ({src}): {len(gossip_lines)} keyed texts ({kinds}), {added_gossip} new")
     if questv2 is not None:
-        _print_questv2(questv2, unanswered, cached, a.missing)
+        _print_questv2(questv2, unanswered, every, a.missing)
     return 0
 
 

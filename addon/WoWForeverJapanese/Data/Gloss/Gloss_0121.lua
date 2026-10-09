@@ -187,7 +187,6 @@ WFJ.Data.add("gloss", {
   [121184] = "言うこと\tいうこと\twhat (I) say",
   [121185] = "言うこと\tいうこと\twhat (it) says",
   [121186] = "言うこと\tいうこと\twords (what I say)",
-  [121187] = "言うとおり\tいうとおり\tas (he) claims",
   [121188] = "言うとおり\tいうとおり\texactly as (we) say",
   [121189] = "言うとおり\tいうとおり\tright (as he said)",
   [121190] = "言うなれば\tいうなれば\tas it were",

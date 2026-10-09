@@ -739,7 +739,6 @@ WFJ.Data.add("gloss", {
   [85736] = "教える\tおしえる\twill instruct you",
   [85737] = "教える\tおしえる\twill let (you) know",
   [85738] = "教える\tおしえる\twill probably tell (you)",
-  [85739] = "教える\tおしえる\twill reveal (tell)",
   [85740] = "教える\tおしえる\twill share (teach)",
   [85741] = "教える\tおしえる\twill show (teach)",
   [85742] = "教える\tおしえる\twill show (teach) (you)",

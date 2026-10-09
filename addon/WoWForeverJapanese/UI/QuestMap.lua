@@ -22,7 +22,9 @@
 -- The English comes from the quest API (C_QuestLog.GetSelectedQuest, GetTitleForQuestID, GetQuestLogQuestText,
 -- as the client's own QuestInfo reads it). A widget that does not show exactly that English is left alone (ADR-009).
 -- List and tracker titles also accept camelot's "[<level>(+)] " prefix and the tracker's difficulty colour, both
--- kept verbatim; any other decoration leaves the row English. Rows are keyed by quest ID, never position.
+-- kept verbatim, and the tracker's quest tag after the title (" (Elite)", " (Dungeon)", " (PvP)", " (Raid)"), shown
+-- in Japanese around a Japanese title; any other decoration leaves the row English. Rows are keyed by quest ID,
+-- never position.
 -- Everything is used by type: a name bound to a table degrades to untouched English.
 local _, WFJ = ...
 local QuestMap = {}
@@ -453,8 +455,9 @@ local function decorated(fs, prefix, suffix, jaSuffix, en)
   return a
 end
 
--- camelot's level prefix: "[" .. level .. ("+" for elite) .. "] " (list) or "[" .. level .. "] " (tracker). → the
--- prefix and the rest, or nil
+-- camelot's level prefix, "[" .. level .. ("+" for elite) .. "] ", on list and tracker titles alike
+-- (QuestUtilsOverrides.GetQuestTitlePrefix, blizzard_framexmlutil/camelot/questutilsoverrides.lua:6–9). → the prefix
+-- and the rest, or nil
 local function splitPrefix(text)
   if type(text) ~= "string" then return nil end
   local p = text:match("^%[%d+%+?%] ")
@@ -463,9 +466,36 @@ local function splitPrefix(text)
 end
 QuestMap.splitPrefix = splitPrefix
 
--- The decorations a title may carry around its API English, kept verbatim: camelot's level prefix, and the tracker's
--- difficulty colour wrap "|cAARRGGBB" .. title .. "|r" around it (SetQuestTitleLevelAndDifficultyColor with
--- showQuestDifficultyColor on: difficultyutil.lua:84–96). → prefix, suffix | nil (any other decoration)
+-- The quest tags camelot writes after a tracker title and in a list row's TagText, each as PARENS_TEMPLATE around
+-- one of these words [verified: blizzard_framexmlutil/camelot/questutilsoverrides.lua:20–35].
+QuestMap.TAG_KEYS = { "ELITE", "CALENDAR_TYPE_DUNGEON", "CALENDAR_TYPE_PVP", "RAID" }
+
+-- A tracker title's quest tag after its API English: `body` is en .. " " .. PARENS_TEMPLATE:format(<tag word>)
+-- (blizzard_questobjectivetracker.lua:300–306, camelot/blizzard_questobjectivetrackeroverride.lua:5–7). → the tag
+-- with its leading space, its Japanese (with the space) or nil when the dictionary has none | nil (no tag)
+local function questTag(body, en)
+  if #body <= #en + 1 or body:sub(1, #en + 1) ~= en .. " " then return nil end
+  local tail, parens = body:sub(#en + 2), Compat.resolve("PARENS_TEMPLATE")
+  if type(parens) ~= "string" or not parens:find("%s", 1, true) then return nil end
+  for _, k in ipairs(QuestMap.TAG_KEYS) do
+    local word = Compat.resolve(k)
+    if type(word) == "string" and word ~= "" and parens:format(word) == tail then
+      local ui = WFJ.UIIndex
+      local key, args
+      if ui then key, args = ui:matchOnly(tail, { "PARENS_TEMPLATE" }) end
+      local ja = key and ui:fill(ui.rows[key][1], args)
+      return " " .. tail, ja and (" " .. ja) or nil
+    end
+  end
+  return nil
+end
+
+-- The decorations a title may carry around its API English, kept verbatim: camelot's level prefix, the tracker's
+-- quest tag after the title (questTag; its Japanese around a Japanese title), and the tracker's difficulty colour
+-- wrap "|cAARRGGBB" .. title .. "|r" around them all (SetQuestTitleLevelAndDifficultyColor, which camelot gives the
+-- prefix always and the colour while showQuestDifficultyColor is on: difficultyutil.lua:84–99,
+-- blizzard_framexmlutil/camelot/questutilsoverrides.lua:6–18). → prefix, suffix[, jaSuffix] | nil (any other
+-- decoration)
 -- The quest-row wrappers with words of their own (the talk and quest windows, gossipframeshared.lua:27–39,
 -- questframe.lua): split around their "%s", with the dictionary's Japanese suffix. → prefix, suffix, jaSuffix | nil
 local WRAPPERS = { "TRIVIAL_QUEST_DISPLAY", "IGNORED_QUEST_DISPLAY" }
@@ -492,9 +522,12 @@ local function decoration(text, en)
   local color, inner = text:match("^(|c%x%x%x%x%x%x%x%x)(.*)|r$")
   local head, suffix = color or "", color and "|r" or ""
   inner = inner or text
-  if color and inner == en then return head, suffix end
   local p, rest = splitPrefix(inner)
-  if p and rest == en then return head .. p, suffix end
+  local body = p and rest or inner
+  head = head .. (p or "")
+  if body == en then return head, suffix end
+  local tag, jaTag = questTag(body, en)
+  if tag then return head, tag .. suffix, jaTag and (jaTag .. suffix) or nil end
   return nil
 end
 QuestMap.decoration = decoration
@@ -612,8 +645,9 @@ local function listTitleRefit(button)
   return fn
 end
 
--- camelot's elite tag: button.TagText holds PARENS_TEMPLATE:format(ELITE), its own FontString
--- (camelot/questmapframeoverrides.lua:19–21; mainline/questmapframe.lua:1833–1836). Only that template.
+-- camelot's quest tag: button.TagText holds QuestUtilsOverrides.GetQuestTagText, PARENS_TEMPLATE around ELITE,
+-- CALENDAR_TYPE_DUNGEON, CALENDAR_TYPE_PVP or RAID, in its own FontString (blizzard_framexmlutil/camelot/
+-- questutilsoverrides.lua:20–35; mainline/questmapframe.lua:1833–1836). Only that template.
 local TAG_ONLY = { only = { "PARENS_TEMPLATE" } }
 
 -- hooksecurefunc target on QuestLogQuests_Update: the client released every row and wrote the active ones; our

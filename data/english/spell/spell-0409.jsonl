@@ -1,181 +1,181 @@
-{"id": 409064, "field": "name", "en": "Rune Scrying", "hash": "fcd38cb9cae69aca", "src": "db2@1.60.1.70245"}
-{"id": 409073, "field": "name", "en": "Annihilation", "hash": "91985b4ccd620352", "src": "db2@1.60.1.70245"}
-{"id": 409073, "field": "description", "en": "Your melee attacks generate ${$409073m1/10} Rage.", "hash": "92c24d5db22af600", "src": "db2@1.60.1.70245"}
-{"id": 409075, "field": "name", "en": "Annihilation", "hash": "91985b4ccd620352", "src": "db2@1.60.1.70245"}
-{"id": 409076, "field": "name", "en": "Pain and Suffering", "hash": "8822de6daf4bdcf9", "src": "db2@1.60.1.70245"}
-{"id": 409163, "field": "name", "en": "Engrave Belt - Focused Rage", "hash": "7090361ce3267707", "src": "db2@1.60.1.70245"}
-{"id": 409163, "field": "description", "en": "Engrave your belt with the Focused Rage rune:\r\n\r\n$@spellicon29787\r\n$@spelldesc29787", "hash": "bd819656026002ce", "src": "db2@1.60.1.70245"}
-{"id": 409214, "field": "name", "en": "Tanking Elite", "hash": "1ff91e77b10bba96", "src": "db2@1.60.1.70245"}
-{"id": 409215, "field": "name", "en": "Tanking Elite", "hash": "1ff91e77b10bba96", "src": "db2@1.60.1.70245"}
-{"id": 409239, "field": "name", "en": "Fan of Knives", "hash": "4e308a0c5e4f29d4", "src": "db2@1.60.1.70245"}
-{"id": 409239, "field": "description", "en": "Instantly throw both weapons at all targets within $a1 yards, causing $s1% weapon damage.\r\n", "hash": "989dea5465b6a64d", "src": "db2@1.60.1.70245"}
-{"id": 409240, "field": "name", "en": "Fan of Knives", "hash": "4e308a0c5e4f29d4", "src": "db2@1.60.1.70245"}
-{"id": 409240, "field": "description", "en": "Instantly throw both weapons at all targets within $a1 yards, causing ${$m1*1.5}% weapon damage with daggers, and $s1% weapon damage with all other weapons.\r\n", "hash": "9f297d5b094bc7f0", "src": "db2@1.60.1.70245"}
-{"id": 409317, "field": "name", "en": "Strength of Soul", "hash": "4cba3dd0d52faedb", "src": "db2@1.60.1.70245"}
-{"id": 409324, "field": "name", "en": "Ancestral Guidance", "hash": "6271af15286dbf27", "src": "db2@1.60.1.70245"}
-{"id": 409324, "field": "description", "en": "For the next $d, $s1% of your damage is converted to healing on up to 3 nearby party members, and $s2% of your healing is converted to damage on your most recent Flame Shock target.", "hash": "a920f4c5ac888507", "src": "db2@1.60.1.70245"}
-{"id": 409324, "field": "aura", "en": "Damage converted to healing on nearby party members, and healing converted to damage on Flame Shock target.", "hash": "abc76e9a35fd505c", "src": "db2@1.60.1.70245"}
-{"id": 409333, "field": "name", "en": "Ancestral Guidance", "hash": "6271af15286dbf27", "src": "db2@1.60.1.70245"}
-{"id": 409333, "field": "description", "en": "For the next $409324d, $409324s1% of your damage is converted to healing on up to 3 nearby party members, and $409324s2% of your healing is converted to damage on your most recent Flame Shock target.", "hash": "ef18961357d6ce62", "src": "db2@1.60.1.70245"}
-{"id": 409337, "field": "name", "en": "Ancestral Guidance", "hash": "6271af15286dbf27", "src": "db2@1.60.1.70245"}
-{"id": 409337, "field": "description", "en": "For the next $409324d, $409324s1% of your damage is converted to healing on up to 3 nearby party members, and $409324s2% of your healing is converted to damage on your most recent Flame Shock target.", "hash": "ef18961357d6ce62", "src": "db2@1.60.1.70245"}
-{"id": 409365, "field": "name", "en": "Tamed Pet Passive (DND)", "hash": "7127429cf58bb8b7", "src": "db2@1.60.1.70245"}
-{"id": 409365, "field": "aura", "en": "Attack speed.", "hash": "62b8a59223d2bacd", "src": "db2@1.60.1.70245"}
-{"id": 409368, "field": "name", "en": "Beast Mastery", "hash": "b2999c0c9d26e9a1", "src": "db2@1.60.1.70245"}
-{"id": 409368, "field": "description", "en": "Your pet's damage and health are increased by $s1%, and its Focus regeneration by $s3%. In addition, your pet's Growl now also Taunts the target to attack it for $409372d.", "hash": "0e6fe86a1a8fdb9c", "src": "db2@1.60.1.70245"}
-{"id": 409372, "field": "name", "en": "Growl", "hash": "edb16dc984083904", "src": "db2@1.60.1.70245"}
-{"id": 409372, "field": "description", "en": "Taunts the target to attack you, but has no effect if the target is already attacking you.", "hash": "71de38fd4f83eb55", "src": "db2@1.60.1.70245"}
-{"id": 409372, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70245"}
-{"id": 409379, "field": "name", "en": "Kill Command", "hash": "cfbbd8ef39f83ad6", "src": "db2@1.60.1.70245"}
-{"id": 409379, "field": "description", "en": "Give the command to kill, increasing your pet's damage done from Claw and Bite by ${$409396M1*3}% for $409396d.  Each Claw or Bite done by the pet reduces the damage bonus by $409396s1%.", "hash": "912d6e1b23a4f80e", "src": "db2@1.60.1.70245"}
-{"id": 409396, "field": "name", "en": "Kill Command", "hash": "cfbbd8ef39f83ad6", "src": "db2@1.60.1.70245"}
-{"id": 409396, "field": "description", "en": "Give the command to kill, increasing your pet's damage done from Claw and Bite by ${$409396M1*3}% for $409396d.  Each Claw or Bite done by the pet reduces the damage bonus by $409396s1%.", "hash": "912d6e1b23a4f80e", "src": "db2@1.60.1.70245"}
-{"id": 409396, "field": "aura", "en": "Damage done by Claw and Bite increased by $s1%.", "hash": "ce50839005988982", "src": "db2@1.60.1.70245"}
-{"id": 409418, "field": "name", "en": "Kill Command", "hash": "cfbbd8ef39f83ad6", "src": "db2@1.60.1.70245"}
-{"id": 409418, "field": "description", "en": "Give the command to kill, increasing your pet's damage from Claw and Bite by ${$409396M1*3}% for $409396d.  Each Claw or Bite done by the pet reduces the damage bonus by $409396s1%.", "hash": "22bcaf5c0f91e529", "src": "db2@1.60.1.70245"}
-{"id": 409418, "field": "aura", "en": "Increases damage done by Claw and Bite by $409396s1%.", "hash": "952b882c0d25fca5", "src": "db2@1.60.1.70245"}
-{"id": 409423, "field": "name", "en": "Corpse Exploded", "hash": "66b1af8752385fdc", "src": "db2@1.60.1.70245"}
-{"id": 409428, "field": "name", "en": "Master Marksman", "hash": "4b66a0082c0f9383", "src": "db2@1.60.1.70245"}
-{"id": 409428, "field": "description", "en": "Increases your critical strike chance by $s1%, and reduces the Mana cost of all your Shot abilities by $s2%.", "hash": "2cf87e48bfb67f12", "src": "db2@1.60.1.70245"}
-{"id": 409433, "field": "name", "en": "Chimera Shot", "hash": "ec61085881cde0ba", "src": "db2@1.60.1.70245"}
-{"id": 409433, "field": "description", "en": "You deal $409433s3% weapon damage, refreshing the current Sting on your target and triggering an effect:\r\n\r\nSerpent Sting - Instantly deals $409493s1% of the damage done by your Serpent Sting.\r\n\r\nViper Sting - Instantly restores mana to you equal to $409494s1% of the total amount drained by your Viper Sting.\r\n\r\nScorpid Sting - Attempts to Disarm the target for $409495d. This effect cannot occur more than once per 1 minute.", "hash": "1ccad7e0beb08f58", "src": "db2@1.60.1.70245"}
-{"id": 409493, "field": "name", "en": "Chimera Shot - Serpent", "hash": "5835cab7b6cf72f3", "src": "db2@1.60.1.70245"}
-{"id": 409493, "field": "description", "en": "You deal $409433s3% weapon damage, refreshing the current Sting on your target and triggering an effect:\r\n\r\nSerpent Sting - Instantly deals $409493s1% of the damage done by your Serpent Sting.\r\n\r\nViper Sting - Instantly restores mana to you equal to $409494s1% of the total amount drained by your Viper Sting.\r\n\r\nScorpid Sting - Attempts to Disarm the target for $409495d. This effect cannot occur more than once per 1 minute.", "hash": "1ccad7e0beb08f58", "src": "db2@1.60.1.70245"}
-{"id": 409494, "field": "name", "en": "Chimera Shot - Viper", "hash": "ae6f4087fa73dab4", "src": "db2@1.60.1.70245"}
-{"id": 409494, "field": "description", "en": "You deal $409433s3% weapon damage, refreshing the current Sting on your target and triggering an effect:\r\n\r\nSerpent Sting - Instantly deals $409493s1% of the damage done by your Serpent Sting.\r\n\r\nViper Sting - Instantly restores mana to you equal to $409494s1% of the total amount drained by your Viper Sting.\r\n\r\nScorpid Sting - Attempts to Disarm the target for $409495d. This effect cannot occur more than once per 1 minute.", "hash": "1ccad7e0beb08f58", "src": "db2@1.60.1.70245"}
-{"id": 409495, "field": "name", "en": "Chimera Shot - Scorpid", "hash": "2ccb8a7ebd76d24f", "src": "db2@1.60.1.70245"}
-{"id": 409495, "field": "description", "en": "You deal $409433s3% weapon damage, refreshing the current Sting on your target and triggering an effect:\r\n\r\nSerpent Sting - Instantly deals $409493s1% of the damage done by your Serpent Sting.\r\n\r\nViper Sting - Instantly restores mana to you equal to $409494s1% of the total amount drained by your Viper Sting.\r\n\r\nScorpid Sting - Attempts to Disarm the target for $409495d. This effect cannot occur more than once per 1 minute.", "hash": "1ccad7e0beb08f58", "src": "db2@1.60.1.70245"}
-{"id": 409495, "field": "aura", "en": "Disarmed.", "hash": "98985eda7053879e", "src": "db2@1.60.1.70245"}
-{"id": 409504, "field": "name", "en": "Expose Weakness", "hash": "73df52b8d40747d4", "src": "db2@1.60.1.70245"}
-{"id": 409504, "field": "description", "en": "Your melee and ranged criticals increase your attack power by $409507s1% of your current Agility for $409507d.", "hash": "e5905d7e5a620434", "src": "db2@1.60.1.70245"}
-{"id": 409507, "field": "name", "en": "Expose Weakness", "hash": "73df52b8d40747d4", "src": "db2@1.60.1.70245"}
-{"id": 409507, "field": "description", "en": "Your ranged criticals increase your attack power by $409507s1% of your Agility for $409507d.", "hash": "e1757db043bef851", "src": "db2@1.60.1.70245"}
-{"id": 409507, "field": "aura", "en": "Attack Power increased by $w.", "hash": "44b5cb3338aeecbe", "src": "db2@1.60.1.70245"}
-{"id": 409580, "field": "name", "en": "Heart of the Lion", "hash": "cfe156df3d0b3183", "src": "db2@1.60.1.70245"}
-{"id": 409580, "field": "description", "en": "The hunter invokes the heart of a lion, increasing total stats by $409583s1% and Attack Power by $409583s2 for all nearby allies, and increasing total stats for the Hunter by an additional $409580s1%.", "hash": "da4d40c0107a0860", "src": "db2@1.60.1.70245"}
-{"id": 409580, "field": "aura", "en": "Increases Hunter's stats by $s1%.", "hash": "077a68f0620de935", "src": "db2@1.60.1.70245"}
-{"id": 409583, "field": "name", "en": "Heart of the Lion", "hash": "cfe156df3d0b3183", "src": "db2@1.60.1.70245"}
-{"id": 409583, "field": "description", "en": "The hunter invokes the heart of a lion, increasing total stats by $409583s1% for all nearby allies, and increasing total stats for the Hunter by an additional $409580s1%.", "hash": "35b31cc8c1cf897c", "src": "db2@1.60.1.70245"}
-{"id": 409583, "field": "aura", "en": "Increases stats by $s1% and Attack Power by $s2.", "hash": "b8d3cc6d3a075b37", "src": "db2@1.60.1.70245"}
-{"id": 409593, "field": "name", "en": "Kill Shot", "hash": "ad1ea0a5418cb698", "src": "db2@1.60.1.70245"}
-{"id": 409593, "field": "description", "en": "You attempt to finish off a wounded target, firing a ranged attack dealing $s2% weapon damage plus ${$m1/100*$m2/100*$<damagepower>}. Kill Shot has no minimum range. Kill Shot's cooldown is reset if used on an enemy that has 20% or less health.", "hash": "eae59b9640e5cae2", "src": "db2@1.60.1.70245"}
-{"id": 409687, "field": "name", "en": "Dual Wield Specialization", "hash": "42d34dcf2ff20d11", "src": "db2@1.60.1.70245"}
-{"id": 409687, "field": "description", "en": "Increases the damage done by your offhand weapon by $s1% and causes your Raptor Strike to strike with both weapons when you are dual-wielding.", "hash": "096cde57f929307d", "src": "db2@1.60.1.70245"}
-{"id": 409691, "field": "name", "en": "Raptor Strike", "hash": "a6b2f6a040e39000", "src": "db2@1.60.1.70245"}
-{"id": 409691, "field": "description", "en": "A strong attack that increases melee damage by $s1.", "hash": "ac0dc93d1f53b963", "src": "db2@1.60.1.70245"}
-{"id": 409693, "field": "name", "en": "Raptor Strike", "hash": "a6b2f6a040e39000", "src": "db2@1.60.1.70245"}
-{"id": 409693, "field": "description", "en": "A strong attack that increases melee damage by $s1.", "hash": "ac0dc93d1f53b963", "src": "db2@1.60.1.70245"}
-{"id": 409748, "field": "name", "en": "Raptor Strike", "hash": "a6b2f6a040e39000", "src": "db2@1.60.1.70245"}
-{"id": 409748, "field": "description", "en": "A strong attack that increases melee damage by $s1.", "hash": "ac0dc93d1f53b963", "src": "db2@1.60.1.70245"}
-{"id": 409750, "field": "name", "en": "Raptor Strike", "hash": "a6b2f6a040e39000", "src": "db2@1.60.1.70245"}
-{"id": 409750, "field": "description", "en": "A strong attack that increases melee damage by $s1.", "hash": "ac0dc93d1f53b963", "src": "db2@1.60.1.70245"}
-{"id": 409751, "field": "name", "en": "Raptor Strike", "hash": "a6b2f6a040e39000", "src": "db2@1.60.1.70245"}
-{"id": 409751, "field": "description", "en": "A strong attack that increases melee damage by $s1.", "hash": "ac0dc93d1f53b963", "src": "db2@1.60.1.70245"}
-{"id": 409752, "field": "name", "en": "Raptor Strike", "hash": "a6b2f6a040e39000", "src": "db2@1.60.1.70245"}
-{"id": 409752, "field": "description", "en": "A strong attack that increases melee damage by $s1.", "hash": "ac0dc93d1f53b963", "src": "db2@1.60.1.70245"}
-{"id": 409754, "field": "name", "en": "Raptor Strike", "hash": "a6b2f6a040e39000", "src": "db2@1.60.1.70245"}
-{"id": 409754, "field": "description", "en": "A strong attack that increases melee damage by $s1.", "hash": "ac0dc93d1f53b963", "src": "db2@1.60.1.70245"}
-{"id": 409755, "field": "name", "en": "Raptor Strike", "hash": "a6b2f6a040e39000", "src": "db2@1.60.1.70245"}
-{"id": 409755, "field": "description", "en": "A strong attack that increases melee damage by $s1.", "hash": "ac0dc93d1f53b963", "src": "db2@1.60.1.70245"}
-{"id": 409805, "field": "name", "en": "Wild Strikes", "hash": "8f408115a28a9b66", "src": "db2@1.60.1.70245"}
-{"id": 409805, "field": "description", "en": "Gain the Wild Strikes ability:\r\n\r\n$@spellicon407977\r\n$@spelldesc407977", "hash": "788aa8b125ad3b3a", "src": "db2@1.60.1.70245"}
-{"id": 409809, "field": "name", "en": "Survival Instincts", "hash": "45565dc8f2b7d82f", "src": "db2@1.60.1.70245"}
-{"id": 409809, "field": "description", "en": "Gain the Survival Instincts ability:\r\n\r\n$@spellicon408024\r\n$@spelldesc408024", "hash": "073a0328acfd6455", "src": "db2@1.60.1.70245"}
-{"id": 409810, "field": "name", "en": "Wild Growth", "hash": "30b5dec6664d133b", "src": "db2@1.60.1.70245"}
-{"id": 409810, "field": "description", "en": "Gain the Wild Growth ability:\r\n\r\n$@spellicon408120\r\n$@spelldesc408120", "hash": "1229731d32d8b68a", "src": "db2@1.60.1.70245"}
-{"id": 409813, "field": "name", "en": "Eclipse", "hash": "6e4bc030610fce1a", "src": "db2@1.60.1.70245"}
-{"id": 409813, "field": "description", "en": "Gain the Eclipse ability:\r\n\r\n$@spellicon408248\r\n$@spelldesc408248", "hash": "2e5d5870e2e61955", "src": "db2@1.60.1.70245"}
-{"id": 409819, "field": "name", "en": "Savage Roar", "hash": "646375ddefb9ef8a", "src": "db2@1.60.1.70245"}
-{"id": 409819, "field": "description", "en": "Gain the Savage Roar ability:\r\n\r\n$@spellicon407988\r\n$@spelldesc407988", "hash": "b2ad9246fafd07fd", "src": "db2@1.60.1.70245"}
-{"id": 409824, "field": "name", "en": "Lifebloom", "hash": "394ab18f51adbe7a", "src": "db2@1.60.1.70245"}
-{"id": 409824, "field": "description", "en": "Reduces the global cooldown on your  Rejuvenation and Lifebloom abilities by ${$m2/-1000}.1 sec and you gain the Lifebloom ability:\r\n\r\n$@spellicon408124\r\n$@spelldesc408124", "hash": "2e4374dce410cf31", "src": "db2@1.60.1.70245"}
-{"id": 409826, "field": "name", "en": "Nature's Fury", "hash": "8e4743d3f2e84977", "src": "db2@1.60.1.70245"}
-{"id": 409826, "field": "description", "en": "Gain the Nature's Fury ability:\r\n\r\n$@spellicon408307\r\n$@spelldesc408307", "hash": "7b50d5d3384e4990", "src": "db2@1.60.1.70245"}
-{"id": 409828, "field": "name", "en": "Mangle", "hash": "5c555ccc58de05ab", "src": "db2@1.60.1.70245"}
-{"id": 409828, "field": "description", "en": "Gain the Mangle (Bear) ability and replace your Claw ability with Mangle (Cat). This ability benefits from and triggers all effects associated with Claw and Maul.\r\n\r\n$@spellicon407995\r\n$@spelldesc407995\r\n\r\n$@spellicon407993\r\n$@spelldesc407993\r\n", "hash": "b666e2ecb113f7aa", "src": "db2@1.60.1.70245"}
-{"id": 409830, "field": "name", "en": "Nourish", "hash": "31f5e33ce8eb3a95", "src": "db2@1.60.1.70245"}
-{"id": 409830, "field": "description", "en": "Gain the Nourish ability:\r\n\r\n$@spellicon408247\r\n$@spelldesc408247\r\n", "hash": "2ef6e8ebf8599dcb", "src": "db2@1.60.1.70245"}
-{"id": 409831, "field": "name", "en": "Dreamstate", "hash": "274747de7b5a7bd8", "src": "db2@1.60.1.70245"}
-{"id": 409831, "field": "description", "en": "Gain the Dreamstate ability:\r\n\r\n$@spellicon408258\r\n$@spelldesc408258\r\n", "hash": "c097fe72696dc318", "src": "db2@1.60.1.70245"}
-{"id": 409832, "field": "name", "en": "Fury of Stormrage", "hash": "663ba766e5e3f44d", "src": "db2@1.60.1.70245"}
-{"id": 409832, "field": "description", "en": "Gain the Fury of Stormrage ability:\r\n\r\n$@spellicon414799\r\n$@spelldesc414799\r\n", "hash": "58a6d63beabd6031", "src": "db2@1.60.1.70245"}
-{"id": 409856, "field": "name", "en": "Spirit Ritual", "hash": "48ba28825acdb470", "src": "db2@1.60.1.70245"}
-{"id": 409856, "field": "description", "en": "Begins a ritual to free the spirit of a fallen adventurer.", "hash": "1348cc33ac0eda4d", "src": "db2@1.60.1.70245"}
-{"id": 409858, "field": "name", "en": "Dummy Trigger", "hash": "67c685565244c5b4", "src": "db2@1.60.1.70245"}
-{"id": 409906, "field": "name", "en": "Beacon of Light", "hash": "2d9fc86bee3e8074", "src": "db2@1.60.1.70245"}
-{"id": 409906, "field": "description", "en": "Gain the Beacon of Light ability:\r\n\r\n$@spellicon407613\r\n$@spelldesc407613", "hash": "fcbfb300350b5b48", "src": "db2@1.60.1.70245"}
-{"id": 409911, "field": "name", "en": "Hand of Reckoning", "hash": "06f9da32845f190a", "src": "db2@1.60.1.70245"}
-{"id": 409911, "field": "description", "en": "Gain the Hand of Reckoning ability:\r\n\r\n$@spellicon407631\r\n$@spelldesc407631", "hash": "a58991653b641604", "src": "db2@1.60.1.70245"}
-{"id": 409914, "field": "name", "en": "Crusader Strike", "hash": "803d227f2d23d8b5", "src": "db2@1.60.1.70245"}
-{"id": 409914, "field": "description", "en": "Gain the Crusader Strike ability:\r\n\r\n$@spellicon407676\r\n$@spelldesc407676", "hash": "1ebb9178c61ea8c7", "src": "db2@1.60.1.70245"}
-{"id": 409918, "field": "name", "en": "Inspiration (Judgement)", "hash": "14a4747b96348b44", "src": "db2@1.60.1.70245"}
-{"id": 409918, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70245"}
-{"id": 409920, "field": "name", "en": "Learn Relic (Judgement)", "hash": "45c532db1a83885f", "src": "db2@1.60.1.70245"}
-{"id": 409922, "field": "name", "en": "Hammer of the Righteous", "hash": "ce55d57c86491fe3", "src": "db2@1.60.1.70245"}
-{"id": 409922, "field": "description", "en": "Gain the Hammer of the Righteous ability:\r\n\r\n$@spellicon407632\r\n$@spelldesc407632", "hash": "41bcfc78f93d3fc6", "src": "db2@1.60.1.70245"}
-{"id": 409924, "field": "name", "en": "Divine Storm", "hash": "14867f1b18968428", "src": "db2@1.60.1.70245"}
-{"id": 409924, "field": "description", "en": "Gain the Divine Storm ability:\r\n\r\n$@spellicon407778\r\n$@spelldesc407778", "hash": "1d2c193482319029", "src": "db2@1.60.1.70245"}
-{"id": 409925, "field": "name", "en": "Divine Light", "hash": "982b0fd7ccf22ea5", "src": "db2@1.60.1.70245"}
-{"id": 409925, "field": "description", "en": "Gain the Divine Light ability:\r\n\r\n$@spellicon458856\r\n$@spelldesc458856", "hash": "bbe5ffddd8ceed17", "src": "db2@1.60.1.70245"}
-{"id": 409930, "field": "name", "en": "Libram of Judgement", "hash": "8730e86247a34998", "src": "db2@1.60.1.70245"}
-{"id": 409930, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70245"}
-{"id": 409932, "field": "name", "en": "Aura Mastery", "hash": "15b18362073eecab", "src": "db2@1.60.1.70245"}
-{"id": 409932, "field": "description", "en": "Gain the Aura Mastery ability:\r\n\r\n$@spellicon407624\r\n$@spelldesc407624", "hash": "1795076255fb15c5", "src": "db2@1.60.1.70245"}
-{"id": 409933, "field": "name", "en": "Avenger's Shield", "hash": "ab886431f95fd75a", "src": "db2@1.60.1.70245"}
-{"id": 409933, "field": "description", "en": "Gain the Avenger's Shield ability:\r\n\r\n$@spellicon407669\r\n$@spelldesc407669", "hash": "10b3795b59d0db95", "src": "db2@1.60.1.70245"}
-{"id": 409934, "field": "name", "en": "Avenging Wrath", "hash": "e9d5e46cb552a935", "src": "db2@1.60.1.70245"}
-{"id": 409934, "field": "description", "en": "Gain the Avenging Wrath ability:\r\n\r\n$@spellicon407788\r\n$@spelldesc407788", "hash": "212557555c799b55", "src": "db2@1.60.1.70245"}
-{"id": 409935, "field": "name", "en": "Hand of Sacrifice", "hash": "be8311142dc54d12", "src": "db2@1.60.1.70245"}
-{"id": 409935, "field": "description", "en": "Gain the Hand of Sacrifice ability:\r\n\r\n$@spellicon462853\r\n$@spelldesc462853", "hash": "043ae106e6cbc7c5", "src": "db2@1.60.1.70245"}
-{"id": 409936, "field": "name", "en": "Inspiration Exemplar", "hash": "257175f0dcd0c6ba", "src": "db2@1.60.1.70245"}
-{"id": 409936, "field": "description", "en": "Gain the Inspiration Exemplar\r\n ability:\r\n\r\n$@spellicon407880\r\n$@spelldesc407880", "hash": "338ec99b5b5c788a", "src": "db2@1.60.1.70245"}
-{"id": 409938, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70245"}
-{"id": 409938, "field": "description", "en": "Gain the Fire Nova ability, replacing your Fire Nova Totem:\r\n\r\n$@spellicon408339\r\n$@spelldesc408339", "hash": "ac6b1f14bd3aa5ef", "src": "db2@1.60.1.70245"}
-{"id": 409940, "field": "name", "en": "Dual Wield Specialization", "hash": "42d34dcf2ff20d11", "src": "db2@1.60.1.70245"}
-{"id": 409940, "field": "description", "en": "Gain the Dual Wield Specialization ability:\r\n\r\n$@spellicon408496\r\n$@spelldesc408496", "hash": "93277d64558ea75f", "src": "db2@1.60.1.70245"}
-{"id": 409941, "field": "name", "en": "Water Shield", "hash": "7954b66392d2a477", "src": "db2@1.60.1.70245"}
-{"id": 409941, "field": "description", "en": "Gain the Water Shield ability:\r\n\r\n$@spellicon408510\r\n$@spelldesc408510", "hash": "5c50298df486cd6b", "src": "db2@1.60.1.70245"}
-{"id": 409943, "field": "name", "en": "Shield Mastery", "hash": "5e7eedf979fc4ac6", "src": "db2@1.60.1.70245"}
-{"id": 409943, "field": "description", "en": "Gain the Shield Mastery ability:\r\n\r\n$@spellicon408524\r\n$@spelldesc408524", "hash": "d79394439a787741", "src": "db2@1.60.1.70245"}
-{"id": 409944, "field": "name", "en": "Ancestral Guidance", "hash": "6271af15286dbf27", "src": "db2@1.60.1.70245"}
-{"id": 409944, "field": "description", "en": "Gain the Ancestral Guidance ability:\r\n\r\n$@spellicon409324\r\n$@spelldesc409324", "hash": "0da0019e3ec9d2c7", "src": "db2@1.60.1.70245"}
-{"id": 409945, "field": "name", "en": "Overload", "hash": "4148ce417f1adc4b", "src": "db2@1.60.1.70245"}
-{"id": 409945, "field": "description", "en": "Gain the Overload ability:\r\n\r\n$@spellicon408438\r\n$@spelldesc408438", "hash": "7b4659a88d7ed3b5", "src": "db2@1.60.1.70245"}
-{"id": 409946, "field": "name", "en": "Maelstrom Weapon", "hash": "34a909cc36a0eb49", "src": "db2@1.60.1.70245"}
-{"id": 409946, "field": "description", "en": "Gain the Maelstrom Weapon ability:\r\n\r\n$@spellicon408498\r\n$@spelldesc408498", "hash": "f6dd7ebb76cca8d5", "src": "db2@1.60.1.70245"}
-{"id": 409947, "field": "name", "en": "Earth Shield", "hash": "8e71dcc8bee56627", "src": "db2@1.60.1.70245"}
-{"id": 409947, "field": "description", "en": "Gain the Earth Shield ability:\r\n\r\n$@spellicon408514\r\n$@spelldesc408514", "hash": "745da8e212cd4492", "src": "db2@1.60.1.70245"}
-{"id": 409951, "field": "name", "en": "Spirit of the Alpha", "hash": "f3f8178e0c3b11af", "src": "db2@1.60.1.70245"}
-{"id": 409951, "field": "description", "en": "Gain the Spirit of the Alpha ability:\r\n\r\n$@spellicon408696\r\n$@spelldesc408696", "hash": "956796877fc14403", "src": "db2@1.60.1.70245"}
-{"id": 409952, "field": "name", "en": "Lava Burst", "hash": "444a2bbd50295ec5", "src": "db2@1.60.1.70245"}
-{"id": 409952, "field": "description", "en": "Gain the Lava Burst ability:\r\n\r\n$@spellicon408490\r\n$@spelldesc408490", "hash": "939400848a3729f1", "src": "db2@1.60.1.70245"}
-{"id": 409953, "field": "name", "en": "Lava Lash", "hash": "50023d7d5ca1a5e4", "src": "db2@1.60.1.70245"}
-{"id": 409953, "field": "description", "en": "Gain the Lava Lash ability:\r\n\r\n$@spellicon408507\r\n$@spelldesc408507", "hash": "b4d0dacb957dde94", "src": "db2@1.60.1.70245"}
-{"id": 409954, "field": "name", "en": "Riptide", "hash": "c826ecbb16451f60", "src": "db2@1.60.1.70245"}
-{"id": 409954, "field": "description", "en": "Gain the Riptide ability:\r\n\r\n$@spellicon408521\r\n$@spelldesc408521", "hash": "16fbb03721338b0a", "src": "db2@1.60.1.70245"}
-{"id": 409955, "field": "name", "en": "Way of Earth", "hash": "213a472ce88732d2", "src": "db2@1.60.1.70245"}
-{"id": 409955, "field": "description", "en": "Gain the Way of Earth ability:\r\n\r\n$@spellicon408531\r\n$@spelldesc408531", "hash": "4f96cd74456b193c", "src": "db2@1.60.1.70245"}
-{"id": 409957, "field": "name", "en": "Steady Shot", "hash": "18530574e04019f9", "src": "db2@1.60.1.70245"}
-{"id": 409957, "field": "description", "en": "Gain the Steady Shot ability:\r\n\r\n$@spellicon437123\r\n$@spelldesc437123", "hash": "2697bd4f2290ac20", "src": "db2@1.60.1.70245"}
-{"id": 409958, "field": "name", "en": "Master Marksman", "hash": "4b66a0082c0f9383", "src": "db2@1.60.1.70245"}
-{"id": 409958, "field": "description", "en": "Gain the Master Marksman ability:\r\n\r\n$@spellicon409428\r\n$@spelldesc409428", "hash": "dadd56b2bd078b3a", "src": "db2@1.60.1.70245"}
-{"id": 409959, "field": "name", "en": "Expose Weakness", "hash": "73df52b8d40747d4", "src": "db2@1.60.1.70245"}
-{"id": 409959, "field": "description", "en": "Gain the Expose Weakness ability:\r\n\r\n$@spellicon409504\r\n$@spelldesc409504", "hash": "3b41ea3547de1154", "src": "db2@1.60.1.70245"}
-{"id": 409960, "field": "name", "en": "Cobra Slayer", "hash": "b02c0309970530cb", "src": "db2@1.60.1.70245"}
-{"id": 409960, "field": "description", "en": "Gain the Cobra Slayer ability:\r\n\r\n$@spellicon458393\r\n$@spelldesc458393", "hash": "9c1a661ada9736a5", "src": "db2@1.60.1.70245"}
-{"id": 409961, "field": "name", "en": "Dual Wield Specialization", "hash": "42d34dcf2ff20d11", "src": "db2@1.60.1.70245"}
-{"id": 409961, "field": "description", "en": "Gain the Dual Wield Specialist ability:\r\n\r\n$@spellicon409687\r\n$@spelldesc409687", "hash": "7bbfdf06280c7bba", "src": "db2@1.60.1.70245"}
-{"id": 409962, "field": "name", "en": "Beast Mastery", "hash": "b2999c0c9d26e9a1", "src": "db2@1.60.1.70245"}
-{"id": 409962, "field": "description", "en": "Gain the Beast Mastery ability:\r\n\r\n$@spellicon409368\r\n$@spelldesc409368", "hash": "9b4757cccf92e447", "src": "db2@1.60.1.70245"}
-{"id": 409963, "field": "name", "en": "Summon Spirit", "hash": "2e748564dfd5e3ec", "src": "db2@1.60.1.70245"}
-{"id": 409968, "field": "name", "en": "Trap Launcher", "hash": "2cb3ae7989797656", "src": "db2@1.60.1.70245"}
-{"id": 409968, "field": "description", "en": "Gain the Trap Launcher ability:\r\n\r\n$@spellicon409541\r\n$@spelldesc409541", "hash": "ffc0d9b28f888864", "src": "db2@1.60.1.70245"}
-{"id": 409974, "field": "name", "en": "Kill Shot", "hash": "ad1ea0a5418cb698", "src": "db2@1.60.1.70245"}
-{"id": 409974, "field": "description", "en": "Gain the Kill Shot ability:\r\n\r\n$@spellicon409593\r\n$@spelldesc409593", "hash": "f8c116e825209c6d", "src": "db2@1.60.1.70245"}
-{"id": 409976, "field": "name", "en": "Chimera Shot", "hash": "ec61085881cde0ba", "src": "db2@1.60.1.70245"}
-{"id": 409976, "field": "description", "en": "Gain the Chimera Shot ability:\r\n\r\n$@spellicon409433\r\n$@spelldesc409433", "hash": "5f9d939bb8c04230", "src": "db2@1.60.1.70245"}
-{"id": 409979, "field": "name", "en": "Lone Wolf", "hash": "222ff87cacdc49eb", "src": "db2@1.60.1.70245"}
-{"id": 409979, "field": "description", "en": "Gain the Lone Wolf ability:\r\n\r\n$@spellicon415370\r\n$@spelldesc415370", "hash": "14ffc98e33183071", "src": "db2@1.60.1.70245"}
-{"id": 409988, "field": "name", "en": "Force Player Cast Delayed Banish", "hash": "00b7a30531cf1e94", "src": "db2@1.60.1.70245"}
-{"id": 409999, "field": "name", "en": "Engrave Gloves - Beacon of Light", "hash": "69c5f51d6100199f", "src": "db2@1.60.1.70245"}
-{"id": 409999, "field": "description", "en": "Engrave your gloves with the Beacon of Light rune:\r\n\r\n$@spellicon407613\r\n$@spelldesc407613", "hash": "2783cf0a0e90c3c8", "src": "db2@1.60.1.70245"}
+{"id": 409064, "field": "name", "en": "Rune Scrying", "hash": "fcd38cb9cae69aca", "src": "db2@1.60.1.70291"}
+{"id": 409073, "field": "name", "en": "Annihilation", "hash": "91985b4ccd620352", "src": "db2@1.60.1.70291"}
+{"id": 409073, "field": "description", "en": "Your melee attacks generate ${$409073m1/10} Rage.", "hash": "92c24d5db22af600", "src": "db2@1.60.1.70291"}
+{"id": 409075, "field": "name", "en": "Annihilation", "hash": "91985b4ccd620352", "src": "db2@1.60.1.70291"}
+{"id": 409076, "field": "name", "en": "Pain and Suffering", "hash": "8822de6daf4bdcf9", "src": "db2@1.60.1.70291"}
+{"id": 409163, "field": "name", "en": "Engrave Belt - Focused Rage", "hash": "7090361ce3267707", "src": "db2@1.60.1.70291"}
+{"id": 409163, "field": "description", "en": "Engrave your belt with the Focused Rage rune:\r\n\r\n$@spellicon29787\r\n$@spelldesc29787", "hash": "bd819656026002ce", "src": "db2@1.60.1.70291"}
+{"id": 409214, "field": "name", "en": "Tanking Elite", "hash": "1ff91e77b10bba96", "src": "db2@1.60.1.70291"}
+{"id": 409215, "field": "name", "en": "Tanking Elite", "hash": "1ff91e77b10bba96", "src": "db2@1.60.1.70291"}
+{"id": 409239, "field": "name", "en": "Fan of Knives", "hash": "4e308a0c5e4f29d4", "src": "db2@1.60.1.70291"}
+{"id": 409239, "field": "description", "en": "Instantly throw both weapons at all targets within $a1 yards, causing $s1% weapon damage.\r\n", "hash": "989dea5465b6a64d", "src": "db2@1.60.1.70291"}
+{"id": 409240, "field": "name", "en": "Fan of Knives", "hash": "4e308a0c5e4f29d4", "src": "db2@1.60.1.70291"}
+{"id": 409240, "field": "description", "en": "Instantly throw both weapons at all targets within $a1 yards, causing ${$m1*1.5}% weapon damage with daggers, and $s1% weapon damage with all other weapons.\r\n", "hash": "9f297d5b094bc7f0", "src": "db2@1.60.1.70291"}
+{"id": 409317, "field": "name", "en": "Strength of Soul", "hash": "4cba3dd0d52faedb", "src": "db2@1.60.1.70291"}
+{"id": 409324, "field": "name", "en": "Ancestral Guidance", "hash": "6271af15286dbf27", "src": "db2@1.60.1.70291"}
+{"id": 409324, "field": "description", "en": "For the next $d, $s1% of your damage is converted to healing on up to 3 nearby party members, and $s2% of your healing is converted to damage on your most recent Flame Shock target.", "hash": "a920f4c5ac888507", "src": "db2@1.60.1.70291"}
+{"id": 409324, "field": "aura", "en": "Damage converted to healing on nearby party members, and healing converted to damage on Flame Shock target.", "hash": "abc76e9a35fd505c", "src": "db2@1.60.1.70291"}
+{"id": 409333, "field": "name", "en": "Ancestral Guidance", "hash": "6271af15286dbf27", "src": "db2@1.60.1.70291"}
+{"id": 409333, "field": "description", "en": "For the next $409324d, $409324s1% of your damage is converted to healing on up to 3 nearby party members, and $409324s2% of your healing is converted to damage on your most recent Flame Shock target.", "hash": "ef18961357d6ce62", "src": "db2@1.60.1.70291"}
+{"id": 409337, "field": "name", "en": "Ancestral Guidance", "hash": "6271af15286dbf27", "src": "db2@1.60.1.70291"}
+{"id": 409337, "field": "description", "en": "For the next $409324d, $409324s1% of your damage is converted to healing on up to 3 nearby party members, and $409324s2% of your healing is converted to damage on your most recent Flame Shock target.", "hash": "ef18961357d6ce62", "src": "db2@1.60.1.70291"}
+{"id": 409365, "field": "name", "en": "Tamed Pet Passive (DND)", "hash": "7127429cf58bb8b7", "src": "db2@1.60.1.70291"}
+{"id": 409365, "field": "aura", "en": "Attack speed.", "hash": "62b8a59223d2bacd", "src": "db2@1.60.1.70291"}
+{"id": 409368, "field": "name", "en": "Beast Mastery", "hash": "b2999c0c9d26e9a1", "src": "db2@1.60.1.70291"}
+{"id": 409368, "field": "description", "en": "Your pet's damage and health are increased by $s1%, and its Focus regeneration by $s3%. In addition, your pet's Growl now also Taunts the target to attack it for $409372d.", "hash": "0e6fe86a1a8fdb9c", "src": "db2@1.60.1.70291"}
+{"id": 409372, "field": "name", "en": "Growl", "hash": "edb16dc984083904", "src": "db2@1.60.1.70291"}
+{"id": 409372, "field": "description", "en": "Taunts the target to attack you, but has no effect if the target is already attacking you.", "hash": "71de38fd4f83eb55", "src": "db2@1.60.1.70291"}
+{"id": 409372, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70291"}
+{"id": 409379, "field": "name", "en": "Kill Command", "hash": "cfbbd8ef39f83ad6", "src": "db2@1.60.1.70291"}
+{"id": 409379, "field": "description", "en": "Give the command to kill, increasing your pet's damage done from Claw and Bite by ${$409396M1*3}% for $409396d.  Each Claw or Bite done by the pet reduces the damage bonus by $409396s1%.", "hash": "912d6e1b23a4f80e", "src": "db2@1.60.1.70291"}
+{"id": 409396, "field": "name", "en": "Kill Command", "hash": "cfbbd8ef39f83ad6", "src": "db2@1.60.1.70291"}
+{"id": 409396, "field": "description", "en": "Give the command to kill, increasing your pet's damage done from Claw and Bite by ${$409396M1*3}% for $409396d.  Each Claw or Bite done by the pet reduces the damage bonus by $409396s1%.", "hash": "912d6e1b23a4f80e", "src": "db2@1.60.1.70291"}
+{"id": 409396, "field": "aura", "en": "Damage done by Claw and Bite increased by $s1%.", "hash": "ce50839005988982", "src": "db2@1.60.1.70291"}
+{"id": 409418, "field": "name", "en": "Kill Command", "hash": "cfbbd8ef39f83ad6", "src": "db2@1.60.1.70291"}
+{"id": 409418, "field": "description", "en": "Give the command to kill, increasing your pet's damage from Claw and Bite by ${$409396M1*3}% for $409396d.  Each Claw or Bite done by the pet reduces the damage bonus by $409396s1%.", "hash": "22bcaf5c0f91e529", "src": "db2@1.60.1.70291"}
+{"id": 409418, "field": "aura", "en": "Increases damage done by Claw and Bite by $409396s1%.", "hash": "952b882c0d25fca5", "src": "db2@1.60.1.70291"}
+{"id": 409423, "field": "name", "en": "Corpse Exploded", "hash": "66b1af8752385fdc", "src": "db2@1.60.1.70291"}
+{"id": 409428, "field": "name", "en": "Master Marksman", "hash": "4b66a0082c0f9383", "src": "db2@1.60.1.70291"}
+{"id": 409428, "field": "description", "en": "Increases your critical strike chance by $s1%, and reduces the Mana cost of all your Shot abilities by $s2%.", "hash": "2cf87e48bfb67f12", "src": "db2@1.60.1.70291"}
+{"id": 409433, "field": "name", "en": "Chimera Shot", "hash": "ec61085881cde0ba", "src": "db2@1.60.1.70291"}
+{"id": 409433, "field": "description", "en": "You deal $409433s3% weapon damage, refreshing the current Sting on your target and triggering an effect:\r\n\r\nSerpent Sting - Instantly deals $409493s1% of the damage done by your Serpent Sting.\r\n\r\nViper Sting - Instantly restores mana to you equal to $409494s1% of the total amount drained by your Viper Sting.\r\n\r\nScorpid Sting - Attempts to Disarm the target for $409495d. This effect cannot occur more than once per 1 minute.", "hash": "1ccad7e0beb08f58", "src": "db2@1.60.1.70291"}
+{"id": 409493, "field": "name", "en": "Chimera Shot - Serpent", "hash": "5835cab7b6cf72f3", "src": "db2@1.60.1.70291"}
+{"id": 409493, "field": "description", "en": "You deal $409433s3% weapon damage, refreshing the current Sting on your target and triggering an effect:\r\n\r\nSerpent Sting - Instantly deals $409493s1% of the damage done by your Serpent Sting.\r\n\r\nViper Sting - Instantly restores mana to you equal to $409494s1% of the total amount drained by your Viper Sting.\r\n\r\nScorpid Sting - Attempts to Disarm the target for $409495d. This effect cannot occur more than once per 1 minute.", "hash": "1ccad7e0beb08f58", "src": "db2@1.60.1.70291"}
+{"id": 409494, "field": "name", "en": "Chimera Shot - Viper", "hash": "ae6f4087fa73dab4", "src": "db2@1.60.1.70291"}
+{"id": 409494, "field": "description", "en": "You deal $409433s3% weapon damage, refreshing the current Sting on your target and triggering an effect:\r\n\r\nSerpent Sting - Instantly deals $409493s1% of the damage done by your Serpent Sting.\r\n\r\nViper Sting - Instantly restores mana to you equal to $409494s1% of the total amount drained by your Viper Sting.\r\n\r\nScorpid Sting - Attempts to Disarm the target for $409495d. This effect cannot occur more than once per 1 minute.", "hash": "1ccad7e0beb08f58", "src": "db2@1.60.1.70291"}
+{"id": 409495, "field": "name", "en": "Chimera Shot - Scorpid", "hash": "2ccb8a7ebd76d24f", "src": "db2@1.60.1.70291"}
+{"id": 409495, "field": "description", "en": "You deal $409433s3% weapon damage, refreshing the current Sting on your target and triggering an effect:\r\n\r\nSerpent Sting - Instantly deals $409493s1% of the damage done by your Serpent Sting.\r\n\r\nViper Sting - Instantly restores mana to you equal to $409494s1% of the total amount drained by your Viper Sting.\r\n\r\nScorpid Sting - Attempts to Disarm the target for $409495d. This effect cannot occur more than once per 1 minute.", "hash": "1ccad7e0beb08f58", "src": "db2@1.60.1.70291"}
+{"id": 409495, "field": "aura", "en": "Disarmed.", "hash": "98985eda7053879e", "src": "db2@1.60.1.70291"}
+{"id": 409504, "field": "name", "en": "Expose Weakness", "hash": "73df52b8d40747d4", "src": "db2@1.60.1.70291"}
+{"id": 409504, "field": "description", "en": "Your melee and ranged criticals increase your attack power by $409507s1% of your current Agility for $409507d.", "hash": "e5905d7e5a620434", "src": "db2@1.60.1.70291"}
+{"id": 409507, "field": "name", "en": "Expose Weakness", "hash": "73df52b8d40747d4", "src": "db2@1.60.1.70291"}
+{"id": 409507, "field": "description", "en": "Your ranged criticals increase your attack power by $409507s1% of your Agility for $409507d.", "hash": "e1757db043bef851", "src": "db2@1.60.1.70291"}
+{"id": 409507, "field": "aura", "en": "Attack Power increased by $w.", "hash": "44b5cb3338aeecbe", "src": "db2@1.60.1.70291"}
+{"id": 409580, "field": "name", "en": "Heart of the Lion", "hash": "cfe156df3d0b3183", "src": "db2@1.60.1.70291"}
+{"id": 409580, "field": "description", "en": "The hunter invokes the heart of a lion, increasing total stats by $409583s1% and Attack Power by $409583s2 for all nearby allies, and increasing total stats for the Hunter by an additional $409580s1%.", "hash": "da4d40c0107a0860", "src": "db2@1.60.1.70291"}
+{"id": 409580, "field": "aura", "en": "Increases Hunter's stats by $s1%.", "hash": "077a68f0620de935", "src": "db2@1.60.1.70291"}
+{"id": 409583, "field": "name", "en": "Heart of the Lion", "hash": "cfe156df3d0b3183", "src": "db2@1.60.1.70291"}
+{"id": 409583, "field": "description", "en": "The hunter invokes the heart of a lion, increasing total stats by $409583s1% for all nearby allies, and increasing total stats for the Hunter by an additional $409580s1%.", "hash": "35b31cc8c1cf897c", "src": "db2@1.60.1.70291"}
+{"id": 409583, "field": "aura", "en": "Increases stats by $s1% and Attack Power by $s2.", "hash": "b8d3cc6d3a075b37", "src": "db2@1.60.1.70291"}
+{"id": 409593, "field": "name", "en": "Kill Shot", "hash": "ad1ea0a5418cb698", "src": "db2@1.60.1.70291"}
+{"id": 409593, "field": "description", "en": "You attempt to finish off a wounded target, firing a ranged attack dealing $s2% weapon damage plus ${$m1/100*$m2/100*$<damagepower>}. Kill Shot has no minimum range. Kill Shot's cooldown is reset if used on an enemy that has 20% or less health.", "hash": "eae59b9640e5cae2", "src": "db2@1.60.1.70291"}
+{"id": 409687, "field": "name", "en": "Dual Wield Specialization", "hash": "42d34dcf2ff20d11", "src": "db2@1.60.1.70291"}
+{"id": 409687, "field": "description", "en": "Increases the damage done by your offhand weapon by $s1% and causes your Raptor Strike to strike with both weapons when you are dual-wielding.", "hash": "096cde57f929307d", "src": "db2@1.60.1.70291"}
+{"id": 409691, "field": "name", "en": "Raptor Strike", "hash": "a6b2f6a040e39000", "src": "db2@1.60.1.70291"}
+{"id": 409691, "field": "description", "en": "A strong attack that increases melee damage by $s1.", "hash": "ac0dc93d1f53b963", "src": "db2@1.60.1.70291"}
+{"id": 409693, "field": "name", "en": "Raptor Strike", "hash": "a6b2f6a040e39000", "src": "db2@1.60.1.70291"}
+{"id": 409693, "field": "description", "en": "A strong attack that increases melee damage by $s1.", "hash": "ac0dc93d1f53b963", "src": "db2@1.60.1.70291"}
+{"id": 409748, "field": "name", "en": "Raptor Strike", "hash": "a6b2f6a040e39000", "src": "db2@1.60.1.70291"}
+{"id": 409748, "field": "description", "en": "A strong attack that increases melee damage by $s1.", "hash": "ac0dc93d1f53b963", "src": "db2@1.60.1.70291"}
+{"id": 409750, "field": "name", "en": "Raptor Strike", "hash": "a6b2f6a040e39000", "src": "db2@1.60.1.70291"}
+{"id": 409750, "field": "description", "en": "A strong attack that increases melee damage by $s1.", "hash": "ac0dc93d1f53b963", "src": "db2@1.60.1.70291"}
+{"id": 409751, "field": "name", "en": "Raptor Strike", "hash": "a6b2f6a040e39000", "src": "db2@1.60.1.70291"}
+{"id": 409751, "field": "description", "en": "A strong attack that increases melee damage by $s1.", "hash": "ac0dc93d1f53b963", "src": "db2@1.60.1.70291"}
+{"id": 409752, "field": "name", "en": "Raptor Strike", "hash": "a6b2f6a040e39000", "src": "db2@1.60.1.70291"}
+{"id": 409752, "field": "description", "en": "A strong attack that increases melee damage by $s1.", "hash": "ac0dc93d1f53b963", "src": "db2@1.60.1.70291"}
+{"id": 409754, "field": "name", "en": "Raptor Strike", "hash": "a6b2f6a040e39000", "src": "db2@1.60.1.70291"}
+{"id": 409754, "field": "description", "en": "A strong attack that increases melee damage by $s1.", "hash": "ac0dc93d1f53b963", "src": "db2@1.60.1.70291"}
+{"id": 409755, "field": "name", "en": "Raptor Strike", "hash": "a6b2f6a040e39000", "src": "db2@1.60.1.70291"}
+{"id": 409755, "field": "description", "en": "A strong attack that increases melee damage by $s1.", "hash": "ac0dc93d1f53b963", "src": "db2@1.60.1.70291"}
+{"id": 409805, "field": "name", "en": "Wild Strikes", "hash": "8f408115a28a9b66", "src": "db2@1.60.1.70291"}
+{"id": 409805, "field": "description", "en": "Gain the Wild Strikes ability:\r\n\r\n$@spellicon407977\r\n$@spelldesc407977", "hash": "788aa8b125ad3b3a", "src": "db2@1.60.1.70291"}
+{"id": 409809, "field": "name", "en": "Survival Instincts", "hash": "45565dc8f2b7d82f", "src": "db2@1.60.1.70291"}
+{"id": 409809, "field": "description", "en": "Gain the Survival Instincts ability:\r\n\r\n$@spellicon408024\r\n$@spelldesc408024", "hash": "073a0328acfd6455", "src": "db2@1.60.1.70291"}
+{"id": 409810, "field": "name", "en": "Wild Growth", "hash": "30b5dec6664d133b", "src": "db2@1.60.1.70291"}
+{"id": 409810, "field": "description", "en": "Gain the Wild Growth ability:\r\n\r\n$@spellicon408120\r\n$@spelldesc408120", "hash": "1229731d32d8b68a", "src": "db2@1.60.1.70291"}
+{"id": 409813, "field": "name", "en": "Eclipse", "hash": "6e4bc030610fce1a", "src": "db2@1.60.1.70291"}
+{"id": 409813, "field": "description", "en": "Gain the Eclipse ability:\r\n\r\n$@spellicon408248\r\n$@spelldesc408248", "hash": "2e5d5870e2e61955", "src": "db2@1.60.1.70291"}
+{"id": 409819, "field": "name", "en": "Savage Roar", "hash": "646375ddefb9ef8a", "src": "db2@1.60.1.70291"}
+{"id": 409819, "field": "description", "en": "Gain the Savage Roar ability:\r\n\r\n$@spellicon407988\r\n$@spelldesc407988", "hash": "b2ad9246fafd07fd", "src": "db2@1.60.1.70291"}
+{"id": 409824, "field": "name", "en": "Lifebloom", "hash": "394ab18f51adbe7a", "src": "db2@1.60.1.70291"}
+{"id": 409824, "field": "description", "en": "Reduces the global cooldown on your  Rejuvenation and Lifebloom abilities by ${$m2/-1000}.1 sec and you gain the Lifebloom ability:\r\n\r\n$@spellicon408124\r\n$@spelldesc408124", "hash": "2e4374dce410cf31", "src": "db2@1.60.1.70291"}
+{"id": 409826, "field": "name", "en": "Nature's Fury", "hash": "8e4743d3f2e84977", "src": "db2@1.60.1.70291"}
+{"id": 409826, "field": "description", "en": "Gain the Nature's Fury ability:\r\n\r\n$@spellicon408307\r\n$@spelldesc408307", "hash": "7b50d5d3384e4990", "src": "db2@1.60.1.70291"}
+{"id": 409828, "field": "name", "en": "Mangle", "hash": "5c555ccc58de05ab", "src": "db2@1.60.1.70291"}
+{"id": 409828, "field": "description", "en": "Gain the Mangle (Bear) ability and replace your Claw ability with Mangle (Cat). This ability benefits from and triggers all effects associated with Claw and Maul.\r\n\r\n$@spellicon407995\r\n$@spelldesc407995\r\n\r\n$@spellicon407993\r\n$@spelldesc407993\r\n", "hash": "b666e2ecb113f7aa", "src": "db2@1.60.1.70291"}
+{"id": 409830, "field": "name", "en": "Nourish", "hash": "31f5e33ce8eb3a95", "src": "db2@1.60.1.70291"}
+{"id": 409830, "field": "description", "en": "Gain the Nourish ability:\r\n\r\n$@spellicon408247\r\n$@spelldesc408247\r\n", "hash": "2ef6e8ebf8599dcb", "src": "db2@1.60.1.70291"}
+{"id": 409831, "field": "name", "en": "Dreamstate", "hash": "274747de7b5a7bd8", "src": "db2@1.60.1.70291"}
+{"id": 409831, "field": "description", "en": "Gain the Dreamstate ability:\r\n\r\n$@spellicon408258\r\n$@spelldesc408258\r\n", "hash": "c097fe72696dc318", "src": "db2@1.60.1.70291"}
+{"id": 409832, "field": "name", "en": "Fury of Stormrage", "hash": "663ba766e5e3f44d", "src": "db2@1.60.1.70291"}
+{"id": 409832, "field": "description", "en": "Gain the Fury of Stormrage ability:\r\n\r\n$@spellicon414799\r\n$@spelldesc414799\r\n", "hash": "58a6d63beabd6031", "src": "db2@1.60.1.70291"}
+{"id": 409856, "field": "name", "en": "Spirit Ritual", "hash": "48ba28825acdb470", "src": "db2@1.60.1.70291"}
+{"id": 409856, "field": "description", "en": "Begins a ritual to free the spirit of a fallen adventurer.", "hash": "1348cc33ac0eda4d", "src": "db2@1.60.1.70291"}
+{"id": 409858, "field": "name", "en": "Dummy Trigger", "hash": "67c685565244c5b4", "src": "db2@1.60.1.70291"}
+{"id": 409906, "field": "name", "en": "Beacon of Light", "hash": "2d9fc86bee3e8074", "src": "db2@1.60.1.70291"}
+{"id": 409906, "field": "description", "en": "Gain the Beacon of Light ability:\r\n\r\n$@spellicon407613\r\n$@spelldesc407613", "hash": "fcbfb300350b5b48", "src": "db2@1.60.1.70291"}
+{"id": 409911, "field": "name", "en": "Hand of Reckoning", "hash": "06f9da32845f190a", "src": "db2@1.60.1.70291"}
+{"id": 409911, "field": "description", "en": "Gain the Hand of Reckoning ability:\r\n\r\n$@spellicon407631\r\n$@spelldesc407631", "hash": "a58991653b641604", "src": "db2@1.60.1.70291"}
+{"id": 409914, "field": "name", "en": "Crusader Strike", "hash": "803d227f2d23d8b5", "src": "db2@1.60.1.70291"}
+{"id": 409914, "field": "description", "en": "Gain the Crusader Strike ability:\r\n\r\n$@spellicon407676\r\n$@spelldesc407676", "hash": "1ebb9178c61ea8c7", "src": "db2@1.60.1.70291"}
+{"id": 409918, "field": "name", "en": "Inspiration (Judgement)", "hash": "14a4747b96348b44", "src": "db2@1.60.1.70291"}
+{"id": 409918, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70291"}
+{"id": 409920, "field": "name", "en": "Learn Relic (Judgement)", "hash": "45c532db1a83885f", "src": "db2@1.60.1.70291"}
+{"id": 409922, "field": "name", "en": "Hammer of the Righteous", "hash": "ce55d57c86491fe3", "src": "db2@1.60.1.70291"}
+{"id": 409922, "field": "description", "en": "Gain the Hammer of the Righteous ability:\r\n\r\n$@spellicon407632\r\n$@spelldesc407632", "hash": "41bcfc78f93d3fc6", "src": "db2@1.60.1.70291"}
+{"id": 409924, "field": "name", "en": "Divine Storm", "hash": "14867f1b18968428", "src": "db2@1.60.1.70291"}
+{"id": 409924, "field": "description", "en": "Gain the Divine Storm ability:\r\n\r\n$@spellicon407778\r\n$@spelldesc407778", "hash": "1d2c193482319029", "src": "db2@1.60.1.70291"}
+{"id": 409925, "field": "name", "en": "Divine Light", "hash": "982b0fd7ccf22ea5", "src": "db2@1.60.1.70291"}
+{"id": 409925, "field": "description", "en": "Gain the Divine Light ability:\r\n\r\n$@spellicon458856\r\n$@spelldesc458856", "hash": "bbe5ffddd8ceed17", "src": "db2@1.60.1.70291"}
+{"id": 409930, "field": "name", "en": "Libram of Judgement", "hash": "8730e86247a34998", "src": "db2@1.60.1.70291"}
+{"id": 409930, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70291"}
+{"id": 409932, "field": "name", "en": "Aura Mastery", "hash": "15b18362073eecab", "src": "db2@1.60.1.70291"}
+{"id": 409932, "field": "description", "en": "Gain the Aura Mastery ability:\r\n\r\n$@spellicon407624\r\n$@spelldesc407624", "hash": "1795076255fb15c5", "src": "db2@1.60.1.70291"}
+{"id": 409933, "field": "name", "en": "Avenger's Shield", "hash": "ab886431f95fd75a", "src": "db2@1.60.1.70291"}
+{"id": 409933, "field": "description", "en": "Gain the Avenger's Shield ability:\r\n\r\n$@spellicon407669\r\n$@spelldesc407669", "hash": "10b3795b59d0db95", "src": "db2@1.60.1.70291"}
+{"id": 409934, "field": "name", "en": "Avenging Wrath", "hash": "e9d5e46cb552a935", "src": "db2@1.60.1.70291"}
+{"id": 409934, "field": "description", "en": "Gain the Avenging Wrath ability:\r\n\r\n$@spellicon407788\r\n$@spelldesc407788", "hash": "212557555c799b55", "src": "db2@1.60.1.70291"}
+{"id": 409935, "field": "name", "en": "Hand of Sacrifice", "hash": "be8311142dc54d12", "src": "db2@1.60.1.70291"}
+{"id": 409935, "field": "description", "en": "Gain the Hand of Sacrifice ability:\r\n\r\n$@spellicon462853\r\n$@spelldesc462853", "hash": "043ae106e6cbc7c5", "src": "db2@1.60.1.70291"}
+{"id": 409936, "field": "name", "en": "Inspiration Exemplar", "hash": "257175f0dcd0c6ba", "src": "db2@1.60.1.70291"}
+{"id": 409936, "field": "description", "en": "Gain the Inspiration Exemplar\r\n ability:\r\n\r\n$@spellicon407880\r\n$@spelldesc407880", "hash": "338ec99b5b5c788a", "src": "db2@1.60.1.70291"}
+{"id": 409938, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70291"}
+{"id": 409938, "field": "description", "en": "Gain the Fire Nova ability, replacing your Fire Nova Totem:\r\n\r\n$@spellicon408339\r\n$@spelldesc408339", "hash": "ac6b1f14bd3aa5ef", "src": "db2@1.60.1.70291"}
+{"id": 409940, "field": "name", "en": "Dual Wield Specialization", "hash": "42d34dcf2ff20d11", "src": "db2@1.60.1.70291"}
+{"id": 409940, "field": "description", "en": "Gain the Dual Wield Specialization ability:\r\n\r\n$@spellicon408496\r\n$@spelldesc408496", "hash": "93277d64558ea75f", "src": "db2@1.60.1.70291"}
+{"id": 409941, "field": "name", "en": "Water Shield", "hash": "7954b66392d2a477", "src": "db2@1.60.1.70291"}
+{"id": 409941, "field": "description", "en": "Gain the Water Shield ability:\r\n\r\n$@spellicon408510\r\n$@spelldesc408510", "hash": "5c50298df486cd6b", "src": "db2@1.60.1.70291"}
+{"id": 409943, "field": "name", "en": "Shield Mastery", "hash": "5e7eedf979fc4ac6", "src": "db2@1.60.1.70291"}
+{"id": 409943, "field": "description", "en": "Gain the Shield Mastery ability:\r\n\r\n$@spellicon408524\r\n$@spelldesc408524", "hash": "d79394439a787741", "src": "db2@1.60.1.70291"}
+{"id": 409944, "field": "name", "en": "Ancestral Guidance", "hash": "6271af15286dbf27", "src": "db2@1.60.1.70291"}
+{"id": 409944, "field": "description", "en": "Gain the Ancestral Guidance ability:\r\n\r\n$@spellicon409324\r\n$@spelldesc409324", "hash": "0da0019e3ec9d2c7", "src": "db2@1.60.1.70291"}
+{"id": 409945, "field": "name", "en": "Overload", "hash": "4148ce417f1adc4b", "src": "db2@1.60.1.70291"}
+{"id": 409945, "field": "description", "en": "Gain the Overload ability:\r\n\r\n$@spellicon408438\r\n$@spelldesc408438", "hash": "7b4659a88d7ed3b5", "src": "db2@1.60.1.70291"}
+{"id": 409946, "field": "name", "en": "Maelstrom Weapon", "hash": "34a909cc36a0eb49", "src": "db2@1.60.1.70291"}
+{"id": 409946, "field": "description", "en": "Gain the Maelstrom Weapon ability:\r\n\r\n$@spellicon408498\r\n$@spelldesc408498", "hash": "f6dd7ebb76cca8d5", "src": "db2@1.60.1.70291"}
+{"id": 409947, "field": "name", "en": "Earth Shield", "hash": "8e71dcc8bee56627", "src": "db2@1.60.1.70291"}
+{"id": 409947, "field": "description", "en": "Gain the Earth Shield ability:\r\n\r\n$@spellicon408514\r\n$@spelldesc408514", "hash": "745da8e212cd4492", "src": "db2@1.60.1.70291"}
+{"id": 409951, "field": "name", "en": "Spirit of the Alpha", "hash": "f3f8178e0c3b11af", "src": "db2@1.60.1.70291"}
+{"id": 409951, "field": "description", "en": "Gain the Spirit of the Alpha ability:\r\n\r\n$@spellicon408696\r\n$@spelldesc408696", "hash": "956796877fc14403", "src": "db2@1.60.1.70291"}
+{"id": 409952, "field": "name", "en": "Lava Burst", "hash": "444a2bbd50295ec5", "src": "db2@1.60.1.70291"}
+{"id": 409952, "field": "description", "en": "Gain the Lava Burst ability:\r\n\r\n$@spellicon408490\r\n$@spelldesc408490", "hash": "939400848a3729f1", "src": "db2@1.60.1.70291"}
+{"id": 409953, "field": "name", "en": "Lava Lash", "hash": "50023d7d5ca1a5e4", "src": "db2@1.60.1.70291"}
+{"id": 409953, "field": "description", "en": "Gain the Lava Lash ability:\r\n\r\n$@spellicon408507\r\n$@spelldesc408507", "hash": "b4d0dacb957dde94", "src": "db2@1.60.1.70291"}
+{"id": 409954, "field": "name", "en": "Riptide", "hash": "c826ecbb16451f60", "src": "db2@1.60.1.70291"}
+{"id": 409954, "field": "description", "en": "Gain the Riptide ability:\r\n\r\n$@spellicon408521\r\n$@spelldesc408521", "hash": "16fbb03721338b0a", "src": "db2@1.60.1.70291"}
+{"id": 409955, "field": "name", "en": "Way of Earth", "hash": "213a472ce88732d2", "src": "db2@1.60.1.70291"}
+{"id": 409955, "field": "description", "en": "Gain the Way of Earth ability:\r\n\r\n$@spellicon408531\r\n$@spelldesc408531", "hash": "4f96cd74456b193c", "src": "db2@1.60.1.70291"}
+{"id": 409957, "field": "name", "en": "Steady Shot", "hash": "18530574e04019f9", "src": "db2@1.60.1.70291"}
+{"id": 409957, "field": "description", "en": "Gain the Steady Shot ability:\r\n\r\n$@spellicon437123\r\n$@spelldesc437123", "hash": "2697bd4f2290ac20", "src": "db2@1.60.1.70291"}
+{"id": 409958, "field": "name", "en": "Master Marksman", "hash": "4b66a0082c0f9383", "src": "db2@1.60.1.70291"}
+{"id": 409958, "field": "description", "en": "Gain the Master Marksman ability:\r\n\r\n$@spellicon409428\r\n$@spelldesc409428", "hash": "dadd56b2bd078b3a", "src": "db2@1.60.1.70291"}
+{"id": 409959, "field": "name", "en": "Expose Weakness", "hash": "73df52b8d40747d4", "src": "db2@1.60.1.70291"}
+{"id": 409959, "field": "description", "en": "Gain the Expose Weakness ability:\r\n\r\n$@spellicon409504\r\n$@spelldesc409504", "hash": "3b41ea3547de1154", "src": "db2@1.60.1.70291"}
+{"id": 409960, "field": "name", "en": "Cobra Slayer", "hash": "b02c0309970530cb", "src": "db2@1.60.1.70291"}
+{"id": 409960, "field": "description", "en": "Gain the Cobra Slayer ability:\r\n\r\n$@spellicon458393\r\n$@spelldesc458393", "hash": "9c1a661ada9736a5", "src": "db2@1.60.1.70291"}
+{"id": 409961, "field": "name", "en": "Dual Wield Specialization", "hash": "42d34dcf2ff20d11", "src": "db2@1.60.1.70291"}
+{"id": 409961, "field": "description", "en": "Gain the Dual Wield Specialist ability:\r\n\r\n$@spellicon409687\r\n$@spelldesc409687", "hash": "7bbfdf06280c7bba", "src": "db2@1.60.1.70291"}
+{"id": 409962, "field": "name", "en": "Beast Mastery", "hash": "b2999c0c9d26e9a1", "src": "db2@1.60.1.70291"}
+{"id": 409962, "field": "description", "en": "Gain the Beast Mastery ability:\r\n\r\n$@spellicon409368\r\n$@spelldesc409368", "hash": "9b4757cccf92e447", "src": "db2@1.60.1.70291"}
+{"id": 409963, "field": "name", "en": "Summon Spirit", "hash": "2e748564dfd5e3ec", "src": "db2@1.60.1.70291"}
+{"id": 409968, "field": "name", "en": "Trap Launcher", "hash": "2cb3ae7989797656", "src": "db2@1.60.1.70291"}
+{"id": 409968, "field": "description", "en": "Gain the Trap Launcher ability:\r\n\r\n$@spellicon409541\r\n$@spelldesc409541", "hash": "ffc0d9b28f888864", "src": "db2@1.60.1.70291"}
+{"id": 409974, "field": "name", "en": "Kill Shot", "hash": "ad1ea0a5418cb698", "src": "db2@1.60.1.70291"}
+{"id": 409974, "field": "description", "en": "Gain the Kill Shot ability:\r\n\r\n$@spellicon409593\r\n$@spelldesc409593", "hash": "f8c116e825209c6d", "src": "db2@1.60.1.70291"}
+{"id": 409976, "field": "name", "en": "Chimera Shot", "hash": "ec61085881cde0ba", "src": "db2@1.60.1.70291"}
+{"id": 409976, "field": "description", "en": "Gain the Chimera Shot ability:\r\n\r\n$@spellicon409433\r\n$@spelldesc409433", "hash": "5f9d939bb8c04230", "src": "db2@1.60.1.70291"}
+{"id": 409979, "field": "name", "en": "Lone Wolf", "hash": "222ff87cacdc49eb", "src": "db2@1.60.1.70291"}
+{"id": 409979, "field": "description", "en": "Gain the Lone Wolf ability:\r\n\r\n$@spellicon415370\r\n$@spelldesc415370", "hash": "14ffc98e33183071", "src": "db2@1.60.1.70291"}
+{"id": 409988, "field": "name", "en": "Force Player Cast Delayed Banish", "hash": "00b7a30531cf1e94", "src": "db2@1.60.1.70291"}
+{"id": 409999, "field": "name", "en": "Engrave Gloves - Beacon of Light", "hash": "69c5f51d6100199f", "src": "db2@1.60.1.70291"}
+{"id": 409999, "field": "description", "en": "Engrave your gloves with the Beacon of Light rune:\r\n\r\n$@spellicon407613\r\n$@spelldesc407613", "hash": "2783cf0a0e90c3c8", "src": "db2@1.60.1.70291"}

@@ -1,16 +1,16 @@
-{"id": 454017, "field": "name", "en": "Redirect Portal", "hash": "5cf7d6f849b600e2", "src": "db2@1.60.1.70245"}
-{"id": 454017, "field": "description", "en": "Connect a Fel Scar or Rift to a world deep in Legion space. May have unpredictable and dangerous effects.", "hash": "2c3e94e38f467951", "src": "db2@1.60.1.70245"}
-{"id": 454042, "field": "name", "en": "Burn", "hash": "08f6dfd745521419", "src": "db2@1.60.1.70245"}
-{"id": 454042, "field": "aura", "en": "Spell damage increased by $w1.", "hash": "62dc133acc02b8dc", "src": "db2@1.60.1.70245"}
-{"id": 454197, "field": "name", "en": "Invocation", "hash": "f52e64e0a3052a63", "src": "db2@1.60.1.70245"}
-{"id": 454204, "field": "name", "en": "Destination: Vosh'Aranas", "hash": "19e540727efc1da4", "src": "db2@1.60.1.70245"}
-{"id": 454204, "field": "aura", "en": "The rift is destabilizing.", "hash": "b39de4442b96ae30", "src": "db2@1.60.1.70245"}
-{"id": 454207, "field": "name", "en": "Destination: Cen'gar", "hash": "83847203c426e7da", "src": "db2@1.60.1.70245"}
-{"id": 454208, "field": "name", "en": "Destination: Niskara", "hash": "9622f2d38a27cfd2", "src": "db2@1.60.1.70245"}
-{"id": 454209, "field": "name", "en": "Destination: Zzalrukh", "hash": "d19a9fa102233263", "src": "db2@1.60.1.70245"}
-{"id": 454210, "field": "name", "en": "Destination: Evasilier", "hash": "18faf1ca94c6abee", "src": "db2@1.60.1.70245"}
-{"id": 454427, "field": "name", "en": "Invocation", "hash": "f52e64e0a3052a63", "src": "db2@1.60.1.70245"}
-{"id": 454466, "field": "name", "en": "Redirect Portal", "hash": "5cf7d6f849b600e2", "src": "db2@1.60.1.70245"}
-{"id": 454466, "field": "description", "en": "Connect a Fel Scar or Rift to a world deep in Legion space. May have unpredictable and dangerous effects.", "hash": "2c3e94e38f467951", "src": "db2@1.60.1.70245"}
-{"id": 454469, "field": "name", "en": "Overcharge", "hash": "0707d38287719f38", "src": "db2@1.60.1.70245"}
-{"id": 454469, "field": "description", "en": "Overcharge a Legion Portal Tuner.", "hash": "8db069f9041e0c08", "src": "db2@1.60.1.70245"}
+{"id": 454017, "field": "name", "en": "Redirect Portal", "hash": "5cf7d6f849b600e2", "src": "db2@1.60.1.70291"}
+{"id": 454017, "field": "description", "en": "Connect a Fel Scar or Rift to a world deep in Legion space. May have unpredictable and dangerous effects.", "hash": "2c3e94e38f467951", "src": "db2@1.60.1.70291"}
+{"id": 454042, "field": "name", "en": "Burn", "hash": "08f6dfd745521419", "src": "db2@1.60.1.70291"}
+{"id": 454042, "field": "aura", "en": "Spell damage increased by $w1.", "hash": "62dc133acc02b8dc", "src": "db2@1.60.1.70291"}
+{"id": 454197, "field": "name", "en": "Invocation", "hash": "f52e64e0a3052a63", "src": "db2@1.60.1.70291"}
+{"id": 454204, "field": "name", "en": "Destination: Vosh'Aranas", "hash": "19e540727efc1da4", "src": "db2@1.60.1.70291"}
+{"id": 454204, "field": "aura", "en": "The rift is destabilizing.", "hash": "b39de4442b96ae30", "src": "db2@1.60.1.70291"}
+{"id": 454207, "field": "name", "en": "Destination: Cen'gar", "hash": "83847203c426e7da", "src": "db2@1.60.1.70291"}
+{"id": 454208, "field": "name", "en": "Destination: Niskara", "hash": "9622f2d38a27cfd2", "src": "db2@1.60.1.70291"}
+{"id": 454209, "field": "name", "en": "Destination: Zzalrukh", "hash": "d19a9fa102233263", "src": "db2@1.60.1.70291"}
+{"id": 454210, "field": "name", "en": "Destination: Evasilier", "hash": "18faf1ca94c6abee", "src": "db2@1.60.1.70291"}
+{"id": 454427, "field": "name", "en": "Invocation", "hash": "f52e64e0a3052a63", "src": "db2@1.60.1.70291"}
+{"id": 454466, "field": "name", "en": "Redirect Portal", "hash": "5cf7d6f849b600e2", "src": "db2@1.60.1.70291"}
+{"id": 454466, "field": "description", "en": "Connect a Fel Scar or Rift to a world deep in Legion space. May have unpredictable and dangerous effects.", "hash": "2c3e94e38f467951", "src": "db2@1.60.1.70291"}
+{"id": 454469, "field": "name", "en": "Overcharge", "hash": "0707d38287719f38", "src": "db2@1.60.1.70291"}
+{"id": 454469, "field": "description", "en": "Overcharge a Legion Portal Tuner.", "hash": "8db069f9041e0c08", "src": "db2@1.60.1.70291"}

@@ -229,7 +229,6 @@ WFJ.Data.add("gloss", {
   [97226] = "渡る\tわたる\tcross over",
   [97227] = "渡る\tわたる\tcrossed (across)",
   [97228] = "渡る\tわたる\tcrossed (over) to",
-  [97229] = "渡る\tわたる\tdeprive (not pass into)",
   [97230] = "渡る\tわたる\tfall into",
   [97231] = "渡る\tわたる\tfall into (pass to)",
   [97232] = "渡る\tわたる\tfall into (passed)",

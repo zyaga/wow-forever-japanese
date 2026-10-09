@@ -2,10 +2,15 @@
 -- "character.title", area "ui", ADR-016). Nothing here is load-on-demand: the TOC loads
 -- [Game]\CharacterFrame.*, [Game]\PaperDollFrame.* and the Vanilla, Cata and [Game] PaperDollFrameStats.lua on camelot
 -- [verified: forever blizzard_uipanels_game.toc:44–60]. What is translated:
---   the level line: CharacterLevelText, written by PaperDollFrame_SetLevel (PLAYER_LEVEL /
---     PLAYER_LEVEL_NO_SPEC: level, class colour, spec, class: `text` captures) and PaperDollFrame_SetPetLevel
---     (UNIT_TYPE_LEVEL_TEMPLATE: level, pet family), both called by name [verified: camelot/paperdollframe.lua:
---     497–531, 533–558, 453, 465; characterframe.lua:803, 824];
+--   the level lines, both writers called by name [verified: camelot/paperdollframe.lua:492–515, 522–543, 448, 460;
+--     characterframe.lua:813, 837]: CharacterLevelText, the player's line from PaperDollFrame_SetLevel (PLAYER_LEVEL /
+--     PLAYER_LEVEL_NO_SPEC: level, class colour, spec, class: `text` captures); and PetCharacterLevelText
+--     (paperdollframe.xml:599), the pet's line from PaperDollFrame_SetPetLevel: UNIT_TYPE_LEVEL_TEMPLATE (level, pet
+--     family), then, when the pet has a loyalty rank, " " .. HIGHLIGHT_FONT_COLOR:WrapTextInColorCode(
+--     PARENS_TEMPLATE:format(C_PetInfo.GetPetLoyalty())) (lua:535–539). The rank is a PetLoyalty row's English. The
+--     pet's line is split there: the level part through UNIT_TYPE_LEVEL_TEMPLATE, the rank through PARENS_TEMPLATE
+--     around its PetLoyalty row, the colour kept. A rank that is no PetLoyalty row stays as written; a level part
+--     that is no UNIT_TYPE_LEVEL_TEMPLATE line leaves the whole line English.
 --   the stat pane: CharacterStatsPaneScrollBox / CharacterStatsPanePetScrollBox, a ScrollBox of pooled rows
 --     (characterframe.lua:1049–1077, 1107–1226, 1233–1298; characterframe.xml:170–234, 463–484). A header row's Title
 --     is a PAPERDOLL_STATCATEGORIES categoryName or STAT_CATEGORY_RESISTANCE (paperdollframeconstants.lua:30–100,
@@ -43,9 +48,6 @@
 --     a pooled row's text is written by PaperDollTitlesPane_InitButton (paperdollframe.lua:3243–3246). The first row is
 --     PLAYER_TITLE_NONE (:3304); every other row is a title the character earned, a name, left as written. Rows are
 --     walked from the ScrollBox's initialized-frame callback, restricted to that one key.
---   the pet's loyalty rank: PaperDollFrame_SetPetLevel writes PetLoyaltyText:SetText(C_PetInfo.GetPetLoyalty())
---     (camelot/paperdollframe.lua:549-552), a PetLoyalty row's English. Shown after that writer, restricted to the
---     PetLoyalty family, so any other text there stays English.
 -- Not translated: the XP / pet XP bars.
 local _, WFJ = ...
 local Character = {}
@@ -69,10 +71,9 @@ Character.NEVER_TOUCH = {
   "GearManagerPopupFrame.BorderBox.IconSelectorEditBox" } -- the equipment set's name
 
 -- (the window title is not here: a pane title renders under `only`, and the name title is released; see the header)
--- PaperDollFrame_SetPetLevel writes the pet's level line into CharacterLevelText.
 local WRITERS = { "PaperDollFrame_SetLevel", "PaperDollFrame_SetPetLevel" }
--- PLAYER_LEVEL / PLAYER_LEVEL_NO_SPEC for the player, UNIT_TYPE_LEVEL_TEMPLATE for the pet
-local LEVEL_ONLY = { only = { "PLAYER_LEVEL", "PLAYER_LEVEL_NO_SPEC", "UNIT_TYPE_LEVEL_TEMPLATE" } }
+local LEVEL_ONLY = { only = { "PLAYER_LEVEL", "PLAYER_LEVEL_NO_SPEC" } } -- the player's line
+local PET_LEVEL_ONLY = { only = { "UNIT_TYPE_LEVEL_TEMPLATE" } } -- the pet's line, before its rank
 
 -- Frames whose tooltips are Lua-built help lines: the equipment slots, the icon mode tabs, the paperdoll sidebar
 -- tabs, the right-pane toggle.
@@ -108,6 +109,7 @@ local DELETE_ONLY = { only = { "DELETE" } }
 local SETTINGS_ONLY = { only = { "EQUIPMENT_SET_SETTINGS" } }
 local TITLE_NONE_ONLY = { only = { "PLAYER_TITLE_NONE" } }
 Character.CAMELOT_KEYS = { category = CATEGORY_ONLY.only, stat = STAT_ONLY.only, level = LEVEL_ONLY.only,
+  petLevel = { "UNIT_TYPE_LEVEL_TEMPLATE", "PARENS_TEMPLATE" },
   equipmentManager = { "EQUIPSET_EQUIP", "SAVE", "PAPERDOLL_NEWEQUIPMENTSET", "GEARSETS_POPUP_TEXT",
     "ICON_SELECTION_CLICK", "ICON_SELECTION_NOTINLIST", "DELETE", "EQUIPMENT_SET_SETTINGS" } }
 
@@ -118,7 +120,7 @@ local function declareAll()
     for _, name in ipairs(list) do Compat.declare(SURFACE, name, { name }) end
   end
   Compat.declare(SURFACE, "CharacterLevelText", { "CharacterLevelText" })
-  Compat.declare(SURFACE, "PetLoyaltyText", { "PetLoyaltyText" })
+  Compat.declare(SURFACE, "PetCharacterLevelText", { "PetCharacterLevelText" })
   Compat.declare(SURFACE, "statsBox", { "CharacterStatsPaneScrollBox.ScrollBox" })
   Compat.declare(SURFACE, "petStatsBox", { "CharacterStatsPanePetScrollBox.ScrollBox" })
   Compat.declare(SURFACE, "scrollUtil", { "ScrollUtil" })
@@ -140,10 +142,40 @@ function Character.onTitleRow(a, b)
   WFJ.Labels.show(SURFACE, titleRowKey(row), row.text, nil, TITLE_NONE_ONLY)
 end
 
+-- The pet's level line with a loyalty rank after it: → level text, colour open, rank, colour close | nil. The
+-- parentheses are the client's own PARENS_TEMPLATE around its "%s".
+local function splitRank(text)
+  local parens = Compat.resolve("PARENS_TEMPLATE")
+  if type(text) ~= "string" or type(parens) ~= "string" then return nil end
+  local pre, post = parens:match("^(.-)%%s(.*)$")
+  if not pre then return nil end
+  local function lit(x) return (x:gsub("%W", "%%%0")) end
+  return text:match("^(.-) (|c%x%x%x%x%x%x%x%x)" .. lit(pre) .. "(.-)" .. lit(post) .. "(|r)$")
+end
+
+-- The pet's level line on PetCharacterLevelText. → 1 when shown (or still ours), else 0
+local function showPetLevel()
+  local fs = get("PetCharacterLevelText")
+  local text = type(fs) == "table" and type(fs.GetText) == "function" and fs:GetText() or nil
+  local head, open, rank, close = splitRank(text)
+  if not head then return WFJ.Labels.show(SURFACE, "ui.petLevel", fs, nil, PET_LEVEL_ONLY) end
+  local level = WFJ.Labels.part(head, PET_LEVEL_ONLY.only)
+  if not level then return WFJ.Labels.showArgs(SURFACE, "ui.petLevel", fs, nil) end
+  local loyalty = WFJ.Labels.part(rank, WFJ.Labels.families("PetLoyalty").only)
+  local index = WFJ.UIIndex
+  local parts = { level, text:sub(#head + 1) } -- a rank that is no PetLoyalty row, as the client wrote it
+  if loyalty and index and index.rows.PARENS_TEMPLATE then
+    parts = { level, " ", { key = "PARENS_TEMPLATE", args = { key = "PARENS_TEMPLATE", { entry = loyalty.key } },
+      open = open, close = close } }
+  end
+  return WFJ.Labels.showArgs(SURFACE, "ui.petLevel", fs, level.key, { form = "seq", parts = parts })
+end
+
 -- hooksecurefunc target for PaperDollFrame_SetLevel and PaperDollFrame_SetPetLevel.
 function Character.onLevel()
-  return WFJ.Labels.showAll(SURFACE, { { "ui.level", get("CharacterLevelText"), LEVEL_ONLY },
-    { "ui.petLoyalty", get("PetLoyaltyText"), WFJ.Labels.families("PetLoyalty") } })
+  local n = WFJ.Labels.show(SURFACE, "ui.level", get("CharacterLevelText"), nil, LEVEL_ONLY) + showPetLevel()
+  WFJ.Render.updateBanner(SURFACE)
+  return n
 end
 
 -- camelot: a stable record key per pooled stat-pane row (never its position)

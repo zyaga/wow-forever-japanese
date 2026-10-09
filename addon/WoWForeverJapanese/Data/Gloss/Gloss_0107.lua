@@ -572,7 +572,6 @@ WFJ.Data.add("gloss", {
   [107569] = "突っ込む\tつっこむ\twith (her nose) in (stuck in)",
   [107570] = "突っ込む\tつっこむ\tyou've rushed headlong",
   [107571] = "突入\tとつにゅう\tforay (charge)",
-  [107572] = "突入させる\tとつにゅうさせる\tsent in (had them charge)",
   [107573] = "突入する\tとつにゅうする\tbreached (stormed)",
   [107574] = "突入する\tとつにゅうする\twent to (plunged into)",
   [107575] = "突拍子もない\tとっぴょうしもない\twild",

@@ -1,79 +1,79 @@
-{"id": 414119, "field": "name", "en": "[DNT] Teleport to Ragefire Chasm", "hash": "bae5cc1d3bd35089", "src": "db2@1.60.1.70245"}
-{"id": 414120, "field": "name", "en": "[DNT] Teleport to Wailing Caverns", "hash": "8666bc141ac05529", "src": "db2@1.60.1.70245"}
-{"id": 414121, "field": "name", "en": "[DNT] Teleport to Deadmines", "hash": "d23f546c7d3ad274", "src": "db2@1.60.1.70245"}
-{"id": 414122, "field": "name", "en": "[DNT] Teleport to Shadowfang Keep", "hash": "ab7b50574b491637", "src": "db2@1.60.1.70245"}
-{"id": 414123, "field": "name", "en": "[DNT] Teleport to Stockades", "hash": "663fa7e811b0d58b", "src": "db2@1.60.1.70245"}
-{"id": 414124, "field": "name", "en": "[DNT] Teleport to Blackfathom Deeps", "hash": "2ae7de2231eeb70c", "src": "db2@1.60.1.70245"}
-{"id": 414370, "field": "name", "en": "Aqua Shell", "hash": "ec8ad03f1f2c1b95", "src": "db2@1.60.1.70245"}
-{"id": 414370, "field": "aura", "en": "Ghamoo-ra's Aqua Shell has cracked!", "hash": "2ba3a03e1e618881", "src": "db2@1.60.1.70245"}
-{"id": 414621, "field": "name", "en": "Skull Bash", "hash": "7077234713595aa1", "src": "db2@1.60.1.70245"}
-{"id": 414621, "field": "description", "en": "You bash the target's skull, interrupting spellcasting and preventing any spell in that school from being cast for $d.", "hash": "f875450d77041570", "src": "db2@1.60.1.70245"}
-{"id": 414644, "field": "name", "en": "Lacerate", "hash": "2ddaf20b3d682230", "src": "db2@1.60.1.70245"}
-{"id": 414644, "field": "description", "en": "Lacerates the enemy target, making them bleed for $o1 damage over $d plus $s2% weapon damage per existing application of Lacerate on the target. Causes a high amount of threat. This effect stacks up to $u times on the same target.", "hash": "58e2b59589e53f8f", "src": "db2@1.60.1.70245"}
-{"id": 414644, "field": "aura", "en": "$w1 damage every $t sec.", "hash": "8522e0deacb4440d", "src": "db2@1.60.1.70245"}
-{"id": 414647, "field": "name", "en": "Lacerate", "hash": "2ddaf20b3d682230", "src": "db2@1.60.1.70245"}
-{"id": 414673, "field": "name", "en": "Gift of the Earthmother", "hash": "21a538a6a46a1889", "src": "db2@1.60.1.70245"}
-{"id": 414673, "field": "description", "en": "Reduces the global cooldown by ${$m1/-1000}.1 seconds on your Rejuvenation, Swiftmend, and Wild Growth spells.", "hash": "1c2bf81078502244", "src": "db2@1.60.1.70245"}
-{"id": 414677, "field": "name", "en": "Living Seed", "hash": "7f8ad38a8689fd8d", "src": "db2@1.60.1.70245"}
-{"id": 414677, "field": "description", "en": "When you critically heal your target with any non-periodic healing spell you plant a Living Seed on the target for $s1% of the amount healed. The Living Seed will bloom the next time the target takes damage or receives non-periodic healing. Lasts $414680d.", "hash": "6d9f3088737c425f", "src": "db2@1.60.1.70245"}
-{"id": 414680, "field": "name", "en": "Living Seed", "hash": "7f8ad38a8689fd8d", "src": "db2@1.60.1.70245"}
-{"id": 414680, "field": "aura", "en": "Healed for $w1 health the next time damage is taken or non-periodic healing is received.", "hash": "96c2fb4900ca45b7", "src": "db2@1.60.1.70245"}
-{"id": 414683, "field": "name", "en": "Living Seed", "hash": "7f8ad38a8689fd8d", "src": "db2@1.60.1.70245"}
-{"id": 414683, "field": "description", "en": "Heals a friendly target for $s1.", "hash": "be4c0f4a3ecc5b98", "src": "db2@1.60.1.70245"}
-{"id": 414684, "field": "name", "en": "Sunfire", "hash": "2211871fc4cd1435", "src": "db2@1.60.1.70245"}
-{"id": 414684, "field": "description", "en": "Burns the enemy for ${$m2*$<damagepower>/100} to ${$M2*$<damagepower>/100} Nature damage and then an additional ${$m1*4*$<damagepower>/100} Nature damage over $d.", "hash": "3aa7711e949940a9", "src": "db2@1.60.1.70245"}
-{"id": 414684, "field": "aura", "en": "$w1 Nature damage every $t1 seconds.", "hash": "1062340a8742b21e", "src": "db2@1.60.1.70245"}
-{"id": 414687, "field": "name", "en": "Sunfire", "hash": "2211871fc4cd1435", "src": "db2@1.60.1.70245"}
-{"id": 414687, "field": "description", "en": "Burns the enemy for ${$m2*$<damagepower>/100} to ${$M2*$<damagepower>/100} Nature damage and then an additional ${$m1*4*$<damagepower>/100} Nature damage over $d.", "hash": "3aa7711e949940a9", "src": "db2@1.60.1.70245"}
-{"id": 414687, "field": "aura", "en": "$w1 Nature damage every $t1 seconds.", "hash": "1062340a8742b21e", "src": "db2@1.60.1.70245"}
-{"id": 414689, "field": "name", "en": "Sunfire", "hash": "2211871fc4cd1435", "src": "db2@1.60.1.70245"}
-{"id": 414689, "field": "description", "en": "Burns the enemy for ${$m2*$<damagepower>/100} to ${$M2*$<damagepower>/100} Nature damage and then an additional ${$m1*4*$<damagepower>/100} Nature damage over $d. Awards $s3 combo $lpoint:points;.\r\n", "hash": "9cd4ca30f343748f", "src": "db2@1.60.1.70245"}
-{"id": 414689, "field": "aura", "en": "$w1 Nature damage every $t1 seconds.", "hash": "1062340a8742b21e", "src": "db2@1.60.1.70245"}
-{"id": 414691, "field": "name", "en": "Corrupted Windfury Totem", "hash": "8ccded5ec2333b0a", "src": "db2@1.60.1.70245"}
-{"id": 414692, "field": "name", "en": "Sunfire", "hash": "2211871fc4cd1435", "src": "db2@1.60.1.70245"}
-{"id": 414692, "field": "description", "en": "Gain the Sunfire ability and while in Bear Form, Cat Form, or Dire Bear Form your Moonfire is replaced with Sunfire (Bear) or Sunfire (Cat). This spell benefits from and triggers all effects associated with Moonfire.\r\n\r\n$@spellicon414684\r\n$@spelldesc414684\r\n\r\n$@spellicon414687\r\n$@spelldesc414687\r\n\r\n$@spellicon414689\r\n$@spelldesc414689\r\n", "hash": "ddfecf9642c744f9", "src": "db2@1.60.1.70245"}
-{"id": 414696, "field": "name", "en": "Sunfire", "hash": "2211871fc4cd1435", "src": "db2@1.60.1.70245"}
-{"id": 414700, "field": "name", "en": "Sunfire", "hash": "2211871fc4cd1435", "src": "db2@1.60.1.70245"}
-{"id": 414719, "field": "name", "en": "Elune's Fires", "hash": "1b876660ffed5cb9", "src": "db2@1.60.1.70245"}
-{"id": 414719, "field": "description", "en": "Some of your spells and abilities extend the duration of your damage and healing over time effects on their target:\r\n\r\nStarfire extends Moonfire by $s1 sec.\r\nWrath extends Sunfire by $s2 sec.\r\nRegrowth extends Rejuvenation by $s3 sec.\r\nShred extends Rip by $s4 sec.\r\n\r\nEach effect can only be extended up to its initial duration.\r\n", "hash": "c5b655c3854a22bd", "src": "db2@1.60.1.70245"}
-{"id": 414722, "field": "name", "en": "Slumbering Spirit", "hash": "9485b0d96baff56a", "src": "db2@1.60.1.70245"}
-{"id": 414722, "field": "aura", "en": "Its head seems to be missing something...", "hash": "7f7776c874785749", "src": "db2@1.60.1.70245"}
-{"id": 414723, "field": "name", "en": "Summon Nature Spirit", "hash": "6cca0365f4dc4ab9", "src": "db2@1.60.1.70245"}
-{"id": 414724, "field": "name", "en": "Place Prairie Crown", "hash": "4d67382496bb87f9", "src": "db2@1.60.1.70245"}
-{"id": 414724, "field": "description", "en": "Awaken a spirit of the plains ", "hash": "6a4a51d5e2b7f5da", "src": "db2@1.60.1.70245"}
-{"id": 414730, "field": "name", "en": "Corrupted Windfury Totem", "hash": "8ccded5ec2333b0a", "src": "db2@1.60.1.70245"}
-{"id": 414730, "field": "aura", "en": "Weapon enchanted by wind, granting extra attacks.", "hash": "8a0e97c3770c100d", "src": "db2@1.60.1.70245"}
-{"id": 414739, "field": "name", "en": "Corrupted Windfury Totem", "hash": "8ccded5ec2333b0a", "src": "db2@1.60.1.70245"}
-{"id": 414760, "field": "name", "en": "Corrupted Lightning Shield Totem", "hash": "5b9b4ed360255273", "src": "db2@1.60.1.70245"}
-{"id": 414760, "field": "aura", "en": "Surrounded by a shield of lightning, striking back all attackers with Nature damage.", "hash": "aa643f21d0515d67", "src": "db2@1.60.1.70245"}
-{"id": 414763, "field": "name", "en": "Corrupted Lightning Shield Totem", "hash": "5b9b4ed360255273", "src": "db2@1.60.1.70245"}
-{"id": 414782, "field": "name", "en": "Corrupted Lightning Shield Totem", "hash": "5b9b4ed360255273", "src": "db2@1.60.1.70245"}
-{"id": 414783, "field": "name", "en": "Corrupted Lightning Shield Totem", "hash": "5b9b4ed360255273", "src": "db2@1.60.1.70245"}
-{"id": 414786, "field": "name", "en": "Corrupted Molten Fury Totem", "hash": "113b0ad515fecc0f", "src": "db2@1.60.1.70245"}
-{"id": 414791, "field": "name", "en": "Corrupted Molten Fury Totem", "hash": "113b0ad515fecc0f", "src": "db2@1.60.1.70245"}
-{"id": 414799, "field": "name", "en": "Fury of Stormrage", "hash": "663ba766e5e3f44d", "src": "db2@1.60.1.70245"}
-{"id": 414799, "field": "description", "en": "Reduces the mana cost of Wrath by $s1% and each time you deal damage with Wrath you have a $h% chance for your next cast of Healing Touch within $414800d to be instant and castable in any shapeshift form. Allows Wrath to be cast while in Tree of Life form.", "hash": "8541d19f3d1a2918", "src": "db2@1.60.1.70245"}
-{"id": 414800, "field": "name", "en": "Fury of Stormrage", "hash": "663ba766e5e3f44d", "src": "db2@1.60.1.70245"}
-{"id": 414800, "field": "aura", "en": "Your next Healing Touch is instant cast and castable in any shapeshift form.", "hash": "c63f596d74f46b06", "src": "db2@1.60.1.70245"}
-{"id": 414824, "field": "name", "en": "Attuned", "hash": "dd52c30c051aeaff", "src": "db2@1.60.1.70245"}
-{"id": 414824, "field": "aura", "en": "Attuned to the mysteries of nature", "hash": "0351d6834e8443e1", "src": "db2@1.60.1.70245"}
-{"id": 414825, "field": "name", "en": "Learn Idol (Ursine Rage)", "hash": "f463d812c9c46057", "src": "db2@1.60.1.70245"}
-{"id": 414826, "field": "name", "en": "Idol of Ursine Rage", "hash": "779232e4d6d6552f", "src": "db2@1.60.1.70245"}
-{"id": 414827, "field": "name", "en": "Ursine Rage", "hash": "c69da745e7bd604b", "src": "db2@1.60.1.70245"}
-{"id": 414827, "field": "aura", "en": "In a bestial rage", "hash": "d7d1ae5f1a524dc8", "src": "db2@1.60.1.70245"}
-{"id": 414887, "field": "name", "en": "Lightning Strike From Sky VFX", "hash": "049266d8ef6cffe3", "src": "db2@1.60.1.70245"}
-{"id": 414900, "field": "name", "en": "Corrupted Molten Fury Totem", "hash": "113b0ad515fecc0f", "src": "db2@1.60.1.70245"}
-{"id": 414900, "field": "description", "en": "Deals $s1 Fire damage every $t1 sec.", "hash": "a9aeaf555afe3aee", "src": "db2@1.60.1.70245"}
-{"id": 414900, "field": "aura", "en": "Deals $s1 Fire damage every $t1 sec.", "hash": "a9aeaf555afe3aee", "src": "db2@1.60.1.70245"}
-{"id": 414901, "field": "name", "en": "Corrupted Molten Fury Totem", "hash": "113b0ad515fecc0f", "src": "db2@1.60.1.70245"}
-{"id": 414907, "field": "name", "en": "Corrupted Molten Fury", "hash": "fefd3fc1e4814ccd", "src": "db2@1.60.1.70245"}
-{"id": 414908, "field": "name", "en": "Corrupted Molten Fury", "hash": "fefd3fc1e4814ccd", "src": "db2@1.60.1.70245"}
-{"id": 414920, "field": "name", "en": "Feral Charge", "hash": "0c36da34ba380499", "src": "db2@1.60.1.70245"}
-{"id": 414921, "field": "name", "en": "Feral Charge", "hash": "0c36da34ba380499", "src": "db2@1.60.1.70245"}
-{"id": 414923, "field": "name", "en": "Feral Charge", "hash": "0c36da34ba380499", "src": "db2@1.60.1.70245"}
-{"id": 414923, "field": "aura", "en": "Dazed.", "hash": "8649cd0f13f4f4b6", "src": "db2@1.60.1.70245"}
-{"id": 414924, "field": "name", "en": "Feral Charge (Cat)", "hash": "c785a71d3a8e27f3", "src": "db2@1.60.1.70245"}
-{"id": 414924, "field": "description", "en": "Leap behind an enemy.", "hash": "0f628101ecc27999", "src": "db2@1.60.1.70245"}
-{"id": 414925, "field": "name", "en": "Feral Charge", "hash": "0c36da34ba380499", "src": "db2@1.60.1.70245"}
-{"id": 414952, "field": "name", "en": "Summon Blooming Satyrweed", "hash": "4ebebc95d84d8727", "src": "db2@1.60.1.70245"}
-{"id": 414953, "field": "name", "en": "Plant Bulb", "hash": "c7993a8e8209c3dd", "src": "db2@1.60.1.70245"}
+{"id": 414119, "field": "name", "en": "[DNT] Teleport to Ragefire Chasm", "hash": "bae5cc1d3bd35089", "src": "db2@1.60.1.70291"}
+{"id": 414120, "field": "name", "en": "[DNT] Teleport to Wailing Caverns", "hash": "8666bc141ac05529", "src": "db2@1.60.1.70291"}
+{"id": 414121, "field": "name", "en": "[DNT] Teleport to Deadmines", "hash": "d23f546c7d3ad274", "src": "db2@1.60.1.70291"}
+{"id": 414122, "field": "name", "en": "[DNT] Teleport to Shadowfang Keep", "hash": "ab7b50574b491637", "src": "db2@1.60.1.70291"}
+{"id": 414123, "field": "name", "en": "[DNT] Teleport to Stockades", "hash": "663fa7e811b0d58b", "src": "db2@1.60.1.70291"}
+{"id": 414124, "field": "name", "en": "[DNT] Teleport to Blackfathom Deeps", "hash": "2ae7de2231eeb70c", "src": "db2@1.60.1.70291"}
+{"id": 414370, "field": "name", "en": "Aqua Shell", "hash": "ec8ad03f1f2c1b95", "src": "db2@1.60.1.70291"}
+{"id": 414370, "field": "aura", "en": "Ghamoo-ra's Aqua Shell has cracked!", "hash": "2ba3a03e1e618881", "src": "db2@1.60.1.70291"}
+{"id": 414621, "field": "name", "en": "Skull Bash", "hash": "7077234713595aa1", "src": "db2@1.60.1.70291"}
+{"id": 414621, "field": "description", "en": "You bash the target's skull, interrupting spellcasting and preventing any spell in that school from being cast for $d.", "hash": "f875450d77041570", "src": "db2@1.60.1.70291"}
+{"id": 414644, "field": "name", "en": "Lacerate", "hash": "2ddaf20b3d682230", "src": "db2@1.60.1.70291"}
+{"id": 414644, "field": "description", "en": "Lacerates the enemy target, making them bleed for $o1 damage over $d plus $s2% weapon damage per existing application of Lacerate on the target. Causes a high amount of threat. This effect stacks up to $u times on the same target.", "hash": "58e2b59589e53f8f", "src": "db2@1.60.1.70291"}
+{"id": 414644, "field": "aura", "en": "$w1 damage every $t sec.", "hash": "8522e0deacb4440d", "src": "db2@1.60.1.70291"}
+{"id": 414647, "field": "name", "en": "Lacerate", "hash": "2ddaf20b3d682230", "src": "db2@1.60.1.70291"}
+{"id": 414673, "field": "name", "en": "Gift of the Earthmother", "hash": "21a538a6a46a1889", "src": "db2@1.60.1.70291"}
+{"id": 414673, "field": "description", "en": "Reduces the global cooldown by ${$m1/-1000}.1 seconds on your Rejuvenation, Swiftmend, and Wild Growth spells.", "hash": "1c2bf81078502244", "src": "db2@1.60.1.70291"}
+{"id": 414677, "field": "name", "en": "Living Seed", "hash": "7f8ad38a8689fd8d", "src": "db2@1.60.1.70291"}
+{"id": 414677, "field": "description", "en": "When you critically heal your target with any non-periodic healing spell you plant a Living Seed on the target for $s1% of the amount healed. The Living Seed will bloom the next time the target takes damage or receives non-periodic healing. Lasts $414680d.", "hash": "6d9f3088737c425f", "src": "db2@1.60.1.70291"}
+{"id": 414680, "field": "name", "en": "Living Seed", "hash": "7f8ad38a8689fd8d", "src": "db2@1.60.1.70291"}
+{"id": 414680, "field": "aura", "en": "Healed for $w1 health the next time damage is taken or non-periodic healing is received.", "hash": "96c2fb4900ca45b7", "src": "db2@1.60.1.70291"}
+{"id": 414683, "field": "name", "en": "Living Seed", "hash": "7f8ad38a8689fd8d", "src": "db2@1.60.1.70291"}
+{"id": 414683, "field": "description", "en": "Heals a friendly target for $s1.", "hash": "be4c0f4a3ecc5b98", "src": "db2@1.60.1.70291"}
+{"id": 414684, "field": "name", "en": "Sunfire", "hash": "2211871fc4cd1435", "src": "db2@1.60.1.70291"}
+{"id": 414684, "field": "description", "en": "Burns the enemy for ${$m2*$<damagepower>/100} to ${$M2*$<damagepower>/100} Nature damage and then an additional ${$m1*4*$<damagepower>/100} Nature damage over $d.", "hash": "3aa7711e949940a9", "src": "db2@1.60.1.70291"}
+{"id": 414684, "field": "aura", "en": "$w1 Nature damage every $t1 seconds.", "hash": "1062340a8742b21e", "src": "db2@1.60.1.70291"}
+{"id": 414687, "field": "name", "en": "Sunfire", "hash": "2211871fc4cd1435", "src": "db2@1.60.1.70291"}
+{"id": 414687, "field": "description", "en": "Burns the enemy for ${$m2*$<damagepower>/100} to ${$M2*$<damagepower>/100} Nature damage and then an additional ${$m1*4*$<damagepower>/100} Nature damage over $d.", "hash": "3aa7711e949940a9", "src": "db2@1.60.1.70291"}
+{"id": 414687, "field": "aura", "en": "$w1 Nature damage every $t1 seconds.", "hash": "1062340a8742b21e", "src": "db2@1.60.1.70291"}
+{"id": 414689, "field": "name", "en": "Sunfire", "hash": "2211871fc4cd1435", "src": "db2@1.60.1.70291"}
+{"id": 414689, "field": "description", "en": "Burns the enemy for ${$m2*$<damagepower>/100} to ${$M2*$<damagepower>/100} Nature damage and then an additional ${$m1*4*$<damagepower>/100} Nature damage over $d. Awards $s3 combo $lpoint:points;.\r\n", "hash": "9cd4ca30f343748f", "src": "db2@1.60.1.70291"}
+{"id": 414689, "field": "aura", "en": "$w1 Nature damage every $t1 seconds.", "hash": "1062340a8742b21e", "src": "db2@1.60.1.70291"}
+{"id": 414691, "field": "name", "en": "Corrupted Windfury Totem", "hash": "8ccded5ec2333b0a", "src": "db2@1.60.1.70291"}
+{"id": 414692, "field": "name", "en": "Sunfire", "hash": "2211871fc4cd1435", "src": "db2@1.60.1.70291"}
+{"id": 414692, "field": "description", "en": "Gain the Sunfire ability and while in Bear Form, Cat Form, or Dire Bear Form your Moonfire is replaced with Sunfire (Bear) or Sunfire (Cat). This spell benefits from and triggers all effects associated with Moonfire.\r\n\r\n$@spellicon414684\r\n$@spelldesc414684\r\n\r\n$@spellicon414687\r\n$@spelldesc414687\r\n\r\n$@spellicon414689\r\n$@spelldesc414689\r\n", "hash": "ddfecf9642c744f9", "src": "db2@1.60.1.70291"}
+{"id": 414696, "field": "name", "en": "Sunfire", "hash": "2211871fc4cd1435", "src": "db2@1.60.1.70291"}
+{"id": 414700, "field": "name", "en": "Sunfire", "hash": "2211871fc4cd1435", "src": "db2@1.60.1.70291"}
+{"id": 414719, "field": "name", "en": "Elune's Fires", "hash": "1b876660ffed5cb9", "src": "db2@1.60.1.70291"}
+{"id": 414719, "field": "description", "en": "Some of your spells and abilities extend the duration of your damage and healing over time effects on their target:\r\n\r\nStarfire extends Moonfire by $s1 sec.\r\nWrath extends Sunfire by $s2 sec.\r\nRegrowth extends Rejuvenation by $s3 sec.\r\nShred extends Rip by $s4 sec.\r\n\r\nEach effect can only be extended up to its initial duration.\r\n", "hash": "c5b655c3854a22bd", "src": "db2@1.60.1.70291"}
+{"id": 414722, "field": "name", "en": "Slumbering Spirit", "hash": "9485b0d96baff56a", "src": "db2@1.60.1.70291"}
+{"id": 414722, "field": "aura", "en": "Its head seems to be missing something...", "hash": "7f7776c874785749", "src": "db2@1.60.1.70291"}
+{"id": 414723, "field": "name", "en": "Summon Nature Spirit", "hash": "6cca0365f4dc4ab9", "src": "db2@1.60.1.70291"}
+{"id": 414724, "field": "name", "en": "Place Prairie Crown", "hash": "4d67382496bb87f9", "src": "db2@1.60.1.70291"}
+{"id": 414724, "field": "description", "en": "Awaken a spirit of the plains ", "hash": "6a4a51d5e2b7f5da", "src": "db2@1.60.1.70291"}
+{"id": 414730, "field": "name", "en": "Corrupted Windfury Totem", "hash": "8ccded5ec2333b0a", "src": "db2@1.60.1.70291"}
+{"id": 414730, "field": "aura", "en": "Weapon enchanted by wind, granting extra attacks.", "hash": "8a0e97c3770c100d", "src": "db2@1.60.1.70291"}
+{"id": 414739, "field": "name", "en": "Corrupted Windfury Totem", "hash": "8ccded5ec2333b0a", "src": "db2@1.60.1.70291"}
+{"id": 414760, "field": "name", "en": "Corrupted Lightning Shield Totem", "hash": "5b9b4ed360255273", "src": "db2@1.60.1.70291"}
+{"id": 414760, "field": "aura", "en": "Surrounded by a shield of lightning, striking back all attackers with Nature damage.", "hash": "aa643f21d0515d67", "src": "db2@1.60.1.70291"}
+{"id": 414763, "field": "name", "en": "Corrupted Lightning Shield Totem", "hash": "5b9b4ed360255273", "src": "db2@1.60.1.70291"}
+{"id": 414782, "field": "name", "en": "Corrupted Lightning Shield Totem", "hash": "5b9b4ed360255273", "src": "db2@1.60.1.70291"}
+{"id": 414783, "field": "name", "en": "Corrupted Lightning Shield Totem", "hash": "5b9b4ed360255273", "src": "db2@1.60.1.70291"}
+{"id": 414786, "field": "name", "en": "Corrupted Molten Fury Totem", "hash": "113b0ad515fecc0f", "src": "db2@1.60.1.70291"}
+{"id": 414791, "field": "name", "en": "Corrupted Molten Fury Totem", "hash": "113b0ad515fecc0f", "src": "db2@1.60.1.70291"}
+{"id": 414799, "field": "name", "en": "Fury of Stormrage", "hash": "663ba766e5e3f44d", "src": "db2@1.60.1.70291"}
+{"id": 414799, "field": "description", "en": "Reduces the mana cost of Wrath by $s1% and each time you deal damage with Wrath you have a $h% chance for your next cast of Healing Touch within $414800d to be instant and castable in any shapeshift form. Allows Wrath to be cast while in Tree of Life form.", "hash": "8541d19f3d1a2918", "src": "db2@1.60.1.70291"}
+{"id": 414800, "field": "name", "en": "Fury of Stormrage", "hash": "663ba766e5e3f44d", "src": "db2@1.60.1.70291"}
+{"id": 414800, "field": "aura", "en": "Your next Healing Touch is instant cast and castable in any shapeshift form.", "hash": "c63f596d74f46b06", "src": "db2@1.60.1.70291"}
+{"id": 414824, "field": "name", "en": "Attuned", "hash": "dd52c30c051aeaff", "src": "db2@1.60.1.70291"}
+{"id": 414824, "field": "aura", "en": "Attuned to the mysteries of nature", "hash": "0351d6834e8443e1", "src": "db2@1.60.1.70291"}
+{"id": 414825, "field": "name", "en": "Learn Idol (Ursine Rage)", "hash": "f463d812c9c46057", "src": "db2@1.60.1.70291"}
+{"id": 414826, "field": "name", "en": "Idol of Ursine Rage", "hash": "779232e4d6d6552f", "src": "db2@1.60.1.70291"}
+{"id": 414827, "field": "name", "en": "Ursine Rage", "hash": "c69da745e7bd604b", "src": "db2@1.60.1.70291"}
+{"id": 414827, "field": "aura", "en": "In a bestial rage", "hash": "d7d1ae5f1a524dc8", "src": "db2@1.60.1.70291"}
+{"id": 414887, "field": "name", "en": "Lightning Strike From Sky VFX", "hash": "049266d8ef6cffe3", "src": "db2@1.60.1.70291"}
+{"id": 414900, "field": "name", "en": "Corrupted Molten Fury Totem", "hash": "113b0ad515fecc0f", "src": "db2@1.60.1.70291"}
+{"id": 414900, "field": "description", "en": "Deals $s1 Fire damage every $t1 sec.", "hash": "a9aeaf555afe3aee", "src": "db2@1.60.1.70291"}
+{"id": 414900, "field": "aura", "en": "Deals $s1 Fire damage every $t1 sec.", "hash": "a9aeaf555afe3aee", "src": "db2@1.60.1.70291"}
+{"id": 414901, "field": "name", "en": "Corrupted Molten Fury Totem", "hash": "113b0ad515fecc0f", "src": "db2@1.60.1.70291"}
+{"id": 414907, "field": "name", "en": "Corrupted Molten Fury", "hash": "fefd3fc1e4814ccd", "src": "db2@1.60.1.70291"}
+{"id": 414908, "field": "name", "en": "Corrupted Molten Fury", "hash": "fefd3fc1e4814ccd", "src": "db2@1.60.1.70291"}
+{"id": 414920, "field": "name", "en": "Feral Charge", "hash": "0c36da34ba380499", "src": "db2@1.60.1.70291"}
+{"id": 414921, "field": "name", "en": "Feral Charge", "hash": "0c36da34ba380499", "src": "db2@1.60.1.70291"}
+{"id": 414923, "field": "name", "en": "Feral Charge", "hash": "0c36da34ba380499", "src": "db2@1.60.1.70291"}
+{"id": 414923, "field": "aura", "en": "Dazed.", "hash": "8649cd0f13f4f4b6", "src": "db2@1.60.1.70291"}
+{"id": 414924, "field": "name", "en": "Feral Charge (Cat)", "hash": "c785a71d3a8e27f3", "src": "db2@1.60.1.70291"}
+{"id": 414924, "field": "description", "en": "Leap behind an enemy.", "hash": "0f628101ecc27999", "src": "db2@1.60.1.70291"}
+{"id": 414925, "field": "name", "en": "Feral Charge", "hash": "0c36da34ba380499", "src": "db2@1.60.1.70291"}
+{"id": 414952, "field": "name", "en": "Summon Blooming Satyrweed", "hash": "4ebebc95d84d8727", "src": "db2@1.60.1.70291"}
+{"id": 414953, "field": "name", "en": "Plant Bulb", "hash": "c7993a8e8209c3dd", "src": "db2@1.60.1.70291"}

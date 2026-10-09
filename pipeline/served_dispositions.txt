@@ -42,7 +42,7 @@ itemsubclass.f1  surface:ui:ItemSubClassName  # VerboseName_lang
 pvpscoreboardcolumnheader.f0  surface:ui:PvpColumn  # Name_lang
 pvpscoreboardcolumnheader.f1  surface:ui:PvpColumnTooltip  # Tooltip_lang
 pvpscoreboardcolumnheader.f2  covered-by:pvpscoreboardcolumnheader.f0  # the same three header names (Flag Captures, Bases Assaulted)
-pvpstat.f0  covered-by:pvpscoreboardcolumnheader.f0  # the same stat names as the scoreboard headers
+pvpstat.f0  surface:ui:PvpStat  # Description_lang: the scoreboard's stat names (Alterac Valley's are not in the header table)
 spelldispeltype.f0  surface:ui:DispelType  # Name_lang
 spelldispeltype.f1  internal  # InternalName: the same four words, upper-case tokens for code
 spellitemenchantment.f0  surface:ui:SpellItemEnchantment  # Name_lang: enchant lines on item tooltips

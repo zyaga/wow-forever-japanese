@@ -13,7 +13,7 @@ BUILD = "1.15.9.69722"
 # db2@<forever build>; one Forever does not have keeps its Vanilla stamp (the union merge), and that stamp is
 # what `wfj stats --unseen-since` reads to find what the newer client has never had. Both are pinned builds:
 # the assertion is that no line carries an unpinned or unknown source, not that there is only ever one.
-FOREVER_BUILD = "1.60.1.70245"
+FOREVER_BUILD = "1.60.1.70291"
 ENGLISH_SOURCES = {f"wago@{BUILD}", f"db2@{FOREVER_BUILD}"}
 # UI words that are also the exact name of some item or spell (e.g. an item called "Cloth", the spell "Shield").
 # They are allowed because the addon never walks the line that reads as the item / spell name and labels are matched
@@ -25,6 +25,7 @@ KNOWN_NAME_COLLISIONS = {
     "Cloth", "Complete Quest", "Fire", "Fishing Pole", "Frost", "Leather", "Libram", "Mace", "Mail", "Shadow",
     "Shield", "Shirt", "Speed", "Sword", "Thrown", "Totem",
     "Learning",  # the group finder playstyle, shown only through its own key list (UI/GroupFinder.lua)
+    "Seals",  # a barber shop choice (CustomizationChoice, restricted); a spell has that name too
     # Stat / resistance labels, the pet command "Attack", the pet tab "Pet", "Reset", "Inactive",
     # "Send Mail". Every one shows on a named window label, a key-restricted widget (`only`) or a help tooltip, none
     # of which is ever an item or spell name line (help tooltips never walk item / spell tooltips; spell names are
@@ -121,6 +122,7 @@ DRAFT_SOURCES = {"draft-ui",
                  "draft-ui-review",  # lines the interface text review corrected against their windows
                  "draft-ui-review-role",  # the "role" lines brought to the settled term
                  "draft-repull70170-ui-sg12",  # the keys new on 1.60.1.70170 and the lines it reworded
+                 "draft-b70291-ui-sg12", "draft-b70291-ui-trial-sg12",  # a re-pull's new and reworded keys
                  # the last interface lines, the tooltip owner / socket / trade lines and the unit lines the
                  # tooltip line kinds surfaced
                  "draft-repull70170-lastui-sg12", "draft-repull70170-kinds-sg12", "draft-repull70170-unitlines-sg12",

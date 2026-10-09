@@ -15,6 +15,7 @@ local UI = {
   BAG_FILTER_TITLE_SORTING = { "Bag Settings", "バッグの設定" }, BAG_NAME_BAG_1 = { "Bag 1", "バッグ1" },
   BAG_FILTER_ASSIGN_TO = { "Assign To:", "割り当て先:" }, BAG_FILTER_CLEANUP = { "Ignore This Bag", "このバッグを無視" },
   BAG_FILTER_EQUIPMENT = { "Equipment", "装備品" },
+  BAG_NAME_BAG_REAGENT = { "Reagent Bag", "素材バッグ" }, -- gamepad UI mode's combined bag (containerframe.lua:42)
   UNAVAILABLE = { "Unavailable", "習得不可" }, USED = { "Used", "習得済み" },
   CATEGORIZE = { "Categorize", "分類" },
   AVAILABLE = { "Available", "習得可能" }, -- owns its Japanese (FRIENDS_LIST_AVAILABLE shares "Available")
@@ -34,6 +35,10 @@ local UI = {
   FONT_SIZE = { "Font Size", "文字サイズ" }, FONT_SIZE_TEMPLATE = { "%d pt", "%dポイント" },
   SAY_MESSAGE = { "Say", "発言" },
   WORLD_MAP_FILTER_LABEL_SHOW = { "Show:", "表示：" },
+  -- gamepad UI mode's combined map and quest log menu (blizzard_worldmaptemplates.lua:234, 325–339)
+  WORLD_MAP_FILTER_TITLE_SHOW_MAP = { "Show on Map:", "マップに表示：" },
+  WORLD_MAP_FILTER_TITLE_SHOW_QUEST_LOG = { "Show in Quest Log:", "クエストログに表示：" },
+  QUEST_LOG_SHOW_OBJECTIVES = { "Show Quest Objectives", "クエスト目標を表示" },
   SHOW_QUEST_LEVELS = { "Show Quest Levels", "クエストレベルを表示" },
   QUEST_LEVEL_FILTER_DESCRIPTION = { "Show recommended player level next to quests",
     "クエストの横に推奨プレイヤーレベルを表示する" },
@@ -127,6 +132,18 @@ describe("UI/Menus: menu entries", function()
     Stub.keys.alt = false; WFJ.Modifier.refresh()
     release(frames)
     assert.are.equal(0, WFJ.SurfaceState.count(WFJ.Menus.SURFACE))
+  end)
+
+  it("gamepad UI mode's reagent bag entry in the combined bag menu; Alt shows English", function()
+    WFJ.Menus.init()
+    local root, frames = generate("MENU_CONTAINER_FRAME_COMBINED", function(r)
+      r:CreateButton(UI.BAG_NAME_BAG_REAGENT[1])
+    end)
+    local fs = frames[root.children[1]].fontString
+    assert.are.equal("素材バッグ", fs:GetText())
+    Stub.keys.alt = true; WFJ.Modifier.refresh()
+    assert.are.equal("Reagent Bag", fs:GetText())
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
   end)
 
   it("a name in a menu, and a dictionary word outside the tag's list, stay as written", function()
@@ -309,6 +326,24 @@ describe("UI/Menus: menu entries", function()
     tt:Show()
     assert.are.equal("クエストレベルを表示", _G.GameTooltipTextLeft1:GetText())
     assert.are.equal("クエストの横に推奨プレイヤーレベルを表示する", _G.GameTooltipTextLeft2:GetText())
+  end)
+
+  it("the world map filter in gamepad UI mode: the map and quest log titles and the objectives checkbox", function()
+    WFJ.Menus.init()
+    local root, frames = generate("MENU_WORLD_MAP_TRACKING", function(r)
+      r:CreateButton(UI.WORLD_MAP_FILTER_TITLE_SHOW_MAP[1])
+      r:CreateButton(UI.WORLD_MAP_FILTER_TITLE_SHOW_QUEST_LOG[1])
+      r:CreateButton(UI.QUEST_LOG_SHOW_OBJECTIVES[1])
+      r:CreateButton(UI.RAID[1])
+    end)
+    local e = root.children
+    assert.are.equal("マップに表示：", frames[e[1]].fontString:GetText())
+    assert.are.equal("クエストログに表示：", frames[e[2]].fontString:GetText())
+    assert.are.equal("クエスト目標を表示", frames[e[3]].fontString:GetText())
+    assert.are.equal("Raid", frames[e[4]].fontString:GetText())
+    Stub.keys.alt = true; WFJ.Modifier.refresh()
+    assert.are.equal("Show Quest Objectives", frames[e[3]].fontString:GetText())
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
   end)
 
   it("a role radio keeps its icon; the loot opt-out shows Yes / No in Japanese; hovers are registered",

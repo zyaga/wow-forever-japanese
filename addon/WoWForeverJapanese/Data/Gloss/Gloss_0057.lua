@@ -696,7 +696,6 @@ WFJ.Data.add("gloss", {
   [57693] = "君\tきみ\tyours (you)",
   [57694] = "君\tきみ\tyourself",
   [57695] = "君\tきみ\tyourself (you)",
-  [57696] = "君たち\tきみたち\tyour (you all)",
   [57697] = "君ら\tきみら\tyour kind (you)",
   [57698] = "君主\tくんしゅ\tLiege Lord (monarch)",
   [57699] = "君主\tくんしゅ\tliege",

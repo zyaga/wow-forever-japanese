@@ -1,70 +1,70 @@
-{"id": 1224001, "field": "name", "en": "Grab Torch", "hash": "ef3b99e5cbf2a7b6", "src": "db2@1.60.1.70245"}
-{"id": 1224067, "field": "name", "en": "Enter the Emerald Dream", "hash": "bf0d1990e0696cc6", "src": "db2@1.60.1.70245"}
-{"id": 1224068, "field": "name", "en": "(DNT) Kharon Death Throes", "hash": "97f69af4dbc35019", "src": "db2@1.60.1.70245"}
-{"id": 1224101, "field": "name", "en": "(DNT) Destroy Glacial Fetters", "hash": "f838541cd0a661c6", "src": "db2@1.60.1.70245"}
-{"id": 1224102, "field": "name", "en": "Ruins Near Xavian", "hash": "e1f92b10ba18594b", "src": "db2@1.60.1.70245"}
-{"id": 1224120, "field": "name", "en": "Awaken", "hash": "129294059029ccb2", "src": "db2@1.60.1.70245"}
-{"id": 1224125, "field": "name", "en": "Silence", "hash": "34a188e2baf39d02", "src": "db2@1.60.1.70245"}
-{"id": 1224125, "field": "description", "en": "Silences an enemy, preventing it from casting spells for $d.", "hash": "92e27777d740df7c", "src": "db2@1.60.1.70245"}
-{"id": 1224125, "field": "aura", "en": "Cannot cast spells.", "hash": "6d133d61246b88a5", "src": "db2@1.60.1.70245"}
-{"id": 1224313, "field": "name", "en": "[DNT] Dark Rider Charge", "hash": "b44660165828034d", "src": "db2@1.60.1.70245"}
-{"id": 1224315, "field": "name", "en": "Grasping Spirits", "hash": "9c840e994aedd003", "src": "db2@1.60.1.70245"}
-{"id": 1224315, "field": "description", "en": "Rooted in place.", "hash": "eb220d138ae2b6ef", "src": "db2@1.60.1.70245"}
-{"id": 1224315, "field": "aura", "en": "Rooted in place.", "hash": "eb220d138ae2b6ef", "src": "db2@1.60.1.70245"}
-{"id": 1224316, "field": "name", "en": "[DNT] Grasping Spirits", "hash": "dec7b5d682ad62f0", "src": "db2@1.60.1.70245"}
-{"id": 1224324, "field": "name", "en": "[DNT] Torment's Rage", "hash": "abf3ce55d13ff32c", "src": "db2@1.60.1.70245"}
-{"id": 1224410, "field": "name", "en": "Blessed Wizard Oil", "hash": "628992afd80741cd", "src": "db2@1.60.1.70245"}
-{"id": 1224410, "field": "description", "en": "While applied to target weapon or shield it increases spell damage against undead by up to 60. Lasts for 1 hour.", "hash": "a4a14416b1bff489", "src": "db2@1.60.1.70245"}
-{"id": 1224422, "field": "name", "en": "Consecrated Weapon", "hash": "ffbef945be92705b", "src": "db2@1.60.1.70245"}
-{"id": 1224422, "field": "description", "en": "While applied to target weapon or shield it increases attack power against undead by 100. Lasts for 1 hour.", "hash": "1020c5f4f7e5639a", "src": "db2@1.60.1.70245"}
-{"id": 1224428, "field": "name", "en": "Authority of the Frozen Wastes", "hash": "922f0ed19c3b0596", "src": "db2@1.60.1.70245"}
-{"id": 1224428, "field": "description", "en": "The forces of the Scourge grow stronger.", "hash": "c72f37946650b80c", "src": "db2@1.60.1.70245"}
-{"id": 1224428, "field": "aura", "en": "Engaging the forces of the Scourge.\r\n\r\nThe benefits from your Seal of the Dawn cannot exceed Rank $s3.", "hash": "a8fb80a90b2fd672", "src": "db2@1.60.1.70245"}
-{"id": 1224553, "field": "name", "en": "Sanctified Light", "hash": "566d75d6db11d410", "src": "db2@1.60.1.70245"}
-{"id": 1224553, "field": "description", "en": "Increases the critical strike chance of your Holy Shock and Holy Light spells by $s1%.", "hash": "0a42355477437b8a", "src": "db2@1.60.1.70245"}
-{"id": 1224588, "field": "name", "en": "[DNT] Scythe Relic Consume", "hash": "fc861f8d405e9da1", "src": "db2@1.60.1.70245"}
-{"id": 1224589, "field": "name", "en": "[DNT] Staff Relic Consume", "hash": "7cae99191f44fd41", "src": "db2@1.60.1.70245"}
-{"id": 1224590, "field": "name", "en": "[DNT] Sword Relic Consume", "hash": "9f85baf0130b6ba1", "src": "db2@1.60.1.70245"}
-{"id": 1224607, "field": "name", "en": "Scarlet Augur's Hood", "hash": "e2100a6b833a86c4", "src": "db2@1.60.1.70245"}
-{"id": 1224608, "field": "name", "en": "Scarlet Augur's Mantle", "hash": "1903230855e41dfd", "src": "db2@1.60.1.70245"}
-{"id": 1224609, "field": "name", "en": "Scarlet Augur's Vestments", "hash": "4c43d963ed7c9848", "src": "db2@1.60.1.70245"}
-{"id": 1224610, "field": "name", "en": "Scarlet Augur's Cuffs", "hash": "573c3f353ee45d4e", "src": "db2@1.60.1.70245"}
-{"id": 1224611, "field": "name", "en": "Scarlet Augur's Mitts", "hash": "052d6cc88ac35a7c", "src": "db2@1.60.1.70245"}
-{"id": 1224612, "field": "name", "en": "Scarlet Augur's Strap", "hash": "6ff87889cfc6ee70", "src": "db2@1.60.1.70245"}
-{"id": 1224613, "field": "name", "en": "Scarlet Augur's Leggings", "hash": "496c10be5f64d4b2", "src": "db2@1.60.1.70245"}
-{"id": 1224614, "field": "name", "en": "Scarlet Augur's Soles", "hash": "6f4b645bf4ee1343", "src": "db2@1.60.1.70245"}
-{"id": 1224615, "field": "name", "en": "Scarlet Infiltrator's Bandana", "hash": "1d6820d26af3ea1f", "src": "db2@1.60.1.70245"}
-{"id": 1224616, "field": "name", "en": "Scarlet Infiltrator's Shoulderpads", "hash": "3fac15fb5b84c1a2", "src": "db2@1.60.1.70245"}
-{"id": 1224617, "field": "name", "en": "Scarlet Infiltrator's Vest", "hash": "10b51d8509ac311b", "src": "db2@1.60.1.70245"}
-{"id": 1224618, "field": "name", "en": "Scarlet Infiltrator's Bracers", "hash": "ecdda4f205a956be", "src": "db2@1.60.1.70245"}
-{"id": 1224619, "field": "name", "en": "Scarlet Infiltrator's Gloves", "hash": "baaf002c6515ac4c", "src": "db2@1.60.1.70245"}
-{"id": 1224620, "field": "name", "en": "Scarlet Infiltrator's Belt", "hash": "0e0709d4fd8c413c", "src": "db2@1.60.1.70245"}
-{"id": 1224621, "field": "name", "en": "Scarlet Infiltrator's Trousers", "hash": "9a76673566d0c1af", "src": "db2@1.60.1.70245"}
-{"id": 1224622, "field": "name", "en": "Scarlet Infiltrator's Shoes", "hash": "586acdb755def31d", "src": "db2@1.60.1.70245"}
-{"id": 1224623, "field": "name", "en": "Scarlet Huntsman's Coif", "hash": "bd6b2adeceba8745", "src": "db2@1.60.1.70245"}
-{"id": 1224624, "field": "name", "en": "Scarlet Huntsman's Pauldrons", "hash": "d08cb3504152b8a1", "src": "db2@1.60.1.70245"}
-{"id": 1224625, "field": "name", "en": "Scarlet Huntsman's Chain", "hash": "ece4bbec4aba8a0f", "src": "db2@1.60.1.70245"}
-{"id": 1224626, "field": "name", "en": "Scarlet Huntsman's Wristguards", "hash": "10bff32997f44ad4", "src": "db2@1.60.1.70245"}
-{"id": 1224627, "field": "name", "en": "Scarlet Huntsman's Handguards", "hash": "b1f4d58c8e5c678f", "src": "db2@1.60.1.70245"}
-{"id": 1224628, "field": "name", "en": "Scarlet Huntsman's Clasp", "hash": "ed6df778805b98f9", "src": "db2@1.60.1.70245"}
-{"id": 1224629, "field": "name", "en": "Scarlet Huntsman's Legguards", "hash": "8ec290f6a282a064", "src": "db2@1.60.1.70245"}
-{"id": 1224630, "field": "name", "en": "Scarlet Huntsman's Boots", "hash": "dc4ad4fc813cca0f", "src": "db2@1.60.1.70245"}
-{"id": 1224631, "field": "name", "en": "Scarlet Soldier's Helmet", "hash": "39f200ae0d53ef06", "src": "db2@1.60.1.70245"}
-{"id": 1224632, "field": "name", "en": "Scarlet Soldier's Spaulders", "hash": "0019b02fa99aee01", "src": "db2@1.60.1.70245"}
-{"id": 1224633, "field": "name", "en": "Scarlet Soldier's Chestplate", "hash": "b525f9b48a8e5d04", "src": "db2@1.60.1.70245"}
-{"id": 1224635, "field": "name", "en": "Scarlet Soldier's Protectors", "hash": "7606d2930ab3496f", "src": "db2@1.60.1.70245"}
-{"id": 1224636, "field": "name", "en": "Scarlet Soldier's Grips", "hash": "4e6de078258fee98", "src": "db2@1.60.1.70245"}
-{"id": 1224637, "field": "name", "en": "Scarlet Soldier's Waistguard", "hash": "40c7e0c45a1beec4", "src": "db2@1.60.1.70245"}
-{"id": 1224638, "field": "name", "en": "Scarlet Soldier's Legplates", "hash": "56d768433c12ef58", "src": "db2@1.60.1.70245"}
-{"id": 1224639, "field": "name", "en": "Scarlet Soldier's Stompers", "hash": "0c0b7a898315ec0f", "src": "db2@1.60.1.70245"}
-{"id": 1224692, "field": "name", "en": "Divinity", "hash": "0865cab9b1d88702", "src": "db2@1.60.1.70245"}
-{"id": 1224692, "field": "description", "en": "Increases all healing your spells do by $s1% and all healing you receive by $s2%.", "hash": "4065c70b733a87b8", "src": "db2@1.60.1.70245"}
-{"id": 1224697, "field": "name", "en": "Sacred Duty", "hash": "9d848730cfa32744", "src": "db2@1.60.1.70245"}
-{"id": 1224697, "field": "description", "en": "Increases your total Stamina by $s1% and reduces the cooldown of your Divine Shield, Divine Protection, and Templar's Bulwark spells by ${$m2/-1000} sec.", "hash": "6ff8c6b6bc64e161", "src": "db2@1.60.1.70245"}
-{"id": 1224702, "field": "name", "en": "Combat Pulse", "hash": "ff93f6f60c23ad71", "src": "db2@1.60.1.70245"}
-{"id": 1224716, "field": "name", "en": "Puncturing Wounds", "hash": "cd87a07e2fc19ab2", "src": "db2@1.60.1.70245"}
-{"id": 1224716, "field": "description", "en": "Increases the critical strike chance of your Backstab by $m1% and your Mutilate by $m3%, and gives Backstab a $m2% chance to add an additional Combo Point.", "hash": "dad38dd62790d3cc", "src": "db2@1.60.1.70245"}
-{"id": 1224782, "field": "name", "en": "Dirty Tricks", "hash": "6ce116abefb6bb5f", "src": "db2@1.60.1.70245"}
-{"id": 1224782, "field": "description", "en": "Reduces the Energy cost of your Sap and Blind abilities by $m1%.", "hash": "0a58f6d13249d153", "src": "db2@1.60.1.70245"}
-{"id": 1224905, "field": "name", "en": "[DNT] Opera Relic Consume", "hash": "3d2762512e777e61", "src": "db2@1.60.1.70245"}
-{"id": 1224919, "field": "name", "en": "[DNT] Wiggling Spider Light", "hash": "875c0135ac738609", "src": "db2@1.60.1.70245"}
+{"id": 1224001, "field": "name", "en": "Grab Torch", "hash": "ef3b99e5cbf2a7b6", "src": "db2@1.60.1.70291"}
+{"id": 1224067, "field": "name", "en": "Enter the Emerald Dream", "hash": "bf0d1990e0696cc6", "src": "db2@1.60.1.70291"}
+{"id": 1224068, "field": "name", "en": "(DNT) Kharon Death Throes", "hash": "97f69af4dbc35019", "src": "db2@1.60.1.70291"}
+{"id": 1224101, "field": "name", "en": "(DNT) Destroy Glacial Fetters", "hash": "f838541cd0a661c6", "src": "db2@1.60.1.70291"}
+{"id": 1224102, "field": "name", "en": "Ruins Near Xavian", "hash": "e1f92b10ba18594b", "src": "db2@1.60.1.70291"}
+{"id": 1224120, "field": "name", "en": "Awaken", "hash": "129294059029ccb2", "src": "db2@1.60.1.70291"}
+{"id": 1224125, "field": "name", "en": "Silence", "hash": "34a188e2baf39d02", "src": "db2@1.60.1.70291"}
+{"id": 1224125, "field": "description", "en": "Silences an enemy, preventing it from casting spells for $d.", "hash": "92e27777d740df7c", "src": "db2@1.60.1.70291"}
+{"id": 1224125, "field": "aura", "en": "Cannot cast spells.", "hash": "6d133d61246b88a5", "src": "db2@1.60.1.70291"}
+{"id": 1224313, "field": "name", "en": "[DNT] Dark Rider Charge", "hash": "b44660165828034d", "src": "db2@1.60.1.70291"}
+{"id": 1224315, "field": "name", "en": "Grasping Spirits", "hash": "9c840e994aedd003", "src": "db2@1.60.1.70291"}
+{"id": 1224315, "field": "description", "en": "Rooted in place.", "hash": "eb220d138ae2b6ef", "src": "db2@1.60.1.70291"}
+{"id": 1224315, "field": "aura", "en": "Rooted in place.", "hash": "eb220d138ae2b6ef", "src": "db2@1.60.1.70291"}
+{"id": 1224316, "field": "name", "en": "[DNT] Grasping Spirits", "hash": "dec7b5d682ad62f0", "src": "db2@1.60.1.70291"}
+{"id": 1224324, "field": "name", "en": "[DNT] Torment's Rage", "hash": "abf3ce55d13ff32c", "src": "db2@1.60.1.70291"}
+{"id": 1224410, "field": "name", "en": "Blessed Wizard Oil", "hash": "628992afd80741cd", "src": "db2@1.60.1.70291"}
+{"id": 1224410, "field": "description", "en": "While applied to target weapon or shield it increases spell damage against undead by up to 60. Lasts for 1 hour.", "hash": "a4a14416b1bff489", "src": "db2@1.60.1.70291"}
+{"id": 1224422, "field": "name", "en": "Consecrated Weapon", "hash": "ffbef945be92705b", "src": "db2@1.60.1.70291"}
+{"id": 1224422, "field": "description", "en": "While applied to target weapon or shield it increases attack power against undead by 100. Lasts for 1 hour.", "hash": "1020c5f4f7e5639a", "src": "db2@1.60.1.70291"}
+{"id": 1224428, "field": "name", "en": "Authority of the Frozen Wastes", "hash": "922f0ed19c3b0596", "src": "db2@1.60.1.70291"}
+{"id": 1224428, "field": "description", "en": "The forces of the Scourge grow stronger.", "hash": "c72f37946650b80c", "src": "db2@1.60.1.70291"}
+{"id": 1224428, "field": "aura", "en": "Engaging the forces of the Scourge.\r\n\r\nThe benefits from your Seal of the Dawn cannot exceed Rank $s3.", "hash": "a8fb80a90b2fd672", "src": "db2@1.60.1.70291"}
+{"id": 1224553, "field": "name", "en": "Sanctified Light", "hash": "566d75d6db11d410", "src": "db2@1.60.1.70291"}
+{"id": 1224553, "field": "description", "en": "Increases the critical strike chance of your Holy Shock and Holy Light spells by $s1%.", "hash": "0a42355477437b8a", "src": "db2@1.60.1.70291"}
+{"id": 1224588, "field": "name", "en": "[DNT] Scythe Relic Consume", "hash": "fc861f8d405e9da1", "src": "db2@1.60.1.70291"}
+{"id": 1224589, "field": "name", "en": "[DNT] Staff Relic Consume", "hash": "7cae99191f44fd41", "src": "db2@1.60.1.70291"}
+{"id": 1224590, "field": "name", "en": "[DNT] Sword Relic Consume", "hash": "9f85baf0130b6ba1", "src": "db2@1.60.1.70291"}
+{"id": 1224607, "field": "name", "en": "Scarlet Augur's Hood", "hash": "e2100a6b833a86c4", "src": "db2@1.60.1.70291"}
+{"id": 1224608, "field": "name", "en": "Scarlet Augur's Mantle", "hash": "1903230855e41dfd", "src": "db2@1.60.1.70291"}
+{"id": 1224609, "field": "name", "en": "Scarlet Augur's Vestments", "hash": "4c43d963ed7c9848", "src": "db2@1.60.1.70291"}
+{"id": 1224610, "field": "name", "en": "Scarlet Augur's Cuffs", "hash": "573c3f353ee45d4e", "src": "db2@1.60.1.70291"}
+{"id": 1224611, "field": "name", "en": "Scarlet Augur's Mitts", "hash": "052d6cc88ac35a7c", "src": "db2@1.60.1.70291"}
+{"id": 1224612, "field": "name", "en": "Scarlet Augur's Strap", "hash": "6ff87889cfc6ee70", "src": "db2@1.60.1.70291"}
+{"id": 1224613, "field": "name", "en": "Scarlet Augur's Leggings", "hash": "496c10be5f64d4b2", "src": "db2@1.60.1.70291"}
+{"id": 1224614, "field": "name", "en": "Scarlet Augur's Soles", "hash": "6f4b645bf4ee1343", "src": "db2@1.60.1.70291"}
+{"id": 1224615, "field": "name", "en": "Scarlet Infiltrator's Bandana", "hash": "1d6820d26af3ea1f", "src": "db2@1.60.1.70291"}
+{"id": 1224616, "field": "name", "en": "Scarlet Infiltrator's Shoulderpads", "hash": "3fac15fb5b84c1a2", "src": "db2@1.60.1.70291"}
+{"id": 1224617, "field": "name", "en": "Scarlet Infiltrator's Vest", "hash": "10b51d8509ac311b", "src": "db2@1.60.1.70291"}
+{"id": 1224618, "field": "name", "en": "Scarlet Infiltrator's Bracers", "hash": "ecdda4f205a956be", "src": "db2@1.60.1.70291"}
+{"id": 1224619, "field": "name", "en": "Scarlet Infiltrator's Gloves", "hash": "baaf002c6515ac4c", "src": "db2@1.60.1.70291"}
+{"id": 1224620, "field": "name", "en": "Scarlet Infiltrator's Belt", "hash": "0e0709d4fd8c413c", "src": "db2@1.60.1.70291"}
+{"id": 1224621, "field": "name", "en": "Scarlet Infiltrator's Trousers", "hash": "9a76673566d0c1af", "src": "db2@1.60.1.70291"}
+{"id": 1224622, "field": "name", "en": "Scarlet Infiltrator's Shoes", "hash": "586acdb755def31d", "src": "db2@1.60.1.70291"}
+{"id": 1224623, "field": "name", "en": "Scarlet Huntsman's Coif", "hash": "bd6b2adeceba8745", "src": "db2@1.60.1.70291"}
+{"id": 1224624, "field": "name", "en": "Scarlet Huntsman's Pauldrons", "hash": "d08cb3504152b8a1", "src": "db2@1.60.1.70291"}
+{"id": 1224625, "field": "name", "en": "Scarlet Huntsman's Chain", "hash": "ece4bbec4aba8a0f", "src": "db2@1.60.1.70291"}
+{"id": 1224626, "field": "name", "en": "Scarlet Huntsman's Wristguards", "hash": "10bff32997f44ad4", "src": "db2@1.60.1.70291"}
+{"id": 1224627, "field": "name", "en": "Scarlet Huntsman's Handguards", "hash": "b1f4d58c8e5c678f", "src": "db2@1.60.1.70291"}
+{"id": 1224628, "field": "name", "en": "Scarlet Huntsman's Clasp", "hash": "ed6df778805b98f9", "src": "db2@1.60.1.70291"}
+{"id": 1224629, "field": "name", "en": "Scarlet Huntsman's Legguards", "hash": "8ec290f6a282a064", "src": "db2@1.60.1.70291"}
+{"id": 1224630, "field": "name", "en": "Scarlet Huntsman's Boots", "hash": "dc4ad4fc813cca0f", "src": "db2@1.60.1.70291"}
+{"id": 1224631, "field": "name", "en": "Scarlet Soldier's Helmet", "hash": "39f200ae0d53ef06", "src": "db2@1.60.1.70291"}
+{"id": 1224632, "field": "name", "en": "Scarlet Soldier's Spaulders", "hash": "0019b02fa99aee01", "src": "db2@1.60.1.70291"}
+{"id": 1224633, "field": "name", "en": "Scarlet Soldier's Chestplate", "hash": "b525f9b48a8e5d04", "src": "db2@1.60.1.70291"}
+{"id": 1224635, "field": "name", "en": "Scarlet Soldier's Protectors", "hash": "7606d2930ab3496f", "src": "db2@1.60.1.70291"}
+{"id": 1224636, "field": "name", "en": "Scarlet Soldier's Grips", "hash": "4e6de078258fee98", "src": "db2@1.60.1.70291"}
+{"id": 1224637, "field": "name", "en": "Scarlet Soldier's Waistguard", "hash": "40c7e0c45a1beec4", "src": "db2@1.60.1.70291"}
+{"id": 1224638, "field": "name", "en": "Scarlet Soldier's Legplates", "hash": "56d768433c12ef58", "src": "db2@1.60.1.70291"}
+{"id": 1224639, "field": "name", "en": "Scarlet Soldier's Stompers", "hash": "0c0b7a898315ec0f", "src": "db2@1.60.1.70291"}
+{"id": 1224692, "field": "name", "en": "Divinity", "hash": "0865cab9b1d88702", "src": "db2@1.60.1.70291"}
+{"id": 1224692, "field": "description", "en": "Increases all healing your spells do by $s1% and all healing you receive by $s2%.", "hash": "4065c70b733a87b8", "src": "db2@1.60.1.70291"}
+{"id": 1224697, "field": "name", "en": "Sacred Duty", "hash": "9d848730cfa32744", "src": "db2@1.60.1.70291"}
+{"id": 1224697, "field": "description", "en": "Increases your total Stamina by $s1% and reduces the cooldown of your Divine Shield, Divine Protection, and Templar's Bulwark spells by ${$m2/-1000} sec.", "hash": "6ff8c6b6bc64e161", "src": "db2@1.60.1.70291"}
+{"id": 1224702, "field": "name", "en": "Combat Pulse", "hash": "ff93f6f60c23ad71", "src": "db2@1.60.1.70291"}
+{"id": 1224716, "field": "name", "en": "Puncturing Wounds", "hash": "cd87a07e2fc19ab2", "src": "db2@1.60.1.70291"}
+{"id": 1224716, "field": "description", "en": "Increases the critical strike chance of your Backstab by $m1% and your Mutilate by $m3%, and gives Backstab a $m2% chance to add an additional Combo Point.", "hash": "dad38dd62790d3cc", "src": "db2@1.60.1.70291"}
+{"id": 1224782, "field": "name", "en": "Dirty Tricks", "hash": "6ce116abefb6bb5f", "src": "db2@1.60.1.70291"}
+{"id": 1224782, "field": "description", "en": "Reduces the Energy cost of your Sap and Blind abilities by $m1%.", "hash": "0a58f6d13249d153", "src": "db2@1.60.1.70291"}
+{"id": 1224905, "field": "name", "en": "[DNT] Opera Relic Consume", "hash": "3d2762512e777e61", "src": "db2@1.60.1.70291"}
+{"id": 1224919, "field": "name", "en": "[DNT] Wiggling Spider Light", "hash": "875c0135ac738609", "src": "db2@1.60.1.70291"}

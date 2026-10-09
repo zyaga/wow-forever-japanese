@@ -50,7 +50,15 @@ local UI = {
   GAMEPAD_SWAP_TARGET_MODIFIERS_TOOLTIP = { "Switch sides of the two targeting modifiers, putting friendly targeting "
     .. "on the right side, and hostile targeting on the left side.",
     "2つのターゲット修飾キーの左右を入れ替え、友好ターゲットを右側、敵対ターゲットを左側にします。" },
+  -- an Edit Mode checkbox now (editmodesettingdisplayinfo.lua:1522): never an Options key
   GAMEPAD_TOGGLE_COMPACT_ACTION_BAR = { "Use Compact Action Bar", "コンパクトなアクションバーを使用" },
+  -- the Voice page's service dropdown and Discord settings checkbox (audio.lua:258–283)
+  NEW_CAPS = { "NEW", "新規" }, -- the new-setting tag on the voice rows (camelot/newdefinitions.lua:1–4)
+  VOICE_CHAT_SERVICE = { "Preferred Voice Chat Service", "優先するボイスチャットサービス" },
+  VOICE_CHAT_SERVICE_LEGACY = { "Legacy", "レガシー" },
+  VOICE_CHAT_USE_DISCORD_SETTINGS = { "Use Your Discord Settings", "Discordの設定を使用" },
+  OPTION_TOOLTIP_VOICE_CHAT_USE_DISCORD_SETTINGS = { "Uses settings from your Discord account to control volume.",
+    "Discordアカウントの設定で音量を調整します。" },
   BINDING_NAME_TOGGLECOOLDOWNVIEWERSETTINGS = { "Toggle Cooldown Settings", "クールダウン設定の切り替え" },
   OPTION_TOOLTIP_DISABLE_CHAT_AGE_RESTRICTED_MINOR = { "Chat and other social features are unavailable on accounts "
     .. "belonging to minors", "未成年者のアカウントでは、チャットやその他のソーシャル機能を利用できません" },
@@ -287,7 +295,7 @@ describe("the Options window on Forever", function()
       for _, row in ipairs({ header, swap, compact, binding }) do list:initFrame(row, {}) end
       assert.are.equal("ターゲティング", header.Title:GetText())
       assert.are.equal("ターゲット修飾キーの左右を入れ替え", swap.Text:GetText())
-      assert.are.equal("コンパクトなアクションバーを使用", compact.Text:GetText())
+      assert.are.equal("Use Compact Action Bar", compact.Text:GetText()) -- Edit Mode's word, not this window's
       assert.are.equal("クールダウン設定の切り替え", binding.Label:GetText())
       S.optionTooltip(swap.Tooltip, { "Swap Target Modifier Sides", "Switch sides of the two targeting modifiers, "
         .. "putting friendly targeting on the right side, and hostile targeting on the left side." })
@@ -300,6 +308,29 @@ describe("the Options window on Forever", function()
         .. "and hostile targeting on the left side.", _G.SettingsTooltipTextLeft2:GetText())
       alt(false)
     end)
+
+  it("the Voice page's service dropdown, its Discord settings checkbox and tooltip; Alt shows English", function()
+    local service = S.dropdownRow("Preferred Voice Chat Service", "Legacy")
+    local discord = S.checkboxRow("Use Your Discord Settings")
+    local other = S.dropdownRow("Preferred Voice Chat Service", "Some Other Service")
+    local tag = S.node("Frame", nil, service, "NewFeature") -- NewFeatureLabelTemplate: Label and BGLabel
+    S.label(tag, "Label", "NEW")
+    for _, row in ipairs({ service, discord, other }) do list:initFrame(row, {}) end
+    assert.are.equal("新規", tag.Label:GetText())
+    assert.are.equal("優先するボイスチャットサービス", service.Text:GetText())
+    assert.are.equal("レガシー", service.Control.Dropdown.Text:GetText())
+    assert.are.equal("Discordの設定を使用", discord.Text:GetText())
+    assert.are.equal("Some Other Service", other.Control.Dropdown.Text:GetText())
+    S.optionTooltip(discord.Tooltip, { "Use Your Discord Settings",
+      "Uses settings from your Discord account to control volume." })
+    assert.are.equal("Discordアカウントの設定で音量を調整します。", _G.SettingsTooltipTextLeft2:GetText())
+    alt(true)
+    assert.are.equal("Preferred Voice Chat Service", service.Text:GetText())
+    assert.are.equal("Legacy", service.Control.Dropdown.Text:GetText())
+    assert.are.equal("Uses settings from your Discord account to control volume.",
+      _G.SettingsTooltipTextLeft2:GetText())
+    alt(false)
+  end)
 
   it("the chat option's red-wrapped age-restriction paragraph translates, colour kept", function()
     local row = S.checkboxRow("Shadow Quality")

@@ -891,7 +891,6 @@ WFJ.Data.add("gloss", {
   [111889] = "者\tもの\tthe likes of (person)",
   [111890] = "者\tもの\tthe living (people)",
   [111891] = "者\tもの\tthe one",
-  [111892] = "者\tもの\tthe one (person)",
   [111893] = "者\tもの\tthe ones",
   [111894] = "者\tもの\tthe ones (people)",
   [111895] = "者\tもの\tthem (people)",

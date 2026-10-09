@@ -258,6 +258,11 @@ UIStrings.ARGS = {
   LEVEL_UP_STAT = { [1] = "words" }, MARKED_AFK_MESSAGE = { [1] = "verbatim" }, MARKED_DND = { [1] = "verbatim" },
   GUILD_MOTD_TEMPLATE = { [1] = "verbatim" }, TIME_PLAYED_TOTAL = { [1] = "entry" },
   TIME_PLAYED_LEVEL = { [1] = "entry" },
+  -- the voice service a group switched to: VOICE_CHAT_SERVICE_DISCORD / _LEGACY (channelframe.lua:326)
+  VOICE_CHAT_SERVICE_SWITCHING = { [1] = "entryOrText" }, -- "Discord" is a name and stays as written
+  -- a group finder listing's voice mode, VOICE_CHAT_MODE_NONE / _LEGACY / _DISCORD / _CUSTOM
+  -- (blizzard_groupfinder_vanillastyle/blizzard_lfgvanilla_browse.lua:676–679)
+  VOICE_CHAT_MODE_FORMAT = { [1] = "entry" },
   -- the add-alert disabled tooltip, "Cannot add cooldown alert: %s" around a status key
   -- (cooldownviewersettings.lua:291–292, 1793–1798)
   COOLDOWN_VIEWER_SETTINGS_ACTION_ADD_ALERT = { [1] = "entry" },
@@ -663,7 +668,8 @@ UIStrings.ONLY = { COOLDOWN_VIEWER_SETTINGS_ACTION_ADD_ALERT = true,
   GUILDBANK_AWARD_MONEY_SUMMARY_FORMAT = true,
   GUILDBANK_UNLOCKTAB_FORMAT = true, GUILDBANK_INFO_TITLE_FORMAT = true, GUILDBANK_LOG_TITLE_FORMAT = true,
   GUILD_TRADE_SKILL_TITLE = true, QUICK_JOIN_TOAST_LFGLIST_MESSAGE = true, QUICK_JOIN_TOAST_MESSAGE = true,
-  VOICE_CHAT_CHANNEL_ANNOUNCE = true, GUILDEVENT_TYPE_DEMOTE = true, GUILDEVENT_TYPE_INVITE = true,
+  VOICE_CHAT_CHANNEL_ANNOUNCE = true, VOICE_CHAT_SERVICE_SWITCHING = true,
+  GUILDEVENT_TYPE_DEMOTE = true, GUILDEVENT_TYPE_INVITE = true,
   GUILDEVENT_TYPE_JOIN = true, GUILDEVENT_TYPE_PROMOTE = true, GUILDEVENT_TYPE_QUIT = true,
   GUILDEVENT_TYPE_REMOVE = true,
   GUILD_EVENT_FORMAT = true, COMMUNITIES_MESSAGE_OF_THE_DAY_FORMAT = true, RESTRICT_CHAT_TOOLTIP_FORMAT = true,

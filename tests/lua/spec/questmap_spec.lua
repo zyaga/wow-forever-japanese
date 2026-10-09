@@ -37,6 +37,10 @@ local UI = {
   REWARD_CHOICES = { "You will be able to choose one of these rewards:", "次の報酬から1つ選べる:" },
   REWARD_ITEMS_ONLY = { "You will receive:", "受け取る報酬:" },
   REWARD_TITLE = { "You shall be granted the title:", "次の称号を授かる:" },
+  -- the quest tags (blizzard_framexmlutil/camelot/questutilsoverrides.lua:20–35); RAID is left out, so a raid tag has
+  -- no Japanese
+  PARENS_TEMPLATE = { "(%s)", "（%s）" }, ELITE = { "Elite", "精鋭" }, CALENDAR_TYPE_DUNGEON = { "Dungeon", "ダンジョン" },
+  CALENDAR_TYPE_PVP = { "PvP", "PvP戦" },
 }
 
 local QUEST5 = { title = "Wolf Pelts", description = "The wolves of the forest grow bold.",
@@ -278,7 +282,27 @@ describe("UI/QuestMap: the camelot quest log", function()
       assert.are.equal("[10] 狼の毛皮", rows[5].Text:GetText())
       assert.are.equal("[12+] 失われた書物", rows[6].Text:GetText())
       assert.are.equal("[3] Untranslated Errand", rows[7].Text:GetText())
-      assert.are.equal(3, SS.count(QM.LIST)) -- one record per row, by quest id (7 has no Japanese: English)
+      -- one record per title row, by quest id (7 has no Japanese: English), and one for quest 6's elite tag
+      assert.are.equal(4, SS.count(QM.LIST))
+    end)
+
+    it("a list row's quest tag (TagText): Elite, Dungeon, PvP and Raid through PARENS_TEMPLATE; Alt shows English;"
+      .. " a tag word with no Japanese stays English", function()
+      _G.RAID = "Raid" -- the client's global; this spec ships no Japanese for it
+      finally(function() _G.RAID = nil end)
+      local cases = { { "ELITE", "（精鋭）", "(Elite)" }, { "CALENDAR_TYPE_DUNGEON", "（ダンジョン）", "(Dungeon)" },
+        { "CALENDAR_TYPE_PVP", "（PvP戦）", "(PvP)" }, { "RAID", "(Raid)", "(Raid)" } }
+      for _, c in ipairs(cases) do
+        Q.quests[6].tag = c[1]
+        Q.updateList()
+        local row = Q.rows()[6]
+        assert.are.equal(c[2], row.TagText:GetText())
+        assert.are.equal("[12+] 失われた書物", row.Text:GetText())
+        Stub.keys.alt = true; WFJ.Modifier.refresh()
+        assert.are.equal(c[3], row.TagText:GetText())
+        Stub.keys.alt = false; WFJ.Modifier.refresh()
+        assert.are.equal(c[2], row.TagText:GetText())
+      end
     end)
 
     it("releases the list on the map's OnHide", function()
@@ -295,9 +319,10 @@ describe("UI/QuestMap: the camelot quest log", function()
       Q.updateTracker()
       local blocks = _G.QuestObjectiveTracker.usedBlocks
       assert.are.equal("狼の毛皮", blocks[5].HeaderText:GetText())
+      assert.are.equal("失われた書物 （精鋭）", blocks[6].HeaderText:GetText())
       Q.trackerLevel = true
       Q.updateTracker()
-      assert.are.equal("[12] 失われた書物", blocks[6].HeaderText:GetText())
+      assert.are.equal("[12+] 失われた書物 （精鋭）", blocks[6].HeaderText:GetText())
       Q.trackerColor = true
       Q.updateTracker()
       assert.are.equal("|cffffff00[10] 狼の毛皮|r", blocks[5].HeaderText:GetText())
@@ -310,6 +335,31 @@ describe("UI/QuestMap: the camelot quest log", function()
       assert.are.equal("|cffffff00狼の毛皮|r", blocks[5].HeaderText:GetText())
     end)
 
+    it("tracker headers with a quest tag: the title and the tag in Japanese inside the level prefix and the colour;"
+      .. " Alt shows the live English; a tag with no Japanese stays English after the Japanese title", function()
+      _G.RAID = "Raid" -- the client's global; this spec ships no Japanese for it
+      finally(function() _G.RAID = nil end)
+      Q.trackerLevel, Q.trackerColor = true, true
+      Q.watched = { [6] = true }
+      local blocks = _G.QuestObjectiveTracker.usedBlocks
+      local cases = { { "ELITE", "（精鋭）", "(Elite)" }, { "CALENDAR_TYPE_DUNGEON", "（ダンジョン）", "(Dungeon)" },
+        { "CALENDAR_TYPE_PVP", "（PvP戦）", "(PvP)" }, { "RAID", "(Raid)", "(Raid)" } }
+      for _, c in ipairs(cases) do
+        Q.quests[6].tag = c[1]
+        Q.updateTracker()
+        assert.are.equal("|cffffff00[12+] 失われた書物 " .. c[2] .. "|r", blocks[6].HeaderText:GetText())
+        Stub.keys.alt = true; WFJ.Modifier.refresh()
+        assert.are.equal("|cffffff00[12+] The Lost Tome " .. c[3] .. "|r", blocks[6].HeaderText:GetText())
+        Stub.keys.alt = false; WFJ.Modifier.refresh()
+        assert.are.equal("|cffffff00[12+] 失われた書物 " .. c[2] .. "|r", blocks[6].HeaderText:GetText())
+      end
+      -- a quest with no Japanese title keeps its whole header English, tag included
+      Q.quests[7].tag = "CALENDAR_TYPE_DUNGEON"
+      Q.watched = { [7] = true }
+      Q.updateTracker()
+      assert.are.equal("|cffffff00[3] Untranslated Errand (Dungeon)|r", blocks[7].HeaderText:GetText())
+    end)
+
     it("the decoration reader: level prefix and colour wrap kept verbatim; anything else is not ours", function()
       assert.are.same({ "", "" }, { QM.decoration("Wolf Pelts", "Wolf Pelts") })
       assert.are.same({ "[10] ", "" }, { QM.decoration("[10] Wolf Pelts", "Wolf Pelts") })
@@ -318,6 +368,14 @@ describe("UI/QuestMap: the camelot quest log", function()
       assert.is_nil(QM.decoration("[2] [10] Wolf Pelts", "Wolf Pelts"))
       assert.is_nil(QM.decoration("|cff40c040Wolf Pelts", "Wolf Pelts")) -- no closing |r
       assert.is_nil(QM.decoration("Wolf Pelts - (Failed)", "Wolf Pelts"))
+      -- the tracker's quest tag after the title, its Japanese for a Japanese title
+      assert.are.same({ "|cff40c040[10+] ", " (Elite)|r", " （精鋭）|r" },
+        { QM.decoration("|cff40c040[10+] Wolf Pelts (Elite)|r", "Wolf Pelts") })
+      _G.RAID = "Raid" -- the client's global; this spec ships no Japanese for it
+      finally(function() _G.RAID = nil end)
+      assert.are.same({ "[10] ", " (Raid)" }, { QM.decoration("[10] Wolf Pelts (Raid)", "Wolf Pelts") })
+      assert.is_nil(QM.decoration("[10] Wolf Pelts (Heroic)", "Wolf Pelts")) -- no quest tag word
+      assert.is_nil(QM.decoration("[10] Wolf Pelts(Elite)", "Wolf Pelts"))
     end)
 
     it("the block's frame is laid out on the Japanese header's height, and again after the modifier; block.height, " ..

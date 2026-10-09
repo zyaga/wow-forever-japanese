@@ -1,305 +1,305 @@
-{"id": 1214001, "field": "name", "en": "Scroll: Wrath of the Swarm", "hash": "583ace6680225003", "src": "db2@1.60.1.70245"}
-{"id": 1214001, "field": "description", "en": "Read from the scroll, evoking the Wrath of the Swarm, empowering your raid to deal up to $s1 increased damage and healing with spells, and increasing attack power by $s2 for $d.", "hash": "af3372616b2f2326", "src": "db2@1.60.1.70245"}
-{"id": 1214001, "field": "aura", "en": "Empowered by the Swarm. Dealing up to $s1 increased damage and healing with spells, and increasing attack power by $s2.", "hash": "f2a2652904e9d12f", "src": "db2@1.60.1.70245"}
-{"id": 1214002, "field": "name", "en": "Draw Spirit", "hash": "d17531f4ca987fd4", "src": "db2@1.60.1.70245"}
-{"id": 1214003, "field": "name", "en": "Summon Spirit Shade", "hash": "d4e0e83c62f4f4ad", "src": "db2@1.60.1.70245"}
-{"id": 1214004, "field": "name", "en": "Enchanted Repellent", "hash": "619e4470ccf6dd07", "src": "db2@1.60.1.70245"}
-{"id": 1214004, "field": "description", "en": "While applied to target weapon or shield it increases spell damage by up to $1214006s1 and increases Spell Critical chance by $1214006s3% .  Lasts for 30 minutes.", "hash": "75e4b2da5ab693e9", "src": "db2@1.60.1.70245"}
-{"id": 1214006, "field": "name", "en": "Increase Spell Dam 45 and 1% Crit", "hash": "c8bc29c069bd1abe", "src": "db2@1.60.1.70245"}
-{"id": 1214006, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.   Also increases chance to get a critical hit with spells by $s3%.", "hash": "299ae61d1a466c20", "src": "db2@1.60.1.70245"}
-{"id": 1214008, "field": "name", "en": "Summon Shade of Taerar", "hash": "ea9cc6848d694421", "src": "db2@1.60.1.70245"}
-{"id": 1214010, "field": "name", "en": "Summon Shade of Taerar", "hash": "ea9cc6848d694421", "src": "db2@1.60.1.70245"}
-{"id": 1214011, "field": "name", "en": "Summon Shade of Taerar", "hash": "ea9cc6848d694421", "src": "db2@1.60.1.70245"}
-{"id": 1214028, "field": "name", "en": "Bellowing Roar", "hash": "234ae4ce0ee8d5b1", "src": "db2@1.60.1.70245"}
-{"id": 1214028, "field": "aura", "en": "Fleeing in fear.", "hash": "fa67e4a8461af331", "src": "db2@1.60.1.70245"}
-{"id": 1214029, "field": "name", "en": "Arcane Blast", "hash": "1addb3da8681d6b4", "src": "db2@1.60.1.70245"}
-{"id": 1214029, "field": "description", "en": "Blasts an enemy with Arcane magic, inflicting normal damage plus $s2 and knocking the enemy back.", "hash": "26533b34e330cf0d", "src": "db2@1.60.1.70245"}
-{"id": 1214037, "field": "name", "en": "Desolation", "hash": "c5ac5a59e1b9a732", "src": "db2@1.60.1.70245"}
-{"id": 1214037, "field": "description", "en": "Leeches life from all nearby enemies.", "hash": "035df0d3b391bfb6", "src": "db2@1.60.1.70245"}
-{"id": 1214037, "field": "aura", "en": "Leeches life from all nearby enemies.", "hash": "035df0d3b391bfb6", "src": "db2@1.60.1.70245"}
-{"id": 1214050, "field": "name", "en": "Caustic Emanations", "hash": "56457f1090ddb31d", "src": "db2@1.60.1.70245"}
-{"id": 1214055, "field": "name", "en": "Caustic Bolt", "hash": "596f05332ebe396a", "src": "db2@1.60.1.70245"}
-{"id": 1214058, "field": "name", "en": "Enchanted Prayer Tome", "hash": "b5e0d34986e652a8", "src": "db2@1.60.1.70245"}
-{"id": 1214058, "field": "description", "en": "Increases the amount healed by your Holy Light and Flash of Light spells by $s1%.", "hash": "11a2c3943339b967", "src": "db2@1.60.1.70245"}
-{"id": 1214059, "field": "name", "en": "Enchanted Totem", "hash": "c81b494831a921fa", "src": "db2@1.60.1.70245"}
-{"id": 1214059, "field": "description", "en": "Increases the amount healed by your Chain Heal and Healing Wave spells by $s1%.", "hash": "d4e4189f50efb096", "src": "db2@1.60.1.70245"}
-{"id": 1214063, "field": "name", "en": "Enchanted Mushroom", "hash": "4ba95b32c53bbb52", "src": "db2@1.60.1.70245"}
-{"id": 1214063, "field": "description", "en": "Increases the amount healed by your Lifebloom, Nourish, and Wild Growth spells by $s1%.", "hash": "ae757acd2445d43d", "src": "db2@1.60.1.70245"}
-{"id": 1214069, "field": "name", "en": "Obsidian Edged", "hash": "9e9f9408e23da54b", "src": "db2@1.60.1.70245"}
-{"id": 1214069, "field": "description", "en": "Chance on melee hit to deal $s1 Fire damage to your target.  Deals extra damage to Silithid creatures in Silithus on almost every hit.", "hash": "0d3fc4fc39385d03", "src": "db2@1.60.1.70245"}
-{"id": 1214070, "field": "name", "en": "Unyielding Aura", "hash": "6a6e2c1b95486017", "src": "db2@1.60.1.70245"}
-{"id": 1214070, "field": "description", "en": "Reduces all incoming damage by $s1. ", "hash": "a59be9ff9019e142", "src": "db2@1.60.1.70245"}
-{"id": 1214070, "field": "aura", "en": "Reduces all incoming damage by $s1.", "hash": "a59be9ff9019e142", "src": "db2@1.60.1.70245"}
-{"id": 1214082, "field": "name", "en": "Summon Demented Druid Spirit", "hash": "0463a9dc06f152cd", "src": "db2@1.60.1.70245"}
-{"id": 1214085, "field": "name", "en": "S03 - Item - TAQ - Warlock - Damage 2P Bonus", "hash": "1b422ff45f855607", "src": "db2@1.60.1.70245"}
-{"id": 1214085, "field": "description", "en": "Reduces the cooldown on your Chaos Bolt by $s1% and increases Chaos Bolt and Shadow Bolt damage done by $s2%. In addition, Chaos Bolt can now trigger your Improved Shadow Bolt talent and causes it to have $s3 additional charges (does not stack with Shadowflame's additional charges).", "hash": "a77caef7dfaf7166", "src": "db2@1.60.1.70245"}
-{"id": 1214086, "field": "name", "en": "Summon Demented Druid Spirit", "hash": "0463a9dc06f152cd", "src": "db2@1.60.1.70245"}
-{"id": 1214087, "field": "name", "en": "S03 - Item - TAQ - Warlock - Damage 4P Bonus", "hash": "0a2535774a5761ee", "src": "db2@1.60.1.70245"}
-{"id": 1214087, "field": "description", "en": "Each time you hit a target with Conflagrate, you gain $1214088s1% increased Fire damage for $1214088d, stacking up to $1214088u times.", "hash": "4b1b65848df9df6a", "src": "db2@1.60.1.70245"}
-{"id": 1214088, "field": "name", "en": "Infernalist", "hash": "ea0119bfedf919c3", "src": "db2@1.60.1.70245"}
-{"id": 1214088, "field": "aura", "en": "Increases all Fire damage done by $s1%.", "hash": "7f6cf18633e90439", "src": "db2@1.60.1.70245"}
-{"id": 1214091, "field": "name", "en": "S03 - Item - TAQ - Warlock - Tank 2P Bonus", "hash": "b03050ceb7445409", "src": "db2@1.60.1.70245"}
-{"id": 1214091, "field": "description", "en": "Reduces the cooldown on your Shadow Cleave by ${$m1/-1000}.1 sec.", "hash": "39dc59b061a16cc8", "src": "db2@1.60.1.70245"}
-{"id": 1214095, "field": "name", "en": "S03 - Item - TAQ - Warlock - Tank 4P Bonus", "hash": "9f135651a2165ff0", "src": "db2@1.60.1.70245"}
-{"id": 1214095, "field": "description", "en": "The effects of your Demonic Sacrifice now persist while you have a Demon pet active, as long as you do not resummon the sacrificed pet. You may have only one Demonic Sacrifice effect active at a time.", "hash": "c71dd52211e8ac18", "src": "db2@1.60.1.70245"}
-{"id": 1214098, "field": "name", "en": "Master Demonologist", "hash": "bae30ec7879957bd", "src": "db2@1.60.1.70245"}
-{"id": 1214098, "field": "aura", "en": "Reduces physical damage taken by $w1%.", "hash": "edb5aac73e0c5691", "src": "db2@1.60.1.70245"}
-{"id": 1214100, "field": "name", "en": "Master Demonologist", "hash": "bae30ec7879957bd", "src": "db2@1.60.1.70245"}
-{"id": 1214100, "field": "aura", "en": "Increases resistance to all magic schools by $w1.", "hash": "12255ca01209d3ae", "src": "db2@1.60.1.70245"}
-{"id": 1214101, "field": "name", "en": "Master Demonologist", "hash": "bae30ec7879957bd", "src": "db2@1.60.1.70245"}
-{"id": 1214101, "field": "aura", "en": "Increases damage caused by $w1%.", "hash": "ed9472b40b9663ec", "src": "db2@1.60.1.70245"}
-{"id": 1214102, "field": "name", "en": "Master Demonologist", "hash": "bae30ec7879957bd", "src": "db2@1.60.1.70245"}
-{"id": 1214102, "field": "aura", "en": "$?$w1>0[Increases][Reduces] threat caused by $w1%.", "hash": "9f50a38ea3453358", "src": "db2@1.60.1.70245"}
-{"id": 1214115, "field": "name", "en": "Obsidian Edged", "hash": "9e9f9408e23da54b", "src": "db2@1.60.1.70245"}
-{"id": 1214115, "field": "description", "en": "Chance on direct spell damage to deal $s1 Fire damage to your target.  Deals extra damage to Silithid creatures in Silithus on almost every hit.", "hash": "d8713e67c42783bb", "src": "db2@1.60.1.70245"}
-{"id": 1214125, "field": "name", "en": "Obsidian Edged", "hash": "9e9f9408e23da54b", "src": "db2@1.60.1.70245"}
-{"id": 1214125, "field": "description", "en": "Chance on direct spell damage or melee attack to deal $1213941s1 Fire damage to your target. Deals extra damage to Silithid creatures in Silithus on almost every hit.", "hash": "e28b52295ecbe247", "src": "db2@1.60.1.70245"}
-{"id": 1214136, "field": "name", "en": "Divergent Lightning", "hash": "6e3ea3f1b1b438bd", "src": "db2@1.60.1.70245"}
-{"id": 1214136, "field": "description", "en": "After $d, deals heavy damage that's split among everyone affected.", "hash": "8a6f1acc81fd95e8", "src": "db2@1.60.1.70245"}
-{"id": 1214136, "field": "aura", "en": "After $d, deals heavy damage that's split among everyone affected.", "hash": "8a6f1acc81fd95e8", "src": "db2@1.60.1.70245"}
-{"id": 1214137, "field": "name", "en": "Obsidian Heartseeker", "hash": "2e68448d5c6d4507", "src": "db2@1.60.1.70245"}
-{"id": 1214143, "field": "name", "en": "Obsidian Edged", "hash": "9e9f9408e23da54b", "src": "db2@1.60.1.70245"}
-{"id": 1214143, "field": "description", "en": "Chance on ranged hit to deal $1213941s1 Fire damage to your target.  Deals extra damage to Silithid creatures in Silithus on almost every hit.", "hash": "fad4d5d619cc3688", "src": "db2@1.60.1.70245"}
-{"id": 1214145, "field": "name", "en": "Obsidian Shotgun", "hash": "b5a3561a30cdddea", "src": "db2@1.60.1.70245"}
-{"id": 1214151, "field": "name", "en": "S03 - Item - RAQ - Warlock - Tank 3P Bonus", "hash": "0c46df70941e04ee", "src": "db2@1.60.1.70245"}
-{"id": 1214151, "field": "description", "en": "For $1214156d after using Shadowcleave, your Searing Pain strikes $1214156s1 additional target within melee range.", "hash": "6eaf27b86b22d836", "src": "db2@1.60.1.70245"}
-{"id": 1214155, "field": "name", "en": "Timeworn Decay", "hash": "60d0bb69401e701f", "src": "db2@1.60.1.70245"}
-{"id": 1214155, "field": "description", "en": "Increases the damage dealt by all of your damage over time spells by $s1% per piece of Timeworn armor equipped.", "hash": "4e9d6f1ad2e838ef", "src": "db2@1.60.1.70245"}
-{"id": 1214156, "field": "name", "en": "Spreading Pain", "hash": "793f89814f679dbc", "src": "db2@1.60.1.70245"}
-{"id": 1214156, "field": "aura", "en": "Your Searing Pain hits $s1 additional targets within melee range.", "hash": "6d561b0d196b27fb", "src": "db2@1.60.1.70245"}
-{"id": 1214157, "field": "name", "en": "Libram of Purification", "hash": "3ea59092b28f4a01", "src": "db2@1.60.1.70245"}
-{"id": 1214157, "field": "description", "en": "Heal your target for $s1.", "hash": "bdf1d263c3b5155c", "src": "db2@1.60.1.70245"}
-{"id": 1214158, "field": "name", "en": "Libram of Purification", "hash": "3ea59092b28f4a01", "src": "db2@1.60.1.70245"}
-{"id": 1214158, "field": "description", "en": "Your Cleanse spell also heals the target for $s1.", "hash": "07fde7c448739c7b", "src": "db2@1.60.1.70245"}
-{"id": 1214159, "field": "name", "en": "S03 - Item - TAQ - Warrior - Damage 2P Bonus", "hash": "b3f8a60ed15fe7ff", "src": "db2@1.60.1.70245"}
-{"id": 1214159, "field": "description", "en": "Reduces the cooldown on your Death Wish by $s1%.", "hash": "e5e424bfff7201d3", "src": "db2@1.60.1.70245"}
-{"id": 1214160, "field": "name", "en": "S03 - Item - TAQ - Warrior - Tank 2P Bonus", "hash": "ff9e5f7c82d5f342", "src": "db2@1.60.1.70245"}
-{"id": 1214160, "field": "description", "en": "Reduces the cooldown on Thunder Clap by $s1%.", "hash": "86b2cd646bf1a54f", "src": "db2@1.60.1.70245"}
-{"id": 1214162, "field": "name", "en": "S03 - Item - TAQ - Warrior - Tank 4P Bonus", "hash": "ee8164ff6da7ff29", "src": "db2@1.60.1.70245"}
-{"id": 1214162, "field": "description", "en": "Your Shield Slam deals $s1% increased threat and its cooldown is reset if it is Dodged, Parried, or Blocked.", "hash": "cc42f8b6e8d67003", "src": "db2@1.60.1.70245"}
-{"id": 1214163, "field": "name", "en": "S03 - Item - TAQ - Warrior - Damage 4P Bonus", "hash": "a2dbab91bc31f3e6", "src": "db2@1.60.1.70245"}
-{"id": 1214163, "field": "description", "en": "You deal $s1% increased damage while any nearby enemy is afflicted with both your Rend and your Deep Wounds.", "hash": "b643790808377f42", "src": "db2@1.60.1.70245"}
-{"id": 1214165, "field": "name", "en": "S03 - Item - RAQ - Warrior - Tank 3P Bonus", "hash": "5bb4ee1e5fafa427", "src": "db2@1.60.1.70245"}
-{"id": 1214165, "field": "description", "en": "Reduces the cooldown on Shockwave by $s1%.", "hash": "8c060c65f88558d0", "src": "db2@1.60.1.70245"}
-{"id": 1214166, "field": "name", "en": "Bloodthirsty", "hash": "69e15c86a36f54df", "src": "db2@1.60.1.70245"}
-{"id": 1214166, "field": "aura", "en": "Increases all damage done by $s1%.", "hash": "bb0dd2401204fa49", "src": "db2@1.60.1.70245"}
-{"id": 1214168, "field": "name", "en": "Occult Poison II", "hash": "76214b21a702c30f", "src": "db2@1.60.1.70245"}
-{"id": 1214168, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a 30% chance of poisoning the enemy for $1214170o1 Nature damage over $1214170d and causing the enemy to take $1214170s2% increased Arcane, Fire, Frost, Nature, and Shadow damage.  Stacks up to $1214170u times on a single target.\r\n\r\nOccult Poison counts as Deadly Poison and benefits from all talents and effects that trigger from or modify Deadly Poison.", "hash": "88540c3c3febf8eb", "src": "db2@1.60.1.70245"}
-{"id": 1214169, "field": "name", "en": "Occult Poison II", "hash": "76214b21a702c30f", "src": "db2@1.60.1.70245"}
-{"id": 1214169, "field": "description", "en": "Teaches Occult Poison (Rank 2).", "hash": "212a53fadac261a6", "src": "db2@1.60.1.70245"}
-{"id": 1214170, "field": "name", "en": "Occult Poison II", "hash": "76214b21a702c30f", "src": "db2@1.60.1.70245"}
-{"id": 1214170, "field": "aura", "en": "Target takes $s1 Nature damage every $t1 seconds and $s2% increased Arcane, Fire, Frost, Nature, and Shadow damage.", "hash": "4290b92c25899841", "src": "db2@1.60.1.70245"}
-{"id": 1214171, "field": "name", "en": "Occult Poison II", "hash": "76214b21a702c30f", "src": "db2@1.60.1.70245"}
-{"id": 1214171, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes. Each strike has a $h% chance of poisoning the enemy for $1214170o1 Nature damage over $1214170d and causing the enemy to take $1214170s2% increased Arcane, Fire, Frost, Nature, and Shadow damage.  Stacks up to $1214170u times on a single target.\r\n\r\nOccult Poison counts as Deadly Poison and benefits from all talents and effects that trigger from or modify Deadly Poison.\r\n", "hash": "db56e99728cc6694", "src": "db2@1.60.1.70245"}
-{"id": 1214173, "field": "name", "en": "Bolt of Qiraji Silk", "hash": "33129e30ffadda7f", "src": "db2@1.60.1.70245"}
-{"id": 1214179, "field": "name", "en": "Furbolg Form", "hash": "dd88fc5e70650eb8", "src": "db2@1.60.1.70245"}
-{"id": 1214179, "field": "description", "en": "Transforms you into a Furbolg for $d.", "hash": "9565f3eefa78ad88", "src": "db2@1.60.1.70245"}
-{"id": 1214179, "field": "aura", "en": "Transformed into a Furbolg.", "hash": "105a6e3d05aa2c6f", "src": "db2@1.60.1.70245"}
-{"id": 1214204, "field": "name", "en": "Hybrid Healing/Spell Dam 189/63", "hash": "bdcf462375d50b36", "src": "db2@1.60.1.70245"}
-{"id": 1214204, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214205, "field": "name", "en": "Glimpse of Madness", "hash": "5d39d1e71008fa8b", "src": "db2@1.60.1.70245"}
-{"id": 1214205, "field": "description", "en": "Disorients the target, causing it to wander aimlessly for up to $d.", "hash": "fb3cce19517984ca", "src": "db2@1.60.1.70245"}
-{"id": 1214205, "field": "aura", "en": "Disoriented.", "hash": "6b902ba73addf3d6", "src": "db2@1.60.1.70245"}
-{"id": 1214206, "field": "name", "en": "Tentacle Call", "hash": "568cbefe56160e84", "src": "db2@1.60.1.70245"}
-{"id": 1214206, "field": "description", "en": "Summons Vanquished Tentacles on top of your target to pursue and attack them for $d.", "hash": "8faa94e994d964c6", "src": "db2@1.60.1.70245"}
-{"id": 1214208, "field": "name", "en": "Drain Life", "hash": "344ef3a3656fa1a7", "src": "db2@1.60.1.70245"}
-{"id": 1214208, "field": "description", "en": "Steals $s1 life from target enemy.", "hash": "8e44b26614ccfbdd", "src": "db2@1.60.1.70245"}
-{"id": 1214214, "field": "name", "en": "Shard of the Fallen Star", "hash": "2a4cc219fc9a5535", "src": "db2@1.60.1.70245"}
-{"id": 1214214, "field": "description", "en": "Calls down a meteor, burning all enemies within the area for $s1 total Fire damage, and stunning them for $1214223d1.", "hash": "5a53e356d88bdeb7", "src": "db2@1.60.1.70245"}
-{"id": 1214218, "field": "name", "en": "Timeworn Expertise", "hash": "06bc008b93e88023", "src": "db2@1.60.1.70245"}
-{"id": 1214220, "field": "name", "en": "Timeworn Healing", "hash": "b9884ce9c6c0137b", "src": "db2@1.60.1.70245"}
-{"id": 1214223, "field": "name", "en": "Shard of the Fallen Star", "hash": "2a4cc219fc9a5535", "src": "db2@1.60.1.70245"}
-{"id": 1214223, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70245"}
-{"id": 1214225, "field": "name", "en": "Timeworn Spell", "hash": "69984b7c6b454aad", "src": "db2@1.60.1.70245"}
-{"id": 1214233, "field": "name", "en": "Obsidian Insight", "hash": "d07f9c872a56e9dc", "src": "db2@1.60.1.70245"}
-{"id": 1214233, "field": "description", "en": "Increases damage done by magical spells and effects by up to $s1, and decreases the magical resistances of your spell targets by $s2 for $d.", "hash": "b0176327a3683df3", "src": "db2@1.60.1.70245"}
-{"id": 1214233, "field": "aura", "en": "Magical damage increased by up to $s1.\r\nMagical resistances of your spell targets reduced by $s2.", "hash": "e014e8ba520a4f02", "src": "db2@1.60.1.70245"}
-{"id": 1214239, "field": "name", "en": "Timeworn Spell", "hash": "69984b7c6b454aad", "src": "db2@1.60.1.70245"}
-{"id": 1214244, "field": "name", "en": "Timeworn Spell", "hash": "69984b7c6b454aad", "src": "db2@1.60.1.70245"}
-{"id": 1214245, "field": "name", "en": "Timeworn Spell", "hash": "69984b7c6b454aad", "src": "db2@1.60.1.70245"}
-{"id": 1214257, "field": "name", "en": "Black Grasp of the Destroyer", "hash": "cbdf2b0e8c97ab4e", "src": "db2@1.60.1.70245"}
-{"id": 1214258, "field": "name", "en": "Mana Drain Trigger", "hash": "cf92b029aa38be9d", "src": "db2@1.60.1.70245"}
-{"id": 1214258, "field": "description", "en": "On successful melee or ranged attack gain $1214261s1 mana and if possible drain $1214259s1 mana from the target.", "hash": "4ea4561c13c897a0", "src": "db2@1.60.1.70245"}
-{"id": 1214259, "field": "name", "en": "Mana Drain", "hash": "93a452df1356209d", "src": "db2@1.60.1.70245"}
-{"id": 1214261, "field": "name", "en": "Mana Drain", "hash": "93a452df1356209d", "src": "db2@1.60.1.70245"}
-{"id": 1214263, "field": "name", "en": "Chitinous Spikes", "hash": "e0dd7cca67e46e26", "src": "db2@1.60.1.70245"}
-{"id": 1214263, "field": "description", "en": "Spikes sprout from you causing $s1 Nature damage to attackers when hit.  Lasts $d.", "hash": "5c2e53cefd09e3ee", "src": "db2@1.60.1.70245"}
-{"id": 1214263, "field": "aura", "en": "Causes $s1 Nature damage to attackers.", "hash": "7724a9e2ce1e4b6b", "src": "db2@1.60.1.70245"}
-{"id": 1214270, "field": "name", "en": "Jagged Obsidian Shield", "hash": "55f6e6caac0f48a8", "src": "db2@1.60.1.70245"}
-{"id": 1214272, "field": "name", "en": "Silence Trigger", "hash": "857d4644931926bd", "src": "db2@1.60.1.70245"}
-{"id": 1214272, "field": "description", "en": "When struck by a harmful spell, the caster of that spell has a $h% chance to be silenced for $1214273d.", "hash": "c50503b8d4a14ab9", "src": "db2@1.60.1.70245"}
-{"id": 1214273, "field": "name", "en": "Silence", "hash": "34a188e2baf39d02", "src": "db2@1.60.1.70245"}
-{"id": 1214273, "field": "description", "en": "Silences an enemy preventing it from casting spells for $d.", "hash": "444e4a7e0d6d4053", "src": "db2@1.60.1.70245"}
-{"id": 1214273, "field": "aura", "en": "Cannot cast spells.", "hash": "6d133d61246b88a5", "src": "db2@1.60.1.70245"}
-{"id": 1214274, "field": "name", "en": "Obsidian Mail Tunic", "hash": "c9b31c99bef2677a", "src": "db2@1.60.1.70245"}
-{"id": 1214276, "field": "name", "en": "Spell Damage Reduction", "hash": "ce56910aff0675c8", "src": "db2@1.60.1.70245"}
-{"id": 1214276, "field": "description", "en": "Spell Damage received is reduced by $s1.", "hash": "1d9ea2660cac4edf", "src": "db2@1.60.1.70245"}
-{"id": 1214278, "field": "name", "en": "Earthstrike", "hash": "6dec6a0bd9913823", "src": "db2@1.60.1.70245"}
-{"id": 1214278, "field": "description", "en": "Increases your melee and ranged attack power by $s1.  Effect lasts for $d.", "hash": "f1ea894ae8f60a24", "src": "db2@1.60.1.70245"}
-{"id": 1214278, "field": "aura", "en": "Increases melee and ranged attack power by $s1.", "hash": "558973f8a58b250d", "src": "db2@1.60.1.70245"}
-{"id": 1214279, "field": "name", "en": "Spell Blasting", "hash": "aba689d12216c844", "src": "db2@1.60.1.70245"}
-{"id": 1214279, "field": "aura", "en": "Spell effects increased by $s1.", "hash": "af003e7e89814bcd", "src": "db2@1.60.1.70245"}
-{"id": 1214280, "field": "name", "en": "Spell Blasting", "hash": "aba689d12216c844", "src": "db2@1.60.1.70245"}
-{"id": 1214280, "field": "description", "en": "Gives a chance when your harmful spells land to increase the damage of your spells and effects by $1214279s1 for $1214279d.", "hash": "300c08a9277ca30c", "src": "db2@1.60.1.70245"}
-{"id": 1214281, "field": "name", "en": "Naga Form", "hash": "f6eb6d411200073b", "src": "db2@1.60.1.70245"}
-{"id": 1214281, "field": "description", "en": "Transforms you into a Naga for $d.", "hash": "d1b7822afc45570b", "src": "db2@1.60.1.70245"}
-{"id": 1214281, "field": "aura", "en": "Transformed into a Naga.", "hash": "6526e81142e8fd69", "src": "db2@1.60.1.70245"}
-{"id": 1214283, "field": "name", "en": "Swift Spectral Tiger", "hash": "4e15c09176cef522", "src": "db2@1.60.1.70245"}
-{"id": 1214283, "field": "description", "en": "Summons and dismisses a Swift Spectral Tiger.   This is a very fast mount.", "hash": "7d7bae98295e5de2", "src": "db2@1.60.1.70245"}
-{"id": 1214283, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70245"}
-{"id": 1214284, "field": "name", "en": "Drakonid Form", "hash": "d8d58e0865654b68", "src": "db2@1.60.1.70245"}
-{"id": 1214284, "field": "description", "en": "Transforms you into a Drakonid for $d.", "hash": "b0e71df4b7b9301e", "src": "db2@1.60.1.70245"}
-{"id": 1214284, "field": "aura", "en": "Transformed into a Drakonid.", "hash": "91d414d7b5487298", "src": "db2@1.60.1.70245"}
-{"id": 1214285, "field": "name", "en": "Improved Shred/Ferocious Bite", "hash": "46197dd6815d17f5", "src": "db2@1.60.1.70245"}
-{"id": 1214285, "field": "description", "en": "Increases the damage of Ferocious Bite and Shred by $s1%.", "hash": "8592d461fa23ad39", "src": "db2@1.60.1.70245"}
-{"id": 1214286, "field": "name", "en": "Improved Swipe/Mangle", "hash": "7207f66d7baea9cf", "src": "db2@1.60.1.70245"}
-{"id": 1214286, "field": "description", "en": "Increases the damage of Swipe and Mangle by $s1%.", "hash": "13e15f66ebe824e0", "src": "db2@1.60.1.70245"}
-{"id": 1214289, "field": "name", "en": "Idol of Health", "hash": "df96761d59ffd019", "src": "db2@1.60.1.70245"}
-{"id": 1214289, "field": "description", "en": "Your Cure Poison, Abolish Poison, and Remove Curse spells also heal the target for $s1 when cast.", "hash": "84f66a21dd38ea64", "src": "db2@1.60.1.70245"}
-{"id": 1214290, "field": "name", "en": "Idol of Health", "hash": "df96761d59ffd019", "src": "db2@1.60.1.70245"}
-{"id": 1214290, "field": "description", "en": "Heal your target for $s1.", "hash": "bdf1d263c3b5155c", "src": "db2@1.60.1.70245"}
-{"id": 1214292, "field": "name", "en": "Totem of Life", "hash": "7916f9ea67e36042", "src": "db2@1.60.1.70245"}
-{"id": 1214292, "field": "description", "en": "Your Cure Poison and Cure Disease spells also heal the target for $s1. Your Poison Cleansing Totem and Disease Cleansing Totem also heal your group for $s2 when cast.", "hash": "340a38d86174d6e9", "src": "db2@1.60.1.70245"}
-{"id": 1214293, "field": "name", "en": "Totem of Life", "hash": "7916f9ea67e36042", "src": "db2@1.60.1.70245"}
-{"id": 1214293, "field": "description", "en": "Heal your target for $s1.", "hash": "bdf1d263c3b5155c", "src": "db2@1.60.1.70245"}
-{"id": 1214294, "field": "name", "en": "Totem of Life", "hash": "7916f9ea67e36042", "src": "db2@1.60.1.70245"}
-{"id": 1214295, "field": "name", "en": "Improved Wrath/Moonfire", "hash": "17ecbe80f89ab674", "src": "db2@1.60.1.70245"}
-{"id": 1214295, "field": "description", "en": "Increases the damage of Moonfire and Wrath by $s1%.", "hash": "f6fe88bd8adeea6d", "src": "db2@1.60.1.70245"}
-{"id": 1214296, "field": "name", "en": "Improved Exorcism/Crusader Strike", "hash": "5279a8833590b2ae", "src": "db2@1.60.1.70245"}
-{"id": 1214296, "field": "description", "en": "Increases the damage of Exorcism and Crusader Strike by $s1%.", "hash": "95bf1dc490fde888", "src": "db2@1.60.1.70245"}
-{"id": 1214297, "field": "name", "en": "Improved Holy Shock", "hash": "1e01c33289312cb2", "src": "db2@1.60.1.70245"}
-{"id": 1214297, "field": "description", "en": "Increases the damage of Holy Shock by $s1%, and your Shock and Awe buff now also grants $1214298s1% increased Holy Damage. (This effect does not stack with Sanctity Aura).", "hash": "dcda324a863a9b91", "src": "db2@1.60.1.70245"}
-{"id": 1214298, "field": "name", "en": "Libram of Sanctity", "hash": "0e8c4a7675251c71", "src": "db2@1.60.1.70245"}
-{"id": 1214298, "field": "description", "en": "Increases Holy damage done by $s1%. ", "hash": "d68c8458217d6058", "src": "db2@1.60.1.70245"}
-{"id": 1214298, "field": "aura", "en": "Increases Holy damage done by $s1%.", "hash": "d68c8458217d6058", "src": "db2@1.60.1.70245"}
-{"id": 1214299, "field": "name", "en": "Improved Hammer of the Righteous/Shield of Righteousness", "hash": "4d3b03163e930f12", "src": "db2@1.60.1.70245"}
-{"id": 1214299, "field": "description", "en": "Increases the damage of Hammer of the Righteous and Shield of Righteousness by $s1%.", "hash": "e60be3525ab631ea", "src": "db2@1.60.1.70245"}
-{"id": 1214300, "field": "name", "en": "Improved Stormstrike/Windfury Weapon", "hash": "632fa9b04d311a2f", "src": "db2@1.60.1.70245"}
-{"id": 1214300, "field": "description", "en": "Increases the damage of Stormstrike and Windfury Weapon by $s1%.", "hash": "e98bf06860db0389", "src": "db2@1.60.1.70245"}
-{"id": 1214301, "field": "name", "en": "Improved Flame Shock/Molten Blast", "hash": "d41f4ab80a2dce08", "src": "db2@1.60.1.70245"}
-{"id": 1214301, "field": "description", "en": "Increases the damage of Flame Shock and Molten Blast by $s1%.", "hash": "11761d5ca91172d2", "src": "db2@1.60.1.70245"}
-{"id": 1214302, "field": "name", "en": "Improved Lightning Bolt/Lava Burst", "hash": "7ec064a59ab382ce", "src": "db2@1.60.1.70245"}
-{"id": 1214302, "field": "description", "en": "Increases the damage of Lightning Bolt, Chain Lightning, and Lava Burst by $s1%.", "hash": "52e20bffc0999ff9", "src": "db2@1.60.1.70245"}
-{"id": 1214303, "field": "name", "en": "Dreamscale Kilt", "hash": "a977ab02de7ceccf", "src": "db2@1.60.1.70245"}
-{"id": 1214306, "field": "name", "en": "Dreamscale Bracers", "hash": "0ab4be3e1b4aedc5", "src": "db2@1.60.1.70245"}
-{"id": 1214307, "field": "name", "en": "Dreamscale Mitts", "hash": "db5a09118a122754", "src": "db2@1.60.1.70245"}
-{"id": 1214309, "field": "name", "en": "Dreamscale Visor", "hash": "79552c565c57bf6f", "src": "db2@1.60.1.70245"}
-{"id": 1214376, "field": "name", "en": "Increase Spell Dam 81", "hash": "4f9bcea1d45ffd75", "src": "db2@1.60.1.70245"}
-{"id": 1214376, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70245"}
-{"id": 1214377, "field": "name", "en": "Increase Spell Dam 50", "hash": "4f9bcd17d45f9dd1", "src": "db2@1.60.1.70245"}
-{"id": 1214377, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70245"}
-{"id": 1214378, "field": "name", "en": "Increase Spell Dam 49", "hash": "4f9bcc9dd45f7df9", "src": "db2@1.60.1.70245"}
-{"id": 1214378, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70245"}
-{"id": 1214379, "field": "name", "en": "Increase Spell Dam 54", "hash": "4f9bcd1bd45f9dd5", "src": "db2@1.60.1.70245"}
-{"id": 1214379, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70245"}
-{"id": 1214380, "field": "name", "en": "Increase Spell Dam 55", "hash": "4f9bcd1cd45f9dd6", "src": "db2@1.60.1.70245"}
-{"id": 1214380, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70245"}
-{"id": 1214381, "field": "name", "en": "Increase Spell Dam 61", "hash": "4f9bcd9bd45fbdb3", "src": "db2@1.60.1.70245"}
-{"id": 1214381, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70245"}
-{"id": 1214382, "field": "name", "en": "Increase Spell Dam 62", "hash": "4f9bcd9cd45fbdb4", "src": "db2@1.60.1.70245"}
-{"id": 1214382, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70245"}
-{"id": 1214383, "field": "name", "en": "Increase Spell Dam 63", "hash": "4f9bcd9dd45fbdb5", "src": "db2@1.60.1.70245"}
-{"id": 1214383, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70245"}
-{"id": 1214384, "field": "name", "en": "Increase Spell Dam 65", "hash": "4f9bcd9fd45fbdb7", "src": "db2@1.60.1.70245"}
-{"id": 1214384, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70245"}
-{"id": 1214385, "field": "name", "en": "Increase Spell Dam 67", "hash": "4f9bcda1d45fbdb9", "src": "db2@1.60.1.70245"}
-{"id": 1214385, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70245"}
-{"id": 1214386, "field": "name", "en": "Increase Spell Dam 69", "hash": "4f9bcda3d45fbdbb", "src": "db2@1.60.1.70245"}
-{"id": 1214386, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70245"}
-{"id": 1214387, "field": "name", "en": "Increase Spell Dam 70", "hash": "4f9bce1dd45fdd93", "src": "db2@1.60.1.70245"}
-{"id": 1214387, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70245"}
-{"id": 1214388, "field": "name", "en": "Increase Spell Dam 82", "hash": "4f9bcea2d45ffd76", "src": "db2@1.60.1.70245"}
-{"id": 1214388, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70245"}
-{"id": 1214389, "field": "name", "en": "Hybrid Healing/Spell Dam 2/1", "hash": "c47dafa49bae23b8", "src": "db2@1.60.1.70245"}
-{"id": 1214389, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214390, "field": "name", "en": "Hybrid Healing/Spell Dam 4/2", "hash": "c47e35b7a39eab3b", "src": "db2@1.60.1.70245"}
-{"id": 1214390, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214391, "field": "name", "en": "Hybrid Healing/Spell Dam 7/3", "hash": "c47efed3af87767f", "src": "db2@1.60.1.70245"}
-{"id": 1214391, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214392, "field": "name", "en": "Hybrid Healing/Spell Dam 9/3", "hash": "c47f84e5b777fe01", "src": "db2@1.60.1.70245"}
-{"id": 1214392, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214393, "field": "name", "en": "Hybrid Healing/Spell Dam 11/4", "hash": "8c2f1a8564ea4a2f", "src": "db2@1.60.1.70245"}
-{"id": 1214393, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214394, "field": "name", "en": "Hybrid Healing/Spell Dam 13/5", "hash": "8c2fa0986cdad1b2", "src": "db2@1.60.1.70245"}
-{"id": 1214394, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214395, "field": "name", "en": "Hybrid Healing/Spell Dam 18/6", "hash": "8c30efc680b42478", "src": "db2@1.60.1.70245"}
-{"id": 1214395, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214397, "field": "name", "en": "Hybrid Healing/Spell Dam 20/7", "hash": "8c51251aee59fa70", "src": "db2@1.60.1.70245"}
-{"id": 1214397, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214398, "field": "name", "en": "Hybrid Healing/Spell Dam 24/8", "hash": "8c52313ffe3b0975", "src": "db2@1.60.1.70245"}
-{"id": 1214398, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214399, "field": "name", "en": "Hybrid Healing/Spell Dam 57/19", "hash": "031f3d0ddd01108e", "src": "db2@1.60.1.70245"}
-{"id": 1214399, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214400, "field": "name", "en": "Hybrid Healing/Spell Dam 73/25", "hash": "25b173c265365f43", "src": "db2@1.60.1.70245"}
-{"id": 1214400, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214402, "field": "name", "en": "Hybrid Healing/Spell Dam 79/27", "hash": "267f4566b5a61772", "src": "db2@1.60.1.70245"}
-{"id": 1214402, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214403, "field": "name", "en": "Hybrid Healing/Spell Dam 81/27", "hash": "36fa8edf2950f6b1", "src": "db2@1.60.1.70245"}
-{"id": 1214403, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214405, "field": "name", "en": "Hybrid Healing/Spell Dam 86/29", "hash": "37a612e8ec58bad0", "src": "db2@1.60.1.70245"}
-{"id": 1214405, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214406, "field": "name", "en": "Hybrid Healing/Spell Dam 88/30", "hash": "37eaae980728c2c8", "src": "db2@1.60.1.70245"}
-{"id": 1214406, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214407, "field": "name", "en": "Hybrid Healing/Spell Dam 92/31", "hash": "48aa934895a38a06", "src": "db2@1.60.1.70245"}
-{"id": 1214407, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214408, "field": "name", "en": "Hybrid Healing/Spell Dam 95/32", "hash": "49117c1a3ddb6626", "src": "db2@1.60.1.70245"}
-{"id": 1214408, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214409, "field": "name", "en": "Hybrid Healing/Spell Dam 97/32", "hash": "4956175058ab4e35", "src": "db2@1.60.1.70245"}
-{"id": 1214409, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214410, "field": "name", "en": "Hybrid Healing/Spell Dam 99/33", "hash": "499ab287737b3645", "src": "db2@1.60.1.70245"}
-{"id": 1214410, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214411, "field": "name", "en": "Hybrid Healing/Spell Dam 101/34", "hash": "304f253b13410f91", "src": "db2@1.60.1.70245"}
-{"id": 1214411, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214413, "field": "name", "en": "Hybrid Healing/Spell Dam 103/35", "hash": "3093c0722e10f7a1", "src": "db2@1.60.1.70245"}
-{"id": 1214413, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214416, "field": "name", "en": "Hybrid Healing/Spell Dam 106/35", "hash": "30faa943d648d3af", "src": "db2@1.60.1.70245"}
-{"id": 1214416, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214417, "field": "name", "en": "Hybrid Healing/Spell Dam 108/36", "hash": "313f447af118bbbf", "src": "db2@1.60.1.70245"}
-{"id": 1214417, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214418, "field": "name", "en": "Hybrid Healing/Spell Dam 110/37", "hash": "41ba8df464c39aff", "src": "db2@1.60.1.70245"}
-{"id": 1214418, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214421, "field": "name", "en": "Hybrid Healing/Spell Dam 161/54", "hash": "99a16c274cc04c24", "src": "db2@1.60.1.70245"}
-{"id": 1214421, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214422, "field": "name", "en": "Hybrid Healing/Spell Dam 153/51", "hash": "8858510988a5b4b5", "src": "db2@1.60.1.70245"}
-{"id": 1214422, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214427, "field": "name", "en": "Hybrid Healing/Spell Dam 136/45", "hash": "65a3ccb973087201", "src": "db2@1.60.1.70245"}
-{"id": 1214427, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214428, "field": "name", "en": "Hybrid Healing/Spell Dam 120/40", "hash": "534844c143ae3a54", "src": "db2@1.60.1.70245"}
-{"id": 1214428, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214432, "field": "name", "en": "Hybrid Healing/Spell Dam 112/37", "hash": "41ff292a7f93830e", "src": "db2@1.60.1.70245"}
-{"id": 1214432, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 1214440, "field": "name", "en": "Divergent Lightning", "hash": "6e3ea3f1b1b438bd", "src": "db2@1.60.1.70245"}
-{"id": 1214440, "field": "description", "en": "Deals heavy damage that's split among everyone affected.", "hash": "6640805dc91583fd", "src": "db2@1.60.1.70245"}
-{"id": 1214440, "field": "aura", "en": "Deals heavy damage that's split among everyone affected.", "hash": "6640805dc91583fd", "src": "db2@1.60.1.70245"}
-{"id": 1214451, "field": "name", "en": "Spiritual Protection", "hash": "5adde44f1810c364", "src": "db2@1.60.1.70245"}
-{"id": 1214451, "field": "description", "en": "Reduces damage inflicted to all nearby Spirits by $s1%.", "hash": "6e293676e90405b3", "src": "db2@1.60.1.70245"}
-{"id": 1214451, "field": "aura", "en": "Reduces damage inflicted to all nearby Spirits by $s1%.", "hash": "6e293676e90405b3", "src": "db2@1.60.1.70245"}
-{"id": 1214632, "field": "name", "en": "Summon Eye Tentacle", "hash": "5439c815686d9917", "src": "db2@1.60.1.70245"}
-{"id": 1214681, "field": "name", "en": "[DNT] Despair Illusion", "hash": "5171c280fc150187", "src": "db2@1.60.1.70245"}
-{"id": 1214686, "field": "name", "en": "Summon Portal Ground State", "hash": "cfb4e923532e8b3a", "src": "db2@1.60.1.70245"}
-{"id": 1214691, "field": "name", "en": "[DNT] Illusion of Despair", "hash": "b16eb401c855ac0e", "src": "db2@1.60.1.70245"}
-{"id": 1214725, "field": "name", "en": "[DNT] Illusion Selection", "hash": "07de49fb56b5f937", "src": "db2@1.60.1.70245"}
-{"id": 1214727, "field": "name", "en": "[DNT] Illusion Selection", "hash": "07de49fb56b5f937", "src": "db2@1.60.1.70245"}
-{"id": 1214777, "field": "name", "en": "Illusionary Shatter", "hash": "1a68b4ba39afedd2", "src": "db2@1.60.1.70245"}
-{"id": 1214777, "field": "description", "en": "Sends out a blast wave of magic, inflicting $s1 Arcane damage to nearby enemies.\r\n", "hash": "e5bc2450428282dd", "src": "db2@1.60.1.70245"}
-{"id": 1214789, "field": "name", "en": "Summon Eye Tentacle", "hash": "5439c815686d9917", "src": "db2@1.60.1.70245"}
-{"id": 1214811, "field": "name", "en": "[DNT] Copy", "hash": "162c109d8acfa7cf", "src": "db2@1.60.1.70245"}
-{"id": 1214844, "field": "name", "en": "[DNT] Copy", "hash": "162c109d8acfa7cf", "src": "db2@1.60.1.70245"}
-{"id": 1214851, "field": "name", "en": "[DNT] Speed", "hash": "71874803763838da", "src": "db2@1.60.1.70245"}
-{"id": 1214867, "field": "name", "en": "[DNT] Periodic Demon Checker", "hash": "55d7a49c60110c79", "src": "db2@1.60.1.70245"}
-{"id": 1214869, "field": "name", "en": "(DNT) Emeriss Faction Check", "hash": "bf7e50b5245130df", "src": "db2@1.60.1.70245"}
-{"id": 1214871, "field": "name", "en": "Illusionary Shatter", "hash": "1a68b4ba39afedd2", "src": "db2@1.60.1.70245"}
-{"id": 1214871, "field": "description", "en": "Sends out a blast wave of magic, inflicting $s1 Arcane damage to nearby enemies.", "hash": "e5bc2450428282dd", "src": "db2@1.60.1.70245"}
-{"id": 1214883, "field": "name", "en": "Void-Touched Dummy [DNT]", "hash": "a3825e5f6f1399f2", "src": "db2@1.60.1.70245"}
-{"id": 1214884, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70245"}
-{"id": 1214917, "field": "name", "en": "Weapon Damage 02", "hash": "e4e3e8b79020d3a9", "src": "db2@1.60.1.70245"}
-{"id": 1214917, "field": "description", "en": "+$s1 Weapon Damage.", "hash": "f887b76a4d870c20", "src": "db2@1.60.1.70245"}
-{"id": 1214918, "field": "name", "en": "Weapon Damage 01", "hash": "e4e3e8b69020d3a8", "src": "db2@1.60.1.70245"}
-{"id": 1214918, "field": "description", "en": "+$s1 Weapon Damage.", "hash": "f887b76a4d870c20", "src": "db2@1.60.1.70245"}
-{"id": 1214927, "field": "name", "en": "Extra Attack", "hash": "074301e436425146", "src": "db2@1.60.1.70245"}
-{"id": 1214927, "field": "description", "en": "Gives you a $h% chance to get an extra attack on the same target after dealing damage with your weapon.", "hash": "ac21c600e2c1124c", "src": "db2@1.60.1.70245"}
-{"id": 1214955, "field": "name", "en": "Increase Holy Dam 59", "hash": "c6f65044c7ca4132", "src": "db2@1.60.1.70245"}
-{"id": 1214955, "field": "description", "en": "Increases damage done by Holy spells and effects by up to $s1.", "hash": "6e3351e7dc6b9f3a", "src": "db2@1.60.1.70245"}
-{"id": 1214956, "field": "name", "en": "Curse of Despair", "hash": "492f8518cba6d3d3", "src": "db2@1.60.1.70245"}
-{"id": 1214956, "field": "aura", "en": "Shadow damage inflicted every $t1 sec.", "hash": "1bf495341e2228a5", "src": "db2@1.60.1.70245"}
-{"id": 1214958, "field": "name", "en": "[DNT] Modify Health & Damage", "hash": "0991f8cc5d7e9edf", "src": "db2@1.60.1.70245"}
+{"id": 1214001, "field": "name", "en": "Scroll: Wrath of the Swarm", "hash": "583ace6680225003", "src": "db2@1.60.1.70291"}
+{"id": 1214001, "field": "description", "en": "Read from the scroll, evoking the Wrath of the Swarm, empowering your raid to deal up to $s1 increased damage and healing with spells, and increasing attack power by $s2 for $d.", "hash": "af3372616b2f2326", "src": "db2@1.60.1.70291"}
+{"id": 1214001, "field": "aura", "en": "Empowered by the Swarm. Dealing up to $s1 increased damage and healing with spells, and increasing attack power by $s2.", "hash": "f2a2652904e9d12f", "src": "db2@1.60.1.70291"}
+{"id": 1214002, "field": "name", "en": "Draw Spirit", "hash": "d17531f4ca987fd4", "src": "db2@1.60.1.70291"}
+{"id": 1214003, "field": "name", "en": "Summon Spirit Shade", "hash": "d4e0e83c62f4f4ad", "src": "db2@1.60.1.70291"}
+{"id": 1214004, "field": "name", "en": "Enchanted Repellent", "hash": "619e4470ccf6dd07", "src": "db2@1.60.1.70291"}
+{"id": 1214004, "field": "description", "en": "While applied to target weapon or shield it increases spell damage by up to $1214006s1 and increases Spell Critical chance by $1214006s3% .  Lasts for 30 minutes.", "hash": "75e4b2da5ab693e9", "src": "db2@1.60.1.70291"}
+{"id": 1214006, "field": "name", "en": "Increase Spell Dam 45 and 1% Crit", "hash": "c8bc29c069bd1abe", "src": "db2@1.60.1.70291"}
+{"id": 1214006, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.   Also increases chance to get a critical hit with spells by $s3%.", "hash": "299ae61d1a466c20", "src": "db2@1.60.1.70291"}
+{"id": 1214008, "field": "name", "en": "Summon Shade of Taerar", "hash": "ea9cc6848d694421", "src": "db2@1.60.1.70291"}
+{"id": 1214010, "field": "name", "en": "Summon Shade of Taerar", "hash": "ea9cc6848d694421", "src": "db2@1.60.1.70291"}
+{"id": 1214011, "field": "name", "en": "Summon Shade of Taerar", "hash": "ea9cc6848d694421", "src": "db2@1.60.1.70291"}
+{"id": 1214028, "field": "name", "en": "Bellowing Roar", "hash": "234ae4ce0ee8d5b1", "src": "db2@1.60.1.70291"}
+{"id": 1214028, "field": "aura", "en": "Fleeing in fear.", "hash": "fa67e4a8461af331", "src": "db2@1.60.1.70291"}
+{"id": 1214029, "field": "name", "en": "Arcane Blast", "hash": "1addb3da8681d6b4", "src": "db2@1.60.1.70291"}
+{"id": 1214029, "field": "description", "en": "Blasts an enemy with Arcane magic, inflicting normal damage plus $s2 and knocking the enemy back.", "hash": "26533b34e330cf0d", "src": "db2@1.60.1.70291"}
+{"id": 1214037, "field": "name", "en": "Desolation", "hash": "c5ac5a59e1b9a732", "src": "db2@1.60.1.70291"}
+{"id": 1214037, "field": "description", "en": "Leeches life from all nearby enemies.", "hash": "035df0d3b391bfb6", "src": "db2@1.60.1.70291"}
+{"id": 1214037, "field": "aura", "en": "Leeches life from all nearby enemies.", "hash": "035df0d3b391bfb6", "src": "db2@1.60.1.70291"}
+{"id": 1214050, "field": "name", "en": "Caustic Emanations", "hash": "56457f1090ddb31d", "src": "db2@1.60.1.70291"}
+{"id": 1214055, "field": "name", "en": "Caustic Bolt", "hash": "596f05332ebe396a", "src": "db2@1.60.1.70291"}
+{"id": 1214058, "field": "name", "en": "Enchanted Prayer Tome", "hash": "b5e0d34986e652a8", "src": "db2@1.60.1.70291"}
+{"id": 1214058, "field": "description", "en": "Increases the amount healed by your Holy Light and Flash of Light spells by $s1%.", "hash": "11a2c3943339b967", "src": "db2@1.60.1.70291"}
+{"id": 1214059, "field": "name", "en": "Enchanted Totem", "hash": "c81b494831a921fa", "src": "db2@1.60.1.70291"}
+{"id": 1214059, "field": "description", "en": "Increases the amount healed by your Chain Heal and Healing Wave spells by $s1%.", "hash": "d4e4189f50efb096", "src": "db2@1.60.1.70291"}
+{"id": 1214063, "field": "name", "en": "Enchanted Mushroom", "hash": "4ba95b32c53bbb52", "src": "db2@1.60.1.70291"}
+{"id": 1214063, "field": "description", "en": "Increases the amount healed by your Lifebloom, Nourish, and Wild Growth spells by $s1%.", "hash": "ae757acd2445d43d", "src": "db2@1.60.1.70291"}
+{"id": 1214069, "field": "name", "en": "Obsidian Edged", "hash": "9e9f9408e23da54b", "src": "db2@1.60.1.70291"}
+{"id": 1214069, "field": "description", "en": "Chance on melee hit to deal $s1 Fire damage to your target.  Deals extra damage to Silithid creatures in Silithus on almost every hit.", "hash": "0d3fc4fc39385d03", "src": "db2@1.60.1.70291"}
+{"id": 1214070, "field": "name", "en": "Unyielding Aura", "hash": "6a6e2c1b95486017", "src": "db2@1.60.1.70291"}
+{"id": 1214070, "field": "description", "en": "Reduces all incoming damage by $s1. ", "hash": "a59be9ff9019e142", "src": "db2@1.60.1.70291"}
+{"id": 1214070, "field": "aura", "en": "Reduces all incoming damage by $s1.", "hash": "a59be9ff9019e142", "src": "db2@1.60.1.70291"}
+{"id": 1214082, "field": "name", "en": "Summon Demented Druid Spirit", "hash": "0463a9dc06f152cd", "src": "db2@1.60.1.70291"}
+{"id": 1214085, "field": "name", "en": "S03 - Item - TAQ - Warlock - Damage 2P Bonus", "hash": "1b422ff45f855607", "src": "db2@1.60.1.70291"}
+{"id": 1214085, "field": "description", "en": "Reduces the cooldown on your Chaos Bolt by $s1% and increases Chaos Bolt and Shadow Bolt damage done by $s2%. In addition, Chaos Bolt can now trigger your Improved Shadow Bolt talent and causes it to have $s3 additional charges (does not stack with Shadowflame's additional charges).", "hash": "a77caef7dfaf7166", "src": "db2@1.60.1.70291"}
+{"id": 1214086, "field": "name", "en": "Summon Demented Druid Spirit", "hash": "0463a9dc06f152cd", "src": "db2@1.60.1.70291"}
+{"id": 1214087, "field": "name", "en": "S03 - Item - TAQ - Warlock - Damage 4P Bonus", "hash": "0a2535774a5761ee", "src": "db2@1.60.1.70291"}
+{"id": 1214087, "field": "description", "en": "Each time you hit a target with Conflagrate, you gain $1214088s1% increased Fire damage for $1214088d, stacking up to $1214088u times.", "hash": "4b1b65848df9df6a", "src": "db2@1.60.1.70291"}
+{"id": 1214088, "field": "name", "en": "Infernalist", "hash": "ea0119bfedf919c3", "src": "db2@1.60.1.70291"}
+{"id": 1214088, "field": "aura", "en": "Increases all Fire damage done by $s1%.", "hash": "7f6cf18633e90439", "src": "db2@1.60.1.70291"}
+{"id": 1214091, "field": "name", "en": "S03 - Item - TAQ - Warlock - Tank 2P Bonus", "hash": "b03050ceb7445409", "src": "db2@1.60.1.70291"}
+{"id": 1214091, "field": "description", "en": "Reduces the cooldown on your Shadow Cleave by ${$m1/-1000}.1 sec.", "hash": "39dc59b061a16cc8", "src": "db2@1.60.1.70291"}
+{"id": 1214095, "field": "name", "en": "S03 - Item - TAQ - Warlock - Tank 4P Bonus", "hash": "9f135651a2165ff0", "src": "db2@1.60.1.70291"}
+{"id": 1214095, "field": "description", "en": "The effects of your Demonic Sacrifice now persist while you have a Demon pet active, as long as you do not resummon the sacrificed pet. You may have only one Demonic Sacrifice effect active at a time.", "hash": "c71dd52211e8ac18", "src": "db2@1.60.1.70291"}
+{"id": 1214098, "field": "name", "en": "Master Demonologist", "hash": "bae30ec7879957bd", "src": "db2@1.60.1.70291"}
+{"id": 1214098, "field": "aura", "en": "Reduces physical damage taken by $w1%.", "hash": "edb5aac73e0c5691", "src": "db2@1.60.1.70291"}
+{"id": 1214100, "field": "name", "en": "Master Demonologist", "hash": "bae30ec7879957bd", "src": "db2@1.60.1.70291"}
+{"id": 1214100, "field": "aura", "en": "Increases resistance to all magic schools by $w1.", "hash": "12255ca01209d3ae", "src": "db2@1.60.1.70291"}
+{"id": 1214101, "field": "name", "en": "Master Demonologist", "hash": "bae30ec7879957bd", "src": "db2@1.60.1.70291"}
+{"id": 1214101, "field": "aura", "en": "Increases damage caused by $w1%.", "hash": "ed9472b40b9663ec", "src": "db2@1.60.1.70291"}
+{"id": 1214102, "field": "name", "en": "Master Demonologist", "hash": "bae30ec7879957bd", "src": "db2@1.60.1.70291"}
+{"id": 1214102, "field": "aura", "en": "$?$w1>0[Increases][Reduces] threat caused by $w1%.", "hash": "9f50a38ea3453358", "src": "db2@1.60.1.70291"}
+{"id": 1214115, "field": "name", "en": "Obsidian Edged", "hash": "9e9f9408e23da54b", "src": "db2@1.60.1.70291"}
+{"id": 1214115, "field": "description", "en": "Chance on direct spell damage to deal $s1 Fire damage to your target.  Deals extra damage to Silithid creatures in Silithus on almost every hit.", "hash": "d8713e67c42783bb", "src": "db2@1.60.1.70291"}
+{"id": 1214125, "field": "name", "en": "Obsidian Edged", "hash": "9e9f9408e23da54b", "src": "db2@1.60.1.70291"}
+{"id": 1214125, "field": "description", "en": "Chance on direct spell damage or melee attack to deal $1213941s1 Fire damage to your target. Deals extra damage to Silithid creatures in Silithus on almost every hit.", "hash": "e28b52295ecbe247", "src": "db2@1.60.1.70291"}
+{"id": 1214136, "field": "name", "en": "Divergent Lightning", "hash": "6e3ea3f1b1b438bd", "src": "db2@1.60.1.70291"}
+{"id": 1214136, "field": "description", "en": "After $d, deals heavy damage that's split among everyone affected.", "hash": "8a6f1acc81fd95e8", "src": "db2@1.60.1.70291"}
+{"id": 1214136, "field": "aura", "en": "After $d, deals heavy damage that's split among everyone affected.", "hash": "8a6f1acc81fd95e8", "src": "db2@1.60.1.70291"}
+{"id": 1214137, "field": "name", "en": "Obsidian Heartseeker", "hash": "2e68448d5c6d4507", "src": "db2@1.60.1.70291"}
+{"id": 1214143, "field": "name", "en": "Obsidian Edged", "hash": "9e9f9408e23da54b", "src": "db2@1.60.1.70291"}
+{"id": 1214143, "field": "description", "en": "Chance on ranged hit to deal $1213941s1 Fire damage to your target.  Deals extra damage to Silithid creatures in Silithus on almost every hit.", "hash": "fad4d5d619cc3688", "src": "db2@1.60.1.70291"}
+{"id": 1214145, "field": "name", "en": "Obsidian Shotgun", "hash": "b5a3561a30cdddea", "src": "db2@1.60.1.70291"}
+{"id": 1214151, "field": "name", "en": "S03 - Item - RAQ - Warlock - Tank 3P Bonus", "hash": "0c46df70941e04ee", "src": "db2@1.60.1.70291"}
+{"id": 1214151, "field": "description", "en": "For $1214156d after using Shadowcleave, your Searing Pain strikes $1214156s1 additional target within melee range.", "hash": "6eaf27b86b22d836", "src": "db2@1.60.1.70291"}
+{"id": 1214155, "field": "name", "en": "Timeworn Decay", "hash": "60d0bb69401e701f", "src": "db2@1.60.1.70291"}
+{"id": 1214155, "field": "description", "en": "Increases the damage dealt by all of your damage over time spells by $s1% per piece of Timeworn armor equipped.", "hash": "4e9d6f1ad2e838ef", "src": "db2@1.60.1.70291"}
+{"id": 1214156, "field": "name", "en": "Spreading Pain", "hash": "793f89814f679dbc", "src": "db2@1.60.1.70291"}
+{"id": 1214156, "field": "aura", "en": "Your Searing Pain hits $s1 additional targets within melee range.", "hash": "6d561b0d196b27fb", "src": "db2@1.60.1.70291"}
+{"id": 1214157, "field": "name", "en": "Libram of Purification", "hash": "3ea59092b28f4a01", "src": "db2@1.60.1.70291"}
+{"id": 1214157, "field": "description", "en": "Heal your target for $s1.", "hash": "bdf1d263c3b5155c", "src": "db2@1.60.1.70291"}
+{"id": 1214158, "field": "name", "en": "Libram of Purification", "hash": "3ea59092b28f4a01", "src": "db2@1.60.1.70291"}
+{"id": 1214158, "field": "description", "en": "Your Cleanse spell also heals the target for $s1.", "hash": "07fde7c448739c7b", "src": "db2@1.60.1.70291"}
+{"id": 1214159, "field": "name", "en": "S03 - Item - TAQ - Warrior - Damage 2P Bonus", "hash": "b3f8a60ed15fe7ff", "src": "db2@1.60.1.70291"}
+{"id": 1214159, "field": "description", "en": "Reduces the cooldown on your Death Wish by $s1%.", "hash": "e5e424bfff7201d3", "src": "db2@1.60.1.70291"}
+{"id": 1214160, "field": "name", "en": "S03 - Item - TAQ - Warrior - Tank 2P Bonus", "hash": "ff9e5f7c82d5f342", "src": "db2@1.60.1.70291"}
+{"id": 1214160, "field": "description", "en": "Reduces the cooldown on Thunder Clap by $s1%.", "hash": "86b2cd646bf1a54f", "src": "db2@1.60.1.70291"}
+{"id": 1214162, "field": "name", "en": "S03 - Item - TAQ - Warrior - Tank 4P Bonus", "hash": "ee8164ff6da7ff29", "src": "db2@1.60.1.70291"}
+{"id": 1214162, "field": "description", "en": "Your Shield Slam deals $s1% increased threat and its cooldown is reset if it is Dodged, Parried, or Blocked.", "hash": "cc42f8b6e8d67003", "src": "db2@1.60.1.70291"}
+{"id": 1214163, "field": "name", "en": "S03 - Item - TAQ - Warrior - Damage 4P Bonus", "hash": "a2dbab91bc31f3e6", "src": "db2@1.60.1.70291"}
+{"id": 1214163, "field": "description", "en": "You deal $s1% increased damage while any nearby enemy is afflicted with both your Rend and your Deep Wounds.", "hash": "b643790808377f42", "src": "db2@1.60.1.70291"}
+{"id": 1214165, "field": "name", "en": "S03 - Item - RAQ - Warrior - Tank 3P Bonus", "hash": "5bb4ee1e5fafa427", "src": "db2@1.60.1.70291"}
+{"id": 1214165, "field": "description", "en": "Reduces the cooldown on Shockwave by $s1%.", "hash": "8c060c65f88558d0", "src": "db2@1.60.1.70291"}
+{"id": 1214166, "field": "name", "en": "Bloodthirsty", "hash": "69e15c86a36f54df", "src": "db2@1.60.1.70291"}
+{"id": 1214166, "field": "aura", "en": "Increases all damage done by $s1%.", "hash": "bb0dd2401204fa49", "src": "db2@1.60.1.70291"}
+{"id": 1214168, "field": "name", "en": "Occult Poison II", "hash": "76214b21a702c30f", "src": "db2@1.60.1.70291"}
+{"id": 1214168, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes.\r\nEach strike has a 30% chance of poisoning the enemy for $1214170o1 Nature damage over $1214170d and causing the enemy to take $1214170s2% increased Arcane, Fire, Frost, Nature, and Shadow damage.  Stacks up to $1214170u times on a single target.\r\n\r\nOccult Poison counts as Deadly Poison and benefits from all talents and effects that trigger from or modify Deadly Poison.", "hash": "88540c3c3febf8eb", "src": "db2@1.60.1.70291"}
+{"id": 1214169, "field": "name", "en": "Occult Poison II", "hash": "76214b21a702c30f", "src": "db2@1.60.1.70291"}
+{"id": 1214169, "field": "description", "en": "Teaches Occult Poison (Rank 2).", "hash": "212a53fadac261a6", "src": "db2@1.60.1.70291"}
+{"id": 1214170, "field": "name", "en": "Occult Poison II", "hash": "76214b21a702c30f", "src": "db2@1.60.1.70291"}
+{"id": 1214170, "field": "aura", "en": "Target takes $s1 Nature damage every $t1 seconds and $s2% increased Arcane, Fire, Frost, Nature, and Shadow damage.", "hash": "4290b92c25899841", "src": "db2@1.60.1.70291"}
+{"id": 1214171, "field": "name", "en": "Occult Poison II", "hash": "76214b21a702c30f", "src": "db2@1.60.1.70291"}
+{"id": 1214171, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes. Each strike has a $h% chance of poisoning the enemy for $1214170o1 Nature damage over $1214170d and causing the enemy to take $1214170s2% increased Arcane, Fire, Frost, Nature, and Shadow damage.  Stacks up to $1214170u times on a single target.\r\n\r\nOccult Poison counts as Deadly Poison and benefits from all talents and effects that trigger from or modify Deadly Poison.\r\n", "hash": "db56e99728cc6694", "src": "db2@1.60.1.70291"}
+{"id": 1214173, "field": "name", "en": "Bolt of Qiraji Silk", "hash": "33129e30ffadda7f", "src": "db2@1.60.1.70291"}
+{"id": 1214179, "field": "name", "en": "Furbolg Form", "hash": "dd88fc5e70650eb8", "src": "db2@1.60.1.70291"}
+{"id": 1214179, "field": "description", "en": "Transforms you into a Furbolg for $d.", "hash": "9565f3eefa78ad88", "src": "db2@1.60.1.70291"}
+{"id": 1214179, "field": "aura", "en": "Transformed into a Furbolg.", "hash": "105a6e3d05aa2c6f", "src": "db2@1.60.1.70291"}
+{"id": 1214204, "field": "name", "en": "Hybrid Healing/Spell Dam 189/63", "hash": "bdcf462375d50b36", "src": "db2@1.60.1.70291"}
+{"id": 1214204, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214205, "field": "name", "en": "Glimpse of Madness", "hash": "5d39d1e71008fa8b", "src": "db2@1.60.1.70291"}
+{"id": 1214205, "field": "description", "en": "Disorients the target, causing it to wander aimlessly for up to $d.", "hash": "fb3cce19517984ca", "src": "db2@1.60.1.70291"}
+{"id": 1214205, "field": "aura", "en": "Disoriented.", "hash": "6b902ba73addf3d6", "src": "db2@1.60.1.70291"}
+{"id": 1214206, "field": "name", "en": "Tentacle Call", "hash": "568cbefe56160e84", "src": "db2@1.60.1.70291"}
+{"id": 1214206, "field": "description", "en": "Summons Vanquished Tentacles on top of your target to pursue and attack them for $d.", "hash": "8faa94e994d964c6", "src": "db2@1.60.1.70291"}
+{"id": 1214208, "field": "name", "en": "Drain Life", "hash": "344ef3a3656fa1a7", "src": "db2@1.60.1.70291"}
+{"id": 1214208, "field": "description", "en": "Steals $s1 life from target enemy.", "hash": "8e44b26614ccfbdd", "src": "db2@1.60.1.70291"}
+{"id": 1214214, "field": "name", "en": "Shard of the Fallen Star", "hash": "2a4cc219fc9a5535", "src": "db2@1.60.1.70291"}
+{"id": 1214214, "field": "description", "en": "Calls down a meteor, burning all enemies within the area for $s1 total Fire damage, and stunning them for $1214223d1.", "hash": "5a53e356d88bdeb7", "src": "db2@1.60.1.70291"}
+{"id": 1214218, "field": "name", "en": "Timeworn Expertise", "hash": "06bc008b93e88023", "src": "db2@1.60.1.70291"}
+{"id": 1214220, "field": "name", "en": "Timeworn Healing", "hash": "b9884ce9c6c0137b", "src": "db2@1.60.1.70291"}
+{"id": 1214223, "field": "name", "en": "Shard of the Fallen Star", "hash": "2a4cc219fc9a5535", "src": "db2@1.60.1.70291"}
+{"id": 1214223, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70291"}
+{"id": 1214225, "field": "name", "en": "Timeworn Spell", "hash": "69984b7c6b454aad", "src": "db2@1.60.1.70291"}
+{"id": 1214233, "field": "name", "en": "Obsidian Insight", "hash": "d07f9c872a56e9dc", "src": "db2@1.60.1.70291"}
+{"id": 1214233, "field": "description", "en": "Increases damage done by magical spells and effects by up to $s1, and decreases the magical resistances of your spell targets by $s2 for $d.", "hash": "b0176327a3683df3", "src": "db2@1.60.1.70291"}
+{"id": 1214233, "field": "aura", "en": "Magical damage increased by up to $s1.\r\nMagical resistances of your spell targets reduced by $s2.", "hash": "e014e8ba520a4f02", "src": "db2@1.60.1.70291"}
+{"id": 1214239, "field": "name", "en": "Timeworn Spell", "hash": "69984b7c6b454aad", "src": "db2@1.60.1.70291"}
+{"id": 1214244, "field": "name", "en": "Timeworn Spell", "hash": "69984b7c6b454aad", "src": "db2@1.60.1.70291"}
+{"id": 1214245, "field": "name", "en": "Timeworn Spell", "hash": "69984b7c6b454aad", "src": "db2@1.60.1.70291"}
+{"id": 1214257, "field": "name", "en": "Black Grasp of the Destroyer", "hash": "cbdf2b0e8c97ab4e", "src": "db2@1.60.1.70291"}
+{"id": 1214258, "field": "name", "en": "Mana Drain Trigger", "hash": "cf92b029aa38be9d", "src": "db2@1.60.1.70291"}
+{"id": 1214258, "field": "description", "en": "On successful melee or ranged attack gain $1214261s1 mana and if possible drain $1214259s1 mana from the target.", "hash": "4ea4561c13c897a0", "src": "db2@1.60.1.70291"}
+{"id": 1214259, "field": "name", "en": "Mana Drain", "hash": "93a452df1356209d", "src": "db2@1.60.1.70291"}
+{"id": 1214261, "field": "name", "en": "Mana Drain", "hash": "93a452df1356209d", "src": "db2@1.60.1.70291"}
+{"id": 1214263, "field": "name", "en": "Chitinous Spikes", "hash": "e0dd7cca67e46e26", "src": "db2@1.60.1.70291"}
+{"id": 1214263, "field": "description", "en": "Spikes sprout from you causing $s1 Nature damage to attackers when hit.  Lasts $d.", "hash": "5c2e53cefd09e3ee", "src": "db2@1.60.1.70291"}
+{"id": 1214263, "field": "aura", "en": "Causes $s1 Nature damage to attackers.", "hash": "7724a9e2ce1e4b6b", "src": "db2@1.60.1.70291"}
+{"id": 1214270, "field": "name", "en": "Jagged Obsidian Shield", "hash": "55f6e6caac0f48a8", "src": "db2@1.60.1.70291"}
+{"id": 1214272, "field": "name", "en": "Silence Trigger", "hash": "857d4644931926bd", "src": "db2@1.60.1.70291"}
+{"id": 1214272, "field": "description", "en": "When struck by a harmful spell, the caster of that spell has a $h% chance to be silenced for $1214273d.", "hash": "c50503b8d4a14ab9", "src": "db2@1.60.1.70291"}
+{"id": 1214273, "field": "name", "en": "Silence", "hash": "34a188e2baf39d02", "src": "db2@1.60.1.70291"}
+{"id": 1214273, "field": "description", "en": "Silences an enemy preventing it from casting spells for $d.", "hash": "444e4a7e0d6d4053", "src": "db2@1.60.1.70291"}
+{"id": 1214273, "field": "aura", "en": "Cannot cast spells.", "hash": "6d133d61246b88a5", "src": "db2@1.60.1.70291"}
+{"id": 1214274, "field": "name", "en": "Obsidian Mail Tunic", "hash": "c9b31c99bef2677a", "src": "db2@1.60.1.70291"}
+{"id": 1214276, "field": "name", "en": "Spell Damage Reduction", "hash": "ce56910aff0675c8", "src": "db2@1.60.1.70291"}
+{"id": 1214276, "field": "description", "en": "Spell Damage received is reduced by $s1.", "hash": "1d9ea2660cac4edf", "src": "db2@1.60.1.70291"}
+{"id": 1214278, "field": "name", "en": "Earthstrike", "hash": "6dec6a0bd9913823", "src": "db2@1.60.1.70291"}
+{"id": 1214278, "field": "description", "en": "Increases your melee and ranged attack power by $s1.  Effect lasts for $d.", "hash": "f1ea894ae8f60a24", "src": "db2@1.60.1.70291"}
+{"id": 1214278, "field": "aura", "en": "Increases melee and ranged attack power by $s1.", "hash": "558973f8a58b250d", "src": "db2@1.60.1.70291"}
+{"id": 1214279, "field": "name", "en": "Spell Blasting", "hash": "aba689d12216c844", "src": "db2@1.60.1.70291"}
+{"id": 1214279, "field": "aura", "en": "Spell effects increased by $s1.", "hash": "af003e7e89814bcd", "src": "db2@1.60.1.70291"}
+{"id": 1214280, "field": "name", "en": "Spell Blasting", "hash": "aba689d12216c844", "src": "db2@1.60.1.70291"}
+{"id": 1214280, "field": "description", "en": "Gives a chance when your harmful spells land to increase the damage of your spells and effects by $1214279s1 for $1214279d.", "hash": "300c08a9277ca30c", "src": "db2@1.60.1.70291"}
+{"id": 1214281, "field": "name", "en": "Naga Form", "hash": "f6eb6d411200073b", "src": "db2@1.60.1.70291"}
+{"id": 1214281, "field": "description", "en": "Transforms you into a Naga for $d.", "hash": "d1b7822afc45570b", "src": "db2@1.60.1.70291"}
+{"id": 1214281, "field": "aura", "en": "Transformed into a Naga.", "hash": "6526e81142e8fd69", "src": "db2@1.60.1.70291"}
+{"id": 1214283, "field": "name", "en": "Swift Spectral Tiger", "hash": "4e15c09176cef522", "src": "db2@1.60.1.70291"}
+{"id": 1214283, "field": "description", "en": "Summons and dismisses a Swift Spectral Tiger.   This is a very fast mount.", "hash": "7d7bae98295e5de2", "src": "db2@1.60.1.70291"}
+{"id": 1214283, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
+{"id": 1214284, "field": "name", "en": "Drakonid Form", "hash": "d8d58e0865654b68", "src": "db2@1.60.1.70291"}
+{"id": 1214284, "field": "description", "en": "Transforms you into a Drakonid for $d.", "hash": "b0e71df4b7b9301e", "src": "db2@1.60.1.70291"}
+{"id": 1214284, "field": "aura", "en": "Transformed into a Drakonid.", "hash": "91d414d7b5487298", "src": "db2@1.60.1.70291"}
+{"id": 1214285, "field": "name", "en": "Improved Shred/Ferocious Bite", "hash": "46197dd6815d17f5", "src": "db2@1.60.1.70291"}
+{"id": 1214285, "field": "description", "en": "Increases the damage of Ferocious Bite and Shred by $s1%.", "hash": "8592d461fa23ad39", "src": "db2@1.60.1.70291"}
+{"id": 1214286, "field": "name", "en": "Improved Swipe/Mangle", "hash": "7207f66d7baea9cf", "src": "db2@1.60.1.70291"}
+{"id": 1214286, "field": "description", "en": "Increases the damage of Swipe and Mangle by $s1%.", "hash": "13e15f66ebe824e0", "src": "db2@1.60.1.70291"}
+{"id": 1214289, "field": "name", "en": "Idol of Health", "hash": "df96761d59ffd019", "src": "db2@1.60.1.70291"}
+{"id": 1214289, "field": "description", "en": "Your Cure Poison, Abolish Poison, and Remove Curse spells also heal the target for $s1 when cast.", "hash": "84f66a21dd38ea64", "src": "db2@1.60.1.70291"}
+{"id": 1214290, "field": "name", "en": "Idol of Health", "hash": "df96761d59ffd019", "src": "db2@1.60.1.70291"}
+{"id": 1214290, "field": "description", "en": "Heal your target for $s1.", "hash": "bdf1d263c3b5155c", "src": "db2@1.60.1.70291"}
+{"id": 1214292, "field": "name", "en": "Totem of Life", "hash": "7916f9ea67e36042", "src": "db2@1.60.1.70291"}
+{"id": 1214292, "field": "description", "en": "Your Cure Poison and Cure Disease spells also heal the target for $s1. Your Poison Cleansing Totem and Disease Cleansing Totem also heal your group for $s2 when cast.", "hash": "340a38d86174d6e9", "src": "db2@1.60.1.70291"}
+{"id": 1214293, "field": "name", "en": "Totem of Life", "hash": "7916f9ea67e36042", "src": "db2@1.60.1.70291"}
+{"id": 1214293, "field": "description", "en": "Heal your target for $s1.", "hash": "bdf1d263c3b5155c", "src": "db2@1.60.1.70291"}
+{"id": 1214294, "field": "name", "en": "Totem of Life", "hash": "7916f9ea67e36042", "src": "db2@1.60.1.70291"}
+{"id": 1214295, "field": "name", "en": "Improved Wrath/Moonfire", "hash": "17ecbe80f89ab674", "src": "db2@1.60.1.70291"}
+{"id": 1214295, "field": "description", "en": "Increases the damage of Moonfire and Wrath by $s1%.", "hash": "f6fe88bd8adeea6d", "src": "db2@1.60.1.70291"}
+{"id": 1214296, "field": "name", "en": "Improved Exorcism/Crusader Strike", "hash": "5279a8833590b2ae", "src": "db2@1.60.1.70291"}
+{"id": 1214296, "field": "description", "en": "Increases the damage of Exorcism and Crusader Strike by $s1%.", "hash": "95bf1dc490fde888", "src": "db2@1.60.1.70291"}
+{"id": 1214297, "field": "name", "en": "Improved Holy Shock", "hash": "1e01c33289312cb2", "src": "db2@1.60.1.70291"}
+{"id": 1214297, "field": "description", "en": "Increases the damage of Holy Shock by $s1%, and your Shock and Awe buff now also grants $1214298s1% increased Holy Damage. (This effect does not stack with Sanctity Aura).", "hash": "dcda324a863a9b91", "src": "db2@1.60.1.70291"}
+{"id": 1214298, "field": "name", "en": "Libram of Sanctity", "hash": "0e8c4a7675251c71", "src": "db2@1.60.1.70291"}
+{"id": 1214298, "field": "description", "en": "Increases Holy damage done by $s1%. ", "hash": "d68c8458217d6058", "src": "db2@1.60.1.70291"}
+{"id": 1214298, "field": "aura", "en": "Increases Holy damage done by $s1%.", "hash": "d68c8458217d6058", "src": "db2@1.60.1.70291"}
+{"id": 1214299, "field": "name", "en": "Improved Hammer of the Righteous/Shield of Righteousness", "hash": "4d3b03163e930f12", "src": "db2@1.60.1.70291"}
+{"id": 1214299, "field": "description", "en": "Increases the damage of Hammer of the Righteous and Shield of Righteousness by $s1%.", "hash": "e60be3525ab631ea", "src": "db2@1.60.1.70291"}
+{"id": 1214300, "field": "name", "en": "Improved Stormstrike/Windfury Weapon", "hash": "632fa9b04d311a2f", "src": "db2@1.60.1.70291"}
+{"id": 1214300, "field": "description", "en": "Increases the damage of Stormstrike and Windfury Weapon by $s1%.", "hash": "e98bf06860db0389", "src": "db2@1.60.1.70291"}
+{"id": 1214301, "field": "name", "en": "Improved Flame Shock/Molten Blast", "hash": "d41f4ab80a2dce08", "src": "db2@1.60.1.70291"}
+{"id": 1214301, "field": "description", "en": "Increases the damage of Flame Shock and Molten Blast by $s1%.", "hash": "11761d5ca91172d2", "src": "db2@1.60.1.70291"}
+{"id": 1214302, "field": "name", "en": "Improved Lightning Bolt/Lava Burst", "hash": "7ec064a59ab382ce", "src": "db2@1.60.1.70291"}
+{"id": 1214302, "field": "description", "en": "Increases the damage of Lightning Bolt, Chain Lightning, and Lava Burst by $s1%.", "hash": "52e20bffc0999ff9", "src": "db2@1.60.1.70291"}
+{"id": 1214303, "field": "name", "en": "Dreamscale Kilt", "hash": "a977ab02de7ceccf", "src": "db2@1.60.1.70291"}
+{"id": 1214306, "field": "name", "en": "Dreamscale Bracers", "hash": "0ab4be3e1b4aedc5", "src": "db2@1.60.1.70291"}
+{"id": 1214307, "field": "name", "en": "Dreamscale Mitts", "hash": "db5a09118a122754", "src": "db2@1.60.1.70291"}
+{"id": 1214309, "field": "name", "en": "Dreamscale Visor", "hash": "79552c565c57bf6f", "src": "db2@1.60.1.70291"}
+{"id": 1214376, "field": "name", "en": "Increase Spell Dam 81", "hash": "4f9bcea1d45ffd75", "src": "db2@1.60.1.70291"}
+{"id": 1214376, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70291"}
+{"id": 1214377, "field": "name", "en": "Increase Spell Dam 50", "hash": "4f9bcd17d45f9dd1", "src": "db2@1.60.1.70291"}
+{"id": 1214377, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70291"}
+{"id": 1214378, "field": "name", "en": "Increase Spell Dam 49", "hash": "4f9bcc9dd45f7df9", "src": "db2@1.60.1.70291"}
+{"id": 1214378, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70291"}
+{"id": 1214379, "field": "name", "en": "Increase Spell Dam 54", "hash": "4f9bcd1bd45f9dd5", "src": "db2@1.60.1.70291"}
+{"id": 1214379, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70291"}
+{"id": 1214380, "field": "name", "en": "Increase Spell Dam 55", "hash": "4f9bcd1cd45f9dd6", "src": "db2@1.60.1.70291"}
+{"id": 1214380, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70291"}
+{"id": 1214381, "field": "name", "en": "Increase Spell Dam 61", "hash": "4f9bcd9bd45fbdb3", "src": "db2@1.60.1.70291"}
+{"id": 1214381, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70291"}
+{"id": 1214382, "field": "name", "en": "Increase Spell Dam 62", "hash": "4f9bcd9cd45fbdb4", "src": "db2@1.60.1.70291"}
+{"id": 1214382, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70291"}
+{"id": 1214383, "field": "name", "en": "Increase Spell Dam 63", "hash": "4f9bcd9dd45fbdb5", "src": "db2@1.60.1.70291"}
+{"id": 1214383, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70291"}
+{"id": 1214384, "field": "name", "en": "Increase Spell Dam 65", "hash": "4f9bcd9fd45fbdb7", "src": "db2@1.60.1.70291"}
+{"id": 1214384, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70291"}
+{"id": 1214385, "field": "name", "en": "Increase Spell Dam 67", "hash": "4f9bcda1d45fbdb9", "src": "db2@1.60.1.70291"}
+{"id": 1214385, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70291"}
+{"id": 1214386, "field": "name", "en": "Increase Spell Dam 69", "hash": "4f9bcda3d45fbdbb", "src": "db2@1.60.1.70291"}
+{"id": 1214386, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70291"}
+{"id": 1214387, "field": "name", "en": "Increase Spell Dam 70", "hash": "4f9bce1dd45fdd93", "src": "db2@1.60.1.70291"}
+{"id": 1214387, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70291"}
+{"id": 1214388, "field": "name", "en": "Increase Spell Dam 82", "hash": "4f9bcea2d45ffd76", "src": "db2@1.60.1.70291"}
+{"id": 1214388, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70291"}
+{"id": 1214389, "field": "name", "en": "Hybrid Healing/Spell Dam 2/1", "hash": "c47dafa49bae23b8", "src": "db2@1.60.1.70291"}
+{"id": 1214389, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214390, "field": "name", "en": "Hybrid Healing/Spell Dam 4/2", "hash": "c47e35b7a39eab3b", "src": "db2@1.60.1.70291"}
+{"id": 1214390, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214391, "field": "name", "en": "Hybrid Healing/Spell Dam 7/3", "hash": "c47efed3af87767f", "src": "db2@1.60.1.70291"}
+{"id": 1214391, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214392, "field": "name", "en": "Hybrid Healing/Spell Dam 9/3", "hash": "c47f84e5b777fe01", "src": "db2@1.60.1.70291"}
+{"id": 1214392, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214393, "field": "name", "en": "Hybrid Healing/Spell Dam 11/4", "hash": "8c2f1a8564ea4a2f", "src": "db2@1.60.1.70291"}
+{"id": 1214393, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214394, "field": "name", "en": "Hybrid Healing/Spell Dam 13/5", "hash": "8c2fa0986cdad1b2", "src": "db2@1.60.1.70291"}
+{"id": 1214394, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214395, "field": "name", "en": "Hybrid Healing/Spell Dam 18/6", "hash": "8c30efc680b42478", "src": "db2@1.60.1.70291"}
+{"id": 1214395, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214397, "field": "name", "en": "Hybrid Healing/Spell Dam 20/7", "hash": "8c51251aee59fa70", "src": "db2@1.60.1.70291"}
+{"id": 1214397, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214398, "field": "name", "en": "Hybrid Healing/Spell Dam 24/8", "hash": "8c52313ffe3b0975", "src": "db2@1.60.1.70291"}
+{"id": 1214398, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214399, "field": "name", "en": "Hybrid Healing/Spell Dam 57/19", "hash": "031f3d0ddd01108e", "src": "db2@1.60.1.70291"}
+{"id": 1214399, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214400, "field": "name", "en": "Hybrid Healing/Spell Dam 73/25", "hash": "25b173c265365f43", "src": "db2@1.60.1.70291"}
+{"id": 1214400, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214402, "field": "name", "en": "Hybrid Healing/Spell Dam 79/27", "hash": "267f4566b5a61772", "src": "db2@1.60.1.70291"}
+{"id": 1214402, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214403, "field": "name", "en": "Hybrid Healing/Spell Dam 81/27", "hash": "36fa8edf2950f6b1", "src": "db2@1.60.1.70291"}
+{"id": 1214403, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214405, "field": "name", "en": "Hybrid Healing/Spell Dam 86/29", "hash": "37a612e8ec58bad0", "src": "db2@1.60.1.70291"}
+{"id": 1214405, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214406, "field": "name", "en": "Hybrid Healing/Spell Dam 88/30", "hash": "37eaae980728c2c8", "src": "db2@1.60.1.70291"}
+{"id": 1214406, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214407, "field": "name", "en": "Hybrid Healing/Spell Dam 92/31", "hash": "48aa934895a38a06", "src": "db2@1.60.1.70291"}
+{"id": 1214407, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214408, "field": "name", "en": "Hybrid Healing/Spell Dam 95/32", "hash": "49117c1a3ddb6626", "src": "db2@1.60.1.70291"}
+{"id": 1214408, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214409, "field": "name", "en": "Hybrid Healing/Spell Dam 97/32", "hash": "4956175058ab4e35", "src": "db2@1.60.1.70291"}
+{"id": 1214409, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214410, "field": "name", "en": "Hybrid Healing/Spell Dam 99/33", "hash": "499ab287737b3645", "src": "db2@1.60.1.70291"}
+{"id": 1214410, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214411, "field": "name", "en": "Hybrid Healing/Spell Dam 101/34", "hash": "304f253b13410f91", "src": "db2@1.60.1.70291"}
+{"id": 1214411, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214413, "field": "name", "en": "Hybrid Healing/Spell Dam 103/35", "hash": "3093c0722e10f7a1", "src": "db2@1.60.1.70291"}
+{"id": 1214413, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214416, "field": "name", "en": "Hybrid Healing/Spell Dam 106/35", "hash": "30faa943d648d3af", "src": "db2@1.60.1.70291"}
+{"id": 1214416, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214417, "field": "name", "en": "Hybrid Healing/Spell Dam 108/36", "hash": "313f447af118bbbf", "src": "db2@1.60.1.70291"}
+{"id": 1214417, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214418, "field": "name", "en": "Hybrid Healing/Spell Dam 110/37", "hash": "41ba8df464c39aff", "src": "db2@1.60.1.70291"}
+{"id": 1214418, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214421, "field": "name", "en": "Hybrid Healing/Spell Dam 161/54", "hash": "99a16c274cc04c24", "src": "db2@1.60.1.70291"}
+{"id": 1214421, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214422, "field": "name", "en": "Hybrid Healing/Spell Dam 153/51", "hash": "8858510988a5b4b5", "src": "db2@1.60.1.70291"}
+{"id": 1214422, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214427, "field": "name", "en": "Hybrid Healing/Spell Dam 136/45", "hash": "65a3ccb973087201", "src": "db2@1.60.1.70291"}
+{"id": 1214427, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214428, "field": "name", "en": "Hybrid Healing/Spell Dam 120/40", "hash": "534844c143ae3a54", "src": "db2@1.60.1.70291"}
+{"id": 1214428, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214432, "field": "name", "en": "Hybrid Healing/Spell Dam 112/37", "hash": "41ff292a7f93830e", "src": "db2@1.60.1.70291"}
+{"id": 1214432, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 1214440, "field": "name", "en": "Divergent Lightning", "hash": "6e3ea3f1b1b438bd", "src": "db2@1.60.1.70291"}
+{"id": 1214440, "field": "description", "en": "Deals heavy damage that's split among everyone affected.", "hash": "6640805dc91583fd", "src": "db2@1.60.1.70291"}
+{"id": 1214440, "field": "aura", "en": "Deals heavy damage that's split among everyone affected.", "hash": "6640805dc91583fd", "src": "db2@1.60.1.70291"}
+{"id": 1214451, "field": "name", "en": "Spiritual Protection", "hash": "5adde44f1810c364", "src": "db2@1.60.1.70291"}
+{"id": 1214451, "field": "description", "en": "Reduces damage inflicted to all nearby Spirits by $s1%.", "hash": "6e293676e90405b3", "src": "db2@1.60.1.70291"}
+{"id": 1214451, "field": "aura", "en": "Reduces damage inflicted to all nearby Spirits by $s1%.", "hash": "6e293676e90405b3", "src": "db2@1.60.1.70291"}
+{"id": 1214632, "field": "name", "en": "Summon Eye Tentacle", "hash": "5439c815686d9917", "src": "db2@1.60.1.70291"}
+{"id": 1214681, "field": "name", "en": "[DNT] Despair Illusion", "hash": "5171c280fc150187", "src": "db2@1.60.1.70291"}
+{"id": 1214686, "field": "name", "en": "Summon Portal Ground State", "hash": "cfb4e923532e8b3a", "src": "db2@1.60.1.70291"}
+{"id": 1214691, "field": "name", "en": "[DNT] Illusion of Despair", "hash": "b16eb401c855ac0e", "src": "db2@1.60.1.70291"}
+{"id": 1214725, "field": "name", "en": "[DNT] Illusion Selection", "hash": "07de49fb56b5f937", "src": "db2@1.60.1.70291"}
+{"id": 1214727, "field": "name", "en": "[DNT] Illusion Selection", "hash": "07de49fb56b5f937", "src": "db2@1.60.1.70291"}
+{"id": 1214777, "field": "name", "en": "Illusionary Shatter", "hash": "1a68b4ba39afedd2", "src": "db2@1.60.1.70291"}
+{"id": 1214777, "field": "description", "en": "Sends out a blast wave of magic, inflicting $s1 Arcane damage to nearby enemies.\r\n", "hash": "e5bc2450428282dd", "src": "db2@1.60.1.70291"}
+{"id": 1214789, "field": "name", "en": "Summon Eye Tentacle", "hash": "5439c815686d9917", "src": "db2@1.60.1.70291"}
+{"id": 1214811, "field": "name", "en": "[DNT] Copy", "hash": "162c109d8acfa7cf", "src": "db2@1.60.1.70291"}
+{"id": 1214844, "field": "name", "en": "[DNT] Copy", "hash": "162c109d8acfa7cf", "src": "db2@1.60.1.70291"}
+{"id": 1214851, "field": "name", "en": "[DNT] Speed", "hash": "71874803763838da", "src": "db2@1.60.1.70291"}
+{"id": 1214867, "field": "name", "en": "[DNT] Periodic Demon Checker", "hash": "55d7a49c60110c79", "src": "db2@1.60.1.70291"}
+{"id": 1214869, "field": "name", "en": "(DNT) Emeriss Faction Check", "hash": "bf7e50b5245130df", "src": "db2@1.60.1.70291"}
+{"id": 1214871, "field": "name", "en": "Illusionary Shatter", "hash": "1a68b4ba39afedd2", "src": "db2@1.60.1.70291"}
+{"id": 1214871, "field": "description", "en": "Sends out a blast wave of magic, inflicting $s1 Arcane damage to nearby enemies.", "hash": "e5bc2450428282dd", "src": "db2@1.60.1.70291"}
+{"id": 1214883, "field": "name", "en": "Void-Touched Dummy [DNT]", "hash": "a3825e5f6f1399f2", "src": "db2@1.60.1.70291"}
+{"id": 1214884, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
+{"id": 1214917, "field": "name", "en": "Weapon Damage 02", "hash": "e4e3e8b79020d3a9", "src": "db2@1.60.1.70291"}
+{"id": 1214917, "field": "description", "en": "+$s1 Weapon Damage.", "hash": "f887b76a4d870c20", "src": "db2@1.60.1.70291"}
+{"id": 1214918, "field": "name", "en": "Weapon Damage 01", "hash": "e4e3e8b69020d3a8", "src": "db2@1.60.1.70291"}
+{"id": 1214918, "field": "description", "en": "+$s1 Weapon Damage.", "hash": "f887b76a4d870c20", "src": "db2@1.60.1.70291"}
+{"id": 1214927, "field": "name", "en": "Extra Attack", "hash": "074301e436425146", "src": "db2@1.60.1.70291"}
+{"id": 1214927, "field": "description", "en": "Gives you a $h% chance to get an extra attack on the same target after dealing damage with your weapon.", "hash": "ac21c600e2c1124c", "src": "db2@1.60.1.70291"}
+{"id": 1214955, "field": "name", "en": "Increase Holy Dam 59", "hash": "c6f65044c7ca4132", "src": "db2@1.60.1.70291"}
+{"id": 1214955, "field": "description", "en": "Increases damage done by Holy spells and effects by up to $s1.", "hash": "6e3351e7dc6b9f3a", "src": "db2@1.60.1.70291"}
+{"id": 1214956, "field": "name", "en": "Curse of Despair", "hash": "492f8518cba6d3d3", "src": "db2@1.60.1.70291"}
+{"id": 1214956, "field": "aura", "en": "Shadow damage inflicted every $t1 sec.", "hash": "1bf495341e2228a5", "src": "db2@1.60.1.70291"}
+{"id": 1214958, "field": "name", "en": "[DNT] Modify Health & Damage", "hash": "0991f8cc5d7e9edf", "src": "db2@1.60.1.70291"}

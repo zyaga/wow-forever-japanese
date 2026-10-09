@@ -22,7 +22,7 @@ WFJ.Data.add("spell", {
   [17053] = { "Mark of the WildとGift of the Wildの効果を$N1%増加させます。", nil, 0x0749612d, nil, "um" },
   [17054] = { "Mark of the WildとGift of the Wildの効果を$N1%増加させます。", nil, 0x0749612d, nil, "um" },
   [17055] = { "Mark of the WildとGift of the Wildの効果を$N1%増加させます。", nil, 0x0749612d, nil, "um" },
-  [17056] = { "Bear FormまたはDire Bear Formに変身した時、$N1%の確率で怒りを$N2得ます。Cat Formに変身した時は、前回Cat Formだった時に持っていたエネルギーの$N3%に加え、Bear Form、Cat Form、Dire Bear Form以外で過ごした時間に応じて毎秒エネルギーを$N4（最大$N5）回復します。", nil, 0xed125399, nil, "um" },
+  [17056] = { "Bear FormまたはDire Bear Formに変身すると、$N1%の確率で怒りを$N2得ます。Cat Formに変身すると、最後にCat Formだったときに持っていたエネルギーの$N3%に加え、Cat Form以外で過ごした時間に応じて毎秒エネルギーを$N4ずつ、最大$N5まで回復します。\n\nBear FormとDire Bear Formの間は、このエネルギーを失い、その回復も止まります。", nil, 0x55909d03, nil, "um" },
   [17063] = { "ArcaneとNature呪文の詠唱中、ダメージによる中断を$N1%の確率で回避します。", nil, 0xe3762042, nil, "um" },
   [17069] = { "Healing Touchの詠唱時間を$N1秒短縮し、与えるすべてのダメージを$N2%増加させます。", nil, 0xbdfe0626, nil, "um" },
   [17074] = { "Regrowthのクリティカル効果率を$N1%上昇させます。", nil, 0x4f3f1f26, nil, "um" },

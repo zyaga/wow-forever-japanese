@@ -1,0 +1,231 @@
+{"id": 1324056, "field": "name", "en": "Aspects", "hash": "996fead135bef771", "src": "db2@1.60.1.70291"}
+{"id": 1324056, "field": "description", "en": "Take on the aspect of various creatures, enhancing your combat abilities in different ways.\r\n\r\nYou currently have access to:\r\n\r\n$?pc166319[$@spellicon5118 $@spellname5118][]\r\n$?pc166320[$@spellicon13165 $@spellname13165][]\r\n$?pc166318[$@spellicon13161 $@spellname13161][]\r\n$?pc166321[$@spellicon13163 $@spellname13163][]\r\n$?pc166323[$@spellicon20043 $@spellname20043][]\r\n$?pc166322[$@spellicon13159 $@spellname13159][]", "hash": "c174d28fa8ba01ad", "src": "db2@1.60.1.70291"}
+{"id": 1324106, "field": "name", "en": "Summoning Disorientation", "hash": "23e20dfa15cc4d82", "src": "db2@1.60.1.70291"}
+{"id": 1324106, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70291"}
+{"id": 1324187, "field": "name", "en": "Polymorph", "hash": "265007345ebb7046", "src": "db2@1.60.1.70291"}
+{"id": 1324187, "field": "description", "en": "$@spelldesc12825", "hash": "d637006c3a8967c2", "src": "db2@1.60.1.70291"}
+{"id": 1324187, "field": "aura", "en": "$@spellaura12825", "hash": "445227a4dd5bfa4f", "src": "db2@1.60.1.70291"}
+{"id": 1324188, "field": "name", "en": "Polymorph", "hash": "265007345ebb7046", "src": "db2@1.60.1.70291"}
+{"id": 1324188, "field": "description", "en": "$@spelldesc12824", "hash": "d637006b3a8967c1", "src": "db2@1.60.1.70291"}
+{"id": 1324188, "field": "aura", "en": "$@spellaura12824", "hash": "445227a3dd5bfa4e", "src": "db2@1.60.1.70291"}
+{"id": 1324189, "field": "name", "en": "Polymorph", "hash": "265007345ebb7046", "src": "db2@1.60.1.70291"}
+{"id": 1324189, "field": "description", "en": "$@spelldesc118", "hash": "59aabb844d292d44", "src": "db2@1.60.1.70291"}
+{"id": 1324189, "field": "aura", "en": "$@spellaura118", "hash": "e2050b7b6b45a755", "src": "db2@1.60.1.70291"}
+{"id": 1324196, "field": "name", "en": "Drain Mana", "hash": "346f2d0ad31676a2", "src": "db2@1.60.1.70291"}
+{"id": 1324200, "field": "name", "en": "Drain Mana", "hash": "346f2d0ad31676a2", "src": "db2@1.60.1.70291"}
+{"id": 1324222, "field": "name", "en": "(DNT) Wild King Intro Theater", "hash": "8f428507859ae4f4", "src": "db2@1.60.1.70291"}
+{"id": 1324229, "field": "name", "en": "Drain Mana", "hash": "346f2d0ad31676a2", "src": "db2@1.60.1.70291"}
+{"id": 1324282, "field": "name", "en": "Mana Void", "hash": "cadd3d2f56959bcf", "src": "db2@1.60.1.70291"}
+{"id": 1324287, "field": "name", "en": "Increased Armor 100", "hash": "5e371729e6bc2dc5", "src": "db2@1.60.1.70291"}
+{"id": 1324287, "field": "description", "en": "+$s1 Armor.", "hash": "5e762e7689d7caee", "src": "db2@1.60.1.70291"}
+{"id": 1324288, "field": "name", "en": "Increased Defense", "hash": "e9f26b516f9bd338", "src": "db2@1.60.1.70291"}
+{"id": 1324288, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "db2@1.60.1.70291"}
+{"id": 1324296, "field": "name", "en": "Krol'dok Resolve", "hash": "18d59a70f4d5fd80", "src": "db2@1.60.1.70291"}
+{"id": 1324296, "field": "description", "en": "Heals the target for $s1.", "hash": "857d74c1a38ce2a3", "src": "db2@1.60.1.70291"}
+{"id": 1324296, "field": "aura", "en": "Heals the target for $w1.", "hash": "857e80e5b36df1a7", "src": "db2@1.60.1.70291"}
+{"id": 1324298, "field": "name", "en": "Krol'dok Resolve", "hash": "18d59a70f4d5fd80", "src": "db2@1.60.1.70291"}
+{"id": 1324298, "field": "description", "en": "Chance on block to heal for $1324296s1. Healing is doubled in Strongholds and Cities.", "hash": "e3c9e0adf819e7dd", "src": "db2@1.60.1.70291"}
+{"id": 1324299, "field": "name", "en": "Blink", "hash": "951d75c0c1314e00", "src": "db2@1.60.1.70291"}
+{"id": 1324299, "field": "description", "en": "Teleports the caster to an enemy target. Also frees the caster from any bonds.", "hash": "079db5f62163719c", "src": "db2@1.60.1.70291"}
+{"id": 1324299, "field": "aura", "en": "Blinking...", "hash": "e8b15d2fefd96faf", "src": "db2@1.60.1.70291"}
+{"id": 1324301, "field": "name", "en": "Blink", "hash": "951d75c0c1314e00", "src": "db2@1.60.1.70291"}
+{"id": 1324301, "field": "description", "en": "Teleports the caster 20 yd. forward unless something is in the way. Also frees the caster from any bonds.", "hash": "a02ec6f5691a1b00", "src": "db2@1.60.1.70291"}
+{"id": 1324301, "field": "aura", "en": "Blinking...", "hash": "e8b15d2fefd96faf", "src": "db2@1.60.1.70291"}
+{"id": 1324306, "field": "name", "en": "Arcane Explosion", "hash": "147926cf0bf9df21", "src": "db2@1.60.1.70291"}
+{"id": 1324306, "field": "description", "en": "Sends out a blast wave of magic, inflicting $s1 Arcane damage to nearby enemies and silencing them for $d.", "hash": "d77bc09f79f02ee8", "src": "db2@1.60.1.70291"}
+{"id": 1324306, "field": "aura", "en": "Silenced.", "hash": "20816e3405060606", "src": "db2@1.60.1.70291"}
+{"id": 1324308, "field": "name", "en": "Ogre Dominance", "hash": "e804d5e0ab673a00", "src": "db2@1.60.1.70291"}
+{"id": 1324308, "field": "description", "en": "Stamina increased by $1.", "hash": "e15459d1a947435e", "src": "db2@1.60.1.70291"}
+{"id": 1324308, "field": "aura", "en": "Stamina increased by $s1.", "hash": "4e3b423b6ecdd596", "src": "db2@1.60.1.70291"}
+{"id": 1324309, "field": "name", "en": "Ogre Dominance", "hash": "e804d5e0ab673a00", "src": "db2@1.60.1.70291"}
+{"id": 1324309, "field": "description", "en": "Taking damage has a high chance to increase your Stamina by $1324308s for $1324308d, stacking up to 20 times.", "hash": "6b44e05e7d2fa6d8", "src": "db2@1.60.1.70291"}
+{"id": 1324311, "field": "name", "en": "Increased Arcane Resist 5", "hash": "cd7c74e85b027be7", "src": "db2@1.60.1.70291"}
+{"id": 1324311, "field": "description", "en": "+$s1 Arcane Resistance.", "hash": "0d52954cb3dc6a79", "src": "db2@1.60.1.70291"}
+{"id": 1324312, "field": "name", "en": "Increased Spirit 10", "hash": "2be224e6490556c1", "src": "db2@1.60.1.70291"}
+{"id": 1324312, "field": "description", "en": "+$s1 Spirit.", "hash": "ce2f9b3cb29cadc9", "src": "db2@1.60.1.70291"}
+{"id": 1324315, "field": "name", "en": "Violet Meditation", "hash": "6d701148f33f42de", "src": "db2@1.60.1.70291"}
+{"id": 1324315, "field": "description", "en": "Allows $s1% of your Mana regeneration to continue while casting.", "hash": "86815c0ca3893a62", "src": "db2@1.60.1.70291"}
+{"id": 1324315, "field": "aura", "en": "Allows $w1% of your Mana regeneration to continue while casting.", "hash": "301e5adc8202d450", "src": "db2@1.60.1.70291"}
+{"id": 1324318, "field": "name", "en": "Violet Meditation", "hash": "6d701148f33f42de", "src": "db2@1.60.1.70291"}
+{"id": 1324318, "field": "description", "en": "Chance on damaging spell to allow $1324315s1% of your Mana regeneration to continue while casting for $1324315d. Mana regen amount is doubled in Strongholds and Cities.", "hash": "70e97c755b28de40", "src": "db2@1.60.1.70291"}
+{"id": 1324322, "field": "name", "en": "Summon Arcane Elemental", "hash": "46674d85f06153ff", "src": "db2@1.60.1.70291"}
+{"id": 1324322, "field": "description", "en": "Summon Arcane Elemenetal.", "hash": "7e274ea4911e9eb6", "src": "db2@1.60.1.70291"}
+{"id": 1324323, "field": "name", "en": "Summon Arcane Elemental", "hash": "46674d85f06153ff", "src": "db2@1.60.1.70291"}
+{"id": 1324323, "field": "description", "en": "Chance on damaging spell to summon an Arcane elemental to aid you in combat.", "hash": "288d1e972f4e1384", "src": "db2@1.60.1.70291"}
+{"id": 1324401, "field": "name", "en": "Counterspell - Silenced", "hash": "6dabe1443ff4fd64", "src": "db2@1.60.1.70291"}
+{"id": 1324401, "field": "aura", "en": "Silenced.", "hash": "20816e3405060606", "src": "db2@1.60.1.70291"}
+{"id": 1324415, "field": "name", "en": "Shackle Undead", "hash": "496f003f938da3d8", "src": "db2@1.60.1.70291"}
+{"id": 1324415, "field": "description", "en": "$@spelldesc9484", "hash": "e3712b9444d513d3", "src": "db2@1.60.1.70291"}
+{"id": 1324415, "field": "aura", "en": "$@spellaura9484", "hash": "a9a818572ea4ab84", "src": "db2@1.60.1.70291"}
+{"id": 1324420, "field": "name", "en": "Shackle Undead", "hash": "496f003f938da3d8", "src": "db2@1.60.1.70291"}
+{"id": 1324420, "field": "description", "en": "$@spelldesc9485", "hash": "e3712b9544d513d4", "src": "db2@1.60.1.70291"}
+{"id": 1324420, "field": "aura", "en": "$@spellaura9485", "hash": "a9a818582ea4ab85", "src": "db2@1.60.1.70291"}
+{"id": 1324422, "field": "name", "en": "Shackle Undead", "hash": "496f003f938da3d8", "src": "db2@1.60.1.70291"}
+{"id": 1324422, "field": "description", "en": "$@spelldesc10955", "hash": "d5f2a9c823b22317", "src": "db2@1.60.1.70291"}
+{"id": 1324422, "field": "aura", "en": "$@spellaura10955", "hash": "440dd100c684b5a4", "src": "db2@1.60.1.70291"}
+{"id": 1324427, "field": "name", "en": "Silence", "hash": "34a188e2baf39d02", "src": "db2@1.60.1.70291"}
+{"id": 1324427, "field": "description", "en": "$@spelldesc15487", "hash": "d69ce02dd2e0f414", "src": "db2@1.60.1.70291"}
+{"id": 1324427, "field": "aura", "en": "$@spellaura15487", "hash": "44b8076575b386b2", "src": "db2@1.60.1.70291"}
+{"id": 1324448, "field": "name", "en": "Fear", "hash": "097bdd043b6b8a3a", "src": "db2@1.60.1.70291"}
+{"id": 1324448, "field": "description", "en": "$@spelldesc5782", "hash": "e2e8be411b1e0ef6", "src": "db2@1.60.1.70291"}
+{"id": 1324448, "field": "aura", "en": "$@spellaura5782", "hash": "a91fab0404eda6a7", "src": "db2@1.60.1.70291"}
+{"id": 1324451, "field": "name", "en": "Fear", "hash": "097bdd043b6b8a3a", "src": "db2@1.60.1.70291"}
+{"id": 1324451, "field": "description", "en": "$@spelldesc6213", "hash": "e309b91b94abd10a", "src": "db2@1.60.1.70291"}
+{"id": 1324451, "field": "aura", "en": "$@spellaura6213", "hash": "a940a5de7e7b68bb", "src": "db2@1.60.1.70291"}
+{"id": 1324453, "field": "name", "en": "Fear", "hash": "097bdd043b6b8a3a", "src": "db2@1.60.1.70291"}
+{"id": 1324453, "field": "description", "en": "$@spelldesc6215", "hash": "e309b91d94abd10c", "src": "db2@1.60.1.70291"}
+{"id": 1324453, "field": "aura", "en": "$@spellaura6215", "hash": "a940a5e07e7b68bd", "src": "db2@1.60.1.70291"}
+{"id": 1324459, "field": "name", "en": "Death Coil", "hash": "7d92e239738241a5", "src": "db2@1.60.1.70291"}
+{"id": 1324459, "field": "description", "en": "$@spelldesc6789", "hash": "e30b0be3a88602fc", "src": "db2@1.60.1.70291"}
+{"id": 1324459, "field": "aura", "en": "$@spellaura6789", "hash": "a941f8a692559aad", "src": "db2@1.60.1.70291"}
+{"id": 1324462, "field": "name", "en": "Banish", "hash": "8da6a696dfe51d8f", "src": "db2@1.60.1.70291"}
+{"id": 1324462, "field": "description", "en": "$@spelldesc710", "hash": "59ac4db264fac3c2", "src": "db2@1.60.1.70291"}
+{"id": 1324462, "field": "aura", "en": "$@spellaura710", "hash": "e2069da983173dd3", "src": "db2@1.60.1.70291"}
+{"id": 1324463, "field": "name", "en": "Banish", "hash": "8da6a696dfe51d8f", "src": "db2@1.60.1.70291"}
+{"id": 1324463, "field": "description", "en": "$@spelldesc18647", "hash": "d7044d048308d831", "src": "db2@1.60.1.70291"}
+{"id": 1324463, "field": "aura", "en": "$@spellaura18647", "hash": "451f743c25db6acf", "src": "db2@1.60.1.70291"}
+{"id": 1324468, "field": "name", "en": "Subjugate Demon", "hash": "46a3fe07f36342b0", "src": "db2@1.60.1.70291"}
+{"id": 1324468, "field": "description", "en": "$@spelldesc1098", "hash": "e25db31fc9b48467", "src": "db2@1.60.1.70291"}
+{"id": 1324468, "field": "aura", "en": "$@spellaura1098", "hash": "a8949fe2b3841c18", "src": "db2@1.60.1.70291"}
+{"id": 1324473, "field": "name", "en": "Bane of Havoc", "hash": "d8769dc6eaa15242", "src": "db2@1.60.1.70291"}
+{"id": 1324473, "field": "description", "en": "$@spelldesc1225228", "hash": "842053dd53f3bb58", "src": "db2@1.60.1.70291"}
+{"id": 1324473, "field": "aura", "en": "$@spellaura1225228", "hash": "7e579dd1fb936a42", "src": "db2@1.60.1.70291"}
+{"id": 1324474, "field": "name", "en": "Kidney Shot", "hash": "268233897121b5fc", "src": "db2@1.60.1.70291"}
+{"id": 1324474, "field": "description", "en": "$@spelldesc408", "hash": "59ab841c5911d8a6", "src": "db2@1.60.1.70291"}
+{"id": 1324474, "field": "aura", "en": "$@spellaura408", "hash": "e205d413772e52b7", "src": "db2@1.60.1.70291"}
+{"id": 1324475, "field": "name", "en": "Kidney Shot", "hash": "268233897121b5fc", "src": "db2@1.60.1.70291"}
+{"id": 1324475, "field": "description", "en": "$@spelldesc8643", "hash": "e34f61febf5d27c0", "src": "db2@1.60.1.70291"}
+{"id": 1324475, "field": "aura", "en": "$@spellaura8643", "hash": "a9864ec1a92cbf71", "src": "db2@1.60.1.70291"}
+{"id": 1324477, "field": "name", "en": "Blind", "hash": "951d75b9c1314df9", "src": "db2@1.60.1.70291"}
+{"id": 1324477, "field": "description", "en": "$@spelldesc2094", "hash": "e28000b6571c7873", "src": "db2@1.60.1.70291"}
+{"id": 1324477, "field": "aura", "en": "$@spellaura2094", "hash": "a8b6ed7940ec1024", "src": "db2@1.60.1.70291"}
+{"id": 1324481, "field": "name", "en": "Gouge", "hash": "ed4c0ef7f39ff554", "src": "db2@1.60.1.70291"}
+{"id": 1324481, "field": "description", "en": "$@spelldesc1776", "hash": "e25f8756e57e1eea", "src": "db2@1.60.1.70291"}
+{"id": 1324481, "field": "aura", "en": "$@spellaura1776", "hash": "a8967419cf4db69b", "src": "db2@1.60.1.70291"}
+{"id": 1324482, "field": "name", "en": "Sap", "hash": "0015edfe498a0c55", "src": "db2@1.60.1.70291"}
+{"id": 1324482, "field": "description", "en": "$@spelldesc6770", "hash": "e30b0b57a885e312", "src": "db2@1.60.1.70291"}
+{"id": 1324482, "field": "aura", "en": "$@spellaura6770", "hash": "a941f81a92557ac3", "src": "db2@1.60.1.70291"}
+{"id": 1324483, "field": "name", "en": "Sap", "hash": "0015edfe498a0c55", "src": "db2@1.60.1.70291"}
+{"id": 1324483, "field": "description", "en": "$@spelldesc2070", "hash": "e27fffac571c38ad", "src": "db2@1.60.1.70291"}
+{"id": 1324483, "field": "aura", "en": "$@spellaura2070", "hash": "a8b6ec6f40ebd05e", "src": "db2@1.60.1.70291"}
+{"id": 1324484, "field": "name", "en": "Sap", "hash": "0015edfe498a0c55", "src": "db2@1.60.1.70291"}
+{"id": 1324484, "field": "description", "en": "$@spelldesc11297", "hash": "d61324329550bc55", "src": "db2@1.60.1.70291"}
+{"id": 1324484, "field": "aura", "en": "$@spellaura11297", "hash": "442e4b6a38234ef3", "src": "db2@1.60.1.70291"}
+{"id": 1324485, "field": "name", "en": "Silenced - Kick", "hash": "bb8657376600d5a5", "src": "db2@1.60.1.70291"}
+{"id": 1324485, "field": "description", "en": "$@spelldesc18425", "hash": "d703c5ea7b1810eb", "src": "db2@1.60.1.70291"}
+{"id": 1324485, "field": "aura", "en": "$@spellaura18425", "hash": "451eed221deaa389", "src": "db2@1.60.1.70291"}
+{"id": 1324487, "field": "name", "en": "Bash", "hash": "08f1a3a0f5ece8cf", "src": "db2@1.60.1.70291"}
+{"id": 1324487, "field": "description", "en": "$@spelldesc5211", "hash": "e2e76b7e0743dd09", "src": "db2@1.60.1.70291"}
+{"id": 1324487, "field": "aura", "en": "$@spellaura5211", "hash": "a91e5841f11374a9", "src": "db2@1.60.1.70291"}
+{"id": 1324488, "field": "name", "en": "Bash", "hash": "08f1a3a0f5ece8cf", "src": "db2@1.60.1.70291"}
+{"id": 1324488, "field": "description", "en": "$@spelldesc6798", "hash": "e30b0c65a88622dc", "src": "db2@1.60.1.70291"}
+{"id": 1324488, "field": "aura", "en": "$@spellaura6798", "hash": "a941f9289255ba8d", "src": "db2@1.60.1.70291"}
+{"id": 1324490, "field": "name", "en": "Bash", "hash": "08f1a3a0f5ece8cf", "src": "db2@1.60.1.70291"}
+{"id": 1324490, "field": "description", "en": "$@spelldesc8983", "hash": "e3502d25cb467287", "src": "db2@1.60.1.70291"}
+{"id": 1324490, "field": "aura", "en": "$@spellaura8983", "hash": "a98719e8b5160a38", "src": "db2@1.60.1.70291"}
+{"id": 1324494, "field": "name", "en": "Intimidation", "hash": "441646d4d8282ad8", "src": "db2@1.60.1.70291"}
+{"id": 1324494, "field": "description", "en": "$@spelldesc24394", "hash": "e808065a206b5bad", "src": "db2@1.60.1.70291"}
+{"id": 1324494, "field": "aura", "en": "$@spellaura24394", "hash": "56232d92c33dee3a", "src": "db2@1.60.1.70291"}
+{"id": 1324499, "field": "name", "en": "Scatter Shot", "hash": "78425d326489e988", "src": "db2@1.60.1.70291"}
+{"id": 1324499, "field": "description", "en": "$@spelldesc19503", "hash": "d72655860c7808f8", "src": "db2@1.60.1.70291"}
+{"id": 1324499, "field": "aura", "en": "$@spellaura19503", "hash": "45417cbeaf4a9b85", "src": "db2@1.60.1.70291"}
+{"id": 1324500, "field": "name", "en": "Freezing Trap", "hash": "4db0317569a02ad0", "src": "db2@1.60.1.70291"}
+{"id": 1324500, "field": "description", "en": "$@spelldesc3355", "hash": "e2a31561f06cb832", "src": "db2@1.60.1.70291"}
+{"id": 1324500, "field": "aura", "en": "$@spellaura3355", "hash": "a8da0224da3c4fe3", "src": "db2@1.60.1.70291"}
+{"id": 1324501, "field": "name", "en": "Freezing Trap", "hash": "4db0317569a02ad0", "src": "db2@1.60.1.70291"}
+{"id": 1324501, "field": "description", "en": "$@spelldesc14308", "hash": "d67a4b72417fbd4d", "src": "db2@1.60.1.70291"}
+{"id": 1324501, "field": "aura", "en": "$@spellaura14308", "hash": "449572aae4524fda", "src": "db2@1.60.1.70291"}
+{"id": 1324502, "field": "name", "en": "Freezing Trap", "hash": "4db0317569a02ad0", "src": "db2@1.60.1.70291"}
+{"id": 1324502, "field": "description", "en": "$@spelldesc14309", "hash": "d67a4b73417fbd4e", "src": "db2@1.60.1.70291"}
+{"id": 1324502, "field": "aura", "en": "$@spellaura14309", "hash": "449572abe4524fdb", "src": "db2@1.60.1.70291"}
+{"id": 1324506, "field": "name", "en": "Scare Beast", "hash": "b9d9fd9813d5cb0f", "src": "db2@1.60.1.70291"}
+{"id": 1324506, "field": "description", "en": "$@spelldesc1513", "hash": "e25efe2fdd8cd81f", "src": "db2@1.60.1.70291"}
+{"id": 1324506, "field": "aura", "en": "$@spellaura1513", "hash": "a895eaf2c75c6fd0", "src": "db2@1.60.1.70291"}
+{"id": 1324507, "field": "name", "en": "Scare Beast", "hash": "b9d9fd9813d5cb0f", "src": "db2@1.60.1.70291"}
+{"id": 1324507, "field": "description", "en": "$@spelldesc14326", "hash": "d67a4c76417ffd0d", "src": "db2@1.60.1.70291"}
+{"id": 1324507, "field": "aura", "en": "$@spellaura14326", "hash": "449573aee4528f9a", "src": "db2@1.60.1.70291"}
+{"id": 1324510, "field": "name", "en": "Scare Beast", "hash": "b9d9fd9813d5cb0f", "src": "db2@1.60.1.70291"}
+{"id": 1324510, "field": "description", "en": "$@spelldesc14327", "hash": "d67a4c77417ffd0e", "src": "db2@1.60.1.70291"}
+{"id": 1324510, "field": "aura", "en": "$@spellaura14327", "hash": "449573afe4528f9b", "src": "db2@1.60.1.70291"}
+{"id": 1324511, "field": "name", "en": "Improved Concussive Shot", "hash": "48df10bb78cddcf3", "src": "db2@1.60.1.70291"}
+{"id": 1324511, "field": "description", "en": "$@spelldesc19410", "hash": "d72612fd087fe515", "src": "db2@1.60.1.70291"}
+{"id": 1324511, "field": "aura", "en": "$@spellaura19410", "hash": "45413a35ab5277a2", "src": "db2@1.60.1.70291"}
+{"id": 1324513, "field": "name", "en": "Hammer of Justice", "hash": "e491643a49e2991a", "src": "db2@1.60.1.70291"}
+{"id": 1324513, "field": "description", "en": "$@spelldesc853", "hash": "59ac92ca68f3870a", "src": "db2@1.60.1.70291"}
+{"id": 1324513, "field": "aura", "en": "$@spellaura853", "hash": "e206e2c18710011b", "src": "db2@1.60.1.70291"}
+{"id": 1324515, "field": "name", "en": "Hammer of Justice", "hash": "e491643a49e2991a", "src": "db2@1.60.1.70291"}
+{"id": 1324515, "field": "description", "en": "$@spelldesc5588", "hash": "e2e83835132d877a", "src": "db2@1.60.1.70291"}
+{"id": 1324515, "field": "aura", "en": "$@spellaura5588", "hash": "a91f24f8fcfd1f1a", "src": "db2@1.60.1.70291"}
+{"id": 1324516, "field": "name", "en": "Hammer of Justice", "hash": "e491643a49e2991a", "src": "db2@1.60.1.70291"}
+{"id": 1324516, "field": "description", "en": "$@spelldesc5589", "hash": "e2e83836132d877b", "src": "db2@1.60.1.70291"}
+{"id": 1324516, "field": "aura", "en": "$@spellaura5589", "hash": "a91f24f9fcfd1f1b", "src": "db2@1.60.1.70291"}
+{"id": 1324517, "field": "name", "en": "Hammer of Justice", "hash": "e491643a49e2991a", "src": "db2@1.60.1.70291"}
+{"id": 1324517, "field": "description", "en": "$@spelldesc10308", "hash": "d5f115060bdfed2f", "src": "db2@1.60.1.70291"}
+{"id": 1324517, "field": "aura", "en": "$@spellaura10308", "hash": "440c3c3eaeb27fbc", "src": "db2@1.60.1.70291"}
+{"id": 1324538, "field": "name", "en": "Repentance", "hash": "455638f879e5fc7d", "src": "db2@1.60.1.70291"}
+{"id": 1324538, "field": "description", "en": "$@spelldesc20066", "hash": "e77e054cdee2609a", "src": "db2@1.60.1.70291"}
+{"id": 1324538, "field": "aura", "en": "$@spellaura20066", "hash": "55992c8481b4f338", "src": "db2@1.60.1.70291"}
+{"id": 1324542, "field": "name", "en": "Tranquility", "hash": "f3d301a233979744", "src": "db2@1.60.1.70291"}
+{"id": 1324542, "field": "description", "en": "Regenerates all nearby group members for $s1 every $t1 sec for $d. Druid must channel to maintain the spell.", "hash": "d7ef7bcd249ddcb8", "src": "db2@1.60.1.70291"}
+{"id": 1324542, "field": "aura", "en": "Heals self and nearby creatures for $s1 every $t1 sec.", "hash": "7f3f084b01d5f4c8", "src": "db2@1.60.1.70291"}
+{"id": 1324543, "field": "name", "en": "Turn Undead", "hash": "7687135a1b9fedcb", "src": "db2@1.60.1.70291"}
+{"id": 1324543, "field": "description", "en": "$@spelldesc2878", "hash": "e28217fc76de56bd", "src": "db2@1.60.1.70291"}
+{"id": 1324543, "field": "aura", "en": "$@spellaura2878", "hash": "a8b904bf60adee6e", "src": "db2@1.60.1.70291"}
+{"id": 1324545, "field": "name", "en": "Turn Undead", "hash": "7687135a1b9fedcb", "src": "db2@1.60.1.70291"}
+{"id": 1324545, "field": "description", "en": "$@spelldesc5627", "hash": "e2e8782b17250bf4", "src": "db2@1.60.1.70291"}
+{"id": 1324545, "field": "aura", "en": "$@spellaura5627", "hash": "a91f64ee00f4a3a5", "src": "db2@1.60.1.70291"}
+{"id": 1324546, "field": "name", "en": "Turn Undead", "hash": "7687135a1b9fedcb", "src": "db2@1.60.1.70291"}
+{"id": 1324546, "field": "description", "en": "$@spelldesc10326", "hash": "d5f1160a0be02cef", "src": "db2@1.60.1.70291"}
+{"id": 1324546, "field": "aura", "en": "$@spellaura10326", "hash": "440c3d42aeb2bf7c", "src": "db2@1.60.1.70291"}
+{"id": 1324551, "field": "name", "en": "Silenced", "hash": "eea90c8cd021c8dd", "src": "db2@1.60.1.70291"}
+{"id": 1324551, "field": "description", "en": "$@spelldesc18498", "hash": "d703c9827b18f015", "src": "db2@1.60.1.70291"}
+{"id": 1324551, "field": "aura", "en": "$@spellaura18498", "hash": "451ef0ba1deb82b3", "src": "db2@1.60.1.70291"}
+{"id": 1324556, "field": "name", "en": "Concussion Blow", "hash": "59756e46be3d58d8", "src": "db2@1.60.1.70291"}
+{"id": 1324556, "field": "description", "en": "$@spelldesc12809", "hash": "d636ff6a3a892804", "src": "db2@1.60.1.70291"}
+{"id": 1324556, "field": "aura", "en": "$@spellaura12809", "hash": "445226a2dd5bba91", "src": "db2@1.60.1.70291"}
+{"id": 1324558, "field": "name", "en": "Disarm", "hash": "11c65ba41d91f3c9", "src": "db2@1.60.1.70291"}
+{"id": 1324558, "field": "description", "en": "$@spelldesc676", "hash": "59ac0dc161033f4d", "src": "db2@1.60.1.70291"}
+{"id": 1324558, "field": "aura", "en": "$@spellaura676", "hash": "e2065db87f1fb95e", "src": "db2@1.60.1.70291"}
+{"id": 1324578, "field": "name", "en": "Resist Fear 02", "hash": "40935f64755eda58", "src": "db2@1.60.1.70291"}
+{"id": 1324578, "field": "description", "en": "Reduces the hit chance of Fear effects against you by $s1%.", "hash": "d3bb670ecca93f07", "src": "db2@1.60.1.70291"}
+{"id": 1324618, "field": "name", "en": "Terrifying Roar", "hash": "20f9196a334ac764", "src": "db2@1.60.1.70291"}
+{"id": 1324618, "field": "description", "en": "Causes nearby enemies to flee in fear for $d.", "hash": "9265f43a1eb28ebb", "src": "db2@1.60.1.70291"}
+{"id": 1324618, "field": "aura", "en": "Fleeing in fear.", "hash": "fa67e4a8461af331", "src": "db2@1.60.1.70291"}
+{"id": 1324661, "field": "name", "en": "Portable Repair Bot", "hash": "ac19efafcc693e34", "src": "db2@1.60.1.70291"}
+{"id": 1324661, "field": "description", "en": "Unfolds into a Portable Repair Bot that can repair damaged items and purchase unwanted goods. After 5 minutes its internal motor fails.", "hash": "0ac7a0d045d6bb51", "src": "db2@1.60.1.70291"}
+{"id": 1324673, "field": "name", "en": "Increased Fire Resist 10", "hash": "4a7e15c1110c37e8", "src": "db2@1.60.1.70291"}
+{"id": 1324673, "field": "description", "en": "+$s1 Fire Resistance.", "hash": "8e808dd4126018f8", "src": "db2@1.60.1.70291"}
+{"id": 1324674, "field": "name", "en": "Increased Stamina 10", "hash": "4d65ed378a7e3db5", "src": "db2@1.60.1.70291"}
+{"id": 1324674, "field": "description", "en": "+$s1 Stamina.", "hash": "213ed8904c6ed8f6", "src": "db2@1.60.1.70291"}
+{"id": 1324675, "field": "name", "en": "Increased 1H Sword", "hash": "60722c437e55aeaa", "src": "db2@1.60.1.70291"}
+{"id": 1324675, "field": "description", "en": "Increased Swords +$s1.", "hash": "445b9a87fe982816", "src": "db2@1.60.1.70291"}
+{"id": 1324682, "field": "name", "en": "Ogre Dominance", "hash": "e804d5e0ab673a00", "src": "db2@1.60.1.70291"}
+{"id": 1324683, "field": "name", "en": "Defias Juggernaut", "hash": "b269230cad2ed7a5", "src": "db2@1.60.1.70291"}
+{"id": 1324683, "field": "aura", "en": "Critical Strike chance increased by $signw1%.", "hash": "b3b83338531e7638", "src": "db2@1.60.1.70291"}
+{"id": 1324684, "field": "name", "en": "Defias Juggernaut", "hash": "b269230cad2ed7a5", "src": "db2@1.60.1.70291"}
+{"id": 1324684, "field": "description", "en": "Melee attacks have a chance to increase your Critical Strike chance by $1324683s1% for $1324683d. This effect is doubled in swamps.", "hash": "8bc46c2b7361f54d", "src": "db2@1.60.1.70291"}
+{"id": 1324685, "field": "name", "en": "Unearthed Barrier", "hash": "e23df5aff47778c5", "src": "db2@1.60.1.70291"}
+{"id": 1324686, "field": "name", "en": "Unearthed Barrier", "hash": "e23df5aff47778c5", "src": "db2@1.60.1.70291"}
+{"id": 1324686, "field": "description", "en": "Deals $17496s1 Nature damage every time you block. Damage is doubled in swamps.", "hash": "565638e98d4c7df3", "src": "db2@1.60.1.70291"}
+{"id": 1324687, "field": "name", "en": "Dismember", "hash": "7e98dfe4e4f65c26", "src": "db2@1.60.1.70291"}
+{"id": 1324687, "field": "description", "en": "Dismember the target, inflicting $s1 Physical damage.", "hash": "5aeb8ddae4e8ac9d", "src": "db2@1.60.1.70291"}
+{"id": 1324688, "field": "name", "en": "Assistance Module", "hash": "4a118992fd7cacf1", "src": "db2@1.60.1.70291"}
+{"id": 1324722, "field": "name", "en": "Legacy Reputation Reward", "hash": "f0fd52b43c3d3b2d", "src": "db2@1.60.1.70291"}
+{"id": 1324722, "field": "description", "en": "Increases your Legacy reputation by $s1.\r\n", "hash": "d1cc2c2bea4b7d21", "src": "db2@1.60.1.70291"}
+{"id": 1324752, "field": "name", "en": "Water Breathing", "hash": "90cec953998174b4", "src": "db2@1.60.1.70291"}
+{"id": 1324752, "field": "description", "en": "Underwater Breath lasts $s1% longer than normal.", "hash": "7c55adccab10ed74", "src": "db2@1.60.1.70291"}
+{"id": 1324752, "field": "aura", "en": "Waterbreathing.", "hash": "37a59b8c87987cac", "src": "db2@1.60.1.70291"}
+{"id": 1324889, "field": "name", "en": "Override Interact Radius", "hash": "747c9b09ad3b79bd", "src": "db2@1.60.1.70291"}
+{"id": 1324889, "field": "description", "en": "Overrides the NPC's interact radius. Works for questgivers as well, not just creature's you have to use an interact spell on.", "hash": "d2ec867cd837192f", "src": "db2@1.60.1.70291"}
+{"id": 1324891, "field": "name", "en": "Override Interact Radius", "hash": "747c9b09ad3b79bd", "src": "db2@1.60.1.70291"}
+{"id": 1324891, "field": "description", "en": "Overrides the NPC's interact radius. Works for questgivers as well, not just creature's you have to use an interact spell on.", "hash": "d2ec867cd837192f", "src": "db2@1.60.1.70291"}
+{"id": 1324895, "field": "name", "en": "Override Interact Radius", "hash": "747c9b09ad3b79bd", "src": "db2@1.60.1.70291"}
+{"id": 1324895, "field": "description", "en": "Overrides the NPC's interact radius. Works for questgivers as well, not just creature's you have to use an interact spell on.", "hash": "d2ec867cd837192f", "src": "db2@1.60.1.70291"}
+{"id": 1324903, "field": "name", "en": "Override Interact Radius", "hash": "747c9b09ad3b79bd", "src": "db2@1.60.1.70291"}
+{"id": 1324903, "field": "description", "en": "Overrides the NPC's interact radius. Works for questgivers as well, not just creature's you have to use an interact spell on.", "hash": "d2ec867cd837192f", "src": "db2@1.60.1.70291"}
+{"id": 1324906, "field": "name", "en": "Override Interact Radius", "hash": "747c9b09ad3b79bd", "src": "db2@1.60.1.70291"}
+{"id": 1324906, "field": "description", "en": "Overrides the NPC's interact radius. Works for questgivers as well, not just creature's you have to use an interact spell on.", "hash": "d2ec867cd837192f", "src": "db2@1.60.1.70291"}
+{"id": 1324940, "field": "name", "en": "Sanctuary", "hash": "430cdcb17cc68196", "src": "db2@1.60.1.70291"}
+{"id": 1324981, "field": "name", "en": "Disenchanter", "hash": "284f93c0d740f76f", "src": "db2@1.60.1.70291"}
+{"id": 1324981, "field": "description", "en": "Reduces the cast time of Disenchant by $s1%.", "hash": "81de7c979fe6d7d4", "src": "db2@1.60.1.70291"}
+{"id": 1324985, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70291"}

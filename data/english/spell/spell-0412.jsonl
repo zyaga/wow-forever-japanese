@@ -1,164 +1,164 @@
-{"id": 412009, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70245"}
-{"id": 412018, "field": "name", "en": "Sacred Shield", "hash": "101af0745c3d3df8", "src": "db2@1.60.1.70245"}
-{"id": 412018, "field": "description", "en": "Each time the target takes damage they gain a Sacred Shield, absorbing $s1 damage and increasing the paladin's chance to critically hit with Flash of Light by $s2% for up to $d.  They cannot gain this effect more than once every 6 sec.  Lasts $d.\r\n", "hash": "83a78794cf725df9", "src": "db2@1.60.1.70245"}
-{"id": 412018, "field": "aura", "en": "Absorbs damage and increases the casting paladin's chance to critically hit with Flash of Light by $s2%.", "hash": "c8eb5579ca7a3849", "src": "db2@1.60.1.70245"}
-{"id": 412019, "field": "name", "en": "Sacred Shield", "hash": "101af0745c3d3df8", "src": "db2@1.60.1.70245"}
-{"id": 412019, "field": "description", "en": "Each time the target takes damage they gain a Sacred Shield, absorbing ${$412018m1*$<healpower>/100} damage and increasing the Paladin's chance to critically hit with Flash of Light by $412018s2% for up to $412018d.  In addition, causes your Flash of Light to heal targets with Sacred Shield for an additional $s3% over $412020d. They cannot gain this effect more than once every $s2 sec.  Lasts $d.  This spell cannot be on more than one target at any one time.", "hash": "91df2a2783bfbc9c", "src": "db2@1.60.1.70245"}
-{"id": 412019, "field": "aura", "en": "Each time the target takes damage they gain a Sacred Shield, absorbing ${$412018m1*$<healpower>/100} damage and increasing the Paladin's chance to critically hit with Flash of Light by $412018s2%.   The target cannot gain this effect more than once every $s2 sec.", "hash": "45559df52c6a9bc6", "src": "db2@1.60.1.70245"}
-{"id": 412020, "field": "name", "en": "Flash of Light", "hash": "a5c4251e6cb6cef6", "src": "db2@1.60.1.70245"}
-{"id": 412020, "field": "description", "en": "Heal over time.", "hash": "edc7437aa863d8aa", "src": "db2@1.60.1.70245"}
-{"id": 412020, "field": "aura", "en": "Healing over $d.", "hash": "63f7e48da797953f", "src": "db2@1.60.1.70245"}
-{"id": 412040, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70245"}
-{"id": 412072, "field": "name", "en": "Shadow Strike", "hash": "0cee28de835282a7", "src": "db2@1.60.1.70245"}
-{"id": 412072, "field": "aura", "en": "Shadow damage taken increased by ${$abs($s2)}%.", "hash": "c18ac1e8060dfc04", "src": "db2@1.60.1.70245"}
-{"id": 412079, "field": "name", "en": "Shadow Strike", "hash": "0cee28de835282a7", "src": "db2@1.60.1.70245"}
-{"id": 412079, "field": "aura", "en": "Shadow damage taken increased by ${$abs($s2)}%.", "hash": "c18ac1e8060dfc04", "src": "db2@1.60.1.70245"}
-{"id": 412080, "field": "name", "en": "Shadow Strike", "hash": "0cee28de835282a7", "src": "db2@1.60.1.70245"}
-{"id": 412080, "field": "aura", "en": "Shadow damage taken increased by ${$abs($s2)}%.", "hash": "c18ac1e8060dfc04", "src": "db2@1.60.1.70245"}
-{"id": 412096, "field": "name", "en": "Crimson Tempest", "hash": "663acd8bd32b8a97", "src": "db2@1.60.1.70245"}
-{"id": 412096, "field": "description", "en": "Finishing move that slashes all enemies within $a2 yards, causing victims to Bleed over time. Lasts longer and deals more damage per combo point.\r\n\r\n   1 point  : ${$AP*0.30} damage over 4 sec.\r\n   2 points: ${$AP*0.45} damage over 6 sec.\r\n   3 points: ${$AP*0.60} damage over 8 sec.\r\n   4 points: ${$AP*0.75} damage over 10 sec.\r\n   5 points: ${$AP*0.90} damage over 12 sec.\r\n\r\nCrimson Tempest benefits from all talents and effects that trigger from or modify Rupture.\r\n\r\n", "hash": "a7e6cd0a1d3631c8", "src": "db2@1.60.1.70245"}
-{"id": 412096, "field": "aura", "en": "Bleeding for $w2 damage every $t2 sec.", "hash": "84eecd00366954d8", "src": "db2@1.60.1.70245"}
-{"id": 412107, "field": "name", "en": "Hate to Zero", "hash": "daf34d4e6cd26c20", "src": "db2@1.60.1.70245"}
-{"id": 412113, "field": "name", "en": "Remove Greater Curse", "hash": "35fd1f08ee31447e", "src": "db2@1.60.1.70245"}
-{"id": 412113, "field": "description", "en": "Removes $m1 Curse and $m2 harmful Magic effect from a friendly target.", "hash": "0a40d59766f9403f", "src": "db2@1.60.1.70245"}
-{"id": 412114, "field": "name", "en": "Void Empowerment", "hash": "166018f91ffdcfda", "src": "db2@1.60.1.70245"}
-{"id": 412115, "field": "name", "en": "Advanced Warding", "hash": "35e86b2802f1b270", "src": "db2@1.60.1.70245"}
-{"id": 412115, "field": "description", "en": "Your Mana Shield, Frost Ward, and Fire Ward spells can now be cast on any friendly target and absorb $s1% increased damage, with Mana Shield consuming $s2% less mana per damage absorbed. Additionally, your Remove Lesser Curse is replaced with Remove Greater Curse.\r\n\r\n$@spellicon412113\r\n$@spelldesc412113", "hash": "b762f9d3831f0e23", "src": "db2@1.60.1.70245"}
-{"id": 412116, "field": "name", "en": "Mana Shield", "hash": "9b5f18d7d9ec240b", "src": "db2@1.60.1.70245"}
-{"id": 412116, "field": "description", "en": "Absorbs $s1 physical damage on a friendly target, draining mana instead.  Drains $s2 mana from the casting Mage per damage absorbed.  Lasts $d.", "hash": "ff96538f1c4acf0f", "src": "db2@1.60.1.70245"}
-{"id": 412116, "field": "aura", "en": "Absorbs physical damage, draining mana instead.", "hash": "d9625b22f2b3c130", "src": "db2@1.60.1.70245"}
-{"id": 412118, "field": "name", "en": "Mana Shield", "hash": "9b5f18d7d9ec240b", "src": "db2@1.60.1.70245"}
-{"id": 412118, "field": "description", "en": "Absorbs $s1 physical damage on a friendly target, draining mana instead.  Drains $s2 mana from the casting Mage per damage absorbed.  Lasts $d.", "hash": "ff96538f1c4acf0f", "src": "db2@1.60.1.70245"}
-{"id": 412118, "field": "aura", "en": "Absorbs physical damage, draining mana instead.", "hash": "d9625b22f2b3c130", "src": "db2@1.60.1.70245"}
-{"id": 412120, "field": "name", "en": "Mana Shield", "hash": "9b5f18d7d9ec240b", "src": "db2@1.60.1.70245"}
-{"id": 412120, "field": "description", "en": "Absorbs $s1 physical damage on a friendly target, draining mana instead.  Drains $s2 mana from the casting Mage per damage absorbed.  Lasts $d.", "hash": "ff96538f1c4acf0f", "src": "db2@1.60.1.70245"}
-{"id": 412120, "field": "aura", "en": "Absorbs physical damage, draining mana instead.", "hash": "d9625b22f2b3c130", "src": "db2@1.60.1.70245"}
-{"id": 412121, "field": "name", "en": "Mana Shield", "hash": "9b5f18d7d9ec240b", "src": "db2@1.60.1.70245"}
-{"id": 412121, "field": "description", "en": "Absorbs $s1 physical damage on a friendly target, draining mana instead.  Drains $s2 mana from the casting Mage per damage absorbed.  Lasts $d.", "hash": "ff96538f1c4acf0f", "src": "db2@1.60.1.70245"}
-{"id": 412121, "field": "aura", "en": "Absorbs physical damage, draining mana instead.", "hash": "d9625b22f2b3c130", "src": "db2@1.60.1.70245"}
-{"id": 412122, "field": "name", "en": "Mana Shield", "hash": "9b5f18d7d9ec240b", "src": "db2@1.60.1.70245"}
-{"id": 412122, "field": "description", "en": "Absorbs $s1 physical damage on a friendly target, draining mana instead.  Drains $s2 mana from the casting Mage per damage absorbed.  Lasts $d.", "hash": "ff96538f1c4acf0f", "src": "db2@1.60.1.70245"}
-{"id": 412122, "field": "aura", "en": "Absorbs physical damage, draining mana instead.", "hash": "d9625b22f2b3c130", "src": "db2@1.60.1.70245"}
-{"id": 412123, "field": "name", "en": "Mana Shield", "hash": "9b5f18d7d9ec240b", "src": "db2@1.60.1.70245"}
-{"id": 412123, "field": "description", "en": "Absorbs $s1 physical damage on a friendly target, draining mana instead.  Drains $s2 mana from the casting Mage per damage absorbed.  Lasts $d.", "hash": "ff96538f1c4acf0f", "src": "db2@1.60.1.70245"}
-{"id": 412123, "field": "aura", "en": "Absorbs physical damage, draining mana instead.", "hash": "d9625b22f2b3c130", "src": "db2@1.60.1.70245"}
-{"id": 412179, "field": "name", "en": "Cunning Disguise?", "hash": "e72d2e5372a9e870", "src": "db2@1.60.1.70245"}
-{"id": 412179, "field": "aura", "en": "Wearing a disguise of dubious effectiveness.", "hash": "342725a9eaa43ba4", "src": "db2@1.60.1.70245"}
-{"id": 412202, "field": "name", "en": "Frost Ward", "hash": "827c83f83eabbc3c", "src": "db2@1.60.1.70245"}
-{"id": 412202, "field": "description", "en": "Absorbs $s1 Frost damage.  Lasts $d.", "hash": "daba669dccc8ad53", "src": "db2@1.60.1.70245"}
-{"id": 412202, "field": "aura", "en": "Absorbs Frost damage.", "hash": "536acc5971116666", "src": "db2@1.60.1.70245"}
-{"id": 412205, "field": "name", "en": "Frost Ward", "hash": "827c83f83eabbc3c", "src": "db2@1.60.1.70245"}
-{"id": 412205, "field": "description", "en": "Absorbs $s1 Frost damage.  Lasts $d.", "hash": "daba669dccc8ad53", "src": "db2@1.60.1.70245"}
-{"id": 412205, "field": "aura", "en": "Absorbs Frost damage.", "hash": "536acc5971116666", "src": "db2@1.60.1.70245"}
-{"id": 412207, "field": "name", "en": "Frost Ward", "hash": "827c83f83eabbc3c", "src": "db2@1.60.1.70245"}
-{"id": 412207, "field": "description", "en": "Absorbs $s1 Frost damage.  Lasts $d.", "hash": "daba669dccc8ad53", "src": "db2@1.60.1.70245"}
-{"id": 412207, "field": "aura", "en": "Absorbs Frost damage.", "hash": "536acc5971116666", "src": "db2@1.60.1.70245"}
-{"id": 412209, "field": "name", "en": "Frost Ward", "hash": "827c83f83eabbc3c", "src": "db2@1.60.1.70245"}
-{"id": 412209, "field": "description", "en": "Absorbs $s1 Frost damage.  Lasts $d.", "hash": "daba669dccc8ad53", "src": "db2@1.60.1.70245"}
-{"id": 412209, "field": "aura", "en": "Absorbs Frost damage.", "hash": "536acc5971116666", "src": "db2@1.60.1.70245"}
-{"id": 412210, "field": "name", "en": "Frost Ward", "hash": "827c83f83eabbc3c", "src": "db2@1.60.1.70245"}
-{"id": 412210, "field": "description", "en": "Absorbs $s1 Frost damage.  Lasts $d.", "hash": "daba669dccc8ad53", "src": "db2@1.60.1.70245"}
-{"id": 412210, "field": "aura", "en": "Absorbs Frost damage.", "hash": "536acc5971116666", "src": "db2@1.60.1.70245"}
-{"id": 412214, "field": "name", "en": "Fire Ward", "hash": "6dca963f9505befe", "src": "db2@1.60.1.70245"}
-{"id": 412214, "field": "description", "en": "Absorbs $s1 Fire damage.  Lasts $d.", "hash": "02e1e8bad90b2d43", "src": "db2@1.60.1.70245"}
-{"id": 412214, "field": "aura", "en": "Absorbs Fire damage.", "hash": "29bd049b03e58d6f", "src": "db2@1.60.1.70245"}
-{"id": 412218, "field": "name", "en": "Fire Ward", "hash": "6dca963f9505befe", "src": "db2@1.60.1.70245"}
-{"id": 412218, "field": "description", "en": "Absorbs $s1 Fire damage.  Lasts $d.", "hash": "02e1e8bad90b2d43", "src": "db2@1.60.1.70245"}
-{"id": 412218, "field": "aura", "en": "Absorbs Fire damage.", "hash": "29bd049b03e58d6f", "src": "db2@1.60.1.70245"}
-{"id": 412230, "field": "name", "en": "Fire Ward", "hash": "6dca963f9505befe", "src": "db2@1.60.1.70245"}
-{"id": 412230, "field": "description", "en": "Absorbs $s1 Fire damage.  Lasts $d.", "hash": "02e1e8bad90b2d43", "src": "db2@1.60.1.70245"}
-{"id": 412230, "field": "aura", "en": "Absorbs Fire damage.", "hash": "29bd049b03e58d6f", "src": "db2@1.60.1.70245"}
-{"id": 412231, "field": "name", "en": "Fire Ward", "hash": "6dca963f9505befe", "src": "db2@1.60.1.70245"}
-{"id": 412231, "field": "description", "en": "Absorbs $s1 Fire damage.  Lasts $d.", "hash": "02e1e8bad90b2d43", "src": "db2@1.60.1.70245"}
-{"id": 412231, "field": "aura", "en": "Absorbs Fire damage.", "hash": "29bd049b03e58d6f", "src": "db2@1.60.1.70245"}
-{"id": 412232, "field": "name", "en": "Fire Ward", "hash": "6dca963f9505befe", "src": "db2@1.60.1.70245"}
-{"id": 412232, "field": "description", "en": "Absorbs $s1 Fire damage.  Lasts $d.", "hash": "02e1e8bad90b2d43", "src": "db2@1.60.1.70245"}
-{"id": 412232, "field": "aura", "en": "Absorbs Fire damage.", "hash": "29bd049b03e58d6f", "src": "db2@1.60.1.70245"}
-{"id": 412248, "field": "name", "en": "Void Empowerment", "hash": "166018f91ffdcfda", "src": "db2@1.60.1.70245"}
-{"id": 412270, "field": "name", "en": "March of the Murlocs", "hash": "a9fe3652c64a56f7", "src": "db2@1.60.1.70245"}
-{"id": 412272, "field": "name", "en": "March of the Murlocs", "hash": "a9fe3652c64a56f7", "src": "db2@1.60.1.70245"}
-{"id": 412278, "field": "name", "en": "Collect Blasting Supplies", "hash": "97fa06d81cb2a14c", "src": "db2@1.60.1.70245"}
-{"id": 412286, "field": "name", "en": "Burnout", "hash": "697e80ec1488c0ed", "src": "db2@1.60.1.70245"}
-{"id": 412286, "field": "description", "en": "Increases your spell critical strike chance with all spells by $s1%, but your non-periodic spell critical strikes now have an additional mana cost of $s2% of your base mana.", "hash": "abdf0c025c781a6e", "src": "db2@1.60.1.70245"}
-{"id": 412296, "field": "name", "en": "Void Empowerment", "hash": "166018f91ffdcfda", "src": "db2@1.60.1.70245"}
-{"id": 412322, "field": "name", "en": "Spell Power", "hash": "1c48bc044d2700e4", "src": "db2@1.60.1.70245"}
-{"id": 412322, "field": "description", "en": "Increases critical strike damage bonus of all spells by $s1%.", "hash": "dc154266fed892f9", "src": "db2@1.60.1.70245"}
-{"id": 412324, "field": "name", "en": "Enlightenment", "hash": "a2ebfdf8453410b6", "src": "db2@1.60.1.70245"}
-{"id": 412324, "field": "description", "en": "You deal $s1% more damage while you have more than $s2% mana. While below $s3% mana $s4% of your mana regeneration continues while casting.", "hash": "5f43a0b7ffafe6a6", "src": "db2@1.60.1.70245"}
-{"id": 412325, "field": "name", "en": "Enlightenment", "hash": "a2ebfdf8453410b6", "src": "db2@1.60.1.70245"}
-{"id": 412325, "field": "description", "en": "Allows $s1% of your Mana regeneration to continue while casting.", "hash": "86815c0ca3893a62", "src": "db2@1.60.1.70245"}
-{"id": 412325, "field": "aura", "en": "Allows $s1% of your Mana regeneration to continue while casting.", "hash": "86815c0ca3893a62", "src": "db2@1.60.1.70245"}
-{"id": 412326, "field": "name", "en": "Enlightenment", "hash": "a2ebfdf8453410b6", "src": "db2@1.60.1.70245"}
-{"id": 412326, "field": "description", "en": "Increases all spell damage done by $s1%.", "hash": "915ea14fe81a1dad", "src": "db2@1.60.1.70245"}
-{"id": 412326, "field": "aura", "en": "Increases all spell damage done by $s1%.", "hash": "915ea14fe81a1dad", "src": "db2@1.60.1.70245"}
-{"id": 412365, "field": "name", "en": "Collect Pinecone", "hash": "70e5c7497b9768e1", "src": "db2@1.60.1.70245"}
-{"id": 412421, "field": "name", "en": "Void Empowerment", "hash": "166018f91ffdcfda", "src": "db2@1.60.1.70245"}
-{"id": 412427, "field": "name", "en": "March of the Murlocs", "hash": "a9fe3652c64a56f7", "src": "db2@1.60.1.70245"}
-{"id": 412428, "field": "name", "en": "Create Salve", "hash": "92eeb4b7cdea9b1c", "src": "db2@1.60.1.70245"}
-{"id": 412428, "field": "description", "en": "Grind 8 Windfury Cones together to create a venomous weapon salve.  In theory.", "hash": "1536ef812020f7b8", "src": "db2@1.60.1.70245"}
-{"id": 412437, "field": "name", "en": "Waterbolt", "hash": "ccf9c0e7c082b2c0", "src": "db2@1.60.1.70245"}
-{"id": 412437, "field": "description", "en": "Launches a bolt of frost at the enemy, causing ${$m1/100*$<power>} to ${$M1/100*$<power>} Frost damage.", "hash": "2e8656ae5150c109", "src": "db2@1.60.1.70245"}
-{"id": 412443, "field": "name", "en": "Void Empowerment", "hash": "166018f91ffdcfda", "src": "db2@1.60.1.70245"}
-{"id": 412456, "field": "name", "en": "March of the Murlocs", "hash": "a9fe3652c64a56f7", "src": "db2@1.60.1.70245"}
-{"id": 412466, "field": "name", "en": "March of the Murlocs", "hash": "a9fe3652c64a56f7", "src": "db2@1.60.1.70245"}
-{"id": 412507, "field": "name", "en": "Blood Frenzy", "hash": "53e8cf6f4ddc508d", "src": "db2@1.60.1.70245"}
-{"id": 412507, "field": "description", "en": "Rend can now be used in Berserker stance, Rend's damage is increased by $s2%, and Rend deals additional damage equal to $s3% of your Attack Power each time it deals damage.\r\n", "hash": "2d9ea468ae1cf0f1", "src": "db2@1.60.1.70245"}
-{"id": 412510, "field": "name", "en": "Mass Regeneration", "hash": "40ebaa7f964962f9", "src": "db2@1.60.1.70245"}
-{"id": 412510, "field": "description", "en": "Heals all of target player's party members within $a1 yards of target player for ${$<healpower>*$m1/100*3} health over $d and applies Temporal Beacon to each target for ${$400735m3/2} sec.\r\n\r\nTemporal Beacon\r\n$@spellicon400735\r\n$@spelldesc400735", "hash": "6a7085968a19281e", "src": "db2@1.60.1.70245"}
-{"id": 412510, "field": "aura", "en": "Healing ${$w1*3} health over $d.", "hash": "71292dfdea88bb37", "src": "db2@1.60.1.70245"}
-{"id": 412513, "field": "name", "en": "Gladiator Stance", "hash": "25b8a80e9beaced7", "src": "db2@1.60.1.70245"}
-{"id": 412513, "field": "description", "en": "An aggressive stance that increases damage while you are wearing a shield by $413479s1% and increases block chance by $413479s2%, but reduces armor by $413476s1% and threat generated by $413476s2%. In addition, you gain $s2% increased Rage when your auto-attack damages an enemy not targeting you.\r\n\r\nWhile wearing a shield in Gladiator Stance, you may use all abilities that are restricted to other stances.", "hash": "d9f8b649dcda926b", "src": "db2@1.60.1.70245"}
-{"id": 412526, "field": "name", "en": "Mind Flay", "hash": "76d08f4d1411bee1", "src": "db2@1.60.1.70245"}
-{"id": 412526, "field": "description", "en": "Inflicts Shadow damage to an enemy and reduces its movement speed for $d.", "hash": "b24a12b10f7654d4", "src": "db2@1.60.1.70245"}
-{"id": 412526, "field": "aura", "en": "$s1 Shadow damage inflicted every second for $d.\r\nMovement speed reduced to $s2% of normal.", "hash": "bc2e574c315fae75", "src": "db2@1.60.1.70245"}
-{"id": 412527, "field": "name", "en": "Shadowform", "hash": "074e070f4fdc8d3c", "src": "db2@1.60.1.70245"}
-{"id": 412528, "field": "name", "en": "Ground Rupture", "hash": "7b7eededf40ba5bf", "src": "db2@1.60.1.70245"}
-{"id": 412532, "field": "name", "en": "Spellfrost Bolt", "hash": "77d5eef43375751c", "src": "db2@1.60.1.70245"}
-{"id": 412532, "field": "description", "en": "Launches a bolt of spellfrost at the enemy, causing ${$<power>*$m2/100*$<frostdamage>} to ${$<power>*$M2/100*$<frostdamage>} Spellfrost damage and slowing movement speed by $s1% for $d. This spell will be checked against the lower of the target's Frost and Arcane resists and counts as both Frost and Arcane damage.", "hash": "9762e582dd4678b4", "src": "db2@1.60.1.70245"}
-{"id": 412532, "field": "aura", "en": "Movement slowed by $w1%.", "hash": "be1d3d2480027757", "src": "db2@1.60.1.70245"}
-{"id": 412538, "field": "name", "en": "Ignite", "hash": "d796fe5c5427e0c5", "src": "db2@1.60.1.70245"}
-{"id": 412538, "field": "description", "en": "Deals Fire damage every $t1 sec.", "hash": "9b32ec1ad532e541", "src": "db2@1.60.1.70245"}
-{"id": 412538, "field": "aura", "en": "Deals ${$w1/2} Fire damage every $t1 sec.", "hash": "83ee941a374b6fb0", "src": "db2@1.60.1.70245"}
-{"id": 412545, "field": "name", "en": "Ignite", "hash": "d796fe5c5427e0c5", "src": "db2@1.60.1.70245"}
-{"id": 412545, "field": "description", "en": "Deals Fire damage every $t sec.", "hash": "1a8da46bdab3491c", "src": "db2@1.60.1.70245"}
-{"id": 412545, "field": "aura", "en": "Deals fire damage every $t1 sec.", "hash": "59ea3fa7f9f8347a", "src": "db2@1.60.1.70245"}
-{"id": 412569, "field": "name", "en": "Shadowform", "hash": "074e070f4fdc8d3c", "src": "db2@1.60.1.70245"}
-{"id": 412570, "field": "name", "en": "Anti Fear Clip Root", "hash": "de6b2d830e9be9d7", "src": "db2@1.60.1.70245"}
-{"id": 412609, "field": "name", "en": "Deep Wound", "hash": "96b1f3cd4e25ba34", "src": "db2@1.60.1.70245"}
-{"id": 412609, "field": "aura", "en": "Bleeding.", "hash": "d6c5aa1b53b3d005", "src": "db2@1.60.1.70245"}
-{"id": 412613, "field": "name", "en": "Deep Wound", "hash": "96b1f3cd4e25ba34", "src": "db2@1.60.1.70245"}
-{"id": 412613, "field": "description", "en": "Bleeding.", "hash": "d6c5aa1b53b3d005", "src": "db2@1.60.1.70245"}
-{"id": 412689, "field": "name", "en": "Everlasting Affliction", "hash": "e5cfc415d77a3072", "src": "db2@1.60.1.70245"}
-{"id": 412689, "field": "description", "en": "Each time your Drain Life, Drain Soul, or Shadowbolt spell deals damage, your Corruption on the target is refreshed to its maximum duration.", "hash": "e20525675d51ca02", "src": "db2@1.60.1.70245"}
-{"id": 412698, "field": "name", "en": "Everlasting Affliction", "hash": "e5cfc415d77a3072", "src": "db2@1.60.1.70245"}
-{"id": 412718, "field": "name", "en": "Fish Fillet", "hash": "3eb5eddda77acf42", "src": "db2@1.60.1.70245"}
-{"id": 412718, "field": "description", "en": "Attempt to fillet a Raw Brilliant Smallfish.", "hash": "18bbd6e4c6f269ad", "src": "db2@1.60.1.70245"}
-{"id": 412727, "field": "name", "en": "Demonic Tactics", "hash": "5059ebfba049fe12", "src": "db2@1.60.1.70245"}
-{"id": 412727, "field": "description", "en": "Increases the critical strike chance of all attacks for you and your summoned Demon by $m1% while the Demon is active.", "hash": "8615a59fe0eb3ae4", "src": "db2@1.60.1.70245"}
-{"id": 412729, "field": "name", "en": "Tamed Pet Passive (DND)", "hash": "7127429cf58bb8b7", "src": "db2@1.60.1.70245"}
-{"id": 412732, "field": "name", "en": "Demonic Knowledge", "hash": "f4c22403efce748b", "src": "db2@1.60.1.70245"}
-{"id": 412732, "field": "description", "en": "Increases your spell damage and your Demon pet's spell damage by up to $s1% of your level while you have a summoned Demon pet active.", "hash": "c91f815d906c802b", "src": "db2@1.60.1.70245"}
-{"id": 412735, "field": "name", "en": "Demonic Knowledge", "hash": "f4c22403efce748b", "src": "db2@1.60.1.70245"}
-{"id": 412735, "field": "aura", "en": "Spell damage and healing increased by $w1.", "hash": "79cd41df74dd476a", "src": "db2@1.60.1.70245"}
-{"id": 412751, "field": "name", "en": "Fire and Brimstone", "hash": "70a5b94f2d8d45af", "src": "db2@1.60.1.70245"}
-{"id": 412751, "field": "description", "en": "Increases the critical strike chance of your Conflagrate spell by $m2%.", "hash": "acdd60b768364fbd", "src": "db2@1.60.1.70245"}
-{"id": 412758, "field": "name", "en": "Incinerate", "hash": "f030e7b8acb5204d", "src": "db2@1.60.1.70245"}
-{"id": 412758, "field": "description", "en": "Deals $s1 Fire damage to your target and an additional $m2% damage if the target is afflicted by Immolate.", "hash": "2c6958c3d2951807", "src": "db2@1.60.1.70245"}
+{"id": 412009, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70291"}
+{"id": 412018, "field": "name", "en": "Sacred Shield", "hash": "101af0745c3d3df8", "src": "db2@1.60.1.70291"}
+{"id": 412018, "field": "description", "en": "Each time the target takes damage they gain a Sacred Shield, absorbing $s1 damage and increasing the paladin's chance to critically hit with Flash of Light by $s2% for up to $d.  They cannot gain this effect more than once every 6 sec.  Lasts $d.\r\n", "hash": "83a78794cf725df9", "src": "db2@1.60.1.70291"}
+{"id": 412018, "field": "aura", "en": "Absorbs damage and increases the casting paladin's chance to critically hit with Flash of Light by $s2%.", "hash": "c8eb5579ca7a3849", "src": "db2@1.60.1.70291"}
+{"id": 412019, "field": "name", "en": "Sacred Shield", "hash": "101af0745c3d3df8", "src": "db2@1.60.1.70291"}
+{"id": 412019, "field": "description", "en": "Each time the target takes damage they gain a Sacred Shield, absorbing ${$412018m1*$<healpower>/100} damage and increasing the Paladin's chance to critically hit with Flash of Light by $412018s2% for up to $412018d.  In addition, causes your Flash of Light to heal targets with Sacred Shield for an additional $s3% over $412020d. They cannot gain this effect more than once every $s2 sec.  Lasts $d.  This spell cannot be on more than one target at any one time.", "hash": "91df2a2783bfbc9c", "src": "db2@1.60.1.70291"}
+{"id": 412019, "field": "aura", "en": "Each time the target takes damage they gain a Sacred Shield, absorbing ${$412018m1*$<healpower>/100} damage and increasing the Paladin's chance to critically hit with Flash of Light by $412018s2%.   The target cannot gain this effect more than once every $s2 sec.", "hash": "45559df52c6a9bc6", "src": "db2@1.60.1.70291"}
+{"id": 412020, "field": "name", "en": "Flash of Light", "hash": "a5c4251e6cb6cef6", "src": "db2@1.60.1.70291"}
+{"id": 412020, "field": "description", "en": "Heal over time.", "hash": "edc7437aa863d8aa", "src": "db2@1.60.1.70291"}
+{"id": 412020, "field": "aura", "en": "Healing over $d.", "hash": "63f7e48da797953f", "src": "db2@1.60.1.70291"}
+{"id": 412040, "field": "name", "en": "Shadow Crash", "hash": "e30c4933bde379c1", "src": "db2@1.60.1.70291"}
+{"id": 412072, "field": "name", "en": "Shadow Strike", "hash": "0cee28de835282a7", "src": "db2@1.60.1.70291"}
+{"id": 412072, "field": "aura", "en": "Shadow damage taken increased by ${$abs($s2)}%.", "hash": "c18ac1e8060dfc04", "src": "db2@1.60.1.70291"}
+{"id": 412079, "field": "name", "en": "Shadow Strike", "hash": "0cee28de835282a7", "src": "db2@1.60.1.70291"}
+{"id": 412079, "field": "aura", "en": "Shadow damage taken increased by ${$abs($s2)}%.", "hash": "c18ac1e8060dfc04", "src": "db2@1.60.1.70291"}
+{"id": 412080, "field": "name", "en": "Shadow Strike", "hash": "0cee28de835282a7", "src": "db2@1.60.1.70291"}
+{"id": 412080, "field": "aura", "en": "Shadow damage taken increased by ${$abs($s2)}%.", "hash": "c18ac1e8060dfc04", "src": "db2@1.60.1.70291"}
+{"id": 412096, "field": "name", "en": "Crimson Tempest", "hash": "663acd8bd32b8a97", "src": "db2@1.60.1.70291"}
+{"id": 412096, "field": "description", "en": "Finishing move that slashes all enemies within $a2 yards, causing victims to Bleed over time. Lasts longer and deals more damage per combo point.\r\n\r\n   1 point  : ${$AP*0.30} damage over 4 sec.\r\n   2 points: ${$AP*0.45} damage over 6 sec.\r\n   3 points: ${$AP*0.60} damage over 8 sec.\r\n   4 points: ${$AP*0.75} damage over 10 sec.\r\n   5 points: ${$AP*0.90} damage over 12 sec.\r\n\r\nCrimson Tempest benefits from all talents and effects that trigger from or modify Rupture.\r\n\r\n", "hash": "a7e6cd0a1d3631c8", "src": "db2@1.60.1.70291"}
+{"id": 412096, "field": "aura", "en": "Bleeding for $w2 damage every $t2 sec.", "hash": "84eecd00366954d8", "src": "db2@1.60.1.70291"}
+{"id": 412107, "field": "name", "en": "Hate to Zero", "hash": "daf34d4e6cd26c20", "src": "db2@1.60.1.70291"}
+{"id": 412113, "field": "name", "en": "Remove Greater Curse", "hash": "35fd1f08ee31447e", "src": "db2@1.60.1.70291"}
+{"id": 412113, "field": "description", "en": "Removes $m1 Curse and $m2 harmful Magic effect from a friendly target.", "hash": "0a40d59766f9403f", "src": "db2@1.60.1.70291"}
+{"id": 412114, "field": "name", "en": "Void Empowerment", "hash": "166018f91ffdcfda", "src": "db2@1.60.1.70291"}
+{"id": 412115, "field": "name", "en": "Advanced Warding", "hash": "35e86b2802f1b270", "src": "db2@1.60.1.70291"}
+{"id": 412115, "field": "description", "en": "Your Mana Shield, Frost Ward, and Fire Ward spells can now be cast on any friendly target and absorb $s1% increased damage, with Mana Shield consuming $s2% less mana per damage absorbed. Additionally, your Remove Lesser Curse is replaced with Remove Greater Curse.\r\n\r\n$@spellicon412113\r\n$@spelldesc412113", "hash": "b762f9d3831f0e23", "src": "db2@1.60.1.70291"}
+{"id": 412116, "field": "name", "en": "Mana Shield", "hash": "9b5f18d7d9ec240b", "src": "db2@1.60.1.70291"}
+{"id": 412116, "field": "description", "en": "Absorbs $s1 physical damage on a friendly target, draining mana instead.  Drains $s2 mana from the casting Mage per damage absorbed.  Lasts $d.", "hash": "ff96538f1c4acf0f", "src": "db2@1.60.1.70291"}
+{"id": 412116, "field": "aura", "en": "Absorbs physical damage, draining mana instead.", "hash": "d9625b22f2b3c130", "src": "db2@1.60.1.70291"}
+{"id": 412118, "field": "name", "en": "Mana Shield", "hash": "9b5f18d7d9ec240b", "src": "db2@1.60.1.70291"}
+{"id": 412118, "field": "description", "en": "Absorbs $s1 physical damage on a friendly target, draining mana instead.  Drains $s2 mana from the casting Mage per damage absorbed.  Lasts $d.", "hash": "ff96538f1c4acf0f", "src": "db2@1.60.1.70291"}
+{"id": 412118, "field": "aura", "en": "Absorbs physical damage, draining mana instead.", "hash": "d9625b22f2b3c130", "src": "db2@1.60.1.70291"}
+{"id": 412120, "field": "name", "en": "Mana Shield", "hash": "9b5f18d7d9ec240b", "src": "db2@1.60.1.70291"}
+{"id": 412120, "field": "description", "en": "Absorbs $s1 physical damage on a friendly target, draining mana instead.  Drains $s2 mana from the casting Mage per damage absorbed.  Lasts $d.", "hash": "ff96538f1c4acf0f", "src": "db2@1.60.1.70291"}
+{"id": 412120, "field": "aura", "en": "Absorbs physical damage, draining mana instead.", "hash": "d9625b22f2b3c130", "src": "db2@1.60.1.70291"}
+{"id": 412121, "field": "name", "en": "Mana Shield", "hash": "9b5f18d7d9ec240b", "src": "db2@1.60.1.70291"}
+{"id": 412121, "field": "description", "en": "Absorbs $s1 physical damage on a friendly target, draining mana instead.  Drains $s2 mana from the casting Mage per damage absorbed.  Lasts $d.", "hash": "ff96538f1c4acf0f", "src": "db2@1.60.1.70291"}
+{"id": 412121, "field": "aura", "en": "Absorbs physical damage, draining mana instead.", "hash": "d9625b22f2b3c130", "src": "db2@1.60.1.70291"}
+{"id": 412122, "field": "name", "en": "Mana Shield", "hash": "9b5f18d7d9ec240b", "src": "db2@1.60.1.70291"}
+{"id": 412122, "field": "description", "en": "Absorbs $s1 physical damage on a friendly target, draining mana instead.  Drains $s2 mana from the casting Mage per damage absorbed.  Lasts $d.", "hash": "ff96538f1c4acf0f", "src": "db2@1.60.1.70291"}
+{"id": 412122, "field": "aura", "en": "Absorbs physical damage, draining mana instead.", "hash": "d9625b22f2b3c130", "src": "db2@1.60.1.70291"}
+{"id": 412123, "field": "name", "en": "Mana Shield", "hash": "9b5f18d7d9ec240b", "src": "db2@1.60.1.70291"}
+{"id": 412123, "field": "description", "en": "Absorbs $s1 physical damage on a friendly target, draining mana instead.  Drains $s2 mana from the casting Mage per damage absorbed.  Lasts $d.", "hash": "ff96538f1c4acf0f", "src": "db2@1.60.1.70291"}
+{"id": 412123, "field": "aura", "en": "Absorbs physical damage, draining mana instead.", "hash": "d9625b22f2b3c130", "src": "db2@1.60.1.70291"}
+{"id": 412179, "field": "name", "en": "Cunning Disguise?", "hash": "e72d2e5372a9e870", "src": "db2@1.60.1.70291"}
+{"id": 412179, "field": "aura", "en": "Wearing a disguise of dubious effectiveness.", "hash": "342725a9eaa43ba4", "src": "db2@1.60.1.70291"}
+{"id": 412202, "field": "name", "en": "Frost Ward", "hash": "827c83f83eabbc3c", "src": "db2@1.60.1.70291"}
+{"id": 412202, "field": "description", "en": "Absorbs $s1 Frost damage.  Lasts $d.", "hash": "daba669dccc8ad53", "src": "db2@1.60.1.70291"}
+{"id": 412202, "field": "aura", "en": "Absorbs Frost damage.", "hash": "536acc5971116666", "src": "db2@1.60.1.70291"}
+{"id": 412205, "field": "name", "en": "Frost Ward", "hash": "827c83f83eabbc3c", "src": "db2@1.60.1.70291"}
+{"id": 412205, "field": "description", "en": "Absorbs $s1 Frost damage.  Lasts $d.", "hash": "daba669dccc8ad53", "src": "db2@1.60.1.70291"}
+{"id": 412205, "field": "aura", "en": "Absorbs Frost damage.", "hash": "536acc5971116666", "src": "db2@1.60.1.70291"}
+{"id": 412207, "field": "name", "en": "Frost Ward", "hash": "827c83f83eabbc3c", "src": "db2@1.60.1.70291"}
+{"id": 412207, "field": "description", "en": "Absorbs $s1 Frost damage.  Lasts $d.", "hash": "daba669dccc8ad53", "src": "db2@1.60.1.70291"}
+{"id": 412207, "field": "aura", "en": "Absorbs Frost damage.", "hash": "536acc5971116666", "src": "db2@1.60.1.70291"}
+{"id": 412209, "field": "name", "en": "Frost Ward", "hash": "827c83f83eabbc3c", "src": "db2@1.60.1.70291"}
+{"id": 412209, "field": "description", "en": "Absorbs $s1 Frost damage.  Lasts $d.", "hash": "daba669dccc8ad53", "src": "db2@1.60.1.70291"}
+{"id": 412209, "field": "aura", "en": "Absorbs Frost damage.", "hash": "536acc5971116666", "src": "db2@1.60.1.70291"}
+{"id": 412210, "field": "name", "en": "Frost Ward", "hash": "827c83f83eabbc3c", "src": "db2@1.60.1.70291"}
+{"id": 412210, "field": "description", "en": "Absorbs $s1 Frost damage.  Lasts $d.", "hash": "daba669dccc8ad53", "src": "db2@1.60.1.70291"}
+{"id": 412210, "field": "aura", "en": "Absorbs Frost damage.", "hash": "536acc5971116666", "src": "db2@1.60.1.70291"}
+{"id": 412214, "field": "name", "en": "Fire Ward", "hash": "6dca963f9505befe", "src": "db2@1.60.1.70291"}
+{"id": 412214, "field": "description", "en": "Absorbs $s1 Fire damage.  Lasts $d.", "hash": "02e1e8bad90b2d43", "src": "db2@1.60.1.70291"}
+{"id": 412214, "field": "aura", "en": "Absorbs Fire damage.", "hash": "29bd049b03e58d6f", "src": "db2@1.60.1.70291"}
+{"id": 412218, "field": "name", "en": "Fire Ward", "hash": "6dca963f9505befe", "src": "db2@1.60.1.70291"}
+{"id": 412218, "field": "description", "en": "Absorbs $s1 Fire damage.  Lasts $d.", "hash": "02e1e8bad90b2d43", "src": "db2@1.60.1.70291"}
+{"id": 412218, "field": "aura", "en": "Absorbs Fire damage.", "hash": "29bd049b03e58d6f", "src": "db2@1.60.1.70291"}
+{"id": 412230, "field": "name", "en": "Fire Ward", "hash": "6dca963f9505befe", "src": "db2@1.60.1.70291"}
+{"id": 412230, "field": "description", "en": "Absorbs $s1 Fire damage.  Lasts $d.", "hash": "02e1e8bad90b2d43", "src": "db2@1.60.1.70291"}
+{"id": 412230, "field": "aura", "en": "Absorbs Fire damage.", "hash": "29bd049b03e58d6f", "src": "db2@1.60.1.70291"}
+{"id": 412231, "field": "name", "en": "Fire Ward", "hash": "6dca963f9505befe", "src": "db2@1.60.1.70291"}
+{"id": 412231, "field": "description", "en": "Absorbs $s1 Fire damage.  Lasts $d.", "hash": "02e1e8bad90b2d43", "src": "db2@1.60.1.70291"}
+{"id": 412231, "field": "aura", "en": "Absorbs Fire damage.", "hash": "29bd049b03e58d6f", "src": "db2@1.60.1.70291"}
+{"id": 412232, "field": "name", "en": "Fire Ward", "hash": "6dca963f9505befe", "src": "db2@1.60.1.70291"}
+{"id": 412232, "field": "description", "en": "Absorbs $s1 Fire damage.  Lasts $d.", "hash": "02e1e8bad90b2d43", "src": "db2@1.60.1.70291"}
+{"id": 412232, "field": "aura", "en": "Absorbs Fire damage.", "hash": "29bd049b03e58d6f", "src": "db2@1.60.1.70291"}
+{"id": 412248, "field": "name", "en": "Void Empowerment", "hash": "166018f91ffdcfda", "src": "db2@1.60.1.70291"}
+{"id": 412270, "field": "name", "en": "March of the Murlocs", "hash": "a9fe3652c64a56f7", "src": "db2@1.60.1.70291"}
+{"id": 412272, "field": "name", "en": "March of the Murlocs", "hash": "a9fe3652c64a56f7", "src": "db2@1.60.1.70291"}
+{"id": 412278, "field": "name", "en": "Collect Blasting Supplies", "hash": "97fa06d81cb2a14c", "src": "db2@1.60.1.70291"}
+{"id": 412286, "field": "name", "en": "Burnout", "hash": "697e80ec1488c0ed", "src": "db2@1.60.1.70291"}
+{"id": 412286, "field": "description", "en": "Increases your spell critical strike chance with all spells by $s1%, but your non-periodic spell critical strikes now have an additional mana cost of $s2% of your base mana.", "hash": "abdf0c025c781a6e", "src": "db2@1.60.1.70291"}
+{"id": 412296, "field": "name", "en": "Void Empowerment", "hash": "166018f91ffdcfda", "src": "db2@1.60.1.70291"}
+{"id": 412322, "field": "name", "en": "Spell Power", "hash": "1c48bc044d2700e4", "src": "db2@1.60.1.70291"}
+{"id": 412322, "field": "description", "en": "Increases critical strike damage bonus of all spells by $s1%.", "hash": "dc154266fed892f9", "src": "db2@1.60.1.70291"}
+{"id": 412324, "field": "name", "en": "Enlightenment", "hash": "a2ebfdf8453410b6", "src": "db2@1.60.1.70291"}
+{"id": 412324, "field": "description", "en": "You deal $s1% more damage while you have more than $s2% mana. While below $s3% mana $s4% of your mana regeneration continues while casting.", "hash": "5f43a0b7ffafe6a6", "src": "db2@1.60.1.70291"}
+{"id": 412325, "field": "name", "en": "Enlightenment", "hash": "a2ebfdf8453410b6", "src": "db2@1.60.1.70291"}
+{"id": 412325, "field": "description", "en": "Allows $s1% of your Mana regeneration to continue while casting.", "hash": "86815c0ca3893a62", "src": "db2@1.60.1.70291"}
+{"id": 412325, "field": "aura", "en": "Allows $s1% of your Mana regeneration to continue while casting.", "hash": "86815c0ca3893a62", "src": "db2@1.60.1.70291"}
+{"id": 412326, "field": "name", "en": "Enlightenment", "hash": "a2ebfdf8453410b6", "src": "db2@1.60.1.70291"}
+{"id": 412326, "field": "description", "en": "Increases all spell damage done by $s1%.", "hash": "915ea14fe81a1dad", "src": "db2@1.60.1.70291"}
+{"id": 412326, "field": "aura", "en": "Increases all spell damage done by $s1%.", "hash": "915ea14fe81a1dad", "src": "db2@1.60.1.70291"}
+{"id": 412365, "field": "name", "en": "Collect Pinecone", "hash": "70e5c7497b9768e1", "src": "db2@1.60.1.70291"}
+{"id": 412421, "field": "name", "en": "Void Empowerment", "hash": "166018f91ffdcfda", "src": "db2@1.60.1.70291"}
+{"id": 412427, "field": "name", "en": "March of the Murlocs", "hash": "a9fe3652c64a56f7", "src": "db2@1.60.1.70291"}
+{"id": 412428, "field": "name", "en": "Create Salve", "hash": "92eeb4b7cdea9b1c", "src": "db2@1.60.1.70291"}
+{"id": 412428, "field": "description", "en": "Grind 8 Windfury Cones together to create a venomous weapon salve.  In theory.", "hash": "1536ef812020f7b8", "src": "db2@1.60.1.70291"}
+{"id": 412437, "field": "name", "en": "Waterbolt", "hash": "ccf9c0e7c082b2c0", "src": "db2@1.60.1.70291"}
+{"id": 412437, "field": "description", "en": "Launches a bolt of frost at the enemy, causing ${$m1/100*$<power>} to ${$M1/100*$<power>} Frost damage.", "hash": "2e8656ae5150c109", "src": "db2@1.60.1.70291"}
+{"id": 412443, "field": "name", "en": "Void Empowerment", "hash": "166018f91ffdcfda", "src": "db2@1.60.1.70291"}
+{"id": 412456, "field": "name", "en": "March of the Murlocs", "hash": "a9fe3652c64a56f7", "src": "db2@1.60.1.70291"}
+{"id": 412466, "field": "name", "en": "March of the Murlocs", "hash": "a9fe3652c64a56f7", "src": "db2@1.60.1.70291"}
+{"id": 412507, "field": "name", "en": "Blood Frenzy", "hash": "53e8cf6f4ddc508d", "src": "db2@1.60.1.70291"}
+{"id": 412507, "field": "description", "en": "Rend can now be used in Berserker stance, Rend's damage is increased by $s2%, and Rend deals additional damage equal to $s3% of your Attack Power each time it deals damage.\r\n", "hash": "2d9ea468ae1cf0f1", "src": "db2@1.60.1.70291"}
+{"id": 412510, "field": "name", "en": "Mass Regeneration", "hash": "40ebaa7f964962f9", "src": "db2@1.60.1.70291"}
+{"id": 412510, "field": "description", "en": "Heals all of target player's party members within $a1 yards of target player for ${$<healpower>*$m1/100*3} health over $d and applies Temporal Beacon to each target for ${$400735m3/2} sec.\r\n\r\nTemporal Beacon\r\n$@spellicon400735\r\n$@spelldesc400735", "hash": "6a7085968a19281e", "src": "db2@1.60.1.70291"}
+{"id": 412510, "field": "aura", "en": "Healing ${$w1*3} health over $d.", "hash": "71292dfdea88bb37", "src": "db2@1.60.1.70291"}
+{"id": 412513, "field": "name", "en": "Gladiator Stance", "hash": "25b8a80e9beaced7", "src": "db2@1.60.1.70291"}
+{"id": 412513, "field": "description", "en": "An aggressive stance that increases damage while you are wearing a shield by $413479s1% and increases block chance by $413479s2%, but reduces armor by $413476s1% and threat generated by $413476s2%. In addition, you gain $s2% increased Rage when your auto-attack damages an enemy not targeting you.\r\n\r\nWhile wearing a shield in Gladiator Stance, you may use all abilities that are restricted to other stances.", "hash": "d9f8b649dcda926b", "src": "db2@1.60.1.70291"}
+{"id": 412526, "field": "name", "en": "Mind Flay", "hash": "76d08f4d1411bee1", "src": "db2@1.60.1.70291"}
+{"id": 412526, "field": "description", "en": "Inflicts Shadow damage to an enemy and reduces its movement speed for $d.", "hash": "b24a12b10f7654d4", "src": "db2@1.60.1.70291"}
+{"id": 412526, "field": "aura", "en": "$s1 Shadow damage inflicted every second for $d.\r\nMovement speed reduced to $s2% of normal.", "hash": "bc2e574c315fae75", "src": "db2@1.60.1.70291"}
+{"id": 412527, "field": "name", "en": "Shadowform", "hash": "074e070f4fdc8d3c", "src": "db2@1.60.1.70291"}
+{"id": 412528, "field": "name", "en": "Ground Rupture", "hash": "7b7eededf40ba5bf", "src": "db2@1.60.1.70291"}
+{"id": 412532, "field": "name", "en": "Spellfrost Bolt", "hash": "77d5eef43375751c", "src": "db2@1.60.1.70291"}
+{"id": 412532, "field": "description", "en": "Launches a bolt of spellfrost at the enemy, causing ${$<power>*$m2/100*$<frostdamage>} to ${$<power>*$M2/100*$<frostdamage>} Spellfrost damage and slowing movement speed by $s1% for $d. This spell will be checked against the lower of the target's Frost and Arcane resists and counts as both Frost and Arcane damage.", "hash": "9762e582dd4678b4", "src": "db2@1.60.1.70291"}
+{"id": 412532, "field": "aura", "en": "Movement slowed by $w1%.", "hash": "be1d3d2480027757", "src": "db2@1.60.1.70291"}
+{"id": 412538, "field": "name", "en": "Ignite", "hash": "d796fe5c5427e0c5", "src": "db2@1.60.1.70291"}
+{"id": 412538, "field": "description", "en": "Deals Fire damage every $t1 sec.", "hash": "9b32ec1ad532e541", "src": "db2@1.60.1.70291"}
+{"id": 412538, "field": "aura", "en": "Deals ${$w1/2} Fire damage every $t1 sec.", "hash": "83ee941a374b6fb0", "src": "db2@1.60.1.70291"}
+{"id": 412545, "field": "name", "en": "Ignite", "hash": "d796fe5c5427e0c5", "src": "db2@1.60.1.70291"}
+{"id": 412545, "field": "description", "en": "Deals Fire damage every $t sec.", "hash": "1a8da46bdab3491c", "src": "db2@1.60.1.70291"}
+{"id": 412545, "field": "aura", "en": "Deals fire damage every $t1 sec.", "hash": "59ea3fa7f9f8347a", "src": "db2@1.60.1.70291"}
+{"id": 412569, "field": "name", "en": "Shadowform", "hash": "074e070f4fdc8d3c", "src": "db2@1.60.1.70291"}
+{"id": 412570, "field": "name", "en": "Anti Fear Clip Root", "hash": "de6b2d830e9be9d7", "src": "db2@1.60.1.70291"}
+{"id": 412609, "field": "name", "en": "Deep Wound", "hash": "96b1f3cd4e25ba34", "src": "db2@1.60.1.70291"}
+{"id": 412609, "field": "aura", "en": "Bleeding.", "hash": "d6c5aa1b53b3d005", "src": "db2@1.60.1.70291"}
+{"id": 412613, "field": "name", "en": "Deep Wound", "hash": "96b1f3cd4e25ba34", "src": "db2@1.60.1.70291"}
+{"id": 412613, "field": "description", "en": "Bleeding.", "hash": "d6c5aa1b53b3d005", "src": "db2@1.60.1.70291"}
+{"id": 412689, "field": "name", "en": "Everlasting Affliction", "hash": "e5cfc415d77a3072", "src": "db2@1.60.1.70291"}
+{"id": 412689, "field": "description", "en": "Each time your Drain Life, Drain Soul, or Shadowbolt spell deals damage, your Corruption on the target is refreshed to its maximum duration.", "hash": "e20525675d51ca02", "src": "db2@1.60.1.70291"}
+{"id": 412698, "field": "name", "en": "Everlasting Affliction", "hash": "e5cfc415d77a3072", "src": "db2@1.60.1.70291"}
+{"id": 412718, "field": "name", "en": "Fish Fillet", "hash": "3eb5eddda77acf42", "src": "db2@1.60.1.70291"}
+{"id": 412718, "field": "description", "en": "Attempt to fillet a Raw Brilliant Smallfish.", "hash": "18bbd6e4c6f269ad", "src": "db2@1.60.1.70291"}
+{"id": 412727, "field": "name", "en": "Demonic Tactics", "hash": "5059ebfba049fe12", "src": "db2@1.60.1.70291"}
+{"id": 412727, "field": "description", "en": "Increases the critical strike chance of all attacks for you and your summoned Demon by $m1% while the Demon is active.", "hash": "8615a59fe0eb3ae4", "src": "db2@1.60.1.70291"}
+{"id": 412729, "field": "name", "en": "Tamed Pet Passive (DND)", "hash": "7127429cf58bb8b7", "src": "db2@1.60.1.70291"}
+{"id": 412732, "field": "name", "en": "Demonic Knowledge", "hash": "f4c22403efce748b", "src": "db2@1.60.1.70291"}
+{"id": 412732, "field": "description", "en": "Increases your spell damage and your Demon pet's spell damage by up to $s1% of your level while you have a summoned Demon pet active.", "hash": "c91f815d906c802b", "src": "db2@1.60.1.70291"}
+{"id": 412735, "field": "name", "en": "Demonic Knowledge", "hash": "f4c22403efce748b", "src": "db2@1.60.1.70291"}
+{"id": 412735, "field": "aura", "en": "Spell damage and healing increased by $w1.", "hash": "79cd41df74dd476a", "src": "db2@1.60.1.70291"}
+{"id": 412751, "field": "name", "en": "Fire and Brimstone", "hash": "70a5b94f2d8d45af", "src": "db2@1.60.1.70291"}
+{"id": 412751, "field": "description", "en": "Increases the critical strike chance of your Conflagrate spell by $m2%.", "hash": "acdd60b768364fbd", "src": "db2@1.60.1.70291"}
+{"id": 412758, "field": "name", "en": "Incinerate", "hash": "f030e7b8acb5204d", "src": "db2@1.60.1.70291"}
+{"id": 412758, "field": "description", "en": "Deals $s1 Fire damage to your target and an additional $m2% damage if the target is afflicted by Immolate.", "hash": "2c6958c3d2951807", "src": "db2@1.60.1.70291"}
 {"id": 412758, "field": "aura", "en": "Increases all Fire damage you deal by $s2%.", "hash": "809f047b4877f101", "src": "wago@1.15.9.69722"}
-{"id": 412783, "field": "name", "en": "Metamorphosis : Demon Charge", "hash": "08310d3eedaf8ef0", "src": "db2@1.60.1.70245"}
-{"id": 412784, "field": "name", "en": "Metamorphosis : Demonic Howl", "hash": "0c79e3eef9d3ddbe", "src": "db2@1.60.1.70245"}
-{"id": 412787, "field": "name", "en": "Disrupt", "hash": "1ac8d77c199d392a", "src": "db2@1.60.1.70245"}
-{"id": 412787, "field": "description", "en": "Choke your enemy with a surge of Shadowy energy that deals $s1 damage, interrupts spellcasting, and prevents any spell in that school from being cast for $d.", "hash": "dc558c7085082de3", "src": "db2@1.60.1.70245"}
-{"id": 412788, "field": "name", "en": "Demon Charge", "hash": "7334beb8ed39dafb", "src": "db2@1.60.1.70245"}
-{"id": 412788, "field": "description", "en": "Charge an enemy and stun it for $7922d.  Cannot be used in combat.", "hash": "6acf62c8e5f44486", "src": "db2@1.60.1.70245"}
-{"id": 412789, "field": "name", "en": "Demonic Howl", "hash": "777d9568f95e29c9", "src": "db2@1.60.1.70245"}
-{"id": 412789, "field": "description", "en": "Forces all nearby enemies to focus attacks on you for $d.", "hash": "0cbe2fc8f140f09f", "src": "db2@1.60.1.70245"}
-{"id": 412789, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70245"}
-{"id": 412790, "field": "name", "en": "Infernal Strike", "hash": "17f7cd8c85e86f5f", "src": "db2@1.60.1.70245"}
-{"id": 412790, "field": "description", "en": "Leap through the air and slam down on all enemies within $a2 yards of the target area, causing $s2 Shadow damage and Stunning them for $d.", "hash": "2ca8bc76008e5b6b", "src": "db2@1.60.1.70245"}
-{"id": 412790, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70245"}
-{"id": 412798, "field": "name", "en": "Dance of the Wicked", "hash": "d200b201a976fd70", "src": "db2@1.60.1.70245"}
-{"id": 412798, "field": "description", "en": "You and your demon pet gain dodge chance equal to $s1% of your spell critical strike chance each time you deal a critical strike to an enemy, and also both regain $412800s2% of maximum mana.", "hash": "7184573053922f06", "src": "db2@1.60.1.70245"}
-{"id": 412800, "field": "name", "en": "Dance of the Wicked", "hash": "d200b201a976fd70", "src": "db2@1.60.1.70245"}
-{"id": 412800, "field": "description", "en": "Increases Dodge chance by a value equal to $412798s1% of your spell critical chance.", "hash": "331eed36129dd323", "src": "db2@1.60.1.70245"}
-{"id": 412800, "field": "aura", "en": "Dodge chance increased by $w1%.", "hash": "147f8904fda41241", "src": "db2@1.60.1.70245"}
+{"id": 412783, "field": "name", "en": "Metamorphosis : Demon Charge", "hash": "08310d3eedaf8ef0", "src": "db2@1.60.1.70291"}
+{"id": 412784, "field": "name", "en": "Metamorphosis : Demonic Howl", "hash": "0c79e3eef9d3ddbe", "src": "db2@1.60.1.70291"}
+{"id": 412787, "field": "name", "en": "Disrupt", "hash": "1ac8d77c199d392a", "src": "db2@1.60.1.70291"}
+{"id": 412787, "field": "description", "en": "Choke your enemy with a surge of Shadowy energy that deals $s1 damage, interrupts spellcasting, and prevents any spell in that school from being cast for $d.", "hash": "dc558c7085082de3", "src": "db2@1.60.1.70291"}
+{"id": 412788, "field": "name", "en": "Demon Charge", "hash": "7334beb8ed39dafb", "src": "db2@1.60.1.70291"}
+{"id": 412788, "field": "description", "en": "Charge an enemy and stun it for $7922d.  Cannot be used in combat.", "hash": "6acf62c8e5f44486", "src": "db2@1.60.1.70291"}
+{"id": 412789, "field": "name", "en": "Demonic Howl", "hash": "777d9568f95e29c9", "src": "db2@1.60.1.70291"}
+{"id": 412789, "field": "description", "en": "Forces all nearby enemies to focus attacks on you for $d.", "hash": "0cbe2fc8f140f09f", "src": "db2@1.60.1.70291"}
+{"id": 412789, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70291"}
+{"id": 412790, "field": "name", "en": "Infernal Strike", "hash": "17f7cd8c85e86f5f", "src": "db2@1.60.1.70291"}
+{"id": 412790, "field": "description", "en": "Leap through the air and slam down on all enemies within $a2 yards of the target area, causing $s2 Shadow damage and Stunning them for $d.", "hash": "2ca8bc76008e5b6b", "src": "db2@1.60.1.70291"}
+{"id": 412790, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70291"}
+{"id": 412798, "field": "name", "en": "Dance of the Wicked", "hash": "d200b201a976fd70", "src": "db2@1.60.1.70291"}
+{"id": 412798, "field": "description", "en": "You and your demon pet gain dodge chance equal to $s1% of your spell critical strike chance each time you deal a critical strike to an enemy, and also both regain $412800s2% of maximum mana.", "hash": "7184573053922f06", "src": "db2@1.60.1.70291"}
+{"id": 412800, "field": "name", "en": "Dance of the Wicked", "hash": "d200b201a976fd70", "src": "db2@1.60.1.70291"}
+{"id": 412800, "field": "description", "en": "Increases Dodge chance by a value equal to $412798s1% of your spell critical chance.", "hash": "331eed36129dd323", "src": "db2@1.60.1.70291"}
+{"id": 412800, "field": "aura", "en": "Dodge chance increased by $w1%.", "hash": "147f8904fda41241", "src": "db2@1.60.1.70291"}

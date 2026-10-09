@@ -525,7 +525,6 @@ WFJ.Data.add("gloss", {
   [45522] = "倒す\tたおす\tare destroyed",
   [45523] = "倒す\tたおす\tare toppling",
   [45524] = "倒す\tたおす\tas long as (he) is kept down",
-  [45525] = "倒す\tたおす\tbe able to take out",
   [45526] = "倒す\tたおす\tbe brought down",
   [45527] = "倒す\tたおす\tbeat",
   [45528] = "倒す\tたおす\tbeat (defeat)",

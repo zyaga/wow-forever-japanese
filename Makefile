@@ -95,7 +95,7 @@ CLIENTS := classic-era forever
 classic-era_BUILD   := 1.15.9.69722
 classic-era_SRC     := wago
 classic-era_PRODUCT := wow_classic_era
-forever_BUILD       := 1.60.1.70245
+forever_BUILD       := 1.60.1.70291
 forever_SRC         := db2
 forever_PRODUCT     := wow_classic_beta
 client_dir = $(INPUTS)/clients/$(1)-$($(1)_BUILD)
@@ -129,7 +129,7 @@ UI_KEYS            ?= $(CURDIR)/pipeline/ui_keys.txt
 # are read from these clients' folders only (ADR-042). Forever is the only target (ADR-034) and the import-served step drops
 # ui English no Forever table stamps, so the other clients are not asked for the tables.
 FAMILY_CLIENTS     := forever
-FAMILY_TABLES      := Faction Achievement Achievement_Category SkillLine SkillLineCategory EmotesTextData HolidayDescriptions CurrencyTypes CurrencyCategory SpellDispelType CreatureType QuestSort ChrCustomizationCategory ChrCustomizationOption ChrCustomizationChoice ChrCustomizationReq PVPScoreboardColumnHeader GroupFinderCategory GroupFinderActivityGrp GroupFinderActivity UiWidgetStringSource ItemNameDescription CriteriaTree RenownRewards SharedString TradeSkillCategory MailTemplate QuestInfo AreaPOI AreaPOIState PetLoyalty Map Difficulty UiEventToast BroadcastText ItemPetFood Exhaustion ItemSubClassMask RolodexType FriendshipReputation MapDifficulty MapDifficultyXCondition PlayerCondition LockType SpellFlyout ServerMessages TransmogSituation TransmogSituationTrigger TransmogOutfitSlotOption
+FAMILY_TABLES      := Faction Achievement Achievement_Category SkillLine SkillLineCategory EmotesTextData HolidayDescriptions CurrencyTypes CurrencyCategory SpellDispelType CreatureType QuestSort ChrCustomizationCategory ChrCustomizationOption ChrCustomizationChoice ChrCustomizationReq PVPScoreboardColumnHeader PVPStat GroupFinderCategory GroupFinderActivityGrp GroupFinderActivity UiWidgetStringSource ItemNameDescription CriteriaTree RenownRewards SharedString TradeSkillCategory MailTemplate QuestInfo AreaPOI AreaPOIState PetLoyalty Map Difficulty UiEventToast BroadcastText ItemPetFood Exhaustion ItemSubClassMask RolodexType FriendshipReputation MapDifficulty MapDifficultyXCondition PlayerCondition LockType SpellFlyout ServerMessages TransmogSituation TransmogSituationTrigger TransmogOutfitSlotOption
 FAMILY_ARGS         = $(if $(filter $(CLIENT),$(FAMILY_CLIENTS)),--families "$(CLIENT_DIR)/")
 FAMILY_CSVS         = $(if $(filter $(CLIENT),$(FAMILY_CLIENTS)),$(foreach t,$(FAMILY_TABLES),"$(CLIENT_DIR)/$(t).csv"))
 # Bump only when the inputs change: it is written into every line's provenance.imported, so a
@@ -339,6 +339,11 @@ tooltip-line-kinds: ## regenerate pipeline/tooltip_line_kinds_inventory.txt and 
 forever-addons: ## regenerate pipeline/forever_addons.txt from the Forever UI extract's TOCs (commit the result): [FOREVER_UI=<Interface/AddOns>]
 	@test -d "$(FOREVER_UI)" || { echo "forever-addons: no UI extract at $(FOREVER_UI) (FOREVER_UI=<extract>/interface/addons)"; exit 1; }
 	cd pipeline && $(PY) -m wfj.dev.client_addons "$(FOREVER_UI)" > forever_addons.txt.tmp && mv forever_addons.txt.tmp forever_addons.txt
+
+family-rows: ## regenerate pipeline/family_rows.txt (client-table rows no ui_keys.txt key ships, with reasons) from the pinned Forever tables (commit the result)
+	@test -f "$(call client_dir,forever)/tables-source.txt" || { echo "family-rows: no tables at $(call client_dir,forever) (make tables-extract)"; exit 1; }
+	cd pipeline && $(PY) -m wfj.dev.family_rows "$(call client_dir,forever)" ui_keys.txt family_rows.txt > family_rows.txt.tmp && mv family_rows.txt.tmp family_rows.txt
+	@! grep -n "^[^#].*  ?  " pipeline/family_rows.txt || { echo "family-rows: the rows above are new: list each in ui_keys.txt (then rerun) or give it a reason"; exit 1; }
 
 forever-titles: ## list every SetTitle( call site in the camelot load sets (the input of pipeline/forever_titles.txt): [FOREVER_UI=<Interface/AddOns>]
 	@test -d "$(FOREVER_UI)" || { echo "forever-titles: no UI extract at $(FOREVER_UI) (FOREVER_UI=<extract>/interface/addons)"; exit 1; }

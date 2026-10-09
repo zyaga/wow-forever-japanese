@@ -197,7 +197,6 @@ WFJ.Data.add("gloss", {
   [131194] = "遠慮無く\tえんりょなく\tfeel free",
   [131195] = "遠方\tえんぽう\tafar",
   [131196] = "遠方\tえんぽう\tfar off (distant)",
-  [131197] = "遠見\tとおみ\tfarsight",
   [131198] = "遠見\tとおみ\tscrying (far-seeing)",
   [131199] = "遠見\tとおみ\tsight (far sight)",
   [131200] = "遠距離\tえんきょり\tfar distance",

@@ -1,7 +1,7 @@
 -- UI/Channels.lua over ChannelFrame replayed from camelot
 -- blizzard_channels/mainline (channelframe.lua:26, channelframe.xml:21–32, voicechatprompt.lua:39–63 + 87–92 +
 -- 165–173, rosterbutton.lua:187–191, channellist.lua:10–13 + 79–86), blizzard_voicetogglebutton's roster buttons and
--- Blizzard_ChatFrame's headset / transcription buttons on the channel list (voicechatheadsetbutton.lua:220–241,
+-- Blizzard_ChatFrame's headset / transcription buttons on the channel list (voicechatheadsetbutton.lua:223–252,
 -- voicechattranscriptionbutton.lua:165–174). Channel and member names stay English.
 local S = require("tests.lua.spec.stub_camelot_social")
 local Stub = require("tests.lua.spec.wow_stub")
@@ -25,6 +25,9 @@ local UI = {
   -- the headset's age-restriction title (voicechatheadsetbutton.lua:228–230)
   AGE_RESTRICTED_VOICE_CHAT_MINOR_TOOLTIP = { "Voice chat and other social features are unavailable on accounts "
     .. "belonging to minors.", "未成年者のアカウントでは、ボイスチャットやその他のソーシャル機能を利用できません。" },
+  -- a Discord party channel's error line under the headset's title (voicechatheadsetbutton.lua:248–250)
+  DISCORD_VOICE_TTS_STT_UNSUPPORTED = { "Text-to-Speech and Speech-to-Text are not supported in this channel because "
+    .. "it uses the Discord service.", "このチャンネルはDiscordサービスを使用しているため、読み上げと音声入力は使えません。" },
   VOICE_CHAT_TRANSCRIPTION_ENABLE = { "Enable Voice Transcription", "音声の文字起こしを有効化" },
   CLOSE = { "Close", "閉じる" }, -- a word a channel or a member may happen to be called
   -- the parental-controls title (voicetogglebutton.lua:67), its "|n|n" inside the English
@@ -170,6 +173,14 @@ describe("the chat channels window on Forever", function()
     Stub.keys.alt = true; WFJ.Modifier.refresh()
     assert.are.equal(minor[1], _G.GameTooltipTextLeft1:GetText())
     Stub.keys.alt = false; WFJ.Modifier.refresh()
+    local discord = UI.DISCORD_VOICE_TTS_STT_UNSUPPORTED
+    assert.are.same({ "ボイスチャットから退出", discord[2] },
+      S.tooltip(row.Speaker.Button, { "Leave Voice Chat", discord[1] }))
+    Stub.keys.alt = true; WFJ.Modifier.refresh()
+    assert.are.equal(discord[1], _G.GameTooltipTextLeft2:GetText())
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
+    assert.are.same({ "ボイスチャットに参加", "Speech features are off." },
+      S.tooltip(row.Speaker.Button, { "Join Voice Chat", "Speech features are off." }))
     assert.are.same({ "音声の文字起こしを有効化" },
       S.tooltip(row.Speaker.Transcription.Button, { "Enable Voice Transcription" }))
     assert.are.same({ "Join Voice Chat" }, S.tooltip(row.Speaker.Transcription.Button, { "Join Voice Chat" }))

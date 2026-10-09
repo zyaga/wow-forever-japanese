@@ -1,52 +1,52 @@
-{"id": 191204, "field": "name", "en": "Lesser Deathstone", "hash": "05e38162df3beddc", "src": "db2@1.60.1.70245"}
-{"id": 191204, "field": "description", "en": "Turn $s2 lesser deathstones into a greater one.", "hash": "1ba9fc0d93a9371e", "src": "db2@1.60.1.70245"}
-{"id": 191249, "field": "name", "en": "Greater Deathstone", "hash": "2dc8a4f5b5659f8e", "src": "db2@1.60.1.70245"}
-{"id": 191249, "field": "description", "en": "A vibrant green stone glowing with untold energies.", "hash": "053c3d241eaab36c", "src": "db2@1.60.1.70245"}
-{"id": 191267, "field": "name", "en": "Rune of Teleportation: Antechamber", "hash": "8f86253d15d10621", "src": "db2@1.60.1.70245"}
-{"id": 191268, "field": "name", "en": "Orb of Corruption", "hash": "9080d953d6e82553", "src": "db2@1.60.1.70245"}
-{"id": 191272, "field": "name", "en": "Rod of Necromancy", "hash": "06102996719ee660", "src": "db2@1.60.1.70245"}
-{"id": 191280, "field": "name", "en": "Fungal Spore Cluster", "hash": "61bc2ed5c93fb3a6", "src": "db2@1.60.1.70245"}
-{"id": 191288, "field": "name", "en": "Rune of Teleportation: Frostwyrm's Lair", "hash": "23ea03572c55ee61", "src": "db2@1.60.1.70245"}
-{"id": 191292, "field": "name", "en": "Ritual Dagger", "hash": "1a60a06a9fb54f21", "src": "db2@1.60.1.70245"}
-{"id": 191312, "field": "name", "en": "Failsafe Phylactery", "hash": "743f9933316bdb52", "src": "db2@1.60.1.70245"}
-{"id": 191312, "field": "description", "en": "Prevents an attack that would otherwise kill you. Triggering this effect also grants you $370417d of damage immunity and shatters the phylactery.", "hash": "78af810802c7bccd", "src": "db2@1.60.1.70245"}
-{"id": 191313, "field": "name", "en": "Mask of Death", "hash": "38b73e228f800023", "src": "db2@1.60.1.70245"}
-{"id": 191414, "field": "name", "en": "Skeletal Artifact", "hash": "e27b55efbae9520e", "src": "db2@1.60.1.70245"}
-{"id": 191458, "field": "name", "en": "Shattered Phylactery", "hash": "58e178a5a9e7c8df", "src": "db2@1.60.1.70245"}
-{"id": 191458, "field": "description", "en": "Dull and useless.", "hash": "b20ef7693e50516f", "src": "db2@1.60.1.70245"}
-{"id": 191459, "field": "name", "en": "Rune of Fortune", "hash": "150c5bb88aad8b78", "src": "db2@1.60.1.70245"}
-{"id": 191477, "field": "name", "en": "Skeletal Hitching Post", "hash": "be6253678e6e0998", "src": "db2@1.60.1.70245"}
-{"id": 191477, "field": "description", "en": "Summons a skeletal hitching post.\r\n\r\nParty members may use the post to acquire a Skeletal Steed.\r\n", "hash": "132d66d81f151be5", "src": "db2@1.60.1.70245"}
-{"id": 191480, "field": "name", "en": "Skeletal Steed", "hash": "2b6c49eea6c34f37", "src": "db2@1.60.1.70245"}
-{"id": 191480, "field": "description", "en": "Summons and dismisses a skeletal steed.  This steed is obedient to the summoner and can be used as a mount within Naxxramas.  Any hostile action towards the rider forces the steed to run away in fear.\r\n", "hash": "67eeda0f402d742e", "src": "db2@1.60.1.70245"}
-{"id": 191481, "field": "name", "en": "Tabard of Mastery", "hash": "75551719436b8ce5", "src": "db2@1.60.1.70245"}
-{"id": 191481, "field": "description", "en": "A testament to mastery.", "hash": "71cd3b80895f319d", "src": "db2@1.60.1.70245"}
-{"id": 191550, "field": "name", "en": "Book of Deathstones: Mask of Death", "hash": "fd0608184ccf4769", "src": "db2@1.60.1.70245"}
-{"id": 191550, "field": "description", "en": "A tome detailing the art of converting deathstones into a mask of death.", "hash": "02e7a74a767b1827", "src": "db2@1.60.1.70245"}
-{"id": 191605, "field": "name", "en": "Book of Deathstones: Rune of Teleportation I", "hash": "bdc7775c542d0b46", "src": "db2@1.60.1.70245"}
-{"id": 191605, "field": "description", "en": "A tome detailing the art of converting deathstones into a rune of teleportation.", "hash": "7de8da12f2dc131c", "src": "db2@1.60.1.70245"}
-{"id": 191606, "field": "name", "en": "Book of Deathstones: Orb of Corruption", "hash": "86cf253a8cdb9c70", "src": "db2@1.60.1.70245"}
-{"id": 191606, "field": "description", "en": "A tome detailing the art of converting deathstones into an orb of corruption.", "hash": "96b3bd99bdbe7e72", "src": "db2@1.60.1.70245"}
-{"id": 191607, "field": "name", "en": "Book of Deathstones: Skeletal Artifact", "hash": "d8c9a1d670dcc92b", "src": "db2@1.60.1.70245"}
-{"id": 191607, "field": "description", "en": "A tome detailing the art of converting deathstones into a skeletal artifact.", "hash": "c84d20a006a95eff", "src": "db2@1.60.1.70245"}
-{"id": 191608, "field": "name", "en": "Book of Deathstones: Rod of Necromancy", "hash": "fc5e757827925d7d", "src": "db2@1.60.1.70245"}
-{"id": 191608, "field": "description", "en": "A tome detailing the art of converting deathstones into a rod of necromancy.", "hash": "922cb133e1bc3aeb", "src": "db2@1.60.1.70245"}
-{"id": 191609, "field": "name", "en": "Book of Deathstones: Fungal Spore Cluster", "hash": "24a020004f285723", "src": "db2@1.60.1.70245"}
-{"id": 191609, "field": "description", "en": "A tome detailing the art of converting deathstones into a fungal spore cluster.", "hash": "1e75fc37881e2e50", "src": "db2@1.60.1.70245"}
-{"id": 191610, "field": "name", "en": "Book of Deathstones: Ritual Dagger", "hash": "deaf6a605d049667", "src": "db2@1.60.1.70245"}
-{"id": 191610, "field": "description", "en": "A tome detailing the art of converting deathstones into a ritual dagger.", "hash": "a261d865ab83cc9a", "src": "db2@1.60.1.70245"}
-{"id": 191611, "field": "name", "en": "Book of Deathstones: Failsafe Phylactery", "hash": "9addaca0bdb7f446", "src": "db2@1.60.1.70245"}
-{"id": 191611, "field": "description", "en": "A tome detailing the art of converting deathstones into a failsafe phylactery.", "hash": "12e4becdec02e77b", "src": "db2@1.60.1.70245"}
-{"id": 191612, "field": "name", "en": "Book of Deathstones: Rune of Teleportation II", "hash": "1d1216426ff514fa", "src": "db2@1.60.1.70245"}
-{"id": 191612, "field": "description", "en": "A tome detailing the art of converting deathstones into a rune of teleportation.", "hash": "7de8da12f2dc131c", "src": "db2@1.60.1.70245"}
-{"id": 191613, "field": "name", "en": "Book of Deathstones: Rune of Fortune", "hash": "9aadd861cf54e9fa", "src": "db2@1.60.1.70245"}
-{"id": 191613, "field": "description", "en": "A tome detailing the art of converting deathstones into a rune of fortune.", "hash": "cae74f15aabcdedb", "src": "db2@1.60.1.70245"}
-{"id": 191614, "field": "name", "en": "Book of Deathstones: Skeletal Hitching Post", "hash": "4083beea1d83845e", "src": "db2@1.60.1.70245"}
-{"id": 191614, "field": "description", "en": "A tome detailing the art of converting deathstones into a skeletal hitching post.", "hash": "420bc5aaefd2b6b4", "src": "db2@1.60.1.70245"}
-{"id": 191656, "field": "name", "en": "Death's Essence", "hash": "bad4598f4146214f", "src": "db2@1.60.1.70245"}
-{"id": 191660, "field": "name", "en": "Thaddius' Lightning Bolts", "hash": "9e8f505764e26acf", "src": "db2@1.60.1.70245"}
-{"id": 191661, "field": "name", "en": "Monstrous Spider Fang", "hash": "0248fab0dea62493", "src": "db2@1.60.1.70245"}
-{"id": 191664, "field": "name", "en": "Book of Deathstones: Thaddius' Lightning Bolts", "hash": "bd337b109e2c4ca9", "src": "db2@1.60.1.70245"}
-{"id": 191664, "field": "description", "en": "A tome detailing the art of converting deathstones into Thaddius' lightning bolts.", "hash": "9e34e46fc9df8153", "src": "db2@1.60.1.70245"}
-{"id": 191666, "field": "name", "en": "Book of Deathstones: Monstrous Spider Fang", "hash": "bced6311bbe8f5fc", "src": "db2@1.60.1.70245"}
-{"id": 191666, "field": "description", "en": "A tome detailing the art of converting deathstones into a monstrous spider fang.", "hash": "801ac36f3da01283", "src": "db2@1.60.1.70245"}
+{"id": 191204, "field": "name", "en": "Lesser Deathstone", "hash": "05e38162df3beddc", "src": "db2@1.60.1.70291"}
+{"id": 191204, "field": "description", "en": "Turn $s2 lesser deathstones into a greater one.", "hash": "1ba9fc0d93a9371e", "src": "db2@1.60.1.70291"}
+{"id": 191249, "field": "name", "en": "Greater Deathstone", "hash": "2dc8a4f5b5659f8e", "src": "db2@1.60.1.70291"}
+{"id": 191249, "field": "description", "en": "A vibrant green stone glowing with untold energies.", "hash": "053c3d241eaab36c", "src": "db2@1.60.1.70291"}
+{"id": 191267, "field": "name", "en": "Rune of Teleportation: Antechamber", "hash": "8f86253d15d10621", "src": "db2@1.60.1.70291"}
+{"id": 191268, "field": "name", "en": "Orb of Corruption", "hash": "9080d953d6e82553", "src": "db2@1.60.1.70291"}
+{"id": 191272, "field": "name", "en": "Rod of Necromancy", "hash": "06102996719ee660", "src": "db2@1.60.1.70291"}
+{"id": 191280, "field": "name", "en": "Fungal Spore Cluster", "hash": "61bc2ed5c93fb3a6", "src": "db2@1.60.1.70291"}
+{"id": 191288, "field": "name", "en": "Rune of Teleportation: Frostwyrm's Lair", "hash": "23ea03572c55ee61", "src": "db2@1.60.1.70291"}
+{"id": 191292, "field": "name", "en": "Ritual Dagger", "hash": "1a60a06a9fb54f21", "src": "db2@1.60.1.70291"}
+{"id": 191312, "field": "name", "en": "Failsafe Phylactery", "hash": "743f9933316bdb52", "src": "db2@1.60.1.70291"}
+{"id": 191312, "field": "description", "en": "Prevents an attack that would otherwise kill you. Triggering this effect also grants you $370417d of damage immunity and shatters the phylactery.", "hash": "78af810802c7bccd", "src": "db2@1.60.1.70291"}
+{"id": 191313, "field": "name", "en": "Mask of Death", "hash": "38b73e228f800023", "src": "db2@1.60.1.70291"}
+{"id": 191414, "field": "name", "en": "Skeletal Artifact", "hash": "e27b55efbae9520e", "src": "db2@1.60.1.70291"}
+{"id": 191458, "field": "name", "en": "Shattered Phylactery", "hash": "58e178a5a9e7c8df", "src": "db2@1.60.1.70291"}
+{"id": 191458, "field": "description", "en": "Dull and useless.", "hash": "b20ef7693e50516f", "src": "db2@1.60.1.70291"}
+{"id": 191459, "field": "name", "en": "Rune of Fortune", "hash": "150c5bb88aad8b78", "src": "db2@1.60.1.70291"}
+{"id": 191477, "field": "name", "en": "Skeletal Hitching Post", "hash": "be6253678e6e0998", "src": "db2@1.60.1.70291"}
+{"id": 191477, "field": "description", "en": "Summons a skeletal hitching post.\r\n\r\nParty members may use the post to acquire a Skeletal Steed.\r\n", "hash": "132d66d81f151be5", "src": "db2@1.60.1.70291"}
+{"id": 191480, "field": "name", "en": "Skeletal Steed", "hash": "2b6c49eea6c34f37", "src": "db2@1.60.1.70291"}
+{"id": 191480, "field": "description", "en": "Summons and dismisses a skeletal steed.  This steed is obedient to the summoner and can be used as a mount within Naxxramas.  Any hostile action towards the rider forces the steed to run away in fear.\r\n", "hash": "67eeda0f402d742e", "src": "db2@1.60.1.70291"}
+{"id": 191481, "field": "name", "en": "Tabard of Mastery", "hash": "75551719436b8ce5", "src": "db2@1.60.1.70291"}
+{"id": 191481, "field": "description", "en": "A testament to mastery.", "hash": "71cd3b80895f319d", "src": "db2@1.60.1.70291"}
+{"id": 191550, "field": "name", "en": "Book of Deathstones: Mask of Death", "hash": "fd0608184ccf4769", "src": "db2@1.60.1.70291"}
+{"id": 191550, "field": "description", "en": "A tome detailing the art of converting deathstones into a mask of death.", "hash": "02e7a74a767b1827", "src": "db2@1.60.1.70291"}
+{"id": 191605, "field": "name", "en": "Book of Deathstones: Rune of Teleportation I", "hash": "bdc7775c542d0b46", "src": "db2@1.60.1.70291"}
+{"id": 191605, "field": "description", "en": "A tome detailing the art of converting deathstones into a rune of teleportation.", "hash": "7de8da12f2dc131c", "src": "db2@1.60.1.70291"}
+{"id": 191606, "field": "name", "en": "Book of Deathstones: Orb of Corruption", "hash": "86cf253a8cdb9c70", "src": "db2@1.60.1.70291"}
+{"id": 191606, "field": "description", "en": "A tome detailing the art of converting deathstones into an orb of corruption.", "hash": "96b3bd99bdbe7e72", "src": "db2@1.60.1.70291"}
+{"id": 191607, "field": "name", "en": "Book of Deathstones: Skeletal Artifact", "hash": "d8c9a1d670dcc92b", "src": "db2@1.60.1.70291"}
+{"id": 191607, "field": "description", "en": "A tome detailing the art of converting deathstones into a skeletal artifact.", "hash": "c84d20a006a95eff", "src": "db2@1.60.1.70291"}
+{"id": 191608, "field": "name", "en": "Book of Deathstones: Rod of Necromancy", "hash": "fc5e757827925d7d", "src": "db2@1.60.1.70291"}
+{"id": 191608, "field": "description", "en": "A tome detailing the art of converting deathstones into a rod of necromancy.", "hash": "922cb133e1bc3aeb", "src": "db2@1.60.1.70291"}
+{"id": 191609, "field": "name", "en": "Book of Deathstones: Fungal Spore Cluster", "hash": "24a020004f285723", "src": "db2@1.60.1.70291"}
+{"id": 191609, "field": "description", "en": "A tome detailing the art of converting deathstones into a fungal spore cluster.", "hash": "1e75fc37881e2e50", "src": "db2@1.60.1.70291"}
+{"id": 191610, "field": "name", "en": "Book of Deathstones: Ritual Dagger", "hash": "deaf6a605d049667", "src": "db2@1.60.1.70291"}
+{"id": 191610, "field": "description", "en": "A tome detailing the art of converting deathstones into a ritual dagger.", "hash": "a261d865ab83cc9a", "src": "db2@1.60.1.70291"}
+{"id": 191611, "field": "name", "en": "Book of Deathstones: Failsafe Phylactery", "hash": "9addaca0bdb7f446", "src": "db2@1.60.1.70291"}
+{"id": 191611, "field": "description", "en": "A tome detailing the art of converting deathstones into a failsafe phylactery.", "hash": "12e4becdec02e77b", "src": "db2@1.60.1.70291"}
+{"id": 191612, "field": "name", "en": "Book of Deathstones: Rune of Teleportation II", "hash": "1d1216426ff514fa", "src": "db2@1.60.1.70291"}
+{"id": 191612, "field": "description", "en": "A tome detailing the art of converting deathstones into a rune of teleportation.", "hash": "7de8da12f2dc131c", "src": "db2@1.60.1.70291"}
+{"id": 191613, "field": "name", "en": "Book of Deathstones: Rune of Fortune", "hash": "9aadd861cf54e9fa", "src": "db2@1.60.1.70291"}
+{"id": 191613, "field": "description", "en": "A tome detailing the art of converting deathstones into a rune of fortune.", "hash": "cae74f15aabcdedb", "src": "db2@1.60.1.70291"}
+{"id": 191614, "field": "name", "en": "Book of Deathstones: Skeletal Hitching Post", "hash": "4083beea1d83845e", "src": "db2@1.60.1.70291"}
+{"id": 191614, "field": "description", "en": "A tome detailing the art of converting deathstones into a skeletal hitching post.", "hash": "420bc5aaefd2b6b4", "src": "db2@1.60.1.70291"}
+{"id": 191656, "field": "name", "en": "Death's Essence", "hash": "bad4598f4146214f", "src": "db2@1.60.1.70291"}
+{"id": 191660, "field": "name", "en": "Thaddius' Lightning Bolts", "hash": "9e8f505764e26acf", "src": "db2@1.60.1.70291"}
+{"id": 191661, "field": "name", "en": "Monstrous Spider Fang", "hash": "0248fab0dea62493", "src": "db2@1.60.1.70291"}
+{"id": 191664, "field": "name", "en": "Book of Deathstones: Thaddius' Lightning Bolts", "hash": "bd337b109e2c4ca9", "src": "db2@1.60.1.70291"}
+{"id": 191664, "field": "description", "en": "A tome detailing the art of converting deathstones into Thaddius' lightning bolts.", "hash": "9e34e46fc9df8153", "src": "db2@1.60.1.70291"}
+{"id": 191666, "field": "name", "en": "Book of Deathstones: Monstrous Spider Fang", "hash": "bced6311bbe8f5fc", "src": "db2@1.60.1.70291"}
+{"id": 191666, "field": "description", "en": "A tome detailing the art of converting deathstones into a monstrous spider fang.", "hash": "801ac36f3da01283", "src": "db2@1.60.1.70291"}

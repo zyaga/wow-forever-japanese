@@ -127,6 +127,10 @@ local TAGS = {
   MENU_EVENT_TRACE_FILTER = { source = "blizzard_eventtrace.lua:464", keys = { "EVENTTRACE_APPLY_DEFAULT_FILTER",
     "EVENTTRACE_LOG_WHEN_HIDDEN", "EVENTTRACE_SHOW_ARGUMENTS", "EVENTTRACE_SHOW_TIMESTAMP",
     "EVENTTRACE_SHOW_SECRET_VALUES", "EVENTTRACE_LOG_CR_EVENTS" } },
+  -- the group finder listing's voice chat dropdown: one radio per voice mode (blizzard_groupfinder_vanillastyle/
+  -- blizzard_lfgvanilla_listing.lua:53–68, the labels blizzard_lfgvanilla_voicechat.lua:3–8)
+  MENU_LFG_LISTING_VOICE_CHAT = { source = "blizzard_lfgvanilla_listing.lua:54", keys = { "VOICE_CHAT_MODE_NONE",
+    "VOICE_CHAT_MODE_LEGACY", "VOICE_CHAT_MODE_DISCORD", "VOICE_CHAT_MODE_CUSTOM" } },
   -- master loot: the title, the assign submenu (class and player names are no keys), the roll request
   -- (mainline/grouplootframe.lua:202–256)
   MENU_GROUP_LOOT = { source = "grouplootframe.lua:202", keys = { "MASTER_LOOTER", "ASSIGN_LOOT", "REQUEST_ROLL" } },
@@ -233,7 +237,7 @@ local EXTRA = {
   -- queues the camelot client may show (queuestatusframe.lua:1276–1507) [in game: runtime-gated]
   MENU_QUEUE_STATUS_FRAME = { keys = { "ENTER_PET_BATTLE", "LEAVE_ARENA", "SURRENDER_ARENA", "WOW_LABS_LEAVE_QUEUE",
     "LEAVE_ZONE" } },
-  -- the world-quest filters (blizzard_worldmaptemplates.lua:277, 293, 339–341) [in game: world-quest filters]
+  -- the world-quest filters (blizzard_worldmaptemplates.lua:278, 294, 357–359) [in game: world-quest filters]
   MENU_WORLD_MAP_TRACKING = { keys = { "SHOW_WORLD_QUESTS_ON_MAP_TEXT", "SHOW_PRIMARY_PROFESSION_ON_MAP_TEXT",
     "SHOW_SECONDARY_PROFESSION_ON_MAP_TEXT", "WORLD_MAP_FILTER_LABEL_WORLD_QUESTS_SUBMENU_TYPE",
     "WORLD_QUEST_REWARD_FILTERS_TITLE" },
