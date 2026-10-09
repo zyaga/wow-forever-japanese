@@ -1,612 +1,616 @@
-{"id": "BACK", "field": "text", "en": "Back", "hash": "08f19b73f5eaeac2", "src": "db2@1.60.1.70245"}
-{"id": "BACKGROUND", "field": "text", "en": "Background", "hash": "6f309c25fa86c239", "src": "db2@1.60.1.70245"}
-{"id": "BACKPACK_AUTHENTICATOR_DIALOG_DESCRIPTION", "field": "text", "en": "Gain 4 extra backpack slots by securing your World of Warcraft account with the Battle.net Authenticator and SMS Protect.|n|nThe Battle.net Authenticator is a free, easy-to-use service that protects your account from intruders, and SMS Protect notifies you when important changes are made to your account.|n|nClick \"Activate\" to launch the account security setup website.", "hash": "4e642763b15197eb", "src": "db2@1.60.1.70245"}
-{"id": "BACKPACK_AUTHENTICATOR_FULL_INVENTORY", "field": "text", "en": "Your inventory is full. Make room in your bags to receive any missing items.", "hash": "5b57b53c2e1cd0f1", "src": "db2@1.60.1.70245"}
-{"id": "BACKPACK_AUTHENTICATOR_INCREASE_SIZE", "field": "text", "en": "Increase Backpack Size", "hash": "d85bf49e31974206", "src": "db2@1.60.1.70245"}
-{"id": "BACKPACK_TOOLTIP", "field": "text", "en": "Backpack", "hash": "ec79787fc5fadd84", "src": "db2@1.60.1.70245"}
-{"id": "BACKSLOT", "field": "text", "en": "Back", "hash": "08f19b73f5eaeac2", "src": "db2@1.60.1.70245"}
-{"id": "BAGSLOTTEXT", "field": "text", "en": "Bag Slots", "hash": "29a026bed7e229b4", "src": "db2@1.60.1.70245"}
-{"id": "BAGSLOTTEXT_COLON", "field": "text", "en": "Bag Slots:", "hash": "4cf3d3dd20d53c70", "src": "db2@1.60.1.70245"}
-{"id": "BAG_CLEANUP_BAGS", "field": "text", "en": "Clean Up Bags", "hash": "9a4a2f8ee3d1b1e1", "src": "db2@1.60.1.70245"}
-{"id": "BAG_CLEANUP_BAGS_DESCRIPTION", "field": "text", "en": "Auto-sorts your inventory to make room for new items. You can assign an item type to a specific bag by clicking the bag's top-left icon.", "hash": "baf97ed6734384e8", "src": "db2@1.60.1.70245"}
-{"id": "BAG_CLEANUP_BANK", "field": "text", "en": "Clean Up Bank", "hash": "9a4a331be3d29100", "src": "db2@1.60.1.70245"}
-{"id": "BAG_COMMAND_CONVERT_TO_COMBINED", "field": "text", "en": "Convert to combined bag", "hash": "e0750dbd9f25bd27", "src": "db2@1.60.1.70245"}
-{"id": "BAG_COMMAND_CONVERT_TO_INDIVIDUAL", "field": "text", "en": "Convert to separate bags", "hash": "62181d43aae4eec9", "src": "db2@1.60.1.70245"}
-{"id": "BAG_FILTER_ASSIGNED_TO", "field": "text", "en": "Assigned to: |cffffffff%s|r", "hash": "1361fc99cc05488c", "src": "db2@1.60.1.70245"}
-{"id": "BAG_FILTER_ASSIGN_TO", "field": "text", "en": "Assign to Bag:", "hash": "3374a85ce0bd43e8", "src": "db2@1.60.1.70245"}
-{"id": "BAG_FILTER_CLEANUP", "field": "text", "en": "Cleanup", "hash": "609a151408203a25", "src": "db2@1.60.1.70245"}
-{"id": "BAG_FILTER_CONSUMABLES", "field": "text", "en": "Consumables", "hash": "7df36e3bdf92ae0a", "src": "db2@1.60.1.70245"}
-{"id": "BAG_FILTER_EQUIPMENT", "field": "text", "en": "Equipment", "hash": "95a6b93d7e491347", "src": "db2@1.60.1.70245"}
-{"id": "BAG_FILTER_IGNORE", "field": "text", "en": "Ignore this bag", "hash": "eff91c8a6c4b5551", "src": "db2@1.60.1.70245"}
-{"id": "BAG_FILTER_JUNK", "field": "text", "en": "Junk", "hash": "0a094aa0b09134ce", "src": "db2@1.60.1.70245"}
-{"id": "BAG_FILTER_PROFESSION_GOODS", "field": "text", "en": "Profession Goods", "hash": "3585becf0450356e", "src": "db2@1.60.1.70245"}
-{"id": "BAG_FILTER_QUEST_ITEMS", "field": "text", "en": "Quest Items", "hash": "6d576f9219fb7432", "src": "db2@1.60.1.70245"}
-{"id": "BAG_FILTER_REAGENTS", "field": "text", "en": "Reagents", "hash": "f7a719e8744e51c0", "src": "db2@1.60.1.70245"}
-{"id": "BAG_FILTER_TITLE_SORTING", "field": "text", "en": "Sorting", "hash": "850ed71312ebeeaf", "src": "db2@1.60.1.70245"}
-{"id": "BAG_NAME_BAG_1", "field": "text", "en": "Bag 1", "hash": "93a371e1a5bf935b", "src": "db2@1.60.1.70245"}
-{"id": "BAG_NAME_BAG_2", "field": "text", "en": "Bag 2", "hash": "93a371e2a5bf935c", "src": "db2@1.60.1.70245"}
-{"id": "BAG_NAME_BAG_3", "field": "text", "en": "Bag 3", "hash": "93a371e3a5bf935d", "src": "db2@1.60.1.70245"}
-{"id": "BAG_NAME_BAG_4", "field": "text", "en": "Bag 4", "hash": "93a371e4a5bf935e", "src": "db2@1.60.1.70245"}
-{"id": "BANKSLOTPURCHASE", "field": "text", "en": "Purchase", "hash": "c1e4eed345fc3107", "src": "db2@1.60.1.70245"}
+{"id": "BACK", "field": "text", "en": "Back", "hash": "08f19b73f5eaeac2", "src": "db2@1.60.1.70291"}
+{"id": "BACKGROUND", "field": "text", "en": "Background", "hash": "6f309c25fa86c239", "src": "db2@1.60.1.70291"}
+{"id": "BACKPACK_AUTHENTICATOR_DIALOG_DESCRIPTION", "field": "text", "en": "Gain 4 extra backpack slots by securing your World of Warcraft account with the Battle.net Authenticator and SMS Protect.|n|nThe Battle.net Authenticator is a free, easy-to-use service that protects your account from intruders, and SMS Protect notifies you when important changes are made to your account.|n|nClick \"Activate\" to launch the account security setup website.", "hash": "4e642763b15197eb", "src": "db2@1.60.1.70291"}
+{"id": "BACKPACK_AUTHENTICATOR_FULL_INVENTORY", "field": "text", "en": "Your inventory is full. Make room in your bags to receive any missing items.", "hash": "5b57b53c2e1cd0f1", "src": "db2@1.60.1.70291"}
+{"id": "BACKPACK_AUTHENTICATOR_INCREASE_SIZE", "field": "text", "en": "Increase Backpack Size", "hash": "d85bf49e31974206", "src": "db2@1.60.1.70291"}
+{"id": "BACKPACK_TOOLTIP", "field": "text", "en": "Backpack", "hash": "ec79787fc5fadd84", "src": "db2@1.60.1.70291"}
+{"id": "BACKSLOT", "field": "text", "en": "Back", "hash": "08f19b73f5eaeac2", "src": "db2@1.60.1.70291"}
+{"id": "BAGSLOTTEXT", "field": "text", "en": "Bag Slots", "hash": "29a026bed7e229b4", "src": "db2@1.60.1.70291"}
+{"id": "BAGSLOTTEXT_COLON", "field": "text", "en": "Bag Slots:", "hash": "4cf3d3dd20d53c70", "src": "db2@1.60.1.70291"}
+{"id": "BAG_CLEANUP_BAGS", "field": "text", "en": "Clean Up Bags", "hash": "9a4a2f8ee3d1b1e1", "src": "db2@1.60.1.70291"}
+{"id": "BAG_CLEANUP_BAGS_DESCRIPTION", "field": "text", "en": "Auto-sorts your inventory to make room for new items. You can assign an item type to a specific bag by clicking the bag's top-left icon.", "hash": "baf97ed6734384e8", "src": "db2@1.60.1.70291"}
+{"id": "BAG_CLEANUP_BANK", "field": "text", "en": "Clean Up Bank", "hash": "9a4a331be3d29100", "src": "db2@1.60.1.70291"}
+{"id": "BAG_COMMAND_CONVERT_TO_COMBINED", "field": "text", "en": "Convert to combined bag", "hash": "e0750dbd9f25bd27", "src": "db2@1.60.1.70291"}
+{"id": "BAG_COMMAND_CONVERT_TO_INDIVIDUAL", "field": "text", "en": "Convert to separate bags", "hash": "62181d43aae4eec9", "src": "db2@1.60.1.70291"}
+{"id": "BAG_FILTER_ASSIGNED_TO", "field": "text", "en": "Assigned to: |cffffffff%s|r", "hash": "1361fc99cc05488c", "src": "db2@1.60.1.70291"}
+{"id": "BAG_FILTER_ASSIGN_TO", "field": "text", "en": "Assign to Bag:", "hash": "3374a85ce0bd43e8", "src": "db2@1.60.1.70291"}
+{"id": "BAG_FILTER_CLEANUP", "field": "text", "en": "Cleanup", "hash": "609a151408203a25", "src": "db2@1.60.1.70291"}
+{"id": "BAG_FILTER_CONSUMABLES", "field": "text", "en": "Consumables", "hash": "7df36e3bdf92ae0a", "src": "db2@1.60.1.70291"}
+{"id": "BAG_FILTER_EQUIPMENT", "field": "text", "en": "Equipment", "hash": "95a6b93d7e491347", "src": "db2@1.60.1.70291"}
+{"id": "BAG_FILTER_IGNORE", "field": "text", "en": "Ignore this bag", "hash": "eff91c8a6c4b5551", "src": "db2@1.60.1.70291"}
+{"id": "BAG_FILTER_JUNK", "field": "text", "en": "Junk", "hash": "0a094aa0b09134ce", "src": "db2@1.60.1.70291"}
+{"id": "BAG_FILTER_PROFESSION_GOODS", "field": "text", "en": "Profession Goods", "hash": "3585becf0450356e", "src": "db2@1.60.1.70291"}
+{"id": "BAG_FILTER_QUEST_ITEMS", "field": "text", "en": "Quest Items", "hash": "6d576f9219fb7432", "src": "db2@1.60.1.70291"}
+{"id": "BAG_FILTER_REAGENTS", "field": "text", "en": "Reagents", "hash": "f7a719e8744e51c0", "src": "db2@1.60.1.70291"}
+{"id": "BAG_FILTER_TITLE_SORTING", "field": "text", "en": "Sorting", "hash": "850ed71312ebeeaf", "src": "db2@1.60.1.70291"}
+{"id": "BAG_NAME_BAG_1", "field": "text", "en": "Bag 1", "hash": "93a371e1a5bf935b", "src": "db2@1.60.1.70291"}
+{"id": "BAG_NAME_BAG_2", "field": "text", "en": "Bag 2", "hash": "93a371e2a5bf935c", "src": "db2@1.60.1.70291"}
+{"id": "BAG_NAME_BAG_3", "field": "text", "en": "Bag 3", "hash": "93a371e3a5bf935d", "src": "db2@1.60.1.70291"}
+{"id": "BAG_NAME_BAG_4", "field": "text", "en": "Bag 4", "hash": "93a371e4a5bf935e", "src": "db2@1.60.1.70291"}
+{"id": "BANKSLOTPURCHASE", "field": "text", "en": "Purchase", "hash": "c1e4eed345fc3107", "src": "db2@1.60.1.70291"}
 {"id": "BANKSLOTPURCHASE_LABEL", "field": "text", "en": "Do you wish to purchase space for an additional bag?", "hash": "1fd39fc43933b75a", "src": "db2@1.60.1.69913"}
-{"id": "BANK_BAG", "field": "text", "en": "Bag Slot", "hash": "b2265a2ce453f053", "src": "db2@1.60.1.70245"}
-{"id": "BANK_BAG_PURCHASE", "field": "text", "en": "Purchasable Bag Slot", "hash": "f112029010922ee2", "src": "db2@1.60.1.70245"}
-{"id": "BANK_CONFIRM_CLEANUP_PROMPT", "field": "text", "en": "Are you sure you want to automatically sort your items?|nThis will affect all tabs.", "hash": "846a7d3c76a4b6e3", "src": "db2@1.60.1.70245"}
-{"id": "BANK_DEPOSIT_MONEY_BUTTON_LABEL", "field": "text", "en": "Deposit", "hash": "f7a7138c868dcfb0", "src": "db2@1.60.1.70245"}
-{"id": "BANK_LOCKED_REASON_BANK_CONVERSION_FAILED", "field": "text", "en": "Bank conversion failed. Please relog to try again.", "hash": "54bfdd9aaadcb130", "src": "db2@1.60.1.70245"}
-{"id": "BANK_LOCKED_REASON_BANK_DISABLED", "field": "text", "en": "This bank is currently unavailable.", "hash": "bcc34d713c6e500b", "src": "db2@1.60.1.70245"}
-{"id": "BANK_MONEY_DEPOSIT_PROMPT", "field": "text", "en": "Amount to deposit:", "hash": "15f6fc12ecf1a642", "src": "db2@1.60.1.70245"}
-{"id": "BANK_MONEY_WITHDRAW_PROMPT", "field": "text", "en": "Amount to withdraw:", "hash": "55d83d8f5dc47c11", "src": "db2@1.60.1.70245"}
-{"id": "BANK_TAB_ASSIGN_CONSUMABLES_CHECKBOX", "field": "text", "en": "Consumables", "hash": "7df36e3bdf92ae0a", "src": "db2@1.60.1.70245"}
-{"id": "BANK_TAB_ASSIGN_EQUIPMENT_CHECKBOX", "field": "text", "en": "Equipment", "hash": "95a6b93d7e491347", "src": "db2@1.60.1.70245"}
-{"id": "BANK_TAB_ASSIGN_EXPANSION_HEADER", "field": "text", "en": "Expansion:", "hash": "e5f02b120f0033ee", "src": "db2@1.60.1.70245"}
-{"id": "BANK_TAB_ASSIGN_JUNK_CHECKBOX", "field": "text", "en": "Junk", "hash": "0a094aa0b09134ce", "src": "db2@1.60.1.70245"}
-{"id": "BANK_TAB_ASSIGN_PROFESSION_GOODS_CHECKBOX", "field": "text", "en": "Profession Goods", "hash": "3585becf0450356e", "src": "db2@1.60.1.70245"}
-{"id": "BANK_TAB_ASSIGN_REAGENTS_CHECKBOX", "field": "text", "en": "Reagents", "hash": "f7a719e8744e51c0", "src": "db2@1.60.1.70245"}
-{"id": "BANK_TAB_CLEANUP_SETTINGS_HEADER", "field": "text", "en": "Cleanup:", "hash": "6ed8ca6b0b5da6f2", "src": "db2@1.60.1.70245"}
-{"id": "BANK_TAB_DEPOSIT_ASSIGNMENTS", "field": "text", "en": "Assigned to: |cnHIGHLIGHT_FONT_COLOR:%s|r", "hash": "b7c042110213e58c", "src": "db2@1.60.1.70245"}
-{"id": "BANK_TAB_DEPOSIT_SETTINGS_HEADER", "field": "text", "en": "Assign to tab:", "hash": "3a27ce137f0a4e2d", "src": "db2@1.60.1.70245"}
-{"id": "BANK_TAB_EXPANSION_ASSIGNMENT", "field": "text", "en": "Expansion: |cnHIGHLIGHT_FONT_COLOR:%s|r", "hash": "d6618827378738bf", "src": "db2@1.60.1.70245"}
-{"id": "BANK_TAB_EXPANSION_FILTER_ALL", "field": "text", "en": "All", "hash": "00113cf90216a76a", "src": "db2@1.60.1.70245"}
-{"id": "BANK_TAB_EXPANSION_FILTER_CURRENT", "field": "text", "en": "Current Only", "hash": "49bccb9b11cc5f2b", "src": "db2@1.60.1.70245"}
-{"id": "BANK_TAB_EXPANSION_FILTER_LEGACY", "field": "text", "en": "Legacy Only", "hash": "3bf619cbbed92606", "src": "db2@1.60.1.70245"}
-{"id": "BANK_TAB_IGNORE_IN_CLEANUP_CHECKBOX", "field": "text", "en": "Ignore this tab", "hash": "effdd327b3c018de", "src": "db2@1.60.1.70245"}
-{"id": "BANK_TAB_TOOLTIP_CLICK_INSTRUCTION", "field": "text", "en": "<Right-click for settings>", "hash": "f80bb08275d6f396", "src": "db2@1.60.1.70245"}
-{"id": "BANK_WITHDRAW_MONEY_BUTTON_LABEL", "field": "text", "en": "Withdraw", "hash": "dbe77b05844ea031", "src": "db2@1.60.1.70245"}
-{"id": "BARBERSHOP_CUSTOMIZATION_SOURCE_FORMAT", "field": "text", "en": "Source: %s", "hash": "0b66d94c8306340a", "src": "db2@1.60.1.70245"}
-{"id": "BASE_GRAPHICS_QUALITY", "field": "text", "en": "Base Game Quality", "hash": "91835310107374ae", "src": "db2@1.60.1.70245"}
-{"id": "BASE_SETTINGS_TAB", "field": "text", "en": "Base", "hash": "08f1a39df5ece8cc", "src": "db2@1.60.1.70245"}
-{"id": "BATTLEFIELDMINIMAP_OPACITY_LABEL", "field": "text", "en": "Change Opacity", "hash": "d6fc1b9185b7906e", "src": "db2@1.60.1.70245"}
-{"id": "BATTLEFIELD_BORDER_WARNING", "field": "text", "en": "You have left the Battle for %s.\n\nYour reservation will be lost in %s.", "hash": "68cf00bfb17a10b4", "src": "db2@1.60.1.70245"}
-{"id": "BATTLEFIELD_MINIMAP", "field": "text", "en": "Zone Map", "hash": "5b82fe133d9918ff", "src": "db2@1.60.1.70245"}
-{"id": "BATTLEGROUNDS", "field": "text", "en": "Battlegrounds", "hash": "ee710fa995072d7b", "src": "db2@1.60.1.70245"}
-{"id": "BATTLEGROUND_10V10", "field": "text", "en": "10v10", "hash": "62ad720902d57d08", "src": "db2@1.60.1.70245"}
-{"id": "BATTLEGROUND_COMPLETE_MESSAGE", "field": "text", "en": "The battle has ended. This battleground will close in %s", "hash": "b408689bb12d45c7", "src": "db2@1.60.1.70245"}
-{"id": "BATTLEGROUND_ENEMY_AVERAGE_RATING", "field": "text", "en": "Enemy Team's Matchmaking Value: |cffffffff%d|r", "hash": "6fc23557f03a31bd", "src": "db2@1.60.1.70245"}
-{"id": "BATTLEGROUND_IS_READY", "field": "text", "en": "Your Battleground is ready!", "hash": "41e03d016a291792", "src": "db2@1.60.1.70245"}
-{"id": "BATTLEGROUND_MATCHMAKING_VALUE", "field": "text", "en": "Starting|nMMV", "hash": "05b6f384d6c8a9b0", "src": "db2@1.60.1.70245"}
-{"id": "BATTLEGROUND_MATCHMAKING_VALUE_TOOLTIP", "field": "text", "en": "Your Matchmaking Value determines which players join your match. Players with similar Matchmaking Values are more likely to be matched together.", "hash": "0d2a78f3405a00c2", "src": "db2@1.60.1.70245"}
-{"id": "BATTLEGROUND_MATCHMAKING_VALUE_TOOLTIP_TITLE", "field": "text", "en": "Start of Match Matchmaking Value", "hash": "da330f519fb32cdc", "src": "db2@1.60.1.70245"}
-{"id": "BATTLEGROUND_NEW_RATING", "field": "text", "en": "New Rating", "hash": "66fb7c022141d5f9", "src": "db2@1.60.1.70245"}
-{"id": "BATTLEGROUND_NEW_RATING_TOOLTIP", "field": "text", "en": "Your Personal Rating at the end of this match", "hash": "e234d962b2d9aba3", "src": "db2@1.60.1.70245"}
-{"id": "BATTLEGROUND_NEW_RATING_TOOLTIP_TITLE", "field": "text", "en": "New Rating", "hash": "66fb7c022141d5f9", "src": "db2@1.60.1.70245"}
-{"id": "BATTLEGROUND_RATING", "field": "text", "en": "Current Rating", "hash": "10562fb56dd2c183", "src": "db2@1.60.1.70245"}
-{"id": "BATTLEGROUND_RATING_TOOLTIP_TITLE", "field": "text", "en": "Current Rating", "hash": "10562fb56dd2c183", "src": "db2@1.60.1.70245"}
-{"id": "BATTLEGROUND_ROLE_AVERAGE_MMV", "field": "text", "en": "Role Average Matchmaking Value: %s", "hash": "5283083b831960d3", "src": "db2@1.60.1.70245"}
-{"id": "BATTLEGROUND_YOUR_AVERAGE_RATING", "field": "text", "en": "Your Team's Matchmaking Value: |cffffffff%d|r", "hash": "1d0b69e7c1e1cd2a", "src": "db2@1.60.1.70245"}
-{"id": "BATTLEGROUND_YOUR_PERSONAL_RATING", "field": "text", "en": "Your Matchmaking Value: %s", "hash": "e9444b09869f7ba6", "src": "db2@1.60.1.70245"}
-{"id": "BATTLENET_BROADCAST", "field": "text", "en": "Broadcast", "hash": "c38755c4a1db74d1", "src": "db2@1.60.1.70245"}
-{"id": "BATTLENET_FRIEND_REQUEST_RECEIVED", "field": "text", "en": "You have received a Real ID friend request", "hash": "c88c0afee3518a6b", "src": "db2@1.60.1.70245"}
-{"id": "BATTLENET_UNAVAILABLE", "field": "text", "en": "Blizzard services are unavailable", "hash": "87e6d223605db322", "src": "db2@1.60.1.70245"}
-{"id": "BATTLENET_UNAVAILABLE_ALERT", "field": "text", "en": "Blizzard services are currently unavailable. \n\nYour Real ID and BattleTag friends will not show up. You will also not be able to send or receive new Real ID or BattleTag friend requests. A game restart may be required to re-enable functionality.", "hash": "49f9a5f0ed6e8322", "src": "db2@1.60.1.70245"}
-{"id": "BATTLETAG_AND_REAL_ID_DESCRIPTION", "field": "text", "en": "Send an invite by entering their BattleTag to chat with them in game and across all Blizzard titles. If they use Real ID, you can invite them with their email address. The recipient must accept the request to become friends.", "hash": "a106ee3f76331dd9", "src": "db2@1.60.1.70245"}
-{"id": "BATTLETAG_FRIEND_LABEL", "field": "text", "en": "Enter BattleTag", "hash": "f41a574f53390f81", "src": "db2@1.60.1.70245"}
-{"id": "BATTLE_PETS_SUMMON_TOOLTIP", "field": "text", "en": "Summons or dismisses your selected pet.", "hash": "d3a391a20341ee5e", "src": "db2@1.60.1.70245"}
-{"id": "BATTLE_PETS_TOTAL_PETS", "field": "text", "en": "Total Pets", "hash": "9bc71263fc7884df", "src": "db2@1.60.1.70245"}
-{"id": "BATTLE_PETS_TOTAL_PETS_TOOLTIP", "field": "text", "en": "Total number of pets owned.", "hash": "6ff5d72298ec9ea9", "src": "db2@1.60.1.70245"}
-{"id": "BATTLE_PETS_UNWRAP_TOOLTIP", "field": "text", "en": "Open to receive your new pet.", "hash": "e00c38f6b11cd323", "src": "db2@1.60.1.70245"}
-{"id": "BATTLE_PET_FAVORITE", "field": "text", "en": "Set Favorite", "hash": "3c52bfc8d42635fc", "src": "db2@1.60.1.70245"}
-{"id": "BATTLE_PET_NOT_TRADABLE", "field": "text", "en": "This pet is not tradeable.", "hash": "d7bba089e80e4c5e", "src": "db2@1.60.1.70245"}
-{"id": "BATTLE_PET_SUMMON", "field": "text", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70245"}
-{"id": "BATTLE_PET_UNFAVORITE", "field": "text", "en": "Remove Favorite", "hash": "575757be67e9a10f", "src": "db2@1.60.1.70245"}
-{"id": "BATTLE_TAG_REQUEST", "field": "text", "en": "Send a |cff82c5ffBattleTag|r Request to:", "hash": "09bb2e1c943a61c5", "src": "db2@1.60.1.70245"}
-{"id": "BATTLE_TAG_REQUEST_INFO", "field": "text", "en": "They will be added to your friends list when they accept your friend request", "hash": "7480efa15a1ba4bd", "src": "db2@1.60.1.70245"}
-{"id": "BEHAVIORAL_DETAILS_CLOSE_BUTTON", "field": "text", "en": "Close", "hash": "a6acc0d0b7ee0360", "src": "db2@1.60.1.70245"}
-{"id": "BEHAVIORAL_DETAILS_SOCIAL_MESSAGE", "field": "text", "en": "Your recent communication behavior is not in line with how most World of Warcraft players communicate.\n\nYou have been reported multiple times for Language, and further reports may result in you losing privileges or being suspended.\n\nPlease help create the best possible World of Warcraft community by staying positive and not resorting to hateful, discriminatory, obscene, or disruptive messages.", "hash": "a319a80ae792402d", "src": "db2@1.60.1.70245"}
-{"id": "BEHAVIORAL_DETAILS_SOCIAL_TITLE", "field": "text", "en": "Warning - Communication", "hash": "814b653c57f2ab48", "src": "db2@1.60.1.70245"}
-{"id": "BEHAVIORAL_DETAILS_TITLE_BAR", "field": "text", "en": "WoW Customer Support", "hash": "957c74a697ccc067", "src": "db2@1.60.1.70245"}
-{"id": "BEHAVIORAL_DETAILS_TY_MESSAGE", "field": "text", "en": "Thank you for your report. Players who violate our policies disrupt the World of Warcraft experience for everyone, and your reports help us identify them.\n\nWhile we can't provide specific details about account penalties, your recent reports led to actions against a player and their account.\n\nYour reports make World of Warcraft a friendlier place for everyone.", "hash": "20e0616d6a97f5ec", "src": "db2@1.60.1.70245"}
-{"id": "BEHAVIORAL_DETAILS_TY_TITLE", "field": "text", "en": "Thank you for Reporting", "hash": "9a4cce325f62b9a0", "src": "db2@1.60.1.70245"}
-{"id": "BEHAVIORAL_NOTIFICATION_OPEN", "field": "text", "en": "Click here to read the message", "hash": "bd5333a1ebeb3361", "src": "db2@1.60.1.70245"}
-{"id": "BEHAVIORAL_NOTIFICATION_TY", "field": "text", "en": "Thank You for Reporting", "hash": "5ed2f79a2a938b23", "src": "db2@1.60.1.70245"}
-{"id": "BEHAVIORAL_NOTIFICATION_WARNING", "field": "text", "en": "Behavior Warning", "hash": "074d52ca343dbab2", "src": "db2@1.60.1.70245"}
-{"id": "BENCHMARK_TAXI_MODE_OFF", "field": "text", "en": "Taxi Time Test OFF", "hash": "f8cb6c70e4fe5934", "src": "db2@1.60.1.70245"}
-{"id": "BENCHMARK_TAXI_MODE_ON", "field": "text", "en": "Taxi Time Test ON", "hash": "dcc4f906eac2946b", "src": "db2@1.60.1.70245"}
-{"id": "BENEFICIAL", "field": "text", "en": "Beneficial", "hash": "361a2a69b050a7f1", "src": "db2@1.60.1.70245"}
-{"id": "BENEFICIAL_AURA_COMBATLOG_TOOLTIP", "field": "text", "en": "Show when you gain or lose a beneficial aura.", "hash": "9671294431880b52", "src": "db2@1.60.1.70245"}
-{"id": "BG_SYSTEM_ALLIANCE", "field": "text", "en": "Battleground Alliance", "hash": "4b166b9d4244c389", "src": "db2@1.60.1.70245"}
-{"id": "BG_SYSTEM_HORDE", "field": "text", "en": "Battleground Horde", "hash": "4a77d3948049f30b", "src": "db2@1.60.1.70245"}
-{"id": "BG_SYSTEM_NEUTRAL", "field": "text", "en": "Battleground Neutral", "hash": "9a6d609540e2f978", "src": "db2@1.60.1.70245"}
-{"id": "BID", "field": "text", "en": "Bid", "hash": "00117e71060e8b80", "src": "db2@1.60.1.70245"}
-{"id": "BID_AUCTION_CONFIRMATION", "field": "text", "en": "Bid on auction for:", "hash": "35b34ccb100ec924", "src": "db2@1.60.1.70245"}
-{"id": "BILLING_NAG_DIALOG", "field": "text", "en": "Your play time expires in %d %s", "hash": "43cf5b1637753d34", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_HEADER_ACTIONBAR", "field": "text", "en": "Action Bar", "hash": "d592b495f4229833", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_HEADER_ACTIONBAR2", "field": "text", "en": "Action Bar 2", "hash": "e76c806b66b1dc3e", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_HEADER_ACTIONBAR3", "field": "text", "en": "Action Bar 3", "hash": "e76c806c66b1dc3f", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_HEADER_ACTIONBAR4", "field": "text", "en": "Action Bar 4", "hash": "e76c806d66b1dc40", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_HEADER_ACTIONBAR5", "field": "text", "en": "Action Bar 5", "hash": "e76c806e66b1dc41", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_HEADER_ACTIONBAR6", "field": "text", "en": "Action Bar 6", "hash": "e76c806f66b1dc42", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_HEADER_ACTIONBAR7", "field": "text", "en": "Action Bar 7", "hash": "e76c807066b1dc43", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_HEADER_ACTIONBAR8", "field": "text", "en": "Action Bar 8", "hash": "e76c807166b1dc44", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_HEADER_CAMERA", "field": "text", "en": "Camera", "hash": "890797ed9425a4b0", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_HEADER_CHAT", "field": "text", "en": "Chat", "hash": "0915bd509f1c7960", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_HEADER_DEBUG", "field": "text", "en": "Debug", "hash": "b746f1778565a595", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_HEADER_HOUSING_SYSTEM", "field": "text", "en": "Housing", "hash": "f5e7fd4874cb104b", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_HEADER_INTERFACE", "field": "text", "en": "Interface Panel", "hash": "7bbb53383183b0b9", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_HEADER_MISC", "field": "text", "en": "Miscellaneous", "hash": "b3c7747f3cef66e5", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_HEADER_MOVEMENT", "field": "text", "en": "Movement Keys", "hash": "81a118615405a426", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_HEADER_MULTIACTIONBAR", "field": "text", "en": "Extra Action Bars", "hash": "a5e4a74a73d78baf", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_HEADER_OTHER", "field": "text", "en": "Other", "hash": "7a61dd1d7a6004c7", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_HEADER_PING_SYSTEM", "field": "text", "en": "Ping System", "hash": "50b0b0d0561c4191", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_HEADER_RAID_TARGET", "field": "text", "en": "Target Markers", "hash": "1a41eb224ebc22fd", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_HEADER_TARGETING", "field": "text", "en": "Targeting", "hash": "1b90d93d84ea51ee", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_HEADER_VEHICLE", "field": "text", "en": "Vehicle Controls", "hash": "80f863f8a2cecf1c", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_ACTIONBUTTON1", "field": "text", "en": "Action Button 1", "hash": "afeabb8384be8ff6", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_ACTIONBUTTON10", "field": "text", "en": "Action Button 10", "hash": "051df5fbbeec6a5d", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_ACTIONBUTTON11", "field": "text", "en": "Action Button 11", "hash": "051df5fcbeec6a5e", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_ACTIONBUTTON12", "field": "text", "en": "Action Button 12", "hash": "051df5fdbeec6a5f", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_ACTIONBUTTON2", "field": "text", "en": "Action Button 2", "hash": "afeabb8484be8ff7", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_ACTIONBUTTON3", "field": "text", "en": "Action Button 3", "hash": "afeabb8584be8ff8", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_ACTIONBUTTON4", "field": "text", "en": "Action Button 4", "hash": "afeabb8684be8ff9", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_ACTIONBUTTON5", "field": "text", "en": "Action Button 5", "hash": "afeabb8784be8ffa", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_ACTIONBUTTON6", "field": "text", "en": "Action Button 6", "hash": "afeabb8884be8ffb", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_ACTIONBUTTON7", "field": "text", "en": "Action Button 7", "hash": "afeabb8984be8ffc", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_ACTIONBUTTON8", "field": "text", "en": "Action Button 8", "hash": "afeabb8a84be8ffd", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_ACTIONBUTTON9", "field": "text", "en": "Action Button 9", "hash": "afeabb8b84be8ffe", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_ACTIONPAGE1", "field": "text", "en": "Action Page 1", "hash": "2c5a8e8e3ff6c3ee", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_ACTIONPAGE2", "field": "text", "en": "Action Page 2", "hash": "2c5a8e8f3ff6c3ef", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_ACTIONPAGE3", "field": "text", "en": "Action Page 3", "hash": "2c5a8e903ff6c3f0", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_ACTIONPAGE4", "field": "text", "en": "Action Page 4", "hash": "2c5a8e913ff6c3f1", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_ACTIONPAGE5", "field": "text", "en": "Action Page 5", "hash": "2c5a8e923ff6c3f2", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_ACTIONPAGE6", "field": "text", "en": "Action Page 6", "hash": "2c5a8e933ff6c3f3", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_ALLNAMEPLATES", "field": "text", "en": "Show All Nameplates", "hash": "68637e3cfa1f101a", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_ASSISTTARGET", "field": "text", "en": "Assist Target", "hash": "2171e9d886ddf397", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_ATTACKTARGET", "field": "text", "en": "Attack Target", "hash": "e82446286aa1b6af", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_BONUSACTIONBUTTON1", "field": "text", "en": "Pet Action Button 1", "hash": "efa2e04e8d9e2001", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_BONUSACTIONBUTTON10", "field": "text", "en": "Pet Action Button 10", "hash": "a058ca7c9ddb6bd3", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_BONUSACTIONBUTTON2", "field": "text", "en": "Pet Action Button 2", "hash": "efa2e04f8d9e2002", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_BONUSACTIONBUTTON3", "field": "text", "en": "Pet Action Button 3", "hash": "efa2e0508d9e2003", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_BONUSACTIONBUTTON4", "field": "text", "en": "Pet Action Button 4", "hash": "efa2e0518d9e2004", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_BONUSACTIONBUTTON5", "field": "text", "en": "Pet Action Button 5", "hash": "efa2e0528d9e2005", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_BONUSACTIONBUTTON6", "field": "text", "en": "Pet Action Button 6", "hash": "efa2e0538d9e2006", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_BONUSACTIONBUTTON7", "field": "text", "en": "Pet Action Button 7", "hash": "efa2e0548d9e2007", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_BONUSACTIONBUTTON8", "field": "text", "en": "Pet Action Button 8", "hash": "efa2e0558d9e2008", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_BONUSACTIONBUTTON9", "field": "text", "en": "Pet Action Button 9", "hash": "efa2e0568d9e2009", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_CAMERAZOOMIN", "field": "text", "en": "Zoom In", "hash": "4045483acda2ea80", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_CAMERAZOOMOUT", "field": "text", "en": "Zoom Out", "hash": "e3758c8d8e69c3ec", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_CENTERCAMERA", "field": "text", "en": "Center Camera", "hash": "dedf4c7c34f36a0b", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_CHATBOTTOM", "field": "text", "en": "Chat Bottom", "hash": "c16a34765e150fd5", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_CHATPAGEDOWN", "field": "text", "en": "Chat Page Down", "hash": "d65087bc53c2593f", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_CHATPAGEUP", "field": "text", "en": "Chat Page Up", "hash": "3398f55ba183acaf", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_COMBATLOGBOTTOM", "field": "text", "en": "Combat Log Bottom", "hash": "8acd0ede8631b6da", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_COMBATLOGPAGEDOWN", "field": "text", "en": "Combat Log Page Down", "hash": "82877593e782a40b", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_COMBATLOGPAGEUP", "field": "text", "en": "Combat Log Page Up", "hash": "412eb8075aec6803", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_DISMOUNT", "field": "text", "en": "Dismount", "hash": "5c35300df5efe879", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_EXTRAACTIONBUTTON1", "field": "text", "en": "Extra Action Button 1", "hash": "88726a2e3ed69071", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_FLIPCAMERAYAW", "field": "text", "en": "Flip Camera", "hash": "fd2f6a64933019aa", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_FOCUSTARGET", "field": "text", "en": "Focus Target", "hash": "a35c5da1267b9163", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_FOLLOWTARGET", "field": "text", "en": "Follow Target", "hash": "583d3e8231abc727", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_FRIENDNAMEPLATES", "field": "text", "en": "Show Friendly Nameplates", "hash": "a1f17aa557331ee3", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_INTERACTMOUSEOVER", "field": "text", "en": "Interact With Mouseover", "hash": "e257078c8f6eefef", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_INTERACTTARGET", "field": "text", "en": "Interact With Target", "hash": "57b5a9c9161ba8e4", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_ITEMCOMPARISONCYCLING", "field": "text", "en": "Item Comparison Cycling", "hash": "a7ec8f0bc95fc3dc", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_JUMP", "field": "text", "en": "Jump", "hash": "0a094a22b09114f2", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MASTERVOLUMEDOWN", "field": "text", "en": "Master Volume Down", "hash": "4831aa66b384d9f0", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MASTERVOLUMEUP", "field": "text", "en": "Master Volume Up", "hash": "62033aadc0961587", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MINIMAPZOOMIN", "field": "text", "en": "Minimap Zoom In", "hash": "59582fd2ff1db041", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MINIMAPZOOMOUT", "field": "text", "en": "Minimap Zoom Out", "hash": "b8220f96e9445a46", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MOVEANDSTEER", "field": "text", "en": "Move and Steer", "hash": "440a9370759b7ff7", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MOVEBACKWARD", "field": "text", "en": "Move Backward", "hash": "1d11be77f990dcee", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MOVEFORWARD", "field": "text", "en": "Move Forward", "hash": "27e2d78ad3cbcdc0", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON1", "field": "text", "en": "Action Bar 2 Button 1", "hash": "93f8004f936a6248", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON10", "field": "text", "en": "Action Bar 2 Button 10", "hash": "b7e82a1472685183", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON11", "field": "text", "en": "Action Bar 2 Button 11", "hash": "b7e82a1572685184", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON12", "field": "text", "en": "Action Bar 2 Button 12", "hash": "b7e82a1672685185", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON2", "field": "text", "en": "Action Bar 2 Button 2", "hash": "93f80050936a6249", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON3", "field": "text", "en": "Action Bar 2 Button 3", "hash": "93f80051936a624a", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON4", "field": "text", "en": "Action Bar 2 Button 4", "hash": "93f80052936a624b", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON5", "field": "text", "en": "Action Bar 2 Button 5", "hash": "93f80053936a624c", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON6", "field": "text", "en": "Action Bar 2 Button 6", "hash": "93f80054936a624d", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON7", "field": "text", "en": "Action Bar 2 Button 7", "hash": "93f80055936a624e", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON8", "field": "text", "en": "Action Bar 2 Button 8", "hash": "93f80056936a624f", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON9", "field": "text", "en": "Action Bar 2 Button 9", "hash": "93f80057936a6250", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON1", "field": "text", "en": "Action Bar 3 Button 1", "hash": "7c2e32692fbfef86", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON10", "field": "text", "en": "Action Bar 3 Button 10", "hash": "8ba3cd2635b32408", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON11", "field": "text", "en": "Action Bar 3 Button 11", "hash": "8ba3cd2735b32409", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON12", "field": "text", "en": "Action Bar 3 Button 12", "hash": "8ba3cd2835b3240a", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON2", "field": "text", "en": "Action Bar 3 Button 2", "hash": "7c2e326a2fbfef87", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON3", "field": "text", "en": "Action Bar 3 Button 3", "hash": "7c2e326b2fbfef88", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON4", "field": "text", "en": "Action Bar 3 Button 4", "hash": "7c2e326c2fbfef89", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON5", "field": "text", "en": "Action Bar 3 Button 5", "hash": "7c2e326d2fbfef8a", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON6", "field": "text", "en": "Action Bar 3 Button 6", "hash": "7c2e326e2fbfef8b", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON7", "field": "text", "en": "Action Bar 3 Button 7", "hash": "7c2e326f2fbfef8c", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON8", "field": "text", "en": "Action Bar 3 Button 8", "hash": "7c2e32702fbfef8d", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON9", "field": "text", "en": "Action Bar 3 Button 9", "hash": "7c2e32712fbfef8e", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON1", "field": "text", "en": "Action Bar 4 Button 1", "hash": "64646483cc157cb3", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON10", "field": "text", "en": "Action Bar 4 Button 10", "hash": "5f5f7038f8fdf67c", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON11", "field": "text", "en": "Action Bar 4 Button 11", "hash": "5f5f7039f8fdf67d", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON12", "field": "text", "en": "Action Bar 4 Button 12", "hash": "5f5f703af8fdf67e", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON2", "field": "text", "en": "Action Bar 4 Button 2", "hash": "64646484cc157cb4", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON3", "field": "text", "en": "Action Bar 4 Button 3", "hash": "64646485cc157cb5", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON4", "field": "text", "en": "Action Bar 4 Button 4", "hash": "64646486cc157cb6", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON5", "field": "text", "en": "Action Bar 4 Button 5", "hash": "64646487cc157cb7", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON6", "field": "text", "en": "Action Bar 4 Button 6", "hash": "64646488cc157cb8", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON7", "field": "text", "en": "Action Bar 4 Button 7", "hash": "64646489cc157cb9", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON8", "field": "text", "en": "Action Bar 4 Button 8", "hash": "6464648acc157cba", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON9", "field": "text", "en": "Action Bar 4 Button 9", "hash": "6464648bcc157cbb", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON1", "field": "text", "en": "Action Bar 5 Button 1", "hash": "4c9a969d686b09f1", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON10", "field": "text", "en": "Action Bar 5 Button 10", "hash": "331b134abc48c901", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON11", "field": "text", "en": "Action Bar 5 Button 11", "hash": "331b134bbc48c902", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON12", "field": "text", "en": "Action Bar 5 Button 12", "hash": "331b134cbc48c903", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON2", "field": "text", "en": "Action Bar 5 Button 2", "hash": "4c9a969e686b09f2", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON3", "field": "text", "en": "Action Bar 5 Button 3", "hash": "4c9a969f686b09f3", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON4", "field": "text", "en": "Action Bar 5 Button 4", "hash": "4c9a96a0686b09f4", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON5", "field": "text", "en": "Action Bar 5 Button 5", "hash": "4c9a96a1686b09f5", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON6", "field": "text", "en": "Action Bar 5 Button 6", "hash": "4c9a96a2686b09f6", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON7", "field": "text", "en": "Action Bar 5 Button 7", "hash": "4c9a96a3686b09f7", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON8", "field": "text", "en": "Action Bar 5 Button 8", "hash": "4c9a96a4686b09f8", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON9", "field": "text", "en": "Action Bar 5 Button 9", "hash": "4c9a96a5686b09f9", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON1", "field": "text", "en": "Action Bar 6 Button 1", "hash": "34d0c8b704c0972f", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON10", "field": "text", "en": "Action Bar 6 Button 10", "hash": "06d6b65c7f939b86", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON11", "field": "text", "en": "Action Bar 6 Button 11", "hash": "06d6b65d7f939b87", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON12", "field": "text", "en": "Action Bar 6 Button 12", "hash": "06d6b65e7f939b88", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON2", "field": "text", "en": "Action Bar 6 Button 2", "hash": "34d0c8b804c09730", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON3", "field": "text", "en": "Action Bar 6 Button 3", "hash": "34d0c8b904c09731", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON4", "field": "text", "en": "Action Bar 6 Button 4", "hash": "34d0c8ba04c09732", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON5", "field": "text", "en": "Action Bar 6 Button 5", "hash": "34d0c8bb04c09733", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON6", "field": "text", "en": "Action Bar 6 Button 6", "hash": "34d0c8bc04c09734", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON7", "field": "text", "en": "Action Bar 6 Button 7", "hash": "34d0c8bd04c09735", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON8", "field": "text", "en": "Action Bar 6 Button 8", "hash": "34d0c8be04c09736", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON9", "field": "text", "en": "Action Bar 6 Button 9", "hash": "34d0c8bf04c09737", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON1", "field": "text", "en": "Action Bar 7 Button 1", "hash": "1d06fad1a116245c", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON10", "field": "text", "en": "Action Bar 7 Button 10", "hash": "da92596942de6e0b", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON11", "field": "text", "en": "Action Bar 7 Button 11", "hash": "da92596a42de6e0c", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON12", "field": "text", "en": "Action Bar 7 Button 12", "hash": "da92596b42de6e0d", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON2", "field": "text", "en": "Action Bar 7 Button 2", "hash": "1d06fad2a116245d", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON3", "field": "text", "en": "Action Bar 7 Button 3", "hash": "1d06fad3a116245e", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON4", "field": "text", "en": "Action Bar 7 Button 4", "hash": "1d06fad4a116245f", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON5", "field": "text", "en": "Action Bar 7 Button 5", "hash": "1d06fad5a1162460", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON6", "field": "text", "en": "Action Bar 7 Button 6", "hash": "1d06fad6a1162461", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON7", "field": "text", "en": "Action Bar 7 Button 7", "hash": "1d06fad7a1162462", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON8", "field": "text", "en": "Action Bar 7 Button 8", "hash": "1d06fad8a1162463", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON9", "field": "text", "en": "Action Bar 7 Button 9", "hash": "1d06fad9a1162464", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON1", "field": "text", "en": "Action Bar 8 Button 1", "hash": "053d2ceb3d6bb19a", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON10", "field": "text", "en": "Action Bar 8 Button 10", "hash": "ae4dfc7b06294090", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON11", "field": "text", "en": "Action Bar 8 Button 11", "hash": "ae4dfc7c06294091", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON12", "field": "text", "en": "Action Bar 8 Button 12", "hash": "ae4dfc7d06294092", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON2", "field": "text", "en": "Action Bar 8 Button 2", "hash": "053d2cec3d6bb19b", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON3", "field": "text", "en": "Action Bar 8 Button 3", "hash": "053d2ced3d6bb19c", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON4", "field": "text", "en": "Action Bar 8 Button 4", "hash": "053d2cee3d6bb19d", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON5", "field": "text", "en": "Action Bar 8 Button 5", "hash": "053d2cef3d6bb19e", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON6", "field": "text", "en": "Action Bar 8 Button 6", "hash": "053d2cf03d6bb19f", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON7", "field": "text", "en": "Action Bar 8 Button 7", "hash": "053d2cf13d6bb1a0", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON8", "field": "text", "en": "Action Bar 8 Button 8", "hash": "053d2cf23d6bb1a1", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON9", "field": "text", "en": "Action Bar 8 Button 9", "hash": "053d2cf33d6bb1a2", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_NAMEPLATES", "field": "text", "en": "Show Enemy Nameplates", "hash": "7aced8f0f0a8731f", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_NEXTACTIONPAGE", "field": "text", "en": "Next Action Bar", "hash": "3f259a55eafe1622", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_NEXTVIEW", "field": "text", "en": "Next View", "hash": "818436216287b19b", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_OPENALLBAGS", "field": "text", "en": "Open All Bags", "hash": "a358e2d73638c401", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_OPENCHAT", "field": "text", "en": "Open Chat", "hash": "7191aa4090faa5ca", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_OPENCHATSLASH", "field": "text", "en": "Open Chat Slash", "hash": "21aae949c3574bad", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_PETATTACK", "field": "text", "en": "Pet Attack", "hash": "6accbc77fb318c9f", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_PINGASSIST", "field": "text", "en": "Assist", "hash": "cec4b0c0fde02e30", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_PINGATTACK", "field": "text", "en": "Attack", "hash": "e072942b4a6e859a", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_PINGONMYWAY", "field": "text", "en": "On My Way", "hash": "7806045af8a6edb1", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_PINGWARNING", "field": "text", "en": "Warning", "hash": "95cfae04a34f3e22", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_PITCHDOWN", "field": "text", "en": "Pitch Down", "hash": "ba26082800d4a051", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_PITCHUP", "field": "text", "en": "Pitch Up", "hash": "407c0f87e3f396d2", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_PREVIOUSACTIONPAGE", "field": "text", "en": "Previous Action Bar", "hash": "65670a7a7792d97e", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_PREVVIEW", "field": "text", "en": "Previous View", "hash": "b594fbdbb671da38", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_RAIDTARGET1", "field": "text", "en": "Assign Star to Target", "hash": "c1cc174f0b52ff91", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_RAIDTARGET2", "field": "text", "en": "Assign Circle to Target", "hash": "b7940cee4c02f94f", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_RAIDTARGET3", "field": "text", "en": "Assign Diamond to Target", "hash": "70cd65909bd3a867", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_RAIDTARGET4", "field": "text", "en": "Assign Triangle to Target", "hash": "5f40fff59e82ae3b", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_RAIDTARGET5", "field": "text", "en": "Assign Moon to Target", "hash": "cd25bd00e918ed9b", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_RAIDTARGET6", "field": "text", "en": "Assign Square to Target", "hash": "2786eb0c8b458200", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_RAIDTARGET7", "field": "text", "en": "Assign Cross to Target", "hash": "705a95f87a0b3ab7", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_RAIDTARGET8", "field": "text", "en": "Assign Skull to Target", "hash": "fadca37085efe5e5", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_RAIDTARGETNONE", "field": "text", "en": "Clear Target Marker Icon", "hash": "0b0353979ce3a37d", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_REPLY", "field": "text", "en": "Chat Reply", "hash": "a7a55509f91cb4ef", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_REPLY2", "field": "text", "en": "Re-Whisper", "hash": "7d14998b8d1fbf06", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_RESETVIEW1", "field": "text", "en": "Reset View 1", "hash": "156fcf8b4e8a406c", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_RESETVIEW2", "field": "text", "en": "Reset View 2", "hash": "156fcf8c4e8a406d", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_RESETVIEW3", "field": "text", "en": "Reset View 3", "hash": "156fcf8d4e8a406e", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_RESETVIEW4", "field": "text", "en": "Reset View 4", "hash": "156fcf8e4e8a406f", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_RESETVIEW5", "field": "text", "en": "Reset View 5", "hash": "156fcf8f4e8a4070", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_SAVEVIEW1", "field": "text", "en": "Save View 1", "hash": "6bd0300970d92dca", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_SAVEVIEW2", "field": "text", "en": "Save View 2", "hash": "6bd0300a70d92dcb", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_SAVEVIEW3", "field": "text", "en": "Save View 3", "hash": "6bd0300b70d92dcc", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_SAVEVIEW4", "field": "text", "en": "Save View 4", "hash": "6bd0300c70d92dcd", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_SAVEVIEW5", "field": "text", "en": "Save View 5", "hash": "6bd0300d70d92dce", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_SCREENSHOT", "field": "text", "en": "Screen Shot", "hash": "04a003dbfe3845bc", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_SETVIEW1", "field": "text", "en": "Set View 1", "hash": "0235c593fa9fdb83", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_SETVIEW2", "field": "text", "en": "Set View 2", "hash": "0235c594fa9fdb84", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_SETVIEW3", "field": "text", "en": "Set View 3", "hash": "0235c595fa9fdb85", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_SETVIEW4", "field": "text", "en": "Set View 4", "hash": "0235c596fa9fdb86", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_SETVIEW5", "field": "text", "en": "Set View 5", "hash": "0235c597fa9fdb87", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_SHAPESHIFTBUTTON1", "field": "text", "en": "Special Action Button 1", "hash": "4dc33d84fdaf3c09", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_SHAPESHIFTBUTTON10", "field": "text", "en": "Special Action Button 10", "hash": "cae87b7f2f4af420", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_SHAPESHIFTBUTTON2", "field": "text", "en": "Special Action Button 2", "hash": "4dc33d85fdaf3c0a", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_SHAPESHIFTBUTTON3", "field": "text", "en": "Special Action Button 3", "hash": "4dc33d86fdaf3c0b", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_SHAPESHIFTBUTTON4", "field": "text", "en": "Special Action Button 4", "hash": "4dc33d87fdaf3c0c", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_SHAPESHIFTBUTTON5", "field": "text", "en": "Special Action Button 5", "hash": "4dc33d88fdaf3c0d", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_SHAPESHIFTBUTTON6", "field": "text", "en": "Special Action Button 6", "hash": "4dc33d89fdaf3c0e", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_SHAPESHIFTBUTTON7", "field": "text", "en": "Special Action Button 7", "hash": "4dc33d8afdaf3c0f", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_SHAPESHIFTBUTTON8", "field": "text", "en": "Special Action Button 8", "hash": "4dc33d8bfdaf3c10", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_SHAPESHIFTBUTTON9", "field": "text", "en": "Special Action Button 9", "hash": "4dc33d8cfdaf3c11", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_SITORSTAND", "field": "text", "en": "Sit/Move Down", "hash": "c7df885cc0b86b24", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_STARTATTACK", "field": "text", "en": "Start Attack", "hash": "37f9aad52111d07a", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_STARTAUTORUN", "field": "text", "en": "Start Autorun", "hash": "a22ae8b881ad8145", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_STOPATTACK", "field": "text", "en": "Stop Attacking", "hash": "9b478e848f87cfc7", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_STOPAUTORUN", "field": "text", "en": "Stop Autorun", "hash": "dcc711966e1312e9", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_STOPCASTING", "field": "text", "en": "Stop Casting", "hash": "8ef1fd8b7ae0f795", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_STRAFELEFT", "field": "text", "en": "Strafe Left", "hash": "6e8e69c8184092d2", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_STRAFERIGHT", "field": "text", "en": "Strafe Right", "hash": "fcbbdc1b959e3e7f", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETFOCUS", "field": "text", "en": "Target Focus", "hash": "a685e13a9d750c3f", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETLASTHOSTILE", "field": "text", "en": "Target Last Hostile", "hash": "1e9d48630b3e53d2", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETLASTTARGET", "field": "text", "en": "Target Last Target", "hash": "1cd7da90697a0bd5", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETMOUSEOVER", "field": "text", "en": "Target Mouseover", "hash": "aee4fd0ae66505f6", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETNEARESTENEMY", "field": "text", "en": "Target Nearest Enemy", "hash": "a9b3587a49a1abb0", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETNEARESTENEMYPLAYER", "field": "text", "en": "Target Nearest Enemy Player", "hash": "a41139d386974e0d", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETNEARESTFRIEND", "field": "text", "en": "Target Nearest Friend", "hash": "190885ec2df2cd52", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETNEARESTFRIENDPLAYER", "field": "text", "en": "Target Nearest Friendly Player", "hash": "7fa776ae4afffc18", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETPARTYMEMBER1", "field": "text", "en": "Target Party Member 1", "hash": "d4564be18e71b435", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETPARTYMEMBER2", "field": "text", "en": "Target Party Member 2", "hash": "d4564be28e71b436", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETPARTYMEMBER3", "field": "text", "en": "Target Party Member 3", "hash": "d4564be38e71b437", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETPARTYMEMBER4", "field": "text", "en": "Target Party Member 4", "hash": "d4564be48e71b438", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETPARTYPET1", "field": "text", "en": "Target Party Pet 1", "hash": "dbcd84e7f6bb01c8", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETPARTYPET2", "field": "text", "en": "Target Party Pet 2", "hash": "dbcd84e8f6bb01c9", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETPARTYPET3", "field": "text", "en": "Target Party Pet 3", "hash": "dbcd84e9f6bb01ca", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETPARTYPET4", "field": "text", "en": "Target Party Pet 4", "hash": "dbcd84eaf6bb01cb", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETPET", "field": "text", "en": "Target Pet", "hash": "114f2daa6822272f", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETPREVIOUSENEMY", "field": "text", "en": "Target Previous Enemy", "hash": "557887bc5c161c12", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETPREVIOUSENEMYPLAYER", "field": "text", "en": "Target Previous Enemy Player", "hash": "b3d18ffd2fc1c460", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETPREVIOUSFRIEND", "field": "text", "en": "Target Previous Friend", "hash": "feefb3d67fe59880", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETPREVIOUSFRIENDPLAYER", "field": "text", "en": "Target Previous Friendly Player", "hash": "54a4d1b63d9cc9f0", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETSCANENEMY", "field": "text", "en": "Target Scan Enemy (Hold)", "hash": "8400fa39681297ab", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETSELF", "field": "text", "en": "Target Self", "hash": "dbeb434550fadb33", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TARGETTALKER", "field": "text", "en": "Target Current Talker", "hash": "9a461c7df0b8d5d1", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TEXT_TO_SPEECH_STOP", "field": "text", "en": "Stop Text To Speech Playback", "hash": "14e444842b31f08e", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEACTIONBARLOCK", "field": "text", "en": "Toggle ActionBar Lock", "hash": "e819c534c1852ccb", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEAUTORUN", "field": "text", "en": "Toggle Autorun", "hash": "d9b85e643683a6fc", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEAUTOSELFCAST", "field": "text", "en": "Toggle Auto Self Cast", "hash": "2a2d2212c18deccc", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEBACKPACK", "field": "text", "en": "Toggle Backpack", "hash": "c88a1d78508f3f2e", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEBAG1", "field": "text", "en": "Toggle Bag 1", "hash": "a600868a9e690ce2", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEBAG2", "field": "text", "en": "Toggle Bag 2", "hash": "a600868b9e690ce3", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEBAG3", "field": "text", "en": "Toggle Bag 3", "hash": "a600868c9e690ce4", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEBAG4", "field": "text", "en": "Toggle Bag 4", "hash": "a600868d9e690ce5", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEBATTLEFIELDMINIMAP", "field": "text", "en": "Toggle Zone Map", "hash": "3793a30cc82d7a98", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLECHARACTER0", "field": "text", "en": "Toggle Character Pane", "hash": "352e475ec2a8b906", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLECHARACTER2", "field": "text", "en": "Toggle Reputation Pane", "hash": "cc473352a76c1d9d", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLECHARACTER4", "field": "text", "en": "Toggle PVP Pane", "hash": "b971e07105ed0fa4", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLECHATTAB", "field": "text", "en": "Toggle Chat Pane", "hash": "f18e30b862fe2d30", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLECOLLECTIONS", "field": "text", "en": "Toggle Collections", "hash": "547910e34551c243", "src": "db2@1.60.1.70245"}
+{"id": "BANK_BAG", "field": "text", "en": "Bag Slot", "hash": "b2265a2ce453f053", "src": "db2@1.60.1.70291"}
+{"id": "BANK_BAG_PURCHASE", "field": "text", "en": "Purchasable Bag Slot", "hash": "f112029010922ee2", "src": "db2@1.60.1.70291"}
+{"id": "BANK_CONFIRM_CLEANUP_PROMPT", "field": "text", "en": "Are you sure you want to automatically sort your items?|nThis will affect all tabs.", "hash": "846a7d3c76a4b6e3", "src": "db2@1.60.1.70291"}
+{"id": "BANK_DEPOSIT_MONEY_BUTTON_LABEL", "field": "text", "en": "Deposit", "hash": "f7a7138c868dcfb0", "src": "db2@1.60.1.70291"}
+{"id": "BANK_LOCKED_REASON_BANK_CONVERSION_FAILED", "field": "text", "en": "Bank conversion failed. Please relog to try again.", "hash": "54bfdd9aaadcb130", "src": "db2@1.60.1.70291"}
+{"id": "BANK_LOCKED_REASON_BANK_DISABLED", "field": "text", "en": "This bank is currently unavailable.", "hash": "bcc34d713c6e500b", "src": "db2@1.60.1.70291"}
+{"id": "BANK_MONEY_DEPOSIT_PROMPT", "field": "text", "en": "Amount to deposit:", "hash": "15f6fc12ecf1a642", "src": "db2@1.60.1.70291"}
+{"id": "BANK_MONEY_WITHDRAW_PROMPT", "field": "text", "en": "Amount to withdraw:", "hash": "55d83d8f5dc47c11", "src": "db2@1.60.1.70291"}
+{"id": "BANK_TAB_ASSIGN_CONSUMABLES_CHECKBOX", "field": "text", "en": "Consumables", "hash": "7df36e3bdf92ae0a", "src": "db2@1.60.1.70291"}
+{"id": "BANK_TAB_ASSIGN_EQUIPMENT_CHECKBOX", "field": "text", "en": "Equipment", "hash": "95a6b93d7e491347", "src": "db2@1.60.1.70291"}
+{"id": "BANK_TAB_ASSIGN_EXPANSION_HEADER", "field": "text", "en": "Expansion:", "hash": "e5f02b120f0033ee", "src": "db2@1.60.1.70291"}
+{"id": "BANK_TAB_ASSIGN_JUNK_CHECKBOX", "field": "text", "en": "Junk", "hash": "0a094aa0b09134ce", "src": "db2@1.60.1.70291"}
+{"id": "BANK_TAB_ASSIGN_PROFESSION_GOODS_CHECKBOX", "field": "text", "en": "Profession Goods", "hash": "3585becf0450356e", "src": "db2@1.60.1.70291"}
+{"id": "BANK_TAB_ASSIGN_REAGENTS_CHECKBOX", "field": "text", "en": "Reagents", "hash": "f7a719e8744e51c0", "src": "db2@1.60.1.70291"}
+{"id": "BANK_TAB_CLEANUP_SETTINGS_HEADER", "field": "text", "en": "Cleanup:", "hash": "6ed8ca6b0b5da6f2", "src": "db2@1.60.1.70291"}
+{"id": "BANK_TAB_DEPOSIT_ASSIGNMENTS", "field": "text", "en": "Assigned to: |cnHIGHLIGHT_FONT_COLOR:%s|r", "hash": "b7c042110213e58c", "src": "db2@1.60.1.70291"}
+{"id": "BANK_TAB_DEPOSIT_SETTINGS_HEADER", "field": "text", "en": "Assign to tab:", "hash": "3a27ce137f0a4e2d", "src": "db2@1.60.1.70291"}
+{"id": "BANK_TAB_EXPANSION_ASSIGNMENT", "field": "text", "en": "Expansion: |cnHIGHLIGHT_FONT_COLOR:%s|r", "hash": "d6618827378738bf", "src": "db2@1.60.1.70291"}
+{"id": "BANK_TAB_EXPANSION_FILTER_ALL", "field": "text", "en": "All", "hash": "00113cf90216a76a", "src": "db2@1.60.1.70291"}
+{"id": "BANK_TAB_EXPANSION_FILTER_CURRENT", "field": "text", "en": "Current Only", "hash": "49bccb9b11cc5f2b", "src": "db2@1.60.1.70291"}
+{"id": "BANK_TAB_EXPANSION_FILTER_LEGACY", "field": "text", "en": "Legacy Only", "hash": "3bf619cbbed92606", "src": "db2@1.60.1.70291"}
+{"id": "BANK_TAB_IGNORE_IN_CLEANUP_CHECKBOX", "field": "text", "en": "Ignore this tab", "hash": "effdd327b3c018de", "src": "db2@1.60.1.70291"}
+{"id": "BANK_TAB_TOOLTIP_CLICK_INSTRUCTION", "field": "text", "en": "<Right-click for settings>", "hash": "f80bb08275d6f396", "src": "db2@1.60.1.70291"}
+{"id": "BANK_WITHDRAW_MONEY_BUTTON_LABEL", "field": "text", "en": "Withdraw", "hash": "dbe77b05844ea031", "src": "db2@1.60.1.70291"}
+{"id": "BARBERSHOP_CUSTOMIZATION_SOURCE_FORMAT", "field": "text", "en": "Source: %s", "hash": "0b66d94c8306340a", "src": "db2@1.60.1.70291"}
+{"id": "BASE_GRAPHICS_QUALITY", "field": "text", "en": "Base Game Quality", "hash": "91835310107374ae", "src": "db2@1.60.1.70291"}
+{"id": "BASE_SETTINGS_TAB", "field": "text", "en": "Base", "hash": "08f1a39df5ece8cc", "src": "db2@1.60.1.70291"}
+{"id": "BATTLEFIELDMINIMAP_OPACITY_LABEL", "field": "text", "en": "Change Opacity", "hash": "d6fc1b9185b7906e", "src": "db2@1.60.1.70291"}
+{"id": "BATTLEFIELD_BORDER_WARNING", "field": "text", "en": "You have left the Battle for %s.\n\nYour reservation will be lost in %s.", "hash": "68cf00bfb17a10b4", "src": "db2@1.60.1.70291"}
+{"id": "BATTLEFIELD_MINIMAP", "field": "text", "en": "Zone Map", "hash": "5b82fe133d9918ff", "src": "db2@1.60.1.70291"}
+{"id": "BATTLEGROUNDS", "field": "text", "en": "Battlegrounds", "hash": "ee710fa995072d7b", "src": "db2@1.60.1.70291"}
+{"id": "BATTLEGROUND_10V10", "field": "text", "en": "10v10", "hash": "62ad720902d57d08", "src": "db2@1.60.1.70291"}
+{"id": "BATTLEGROUND_COMPLETE_MESSAGE", "field": "text", "en": "The battle has ended. This battleground will close in %s", "hash": "b408689bb12d45c7", "src": "db2@1.60.1.70291"}
+{"id": "BATTLEGROUND_ENEMY_AVERAGE_RATING", "field": "text", "en": "Enemy Team's Matchmaking Value: |cffffffff%d|r", "hash": "6fc23557f03a31bd", "src": "db2@1.60.1.70291"}
+{"id": "BATTLEGROUND_IS_READY", "field": "text", "en": "Your Battleground is ready!", "hash": "41e03d016a291792", "src": "db2@1.60.1.70291"}
+{"id": "BATTLEGROUND_MATCHMAKING_VALUE", "field": "text", "en": "Starting|nMMV", "hash": "05b6f384d6c8a9b0", "src": "db2@1.60.1.70291"}
+{"id": "BATTLEGROUND_MATCHMAKING_VALUE_TOOLTIP", "field": "text", "en": "Your Matchmaking Value determines which players join your match. Players with similar Matchmaking Values are more likely to be matched together.", "hash": "0d2a78f3405a00c2", "src": "db2@1.60.1.70291"}
+{"id": "BATTLEGROUND_MATCHMAKING_VALUE_TOOLTIP_TITLE", "field": "text", "en": "Start of Match Matchmaking Value", "hash": "da330f519fb32cdc", "src": "db2@1.60.1.70291"}
+{"id": "BATTLEGROUND_NEW_RATING", "field": "text", "en": "New Rating", "hash": "66fb7c022141d5f9", "src": "db2@1.60.1.70291"}
+{"id": "BATTLEGROUND_NEW_RATING_TOOLTIP", "field": "text", "en": "Your Personal Rating at the end of this match", "hash": "e234d962b2d9aba3", "src": "db2@1.60.1.70291"}
+{"id": "BATTLEGROUND_NEW_RATING_TOOLTIP_TITLE", "field": "text", "en": "New Rating", "hash": "66fb7c022141d5f9", "src": "db2@1.60.1.70291"}
+{"id": "BATTLEGROUND_RATING", "field": "text", "en": "Current Rating", "hash": "10562fb56dd2c183", "src": "db2@1.60.1.70291"}
+{"id": "BATTLEGROUND_RATING_TOOLTIP_TITLE", "field": "text", "en": "Current Rating", "hash": "10562fb56dd2c183", "src": "db2@1.60.1.70291"}
+{"id": "BATTLEGROUND_ROLE_AVERAGE_MMV", "field": "text", "en": "Role Average Matchmaking Value: %s", "hash": "5283083b831960d3", "src": "db2@1.60.1.70291"}
+{"id": "BATTLEGROUND_YOUR_AVERAGE_RATING", "field": "text", "en": "Your Team's Matchmaking Value: |cffffffff%d|r", "hash": "1d0b69e7c1e1cd2a", "src": "db2@1.60.1.70291"}
+{"id": "BATTLEGROUND_YOUR_PERSONAL_RATING", "field": "text", "en": "Your Matchmaking Value: %s", "hash": "e9444b09869f7ba6", "src": "db2@1.60.1.70291"}
+{"id": "BATTLENET_BROADCAST", "field": "text", "en": "Broadcast", "hash": "c38755c4a1db74d1", "src": "db2@1.60.1.70291"}
+{"id": "BATTLENET_FRIEND_REQUEST_RECEIVED", "field": "text", "en": "You have received a Real ID friend request", "hash": "c88c0afee3518a6b", "src": "db2@1.60.1.70291"}
+{"id": "BATTLENET_UNAVAILABLE", "field": "text", "en": "Blizzard services are unavailable", "hash": "87e6d223605db322", "src": "db2@1.60.1.70291"}
+{"id": "BATTLENET_UNAVAILABLE_ALERT", "field": "text", "en": "Blizzard services are currently unavailable. \n\nYour Real ID and BattleTag friends will not show up. You will also not be able to send or receive new Real ID or BattleTag friend requests. A game restart may be required to re-enable functionality.", "hash": "49f9a5f0ed6e8322", "src": "db2@1.60.1.70291"}
+{"id": "BATTLETAG_AND_REAL_ID_DESCRIPTION", "field": "text", "en": "Send an invite by entering their BattleTag to chat with them in game and across all Blizzard titles. If they use Real ID, you can invite them with their email address. The recipient must accept the request to become friends.", "hash": "a106ee3f76331dd9", "src": "db2@1.60.1.70291"}
+{"id": "BATTLETAG_FRIEND_LABEL", "field": "text", "en": "Enter BattleTag", "hash": "f41a574f53390f81", "src": "db2@1.60.1.70291"}
+{"id": "BATTLE_PETS_SUMMON_TOOLTIP", "field": "text", "en": "Summons or dismisses your selected pet.", "hash": "d3a391a20341ee5e", "src": "db2@1.60.1.70291"}
+{"id": "BATTLE_PETS_TOTAL_PETS", "field": "text", "en": "Total Pets", "hash": "9bc71263fc7884df", "src": "db2@1.60.1.70291"}
+{"id": "BATTLE_PETS_TOTAL_PETS_TOOLTIP", "field": "text", "en": "Total number of pets owned.", "hash": "6ff5d72298ec9ea9", "src": "db2@1.60.1.70291"}
+{"id": "BATTLE_PETS_UNWRAP_TOOLTIP", "field": "text", "en": "Open to receive your new pet.", "hash": "e00c38f6b11cd323", "src": "db2@1.60.1.70291"}
+{"id": "BATTLE_PET_FAVORITE", "field": "text", "en": "Set Favorite", "hash": "3c52bfc8d42635fc", "src": "db2@1.60.1.70291"}
+{"id": "BATTLE_PET_NOT_TRADABLE", "field": "text", "en": "This pet is not tradeable.", "hash": "d7bba089e80e4c5e", "src": "db2@1.60.1.70291"}
+{"id": "BATTLE_PET_SUMMON", "field": "text", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70291"}
+{"id": "BATTLE_PET_UNFAVORITE", "field": "text", "en": "Remove Favorite", "hash": "575757be67e9a10f", "src": "db2@1.60.1.70291"}
+{"id": "BATTLE_TAG_REQUEST", "field": "text", "en": "Send a |cff82c5ffBattleTag|r Request to:", "hash": "09bb2e1c943a61c5", "src": "db2@1.60.1.70291"}
+{"id": "BATTLE_TAG_REQUEST_INFO", "field": "text", "en": "They will be added to your friends list when they accept your friend request", "hash": "7480efa15a1ba4bd", "src": "db2@1.60.1.70291"}
+{"id": "BEHAVIORAL_DETAILS_CLOSE_BUTTON", "field": "text", "en": "Close", "hash": "a6acc0d0b7ee0360", "src": "db2@1.60.1.70291"}
+{"id": "BEHAVIORAL_DETAILS_SOCIAL_MESSAGE", "field": "text", "en": "Your recent communication behavior is not in line with how most World of Warcraft players communicate.\n\nYou have been reported multiple times for Language, and further reports may result in you losing privileges or being suspended.\n\nPlease help create the best possible World of Warcraft community by staying positive and not resorting to hateful, discriminatory, obscene, or disruptive messages.", "hash": "a319a80ae792402d", "src": "db2@1.60.1.70291"}
+{"id": "BEHAVIORAL_DETAILS_SOCIAL_TITLE", "field": "text", "en": "Warning - Communication", "hash": "814b653c57f2ab48", "src": "db2@1.60.1.70291"}
+{"id": "BEHAVIORAL_DETAILS_TITLE_BAR", "field": "text", "en": "WoW Customer Support", "hash": "957c74a697ccc067", "src": "db2@1.60.1.70291"}
+{"id": "BEHAVIORAL_DETAILS_TY_MESSAGE", "field": "text", "en": "Thank you for your report. Players who violate our policies disrupt the World of Warcraft experience for everyone, and your reports help us identify them.\n\nWhile we can't provide specific details about account penalties, your recent reports led to actions against a player and their account.\n\nYour reports make World of Warcraft a friendlier place for everyone.", "hash": "20e0616d6a97f5ec", "src": "db2@1.60.1.70291"}
+{"id": "BEHAVIORAL_DETAILS_TY_TITLE", "field": "text", "en": "Thank you for Reporting", "hash": "9a4cce325f62b9a0", "src": "db2@1.60.1.70291"}
+{"id": "BEHAVIORAL_NOTIFICATION_OPEN", "field": "text", "en": "Click here to read the message", "hash": "bd5333a1ebeb3361", "src": "db2@1.60.1.70291"}
+{"id": "BEHAVIORAL_NOTIFICATION_TY", "field": "text", "en": "Thank You for Reporting", "hash": "5ed2f79a2a938b23", "src": "db2@1.60.1.70291"}
+{"id": "BEHAVIORAL_NOTIFICATION_WARNING", "field": "text", "en": "Behavior Warning", "hash": "074d52ca343dbab2", "src": "db2@1.60.1.70291"}
+{"id": "BENCHMARK_TAXI_MODE_OFF", "field": "text", "en": "Taxi Time Test OFF", "hash": "f8cb6c70e4fe5934", "src": "db2@1.60.1.70291"}
+{"id": "BENCHMARK_TAXI_MODE_ON", "field": "text", "en": "Taxi Time Test ON", "hash": "dcc4f906eac2946b", "src": "db2@1.60.1.70291"}
+{"id": "BENEFICIAL", "field": "text", "en": "Beneficial", "hash": "361a2a69b050a7f1", "src": "db2@1.60.1.70291"}
+{"id": "BENEFICIAL_AURA_COMBATLOG_TOOLTIP", "field": "text", "en": "Show when you gain or lose a beneficial aura.", "hash": "9671294431880b52", "src": "db2@1.60.1.70291"}
+{"id": "BG_SYSTEM_ALLIANCE", "field": "text", "en": "Battleground Alliance", "hash": "4b166b9d4244c389", "src": "db2@1.60.1.70291"}
+{"id": "BG_SYSTEM_HORDE", "field": "text", "en": "Battleground Horde", "hash": "4a77d3948049f30b", "src": "db2@1.60.1.70291"}
+{"id": "BG_SYSTEM_NEUTRAL", "field": "text", "en": "Battleground Neutral", "hash": "9a6d609540e2f978", "src": "db2@1.60.1.70291"}
+{"id": "BID", "field": "text", "en": "Bid", "hash": "00117e71060e8b80", "src": "db2@1.60.1.70291"}
+{"id": "BID_AUCTION_CONFIRMATION", "field": "text", "en": "Bid on auction for:", "hash": "35b34ccb100ec924", "src": "db2@1.60.1.70291"}
+{"id": "BILLING_NAG_DIALOG", "field": "text", "en": "Your play time expires in %d %s", "hash": "43cf5b1637753d34", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_HEADER_ACTIONBAR", "field": "text", "en": "Action Bar", "hash": "d592b495f4229833", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_HEADER_ACTIONBAR2", "field": "text", "en": "Action Bar 2", "hash": "e76c806b66b1dc3e", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_HEADER_ACTIONBAR3", "field": "text", "en": "Action Bar 3", "hash": "e76c806c66b1dc3f", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_HEADER_ACTIONBAR4", "field": "text", "en": "Action Bar 4", "hash": "e76c806d66b1dc40", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_HEADER_ACTIONBAR5", "field": "text", "en": "Action Bar 5", "hash": "e76c806e66b1dc41", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_HEADER_ACTIONBAR6", "field": "text", "en": "Action Bar 6", "hash": "e76c806f66b1dc42", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_HEADER_ACTIONBAR7", "field": "text", "en": "Action Bar 7", "hash": "e76c807066b1dc43", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_HEADER_ACTIONBAR8", "field": "text", "en": "Action Bar 8", "hash": "e76c807166b1dc44", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_HEADER_CAMERA", "field": "text", "en": "Camera", "hash": "890797ed9425a4b0", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_HEADER_CHAT", "field": "text", "en": "Chat", "hash": "0915bd509f1c7960", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_HEADER_DEBUG", "field": "text", "en": "Debug", "hash": "b746f1778565a595", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_HEADER_HOUSING_SYSTEM", "field": "text", "en": "Housing", "hash": "f5e7fd4874cb104b", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_HEADER_INTERFACE", "field": "text", "en": "Interface Panel", "hash": "7bbb53383183b0b9", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_HEADER_MISC", "field": "text", "en": "Miscellaneous", "hash": "b3c7747f3cef66e5", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_HEADER_MOVEMENT", "field": "text", "en": "Movement Keys", "hash": "81a118615405a426", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_HEADER_MULTIACTIONBAR", "field": "text", "en": "Extra Action Bars", "hash": "a5e4a74a73d78baf", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_HEADER_OTHER", "field": "text", "en": "Other", "hash": "7a61dd1d7a6004c7", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_HEADER_PING_SYSTEM", "field": "text", "en": "Ping System", "hash": "50b0b0d0561c4191", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_HEADER_RAID_TARGET", "field": "text", "en": "Target Markers", "hash": "1a41eb224ebc22fd", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_HEADER_TARGETING", "field": "text", "en": "Targeting", "hash": "1b90d93d84ea51ee", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_HEADER_VEHICLE", "field": "text", "en": "Vehicle Controls", "hash": "80f863f8a2cecf1c", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_ACTIONBUTTON1", "field": "text", "en": "Action Button 1", "hash": "afeabb8384be8ff6", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_ACTIONBUTTON10", "field": "text", "en": "Action Button 10", "hash": "051df5fbbeec6a5d", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_ACTIONBUTTON11", "field": "text", "en": "Action Button 11", "hash": "051df5fcbeec6a5e", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_ACTIONBUTTON12", "field": "text", "en": "Action Button 12", "hash": "051df5fdbeec6a5f", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_ACTIONBUTTON2", "field": "text", "en": "Action Button 2", "hash": "afeabb8484be8ff7", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_ACTIONBUTTON3", "field": "text", "en": "Action Button 3", "hash": "afeabb8584be8ff8", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_ACTIONBUTTON4", "field": "text", "en": "Action Button 4", "hash": "afeabb8684be8ff9", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_ACTIONBUTTON5", "field": "text", "en": "Action Button 5", "hash": "afeabb8784be8ffa", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_ACTIONBUTTON6", "field": "text", "en": "Action Button 6", "hash": "afeabb8884be8ffb", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_ACTIONBUTTON7", "field": "text", "en": "Action Button 7", "hash": "afeabb8984be8ffc", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_ACTIONBUTTON8", "field": "text", "en": "Action Button 8", "hash": "afeabb8a84be8ffd", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_ACTIONBUTTON9", "field": "text", "en": "Action Button 9", "hash": "afeabb8b84be8ffe", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_ACTIONPAGE1", "field": "text", "en": "Action Page 1", "hash": "2c5a8e8e3ff6c3ee", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_ACTIONPAGE2", "field": "text", "en": "Action Page 2", "hash": "2c5a8e8f3ff6c3ef", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_ACTIONPAGE3", "field": "text", "en": "Action Page 3", "hash": "2c5a8e903ff6c3f0", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_ACTIONPAGE4", "field": "text", "en": "Action Page 4", "hash": "2c5a8e913ff6c3f1", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_ACTIONPAGE5", "field": "text", "en": "Action Page 5", "hash": "2c5a8e923ff6c3f2", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_ACTIONPAGE6", "field": "text", "en": "Action Page 6", "hash": "2c5a8e933ff6c3f3", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_ALLNAMEPLATES", "field": "text", "en": "Show All Nameplates", "hash": "68637e3cfa1f101a", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_ASSISTTARGET", "field": "text", "en": "Assist Target", "hash": "2171e9d886ddf397", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_ATTACKTARGET", "field": "text", "en": "Attack Target", "hash": "e82446286aa1b6af", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_BONUSACTIONBUTTON1", "field": "text", "en": "Pet Action Button 1", "hash": "efa2e04e8d9e2001", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_BONUSACTIONBUTTON10", "field": "text", "en": "Pet Action Button 10", "hash": "a058ca7c9ddb6bd3", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_BONUSACTIONBUTTON2", "field": "text", "en": "Pet Action Button 2", "hash": "efa2e04f8d9e2002", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_BONUSACTIONBUTTON3", "field": "text", "en": "Pet Action Button 3", "hash": "efa2e0508d9e2003", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_BONUSACTIONBUTTON4", "field": "text", "en": "Pet Action Button 4", "hash": "efa2e0518d9e2004", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_BONUSACTIONBUTTON5", "field": "text", "en": "Pet Action Button 5", "hash": "efa2e0528d9e2005", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_BONUSACTIONBUTTON6", "field": "text", "en": "Pet Action Button 6", "hash": "efa2e0538d9e2006", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_BONUSACTIONBUTTON7", "field": "text", "en": "Pet Action Button 7", "hash": "efa2e0548d9e2007", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_BONUSACTIONBUTTON8", "field": "text", "en": "Pet Action Button 8", "hash": "efa2e0558d9e2008", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_BONUSACTIONBUTTON9", "field": "text", "en": "Pet Action Button 9", "hash": "efa2e0568d9e2009", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_CAMERAZOOMIN", "field": "text", "en": "Zoom In", "hash": "4045483acda2ea80", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_CAMERAZOOMOUT", "field": "text", "en": "Zoom Out", "hash": "e3758c8d8e69c3ec", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_CENTERCAMERA", "field": "text", "en": "Center Camera", "hash": "dedf4c7c34f36a0b", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_CHATBOTTOM", "field": "text", "en": "Chat Bottom", "hash": "c16a34765e150fd5", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_CHATPAGEDOWN", "field": "text", "en": "Chat Page Down", "hash": "d65087bc53c2593f", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_CHATPAGEUP", "field": "text", "en": "Chat Page Up", "hash": "3398f55ba183acaf", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_COMBATLOGBOTTOM", "field": "text", "en": "Combat Log Bottom", "hash": "8acd0ede8631b6da", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_COMBATLOGPAGEDOWN", "field": "text", "en": "Combat Log Page Down", "hash": "82877593e782a40b", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_COMBATLOGPAGEUP", "field": "text", "en": "Combat Log Page Up", "hash": "412eb8075aec6803", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_DISMOUNT", "field": "text", "en": "Dismount", "hash": "5c35300df5efe879", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_EXTRAACTIONBUTTON1", "field": "text", "en": "Extra Action Button 1", "hash": "88726a2e3ed69071", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_FLIPCAMERAYAW", "field": "text", "en": "Flip Camera", "hash": "fd2f6a64933019aa", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_FOCUSTARGET", "field": "text", "en": "Focus Target", "hash": "a35c5da1267b9163", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_FOLLOWTARGET", "field": "text", "en": "Follow Target", "hash": "583d3e8231abc727", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_FRIENDNAMEPLATES", "field": "text", "en": "Show Friendly Nameplates", "hash": "a1f17aa557331ee3", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_INTERACTMOUSEOVER", "field": "text", "en": "Interact With Mouseover", "hash": "e257078c8f6eefef", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_INTERACTTARGET", "field": "text", "en": "Interact With Target", "hash": "57b5a9c9161ba8e4", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_ITEMCOMPARISONCYCLING", "field": "text", "en": "Item Comparison Cycling", "hash": "a7ec8f0bc95fc3dc", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_JUMP", "field": "text", "en": "Jump", "hash": "0a094a22b09114f2", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MASTERVOLUMEDOWN", "field": "text", "en": "Master Volume Down", "hash": "4831aa66b384d9f0", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MASTERVOLUMEUP", "field": "text", "en": "Master Volume Up", "hash": "62033aadc0961587", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MINIMAPZOOMIN", "field": "text", "en": "Minimap Zoom In", "hash": "59582fd2ff1db041", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MINIMAPZOOMOUT", "field": "text", "en": "Minimap Zoom Out", "hash": "b8220f96e9445a46", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MOVEANDSTEER", "field": "text", "en": "Move and Steer", "hash": "440a9370759b7ff7", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MOVEBACKWARD", "field": "text", "en": "Move Backward", "hash": "1d11be77f990dcee", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MOVEFORWARD", "field": "text", "en": "Move Forward", "hash": "27e2d78ad3cbcdc0", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON1", "field": "text", "en": "Action Bar 2 Button 1", "hash": "93f8004f936a6248", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON10", "field": "text", "en": "Action Bar 2 Button 10", "hash": "b7e82a1472685183", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON11", "field": "text", "en": "Action Bar 2 Button 11", "hash": "b7e82a1572685184", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON12", "field": "text", "en": "Action Bar 2 Button 12", "hash": "b7e82a1672685185", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON2", "field": "text", "en": "Action Bar 2 Button 2", "hash": "93f80050936a6249", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON3", "field": "text", "en": "Action Bar 2 Button 3", "hash": "93f80051936a624a", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON4", "field": "text", "en": "Action Bar 2 Button 4", "hash": "93f80052936a624b", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON5", "field": "text", "en": "Action Bar 2 Button 5", "hash": "93f80053936a624c", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON6", "field": "text", "en": "Action Bar 2 Button 6", "hash": "93f80054936a624d", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON7", "field": "text", "en": "Action Bar 2 Button 7", "hash": "93f80055936a624e", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON8", "field": "text", "en": "Action Bar 2 Button 8", "hash": "93f80056936a624f", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR1BUTTON9", "field": "text", "en": "Action Bar 2 Button 9", "hash": "93f80057936a6250", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON1", "field": "text", "en": "Action Bar 3 Button 1", "hash": "7c2e32692fbfef86", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON10", "field": "text", "en": "Action Bar 3 Button 10", "hash": "8ba3cd2635b32408", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON11", "field": "text", "en": "Action Bar 3 Button 11", "hash": "8ba3cd2735b32409", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON12", "field": "text", "en": "Action Bar 3 Button 12", "hash": "8ba3cd2835b3240a", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON2", "field": "text", "en": "Action Bar 3 Button 2", "hash": "7c2e326a2fbfef87", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON3", "field": "text", "en": "Action Bar 3 Button 3", "hash": "7c2e326b2fbfef88", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON4", "field": "text", "en": "Action Bar 3 Button 4", "hash": "7c2e326c2fbfef89", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON5", "field": "text", "en": "Action Bar 3 Button 5", "hash": "7c2e326d2fbfef8a", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON6", "field": "text", "en": "Action Bar 3 Button 6", "hash": "7c2e326e2fbfef8b", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON7", "field": "text", "en": "Action Bar 3 Button 7", "hash": "7c2e326f2fbfef8c", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON8", "field": "text", "en": "Action Bar 3 Button 8", "hash": "7c2e32702fbfef8d", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR2BUTTON9", "field": "text", "en": "Action Bar 3 Button 9", "hash": "7c2e32712fbfef8e", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON1", "field": "text", "en": "Action Bar 4 Button 1", "hash": "64646483cc157cb3", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON10", "field": "text", "en": "Action Bar 4 Button 10", "hash": "5f5f7038f8fdf67c", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON11", "field": "text", "en": "Action Bar 4 Button 11", "hash": "5f5f7039f8fdf67d", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON12", "field": "text", "en": "Action Bar 4 Button 12", "hash": "5f5f703af8fdf67e", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON2", "field": "text", "en": "Action Bar 4 Button 2", "hash": "64646484cc157cb4", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON3", "field": "text", "en": "Action Bar 4 Button 3", "hash": "64646485cc157cb5", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON4", "field": "text", "en": "Action Bar 4 Button 4", "hash": "64646486cc157cb6", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON5", "field": "text", "en": "Action Bar 4 Button 5", "hash": "64646487cc157cb7", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON6", "field": "text", "en": "Action Bar 4 Button 6", "hash": "64646488cc157cb8", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON7", "field": "text", "en": "Action Bar 4 Button 7", "hash": "64646489cc157cb9", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON8", "field": "text", "en": "Action Bar 4 Button 8", "hash": "6464648acc157cba", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR3BUTTON9", "field": "text", "en": "Action Bar 4 Button 9", "hash": "6464648bcc157cbb", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON1", "field": "text", "en": "Action Bar 5 Button 1", "hash": "4c9a969d686b09f1", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON10", "field": "text", "en": "Action Bar 5 Button 10", "hash": "331b134abc48c901", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON11", "field": "text", "en": "Action Bar 5 Button 11", "hash": "331b134bbc48c902", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON12", "field": "text", "en": "Action Bar 5 Button 12", "hash": "331b134cbc48c903", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON2", "field": "text", "en": "Action Bar 5 Button 2", "hash": "4c9a969e686b09f2", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON3", "field": "text", "en": "Action Bar 5 Button 3", "hash": "4c9a969f686b09f3", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON4", "field": "text", "en": "Action Bar 5 Button 4", "hash": "4c9a96a0686b09f4", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON5", "field": "text", "en": "Action Bar 5 Button 5", "hash": "4c9a96a1686b09f5", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON6", "field": "text", "en": "Action Bar 5 Button 6", "hash": "4c9a96a2686b09f6", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON7", "field": "text", "en": "Action Bar 5 Button 7", "hash": "4c9a96a3686b09f7", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON8", "field": "text", "en": "Action Bar 5 Button 8", "hash": "4c9a96a4686b09f8", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR4BUTTON9", "field": "text", "en": "Action Bar 5 Button 9", "hash": "4c9a96a5686b09f9", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON1", "field": "text", "en": "Action Bar 6 Button 1", "hash": "34d0c8b704c0972f", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON10", "field": "text", "en": "Action Bar 6 Button 10", "hash": "06d6b65c7f939b86", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON11", "field": "text", "en": "Action Bar 6 Button 11", "hash": "06d6b65d7f939b87", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON12", "field": "text", "en": "Action Bar 6 Button 12", "hash": "06d6b65e7f939b88", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON2", "field": "text", "en": "Action Bar 6 Button 2", "hash": "34d0c8b804c09730", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON3", "field": "text", "en": "Action Bar 6 Button 3", "hash": "34d0c8b904c09731", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON4", "field": "text", "en": "Action Bar 6 Button 4", "hash": "34d0c8ba04c09732", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON5", "field": "text", "en": "Action Bar 6 Button 5", "hash": "34d0c8bb04c09733", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON6", "field": "text", "en": "Action Bar 6 Button 6", "hash": "34d0c8bc04c09734", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON7", "field": "text", "en": "Action Bar 6 Button 7", "hash": "34d0c8bd04c09735", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON8", "field": "text", "en": "Action Bar 6 Button 8", "hash": "34d0c8be04c09736", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR5BUTTON9", "field": "text", "en": "Action Bar 6 Button 9", "hash": "34d0c8bf04c09737", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON1", "field": "text", "en": "Action Bar 7 Button 1", "hash": "1d06fad1a116245c", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON10", "field": "text", "en": "Action Bar 7 Button 10", "hash": "da92596942de6e0b", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON11", "field": "text", "en": "Action Bar 7 Button 11", "hash": "da92596a42de6e0c", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON12", "field": "text", "en": "Action Bar 7 Button 12", "hash": "da92596b42de6e0d", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON2", "field": "text", "en": "Action Bar 7 Button 2", "hash": "1d06fad2a116245d", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON3", "field": "text", "en": "Action Bar 7 Button 3", "hash": "1d06fad3a116245e", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON4", "field": "text", "en": "Action Bar 7 Button 4", "hash": "1d06fad4a116245f", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON5", "field": "text", "en": "Action Bar 7 Button 5", "hash": "1d06fad5a1162460", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON6", "field": "text", "en": "Action Bar 7 Button 6", "hash": "1d06fad6a1162461", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON7", "field": "text", "en": "Action Bar 7 Button 7", "hash": "1d06fad7a1162462", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON8", "field": "text", "en": "Action Bar 7 Button 8", "hash": "1d06fad8a1162463", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR6BUTTON9", "field": "text", "en": "Action Bar 7 Button 9", "hash": "1d06fad9a1162464", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON1", "field": "text", "en": "Action Bar 8 Button 1", "hash": "053d2ceb3d6bb19a", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON10", "field": "text", "en": "Action Bar 8 Button 10", "hash": "ae4dfc7b06294090", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON11", "field": "text", "en": "Action Bar 8 Button 11", "hash": "ae4dfc7c06294091", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON12", "field": "text", "en": "Action Bar 8 Button 12", "hash": "ae4dfc7d06294092", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON2", "field": "text", "en": "Action Bar 8 Button 2", "hash": "053d2cec3d6bb19b", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON3", "field": "text", "en": "Action Bar 8 Button 3", "hash": "053d2ced3d6bb19c", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON4", "field": "text", "en": "Action Bar 8 Button 4", "hash": "053d2cee3d6bb19d", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON5", "field": "text", "en": "Action Bar 8 Button 5", "hash": "053d2cef3d6bb19e", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON6", "field": "text", "en": "Action Bar 8 Button 6", "hash": "053d2cf03d6bb19f", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON7", "field": "text", "en": "Action Bar 8 Button 7", "hash": "053d2cf13d6bb1a0", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON8", "field": "text", "en": "Action Bar 8 Button 8", "hash": "053d2cf23d6bb1a1", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_MULTIACTIONBAR7BUTTON9", "field": "text", "en": "Action Bar 8 Button 9", "hash": "053d2cf33d6bb1a2", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_NAMEPLATES", "field": "text", "en": "Show Enemy Nameplates", "hash": "7aced8f0f0a8731f", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_NEXTACTIONPAGE", "field": "text", "en": "Next Action Bar", "hash": "3f259a55eafe1622", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_NEXTVIEW", "field": "text", "en": "Next View", "hash": "818436216287b19b", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_OPENALLBAGS", "field": "text", "en": "Open All Bags", "hash": "a358e2d73638c401", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_OPENCHAT", "field": "text", "en": "Open Chat", "hash": "7191aa4090faa5ca", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_OPENCHATSLASH", "field": "text", "en": "Open Chat Slash", "hash": "21aae949c3574bad", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_PETATTACK", "field": "text", "en": "Pet Attack", "hash": "6accbc77fb318c9f", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_PINGASSIST", "field": "text", "en": "Assist", "hash": "cec4b0c0fde02e30", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_PINGATTACK", "field": "text", "en": "Attack", "hash": "e072942b4a6e859a", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_PINGONMYWAY", "field": "text", "en": "On My Way", "hash": "7806045af8a6edb1", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_PINGWARNING", "field": "text", "en": "Warning", "hash": "95cfae04a34f3e22", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_PITCHDOWN", "field": "text", "en": "Pitch Down", "hash": "ba26082800d4a051", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_PITCHUP", "field": "text", "en": "Pitch Up", "hash": "407c0f87e3f396d2", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_PREVIOUSACTIONPAGE", "field": "text", "en": "Previous Action Bar", "hash": "65670a7a7792d97e", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_PREVVIEW", "field": "text", "en": "Previous View", "hash": "b594fbdbb671da38", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_RAIDTARGET1", "field": "text", "en": "Assign Star to Target", "hash": "c1cc174f0b52ff91", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_RAIDTARGET2", "field": "text", "en": "Assign Circle to Target", "hash": "b7940cee4c02f94f", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_RAIDTARGET3", "field": "text", "en": "Assign Diamond to Target", "hash": "70cd65909bd3a867", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_RAIDTARGET4", "field": "text", "en": "Assign Triangle to Target", "hash": "5f40fff59e82ae3b", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_RAIDTARGET5", "field": "text", "en": "Assign Moon to Target", "hash": "cd25bd00e918ed9b", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_RAIDTARGET6", "field": "text", "en": "Assign Square to Target", "hash": "2786eb0c8b458200", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_RAIDTARGET7", "field": "text", "en": "Assign Cross to Target", "hash": "705a95f87a0b3ab7", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_RAIDTARGET8", "field": "text", "en": "Assign Skull to Target", "hash": "fadca37085efe5e5", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_RAIDTARGETNONE", "field": "text", "en": "Clear Target Marker Icon", "hash": "0b0353979ce3a37d", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_REPLY", "field": "text", "en": "Chat Reply", "hash": "a7a55509f91cb4ef", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_REPLY2", "field": "text", "en": "Re-Whisper", "hash": "7d14998b8d1fbf06", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_RESETVIEW1", "field": "text", "en": "Reset View 1", "hash": "156fcf8b4e8a406c", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_RESETVIEW2", "field": "text", "en": "Reset View 2", "hash": "156fcf8c4e8a406d", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_RESETVIEW3", "field": "text", "en": "Reset View 3", "hash": "156fcf8d4e8a406e", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_RESETVIEW4", "field": "text", "en": "Reset View 4", "hash": "156fcf8e4e8a406f", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_RESETVIEW5", "field": "text", "en": "Reset View 5", "hash": "156fcf8f4e8a4070", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_SAVEVIEW1", "field": "text", "en": "Save View 1", "hash": "6bd0300970d92dca", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_SAVEVIEW2", "field": "text", "en": "Save View 2", "hash": "6bd0300a70d92dcb", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_SAVEVIEW3", "field": "text", "en": "Save View 3", "hash": "6bd0300b70d92dcc", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_SAVEVIEW4", "field": "text", "en": "Save View 4", "hash": "6bd0300c70d92dcd", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_SAVEVIEW5", "field": "text", "en": "Save View 5", "hash": "6bd0300d70d92dce", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_SCREENSHOT", "field": "text", "en": "Screen Shot", "hash": "04a003dbfe3845bc", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_SETVIEW1", "field": "text", "en": "Set View 1", "hash": "0235c593fa9fdb83", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_SETVIEW2", "field": "text", "en": "Set View 2", "hash": "0235c594fa9fdb84", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_SETVIEW3", "field": "text", "en": "Set View 3", "hash": "0235c595fa9fdb85", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_SETVIEW4", "field": "text", "en": "Set View 4", "hash": "0235c596fa9fdb86", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_SETVIEW5", "field": "text", "en": "Set View 5", "hash": "0235c597fa9fdb87", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_SHAPESHIFTBUTTON1", "field": "text", "en": "Special Action Button 1", "hash": "4dc33d84fdaf3c09", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_SHAPESHIFTBUTTON10", "field": "text", "en": "Special Action Button 10", "hash": "cae87b7f2f4af420", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_SHAPESHIFTBUTTON2", "field": "text", "en": "Special Action Button 2", "hash": "4dc33d85fdaf3c0a", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_SHAPESHIFTBUTTON3", "field": "text", "en": "Special Action Button 3", "hash": "4dc33d86fdaf3c0b", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_SHAPESHIFTBUTTON4", "field": "text", "en": "Special Action Button 4", "hash": "4dc33d87fdaf3c0c", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_SHAPESHIFTBUTTON5", "field": "text", "en": "Special Action Button 5", "hash": "4dc33d88fdaf3c0d", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_SHAPESHIFTBUTTON6", "field": "text", "en": "Special Action Button 6", "hash": "4dc33d89fdaf3c0e", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_SHAPESHIFTBUTTON7", "field": "text", "en": "Special Action Button 7", "hash": "4dc33d8afdaf3c0f", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_SHAPESHIFTBUTTON8", "field": "text", "en": "Special Action Button 8", "hash": "4dc33d8bfdaf3c10", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_SHAPESHIFTBUTTON9", "field": "text", "en": "Special Action Button 9", "hash": "4dc33d8cfdaf3c11", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_SITORSTAND", "field": "text", "en": "Sit/Move Down", "hash": "c7df885cc0b86b24", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_STARTATTACK", "field": "text", "en": "Start Attack", "hash": "37f9aad52111d07a", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_STARTAUTORUN", "field": "text", "en": "Start Autorun", "hash": "a22ae8b881ad8145", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_STOPATTACK", "field": "text", "en": "Stop Attacking", "hash": "9b478e848f87cfc7", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_STOPAUTORUN", "field": "text", "en": "Stop Autorun", "hash": "dcc711966e1312e9", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_STOPCASTING", "field": "text", "en": "Stop Casting", "hash": "8ef1fd8b7ae0f795", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_STRAFELEFT", "field": "text", "en": "Strafe Left", "hash": "6e8e69c8184092d2", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_STRAFERIGHT", "field": "text", "en": "Strafe Right", "hash": "fcbbdc1b959e3e7f", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETFOCUS", "field": "text", "en": "Target Focus", "hash": "a685e13a9d750c3f", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETLASTHOSTILE", "field": "text", "en": "Target Last Hostile", "hash": "1e9d48630b3e53d2", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETLASTTARGET", "field": "text", "en": "Target Last Target", "hash": "1cd7da90697a0bd5", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETMOUSEOVER", "field": "text", "en": "Target Mouseover", "hash": "aee4fd0ae66505f6", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETNEARESTENEMY", "field": "text", "en": "Target Nearest Enemy", "hash": "a9b3587a49a1abb0", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETNEARESTENEMYPLAYER", "field": "text", "en": "Target Nearest Enemy Player", "hash": "a41139d386974e0d", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETNEARESTFRIEND", "field": "text", "en": "Target Nearest Friend", "hash": "190885ec2df2cd52", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETNEARESTFRIENDPLAYER", "field": "text", "en": "Target Nearest Friendly Player", "hash": "7fa776ae4afffc18", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETPARTYMEMBER1", "field": "text", "en": "Target Party Member 1", "hash": "d4564be18e71b435", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETPARTYMEMBER2", "field": "text", "en": "Target Party Member 2", "hash": "d4564be28e71b436", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETPARTYMEMBER3", "field": "text", "en": "Target Party Member 3", "hash": "d4564be38e71b437", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETPARTYMEMBER4", "field": "text", "en": "Target Party Member 4", "hash": "d4564be48e71b438", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETPARTYPET1", "field": "text", "en": "Target Party Pet 1", "hash": "dbcd84e7f6bb01c8", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETPARTYPET2", "field": "text", "en": "Target Party Pet 2", "hash": "dbcd84e8f6bb01c9", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETPARTYPET3", "field": "text", "en": "Target Party Pet 3", "hash": "dbcd84e9f6bb01ca", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETPARTYPET4", "field": "text", "en": "Target Party Pet 4", "hash": "dbcd84eaf6bb01cb", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETPET", "field": "text", "en": "Target Pet", "hash": "114f2daa6822272f", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETPREVIOUSENEMY", "field": "text", "en": "Target Previous Enemy", "hash": "557887bc5c161c12", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETPREVIOUSENEMYPLAYER", "field": "text", "en": "Target Previous Enemy Player", "hash": "b3d18ffd2fc1c460", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETPREVIOUSFRIEND", "field": "text", "en": "Target Previous Friend", "hash": "feefb3d67fe59880", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETPREVIOUSFRIENDPLAYER", "field": "text", "en": "Target Previous Friendly Player", "hash": "54a4d1b63d9cc9f0", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETSCANENEMY", "field": "text", "en": "Target Scan Enemy (Hold)", "hash": "8400fa39681297ab", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETSELF", "field": "text", "en": "Target Self", "hash": "dbeb434550fadb33", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TARGETTALKER", "field": "text", "en": "Target Current Talker", "hash": "9a461c7df0b8d5d1", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TEXT_TO_SPEECH_STOP", "field": "text", "en": "Stop Text To Speech Playback", "hash": "14e444842b31f08e", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEACTIONBARLOCK", "field": "text", "en": "Toggle ActionBar Lock", "hash": "e819c534c1852ccb", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEAUTORUN", "field": "text", "en": "Toggle Autorun", "hash": "d9b85e643683a6fc", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEAUTOSELFCAST", "field": "text", "en": "Toggle Auto Self Cast", "hash": "2a2d2212c18deccc", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEBACKPACK", "field": "text", "en": "Toggle Backpack", "hash": "c88a1d78508f3f2e", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEBAG1", "field": "text", "en": "Toggle Bag 1", "hash": "a600868a9e690ce2", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEBAG2", "field": "text", "en": "Toggle Bag 2", "hash": "a600868b9e690ce3", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEBAG3", "field": "text", "en": "Toggle Bag 3", "hash": "a600868c9e690ce4", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEBAG4", "field": "text", "en": "Toggle Bag 4", "hash": "a600868d9e690ce5", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEBATTLEFIELDMINIMAP", "field": "text", "en": "Toggle Zone Map", "hash": "3793a30cc82d7a98", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLECHARACTER0", "field": "text", "en": "Toggle Character Pane", "hash": "352e475ec2a8b906", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLECHARACTER2", "field": "text", "en": "Toggle Reputation Pane", "hash": "cc473352a76c1d9d", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLECHARACTER4", "field": "text", "en": "Toggle PVP Pane", "hash": "b971e07105ed0fa4", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLECHATTAB", "field": "text", "en": "Toggle Chat Pane", "hash": "f18e30b862fe2d30", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLECOLLECTIONS", "field": "text", "en": "Toggle Collections", "hash": "547910e34551c243", "src": "db2@1.60.1.70291"}
 {"id": "BINDING_NAME_TOGGLECOLLECTIONSHEIRLOOM", "field": "text", "en": "Toggle Heirlooms Pane", "hash": "8765084761df1d6c", "src": "db2@1.60.1.70170"}
-{"id": "BINDING_NAME_TOGGLECOLLECTIONSMOUNTJOURNAL", "field": "text", "en": "Toggle Mount Journal", "hash": "a7a6f797752959ef", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLECOLLECTIONSPETJOURNAL", "field": "text", "en": "Toggle Pet Journal", "hash": "53fbaff420f8a26d", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLECOLLECTIONSTOYBOX", "field": "text", "en": "Toggle Toy Box", "hash": "ab03e675a06977de", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLECOLLECTIONSWARDROBE", "field": "text", "en": "Toggle Appearances", "hash": "6a8e834e41ffa9d4", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLECOOLDOWNVIEWERSETTINGS", "field": "text", "en": "Toggle Cooldown Settings", "hash": "3bb0dcfa9b5a514f", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLECURRENCY", "field": "text", "en": "Toggle Currency Frame", "hash": "8077e28b186116e4", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEFPS", "field": "text", "en": "Toggle Framerate Display", "hash": "65aed9cbd0fdac0e", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEFRIENDSTAB", "field": "text", "en": "Toggle Friends Pane", "hash": "1490221a4682e34b", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEGAMEMENU", "field": "text", "en": "Toggle Game Menu", "hash": "e505582474e0c1cc", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEGRAPHICSSETTINGS", "field": "text", "en": "Toggle Graphics Settings", "hash": "e34d8d838e910f6b", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEGROUPFINDER", "field": "text", "en": "Toggle Group Finder", "hash": "8ed1633b3dc30c5e", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEGUILDTAB", "field": "text", "en": "Toggle Guild & Communities", "hash": "cf5347b335863c43", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLELEGACYSYSTEM", "field": "text", "en": "Toggle Legacy Pane", "hash": "64c1b53b99f253cc", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEMINIMAP", "field": "text", "en": "Toggle Minimap", "hash": "1dc3c3eec95426aa", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEMUSIC", "field": "text", "en": "Toggle Music", "hash": "69c8b61f6e47dc28", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEPETBOOK", "field": "text", "en": "Toggle Pet Spellbook", "hash": "0ee01cf1d6c90ab7", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEPINGLISTENER", "field": "text", "en": "Ping", "hash": "0ad3f7d2d15dbfeb", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEPINGTARGET", "field": "text", "en": "Toggle Ping Target", "hash": "cf72e41d81f2fe58", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEPROFESSIONBOOK", "field": "text", "en": "Toggle Profession Book", "hash": "f0a4d2e423a8b63f", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEQUESTLOG", "field": "text", "en": "Toggle Quest Log", "hash": "48d6d7b46a979785", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLERAIDTAB", "field": "text", "en": "Toggle Raid Pane", "hash": "6d0d2012689c7c2a", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEREAGENTBAG1", "field": "text", "en": "Toggle Reagent Bag", "hash": "c40c693fc8a6babd", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLERUN", "field": "text", "en": "Toggle Run/Walk", "hash": "0bb73772c9b1fe07", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLESELFHIGHLIGHT", "field": "text", "en": "Toggle Self Highlight", "hash": "935d8265554e36c6", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLESHEATH", "field": "text", "en": "Sheath/Unsheath Weapon", "hash": "f80d20770bbc793e", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLESOCIAL", "field": "text", "en": "Toggle Social Pane", "hash": "5118553b44587783", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLESOUND", "field": "text", "en": "Toggle Sound", "hash": "d24db3055f4847b4", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLESPELLBOOK", "field": "text", "en": "Toggle Spellbook", "hash": "cda08413bf3e474c", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLETALENTS", "field": "text", "en": "Toggle Talent Pane", "hash": "b511d20dbb8006a2", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLETEXTTOSPEECH", "field": "text", "en": "Toggle Text To Speech Config", "hash": "22706608c1c0e43f", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEUI", "field": "text", "en": "Toggle User Interface", "hash": "787b81f7b513ecf3", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEWHOTAB", "field": "text", "en": "Toggle Who Pane", "hash": "27222f0c200e4e3e", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEWINDOWED", "field": "text", "en": "Toggle Windowed Mode", "hash": "9d5812fbbc556e83", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEWORLDMAP", "field": "text", "en": "Toggle World Map Pane", "hash": "7969a6a981aa8567", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEWORLDMAPSIZE", "field": "text", "en": "Toggle World Map Size", "hash": "79d2ade649a5fe1a", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLEWORLDSTATESCORES", "field": "text", "en": "Toggle Score Screen", "hash": "30d4dc029ce7dc89", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLE_VOICE_PUSH_TO_TALK", "field": "text", "en": "Voice Chat: Push to Talk", "hash": "40ecc5d2d0a28ca7", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLE_VOICE_SELF_DEAFEN", "field": "text", "en": "Voice Chat: Toggle Deafen Self", "hash": "0081bc36b4291995", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TOGGLE_VOICE_SELF_MUTE", "field": "text", "en": "Voice Chat: Toggle Mute Self", "hash": "990b345dcbb56595", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TURNLEFT", "field": "text", "en": "Turn Left", "hash": "907dcd61ae8de47e", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_TURNRIGHT", "field": "text", "en": "Turn Right", "hash": "5a3bd3c00c7818e3", "src": "db2@1.60.1.70245"}
-{"id": "BINDING_NAME_VEHICLEEXIT", "field": "text", "en": "Exit Vehicle", "hash": "9f777e0e879390d2", "src": "db2@1.60.1.70245"}
-{"id": "BIND_ENCHANT", "field": "text", "en": "Enchanting this item will bind it to you.", "hash": "6abd1b0c6b1f121d", "src": "db2@1.60.1.70245"}
-{"id": "BIND_TRADE_TIME_REMAINING", "field": "text", "en": "You may trade this item with players that were also eligible to loot this item for the next %s (including time offline).", "hash": "3f309366ed8b1e6a", "src": "db2@1.60.1.70245"}
-{"id": "BLACK_MARKET_AUCTION_CONFIRMATION", "field": "text", "en": "Are you sure you wish to bid %s on the following item?", "hash": "879efd09ade8c07e", "src": "db2@1.60.1.70245"}
-{"id": "BLACK_MARKET_HOT_ITEM_CURRENT_BID", "field": "text", "en": "Current Bid:", "hash": "47fd8738cfaaa8a4", "src": "db2@1.60.1.70245"}
-{"id": "BLACK_MARKET_HOT_ITEM_TIME_LEFT", "field": "text", "en": "Time Left: %s", "hash": "77ce6603a84fd516", "src": "db2@1.60.1.70245"}
-{"id": "BLACK_MARKET_NO_ITEMS", "field": "text", "en": "There are no items at this time.\nPlease check back later.", "hash": "e1f04a054f5c9501", "src": "db2@1.60.1.70245"}
-{"id": "BLACK_MARKET_YOUR_BID", "field": "text", "en": "Your Bid!", "hash": "6a15933d4bf494aa", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_COMBAT_LOG_MENU_BOTH", "field": "text", "en": "Show everything involving %s?", "hash": "4b1fe940f976ae6b", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_COMBAT_LOG_MENU_EVERYTHING", "field": "text", "en": "Show everything", "hash": "82c78eaafb5342d7", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_COMBAT_LOG_MENU_INCOMING", "field": "text", "en": "What happened to %s?", "hash": "00b1beb304032d17", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_COMBAT_LOG_MENU_OUTGOING", "field": "text", "en": "What did %s do?", "hash": "a66c636f808ff911", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_COMBAT_LOG_MENU_OUTGOING_ME", "field": "text", "en": "What did %s do to you?", "hash": "f13c31d002ba05eb", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_COMBAT_LOG_MENU_RESET", "field": "text", "en": "Reset", "hash": "ad0b5560f9b31ffb", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_COMBAT_LOG_MENU_SAVE", "field": "text", "en": "Save as a new filter", "hash": "dcdd5fbeba671f35", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_COMBAT_LOG_MENU_SPELL_HIDE", "field": "text", "en": "Hide messages like this one.", "hash": "b17cf9d1c2f0fbec", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_COMBAT_LOG_MENU_SPELL_LINK", "field": "text", "en": "Link %s to chat.", "hash": "f5a183e60fee07d6", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_COMMUNITIES_SERVICES_UNAVAILABLE", "field": "text", "en": "Unavailable|n|nBlizzard services are currently unavailable.", "hash": "5391978a617af885", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE", "field": "text", "en": "Shop", "hash": "0b3a9e26759d7833", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_ERROR_CLIENT_RESTRICTED", "field": "text", "en": "Feature has been disabled because you are on a restricted character.", "hash": "e5c91441ed48623b", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_ERROR_ITEM_UNAVAILABLE", "field": "text", "en": "This item is temporarily unavailable for purchase. Please try again later.", "hash": "c84de4b32638204c", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_ERROR_MESSAGE_ALREADY_OWNED", "field": "text", "en": "You already have this product!", "hash": "7772c733cd814c71", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_ERROR_MESSAGE_BATTLEPAY_DISABLED", "field": "text", "en": "An error was encountered. Please come back later.", "hash": "80251879e609f0cc", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_ERROR_MESSAGE_CONSUMABLE_TOKEN_OWNED", "field": "text", "en": "All WoW Tokens bought from the auction house must be redeemed before you can buy one from the Shop.", "hash": "7007ac99ba2061d6", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_ERROR_MESSAGE_INSUFFICIENT_BALANCE", "field": "text", "en": "You don't have enough balance for this purchase. Please visit Account Management to add balance.", "hash": "48c99b54f7980855", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_ERROR_MESSAGE_OTHER", "field": "text", "en": "There was a problem with your order. Please try again.", "hash": "7034d210cf119f99", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_ERROR_MESSAGE_PARENTAL_CONTROLS", "field": "text", "en": "Purchasing is disabled by Parental Controls. Please visit Account Management.", "hash": "26885caa4e529f3c", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_ERROR_MESSAGE_PAYMENT", "field": "text", "en": "You don't have a valid payment method. Please visit Account Management.", "hash": "efbfd0f5e21ec431", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_ERROR_MESSAGE_PURCHASE_DENIED", "field": "text", "en": "Please contact Customer Service.", "hash": "c6b7e239c23c173c", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_ERROR_TITLE_ALREADY_OWNED", "field": "text", "en": "Already Owned", "hash": "17132c090f28c734", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_ERROR_TITLE_BATTLEPAY_DISABLED", "field": "text", "en": "Shop Error", "hash": "fdff0832b8295977", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_ERROR_TITLE_CLIENT_RESTRICTED", "field": "text", "en": "Purchasing Restricted", "hash": "c34a069abe724a72", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_ERROR_TITLE_CONSUMABLE_TOKEN_OWNED", "field": "text", "en": "Shop Error", "hash": "fdff0832b8295977", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_ERROR_TITLE_INSUFFICIENT_BALANCE", "field": "text", "en": "Insufficient Balance", "hash": "2790b9d1947762b9", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_ERROR_TITLE_OTHER", "field": "text", "en": "Shop Error", "hash": "fdff0832b8295977", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_ERROR_TITLE_PARENTAL_CONTROLS", "field": "text", "en": "Purchasing Disabled", "hash": "5d4247833e607d1b", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_ERROR_TITLE_PAYMENT", "field": "text", "en": "Payment Failed", "hash": "55bf04d64fba8f00", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_ERROR_TITLE_PURCHASE_DENIED", "field": "text", "en": "Purchase Denied", "hash": "90c9b46e4d70fad2", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_ERROR_UNAVAILABLE", "field": "text", "en": "The shop is currently unavailable.", "hash": "728670953f7a16e6", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_ERROR_YOU_OWN_TOO_MANY_OF_THIS", "field": "text", "en": "You have too many of that item already.", "hash": "df061b106c682cf3", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_INTERNAL_ERROR", "field": "text", "en": "Internal Error", "hash": "6d4b2ea4349a6f4e", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_PROCESSING", "field": "text", "en": "Processing...", "hash": "3f26d499791bf0c6", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_PURCHASE_COMPLETE", "field": "text", "en": "Product Delivered!", "hash": "9517ce6e1e2bfcfa", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_PURCHASE_COMPLETE_DESC", "field": "text", "en": "Your item has been delivered.", "hash": "f3667703ef663d55", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_ALLIANCE_NOT_ELIGIBLE", "field": "text", "en": "- This transfer is not currently available for this character's faction.", "hash": "bdec4e7c099f287b", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_ALREADY_RENAME_FLAGGED", "field": "text", "en": "- Your Guild Master character has a pending name change. Complete the name change and try again.", "hash": "702683065b2c1e9f", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_ARENA_TEAM_CAPTAIN", "field": "text", "en": "- This character is an arena team captain.  Please transfer the rank to another character and try again.", "hash": "accf4c46a79f718f", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_BATTLEPAY_DELIVERY_PENDING", "field": "text", "en": "- You have another transaction in progress. Please try again later.", "hash": "68e31f63c5e29eb5", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_BOOSTED_TOO_RECENTLY", "field": "text", "en": "- This character used a Character Boost too recently. Try again later.", "hash": "66dbc7fc65b7db82", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_BOOST_THROTTLE", "field": "text", "en": "Maximum number of character boosts reached for the day. Please try again tomorrow.", "hash": "bca3dae133120c98", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_CANNOT_MOVE_GUILDMASTER", "field": "text", "en": "- Please hand over guild leadership or disband your guild and try again.", "hash": "31bc10fc5bc7f5b9", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_CHARACTER_HAS_VAS_PENDING", "field": "text", "en": "- This character already has a pending service. Please wait until that is complete to try again.", "hash": "eadcf3b11b59e4f6", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_CHARACTER_LOCKED", "field": "text", "en": "- This character is locked.", "hash": "b96ac0c24f15f2b2", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_CUSTOMIZE_ALREADY_REQUESTED", "field": "text", "en": "- This character has the requested service pending.", "hash": "8b5a90a844678a73", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_DISALLOWED_DESTINATION_ACCOUNT", "field": "text", "en": "- The destination World of Warcraft account is locked or is a trial account.", "hash": "6fe1cd20d8cc0d33", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_DISALLOWED_SOURCE_ACCOUNT", "field": "text", "en": "- The source World of Warcraft account is locked or is a trial account.", "hash": "3978dde5593dca8b", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_DUPLICATE_CHARACTER_NAME", "field": "text", "en": "- This name is already in use on this realm.", "hash": "4ce867b34229a297", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_FACTION_CHANGE_TOO_SOON", "field": "text", "en": "- This character is still on cooldown for this service.", "hash": "ce01c06954f3d8e9", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_HAS_AUCTIONS", "field": "text", "en": "- This character has active auctions. Please cancel them and try again.", "hash": "2fdb67efbd48e4e8", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_HAS_CAGED_BATTLE_PET", "field": "text", "en": "- This character has a caged battle pet. Please remove it and try again.", "hash": "9ebf22f0c0065497", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_HAS_CRAFTING_ORDERS", "field": "text", "en": "- Please clear all pending and claimed crafting orders on this character.", "hash": "d7ec6645f3bffd97", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_HAS_HEIRLOOM", "field": "text", "en": "- This character has heirlooms. Please delete them and try again.", "hash": "650d79e2d4769f4c", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_HAS_MAIL", "field": "text", "en": "- Please clear the mail from this character's mailbox.", "hash": "5d36df733a518291", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_HAS_WOW_TOKEN", "field": "text", "en": "- Please sell or redeem all WoW Tokens on this character.", "hash": "0c3fa8c3a5d50538", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_HOUSE_NEIGHBORHOOD_OWNER", "field": "text", "en": "- This service cannot be used on a character that owns a House or a Neighborhood", "hash": "4e1ba725809dcbd9", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_INELIGIBLE_MAP_ID", "field": "text", "en": "- Please complete the starting area for this character.", "hash": "37ef20052ba2e78e", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_INELIGIBLE_TARGET_REALM", "field": "text", "en": "- The selected realm is not accepting character transfers at this time.", "hash": "e55bbeae2d2297a1", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_INVALID_DESTINATION_ACCOUNT", "field": "text", "en": "- The destination World of Warcraft account is invalid.", "hash": "d69ec245e620156a", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_INVALID_SOURCE_ACCOUNT", "field": "text", "en": "- The source World of Warcraft account is invalid.", "hash": "ead25b37521e3e87", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_LAST_CUSTOMIZE_TOO_SOON", "field": "text", "en": "- This character is still on cooldown for this service.", "hash": "ce01c06954f3d8e9", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_LAST_RENAME_TOO_RECENT", "field": "text", "en": "- This character is still on cooldown for this service.", "hash": "ce01c06954f3d8e9", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_LAST_SAVE_TOO_DISTANT", "field": "text", "en": "- This character hasn't logged in recently. Log in with this character, log out, and try again.", "hash": "62f5d528b0d85113", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_LAST_SAVE_TOO_RECENT", "field": "text", "en": "- This character was logged in recently.|nPlease wait several minutes and try again.", "hash": "1d603e9b38357ee6", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_LOWER_BOX_LEVEL", "field": "text", "en": "- The destination World of Warcraft account must be upgraded to the same expansion level.", "hash": "d6f1f46effc3b1ca", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_MAX_CHARACTERS_ON_SERVER", "field": "text", "en": "- The destination realm already has the maximum number of characters allowed.", "hash": "b4a4df2819b9506c", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_NAME_NOT_AVAILABLE", "field": "text", "en": "- This name is not available on that realm.", "hash": "d839fbb73d1bfae7", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_NEEDS_ERA_CHOICE", "field": "text", "en": "- Choose an expansion on the character select screen\n- Activate Clone on the character select screen", "hash": "11ec5118467be3c7", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_NEW_LEADER_INVALID", "field": "text", "en": "- The character you chose to be the new Guild Master is not a valid choice. Please choose someone else.", "hash": "523fe7fd4d7497ee", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_NEW_PLAYER_EXPERIENCE", "field": "text", "en": "- Finish the tutorial experience first", "hash": "9b7afde002b172e5", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_NOT_GUILD_MASTER", "field": "text", "en": "- Only Guild Masters can use Guild Services. This character is not a Guild Master.", "hash": "050a4b2e89c29570", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_NOT_IN_GUILD", "field": "text", "en": "- You must be in a Guild in order to use Guild Services. This character is not in a Guild.", "hash": "cb86bfa6d34a5929", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_OTHER", "field": "text", "en": "An error was encountered. Please come back later.", "hash": "80251879e609f0cc", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_PENDING_ITEM_AUDIT", "field": "text", "en": "- This character's inventory contains items that cannot be transferred.", "hash": "e55c4e1bc5bb845d", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_PVE_TO_PVP_TRANSFER_NOT_ALLOWED", "field": "text", "en": "- You cannot transfer between a PvE server and a PvP server", "hash": "c3502fa0bfd642ea", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_RACE_CLASS_COMBO_INELIGIBLE", "field": "text", "en": "- This character does not have any eligible races to change to.", "hash": "eba8f1536846ee02", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_REALM_NOT_ELIGIBLE", "field": "text", "en": "- Please select a different realm.", "hash": "68722130fc2f65ff", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_TOO_MUCH_MONEY_FOR_LEVEL", "field": "text", "en": "- This character's gold exceeds the maximum they can transfer at their level (%s).", "hash": "e73fa60ddd2128f3", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_ERROR_UNDER_MIN_LEVEL_REQ", "field": "text", "en": "- This character does not meet the minimum level requirement.", "hash": "a335a8459caf1a01", "src": "db2@1.60.1.70245"}
-{"id": "BLIZZARD_STORE_VAS_INVALID_NAME", "field": "text", "en": "- This name is invalid; please choose another name.", "hash": "8de5ec470f0dfcc1", "src": "db2@1.60.1.70245"}
-{"id": "BLOCK", "field": "text", "en": "Block", "hash": "951f0255d90185db", "src": "db2@1.60.1.70245"}
-{"id": "BLOCKED_INVITES", "field": "text", "en": "Blocked Invite", "hash": "4a1be1d305d949b2", "src": "db2@1.60.1.70245"}
-{"id": "BLOCK_CHANCE", "field": "text", "en": "Block Chance", "hash": "805d3336b80346ab", "src": "db2@1.60.1.70245"}
-{"id": "BLOCK_CHAT_CHANNEL_INVITE", "field": "text", "en": "Block Chat Channel Invites", "hash": "6c0773a543d3406f", "src": "db2@1.60.1.70245"}
-{"id": "BLOCK_GUILD_INVITES", "field": "text", "en": "Block Guild Invites", "hash": "2e66c94504a5c1e9", "src": "db2@1.60.1.70245"}
-{"id": "BLOCK_INVITES", "field": "text", "en": "Block Invites", "hash": "40f41155d4e4032d", "src": "db2@1.60.1.70245"}
-{"id": "BLOCK_INVITES_CONFIRMATION", "field": "text", "en": "Are you sure you want to block any further invitations from %s?", "hash": "3d7732b3eb37a36f", "src": "db2@1.60.1.70245"}
-{"id": "BLOCK_NEIGHBORHOOD_INVITES", "field": "text", "en": "Block Neighborhood Invites", "hash": "2b707f8f11eefb01", "src": "db2@1.60.1.70245"}
-{"id": "BLOCK_TRADES", "field": "text", "en": "Block Trades", "hash": "e3acbabaaf9e26cf", "src": "db2@1.60.1.70245"}
-{"id": "BLOCK_TRAILER", "field": "text", "en": " (%d blocked)", "hash": "f62be922deb65c9c", "src": "db2@1.60.1.70245"}
-{"id": "BLOOM_MULT", "field": "text", "en": "Bloom Intensity ", "hash": "3ddfcd466247ecf3", "src": "db2@1.60.1.70245"}
-{"id": "BLUE_GEM", "field": "text", "en": "Blue", "hash": "08f48606219811ea", "src": "db2@1.60.1.70245"}
-{"id": "BNET_FRIEND_TOOLTIP_ZONE_AND_REALM", "field": "text", "en": "|cffffd200Zone: |r%1$s|n|cffffd200Realm: |r%2$s", "hash": "1fb33b5496d063f7", "src": "db2@1.60.1.70245"}
-{"id": "BNET_FRIEND_TOOLTIP_ZONE_AND_REGION", "field": "text", "en": "|cffffd200Zone: |r%1$s|n|cffffd200Region: |r%2$s", "hash": "21dad714fc430b08", "src": "db2@1.60.1.70245"}
-{"id": "BNET_LAST_ONLINE_TIME", "field": "text", "en": "last online %s ago", "hash": "c28734f0a4fd5b95", "src": "db2@1.60.1.70245"}
-{"id": "BN_BLOCK_FAILED_TOO_MANY_CID", "field": "text", "en": "You've already blocked the maximum number of characters through Blizzard services.", "hash": "6a3a1ddb5f7e04f0", "src": "db2@1.60.1.70245"}
-{"id": "BN_BLOCK_FAILED_TOO_MANY_RID", "field": "text", "en": "You have already blocked the maximum number of Real ID and BattleTag players.", "hash": "d98ef671b6458d22", "src": "db2@1.60.1.70245"}
-{"id": "BN_CHAT_CONNECTED", "field": "text", "en": "You are now connected to Blizzard services.", "hash": "13ce93d60c42d27f", "src": "db2@1.60.1.70245"}
-{"id": "BN_CHAT_DISCONNECTED", "field": "text", "en": "You have been disconnected from Blizzard services.", "hash": "5e31fca213833f95", "src": "db2@1.60.1.70245"}
-{"id": "BN_INLINE_TOAST_ALERT", "field": "text", "en": "Blizzard Services Alerts", "hash": "db9b79abf2f2b73a", "src": "db2@1.60.1.70245"}
-{"id": "BN_INLINE_TOAST_BROADCAST", "field": "text", "en": "|TInterface\\FriendsFrame\\UI-Toast-ToastIcons.tga:16:16:0:0:128:64:2:29:2:29|t%s: %s", "hash": "4495de4674d735c8", "src": "db2@1.60.1.70245"}
-{"id": "BN_INLINE_TOAST_BROADCAST_INFORM", "field": "text", "en": "|TInterface\\FriendsFrame\\UI-Toast-ToastIcons.tga:16:16:0:0:128:64:2:29:2:29|tYour broadcast has been sent.", "hash": "2f534e1e604db7ac", "src": "db2@1.60.1.70245"}
-{"id": "BN_INLINE_TOAST_FRIEND_PENDING", "field": "text", "en": "|TInterface\\FriendsFrame\\UI-Toast-ToastIcons.tga:16:16:0:0:128:64:98:127:2:29|tYou have %s friend |4request:requests;.", "hash": "b24129da1fc0abad", "src": "db2@1.60.1.70245"}
-{"id": "BN_TOAST_NEW_CLUB_INVITATION", "field": "text", "en": "You've been invited to|n%s", "hash": "f6af3f91f5308e08", "src": "db2@1.60.1.70245"}
-{"id": "BN_TOAST_NEW_INVITE", "field": "text", "en": "You have received a new friend request.", "hash": "03cd8ed0f8bf1963", "src": "db2@1.60.1.70245"}
-{"id": "BN_TOAST_OFFLINE", "field": "text", "en": "has gone |cffff0000offline|r.", "hash": "0d96260c19a5b2fd", "src": "db2@1.60.1.70245"}
-{"id": "BN_TOAST_ONLINE", "field": "text", "en": "has come |cff00ff00online|r.", "hash": "395ea9d8ce0f09f6", "src": "db2@1.60.1.70245"}
-{"id": "BN_TOAST_PENDING_INVITES", "field": "text", "en": "You have |cff82c5ff%d|r friend |4request:requests;.", "hash": "e51702d6a78dadab", "src": "db2@1.60.1.70245"}
-{"id": "BN_UNABLE_TO_RESOLVE_NAME", "field": "text", "en": "Unable to whisper '%s'. Blizzard services may be unavailable.", "hash": "f69dbafb0b128df8", "src": "db2@1.60.1.70245"}
-{"id": "BN_WHISPER", "field": "text", "en": "Blizzard Whispers", "hash": "69754276676633d3", "src": "db2@1.60.1.70245"}
-{"id": "BODY_1", "field": "text", "en": "Body 1", "hash": "82139cdbca2273c2", "src": "db2@1.60.1.70245"}
-{"id": "BODY_2", "field": "text", "en": "Body 2", "hash": "82139cdcca2273c3", "src": "db2@1.60.1.70245"}
-{"id": "BONUS_OBJECTIVE_BANNER", "field": "text", "en": "Bonus Objective", "hash": "ef275c185d50cff0", "src": "db2@1.60.1.70245"}
-{"id": "BONUS_OBJECTIVE_REWARD_FORMAT", "field": "text", "en": "|T%1$s:16:16|t %2$s", "hash": "050262083687fd09", "src": "db2@1.60.1.70245"}
-{"id": "BONUS_OBJECTIVE_REWARD_WITH_COUNT_FORMAT", "field": "text", "en": "|T%1$s:16:16|t %2$s %3$s", "hash": "6e9ec2325e4d0162", "src": "db2@1.60.1.70245"}
-{"id": "BONUS_OBJECTIVE_TOOLTIP_DESCRIPTION", "field": "text", "en": "Completing this bonus objective will reward you with:", "hash": "f482134f212fad59", "src": "db2@1.60.1.70245"}
-{"id": "BONUS_REPUTATION_TITLE", "field": "text", "en": "Bonus Reputation", "hash": "f69722e535c3b898", "src": "db2@1.60.1.70245"}
-{"id": "BONUS_REPUTATION_TOOLTIP", "field": "text", "en": "Your account has unlocked bonus reputation gain with this faction.", "hash": "59ed2320babdbefe", "src": "db2@1.60.1.70245"}
-{"id": "BOOSTED_CHAR_SPELL_TEMPLOCK", "field": "text", "en": "Temporarily Locked", "hash": "aa479b19f7fb4c29", "src": "db2@1.60.1.70245"}
-{"id": "BOSSES", "field": "text", "en": "Bosses:", "hash": "969b55eaa58e2295", "src": "db2@1.60.1.70245"}
-{"id": "BOSSES_KILLED", "field": "text", "en": "%d/%d Bosses Defeated", "hash": "e396fdc410a81c2e", "src": "db2@1.60.1.70245"}
-{"id": "BOSS_ALIVE", "field": "text", "en": "Available", "hash": "08bd63f84d058c1c", "src": "db2@1.60.1.70245"}
-{"id": "BOSS_BANNER_LOOT_SET", "field": "text", "en": "Set: %s", "hash": "cd26777775fe95cc", "src": "db2@1.60.1.70245"}
-{"id": "BOSS_KILL_SUBTITLE", "field": "text", "en": "has been defeated", "hash": "36d57d7fa1d3b3b1", "src": "db2@1.60.1.70245"}
-{"id": "BOSS_YOU_DEFEATED", "field": "text", "en": "You Defeated", "hash": "f9cd9a33b0724803", "src": "db2@1.60.1.70245"}
-{"id": "BREATH_LABEL", "field": "text", "en": "Breath", "hash": "b6d8efc4950e0225", "src": "db2@1.60.1.70245"}
-{"id": "BROWSER_COPY_LINK", "field": "text", "en": "Copy Link", "hash": "18ab2f6c5a4640a5", "src": "db2@1.60.1.70245"}
-{"id": "BROWSER_DELETE_COOKIES", "field": "text", "en": "Delete Cookies", "hash": "295e551d25730e53", "src": "db2@1.60.1.70245"}
-{"id": "BROWSER_DELETE_COOKIES_TOOLTIP", "field": "text", "en": "This will delete all browser cookies.", "hash": "35e70143e7a4cb58", "src": "db2@1.60.1.70245"}
-{"id": "BROWSER_EXTERNAL_LINK_DIALOG", "field": "text", "en": "You are being redirected to:\n|cffffd200%s|r\nClick \"Okay\" to open this link in your web browser.", "hash": "bb148daeb2678327", "src": "db2@1.60.1.70245"}
-{"id": "BROWSER_SETTINGS_TOOLTIP", "field": "text", "en": "Support Browser Options", "hash": "8ebb671534f4125d", "src": "db2@1.60.1.70245"}
-{"id": "BROWSE_NO_RESULTS", "field": "text", "en": "No items found", "hash": "106da9f3c35ba5bb", "src": "db2@1.60.1.70245"}
-{"id": "BROWSE_ORDERS", "field": "text", "en": "Place Order", "hash": "4ed922e8f3e6dbb9", "src": "db2@1.60.1.70245"}
-{"id": "BROWSE_SEARCH_TEXT", "field": "text", "en": "Choose search criteria and press \"Search\"", "hash": "da97ce14ee30f84c", "src": "db2@1.60.1.70245"}
-{"id": "BUFF_STACKS_OVERFLOW", "field": "text", "en": "*", "hash": "0000002a0000002a", "src": "db2@1.60.1.70245"}
-{"id": "BUILDING_DAMAGE", "field": "text", "en": "Siege", "hash": "bf1e9896d6a9fab9", "src": "db2@1.60.1.70245"}
-{"id": "BUILDING_DAMAGE_COMBATLOG_TOOLTIP", "field": "text", "en": "Show messages when a spell or ability deals damage to a destructible building.", "hash": "ef69791f1d51da86", "src": "db2@1.60.1.70245"}
-{"id": "BUILDING_HEAL", "field": "text", "en": "Repairs", "hash": "d78a02f2516918d3", "src": "db2@1.60.1.70245"}
-{"id": "BUILDING_HEAL_COMBATLOG_TOOLTIP", "field": "text", "en": "Show messages when a spell or ability repairs a building.", "hash": "9371530160508151", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_10_STRING", "field": "text", "en": "Button 10", "hash": "1ea9fce560b899f9", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_11_STRING", "field": "text", "en": "Button 11", "hash": "1ea9fce660b899fa", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_12_STRING", "field": "text", "en": "Button 12", "hash": "1ea9fce760b899fb", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_13_STRING", "field": "text", "en": "Button 13", "hash": "1ea9fce860b899fc", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_14_STRING", "field": "text", "en": "Button 14", "hash": "1ea9fce960b899fd", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_15_STRING", "field": "text", "en": "Button 15", "hash": "1ea9fcea60b899fe", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_16_STRING", "field": "text", "en": "Button 16", "hash": "1ea9fceb60b899ff", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_17_STRING", "field": "text", "en": "Button 17", "hash": "1ea9fcec60b89a00", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_18_STRING", "field": "text", "en": "Button 18", "hash": "1ea9fced60b89a01", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_19_STRING", "field": "text", "en": "Button 19", "hash": "1ea9fcee60b89a02", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_20_STRING", "field": "text", "en": "Button 20", "hash": "1ea9fd6860b8b9da", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_21_STRING", "field": "text", "en": "Button 21", "hash": "1ea9fd6960b8b9db", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_22_STRING", "field": "text", "en": "Button 22", "hash": "1ea9fd6a60b8b9dc", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_23_STRING", "field": "text", "en": "Button 23", "hash": "1ea9fd6b60b8b9dd", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_24_STRING", "field": "text", "en": "Button 24", "hash": "1ea9fd6c60b8b9de", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_25_STRING", "field": "text", "en": "Button 25", "hash": "1ea9fd6d60b8b9df", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_26_STRING", "field": "text", "en": "Button 26", "hash": "1ea9fd6e60b8b9e0", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_27_STRING", "field": "text", "en": "Button 27", "hash": "1ea9fd6f60b8b9e1", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_28_STRING", "field": "text", "en": "Button 28", "hash": "1ea9fd7060b8b9e2", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_29_STRING", "field": "text", "en": "Button 29", "hash": "1ea9fd7160b8b9e3", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_30_STRING", "field": "text", "en": "Button 30", "hash": "1ea9fdeb60b8d9bb", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_31_STRING", "field": "text", "en": "Button 31", "hash": "1ea9fdec60b8d9bc", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_4_STRING", "field": "text", "en": "Button 4", "hash": "5c14d6f15c4c6fce", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_5_STRING", "field": "text", "en": "Button 5", "hash": "5c14d6f25c4c6fcf", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_6_STRING", "field": "text", "en": "Button 6", "hash": "5c14d6f35c4c6fd0", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_7_STRING", "field": "text", "en": "Button 7", "hash": "5c14d6f45c4c6fd1", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_8_STRING", "field": "text", "en": "Button 8", "hash": "5c14d6f55c4c6fd2", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_9_STRING", "field": "text", "en": "Button 9", "hash": "5c14d6f65c4c6fd3", "src": "db2@1.60.1.70245"}
-{"id": "BUTTON_LAG_AUCTIONHOUSE", "field": "text", "en": "Auction House", "hash": "465b376b5b71c1c2", "src": "db2@1.60.1.70245"}
-{"id": "BUYBACK", "field": "text", "en": "Buyback", "hash": "e2bf2622547cda65", "src": "db2@1.60.1.70245"}
-{"id": "BUYOUT", "field": "text", "en": "Buyout", "hash": "ee33cde0758065b8", "src": "db2@1.60.1.70245"}
-{"id": "BUYOUT_AUCTION_CONFIRMATION", "field": "text", "en": "Buyout auction for:", "hash": "6b83028db4d65c54", "src": "db2@1.60.1.70245"}
-{"id": "BUY_GUILDBANK_TAB", "field": "text", "en": "Buy New Guild Bank Tab", "hash": "345c0a0ec6b771fd", "src": "db2@1.60.1.70245"}
-{"id": "BY_SOURCE", "field": "text", "en": "By Source", "hash": "46c54c7ac1986e6f", "src": "db2@1.60.1.70245"}
-{"id": "BY_SOURCE_COMBATLOG_TOOLTIP", "field": "text", "en": "Line color based on caster.", "hash": "3e1cd60377d2e13d", "src": "db2@1.60.1.70245"}
-{"id": "BY_TARGET", "field": "text", "en": "By Target", "hash": "4c1fd6880e6c9a5b", "src": "db2@1.60.1.70245"}
-{"id": "BY_TARGET_COMBATLOG_TOOLTIP", "field": "text", "en": "Line color based on target.", "hash": "2aaf0ff619a124d3", "src": "db2@1.60.1.70245"}
-{"id": "BroadcastText:316345", "field": "text", "en": "For thousands of years,", "hash": "86db738c448a868b", "src": "db2@1.60.1.70245"}
-{"id": "BroadcastText:316346", "field": "text", "en": "a band of high elven exiles has remained safe", "hash": "e55ad36f8210be07", "src": "db2@1.60.1.70245"}
-{"id": "BroadcastText:316348", "field": "text", "en": "and hidden upon their flying sanctuary of Zephras Isle.", "hash": "4372a431f4ce458c", "src": "db2@1.60.1.70245"}
-{"id": "BroadcastText:316349", "field": "text", "en": "These \"Skyborne,\" as they call themselves,", "hash": "8aa20a25f9c45682", "src": "db2@1.60.1.70245"}
-{"id": "BroadcastText:316350", "field": "text", "en": "shared a bond with air elementals", "hash": "55115e31fe018dff", "src": "db2@1.60.1.70245"}
-{"id": "BroadcastText:316351", "field": "text", "en": "who kept their island aloft in the realm of Skywall.", "hash": "ddc29d352d8b190e", "src": "db2@1.60.1.70245"}
-{"id": "BroadcastText:316352", "field": "text", "en": "But in recent years,", "hash": "f7157c638f43e0d0", "src": "db2@1.60.1.70245"}
-{"id": "BroadcastText:316353", "field": "text", "en": "the elementals vanished without a trace--", "hash": "e44574f17659e5b3", "src": "db2@1.60.1.70245"}
-{"id": "BroadcastText:316354", "field": "text", "en": "disrupting the delicate magic that kept them safe in their haven amongst the clouds.", "hash": "68b826077b80c5a2", "src": "db2@1.60.1.70245"}
-{"id": "BroadcastText:316355", "field": "text", "en": "Now, a new generation of Skyborne elves face a time of unprecedented change,", "hash": "5277c2250e18819b", "src": "db2@1.60.1.70245"}
-{"id": "BroadcastText:316356", "field": "text", "en": "and must seek new allies and sources of magic--", "hash": "72650d43a1ce07d9", "src": "db2@1.60.1.70245"}
-{"id": "BroadcastText:316358", "field": "text", "en": "to protect their hidden home and secure their future...", "hash": "a97fa88eebf1e4c0", "src": "db2@1.60.1.70245"}
+{"id": "BINDING_NAME_TOGGLECOLLECTIONSMOUNTJOURNAL", "field": "text", "en": "Toggle Mount Journal", "hash": "a7a6f797752959ef", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLECOLLECTIONSPETJOURNAL", "field": "text", "en": "Toggle Pet Journal", "hash": "53fbaff420f8a26d", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLECOLLECTIONSTOYBOX", "field": "text", "en": "Toggle Toy Box", "hash": "ab03e675a06977de", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLECOLLECTIONSWARDROBE", "field": "text", "en": "Toggle Appearances", "hash": "6a8e834e41ffa9d4", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLECOOLDOWNVIEWERSETTINGS", "field": "text", "en": "Toggle Cooldown Settings", "hash": "3bb0dcfa9b5a514f", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLECURRENCY", "field": "text", "en": "Toggle Currency Frame", "hash": "8077e28b186116e4", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEFPS", "field": "text", "en": "Toggle Framerate Display", "hash": "65aed9cbd0fdac0e", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEFRIENDSTAB", "field": "text", "en": "Toggle Friends Pane", "hash": "1490221a4682e34b", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEGAMEMENU", "field": "text", "en": "Toggle Game Menu", "hash": "e505582474e0c1cc", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEGRAPHICSSETTINGS", "field": "text", "en": "Toggle Graphics Settings", "hash": "e34d8d838e910f6b", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEGROUPFINDER", "field": "text", "en": "Toggle Group Finder", "hash": "8ed1633b3dc30c5e", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEGUILDTAB", "field": "text", "en": "Toggle Guild & Communities", "hash": "cf5347b335863c43", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLELEGACYSYSTEM", "field": "text", "en": "Toggle Legacy Pane", "hash": "64c1b53b99f253cc", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEMINIMAP", "field": "text", "en": "Toggle Minimap", "hash": "1dc3c3eec95426aa", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEMUSIC", "field": "text", "en": "Toggle Music", "hash": "69c8b61f6e47dc28", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEPETBOOK", "field": "text", "en": "Toggle Pet Spellbook", "hash": "0ee01cf1d6c90ab7", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEPINGLISTENER", "field": "text", "en": "Ping", "hash": "0ad3f7d2d15dbfeb", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEPINGTARGET", "field": "text", "en": "Toggle Ping Target", "hash": "cf72e41d81f2fe58", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEPROFESSIONBOOK", "field": "text", "en": "Toggle Profession Book", "hash": "f0a4d2e423a8b63f", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEQUESTLOG", "field": "text", "en": "Toggle Quest Log", "hash": "48d6d7b46a979785", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLERAIDTAB", "field": "text", "en": "Toggle Raid Pane", "hash": "6d0d2012689c7c2a", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEREAGENTBAG1", "field": "text", "en": "Toggle Reagent Bag", "hash": "c40c693fc8a6babd", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLERUN", "field": "text", "en": "Toggle Run/Walk", "hash": "0bb73772c9b1fe07", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLESELFHIGHLIGHT", "field": "text", "en": "Toggle Self Highlight", "hash": "935d8265554e36c6", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLESHEATH", "field": "text", "en": "Sheath/Unsheath Weapon", "hash": "f80d20770bbc793e", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLESOCIAL", "field": "text", "en": "Toggle Social Pane", "hash": "5118553b44587783", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLESOUND", "field": "text", "en": "Toggle Sound", "hash": "d24db3055f4847b4", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLESPELLBOOK", "field": "text", "en": "Toggle Spellbook", "hash": "cda08413bf3e474c", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLETALENTS", "field": "text", "en": "Toggle Talent Pane", "hash": "b511d20dbb8006a2", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLETEXTTOSPEECH", "field": "text", "en": "Toggle Text To Speech Config", "hash": "22706608c1c0e43f", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEUI", "field": "text", "en": "Toggle User Interface", "hash": "787b81f7b513ecf3", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEWHOTAB", "field": "text", "en": "Toggle Who Pane", "hash": "27222f0c200e4e3e", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEWINDOWED", "field": "text", "en": "Toggle Windowed Mode", "hash": "9d5812fbbc556e83", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEWORLDMAP", "field": "text", "en": "Toggle World Map Pane", "hash": "7969a6a981aa8567", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEWORLDMAPSIZE", "field": "text", "en": "Toggle World Map Size", "hash": "79d2ade649a5fe1a", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLEWORLDSTATESCORES", "field": "text", "en": "Toggle Score Screen", "hash": "30d4dc029ce7dc89", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLE_VOICE_PUSH_TO_TALK", "field": "text", "en": "Voice Chat: Push to Talk", "hash": "40ecc5d2d0a28ca7", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLE_VOICE_SELF_DEAFEN", "field": "text", "en": "Voice Chat: Toggle Deafen Self", "hash": "0081bc36b4291995", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TOGGLE_VOICE_SELF_MUTE", "field": "text", "en": "Voice Chat: Toggle Mute Self", "hash": "990b345dcbb56595", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TURNLEFT", "field": "text", "en": "Turn Left", "hash": "907dcd61ae8de47e", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_TURNRIGHT", "field": "text", "en": "Turn Right", "hash": "5a3bd3c00c7818e3", "src": "db2@1.60.1.70291"}
+{"id": "BINDING_NAME_VEHICLEEXIT", "field": "text", "en": "Exit Vehicle", "hash": "9f777e0e879390d2", "src": "db2@1.60.1.70291"}
+{"id": "BIND_ENCHANT", "field": "text", "en": "Enchanting this item will bind it to you.", "hash": "6abd1b0c6b1f121d", "src": "db2@1.60.1.70291"}
+{"id": "BIND_TRADE_TIME_REMAINING", "field": "text", "en": "You may trade this item with players that were also eligible to loot this item for the next %s (including time offline).", "hash": "3f309366ed8b1e6a", "src": "db2@1.60.1.70291"}
+{"id": "BLACK_MARKET_AUCTION_CONFIRMATION", "field": "text", "en": "Are you sure you wish to bid %s on the following item?", "hash": "879efd09ade8c07e", "src": "db2@1.60.1.70291"}
+{"id": "BLACK_MARKET_HOT_ITEM_CURRENT_BID", "field": "text", "en": "Current Bid:", "hash": "47fd8738cfaaa8a4", "src": "db2@1.60.1.70291"}
+{"id": "BLACK_MARKET_HOT_ITEM_TIME_LEFT", "field": "text", "en": "Time Left: %s", "hash": "77ce6603a84fd516", "src": "db2@1.60.1.70291"}
+{"id": "BLACK_MARKET_NO_ITEMS", "field": "text", "en": "There are no items at this time.\nPlease check back later.", "hash": "e1f04a054f5c9501", "src": "db2@1.60.1.70291"}
+{"id": "BLACK_MARKET_YOUR_BID", "field": "text", "en": "Your Bid!", "hash": "6a15933d4bf494aa", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_COMBAT_LOG_MENU_BOTH", "field": "text", "en": "Show everything involving %s?", "hash": "4b1fe940f976ae6b", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_COMBAT_LOG_MENU_EVERYTHING", "field": "text", "en": "Show everything", "hash": "82c78eaafb5342d7", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_COMBAT_LOG_MENU_INCOMING", "field": "text", "en": "What happened to %s?", "hash": "00b1beb304032d17", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_COMBAT_LOG_MENU_OUTGOING", "field": "text", "en": "What did %s do?", "hash": "a66c636f808ff911", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_COMBAT_LOG_MENU_OUTGOING_ME", "field": "text", "en": "What did %s do to you?", "hash": "f13c31d002ba05eb", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_COMBAT_LOG_MENU_RESET", "field": "text", "en": "Reset", "hash": "ad0b5560f9b31ffb", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_COMBAT_LOG_MENU_SAVE", "field": "text", "en": "Save as a new filter", "hash": "dcdd5fbeba671f35", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_COMBAT_LOG_MENU_SPELL_HIDE", "field": "text", "en": "Hide messages like this one.", "hash": "b17cf9d1c2f0fbec", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_COMBAT_LOG_MENU_SPELL_LINK", "field": "text", "en": "Link %s to chat.", "hash": "f5a183e60fee07d6", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_COMMUNITIES_SERVICES_UNAVAILABLE", "field": "text", "en": "Unavailable|n|nBlizzard services are currently unavailable.", "hash": "5391978a617af885", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE", "field": "text", "en": "Shop", "hash": "0b3a9e26759d7833", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_ERROR_CLIENT_RESTRICTED", "field": "text", "en": "Feature has been disabled because you are on a restricted character.", "hash": "e5c91441ed48623b", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_ERROR_ITEM_UNAVAILABLE", "field": "text", "en": "This item is temporarily unavailable for purchase. Please try again later.", "hash": "c84de4b32638204c", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_ERROR_MESSAGE_ALREADY_OWNED", "field": "text", "en": "You already have this product!", "hash": "7772c733cd814c71", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_ERROR_MESSAGE_BATTLEPAY_DISABLED", "field": "text", "en": "An error was encountered. Please come back later.", "hash": "80251879e609f0cc", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_ERROR_MESSAGE_CONSUMABLE_TOKEN_OWNED", "field": "text", "en": "All WoW Tokens bought from the auction house must be redeemed before you can buy one from the Shop.", "hash": "7007ac99ba2061d6", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_ERROR_MESSAGE_INSUFFICIENT_BALANCE", "field": "text", "en": "You don't have enough balance for this purchase. Please visit Account Management to add balance.", "hash": "48c99b54f7980855", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_ERROR_MESSAGE_OTHER", "field": "text", "en": "There was a problem with your order. Please try again.", "hash": "7034d210cf119f99", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_ERROR_MESSAGE_PARENTAL_CONTROLS", "field": "text", "en": "Purchasing is disabled by Parental Controls. Please visit Account Management.", "hash": "26885caa4e529f3c", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_ERROR_MESSAGE_PAYMENT", "field": "text", "en": "You don't have a valid payment method. Please visit Account Management.", "hash": "efbfd0f5e21ec431", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_ERROR_MESSAGE_PURCHASE_DENIED", "field": "text", "en": "Please contact Customer Service.", "hash": "c6b7e239c23c173c", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_ERROR_TITLE_ALREADY_OWNED", "field": "text", "en": "Already Owned", "hash": "17132c090f28c734", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_ERROR_TITLE_BATTLEPAY_DISABLED", "field": "text", "en": "Shop Error", "hash": "fdff0832b8295977", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_ERROR_TITLE_CLIENT_RESTRICTED", "field": "text", "en": "Purchasing Restricted", "hash": "c34a069abe724a72", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_ERROR_TITLE_CONSUMABLE_TOKEN_OWNED", "field": "text", "en": "Shop Error", "hash": "fdff0832b8295977", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_ERROR_TITLE_INSUFFICIENT_BALANCE", "field": "text", "en": "Insufficient Balance", "hash": "2790b9d1947762b9", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_ERROR_TITLE_OTHER", "field": "text", "en": "Shop Error", "hash": "fdff0832b8295977", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_ERROR_TITLE_PARENTAL_CONTROLS", "field": "text", "en": "Purchasing Disabled", "hash": "5d4247833e607d1b", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_ERROR_TITLE_PAYMENT", "field": "text", "en": "Payment Failed", "hash": "55bf04d64fba8f00", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_ERROR_TITLE_PURCHASE_DENIED", "field": "text", "en": "Purchase Denied", "hash": "90c9b46e4d70fad2", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_ERROR_UNAVAILABLE", "field": "text", "en": "The shop is currently unavailable.", "hash": "728670953f7a16e6", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_ERROR_YOU_OWN_TOO_MANY_OF_THIS", "field": "text", "en": "You have too many of that item already.", "hash": "df061b106c682cf3", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_INTERNAL_ERROR", "field": "text", "en": "Internal Error", "hash": "6d4b2ea4349a6f4e", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_PROCESSING", "field": "text", "en": "Processing...", "hash": "3f26d499791bf0c6", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_PURCHASE_COMPLETE", "field": "text", "en": "Product Delivered!", "hash": "9517ce6e1e2bfcfa", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_PURCHASE_COMPLETE_DESC", "field": "text", "en": "Your item has been delivered.", "hash": "f3667703ef663d55", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_ALLIANCE_NOT_ELIGIBLE", "field": "text", "en": "- This transfer is not currently available for this character's faction.", "hash": "bdec4e7c099f287b", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_ALREADY_RENAME_FLAGGED", "field": "text", "en": "- Your Guild Master character has a pending name change. Complete the name change and try again.", "hash": "702683065b2c1e9f", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_ARENA_TEAM_CAPTAIN", "field": "text", "en": "- This character is an arena team captain.  Please transfer the rank to another character and try again.", "hash": "accf4c46a79f718f", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_BATTLEPAY_DELIVERY_PENDING", "field": "text", "en": "- You have another transaction in progress. Please try again later.", "hash": "68e31f63c5e29eb5", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_BOOSTED_TOO_RECENTLY", "field": "text", "en": "- This character used a Character Boost too recently. Try again later.", "hash": "66dbc7fc65b7db82", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_BOOST_THROTTLE", "field": "text", "en": "Maximum number of character boosts reached for the day. Please try again tomorrow.", "hash": "bca3dae133120c98", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_CANNOT_MOVE_GUILDMASTER", "field": "text", "en": "- Please hand over guild leadership or disband your guild and try again.", "hash": "31bc10fc5bc7f5b9", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_CHARACTER_HAS_VAS_PENDING", "field": "text", "en": "- This character already has a pending service. Please wait until that is complete to try again.", "hash": "eadcf3b11b59e4f6", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_CHARACTER_LOCKED", "field": "text", "en": "- This character is locked.", "hash": "b96ac0c24f15f2b2", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_CUSTOMIZE_ALREADY_REQUESTED", "field": "text", "en": "- This character has the requested service pending.", "hash": "8b5a90a844678a73", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_DISALLOWED_DESTINATION_ACCOUNT", "field": "text", "en": "- The destination World of Warcraft account is locked or is a trial account.", "hash": "6fe1cd20d8cc0d33", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_DISALLOWED_SOURCE_ACCOUNT", "field": "text", "en": "- The source World of Warcraft account is locked or is a trial account.", "hash": "3978dde5593dca8b", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_DUPLICATE_CHARACTER_NAME", "field": "text", "en": "- This name is already in use on this realm.", "hash": "4ce867b34229a297", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_FACTION_CHANGE_TOO_SOON", "field": "text", "en": "- This character is still on cooldown for this service.", "hash": "ce01c06954f3d8e9", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_HAS_AUCTIONS", "field": "text", "en": "- This character has active auctions. Please cancel them and try again.", "hash": "2fdb67efbd48e4e8", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_HAS_CAGED_BATTLE_PET", "field": "text", "en": "- This character has a caged battle pet. Please remove it and try again.", "hash": "9ebf22f0c0065497", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_HAS_CRAFTING_ORDERS", "field": "text", "en": "- Please clear all pending and claimed crafting orders on this character.", "hash": "d7ec6645f3bffd97", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_HAS_HEIRLOOM", "field": "text", "en": "- This character has heirlooms. Please delete them and try again.", "hash": "650d79e2d4769f4c", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_HAS_MAIL", "field": "text", "en": "- Please clear the mail from this character's mailbox.", "hash": "5d36df733a518291", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_HAS_WOW_TOKEN", "field": "text", "en": "- Please sell or redeem all WoW Tokens on this character.", "hash": "0c3fa8c3a5d50538", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_HOUSE_NEIGHBORHOOD_OWNER", "field": "text", "en": "- This service cannot be used on a character that owns a House or a Neighborhood", "hash": "4e1ba725809dcbd9", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_INELIGIBLE_MAP_ID", "field": "text", "en": "- Please complete the starting area for this character.", "hash": "37ef20052ba2e78e", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_INELIGIBLE_TARGET_REALM", "field": "text", "en": "- The selected realm is not accepting character transfers at this time.", "hash": "e55bbeae2d2297a1", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_INVALID_DESTINATION_ACCOUNT", "field": "text", "en": "- The destination World of Warcraft account is invalid.", "hash": "d69ec245e620156a", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_INVALID_SOURCE_ACCOUNT", "field": "text", "en": "- The source World of Warcraft account is invalid.", "hash": "ead25b37521e3e87", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_LAST_CUSTOMIZE_TOO_SOON", "field": "text", "en": "- This character is still on cooldown for this service.", "hash": "ce01c06954f3d8e9", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_LAST_RENAME_TOO_RECENT", "field": "text", "en": "- This character is still on cooldown for this service.", "hash": "ce01c06954f3d8e9", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_LAST_SAVE_TOO_DISTANT", "field": "text", "en": "- This character hasn't logged in recently. Log in with this character, log out, and try again.", "hash": "62f5d528b0d85113", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_LAST_SAVE_TOO_RECENT", "field": "text", "en": "- This character was logged in recently.|nPlease wait several minutes and try again.", "hash": "1d603e9b38357ee6", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_LOWER_BOX_LEVEL", "field": "text", "en": "- The destination World of Warcraft account must be upgraded to the same expansion level.", "hash": "d6f1f46effc3b1ca", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_MAX_CHARACTERS_ON_SERVER", "field": "text", "en": "- The destination realm already has the maximum number of characters allowed.", "hash": "b4a4df2819b9506c", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_NAME_NOT_AVAILABLE", "field": "text", "en": "- This name is not available on that realm.", "hash": "d839fbb73d1bfae7", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_NEEDS_ERA_CHOICE", "field": "text", "en": "- Choose an expansion on the character select screen\n- Activate Clone on the character select screen", "hash": "11ec5118467be3c7", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_NEW_LEADER_INVALID", "field": "text", "en": "- The character you chose to be the new Guild Master is not a valid choice. Please choose someone else.", "hash": "523fe7fd4d7497ee", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_NEW_PLAYER_EXPERIENCE", "field": "text", "en": "- Finish the tutorial experience first", "hash": "9b7afde002b172e5", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_NOT_GUILD_MASTER", "field": "text", "en": "- Only Guild Masters can use Guild Services. This character is not a Guild Master.", "hash": "050a4b2e89c29570", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_NOT_IN_GUILD", "field": "text", "en": "- You must be in a Guild in order to use Guild Services. This character is not in a Guild.", "hash": "cb86bfa6d34a5929", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_OTHER", "field": "text", "en": "An error was encountered. Please come back later.", "hash": "80251879e609f0cc", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_PENDING_ITEM_AUDIT", "field": "text", "en": "- This character's inventory contains items that cannot be transferred.", "hash": "e55c4e1bc5bb845d", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_PVE_TO_PVP_TRANSFER_NOT_ALLOWED", "field": "text", "en": "- You cannot transfer between a PvE server and a PvP server", "hash": "c3502fa0bfd642ea", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_RACE_CLASS_COMBO_INELIGIBLE", "field": "text", "en": "- This character does not have any eligible races to change to.", "hash": "eba8f1536846ee02", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_REALM_NOT_ELIGIBLE", "field": "text", "en": "- Please select a different realm.", "hash": "68722130fc2f65ff", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_TOO_MUCH_MONEY_FOR_LEVEL", "field": "text", "en": "- This character's gold exceeds the maximum they can transfer at their level (%s).", "hash": "e73fa60ddd2128f3", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_ERROR_UNDER_MIN_LEVEL_REQ", "field": "text", "en": "- This character does not meet the minimum level requirement.", "hash": "a335a8459caf1a01", "src": "db2@1.60.1.70291"}
+{"id": "BLIZZARD_STORE_VAS_INVALID_NAME", "field": "text", "en": "- This name is invalid; please choose another name.", "hash": "8de5ec470f0dfcc1", "src": "db2@1.60.1.70291"}
+{"id": "BLOCK", "field": "text", "en": "Block", "hash": "951f0255d90185db", "src": "db2@1.60.1.70291"}
+{"id": "BLOCKED_INVITES", "field": "text", "en": "Blocked Invite", "hash": "4a1be1d305d949b2", "src": "db2@1.60.1.70291"}
+{"id": "BLOCK_CHANCE", "field": "text", "en": "Block Chance", "hash": "805d3336b80346ab", "src": "db2@1.60.1.70291"}
+{"id": "BLOCK_CHAT_CHANNEL_INVITE", "field": "text", "en": "Block Chat Channel Invites", "hash": "6c0773a543d3406f", "src": "db2@1.60.1.70291"}
+{"id": "BLOCK_GUILD_INVITES", "field": "text", "en": "Block Guild Invites", "hash": "2e66c94504a5c1e9", "src": "db2@1.60.1.70291"}
+{"id": "BLOCK_INVITES", "field": "text", "en": "Block Invites", "hash": "40f41155d4e4032d", "src": "db2@1.60.1.70291"}
+{"id": "BLOCK_INVITES_CONFIRMATION", "field": "text", "en": "Are you sure you want to block any further invitations from %s?", "hash": "3d7732b3eb37a36f", "src": "db2@1.60.1.70291"}
+{"id": "BLOCK_NEIGHBORHOOD_INVITES", "field": "text", "en": "Block Neighborhood Invites", "hash": "2b707f8f11eefb01", "src": "db2@1.60.1.70291"}
+{"id": "BLOCK_TRADES", "field": "text", "en": "Block Trades", "hash": "e3acbabaaf9e26cf", "src": "db2@1.60.1.70291"}
+{"id": "BLOCK_TRAILER", "field": "text", "en": " (%d blocked)", "hash": "f62be922deb65c9c", "src": "db2@1.60.1.70291"}
+{"id": "BLOOM_MULT", "field": "text", "en": "Bloom Intensity ", "hash": "3ddfcd466247ecf3", "src": "db2@1.60.1.70291"}
+{"id": "BLUE_GEM", "field": "text", "en": "Blue", "hash": "08f48606219811ea", "src": "db2@1.60.1.70291"}
+{"id": "BNET_FRIEND_TOOLTIP_ZONE_AND_REALM", "field": "text", "en": "|cffffd200Zone: |r%1$s|n|cffffd200Realm: |r%2$s", "hash": "1fb33b5496d063f7", "src": "db2@1.60.1.70291"}
+{"id": "BNET_FRIEND_TOOLTIP_ZONE_AND_REGION", "field": "text", "en": "|cffffd200Zone: |r%1$s|n|cffffd200Region: |r%2$s", "hash": "21dad714fc430b08", "src": "db2@1.60.1.70291"}
+{"id": "BNET_LAST_ONLINE_TIME", "field": "text", "en": "last online %s ago", "hash": "c28734f0a4fd5b95", "src": "db2@1.60.1.70291"}
+{"id": "BN_BLOCK_FAILED_TOO_MANY_CID", "field": "text", "en": "You've already blocked the maximum number of characters through Blizzard services.", "hash": "6a3a1ddb5f7e04f0", "src": "db2@1.60.1.70291"}
+{"id": "BN_BLOCK_FAILED_TOO_MANY_RID", "field": "text", "en": "You have already blocked the maximum number of Real ID and BattleTag players.", "hash": "d98ef671b6458d22", "src": "db2@1.60.1.70291"}
+{"id": "BN_CHAT_CONNECTED", "field": "text", "en": "You are now connected to Blizzard services.", "hash": "13ce93d60c42d27f", "src": "db2@1.60.1.70291"}
+{"id": "BN_CHAT_DISCONNECTED", "field": "text", "en": "You have been disconnected from Blizzard services.", "hash": "5e31fca213833f95", "src": "db2@1.60.1.70291"}
+{"id": "BN_INLINE_TOAST_ALERT", "field": "text", "en": "Blizzard Services Alerts", "hash": "db9b79abf2f2b73a", "src": "db2@1.60.1.70291"}
+{"id": "BN_INLINE_TOAST_BROADCAST", "field": "text", "en": "|TInterface\\FriendsFrame\\UI-Toast-ToastIcons.tga:16:16:0:0:128:64:2:29:2:29|t%s: %s", "hash": "4495de4674d735c8", "src": "db2@1.60.1.70291"}
+{"id": "BN_INLINE_TOAST_BROADCAST_INFORM", "field": "text", "en": "|TInterface\\FriendsFrame\\UI-Toast-ToastIcons.tga:16:16:0:0:128:64:2:29:2:29|tYour broadcast has been sent.", "hash": "2f534e1e604db7ac", "src": "db2@1.60.1.70291"}
+{"id": "BN_INLINE_TOAST_FRIEND_PENDING", "field": "text", "en": "|TInterface\\FriendsFrame\\UI-Toast-ToastIcons.tga:16:16:0:0:128:64:98:127:2:29|tYou have %s friend |4request:requests;.", "hash": "b24129da1fc0abad", "src": "db2@1.60.1.70291"}
+{"id": "BN_TOAST_NEW_CLUB_INVITATION", "field": "text", "en": "You've been invited to|n%s", "hash": "f6af3f91f5308e08", "src": "db2@1.60.1.70291"}
+{"id": "BN_TOAST_NEW_INVITE", "field": "text", "en": "You have received a new friend request.", "hash": "03cd8ed0f8bf1963", "src": "db2@1.60.1.70291"}
+{"id": "BN_TOAST_OFFLINE", "field": "text", "en": "has gone |cffff0000offline|r.", "hash": "0d96260c19a5b2fd", "src": "db2@1.60.1.70291"}
+{"id": "BN_TOAST_ONLINE", "field": "text", "en": "has come |cff00ff00online|r.", "hash": "395ea9d8ce0f09f6", "src": "db2@1.60.1.70291"}
+{"id": "BN_TOAST_PENDING_INVITES", "field": "text", "en": "You have |cff82c5ff%d|r friend |4request:requests;.", "hash": "e51702d6a78dadab", "src": "db2@1.60.1.70291"}
+{"id": "BN_UNABLE_TO_RESOLVE_NAME", "field": "text", "en": "Unable to whisper '%s'. Blizzard services may be unavailable.", "hash": "f69dbafb0b128df8", "src": "db2@1.60.1.70291"}
+{"id": "BN_WHISPER", "field": "text", "en": "Blizzard Whispers", "hash": "69754276676633d3", "src": "db2@1.60.1.70291"}
+{"id": "BODY_1", "field": "text", "en": "Body 1", "hash": "82139cdbca2273c2", "src": "db2@1.60.1.70291"}
+{"id": "BODY_2", "field": "text", "en": "Body 2", "hash": "82139cdcca2273c3", "src": "db2@1.60.1.70291"}
+{"id": "BONUS_OBJECTIVE_BANNER", "field": "text", "en": "Bonus Objective", "hash": "ef275c185d50cff0", "src": "db2@1.60.1.70291"}
+{"id": "BONUS_OBJECTIVE_REWARD_FORMAT", "field": "text", "en": "|T%1$s:16:16|t %2$s", "hash": "050262083687fd09", "src": "db2@1.60.1.70291"}
+{"id": "BONUS_OBJECTIVE_REWARD_WITH_COUNT_FORMAT", "field": "text", "en": "|T%1$s:16:16|t %2$s %3$s", "hash": "6e9ec2325e4d0162", "src": "db2@1.60.1.70291"}
+{"id": "BONUS_OBJECTIVE_TOOLTIP_DESCRIPTION", "field": "text", "en": "Completing this bonus objective will reward you with:", "hash": "f482134f212fad59", "src": "db2@1.60.1.70291"}
+{"id": "BONUS_REPUTATION_TITLE", "field": "text", "en": "Bonus Reputation", "hash": "f69722e535c3b898", "src": "db2@1.60.1.70291"}
+{"id": "BONUS_REPUTATION_TOOLTIP", "field": "text", "en": "Your account has unlocked bonus reputation gain with this faction.", "hash": "59ed2320babdbefe", "src": "db2@1.60.1.70291"}
+{"id": "BOOSTED_CHAR_SPELL_TEMPLOCK", "field": "text", "en": "Temporarily Locked", "hash": "aa479b19f7fb4c29", "src": "db2@1.60.1.70291"}
+{"id": "BOSSES", "field": "text", "en": "Bosses:", "hash": "969b55eaa58e2295", "src": "db2@1.60.1.70291"}
+{"id": "BOSSES_KILLED", "field": "text", "en": "%d/%d Bosses Defeated", "hash": "e396fdc410a81c2e", "src": "db2@1.60.1.70291"}
+{"id": "BOSS_ALIVE", "field": "text", "en": "Available", "hash": "08bd63f84d058c1c", "src": "db2@1.60.1.70291"}
+{"id": "BOSS_BANNER_LOOT_SET", "field": "text", "en": "Set: %s", "hash": "cd26777775fe95cc", "src": "db2@1.60.1.70291"}
+{"id": "BOSS_KILL_SUBTITLE", "field": "text", "en": "has been defeated", "hash": "36d57d7fa1d3b3b1", "src": "db2@1.60.1.70291"}
+{"id": "BOSS_YOU_DEFEATED", "field": "text", "en": "You Defeated", "hash": "f9cd9a33b0724803", "src": "db2@1.60.1.70291"}
+{"id": "BREATH_LABEL", "field": "text", "en": "Breath", "hash": "b6d8efc4950e0225", "src": "db2@1.60.1.70291"}
+{"id": "BROWSER_COPY_LINK", "field": "text", "en": "Copy Link", "hash": "18ab2f6c5a4640a5", "src": "db2@1.60.1.70291"}
+{"id": "BROWSER_DELETE_COOKIES", "field": "text", "en": "Delete Cookies", "hash": "295e551d25730e53", "src": "db2@1.60.1.70291"}
+{"id": "BROWSER_DELETE_COOKIES_TOOLTIP", "field": "text", "en": "This will delete all browser cookies.", "hash": "35e70143e7a4cb58", "src": "db2@1.60.1.70291"}
+{"id": "BROWSER_EXTERNAL_LINK_DIALOG", "field": "text", "en": "You are being redirected to:\n|cffffd200%s|r\nClick \"Okay\" to open this link in your web browser.", "hash": "bb148daeb2678327", "src": "db2@1.60.1.70291"}
+{"id": "BROWSER_SETTINGS_TOOLTIP", "field": "text", "en": "Support Browser Options", "hash": "8ebb671534f4125d", "src": "db2@1.60.1.70291"}
+{"id": "BROWSE_NO_RESULTS", "field": "text", "en": "No items found", "hash": "106da9f3c35ba5bb", "src": "db2@1.60.1.70291"}
+{"id": "BROWSE_ORDERS", "field": "text", "en": "Place Order", "hash": "4ed922e8f3e6dbb9", "src": "db2@1.60.1.70291"}
+{"id": "BROWSE_SEARCH_TEXT", "field": "text", "en": "Choose search criteria and press \"Search\"", "hash": "da97ce14ee30f84c", "src": "db2@1.60.1.70291"}
+{"id": "BUFF_STACKS_OVERFLOW", "field": "text", "en": "*", "hash": "0000002a0000002a", "src": "db2@1.60.1.70291"}
+{"id": "BUILDING_DAMAGE", "field": "text", "en": "Siege", "hash": "bf1e9896d6a9fab9", "src": "db2@1.60.1.70291"}
+{"id": "BUILDING_DAMAGE_COMBATLOG_TOOLTIP", "field": "text", "en": "Show messages when a spell or ability deals damage to a destructible building.", "hash": "ef69791f1d51da86", "src": "db2@1.60.1.70291"}
+{"id": "BUILDING_HEAL", "field": "text", "en": "Repairs", "hash": "d78a02f2516918d3", "src": "db2@1.60.1.70291"}
+{"id": "BUILDING_HEAL_COMBATLOG_TOOLTIP", "field": "text", "en": "Show messages when a spell or ability repairs a building.", "hash": "9371530160508151", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_10_STRING", "field": "text", "en": "Button 10", "hash": "1ea9fce560b899f9", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_11_STRING", "field": "text", "en": "Button 11", "hash": "1ea9fce660b899fa", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_12_STRING", "field": "text", "en": "Button 12", "hash": "1ea9fce760b899fb", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_13_STRING", "field": "text", "en": "Button 13", "hash": "1ea9fce860b899fc", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_14_STRING", "field": "text", "en": "Button 14", "hash": "1ea9fce960b899fd", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_15_STRING", "field": "text", "en": "Button 15", "hash": "1ea9fcea60b899fe", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_16_STRING", "field": "text", "en": "Button 16", "hash": "1ea9fceb60b899ff", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_17_STRING", "field": "text", "en": "Button 17", "hash": "1ea9fcec60b89a00", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_18_STRING", "field": "text", "en": "Button 18", "hash": "1ea9fced60b89a01", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_19_STRING", "field": "text", "en": "Button 19", "hash": "1ea9fcee60b89a02", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_20_STRING", "field": "text", "en": "Button 20", "hash": "1ea9fd6860b8b9da", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_21_STRING", "field": "text", "en": "Button 21", "hash": "1ea9fd6960b8b9db", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_22_STRING", "field": "text", "en": "Button 22", "hash": "1ea9fd6a60b8b9dc", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_23_STRING", "field": "text", "en": "Button 23", "hash": "1ea9fd6b60b8b9dd", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_24_STRING", "field": "text", "en": "Button 24", "hash": "1ea9fd6c60b8b9de", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_25_STRING", "field": "text", "en": "Button 25", "hash": "1ea9fd6d60b8b9df", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_26_STRING", "field": "text", "en": "Button 26", "hash": "1ea9fd6e60b8b9e0", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_27_STRING", "field": "text", "en": "Button 27", "hash": "1ea9fd6f60b8b9e1", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_28_STRING", "field": "text", "en": "Button 28", "hash": "1ea9fd7060b8b9e2", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_29_STRING", "field": "text", "en": "Button 29", "hash": "1ea9fd7160b8b9e3", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_30_STRING", "field": "text", "en": "Button 30", "hash": "1ea9fdeb60b8d9bb", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_31_STRING", "field": "text", "en": "Button 31", "hash": "1ea9fdec60b8d9bc", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_4_STRING", "field": "text", "en": "Button 4", "hash": "5c14d6f15c4c6fce", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_5_STRING", "field": "text", "en": "Button 5", "hash": "5c14d6f25c4c6fcf", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_6_STRING", "field": "text", "en": "Button 6", "hash": "5c14d6f35c4c6fd0", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_7_STRING", "field": "text", "en": "Button 7", "hash": "5c14d6f45c4c6fd1", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_8_STRING", "field": "text", "en": "Button 8", "hash": "5c14d6f55c4c6fd2", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_9_STRING", "field": "text", "en": "Button 9", "hash": "5c14d6f65c4c6fd3", "src": "db2@1.60.1.70291"}
+{"id": "BUTTON_LAG_AUCTIONHOUSE", "field": "text", "en": "Auction House", "hash": "465b376b5b71c1c2", "src": "db2@1.60.1.70291"}
+{"id": "BUYBACK", "field": "text", "en": "Buyback", "hash": "e2bf2622547cda65", "src": "db2@1.60.1.70291"}
+{"id": "BUYOUT", "field": "text", "en": "Buyout", "hash": "ee33cde0758065b8", "src": "db2@1.60.1.70291"}
+{"id": "BUYOUT_AUCTION_CONFIRMATION", "field": "text", "en": "Buyout auction for:", "hash": "6b83028db4d65c54", "src": "db2@1.60.1.70291"}
+{"id": "BUY_GUILDBANK_TAB", "field": "text", "en": "Buy New Guild Bank Tab", "hash": "345c0a0ec6b771fd", "src": "db2@1.60.1.70291"}
+{"id": "BY_SOURCE", "field": "text", "en": "By Source", "hash": "46c54c7ac1986e6f", "src": "db2@1.60.1.70291"}
+{"id": "BY_SOURCE_COMBATLOG_TOOLTIP", "field": "text", "en": "Line color based on caster.", "hash": "3e1cd60377d2e13d", "src": "db2@1.60.1.70291"}
+{"id": "BY_TARGET", "field": "text", "en": "By Target", "hash": "4c1fd6880e6c9a5b", "src": "db2@1.60.1.70291"}
+{"id": "BY_TARGET_COMBATLOG_TOOLTIP", "field": "text", "en": "Line color based on target.", "hash": "2aaf0ff619a124d3", "src": "db2@1.60.1.70291"}
+{"id": "BroadcastText:316345", "field": "text", "en": "For thousands of years,", "hash": "86db738c448a868b", "src": "db2@1.60.1.70291"}
+{"id": "BroadcastText:316346", "field": "text", "en": "a band of high elven exiles has remained safe", "hash": "e55ad36f8210be07", "src": "db2@1.60.1.70291"}
+{"id": "BroadcastText:316348", "field": "text", "en": "and hidden upon their flying sanctuary of Zephras Isle.", "hash": "4372a431f4ce458c", "src": "db2@1.60.1.70291"}
+{"id": "BroadcastText:316349", "field": "text", "en": "These \"Skyborne,\" as they call themselves,", "hash": "8aa20a25f9c45682", "src": "db2@1.60.1.70291"}
+{"id": "BroadcastText:316350", "field": "text", "en": "shared a bond with air elementals", "hash": "55115e31fe018dff", "src": "db2@1.60.1.70291"}
+{"id": "BroadcastText:316351", "field": "text", "en": "who kept their island aloft in the realm of Skywall.", "hash": "ddc29d352d8b190e", "src": "db2@1.60.1.70291"}
+{"id": "BroadcastText:316352", "field": "text", "en": "But in recent years,", "hash": "f7157c638f43e0d0", "src": "db2@1.60.1.70291"}
+{"id": "BroadcastText:316353", "field": "text", "en": "the elementals vanished without a trace--", "hash": "e44574f17659e5b3", "src": "db2@1.60.1.70291"}
+{"id": "BroadcastText:316354", "field": "text", "en": "disrupting the delicate magic that kept them safe in their haven amongst the clouds.", "hash": "68b826077b80c5a2", "src": "db2@1.60.1.70291"}
+{"id": "BroadcastText:316355", "field": "text", "en": "Now, a new generation of Skyborne elves face a time of unprecedented change,", "hash": "5277c2250e18819b", "src": "db2@1.60.1.70291"}
+{"id": "BroadcastText:316356", "field": "text", "en": "and must seek new allies and sources of magic--", "hash": "72650d43a1ce07d9", "src": "db2@1.60.1.70291"}
+{"id": "BroadcastText:316358", "field": "text", "en": "to protect their hidden home and secure their future...", "hash": "a97fa88eebf1e4c0", "src": "db2@1.60.1.70291"}
+{"id": "BroadcastText:329279", "field": "text", "en": "The eccentric, often brilliant gnomes, are held as one of the most peculiar races of the world.", "hash": "dcebe7434b257030", "src": "db2@1.60.1.70291"}
+{"id": "BroadcastText:329280", "field": "text", "en": "With their obsession for developing radical new technologies and constructing marvels of mind-bending engineering, it's a wonder that any gnomes have survived to proliferate.", "hash": "ef45019cd69eb2af", "src": "db2@1.60.1.70291"}
+{"id": "BroadcastText:329281", "field": "text", "en": "Over the years, the gnomes have contributed ingenious weapons to aid the Grand Alliance in its fierce battles against the Horde.", "hash": "b517dde4357c3538", "src": "db2@1.60.1.70291"}
+{"id": "BroadcastText:329282", "field": "text", "en": "Thriving within the wondrous techno city of Gnomeregan, the gnomes share the resources of the forested Dun Morogh peaks with their dwarven cousins.", "hash": "9cdefa768901877b", "src": "db2@1.60.1.70291"}

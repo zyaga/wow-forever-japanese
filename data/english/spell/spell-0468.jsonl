@@ -1,451 +1,451 @@
-{"id": 468000, "field": "name", "en": "Aspect of Thekal", "hash": "2f248a996b68b723", "src": "db2@1.60.1.70245"}
-{"id": 468001, "field": "name", "en": "Aspect of Arlokk", "hash": "34cd3d6601140ca0", "src": "db2@1.60.1.70245"}
-{"id": 468012, "field": "name", "en": "Sonic Burst", "hash": "964779bd8b4bf85f", "src": "db2@1.60.1.70245"}
-{"id": 468012, "field": "description", "en": "Inflicts normal damage plus $s1 on nearby enemies, preventing them from spellcasting for $d.", "hash": "40a0b6a63535cda3", "src": "db2@1.60.1.70245"}
-{"id": 468012, "field": "aura", "en": "Cannot cast spells.", "hash": "6d133d61246b88a5", "src": "db2@1.60.1.70245"}
-{"id": 468017, "field": "name", "en": "Summon Spawn of Mar'li", "hash": "700a206bd41b84c4", "src": "db2@1.60.1.70245"}
-{"id": 468027, "field": "name", "en": "Fetch!", "hash": "c2bae7deda528671", "src": "db2@1.60.1.70245"}
-{"id": 468027, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.", "hash": "f6322beccc18b2dd", "src": "db2@1.60.1.70245"}
-{"id": 468028, "field": "name", "en": "S03 - Item - T2 - Warlock - Tank 2P Bonus", "hash": "625cf914492d0caa", "src": "db2@1.60.1.70245"}
-{"id": 468028, "field": "description", "en": "While you are targeting an enemy within $468029r yards, Life Tap grants you mana at the expense of your target's health but deals $s1% reduced damage to them. Mana gained remains unchanged.", "hash": "d7c41828ecd08314", "src": "db2@1.60.1.70245"}
-{"id": 468029, "field": "name", "en": "Life Tap", "hash": "bafd1ec35fcfd07f", "src": "db2@1.60.1.70245"}
-{"id": 468030, "field": "name", "en": "[DNT] Teleport to Crystal Vale Interior", "hash": "4f5df90e117c7dc1", "src": "db2@1.60.1.70245"}
-{"id": 468038, "field": "name", "en": "[DNT] Essence of Fire - Fight", "hash": "87b2e2adf2e28884", "src": "db2@1.60.1.70245"}
-{"id": 468039, "field": "name", "en": "[DNT] Essence of Frost - Fight", "hash": "5d36dee3db8b83f2", "src": "db2@1.60.1.70245"}
-{"id": 468046, "field": "name", "en": "S03 - Item - T2 - Warlock - Tank 4P Bonus", "hash": "513ffe9733ff1891", "src": "db2@1.60.1.70245"}
-{"id": 468046, "field": "description", "en": "While Metamorphosis is active, your offensive abilities and Demon summons cost no Soul Shards. In addition, you heal for $468062s1% of your maximum health when you damage a target with Shadowburn.", "hash": "3233cdd99ae61cf8", "src": "db2@1.60.1.70245"}
-{"id": 468048, "field": "name", "en": "S03 - Item - T2 - Warlock - Tank 4P Bonus", "hash": "513ffe9733ff1891", "src": "db2@1.60.1.70245"}
-{"id": 468049, "field": "name", "en": "Fire Puzzle Area Trigger", "hash": "ce715fbb9372ae20", "src": "db2@1.60.1.70245"}
-{"id": 468050, "field": "name", "en": "Frost Puzzle Area Trigger", "hash": "0086bd20f8e4aa7d", "src": "db2@1.60.1.70245"}
-{"id": 468061, "field": "name", "en": "S03 - Item - T2 - Warlock - Tank 6P Bonus", "hash": "4023041a1ed12478", "src": "db2@1.60.1.70245"}
-{"id": 468061, "field": "description", "en": "Any excess healing you deal to yourself  is converted into a shield that absorbs damage. This shield can absorb up to $s1% of your maximum health, and stacks from multiple heals.", "hash": "dcc102bebdd60c1a", "src": "db2@1.60.1.70245"}
-{"id": 468062, "field": "name", "en": "Soul Essence", "hash": "77e6cb71e1ed6d1a", "src": "db2@1.60.1.70245"}
-{"id": 468065, "field": "name", "en": "S03 - Item - T2 - Warrior - Protection 2P Bonus", "hash": "0f9dac3e36bea48a", "src": "db2@1.60.1.70245"}
-{"id": 468065, "field": "description", "en": "You gain ${$468066m1/10} Rage every time you Parry or one of your attacks is Parried.", "hash": "08c9664b898df9bc", "src": "db2@1.60.1.70245"}
-{"id": 468066, "field": "name", "en": "Thrill of Battle", "hash": "87b248c8ec1b2882", "src": "db2@1.60.1.70245"}
-{"id": 468067, "field": "name", "en": "S03 - Item - T2 - Warrior - Protection 4P Bonus", "hash": "fe80b1bc2190b071", "src": "db2@1.60.1.70245"}
-{"id": 468067, "field": "description", "en": "Revenge also grants you Flurry, increasing your attack speed by $12970s1% for the next $12970n swings.", "hash": "8d2b9dbcf0f46660", "src": "db2@1.60.1.70245"}
-{"id": 468069, "field": "name", "en": "S03 - Item - T2 - Warrior - Protection 6P Bonus", "hash": "ed63b73f0c62bc58", "src": "db2@1.60.1.70245"}
-{"id": 468069, "field": "description", "en": "When your target Parries an attack, you instantly Retaliate for $468071s2% weapon damage to that target. Retaliate cannot be Dodged, Blocked, or Parried, but can only occur once every $468071d per target.", "hash": "9be3acfc303a2a25", "src": "db2@1.60.1.70245"}
-{"id": 468071, "field": "name", "en": "Retaliate", "hash": "b8db43a42fa4f6a2", "src": "db2@1.60.1.70245"}
-{"id": 468072, "field": "name", "en": "S03 - Item - T2 - Warrior - Damage 2P Bonus", "hash": "a7947c9f5c179a7a", "src": "db2@1.60.1.70245"}
-{"id": 468072, "field": "description", "en": "Overpower critical strikes refresh the duration of Rend on your target back to its maximum duration.", "hash": "2986985451b2efaa", "src": "db2@1.60.1.70245"}
-{"id": 468076, "field": "name", "en": "Vicious Strike", "hash": "14ed83d517e445c8", "src": "db2@1.60.1.70245"}
-{"id": 468076, "field": "description", "en": "Increases damage taken from Vicious Strike by $s1% ", "hash": "b95848193aee2f5d", "src": "db2@1.60.1.70245"}
-{"id": 468076, "field": "aura", "en": "Increases damage taken from Vicious Strike by $s1%", "hash": "b95848193aee2f5d", "src": "db2@1.60.1.70245"}
-{"id": 468078, "field": "name", "en": "Nullify", "hash": "784667e6ab756534", "src": "db2@1.60.1.70245"}
-{"id": 468078, "field": "aura", "en": "Nullified.", "hash": "cab377849975e8a6", "src": "db2@1.60.1.70245"}
-{"id": 468125, "field": "name", "en": "Imbue Essence of Fire", "hash": "875021f7007297a5", "src": "db2@1.60.1.70245"}
-{"id": 468125, "field": "description", "en": "Imbue the Depleted Essence of Fire with magic.", "hash": "2a35ab2579915dfa", "src": "db2@1.60.1.70245"}
-{"id": 468133, "field": "name", "en": "Start Essence of Fire", "hash": "2a440480a201267e", "src": "db2@1.60.1.70245"}
-{"id": 468156, "field": "name", "en": "Thunderfury", "hash": "07442b2290f62530", "src": "db2@1.60.1.70245"}
-{"id": 468156, "field": "description", "en": "Blasts your enemy with lightning, dealing $s2 Nature damage and then jumping to additional nearby enemies.  Each jump reduces that victim's Nature resistance by $s1. Affects $x1 targets. Your primary target is also consumed by a cyclone, slowing its attack speed by $27648s1% for $d.", "hash": "0cc6012e29cd4d05", "src": "db2@1.60.1.70245"}
-{"id": 468156, "field": "aura", "en": "Nature resistance reduced by $s1.", "hash": "6c373958764a3de3", "src": "db2@1.60.1.70245"}
-{"id": 468157, "field": "name", "en": "Thunderfury", "hash": "07442b2290f62530", "src": "db2@1.60.1.70245"}
-{"id": 468157, "field": "aura", "en": "Increases time between attacks by $s1%.", "hash": "d81a5b3508bde829", "src": "db2@1.60.1.70245"}
-{"id": 468164, "field": "name", "en": "Pagle's Broken Reel", "hash": "4245959b2f4a14da", "src": "db2@1.60.1.70245"}
-{"id": 468164, "field": "description", "en": "Increases your chance to hit with all spells and attacks by $s1% for $d.", "hash": "a763af173ac19fef", "src": "db2@1.60.1.70245"}
-{"id": 468164, "field": "aura", "en": "Chance to hit with all spells and attacks increased by $s1%.", "hash": "d52be7be0aa79584", "src": "db2@1.60.1.70245"}
-{"id": 468165, "field": "name", "en": "Beast Slaying 99", "hash": "9f329a395a158914", "src": "db2@1.60.1.70245"}
-{"id": 468165, "field": "description", "en": "+$s1 Attack Power against Beasts.", "hash": "2e7564c4ad94b3c2", "src": "db2@1.60.1.70245"}
-{"id": 468166, "field": "name", "en": "Dragon Slaying 60", "hash": "ada7993f52010898", "src": "db2@1.60.1.70245"}
-{"id": 468166, "field": "description", "en": "+$s1 Attack Power against Dragonkin.", "hash": "85a118c60419ea97", "src": "db2@1.60.1.70245"}
-{"id": 468167, "field": "name", "en": "Fire Strike", "hash": "40e734d25ad1e58f", "src": "db2@1.60.1.70245"}
-{"id": 468167, "field": "description", "en": "Does $s1 additional Fire damage to the target.", "hash": "c0c27c0fb3150a3f", "src": "db2@1.60.1.70245"}
-{"id": 468168, "field": "name", "en": "Add Fire Dam - Weap 02", "hash": "e82c5cfb29bb0659", "src": "db2@1.60.1.70245"}
-{"id": 468168, "field": "description", "en": "Adds 2 fire damage to your melee attacks.", "hash": "ba4c80eb6af95fea", "src": "db2@1.60.1.70245"}
-{"id": 468169, "field": "name", "en": "Fire Strike", "hash": "40e734d25ad1e58f", "src": "db2@1.60.1.70245"}
-{"id": 468169, "field": "description", "en": "Does $s1 additional Fire damage to the target.", "hash": "c0c27c0fb3150a3f", "src": "db2@1.60.1.70245"}
-{"id": 468170, "field": "name", "en": "Add Fire Dam - Weap 02", "hash": "e82c5cfb29bb0659", "src": "db2@1.60.1.70245"}
-{"id": 468170, "field": "description", "en": "Adds 2 fire damage to your melee attacks.", "hash": "ba4c80eb6af95fea", "src": "db2@1.60.1.70245"}
-{"id": 468175, "field": "name", "en": "Demon Slaying 141", "hash": "9fb53b2daebab71c", "src": "db2@1.60.1.70245"}
-{"id": 468175, "field": "description", "en": "+$s1 Attack Power against Demons.", "hash": "69f48d9a7e4e7117", "src": "db2@1.60.1.70245"}
-{"id": 468181, "field": "name", "en": "Took Hit", "hash": "f3af33fff453486e", "src": "db2@1.60.1.70245"}
-{"id": 468183, "field": "name", "en": "Frenzy Effect", "hash": "47d1812b08db4ad5", "src": "db2@1.60.1.70245"}
-{"id": 468183, "field": "description", "en": "Gives your pet a chance to gain a $19615s1% attack speed increase for $19615d after dealing a critical strike.", "hash": "a8ba9cb245f1774a", "src": "db2@1.60.1.70245"}
-{"id": 468183, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70245"}
-{"id": 468184, "field": "name", "en": "Drain Life", "hash": "344ef3a3656fa1a7", "src": "db2@1.60.1.70245"}
-{"id": 468184, "field": "description", "en": "Steals $s1 life from target enemy.", "hash": "8e44b26614ccfbdd", "src": "db2@1.60.1.70245"}
-{"id": 468195, "field": "name", "en": "Roll Over!", "hash": "6651d0687b9a86cf", "src": "db2@1.60.1.70245"}
-{"id": 468195, "field": "description", "en": "$@spelldesc445575", "hash": "b3676a6c2c7857b2", "src": "db2@1.60.1.70245"}
-{"id": 468197, "field": "name", "en": "Roll Over!", "hash": "6651d0687b9a86cf", "src": "db2@1.60.1.70245"}
-{"id": 468198, "field": "name", "en": "Roll Over!", "hash": "6651d0687b9a86cf", "src": "db2@1.60.1.70245"}
-{"id": 468199, "field": "name", "en": "Roll Over!", "hash": "6651d0687b9a86cf", "src": "db2@1.60.1.70245"}
-{"id": 468199, "field": "description", "en": "Acid rain falls from above, inflicting $s1 Nature damage to players struck.", "hash": "d27b3641aee9d68a", "src": "db2@1.60.1.70245"}
-{"id": 468211, "field": "name", "en": "Close Growing Fel Rift", "hash": "98545a99e69a9395", "src": "db2@1.60.1.70245"}
-{"id": 468211, "field": "description", "en": "Close a targeted small Fel portal. May draw unwanted attention from the other side.", "hash": "a89f2449f102cfff", "src": "db2@1.60.1.70245"}
-{"id": 468224, "field": "name", "en": "Hybrid Healing/Spell Dam 59/20", "hash": "0363d8bdf7d11875", "src": "db2@1.60.1.70245"}
-{"id": 468224, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 468225, "field": "name", "en": "Decipher Scroll", "hash": "7f7e621b6026e0c2", "src": "db2@1.60.1.70245"}
-{"id": 468225, "field": "description", "en": "Decipher the scroll with a Comprehension Charm. Who knows what magic it contains?", "hash": "ce6c2da9150fd222", "src": "db2@1.60.1.70245"}
-{"id": 468235, "field": "name", "en": "S03 - Item - T2 - Warrior - Damage 4P Bonus", "hash": "9677822246e9a661", "src": "db2@1.60.1.70245"}
-{"id": 468235, "field": "description", "en": "Your Heroic Strike, Slam, and Overpower abilities deal $s1% more damage.", "hash": "59ae5f5861455050", "src": "db2@1.60.1.70245"}
-{"id": 468236, "field": "name", "en": "S03 - Item - T2 - Warrior - Damage 6P Bonus", "hash": "855a87a531bbb248", "src": "db2@1.60.1.70245"}
-{"id": 468236, "field": "description", "en": "Your Slam hits reset the remaining cooldown on your Mortal Strike, Bloodthirst, and Shield Slam abilities.", "hash": "653c0fa5ce6775be", "src": "db2@1.60.1.70245"}
-{"id": 468240, "field": "name", "en": "Valxx Cracklequil - Receive Scroll of Lesser Spatial Mending", "hash": "314af49bd0ed9d4b", "src": "db2@1.60.1.70245"}
-{"id": 468242, "field": "name", "en": "Corruption", "hash": "99ec2eb2d8959128", "src": "db2@1.60.1.70245"}
-{"id": 468252, "field": "name", "en": "Clean Off Rune", "hash": "87addd88267cdc8b", "src": "db2@1.60.1.70245"}
-{"id": 468252, "field": "description", "en": "Clean off the rune.", "hash": "b7b126b12ef8a439", "src": "db2@1.60.1.70245"}
-{"id": 468255, "field": "name", "en": "Twin Blades of the Hakkari", "hash": "8513bf727f5a6f05", "src": "db2@1.60.1.70245"}
-{"id": 468256, "field": "name", "en": "Twin Blades of the Hakkari", "hash": "8513bf727f5a6f05", "src": "db2@1.60.1.70245"}
-{"id": 468256, "field": "description", "en": "$s1% chance on melee hit to gain 1 extra attack.", "hash": "d3cc96c1b7d1d7e7", "src": "db2@1.60.1.70245"}
-{"id": 468260, "field": "name", "en": "Improved Wrath/Starfire", "hash": "f10e03b16b2474e9", "src": "db2@1.60.1.70245"}
-{"id": 468260, "field": "description", "en": "Increases the critical hit chance of Wrath and Starfire by $s1%.", "hash": "fd71dc1f1468a307", "src": "db2@1.60.1.70245"}
-{"id": 468267, "field": "name", "en": "Increased Pet Damage +3%", "hash": "2c081d7fdee0b959", "src": "db2@1.60.1.70245"}
-{"id": 468267, "field": "description", "en": "Increases your pet's damage by $s1%.", "hash": "e2227b6796a777de", "src": "db2@1.60.1.70245"}
-{"id": 468267, "field": "aura", "en": "Increases your pet's damage by $s1%", "hash": "c52564979b0ae7c2", "src": "db2@1.60.1.70245"}
-{"id": 468268, "field": "name", "en": "Increased Pet Damage +3%", "hash": "2c081d7fdee0b959", "src": "db2@1.60.1.70245"}
-{"id": 468268, "field": "description", "en": "Increases damage dealt by your pet by $468267s1%.", "hash": "10a41abf99a6a6f2", "src": "db2@1.60.1.70245"}
-{"id": 468269, "field": "name", "en": "Increased Pet Damage +2%", "hash": "2c081cfcdee09978", "src": "db2@1.60.1.70245"}
-{"id": 468269, "field": "description", "en": "Increases your pet's damage by $s1%.", "hash": "e2227b6796a777de", "src": "db2@1.60.1.70245"}
-{"id": 468269, "field": "aura", "en": "Increases your pet's damage by $s1%", "hash": "c52564979b0ae7c2", "src": "db2@1.60.1.70245"}
-{"id": 468270, "field": "name", "en": "Increased Pet Damage +2%", "hash": "2c081cfcdee09978", "src": "db2@1.60.1.70245"}
-{"id": 468270, "field": "description", "en": "Increases damage dealt by your pet by $468269s1%.", "hash": "33bf8761577ba5e8", "src": "db2@1.60.1.70245"}
-{"id": 468271, "field": "name", "en": "Increased Pet Damage +1%", "hash": "2c081c79dee07997", "src": "db2@1.60.1.70245"}
-{"id": 468271, "field": "description", "en": "Increases your pet's damage by $s1%.", "hash": "e2227b6796a777de", "src": "db2@1.60.1.70245"}
-{"id": 468271, "field": "aura", "en": "Increases your pet's damage by $s1%", "hash": "c52564979b0ae7c2", "src": "db2@1.60.1.70245"}
-{"id": 468272, "field": "name", "en": "Increased Pet Damage +1%", "hash": "2c081c79dee07997", "src": "db2@1.60.1.70245"}
-{"id": 468272, "field": "description", "en": "Increases damage dealt by your pet by $468271s1%.", "hash": "a2d62074b1b1542d", "src": "db2@1.60.1.70245"}
-{"id": 468273, "field": "name", "en": "Decreased Frozen Orb Cooldown", "hash": "ee42360c2feea356", "src": "db2@1.60.1.70245"}
-{"id": 468273, "field": "description", "en": "Reduces the cooldown on your Frozen Orb spell by $/1000;S1 sec.", "hash": "acad74504b292cb9", "src": "db2@1.60.1.70245"}
-{"id": 468275, "field": "name", "en": "Increased Holy Hit Chance 3", "hash": "9c6907e300a85529", "src": "db2@1.60.1.70245"}
-{"id": 468275, "field": "description", "en": "Improves your chance to hit with all spells by $s1%.", "hash": "f11f7c405b607228", "src": "db2@1.60.1.70245"}
-{"id": 468277, "field": "name", "en": "Increased Spell  Hit Chance 2", "hash": "6090993e3bedfe30", "src": "db2@1.60.1.70245"}
-{"id": 468277, "field": "description", "en": "Improves your chance to hit with spells by ${$s1}.1%.", "hash": "be55f28d88e71d53", "src": "db2@1.60.1.70245"}
-{"id": 468278, "field": "name", "en": "Improved Power Word: Shield", "hash": "0386f768ab837bc3", "src": "db2@1.60.1.70245"}
-{"id": 468278, "field": "description", "en": "Increases the amount of damage absorbed by Power Word: Shield by $s1.", "hash": "77756ef139b25edc", "src": "db2@1.60.1.70245"}
-{"id": 468288, "field": "name", "en": "S03 - Item - Cutthroat Bonus Chance", "hash": "d5de21b7fc1906bd", "src": "db2@1.60.1.70245"}
-{"id": 468288, "field": "description", "en": "Increases the chance Cutthroat's Ambush effect is triggered by $s1%.", "hash": "c1d35d3b43cac027", "src": "db2@1.60.1.70245"}
-{"id": 468289, "field": "name", "en": "Decreased Decoy Totem", "hash": "c8b4ead803a0986f", "src": "db2@1.60.1.70245"}
-{"id": 468289, "field": "description", "en": "Reduces the cooldown on your Decoy Totem spell by $/1000;S1 sec.", "hash": "0ad93bdfadaf65d1", "src": "db2@1.60.1.70245"}
-{"id": 468297, "field": "name", "en": "(DNT) DEBUG - Destroy Egg", "hash": "97fb7b228122bf04", "src": "db2@1.60.1.70245"}
-{"id": 468297, "field": "description", "en": "Destroys a nearby egg.", "hash": "10a0ae276ba501e1", "src": "db2@1.60.1.70245"}
-{"id": 468298, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70245"}
-{"id": 468298, "field": "description", "en": "Teleports $s1 enemy $ltarget:targets; to the caster.", "hash": "d689091d2d28cd01", "src": "db2@1.60.1.70245"}
-{"id": 468299, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70245"}
-{"id": 468300, "field": "name", "en": "[DNT] Fire Trail Effect", "hash": "cf4dd3d8ac36317b", "src": "db2@1.60.1.70245"}
-{"id": 468301, "field": "name", "en": "[DNT] Fire Trail", "hash": "0e66a71963c36123", "src": "db2@1.60.1.70245"}
-{"id": 468303, "field": "name", "en": "Reduced Cleave Cooldown", "hash": "7d99c760c62afab6", "src": "db2@1.60.1.70245"}
-{"id": 468303, "field": "description", "en": "Reduces the cooldown of your Felguard's Cleave spell by $/1000;s1 sec.", "hash": "969b6417ee437d3c", "src": "db2@1.60.1.70245"}
-{"id": 468309, "field": "name", "en": "Reduced Shield Slam Cost", "hash": "c0f7935dbd8da64e", "src": "db2@1.60.1.70245"}
-{"id": 468309, "field": "description", "en": "Reduces the rage cost of your Shield Slam ability by $/10;s1.", "hash": "799e0b7c5ed4d1c5", "src": "db2@1.60.1.70245"}
-{"id": 468310, "field": "name", "en": "Improved Bestial Wrath", "hash": "df914c55178c1ef2", "src": "db2@1.60.1.70245"}
-{"id": 468310, "field": "description", "en": "Increases the effect duration of your Bestial Wrath ability by $/1000;s1 secs.", "hash": "7838eb0ed8166119", "src": "db2@1.60.1.70245"}
-{"id": 468312, "field": "name", "en": "Animist's Caress", "hash": "6e72fd210c8684fd", "src": "db2@1.60.1.70245"}
-{"id": 468314, "field": "name", "en": "Animist's Caress", "hash": "6e72fd210c8684fd", "src": "db2@1.60.1.70245"}
-{"id": 468314, "field": "description", "en": "Permanently adds $468312s1 Stamina, $468312s2 Intellect, and increases healing by up to $468312s3 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "8c3465ea85f1bbc2", "src": "db2@1.60.1.70245"}
-{"id": 468316, "field": "name", "en": "Animist's Balance", "hash": "664802db73c4ed49", "src": "db2@1.60.1.70245"}
-{"id": 468318, "field": "name", "en": "Animist's Balance", "hash": "664802db73c4ed49", "src": "db2@1.60.1.70245"}
-{"id": 468318, "field": "description", "en": "Permanently adds $468316s1 Stamina, $468316s2% chance to hit, and increases spell damage and healing by up to $468316s4 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "a017e047610b9638", "src": "db2@1.60.1.70245"}
-{"id": 468320, "field": "name", "en": "Animist's Fury", "hash": "77d0626ffacbd36a", "src": "db2@1.60.1.70245"}
-{"id": 468321, "field": "name", "en": "Animist's Fury", "hash": "77d0626ffacbd36a", "src": "db2@1.60.1.70245"}
-{"id": 468321, "field": "description", "en": "Permanently adds $468320s1 Stamina, $468320s2 Strength, and $468320s3 Agility to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "cbc782161f2bbdfd", "src": "db2@1.60.1.70245"}
-{"id": 468322, "field": "name", "en": "Animist's Roar", "hash": "796a6ac383d78f57", "src": "db2@1.60.1.70245"}
-{"id": 468323, "field": "name", "en": "Animist's Roar", "hash": "796a6ac383d78f57", "src": "db2@1.60.1.70245"}
-{"id": 468323, "field": "description", "en": "Permanently adds $468322s1 Stamina, $468322s2 Strength, and $468322s3 Defense to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "d560a47b3cc991e4", "src": "db2@1.60.1.70245"}
-{"id": 468324, "field": "name", "en": "Falcon's Call", "hash": "07b89d7745c890f6", "src": "db2@1.60.1.70245"}
-{"id": 468325, "field": "name", "en": "Falcon's Call", "hash": "07b89d7745c890f6", "src": "db2@1.60.1.70245"}
-{"id": 468325, "field": "description", "en": "Permanently adds $468324s1 Stamina, $468324s2 Agility, and $468324s3% chance to hit to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "5fb26a9bfac2d99d", "src": "db2@1.60.1.70245"}
-{"id": 468327, "field": "name", "en": "Syncretist's Seal", "hash": "f4d125147162c02b", "src": "db2@1.60.1.70245"}
-{"id": 468328, "field": "name", "en": "Syncretist's Seal", "hash": "f4d125147162c02b", "src": "db2@1.60.1.70245"}
-{"id": 468328, "field": "description", "en": "Permanently adds $468327s1 Stamina, $468327s2 Defense, and increases spell damage and healing by up to $468327s3 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "64888e6c34fd208e", "src": "db2@1.60.1.70245"}
-{"id": 468329, "field": "name", "en": "Syncretist's Sigil", "hash": "4790c332ea821236", "src": "db2@1.60.1.70245"}
-{"id": 468330, "field": "name", "en": "Syncretist's Sigil", "hash": "4790c332ea821236", "src": "db2@1.60.1.70245"}
-{"id": 468330, "field": "description", "en": "Permanently adds $468329s1 Stamina, $468329s2 Strength, and increases spell damage and healing by up to $468329s3 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "da72b7a75719cad2", "src": "db2@1.60.1.70245"}
-{"id": 468331, "field": "name", "en": "Syncretist's Crest", "hash": "2fe997a4ec926644", "src": "db2@1.60.1.70245"}
-{"id": 468332, "field": "name", "en": "Syncretist's Crest", "hash": "2fe997a4ec926644", "src": "db2@1.60.1.70245"}
-{"id": 468332, "field": "description", "en": "Permanently adds $468331s1 Stamina, $468331s2 Intellect, and increases healing by up to $468331s3 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "374bacbd3087e55e", "src": "db2@1.60.1.70245"}
-{"id": 468336, "field": "name", "en": "Syncretist's Emblem", "hash": "2363dbbf2b8b5534", "src": "db2@1.60.1.70245"}
-{"id": 468339, "field": "name", "en": "Syncretist's Emblem", "hash": "2363dbbf2b8b5534", "src": "db2@1.60.1.70245"}
-{"id": 468339, "field": "description", "en": "Permanently adds $468336s1 Stamina, $468336s2 Intellect, and increases spell damage and healing by up to $468336s3 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "baa9be62465570c3", "src": "db2@1.60.1.70245"}
-{"id": 468341, "field": "name", "en": "Prophetic Aura", "hash": "e3e91b878f37dd4b", "src": "db2@1.60.1.70245"}
-{"id": 468342, "field": "name", "en": "Prophetic Aura", "hash": "e3e91b878f37dd4b", "src": "db2@1.60.1.70245"}
-{"id": 468342, "field": "description", "en": "Permanently adds $468341s1 Stamina, $468341s2 Intellect, and increases healing by up to $468341s3 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "8843bda4e7443ac5", "src": "db2@1.60.1.70245"}
-{"id": 468343, "field": "name", "en": "Prophetic Curse", "hash": "c3648e9661be003d", "src": "db2@1.60.1.70245"}
-{"id": 468344, "field": "name", "en": "Prophetic Curse", "hash": "c3648e9661be003d", "src": "db2@1.60.1.70245"}
-{"id": 468344, "field": "description", "en": "Permanently adds $468343s1 Stamina, $468343s2 Intellect, and increases healing and spell damage by up to $468343s3 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "8acbadf31963b216", "src": "db2@1.60.1.70245"}
-{"id": 468345, "field": "name", "en": "Death's Embrace", "hash": "ad0c01d38525a179", "src": "db2@1.60.1.70245"}
-{"id": 468347, "field": "name", "en": "Death's Embrace", "hash": "ad0c01d38525a179", "src": "db2@1.60.1.70245"}
-{"id": 468347, "field": "description", "en": "Permanently adds $468345s1 Stamina, $468345s2 Agility, and $468345s3 Defense to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "7f09bb8076a5dff9", "src": "db2@1.60.1.70245"}
-{"id": 468348, "field": "name", "en": "Death's Advance", "hash": "5f690c688afa83eb", "src": "db2@1.60.1.70245"}
-{"id": 468349, "field": "name", "en": "Death's Advance", "hash": "5f690c688afa83eb", "src": "db2@1.60.1.70245"}
-{"id": 468349, "field": "description", "en": "Permanently adds $468348s1 Stamina, $468348s2 Agility, and $468348s3% chance to hit to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "a30b6907d759c444", "src": "db2@1.60.1.70245"}
-{"id": 468350, "field": "name", "en": "Vodouisant's Embrace", "hash": "ab83cef3eb781b84", "src": "db2@1.60.1.70245"}
-{"id": 468351, "field": "name", "en": "Vodouisant's Embrace", "hash": "ab83cef3eb781b84", "src": "db2@1.60.1.70245"}
-{"id": 468351, "field": "description", "en": "Permanently adds $468350s1 Stamina, $468350s2 Strength, and increases all healing and spell damage by up to $468350s3 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "d963bf029fe5b24f", "src": "db2@1.60.1.70245"}
-{"id": 468352, "field": "name", "en": "Vodouisant's Shroud", "hash": "5b546161510b41ae", "src": "db2@1.60.1.70245"}
-{"id": 468354, "field": "name", "en": "Vodouisant's Shroud", "hash": "5b546161510b41ae", "src": "db2@1.60.1.70245"}
-{"id": 468354, "field": "description", "en": "Permanently adds $468352s1 Stamina, $468352s2% chance to hit, and increases all healing and spell damage by up to $468352s4 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "b8730941480b375a", "src": "db2@1.60.1.70245"}
-{"id": 468358, "field": "name", "en": "Vodouisant's Charm", "hash": "68ccc5e413016cea", "src": "db2@1.60.1.70245"}
-{"id": 468359, "field": "name", "en": "Vodouisant's Charm", "hash": "68ccc5e413016cea", "src": "db2@1.60.1.70245"}
-{"id": 468359, "field": "description", "en": "Permanently adds $468358s1 Stamina, $468358s2 Intellect, and increases healing by up to $468358s3 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "9929cb8bf2321967", "src": "db2@1.60.1.70245"}
-{"id": 468361, "field": "name", "en": "Vodouisant's Vigilance", "hash": "2a26cb1c75a40fc9", "src": "db2@1.60.1.70245"}
-{"id": 468362, "field": "name", "en": "Vodouisant's Vigilance", "hash": "2a26cb1c75a40fc9", "src": "db2@1.60.1.70245"}
-{"id": 468362, "field": "description", "en": "Permanently adds $468361s1 Stamina, $468361s2 Defense, and $468361s3% chance to Block to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "4933f1ae91448c3c", "src": "db2@1.60.1.70245"}
-{"id": 468363, "field": "name", "en": "Hoodoo Hex", "hash": "d8ef3d2326878feb", "src": "db2@1.60.1.70245"}
-{"id": 468365, "field": "name", "en": "Hoodoo Hex", "hash": "d8ef3d2326878feb", "src": "db2@1.60.1.70245"}
-{"id": 468365, "field": "description", "en": "Permanently adds $468363s1 Stamina, $468363s2% chance to hit, and increases spell damage and healing by up to $468363s4 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "e8fd4108f815c1c1", "src": "db2@1.60.1.70245"}
-{"id": 468367, "field": "name", "en": "Hoodoo Curse", "hash": "e7c95e5f21d5b7d5", "src": "db2@1.60.1.70245"}
-{"id": 468368, "field": "name", "en": "Hoodoo Curse", "hash": "e7c95e5f21d5b7d5", "src": "db2@1.60.1.70245"}
-{"id": 468368, "field": "description", "en": "Permanently adds $468367s1 Stamina, $468367s2% chance to hit, and $468367s4 Defense to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "cec0e8b7bec3bb93", "src": "db2@1.60.1.70245"}
-{"id": 468372, "field": "name", "en": "Presence of Might", "hash": "c942d65047cd2f00", "src": "db2@1.60.1.70245"}
-{"id": 468373, "field": "name", "en": "Presence of Might", "hash": "c942d65047cd2f00", "src": "db2@1.60.1.70245"}
-{"id": 468373, "field": "description", "en": "Permanently adds $468372s1 Stamina, $468372s2 Strength, and $468372s3 Agility to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "b7d518617d852abd", "src": "db2@1.60.1.70245"}
-{"id": 468375, "field": "name", "en": "Presence of Valor", "hash": "662d2516c6a63bdf", "src": "db2@1.60.1.70245"}
-{"id": 468376, "field": "name", "en": "Presence of Valor", "hash": "662d2516c6a63bdf", "src": "db2@1.60.1.70245"}
-{"id": 468376, "field": "description", "en": "Permanently adds $468375s1 Stamina, $468375s2 Defense, and $468375s3 Shield Block value to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "6301b659a3c3d4c8", "src": "db2@1.60.1.70245"}
-{"id": 468379, "field": "name", "en": "Presence of Sight", "hash": "32951c3b814c2bd1", "src": "db2@1.60.1.70245"}
-{"id": 468380, "field": "name", "en": "Presence of Sight", "hash": "32951c3b814c2bd1", "src": "db2@1.60.1.70245"}
-{"id": 468380, "field": "description", "en": "Permanently adds $468379s1 Stamina, $468379s2 Intellect, and increases spell damage and healing by up to $468379s3 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "16b8f14041c0c9fb", "src": "db2@1.60.1.70245"}
-{"id": 468381, "field": "name", "en": "Summon Vessel of Rebirth", "hash": "c91f41f6909ad484", "src": "db2@1.60.1.70245"}
-{"id": 468382, "field": "name", "en": "Falcon's Fury", "hash": "0824c61b3d66777c", "src": "db2@1.60.1.70245"}
-{"id": 468383, "field": "name", "en": "Falcon's Fury", "hash": "0824c61b3d66777c", "src": "db2@1.60.1.70245"}
-{"id": 468383, "field": "description", "en": "Permanently adds $468382s1 Stamina, $468382s2 Agility, and $468382s3 Strength to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "7912c26fd8af3687", "src": "db2@1.60.1.70245"}
-{"id": 468387, "field": "name", "en": "Aligned with Nature", "hash": "c1bc643d5882ddf6", "src": "db2@1.60.1.70245"}
-{"id": 468387, "field": "description", "en": "Aligns the Druid with nature, increasing the damage done by spells by $s1%, improving heal effects by $s2%, and increasing the critical strike chance of spells by $s3% for $d.", "hash": "b4f0163e44702bdd", "src": "db2@1.60.1.70245"}
-{"id": 468387, "field": "aura", "en": "Spell damage increased by $s1%.\r\nHealing effects increased by $s2%.\r\nSpell critical strike chance increased by $s3%.", "hash": "3ca30a3654b94b62", "src": "db2@1.60.1.70245"}
-{"id": 468388, "field": "name", "en": "Locked In", "hash": "0077623ef278592d", "src": "db2@1.60.1.70245"}
-{"id": 468388, "field": "description", "en": "Your next $s2 Shots or melee abilities within $d do not incur a cooldown.", "hash": "19a8773a415edfb7", "src": "db2@1.60.1.70245"}
-{"id": 468388, "field": "aura", "en": "Your next ${$m2/2} Shots or melee abilities do not incur a cooldown.", "hash": "726ba4b504d7c30b", "src": "db2@1.60.1.70245"}
-{"id": 468395, "field": "name", "en": "S03 - Item - ZG - Druid - Balance 2P Bonus", "hash": "f4edfecbdef3d461", "src": "db2@1.60.1.70245"}
-{"id": 468395, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70245"}
-{"id": 468397, "field": "name", "en": "S03 - Item - ZG - Mage - Frost 2P Bonus", "hash": "fe281abb6cb749b6", "src": "db2@1.60.1.70245"}
-{"id": 468397, "field": "description", "en": "Increases damage done by Frost spells and effects by up to $s1.", "hash": "8d8b0ac5bd86af9a", "src": "db2@1.60.1.70245"}
-{"id": 468398, "field": "name", "en": "S03 - Item - ZG - Priest - Discipline 2P Bonus", "hash": "b125a108f3576e64", "src": "db2@1.60.1.70245"}
-{"id": 468398, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 468400, "field": "name", "en": "S03 - Item - ZG - Warlock - Demonology 2P Bonus", "hash": "d4f75af6906e7af4", "src": "db2@1.60.1.70245"}
-{"id": 468400, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70245"}
-{"id": 468401, "field": "name", "en": "S03 - Item - ZG - Paladin - Caster 2P Bonus", "hash": "2c01c0638b212987", "src": "db2@1.60.1.70245"}
-{"id": 468401, "field": "description", "en": "Increases damage done by Holy spells and effects by up to $s1.", "hash": "6e3351e7dc6b9f3a", "src": "db2@1.60.1.70245"}
-{"id": 468407, "field": "name", "en": "S03 - Item - ZG - Hunter - Beastmaster 2P Bonus", "hash": "6efd0faeff7a14b3", "src": "db2@1.60.1.70245"}
-{"id": 468407, "field": "description", "en": "+$s1 Attack Power.", "hash": "ff5c97b29bc1954f", "src": "db2@1.60.1.70245"}
-{"id": 468408, "field": "name", "en": "Bloodlust", "hash": "b9545f229ef97d79", "src": "db2@1.60.1.70245"}
-{"id": 468408, "field": "description", "en": "Increases attack speed by $s1% for $d.", "hash": "3a04eedf7db78448", "src": "db2@1.60.1.70245"}
-{"id": 468408, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70245"}
-{"id": 468409, "field": "name", "en": "S03 - Item - ZG - Rogue - Dagger 2P Bonus", "hash": "96833bea415571c6", "src": "db2@1.60.1.70245"}
-{"id": 468409, "field": "description", "en": "+$s1 Attack Power.", "hash": "ff5c97b29bc1954f", "src": "db2@1.60.1.70245"}
-{"id": 468411, "field": "name", "en": "S03 - Item - ZG - Shaman - Tank 2P Bonus", "hash": "dba3bf8e7be9730a", "src": "db2@1.60.1.70245"}
-{"id": 468411, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "db2@1.60.1.70245"}
-{"id": 468412, "field": "name", "en": "S03 - Item - ZG - Warrior - Gladiator 2P Bonus", "hash": "c42de2abfb367dc4", "src": "db2@1.60.1.70245"}
-{"id": 468412, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "db2@1.60.1.70245"}
-{"id": 468415, "field": "name", "en": "S03 - Item - ZG - Druid - Balance 3P Bonus", "hash": "6c5f818f545cda5d", "src": "db2@1.60.1.70245"}
-{"id": 468415, "field": "description", "en": "Reduces the cast time and global cooldown of Starfire by ${$m1/-1000}.1 sec.", "hash": "25126fce13b72425", "src": "db2@1.60.1.70245"}
-{"id": 468416, "field": "name", "en": "S03 - Item - ZG - Druid - Balance 5P Bonus", "hash": "5b4287123f2ee644", "src": "db2@1.60.1.70245"}
-{"id": 468416, "field": "description", "en": "Increases the critical strike chance of Wrath by $s1%.", "hash": "dccab3fa8941ec9e", "src": "db2@1.60.1.70245"}
-{"id": 468417, "field": "name", "en": "S03 - Item - ZG - Hunter - Beastmaster 3P Bonus", "hash": "e66e926d74e31aaf", "src": "db2@1.60.1.70245"}
-{"id": 468417, "field": "description", "en": "Increases the Attack Power your Beast pet gains from your attributes by $s1%.", "hash": "f179525e15401875", "src": "db2@1.60.1.70245"}
-{"id": 468418, "field": "name", "en": "S03 - Item - ZG - Hunter - Beastmaster 5P Bonus", "hash": "d55197f05fb52696", "src": "db2@1.60.1.70245"}
-{"id": 468418, "field": "description", "en": "Increases the Focus regeneration of your Beast pet by $s1%.", "hash": "ac920ac7f54f31f9", "src": "db2@1.60.1.70245"}
-{"id": 468425, "field": "name", "en": "S03 - Item - ZG - Mage - Frost 3P Bonus", "hash": "75999d7fe2204fa1", "src": "db2@1.60.1.70245"}
-{"id": 468425, "field": "description", "en": "Increases the chance to trigger your Fingers of Frost rune by an additional $s1%.", "hash": "2ff619f934776c19", "src": "db2@1.60.1.70245"}
-{"id": 468427, "field": "name", "en": "S03 - Item - ZG - Mage - Frost 5P Bonus", "hash": "647ca302ccf25b88", "src": "db2@1.60.1.70245"}
-{"id": 468427, "field": "description", "en": "Increases damage done by your Frostbolt and Spellfrost Bolt spells by $s1%.", "hash": "44fc23b0b459dcbf", "src": "db2@1.60.1.70245"}
-{"id": 468428, "field": "name", "en": "S03 - Item - ZG - Paladin - Caster 3P Bonus", "hash": "a3734322008a2f83", "src": "db2@1.60.1.70245"}
-{"id": 468428, "field": "description", "en": "Increases damage done by your Holy Shock spell by $s1%.", "hash": "8c5898433355b97f", "src": "db2@1.60.1.70245"}
-{"id": 468431, "field": "name", "en": "S03 - Item - ZG - Paladin - Caster 5P Bonus", "hash": "925648a5eb5c3b59", "src": "db2@1.60.1.70245"}
-{"id": 468431, "field": "description", "en": "Reduces the cooldown of your Exorcism spell by ${$m1/-1000} sec and increases its damage done by $s2%.", "hash": "3e78500167475ec7", "src": "db2@1.60.1.70245"}
-{"id": 468433, "field": "name", "en": "S03 - Item - ZG - Priest - Discipline 3P Bonus", "hash": "289723cc68c07460", "src": "db2@1.60.1.70245"}
-{"id": 468433, "field": "description", "en": "Reduces the cooldown of your Penance spell by ${$m1/-1000} sec.", "hash": "187f29a80221515d", "src": "db2@1.60.1.70245"}
-{"id": 468434, "field": "name", "en": "S03 - Item - ZG - Priest - Discipline 5P Bonus", "hash": "177a294f53928047", "src": "db2@1.60.1.70245"}
-{"id": 468434, "field": "description", "en": "Increases the damage absorbed by your Power Word: Shield spell by $s1%.", "hash": "b9ac6d8c27199bea", "src": "db2@1.60.1.70245"}
-{"id": 468436, "field": "name", "en": "S03 - Item - ZG - Rogue - Dagger 3P Bonus", "hash": "0df4beaeb6be77b1", "src": "db2@1.60.1.70245"}
-{"id": 468436, "field": "description", "en": "Increases your chance to get a critical strike with Daggers by $s1%.", "hash": "a200bf677cfbdf7a", "src": "db2@1.60.1.70245"}
-{"id": 468438, "field": "name", "en": "S03 - Item - ZG - Rogue - Dagger 5P Bonus", "hash": "fcd7c42ca1908398", "src": "db2@1.60.1.70245"}
-{"id": 468438, "field": "description", "en": "Increases the critical strike chance of your Ambush ability by $s1%.", "hash": "6e3c0e9699dc126f", "src": "db2@1.60.1.70245"}
-{"id": 468441, "field": "name", "en": "S03 - Item - ZG - Shaman - Tank 3P Bonus", "hash": "53154252f15278f5", "src": "db2@1.60.1.70245"}
-{"id": 468441, "field": "description", "en": "Increases your chance to block attacks with a shield by $s1%.", "hash": "44ee93799b332b37", "src": "db2@1.60.1.70245"}
-{"id": 468445, "field": "name", "en": "S03 - Item - ZG - Shaman - Tank 5P Bonus", "hash": "41f847d5dc2484dc", "src": "db2@1.60.1.70245"}
-{"id": 468445, "field": "description", "en": "Increases the chance to trigger your Power Surge rune by an additional $s1%.", "hash": "08ee1dc9cc5f0ec2", "src": "db2@1.60.1.70245"}
-{"id": 468446, "field": "name", "en": "S03 - Item - ZG - Warlock - Demonology 3P Bonus", "hash": "4c68ddba05d780f0", "src": "db2@1.60.1.70245"}
-{"id": 468446, "field": "description", "en": "Increases the Attack Power and Spell Damage your Demon pet gains from your attributes by $s1%.", "hash": "35c4a1319f4ebddc", "src": "db2@1.60.1.70245"}
-{"id": 468447, "field": "name", "en": "S03 - Item - ZG - Warlock - Demonology 5P Bonus", "hash": "3b4be33df0a98cc6", "src": "db2@1.60.1.70245"}
-{"id": 468447, "field": "description", "en": "Increases the benefits of your Master Demonologist talent by $s1%.", "hash": "53c5cd7250ed2041", "src": "db2@1.60.1.70245"}
-{"id": 468452, "field": "name", "en": "S03 - Item - ZG - Warrior - Gladiator 3P Bonus", "hash": "3b9f656f709f83c0", "src": "db2@1.60.1.70245"}
-{"id": 468452, "field": "description", "en": "Reduces the cooldown on your Shield Slam ability by ${$m1/-1000} sec.", "hash": "12fb34ef18c3454d", "src": "db2@1.60.1.70245"}
-{"id": 468453, "field": "name", "en": "S03 - Item - ZG - Warrior - Gladiator 5P Bonus", "hash": "2a826af25b718fa7", "src": "db2@1.60.1.70245"}
-{"id": 468453, "field": "description", "en": "Reduces the cooldown on your Bloodrage ability by ${$m1/-1000} sec while you are in Gladiator Stance.", "hash": "209cb5838aae5023", "src": "db2@1.60.1.70245"}
-{"id": 468455, "field": "name", "en": "S03 - Item - ZG - Warrior - Gladiator 5P Bonus", "hash": "2a826af25b718fa7", "src": "db2@1.60.1.70245"}
-{"id": 468458, "field": "name", "en": "Burst of Energy", "hash": "daf28b4edec9f2da", "src": "db2@1.60.1.70245"}
-{"id": 468458, "field": "description", "en": "Instantly increases your energy by $s1. If Cutthroat is engraved, gain an activation of Cutthroat's Ambush effect.", "hash": "be6a46e61e4f6256", "src": "db2@1.60.1.70245"}
-{"id": 468459, "field": "name", "en": "Renataki's Charm of Trickery Dummy", "hash": "c4bf0ee31fcaedeb", "src": "db2@1.60.1.70245"}
-{"id": 468460, "field": "name", "en": "Energized Shield", "hash": "6d69b3a3c97d76d1", "src": "db2@1.60.1.70245"}
-{"id": 468460, "field": "description", "en": "Increases the damage dealt by your Lightning Shield spell by $s1% for $d.", "hash": "f0846f5703c4b2cb", "src": "db2@1.60.1.70245"}
-{"id": 468460, "field": "aura", "en": "Lightning Shield damage increased by $s1%.", "hash": "d18fd979a21c7da4", "src": "db2@1.60.1.70245"}
-{"id": 468461, "field": "name", "en": "Brilliant Light", "hash": "d1b869baf8c77e2c", "src": "db2@1.60.1.70245"}
-{"id": 468461, "field": "description", "en": "Increases the critical hit chance of spells by $s1% for $d. If Shock and Awe is engraved, gain an additional $s2%.", "hash": "d73199409a602499", "src": "db2@1.60.1.70245"}
-{"id": 468461, "field": "aura", "en": "Spell critical hit chance increased by $w1%.", "hash": "567ed40fc1ad32c9", "src": "db2@1.60.1.70245"}
-{"id": 468462, "field": "name", "en": "Gri'lek's Guard", "hash": "f6627c6982b3aebf", "src": "db2@1.60.1.70245"}
-{"id": 468462, "field": "description", "en": "Increases your shield block value by $s2 for $d1, and instantly increases your rage by $/10;s1.", "hash": "0d56817d29f7c736", "src": "db2@1.60.1.70245"}
-{"id": 468462, "field": "aura", "en": "Block value increased by $s2.", "hash": "64e828f2fb19096f", "src": "db2@1.60.1.70245"}
-{"id": 468463, "field": "name", "en": "S03 - Flag Tracking Quest", "hash": "d61ce43a1ca90a56", "src": "db2@1.60.1.70245"}
-{"id": 468464, "field": "name", "en": "Destroy Simulacrum", "hash": "702c9e83bfe3af52", "src": "db2@1.60.1.70245"}
-{"id": 468464, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70245"}
-{"id": 468465, "field": "name", "en": "Unmaking the Simulacrum", "hash": "cc86ac0bdbb3f723", "src": "db2@1.60.1.70245"}
-{"id": 468465, "field": "description", "en": "You are siezed by darkness!", "hash": "c9acf240cb7b9d27", "src": "db2@1.60.1.70245"}
-{"id": 468465, "field": "aura", "en": "You are incapacitated by a deathly chill! Unable to move or perform actions.", "hash": "34b9971b063b347b", "src": "db2@1.60.1.70245"}
-{"id": 468466, "field": "name", "en": "Unmaking the Simulacrum", "hash": "cc86ac0bdbb3f723", "src": "db2@1.60.1.70245"}
-{"id": 468466, "field": "description", "en": "While channeling this spell, your mana regeneration is active and increased by $s1%.  Lasts $d.", "hash": "6222a8d66d86c0f6", "src": "db2@1.60.1.70245"}
-{"id": 468466, "field": "aura", "en": "Mana regeneration increased by $s1%.", "hash": "f8a540d0866e7bfb", "src": "db2@1.60.1.70245"}
-{"id": 468467, "field": "name", "en": "[DNT] Faerie Flare", "hash": "3024a59ec64e4d9d", "src": "db2@1.60.1.70245"}
-{"id": 468468, "field": "name", "en": "[DNT] Faerie Light", "hash": "99118fda6f65c62b", "src": "db2@1.60.1.70245"}
-{"id": 468469, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70245"}
-{"id": 468472, "field": "name", "en": "Summon Parasitic Serpent", "hash": "94a696c8a0ba7012", "src": "db2@1.60.1.70245"}
-{"id": 468473, "field": "name", "en": "Parasitic Serpent", "hash": "fc1a16ca0a56200b", "src": "db2@1.60.1.70245"}
-{"id": 468474, "field": "name", "en": "Parasitic Serpent", "hash": "fc1a16ca0a56200b", "src": "db2@1.60.1.70245"}
-{"id": 468474, "field": "aura", "en": "Deals $s1 damage every $t1 sec.", "hash": "2af65718435cbcd2", "src": "db2@1.60.1.70245"}
-{"id": 468475, "field": "name", "en": "Poison", "hash": "43f9da16eae9c502", "src": "db2@1.60.1.70245"}
-{"id": 468475, "field": "description", "en": "Inflicts Nature damage to an enemy every $t1 sec. for $d.", "hash": "05ece5991a43ff48", "src": "db2@1.60.1.70245"}
-{"id": 468475, "field": "aura", "en": "Nature damage inflicted every $t1 sec.", "hash": "af62b13ec2fc8e7b", "src": "db2@1.60.1.70245"}
-{"id": 468478, "field": "name", "en": "Growth", "hash": "a1cb34b80a23af75", "src": "db2@1.60.1.70245"}
-{"id": 468479, "field": "name", "en": "Growth", "hash": "a1cb34b80a23af75", "src": "db2@1.60.1.70245"}
-{"id": 468481, "field": "name", "en": "Full Grown", "hash": "b156a50b987f281e", "src": "db2@1.60.1.70245"}
-{"id": 468488, "field": "name", "en": "Aspect of Arlokk", "hash": "34cd3d6601140ca0", "src": "db2@1.60.1.70245"}
-{"id": 468491, "field": "name", "en": "Aspect of Arlokk", "hash": "34cd3d6601140ca0", "src": "db2@1.60.1.70245"}
-{"id": 468492, "field": "name", "en": "Aspect of Arlokk", "hash": "34cd3d6601140ca0", "src": "db2@1.60.1.70245"}
-{"id": 468495, "field": "name", "en": "(DNT) Teleport", "hash": "7bd93be0b45ca164", "src": "db2@1.60.1.70245"}
-{"id": 468500, "field": "name", "en": "Charge", "hash": "024f52bd3f49c2c8", "src": "db2@1.60.1.70245"}
-{"id": 468500, "field": "description", "en": "Charges an enemy, inflicting normal damage plus $s3 and stuns the opponent for $d.", "hash": "af4293e676932a45", "src": "db2@1.60.1.70245"}
-{"id": 468503, "field": "name", "en": "Fulmination", "hash": "e5233c2e74d35740", "src": "db2@1.60.1.70245"}
-{"id": 468509, "field": "name", "en": "(DNT) Stop Cast", "hash": "ab4ef9e4fc22d28c", "src": "db2@1.60.1.70245"}
-{"id": 468512, "field": "name", "en": "Frost Potency", "hash": "f010e5c8a3bfb2cd", "src": "db2@1.60.1.70245"}
-{"id": 468512, "field": "description", "en": "Increases the critical hit chance of your Frostbolt, Spellfrost Bolt, and Frozen Orb spells by $s1%, and increases the critical hit damage of your Frostbolt, Spellfrost Bolt, and Frozen Orb spells by $s2% for $d.", "hash": "7e076da5786b5a5d", "src": "db2@1.60.1.70245"}
-{"id": 468512, "field": "aura", "en": "Frostbolt, Spellfrost Bolt, and Frozen Orb spell critical hit chance increased by $s1%.\r\nFrostbolt, Spellfrost Bolt, and Frozen Orb spell critical hit damage increased by $s2%.", "hash": "15dd02e536578e5b", "src": "db2@1.60.1.70245"}
-{"id": 468513, "field": "name", "en": "(DNT) Go Cast", "hash": "bc84cff23329f621", "src": "db2@1.60.1.70245"}
-{"id": 468526, "field": "name", "en": "Power Surge", "hash": "15f545926e66c8bc", "src": "db2@1.60.1.70245"}
-{"id": 468526, "field": "aura", "en": "Your next Chain Heal spell will be an instant cast spell.", "hash": "640ad6335d7e2885", "src": "db2@1.60.1.70245"}
-{"id": 468528, "field": "name", "en": "[DNT] Priest Epic Book - Cosmetic", "hash": "2d0a6c9d87aa0a32", "src": "db2@1.60.1.70245"}
-{"id": 468531, "field": "name", "en": "Rapid Healing", "hash": "b0f8d5ac29a81fde", "src": "db2@1.60.1.70245"}
-{"id": 468531, "field": "description", "en": "Reduces the casting time of your Greater Heal spells by $s1%, reduces the mana cost of your healing spells by $s2%, and casts of Penance on allies will target up to ${$s3-1} additional targets for $d.", "hash": "63fdcc13bd3a7c9e", "src": "db2@1.60.1.70245"}
-{"id": 468531, "field": "aura", "en": "Greater Heal casting time decreased by $s1%.\r\nHealing spell mana cost reduced by $s2%.\r\nPenance casts on allies will target up to ${$s3-1} additional targets.", "hash": "182ad8681ba4fc8f", "src": "db2@1.60.1.70245"}
-{"id": 468540, "field": "name", "en": "Massive Destruction", "hash": "a9d57bbb3950e2b5", "src": "db2@1.60.1.70245"}
-{"id": 468540, "field": "description", "en": "Increases your critical hit chance by $s1%, and increases your pet's attack speed by $468543s1% for $d. This spell does not affect temporary pets or Subjugated Demons.", "hash": "68823c6dcf52e0ff", "src": "db2@1.60.1.70245"}
-{"id": 468540, "field": "aura", "en": "Critical hit chance increased by $s1%.", "hash": "244e6a73939637df", "src": "db2@1.60.1.70245"}
-{"id": 468543, "field": "name", "en": "Demonic Destruction", "hash": "70e19b8d81458714", "src": "db2@1.60.1.70245"}
-{"id": 468543, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70245"}
-{"id": 468552, "field": "name", "en": "Punctured Voodoo Doll WAR DND", "hash": "bea3680e8e57430b", "src": "db2@1.60.1.70245"}
-{"id": 468552, "field": "description", "en": "Combines with Gri'lek's Blood, Renataki's Tooth, Wushoolay's Mane, and Hazza'rah's Dream Thread to form a powerful charm.", "hash": "7ddd14e46a2062f6", "src": "db2@1.60.1.70245"}
-{"id": 468555, "field": "name", "en": "Punctured Voodoo Doll SHM DND", "hash": "74b21e86182c178e", "src": "db2@1.60.1.70245"}
-{"id": 468555, "field": "description", "en": "Combines with Gri'lek's Blood, Renataki's Tooth, Wushoolay's Mane, and Hazza'rah's Dream Thread to form a powerful charm.", "hash": "7ddd14e46a2062f6", "src": "db2@1.60.1.70245"}
-{"id": 468556, "field": "name", "en": "Punctured Voodoo Doll MAG DND", "hash": "ee919641a261f542", "src": "db2@1.60.1.70245"}
-{"id": 468556, "field": "description", "en": "Combines with Gri'lek's Blood, Renataki's Tooth, Wushoolay's Mane, and Hazza'rah's Dream Thread to form a powerful charm.", "hash": "7ddd14e46a2062f6", "src": "db2@1.60.1.70245"}
-{"id": 468557, "field": "name", "en": "Punctured Voodoo Doll WLK  DND", "hash": "1272abb7f6d81576", "src": "db2@1.60.1.70245"}
-{"id": 468557, "field": "description", "en": "Combines with Gri'lek's Blood, Renataki's Tooth, Wushoolay's Mane, and Hazza'rah's Dream Thread to form a powerful charm.", "hash": "7ddd14e46a2062f6", "src": "db2@1.60.1.70245"}
-{"id": 468558, "field": "name", "en": "Punctured Voodoo Doll PRT DND", "hash": "a4a4f6805f32790b", "src": "db2@1.60.1.70245"}
-{"id": 468558, "field": "description", "en": "Combines with Gri'lek's Blood, Renataki's Tooth, Wushoolay's Mane, and Hazza'rah's Dream Thread to form a powerful charm.", "hash": "7ddd14e46a2062f6", "src": "db2@1.60.1.70245"}
-{"id": 468559, "field": "name", "en": "Punctured Voodoo Doll DRU DND", "hash": "3dd24add3b0dfa9e", "src": "db2@1.60.1.70245"}
-{"id": 468559, "field": "description", "en": "Combines with Gri'lek's Blood, Renataki's Tooth, Wushoolay's Mane, and Hazza'rah's Dream Thread to form a powerful charm.", "hash": "7ddd14e46a2062f6", "src": "db2@1.60.1.70245"}
-{"id": 468560, "field": "name", "en": "Punctured Voodoo Doll ROG DND", "hash": "374b372ac3da2bff", "src": "db2@1.60.1.70245"}
-{"id": 468560, "field": "description", "en": "Combines with Gri'lek's Blood, Renataki's Tooth, Wushoolay's Mane, and Hazza'rah's Dream Thread to form a powerful charm.", "hash": "7ddd14e46a2062f6", "src": "db2@1.60.1.70245"}
-{"id": 468562, "field": "name", "en": "Punctured Voodoo Doll PAL DND", "hash": "646e3e58fdba3212", "src": "db2@1.60.1.70245"}
-{"id": 468562, "field": "description", "en": "Combines with Gri'lek's Blood, Renataki's Tooth, Wushoolay's Mane, and Hazza'rah's Dream Thread to form a powerful charm.", "hash": "7ddd14e46a2062f6", "src": "db2@1.60.1.70245"}
-{"id": 468563, "field": "name", "en": "Punctured Voodoo Doll HUN DND", "hash": "8849fcd46d9bd124", "src": "db2@1.60.1.70245"}
-{"id": 468563, "field": "description", "en": "Combines with Gri'lek's Blood, Renataki's Tooth, Wushoolay's Mane, and Hazza'rah's Dream Thread to form a powerful charm.", "hash": "7ddd14e46a2062f6", "src": "db2@1.60.1.70245"}
-{"id": 468590, "field": "name", "en": "Hybrid Healing/Spell Dam 51/17", "hash": "02516b698c91585f", "src": "db2@1.60.1.70245"}
-{"id": 468590, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 468591, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70245"}
-{"id": 468591, "field": "aura", "en": "Asleep.", "hash": "5339954ec205013e", "src": "db2@1.60.1.70245"}
-{"id": 468592, "field": "name", "en": "Hybrid Healing/Spell Dam 42/14", "hash": "f0e602ab3b0eccf1", "src": "db2@1.60.1.70245"}
-{"id": 468592, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 468594, "field": "name", "en": "Roll Over!", "hash": "6651d0687b9a86cf", "src": "db2@1.60.1.70245"}
-{"id": 468598, "field": "name", "en": "Roll Over!", "hash": "6651d0687b9a86cf", "src": "db2@1.60.1.70245"}
-{"id": 468621, "field": "name", "en": "Hybrid Healing/Spell Dam 31/11", "hash": "df35febccebc5963", "src": "db2@1.60.1.70245"}
-{"id": 468621, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 468638, "field": "name", "en": "Imbue Essence of Frost", "hash": "3f355bb431d4cbbe", "src": "db2@1.60.1.70245"}
-{"id": 468638, "field": "description", "en": "Imbue the Depleted Essence of Frost with magic.", "hash": "e983ec96f9829eb5", "src": "db2@1.60.1.70245"}
-{"id": 468643, "field": "name", "en": "Start The Depleted Scythe", "hash": "ec4962196d01b7cc", "src": "db2@1.60.1.70245"}
-{"id": 468667, "field": "name", "en": "Silithid Darter", "hash": "2e7f5a001ff48c45", "src": "db2@1.60.1.70245"}
-{"id": 468670, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70245"}
-{"id": 468670, "field": "description", "en": "Blasts up to 3 targets for $s1 Nature damage.", "hash": "d382b11fc55599c5", "src": "db2@1.60.1.70245"}
-{"id": 468671, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70245"}
-{"id": 468671, "field": "description", "en": "Damaging non-periodic spells have a chance to blast up to $s2 targets for $s1.", "hash": "4e40a70e5eb110ee", "src": "db2@1.60.1.70245"}
-{"id": 468688, "field": "name", "en": "Hybrid Healing/Spell Dam 128/43", "hash": "545ab19caeedda93", "src": "db2@1.60.1.70245"}
-{"id": 468688, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 468689, "field": "name", "en": "Lock and Load", "hash": "bf35fddceefb2eba", "src": "db2@1.60.1.70245"}
-{"id": 468698, "field": "name", "en": "Open Suspicious Supplies", "hash": "3c76593af32ea474", "src": "db2@1.60.1.70245"}
-{"id": 468698, "field": "description", "en": "Place and open the strange supplies Xirath gave you.", "hash": "f8392905351c1075", "src": "db2@1.60.1.70245"}
-{"id": 468700, "field": "name", "en": "Attack Power - Feral (+338)", "hash": "39fd1e45d9f81109", "src": "db2@1.60.1.70245"}
-{"id": 468700, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.", "hash": "a798bce2a303c5f6", "src": "db2@1.60.1.70245"}
-{"id": 468707, "field": "name", "en": "Xirath - Give Suspicious Supplies", "hash": "35b6402af1de92bf", "src": "db2@1.60.1.70245"}
-{"id": 468710, "field": "name", "en": "[DNT] Demitrian Summon", "hash": "882781facd5fdde5", "src": "db2@1.60.1.70245"}
-{"id": 468714, "field": "name", "en": "Gla'sir Hybrid Healing/Spell Dam 144/77", "hash": "b1b2a316b9e64458", "src": "db2@1.60.1.70245"}
-{"id": 468714, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 468733, "field": "name", "en": "Lasso Target", "hash": "8ca56204cf8f500a", "src": "db2@1.60.1.70245"}
-{"id": 468746, "field": "name", "en": "Power of Hakkar", "hash": "35ba33a033872336", "src": "db2@1.60.1.70245"}
-{"id": 468751, "field": "name", "en": "Silithid Darter", "hash": "2e7f5a001ff48c45", "src": "db2@1.60.1.70245"}
-{"id": 468758, "field": "name", "en": "Healing Specialization", "hash": "13398e92f248d8ee", "src": "db2@1.60.1.70245"}
-{"id": 468758, "field": "description", "en": "Increases healing done by spells and effects by up to $s1. This effect is not cumulative with other ring runes.", "hash": "c701d00f750f38dc", "src": "db2@1.60.1.70245"}
-{"id": 468761, "field": "name", "en": "Engrave Ring - Healing Specialization", "hash": "d9b6bce2c76fb425", "src": "db2@1.60.1.70245"}
-{"id": 468761, "field": "description", "en": "Engrave your ring with the Healing Specialization rune:\r\n\r\n$@spellicon468758\r\n$@spelldesc468758", "hash": "54a1f9e4a09d2b1e", "src": "db2@1.60.1.70245"}
-{"id": 468762, "field": "name", "en": "Meditation Specialization", "hash": "d2ade16e93254f9d", "src": "db2@1.60.1.70245"}
-{"id": 468762, "field": "description", "en": "Restores $s1 mana per 5 sec. This effect is not cumulative with other ring runes.", "hash": "116fdb067cbb2608", "src": "db2@1.60.1.70245"}
-{"id": 468763, "field": "name", "en": "Engrave Ring - Meditation Specialization", "hash": "ce8bf7dab2b4e95d", "src": "db2@1.60.1.70245"}
-{"id": 468763, "field": "description", "en": "Engrave your ring with the Meditation Specialization rune:\r\n\r\n$@spellicon468762\r\n$@spelldesc468762", "hash": "3c76bbe3fe03c21b", "src": "db2@1.60.1.70245"}
-{"id": 468764, "field": "name", "en": "Hybrid Healing/Spell Dam 55/19", "hash": "02daa1d7c231287f", "src": "db2@1.60.1.70245"}
-{"id": 468764, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70245"}
-{"id": 468766, "field": "name", "en": "Conjure Water", "hash": "d83f590185d2279d", "src": "db2@1.60.1.70245"}
-{"id": 468766, "field": "description", "en": "Conjures $s1 $lbottle:bottles; of mountain spring water, providing the mage and $ghis:her; allies with something to drink.\r\n\r\nConjured items disappear if logged out for more than 15 minutes.", "hash": "1dc88ba859abbb79", "src": "db2@1.60.1.70245"}
-{"id": 468767, "field": "name", "en": "Drink", "hash": "b906b404cf760523", "src": "db2@1.60.1.70245"}
-{"id": 468767, "field": "description", "en": "Restores $o1 mana over $d.  Must remain seated while drinking.", "hash": "792a9d04713a780c", "src": "db2@1.60.1.70245"}
-{"id": 468767, "field": "aura", "en": "Restores $/5;s1 mana per second.", "hash": "338019ff98d99081", "src": "db2@1.60.1.70245"}
-{"id": 468768, "field": "name", "en": "Wrath of Wray", "hash": "7644ed4e9a34c14c", "src": "db2@1.60.1.70245"}
-{"id": 468768, "field": "description", "en": "Increases your Strength by $s1.  Effect lasts for $d.", "hash": "e46f7830b5dfe154", "src": "db2@1.60.1.70245"}
-{"id": 468768, "field": "aura", "en": "Increases Strength by $s1.", "hash": "b2147e940c214c23", "src": "db2@1.60.1.70245"}
-{"id": 468769, "field": "name", "en": "Nature Reflector", "hash": "44e51133f3c1a681", "src": "db2@1.60.1.70245"}
-{"id": 468769, "field": "description", "en": "Reflects Nature spells back at their caster for $d.", "hash": "d147dfb480fef622", "src": "db2@1.60.1.70245"}
-{"id": 468769, "field": "aura", "en": "Reflecting Nature spells.", "hash": "ce6090445ac6cb28", "src": "db2@1.60.1.70245"}
-{"id": 468774, "field": "name", "en": "Memory of Gri'lek", "hash": "49bca37d28377003", "src": "db2@1.60.1.70245"}
-{"id": 468774, "field": "aura", "en": "Gri'lek's memory clings to you, almost tangible.", "hash": "f4029174f2d8fc9a", "src": "db2@1.60.1.70245"}
-{"id": 468775, "field": "name", "en": "Memory of Hazza'rah", "hash": "e956dc3aeee2ee7e", "src": "db2@1.60.1.70245"}
-{"id": 468775, "field": "aura", "en": "Hazza'rah's memory clings to you, almost tangible.", "hash": "a6ccf812479b4e0f", "src": "db2@1.60.1.70245"}
-{"id": 468776, "field": "name", "en": "Memory of Renataki", "hash": "95175cdf3657987d", "src": "db2@1.60.1.70245"}
-{"id": 468776, "field": "aura", "en": "Renataki's memory clings to you, almost tangible.", "hash": "50af4c34611d7eea", "src": "db2@1.60.1.70245"}
-{"id": 468777, "field": "name", "en": "Memory of Wushoolay", "hash": "6fb1be2a8decd116", "src": "db2@1.60.1.70245"}
-{"id": 468777, "field": "aura", "en": "Wushoolay's memory clings to you, almost tangible.", "hash": "de7c25a598d95ccd", "src": "db2@1.60.1.70245"}
-{"id": 468778, "field": "name", "en": "Summon Gurubashi Hero", "hash": "9b6039f428ccbe4c", "src": "db2@1.60.1.70245"}
-{"id": 468780, "field": "name", "en": "Lightning's Cell", "hash": "49a2f60ec1ddfebb", "src": "db2@1.60.1.70245"}
-{"id": 468780, "field": "description", "en": "You gain a charge of Gathering Storm each time you cause a damaging spell critical strike. When you reach $s1 charges of Gathering Storm, they will release, firing an Unleashed Storm for $468782s1 damage. Gathering Storm cannot be gained more often than once every 2 sec.", "hash": "d36789637062c5d4", "src": "db2@1.60.1.70245"}
-{"id": 468781, "field": "name", "en": "Gathering Storm", "hash": "e5c57e46b79ee4ce", "src": "db2@1.60.1.70245"}
-{"id": 468781, "field": "description", "en": "Gained an Electrical Charge.  When you reach $37657s1 Electrical Charges, they will release, firing a Lightning Bolt for $37661s1 damage.", "hash": "2ed342e2b95bbbe3", "src": "db2@1.60.1.70245"}
-{"id": 468781, "field": "aura", "en": "Electrical Charge.", "hash": "62be2c8ab33e0f9d", "src": "db2@1.60.1.70245"}
-{"id": 468782, "field": "name", "en": "Unleashed Storm", "hash": "384d3cab0ef3bfb6", "src": "db2@1.60.1.70245"}
-{"id": 468782, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70245"}
-{"id": 468783, "field": "name", "en": "Tim's Test Aoe Spell", "hash": "05bfe5e06abc3d0f", "src": "db2@1.60.1.70245"}
-{"id": 468784, "field": "name", "en": "Echoes of Betrayal", "hash": "aba6a5e6dc2da486", "src": "db2@1.60.1.70245"}
-{"id": 468784, "field": "description", "en": "Increases your Arcane and Shadow spell damage by up to $s1 for $d.", "hash": "0821e2d935da7458", "src": "db2@1.60.1.70245"}
-{"id": 468784, "field": "aura", "en": "Arcane and Shadow spell damage increased by $s1.", "hash": "54d9931c263e7a97", "src": "db2@1.60.1.70245"}
-{"id": 468785, "field": "name", "en": "Increase Shadow and Arcane Dam 34", "hash": "753f43d16c91bce5", "src": "db2@1.60.1.70245"}
-{"id": 468785, "field": "description", "en": "Increases damage done by Shadow and Arcane spells and effects by up to $s1.", "hash": "dc8390087f1c8d88", "src": "db2@1.60.1.70245"}
-{"id": 468807, "field": "name", "en": "Relentless Strikes", "hash": "36f27fd079150b00", "src": "db2@1.60.1.70245"}
-{"id": 468823, "field": "name", "en": "Savage Maul", "hash": "63b4518ef520f45c", "src": "db2@1.60.1.70245"}
-{"id": 468830, "field": "name", "en": "Summoning", "hash": "5db0bc8c6a1a7cf2", "src": "db2@1.60.1.70245"}
-{"id": 468836, "field": "name", "en": "Combine Depleted Scythe of Chaos", "hash": "59f0525ab15ecac7", "src": "db2@1.60.1.70245"}
-{"id": 468836, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70245"}
-{"id": 468837, "field": "name", "en": "Combine Depleted Scythe of Chaos", "hash": "59f0525ab15ecac7", "src": "db2@1.60.1.70245"}
-{"id": 468837, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70245"}
-{"id": 468838, "field": "name", "en": "Combine Depleted Scythe of Chaos", "hash": "59f0525ab15ecac7", "src": "db2@1.60.1.70245"}
-{"id": 468838, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70245"}
-{"id": 468839, "field": "name", "en": "Combine Depleted Scythe of Chaos", "hash": "59f0525ab15ecac7", "src": "db2@1.60.1.70245"}
-{"id": 468839, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70245"}
-{"id": 468840, "field": "name", "en": "Combine Scythe of Chaos", "hash": "03a68cf9e7beba8b", "src": "db2@1.60.1.70245"}
-{"id": 468840, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70245"}
-{"id": 468843, "field": "name", "en": "Lacerate", "hash": "2ddaf20b3d682230", "src": "db2@1.60.1.70245"}
-{"id": 468843, "field": "description", "en": "Bleeding for $s2 damage every second.", "hash": "b62243606c2edec3", "src": "db2@1.60.1.70245"}
-{"id": 468843, "field": "aura", "en": "Bleeding for $s2 damage every second.", "hash": "b62243606c2edec3", "src": "db2@1.60.1.70245"}
-{"id": 468850, "field": "name", "en": "Create Soul of Mischief", "hash": "c051428528a399f7", "src": "db2@1.60.1.70245"}
-{"id": 468851, "field": "name", "en": "Create Soul of the Void", "hash": "e22ec0750fa930ae", "src": "db2@1.60.1.70245"}
-{"id": 468852, "field": "name", "en": "Create Soul of Enthralling", "hash": "c6819e313dd155ff", "src": "db2@1.60.1.70245"}
-{"id": 468854, "field": "name", "en": "Create Soul of Devouring", "hash": "41bd81c5ae39a399", "src": "db2@1.60.1.70245"}
-{"id": 468879, "field": "name", "en": "Stealth", "hash": "87e718bee5e635c1", "src": "db2@1.60.1.70245"}
-{"id": 468879, "field": "aura", "en": "Stealthed.", "hash": "150ed46572cb7a09", "src": "db2@1.60.1.70245"}
-{"id": 468882, "field": "name", "en": "Quest Invisibility", "hash": "b7eb6cac426334a3", "src": "db2@1.60.1.70245"}
-{"id": 468913, "field": "name", "en": "Libram of Awe", "hash": "33c89ae640cef5a9", "src": "db2@1.60.1.70245"}
-{"id": 468913, "field": "description", "en": "Increase the range of your Holy Shock spell by $s1 yards, but reduces all Holy damage you deal by $s2%.", "hash": "41a0ee20c416e56f", "src": "db2@1.60.1.70245"}
-{"id": 468919, "field": "name", "en": "Xirath - Progress Quest", "hash": "2a2274b5cdf28159", "src": "db2@1.60.1.70245"}
-{"id": 468925, "field": "name", "en": "Caustic Slime", "hash": "edd110443795a001", "src": "db2@1.60.1.70245"}
-{"id": 468925, "field": "description", "en": "Move speed slowed by $s2%.", "hash": "fb00b5456656ae88", "src": "db2@1.60.1.70245"}
-{"id": 468925, "field": "aura", "en": "Move speed slowed by $s2%.", "hash": "fb00b5456656ae88", "src": "db2@1.60.1.70245"}
-{"id": 468971, "field": "name", "en": "Windstriker", "hash": "3a41f8f6cd4ad33f", "src": "db2@1.60.1.70245"}
-{"id": 468971, "field": "description", "en": "All attacks are guaranteed to land and will be critical strikes for the next $d.", "hash": "14cb9ba57001ba1b", "src": "db2@1.60.1.70245"}
-{"id": 468993, "field": "name", "en": "Attack Power - Feral (+298)", "hash": "39dc62e06461b390", "src": "db2@1.60.1.70245"}
-{"id": 468993, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.", "hash": "a798bce2a303c5f6", "src": "db2@1.60.1.70245"}
-{"id": 468999, "field": "name", "en": "Tied Up", "hash": "6e3d7e0435125eb8", "src": "db2@1.60.1.70245"}
+{"id": 468000, "field": "name", "en": "Aspect of Thekal", "hash": "2f248a996b68b723", "src": "db2@1.60.1.70291"}
+{"id": 468001, "field": "name", "en": "Aspect of Arlokk", "hash": "34cd3d6601140ca0", "src": "db2@1.60.1.70291"}
+{"id": 468012, "field": "name", "en": "Sonic Burst", "hash": "964779bd8b4bf85f", "src": "db2@1.60.1.70291"}
+{"id": 468012, "field": "description", "en": "Inflicts normal damage plus $s1 on nearby enemies, preventing them from spellcasting for $d.", "hash": "40a0b6a63535cda3", "src": "db2@1.60.1.70291"}
+{"id": 468012, "field": "aura", "en": "Cannot cast spells.", "hash": "6d133d61246b88a5", "src": "db2@1.60.1.70291"}
+{"id": 468017, "field": "name", "en": "Summon Spawn of Mar'li", "hash": "700a206bd41b84c4", "src": "db2@1.60.1.70291"}
+{"id": 468027, "field": "name", "en": "Fetch!", "hash": "c2bae7deda528671", "src": "db2@1.60.1.70291"}
+{"id": 468027, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.", "hash": "f6322beccc18b2dd", "src": "db2@1.60.1.70291"}
+{"id": 468028, "field": "name", "en": "S03 - Item - T2 - Warlock - Tank 2P Bonus", "hash": "625cf914492d0caa", "src": "db2@1.60.1.70291"}
+{"id": 468028, "field": "description", "en": "While you are targeting an enemy within $468029r yards, Life Tap grants you mana at the expense of your target's health but deals $s1% reduced damage to them. Mana gained remains unchanged.", "hash": "d7c41828ecd08314", "src": "db2@1.60.1.70291"}
+{"id": 468029, "field": "name", "en": "Life Tap", "hash": "bafd1ec35fcfd07f", "src": "db2@1.60.1.70291"}
+{"id": 468030, "field": "name", "en": "[DNT] Teleport to Crystal Vale Interior", "hash": "4f5df90e117c7dc1", "src": "db2@1.60.1.70291"}
+{"id": 468038, "field": "name", "en": "[DNT] Essence of Fire - Fight", "hash": "87b2e2adf2e28884", "src": "db2@1.60.1.70291"}
+{"id": 468039, "field": "name", "en": "[DNT] Essence of Frost - Fight", "hash": "5d36dee3db8b83f2", "src": "db2@1.60.1.70291"}
+{"id": 468046, "field": "name", "en": "S03 - Item - T2 - Warlock - Tank 4P Bonus", "hash": "513ffe9733ff1891", "src": "db2@1.60.1.70291"}
+{"id": 468046, "field": "description", "en": "While Metamorphosis is active, your offensive abilities and Demon summons cost no Soul Shards. In addition, you heal for $468062s1% of your maximum health when you damage a target with Shadowburn.", "hash": "3233cdd99ae61cf8", "src": "db2@1.60.1.70291"}
+{"id": 468048, "field": "name", "en": "S03 - Item - T2 - Warlock - Tank 4P Bonus", "hash": "513ffe9733ff1891", "src": "db2@1.60.1.70291"}
+{"id": 468049, "field": "name", "en": "Fire Puzzle Area Trigger", "hash": "ce715fbb9372ae20", "src": "db2@1.60.1.70291"}
+{"id": 468050, "field": "name", "en": "Frost Puzzle Area Trigger", "hash": "0086bd20f8e4aa7d", "src": "db2@1.60.1.70291"}
+{"id": 468061, "field": "name", "en": "S03 - Item - T2 - Warlock - Tank 6P Bonus", "hash": "4023041a1ed12478", "src": "db2@1.60.1.70291"}
+{"id": 468061, "field": "description", "en": "Any excess healing you deal to yourself  is converted into a shield that absorbs damage. This shield can absorb up to $s1% of your maximum health, and stacks from multiple heals.", "hash": "dcc102bebdd60c1a", "src": "db2@1.60.1.70291"}
+{"id": 468062, "field": "name", "en": "Soul Essence", "hash": "77e6cb71e1ed6d1a", "src": "db2@1.60.1.70291"}
+{"id": 468065, "field": "name", "en": "S03 - Item - T2 - Warrior - Protection 2P Bonus", "hash": "0f9dac3e36bea48a", "src": "db2@1.60.1.70291"}
+{"id": 468065, "field": "description", "en": "You gain ${$468066m1/10} Rage every time you Parry or one of your attacks is Parried.", "hash": "08c9664b898df9bc", "src": "db2@1.60.1.70291"}
+{"id": 468066, "field": "name", "en": "Thrill of Battle", "hash": "87b248c8ec1b2882", "src": "db2@1.60.1.70291"}
+{"id": 468067, "field": "name", "en": "S03 - Item - T2 - Warrior - Protection 4P Bonus", "hash": "fe80b1bc2190b071", "src": "db2@1.60.1.70291"}
+{"id": 468067, "field": "description", "en": "Revenge also grants you Flurry, increasing your attack speed by $12970s1% for the next $12970n swings.", "hash": "8d2b9dbcf0f46660", "src": "db2@1.60.1.70291"}
+{"id": 468069, "field": "name", "en": "S03 - Item - T2 - Warrior - Protection 6P Bonus", "hash": "ed63b73f0c62bc58", "src": "db2@1.60.1.70291"}
+{"id": 468069, "field": "description", "en": "When your target Parries an attack, you instantly Retaliate for $468071s2% weapon damage to that target. Retaliate cannot be Dodged, Blocked, or Parried, but can only occur once every $468071d per target.", "hash": "9be3acfc303a2a25", "src": "db2@1.60.1.70291"}
+{"id": 468071, "field": "name", "en": "Retaliate", "hash": "b8db43a42fa4f6a2", "src": "db2@1.60.1.70291"}
+{"id": 468072, "field": "name", "en": "S03 - Item - T2 - Warrior - Damage 2P Bonus", "hash": "a7947c9f5c179a7a", "src": "db2@1.60.1.70291"}
+{"id": 468072, "field": "description", "en": "Overpower critical strikes refresh the duration of Rend on your target back to its maximum duration.", "hash": "2986985451b2efaa", "src": "db2@1.60.1.70291"}
+{"id": 468076, "field": "name", "en": "Vicious Strike", "hash": "14ed83d517e445c8", "src": "db2@1.60.1.70291"}
+{"id": 468076, "field": "description", "en": "Increases damage taken from Vicious Strike by $s1% ", "hash": "b95848193aee2f5d", "src": "db2@1.60.1.70291"}
+{"id": 468076, "field": "aura", "en": "Increases damage taken from Vicious Strike by $s1%", "hash": "b95848193aee2f5d", "src": "db2@1.60.1.70291"}
+{"id": 468078, "field": "name", "en": "Nullify", "hash": "784667e6ab756534", "src": "db2@1.60.1.70291"}
+{"id": 468078, "field": "aura", "en": "Nullified.", "hash": "cab377849975e8a6", "src": "db2@1.60.1.70291"}
+{"id": 468125, "field": "name", "en": "Imbue Essence of Fire", "hash": "875021f7007297a5", "src": "db2@1.60.1.70291"}
+{"id": 468125, "field": "description", "en": "Imbue the Depleted Essence of Fire with magic.", "hash": "2a35ab2579915dfa", "src": "db2@1.60.1.70291"}
+{"id": 468133, "field": "name", "en": "Start Essence of Fire", "hash": "2a440480a201267e", "src": "db2@1.60.1.70291"}
+{"id": 468156, "field": "name", "en": "Thunderfury", "hash": "07442b2290f62530", "src": "db2@1.60.1.70291"}
+{"id": 468156, "field": "description", "en": "Blasts your enemy with lightning, dealing $s2 Nature damage and then jumping to additional nearby enemies.  Each jump reduces that victim's Nature resistance by $s1. Affects $x1 targets. Your primary target is also consumed by a cyclone, slowing its attack speed by $27648s1% for $d.", "hash": "0cc6012e29cd4d05", "src": "db2@1.60.1.70291"}
+{"id": 468156, "field": "aura", "en": "Nature resistance reduced by $s1.", "hash": "6c373958764a3de3", "src": "db2@1.60.1.70291"}
+{"id": 468157, "field": "name", "en": "Thunderfury", "hash": "07442b2290f62530", "src": "db2@1.60.1.70291"}
+{"id": 468157, "field": "aura", "en": "Increases time between attacks by $s1%.", "hash": "d81a5b3508bde829", "src": "db2@1.60.1.70291"}
+{"id": 468164, "field": "name", "en": "Pagle's Broken Reel", "hash": "4245959b2f4a14da", "src": "db2@1.60.1.70291"}
+{"id": 468164, "field": "description", "en": "Increases your chance to hit with all spells and attacks by $s1% for $d.", "hash": "a763af173ac19fef", "src": "db2@1.60.1.70291"}
+{"id": 468164, "field": "aura", "en": "Chance to hit with all spells and attacks increased by $s1%.", "hash": "d52be7be0aa79584", "src": "db2@1.60.1.70291"}
+{"id": 468165, "field": "name", "en": "Beast Slaying 99", "hash": "9f329a395a158914", "src": "db2@1.60.1.70291"}
+{"id": 468165, "field": "description", "en": "+$s1 Attack Power against Beasts.", "hash": "2e7564c4ad94b3c2", "src": "db2@1.60.1.70291"}
+{"id": 468166, "field": "name", "en": "Dragon Slaying 60", "hash": "ada7993f52010898", "src": "db2@1.60.1.70291"}
+{"id": 468166, "field": "description", "en": "+$s1 Attack Power against Dragonkin.", "hash": "85a118c60419ea97", "src": "db2@1.60.1.70291"}
+{"id": 468167, "field": "name", "en": "Fire Strike", "hash": "40e734d25ad1e58f", "src": "db2@1.60.1.70291"}
+{"id": 468167, "field": "description", "en": "Does $s1 additional Fire damage to the target.", "hash": "c0c27c0fb3150a3f", "src": "db2@1.60.1.70291"}
+{"id": 468168, "field": "name", "en": "Add Fire Dam - Weap 02", "hash": "e82c5cfb29bb0659", "src": "db2@1.60.1.70291"}
+{"id": 468168, "field": "description", "en": "Adds 2 fire damage to your melee attacks.", "hash": "ba4c80eb6af95fea", "src": "db2@1.60.1.70291"}
+{"id": 468169, "field": "name", "en": "Fire Strike", "hash": "40e734d25ad1e58f", "src": "db2@1.60.1.70291"}
+{"id": 468169, "field": "description", "en": "Does $s1 additional Fire damage to the target.", "hash": "c0c27c0fb3150a3f", "src": "db2@1.60.1.70291"}
+{"id": 468170, "field": "name", "en": "Add Fire Dam - Weap 02", "hash": "e82c5cfb29bb0659", "src": "db2@1.60.1.70291"}
+{"id": 468170, "field": "description", "en": "Adds 2 fire damage to your melee attacks.", "hash": "ba4c80eb6af95fea", "src": "db2@1.60.1.70291"}
+{"id": 468175, "field": "name", "en": "Demon Slaying 141", "hash": "9fb53b2daebab71c", "src": "db2@1.60.1.70291"}
+{"id": 468175, "field": "description", "en": "+$s1 Attack Power against Demons.", "hash": "69f48d9a7e4e7117", "src": "db2@1.60.1.70291"}
+{"id": 468181, "field": "name", "en": "Took Hit", "hash": "f3af33fff453486e", "src": "db2@1.60.1.70291"}
+{"id": 468183, "field": "name", "en": "Frenzy Effect", "hash": "47d1812b08db4ad5", "src": "db2@1.60.1.70291"}
+{"id": 468183, "field": "description", "en": "Gives your pet a chance to gain a $19615s1% attack speed increase for $19615d after dealing a critical strike.", "hash": "a8ba9cb245f1774a", "src": "db2@1.60.1.70291"}
+{"id": 468183, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70291"}
+{"id": 468184, "field": "name", "en": "Drain Life", "hash": "344ef3a3656fa1a7", "src": "db2@1.60.1.70291"}
+{"id": 468184, "field": "description", "en": "Steals $s1 life from target enemy.", "hash": "8e44b26614ccfbdd", "src": "db2@1.60.1.70291"}
+{"id": 468195, "field": "name", "en": "Roll Over!", "hash": "6651d0687b9a86cf", "src": "db2@1.60.1.70291"}
+{"id": 468195, "field": "description", "en": "$@spelldesc445575", "hash": "b3676a6c2c7857b2", "src": "db2@1.60.1.70291"}
+{"id": 468197, "field": "name", "en": "Roll Over!", "hash": "6651d0687b9a86cf", "src": "db2@1.60.1.70291"}
+{"id": 468198, "field": "name", "en": "Roll Over!", "hash": "6651d0687b9a86cf", "src": "db2@1.60.1.70291"}
+{"id": 468199, "field": "name", "en": "Roll Over!", "hash": "6651d0687b9a86cf", "src": "db2@1.60.1.70291"}
+{"id": 468199, "field": "description", "en": "Acid rain falls from above, inflicting $s1 Nature damage to players struck.", "hash": "d27b3641aee9d68a", "src": "db2@1.60.1.70291"}
+{"id": 468211, "field": "name", "en": "Close Growing Fel Rift", "hash": "98545a99e69a9395", "src": "db2@1.60.1.70291"}
+{"id": 468211, "field": "description", "en": "Close a targeted small Fel portal. May draw unwanted attention from the other side.", "hash": "a89f2449f102cfff", "src": "db2@1.60.1.70291"}
+{"id": 468224, "field": "name", "en": "Hybrid Healing/Spell Dam 59/20", "hash": "0363d8bdf7d11875", "src": "db2@1.60.1.70291"}
+{"id": 468224, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 468225, "field": "name", "en": "Decipher Scroll", "hash": "7f7e621b6026e0c2", "src": "db2@1.60.1.70291"}
+{"id": 468225, "field": "description", "en": "Decipher the scroll with a Comprehension Charm. Who knows what magic it contains?", "hash": "ce6c2da9150fd222", "src": "db2@1.60.1.70291"}
+{"id": 468235, "field": "name", "en": "S03 - Item - T2 - Warrior - Damage 4P Bonus", "hash": "9677822246e9a661", "src": "db2@1.60.1.70291"}
+{"id": 468235, "field": "description", "en": "Your Heroic Strike, Slam, and Overpower abilities deal $s1% more damage.", "hash": "59ae5f5861455050", "src": "db2@1.60.1.70291"}
+{"id": 468236, "field": "name", "en": "S03 - Item - T2 - Warrior - Damage 6P Bonus", "hash": "855a87a531bbb248", "src": "db2@1.60.1.70291"}
+{"id": 468236, "field": "description", "en": "Your Slam hits reset the remaining cooldown on your Mortal Strike, Bloodthirst, and Shield Slam abilities.", "hash": "653c0fa5ce6775be", "src": "db2@1.60.1.70291"}
+{"id": 468240, "field": "name", "en": "Valxx Cracklequil - Receive Scroll of Lesser Spatial Mending", "hash": "314af49bd0ed9d4b", "src": "db2@1.60.1.70291"}
+{"id": 468242, "field": "name", "en": "Corruption", "hash": "99ec2eb2d8959128", "src": "db2@1.60.1.70291"}
+{"id": 468252, "field": "name", "en": "Clean Off Rune", "hash": "87addd88267cdc8b", "src": "db2@1.60.1.70291"}
+{"id": 468252, "field": "description", "en": "Clean off the rune.", "hash": "b7b126b12ef8a439", "src": "db2@1.60.1.70291"}
+{"id": 468255, "field": "name", "en": "Twin Blades of the Hakkari", "hash": "8513bf727f5a6f05", "src": "db2@1.60.1.70291"}
+{"id": 468256, "field": "name", "en": "Twin Blades of the Hakkari", "hash": "8513bf727f5a6f05", "src": "db2@1.60.1.70291"}
+{"id": 468256, "field": "description", "en": "$s1% chance on melee hit to gain 1 extra attack.", "hash": "d3cc96c1b7d1d7e7", "src": "db2@1.60.1.70291"}
+{"id": 468260, "field": "name", "en": "Improved Wrath/Starfire", "hash": "f10e03b16b2474e9", "src": "db2@1.60.1.70291"}
+{"id": 468260, "field": "description", "en": "Increases the critical hit chance of Wrath and Starfire by $s1%.", "hash": "fd71dc1f1468a307", "src": "db2@1.60.1.70291"}
+{"id": 468267, "field": "name", "en": "Increased Pet Damage +3%", "hash": "2c081d7fdee0b959", "src": "db2@1.60.1.70291"}
+{"id": 468267, "field": "description", "en": "Increases your pet's damage by $s1%.", "hash": "e2227b6796a777de", "src": "db2@1.60.1.70291"}
+{"id": 468267, "field": "aura", "en": "Increases your pet's damage by $s1%", "hash": "c52564979b0ae7c2", "src": "db2@1.60.1.70291"}
+{"id": 468268, "field": "name", "en": "Increased Pet Damage +3%", "hash": "2c081d7fdee0b959", "src": "db2@1.60.1.70291"}
+{"id": 468268, "field": "description", "en": "Increases damage dealt by your pet by $468267s1%.", "hash": "10a41abf99a6a6f2", "src": "db2@1.60.1.70291"}
+{"id": 468269, "field": "name", "en": "Increased Pet Damage +2%", "hash": "2c081cfcdee09978", "src": "db2@1.60.1.70291"}
+{"id": 468269, "field": "description", "en": "Increases your pet's damage by $s1%.", "hash": "e2227b6796a777de", "src": "db2@1.60.1.70291"}
+{"id": 468269, "field": "aura", "en": "Increases your pet's damage by $s1%", "hash": "c52564979b0ae7c2", "src": "db2@1.60.1.70291"}
+{"id": 468270, "field": "name", "en": "Increased Pet Damage +2%", "hash": "2c081cfcdee09978", "src": "db2@1.60.1.70291"}
+{"id": 468270, "field": "description", "en": "Increases damage dealt by your pet by $468269s1%.", "hash": "33bf8761577ba5e8", "src": "db2@1.60.1.70291"}
+{"id": 468271, "field": "name", "en": "Increased Pet Damage +1%", "hash": "2c081c79dee07997", "src": "db2@1.60.1.70291"}
+{"id": 468271, "field": "description", "en": "Increases your pet's damage by $s1%.", "hash": "e2227b6796a777de", "src": "db2@1.60.1.70291"}
+{"id": 468271, "field": "aura", "en": "Increases your pet's damage by $s1%", "hash": "c52564979b0ae7c2", "src": "db2@1.60.1.70291"}
+{"id": 468272, "field": "name", "en": "Increased Pet Damage +1%", "hash": "2c081c79dee07997", "src": "db2@1.60.1.70291"}
+{"id": 468272, "field": "description", "en": "Increases damage dealt by your pet by $468271s1%.", "hash": "a2d62074b1b1542d", "src": "db2@1.60.1.70291"}
+{"id": 468273, "field": "name", "en": "Decreased Frozen Orb Cooldown", "hash": "ee42360c2feea356", "src": "db2@1.60.1.70291"}
+{"id": 468273, "field": "description", "en": "Reduces the cooldown on your Frozen Orb spell by $/1000;S1 sec.", "hash": "acad74504b292cb9", "src": "db2@1.60.1.70291"}
+{"id": 468275, "field": "name", "en": "Increased Holy Hit Chance 3", "hash": "9c6907e300a85529", "src": "db2@1.60.1.70291"}
+{"id": 468275, "field": "description", "en": "Improves your chance to hit with all spells by $s1%.", "hash": "f11f7c405b607228", "src": "db2@1.60.1.70291"}
+{"id": 468277, "field": "name", "en": "Increased Spell  Hit Chance 2", "hash": "6090993e3bedfe30", "src": "db2@1.60.1.70291"}
+{"id": 468277, "field": "description", "en": "Improves your chance to hit with spells by ${$s1}.1%.", "hash": "be55f28d88e71d53", "src": "db2@1.60.1.70291"}
+{"id": 468278, "field": "name", "en": "Improved Power Word: Shield", "hash": "0386f768ab837bc3", "src": "db2@1.60.1.70291"}
+{"id": 468278, "field": "description", "en": "Increases the amount of damage absorbed by Power Word: Shield by $s1.", "hash": "77756ef139b25edc", "src": "db2@1.60.1.70291"}
+{"id": 468288, "field": "name", "en": "S03 - Item - Cutthroat Bonus Chance", "hash": "d5de21b7fc1906bd", "src": "db2@1.60.1.70291"}
+{"id": 468288, "field": "description", "en": "Increases the chance Cutthroat's Ambush effect is triggered by $s1%.", "hash": "c1d35d3b43cac027", "src": "db2@1.60.1.70291"}
+{"id": 468289, "field": "name", "en": "Decreased Decoy Totem", "hash": "c8b4ead803a0986f", "src": "db2@1.60.1.70291"}
+{"id": 468289, "field": "description", "en": "Reduces the cooldown on your Decoy Totem spell by $/1000;S1 sec.", "hash": "0ad93bdfadaf65d1", "src": "db2@1.60.1.70291"}
+{"id": 468297, "field": "name", "en": "(DNT) DEBUG - Destroy Egg", "hash": "97fb7b228122bf04", "src": "db2@1.60.1.70291"}
+{"id": 468297, "field": "description", "en": "Destroys a nearby egg.", "hash": "10a0ae276ba501e1", "src": "db2@1.60.1.70291"}
+{"id": 468298, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70291"}
+{"id": 468298, "field": "description", "en": "Teleports $s1 enemy $ltarget:targets; to the caster.", "hash": "d689091d2d28cd01", "src": "db2@1.60.1.70291"}
+{"id": 468299, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70291"}
+{"id": 468300, "field": "name", "en": "[DNT] Fire Trail Effect", "hash": "cf4dd3d8ac36317b", "src": "db2@1.60.1.70291"}
+{"id": 468301, "field": "name", "en": "[DNT] Fire Trail", "hash": "0e66a71963c36123", "src": "db2@1.60.1.70291"}
+{"id": 468303, "field": "name", "en": "Reduced Cleave Cooldown", "hash": "7d99c760c62afab6", "src": "db2@1.60.1.70291"}
+{"id": 468303, "field": "description", "en": "Reduces the cooldown of your Felguard's Cleave spell by $/1000;s1 sec.", "hash": "969b6417ee437d3c", "src": "db2@1.60.1.70291"}
+{"id": 468309, "field": "name", "en": "Reduced Shield Slam Cost", "hash": "c0f7935dbd8da64e", "src": "db2@1.60.1.70291"}
+{"id": 468309, "field": "description", "en": "Reduces the rage cost of your Shield Slam ability by $/10;s1.", "hash": "799e0b7c5ed4d1c5", "src": "db2@1.60.1.70291"}
+{"id": 468310, "field": "name", "en": "Improved Bestial Wrath", "hash": "df914c55178c1ef2", "src": "db2@1.60.1.70291"}
+{"id": 468310, "field": "description", "en": "Increases the effect duration of your Bestial Wrath ability by $/1000;s1 secs.", "hash": "7838eb0ed8166119", "src": "db2@1.60.1.70291"}
+{"id": 468312, "field": "name", "en": "Animist's Caress", "hash": "6e72fd210c8684fd", "src": "db2@1.60.1.70291"}
+{"id": 468314, "field": "name", "en": "Animist's Caress", "hash": "6e72fd210c8684fd", "src": "db2@1.60.1.70291"}
+{"id": 468314, "field": "description", "en": "Permanently adds $468312s1 Stamina, $468312s2 Intellect, and increases healing by up to $468312s3 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "8c3465ea85f1bbc2", "src": "db2@1.60.1.70291"}
+{"id": 468316, "field": "name", "en": "Animist's Balance", "hash": "664802db73c4ed49", "src": "db2@1.60.1.70291"}
+{"id": 468318, "field": "name", "en": "Animist's Balance", "hash": "664802db73c4ed49", "src": "db2@1.60.1.70291"}
+{"id": 468318, "field": "description", "en": "Permanently adds $468316s1 Stamina, $468316s2% chance to hit, and increases spell damage and healing by up to $468316s4 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "a017e047610b9638", "src": "db2@1.60.1.70291"}
+{"id": 468320, "field": "name", "en": "Animist's Fury", "hash": "77d0626ffacbd36a", "src": "db2@1.60.1.70291"}
+{"id": 468321, "field": "name", "en": "Animist's Fury", "hash": "77d0626ffacbd36a", "src": "db2@1.60.1.70291"}
+{"id": 468321, "field": "description", "en": "Permanently adds $468320s1 Stamina, $468320s2 Strength, and $468320s3 Agility to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "cbc782161f2bbdfd", "src": "db2@1.60.1.70291"}
+{"id": 468322, "field": "name", "en": "Animist's Roar", "hash": "796a6ac383d78f57", "src": "db2@1.60.1.70291"}
+{"id": 468323, "field": "name", "en": "Animist's Roar", "hash": "796a6ac383d78f57", "src": "db2@1.60.1.70291"}
+{"id": 468323, "field": "description", "en": "Permanently adds $468322s1 Stamina, $468322s2 Strength, and $468322s3 Defense to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "d560a47b3cc991e4", "src": "db2@1.60.1.70291"}
+{"id": 468324, "field": "name", "en": "Falcon's Call", "hash": "07b89d7745c890f6", "src": "db2@1.60.1.70291"}
+{"id": 468325, "field": "name", "en": "Falcon's Call", "hash": "07b89d7745c890f6", "src": "db2@1.60.1.70291"}
+{"id": 468325, "field": "description", "en": "Permanently adds $468324s1 Stamina, $468324s2 Agility, and $468324s3% chance to hit to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "5fb26a9bfac2d99d", "src": "db2@1.60.1.70291"}
+{"id": 468327, "field": "name", "en": "Syncretist's Seal", "hash": "f4d125147162c02b", "src": "db2@1.60.1.70291"}
+{"id": 468328, "field": "name", "en": "Syncretist's Seal", "hash": "f4d125147162c02b", "src": "db2@1.60.1.70291"}
+{"id": 468328, "field": "description", "en": "Permanently adds $468327s1 Stamina, $468327s2 Defense, and increases spell damage and healing by up to $468327s3 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "64888e6c34fd208e", "src": "db2@1.60.1.70291"}
+{"id": 468329, "field": "name", "en": "Syncretist's Sigil", "hash": "4790c332ea821236", "src": "db2@1.60.1.70291"}
+{"id": 468330, "field": "name", "en": "Syncretist's Sigil", "hash": "4790c332ea821236", "src": "db2@1.60.1.70291"}
+{"id": 468330, "field": "description", "en": "Permanently adds $468329s1 Stamina, $468329s2 Strength, and increases spell damage and healing by up to $468329s3 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "da72b7a75719cad2", "src": "db2@1.60.1.70291"}
+{"id": 468331, "field": "name", "en": "Syncretist's Crest", "hash": "2fe997a4ec926644", "src": "db2@1.60.1.70291"}
+{"id": 468332, "field": "name", "en": "Syncretist's Crest", "hash": "2fe997a4ec926644", "src": "db2@1.60.1.70291"}
+{"id": 468332, "field": "description", "en": "Permanently adds $468331s1 Stamina, $468331s2 Intellect, and increases healing by up to $468331s3 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "374bacbd3087e55e", "src": "db2@1.60.1.70291"}
+{"id": 468336, "field": "name", "en": "Syncretist's Emblem", "hash": "2363dbbf2b8b5534", "src": "db2@1.60.1.70291"}
+{"id": 468339, "field": "name", "en": "Syncretist's Emblem", "hash": "2363dbbf2b8b5534", "src": "db2@1.60.1.70291"}
+{"id": 468339, "field": "description", "en": "Permanently adds $468336s1 Stamina, $468336s2 Intellect, and increases spell damage and healing by up to $468336s3 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "baa9be62465570c3", "src": "db2@1.60.1.70291"}
+{"id": 468341, "field": "name", "en": "Prophetic Aura", "hash": "e3e91b878f37dd4b", "src": "db2@1.60.1.70291"}
+{"id": 468342, "field": "name", "en": "Prophetic Aura", "hash": "e3e91b878f37dd4b", "src": "db2@1.60.1.70291"}
+{"id": 468342, "field": "description", "en": "Permanently adds $468341s1 Stamina, $468341s2 Intellect, and increases healing by up to $468341s3 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "8843bda4e7443ac5", "src": "db2@1.60.1.70291"}
+{"id": 468343, "field": "name", "en": "Prophetic Curse", "hash": "c3648e9661be003d", "src": "db2@1.60.1.70291"}
+{"id": 468344, "field": "name", "en": "Prophetic Curse", "hash": "c3648e9661be003d", "src": "db2@1.60.1.70291"}
+{"id": 468344, "field": "description", "en": "Permanently adds $468343s1 Stamina, $468343s2 Intellect, and increases healing and spell damage by up to $468343s3 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "8acbadf31963b216", "src": "db2@1.60.1.70291"}
+{"id": 468345, "field": "name", "en": "Death's Embrace", "hash": "ad0c01d38525a179", "src": "db2@1.60.1.70291"}
+{"id": 468347, "field": "name", "en": "Death's Embrace", "hash": "ad0c01d38525a179", "src": "db2@1.60.1.70291"}
+{"id": 468347, "field": "description", "en": "Permanently adds $468345s1 Stamina, $468345s2 Agility, and $468345s3 Defense to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "7f09bb8076a5dff9", "src": "db2@1.60.1.70291"}
+{"id": 468348, "field": "name", "en": "Death's Advance", "hash": "5f690c688afa83eb", "src": "db2@1.60.1.70291"}
+{"id": 468349, "field": "name", "en": "Death's Advance", "hash": "5f690c688afa83eb", "src": "db2@1.60.1.70291"}
+{"id": 468349, "field": "description", "en": "Permanently adds $468348s1 Stamina, $468348s2 Agility, and $468348s3% chance to hit to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "a30b6907d759c444", "src": "db2@1.60.1.70291"}
+{"id": 468350, "field": "name", "en": "Vodouisant's Embrace", "hash": "ab83cef3eb781b84", "src": "db2@1.60.1.70291"}
+{"id": 468351, "field": "name", "en": "Vodouisant's Embrace", "hash": "ab83cef3eb781b84", "src": "db2@1.60.1.70291"}
+{"id": 468351, "field": "description", "en": "Permanently adds $468350s1 Stamina, $468350s2 Strength, and increases all healing and spell damage by up to $468350s3 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "d963bf029fe5b24f", "src": "db2@1.60.1.70291"}
+{"id": 468352, "field": "name", "en": "Vodouisant's Shroud", "hash": "5b546161510b41ae", "src": "db2@1.60.1.70291"}
+{"id": 468354, "field": "name", "en": "Vodouisant's Shroud", "hash": "5b546161510b41ae", "src": "db2@1.60.1.70291"}
+{"id": 468354, "field": "description", "en": "Permanently adds $468352s1 Stamina, $468352s2% chance to hit, and increases all healing and spell damage by up to $468352s4 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "b8730941480b375a", "src": "db2@1.60.1.70291"}
+{"id": 468358, "field": "name", "en": "Vodouisant's Charm", "hash": "68ccc5e413016cea", "src": "db2@1.60.1.70291"}
+{"id": 468359, "field": "name", "en": "Vodouisant's Charm", "hash": "68ccc5e413016cea", "src": "db2@1.60.1.70291"}
+{"id": 468359, "field": "description", "en": "Permanently adds $468358s1 Stamina, $468358s2 Intellect, and increases healing by up to $468358s3 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "9929cb8bf2321967", "src": "db2@1.60.1.70291"}
+{"id": 468361, "field": "name", "en": "Vodouisant's Vigilance", "hash": "2a26cb1c75a40fc9", "src": "db2@1.60.1.70291"}
+{"id": 468362, "field": "name", "en": "Vodouisant's Vigilance", "hash": "2a26cb1c75a40fc9", "src": "db2@1.60.1.70291"}
+{"id": 468362, "field": "description", "en": "Permanently adds $468361s1 Stamina, $468361s2 Defense, and $468361s3% chance to Block to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "4933f1ae91448c3c", "src": "db2@1.60.1.70291"}
+{"id": 468363, "field": "name", "en": "Hoodoo Hex", "hash": "d8ef3d2326878feb", "src": "db2@1.60.1.70291"}
+{"id": 468365, "field": "name", "en": "Hoodoo Hex", "hash": "d8ef3d2326878feb", "src": "db2@1.60.1.70291"}
+{"id": 468365, "field": "description", "en": "Permanently adds $468363s1 Stamina, $468363s2% chance to hit, and increases spell damage and healing by up to $468363s4 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "e8fd4108f815c1c1", "src": "db2@1.60.1.70291"}
+{"id": 468367, "field": "name", "en": "Hoodoo Curse", "hash": "e7c95e5f21d5b7d5", "src": "db2@1.60.1.70291"}
+{"id": 468368, "field": "name", "en": "Hoodoo Curse", "hash": "e7c95e5f21d5b7d5", "src": "db2@1.60.1.70291"}
+{"id": 468368, "field": "description", "en": "Permanently adds $468367s1 Stamina, $468367s2% chance to hit, and $468367s4 Defense to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "cec0e8b7bec3bb93", "src": "db2@1.60.1.70291"}
+{"id": 468372, "field": "name", "en": "Presence of Might", "hash": "c942d65047cd2f00", "src": "db2@1.60.1.70291"}
+{"id": 468373, "field": "name", "en": "Presence of Might", "hash": "c942d65047cd2f00", "src": "db2@1.60.1.70291"}
+{"id": 468373, "field": "description", "en": "Permanently adds $468372s1 Stamina, $468372s2 Strength, and $468372s3 Agility to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "b7d518617d852abd", "src": "db2@1.60.1.70291"}
+{"id": 468375, "field": "name", "en": "Presence of Valor", "hash": "662d2516c6a63bdf", "src": "db2@1.60.1.70291"}
+{"id": 468376, "field": "name", "en": "Presence of Valor", "hash": "662d2516c6a63bdf", "src": "db2@1.60.1.70291"}
+{"id": 468376, "field": "description", "en": "Permanently adds $468375s1 Stamina, $468375s2 Defense, and $468375s3 Shield Block value to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "6301b659a3c3d4c8", "src": "db2@1.60.1.70291"}
+{"id": 468379, "field": "name", "en": "Presence of Sight", "hash": "32951c3b814c2bd1", "src": "db2@1.60.1.70291"}
+{"id": 468380, "field": "name", "en": "Presence of Sight", "hash": "32951c3b814c2bd1", "src": "db2@1.60.1.70291"}
+{"id": 468380, "field": "description", "en": "Permanently adds $468379s1 Stamina, $468379s2 Intellect, and increases spell damage and healing by up to $468379s3 to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "16b8f14041c0c9fb", "src": "db2@1.60.1.70291"}
+{"id": 468381, "field": "name", "en": "Summon Vessel of Rebirth", "hash": "c91f41f6909ad484", "src": "db2@1.60.1.70291"}
+{"id": 468382, "field": "name", "en": "Falcon's Fury", "hash": "0824c61b3d66777c", "src": "db2@1.60.1.70291"}
+{"id": 468383, "field": "name", "en": "Falcon's Fury", "hash": "0824c61b3d66777c", "src": "db2@1.60.1.70291"}
+{"id": 468383, "field": "description", "en": "Permanently adds $468382s1 Stamina, $468382s2 Agility, and $468382s3 Strength to a leg or head slot item. Does not stack with other enchantments for the selected equipment slot.", "hash": "7912c26fd8af3687", "src": "db2@1.60.1.70291"}
+{"id": 468387, "field": "name", "en": "Aligned with Nature", "hash": "c1bc643d5882ddf6", "src": "db2@1.60.1.70291"}
+{"id": 468387, "field": "description", "en": "Aligns the Druid with nature, increasing the damage done by spells by $s1%, improving heal effects by $s2%, and increasing the critical strike chance of spells by $s3% for $d.", "hash": "b4f0163e44702bdd", "src": "db2@1.60.1.70291"}
+{"id": 468387, "field": "aura", "en": "Spell damage increased by $s1%.\r\nHealing effects increased by $s2%.\r\nSpell critical strike chance increased by $s3%.", "hash": "3ca30a3654b94b62", "src": "db2@1.60.1.70291"}
+{"id": 468388, "field": "name", "en": "Locked In", "hash": "0077623ef278592d", "src": "db2@1.60.1.70291"}
+{"id": 468388, "field": "description", "en": "Your next $s2 Shots or melee abilities within $d do not incur a cooldown.", "hash": "19a8773a415edfb7", "src": "db2@1.60.1.70291"}
+{"id": 468388, "field": "aura", "en": "Your next ${$m2/2} Shots or melee abilities do not incur a cooldown.", "hash": "726ba4b504d7c30b", "src": "db2@1.60.1.70291"}
+{"id": 468395, "field": "name", "en": "S03 - Item - ZG - Druid - Balance 2P Bonus", "hash": "f4edfecbdef3d461", "src": "db2@1.60.1.70291"}
+{"id": 468395, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70291"}
+{"id": 468397, "field": "name", "en": "S03 - Item - ZG - Mage - Frost 2P Bonus", "hash": "fe281abb6cb749b6", "src": "db2@1.60.1.70291"}
+{"id": 468397, "field": "description", "en": "Increases damage done by Frost spells and effects by up to $s1.", "hash": "8d8b0ac5bd86af9a", "src": "db2@1.60.1.70291"}
+{"id": 468398, "field": "name", "en": "S03 - Item - ZG - Priest - Discipline 2P Bonus", "hash": "b125a108f3576e64", "src": "db2@1.60.1.70291"}
+{"id": 468398, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 468400, "field": "name", "en": "S03 - Item - ZG - Warlock - Demonology 2P Bonus", "hash": "d4f75af6906e7af4", "src": "db2@1.60.1.70291"}
+{"id": 468400, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "db2@1.60.1.70291"}
+{"id": 468401, "field": "name", "en": "S03 - Item - ZG - Paladin - Caster 2P Bonus", "hash": "2c01c0638b212987", "src": "db2@1.60.1.70291"}
+{"id": 468401, "field": "description", "en": "Increases damage done by Holy spells and effects by up to $s1.", "hash": "6e3351e7dc6b9f3a", "src": "db2@1.60.1.70291"}
+{"id": 468407, "field": "name", "en": "S03 - Item - ZG - Hunter - Beastmaster 2P Bonus", "hash": "6efd0faeff7a14b3", "src": "db2@1.60.1.70291"}
+{"id": 468407, "field": "description", "en": "+$s1 Attack Power.", "hash": "ff5c97b29bc1954f", "src": "db2@1.60.1.70291"}
+{"id": 468408, "field": "name", "en": "Bloodlust", "hash": "b9545f229ef97d79", "src": "db2@1.60.1.70291"}
+{"id": 468408, "field": "description", "en": "Increases attack speed by $s1% for $d.", "hash": "3a04eedf7db78448", "src": "db2@1.60.1.70291"}
+{"id": 468408, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70291"}
+{"id": 468409, "field": "name", "en": "S03 - Item - ZG - Rogue - Dagger 2P Bonus", "hash": "96833bea415571c6", "src": "db2@1.60.1.70291"}
+{"id": 468409, "field": "description", "en": "+$s1 Attack Power.", "hash": "ff5c97b29bc1954f", "src": "db2@1.60.1.70291"}
+{"id": 468411, "field": "name", "en": "S03 - Item - ZG - Shaman - Tank 2P Bonus", "hash": "dba3bf8e7be9730a", "src": "db2@1.60.1.70291"}
+{"id": 468411, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "db2@1.60.1.70291"}
+{"id": 468412, "field": "name", "en": "S03 - Item - ZG - Warrior - Gladiator 2P Bonus", "hash": "c42de2abfb367dc4", "src": "db2@1.60.1.70291"}
+{"id": 468412, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "db2@1.60.1.70291"}
+{"id": 468415, "field": "name", "en": "S03 - Item - ZG - Druid - Balance 3P Bonus", "hash": "6c5f818f545cda5d", "src": "db2@1.60.1.70291"}
+{"id": 468415, "field": "description", "en": "Reduces the cast time and global cooldown of Starfire by ${$m1/-1000}.1 sec.", "hash": "25126fce13b72425", "src": "db2@1.60.1.70291"}
+{"id": 468416, "field": "name", "en": "S03 - Item - ZG - Druid - Balance 5P Bonus", "hash": "5b4287123f2ee644", "src": "db2@1.60.1.70291"}
+{"id": 468416, "field": "description", "en": "Increases the critical strike chance of Wrath by $s1%.", "hash": "dccab3fa8941ec9e", "src": "db2@1.60.1.70291"}
+{"id": 468417, "field": "name", "en": "S03 - Item - ZG - Hunter - Beastmaster 3P Bonus", "hash": "e66e926d74e31aaf", "src": "db2@1.60.1.70291"}
+{"id": 468417, "field": "description", "en": "Increases the Attack Power your Beast pet gains from your attributes by $s1%.", "hash": "f179525e15401875", "src": "db2@1.60.1.70291"}
+{"id": 468418, "field": "name", "en": "S03 - Item - ZG - Hunter - Beastmaster 5P Bonus", "hash": "d55197f05fb52696", "src": "db2@1.60.1.70291"}
+{"id": 468418, "field": "description", "en": "Increases the Focus regeneration of your Beast pet by $s1%.", "hash": "ac920ac7f54f31f9", "src": "db2@1.60.1.70291"}
+{"id": 468425, "field": "name", "en": "S03 - Item - ZG - Mage - Frost 3P Bonus", "hash": "75999d7fe2204fa1", "src": "db2@1.60.1.70291"}
+{"id": 468425, "field": "description", "en": "Increases the chance to trigger your Fingers of Frost rune by an additional $s1%.", "hash": "2ff619f934776c19", "src": "db2@1.60.1.70291"}
+{"id": 468427, "field": "name", "en": "S03 - Item - ZG - Mage - Frost 5P Bonus", "hash": "647ca302ccf25b88", "src": "db2@1.60.1.70291"}
+{"id": 468427, "field": "description", "en": "Increases damage done by your Frostbolt and Spellfrost Bolt spells by $s1%.", "hash": "44fc23b0b459dcbf", "src": "db2@1.60.1.70291"}
+{"id": 468428, "field": "name", "en": "S03 - Item - ZG - Paladin - Caster 3P Bonus", "hash": "a3734322008a2f83", "src": "db2@1.60.1.70291"}
+{"id": 468428, "field": "description", "en": "Increases damage done by your Holy Shock spell by $s1%.", "hash": "8c5898433355b97f", "src": "db2@1.60.1.70291"}
+{"id": 468431, "field": "name", "en": "S03 - Item - ZG - Paladin - Caster 5P Bonus", "hash": "925648a5eb5c3b59", "src": "db2@1.60.1.70291"}
+{"id": 468431, "field": "description", "en": "Reduces the cooldown of your Exorcism spell by ${$m1/-1000} sec and increases its damage done by $s2%.", "hash": "3e78500167475ec7", "src": "db2@1.60.1.70291"}
+{"id": 468433, "field": "name", "en": "S03 - Item - ZG - Priest - Discipline 3P Bonus", "hash": "289723cc68c07460", "src": "db2@1.60.1.70291"}
+{"id": 468433, "field": "description", "en": "Reduces the cooldown of your Penance spell by ${$m1/-1000} sec.", "hash": "187f29a80221515d", "src": "db2@1.60.1.70291"}
+{"id": 468434, "field": "name", "en": "S03 - Item - ZG - Priest - Discipline 5P Bonus", "hash": "177a294f53928047", "src": "db2@1.60.1.70291"}
+{"id": 468434, "field": "description", "en": "Increases the damage absorbed by your Power Word: Shield spell by $s1%.", "hash": "b9ac6d8c27199bea", "src": "db2@1.60.1.70291"}
+{"id": 468436, "field": "name", "en": "S03 - Item - ZG - Rogue - Dagger 3P Bonus", "hash": "0df4beaeb6be77b1", "src": "db2@1.60.1.70291"}
+{"id": 468436, "field": "description", "en": "Increases your chance to get a critical strike with Daggers by $s1%.", "hash": "a200bf677cfbdf7a", "src": "db2@1.60.1.70291"}
+{"id": 468438, "field": "name", "en": "S03 - Item - ZG - Rogue - Dagger 5P Bonus", "hash": "fcd7c42ca1908398", "src": "db2@1.60.1.70291"}
+{"id": 468438, "field": "description", "en": "Increases the critical strike chance of your Ambush ability by $s1%.", "hash": "6e3c0e9699dc126f", "src": "db2@1.60.1.70291"}
+{"id": 468441, "field": "name", "en": "S03 - Item - ZG - Shaman - Tank 3P Bonus", "hash": "53154252f15278f5", "src": "db2@1.60.1.70291"}
+{"id": 468441, "field": "description", "en": "Increases your chance to block attacks with a shield by $s1%.", "hash": "44ee93799b332b37", "src": "db2@1.60.1.70291"}
+{"id": 468445, "field": "name", "en": "S03 - Item - ZG - Shaman - Tank 5P Bonus", "hash": "41f847d5dc2484dc", "src": "db2@1.60.1.70291"}
+{"id": 468445, "field": "description", "en": "Increases the chance to trigger your Power Surge rune by an additional $s1%.", "hash": "08ee1dc9cc5f0ec2", "src": "db2@1.60.1.70291"}
+{"id": 468446, "field": "name", "en": "S03 - Item - ZG - Warlock - Demonology 3P Bonus", "hash": "4c68ddba05d780f0", "src": "db2@1.60.1.70291"}
+{"id": 468446, "field": "description", "en": "Increases the Attack Power and Spell Damage your Demon pet gains from your attributes by $s1%.", "hash": "35c4a1319f4ebddc", "src": "db2@1.60.1.70291"}
+{"id": 468447, "field": "name", "en": "S03 - Item - ZG - Warlock - Demonology 5P Bonus", "hash": "3b4be33df0a98cc6", "src": "db2@1.60.1.70291"}
+{"id": 468447, "field": "description", "en": "Increases the benefits of your Master Demonologist talent by $s1%.", "hash": "53c5cd7250ed2041", "src": "db2@1.60.1.70291"}
+{"id": 468452, "field": "name", "en": "S03 - Item - ZG - Warrior - Gladiator 3P Bonus", "hash": "3b9f656f709f83c0", "src": "db2@1.60.1.70291"}
+{"id": 468452, "field": "description", "en": "Reduces the cooldown on your Shield Slam ability by ${$m1/-1000} sec.", "hash": "12fb34ef18c3454d", "src": "db2@1.60.1.70291"}
+{"id": 468453, "field": "name", "en": "S03 - Item - ZG - Warrior - Gladiator 5P Bonus", "hash": "2a826af25b718fa7", "src": "db2@1.60.1.70291"}
+{"id": 468453, "field": "description", "en": "Reduces the cooldown on your Bloodrage ability by ${$m1/-1000} sec while you are in Gladiator Stance.", "hash": "209cb5838aae5023", "src": "db2@1.60.1.70291"}
+{"id": 468455, "field": "name", "en": "S03 - Item - ZG - Warrior - Gladiator 5P Bonus", "hash": "2a826af25b718fa7", "src": "db2@1.60.1.70291"}
+{"id": 468458, "field": "name", "en": "Burst of Energy", "hash": "daf28b4edec9f2da", "src": "db2@1.60.1.70291"}
+{"id": 468458, "field": "description", "en": "Instantly increases your energy by $s1. If Cutthroat is engraved, gain an activation of Cutthroat's Ambush effect.", "hash": "be6a46e61e4f6256", "src": "db2@1.60.1.70291"}
+{"id": 468459, "field": "name", "en": "Renataki's Charm of Trickery Dummy", "hash": "c4bf0ee31fcaedeb", "src": "db2@1.60.1.70291"}
+{"id": 468460, "field": "name", "en": "Energized Shield", "hash": "6d69b3a3c97d76d1", "src": "db2@1.60.1.70291"}
+{"id": 468460, "field": "description", "en": "Increases the damage dealt by your Lightning Shield spell by $s1% for $d.", "hash": "f0846f5703c4b2cb", "src": "db2@1.60.1.70291"}
+{"id": 468460, "field": "aura", "en": "Lightning Shield damage increased by $s1%.", "hash": "d18fd979a21c7da4", "src": "db2@1.60.1.70291"}
+{"id": 468461, "field": "name", "en": "Brilliant Light", "hash": "d1b869baf8c77e2c", "src": "db2@1.60.1.70291"}
+{"id": 468461, "field": "description", "en": "Increases the critical hit chance of spells by $s1% for $d. If Shock and Awe is engraved, gain an additional $s2%.", "hash": "d73199409a602499", "src": "db2@1.60.1.70291"}
+{"id": 468461, "field": "aura", "en": "Spell critical hit chance increased by $w1%.", "hash": "567ed40fc1ad32c9", "src": "db2@1.60.1.70291"}
+{"id": 468462, "field": "name", "en": "Gri'lek's Guard", "hash": "f6627c6982b3aebf", "src": "db2@1.60.1.70291"}
+{"id": 468462, "field": "description", "en": "Increases your shield block value by $s2 for $d1, and instantly increases your rage by $/10;s1.", "hash": "0d56817d29f7c736", "src": "db2@1.60.1.70291"}
+{"id": 468462, "field": "aura", "en": "Block value increased by $s2.", "hash": "64e828f2fb19096f", "src": "db2@1.60.1.70291"}
+{"id": 468463, "field": "name", "en": "S03 - Flag Tracking Quest", "hash": "d61ce43a1ca90a56", "src": "db2@1.60.1.70291"}
+{"id": 468464, "field": "name", "en": "Destroy Simulacrum", "hash": "702c9e83bfe3af52", "src": "db2@1.60.1.70291"}
+{"id": 468464, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70291"}
+{"id": 468465, "field": "name", "en": "Unmaking the Simulacrum", "hash": "cc86ac0bdbb3f723", "src": "db2@1.60.1.70291"}
+{"id": 468465, "field": "description", "en": "You are siezed by darkness!", "hash": "c9acf240cb7b9d27", "src": "db2@1.60.1.70291"}
+{"id": 468465, "field": "aura", "en": "You are incapacitated by a deathly chill! Unable to move or perform actions.", "hash": "34b9971b063b347b", "src": "db2@1.60.1.70291"}
+{"id": 468466, "field": "name", "en": "Unmaking the Simulacrum", "hash": "cc86ac0bdbb3f723", "src": "db2@1.60.1.70291"}
+{"id": 468466, "field": "description", "en": "While channeling this spell, your mana regeneration is active and increased by $s1%.  Lasts $d.", "hash": "6222a8d66d86c0f6", "src": "db2@1.60.1.70291"}
+{"id": 468466, "field": "aura", "en": "Mana regeneration increased by $s1%.", "hash": "f8a540d0866e7bfb", "src": "db2@1.60.1.70291"}
+{"id": 468467, "field": "name", "en": "[DNT] Faerie Flare", "hash": "3024a59ec64e4d9d", "src": "db2@1.60.1.70291"}
+{"id": 468468, "field": "name", "en": "[DNT] Faerie Light", "hash": "99118fda6f65c62b", "src": "db2@1.60.1.70291"}
+{"id": 468469, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70291"}
+{"id": 468472, "field": "name", "en": "Summon Parasitic Serpent", "hash": "94a696c8a0ba7012", "src": "db2@1.60.1.70291"}
+{"id": 468473, "field": "name", "en": "Parasitic Serpent", "hash": "fc1a16ca0a56200b", "src": "db2@1.60.1.70291"}
+{"id": 468474, "field": "name", "en": "Parasitic Serpent", "hash": "fc1a16ca0a56200b", "src": "db2@1.60.1.70291"}
+{"id": 468474, "field": "aura", "en": "Deals $s1 damage every $t1 sec.", "hash": "2af65718435cbcd2", "src": "db2@1.60.1.70291"}
+{"id": 468475, "field": "name", "en": "Poison", "hash": "43f9da16eae9c502", "src": "db2@1.60.1.70291"}
+{"id": 468475, "field": "description", "en": "Inflicts Nature damage to an enemy every $t1 sec. for $d.", "hash": "05ece5991a43ff48", "src": "db2@1.60.1.70291"}
+{"id": 468475, "field": "aura", "en": "Nature damage inflicted every $t1 sec.", "hash": "af62b13ec2fc8e7b", "src": "db2@1.60.1.70291"}
+{"id": 468478, "field": "name", "en": "Growth", "hash": "a1cb34b80a23af75", "src": "db2@1.60.1.70291"}
+{"id": 468479, "field": "name", "en": "Growth", "hash": "a1cb34b80a23af75", "src": "db2@1.60.1.70291"}
+{"id": 468481, "field": "name", "en": "Full Grown", "hash": "b156a50b987f281e", "src": "db2@1.60.1.70291"}
+{"id": 468488, "field": "name", "en": "Aspect of Arlokk", "hash": "34cd3d6601140ca0", "src": "db2@1.60.1.70291"}
+{"id": 468491, "field": "name", "en": "Aspect of Arlokk", "hash": "34cd3d6601140ca0", "src": "db2@1.60.1.70291"}
+{"id": 468492, "field": "name", "en": "Aspect of Arlokk", "hash": "34cd3d6601140ca0", "src": "db2@1.60.1.70291"}
+{"id": 468495, "field": "name", "en": "(DNT) Teleport", "hash": "7bd93be0b45ca164", "src": "db2@1.60.1.70291"}
+{"id": 468500, "field": "name", "en": "Charge", "hash": "024f52bd3f49c2c8", "src": "db2@1.60.1.70291"}
+{"id": 468500, "field": "description", "en": "Charges an enemy, inflicting normal damage plus $s3 and stuns the opponent for $d.", "hash": "af4293e676932a45", "src": "db2@1.60.1.70291"}
+{"id": 468503, "field": "name", "en": "Fulmination", "hash": "e5233c2e74d35740", "src": "db2@1.60.1.70291"}
+{"id": 468509, "field": "name", "en": "(DNT) Stop Cast", "hash": "ab4ef9e4fc22d28c", "src": "db2@1.60.1.70291"}
+{"id": 468512, "field": "name", "en": "Frost Potency", "hash": "f010e5c8a3bfb2cd", "src": "db2@1.60.1.70291"}
+{"id": 468512, "field": "description", "en": "Increases the critical hit chance of your Frostbolt, Spellfrost Bolt, and Frozen Orb spells by $s1%, and increases the critical hit damage of your Frostbolt, Spellfrost Bolt, and Frozen Orb spells by $s2% for $d.", "hash": "7e076da5786b5a5d", "src": "db2@1.60.1.70291"}
+{"id": 468512, "field": "aura", "en": "Frostbolt, Spellfrost Bolt, and Frozen Orb spell critical hit chance increased by $s1%.\r\nFrostbolt, Spellfrost Bolt, and Frozen Orb spell critical hit damage increased by $s2%.", "hash": "15dd02e536578e5b", "src": "db2@1.60.1.70291"}
+{"id": 468513, "field": "name", "en": "(DNT) Go Cast", "hash": "bc84cff23329f621", "src": "db2@1.60.1.70291"}
+{"id": 468526, "field": "name", "en": "Power Surge", "hash": "15f545926e66c8bc", "src": "db2@1.60.1.70291"}
+{"id": 468526, "field": "aura", "en": "Your next Chain Heal spell will be an instant cast spell.", "hash": "640ad6335d7e2885", "src": "db2@1.60.1.70291"}
+{"id": 468528, "field": "name", "en": "[DNT] Priest Epic Book - Cosmetic", "hash": "2d0a6c9d87aa0a32", "src": "db2@1.60.1.70291"}
+{"id": 468531, "field": "name", "en": "Rapid Healing", "hash": "b0f8d5ac29a81fde", "src": "db2@1.60.1.70291"}
+{"id": 468531, "field": "description", "en": "Reduces the casting time of your Greater Heal spells by $s1%, reduces the mana cost of your healing spells by $s2%, and casts of Penance on allies will target up to ${$s3-1} additional targets for $d.", "hash": "63fdcc13bd3a7c9e", "src": "db2@1.60.1.70291"}
+{"id": 468531, "field": "aura", "en": "Greater Heal casting time decreased by $s1%.\r\nHealing spell mana cost reduced by $s2%.\r\nPenance casts on allies will target up to ${$s3-1} additional targets.", "hash": "182ad8681ba4fc8f", "src": "db2@1.60.1.70291"}
+{"id": 468540, "field": "name", "en": "Massive Destruction", "hash": "a9d57bbb3950e2b5", "src": "db2@1.60.1.70291"}
+{"id": 468540, "field": "description", "en": "Increases your critical hit chance by $s1%, and increases your pet's attack speed by $468543s1% for $d. This spell does not affect temporary pets or Subjugated Demons.", "hash": "68823c6dcf52e0ff", "src": "db2@1.60.1.70291"}
+{"id": 468540, "field": "aura", "en": "Critical hit chance increased by $s1%.", "hash": "244e6a73939637df", "src": "db2@1.60.1.70291"}
+{"id": 468543, "field": "name", "en": "Demonic Destruction", "hash": "70e19b8d81458714", "src": "db2@1.60.1.70291"}
+{"id": 468543, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70291"}
+{"id": 468552, "field": "name", "en": "Punctured Voodoo Doll WAR DND", "hash": "bea3680e8e57430b", "src": "db2@1.60.1.70291"}
+{"id": 468552, "field": "description", "en": "Combines with Gri'lek's Blood, Renataki's Tooth, Wushoolay's Mane, and Hazza'rah's Dream Thread to form a powerful charm.", "hash": "7ddd14e46a2062f6", "src": "db2@1.60.1.70291"}
+{"id": 468555, "field": "name", "en": "Punctured Voodoo Doll SHM DND", "hash": "74b21e86182c178e", "src": "db2@1.60.1.70291"}
+{"id": 468555, "field": "description", "en": "Combines with Gri'lek's Blood, Renataki's Tooth, Wushoolay's Mane, and Hazza'rah's Dream Thread to form a powerful charm.", "hash": "7ddd14e46a2062f6", "src": "db2@1.60.1.70291"}
+{"id": 468556, "field": "name", "en": "Punctured Voodoo Doll MAG DND", "hash": "ee919641a261f542", "src": "db2@1.60.1.70291"}
+{"id": 468556, "field": "description", "en": "Combines with Gri'lek's Blood, Renataki's Tooth, Wushoolay's Mane, and Hazza'rah's Dream Thread to form a powerful charm.", "hash": "7ddd14e46a2062f6", "src": "db2@1.60.1.70291"}
+{"id": 468557, "field": "name", "en": "Punctured Voodoo Doll WLK  DND", "hash": "1272abb7f6d81576", "src": "db2@1.60.1.70291"}
+{"id": 468557, "field": "description", "en": "Combines with Gri'lek's Blood, Renataki's Tooth, Wushoolay's Mane, and Hazza'rah's Dream Thread to form a powerful charm.", "hash": "7ddd14e46a2062f6", "src": "db2@1.60.1.70291"}
+{"id": 468558, "field": "name", "en": "Punctured Voodoo Doll PRT DND", "hash": "a4a4f6805f32790b", "src": "db2@1.60.1.70291"}
+{"id": 468558, "field": "description", "en": "Combines with Gri'lek's Blood, Renataki's Tooth, Wushoolay's Mane, and Hazza'rah's Dream Thread to form a powerful charm.", "hash": "7ddd14e46a2062f6", "src": "db2@1.60.1.70291"}
+{"id": 468559, "field": "name", "en": "Punctured Voodoo Doll DRU DND", "hash": "3dd24add3b0dfa9e", "src": "db2@1.60.1.70291"}
+{"id": 468559, "field": "description", "en": "Combines with Gri'lek's Blood, Renataki's Tooth, Wushoolay's Mane, and Hazza'rah's Dream Thread to form a powerful charm.", "hash": "7ddd14e46a2062f6", "src": "db2@1.60.1.70291"}
+{"id": 468560, "field": "name", "en": "Punctured Voodoo Doll ROG DND", "hash": "374b372ac3da2bff", "src": "db2@1.60.1.70291"}
+{"id": 468560, "field": "description", "en": "Combines with Gri'lek's Blood, Renataki's Tooth, Wushoolay's Mane, and Hazza'rah's Dream Thread to form a powerful charm.", "hash": "7ddd14e46a2062f6", "src": "db2@1.60.1.70291"}
+{"id": 468562, "field": "name", "en": "Punctured Voodoo Doll PAL DND", "hash": "646e3e58fdba3212", "src": "db2@1.60.1.70291"}
+{"id": 468562, "field": "description", "en": "Combines with Gri'lek's Blood, Renataki's Tooth, Wushoolay's Mane, and Hazza'rah's Dream Thread to form a powerful charm.", "hash": "7ddd14e46a2062f6", "src": "db2@1.60.1.70291"}
+{"id": 468563, "field": "name", "en": "Punctured Voodoo Doll HUN DND", "hash": "8849fcd46d9bd124", "src": "db2@1.60.1.70291"}
+{"id": 468563, "field": "description", "en": "Combines with Gri'lek's Blood, Renataki's Tooth, Wushoolay's Mane, and Hazza'rah's Dream Thread to form a powerful charm.", "hash": "7ddd14e46a2062f6", "src": "db2@1.60.1.70291"}
+{"id": 468590, "field": "name", "en": "Hybrid Healing/Spell Dam 51/17", "hash": "02516b698c91585f", "src": "db2@1.60.1.70291"}
+{"id": 468590, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 468591, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70291"}
+{"id": 468591, "field": "aura", "en": "Asleep.", "hash": "5339954ec205013e", "src": "db2@1.60.1.70291"}
+{"id": 468592, "field": "name", "en": "Hybrid Healing/Spell Dam 42/14", "hash": "f0e602ab3b0eccf1", "src": "db2@1.60.1.70291"}
+{"id": 468592, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 468594, "field": "name", "en": "Roll Over!", "hash": "6651d0687b9a86cf", "src": "db2@1.60.1.70291"}
+{"id": 468598, "field": "name", "en": "Roll Over!", "hash": "6651d0687b9a86cf", "src": "db2@1.60.1.70291"}
+{"id": 468621, "field": "name", "en": "Hybrid Healing/Spell Dam 31/11", "hash": "df35febccebc5963", "src": "db2@1.60.1.70291"}
+{"id": 468621, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 468638, "field": "name", "en": "Imbue Essence of Frost", "hash": "3f355bb431d4cbbe", "src": "db2@1.60.1.70291"}
+{"id": 468638, "field": "description", "en": "Imbue the Depleted Essence of Frost with magic.", "hash": "e983ec96f9829eb5", "src": "db2@1.60.1.70291"}
+{"id": 468643, "field": "name", "en": "Start The Depleted Scythe", "hash": "ec4962196d01b7cc", "src": "db2@1.60.1.70291"}
+{"id": 468667, "field": "name", "en": "Silithid Darter", "hash": "2e7f5a001ff48c45", "src": "db2@1.60.1.70291"}
+{"id": 468670, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70291"}
+{"id": 468670, "field": "description", "en": "Blasts up to 3 targets for $s1 Nature damage.", "hash": "d382b11fc55599c5", "src": "db2@1.60.1.70291"}
+{"id": 468671, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70291"}
+{"id": 468671, "field": "description", "en": "Damaging non-periodic spells have a chance to blast up to $s2 targets for $s1.", "hash": "4e40a70e5eb110ee", "src": "db2@1.60.1.70291"}
+{"id": 468688, "field": "name", "en": "Hybrid Healing/Spell Dam 128/43", "hash": "545ab19caeedda93", "src": "db2@1.60.1.70291"}
+{"id": 468688, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 468689, "field": "name", "en": "Lock and Load", "hash": "bf35fddceefb2eba", "src": "db2@1.60.1.70291"}
+{"id": 468698, "field": "name", "en": "Open Suspicious Supplies", "hash": "3c76593af32ea474", "src": "db2@1.60.1.70291"}
+{"id": 468698, "field": "description", "en": "Place and open the strange supplies Xirath gave you.", "hash": "f8392905351c1075", "src": "db2@1.60.1.70291"}
+{"id": 468700, "field": "name", "en": "Attack Power - Feral (+338)", "hash": "39fd1e45d9f81109", "src": "db2@1.60.1.70291"}
+{"id": 468700, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.", "hash": "a798bce2a303c5f6", "src": "db2@1.60.1.70291"}
+{"id": 468707, "field": "name", "en": "Xirath - Give Suspicious Supplies", "hash": "35b6402af1de92bf", "src": "db2@1.60.1.70291"}
+{"id": 468710, "field": "name", "en": "[DNT] Demitrian Summon", "hash": "882781facd5fdde5", "src": "db2@1.60.1.70291"}
+{"id": 468714, "field": "name", "en": "Gla'sir Hybrid Healing/Spell Dam 144/77", "hash": "b1b2a316b9e64458", "src": "db2@1.60.1.70291"}
+{"id": 468714, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 468733, "field": "name", "en": "Lasso Target", "hash": "8ca56204cf8f500a", "src": "db2@1.60.1.70291"}
+{"id": 468746, "field": "name", "en": "Power of Hakkar", "hash": "35ba33a033872336", "src": "db2@1.60.1.70291"}
+{"id": 468751, "field": "name", "en": "Silithid Darter", "hash": "2e7f5a001ff48c45", "src": "db2@1.60.1.70291"}
+{"id": 468758, "field": "name", "en": "Healing Specialization", "hash": "13398e92f248d8ee", "src": "db2@1.60.1.70291"}
+{"id": 468758, "field": "description", "en": "Increases healing done by spells and effects by up to $s1. This effect is not cumulative with other ring runes.", "hash": "c701d00f750f38dc", "src": "db2@1.60.1.70291"}
+{"id": 468761, "field": "name", "en": "Engrave Ring - Healing Specialization", "hash": "d9b6bce2c76fb425", "src": "db2@1.60.1.70291"}
+{"id": 468761, "field": "description", "en": "Engrave your ring with the Healing Specialization rune:\r\n\r\n$@spellicon468758\r\n$@spelldesc468758", "hash": "54a1f9e4a09d2b1e", "src": "db2@1.60.1.70291"}
+{"id": 468762, "field": "name", "en": "Meditation Specialization", "hash": "d2ade16e93254f9d", "src": "db2@1.60.1.70291"}
+{"id": 468762, "field": "description", "en": "Restores $s1 mana per 5 sec. This effect is not cumulative with other ring runes.", "hash": "116fdb067cbb2608", "src": "db2@1.60.1.70291"}
+{"id": 468763, "field": "name", "en": "Engrave Ring - Meditation Specialization", "hash": "ce8bf7dab2b4e95d", "src": "db2@1.60.1.70291"}
+{"id": 468763, "field": "description", "en": "Engrave your ring with the Meditation Specialization rune:\r\n\r\n$@spellicon468762\r\n$@spelldesc468762", "hash": "3c76bbe3fe03c21b", "src": "db2@1.60.1.70291"}
+{"id": 468764, "field": "name", "en": "Hybrid Healing/Spell Dam 55/19", "hash": "02daa1d7c231287f", "src": "db2@1.60.1.70291"}
+{"id": 468764, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
+{"id": 468766, "field": "name", "en": "Conjure Water", "hash": "d83f590185d2279d", "src": "db2@1.60.1.70291"}
+{"id": 468766, "field": "description", "en": "Conjures $s1 $lbottle:bottles; of mountain spring water, providing the mage and $ghis:her; allies with something to drink.\r\n\r\nConjured items disappear if logged out for more than 15 minutes.", "hash": "1dc88ba859abbb79", "src": "db2@1.60.1.70291"}
+{"id": 468767, "field": "name", "en": "Drink", "hash": "b906b404cf760523", "src": "db2@1.60.1.70291"}
+{"id": 468767, "field": "description", "en": "Restores $o1 mana over $d.  Must remain seated while drinking.", "hash": "792a9d04713a780c", "src": "db2@1.60.1.70291"}
+{"id": 468767, "field": "aura", "en": "Restores $/5;s1 mana per second.", "hash": "338019ff98d99081", "src": "db2@1.60.1.70291"}
+{"id": 468768, "field": "name", "en": "Wrath of Wray", "hash": "7644ed4e9a34c14c", "src": "db2@1.60.1.70291"}
+{"id": 468768, "field": "description", "en": "Increases your Strength by $s1.  Effect lasts for $d.", "hash": "e46f7830b5dfe154", "src": "db2@1.60.1.70291"}
+{"id": 468768, "field": "aura", "en": "Increases Strength by $s1.", "hash": "b2147e940c214c23", "src": "db2@1.60.1.70291"}
+{"id": 468769, "field": "name", "en": "Nature Reflector", "hash": "44e51133f3c1a681", "src": "db2@1.60.1.70291"}
+{"id": 468769, "field": "description", "en": "Reflects Nature spells back at their caster for $d.", "hash": "d147dfb480fef622", "src": "db2@1.60.1.70291"}
+{"id": 468769, "field": "aura", "en": "Reflecting Nature spells.", "hash": "ce6090445ac6cb28", "src": "db2@1.60.1.70291"}
+{"id": 468774, "field": "name", "en": "Memory of Gri'lek", "hash": "49bca37d28377003", "src": "db2@1.60.1.70291"}
+{"id": 468774, "field": "aura", "en": "Gri'lek's memory clings to you, almost tangible.", "hash": "f4029174f2d8fc9a", "src": "db2@1.60.1.70291"}
+{"id": 468775, "field": "name", "en": "Memory of Hazza'rah", "hash": "e956dc3aeee2ee7e", "src": "db2@1.60.1.70291"}
+{"id": 468775, "field": "aura", "en": "Hazza'rah's memory clings to you, almost tangible.", "hash": "a6ccf812479b4e0f", "src": "db2@1.60.1.70291"}
+{"id": 468776, "field": "name", "en": "Memory of Renataki", "hash": "95175cdf3657987d", "src": "db2@1.60.1.70291"}
+{"id": 468776, "field": "aura", "en": "Renataki's memory clings to you, almost tangible.", "hash": "50af4c34611d7eea", "src": "db2@1.60.1.70291"}
+{"id": 468777, "field": "name", "en": "Memory of Wushoolay", "hash": "6fb1be2a8decd116", "src": "db2@1.60.1.70291"}
+{"id": 468777, "field": "aura", "en": "Wushoolay's memory clings to you, almost tangible.", "hash": "de7c25a598d95ccd", "src": "db2@1.60.1.70291"}
+{"id": 468778, "field": "name", "en": "Summon Gurubashi Hero", "hash": "9b6039f428ccbe4c", "src": "db2@1.60.1.70291"}
+{"id": 468780, "field": "name", "en": "Lightning's Cell", "hash": "49a2f60ec1ddfebb", "src": "db2@1.60.1.70291"}
+{"id": 468780, "field": "description", "en": "You gain a charge of Gathering Storm each time you cause a damaging spell critical strike. When you reach $s1 charges of Gathering Storm, they will release, firing an Unleashed Storm for $468782s1 damage. Gathering Storm cannot be gained more often than once every 2 sec.", "hash": "d36789637062c5d4", "src": "db2@1.60.1.70291"}
+{"id": 468781, "field": "name", "en": "Gathering Storm", "hash": "e5c57e46b79ee4ce", "src": "db2@1.60.1.70291"}
+{"id": 468781, "field": "description", "en": "Gained an Electrical Charge.  When you reach $37657s1 Electrical Charges, they will release, firing a Lightning Bolt for $37661s1 damage.", "hash": "2ed342e2b95bbbe3", "src": "db2@1.60.1.70291"}
+{"id": 468781, "field": "aura", "en": "Electrical Charge.", "hash": "62be2c8ab33e0f9d", "src": "db2@1.60.1.70291"}
+{"id": 468782, "field": "name", "en": "Unleashed Storm", "hash": "384d3cab0ef3bfb6", "src": "db2@1.60.1.70291"}
+{"id": 468782, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70291"}
+{"id": 468783, "field": "name", "en": "Tim's Test Aoe Spell", "hash": "05bfe5e06abc3d0f", "src": "db2@1.60.1.70291"}
+{"id": 468784, "field": "name", "en": "Echoes of Betrayal", "hash": "aba6a5e6dc2da486", "src": "db2@1.60.1.70291"}
+{"id": 468784, "field": "description", "en": "Increases your Arcane and Shadow spell damage by up to $s1 for $d.", "hash": "0821e2d935da7458", "src": "db2@1.60.1.70291"}
+{"id": 468784, "field": "aura", "en": "Arcane and Shadow spell damage increased by $s1.", "hash": "54d9931c263e7a97", "src": "db2@1.60.1.70291"}
+{"id": 468785, "field": "name", "en": "Increase Shadow and Arcane Dam 34", "hash": "753f43d16c91bce5", "src": "db2@1.60.1.70291"}
+{"id": 468785, "field": "description", "en": "Increases damage done by Shadow and Arcane spells and effects by up to $s1.", "hash": "dc8390087f1c8d88", "src": "db2@1.60.1.70291"}
+{"id": 468807, "field": "name", "en": "Relentless Strikes", "hash": "36f27fd079150b00", "src": "db2@1.60.1.70291"}
+{"id": 468823, "field": "name", "en": "Savage Maul", "hash": "63b4518ef520f45c", "src": "db2@1.60.1.70291"}
+{"id": 468830, "field": "name", "en": "Summoning", "hash": "5db0bc8c6a1a7cf2", "src": "db2@1.60.1.70291"}
+{"id": 468836, "field": "name", "en": "Combine Depleted Scythe of Chaos", "hash": "59f0525ab15ecac7", "src": "db2@1.60.1.70291"}
+{"id": 468836, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70291"}
+{"id": 468837, "field": "name", "en": "Combine Depleted Scythe of Chaos", "hash": "59f0525ab15ecac7", "src": "db2@1.60.1.70291"}
+{"id": 468837, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70291"}
+{"id": 468838, "field": "name", "en": "Combine Depleted Scythe of Chaos", "hash": "59f0525ab15ecac7", "src": "db2@1.60.1.70291"}
+{"id": 468838, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70291"}
+{"id": 468839, "field": "name", "en": "Combine Depleted Scythe of Chaos", "hash": "59f0525ab15ecac7", "src": "db2@1.60.1.70291"}
+{"id": 468839, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70291"}
+{"id": 468840, "field": "name", "en": "Combine Scythe of Chaos", "hash": "03a68cf9e7beba8b", "src": "db2@1.60.1.70291"}
+{"id": 468840, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70291"}
+{"id": 468843, "field": "name", "en": "Lacerate", "hash": "2ddaf20b3d682230", "src": "db2@1.60.1.70291"}
+{"id": 468843, "field": "description", "en": "Bleeding for $s2 damage every second.", "hash": "b62243606c2edec3", "src": "db2@1.60.1.70291"}
+{"id": 468843, "field": "aura", "en": "Bleeding for $s2 damage every second.", "hash": "b62243606c2edec3", "src": "db2@1.60.1.70291"}
+{"id": 468850, "field": "name", "en": "Create Soul of Mischief", "hash": "c051428528a399f7", "src": "db2@1.60.1.70291"}
+{"id": 468851, "field": "name", "en": "Create Soul of the Void", "hash": "e22ec0750fa930ae", "src": "db2@1.60.1.70291"}
+{"id": 468852, "field": "name", "en": "Create Soul of Enthralling", "hash": "c6819e313dd155ff", "src": "db2@1.60.1.70291"}
+{"id": 468854, "field": "name", "en": "Create Soul of Devouring", "hash": "41bd81c5ae39a399", "src": "db2@1.60.1.70291"}
+{"id": 468879, "field": "name", "en": "Stealth", "hash": "87e718bee5e635c1", "src": "db2@1.60.1.70291"}
+{"id": 468879, "field": "aura", "en": "Stealthed.", "hash": "150ed46572cb7a09", "src": "db2@1.60.1.70291"}
+{"id": 468882, "field": "name", "en": "Quest Invisibility", "hash": "b7eb6cac426334a3", "src": "db2@1.60.1.70291"}
+{"id": 468913, "field": "name", "en": "Libram of Awe", "hash": "33c89ae640cef5a9", "src": "db2@1.60.1.70291"}
+{"id": 468913, "field": "description", "en": "Increase the range of your Holy Shock spell by $s1 yards, but reduces all Holy damage you deal by $s2%.", "hash": "41a0ee20c416e56f", "src": "db2@1.60.1.70291"}
+{"id": 468919, "field": "name", "en": "Xirath - Progress Quest", "hash": "2a2274b5cdf28159", "src": "db2@1.60.1.70291"}
+{"id": 468925, "field": "name", "en": "Caustic Slime", "hash": "edd110443795a001", "src": "db2@1.60.1.70291"}
+{"id": 468925, "field": "description", "en": "Move speed slowed by $s2%.", "hash": "fb00b5456656ae88", "src": "db2@1.60.1.70291"}
+{"id": 468925, "field": "aura", "en": "Move speed slowed by $s2%.", "hash": "fb00b5456656ae88", "src": "db2@1.60.1.70291"}
+{"id": 468971, "field": "name", "en": "Windstriker", "hash": "3a41f8f6cd4ad33f", "src": "db2@1.60.1.70291"}
+{"id": 468971, "field": "description", "en": "All attacks are guaranteed to land and will be critical strikes for the next $d.", "hash": "14cb9ba57001ba1b", "src": "db2@1.60.1.70291"}
+{"id": 468993, "field": "name", "en": "Attack Power - Feral (+298)", "hash": "39dc62e06461b390", "src": "db2@1.60.1.70291"}
+{"id": 468993, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.", "hash": "a798bce2a303c5f6", "src": "db2@1.60.1.70291"}
+{"id": 468999, "field": "name", "en": "Tied Up", "hash": "6e3d7e0435125eb8", "src": "db2@1.60.1.70291"}

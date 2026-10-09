@@ -1,100 +1,100 @@
-{"id": 463000, "field": "name", "en": "Dedication", "hash": "b22ed76b2133d474", "src": "db2@1.60.1.70245"}
-{"id": 463001, "field": "name", "en": "Time Step", "hash": "98fb91c8bd3d3d5c", "src": "db2@1.60.1.70245"}
-{"id": 463002, "field": "name", "en": "Magic Stone Helmet", "hash": "46b5e463c85b58e8", "src": "db2@1.60.1.70245"}
-{"id": 463004, "field": "name", "en": "Glowy (Green)", "hash": "f7cd4313aa73f5b4", "src": "db2@1.60.1.70245"}
-{"id": 463005, "field": "name", "en": "Fluorescent Green Mechanostrider", "hash": "a96b53b0659a2656", "src": "db2@1.60.1.70245"}
-{"id": 463005, "field": "description", "en": "Summons and dismisses a rideable mechanical tallstrider.", "hash": "58925d99e64d7300", "src": "db2@1.60.1.70245"}
-{"id": 463005, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70245"}
-{"id": 463006, "field": "name", "en": "Golden Sabercat", "hash": "f1162e4af0e06725", "src": "db2@1.60.1.70245"}
-{"id": 463006, "field": "description", "en": "Summons and dismisses a rideable Golden Saber Cat.", "hash": "3745fb1ed6b4a288", "src": "db2@1.60.1.70245"}
-{"id": 463006, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70245"}
-{"id": 463007, "field": "name", "en": "Mottled Blood Raptor", "hash": "0314b3359dcc122c", "src": "db2@1.60.1.70245"}
-{"id": 463007, "field": "description", "en": "Summons and dismisses a rideable Raptor.", "hash": "7d1c7f754999027a", "src": "db2@1.60.1.70245"}
-{"id": 463007, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70245"}
-{"id": 463008, "field": "name", "en": "Balance of Light and Shadow", "hash": "c9bf65dfea83bd07", "src": "db2@1.60.1.70245"}
-{"id": 463008, "field": "description", "en": "Forms Benediction when combined with the Eye of Shadow and the Eye of Divinity.", "hash": "449c37a0c4dfdd98", "src": "db2@1.60.1.70245"}
-{"id": 463009, "field": "name", "en": "Controller Timer", "hash": "3676a58beef2f0cb", "src": "db2@1.60.1.70245"}
-{"id": 463010, "field": "name", "en": "Escape Rope", "hash": "2f98181df6758220", "src": "db2@1.60.1.70245"}
-{"id": 463011, "field": "name", "en": "Escape Rope", "hash": "2f98181df6758220", "src": "db2@1.60.1.70245"}
-{"id": 463012, "field": "name", "en": "Escape Rope", "hash": "2f98181df6758220", "src": "db2@1.60.1.70245"}
-{"id": 463013, "field": "name", "en": "Escape Rope", "hash": "2f98181df6758220", "src": "db2@1.60.1.70245"}
-{"id": 463078, "field": "name", "en": "[DNT] S03 - MC Raid - Teleport 01 - Entrance", "hash": "d2b40d0cf1c70d6a", "src": "db2@1.60.1.70245"}
-{"id": 463080, "field": "name", "en": "[DNT] S03 - MC Raid - Teleport 02 - Rune of Kress (Magmadar)", "hash": "f091279d99c13771", "src": "db2@1.60.1.70245"}
-{"id": 463082, "field": "name", "en": "[DNT] S03 - MC Raid - Teleport 03 - Rune of Mohn (Gehennas)", "hash": "6e402af4fe6ebd07", "src": "db2@1.60.1.70245"}
-{"id": 463085, "field": "name", "en": "[DNT] S03 - MC Raid - Teleport 04 - Rune of Blaz (Garr)", "hash": "ebfe284ed550b82a", "src": "db2@1.60.1.70245"}
-{"id": 463105, "field": "name", "en": "Sanctuary", "hash": "430cdcb17cc68196", "src": "db2@1.60.1.70245"}
-{"id": 463105, "field": "description", "en": "When active, grants the wielder $s1 defense and $s2 armor for $d.", "hash": "275cde53a8064fee", "src": "db2@1.60.1.70245"}
-{"id": 463105, "field": "aura", "en": "Armor increased by $s2.\r\nDefense increased by $s1.", "hash": "f094e7b1583e45d6", "src": "db2@1.60.1.70245"}
-{"id": 463109, "field": "name", "en": "[DNT] S03 - MC Raid - Teleport 05 - Rune of Mazj (Shazzrah)", "hash": "d910eec1e80268ef", "src": "db2@1.60.1.70245"}
-{"id": 463111, "field": "name", "en": "[DNT] S03 - MC Raid - Teleport 06 - Rune of Zeth (Baron Geddon)", "hash": "2d66799b2fe732c1", "src": "db2@1.60.1.70245"}
-{"id": 463112, "field": "name", "en": "[DNT] S03 - MC Raid - Teleport 07 - Rune of Theri (Golemagg)", "hash": "164197012ee56604", "src": "db2@1.60.1.70245"}
-{"id": 463113, "field": "name", "en": "[DNT] S03 - MC Raid - Teleport 08 - Rune of Koro (Sulfuron Harbinger)", "hash": "1f54a5eca149830d", "src": "db2@1.60.1.70245"}
-{"id": 463146, "field": "name", "en": "Libram of the Consecrated", "hash": "e4c6914874f97a1e", "src": "db2@1.60.1.70245"}
-{"id": 463146, "field": "description", "en": "Your Crusader Strike spell reduces the cost of your next Consecration spell by $s1%.", "hash": "48dc6691c2e5c25e", "src": "db2@1.60.1.70245"}
-{"id": 463165, "field": "name", "en": "(DNT) Firefighter Threat Pulse", "hash": "44d63b50c93145c6", "src": "db2@1.60.1.70245"}
-{"id": 463168, "field": "name", "en": "Kerosene Kick", "hash": "addba82595ef891c", "src": "db2@1.60.1.70245"}
-{"id": 463168, "field": "description", "en": "Zilbagob sends the shredder into an explosive launch, sending shockwaves that clear the floor.", "hash": "53455fe4e144a77c", "src": "db2@1.60.1.70245"}
-{"id": 463168, "field": "aura", "en": "Knocks everybody off their feet.", "hash": "cfd65d4c2506b12d", "src": "db2@1.60.1.70245"}
-{"id": 463171, "field": "name", "en": "Fixate", "hash": "097a77e983ad4bc9", "src": "db2@1.60.1.70245"}
-{"id": 463171, "field": "description", "en": "Causes an enemy to fixate upon the caster and increases the caster's attack speed by $s2% for $d. While the target is fixated upon the caster, the target is very reluctant to attack anything else.", "hash": "a441d417fe30d900", "src": "db2@1.60.1.70245"}
-{"id": 463175, "field": "name", "en": "(DNT) Remove Heat Screen Effects", "hash": "69d8be14840ad0fc", "src": "db2@1.60.1.70245"}
-{"id": 463186, "field": "name", "en": "[DNT] S03 - MC Raid - Defeated Heat Level Message", "hash": "249f22cda6aea2b9", "src": "db2@1.60.1.70245"}
-{"id": 463250, "field": "name", "en": "[DNT] Remove Parry", "hash": "4e903e1e499cfa40", "src": "db2@1.60.1.70245"}
-{"id": 463253, "field": "name", "en": "[DNT] Power Bar Color", "hash": "db2ac68e1f7caaba", "src": "db2@1.60.1.70245"}
-{"id": 463269, "field": "name", "en": "Gehennas' Curse", "hash": "4f0ab8ff6a1abfb6", "src": "db2@1.60.1.70245"}
-{"id": 463275, "field": "name", "en": "Gehennas' Curse", "hash": "4f0ab8ff6a1abfb6", "src": "db2@1.60.1.70245"}
-{"id": 463285, "field": "name", "en": "Starfire", "hash": "c6c8e9f7fb2bf0af", "src": "db2@1.60.1.70245"}
-{"id": 463285, "field": "description", "en": "Causes $s1 Arcane damage to the target.", "hash": "f284a03526db7647", "src": "db2@1.60.1.70245"}
-{"id": 463320, "field": "name", "en": "Opening", "hash": "c8c8439c6bc312c3", "src": "db2@1.60.1.70245"}
-{"id": 463365, "field": "name", "en": "Summon Siopi", "hash": "5b4524ca5936ec8c", "src": "db2@1.60.1.70245"}
-{"id": 463365, "field": "description", "en": "Entices Zotl the shrike bat to accompany you for a challenge.", "hash": "57f28cc1e8768104", "src": "db2@1.60.1.70245"}
-{"id": 463365, "field": "aura", "en": "Accompanied by Zotl the shrike bat.", "hash": "f8f20aba7f465425", "src": "db2@1.60.1.70245"}
-{"id": 463448, "field": "name", "en": "Frost Nova", "hash": "814b760c7d985bff", "src": "db2@1.60.1.70245"}
-{"id": 463448, "field": "description", "en": "Inflicts Frost damage to nearby enemies, immobilizing them for up to $d.", "hash": "1eb0ef79be5f0091", "src": "db2@1.60.1.70245"}
-{"id": 463448, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70245"}
-{"id": 463512, "field": "name", "en": "Summon Eskhandar", "hash": "a04e116146278ed2", "src": "db2@1.60.1.70245"}
-{"id": 463512, "field": "description", "en": "Calls forth the spirit of Eskhandar to protect you in battle for $d.", "hash": "12a9c885b476998f", "src": "db2@1.60.1.70245"}
-{"id": 463518, "field": "name", "en": "Vigilance", "hash": "c0f92c82a56502de", "src": "db2@1.60.1.70245"}
-{"id": 463518, "field": "aura", "en": "Damage taken reduced by $426972s3% and $s1% of all threat transferred to the warrior.", "hash": "4c5cf7a86458c4f1", "src": "db2@1.60.1.70245"}
-{"id": 463529, "field": "name", "en": "Dummy Trigger", "hash": "67c685565244c5b4", "src": "db2@1.60.1.70245"}
-{"id": 463537, "field": "name", "en": "Conflagration", "hash": "dcef55a8e8c2f472", "src": "db2@1.60.1.70245"}
-{"id": 463555, "field": "name", "en": "Blood Alchemy", "hash": "5f9c1f0f2595d979", "src": "db2@1.60.1.70245"}
-{"id": 463555, "field": "description", "en": "Receive tokens for your service to the Blood God.", "hash": "f0c62931b6fe4a3a", "src": "db2@1.60.1.70245"}
-{"id": 463556, "field": "name", "en": "Blood Alchemy", "hash": "5f9c1f0f2595d979", "src": "db2@1.60.1.70245"}
-{"id": 463556, "field": "description", "en": "Transmute 100 Copper Slaughter Coins into 1 Silver Slaughter Coin.", "hash": "d353ba95c35ceb3e", "src": "db2@1.60.1.70245"}
-{"id": 463557, "field": "name", "en": "Blood Alchemy", "hash": "5f9c1f0f2595d979", "src": "db2@1.60.1.70245"}
-{"id": 463557, "field": "description", "en": "Transmute 100 Silver Massacre Coins into 1 Gold Massacre Coin.", "hash": "01f22e4ef2f44b4f", "src": "db2@1.60.1.70245"}
-{"id": 463564, "field": "name", "en": "Broodmother's Block", "hash": "19db392a6cd05be4", "src": "db2@1.60.1.70245"}
-{"id": 463564, "field": "description", "en": "Increases the block value of your shield by $s1 for $d.", "hash": "e7882b6ec45701df", "src": "db2@1.60.1.70245"}
-{"id": 463564, "field": "aura", "en": "Block value increased by $s1.", "hash": "64e8286ffb18e98e", "src": "db2@1.60.1.70245"}
-{"id": 463605, "field": "name", "en": "ST XP Grant [DNT]", "hash": "0c90a236d2184c50", "src": "db2@1.60.1.70245"}
-{"id": 463620, "field": "name", "en": "Retribution Aura", "hash": "3ff07382343dabaf", "src": "db2@1.60.1.70245"}
-{"id": 463620, "field": "description", "en": "Causes $s1 Holy damage to any creature that strikes a nearby party member. Players may only have one aura on them per paladin at any one time. The aura lasts until cancelled.", "hash": "b2ca9267c9ede335", "src": "db2@1.60.1.70245"}
-{"id": 463620, "field": "aura", "en": "$s1 Holy damage inflicted to melee attackers.", "hash": "210150aa7d5ae399", "src": "db2@1.60.1.70245"}
-{"id": 463621, "field": "name", "en": "Retribution Aura", "hash": "3ff07382343dabaf", "src": "db2@1.60.1.70245"}
-{"id": 463621, "field": "description", "en": "Causes $s1 Holy damage to any creature that strikes a nearby party member. Players may only have one aura on them per paladin at any one time. The aura lasts until cancelled.", "hash": "b2ca9267c9ede335", "src": "db2@1.60.1.70245"}
-{"id": 463621, "field": "aura", "en": "$s1 Holy damage inflicted to melee attackers.", "hash": "210150aa7d5ae399", "src": "db2@1.60.1.70245"}
-{"id": 463626, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70245"}
-{"id": 463626, "field": "description", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70245"}
-{"id": 463626, "field": "aura", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70245"}
-{"id": 463641, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70245"}
-{"id": 463661, "field": "name", "en": "Meteor", "hash": "a35983361d0793f2", "src": "db2@1.60.1.70245"}
-{"id": 463772, "field": "name", "en": "(DNT) Lava Trap Animation", "hash": "77794156fbe8fd1b", "src": "db2@1.60.1.70245"}
-{"id": 463825, "field": "name", "en": "(DNT) Lava Bubble Animation", "hash": "e34d6b134a62bcd2", "src": "db2@1.60.1.70245"}
-{"id": 463864, "field": "name", "en": "Sigil of Flowing Waters", "hash": "503ac64443c472ed", "src": "db2@1.60.1.70245"}
-{"id": 463864, "field": "description", "en": "Gain an enchanted sigil of Flowing Waters, empowering your raid to deal up to $s1 increased damage and healing with spells, and increasing attack power by $s2 for $d.", "hash": "dd734e9a0da6ffd6", "src": "db2@1.60.1.70245"}
-{"id": 463864, "field": "aura", "en": "Empowered by Flowing Waters. Dealing up to $s1 increased damage and healing with spells, and increasing attack power by $s2.", "hash": "36595d1e548e1523", "src": "db2@1.60.1.70245"}
-{"id": 463866, "field": "name", "en": "Sigil of Flowing Waters", "hash": "503ac64443c472ed", "src": "db2@1.60.1.70245"}
-{"id": 463868, "field": "name", "en": "Conductive Shield Coating", "hash": "9bad656104712b5d", "src": "db2@1.60.1.70245"}
-{"id": 463868, "field": "description", "en": "While applied to target shield it increases spell damage and healing by up to 24.  Lasts for 30 minutes.", "hash": "ec9710d4277b3e46", "src": "db2@1.60.1.70245"}
-{"id": 463869, "field": "name", "en": "Conductive Shield Coating", "hash": "9bad656104712b5d", "src": "db2@1.60.1.70245"}
-{"id": 463869, "field": "description", "en": "Creates Conductive Shield Coating.", "hash": "7b4089f97f6df166", "src": "db2@1.60.1.70245"}
-{"id": 463871, "field": "name", "en": "Enchant Shield - Law of Nature", "hash": "2bf4291e06783602", "src": "db2@1.60.1.70245"}
-{"id": 463871, "field": "description", "en": "Permanently enchant a Shield to add up to 30 damage to spells and up to 55 points of healing to healing spells.", "hash": "260ff875f19abfa5", "src": "db2@1.60.1.70245"}
-{"id": 463873, "field": "name", "en": "Law of Nature", "hash": "1f424dab7039662b", "src": "db2@1.60.1.70245"}
-{"id": 463873, "field": "description", "en": "Increases damage done by magical spells and effects by up to $s1, and increases healing done by magical spells and effects by up to $2.", "hash": "ba1b2d58c759df17", "src": "db2@1.60.1.70245"}
-{"id": 463903, "field": "name", "en": "Doomsday", "hash": "aad8eeb8a3727111", "src": "db2@1.60.1.70245"}
-{"id": 463911, "field": "name", "en": "Doomsday", "hash": "aad8eeb8a3727111", "src": "db2@1.60.1.70245"}
-{"id": 463946, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70245"}
-{"id": 463946, "field": "description", "en": "Blasts up to 3 targets for $s1 Nature damage.", "hash": "d382b11fc55599c5", "src": "db2@1.60.1.70245"}
-{"id": 463972, "field": "name", "en": "Bottomless Bag", "hash": "57a194ad59f18276", "src": "db2@1.60.1.70245"}
+{"id": 463000, "field": "name", "en": "Dedication", "hash": "b22ed76b2133d474", "src": "db2@1.60.1.70291"}
+{"id": 463001, "field": "name", "en": "Time Step", "hash": "98fb91c8bd3d3d5c", "src": "db2@1.60.1.70291"}
+{"id": 463002, "field": "name", "en": "Magic Stone Helmet", "hash": "46b5e463c85b58e8", "src": "db2@1.60.1.70291"}
+{"id": 463004, "field": "name", "en": "Glowy (Green)", "hash": "f7cd4313aa73f5b4", "src": "db2@1.60.1.70291"}
+{"id": 463005, "field": "name", "en": "Fluorescent Green Mechanostrider", "hash": "a96b53b0659a2656", "src": "db2@1.60.1.70291"}
+{"id": 463005, "field": "description", "en": "Summons and dismisses a rideable mechanical tallstrider.", "hash": "58925d99e64d7300", "src": "db2@1.60.1.70291"}
+{"id": 463005, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
+{"id": 463006, "field": "name", "en": "Golden Sabercat", "hash": "f1162e4af0e06725", "src": "db2@1.60.1.70291"}
+{"id": 463006, "field": "description", "en": "Summons and dismisses a rideable Golden Saber Cat.", "hash": "3745fb1ed6b4a288", "src": "db2@1.60.1.70291"}
+{"id": 463006, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
+{"id": 463007, "field": "name", "en": "Mottled Blood Raptor", "hash": "0314b3359dcc122c", "src": "db2@1.60.1.70291"}
+{"id": 463007, "field": "description", "en": "Summons and dismisses a rideable Raptor.", "hash": "7d1c7f754999027a", "src": "db2@1.60.1.70291"}
+{"id": 463007, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
+{"id": 463008, "field": "name", "en": "Balance of Light and Shadow", "hash": "c9bf65dfea83bd07", "src": "db2@1.60.1.70291"}
+{"id": 463008, "field": "description", "en": "Forms Benediction when combined with the Eye of Shadow and the Eye of Divinity.", "hash": "449c37a0c4dfdd98", "src": "db2@1.60.1.70291"}
+{"id": 463009, "field": "name", "en": "Controller Timer", "hash": "3676a58beef2f0cb", "src": "db2@1.60.1.70291"}
+{"id": 463010, "field": "name", "en": "Escape Rope", "hash": "2f98181df6758220", "src": "db2@1.60.1.70291"}
+{"id": 463011, "field": "name", "en": "Escape Rope", "hash": "2f98181df6758220", "src": "db2@1.60.1.70291"}
+{"id": 463012, "field": "name", "en": "Escape Rope", "hash": "2f98181df6758220", "src": "db2@1.60.1.70291"}
+{"id": 463013, "field": "name", "en": "Escape Rope", "hash": "2f98181df6758220", "src": "db2@1.60.1.70291"}
+{"id": 463078, "field": "name", "en": "[DNT] S03 - MC Raid - Teleport 01 - Entrance", "hash": "d2b40d0cf1c70d6a", "src": "db2@1.60.1.70291"}
+{"id": 463080, "field": "name", "en": "[DNT] S03 - MC Raid - Teleport 02 - Rune of Kress (Magmadar)", "hash": "f091279d99c13771", "src": "db2@1.60.1.70291"}
+{"id": 463082, "field": "name", "en": "[DNT] S03 - MC Raid - Teleport 03 - Rune of Mohn (Gehennas)", "hash": "6e402af4fe6ebd07", "src": "db2@1.60.1.70291"}
+{"id": 463085, "field": "name", "en": "[DNT] S03 - MC Raid - Teleport 04 - Rune of Blaz (Garr)", "hash": "ebfe284ed550b82a", "src": "db2@1.60.1.70291"}
+{"id": 463105, "field": "name", "en": "Sanctuary", "hash": "430cdcb17cc68196", "src": "db2@1.60.1.70291"}
+{"id": 463105, "field": "description", "en": "When active, grants the wielder $s1 defense and $s2 armor for $d.", "hash": "275cde53a8064fee", "src": "db2@1.60.1.70291"}
+{"id": 463105, "field": "aura", "en": "Armor increased by $s2.\r\nDefense increased by $s1.", "hash": "f094e7b1583e45d6", "src": "db2@1.60.1.70291"}
+{"id": 463109, "field": "name", "en": "[DNT] S03 - MC Raid - Teleport 05 - Rune of Mazj (Shazzrah)", "hash": "d910eec1e80268ef", "src": "db2@1.60.1.70291"}
+{"id": 463111, "field": "name", "en": "[DNT] S03 - MC Raid - Teleport 06 - Rune of Zeth (Baron Geddon)", "hash": "2d66799b2fe732c1", "src": "db2@1.60.1.70291"}
+{"id": 463112, "field": "name", "en": "[DNT] S03 - MC Raid - Teleport 07 - Rune of Theri (Golemagg)", "hash": "164197012ee56604", "src": "db2@1.60.1.70291"}
+{"id": 463113, "field": "name", "en": "[DNT] S03 - MC Raid - Teleport 08 - Rune of Koro (Sulfuron Harbinger)", "hash": "1f54a5eca149830d", "src": "db2@1.60.1.70291"}
+{"id": 463146, "field": "name", "en": "Libram of the Consecrated", "hash": "e4c6914874f97a1e", "src": "db2@1.60.1.70291"}
+{"id": 463146, "field": "description", "en": "Your Crusader Strike spell reduces the cost of your next Consecration spell by $s1%.", "hash": "48dc6691c2e5c25e", "src": "db2@1.60.1.70291"}
+{"id": 463165, "field": "name", "en": "(DNT) Firefighter Threat Pulse", "hash": "44d63b50c93145c6", "src": "db2@1.60.1.70291"}
+{"id": 463168, "field": "name", "en": "Kerosene Kick", "hash": "addba82595ef891c", "src": "db2@1.60.1.70291"}
+{"id": 463168, "field": "description", "en": "Zilbagob sends the shredder into an explosive launch, sending shockwaves that clear the floor.", "hash": "53455fe4e144a77c", "src": "db2@1.60.1.70291"}
+{"id": 463168, "field": "aura", "en": "Knocks everybody off their feet.", "hash": "cfd65d4c2506b12d", "src": "db2@1.60.1.70291"}
+{"id": 463171, "field": "name", "en": "Fixate", "hash": "097a77e983ad4bc9", "src": "db2@1.60.1.70291"}
+{"id": 463171, "field": "description", "en": "Causes an enemy to fixate upon the caster and increases the caster's attack speed by $s2% for $d. While the target is fixated upon the caster, the target is very reluctant to attack anything else.", "hash": "a441d417fe30d900", "src": "db2@1.60.1.70291"}
+{"id": 463175, "field": "name", "en": "(DNT) Remove Heat Screen Effects", "hash": "69d8be14840ad0fc", "src": "db2@1.60.1.70291"}
+{"id": 463186, "field": "name", "en": "[DNT] S03 - MC Raid - Defeated Heat Level Message", "hash": "249f22cda6aea2b9", "src": "db2@1.60.1.70291"}
+{"id": 463250, "field": "name", "en": "[DNT] Remove Parry", "hash": "4e903e1e499cfa40", "src": "db2@1.60.1.70291"}
+{"id": 463253, "field": "name", "en": "[DNT] Power Bar Color", "hash": "db2ac68e1f7caaba", "src": "db2@1.60.1.70291"}
+{"id": 463269, "field": "name", "en": "Gehennas' Curse", "hash": "4f0ab8ff6a1abfb6", "src": "db2@1.60.1.70291"}
+{"id": 463275, "field": "name", "en": "Gehennas' Curse", "hash": "4f0ab8ff6a1abfb6", "src": "db2@1.60.1.70291"}
+{"id": 463285, "field": "name", "en": "Starfire", "hash": "c6c8e9f7fb2bf0af", "src": "db2@1.60.1.70291"}
+{"id": 463285, "field": "description", "en": "Causes $s1 Arcane damage to the target.", "hash": "f284a03526db7647", "src": "db2@1.60.1.70291"}
+{"id": 463320, "field": "name", "en": "Opening", "hash": "c8c8439c6bc312c3", "src": "db2@1.60.1.70291"}
+{"id": 463365, "field": "name", "en": "Summon Siopi", "hash": "5b4524ca5936ec8c", "src": "db2@1.60.1.70291"}
+{"id": 463365, "field": "description", "en": "Entices Zotl the shrike bat to accompany you for a challenge.", "hash": "57f28cc1e8768104", "src": "db2@1.60.1.70291"}
+{"id": 463365, "field": "aura", "en": "Accompanied by Zotl the shrike bat.", "hash": "f8f20aba7f465425", "src": "db2@1.60.1.70291"}
+{"id": 463448, "field": "name", "en": "Frost Nova", "hash": "814b760c7d985bff", "src": "db2@1.60.1.70291"}
+{"id": 463448, "field": "description", "en": "Inflicts Frost damage to nearby enemies, immobilizing them for up to $d.", "hash": "1eb0ef79be5f0091", "src": "db2@1.60.1.70291"}
+{"id": 463448, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70291"}
+{"id": 463512, "field": "name", "en": "Summon Eskhandar", "hash": "a04e116146278ed2", "src": "db2@1.60.1.70291"}
+{"id": 463512, "field": "description", "en": "Calls forth the spirit of Eskhandar to protect you in battle for $d.", "hash": "12a9c885b476998f", "src": "db2@1.60.1.70291"}
+{"id": 463518, "field": "name", "en": "Vigilance", "hash": "c0f92c82a56502de", "src": "db2@1.60.1.70291"}
+{"id": 463518, "field": "aura", "en": "Damage taken reduced by $426972s3% and $s1% of all threat transferred to the warrior.", "hash": "4c5cf7a86458c4f1", "src": "db2@1.60.1.70291"}
+{"id": 463529, "field": "name", "en": "Dummy Trigger", "hash": "67c685565244c5b4", "src": "db2@1.60.1.70291"}
+{"id": 463537, "field": "name", "en": "Conflagration", "hash": "dcef55a8e8c2f472", "src": "db2@1.60.1.70291"}
+{"id": 463555, "field": "name", "en": "Blood Alchemy", "hash": "5f9c1f0f2595d979", "src": "db2@1.60.1.70291"}
+{"id": 463555, "field": "description", "en": "Receive tokens for your service to the Blood God.", "hash": "f0c62931b6fe4a3a", "src": "db2@1.60.1.70291"}
+{"id": 463556, "field": "name", "en": "Blood Alchemy", "hash": "5f9c1f0f2595d979", "src": "db2@1.60.1.70291"}
+{"id": 463556, "field": "description", "en": "Transmute 100 Copper Slaughter Coins into 1 Silver Slaughter Coin.", "hash": "d353ba95c35ceb3e", "src": "db2@1.60.1.70291"}
+{"id": 463557, "field": "name", "en": "Blood Alchemy", "hash": "5f9c1f0f2595d979", "src": "db2@1.60.1.70291"}
+{"id": 463557, "field": "description", "en": "Transmute 100 Silver Massacre Coins into 1 Gold Massacre Coin.", "hash": "01f22e4ef2f44b4f", "src": "db2@1.60.1.70291"}
+{"id": 463564, "field": "name", "en": "Broodmother's Block", "hash": "19db392a6cd05be4", "src": "db2@1.60.1.70291"}
+{"id": 463564, "field": "description", "en": "Increases the block value of your shield by $s1 for $d.", "hash": "e7882b6ec45701df", "src": "db2@1.60.1.70291"}
+{"id": 463564, "field": "aura", "en": "Block value increased by $s1.", "hash": "64e8286ffb18e98e", "src": "db2@1.60.1.70291"}
+{"id": 463605, "field": "name", "en": "ST XP Grant [DNT]", "hash": "0c90a236d2184c50", "src": "db2@1.60.1.70291"}
+{"id": 463620, "field": "name", "en": "Retribution Aura", "hash": "3ff07382343dabaf", "src": "db2@1.60.1.70291"}
+{"id": 463620, "field": "description", "en": "Causes $s1 Holy damage to any creature that strikes a nearby party member. Players may only have one aura on them per paladin at any one time. The aura lasts until cancelled.", "hash": "b2ca9267c9ede335", "src": "db2@1.60.1.70291"}
+{"id": 463620, "field": "aura", "en": "$s1 Holy damage inflicted to melee attackers.", "hash": "210150aa7d5ae399", "src": "db2@1.60.1.70291"}
+{"id": 463621, "field": "name", "en": "Retribution Aura", "hash": "3ff07382343dabaf", "src": "db2@1.60.1.70291"}
+{"id": 463621, "field": "description", "en": "Causes $s1 Holy damage to any creature that strikes a nearby party member. Players may only have one aura on them per paladin at any one time. The aura lasts until cancelled.", "hash": "b2ca9267c9ede335", "src": "db2@1.60.1.70291"}
+{"id": 463621, "field": "aura", "en": "$s1 Holy damage inflicted to melee attackers.", "hash": "210150aa7d5ae399", "src": "db2@1.60.1.70291"}
+{"id": 463626, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70291"}
+{"id": 463626, "field": "description", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70291"}
+{"id": 463626, "field": "aura", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70291"}
+{"id": 463641, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70291"}
+{"id": 463661, "field": "name", "en": "Meteor", "hash": "a35983361d0793f2", "src": "db2@1.60.1.70291"}
+{"id": 463772, "field": "name", "en": "(DNT) Lava Trap Animation", "hash": "77794156fbe8fd1b", "src": "db2@1.60.1.70291"}
+{"id": 463825, "field": "name", "en": "(DNT) Lava Bubble Animation", "hash": "e34d6b134a62bcd2", "src": "db2@1.60.1.70291"}
+{"id": 463864, "field": "name", "en": "Sigil of Flowing Waters", "hash": "503ac64443c472ed", "src": "db2@1.60.1.70291"}
+{"id": 463864, "field": "description", "en": "Gain an enchanted sigil of Flowing Waters, empowering your raid to deal up to $s1 increased damage and healing with spells, and increasing attack power by $s2 for $d.", "hash": "dd734e9a0da6ffd6", "src": "db2@1.60.1.70291"}
+{"id": 463864, "field": "aura", "en": "Empowered by Flowing Waters. Dealing up to $s1 increased damage and healing with spells, and increasing attack power by $s2.", "hash": "36595d1e548e1523", "src": "db2@1.60.1.70291"}
+{"id": 463866, "field": "name", "en": "Sigil of Flowing Waters", "hash": "503ac64443c472ed", "src": "db2@1.60.1.70291"}
+{"id": 463868, "field": "name", "en": "Conductive Shield Coating", "hash": "9bad656104712b5d", "src": "db2@1.60.1.70291"}
+{"id": 463868, "field": "description", "en": "While applied to target shield it increases spell damage and healing by up to 24.  Lasts for 30 minutes.", "hash": "ec9710d4277b3e46", "src": "db2@1.60.1.70291"}
+{"id": 463869, "field": "name", "en": "Conductive Shield Coating", "hash": "9bad656104712b5d", "src": "db2@1.60.1.70291"}
+{"id": 463869, "field": "description", "en": "Creates Conductive Shield Coating.", "hash": "7b4089f97f6df166", "src": "db2@1.60.1.70291"}
+{"id": 463871, "field": "name", "en": "Enchant Shield - Law of Nature", "hash": "2bf4291e06783602", "src": "db2@1.60.1.70291"}
+{"id": 463871, "field": "description", "en": "Permanently enchant a Shield to add up to 30 damage to spells and up to 55 points of healing to healing spells.", "hash": "260ff875f19abfa5", "src": "db2@1.60.1.70291"}
+{"id": 463873, "field": "name", "en": "Law of Nature", "hash": "1f424dab7039662b", "src": "db2@1.60.1.70291"}
+{"id": 463873, "field": "description", "en": "Increases damage done by magical spells and effects by up to $s1, and increases healing done by magical spells and effects by up to $2.", "hash": "ba1b2d58c759df17", "src": "db2@1.60.1.70291"}
+{"id": 463903, "field": "name", "en": "Doomsday", "hash": "aad8eeb8a3727111", "src": "db2@1.60.1.70291"}
+{"id": 463911, "field": "name", "en": "Doomsday", "hash": "aad8eeb8a3727111", "src": "db2@1.60.1.70291"}
+{"id": 463946, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70291"}
+{"id": 463946, "field": "description", "en": "Blasts up to 3 targets for $s1 Nature damage.", "hash": "d382b11fc55599c5", "src": "db2@1.60.1.70291"}
+{"id": 463972, "field": "name", "en": "Bottomless Bag", "hash": "57a194ad59f18276", "src": "db2@1.60.1.70291"}

@@ -1,161 +1,161 @@
-{"id": 1265038, "field": "name", "en": "Tendon Rip", "hash": "fba1e44e33a7832b", "src": "db2@1.60.1.70245"}
-{"id": 1265038, "field": "description", "en": "Tears at an enemy's legs for $o1 damage over $d and reduces movement speed by $s2% for $d.", "hash": "7c2e559af9d68c37", "src": "db2@1.60.1.70245"}
-{"id": 1265038, "field": "aura", "en": "Movement slowed by $w2%. $w1 Bleed damage every $t1 sec.", "hash": "666493860364c4de", "src": "db2@1.60.1.70245"}
-{"id": 1265039, "field": "name", "en": "Tendon Rip", "hash": "fba1e44e33a7832b", "src": "db2@1.60.1.70245"}
-{"id": 1265039, "field": "description", "en": "Tears at an enemy's legs for $o1 damage over $d and reduces movement speed by $s2% for $d.", "hash": "7c2e559af9d68c37", "src": "db2@1.60.1.70245"}
-{"id": 1265039, "field": "aura", "en": "Movement slowed by $w2%. $w1 Bleed damage every $t1 sec.", "hash": "666493860364c4de", "src": "db2@1.60.1.70245"}
-{"id": 1265040, "field": "name", "en": "Tendon Rip", "hash": "fba1e44e33a7832b", "src": "db2@1.60.1.70245"}
-{"id": 1265040, "field": "description", "en": "Tears at an enemy's legs for $o1 damage over $d and reduces movement speed by $s2% for $d.", "hash": "7c2e559af9d68c37", "src": "db2@1.60.1.70245"}
-{"id": 1265040, "field": "aura", "en": "Movement slowed by $w2%. $w1 Bleed damage every $t1 sec.", "hash": "666493860364c4de", "src": "db2@1.60.1.70245"}
-{"id": 1265041, "field": "name", "en": "Tendon Rip", "hash": "fba1e44e33a7832b", "src": "db2@1.60.1.70245"}
-{"id": 1265041, "field": "description", "en": "Tears at an enemy's legs for $o1 damage over $d and reduces movement speed by $s2% for $d.", "hash": "7c2e559af9d68c37", "src": "db2@1.60.1.70245"}
-{"id": 1265041, "field": "aura", "en": "Movement slowed by $w2%. $w1 Bleed damage every $t1 sec.", "hash": "666493860364c4de", "src": "db2@1.60.1.70245"}
-{"id": 1265042, "field": "name", "en": "Tendon Rip", "hash": "fba1e44e33a7832b", "src": "db2@1.60.1.70245"}
-{"id": 1265042, "field": "description", "en": "Tears at an enemy's legs for $o1 damage over $d and reduces movement speed by $s2% for $d.", "hash": "7c2e559af9d68c37", "src": "db2@1.60.1.70245"}
-{"id": 1265042, "field": "aura", "en": "Movement slowed by $w2%. $w1 Bleed damage every $t1 sec.", "hash": "666493860364c4de", "src": "db2@1.60.1.70245"}
-{"id": 1265043, "field": "name", "en": "Tendon Rip", "hash": "fba1e44e33a7832b", "src": "db2@1.60.1.70245"}
-{"id": 1265043, "field": "description", "en": "Tears at an enemy's legs for $1265038o1 damage over $1265038d and reduces movement speed by $1265038s2% for $1265038d.", "hash": "3798ba2c979d01a7", "src": "db2@1.60.1.70245"}
-{"id": 1265045, "field": "name", "en": "Tendon Rip", "hash": "fba1e44e33a7832b", "src": "db2@1.60.1.70245"}
-{"id": 1265045, "field": "description", "en": "Tears at an enemy's legs for $1265039o1 damage over $1265039d and reduces movement speed by $1265039s2% for $1265039d.", "hash": "32886fdf0702ed09", "src": "db2@1.60.1.70245"}
-{"id": 1265046, "field": "name", "en": "Tendon Rip", "hash": "fba1e44e33a7832b", "src": "db2@1.60.1.70245"}
-{"id": 1265046, "field": "description", "en": "Tears at an enemy's legs for $1265040o1 damage over $1265040d and reduces movement speed by $1265040s2% for $1265040d.", "hash": "c8c5071e5c8133ec", "src": "db2@1.60.1.70245"}
-{"id": 1265047, "field": "name", "en": "Tendon Rip", "hash": "fba1e44e33a7832b", "src": "db2@1.60.1.70245"}
-{"id": 1265047, "field": "description", "en": "Tears at an enemy's legs for $1265041o1 damage over $1265041d and reduces movement speed by $1265041s2% for $1265041d.", "hash": "c3b4bcd1cbe71f3d", "src": "db2@1.60.1.70245"}
-{"id": 1265048, "field": "name", "en": "Tendon Rip", "hash": "fba1e44e33a7832b", "src": "db2@1.60.1.70245"}
-{"id": 1265048, "field": "description", "en": "Tears at an enemy's legs for $1265042o1 damage over $1265042d and reduces movement speed by $1265042s2% for $1265042d.", "hash": "bea472843b4d0a9f", "src": "db2@1.60.1.70245"}
-{"id": 1265054, "field": "name", "en": "Mine!", "hash": "55ceacb7c0e51fab", "src": "db2@1.60.1.70245"}
-{"id": 1265054, "field": "description", "en": "Grabs an enemy's weapon with its talons, causing $s1 damage and disarming them for $d.", "hash": "4fcf95d3e4b83a7c", "src": "db2@1.60.1.70245"}
-{"id": 1265054, "field": "aura", "en": "Disarmed.", "hash": "98985eda7053879e", "src": "db2@1.60.1.70245"}
-{"id": 1265055, "field": "name", "en": "Mine!", "hash": "55ceacb7c0e51fab", "src": "db2@1.60.1.70245"}
-{"id": 1265055, "field": "description", "en": "Grabs an enemy's weapon with its talons, causing $s1 damage and disarming them for $d.", "hash": "4fcf95d3e4b83a7c", "src": "db2@1.60.1.70245"}
-{"id": 1265055, "field": "aura", "en": "Disarmed.", "hash": "98985eda7053879e", "src": "db2@1.60.1.70245"}
-{"id": 1265056, "field": "name", "en": "Mine!", "hash": "55ceacb7c0e51fab", "src": "db2@1.60.1.70245"}
-{"id": 1265056, "field": "description", "en": "Grabs an enemy's weapon with its talons, causing $s1 damage and disarming them for $d.", "hash": "4fcf95d3e4b83a7c", "src": "db2@1.60.1.70245"}
-{"id": 1265056, "field": "aura", "en": "Disarmed.", "hash": "98985eda7053879e", "src": "db2@1.60.1.70245"}
-{"id": 1265057, "field": "name", "en": "Mine!", "hash": "55ceacb7c0e51fab", "src": "db2@1.60.1.70245"}
-{"id": 1265057, "field": "description", "en": "Grabs an enemy's weapon with its talons, causing $s1 damage and disarming them for $d.", "hash": "4fcf95d3e4b83a7c", "src": "db2@1.60.1.70245"}
-{"id": 1265057, "field": "aura", "en": "Disarmed.", "hash": "98985eda7053879e", "src": "db2@1.60.1.70245"}
-{"id": 1265058, "field": "name", "en": "Mine!", "hash": "55ceacb7c0e51fab", "src": "db2@1.60.1.70245"}
-{"id": 1265058, "field": "description", "en": "Grabs an enemy's weapon with its talons, causing $s1 damage and disarming them for $d.", "hash": "4fcf95d3e4b83a7c", "src": "db2@1.60.1.70245"}
-{"id": 1265058, "field": "aura", "en": "Disarmed.", "hash": "98985eda7053879e", "src": "db2@1.60.1.70245"}
-{"id": 1265059, "field": "name", "en": "Mine!", "hash": "55ceacb7c0e51fab", "src": "db2@1.60.1.70245"}
-{"id": 1265059, "field": "description", "en": "Grabs an enemy's weapon with its talons, causing $1265054s1 damage and disarming them for $1265054d.", "hash": "2ec2af6fbd406701", "src": "db2@1.60.1.70245"}
-{"id": 1265060, "field": "name", "en": "Mine!", "hash": "55ceacb7c0e51fab", "src": "db2@1.60.1.70245"}
-{"id": 1265060, "field": "description", "en": "Grabs an enemy's weapon with its talons, causing $1265055s1 damage and disarming them for $1265055d.", "hash": "56cfa5b6603094b7", "src": "db2@1.60.1.70245"}
-{"id": 1265061, "field": "name", "en": "Mine!", "hash": "55ceacb7c0e51fab", "src": "db2@1.60.1.70245"}
-{"id": 1265061, "field": "description", "en": "Grabs an enemy's weapon with its talons, causing $1265056s1 damage and disarming them for $1265056d.", "hash": "7edc9bfd0320c26d", "src": "db2@1.60.1.70245"}
-{"id": 1265062, "field": "name", "en": "Mine!", "hash": "55ceacb7c0e51fab", "src": "db2@1.60.1.70245"}
-{"id": 1265062, "field": "description", "en": "Grabs an enemy's weapon with its talons, causing $1265057s1 damage and disarming them for $1265057d.", "hash": "a6e99244a610f012", "src": "db2@1.60.1.70245"}
-{"id": 1265064, "field": "name", "en": "Mine!", "hash": "55ceacb7c0e51fab", "src": "db2@1.60.1.70245"}
-{"id": 1265064, "field": "description", "en": "Grabs an enemy's weapon with its talons, causing $1265058s1 damage and disarming them for $1265058d.", "hash": "cef6888b49011dc8", "src": "db2@1.60.1.70245"}
-{"id": 1265065, "field": "name", "en": "Savage Rend", "hash": "6460de1cc808e85f", "src": "db2@1.60.1.70245"}
-{"id": 1265065, "field": "description", "en": "Slash an enemy with razor talons, causing the target to Bleed for $o1 damage over $d.", "hash": "71f3d411a848b975", "src": "db2@1.60.1.70245"}
-{"id": 1265065, "field": "aura", "en": "Bleeding for $w1 damage every $t1 sec.", "hash": "980052f1df197db9", "src": "db2@1.60.1.70245"}
-{"id": 1265066, "field": "name", "en": "Savage Rend", "hash": "6460de1cc808e85f", "src": "db2@1.60.1.70245"}
-{"id": 1265066, "field": "description", "en": "Slash an enemy with razor talons, causing the target to Bleed for $o1 damage over $d.", "hash": "71f3d411a848b975", "src": "db2@1.60.1.70245"}
-{"id": 1265066, "field": "aura", "en": "Bleeding for $w1 damage every $t1 sec.", "hash": "980052f1df197db9", "src": "db2@1.60.1.70245"}
-{"id": 1265067, "field": "name", "en": "Savage Rend", "hash": "6460de1cc808e85f", "src": "db2@1.60.1.70245"}
-{"id": 1265067, "field": "description", "en": "Slash an enemy with razor talons, causing the target to Bleed for $o1 damage over $d.", "hash": "71f3d411a848b975", "src": "db2@1.60.1.70245"}
-{"id": 1265067, "field": "aura", "en": "Bleeding for $w1 damage every $t1 sec.", "hash": "980052f1df197db9", "src": "db2@1.60.1.70245"}
-{"id": 1265068, "field": "name", "en": "Savage Rend", "hash": "6460de1cc808e85f", "src": "db2@1.60.1.70245"}
-{"id": 1265068, "field": "description", "en": "Slash an enemy with razor talons, causing the target to Bleed for $o1 damage over $d.", "hash": "71f3d411a848b975", "src": "db2@1.60.1.70245"}
-{"id": 1265068, "field": "aura", "en": "Bleeding for $w1 damage every $t1 sec.", "hash": "980052f1df197db9", "src": "db2@1.60.1.70245"}
-{"id": 1265069, "field": "name", "en": "Savage Rend", "hash": "6460de1cc808e85f", "src": "db2@1.60.1.70245"}
-{"id": 1265069, "field": "description", "en": "Slash an enemy with razor talons, causing the target to Bleed for $o1 damage over $d.", "hash": "71f3d411a848b975", "src": "db2@1.60.1.70245"}
-{"id": 1265069, "field": "aura", "en": "Bleeding for $w1 damage every $t1 sec.", "hash": "980052f1df197db9", "src": "db2@1.60.1.70245"}
-{"id": 1265220, "field": "name", "en": "Fishing Hat Lure", "hash": "d7c692ce119a8b78", "src": "db2@1.60.1.70245"}
-{"id": 1265220, "field": "description", "en": "Attach a lure to your equipped fishing pole, increasing Fishing by 25 for 10 min.", "hash": "7748ea7e16d4e485", "src": "db2@1.60.1.70245"}
-{"id": 1265304, "field": "name", "en": "Deep-Sea Waders", "hash": "6d255d8db7f9cb2d", "src": "db2@1.60.1.70245"}
-{"id": 1265304, "field": "description", "en": "Lets you walk on water for $d.", "hash": "42a8b6d373519183", "src": "db2@1.60.1.70245"}
-{"id": 1265304, "field": "aura", "en": "Allows walking over water and water-like surfaces. Effect cancelled by mounting or combat.", "hash": "0b0863c31763547d", "src": "db2@1.60.1.70245"}
-{"id": 1265376, "field": "name", "en": "MRN Test Spell", "hash": "9004e39d32a17275", "src": "db2@1.60.1.70245"}
-{"id": 1265416, "field": "name", "en": "Badwind Slam", "hash": "7490677606de18c7", "src": "db2@1.60.1.70245"}
-{"id": 1265416, "field": "description", "en": "Slams an enemy to the ground, inflicting Physical damage and stunning it for $d.", "hash": "b1a2fbcab4ea7eb4", "src": "db2@1.60.1.70245"}
-{"id": 1265416, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70245"}
-{"id": 1265472, "field": "name", "en": "Wake Splash", "hash": "ee0b5a8b251439a8", "src": "db2@1.60.1.70245"}
-{"id": 1265484, "field": "name", "en": "Wake Splash", "hash": "ee0b5a8b251439a8", "src": "db2@1.60.1.70245"}
-{"id": 1265497, "field": "name", "en": "Watchful Eye", "hash": "9d8f17ec101f1407", "src": "db2@1.60.1.70245"}
-{"id": 1265500, "field": "name", "en": "Watchful Eye", "hash": "9d8f17ec101f1407", "src": "db2@1.60.1.70245"}
-{"id": 1265500, "field": "aura", "en": "The shard is closely guarded. It can only be taken by force or while Honored with the clan.", "hash": "172a581282d0fb82", "src": "db2@1.60.1.70245"}
-{"id": 1265557, "field": "name", "en": "Conqueror of Corpsefeeder", "hash": "75ec177c0540d06c", "src": "db2@1.60.1.70245"}
-{"id": 1265557, "field": "aura", "en": "The quilboar of Bristleback Retreat tolerate your presence, for now.", "hash": "4b3c922593400785", "src": "db2@1.60.1.70245"}
-{"id": 1265634, "field": "name", "en": "Ancient Power", "hash": "b1bd2fee9d47005d", "src": "db2@1.60.1.70245"}
-{"id": 1265634, "field": "description", "en": "Deals $s1 Arcane damage. Deals $s2 times as much damage to Naga and Satyrs.", "hash": "9e6a196858869513", "src": "db2@1.60.1.70245"}
-{"id": 1265634, "field": "aura", "en": "Deals $s1 Arcane damage.", "hash": "14797f2fd977bd4e", "src": "db2@1.60.1.70245"}
-{"id": 1265771, "field": "name", "en": "Full Heal", "hash": "a9890f1615f5d28c", "src": "db2@1.60.1.70245"}
-{"id": 1265776, "field": "name", "en": "Extinguish Woodwyrd", "hash": "5ed72bae30be1814", "src": "db2@1.60.1.70245"}
-{"id": 1265776, "field": "description", "en": "Summon a torrential downpour of enchanted water to extinguish Woodwyrd.", "hash": "9219256ccd162e95", "src": "db2@1.60.1.70245"}
-{"id": 1265831, "field": "name", "en": "Savage Rend", "hash": "6460de1cc808e85f", "src": "db2@1.60.1.70245"}
-{"id": 1265831, "field": "description", "en": "Slash an enemy with razor talons, causing the target to Bleed for $1265065o1 damage over $1265065d and take $1265065s2% additional damage from Bleed effects for the duration.", "hash": "9da647b93b586fdc", "src": "db2@1.60.1.70245"}
-{"id": 1265833, "field": "name", "en": "Savage Rend", "hash": "6460de1cc808e85f", "src": "db2@1.60.1.70245"}
-{"id": 1265833, "field": "description", "en": "Slash an enemy with razor talons, causing the target to Bleed for $1265066o1 damage over $1265066d and take $1265066s2% additional damage from Bleed effects for the duration.", "hash": "58aba96ab9cfc8a6", "src": "db2@1.60.1.70245"}
-{"id": 1265834, "field": "name", "en": "Savage Rend", "hash": "6460de1cc808e85f", "src": "db2@1.60.1.70245"}
-{"id": 1265834, "field": "description", "en": "Slash an enemy with razor talons, causing the target to Bleed for $1265067o1 damage over $1265067d and take $1265067s2% additional damage from Bleed effects for the duration.", "hash": "13b10b1b38472181", "src": "db2@1.60.1.70245"}
-{"id": 1265835, "field": "name", "en": "Savage Rend", "hash": "6460de1cc808e85f", "src": "db2@1.60.1.70245"}
-{"id": 1265835, "field": "description", "en": "Slash an enemy with razor talons, causing the target to Bleed for $1265068o1 damage over $1265068d and take $1265068s2% additional damage from Bleed effects for the duration.", "hash": "ceb66cc7b6be7a4b", "src": "db2@1.60.1.70245"}
-{"id": 1265836, "field": "name", "en": "Savage Rend", "hash": "6460de1cc808e85f", "src": "db2@1.60.1.70245"}
-{"id": 1265836, "field": "description", "en": "Slash an enemy with razor talons, causing the target to Bleed for $1265069o1 damage over $1265069d and take $1265069s2% additional damage from Bleed effects for the duration.", "hash": "89bbce783535d326", "src": "db2@1.60.1.70245"}
-{"id": 1265843, "field": "name", "en": "Web", "hash": "0016fc20596b9acf", "src": "db2@1.60.1.70245"}
-{"id": 1265843, "field": "description", "en": "Entangles an enemy in a corrosive web, immobilizing them and dealing $o1 Nature damage over $d.", "hash": "e75c7fe746f3d6c3", "src": "db2@1.60.1.70245"}
-{"id": 1265843, "field": "aura", "en": "Rooted. Taking $w1 Nature damage every $t sec.", "hash": "730d26951190f929", "src": "db2@1.60.1.70245"}
-{"id": 1265854, "field": "name", "en": "Summon Virulent Blood of Agamaggan", "hash": "f4454fb6634178f9", "src": "db2@1.60.1.70245"}
-{"id": 1265878, "field": "name", "en": "Web", "hash": "0016fc20596b9acf", "src": "db2@1.60.1.70245"}
-{"id": 1265878, "field": "description", "en": "Entangles an enemy in a corrosive web, immobilizing them and dealing $o1 Nature damage over $d.", "hash": "e75c7fe746f3d6c3", "src": "db2@1.60.1.70245"}
-{"id": 1265878, "field": "aura", "en": "Rooted. Taking $w1 Nature damage every $t sec.", "hash": "730d26951190f929", "src": "db2@1.60.1.70245"}
-{"id": 1265880, "field": "name", "en": "Web", "hash": "0016fc20596b9acf", "src": "db2@1.60.1.70245"}
-{"id": 1265880, "field": "description", "en": "Entangles an enemy in a corrosive web, immobilizing them and dealing $o1 Nature damage over $d.", "hash": "e75c7fe746f3d6c3", "src": "db2@1.60.1.70245"}
-{"id": 1265880, "field": "aura", "en": "Rooted. Taking $w1 Nature damage every $t sec.", "hash": "730d26951190f929", "src": "db2@1.60.1.70245"}
-{"id": 1265881, "field": "name", "en": "Web", "hash": "0016fc20596b9acf", "src": "db2@1.60.1.70245"}
-{"id": 1265881, "field": "description", "en": "Entangles an enemy in a corrosive web, immobilizing them and dealing $o1 Nature damage over $d.", "hash": "e75c7fe746f3d6c3", "src": "db2@1.60.1.70245"}
-{"id": 1265881, "field": "aura", "en": "Rooted. Taking $w1 Nature damage every $t sec.", "hash": "730d26951190f929", "src": "db2@1.60.1.70245"}
-{"id": 1265883, "field": "name", "en": "Web", "hash": "0016fc20596b9acf", "src": "db2@1.60.1.70245"}
-{"id": 1265883, "field": "description", "en": "Entangles an enemy in a corrosive web, immobilizing them and dealing $o1 Nature damage over $d.", "hash": "e75c7fe746f3d6c3", "src": "db2@1.60.1.70245"}
-{"id": 1265883, "field": "aura", "en": "Rooted. Taking $w1 Nature damage every $t sec.", "hash": "730d26951190f929", "src": "db2@1.60.1.70245"}
-{"id": 1265886, "field": "name", "en": "Create Bouquet", "hash": "02638bf98b2ebbc4", "src": "db2@1.60.1.70245"}
-{"id": 1265886, "field": "description", "en": "Assemble $s2 Vibrant Flowers to create a Benevolent Bouquet.", "hash": "10d976a47b460f46", "src": "db2@1.60.1.70245"}
-{"id": 1265887, "field": "name", "en": "Web", "hash": "0016fc20596b9acf", "src": "db2@1.60.1.70245"}
-{"id": 1265887, "field": "description", "en": "Entangles an enemy in a corrosive web, immobilizing them and dealing $1265843o1 Nature damage over $1265843d.", "hash": "78e771ae5430466c", "src": "db2@1.60.1.70245"}
-{"id": 1265888, "field": "name", "en": "Web", "hash": "0016fc20596b9acf", "src": "db2@1.60.1.70245"}
-{"id": 1265888, "field": "description", "en": "Entangles an enemy in a corrosive web, immobilizing them and dealing $1265878o1 Nature damage over $1265878d.", "hash": "972f81e38b519a08", "src": "db2@1.60.1.70245"}
-{"id": 1265889, "field": "name", "en": "Wind Channeling", "hash": "f4da1f908a9195aa", "src": "db2@1.60.1.70245"}
-{"id": 1265890, "field": "name", "en": "Web", "hash": "0016fc20596b9acf", "src": "db2@1.60.1.70245"}
-{"id": 1265890, "field": "description", "en": "Entangles an enemy in a corrosive web, immobilizing them and dealing $1265880o1 Nature damage over $1265880d.", "hash": "4347108d6240ab86", "src": "db2@1.60.1.70245"}
-{"id": 1265891, "field": "name", "en": "Web", "hash": "0016fc20596b9acf", "src": "db2@1.60.1.70245"}
-{"id": 1265891, "field": "description", "en": "Entangles an enemy in a corrosive web, immobilizing them and dealing $1265881o1 Nature damage over $1265881d.", "hash": "4d007df06866e190", "src": "db2@1.60.1.70245"}
-{"id": 1265892, "field": "name", "en": "Web", "hash": "0016fc20596b9acf", "src": "db2@1.60.1.70245"}
-{"id": 1265892, "field": "description", "en": "Entangles an enemy in a corrosive web, immobilizing them and dealing $1265883o1 Nature damage over $1265883d.", "hash": "607358b674b34da4", "src": "db2@1.60.1.70245"}
-{"id": 1265896, "field": "name", "en": "Channel Winds", "hash": "510878c2739f8b41", "src": "db2@1.60.1.70245"}
-{"id": 1265899, "field": "name", "en": "Dust Cloud", "hash": "8395becf764deab9", "src": "db2@1.60.1.70245"}
-{"id": 1265899, "field": "description", "en": "Your tallstrider kicks up an abrasive cloud of dust, reducing the target's Armor by $s1 for $d.", "hash": "b127b6dae0f95178", "src": "db2@1.60.1.70245"}
-{"id": 1265899, "field": "aura", "en": "Decreases armor by $s1.", "hash": "6c125986e299f56b", "src": "db2@1.60.1.70245"}
-{"id": 1265901, "field": "name", "en": "Dust Cloud", "hash": "8395becf764deab9", "src": "db2@1.60.1.70245"}
-{"id": 1265901, "field": "description", "en": "Your tallstrider kicks up an abrasive cloud of dust, reducing the target's Armor by $s1 for $d.", "hash": "b127b6dae0f95178", "src": "db2@1.60.1.70245"}
-{"id": 1265901, "field": "aura", "en": "Decreases armor by $s1.", "hash": "6c125986e299f56b", "src": "db2@1.60.1.70245"}
-{"id": 1265902, "field": "name", "en": "Dust Cloud", "hash": "8395becf764deab9", "src": "db2@1.60.1.70245"}
-{"id": 1265902, "field": "description", "en": "Your tallstrider kicks up an abrasive cloud of dust, reducing the target's Armor by $s1 for $d.", "hash": "b127b6dae0f95178", "src": "db2@1.60.1.70245"}
-{"id": 1265902, "field": "aura", "en": "Decreases armor by $s1.", "hash": "6c125986e299f56b", "src": "db2@1.60.1.70245"}
-{"id": 1265903, "field": "name", "en": "Dust Cloud", "hash": "8395becf764deab9", "src": "db2@1.60.1.70245"}
-{"id": 1265903, "field": "description", "en": "Your tallstrider kicks up an abrasive cloud of dust, reducing the target's Armor by $s1 for $d.", "hash": "b127b6dae0f95178", "src": "db2@1.60.1.70245"}
-{"id": 1265903, "field": "aura", "en": "Decreases armor by $s1.", "hash": "6c125986e299f56b", "src": "db2@1.60.1.70245"}
-{"id": 1265904, "field": "name", "en": "Dust Cloud", "hash": "8395becf764deab9", "src": "db2@1.60.1.70245"}
-{"id": 1265904, "field": "description", "en": "Your tallstrider kicks up an abrasive cloud of dust, reducing the target's Armor by $s1 for $d.", "hash": "b127b6dae0f95178", "src": "db2@1.60.1.70245"}
-{"id": 1265904, "field": "aura", "en": "Decreases armor by $s1.", "hash": "6c125986e299f56b", "src": "db2@1.60.1.70245"}
-{"id": 1265907, "field": "name", "en": "Dust Cloud", "hash": "8395becf764deab9", "src": "db2@1.60.1.70245"}
-{"id": 1265907, "field": "description", "en": "Your tallstrider kicks up an abrasive cloud of dust, reducing the target's Armor by $1265899s1 for $1265899d, stacking up to $1265899u times.", "hash": "2fbb80ca7d04908b", "src": "db2@1.60.1.70245"}
-{"id": 1265908, "field": "name", "en": "Dust Cloud", "hash": "8395becf764deab9", "src": "db2@1.60.1.70245"}
-{"id": 1265908, "field": "description", "en": "Your tallstrider kicks up an abrasive cloud of dust, reducing the target's Armor by $1265901s1 for $1265901d, stacking up to $1265901u times.", "hash": "8da207611e6a8c1c", "src": "db2@1.60.1.70245"}
-{"id": 1265909, "field": "name", "en": "Dust Cloud", "hash": "8395becf764deab9", "src": "db2@1.60.1.70245"}
-{"id": 1265909, "field": "description", "en": "Your tallstrider kicks up an abrasive cloud of dust, reducing the target's Armor by $1265902s1 for $1265902d, stacking up to $1265902u times.", "hash": "c7c3e80192eab063", "src": "db2@1.60.1.70245"}
-{"id": 1265911, "field": "name", "en": "Dust Cloud", "hash": "8395becf764deab9", "src": "db2@1.60.1.70245"}
-{"id": 1265911, "field": "description", "en": "Your tallstrider kicks up an abrasive cloud of dust, reducing the target's Armor by $1265904s1 for $1265904d, stacking up to $1265904u times.", "hash": "3c07a9467beaf902", "src": "db2@1.60.1.70245"}
-{"id": 1265913, "field": "name", "en": "Dust Cloud", "hash": "8395becf764deab9", "src": "db2@1.60.1.70245"}
-{"id": 1265913, "field": "description", "en": "Your tallstrider kicks up an abrasive cloud of dust, reducing the target's Armor by $1265903s1 for $1265903d, stacking up to $1265903u times.", "hash": "01e5c8a6076ad4bb", "src": "db2@1.60.1.70245"}
-{"id": 1265945, "field": "name", "en": "Mining Skill", "hash": "5c2c042526e3070c", "src": "db2@1.60.1.70245"}
-{"id": 1265945, "field": "description", "en": "Increases your Mining skill by $m2. Cannot raise Mining skill over $m1.", "hash": "93efece1f3cf450c", "src": "db2@1.60.1.70245"}
-{"id": 1265947, "field": "name", "en": "Mining Skill", "hash": "5c2c042526e3070c", "src": "db2@1.60.1.70245"}
-{"id": 1265953, "field": "name", "en": "Herbalism Skill", "hash": "08e03c0cddeab411", "src": "db2@1.60.1.70245"}
-{"id": 1265955, "field": "name", "en": "Skinning Skill", "hash": "92fe92bfdbb34210", "src": "db2@1.60.1.70245"}
-{"id": 1265956, "field": "name", "en": "Herbalism Skill", "hash": "08e03c0cddeab411", "src": "db2@1.60.1.70245"}
-{"id": 1265957, "field": "name", "en": "Skinning Skill", "hash": "92fe92bfdbb34210", "src": "db2@1.60.1.70245"}
-{"id": 1265981, "field": "name", "en": "Birth", "hash": "94b8eb4f3cb492fe", "src": "db2@1.60.1.70245"}
-{"id": 1265983, "field": "name", "en": "Ghost Light", "hash": "c74defba34314478", "src": "db2@1.60.1.70245"}
+{"id": 1265038, "field": "name", "en": "Tendon Rip", "hash": "fba1e44e33a7832b", "src": "db2@1.60.1.70291"}
+{"id": 1265038, "field": "description", "en": "Tears at an enemy's legs for $o1 damage over $d and reduces movement speed by $s2% for $d.", "hash": "7c2e559af9d68c37", "src": "db2@1.60.1.70291"}
+{"id": 1265038, "field": "aura", "en": "Movement slowed by $w2%. $w1 Bleed damage every $t1 sec.", "hash": "666493860364c4de", "src": "db2@1.60.1.70291"}
+{"id": 1265039, "field": "name", "en": "Tendon Rip", "hash": "fba1e44e33a7832b", "src": "db2@1.60.1.70291"}
+{"id": 1265039, "field": "description", "en": "Tears at an enemy's legs for $o1 damage over $d and reduces movement speed by $s2% for $d.", "hash": "7c2e559af9d68c37", "src": "db2@1.60.1.70291"}
+{"id": 1265039, "field": "aura", "en": "Movement slowed by $w2%. $w1 Bleed damage every $t1 sec.", "hash": "666493860364c4de", "src": "db2@1.60.1.70291"}
+{"id": 1265040, "field": "name", "en": "Tendon Rip", "hash": "fba1e44e33a7832b", "src": "db2@1.60.1.70291"}
+{"id": 1265040, "field": "description", "en": "Tears at an enemy's legs for $o1 damage over $d and reduces movement speed by $s2% for $d.", "hash": "7c2e559af9d68c37", "src": "db2@1.60.1.70291"}
+{"id": 1265040, "field": "aura", "en": "Movement slowed by $w2%. $w1 Bleed damage every $t1 sec.", "hash": "666493860364c4de", "src": "db2@1.60.1.70291"}
+{"id": 1265041, "field": "name", "en": "Tendon Rip", "hash": "fba1e44e33a7832b", "src": "db2@1.60.1.70291"}
+{"id": 1265041, "field": "description", "en": "Tears at an enemy's legs for $o1 damage over $d and reduces movement speed by $s2% for $d.", "hash": "7c2e559af9d68c37", "src": "db2@1.60.1.70291"}
+{"id": 1265041, "field": "aura", "en": "Movement slowed by $w2%. $w1 Bleed damage every $t1 sec.", "hash": "666493860364c4de", "src": "db2@1.60.1.70291"}
+{"id": 1265042, "field": "name", "en": "Tendon Rip", "hash": "fba1e44e33a7832b", "src": "db2@1.60.1.70291"}
+{"id": 1265042, "field": "description", "en": "Tears at an enemy's legs for $o1 damage over $d and reduces movement speed by $s2% for $d.", "hash": "7c2e559af9d68c37", "src": "db2@1.60.1.70291"}
+{"id": 1265042, "field": "aura", "en": "Movement slowed by $w2%. $w1 Bleed damage every $t1 sec.", "hash": "666493860364c4de", "src": "db2@1.60.1.70291"}
+{"id": 1265043, "field": "name", "en": "Tendon Rip", "hash": "fba1e44e33a7832b", "src": "db2@1.60.1.70291"}
+{"id": 1265043, "field": "description", "en": "Tears at an enemy's legs for $1265038o1 damage over $1265038d and reduces movement speed by $1265038s2% for $1265038d.", "hash": "3798ba2c979d01a7", "src": "db2@1.60.1.70291"}
+{"id": 1265045, "field": "name", "en": "Tendon Rip", "hash": "fba1e44e33a7832b", "src": "db2@1.60.1.70291"}
+{"id": 1265045, "field": "description", "en": "Tears at an enemy's legs for $1265039o1 damage over $1265039d and reduces movement speed by $1265039s2% for $1265039d.", "hash": "32886fdf0702ed09", "src": "db2@1.60.1.70291"}
+{"id": 1265046, "field": "name", "en": "Tendon Rip", "hash": "fba1e44e33a7832b", "src": "db2@1.60.1.70291"}
+{"id": 1265046, "field": "description", "en": "Tears at an enemy's legs for $1265040o1 damage over $1265040d and reduces movement speed by $1265040s2% for $1265040d.", "hash": "c8c5071e5c8133ec", "src": "db2@1.60.1.70291"}
+{"id": 1265047, "field": "name", "en": "Tendon Rip", "hash": "fba1e44e33a7832b", "src": "db2@1.60.1.70291"}
+{"id": 1265047, "field": "description", "en": "Tears at an enemy's legs for $1265041o1 damage over $1265041d and reduces movement speed by $1265041s2% for $1265041d.", "hash": "c3b4bcd1cbe71f3d", "src": "db2@1.60.1.70291"}
+{"id": 1265048, "field": "name", "en": "Tendon Rip", "hash": "fba1e44e33a7832b", "src": "db2@1.60.1.70291"}
+{"id": 1265048, "field": "description", "en": "Tears at an enemy's legs for $1265042o1 damage over $1265042d and reduces movement speed by $1265042s2% for $1265042d.", "hash": "bea472843b4d0a9f", "src": "db2@1.60.1.70291"}
+{"id": 1265054, "field": "name", "en": "Mine!", "hash": "55ceacb7c0e51fab", "src": "db2@1.60.1.70291"}
+{"id": 1265054, "field": "description", "en": "Grabs an enemy's weapon with its talons, causing $s1 damage and disarming them for $d.", "hash": "4fcf95d3e4b83a7c", "src": "db2@1.60.1.70291"}
+{"id": 1265054, "field": "aura", "en": "Disarmed.", "hash": "98985eda7053879e", "src": "db2@1.60.1.70291"}
+{"id": 1265055, "field": "name", "en": "Mine!", "hash": "55ceacb7c0e51fab", "src": "db2@1.60.1.70291"}
+{"id": 1265055, "field": "description", "en": "Grabs an enemy's weapon with its talons, causing $s1 damage and disarming them for $d.", "hash": "4fcf95d3e4b83a7c", "src": "db2@1.60.1.70291"}
+{"id": 1265055, "field": "aura", "en": "Disarmed.", "hash": "98985eda7053879e", "src": "db2@1.60.1.70291"}
+{"id": 1265056, "field": "name", "en": "Mine!", "hash": "55ceacb7c0e51fab", "src": "db2@1.60.1.70291"}
+{"id": 1265056, "field": "description", "en": "Grabs an enemy's weapon with its talons, causing $s1 damage and disarming them for $d.", "hash": "4fcf95d3e4b83a7c", "src": "db2@1.60.1.70291"}
+{"id": 1265056, "field": "aura", "en": "Disarmed.", "hash": "98985eda7053879e", "src": "db2@1.60.1.70291"}
+{"id": 1265057, "field": "name", "en": "Mine!", "hash": "55ceacb7c0e51fab", "src": "db2@1.60.1.70291"}
+{"id": 1265057, "field": "description", "en": "Grabs an enemy's weapon with its talons, causing $s1 damage and disarming them for $d.", "hash": "4fcf95d3e4b83a7c", "src": "db2@1.60.1.70291"}
+{"id": 1265057, "field": "aura", "en": "Disarmed.", "hash": "98985eda7053879e", "src": "db2@1.60.1.70291"}
+{"id": 1265058, "field": "name", "en": "Mine!", "hash": "55ceacb7c0e51fab", "src": "db2@1.60.1.70291"}
+{"id": 1265058, "field": "description", "en": "Grabs an enemy's weapon with its talons, causing $s1 damage and disarming them for $d.", "hash": "4fcf95d3e4b83a7c", "src": "db2@1.60.1.70291"}
+{"id": 1265058, "field": "aura", "en": "Disarmed.", "hash": "98985eda7053879e", "src": "db2@1.60.1.70291"}
+{"id": 1265059, "field": "name", "en": "Mine!", "hash": "55ceacb7c0e51fab", "src": "db2@1.60.1.70291"}
+{"id": 1265059, "field": "description", "en": "Grabs an enemy's weapon with its talons, causing $1265054s1 damage and disarming them for $1265054d.", "hash": "2ec2af6fbd406701", "src": "db2@1.60.1.70291"}
+{"id": 1265060, "field": "name", "en": "Mine!", "hash": "55ceacb7c0e51fab", "src": "db2@1.60.1.70291"}
+{"id": 1265060, "field": "description", "en": "Grabs an enemy's weapon with its talons, causing $1265055s1 damage and disarming them for $1265055d.", "hash": "56cfa5b6603094b7", "src": "db2@1.60.1.70291"}
+{"id": 1265061, "field": "name", "en": "Mine!", "hash": "55ceacb7c0e51fab", "src": "db2@1.60.1.70291"}
+{"id": 1265061, "field": "description", "en": "Grabs an enemy's weapon with its talons, causing $1265056s1 damage and disarming them for $1265056d.", "hash": "7edc9bfd0320c26d", "src": "db2@1.60.1.70291"}
+{"id": 1265062, "field": "name", "en": "Mine!", "hash": "55ceacb7c0e51fab", "src": "db2@1.60.1.70291"}
+{"id": 1265062, "field": "description", "en": "Grabs an enemy's weapon with its talons, causing $1265057s1 damage and disarming them for $1265057d.", "hash": "a6e99244a610f012", "src": "db2@1.60.1.70291"}
+{"id": 1265064, "field": "name", "en": "Mine!", "hash": "55ceacb7c0e51fab", "src": "db2@1.60.1.70291"}
+{"id": 1265064, "field": "description", "en": "Grabs an enemy's weapon with its talons, causing $1265058s1 damage and disarming them for $1265058d.", "hash": "cef6888b49011dc8", "src": "db2@1.60.1.70291"}
+{"id": 1265065, "field": "name", "en": "Savage Rend", "hash": "6460de1cc808e85f", "src": "db2@1.60.1.70291"}
+{"id": 1265065, "field": "description", "en": "Slash an enemy with razor talons, causing the target to Bleed for $o1 damage over $d.", "hash": "71f3d411a848b975", "src": "db2@1.60.1.70291"}
+{"id": 1265065, "field": "aura", "en": "Bleeding for $w1 damage every $t1 sec.", "hash": "980052f1df197db9", "src": "db2@1.60.1.70291"}
+{"id": 1265066, "field": "name", "en": "Savage Rend", "hash": "6460de1cc808e85f", "src": "db2@1.60.1.70291"}
+{"id": 1265066, "field": "description", "en": "Slash an enemy with razor talons, causing the target to Bleed for $o1 damage over $d.", "hash": "71f3d411a848b975", "src": "db2@1.60.1.70291"}
+{"id": 1265066, "field": "aura", "en": "Bleeding for $w1 damage every $t1 sec.", "hash": "980052f1df197db9", "src": "db2@1.60.1.70291"}
+{"id": 1265067, "field": "name", "en": "Savage Rend", "hash": "6460de1cc808e85f", "src": "db2@1.60.1.70291"}
+{"id": 1265067, "field": "description", "en": "Slash an enemy with razor talons, causing the target to Bleed for $o1 damage over $d.", "hash": "71f3d411a848b975", "src": "db2@1.60.1.70291"}
+{"id": 1265067, "field": "aura", "en": "Bleeding for $w1 damage every $t1 sec.", "hash": "980052f1df197db9", "src": "db2@1.60.1.70291"}
+{"id": 1265068, "field": "name", "en": "Savage Rend", "hash": "6460de1cc808e85f", "src": "db2@1.60.1.70291"}
+{"id": 1265068, "field": "description", "en": "Slash an enemy with razor talons, causing the target to Bleed for $o1 damage over $d.", "hash": "71f3d411a848b975", "src": "db2@1.60.1.70291"}
+{"id": 1265068, "field": "aura", "en": "Bleeding for $w1 damage every $t1 sec.", "hash": "980052f1df197db9", "src": "db2@1.60.1.70291"}
+{"id": 1265069, "field": "name", "en": "Savage Rend", "hash": "6460de1cc808e85f", "src": "db2@1.60.1.70291"}
+{"id": 1265069, "field": "description", "en": "Slash an enemy with razor talons, causing the target to Bleed for $o1 damage over $d.", "hash": "71f3d411a848b975", "src": "db2@1.60.1.70291"}
+{"id": 1265069, "field": "aura", "en": "Bleeding for $w1 damage every $t1 sec.", "hash": "980052f1df197db9", "src": "db2@1.60.1.70291"}
+{"id": 1265220, "field": "name", "en": "Fishing Hat Lure", "hash": "d7c692ce119a8b78", "src": "db2@1.60.1.70291"}
+{"id": 1265220, "field": "description", "en": "Attach a lure to your equipped fishing pole, increasing Fishing by 25 for 10 min.", "hash": "7748ea7e16d4e485", "src": "db2@1.60.1.70291"}
+{"id": 1265304, "field": "name", "en": "Deep-Sea Waders", "hash": "6d255d8db7f9cb2d", "src": "db2@1.60.1.70291"}
+{"id": 1265304, "field": "description", "en": "Lets you walk on water for $d.", "hash": "42a8b6d373519183", "src": "db2@1.60.1.70291"}
+{"id": 1265304, "field": "aura", "en": "Allows walking over water and water-like surfaces. Effect cancelled by mounting or combat.", "hash": "0b0863c31763547d", "src": "db2@1.60.1.70291"}
+{"id": 1265376, "field": "name", "en": "MRN Test Spell", "hash": "9004e39d32a17275", "src": "db2@1.60.1.70291"}
+{"id": 1265416, "field": "name", "en": "Badwind Slam", "hash": "7490677606de18c7", "src": "db2@1.60.1.70291"}
+{"id": 1265416, "field": "description", "en": "Slams an enemy to the ground, inflicting Physical damage and stunning it for $d.", "hash": "b1a2fbcab4ea7eb4", "src": "db2@1.60.1.70291"}
+{"id": 1265416, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70291"}
+{"id": 1265472, "field": "name", "en": "Wake Splash", "hash": "ee0b5a8b251439a8", "src": "db2@1.60.1.70291"}
+{"id": 1265484, "field": "name", "en": "Wake Splash", "hash": "ee0b5a8b251439a8", "src": "db2@1.60.1.70291"}
+{"id": 1265497, "field": "name", "en": "Watchful Eye", "hash": "9d8f17ec101f1407", "src": "db2@1.60.1.70291"}
+{"id": 1265500, "field": "name", "en": "Watchful Eye", "hash": "9d8f17ec101f1407", "src": "db2@1.60.1.70291"}
+{"id": 1265500, "field": "aura", "en": "The shard is closely guarded. It can only be taken by force or while Honored with the clan.", "hash": "172a581282d0fb82", "src": "db2@1.60.1.70291"}
+{"id": 1265557, "field": "name", "en": "Conqueror of Corpsefeeder", "hash": "75ec177c0540d06c", "src": "db2@1.60.1.70291"}
+{"id": 1265557, "field": "aura", "en": "The quilboar of Bristleback Retreat tolerate your presence, for now.", "hash": "4b3c922593400785", "src": "db2@1.60.1.70291"}
+{"id": 1265634, "field": "name", "en": "Ancient Power", "hash": "b1bd2fee9d47005d", "src": "db2@1.60.1.70291"}
+{"id": 1265634, "field": "description", "en": "Deals $s1 Arcane damage. Deals $s2 times as much damage to Naga and Satyrs.", "hash": "9e6a196858869513", "src": "db2@1.60.1.70291"}
+{"id": 1265634, "field": "aura", "en": "Deals $s1 Arcane damage.", "hash": "14797f2fd977bd4e", "src": "db2@1.60.1.70291"}
+{"id": 1265771, "field": "name", "en": "Full Heal", "hash": "a9890f1615f5d28c", "src": "db2@1.60.1.70291"}
+{"id": 1265776, "field": "name", "en": "Extinguish Woodwyrd", "hash": "5ed72bae30be1814", "src": "db2@1.60.1.70291"}
+{"id": 1265776, "field": "description", "en": "Summon a torrential downpour of enchanted water to extinguish Woodwyrd.", "hash": "9219256ccd162e95", "src": "db2@1.60.1.70291"}
+{"id": 1265831, "field": "name", "en": "Savage Rend", "hash": "6460de1cc808e85f", "src": "db2@1.60.1.70291"}
+{"id": 1265831, "field": "description", "en": "Slash an enemy with razor talons, causing the target to Bleed for $1265065o1 damage over $1265065d and take $1265065s2% additional damage from Bleed effects for the duration.", "hash": "9da647b93b586fdc", "src": "db2@1.60.1.70291"}
+{"id": 1265833, "field": "name", "en": "Savage Rend", "hash": "6460de1cc808e85f", "src": "db2@1.60.1.70291"}
+{"id": 1265833, "field": "description", "en": "Slash an enemy with razor talons, causing the target to Bleed for $1265066o1 damage over $1265066d and take $1265066s2% additional damage from Bleed effects for the duration.", "hash": "58aba96ab9cfc8a6", "src": "db2@1.60.1.70291"}
+{"id": 1265834, "field": "name", "en": "Savage Rend", "hash": "6460de1cc808e85f", "src": "db2@1.60.1.70291"}
+{"id": 1265834, "field": "description", "en": "Slash an enemy with razor talons, causing the target to Bleed for $1265067o1 damage over $1265067d and take $1265067s2% additional damage from Bleed effects for the duration.", "hash": "13b10b1b38472181", "src": "db2@1.60.1.70291"}
+{"id": 1265835, "field": "name", "en": "Savage Rend", "hash": "6460de1cc808e85f", "src": "db2@1.60.1.70291"}
+{"id": 1265835, "field": "description", "en": "Slash an enemy with razor talons, causing the target to Bleed for $1265068o1 damage over $1265068d and take $1265068s2% additional damage from Bleed effects for the duration.", "hash": "ceb66cc7b6be7a4b", "src": "db2@1.60.1.70291"}
+{"id": 1265836, "field": "name", "en": "Savage Rend", "hash": "6460de1cc808e85f", "src": "db2@1.60.1.70291"}
+{"id": 1265836, "field": "description", "en": "Slash an enemy with razor talons, causing the target to Bleed for $1265069o1 damage over $1265069d and take $1265069s2% additional damage from Bleed effects for the duration.", "hash": "89bbce783535d326", "src": "db2@1.60.1.70291"}
+{"id": 1265843, "field": "name", "en": "Web", "hash": "0016fc20596b9acf", "src": "db2@1.60.1.70291"}
+{"id": 1265843, "field": "description", "en": "Entangles an enemy in a corrosive web, immobilizing them and dealing $o1 Nature damage over $d.", "hash": "e75c7fe746f3d6c3", "src": "db2@1.60.1.70291"}
+{"id": 1265843, "field": "aura", "en": "Rooted. Taking $w1 Nature damage every $t sec.", "hash": "730d26951190f929", "src": "db2@1.60.1.70291"}
+{"id": 1265854, "field": "name", "en": "Summon Virulent Blood of Agamaggan", "hash": "f4454fb6634178f9", "src": "db2@1.60.1.70291"}
+{"id": 1265878, "field": "name", "en": "Web", "hash": "0016fc20596b9acf", "src": "db2@1.60.1.70291"}
+{"id": 1265878, "field": "description", "en": "Entangles an enemy in a corrosive web, immobilizing them and dealing $o1 Nature damage over $d.", "hash": "e75c7fe746f3d6c3", "src": "db2@1.60.1.70291"}
+{"id": 1265878, "field": "aura", "en": "Rooted. Taking $w1 Nature damage every $t sec.", "hash": "730d26951190f929", "src": "db2@1.60.1.70291"}
+{"id": 1265880, "field": "name", "en": "Web", "hash": "0016fc20596b9acf", "src": "db2@1.60.1.70291"}
+{"id": 1265880, "field": "description", "en": "Entangles an enemy in a corrosive web, immobilizing them and dealing $o1 Nature damage over $d.", "hash": "e75c7fe746f3d6c3", "src": "db2@1.60.1.70291"}
+{"id": 1265880, "field": "aura", "en": "Rooted. Taking $w1 Nature damage every $t sec.", "hash": "730d26951190f929", "src": "db2@1.60.1.70291"}
+{"id": 1265881, "field": "name", "en": "Web", "hash": "0016fc20596b9acf", "src": "db2@1.60.1.70291"}
+{"id": 1265881, "field": "description", "en": "Entangles an enemy in a corrosive web, immobilizing them and dealing $o1 Nature damage over $d.", "hash": "e75c7fe746f3d6c3", "src": "db2@1.60.1.70291"}
+{"id": 1265881, "field": "aura", "en": "Rooted. Taking $w1 Nature damage every $t sec.", "hash": "730d26951190f929", "src": "db2@1.60.1.70291"}
+{"id": 1265883, "field": "name", "en": "Web", "hash": "0016fc20596b9acf", "src": "db2@1.60.1.70291"}
+{"id": 1265883, "field": "description", "en": "Entangles an enemy in a corrosive web, immobilizing them and dealing $o1 Nature damage over $d.", "hash": "e75c7fe746f3d6c3", "src": "db2@1.60.1.70291"}
+{"id": 1265883, "field": "aura", "en": "Rooted. Taking $w1 Nature damage every $t sec.", "hash": "730d26951190f929", "src": "db2@1.60.1.70291"}
+{"id": 1265886, "field": "name", "en": "Create Bouquet", "hash": "02638bf98b2ebbc4", "src": "db2@1.60.1.70291"}
+{"id": 1265886, "field": "description", "en": "Assemble $s2 Vibrant Flowers to create a Benevolent Bouquet.", "hash": "10d976a47b460f46", "src": "db2@1.60.1.70291"}
+{"id": 1265887, "field": "name", "en": "Web", "hash": "0016fc20596b9acf", "src": "db2@1.60.1.70291"}
+{"id": 1265887, "field": "description", "en": "Entangles an enemy in a corrosive web, immobilizing them and dealing $1265843o1 Nature damage over $1265843d.", "hash": "78e771ae5430466c", "src": "db2@1.60.1.70291"}
+{"id": 1265888, "field": "name", "en": "Web", "hash": "0016fc20596b9acf", "src": "db2@1.60.1.70291"}
+{"id": 1265888, "field": "description", "en": "Entangles an enemy in a corrosive web, immobilizing them and dealing $1265878o1 Nature damage over $1265878d.", "hash": "972f81e38b519a08", "src": "db2@1.60.1.70291"}
+{"id": 1265889, "field": "name", "en": "Wind Channeling", "hash": "f4da1f908a9195aa", "src": "db2@1.60.1.70291"}
+{"id": 1265890, "field": "name", "en": "Web", "hash": "0016fc20596b9acf", "src": "db2@1.60.1.70291"}
+{"id": 1265890, "field": "description", "en": "Entangles an enemy in a corrosive web, immobilizing them and dealing $1265880o1 Nature damage over $1265880d.", "hash": "4347108d6240ab86", "src": "db2@1.60.1.70291"}
+{"id": 1265891, "field": "name", "en": "Web", "hash": "0016fc20596b9acf", "src": "db2@1.60.1.70291"}
+{"id": 1265891, "field": "description", "en": "Entangles an enemy in a corrosive web, immobilizing them and dealing $1265881o1 Nature damage over $1265881d.", "hash": "4d007df06866e190", "src": "db2@1.60.1.70291"}
+{"id": 1265892, "field": "name", "en": "Web", "hash": "0016fc20596b9acf", "src": "db2@1.60.1.70291"}
+{"id": 1265892, "field": "description", "en": "Entangles an enemy in a corrosive web, immobilizing them and dealing $1265883o1 Nature damage over $1265883d.", "hash": "607358b674b34da4", "src": "db2@1.60.1.70291"}
+{"id": 1265896, "field": "name", "en": "Channel Winds", "hash": "510878c2739f8b41", "src": "db2@1.60.1.70291"}
+{"id": 1265899, "field": "name", "en": "Dust Cloud", "hash": "8395becf764deab9", "src": "db2@1.60.1.70291"}
+{"id": 1265899, "field": "description", "en": "Your tallstrider kicks up an abrasive cloud of dust, reducing the target's Armor by $s1 for $d.", "hash": "b127b6dae0f95178", "src": "db2@1.60.1.70291"}
+{"id": 1265899, "field": "aura", "en": "Decreases armor by $s1.", "hash": "6c125986e299f56b", "src": "db2@1.60.1.70291"}
+{"id": 1265901, "field": "name", "en": "Dust Cloud", "hash": "8395becf764deab9", "src": "db2@1.60.1.70291"}
+{"id": 1265901, "field": "description", "en": "Your tallstrider kicks up an abrasive cloud of dust, reducing the target's Armor by $s1 for $d.", "hash": "b127b6dae0f95178", "src": "db2@1.60.1.70291"}
+{"id": 1265901, "field": "aura", "en": "Decreases armor by $s1.", "hash": "6c125986e299f56b", "src": "db2@1.60.1.70291"}
+{"id": 1265902, "field": "name", "en": "Dust Cloud", "hash": "8395becf764deab9", "src": "db2@1.60.1.70291"}
+{"id": 1265902, "field": "description", "en": "Your tallstrider kicks up an abrasive cloud of dust, reducing the target's Armor by $s1 for $d.", "hash": "b127b6dae0f95178", "src": "db2@1.60.1.70291"}
+{"id": 1265902, "field": "aura", "en": "Decreases armor by $s1.", "hash": "6c125986e299f56b", "src": "db2@1.60.1.70291"}
+{"id": 1265903, "field": "name", "en": "Dust Cloud", "hash": "8395becf764deab9", "src": "db2@1.60.1.70291"}
+{"id": 1265903, "field": "description", "en": "Your tallstrider kicks up an abrasive cloud of dust, reducing the target's Armor by $s1 for $d.", "hash": "b127b6dae0f95178", "src": "db2@1.60.1.70291"}
+{"id": 1265903, "field": "aura", "en": "Decreases armor by $s1.", "hash": "6c125986e299f56b", "src": "db2@1.60.1.70291"}
+{"id": 1265904, "field": "name", "en": "Dust Cloud", "hash": "8395becf764deab9", "src": "db2@1.60.1.70291"}
+{"id": 1265904, "field": "description", "en": "Your tallstrider kicks up an abrasive cloud of dust, reducing the target's Armor by $s1 for $d.", "hash": "b127b6dae0f95178", "src": "db2@1.60.1.70291"}
+{"id": 1265904, "field": "aura", "en": "Decreases armor by $s1.", "hash": "6c125986e299f56b", "src": "db2@1.60.1.70291"}
+{"id": 1265907, "field": "name", "en": "Dust Cloud", "hash": "8395becf764deab9", "src": "db2@1.60.1.70291"}
+{"id": 1265907, "field": "description", "en": "Your tallstrider kicks up an abrasive cloud of dust, reducing the target's Armor by $1265899s1 for $1265899d, stacking up to $1265899u times.", "hash": "2fbb80ca7d04908b", "src": "db2@1.60.1.70291"}
+{"id": 1265908, "field": "name", "en": "Dust Cloud", "hash": "8395becf764deab9", "src": "db2@1.60.1.70291"}
+{"id": 1265908, "field": "description", "en": "Your tallstrider kicks up an abrasive cloud of dust, reducing the target's Armor by $1265901s1 for $1265901d, stacking up to $1265901u times.", "hash": "8da207611e6a8c1c", "src": "db2@1.60.1.70291"}
+{"id": 1265909, "field": "name", "en": "Dust Cloud", "hash": "8395becf764deab9", "src": "db2@1.60.1.70291"}
+{"id": 1265909, "field": "description", "en": "Your tallstrider kicks up an abrasive cloud of dust, reducing the target's Armor by $1265902s1 for $1265902d, stacking up to $1265902u times.", "hash": "c7c3e80192eab063", "src": "db2@1.60.1.70291"}
+{"id": 1265911, "field": "name", "en": "Dust Cloud", "hash": "8395becf764deab9", "src": "db2@1.60.1.70291"}
+{"id": 1265911, "field": "description", "en": "Your tallstrider kicks up an abrasive cloud of dust, reducing the target's Armor by $1265904s1 for $1265904d, stacking up to $1265904u times.", "hash": "3c07a9467beaf902", "src": "db2@1.60.1.70291"}
+{"id": 1265913, "field": "name", "en": "Dust Cloud", "hash": "8395becf764deab9", "src": "db2@1.60.1.70291"}
+{"id": 1265913, "field": "description", "en": "Your tallstrider kicks up an abrasive cloud of dust, reducing the target's Armor by $1265903s1 for $1265903d, stacking up to $1265903u times.", "hash": "01e5c8a6076ad4bb", "src": "db2@1.60.1.70291"}
+{"id": 1265945, "field": "name", "en": "Mining Skill", "hash": "5c2c042526e3070c", "src": "db2@1.60.1.70291"}
+{"id": 1265945, "field": "description", "en": "Increases your Mining skill by $m2. Cannot raise Mining skill over $m1.", "hash": "93efece1f3cf450c", "src": "db2@1.60.1.70291"}
+{"id": 1265947, "field": "name", "en": "Mining Skill", "hash": "5c2c042526e3070c", "src": "db2@1.60.1.70291"}
+{"id": 1265953, "field": "name", "en": "Herbalism Skill", "hash": "08e03c0cddeab411", "src": "db2@1.60.1.70291"}
+{"id": 1265955, "field": "name", "en": "Skinning Skill", "hash": "92fe92bfdbb34210", "src": "db2@1.60.1.70291"}
+{"id": 1265956, "field": "name", "en": "Herbalism Skill", "hash": "08e03c0cddeab411", "src": "db2@1.60.1.70291"}
+{"id": 1265957, "field": "name", "en": "Skinning Skill", "hash": "92fe92bfdbb34210", "src": "db2@1.60.1.70291"}
+{"id": 1265981, "field": "name", "en": "Birth", "hash": "94b8eb4f3cb492fe", "src": "db2@1.60.1.70291"}
+{"id": 1265983, "field": "name", "en": "Ghost Light", "hash": "c74defba34314478", "src": "db2@1.60.1.70291"}

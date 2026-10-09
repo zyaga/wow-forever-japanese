@@ -9386,6 +9386,8 @@ AchievementTitle:64182  # Deaths in Darkspear Islands
 AchievementTitle:64183  # Total deaths in 20-player raids
 AchievementTitle:64184  # Total 40-player raids entered
 AchievementTitle:64185  # Total deaths in 40-player raids
+AchievementTitle:64222  # Times camped
+AchievementTitle:64283  # Played in the WoW: Forever Beta
 # AchievementDescription (Achievement.Description_lang)
 AchievementDescription:49  # Alterac Valley victories
 AchievementDescription:51  # Arathi Basin victories
@@ -9703,8 +9705,11 @@ AchievementDescription:64182  # Deaths in Darkspear Islands
 AchievementDescription:64183  # Total deaths in 20-player raids
 AchievementDescription:64184  # Total 40-player raids entered
 AchievementDescription:64185  # Total deaths in 40-player raids
+AchievementDescription:64222  # Times gathered around the campfire
+AchievementDescription:64283  # Granted for playing in the World of Warcraft: Forever Beta. Thanks for testing!
 # AchievementReward (Achievement.Reward_lang)
 AchievementReward:684  # Earn 1 Legacy Point. (+129)
+AchievementReward:64283  # Earn 16 Legacy Points.
 # AchievementCategory (Achievement_Category.Name_lang)
 AchievementCategory:1  # Statistics
 AchievementCategory:21  # Player vs. Player (+1)
@@ -9768,6 +9773,7 @@ SkillLineDescription:777  # Your mounts.
 SkillLineDescription:778  # Your companions.
 SkillLineDescription:2851  # Higher engraving skill allows you to learn higher level runes and apply them to your ar...
 SkillLineDescription:2933  # Higher skill allows you to learn higher level recipes.  Recipes can be found on trainer... (+1)
+SkillLineDescription:2934  # Higher skill allows you to learn higher level recipes. Recipes can be found on traine...
 # SkillCategory (SkillLineCategory.Name_lang)
 SkillCategory:5  # Attributes
 SkillCategory:6  # Weapon Skills
@@ -12747,6 +12753,16 @@ PvpColumn:1103  # Bases Defended
 PvpColumnTooltip:1101  # Number of times you have captured the flag
 PvpColumnTooltip:1102  # Number of times enemy base banners have been removed
 PvpColumnTooltip:1103  # Number of times a base capture has been prevented
+# PvpStat (PVPStat.Description_lang)
+PvpStat:42  # Flag Captures (+1)
+PvpStat:44  # Flag Returns
+PvpStat:61  # Towers Assaulted
+PvpStat:63  # Graveyards Assaulted
+PvpStat:64  # Towers Defended
+PvpStat:65  # Graveyards Defended
+PvpStat:82  # Secondary Objectives
+PvpStat:122  # Bases Assaulted (+2)
+PvpStat:123  # Bases Defended
 # LfgCategory
 LfgCategory:2  # Dungeons
 LfgCategory:114  # Raids
@@ -13502,6 +13518,11 @@ CriteriaText:235086  # Deaths in Darkspear Islands
 CriteriaText:235088  # 20 man raids
 CriteriaText:235097  # 40-man raids run (+1)
 CriteriaText:235099  # 40 man raids
+CriteriaText:132286  # 5-man instances
+CriteriaText:235859  # Gain Camp Buff
+CriteriaText:235860  # Gain Aura
+CriteriaText:236079  # Played in Beta
+CriteriaText:236080  # Played in the World of Warcraft: Forever Beta
 # RenownRewardName (RenownRewards.Name_lang)
 RenownRewardName:1832  # Rank 1 Rewards
 RenownRewardName:1833  # Rank 2 Rewards
@@ -13849,6 +13870,10 @@ BroadcastText:316354  # disrupting the delicate magic that kept them safe in the
 BroadcastText:316355  # Now, a new generation of Skyborne elves face a time of unprecedented change,
 BroadcastText:316356  # and must seek new allies and sources of magic--
 BroadcastText:316358  # to protect their hidden home and secure their future...
+BroadcastText:329279  # The eccentric, often brilliant gnomes, are held as one of the most peculiar races of t...
+BroadcastText:329280  # With their obsession for developing radical new technologies and constructing marvels...
+BroadcastText:329281  # Over the years, the gnomes have contributed ingenious weapons to aid the Grand Allianc...
+BroadcastText:329282  # Thriving within the wondrous techno city of Gnomeregan, the gnomes share the resource...
 # PetFood (ItemPetFood.Name_lang)
 PetFood:1  # Meat
 PetFood:2  # Fish

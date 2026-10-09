@@ -1,114 +1,114 @@
-{"id": 445000, "field": "name", "en": "Pillars of Might", "hash": "39e3fa5ea5616dcc", "src": "db2@1.60.1.70245"}
-{"id": 445080, "field": "name", "en": "Incite Madness", "hash": "525331756d22bc7d", "src": "db2@1.60.1.70245"}
-{"id": 445080, "field": "description", "en": "Turns targets hostile to everyone. Killing another player causes the player to gain $445081s1% movement speed for $445081d.", "hash": "00bac9871ecd893f", "src": "db2@1.60.1.70245"}
-{"id": 445080, "field": "aura", "en": "Hostile to everyone!", "hash": "d328716d6e415ec4", "src": "db2@1.60.1.70245"}
-{"id": 445081, "field": "name", "en": "Burning Madness", "hash": "bb207af83adf9785", "src": "db2@1.60.1.70245"}
-{"id": 445081, "field": "description", "en": "You killed another player! \r\nMovement speed increased by $s1% for $d.\r\n", "hash": "c7f737997da54913", "src": "db2@1.60.1.70245"}
-{"id": 445081, "field": "aura", "en": "You killed another player! \r\nMovement speed increased by $s1%.", "hash": "1e13113bc16e7063", "src": "db2@1.60.1.70245"}
-{"id": 445158, "field": "name", "en": "Lucid Dreaming", "hash": "ced048db8042f0c5", "src": "db2@1.60.1.70245"}
-{"id": 445158, "field": "aura", "en": "Trapped in the Emerald Nightmare, taking $s6 damage every $t6 seconds.", "hash": "f044fabbfeea3334", "src": "db2@1.60.1.70245"}
-{"id": 445168, "field": "name", "en": "Light and Dark", "hash": "824fdca0953c1ffc", "src": "db2@1.60.1.70245"}
-{"id": 445171, "field": "name", "en": "Light and Dark", "hash": "824fdca0953c1ffc", "src": "db2@1.60.1.70245"}
-{"id": 445181, "field": "name", "en": "Murky Sapta Sight", "hash": "c7d1067ee2e2be66", "src": "db2@1.60.1.70245"}
-{"id": 445181, "field": "description", "en": "Allows the shaman to see elemental spirits.", "hash": "eeb6883480ae85f1", "src": "db2@1.60.1.70245"}
-{"id": 445181, "field": "aura", "en": "Detect elemental spirits.", "hash": "5c91d9a4275d7f70", "src": "db2@1.60.1.70245"}
-{"id": 445185, "field": "name", "en": "Climbing Rope", "hash": "360fc9d65f9469ec", "src": "db2@1.60.1.70245"}
-{"id": 445187, "field": "name", "en": "Permanent Feign Death", "hash": "8d0656e759e47199", "src": "db2@1.60.1.70245"}
-{"id": 445188, "field": "name", "en": "[DNT] Sleeping Copy", "hash": "cf8996d8d8e72a0c", "src": "db2@1.60.1.70245"}
-{"id": 445189, "field": "name", "en": "Climbing Rope", "hash": "360fc9d65f9469ec", "src": "db2@1.60.1.70245"}
-{"id": 445190, "field": "name", "en": "[DNT] Sleeping Copy", "hash": "cf8996d8d8e72a0c", "src": "db2@1.60.1.70245"}
-{"id": 445198, "field": "name", "en": "[DNT] Sleeping Copy", "hash": "cf8996d8d8e72a0c", "src": "db2@1.60.1.70245"}
-{"id": 445201, "field": "name", "en": "Climbing Rope", "hash": "360fc9d65f9469ec", "src": "db2@1.60.1.70245"}
-{"id": 445202, "field": "name", "en": "Climbing Rope", "hash": "360fc9d65f9469ec", "src": "db2@1.60.1.70245"}
-{"id": 445220, "field": "name", "en": "[DNT] Sleeping Copy", "hash": "cf8996d8d8e72a0c", "src": "db2@1.60.1.70245"}
-{"id": 445222, "field": "name", "en": "[DNT] Sleeping Copy", "hash": "cf8996d8d8e72a0c", "src": "db2@1.60.1.70245"}
-{"id": 445230, "field": "name", "en": "[DNT] Exit Dream", "hash": "43199f99732ae4a4", "src": "db2@1.60.1.70245"}
-{"id": 445235, "field": "name", "en": "Lucid Dreaming", "hash": "ced048db8042f0c5", "src": "db2@1.60.1.70245"}
-{"id": 445235, "field": "description", "en": "Strikes enemies in a cone in front of the caster, knocking them back.", "hash": "61a1859ee1117be6", "src": "db2@1.60.1.70245"}
-{"id": 445279, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70245"}
-{"id": 445280, "field": "name", "en": "Exit Dream", "hash": "30f76f8f3f423455", "src": "db2@1.60.1.70245"}
-{"id": 445282, "field": "name", "en": "Disarm", "hash": "11c65ba41d91f3c9", "src": "db2@1.60.1.70245"}
-{"id": 445282, "field": "description", "en": "Disarm the enemy's weapon for $d.", "hash": "ef69889f9488cc16", "src": "db2@1.60.1.70245"}
-{"id": 445282, "field": "aura", "en": "Disarmed!", "hash": "98985ecd70538791", "src": "db2@1.60.1.70245"}
-{"id": 445283, "field": "name", "en": "Fervor", "hash": "c27b4a390af0853e", "src": "db2@1.60.1.70245"}
-{"id": 445284, "field": "name", "en": "Fervor", "hash": "c27b4a390af0853e", "src": "db2@1.60.1.70245"}
-{"id": 445284, "field": "aura", "en": "Attack speed and movement speed increased by $s1%.", "hash": "f1f5f5d4436add4b", "src": "db2@1.60.1.70245"}
-{"id": 445285, "field": "name", "en": "Blood Frenzy", "hash": "53e8cf6f4ddc508d", "src": "db2@1.60.1.70245"}
-{"id": 445286, "field": "name", "en": "Blood Frenzy", "hash": "53e8cf6f4ddc508d", "src": "db2@1.60.1.70245"}
-{"id": 445287, "field": "name", "en": "Spinning Axes", "hash": "c97d576e7e971d1f", "src": "db2@1.60.1.70245"}
-{"id": 445288, "field": "name", "en": "Spinning Axes", "hash": "c97d576e7e971d1f", "src": "db2@1.60.1.70245"}
-{"id": 445289, "field": "name", "en": "Spinning Axes", "hash": "c97d576e7e971d1f", "src": "db2@1.60.1.70245"}
-{"id": 445411, "field": "name", "en": "[DNT] Combat Pulse", "hash": "955a5d10dbec6ab8", "src": "db2@1.60.1.70245"}
-{"id": 445442, "field": "name", "en": "[DNT] AoE Damage Reduction", "hash": "e893041236acb904", "src": "db2@1.60.1.70245"}
-{"id": 445459, "field": "name", "en": "Explorer Imp", "hash": "4590add418e42d98", "src": "db2@1.60.1.70245"}
-{"id": 445459, "field": "description", "en": "Summon your Explorer Imp. Though it cannot fight, it can travel through portals to explore other worlds and bring back treasures.", "hash": "8c314203372ee113", "src": "db2@1.60.1.70245"}
-{"id": 445461, "field": "name", "en": "Test - Duel Talent - Grant Talent Groups", "hash": "69e55cdd81f633e8", "src": "db2@1.60.1.70245"}
-{"id": 445462, "field": "name", "en": "Test - Duel Talent - Activate Group 1", "hash": "260669505f52073d", "src": "db2@1.60.1.70245"}
-{"id": 445463, "field": "name", "en": "Test - Duel Talent - Activate Group 2", "hash": "260669515f52073e", "src": "db2@1.60.1.70245"}
-{"id": 445498, "field": "name", "en": "Bellowing Roar", "hash": "234ae4ce0ee8d5b1", "src": "db2@1.60.1.70245"}
-{"id": 445498, "field": "description", "en": "Releases a shaking roar, sending all enemies within $A1 yards fleeing in fear for $d.", "hash": "1fc080b0452b1300", "src": "db2@1.60.1.70245"}
-{"id": 445498, "field": "aura", "en": "Fleeing in fear!", "hash": "fa67e49b461af324", "src": "db2@1.60.1.70245"}
-{"id": 445501, "field": "name", "en": "Holy Smite", "hash": "c64a1c724bcc4e5c", "src": "db2@1.60.1.70245"}
-{"id": 445501, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70245"}
-{"id": 445514, "field": "name", "en": "Clarifying Air - Give Sapta", "hash": "4a289b9a3a816066", "src": "db2@1.60.1.70245"}
-{"id": 445517, "field": "name", "en": "Acid Shot", "hash": "af60014ed9c337e3", "src": "db2@1.60.1.70245"}
-{"id": 445517, "field": "description", "en": "Spits acid at a target, inflicting Nature damage.", "hash": "bebe369e11e5dd68", "src": "db2@1.60.1.70245"}
-{"id": 445522, "field": "name", "en": "Imp on a Mission", "hash": "766ba45c19827911", "src": "db2@1.60.1.70245"}
-{"id": 445522, "field": "aura", "en": "Your Explorer Imp is occupied.", "hash": "379ef4fdfe1cbc2c", "src": "db2@1.60.1.70245"}
-{"id": 445527, "field": "name", "en": "Dream Awakening", "hash": "640c915df911cd89", "src": "db2@1.60.1.70245"}
-{"id": 445530, "field": "name", "en": "Dream Awakening", "hash": "640c915df911cd89", "src": "db2@1.60.1.70245"}
-{"id": 445532, "field": "name", "en": "Dream Awakening", "hash": "640c915df911cd89", "src": "db2@1.60.1.70245"}
-{"id": 445544, "field": "name", "en": "Dream Awakening", "hash": "640c915df911cd89", "src": "db2@1.60.1.70245"}
-{"id": 445545, "field": "name", "en": "Dream Awakening", "hash": "640c915df911cd89", "src": "db2@1.60.1.70245"}
-{"id": 445548, "field": "name", "en": "Dream Awakening", "hash": "640c915df911cd89", "src": "db2@1.60.1.70245"}
-{"id": 445551, "field": "name", "en": "Devour", "hash": "cbfa173881b3e632", "src": "db2@1.60.1.70245"}
-{"id": 445552, "field": "name", "en": "Fire Patch", "hash": "b3cb6d109bb5c669", "src": "db2@1.60.1.70245"}
-{"id": 445555, "field": "name", "en": "On Fire!!", "hash": "898cf2f15213365f", "src": "db2@1.60.1.70245"}
-{"id": 445555, "field": "aura", "en": "You're on fire! Forced to run, and taking $s3 fire damage every $t3  seconds.", "hash": "d12cde9f74520581", "src": "db2@1.60.1.70245"}
-{"id": 445558, "field": "name", "en": "Meathook", "hash": "8708f78827592d97", "src": "db2@1.60.1.70245"}
-{"id": 445558, "field": "description", "en": "Throw out a hooked chain to restrain the target and pull them toward you.", "hash": "752fe057c7f2fb5f", "src": "db2@1.60.1.70245"}
-{"id": 445567, "field": "name", "en": "Acid Rain", "hash": "af3bdb5c3090aa51", "src": "db2@1.60.1.70245"}
-{"id": 445571, "field": "name", "en": "Acid Rain", "hash": "af3bdb5c3090aa51", "src": "db2@1.60.1.70245"}
-{"id": 445571, "field": "description", "en": "$@spelldesc445575", "hash": "b3676a6c2c7857b2", "src": "db2@1.60.1.70245"}
-{"id": 445573, "field": "name", "en": "Acid Rain", "hash": "af3bdb5c3090aa51", "src": "db2@1.60.1.70245"}
-{"id": 445575, "field": "name", "en": "Acid Rain", "hash": "af3bdb5c3090aa51", "src": "db2@1.60.1.70245"}
-{"id": 445575, "field": "description", "en": "Acid rain falls from above, inflicting $s1 Nature damage to players struck.", "hash": "d27b3641aee9d68a", "src": "db2@1.60.1.70245"}
-{"id": 445578, "field": "name", "en": "Fire Patch", "hash": "b3cb6d109bb5c669", "src": "db2@1.60.1.70245"}
-{"id": 445703, "field": "name", "en": "Sleepy Time", "hash": "2cea713267a6bdf2", "src": "db2@1.60.1.70245"}
-{"id": 445716, "field": "name", "en": "[DNT] Visual Knockback", "hash": "8c363b1ed1e68d0d", "src": "db2@1.60.1.70245"}
-{"id": 445748, "field": "name", "en": "Combine Fragment of Air", "hash": "ad8386eff0a200ba", "src": "db2@1.60.1.70245"}
-{"id": 445748, "field": "description", "en": "Combine the Fragment of Air with Elemental Essences. May help with finding the corrupted shrine.", "hash": "13e8c532b5606773", "src": "db2@1.60.1.70245"}
-{"id": 445770, "field": "name", "en": "Spinning Axes", "hash": "c97d576e7e971d1f", "src": "db2@1.60.1.70245"}
-{"id": 445799, "field": "name", "en": "Vision of Moderate Manifestations", "hash": "ad31f1a7eeb669a0", "src": "db2@1.60.1.70245"}
-{"id": 445800, "field": "name", "en": "Vision of Moderate Manifestations", "hash": "ad31f1a7eeb669a0", "src": "db2@1.60.1.70245"}
-{"id": 445801, "field": "name", "en": "Prismatic Shell", "hash": "17b805fee850956a", "src": "db2@1.60.1.70245"}
-{"id": 445801, "field": "aura", "en": "Resilient shell.", "hash": "d1ceef8a8c30a321", "src": "db2@1.60.1.70245"}
-{"id": 445816, "field": "name", "en": "[DNT] End Mission", "hash": "a84aaedbca2f2969", "src": "db2@1.60.1.70245"}
-{"id": 445821, "field": "name", "en": "Spinning Axes", "hash": "c97d576e7e971d1f", "src": "db2@1.60.1.70245"}
-{"id": 445853, "field": "name", "en": "[DNT] Dream Portal", "hash": "a00c19be399b25e6", "src": "db2@1.60.1.70245"}
-{"id": 445867, "field": "name", "en": "Recurrent Nightmare", "hash": "5423f58d23a4c4d8", "src": "db2@1.60.1.70245"}
-{"id": 445867, "field": "aura", "en": "Haunted  by emerald illusions until you face your fear, allowing it to pass through you.", "hash": "2376668f2726bd0b", "src": "db2@1.60.1.70245"}
-{"id": 445868, "field": "name", "en": "Costly Awakening", "hash": "f486de21265749aa", "src": "db2@1.60.1.70245"}
-{"id": 445868, "field": "aura", "en": "Awake, but at what cost?", "hash": "578bedc2757d2e08", "src": "db2@1.60.1.70245"}
-{"id": 445870, "field": "name", "en": "Eye of Ysera", "hash": "f5bdf1ae7c55fb39", "src": "db2@1.60.1.70245"}
-{"id": 445870, "field": "aura", "en": "Between fleeting dreams.", "hash": "5af9a02e290310c5", "src": "db2@1.60.1.70245"}
-{"id": 445871, "field": "name", "en": "Grace of the Dreamer", "hash": "1225962f1ba8cb86", "src": "db2@1.60.1.70245"}
-{"id": 445871, "field": "aura", "en": "Enchanted with lightness of the dreamers.\r\nDexterity of allies increased.", "hash": "6341c06a2a84b7c5", "src": "db2@1.60.1.70245"}
-{"id": 445875, "field": "name", "en": "Gloom", "hash": "ece39810339781d0", "src": "db2@1.60.1.70245"}
-{"id": 445875, "field": "aura", "en": "Harrowed by glimpses of the nightmare.\r\nSuffering harmful effects.", "hash": "bc2a109e648a4c2b", "src": "db2@1.60.1.70245"}
-{"id": 445911, "field": "name", "en": "[DNT] Flower Scale", "hash": "290ab765af3fa3a4", "src": "db2@1.60.1.70245"}
-{"id": 445912, "field": "name", "en": "Atal'ai Serpent Totem", "hash": "efce650870ed9964", "src": "db2@1.60.1.70245"}
-{"id": 445913, "field": "name", "en": "Atal'ai Serpent Totem", "hash": "efce650870ed9964", "src": "db2@1.60.1.70245"}
-{"id": 445914, "field": "name", "en": "[DNT] Flower Growth", "hash": "3f79244ee066c1b1", "src": "db2@1.60.1.70245"}
-{"id": 445922, "field": "name", "en": "Atal'ai Serpent Totem", "hash": "efce650870ed9964", "src": "db2@1.60.1.70245"}
-{"id": 445923, "field": "name", "en": "Atal'ai Serpent Totem", "hash": "efce650870ed9964", "src": "db2@1.60.1.70245"}
-{"id": 445926, "field": "name", "en": "Atal'ai Serpent Totem", "hash": "efce650870ed9964", "src": "db2@1.60.1.70245"}
-{"id": 445927, "field": "name", "en": "Atal'ai Serpent Totem", "hash": "efce650870ed9964", "src": "db2@1.60.1.70245"}
-{"id": 445928, "field": "name", "en": "Atal'ai Serpent Totem", "hash": "efce650870ed9964", "src": "db2@1.60.1.70245"}
-{"id": 445929, "field": "name", "en": "Atal'ai Serpent Totem", "hash": "efce650870ed9964", "src": "db2@1.60.1.70245"}
-{"id": 445931, "field": "name", "en": "Atal'ai Serpent Totem", "hash": "efce650870ed9964", "src": "db2@1.60.1.70245"}
-{"id": 445934, "field": "name", "en": "Spinning Axes", "hash": "c97d576e7e971d1f", "src": "db2@1.60.1.70245"}
-{"id": 445937, "field": "name", "en": "[DNT] Move Passengers To Next Seat", "hash": "68e9c72130a3bb4a", "src": "db2@1.60.1.70245"}
-{"id": 445940, "field": "name", "en": "Unstable Cask", "hash": "b033a6bc47c244f1", "src": "db2@1.60.1.70245"}
-{"id": 445940, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70245"}
-{"id": 445985, "field": "name", "en": "[DNT] Vine Open", "hash": "f1118dea61b6180c", "src": "db2@1.60.1.70245"}
+{"id": 445000, "field": "name", "en": "Pillars of Might", "hash": "39e3fa5ea5616dcc", "src": "db2@1.60.1.70291"}
+{"id": 445080, "field": "name", "en": "Incite Madness", "hash": "525331756d22bc7d", "src": "db2@1.60.1.70291"}
+{"id": 445080, "field": "description", "en": "Turns targets hostile to everyone. Killing another player causes the player to gain $445081s1% movement speed for $445081d.", "hash": "00bac9871ecd893f", "src": "db2@1.60.1.70291"}
+{"id": 445080, "field": "aura", "en": "Hostile to everyone!", "hash": "d328716d6e415ec4", "src": "db2@1.60.1.70291"}
+{"id": 445081, "field": "name", "en": "Burning Madness", "hash": "bb207af83adf9785", "src": "db2@1.60.1.70291"}
+{"id": 445081, "field": "description", "en": "You killed another player! \r\nMovement speed increased by $s1% for $d.\r\n", "hash": "c7f737997da54913", "src": "db2@1.60.1.70291"}
+{"id": 445081, "field": "aura", "en": "You killed another player! \r\nMovement speed increased by $s1%.", "hash": "1e13113bc16e7063", "src": "db2@1.60.1.70291"}
+{"id": 445158, "field": "name", "en": "Lucid Dreaming", "hash": "ced048db8042f0c5", "src": "db2@1.60.1.70291"}
+{"id": 445158, "field": "aura", "en": "Trapped in the Emerald Nightmare, taking $s6 damage every $t6 seconds.", "hash": "f044fabbfeea3334", "src": "db2@1.60.1.70291"}
+{"id": 445168, "field": "name", "en": "Light and Dark", "hash": "824fdca0953c1ffc", "src": "db2@1.60.1.70291"}
+{"id": 445171, "field": "name", "en": "Light and Dark", "hash": "824fdca0953c1ffc", "src": "db2@1.60.1.70291"}
+{"id": 445181, "field": "name", "en": "Murky Sapta Sight", "hash": "c7d1067ee2e2be66", "src": "db2@1.60.1.70291"}
+{"id": 445181, "field": "description", "en": "Allows the shaman to see elemental spirits.", "hash": "eeb6883480ae85f1", "src": "db2@1.60.1.70291"}
+{"id": 445181, "field": "aura", "en": "Detect elemental spirits.", "hash": "5c91d9a4275d7f70", "src": "db2@1.60.1.70291"}
+{"id": 445185, "field": "name", "en": "Climbing Rope", "hash": "360fc9d65f9469ec", "src": "db2@1.60.1.70291"}
+{"id": 445187, "field": "name", "en": "Permanent Feign Death", "hash": "8d0656e759e47199", "src": "db2@1.60.1.70291"}
+{"id": 445188, "field": "name", "en": "[DNT] Sleeping Copy", "hash": "cf8996d8d8e72a0c", "src": "db2@1.60.1.70291"}
+{"id": 445189, "field": "name", "en": "Climbing Rope", "hash": "360fc9d65f9469ec", "src": "db2@1.60.1.70291"}
+{"id": 445190, "field": "name", "en": "[DNT] Sleeping Copy", "hash": "cf8996d8d8e72a0c", "src": "db2@1.60.1.70291"}
+{"id": 445198, "field": "name", "en": "[DNT] Sleeping Copy", "hash": "cf8996d8d8e72a0c", "src": "db2@1.60.1.70291"}
+{"id": 445201, "field": "name", "en": "Climbing Rope", "hash": "360fc9d65f9469ec", "src": "db2@1.60.1.70291"}
+{"id": 445202, "field": "name", "en": "Climbing Rope", "hash": "360fc9d65f9469ec", "src": "db2@1.60.1.70291"}
+{"id": 445220, "field": "name", "en": "[DNT] Sleeping Copy", "hash": "cf8996d8d8e72a0c", "src": "db2@1.60.1.70291"}
+{"id": 445222, "field": "name", "en": "[DNT] Sleeping Copy", "hash": "cf8996d8d8e72a0c", "src": "db2@1.60.1.70291"}
+{"id": 445230, "field": "name", "en": "[DNT] Exit Dream", "hash": "43199f99732ae4a4", "src": "db2@1.60.1.70291"}
+{"id": 445235, "field": "name", "en": "Lucid Dreaming", "hash": "ced048db8042f0c5", "src": "db2@1.60.1.70291"}
+{"id": 445235, "field": "description", "en": "Strikes enemies in a cone in front of the caster, knocking them back.", "hash": "61a1859ee1117be6", "src": "db2@1.60.1.70291"}
+{"id": 445279, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70291"}
+{"id": 445280, "field": "name", "en": "Exit Dream", "hash": "30f76f8f3f423455", "src": "db2@1.60.1.70291"}
+{"id": 445282, "field": "name", "en": "Disarm", "hash": "11c65ba41d91f3c9", "src": "db2@1.60.1.70291"}
+{"id": 445282, "field": "description", "en": "Disarm the enemy's weapon for $d.", "hash": "ef69889f9488cc16", "src": "db2@1.60.1.70291"}
+{"id": 445282, "field": "aura", "en": "Disarmed!", "hash": "98985ecd70538791", "src": "db2@1.60.1.70291"}
+{"id": 445283, "field": "name", "en": "Fervor", "hash": "c27b4a390af0853e", "src": "db2@1.60.1.70291"}
+{"id": 445284, "field": "name", "en": "Fervor", "hash": "c27b4a390af0853e", "src": "db2@1.60.1.70291"}
+{"id": 445284, "field": "aura", "en": "Attack speed and movement speed increased by $s1%.", "hash": "f1f5f5d4436add4b", "src": "db2@1.60.1.70291"}
+{"id": 445285, "field": "name", "en": "Blood Frenzy", "hash": "53e8cf6f4ddc508d", "src": "db2@1.60.1.70291"}
+{"id": 445286, "field": "name", "en": "Blood Frenzy", "hash": "53e8cf6f4ddc508d", "src": "db2@1.60.1.70291"}
+{"id": 445287, "field": "name", "en": "Spinning Axes", "hash": "c97d576e7e971d1f", "src": "db2@1.60.1.70291"}
+{"id": 445288, "field": "name", "en": "Spinning Axes", "hash": "c97d576e7e971d1f", "src": "db2@1.60.1.70291"}
+{"id": 445289, "field": "name", "en": "Spinning Axes", "hash": "c97d576e7e971d1f", "src": "db2@1.60.1.70291"}
+{"id": 445411, "field": "name", "en": "[DNT] Combat Pulse", "hash": "955a5d10dbec6ab8", "src": "db2@1.60.1.70291"}
+{"id": 445442, "field": "name", "en": "[DNT] AoE Damage Reduction", "hash": "e893041236acb904", "src": "db2@1.60.1.70291"}
+{"id": 445459, "field": "name", "en": "Explorer Imp", "hash": "4590add418e42d98", "src": "db2@1.60.1.70291"}
+{"id": 445459, "field": "description", "en": "Summon your Explorer Imp. Though it cannot fight, it can travel through portals to explore other worlds and bring back treasures.", "hash": "8c314203372ee113", "src": "db2@1.60.1.70291"}
+{"id": 445461, "field": "name", "en": "Test - Duel Talent - Grant Talent Groups", "hash": "69e55cdd81f633e8", "src": "db2@1.60.1.70291"}
+{"id": 445462, "field": "name", "en": "Test - Duel Talent - Activate Group 1", "hash": "260669505f52073d", "src": "db2@1.60.1.70291"}
+{"id": 445463, "field": "name", "en": "Test - Duel Talent - Activate Group 2", "hash": "260669515f52073e", "src": "db2@1.60.1.70291"}
+{"id": 445498, "field": "name", "en": "Bellowing Roar", "hash": "234ae4ce0ee8d5b1", "src": "db2@1.60.1.70291"}
+{"id": 445498, "field": "description", "en": "Releases a shaking roar, sending all enemies within $A1 yards fleeing in fear for $d.", "hash": "1fc080b0452b1300", "src": "db2@1.60.1.70291"}
+{"id": 445498, "field": "aura", "en": "Fleeing in fear!", "hash": "fa67e49b461af324", "src": "db2@1.60.1.70291"}
+{"id": 445501, "field": "name", "en": "Holy Smite", "hash": "c64a1c724bcc4e5c", "src": "db2@1.60.1.70291"}
+{"id": 445501, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70291"}
+{"id": 445514, "field": "name", "en": "Clarifying Air - Give Sapta", "hash": "4a289b9a3a816066", "src": "db2@1.60.1.70291"}
+{"id": 445517, "field": "name", "en": "Acid Shot", "hash": "af60014ed9c337e3", "src": "db2@1.60.1.70291"}
+{"id": 445517, "field": "description", "en": "Spits acid at a target, inflicting Nature damage.", "hash": "bebe369e11e5dd68", "src": "db2@1.60.1.70291"}
+{"id": 445522, "field": "name", "en": "Imp on a Mission", "hash": "766ba45c19827911", "src": "db2@1.60.1.70291"}
+{"id": 445522, "field": "aura", "en": "Your Explorer Imp is occupied.", "hash": "379ef4fdfe1cbc2c", "src": "db2@1.60.1.70291"}
+{"id": 445527, "field": "name", "en": "Dream Awakening", "hash": "640c915df911cd89", "src": "db2@1.60.1.70291"}
+{"id": 445530, "field": "name", "en": "Dream Awakening", "hash": "640c915df911cd89", "src": "db2@1.60.1.70291"}
+{"id": 445532, "field": "name", "en": "Dream Awakening", "hash": "640c915df911cd89", "src": "db2@1.60.1.70291"}
+{"id": 445544, "field": "name", "en": "Dream Awakening", "hash": "640c915df911cd89", "src": "db2@1.60.1.70291"}
+{"id": 445545, "field": "name", "en": "Dream Awakening", "hash": "640c915df911cd89", "src": "db2@1.60.1.70291"}
+{"id": 445548, "field": "name", "en": "Dream Awakening", "hash": "640c915df911cd89", "src": "db2@1.60.1.70291"}
+{"id": 445551, "field": "name", "en": "Devour", "hash": "cbfa173881b3e632", "src": "db2@1.60.1.70291"}
+{"id": 445552, "field": "name", "en": "Fire Patch", "hash": "b3cb6d109bb5c669", "src": "db2@1.60.1.70291"}
+{"id": 445555, "field": "name", "en": "On Fire!!", "hash": "898cf2f15213365f", "src": "db2@1.60.1.70291"}
+{"id": 445555, "field": "aura", "en": "You're on fire! Forced to run, and taking $s3 fire damage every $t3  seconds.", "hash": "d12cde9f74520581", "src": "db2@1.60.1.70291"}
+{"id": 445558, "field": "name", "en": "Meathook", "hash": "8708f78827592d97", "src": "db2@1.60.1.70291"}
+{"id": 445558, "field": "description", "en": "Throw out a hooked chain to restrain the target and pull them toward you.", "hash": "752fe057c7f2fb5f", "src": "db2@1.60.1.70291"}
+{"id": 445567, "field": "name", "en": "Acid Rain", "hash": "af3bdb5c3090aa51", "src": "db2@1.60.1.70291"}
+{"id": 445571, "field": "name", "en": "Acid Rain", "hash": "af3bdb5c3090aa51", "src": "db2@1.60.1.70291"}
+{"id": 445571, "field": "description", "en": "$@spelldesc445575", "hash": "b3676a6c2c7857b2", "src": "db2@1.60.1.70291"}
+{"id": 445573, "field": "name", "en": "Acid Rain", "hash": "af3bdb5c3090aa51", "src": "db2@1.60.1.70291"}
+{"id": 445575, "field": "name", "en": "Acid Rain", "hash": "af3bdb5c3090aa51", "src": "db2@1.60.1.70291"}
+{"id": 445575, "field": "description", "en": "Acid rain falls from above, inflicting $s1 Nature damage to players struck.", "hash": "d27b3641aee9d68a", "src": "db2@1.60.1.70291"}
+{"id": 445578, "field": "name", "en": "Fire Patch", "hash": "b3cb6d109bb5c669", "src": "db2@1.60.1.70291"}
+{"id": 445703, "field": "name", "en": "Sleepy Time", "hash": "2cea713267a6bdf2", "src": "db2@1.60.1.70291"}
+{"id": 445716, "field": "name", "en": "[DNT] Visual Knockback", "hash": "8c363b1ed1e68d0d", "src": "db2@1.60.1.70291"}
+{"id": 445748, "field": "name", "en": "Combine Fragment of Air", "hash": "ad8386eff0a200ba", "src": "db2@1.60.1.70291"}
+{"id": 445748, "field": "description", "en": "Combine the Fragment of Air with Elemental Essences. May help with finding the corrupted shrine.", "hash": "13e8c532b5606773", "src": "db2@1.60.1.70291"}
+{"id": 445770, "field": "name", "en": "Spinning Axes", "hash": "c97d576e7e971d1f", "src": "db2@1.60.1.70291"}
+{"id": 445799, "field": "name", "en": "Vision of Moderate Manifestations", "hash": "ad31f1a7eeb669a0", "src": "db2@1.60.1.70291"}
+{"id": 445800, "field": "name", "en": "Vision of Moderate Manifestations", "hash": "ad31f1a7eeb669a0", "src": "db2@1.60.1.70291"}
+{"id": 445801, "field": "name", "en": "Prismatic Shell", "hash": "17b805fee850956a", "src": "db2@1.60.1.70291"}
+{"id": 445801, "field": "aura", "en": "Resilient shell.", "hash": "d1ceef8a8c30a321", "src": "db2@1.60.1.70291"}
+{"id": 445816, "field": "name", "en": "[DNT] End Mission", "hash": "a84aaedbca2f2969", "src": "db2@1.60.1.70291"}
+{"id": 445821, "field": "name", "en": "Spinning Axes", "hash": "c97d576e7e971d1f", "src": "db2@1.60.1.70291"}
+{"id": 445853, "field": "name", "en": "[DNT] Dream Portal", "hash": "a00c19be399b25e6", "src": "db2@1.60.1.70291"}
+{"id": 445867, "field": "name", "en": "Recurrent Nightmare", "hash": "5423f58d23a4c4d8", "src": "db2@1.60.1.70291"}
+{"id": 445867, "field": "aura", "en": "Haunted  by emerald illusions until you face your fear, allowing it to pass through you.", "hash": "2376668f2726bd0b", "src": "db2@1.60.1.70291"}
+{"id": 445868, "field": "name", "en": "Costly Awakening", "hash": "f486de21265749aa", "src": "db2@1.60.1.70291"}
+{"id": 445868, "field": "aura", "en": "Awake, but at what cost?", "hash": "578bedc2757d2e08", "src": "db2@1.60.1.70291"}
+{"id": 445870, "field": "name", "en": "Eye of Ysera", "hash": "f5bdf1ae7c55fb39", "src": "db2@1.60.1.70291"}
+{"id": 445870, "field": "aura", "en": "Between fleeting dreams.", "hash": "5af9a02e290310c5", "src": "db2@1.60.1.70291"}
+{"id": 445871, "field": "name", "en": "Grace of the Dreamer", "hash": "1225962f1ba8cb86", "src": "db2@1.60.1.70291"}
+{"id": 445871, "field": "aura", "en": "Enchanted with lightness of the dreamers.\r\nDexterity of allies increased.", "hash": "6341c06a2a84b7c5", "src": "db2@1.60.1.70291"}
+{"id": 445875, "field": "name", "en": "Gloom", "hash": "ece39810339781d0", "src": "db2@1.60.1.70291"}
+{"id": 445875, "field": "aura", "en": "Harrowed by glimpses of the nightmare.\r\nSuffering harmful effects.", "hash": "bc2a109e648a4c2b", "src": "db2@1.60.1.70291"}
+{"id": 445911, "field": "name", "en": "[DNT] Flower Scale", "hash": "290ab765af3fa3a4", "src": "db2@1.60.1.70291"}
+{"id": 445912, "field": "name", "en": "Atal'ai Serpent Totem", "hash": "efce650870ed9964", "src": "db2@1.60.1.70291"}
+{"id": 445913, "field": "name", "en": "Atal'ai Serpent Totem", "hash": "efce650870ed9964", "src": "db2@1.60.1.70291"}
+{"id": 445914, "field": "name", "en": "[DNT] Flower Growth", "hash": "3f79244ee066c1b1", "src": "db2@1.60.1.70291"}
+{"id": 445922, "field": "name", "en": "Atal'ai Serpent Totem", "hash": "efce650870ed9964", "src": "db2@1.60.1.70291"}
+{"id": 445923, "field": "name", "en": "Atal'ai Serpent Totem", "hash": "efce650870ed9964", "src": "db2@1.60.1.70291"}
+{"id": 445926, "field": "name", "en": "Atal'ai Serpent Totem", "hash": "efce650870ed9964", "src": "db2@1.60.1.70291"}
+{"id": 445927, "field": "name", "en": "Atal'ai Serpent Totem", "hash": "efce650870ed9964", "src": "db2@1.60.1.70291"}
+{"id": 445928, "field": "name", "en": "Atal'ai Serpent Totem", "hash": "efce650870ed9964", "src": "db2@1.60.1.70291"}
+{"id": 445929, "field": "name", "en": "Atal'ai Serpent Totem", "hash": "efce650870ed9964", "src": "db2@1.60.1.70291"}
+{"id": 445931, "field": "name", "en": "Atal'ai Serpent Totem", "hash": "efce650870ed9964", "src": "db2@1.60.1.70291"}
+{"id": 445934, "field": "name", "en": "Spinning Axes", "hash": "c97d576e7e971d1f", "src": "db2@1.60.1.70291"}
+{"id": 445937, "field": "name", "en": "[DNT] Move Passengers To Next Seat", "hash": "68e9c72130a3bb4a", "src": "db2@1.60.1.70291"}
+{"id": 445940, "field": "name", "en": "Unstable Cask", "hash": "b033a6bc47c244f1", "src": "db2@1.60.1.70291"}
+{"id": 445940, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70291"}
+{"id": 445985, "field": "name", "en": "[DNT] Vine Open", "hash": "f1118dea61b6180c", "src": "db2@1.60.1.70291"}

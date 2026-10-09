@@ -40,8 +40,8 @@ local FINGERPRINT_PREFIXES = { "^ItemSubClass:", "^SpellItemEnchantment:", "^Spe
   -- the auction house's long subclass names, the barber shop, the PvP scoreboard, the group
   -- finder, the UI widgets' lines (numbered rows) and the wardrobe's variant words
   "^ItemSubClassName:", "^CustomizationCategory:", "^CustomizationOption:", "^CustomizationChoice:",
-  "^CustomizationSource:", "^PvpColumn:", "^PvpColumnTooltip:", "^LfgCategory:", "^LfgActivityGroup:",
-  "^LfgActivity:", "^WidgetText:", "^ItemNameDescription:",
+  "^CustomizationSource:", "^PvpColumn:", "^PvpColumnTooltip:", "^PvpStat:", "^LfgCategory:",
+  "^LfgActivityGroup:", "^LfgActivity:", "^WidgetText:", "^ItemNameDescription:",
   -- the families the served-text inventory found shown on Forever (ADR-052)
   "^CriteriaText:", "^RenownRewardName:", "^RenownRewardDescription:", "^RenownRewardToast:", "^SharedString:",
   "^TradeSkillCategory:", "^MailBody:", "^QuestTag:", "^AreaPoiDescription:", "^AreaPoiState:", "^PetLoyalty:",
@@ -67,8 +67,8 @@ local RESTRICTED_PREFIXES = { "^FactionDescription:", "^AchievementTitle:", "^Ac
   "^AchievementReward:", "^AchievementCategory:", "^SkillLineDescription:", "^SkillCategory:", "^EmoteText:",
   "^HolidayDescription:", "^CurrencyDescription:", "^CurrencyCategory:", "^DispelType:", "^CreatureType:",
   "^QuestSort:", "^ItemSubClassName:", "^CustomizationCategory:", "^CustomizationOption:", "^CustomizationChoice:",
-  "^CustomizationSource:", "^PvpColumn:", "^PvpColumnTooltip:", "^LfgCategory:", "^LfgActivityGroup:",
-  "^LfgActivity:", "^WidgetText:", "^ItemNameDescription:",
+  "^CustomizationSource:", "^PvpColumn:", "^PvpColumnTooltip:", "^PvpStat:", "^LfgCategory:",
+  "^LfgActivityGroup:", "^LfgActivity:", "^WidgetText:", "^ItemNameDescription:",
   "^CriteriaText:", "^RenownRewardName:", "^RenownRewardDescription:", "^RenownRewardToast:", "^SharedString:",
   "^TradeSkillCategory:", "^MailBody:", "^QuestTag:", "^AreaPoiDescription:", "^AreaPoiState:", "^PetLoyalty:",
   "^PvpLongDescription:", "^Difficulty:", "^EventToastText:", "^BroadcastText:", "^PetFood:", "^RestState:",

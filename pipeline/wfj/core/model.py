@@ -81,6 +81,7 @@ UI_FAMILIES = (
     "CustomizationSource",
     "PvpColumn",
     "PvpColumnTooltip",
+    "PvpStat",
     "LfgCategory",
     "LfgActivityGroup",
     "LfgActivity",

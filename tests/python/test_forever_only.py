@@ -13,7 +13,7 @@ from wfj.io import wago, wdb
 from wfj.io.jsonl_store import Store
 
 ADDON = Path("addon/WoWForeverJapanese")
-FOREVER = "forever-1.60.1.70245"
+FOREVER = "forever-1.60.1.70291"
 
 # Globals only the Classic Era UI defines (the Era target survey in docs/research/). A name
 # preceded by a word character or a dot is another name or a Forever child key (`PlayerSpellsFrame.SpellBookFrame`,

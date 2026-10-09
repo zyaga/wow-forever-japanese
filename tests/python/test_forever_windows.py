@@ -115,7 +115,7 @@ def test_title_dispositions_are_well_formed():
 
 
 def test_every_set_title_site_of_a_surface_addon_is_dispositioned():
-    default = ROOT / "predecessors/forever-ui-1.60.1.70245/interface/addons"
+    default = ROOT / "predecessors/forever-ui-1.60.1.70291/interface/addons"
     addons = Path(os.environ["WFJ_FOREVER_UI"]) if "WFJ_FOREVER_UI" in os.environ else default
     if not addons.is_dir():
         pytest.skip("no Forever UI extract")

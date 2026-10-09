@@ -1,29 +1,29 @@
-{"id": 1285372, "field": "name", "en": "Vanish", "hash": "33fc8f163ea666f6", "src": "db2@1.60.1.70245"}
-{"id": 1285372, "field": "description", "en": "Allows the rogue to vanish from sight, entering an improved stealth mode for $11329d.  Also breaks movement impairing effects. More effective than Vanish (Rank 2).", "hash": "d5429bbb2d90c953", "src": "db2@1.60.1.70245"}
-{"id": 1285372, "field": "aura", "en": "Improved stealth.", "hash": "ad8eb7ec08149c5c", "src": "db2@1.60.1.70245"}
-{"id": 1285699, "field": "name", "en": "Activate", "hash": "6fe8ceb4f8802433", "src": "db2@1.60.1.70245"}
-{"id": 1285700, "field": "name", "en": "Activate", "hash": "6fe8ceb4f8802433", "src": "db2@1.60.1.70245"}
-{"id": 1285701, "field": "name", "en": "Activate", "hash": "6fe8ceb4f8802433", "src": "db2@1.60.1.70245"}
-{"id": 1285702, "field": "name", "en": "Activate", "hash": "6fe8ceb4f8802433", "src": "db2@1.60.1.70245"}
-{"id": 1285704, "field": "name", "en": "Elbow Grease Applied", "hash": "312df5778f0ffde2", "src": "db2@1.60.1.70245"}
-{"id": 1285824, "field": "name", "en": "Pushing the Button", "hash": "97e2bea4e0b3963d", "src": "db2@1.60.1.70245"}
-{"id": 1285835, "field": "name", "en": "Channeling Crystal", "hash": "432f76965fe445b8", "src": "db2@1.60.1.70245"}
-{"id": 1285835, "field": "description", "en": "Channeling a crystal.", "hash": "241a97d58ddf5265", "src": "db2@1.60.1.70245"}
-{"id": 1285849, "field": "name", "en": "Galestrider Riding", "hash": "c31782a785bd983f", "src": "db2@1.60.1.70245"}
-{"id": 1285853, "field": "name", "en": "Galestrider Riding", "hash": "c31782a785bd983f", "src": "db2@1.60.1.70245"}
-{"id": 1285853, "field": "description", "en": "Allows the player to ride a galestrider.", "hash": "69124a9d02bef0f9", "src": "db2@1.60.1.70245"}
-{"id": 1285903, "field": "name", "en": "Being Hunted...", "hash": "97d228d5aa529cf0", "src": "db2@1.60.1.70245"}
-{"id": 1285903, "field": "description", "en": "You are being hunted... good luck.", "hash": "20b750e01395ae1b", "src": "db2@1.60.1.70245"}
-{"id": 1285903, "field": "aura", "en": "You are being hunted. You probably shouldn't be here.", "hash": "6a42debc0bf24a36", "src": "db2@1.60.1.70245"}
-{"id": 1285919, "field": "name", "en": "Load Glaive", "hash": "c7c3d9827c0ca0d1", "src": "db2@1.60.1.70245"}
-{"id": 1285919, "field": "description", "en": "Loads a glaive to be fired.", "hash": "9e48aef1ef0a53c5", "src": "db2@1.60.1.70245"}
-{"id": 1285922, "field": "name", "en": "Load Glaive", "hash": "c7c3d9827c0ca0d1", "src": "db2@1.60.1.70245"}
-{"id": 1285922, "field": "description", "en": "Loads a glaive to be fired.", "hash": "9e48aef1ef0a53c5", "src": "db2@1.60.1.70245"}
-{"id": 1285982, "field": "name", "en": "Channeling Crystal", "hash": "432f76965fe445b8", "src": "db2@1.60.1.70245"}
-{"id": 1285983, "field": "name", "en": "Channeling Crystal", "hash": "432f76965fe445b8", "src": "db2@1.60.1.70245"}
-{"id": 1285990, "field": "name", "en": "Howling Wind", "hash": "f8180973a3df9495", "src": "db2@1.60.1.70245"}
-{"id": 1285992, "field": "name", "en": "Incendiary Shot", "hash": "562056d315388c74", "src": "db2@1.60.1.70245"}
-{"id": 1285994, "field": "name", "en": "Freezing Trap", "hash": "4db0317569a02ad0", "src": "db2@1.60.1.70245"}
-{"id": 1285995, "field": "name", "en": "Attuned", "hash": "dd52c30c051aeaff", "src": "db2@1.60.1.70245"}
-{"id": 1285996, "field": "name", "en": "Attuned", "hash": "dd52c30c051aeaff", "src": "db2@1.60.1.70245"}
-{"id": 1285997, "field": "name", "en": "Attuned", "hash": "dd52c30c051aeaff", "src": "db2@1.60.1.70245"}
+{"id": 1285372, "field": "name", "en": "Vanish", "hash": "33fc8f163ea666f6", "src": "db2@1.60.1.70291"}
+{"id": 1285372, "field": "description", "en": "Allows the rogue to vanish from sight, entering an improved stealth mode for $11329d. Also breaks movement impairing effects. More effective than Vanish (Rank 2).", "hash": "d5429bbb2d90c953", "src": "db2@1.60.1.70291"}
+{"id": 1285372, "field": "aura", "en": "Improved stealth.", "hash": "ad8eb7ec08149c5c", "src": "db2@1.60.1.70291"}
+{"id": 1285699, "field": "name", "en": "Activate", "hash": "6fe8ceb4f8802433", "src": "db2@1.60.1.70291"}
+{"id": 1285700, "field": "name", "en": "Activate", "hash": "6fe8ceb4f8802433", "src": "db2@1.60.1.70291"}
+{"id": 1285701, "field": "name", "en": "Activate", "hash": "6fe8ceb4f8802433", "src": "db2@1.60.1.70291"}
+{"id": 1285702, "field": "name", "en": "Activate", "hash": "6fe8ceb4f8802433", "src": "db2@1.60.1.70291"}
+{"id": 1285704, "field": "name", "en": "Elbow Grease Applied", "hash": "312df5778f0ffde2", "src": "db2@1.60.1.70291"}
+{"id": 1285824, "field": "name", "en": "Pushing the Button", "hash": "97e2bea4e0b3963d", "src": "db2@1.60.1.70291"}
+{"id": 1285835, "field": "name", "en": "Channeling Crystal", "hash": "432f76965fe445b8", "src": "db2@1.60.1.70291"}
+{"id": 1285835, "field": "description", "en": "Channeling a crystal.", "hash": "241a97d58ddf5265", "src": "db2@1.60.1.70291"}
+{"id": 1285849, "field": "name", "en": "Galestrider Riding", "hash": "c31782a785bd983f", "src": "db2@1.60.1.70291"}
+{"id": 1285853, "field": "name", "en": "Galestrider Riding", "hash": "c31782a785bd983f", "src": "db2@1.60.1.70291"}
+{"id": 1285853, "field": "description", "en": "Allows the player to ride a galestrider.", "hash": "69124a9d02bef0f9", "src": "db2@1.60.1.70291"}
+{"id": 1285903, "field": "name", "en": "Being Hunted...", "hash": "97d228d5aa529cf0", "src": "db2@1.60.1.70291"}
+{"id": 1285903, "field": "description", "en": "You are being hunted... good luck.", "hash": "20b750e01395ae1b", "src": "db2@1.60.1.70291"}
+{"id": 1285903, "field": "aura", "en": "You are being hunted. You probably shouldn't be here.", "hash": "6a42debc0bf24a36", "src": "db2@1.60.1.70291"}
+{"id": 1285919, "field": "name", "en": "Load Glaive", "hash": "c7c3d9827c0ca0d1", "src": "db2@1.60.1.70291"}
+{"id": 1285919, "field": "description", "en": "Loads a glaive to be fired.", "hash": "9e48aef1ef0a53c5", "src": "db2@1.60.1.70291"}
+{"id": 1285922, "field": "name", "en": "Load Glaive", "hash": "c7c3d9827c0ca0d1", "src": "db2@1.60.1.70291"}
+{"id": 1285922, "field": "description", "en": "Loads a glaive to be fired.", "hash": "9e48aef1ef0a53c5", "src": "db2@1.60.1.70291"}
+{"id": 1285982, "field": "name", "en": "Channeling Crystal", "hash": "432f76965fe445b8", "src": "db2@1.60.1.70291"}
+{"id": 1285983, "field": "name", "en": "Channeling Crystal", "hash": "432f76965fe445b8", "src": "db2@1.60.1.70291"}
+{"id": 1285990, "field": "name", "en": "Howling Wind", "hash": "f8180973a3df9495", "src": "db2@1.60.1.70291"}
+{"id": 1285992, "field": "name", "en": "Incendiary Shot", "hash": "562056d315388c74", "src": "db2@1.60.1.70291"}
+{"id": 1285994, "field": "name", "en": "Freezing Trap", "hash": "4db0317569a02ad0", "src": "db2@1.60.1.70291"}
+{"id": 1285995, "field": "name", "en": "Attuned", "hash": "dd52c30c051aeaff", "src": "db2@1.60.1.70291"}
+{"id": 1285996, "field": "name", "en": "Attuned", "hash": "dd52c30c051aeaff", "src": "db2@1.60.1.70291"}
+{"id": 1285997, "field": "name", "en": "Attuned", "hash": "dd52c30c051aeaff", "src": "db2@1.60.1.70291"}

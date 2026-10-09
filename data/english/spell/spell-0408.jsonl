@@ -1,166 +1,166 @@
-{"id": 408013, "field": "name", "en": "Blackfathom Elite Spawner", "hash": "e7f153c740575168", "src": "db2@1.60.1.70245"}
-{"id": 408014, "field": "name", "en": "Spawn Blackfathom Elite", "hash": "4255107e7fb42aeb", "src": "db2@1.60.1.70245"}
-{"id": 408024, "field": "name", "en": "Survival Instincts", "hash": "45565dc8f2b7d82f", "src": "db2@1.60.1.70245"}
-{"id": 408024, "field": "description", "en": "When activated, this grants you $408025s1% of your maximum health and increases all non-Physical healing you deal by $s1% for $d. After the effect expires, the health is lost. Useable in all forms except Moonkin Form.\r\n\r\nIn addition, you regenerate $417051s2 rage every time you dodge while in Bear Form or Dire Bear Form, $417051s3 energy while in Cat Form, or $417051s4% of your maximum mana while in any other form.", "hash": "f0735027b5b4958f", "src": "db2@1.60.1.70245"}
-{"id": 408024, "field": "aura", "en": "Health increased by $408025s1% of maximum.", "hash": "414996c4295f3f80", "src": "db2@1.60.1.70245"}
-{"id": 408025, "field": "name", "en": "Survival Instincts", "hash": "45565dc8f2b7d82f", "src": "db2@1.60.1.70245"}
-{"id": 408035, "field": "name", "en": "Damien Kane - Trade Souls for Rune", "hash": "b439196d79c00c03", "src": "db2@1.60.1.70245"}
-{"id": 408120, "field": "name", "en": "Wild Growth", "hash": "30b5dec6664d133b", "src": "db2@1.60.1.70245"}
-{"id": 408120, "field": "description", "en": "Heals the target and their party for $o1 over $d. Party members must be within $a1 yards of target. The amount healed is applied quickly at first, and slows down as Wild Growth reaches its full duration.", "hash": "1cb536f674efa343", "src": "db2@1.60.1.70245"}
-{"id": 408120, "field": "aura", "en": "Heals $w1 damage every $t1 second.", "hash": "cf751a776967db26", "src": "db2@1.60.1.70245"}
-{"id": 408124, "field": "name", "en": "Lifebloom", "hash": "394ab18f51adbe7a", "src": "db2@1.60.1.70245"}
-{"id": 408124, "field": "description", "en": "Heals the target for ${$m1/100*7*$<healpower>} over $d.  When Lifebloom completes its duration or is dispelled, the target instantly heals for ${$m2/100*$<healpower>} and the Druid regains half the cost of the spell.  This effect can stack up to $u times on the same target.\r\n", "hash": "8ddbb67346301682", "src": "db2@1.60.1.70245"}
-{"id": 408124, "field": "aura", "en": "Heals $w1 every second and $w2 when effect finishes or is dispelled.", "hash": "57b19551fdc1a057", "src": "db2@1.60.1.70245"}
-{"id": 408245, "field": "name", "en": "Lifebloom", "hash": "394ab18f51adbe7a", "src": "db2@1.60.1.70245"}
-{"id": 408245, "field": "description", "en": "Heals the target over 7 sec.  When Lifebloom completes its duration or is dispelled, the target instantly heals.  This effect can stack up to 3 times on the same target.", "hash": "2a59bfb7060efa39", "src": "db2@1.60.1.70245"}
-{"id": 408246, "field": "name", "en": "Lifebloom", "hash": "394ab18f51adbe7a", "src": "db2@1.60.1.70245"}
-{"id": 408246, "field": "description", "en": "Gaining mana when Lifebloom expires.", "hash": "a7aa89d106793460", "src": "db2@1.60.1.70245"}
-{"id": 408247, "field": "name", "en": "Nourish", "hash": "31f5e33ce8eb3a95", "src": "db2@1.60.1.70245"}
-{"id": 408247, "field": "description", "en": "Heals a friendly target for ${$m1/100*$<healpower>} to ${$M1/100*$<healpower>}. Heals for an additional 20% if you have a Rejuvenation, Regrowth, Lifebloom, or Wild Growth effect active on the target. This spell benefits from and triggers all effects associated with Healing Touch or Regrowth.", "hash": "2a601efaed8e57f7", "src": "db2@1.60.1.70245"}
-{"id": 408248, "field": "name", "en": "Eclipse", "hash": "6e4bc030610fce1a", "src": "db2@1.60.1.70245"}
-{"id": 408248, "field": "description", "en": "Your Wrath spell reduces the cast time of your next $s3 Starfire spells by ${$m2/-1000}.2 sec. Stores up to $408255u charges. Lasts $408255d.", "hash": "90e893e0e4fcdb98", "src": "db2@1.60.1.70245"}
-{"id": 408255, "field": "name", "en": "Eclipse", "hash": "6e4bc030610fce1a", "src": "db2@1.60.1.70245"}
-{"id": 408255, "field": "aura", "en": "Your next $m2 Starfire $Lcast has:casts have; ${$w1/$w2/1000}.1 sec reduced cast time.", "hash": "727e4f275e915d9c", "src": "db2@1.60.1.70245"}
-{"id": 408258, "field": "name", "en": "Dreamstate", "hash": "274747de7b5a7bd8", "src": "db2@1.60.1.70245"}
-{"id": 408258, "field": "description", "en": "Your damaging non-periodic spell critical strikes grant you $m1% of your mana regeneration while casting for $408261d.", "hash": "0e52fe0b7ff6821c", "src": "db2@1.60.1.70245"}
-{"id": 408261, "field": "name", "en": "Dreamstate", "hash": "274747de7b5a7bd8", "src": "db2@1.60.1.70245"}
-{"id": 408261, "field": "description", "en": "Allows $s1% of your Mana regeneration to continue while casting.", "hash": "86815c0ca3893a62", "src": "db2@1.60.1.70245"}
-{"id": 408261, "field": "aura", "en": "Regenerating $w1% of your normal Mana regeneration while casting spells.", "hash": "7a27f000a607159e", "src": "db2@1.60.1.70245"}
-{"id": 408307, "field": "name", "en": "Nature's Fury", "hash": "8e4743d3f2e84977", "src": "db2@1.60.1.70245"}
-{"id": 408307, "field": "description", "en": "Increases your healing power by $s2% of your Nature spell damage for $d.", "hash": "582306b5325e0b83", "src": "db2@1.60.1.70245"}
-{"id": 408307, "field": "aura", "en": "Healing power increased by $w2.", "hash": "fda8744ac696ee4b", "src": "db2@1.60.1.70245"}
-{"id": 408309, "field": "name", "en": "Grace of Elune", "hash": "d185c34bf44ec02e", "src": "db2@1.60.1.70245"}
-{"id": 408309, "field": "description", "en": "Increases your spell damage by $s2% of the difference between your healing power and spell damage. Lasts $d.", "hash": "d596949eeaea525b", "src": "db2@1.60.1.70245"}
-{"id": 408309, "field": "aura", "en": "Spell damage increased by $w2.", "hash": "62dc13bdcc02d8bd", "src": "db2@1.60.1.70245"}
-{"id": 408339, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70245"}
-{"id": 408339, "field": "description", "en": "Your Fire Nova Totem spell is replaced with Fire Nova, which causes your current Fire totem to emit damage at its location.", "hash": "2cf7852b92b7515d", "src": "db2@1.60.1.70245"}
-{"id": 408341, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70245"}
-{"id": 408341, "field": "description", "en": "Instantly inflicts $8349s1 fire damage to enemies within $8349a1 yd of your active Fire totem.", "hash": "7d542fd2097f952a", "src": "db2@1.60.1.70245"}
-{"id": 408342, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70245"}
-{"id": 408342, "field": "description", "en": "Instantly inflicts $8502s1 fire damage to enemies within $8502a1 yd of your active Fire totem.", "hash": "e2e3227a99449a49", "src": "db2@1.60.1.70245"}
-{"id": 408343, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70245"}
-{"id": 408343, "field": "description", "en": "Instantly inflicts $8503s1 fire damage to enemies within $8503a1 yd of your active Fire totem.", "hash": "0fd89bbdb24616cd", "src": "db2@1.60.1.70245"}
-{"id": 408344, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70245"}
-{"id": 408344, "field": "description", "en": "Instantly inflicts $11306s1 fire damage to enemies within $11306a1 yd of your active Fire totem.", "hash": "1e226b62f8a063b0", "src": "db2@1.60.1.70245"}
-{"id": 408345, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70245"}
-{"id": 408345, "field": "description", "en": "Instantly inflicts $11307s1 fire damage to enemies within $11307a1 yd of your active Fire totem.", "hash": "2fb7f4c2a878292c", "src": "db2@1.60.1.70245"}
-{"id": 408423, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70245"}
-{"id": 408424, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70245"}
-{"id": 408426, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70245"}
-{"id": 408427, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70245"}
-{"id": 408428, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70245"}
-{"id": 408438, "field": "name", "en": "Lightning Overload", "hash": "975e4b147c142b2a", "src": "db2@1.60.1.70245"}
-{"id": 408438, "field": "description", "en": "Gives your Lightning Bolt and Chain Lightning spells a $m1% chance to cast a second, similar spell on the same target at no additional cost that causes half damage and no threat.\r\n", "hash": "43e46bfc869d3cb4", "src": "db2@1.60.1.70245"}
-{"id": 408439, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70245"}
-{"id": 408439, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70245"}
-{"id": 408440, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70245"}
-{"id": 408440, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70245"}
-{"id": 408441, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70245"}
-{"id": 408441, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70245"}
-{"id": 408442, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70245"}
-{"id": 408442, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70245"}
-{"id": 408443, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70245"}
-{"id": 408443, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70245"}
-{"id": 408472, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70245"}
-{"id": 408472, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70245"}
-{"id": 408473, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70245"}
-{"id": 408473, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70245"}
-{"id": 408474, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70245"}
-{"id": 408474, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70245"}
-{"id": 408475, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70245"}
-{"id": 408475, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70245"}
-{"id": 408477, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70245"}
-{"id": 408477, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70245"}
-{"id": 408479, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70245"}
-{"id": 408479, "field": "description", "en": "Hurls a lightning bolt at the enemy, dealing $s1 Nature damage and then jumping to additional nearby enemies.  Each jump reduces the damage by 30%.  Affects $x1 total targets.", "hash": "bf3e3b89750c0031", "src": "db2@1.60.1.70245"}
-{"id": 408481, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70245"}
-{"id": 408481, "field": "description", "en": "Hurls a lightning bolt at the enemy, dealing $s1 Nature damage and then jumping to additional nearby enemies.  Each jump reduces the damage by 30%.  Affects $x1 total targets.", "hash": "bf3e3b89750c0031", "src": "db2@1.60.1.70245"}
-{"id": 408482, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70245"}
-{"id": 408482, "field": "description", "en": "Hurls a lightning bolt at the enemy, dealing $s1 Nature damage and then jumping to additional nearby enemies.  Each jump reduces the damage by 30%.  Affects $x1 total targets.", "hash": "bf3e3b89750c0031", "src": "db2@1.60.1.70245"}
-{"id": 408484, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70245"}
-{"id": 408484, "field": "description", "en": "Hurls a lightning bolt at the enemy, dealing $s1 Nature damage and then jumping to additional nearby enemies.  Each jump reduces the damage by 30%.  Affects $x1 total targets.", "hash": "bf3e3b89750c0031", "src": "db2@1.60.1.70245"}
-{"id": 408490, "field": "name", "en": "Lava Burst", "hash": "444a2bbd50295ec5", "src": "db2@1.60.1.70245"}
-{"id": 408490, "field": "description", "en": "You hurl molten lava at the target, dealing $s1 Fire damage. If your Flame Shock is on the target, Lava Burst deals $s2% increased damage.", "hash": "c9c1c7830a12da5b", "src": "db2@1.60.1.70245"}
-{"id": 408491, "field": "name", "en": "Lava Burst", "hash": "444a2bbd50295ec5", "src": "db2@1.60.1.70245"}
-{"id": 408491, "field": "description", "en": "You hurl molten lava at the target, dealing $s1 Fire damage. If your Flame Shock is on the target, Lava Burst deals $408490s2% increased damage.", "hash": "2838b0c83e1f6039", "src": "db2@1.60.1.70245"}
-{"id": 408496, "field": "name", "en": "Dual Wield Specialization", "hash": "42d34dcf2ff20d11", "src": "db2@1.60.1.70245"}
-{"id": 408496, "field": "description", "en": "Increases your chance to hit with both spells and melee attacks by $s1% while dual wielding, your Stormstrike ability now hits with both weapons while dual wielding, and increases the damage done by your offhand weapon by $s3%.", "hash": "33e038b0c2e58818", "src": "db2@1.60.1.70245"}
-{"id": 408498, "field": "name", "en": "Maelstrom Weapon", "hash": "34a909cc36a0eb49", "src": "db2@1.60.1.70245"}
-{"id": 408498, "field": "description", "en": "When you deal damage with a melee attack, you have a chance to reduce the cast time and Mana cost of your next Lightning Bolt spell by $m1%. Stacks up to $s3 times. Lasts $408505d.", "hash": "9a6cb9c7d97cbfea", "src": "db2@1.60.1.70245"}
-{"id": 408501, "field": "name", "en": "Maelstrom Ready!", "hash": "4b1070116f4eaa5c", "src": "db2@1.60.1.70245"}
-{"id": 408505, "field": "name", "en": "Maelstrom Weapon", "hash": "34a909cc36a0eb49", "src": "db2@1.60.1.70245"}
-{"id": 408505, "field": "description", "en": "Reduces the cast time and Mana cost of your next Lightning Bolt spell.", "hash": "e17bbdf53e4f3e7c", "src": "db2@1.60.1.70245"}
-{"id": 408505, "field": "aura", "en": "Reduces the cast time and Mana cost of your next Lightning Bolt spell by $w1%.", "hash": "f55df514ce3fe4d8", "src": "db2@1.60.1.70245"}
-{"id": 408507, "field": "name", "en": "Lava Lash", "hash": "50023d7d5ca1a5e4", "src": "db2@1.60.1.70245"}
-{"id": 408507, "field": "description", "en": "You charge your off-hand weapon with lava, instantly dealing $s1% off-hand Weapon damage. Damage is increased by $s2% if your off-hand weapon is enchanted with Flametongue.", "hash": "fd5176b5e770cae3", "src": "db2@1.60.1.70245"}
-{"id": 408510, "field": "name", "en": "Water Shield", "hash": "7954b66392d2a477", "src": "db2@1.60.1.70245"}
-{"id": 408510, "field": "description", "en": "The caster is surrounded by $n globes of water. When a spell, melee, or ranged attack hits the caster or when one of the caster's healing spells gets a critical result, $408511s1% of maximum mana is restored to the caster, expending one water globe. Only one globe will activate every few seconds.  Lasts $d.\r\n\r\nOnly one Elemental Shield can be active on the Shaman at any one time.", "hash": "4b7bfd544d46937a", "src": "db2@1.60.1.70245"}
-{"id": 408510, "field": "aura", "en": "Attacks and spells used against you and your critical heals restore ${$408511m1/$n}% of your maximum mana. $n charges.", "hash": "da0973604155444a", "src": "db2@1.60.1.70245"}
-{"id": 408511, "field": "name", "en": "Water Shield", "hash": "7954b66392d2a477", "src": "db2@1.60.1.70245"}
-{"id": 408511, "field": "description", "en": "Gaining mana when hit while Water Shield is active.", "hash": "1d96f43d75e42a51", "src": "db2@1.60.1.70245"}
-{"id": 408514, "field": "name", "en": "Earth Shield", "hash": "8e71dcc8bee56627", "src": "db2@1.60.1.70245"}
-{"id": 408514, "field": "description", "en": "Protects the target with an earthen shield, reducing casting or channeling time lost when damaged by $s2%  and causing attacks to heal the shielded target for ${$m1*$<healpower>/100}.  This effect can only occur once every few seconds.  $n charges. Lasts $d.  Earth Shield can only be placed on one target at a time.\r\n", "hash": "bdee364599f7f0ca", "src": "db2@1.60.1.70245"}
-{"id": 408514, "field": "aura", "en": "Reduces casting or channeling time lost when damaged by $s2% and attacks heal the shielded target for $w1.", "hash": "38d681afee635d5e", "src": "db2@1.60.1.70245"}
-{"id": 408519, "field": "name", "en": "Earth Shield", "hash": "8e71dcc8bee56627", "src": "db2@1.60.1.70245"}
-{"id": 408519, "field": "description", "en": "Healed by Earth Shield.", "hash": "1dc3ad48eb45bf7b", "src": "db2@1.60.1.70245"}
-{"id": 408521, "field": "name", "en": "Riptide", "hash": "c826ecbb16451f60", "src": "db2@1.60.1.70245"}
-{"id": 408521, "field": "description", "en": "Heals a friendly target for $s1, an additional $o2 over $d, and increases the effectiveness of your Chain Heal casts directly on that target by $s3%.", "hash": "68320edfb136aab7", "src": "db2@1.60.1.70245"}
-{"id": 408521, "field": "aura", "en": "Heals $w2 every $t2 sec.\r\nIncreases the effectiveness of the caster's Chain Heal spells cast directly on this target by $s3%.", "hash": "0b6d739c1c2884ec", "src": "db2@1.60.1.70245"}
-{"id": 408524, "field": "name", "en": "Shield Mastery", "hash": "5e7eedf979fc4ac6", "src": "db2@1.60.1.70245"}
-{"id": 408524, "field": "description", "en": "Each time you Block, you regenerate mana equal to $408525s2% of your maximum mana and you gain Armor equal to $408525s1% of your shield's armor value, stacking up to $s3 times. You also always gain $s1% increased chance to Block and $s2% increased Block value.\r\n\r\nIn addition, each time you use a Shock ability, you gain $460200s2 Spell Damage for each point of your defense skill beyond ${$PL*5}. Lasts $460171d.\r\n", "hash": "6633c2633e96c59b", "src": "db2@1.60.1.70245"}
-{"id": 408525, "field": "name", "en": "Shield Mastery", "hash": "5e7eedf979fc4ac6", "src": "db2@1.60.1.70245"}
-{"id": 408525, "field": "description", "en": "Increases armor by $s1% of your shield's Armor value for $d, stacking up to $u times.", "hash": "8525df7dc6815461", "src": "db2@1.60.1.70245"}
-{"id": 408525, "field": "aura", "en": "Armor increased by $w1.", "hash": "97da7cadae09cc7a", "src": "db2@1.60.1.70245"}
-{"id": 408531, "field": "name", "en": "Way of Earth", "hash": "213a472ce88732d2", "src": "db2@1.60.1.70245"}
-{"id": 408531, "field": "description", "en": "While Rockbiter Weapon is active on your main hand weapon and you have a shield equipped, you deal $408680s1% increased threat, gain $408680s2% increased health, take $408680s4% reduced damage, gain $408680s5% reduced chance to be critically hit by melee attacks, and Earth Shock taunts targets to attack you and has a separate cooldown from other Shock spells but has its range reduced to melee range. However, the range of your Lightning Bolt, Chain Lightning, Chain Heal, Healing Wave, and Lava Burst spells is reduced by $408680s13 yards. ", "hash": "27fc7143eed81df5", "src": "db2@1.60.1.70245"}
-{"id": 408680, "field": "name", "en": "Way of Earth", "hash": "213a472ce88732d2", "src": "db2@1.60.1.70245"}
-{"id": 408680, "field": "description", "en": "While Rockbiter Weapon is active on your main hand weapon, you deal $s1% increased threat, gain $s2% increased health, take $s4% reduced damage, gain $s5% reduced chance to be critically hit by melee attacks, and Earth Shock taunts targets to attack you and has a separate cooldown from other Shock spells.\r\n", "hash": "efe15a43c1b5cc20", "src": "db2@1.60.1.70245"}
-{"id": 408680, "field": "aura", "en": "Dealing $s1% increased threat. Health increased by $s2%. Earth Shock Taunts targets to attack you. $s4% reduced damage taken. $s5% reduced chance to be critically hit by melee attacks.", "hash": "f9b0daa989e86895", "src": "db2@1.60.1.70245"}
-{"id": 408681, "field": "name", "en": "Earth Shock", "hash": "9d6deacb3f75b527", "src": "db2@1.60.1.70245"}
-{"id": 408681, "field": "description", "en": "Instantly shocks the target with concussive force, causing $s1 Nature damage.  It also interrupts spellcasting and prevents any spell in that school from being cast for $d.  Causes a high amount of threat and taunts the target.", "hash": "cc9d1126b643c64e", "src": "db2@1.60.1.70245"}
-{"id": 408681, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70245"}
-{"id": 408683, "field": "name", "en": "Earth Shock", "hash": "9d6deacb3f75b527", "src": "db2@1.60.1.70245"}
-{"id": 408683, "field": "description", "en": "Instantly shocks the target with concussive force, causing $s1 Nature damage.  It also interrupts spellcasting and prevents any spell in that school from being cast for $d.  Causes a high amount of threat and taunts the target.", "hash": "cc9d1126b643c64e", "src": "db2@1.60.1.70245"}
-{"id": 408683, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70245"}
-{"id": 408685, "field": "name", "en": "Earth Shock", "hash": "9d6deacb3f75b527", "src": "db2@1.60.1.70245"}
-{"id": 408685, "field": "description", "en": "Instantly shocks the target with concussive force, causing $s1 Nature damage.  It also interrupts spellcasting and prevents any spell in that school from being cast for $d.  Causes a high amount of threat and taunts the target.", "hash": "cc9d1126b643c64e", "src": "db2@1.60.1.70245"}
-{"id": 408685, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70245"}
-{"id": 408687, "field": "name", "en": "Earth Shock", "hash": "9d6deacb3f75b527", "src": "db2@1.60.1.70245"}
-{"id": 408687, "field": "description", "en": "Instantly shocks the target with concussive force, causing $s1 Nature damage.  It also interrupts spellcasting and prevents any spell in that school from being cast for $d.  Causes a high amount of threat and taunts the target.", "hash": "cc9d1126b643c64e", "src": "db2@1.60.1.70245"}
-{"id": 408687, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70245"}
-{"id": 408688, "field": "name", "en": "Earth Shock", "hash": "9d6deacb3f75b527", "src": "db2@1.60.1.70245"}
-{"id": 408688, "field": "description", "en": "Instantly shocks the target with concussive force, causing $s1 Nature damage.  It also interrupts spellcasting and prevents any spell in that school from being cast for $d.  Causes a high amount of threat and taunts the target.", "hash": "cc9d1126b643c64e", "src": "db2@1.60.1.70245"}
-{"id": 408688, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70245"}
-{"id": 408689, "field": "name", "en": "Earth Shock", "hash": "9d6deacb3f75b527", "src": "db2@1.60.1.70245"}
-{"id": 408689, "field": "description", "en": "Instantly shocks the target with concussive force, causing $s1 Nature damage.  It also interrupts spellcasting and prevents any spell in that school from being cast for $d.  Causes a high amount of threat and taunts the target.", "hash": "cc9d1126b643c64e", "src": "db2@1.60.1.70245"}
-{"id": 408689, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70245"}
-{"id": 408690, "field": "name", "en": "Earth Shock", "hash": "9d6deacb3f75b527", "src": "db2@1.60.1.70245"}
-{"id": 408690, "field": "description", "en": "Instantly shocks the target with concussive force, causing $s1 Nature damage.  It also interrupts spellcasting and prevents any spell in that school from being cast for $d.  Causes a high amount of threat and taunts the target.", "hash": "cc9d1126b643c64e", "src": "db2@1.60.1.70245"}
-{"id": 408690, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70245"}
-{"id": 408693, "field": "name", "en": "Earth Shock", "hash": "9d6deacb3f75b527", "src": "db2@1.60.1.70245"}
-{"id": 408693, "field": "description", "en": "Taunts the target to attack you, but has no effect if the target is already attacking you.", "hash": "71de38fd4f83eb55", "src": "db2@1.60.1.70245"}
-{"id": 408693, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70245"}
-{"id": 408696, "field": "name", "en": "Spirit of the Alpha", "hash": "f3f8178e0c3b11af", "src": "db2@1.60.1.70245"}
-{"id": 408696, "field": "description", "en": "Infuses the target with the spirit of an alpha wolf, increasing all threat generated by the target by $s1% for $d. Limit 1 target. If cast on a target other than self, the Shaman also gains Loyal Beta, increasing Physical damage done by $443320s1% and reducing all threat generated by $443320s2% for $d. A target cannot have both Spirit of the Alpha and Loyal Beta at the same time.", "hash": "fe54e326d916e728", "src": "db2@1.60.1.70245"}
-{"id": 408696, "field": "aura", "en": "Increases threat generated by $s1%.", "hash": "7d7c77fd1579620e", "src": "db2@1.60.1.70245"}
-{"id": 408699, "field": "name", "en": "Waylay", "hash": "30faf055af8e1adf", "src": "db2@1.60.1.70245"}
-{"id": 408699, "field": "description", "en": "Your Ambush and Backstab hits unbalance your target, increasing the time between their melee attacks by $408699s1%, and reducing movement speed by $408699s2% for $408699d.", "hash": "0089367c895ca7d4", "src": "db2@1.60.1.70245"}
-{"id": 408699, "field": "aura", "en": "Time between melee attacks increased by $s1%.  \r\nMovement speed reduced by $s2%.", "hash": "41ad20f48dab4617", "src": "db2@1.60.1.70245"}
-{"id": 408700, "field": "name", "en": "Waylay", "hash": "30faf055af8e1adf", "src": "db2@1.60.1.70245"}
-{"id": 408700, "field": "description", "en": "Your Ambush and Backstab hits unbalance your target, increasing the time between their melee attacks by $408699s1%, and reducing movement speed by $408699s2% for $408699d.", "hash": "0089367c895ca7d4", "src": "db2@1.60.1.70245"}
-{"id": 408752, "field": "name", "en": "Warlock Trainers - Identify Acolyte Artifact", "hash": "3513205ba272d288", "src": "db2@1.60.1.70245"}
-{"id": 408755, "field": "name", "en": "Blood Offering", "hash": "f8897aa10e83652a", "src": "db2@1.60.1.70245"}
-{"id": 408755, "field": "description", "en": "Offer your blood to power the artifact.", "hash": "091653f67276a4fb", "src": "db2@1.60.1.70245"}
-{"id": 408755, "field": "aura", "en": "Decreases all attributes by $s3%, all damage caused by $s3%, armor and resistance by $s4%.", "hash": "bc5ee9509f00d999", "src": "db2@1.60.1.70245"}
-{"id": 408793, "field": "name", "en": "Elwynn - Dead Acolyte - Give Clues", "hash": "239fae346d3fc88d", "src": "db2@1.60.1.70245"}
-{"id": 408802, "field": "name", "en": "Gakin - Rune Reward", "hash": "086bac6335fe170d", "src": "db2@1.60.1.70245"}
-{"id": 408824, "field": "name", "en": "Learn Relic", "hash": "334b771812120465", "src": "db2@1.60.1.70245"}
-{"id": 408828, "field": "name", "en": "Inspired", "hash": "6cc4bf862d53cc0b", "src": "db2@1.60.1.70245"}
-{"id": 408828, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70245"}
-{"id": 408833, "field": "name", "en": "Libram of Discovery", "hash": "8c807960bc0c5f45", "src": "db2@1.60.1.70245"}
-{"id": 408833, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70245"}
-{"id": 408889, "field": "name", "en": "Near Ritual Stone", "hash": "21021e0a64dc3782", "src": "db2@1.60.1.70245"}
-{"id": 408916, "field": "name", "en": "Cryomantic Mishap (Fire Absorb)", "hash": "16931e41d31b9783", "src": "db2@1.60.1.70245"}
-{"id": 408916, "field": "aura", "en": "Encased in a quickly-regenerating block of ice.", "hash": "eedfae4290304ef5", "src": "db2@1.60.1.70245"}
-{"id": 408953, "field": "name", "en": "Building Inspiration", "hash": "e1745c7a084bb73e", "src": "db2@1.60.1.70245"}
-{"id": 408953, "field": "aura", "en": "Building inspiration.", "hash": "7f198d72fdd0cd4a", "src": "db2@1.60.1.70245"}
+{"id": 408013, "field": "name", "en": "Blackfathom Elite Spawner", "hash": "e7f153c740575168", "src": "db2@1.60.1.70291"}
+{"id": 408014, "field": "name", "en": "Spawn Blackfathom Elite", "hash": "4255107e7fb42aeb", "src": "db2@1.60.1.70291"}
+{"id": 408024, "field": "name", "en": "Survival Instincts", "hash": "45565dc8f2b7d82f", "src": "db2@1.60.1.70291"}
+{"id": 408024, "field": "description", "en": "When activated, this grants you $408025s1% of your maximum health and increases all non-Physical healing you deal by $s1% for $d. After the effect expires, the health is lost. Useable in all forms except Moonkin Form.\r\n\r\nIn addition, you regenerate $417051s2 rage every time you dodge while in Bear Form or Dire Bear Form, $417051s3 energy while in Cat Form, or $417051s4% of your maximum mana while in any other form.", "hash": "f0735027b5b4958f", "src": "db2@1.60.1.70291"}
+{"id": 408024, "field": "aura", "en": "Health increased by $408025s1% of maximum.", "hash": "414996c4295f3f80", "src": "db2@1.60.1.70291"}
+{"id": 408025, "field": "name", "en": "Survival Instincts", "hash": "45565dc8f2b7d82f", "src": "db2@1.60.1.70291"}
+{"id": 408035, "field": "name", "en": "Damien Kane - Trade Souls for Rune", "hash": "b439196d79c00c03", "src": "db2@1.60.1.70291"}
+{"id": 408120, "field": "name", "en": "Wild Growth", "hash": "30b5dec6664d133b", "src": "db2@1.60.1.70291"}
+{"id": 408120, "field": "description", "en": "Heals the target and their party for $o1 over $d. Party members must be within $a1 yards of target. The amount healed is applied quickly at first, and slows down as Wild Growth reaches its full duration.", "hash": "1cb536f674efa343", "src": "db2@1.60.1.70291"}
+{"id": 408120, "field": "aura", "en": "Heals $w1 damage every $t1 second.", "hash": "cf751a776967db26", "src": "db2@1.60.1.70291"}
+{"id": 408124, "field": "name", "en": "Lifebloom", "hash": "394ab18f51adbe7a", "src": "db2@1.60.1.70291"}
+{"id": 408124, "field": "description", "en": "Heals the target for ${$m1/100*7*$<healpower>} over $d.  When Lifebloom completes its duration or is dispelled, the target instantly heals for ${$m2/100*$<healpower>} and the Druid regains half the cost of the spell.  This effect can stack up to $u times on the same target.\r\n", "hash": "8ddbb67346301682", "src": "db2@1.60.1.70291"}
+{"id": 408124, "field": "aura", "en": "Heals $w1 every second and $w2 when effect finishes or is dispelled.", "hash": "57b19551fdc1a057", "src": "db2@1.60.1.70291"}
+{"id": 408245, "field": "name", "en": "Lifebloom", "hash": "394ab18f51adbe7a", "src": "db2@1.60.1.70291"}
+{"id": 408245, "field": "description", "en": "Heals the target over 7 sec.  When Lifebloom completes its duration or is dispelled, the target instantly heals.  This effect can stack up to 3 times on the same target.", "hash": "2a59bfb7060efa39", "src": "db2@1.60.1.70291"}
+{"id": 408246, "field": "name", "en": "Lifebloom", "hash": "394ab18f51adbe7a", "src": "db2@1.60.1.70291"}
+{"id": 408246, "field": "description", "en": "Gaining mana when Lifebloom expires.", "hash": "a7aa89d106793460", "src": "db2@1.60.1.70291"}
+{"id": 408247, "field": "name", "en": "Nourish", "hash": "31f5e33ce8eb3a95", "src": "db2@1.60.1.70291"}
+{"id": 408247, "field": "description", "en": "Heals a friendly target for ${$m1/100*$<healpower>} to ${$M1/100*$<healpower>}. Heals for an additional 20% if you have a Rejuvenation, Regrowth, Lifebloom, or Wild Growth effect active on the target. This spell benefits from and triggers all effects associated with Healing Touch or Regrowth.", "hash": "2a601efaed8e57f7", "src": "db2@1.60.1.70291"}
+{"id": 408248, "field": "name", "en": "Eclipse", "hash": "6e4bc030610fce1a", "src": "db2@1.60.1.70291"}
+{"id": 408248, "field": "description", "en": "Your Wrath spell reduces the cast time of your next $s3 Starfire spells by ${$m2/-1000}.2 sec. Stores up to $408255u charges. Lasts $408255d.", "hash": "90e893e0e4fcdb98", "src": "db2@1.60.1.70291"}
+{"id": 408255, "field": "name", "en": "Eclipse", "hash": "6e4bc030610fce1a", "src": "db2@1.60.1.70291"}
+{"id": 408255, "field": "aura", "en": "Your next $m2 Starfire $Lcast has:casts have; ${$w1/$w2/1000}.1 sec reduced cast time.", "hash": "727e4f275e915d9c", "src": "db2@1.60.1.70291"}
+{"id": 408258, "field": "name", "en": "Dreamstate", "hash": "274747de7b5a7bd8", "src": "db2@1.60.1.70291"}
+{"id": 408258, "field": "description", "en": "Your damaging non-periodic spell critical strikes grant you $m1% of your mana regeneration while casting for $408261d.", "hash": "0e52fe0b7ff6821c", "src": "db2@1.60.1.70291"}
+{"id": 408261, "field": "name", "en": "Dreamstate", "hash": "274747de7b5a7bd8", "src": "db2@1.60.1.70291"}
+{"id": 408261, "field": "description", "en": "Allows $s1% of your Mana regeneration to continue while casting.", "hash": "86815c0ca3893a62", "src": "db2@1.60.1.70291"}
+{"id": 408261, "field": "aura", "en": "Regenerating $w1% of your normal Mana regeneration while casting spells.", "hash": "7a27f000a607159e", "src": "db2@1.60.1.70291"}
+{"id": 408307, "field": "name", "en": "Nature's Fury", "hash": "8e4743d3f2e84977", "src": "db2@1.60.1.70291"}
+{"id": 408307, "field": "description", "en": "Increases your healing power by $s2% of your Nature spell damage for $d.", "hash": "582306b5325e0b83", "src": "db2@1.60.1.70291"}
+{"id": 408307, "field": "aura", "en": "Healing power increased by $w2.", "hash": "fda8744ac696ee4b", "src": "db2@1.60.1.70291"}
+{"id": 408309, "field": "name", "en": "Grace of Elune", "hash": "d185c34bf44ec02e", "src": "db2@1.60.1.70291"}
+{"id": 408309, "field": "description", "en": "Increases your spell damage by $s2% of the difference between your healing power and spell damage. Lasts $d.", "hash": "d596949eeaea525b", "src": "db2@1.60.1.70291"}
+{"id": 408309, "field": "aura", "en": "Spell damage increased by $w2.", "hash": "62dc13bdcc02d8bd", "src": "db2@1.60.1.70291"}
+{"id": 408339, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70291"}
+{"id": 408339, "field": "description", "en": "Your Fire Nova Totem spell is replaced with Fire Nova, which causes your current Fire totem to emit damage at its location.", "hash": "2cf7852b92b7515d", "src": "db2@1.60.1.70291"}
+{"id": 408341, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70291"}
+{"id": 408341, "field": "description", "en": "Instantly inflicts $8349s1 fire damage to enemies within $8349a1 yd of your active Fire totem.", "hash": "7d542fd2097f952a", "src": "db2@1.60.1.70291"}
+{"id": 408342, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70291"}
+{"id": 408342, "field": "description", "en": "Instantly inflicts $8502s1 fire damage to enemies within $8502a1 yd of your active Fire totem.", "hash": "e2e3227a99449a49", "src": "db2@1.60.1.70291"}
+{"id": 408343, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70291"}
+{"id": 408343, "field": "description", "en": "Instantly inflicts $8503s1 fire damage to enemies within $8503a1 yd of your active Fire totem.", "hash": "0fd89bbdb24616cd", "src": "db2@1.60.1.70291"}
+{"id": 408344, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70291"}
+{"id": 408344, "field": "description", "en": "Instantly inflicts $11306s1 fire damage to enemies within $11306a1 yd of your active Fire totem.", "hash": "1e226b62f8a063b0", "src": "db2@1.60.1.70291"}
+{"id": 408345, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70291"}
+{"id": 408345, "field": "description", "en": "Instantly inflicts $11307s1 fire damage to enemies within $11307a1 yd of your active Fire totem.", "hash": "2fb7f4c2a878292c", "src": "db2@1.60.1.70291"}
+{"id": 408423, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70291"}
+{"id": 408424, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70291"}
+{"id": 408426, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70291"}
+{"id": 408427, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70291"}
+{"id": 408428, "field": "name", "en": "Fire Nova", "hash": "6c998853d3f25ec1", "src": "db2@1.60.1.70291"}
+{"id": 408438, "field": "name", "en": "Lightning Overload", "hash": "975e4b147c142b2a", "src": "db2@1.60.1.70291"}
+{"id": 408438, "field": "description", "en": "Gives your Lightning Bolt and Chain Lightning spells a $m1% chance to cast a second, similar spell on the same target at no additional cost that causes half damage and no threat.\r\n", "hash": "43e46bfc869d3cb4", "src": "db2@1.60.1.70291"}
+{"id": 408439, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70291"}
+{"id": 408439, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70291"}
+{"id": 408440, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70291"}
+{"id": 408440, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70291"}
+{"id": 408441, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70291"}
+{"id": 408441, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70291"}
+{"id": 408442, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70291"}
+{"id": 408442, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70291"}
+{"id": 408443, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70291"}
+{"id": 408443, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70291"}
+{"id": 408472, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70291"}
+{"id": 408472, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70291"}
+{"id": 408473, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70291"}
+{"id": 408473, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70291"}
+{"id": 408474, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70291"}
+{"id": 408474, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70291"}
+{"id": 408475, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70291"}
+{"id": 408475, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70291"}
+{"id": 408477, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70291"}
+{"id": 408477, "field": "description", "en": "Casts a bolt of lightning at the target for $s1 Nature damage.", "hash": "50eaf6a6a584e050", "src": "db2@1.60.1.70291"}
+{"id": 408479, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70291"}
+{"id": 408479, "field": "description", "en": "Hurls a lightning bolt at the enemy, dealing $s1 Nature damage and then jumping to additional nearby enemies.  Each jump reduces the damage by 30%.  Affects $x1 total targets.", "hash": "bf3e3b89750c0031", "src": "db2@1.60.1.70291"}
+{"id": 408481, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70291"}
+{"id": 408481, "field": "description", "en": "Hurls a lightning bolt at the enemy, dealing $s1 Nature damage and then jumping to additional nearby enemies.  Each jump reduces the damage by 30%.  Affects $x1 total targets.", "hash": "bf3e3b89750c0031", "src": "db2@1.60.1.70291"}
+{"id": 408482, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70291"}
+{"id": 408482, "field": "description", "en": "Hurls a lightning bolt at the enemy, dealing $s1 Nature damage and then jumping to additional nearby enemies.  Each jump reduces the damage by 30%.  Affects $x1 total targets.", "hash": "bf3e3b89750c0031", "src": "db2@1.60.1.70291"}
+{"id": 408484, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70291"}
+{"id": 408484, "field": "description", "en": "Hurls a lightning bolt at the enemy, dealing $s1 Nature damage and then jumping to additional nearby enemies.  Each jump reduces the damage by 30%.  Affects $x1 total targets.", "hash": "bf3e3b89750c0031", "src": "db2@1.60.1.70291"}
+{"id": 408490, "field": "name", "en": "Lava Burst", "hash": "444a2bbd50295ec5", "src": "db2@1.60.1.70291"}
+{"id": 408490, "field": "description", "en": "You hurl molten lava at the target, dealing $s1 Fire damage. If your Flame Shock is on the target, Lava Burst deals $s2% increased damage.", "hash": "c9c1c7830a12da5b", "src": "db2@1.60.1.70291"}
+{"id": 408491, "field": "name", "en": "Lava Burst", "hash": "444a2bbd50295ec5", "src": "db2@1.60.1.70291"}
+{"id": 408491, "field": "description", "en": "You hurl molten lava at the target, dealing $s1 Fire damage. If your Flame Shock is on the target, Lava Burst deals $408490s2% increased damage.", "hash": "2838b0c83e1f6039", "src": "db2@1.60.1.70291"}
+{"id": 408496, "field": "name", "en": "Dual Wield Specialization", "hash": "42d34dcf2ff20d11", "src": "db2@1.60.1.70291"}
+{"id": 408496, "field": "description", "en": "Increases your chance to hit with both spells and melee attacks by $s1% while dual wielding, your Stormstrike ability now hits with both weapons while dual wielding, and increases the damage done by your offhand weapon by $s3%.", "hash": "33e038b0c2e58818", "src": "db2@1.60.1.70291"}
+{"id": 408498, "field": "name", "en": "Maelstrom Weapon", "hash": "34a909cc36a0eb49", "src": "db2@1.60.1.70291"}
+{"id": 408498, "field": "description", "en": "When you deal damage with a melee attack, you have a chance to reduce the cast time and Mana cost of your next Lightning Bolt spell by $m1%. Stacks up to $s3 times. Lasts $408505d.", "hash": "9a6cb9c7d97cbfea", "src": "db2@1.60.1.70291"}
+{"id": 408501, "field": "name", "en": "Maelstrom Ready!", "hash": "4b1070116f4eaa5c", "src": "db2@1.60.1.70291"}
+{"id": 408505, "field": "name", "en": "Maelstrom Weapon", "hash": "34a909cc36a0eb49", "src": "db2@1.60.1.70291"}
+{"id": 408505, "field": "description", "en": "Reduces the cast time and Mana cost of your next Lightning Bolt spell.", "hash": "e17bbdf53e4f3e7c", "src": "db2@1.60.1.70291"}
+{"id": 408505, "field": "aura", "en": "Reduces the cast time and Mana cost of your next Lightning Bolt spell by $w1%.", "hash": "f55df514ce3fe4d8", "src": "db2@1.60.1.70291"}
+{"id": 408507, "field": "name", "en": "Lava Lash", "hash": "50023d7d5ca1a5e4", "src": "db2@1.60.1.70291"}
+{"id": 408507, "field": "description", "en": "You charge your off-hand weapon with lava, instantly dealing $s1% off-hand Weapon damage. Damage is increased by $s2% if your off-hand weapon is enchanted with Flametongue.", "hash": "fd5176b5e770cae3", "src": "db2@1.60.1.70291"}
+{"id": 408510, "field": "name", "en": "Water Shield", "hash": "7954b66392d2a477", "src": "db2@1.60.1.70291"}
+{"id": 408510, "field": "description", "en": "The caster is surrounded by $n globes of water. When a spell, melee, or ranged attack hits the caster or when one of the caster's healing spells gets a critical result, $408511s1% of maximum mana is restored to the caster, expending one water globe. Only one globe will activate every few seconds.  Lasts $d.\r\n\r\nOnly one Elemental Shield can be active on the Shaman at any one time.", "hash": "4b7bfd544d46937a", "src": "db2@1.60.1.70291"}
+{"id": 408510, "field": "aura", "en": "Attacks and spells used against you and your critical heals restore ${$408511m1/$s2}% of your maximum mana. $s2 charges.", "hash": "0dd67570c370f09f", "src": "db2@1.60.1.70291"}
+{"id": 408511, "field": "name", "en": "Water Shield", "hash": "7954b66392d2a477", "src": "db2@1.60.1.70291"}
+{"id": 408511, "field": "description", "en": "Gaining mana when hit while Water Shield is active.", "hash": "1d96f43d75e42a51", "src": "db2@1.60.1.70291"}
+{"id": 408514, "field": "name", "en": "Earth Shield", "hash": "8e71dcc8bee56627", "src": "db2@1.60.1.70291"}
+{"id": 408514, "field": "description", "en": "Protects the target with an earthen shield, reducing casting or channeling time lost when damaged by $s2%  and causing attacks to heal the shielded target for ${$m1*$<healpower>/100}.  This effect can only occur once every few seconds.  $n charges. Lasts $d.  Earth Shield can only be placed on one target at a time.\r\n", "hash": "bdee364599f7f0ca", "src": "db2@1.60.1.70291"}
+{"id": 408514, "field": "aura", "en": "Reduces casting or channeling time lost when damaged by $s2% and attacks heal the shielded target for $w1.", "hash": "38d681afee635d5e", "src": "db2@1.60.1.70291"}
+{"id": 408519, "field": "name", "en": "Earth Shield", "hash": "8e71dcc8bee56627", "src": "db2@1.60.1.70291"}
+{"id": 408519, "field": "description", "en": "Healed by Earth Shield.", "hash": "1dc3ad48eb45bf7b", "src": "db2@1.60.1.70291"}
+{"id": 408521, "field": "name", "en": "Riptide", "hash": "c826ecbb16451f60", "src": "db2@1.60.1.70291"}
+{"id": 408521, "field": "description", "en": "Heals a friendly target for $s1, an additional $o2 over $d, and increases the effectiveness of your Chain Heal casts directly on that target by $s3%.", "hash": "68320edfb136aab7", "src": "db2@1.60.1.70291"}
+{"id": 408521, "field": "aura", "en": "Heals $w2 every $t2 sec.\r\nIncreases the effectiveness of the caster's Chain Heal spells cast directly on this target by $s3%.", "hash": "0b6d739c1c2884ec", "src": "db2@1.60.1.70291"}
+{"id": 408524, "field": "name", "en": "Shield Mastery", "hash": "5e7eedf979fc4ac6", "src": "db2@1.60.1.70291"}
+{"id": 408524, "field": "description", "en": "Each time you Block, you regenerate mana equal to $408525s2% of your maximum mana and you gain Armor equal to $408525s1% of your shield's armor value, stacking up to $s3 times. You also always gain $s1% increased chance to Block and $s2% increased Block value.\r\n\r\nIn addition, each time you use a Shock ability, you gain $460200s2 Spell Damage for each point of your defense skill beyond ${$PL*5}. Lasts $460171d.\r\n", "hash": "6633c2633e96c59b", "src": "db2@1.60.1.70291"}
+{"id": 408525, "field": "name", "en": "Shield Mastery", "hash": "5e7eedf979fc4ac6", "src": "db2@1.60.1.70291"}
+{"id": 408525, "field": "description", "en": "Increases armor by $s1% of your shield's Armor value for $d, stacking up to $u times.", "hash": "8525df7dc6815461", "src": "db2@1.60.1.70291"}
+{"id": 408525, "field": "aura", "en": "Armor increased by $w1.", "hash": "97da7cadae09cc7a", "src": "db2@1.60.1.70291"}
+{"id": 408531, "field": "name", "en": "Way of Earth", "hash": "213a472ce88732d2", "src": "db2@1.60.1.70291"}
+{"id": 408531, "field": "description", "en": "While Rockbiter Weapon is active on your main hand weapon and you have a shield equipped, you deal $408680s1% increased threat, gain $408680s2% increased health, take $408680s4% reduced damage, gain $408680s5% reduced chance to be critically hit by melee attacks, and Earth Shock taunts targets to attack you and has a separate cooldown from other Shock spells but has its range reduced to melee range. However, the range of your Lightning Bolt, Chain Lightning, Chain Heal, Healing Wave, and Lava Burst spells is reduced by $408680s13 yards. ", "hash": "27fc7143eed81df5", "src": "db2@1.60.1.70291"}
+{"id": 408680, "field": "name", "en": "Way of Earth", "hash": "213a472ce88732d2", "src": "db2@1.60.1.70291"}
+{"id": 408680, "field": "description", "en": "While Rockbiter Weapon is active on your main hand weapon, you deal $s1% increased threat, gain $s2% increased health, take $s4% reduced damage, gain $s5% reduced chance to be critically hit by melee attacks, and Earth Shock taunts targets to attack you and has a separate cooldown from other Shock spells.\r\n", "hash": "efe15a43c1b5cc20", "src": "db2@1.60.1.70291"}
+{"id": 408680, "field": "aura", "en": "Dealing $s1% increased threat. Health increased by $s2%. Earth Shock Taunts targets to attack you. $s4% reduced damage taken. $s5% reduced chance to be critically hit by melee attacks.", "hash": "f9b0daa989e86895", "src": "db2@1.60.1.70291"}
+{"id": 408681, "field": "name", "en": "Earth Shock", "hash": "9d6deacb3f75b527", "src": "db2@1.60.1.70291"}
+{"id": 408681, "field": "description", "en": "Instantly shocks the target with concussive force, causing $s1 Nature damage.  It also interrupts spellcasting and prevents any spell in that school from being cast for $d.  Causes a high amount of threat and taunts the target.", "hash": "cc9d1126b643c64e", "src": "db2@1.60.1.70291"}
+{"id": 408681, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70291"}
+{"id": 408683, "field": "name", "en": "Earth Shock", "hash": "9d6deacb3f75b527", "src": "db2@1.60.1.70291"}
+{"id": 408683, "field": "description", "en": "Instantly shocks the target with concussive force, causing $s1 Nature damage.  It also interrupts spellcasting and prevents any spell in that school from being cast for $d.  Causes a high amount of threat and taunts the target.", "hash": "cc9d1126b643c64e", "src": "db2@1.60.1.70291"}
+{"id": 408683, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70291"}
+{"id": 408685, "field": "name", "en": "Earth Shock", "hash": "9d6deacb3f75b527", "src": "db2@1.60.1.70291"}
+{"id": 408685, "field": "description", "en": "Instantly shocks the target with concussive force, causing $s1 Nature damage.  It also interrupts spellcasting and prevents any spell in that school from being cast for $d.  Causes a high amount of threat and taunts the target.", "hash": "cc9d1126b643c64e", "src": "db2@1.60.1.70291"}
+{"id": 408685, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70291"}
+{"id": 408687, "field": "name", "en": "Earth Shock", "hash": "9d6deacb3f75b527", "src": "db2@1.60.1.70291"}
+{"id": 408687, "field": "description", "en": "Instantly shocks the target with concussive force, causing $s1 Nature damage.  It also interrupts spellcasting and prevents any spell in that school from being cast for $d.  Causes a high amount of threat and taunts the target.", "hash": "cc9d1126b643c64e", "src": "db2@1.60.1.70291"}
+{"id": 408687, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70291"}
+{"id": 408688, "field": "name", "en": "Earth Shock", "hash": "9d6deacb3f75b527", "src": "db2@1.60.1.70291"}
+{"id": 408688, "field": "description", "en": "Instantly shocks the target with concussive force, causing $s1 Nature damage.  It also interrupts spellcasting and prevents any spell in that school from being cast for $d.  Causes a high amount of threat and taunts the target.", "hash": "cc9d1126b643c64e", "src": "db2@1.60.1.70291"}
+{"id": 408688, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70291"}
+{"id": 408689, "field": "name", "en": "Earth Shock", "hash": "9d6deacb3f75b527", "src": "db2@1.60.1.70291"}
+{"id": 408689, "field": "description", "en": "Instantly shocks the target with concussive force, causing $s1 Nature damage.  It also interrupts spellcasting and prevents any spell in that school from being cast for $d.  Causes a high amount of threat and taunts the target.", "hash": "cc9d1126b643c64e", "src": "db2@1.60.1.70291"}
+{"id": 408689, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70291"}
+{"id": 408690, "field": "name", "en": "Earth Shock", "hash": "9d6deacb3f75b527", "src": "db2@1.60.1.70291"}
+{"id": 408690, "field": "description", "en": "Instantly shocks the target with concussive force, causing $s1 Nature damage.  It also interrupts spellcasting and prevents any spell in that school from being cast for $d.  Causes a high amount of threat and taunts the target.", "hash": "cc9d1126b643c64e", "src": "db2@1.60.1.70291"}
+{"id": 408690, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70291"}
+{"id": 408693, "field": "name", "en": "Earth Shock", "hash": "9d6deacb3f75b527", "src": "db2@1.60.1.70291"}
+{"id": 408693, "field": "description", "en": "Taunts the target to attack you, but has no effect if the target is already attacking you.", "hash": "71de38fd4f83eb55", "src": "db2@1.60.1.70291"}
+{"id": 408693, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70291"}
+{"id": 408696, "field": "name", "en": "Spirit of the Alpha", "hash": "f3f8178e0c3b11af", "src": "db2@1.60.1.70291"}
+{"id": 408696, "field": "description", "en": "Infuses the target with the spirit of an alpha wolf, increasing all threat generated by the target by $s1% for $d. Limit 1 target. If cast on a target other than self, the Shaman also gains Loyal Beta, increasing Physical damage done by $443320s1% and reducing all threat generated by $443320s2% for $d. A target cannot have both Spirit of the Alpha and Loyal Beta at the same time.", "hash": "fe54e326d916e728", "src": "db2@1.60.1.70291"}
+{"id": 408696, "field": "aura", "en": "Increases threat generated by $s1%.", "hash": "7d7c77fd1579620e", "src": "db2@1.60.1.70291"}
+{"id": 408699, "field": "name", "en": "Waylay", "hash": "30faf055af8e1adf", "src": "db2@1.60.1.70291"}
+{"id": 408699, "field": "description", "en": "Your Ambush and Backstab hits unbalance your target, increasing the time between their melee attacks by $408699s1%, and reducing movement speed by $408699s2% for $408699d.", "hash": "0089367c895ca7d4", "src": "db2@1.60.1.70291"}
+{"id": 408699, "field": "aura", "en": "Time between melee attacks increased by $s1%.  \r\nMovement speed reduced by $s2%.", "hash": "41ad20f48dab4617", "src": "db2@1.60.1.70291"}
+{"id": 408700, "field": "name", "en": "Waylay", "hash": "30faf055af8e1adf", "src": "db2@1.60.1.70291"}
+{"id": 408700, "field": "description", "en": "Your Ambush and Backstab hits unbalance your target, increasing the time between their melee attacks by $408699s1%, and reducing movement speed by $408699s2% for $408699d.", "hash": "0089367c895ca7d4", "src": "db2@1.60.1.70291"}
+{"id": 408752, "field": "name", "en": "Warlock Trainers - Identify Acolyte Artifact", "hash": "3513205ba272d288", "src": "db2@1.60.1.70291"}
+{"id": 408755, "field": "name", "en": "Blood Offering", "hash": "f8897aa10e83652a", "src": "db2@1.60.1.70291"}
+{"id": 408755, "field": "description", "en": "Offer your blood to power the artifact.", "hash": "091653f67276a4fb", "src": "db2@1.60.1.70291"}
+{"id": 408755, "field": "aura", "en": "Decreases all attributes by $s3%, all damage caused by $s3%, armor and resistance by $s4%.", "hash": "bc5ee9509f00d999", "src": "db2@1.60.1.70291"}
+{"id": 408793, "field": "name", "en": "Elwynn - Dead Acolyte - Give Clues", "hash": "239fae346d3fc88d", "src": "db2@1.60.1.70291"}
+{"id": 408802, "field": "name", "en": "Gakin - Rune Reward", "hash": "086bac6335fe170d", "src": "db2@1.60.1.70291"}
+{"id": 408824, "field": "name", "en": "Learn Relic", "hash": "334b771812120465", "src": "db2@1.60.1.70291"}
+{"id": 408828, "field": "name", "en": "Inspired", "hash": "6cc4bf862d53cc0b", "src": "db2@1.60.1.70291"}
+{"id": 408828, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70291"}
+{"id": 408833, "field": "name", "en": "Libram of Discovery", "hash": "8c807960bc0c5f45", "src": "db2@1.60.1.70291"}
+{"id": 408833, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70291"}
+{"id": 408889, "field": "name", "en": "Near Ritual Stone", "hash": "21021e0a64dc3782", "src": "db2@1.60.1.70291"}
+{"id": 408916, "field": "name", "en": "Cryomantic Mishap (Fire Absorb)", "hash": "16931e41d31b9783", "src": "db2@1.60.1.70291"}
+{"id": 408916, "field": "aura", "en": "Encased in a quickly-regenerating block of ice.", "hash": "eedfae4290304ef5", "src": "db2@1.60.1.70291"}
+{"id": 408953, "field": "name", "en": "Building Inspiration", "hash": "e1745c7a084bb73e", "src": "db2@1.60.1.70291"}
+{"id": 408953, "field": "aura", "en": "Building inspiration.", "hash": "7f198d72fdd0cd4a", "src": "db2@1.60.1.70291"}

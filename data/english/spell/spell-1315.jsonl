@@ -1,78 +1,78 @@
-{"id": 1315077, "field": "name", "en": "Lash of the Dark Rider", "hash": "4dec8e627780673a", "src": "db2@1.60.1.70245"}
-{"id": 1315077, "field": "description", "en": "Chance on melee attack to lash the target, inflicting $s1 Shadow damage.", "hash": "e715b1ba5f71c31a", "src": "db2@1.60.1.70245"}
-{"id": 1315080, "field": "name", "en": "Mount Speed", "hash": "f84a9c6f27b3fa2a", "src": "db2@1.60.1.70245"}
-{"id": 1315080, "field": "description", "en": "Increases movement speed while mounted by $s1% in Eastern and Western Plaguelands.", "hash": "2f341e73c1928cba", "src": "db2@1.60.1.70245"}
-{"id": 1315080, "field": "aura", "en": "Movement speed increased by $s1% while mounted.", "hash": "939516e9c948c73d", "src": "db2@1.60.1.70245"}
-{"id": 1315190, "field": "name", "en": "Zarla's Snack Pouch", "hash": "8d0b22367e411d23", "src": "db2@1.60.1.70245"}
-{"id": 1315190, "field": "description", "en": "Calls forth a Black Dragon Whelp to protect you in battle for a short period of time.", "hash": "06da34e84e1fab37", "src": "db2@1.60.1.70245"}
-{"id": 1315212, "field": "name", "en": "Hearthstone", "hash": "230a3906066133f7", "src": "db2@1.60.1.70245"}
-{"id": 1315212, "field": "description", "en": "Burn in the scarlet flames to return to $z. Speak to an Innkeeper in a different place to change your home location.", "hash": "0ceecbf8142164c7", "src": "db2@1.60.1.70245"}
-{"id": 1315213, "field": "name", "en": "Create Scarlet Hearthstone", "hash": "e96bb1b2d0007ad4", "src": "db2@1.60.1.70245"}
-{"id": 1315213, "field": "description", "en": "Create a Scarlet Hearthstone.", "hash": "27ea7a0d9d314855", "src": "db2@1.60.1.70245"}
-{"id": 1315216, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70245"}
-{"id": 1315217, "field": "name", "en": "Holiday Cheer", "hash": "cbc2bc6c46f528c6", "src": "db2@1.60.1.70245"}
-{"id": 1315217, "field": "description", "en": "Fills targets with holiday cheer.", "hash": "0d3345d6fa117e96", "src": "db2@1.60.1.70245"}
-{"id": 1315218, "field": "name", "en": "Holiday Cheer", "hash": "cbc2bc6c46f528c6", "src": "db2@1.60.1.70245"}
-{"id": 1315218, "field": "description", "en": "Fills targets with holiday cheer.", "hash": "0d3345d6fa117e96", "src": "db2@1.60.1.70245"}
-{"id": 1315226, "field": "name", "en": "Update Interactions", "hash": "4f1abef90f8abe56", "src": "db2@1.60.1.70245"}
-{"id": 1315237, "field": "name", "en": "Breath of Decay", "hash": "a3392be516478127", "src": "db2@1.60.1.70245"}
-{"id": 1315237, "field": "description", "en": "Breathes putrid rot and decay, inflicting $S1 Nature damage to all players within $r yds.", "hash": "8a69f23df82223fa", "src": "db2@1.60.1.70245"}
-{"id": 1315267, "field": "name", "en": "Summon Tallstrider Hatchling", "hash": "645c369d5e5dad6d", "src": "db2@1.60.1.70245"}
-{"id": 1315267, "field": "description", "en": "Right Click to summon and dismiss your Tallstrider Hatchling.", "hash": "097b71e8856804b9", "src": "db2@1.60.1.70245"}
-{"id": 1315283, "field": "name", "en": "Create Elemental Attractor", "hash": "55ab094fbd645c63", "src": "db2@1.60.1.70245"}
-{"id": 1315286, "field": "name", "en": "Crystallize", "hash": "d00de7969e0e8870", "src": "db2@1.60.1.70245"}
-{"id": 1315286, "field": "aura", "en": "Stunned. Fire damage taken increased by $s2%.", "hash": "00af6939d3b5dc14", "src": "db2@1.60.1.70245"}
-{"id": 1315307, "field": "name", "en": "Beseech the Mists", "hash": "2e5adcbb02f02e5a", "src": "db2@1.60.1.70245"}
-{"id": 1315307, "field": "description", "en": "Summons a Mist-Forgotten Horror at a random location.", "hash": "f0755ac24d151263", "src": "db2@1.60.1.70245"}
-{"id": 1315330, "field": "name", "en": "Moon's Touch", "hash": "4034c0319b355e0a", "src": "db2@1.60.1.70245"}
-{"id": 1315330, "field": "description", "en": "Increases Intellect by $s1 at night.", "hash": "2ca27d14c256d211", "src": "db2@1.60.1.70245"}
-{"id": 1315339, "field": "name", "en": "Moon's Touch", "hash": "4034c0319b355e0a", "src": "db2@1.60.1.70245"}
-{"id": 1315339, "field": "description", "en": "Increases intellect by $s1 at night.", "hash": "eb59d09ce71c214a", "src": "db2@1.60.1.70245"}
-{"id": 1315396, "field": "name", "en": "Frost", "hash": "dc23b574a51d3a0d", "src": "db2@1.60.1.70245"}
-{"id": 1315408, "field": "name", "en": "Blessed by the Great Windborne Cat Spirit", "hash": "fce8d2eac6b39f56", "src": "db2@1.60.1.70245"}
-{"id": 1315408, "field": "description", "en": "Receive the blessing of the Great Windborne Cat Spirit.", "hash": "b2b24a36901cb038", "src": "db2@1.60.1.70245"}
-{"id": 1315408, "field": "aura", "en": "Carrying the blessing of the Great Windborne Cat Spirit for passing the druidic trial of Azeroth.", "hash": "bd153efdbec50633", "src": "db2@1.60.1.70245"}
-{"id": 1315427, "field": "name", "en": "Nature's Blessing", "hash": "e62f10a726519c31", "src": "db2@1.60.1.70245"}
-{"id": 1315448, "field": "name", "en": "Fixate", "hash": "097a77e983ad4bc9", "src": "db2@1.60.1.70245"}
-{"id": 1315449, "field": "name", "en": "Putrefaction", "hash": "ec0664486b601196", "src": "db2@1.60.1.70245"}
-{"id": 1315451, "field": "name", "en": "Summon Minfernal", "hash": "5c606c8d2eef3afe", "src": "db2@1.60.1.70245"}
-{"id": 1315451, "field": "description", "en": "Right Click to summon and dismiss your Minfernal.", "hash": "6d502f061d681a03", "src": "db2@1.60.1.70245"}
-{"id": 1315458, "field": "name", "en": "Spore Explosion", "hash": "fcef5c4a3ae652d5", "src": "db2@1.60.1.70245"}
-{"id": 1315527, "field": "name", "en": "Feline Blessing of the Silent Shadow", "hash": "ff9c8e5172d11bd5", "src": "db2@1.60.1.70245"}
-{"id": 1315527, "field": "aura", "en": "Stealthed. You will be revealed if you are too close to enemies or enter combat.", "hash": "f49ee9ce75cbde25", "src": "db2@1.60.1.70245"}
-{"id": 1315538, "field": "name", "en": "[DNT] IsEffectivelyTank Aura - TEST", "hash": "0d4edc1f0499a10c", "src": "db2@1.60.1.70245"}
-{"id": 1315552, "field": "name", "en": "(DNT) Dismiss Pet", "hash": "4570579622ef77b3", "src": "db2@1.60.1.70245"}
-{"id": 1315553, "field": "name", "en": "(DNT) Resummon Pet", "hash": "16b9eab36d155686", "src": "db2@1.60.1.70245"}
-{"id": 1315557, "field": "name", "en": "Charm", "hash": "a61fdf6b4aba5edb", "src": "db2@1.60.1.70245"}
-{"id": 1315557, "field": "description", "en": "Charms the target, preventing all actions for up to $d. Any damage caused will remove the effect. Only works against Humanoids.", "hash": "aea65fef0c3dbc50", "src": "db2@1.60.1.70245"}
-{"id": 1315557, "field": "aura", "en": "Charmed.", "hash": "d83f67a36f817254", "src": "db2@1.60.1.70245"}
-{"id": 1315767, "field": "name", "en": "Howler's Cry", "hash": "b59360a41003a462", "src": "db2@1.60.1.70245"}
-{"id": 1315767, "field": "description", "en": "Reduces the target enemy's attack power by $s1 for $d.", "hash": "68d8d99c07fee091", "src": "db2@1.60.1.70245"}
-{"id": 1315767, "field": "aura", "en": "Attack power lowered by $s1.", "hash": "3ac7251302b5bc93", "src": "db2@1.60.1.70245"}
-{"id": 1315778, "field": "name", "en": "Mount Speed", "hash": "f84a9c6f27b3fa2a", "src": "db2@1.60.1.70245"}
-{"id": 1315778, "field": "description", "en": "Increases movement speed while mounted by $s1% in Winterspring.", "hash": "46e8d69fb1d6db44", "src": "db2@1.60.1.70245"}
-{"id": 1315778, "field": "aura", "en": "Movement speed increased by $s1% while mounted.", "hash": "939516e9c948c73d", "src": "db2@1.60.1.70245"}
-{"id": 1315844, "field": "name", "en": "Lucky Shovelnose Snout", "hash": "953f7466bafe05e0", "src": "db2@1.60.1.70245"}
-{"id": 1315844, "field": "description", "en": "Increases your chance to Dodge by $s1% for $d.", "hash": "a3828625958eb311", "src": "db2@1.60.1.70245"}
-{"id": 1315844, "field": "aura", "en": "Dodge chance increased by $s1%.", "hash": "13f65298c8044223", "src": "db2@1.60.1.70245"}
-{"id": 1315849, "field": "name", "en": "Behemoth Bone", "hash": "7c66f697cbd0e832", "src": "db2@1.60.1.70245"}
-{"id": 1315849, "field": "description", "en": "Crack open the bone, healing yourself for $s1 and your nearest ally for $s2. ", "hash": "02d768f2a9c509b7", "src": "db2@1.60.1.70245"}
-{"id": 1315854, "field": "name", "en": "Behemoth Bones", "hash": "a8b030f36ebbd1d6", "src": "db2@1.60.1.70245"}
-{"id": 1315854, "field": "description", "en": "Heal for $1315849s1.", "hash": "5b61ddb017adf687", "src": "db2@1.60.1.70245"}
-{"id": 1315859, "field": "name", "en": "Passive DoT", "hash": "c38c2eeb0dae83fe", "src": "db2@1.60.1.70245"}
-{"id": 1315878, "field": "name", "en": "Flamebreak Talisman", "hash": "7584b9ba8cd327d4", "src": "db2@1.60.1.70245"}
-{"id": 1315878, "field": "description", "en": "Increase your agility by $s1 for $d. If there is an elemental nearby, gain an additional $s2.", "hash": "c56ec730993e70e6", "src": "db2@1.60.1.70245"}
-{"id": 1315878, "field": "aura", "en": "Agility increased by ${$w1+$w2}.", "hash": "a84d62079a3eac2a", "src": "db2@1.60.1.70245"}
-{"id": 1315969, "field": "name", "en": "Rune of Perfection", "hash": "26cfc315b9e4f728", "src": "db2@1.60.1.70245"}
-{"id": 1315969, "field": "description", "en": "Your spells pierce $s1 Magical Resistances. Gain an additional $1315971s1 Spell Piercing in Forest and Grassland areas.", "hash": "1657413d757d3af6", "src": "db2@1.60.1.70245"}
-{"id": 1315971, "field": "name", "en": "Rune of Perfection", "hash": "26cfc315b9e4f728", "src": "db2@1.60.1.70245"}
-{"id": 1315971, "field": "aura", "en": "In a Forest or Grassland area, Spell Piercing increased by an additional $s1.", "hash": "4e10bc744e8f38be", "src": "db2@1.60.1.70245"}
-{"id": 1315972, "field": "name", "en": "Slammed", "hash": "6729c11682c4bd4c", "src": "db2@1.60.1.70245"}
-{"id": 1315972, "field": "description", "en": "Stuns target and yourself for $d. Ogres are Stunned for $1317450d and refund $1317450s2% of the cooldown.", "hash": "b6db8b9d4eec0760", "src": "db2@1.60.1.70245"}
-{"id": 1315972, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70245"}
-{"id": 1315989, "field": "name", "en": "Rune of Duty", "hash": "0c70af479dfd7b6d", "src": "db2@1.60.1.70245"}
-{"id": 1315989, "field": "description", "en": "Increases all Resistances by $s1. Gain an additional $1315990s1 to all Resistances in Forest and Grassland areas.", "hash": "f00683c428cf52be", "src": "db2@1.60.1.70245"}
-{"id": 1315990, "field": "name", "en": "Rune of Duty", "hash": "0c70af479dfd7b6d", "src": "db2@1.60.1.70245"}
-{"id": 1315990, "field": "aura", "en": "In a Forest or Grassland area, all Resistances increased by an additional $w1.", "hash": "7c8354afcf390ea1", "src": "db2@1.60.1.70245"}
-{"id": 1315996, "field": "name", "en": "Grounded Electroshock", "hash": "8f73a408c1514707", "src": "db2@1.60.1.70245"}
-{"id": 1315996, "field": "description", "en": "Deals $s1 Nature damage.", "hash": "95b93ec2e49821bf", "src": "db2@1.60.1.70245"}
+{"id": 1315077, "field": "name", "en": "Lash of the Dark Rider", "hash": "4dec8e627780673a", "src": "db2@1.60.1.70291"}
+{"id": 1315077, "field": "description", "en": "Chance on melee attack to lash the target, inflicting $s1 Shadow damage.", "hash": "e715b1ba5f71c31a", "src": "db2@1.60.1.70291"}
+{"id": 1315080, "field": "name", "en": "Mount Speed", "hash": "f84a9c6f27b3fa2a", "src": "db2@1.60.1.70291"}
+{"id": 1315080, "field": "description", "en": "Increases movement speed while mounted by $s1% in Eastern and Western Plaguelands.", "hash": "2f341e73c1928cba", "src": "db2@1.60.1.70291"}
+{"id": 1315080, "field": "aura", "en": "Movement speed increased by $s1% while mounted.", "hash": "939516e9c948c73d", "src": "db2@1.60.1.70291"}
+{"id": 1315190, "field": "name", "en": "Zarla's Snack Pouch", "hash": "8d0b22367e411d23", "src": "db2@1.60.1.70291"}
+{"id": 1315190, "field": "description", "en": "Calls forth a Black Dragon Whelp to protect you in battle for a short period of time.", "hash": "06da34e84e1fab37", "src": "db2@1.60.1.70291"}
+{"id": 1315212, "field": "name", "en": "Hearthstone", "hash": "230a3906066133f7", "src": "db2@1.60.1.70291"}
+{"id": 1315212, "field": "description", "en": "Burn in the scarlet flames to return to $z. Speak to an Innkeeper in a different place to change your home location.", "hash": "0ceecbf8142164c7", "src": "db2@1.60.1.70291"}
+{"id": 1315213, "field": "name", "en": "Create Scarlet Hearthstone", "hash": "e96bb1b2d0007ad4", "src": "db2@1.60.1.70291"}
+{"id": 1315213, "field": "description", "en": "Create a Scarlet Hearthstone.", "hash": "27ea7a0d9d314855", "src": "db2@1.60.1.70291"}
+{"id": 1315216, "field": "name", "en": "Summon", "hash": "a060a71236d3f9b1", "src": "db2@1.60.1.70291"}
+{"id": 1315217, "field": "name", "en": "Holiday Cheer", "hash": "cbc2bc6c46f528c6", "src": "db2@1.60.1.70291"}
+{"id": 1315217, "field": "description", "en": "Fills targets with holiday cheer.", "hash": "0d3345d6fa117e96", "src": "db2@1.60.1.70291"}
+{"id": 1315218, "field": "name", "en": "Holiday Cheer", "hash": "cbc2bc6c46f528c6", "src": "db2@1.60.1.70291"}
+{"id": 1315218, "field": "description", "en": "Fills targets with holiday cheer.", "hash": "0d3345d6fa117e96", "src": "db2@1.60.1.70291"}
+{"id": 1315226, "field": "name", "en": "Update Interactions", "hash": "4f1abef90f8abe56", "src": "db2@1.60.1.70291"}
+{"id": 1315237, "field": "name", "en": "Breath of Decay", "hash": "a3392be516478127", "src": "db2@1.60.1.70291"}
+{"id": 1315237, "field": "description", "en": "Breathes putrid rot and decay, inflicting $S1 Nature damage to all players within $r yds.", "hash": "8a69f23df82223fa", "src": "db2@1.60.1.70291"}
+{"id": 1315267, "field": "name", "en": "Summon Tallstrider Hatchling", "hash": "645c369d5e5dad6d", "src": "db2@1.60.1.70291"}
+{"id": 1315267, "field": "description", "en": "Right Click to summon and dismiss your Tallstrider Hatchling.", "hash": "097b71e8856804b9", "src": "db2@1.60.1.70291"}
+{"id": 1315283, "field": "name", "en": "Create Elemental Attractor", "hash": "55ab094fbd645c63", "src": "db2@1.60.1.70291"}
+{"id": 1315286, "field": "name", "en": "Crystallize", "hash": "d00de7969e0e8870", "src": "db2@1.60.1.70291"}
+{"id": 1315286, "field": "aura", "en": "Stunned. Increases Fire damage taken by $s2%.", "hash": "ec527bc08926f22d", "src": "db2@1.60.1.70291"}
+{"id": 1315307, "field": "name", "en": "Beseech the Mists", "hash": "2e5adcbb02f02e5a", "src": "db2@1.60.1.70291"}
+{"id": 1315307, "field": "description", "en": "Summons a Mist-Forgotten Horror at a random location.", "hash": "f0755ac24d151263", "src": "db2@1.60.1.70291"}
+{"id": 1315330, "field": "name", "en": "Moon's Touch", "hash": "4034c0319b355e0a", "src": "db2@1.60.1.70291"}
+{"id": 1315330, "field": "description", "en": "Increases Intellect by $s1 at night.", "hash": "2ca27d14c256d211", "src": "db2@1.60.1.70291"}
+{"id": 1315339, "field": "name", "en": "Moon's Touch", "hash": "4034c0319b355e0a", "src": "db2@1.60.1.70291"}
+{"id": 1315339, "field": "description", "en": "Increases intellect by $s1 at night.", "hash": "eb59d09ce71c214a", "src": "db2@1.60.1.70291"}
+{"id": 1315396, "field": "name", "en": "Frost", "hash": "dc23b574a51d3a0d", "src": "db2@1.60.1.70291"}
+{"id": 1315408, "field": "name", "en": "Blessed by the Great Windborne Cat Spirit", "hash": "fce8d2eac6b39f56", "src": "db2@1.60.1.70291"}
+{"id": 1315408, "field": "description", "en": "Receive the blessing of the Great Windborne Cat Spirit.", "hash": "b2b24a36901cb038", "src": "db2@1.60.1.70291"}
+{"id": 1315408, "field": "aura", "en": "Carrying the blessing of the Great Windborne Cat Spirit for passing the druidic trial of Azeroth.", "hash": "bd153efdbec50633", "src": "db2@1.60.1.70291"}
+{"id": 1315427, "field": "name", "en": "Nature's Blessing", "hash": "e62f10a726519c31", "src": "db2@1.60.1.70291"}
+{"id": 1315448, "field": "name", "en": "Fixate", "hash": "097a77e983ad4bc9", "src": "db2@1.60.1.70291"}
+{"id": 1315449, "field": "name", "en": "Putrefaction", "hash": "ec0664486b601196", "src": "db2@1.60.1.70291"}
+{"id": 1315451, "field": "name", "en": "Summon Minfernal", "hash": "5c606c8d2eef3afe", "src": "db2@1.60.1.70291"}
+{"id": 1315451, "field": "description", "en": "Right Click to summon and dismiss your Minfernal.", "hash": "6d502f061d681a03", "src": "db2@1.60.1.70291"}
+{"id": 1315458, "field": "name", "en": "Spore Explosion", "hash": "fcef5c4a3ae652d5", "src": "db2@1.60.1.70291"}
+{"id": 1315527, "field": "name", "en": "Feline Blessing of the Silent Shadow", "hash": "ff9c8e5172d11bd5", "src": "db2@1.60.1.70291"}
+{"id": 1315527, "field": "aura", "en": "Stealthed. You will be revealed if you are too close to enemies or enter combat.", "hash": "f49ee9ce75cbde25", "src": "db2@1.60.1.70291"}
+{"id": 1315538, "field": "name", "en": "[DNT] IsEffectivelyTank Aura - TEST", "hash": "0d4edc1f0499a10c", "src": "db2@1.60.1.70291"}
+{"id": 1315552, "field": "name", "en": "(DNT) Dismiss Pet", "hash": "4570579622ef77b3", "src": "db2@1.60.1.70291"}
+{"id": 1315553, "field": "name", "en": "(DNT) Resummon Pet", "hash": "16b9eab36d155686", "src": "db2@1.60.1.70291"}
+{"id": 1315557, "field": "name", "en": "Charm", "hash": "a61fdf6b4aba5edb", "src": "db2@1.60.1.70291"}
+{"id": 1315557, "field": "description", "en": "Charms the target, preventing all actions for up to $d. Any damage caused will remove the effect. Only works against Humanoids.", "hash": "aea65fef0c3dbc50", "src": "db2@1.60.1.70291"}
+{"id": 1315557, "field": "aura", "en": "Charmed.", "hash": "d83f67a36f817254", "src": "db2@1.60.1.70291"}
+{"id": 1315767, "field": "name", "en": "Howler's Cry", "hash": "b59360a41003a462", "src": "db2@1.60.1.70291"}
+{"id": 1315767, "field": "description", "en": "Reduces the target enemy's attack power by $s1 for $d.", "hash": "68d8d99c07fee091", "src": "db2@1.60.1.70291"}
+{"id": 1315767, "field": "aura", "en": "Attack power lowered by $s1.", "hash": "3ac7251302b5bc93", "src": "db2@1.60.1.70291"}
+{"id": 1315778, "field": "name", "en": "Mount Speed", "hash": "f84a9c6f27b3fa2a", "src": "db2@1.60.1.70291"}
+{"id": 1315778, "field": "description", "en": "Increases movement speed while mounted by $s1% in Winterspring.", "hash": "46e8d69fb1d6db44", "src": "db2@1.60.1.70291"}
+{"id": 1315778, "field": "aura", "en": "Movement speed increased by $s1% while mounted.", "hash": "939516e9c948c73d", "src": "db2@1.60.1.70291"}
+{"id": 1315844, "field": "name", "en": "Lucky Shovelnose Snout", "hash": "953f7466bafe05e0", "src": "db2@1.60.1.70291"}
+{"id": 1315844, "field": "description", "en": "Increases your chance to Dodge by $s1% for $d.", "hash": "a3828625958eb311", "src": "db2@1.60.1.70291"}
+{"id": 1315844, "field": "aura", "en": "Dodge chance increased by $s1%.", "hash": "13f65298c8044223", "src": "db2@1.60.1.70291"}
+{"id": 1315849, "field": "name", "en": "Behemoth Bone", "hash": "7c66f697cbd0e832", "src": "db2@1.60.1.70291"}
+{"id": 1315849, "field": "description", "en": "Crack open the bone, healing yourself for $s1 and your nearest ally for $s2. ", "hash": "02d768f2a9c509b7", "src": "db2@1.60.1.70291"}
+{"id": 1315854, "field": "name", "en": "Behemoth Bones", "hash": "a8b030f36ebbd1d6", "src": "db2@1.60.1.70291"}
+{"id": 1315854, "field": "description", "en": "Heal for $1315849s1.", "hash": "5b61ddb017adf687", "src": "db2@1.60.1.70291"}
+{"id": 1315859, "field": "name", "en": "Passive DoT", "hash": "c38c2eeb0dae83fe", "src": "db2@1.60.1.70291"}
+{"id": 1315878, "field": "name", "en": "Flamebreak Talisman", "hash": "7584b9ba8cd327d4", "src": "db2@1.60.1.70291"}
+{"id": 1315878, "field": "description", "en": "Increase your agility by $s1 for $d. If there is an elemental nearby, gain an additional $s2.", "hash": "c56ec730993e70e6", "src": "db2@1.60.1.70291"}
+{"id": 1315878, "field": "aura", "en": "Agility increased by ${$w1+$w2}.", "hash": "a84d62079a3eac2a", "src": "db2@1.60.1.70291"}
+{"id": 1315969, "field": "name", "en": "Rune of Perfection", "hash": "26cfc315b9e4f728", "src": "db2@1.60.1.70291"}
+{"id": 1315969, "field": "description", "en": "Your spells pierce $s1 Magical Resistances. Gain an additional $1315971s1 Spell Piercing in Forest and Grassland areas.", "hash": "1657413d757d3af6", "src": "db2@1.60.1.70291"}
+{"id": 1315971, "field": "name", "en": "Rune of Perfection", "hash": "26cfc315b9e4f728", "src": "db2@1.60.1.70291"}
+{"id": 1315971, "field": "aura", "en": "In a Forest or Grassland area, Spell Piercing increased by an additional $s1.", "hash": "4e10bc744e8f38be", "src": "db2@1.60.1.70291"}
+{"id": 1315972, "field": "name", "en": "Slammed", "hash": "6729c11682c4bd4c", "src": "db2@1.60.1.70291"}
+{"id": 1315972, "field": "description", "en": "Stuns target and yourself for $d. Ogres are Stunned for $1317450d and refund $1317450s2% of the cooldown.", "hash": "b6db8b9d4eec0760", "src": "db2@1.60.1.70291"}
+{"id": 1315972, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70291"}
+{"id": 1315989, "field": "name", "en": "Rune of Duty", "hash": "0c70af479dfd7b6d", "src": "db2@1.60.1.70291"}
+{"id": 1315989, "field": "description", "en": "Increases all Resistances by $s1. Gain an additional $1315990s1 to all Resistances in Forest and Grassland areas.", "hash": "f00683c428cf52be", "src": "db2@1.60.1.70291"}
+{"id": 1315990, "field": "name", "en": "Rune of Duty", "hash": "0c70af479dfd7b6d", "src": "db2@1.60.1.70291"}
+{"id": 1315990, "field": "aura", "en": "In a Forest or Grassland area, all Resistances increased by an additional $w1.", "hash": "7c8354afcf390ea1", "src": "db2@1.60.1.70291"}
+{"id": 1315996, "field": "name", "en": "Grounded Electroshock", "hash": "8f73a408c1514707", "src": "db2@1.60.1.70291"}
+{"id": 1315996, "field": "description", "en": "Deals $s1 Nature damage.", "hash": "95b93ec2e49821bf", "src": "db2@1.60.1.70291"}

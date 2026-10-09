@@ -13,7 +13,7 @@ BUILD = "1.15.9.69722"
 # db2@<forever build>; one Forever does not have keeps its Vanilla stamp (the union merge), and that stamp is
 # what `wfj stats --unseen-since` reads to find what the newer client has never had. Both are pinned builds:
 # the assertion is that no line carries an unpinned or unknown source, not that there is only ever one.
-FOREVER_BUILD = "1.60.1.70245"
+FOREVER_BUILD = "1.60.1.70291"
 ENGLISH_SOURCES = {f"wago@{BUILD}", f"db2@{FOREVER_BUILD}"}
 # UI words that are also the exact name of some item or spell (e.g. an item called "Cloth", the spell "Shield").
 # They are allowed because the addon never walks the line that reads as the item / spell name and labels are matched

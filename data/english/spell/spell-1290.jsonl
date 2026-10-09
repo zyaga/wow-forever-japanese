@@ -1,85 +1,85 @@
-{"id": 1290013, "field": "name", "en": "Recuperating", "hash": "51d901c85ad5877a", "src": "db2@1.60.1.70245"}
-{"id": 1290013, "field": "aura", "en": "Weakened.", "hash": "43fd0a534c77075e", "src": "db2@1.60.1.70245"}
-{"id": 1290040, "field": "name", "en": "Enfeeble", "hash": "07a2a47f2a7b6a1f", "src": "db2@1.60.1.70245"}
-{"id": 1290040, "field": "description", "en": "$@spelldesc1288558", "hash": "edda4d384193bf2e", "src": "db2@1.60.1.70245"}
-{"id": 1290040, "field": "aura", "en": "$@spelldesc1288558", "hash": "edda4d384193bf2e", "src": "db2@1.60.1.70245"}
-{"id": 1290041, "field": "name", "en": "Bloom", "hash": "951f087bd9030469", "src": "db2@1.60.1.70245"}
-{"id": 1290041, "field": "aura", "en": "Rooted in place for $d. $s2 Nature damage inflicted every $t2 sec.", "hash": "a3c6bcb4bd52932f", "src": "db2@1.60.1.70245"}
-{"id": 1290042, "field": "name", "en": "Revitalization", "hash": "b189eee65eaa85bd", "src": "db2@1.60.1.70245"}
-{"id": 1290042, "field": "aura", "en": "Restores $s1 Mana per sec.\r\nRestores $s2 Energy per sec.\r\nGenerates $/10;s3 Rage per sec.", "hash": "cc5cc316488a9017", "src": "db2@1.60.1.70245"}
-{"id": 1290043, "field": "name", "en": "Crystallize", "hash": "d00de7969e0e8870", "src": "db2@1.60.1.70245"}
-{"id": 1290043, "field": "aura", "en": "Frozen.\r\nStunned for $d.", "hash": "0a60dcde92fa664b", "src": "db2@1.60.1.70245"}
-{"id": 1290044, "field": "name", "en": "Crystallize", "hash": "d00de7969e0e8870", "src": "db2@1.60.1.70245"}
-{"id": 1290045, "field": "name", "en": "Crystallize Trigger", "hash": "2931917f608e67f5", "src": "db2@1.60.1.70245"}
-{"id": 1290046, "field": "name", "en": "Revitalization Trigger", "hash": "6829e756703766e9", "src": "db2@1.60.1.70245"}
-{"id": 1290047, "field": "name", "en": "Fire", "hash": "097cf1ce4b4eb722", "src": "db2@1.60.1.70245"}
-{"id": 1290052, "field": "name", "en": "Spore Cloud", "hash": "4a4ec6f5b6e0e622", "src": "db2@1.60.1.70245"}
-{"id": 1290052, "field": "description", "en": "$@spelldesc<1290054>", "hash": "c4466ea49fa9395c", "src": "db2@1.60.1.70245"}
-{"id": 1290052, "field": "aura", "en": "$@spellaura<1290054>", "hash": "0892dca926b3a5a2", "src": "db2@1.60.1.70245"}
-{"id": 1290054, "field": "name", "en": "Spore Cloud", "hash": "4a4ec6f5b6e0e622", "src": "db2@1.60.1.70245"}
-{"id": 1290054, "field": "description", "en": "Choking spores fill the air, inflicting $s1 Nature damage every $t1 sec.", "hash": "35394b00c4729aec", "src": "db2@1.60.1.70245"}
-{"id": 1290054, "field": "aura", "en": "Inflicts $s1 Nature damage every $t1 sec.", "hash": "87bc695c17bef07e", "src": "db2@1.60.1.70245"}
-{"id": 1290060, "field": "name", "en": "Infected Bite", "hash": "6cd472762ced9392", "src": "db2@1.60.1.70245"}
-{"id": 1290060, "field": "description", "en": "Inflicts $s1 Nature damage to an enemy every $t1 sec and increases the Physical damage it takes by $s2.", "hash": "26a97bc20b3cfd62", "src": "db2@1.60.1.70245"}
-{"id": 1290060, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.\r\nPhysical damage taken is increased by $s2.", "hash": "4ee0a8ee92d909a5", "src": "db2@1.60.1.70245"}
-{"id": 1290105, "field": "name", "en": "Loa Ghost Visual", "hash": "f6ce300d0e97bb7f", "src": "db2@1.60.1.70245"}
-{"id": 1290120, "field": "name", "en": "By'zaali's Favor", "hash": "16bd3600a1622ed9", "src": "db2@1.60.1.70245"}
-{"id": 1290120, "field": "aura", "en": "A child of By'zaali has acknowledged your devotion and has found you worthy.", "hash": "e58f2b65bd12a8fd", "src": "db2@1.60.1.70245"}
-{"id": 1290130, "field": "name", "en": "Combat Pulse", "hash": "ff93f6f60c23ad71", "src": "db2@1.60.1.70245"}
-{"id": 1290131, "field": "name", "en": "Summon Child of By'zaali", "hash": "e15f99d5b11bd673", "src": "db2@1.60.1.70245"}
-{"id": 1290131, "field": "description", "en": "Right Click to summon and dismiss your companion.", "hash": "7f158c13981e5af5", "src": "db2@1.60.1.70245"}
-{"id": 1290186, "field": "name", "en": "[DNT] Can Have By'zaali's Favor", "hash": "13a7649f6b30e745", "src": "db2@1.60.1.70245"}
-{"id": 1290186, "field": "aura", "en": "A child of By'zaali has acknowledged your devotion and has found you worthy.", "hash": "e58f2b65bd12a8fd", "src": "db2@1.60.1.70245"}
-{"id": 1290188, "field": "name", "en": "[DNT] Emote State - Dance", "hash": "1cb9e4d6401d3897", "src": "db2@1.60.1.70245"}
-{"id": 1290202, "field": "name", "en": "Break All Equipment", "hash": "942e93d238127e03", "src": "db2@1.60.1.70245"}
-{"id": 1290211, "field": "name", "en": "Camping", "hash": "2059c10bb3c701a8", "src": "db2@1.60.1.70245"}
-{"id": 1290235, "field": "name", "en": "Illness", "hash": "1965d6d52c9df847", "src": "db2@1.60.1.70245"}
-{"id": 1290235, "field": "description", "en": "Afflicted.", "hash": "2dd1686db7fc26a6", "src": "db2@1.60.1.70245"}
-{"id": 1290240, "field": "name", "en": "Bleeding", "hash": "3c43f39d5beba9e5", "src": "db2@1.60.1.70245"}
-{"id": 1290240, "field": "aura", "en": "Needs medical attention.", "hash": "1f301204fdaaa837", "src": "db2@1.60.1.70245"}
-{"id": 1290241, "field": "name", "en": "[DNT] Wounded Soldier Quest Dummy", "hash": "d458ecd8b6dd69b9", "src": "db2@1.60.1.70245"}
-{"id": 1290242, "field": "name", "en": "Apply Bandage", "hash": "84dcd98ae5534e9b", "src": "db2@1.60.1.70245"}
-{"id": 1290242, "field": "description", "en": "Dress the injuries of a wounded soldier.", "hash": "eacfd796a3e55fa9", "src": "db2@1.60.1.70245"}
-{"id": 1290261, "field": "name", "en": "Weaponmaster", "hash": "9c372592adc02afc", "src": "db2@1.60.1.70245"}
-{"id": 1290261, "field": "description", "en": "Gives your melee weapon attacks a benefit depending on the weapon.\r\n\r\n    |CFFFFFFFFAxe/Polearm:|R Increases your\r\n    critical strike chance by $s1%.\r\n\r\n    |CFFFFFFFFMace/Staff:|R Your attacks ignore\r\n    $s2% of your target's armor.\r\n\r\n    |CFFFFFFFFSword:|R Your successful melee \r\n    attacks have a $s3% chance to \r\n    trigger an extra attack on the \r\n    target.", "hash": "27838c1f4adcdd73", "src": "db2@1.60.1.70245"}
-{"id": 1290312, "field": "name", "en": "Hack and Slash", "hash": "6d8903e8418c2592", "src": "db2@1.60.1.70245"}
-{"id": 1290312, "field": "description", "en": "Gives you a $m1% chance to get an extra attack on the same target after dealing damage with your Sword or Axe.", "hash": "baa3055226273742", "src": "db2@1.60.1.70245"}
-{"id": 1290355, "field": "name", "en": "[DNT] Diseased Visual State", "hash": "70336360698f2ef4", "src": "db2@1.60.1.70245"}
-{"id": 1290364, "field": "name", "en": "[DNT] Ombassa Trigger", "hash": "7cf6bdf8c4948f13", "src": "db2@1.60.1.70245"}
-{"id": 1290398, "field": "name", "en": "Faction Banner", "hash": "920e49ce79d643b5", "src": "db2@1.60.1.70245"}
-{"id": 1290481, "field": "name", "en": "Call Guards", "hash": "52af33d5ba453c27", "src": "db2@1.60.1.70245"}
-{"id": 1290708, "field": "name", "en": "Stealth", "hash": "87e718bee5e635c1", "src": "db2@1.60.1.70245"}
-{"id": 1290708, "field": "description", "en": "Allows the rogue to sneak around, but reduces your speed by $s3%. Lasts until cancelled.", "hash": "e555a300f38d7c37", "src": "db2@1.60.1.70245"}
-{"id": 1290708, "field": "aura", "en": "Stealthed. Movement slowed by $s3%.", "hash": "baa30eb03bf0e7e0", "src": "db2@1.60.1.70245"}
-{"id": 1290709, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70245"}
-{"id": 1290710, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70245"}
-{"id": 1290732, "field": "name", "en": "Root Self", "hash": "4d9aba80e25926fa", "src": "db2@1.60.1.70245"}
-{"id": 1290782, "field": "name", "en": "Translocation", "hash": "af1fcb78939bc623", "src": "db2@1.60.1.70245"}
-{"id": 1290800, "field": "name", "en": "Deft Digits", "hash": "03e64f92e923091f", "src": "db2@1.60.1.70245"}
-{"id": 1290800, "field": "description", "en": "Improves hand agility and flexibility, increasing crafting speed by $w1%.", "hash": "1088568f7d4c0dad", "src": "db2@1.60.1.70245"}
-{"id": 1290800, "field": "aura", "en": "Crafting speed increased by $w1%.", "hash": "d62e06fefa9f7fdc", "src": "db2@1.60.1.70245"}
-{"id": 1290859, "field": "name", "en": "Darkspear Islands Iron Ration", "hash": "3e0d3b7ffc2dfa40", "src": "db2@1.60.1.70245"}
-{"id": 1290859, "field": "description", "en": "Restores $26474o1 health and $26475o2 mana over $26474d. Must remain seated while eating. Usable only inside Darkspear Islands.", "hash": "f40fa69005386fa7", "src": "db2@1.60.1.70245"}
-{"id": 1290860, "field": "name", "en": "Darkspear Islands Field Ration", "hash": "5a4836a96f9ac2c0", "src": "db2@1.60.1.70245"}
-{"id": 1290860, "field": "description", "en": "Restores $26472o1 health and $26473o2 mana over $26472d. Must remain seated while eating. Usable only inside Darkspear Islands.", "hash": "c9e5c5ccb718ba12", "src": "db2@1.60.1.70245"}
-{"id": 1290861, "field": "name", "en": "Darkspear Islands Enriched Ration", "hash": "3d158dc1cfedd7e7", "src": "db2@1.60.1.70245"}
-{"id": 1290861, "field": "description", "en": "Restores $25695o1 health and $25696o2 mana over $25695d. Must remain seated while eating. Usable only inside Darkspear Islands.", "hash": "10d1e09515b7fd39", "src": "db2@1.60.1.70245"}
-{"id": 1290861, "field": "aura", "en": "Restores $/5;s1 health and $/5;s2 mana per second.", "hash": "41faa5202f91ed91", "src": "db2@1.60.1.70245"}
-{"id": 1290863, "field": "name", "en": "First Aid", "hash": "ea1f79a44f1fdabb", "src": "db2@1.60.1.70245"}
-{"id": 1290863, "field": "description", "en": "Heals $o1 damage over $d. Usable only inside Darkspear Islands.", "hash": "aa1d1278d959f527", "src": "db2@1.60.1.70245"}
-{"id": 1290863, "field": "aura", "en": "Healing $s1 damage every $t1 sec.", "hash": "c0a3840975cd3a7a", "src": "db2@1.60.1.70245"}
-{"id": 1290865, "field": "name", "en": "First Aid", "hash": "ea1f79a44f1fdabb", "src": "db2@1.60.1.70245"}
-{"id": 1290865, "field": "description", "en": "Heals $o1 damage over $d. Usable only inside Darkspear Islands.", "hash": "aa1d1278d959f527", "src": "db2@1.60.1.70245"}
-{"id": 1290865, "field": "aura", "en": "Healing $s1 damage every $t1 sec.", "hash": "c0a3840975cd3a7a", "src": "db2@1.60.1.70245"}
-{"id": 1290867, "field": "name", "en": "First Aid", "hash": "ea1f79a44f1fdabb", "src": "db2@1.60.1.70245"}
-{"id": 1290867, "field": "description", "en": "Heals $o1 damage over $d. Usable only inside Darkspear Islands.", "hash": "aa1d1278d959f527", "src": "db2@1.60.1.70245"}
-{"id": 1290867, "field": "aura", "en": "Healing $s1 damage every $t1 sec.", "hash": "c0a3840975cd3a7a", "src": "db2@1.60.1.70245"}
-{"id": 1290875, "field": "name", "en": "Arcane Portal", "hash": "b79faf896b428353", "src": "db2@1.60.1.70245"}
-{"id": 1290950, "field": "name", "en": "Brain Damage", "hash": "66e0d3553bde01f9", "src": "db2@1.60.1.70245"}
-{"id": 1290950, "field": "description", "en": "Wounds the target for $s1 damage and increases the casting time of all spells by $s2% for $d.", "hash": "4dfe9f76b02e878c", "src": "db2@1.60.1.70245"}
-{"id": 1290950, "field": "aura", "en": "Increasing casting time by $s2%.", "hash": "1c80d8efbc27a937", "src": "db2@1.60.1.70245"}
-{"id": 1290954, "field": "name", "en": "Flight Path", "hash": "47e776b07200930e", "src": "db2@1.60.1.70245"}
-{"id": 1290955, "field": "name", "en": "Hippogryph", "hash": "8cd9afaa3f5652b4", "src": "db2@1.60.1.70245"}
-{"id": 1290959, "field": "name", "en": "Hippogryph", "hash": "8cd9afaa3f5652b4", "src": "db2@1.60.1.70245"}
-{"id": 1290966, "field": "name", "en": "[DNT] Kill Credit", "hash": "5787af819f4bc284", "src": "db2@1.60.1.70245"}
-{"id": 1290989, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70245"}
+{"id": 1290013, "field": "name", "en": "Recuperating", "hash": "51d901c85ad5877a", "src": "db2@1.60.1.70291"}
+{"id": 1290013, "field": "aura", "en": "Weakened.", "hash": "43fd0a534c77075e", "src": "db2@1.60.1.70291"}
+{"id": 1290040, "field": "name", "en": "Enfeeble", "hash": "07a2a47f2a7b6a1f", "src": "db2@1.60.1.70291"}
+{"id": 1290040, "field": "description", "en": "$@spelldesc1288558", "hash": "edda4d384193bf2e", "src": "db2@1.60.1.70291"}
+{"id": 1290040, "field": "aura", "en": "$@spelldesc1288558", "hash": "edda4d384193bf2e", "src": "db2@1.60.1.70291"}
+{"id": 1290041, "field": "name", "en": "Bloom", "hash": "951f087bd9030469", "src": "db2@1.60.1.70291"}
+{"id": 1290041, "field": "aura", "en": "Rooted in place for $d. $s2 Nature damage inflicted every $t2 sec.", "hash": "a3c6bcb4bd52932f", "src": "db2@1.60.1.70291"}
+{"id": 1290042, "field": "name", "en": "Revitalization", "hash": "b189eee65eaa85bd", "src": "db2@1.60.1.70291"}
+{"id": 1290042, "field": "aura", "en": "Restores $s1 Mana per sec.\r\nRestores $s2 Energy per sec.\r\nGenerates $/10;s3 Rage per sec.", "hash": "cc5cc316488a9017", "src": "db2@1.60.1.70291"}
+{"id": 1290043, "field": "name", "en": "Crystallize", "hash": "d00de7969e0e8870", "src": "db2@1.60.1.70291"}
+{"id": 1290043, "field": "aura", "en": "Frozen.\r\nStunned for $d.", "hash": "0a60dcde92fa664b", "src": "db2@1.60.1.70291"}
+{"id": 1290044, "field": "name", "en": "Crystallize", "hash": "d00de7969e0e8870", "src": "db2@1.60.1.70291"}
+{"id": 1290045, "field": "name", "en": "Crystallize Trigger", "hash": "2931917f608e67f5", "src": "db2@1.60.1.70291"}
+{"id": 1290046, "field": "name", "en": "Revitalization Trigger", "hash": "6829e756703766e9", "src": "db2@1.60.1.70291"}
+{"id": 1290047, "field": "name", "en": "Fire", "hash": "097cf1ce4b4eb722", "src": "db2@1.60.1.70291"}
+{"id": 1290052, "field": "name", "en": "Spore Cloud", "hash": "4a4ec6f5b6e0e622", "src": "db2@1.60.1.70291"}
+{"id": 1290052, "field": "description", "en": "$@spelldesc<1290054>", "hash": "c4466ea49fa9395c", "src": "db2@1.60.1.70291"}
+{"id": 1290052, "field": "aura", "en": "$@spellaura<1290054>", "hash": "0892dca926b3a5a2", "src": "db2@1.60.1.70291"}
+{"id": 1290054, "field": "name", "en": "Spore Cloud", "hash": "4a4ec6f5b6e0e622", "src": "db2@1.60.1.70291"}
+{"id": 1290054, "field": "description", "en": "Choking spores fill the air, inflicting $s1 Nature damage every $t1 sec.", "hash": "35394b00c4729aec", "src": "db2@1.60.1.70291"}
+{"id": 1290054, "field": "aura", "en": "Inflicts $s1 Nature damage every $t1 sec.", "hash": "87bc695c17bef07e", "src": "db2@1.60.1.70291"}
+{"id": 1290060, "field": "name", "en": "Infected Bite", "hash": "6cd472762ced9392", "src": "db2@1.60.1.70291"}
+{"id": 1290060, "field": "description", "en": "Inflicts $s1 Nature damage to an enemy every $t1 sec and increases the Physical damage it takes by $s2.", "hash": "26a97bc20b3cfd62", "src": "db2@1.60.1.70291"}
+{"id": 1290060, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.\r\nPhysical damage taken is increased by $s2.", "hash": "4ee0a8ee92d909a5", "src": "db2@1.60.1.70291"}
+{"id": 1290105, "field": "name", "en": "Loa Ghost Visual", "hash": "f6ce300d0e97bb7f", "src": "db2@1.60.1.70291"}
+{"id": 1290120, "field": "name", "en": "By'zaali's Favor", "hash": "16bd3600a1622ed9", "src": "db2@1.60.1.70291"}
+{"id": 1290120, "field": "aura", "en": "A child of By'zaali has acknowledged your devotion and has found you worthy.", "hash": "e58f2b65bd12a8fd", "src": "db2@1.60.1.70291"}
+{"id": 1290130, "field": "name", "en": "Combat Pulse", "hash": "ff93f6f60c23ad71", "src": "db2@1.60.1.70291"}
+{"id": 1290131, "field": "name", "en": "Summon Child of By'zaali", "hash": "e15f99d5b11bd673", "src": "db2@1.60.1.70291"}
+{"id": 1290131, "field": "description", "en": "Right Click to summon and dismiss your companion.", "hash": "7f158c13981e5af5", "src": "db2@1.60.1.70291"}
+{"id": 1290186, "field": "name", "en": "[DNT] Can Have By'zaali's Favor", "hash": "13a7649f6b30e745", "src": "db2@1.60.1.70291"}
+{"id": 1290186, "field": "aura", "en": "A child of By'zaali has acknowledged your devotion and has found you worthy.", "hash": "e58f2b65bd12a8fd", "src": "db2@1.60.1.70291"}
+{"id": 1290188, "field": "name", "en": "[DNT] Emote State - Dance", "hash": "1cb9e4d6401d3897", "src": "db2@1.60.1.70291"}
+{"id": 1290202, "field": "name", "en": "Break All Equipment", "hash": "942e93d238127e03", "src": "db2@1.60.1.70291"}
+{"id": 1290211, "field": "name", "en": "Camping", "hash": "2059c10bb3c701a8", "src": "db2@1.60.1.70291"}
+{"id": 1290235, "field": "name", "en": "Illness", "hash": "1965d6d52c9df847", "src": "db2@1.60.1.70291"}
+{"id": 1290235, "field": "description", "en": "Afflicted.", "hash": "2dd1686db7fc26a6", "src": "db2@1.60.1.70291"}
+{"id": 1290240, "field": "name", "en": "Bleeding", "hash": "3c43f39d5beba9e5", "src": "db2@1.60.1.70291"}
+{"id": 1290240, "field": "aura", "en": "Needs medical attention.", "hash": "1f301204fdaaa837", "src": "db2@1.60.1.70291"}
+{"id": 1290241, "field": "name", "en": "[DNT] Wounded Soldier Quest Dummy", "hash": "d458ecd8b6dd69b9", "src": "db2@1.60.1.70291"}
+{"id": 1290242, "field": "name", "en": "Apply Bandage", "hash": "84dcd98ae5534e9b", "src": "db2@1.60.1.70291"}
+{"id": 1290242, "field": "description", "en": "Dress the injuries of a wounded soldier.", "hash": "eacfd796a3e55fa9", "src": "db2@1.60.1.70291"}
+{"id": 1290261, "field": "name", "en": "Weaponmaster", "hash": "9c372592adc02afc", "src": "db2@1.60.1.70291"}
+{"id": 1290261, "field": "description", "en": "Gives your melee weapon attacks a benefit depending on the weapon.\r\n\r\n    |CFFFFFFFFAxe/Polearm:|R Increases your\r\n    critical strike chance by $s1%.\r\n\r\n    |CFFFFFFFFMace/Staff:|R Your attacks ignore\r\n    $s2% of your target's armor.\r\n\r\n    |CFFFFFFFFSword:|R Your successful melee \r\n    attacks have a $s3% chance to \r\n    trigger an extra attack on the \r\n    target.", "hash": "27838c1f4adcdd73", "src": "db2@1.60.1.70291"}
+{"id": 1290312, "field": "name", "en": "Hack and Slash", "hash": "6d8903e8418c2592", "src": "db2@1.60.1.70291"}
+{"id": 1290312, "field": "description", "en": "Gives you a $m1% chance to get an extra attack on the same target after dealing damage with your Sword or Axe.", "hash": "baa3055226273742", "src": "db2@1.60.1.70291"}
+{"id": 1290355, "field": "name", "en": "[DNT] Diseased Visual State", "hash": "70336360698f2ef4", "src": "db2@1.60.1.70291"}
+{"id": 1290364, "field": "name", "en": "[DNT] Ombassa Trigger", "hash": "7cf6bdf8c4948f13", "src": "db2@1.60.1.70291"}
+{"id": 1290398, "field": "name", "en": "Faction Banner", "hash": "920e49ce79d643b5", "src": "db2@1.60.1.70291"}
+{"id": 1290481, "field": "name", "en": "Call Guards", "hash": "52af33d5ba453c27", "src": "db2@1.60.1.70291"}
+{"id": 1290708, "field": "name", "en": "Stealth", "hash": "87e718bee5e635c1", "src": "db2@1.60.1.70291"}
+{"id": 1290708, "field": "description", "en": "Allows the rogue to sneak around, but reduces your speed by $s3%. Lasts until cancelled.", "hash": "e555a300f38d7c37", "src": "db2@1.60.1.70291"}
+{"id": 1290708, "field": "aura", "en": "Stealthed. Movement slowed by $s3%.", "hash": "baa30eb03bf0e7e0", "src": "db2@1.60.1.70291"}
+{"id": 1290709, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70291"}
+{"id": 1290710, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70291"}
+{"id": 1290732, "field": "name", "en": "Root Self", "hash": "4d9aba80e25926fa", "src": "db2@1.60.1.70291"}
+{"id": 1290782, "field": "name", "en": "Translocation", "hash": "af1fcb78939bc623", "src": "db2@1.60.1.70291"}
+{"id": 1290800, "field": "name", "en": "Deft Digits", "hash": "03e64f92e923091f", "src": "db2@1.60.1.70291"}
+{"id": 1290800, "field": "description", "en": "Improves hand agility and flexibility, increasing crafting speed by $w1%.", "hash": "1088568f7d4c0dad", "src": "db2@1.60.1.70291"}
+{"id": 1290800, "field": "aura", "en": "Crafting speed increased by $w1%.", "hash": "d62e06fefa9f7fdc", "src": "db2@1.60.1.70291"}
+{"id": 1290859, "field": "name", "en": "Darkspear Islands Iron Ration", "hash": "3e0d3b7ffc2dfa40", "src": "db2@1.60.1.70291"}
+{"id": 1290859, "field": "description", "en": "Restores $26474o1 health and $26475o2 mana over $26474d. Must remain seated while eating. Usable only inside Darkspear Islands.", "hash": "f40fa69005386fa7", "src": "db2@1.60.1.70291"}
+{"id": 1290860, "field": "name", "en": "Darkspear Islands Field Ration", "hash": "5a4836a96f9ac2c0", "src": "db2@1.60.1.70291"}
+{"id": 1290860, "field": "description", "en": "Restores $26472o1 health and $26473o2 mana over $26472d. Must remain seated while eating. Usable only inside Darkspear Islands.", "hash": "c9e5c5ccb718ba12", "src": "db2@1.60.1.70291"}
+{"id": 1290861, "field": "name", "en": "Darkspear Islands Enriched Ration", "hash": "3d158dc1cfedd7e7", "src": "db2@1.60.1.70291"}
+{"id": 1290861, "field": "description", "en": "Restores $25695o1 health and $25696o2 mana over $25695d. Must remain seated while eating. Usable only inside Darkspear Islands.", "hash": "10d1e09515b7fd39", "src": "db2@1.60.1.70291"}
+{"id": 1290861, "field": "aura", "en": "Restores $/5;s1 health and $/5;s2 mana per sec.", "hash": "602a9085b0a86207", "src": "db2@1.60.1.70291"}
+{"id": 1290863, "field": "name", "en": "First Aid", "hash": "ea1f79a44f1fdabb", "src": "db2@1.60.1.70291"}
+{"id": 1290863, "field": "description", "en": "Heals $o1 damage over $d. Usable only inside Darkspear Islands.", "hash": "aa1d1278d959f527", "src": "db2@1.60.1.70291"}
+{"id": 1290863, "field": "aura", "en": "Healing $s1 damage every $t1 sec.", "hash": "c0a3840975cd3a7a", "src": "db2@1.60.1.70291"}
+{"id": 1290865, "field": "name", "en": "First Aid", "hash": "ea1f79a44f1fdabb", "src": "db2@1.60.1.70291"}
+{"id": 1290865, "field": "description", "en": "Heals $o1 damage over $d. Usable only inside Darkspear Islands.", "hash": "aa1d1278d959f527", "src": "db2@1.60.1.70291"}
+{"id": 1290865, "field": "aura", "en": "Healing $s1 damage every $t1 sec.", "hash": "c0a3840975cd3a7a", "src": "db2@1.60.1.70291"}
+{"id": 1290867, "field": "name", "en": "First Aid", "hash": "ea1f79a44f1fdabb", "src": "db2@1.60.1.70291"}
+{"id": 1290867, "field": "description", "en": "Heals $o1 damage over $d. Usable only inside Darkspear Islands.", "hash": "aa1d1278d959f527", "src": "db2@1.60.1.70291"}
+{"id": 1290867, "field": "aura", "en": "Healing $s1 damage every $t1 sec.", "hash": "c0a3840975cd3a7a", "src": "db2@1.60.1.70291"}
+{"id": 1290875, "field": "name", "en": "Arcane Portal", "hash": "b79faf896b428353", "src": "db2@1.60.1.70291"}
+{"id": 1290950, "field": "name", "en": "Brain Damage", "hash": "66e0d3553bde01f9", "src": "db2@1.60.1.70291"}
+{"id": 1290950, "field": "description", "en": "Wounds the target for $s1 damage and increases the casting time of all spells by $s2% for $d.", "hash": "4dfe9f76b02e878c", "src": "db2@1.60.1.70291"}
+{"id": 1290950, "field": "aura", "en": "Increasing casting time by $s2%.", "hash": "1c80d8efbc27a937", "src": "db2@1.60.1.70291"}
+{"id": 1290954, "field": "name", "en": "Flight Path", "hash": "47e776b07200930e", "src": "db2@1.60.1.70291"}
+{"id": 1290955, "field": "name", "en": "Hippogryph", "hash": "8cd9afaa3f5652b4", "src": "db2@1.60.1.70291"}
+{"id": 1290959, "field": "name", "en": "Hippogryph", "hash": "8cd9afaa3f5652b4", "src": "db2@1.60.1.70291"}
+{"id": 1290966, "field": "name", "en": "[DNT] Kill Credit", "hash": "5787af819f4bc284", "src": "db2@1.60.1.70291"}
+{"id": 1290989, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70291"}

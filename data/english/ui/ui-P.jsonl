@@ -1,529 +1,538 @@
-{"id": "PAGED_LIST_PAGING_FORMAT", "field": "text", "en": "Page %s / %s", "hash": "fd6d0d3828c414eb", "src": "db2@1.60.1.70245"}
-{"id": "PAGE_NUMBER", "field": "text", "en": "Page %d", "hash": "e28df7529da1b241", "src": "db2@1.60.1.70245"}
-{"id": "PAGE_NUMBER_WITH_MAX", "field": "text", "en": "Page %d/%d", "hash": "b8e0944888377797", "src": "db2@1.60.1.70245"}
-{"id": "PALADIN_STRENGTH_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFAttack Power|r by %d\nIncreases |cFFFFFFFFBlock Value|r by %d", "hash": "be95ff635ef2ba7a", "src": "db2@1.60.1.70245"}
-{"id": "PAPERDOLL_AUTO_EQUIP_ALCHEMY_ONLY", "field": "text", "en": "Only Alchemy equipment can be equipped here.", "hash": "8659fb8943fd46c4", "src": "db2@1.60.1.70245"}
-{"id": "PAPERDOLL_AUTO_EQUIP_BLACKSMITHING_ONLY", "field": "text", "en": "Only Blacksmithing equipment can be equipped here.", "hash": "b670240f9b7820d7", "src": "db2@1.60.1.70245"}
-{"id": "PAPERDOLL_AUTO_EQUIP_COOKING_ONLY", "field": "text", "en": "Only Cooking equipment can be equipped here.", "hash": "5a40d34b21cb391d", "src": "db2@1.60.1.70245"}
-{"id": "PAPERDOLL_AUTO_EQUIP_ENCHANTING_ONLY", "field": "text", "en": "Only Enchanting equipment can be equipped here.", "hash": "bb6e3ed8bd788375", "src": "db2@1.60.1.70245"}
-{"id": "PAPERDOLL_AUTO_EQUIP_ENGINEERING_ONLY", "field": "text", "en": "Only Engineering equipment can be equipped here.", "hash": "4a86fc11a0e93639", "src": "db2@1.60.1.70245"}
-{"id": "PAPERDOLL_AUTO_EQUIP_FISHING_ONLY", "field": "text", "en": "Only Fishing equipment can be equipped here.", "hash": "1b8f2c2933c6bb1f", "src": "db2@1.60.1.70245"}
-{"id": "PAPERDOLL_AUTO_EQUIP_HERBALISM_ONLY", "field": "text", "en": "Only Herbalism equipment can be equipped here.", "hash": "4b6d52ec786a189a", "src": "db2@1.60.1.70245"}
-{"id": "PAPERDOLL_AUTO_EQUIP_INSCRIPTION_ONLY", "field": "text", "en": "Only Inscription equipment can be equipped here.", "hash": "420f73b0ccab7abf", "src": "db2@1.60.1.70245"}
-{"id": "PAPERDOLL_AUTO_EQUIP_JEWELCRAFTING_ONLY", "field": "text", "en": "Only Jewelcrafting equipment can be equipped here.", "hash": "cf8a5b3a80ceea23", "src": "db2@1.60.1.70245"}
-{"id": "PAPERDOLL_AUTO_EQUIP_LEATHERWORKING_ONLY", "field": "text", "en": "Only Leatherworking equipment can be equipped here.", "hash": "d387ec0fcec79980", "src": "db2@1.60.1.70245"}
-{"id": "PAPERDOLL_AUTO_EQUIP_MINING_ONLY", "field": "text", "en": "Only Mining equipment can be equipped here.", "hash": "645bf91e85f251d1", "src": "db2@1.60.1.70245"}
-{"id": "PAPERDOLL_AUTO_EQUIP_SKINNING_ONLY", "field": "text", "en": "Only Skinning equipment can be equipped here.", "hash": "c9e81c662fe93716", "src": "db2@1.60.1.70245"}
-{"id": "PAPERDOLL_AUTO_EQUIP_TAILORING_ONLY", "field": "text", "en": "Only Tailoring equipment can be equipped here.", "hash": "41800e0a0cee080d", "src": "db2@1.60.1.70245"}
-{"id": "PAPERDOLL_EQUIPMENTMANAGER", "field": "text", "en": "Equipment Manager", "hash": "55cc30316136b813", "src": "db2@1.60.1.70245"}
-{"id": "PAPERDOLL_NEWEQUIPMENTSET", "field": "text", "en": "New Set", "hash": "76e3b614d4bbd94c", "src": "db2@1.60.1.70245"}
-{"id": "PAPERDOLL_SIDEBAR_STATS", "field": "text", "en": "Character Stats", "hash": "8c9a7f932339131e", "src": "db2@1.60.1.70245"}
-{"id": "PAPERDOLL_SIDEBAR_TITLES", "field": "text", "en": "Titles", "hash": "ca303dfcef3dd3c1", "src": "db2@1.60.1.70245"}
-{"id": "PARAGON_REPUTATION_TOOLTIP_TEXT", "field": "text", "en": "Continue earning reputation with %s to receive a reward.", "hash": "167be0ad4f3dfc53", "src": "db2@1.60.1.70245"}
-{"id": "PARAGON_REPUTATION_TOOLTIP_TEXT_LOW_LEVEL", "field": "text", "en": "Too low level to earn paragon with this faction.", "hash": "ed056cdf2d3ee6e9", "src": "db2@1.60.1.70245"}
-{"id": "PARENS_TEMPLATE", "field": "text", "en": "(%s)", "hash": "05660b87ab2e3e6f", "src": "db2@1.60.1.70245"}
-{"id": "PARRY", "field": "text", "en": "Parry", "hash": "896675f50247aba9", "src": "db2@1.60.1.70245"}
-{"id": "PARRY_CHANCE", "field": "text", "en": "Parry Chance", "hash": "58abcd17177779d5", "src": "db2@1.60.1.70245"}
-{"id": "PARTICLE_DENSITY", "field": "text", "en": "Particle Density", "hash": "406e0f61d85f75c9", "src": "db2@1.60.1.70245"}
-{"id": "PARTY", "field": "text", "en": "Party", "hash": "896676fb0247eb6b", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_CHAT_BUBBLES_TEXT", "field": "text", "en": "Party Chat Bubbles", "hash": "04349419496f4bb2", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_INVITE", "field": "text", "en": "Invite", "hash": "53896770d7d0fd4d", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_IN_PUBLIC_GROUP_MESSAGE", "field": "text", "en": "This player is currently in an instance group.", "hash": "b473c16aeded774f", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_LEADER", "field": "text", "en": "Party Leader", "hash": "39d2875902e9d27c", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_LEAVE", "field": "text", "en": "Leave Party", "hash": "93262d8109c903f8", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_MESSAGE", "field": "text", "en": "Party Chat", "hash": "861672d73dbd32de", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_PHASED_MESSAGE", "field": "text", "en": "This player is in a different phase. You can neither see nor interact with this player.", "hash": "8e4e9d2838ae4b38", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_PLAYER_CHROMIE_TIME_INELIGIBLE", "field": "text", "en": "You can't see them until they leave Timewalking Campaigns.", "hash": "1aacd35a139ab751", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_PLAYER_CHROMIE_TIME_OTHER_ALLIANCE", "field": "text", "en": "You can't see them until they leave Timewalking or you enter it. Talk to Chromie near the Embassy in Stormwind.", "hash": "f77ceb06861771fd", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_PLAYER_CHROMIE_TIME_OTHER_HORDE", "field": "text", "en": "You can't see them until they leave Timewalking or you enter it. Talk to Chromie near the Embassy in Orgrimmar.", "hash": "bfd7c32d9e2245f8", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_PLAYER_CHROMIE_TIME_OTHER_LOCATION", "field": "text", "en": "Currently in |cffffffffTimewalking Campaigns: %s|r", "hash": "2ebd63f98ec79920", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_PLAYER_CHROMIE_TIME_SELF_ALLIANCE", "field": "text", "en": "You can't see them until you leave Timewalking or they enter it. Talk to Chromie near the Embassy in Stormwind.", "hash": "bcc42346183b483d", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_PLAYER_CHROMIE_TIME_SELF_HORDE", "field": "text", "en": "You can't see them until you leave Timewalking or they enter it. Talk to Chromie near the Embassy in Orgrimmar.", "hash": "851efb6d30461c38", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_PLAYER_CHROMIE_TIME_SELF_LOCATION", "field": "text", "en": "You are currently in |cffffffffTimewalking Campaigns: %s|r", "hash": "0fe7389619f7a7cb", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_PLAYER_DIFFERENT_WORLD_TIER", "field": "text", "en": "You can't see this player because they are in a different World Tier. You can change World Tiers at the Console of Infinite Chaos in the Infinite Bazaar near Dalaran.", "hash": "ee1b855ea72847fa", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_PLAYER_SHARDED_INCOMPATIBLE_RULESET", "field": "text", "en": "You can only see this player inside instances because they are playing with a different ruleset.", "hash": "06fdf5f3d02492ce", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_PLAYER_SHARDED_NEITHER_IN_PARTY_SHARD", "field": "text", "en": "You can't see this player because they are in a different phase.", "hash": "39321c2230784192", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_PLAYER_SHARDED_NOT_IN_PARTY_SHARD", "field": "text", "en": "You can't see this player because they are in a different phase.", "hash": "39321c2230784192", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_PLAYER_SHARDED_TARGET_NOT_IN_PARTY_PHASE", "field": "text", "en": "You can't see this player because they are in a different phase.", "hash": "39321c2230784192", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_PLAYER_WARMODE_DISABLED", "field": "text", "en": "This player has War Mode disabled. You can't see them in the world unless you also disable War Mode in your Talents pane.", "hash": "93e3a9257edf010d", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_PLAYER_WARMODE_ENABLED", "field": "text", "en": "This player has War Mode enabled. You can't see them in the world unless you also enable War Mode in your Talents pane.", "hash": "8648168452857714", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_POSE_DEFEAT", "field": "text", "en": "DEFEAT", "hash": "93c9a5ca7a249dff", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_POSE_VICTORY", "field": "text", "en": "VICTORY!", "hash": "47e2227a3dd6f631", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_PROMOTE", "field": "text", "en": "Promote to Leader", "hash": "cd0ca1bd963d8b51", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_QUEST_STATUS_ON", "field": "text", "en": "Nearby party members that are on this quest:", "hash": "bdfefc6e5a011530", "src": "db2@1.60.1.70245"}
-{"id": "PARTY_UNINVITE", "field": "text", "en": "Uninvite", "hash": "118c1cf2cb995094", "src": "db2@1.60.1.70245"}
-{"id": "PASS", "field": "text", "en": "Pass", "hash": "0ad1e225b19c4154", "src": "db2@1.60.1.70245"}
-{"id": "PASSWORD", "field": "text", "en": "Password", "hash": "ba54dcfd57150ca4", "src": "db2@1.60.1.70245"}
-{"id": "PBR_LIQUID_DETAIL", "field": "text", "en": "PBR Liquid Detail", "hash": "61e953151ee6bf0c", "src": "db2@1.60.1.70245"}
-{"id": "PERIODIC", "field": "text", "en": "Periodic", "hash": "e0fceaaa0fd11407", "src": "db2@1.60.1.70245"}
-{"id": "PERSONALTABARDVENDORGREETING", "field": "text", "en": "Greetings! Choose the symbol and colors for your personal tabard.", "hash": "270baf972c25f142", "src": "db2@1.60.1.70245"}
-{"id": "PERSONALTABARDVENDORUNOWNEDGREETING", "field": "text", "en": "You must own a personal tabard in order to customize, but feel free to browse.", "hash": "f564957f3b766b3f", "src": "db2@1.60.1.70245"}
-{"id": "PET", "field": "text", "en": "Pet", "hash": "001526f33da1c09a", "src": "db2@1.60.1.70245"}
-{"id": "PETS", "field": "text", "en": "Pets", "hash": "0ad2eeccc17d7039", "src": "db2@1.60.1.70245"}
-{"id": "PET_ABANDON", "field": "text", "en": "Release", "hash": "91da4847eb9cecd0", "src": "db2@1.60.1.70245"}
-{"id": "PET_ACTION_ATTACK", "field": "text", "en": "Attack", "hash": "e072942b4a6e859a", "src": "db2@1.60.1.70245"}
-{"id": "PET_ACTION_DISMISS", "field": "text", "en": "Dismiss", "hash": "1a1a309126f2a792", "src": "db2@1.60.1.70245"}
-{"id": "PET_ACTION_FOLLOW", "field": "text", "en": "Follow", "hash": "7133f97147f72238", "src": "db2@1.60.1.70245"}
-{"id": "PET_ACTION_WAIT", "field": "text", "en": "Stay", "hash": "0b3dbb71a53ee6fa", "src": "db2@1.60.1.70245"}
-{"id": "PET_BATTLE_COMBAT_LOG", "field": "text", "en": "Pet Battle Combat", "hash": "af536275e37dfed6", "src": "db2@1.60.1.70245"}
-{"id": "PET_BATTLE_FORFEIT_CONFIRMATION", "field": "text", "en": "Are you sure you want to forfeit the match? Your opponent will be deemed the winner and your pets will lose %d percent health.", "hash": "d44f638224664b02", "src": "db2@1.60.1.70245"}
-{"id": "PET_BATTLE_FORFEIT_CONFIRMATION_NO_PENALTY", "field": "text", "en": "Are you sure you want to forfeit the match? Your opponent will be deemed the winner.", "hash": "22a205e0fac2d4ff", "src": "db2@1.60.1.70245"}
-{"id": "PET_BATTLE_INFO", "field": "text", "en": "Pet Battle Info", "hash": "b21bafa66b656e86", "src": "db2@1.60.1.70245"}
-{"id": "PET_BATTLE_PVP_DUEL_REQUESTED", "field": "text", "en": "%s has challenged you to a pet-battle.", "hash": "cd7bb0a74464bc22", "src": "db2@1.60.1.70245"}
-{"id": "PET_BATTLE_PVP_QUEUE", "field": "text", "en": "Pet Battle", "hash": "18d17e4f0cc1e704", "src": "db2@1.60.1.70245"}
-{"id": "PET_BONUS_TOOLTIP_WARLOCK_SPELLDMG", "field": "text", "en": "|cFFBCBCBC\nIncreases your pet's Attack Power by %d and Spell Damage by %d|r", "hash": "36cd2b4f0339ecb6", "src": "db2@1.60.1.70245"}
-{"id": "PET_BONUS_TOOLTIP_WARLOCK_SPELLDMG_FIRE", "field": "text", "en": "|cFFBCBCBC\nIncreases your pet's Attack Power by %d and Spell Damage by %d|r", "hash": "36cd2b4f0339ecb6", "src": "db2@1.60.1.70245"}
-{"id": "PET_BONUS_TOOLTIP_WARLOCK_SPELLDMG_SHADOW", "field": "text", "en": "|cFFBCBCBC\nIncreases your pet's Attack Power by %d and Spell Damage by %d|r", "hash": "36cd2b4f0339ecb6", "src": "db2@1.60.1.70245"}
-{"id": "PET_DAMAGE_PERCENTAGE", "field": "text", "en": "Causes %d%% of normal damage", "hash": "5051a5458ae59f34", "src": "db2@1.60.1.70245"}
-{"id": "PET_DIET_TEMPLATE", "field": "text", "en": "|cffffd200Diet:|r %s", "hash": "0ea8911900d4fbd1", "src": "db2@1.60.1.70245"}
-{"id": "PET_DISMISS", "field": "text", "en": "Dismiss", "hash": "1a1a309126f2a792", "src": "db2@1.60.1.70245"}
-{"id": "PET_HAPPINESS1", "field": "text", "en": "Unhappy", "hash": "40dce5c6547971b0", "src": "db2@1.60.1.70245"}
-{"id": "PET_HAPPINESS2", "field": "text", "en": "Content", "hash": "f3abc46c2df78f47", "src": "db2@1.60.1.70245"}
-{"id": "PET_HAPPINESS3", "field": "text", "en": "Happy", "hash": "fcf83c500302e89e", "src": "db2@1.60.1.70245"}
-{"id": "PET_INFO", "field": "text", "en": "Pet Info", "hash": "d1879c934c4a1b6a", "src": "db2@1.60.1.70245"}
-{"id": "PET_JOURNAL", "field": "text", "en": "Pet Journal", "hash": "2b4efb9c9fac3787", "src": "db2@1.60.1.70245"}
-{"id": "PET_JOURNAL_CARD_NAME_DEFAULT", "field": "text", "en": "Select a pet from the list on the left.", "hash": "176e59a701186862", "src": "db2@1.60.1.70245"}
-{"id": "PET_JOURNAL_FILTER_USABLE_ONLY", "field": "text", "en": "Usable Only", "hash": "d16600eccbf37a07", "src": "db2@1.60.1.70245"}
-{"id": "PET_JOURNAL_SUMMON_RANDOM_FAVORITE_PET", "field": "text", "en": "Summon Random\nFavorite Pet", "hash": "4345f3441f6bdc6a", "src": "db2@1.60.1.70245"}
-{"id": "PET_MODE_AGGRESSIVE", "field": "text", "en": "Aggressive", "hash": "2b3203a442eff4fa", "src": "db2@1.60.1.70245"}
-{"id": "PET_MODE_ASSIST", "field": "text", "en": "Assist", "hash": "cec4b0c0fde02e30", "src": "db2@1.60.1.70245"}
-{"id": "PET_MODE_DEFENSIVE", "field": "text", "en": "Defensive", "hash": "36687b796cd98c65", "src": "db2@1.60.1.70245"}
-{"id": "PET_MODE_DEFENSIVEASSIST", "field": "text", "en": "Defensive", "hash": "36687b796cd98c65", "src": "db2@1.60.1.70245"}
-{"id": "PET_MODE_PASSIVE", "field": "text", "en": "Passive", "hash": "b72608a2ee246ca9", "src": "db2@1.60.1.70245"}
-{"id": "PET_RENAME", "field": "text", "en": "Rename", "hash": "8c201e7d5466df3f", "src": "db2@1.60.1.70245"}
-{"id": "PET_RENAME_CONFIRMATION", "field": "text", "en": "Name your pet '%s'?", "hash": "6da1c743ffbc5dd9", "src": "db2@1.60.1.70245"}
-{"id": "PET_TYPE_DEMON", "field": "text", "en": "Demon", "hash": "b749cfcfb10fcfa1", "src": "db2@1.60.1.70245"}
-{"id": "PET_TYPE_PET", "field": "text", "en": "Pet", "hash": "001526f33da1c09a", "src": "db2@1.60.1.70245"}
-{"id": "PHOTO_SHARING_DISCONNECT", "field": "text", "en": "Disconnect", "hash": "9f93dd3b68f85f4d", "src": "db2@1.60.1.70245"}
-{"id": "PHOTO_SHARING_SETTINGS_LABEL", "field": "text", "en": "Connect to Pinterest", "hash": "fc20b78750e2ee4c", "src": "db2@1.60.1.70245"}
-{"id": "PHOTO_SHARING_SETTINGS_LABEL_TOOLTIP", "field": "text", "en": "Check to enable integration of World of Warcraft with Pinterest. Use |cnGREEN_FONT_COLOR:Pin-o-Matic Camera|r to create and share Pins.", "hash": "a36a38e5bb0571ef", "src": "db2@1.60.1.70245"}
-{"id": "PHOTO_SHARING_SETTINGS_LABEL_TOOLTIP_RESTRICTED", "field": "text", "en": "|cnERROR_COLOR:Connecting to Pinterest is disabled by Parental Controls.|r", "hash": "ca807f102f1b4022", "src": "db2@1.60.1.70245"}
-{"id": "PHOTO_SHARING_SIGN_IN", "field": "text", "en": "Sign in", "hash": "ddfd4a182362ce68", "src": "db2@1.60.1.70245"}
-{"id": "PHYSICS_INTERACTION", "field": "text", "en": "Physics Interactions", "hash": "0ea7f9c419fb4885", "src": "db2@1.60.1.70245"}
-{"id": "PICKUP_ACTION_KEY_TEXT", "field": "text", "en": "Pick Up Action Key", "hash": "062dcb2b33d5b32c", "src": "db2@1.60.1.70245"}
-{"id": "PING", "field": "text", "en": "Ping", "hash": "0ad3f7d2d15dbfeb", "src": "db2@1.60.1.70245"}
-{"id": "PING_CHAT_SETTINGS", "field": "text", "en": "Chat Settings", "hash": "7739107886d7e3f1", "src": "db2@1.60.1.70245"}
-{"id": "PING_FAILED_DISABLED_BY_LEADER", "field": "text", "en": "Could not send ping: pings restricted by party leader.", "hash": "2502d43f9d4d2d23", "src": "db2@1.60.1.70245"}
-{"id": "PING_FAILED_DISABLED_BY_SETTINGS", "field": "text", "en": "Could not send ping: pings are disabled in settings.", "hash": "c30d81edf8432f68", "src": "db2@1.60.1.70245"}
-{"id": "PING_FAILED_GENERIC", "field": "text", "en": "Can't ping this.", "hash": "27657f33d5989660", "src": "db2@1.60.1.70245"}
-{"id": "PING_FAILED_INVALID_TARGET", "field": "text", "en": "Could not send ping: invalid target.", "hash": "77fff191d80b6ae3", "src": "db2@1.60.1.70245"}
-{"id": "PING_FAILED_OUT_OF_PING_AREA", "field": "text", "en": "Could not send ping: target is out of range.", "hash": "55cc24b6ba3a9d41", "src": "db2@1.60.1.70245"}
-{"id": "PING_FAILED_SPAMMING", "field": "text", "en": "Could not send ping: too many pings sent at once.", "hash": "a8a43a361f1598a9", "src": "db2@1.60.1.70245"}
-{"id": "PING_FAILED_SQUELCHED", "field": "text", "en": "Could not send ping: chat is temporarily suspended.", "hash": "f1e38a974eabd694", "src": "db2@1.60.1.70245"}
-{"id": "PING_FAILED_UNSPECIFIED", "field": "text", "en": "Could not send ping: something went wrong.", "hash": "e41b24d6cf12a694", "src": "db2@1.60.1.70245"}
-{"id": "PING_KEYBINDINGS", "field": "text", "en": "Ping Keybindings", "hash": "90b31739ea521e78", "src": "db2@1.60.1.70245"}
-{"id": "PING_MODE", "field": "text", "en": "Ping Mode", "hash": "c79016c4ad837762", "src": "db2@1.60.1.70245"}
-{"id": "PING_MODE_CLICK_DRAG", "field": "text", "en": "Relaxed Ping", "hash": "8e8c50e15eeb1c4b", "src": "db2@1.60.1.70245"}
-{"id": "PING_MODE_KEY_DOWN", "field": "text", "en": "Quick Ping", "hash": "e9a9766dfba03250", "src": "db2@1.60.1.70245"}
-{"id": "PING_SYSTEM_LABEL", "field": "text", "en": "Ping System", "hash": "50b0b0d0561c4191", "src": "db2@1.60.1.70245"}
-{"id": "PING_SYSTEM_SETTINGS", "field": "text", "en": "Ping System Settings", "hash": "3c3ff4d3f1791494", "src": "db2@1.60.1.70245"}
-{"id": "PING_SYSTEM_TUTORIAL_CONTEXTUAL", "field": "text", "en": "|cnTUTORIAL_BLUE_FONT_COLOR:Press|r the Ping key to drop quick pings in the world.", "hash": "dde4f70eeb3c66ef", "src": "db2@1.60.1.70245"}
-{"id": "PING_SYSTEM_TUTORIAL_LABEL", "field": "text", "en": "Ping System", "hash": "50b0b0d0561c4191", "src": "db2@1.60.1.70245"}
-{"id": "PING_SYSTEM_TUTORIAL_MACRO_1", "field": "text", "en": "|cnTUTORIAL_BLUE_FONT_COLOR:Set up macros|r using Pings.", "hash": "0b883d07c9f06c6d", "src": "db2@1.60.1.70245"}
-{"id": "PING_SYSTEM_TUTORIAL_MACRO_2", "field": "text", "en": "Type |cnNORMAL_FONT_COLOR:/macro|r in chat", "hash": "70e8e717c32eae91", "src": "db2@1.60.1.70245"}
-{"id": "PING_SYSTEM_TUTORIAL_MACRO_3", "field": "text", "en": "Macro command:", "hash": "82029bd1ffad2cf0", "src": "db2@1.60.1.70245"}
-{"id": "PING_SYSTEM_TUTORIAL_RADIAL", "field": "text", "en": "|cnTUTORIAL_BLUE_FONT_COLOR:Press and Hold|r your ping key to select a specific ping.", "hash": "0675357b194e2584", "src": "db2@1.60.1.70245"}
-{"id": "PING_SYSTEM_TUTORIAL_TARGETS", "field": "text", "en": "|cnTUTORIAL_BLUE_FONT_COLOR:Ping directly|r onto a creature or character.", "hash": "cb6e9f7dc7b5b0d2", "src": "db2@1.60.1.70245"}
-{"id": "PING_SYSTEM_TUTORIAL_TOOLTIP", "field": "text", "en": "About the Ping System", "hash": "0cdd341ada45a914", "src": "db2@1.60.1.70245"}
-{"id": "PING_TARGET_OPTION", "field": "text", "en": "Ping Target", "hash": "a6c62fc500a69383", "src": "db2@1.60.1.70245"}
-{"id": "PING_TARGET_OPTION_ALL", "field": "text", "en": "Show All", "hash": "5dfd85837f00ad62", "src": "db2@1.60.1.70245"}
-{"id": "PING_TARGET_OPTION_ENVIRONMENT", "field": "text", "en": "Environment", "hash": "4a0ef41667d461ed", "src": "db2@1.60.1.70245"}
-{"id": "PING_TARGET_OPTION_UNITS", "field": "text", "en": "Units", "hash": "e2e69c1867696b5c", "src": "db2@1.60.1.70245"}
-{"id": "PING_TYPE_ASSIST", "field": "text", "en": "Assist", "hash": "cec4b0c0fde02e30", "src": "db2@1.60.1.70245"}
-{"id": "PING_TYPE_ON_MY_WAY", "field": "text", "en": "On My Way", "hash": "7806045af8a6edb1", "src": "db2@1.60.1.70245"}
-{"id": "PING_TYPE_WARNING", "field": "text", "en": "Warning", "hash": "95cfae04a34f3e22", "src": "db2@1.60.1.70245"}
-{"id": "PING_VOLUME", "field": "text", "en": "Ping Volume", "hash": "92c49c5dbbb1db8d", "src": "db2@1.60.1.70245"}
-{"id": "PLACE_CRAFTING_ORDERS", "field": "text", "en": "Place Crafting Order", "hash": "aa67b0ac13e94802", "src": "db2@1.60.1.70245"}
-{"id": "PLAYERSPELLS_BUTTON", "field": "text", "en": "Talents", "hash": "0d31e779843effa2", "src": "db2@1.60.1.70245"}
-{"id": "PLAYER_AND_NPC_INTERACTION", "field": "text", "en": "Player and NPC", "hash": "a02174adbe5f07b7", "src": "db2@1.60.1.70245"}
-{"id": "PLAYER_CHOICE_GRID_DESC", "field": "text", "en": "Stay a while and listen to stories of the past from Azeroth and beyond.", "hash": "0b02d65945922299", "src": "db2@1.60.1.70245"}
-{"id": "PLAYER_CHOICE_GRID_HEADER", "field": "text", "en": "What story would you like to hear?", "hash": "6c84de8e57d85786", "src": "db2@1.60.1.70245"}
-{"id": "PLAYER_CHOICE_QUALITY_STRING_COMMON", "field": "text", "en": "|cffffffffCommon|r|n|n", "hash": "7ec9a72ce4ba5bba", "src": "db2@1.60.1.70245"}
-{"id": "PLAYER_CHOICE_QUALITY_STRING_EPIC", "field": "text", "en": "|cffa335eeEpic|r|n|n", "hash": "095c74d5d9af7e6e", "src": "db2@1.60.1.70245"}
-{"id": "PLAYER_CHOICE_QUALITY_STRING_RARE", "field": "text", "en": "|cff0070ddRare|r|n|n", "hash": "0b167ccacc6c0974", "src": "db2@1.60.1.70245"}
-{"id": "PLAYER_CHOICE_QUALITY_STRING_UNCOMMON", "field": "text", "en": "|cff1eff00Uncommon|r|n|n", "hash": "3ccc5caed882af01", "src": "db2@1.60.1.70245"}
-{"id": "PLAYER_DIFFICULTY1", "field": "text", "en": "Normal", "hash": "4e2463e728aab060", "src": "db2@1.60.1.70245"}
-{"id": "PLAYER_DIFFICULTY2", "field": "text", "en": "Heroic", "hash": "b982091992393fba", "src": "db2@1.60.1.70245"}
-{"id": "PLAYER_DIFFICULTY3", "field": "text", "en": "Raid Finder", "hash": "d5716070f777aad2", "src": "db2@1.60.1.70245"}
-{"id": "PLAYER_DIFFICULTY6", "field": "text", "en": "Mythic", "hash": "026c878e93419549", "src": "db2@1.60.1.70245"}
-{"id": "PLAYER_DIFFICULTY_MYTHIC_FLEXIBLE", "field": "text", "en": "Mythic (Flexible-Scaling)", "hash": "3a323e263feb6ebb", "src": "db2@1.60.1.70245"}
-{"id": "PLAYER_DIFFICULTY_MYTHIC_PLUS", "field": "text", "en": "Mythic+", "hash": "3d895dda5db9440a", "src": "db2@1.60.1.70245"}
-{"id": "PLAYER_DIFFICULTY_STORY_RAID", "field": "text", "en": "Raid Story", "hash": "ed29d13238dab816", "src": "db2@1.60.1.70245"}
-{"id": "PLAYER_DIFFICULTY_TIMEWALKER", "field": "text", "en": "Timewalking", "hash": "d655abd23250f890", "src": "db2@1.60.1.70245"}
-{"id": "PLAYER_DIFFICULTY_WORLD_RAID", "field": "text", "en": "World", "hash": "0626ad84d65fc103", "src": "db2@1.60.1.70245"}
-{"id": "PLAYER_IS_PVP_AFK", "field": "text", "en": "|cffff64ff%s (Inactive)|r", "hash": "165d8563cf3ebecf", "src": "db2@1.60.1.70245"}
-{"id": "PLAYER_LEVEL", "field": "text", "en": "Level %s |c%s%s %s|r", "hash": "d029ffa13d4c8dad", "src": "db2@1.60.1.70245"}
-{"id": "PLAYER_LEVEL_NO_SPEC", "field": "text", "en": "Level %s |c%s%s|r", "hash": "a99e6ce2fd83ebe8", "src": "db2@1.60.1.70245"}
-{"id": "PLAYER_MESSAGES", "field": "text", "en": "Player Messages", "hash": "b23c9a718c1888eb", "src": "db2@1.60.1.70245"}
-{"id": "PLAYER_OFFLINE", "field": "text", "en": "Offline", "hash": "06e66a7a007d0582", "src": "db2@1.60.1.70245"}
-{"id": "PLAYER_ONLY_INTERACTION", "field": "text", "en": "Player Only", "hash": "e54825910e7598a1", "src": "db2@1.60.1.70245"}
-{"id": "PLAYER_SPELLS_FRAME_MINIMIZE_TIP", "field": "text", "en": "You can minimize the Spellbook here", "hash": "f7c62c35362bd346", "src": "db2@1.60.1.70245"}
+{"id": "PAGED_LIST_PAGING_FORMAT", "field": "text", "en": "Page %s / %s", "hash": "fd6d0d3828c414eb", "src": "db2@1.60.1.70291"}
+{"id": "PAGE_NUMBER", "field": "text", "en": "Page %d", "hash": "e28df7529da1b241", "src": "db2@1.60.1.70291"}
+{"id": "PAGE_NUMBER_WITH_MAX", "field": "text", "en": "Page %d/%d", "hash": "b8e0944888377797", "src": "db2@1.60.1.70291"}
+{"id": "PALADIN_STRENGTH_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFAttack Power|r by %d\nIncreases |cFFFFFFFFBlock Value|r by %d", "hash": "be95ff635ef2ba7a", "src": "db2@1.60.1.70291"}
+{"id": "PAPERDOLL_AUTO_EQUIP_ALCHEMY_ONLY", "field": "text", "en": "Only Alchemy equipment can be equipped here.", "hash": "8659fb8943fd46c4", "src": "db2@1.60.1.70291"}
+{"id": "PAPERDOLL_AUTO_EQUIP_BLACKSMITHING_ONLY", "field": "text", "en": "Only Blacksmithing equipment can be equipped here.", "hash": "b670240f9b7820d7", "src": "db2@1.60.1.70291"}
+{"id": "PAPERDOLL_AUTO_EQUIP_COOKING_ONLY", "field": "text", "en": "Only Cooking equipment can be equipped here.", "hash": "5a40d34b21cb391d", "src": "db2@1.60.1.70291"}
+{"id": "PAPERDOLL_AUTO_EQUIP_ENCHANTING_ONLY", "field": "text", "en": "Only Enchanting equipment can be equipped here.", "hash": "bb6e3ed8bd788375", "src": "db2@1.60.1.70291"}
+{"id": "PAPERDOLL_AUTO_EQUIP_ENGINEERING_ONLY", "field": "text", "en": "Only Engineering equipment can be equipped here.", "hash": "4a86fc11a0e93639", "src": "db2@1.60.1.70291"}
+{"id": "PAPERDOLL_AUTO_EQUIP_FISHING_ONLY", "field": "text", "en": "Only Fishing equipment can be equipped here.", "hash": "1b8f2c2933c6bb1f", "src": "db2@1.60.1.70291"}
+{"id": "PAPERDOLL_AUTO_EQUIP_HERBALISM_ONLY", "field": "text", "en": "Only Herbalism equipment can be equipped here.", "hash": "4b6d52ec786a189a", "src": "db2@1.60.1.70291"}
+{"id": "PAPERDOLL_AUTO_EQUIP_INSCRIPTION_ONLY", "field": "text", "en": "Only Inscription equipment can be equipped here.", "hash": "420f73b0ccab7abf", "src": "db2@1.60.1.70291"}
+{"id": "PAPERDOLL_AUTO_EQUIP_JEWELCRAFTING_ONLY", "field": "text", "en": "Only Jewelcrafting equipment can be equipped here.", "hash": "cf8a5b3a80ceea23", "src": "db2@1.60.1.70291"}
+{"id": "PAPERDOLL_AUTO_EQUIP_LEATHERWORKING_ONLY", "field": "text", "en": "Only Leatherworking equipment can be equipped here.", "hash": "d387ec0fcec79980", "src": "db2@1.60.1.70291"}
+{"id": "PAPERDOLL_AUTO_EQUIP_MINING_ONLY", "field": "text", "en": "Only Mining equipment can be equipped here.", "hash": "645bf91e85f251d1", "src": "db2@1.60.1.70291"}
+{"id": "PAPERDOLL_AUTO_EQUIP_SKINNING_ONLY", "field": "text", "en": "Only Skinning equipment can be equipped here.", "hash": "c9e81c662fe93716", "src": "db2@1.60.1.70291"}
+{"id": "PAPERDOLL_AUTO_EQUIP_TAILORING_ONLY", "field": "text", "en": "Only Tailoring equipment can be equipped here.", "hash": "41800e0a0cee080d", "src": "db2@1.60.1.70291"}
+{"id": "PAPERDOLL_EQUIPMENTMANAGER", "field": "text", "en": "Equipment Manager", "hash": "55cc30316136b813", "src": "db2@1.60.1.70291"}
+{"id": "PAPERDOLL_NEWEQUIPMENTSET", "field": "text", "en": "New Set", "hash": "76e3b614d4bbd94c", "src": "db2@1.60.1.70291"}
+{"id": "PAPERDOLL_SIDEBAR_STATS", "field": "text", "en": "Character Stats", "hash": "8c9a7f932339131e", "src": "db2@1.60.1.70291"}
+{"id": "PAPERDOLL_SIDEBAR_TITLES", "field": "text", "en": "Titles", "hash": "ca303dfcef3dd3c1", "src": "db2@1.60.1.70291"}
+{"id": "PARAGON_REPUTATION_TOOLTIP_TEXT", "field": "text", "en": "Continue earning reputation with %s to receive a reward.", "hash": "167be0ad4f3dfc53", "src": "db2@1.60.1.70291"}
+{"id": "PARAGON_REPUTATION_TOOLTIP_TEXT_LOW_LEVEL", "field": "text", "en": "Too low level to earn paragon with this faction.", "hash": "ed056cdf2d3ee6e9", "src": "db2@1.60.1.70291"}
+{"id": "PARENS_TEMPLATE", "field": "text", "en": "(%s)", "hash": "05660b87ab2e3e6f", "src": "db2@1.60.1.70291"}
+{"id": "PARRY", "field": "text", "en": "Parry", "hash": "896675f50247aba9", "src": "db2@1.60.1.70291"}
+{"id": "PARRY_CHANCE", "field": "text", "en": "Parry Chance", "hash": "58abcd17177779d5", "src": "db2@1.60.1.70291"}
+{"id": "PARTICLE_DENSITY", "field": "text", "en": "Particle Density", "hash": "406e0f61d85f75c9", "src": "db2@1.60.1.70291"}
+{"id": "PARTY", "field": "text", "en": "Party", "hash": "896676fb0247eb6b", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_CHAT_BUBBLES_TEXT", "field": "text", "en": "Party Chat Bubbles", "hash": "04349419496f4bb2", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_INVITE", "field": "text", "en": "Invite", "hash": "53896770d7d0fd4d", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_IN_PUBLIC_GROUP_MESSAGE", "field": "text", "en": "This player is currently in an instance group.", "hash": "b473c16aeded774f", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_LEADER", "field": "text", "en": "Party Leader", "hash": "39d2875902e9d27c", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_LEAVE", "field": "text", "en": "Leave Party", "hash": "93262d8109c903f8", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_MESSAGE", "field": "text", "en": "Party Chat", "hash": "861672d73dbd32de", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_PHASED_MESSAGE", "field": "text", "en": "This player is in a different phase. You can neither see nor interact with this player.", "hash": "8e4e9d2838ae4b38", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_PLAYER_CHROMIE_TIME_INELIGIBLE", "field": "text", "en": "You can't see them until they leave Timewalking Campaigns.", "hash": "1aacd35a139ab751", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_PLAYER_CHROMIE_TIME_OTHER_ALLIANCE", "field": "text", "en": "You can't see them until they leave Timewalking or you enter it. Talk to Chromie near the Embassy in Stormwind.", "hash": "f77ceb06861771fd", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_PLAYER_CHROMIE_TIME_OTHER_HORDE", "field": "text", "en": "You can't see them until they leave Timewalking or you enter it. Talk to Chromie near the Embassy in Orgrimmar.", "hash": "bfd7c32d9e2245f8", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_PLAYER_CHROMIE_TIME_OTHER_LOCATION", "field": "text", "en": "Currently in |cffffffffTimewalking Campaigns: %s|r", "hash": "2ebd63f98ec79920", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_PLAYER_CHROMIE_TIME_SELF_ALLIANCE", "field": "text", "en": "You can't see them until you leave Timewalking or they enter it. Talk to Chromie near the Embassy in Stormwind.", "hash": "bcc42346183b483d", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_PLAYER_CHROMIE_TIME_SELF_HORDE", "field": "text", "en": "You can't see them until you leave Timewalking or they enter it. Talk to Chromie near the Embassy in Orgrimmar.", "hash": "851efb6d30461c38", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_PLAYER_CHROMIE_TIME_SELF_LOCATION", "field": "text", "en": "You are currently in |cffffffffTimewalking Campaigns: %s|r", "hash": "0fe7389619f7a7cb", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_PLAYER_DIFFERENT_WORLD_TIER", "field": "text", "en": "You can't see this player because they are in a different World Tier. You can change World Tiers at the Console of Infinite Chaos in the Infinite Bazaar near Dalaran.", "hash": "ee1b855ea72847fa", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_PLAYER_SHARDED_INCOMPATIBLE_RULESET", "field": "text", "en": "You can only see this player inside instances because they are playing with a different ruleset.", "hash": "06fdf5f3d02492ce", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_PLAYER_SHARDED_NEITHER_IN_PARTY_SHARD", "field": "text", "en": "You can't see this player because they are in a different phase.", "hash": "39321c2230784192", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_PLAYER_SHARDED_NOT_IN_PARTY_SHARD", "field": "text", "en": "You can't see this player because they are in a different phase.", "hash": "39321c2230784192", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_PLAYER_SHARDED_TARGET_NOT_IN_PARTY_PHASE", "field": "text", "en": "You can't see this player because they are in a different phase.", "hash": "39321c2230784192", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_PLAYER_WARMODE_DISABLED", "field": "text", "en": "This player has War Mode disabled. You can't see them in the world unless you also disable War Mode in your Talents pane.", "hash": "93e3a9257edf010d", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_PLAYER_WARMODE_ENABLED", "field": "text", "en": "This player has War Mode enabled. You can't see them in the world unless you also enable War Mode in your Talents pane.", "hash": "8648168452857714", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_POSE_DEFEAT", "field": "text", "en": "DEFEAT", "hash": "93c9a5ca7a249dff", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_POSE_VICTORY", "field": "text", "en": "VICTORY!", "hash": "47e2227a3dd6f631", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_PROMOTE", "field": "text", "en": "Promote to Leader", "hash": "cd0ca1bd963d8b51", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_QUEST_STATUS_ON", "field": "text", "en": "Nearby party members that are on this quest:", "hash": "bdfefc6e5a011530", "src": "db2@1.60.1.70291"}
+{"id": "PARTY_UNINVITE", "field": "text", "en": "Uninvite", "hash": "118c1cf2cb995094", "src": "db2@1.60.1.70291"}
+{"id": "PASS", "field": "text", "en": "Pass", "hash": "0ad1e225b19c4154", "src": "db2@1.60.1.70291"}
+{"id": "PASSWORD", "field": "text", "en": "Password", "hash": "ba54dcfd57150ca4", "src": "db2@1.60.1.70291"}
+{"id": "PBR_LIQUID_DETAIL", "field": "text", "en": "PBR Liquid Detail", "hash": "61e953151ee6bf0c", "src": "db2@1.60.1.70291"}
+{"id": "PERIODIC", "field": "text", "en": "Periodic", "hash": "e0fceaaa0fd11407", "src": "db2@1.60.1.70291"}
+{"id": "PERSONALTABARDVENDORGREETING", "field": "text", "en": "Greetings! Choose the symbol and colors for your personal tabard.", "hash": "270baf972c25f142", "src": "db2@1.60.1.70291"}
+{"id": "PERSONALTABARDVENDORUNOWNEDGREETING", "field": "text", "en": "You must own a personal tabard in order to customize, but feel free to browse.", "hash": "f564957f3b766b3f", "src": "db2@1.60.1.70291"}
+{"id": "PET", "field": "text", "en": "Pet", "hash": "001526f33da1c09a", "src": "db2@1.60.1.70291"}
+{"id": "PETS", "field": "text", "en": "Pets", "hash": "0ad2eeccc17d7039", "src": "db2@1.60.1.70291"}
+{"id": "PET_ABANDON", "field": "text", "en": "Release", "hash": "91da4847eb9cecd0", "src": "db2@1.60.1.70291"}
+{"id": "PET_ACTION_ATTACK", "field": "text", "en": "Attack", "hash": "e072942b4a6e859a", "src": "db2@1.60.1.70291"}
+{"id": "PET_ACTION_DISMISS", "field": "text", "en": "Dismiss", "hash": "1a1a309126f2a792", "src": "db2@1.60.1.70291"}
+{"id": "PET_ACTION_FOLLOW", "field": "text", "en": "Follow", "hash": "7133f97147f72238", "src": "db2@1.60.1.70291"}
+{"id": "PET_ACTION_WAIT", "field": "text", "en": "Stay", "hash": "0b3dbb71a53ee6fa", "src": "db2@1.60.1.70291"}
+{"id": "PET_BATTLE_COMBAT_LOG", "field": "text", "en": "Pet Battle Combat", "hash": "af536275e37dfed6", "src": "db2@1.60.1.70291"}
+{"id": "PET_BATTLE_FORFEIT_CONFIRMATION", "field": "text", "en": "Are you sure you want to forfeit the match? Your opponent will be deemed the winner and your pets will lose %d percent health.", "hash": "d44f638224664b02", "src": "db2@1.60.1.70291"}
+{"id": "PET_BATTLE_FORFEIT_CONFIRMATION_NO_PENALTY", "field": "text", "en": "Are you sure you want to forfeit the match? Your opponent will be deemed the winner.", "hash": "22a205e0fac2d4ff", "src": "db2@1.60.1.70291"}
+{"id": "PET_BATTLE_INFO", "field": "text", "en": "Pet Battle Info", "hash": "b21bafa66b656e86", "src": "db2@1.60.1.70291"}
+{"id": "PET_BATTLE_PVP_DUEL_REQUESTED", "field": "text", "en": "%s has challenged you to a pet-battle.", "hash": "cd7bb0a74464bc22", "src": "db2@1.60.1.70291"}
+{"id": "PET_BATTLE_PVP_QUEUE", "field": "text", "en": "Pet Battle", "hash": "18d17e4f0cc1e704", "src": "db2@1.60.1.70291"}
+{"id": "PET_BONUS_TOOLTIP_WARLOCK_SPELLDMG", "field": "text", "en": "|cFFBCBCBC\nIncreases your pet's Attack Power by %d and Spell Damage by %d|r", "hash": "36cd2b4f0339ecb6", "src": "db2@1.60.1.70291"}
+{"id": "PET_BONUS_TOOLTIP_WARLOCK_SPELLDMG_FIRE", "field": "text", "en": "|cFFBCBCBC\nIncreases your pet's Attack Power by %d and Spell Damage by %d|r", "hash": "36cd2b4f0339ecb6", "src": "db2@1.60.1.70291"}
+{"id": "PET_BONUS_TOOLTIP_WARLOCK_SPELLDMG_SHADOW", "field": "text", "en": "|cFFBCBCBC\nIncreases your pet's Attack Power by %d and Spell Damage by %d|r", "hash": "36cd2b4f0339ecb6", "src": "db2@1.60.1.70291"}
+{"id": "PET_DAMAGE_PERCENTAGE", "field": "text", "en": "Causes %d%% of normal damage", "hash": "5051a5458ae59f34", "src": "db2@1.60.1.70291"}
+{"id": "PET_DIET_TEMPLATE", "field": "text", "en": "|cffffd200Diet:|r %s", "hash": "0ea8911900d4fbd1", "src": "db2@1.60.1.70291"}
+{"id": "PET_DISMISS", "field": "text", "en": "Dismiss", "hash": "1a1a309126f2a792", "src": "db2@1.60.1.70291"}
+{"id": "PET_HAPPINESS1", "field": "text", "en": "Unhappy", "hash": "40dce5c6547971b0", "src": "db2@1.60.1.70291"}
+{"id": "PET_HAPPINESS2", "field": "text", "en": "Content", "hash": "f3abc46c2df78f47", "src": "db2@1.60.1.70291"}
+{"id": "PET_HAPPINESS3", "field": "text", "en": "Happy", "hash": "fcf83c500302e89e", "src": "db2@1.60.1.70291"}
+{"id": "PET_INFO", "field": "text", "en": "Pet Info", "hash": "d1879c934c4a1b6a", "src": "db2@1.60.1.70291"}
+{"id": "PET_JOURNAL", "field": "text", "en": "Pet Journal", "hash": "2b4efb9c9fac3787", "src": "db2@1.60.1.70291"}
+{"id": "PET_JOURNAL_CARD_NAME_DEFAULT", "field": "text", "en": "Select a pet from the list on the left.", "hash": "176e59a701186862", "src": "db2@1.60.1.70291"}
+{"id": "PET_JOURNAL_FILTER_USABLE_ONLY", "field": "text", "en": "Usable Only", "hash": "d16600eccbf37a07", "src": "db2@1.60.1.70291"}
+{"id": "PET_JOURNAL_SUMMON_RANDOM_FAVORITE_PET", "field": "text", "en": "Summon Random\nFavorite Pet", "hash": "4345f3441f6bdc6a", "src": "db2@1.60.1.70291"}
+{"id": "PET_MODE_AGGRESSIVE", "field": "text", "en": "Aggressive", "hash": "2b3203a442eff4fa", "src": "db2@1.60.1.70291"}
+{"id": "PET_MODE_ASSIST", "field": "text", "en": "Assist", "hash": "cec4b0c0fde02e30", "src": "db2@1.60.1.70291"}
+{"id": "PET_MODE_DEFENSIVE", "field": "text", "en": "Defensive", "hash": "36687b796cd98c65", "src": "db2@1.60.1.70291"}
+{"id": "PET_MODE_DEFENSIVEASSIST", "field": "text", "en": "Defensive", "hash": "36687b796cd98c65", "src": "db2@1.60.1.70291"}
+{"id": "PET_MODE_PASSIVE", "field": "text", "en": "Passive", "hash": "b72608a2ee246ca9", "src": "db2@1.60.1.70291"}
+{"id": "PET_RENAME", "field": "text", "en": "Rename", "hash": "8c201e7d5466df3f", "src": "db2@1.60.1.70291"}
+{"id": "PET_RENAME_CONFIRMATION", "field": "text", "en": "Name your pet '%s'?", "hash": "6da1c743ffbc5dd9", "src": "db2@1.60.1.70291"}
+{"id": "PET_TYPE_DEMON", "field": "text", "en": "Demon", "hash": "b749cfcfb10fcfa1", "src": "db2@1.60.1.70291"}
+{"id": "PET_TYPE_PET", "field": "text", "en": "Pet", "hash": "001526f33da1c09a", "src": "db2@1.60.1.70291"}
+{"id": "PHOTO_SHARING_DISCONNECT", "field": "text", "en": "Disconnect", "hash": "9f93dd3b68f85f4d", "src": "db2@1.60.1.70291"}
+{"id": "PHOTO_SHARING_SETTINGS_LABEL", "field": "text", "en": "Connect to Pinterest", "hash": "fc20b78750e2ee4c", "src": "db2@1.60.1.70291"}
+{"id": "PHOTO_SHARING_SETTINGS_LABEL_TOOLTIP", "field": "text", "en": "Check to enable integration of World of Warcraft with Pinterest. Use |cnGREEN_FONT_COLOR:Pin-o-Matic Camera|r to create and share Pins.", "hash": "a36a38e5bb0571ef", "src": "db2@1.60.1.70291"}
+{"id": "PHOTO_SHARING_SETTINGS_LABEL_TOOLTIP_RESTRICTED", "field": "text", "en": "|cnERROR_COLOR:Connecting to Pinterest is disabled by Parental Controls.|r", "hash": "ca807f102f1b4022", "src": "db2@1.60.1.70291"}
+{"id": "PHOTO_SHARING_SIGN_IN", "field": "text", "en": "Sign in", "hash": "ddfd4a182362ce68", "src": "db2@1.60.1.70291"}
+{"id": "PHYSICS_INTERACTION", "field": "text", "en": "Physics Interactions", "hash": "0ea7f9c419fb4885", "src": "db2@1.60.1.70291"}
+{"id": "PICKUP_ACTION_KEY_TEXT", "field": "text", "en": "Pick Up Action Key", "hash": "062dcb2b33d5b32c", "src": "db2@1.60.1.70291"}
+{"id": "PING", "field": "text", "en": "Ping", "hash": "0ad3f7d2d15dbfeb", "src": "db2@1.60.1.70291"}
+{"id": "PING_CHAT_SETTINGS", "field": "text", "en": "Chat Settings", "hash": "7739107886d7e3f1", "src": "db2@1.60.1.70291"}
+{"id": "PING_FAILED_DISABLED_BY_LEADER", "field": "text", "en": "Could not send ping: pings restricted by party leader.", "hash": "2502d43f9d4d2d23", "src": "db2@1.60.1.70291"}
+{"id": "PING_FAILED_DISABLED_BY_SETTINGS", "field": "text", "en": "Could not send ping: pings are disabled in settings.", "hash": "c30d81edf8432f68", "src": "db2@1.60.1.70291"}
+{"id": "PING_FAILED_GENERIC", "field": "text", "en": "Can't ping this.", "hash": "27657f33d5989660", "src": "db2@1.60.1.70291"}
+{"id": "PING_FAILED_INVALID_TARGET", "field": "text", "en": "Could not send ping: invalid target.", "hash": "77fff191d80b6ae3", "src": "db2@1.60.1.70291"}
+{"id": "PING_FAILED_OUT_OF_PING_AREA", "field": "text", "en": "Could not send ping: target is out of range.", "hash": "55cc24b6ba3a9d41", "src": "db2@1.60.1.70291"}
+{"id": "PING_FAILED_SPAMMING", "field": "text", "en": "Could not send ping: too many pings sent at once.", "hash": "a8a43a361f1598a9", "src": "db2@1.60.1.70291"}
+{"id": "PING_FAILED_SQUELCHED", "field": "text", "en": "Could not send ping: chat is temporarily suspended.", "hash": "f1e38a974eabd694", "src": "db2@1.60.1.70291"}
+{"id": "PING_FAILED_UNSPECIFIED", "field": "text", "en": "Could not send ping: something went wrong.", "hash": "e41b24d6cf12a694", "src": "db2@1.60.1.70291"}
+{"id": "PING_KEYBINDINGS", "field": "text", "en": "Ping Keybindings", "hash": "90b31739ea521e78", "src": "db2@1.60.1.70291"}
+{"id": "PING_MODE", "field": "text", "en": "Ping Mode", "hash": "c79016c4ad837762", "src": "db2@1.60.1.70291"}
+{"id": "PING_MODE_CLICK_DRAG", "field": "text", "en": "Relaxed Ping", "hash": "8e8c50e15eeb1c4b", "src": "db2@1.60.1.70291"}
+{"id": "PING_MODE_KEY_DOWN", "field": "text", "en": "Quick Ping", "hash": "e9a9766dfba03250", "src": "db2@1.60.1.70291"}
+{"id": "PING_SYSTEM_LABEL", "field": "text", "en": "Ping System", "hash": "50b0b0d0561c4191", "src": "db2@1.60.1.70291"}
+{"id": "PING_SYSTEM_SETTINGS", "field": "text", "en": "Ping System Settings", "hash": "3c3ff4d3f1791494", "src": "db2@1.60.1.70291"}
+{"id": "PING_SYSTEM_TUTORIAL_CONTEXTUAL", "field": "text", "en": "|cnTUTORIAL_BLUE_FONT_COLOR:Press|r the Ping key to drop quick pings in the world.", "hash": "dde4f70eeb3c66ef", "src": "db2@1.60.1.70291"}
+{"id": "PING_SYSTEM_TUTORIAL_LABEL", "field": "text", "en": "Ping System", "hash": "50b0b0d0561c4191", "src": "db2@1.60.1.70291"}
+{"id": "PING_SYSTEM_TUTORIAL_MACRO_1", "field": "text", "en": "|cnTUTORIAL_BLUE_FONT_COLOR:Set up macros|r using Pings.", "hash": "0b883d07c9f06c6d", "src": "db2@1.60.1.70291"}
+{"id": "PING_SYSTEM_TUTORIAL_MACRO_2", "field": "text", "en": "Type |cnNORMAL_FONT_COLOR:/macro|r in chat", "hash": "70e8e717c32eae91", "src": "db2@1.60.1.70291"}
+{"id": "PING_SYSTEM_TUTORIAL_MACRO_3", "field": "text", "en": "Macro command:", "hash": "82029bd1ffad2cf0", "src": "db2@1.60.1.70291"}
+{"id": "PING_SYSTEM_TUTORIAL_RADIAL", "field": "text", "en": "|cnTUTORIAL_BLUE_FONT_COLOR:Press and Hold|r your ping key to select a specific ping.", "hash": "0675357b194e2584", "src": "db2@1.60.1.70291"}
+{"id": "PING_SYSTEM_TUTORIAL_TARGETS", "field": "text", "en": "|cnTUTORIAL_BLUE_FONT_COLOR:Ping directly|r onto a creature or character.", "hash": "cb6e9f7dc7b5b0d2", "src": "db2@1.60.1.70291"}
+{"id": "PING_SYSTEM_TUTORIAL_TOOLTIP", "field": "text", "en": "About the Ping System", "hash": "0cdd341ada45a914", "src": "db2@1.60.1.70291"}
+{"id": "PING_TARGET_OPTION", "field": "text", "en": "Ping Target", "hash": "a6c62fc500a69383", "src": "db2@1.60.1.70291"}
+{"id": "PING_TARGET_OPTION_ALL", "field": "text", "en": "Show All", "hash": "5dfd85837f00ad62", "src": "db2@1.60.1.70291"}
+{"id": "PING_TARGET_OPTION_ENVIRONMENT", "field": "text", "en": "Environment", "hash": "4a0ef41667d461ed", "src": "db2@1.60.1.70291"}
+{"id": "PING_TARGET_OPTION_UNITS", "field": "text", "en": "Units", "hash": "e2e69c1867696b5c", "src": "db2@1.60.1.70291"}
+{"id": "PING_TYPE_ASSIST", "field": "text", "en": "Assist", "hash": "cec4b0c0fde02e30", "src": "db2@1.60.1.70291"}
+{"id": "PING_TYPE_ON_MY_WAY", "field": "text", "en": "On My Way", "hash": "7806045af8a6edb1", "src": "db2@1.60.1.70291"}
+{"id": "PING_TYPE_WARNING", "field": "text", "en": "Warning", "hash": "95cfae04a34f3e22", "src": "db2@1.60.1.70291"}
+{"id": "PING_VOLUME", "field": "text", "en": "Ping Volume", "hash": "92c49c5dbbb1db8d", "src": "db2@1.60.1.70291"}
+{"id": "PLACE_CRAFTING_ORDERS", "field": "text", "en": "Place Crafting Order", "hash": "aa67b0ac13e94802", "src": "db2@1.60.1.70291"}
+{"id": "PLAYERSPELLS_BUTTON", "field": "text", "en": "Talents", "hash": "0d31e779843effa2", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_AND_NPC_INTERACTION", "field": "text", "en": "Player and NPC", "hash": "a02174adbe5f07b7", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_CHOICE_GRID_DESC", "field": "text", "en": "Stay a while and listen to stories of the past from Azeroth and beyond.", "hash": "0b02d65945922299", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_CHOICE_GRID_HEADER", "field": "text", "en": "What story would you like to hear?", "hash": "6c84de8e57d85786", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_CHOICE_QUALITY_STRING_COMMON", "field": "text", "en": "|cffffffffCommon|r|n|n", "hash": "7ec9a72ce4ba5bba", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_CHOICE_QUALITY_STRING_EPIC", "field": "text", "en": "|cffa335eeEpic|r|n|n", "hash": "095c74d5d9af7e6e", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_CHOICE_QUALITY_STRING_RARE", "field": "text", "en": "|cff0070ddRare|r|n|n", "hash": "0b167ccacc6c0974", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_CHOICE_QUALITY_STRING_UNCOMMON", "field": "text", "en": "|cff1eff00Uncommon|r|n|n", "hash": "3ccc5caed882af01", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_DIFFICULTY1", "field": "text", "en": "Normal", "hash": "4e2463e728aab060", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_DIFFICULTY2", "field": "text", "en": "Heroic", "hash": "b982091992393fba", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_DIFFICULTY3", "field": "text", "en": "Raid Finder", "hash": "d5716070f777aad2", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_DIFFICULTY6", "field": "text", "en": "Mythic", "hash": "026c878e93419549", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_DIFFICULTY_MYTHIC_FLEXIBLE", "field": "text", "en": "Mythic (Flexible-Scaling)", "hash": "3a323e263feb6ebb", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_DIFFICULTY_MYTHIC_PLUS", "field": "text", "en": "Mythic+", "hash": "3d895dda5db9440a", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_DIFFICULTY_STORY_RAID", "field": "text", "en": "Raid Story", "hash": "ed29d13238dab816", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_DIFFICULTY_TIMEWALKER", "field": "text", "en": "Timewalking", "hash": "d655abd23250f890", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_DIFFICULTY_WORLD_RAID", "field": "text", "en": "World", "hash": "0626ad84d65fc103", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_IS_PVP_AFK", "field": "text", "en": "|cffff64ff%s (Inactive)|r", "hash": "165d8563cf3ebecf", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_LEVEL", "field": "text", "en": "Level %s |c%s%s %s|r", "hash": "d029ffa13d4c8dad", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_LEVEL_NO_SPEC", "field": "text", "en": "Level %s |c%s%s|r", "hash": "a99e6ce2fd83ebe8", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_MESSAGES", "field": "text", "en": "Player Messages", "hash": "b23c9a718c1888eb", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_OFFLINE", "field": "text", "en": "Offline", "hash": "06e66a7a007d0582", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_ONLY_INTERACTION", "field": "text", "en": "Player Only", "hash": "e54825910e7598a1", "src": "db2@1.60.1.70291"}
+{"id": "PLAYER_SPELLS_FRAME_MINIMIZE_TIP", "field": "text", "en": "You can minimize the Spellbook here", "hash": "f7c62c35362bd346", "src": "db2@1.60.1.70291"}
 {"id": "PLAYER_STATUS", "field": "text", "en": "Player Status", "hash": "47487d2dc8c56bb4", "src": "db2@1.60.1.69913"}
-{"id": "PLAYER_TITLE_NONE", "field": "text", "en": "No Title", "hash": "ff4b140804a0d0c3", "src": "db2@1.60.1.70245"}
-{"id": "PLAYTIME_TIRED", "field": "text", "en": "You have more than 3 hours of online time. You will receive 1/2 money and XP during this period. Your rest state will reset in %d hours of offline time. Please go rest. ", "hash": "2263afa52a9c4f15", "src": "db2@1.60.1.70245"}
-{"id": "PLAYTIME_UNHEALTHY", "field": "text", "en": "You have more than 5 hours of online time. You will not be able to gain loot, XP, or complete quests.  Your rest state will reset in %d hours of offline time. Please log out to get rest and exercise.", "hash": "85ca06b11e7f68e5", "src": "db2@1.60.1.70245"}
-{"id": "PLAY_MOVIE_PREPEND", "field": "text", "en": "(Play Movie)", "hash": "2fa48d929f6c5894", "src": "db2@1.60.1.70245"}
-{"id": "PLUNDERSTORM_LOGOUT_TEXT", "field": "text", "en": "%d seconds until logout for Plunderstorm", "hash": "b5ac095c08bc7d39", "src": "db2@1.60.1.70245"}
-{"id": "PLUS_AMMO_DAMAGE_TEMPLATE", "field": "text", "en": "+ %s damage per second", "hash": "7025d91b16eb15eb", "src": "db2@1.60.1.70245"}
-{"id": "PLUS_AMMO_SCHOOL_DAMAGE_TEMPLATE", "field": "text", "en": "+ %s %s damage per second", "hash": "5771c980aad8dc84", "src": "db2@1.60.1.70245"}
-{"id": "PLUS_DAMAGE_TEMPLATE", "field": "text", "en": "+ %s - %s Damage", "hash": "24734c0d1444b03e", "src": "db2@1.60.1.70245"}
-{"id": "PLUS_DAMAGE_TEMPLATE_WITH_SCHOOL", "field": "text", "en": "+%s - %s %s Damage", "hash": "b1af43c7eb623bbd", "src": "db2@1.60.1.70245"}
-{"id": "PLUS_SINGLE_DAMAGE_TEMPLATE", "field": "text", "en": "+ %s Damage", "hash": "d8543ac34d057d61", "src": "db2@1.60.1.70245"}
-{"id": "PLUS_SINGLE_DAMAGE_TEMPLATE_WITH_SCHOOL", "field": "text", "en": "+%s %s Damage", "hash": "fd89e3081648ed53", "src": "db2@1.60.1.70245"}
-{"id": "POWER_GAINS", "field": "text", "en": "Power Gains", "hash": "40a051f7cb903bce", "src": "db2@1.60.1.70245"}
-{"id": "POWER_GAINS_COMBATLOG_TOOLTIP", "field": "text", "en": "Shows messages when a spell or ability restores a resource like mana or energy.", "hash": "4cad15b9725571dd", "src": "db2@1.60.1.70245"}
-{"id": "PREFERRED_DATACENTER_LOCALITY_LABEL", "field": "text", "en": "Preferred Account Location", "hash": "cd86150f19f8eb4c", "src": "db2@1.60.1.70245"}
-{"id": "PREFERRED_DATACENTER_LOCALITY_TOOLTIP", "field": "text", "en": "Select your default account location for this region. This applies to all characters on your account.\n\nChanges subject to a %d day cooldown.", "hash": "a8631e2b72912703", "src": "db2@1.60.1.70245"}
-{"id": "PREFERRED_GUILD_DATACENTER_LOCALITY_LABEL", "field": "text", "en": "Preferred Guild Location", "hash": "afa149fcae50de35", "src": "db2@1.60.1.70245"}
-{"id": "PREFERRED_LOCALE_LABEL", "field": "text", "en": "Preferred Online Language", "hash": "d9793c29c9ee3ffc", "src": "db2@1.60.1.70245"}
-{"id": "PREFERRED_LOCALE_TOOLTIP", "field": "text", "en": "Select your default account language for this region. This applies to all characters on your account.\n\nChanges subject to a %d day cooldown.", "hash": "38842adf0926f7e5", "src": "db2@1.60.1.70245"}
-{"id": "PREFERRED_PLAY_DATACENTER_LOCALITY_FALLBACK", "field": "text", "en": "Location", "hash": "c9b0915aaa8bb33e", "src": "db2@1.60.1.70245"}
-{"id": "PREFERRED_PLAY_LOCALE_FALLBACK", "field": "text", "en": "Locale", "hash": "551621c00cde4156", "src": "db2@1.60.1.70245"}
-{"id": "PREFERRED_PLAY_SETTINGS", "field": "text", "en": "Preferred Play Settings", "hash": "4eb585499512cb7b", "src": "db2@1.60.1.70245"}
-{"id": "PREFERRED_PLAY_SETTINGS_LOCKED_REASON_FORMAT", "field": "text", "en": "Can be changed again in %s.", "hash": "a0ac90586379e1a4", "src": "db2@1.60.1.70245"}
-{"id": "PREFERRED_PLAY_SETTINGS_UNAVAILABLE_REASON", "field": "text", "en": "Available after account preferences are loaded.", "hash": "19252860af7637e9", "src": "db2@1.60.1.70245"}
-{"id": "PREMADE_GROUP_INSECURE_SEARCH", "field": "text", "en": "Your group has been delisted, search for|n%s?", "hash": "59acfe8f53eb2c80", "src": "db2@1.60.1.70245"}
-{"id": "PREMADE_GROUP_SEARCH_DELIST_WARNING_TEXT", "field": "text", "en": "You already have a group listed in Premade Groups. Would you like to delist it to start this search?", "hash": "460440edf3f31053", "src": "db2@1.60.1.70245"}
-{"id": "PRESS_AND_HOLD_CASTING_OPTION", "field": "text", "en": "Press and Hold Casting", "hash": "bf4208a0705f16e3", "src": "db2@1.60.1.70245"}
-{"id": "PRESS_AND_HOLD_CASTING_OPTION_TOOLTIP", "field": "text", "en": "If enabled, allows the player to press and hold a keyboard hotkey to continually cast a spell on an ActionBar without having to repeatedly press the button. This only supports keyboard hotkeys, clicking a spell with the mouse will still cast the spell a single time.", "hash": "0b982bcdfb24c480", "src": "db2@1.60.1.70245"}
-{"id": "PRESS_KEY_TO_BIND", "field": "text", "en": "Press a key to set the binding for this action.", "hash": "6bd34edcd682f839", "src": "db2@1.60.1.70245"}
-{"id": "PRESS_TAB", "field": "text", "en": "Press Tab", "hash": "155c563b9def50f8", "src": "db2@1.60.1.70245"}
-{"id": "PREV", "field": "text", "en": "Prev", "hash": "0ad64e97f51702da", "src": "db2@1.60.1.70245"}
-{"id": "PREVIEW", "field": "text", "en": "Preview", "hash": "7595f5ffcfab7d72", "src": "db2@1.60.1.70245"}
-{"id": "PREVIOUS", "field": "text", "en": "Previous", "hash": "2bbf8070719e2d09", "src": "db2@1.60.1.70245"}
-{"id": "PRIMARY_KEY_UNBOUND_ERROR", "field": "text", "en": "|cffff0000Primary Action %s is Now Unbound!|r", "hash": "1cdc7f92d1e759e1", "src": "db2@1.60.1.70245"}
-{"id": "PRIMARY_MONITOR", "field": "text", "en": "Monitor", "hash": "0131591dadedfeab", "src": "db2@1.60.1.70245"}
-{"id": "PRISMATIC_GEM", "field": "text", "en": "Prismatic", "hash": "8792f53721391621", "src": "db2@1.60.1.70245"}
-{"id": "PROFANITY_FILTER", "field": "text", "en": "Mature Language Filter", "hash": "71e7adb7eb648418", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_ADD_ENCHANT", "field": "text", "en": "Select Item to Enchant", "hash": "a1fa136750d2b3ad", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_AUTO_EQUIP_ALCHEMY_ONLY", "field": "text", "en": "That item can only be equipped in Alchemy equipment slots.", "hash": "77a9dfaa734a1ef0", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_AUTO_EQUIP_BLACKSMITHING_ONLY", "field": "text", "en": "That item can only be equipped in Blacksmithing equipment slots.", "hash": "92fa3fed0d6724db", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_AUTO_EQUIP_COOKING_ONLY", "field": "text", "en": "That item can only be equipped in Cooking equipment slots.", "hash": "92e1c26c0e6b7da3", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_AUTO_EQUIP_ENCHANTING_ONLY", "field": "text", "en": "That item can only be equipped in Enchanting equipment slots.", "hash": "265c8f5eb85aa870", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_AUTO_EQUIP_ENGINEERING_ONLY", "field": "text", "en": "That item can only be equipped in Engineering equipment slots.", "hash": "e950cf9867dca53b", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_AUTO_EQUIP_FISHING_ONLY", "field": "text", "en": "That item can only be equipped in Fishing equipment slots.", "hash": "93f688db18ba281f", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_AUTO_EQUIP_HERBALISM_ONLY", "field": "text", "en": "That item can only be equipped in Herbalism equipment slots.", "hash": "09e8fceffe3b9689", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_AUTO_EQUIP_INSCRIPTION_ONLY", "field": "text", "en": "That item can only be equipped in Inscription equipment slots.", "hash": "ebfa7df17ee6b5f9", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_AUTO_EQUIP_JEWELCRAFTING_ONLY", "field": "text", "en": "That item can only be equipped in Jewelcrafting equipment slots.", "hash": "c0c33f66b25baeef", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_AUTO_EQUIP_LEATHERWORKING_ONLY", "field": "text", "en": "That item can only be equipped in Leatherworking equipment slots.", "hash": "8ebb29407fd4a87f", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_AUTO_EQUIP_MINING_ONLY", "field": "text", "en": "That item can only be equipped in Mining equipment slots.", "hash": "f8d456aed6eb39a3", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_AUTO_EQUIP_SKINNING_ONLY", "field": "text", "en": "That item can only be equipped in Skinning equipment slots.", "hash": "58ba53066b119998", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_AUTO_EQUIP_TAILORING_ONLY", "field": "text", "en": "That item can only be equipped in Tailoring equipment slots.", "hash": "35d22765efc4c6ef", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_BUTTON", "field": "text", "en": "Professions", "hash": "dc45e8a4b82090c7", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CATEGORY_FAVORITE", "field": "text", "en": "Favorites", "hash": "fa070dca134fef04", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CATEGORY_UNLEARNED", "field": "text", "en": "Unlearned", "hash": "d1b773d23d09bb2f", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_COOKING_MISSING", "field": "text", "en": "Visit a trainer to learn cooking. Cooking lets you learn recipes to create food that heals you out of combat and grants you temporary buffs.", "hash": "5c67b4c2081d7082", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFTING_CONCENTRATION_HELPTIP", "field": "text", "en": "|cnNORMAL_FONT_COLOR:Concentration|r|nGuarantees higher quality on your next craft. Regenerates slowly over time.", "hash": "c61c55c2af7daf8c", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFTING_FINISHING_HEADER", "field": "text", "en": "Finishing Reagents:", "hash": "f921ae461527ad78", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFTING_FORM_BACK", "field": "text", "en": "Back", "hash": "08f19b73f5eaeac2", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFTING_FORM_CANCEL_ORDER", "field": "text", "en": "Cancel Order", "hash": "98d6dcea65718f56", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFTING_FORM_CUSTOMER_DURATION", "field": "text", "en": "Duration", "hash": "07151aadc7dbf99f", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFTING_FORM_LIST_ORDER", "field": "text", "en": "Place Order", "hash": "4ed922e8f3e6dbb9", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFTING_FORM_MIN_QUALITY", "field": "text", "en": "Minimum Quality: ", "hash": "ca62c911c8078251", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFTING_FORM_ORDER_RECIPIENT_GUILD", "field": "text", "en": "Guild Order", "hash": "7e22579fa897154c", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFTING_FORM_ORDER_RECIPIENT_PRIVATE", "field": "text", "en": "Personal Order", "hash": "5b758811d65301f7", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFTING_FORM_ORDER_RECIPIENT_PUBLIC", "field": "text", "en": "Public Order", "hash": "6171f9fd7f2417f5", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFTING_FORM_POSTING_FEE", "field": "text", "en": "Posting Fee", "hash": "34edffbd493c3a24", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFTING_FORM_TIP", "field": "text", "en": "Commission", "hash": "278a6ca11e7b1b3c", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFTING_FORM_TOTAL_PRICE", "field": "text", "en": "Total Price", "hash": "b89971e580a05ce3", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFTING_HELP_BAR", "field": "text", "en": "This bar shows the expected quality of your crafted item.\r\n\r\nTry using higher quality reagents, improving your skill, or specializing to reach a higher quality.", "hash": "de4102f49a62d79a", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFTING_HELP_BASIC_REAGENTS", "field": "text", "en": "These reagents are required for crafting an item.\r\n\r\nSome reagents have quality. Using higher quality reagents will improve the Skill at which you craft items.", "hash": "7025dc98a846884b", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFTING_HELP_BEST_QUALITY", "field": "text", "en": "Tip: Toggle \"Use Best Quality Reagents\" to always default to your highest quality reagents", "hash": "8383735935ca3c7e", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFTING_HELP_FILTERS", "field": "text", "en": "Tip: Apply filters to find the recipes you are looking for more easily.|n|nYou can also filter for recipes from previous expansions.", "hash": "07f99594b41a2b9d", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFTING_HELP_FINISHING_REAGENTS", "field": "text", "en": "Add Finishing Reagents for a one-time stat boost", "hash": "546adf2f81ed224a", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFTING_HELP_GEAR", "field": "text", "en": "Profession Tools and Accessories can be equipped into these slots.\r\n\r\nThis equipment can help make you better at your profession.", "hash": "14cbf926e0238fbc", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFTING_HELP_OPTIONAL_REAGENTS", "field": "text", "en": "Optional Reagents are not required, but may provided added benefits to your crafted item.", "hash": "55f4777962748d37", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFTING_HELP_STATS", "field": "text", "en": "These are the primary stats that influence the crafting of your recipe.\r\n\r\nRecipe Difficulty compared against your Skill determines the quality you craft your recipe at. \n", "hash": "d75e10d29a0fa1b8", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFTING_ORDER_IN_PROGRESS", "field": "text", "en": "Order In Progress", "hash": "b56efe28400c9b38", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFTING_RECRAFT", "field": "text", "en": "Recraft", "hash": "f59cc9b043a437ab", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CRAFT_OUTPUT_TITLE", "field": "text", "en": "Crafting Results", "hash": "cbc1ed863722d916", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CREATE_ALL", "field": "text", "en": "Create All", "hash": "1ea552a403d0129d", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CREATE_ALL_FORMAT", "field": "text", "en": "%s [%d]", "hash": "583415a6b3cce1ed", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CURRENT_LISTINGS", "field": "text", "en": "Current Listings", "hash": "bf59b81898fbfe18", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CUSTOMER_NO_ORDERS", "field": "text", "en": "No orders found", "hash": "af664d1b8ee534ab", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CUSTOMER_OPTIONAL_REAGENT_CONTAINER_LABEL", "field": "text", "en": "Provide Optional Reagents:", "hash": "8f57c49e78c7adc9", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_CUSTOMER_REAGENT_CONTAINER_LABEL", "field": "text", "en": "Provide Reagents:", "hash": "2e401f028ffd9919", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_ENCHANT_ALL", "field": "text", "en": "Enchant All", "hash": "e7927bd6c8b4a4b5", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_FIRST_AID_MISSING", "field": "text", "en": "Visit a trainer to learn first aid.  First aid lets you turn cloth into bandages for healing yourself and others.", "hash": "42486c99c9040539", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_FIRST_CRAFT", "field": "text", "en": "First Craft", "hash": "9c41f7ead2e72530", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_FIRST_CRAFT_DESCRIPTION", "field": "text", "en": "Crafting this recipe for the first time will teach you something new.", "hash": "780006f41960a100", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_FIRST_PROFESSION", "field": "text", "en": "First Profession", "hash": "ba388e7ecd1dfc51", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_FISHING_MISSING", "field": "text", "en": "Visit a trainer to learn fishing.  Fishing lets you catch fish and other strange things from water.  Fish can be cooked into delicious meals with the Cooking skill.", "hash": "9162ced6b4013a3a", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_GATHERING_JOURNAL_LIST_HELP", "field": "text", "en": "Tip: Apply filters to find the items you are looking for more easily.\r\n\r\nYou can also filter for items from previous expansions. ", "hash": "9ec6222a59bb9b18", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_GATHERING_JOURNAL_STATS_HELP", "field": "text", "en": "These are the primary stats that influence Gathering.\r\n\r\nPrimary Reagent Difficulty compared against your Skill determines your chance to gather reagents at a higher quality. ", "hash": "d9902b4dc3854fdc", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_HIDE_UNOWNED_REAGENTS", "field": "text", "en": "Hide Unavailable", "hash": "f56b719ac0e96aef", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_INSUFFICIENT_REAGENTS", "field": "text", "en": "You have insufficient reagents.", "hash": "27180a093219beaf", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_LISTING_DURATION_ONE", "field": "text", "en": "12 Hours", "hash": "9704337a34445b2b", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_LISTING_DURATION_THREE", "field": "text", "en": "48 Hours", "hash": "3988ecbb9606ebf1", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_LISTING_DURATION_TWO", "field": "text", "en": "24 Hours", "hash": "77db1be554da8b6d", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_MAX_ORDERS_REACHED", "field": "text", "en": "Maximum number of orders reached.", "hash": "1dec0dd0c6a8a804", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_MISSING_PROFESSION", "field": "text", "en": "Visit a profession trainer in a major city to learn a new profession. You may have two professions. You may have any combination of gathering and production professions.", "hash": "57fef71068311a5f", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_MISSING_REQUIREMENT", "field": "text", "en": "You are missing one or more requirements needed to craft this recipe.", "hash": "7eabaf7b589572ff", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_NEW_TUTORIAL", "field": "text", "en": "Click here to view your new Profession", "hash": "f39f2b502b833132", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_NEW_TUTORIAL_ICON", "field": "text", "en": "Click to view your recipes and start crafting.\r\n\r\nYou can also drag this icon to an action bar for easy access.", "hash": "53ca76840e18da40", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_NOTE_TO_CRAFTER", "field": "text", "en": "Note to Crafter:", "hash": "9c82c7b19c1df8dc", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_NO_JOURNAL_ENTRIES", "field": "text", "en": "There are no results with your current filters.", "hash": "a50c64d4a48873cb", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_OPTIONAL_REAGENT_CONTAINER_LABEL", "field": "text", "en": "Optional Reagents:", "hash": "cbb6f273b77d7178", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_ORDERS_NOT_ENOUGH_REAGENTS", "field": "text", "en": "You do not have enough of this reagent to provide.", "hash": "416493002a39d739", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_ORDER_CANCELLED", "field": "text", "en": "Order Cancelled", "hash": "7109a9ce6a4ded85", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_ORDER_CANCEL_FAILED", "field": "text", "en": "Failed to cancel order. Please try again later.", "hash": "8d131482acd49ace", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_ORDER_CANCEL_FAILED_CLAIMED", "field": "text", "en": "Failed to cancel order. Once an order has been claimed, it can no longer be cancelled.", "hash": "2794c1e7accc7bba", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_ORDER_CANNOT_CLAIM_OWN_ORDER", "field": "text", "en": "You cannot claim your own crafting order.", "hash": "abea1fc9c08c30db", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_ORDER_COMPLETE", "field": "text", "en": "Order Complete!", "hash": "8435e9acfec73c56", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_ORDER_CRAFTER", "field": "text", "en": "Crafter:", "hash": "1585fe97323eb6da", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_ORDER_CRAFTER_REQUIRED_REAGENT", "field": "text", "en": "|cnDISABLED_REAGENT_COLOR:This reagent will be provided by the crafter.|r", "hash": "97d30ce79da401ee", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_ORDER_CUSTOMER_REQUIRED_REAGENT", "field": "text", "en": "|cnERROR_COLOR:You must provide this reagent.|r", "hash": "f0bb54368c172915", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_ORDER_EXPIRED", "field": "text", "en": "Order Expired", "hash": "aba2ad961e209586", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_ORDER_FAILED_NO_CLAIMS", "field": "text", "en": "You have no remaining daily public orders and can only fill expiring orders at this time.", "hash": "9bf16275d5ab4df8", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_ORDER_NOT_AVAILABLE", "field": "text", "en": "This order is no longer available.", "hash": "2edc160cf0147402", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_ORDER_OP_FAILED", "field": "text", "en": "Crafting Order operation failed. Please try again later.", "hash": "1e8fa3db8d815fc3", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_ORDER_PLACEMENT_FAILED", "field": "text", "en": "Crafting Order creation failed. Please try again later.", "hash": "2194df0db99a32e5", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_ORDER_REJECTED", "field": "text", "en": "Order Rejected", "hash": "4e6ff6d79677f1a1", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_ORDER_REJECT_FAILED", "field": "text", "en": "Failed to decline order. Please try again later.", "hash": "8a02083d986ed9e0", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_ORDER_TIME_REMAINING", "field": "text", "en": "Expires", "hash": "565d4c8a94f388aa", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_ORDER_UNUSABLE_WARNING", "field": "text", "en": "This item is currently unusable and will bind when picked up. Are you sure you want to place this order?", "hash": "f724346318ed1758", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_PICKER_NO_AVAILABLE_REAGENTS", "field": "text", "en": "You do not own any suitable reagents.", "hash": "73e5ae4977fe27ee", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_PROVIDED_OPTIONAL_REAGENT_CONTAINER_LABEL", "field": "text", "en": "Provided Optional Reagents:", "hash": "f7db2d20c7df2877", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_PROVIDED_REAGENT_CONTAINER_LABEL", "field": "text", "en": "Provided Reagents:", "hash": "3946b390a39c3dfd", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_REAGENT_CONTAINER_ENCHANT_LABEL", "field": "text", "en": "Optional Target:", "hash": "8fcec86803cb5151", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_REAGENT_CONTAINER_LABEL", "field": "text", "en": "Reagents:", "hash": "ba824468b4bd1025", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_RECIPE_COOLDOWN", "field": "text", "en": "Recipe is on cooldown.", "hash": "f89d682c2f3d6b0d", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_RECIPE_UNLEARNED", "field": "text", "en": "Recipe Unlearned", "hash": "36516edf3ee04189", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_RECRAFTING_REPLACE_OPTIONAL", "field": "text", "en": "Do you want to replace %s?\nIt will be destroyed upon Recrafting.", "hash": "101e64d431dd6003", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_RECRAFT_ORDER_INSTRUCTION", "field": "text", "en": "Recrafting allows you to change Optional Reagents and the quality of some crafted equipment.", "hash": "9c38a341d699ad65", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_REQUIRED_TOOLS", "field": "text", "en": "|cnNORMAL_FONT_COLOR:Requires:|r %s", "hash": "f4a93eb639d6d5e7", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_REQUIREMENT_TABLE", "field": "text", "en": "This recipe requires you to be near a special crafting station. These can often be found in dungeons or in the open world.", "hash": "18c6a3027233aa6b", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_REQUIREMENT_TOOL", "field": "text", "en": "This recipe requires you to have a special tool in your inventory. Higher tier tools typically satisfy lower tier requirements.", "hash": "9d6dd249c5a5b6e9", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_SECOND_PROFESSION", "field": "text", "en": "Second Profession", "hash": "ea28fa0592d6de04", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_SKILL_UP_EASY", "field": "text", "en": "Low chance of gaining skill", "hash": "a34a6cee2d93d405", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_SKILL_UP_MEDIUM", "field": "text", "en": "High chance of gaining skill", "hash": "085ca0c0f18e008e", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_SKILL_UP_OPTIMAL", "field": "text", "en": "Guaranteed chance of gaining %d skill ups", "hash": "ce865fd2896862a7", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_SPECS_CONFIG_OPERATION_TOO_FAST", "field": "text", "en": "Specialization operation still in progress, try again later.", "hash": "ec757722e820b01d", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_SPECS_CONFIRM_CLOSE", "field": "text", "en": "Do you want to apply your changes before exiting?", "hash": "02dd7c615dce6991", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_TRACKER_HEADER_PROFESSION", "field": "text", "en": "Profession", "hash": "5f7ba5eb177479d9", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_TRACKING_VIEW_RECIPE", "field": "text", "en": "View Recipe", "hash": "49ab3f74512d7b35", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_TRACK_RECIPE", "field": "text", "en": "Track Recipe", "hash": "8e76e6279ceb81cf", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_TUTORIAL_FINISHING_REAGENT", "field": "text", "en": "You've unlocked a Finishing Reagent slot. Finishing Reagents grant benefits when you craft.", "hash": "a7466ada6ab683af", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_TUTORIAL_OPTIONAL_REAGENT", "field": "text", "en": "You have an Optional Reagent that can be used with this recipe. |n|nOptional Reagents let you customize your crafts, but may also increase Recipe Difficulty.", "hash": "db80a83bf1e3d0a0", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_TUTORIAL_QUALITY_BAR", "field": "text", "en": "This bar indicates the expected quality of your crafted item. |n|nYou can improve this in a variety of ways such as by using higher quality reagents or increasing your skill.", "hash": "c5a2b893e86dbe7d", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_TUTORIAL_REAGENT_QUALITY", "field": "text", "en": "Using higher quality reagents will improve the Skill at which you craft items. |n|nClick to change which quality will be used.", "hash": "65939e2b54be36dd", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_TUTORIAL_RECRAFT", "field": "text", "en": "You can Recraft previously crafted equipment to change its Optional Reagents or attempt to raise its quality. |n|nClick to select an item to Recraft.", "hash": "ae0b42b777b0f4cb", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSIONS_UNTRACK_RECIPE", "field": "text", "en": "Untrack", "hash": "15c4a4a6efd10910", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSION_CONFIRMATION1", "field": "text", "en": "You may only know two professions at any one time.  Would you like to learn |cffffd200%s|r as your first one?", "hash": "b3345376608b007d", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSION_CONFIRMATION2", "field": "text", "en": "You may only know two professions at any one time.  Would you like to learn |cffffd200%s|r as your second one?", "hash": "4bc3e4a5397db98c", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSION_EQUIPMENT_LOCATION_HELPTIP", "field": "text", "en": "Your profession tool and accessories equip here.", "hash": "832cbb8356a7cc59", "src": "db2@1.60.1.70245"}
-{"id": "PROFESSION_RESPEC_CONFIRMATION", "field": "text", "en": "Do you want to  unlearn all specializations for %s?|n|nYou will lose all associated recipes and be able to re-allocate your knowledge as you see fit.|n|n |cnRED_FONT_COLOR:This can only be done ONCE.|r", "hash": "82ce52c8bc42d5e1", "src": "db2@1.60.1.70245"}
-{"id": "PROF_ORDER_CANT_ADD_FRIEND_OFFLINE", "field": "text", "en": "This player is offline.", "hash": "a69f98f830bb4942", "src": "db2@1.60.1.70245"}
-{"id": "PROF_ORDER_CANT_ADD_FRIEND_WRONG_FACTION", "field": "text", "en": "This player is the opposite faction.", "hash": "f2be98b0ccecd42c", "src": "db2@1.60.1.70245"}
-{"id": "PROF_ORDER_CANT_IGNORE_ALREADY_IGNORED", "field": "text", "en": "This player is already being ignored.", "hash": "33bde62819813bae", "src": "db2@1.60.1.70245"}
-{"id": "PROF_ORDER_CANT_WHISPER_OFFLINE", "field": "text", "en": "This player is offline.", "hash": "a69f98f830bb4942", "src": "db2@1.60.1.70245"}
-{"id": "PROF_ORDER_CANT_WHISPER_WRONG_FACTION", "field": "text", "en": "This player is the opposite faction.", "hash": "f2be98b0ccecd42c", "src": "db2@1.60.1.70245"}
-{"id": "PROJECTED_TEXTURES", "field": "text", "en": "Projected Textures", "hash": "a72ff7cda0b62343", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_APPLY_TARGET_MARKER", "field": "text", "en": "Mark Target", "hash": "43ff64874dd84e6d", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_AUTO_RUN", "field": "text", "en": "Auto-Run", "hash": "83ff995fa8652f1c", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_CENTER_CAMERA", "field": "text", "en": "Center Camera", "hash": "dedf4c7c34f36a0b", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_CLEAR_TARGET_MARKER", "field": "text", "en": "Clear Target Marker", "hash": "e67f0e23f05fad27", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_EXIT", "field": "text", "en": "Exit", "hash": "095e8d2ef9719c87", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_FLIP_CAMERA", "field": "text", "en": "(Hold) Flip Camera", "hash": "72334c3a8bb84c8d", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_FOCUS_UI", "field": "text", "en": "Focus/Unfocus Interface", "hash": "f6837621a4c5382e", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_FRIENDLY_TARGETING", "field": "text", "en": "(Tap/Hold) Friendly Targeting", "hash": "eec91c31575441a1", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_FRIENDLY_TARGETING_ACTIONS", "field": "text", "en": "Friendly Targeting Actions", "hash": "a74940c42b34e186", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_HOSTILE_TARGETING", "field": "text", "en": "(Tap/Hold) Enemy Targeting", "hash": "171d3ff3e69adb71", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_HOSTILE_TARGETING_ACTIONS", "field": "text", "en": "Enemy Targeting Actions", "hash": "db733fbadd421b04", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_INSPECT_HUD", "field": "text", "en": "Inspect HUD", "hash": "e78901d402c932b1", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_NEXT_ACTION_PAGE", "field": "text", "en": "Next Action Page", "hash": "521e335d09af7d89", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_NEXT_FRAME", "field": "text", "en": "Next Frame", "hash": "2efff8ae01e2fe25", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_OPEN_BAGS", "field": "text", "en": "Open Bags", "hash": "716d8a77e7c996b8", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_PING", "field": "text", "en": "Ping, (Hold) Ping Menu", "hash": "e44edea4cf813153", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_PREVIOUS_ACTION_PAGE", "field": "text", "en": "Previous Action Page", "hash": "e59a96ab9c166105", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_PREVIOUS_FRAME", "field": "text", "en": "Previous Frame", "hash": "d395275e1d9c64c5", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_SHORTCUTS", "field": "text", "en": "(Hold) Shortcuts", "hash": "95dde030a7618965", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_SHORTCUT_ACTIONS", "field": "text", "en": "Shortcut Actions", "hash": "f7383b0d197871c1", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_TARGET_GROUP_DOWN", "field": "text", "en": "Target Below Group Member", "hash": "0742cfba60ce8f9a", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_TARGET_GROUP_LEFT", "field": "text", "en": "Target Left Group Member", "hash": "fadd88d37a110a62", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_TARGET_GROUP_RIGHT", "field": "text", "en": "Target Right Group Member", "hash": "bb4557714a2887cb", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_TARGET_GROUP_UP", "field": "text", "en": "Target Above Group Member", "hash": "d954757e9fe2274d", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_TARGET_PET", "field": "text", "en": "Target Pet", "hash": "114f2daa6822272f", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_TARGET_SELF", "field": "text", "en": "Target Self", "hash": "dbeb434550fadb33", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_TOGGLE_CATEGORY", "field": "text", "en": "Toggle", "hash": "31c34762e69cf87c", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_TOGGLE_TOOLTIPS", "field": "text", "en": "Toggle Tooltips", "hash": "ec97ade246efd765", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_VIEW_BUFFS", "field": "text", "en": "View Buffs", "hash": "e7e5ec8713088c99", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_VIEW_CHAT", "field": "text", "en": "View Chat", "hash": "deb71e1a9820de6e", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_VIEW_QUEST_TRACKER", "field": "text", "en": "View Quest Tracker", "hash": "8e01c8137ad17b11", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_ZOOM_IN_CAMERA", "field": "text", "en": "Camera Zoom In", "hash": "f1d6e33a5d44cc0f", "src": "db2@1.60.1.70245"}
-{"id": "PROMPT_ZOOM_OUT_CAMERA", "field": "text", "en": "Camera Zoom Out", "hash": "c0f7df54660065bd", "src": "db2@1.60.1.70245"}
-{"id": "PROVING_GROUNDS_SCORE", "field": "text", "en": "Score:", "hash": "64afba6cb8feff03", "src": "db2@1.60.1.70245"}
-{"id": "PROVING_GROUNDS_WAVE", "field": "text", "en": "Wave:", "hash": "0447776f2a90984d", "src": "db2@1.60.1.70245"}
-{"id": "PURCHASE", "field": "text", "en": "Purchase", "hash": "c1e4eed345fc3107", "src": "db2@1.60.1.70245"}
-{"id": "PURCHASED_BY_COLON", "field": "text", "en": "Purchased By:", "hash": "15952bc675ba1562", "src": "db2@1.60.1.70245"}
-{"id": "PURCHASE_TAB_TEXT", "field": "text", "en": "Do you wish to purchase this tab?", "hash": "cacd91b3e20a558d", "src": "db2@1.60.1.70245"}
-{"id": "PURCHASE_UNIQUE_AUCTION_CONFIRMATION", "field": "text", "en": "|cffffd200This item is \"%s\"|n|nYou can only equip one item with this label at a time.|r", "hash": "e4bee24f41f224a2", "src": "db2@1.60.1.70245"}
-{"id": "PUSH_TO_TALK", "field": "text", "en": "Push to Talk", "hash": "a1fc40a20f1cb8d2", "src": "db2@1.60.1.70245"}
-{"id": "PVP", "field": "text", "en": "Player vs. Player", "hash": "e05a8e54c9894b2f", "src": "db2@1.60.1.70245"}
-{"id": "PVP_COMPACT_UNIT_FRAME_PROFILE_DISPLAYONLYHEALERPOWERBARS", "field": "text", "en": "Display Only Healer Power Bars", "hash": "c5ea239838c816a3", "src": "db2@1.60.1.70245"}
-{"id": "PVP_COMPACT_UNIT_FRAME_PROFILE_DISPLAYPETS", "field": "text", "en": "Display Pets", "hash": "60bce7c8476be7ac", "src": "db2@1.60.1.70245"}
-{"id": "PVP_COMPACT_UNIT_FRAME_PROFILE_DISPLAYPOWERBAR", "field": "text", "en": "Display Power Bars", "hash": "68d80041f119b3df", "src": "db2@1.60.1.70245"}
-{"id": "PVP_COMPACT_UNIT_FRAME_PROFILE_HEALTHTEXT", "field": "text", "en": "Display Health Text", "hash": "5eccc2119ade2b7a", "src": "db2@1.60.1.70245"}
-{"id": "PVP_COMPACT_UNIT_FRAME_PROFILE_HEALTHTEXT_HEALTH", "field": "text", "en": "Health Remaining", "hash": "65c44ebc6cfc210d", "src": "db2@1.60.1.70245"}
-{"id": "PVP_COMPACT_UNIT_FRAME_PROFILE_HEALTHTEXT_LOSTHEALTH", "field": "text", "en": "Health Lost", "hash": "a012ee82e7a63a31", "src": "db2@1.60.1.70245"}
-{"id": "PVP_COMPACT_UNIT_FRAME_PROFILE_HEALTHTEXT_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70245"}
-{"id": "PVP_COMPACT_UNIT_FRAME_PROFILE_HEALTHTEXT_PERC", "field": "text", "en": "Health Percentage", "hash": "15099a8ea8df1765", "src": "db2@1.60.1.70245"}
-{"id": "PVP_COMPACT_UNIT_FRAME_PROFILE_USECLASSCOLORS", "field": "text", "en": "Display Class Colors", "hash": "5dae710d10680a3b", "src": "db2@1.60.1.70245"}
-{"id": "PVP_CONQUEST_CHANGE", "field": "text", "en": "%s Conquest", "hash": "4b9311d40c07282d", "src": "db2@1.60.1.70245"}
-{"id": "PVP_ENABLED", "field": "text", "en": "PvP", "hash": "00152f823da3de67", "src": "db2@1.60.1.70245"}
-{"id": "PVP_FLAG", "field": "text", "en": "Player vs. Player", "hash": "e05a8e54c9894b2f", "src": "db2@1.60.1.70245"}
-{"id": "PVP_FRAMES_LABEL", "field": "text", "en": "Arena Enemy Frames", "hash": "ff30dafff48c1156", "src": "db2@1.60.1.70245"}
-{"id": "PVP_HONOR_CHANGE", "field": "text", "en": "%s Honor", "hash": "df0fa39652c9b92f", "src": "db2@1.60.1.70245"}
-{"id": "PVP_ITEM_LEVEL_TOOLTIP", "field": "text", "en": "Equip: Increases item level to a minimum of %d in Arenas and Battlegrounds.", "hash": "b6d522f14edf9a5d", "src": "db2@1.60.1.70245"}
-{"id": "PVP_ITEM_REWARDS_HEADER", "field": "text", "en": "You earned", "hash": "53d603220e9f117f", "src": "db2@1.60.1.70245"}
-{"id": "PVP_LEAVE_BUTTON_TIME", "field": "text", "en": "%s (%s)", "hash": "515ea73e8819223f", "src": "db2@1.60.1.70245"}
-{"id": "PVP_LINK_LEVEL_CLASS_FORMAT_STRING", "field": "text", "en": "Level %d %s", "hash": "2fcf25e1a3bdd25f", "src": "db2@1.60.1.70245"}
-{"id": "PVP_LINK_SEASON_GAMES", "field": "text", "en": "%d games this season", "hash": "7caa344d1bffbba0", "src": "db2@1.60.1.70245"}
-{"id": "PVP_MATCH_DEFEAT", "field": "text", "en": "DEFEAT", "hash": "93c9a5ca7a249dff", "src": "db2@1.60.1.70245"}
-{"id": "PVP_MATCH_DRAW", "field": "text", "en": "DRAW", "hash": "093237a8d52a9e8c", "src": "db2@1.60.1.70245"}
-{"id": "PVP_MATCH_LEAVE_BUTTON", "field": "text", "en": "Leave Match", "hash": "5e7d87dc74f7ef07", "src": "db2@1.60.1.70245"}
-{"id": "PVP_MATCH_READY_ERROR", "field": "text", "en": "You can't leave the queue because your match is ready.", "hash": "59256b27d5d6a5a4", "src": "db2@1.60.1.70245"}
-{"id": "PVP_MATCH_VICTORY", "field": "text", "en": "VICTORY", "hash": "102eac3bf7fa28ff", "src": "db2@1.60.1.70245"}
-{"id": "PVP_PRESTIGE_RANK_UP_NEXT_MAX_LEVEL_REWARD", "field": "text", "en": "Next Reward at Honor Level %d", "hash": "51c794f0392304b8", "src": "db2@1.60.1.70245"}
-{"id": "PVP_PRESTIGE_RANK_UP_TITLE", "field": "text", "en": "Prestige", "hash": "f88e19b3d082d611", "src": "db2@1.60.1.70245"}
-{"id": "PVP_PROGRESS_REWARDS_HEADER", "field": "text", "en": "Progress", "hash": "f8cee0fa623608a1", "src": "db2@1.60.1.70245"}
-{"id": "PVP_QUEUE_AGAIN", "field": "text", "en": "Queue As Team", "hash": "58c15cbf0a6ba844", "src": "db2@1.60.1.70245"}
-{"id": "PVP_RANK_CURRENT_PROGRESS", "field": "text", "en": "Rank Points: |cnHIGHLIGHT_FONT_COLOR:%d / %d|r", "hash": "f5e80deb5a7f1d2a", "src": "db2@1.60.1.70245"}
-{"id": "PVP_RANK_DETAIL_UNAVAILABLE", "field": "text", "en": "PvP Ranks are currently unavailable.", "hash": "b94319d6d486a34f", "src": "db2@1.60.1.70245"}
-{"id": "PVP_RANK_NEXT_REWARD", "field": "text", "en": "|cFFFFFFFFNext Rewards at Rank %d|r", "hash": "46dd0aaadb2fb86e", "src": "db2@1.60.1.70245"}
-{"id": "PVP_RANK_NUMBER", "field": "text", "en": "Rank %d", "hash": "c7a12ad7b1a81111", "src": "db2@1.60.1.70245"}
-{"id": "PVP_RANK_NUMBER_AND_TITLE", "field": "text", "en": "Rank %d - %s", "hash": "066fbb7c6be31ba9", "src": "db2@1.60.1.70245"}
-{"id": "PVP_RANK_REWARDS_VENDOR_ALLIANCE", "field": "text", "en": "|cFFFFFFFFRewards may be purchased at the Champion's Hall in Stormwind.|r", "hash": "fe42fe581e0602f5", "src": "db2@1.60.1.70245"}
-{"id": "PVP_RANK_REWARDS_VENDOR_HORDE", "field": "text", "en": "|cFFFFFFFFRewards may be purchased at the Hall of Legends in Orgrimmar.|r", "hash": "19dffd408c7d3324", "src": "db2@1.60.1.70245"}
-{"id": "PVP_RANK_SEASON_PROGRESS", "field": "text", "en": "Total Rank Progress: |cnHIGHLIGHT_FONT_COLOR:%d / %d|r", "hash": "92a15cc2c07d609a", "src": "db2@1.60.1.70245"}
-{"id": "PVP_RANK_SEASON_PROGRESS_NO_MAX", "field": "text", "en": "Total Rank Progress: |cnHIGHLIGHT_FONT_COLOR:%d|r", "hash": "4eff00612f50e9c2", "src": "db2@1.60.1.70245"}
-{"id": "PVP_RANK_SEASON_RANKUP_DESCRIPTION", "field": "text", "en": "Each week, the Rank Points cap is increased, up to a maximum of |cnHIGHLIGHT_FONT_COLOR:%d|r for |cnHIGHLIGHT_FONT_COLOR:Rank %d|r.", "hash": "cf3471d560ed6d24", "src": "db2@1.60.1.70245"}
-{"id": "PVP_RANK_WEEKLY_CAP_INCREASE", "field": "text", "en": "Cap increase this week: |cnHIGHLIGHT_FONT_COLOR:%d|r", "hash": "ce9947ca4b9e3f08", "src": "db2@1.60.1.70245"}
-{"id": "PVP_RATING_CHANGE", "field": "text", "en": "%s Rating", "hash": "0337f19067e4712b", "src": "db2@1.60.1.70245"}
-{"id": "PVP_RATING_CURRENT", "field": "text", "en": "Current Rating: %s", "hash": "ca48a53e6553aaa0", "src": "db2@1.60.1.70245"}
-{"id": "PVP_RATING_GAINED", "field": "text", "en": "Rating Gained: %s", "hash": "a52a9a28abb5c36a", "src": "db2@1.60.1.70245"}
-{"id": "PVP_RATING_HEADER", "field": "text", "en": "Rating", "hash": "46b92fa848eed77c", "src": "db2@1.60.1.70245"}
-{"id": "PVP_RATING_LINK_FORMAT_STRING", "field": "text", "en": "|cffffffff%s (%d)|r", "hash": "515e9f9188174410", "src": "db2@1.60.1.70245"}
-{"id": "PVP_RATING_LINK_ITEM_LEVEL", "field": "text", "en": "PvP Item Level: |cffffffff%d|r", "hash": "910b4bcfa0ecdc03", "src": "db2@1.60.1.70245"}
-{"id": "PVP_RATING_NEW", "field": "text", "en": "New Rating: %s", "hash": "f9f23bb066ebf113", "src": "db2@1.60.1.70245"}
-{"id": "PVP_RATING_PREVIOUS", "field": "text", "en": "Previous Rating: %s", "hash": "1fe3205072cf2210", "src": "db2@1.60.1.70245"}
-{"id": "PVP_RATING_UNCHANGED", "field": "text", "en": "Rating Unchanged", "hash": "5d27034bd150052a", "src": "db2@1.60.1.70245"}
-{"id": "PVP_REPORT_AFK", "field": "text", "en": "Report player Away", "hash": "c9dda8844240e438", "src": "db2@1.60.1.70245"}
-{"id": "PVP_REPORT_AFK_ALL", "field": "text", "en": "Report all of the above", "hash": "82e2d05067dd13c9", "src": "db2@1.60.1.70245"}
-{"id": "PVP_SCOREBOARD_MATCH_COMPLETE", "field": "text", "en": "Match Complete", "hash": "f1c40aa81f9c8b3a", "src": "db2@1.60.1.70245"}
-{"id": "PetFood:1", "field": "text", "en": "Meat", "hash": "0a6bfc4319433679", "src": "db2@1.60.1.70245"}
-{"id": "PetFood:2", "field": "text", "en": "Fish", "hash": "097cf2544b4ed706", "src": "db2@1.60.1.70245"}
-{"id": "PetFood:3", "field": "text", "en": "Cheese", "hash": "02d527d8414fa0a5", "src": "db2@1.60.1.70245"}
-{"id": "PetFood:4", "field": "text", "en": "Bread", "hash": "95ea349001be58c6", "src": "db2@1.60.1.70245"}
-{"id": "PetFood:5", "field": "text", "en": "Fungus", "hash": "dac98e6e886d7395", "src": "db2@1.60.1.70245"}
-{"id": "PetFood:6", "field": "text", "en": "Fruit", "hash": "dc25428cbced91c9", "src": "db2@1.60.1.70245"}
-{"id": "PetFood:7", "field": "text", "en": "Raw Meat", "hash": "e0b39234e7439fcd", "src": "db2@1.60.1.70245"}
-{"id": "PetFood:8", "field": "text", "en": "Raw Fish", "hash": "dfc48845194f406b", "src": "db2@1.60.1.70245"}
-{"id": "PetLoyalty:1", "field": "text", "en": "Rebellious", "hash": "3abd81c0e2fa7b2a", "src": "db2@1.60.1.70245"}
-{"id": "PetLoyalty:2", "field": "text", "en": "Unruly", "hash": "1d36dceca447541b", "src": "db2@1.60.1.70245"}
-{"id": "PetLoyalty:3", "field": "text", "en": "Submissive", "hash": "4390690e4e7952f1", "src": "db2@1.60.1.70245"}
-{"id": "PetLoyalty:4", "field": "text", "en": "Dependable", "hash": "7980f6abceee3dbd", "src": "db2@1.60.1.70245"}
-{"id": "PetLoyalty:5", "field": "text", "en": "Faithful", "hash": "4c439daf03b35d5a", "src": "db2@1.60.1.70245"}
-{"id": "PetLoyalty:6", "field": "text", "en": "Best Friend", "hash": "85d36998bc237b77", "src": "db2@1.60.1.70245"}
-{"id": "PetLoyalty:7", "field": "text", "en": "(Loyalty Level 7) Loyalty Cap", "hash": "5dcea3cd82185c45", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:146124", "field": "text", "en": "You must be Friendly with the Magram Clan Centaur.", "hash": "59f3017fe51c6659", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:146125", "field": "text", "en": "You must be Honored with the Magram Clan Centaur.", "hash": "fb794e4a300865d4", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:146126", "field": "text", "en": "You must be Revered with the Magram Clan Centaur.", "hash": "ec6ad4ebafce900f", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:146127", "field": "text", "en": "You must be Exalted with the Magram Clan Centaur.", "hash": "72991e5fdb67515f", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:146128", "field": "text", "en": "You must be Friendly with the Gelkis Clan Centaur.", "hash": "3fe5e4a4b4a1b711", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:146129", "field": "text", "en": "You must be Honored with the Gelkis Clan Centaur.", "hash": "e16c316fff8db67b", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:146130", "field": "text", "en": "You must be Revered with the Gelkis Clan Centaur.", "hash": "d25db8107f53e0c7", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:146131", "field": "text", "en": "You must be Exalted with the Gelkis Clan Centaur.", "hash": "588c0184aaeca217", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:146192", "field": "text", "en": "You must be Friendly with the Magram Clan Centaur.", "hash": "59f3017fe51c6659", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:146193", "field": "text", "en": "You must be Friendly with the Gelkis Clan Centaur.", "hash": "3fe5e4a4b4a1b711", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:148824", "field": "text", "en": "You must be Friendly with this faction.", "hash": "6ba14743d3784ebf", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:148825", "field": "text", "en": "You must be Honored with this faction.", "hash": "37cf1cde04656265", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:148826", "field": "text", "en": "You must be Revered with this faction.", "hash": "0b1695d5bab8c53f", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:150766", "field": "text", "en": "You must be Friendly with the Gelkis Clan Centaur.", "hash": "3fe5e4a4b4a1b711", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:150767", "field": "text", "en": "You must be Friendly with the Gelkis Clan Centaur.", "hash": "3fe5e4a4b4a1b711", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:151486", "field": "text", "en": "You must complete the Paladin quest \"A Trusty Steed\" to use this mount", "hash": "a970164177745196", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:151683", "field": "text", "en": "You must complete the Paladin quest \"The Tome of Nobility\" to use this mount", "hash": "2fc303860b6248eb", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:151684", "field": "text", "en": "You must complete the Warlock quest \"Summon Felsteed\" to use this mount", "hash": "abea9378632ae572", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:153766", "field": "text", "en": "Requires The Defilers - Friendly", "hash": "22b4cceef24f4466", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:153767", "field": "text", "en": "Requires The League of Arathor - Friendly", "hash": "e93008bec5eda352", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:155311", "field": "text", "en": "Requires Darkspear Raiders - Friendly", "hash": "99e505a2d456c750", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:155312", "field": "text", "en": "Requires Theramore Expeditionary Force - Friendly", "hash": "661d44d29b8e99cc", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:155358", "field": "text", "en": "Requires Theramore Expeditionary Force - Honored", "hash": "0b5cf2cf32612e8c", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:155359", "field": "text", "en": "Requires Darkspear Raiders - Honored", "hash": "e89530d8f3f67d65", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:155951", "field": "text", "en": "Requires 15 Legacy Points.", "hash": "4dc1a4c739409e8c", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:155957", "field": "text", "en": "Become Friendly with Guardians of Hyjal and complete the quest \"Friendly Advice\".", "hash": "57179afbe9cd1d37", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:155958", "field": "text", "en": "Further progress your reputation with Guardians of Hyjal and choose to specialize in Gloves to purchase this recipe.", "hash": "83ccc5c4fcc7adf4", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:155959", "field": "text", "en": "Further progress your reputation with Guardians of Hyjal and choose to specialize in Shoulders to purchase this recipe.", "hash": "4d943b4a06a01e46", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:155960", "field": "text", "en": "Further progress your reputation with Guardians of Hyjal and choose to specialize in Boots to purchase this recipe.", "hash": "f722f21dd7bffb81", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:156039", "field": "text", "en": "Requires 25 Legacy Points.", "hash": "0f9d737da2e717f9", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:156041", "field": "text", "en": "Requires 40 Legacy Points.", "hash": "514ea16ff657ab5c", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:156046", "field": "text", "en": "Requires 55 Legacy Points.", "hash": "5530df9adfda8451", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:156047", "field": "text", "en": "Requires 75 Legacy Points.", "hash": "d8e87d01b327773c", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:156048", "field": "text", "en": "Requires 90 Legacy Points.", "hash": "1a99aaf806980ab0", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:156238", "field": "text", "en": "Requires Private/Scout (Rank 1)", "hash": "25166662a27917a7", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:156239", "field": "text", "en": "Requires Corporal/Grunt (Rank 2)", "hash": "8b58e17c28391707", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:156240", "field": "text", "en": "Requires Sergeant (Rank 3)", "hash": "a3989d5de1f163a5", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:156241", "field": "text", "en": "Requires Master Sergeant / Senior Sergeant (Rank 4)", "hash": "d4ec807b8e0b4b54", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:156242", "field": "text", "en": "Requires Sergeant Major /  First Sergeant (Rank 5)", "hash": "42916a69f8a59735", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:156243", "field": "text", "en": "Requires Knight / Stone Guard (Rank 6)", "hash": "a9909a1ff481b3c5", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:156244", "field": "text", "en": "Requires Knight-Lieutenant / Blood Guard (Rank 7)", "hash": "70de05119e1b4c84", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:156246", "field": "text", "en": "Requires Knight-Captain / Legionnaire (Rank 8)", "hash": "190ced03794c9828", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:156247", "field": "text", "en": "Requires Knight-Champion / Centurion (Rank 9)", "hash": "2c45ce418a9f623d", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:156248", "field": "text", "en": "Requires Lieutenant Commander / Champion (Rank 10)", "hash": "358f2fc04bd20a41", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:156249", "field": "text", "en": "Requires Commander / Lieutenant General (Rank 11)", "hash": "07582c41db10ccf9", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:156250", "field": "text", "en": "Requires Marshal / General (Rank 12)", "hash": "5d2fdcd8ea621dd9", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:156251", "field": "text", "en": "Requires Field Marshal / Warlord (Rank 13)", "hash": "b37501cb1d23a464", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:156252", "field": "text", "en": "Requires Grand Marshal / High Warlord (Rank 14)", "hash": "d81af6c0f01df676", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:156318", "field": "text", "en": "Requires Barkskin Burrow - Friendly", "hash": "0fb7c3dad176cedf", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:156319", "field": "text", "en": "Requires Barkskin Burrow - Honored", "hash": "186209465aa9e43b", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:156320", "field": "text", "en": "Requires Barkskin Burrow - Revered", "hash": "df48bbcdf46f868c", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:156321", "field": "text", "en": "Requires Barkskin Burrow - Exalted", "hash": "ed57f483458d51a6", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:157535", "field": "text", "en": "You must complete the Paladin quest \"Justice and Retribution\" to use this mount", "hash": "41cf108d38f1298e", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:159140", "field": "text", "en": "Requires Azeroth Commerce Authority - Exalted", "hash": "351b92053e8f5325", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:159141", "field": "text", "en": "Requires Durotar Supply and Logistics - Exalted", "hash": "d3bf9fed76ab4936", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:159370", "field": "text", "en": "Reach Honored with The Watchers and complete the quest \"First One's Free\" to purchase additional rings.", "hash": "fe84929a514ffe5d", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:163213", "field": "text", "en": "Requires Azeroth Commerce Authority - Friendly", "hash": "c8d15b85ea6871af", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:163214", "field": "text", "en": "Requires Azeroth Commerce Authority - Honored", "hash": "6025a6c353abe5ba", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:163215", "field": "text", "en": "Requires Azeroth Commerce Authority - Revered", "hash": "270c594fed71880b", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:163216", "field": "text", "en": "Requires Azeroth Commerce Authority - Exalted", "hash": "351b92053e8f5325", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:163217", "field": "text", "en": "Requires Durotar Supply and Logistics - Friendly", "hash": "f6c47ad29dc83c6d", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:163218", "field": "text", "en": "Requires Durotar Supply and Logistics - Honored", "hash": "fec9b4ab8bc7dbcb", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:163219", "field": "text", "en": "Requires Durotar Supply and Logistics - Revered", "hash": "c5b06737258d7e2d", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:163220", "field": "text", "en": "Requires Durotar Supply and Logistics - Exalted", "hash": "d3bf9fed76ab4936", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:163380", "field": "text", "en": "Requires Friendly with this faction.", "hash": "f053f87e77c611d8", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:163433", "field": "text", "en": "Requires Honored with this faction.", "hash": "5bff60a928555544", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:163434", "field": "text", "en": "Requires Revered with this faction.", "hash": "2f46d9a0dea8b81e", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:163435", "field": "text", "en": "Requires Exalted with this faction.", "hash": "72ef343559da2a62", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:27943", "field": "text", "en": "You must complete the Paladin quest \"Judgment and Redemption\" to use this mount", "hash": "f5e9823b08f9d1d9", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:31504", "field": "text", "en": "You must complete the Warlock quest \"Dreadsteed of Xoroth\" to use this mount", "hash": "0ddbc4bfa1332eb8", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:3882", "field": "text", "en": "Requires Frostwolf Clan - Exalted", "hash": "750973ab30939963", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:3883", "field": "text", "en": "Requires Frostwolf Clan - Friendly", "hash": "7f8bd41c24ab92a0", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:3884", "field": "text", "en": "Requires Frostwolf Clan - Honored", "hash": "a013886945b02bf8", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:3885", "field": "text", "en": "Requires Frostwolf Clan - Revered", "hash": "66fa3af5df75ce49", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:3886", "field": "text", "en": "Requires Stormpike Guard - Revered", "hash": "0cf9ed2d207d060c", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:3887", "field": "text", "en": "Requires Stormpike Guard - Exalted", "hash": "1b0925e3719ad115", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:3888", "field": "text", "en": "Requires Stormpike Guard - Friendly", "hash": "716405de2bc29dbb", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:3889", "field": "text", "en": "Requires Stormpike Guard - Honored", "hash": "46133aa186b763aa", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:4883", "field": "text", "en": "Requires Silverwing Sentinels - Honored", "hash": "408b1943310e976d", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:4884", "field": "text", "en": "Requires Warsong Outriders - Honored", "hash": "c71c830fec002894", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:4885", "field": "text", "en": "Requires Silverwing Sentinels - Revered", "hash": "0771cbcfcad439be", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:4886", "field": "text", "en": "Requires Warsong Outriders - Revered", "hash": "8e03359b85c5caf6", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:5028", "field": "text", "en": "Requires Silverwing Sentinels - Exalted", "hash": "158104851bf204d8", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:5029", "field": "text", "en": "Requires Warsong Outriders - Exalted", "hash": "9c126e51d6e395ff", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:5198", "field": "text", "en": "Requires The Defilers - Exalted", "hash": "7c251f9535cf1823", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:5199", "field": "text", "en": "Requires The Defilers - Revered", "hash": "6e15e6dfe4b14d09", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:5200", "field": "text", "en": "Requires The Defilers - Honored", "hash": "a72f34534aebaab8", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:5201", "field": "text", "en": "Requires The League of Arathor - Exalted", "hash": "3d2bed3ccda8cff6", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:5202", "field": "text", "en": "Requires The League of Arathor - Honored", "hash": "683601fae2c5628b", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:5203", "field": "text", "en": "Requires The League of Arathor - Revered", "hash": "2f1cb4867c8b04ed", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:5426", "field": "text", "en": "Requires Silverwing Sentinels - Friendly", "hash": "9cbaf2b571ab03c3", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:5427", "field": "text", "en": "Requires Warsong Outriders - Friendly", "hash": "792417720090dbd2", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:80371", "field": "text", "en": "The player is not within the level range for the NPE Tutorial.", "hash": "f5a89296e2ddd7f7", "src": "db2@1.60.1.70245"}
-{"id": "PlayerConditionFailure:80372", "field": "text", "en": "The player is not within the level range for the NPEv2 Tutorial.", "hash": "d25a7b2b4a20ed67", "src": "db2@1.60.1.70245"}
-{"id": "PvpColumn:1101", "field": "text", "en": "Flag Captures", "hash": "82057bc0e63ade13", "src": "db2@1.60.1.70245"}
-{"id": "PvpColumn:1102", "field": "text", "en": "Bases Assaulted", "hash": "eaa9c4d6a4509a2e", "src": "db2@1.60.1.70245"}
-{"id": "PvpColumn:1103", "field": "text", "en": "Bases Defended", "hash": "c95192c2f93a802c", "src": "db2@1.60.1.70245"}
-{"id": "PvpColumnTooltip:1101", "field": "text", "en": "Number of times you have captured the flag", "hash": "ea439d23b4148f9a", "src": "db2@1.60.1.70245"}
-{"id": "PvpColumnTooltip:1102", "field": "text", "en": "Number of times enemy base banners have been removed", "hash": "12b99a969cc6e9f4", "src": "db2@1.60.1.70245"}
-{"id": "PvpColumnTooltip:1103", "field": "text", "en": "Number of times a base capture has been prevented", "hash": "ff594ad98317c252", "src": "db2@1.60.1.70245"}
-{"id": "PvpLongDescription:2997", "field": "text", "en": "- Capture and hold objectives\r\n- Capture the Darkspear Islands Flag\r\n- Earn 2000 resources", "hash": "1bc4198b967c165f", "src": "db2@1.60.1.70245"}
+{"id": "PLAYER_TITLE_NONE", "field": "text", "en": "No Title", "hash": "ff4b140804a0d0c3", "src": "db2@1.60.1.70291"}
+{"id": "PLAYTIME_TIRED", "field": "text", "en": "You have more than 3 hours of online time. You will receive 1/2 money and XP during this period. Your rest state will reset in %d hours of offline time. Please go rest. ", "hash": "2263afa52a9c4f15", "src": "db2@1.60.1.70291"}
+{"id": "PLAYTIME_UNHEALTHY", "field": "text", "en": "You have more than 5 hours of online time. You will not be able to gain loot, XP, or complete quests.  Your rest state will reset in %d hours of offline time. Please log out to get rest and exercise.", "hash": "85ca06b11e7f68e5", "src": "db2@1.60.1.70291"}
+{"id": "PLAY_MOVIE_PREPEND", "field": "text", "en": "(Play Movie)", "hash": "2fa48d929f6c5894", "src": "db2@1.60.1.70291"}
+{"id": "PLUNDERSTORM_LOGOUT_TEXT", "field": "text", "en": "%d seconds until logout for Plunderstorm", "hash": "b5ac095c08bc7d39", "src": "db2@1.60.1.70291"}
+{"id": "PLUS_AMMO_DAMAGE_TEMPLATE", "field": "text", "en": "+ %s damage per second", "hash": "7025d91b16eb15eb", "src": "db2@1.60.1.70291"}
+{"id": "PLUS_AMMO_SCHOOL_DAMAGE_TEMPLATE", "field": "text", "en": "+ %s %s damage per second", "hash": "5771c980aad8dc84", "src": "db2@1.60.1.70291"}
+{"id": "PLUS_DAMAGE_TEMPLATE", "field": "text", "en": "+ %s - %s Damage", "hash": "24734c0d1444b03e", "src": "db2@1.60.1.70291"}
+{"id": "PLUS_DAMAGE_TEMPLATE_WITH_SCHOOL", "field": "text", "en": "+%s - %s %s Damage", "hash": "b1af43c7eb623bbd", "src": "db2@1.60.1.70291"}
+{"id": "PLUS_SINGLE_DAMAGE_TEMPLATE", "field": "text", "en": "+ %s Damage", "hash": "d8543ac34d057d61", "src": "db2@1.60.1.70291"}
+{"id": "PLUS_SINGLE_DAMAGE_TEMPLATE_WITH_SCHOOL", "field": "text", "en": "+%s %s Damage", "hash": "fd89e3081648ed53", "src": "db2@1.60.1.70291"}
+{"id": "POWER_GAINS", "field": "text", "en": "Power Gains", "hash": "40a051f7cb903bce", "src": "db2@1.60.1.70291"}
+{"id": "POWER_GAINS_COMBATLOG_TOOLTIP", "field": "text", "en": "Shows messages when a spell or ability restores a resource like mana or energy.", "hash": "4cad15b9725571dd", "src": "db2@1.60.1.70291"}
+{"id": "PREFERRED_DATACENTER_LOCALITY_LABEL", "field": "text", "en": "Preferred Account Location", "hash": "cd86150f19f8eb4c", "src": "db2@1.60.1.70291"}
+{"id": "PREFERRED_DATACENTER_LOCALITY_TOOLTIP", "field": "text", "en": "Select your default account location for this region. This applies to all characters on your account.\n\nChanges subject to a %d day cooldown.", "hash": "a8631e2b72912703", "src": "db2@1.60.1.70291"}
+{"id": "PREFERRED_GUILD_DATACENTER_LOCALITY_LABEL", "field": "text", "en": "Preferred Guild Location", "hash": "afa149fcae50de35", "src": "db2@1.60.1.70291"}
+{"id": "PREFERRED_LOCALE_LABEL", "field": "text", "en": "Preferred Online Language", "hash": "d9793c29c9ee3ffc", "src": "db2@1.60.1.70291"}
+{"id": "PREFERRED_LOCALE_TOOLTIP", "field": "text", "en": "Select your default account language for this region. This applies to all characters on your account.\n\nChanges subject to a %d day cooldown.", "hash": "38842adf0926f7e5", "src": "db2@1.60.1.70291"}
+{"id": "PREFERRED_PLAY_DATACENTER_LOCALITY_FALLBACK", "field": "text", "en": "Location", "hash": "c9b0915aaa8bb33e", "src": "db2@1.60.1.70291"}
+{"id": "PREFERRED_PLAY_LOCALE_FALLBACK", "field": "text", "en": "Locale", "hash": "551621c00cde4156", "src": "db2@1.60.1.70291"}
+{"id": "PREFERRED_PLAY_SETTINGS", "field": "text", "en": "Preferred Play Settings", "hash": "4eb585499512cb7b", "src": "db2@1.60.1.70291"}
+{"id": "PREFERRED_PLAY_SETTINGS_LOCKED_REASON_FORMAT", "field": "text", "en": "Can be changed again in %s.", "hash": "a0ac90586379e1a4", "src": "db2@1.60.1.70291"}
+{"id": "PREFERRED_PLAY_SETTINGS_UNAVAILABLE_REASON", "field": "text", "en": "Available after account preferences are loaded.", "hash": "19252860af7637e9", "src": "db2@1.60.1.70291"}
+{"id": "PREMADE_GROUP_INSECURE_SEARCH", "field": "text", "en": "Your group has been delisted, search for|n%s?", "hash": "59acfe8f53eb2c80", "src": "db2@1.60.1.70291"}
+{"id": "PREMADE_GROUP_SEARCH_DELIST_WARNING_TEXT", "field": "text", "en": "You already have a group listed in Premade Groups. Would you like to delist it to start this search?", "hash": "460440edf3f31053", "src": "db2@1.60.1.70291"}
+{"id": "PRESS_AND_HOLD_CASTING_OPTION", "field": "text", "en": "Press and Hold Casting", "hash": "bf4208a0705f16e3", "src": "db2@1.60.1.70291"}
+{"id": "PRESS_AND_HOLD_CASTING_OPTION_TOOLTIP", "field": "text", "en": "If enabled, allows the player to press and hold a keyboard hotkey to continually cast a spell on an ActionBar without having to repeatedly press the button. This only supports keyboard hotkeys, clicking a spell with the mouse will still cast the spell a single time.", "hash": "0b982bcdfb24c480", "src": "db2@1.60.1.70291"}
+{"id": "PRESS_KEY_TO_BIND", "field": "text", "en": "Press a key to set the binding for this action.", "hash": "6bd34edcd682f839", "src": "db2@1.60.1.70291"}
+{"id": "PRESS_TAB", "field": "text", "en": "Press Tab", "hash": "155c563b9def50f8", "src": "db2@1.60.1.70291"}
+{"id": "PREV", "field": "text", "en": "Prev", "hash": "0ad64e97f51702da", "src": "db2@1.60.1.70291"}
+{"id": "PREVIEW", "field": "text", "en": "Preview", "hash": "7595f5ffcfab7d72", "src": "db2@1.60.1.70291"}
+{"id": "PREVIOUS", "field": "text", "en": "Previous", "hash": "2bbf8070719e2d09", "src": "db2@1.60.1.70291"}
+{"id": "PRIMARY_KEY_UNBOUND_ERROR", "field": "text", "en": "|cffff0000Primary Action %s is Now Unbound!|r", "hash": "1cdc7f92d1e759e1", "src": "db2@1.60.1.70291"}
+{"id": "PRIMARY_MONITOR", "field": "text", "en": "Monitor", "hash": "0131591dadedfeab", "src": "db2@1.60.1.70291"}
+{"id": "PRISMATIC_GEM", "field": "text", "en": "Prismatic", "hash": "8792f53721391621", "src": "db2@1.60.1.70291"}
+{"id": "PROFANITY_FILTER", "field": "text", "en": "Mature Language Filter", "hash": "71e7adb7eb648418", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_ADD_ENCHANT", "field": "text", "en": "Select Item to Enchant", "hash": "a1fa136750d2b3ad", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_AUTO_EQUIP_ALCHEMY_ONLY", "field": "text", "en": "That item can only be equipped in Alchemy equipment slots.", "hash": "77a9dfaa734a1ef0", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_AUTO_EQUIP_BLACKSMITHING_ONLY", "field": "text", "en": "That item can only be equipped in Blacksmithing equipment slots.", "hash": "92fa3fed0d6724db", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_AUTO_EQUIP_COOKING_ONLY", "field": "text", "en": "That item can only be equipped in Cooking equipment slots.", "hash": "92e1c26c0e6b7da3", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_AUTO_EQUIP_ENCHANTING_ONLY", "field": "text", "en": "That item can only be equipped in Enchanting equipment slots.", "hash": "265c8f5eb85aa870", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_AUTO_EQUIP_ENGINEERING_ONLY", "field": "text", "en": "That item can only be equipped in Engineering equipment slots.", "hash": "e950cf9867dca53b", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_AUTO_EQUIP_FISHING_ONLY", "field": "text", "en": "That item can only be equipped in Fishing equipment slots.", "hash": "93f688db18ba281f", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_AUTO_EQUIP_HERBALISM_ONLY", "field": "text", "en": "That item can only be equipped in Herbalism equipment slots.", "hash": "09e8fceffe3b9689", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_AUTO_EQUIP_INSCRIPTION_ONLY", "field": "text", "en": "That item can only be equipped in Inscription equipment slots.", "hash": "ebfa7df17ee6b5f9", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_AUTO_EQUIP_JEWELCRAFTING_ONLY", "field": "text", "en": "That item can only be equipped in Jewelcrafting equipment slots.", "hash": "c0c33f66b25baeef", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_AUTO_EQUIP_LEATHERWORKING_ONLY", "field": "text", "en": "That item can only be equipped in Leatherworking equipment slots.", "hash": "8ebb29407fd4a87f", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_AUTO_EQUIP_MINING_ONLY", "field": "text", "en": "That item can only be equipped in Mining equipment slots.", "hash": "f8d456aed6eb39a3", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_AUTO_EQUIP_SKINNING_ONLY", "field": "text", "en": "That item can only be equipped in Skinning equipment slots.", "hash": "58ba53066b119998", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_AUTO_EQUIP_TAILORING_ONLY", "field": "text", "en": "That item can only be equipped in Tailoring equipment slots.", "hash": "35d22765efc4c6ef", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_BUTTON", "field": "text", "en": "Professions", "hash": "dc45e8a4b82090c7", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CATEGORY_FAVORITE", "field": "text", "en": "Favorites", "hash": "fa070dca134fef04", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CATEGORY_UNLEARNED", "field": "text", "en": "Unlearned", "hash": "d1b773d23d09bb2f", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_COOKING_MISSING", "field": "text", "en": "Visit a trainer to learn cooking. Cooking lets you learn recipes to create food that heals you out of combat and grants you temporary buffs.", "hash": "5c67b4c2081d7082", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFTING_CONCENTRATION_HELPTIP", "field": "text", "en": "|cnNORMAL_FONT_COLOR:Concentration|r|nGuarantees higher quality on your next craft. Regenerates slowly over time.", "hash": "c61c55c2af7daf8c", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFTING_FINISHING_HEADER", "field": "text", "en": "Finishing Reagents:", "hash": "f921ae461527ad78", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFTING_FORM_BACK", "field": "text", "en": "Back", "hash": "08f19b73f5eaeac2", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFTING_FORM_CANCEL_ORDER", "field": "text", "en": "Cancel Order", "hash": "98d6dcea65718f56", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFTING_FORM_CUSTOMER_DURATION", "field": "text", "en": "Duration", "hash": "07151aadc7dbf99f", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFTING_FORM_LIST_ORDER", "field": "text", "en": "Place Order", "hash": "4ed922e8f3e6dbb9", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFTING_FORM_MIN_QUALITY", "field": "text", "en": "Minimum Quality: ", "hash": "ca62c911c8078251", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFTING_FORM_ORDER_RECIPIENT_GUILD", "field": "text", "en": "Guild Order", "hash": "7e22579fa897154c", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFTING_FORM_ORDER_RECIPIENT_PRIVATE", "field": "text", "en": "Personal Order", "hash": "5b758811d65301f7", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFTING_FORM_ORDER_RECIPIENT_PUBLIC", "field": "text", "en": "Public Order", "hash": "6171f9fd7f2417f5", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFTING_FORM_POSTING_FEE", "field": "text", "en": "Posting Fee", "hash": "34edffbd493c3a24", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFTING_FORM_TIP", "field": "text", "en": "Commission", "hash": "278a6ca11e7b1b3c", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFTING_FORM_TOTAL_PRICE", "field": "text", "en": "Total Price", "hash": "b89971e580a05ce3", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFTING_HELP_BAR", "field": "text", "en": "This bar shows the expected quality of your crafted item.\r\n\r\nTry using higher quality reagents, improving your skill, or specializing to reach a higher quality.", "hash": "de4102f49a62d79a", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFTING_HELP_BASIC_REAGENTS", "field": "text", "en": "These reagents are required for crafting an item.\r\n\r\nSome reagents have quality. Using higher quality reagents will improve the Skill at which you craft items.", "hash": "7025dc98a846884b", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFTING_HELP_BEST_QUALITY", "field": "text", "en": "Tip: Toggle \"Use Best Quality Reagents\" to always default to your highest quality reagents", "hash": "8383735935ca3c7e", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFTING_HELP_FILTERS", "field": "text", "en": "Tip: Apply filters to find the recipes you are looking for more easily.|n|nYou can also filter for recipes from previous expansions.", "hash": "07f99594b41a2b9d", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFTING_HELP_FINISHING_REAGENTS", "field": "text", "en": "Add Finishing Reagents for a one-time stat boost", "hash": "546adf2f81ed224a", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFTING_HELP_GEAR", "field": "text", "en": "Profession Tools and Accessories can be equipped into these slots.\r\n\r\nThis equipment can help make you better at your profession.", "hash": "14cbf926e0238fbc", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFTING_HELP_OPTIONAL_REAGENTS", "field": "text", "en": "Optional Reagents are not required, but may provided added benefits to your crafted item.", "hash": "55f4777962748d37", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFTING_HELP_STATS", "field": "text", "en": "These are the primary stats that influence the crafting of your recipe.\r\n\r\nRecipe Difficulty compared against your Skill determines the quality you craft your recipe at. \n", "hash": "d75e10d29a0fa1b8", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFTING_ORDER_IN_PROGRESS", "field": "text", "en": "Order In Progress", "hash": "b56efe28400c9b38", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFTING_RECRAFT", "field": "text", "en": "Recraft", "hash": "f59cc9b043a437ab", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CRAFT_OUTPUT_TITLE", "field": "text", "en": "Crafting Results", "hash": "cbc1ed863722d916", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CREATE_ALL", "field": "text", "en": "Create All", "hash": "1ea552a403d0129d", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CREATE_ALL_FORMAT", "field": "text", "en": "%s [%d]", "hash": "583415a6b3cce1ed", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CURRENT_LISTINGS", "field": "text", "en": "Current Listings", "hash": "bf59b81898fbfe18", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CUSTOMER_NO_ORDERS", "field": "text", "en": "No orders found", "hash": "af664d1b8ee534ab", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CUSTOMER_OPTIONAL_REAGENT_CONTAINER_LABEL", "field": "text", "en": "Provide Optional Reagents:", "hash": "8f57c49e78c7adc9", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_CUSTOMER_REAGENT_CONTAINER_LABEL", "field": "text", "en": "Provide Reagents:", "hash": "2e401f028ffd9919", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_ENCHANT_ALL", "field": "text", "en": "Enchant All", "hash": "e7927bd6c8b4a4b5", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_FIRST_AID_MISSING", "field": "text", "en": "Visit a trainer to learn first aid.  First aid lets you turn cloth into bandages for healing yourself and others.", "hash": "42486c99c9040539", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_FIRST_CRAFT", "field": "text", "en": "First Craft", "hash": "9c41f7ead2e72530", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_FIRST_CRAFT_DESCRIPTION", "field": "text", "en": "Crafting this recipe for the first time will teach you something new.", "hash": "780006f41960a100", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_FIRST_PROFESSION", "field": "text", "en": "First Profession", "hash": "ba388e7ecd1dfc51", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_FISHING_MISSING", "field": "text", "en": "Visit a trainer to learn fishing.  Fishing lets you catch fish and other strange things from water.  Fish can be cooked into delicious meals with the Cooking skill.", "hash": "9162ced6b4013a3a", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_GATHERING_JOURNAL_LIST_HELP", "field": "text", "en": "Tip: Apply filters to find the items you are looking for more easily.\r\n\r\nYou can also filter for items from previous expansions. ", "hash": "9ec6222a59bb9b18", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_GATHERING_JOURNAL_STATS_HELP", "field": "text", "en": "These are the primary stats that influence Gathering.\r\n\r\nPrimary Reagent Difficulty compared against your Skill determines your chance to gather reagents at a higher quality. ", "hash": "d9902b4dc3854fdc", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_HIDE_UNOWNED_REAGENTS", "field": "text", "en": "Hide Unavailable", "hash": "f56b719ac0e96aef", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_INSUFFICIENT_REAGENTS", "field": "text", "en": "You have insufficient reagents.", "hash": "27180a093219beaf", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_LISTING_DURATION_ONE", "field": "text", "en": "12 Hours", "hash": "9704337a34445b2b", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_LISTING_DURATION_THREE", "field": "text", "en": "48 Hours", "hash": "3988ecbb9606ebf1", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_LISTING_DURATION_TWO", "field": "text", "en": "24 Hours", "hash": "77db1be554da8b6d", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_MAX_ORDERS_REACHED", "field": "text", "en": "Maximum number of orders reached.", "hash": "1dec0dd0c6a8a804", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_MISSING_PROFESSION", "field": "text", "en": "Visit a profession trainer in a major city to learn a new profession. You may have two professions. You may have any combination of gathering and production professions.", "hash": "57fef71068311a5f", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_MISSING_REQUIREMENT", "field": "text", "en": "You are missing one or more requirements needed to craft this recipe.", "hash": "7eabaf7b589572ff", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_NEW_TUTORIAL", "field": "text", "en": "Click here to view your new Profession", "hash": "f39f2b502b833132", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_NEW_TUTORIAL_ICON", "field": "text", "en": "Click to view your recipes and start crafting.\r\n\r\nYou can also drag this icon to an action bar for easy access.", "hash": "53ca76840e18da40", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_NOTE_TO_CRAFTER", "field": "text", "en": "Note to Crafter:", "hash": "9c82c7b19c1df8dc", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_NO_JOURNAL_ENTRIES", "field": "text", "en": "There are no results with your current filters.", "hash": "a50c64d4a48873cb", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_OPTIONAL_REAGENT_CONTAINER_LABEL", "field": "text", "en": "Optional Reagents:", "hash": "cbb6f273b77d7178", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_ORDERS_NOT_ENOUGH_REAGENTS", "field": "text", "en": "You do not have enough of this reagent to provide.", "hash": "416493002a39d739", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_ORDER_CANCELLED", "field": "text", "en": "Order Cancelled", "hash": "7109a9ce6a4ded85", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_ORDER_CANCEL_FAILED", "field": "text", "en": "Failed to cancel order. Please try again later.", "hash": "8d131482acd49ace", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_ORDER_CANCEL_FAILED_CLAIMED", "field": "text", "en": "Failed to cancel order. Once an order has been claimed, it can no longer be cancelled.", "hash": "2794c1e7accc7bba", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_ORDER_CANNOT_CLAIM_OWN_ORDER", "field": "text", "en": "You cannot claim your own crafting order.", "hash": "abea1fc9c08c30db", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_ORDER_COMPLETE", "field": "text", "en": "Order Complete!", "hash": "8435e9acfec73c56", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_ORDER_CRAFTER", "field": "text", "en": "Crafter:", "hash": "1585fe97323eb6da", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_ORDER_CRAFTER_REQUIRED_REAGENT", "field": "text", "en": "|cnDISABLED_REAGENT_COLOR:This reagent will be provided by the crafter.|r", "hash": "97d30ce79da401ee", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_ORDER_CUSTOMER_REQUIRED_REAGENT", "field": "text", "en": "|cnERROR_COLOR:You must provide this reagent.|r", "hash": "f0bb54368c172915", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_ORDER_EXPIRED", "field": "text", "en": "Order Expired", "hash": "aba2ad961e209586", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_ORDER_FAILED_NO_CLAIMS", "field": "text", "en": "You have no remaining daily public orders and can only fill expiring orders at this time.", "hash": "9bf16275d5ab4df8", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_ORDER_NOT_AVAILABLE", "field": "text", "en": "This order is no longer available.", "hash": "2edc160cf0147402", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_ORDER_OP_FAILED", "field": "text", "en": "Crafting Order operation failed. Please try again later.", "hash": "1e8fa3db8d815fc3", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_ORDER_PLACEMENT_FAILED", "field": "text", "en": "Crafting Order creation failed. Please try again later.", "hash": "2194df0db99a32e5", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_ORDER_REJECTED", "field": "text", "en": "Order Rejected", "hash": "4e6ff6d79677f1a1", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_ORDER_REJECT_FAILED", "field": "text", "en": "Failed to decline order. Please try again later.", "hash": "8a02083d986ed9e0", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_ORDER_TIME_REMAINING", "field": "text", "en": "Expires", "hash": "565d4c8a94f388aa", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_ORDER_UNUSABLE_WARNING", "field": "text", "en": "This item is currently unusable and will bind when picked up. Are you sure you want to place this order?", "hash": "f724346318ed1758", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_PICKER_NO_AVAILABLE_REAGENTS", "field": "text", "en": "You do not own any suitable reagents.", "hash": "73e5ae4977fe27ee", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_PROVIDED_OPTIONAL_REAGENT_CONTAINER_LABEL", "field": "text", "en": "Provided Optional Reagents:", "hash": "f7db2d20c7df2877", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_PROVIDED_REAGENT_CONTAINER_LABEL", "field": "text", "en": "Provided Reagents:", "hash": "3946b390a39c3dfd", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_REAGENT_CONTAINER_ENCHANT_LABEL", "field": "text", "en": "Optional Target:", "hash": "8fcec86803cb5151", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_REAGENT_CONTAINER_LABEL", "field": "text", "en": "Reagents:", "hash": "ba824468b4bd1025", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_RECIPE_COOLDOWN", "field": "text", "en": "Recipe is on cooldown.", "hash": "f89d682c2f3d6b0d", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_RECIPE_UNLEARNED", "field": "text", "en": "Recipe Unlearned", "hash": "36516edf3ee04189", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_RECRAFTING_REPLACE_OPTIONAL", "field": "text", "en": "Do you want to replace %s?\nIt will be destroyed upon Recrafting.", "hash": "101e64d431dd6003", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_RECRAFT_ORDER_INSTRUCTION", "field": "text", "en": "Recrafting allows you to change Optional Reagents and the quality of some crafted equipment.", "hash": "9c38a341d699ad65", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_REQUIRED_TOOLS", "field": "text", "en": "|cnNORMAL_FONT_COLOR:Requires:|r %s", "hash": "f4a93eb639d6d5e7", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_REQUIREMENT_TABLE", "field": "text", "en": "This recipe requires you to be near a special crafting station. These can often be found in dungeons or in the open world.", "hash": "18c6a3027233aa6b", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_REQUIREMENT_TOOL", "field": "text", "en": "This recipe requires you to have a special tool in your inventory. Higher tier tools typically satisfy lower tier requirements.", "hash": "9d6dd249c5a5b6e9", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_SECOND_PROFESSION", "field": "text", "en": "Second Profession", "hash": "ea28fa0592d6de04", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_SKILL_UP_EASY", "field": "text", "en": "Low chance of gaining skill", "hash": "a34a6cee2d93d405", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_SKILL_UP_MEDIUM", "field": "text", "en": "High chance of gaining skill", "hash": "085ca0c0f18e008e", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_SKILL_UP_OPTIMAL", "field": "text", "en": "Guaranteed chance of gaining %d skill ups", "hash": "ce865fd2896862a7", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_SPECS_CONFIG_OPERATION_TOO_FAST", "field": "text", "en": "Specialization operation still in progress, try again later.", "hash": "ec757722e820b01d", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_SPECS_CONFIRM_CLOSE", "field": "text", "en": "Do you want to apply your changes before exiting?", "hash": "02dd7c615dce6991", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_TRACKER_HEADER_PROFESSION", "field": "text", "en": "Profession", "hash": "5f7ba5eb177479d9", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_TRACKING_VIEW_RECIPE", "field": "text", "en": "View Recipe", "hash": "49ab3f74512d7b35", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_TRACK_RECIPE", "field": "text", "en": "Track Recipe", "hash": "8e76e6279ceb81cf", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_TUTORIAL_FINISHING_REAGENT", "field": "text", "en": "You've unlocked a Finishing Reagent slot. Finishing Reagents grant benefits when you craft.", "hash": "a7466ada6ab683af", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_TUTORIAL_OPTIONAL_REAGENT", "field": "text", "en": "You have an Optional Reagent that can be used with this recipe. |n|nOptional Reagents let you customize your crafts, but may also increase Recipe Difficulty.", "hash": "db80a83bf1e3d0a0", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_TUTORIAL_QUALITY_BAR", "field": "text", "en": "This bar indicates the expected quality of your crafted item. |n|nYou can improve this in a variety of ways such as by using higher quality reagents or increasing your skill.", "hash": "c5a2b893e86dbe7d", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_TUTORIAL_REAGENT_QUALITY", "field": "text", "en": "Using higher quality reagents will improve the Skill at which you craft items. |n|nClick to change which quality will be used.", "hash": "65939e2b54be36dd", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_TUTORIAL_RECRAFT", "field": "text", "en": "You can Recraft previously crafted equipment to change its Optional Reagents or attempt to raise its quality. |n|nClick to select an item to Recraft.", "hash": "ae0b42b777b0f4cb", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSIONS_UNTRACK_RECIPE", "field": "text", "en": "Untrack", "hash": "15c4a4a6efd10910", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSION_CONFIRMATION1", "field": "text", "en": "You may only know two professions at any one time.  Would you like to learn |cffffd200%s|r as your first one?", "hash": "b3345376608b007d", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSION_CONFIRMATION2", "field": "text", "en": "You may only know two professions at any one time.  Would you like to learn |cffffd200%s|r as your second one?", "hash": "4bc3e4a5397db98c", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSION_EQUIPMENT_LOCATION_HELPTIP", "field": "text", "en": "Your profession tool and accessories equip here.", "hash": "832cbb8356a7cc59", "src": "db2@1.60.1.70291"}
+{"id": "PROFESSION_RESPEC_CONFIRMATION", "field": "text", "en": "Do you want to  unlearn all specializations for %s?|n|nYou will lose all associated recipes and be able to re-allocate your knowledge as you see fit.|n|n |cnRED_FONT_COLOR:This can only be done ONCE.|r", "hash": "82ce52c8bc42d5e1", "src": "db2@1.60.1.70291"}
+{"id": "PROF_ORDER_CANT_ADD_FRIEND_OFFLINE", "field": "text", "en": "This player is offline.", "hash": "a69f98f830bb4942", "src": "db2@1.60.1.70291"}
+{"id": "PROF_ORDER_CANT_ADD_FRIEND_WRONG_FACTION", "field": "text", "en": "This player is the opposite faction.", "hash": "f2be98b0ccecd42c", "src": "db2@1.60.1.70291"}
+{"id": "PROF_ORDER_CANT_IGNORE_ALREADY_IGNORED", "field": "text", "en": "This player is already being ignored.", "hash": "33bde62819813bae", "src": "db2@1.60.1.70291"}
+{"id": "PROF_ORDER_CANT_WHISPER_OFFLINE", "field": "text", "en": "This player is offline.", "hash": "a69f98f830bb4942", "src": "db2@1.60.1.70291"}
+{"id": "PROF_ORDER_CANT_WHISPER_WRONG_FACTION", "field": "text", "en": "This player is the opposite faction.", "hash": "f2be98b0ccecd42c", "src": "db2@1.60.1.70291"}
+{"id": "PROJECTED_TEXTURES", "field": "text", "en": "Projected Textures", "hash": "a72ff7cda0b62343", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_APPLY_TARGET_MARKER", "field": "text", "en": "Mark Target", "hash": "43ff64874dd84e6d", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_AUTO_RUN", "field": "text", "en": "Auto-Run", "hash": "83ff995fa8652f1c", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_CENTER_CAMERA", "field": "text", "en": "Center Camera", "hash": "dedf4c7c34f36a0b", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_CLEAR_TARGET_MARKER", "field": "text", "en": "Clear Target Marker", "hash": "e67f0e23f05fad27", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_EXIT", "field": "text", "en": "Exit", "hash": "095e8d2ef9719c87", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_FLIP_CAMERA", "field": "text", "en": "(Hold) Flip Camera", "hash": "72334c3a8bb84c8d", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_FOCUS_UI", "field": "text", "en": "Focus/Unfocus Interface", "hash": "f6837621a4c5382e", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_FRIENDLY_TARGETING", "field": "text", "en": "(Tap/Hold) Friendly Targeting", "hash": "eec91c31575441a1", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_FRIENDLY_TARGETING_ACTIONS", "field": "text", "en": "Friendly Targeting Actions", "hash": "a74940c42b34e186", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_HOSTILE_TARGETING", "field": "text", "en": "(Tap/Hold) Enemy Targeting", "hash": "171d3ff3e69adb71", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_HOSTILE_TARGETING_ACTIONS", "field": "text", "en": "Enemy Targeting Actions", "hash": "db733fbadd421b04", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_INSPECT_HUD", "field": "text", "en": "Inspect HUD", "hash": "e78901d402c932b1", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_NEXT_ACTION_PAGE", "field": "text", "en": "Next Action Page", "hash": "521e335d09af7d89", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_NEXT_FRAME", "field": "text", "en": "Next Frame", "hash": "2efff8ae01e2fe25", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_OPEN_BAGS", "field": "text", "en": "Open Bags", "hash": "716d8a77e7c996b8", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_PING", "field": "text", "en": "Ping, (Hold) Ping Menu", "hash": "e44edea4cf813153", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_PREVIOUS_ACTION_PAGE", "field": "text", "en": "Previous Action Page", "hash": "e59a96ab9c166105", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_PREVIOUS_FRAME", "field": "text", "en": "Previous Frame", "hash": "d395275e1d9c64c5", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_SHORTCUTS", "field": "text", "en": "(Hold) Shortcuts", "hash": "95dde030a7618965", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_SHORTCUT_ACTIONS", "field": "text", "en": "Shortcut Actions", "hash": "f7383b0d197871c1", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_TARGET_GROUP_DOWN", "field": "text", "en": "Target Below Group Member", "hash": "0742cfba60ce8f9a", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_TARGET_GROUP_LEFT", "field": "text", "en": "Target Left Group Member", "hash": "fadd88d37a110a62", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_TARGET_GROUP_RIGHT", "field": "text", "en": "Target Right Group Member", "hash": "bb4557714a2887cb", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_TARGET_GROUP_UP", "field": "text", "en": "Target Above Group Member", "hash": "d954757e9fe2274d", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_TARGET_PET", "field": "text", "en": "Target Pet", "hash": "114f2daa6822272f", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_TARGET_SELF", "field": "text", "en": "Target Self", "hash": "dbeb434550fadb33", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_TOGGLE_CATEGORY", "field": "text", "en": "Toggle", "hash": "31c34762e69cf87c", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_TOGGLE_TOOLTIPS", "field": "text", "en": "Toggle Tooltips", "hash": "ec97ade246efd765", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_VIEW_BUFFS", "field": "text", "en": "View Buffs", "hash": "e7e5ec8713088c99", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_VIEW_CHAT", "field": "text", "en": "View Chat", "hash": "deb71e1a9820de6e", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_VIEW_QUEST_TRACKER", "field": "text", "en": "View Quest Tracker", "hash": "8e01c8137ad17b11", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_ZOOM_IN_CAMERA", "field": "text", "en": "Camera Zoom In", "hash": "f1d6e33a5d44cc0f", "src": "db2@1.60.1.70291"}
+{"id": "PROMPT_ZOOM_OUT_CAMERA", "field": "text", "en": "Camera Zoom Out", "hash": "c0f7df54660065bd", "src": "db2@1.60.1.70291"}
+{"id": "PROVING_GROUNDS_SCORE", "field": "text", "en": "Score:", "hash": "64afba6cb8feff03", "src": "db2@1.60.1.70291"}
+{"id": "PROVING_GROUNDS_WAVE", "field": "text", "en": "Wave:", "hash": "0447776f2a90984d", "src": "db2@1.60.1.70291"}
+{"id": "PURCHASE", "field": "text", "en": "Purchase", "hash": "c1e4eed345fc3107", "src": "db2@1.60.1.70291"}
+{"id": "PURCHASED_BY_COLON", "field": "text", "en": "Purchased By:", "hash": "15952bc675ba1562", "src": "db2@1.60.1.70291"}
+{"id": "PURCHASE_TAB_TEXT", "field": "text", "en": "Do you wish to purchase this tab?", "hash": "cacd91b3e20a558d", "src": "db2@1.60.1.70291"}
+{"id": "PURCHASE_UNIQUE_AUCTION_CONFIRMATION", "field": "text", "en": "|cffffd200This item is \"%s\"|n|nYou can only equip one item with this label at a time.|r", "hash": "e4bee24f41f224a2", "src": "db2@1.60.1.70291"}
+{"id": "PUSH_TO_TALK", "field": "text", "en": "Push to Talk", "hash": "a1fc40a20f1cb8d2", "src": "db2@1.60.1.70291"}
+{"id": "PVP", "field": "text", "en": "Player vs. Player", "hash": "e05a8e54c9894b2f", "src": "db2@1.60.1.70291"}
+{"id": "PVP_COMPACT_UNIT_FRAME_PROFILE_DISPLAYONLYHEALERPOWERBARS", "field": "text", "en": "Display Only Healer Power Bars", "hash": "c5ea239838c816a3", "src": "db2@1.60.1.70291"}
+{"id": "PVP_COMPACT_UNIT_FRAME_PROFILE_DISPLAYPETS", "field": "text", "en": "Display Pets", "hash": "60bce7c8476be7ac", "src": "db2@1.60.1.70291"}
+{"id": "PVP_COMPACT_UNIT_FRAME_PROFILE_DISPLAYPOWERBAR", "field": "text", "en": "Display Power Bars", "hash": "68d80041f119b3df", "src": "db2@1.60.1.70291"}
+{"id": "PVP_COMPACT_UNIT_FRAME_PROFILE_HEALTHTEXT", "field": "text", "en": "Display Health Text", "hash": "5eccc2119ade2b7a", "src": "db2@1.60.1.70291"}
+{"id": "PVP_COMPACT_UNIT_FRAME_PROFILE_HEALTHTEXT_HEALTH", "field": "text", "en": "Health Remaining", "hash": "65c44ebc6cfc210d", "src": "db2@1.60.1.70291"}
+{"id": "PVP_COMPACT_UNIT_FRAME_PROFILE_HEALTHTEXT_LOSTHEALTH", "field": "text", "en": "Health Lost", "hash": "a012ee82e7a63a31", "src": "db2@1.60.1.70291"}
+{"id": "PVP_COMPACT_UNIT_FRAME_PROFILE_HEALTHTEXT_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70291"}
+{"id": "PVP_COMPACT_UNIT_FRAME_PROFILE_HEALTHTEXT_PERC", "field": "text", "en": "Health Percentage", "hash": "15099a8ea8df1765", "src": "db2@1.60.1.70291"}
+{"id": "PVP_COMPACT_UNIT_FRAME_PROFILE_USECLASSCOLORS", "field": "text", "en": "Display Class Colors", "hash": "5dae710d10680a3b", "src": "db2@1.60.1.70291"}
+{"id": "PVP_CONQUEST_CHANGE", "field": "text", "en": "%s Conquest", "hash": "4b9311d40c07282d", "src": "db2@1.60.1.70291"}
+{"id": "PVP_ENABLED", "field": "text", "en": "PvP", "hash": "00152f823da3de67", "src": "db2@1.60.1.70291"}
+{"id": "PVP_FLAG", "field": "text", "en": "Player vs. Player", "hash": "e05a8e54c9894b2f", "src": "db2@1.60.1.70291"}
+{"id": "PVP_FRAMES_LABEL", "field": "text", "en": "Arena Enemy Frames", "hash": "ff30dafff48c1156", "src": "db2@1.60.1.70291"}
+{"id": "PVP_HONOR_CHANGE", "field": "text", "en": "%s Honor", "hash": "df0fa39652c9b92f", "src": "db2@1.60.1.70291"}
+{"id": "PVP_ITEM_LEVEL_TOOLTIP", "field": "text", "en": "Equip: Increases item level to a minimum of %d in Arenas and Battlegrounds.", "hash": "b6d522f14edf9a5d", "src": "db2@1.60.1.70291"}
+{"id": "PVP_ITEM_REWARDS_HEADER", "field": "text", "en": "You earned", "hash": "53d603220e9f117f", "src": "db2@1.60.1.70291"}
+{"id": "PVP_LEAVE_BUTTON_TIME", "field": "text", "en": "%s (%s)", "hash": "515ea73e8819223f", "src": "db2@1.60.1.70291"}
+{"id": "PVP_LINK_LEVEL_CLASS_FORMAT_STRING", "field": "text", "en": "Level %d %s", "hash": "2fcf25e1a3bdd25f", "src": "db2@1.60.1.70291"}
+{"id": "PVP_LINK_SEASON_GAMES", "field": "text", "en": "%d games this season", "hash": "7caa344d1bffbba0", "src": "db2@1.60.1.70291"}
+{"id": "PVP_MATCH_DEFEAT", "field": "text", "en": "DEFEAT", "hash": "93c9a5ca7a249dff", "src": "db2@1.60.1.70291"}
+{"id": "PVP_MATCH_DRAW", "field": "text", "en": "DRAW", "hash": "093237a8d52a9e8c", "src": "db2@1.60.1.70291"}
+{"id": "PVP_MATCH_LEAVE_BUTTON", "field": "text", "en": "Leave Match", "hash": "5e7d87dc74f7ef07", "src": "db2@1.60.1.70291"}
+{"id": "PVP_MATCH_READY_ERROR", "field": "text", "en": "You can't leave the queue because your match is ready.", "hash": "59256b27d5d6a5a4", "src": "db2@1.60.1.70291"}
+{"id": "PVP_MATCH_VICTORY", "field": "text", "en": "VICTORY", "hash": "102eac3bf7fa28ff", "src": "db2@1.60.1.70291"}
+{"id": "PVP_PRESTIGE_RANK_UP_NEXT_MAX_LEVEL_REWARD", "field": "text", "en": "Next Reward at Honor Level %d", "hash": "51c794f0392304b8", "src": "db2@1.60.1.70291"}
+{"id": "PVP_PRESTIGE_RANK_UP_TITLE", "field": "text", "en": "Prestige", "hash": "f88e19b3d082d611", "src": "db2@1.60.1.70291"}
+{"id": "PVP_PROGRESS_REWARDS_HEADER", "field": "text", "en": "Progress", "hash": "f8cee0fa623608a1", "src": "db2@1.60.1.70291"}
+{"id": "PVP_QUEUE_AGAIN", "field": "text", "en": "Queue As Team", "hash": "58c15cbf0a6ba844", "src": "db2@1.60.1.70291"}
+{"id": "PVP_RANK_CURRENT_PROGRESS", "field": "text", "en": "Rank Points: |cnHIGHLIGHT_FONT_COLOR:%d / %d|r", "hash": "f5e80deb5a7f1d2a", "src": "db2@1.60.1.70291"}
+{"id": "PVP_RANK_DETAIL_UNAVAILABLE", "field": "text", "en": "PvP Ranks are currently unavailable.", "hash": "b94319d6d486a34f", "src": "db2@1.60.1.70291"}
+{"id": "PVP_RANK_NEXT_REWARD", "field": "text", "en": "|cFFFFFFFFNext Rewards at Rank %d|r", "hash": "46dd0aaadb2fb86e", "src": "db2@1.60.1.70291"}
+{"id": "PVP_RANK_NUMBER", "field": "text", "en": "Rank %d", "hash": "c7a12ad7b1a81111", "src": "db2@1.60.1.70291"}
+{"id": "PVP_RANK_NUMBER_AND_TITLE", "field": "text", "en": "Rank %d - %s", "hash": "066fbb7c6be31ba9", "src": "db2@1.60.1.70291"}
+{"id": "PVP_RANK_REWARDS_VENDOR_ALLIANCE", "field": "text", "en": "|cFFFFFFFFRewards may be purchased at the Champion's Hall in Stormwind.|r", "hash": "fe42fe581e0602f5", "src": "db2@1.60.1.70291"}
+{"id": "PVP_RANK_REWARDS_VENDOR_HORDE", "field": "text", "en": "|cFFFFFFFFRewards may be purchased at the Hall of Legends in Orgrimmar.|r", "hash": "19dffd408c7d3324", "src": "db2@1.60.1.70291"}
+{"id": "PVP_RANK_SEASON_PROGRESS", "field": "text", "en": "Total Rank Progress: |cnHIGHLIGHT_FONT_COLOR:%d / %d|r", "hash": "92a15cc2c07d609a", "src": "db2@1.60.1.70291"}
+{"id": "PVP_RANK_SEASON_PROGRESS_NO_MAX", "field": "text", "en": "Total Rank Progress: |cnHIGHLIGHT_FONT_COLOR:%d|r", "hash": "4eff00612f50e9c2", "src": "db2@1.60.1.70291"}
+{"id": "PVP_RANK_SEASON_RANKUP_DESCRIPTION", "field": "text", "en": "Each week, the Rank Points cap is increased, up to a maximum of |cnHIGHLIGHT_FONT_COLOR:%d|r for |cnHIGHLIGHT_FONT_COLOR:Rank %d|r.", "hash": "cf3471d560ed6d24", "src": "db2@1.60.1.70291"}
+{"id": "PVP_RANK_WEEKLY_CAP_INCREASE", "field": "text", "en": "Cap increase this week: |cnHIGHLIGHT_FONT_COLOR:%d|r", "hash": "ce9947ca4b9e3f08", "src": "db2@1.60.1.70291"}
+{"id": "PVP_RATING_CHANGE", "field": "text", "en": "%s Rating", "hash": "0337f19067e4712b", "src": "db2@1.60.1.70291"}
+{"id": "PVP_RATING_CURRENT", "field": "text", "en": "Current Rating: %s", "hash": "ca48a53e6553aaa0", "src": "db2@1.60.1.70291"}
+{"id": "PVP_RATING_GAINED", "field": "text", "en": "Rating Gained: %s", "hash": "a52a9a28abb5c36a", "src": "db2@1.60.1.70291"}
+{"id": "PVP_RATING_HEADER", "field": "text", "en": "Rating", "hash": "46b92fa848eed77c", "src": "db2@1.60.1.70291"}
+{"id": "PVP_RATING_LINK_FORMAT_STRING", "field": "text", "en": "|cffffffff%s (%d)|r", "hash": "515e9f9188174410", "src": "db2@1.60.1.70291"}
+{"id": "PVP_RATING_LINK_ITEM_LEVEL", "field": "text", "en": "PvP Item Level: |cffffffff%d|r", "hash": "910b4bcfa0ecdc03", "src": "db2@1.60.1.70291"}
+{"id": "PVP_RATING_NEW", "field": "text", "en": "New Rating: %s", "hash": "f9f23bb066ebf113", "src": "db2@1.60.1.70291"}
+{"id": "PVP_RATING_PREVIOUS", "field": "text", "en": "Previous Rating: %s", "hash": "1fe3205072cf2210", "src": "db2@1.60.1.70291"}
+{"id": "PVP_RATING_UNCHANGED", "field": "text", "en": "Rating Unchanged", "hash": "5d27034bd150052a", "src": "db2@1.60.1.70291"}
+{"id": "PVP_REPORT_AFK", "field": "text", "en": "Report player Away", "hash": "c9dda8844240e438", "src": "db2@1.60.1.70291"}
+{"id": "PVP_REPORT_AFK_ALL", "field": "text", "en": "Report all of the above", "hash": "82e2d05067dd13c9", "src": "db2@1.60.1.70291"}
+{"id": "PVP_SCOREBOARD_MATCH_COMPLETE", "field": "text", "en": "Match Complete", "hash": "f1c40aa81f9c8b3a", "src": "db2@1.60.1.70291"}
+{"id": "PetFood:1", "field": "text", "en": "Meat", "hash": "0a6bfc4319433679", "src": "db2@1.60.1.70291"}
+{"id": "PetFood:2", "field": "text", "en": "Fish", "hash": "097cf2544b4ed706", "src": "db2@1.60.1.70291"}
+{"id": "PetFood:3", "field": "text", "en": "Cheese", "hash": "02d527d8414fa0a5", "src": "db2@1.60.1.70291"}
+{"id": "PetFood:4", "field": "text", "en": "Bread", "hash": "95ea349001be58c6", "src": "db2@1.60.1.70291"}
+{"id": "PetFood:5", "field": "text", "en": "Fungus", "hash": "dac98e6e886d7395", "src": "db2@1.60.1.70291"}
+{"id": "PetFood:6", "field": "text", "en": "Fruit", "hash": "dc25428cbced91c9", "src": "db2@1.60.1.70291"}
+{"id": "PetFood:7", "field": "text", "en": "Raw Meat", "hash": "e0b39234e7439fcd", "src": "db2@1.60.1.70291"}
+{"id": "PetFood:8", "field": "text", "en": "Raw Fish", "hash": "dfc48845194f406b", "src": "db2@1.60.1.70291"}
+{"id": "PetLoyalty:1", "field": "text", "en": "Rebellious", "hash": "3abd81c0e2fa7b2a", "src": "db2@1.60.1.70291"}
+{"id": "PetLoyalty:2", "field": "text", "en": "Unruly", "hash": "1d36dceca447541b", "src": "db2@1.60.1.70291"}
+{"id": "PetLoyalty:3", "field": "text", "en": "Submissive", "hash": "4390690e4e7952f1", "src": "db2@1.60.1.70291"}
+{"id": "PetLoyalty:4", "field": "text", "en": "Dependable", "hash": "7980f6abceee3dbd", "src": "db2@1.60.1.70291"}
+{"id": "PetLoyalty:5", "field": "text", "en": "Faithful", "hash": "4c439daf03b35d5a", "src": "db2@1.60.1.70291"}
+{"id": "PetLoyalty:6", "field": "text", "en": "Best Friend", "hash": "85d36998bc237b77", "src": "db2@1.60.1.70291"}
+{"id": "PetLoyalty:7", "field": "text", "en": "(Loyalty Level 7) Loyalty Cap", "hash": "5dcea3cd82185c45", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:146124", "field": "text", "en": "You must be Friendly with the Magram Clan Centaur.", "hash": "59f3017fe51c6659", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:146125", "field": "text", "en": "You must be Honored with the Magram Clan Centaur.", "hash": "fb794e4a300865d4", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:146126", "field": "text", "en": "You must be Revered with the Magram Clan Centaur.", "hash": "ec6ad4ebafce900f", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:146127", "field": "text", "en": "You must be Exalted with the Magram Clan Centaur.", "hash": "72991e5fdb67515f", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:146128", "field": "text", "en": "You must be Friendly with the Gelkis Clan Centaur.", "hash": "3fe5e4a4b4a1b711", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:146129", "field": "text", "en": "You must be Honored with the Gelkis Clan Centaur.", "hash": "e16c316fff8db67b", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:146130", "field": "text", "en": "You must be Revered with the Gelkis Clan Centaur.", "hash": "d25db8107f53e0c7", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:146131", "field": "text", "en": "You must be Exalted with the Gelkis Clan Centaur.", "hash": "588c0184aaeca217", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:146192", "field": "text", "en": "You must be Friendly with the Magram Clan Centaur.", "hash": "59f3017fe51c6659", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:146193", "field": "text", "en": "You must be Friendly with the Gelkis Clan Centaur.", "hash": "3fe5e4a4b4a1b711", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:148824", "field": "text", "en": "You must be Friendly with this faction.", "hash": "6ba14743d3784ebf", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:148825", "field": "text", "en": "You must be Honored with this faction.", "hash": "37cf1cde04656265", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:148826", "field": "text", "en": "You must be Revered with this faction.", "hash": "0b1695d5bab8c53f", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:150766", "field": "text", "en": "You must be Friendly with the Gelkis Clan Centaur.", "hash": "3fe5e4a4b4a1b711", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:150767", "field": "text", "en": "You must be Friendly with the Gelkis Clan Centaur.", "hash": "3fe5e4a4b4a1b711", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:151486", "field": "text", "en": "You must complete the Paladin quest \"A Trusty Steed\" to use this mount", "hash": "a970164177745196", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:151683", "field": "text", "en": "You must complete the Paladin quest \"The Tome of Nobility\" to use this mount", "hash": "2fc303860b6248eb", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:151684", "field": "text", "en": "You must complete the Warlock quest \"Summon Felsteed\" to use this mount", "hash": "abea9378632ae572", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:153766", "field": "text", "en": "Requires The Defilers - Friendly", "hash": "22b4cceef24f4466", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:153767", "field": "text", "en": "Requires The League of Arathor - Friendly", "hash": "e93008bec5eda352", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:155311", "field": "text", "en": "Requires Darkspear Raiders - Friendly", "hash": "99e505a2d456c750", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:155312", "field": "text", "en": "Requires Theramore Expeditionary Force - Friendly", "hash": "661d44d29b8e99cc", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:155358", "field": "text", "en": "Requires Theramore Expeditionary Force - Honored", "hash": "0b5cf2cf32612e8c", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:155359", "field": "text", "en": "Requires Darkspear Raiders - Honored", "hash": "e89530d8f3f67d65", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:155951", "field": "text", "en": "Requires 15 Legacy Points.", "hash": "4dc1a4c739409e8c", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:155957", "field": "text", "en": "Become Friendly with Guardians of Hyjal and complete the quest \"Friendly Advice\".", "hash": "57179afbe9cd1d37", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:155958", "field": "text", "en": "Further progress your reputation with Guardians of Hyjal and choose to specialize in Gloves to purchase this recipe.", "hash": "83ccc5c4fcc7adf4", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:155959", "field": "text", "en": "Further progress your reputation with Guardians of Hyjal and choose to specialize in Shoulders to purchase this recipe.", "hash": "4d943b4a06a01e46", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:155960", "field": "text", "en": "Further progress your reputation with Guardians of Hyjal and choose to specialize in Boots to purchase this recipe.", "hash": "f722f21dd7bffb81", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:156039", "field": "text", "en": "Requires 25 Legacy Points.", "hash": "0f9d737da2e717f9", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:156041", "field": "text", "en": "Requires 40 Legacy Points.", "hash": "514ea16ff657ab5c", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:156046", "field": "text", "en": "Requires 55 Legacy Points.", "hash": "5530df9adfda8451", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:156047", "field": "text", "en": "Requires 75 Legacy Points.", "hash": "d8e87d01b327773c", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:156048", "field": "text", "en": "Requires 90 Legacy Points.", "hash": "1a99aaf806980ab0", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:156238", "field": "text", "en": "Requires Private/Scout (Rank 1)", "hash": "25166662a27917a7", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:156239", "field": "text", "en": "Requires Corporal/Grunt (Rank 2)", "hash": "8b58e17c28391707", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:156240", "field": "text", "en": "Requires Sergeant (Rank 3)", "hash": "a3989d5de1f163a5", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:156241", "field": "text", "en": "Requires Master Sergeant / Senior Sergeant (Rank 4)", "hash": "d4ec807b8e0b4b54", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:156242", "field": "text", "en": "Requires Sergeant Major /  First Sergeant (Rank 5)", "hash": "42916a69f8a59735", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:156243", "field": "text", "en": "Requires Knight / Stone Guard (Rank 6)", "hash": "a9909a1ff481b3c5", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:156244", "field": "text", "en": "Requires Knight-Lieutenant / Blood Guard (Rank 7)", "hash": "70de05119e1b4c84", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:156246", "field": "text", "en": "Requires Knight-Captain / Legionnaire (Rank 8)", "hash": "190ced03794c9828", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:156247", "field": "text", "en": "Requires Knight-Champion / Centurion (Rank 9)", "hash": "2c45ce418a9f623d", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:156248", "field": "text", "en": "Requires Lieutenant Commander / Champion (Rank 10)", "hash": "358f2fc04bd20a41", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:156249", "field": "text", "en": "Requires Commander / Lieutenant General (Rank 11)", "hash": "07582c41db10ccf9", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:156250", "field": "text", "en": "Requires Marshal / General (Rank 12)", "hash": "5d2fdcd8ea621dd9", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:156251", "field": "text", "en": "Requires Field Marshal / Warlord (Rank 13)", "hash": "b37501cb1d23a464", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:156252", "field": "text", "en": "Requires Grand Marshal / High Warlord (Rank 14)", "hash": "d81af6c0f01df676", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:156318", "field": "text", "en": "Requires Barkskin Burrow - Friendly", "hash": "0fb7c3dad176cedf", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:156319", "field": "text", "en": "Requires Barkskin Burrow - Honored", "hash": "186209465aa9e43b", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:156320", "field": "text", "en": "Requires Barkskin Burrow - Revered", "hash": "df48bbcdf46f868c", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:156321", "field": "text", "en": "Requires Barkskin Burrow - Exalted", "hash": "ed57f483458d51a6", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:157535", "field": "text", "en": "You must complete the Paladin quest \"Justice and Retribution\" to use this mount", "hash": "41cf108d38f1298e", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:159140", "field": "text", "en": "Requires Azeroth Commerce Authority - Exalted", "hash": "351b92053e8f5325", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:159141", "field": "text", "en": "Requires Durotar Supply and Logistics - Exalted", "hash": "d3bf9fed76ab4936", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:159370", "field": "text", "en": "Reach Honored with The Watchers and complete the quest \"First One's Free\" to purchase additional rings.", "hash": "fe84929a514ffe5d", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:163213", "field": "text", "en": "Requires Azeroth Commerce Authority - Friendly", "hash": "c8d15b85ea6871af", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:163214", "field": "text", "en": "Requires Azeroth Commerce Authority - Honored", "hash": "6025a6c353abe5ba", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:163215", "field": "text", "en": "Requires Azeroth Commerce Authority - Revered", "hash": "270c594fed71880b", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:163216", "field": "text", "en": "Requires Azeroth Commerce Authority - Exalted", "hash": "351b92053e8f5325", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:163217", "field": "text", "en": "Requires Durotar Supply and Logistics - Friendly", "hash": "f6c47ad29dc83c6d", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:163218", "field": "text", "en": "Requires Durotar Supply and Logistics - Honored", "hash": "fec9b4ab8bc7dbcb", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:163219", "field": "text", "en": "Requires Durotar Supply and Logistics - Revered", "hash": "c5b06737258d7e2d", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:163220", "field": "text", "en": "Requires Durotar Supply and Logistics - Exalted", "hash": "d3bf9fed76ab4936", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:163380", "field": "text", "en": "Requires Friendly with this faction.", "hash": "f053f87e77c611d8", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:163433", "field": "text", "en": "Requires Honored with this faction.", "hash": "5bff60a928555544", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:163434", "field": "text", "en": "Requires Revered with this faction.", "hash": "2f46d9a0dea8b81e", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:163435", "field": "text", "en": "Requires Exalted with this faction.", "hash": "72ef343559da2a62", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:27943", "field": "text", "en": "You must complete the Paladin quest \"Judgment and Redemption\" to use this mount", "hash": "f5e9823b08f9d1d9", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:31504", "field": "text", "en": "You must complete the Warlock quest \"Dreadsteed of Xoroth\" to use this mount", "hash": "0ddbc4bfa1332eb8", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:3882", "field": "text", "en": "Requires Frostwolf Clan - Exalted", "hash": "750973ab30939963", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:3883", "field": "text", "en": "Requires Frostwolf Clan - Friendly", "hash": "7f8bd41c24ab92a0", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:3884", "field": "text", "en": "Requires Frostwolf Clan - Honored", "hash": "a013886945b02bf8", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:3885", "field": "text", "en": "Requires Frostwolf Clan - Revered", "hash": "66fa3af5df75ce49", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:3886", "field": "text", "en": "Requires Stormpike Guard - Revered", "hash": "0cf9ed2d207d060c", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:3887", "field": "text", "en": "Requires Stormpike Guard - Exalted", "hash": "1b0925e3719ad115", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:3888", "field": "text", "en": "Requires Stormpike Guard - Friendly", "hash": "716405de2bc29dbb", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:3889", "field": "text", "en": "Requires Stormpike Guard - Honored", "hash": "46133aa186b763aa", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:4883", "field": "text", "en": "Requires Silverwing Sentinels - Honored", "hash": "408b1943310e976d", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:4884", "field": "text", "en": "Requires Warsong Outriders - Honored", "hash": "c71c830fec002894", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:4885", "field": "text", "en": "Requires Silverwing Sentinels - Revered", "hash": "0771cbcfcad439be", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:4886", "field": "text", "en": "Requires Warsong Outriders - Revered", "hash": "8e03359b85c5caf6", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:5028", "field": "text", "en": "Requires Silverwing Sentinels - Exalted", "hash": "158104851bf204d8", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:5029", "field": "text", "en": "Requires Warsong Outriders - Exalted", "hash": "9c126e51d6e395ff", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:5198", "field": "text", "en": "Requires The Defilers - Exalted", "hash": "7c251f9535cf1823", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:5199", "field": "text", "en": "Requires The Defilers - Revered", "hash": "6e15e6dfe4b14d09", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:5200", "field": "text", "en": "Requires The Defilers - Honored", "hash": "a72f34534aebaab8", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:5201", "field": "text", "en": "Requires The League of Arathor - Exalted", "hash": "3d2bed3ccda8cff6", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:5202", "field": "text", "en": "Requires The League of Arathor - Honored", "hash": "683601fae2c5628b", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:5203", "field": "text", "en": "Requires The League of Arathor - Revered", "hash": "2f1cb4867c8b04ed", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:5426", "field": "text", "en": "Requires Silverwing Sentinels - Friendly", "hash": "9cbaf2b571ab03c3", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:5427", "field": "text", "en": "Requires Warsong Outriders - Friendly", "hash": "792417720090dbd2", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:80371", "field": "text", "en": "The player is not within the level range for the NPE Tutorial.", "hash": "f5a89296e2ddd7f7", "src": "db2@1.60.1.70291"}
+{"id": "PlayerConditionFailure:80372", "field": "text", "en": "The player is not within the level range for the NPEv2 Tutorial.", "hash": "d25a7b2b4a20ed67", "src": "db2@1.60.1.70291"}
+{"id": "PvpColumn:1101", "field": "text", "en": "Flag Captures", "hash": "82057bc0e63ade13", "src": "db2@1.60.1.70291"}
+{"id": "PvpColumn:1102", "field": "text", "en": "Bases Assaulted", "hash": "eaa9c4d6a4509a2e", "src": "db2@1.60.1.70291"}
+{"id": "PvpColumn:1103", "field": "text", "en": "Bases Defended", "hash": "c95192c2f93a802c", "src": "db2@1.60.1.70291"}
+{"id": "PvpColumnTooltip:1101", "field": "text", "en": "Number of times you have captured the flag", "hash": "ea439d23b4148f9a", "src": "db2@1.60.1.70291"}
+{"id": "PvpColumnTooltip:1102", "field": "text", "en": "Number of times enemy base banners have been removed", "hash": "12b99a969cc6e9f4", "src": "db2@1.60.1.70291"}
+{"id": "PvpColumnTooltip:1103", "field": "text", "en": "Number of times a base capture has been prevented", "hash": "ff594ad98317c252", "src": "db2@1.60.1.70291"}
+{"id": "PvpLongDescription:2997", "field": "text", "en": "- Capture and hold objectives\r\n- Capture the Darkspear Islands Flag\r\n- Earn 2000 resources", "hash": "1bc4198b967c165f", "src": "db2@1.60.1.70291"}
+{"id": "PvpStat:122", "field": "text", "en": "Bases Assaulted", "hash": "eaa9c4d6a4509a2e", "src": "db2@1.60.1.70291"}
+{"id": "PvpStat:123", "field": "text", "en": "Bases Defended", "hash": "c95192c2f93a802c", "src": "db2@1.60.1.70291"}
+{"id": "PvpStat:42", "field": "text", "en": "Flag Captures", "hash": "82057bc0e63ade13", "src": "db2@1.60.1.70291"}
+{"id": "PvpStat:44", "field": "text", "en": "Flag Returns", "hash": "375b387a555f09c0", "src": "db2@1.60.1.70291"}
+{"id": "PvpStat:61", "field": "text", "en": "Towers Assaulted", "hash": "f58deaec3e5b5320", "src": "db2@1.60.1.70291"}
+{"id": "PvpStat:63", "field": "text", "en": "Graveyards Assaulted", "hash": "0788758ddfaaa85e", "src": "db2@1.60.1.70291"}
+{"id": "PvpStat:64", "field": "text", "en": "Towers Defended", "hash": "dee5e137fb696df8", "src": "db2@1.60.1.70291"}
+{"id": "PvpStat:65", "field": "text", "en": "Graveyards Defended", "hash": "44a74dc4ca5ef652", "src": "db2@1.60.1.70291"}
+{"id": "PvpStat:82", "field": "text", "en": "Secondary Objectives", "hash": "549d8f0c81779235", "src": "db2@1.60.1.70291"}

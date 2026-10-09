@@ -2,11 +2,11 @@
 {"id": 382017, "field": "text", "en": "Servants of Grol Freed", "hash": "c3c317ca1aa4f433", "src": "wdb@1.15.9.69722"}
 {"id": 382018, "field": "text", "en": "Servants of Allistarj Freed", "hash": "3293614f9c1e8e54", "src": "wdb@1.15.9.69722"}
 {"id": 382019, "field": "text", "en": "Servants of Sevine Freed", "hash": "f06cff32c03ba0c7", "src": "wdb@1.15.9.69722"}
-{"id": 382065, "field": "text", "en": "Gelkak's First Mate", "hash": "702dd83b0e5abdef", "src": "wdb@1.60.1.70245"}
-{"id": 382155, "field": "text", "en": "Flame of the Blasted Lands", "hash": "aa7ba71bc8801119", "src": "wdb@1.60.1.70245"}
-{"id": 382156, "field": "text", "en": "Flame of the Plaguelands", "hash": "d79c3c45b72554ce", "src": "wdb@1.60.1.70245"}
-{"id": 382157, "field": "text", "en": "Flame of the Hinterlands", "hash": "a089af365e0de510", "src": "wdb@1.60.1.70245"}
-{"id": 382158, "field": "text", "en": "Flame of Searing Gorge", "hash": "e9d44d9f15890de2", "src": "wdb@1.60.1.70245"}
+{"id": 382065, "field": "text", "en": "Gelkak's First Mate", "hash": "702dd83b0e5abdef", "src": "wdb@1.60.1.70291"}
+{"id": 382155, "field": "text", "en": "Flame of the Blasted Lands", "hash": "aa7ba71bc8801119", "src": "wdb@1.60.1.70291"}
+{"id": 382156, "field": "text", "en": "Flame of the Plaguelands", "hash": "d79c3c45b72554ce", "src": "wdb@1.60.1.70291"}
+{"id": 382157, "field": "text", "en": "Flame of the Hinterlands", "hash": "a089af365e0de510", "src": "wdb@1.60.1.70291"}
+{"id": 382158, "field": "text", "en": "Flame of Searing Gorge", "hash": "e9d44d9f15890de2", "src": "wdb@1.60.1.70291"}
 {"id": 382233, "field": "text", "en": "Open Sharpbeak's Cage", "hash": "8540dd1a08744c86", "src": "wdb@1.15.9.69722"}
 {"id": 382247, "field": "text", "en": "Check First Cage", "hash": "e5cb33b2f33688b9", "src": "wdb@1.15.9.69722"}
 {"id": 382248, "field": "text", "en": "Check Second Cage", "hash": "2f289444dce7d8aa", "src": "wdb@1.15.9.69722"}
@@ -16,12 +16,12 @@
 {"id": 382264, "field": "text", "en": "Eastern Tower Ablaze", "hash": "2f086c21fab0e79f", "src": "wdb@1.15.9.69722"}
 {"id": 382265, "field": "text", "en": "Northern Tower Ablaze", "hash": "cd4a93b9a258e682", "src": "wdb@1.15.9.69722"}
 {"id": 382291, "field": "text", "en": "The Fate of Mistress Natalia Mar'alith", "hash": "9d96edef2d1f438b", "src": "wdb@1.15.9.69722"}
-{"id": 382365, "field": "text", "en": "Flame of Stormwind", "hash": "a62dd849c7ab9eb2", "src": "wdb@1.60.1.70245"}
-{"id": 382366, "field": "text", "en": "Flame of Ironforge", "hash": "166e79a31c8105b2", "src": "wdb@1.60.1.70245"}
-{"id": 382367, "field": "text", "en": "Flame of Darnassus", "hash": "535447b6a32f8f6c", "src": "wdb@1.60.1.70245"}
-{"id": 382421, "field": "text", "en": "Flame of Orgrimmar", "hash": "4dd0bca19a304f97", "src": "wdb@1.60.1.70245"}
-{"id": 382422, "field": "text", "en": "Flame of Thunder Bluff", "hash": "090fa96d4be8232d", "src": "wdb@1.60.1.70245"}
-{"id": 382423, "field": "text", "en": "Flame of the Undercity", "hash": "488b0f14e917d4db", "src": "wdb@1.60.1.70245"}
+{"id": 382365, "field": "text", "en": "Flame of Stormwind", "hash": "a62dd849c7ab9eb2", "src": "wdb@1.60.1.70291"}
+{"id": 382366, "field": "text", "en": "Flame of Ironforge", "hash": "166e79a31c8105b2", "src": "wdb@1.60.1.70291"}
+{"id": 382367, "field": "text", "en": "Flame of Darnassus", "hash": "535447b6a32f8f6c", "src": "wdb@1.60.1.70291"}
+{"id": 382421, "field": "text", "en": "Flame of Orgrimmar", "hash": "4dd0bca19a304f97", "src": "wdb@1.60.1.70291"}
+{"id": 382422, "field": "text", "en": "Flame of Thunder Bluff", "hash": "090fa96d4be8232d", "src": "wdb@1.60.1.70291"}
+{"id": 382423, "field": "text", "en": "Flame of the Undercity", "hash": "488b0f14e917d4db", "src": "wdb@1.60.1.70291"}
 {"id": 382468, "field": "text", "en": "Screecher Spirits Collected", "hash": "78b47ec61e1ff87e", "src": "wdb@1.15.9.69722"}
 {"id": 382531, "field": "text", "en": "Burn the Highvale Records", "hash": "c4907fd59248f49d", "src": "wdb@1.15.9.69722"}
 {"id": 382532, "field": "text", "en": "Burn the Highvale Notes", "hash": "85b4752ab33a36f9", "src": "wdb@1.15.9.69722"}
@@ -29,8 +29,8 @@
 {"id": 382541, "field": "text", "en": "Souls Freed", "hash": "672d0f9643f3b70e", "src": "wdb@1.15.9.69722"}
 {"id": 382569, "field": "text", "en": "Frankal Questioned", "hash": "4f9b480c24808b5f", "src": "wdb@1.15.9.69722"}
 {"id": 382570, "field": "text", "en": "Rutgar Questioned", "hash": "0346a42459d044cd", "src": "wdb@1.15.9.69722"}
-{"id": 382607, "field": "text", "en": "Heal and fortify Grunt Kor'ja", "hash": "640acb404cf54749", "src": "wdb@1.60.1.70245"}
-{"id": 382626, "field": "text", "en": "Heal and fortify Sentinel Shaya", "hash": "2af5ebec3f7e5902", "src": "wdb@1.60.1.70245"}
+{"id": 382607, "field": "text", "en": "Heal and fortify Grunt Kor'ja", "hash": "640acb404cf54749", "src": "wdb@1.60.1.70291"}
+{"id": 382626, "field": "text", "en": "Heal and fortify Sentinel Shaya", "hash": "2af5ebec3f7e5902", "src": "wdb@1.60.1.70291"}
 {"id": 382627, "field": "text", "en": "Tower One marked", "hash": "b64cd2fb003efc1c", "src": "wdb@1.15.9.69722"}
 {"id": 382628, "field": "text", "en": "Tower Two marked", "hash": "0190196fd540a37b", "src": "wdb@1.15.9.69722"}
 {"id": 382629, "field": "text", "en": "Tower Three marked", "hash": "41faa770820c45dd", "src": "wdb@1.15.9.69722"}
@@ -48,8 +48,8 @@
 {"id": 382817, "field": "text", "en": "Tower Two marked", "hash": "0190196fd540a37b", "src": "wdb@1.15.9.69722"}
 {"id": 382818, "field": "text", "en": "Tower Three marked", "hash": "41faa770820c45dd", "src": "wdb@1.15.9.69722"}
 {"id": 382819, "field": "text", "en": "Tower Four marked", "hash": "3aa4381efee520a2", "src": "wdb@1.15.9.69722"}
-{"id": 382847, "field": "text", "en": "Heal and fortify Guard Roberts", "hash": "41bd40ebda736933", "src": "wdb@1.60.1.70245"}
-{"id": 382849, "field": "text", "en": "Heal and fortify Mountaineer Dolf", "hash": "ec5fb4278bb55fe6", "src": "wdb@1.60.1.70245"}
+{"id": 382847, "field": "text", "en": "Heal and fortify Guard Roberts", "hash": "41bd40ebda736933", "src": "wdb@1.60.1.70291"}
+{"id": 382849, "field": "text", "en": "Heal and fortify Mountaineer Dolf", "hash": "ec5fb4278bb55fe6", "src": "wdb@1.60.1.70291"}
 {"id": 382856, "field": "text", "en": "Information Recovered", "hash": "bb43bc6c2e9cf0f7", "src": "wdb@1.15.9.69722"}
 {"id": 382881, "field": "text", "en": "Darrowshire Spirits Freed", "hash": "a78bce0d72dd39e4", "src": "wdb@1.15.9.69722"}
-{"id": 382932, "field": "text", "en": "Find Mankrik's Wife", "hash": "3dcea12fb9e2d365", "src": "wdb@1.60.1.70245"}
+{"id": 382932, "field": "text", "en": "Find Mankrik's Wife", "hash": "3dcea12fb9e2d365", "src": "wdb@1.60.1.70291"}

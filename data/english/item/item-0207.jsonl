@@ -1,31 +1,31 @@
-{"id": 207062, "field": "name", "en": "Severed Centaur Head", "hash": "680918c4a32f3eec", "src": "db2@1.60.1.70245"}
-{"id": 207062, "field": "description", "en": "A grim trophy. May interest the right collector...", "hash": "032211e9ad6062a8", "src": "db2@1.60.1.70245"}
-{"id": 207098, "field": "name", "en": "Note from Ba'so", "hash": "064c17a575698f42", "src": "db2@1.60.1.70245"}
-{"id": 207098, "field": "description", "en": "A message written in thieves' cant", "hash": "a0e450931b72e270", "src": "db2@1.60.1.70245"}
-{"id": 207106, "field": "name", "en": "Bottom-Left Map Piece", "hash": "7d2a74a126dc03ae", "src": "db2@1.60.1.70245"}
-{"id": 207106, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70245"}
-{"id": 207107, "field": "name", "en": "Bottom-Right Map Piece", "hash": "7d2c08e1941d33fc", "src": "db2@1.60.1.70245"}
-{"id": 207107, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70245"}
-{"id": 207108, "field": "name", "en": "Top-Left Map Piece", "hash": "43317739522763d4", "src": "db2@1.60.1.70245"}
-{"id": 207108, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70245"}
-{"id": 207109, "field": "name", "en": "Top-Right Map Piece", "hash": "d2c25c13c201ab06", "src": "db2@1.60.1.70245"}
-{"id": 207109, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70245"}
-{"id": 207110, "field": "name", "en": "Durotar Treasure Map", "hash": "a73f41e8b230fe30", "src": "db2@1.60.1.70245"}
-{"id": 207110, "field": "description", "en": "Dig up treasure at the marked location\nIn front of the Monkey's head on the southmost echo isle.", "hash": "a73fbe57266869f3", "src": "db2@1.60.1.70245"}
-{"id": 207590, "field": "name", "en": "Durotar Pig Meat", "hash": "185a5dbbd42e10f4", "src": "db2@1.60.1.70245"}
-{"id": 207590, "field": "description", "en": "Place as bait near an island cat's dwelling", "hash": "af609f27213a5b79", "src": "db2@1.60.1.70245"}
-{"id": 207631, "field": "name", "en": "Adder Pheromone", "hash": "71cc2dba4ec7af0d", "src": "db2@1.60.1.70245"}
-{"id": 207631, "field": "description", "en": "Your Tame Beast ability also works on adders (as companion pet)", "hash": "e11da250cc668433", "src": "db2@1.60.1.70245"}
-{"id": 207731, "field": "name", "en": "Ominous Tome", "hash": "d24f1ce4aa0fad90", "src": "db2@1.60.1.70245"}
-{"id": 207731, "field": "description", "en": "Summon Soboz\nBring the leg of a makrura and the skull of a Kul Tiran to the largest Echo Isle. Find the circle of power, and perform the ritual.", "hash": "676407d4ec41a9a1", "src": "db2@1.60.1.70245"}
-{"id": 207732, "field": "name", "en": "Makrura Leg", "hash": "1c52e8f3672f34d1", "src": "db2@1.60.1.70245"}
-{"id": 207732, "field": "description", "en": "A reagent for use in a summoning ritual", "hash": "df07f3b6c5c1fca1", "src": "db2@1.60.1.70245"}
-{"id": 207733, "field": "name", "en": "Kul Tiran Skull", "hash": "6a71eb72ca690b27", "src": "db2@1.60.1.70245"}
-{"id": 207733, "field": "description", "en": "A reagent for use in a summoning ritual", "hash": "df07f3b6c5c1fca1", "src": "db2@1.60.1.70245"}
-{"id": 207972, "field": "name", "en": "The Lessons of Ta'zo", "hash": "faffd00328675678", "src": "db2@1.60.1.70245"}
-{"id": 207972, "field": "description", "en": "A tracing of etchings written by a great Troll mage. A fine addition to any library's collection.", "hash": "4060e43212a53369", "src": "db2@1.60.1.70245"}
-{"id": 207973, "field": "name", "en": "Hound Jawbone", "hash": "b25e77d17ecc8b6e", "src": "db2@1.60.1.70245"}
-{"id": 207974, "field": "name", "en": "Ominous Tome", "hash": "d24f1ce4aa0fad90", "src": "db2@1.60.1.70245"}
-{"id": 207974, "field": "description", "en": "Summon Soboz\nBring the jaw of a hound and the blood of a gnoll to the sewers. Then, begin the incantation.", "hash": "54fb4efe4c7bccea", "src": "db2@1.60.1.70245"}
-{"id": 207975, "field": "name", "en": "Severed Bat Head", "hash": "85f737058abcdd68", "src": "db2@1.60.1.70245"}
-{"id": 207975, "field": "description", "en": "A grim trophy. May interest the right collector...", "hash": "032211e9ad6062a8", "src": "db2@1.60.1.70245"}
+{"id": 207062, "field": "name", "en": "Severed Centaur Head", "hash": "680918c4a32f3eec", "src": "db2@1.60.1.70291"}
+{"id": 207062, "field": "description", "en": "A grim trophy. May interest the right collector...", "hash": "032211e9ad6062a8", "src": "db2@1.60.1.70291"}
+{"id": 207098, "field": "name", "en": "Note from Ba'so", "hash": "064c17a575698f42", "src": "db2@1.60.1.70291"}
+{"id": 207098, "field": "description", "en": "A message written in thieves' cant", "hash": "a0e450931b72e270", "src": "db2@1.60.1.70291"}
+{"id": 207106, "field": "name", "en": "Bottom-Left Map Piece", "hash": "7d2a74a126dc03ae", "src": "db2@1.60.1.70291"}
+{"id": 207106, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70291"}
+{"id": 207107, "field": "name", "en": "Bottom-Right Map Piece", "hash": "7d2c08e1941d33fc", "src": "db2@1.60.1.70291"}
+{"id": 207107, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70291"}
+{"id": 207108, "field": "name", "en": "Top-Left Map Piece", "hash": "43317739522763d4", "src": "db2@1.60.1.70291"}
+{"id": 207108, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70291"}
+{"id": 207109, "field": "name", "en": "Top-Right Map Piece", "hash": "d2c25c13c201ab06", "src": "db2@1.60.1.70291"}
+{"id": 207109, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70291"}
+{"id": 207110, "field": "name", "en": "Durotar Treasure Map", "hash": "a73f41e8b230fe30", "src": "db2@1.60.1.70291"}
+{"id": 207110, "field": "description", "en": "Dig up treasure at the marked location\nIn front of the Monkey's head on the southmost echo isle.", "hash": "a73fbe57266869f3", "src": "db2@1.60.1.70291"}
+{"id": 207590, "field": "name", "en": "Durotar Pig Meat", "hash": "185a5dbbd42e10f4", "src": "db2@1.60.1.70291"}
+{"id": 207590, "field": "description", "en": "Place as bait near an island cat's dwelling", "hash": "af609f27213a5b79", "src": "db2@1.60.1.70291"}
+{"id": 207631, "field": "name", "en": "Adder Pheromone", "hash": "71cc2dba4ec7af0d", "src": "db2@1.60.1.70291"}
+{"id": 207631, "field": "description", "en": "Your Tame Beast ability also works on adders (as companion pet)", "hash": "e11da250cc668433", "src": "db2@1.60.1.70291"}
+{"id": 207731, "field": "name", "en": "Ominous Tome", "hash": "d24f1ce4aa0fad90", "src": "db2@1.60.1.70291"}
+{"id": 207731, "field": "description", "en": "Summon Soboz\nBring the leg of a makrura and the skull of a Kul Tiran to the largest Echo Isle. Find the circle of power, and perform the ritual.", "hash": "676407d4ec41a9a1", "src": "db2@1.60.1.70291"}
+{"id": 207732, "field": "name", "en": "Makrura Leg", "hash": "1c52e8f3672f34d1", "src": "db2@1.60.1.70291"}
+{"id": 207732, "field": "description", "en": "A reagent for use in a summoning ritual", "hash": "df07f3b6c5c1fca1", "src": "db2@1.60.1.70291"}
+{"id": 207733, "field": "name", "en": "Kul Tiran Skull", "hash": "6a71eb72ca690b27", "src": "db2@1.60.1.70291"}
+{"id": 207733, "field": "description", "en": "A reagent for use in a summoning ritual", "hash": "df07f3b6c5c1fca1", "src": "db2@1.60.1.70291"}
+{"id": 207972, "field": "name", "en": "The Lessons of Ta'zo", "hash": "faffd00328675678", "src": "db2@1.60.1.70291"}
+{"id": 207972, "field": "description", "en": "A tracing of etchings written by a great Troll mage. A fine addition to any library's collection.", "hash": "4060e43212a53369", "src": "db2@1.60.1.70291"}
+{"id": 207973, "field": "name", "en": "Hound Jawbone", "hash": "b25e77d17ecc8b6e", "src": "db2@1.60.1.70291"}
+{"id": 207974, "field": "name", "en": "Ominous Tome", "hash": "d24f1ce4aa0fad90", "src": "db2@1.60.1.70291"}
+{"id": 207974, "field": "description", "en": "Summon Soboz\nBring the jaw of a hound and the blood of a gnoll to the sewers. Then, begin the incantation.", "hash": "54fb4efe4c7bccea", "src": "db2@1.60.1.70291"}
+{"id": 207975, "field": "name", "en": "Severed Bat Head", "hash": "85f737058abcdd68", "src": "db2@1.60.1.70291"}
+{"id": 207975, "field": "description", "en": "A grim trophy. May interest the right collector...", "hash": "032211e9ad6062a8", "src": "db2@1.60.1.70291"}

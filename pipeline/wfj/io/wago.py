@@ -156,6 +156,7 @@ TEXT_FAMILIES: dict[str, tuple[str, str]] = {
     "CustomizationSource": ("ChrCustomizationReq", "ReqSource_lang"),
     "PvpColumn": ("PVPScoreboardColumnHeader", "Name_lang"),
     "PvpColumnTooltip": ("PVPScoreboardColumnHeader", "Tooltip_lang"),
+    "PvpStat": ("PVPStat", "Description_lang"),
     "LfgCategory": ("GroupFinderCategory", "Name_lang"),
     "LfgActivityGroup": ("GroupFinderActivityGrp", "Name_lang"),
     "LfgActivity": ("GroupFinderActivity", "FullName_lang"),

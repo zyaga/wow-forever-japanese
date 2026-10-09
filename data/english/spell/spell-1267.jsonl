@@ -1,15 +1,15 @@
-{"id": 1267010, "field": "name", "en": "Ritual Complete", "hash": "25b7eb45b30eb1cf", "src": "db2@1.60.1.70245"}
-{"id": 1267046, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70245"}
-{"id": 1267046, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70245"}
-{"id": 1267059, "field": "name", "en": "Instakill", "hash": "096270087d391955", "src": "db2@1.60.1.70245"}
-{"id": 1267060, "field": "name", "en": "Scavenging", "hash": "af6b698c3748a2a9", "src": "db2@1.60.1.70245"}
-{"id": 1267113, "field": "name", "en": "Abyssal Shield", "hash": "19558ac61b59cb48", "src": "db2@1.60.1.70245"}
-{"id": 1267113, "field": "description", "en": "Reduces damage by $S1%.", "hash": "f27200df936cb4b3", "src": "db2@1.60.1.70245"}
-{"id": 1267113, "field": "aura", "en": "Immune to damage.", "hash": "f75b02dd7868b3ea", "src": "db2@1.60.1.70245"}
-{"id": 1267143, "field": "name", "en": "Throw Rock", "hash": "8406e6ae241ef7fa", "src": "db2@1.60.1.70245"}
-{"id": 1267143, "field": "description", "en": "Throws a rock at an enemy, inflicting Physical damage.", "hash": "866d669fa987d3f7", "src": "db2@1.60.1.70245"}
-{"id": 1267193, "field": "name", "en": "Dismissal", "hash": "c5a1fc51f48c1286", "src": "db2@1.60.1.70245"}
-{"id": 1267193, "field": "description", "en": "You are not yet permitted into the city of Dalaran.", "hash": "312c457f6f95e079", "src": "db2@1.60.1.70245"}
-{"id": 1267199, "field": "name", "en": "Arcane Transference", "hash": "d7a16573b52998d5", "src": "db2@1.60.1.70245"}
-{"id": 1267199, "field": "description", "en": "Halt! A Kirin Tor guard has marked you for transference.", "hash": "ad1fb21398ad29db", "src": "db2@1.60.1.70245"}
-{"id": 1267199, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70245"}
+{"id": 1267010, "field": "name", "en": "Ritual Complete", "hash": "25b7eb45b30eb1cf", "src": "db2@1.60.1.70291"}
+{"id": 1267046, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70291"}
+{"id": 1267046, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70291"}
+{"id": 1267059, "field": "name", "en": "Instakill", "hash": "096270087d391955", "src": "db2@1.60.1.70291"}
+{"id": 1267060, "field": "name", "en": "Scavenging", "hash": "af6b698c3748a2a9", "src": "db2@1.60.1.70291"}
+{"id": 1267113, "field": "name", "en": "Abyssal Shield", "hash": "19558ac61b59cb48", "src": "db2@1.60.1.70291"}
+{"id": 1267113, "field": "description", "en": "Reduces damage by $S1%.", "hash": "f27200df936cb4b3", "src": "db2@1.60.1.70291"}
+{"id": 1267113, "field": "aura", "en": "Immune to damage.", "hash": "f75b02dd7868b3ea", "src": "db2@1.60.1.70291"}
+{"id": 1267143, "field": "name", "en": "Throw Rock", "hash": "8406e6ae241ef7fa", "src": "db2@1.60.1.70291"}
+{"id": 1267143, "field": "description", "en": "Throws a rock at an enemy, inflicting Physical damage.", "hash": "866d669fa987d3f7", "src": "db2@1.60.1.70291"}
+{"id": 1267193, "field": "name", "en": "Dismissal", "hash": "c5a1fc51f48c1286", "src": "db2@1.60.1.70291"}
+{"id": 1267193, "field": "description", "en": "You are not yet permitted into the city of Dalaran.", "hash": "312c457f6f95e079", "src": "db2@1.60.1.70291"}
+{"id": 1267199, "field": "name", "en": "Arcane Transference", "hash": "d7a16573b52998d5", "src": "db2@1.60.1.70291"}
+{"id": 1267199, "field": "description", "en": "Halt! A Kirin Tor guard has marked you for transference.", "hash": "ad1fb21398ad29db", "src": "db2@1.60.1.70291"}
+{"id": 1267199, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70291"}

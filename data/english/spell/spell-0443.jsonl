@@ -1,84 +1,84 @@
-{"id": 443014, "field": "name", "en": "[DNT] Life Link", "hash": "14382480d6be8c4e", "src": "db2@1.60.1.70245"}
-{"id": 443022, "field": "name", "en": "Red Beam", "hash": "07336afc1ceed8cf", "src": "db2@1.60.1.70245"}
-{"id": 443065, "field": "name", "en": "Life Link - 1. Initialize", "hash": "1b6b6dbab4add4a1", "src": "db2@1.60.1.70245"}
-{"id": 443233, "field": "name", "en": "[DNT] Health Link", "hash": "e78feeff9cb0f893", "src": "db2@1.60.1.70245"}
-{"id": 443237, "field": "name", "en": "[DNT] Health Link", "hash": "e78feeff9cb0f893", "src": "db2@1.60.1.70245"}
-{"id": 443265, "field": "name", "en": "Infernal Lasso", "hash": "07a60fe4118ca704", "src": "db2@1.60.1.70245"}
-{"id": 443265, "field": "description", "en": "Deals $o1 Fire damage over $d. Demons and Beasts are Rooted in place for $1312052d.", "hash": "c1da90e1e0cefc95", "src": "db2@1.60.1.70245"}
-{"id": 443265, "field": "aura", "en": "Taking $s1 Fire damage every $t1 seconds.", "hash": "62dbdc65130fdee9", "src": "db2@1.60.1.70245"}
-{"id": 443278, "field": "name", "en": "Seed of Renewal", "hash": "caaed226698949dc", "src": "db2@1.60.1.70245"}
-{"id": 443278, "field": "description", "en": "Chance to embed a seed into enemy humanoids, beasts, or dragonkin hit by your abilities or spells. If the creature is slain within 30 seconds of the seed being embedded, a Healing Blossom will grow from its corpse.\r\n", "hash": "7356ebc30c2a4539", "src": "db2@1.60.1.70245"}
-{"id": 443278, "field": "aura", "en": "Chance to embed a seed into enemy humanoids, beasts, or dragonkin hit by your abilities or spells.", "hash": "f46279240c5949ca", "src": "db2@1.60.1.70245"}
-{"id": 443290, "field": "name", "en": "[DNT] Health Link", "hash": "e78feeff9cb0f893", "src": "db2@1.60.1.70245"}
-{"id": 443291, "field": "name", "en": "[DNT] Health Link", "hash": "e78feeff9cb0f893", "src": "db2@1.60.1.70245"}
-{"id": 443302, "field": "name", "en": "Emerald Ward", "hash": "94c6e9010dd7ed86", "src": "db2@1.60.1.70245"}
-{"id": 443302, "field": "aura", "en": "All damage taken reduced by $s1%.", "hash": "bd0656aa9b8dd371", "src": "db2@1.60.1.70245"}
-{"id": 443320, "field": "name", "en": "Loyal Beta", "hash": "ad6cd0d1a929e060", "src": "db2@1.60.1.70245"}
-{"id": 443320, "field": "aura", "en": "Physical$?$w3>0[, Fire, Frost, and Nature][] damage done increased by $s1% and all threat generated reduced by $s2%.", "hash": "de83f529dccab541", "src": "db2@1.60.1.70245"}
-{"id": 443358, "field": "name", "en": "Blademaster's Fury", "hash": "6dd341bb179e41cb", "src": "db2@1.60.1.70245"}
-{"id": 443358, "field": "description", "en": "Attack up to $i enemies within $a1 yards, causing weapon damage to each enemy, and reset the cooldown of your Whirlwind ability.", "hash": "58e4e62fee65a6c1", "src": "db2@1.60.1.70245"}
-{"id": 443359, "field": "name", "en": "Moonkin Form (Passive)", "hash": "8c0eeaece1f15c8e", "src": "db2@1.60.1.70245"}
-{"id": 443369, "field": "name", "en": "Chronostatic Preservation", "hash": "fb106a5f1a35c238", "src": "db2@1.60.1.70245"}
-{"id": 443369, "field": "aura", "en": "Chronomantic energy ready to be unleashed. Instantly healing a friendly target for ${$<healpower>*$436517m1/100} to ${$<healpower>*$436517M1/100}.", "hash": "f8fc0a4eeb927600", "src": "db2@1.60.1.70245"}
-{"id": 443395, "field": "name", "en": "Climbing Rope", "hash": "360fc9d65f9469ec", "src": "db2@1.60.1.70245"}
-{"id": 443464, "field": "name", "en": "Healing Blossom", "hash": "d58aa8d7dba2ad69", "src": "db2@1.60.1.70245"}
-{"id": 443464, "field": "aura", "en": "Heals $s1 every $t1 seconds.", "hash": "c535cc6898ad69dc", "src": "db2@1.60.1.70245"}
-{"id": 443469, "field": "name", "en": "[DNT] Grow Healing Blossom", "hash": "428fc74131224270", "src": "db2@1.60.1.70245"}
-{"id": 443518, "field": "name", "en": "Climbing Rope", "hash": "360fc9d65f9469ec", "src": "db2@1.60.1.70245"}
-{"id": 443540, "field": "name", "en": "Statue Beam", "hash": "d0a81617d35de6cd", "src": "db2@1.60.1.70245"}
-{"id": 443630, "field": "name", "en": "PvP Trinket", "hash": "662ce3a9d464ad08", "src": "db2@1.60.1.70245"}
-{"id": 443630, "field": "description", "en": "Removes all movement impairing effects and all effects which cause loss of control of your character.", "hash": "5922de690eb48ff3", "src": "db2@1.60.1.70245"}
-{"id": 443631, "field": "name", "en": "Seed of Renewal Effect", "hash": "b1fcb4b804525cba", "src": "db2@1.60.1.70245"}
-{"id": 443631, "field": "description", "en": "Grows a Healing Blossom with from the corpse of a humanoid or beast for $d that heals group members within $443464a1 yards for $443464s1 every $443464t1 seconds.", "hash": "ae7b345ae7755e9d", "src": "db2@1.60.1.70245"}
-{"id": 443632, "field": "name", "en": "Filcher's Cowl", "hash": "671e488a96669f6f", "src": "db2@1.60.1.70245"}
-{"id": 443632, "field": "description", "en": "Increases your effective stealth level by 3. Increases the range of Disarm Trap and Pickpocket by $s2 yards, and the range of Distract by $s3 yards.", "hash": "52f344aa0105625d", "src": "db2@1.60.1.70245"}
-{"id": 443634, "field": "name", "en": "Conjure Ocean Water", "hash": "4e04052a8b252a9c", "src": "db2@1.60.1.70245"}
-{"id": 443635, "field": "name", "en": "Conjure Ocean Water", "hash": "4e04052a8b252a9c", "src": "db2@1.60.1.70245"}
-{"id": 443635, "field": "description", "en": "Conjures $s1 $lbottle:bottles; of spring water, providing the mage and $ghis:her; allies with something to drink.\r\n\r\nConjured items disappear if logged out for more than 15 minutes.", "hash": "c65f73674f6e62c3", "src": "db2@1.60.1.70245"}
-{"id": 443678, "field": "name", "en": "Seed of Renewal", "hash": "caaed226698949dc", "src": "db2@1.60.1.70245"}
-{"id": 443678, "field": "aura", "en": "Will grow a Healing Blossom from corpse when killed.", "hash": "053e469e92db0f5e", "src": "db2@1.60.1.70245"}
-{"id": 443758, "field": "name", "en": "Ken's Test Spell", "hash": "f60003a8fe38ba32", "src": "db2@1.60.1.70245"}
-{"id": 443766, "field": "name", "en": "Wing Buffet", "hash": "1f10ac0f617ea114", "src": "db2@1.60.1.70245"}
-{"id": 443766, "field": "description", "en": "Strikes enemies in a cone in front of the caster, knocking them back.", "hash": "61a1859ee1117be6", "src": "db2@1.60.1.70245"}
-{"id": 443774, "field": "name", "en": "Wing Buffet", "hash": "1f10ac0f617ea114", "src": "db2@1.60.1.70245"}
-{"id": 443790, "field": "name", "en": "Wing Buffet", "hash": "1f10ac0f617ea114", "src": "db2@1.60.1.70245"}
-{"id": 443793, "field": "name", "en": "Wing Buffet", "hash": "1f10ac0f617ea114", "src": "db2@1.60.1.70245"}
-{"id": 443793, "field": "description", "en": "Strikes enemies in a cone in front of the caster, knocking them back.", "hash": "61a1859ee1117be6", "src": "db2@1.60.1.70245"}
-{"id": 443813, "field": "name", "en": "High-Yield Radiation Bomb", "hash": "b4810dcc6a322f3e", "src": "db2@1.60.1.70245"}
-{"id": 443813, "field": "aura", "en": "Irradiated. Suffering damage over time and movement is slowed.", "hash": "bf0174a02da5de26", "src": "db2@1.60.1.70245"}
-{"id": 443827, "field": "name", "en": "Delayed Wing Buffet", "hash": "09353ee84637fae0", "src": "db2@1.60.1.70245"}
-{"id": 443827, "field": "description", "en": "Strikes enemies in a cone in front of the caster, knocking them back.", "hash": "61a1859ee1117be6", "src": "db2@1.60.1.70245"}
-{"id": 443828, "field": "name", "en": "Wing Buffet", "hash": "1f10ac0f617ea114", "src": "db2@1.60.1.70245"}
-{"id": 443829, "field": "name", "en": "Wing Buffet", "hash": "1f10ac0f617ea114", "src": "db2@1.60.1.70245"}
-{"id": 443830, "field": "name", "en": "Delayed Wing Buffet", "hash": "09353ee84637fae0", "src": "db2@1.60.1.70245"}
-{"id": 443830, "field": "description", "en": "Strikes enemies in a cone in front of the caster, knocking them back.", "hash": "61a1859ee1117be6", "src": "db2@1.60.1.70245"}
-{"id": 443848, "field": "name", "en": "Blood Infusion", "hash": "ea73b3f876d1f635", "src": "db2@1.60.1.70245"}
-{"id": 443856, "field": "name", "en": "Caustic Overflow", "hash": "a447c37f2d23f1cb", "src": "db2@1.60.1.70245"}
-{"id": 443856, "field": "aura", "en": "$s1 Fire damage every $t1 seconds.", "hash": "0d35ca5681c76d3f", "src": "db2@1.60.1.70245"}
-{"id": 443892, "field": "name", "en": "Blood Ritual", "hash": "8225468daeefd7d9", "src": "db2@1.60.1.70245"}
-{"id": 443895, "field": "name", "en": "Blood Ritual", "hash": "8225468daeefd7d9", "src": "db2@1.60.1.70245"}
-{"id": 443910, "field": "name", "en": "[DNT] Safe zone", "hash": "3870f1050b243474", "src": "db2@1.60.1.70245"}
-{"id": 443916, "field": "name", "en": "Tides of Blood", "hash": "d8fad0a7d22eb5b5", "src": "db2@1.60.1.70245"}
-{"id": 443917, "field": "name", "en": "Tides of Blood", "hash": "d8fad0a7d22eb5b5", "src": "db2@1.60.1.70245"}
-{"id": 443917, "field": "description", "en": "Blood fills the caster, granting $s1% of maximum mana every $t1 sec.", "hash": "4886cfc6c00cb2fc", "src": "db2@1.60.1.70245"}
-{"id": 443917, "field": "aura", "en": "Restoring $s1% of maximum mana every $t1 sec.", "hash": "b4a4fc0cf1e9c673", "src": "db2@1.60.1.70245"}
-{"id": 443923, "field": "name", "en": "Tides of Blood", "hash": "d8fad0a7d22eb5b5", "src": "db2@1.60.1.70245"}
-{"id": 443930, "field": "name", "en": "Caustic Overflow", "hash": "a447c37f2d23f1cb", "src": "db2@1.60.1.70245"}
-{"id": 443940, "field": "name", "en": "Bubbling Blood", "hash": "c74a0c2824187086", "src": "db2@1.60.1.70245"}
-{"id": 443940, "field": "description", "en": "Launches blood at a target, inflicting Shadow damage to players within.", "hash": "9cc8ab15be1c88fd", "src": "db2@1.60.1.70245"}
-{"id": 443944, "field": "name", "en": "Bubbling Blood", "hash": "c74a0c2824187086", "src": "db2@1.60.1.70245"}
-{"id": 443945, "field": "name", "en": "Bubbling Blood", "hash": "c74a0c2824187086", "src": "db2@1.60.1.70245"}
-{"id": 443953, "field": "name", "en": "Bubbling Blood", "hash": "c74a0c2824187086", "src": "db2@1.60.1.70245"}
-{"id": 443953, "field": "description", "en": "$@spelldesc443940", "hash": "b323d9cc21891eff", "src": "db2@1.60.1.70245"}
-{"id": 443953, "field": "aura", "en": "$s1 Shadow damage inflicted every $t1 sec.", "hash": "62c40fe2273e4d07", "src": "db2@1.60.1.70245"}
-{"id": 443964, "field": "name", "en": "Spirit Chains", "hash": "77dd2392067992bd", "src": "db2@1.60.1.70245"}
-{"id": 443964, "field": "description", "en": "Hurls Spirit Chains at an enemy.", "hash": "3c890211476f0f01", "src": "db2@1.60.1.70245"}
-{"id": 443964, "field": "aura", "en": "Targeted for Spirit Chains!", "hash": "4a652a7e14f77e13", "src": "db2@1.60.1.70245"}
-{"id": 443975, "field": "name", "en": "Spirit Chains", "hash": "77dd2392067992bd", "src": "db2@1.60.1.70245"}
-{"id": 443975, "field": "description", "en": "$s1 Shadow damage inflicted every $t1 sec for $d.\r\nAttack, cast, and movement speed reduced by $s2% while this is in effect.", "hash": "4ab3f84465b441d8", "src": "db2@1.60.1.70245"}
-{"id": 443975, "field": "aura", "en": "$s1 Shadow damage inflicted every $t1 sec.\r\nAttack, cast, and movement speed reduced by $s2%.", "hash": "8a124f544056908c", "src": "db2@1.60.1.70245"}
-{"id": 443976, "field": "name", "en": "[DNT] Emerald Decay Visuals", "hash": "363b22b81e8ea3ce", "src": "db2@1.60.1.70245"}
-{"id": 443990, "field": "name", "en": "Frightsome Howl", "hash": "982ca6481f463ac8", "src": "db2@1.60.1.70245"}
-{"id": 443990, "field": "description", "en": "Releases a fearsome howl, inflicting $s1 Shadow damage to all enemies and sending them fleeing in fear for $d.", "hash": "79a9cdfc156143e9", "src": "db2@1.60.1.70245"}
-{"id": 443990, "field": "aura", "en": "Fleeing in fear!", "hash": "fa67e49b461af324", "src": "db2@1.60.1.70245"}
-{"id": 443999, "field": "name", "en": "Blood Ritual", "hash": "8225468daeefd7d9", "src": "db2@1.60.1.70245"}
+{"id": 443014, "field": "name", "en": "[DNT] Life Link", "hash": "14382480d6be8c4e", "src": "db2@1.60.1.70291"}
+{"id": 443022, "field": "name", "en": "Red Beam", "hash": "07336afc1ceed8cf", "src": "db2@1.60.1.70291"}
+{"id": 443065, "field": "name", "en": "Life Link - 1. Initialize", "hash": "1b6b6dbab4add4a1", "src": "db2@1.60.1.70291"}
+{"id": 443233, "field": "name", "en": "[DNT] Health Link", "hash": "e78feeff9cb0f893", "src": "db2@1.60.1.70291"}
+{"id": 443237, "field": "name", "en": "[DNT] Health Link", "hash": "e78feeff9cb0f893", "src": "db2@1.60.1.70291"}
+{"id": 443265, "field": "name", "en": "Infernal Lasso", "hash": "07a60fe4118ca704", "src": "db2@1.60.1.70291"}
+{"id": 443265, "field": "description", "en": "Deals $o1 Fire damage over $d. Demons and Beasts are Rooted in place for $1312052d.", "hash": "c1da90e1e0cefc95", "src": "db2@1.60.1.70291"}
+{"id": 443265, "field": "aura", "en": "Taking $s1 Fire damage every $t1 seconds.", "hash": "62dbdc65130fdee9", "src": "db2@1.60.1.70291"}
+{"id": 443278, "field": "name", "en": "Seed of Renewal", "hash": "caaed226698949dc", "src": "db2@1.60.1.70291"}
+{"id": 443278, "field": "description", "en": "Chance to embed a seed into enemy humanoids, beasts, or dragonkin hit by your abilities or spells. If the creature is slain within 30 seconds of the seed being embedded, a Healing Blossom will grow from its corpse.\r\n", "hash": "7356ebc30c2a4539", "src": "db2@1.60.1.70291"}
+{"id": 443278, "field": "aura", "en": "Chance to embed a seed into enemy humanoids, beasts, or dragonkin hit by your abilities or spells.", "hash": "f46279240c5949ca", "src": "db2@1.60.1.70291"}
+{"id": 443290, "field": "name", "en": "[DNT] Health Link", "hash": "e78feeff9cb0f893", "src": "db2@1.60.1.70291"}
+{"id": 443291, "field": "name", "en": "[DNT] Health Link", "hash": "e78feeff9cb0f893", "src": "db2@1.60.1.70291"}
+{"id": 443302, "field": "name", "en": "Emerald Ward", "hash": "94c6e9010dd7ed86", "src": "db2@1.60.1.70291"}
+{"id": 443302, "field": "aura", "en": "All damage taken reduced by $s1%.", "hash": "bd0656aa9b8dd371", "src": "db2@1.60.1.70291"}
+{"id": 443320, "field": "name", "en": "Loyal Beta", "hash": "ad6cd0d1a929e060", "src": "db2@1.60.1.70291"}
+{"id": 443320, "field": "aura", "en": "Physical$?$w3>0[, Fire, Frost, and Nature][] damage done increased by $s1% and all threat generated reduced by $s2%.", "hash": "de83f529dccab541", "src": "db2@1.60.1.70291"}
+{"id": 443358, "field": "name", "en": "Blademaster's Fury", "hash": "6dd341bb179e41cb", "src": "db2@1.60.1.70291"}
+{"id": 443358, "field": "description", "en": "Attack up to $i enemies within $a1 yards, causing weapon damage to each enemy, and reset the cooldown of your Whirlwind ability.", "hash": "58e4e62fee65a6c1", "src": "db2@1.60.1.70291"}
+{"id": 443359, "field": "name", "en": "Moonkin Form (Passive)", "hash": "8c0eeaece1f15c8e", "src": "db2@1.60.1.70291"}
+{"id": 443369, "field": "name", "en": "Chronostatic Preservation", "hash": "fb106a5f1a35c238", "src": "db2@1.60.1.70291"}
+{"id": 443369, "field": "aura", "en": "Chronomantic energy ready to be unleashed. Instantly healing a friendly target for ${$<healpower>*$436517m1/100} to ${$<healpower>*$436517M1/100}.", "hash": "f8fc0a4eeb927600", "src": "db2@1.60.1.70291"}
+{"id": 443395, "field": "name", "en": "Climbing Rope", "hash": "360fc9d65f9469ec", "src": "db2@1.60.1.70291"}
+{"id": 443464, "field": "name", "en": "Healing Blossom", "hash": "d58aa8d7dba2ad69", "src": "db2@1.60.1.70291"}
+{"id": 443464, "field": "aura", "en": "Heals $s1 every $t1 seconds.", "hash": "c535cc6898ad69dc", "src": "db2@1.60.1.70291"}
+{"id": 443469, "field": "name", "en": "[DNT] Grow Healing Blossom", "hash": "428fc74131224270", "src": "db2@1.60.1.70291"}
+{"id": 443518, "field": "name", "en": "Climbing Rope", "hash": "360fc9d65f9469ec", "src": "db2@1.60.1.70291"}
+{"id": 443540, "field": "name", "en": "Statue Beam", "hash": "d0a81617d35de6cd", "src": "db2@1.60.1.70291"}
+{"id": 443630, "field": "name", "en": "PvP Trinket", "hash": "662ce3a9d464ad08", "src": "db2@1.60.1.70291"}
+{"id": 443630, "field": "description", "en": "Removes all movement impairing effects and all effects which cause loss of control of your character.", "hash": "5922de690eb48ff3", "src": "db2@1.60.1.70291"}
+{"id": 443631, "field": "name", "en": "Seed of Renewal Effect", "hash": "b1fcb4b804525cba", "src": "db2@1.60.1.70291"}
+{"id": 443631, "field": "description", "en": "Grows a Healing Blossom with from the corpse of a humanoid or beast for $d that heals group members within $443464a1 yards for $443464s1 every $443464t1 seconds.", "hash": "ae7b345ae7755e9d", "src": "db2@1.60.1.70291"}
+{"id": 443632, "field": "name", "en": "Filcher's Cowl", "hash": "671e488a96669f6f", "src": "db2@1.60.1.70291"}
+{"id": 443632, "field": "description", "en": "Increases your effective stealth level by 3. Increases the range of Disarm Trap and Pickpocket by $s2 yards, and the range of Distract by $s3 yards.", "hash": "52f344aa0105625d", "src": "db2@1.60.1.70291"}
+{"id": 443634, "field": "name", "en": "Conjure Ocean Water", "hash": "4e04052a8b252a9c", "src": "db2@1.60.1.70291"}
+{"id": 443635, "field": "name", "en": "Conjure Ocean Water", "hash": "4e04052a8b252a9c", "src": "db2@1.60.1.70291"}
+{"id": 443635, "field": "description", "en": "Conjures $s1 $lbottle:bottles; of spring water, providing the mage and $ghis:her; allies with something to drink.\r\n\r\nConjured items disappear if logged out for more than 15 minutes.", "hash": "c65f73674f6e62c3", "src": "db2@1.60.1.70291"}
+{"id": 443678, "field": "name", "en": "Seed of Renewal", "hash": "caaed226698949dc", "src": "db2@1.60.1.70291"}
+{"id": 443678, "field": "aura", "en": "Will grow a Healing Blossom from corpse when killed.", "hash": "053e469e92db0f5e", "src": "db2@1.60.1.70291"}
+{"id": 443758, "field": "name", "en": "Ken's Test Spell", "hash": "f60003a8fe38ba32", "src": "db2@1.60.1.70291"}
+{"id": 443766, "field": "name", "en": "Wing Buffet", "hash": "1f10ac0f617ea114", "src": "db2@1.60.1.70291"}
+{"id": 443766, "field": "description", "en": "Strikes enemies in a cone in front of the caster, knocking them back.", "hash": "61a1859ee1117be6", "src": "db2@1.60.1.70291"}
+{"id": 443774, "field": "name", "en": "Wing Buffet", "hash": "1f10ac0f617ea114", "src": "db2@1.60.1.70291"}
+{"id": 443790, "field": "name", "en": "Wing Buffet", "hash": "1f10ac0f617ea114", "src": "db2@1.60.1.70291"}
+{"id": 443793, "field": "name", "en": "Wing Buffet", "hash": "1f10ac0f617ea114", "src": "db2@1.60.1.70291"}
+{"id": 443793, "field": "description", "en": "Strikes enemies in a cone in front of the caster, knocking them back.", "hash": "61a1859ee1117be6", "src": "db2@1.60.1.70291"}
+{"id": 443813, "field": "name", "en": "High-Yield Radiation Bomb", "hash": "b4810dcc6a322f3e", "src": "db2@1.60.1.70291"}
+{"id": 443813, "field": "aura", "en": "Irradiated. Suffering damage over time and movement is slowed.", "hash": "bf0174a02da5de26", "src": "db2@1.60.1.70291"}
+{"id": 443827, "field": "name", "en": "Delayed Wing Buffet", "hash": "09353ee84637fae0", "src": "db2@1.60.1.70291"}
+{"id": 443827, "field": "description", "en": "Strikes enemies in a cone in front of the caster, knocking them back.", "hash": "61a1859ee1117be6", "src": "db2@1.60.1.70291"}
+{"id": 443828, "field": "name", "en": "Wing Buffet", "hash": "1f10ac0f617ea114", "src": "db2@1.60.1.70291"}
+{"id": 443829, "field": "name", "en": "Wing Buffet", "hash": "1f10ac0f617ea114", "src": "db2@1.60.1.70291"}
+{"id": 443830, "field": "name", "en": "Delayed Wing Buffet", "hash": "09353ee84637fae0", "src": "db2@1.60.1.70291"}
+{"id": 443830, "field": "description", "en": "Strikes enemies in a cone in front of the caster, knocking them back.", "hash": "61a1859ee1117be6", "src": "db2@1.60.1.70291"}
+{"id": 443848, "field": "name", "en": "Blood Infusion", "hash": "ea73b3f876d1f635", "src": "db2@1.60.1.70291"}
+{"id": 443856, "field": "name", "en": "Caustic Overflow", "hash": "a447c37f2d23f1cb", "src": "db2@1.60.1.70291"}
+{"id": 443856, "field": "aura", "en": "$s1 Fire damage every $t1 seconds.", "hash": "0d35ca5681c76d3f", "src": "db2@1.60.1.70291"}
+{"id": 443892, "field": "name", "en": "Blood Ritual", "hash": "8225468daeefd7d9", "src": "db2@1.60.1.70291"}
+{"id": 443895, "field": "name", "en": "Blood Ritual", "hash": "8225468daeefd7d9", "src": "db2@1.60.1.70291"}
+{"id": 443910, "field": "name", "en": "[DNT] Safe zone", "hash": "3870f1050b243474", "src": "db2@1.60.1.70291"}
+{"id": 443916, "field": "name", "en": "Tides of Blood", "hash": "d8fad0a7d22eb5b5", "src": "db2@1.60.1.70291"}
+{"id": 443917, "field": "name", "en": "Tides of Blood", "hash": "d8fad0a7d22eb5b5", "src": "db2@1.60.1.70291"}
+{"id": 443917, "field": "description", "en": "Blood fills the caster, granting $s1% of maximum mana every $t1 sec.", "hash": "4886cfc6c00cb2fc", "src": "db2@1.60.1.70291"}
+{"id": 443917, "field": "aura", "en": "Restoring $s1% of maximum mana every $t1 sec.", "hash": "b4a4fc0cf1e9c673", "src": "db2@1.60.1.70291"}
+{"id": 443923, "field": "name", "en": "Tides of Blood", "hash": "d8fad0a7d22eb5b5", "src": "db2@1.60.1.70291"}
+{"id": 443930, "field": "name", "en": "Caustic Overflow", "hash": "a447c37f2d23f1cb", "src": "db2@1.60.1.70291"}
+{"id": 443940, "field": "name", "en": "Bubbling Blood", "hash": "c74a0c2824187086", "src": "db2@1.60.1.70291"}
+{"id": 443940, "field": "description", "en": "Launches blood at a target, inflicting Shadow damage to players within.", "hash": "9cc8ab15be1c88fd", "src": "db2@1.60.1.70291"}
+{"id": 443944, "field": "name", "en": "Bubbling Blood", "hash": "c74a0c2824187086", "src": "db2@1.60.1.70291"}
+{"id": 443945, "field": "name", "en": "Bubbling Blood", "hash": "c74a0c2824187086", "src": "db2@1.60.1.70291"}
+{"id": 443953, "field": "name", "en": "Bubbling Blood", "hash": "c74a0c2824187086", "src": "db2@1.60.1.70291"}
+{"id": 443953, "field": "description", "en": "$@spelldesc443940", "hash": "b323d9cc21891eff", "src": "db2@1.60.1.70291"}
+{"id": 443953, "field": "aura", "en": "$s1 Shadow damage inflicted every $t1 sec.", "hash": "62c40fe2273e4d07", "src": "db2@1.60.1.70291"}
+{"id": 443964, "field": "name", "en": "Spirit Chains", "hash": "77dd2392067992bd", "src": "db2@1.60.1.70291"}
+{"id": 443964, "field": "description", "en": "Hurls Spirit Chains at an enemy.", "hash": "3c890211476f0f01", "src": "db2@1.60.1.70291"}
+{"id": 443964, "field": "aura", "en": "Targeted for Spirit Chains!", "hash": "4a652a7e14f77e13", "src": "db2@1.60.1.70291"}
+{"id": 443975, "field": "name", "en": "Spirit Chains", "hash": "77dd2392067992bd", "src": "db2@1.60.1.70291"}
+{"id": 443975, "field": "description", "en": "$s1 Shadow damage inflicted every $t1 sec for $d.\r\nAttack, cast, and movement speed reduced by $s2% while this is in effect.", "hash": "4ab3f84465b441d8", "src": "db2@1.60.1.70291"}
+{"id": 443975, "field": "aura", "en": "$s1 Shadow damage inflicted every $t1 sec.\r\nAttack, cast, and movement speed reduced by $s2%.", "hash": "8a124f544056908c", "src": "db2@1.60.1.70291"}
+{"id": 443976, "field": "name", "en": "[DNT] Emerald Decay Visuals", "hash": "363b22b81e8ea3ce", "src": "db2@1.60.1.70291"}
+{"id": 443990, "field": "name", "en": "Frightsome Howl", "hash": "982ca6481f463ac8", "src": "db2@1.60.1.70291"}
+{"id": 443990, "field": "description", "en": "Releases a fearsome howl, inflicting $s1 Shadow damage to all enemies and sending them fleeing in fear for $d.", "hash": "79a9cdfc156143e9", "src": "db2@1.60.1.70291"}
+{"id": 443990, "field": "aura", "en": "Fleeing in fear!", "hash": "fa67e49b461af324", "src": "db2@1.60.1.70291"}
+{"id": 443999, "field": "name", "en": "Blood Ritual", "hash": "8225468daeefd7d9", "src": "db2@1.60.1.70291"}

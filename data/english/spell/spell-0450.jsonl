@@ -1,117 +1,117 @@
-{"id": 450005, "field": "name", "en": "Spare Change", "hash": "0b4027a717b95b65", "src": "db2@1.60.1.70245"}
-{"id": 450005, "field": "description", "en": "Reach into your coin purse and throw a handful of currency at your foes.", "hash": "db52295e4853c009", "src": "db2@1.60.1.70245"}
-{"id": 450005, "field": "aura", "en": "Pelted in the face with a handful of coins.", "hash": "5e730b4c47ade8e7", "src": "db2@1.60.1.70245"}
-{"id": 450012, "field": "name", "en": "Shadow Spark", "hash": "fba3129291bb6962", "src": "db2@1.60.1.70245"}
-{"id": 450012, "field": "description", "en": "Dealing damage with Shadow Cleave reduces the cast time of your next Immolate spell by $450013s1%. Stacking up to $s1 times. Lasts $450013d.", "hash": "e922f1ceb5784bdf", "src": "db2@1.60.1.70245"}
-{"id": 450013, "field": "name", "en": "Shadow Spark", "hash": "fba3129291bb6962", "src": "db2@1.60.1.70245"}
-{"id": 450013, "field": "description", "en": "Reduces the casting time of your next Immolate spell by $s1%.", "hash": "401b01e2ccb8f24f", "src": "db2@1.60.1.70245"}
-{"id": 450013, "field": "aura", "en": "Reduces the casting time of your next Immolate spell by $s1%.", "hash": "401b01e2ccb8f24f", "src": "db2@1.60.1.70245"}
-{"id": 450066, "field": "name", "en": "Destroy", "hash": "2cfb7a99e25d8dc8", "src": "db2@1.60.1.70245"}
-{"id": 450066, "field": "description", "en": "..", "hash": "000017b80005ba9c", "src": "db2@1.60.1.70245"}
-{"id": 450083, "field": "name", "en": "Rapid Cutting", "hash": "305706688cf8ed5d", "src": "db2@1.60.1.70245"}
-{"id": 450083, "field": "description", "en": "Rapid Fire now also grants $450084s1% melee attack speed for $450084d.", "hash": "ba77c77232f07488", "src": "db2@1.60.1.70245"}
-{"id": 450084, "field": "name", "en": "Rapid Cutting", "hash": "305706688cf8ed5d", "src": "db2@1.60.1.70245"}
-{"id": 450084, "field": "description", "en": "Increases melee attack speed by $s1%.", "hash": "a4764cc8330c9527", "src": "db2@1.60.1.70245"}
-{"id": 450084, "field": "aura", "en": "Increases melee attack speed by $s1%.", "hash": "a4764cc8330c9527", "src": "db2@1.60.1.70245"}
-{"id": 450085, "field": "name", "en": "Fire Crown", "hash": "d1df0d4e99ddaca9", "src": "db2@1.60.1.70245"}
-{"id": 450085, "field": "aura", "en": "A finishing touch to a Dark Iron Dwarf disguise.", "hash": "79de3b547733669d", "src": "db2@1.60.1.70245"}
-{"id": 450086, "field": "name", "en": "Prayer of Fortitude", "hash": "ccdd02746d933383", "src": "db2@1.60.1.70245"}
-{"id": 450086, "field": "description", "en": "Power infuses the target's party, increasing their Stamina by $s1 for $d.", "hash": "efc5760130318172", "src": "db2@1.60.1.70245"}
-{"id": 450086, "field": "aura", "en": "Increases Stamina by $s1.", "hash": "543f3a70e6f526d1", "src": "db2@1.60.1.70245"}
-{"id": 450091, "field": "name", "en": "Deep Slumber", "hash": "1996b0c4fce3a400", "src": "db2@1.60.1.70245"}
-{"id": 450092, "field": "name", "en": "Deep Slumber", "hash": "1996b0c4fce3a400", "src": "db2@1.60.1.70245"}
-{"id": 450098, "field": "name", "en": "Demolishing Smash", "hash": "346edada22957815", "src": "db2@1.60.1.70245"}
-{"id": 450098, "field": "description", "en": "The caster smashes the ground, inflicting $s1 Physical damage to all players and knocking them back.", "hash": "0a79ce727bc16ea1", "src": "db2@1.60.1.70245"}
-{"id": 450105, "field": "name", "en": "Purification", "hash": "6d4b95905ce467ea", "src": "db2@1.60.1.70245"}
-{"id": 450105, "field": "description", "en": "Attempts to remove one Curse, one Disease and one Poison from the Imbiber.", "hash": "28825c19b745c967", "src": "db2@1.60.1.70245"}
-{"id": 450106, "field": "name", "en": "Healing Potion", "hash": "61b64dc74c0bc45e", "src": "db2@1.60.1.70245"}
-{"id": 450106, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70245"}
-{"id": 450107, "field": "name", "en": "Healing Potion", "hash": "61b64dc74c0bc45e", "src": "db2@1.60.1.70245"}
-{"id": 450107, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70245"}
-{"id": 450108, "field": "name", "en": "Mind Vision", "hash": "48d7e0df864c1457", "src": "db2@1.60.1.70245"}
-{"id": 450108, "field": "description", "en": "Allows the caster to see through the target's eyes for $d.  Will not work if the target is in another instance or on another continent.", "hash": "ba19a81996966cf8", "src": "db2@1.60.1.70245"}
-{"id": 450108, "field": "aura", "en": "Sight granted through target's eyes.", "hash": "87c06723d74f2d51", "src": "db2@1.60.1.70245"}
-{"id": 450109, "field": "name", "en": "Torment", "hash": "38d05e957ac9c89e", "src": "db2@1.60.1.70245"}
-{"id": 450110, "field": "name", "en": "Decay", "hash": "b7472a56895b6bd4", "src": "db2@1.60.1.70245"}
-{"id": 450403, "field": "name", "en": "Lethal Shots", "hash": "7cbcd19f4ba81fcd", "src": "db2@1.60.1.70245"}
-{"id": 450403, "field": "description", "en": "Increases your critical strike chance with ranged weapons by $s1%.", "hash": "3f6982641dd90e13", "src": "db2@1.60.1.70245"}
-{"id": 450409, "field": "name", "en": "Call of Sul'thraze", "hash": "c4ec97efc54dcccd", "src": "db2@1.60.1.70245"}
-{"id": 450409, "field": "description", "en": "Combines Jang'thraze and Sang'thraze to form the mighty sword, Sul'thraze.", "hash": "4f6c59db09784323", "src": "db2@1.60.1.70245"}
-{"id": 450512, "field": "name", "en": "S03 - Attack Power 40, Spell Damage 23, Healing 40 - Wildheart", "hash": "6ad40106083d2fb6", "src": "db2@1.60.1.70245"}
-{"id": 450512, "field": "description", "en": "+$s1 Attack Power, up to $s3 increased damage from spells, and up to $s4 increased healing from spells.", "hash": "f342ef0ef47c11e5", "src": "db2@1.60.1.70245"}
-{"id": 450516, "field": "name", "en": "S03 - Attack Power 40, Healing 32 - Lightforge", "hash": "21cd7be3ae1eca96", "src": "db2@1.60.1.70245"}
-{"id": 450516, "field": "description", "en": "+$s1 Attack Power and up to $s2 increased healing from spells.", "hash": "9264759f21caa02c", "src": "db2@1.60.1.70245"}
-{"id": 450517, "field": "name", "en": "S03 - Attack Power 40, Spell Damage 23, Healing 44 - The Elements", "hash": "813fdb88cebd16ea", "src": "db2@1.60.1.70245"}
-{"id": 450517, "field": "description", "en": "+$s1 Attack Power, up to $s3 increased damage from spells, and up to $s4 increased healing from spells.", "hash": "f342ef0ef47c11e5", "src": "db2@1.60.1.70245"}
-{"id": 450527, "field": "name", "en": "S03 - Mana Proc on Cast - Magister's Regalia", "hash": "91cce22476752f77", "src": "db2@1.60.1.70245"}
-{"id": 450527, "field": "description", "en": "Your spellcasts have a $h% chance to energize you for $450554s1 mana.", "hash": "f43d6f2f73fc44db", "src": "db2@1.60.1.70245"}
-{"id": 450554, "field": "name", "en": "Sudden Insight", "hash": "c911d7860bf46242", "src": "db2@1.60.1.70245"}
-{"id": 450554, "field": "description", "en": "Restores $s1 mana.", "hash": "09fdd6de4213d4dd", "src": "db2@1.60.1.70245"}
-{"id": 450554, "field": "aura", "en": "$1s mana restored.", "hash": "ffb4963e712aefde", "src": "db2@1.60.1.70245"}
-{"id": 450576, "field": "name", "en": "S03 - Mana Proc on Cast - Vestments of the Devout", "hash": "5c4de161949f0e7c", "src": "db2@1.60.1.70245"}
-{"id": 450576, "field": "description", "en": "Your spellcasts have a $h% chance to energize you for $450554s1 mana.", "hash": "f43d6f2f73fc44db", "src": "db2@1.60.1.70245"}
-{"id": 450577, "field": "name", "en": "S03 - Mana Proc on Cast - Beaststalker Armor", "hash": "6c064a23a8b7d3e6", "src": "db2@1.60.1.70245"}
-{"id": 450577, "field": "description", "en": "Your melee and ranged autoattacks have a $h% chance to energize you for $450554s1 mana.", "hash": "9867760ff3312378", "src": "db2@1.60.1.70245"}
-{"id": 450583, "field": "name", "en": "Dark Reward", "hash": "223ee35bf4055d99", "src": "db2@1.60.1.70245"}
-{"id": 450583, "field": "description", "en": "Heals you for $s1.", "hash": "7a962ef2d81b20f9", "src": "db2@1.60.1.70245"}
-{"id": 450585, "field": "name", "en": "S03 - Heal Proc on Cast - Dreadmist Raiment", "hash": "7b36319ef8130daa", "src": "db2@1.60.1.70245"}
-{"id": 450585, "field": "description", "en": "Your spellcasts have a $h% chance to heal you for $450583s1.", "hash": "f891c6ed54a3402b", "src": "db2@1.60.1.70245"}
-{"id": 450587, "field": "name", "en": "S03 - Warrior Armor Heal Trigger - Battlegear of Valor", "hash": "3d77a5b6d1174548", "src": "db2@1.60.1.70245"}
-{"id": 450587, "field": "description", "en": "Chance on melee attack to heal for $450589s1 and generate ${$450589m2/10} Rage", "hash": "dbd433467f1e460c", "src": "db2@1.60.1.70245"}
-{"id": 450588, "field": "name", "en": "Summon Player", "hash": "f4a02f942018a261", "src": "db2@1.60.1.70245"}
-{"id": 450589, "field": "name", "en": "Warrior's Resolve", "hash": "9cf87cd53c34f0dc", "src": "db2@1.60.1.70245"}
-{"id": 450600, "field": "name", "en": "Hex", "hash": "00130eaf1ddfa296", "src": "db2@1.60.1.70245"}
-{"id": 450600, "field": "description", "en": "Transforms an enemy into a frog, rendering it unable to attack or cast spells for $d.", "hash": "973ecaf97cdc2002", "src": "db2@1.60.1.70245"}
-{"id": 450600, "field": "aura", "en": "Hexed.", "hash": "ba4d399dbaf5b2c3", "src": "db2@1.60.1.70245"}
-{"id": 450601, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70245"}
-{"id": 450601, "field": "description", "en": "Strikes an enemy with a lightning bolt that arcs to another nearby enemy. The spell affects up to $x1 targets, inflicting greater Nature damage to each successive target.", "hash": "245b0721929b5b67", "src": "db2@1.60.1.70245"}
-{"id": 450602, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70245"}
-{"id": 450602, "field": "description", "en": "Blasts an enemy with lightning, inflicting Nature damage.", "hash": "86118ec0e525b93e", "src": "db2@1.60.1.70245"}
-{"id": 450603, "field": "name", "en": "Healing Wave", "hash": "be19486873d819cb", "src": "db2@1.60.1.70245"}
-{"id": 450603, "field": "description", "en": "Calls upon Nature magic to heal an ally.", "hash": "a861c49b618fd296", "src": "db2@1.60.1.70245"}
-{"id": 450606, "field": "name", "en": "Wandering Plague", "hash": "efc9eb43e92f17b1", "src": "db2@1.60.1.70245"}
-{"id": 450607, "field": "name", "en": "Wandering Plague", "hash": "efc9eb43e92f17b1", "src": "db2@1.60.1.70245"}
-{"id": 450607, "field": "description", "en": "Diseases an enemy for $d., increasing the Physical damage it takes by $s1 and reducing its Stamina by $s2. The diseased target has $h% chance of spreading its illness to one of its nearby allies when struck in combat.", "hash": "9ac57eb9503c9f8b", "src": "db2@1.60.1.70245"}
-{"id": 450607, "field": "aura", "en": "Physical damage taken is increased by $s1.\r\nStamina reduced by $s2.\r\n$h% chance to spread Wandering Plague on hit.", "hash": "6e4b81dfda49190f", "src": "db2@1.60.1.70245"}
-{"id": 450608, "field": "name", "en": "S03 - Druid Energize Trigger - Wildheart Raiment", "hash": "942f99b96c75bbb0", "src": "db2@1.60.1.70245"}
-{"id": 450608, "field": "description", "en": "Chance on spellcast to restore $27782s1 Mana, on melee attack to regenerate $27784o1 Energy over $27784d, and when struck by a melee attack to generate ${$27783s1/10} Rage.", "hash": "e7e4a245bf0eb571", "src": "db2@1.60.1.70245"}
-{"id": 450625, "field": "name", "en": "Item - Crusader's Wrath Proc - Lightforge Armor", "hash": "c138a6bef180bb88", "src": "db2@1.60.1.70245"}
-{"id": 450625, "field": "description", "en": "Chance on melee autoattack and spellcast to increase your damage and healing done by magical spells and effects by up to $27499s1 for $27499d.", "hash": "90a96202f382ac9b", "src": "db2@1.60.1.70245"}
-{"id": 450626, "field": "name", "en": "Item - The Furious Storm Proc", "hash": "cefc0e0fcf58b7e4", "src": "db2@1.60.1.70245"}
-{"id": 450626, "field": "description", "en": "Chance on melee autoattack and spellcast to increase your damage and healing done by magical spells and effects by up to $27499s1 for $27499d.", "hash": "90a96202f382ac9b", "src": "db2@1.60.1.70245"}
-{"id": 450640, "field": "name", "en": "Wandering Plague", "hash": "efc9eb43e92f17b1", "src": "db2@1.60.1.70245"}
-{"id": 450640, "field": "aura", "en": "Physical damage taken is increased by $s1.\r\nStamina reduced by $s2.\r\n$h% chance to spread Wandering Plague on hit.", "hash": "6e4b81dfda49190f", "src": "db2@1.60.1.70245"}
-{"id": 450642, "field": "name", "en": "Volatile Infection", "hash": "8ef6e7f20d7b5bf1", "src": "db2@1.60.1.70245"}
-{"id": 450643, "field": "name", "en": "Volatile Infection", "hash": "8ef6e7f20d7b5bf1", "src": "db2@1.60.1.70245"}
-{"id": 450643, "field": "description", "en": "Infects an enemy for $d., causing it to inflict $3585s1 Nature damage to its nearby allies every $t1 sec.", "hash": "6e922a9d8a15ff87", "src": "db2@1.60.1.70245"}
-{"id": 450643, "field": "aura", "en": "Inflicting $3585s1 Nature damage to nearby allies every $t1 sec.", "hash": "953aec8c88fe9810", "src": "db2@1.60.1.70245"}
-{"id": 450644, "field": "name", "en": "Volatile Infection", "hash": "8ef6e7f20d7b5bf1", "src": "db2@1.60.1.70245"}
-{"id": 450646, "field": "name", "en": "Shadow Word: Pain", "hash": "56589cc85ee98b42", "src": "db2@1.60.1.70245"}
-{"id": 450646, "field": "description", "en": "Utters a word of darkness, inflicting Shadow damage to an enemy every $t1 sec. for $d.", "hash": "c53aaffdeeaeaf2a", "src": "db2@1.60.1.70245"}
-{"id": 450646, "field": "aura", "en": "Shadow damage inflicted every $t1 sec.", "hash": "1bf495341e2228a5", "src": "db2@1.60.1.70245"}
-{"id": 450650, "field": "name", "en": "Heal", "hash": "09c07834563b7243", "src": "db2@1.60.1.70245"}
-{"id": 450650, "field": "description", "en": "Calls upon Holy magic to heal an ally.", "hash": "4305c81054272fa3", "src": "db2@1.60.1.70245"}
-{"id": 450654, "field": "name", "en": "Shadow Shield", "hash": "3913d6f807cc0595", "src": "db2@1.60.1.70245"}
-{"id": 450654, "field": "description", "en": "Surrounds the caster with a shield woven of Shadow magic. The shield lasts $d., absorbs up to $s1 Physical or magical damage, and inflicts $s2 damage to melee attackers.", "hash": "e0db47983683395c", "src": "db2@1.60.1.70245"}
-{"id": 450654, "field": "aura", "en": "Shielded against Physical and magical damage.\r\n$s2 Shadow damage inflicted to melee attackers.", "hash": "4e5522d24650d339", "src": "db2@1.60.1.70245"}
-{"id": 450658, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70245"}
-{"id": 450658, "field": "description", "en": "Heals an ally for $s1 damage every $t1 sec. for $d.", "hash": "47182c1288d04c1b", "src": "db2@1.60.1.70245"}
-{"id": 450658, "field": "aura", "en": "$s1 damage healed every $t1 sec.", "hash": "8d136749b2731244", "src": "db2@1.60.1.70245"}
-{"id": 450659, "field": "name", "en": "Shadow Bolt", "hash": "ea2555140aa56399", "src": "db2@1.60.1.70245"}
-{"id": 450659, "field": "description", "en": "Hurls a bolt of dark magic at an enemy, inflicting Shadow damage.", "hash": "42ce84488001b714", "src": "db2@1.60.1.70245"}
-{"id": 450662, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70245"}
-{"id": 450662, "field": "description", "en": "Puts an enemy to sleep for up to $d. Any damage caused will awaken the target. Only one target can be asleep at a time.", "hash": "5d4e03d90e349a6b", "src": "db2@1.60.1.70245"}
-{"id": 450662, "field": "aura", "en": "Asleep.", "hash": "5339954ec205013e", "src": "db2@1.60.1.70245"}
-{"id": 450663, "field": "name", "en": "Acid Spit", "hash": "af621684f98496a5", "src": "db2@1.60.1.70245"}
-{"id": 450663, "field": "description", "en": "Inflicts Nature damage to an enemy.", "hash": "6878f321f28a86b5", "src": "db2@1.60.1.70245"}
-{"id": 450667, "field": "name", "en": "Stealth", "hash": "87e718bee5e635c1", "src": "db2@1.60.1.70245"}
-{"id": 450667, "field": "description", "en": "Allows the rogue to sneak around, but reduces your speed by $s3%.  Lasts until cancelled.", "hash": "e555a300f38d7c37", "src": "db2@1.60.1.70245"}
-{"id": 450667, "field": "aura", "en": "Stealthed.  Movement slowed by $s3%.", "hash": "baa30eb03bf0e7e0", "src": "db2@1.60.1.70245"}
-{"id": 450804, "field": "name", "en": "Disallow Blink", "hash": "f3492e0056a4ce8e", "src": "db2@1.60.1.70245"}
-{"id": 450811, "field": "name", "en": "Disallow Shadowstrike", "hash": "313223c7cc3438f2", "src": "db2@1.60.1.70245"}
-{"id": 450848, "field": "name", "en": "Daze", "hash": "0936426810bdb013", "src": "db2@1.60.1.70245"}
-{"id": 450849, "field": "name", "en": "Hold Stein", "hash": "f4907e831467509d", "src": "db2@1.60.1.70245"}
-{"id": 450851, "field": "name", "en": "Drink Stein", "hash": "708e7afe6618bf5f", "src": "db2@1.60.1.70245"}
-{"id": 450852, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70245"}
-{"id": 450874, "field": "name", "en": "Toss Stein", "hash": "b1ade574a21bd632", "src": "db2@1.60.1.70245"}
-{"id": 450881, "field": "name", "en": "Toss Stein", "hash": "b1ade574a21bd632", "src": "db2@1.60.1.70245"}
+{"id": 450005, "field": "name", "en": "Spare Change", "hash": "0b4027a717b95b65", "src": "db2@1.60.1.70291"}
+{"id": 450005, "field": "description", "en": "Reach into your coin purse and throw a handful of currency at your foes.", "hash": "db52295e4853c009", "src": "db2@1.60.1.70291"}
+{"id": 450005, "field": "aura", "en": "Pelted in the face with a handful of coins.", "hash": "5e730b4c47ade8e7", "src": "db2@1.60.1.70291"}
+{"id": 450012, "field": "name", "en": "Shadow Spark", "hash": "fba3129291bb6962", "src": "db2@1.60.1.70291"}
+{"id": 450012, "field": "description", "en": "Dealing damage with Shadow Cleave reduces the cast time of your next Immolate spell by $450013s1%. Stacking up to $s1 times. Lasts $450013d.", "hash": "e922f1ceb5784bdf", "src": "db2@1.60.1.70291"}
+{"id": 450013, "field": "name", "en": "Shadow Spark", "hash": "fba3129291bb6962", "src": "db2@1.60.1.70291"}
+{"id": 450013, "field": "description", "en": "Reduces the casting time of your next Immolate spell by $s1%.", "hash": "401b01e2ccb8f24f", "src": "db2@1.60.1.70291"}
+{"id": 450013, "field": "aura", "en": "Reduces the casting time of your next Immolate spell by $s1%.", "hash": "401b01e2ccb8f24f", "src": "db2@1.60.1.70291"}
+{"id": 450066, "field": "name", "en": "Destroy", "hash": "2cfb7a99e25d8dc8", "src": "db2@1.60.1.70291"}
+{"id": 450066, "field": "description", "en": "..", "hash": "000017b80005ba9c", "src": "db2@1.60.1.70291"}
+{"id": 450083, "field": "name", "en": "Rapid Cutting", "hash": "305706688cf8ed5d", "src": "db2@1.60.1.70291"}
+{"id": 450083, "field": "description", "en": "Rapid Fire now also grants $450084s1% melee attack speed for $450084d.", "hash": "ba77c77232f07488", "src": "db2@1.60.1.70291"}
+{"id": 450084, "field": "name", "en": "Rapid Cutting", "hash": "305706688cf8ed5d", "src": "db2@1.60.1.70291"}
+{"id": 450084, "field": "description", "en": "Increases melee attack speed by $s1%.", "hash": "a4764cc8330c9527", "src": "db2@1.60.1.70291"}
+{"id": 450084, "field": "aura", "en": "Increases melee attack speed by $s1%.", "hash": "a4764cc8330c9527", "src": "db2@1.60.1.70291"}
+{"id": 450085, "field": "name", "en": "Fire Crown", "hash": "d1df0d4e99ddaca9", "src": "db2@1.60.1.70291"}
+{"id": 450085, "field": "aura", "en": "A finishing touch to a Dark Iron Dwarf disguise.", "hash": "79de3b547733669d", "src": "db2@1.60.1.70291"}
+{"id": 450086, "field": "name", "en": "Prayer of Fortitude", "hash": "ccdd02746d933383", "src": "db2@1.60.1.70291"}
+{"id": 450086, "field": "description", "en": "Power infuses the target's party, increasing their Stamina by $s1 for $d.", "hash": "efc5760130318172", "src": "db2@1.60.1.70291"}
+{"id": 450086, "field": "aura", "en": "Increases Stamina by $s1.", "hash": "543f3a70e6f526d1", "src": "db2@1.60.1.70291"}
+{"id": 450091, "field": "name", "en": "Deep Slumber", "hash": "1996b0c4fce3a400", "src": "db2@1.60.1.70291"}
+{"id": 450092, "field": "name", "en": "Deep Slumber", "hash": "1996b0c4fce3a400", "src": "db2@1.60.1.70291"}
+{"id": 450098, "field": "name", "en": "Demolishing Smash", "hash": "346edada22957815", "src": "db2@1.60.1.70291"}
+{"id": 450098, "field": "description", "en": "The caster smashes the ground, inflicting $s1 Physical damage to all players and knocking them back.", "hash": "0a79ce727bc16ea1", "src": "db2@1.60.1.70291"}
+{"id": 450105, "field": "name", "en": "Purification", "hash": "6d4b95905ce467ea", "src": "db2@1.60.1.70291"}
+{"id": 450105, "field": "description", "en": "Attempts to remove one Curse, one Disease and one Poison from the Imbiber.", "hash": "28825c19b745c967", "src": "db2@1.60.1.70291"}
+{"id": 450106, "field": "name", "en": "Healing Potion", "hash": "61b64dc74c0bc45e", "src": "db2@1.60.1.70291"}
+{"id": 450106, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70291"}
+{"id": 450107, "field": "name", "en": "Healing Potion", "hash": "61b64dc74c0bc45e", "src": "db2@1.60.1.70291"}
+{"id": 450107, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70291"}
+{"id": 450108, "field": "name", "en": "Mind Vision", "hash": "48d7e0df864c1457", "src": "db2@1.60.1.70291"}
+{"id": 450108, "field": "description", "en": "Allows the caster to see through the target's eyes for $d.  Will not work if the target is in another instance or on another continent.", "hash": "ba19a81996966cf8", "src": "db2@1.60.1.70291"}
+{"id": 450108, "field": "aura", "en": "Sight granted through target's eyes.", "hash": "87c06723d74f2d51", "src": "db2@1.60.1.70291"}
+{"id": 450109, "field": "name", "en": "Torment", "hash": "38d05e957ac9c89e", "src": "db2@1.60.1.70291"}
+{"id": 450110, "field": "name", "en": "Decay", "hash": "b7472a56895b6bd4", "src": "db2@1.60.1.70291"}
+{"id": 450403, "field": "name", "en": "Lethal Shots", "hash": "7cbcd19f4ba81fcd", "src": "db2@1.60.1.70291"}
+{"id": 450403, "field": "description", "en": "Increases your critical strike chance with ranged weapons by $s1%.", "hash": "3f6982641dd90e13", "src": "db2@1.60.1.70291"}
+{"id": 450409, "field": "name", "en": "Call of Sul'thraze", "hash": "c4ec97efc54dcccd", "src": "db2@1.60.1.70291"}
+{"id": 450409, "field": "description", "en": "Combines Jang'thraze and Sang'thraze to form the mighty sword, Sul'thraze.", "hash": "4f6c59db09784323", "src": "db2@1.60.1.70291"}
+{"id": 450512, "field": "name", "en": "S03 - Attack Power 40, Spell Damage 23, Healing 40 - Wildheart", "hash": "6ad40106083d2fb6", "src": "db2@1.60.1.70291"}
+{"id": 450512, "field": "description", "en": "+$s1 Attack Power, up to $s3 increased damage from spells, and up to $s4 increased healing from spells.", "hash": "f342ef0ef47c11e5", "src": "db2@1.60.1.70291"}
+{"id": 450516, "field": "name", "en": "S03 - Attack Power 40, Healing 32 - Lightforge", "hash": "21cd7be3ae1eca96", "src": "db2@1.60.1.70291"}
+{"id": 450516, "field": "description", "en": "+$s1 Attack Power and up to $s2 increased healing from spells.", "hash": "9264759f21caa02c", "src": "db2@1.60.1.70291"}
+{"id": 450517, "field": "name", "en": "S03 - Attack Power 40, Spell Damage 23, Healing 44 - The Elements", "hash": "813fdb88cebd16ea", "src": "db2@1.60.1.70291"}
+{"id": 450517, "field": "description", "en": "+$s1 Attack Power, up to $s3 increased damage from spells, and up to $s4 increased healing from spells.", "hash": "f342ef0ef47c11e5", "src": "db2@1.60.1.70291"}
+{"id": 450527, "field": "name", "en": "S03 - Mana Proc on Cast - Magister's Regalia", "hash": "91cce22476752f77", "src": "db2@1.60.1.70291"}
+{"id": 450527, "field": "description", "en": "Your spellcasts have a $h% chance to energize you for $450554s1 mana.", "hash": "f43d6f2f73fc44db", "src": "db2@1.60.1.70291"}
+{"id": 450554, "field": "name", "en": "Sudden Insight", "hash": "c911d7860bf46242", "src": "db2@1.60.1.70291"}
+{"id": 450554, "field": "description", "en": "Restores $s1 mana.", "hash": "09fdd6de4213d4dd", "src": "db2@1.60.1.70291"}
+{"id": 450554, "field": "aura", "en": "$1s mana restored.", "hash": "ffb4963e712aefde", "src": "db2@1.60.1.70291"}
+{"id": 450576, "field": "name", "en": "S03 - Mana Proc on Cast - Vestments of the Devout", "hash": "5c4de161949f0e7c", "src": "db2@1.60.1.70291"}
+{"id": 450576, "field": "description", "en": "Your spellcasts have a $h% chance to energize you for $450554s1 mana.", "hash": "f43d6f2f73fc44db", "src": "db2@1.60.1.70291"}
+{"id": 450577, "field": "name", "en": "S03 - Mana Proc on Cast - Beaststalker Armor", "hash": "6c064a23a8b7d3e6", "src": "db2@1.60.1.70291"}
+{"id": 450577, "field": "description", "en": "Your melee and ranged autoattacks have a $h% chance to energize you for $450554s1 mana.", "hash": "9867760ff3312378", "src": "db2@1.60.1.70291"}
+{"id": 450583, "field": "name", "en": "Dark Reward", "hash": "223ee35bf4055d99", "src": "db2@1.60.1.70291"}
+{"id": 450583, "field": "description", "en": "Heals you for $s1.", "hash": "7a962ef2d81b20f9", "src": "db2@1.60.1.70291"}
+{"id": 450585, "field": "name", "en": "S03 - Heal Proc on Cast - Dreadmist Raiment", "hash": "7b36319ef8130daa", "src": "db2@1.60.1.70291"}
+{"id": 450585, "field": "description", "en": "Your spellcasts have a $h% chance to heal you for $450583s1.", "hash": "f891c6ed54a3402b", "src": "db2@1.60.1.70291"}
+{"id": 450587, "field": "name", "en": "S03 - Warrior Armor Heal Trigger - Battlegear of Valor", "hash": "3d77a5b6d1174548", "src": "db2@1.60.1.70291"}
+{"id": 450587, "field": "description", "en": "Chance on melee attack to heal for $450589s1 and generate ${$450589m2/10} Rage", "hash": "dbd433467f1e460c", "src": "db2@1.60.1.70291"}
+{"id": 450588, "field": "name", "en": "Summon Player", "hash": "f4a02f942018a261", "src": "db2@1.60.1.70291"}
+{"id": 450589, "field": "name", "en": "Warrior's Resolve", "hash": "9cf87cd53c34f0dc", "src": "db2@1.60.1.70291"}
+{"id": 450600, "field": "name", "en": "Hex", "hash": "00130eaf1ddfa296", "src": "db2@1.60.1.70291"}
+{"id": 450600, "field": "description", "en": "Transforms an enemy into a frog, rendering it unable to attack or cast spells for $d.", "hash": "973ecaf97cdc2002", "src": "db2@1.60.1.70291"}
+{"id": 450600, "field": "aura", "en": "Hexed.", "hash": "ba4d399dbaf5b2c3", "src": "db2@1.60.1.70291"}
+{"id": 450601, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70291"}
+{"id": 450601, "field": "description", "en": "Strikes an enemy with a lightning bolt that arcs to another nearby enemy. The spell affects up to $x1 targets, inflicting greater Nature damage to each successive target.", "hash": "245b0721929b5b67", "src": "db2@1.60.1.70291"}
+{"id": 450602, "field": "name", "en": "Lightning Bolt", "hash": "a8d4da7c51e97084", "src": "db2@1.60.1.70291"}
+{"id": 450602, "field": "description", "en": "Blasts an enemy with lightning, inflicting Nature damage.", "hash": "86118ec0e525b93e", "src": "db2@1.60.1.70291"}
+{"id": 450603, "field": "name", "en": "Healing Wave", "hash": "be19486873d819cb", "src": "db2@1.60.1.70291"}
+{"id": 450603, "field": "description", "en": "Calls upon Nature magic to heal an ally.", "hash": "a861c49b618fd296", "src": "db2@1.60.1.70291"}
+{"id": 450606, "field": "name", "en": "Wandering Plague", "hash": "efc9eb43e92f17b1", "src": "db2@1.60.1.70291"}
+{"id": 450607, "field": "name", "en": "Wandering Plague", "hash": "efc9eb43e92f17b1", "src": "db2@1.60.1.70291"}
+{"id": 450607, "field": "description", "en": "Diseases an enemy for $d., increasing the Physical damage it takes by $s1 and reducing its Stamina by $s2. The diseased target has $h% chance of spreading its illness to one of its nearby allies when struck in combat.", "hash": "9ac57eb9503c9f8b", "src": "db2@1.60.1.70291"}
+{"id": 450607, "field": "aura", "en": "Physical damage taken is increased by $s1.\r\nStamina reduced by $s2.\r\n$h% chance to spread Wandering Plague on hit.", "hash": "6e4b81dfda49190f", "src": "db2@1.60.1.70291"}
+{"id": 450608, "field": "name", "en": "S03 - Druid Energize Trigger - Wildheart Raiment", "hash": "942f99b96c75bbb0", "src": "db2@1.60.1.70291"}
+{"id": 450608, "field": "description", "en": "Chance on spellcast to restore $27782s1 Mana, on melee attack to regenerate $27784o1 Energy over $27784d, and when struck by a melee attack to generate ${$27783s1/10} Rage.", "hash": "e7e4a245bf0eb571", "src": "db2@1.60.1.70291"}
+{"id": 450625, "field": "name", "en": "Item - Crusader's Wrath Proc - Lightforge Armor", "hash": "c138a6bef180bb88", "src": "db2@1.60.1.70291"}
+{"id": 450625, "field": "description", "en": "Chance on melee autoattack and spellcast to increase your damage and healing done by magical spells and effects by up to $27499s1 for $27499d.", "hash": "90a96202f382ac9b", "src": "db2@1.60.1.70291"}
+{"id": 450626, "field": "name", "en": "Item - The Furious Storm Proc", "hash": "cefc0e0fcf58b7e4", "src": "db2@1.60.1.70291"}
+{"id": 450626, "field": "description", "en": "Chance on melee autoattack and spellcast to increase your damage and healing done by magical spells and effects by up to $27499s1 for $27499d.", "hash": "90a96202f382ac9b", "src": "db2@1.60.1.70291"}
+{"id": 450640, "field": "name", "en": "Wandering Plague", "hash": "efc9eb43e92f17b1", "src": "db2@1.60.1.70291"}
+{"id": 450640, "field": "aura", "en": "Physical damage taken is increased by $s1.\r\nStamina reduced by $s2.\r\n$h% chance to spread Wandering Plague on hit.", "hash": "6e4b81dfda49190f", "src": "db2@1.60.1.70291"}
+{"id": 450642, "field": "name", "en": "Volatile Infection", "hash": "8ef6e7f20d7b5bf1", "src": "db2@1.60.1.70291"}
+{"id": 450643, "field": "name", "en": "Volatile Infection", "hash": "8ef6e7f20d7b5bf1", "src": "db2@1.60.1.70291"}
+{"id": 450643, "field": "description", "en": "Infects an enemy for $d., causing it to inflict $3585s1 Nature damage to its nearby allies every $t1 sec.", "hash": "6e922a9d8a15ff87", "src": "db2@1.60.1.70291"}
+{"id": 450643, "field": "aura", "en": "Inflicting $3585s1 Nature damage to nearby allies every $t1 sec.", "hash": "953aec8c88fe9810", "src": "db2@1.60.1.70291"}
+{"id": 450644, "field": "name", "en": "Volatile Infection", "hash": "8ef6e7f20d7b5bf1", "src": "db2@1.60.1.70291"}
+{"id": 450646, "field": "name", "en": "Shadow Word: Pain", "hash": "56589cc85ee98b42", "src": "db2@1.60.1.70291"}
+{"id": 450646, "field": "description", "en": "Utters a word of darkness, inflicting Shadow damage to an enemy every $t1 sec. for $d.", "hash": "c53aaffdeeaeaf2a", "src": "db2@1.60.1.70291"}
+{"id": 450646, "field": "aura", "en": "Shadow damage inflicted every $t1 sec.", "hash": "1bf495341e2228a5", "src": "db2@1.60.1.70291"}
+{"id": 450650, "field": "name", "en": "Heal", "hash": "09c07834563b7243", "src": "db2@1.60.1.70291"}
+{"id": 450650, "field": "description", "en": "Calls upon Holy magic to heal an ally.", "hash": "4305c81054272fa3", "src": "db2@1.60.1.70291"}
+{"id": 450654, "field": "name", "en": "Shadow Shield", "hash": "3913d6f807cc0595", "src": "db2@1.60.1.70291"}
+{"id": 450654, "field": "description", "en": "Surrounds the caster with a shield woven of Shadow magic. The shield lasts $d., absorbs up to $s1 Physical or magical damage, and inflicts $s2 damage to melee attackers.", "hash": "e0db47983683395c", "src": "db2@1.60.1.70291"}
+{"id": 450654, "field": "aura", "en": "Shielded against Physical and magical damage.\r\n$s2 Shadow damage inflicted to melee attackers.", "hash": "4e5522d24650d339", "src": "db2@1.60.1.70291"}
+{"id": 450658, "field": "name", "en": "Renew", "hash": "ad0a0636e5d9cd39", "src": "db2@1.60.1.70291"}
+{"id": 450658, "field": "description", "en": "Heals an ally for $s1 damage every $t1 sec. for $d.", "hash": "47182c1288d04c1b", "src": "db2@1.60.1.70291"}
+{"id": 450658, "field": "aura", "en": "$s1 damage healed every $t1 sec.", "hash": "8d136749b2731244", "src": "db2@1.60.1.70291"}
+{"id": 450659, "field": "name", "en": "Shadow Bolt", "hash": "ea2555140aa56399", "src": "db2@1.60.1.70291"}
+{"id": 450659, "field": "description", "en": "Hurls a bolt of dark magic at an enemy, inflicting Shadow damage.", "hash": "42ce84488001b714", "src": "db2@1.60.1.70291"}
+{"id": 450662, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70291"}
+{"id": 450662, "field": "description", "en": "Puts an enemy to sleep for up to $d. Any damage caused will awaken the target. Only one target can be asleep at a time.", "hash": "5d4e03d90e349a6b", "src": "db2@1.60.1.70291"}
+{"id": 450662, "field": "aura", "en": "Asleep.", "hash": "5339954ec205013e", "src": "db2@1.60.1.70291"}
+{"id": 450663, "field": "name", "en": "Acid Spit", "hash": "af621684f98496a5", "src": "db2@1.60.1.70291"}
+{"id": 450663, "field": "description", "en": "Inflicts Nature damage to an enemy.", "hash": "6878f321f28a86b5", "src": "db2@1.60.1.70291"}
+{"id": 450667, "field": "name", "en": "Stealth", "hash": "87e718bee5e635c1", "src": "db2@1.60.1.70291"}
+{"id": 450667, "field": "description", "en": "Allows the rogue to sneak around, but reduces your speed by $s3%.  Lasts until cancelled.", "hash": "e555a300f38d7c37", "src": "db2@1.60.1.70291"}
+{"id": 450667, "field": "aura", "en": "Stealthed.  Movement slowed by $s3%.", "hash": "baa30eb03bf0e7e0", "src": "db2@1.60.1.70291"}
+{"id": 450804, "field": "name", "en": "Disallow Blink", "hash": "f3492e0056a4ce8e", "src": "db2@1.60.1.70291"}
+{"id": 450811, "field": "name", "en": "Disallow Shadowstrike", "hash": "313223c7cc3438f2", "src": "db2@1.60.1.70291"}
+{"id": 450848, "field": "name", "en": "Daze", "hash": "0936426810bdb013", "src": "db2@1.60.1.70291"}
+{"id": 450849, "field": "name", "en": "Hold Stein", "hash": "f4907e831467509d", "src": "db2@1.60.1.70291"}
+{"id": 450851, "field": "name", "en": "Drink Stein", "hash": "708e7afe6618bf5f", "src": "db2@1.60.1.70291"}
+{"id": 450852, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70291"}
+{"id": 450874, "field": "name", "en": "Toss Stein", "hash": "b1ade574a21bd632", "src": "db2@1.60.1.70291"}
+{"id": 450881, "field": "name", "en": "Toss Stein", "hash": "b1ade574a21bd632", "src": "db2@1.60.1.70291"}

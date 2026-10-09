@@ -1,180 +1,180 @@
-{"id": 239005, "field": "name", "en": "Distilled Demonic Essence", "hash": "00294a8c0ca97f38", "src": "db2@1.60.1.70245"}
-{"id": 239005, "field": "description", "en": "Allows the user to temporarily see demonic shades within Felwood.", "hash": "e41c07dc27c6146a", "src": "db2@1.60.1.70245"}
-{"id": 239006, "field": "name", "en": "Fel-Touched Flower", "hash": "18cfcbfaa5d6e67a", "src": "db2@1.60.1.70245"}
-{"id": 239006, "field": "description", "en": "Combine three Fel-Touched Flowers into a potion that will temporarily show demonic shades.\nPerverse energy emanates weakly from the once-beautiful flower.", "hash": "52c3ed625a1c74e0", "src": "db2@1.60.1.70245"}
-{"id": 239011, "field": "name", "en": "Shard of Crystallized Light", "hash": "8ad37b84f363dbee", "src": "db2@1.60.1.70245"}
-{"id": 239012, "field": "name", "en": "Splinter of Crystallized Light", "hash": "7cd12b528101d519", "src": "db2@1.60.1.70245"}
-{"id": 239013, "field": "name", "en": "Crystalline Axe", "hash": "bc24ce757e6e43aa", "src": "db2@1.60.1.70245"}
-{"id": 239013, "field": "description", "en": "Blades of Light, indeed.", "hash": "ba9ba9bcaafeaa08", "src": "db2@1.60.1.70245"}
-{"id": 239016, "field": "name", "en": "Holy Salts", "hash": "c4af4257b6d5a942", "src": "db2@1.60.1.70245"}
-{"id": 239016, "field": "description", "en": "Commonly used by crusaders to ward off bad luck. Conveniently, it also useful for cooking.", "hash": "43c4767757ec4926", "src": "db2@1.60.1.70245"}
-{"id": 239017, "field": "name", "en": "Exquisite Spices", "hash": "6abb3326f77f3983", "src": "db2@1.60.1.70245"}
-{"id": 239017, "field": "description", "en": "A highly regulated commodity; buying or selling directly would be unwise. Coveted by chefs when cooking feasts.", "hash": "7a8d8a6cb8045556", "src": "db2@1.60.1.70245"}
-{"id": 239021, "field": "name", "en": "Carrie's Cookbook", "hash": "e366b21b6b191223", "src": "db2@1.60.1.70245"}
-{"id": 239021, "field": "description", "en": "Teaches you how to cook Carrie Hearthfire's most desirable feast recipes.", "hash": "86b738e261df9fa5", "src": "db2@1.60.1.70245"}
-{"id": 239092, "field": "name", "en": "Preposterously Prosed Postage", "hash": "e80216023f62221a", "src": "db2@1.60.1.70245"}
-{"id": 239119, "field": "name", "en": "Holy Arrow", "hash": "8b0127968610de7c", "src": "db2@1.60.1.70245"}
-{"id": 239119, "field": "description", "en": "Blessed be the arrow that smites our enemies.", "hash": "8dbf8aa6fd9ff17a", "src": "db2@1.60.1.70245"}
-{"id": 239123, "field": "name", "en": "Monster - BOW_1H_STANDARD_C_01 - Red", "hash": "04d7ce74b7e0f210", "src": "db2@1.60.1.70245"}
-{"id": 239147, "field": "name", "en": "Crusader's Knapsack", "hash": "9520a610c105ebec", "src": "db2@1.60.1.70245"}
-{"id": 239148, "field": "name", "en": "Crimson Dawnwoven Bag", "hash": "2a6bcb61af20e12f", "src": "db2@1.60.1.70245"}
-{"id": 239149, "field": "name", "en": "Pattern: Crusader's Knapsack", "hash": "80ddb77eec49b45c", "src": "db2@1.60.1.70245"}
-{"id": 239149, "field": "description", "en": "Teaches you how to craft Crusader's Knapsack.", "hash": "771c656c1aa7d578", "src": "db2@1.60.1.70245"}
-{"id": 239150, "field": "name", "en": "Pattern: Crimson Dawnwoven Bag", "hash": "efa117b492981586", "src": "db2@1.60.1.70245"}
-{"id": 239150, "field": "description", "en": "Teaches you how to craft Crimson Dawnwoven Bag.", "hash": "286d32f690e92ed3", "src": "db2@1.60.1.70245"}
-{"id": 239218, "field": "name", "en": "Stoneshaper's Notes", "hash": "5af4319341e12339", "src": "db2@1.60.1.70245"}
-{"id": 239218, "field": "description", "en": "This document is written in a sloppy shorthand but what you are able to understand suggest that these plans and project notes are the product of a true genius of a craftman.", "hash": "2fc55fafca5e6456", "src": "db2@1.60.1.70245"}
-{"id": 239222, "field": "name", "en": "Schematic: Pop-Up Shrub", "hash": "6a66c74df6ed4be7", "src": "db2@1.60.1.70245"}
-{"id": 239222, "field": "description", "en": "Teaches you how to craft Pop-Up Shrub.", "hash": "901b460a6f9cd257", "src": "db2@1.60.1.70245"}
-{"id": 239223, "field": "name", "en": "House Prop", "hash": "04a4226a1b4c9413", "src": "db2@1.60.1.70245"}
-{"id": 239223, "field": "description", "en": "Incredibly convincing in the context of an opera or a play.", "hash": "52ee0f5c4cc837ef", "src": "db2@1.60.1.70245"}
-{"id": 239225, "field": "name", "en": "Classy Quill", "hash": "b150c5d1a80573de", "src": "db2@1.60.1.70245"}
-{"id": 239225, "field": "description", "en": "You can only imagine the satisfaction of writing your own signature with this.", "hash": "dc6f9e2e8868bd1c", "src": "db2@1.60.1.70245"}
-{"id": 239246, "field": "name", "en": "Fizzlefuse's Shopping List", "hash": "2d19845e7cc16850", "src": "db2@1.60.1.70245"}
-{"id": 239246, "field": "description", "en": "A list of items hastily scribbled down whenever it crossed the author's mind.", "hash": "773643e57a4f7d36", "src": "db2@1.60.1.70245"}
-{"id": 239292, "field": "name", "en": "Forgewright's Notes", "hash": "cac51fdc49f5bfa1", "src": "db2@1.60.1.70245"}
-{"id": 239292, "field": "description", "en": "Contains the collected thoughts and works of Franclorn Forgewright.", "hash": "1cd229fbaa9c300e", "src": "db2@1.60.1.70245"}
-{"id": 239302, "field": "name", "en": "Scarlet Uniform Belt", "hash": "ae86db562408f22f", "src": "db2@1.60.1.70245"}
-{"id": 239302, "field": "description", "en": "A dense leather strap with a heavy steel buckle. Truly a masterpiece of a belt, ready to be ruined by reckless tinkering.", "hash": "e9e2ed7fc61a7ff6", "src": "db2@1.60.1.70245"}
-{"id": 239316, "field": "name", "en": "Triangulation Samophlange", "hash": "ac3f481a97b00af4", "src": "db2@1.60.1.70245"}
-{"id": 239316, "field": "description", "en": "Use the device at a designated triangulation point to aid Fizzlefuse in his teleporter's calibration.", "hash": "3fe0358d1d402e5a", "src": "db2@1.60.1.70245"}
-{"id": 239512, "field": "name", "en": "Lightbreaker Wrists", "hash": "d5645bfffdbb3ec2", "src": "db2@1.60.1.70245"}
+{"id": 239005, "field": "name", "en": "Distilled Demonic Essence", "hash": "00294a8c0ca97f38", "src": "db2@1.60.1.70291"}
+{"id": 239005, "field": "description", "en": "Allows the user to temporarily see demonic shades within Felwood.", "hash": "e41c07dc27c6146a", "src": "db2@1.60.1.70291"}
+{"id": 239006, "field": "name", "en": "Fel-Touched Flower", "hash": "18cfcbfaa5d6e67a", "src": "db2@1.60.1.70291"}
+{"id": 239006, "field": "description", "en": "Combine three Fel-Touched Flowers into a potion that will temporarily show demonic shades.\nPerverse energy emanates weakly from the once-beautiful flower.", "hash": "52c3ed625a1c74e0", "src": "db2@1.60.1.70291"}
+{"id": 239011, "field": "name", "en": "Shard of Crystallized Light", "hash": "8ad37b84f363dbee", "src": "db2@1.60.1.70291"}
+{"id": 239012, "field": "name", "en": "Splinter of Crystallized Light", "hash": "7cd12b528101d519", "src": "db2@1.60.1.70291"}
+{"id": 239013, "field": "name", "en": "Crystalline Axe", "hash": "bc24ce757e6e43aa", "src": "db2@1.60.1.70291"}
+{"id": 239013, "field": "description", "en": "Blades of Light, indeed.", "hash": "ba9ba9bcaafeaa08", "src": "db2@1.60.1.70291"}
+{"id": 239016, "field": "name", "en": "Holy Salts", "hash": "c4af4257b6d5a942", "src": "db2@1.60.1.70291"}
+{"id": 239016, "field": "description", "en": "Commonly used by crusaders to ward off bad luck. Conveniently, it also useful for cooking.", "hash": "43c4767757ec4926", "src": "db2@1.60.1.70291"}
+{"id": 239017, "field": "name", "en": "Exquisite Spices", "hash": "6abb3326f77f3983", "src": "db2@1.60.1.70291"}
+{"id": 239017, "field": "description", "en": "A highly regulated commodity; buying or selling directly would be unwise. Coveted by chefs when cooking feasts.", "hash": "7a8d8a6cb8045556", "src": "db2@1.60.1.70291"}
+{"id": 239021, "field": "name", "en": "Carrie's Cookbook", "hash": "e366b21b6b191223", "src": "db2@1.60.1.70291"}
+{"id": 239021, "field": "description", "en": "Teaches you how to cook Carrie Hearthfire's most desirable feast recipes.", "hash": "86b738e261df9fa5", "src": "db2@1.60.1.70291"}
+{"id": 239092, "field": "name", "en": "Preposterously Prosed Postage", "hash": "e80216023f62221a", "src": "db2@1.60.1.70291"}
+{"id": 239119, "field": "name", "en": "Holy Arrow", "hash": "8b0127968610de7c", "src": "db2@1.60.1.70291"}
+{"id": 239119, "field": "description", "en": "Blessed be the arrow that smites our enemies.", "hash": "8dbf8aa6fd9ff17a", "src": "db2@1.60.1.70291"}
+{"id": 239123, "field": "name", "en": "Monster - BOW_1H_STANDARD_C_01 - Red", "hash": "04d7ce74b7e0f210", "src": "db2@1.60.1.70291"}
+{"id": 239147, "field": "name", "en": "Crusader's Knapsack", "hash": "9520a610c105ebec", "src": "db2@1.60.1.70291"}
+{"id": 239148, "field": "name", "en": "Crimson Dawnwoven Bag", "hash": "2a6bcb61af20e12f", "src": "db2@1.60.1.70291"}
+{"id": 239149, "field": "name", "en": "Pattern: Crusader's Knapsack", "hash": "80ddb77eec49b45c", "src": "db2@1.60.1.70291"}
+{"id": 239149, "field": "description", "en": "Teaches you how to craft Crusader's Knapsack.", "hash": "771c656c1aa7d578", "src": "db2@1.60.1.70291"}
+{"id": 239150, "field": "name", "en": "Pattern: Crimson Dawnwoven Bag", "hash": "efa117b492981586", "src": "db2@1.60.1.70291"}
+{"id": 239150, "field": "description", "en": "Teaches you how to craft Crimson Dawnwoven Bag.", "hash": "286d32f690e92ed3", "src": "db2@1.60.1.70291"}
+{"id": 239218, "field": "name", "en": "Stoneshaper's Notes", "hash": "5af4319341e12339", "src": "db2@1.60.1.70291"}
+{"id": 239218, "field": "description", "en": "This document is written in a sloppy shorthand but what you are able to understand suggest that these plans and project notes are the product of a true genius of a craftman.", "hash": "2fc55fafca5e6456", "src": "db2@1.60.1.70291"}
+{"id": 239222, "field": "name", "en": "Schematic: Pop-Up Shrub", "hash": "6a66c74df6ed4be7", "src": "db2@1.60.1.70291"}
+{"id": 239222, "field": "description", "en": "Teaches you how to craft Pop-Up Shrub.", "hash": "901b460a6f9cd257", "src": "db2@1.60.1.70291"}
+{"id": 239223, "field": "name", "en": "House Prop", "hash": "04a4226a1b4c9413", "src": "db2@1.60.1.70291"}
+{"id": 239223, "field": "description", "en": "Incredibly convincing in the context of an opera or a play.", "hash": "52ee0f5c4cc837ef", "src": "db2@1.60.1.70291"}
+{"id": 239225, "field": "name", "en": "Classy Quill", "hash": "b150c5d1a80573de", "src": "db2@1.60.1.70291"}
+{"id": 239225, "field": "description", "en": "You can only imagine the satisfaction of writing your own signature with this.", "hash": "dc6f9e2e8868bd1c", "src": "db2@1.60.1.70291"}
+{"id": 239246, "field": "name", "en": "Fizzlefuse's Shopping List", "hash": "2d19845e7cc16850", "src": "db2@1.60.1.70291"}
+{"id": 239246, "field": "description", "en": "A list of items hastily scribbled down whenever it crossed the author's mind.", "hash": "773643e57a4f7d36", "src": "db2@1.60.1.70291"}
+{"id": 239292, "field": "name", "en": "Forgewright's Notes", "hash": "cac51fdc49f5bfa1", "src": "db2@1.60.1.70291"}
+{"id": 239292, "field": "description", "en": "Contains the collected thoughts and works of Franclorn Forgewright.", "hash": "1cd229fbaa9c300e", "src": "db2@1.60.1.70291"}
+{"id": 239302, "field": "name", "en": "Scarlet Uniform Belt", "hash": "ae86db562408f22f", "src": "db2@1.60.1.70291"}
+{"id": 239302, "field": "description", "en": "A dense leather strap with a heavy steel buckle. Truly a masterpiece of a belt, ready to be ruined by reckless tinkering.", "hash": "e9e2ed7fc61a7ff6", "src": "db2@1.60.1.70291"}
+{"id": 239316, "field": "name", "en": "Triangulation Samophlange", "hash": "ac3f481a97b00af4", "src": "db2@1.60.1.70291"}
+{"id": 239316, "field": "description", "en": "Use the device at a designated triangulation point to aid Fizzlefuse in his teleporter's calibration.", "hash": "3fe0358d1d402e5a", "src": "db2@1.60.1.70291"}
+{"id": 239512, "field": "name", "en": "Lightbreaker Wrists", "hash": "d5645bfffdbb3ec2", "src": "db2@1.60.1.70291"}
 {"id": 239512, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "2a496c468cb2904f", "src": "wago@1.15.9.69722"}
-{"id": 239513, "field": "name", "en": "Lightbreaker Belt", "hash": "0d0ae6a370197b8e", "src": "db2@1.60.1.70245"}
+{"id": 239513, "field": "name", "en": "Lightbreaker Belt", "hash": "0d0ae6a370197b8e", "src": "db2@1.60.1.70291"}
 {"id": 239513, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "ffd58529f1cacae8", "src": "wago@1.15.9.69722"}
-{"id": 239514, "field": "name", "en": "Lightbreaker Grips", "hash": "0615bb4c194f4e90", "src": "db2@1.60.1.70245"}
+{"id": 239514, "field": "name", "en": "Lightbreaker Grips", "hash": "0615bb4c194f4e90", "src": "db2@1.60.1.70291"}
 {"id": 239514, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nReduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.", "hash": "6e7b75d96ee64b17", "src": "wago@1.15.9.69722"}
-{"id": 239515, "field": "name", "en": "Lightbreaker Greaves", "hash": "9e901983efba1038", "src": "db2@1.60.1.70245"}
+{"id": 239515, "field": "name", "en": "Lightbreaker Greaves", "hash": "9e901983efba1038", "src": "db2@1.60.1.70291"}
 {"id": 239515, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "1bd1913616bf5b94", "src": "wago@1.15.9.69722"}
-{"id": 239516, "field": "name", "en": "Lightbreaker Shoulders", "hash": "19f8d6259db92831", "src": "db2@1.60.1.70245"}
+{"id": 239516, "field": "name", "en": "Lightbreaker Shoulders", "hash": "19f8d6259db92831", "src": "db2@1.60.1.70291"}
 {"id": 239516, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "d50216388a114100", "src": "wago@1.15.9.69722"}
-{"id": 239517, "field": "name", "en": "Lightbreaker Greathelm", "hash": "27070796bdd3c62e", "src": "db2@1.60.1.70245"}
+{"id": 239517, "field": "name", "en": "Lightbreaker Greathelm", "hash": "27070796bdd3c62e", "src": "db2@1.60.1.70291"}
 {"id": 239517, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nReduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "5884ab0e95fc3e44", "src": "wago@1.15.9.69722"}
-{"id": 239518, "field": "name", "en": "Lightbreaker Tassets", "hash": "0fff2a1fbce2d7b0", "src": "db2@1.60.1.70245"}
+{"id": 239518, "field": "name", "en": "Lightbreaker Tassets", "hash": "0fff2a1fbce2d7b0", "src": "db2@1.60.1.70291"}
 {"id": 239518, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "ffd58529f1cacae8", "src": "wago@1.15.9.69722"}
-{"id": 239519, "field": "name", "en": "Lightbreaker Cuirass", "hash": "06cab9111a321bbd", "src": "db2@1.60.1.70245"}
+{"id": 239519, "field": "name", "en": "Lightbreaker Cuirass", "hash": "06cab9111a321bbd", "src": "db2@1.60.1.70291"}
 {"id": 239519, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "d4dcbd0ed7146a0a", "src": "wago@1.15.9.69722"}
-{"id": 239520, "field": "name", "en": "Lightbreaker Bracers", "hash": "d11bf05a9f742f37", "src": "db2@1.60.1.70245"}
+{"id": 239520, "field": "name", "en": "Lightbreaker Bracers", "hash": "d11bf05a9f742f37", "src": "db2@1.60.1.70291"}
 {"id": 239520, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.\nIncreases the block value of your shield by $s1.\nIncreased Defense +$s1.", "hash": "bc850d83ada9c7c0", "src": "wago@1.15.9.69722"}
-{"id": 239521, "field": "name", "en": "Lightbreaker Waistguard", "hash": "ee726ec76e2f7f48", "src": "db2@1.60.1.70245"}
+{"id": 239521, "field": "name", "en": "Lightbreaker Waistguard", "hash": "ee726ec76e2f7f48", "src": "db2@1.60.1.70291"}
 {"id": 239521, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases the block value of your shield by $s1.\nIncreased Defense +$s1.", "hash": "9aa1ed7b2def1959", "src": "wago@1.15.9.69722"}
-{"id": 239522, "field": "name", "en": "Lightbreaker Gauntlets", "hash": "49e997b0a4e225ad", "src": "db2@1.60.1.70245"}
+{"id": 239522, "field": "name", "en": "Lightbreaker Gauntlets", "hash": "49e997b0a4e225ad", "src": "db2@1.60.1.70291"}
 {"id": 239522, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.\nIncreases the block value of your shield by $s1.\nIncreased Defense +$s1.", "hash": "bc850d83ada9c7c0", "src": "wago@1.15.9.69722"}
-{"id": 239523, "field": "name", "en": "Lightbreaker Sabatons", "hash": "ca626eb624b284b7", "src": "db2@1.60.1.70245"}
+{"id": 239523, "field": "name", "en": "Lightbreaker Sabatons", "hash": "ca626eb624b284b7", "src": "db2@1.60.1.70291"}
 {"id": 239523, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.\nIncreases the block value of your shield by $s1.\nIncreased Defense +$s1.", "hash": "bc850d83ada9c7c0", "src": "wago@1.15.9.69722"}
-{"id": 239524, "field": "name", "en": "Lightbreaker Pauldrons", "hash": "529b38a8bc842251", "src": "db2@1.60.1.70245"}
+{"id": 239524, "field": "name", "en": "Lightbreaker Pauldrons", "hash": "529b38a8bc842251", "src": "db2@1.60.1.70291"}
 {"id": 239524, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.\nIncreases the block value of your shield by $s1.\nIncreased Defense +$s1.", "hash": "bc850d83ada9c7c0", "src": "wago@1.15.9.69722"}
-{"id": 239525, "field": "name", "en": "Lightbreaker Helmet", "hash": "34d6fa7175263607", "src": "db2@1.60.1.70245"}
+{"id": 239525, "field": "name", "en": "Lightbreaker Helmet", "hash": "34d6fa7175263607", "src": "db2@1.60.1.70291"}
 {"id": 239525, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.\nIncreases the block value of your shield by $s1.\nIncreased Defense +$s1.", "hash": "bc850d83ada9c7c0", "src": "wago@1.15.9.69722"}
-{"id": 239526, "field": "name", "en": "Lightbreaker Legplates", "hash": "4a7cdca52d3d30e5", "src": "db2@1.60.1.70245"}
+{"id": 239526, "field": "name", "en": "Lightbreaker Legplates", "hash": "4a7cdca52d3d30e5", "src": "db2@1.60.1.70291"}
 {"id": 239526, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.\nIncreases the block value of your shield by $s1.\nIncreased Defense +$s1.", "hash": "bc850d83ada9c7c0", "src": "wago@1.15.9.69722"}
-{"id": 239527, "field": "name", "en": "Lightbreaker Breastplate", "hash": "ea264f8353073783", "src": "db2@1.60.1.70245"}
+{"id": 239527, "field": "name", "en": "Lightbreaker Breastplate", "hash": "ea264f8353073783", "src": "db2@1.60.1.70291"}
 {"id": 239527, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.\nIncreases the block value of your shield by $s1.\nIncreased Defense +$s1.", "hash": "bc850d83ada9c7c0", "src": "wago@1.15.9.69722"}
-{"id": 239529, "field": "name", "en": "Dawnstalker Breastplate", "hash": "a5dea29da215f4dc", "src": "db2@1.60.1.70245"}
+{"id": 239529, "field": "name", "en": "Dawnstalker Breastplate", "hash": "a5dea29da215f4dc", "src": "db2@1.60.1.70291"}
 {"id": 239529, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.\n+$s1 Attack Power.", "hash": "e5cb052b957f3974", "src": "wago@1.15.9.69722"}
-{"id": 239530, "field": "name", "en": "Dawnstalker Greaves", "hash": "30d2d543f9b3e223", "src": "db2@1.60.1.70245"}
+{"id": 239530, "field": "name", "en": "Dawnstalker Greaves", "hash": "30d2d543f9b3e223", "src": "db2@1.60.1.70291"}
 {"id": 239530, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "fd7c17b67f188fd9", "src": "wago@1.15.9.69722"}
-{"id": 239531, "field": "name", "en": "Dawnstalker Gauntlets", "hash": "e564e1bfab7324c5", "src": "db2@1.60.1.70245"}
+{"id": 239531, "field": "name", "en": "Dawnstalker Gauntlets", "hash": "e564e1bfab7324c5", "src": "db2@1.60.1.70291"}
 {"id": 239531, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nReduces the chance for your attacks to be dodged or parried by $s1%.\n+$s1 Attack Power.", "hash": "64b6d1be5941d83b", "src": "wago@1.15.9.69722"}
-{"id": 239532, "field": "name", "en": "Dawnstalker Visor", "hash": "95d865d747ae9230", "src": "db2@1.60.1.70245"}
+{"id": 239532, "field": "name", "en": "Dawnstalker Visor", "hash": "95d865d747ae9230", "src": "db2@1.60.1.70291"}
 {"id": 239532, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "6fffabd5ed696795", "src": "wago@1.15.9.69722"}
-{"id": 239533, "field": "name", "en": "Dawnstalker Leggings", "hash": "82a6dca803e96949", "src": "db2@1.60.1.70245"}
+{"id": 239533, "field": "name", "en": "Dawnstalker Leggings", "hash": "82a6dca803e96949", "src": "db2@1.60.1.70291"}
 {"id": 239533, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "6fffabd5ed696795", "src": "wago@1.15.9.69722"}
-{"id": 239534, "field": "name", "en": "Dawnstalker Pauldrons", "hash": "ee1682b7c3152169", "src": "db2@1.60.1.70245"}
+{"id": 239534, "field": "name", "en": "Dawnstalker Pauldrons", "hash": "ee1682b7c3152169", "src": "db2@1.60.1.70291"}
 {"id": 239534, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "53aef39c392d614a", "src": "wago@1.15.9.69722"}
-{"id": 239535, "field": "name", "en": "Dawnstalker Belt", "hash": "e12594bb5405c52e", "src": "db2@1.60.1.70245"}
+{"id": 239535, "field": "name", "en": "Dawnstalker Belt", "hash": "e12594bb5405c52e", "src": "db2@1.60.1.70291"}
 {"id": 239535, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nReduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.\n+$s1 Attack Power.", "hash": "ac70ef83eb13aad2", "src": "wago@1.15.9.69722"}
-{"id": 239536, "field": "name", "en": "Dawnstalker Vambraces", "hash": "234f1590fa6f1219", "src": "db2@1.60.1.70245"}
+{"id": 239536, "field": "name", "en": "Dawnstalker Vambraces", "hash": "234f1590fa6f1219", "src": "db2@1.60.1.70291"}
 {"id": 239536, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "b3a12362991c0893", "src": "wago@1.15.9.69722"}
-{"id": 239537, "field": "name", "en": "Dawnstalker Boots", "hash": "3792ef8c1debe556", "src": "db2@1.60.1.70245"}
+{"id": 239537, "field": "name", "en": "Dawnstalker Boots", "hash": "3792ef8c1debe556", "src": "db2@1.60.1.70291"}
 {"id": 239537, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 ranged Attack Power.", "hash": "1022fc16a5cc6aa8", "src": "wago@1.15.9.69722"}
-{"id": 239538, "field": "name", "en": "Dawnstalker Girdle", "hash": "f0d67e76a3fe50a8", "src": "db2@1.60.1.70245"}
+{"id": 239538, "field": "name", "en": "Dawnstalker Girdle", "hash": "f0d67e76a3fe50a8", "src": "db2@1.60.1.70291"}
 {"id": 239538, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 ranged Attack Power.", "hash": "1022fc16a5cc6aa8", "src": "wago@1.15.9.69722"}
-{"id": 239539, "field": "name", "en": "Dawnstalker Handguards", "hash": "cf79f78c24ebca10", "src": "db2@1.60.1.70245"}
+{"id": 239539, "field": "name", "en": "Dawnstalker Handguards", "hash": "cf79f78c24ebca10", "src": "db2@1.60.1.70291"}
 {"id": 239539, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 ranged Attack Power.", "hash": "1022fc16a5cc6aa8", "src": "wago@1.15.9.69722"}
-{"id": 239540, "field": "name", "en": "Dawnstalker Headpiece", "hash": "aa821e03671599d6", "src": "db2@1.60.1.70245"}
+{"id": 239540, "field": "name", "en": "Dawnstalker Headpiece", "hash": "aa821e03671599d6", "src": "db2@1.60.1.70291"}
 {"id": 239540, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.\n+$s1 ranged Attack Power.", "hash": "73fb7bf74d950166", "src": "wago@1.15.9.69722"}
-{"id": 239541, "field": "name", "en": "Dawnstalker Legguards", "hash": "ac4c605d2445093d", "src": "db2@1.60.1.70245"}
+{"id": 239541, "field": "name", "en": "Dawnstalker Legguards", "hash": "ac4c605d2445093d", "src": "db2@1.60.1.70291"}
 {"id": 239541, "field": "description", "en": "Increases your attack speed by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 ranged Attack Power.", "hash": "5e7a2c2a2cdbb441", "src": "wago@1.15.9.69722"}
-{"id": 239542, "field": "name", "en": "Dawnstalker Spaulders", "hash": "8f3a6ea0a1562ea6", "src": "db2@1.60.1.70245"}
+{"id": 239542, "field": "name", "en": "Dawnstalker Spaulders", "hash": "8f3a6ea0a1562ea6", "src": "db2@1.60.1.70291"}
 {"id": 239542, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 ranged Attack Power.", "hash": "1022fc16a5cc6aa8", "src": "wago@1.15.9.69722"}
-{"id": 239543, "field": "name", "en": "Dawnstalker Tunic", "hash": "74574a2b16def18b", "src": "db2@1.60.1.70245"}
+{"id": 239543, "field": "name", "en": "Dawnstalker Tunic", "hash": "74574a2b16def18b", "src": "db2@1.60.1.70291"}
 {"id": 239543, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 ranged Attack Power.", "hash": "1022fc16a5cc6aa8", "src": "wago@1.15.9.69722"}
-{"id": 239544, "field": "name", "en": "Dawnstalker Wristguards", "hash": "2be0597448e69e04", "src": "db2@1.60.1.70245"}
+{"id": 239544, "field": "name", "en": "Dawnstalker Wristguards", "hash": "2be0597448e69e04", "src": "db2@1.60.1.70291"}
 {"id": 239544, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 ranged Attack Power.", "hash": "1022fc16a5cc6aa8", "src": "wago@1.15.9.69722"}
-{"id": 239545, "field": "name", "en": "Weathered Night Elf Artifact", "hash": "b5e0c37d829be8ac", "src": "db2@1.60.1.70245"}
-{"id": 239545, "field": "description", "en": "Pitted erosion shows where this stone icon has succumbed to years of weathering.", "hash": "fb2aab89d320101a", "src": "db2@1.60.1.70245"}
-{"id": 239547, "field": "name", "en": "Duskwraith Wristguards", "hash": "7bf1a8cd0fc06cd5", "src": "db2@1.60.1.70245"}
+{"id": 239545, "field": "name", "en": "Weathered Night Elf Artifact", "hash": "b5e0c37d829be8ac", "src": "db2@1.60.1.70291"}
+{"id": 239545, "field": "description", "en": "Pitted erosion shows where this stone icon has succumbed to years of weathering.", "hash": "fb2aab89d320101a", "src": "db2@1.60.1.70291"}
+{"id": 239547, "field": "name", "en": "Duskwraith Wristguards", "hash": "7bf1a8cd0fc06cd5", "src": "db2@1.60.1.70291"}
 {"id": 239547, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nIncreased Defense +$s1.", "hash": "666a1b06db11e847", "src": "wago@1.15.9.69722"}
-{"id": 239548, "field": "name", "en": "Duskwraith Chestguard", "hash": "396d18134086f66a", "src": "db2@1.60.1.70245"}
+{"id": 239548, "field": "name", "en": "Duskwraith Chestguard", "hash": "396d18134086f66a", "src": "db2@1.60.1.70291"}
 {"id": 239548, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.\nIncreased Defense +$s1.", "hash": "6b88215954e6167a", "src": "wago@1.15.9.69722"}
-{"id": 239549, "field": "name", "en": "Duskwraith Grips", "hash": "c17906d3462d5568", "src": "db2@1.60.1.70245"}
+{"id": 239549, "field": "name", "en": "Duskwraith Grips", "hash": "c17906d3462d5568", "src": "db2@1.60.1.70291"}
 {"id": 239549, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nIncreased Defense +$s1.", "hash": "666a1b06db11e847", "src": "wago@1.15.9.69722"}
-{"id": 239550, "field": "name", "en": "Duskwraith Mask", "hash": "312a111abf7b9b6b", "src": "db2@1.60.1.70245"}
+{"id": 239550, "field": "name", "en": "Duskwraith Mask", "hash": "312a111abf7b9b6b", "src": "db2@1.60.1.70291"}
 {"id": 239550, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nReduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.\nIncreased Defense +$s1.", "hash": "dedb2bb00fb71a48", "src": "wago@1.15.9.69722"}
-{"id": 239551, "field": "name", "en": "Duskwraith Leggings", "hash": "05c2ac38ceccd886", "src": "db2@1.60.1.70245"}
+{"id": 239551, "field": "name", "en": "Duskwraith Leggings", "hash": "05c2ac38ceccd886", "src": "db2@1.60.1.70291"}
 {"id": 239551, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.\nIncreased Defense +$s1.", "hash": "6b88215954e6167a", "src": "wago@1.15.9.69722"}
-{"id": 239552, "field": "name", "en": "Duskwraith Mantle", "hash": "bc4bb73819bfb6c6", "src": "db2@1.60.1.70245"}
+{"id": 239552, "field": "name", "en": "Duskwraith Mantle", "hash": "bc4bb73819bfb6c6", "src": "db2@1.60.1.70291"}
 {"id": 239552, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nIncreased Defense +$s1.", "hash": "666a1b06db11e847", "src": "wago@1.15.9.69722"}
-{"id": 239553, "field": "name", "en": "Duskwraith Treads", "hash": "c6192bd6de00399b", "src": "db2@1.60.1.70245"}
+{"id": 239553, "field": "name", "en": "Duskwraith Treads", "hash": "c6192bd6de00399b", "src": "db2@1.60.1.70291"}
 {"id": 239553, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nIncreased Defense +$s1.", "hash": "666a1b06db11e847", "src": "wago@1.15.9.69722"}
-{"id": 239554, "field": "name", "en": "Duskwraith Belt", "hash": "2fb1c409bbe44ef6", "src": "db2@1.60.1.70245"}
+{"id": 239554, "field": "name", "en": "Duskwraith Belt", "hash": "2fb1c409bbe44ef6", "src": "db2@1.60.1.70291"}
 {"id": 239554, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.\nIncreased Defense +$s1.", "hash": "6b88215954e6167a", "src": "wago@1.15.9.69722"}
-{"id": 239555, "field": "name", "en": "Duskwraith Bracers", "hash": "645ee273c3b5cdca", "src": "db2@1.60.1.70245"}
+{"id": 239555, "field": "name", "en": "Duskwraith Bracers", "hash": "645ee273c3b5cdca", "src": "db2@1.60.1.70291"}
 {"id": 239555, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nReduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.", "hash": "258dfb74a638a6b8", "src": "wago@1.15.9.69722"}
-{"id": 239556, "field": "name", "en": "Duskwraith Waistguard", "hash": "61d5ae90edabaed2", "src": "db2@1.60.1.70245"}
+{"id": 239556, "field": "name", "en": "Duskwraith Waistguard", "hash": "61d5ae90edabaed2", "src": "db2@1.60.1.70291"}
 {"id": 239556, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nReduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.", "hash": "f22363d42dce1f51", "src": "wago@1.15.9.69722"}
-{"id": 239557, "field": "name", "en": "Duskwraith Gauntlets", "hash": "fca0172f87d1f9e6", "src": "db2@1.60.1.70245"}
+{"id": 239557, "field": "name", "en": "Duskwraith Gauntlets", "hash": "fca0172f87d1f9e6", "src": "db2@1.60.1.70291"}
 {"id": 239557, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "d50216388a114100", "src": "wago@1.15.9.69722"}
-{"id": 239558, "field": "name", "en": "Duskwraith Sabatons", "hash": "25a4506ef492fd9d", "src": "db2@1.60.1.70245"}
+{"id": 239558, "field": "name", "en": "Duskwraith Sabatons", "hash": "25a4506ef492fd9d", "src": "db2@1.60.1.70291"}
 {"id": 239558, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "d50216388a114100", "src": "wago@1.15.9.69722"}
-{"id": 239559, "field": "name", "en": "Duskwraith Pauldrons", "hash": "0551b82c9f73f68a", "src": "db2@1.60.1.70245"}
+{"id": 239559, "field": "name", "en": "Duskwraith Pauldrons", "hash": "0551b82c9f73f68a", "src": "db2@1.60.1.70291"}
 {"id": 239559, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nReduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.", "hash": "258dfb74a638a6b8", "src": "wago@1.15.9.69722"}
-{"id": 239560, "field": "name", "en": "Duskwraith Helmet", "hash": "18a6a266c71ec0d5", "src": "db2@1.60.1.70245"}
+{"id": 239560, "field": "name", "en": "Duskwraith Helmet", "hash": "18a6a266c71ec0d5", "src": "db2@1.60.1.70291"}
 {"id": 239560, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "d50216388a114100", "src": "wago@1.15.9.69722"}
-{"id": 239561, "field": "name", "en": "Duskwraith Legplates", "hash": "fd335c24102d051e", "src": "db2@1.60.1.70245"}
+{"id": 239561, "field": "name", "en": "Duskwraith Legplates", "hash": "fd335c24102d051e", "src": "db2@1.60.1.70291"}
 {"id": 239561, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "d50216388a114100", "src": "wago@1.15.9.69722"}
-{"id": 239562, "field": "name", "en": "Duskwraith Breastplate", "hash": "f5eff1f668efc3ad", "src": "db2@1.60.1.70245"}
+{"id": 239562, "field": "name", "en": "Duskwraith Breastplate", "hash": "f5eff1f668efc3ad", "src": "db2@1.60.1.70291"}
 {"id": 239562, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "d50216388a114100", "src": "wago@1.15.9.69722"}
-{"id": 239565, "field": "name", "en": "Garb of Revelation", "hash": "af12e56200632a63", "src": "db2@1.60.1.70245"}
-{"id": 239565, "field": "description", "en": "Increases the damage dealt by your damage over time spells by $s1%.", "hash": "13698c8ffad1c675", "src": "db2@1.60.1.70245"}
-{"id": 239572, "field": "name", "en": "Boots of Revelation", "hash": "ebe988adabcab1ac", "src": "db2@1.60.1.70245"}
-{"id": 239572, "field": "description", "en": "Increases the damage dealt by your damage over time spells by $s1%.", "hash": "13698c8ffad1c675", "src": "db2@1.60.1.70245"}
-{"id": 239574, "field": "name", "en": "Hands of Revelation", "hash": "950491f6a9da6cb3", "src": "db2@1.60.1.70245"}
-{"id": 239574, "field": "description", "en": "Increases the damage dealt by your damage over time spells by $s1%.", "hash": "13698c8ffad1c675", "src": "db2@1.60.1.70245"}
-{"id": 239575, "field": "name", "en": "Crown of Revelation", "hash": "4d980b9ead3fe5a3", "src": "db2@1.60.1.70245"}
-{"id": 239575, "field": "description", "en": "Increases the damage dealt by your damage over time spells by $s1%.", "hash": "13698c8ffad1c675", "src": "db2@1.60.1.70245"}
-{"id": 239577, "field": "name", "en": "Pants of Revelation", "hash": "26e9055a5c0d62b2", "src": "db2@1.60.1.70245"}
-{"id": 239577, "field": "description", "en": "Increases the damage dealt by your damage over time spells by $s1%.", "hash": "13698c8ffad1c675", "src": "db2@1.60.1.70245"}
-{"id": 239581, "field": "name", "en": "Mantle of Revelation", "hash": "7bfbfcee2f7fc460", "src": "db2@1.60.1.70245"}
-{"id": 239581, "field": "description", "en": "Increases the damage dealt by your damage over time spells by $s1%.", "hash": "13698c8ffad1c675", "src": "db2@1.60.1.70245"}
-{"id": 239582, "field": "name", "en": "Girdle of Revelation", "hash": "43273c2866e6a219", "src": "db2@1.60.1.70245"}
-{"id": 239582, "field": "description", "en": "Increases the damage dealt by your damage over time spells by $s1%.", "hash": "13698c8ffad1c675", "src": "db2@1.60.1.70245"}
-{"id": 239583, "field": "name", "en": "Wrists of Revelation", "hash": "34ae27caa92fb804", "src": "db2@1.60.1.70245"}
-{"id": 239583, "field": "description", "en": "Increases the damage dealt by your damage over time spells by $s1%.", "hash": "13698c8ffad1c675", "src": "db2@1.60.1.70245"}
-{"id": 239584, "field": "name", "en": "Gloves of Revelation", "hash": "c5c52ecfb1f6f634", "src": "db2@1.60.1.70245"}
+{"id": 239565, "field": "name", "en": "Garb of Revelation", "hash": "af12e56200632a63", "src": "db2@1.60.1.70291"}
+{"id": 239565, "field": "description", "en": "Increases the damage dealt by your damage over time spells by $s1%.", "hash": "13698c8ffad1c675", "src": "db2@1.60.1.70291"}
+{"id": 239572, "field": "name", "en": "Boots of Revelation", "hash": "ebe988adabcab1ac", "src": "db2@1.60.1.70291"}
+{"id": 239572, "field": "description", "en": "Increases the damage dealt by your damage over time spells by $s1%.", "hash": "13698c8ffad1c675", "src": "db2@1.60.1.70291"}
+{"id": 239574, "field": "name", "en": "Hands of Revelation", "hash": "950491f6a9da6cb3", "src": "db2@1.60.1.70291"}
+{"id": 239574, "field": "description", "en": "Increases the damage dealt by your damage over time spells by $s1%.", "hash": "13698c8ffad1c675", "src": "db2@1.60.1.70291"}
+{"id": 239575, "field": "name", "en": "Crown of Revelation", "hash": "4d980b9ead3fe5a3", "src": "db2@1.60.1.70291"}
+{"id": 239575, "field": "description", "en": "Increases the damage dealt by your damage over time spells by $s1%.", "hash": "13698c8ffad1c675", "src": "db2@1.60.1.70291"}
+{"id": 239577, "field": "name", "en": "Pants of Revelation", "hash": "26e9055a5c0d62b2", "src": "db2@1.60.1.70291"}
+{"id": 239577, "field": "description", "en": "Increases the damage dealt by your damage over time spells by $s1%.", "hash": "13698c8ffad1c675", "src": "db2@1.60.1.70291"}
+{"id": 239581, "field": "name", "en": "Mantle of Revelation", "hash": "7bfbfcee2f7fc460", "src": "db2@1.60.1.70291"}
+{"id": 239581, "field": "description", "en": "Increases the damage dealt by your damage over time spells by $s1%.", "hash": "13698c8ffad1c675", "src": "db2@1.60.1.70291"}
+{"id": 239582, "field": "name", "en": "Girdle of Revelation", "hash": "43273c2866e6a219", "src": "db2@1.60.1.70291"}
+{"id": 239582, "field": "description", "en": "Increases the damage dealt by your damage over time spells by $s1%.", "hash": "13698c8ffad1c675", "src": "db2@1.60.1.70291"}
+{"id": 239583, "field": "name", "en": "Wrists of Revelation", "hash": "34ae27caa92fb804", "src": "db2@1.60.1.70291"}
+{"id": 239583, "field": "description", "en": "Increases the damage dealt by your damage over time spells by $s1%.", "hash": "13698c8ffad1c675", "src": "db2@1.60.1.70291"}
+{"id": 239584, "field": "name", "en": "Gloves of Revelation", "hash": "c5c52ecfb1f6f634", "src": "db2@1.60.1.70291"}
 {"id": 239584, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "af7f212f2f46e894", "src": "wago@1.15.9.69722"}
-{"id": 239585, "field": "name", "en": "Circlet of Revelation", "hash": "3b67e8f6e48e1d13", "src": "db2@1.60.1.70245"}
+{"id": 239585, "field": "name", "en": "Circlet of Revelation", "hash": "3b67e8f6e48e1d13", "src": "db2@1.60.1.70291"}
 {"id": 239585, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "af7f212f2f46e894", "src": "wago@1.15.9.69722"}
-{"id": 239586, "field": "name", "en": "Shoulderpads of Revelation", "hash": "e33ab6bd9d08b717", "src": "db2@1.60.1.70245"}
+{"id": 239586, "field": "name", "en": "Shoulderpads of Revelation", "hash": "e33ab6bd9d08b717", "src": "db2@1.60.1.70291"}
 {"id": 239586, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "af7f212f2f46e894", "src": "wago@1.15.9.69722"}
-{"id": 239587, "field": "name", "en": "Leggings of Revelation", "hash": "29ea4c5fb5348f6a", "src": "db2@1.60.1.70245"}
+{"id": 239587, "field": "name", "en": "Leggings of Revelation", "hash": "29ea4c5fb5348f6a", "src": "db2@1.60.1.70291"}
 {"id": 239587, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "af7f212f2f46e894", "src": "wago@1.15.9.69722"}
-{"id": 239588, "field": "name", "en": "Bindings of Revelation", "hash": "7adcb772ebe34e63", "src": "db2@1.60.1.70245"}
+{"id": 239588, "field": "name", "en": "Bindings of Revelation", "hash": "7adcb772ebe34e63", "src": "db2@1.60.1.70291"}
 {"id": 239588, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "af7f212f2f46e894", "src": "wago@1.15.9.69722"}
-{"id": 239589, "field": "name", "en": "Sandals of Revelation", "hash": "9c7a1b02645397d0", "src": "db2@1.60.1.70245"}
+{"id": 239589, "field": "name", "en": "Sandals of Revelation", "hash": "9c7a1b02645397d0", "src": "db2@1.60.1.70291"}
 {"id": 239589, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "af7f212f2f46e894", "src": "wago@1.15.9.69722"}
-{"id": 239590, "field": "name", "en": "Belt of Revelation", "hash": "96986a7e04354164", "src": "db2@1.60.1.70245"}
+{"id": 239590, "field": "name", "en": "Belt of Revelation", "hash": "96986a7e04354164", "src": "db2@1.60.1.70291"}
 {"id": 239590, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "af7f212f2f46e894", "src": "wago@1.15.9.69722"}
-{"id": 239591, "field": "name", "en": "Robe of Revelation", "hash": "b43573a7dc614aa2", "src": "db2@1.60.1.70245"}
+{"id": 239591, "field": "name", "en": "Robe of Revelation", "hash": "b43573a7dc614aa2", "src": "db2@1.60.1.70291"}
 {"id": 239591, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 239609, "field": "name", "en": "Saria's Knapsack", "hash": "d0e75bb02623bf73", "src": "db2@1.60.1.70245"}
-{"id": 239618, "field": "name", "en": "Monster - Sword 1H - Vanquisher's Sword (Alt)", "hash": "4c578fbb4c4e08aa", "src": "db2@1.60.1.70245"}
+{"id": 239609, "field": "name", "en": "Saria's Knapsack", "hash": "d0e75bb02623bf73", "src": "db2@1.60.1.70291"}
+{"id": 239618, "field": "name", "en": "Monster - Sword 1H - Vanquisher's Sword (Alt)", "hash": "4c578fbb4c4e08aa", "src": "db2@1.60.1.70291"}
 {"id": 239618, "field": "description", "en": "+$s1 Attack Power.", "hash": "ff5c97b29bc1954f", "src": "wago@1.15.9.69722"}
-{"id": 239688, "field": "name", "en": "Monster - Spear 2H - Scarlet Cavalry - Spear", "hash": "58d5ba5cb7587356", "src": "db2@1.60.1.70245"}
+{"id": 239688, "field": "name", "en": "Monster - Spear 2H - Scarlet Cavalry - Spear", "hash": "58d5ba5cb7587356", "src": "db2@1.60.1.70291"}
 {"id": 239688, "field": "description", "en": "+$s1 Attack Power.", "hash": "ff5c97b29bc1954f", "src": "wago@1.15.9.69722"}
-{"id": 239698, "field": "name", "en": "Dawnwoven Fabric", "hash": "461ba36f8d87eec1", "src": "db2@1.60.1.70245"}
-{"id": 239698, "field": "description", "en": "Small pieces of cloth and thread that were mysteriously drawn toward the Crusader's Loom. Apparently used when stitching holy vestments.", "hash": "203ef4f72997e01b", "src": "db2@1.60.1.70245"}
-{"id": 239704, "field": "name", "en": "Amulet of Gol'gere", "hash": "0578089f26f5d8f4", "src": "db2@1.60.1.70245"}
-{"id": 239764, "field": "name", "en": "Crimson Bladeleaf", "hash": "cce58b0abc9967e5", "src": "db2@1.60.1.70245"}
-{"id": 239764, "field": "description", "en": "A vibrant red dye extracted from everything except the petals of a freshly bloomed Bladeleaf.", "hash": "d1c34e4de3f0ad10", "src": "db2@1.60.1.70245"}
+{"id": 239698, "field": "name", "en": "Dawnwoven Fabric", "hash": "461ba36f8d87eec1", "src": "db2@1.60.1.70291"}
+{"id": 239698, "field": "description", "en": "Small pieces of cloth and thread that were mysteriously drawn toward the Crusader's Loom. Apparently used when stitching holy vestments.", "hash": "203ef4f72997e01b", "src": "db2@1.60.1.70291"}
+{"id": 239704, "field": "name", "en": "Amulet of Gol'gere", "hash": "0578089f26f5d8f4", "src": "db2@1.60.1.70291"}
+{"id": 239764, "field": "name", "en": "Crimson Bladeleaf", "hash": "cce58b0abc9967e5", "src": "db2@1.60.1.70291"}
+{"id": 239764, "field": "description", "en": "A vibrant red dye extracted from everything except the petals of a freshly bloomed Bladeleaf.", "hash": "d1c34e4de3f0ad10", "src": "db2@1.60.1.70291"}

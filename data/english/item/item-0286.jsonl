@@ -1,205 +1,208 @@
-{"id": 286008, "field": "name", "en": "Naga Spinefin", "hash": "5f9f4eadf3f6bc25", "src": "db2@1.60.1.70245"}
-{"id": 286009, "field": "name", "en": "Aggor's Belt", "hash": "a1ca8e461e79236d", "src": "db2@1.60.1.70245"}
-{"id": 286010, "field": "name", "en": "Broken Bone Trident", "hash": "0288ac519c65fb71", "src": "db2@1.60.1.70245"}
-{"id": 286011, "field": "name", "en": "Banner Scrap", "hash": "162b940420273f6c", "src": "db2@1.60.1.70245"}
-{"id": 286012, "field": "name", "en": "Orcish Dagger", "hash": "f37a21b675c9e16f", "src": "db2@1.60.1.70245"}
-{"id": 286017, "field": "name", "en": "Dewy Lasher Frond", "hash": "3105d4df0f3f5849", "src": "db2@1.60.1.70245"}
-{"id": 286069, "field": "name", "en": "Lashwater Salve", "hash": "6c5ed4d503f3adaa", "src": "db2@1.60.1.70245"}
-{"id": 286075, "field": "name", "en": "Herak's Head", "hash": "6d47073a998759e8", "src": "db2@1.60.1.70245"}
-{"id": 286076, "field": "name", "en": "Schematic: Small Purple Rocket", "hash": "36ccd5804e2e9414", "src": "db2@1.60.1.70245"}
-{"id": 286076, "field": "description", "en": "Teaches you how to make a Small Purple Rocket.", "hash": "affac0fc94d38f61", "src": "db2@1.60.1.70245"}
-{"id": 286077, "field": "name", "en": "Schematic: Small White Rocket", "hash": "e5f01917553cfafa", "src": "db2@1.60.1.70245"}
-{"id": 286077, "field": "description", "en": "Teaches you how to make a Small White Rocket.", "hash": "b6d941c8f398c649", "src": "db2@1.60.1.70245"}
-{"id": 286078, "field": "name", "en": "Schematic: Small Yellow Rocket", "hash": "c9fbffdb44a0df23", "src": "db2@1.60.1.70245"}
-{"id": 286078, "field": "description", "en": "Teaches you how to make a Small Yellow Rocket.", "hash": "011d6f09065e4460", "src": "db2@1.60.1.70245"}
-{"id": 286079, "field": "name", "en": "Schematic: Large Purple Rocket", "hash": "9b8d8b0552ababc1", "src": "db2@1.60.1.70245"}
-{"id": 286079, "field": "description", "en": "Teaches you how to make a Large Purple Rocket.", "hash": "3e97a50faca35aed", "src": "db2@1.60.1.70245"}
-{"id": 286080, "field": "name", "en": "Schematic: Large White Rocket", "hash": "830af9433a12ce09", "src": "db2@1.60.1.70245"}
-{"id": 286080, "field": "description", "en": "Teaches you how to make a Large White Rocket.", "hash": "1b99f752f815ddf6", "src": "db2@1.60.1.70245"}
-{"id": 286081, "field": "name", "en": "Schematic: Large Yellow Rocket", "hash": "2ebcb565491df6d0", "src": "db2@1.60.1.70245"}
-{"id": 286081, "field": "description", "en": "Teaches you how to make a Large Yellow Rocket.", "hash": "8fba53171e2e0fec", "src": "db2@1.60.1.70245"}
-{"id": 286082, "field": "name", "en": "Schematic: Purple Rocket Cluster", "hash": "7a199a8755369637", "src": "db2@1.60.1.70245"}
-{"id": 286082, "field": "description", "en": "Teaches you how to make a Purple Rocket Cluster.", "hash": "2600308bffa22198", "src": "db2@1.60.1.70245"}
-{"id": 286083, "field": "name", "en": "Schematic: White Rocket Cluster", "hash": "80298a580077ddc6", "src": "db2@1.60.1.70245"}
-{"id": 286083, "field": "description", "en": "Teaches you how to make a White Rocket Cluster.", "hash": "197e2e6a73a3149d", "src": "db2@1.60.1.70245"}
-{"id": 286084, "field": "name", "en": "Schematic: Yellow Rocket Cluster", "hash": "e628fdb8b5f3df69", "src": "db2@1.60.1.70245"}
-{"id": 286084, "field": "description", "en": "Teaches you how to make a Yellow Rocket Cluster.", "hash": "71dff3b1f1dd5156", "src": "db2@1.60.1.70245"}
-{"id": 286085, "field": "name", "en": "Schematic: Large Purple Rocket Cluster", "hash": "ae7edbcf3ae1b529", "src": "db2@1.60.1.70245"}
-{"id": 286085, "field": "description", "en": "Teaches you how to make a Large Purple Rocket Cluster.", "hash": "d077e0f736f6f421", "src": "db2@1.60.1.70245"}
-{"id": 286086, "field": "name", "en": "Schematic: Large White Rocket Cluster", "hash": "0f37fe2613211f15", "src": "db2@1.60.1.70245"}
-{"id": 286086, "field": "description", "en": "Teaches you how to make a Large White Rocket Cluster.", "hash": "2a6d81d6b51c3c9e", "src": "db2@1.60.1.70245"}
-{"id": 286087, "field": "name", "en": "Schematic: Large Yellow Rocket Cluster", "hash": "1a8e3f059b9efe5b", "src": "db2@1.60.1.70245"}
-{"id": 286087, "field": "description", "en": "Teaches you how to make a Large Yellow Rocket Cluster.", "hash": "1c57a422293223df", "src": "db2@1.60.1.70245"}
-{"id": 286104, "field": "name", "en": "Longwalker Malah's Report", "hash": "4eb17baa5078d714", "src": "db2@1.60.1.70245"}
-{"id": 286139, "field": "name", "en": "Monster - 1H Mace, Barrow Deeps - Red", "hash": "52b58633c680923a", "src": "db2@1.60.1.70245"}
-{"id": 286140, "field": "name", "en": "Monster - Shield, Paladin", "hash": "7e524370fb843671", "src": "db2@1.60.1.70245"}
-{"id": 286152, "field": "name", "en": "Plated Armorfish", "hash": "7a243bc83cb6b6f4", "src": "db2@1.60.1.70245"}
-{"id": 286152, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 sec eating you will become well fed and gain $s2 Armor for $1319310d. $@spelldesc1243969", "hash": "a37508daa16aed9e", "src": "db2@1.60.1.70245"}
-{"id": 286153, "field": "name", "en": "Recipe: Plated Armorfish", "hash": "cf7924f201b2f675", "src": "db2@1.60.1.70245"}
-{"id": 286153, "field": "description", "en": "Teaches you how to cook Plated Armorfish.", "hash": "c3253d4033ad3e36", "src": "db2@1.60.1.70245"}
-{"id": 286176, "field": "name", "en": "Executor's Motivator", "hash": "d4c93368d5660910", "src": "db2@1.60.1.70245"}
-{"id": 286176, "field": "description", "en": "Motivate a member of the Deathguard.", "hash": "664cd0c89e730e98", "src": "db2@1.60.1.70245"}
-{"id": 286200, "field": "name", "en": "Dillinger's Report", "hash": "9f37693c2094f8a0", "src": "db2@1.60.1.70245"}
-{"id": 286201, "field": "name", "en": "Kristof's Report", "hash": "764ebdf1f4319dd0", "src": "db2@1.60.1.70245"}
-{"id": 286202, "field": "name", "en": "Gordo's Report", "hash": "996ffb8dbfd9a76f", "src": "db2@1.60.1.70245"}
-{"id": 286204, "field": "name", "en": "Tomb Weed", "hash": "739d084a832a3a9f", "src": "db2@1.60.1.70245"}
-{"id": 286205, "field": "name", "en": "Half-Eaten Fish", "hash": "867f276a111505d5", "src": "db2@1.60.1.70245"}
-{"id": 286209, "field": "name", "en": "Shiny Junk", "hash": "aa182b326128491f", "src": "db2@1.60.1.70245"}
-{"id": 286210, "field": "name", "en": "A Winter Veil Gift", "hash": "919f9efa8491b6dc", "src": "db2@1.60.1.70245"}
-{"id": 286214, "field": "name", "en": "Duskweed Petal", "hash": "d9c343f7e293ee8d", "src": "db2@1.60.1.70245"}
-{"id": 286215, "field": "name", "en": "Vial of Animal Blood", "hash": "46711af818375665", "src": "db2@1.60.1.70245"}
-{"id": 286259, "field": "name", "en": "Faintly Glowing Bone", "hash": "12cee6593268a73c", "src": "db2@1.60.1.70245"}
-{"id": 286263, "field": "name", "en": "Muradin Bronzebeard's Silver Coin", "hash": "4eb55f70e1d562fb", "src": "db2@1.60.1.70245"}
-{"id": 286263, "field": "description", "en": "May the Holy Light protect us on our expedition to the frozen north.", "hash": "eee6c8a991b18f9f", "src": "db2@1.60.1.70245"}
-{"id": 286264, "field": "name", "en": "Aegwynn's Silver Coin", "hash": "4083f8a19592a840", "src": "db2@1.60.1.70245"}
-{"id": 286264, "field": "description", "en": "I really wish you mages would get your heads out from inside your own... books.", "hash": "2fdc6df9b9bc8eb6", "src": "db2@1.60.1.70245"}
-{"id": 286265, "field": "name", "en": "Alleria's Silver Coin", "hash": "ea5b76b7333f252c", "src": "db2@1.60.1.70245"}
-{"id": 286265, "field": "description", "en": "May my sisters realize their full potential, the name Windrunner known as a result of their deeds.", "hash": "38e334d2941e7216", "src": "db2@1.60.1.70245"}
-{"id": 286266, "field": "name", "en": "Antonidas' Silver Coin", "hash": "031ddd80ad959aa1", "src": "db2@1.60.1.70245"}
-{"id": 286266, "field": "description", "en": "Grant me the strength to accept the things that I cannot change, the courage to change the things I can, and the wisdom to know the difference.", "hash": "a430a55635d36e4e", "src": "db2@1.60.1.70245"}
-{"id": 286267, "field": "name", "en": "Arcanist Doan's Silver Coin", "hash": "10877ab259f0165e", "src": "db2@1.60.1.70245"}
-{"id": 286267, "field": "description", "en": "Oh, why won't you notice me? Abbendis, I would follow you anywhere. I wish you would notice me...", "hash": "54ac42ab785462a5", "src": "db2@1.60.1.70245"}
-{"id": 286268, "field": "name", "en": "Fandral Staghelm's Silver Coin", "hash": "336e3e79c4f71cf3", "src": "db2@1.60.1.70245"}
-{"id": 286268, "field": "description", "en": "I pray that when the time comes, I will have the strength to thwart the forces beyond the gate.", "hash": "06550e088aac82fe", "src": "db2@1.60.1.70245"}
-{"id": 286269, "field": "name", "en": "Glowing Crystal Fragment", "hash": "e04f04dccdbdfe49", "src": "db2@1.60.1.70245"}
-{"id": 286270, "field": "name", "en": "High Tinker Mekkatorque's Silver Coin", "hash": "f2449fe5ede6458f", "src": "db2@1.60.1.70245"}
-{"id": 286270, "field": "description", "en": "How does this fountain even work? I wonder if I could make one.", "hash": "9e07f333729301e9", "src": "db2@1.60.1.70245"}
-{"id": 286271, "field": "name", "en": "Khadgar's Silver Coin", "hash": "e6bd2f5a1bdb6c74", "src": "db2@1.60.1.70245"}
-{"id": 286271, "field": "description", "en": "Turalyon and Alleria, wherever you are, may you be well.", "hash": "c8d073fa50918142", "src": "db2@1.60.1.70245"}
-{"id": 286272, "field": "name", "en": "King Terenas Menethil's Silver Coin", "hash": "6cc0fcc0f79e09a9", "src": "db2@1.60.1.70245"}
-{"id": 286272, "field": "description", "en": "May my son Arthas always act in the best interest of his people.", "hash": "dd75c0beee3c5a55", "src": "db2@1.60.1.70245"}
-{"id": 286273, "field": "name", "en": "Maiev Shadowsong's Silver Coin", "hash": "5e0cc8c30e304ee8", "src": "db2@1.60.1.70245"}
-{"id": 286273, "field": "description", "en": "Where's Illidan?", "hash": "f4f231cff78ee820", "src": "db2@1.60.1.70245"}
-{"id": 286274, "field": "name", "en": "Medivh's Silver Coin", "hash": "4907cc7d7c851904", "src": "db2@1.60.1.70245"}
-{"id": 286274, "field": "description", "en": "<You sense the ringing of three tones in your head, the third barely audible under the others' din.>", "hash": "9917df109c9b9a81", "src": "db2@1.60.1.70245"}
-{"id": 286275, "field": "name", "en": "Prince Magni Bronzebeard's Silver Coin", "hash": "f503b2cb7630f874", "src": "db2@1.60.1.70245"}
-{"id": 286275, "field": "description", "en": "I hope that my father and brothers outlive me. I'll not make much of a king.", "hash": "4da49bfd4561f246", "src": "db2@1.60.1.70245"}
-{"id": 286279, "field": "name", "en": "Anduin Wrynn's Gold Coin", "hash": "fdf6ba5eb4043e6d", "src": "db2@1.60.1.70245"}
-{"id": 286279, "field": "description", "en": "I wish I would grow up, it feels like I've been 10 for years.", "hash": "b991d8258215efdb", "src": "db2@1.60.1.70245"}
-{"id": 286280, "field": "name", "en": "Uther Lightbringer's Gold Coin", "hash": "ae536535be08e008", "src": "db2@1.60.1.70245"}
-{"id": 286280, "field": "description", "en": "Young Arthas must learn patience to temper his power. I will pray that he one day learns how to lead with care rather than force.", "hash": "bb389a87973a547d", "src": "db2@1.60.1.70245"}
-{"id": 286281, "field": "name", "en": "Arthas' Gold Coin", "hash": "5bced5f6429a093c", "src": "db2@1.60.1.70245"}
-{"id": 286281, "field": "description", "en": "Already, I've a kingdom in my prospects, a land to rule. What to ask for? Perhaps a frozen scone...", "hash": "d1122935a69b8a25", "src": "db2@1.60.1.70245"}
-{"id": 286283, "field": "name", "en": "Arugal's Gold Coin", "hash": "ac08a1e69b1ac5dc", "src": "db2@1.60.1.70245"}
-{"id": 286283, "field": "description", "en": "I wish someday to retire to my own tidy little estate, with a bunch of pet dogs to keep me company.", "hash": "d20396c678437f2b", "src": "db2@1.60.1.70245"}
-{"id": 286284, "field": "name", "en": "Brann Bronzebeard's Gold Coin", "hash": "e3b656618aa8bad2", "src": "db2@1.60.1.70245"}
-{"id": 286284, "field": "description", "en": "Brann Bronzebeard was here.", "hash": "851089b6535fdc4c", "src": "db2@1.60.1.70245"}
-{"id": 286287, "field": "name", "en": "Kel'Thuzad's Gold Coin", "hash": "b44e6106128a86ea", "src": "db2@1.60.1.70245"}
-{"id": 286287, "field": "description", "en": "Sometimes... I wish someone would come along and just give me a big, long hug.", "hash": "c021960ffbaecdee", "src": "db2@1.60.1.70245"}
-{"id": 286288, "field": "name", "en": "Lady Jaina Proudmoore's Gold Coin", "hash": "cd3ef2fce15ce4eb", "src": "db2@1.60.1.70245"}
-{"id": 286288, "field": "description", "en": "Arthas, my love, please come back to me.", "hash": "75d29e0fb6cddf14", "src": "db2@1.60.1.70245"}
-{"id": 286290, "field": "name", "en": "Lady Katrana Prestor's Gold Coin", "hash": "1903543c1ba5cc93", "src": "db2@1.60.1.70245"}
-{"id": 286290, "field": "description", "en": "Listen, little wishing fountain. You'll give me all your power if you know what's good for you.", "hash": "dae8a1fb276c39bb", "src": "db2@1.60.1.70245"}
-{"id": 286291, "field": "name", "en": "Sylvanas Windrunner's Gold Coin", "hash": "522bf858a22bb379", "src": "db2@1.60.1.70245"}
-{"id": 286291, "field": "description", "en": "I hope my sisters and I can grow up and get married together. This coin appears to be very old.", "hash": "11a6603a7e594636", "src": "db2@1.60.1.70245"}
-{"id": 286292, "field": "name", "en": "Tirion Fordring's Gold Coin", "hash": "efbd06609360e332", "src": "db2@1.60.1.70245"}
-{"id": 286292, "field": "description", "en": "It is my wish that my dear Taelan will grow strong enough to defend the people he cares for.", "hash": "5c5303f2482714c6", "src": "db2@1.60.1.70245"}
-{"id": 286293, "field": "name", "en": "Archimonde's Gold Coin", "hash": "6fda344381288619", "src": "db2@1.60.1.70245"}
-{"id": 286293, "field": "description", "en": "I wish to know how you survived my wrath, little fountain.", "hash": "3846ac8d5b615cd5", "src": "db2@1.60.1.70245"}
-{"id": 286294, "field": "name", "en": "Valdrus Blackthorne's Gold Coin", "hash": "babbdac979e6ad19", "src": "db2@1.60.1.70245"}
-{"id": 286294, "field": "description", "en": "Explain my dreams, little fountain. Why must I always be viewing my kin from above and moving them like pawns?", "hash": "275f4627e9f9b55b", "src": "db2@1.60.1.70245"}
-{"id": 286298, "field": "name", "en": "Umbrinoth's Gold Coin", "hash": "218f40f2d8e1d4cf", "src": "db2@1.60.1.70245"}
-{"id": 286298, "field": "description", "en": "It seems my moonlighting days as a postal worker are coming to an end.", "hash": "7cf9401937ef68d9", "src": "db2@1.60.1.70245"}
-{"id": 286299, "field": "name", "en": "Thrall's Gold Coin", "hash": "ebf430428ca40088", "src": "db2@1.60.1.70245"}
-{"id": 286299, "field": "description", "en": "Grom, may you rest well, old friend.", "hash": "b8d72ae3dd8aa8be", "src": "db2@1.60.1.70245"}
-{"id": 286300, "field": "name", "en": "Sonya Darkhallow's Gold Coin", "hash": "2bfc5c17c9def4e3", "src": "db2@1.60.1.70245"}
-{"id": 286300, "field": "description", "en": "This doesn't make sense. Why am I putting a coin in a fountain?", "hash": "a022f59625801f14", "src": "db2@1.60.1.70245"}
-{"id": 286302, "field": "name", "en": "Zarla Ober's Gold Coin", "hash": "1bc89155eebe5d7f", "src": "db2@1.60.1.70245"}
-{"id": 286302, "field": "description", "en": "The amount of coins shining in the pool. Maybe no one will notice if I take just one.", "hash": "dc487275549c0ae5", "src": "db2@1.60.1.70245"}
-{"id": 286304, "field": "name", "en": "A Footman's Copper Coin", "hash": "1804a0d60427db8e", "src": "db2@1.60.1.70245"}
-{"id": 286304, "field": "description", "en": "Wish I had that cousin of mine's duty to do nothing more than lug wood around carelessly...", "hash": "f77f1f2f1efd1332", "src": "db2@1.60.1.70245"}
-{"id": 286306, "field": "name", "en": "Vargoth's Copper Coin", "hash": "52d0b5cf87ebb542", "src": "db2@1.60.1.70245"}
-{"id": 286306, "field": "description", "en": "I wish Captain Sanders would hurry up with my shipment of wine.", "hash": "3818476592a0c549", "src": "db2@1.60.1.70245"}
-{"id": 286307, "field": "name", "en": "Ansirem's Copper Coin", "hash": "d27bd742f25a6884", "src": "db2@1.60.1.70245"}
-{"id": 286307, "field": "description", "en": "I wish for happiness and acceptance for my daughter. She feels so out of place here...", "hash": "2dd811611b47b05e", "src": "db2@1.60.1.70245"}
-{"id": 286308, "field": "name", "en": "Attumen's Copper Coin", "hash": "ca6f74aeaf90541c", "src": "db2@1.60.1.70245"}
-{"id": 286308, "field": "description", "en": "Can I have a more comfortable saddle? My hindquarters ache.", "hash": "c0d11bc5e72d193f", "src": "db2@1.60.1.70245"}
-{"id": 286309, "field": "name", "en": "Danath's Copper Coin", "hash": "2d07f567eddb03a4", "src": "db2@1.60.1.70245"}
-{"id": 286309, "field": "description", "en": "I hope a troll dies, right... NOW.", "hash": "5c88ac6d320f856a", "src": "db2@1.60.1.70245"}
-{"id": 286310, "field": "name", "en": "Elling Trias' Copper Coin", "hash": "b2d983eefeaee11c", "src": "db2@1.60.1.70245"}
-{"id": 286310, "field": "description", "en": "Being a rogue is hard work. Someday I hope to pursue my life's one true passion...", "hash": "b0b1aeae61b1ab5d", "src": "db2@1.60.1.70245"}
-{"id": 286311, "field": "name", "en": "Falstad Wildhammer's Copper Coin", "hash": "83123108b8fe38a9", "src": "db2@1.60.1.70245"}
-{"id": 286311, "field": "description", "en": "I hope I end up in another book eventually.", "hash": "1e072bacf0956d4e", "src": "db2@1.60.1.70245"}
-{"id": 286312, "field": "name", "en": "Inigo's Copper Coin", "hash": "a64742adb059b601", "src": "db2@1.60.1.70245"}
-{"id": 286312, "field": "description", "en": "I wish I had my father back...", "hash": "b0bf1a4d4a96c1dc", "src": "db2@1.60.1.70245"}
-{"id": 286313, "field": "name", "en": "Landro Longshot's Copper Coin", "hash": "35bc1e5ef1fa8c0e", "src": "db2@1.60.1.70245"}
-{"id": 286313, "field": "description", "en": "I wish I'd kept that coin...", "hash": "fbe57df5137b1911", "src": "db2@1.60.1.70245"}
-{"id": 286314, "field": "name", "en": "Squire Rowan's Copper Coin", "hash": "198943111634e5ca", "src": "db2@1.60.1.70245"}
-{"id": 286314, "field": "description", "en": "I wish people would stop knocking my toys off the shelf.", "hash": "edc3d7a98e33308a", "src": "db2@1.60.1.70245"}
-{"id": 286315, "field": "name", "en": "Rath'mael's Copper Coin", "hash": "ccc9c26735f83482", "src": "db2@1.60.1.70245"}
-{"id": 286315, "field": "description", "en": "I could have used this copper for something productive. Perhaps something with string and a machine.", "hash": "73a4a2cfcb6d7a39", "src": "db2@1.60.1.70245"}
-{"id": 286316, "field": "name", "en": "Mason's Copper Coin", "hash": "0c894ed8b953c232", "src": "db2@1.60.1.70245"}
-{"id": 286316, "field": "description", "en": "It's not even magical here.", "hash": "106f5f9e0dd8b939", "src": "db2@1.60.1.70245"}
-{"id": 286317, "field": "name", "en": "Ofalo's Copper Coin", "hash": "4c8e86a12f360e55", "src": "db2@1.60.1.70245"}
-{"id": 286317, "field": "description", "en": "How does a tavern run out of ale!", "hash": "125e62d9a9265e42", "src": "db2@1.60.1.70245"}
-{"id": 286318, "field": "name", "en": "Sair's Copper Coin", "hash": "40a7daaaf3bed11e", "src": "db2@1.60.1.70245"}
-{"id": 286318, "field": "description", "en": "I miss my sword and shield. I feel so naked without my sword and shield.", "hash": "1dfe3ecbd545c018", "src": "db2@1.60.1.70245"}
-{"id": 286325, "field": "name", "en": "Avala's Core", "hash": "4cdd750513e83a13", "src": "db2@1.60.1.70245"}
-{"id": 286326, "field": "name", "en": "Riptear's Heart", "hash": "3db9b26c2d2232c8", "src": "db2@1.60.1.70245"}
-{"id": 286327, "field": "name", "en": "Rhonin's Gold Coin", "hash": "0fa65f9657d92e15", "src": "db2@1.60.1.70245"}
-{"id": 286327, "field": "description", "en": "Here you go, Nozdormu. What was I supposed to do after this?", "hash": "82b4980c5954552f", "src": "db2@1.60.1.70245"}
-{"id": 286328, "field": "name", "en": "Elaadrin Evengale's Silver Coin", "hash": "ecd679804e19917b", "src": "db2@1.60.1.70245"}
-{"id": 286328, "field": "description", "en": "How do I prove they copied us with this fountain?", "hash": "fb150113c9a7efac", "src": "db2@1.60.1.70245"}
-{"id": 286339, "field": "name", "en": "Mostly Dry Firewood", "hash": "5d7fbbfe7b1d10f6", "src": "db2@1.60.1.70245"}
-{"id": 286355, "field": "name", "en": "Crate of Candles", "hash": "d85fb03726b3701d", "src": "db2@1.60.1.70245"}
-{"id": 286358, "field": "name", "en": "Coalbeard's Rifle", "hash": "e5d8de02fdf6fafe", "src": "db2@1.60.1.70245"}
-{"id": 286359, "field": "name", "en": "Sunhammer's Rifle", "hash": "afb62827ad44c51d", "src": "db2@1.60.1.70245"}
-{"id": 286360, "field": "name", "en": "Stoneanvil's Rifle", "hash": "dec645bd829b733f", "src": "db2@1.60.1.70245"}
-{"id": 286405, "field": "name", "en": "Blooming Heart", "hash": "6627d5d3b379a543", "src": "db2@1.60.1.70245"}
-{"id": 286405, "field": "description", "en": "$?pc164873[$@spelldesc1320097][$@spelldesc1320096]", "hash": "f327873f07355375", "src": "db2@1.60.1.70245"}
-{"id": 286411, "field": "name", "en": "Plant Stem", "hash": "c9e01b46e1f7d588", "src": "db2@1.60.1.70245"}
-{"id": 286415, "field": "name", "en": "Reliquary of Tyr", "hash": "857000a13fd5c31a", "src": "db2@1.60.1.70245"}
-{"id": 286424, "field": "name", "en": "Monster - Sword, Scimitar Basic", "hash": "c6431ce7051228e6", "src": "db2@1.60.1.70245"}
-{"id": 286425, "field": "name", "en": "Monster - Sword, Scimitar Basic", "hash": "c6431ce7051228e6", "src": "db2@1.60.1.70245"}
-{"id": 286426, "field": "name", "en": "Honorbound Cloak", "hash": "ed34a0059d8e8628", "src": "db2@1.60.1.70245"}
-{"id": 286427, "field": "name", "en": "Cloak of the Honored Guest", "hash": "9ac651eabd941c0b", "src": "db2@1.60.1.70245"}
-{"id": 286533, "field": "name", "en": "Cheetah Hide Grips", "hash": "a96089df6a6a86ff", "src": "db2@1.60.1.70245"}
-{"id": 286534, "field": "name", "en": "Silithid Piercer", "hash": "3b3663cdcd9daf00", "src": "db2@1.60.1.70245"}
-{"id": 286535, "field": "name", "en": "Sludge-Stained Band", "hash": "667b2f6b37799f0c", "src": "db2@1.60.1.70245"}
-{"id": 286536, "field": "name", "en": "Heckler's Hide", "hash": "e61a2db9053e21ee", "src": "db2@1.60.1.70245"}
-{"id": 286537, "field": "name", "en": "Thunderstomp's Horn", "hash": "b94943653f02dda6", "src": "db2@1.60.1.70245"}
-{"id": 286537, "field": "description", "en": "Thunderstomp nearby enemies, inflicting $s1 Nature damage.", "hash": "96e923c538f5df6b", "src": "db2@1.60.1.70245"}
-{"id": 286540, "field": "name", "en": "The Skyblade", "hash": "a2a67a0229fbda5d", "src": "db2@1.60.1.70245"}
-{"id": 286541, "field": "name", "en": "Bael'dun Tankard", "hash": "cd89dc358062070a", "src": "db2@1.60.1.70245"}
-{"id": 286541, "field": "description", "en": "Restores $o1 mana over $d.  Must remain seated while drinking.", "hash": "792a9d04713a780c", "src": "db2@1.60.1.70245"}
-{"id": 286554, "field": "name", "en": "Warleader's Signet", "hash": "8ede9d873c8449ef", "src": "db2@1.60.1.70245"}
-{"id": 286556, "field": "name", "en": "Winds of Tanaris", "hash": "9f8d8a57a14be20b", "src": "db2@1.60.1.70245"}
-{"id": 286556, "field": "description", "en": "Slows nearby enemies by $s1% for $d, increased to $s2% in Desert areas.", "hash": "124abd593924b8c7", "src": "db2@1.60.1.70245"}
-{"id": 286568, "field": "name", "en": "Blisterpaw Bones", "hash": "e6150596d9b19974", "src": "db2@1.60.1.70245"}
-{"id": 286568, "field": "description", "en": "Taken from a hyena that consumed anything, or anyone.", "hash": "2a7b9883a8ed7975", "src": "db2@1.60.1.70245"}
-{"id": 286572, "field": "name", "en": "Ogre Casting Cloak", "hash": "c54d717dcbcf8ee8", "src": "db2@1.60.1.70245"}
-{"id": 286639, "field": "name", "en": "Ambassador's Bloodrobes", "hash": "87a9785ef26941a4", "src": "db2@1.60.1.70245"}
-{"id": 286647, "field": "name", "en": "Depleted Crystal Heart", "hash": "f6ffc4ab25dc4f61", "src": "db2@1.60.1.70245"}
-{"id": 286648, "field": "name", "en": "Depleted Crystal Heart", "hash": "f6ffc4ab25dc4f61", "src": "db2@1.60.1.70245"}
-{"id": 286648, "field": "description", "en": "Throw into an Unstable Mana Rift.", "hash": "ee05b862c92525ca", "src": "db2@1.60.1.70245"}
-{"id": 286728, "field": "name", "en": "Kolkar Hammer", "hash": "5f1e5aa34ffd0bdc", "src": "db2@1.60.1.70245"}
-{"id": 286729, "field": "name", "en": "Kolkar Bow", "hash": "8f8ba21901d31390", "src": "db2@1.60.1.70245"}
-{"id": 286730, "field": "name", "en": "Pristine Orcish Dagger", "hash": "8abb0d74a14a8601", "src": "db2@1.60.1.70245"}
-{"id": 286731, "field": "name", "en": "Aggor's Refitted Belt", "hash": "03d24a1a855a92cd", "src": "db2@1.60.1.70245"}
-{"id": 286732, "field": "name", "en": "Shiny Silver Coin", "hash": "02d4af2386a5f09c", "src": "db2@1.60.1.70245"}
-{"id": 286732, "field": "description", "en": "$@spelldesc1321323", "hash": "7f1bac1573d5d902", "src": "db2@1.60.1.70245"}
-{"id": 286733, "field": "name", "en": "Fightin' Fish", "hash": "ef291fc7b6f703a6", "src": "db2@1.60.1.70245"}
-{"id": 286734, "field": "name", "en": "Ban'ethil Quiver", "hash": "44618870be9a6705", "src": "db2@1.60.1.70245"}
-{"id": 286734, "field": "description", "en": "Increases ranged attack speed by $s1%.", "hash": "3009bf393dc16067", "src": "db2@1.60.1.70245"}
-{"id": 286735, "field": "name", "en": "Sentinel's Slasher", "hash": "4cd751dbd6a68276", "src": "db2@1.60.1.70245"}
-{"id": 286737, "field": "name", "en": "Avala's Binding", "hash": "d11bf2822c04af8a", "src": "db2@1.60.1.70245"}
-{"id": 286740, "field": "name", "en": "Proud Brave's Guard", "hash": "8bdc981f8b2a445b", "src": "db2@1.60.1.70245"}
-{"id": 286741, "field": "name", "en": "Centaur Skull Basher", "hash": "28e649507f7a03dd", "src": "db2@1.60.1.70245"}
-{"id": 286742, "field": "name", "en": "Riptear's Cleaver", "hash": "624ada013e4b28e5", "src": "db2@1.60.1.70245"}
-{"id": 286743, "field": "name", "en": "Riptear's Spare Arm", "hash": "881ea1cfcc6bd7ff", "src": "db2@1.60.1.70245"}
-{"id": 286744, "field": "name", "en": "Thrice-Stitched Flesh", "hash": "f4d894fa4ec9e45b", "src": "db2@1.60.1.70245"}
-{"id": 286745, "field": "name", "en": "Furlfeather Ring", "hash": "f26d6ba0f22399f6", "src": "db2@1.60.1.70245"}
-{"id": 286746, "field": "name", "en": "Shal'ma's Shawl", "hash": "87b6b3ba8530c275", "src": "db2@1.60.1.70245"}
-{"id": 286748, "field": "name", "en": "Bristlebark Bow", "hash": "b7d0f100d5dcb58a", "src": "db2@1.60.1.70245"}
-{"id": 286749, "field": "name", "en": "Wrathroot", "hash": "619c54641ab6a25c", "src": "db2@1.60.1.70245"}
-{"id": 286750, "field": "name", "en": "Wisesight Wand", "hash": "abe44001011b768c", "src": "db2@1.60.1.70245"}
-{"id": 286751, "field": "name", "en": "Ghostfang's Steps", "hash": "85509e66411c1b3c", "src": "db2@1.60.1.70245"}
-{"id": 286752, "field": "name", "en": "Igleggings", "hash": "b8165859d5e13023", "src": "db2@1.60.1.70245"}
-{"id": 286753, "field": "name", "en": "Snarlsnout Shooter", "hash": "e81a45ad57e40b38", "src": "db2@1.60.1.70245"}
-{"id": 286754, "field": "name", "en": "Ukta's Conduit", "hash": "b479f5302ca9cd34", "src": "db2@1.60.1.70245"}
-{"id": 286755, "field": "name", "en": "Helm Splitter", "hash": "160ed81182118572", "src": "db2@1.60.1.70245"}
-{"id": 286977, "field": "name", "en": "Sword of the Fallen", "hash": "54d6b35ad8fa1a74", "src": "db2@1.60.1.70245"}
-{"id": 286978, "field": "name", "en": "Rotmender's Garb", "hash": "83e854b44252c2e0", "src": "db2@1.60.1.70245"}
-{"id": 286979, "field": "name", "en": "Rotmender's Gloves", "hash": "320c208b5f2ef278", "src": "db2@1.60.1.70245"}
-{"id": 286980, "field": "name", "en": "Rotmender's Sash", "hash": "8583f881e3325321", "src": "db2@1.60.1.70245"}
-{"id": 286981, "field": "name", "en": "Death Bindings", "hash": "6d755b3e14fbdf05", "src": "db2@1.60.1.70245"}
+{"id": 286008, "field": "name", "en": "Naga Spinefin", "hash": "5f9f4eadf3f6bc25", "src": "db2@1.60.1.70291"}
+{"id": 286009, "field": "name", "en": "Aggor's Belt", "hash": "a1ca8e461e79236d", "src": "db2@1.60.1.70291"}
+{"id": 286010, "field": "name", "en": "Broken Bone Trident", "hash": "0288ac519c65fb71", "src": "db2@1.60.1.70291"}
+{"id": 286011, "field": "name", "en": "Banner Scrap", "hash": "162b940420273f6c", "src": "db2@1.60.1.70291"}
+{"id": 286012, "field": "name", "en": "Orcish Dagger", "hash": "f37a21b675c9e16f", "src": "db2@1.60.1.70291"}
+{"id": 286017, "field": "name", "en": "Dewy Lasher Frond", "hash": "3105d4df0f3f5849", "src": "db2@1.60.1.70291"}
+{"id": 286069, "field": "name", "en": "Lashwater Salve", "hash": "6c5ed4d503f3adaa", "src": "db2@1.60.1.70291"}
+{"id": 286075, "field": "name", "en": "Herak's Head", "hash": "6d47073a998759e8", "src": "db2@1.60.1.70291"}
+{"id": 286076, "field": "name", "en": "Schematic: Small Purple Rocket", "hash": "36ccd5804e2e9414", "src": "db2@1.60.1.70291"}
+{"id": 286076, "field": "description", "en": "Teaches you how to make a Small Purple Rocket.", "hash": "affac0fc94d38f61", "src": "db2@1.60.1.70291"}
+{"id": 286077, "field": "name", "en": "Schematic: Small White Rocket", "hash": "e5f01917553cfafa", "src": "db2@1.60.1.70291"}
+{"id": 286077, "field": "description", "en": "Teaches you how to make a Small White Rocket.", "hash": "b6d941c8f398c649", "src": "db2@1.60.1.70291"}
+{"id": 286078, "field": "name", "en": "Schematic: Small Yellow Rocket", "hash": "c9fbffdb44a0df23", "src": "db2@1.60.1.70291"}
+{"id": 286078, "field": "description", "en": "Teaches you how to make a Small Yellow Rocket.", "hash": "011d6f09065e4460", "src": "db2@1.60.1.70291"}
+{"id": 286079, "field": "name", "en": "Schematic: Large Purple Rocket", "hash": "9b8d8b0552ababc1", "src": "db2@1.60.1.70291"}
+{"id": 286079, "field": "description", "en": "Teaches you how to make a Large Purple Rocket.", "hash": "3e97a50faca35aed", "src": "db2@1.60.1.70291"}
+{"id": 286080, "field": "name", "en": "Schematic: Large White Rocket", "hash": "830af9433a12ce09", "src": "db2@1.60.1.70291"}
+{"id": 286080, "field": "description", "en": "Teaches you how to make a Large White Rocket.", "hash": "1b99f752f815ddf6", "src": "db2@1.60.1.70291"}
+{"id": 286081, "field": "name", "en": "Schematic: Large Yellow Rocket", "hash": "2ebcb565491df6d0", "src": "db2@1.60.1.70291"}
+{"id": 286081, "field": "description", "en": "Teaches you how to make a Large Yellow Rocket.", "hash": "8fba53171e2e0fec", "src": "db2@1.60.1.70291"}
+{"id": 286082, "field": "name", "en": "Schematic: Purple Rocket Cluster", "hash": "7a199a8755369637", "src": "db2@1.60.1.70291"}
+{"id": 286082, "field": "description", "en": "Teaches you how to make a Purple Rocket Cluster.", "hash": "2600308bffa22198", "src": "db2@1.60.1.70291"}
+{"id": 286083, "field": "name", "en": "Schematic: White Rocket Cluster", "hash": "80298a580077ddc6", "src": "db2@1.60.1.70291"}
+{"id": 286083, "field": "description", "en": "Teaches you how to make a White Rocket Cluster.", "hash": "197e2e6a73a3149d", "src": "db2@1.60.1.70291"}
+{"id": 286084, "field": "name", "en": "Schematic: Yellow Rocket Cluster", "hash": "e628fdb8b5f3df69", "src": "db2@1.60.1.70291"}
+{"id": 286084, "field": "description", "en": "Teaches you how to make a Yellow Rocket Cluster.", "hash": "71dff3b1f1dd5156", "src": "db2@1.60.1.70291"}
+{"id": 286085, "field": "name", "en": "Schematic: Large Purple Rocket Cluster", "hash": "ae7edbcf3ae1b529", "src": "db2@1.60.1.70291"}
+{"id": 286085, "field": "description", "en": "Teaches you how to make a Large Purple Rocket Cluster.", "hash": "d077e0f736f6f421", "src": "db2@1.60.1.70291"}
+{"id": 286086, "field": "name", "en": "Schematic: Large White Rocket Cluster", "hash": "0f37fe2613211f15", "src": "db2@1.60.1.70291"}
+{"id": 286086, "field": "description", "en": "Teaches you how to make a Large White Rocket Cluster.", "hash": "2a6d81d6b51c3c9e", "src": "db2@1.60.1.70291"}
+{"id": 286087, "field": "name", "en": "Schematic: Large Yellow Rocket Cluster", "hash": "1a8e3f059b9efe5b", "src": "db2@1.60.1.70291"}
+{"id": 286087, "field": "description", "en": "Teaches you how to make a Large Yellow Rocket Cluster.", "hash": "1c57a422293223df", "src": "db2@1.60.1.70291"}
+{"id": 286104, "field": "name", "en": "Longwalker Malah's Report", "hash": "4eb17baa5078d714", "src": "db2@1.60.1.70291"}
+{"id": 286139, "field": "name", "en": "Monster - 1H Mace, Barrow Deeps - Red", "hash": "52b58633c680923a", "src": "db2@1.60.1.70291"}
+{"id": 286140, "field": "name", "en": "Monster - Shield, Paladin", "hash": "7e524370fb843671", "src": "db2@1.60.1.70291"}
+{"id": 286152, "field": "name", "en": "Plated Armorfish", "hash": "7a243bc83cb6b6f4", "src": "db2@1.60.1.70291"}
+{"id": 286152, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 sec eating you will become well fed and gain $s2 Armor for $1319310d. $@spelldesc1243969", "hash": "a37508daa16aed9e", "src": "db2@1.60.1.70291"}
+{"id": 286153, "field": "name", "en": "Recipe: Plated Armorfish", "hash": "cf7924f201b2f675", "src": "db2@1.60.1.70291"}
+{"id": 286153, "field": "description", "en": "Teaches you how to cook Plated Armorfish.", "hash": "c3253d4033ad3e36", "src": "db2@1.60.1.70291"}
+{"id": 286176, "field": "name", "en": "Executor's Motivator", "hash": "d4c93368d5660910", "src": "db2@1.60.1.70291"}
+{"id": 286176, "field": "description", "en": "Motivate a member of the Deathguard.", "hash": "664cd0c89e730e98", "src": "db2@1.60.1.70291"}
+{"id": 286200, "field": "name", "en": "Dillinger's Report", "hash": "9f37693c2094f8a0", "src": "db2@1.60.1.70291"}
+{"id": 286201, "field": "name", "en": "Kristof's Report", "hash": "764ebdf1f4319dd0", "src": "db2@1.60.1.70291"}
+{"id": 286202, "field": "name", "en": "Gordo's Report", "hash": "996ffb8dbfd9a76f", "src": "db2@1.60.1.70291"}
+{"id": 286204, "field": "name", "en": "Tomb Weed", "hash": "739d084a832a3a9f", "src": "db2@1.60.1.70291"}
+{"id": 286205, "field": "name", "en": "Half-Eaten Fish", "hash": "867f276a111505d5", "src": "db2@1.60.1.70291"}
+{"id": 286209, "field": "name", "en": "Shiny Junk", "hash": "aa182b326128491f", "src": "db2@1.60.1.70291"}
+{"id": 286210, "field": "name", "en": "A Winter Veil Gift", "hash": "919f9efa8491b6dc", "src": "db2@1.60.1.70291"}
+{"id": 286214, "field": "name", "en": "Duskweed Petal", "hash": "d9c343f7e293ee8d", "src": "db2@1.60.1.70291"}
+{"id": 286215, "field": "name", "en": "Vial of Animal Blood", "hash": "46711af818375665", "src": "db2@1.60.1.70291"}
+{"id": 286259, "field": "name", "en": "Faintly Glowing Bone", "hash": "12cee6593268a73c", "src": "db2@1.60.1.70291"}
+{"id": 286263, "field": "name", "en": "Muradin Bronzebeard's Silver Coin", "hash": "4eb55f70e1d562fb", "src": "db2@1.60.1.70291"}
+{"id": 286263, "field": "description", "en": "May the Holy Light protect us on our expedition to the frozen north.", "hash": "eee6c8a991b18f9f", "src": "db2@1.60.1.70291"}
+{"id": 286264, "field": "name", "en": "Aegwynn's Silver Coin", "hash": "4083f8a19592a840", "src": "db2@1.60.1.70291"}
+{"id": 286264, "field": "description", "en": "I really wish you mages would get your heads out from inside your own... books.", "hash": "2fdc6df9b9bc8eb6", "src": "db2@1.60.1.70291"}
+{"id": 286265, "field": "name", "en": "Alleria's Silver Coin", "hash": "ea5b76b7333f252c", "src": "db2@1.60.1.70291"}
+{"id": 286265, "field": "description", "en": "May my sisters realize their full potential, the name Windrunner known as a result of their deeds.", "hash": "38e334d2941e7216", "src": "db2@1.60.1.70291"}
+{"id": 286266, "field": "name", "en": "Antonidas' Silver Coin", "hash": "031ddd80ad959aa1", "src": "db2@1.60.1.70291"}
+{"id": 286266, "field": "description", "en": "Grant me the strength to accept the things that I cannot change, the courage to change the things I can, and the wisdom to know the difference.", "hash": "a430a55635d36e4e", "src": "db2@1.60.1.70291"}
+{"id": 286267, "field": "name", "en": "Arcanist Doan's Silver Coin", "hash": "10877ab259f0165e", "src": "db2@1.60.1.70291"}
+{"id": 286267, "field": "description", "en": "Oh, why won't you notice me? Abbendis, I would follow you anywhere. I wish you would notice me...", "hash": "54ac42ab785462a5", "src": "db2@1.60.1.70291"}
+{"id": 286268, "field": "name", "en": "Fandral Staghelm's Silver Coin", "hash": "336e3e79c4f71cf3", "src": "db2@1.60.1.70291"}
+{"id": 286268, "field": "description", "en": "I pray that when the time comes, I will have the strength to thwart the forces beyond the gate.", "hash": "06550e088aac82fe", "src": "db2@1.60.1.70291"}
+{"id": 286269, "field": "name", "en": "Glowing Crystal Fragment", "hash": "e04f04dccdbdfe49", "src": "db2@1.60.1.70291"}
+{"id": 286270, "field": "name", "en": "High Tinker Mekkatorque's Silver Coin", "hash": "f2449fe5ede6458f", "src": "db2@1.60.1.70291"}
+{"id": 286270, "field": "description", "en": "How does this fountain even work? I wonder if I could make one.", "hash": "9e07f333729301e9", "src": "db2@1.60.1.70291"}
+{"id": 286271, "field": "name", "en": "Khadgar's Silver Coin", "hash": "e6bd2f5a1bdb6c74", "src": "db2@1.60.1.70291"}
+{"id": 286271, "field": "description", "en": "Turalyon and Alleria, wherever you are, may you be well.", "hash": "c8d073fa50918142", "src": "db2@1.60.1.70291"}
+{"id": 286272, "field": "name", "en": "King Terenas Menethil's Silver Coin", "hash": "6cc0fcc0f79e09a9", "src": "db2@1.60.1.70291"}
+{"id": 286272, "field": "description", "en": "May my son Arthas always act in the best interest of his people.", "hash": "dd75c0beee3c5a55", "src": "db2@1.60.1.70291"}
+{"id": 286273, "field": "name", "en": "Maiev Shadowsong's Silver Coin", "hash": "5e0cc8c30e304ee8", "src": "db2@1.60.1.70291"}
+{"id": 286273, "field": "description", "en": "Where's Illidan?", "hash": "f4f231cff78ee820", "src": "db2@1.60.1.70291"}
+{"id": 286274, "field": "name", "en": "Medivh's Silver Coin", "hash": "4907cc7d7c851904", "src": "db2@1.60.1.70291"}
+{"id": 286274, "field": "description", "en": "<You sense the ringing of three tones in your head, the third barely audible under the others' din.>", "hash": "9917df109c9b9a81", "src": "db2@1.60.1.70291"}
+{"id": 286275, "field": "name", "en": "Prince Magni Bronzebeard's Silver Coin", "hash": "f503b2cb7630f874", "src": "db2@1.60.1.70291"}
+{"id": 286275, "field": "description", "en": "I hope that my father and brothers outlive me. I'll not make much of a king.", "hash": "4da49bfd4561f246", "src": "db2@1.60.1.70291"}
+{"id": 286279, "field": "name", "en": "Anduin Wrynn's Gold Coin", "hash": "fdf6ba5eb4043e6d", "src": "db2@1.60.1.70291"}
+{"id": 286279, "field": "description", "en": "I wish I would grow up, it feels like I've been 10 for years.", "hash": "b991d8258215efdb", "src": "db2@1.60.1.70291"}
+{"id": 286280, "field": "name", "en": "Uther Lightbringer's Gold Coin", "hash": "ae536535be08e008", "src": "db2@1.60.1.70291"}
+{"id": 286280, "field": "description", "en": "Young Arthas must learn patience to temper his power. I will pray that he one day learns how to lead with care rather than force.", "hash": "bb389a87973a547d", "src": "db2@1.60.1.70291"}
+{"id": 286281, "field": "name", "en": "Arthas' Gold Coin", "hash": "5bced5f6429a093c", "src": "db2@1.60.1.70291"}
+{"id": 286281, "field": "description", "en": "Already, I've a kingdom in my prospects, a land to rule. What to ask for? Perhaps a frozen scone...", "hash": "d1122935a69b8a25", "src": "db2@1.60.1.70291"}
+{"id": 286283, "field": "name", "en": "Arugal's Gold Coin", "hash": "ac08a1e69b1ac5dc", "src": "db2@1.60.1.70291"}
+{"id": 286283, "field": "description", "en": "I wish someday to retire to my own tidy little estate, with a bunch of pet dogs to keep me company.", "hash": "d20396c678437f2b", "src": "db2@1.60.1.70291"}
+{"id": 286284, "field": "name", "en": "Brann Bronzebeard's Gold Coin", "hash": "e3b656618aa8bad2", "src": "db2@1.60.1.70291"}
+{"id": 286284, "field": "description", "en": "Brann Bronzebeard was here.", "hash": "851089b6535fdc4c", "src": "db2@1.60.1.70291"}
+{"id": 286287, "field": "name", "en": "Kel'Thuzad's Gold Coin", "hash": "b44e6106128a86ea", "src": "db2@1.60.1.70291"}
+{"id": 286287, "field": "description", "en": "Sometimes... I wish someone would come along and just give me a big, long hug.", "hash": "c021960ffbaecdee", "src": "db2@1.60.1.70291"}
+{"id": 286288, "field": "name", "en": "Lady Jaina Proudmoore's Gold Coin", "hash": "cd3ef2fce15ce4eb", "src": "db2@1.60.1.70291"}
+{"id": 286288, "field": "description", "en": "Arthas, my love, please come back to me.", "hash": "75d29e0fb6cddf14", "src": "db2@1.60.1.70291"}
+{"id": 286290, "field": "name", "en": "Lady Katrana Prestor's Gold Coin", "hash": "1903543c1ba5cc93", "src": "db2@1.60.1.70291"}
+{"id": 286290, "field": "description", "en": "Listen, little wishing fountain. You'll give me all your power if you know what's good for you.", "hash": "dae8a1fb276c39bb", "src": "db2@1.60.1.70291"}
+{"id": 286291, "field": "name", "en": "Sylvanas Windrunner's Gold Coin", "hash": "522bf858a22bb379", "src": "db2@1.60.1.70291"}
+{"id": 286291, "field": "description", "en": "I hope my sisters and I can grow up and get married together. This coin appears to be very old.", "hash": "11a6603a7e594636", "src": "db2@1.60.1.70291"}
+{"id": 286292, "field": "name", "en": "Tirion Fordring's Gold Coin", "hash": "efbd06609360e332", "src": "db2@1.60.1.70291"}
+{"id": 286292, "field": "description", "en": "It is my wish that my dear Taelan will grow strong enough to defend the people he cares for.", "hash": "5c5303f2482714c6", "src": "db2@1.60.1.70291"}
+{"id": 286293, "field": "name", "en": "Archimonde's Gold Coin", "hash": "6fda344381288619", "src": "db2@1.60.1.70291"}
+{"id": 286293, "field": "description", "en": "I wish to know how you survived my wrath, little fountain.", "hash": "3846ac8d5b615cd5", "src": "db2@1.60.1.70291"}
+{"id": 286294, "field": "name", "en": "Valdrus Blackthorne's Gold Coin", "hash": "babbdac979e6ad19", "src": "db2@1.60.1.70291"}
+{"id": 286294, "field": "description", "en": "Explain my dreams, little fountain. Why must I always be viewing my kin from above and moving them like pawns?", "hash": "275f4627e9f9b55b", "src": "db2@1.60.1.70291"}
+{"id": 286298, "field": "name", "en": "Umbrinoth's Gold Coin", "hash": "218f40f2d8e1d4cf", "src": "db2@1.60.1.70291"}
+{"id": 286298, "field": "description", "en": "It seems my moonlighting days as a postal worker are coming to an end.", "hash": "7cf9401937ef68d9", "src": "db2@1.60.1.70291"}
+{"id": 286299, "field": "name", "en": "Thrall's Gold Coin", "hash": "ebf430428ca40088", "src": "db2@1.60.1.70291"}
+{"id": 286299, "field": "description", "en": "Grom, may you rest well, old friend.", "hash": "b8d72ae3dd8aa8be", "src": "db2@1.60.1.70291"}
+{"id": 286300, "field": "name", "en": "Sonya Darkhallow's Gold Coin", "hash": "2bfc5c17c9def4e3", "src": "db2@1.60.1.70291"}
+{"id": 286300, "field": "description", "en": "This doesn't make sense. Why am I putting a coin in a fountain?", "hash": "a022f59625801f14", "src": "db2@1.60.1.70291"}
+{"id": 286302, "field": "name", "en": "Zarla Ober's Gold Coin", "hash": "1bc89155eebe5d7f", "src": "db2@1.60.1.70291"}
+{"id": 286302, "field": "description", "en": "The amount of coins shining in the pool. Maybe no one will notice if I take just one.", "hash": "dc487275549c0ae5", "src": "db2@1.60.1.70291"}
+{"id": 286304, "field": "name", "en": "A Footman's Copper Coin", "hash": "1804a0d60427db8e", "src": "db2@1.60.1.70291"}
+{"id": 286304, "field": "description", "en": "Wish I had that cousin of mine's duty to do nothing more than lug wood around carelessly...", "hash": "f77f1f2f1efd1332", "src": "db2@1.60.1.70291"}
+{"id": 286306, "field": "name", "en": "Vargoth's Copper Coin", "hash": "52d0b5cf87ebb542", "src": "db2@1.60.1.70291"}
+{"id": 286306, "field": "description", "en": "I wish Captain Sanders would hurry up with my shipment of wine.", "hash": "3818476592a0c549", "src": "db2@1.60.1.70291"}
+{"id": 286307, "field": "name", "en": "Ansirem's Copper Coin", "hash": "d27bd742f25a6884", "src": "db2@1.60.1.70291"}
+{"id": 286307, "field": "description", "en": "I wish for happiness and acceptance for my daughter. She feels so out of place here...", "hash": "2dd811611b47b05e", "src": "db2@1.60.1.70291"}
+{"id": 286308, "field": "name", "en": "Attumen's Copper Coin", "hash": "ca6f74aeaf90541c", "src": "db2@1.60.1.70291"}
+{"id": 286308, "field": "description", "en": "Can I have a more comfortable saddle? My hindquarters ache.", "hash": "c0d11bc5e72d193f", "src": "db2@1.60.1.70291"}
+{"id": 286309, "field": "name", "en": "Danath's Copper Coin", "hash": "2d07f567eddb03a4", "src": "db2@1.60.1.70291"}
+{"id": 286309, "field": "description", "en": "I hope a troll dies, right... NOW.", "hash": "5c88ac6d320f856a", "src": "db2@1.60.1.70291"}
+{"id": 286310, "field": "name", "en": "Elling Trias' Copper Coin", "hash": "b2d983eefeaee11c", "src": "db2@1.60.1.70291"}
+{"id": 286310, "field": "description", "en": "Being a rogue is hard work. Someday I hope to pursue my life's one true passion...", "hash": "b0b1aeae61b1ab5d", "src": "db2@1.60.1.70291"}
+{"id": 286311, "field": "name", "en": "Falstad Wildhammer's Copper Coin", "hash": "83123108b8fe38a9", "src": "db2@1.60.1.70291"}
+{"id": 286311, "field": "description", "en": "I hope I end up in another book eventually.", "hash": "1e072bacf0956d4e", "src": "db2@1.60.1.70291"}
+{"id": 286312, "field": "name", "en": "Inigo's Copper Coin", "hash": "a64742adb059b601", "src": "db2@1.60.1.70291"}
+{"id": 286312, "field": "description", "en": "I wish I had my father back...", "hash": "b0bf1a4d4a96c1dc", "src": "db2@1.60.1.70291"}
+{"id": 286313, "field": "name", "en": "Landro Longshot's Copper Coin", "hash": "35bc1e5ef1fa8c0e", "src": "db2@1.60.1.70291"}
+{"id": 286313, "field": "description", "en": "I wish I'd kept that coin...", "hash": "fbe57df5137b1911", "src": "db2@1.60.1.70291"}
+{"id": 286314, "field": "name", "en": "Squire Rowan's Copper Coin", "hash": "198943111634e5ca", "src": "db2@1.60.1.70291"}
+{"id": 286314, "field": "description", "en": "I wish people would stop knocking my toys off the shelf.", "hash": "edc3d7a98e33308a", "src": "db2@1.60.1.70291"}
+{"id": 286315, "field": "name", "en": "Rath'mael's Copper Coin", "hash": "ccc9c26735f83482", "src": "db2@1.60.1.70291"}
+{"id": 286315, "field": "description", "en": "I could have used this copper for something productive. Perhaps something with string and a machine.", "hash": "73a4a2cfcb6d7a39", "src": "db2@1.60.1.70291"}
+{"id": 286316, "field": "name", "en": "Mason's Copper Coin", "hash": "0c894ed8b953c232", "src": "db2@1.60.1.70291"}
+{"id": 286316, "field": "description", "en": "It's not even magical here.", "hash": "106f5f9e0dd8b939", "src": "db2@1.60.1.70291"}
+{"id": 286317, "field": "name", "en": "Ofalo's Copper Coin", "hash": "4c8e86a12f360e55", "src": "db2@1.60.1.70291"}
+{"id": 286317, "field": "description", "en": "How does a tavern run out of ale!", "hash": "125e62d9a9265e42", "src": "db2@1.60.1.70291"}
+{"id": 286318, "field": "name", "en": "Sair's Copper Coin", "hash": "40a7daaaf3bed11e", "src": "db2@1.60.1.70291"}
+{"id": 286318, "field": "description", "en": "I miss my sword and shield. I feel so naked without my sword and shield.", "hash": "1dfe3ecbd545c018", "src": "db2@1.60.1.70291"}
+{"id": 286325, "field": "name", "en": "Avala's Core", "hash": "4cdd750513e83a13", "src": "db2@1.60.1.70291"}
+{"id": 286326, "field": "name", "en": "Riptear's Heart", "hash": "3db9b26c2d2232c8", "src": "db2@1.60.1.70291"}
+{"id": 286327, "field": "name", "en": "Rhonin's Gold Coin", "hash": "0fa65f9657d92e15", "src": "db2@1.60.1.70291"}
+{"id": 286327, "field": "description", "en": "Here you go, Nozdormu. What was I supposed to do after this?", "hash": "82b4980c5954552f", "src": "db2@1.60.1.70291"}
+{"id": 286328, "field": "name", "en": "Elaadrin Evengale's Silver Coin", "hash": "ecd679804e19917b", "src": "db2@1.60.1.70291"}
+{"id": 286328, "field": "description", "en": "How do I prove they copied us with this fountain?", "hash": "fb150113c9a7efac", "src": "db2@1.60.1.70291"}
+{"id": 286339, "field": "name", "en": "Mostly Dry Firewood", "hash": "5d7fbbfe7b1d10f6", "src": "db2@1.60.1.70291"}
+{"id": 286355, "field": "name", "en": "Crate of Candles", "hash": "d85fb03726b3701d", "src": "db2@1.60.1.70291"}
+{"id": 286358, "field": "name", "en": "Coalbeard's Rifle", "hash": "e5d8de02fdf6fafe", "src": "db2@1.60.1.70291"}
+{"id": 286359, "field": "name", "en": "Sunhammer's Rifle", "hash": "afb62827ad44c51d", "src": "db2@1.60.1.70291"}
+{"id": 286360, "field": "name", "en": "Stoneanvil's Rifle", "hash": "dec645bd829b733f", "src": "db2@1.60.1.70291"}
+{"id": 286405, "field": "name", "en": "Blooming Heart", "hash": "6627d5d3b379a543", "src": "db2@1.60.1.70291"}
+{"id": 286405, "field": "description", "en": "$?pc164873[$@spelldesc1320097][$@spelldesc1320096]", "hash": "f327873f07355375", "src": "db2@1.60.1.70291"}
+{"id": 286411, "field": "name", "en": "Plant Stem", "hash": "c9e01b46e1f7d588", "src": "db2@1.60.1.70291"}
+{"id": 286415, "field": "name", "en": "Reliquary of Tyr", "hash": "857000a13fd5c31a", "src": "db2@1.60.1.70291"}
+{"id": 286424, "field": "name", "en": "Monster - Sword, Scimitar Basic", "hash": "c6431ce7051228e6", "src": "db2@1.60.1.70291"}
+{"id": 286425, "field": "name", "en": "Monster - Sword, Scimitar Basic", "hash": "c6431ce7051228e6", "src": "db2@1.60.1.70291"}
+{"id": 286426, "field": "name", "en": "Honorbound Cloak", "hash": "ed34a0059d8e8628", "src": "db2@1.60.1.70291"}
+{"id": 286427, "field": "name", "en": "Cloak of the Honored Guest", "hash": "9ac651eabd941c0b", "src": "db2@1.60.1.70291"}
+{"id": 286533, "field": "name", "en": "Cheetah Hide Grips", "hash": "a96089df6a6a86ff", "src": "db2@1.60.1.70291"}
+{"id": 286534, "field": "name", "en": "Silithid Piercer", "hash": "3b3663cdcd9daf00", "src": "db2@1.60.1.70291"}
+{"id": 286535, "field": "name", "en": "Sludge-Stained Band", "hash": "667b2f6b37799f0c", "src": "db2@1.60.1.70291"}
+{"id": 286536, "field": "name", "en": "Heckler's Hide", "hash": "e61a2db9053e21ee", "src": "db2@1.60.1.70291"}
+{"id": 286537, "field": "name", "en": "Thunderstomp's Horn", "hash": "b94943653f02dda6", "src": "db2@1.60.1.70291"}
+{"id": 286537, "field": "description", "en": "Thunderstomp nearby enemies, inflicting $s1 Nature damage.", "hash": "96e923c538f5df6b", "src": "db2@1.60.1.70291"}
+{"id": 286540, "field": "name", "en": "The Skyblade", "hash": "a2a67a0229fbda5d", "src": "db2@1.60.1.70291"}
+{"id": 286541, "field": "name", "en": "Bael'dun Tankard", "hash": "cd89dc358062070a", "src": "db2@1.60.1.70291"}
+{"id": 286541, "field": "description", "en": "Restores $o1 mana over $d.  Must remain seated while drinking.", "hash": "792a9d04713a780c", "src": "db2@1.60.1.70291"}
+{"id": 286554, "field": "name", "en": "Warleader's Signet", "hash": "8ede9d873c8449ef", "src": "db2@1.60.1.70291"}
+{"id": 286556, "field": "name", "en": "Winds of Tanaris", "hash": "9f8d8a57a14be20b", "src": "db2@1.60.1.70291"}
+{"id": 286556, "field": "description", "en": "Slows nearby enemies by $s1% for $d, increased to $s2% in Desert areas.", "hash": "124abd593924b8c7", "src": "db2@1.60.1.70291"}
+{"id": 286568, "field": "name", "en": "Blisterpaw Bones", "hash": "e6150596d9b19974", "src": "db2@1.60.1.70291"}
+{"id": 286568, "field": "description", "en": "Taken from a hyena that consumed anything, or anyone.", "hash": "2a7b9883a8ed7975", "src": "db2@1.60.1.70291"}
+{"id": 286572, "field": "name", "en": "Ogre Casting Cloak", "hash": "c54d717dcbcf8ee8", "src": "db2@1.60.1.70291"}
+{"id": 286639, "field": "name", "en": "Ambassador's Bloodrobes", "hash": "87a9785ef26941a4", "src": "db2@1.60.1.70291"}
+{"id": 286647, "field": "name", "en": "Depleted Crystal Heart", "hash": "f6ffc4ab25dc4f61", "src": "db2@1.60.1.70291"}
+{"id": 286648, "field": "name", "en": "Depleted Crystal Heart", "hash": "f6ffc4ab25dc4f61", "src": "db2@1.60.1.70291"}
+{"id": 286648, "field": "description", "en": "Throw into an Unstable Mana Rift.", "hash": "ee05b862c92525ca", "src": "db2@1.60.1.70291"}
+{"id": 286728, "field": "name", "en": "Kolkar Hammer", "hash": "5f1e5aa34ffd0bdc", "src": "db2@1.60.1.70291"}
+{"id": 286729, "field": "name", "en": "Kolkar Bow", "hash": "8f8ba21901d31390", "src": "db2@1.60.1.70291"}
+{"id": 286730, "field": "name", "en": "Pristine Orcish Dagger", "hash": "8abb0d74a14a8601", "src": "db2@1.60.1.70291"}
+{"id": 286731, "field": "name", "en": "Aggor's Refitted Belt", "hash": "03d24a1a855a92cd", "src": "db2@1.60.1.70291"}
+{"id": 286732, "field": "name", "en": "Shiny Silver Coin", "hash": "02d4af2386a5f09c", "src": "db2@1.60.1.70291"}
+{"id": 286732, "field": "description", "en": "$@spelldesc1321323", "hash": "7f1bac1573d5d902", "src": "db2@1.60.1.70291"}
+{"id": 286733, "field": "name", "en": "Fightin' Fish", "hash": "ef291fc7b6f703a6", "src": "db2@1.60.1.70291"}
+{"id": 286734, "field": "name", "en": "Ban'ethil Quiver", "hash": "44618870be9a6705", "src": "db2@1.60.1.70291"}
+{"id": 286734, "field": "description", "en": "Increases ranged attack speed by $s1%.", "hash": "3009bf393dc16067", "src": "db2@1.60.1.70291"}
+{"id": 286735, "field": "name", "en": "Sentinel's Slasher", "hash": "4cd751dbd6a68276", "src": "db2@1.60.1.70291"}
+{"id": 286737, "field": "name", "en": "Avala's Binding", "hash": "d11bf2822c04af8a", "src": "db2@1.60.1.70291"}
+{"id": 286740, "field": "name", "en": "Proud Brave's Guard", "hash": "8bdc981f8b2a445b", "src": "db2@1.60.1.70291"}
+{"id": 286741, "field": "name", "en": "Centaur Skull Basher", "hash": "28e649507f7a03dd", "src": "db2@1.60.1.70291"}
+{"id": 286742, "field": "name", "en": "Riptear's Cleaver", "hash": "624ada013e4b28e5", "src": "db2@1.60.1.70291"}
+{"id": 286743, "field": "name", "en": "Riptear's Spare Arm", "hash": "881ea1cfcc6bd7ff", "src": "db2@1.60.1.70291"}
+{"id": 286744, "field": "name", "en": "Thrice-Stitched Flesh", "hash": "f4d894fa4ec9e45b", "src": "db2@1.60.1.70291"}
+{"id": 286745, "field": "name", "en": "Furlfeather Ring", "hash": "f26d6ba0f22399f6", "src": "db2@1.60.1.70291"}
+{"id": 286746, "field": "name", "en": "Shal'ma's Shawl", "hash": "87b6b3ba8530c275", "src": "db2@1.60.1.70291"}
+{"id": 286748, "field": "name", "en": "Bristlebark Bow", "hash": "b7d0f100d5dcb58a", "src": "db2@1.60.1.70291"}
+{"id": 286749, "field": "name", "en": "Wrathroot", "hash": "619c54641ab6a25c", "src": "db2@1.60.1.70291"}
+{"id": 286750, "field": "name", "en": "Wisesight Wand", "hash": "abe44001011b768c", "src": "db2@1.60.1.70291"}
+{"id": 286751, "field": "name", "en": "Ghostfang's Steps", "hash": "85509e66411c1b3c", "src": "db2@1.60.1.70291"}
+{"id": 286752, "field": "name", "en": "Igleggings", "hash": "b8165859d5e13023", "src": "db2@1.60.1.70291"}
+{"id": 286753, "field": "name", "en": "Snarlsnout Shooter", "hash": "e81a45ad57e40b38", "src": "db2@1.60.1.70291"}
+{"id": 286754, "field": "name", "en": "Ukta's Conduit", "hash": "b479f5302ca9cd34", "src": "db2@1.60.1.70291"}
+{"id": 286755, "field": "name", "en": "Helm Splitter", "hash": "160ed81182118572", "src": "db2@1.60.1.70291"}
+{"id": 286977, "field": "name", "en": "Sword of the Fallen", "hash": "54d6b35ad8fa1a74", "src": "db2@1.60.1.70291"}
+{"id": 286978, "field": "name", "en": "Rotmender's Garb", "hash": "83e854b44252c2e0", "src": "db2@1.60.1.70291"}
+{"id": 286979, "field": "name", "en": "Rotmender's Gloves", "hash": "320c208b5f2ef278", "src": "db2@1.60.1.70291"}
+{"id": 286980, "field": "name", "en": "Rotmender's Sash", "hash": "8583f881e3325321", "src": "db2@1.60.1.70291"}
+{"id": 286981, "field": "name", "en": "Death Bindings", "hash": "6d755b3e14fbdf05", "src": "db2@1.60.1.70291"}
+{"id": 286987, "field": "name", "en": "Violet Sorcerer's Sandals", "hash": "1126a4a97746f803", "src": "db2@1.60.1.70291"}
+{"id": 286988, "field": "name", "en": "Violet Sorcerer's Leggings", "hash": "aa94797a630f00ba", "src": "db2@1.60.1.70291"}
+{"id": 286989, "field": "name", "en": "Violet Sorcerer's Wraps", "hash": "af430ab074802f32", "src": "db2@1.60.1.70291"}

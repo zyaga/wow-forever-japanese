@@ -1,28 +1,28 @@
-{"id": 383005, "field": "text", "en": "Samuel's Remains Buried", "hash": "a43ae335f417922f", "src": "wdb@1.60.1.70245"}
-{"id": 383114, "field": "text", "en": "Heal and fortify Deathguard Kel", "hash": "e47b6c3f5fb86069", "src": "wdb@1.60.1.70245"}
+{"id": 383005, "field": "text", "en": "Samuel's Remains Buried", "hash": "a43ae335f417922f", "src": "wdb@1.60.1.70291"}
+{"id": 383114, "field": "text", "en": "Heal and fortify Deathguard Kel", "hash": "e47b6c3f5fb86069", "src": "wdb@1.60.1.70291"}
 {"id": 383128, "field": "text", "en": "Extinguish the Brazier of Pain", "hash": "85fb31827dbc6402", "src": "wdb@1.15.9.69722"}
 {"id": 383129, "field": "text", "en": "Extinguish the Brazier of Malice", "hash": "81a35ccdc2173f32", "src": "wdb@1.15.9.69722"}
 {"id": 383130, "field": "text", "en": "Extinguish the Brazier of Suffering", "hash": "f9fd61d0b5078ae2", "src": "wdb@1.15.9.69722"}
 {"id": 383131, "field": "text", "en": "Extinguish the Brazier of Hatred", "hash": "9922abdbb9612eab", "src": "wdb@1.15.9.69722"}
 {"id": 383165, "field": "text", "en": "Portals Banished", "hash": "8838a86da1772281", "src": "wdb@1.15.9.69722"}
-{"id": 383304, "field": "text", "en": "Kodos Tamed", "hash": "12aaf0eafd156449", "src": "wdb@1.60.1.70245"}
-{"id": 383311, "field": "text", "en": "Flame of Ashenvale", "hash": "5a00893da66fbbaf", "src": "wdb@1.60.1.70245"}
-{"id": 383312, "field": "text", "en": "Flame of the Barrens", "hash": "6dc9d1834a7f27c7", "src": "wdb@1.60.1.70245"}
-{"id": 383313, "field": "text", "en": "Flame of Darkshore", "hash": "9b43d32937b69cab", "src": "wdb@1.60.1.70245"}
-{"id": 383314, "field": "text", "en": "Flame of Stonetalon", "hash": "24cc76e35379c2d9", "src": "wdb@1.60.1.70245"}
-{"id": 383344, "field": "text", "en": "Peons Awoken", "hash": "b81b9cbd0782650f", "src": "wdb@1.60.1.70245"}
-{"id": 383359, "field": "text", "en": "Rats captured", "hash": "d5c6fff7ab4bdee9", "src": "wdb@1.60.1.70245"}
+{"id": 383304, "field": "text", "en": "Kodos Tamed", "hash": "12aaf0eafd156449", "src": "wdb@1.60.1.70291"}
+{"id": 383311, "field": "text", "en": "Flame of Ashenvale", "hash": "5a00893da66fbbaf", "src": "wdb@1.60.1.70291"}
+{"id": 383312, "field": "text", "en": "Flame of the Barrens", "hash": "6dc9d1834a7f27c7", "src": "wdb@1.60.1.70291"}
+{"id": 383313, "field": "text", "en": "Flame of Darkshore", "hash": "9b43d32937b69cab", "src": "wdb@1.60.1.70291"}
+{"id": 383314, "field": "text", "en": "Flame of Stonetalon", "hash": "24cc76e35379c2d9", "src": "wdb@1.60.1.70291"}
+{"id": 383344, "field": "text", "en": "Peons Awoken", "hash": "b81b9cbd0782650f", "src": "wdb@1.60.1.70291"}
+{"id": 383359, "field": "text", "en": "Rats captured", "hash": "d5c6fff7ab4bdee9", "src": "wdb@1.60.1.70291"}
 {"id": 383385, "field": "text", "en": "Remains of Eva Sarkhoff Burned", "hash": "d96fa81deb10ca61", "src": "wdb@1.15.9.69722"}
 {"id": 383386, "field": "text", "en": "Remains of Lucien Sarkhoff Burned", "hash": "4f7fd92cb9bceb99", "src": "wdb@1.15.9.69722"}
-{"id": 383420, "field": "text", "en": "Rite of Cunning", "hash": "617da6da9bc0f395", "src": "wdb@1.60.1.70245"}
+{"id": 383420, "field": "text", "en": "Rite of Cunning", "hash": "617da6da9bc0f395", "src": "wdb@1.60.1.70291"}
 {"id": 383427, "field": "text", "en": "Mine Assaulted", "hash": "658f8cad9ef427b3", "src": "wdb@1.15.9.69722"}
 {"id": 383428, "field": "text", "en": "Lumber Mill Assaulted", "hash": "648ba99ec5c9d724", "src": "wdb@1.15.9.69722"}
 {"id": 383429, "field": "text", "en": "Blacksmith Assaulted", "hash": "20d336dfdae6559a", "src": "wdb@1.15.9.69722"}
 {"id": 383430, "field": "text", "en": "Farm Assaulted", "hash": "f0c7410c90dc758e", "src": "wdb@1.15.9.69722"}
-{"id": 383465, "field": "text", "en": "Lunar Fireworks Fired", "hash": "d59af84029b3c794", "src": "wdb@1.60.1.70245"}
-{"id": 383466, "field": "text", "en": "Lunar Fireworks Cluster Fired", "hash": "0b9555c18a5f4207", "src": "wdb@1.60.1.70245"}
-{"id": 383476, "field": "text", "en": "Gaea seed planted", "hash": "a3b51410b7443480", "src": "wdb@1.60.1.70245"}
-{"id": 383497, "field": "text", "en": "Sickly Deer cured", "hash": "9a1f204088ae0913", "src": "wdb@1.60.1.70245"}
+{"id": 383465, "field": "text", "en": "Lunar Fireworks Fired", "hash": "d59af84029b3c794", "src": "wdb@1.60.1.70291"}
+{"id": 383466, "field": "text", "en": "Lunar Fireworks Cluster Fired", "hash": "0b9555c18a5f4207", "src": "wdb@1.60.1.70291"}
+{"id": 383476, "field": "text", "en": "Gaea seed planted", "hash": "a3b51410b7443480", "src": "wdb@1.60.1.70291"}
+{"id": 383497, "field": "text", "en": "Sickly Deer cured", "hash": "9a1f204088ae0913", "src": "wdb@1.60.1.70291"}
 {"id": 383501, "field": "text", "en": "Mine Assaulted", "hash": "658f8cad9ef427b3", "src": "wdb@1.15.9.69722"}
 {"id": 383502, "field": "text", "en": "Lumber Mill Assaulted", "hash": "648ba99ec5c9d724", "src": "wdb@1.15.9.69722"}
 {"id": 383503, "field": "text", "en": "Blacksmith Assaulted", "hash": "20d336dfdae6559a", "src": "wdb@1.15.9.69722"}
@@ -35,7 +35,7 @@
 {"id": 383835, "field": "text", "en": "Vylestem Vines healed", "hash": "beffcf76797b25ba", "src": "wdb@1.15.9.69722"}
 {"id": 383871, "field": "text", "en": "Accept Redpath's Forgiveness", "hash": "060c5aa05a83d027", "src": "wdb@1.15.9.69722"}
 {"id": 383899, "field": "text", "en": "Vylestem Vines healed", "hash": "beffcf76797b25ba", "src": "wdb@1.15.9.69722"}
-{"id": 383980, "field": "text", "en": "Sickly Gazelle cured", "hash": "3f14dff3bfb8a5ce", "src": "wdb@1.60.1.70245"}
+{"id": 383980, "field": "text", "en": "Sickly Gazelle cured", "hash": "3f14dff3bfb8a5ce", "src": "wdb@1.60.1.70291"}
 {"id": 383982, "field": "text", "en": "Mine Assaulted", "hash": "658f8cad9ef427b3", "src": "wdb@1.15.9.69722"}
 {"id": 383983, "field": "text", "en": "Lumber Mill Assaulted", "hash": "648ba99ec5c9d724", "src": "wdb@1.15.9.69722"}
 {"id": 383984, "field": "text", "en": "Blacksmith Assaulted", "hash": "20d336dfdae6559a", "src": "wdb@1.15.9.69722"}

@@ -1,84 +1,84 @@
-{"id": 364001, "field": "name", "en": "Soul of Iron", "hash": "a2cec42d1b20cb76", "src": "db2@1.60.1.70245"}
-{"id": 364001, "field": "aura", "en": "|cFFffd200Hardcore|r\r\n$?$W1!=0[$@spelldesc348779$@spellicon364090 $@spellname364090][]$?$W2!=0[$@spelldesc348779$@spellicon364095 $@spellname364095][]$?$W3!=0[$@spelldesc348779$@spellicon364339 $@spellname364339][]$?$W4!=0[$@spelldesc348779$@spellicon364340 $@spellname364340][]$?$W5!=0[$@spelldesc348779$@spellicon364341 $@spellname364341][]\r\n$?$W6!=0[$@spelldesc348779$@spellicon431678 $@spellname431678][]", "hash": "55ade4dc8d3d280c", "src": "db2@1.60.1.70245"}
-{"id": 364043, "field": "name", "en": "Burst of Experience", "hash": "d7f02e35366e33ae", "src": "db2@1.60.1.70245"}
-{"id": 364060, "field": "name", "en": "Burst of Experience", "hash": "d7f02e35366e33ae", "src": "db2@1.60.1.70245"}
-{"id": 364061, "field": "name", "en": "Burst of Experience", "hash": "d7f02e35366e33ae", "src": "db2@1.60.1.70245"}
-{"id": 364062, "field": "name", "en": "Burst of Experience", "hash": "d7f02e35366e33ae", "src": "db2@1.60.1.70245"}
-{"id": 364063, "field": "name", "en": "Burst of Experience", "hash": "d7f02e35366e33ae", "src": "db2@1.60.1.70245"}
-{"id": 364064, "field": "name", "en": "Burst of Experience", "hash": "d7f02e35366e33ae", "src": "db2@1.60.1.70245"}
-{"id": 364090, "field": "name", "en": "Never Known Defeat", "hash": "e8dc2b8f9c3274d2", "src": "db2@1.60.1.70245"}
-{"id": 364095, "field": "name", "en": "Survivor of the Firelord", "hash": "114e50535835d333", "src": "db2@1.60.1.70245"}
-{"id": 364098, "field": "name", "en": "Thousand Blades", "hash": "459c7613199f6a55", "src": "db2@1.60.1.70245"}
-{"id": 364105, "field": "name", "en": "Relentless Dead", "hash": "4f91e6d75e71df02", "src": "db2@1.60.1.70245"}
-{"id": 364106, "field": "name", "en": "Relentless Dead", "hash": "4f91e6d75e71df02", "src": "db2@1.60.1.70245"}
-{"id": 364106, "field": "aura", "en": "$?$W2!=0[Immune to snare and root effects][Immune to snare effects].", "hash": "987f618e453225d1", "src": "db2@1.60.1.70245"}
-{"id": 364107, "field": "name", "en": "Relentless Dead", "hash": "4f91e6d75e71df02", "src": "db2@1.60.1.70245"}
-{"id": 364107, "field": "description", "en": "Immune to Root Effects.", "hash": "01906f80fcd4039e", "src": "db2@1.60.1.70245"}
-{"id": 364107, "field": "aura", "en": "Immune to Root Effects.", "hash": "01906f80fcd4039e", "src": "db2@1.60.1.70245"}
-{"id": 364108, "field": "name", "en": "Relentless Dead", "hash": "4f91e6d75e71df02", "src": "db2@1.60.1.70245"}
-{"id": 364156, "field": "name", "en": "Divining Trance", "hash": "5e9c83067ad68c5a", "src": "db2@1.60.1.70245"}
-{"id": 364159, "field": "name", "en": "Poisons", "hash": "c8da9a5fc6535675", "src": "db2@1.60.1.70245"}
-{"id": 364161, "field": "name", "en": "Arcane Intellect", "hash": "a2f41479ab171df5", "src": "db2@1.60.1.70245"}
-{"id": 364161, "field": "description", "en": "Increases the target's Intellect by $s1 for $d.", "hash": "9663f4befa1ae208", "src": "db2@1.60.1.70245"}
-{"id": 364161, "field": "aura", "en": "Increases Intellect by $s1.", "hash": "ec5dd10a8338a616", "src": "db2@1.60.1.70245"}
-{"id": 364163, "field": "name", "en": "Mark of the Wild", "hash": "1724e26f240abe23", "src": "db2@1.60.1.70245"}
-{"id": 364163, "field": "description", "en": "Increases the friendly target's armor by $s1, all attributes by $s2 and all resistances by $s3 for $d.", "hash": "48c4c0cd51264e51", "src": "db2@1.60.1.70245"}
-{"id": 364163, "field": "aura", "en": "Increases armor by $s1, all attributes by $s2 and all resistances by $s3.", "hash": "a07843b38f2e8468", "src": "db2@1.60.1.70245"}
-{"id": 364164, "field": "name", "en": "Master Swordsmith", "hash": "d8600f076dd7bf58", "src": "db2@1.60.1.70245"}
-{"id": 364165, "field": "name", "en": "Master Axesmith", "hash": "b4099767ceb2a218", "src": "db2@1.60.1.70245"}
-{"id": 364167, "field": "name", "en": "Master Hammersmith", "hash": "3b130bdd01a27c58", "src": "db2@1.60.1.70245"}
-{"id": 364204, "field": "name", "en": "Mirror Name", "hash": "8ca1d24eca0490f3", "src": "db2@1.60.1.70245"}
-{"id": 364207, "field": "name", "en": "Blessing of Theradras", "hash": "f1f35e256de1823b", "src": "db2@1.60.1.70245"}
-{"id": 364208, "field": "name", "en": "Blessing of Theradras", "hash": "f1f35e256de1823b", "src": "db2@1.60.1.70245"}
-{"id": 364208, "field": "aura", "en": "$?$W2==1[Immune to snare and root effects][Immune to snare effects].\r\n$?$W3==1[Movement speed increased by 50%.][]", "hash": "d7a55b6da85a0f75", "src": "db2@1.60.1.70245"}
-{"id": 364212, "field": "name", "en": "Blessing of Theradras", "hash": "f1f35e256de1823b", "src": "db2@1.60.1.70245"}
-{"id": 364214, "field": "name", "en": "Blessing of Theradras", "hash": "f1f35e256de1823b", "src": "db2@1.60.1.70245"}
-{"id": 364216, "field": "name", "en": "Blessing of Theradras", "hash": "f1f35e256de1823b", "src": "db2@1.60.1.70245"}
-{"id": 364226, "field": "name", "en": "Tarnished Soul", "hash": "3ec7a083ad336e3e", "src": "db2@1.60.1.70245"}
-{"id": 364226, "field": "aura", "en": "|cFFffd200Season of Mastery|r\r\n\r\n$?$W1!=0[$@spelldesc364456$@spellicon364456 $@spellname364456 $w1][]$?$W2!=0[$@spelldesc348779$@spellicon364095 $@spellname364095][]$?$W3!=0[$@spelldesc348779$@spellicon364339 $@spellname364339][]$?$W4!=0[$@spelldesc348779$@spellicon364340 $@spellname364340][]$?$W5!=0[$@spelldesc348779$@spellicon364341 $@spellname364341][]", "hash": "0b2ae94c827ce6d5", "src": "db2@1.60.1.70245"}
-{"id": 364227, "field": "name", "en": "Tarnished Soul", "hash": "3ec7a083ad336e3e", "src": "db2@1.60.1.70245"}
-{"id": 364228, "field": "name", "en": "Tarnished Soul", "hash": "3ec7a083ad336e3e", "src": "db2@1.60.1.70245"}
-{"id": 364265, "field": "name", "en": "Soul of Iron", "hash": "a2cec42d1b20cb76", "src": "db2@1.60.1.70245"}
-{"id": 364268, "field": "name", "en": "Soul of Iron", "hash": "a2cec42d1b20cb76", "src": "db2@1.60.1.70245"}
-{"id": 364282, "field": "name", "en": "Soul of Iron", "hash": "a2cec42d1b20cb76", "src": "db2@1.60.1.70245"}
-{"id": 364339, "field": "name", "en": "Survivor of the Shadow Flame", "hash": "8fd81ea3ac13c0b0", "src": "db2@1.60.1.70245"}
-{"id": 364340, "field": "name", "en": "Survivor of the Old God", "hash": "711b5cc9aa48edd4", "src": "db2@1.60.1.70245"}
-{"id": 364341, "field": "name", "en": "Survivor of the Damned", "hash": "be96e156d484d7e0", "src": "db2@1.60.1.70245"}
-{"id": 364350, "field": "name", "en": "Debuff", "hash": "c94d91998d648dd6", "src": "db2@1.60.1.70245"}
-{"id": 364455, "field": "name", "en": "Brand of Shadow Flame", "hash": "87a492723d6ca42a", "src": "db2@1.60.1.70245"}
-{"id": 364455, "field": "description", "en": "Health increased by $s1%.", "hash": "334d75a3ba5669e2", "src": "db2@1.60.1.70245"}
-{"id": 364455, "field": "aura", "en": "|cFFffd200Bonus Event: Season of Mastery|r\r\n\r\nHealth increased by $s1%.", "hash": "58597bcead294007", "src": "db2@1.60.1.70245"}
-{"id": 364456, "field": "name", "en": "Perished at Level", "hash": "5346ebb2430b6c2a", "src": "db2@1.60.1.70245"}
-{"id": 364459, "field": "name", "en": "Shroud of Death", "hash": "cc469bb0b3de2a1b", "src": "db2@1.60.1.70245"}
-{"id": 364487, "field": "name", "en": "Soul of Iron", "hash": "a2cec42d1b20cb76", "src": "db2@1.60.1.70245"}
-{"id": 364558, "field": "name", "en": "Teleport to Onyxia's Lair", "hash": "1421107bb3a231d1", "src": "db2@1.60.1.70245"}
-{"id": 364658, "field": "name", "en": "THIEF!", "hash": "811e6dead7b738c5", "src": "db2@1.60.1.70245"}
-{"id": 364658, "field": "aura", "en": "Given the recent string of thievery, enemies around you have stashed most of their belongings elsewhere.", "hash": "f38f60c350c63d06", "src": "db2@1.60.1.70245"}
-{"id": 364709, "field": "name", "en": "Transparent", "hash": "e801fd08904e5d54", "src": "db2@1.60.1.70245"}
-{"id": 364727, "field": "name", "en": "Summon Core Hound", "hash": "6b0fa621637f8263", "src": "db2@1.60.1.70245"}
-{"id": 364765, "field": "name", "en": "Soul of Iron", "hash": "a2cec42d1b20cb76", "src": "db2@1.60.1.70245"}
-{"id": 364766, "field": "name", "en": "Soul of Iron", "hash": "a2cec42d1b20cb76", "src": "db2@1.60.1.70245"}
-{"id": 364784, "field": "name", "en": "Share Health", "hash": "224ee6e1f064b229", "src": "db2@1.60.1.70245"}
-{"id": 364785, "field": "name", "en": "Share Health", "hash": "224ee6e1f064b229", "src": "db2@1.60.1.70245"}
-{"id": 364786, "field": "name", "en": "Share Health", "hash": "224ee6e1f064b229", "src": "db2@1.60.1.70245"}
-{"id": 364787, "field": "name", "en": "Share Health", "hash": "224ee6e1f064b229", "src": "db2@1.60.1.70245"}
-{"id": 364792, "field": "name", "en": "Share Health", "hash": "224ee6e1f064b229", "src": "db2@1.60.1.70245"}
-{"id": 364812, "field": "name", "en": "Dispel Magic", "hash": "87826d000137cc51", "src": "db2@1.60.1.70245"}
-{"id": 364812, "field": "description", "en": "Dispels magic on the target, removing $s1 harmful $lspell:spells; from a friend or $s1 beneficial $lspell:spells; from an enemy.", "hash": "f935d55094206c8e", "src": "db2@1.60.1.70245"}
-{"id": 364820, "field": "name", "en": "Living Fallout", "hash": "74437d0f38c703e4", "src": "db2@1.60.1.70245"}
-{"id": 364820, "field": "description", "en": "Deals $s1 Fire damage every $t1 sec.", "hash": "a9aeaf555afe3aee", "src": "db2@1.60.1.70245"}
-{"id": 364820, "field": "aura", "en": "Deals $s1 Fire damage every $t1 sec.", "hash": "a9aeaf555afe3aee", "src": "db2@1.60.1.70245"}
-{"id": 364837, "field": "name", "en": "Inferno", "hash": "a5ead299d1258ca6", "src": "db2@1.60.1.70245"}
-{"id": 364838, "field": "name", "en": "Inferno", "hash": "a5ead299d1258ca6", "src": "db2@1.60.1.70245"}
-{"id": 364838, "field": "description", "en": "Deals $s1 Fire damage every $t1 sec.", "hash": "a9aeaf555afe3aee", "src": "db2@1.60.1.70245"}
-{"id": 364838, "field": "aura", "en": "Deals $s1 Fire damage every $t1 sec.", "hash": "a9aeaf555afe3aee", "src": "db2@1.60.1.70245"}
-{"id": 364842, "field": "name", "en": "Living Fallout", "hash": "74437d0f38c703e4", "src": "db2@1.60.1.70245"}
-{"id": 364844, "field": "name", "en": "Meteor", "hash": "a35983361d0793f2", "src": "db2@1.60.1.70245"}
-{"id": 364847, "field": "name", "en": "Call Meteor", "hash": "2175f52cfff44b77", "src": "db2@1.60.1.70245"}
-{"id": 364849, "field": "name", "en": "Summon Onyxian Warder", "hash": "fd8a9559d261894e", "src": "db2@1.60.1.70245"}
-{"id": 364878, "field": "name", "en": "Summon Core Hound", "hash": "6b0fa621637f8263", "src": "db2@1.60.1.70245"}
-{"id": 364884, "field": "name", "en": "Teleport Spawn VFX", "hash": "9af6ca82db54d84b", "src": "db2@1.60.1.70245"}
-{"id": 364895, "field": "name", "en": "Fireball Volley", "hash": "21ed0071a1c80493", "src": "db2@1.60.1.70245"}
-{"id": 364895, "field": "description", "en": "Inflicts Fire damage to nearby enemies.", "hash": "209abb758c56cb46", "src": "db2@1.60.1.70245"}
-{"id": 364908, "field": "name", "en": "Dark Mending", "hash": "611a03e9215e2380", "src": "db2@1.60.1.70245"}
-{"id": 364908, "field": "description", "en": "Uses dark magic to heal an ally for $s1 damage.", "hash": "484a54a0f3b3a9f1", "src": "db2@1.60.1.70245"}
+{"id": 364001, "field": "name", "en": "Soul of Iron", "hash": "a2cec42d1b20cb76", "src": "db2@1.60.1.70291"}
+{"id": 364001, "field": "aura", "en": "|cFFffd200Hardcore|r\r\n$?$W1!=0[$@spelldesc348779$@spellicon364090 $@spellname364090][]$?$W2!=0[$@spelldesc348779$@spellicon364095 $@spellname364095][]$?$W3!=0[$@spelldesc348779$@spellicon364339 $@spellname364339][]$?$W4!=0[$@spelldesc348779$@spellicon364340 $@spellname364340][]$?$W5!=0[$@spelldesc348779$@spellicon364341 $@spellname364341][]\r\n$?$W6!=0[$@spelldesc348779$@spellicon431678 $@spellname431678][]", "hash": "55ade4dc8d3d280c", "src": "db2@1.60.1.70291"}
+{"id": 364043, "field": "name", "en": "Burst of Experience", "hash": "d7f02e35366e33ae", "src": "db2@1.60.1.70291"}
+{"id": 364060, "field": "name", "en": "Burst of Experience", "hash": "d7f02e35366e33ae", "src": "db2@1.60.1.70291"}
+{"id": 364061, "field": "name", "en": "Burst of Experience", "hash": "d7f02e35366e33ae", "src": "db2@1.60.1.70291"}
+{"id": 364062, "field": "name", "en": "Burst of Experience", "hash": "d7f02e35366e33ae", "src": "db2@1.60.1.70291"}
+{"id": 364063, "field": "name", "en": "Burst of Experience", "hash": "d7f02e35366e33ae", "src": "db2@1.60.1.70291"}
+{"id": 364064, "field": "name", "en": "Burst of Experience", "hash": "d7f02e35366e33ae", "src": "db2@1.60.1.70291"}
+{"id": 364090, "field": "name", "en": "Never Known Defeat", "hash": "e8dc2b8f9c3274d2", "src": "db2@1.60.1.70291"}
+{"id": 364095, "field": "name", "en": "Survivor of the Firelord", "hash": "114e50535835d333", "src": "db2@1.60.1.70291"}
+{"id": 364098, "field": "name", "en": "Thousand Blades", "hash": "459c7613199f6a55", "src": "db2@1.60.1.70291"}
+{"id": 364105, "field": "name", "en": "Relentless Dead", "hash": "4f91e6d75e71df02", "src": "db2@1.60.1.70291"}
+{"id": 364106, "field": "name", "en": "Relentless Dead", "hash": "4f91e6d75e71df02", "src": "db2@1.60.1.70291"}
+{"id": 364106, "field": "aura", "en": "$?$W2!=0[Immune to snare and root effects][Immune to snare effects].", "hash": "987f618e453225d1", "src": "db2@1.60.1.70291"}
+{"id": 364107, "field": "name", "en": "Relentless Dead", "hash": "4f91e6d75e71df02", "src": "db2@1.60.1.70291"}
+{"id": 364107, "field": "description", "en": "Immune to Root Effects.", "hash": "01906f80fcd4039e", "src": "db2@1.60.1.70291"}
+{"id": 364107, "field": "aura", "en": "Immune to Root Effects.", "hash": "01906f80fcd4039e", "src": "db2@1.60.1.70291"}
+{"id": 364108, "field": "name", "en": "Relentless Dead", "hash": "4f91e6d75e71df02", "src": "db2@1.60.1.70291"}
+{"id": 364156, "field": "name", "en": "Divining Trance", "hash": "5e9c83067ad68c5a", "src": "db2@1.60.1.70291"}
+{"id": 364159, "field": "name", "en": "Poisons", "hash": "c8da9a5fc6535675", "src": "db2@1.60.1.70291"}
+{"id": 364161, "field": "name", "en": "Arcane Intellect", "hash": "a2f41479ab171df5", "src": "db2@1.60.1.70291"}
+{"id": 364161, "field": "description", "en": "Increases the target's Intellect by $s1 for $d.", "hash": "9663f4befa1ae208", "src": "db2@1.60.1.70291"}
+{"id": 364161, "field": "aura", "en": "Increases Intellect by $s1.", "hash": "ec5dd10a8338a616", "src": "db2@1.60.1.70291"}
+{"id": 364163, "field": "name", "en": "Mark of the Wild", "hash": "1724e26f240abe23", "src": "db2@1.60.1.70291"}
+{"id": 364163, "field": "description", "en": "Increases the friendly target's armor by $s1, all attributes by $s2 and all resistances by $s3 for $d.", "hash": "48c4c0cd51264e51", "src": "db2@1.60.1.70291"}
+{"id": 364163, "field": "aura", "en": "Increases armor by $s1, all attributes by $s2 and all resistances by $s3.", "hash": "a07843b38f2e8468", "src": "db2@1.60.1.70291"}
+{"id": 364164, "field": "name", "en": "Master Swordsmith", "hash": "d8600f076dd7bf58", "src": "db2@1.60.1.70291"}
+{"id": 364165, "field": "name", "en": "Master Axesmith", "hash": "b4099767ceb2a218", "src": "db2@1.60.1.70291"}
+{"id": 364167, "field": "name", "en": "Master Hammersmith", "hash": "3b130bdd01a27c58", "src": "db2@1.60.1.70291"}
+{"id": 364204, "field": "name", "en": "Mirror Name", "hash": "8ca1d24eca0490f3", "src": "db2@1.60.1.70291"}
+{"id": 364207, "field": "name", "en": "Blessing of Theradras", "hash": "f1f35e256de1823b", "src": "db2@1.60.1.70291"}
+{"id": 364208, "field": "name", "en": "Blessing of Theradras", "hash": "f1f35e256de1823b", "src": "db2@1.60.1.70291"}
+{"id": 364208, "field": "aura", "en": "$?$W2==1[Immune to snare and root effects][Immune to snare effects].\r\n$?$W3==1[Movement speed increased by 50%.][]", "hash": "d7a55b6da85a0f75", "src": "db2@1.60.1.70291"}
+{"id": 364212, "field": "name", "en": "Blessing of Theradras", "hash": "f1f35e256de1823b", "src": "db2@1.60.1.70291"}
+{"id": 364214, "field": "name", "en": "Blessing of Theradras", "hash": "f1f35e256de1823b", "src": "db2@1.60.1.70291"}
+{"id": 364216, "field": "name", "en": "Blessing of Theradras", "hash": "f1f35e256de1823b", "src": "db2@1.60.1.70291"}
+{"id": 364226, "field": "name", "en": "Tarnished Soul", "hash": "3ec7a083ad336e3e", "src": "db2@1.60.1.70291"}
+{"id": 364226, "field": "aura", "en": "|cFFffd200Season of Mastery|r\r\n\r\n$?$W1!=0[$@spelldesc364456$@spellicon364456 $@spellname364456 $w1][]$?$W2!=0[$@spelldesc348779$@spellicon364095 $@spellname364095][]$?$W3!=0[$@spelldesc348779$@spellicon364339 $@spellname364339][]$?$W4!=0[$@spelldesc348779$@spellicon364340 $@spellname364340][]$?$W5!=0[$@spelldesc348779$@spellicon364341 $@spellname364341][]", "hash": "0b2ae94c827ce6d5", "src": "db2@1.60.1.70291"}
+{"id": 364227, "field": "name", "en": "Tarnished Soul", "hash": "3ec7a083ad336e3e", "src": "db2@1.60.1.70291"}
+{"id": 364228, "field": "name", "en": "Tarnished Soul", "hash": "3ec7a083ad336e3e", "src": "db2@1.60.1.70291"}
+{"id": 364265, "field": "name", "en": "Soul of Iron", "hash": "a2cec42d1b20cb76", "src": "db2@1.60.1.70291"}
+{"id": 364268, "field": "name", "en": "Soul of Iron", "hash": "a2cec42d1b20cb76", "src": "db2@1.60.1.70291"}
+{"id": 364282, "field": "name", "en": "Soul of Iron", "hash": "a2cec42d1b20cb76", "src": "db2@1.60.1.70291"}
+{"id": 364339, "field": "name", "en": "Survivor of the Shadow Flame", "hash": "8fd81ea3ac13c0b0", "src": "db2@1.60.1.70291"}
+{"id": 364340, "field": "name", "en": "Survivor of the Old God", "hash": "711b5cc9aa48edd4", "src": "db2@1.60.1.70291"}
+{"id": 364341, "field": "name", "en": "Survivor of the Damned", "hash": "be96e156d484d7e0", "src": "db2@1.60.1.70291"}
+{"id": 364350, "field": "name", "en": "Debuff", "hash": "c94d91998d648dd6", "src": "db2@1.60.1.70291"}
+{"id": 364455, "field": "name", "en": "Brand of Shadow Flame", "hash": "87a492723d6ca42a", "src": "db2@1.60.1.70291"}
+{"id": 364455, "field": "description", "en": "Health increased by $s1%.", "hash": "334d75a3ba5669e2", "src": "db2@1.60.1.70291"}
+{"id": 364455, "field": "aura", "en": "|cFFffd200Bonus Event: Season of Mastery|r\r\n\r\nHealth increased by $s1%.", "hash": "58597bcead294007", "src": "db2@1.60.1.70291"}
+{"id": 364456, "field": "name", "en": "Perished at Level", "hash": "5346ebb2430b6c2a", "src": "db2@1.60.1.70291"}
+{"id": 364459, "field": "name", "en": "Shroud of Death", "hash": "cc469bb0b3de2a1b", "src": "db2@1.60.1.70291"}
+{"id": 364487, "field": "name", "en": "Soul of Iron", "hash": "a2cec42d1b20cb76", "src": "db2@1.60.1.70291"}
+{"id": 364558, "field": "name", "en": "Teleport to Onyxia's Lair", "hash": "1421107bb3a231d1", "src": "db2@1.60.1.70291"}
+{"id": 364658, "field": "name", "en": "THIEF!", "hash": "811e6dead7b738c5", "src": "db2@1.60.1.70291"}
+{"id": 364658, "field": "aura", "en": "Given the recent string of thievery, enemies around you have stashed most of their belongings elsewhere.", "hash": "f38f60c350c63d06", "src": "db2@1.60.1.70291"}
+{"id": 364709, "field": "name", "en": "Transparent", "hash": "e801fd08904e5d54", "src": "db2@1.60.1.70291"}
+{"id": 364727, "field": "name", "en": "Summon Core Hound", "hash": "6b0fa621637f8263", "src": "db2@1.60.1.70291"}
+{"id": 364765, "field": "name", "en": "Soul of Iron", "hash": "a2cec42d1b20cb76", "src": "db2@1.60.1.70291"}
+{"id": 364766, "field": "name", "en": "Soul of Iron", "hash": "a2cec42d1b20cb76", "src": "db2@1.60.1.70291"}
+{"id": 364784, "field": "name", "en": "Share Health", "hash": "224ee6e1f064b229", "src": "db2@1.60.1.70291"}
+{"id": 364785, "field": "name", "en": "Share Health", "hash": "224ee6e1f064b229", "src": "db2@1.60.1.70291"}
+{"id": 364786, "field": "name", "en": "Share Health", "hash": "224ee6e1f064b229", "src": "db2@1.60.1.70291"}
+{"id": 364787, "field": "name", "en": "Share Health", "hash": "224ee6e1f064b229", "src": "db2@1.60.1.70291"}
+{"id": 364792, "field": "name", "en": "Share Health", "hash": "224ee6e1f064b229", "src": "db2@1.60.1.70291"}
+{"id": 364812, "field": "name", "en": "Dispel Magic", "hash": "87826d000137cc51", "src": "db2@1.60.1.70291"}
+{"id": 364812, "field": "description", "en": "Dispels magic on the target, removing $s1 harmful $lspell:spells; from a friend or $s1 beneficial $lspell:spells; from an enemy.", "hash": "f935d55094206c8e", "src": "db2@1.60.1.70291"}
+{"id": 364820, "field": "name", "en": "Living Fallout", "hash": "74437d0f38c703e4", "src": "db2@1.60.1.70291"}
+{"id": 364820, "field": "description", "en": "Deals $s1 Fire damage every $t1 sec.", "hash": "a9aeaf555afe3aee", "src": "db2@1.60.1.70291"}
+{"id": 364820, "field": "aura", "en": "Deals $s1 Fire damage every $t1 sec.", "hash": "a9aeaf555afe3aee", "src": "db2@1.60.1.70291"}
+{"id": 364837, "field": "name", "en": "Inferno", "hash": "a5ead299d1258ca6", "src": "db2@1.60.1.70291"}
+{"id": 364838, "field": "name", "en": "Inferno", "hash": "a5ead299d1258ca6", "src": "db2@1.60.1.70291"}
+{"id": 364838, "field": "description", "en": "Deals $s1 Fire damage every $t1 sec.", "hash": "a9aeaf555afe3aee", "src": "db2@1.60.1.70291"}
+{"id": 364838, "field": "aura", "en": "Deals $s1 Fire damage every $t1 sec.", "hash": "a9aeaf555afe3aee", "src": "db2@1.60.1.70291"}
+{"id": 364842, "field": "name", "en": "Living Fallout", "hash": "74437d0f38c703e4", "src": "db2@1.60.1.70291"}
+{"id": 364844, "field": "name", "en": "Meteor", "hash": "a35983361d0793f2", "src": "db2@1.60.1.70291"}
+{"id": 364847, "field": "name", "en": "Call Meteor", "hash": "2175f52cfff44b77", "src": "db2@1.60.1.70291"}
+{"id": 364849, "field": "name", "en": "Summon Onyxian Warder", "hash": "fd8a9559d261894e", "src": "db2@1.60.1.70291"}
+{"id": 364878, "field": "name", "en": "Summon Core Hound", "hash": "6b0fa621637f8263", "src": "db2@1.60.1.70291"}
+{"id": 364884, "field": "name", "en": "Teleport Spawn VFX", "hash": "9af6ca82db54d84b", "src": "db2@1.60.1.70291"}
+{"id": 364895, "field": "name", "en": "Fireball Volley", "hash": "21ed0071a1c80493", "src": "db2@1.60.1.70291"}
+{"id": 364895, "field": "description", "en": "Inflicts Fire damage to nearby enemies.", "hash": "209abb758c56cb46", "src": "db2@1.60.1.70291"}
+{"id": 364908, "field": "name", "en": "Dark Mending", "hash": "611a03e9215e2380", "src": "db2@1.60.1.70291"}
+{"id": 364908, "field": "description", "en": "Uses dark magic to heal an ally for $s1 damage.", "hash": "484a54a0f3b3a9f1", "src": "db2@1.60.1.70291"}

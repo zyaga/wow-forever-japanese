@@ -1,248 +1,248 @@
-{"id": "MACRO", "field": "text", "en": "Macro", "hash": "54b9657129fc34df", "src": "db2@1.60.1.70245"}
-{"id": "MACROFRAME_CHAR_LIMIT", "field": "text", "en": "%d/255 Characters Used", "hash": "5269200bd3f799dd", "src": "db2@1.60.1.70245"}
-{"id": "MACROS", "field": "text", "en": "Macros", "hash": "5adeea1d7111d24c", "src": "db2@1.60.1.70245"}
-{"id": "MACRO_ACTION_FORBIDDEN", "field": "text", "en": "A macro script has been blocked from an action only available to the Blizzard UI.", "hash": "6378604ce2983c0e", "src": "db2@1.60.1.70245"}
-{"id": "MACRO_POPUP_CHOOSE_ICON", "field": "text", "en": "Choose an Icon:", "hash": "59742d38fb94afe1", "src": "db2@1.60.1.70245"}
-{"id": "MACRO_POPUP_TEXT", "field": "text", "en": "Enter Macro Name (Max 16 Characters):", "hash": "c30d203d54ca0c51", "src": "db2@1.60.1.70245"}
-{"id": "MAC_DISABLE_OS_SHORTCUTS", "field": "text", "en": "Disable OS Keyboard Shortcuts", "hash": "94b084fcf9ff853d", "src": "db2@1.60.1.70245"}
-{"id": "MAC_DISABLE_OS_SHORTCUTS_TOOLTIP", "field": "text", "en": "Disables the operating system keyboard shortcuts. Use this if you don't want to accidentally fire operating system shortcuts during the game.", "hash": "099682cb8abeb16e", "src": "db2@1.60.1.70245"}
-{"id": "MAC_INPUT_MONITORING1014", "field": "text", "en": "For Push to Talk to work when World of Warcraft is not in focus, you must grant \"Accessibility\" permission to %s in Security & Privacy preferences, located in System Preferences. Would you like to open System Preferences now?", "hash": "76ea366586c93658", "src": "db2@1.60.1.70245"}
-{"id": "MAC_INPUT_MONITORING1015", "field": "text", "en": "For Push to Talk to work when World of Warcraft is not in focus, you must grant \"Input Monitoring\" permission to %s in Security & Privacy preferences, located in System Preferences. Would you like to open System Preferences now?", "hash": "1ed2a95b46435d0d", "src": "db2@1.60.1.70245"}
-{"id": "MAC_MIC_PERMISSIONS_OPEN_BUTTON", "field": "text", "en": "System Preferences", "hash": "b13d4a4d0258078f", "src": "db2@1.60.1.70245"}
-{"id": "MAC_MIC_PREMISSIONS_NOTIFICATION", "field": "text", "en": "In order to use voice chat, you must grant \"Microphone\" permission to %s in Security & Privacy preferences, located in System Preferences.", "hash": "e875edea1394a1f5", "src": "db2@1.60.1.70245"}
-{"id": "MAC_OPEN_UNIVERSAL_ACCESS", "field": "text", "en": "In order to use this option accessibility needs to be enabled. Please check the option \"Enable access for assistive devices\" in the Universal Access System Preferences panel. Would you like to open the System Preferences now?", "hash": "a088b1a8ecffe3b5", "src": "db2@1.60.1.70245"}
-{"id": "MAC_OPEN_UNIVERSAL_ACCESS1090", "field": "text", "en": "In order to use this option, you must grant access to %s in Security & Privacy preferences, located in System Preferences. Would you like to open System Preferences now?", "hash": "431c500e9791a0da", "src": "db2@1.60.1.70245"}
-{"id": "MAC_SETTINGS_LABEL", "field": "text", "en": "Keyboard Options", "hash": "3752377e27d40891", "src": "db2@1.60.1.70245"}
-{"id": "MAC_USE_COMMAND_LEFT_CLICK_AS_RIGHT_CLICK", "field": "text", "en": "Command left click as right click", "hash": "979aee04e3768a53", "src": "db2@1.60.1.70245"}
-{"id": "MAC_USE_COMMAND_LEFT_CLICK_AS_RIGHT_CLICK_TOOLTIP", "field": "text", "en": "Hold down Command key and left click to simulate a right click.", "hash": "616b62093825829d", "src": "db2@1.60.1.70245"}
-{"id": "MAIL_COD_ERROR", "field": "text", "en": "C.O.D. must be <= %d", "hash": "ff8a2d0cbd7d1ba6", "src": "db2@1.60.1.70245"}
-{"id": "MAIL_COD_ERROR_COLORBLIND", "field": "text", "en": "C.O.D. must be <= %1$d%2$s", "hash": "3ab56409f3ee5f5f", "src": "db2@1.60.1.70245"}
-{"id": "MAIL_LETTER_TOOLTIP", "field": "text", "en": "Click to make a permanent\ncopy of this letter.", "hash": "f1c80860ff60a47b", "src": "db2@1.60.1.70245"}
-{"id": "MAIL_MULTIPLE_ITEMS", "field": "text", "en": "Multiple items", "hash": "d33c49772d40336c", "src": "db2@1.60.1.70245"}
-{"id": "MAIL_RETURN", "field": "text", "en": "Return", "hash": "8cf32f6bf43c81ee", "src": "db2@1.60.1.70245"}
-{"id": "MAIL_SUBJECT_LABEL", "field": "text", "en": "Subject:", "hash": "ea6e56ea05bee93a", "src": "db2@1.60.1.70245"}
-{"id": "MAIL_TO_LABEL", "field": "text", "en": "To:", "hash": "001637fb4d840e2e", "src": "db2@1.60.1.70245"}
-{"id": "MAINASSIST", "field": "text", "en": "Main Assist", "hash": "23d6cc19b177476f", "src": "db2@1.60.1.70245"}
-{"id": "MAINHANDSLOT", "field": "text", "en": "Main Hand", "hash": "0733afc2db5fe73b", "src": "db2@1.60.1.70245"}
-{"id": "MAINMENUBAR_BANDWIDTH_LABEL", "field": "text", "en": "Bandwidth %d Mbps", "hash": "5a21ba97c005a045", "src": "db2@1.60.1.70245"}
-{"id": "MAINMENUBAR_COMMUNICATION_PROTOCOL_LABEL", "field": "text", "en": "Communication Protocol:\nHome: %s\nWorld: %s", "hash": "4565aadfbe186123", "src": "db2@1.60.1.70245"}
-{"id": "MAINMENUBAR_DOWNLOAD_PERCENT_LABEL", "field": "text", "en": "Download %d %% complete", "hash": "24c426b8b243640a", "src": "db2@1.60.1.70245"}
-{"id": "MAINMENUBAR_FPS_LABEL", "field": "text", "en": "Framerate: %.0f fps", "hash": "eb38af9e43d8c0a3", "src": "db2@1.60.1.70245"}
-{"id": "MAINMENUBAR_LATENCY_LABEL", "field": "text", "en": "Latency:\n%.0f ms (home)\n%.0f ms (world)", "hash": "b0e94216c5a456f4", "src": "db2@1.60.1.70245"}
-{"id": "MAINMENUBAR_PROTOCOLS_LABEL", "field": "text", "en": "Internet Protocols:\nHome: %s\nWorld: %s", "hash": "051654dea0365045", "src": "db2@1.60.1.70245"}
-{"id": "MAINMENU_BUTTON", "field": "text", "en": "Game Menu", "hash": "4880ed18b0a44df1", "src": "db2@1.60.1.70245"}
-{"id": "MAINTANK", "field": "text", "en": "Main Tank", "hash": "08cf530d7c3f57ad", "src": "db2@1.60.1.70245"}
-{"id": "MAIN_ASSIST", "field": "text", "en": "Main Assist", "hash": "23d6cc19b177476f", "src": "db2@1.60.1.70245"}
-{"id": "MAIN_HELP_BUTTON_TOOLTIP", "field": "text", "en": "Click this to toggle on/off the help system for this frame.", "hash": "18a8ef5313a73483", "src": "db2@1.60.1.70245"}
-{"id": "MAIN_TANK", "field": "text", "en": "Main Tank", "hash": "08cf530d7c3f57ad", "src": "db2@1.60.1.70245"}
-{"id": "MAJOR_FACTION_MAX_RENOWN_REACHED", "field": "text", "en": "Maximum Renown", "hash": "b547a5c4dfecb476", "src": "db2@1.60.1.70245"}
-{"id": "MAJOR_FACTION_RENOWN_LEVEL_TOAST", "field": "text", "en": "Renown %d", "hash": "ff986135f8acf86d", "src": "db2@1.60.1.70245"}
-{"id": "MAKE_INTERACTABLE", "field": "text", "en": "Make Interactive", "hash": "7f3e9c8a93c43412", "src": "db2@1.60.1.70245"}
-{"id": "MAKE_MODERATOR", "field": "text", "en": "Make Moderator", "hash": "a9079abc2837458d", "src": "db2@1.60.1.70245"}
-{"id": "MAKE_UNINTERACTABLE", "field": "text", "en": "Make Noninteractive", "hash": "f3269a031dca1918", "src": "db2@1.60.1.70245"}
-{"id": "MANA", "field": "text", "en": "Mana", "hash": "0a6af6b30963c5cf", "src": "db2@1.60.1.70245"}
-{"id": "MANA_COST", "field": "text", "en": "%s Mana", "hash": "5663926ae64ea98e", "src": "db2@1.60.1.70245"}
-{"id": "MANA_COST_LARGE", "field": "text", "en": "%s Mana", "hash": "5663926ae64ea98e", "src": "db2@1.60.1.70245"}
-{"id": "MANA_COST_LARGE_PER_TIME", "field": "text", "en": "%s Mana, plus %s per sec", "hash": "cfe15bccef2f4171", "src": "db2@1.60.1.70245"}
-{"id": "MANA_COST_LARGE_PER_TIME_NO_BASE", "field": "text", "en": "%s Mana per sec", "hash": "a77b0fffb8e7265b", "src": "db2@1.60.1.70245"}
-{"id": "MANA_COST_PER_TIME", "field": "text", "en": "%s Mana, plus %s per sec", "hash": "cfe15bccef2f4171", "src": "db2@1.60.1.70245"}
-{"id": "MANA_COST_PER_TIME_NO_BASE", "field": "text", "en": "%s Mana per sec", "hash": "a77b0fffb8e7265b", "src": "db2@1.60.1.70245"}
-{"id": "MANA_LOW", "field": "text", "en": "Mana Low", "hash": "22c27d8619672024", "src": "db2@1.60.1.70245"}
-{"id": "MANA_REGEN", "field": "text", "en": "Mana Regen", "hash": "87a7ea9d2db2cbcd", "src": "db2@1.60.1.70245"}
-{"id": "MANA_REGEN_TOOLTIP", "field": "text", "en": "Amount of mana regenerated every 5 seconds.", "hash": "0b56d1a088dca022", "src": "db2@1.60.1.70245"}
-{"id": "MAP_AND_QUEST_LOG", "field": "text", "en": "Map & Quest Log", "hash": "efa63473381cfa8c", "src": "db2@1.60.1.70245"}
-{"id": "MAP_FILTER", "field": "text", "en": "Map Filter", "hash": "7f7da9eb903cc7d7", "src": "db2@1.60.1.70245"}
-{"id": "MAP_LEGEND_CATEGORY_ACTIVITIES", "field": "text", "en": "Activities", "hash": "69b7e5a8d540a60a", "src": "db2@1.60.1.70245"}
-{"id": "MAP_LEGEND_CATEGORY_MOVEMENT", "field": "text", "en": "Movement", "hash": "31395e64bb1d7b43", "src": "db2@1.60.1.70245"}
-{"id": "MAP_LEGEND_CATEGORY_QUESTS", "field": "text", "en": "Quests", "hash": "a84737c440533b3c", "src": "db2@1.60.1.70245"}
-{"id": "MAP_LEGEND_DUNGEON", "field": "text", "en": "Dungeon", "hash": "8bba4ca03e80dc45", "src": "db2@1.60.1.70245"}
-{"id": "MAP_LEGEND_DUNGEON_TOOLTIP", "field": "text", "en": "Instanced content that rewards loot, intended for a party of up to five adventurers", "hash": "02531063a3d852d0", "src": "db2@1.60.1.70245"}
-{"id": "MAP_LEGEND_FLIGHTPOINT", "field": "text", "en": "Flightpoint", "hash": "c859eb205aa054a4", "src": "db2@1.60.1.70245"}
-{"id": "MAP_LEGEND_FLIGHTPOINT_TOOLTIP", "field": "text", "en": "Transports you to a different area in the same region", "hash": "80eee10f02c06371", "src": "db2@1.60.1.70245"}
-{"id": "MAP_LEGEND_FRAME_LABEL", "field": "text", "en": "Map Legend", "hash": "1db12966ff3a28b3", "src": "db2@1.60.1.70245"}
-{"id": "MAP_LEGEND_INPROGRESS", "field": "text", "en": "In Progress", "hash": "035705ae6022e043", "src": "db2@1.60.1.70245"}
-{"id": "MAP_LEGEND_INPROGRESS_TOOLTIP", "field": "text", "en": "Quests that are currently in progress", "hash": "c9e98bca0dd6fe13", "src": "db2@1.60.1.70245"}
-{"id": "MAP_LEGEND_LOCALSTORY", "field": "text", "en": "Quest", "hash": "9d9ed56bb9b5eac9", "src": "db2@1.60.1.70245"}
-{"id": "MAP_LEGEND_LOCALSTORY_TOOLTIP", "field": "text", "en": "Quests that explore local cultures and side adventures", "hash": "aac2af3afd4631bb", "src": "db2@1.60.1.70245"}
-{"id": "MAP_LEGEND_RAID", "field": "text", "en": "Raid", "hash": "0b16782ecc6aea8a", "src": "db2@1.60.1.70245"}
-{"id": "MAP_LEGEND_RAID_TOOLTIP", "field": "text", "en": "Challenging content that is intended for large groups of players, and provides valuable loot", "hash": "abe5be8afcf02ae0", "src": "db2@1.60.1.70245"}
-{"id": "MAP_LEGEND_REPEATABLE", "field": "text", "en": "Repeatable", "hash": "7f9b420726464b7a", "src": "db2@1.60.1.70245"}
-{"id": "MAP_LEGEND_REPEATABLE_TOOLTIP", "field": "text", "en": "Time-gated quests", "hash": "c6ff3454c95c30c9", "src": "db2@1.60.1.70245"}
-{"id": "MAP_LEGEND_TURNIN", "field": "text", "en": "Turn In", "hash": "1dfa4d8edf7cda66", "src": "db2@1.60.1.70245"}
-{"id": "MAP_LEGEND_TURNIN_TOOLTIP", "field": "text", "en": "Quests that are ready to be turned in", "hash": "2e960038c70770f0", "src": "db2@1.60.1.70245"}
-{"id": "MAP_LINK_POI_TOOLTIP_INSTRUCTION_LINE", "field": "text", "en": "<Right Click to show map>", "hash": "c59a798ab65c7bed", "src": "db2@1.60.1.70245"}
-{"id": "MAP_PIN", "field": "text", "en": "Map Pin", "hash": "593f117214acd3d7", "src": "db2@1.60.1.70245"}
-{"id": "MAP_PIN_INVALID_MAP", "field": "text", "en": "You can't place a pin on this map.", "hash": "c60b7bee8f1fa937", "src": "db2@1.60.1.70245"}
-{"id": "MAP_PIN_REMOVE", "field": "text", "en": "<Ctrl click to remove pin>", "hash": "6614cf3fcd9f6309", "src": "db2@1.60.1.70245"}
-{"id": "MAP_PIN_SHARING", "field": "text", "en": "Map Pin Sharing", "hash": "faee4fafee2d84bc", "src": "db2@1.60.1.70245"}
-{"id": "MAP_PIN_SHARING_TOOLTIP", "field": "text", "en": "You can share this location with other players by inserting a link into chat.|n|n|cff20ff20<Shift click to share pin in chat>|r", "hash": "8e33053e91792b9a", "src": "db2@1.60.1.70245"}
-{"id": "MAP_PIN_SHARING_TOOLTIP_GAMEPAD", "field": "text", "en": "You can share this location with other players by inserting a link into chat.", "hash": "42b8244043ecea99", "src": "db2@1.60.1.70245"}
-{"id": "MAP_PIN_TOGGLE_FOCUS", "field": "text", "en": "Toggle Focus on Marker", "hash": "a7321faa42c899f1", "src": "db2@1.60.1.70245"}
-{"id": "MAP_PIN_TOGGLE_QUEST_DETAILS", "field": "text", "en": "Toggle Quest Details", "hash": "1cfdfdfb017c41b1", "src": "db2@1.60.1.70245"}
-{"id": "MAP_PIN_TOGGLE_QUEST_FOCUS", "field": "text", "en": "Toggle Focus on Quest", "hash": "26fb4f98d41ca19d", "src": "db2@1.60.1.70245"}
-{"id": "MAP_PIN_TOOLTIP", "field": "text", "en": "Place a locational pin on the map that can be tracked and shared with other players.", "hash": "3c4eaab5e1a80be2", "src": "db2@1.60.1.70245"}
-{"id": "MAP_PIN_TOOLTIP_INSTRUCTIONS", "field": "text", "en": "Click this button and then the map to drop a pin or <Ctrl click directly on the map>", "hash": "12345b83326e1f2b", "src": "db2@1.60.1.70245"}
-{"id": "MAP_QUEST_DIFFICULTY_TEXT", "field": "text", "en": "Quest Difficulty Color", "hash": "c8b16e9f08779089", "src": "db2@1.60.1.70245"}
-{"id": "MARKED_AFK", "field": "text", "en": "You are now Away.", "hash": "8f496a7aa86f23ee", "src": "db2@1.60.1.70245"}
-{"id": "MARKED_AFK_MESSAGE", "field": "text", "en": "You are now Away: %s", "hash": "fcb2418f1e2195b6", "src": "db2@1.60.1.70245"}
-{"id": "MARKED_DND", "field": "text", "en": "You are now Busy: %s", "hash": "ba0bafe7a40b6688", "src": "db2@1.60.1.70245"}
-{"id": "MASTERY_POINTS_SPENT", "field": "text", "en": "%1$s Talents: %2$s", "hash": "31aa1e8c7c884a70", "src": "db2@1.60.1.70245"}
-{"id": "MASTER_LOOTER", "field": "text", "en": "Master Looter", "hash": "efe504b71ce1013e", "src": "db2@1.60.1.70245"}
-{"id": "MASTER_VOLUME", "field": "text", "en": "Master Volume", "hash": "c2a9573aa8030c86", "src": "db2@1.60.1.70245"}
-{"id": "MAXFPS", "field": "text", "en": "Max Foreground FPS", "hash": "a5c49dd730ec366a", "src": "db2@1.60.1.70245"}
-{"id": "MAXFPSBK", "field": "text", "en": "Max Background FPS", "hash": "7f56c4a790cdc622", "src": "db2@1.60.1.70245"}
-{"id": "MAXFPSBK_CHECK", "field": "text", "en": "Max Background FPS Toggle", "hash": "717b234ec225d12e", "src": "db2@1.60.1.70245"}
-{"id": "MAXFPS_CHECK", "field": "text", "en": "Max Foreground FPS Toggle", "hash": "6d91107d60401809", "src": "db2@1.60.1.70245"}
-{"id": "MAX_FOLLOW_DIST", "field": "text", "en": "Max Camera Distance", "hash": "2476ec1bf7a6ad18", "src": "db2@1.60.1.70245"}
-{"id": "MELEE", "field": "text", "en": "Melee", "hash": "5544f07d8354c84f", "src": "db2@1.60.1.70245"}
+{"id": "MACRO", "field": "text", "en": "Macro", "hash": "54b9657129fc34df", "src": "db2@1.60.1.70291"}
+{"id": "MACROFRAME_CHAR_LIMIT", "field": "text", "en": "%d/255 Characters Used", "hash": "5269200bd3f799dd", "src": "db2@1.60.1.70291"}
+{"id": "MACROS", "field": "text", "en": "Macros", "hash": "5adeea1d7111d24c", "src": "db2@1.60.1.70291"}
+{"id": "MACRO_ACTION_FORBIDDEN", "field": "text", "en": "A macro script has been blocked from an action only available to the Blizzard UI.", "hash": "6378604ce2983c0e", "src": "db2@1.60.1.70291"}
+{"id": "MACRO_POPUP_CHOOSE_ICON", "field": "text", "en": "Choose an Icon:", "hash": "59742d38fb94afe1", "src": "db2@1.60.1.70291"}
+{"id": "MACRO_POPUP_TEXT", "field": "text", "en": "Enter Macro Name (Max 16 Characters):", "hash": "c30d203d54ca0c51", "src": "db2@1.60.1.70291"}
+{"id": "MAC_DISABLE_OS_SHORTCUTS", "field": "text", "en": "Disable OS Keyboard Shortcuts", "hash": "94b084fcf9ff853d", "src": "db2@1.60.1.70291"}
+{"id": "MAC_DISABLE_OS_SHORTCUTS_TOOLTIP", "field": "text", "en": "Disables the operating system keyboard shortcuts. Use this if you don't want to accidentally fire operating system shortcuts during the game.", "hash": "099682cb8abeb16e", "src": "db2@1.60.1.70291"}
+{"id": "MAC_INPUT_MONITORING1014", "field": "text", "en": "For Push to Talk to work when World of Warcraft is not in focus, you must grant \"Accessibility\" permission to %s in Security & Privacy preferences, located in System Preferences. Would you like to open System Preferences now?", "hash": "76ea366586c93658", "src": "db2@1.60.1.70291"}
+{"id": "MAC_INPUT_MONITORING1015", "field": "text", "en": "For Push to Talk to work when World of Warcraft is not in focus, you must grant \"Input Monitoring\" permission to %s in Security & Privacy preferences, located in System Preferences. Would you like to open System Preferences now?", "hash": "1ed2a95b46435d0d", "src": "db2@1.60.1.70291"}
+{"id": "MAC_MIC_PERMISSIONS_OPEN_BUTTON", "field": "text", "en": "System Preferences", "hash": "b13d4a4d0258078f", "src": "db2@1.60.1.70291"}
+{"id": "MAC_MIC_PREMISSIONS_NOTIFICATION", "field": "text", "en": "In order to use voice chat, you must grant \"Microphone\" permission to %s in Security & Privacy preferences, located in System Preferences.", "hash": "e875edea1394a1f5", "src": "db2@1.60.1.70291"}
+{"id": "MAC_OPEN_UNIVERSAL_ACCESS", "field": "text", "en": "In order to use this option accessibility needs to be enabled. Please check the option \"Enable access for assistive devices\" in the Universal Access System Preferences panel. Would you like to open the System Preferences now?", "hash": "a088b1a8ecffe3b5", "src": "db2@1.60.1.70291"}
+{"id": "MAC_OPEN_UNIVERSAL_ACCESS1090", "field": "text", "en": "In order to use this option, you must grant access to %s in Security & Privacy preferences, located in System Preferences. Would you like to open System Preferences now?", "hash": "431c500e9791a0da", "src": "db2@1.60.1.70291"}
+{"id": "MAC_SETTINGS_LABEL", "field": "text", "en": "Keyboard Options", "hash": "3752377e27d40891", "src": "db2@1.60.1.70291"}
+{"id": "MAC_USE_COMMAND_LEFT_CLICK_AS_RIGHT_CLICK", "field": "text", "en": "Command left click as right click", "hash": "979aee04e3768a53", "src": "db2@1.60.1.70291"}
+{"id": "MAC_USE_COMMAND_LEFT_CLICK_AS_RIGHT_CLICK_TOOLTIP", "field": "text", "en": "Hold down Command key and left click to simulate a right click.", "hash": "616b62093825829d", "src": "db2@1.60.1.70291"}
+{"id": "MAIL_COD_ERROR", "field": "text", "en": "C.O.D. must be <= %d", "hash": "ff8a2d0cbd7d1ba6", "src": "db2@1.60.1.70291"}
+{"id": "MAIL_COD_ERROR_COLORBLIND", "field": "text", "en": "C.O.D. must be <= %1$d%2$s", "hash": "3ab56409f3ee5f5f", "src": "db2@1.60.1.70291"}
+{"id": "MAIL_LETTER_TOOLTIP", "field": "text", "en": "Click to make a permanent\ncopy of this letter.", "hash": "f1c80860ff60a47b", "src": "db2@1.60.1.70291"}
+{"id": "MAIL_MULTIPLE_ITEMS", "field": "text", "en": "Multiple items", "hash": "d33c49772d40336c", "src": "db2@1.60.1.70291"}
+{"id": "MAIL_RETURN", "field": "text", "en": "Return", "hash": "8cf32f6bf43c81ee", "src": "db2@1.60.1.70291"}
+{"id": "MAIL_SUBJECT_LABEL", "field": "text", "en": "Subject:", "hash": "ea6e56ea05bee93a", "src": "db2@1.60.1.70291"}
+{"id": "MAIL_TO_LABEL", "field": "text", "en": "To:", "hash": "001637fb4d840e2e", "src": "db2@1.60.1.70291"}
+{"id": "MAINASSIST", "field": "text", "en": "Main Assist", "hash": "23d6cc19b177476f", "src": "db2@1.60.1.70291"}
+{"id": "MAINHANDSLOT", "field": "text", "en": "Main Hand", "hash": "0733afc2db5fe73b", "src": "db2@1.60.1.70291"}
+{"id": "MAINMENUBAR_BANDWIDTH_LABEL", "field": "text", "en": "Bandwidth %d Mbps", "hash": "5a21ba97c005a045", "src": "db2@1.60.1.70291"}
+{"id": "MAINMENUBAR_COMMUNICATION_PROTOCOL_LABEL", "field": "text", "en": "Communication Protocol:\nHome: %s\nWorld: %s", "hash": "4565aadfbe186123", "src": "db2@1.60.1.70291"}
+{"id": "MAINMENUBAR_DOWNLOAD_PERCENT_LABEL", "field": "text", "en": "Download %d %% complete", "hash": "24c426b8b243640a", "src": "db2@1.60.1.70291"}
+{"id": "MAINMENUBAR_FPS_LABEL", "field": "text", "en": "Framerate: %.0f fps", "hash": "eb38af9e43d8c0a3", "src": "db2@1.60.1.70291"}
+{"id": "MAINMENUBAR_LATENCY_LABEL", "field": "text", "en": "Latency:\n%.0f ms (home)\n%.0f ms (world)", "hash": "b0e94216c5a456f4", "src": "db2@1.60.1.70291"}
+{"id": "MAINMENUBAR_PROTOCOLS_LABEL", "field": "text", "en": "Internet Protocols:\nHome: %s\nWorld: %s", "hash": "051654dea0365045", "src": "db2@1.60.1.70291"}
+{"id": "MAINMENU_BUTTON", "field": "text", "en": "Game Menu", "hash": "4880ed18b0a44df1", "src": "db2@1.60.1.70291"}
+{"id": "MAINTANK", "field": "text", "en": "Main Tank", "hash": "08cf530d7c3f57ad", "src": "db2@1.60.1.70291"}
+{"id": "MAIN_ASSIST", "field": "text", "en": "Main Assist", "hash": "23d6cc19b177476f", "src": "db2@1.60.1.70291"}
+{"id": "MAIN_HELP_BUTTON_TOOLTIP", "field": "text", "en": "Click this to toggle on/off the help system for this frame.", "hash": "18a8ef5313a73483", "src": "db2@1.60.1.70291"}
+{"id": "MAIN_TANK", "field": "text", "en": "Main Tank", "hash": "08cf530d7c3f57ad", "src": "db2@1.60.1.70291"}
+{"id": "MAJOR_FACTION_MAX_RENOWN_REACHED", "field": "text", "en": "Maximum Renown", "hash": "b547a5c4dfecb476", "src": "db2@1.60.1.70291"}
+{"id": "MAJOR_FACTION_RENOWN_LEVEL_TOAST", "field": "text", "en": "Renown %d", "hash": "ff986135f8acf86d", "src": "db2@1.60.1.70291"}
+{"id": "MAKE_INTERACTABLE", "field": "text", "en": "Make Interactive", "hash": "7f3e9c8a93c43412", "src": "db2@1.60.1.70291"}
+{"id": "MAKE_MODERATOR", "field": "text", "en": "Make Moderator", "hash": "a9079abc2837458d", "src": "db2@1.60.1.70291"}
+{"id": "MAKE_UNINTERACTABLE", "field": "text", "en": "Make Noninteractive", "hash": "f3269a031dca1918", "src": "db2@1.60.1.70291"}
+{"id": "MANA", "field": "text", "en": "Mana", "hash": "0a6af6b30963c5cf", "src": "db2@1.60.1.70291"}
+{"id": "MANA_COST", "field": "text", "en": "%s Mana", "hash": "5663926ae64ea98e", "src": "db2@1.60.1.70291"}
+{"id": "MANA_COST_LARGE", "field": "text", "en": "%s Mana", "hash": "5663926ae64ea98e", "src": "db2@1.60.1.70291"}
+{"id": "MANA_COST_LARGE_PER_TIME", "field": "text", "en": "%s Mana, plus %s per sec", "hash": "cfe15bccef2f4171", "src": "db2@1.60.1.70291"}
+{"id": "MANA_COST_LARGE_PER_TIME_NO_BASE", "field": "text", "en": "%s Mana per sec", "hash": "a77b0fffb8e7265b", "src": "db2@1.60.1.70291"}
+{"id": "MANA_COST_PER_TIME", "field": "text", "en": "%s Mana, plus %s per sec", "hash": "cfe15bccef2f4171", "src": "db2@1.60.1.70291"}
+{"id": "MANA_COST_PER_TIME_NO_BASE", "field": "text", "en": "%s Mana per sec", "hash": "a77b0fffb8e7265b", "src": "db2@1.60.1.70291"}
+{"id": "MANA_LOW", "field": "text", "en": "Mana Low", "hash": "22c27d8619672024", "src": "db2@1.60.1.70291"}
+{"id": "MANA_REGEN", "field": "text", "en": "Mana Regen", "hash": "87a7ea9d2db2cbcd", "src": "db2@1.60.1.70291"}
+{"id": "MANA_REGEN_TOOLTIP", "field": "text", "en": "Amount of mana regenerated every 5 seconds.", "hash": "0b56d1a088dca022", "src": "db2@1.60.1.70291"}
+{"id": "MAP_AND_QUEST_LOG", "field": "text", "en": "Map & Quest Log", "hash": "efa63473381cfa8c", "src": "db2@1.60.1.70291"}
+{"id": "MAP_FILTER", "field": "text", "en": "Map Filter", "hash": "7f7da9eb903cc7d7", "src": "db2@1.60.1.70291"}
+{"id": "MAP_LEGEND_CATEGORY_ACTIVITIES", "field": "text", "en": "Activities", "hash": "69b7e5a8d540a60a", "src": "db2@1.60.1.70291"}
+{"id": "MAP_LEGEND_CATEGORY_MOVEMENT", "field": "text", "en": "Movement", "hash": "31395e64bb1d7b43", "src": "db2@1.60.1.70291"}
+{"id": "MAP_LEGEND_CATEGORY_QUESTS", "field": "text", "en": "Quests", "hash": "a84737c440533b3c", "src": "db2@1.60.1.70291"}
+{"id": "MAP_LEGEND_DUNGEON", "field": "text", "en": "Dungeon", "hash": "8bba4ca03e80dc45", "src": "db2@1.60.1.70291"}
+{"id": "MAP_LEGEND_DUNGEON_TOOLTIP", "field": "text", "en": "Instanced content that rewards loot, intended for a party of up to five adventurers", "hash": "02531063a3d852d0", "src": "db2@1.60.1.70291"}
+{"id": "MAP_LEGEND_FLIGHTPOINT", "field": "text", "en": "Flightpoint", "hash": "c859eb205aa054a4", "src": "db2@1.60.1.70291"}
+{"id": "MAP_LEGEND_FLIGHTPOINT_TOOLTIP", "field": "text", "en": "Transports you to a different area in the same region", "hash": "80eee10f02c06371", "src": "db2@1.60.1.70291"}
+{"id": "MAP_LEGEND_FRAME_LABEL", "field": "text", "en": "Map Legend", "hash": "1db12966ff3a28b3", "src": "db2@1.60.1.70291"}
+{"id": "MAP_LEGEND_INPROGRESS", "field": "text", "en": "In Progress", "hash": "035705ae6022e043", "src": "db2@1.60.1.70291"}
+{"id": "MAP_LEGEND_INPROGRESS_TOOLTIP", "field": "text", "en": "Quests that are currently in progress", "hash": "c9e98bca0dd6fe13", "src": "db2@1.60.1.70291"}
+{"id": "MAP_LEGEND_LOCALSTORY", "field": "text", "en": "Quest", "hash": "9d9ed56bb9b5eac9", "src": "db2@1.60.1.70291"}
+{"id": "MAP_LEGEND_LOCALSTORY_TOOLTIP", "field": "text", "en": "Quests that explore local cultures and side adventures", "hash": "aac2af3afd4631bb", "src": "db2@1.60.1.70291"}
+{"id": "MAP_LEGEND_RAID", "field": "text", "en": "Raid", "hash": "0b16782ecc6aea8a", "src": "db2@1.60.1.70291"}
+{"id": "MAP_LEGEND_RAID_TOOLTIP", "field": "text", "en": "Challenging content that is intended for large groups of players, and provides valuable loot", "hash": "abe5be8afcf02ae0", "src": "db2@1.60.1.70291"}
+{"id": "MAP_LEGEND_REPEATABLE", "field": "text", "en": "Repeatable", "hash": "7f9b420726464b7a", "src": "db2@1.60.1.70291"}
+{"id": "MAP_LEGEND_REPEATABLE_TOOLTIP", "field": "text", "en": "Time-gated quests", "hash": "c6ff3454c95c30c9", "src": "db2@1.60.1.70291"}
+{"id": "MAP_LEGEND_TURNIN", "field": "text", "en": "Turn In", "hash": "1dfa4d8edf7cda66", "src": "db2@1.60.1.70291"}
+{"id": "MAP_LEGEND_TURNIN_TOOLTIP", "field": "text", "en": "Quests that are ready to be turned in", "hash": "2e960038c70770f0", "src": "db2@1.60.1.70291"}
+{"id": "MAP_LINK_POI_TOOLTIP_INSTRUCTION_LINE", "field": "text", "en": "<Right Click to show map>", "hash": "c59a798ab65c7bed", "src": "db2@1.60.1.70291"}
+{"id": "MAP_PIN", "field": "text", "en": "Map Pin", "hash": "593f117214acd3d7", "src": "db2@1.60.1.70291"}
+{"id": "MAP_PIN_INVALID_MAP", "field": "text", "en": "You can't place a pin on this map.", "hash": "c60b7bee8f1fa937", "src": "db2@1.60.1.70291"}
+{"id": "MAP_PIN_REMOVE", "field": "text", "en": "<Ctrl click to remove pin>", "hash": "6614cf3fcd9f6309", "src": "db2@1.60.1.70291"}
+{"id": "MAP_PIN_SHARING", "field": "text", "en": "Map Pin Sharing", "hash": "faee4fafee2d84bc", "src": "db2@1.60.1.70291"}
+{"id": "MAP_PIN_SHARING_TOOLTIP", "field": "text", "en": "You can share this location with other players by inserting a link into chat.|n|n|cff20ff20<Shift click to share pin in chat>|r", "hash": "8e33053e91792b9a", "src": "db2@1.60.1.70291"}
+{"id": "MAP_PIN_SHARING_TOOLTIP_GAMEPAD", "field": "text", "en": "You can share this location with other players by inserting a link into chat.", "hash": "42b8244043ecea99", "src": "db2@1.60.1.70291"}
+{"id": "MAP_PIN_TOGGLE_FOCUS", "field": "text", "en": "Toggle Focus on Marker", "hash": "a7321faa42c899f1", "src": "db2@1.60.1.70291"}
+{"id": "MAP_PIN_TOGGLE_QUEST_DETAILS", "field": "text", "en": "Toggle Quest Details", "hash": "1cfdfdfb017c41b1", "src": "db2@1.60.1.70291"}
+{"id": "MAP_PIN_TOGGLE_QUEST_FOCUS", "field": "text", "en": "Toggle Focus on Quest", "hash": "26fb4f98d41ca19d", "src": "db2@1.60.1.70291"}
+{"id": "MAP_PIN_TOOLTIP", "field": "text", "en": "Place a locational pin on the map that can be tracked and shared with other players.", "hash": "3c4eaab5e1a80be2", "src": "db2@1.60.1.70291"}
+{"id": "MAP_PIN_TOOLTIP_INSTRUCTIONS", "field": "text", "en": "Click this button and then the map to drop a pin or <Ctrl click directly on the map>", "hash": "12345b83326e1f2b", "src": "db2@1.60.1.70291"}
+{"id": "MAP_QUEST_DIFFICULTY_TEXT", "field": "text", "en": "Quest Difficulty Color", "hash": "c8b16e9f08779089", "src": "db2@1.60.1.70291"}
+{"id": "MARKED_AFK", "field": "text", "en": "You are now Away.", "hash": "8f496a7aa86f23ee", "src": "db2@1.60.1.70291"}
+{"id": "MARKED_AFK_MESSAGE", "field": "text", "en": "You are now Away: %s", "hash": "fcb2418f1e2195b6", "src": "db2@1.60.1.70291"}
+{"id": "MARKED_DND", "field": "text", "en": "You are now Busy: %s", "hash": "ba0bafe7a40b6688", "src": "db2@1.60.1.70291"}
+{"id": "MASTERY_POINTS_SPENT", "field": "text", "en": "%1$s Talents: %2$s", "hash": "31aa1e8c7c884a70", "src": "db2@1.60.1.70291"}
+{"id": "MASTER_LOOTER", "field": "text", "en": "Master Looter", "hash": "efe504b71ce1013e", "src": "db2@1.60.1.70291"}
+{"id": "MASTER_VOLUME", "field": "text", "en": "Master Volume", "hash": "c2a9573aa8030c86", "src": "db2@1.60.1.70291"}
+{"id": "MAXFPS", "field": "text", "en": "Max Foreground FPS", "hash": "a5c49dd730ec366a", "src": "db2@1.60.1.70291"}
+{"id": "MAXFPSBK", "field": "text", "en": "Max Background FPS", "hash": "7f56c4a790cdc622", "src": "db2@1.60.1.70291"}
+{"id": "MAXFPSBK_CHECK", "field": "text", "en": "Max Background FPS Toggle", "hash": "717b234ec225d12e", "src": "db2@1.60.1.70291"}
+{"id": "MAXFPS_CHECK", "field": "text", "en": "Max Foreground FPS Toggle", "hash": "6d91107d60401809", "src": "db2@1.60.1.70291"}
+{"id": "MAX_FOLLOW_DIST", "field": "text", "en": "Max Camera Distance", "hash": "2476ec1bf7a6ad18", "src": "db2@1.60.1.70291"}
+{"id": "MELEE", "field": "text", "en": "Melee", "hash": "5544f07d8354c84f", "src": "db2@1.60.1.70291"}
 {"id": "MELEE_ATTACK", "field": "text", "en": "Melee Attack", "hash": "20711bdf775b3c89", "src": "db2@1.60.1.69913"}
-{"id": "MELEE_ATTACK_POWER", "field": "text", "en": "Attack Power", "hash": "3e6a7d38952902e8", "src": "db2@1.60.1.70245"}
-{"id": "MELEE_ATTACK_POWER_PET_HUNTER_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee Attack|r damage per second by %s\n\nIncreased by 10%% of |cFFFFFFFFMaster's Attack Power|r from whichever is higher: |cFFFFFFFFMelee|r or |cFFFFFFFFRanged|r\n\n|cffBCBCBCEvery 14 Attack Power adds 1 damage per second|r", "hash": "ee59c16bf8c90931", "src": "db2@1.60.1.70245"}
-{"id": "MELEE_ATTACK_POWER_PET_WARLOCK_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee Attack|r damage per second by %s\n\nIncreased by %d%% of |cFFFFFFFFMaster's Spell Damage|r\n\n|cffBCBCBCEvery 14 Attack Power adds 1 damage per second|r", "hash": "30d50bc86f52c49c", "src": "db2@1.60.1.70245"}
-{"id": "MELEE_ATTACK_POWER_SPELL_POWER_TOOLTIP", "field": "text", "en": "Increases damage with melee weapons by %s damage per second.\nIncreases Spell Power by %s.", "hash": "4056ffb9c73edb6e", "src": "db2@1.60.1.70245"}
-{"id": "MELEE_ATTACK_POWER_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee Weapon|r damage per second by %s\n\nIncreased by |cFFFFFFFFStrength|r\n\n|cffBCBCBCEvery 14 Attack Power adds 1 damage per second|r", "hash": "34915b5a5f273d16", "src": "db2@1.60.1.70245"}
-{"id": "MELEE_COMBATLOG_TOOLTIP", "field": "text", "en": "Shows natural melee swings.", "hash": "955ac911684d7746", "src": "db2@1.60.1.70245"}
-{"id": "MELEE_RANGE", "field": "text", "en": "Melee Range", "hash": "f1637dbeb255aec7", "src": "db2@1.60.1.70245"}
-{"id": "MEMBERS", "field": "text", "en": "Members", "hash": "1b84a352863f959d", "src": "db2@1.60.1.70245"}
-{"id": "MERCHANT", "field": "text", "en": "Merchant", "hash": "106536ca8c572d49", "src": "db2@1.60.1.70245"}
-{"id": "MERCHANT_BUYBACK", "field": "text", "en": "Merchant Buyback", "hash": "c735ca60c08dbd07", "src": "db2@1.60.1.70245"}
-{"id": "MERCHANT_HONOR_POINTS", "field": "text", "en": "%d Honor", "hash": "489729254ef6fbcd", "src": "db2@1.60.1.70245"}
-{"id": "MERCHANT_PAGE_NUMBER", "field": "text", "en": "Page %s of %s", "hash": "1b9b1c44e408bd66", "src": "db2@1.60.1.70245"}
-{"id": "MESSAGE_SOURCES", "field": "text", "en": "Message Sources", "hash": "11dec7a35abd7f5e", "src": "db2@1.60.1.70245"}
-{"id": "MESSAGE_TYPES", "field": "text", "en": "Message Types", "hash": "6e594ccda350343c", "src": "db2@1.60.1.70245"}
-{"id": "META_GEM", "field": "text", "en": "Meta", "hash": "0a6c05e919459419", "src": "db2@1.60.1.70245"}
-{"id": "MIDDLE_BUTTON_STRING", "field": "text", "en": "Middle Button", "hash": "2c4f78c6be2b58a4", "src": "db2@1.60.1.70245"}
-{"id": "MINIMAP_TRACKING_AUCTIONEER", "field": "text", "en": "Auctioneer", "hash": "1131d7bece67901d", "src": "db2@1.60.1.70245"}
-{"id": "MINIMAP_TRACKING_BANKER", "field": "text", "en": "Banker", "hash": "8da72588e7d3e6cd", "src": "db2@1.60.1.70245"}
-{"id": "MINIMAP_TRACKING_BATTLEMASTER", "field": "text", "en": "Battlemaster", "hash": "f7abce0bb335533b", "src": "db2@1.60.1.70245"}
-{"id": "MINIMAP_TRACKING_FLIGHTMASTER", "field": "text", "en": "Flight Master", "hash": "2887c2668433ee40", "src": "db2@1.60.1.70245"}
-{"id": "MINIMAP_TRACKING_INNKEEPER", "field": "text", "en": "Innkeeper", "hash": "efa922913a7475ca", "src": "db2@1.60.1.70245"}
-{"id": "MINIMAP_TRACKING_MAILBOX", "field": "text", "en": "Mailbox", "hash": "e892d8f83e954ceb", "src": "db2@1.60.1.70245"}
-{"id": "MINIMAP_TRACKING_REPAIR", "field": "text", "en": "Repair", "hash": "8c64b7b46f3647d7", "src": "db2@1.60.1.70245"}
-{"id": "MINIMAP_TRACKING_STABLEMASTER", "field": "text", "en": "Stable Master", "hash": "73010bae05a9562e", "src": "db2@1.60.1.70245"}
-{"id": "MINIMAP_TRACKING_TARGET", "field": "text", "en": "Target", "hash": "3d7ca112c9409d27", "src": "db2@1.60.1.70245"}
-{"id": "MINIMAP_TRACKING_TOOLTIP_NONE", "field": "text", "en": "Click to enable and disable tracking types.", "hash": "2f1ae827ebb562d5", "src": "db2@1.60.1.70245"}
-{"id": "MINIMAP_TRACKING_TRAINER_CLASS", "field": "text", "en": "Class Trainer", "hash": "f7271dda0743f646", "src": "db2@1.60.1.70245"}
-{"id": "MINIMAP_TRACKING_TRAINER_PROFESSION", "field": "text", "en": "Profession Trainers", "hash": "bed3f8b8567ed448", "src": "db2@1.60.1.70245"}
-{"id": "MINIMAP_TRACKING_TRIVIAL_QUESTS", "field": "text", "en": "Low-Level Quests", "hash": "a7abfcddaeafe4f9", "src": "db2@1.60.1.70245"}
-{"id": "MINIMUM_CHARACTER_NAME_SIZE_TEXT", "field": "text", "en": "Minimum Character Name Size", "hash": "000605679bff0879", "src": "db2@1.60.1.70245"}
-{"id": "MINUTES", "field": "text", "en": "|4Minute:Minutes;", "hash": "fb46cad156f06a82", "src": "db2@1.60.1.70245"}
-{"id": "MINUTES_ABBR", "field": "text", "en": "%d |4Min:Min;", "hash": "94dafd154cf7b8ed", "src": "db2@1.60.1.70245"}
-{"id": "MINUTE_ONELETTER_ABBR", "field": "text", "en": "%d m", "hash": "050f77b8fd04b931", "src": "db2@1.60.1.70245"}
-{"id": "MISCELLANEOUS", "field": "text", "en": "Miscellaneous", "hash": "b3c7747f3cef66e5", "src": "db2@1.60.1.70245"}
-{"id": "MISS", "field": "text", "en": "Miss", "hash": "0a6d119c2926834e", "src": "db2@1.60.1.70245"}
-{"id": "MISSES", "field": "text", "en": "Misses", "hash": "e971b44042dc1393", "src": "db2@1.60.1.70245"}
-{"id": "MONEY_LOOT", "field": "text", "en": "Money Loot", "hash": "0d9eaafc6215b241", "src": "db2@1.60.1.70245"}
-{"id": "MONEY_TTS_LABEL", "field": "text", "en": "Money Loot", "hash": "0d9eaafc6215b241", "src": "db2@1.60.1.70245"}
-{"id": "MONSTER_BOSS_EMOTE", "field": "text", "en": "Boss Emote", "hash": "6730ebecbd2147a4", "src": "db2@1.60.1.70245"}
-{"id": "MONSTER_BOSS_WHISPER", "field": "text", "en": "Boss Whisper", "hash": "d0013136a2495616", "src": "db2@1.60.1.70245"}
-{"id": "MONSTER_EMOTE", "field": "text", "en": "Creature Emote", "hash": "019c294127f02f18", "src": "db2@1.60.1.70245"}
-{"id": "MONSTER_SAY", "field": "text", "en": "Creature Say", "hash": "a1b4a209a7432c5a", "src": "db2@1.60.1.70245"}
-{"id": "MONSTER_WHISPER", "field": "text", "en": "Creature Whisper", "hash": "4ed31336bbe4c8d4", "src": "db2@1.60.1.70245"}
-{"id": "MONSTER_YELL", "field": "text", "en": "Creature Yell", "hash": "c03dc3c084b96c5e", "src": "db2@1.60.1.70245"}
-{"id": "MONTHLY_ACTIVITIES_PROGRESSED", "field": "text", "en": "Traveler's Log Progress", "hash": "db55adde8d29fb4d", "src": "db2@1.60.1.70245"}
-{"id": "MONTH_APRIL", "field": "text", "en": "April", "hash": "841b4e9e3ba06119", "src": "db2@1.60.1.70245"}
-{"id": "MONTH_AUGUST", "field": "text", "en": "August", "hash": "f0479e8a4a78e9d8", "src": "db2@1.60.1.70245"}
-{"id": "MONTH_DECEMBER", "field": "text", "en": "December", "hash": "446e5eb42968e8b3", "src": "db2@1.60.1.70245"}
-{"id": "MONTH_FEBRUARY", "field": "text", "en": "February", "hash": "1d118b367be2be9a", "src": "db2@1.60.1.70245"}
-{"id": "MONTH_JANUARY", "field": "text", "en": "January", "hash": "2373c9098d15baf6", "src": "db2@1.60.1.70245"}
-{"id": "MONTH_JULY", "field": "text", "en": "July", "hash": "0a0949a8b090f51a", "src": "db2@1.60.1.70245"}
-{"id": "MONTH_JUNE", "field": "text", "en": "June", "hash": "0a094a9ab09134c8", "src": "db2@1.60.1.70245"}
-{"id": "MONTH_MARCH", "field": "text", "en": "March", "hash": "54bd4b4465864ef8", "src": "db2@1.60.1.70245"}
-{"id": "MONTH_MAY", "field": "text", "en": "May", "hash": "00145bd131b875d8", "src": "db2@1.60.1.70245"}
-{"id": "MONTH_NOVEMBER", "field": "text", "en": "November", "hash": "a8aa136b249c9711", "src": "db2@1.60.1.70245"}
-{"id": "MONTH_OCTOBER", "field": "text", "en": "October", "hash": "0a7e8f11c91fe2d0", "src": "db2@1.60.1.70245"}
-{"id": "MONTH_SEPTEMBER", "field": "text", "en": "September", "hash": "35a173bdf0b59bc9", "src": "db2@1.60.1.70245"}
-{"id": "MOTION_SICKNESS_CHECKBOX", "field": "text", "en": "Motion Sickness", "hash": "77d30be78de1c10c", "src": "db2@1.60.1.70245"}
-{"id": "MOUNT", "field": "text", "en": "Mount", "hash": "569e58862d1fd16c", "src": "db2@1.60.1.70245"}
-{"id": "MOUNTS", "field": "text", "en": "Mounts", "hash": "53074de1835383dd", "src": "db2@1.60.1.70245"}
-{"id": "MOUNT_EQUIPMENT_EXEMPT", "field": "text", "en": "Your active mount doesn't benefit from Mount Equipment because it already has an ability.", "hash": "2eb1bac11431ef3e", "src": "db2@1.60.1.70245"}
-{"id": "MOUNT_EQUIPMENT_NOTICE", "field": "text", "en": "Enhance your mounts with Mount Equipment", "hash": "2215fdcfee782843", "src": "db2@1.60.1.70245"}
-{"id": "MOUNT_EQUIPMENT_UNLOCK_REQUIREMENT", "field": "text", "en": "Mount Equipment unlocked at Level %s", "hash": "a2dc8cf9c859e1ce", "src": "db2@1.60.1.70245"}
-{"id": "MOUNT_JOURNAL_FILTER_AQUATIC", "field": "text", "en": "Aquatic", "hash": "f9a71aa2fb1b7196", "src": "db2@1.60.1.70245"}
-{"id": "MOUNT_JOURNAL_FILTER_DRAGONRIDING", "field": "text", "en": "Skyriding", "hash": "aa8e2f1daf310c88", "src": "db2@1.60.1.70245"}
-{"id": "MOUNT_JOURNAL_FILTER_FLYING", "field": "text", "en": "Flying", "hash": "3e47fdafcd961cfd", "src": "db2@1.60.1.70245"}
-{"id": "MOUNT_JOURNAL_FILTER_GROUND", "field": "text", "en": "Ground", "hash": "a1caab90023268a9", "src": "db2@1.60.1.70245"}
-{"id": "MOUNT_JOURNAL_FILTER_RIDEALONG", "field": "text", "en": "Ride Along", "hash": "084afd0b73dc21e9", "src": "db2@1.60.1.70245"}
-{"id": "MOUNT_JOURNAL_FILTER_TYPE", "field": "text", "en": "Type", "hash": "0b615fd246820bea", "src": "db2@1.60.1.70245"}
-{"id": "MOUNT_JOURNAL_FILTER_UNUSABLE", "field": "text", "en": "Unusable", "hash": "30b200f9434fe8c9", "src": "db2@1.60.1.70245"}
-{"id": "MOUNT_JOURNAL_PLAYER", "field": "text", "en": "Show Character", "hash": "9152dbe14619fcf9", "src": "db2@1.60.1.70245"}
-{"id": "MOUNT_JOURNAL_STEADY_FLIGHT_ONLY", "field": "text", "en": "Steady Flight Only", "hash": "8da7f1166aa19cd7", "src": "db2@1.60.1.70245"}
-{"id": "MOUNT_SUMMON_TOOLTIP", "field": "text", "en": "Summons or dismisses your selected mount.", "hash": "fd0e2178081678cf", "src": "db2@1.60.1.70245"}
-{"id": "MOUNT_UNWRAP_TOOLTIP", "field": "text", "en": "Open to receive your new mount.", "hash": "d0870fac7fa95703", "src": "db2@1.60.1.70245"}
-{"id": "MOUSEOVER_CAST_KEY", "field": "text", "en": "Mouseover Cast Key", "hash": "7cb4fdbdf44a860e", "src": "db2@1.60.1.70245"}
-{"id": "MOUSE_LABEL", "field": "text", "en": "Mouse", "hash": "569e5b062d2070c2", "src": "db2@1.60.1.70245"}
-{"id": "MOUSE_LOOK_SPEED", "field": "text", "en": "Mouse Look Speed", "hash": "5d09a14588298f8a", "src": "db2@1.60.1.70245"}
-{"id": "MOUSE_SENSITIVITY", "field": "text", "en": "Mouse Sensitivity", "hash": "6ad232e6f8f004fc", "src": "db2@1.60.1.70245"}
-{"id": "MOVE_FILTER_DOWN", "field": "text", "en": "Move Filter Down", "hash": "72f4249c862b684e", "src": "db2@1.60.1.70245"}
-{"id": "MOVE_FILTER_UP", "field": "text", "en": "Move Filter Up", "hash": "1021f880847ca8e4", "src": "db2@1.60.1.70245"}
-{"id": "MOVE_PAD", "field": "text", "en": "Show Move Pad", "hash": "c0bee15e707d98f0", "src": "db2@1.60.1.70245"}
-{"id": "MOVE_PAD_LOCKED", "field": "text", "en": "Lock Window", "hash": "cf6273e21a4161ea", "src": "db2@1.60.1.70245"}
-{"id": "MOVE_PAD_PRESS_AND_HOLD_MODE", "field": "text", "en": "Press and Hold Movement", "hash": "56c562348275c024", "src": "db2@1.60.1.70245"}
-{"id": "MOVE_TO_INACTIVE", "field": "text", "en": "Move to Inactive", "hash": "ea61766abc3512bc", "src": "db2@1.60.1.70245"}
-{"id": "MOVE_TO_NEW_WINDOW", "field": "text", "en": "Move to New Window", "hash": "aaa34bf534f2fbc9", "src": "db2@1.60.1.70245"}
-{"id": "MOVE_TO_WHISPER_WINDOW", "field": "text", "en": "Move to Whisper Window", "hash": "10dbeccdebf8d0d9", "src": "db2@1.60.1.70245"}
-{"id": "MSAA_LABEL", "field": "text", "en": "Multisample Techniques", "hash": "c106a767e32e5dad", "src": "db2@1.60.1.70245"}
-{"id": "MULTISAMPLE_ALPHA_TEST", "field": "text", "en": "Multisample Alpha-Test", "hash": "88886bb7f71bf1a4", "src": "db2@1.60.1.70245"}
-{"id": "MULTI_CAST_TOOLTIP_NO_TOTEM", "field": "text", "en": "No Totem", "hash": "0018e222550fa9d1", "src": "db2@1.60.1.70245"}
-{"id": "MUSIC_DISABLED", "field": "text", "en": "Music Disabled", "hash": "274af892db732bb7", "src": "db2@1.60.1.70245"}
-{"id": "MUSIC_ENABLED", "field": "text", "en": "Music Enabled", "hash": "f747ef7fc0bf0b80", "src": "db2@1.60.1.70245"}
-{"id": "MUSIC_VOLUME", "field": "text", "en": "Music", "hash": "576ba176759e62a1", "src": "db2@1.60.1.70245"}
-{"id": "MUTE", "field": "text", "en": "Mute", "hash": "0a70367d58c9d02d", "src": "db2@1.60.1.70245"}
-{"id": "MUTE_SILENCED", "field": "text", "en": "Mute (Player is silenced)", "hash": "e753adf8230eb537", "src": "db2@1.60.1.70245"}
-{"id": "MYTHIC_PLUS_DESERTER_CONSEQUENCE", "field": "text", "en": "A Deserter's Badge will be visible in Mythic+ group finder.", "hash": "91fd16b5734d9f47", "src": "db2@1.60.1.70245"}
-{"id": "MYTHIC_PLUS_DESERTER_FLAGGED", "field": "text", "en": "You have been flagged as a Keystone Deserter by repeatedly leaving Mythic+ instances.", "hash": "97c9ef28ebf4e3cb", "src": "db2@1.60.1.70245"}
-{"id": "MY_ORDERS", "field": "text", "en": "My Orders", "hash": "e103bc2783f96983", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:101", "field": "text", "en": "My friend - though my arm is weary from the battle we continue to wage in the Plaguelands, it is always strong enough to pen this missive to a hero such as you.  It pleases me to know the aid you rendered us continues to yield benefits, ones we try to enact upon on a daily basis.\r\n\r\nShould you find yourself in the Western Plaguelands soon, please stop by the Bulwark.  Your seasoned hand would be most welcomed in a cauldron run!\r\n\r\nYours in the Darkness:\r\nHigh Executor Derrington", "hash": "5b8a719ee244c613", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:102", "field": "text", "en": "Ho Ho Hello, $N!  I hope you have a fantastic Feast of Winter Veil!$B$BYou were so nice in helping me out with my sweet tooth, that I wanted to send you a little something extra.  It's a sampler of delicious Smokywood Pastures treats.  If you haven't gotten any yet, be sure to do so before the season ends!$B$BSeasons Greetings...$BGreatfather Winter", "hash": "3f09b6ac7946de86", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:103", "field": "text", "en": "Thank you for renewing your membership with the Goblin Experimental Engineering Korporation!  We are delighted to have you as an active member.  Please accept this gift as a token of our appreciation for the wonderful contributions you continue to make to the world of goblin engineering.", "hash": "b8c3498297d0bb58", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:105", "field": "text", "en": "This mail was sent to you because you signed up for Viagra! More text.", "hash": "f07967e57c4f2e2a", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:106", "field": "text", "en": "Those rabbits came back!  NO!  Oh, don't bother coming back...", "hash": "68a26eb8619edea9", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:107", "field": "text", "en": "Greetings my friend - though my arm is weary from the battle we continue to wage in the ruins of Lordaeron, it is always strong enough to pen this missive to a hero such as you.  It pleases me to know the aid you lent us days ago continues to yield benefits, ones we try to enact upon on a daily basis.\r\n\r\nShould you find yourself in the Western Plaguelands soon, please stop by the camp.  Your seasoned hand would be most welcomed in a cauldron run!\r\n\r\nFor Stormwind!\r\nCommander Ashlam Valorfist", "hash": "e29f00a0e37143fa", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:108", "field": "text", "en": "Ho ho hello again, $N!$B$BThough I and the good folks of Smokywood Pastures have been quite busy this season, I just wanted to send you something special along to you.  You'll be happy to know what we unfroze Sacks out in the Alterac Mountains; he sends his best.$B$BIn freeing Sacks, we managed to develop a novelty device that I think you might enjoy.  You will need a snowball to power it, but I think you'll enjoy it quite a bit!$B$BGreat-father Winter", "hash": "88f48145cbdecdf4", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:109", "field": "text", "en": "Greetings, my friend!  I hope all is well with you.$B$BI thought I would take this time to thank you once again for aiding us in our struggle against Hakkar.  I look forward to seeing you soon as we rise to the challenge of defeating the Blood God.  Your absence here is sorely felt!$B$BI've enclosed an Honor Token as a small means of thanking you for what you have done for us.  Together we may finally destroy Hakkar once and for all!$B$BMay Zanza always bless you!$BVinchaxa, Servitor of Zanza", "hash": "6baef887fab52b19", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:110", "field": "text", "en": "Esteemed $N,$B$BThe information you brought to my attention earlier has turned out to be extremely valuable.  Already I am calling for changes to our battle plans to account for the new importance we attribute to the Twilight's Hammer presence.$B$BPlease accept this item as a small token of our gratitude.  I hope we can continue to count on you as a valiant ally in our fight in Silithus.$B$BSincerely,$B$BCommander Mar'alith", "hash": "0071549f57415c6c", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:111", "field": "text", "en": "I bid you well, my friend.  I hope your fight for the Horde is a glorious one.  I certainly look forward to a time where others will look upon you with a legacy anywhere as rich and as treasured as the one of Grom Hellscream.$B$BI have not forgotten your act of kindness not only to me, but to the memory of Grom during the Harvest Festival.  I've sent you something I hope you might find to your liking.  Use it well.$B$BFor the Horde!$BJavnir", "hash": "5950e4a54c3aa3ea", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:112", "field": "text", "en": "Greetings, young druid!\r\n\r\nI'm quite proud of the effort you put into the training given to you thus far.  You should feel proud to have become one with the Claw.  More such lessons will be given; the next of your lessons will be available once you have reached at least 14th level.  When you are ready at that time, seek me out in the Cenarion Enclave of Darnassus.\r\n\r\nMathrengyl Bearwalker", "hash": "173ae9a5abbb8ac3", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:113", "field": "text", "en": "I bid you well, my friend.  I hope your fight on behalf of the Alliance goes to your satisfaction.  I certainly look forward to a time where others will look upon you with a legacy anywhere as rich and as treasured as the one of Uther Lightbringer.$B$BI have not forgotten your act of kindness not only to me, but to the memory of Uther during the Harvest Festival.  I've sent you something I hope you might find to your liking.  Use it well.$B$BBy Bronzebeard's Hammer,$BWagner", "hash": "3c29be27efe332a8", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:114", "field": "text", "en": "Greetings, young druid!\r\n\r\nI've sent you this note as a reminder to check in with me from time to time as you advance through the ranks.  There is much to learn as a druid in the service of Cenarius, and I am only happy to help you along the way.  Soon you will be ready to learn about your aquatic form; seek me out when you reach 16th level and I'll get you started along the path of knowledge.\r\n\r\nTurak Runetotem", "hash": "a0152708719b0d30", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:115", "field": "text", "en": "Greetings, young druid!\r\n\r\nI've sent you this note as a reminder to check in with me from time to time as you advance through the ranks.  There is much to learn as a druid in the service of Cenarius, and I am only happy to help you along the way.  Soon you will be ready to learn about your aquatic form; seek me out when you reach 16th level and I'll get you started along the path of knowledge.\r\n\r\nMathrengyl Bearwalker", "hash": "71e8b786a2d76062", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:116", "field": "text", "en": "Greetings, young druid!\r\n\r\nI'm quite proud of the effort you put into the training given to you thus far.  You should feel proud to have become one with the Claw.  More such lessons will be given; the next of your lessons will be available once you have reached at least 14th level.  When you are ready at that time, seek me out on the Elder Rise of Thunder Bluff.\r\n\r\nTurak Runetotem", "hash": "5c9eb31db8f7f799", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:117", "field": "text", "en": "Ho ho hello again, $N!$B$BThough I and the good folks of Smokywood Pastures have been quite busy this season, I just wanted to send you something special along to you.  You'll be happy to know what we unfroze Sacks out in the Alterac Mountains; he sends his best.$B$BIn freeing Sacks, we managed to develop a novelty device that I think you might enjoy.  You will need a snowball to power it, but I think you'll enjoy it quite a bit!$B$BGreatfather Winter", "hash": "189b883b43068ce6", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:119", "field": "text", "en": "Hello again - I just wanted to drop you a note that things here in Feathermoon Stronghold are fine.  I've managed to make several new pieces of leather items, thanks in no small part to the help you gave me!$B$BI had some extra bits of leather left over, so I thought I'd send you something extra for all the help you've given me.  If you're ever by the Stronghold again, be sure to look us up!$B$BYour friend,$BPratt", "hash": "0e8d019a122933cb", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:120", "field": "text", "en": "Greetings once again - I just wanted to send you word that things here in Camp Mojache are going well.  I've managed to make several new pieces of leather items, thanks in no small part to your aid!$B$BI had some extra bits of leather left over, so I thought I'd send you something extra as a way of saying thank you once more.  If you're ever by the Camp again, be sure to visit!$B$BPeace to you and your ancestors,$BJangdor", "hash": "de44d76a15ad4cbb", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:122", "field": "text", "en": "$N -$B$BI just wanted to say once again thanks for rescuing Metzen from his kidnappers.  Believe me when I say you've got a friend for life at Smokywood Pastures.$B$BSpeaking of which... Master Chef Graccu has been working on a new recipe here, and I thought you might like a little sample of what he has been whipping up!  Have a wondrous Winter Veil!$B$BMay your cash box always jingle,$BKaymard Copperpinch", "hash": "a44452024e3982e2", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:123", "field": "text", "en": "Champion,$B$BThe Blue Dragonflight believes that you are fated for greater things than even I could predict.$B$BDespite what some would have you believe, our world needs heroes. In your darkest hour, when you face the blight of Kalimdor, recall the epic journies, trials, and tribulations that you undertook for an old gnome and let those memories lift your spirits.$B$BHumbly,$B$BNarain Soothfancy$B$BP.S. Sorry about the repair costs.", "hash": "ac0e91b9c15bec2f", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:131", "field": "text", "en": "I was grateful for your visit today, take this as a gift for your Lunar Festival.", "hash": "c22d7b88795d8e28", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:161", "field": "text", "en": "$N -$B$BI just wanted to say once again thanks for rescuing Metzen from his kidnappers.  Believe me when I say you've got a friend for life at Smokywood Pastures.$B$BSpeaking of which... Master Chef Graccu has been working on a new recipe here, and I thought you might like a little sample of what he has been whipping up!  Have a wondrous Winter Veil!$B$BMay your cash box always jingle,$BWulmort Jinglepocket", "hash": "14b19beb4cdf216b", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:162", "field": "text", "en": "Need to fix tab ordergin", "hash": "7d672308b20cd98b", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:165", "field": "text", "en": "a", "hash": "0000006100000061", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:166", "field": "text", "en": "ab", "hash": "00003205000c14a3", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:169", "field": "text", "en": "This is a test of the emergency broadcast system.", "hash": "0caa28bb7b39cb85", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:170", "field": "text", "en": "Hello. What are you talking about?  This isn't crashing?", "hash": "e64a9cf5c40ce1c1", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:171", "field": "text", "en": "$N$B$BWith all haste, please open and heed the attached letter.  The Argent Dawn needs your help!", "hash": "7159aac805f75571", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:172", "field": "text", "en": "$n,$B$BI received this report regarding the document you retrieved from the Scourge. While not pressing, you may find it of interest.$B$BThank you again for your service.$BKeeper of the Rolls$BThe Argent Dawn", "hash": "b3dd7a1627aea342", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:178", "field": "text", "en": "Thanks for playing World of Warcraft!", "hash": "114fa5d587515039", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:179", "field": "text", "en": "Here's your reward, you lucky stiff!  Don't spend it all in one auction house....", "hash": "f3c1a100ab59b6eb", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:612", "field": "text", "en": "Greetings $n,\r\n\r\nI've been observing your handiwork for some time now. I must say, I'm impressed. You're clearly no mere street urchin.\r\n\r\nThere's a job I'd like you to do for me; the retrieval of a certain treasure. I assure you the pay is lucrative.\r\n\r\nIf you're interested, I've left a dead drop in a cabin beside Pyrewood Village. You'll find more information within.\r\n\r\nRegards, \r\nC", "hash": "135212671f0a2d77", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:613", "field": "text", "en": "$n,\r\n\r\nYour work has been most satisfactory. The Horn of Xelthos is every bit as marvelous as I'd hoped.\r\n\r\nYou will find your payment at the same dead drop as before, in the cabin beside Pyrewood Village.\r\n\r\nI look forward to doing business with you in the future.\r\n\r\nRegards, \r\nC", "hash": "552a2919522effb0", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:614", "field": "text", "en": "Hello again, $n,\r\n\r\nI'm sure a rogue of your talents stays quite busy these days, so I'll get right to the point.\r\n\r\nI have another job for you. This one is a touch more involved than your foray into Shadowfang Keep, but your pay will be raised accordingly.\r\n\r\nIf you're interested, return to the cabin beside Pyrewood Village. You'll find your briefing in the same dead drop as before.\r\n\r\nRegards, \r\nC", "hash": "1f3aa58309a49ab4", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:615", "field": "text", "en": "$n,\r\n\r\nYou have truly outdone yourself. Never would I have dreamed of possessing such an exquisitely morbid trophy as the Eye of Bhossca! You have my sincere thanks.\r\n\r\nYou know where to find your payment by now; in the cabin beside Pyrewood Village. I hope it fully conveys my gratitude.\r\n\r\nRegards, \r\nC", "hash": "9f36141bfd8c8bbe", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:616", "field": "text", "en": "Greetings $n,\r\n\r\nRaszel and I have a plan and we are ready for your assistance. Meet us in the Barrens and we can discuss it with you.", "hash": "85321ef8978d799d", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:623", "field": "text", "en": "$n,\r\n\r\nRavenholdt's agents have learned that you are delivering artifacts to an entity known, to you, only as \"C\".\r\n\r\nI'm afraid you are being played for a fool. \r\n\r\nCome to Ravenholdt Manor at once. We do not begrudge you for your errors, but the situation must be dealt with swiftly.\r\n\r\nI cannot say more in this letter. You will be given more information when you arrive. \r\n\r\nRegards,\r\nFahrad", "hash": "560229d2a847762e", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:624", "field": "text", "en": "Shaw's agents have been as yet unable to find our mutual friend, but they have reported to me that he was last seen riding northeast from Astranaar in Ashenvale. It's not much, but at least he's alive.\r\n\r\nLight be with you.\r\n\r\n-Katherine", "hash": "4042d806033b3079", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:642", "field": "text", "en": "The Lich King's unholy reign has gone on long enough. If Azeroth is to be saved, it must end now!\r\n\r\nThe Crusade needs strong men and women like you to fight the scourge of Northrend. We will show those abominations that no matter how far they run, the Light will strike them down! \r\n\r\nJoin us, and help forge a pure and holy Azeroth!", "hash": "c31fc2d6c6dfce42", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:643", "field": "text", "en": "Every day, the scourge bring destruction and pestilence to our homelands. Faced with such a threat, will you not take up arms for your fellow man?\r\n\r\nWith your help, the Scarlet Crusade will deliver salvation unto Azeroth, and the undead will be reduced to ash before the holy Light!  \r\n\r\nJoin us, champion, for the good of all humanity !", "hash": "63f8d030a8710359", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:644", "field": "text", "en": "The scourge are all around us. As the undead menace grows, it is imperative that we preserve whatever bastions of humanity we can.\r\n\r\nIt is no accident that the grass of Tyr's Hand is the only greenery in the Plaguelands. Our crusade fights tirelessly to protect all that is good in this world, and eradicate that which is wicked and corrupt.\r\n\r\nOnly through our crusade will salvation be brought to Azeroth, and the undead vermin be driven out!\r\n\r\nJoin us, so that together we may save our homes!", "hash": "b1b37d4667ffa0c0", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:652", "field": "text", "en": "Greetings $n,\r\n\r\nI hope this letter finds you well. I wanted to thank you for speaking to Ur'seris and taking on his request. Through your deeds the forest has now become much safer for both wildlife and shen'dorei.\r\n\r\nI am unsure where the winds will lead you, but I believe you will go on to do great things. I hope you are able to find further druidic instruction on your adventures.\r\n\r\nAeesha'el banu zepharaalis,\r\nLotheluum Starbreeze", "hash": "35a5852102226100", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:660", "field": "text", "en": "I am a mail that was generated via a quest that can never be in your quest log. Am I still a real mail?", "hash": "50a1bb0cf26cf939", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:661", "field": "text", "en": "Greetings, $n. I just wanted to let you know that I've made my way to Dalaran and retrieved Randal. He's a spirited boy, and I'll do my best to ensure that he grows up strong.\r\n\r\nAria tells me that Randal shows some aptitude for magic, so I intend to transfer my commission from Nethergarde to Dalaran City so I can see to his education.\r\n\r\nThank you again for saving me, $n. Both Randal and I are in your debt.\r\n\r\n-Danneth", "hash": "9132d2b43265737b", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:662", "field": "text", "en": "Greetings, $n.\r\n\r\nThe Supreme Magister has need of your aid. Please take the attached missive and follow the instructions contained within.", "hash": "489ad0a915ec3171", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:83", "field": "text", "en": "this is a test", "hash": "8c4889c44d1a6f9a", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:84", "field": "text", "en": "Thank you for visiting me, $N. It makes me happy to know we are not forgotten.", "hash": "16c52bd13aac0b1a", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:86", "field": "text", "en": "This small token will give no answers, but perhaps it will be of some amusement to you.", "hash": "89685c77d0c12798", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:87", "field": "text", "en": "Hello there again.  I'm Gubber Blump.\r\n\r\nI hope you are doing real well.  I hope you are still fishing too.  I love fishing.  The Blump family is known for fishing.  Here is a bauble, so that you can fish a little better.  I love using them when I fish.  Good luck, and thank you again for helping me catch them groupers from before.\r\n\r\nKeep on fishing!\r\n\r\nGubber Blump", "hash": "b8f94206f14c67ae", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:93", "field": "text", "en": "Esteemed $N,$B$BI went through the stack of texts you brought me and I decoded the attached articles for you.  I carefully selected only those items which I thought would be of use.  It was quite problematic to get to a mailbox without being seen, but months of hiding in the desert have turned me into quite a sneak!$B$BI hope you enjoy these.$B$B-Ortell", "hash": "06d398efe910f55c", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:94", "field": "text", "en": "Greetings, $N!$B$BI'm getting pretty good at sneaking into Cenarion Hold to use their mailbox.  Again, I've attached some items that might be of interest.  Hope something in there is of use to you!$B$B-Ortell", "hash": "74df7633a7b7beea", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:98", "field": "text", "en": "It took much time to translate the high chief's text. I was dismayed by what I found. High Chief Winterfall was in an extreme state of paranoia in his last days and was addicted to a substance he called \"firewater.\" He believed that all creatures were his enemies. Well, I will let you read it for yourself -- I have included a translation of his words with this letter. If you are ever in need, please visit me again.", "hash": "5169cbe3d1dfde6d", "src": "db2@1.60.1.70245"}
-{"id": "MailBody:99", "field": "text", "en": "Thank you for renewing your membership with the Mechanical Engineering Guild, Associated!  We are delighted to have you as an active member.  Please accept this gift as a token of our appreciation for the wonderful contributions you continue to make to the world of gnome engineering.", "hash": "d6c7d7e9b0f5cf21", "src": "db2@1.60.1.70245"}
+{"id": "MELEE_ATTACK_POWER", "field": "text", "en": "Attack Power", "hash": "3e6a7d38952902e8", "src": "db2@1.60.1.70291"}
+{"id": "MELEE_ATTACK_POWER_PET_HUNTER_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee Attack|r damage per second by %s\n\nIncreased by 10%% of |cFFFFFFFFMaster's Attack Power|r from whichever is higher: |cFFFFFFFFMelee|r or |cFFFFFFFFRanged|r\n\n|cffBCBCBCEvery 14 Attack Power adds 1 damage per second|r", "hash": "ee59c16bf8c90931", "src": "db2@1.60.1.70291"}
+{"id": "MELEE_ATTACK_POWER_PET_WARLOCK_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee Attack|r damage per second by %s\n\nIncreased by %d%% of |cFFFFFFFFMaster's Spell Damage|r\n\n|cffBCBCBCEvery 14 Attack Power adds 1 damage per second|r", "hash": "30d50bc86f52c49c", "src": "db2@1.60.1.70291"}
+{"id": "MELEE_ATTACK_POWER_SPELL_POWER_TOOLTIP", "field": "text", "en": "Increases damage with melee weapons by %s damage per second.\nIncreases Spell Power by %s.", "hash": "4056ffb9c73edb6e", "src": "db2@1.60.1.70291"}
+{"id": "MELEE_ATTACK_POWER_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee Weapon|r damage per second by %s\n\nIncreased by |cFFFFFFFFStrength|r\n\n|cffBCBCBCEvery 14 Attack Power adds 1 damage per second|r", "hash": "34915b5a5f273d16", "src": "db2@1.60.1.70291"}
+{"id": "MELEE_COMBATLOG_TOOLTIP", "field": "text", "en": "Shows natural melee swings.", "hash": "955ac911684d7746", "src": "db2@1.60.1.70291"}
+{"id": "MELEE_RANGE", "field": "text", "en": "Melee Range", "hash": "f1637dbeb255aec7", "src": "db2@1.60.1.70291"}
+{"id": "MEMBERS", "field": "text", "en": "Members", "hash": "1b84a352863f959d", "src": "db2@1.60.1.70291"}
+{"id": "MERCHANT", "field": "text", "en": "Merchant", "hash": "106536ca8c572d49", "src": "db2@1.60.1.70291"}
+{"id": "MERCHANT_BUYBACK", "field": "text", "en": "Merchant Buyback", "hash": "c735ca60c08dbd07", "src": "db2@1.60.1.70291"}
+{"id": "MERCHANT_HONOR_POINTS", "field": "text", "en": "%d Honor", "hash": "489729254ef6fbcd", "src": "db2@1.60.1.70291"}
+{"id": "MERCHANT_PAGE_NUMBER", "field": "text", "en": "Page %s of %s", "hash": "1b9b1c44e408bd66", "src": "db2@1.60.1.70291"}
+{"id": "MESSAGE_SOURCES", "field": "text", "en": "Message Sources", "hash": "11dec7a35abd7f5e", "src": "db2@1.60.1.70291"}
+{"id": "MESSAGE_TYPES", "field": "text", "en": "Message Types", "hash": "6e594ccda350343c", "src": "db2@1.60.1.70291"}
+{"id": "META_GEM", "field": "text", "en": "Meta", "hash": "0a6c05e919459419", "src": "db2@1.60.1.70291"}
+{"id": "MIDDLE_BUTTON_STRING", "field": "text", "en": "Middle Button", "hash": "2c4f78c6be2b58a4", "src": "db2@1.60.1.70291"}
+{"id": "MINIMAP_TRACKING_AUCTIONEER", "field": "text", "en": "Auctioneer", "hash": "1131d7bece67901d", "src": "db2@1.60.1.70291"}
+{"id": "MINIMAP_TRACKING_BANKER", "field": "text", "en": "Banker", "hash": "8da72588e7d3e6cd", "src": "db2@1.60.1.70291"}
+{"id": "MINIMAP_TRACKING_BATTLEMASTER", "field": "text", "en": "Battlemaster", "hash": "f7abce0bb335533b", "src": "db2@1.60.1.70291"}
+{"id": "MINIMAP_TRACKING_FLIGHTMASTER", "field": "text", "en": "Flight Master", "hash": "2887c2668433ee40", "src": "db2@1.60.1.70291"}
+{"id": "MINIMAP_TRACKING_INNKEEPER", "field": "text", "en": "Innkeeper", "hash": "efa922913a7475ca", "src": "db2@1.60.1.70291"}
+{"id": "MINIMAP_TRACKING_MAILBOX", "field": "text", "en": "Mailbox", "hash": "e892d8f83e954ceb", "src": "db2@1.60.1.70291"}
+{"id": "MINIMAP_TRACKING_REPAIR", "field": "text", "en": "Repair", "hash": "8c64b7b46f3647d7", "src": "db2@1.60.1.70291"}
+{"id": "MINIMAP_TRACKING_STABLEMASTER", "field": "text", "en": "Stable Master", "hash": "73010bae05a9562e", "src": "db2@1.60.1.70291"}
+{"id": "MINIMAP_TRACKING_TARGET", "field": "text", "en": "Target", "hash": "3d7ca112c9409d27", "src": "db2@1.60.1.70291"}
+{"id": "MINIMAP_TRACKING_TOOLTIP_NONE", "field": "text", "en": "Click to enable and disable tracking types.", "hash": "2f1ae827ebb562d5", "src": "db2@1.60.1.70291"}
+{"id": "MINIMAP_TRACKING_TRAINER_CLASS", "field": "text", "en": "Class Trainer", "hash": "f7271dda0743f646", "src": "db2@1.60.1.70291"}
+{"id": "MINIMAP_TRACKING_TRAINER_PROFESSION", "field": "text", "en": "Profession Trainers", "hash": "bed3f8b8567ed448", "src": "db2@1.60.1.70291"}
+{"id": "MINIMAP_TRACKING_TRIVIAL_QUESTS", "field": "text", "en": "Low-Level Quests", "hash": "a7abfcddaeafe4f9", "src": "db2@1.60.1.70291"}
+{"id": "MINIMUM_CHARACTER_NAME_SIZE_TEXT", "field": "text", "en": "Minimum Character Name Size", "hash": "000605679bff0879", "src": "db2@1.60.1.70291"}
+{"id": "MINUTES", "field": "text", "en": "|4Minute:Minutes;", "hash": "fb46cad156f06a82", "src": "db2@1.60.1.70291"}
+{"id": "MINUTES_ABBR", "field": "text", "en": "%d |4Min:Min;", "hash": "94dafd154cf7b8ed", "src": "db2@1.60.1.70291"}
+{"id": "MINUTE_ONELETTER_ABBR", "field": "text", "en": "%d m", "hash": "050f77b8fd04b931", "src": "db2@1.60.1.70291"}
+{"id": "MISCELLANEOUS", "field": "text", "en": "Miscellaneous", "hash": "b3c7747f3cef66e5", "src": "db2@1.60.1.70291"}
+{"id": "MISS", "field": "text", "en": "Miss", "hash": "0a6d119c2926834e", "src": "db2@1.60.1.70291"}
+{"id": "MISSES", "field": "text", "en": "Misses", "hash": "e971b44042dc1393", "src": "db2@1.60.1.70291"}
+{"id": "MONEY_LOOT", "field": "text", "en": "Money Loot", "hash": "0d9eaafc6215b241", "src": "db2@1.60.1.70291"}
+{"id": "MONEY_TTS_LABEL", "field": "text", "en": "Money Loot", "hash": "0d9eaafc6215b241", "src": "db2@1.60.1.70291"}
+{"id": "MONSTER_BOSS_EMOTE", "field": "text", "en": "Boss Emote", "hash": "6730ebecbd2147a4", "src": "db2@1.60.1.70291"}
+{"id": "MONSTER_BOSS_WHISPER", "field": "text", "en": "Boss Whisper", "hash": "d0013136a2495616", "src": "db2@1.60.1.70291"}
+{"id": "MONSTER_EMOTE", "field": "text", "en": "Creature Emote", "hash": "019c294127f02f18", "src": "db2@1.60.1.70291"}
+{"id": "MONSTER_SAY", "field": "text", "en": "Creature Say", "hash": "a1b4a209a7432c5a", "src": "db2@1.60.1.70291"}
+{"id": "MONSTER_WHISPER", "field": "text", "en": "Creature Whisper", "hash": "4ed31336bbe4c8d4", "src": "db2@1.60.1.70291"}
+{"id": "MONSTER_YELL", "field": "text", "en": "Creature Yell", "hash": "c03dc3c084b96c5e", "src": "db2@1.60.1.70291"}
+{"id": "MONTHLY_ACTIVITIES_PROGRESSED", "field": "text", "en": "Traveler's Log Progress", "hash": "db55adde8d29fb4d", "src": "db2@1.60.1.70291"}
+{"id": "MONTH_APRIL", "field": "text", "en": "April", "hash": "841b4e9e3ba06119", "src": "db2@1.60.1.70291"}
+{"id": "MONTH_AUGUST", "field": "text", "en": "August", "hash": "f0479e8a4a78e9d8", "src": "db2@1.60.1.70291"}
+{"id": "MONTH_DECEMBER", "field": "text", "en": "December", "hash": "446e5eb42968e8b3", "src": "db2@1.60.1.70291"}
+{"id": "MONTH_FEBRUARY", "field": "text", "en": "February", "hash": "1d118b367be2be9a", "src": "db2@1.60.1.70291"}
+{"id": "MONTH_JANUARY", "field": "text", "en": "January", "hash": "2373c9098d15baf6", "src": "db2@1.60.1.70291"}
+{"id": "MONTH_JULY", "field": "text", "en": "July", "hash": "0a0949a8b090f51a", "src": "db2@1.60.1.70291"}
+{"id": "MONTH_JUNE", "field": "text", "en": "June", "hash": "0a094a9ab09134c8", "src": "db2@1.60.1.70291"}
+{"id": "MONTH_MARCH", "field": "text", "en": "March", "hash": "54bd4b4465864ef8", "src": "db2@1.60.1.70291"}
+{"id": "MONTH_MAY", "field": "text", "en": "May", "hash": "00145bd131b875d8", "src": "db2@1.60.1.70291"}
+{"id": "MONTH_NOVEMBER", "field": "text", "en": "November", "hash": "a8aa136b249c9711", "src": "db2@1.60.1.70291"}
+{"id": "MONTH_OCTOBER", "field": "text", "en": "October", "hash": "0a7e8f11c91fe2d0", "src": "db2@1.60.1.70291"}
+{"id": "MONTH_SEPTEMBER", "field": "text", "en": "September", "hash": "35a173bdf0b59bc9", "src": "db2@1.60.1.70291"}
+{"id": "MOTION_SICKNESS_CHECKBOX", "field": "text", "en": "Motion Sickness", "hash": "77d30be78de1c10c", "src": "db2@1.60.1.70291"}
+{"id": "MOUNT", "field": "text", "en": "Mount", "hash": "569e58862d1fd16c", "src": "db2@1.60.1.70291"}
+{"id": "MOUNTS", "field": "text", "en": "Mounts", "hash": "53074de1835383dd", "src": "db2@1.60.1.70291"}
+{"id": "MOUNT_EQUIPMENT_EXEMPT", "field": "text", "en": "Your active mount doesn't benefit from Mount Equipment because it already has an ability.", "hash": "2eb1bac11431ef3e", "src": "db2@1.60.1.70291"}
+{"id": "MOUNT_EQUIPMENT_NOTICE", "field": "text", "en": "Enhance your mounts with Mount Equipment", "hash": "2215fdcfee782843", "src": "db2@1.60.1.70291"}
+{"id": "MOUNT_EQUIPMENT_UNLOCK_REQUIREMENT", "field": "text", "en": "Mount Equipment unlocked at Level %s", "hash": "a2dc8cf9c859e1ce", "src": "db2@1.60.1.70291"}
+{"id": "MOUNT_JOURNAL_FILTER_AQUATIC", "field": "text", "en": "Aquatic", "hash": "f9a71aa2fb1b7196", "src": "db2@1.60.1.70291"}
+{"id": "MOUNT_JOURNAL_FILTER_DRAGONRIDING", "field": "text", "en": "Skyriding", "hash": "aa8e2f1daf310c88", "src": "db2@1.60.1.70291"}
+{"id": "MOUNT_JOURNAL_FILTER_FLYING", "field": "text", "en": "Flying", "hash": "3e47fdafcd961cfd", "src": "db2@1.60.1.70291"}
+{"id": "MOUNT_JOURNAL_FILTER_GROUND", "field": "text", "en": "Ground", "hash": "a1caab90023268a9", "src": "db2@1.60.1.70291"}
+{"id": "MOUNT_JOURNAL_FILTER_RIDEALONG", "field": "text", "en": "Ride Along", "hash": "084afd0b73dc21e9", "src": "db2@1.60.1.70291"}
+{"id": "MOUNT_JOURNAL_FILTER_TYPE", "field": "text", "en": "Type", "hash": "0b615fd246820bea", "src": "db2@1.60.1.70291"}
+{"id": "MOUNT_JOURNAL_FILTER_UNUSABLE", "field": "text", "en": "Unusable", "hash": "30b200f9434fe8c9", "src": "db2@1.60.1.70291"}
+{"id": "MOUNT_JOURNAL_PLAYER", "field": "text", "en": "Show Character", "hash": "9152dbe14619fcf9", "src": "db2@1.60.1.70291"}
+{"id": "MOUNT_JOURNAL_STEADY_FLIGHT_ONLY", "field": "text", "en": "Steady Flight Only", "hash": "8da7f1166aa19cd7", "src": "db2@1.60.1.70291"}
+{"id": "MOUNT_SUMMON_TOOLTIP", "field": "text", "en": "Summons or dismisses your selected mount.", "hash": "fd0e2178081678cf", "src": "db2@1.60.1.70291"}
+{"id": "MOUNT_UNWRAP_TOOLTIP", "field": "text", "en": "Open to receive your new mount.", "hash": "d0870fac7fa95703", "src": "db2@1.60.1.70291"}
+{"id": "MOUSEOVER_CAST_KEY", "field": "text", "en": "Mouseover Cast Key", "hash": "7cb4fdbdf44a860e", "src": "db2@1.60.1.70291"}
+{"id": "MOUSE_LABEL", "field": "text", "en": "Mouse", "hash": "569e5b062d2070c2", "src": "db2@1.60.1.70291"}
+{"id": "MOUSE_LOOK_SPEED", "field": "text", "en": "Mouse Look Speed", "hash": "5d09a14588298f8a", "src": "db2@1.60.1.70291"}
+{"id": "MOUSE_SENSITIVITY", "field": "text", "en": "Mouse Sensitivity", "hash": "6ad232e6f8f004fc", "src": "db2@1.60.1.70291"}
+{"id": "MOVE_FILTER_DOWN", "field": "text", "en": "Move Filter Down", "hash": "72f4249c862b684e", "src": "db2@1.60.1.70291"}
+{"id": "MOVE_FILTER_UP", "field": "text", "en": "Move Filter Up", "hash": "1021f880847ca8e4", "src": "db2@1.60.1.70291"}
+{"id": "MOVE_PAD", "field": "text", "en": "Show Move Pad", "hash": "c0bee15e707d98f0", "src": "db2@1.60.1.70291"}
+{"id": "MOVE_PAD_LOCKED", "field": "text", "en": "Lock Window", "hash": "cf6273e21a4161ea", "src": "db2@1.60.1.70291"}
+{"id": "MOVE_PAD_PRESS_AND_HOLD_MODE", "field": "text", "en": "Press and Hold Movement", "hash": "56c562348275c024", "src": "db2@1.60.1.70291"}
+{"id": "MOVE_TO_INACTIVE", "field": "text", "en": "Move to Inactive", "hash": "ea61766abc3512bc", "src": "db2@1.60.1.70291"}
+{"id": "MOVE_TO_NEW_WINDOW", "field": "text", "en": "Move to New Window", "hash": "aaa34bf534f2fbc9", "src": "db2@1.60.1.70291"}
+{"id": "MOVE_TO_WHISPER_WINDOW", "field": "text", "en": "Move to Whisper Window", "hash": "10dbeccdebf8d0d9", "src": "db2@1.60.1.70291"}
+{"id": "MSAA_LABEL", "field": "text", "en": "Multisample Techniques", "hash": "c106a767e32e5dad", "src": "db2@1.60.1.70291"}
+{"id": "MULTISAMPLE_ALPHA_TEST", "field": "text", "en": "Multisample Alpha-Test", "hash": "88886bb7f71bf1a4", "src": "db2@1.60.1.70291"}
+{"id": "MULTI_CAST_TOOLTIP_NO_TOTEM", "field": "text", "en": "No Totem", "hash": "0018e222550fa9d1", "src": "db2@1.60.1.70291"}
+{"id": "MUSIC_DISABLED", "field": "text", "en": "Music Disabled", "hash": "274af892db732bb7", "src": "db2@1.60.1.70291"}
+{"id": "MUSIC_ENABLED", "field": "text", "en": "Music Enabled", "hash": "f747ef7fc0bf0b80", "src": "db2@1.60.1.70291"}
+{"id": "MUSIC_VOLUME", "field": "text", "en": "Music", "hash": "576ba176759e62a1", "src": "db2@1.60.1.70291"}
+{"id": "MUTE", "field": "text", "en": "Mute", "hash": "0a70367d58c9d02d", "src": "db2@1.60.1.70291"}
+{"id": "MUTE_SILENCED", "field": "text", "en": "Mute (Player is silenced)", "hash": "e753adf8230eb537", "src": "db2@1.60.1.70291"}
+{"id": "MYTHIC_PLUS_DESERTER_CONSEQUENCE", "field": "text", "en": "A Deserter's Badge will be visible in Mythic+ group finder.", "hash": "91fd16b5734d9f47", "src": "db2@1.60.1.70291"}
+{"id": "MYTHIC_PLUS_DESERTER_FLAGGED", "field": "text", "en": "You have been flagged as a Keystone Deserter by repeatedly leaving Mythic+ instances.", "hash": "97c9ef28ebf4e3cb", "src": "db2@1.60.1.70291"}
+{"id": "MY_ORDERS", "field": "text", "en": "My Orders", "hash": "e103bc2783f96983", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:101", "field": "text", "en": "My friend - though my arm is weary from the battle we continue to wage in the Plaguelands, it is always strong enough to pen this missive to a hero such as you.  It pleases me to know the aid you rendered us continues to yield benefits, ones we try to enact upon on a daily basis.\r\n\r\nShould you find yourself in the Western Plaguelands soon, please stop by the Bulwark.  Your seasoned hand would be most welcomed in a cauldron run!\r\n\r\nYours in the Darkness:\r\nHigh Executor Derrington", "hash": "5b8a719ee244c613", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:102", "field": "text", "en": "Ho Ho Hello, $N!  I hope you have a fantastic Feast of Winter Veil!$B$BYou were so nice in helping me out with my sweet tooth, that I wanted to send you a little something extra.  It's a sampler of delicious Smokywood Pastures treats.  If you haven't gotten any yet, be sure to do so before the season ends!$B$BSeasons Greetings...$BGreatfather Winter", "hash": "3f09b6ac7946de86", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:103", "field": "text", "en": "Thank you for renewing your membership with the Goblin Experimental Engineering Korporation!  We are delighted to have you as an active member.  Please accept this gift as a token of our appreciation for the wonderful contributions you continue to make to the world of goblin engineering.", "hash": "b8c3498297d0bb58", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:105", "field": "text", "en": "This mail was sent to you because you signed up for Viagra! More text.", "hash": "f07967e57c4f2e2a", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:106", "field": "text", "en": "Those rabbits came back!  NO!  Oh, don't bother coming back...", "hash": "68a26eb8619edea9", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:107", "field": "text", "en": "Greetings my friend - though my arm is weary from the battle we continue to wage in the ruins of Lordaeron, it is always strong enough to pen this missive to a hero such as you.  It pleases me to know the aid you lent us days ago continues to yield benefits, ones we try to enact upon on a daily basis.\r\n\r\nShould you find yourself in the Western Plaguelands soon, please stop by the camp.  Your seasoned hand would be most welcomed in a cauldron run!\r\n\r\nFor Stormwind!\r\nCommander Ashlam Valorfist", "hash": "e29f00a0e37143fa", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:108", "field": "text", "en": "Ho ho hello again, $N!$B$BThough I and the good folks of Smokywood Pastures have been quite busy this season, I just wanted to send you something special along to you.  You'll be happy to know what we unfroze Sacks out in the Alterac Mountains; he sends his best.$B$BIn freeing Sacks, we managed to develop a novelty device that I think you might enjoy.  You will need a snowball to power it, but I think you'll enjoy it quite a bit!$B$BGreat-father Winter", "hash": "88f48145cbdecdf4", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:109", "field": "text", "en": "Greetings, my friend!  I hope all is well with you.$B$BI thought I would take this time to thank you once again for aiding us in our struggle against Hakkar.  I look forward to seeing you soon as we rise to the challenge of defeating the Blood God.  Your absence here is sorely felt!$B$BI've enclosed an Honor Token as a small means of thanking you for what you have done for us.  Together we may finally destroy Hakkar once and for all!$B$BMay Zanza always bless you!$BVinchaxa, Servitor of Zanza", "hash": "6baef887fab52b19", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:110", "field": "text", "en": "Esteemed $N,$B$BThe information you brought to my attention earlier has turned out to be extremely valuable.  Already I am calling for changes to our battle plans to account for the new importance we attribute to the Twilight's Hammer presence.$B$BPlease accept this item as a small token of our gratitude.  I hope we can continue to count on you as a valiant ally in our fight in Silithus.$B$BSincerely,$B$BCommander Mar'alith", "hash": "0071549f57415c6c", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:111", "field": "text", "en": "I bid you well, my friend.  I hope your fight for the Horde is a glorious one.  I certainly look forward to a time where others will look upon you with a legacy anywhere as rich and as treasured as the one of Grom Hellscream.$B$BI have not forgotten your act of kindness not only to me, but to the memory of Grom during the Harvest Festival.  I've sent you something I hope you might find to your liking.  Use it well.$B$BFor the Horde!$BJavnir", "hash": "5950e4a54c3aa3ea", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:112", "field": "text", "en": "Greetings, young druid!\r\n\r\nI'm quite proud of the effort you put into the training given to you thus far.  You should feel proud to have become one with the Claw.  More such lessons will be given; the next of your lessons will be available once you have reached at least 14th level.  When you are ready at that time, seek me out in the Cenarion Enclave of Darnassus.\r\n\r\nMathrengyl Bearwalker", "hash": "173ae9a5abbb8ac3", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:113", "field": "text", "en": "I bid you well, my friend.  I hope your fight on behalf of the Alliance goes to your satisfaction.  I certainly look forward to a time where others will look upon you with a legacy anywhere as rich and as treasured as the one of Uther Lightbringer.$B$BI have not forgotten your act of kindness not only to me, but to the memory of Uther during the Harvest Festival.  I've sent you something I hope you might find to your liking.  Use it well.$B$BBy Bronzebeard's Hammer,$BWagner", "hash": "3c29be27efe332a8", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:114", "field": "text", "en": "Greetings, young druid!\r\n\r\nI've sent you this note as a reminder to check in with me from time to time as you advance through the ranks.  There is much to learn as a druid in the service of Cenarius, and I am only happy to help you along the way.  Soon you will be ready to learn about your aquatic form; seek me out when you reach 16th level and I'll get you started along the path of knowledge.\r\n\r\nTurak Runetotem", "hash": "a0152708719b0d30", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:115", "field": "text", "en": "Greetings, young druid!\r\n\r\nI've sent you this note as a reminder to check in with me from time to time as you advance through the ranks.  There is much to learn as a druid in the service of Cenarius, and I am only happy to help you along the way.  Soon you will be ready to learn about your aquatic form; seek me out when you reach 16th level and I'll get you started along the path of knowledge.\r\n\r\nMathrengyl Bearwalker", "hash": "71e8b786a2d76062", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:116", "field": "text", "en": "Greetings, young druid!\r\n\r\nI'm quite proud of the effort you put into the training given to you thus far.  You should feel proud to have become one with the Claw.  More such lessons will be given; the next of your lessons will be available once you have reached at least 14th level.  When you are ready at that time, seek me out on the Elder Rise of Thunder Bluff.\r\n\r\nTurak Runetotem", "hash": "5c9eb31db8f7f799", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:117", "field": "text", "en": "Ho ho hello again, $N!$B$BThough I and the good folks of Smokywood Pastures have been quite busy this season, I just wanted to send you something special along to you.  You'll be happy to know what we unfroze Sacks out in the Alterac Mountains; he sends his best.$B$BIn freeing Sacks, we managed to develop a novelty device that I think you might enjoy.  You will need a snowball to power it, but I think you'll enjoy it quite a bit!$B$BGreatfather Winter", "hash": "189b883b43068ce6", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:119", "field": "text", "en": "Hello again - I just wanted to drop you a note that things here in Feathermoon Stronghold are fine.  I've managed to make several new pieces of leather items, thanks in no small part to the help you gave me!$B$BI had some extra bits of leather left over, so I thought I'd send you something extra for all the help you've given me.  If you're ever by the Stronghold again, be sure to look us up!$B$BYour friend,$BPratt", "hash": "0e8d019a122933cb", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:120", "field": "text", "en": "Greetings once again - I just wanted to send you word that things here in Camp Mojache are going well.  I've managed to make several new pieces of leather items, thanks in no small part to your aid!$B$BI had some extra bits of leather left over, so I thought I'd send you something extra as a way of saying thank you once more.  If you're ever by the Camp again, be sure to visit!$B$BPeace to you and your ancestors,$BJangdor", "hash": "de44d76a15ad4cbb", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:122", "field": "text", "en": "$N -$B$BI just wanted to say once again thanks for rescuing Metzen from his kidnappers.  Believe me when I say you've got a friend for life at Smokywood Pastures.$B$BSpeaking of which... Master Chef Graccu has been working on a new recipe here, and I thought you might like a little sample of what he has been whipping up!  Have a wondrous Winter Veil!$B$BMay your cash box always jingle,$BKaymard Copperpinch", "hash": "a44452024e3982e2", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:123", "field": "text", "en": "Champion,$B$BThe Blue Dragonflight believes that you are fated for greater things than even I could predict.$B$BDespite what some would have you believe, our world needs heroes. In your darkest hour, when you face the blight of Kalimdor, recall the epic journies, trials, and tribulations that you undertook for an old gnome and let those memories lift your spirits.$B$BHumbly,$B$BNarain Soothfancy$B$BP.S. Sorry about the repair costs.", "hash": "ac0e91b9c15bec2f", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:131", "field": "text", "en": "I was grateful for your visit today, take this as a gift for your Lunar Festival.", "hash": "c22d7b88795d8e28", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:161", "field": "text", "en": "$N -$B$BI just wanted to say once again thanks for rescuing Metzen from his kidnappers.  Believe me when I say you've got a friend for life at Smokywood Pastures.$B$BSpeaking of which... Master Chef Graccu has been working on a new recipe here, and I thought you might like a little sample of what he has been whipping up!  Have a wondrous Winter Veil!$B$BMay your cash box always jingle,$BWulmort Jinglepocket", "hash": "14b19beb4cdf216b", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:162", "field": "text", "en": "Need to fix tab ordergin", "hash": "7d672308b20cd98b", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:165", "field": "text", "en": "a", "hash": "0000006100000061", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:166", "field": "text", "en": "ab", "hash": "00003205000c14a3", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:169", "field": "text", "en": "This is a test of the emergency broadcast system.", "hash": "0caa28bb7b39cb85", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:170", "field": "text", "en": "Hello. What are you talking about?  This isn't crashing?", "hash": "e64a9cf5c40ce1c1", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:171", "field": "text", "en": "$N$B$BWith all haste, please open and heed the attached letter.  The Argent Dawn needs your help!", "hash": "7159aac805f75571", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:172", "field": "text", "en": "$n,$B$BI received this report regarding the document you retrieved from the Scourge. While not pressing, you may find it of interest.$B$BThank you again for your service.$BKeeper of the Rolls$BThe Argent Dawn", "hash": "b3dd7a1627aea342", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:178", "field": "text", "en": "Thanks for playing World of Warcraft!", "hash": "114fa5d587515039", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:179", "field": "text", "en": "Here's your reward, you lucky stiff!  Don't spend it all in one auction house....", "hash": "f3c1a100ab59b6eb", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:612", "field": "text", "en": "Greetings $n,\r\n\r\nI've been observing your handiwork for some time now. I must say, I'm impressed. You're clearly no mere street urchin.\r\n\r\nThere's a job I'd like you to do for me; the retrieval of a certain treasure. I assure you the pay is lucrative.\r\n\r\nIf you're interested, I've left a dead drop in a cabin beside Pyrewood Village. You'll find more information within.\r\n\r\nRegards, \r\nC", "hash": "135212671f0a2d77", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:613", "field": "text", "en": "$n,\r\n\r\nYour work has been most satisfactory. The Horn of Xelthos is every bit as marvelous as I'd hoped.\r\n\r\nYou will find your payment at the same dead drop as before, in the cabin beside Pyrewood Village.\r\n\r\nI look forward to doing business with you in the future.\r\n\r\nRegards, \r\nC", "hash": "552a2919522effb0", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:614", "field": "text", "en": "Hello again, $n,\r\n\r\nI'm sure a rogue of your talents stays quite busy these days, so I'll get right to the point.\r\n\r\nI have another job for you. This one is a touch more involved than your foray into Shadowfang Keep, but your pay will be raised accordingly.\r\n\r\nIf you're interested, return to the cabin beside Pyrewood Village. You'll find your briefing in the same dead drop as before.\r\n\r\nRegards, \r\nC", "hash": "1f3aa58309a49ab4", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:615", "field": "text", "en": "$n,\r\n\r\nYou have truly outdone yourself. Never would I have dreamed of possessing such an exquisitely morbid trophy as the Eye of Bhossca! You have my sincere thanks.\r\n\r\nYou know where to find your payment by now; in the cabin beside Pyrewood Village. I hope it fully conveys my gratitude.\r\n\r\nRegards, \r\nC", "hash": "9f36141bfd8c8bbe", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:616", "field": "text", "en": "Greetings $n,\r\n\r\nRaszel and I have a plan and we are ready for your assistance. Meet us in the Barrens and we can discuss it with you.", "hash": "85321ef8978d799d", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:623", "field": "text", "en": "$n,\r\n\r\nRavenholdt's agents have learned that you are delivering artifacts to an entity known, to you, only as \"C\".\r\n\r\nI'm afraid you are being played for a fool. \r\n\r\nCome to Ravenholdt Manor at once. We do not begrudge you for your errors, but the situation must be dealt with swiftly.\r\n\r\nI cannot say more in this letter. You will be given more information when you arrive. \r\n\r\nRegards,\r\nFahrad", "hash": "560229d2a847762e", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:624", "field": "text", "en": "Shaw's agents have been as yet unable to find our mutual friend, but they have reported to me that he was last seen riding northeast from Astranaar in Ashenvale. It's not much, but at least he's alive.\r\n\r\nLight be with you.\r\n\r\n-Katherine", "hash": "4042d806033b3079", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:642", "field": "text", "en": "The Lich King's unholy reign has gone on long enough. If Azeroth is to be saved, it must end now!\r\n\r\nThe Crusade needs strong men and women like you to fight the scourge of Northrend. We will show those abominations that no matter how far they run, the Light will strike them down! \r\n\r\nJoin us, and help forge a pure and holy Azeroth!", "hash": "c31fc2d6c6dfce42", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:643", "field": "text", "en": "Every day, the scourge bring destruction and pestilence to our homelands. Faced with such a threat, will you not take up arms for your fellow man?\r\n\r\nWith your help, the Scarlet Crusade will deliver salvation unto Azeroth, and the undead will be reduced to ash before the holy Light!  \r\n\r\nJoin us, champion, for the good of all humanity !", "hash": "63f8d030a8710359", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:644", "field": "text", "en": "The scourge are all around us. As the undead menace grows, it is imperative that we preserve whatever bastions of humanity we can.\r\n\r\nIt is no accident that the grass of Tyr's Hand is the only greenery in the Plaguelands. Our crusade fights tirelessly to protect all that is good in this world, and eradicate that which is wicked and corrupt.\r\n\r\nOnly through our crusade will salvation be brought to Azeroth, and the undead vermin be driven out!\r\n\r\nJoin us, so that together we may save our homes!", "hash": "b1b37d4667ffa0c0", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:652", "field": "text", "en": "Greetings $n,\r\n\r\nI hope this letter finds you well. I wanted to thank you for speaking to Ur'seris and taking on his request. Through your deeds the forest has now become much safer for both wildlife and shen'dorei.\r\n\r\nI am unsure where the winds will lead you, but I believe you will go on to do great things. I hope you are able to find further druidic instruction on your adventures.\r\n\r\nAeesha'el banu zepharaalis,\r\nLotheluum Starbreeze", "hash": "35a5852102226100", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:660", "field": "text", "en": "I am a mail that was generated via a quest that can never be in your quest log. Am I still a real mail?", "hash": "50a1bb0cf26cf939", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:661", "field": "text", "en": "Greetings, $n. I just wanted to let you know that I've made my way to Dalaran and retrieved Randal. He's a spirited boy, and I'll do my best to ensure that he grows up strong.\r\n\r\nAria tells me that Randal shows some aptitude for magic, so I intend to transfer my commission from Nethergarde to Dalaran City so I can see to his education.\r\n\r\nThank you again for saving me, $n. Both Randal and I are in your debt.\r\n\r\n-Danneth", "hash": "9132d2b43265737b", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:662", "field": "text", "en": "Greetings, $n.\r\n\r\nThe Supreme Magister has need of your aid. Please take the attached missive and follow the instructions contained within.", "hash": "489ad0a915ec3171", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:83", "field": "text", "en": "this is a test", "hash": "8c4889c44d1a6f9a", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:84", "field": "text", "en": "Thank you for visiting me, $N. It makes me happy to know we are not forgotten.", "hash": "16c52bd13aac0b1a", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:86", "field": "text", "en": "This small token will give no answers, but perhaps it will be of some amusement to you.", "hash": "89685c77d0c12798", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:87", "field": "text", "en": "Hello there again.  I'm Gubber Blump.\r\n\r\nI hope you are doing real well.  I hope you are still fishing too.  I love fishing.  The Blump family is known for fishing.  Here is a bauble, so that you can fish a little better.  I love using them when I fish.  Good luck, and thank you again for helping me catch them groupers from before.\r\n\r\nKeep on fishing!\r\n\r\nGubber Blump", "hash": "b8f94206f14c67ae", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:93", "field": "text", "en": "Esteemed $N,$B$BI went through the stack of texts you brought me and I decoded the attached articles for you.  I carefully selected only those items which I thought would be of use.  It was quite problematic to get to a mailbox without being seen, but months of hiding in the desert have turned me into quite a sneak!$B$BI hope you enjoy these.$B$B-Ortell", "hash": "06d398efe910f55c", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:94", "field": "text", "en": "Greetings, $N!$B$BI'm getting pretty good at sneaking into Cenarion Hold to use their mailbox.  Again, I've attached some items that might be of interest.  Hope something in there is of use to you!$B$B-Ortell", "hash": "74df7633a7b7beea", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:98", "field": "text", "en": "It took much time to translate the high chief's text. I was dismayed by what I found. High Chief Winterfall was in an extreme state of paranoia in his last days and was addicted to a substance he called \"firewater.\" He believed that all creatures were his enemies. Well, I will let you read it for yourself -- I have included a translation of his words with this letter. If you are ever in need, please visit me again.", "hash": "5169cbe3d1dfde6d", "src": "db2@1.60.1.70291"}
+{"id": "MailBody:99", "field": "text", "en": "Thank you for renewing your membership with the Mechanical Engineering Guild, Associated!  We are delighted to have you as an active member.  Please accept this gift as a token of our appreciation for the wonderful contributions you continue to make to the world of gnome engineering.", "hash": "d6c7d7e9b0f5cf21", "src": "db2@1.60.1.70291"}

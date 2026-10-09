@@ -1,9 +1,42 @@
-{"id": 287090, "field": "name", "en": "Sharpened Letter Opener", "hash": "abdcf4b4c904ff34", "src": "db2@1.60.1.70245"}
-{"id": 287416, "field": "name", "en": "Truskis' Cheesecake Slice", "hash": "f30c50f4a16d79c7", "src": "db2@1.60.1.70245"}
-{"id": 287416, "field": "description", "en": "Cheesecake makes you happy.", "hash": "81d403b473235fb8", "src": "db2@1.60.1.70245"}
-{"id": 287505, "field": "name", "en": "Tender Strider Meat", "hash": "7e48989fc150c7a4", "src": "db2@1.60.1.70245"}
-{"id": 287505, "field": "description", "en": "Serves Kyle his lunch!\nKyle would delight in taking a bite out of this succulent treat!", "hash": "5e17d5fa76ceb2f4", "src": "db2@1.60.1.70245"}
-{"id": 287958, "field": "name", "en": "Titan Relic", "hash": "d217f2e31d435cfb", "src": "db2@1.60.1.70245"}
-{"id": 287958, "field": "description", "en": "Fragmented remnants of the construct, refracting light like a kaleidoscope.", "hash": "7b1cbbffd1478610", "src": "db2@1.60.1.70245"}
-{"id": 287959, "field": "name", "en": "Titan Relic", "hash": "d217f2e31d435cfb", "src": "db2@1.60.1.70245"}
-{"id": 287959, "field": "description", "en": "Fragmented remnants of the construct, refracting light like a kaleidoscope.", "hash": "7b1cbbffd1478610", "src": "db2@1.60.1.70245"}
+{"id": 287090, "field": "name", "en": "Letter Opener", "hash": "9d2e361da67c23c0", "src": "db2@1.60.1.70291"}
+{"id": 287416, "field": "name", "en": "Truskis' Cheesecake Slice", "hash": "f30c50f4a16d79c7", "src": "db2@1.60.1.70291"}
+{"id": 287416, "field": "description", "en": "Cheesecake makes you happy.", "hash": "81d403b473235fb8", "src": "db2@1.60.1.70291"}
+{"id": 287505, "field": "name", "en": "Tender Strider Meat", "hash": "7e48989fc150c7a4", "src": "db2@1.60.1.70291"}
+{"id": 287505, "field": "description", "en": "Serves Kyle his lunch!\nKyle would delight in taking a bite out of this succulent treat!", "hash": "5e17d5fa76ceb2f4", "src": "db2@1.60.1.70291"}
+{"id": 287958, "field": "name", "en": "Titan Relic", "hash": "d217f2e31d435cfb", "src": "db2@1.60.1.70291"}
+{"id": 287958, "field": "description", "en": "Fragmented remnants of the construct, refracting light like a kaleidoscope.", "hash": "7b1cbbffd1478610", "src": "db2@1.60.1.70291"}
+{"id": 287959, "field": "name", "en": "Titan Relic", "hash": "d217f2e31d435cfb", "src": "db2@1.60.1.70291"}
+{"id": 287959, "field": "description", "en": "Fragmented remnants of the construct, refracting light like a kaleidoscope.", "hash": "7b1cbbffd1478610", "src": "db2@1.60.1.70291"}
+{"id": 287963, "field": "name", "en": "Roasted Quail", "hash": "3d87aa25317926d5", "src": "db2@1.60.1.70291"}
+{"id": 287963, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70291"}
+{"id": 287964, "field": "name", "en": "Morning Glory Dew", "hash": "868e26446c2be2bc", "src": "db2@1.60.1.70291"}
+{"id": 287964, "field": "description", "en": "Restores $o1 mana over $d.  Must remain seated while drinking.", "hash": "792a9d04713a780c", "src": "db2@1.60.1.70291"}
+{"id": 287966, "field": "name", "en": "Minor Healing Potion", "hash": "0908d26848b51315", "src": "db2@1.60.1.70291"}
+{"id": 287966, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70291"}
+{"id": 287967, "field": "name", "en": "Lesser Healing Potion", "hash": "ae62462ad4c3e38d", "src": "db2@1.60.1.70291"}
+{"id": 287967, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70291"}
+{"id": 287968, "field": "name", "en": "Minor Mana Potion", "hash": "3a6b2be7a4263adf", "src": "db2@1.60.1.70291"}
+{"id": 287968, "field": "description", "en": "Restores $s1 mana.", "hash": "09fdd6de4213d4dd", "src": "db2@1.60.1.70291"}
+{"id": 287969, "field": "name", "en": "Lesser Mana Potion", "hash": "fe6850551cc0793f", "src": "db2@1.60.1.70291"}
+{"id": 287969, "field": "description", "en": "Restores $s1 mana.", "hash": "09fdd6de4213d4dd", "src": "db2@1.60.1.70291"}
+{"id": 287971, "field": "name", "en": "Woolen Bag", "hash": "34f78466d6224520", "src": "db2@1.60.1.70291"}
+{"id": 287972, "field": "name", "en": "Rumsey Rum Dark", "hash": "edd12df0f4a5d49c", "src": "db2@1.60.1.70291"}
+{"id": 287972, "field": "description", "en": "Increases Stamina by $s1 for $d and gets you drunk to boot!", "hash": "faf19c38b8f31965", "src": "db2@1.60.1.70291"}
+{"id": 287973, "field": "name", "en": "Tender Wolf Steak", "hash": "bca2b603e7c690a6", "src": "db2@1.60.1.70291"}
+{"id": 287973, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 sec eating, you will become well fed and gain $s2 Agility for $1248420d. $@spelldesc1243969", "hash": "0a4ae27daa4521cf", "src": "db2@1.60.1.70291"}
+{"id": 287974, "field": "name", "en": "Grilled Squid", "hash": "a4da8049edd1d451", "src": "db2@1.60.1.70291"}
+{"id": 287974, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2% Critical Strike chance for $1249523d. $@spelldesc1243969", "hash": "1c7e23db01557d49", "src": "db2@1.60.1.70291"}
+{"id": 287975, "field": "name", "en": "Swiftness Potion", "hash": "a32c27ad41c2a98f", "src": "db2@1.60.1.70291"}
+{"id": 287975, "field": "description", "en": "Increases run speed by $s1% for $d1.", "hash": "61fe647b7084b69c", "src": "db2@1.60.1.70291"}
+{"id": 287976, "field": "name", "en": "Free Action Potion", "hash": "dad6363ae618b254", "src": "db2@1.60.1.70291"}
+{"id": 287976, "field": "description", "en": "Makes you immune to Stun and Movement Impairing effects for the next $d.   Does not remove effects already on the imbiber.", "hash": "1fa37517ede5858c", "src": "db2@1.60.1.70291"}
+{"id": 287977, "field": "name", "en": "Greater Healing Potion", "hash": "9dd18a948e91f0a1", "src": "db2@1.60.1.70291"}
+{"id": 287977, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70291"}
+{"id": 287978, "field": "name", "en": "Rough Sharpening Stone", "hash": "b9bad02223f566b2", "src": "db2@1.60.1.70291"}
+{"id": 287978, "field": "description", "en": "Increase sharp weapon damage by 2 for 30 minutes.", "hash": "2a8c6b23c1c33ff0", "src": "db2@1.60.1.70291"}
+{"id": 287979, "field": "name", "en": "Lesser Wizard Oil", "hash": "bfa6c71075427265", "src": "db2@1.60.1.70291"}
+{"id": 287979, "field": "description", "en": "While applied to target weapon it increases spell damage and healing by up to $25110s1. Lasts for 30 minutes.", "hash": "143db2f8fd8b1ac3", "src": "db2@1.60.1.70291"}
+{"id": 287980, "field": "name", "en": "Elemental Sharpening Stone", "hash": "651e222310602f2d", "src": "db2@1.60.1.70291"}
+{"id": 287980, "field": "description", "en": "Increase critical chance on a melee weapon by 2% for 30 minutes.", "hash": "052517c48526aad7", "src": "db2@1.60.1.70291"}
+{"id": 287992, "field": "name", "en": "Old Key", "hash": "beadd9fab9ec80f4", "src": "db2@1.60.1.70291"}
+{"id": 287992, "field": "description", "en": "An old key.", "hash": "f21ba4b04a31ef35", "src": "db2@1.60.1.70291"}

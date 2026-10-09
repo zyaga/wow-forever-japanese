@@ -1,51 +1,51 @@
-{"id": 1242069, "field": "name", "en": "Portal", "hash": "452ed066e787debf", "src": "db2@1.60.1.70245"}
-{"id": 1242139, "field": "name", "en": "Focused Fire", "hash": "94eb364771363d2f", "src": "db2@1.60.1.70245"}
-{"id": 1242139, "field": "aura", "en": "Damage done increased by $w1%.", "hash": "3436d245160fce1a", "src": "db2@1.60.1.70245"}
-{"id": 1242163, "field": "name", "en": "Transfusion", "hash": "740ca1626888d101", "src": "db2@1.60.1.70245"}
-{"id": 1242163, "field": "aura", "en": "Channeling Arcane energy.", "hash": "b9271710bfd303a9", "src": "db2@1.60.1.70245"}
-{"id": 1242252, "field": "name", "en": "Arcane Explosion", "hash": "147926cf0bf9df21", "src": "db2@1.60.1.70245"}
-{"id": 1242252, "field": "description", "en": "Sends out a blast wave of magic, inflicting $s1 Arcane damage to nearby enemies.", "hash": "e5bc2450428282dd", "src": "db2@1.60.1.70245"}
-{"id": 1242393, "field": "name", "en": "Summon Eagle Companion", "hash": "ddf5d3260007b7af", "src": "db2@1.60.1.70245"}
-{"id": 1242393, "field": "description", "en": "Summons an eagle companion to accompany you until dismissed.", "hash": "e441dba95d18be15", "src": "db2@1.60.1.70245"}
-{"id": 1242436, "field": "name", "en": "Raise Dead", "hash": "c89e275a22de61f5", "src": "db2@1.60.1.70245"}
-{"id": 1242436, "field": "description", "en": "Raise undead servants back to life to aid you.", "hash": "8c0294352c76c99d", "src": "db2@1.60.1.70245"}
-{"id": 1242440, "field": "name", "en": "Shadow Bolt Volley", "hash": "62ed89ea2de9d24d", "src": "db2@1.60.1.70245"}
-{"id": 1242440, "field": "description", "en": "Hurls missiles of dark magic, inflicting Shadow damage to nearby enemies.", "hash": "ff49863129e1fd03", "src": "db2@1.60.1.70245"}
-{"id": 1242441, "field": "name", "en": "Raise Dead", "hash": "c89e275a22de61f5", "src": "db2@1.60.1.70245"}
-{"id": 1242442, "field": "name", "en": "Raise Dead", "hash": "c89e275a22de61f5", "src": "db2@1.60.1.70245"}
-{"id": 1242443, "field": "name", "en": "Raise Dead", "hash": "c89e275a22de61f5", "src": "db2@1.60.1.70245"}
-{"id": 1242444, "field": "name", "en": "Raise Dead", "hash": "c89e275a22de61f5", "src": "db2@1.60.1.70245"}
-{"id": 1242446, "field": "name", "en": "Death Pact", "hash": "7f4d25906a353243", "src": "db2@1.60.1.70245"}
-{"id": 1242512, "field": "name", "en": "Rapid Recuperation", "hash": "1488707e1a28d8ac", "src": "db2@1.60.1.70245"}
-{"id": 1242512, "field": "description", "en": "Regenerating Mana while casting.", "hash": "df7219d3cd67e90a", "src": "db2@1.60.1.70245"}
-{"id": 1242512, "field": "aura", "en": "Regenerating $w1% of normal while casting spells.", "hash": "d9bf326f8d26a6bb", "src": "db2@1.60.1.70245"}
-{"id": 1242634, "field": "name", "en": "Counterattack", "hash": "1c9ec188ef4c3738", "src": "db2@1.60.1.70245"}
-{"id": 1242634, "field": "description", "en": "A strike that becomes active after parrying an opponent's attack. This attack deals $s2% weapon damage plus $m1 and immobilizes the target for $d. Counterattack cannot be blocked, dodged, or parried.", "hash": "bfd6d53289abb3cb", "src": "db2@1.60.1.70245"}
-{"id": 1242634, "field": "aura", "en": "Immobile.", "hash": "7d75228d3e9ac562", "src": "db2@1.60.1.70245"}
-{"id": 1242688, "field": "name", "en": "Resourcefulness", "hash": "8e42266ec3a51840", "src": "db2@1.60.1.70245"}
-{"id": 1242688, "field": "aura", "en": "Regenerating $s1% of your normal Mana regeneration while casting spells.", "hash": "6cf2fbcb395739c5", "src": "db2@1.60.1.70245"}
-{"id": 1242694, "field": "name", "en": "(DNT) Bloodmane Cosmetic Equipment", "hash": "72da56c392d70896", "src": "db2@1.60.1.70245"}
-{"id": 1242853, "field": "name", "en": "Soul Harvest", "hash": "d768b096884788ca", "src": "db2@1.60.1.70245"}
-{"id": 1242853, "field": "description", "en": "Mana regeneration increased by $s1% and allows $s2% of Mana regeneration to continue while casting.", "hash": "c8cd6870c88462e2", "src": "db2@1.60.1.70245"}
-{"id": 1242853, "field": "aura", "en": "Increases Mana regeneration by $w1% and allows $w2% of Mana regeneration to continue while casting.", "hash": "5464108647929bb1", "src": "db2@1.60.1.70245"}
-{"id": 1242871, "field": "name", "en": "Solar Burst", "hash": "33080c4b11c94402", "src": "db2@1.60.1.70245"}
-{"id": 1242871, "field": "description", "en": "Deals $s1 Fire damage, then continues to deal minor Solar damage every $t2 sec.", "hash": "200bb8190c72d7aa", "src": "db2@1.60.1.70245"}
-{"id": 1242871, "field": "aura", "en": "Deals $s2 Fire damage every $t2 sec.", "hash": "6aad7702630b1654", "src": "db2@1.60.1.70245"}
-{"id": 1242884, "field": "name", "en": "Intimidating Roar", "hash": "1786462ef748e2c7", "src": "db2@1.60.1.70245"}
-{"id": 1242884, "field": "description", "en": "Roars at an enemy, paralyzing it with terror for $d and causing all other nearby enemies to flee in fear.", "hash": "0c98d7ea2b609797", "src": "db2@1.60.1.70245"}
-{"id": 1242884, "field": "aura", "en": "Intimidated.", "hash": "441534cfc845bce9", "src": "db2@1.60.1.70245"}
-{"id": 1242907, "field": "name", "en": "Maul", "hash": "0a6afa530964a501", "src": "db2@1.60.1.70245"}
-{"id": 1242907, "field": "description", "en": "Inflicts $S1% Physical damage to the current enemy target.", "hash": "4fb414e564e15355", "src": "db2@1.60.1.70245"}
-{"id": 1242913, "field": "name", "en": "Harvest Curse", "hash": "adffdd2ecfe22623", "src": "db2@1.60.1.70245"}
-{"id": 1242913, "field": "description", "en": "Deals moderate Solar damage, then continues to deal minor Solar damage every $t2 sec.", "hash": "b092ac84fef6c21d", "src": "db2@1.60.1.70245"}
-{"id": 1242913, "field": "aura", "en": "Deals Solar damage every $t2 sec.", "hash": "1e54c9a2cceb9240", "src": "db2@1.60.1.70245"}
-{"id": 1242957, "field": "name", "en": "Siphon Life", "hash": "ac190247b468b0da", "src": "db2@1.60.1.70245"}
-{"id": 1242971, "field": "name", "en": "Unstable Affliction", "hash": "c2560853f19861b4", "src": "db2@1.60.1.70245"}
-{"id": 1242971, "field": "description", "en": "Shadow energy slowly destroys the target, causing $o1 damage over $d. In addition, if the Unstable Affliction is dispelled it will cause ${$m1*$m3/100} damage to the dispeller and silence them for $427719d. Only one Unstable Affliction or Immolate per Warlock can be active on any one target.", "hash": "af4118210f851afb", "src": "db2@1.60.1.70245"}
-{"id": 1242971, "field": "aura", "en": "$w1 Shadow damage every $t1 sec. If dispelled, will cause ${$w1*$m3/100} damage to the dispeller and silence them for $427719d.", "hash": "88bbd8b640510770", "src": "db2@1.60.1.70245"}
-{"id": 1242972, "field": "name", "en": "Unstable Affliction", "hash": "c2560853f19861b4", "src": "db2@1.60.1.70245"}
-{"id": 1242972, "field": "description", "en": "Shadow energy slowly destroys the target, causing $o1 damage over $d. In addition, if the Unstable Affliction is dispelled it will cause ${$m1*$m3/100} damage to the dispeller and silence them for $427719d. Only one Unstable Affliction or Immolate per Warlock can be active on any one target.", "hash": "af4118210f851afb", "src": "db2@1.60.1.70245"}
-{"id": 1242972, "field": "aura", "en": "$w1 Shadow damage every $t1 sec. If dispelled, will cause ${$w1*$m3/100} damage to the dispeller and silence them for $427719d.", "hash": "88bbd8b640510770", "src": "db2@1.60.1.70245"}
-{"id": 1242979, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70245"}
-{"id": 1242979, "field": "description", "en": "Applies an aura that heals for $p1% of maximum health every $t1 for $d1 sec.", "hash": "f8694e97db467334", "src": "db2@1.60.1.70245"}
-{"id": 1242979, "field": "aura", "en": "Healing for $s1% of maximum health every $t1 sec.", "hash": "7e09b1662274853f", "src": "db2@1.60.1.70245"}
+{"id": 1242069, "field": "name", "en": "Portal", "hash": "452ed066e787debf", "src": "db2@1.60.1.70291"}
+{"id": 1242139, "field": "name", "en": "Focused Fire", "hash": "94eb364771363d2f", "src": "db2@1.60.1.70291"}
+{"id": 1242139, "field": "aura", "en": "Damage done increased by $w1%.", "hash": "3436d245160fce1a", "src": "db2@1.60.1.70291"}
+{"id": 1242163, "field": "name", "en": "Transfusion", "hash": "740ca1626888d101", "src": "db2@1.60.1.70291"}
+{"id": 1242163, "field": "aura", "en": "Channeling Arcane energy.", "hash": "b9271710bfd303a9", "src": "db2@1.60.1.70291"}
+{"id": 1242252, "field": "name", "en": "Arcane Explosion", "hash": "147926cf0bf9df21", "src": "db2@1.60.1.70291"}
+{"id": 1242252, "field": "description", "en": "Sends out a blast wave of magic, inflicting $s1 Arcane damage to nearby enemies.", "hash": "e5bc2450428282dd", "src": "db2@1.60.1.70291"}
+{"id": 1242393, "field": "name", "en": "Summon Eagle Companion", "hash": "ddf5d3260007b7af", "src": "db2@1.60.1.70291"}
+{"id": 1242393, "field": "description", "en": "Summons an eagle companion to accompany you until dismissed.", "hash": "e441dba95d18be15", "src": "db2@1.60.1.70291"}
+{"id": 1242436, "field": "name", "en": "Raise Dead", "hash": "c89e275a22de61f5", "src": "db2@1.60.1.70291"}
+{"id": 1242436, "field": "description", "en": "Raise undead servants back to life to aid you.", "hash": "8c0294352c76c99d", "src": "db2@1.60.1.70291"}
+{"id": 1242440, "field": "name", "en": "Shadow Bolt Volley", "hash": "62ed89ea2de9d24d", "src": "db2@1.60.1.70291"}
+{"id": 1242440, "field": "description", "en": "Hurls missiles of dark magic, inflicting Shadow damage to nearby enemies.", "hash": "ff49863129e1fd03", "src": "db2@1.60.1.70291"}
+{"id": 1242441, "field": "name", "en": "Raise Dead", "hash": "c89e275a22de61f5", "src": "db2@1.60.1.70291"}
+{"id": 1242442, "field": "name", "en": "Raise Dead", "hash": "c89e275a22de61f5", "src": "db2@1.60.1.70291"}
+{"id": 1242443, "field": "name", "en": "Raise Dead", "hash": "c89e275a22de61f5", "src": "db2@1.60.1.70291"}
+{"id": 1242444, "field": "name", "en": "Raise Dead", "hash": "c89e275a22de61f5", "src": "db2@1.60.1.70291"}
+{"id": 1242446, "field": "name", "en": "Death Pact", "hash": "7f4d25906a353243", "src": "db2@1.60.1.70291"}
+{"id": 1242512, "field": "name", "en": "Rapid Recuperation", "hash": "1488707e1a28d8ac", "src": "db2@1.60.1.70291"}
+{"id": 1242512, "field": "description", "en": "Regenerating Mana while casting.", "hash": "df7219d3cd67e90a", "src": "db2@1.60.1.70291"}
+{"id": 1242512, "field": "aura", "en": "Regenerating $w1% of normal while casting spells.", "hash": "d9bf326f8d26a6bb", "src": "db2@1.60.1.70291"}
+{"id": 1242634, "field": "name", "en": "Counterattack", "hash": "1c9ec188ef4c3738", "src": "db2@1.60.1.70291"}
+{"id": 1242634, "field": "description", "en": "A strike that becomes active after parrying an opponent's attack. This attack deals $s2% weapon damage plus $m1 and immobilizes the target for $d. Counterattack cannot be blocked, dodged, or parried.", "hash": "bfd6d53289abb3cb", "src": "db2@1.60.1.70291"}
+{"id": 1242634, "field": "aura", "en": "Immobile.", "hash": "7d75228d3e9ac562", "src": "db2@1.60.1.70291"}
+{"id": 1242688, "field": "name", "en": "Resourcefulness", "hash": "8e42266ec3a51840", "src": "db2@1.60.1.70291"}
+{"id": 1242688, "field": "aura", "en": "Regenerating $s1% of your normal Mana regeneration while casting spells.", "hash": "6cf2fbcb395739c5", "src": "db2@1.60.1.70291"}
+{"id": 1242694, "field": "name", "en": "(DNT) Bloodmane Cosmetic Equipment", "hash": "72da56c392d70896", "src": "db2@1.60.1.70291"}
+{"id": 1242853, "field": "name", "en": "Soul Harvest", "hash": "d768b096884788ca", "src": "db2@1.60.1.70291"}
+{"id": 1242853, "field": "description", "en": "Mana regeneration increased by $s1% and allows $s2% of Mana regeneration to continue while casting.", "hash": "c8cd6870c88462e2", "src": "db2@1.60.1.70291"}
+{"id": 1242853, "field": "aura", "en": "Increases Mana regeneration by $w1% and allows $w2% of Mana regeneration to continue while casting.", "hash": "5464108647929bb1", "src": "db2@1.60.1.70291"}
+{"id": 1242871, "field": "name", "en": "Solar Burst", "hash": "33080c4b11c94402", "src": "db2@1.60.1.70291"}
+{"id": 1242871, "field": "description", "en": "Deals $s1 Fire damage, then continues to deal minor Solar damage every $t2 sec.", "hash": "200bb8190c72d7aa", "src": "db2@1.60.1.70291"}
+{"id": 1242871, "field": "aura", "en": "Deals $s2 Fire damage every $t2 sec.", "hash": "6aad7702630b1654", "src": "db2@1.60.1.70291"}
+{"id": 1242884, "field": "name", "en": "Intimidating Roar", "hash": "1786462ef748e2c7", "src": "db2@1.60.1.70291"}
+{"id": 1242884, "field": "description", "en": "Roars at an enemy, paralyzing it with terror for $d and causing all other nearby enemies to flee in fear.", "hash": "0c98d7ea2b609797", "src": "db2@1.60.1.70291"}
+{"id": 1242884, "field": "aura", "en": "Intimidated.", "hash": "441534cfc845bce9", "src": "db2@1.60.1.70291"}
+{"id": 1242907, "field": "name", "en": "Maul", "hash": "0a6afa530964a501", "src": "db2@1.60.1.70291"}
+{"id": 1242907, "field": "description", "en": "Inflicts $S1% Physical damage to the current enemy target.", "hash": "4fb414e564e15355", "src": "db2@1.60.1.70291"}
+{"id": 1242913, "field": "name", "en": "Harvest Curse", "hash": "adffdd2ecfe22623", "src": "db2@1.60.1.70291"}
+{"id": 1242913, "field": "description", "en": "Deals moderate Solar damage, then continues to deal minor Solar damage every $t2 sec.", "hash": "b092ac84fef6c21d", "src": "db2@1.60.1.70291"}
+{"id": 1242913, "field": "aura", "en": "Deals Solar damage every $t2 sec.", "hash": "1e54c9a2cceb9240", "src": "db2@1.60.1.70291"}
+{"id": 1242957, "field": "name", "en": "Siphon Life", "hash": "ac190247b468b0da", "src": "db2@1.60.1.70291"}
+{"id": 1242971, "field": "name", "en": "Unstable Affliction", "hash": "c2560853f19861b4", "src": "db2@1.60.1.70291"}
+{"id": 1242971, "field": "description", "en": "Shadow energy slowly destroys the target, causing $o1 damage over $d. In addition, if the Unstable Affliction is dispelled it will cause ${$m1*$m3/100} damage to the dispeller and silence them for $427719d. Only one Unstable Affliction or Immolate per Warlock can be active on any one target.", "hash": "af4118210f851afb", "src": "db2@1.60.1.70291"}
+{"id": 1242971, "field": "aura", "en": "$w1 Shadow damage every $t1 sec. If dispelled, will cause ${$w1*$m3/100} damage to the dispeller and silence them for $427719d.", "hash": "88bbd8b640510770", "src": "db2@1.60.1.70291"}
+{"id": 1242972, "field": "name", "en": "Unstable Affliction", "hash": "c2560853f19861b4", "src": "db2@1.60.1.70291"}
+{"id": 1242972, "field": "description", "en": "Shadow energy slowly destroys the target, causing $o1 damage over $d. In addition, if the Unstable Affliction is dispelled it will cause ${$m1*$m3/100} damage to the dispeller and silence them for $427719d. Only one Unstable Affliction or Immolate per Warlock can be active on any one target.", "hash": "af4118210f851afb", "src": "db2@1.60.1.70291"}
+{"id": 1242972, "field": "aura", "en": "$w1 Shadow damage every $t1 sec. If dispelled, will cause ${$w1*$m3/100} damage to the dispeller and silence them for $427719d.", "hash": "88bbd8b640510770", "src": "db2@1.60.1.70291"}
+{"id": 1242979, "field": "name", "en": "Rejuvenation", "hash": "89ec430c1b7bff55", "src": "db2@1.60.1.70291"}
+{"id": 1242979, "field": "description", "en": "Applies an aura that heals for $p1% of maximum health every $t1 for $d1 sec.", "hash": "f8694e97db467334", "src": "db2@1.60.1.70291"}
+{"id": 1242979, "field": "aura", "en": "Healing for $s1% of maximum health every $t1 sec.", "hash": "7e09b1662274853f", "src": "db2@1.60.1.70291"}

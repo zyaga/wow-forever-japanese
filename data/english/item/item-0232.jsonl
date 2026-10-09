@@ -1,48 +1,48 @@
-{"id": 232312, "field": "name", "en": "Blood of the Lightbringer", "hash": "bc4d27a2caad1a39", "src": "db2@1.60.1.70245"}
-{"id": 232312, "field": "description", "en": "Apply the Blood of the Lightbringer to consecrate your weapon.", "hash": "3fc70b318133fd42", "src": "db2@1.60.1.70245"}
-{"id": 232324, "field": "name", "en": "Bird Whistle", "hash": "1f1d966adab15785", "src": "db2@1.60.1.70245"}
-{"id": 232324, "field": "description", "en": "Calls forth Pepe to ride on your head as you adventure together.", "hash": "20e30ff2c29d6794", "src": "db2@1.60.1.70245"}
-{"id": 232343, "field": "name", "en": "QAEnchant Shield - Law of Nature", "hash": "007dca21a3fb4ab6", "src": "db2@1.60.1.70245"}
-{"id": 232343, "field": "description", "en": "Permanently enchant a shield to give +$13690s1% chance to block.", "hash": "72a33c604c4964e9", "src": "db2@1.60.1.70245"}
-{"id": 232344, "field": "name", "en": "Vick's VIP Pass", "hash": "17e1f86cf0ae6b48", "src": "db2@1.60.1.70245"}
-{"id": 232344, "field": "description", "en": "Attune yourself to Blackwing Lair!\nFor close personal friends of Lord Victor Nefarius only!", "hash": "a6e3d80b058b55b7", "src": "db2@1.60.1.70245"}
-{"id": 232358, "field": "name", "en": "Empty Reliquary", "hash": "2a43b8248dfcfeea", "src": "db2@1.60.1.70245"}
-{"id": 232414, "field": "name", "en": "Dragontooth Blade", "hash": "0b9edf2f775044b5", "src": "db2@1.60.1.70245"}
-{"id": 232414, "field": "description", "en": "Carve a scale from Nefarian's hide. Only usable when Nefarian has been significantly weakened in battle.", "hash": "c2204a7e4286aad5", "src": "db2@1.60.1.70245"}
-{"id": 232433, "field": "name", "en": "Dense Runecloth Bandage", "hash": "e731bb6229f3c92b", "src": "db2@1.60.1.70245"}
-{"id": 232433, "field": "description", "en": "Heals $o1 damage over $d.", "hash": "cb31688fb831630b", "src": "db2@1.60.1.70245"}
-{"id": 232434, "field": "name", "en": "Manual: Dense Runecloth Bandage", "hash": "41fe6c72129577f8", "src": "db2@1.60.1.70245"}
-{"id": 232434, "field": "description", "en": "Teaches you how to make a Dense Runecloth Bandage.", "hash": "d9b36009374a7e84", "src": "db2@1.60.1.70245"}
-{"id": 232436, "field": "name", "en": "Darkclaw Bisque", "hash": "bbc8164300cb6f3f", "src": "db2@1.60.1.70245"}
-{"id": 232436, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.  If you eat for 10 seconds will also increase your Spell Damage by $470361s1 for $470361d1.", "hash": "cf7a62275b995688", "src": "db2@1.60.1.70245"}
-{"id": 232437, "field": "name", "en": "Recipe: Darkclaw Bisque", "hash": "c43ff0f580350562", "src": "db2@1.60.1.70245"}
-{"id": 232437, "field": "description", "en": "Teaches you how to cook Darkclaw Bisque.", "hash": "910e98716c698ba9", "src": "db2@1.60.1.70245"}
-{"id": 232438, "field": "name", "en": "Smoked Redgill", "hash": "406738b206981050", "src": "db2@1.60.1.70245"}
-{"id": 232438, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.  If you eat for 10 seconds will also increase your Healing done by $470367s1 for $470367d1.", "hash": "74db8454428a0c03", "src": "db2@1.60.1.70245"}
-{"id": 232443, "field": "name", "en": "Recipe: Smoked Redgill", "hash": "59df57ad1efbac1a", "src": "db2@1.60.1.70245"}
-{"id": 232443, "field": "description", "en": "Teaches you how to cook Smoked Redgill.", "hash": "d292d560c8ff9209", "src": "db2@1.60.1.70245"}
-{"id": 232454, "field": "name", "en": "Emblem of the Wild Gods", "hash": "b18f3d118c530abf", "src": "db2@1.60.1.70245"}
-{"id": 232454, "field": "description", "en": "Proof of assisting the Shadowtooth Emissary. Redeemable at the Rune Broker in capital cities.", "hash": "db278fab2542bc51", "src": "db2@1.60.1.70245"}
-{"id": 232455, "field": "name", "en": "Emblem of Dishonor", "hash": "afbbc53bc37a3d37", "src": "db2@1.60.1.70245"}
-{"id": 232455, "field": "description", "en": "Proof of confronting Illari Duskfeather. Redeemable at the Rune Broker in capital cities.", "hash": "ee4283d566c579c6", "src": "db2@1.60.1.70245"}
-{"id": 232456, "field": "name", "en": "Emblem of the Violet Eye", "hash": "d5f38f35df146561", "src": "db2@1.60.1.70245"}
-{"id": 232456, "field": "description", "en": "Proof of victory over the Dark Riders. Redeemable at the Rune Broker in capital cities.", "hash": "5eed617ded8290e1", "src": "db2@1.60.1.70245"}
-{"id": 232457, "field": "name", "en": "Emblem of the Worldcore", "hash": "43efcd4188484931", "src": "db2@1.60.1.70245"}
-{"id": 232457, "field": "description", "en": "Proof of attuning to the Leyline Confluxes. Redeemable at the Rune Broker in capital cities.", "hash": "ac89df5884ca7caa", "src": "db2@1.60.1.70245"}
-{"id": 232458, "field": "name", "en": "Rune of Improved Sanctuary", "hash": "fc5368b6b575127a", "src": "db2@1.60.1.70245"}
-{"id": 232458, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
-{"id": 232459, "field": "name", "en": "Rune of Backdraft", "hash": "5ce3d32c07dbd8d0", "src": "db2@1.60.1.70245"}
-{"id": 232459, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
-{"id": 232460, "field": "name", "en": "Rune of Displacement", "hash": "df95a0f4e131d2b5", "src": "db2@1.60.1.70245"}
-{"id": 232460, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
-{"id": 232461, "field": "name", "en": "Rune of Despair", "hash": "e97b427b0a048167", "src": "db2@1.60.1.70245"}
-{"id": 232461, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
-{"id": 232462, "field": "name", "en": "Rune of Purifying Power", "hash": "0f72172bff1aa594", "src": "db2@1.60.1.70245"}
-{"id": 232462, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70245"}
-{"id": 232549, "field": "name", "en": "Logistics Task Briefing VI", "hash": "0f16504dde422e39", "src": "db2@1.60.1.70245"}
-{"id": 232610, "field": "name", "en": "Formula: Magnificent Trollshine", "hash": "cc85b718901598a0", "src": "db2@1.60.1.70245"}
-{"id": 232610, "field": "description", "en": "Teaches you how to create Magnificent Trollshine.", "hash": "c1a02104388dfa1f", "src": "db2@1.60.1.70245"}
-{"id": 232611, "field": "name", "en": "Magnificent Trollshine", "hash": "acfa035c782c1c37", "src": "db2@1.60.1.70245"}
-{"id": 232611, "field": "description", "en": "While applied to target shield it increases spell damage and healing by up to 36 and increases Spell Critical chance by 1%.  Lasts for 30 minutes.", "hash": "6c2a8aacb4268d3e", "src": "db2@1.60.1.70245"}
-{"id": 232652, "field": "name", "en": "Zila Amanemodas", "hash": "578ca42ba46d0933", "src": "db2@1.60.1.70245"}
-{"id": 232652, "field": "description", "en": "Attune with the darkness within, allowing you better control over your inner demon.", "hash": "4255a78a63eda54d", "src": "db2@1.60.1.70245"}
+{"id": 232312, "field": "name", "en": "Blood of the Lightbringer", "hash": "bc4d27a2caad1a39", "src": "db2@1.60.1.70291"}
+{"id": 232312, "field": "description", "en": "Apply the Blood of the Lightbringer to consecrate your weapon.", "hash": "3fc70b318133fd42", "src": "db2@1.60.1.70291"}
+{"id": 232324, "field": "name", "en": "Bird Whistle", "hash": "1f1d966adab15785", "src": "db2@1.60.1.70291"}
+{"id": 232324, "field": "description", "en": "Calls forth Pepe to ride on your head as you adventure together.", "hash": "20e30ff2c29d6794", "src": "db2@1.60.1.70291"}
+{"id": 232343, "field": "name", "en": "QAEnchant Shield - Law of Nature", "hash": "007dca21a3fb4ab6", "src": "db2@1.60.1.70291"}
+{"id": 232343, "field": "description", "en": "Permanently enchant a shield to give +$13690s1% chance to block.", "hash": "72a33c604c4964e9", "src": "db2@1.60.1.70291"}
+{"id": 232344, "field": "name", "en": "Vick's VIP Pass", "hash": "17e1f86cf0ae6b48", "src": "db2@1.60.1.70291"}
+{"id": 232344, "field": "description", "en": "Attune yourself to Blackwing Lair!\nFor close personal friends of Lord Victor Nefarius only!", "hash": "a6e3d80b058b55b7", "src": "db2@1.60.1.70291"}
+{"id": 232358, "field": "name", "en": "Empty Reliquary", "hash": "2a43b8248dfcfeea", "src": "db2@1.60.1.70291"}
+{"id": 232414, "field": "name", "en": "Dragontooth Blade", "hash": "0b9edf2f775044b5", "src": "db2@1.60.1.70291"}
+{"id": 232414, "field": "description", "en": "Carve a scale from Nefarian's hide. Only usable when Nefarian has been significantly weakened in battle.", "hash": "c2204a7e4286aad5", "src": "db2@1.60.1.70291"}
+{"id": 232433, "field": "name", "en": "Dense Runecloth Bandage", "hash": "e731bb6229f3c92b", "src": "db2@1.60.1.70291"}
+{"id": 232433, "field": "description", "en": "Heals $o1 damage over $d.", "hash": "cb31688fb831630b", "src": "db2@1.60.1.70291"}
+{"id": 232434, "field": "name", "en": "Manual: Dense Runecloth Bandage", "hash": "41fe6c72129577f8", "src": "db2@1.60.1.70291"}
+{"id": 232434, "field": "description", "en": "Teaches you how to make a Dense Runecloth Bandage.", "hash": "d9b36009374a7e84", "src": "db2@1.60.1.70291"}
+{"id": 232436, "field": "name", "en": "Darkclaw Bisque", "hash": "bbc8164300cb6f3f", "src": "db2@1.60.1.70291"}
+{"id": 232436, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.  If you eat for 10 seconds will also increase your Spell Damage by $470361s1 for $470361d1.", "hash": "cf7a62275b995688", "src": "db2@1.60.1.70291"}
+{"id": 232437, "field": "name", "en": "Recipe: Darkclaw Bisque", "hash": "c43ff0f580350562", "src": "db2@1.60.1.70291"}
+{"id": 232437, "field": "description", "en": "Teaches you how to cook Darkclaw Bisque.", "hash": "910e98716c698ba9", "src": "db2@1.60.1.70291"}
+{"id": 232438, "field": "name", "en": "Smoked Redgill", "hash": "406738b206981050", "src": "db2@1.60.1.70291"}
+{"id": 232438, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.  If you eat for 10 seconds will also increase your Healing done by $470367s1 for $470367d1.", "hash": "74db8454428a0c03", "src": "db2@1.60.1.70291"}
+{"id": 232443, "field": "name", "en": "Recipe: Smoked Redgill", "hash": "59df57ad1efbac1a", "src": "db2@1.60.1.70291"}
+{"id": 232443, "field": "description", "en": "Teaches you how to cook Smoked Redgill.", "hash": "d292d560c8ff9209", "src": "db2@1.60.1.70291"}
+{"id": 232454, "field": "name", "en": "Emblem of the Wild Gods", "hash": "b18f3d118c530abf", "src": "db2@1.60.1.70291"}
+{"id": 232454, "field": "description", "en": "Proof of assisting the Shadowtooth Emissary. Redeemable at the Rune Broker in capital cities.", "hash": "db278fab2542bc51", "src": "db2@1.60.1.70291"}
+{"id": 232455, "field": "name", "en": "Emblem of Dishonor", "hash": "afbbc53bc37a3d37", "src": "db2@1.60.1.70291"}
+{"id": 232455, "field": "description", "en": "Proof of confronting Illari Duskfeather. Redeemable at the Rune Broker in capital cities.", "hash": "ee4283d566c579c6", "src": "db2@1.60.1.70291"}
+{"id": 232456, "field": "name", "en": "Emblem of the Violet Eye", "hash": "d5f38f35df146561", "src": "db2@1.60.1.70291"}
+{"id": 232456, "field": "description", "en": "Proof of victory over the Dark Riders. Redeemable at the Rune Broker in capital cities.", "hash": "5eed617ded8290e1", "src": "db2@1.60.1.70291"}
+{"id": 232457, "field": "name", "en": "Emblem of the Worldcore", "hash": "43efcd4188484931", "src": "db2@1.60.1.70291"}
+{"id": 232457, "field": "description", "en": "Proof of attuning to the Leyline Confluxes. Redeemable at the Rune Broker in capital cities.", "hash": "ac89df5884ca7caa", "src": "db2@1.60.1.70291"}
+{"id": 232458, "field": "name", "en": "Rune of Improved Sanctuary", "hash": "fc5368b6b575127a", "src": "db2@1.60.1.70291"}
+{"id": 232458, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
+{"id": 232459, "field": "name", "en": "Rune of Backdraft", "hash": "5ce3d32c07dbd8d0", "src": "db2@1.60.1.70291"}
+{"id": 232459, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
+{"id": 232460, "field": "name", "en": "Rune of Displacement", "hash": "df95a0f4e131d2b5", "src": "db2@1.60.1.70291"}
+{"id": 232460, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
+{"id": 232461, "field": "name", "en": "Rune of Despair", "hash": "e97b427b0a048167", "src": "db2@1.60.1.70291"}
+{"id": 232461, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
+{"id": 232462, "field": "name", "en": "Rune of Purifying Power", "hash": "0f72172bff1aa594", "src": "db2@1.60.1.70291"}
+{"id": 232462, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
+{"id": 232549, "field": "name", "en": "Logistics Task Briefing VI", "hash": "0f16504dde422e39", "src": "db2@1.60.1.70291"}
+{"id": 232610, "field": "name", "en": "Formula: Magnificent Trollshine", "hash": "cc85b718901598a0", "src": "db2@1.60.1.70291"}
+{"id": 232610, "field": "description", "en": "Teaches you how to create Magnificent Trollshine.", "hash": "c1a02104388dfa1f", "src": "db2@1.60.1.70291"}
+{"id": 232611, "field": "name", "en": "Magnificent Trollshine", "hash": "acfa035c782c1c37", "src": "db2@1.60.1.70291"}
+{"id": 232611, "field": "description", "en": "While applied to target shield it increases spell damage and healing by up to 36 and increases Spell Critical chance by 1%.  Lasts for 30 minutes.", "hash": "6c2a8aacb4268d3e", "src": "db2@1.60.1.70291"}
+{"id": 232652, "field": "name", "en": "Zila Amanemodas", "hash": "578ca42ba46d0933", "src": "db2@1.60.1.70291"}
+{"id": 232652, "field": "description", "en": "Attune with the darkness within, allowing you better control over your inner demon.", "hash": "4255a78a63eda54d", "src": "db2@1.60.1.70291"}

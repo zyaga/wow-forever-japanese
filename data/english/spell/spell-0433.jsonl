@@ -1,80 +1,80 @@
-{"id": 433006, "field": "name", "en": "Siphon Corruption", "hash": "ccdcec61eb905db7", "src": "db2@1.60.1.70245"}
-{"id": 433008, "field": "name", "en": "Siphon Corruption", "hash": "ccdcec61eb905db7", "src": "db2@1.60.1.70245"}
-{"id": 433009, "field": "name", "en": "Siphon Shadows", "hash": "a44a12adc23ee626", "src": "db2@1.60.1.70245"}
-{"id": 433010, "field": "name", "en": "Siphon Shadows", "hash": "a44a12adc23ee626", "src": "db2@1.60.1.70245"}
-{"id": 433094, "field": "name", "en": "[DNT] Summer Sapling", "hash": "1ddd84c1c3b2acb6", "src": "db2@1.60.1.70245"}
-{"id": 433095, "field": "name", "en": "[DNT] Spring Sapling", "hash": "9d9cdb9775c8af09", "src": "db2@1.60.1.70245"}
-{"id": 433096, "field": "name", "en": "[DNT] Fall Sapling", "hash": "c906e5d47d22eb40", "src": "db2@1.60.1.70245"}
-{"id": 433097, "field": "name", "en": "[DNT] Winter Sapling", "hash": "cd72c57fea15ea8f", "src": "db2@1.60.1.70245"}
-{"id": 433100, "field": "name", "en": "Carve", "hash": "a53435cbb05fb1eb", "src": "db2@1.60.1.70245"}
-{"id": 433100, "field": "description", "en": "A sweeping attack that strikes all enemies in front of you for $s2% weapon damage.", "hash": "795df8397e841082", "src": "db2@1.60.1.70245"}
-{"id": 433107, "field": "name", "en": "Wild Strikes", "hash": "8f408115a28a9b66", "src": "db2@1.60.1.70245"}
-{"id": 433107, "field": "description", "en": "While you are in Cat Form, Bear Form, or Dire Bear Form, party members within $407975a1 yards gain increased combat ferocity.  Each melee hit has a $407975h% chance of granting the attacker an extra attack with $407975s1% additional Attack Power. No effect if the party member is already benefitting from Windfury Totem.\r\n", "hash": "0c4cd0cf2cce15bc", "src": "db2@1.60.1.70245"}
-{"id": 433107, "field": "aura", "en": "Chance to gain extra attacks.", "hash": "a530781b7b31586f", "src": "db2@1.60.1.70245"}
-{"id": 433248, "field": "name", "en": "Heavy Rain", "hash": "3d98f7810bad83f1", "src": "db2@1.60.1.70245"}
-{"id": 433251, "field": "name", "en": "Static Arc", "hash": "79e6d760e10093fb", "src": "db2@1.60.1.70245"}
-{"id": 433251, "field": "description", "en": "Electrocutioner 6000 unleashes a blast of lightning at the furthest target, inflicting $s1 Nature damage and leaping up to $x times.  Each player hit by this effect takes $s2% increased damage from $@spellname433251 for $d.", "hash": "013e0939ed588402", "src": "db2@1.60.1.70245"}
-{"id": 433251, "field": "aura", "en": "$s2% increased damage taken from $@spellname433251.", "hash": "4c559deba08f350b", "src": "db2@1.60.1.70245"}
-{"id": 433254, "field": "name", "en": "Torrential Burst", "hash": "5f4acb6a14b784e4", "src": "db2@1.60.1.70245"}
-{"id": 433255, "field": "name", "en": "Shamanistic Rage", "hash": "3f7bf5f085e6f915", "src": "db2@1.60.1.70245"}
-{"id": 433255, "field": "aura", "en": "Regenerating $w1 mana every $t1 sec.", "hash": "29b71579456334d8", "src": "db2@1.60.1.70245"}
-{"id": 433273, "field": "name", "en": "Sand Vortex", "hash": "66bef7150f214d04", "src": "db2@1.60.1.70245"}
-{"id": 433354, "field": "name", "en": "Coming of the Storm", "hash": "fafa5730cc10b0c2", "src": "db2@1.60.1.70245"}
-{"id": 433355, "field": "name", "en": "Magnetic Pulse", "hash": "6b562a0f18f8b5b9", "src": "db2@1.60.1.70245"}
-{"id": 433357, "field": "name", "en": "Coming of the Storm", "hash": "fafa5730cc10b0c2", "src": "db2@1.60.1.70245"}
-{"id": 433357, "field": "aura", "en": "The storm grows in power.", "hash": "7eae5e78cdbd994e", "src": "db2@1.60.1.70245"}
-{"id": 433359, "field": "name", "en": "Magnetic Pulse", "hash": "6b562a0f18f8b5b9", "src": "db2@1.60.1.70245"}
-{"id": 433359, "field": "description", "en": "Electrocutioner 6000 changes the pollarity of the target causing them to pull in players within $433363A1 yards every $s3 sec, and inflicting $433363s1 Nature damage.", "hash": "12f78c46d1bc15d0", "src": "db2@1.60.1.70245"}
-{"id": 433359, "field": "aura", "en": "$433363s1 Nature damage inflicted to nearby players every 2.5 sec.\r\nPulls players towards you every 2.5 sec.", "hash": "e07f56e46fa8054c", "src": "db2@1.60.1.70245"}
-{"id": 433363, "field": "name", "en": "Magnetic Pulse", "hash": "6b562a0f18f8b5b9", "src": "db2@1.60.1.70245"}
-{"id": 433363, "field": "description", "en": "$@spelldesc433359", "hash": "a19491d12acd28e8", "src": "db2@1.60.1.70245"}
-{"id": 433366, "field": "name", "en": "Coming of the Storm", "hash": "fafa5730cc10b0c2", "src": "db2@1.60.1.70245"}
-{"id": 433368, "field": "name", "en": "Magnetic Pulse", "hash": "6b562a0f18f8b5b9", "src": "db2@1.60.1.70245"}
-{"id": 433395, "field": "name", "en": "Magnetic Pulse", "hash": "6b562a0f18f8b5b9", "src": "db2@1.60.1.70245"}
-{"id": 433398, "field": "name", "en": "Discombobulation Protocol", "hash": "afc4d7fc6dd98a3e", "src": "db2@1.60.1.70245"}
-{"id": 433398, "field": "description", "en": "Electrocutioner 6000 unleashes a pulse of electricity inflicting $s1 Nature damage, knocking all players away.", "hash": "a4d1b8033e61e060", "src": "db2@1.60.1.70245"}
-{"id": 433427, "field": "name", "en": "Squall-breakers Potion", "hash": "4f41e32dcc79180d", "src": "db2@1.60.1.70245"}
-{"id": 433427, "field": "description", "en": "Protect yourself against the elements as long as you survive.", "hash": "0590d635b2449c7d", "src": "db2@1.60.1.70245"}
-{"id": 433427, "field": "aura", "en": "You feel warm and fuzzy inside.", "hash": "a188eb32bb84b919", "src": "db2@1.60.1.70245"}
-{"id": 433434, "field": "name", "en": "Flight Path", "hash": "47e776b07200930e", "src": "db2@1.60.1.70245"}
-{"id": 433455, "field": "name", "en": "Chronomantic Healing", "hash": "3bbae6eccc809eb0", "src": "db2@1.60.1.70245"}
-{"id": 433521, "field": "name", "en": "Deadly Brew", "hash": "a27575137279e726", "src": "db2@1.60.1.70245"}
-{"id": 433521, "field": "description", "en": "Grants several improvements to your poisons:\r\n\r\nWhen you inflict any other poison on a target, you also inflict Deadly Poison.\r\n\r\nIf your weapon does not have a poison applied, it has a chance to trigger Instant Poison as if Instant Poison were applied.\r\n\r\nDeadly Poison and Instant Poison now gain increased damage from your Attack Power.", "hash": "12ceea9eb2925918", "src": "db2@1.60.1.70245"}
-{"id": 433546, "field": "name", "en": "Radiation Burn", "hash": "dcb8726d28854f24", "src": "db2@1.60.1.70245"}
-{"id": 433546, "field": "description", "en": "The caster unleashes a wave of toxic slime at all players, inflicting $s1 Nature damage and an additional $s2 Nature damage every $t2 sec for $d.  This effect stacks.", "hash": "dae18fd3c337bcda", "src": "db2@1.60.1.70245"}
-{"id": 433546, "field": "aura", "en": "$s2 Nature damage inflicted every $t2 sec.", "hash": "d8c7b0a1d17a619d", "src": "db2@1.60.1.70245"}
-{"id": 433551, "field": "name", "en": "Give Water", "hash": "f4a7a7772619278d", "src": "db2@1.60.1.70245"}
-{"id": 433551, "field": "description", "en": "Give water to an ancient sapling.", "hash": "f84149f34d99385b", "src": "db2@1.60.1.70245"}
-{"id": 433559, "field": "name", "en": "Coming of the Storm", "hash": "fafa5730cc10b0c2", "src": "db2@1.60.1.70245"}
-{"id": 433616, "field": "name", "en": "Storms End", "hash": "9fa435f7e640ec45", "src": "db2@1.60.1.70245"}
-{"id": 433653, "field": "name", "en": "Windbreak Canyon Ridge Teleport", "hash": "eb70c96d2f52e113", "src": "db2@1.60.1.70245"}
-{"id": 433655, "field": "name", "en": "Flight Path", "hash": "47e776b07200930e", "src": "db2@1.60.1.70245"}
-{"id": 433672, "field": "name", "en": "Loathing", "hash": "1e90de59f20044c1", "src": "db2@1.60.1.70245"}
-{"id": 433672, "field": "description", "en": "Taunts the target to attack you, but has no effect if the target is already attacking you.", "hash": "71de38fd4f83eb55", "src": "db2@1.60.1.70245"}
-{"id": 433699, "field": "name", "en": "[DNT] Give Water of Elune'ara", "hash": "6bf4b93a3f53de15", "src": "db2@1.60.1.70245"}
-{"id": 433780, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70245"}
-{"id": 433780, "field": "description", "en": "Decipher the spell notes with a Comprehension Charm to learn a new Engraving spell.", "hash": "7ccaad212b331d71", "src": "db2@1.60.1.70245"}
-{"id": 433797, "field": "name", "en": "Bladestorm", "hash": "008ac80da2ed66cf", "src": "db2@1.60.1.70245"}
-{"id": 433797, "field": "description", "en": "You attack all nearby enemies for $d causing weapon damage plus an additional $9633s1 every $t1 sec.", "hash": "3df8972c39db7b85", "src": "db2@1.60.1.70245"}
-{"id": 433797, "field": "aura", "en": "Attacking all nearby enemies for weapon damage + $9633s1.", "hash": "de7e324f3c3b84e0", "src": "db2@1.60.1.70245"}
-{"id": 433801, "field": "name", "en": "Bladestorm", "hash": "008ac80da2ed66cf", "src": "db2@1.60.1.70245"}
-{"id": 433801, "field": "description", "en": "You attack all nearby enemies for $d causing weapon damage plus an additional $9633s1 every $t1 sec.", "hash": "3df8972c39db7b85", "src": "db2@1.60.1.70245"}
-{"id": 433801, "field": "aura", "en": "Attacking all nearby enemies for weapon damage + $9633s1.", "hash": "de7e324f3c3b84e0", "src": "db2@1.60.1.70245"}
-{"id": 433804, "field": "name", "en": "Blood for the Blood Loa", "hash": "d232b36eefd52842", "src": "db2@1.60.1.70245"}
-{"id": 433804, "field": "aura", "en": "Give tribute to the Blood Loa before someone makes tribute out of you.", "hash": "3f0214732f028c33", "src": "db2@1.60.1.70245"}
-{"id": 433805, "field": "name", "en": "Transparent", "hash": "e801fd08904e5d54", "src": "db2@1.60.1.70245"}
-{"id": 433813, "field": "name", "en": "Neverending Soul Vessel", "hash": "2052d0344e6055b7", "src": "db2@1.60.1.70245"}
-{"id": 433813, "field": "description", "en": "Your next Soul Shard consuming spell cost no Soul Shards to cast.", "hash": "4defdf27c50ea89d", "src": "db2@1.60.1.70245"}
-{"id": 433813, "field": "aura", "en": "Your next Soul Shard consuming spell cost no Soul Shards to cast.", "hash": "4defdf27c50ea89d", "src": "db2@1.60.1.70245"}
-{"id": 433819, "field": "name", "en": "Green Holiday Hat Visual", "hash": "b7bc6166c15cdce7", "src": "db2@1.60.1.70245"}
-{"id": 433834, "field": "name", "en": "Red Holiday Hat Visual", "hash": "1ab1e5fadc9a1385", "src": "db2@1.60.1.70245"}
-{"id": 433862, "field": "name", "en": "Spell Power", "hash": "1c48bc044d2700e4", "src": "db2@1.60.1.70245"}
-{"id": 433879, "field": "name", "en": "Blood Sacrifice", "hash": "5eb5f4f194b33f68", "src": "db2@1.60.1.70245"}
-{"id": 433883, "field": "name", "en": "Blood Alchemy", "hash": "5f9c1f0f2595d979", "src": "db2@1.60.1.70245"}
-{"id": 433883, "field": "description", "en": "Transmute 100 Copper Blood Coins into 1 Silver Blood Coin.", "hash": "db882cf59c863b38", "src": "db2@1.60.1.70245"}
-{"id": 433884, "field": "name", "en": "Blood Alchemy", "hash": "5f9c1f0f2595d979", "src": "db2@1.60.1.70245"}
-{"id": 433884, "field": "description", "en": "Transmute 100 Silver Blood Coins into 1 Gold Blood Coin.", "hash": "cdf2465b956fc9a1", "src": "db2@1.60.1.70245"}
-{"id": 433887, "field": "name", "en": "Blood Alchemy", "hash": "5f9c1f0f2595d979", "src": "db2@1.60.1.70245"}
-{"id": 433887, "field": "description", "en": "Receive tokens for your service to the Blood God.", "hash": "f0c62931b6fe4a3a", "src": "db2@1.60.1.70245"}
-{"id": 433912, "field": "name", "en": "Mirror Image", "hash": "a0a28ffb323a845a", "src": "db2@1.60.1.70245"}
-{"id": 433918, "field": "name", "en": "Mirror Image", "hash": "a0a28ffb323a845a", "src": "db2@1.60.1.70245"}
+{"id": 433006, "field": "name", "en": "Siphon Corruption", "hash": "ccdcec61eb905db7", "src": "db2@1.60.1.70291"}
+{"id": 433008, "field": "name", "en": "Siphon Corruption", "hash": "ccdcec61eb905db7", "src": "db2@1.60.1.70291"}
+{"id": 433009, "field": "name", "en": "Siphon Shadows", "hash": "a44a12adc23ee626", "src": "db2@1.60.1.70291"}
+{"id": 433010, "field": "name", "en": "Siphon Shadows", "hash": "a44a12adc23ee626", "src": "db2@1.60.1.70291"}
+{"id": 433094, "field": "name", "en": "[DNT] Summer Sapling", "hash": "1ddd84c1c3b2acb6", "src": "db2@1.60.1.70291"}
+{"id": 433095, "field": "name", "en": "[DNT] Spring Sapling", "hash": "9d9cdb9775c8af09", "src": "db2@1.60.1.70291"}
+{"id": 433096, "field": "name", "en": "[DNT] Fall Sapling", "hash": "c906e5d47d22eb40", "src": "db2@1.60.1.70291"}
+{"id": 433097, "field": "name", "en": "[DNT] Winter Sapling", "hash": "cd72c57fea15ea8f", "src": "db2@1.60.1.70291"}
+{"id": 433100, "field": "name", "en": "Carve", "hash": "a53435cbb05fb1eb", "src": "db2@1.60.1.70291"}
+{"id": 433100, "field": "description", "en": "A sweeping attack that strikes all enemies in front of you for $s2% weapon damage.", "hash": "795df8397e841082", "src": "db2@1.60.1.70291"}
+{"id": 433107, "field": "name", "en": "Wild Strikes", "hash": "8f408115a28a9b66", "src": "db2@1.60.1.70291"}
+{"id": 433107, "field": "description", "en": "While you are in Cat Form, Bear Form, or Dire Bear Form, party members within $407975a1 yards gain increased combat ferocity.  Each melee hit has a $407975h% chance of granting the attacker an extra attack with $407975s1% additional Attack Power. No effect if the party member is already benefitting from Windfury Totem.\r\n", "hash": "0c4cd0cf2cce15bc", "src": "db2@1.60.1.70291"}
+{"id": 433107, "field": "aura", "en": "Chance to gain extra attacks.", "hash": "a530781b7b31586f", "src": "db2@1.60.1.70291"}
+{"id": 433248, "field": "name", "en": "Heavy Rain", "hash": "3d98f7810bad83f1", "src": "db2@1.60.1.70291"}
+{"id": 433251, "field": "name", "en": "Static Arc", "hash": "79e6d760e10093fb", "src": "db2@1.60.1.70291"}
+{"id": 433251, "field": "description", "en": "Electrocutioner 6000 unleashes a blast of lightning at the furthest target, inflicting $s1 Nature damage and leaping up to $x times.  Each player hit by this effect takes $s2% increased damage from $@spellname433251 for $d.", "hash": "013e0939ed588402", "src": "db2@1.60.1.70291"}
+{"id": 433251, "field": "aura", "en": "$s2% increased damage taken from $@spellname433251.", "hash": "4c559deba08f350b", "src": "db2@1.60.1.70291"}
+{"id": 433254, "field": "name", "en": "Torrential Burst", "hash": "5f4acb6a14b784e4", "src": "db2@1.60.1.70291"}
+{"id": 433255, "field": "name", "en": "Shamanistic Rage", "hash": "3f7bf5f085e6f915", "src": "db2@1.60.1.70291"}
+{"id": 433255, "field": "aura", "en": "Regenerating $w1 mana every $t1 sec.", "hash": "29b71579456334d8", "src": "db2@1.60.1.70291"}
+{"id": 433273, "field": "name", "en": "Sand Vortex", "hash": "66bef7150f214d04", "src": "db2@1.60.1.70291"}
+{"id": 433354, "field": "name", "en": "Coming of the Storm", "hash": "fafa5730cc10b0c2", "src": "db2@1.60.1.70291"}
+{"id": 433355, "field": "name", "en": "Magnetic Pulse", "hash": "6b562a0f18f8b5b9", "src": "db2@1.60.1.70291"}
+{"id": 433357, "field": "name", "en": "Coming of the Storm", "hash": "fafa5730cc10b0c2", "src": "db2@1.60.1.70291"}
+{"id": 433357, "field": "aura", "en": "The storm grows in power.", "hash": "7eae5e78cdbd994e", "src": "db2@1.60.1.70291"}
+{"id": 433359, "field": "name", "en": "Magnetic Pulse", "hash": "6b562a0f18f8b5b9", "src": "db2@1.60.1.70291"}
+{"id": 433359, "field": "description", "en": "Electrocutioner 6000 changes the pollarity of the target causing them to pull in players within $433363A1 yards every $s3 sec, and inflicting $433363s1 Nature damage.", "hash": "12f78c46d1bc15d0", "src": "db2@1.60.1.70291"}
+{"id": 433359, "field": "aura", "en": "$433363s1 Nature damage inflicted to nearby players every 2.5 sec.\r\nPulls players towards you every 2.5 sec.", "hash": "e07f56e46fa8054c", "src": "db2@1.60.1.70291"}
+{"id": 433363, "field": "name", "en": "Magnetic Pulse", "hash": "6b562a0f18f8b5b9", "src": "db2@1.60.1.70291"}
+{"id": 433363, "field": "description", "en": "$@spelldesc433359", "hash": "a19491d12acd28e8", "src": "db2@1.60.1.70291"}
+{"id": 433366, "field": "name", "en": "Coming of the Storm", "hash": "fafa5730cc10b0c2", "src": "db2@1.60.1.70291"}
+{"id": 433368, "field": "name", "en": "Magnetic Pulse", "hash": "6b562a0f18f8b5b9", "src": "db2@1.60.1.70291"}
+{"id": 433395, "field": "name", "en": "Magnetic Pulse", "hash": "6b562a0f18f8b5b9", "src": "db2@1.60.1.70291"}
+{"id": 433398, "field": "name", "en": "Discombobulation Protocol", "hash": "afc4d7fc6dd98a3e", "src": "db2@1.60.1.70291"}
+{"id": 433398, "field": "description", "en": "Electrocutioner 6000 unleashes a pulse of electricity inflicting $s1 Nature damage, knocking all players away.", "hash": "a4d1b8033e61e060", "src": "db2@1.60.1.70291"}
+{"id": 433427, "field": "name", "en": "Squall-breakers Potion", "hash": "4f41e32dcc79180d", "src": "db2@1.60.1.70291"}
+{"id": 433427, "field": "description", "en": "Protect yourself against the elements as long as you survive.", "hash": "0590d635b2449c7d", "src": "db2@1.60.1.70291"}
+{"id": 433427, "field": "aura", "en": "You feel warm and fuzzy inside.", "hash": "a188eb32bb84b919", "src": "db2@1.60.1.70291"}
+{"id": 433434, "field": "name", "en": "Flight Path", "hash": "47e776b07200930e", "src": "db2@1.60.1.70291"}
+{"id": 433455, "field": "name", "en": "Chronomantic Healing", "hash": "3bbae6eccc809eb0", "src": "db2@1.60.1.70291"}
+{"id": 433521, "field": "name", "en": "Deadly Brew", "hash": "a27575137279e726", "src": "db2@1.60.1.70291"}
+{"id": 433521, "field": "description", "en": "Grants several improvements to your poisons:\r\n\r\nWhen you inflict any other poison on a target, you also inflict Deadly Poison.\r\n\r\nIf your weapon does not have a poison applied, it has a chance to trigger Instant Poison as if Instant Poison were applied.\r\n\r\nDeadly Poison and Instant Poison now gain increased damage from your Attack Power.", "hash": "12ceea9eb2925918", "src": "db2@1.60.1.70291"}
+{"id": 433546, "field": "name", "en": "Radiation Burn", "hash": "dcb8726d28854f24", "src": "db2@1.60.1.70291"}
+{"id": 433546, "field": "description", "en": "The caster unleashes a wave of toxic slime at all players, inflicting $s1 Nature damage and an additional $s2 Nature damage every $t2 sec for $d.  This effect stacks.", "hash": "dae18fd3c337bcda", "src": "db2@1.60.1.70291"}
+{"id": 433546, "field": "aura", "en": "$s2 Nature damage inflicted every $t2 sec.", "hash": "d8c7b0a1d17a619d", "src": "db2@1.60.1.70291"}
+{"id": 433551, "field": "name", "en": "Give Water", "hash": "f4a7a7772619278d", "src": "db2@1.60.1.70291"}
+{"id": 433551, "field": "description", "en": "Give water to an ancient sapling.", "hash": "f84149f34d99385b", "src": "db2@1.60.1.70291"}
+{"id": 433559, "field": "name", "en": "Coming of the Storm", "hash": "fafa5730cc10b0c2", "src": "db2@1.60.1.70291"}
+{"id": 433616, "field": "name", "en": "Storms End", "hash": "9fa435f7e640ec45", "src": "db2@1.60.1.70291"}
+{"id": 433653, "field": "name", "en": "Windbreak Canyon Ridge Teleport", "hash": "eb70c96d2f52e113", "src": "db2@1.60.1.70291"}
+{"id": 433655, "field": "name", "en": "Flight Path", "hash": "47e776b07200930e", "src": "db2@1.60.1.70291"}
+{"id": 433672, "field": "name", "en": "Loathing", "hash": "1e90de59f20044c1", "src": "db2@1.60.1.70291"}
+{"id": 433672, "field": "description", "en": "Taunts the target to attack you, but has no effect if the target is already attacking you.", "hash": "71de38fd4f83eb55", "src": "db2@1.60.1.70291"}
+{"id": 433699, "field": "name", "en": "[DNT] Give Water of Elune'ara", "hash": "6bf4b93a3f53de15", "src": "db2@1.60.1.70291"}
+{"id": 433780, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70291"}
+{"id": 433780, "field": "description", "en": "Decipher the spell notes with a Comprehension Charm to learn a new Engraving spell.", "hash": "7ccaad212b331d71", "src": "db2@1.60.1.70291"}
+{"id": 433797, "field": "name", "en": "Bladestorm", "hash": "008ac80da2ed66cf", "src": "db2@1.60.1.70291"}
+{"id": 433797, "field": "description", "en": "You attack all nearby enemies for $d causing weapon damage plus an additional $9633s1 every $t1 sec.", "hash": "3df8972c39db7b85", "src": "db2@1.60.1.70291"}
+{"id": 433797, "field": "aura", "en": "Attacking all nearby enemies for weapon damage + $9633s1.", "hash": "de7e324f3c3b84e0", "src": "db2@1.60.1.70291"}
+{"id": 433801, "field": "name", "en": "Bladestorm", "hash": "008ac80da2ed66cf", "src": "db2@1.60.1.70291"}
+{"id": 433801, "field": "description", "en": "You attack all nearby enemies for $d causing weapon damage plus an additional $9633s1 every $t1 sec.", "hash": "3df8972c39db7b85", "src": "db2@1.60.1.70291"}
+{"id": 433801, "field": "aura", "en": "Attacking all nearby enemies for weapon damage + $9633s1.", "hash": "de7e324f3c3b84e0", "src": "db2@1.60.1.70291"}
+{"id": 433804, "field": "name", "en": "Blood for the Blood Loa", "hash": "d232b36eefd52842", "src": "db2@1.60.1.70291"}
+{"id": 433804, "field": "aura", "en": "Give tribute to the Blood Loa before someone makes tribute out of you.", "hash": "3f0214732f028c33", "src": "db2@1.60.1.70291"}
+{"id": 433805, "field": "name", "en": "Transparent", "hash": "e801fd08904e5d54", "src": "db2@1.60.1.70291"}
+{"id": 433813, "field": "name", "en": "Neverending Soul Vessel", "hash": "2052d0344e6055b7", "src": "db2@1.60.1.70291"}
+{"id": 433813, "field": "description", "en": "Your next Soul Shard consuming spell cost no Soul Shards to cast.", "hash": "4defdf27c50ea89d", "src": "db2@1.60.1.70291"}
+{"id": 433813, "field": "aura", "en": "Your next Soul Shard consuming spell cost no Soul Shards to cast.", "hash": "4defdf27c50ea89d", "src": "db2@1.60.1.70291"}
+{"id": 433819, "field": "name", "en": "Green Holiday Hat Visual", "hash": "b7bc6166c15cdce7", "src": "db2@1.60.1.70291"}
+{"id": 433834, "field": "name", "en": "Red Holiday Hat Visual", "hash": "1ab1e5fadc9a1385", "src": "db2@1.60.1.70291"}
+{"id": 433862, "field": "name", "en": "Spell Power", "hash": "1c48bc044d2700e4", "src": "db2@1.60.1.70291"}
+{"id": 433879, "field": "name", "en": "Blood Sacrifice", "hash": "5eb5f4f194b33f68", "src": "db2@1.60.1.70291"}
+{"id": 433883, "field": "name", "en": "Blood Alchemy", "hash": "5f9c1f0f2595d979", "src": "db2@1.60.1.70291"}
+{"id": 433883, "field": "description", "en": "Transmute 100 Copper Blood Coins into 1 Silver Blood Coin.", "hash": "db882cf59c863b38", "src": "db2@1.60.1.70291"}
+{"id": 433884, "field": "name", "en": "Blood Alchemy", "hash": "5f9c1f0f2595d979", "src": "db2@1.60.1.70291"}
+{"id": 433884, "field": "description", "en": "Transmute 100 Silver Blood Coins into 1 Gold Blood Coin.", "hash": "cdf2465b956fc9a1", "src": "db2@1.60.1.70291"}
+{"id": 433887, "field": "name", "en": "Blood Alchemy", "hash": "5f9c1f0f2595d979", "src": "db2@1.60.1.70291"}
+{"id": 433887, "field": "description", "en": "Receive tokens for your service to the Blood God.", "hash": "f0c62931b6fe4a3a", "src": "db2@1.60.1.70291"}
+{"id": 433912, "field": "name", "en": "Mirror Image", "hash": "a0a28ffb323a845a", "src": "db2@1.60.1.70291"}
+{"id": 433918, "field": "name", "en": "Mirror Image", "hash": "a0a28ffb323a845a", "src": "db2@1.60.1.70291"}

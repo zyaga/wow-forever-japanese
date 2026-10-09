@@ -1,44 +1,85 @@
-{"id": 1323075, "field": "name", "en": "Lunch for Kyle", "hash": "57a1d4eab5f708f2", "src": "db2@1.60.1.70245"}
-{"id": 1323075, "field": "description", "en": "Serves Kyle his lunch!", "hash": "43ed5da465ca21ae", "src": "db2@1.60.1.70245"}
-{"id": 1323184, "field": "name", "en": "Shark Attack", "hash": "18306d3cd8debcd9", "src": "db2@1.60.1.70245"}
-{"id": 1323184, "field": "description", "en": "Swimming in dangerous waters may attract nearby Darkspear Sharks!\r\n\r\nBeing bitten will cause you to take damage equal to $1286850s1% of your health every $t1 sec.\r\n", "hash": "d7fdc4a2b024e84f", "src": "db2@1.60.1.70245"}
-{"id": 1323184, "field": "aura", "en": "Swimming in dangerous waters may attract nearby Darkspear Sharks!\r\n\r\nBeing bitten will cause you to take damage equal to $1286850s1% of your health every $t1 sec.", "hash": "d7fdc4a2b024e84f", "src": "db2@1.60.1.70245"}
-{"id": 1323209, "field": "name", "en": "War Stomp", "hash": "7b2c5ab10e248a9c", "src": "db2@1.60.1.70245"}
-{"id": 1323209, "field": "description", "en": "Knockback nearby enemies.", "hash": "632bdade0dddf140", "src": "db2@1.60.1.70245"}
-{"id": 1323240, "field": "name", "en": "Rain of Arrows", "hash": "715ef5fef34832a7", "src": "db2@1.60.1.70245"}
-{"id": 1323243, "field": "name", "en": "Rain of Arrows", "hash": "715ef5fef34832a7", "src": "db2@1.60.1.70245"}
-{"id": 1323243, "field": "description", "en": "Causes arrows to rain from the sky at the location of a random target, inflicting $S1% Physical damage every $T1 sec.", "hash": "0e8e329e2d0686ea", "src": "db2@1.60.1.70245"}
-{"id": 1323243, "field": "aura", "en": "Inflicts $S1 Physical damage every $T1 sec.", "hash": "8f0277cd4bdba6ae", "src": "db2@1.60.1.70245"}
-{"id": 1323246, "field": "name", "en": "Shoot", "hash": "befeed7c70f5ab5b", "src": "db2@1.60.1.70245"}
-{"id": 1323246, "field": "description", "en": "Shoots at an enemy, inflicting Physical damage.", "hash": "75634826c9339361", "src": "db2@1.60.1.70245"}
-{"id": 1323289, "field": "name", "en": "Enrage", "hash": "64ece3953c46c879", "src": "db2@1.60.1.70245"}
-{"id": 1323377, "field": "name", "en": "Revelation", "hash": "cffca3b576c09e82", "src": "db2@1.60.1.70245"}
-{"id": 1323377, "field": "aura", "en": "Critical Strike chance of your next non-periodic spell increased by $s1%.", "hash": "b0c893a2ce1b8ea4", "src": "db2@1.60.1.70245"}
-{"id": 1323390, "field": "name", "en": "Tapped", "hash": "3d3a611dd22b16d1", "src": "db2@1.60.1.70245"}
-{"id": 1323390, "field": "aura", "en": "This creature has been drained of its power.", "hash": "ea7290a86cc945d2", "src": "db2@1.60.1.70245"}
-{"id": 1323392, "field": "name", "en": "Revelation", "hash": "cffca3b576c09e82", "src": "db2@1.60.1.70245"}
-{"id": 1323392, "field": "aura", "en": "Critical Strike chance of your next non-periodic spell increased by $s1%.", "hash": "b0c893a2ce1b8ea4", "src": "db2@1.60.1.70245"}
-{"id": 1323400, "field": "name", "en": "Revelation", "hash": "cffca3b576c09e82", "src": "db2@1.60.1.70245"}
-{"id": 1323400, "field": "aura", "en": "Critical Strike chance of your next non-periodic spell increased by $s1%.", "hash": "b0c893a2ce1b8ea4", "src": "db2@1.60.1.70245"}
-{"id": 1323410, "field": "name", "en": "Revelation", "hash": "cffca3b576c09e82", "src": "db2@1.60.1.70245"}
-{"id": 1323410, "field": "aura", "en": "Critical Strike chance of your next non-periodic spell increased by $s1%.", "hash": "b0c893a2ce1b8ea4", "src": "db2@1.60.1.70245"}
-{"id": 1323418, "field": "name", "en": "Revelation", "hash": "cffca3b576c09e82", "src": "db2@1.60.1.70245"}
-{"id": 1323418, "field": "aura", "en": "Critical Strike chance of your next non-periodic spell increased by $s1%.", "hash": "b0c893a2ce1b8ea4", "src": "db2@1.60.1.70245"}
-{"id": 1323419, "field": "name", "en": "Revelation", "hash": "cffca3b576c09e82", "src": "db2@1.60.1.70245"}
-{"id": 1323419, "field": "aura", "en": "Critical Strike chance of your next non-periodic spell increased by $s1%.", "hash": "b0c893a2ce1b8ea4", "src": "db2@1.60.1.70245"}
-{"id": 1323420, "field": "name", "en": "Totemic Recall", "hash": "a7b0bf2dafccd22a", "src": "db2@1.60.1.70245"}
-{"id": 1323420, "field": "description", "en": "Returns your totems to the earth, giving you $s1% of the mana required to cast each totem destroyed by Totemic Recall.", "hash": "7e7acb66623a1b8f", "src": "db2@1.60.1.70245"}
-{"id": 1323963, "field": "name", "en": "Furious Precision", "hash": "c8ae577cd53b4fe4", "src": "db2@1.60.1.70245"}
-{"id": 1323963, "field": "description", "en": "Increases your chance to hit with off-hand attacks by $m1%.", "hash": "55d7f5d6e39ea1e1", "src": "db2@1.60.1.70245"}
-{"id": 1323964, "field": "name", "en": "Lingering Rage", "hash": "2784349e96653249", "src": "db2@1.60.1.70245"}
-{"id": 1323964, "field": "description", "en": "Increases the time before your Rage begins to decay after leaving combat by ${$s1/1000} sec.", "hash": "5edbed1f5a5b7905", "src": "db2@1.60.1.70245"}
-{"id": 1323965, "field": "name", "en": "Lingering Rage", "hash": "2784349e96653249", "src": "db2@1.60.1.70245"}
-{"id": 1323965, "field": "description", "en": "Increases the time before your Rage begins to decay after leaving combat by $d.", "hash": "0faca47c39661284", "src": "db2@1.60.1.70245"}
-{"id": 1323966, "field": "name", "en": "Lingering Rage", "hash": "2784349e96653249", "src": "db2@1.60.1.70245"}
-{"id": 1323967, "field": "name", "en": "Gore Drinker", "hash": "5ae9562fcb2c9c23", "src": "db2@1.60.1.70245"}
-{"id": 1323967, "field": "description", "en": "Your Enrage, Berserker Rage, Bloodrage, Death Wish, and Bloodthirst abilities cause your next $m1 melee attacks to restore ${$s2}.1% of your maximum Health.", "hash": "6954c0fe7b553346", "src": "db2@1.60.1.70245"}
-{"id": 1323968, "field": "name", "en": "Gore Drinker", "hash": "5ae9562fcb2c9c23", "src": "db2@1.60.1.70245"}
-{"id": 1323968, "field": "description", "en": "Healing from melee attacks.", "hash": "956e25721d841a65", "src": "db2@1.60.1.70245"}
-{"id": 1323969, "field": "name", "en": "Gore Drinker", "hash": "5ae9562fcb2c9c23", "src": "db2@1.60.1.70245"}
-{"id": 1323969, "field": "description", "en": "Successful melee attacks restore $w1 Health.", "hash": "39f1c37cd44f8332", "src": "db2@1.60.1.70245"}
-{"id": 1323969, "field": "aura", "en": "Successful melee attacks restore $w1 Health.", "hash": "39f1c37cd44f8332", "src": "db2@1.60.1.70245"}
+{"id": 1323075, "field": "name", "en": "Lunch for Kyle", "hash": "57a1d4eab5f708f2", "src": "db2@1.60.1.70291"}
+{"id": 1323075, "field": "description", "en": "Serves Kyle his lunch!", "hash": "43ed5da465ca21ae", "src": "db2@1.60.1.70291"}
+{"id": 1323184, "field": "name", "en": "Shark Attack", "hash": "18306d3cd8debcd9", "src": "db2@1.60.1.70291"}
+{"id": 1323184, "field": "description", "en": "Swimming in dangerous waters may attract nearby Darkspear Sharks!\r\n\r\nBeing bitten will cause you to take damage equal to $1286850s1% of your health every $t1 sec.\r\n", "hash": "d7fdc4a2b024e84f", "src": "db2@1.60.1.70291"}
+{"id": 1323184, "field": "aura", "en": "Swimming in dangerous waters may attract nearby Darkspear Sharks!\r\n\r\nBeing bitten will cause you to take damage equal to $1286850s1% of your health every $t1 sec.", "hash": "d7fdc4a2b024e84f", "src": "db2@1.60.1.70291"}
+{"id": 1323209, "field": "name", "en": "War Stomp", "hash": "7b2c5ab10e248a9c", "src": "db2@1.60.1.70291"}
+{"id": 1323209, "field": "description", "en": "Knockback nearby enemies.", "hash": "632bdade0dddf140", "src": "db2@1.60.1.70291"}
+{"id": 1323240, "field": "name", "en": "Rain of Arrows", "hash": "715ef5fef34832a7", "src": "db2@1.60.1.70291"}
+{"id": 1323243, "field": "name", "en": "Rain of Arrows", "hash": "715ef5fef34832a7", "src": "db2@1.60.1.70291"}
+{"id": 1323243, "field": "description", "en": "Causes arrows to rain from the sky at the location of a random target, inflicting $S1% Physical damage every $T1 sec.", "hash": "0e8e329e2d0686ea", "src": "db2@1.60.1.70291"}
+{"id": 1323243, "field": "aura", "en": "Inflicts $S1 Physical damage every $T1 sec.", "hash": "8f0277cd4bdba6ae", "src": "db2@1.60.1.70291"}
+{"id": 1323246, "field": "name", "en": "Shoot", "hash": "befeed7c70f5ab5b", "src": "db2@1.60.1.70291"}
+{"id": 1323246, "field": "description", "en": "Shoots at an enemy, inflicting Physical damage.", "hash": "75634826c9339361", "src": "db2@1.60.1.70291"}
+{"id": 1323289, "field": "name", "en": "Enrage", "hash": "64ece3953c46c879", "src": "db2@1.60.1.70291"}
+{"id": 1323377, "field": "name", "en": "Revelation", "hash": "cffca3b576c09e82", "src": "db2@1.60.1.70291"}
+{"id": 1323377, "field": "aura", "en": "Critical Strike chance of your next non-periodic spell increased by $s1%.", "hash": "b0c893a2ce1b8ea4", "src": "db2@1.60.1.70291"}
+{"id": 1323390, "field": "name", "en": "Tapped", "hash": "3d3a611dd22b16d1", "src": "db2@1.60.1.70291"}
+{"id": 1323390, "field": "aura", "en": "This creature has been drained of its power.", "hash": "ea7290a86cc945d2", "src": "db2@1.60.1.70291"}
+{"id": 1323392, "field": "name", "en": "Revelation", "hash": "cffca3b576c09e82", "src": "db2@1.60.1.70291"}
+{"id": 1323392, "field": "aura", "en": "Critical Strike chance of your next non-periodic spell increased by $s1%.", "hash": "b0c893a2ce1b8ea4", "src": "db2@1.60.1.70291"}
+{"id": 1323400, "field": "name", "en": "Revelation", "hash": "cffca3b576c09e82", "src": "db2@1.60.1.70291"}
+{"id": 1323400, "field": "aura", "en": "Critical Strike chance of your next non-periodic spell increased by $s1%.", "hash": "b0c893a2ce1b8ea4", "src": "db2@1.60.1.70291"}
+{"id": 1323410, "field": "name", "en": "Revelation", "hash": "cffca3b576c09e82", "src": "db2@1.60.1.70291"}
+{"id": 1323410, "field": "aura", "en": "Critical Strike chance of your next non-periodic spell increased by $s1%.", "hash": "b0c893a2ce1b8ea4", "src": "db2@1.60.1.70291"}
+{"id": 1323418, "field": "name", "en": "Revelation", "hash": "cffca3b576c09e82", "src": "db2@1.60.1.70291"}
+{"id": 1323418, "field": "aura", "en": "Critical Strike chance of your next non-periodic spell increased by $s1%.", "hash": "b0c893a2ce1b8ea4", "src": "db2@1.60.1.70291"}
+{"id": 1323419, "field": "name", "en": "Revelation", "hash": "cffca3b576c09e82", "src": "db2@1.60.1.70291"}
+{"id": 1323419, "field": "aura", "en": "Critical Strike chance of your next non-periodic spell increased by $s1%.", "hash": "b0c893a2ce1b8ea4", "src": "db2@1.60.1.70291"}
+{"id": 1323420, "field": "name", "en": "Totemic Recall", "hash": "a7b0bf2dafccd22a", "src": "db2@1.60.1.70291"}
+{"id": 1323420, "field": "description", "en": "Returns your totems to the earth, giving you $s1% of the mana required to cast each totem destroyed by Totemic Recall.", "hash": "7e7acb66623a1b8f", "src": "db2@1.60.1.70291"}
+{"id": 1323433, "field": "name", "en": "Dummy", "hash": "b96ea884878ed073", "src": "db2@1.60.1.70291"}
+{"id": 1323500, "field": "name", "en": "Stun", "hash": "0b3dc5a2a5416483", "src": "db2@1.60.1.70291"}
+{"id": 1323500, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70291"}
+{"id": 1323522, "field": "name", "en": "Seals", "hash": "be9458a39129bb0a", "src": "db2@1.60.1.70291"}
+{"id": 1323522, "field": "description", "en": "Fill the Paladin with various divine enhancements. \r\n\r\nYou currently have access to:\r\n$?pc166120[$@spellicon21082 $@spellname21082][]\r\n$?pc166138[$@spellicon25742 $@spellname20287][]\r\n$?pc166134[$@spellicon20165 $@spellname20165][]\r\n$?pc166146[$@spellicon20166 $@spellname20166][]\r\n$?pc166126[$@spellicon1311649 $@spellname1311649][]\r\n$?pc166133[$@spellicon20164 $@spellname20164][]\r\n$?pc166115[$@spellicon20424 $@spellname20424][]", "hash": "407037e6922b975e", "src": "db2@1.60.1.70291"}
+{"id": 1323526, "field": "name", "en": "[DNT] Collapse", "hash": "2dad65c623445b29", "src": "db2@1.60.1.70291"}
+{"id": 1323548, "field": "name", "en": "Kill Credit", "hash": "10091a36d26ece2e", "src": "db2@1.60.1.70291"}
+{"id": 1323651, "field": "name", "en": "Moonfire", "hash": "eda7a4c188a2324b", "src": "db2@1.60.1.70291"}
+{"id": 1323651, "field": "description", "en": "Burns the enemy for Arcane damage and inflicts additional damage over $d.", "hash": "ba2c738b36f59f68", "src": "db2@1.60.1.70291"}
+{"id": 1323651, "field": "aura", "en": "$S1 Arcane damage inflicted every $t1 sec.", "hash": "1e69ddb31e6d20b6", "src": "db2@1.60.1.70291"}
+{"id": 1323656, "field": "name", "en": "Poisoned Shot", "hash": "7b92ccf605f02e7b", "src": "db2@1.60.1.70291"}
+{"id": 1323656, "field": "description", "en": "Inflicts normal damage plus $s2 to an enemy, then an additional $s1 Nature damage every $t1 sec. for $d.", "hash": "2810975687f80db3", "src": "db2@1.60.1.70291"}
+{"id": 1323656, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.", "hash": "f6322beccc18b2dd", "src": "db2@1.60.1.70291"}
+{"id": 1323657, "field": "name", "en": "Kill Credit", "hash": "10091a36d26ece2e", "src": "db2@1.60.1.70291"}
+{"id": 1323676, "field": "name", "en": "Slam", "hash": "0b3ba31d857cc8e6", "src": "db2@1.60.1.70291"}
+{"id": 1323676, "field": "description", "en": "Slams an enemy to the ground, inflicting Physical damage and stunning it for $d.", "hash": "b1a2fbcab4ea7eb4", "src": "db2@1.60.1.70291"}
+{"id": 1323676, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70291"}
+{"id": 1323731, "field": "name", "en": "Chilled", "hash": "ba3887334928867c", "src": "db2@1.60.1.70291"}
+{"id": 1323764, "field": "name", "en": "Update Interactions", "hash": "4f1abef90f8abe56", "src": "db2@1.60.1.70291"}
+{"id": 1323772, "field": "name", "en": "Earth Totems", "hash": "064f7adf3c5028db", "src": "db2@1.60.1.70291"}
+{"id": 1323772, "field": "description", "en": "Provide the Shaman with earth enchanted totems. \r\n\r\nYou currently have access to:\r\n$?pc166190\r\n[$@spellicon8075$@spellname8075][]\r\n$?pc166245\r\n[$@spellicon2484 $@spellname2484][]\r\n$?pc166248\r\n[$@spellicon5730 $@spellname5730][]\r\n$?pc166247\r\n[$@spellicon8071 $@spellname8071][]\r\n\r\n", "hash": "8e14cd3368db35cc", "src": "db2@1.60.1.70291"}
+{"id": 1323802, "field": "name", "en": "Fear", "hash": "097bdd043b6b8a3a", "src": "db2@1.60.1.70291"}
+{"id": 1323802, "field": "description", "en": "Strikes fear in an enemy, causing it to flee in terror for $d. Only 1 target can be feared at a time.", "hash": "790d3c3066703ee4", "src": "db2@1.60.1.70291"}
+{"id": 1323802, "field": "aura", "en": "Fleeing in fear.", "hash": "fa67e4a8461af331", "src": "db2@1.60.1.70291"}
+{"id": 1323823, "field": "name", "en": "Earth Totems", "hash": "064f7adf3c5028db", "src": "db2@1.60.1.70291"}
+{"id": 1323823, "field": "description", "en": "Provide the Shaman with earth enchanted totems. \r\n\r\nYou currently have access to:\r\n\r\n$?pc166245\r\n[$@spellicon2484 $@spellname2484][]\r\n$?pc166248\r\n[$@spellicon5730 $@spellname5730][]\r\n", "hash": "38dcfcde9d61504a", "src": "db2@1.60.1.70291"}
+{"id": 1323825, "field": "name", "en": "Air Totems", "hash": "b02289c04dfc2eae", "src": "db2@1.60.1.70291"}
+{"id": 1323825, "field": "description", "en": "Provide the Shaman with air enchanted totems. \r\n\r\nYou currently have access to:\r\n$?pc166249\r\n[$@spellicon6495$@spellname6495][]\r\n$?pc166250\r\n[$@spellicon15107 $@spellname15107][]\r\n$?pc166251\r\n[$@spellicon10595 $@spellname10595][]\r\n$?pc166252\r\n[$@spellicon8835 $@spellname8835][]\r\n$?pc166254\r\n[$@spellicon8177 $@spellname8177][]\r\n$?pc166255\r\n[$@spellicon8512 $@spellname8512][]\r\n", "hash": "3abfa34a8c684e73", "src": "db2@1.60.1.70291"}
+{"id": 1323828, "field": "name", "en": "Whirlwind", "hash": "ac9b02bdb51dc78d", "src": "db2@1.60.1.70291"}
+{"id": 1323844, "field": "name", "en": "Fire Totems", "hash": "e4ea80fe5cb62b20", "src": "db2@1.60.1.70291"}
+{"id": 1323844, "field": "description", "en": "Provide the Shaman with fire enchanted totems.\r\n\r\nYou currently have access to:\r\n$?pc166257\r\n[$@spellicon8190$@spellname8190][]\r\n$?pc166257\r\n[$@spellicon3599 $@spellname3599][]\r\n", "hash": "a19cd0d8d2284d79", "src": "db2@1.60.1.70291"}
+{"id": 1323849, "field": "name", "en": "Fire Totems", "hash": "e4ea80fe5cb62b20", "src": "db2@1.60.1.70291"}
+{"id": 1323849, "field": "description", "en": "Provide the Shaman with fire enchanted totems. \r\n\r\nYou currently have access to:\r\n$?pc166258\r\n[$@spellicon8277$@spellname8277][]\r\n$?pc166260\r\n[$@spellicon8184 $@spellname8184][]\r\n", "hash": "7f70ff82b098f8cf", "src": "db2@1.60.1.70291"}
+{"id": 1323858, "field": "name", "en": "Water Totems", "hash": "f1325475103d672b", "src": "db2@1.60.1.70291"}
+{"id": 1323858, "field": "description", "en": "Provide the Shaman with water enchanted totems. \r\n\r\nYou currently have access to:\r\n\r\n$?pc166263\r\n[$@spellicon8166 $@spellname8166][]\r\n$?pc166264\r\n[$@spellicon8170 $@spellname8170][]", "hash": "f4456c0cdbbcaa01", "src": "db2@1.60.1.70291"}
+{"id": 1323859, "field": "name", "en": "Water Totems", "hash": "f1325475103d672b", "src": "db2@1.60.1.70291"}
+{"id": 1323859, "field": "description", "en": "Provide the Shaman with water enchanted totems. \r\n\r\nYou currently have access to:\r\n\r\n$?pc166265\r\n[$@spellicon5394 \r\n$@spellname5394][]\r\n$?pc166266\r\n[$@spellicon8181 $@spellname8181][]\r\n$?pc166267\r\n[$@spellicon5675 $@spellname5675][]\r\n$?pc166268\r\n[$@spellicon16190 $@spellname16190][]\r\n", "hash": "cca83ffae598bbcc", "src": "db2@1.60.1.70291"}
+{"id": 1323958, "field": "name", "en": "[DNT] Generic Reset", "hash": "5dc2b453ad7ee111", "src": "db2@1.60.1.70291"}
+{"id": 1323959, "field": "name", "en": "[DNT] Generic Reset", "hash": "5dc2b453ad7ee111", "src": "db2@1.60.1.70291"}
+{"id": 1323963, "field": "name", "en": "Furious Precision", "hash": "c8ae577cd53b4fe4", "src": "db2@1.60.1.70291"}
+{"id": 1323963, "field": "description", "en": "Increases your chance to hit with off-hand attacks by $m1%.", "hash": "55d7f5d6e39ea1e1", "src": "db2@1.60.1.70291"}
+{"id": 1323964, "field": "name", "en": "Lingering Rage", "hash": "2784349e96653249", "src": "db2@1.60.1.70291"}
+{"id": 1323964, "field": "description", "en": "Increases the time before your Rage begins to decay after leaving combat by ${$s1/1000} sec.", "hash": "5edbed1f5a5b7905", "src": "db2@1.60.1.70291"}
+{"id": 1323965, "field": "name", "en": "Lingering Rage", "hash": "2784349e96653249", "src": "db2@1.60.1.70291"}
+{"id": 1323965, "field": "description", "en": "Increases the time before your Rage begins to decay after leaving combat by $d.", "hash": "0faca47c39661284", "src": "db2@1.60.1.70291"}
+{"id": 1323966, "field": "name", "en": "Lingering Rage", "hash": "2784349e96653249", "src": "db2@1.60.1.70291"}
+{"id": 1323967, "field": "name", "en": "Gore Drinker", "hash": "5ae9562fcb2c9c23", "src": "db2@1.60.1.70291"}
+{"id": 1323967, "field": "description", "en": "Your Enrage, Berserker Rage, Bloodrage, Death Wish, and Bloodthirst abilities cause your next $m1 melee attacks to restore ${$s2}.1% of your maximum Health.", "hash": "6954c0fe7b553346", "src": "db2@1.60.1.70291"}
+{"id": 1323968, "field": "name", "en": "Gore Drinker", "hash": "5ae9562fcb2c9c23", "src": "db2@1.60.1.70291"}
+{"id": 1323968, "field": "description", "en": "Healing from melee attacks.", "hash": "956e25721d841a65", "src": "db2@1.60.1.70291"}
+{"id": 1323969, "field": "name", "en": "Gore Drinker", "hash": "5ae9562fcb2c9c23", "src": "db2@1.60.1.70291"}
+{"id": 1323969, "field": "description", "en": "Successful melee attacks restore $w1 Health.", "hash": "39f1c37cd44f8332", "src": "db2@1.60.1.70291"}
+{"id": 1323969, "field": "aura", "en": "Successful melee attacks restore $w1 Health.", "hash": "39f1c37cd44f8332", "src": "db2@1.60.1.70291"}
+{"id": 1323994, "field": "name", "en": "Eternal Night", "hash": "0bce4aed1e2dd57c", "src": "db2@1.60.1.70291"}
+{"id": 1323995, "field": "name", "en": "[DNT] Disarm", "hash": "e278a9fc82a2ecae", "src": "db2@1.60.1.70291"}

@@ -1,69 +1,69 @@
-{"id": 442107, "field": "name", "en": "Blood for the Blood Loa", "hash": "d232b36eefd52842", "src": "db2@1.60.1.70245"}
-{"id": 442107, "field": "aura", "en": "Give tribute to the Blood Loa before someone makes tribute out of you.", "hash": "3f0214732f028c33", "src": "db2@1.60.1.70245"}
-{"id": 442153, "field": "name", "en": "[DNT] Drained of Blood (Ghost)", "hash": "7e421d4cf34e4657", "src": "db2@1.60.1.70245"}
-{"id": 442188, "field": "name", "en": "[DNT] Drained of Blood (Death)", "hash": "552c15e4aa39367d", "src": "db2@1.60.1.70245"}
-{"id": 442206, "field": "name", "en": "Dismantle", "hash": "38890e653e29f507", "src": "db2@1.60.1.70245"}
-{"id": 442211, "field": "name", "en": "Berserk", "hash": "b1e2ab079742debf", "src": "db2@1.60.1.70245"}
-{"id": 442211, "field": "description", "en": "When activated, this ability causes your Mangle (Bear) ability to hit up to $s3 targets and have no cooldown, and reduces the energy cost of all your Cat Form abilities by $s1%.  Lasts $d. Requires Bear Form, Cat Form, or Dire Bear Form to activate.\r\n\r\nClears the effect of Fear and makes you immune to Fear for the duration.\r\n", "hash": "905d9bcbc11c7ddd", "src": "db2@1.60.1.70245"}
-{"id": 442211, "field": "aura", "en": "Immune to Fear effects.\r\nRage and energy costs reduced.\r\nMangle hits multiple targets.", "hash": "25e7d6615c5943fc", "src": "db2@1.60.1.70245"}
-{"id": 442222, "field": "name", "en": "Static Arc", "hash": "79e6d760e10093fb", "src": "db2@1.60.1.70245"}
-{"id": 442222, "field": "description", "en": "Electrocutioner 6000 unleashes a blast of lightning at the furthest target, inflicting $s1 Nature damage and leaping up to $x times.  Each player hit by this effect takes $s2% increased damage from $@spellname433251 for $d.", "hash": "013e0939ed588402", "src": "db2@1.60.1.70245"}
-{"id": 442222, "field": "aura", "en": "$s2% increased damage taken from $@spellname433251.", "hash": "4c559deba08f350b", "src": "db2@1.60.1.70245"}
-{"id": 442223, "field": "name", "en": "Static Arc", "hash": "79e6d760e10093fb", "src": "db2@1.60.1.70245"}
-{"id": 442223, "field": "description", "en": "Electrocutioner 6000 unleashes a blast of lightning at the furthest target, inflicting $s1 Nature damage and leaping up to $x times.  Each player hit by this effect takes $s2% increased damage from $@spellname433251 for $d.", "hash": "013e0939ed588402", "src": "db2@1.60.1.70245"}
-{"id": 442223, "field": "aura", "en": "$s2% increased damage taken from $@spellname433251.", "hash": "4c559deba08f350b", "src": "db2@1.60.1.70245"}
-{"id": 442225, "field": "name", "en": "Static Arc", "hash": "79e6d760e10093fb", "src": "db2@1.60.1.70245"}
-{"id": 442225, "field": "description", "en": "Electrocutioner 6000 unleashes a blast of lightning at the furthest target, inflicting $s1 Nature damage and leaping up to $x times.  Each player hit by this effect takes $s2% increased damage from $@spellname433251 for $d.", "hash": "013e0939ed588402", "src": "db2@1.60.1.70245"}
-{"id": 442225, "field": "aura", "en": "$s2% increased damage taken from $@spellname433251.", "hash": "4c559deba08f350b", "src": "db2@1.60.1.70245"}
-{"id": 442226, "field": "name", "en": "Menace", "hash": "a28a9f3fbcb54e17", "src": "db2@1.60.1.70245"}
-{"id": 442226, "field": "description", "en": "Taunts the target to attack you, but has no effect if the target is already attacking you.", "hash": "71de38fd4f83eb55", "src": "db2@1.60.1.70245"}
-{"id": 442226, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70245"}
-{"id": 442233, "field": "name", "en": "Menace", "hash": "a28a9f3fbcb54e17", "src": "db2@1.60.1.70245"}
-{"id": 442233, "field": "description", "en": "Taunts the target to attack you, but has no effect if the target is already attacking you.", "hash": "71de38fd4f83eb55", "src": "db2@1.60.1.70245"}
-{"id": 442233, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70245"}
-{"id": 442241, "field": "name", "en": "Static Arc", "hash": "79e6d760e10093fb", "src": "db2@1.60.1.70245"}
-{"id": 442299, "field": "name", "en": "Consume", "hash": "f38da6cfe013b757", "src": "db2@1.60.1.70245"}
-{"id": 442543, "field": "name", "en": "S03 - Tuning and Overrides Passive - Mage", "hash": "34945e0473e9d97a", "src": "db2@1.60.1.70245"}
-{"id": 442620, "field": "name", "en": "Wing Flap", "hash": "a0388b7522f10800", "src": "db2@1.60.1.70245"}
-{"id": 442620, "field": "description", "en": "Strikes enemies in a cone in front of the caster, knocking them back.", "hash": "61a1859ee1117be6", "src": "db2@1.60.1.70245"}
-{"id": 442622, "field": "name", "en": "Acid Breath", "hash": "451caef4c3b41c43", "src": "db2@1.60.1.70245"}
-{"id": 442622, "field": "description", "en": "Inflicts $s2 Nature damage and an additional $s1 damage every $t1 sec. to enemies in a cone in front of the caster. Lasts $d.", "hash": "92ab8a0f114beee8", "src": "db2@1.60.1.70245"}
-{"id": 442622, "field": "aura", "en": "$s1 Nature damage every $t1 seconds.", "hash": "da01d47291e34af5", "src": "db2@1.60.1.70245"}
-{"id": 442623, "field": "name", "en": "Wing Buffet", "hash": "1f10ac0f617ea114", "src": "db2@1.60.1.70245"}
-{"id": 442623, "field": "description", "en": "Strikes enemies in a cone in front of the caster, knocking them back.", "hash": "61a1859ee1117be6", "src": "db2@1.60.1.70245"}
-{"id": 442625, "field": "name", "en": "Delayed Wing Buffet", "hash": "09353ee84637fae0", "src": "db2@1.60.1.70245"}
-{"id": 442625, "field": "description", "en": "Strikes enemies in a cone in front of the caster, knocking them back.", "hash": "61a1859ee1117be6", "src": "db2@1.60.1.70245"}
-{"id": 442813, "field": "name", "en": "Sword Specialization", "hash": "112aed18a7bde3f7", "src": "db2@1.60.1.70245"}
-{"id": 442813, "field": "description", "en": "Skill with Swords and Two-Handed Swords increased by $s1. This effect is not cumulative with racial bonuses or other ring runes.", "hash": "5a0c4a9dd46ac869", "src": "db2@1.60.1.70245"}
-{"id": 442876, "field": "name", "en": "Axe Specialization", "hash": "5ca7455386a9666f", "src": "db2@1.60.1.70245"}
-{"id": 442876, "field": "description", "en": "Skill with Axes and Two-Handed Axes increased by $s1. This effect is not cumulative with racial bonuses or other ring runes.", "hash": "6f92e49cfd36afa9", "src": "db2@1.60.1.70245"}
-{"id": 442881, "field": "name", "en": "Mace Specialization", "hash": "4f9bf4cba0fb7a59", "src": "db2@1.60.1.70245"}
-{"id": 442881, "field": "description", "en": "Skill with Maces and Two-Handed Maces increased by $s1. This effect is not cumulative with racial bonuses or other ring runes.", "hash": "877c0f3922618d9f", "src": "db2@1.60.1.70245"}
-{"id": 442887, "field": "name", "en": "Dagger Specialization", "hash": "80d3a4e9e8320e0c", "src": "db2@1.60.1.70245"}
-{"id": 442887, "field": "description", "en": "Skill with Daggers increased by $s1. This effect is not cumulative with racial bonuses or other ring runes.", "hash": "6bc0ff0e5be00d57", "src": "db2@1.60.1.70245"}
-{"id": 442890, "field": "name", "en": "Fist Weapon Specialization", "hash": "ff700782ab4fb5cf", "src": "db2@1.60.1.70245"}
-{"id": 442890, "field": "description", "en": "Skill with Fist Weapons (Unarmed) increased by $s1. This effect is not cumulative with racial bonuses or other ring runes.", "hash": "f93015081a83d148", "src": "db2@1.60.1.70245"}
-{"id": 442891, "field": "name", "en": "Ranged Weapon Specialization", "hash": "9c25e78f068bce73", "src": "db2@1.60.1.70245"}
-{"id": 442891, "field": "description", "en": "Skill with Bows, Guns, Crossbows, and Thrown weapons increased by $s1.  This effect is not cumulative with racial bonuses or other ring runes.", "hash": "30ea1cb8a0b0284d", "src": "db2@1.60.1.70245"}
-{"id": 442892, "field": "name", "en": "Pole Weapon Specialization", "hash": "7dc7ed64c7a99386", "src": "db2@1.60.1.70245"}
-{"id": 442892, "field": "description", "en": "Skill with Staves and Polearms increased by $s1. This effect is not cumulative with racial bonuses or other ring runes.", "hash": "9764dec06de34fa2", "src": "db2@1.60.1.70245"}
-{"id": 442893, "field": "name", "en": "Spell Specialization", "hash": "86132601c2ad58d2", "src": "db2@1.60.1.70245"}
-{"id": 442893, "field": "description", "en": "Chance to hit with spells increased by $s1%. Not cumulative with other ring runes.", "hash": "9b8102c2365a1c4e", "src": "db2@1.60.1.70245"}
-{"id": 442894, "field": "name", "en": "Spell Specialization", "hash": "86132601c2ad58d2", "src": "db2@1.60.1.70245"}
-{"id": 442894, "field": "description", "en": "Chance to hit with spells increased by $s1%. Not cumulative with other ring runes.", "hash": "9b8102c2365a1c4e", "src": "db2@1.60.1.70245"}
-{"id": 442895, "field": "name", "en": "Spell Specialization", "hash": "86132601c2ad58d2", "src": "db2@1.60.1.70245"}
-{"id": 442895, "field": "description", "en": "Chance to hit with spells increased by $s1%. Not cumulative with other ring runes.", "hash": "9b8102c2365a1c4e", "src": "db2@1.60.1.70245"}
-{"id": 442896, "field": "name", "en": "Spell Specialization", "hash": "86132601c2ad58d2", "src": "db2@1.60.1.70245"}
-{"id": 442896, "field": "description", "en": "Chance to hit with spells increased by $s1%. Not cumulative with other ring runes.", "hash": "9b8102c2365a1c4e", "src": "db2@1.60.1.70245"}
-{"id": 442897, "field": "name", "en": "Spell Specialization", "hash": "86132601c2ad58d2", "src": "db2@1.60.1.70245"}
-{"id": 442897, "field": "description", "en": "Chance to hit with spells increased by $s1%. Not cumulative with other ring runes.", "hash": "9b8102c2365a1c4e", "src": "db2@1.60.1.70245"}
-{"id": 442898, "field": "name", "en": "Spell Specialization", "hash": "86132601c2ad58d2", "src": "db2@1.60.1.70245"}
-{"id": 442898, "field": "description", "en": "Chance to hit with spells increased by $s1%. Not cumulative with other ring runes.", "hash": "9b8102c2365a1c4e", "src": "db2@1.60.1.70245"}
-{"id": 442901, "field": "name", "en": "Shapeshifting Specialization", "hash": "44090bb860e56b43", "src": "db2@1.60.1.70245"}
-{"id": 442901, "field": "description", "en": "Chance to hit with melee attacks increased by $s2% and chance for enemies to dodge your melee attacks reduced by $s1% while in Bear Form, Cat Form, or Dire Bear Form. Not cumulative with other ring runes.", "hash": "aa91877b36543267", "src": "db2@1.60.1.70245"}
-{"id": 442945, "field": "name", "en": "Saved by the Light", "hash": "aeba242a7def3f4a", "src": "db2@1.60.1.70245"}
-{"id": 442946, "field": "name", "en": "Near Death", "hash": "e58e79b9de2ac6c0", "src": "db2@1.60.1.70245"}
-{"id": 442947, "field": "name", "en": "Feeling much better, thank you!", "hash": "953727ccaed7d1bf", "src": "db2@1.60.1.70245"}
-{"id": 442948, "field": "name", "en": "Blessing of Protection", "hash": "562a2b896dfaaf27", "src": "db2@1.60.1.70245"}
-{"id": 442948, "field": "description", "en": "A targeted party member is protected from all physical attacks for $d, but during that time they cannot attack or use physical abilities.  Players may only have one Blessing on them per Paladin at any one time.  Once protected, the target cannot be made invulnerable by Divine Shield, Divine Protection or Blessing of Protection again for $25771d.", "hash": "4d3043833ebe2293", "src": "db2@1.60.1.70245"}
-{"id": 442948, "field": "aura", "en": "Immune to physical attacks.  Cannot attack or use physical abilities.", "hash": "3445333b2579043a", "src": "db2@1.60.1.70245"}
+{"id": 442107, "field": "name", "en": "Blood for the Blood Loa", "hash": "d232b36eefd52842", "src": "db2@1.60.1.70291"}
+{"id": 442107, "field": "aura", "en": "Give tribute to the Blood Loa before someone makes tribute out of you.", "hash": "3f0214732f028c33", "src": "db2@1.60.1.70291"}
+{"id": 442153, "field": "name", "en": "[DNT] Drained of Blood (Ghost)", "hash": "7e421d4cf34e4657", "src": "db2@1.60.1.70291"}
+{"id": 442188, "field": "name", "en": "[DNT] Drained of Blood (Death)", "hash": "552c15e4aa39367d", "src": "db2@1.60.1.70291"}
+{"id": 442206, "field": "name", "en": "Dismantle", "hash": "38890e653e29f507", "src": "db2@1.60.1.70291"}
+{"id": 442211, "field": "name", "en": "Berserk", "hash": "b1e2ab079742debf", "src": "db2@1.60.1.70291"}
+{"id": 442211, "field": "description", "en": "When activated, this ability causes your Mangle (Bear) ability to hit up to $s3 targets and have no cooldown, and reduces the energy cost of all your Cat Form abilities by $s1%.  Lasts $d. Requires Bear Form, Cat Form, or Dire Bear Form to activate.\r\n\r\nClears the effect of Fear and makes you immune to Fear for the duration.\r\n", "hash": "905d9bcbc11c7ddd", "src": "db2@1.60.1.70291"}
+{"id": 442211, "field": "aura", "en": "Immune to Fear effects.\r\nRage and energy costs reduced.\r\nMangle hits multiple targets.", "hash": "25e7d6615c5943fc", "src": "db2@1.60.1.70291"}
+{"id": 442222, "field": "name", "en": "Static Arc", "hash": "79e6d760e10093fb", "src": "db2@1.60.1.70291"}
+{"id": 442222, "field": "description", "en": "Electrocutioner 6000 unleashes a blast of lightning at the furthest target, inflicting $s1 Nature damage and leaping up to $x times.  Each player hit by this effect takes $s2% increased damage from $@spellname433251 for $d.", "hash": "013e0939ed588402", "src": "db2@1.60.1.70291"}
+{"id": 442222, "field": "aura", "en": "$s2% increased damage taken from $@spellname433251.", "hash": "4c559deba08f350b", "src": "db2@1.60.1.70291"}
+{"id": 442223, "field": "name", "en": "Static Arc", "hash": "79e6d760e10093fb", "src": "db2@1.60.1.70291"}
+{"id": 442223, "field": "description", "en": "Electrocutioner 6000 unleashes a blast of lightning at the furthest target, inflicting $s1 Nature damage and leaping up to $x times.  Each player hit by this effect takes $s2% increased damage from $@spellname433251 for $d.", "hash": "013e0939ed588402", "src": "db2@1.60.1.70291"}
+{"id": 442223, "field": "aura", "en": "$s2% increased damage taken from $@spellname433251.", "hash": "4c559deba08f350b", "src": "db2@1.60.1.70291"}
+{"id": 442225, "field": "name", "en": "Static Arc", "hash": "79e6d760e10093fb", "src": "db2@1.60.1.70291"}
+{"id": 442225, "field": "description", "en": "Electrocutioner 6000 unleashes a blast of lightning at the furthest target, inflicting $s1 Nature damage and leaping up to $x times.  Each player hit by this effect takes $s2% increased damage from $@spellname433251 for $d.", "hash": "013e0939ed588402", "src": "db2@1.60.1.70291"}
+{"id": 442225, "field": "aura", "en": "$s2% increased damage taken from $@spellname433251.", "hash": "4c559deba08f350b", "src": "db2@1.60.1.70291"}
+{"id": 442226, "field": "name", "en": "Menace", "hash": "a28a9f3fbcb54e17", "src": "db2@1.60.1.70291"}
+{"id": 442226, "field": "description", "en": "Taunts the target to attack you, but has no effect if the target is already attacking you.", "hash": "71de38fd4f83eb55", "src": "db2@1.60.1.70291"}
+{"id": 442226, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70291"}
+{"id": 442233, "field": "name", "en": "Menace", "hash": "a28a9f3fbcb54e17", "src": "db2@1.60.1.70291"}
+{"id": 442233, "field": "description", "en": "Taunts the target to attack you, but has no effect if the target is already attacking you.", "hash": "71de38fd4f83eb55", "src": "db2@1.60.1.70291"}
+{"id": 442233, "field": "aura", "en": "Taunted.", "hash": "36f56123a54bbb07", "src": "db2@1.60.1.70291"}
+{"id": 442241, "field": "name", "en": "Static Arc", "hash": "79e6d760e10093fb", "src": "db2@1.60.1.70291"}
+{"id": 442299, "field": "name", "en": "Consume", "hash": "f38da6cfe013b757", "src": "db2@1.60.1.70291"}
+{"id": 442543, "field": "name", "en": "S03 - Tuning and Overrides Passive - Mage", "hash": "34945e0473e9d97a", "src": "db2@1.60.1.70291"}
+{"id": 442620, "field": "name", "en": "Wing Flap", "hash": "a0388b7522f10800", "src": "db2@1.60.1.70291"}
+{"id": 442620, "field": "description", "en": "Strikes enemies in a cone in front of the caster, knocking them back.", "hash": "61a1859ee1117be6", "src": "db2@1.60.1.70291"}
+{"id": 442622, "field": "name", "en": "Acid Breath", "hash": "451caef4c3b41c43", "src": "db2@1.60.1.70291"}
+{"id": 442622, "field": "description", "en": "Inflicts $s2 Nature damage and an additional $s1 damage every $t1 sec. to enemies in a cone in front of the caster. Lasts $d.", "hash": "92ab8a0f114beee8", "src": "db2@1.60.1.70291"}
+{"id": 442622, "field": "aura", "en": "$s1 Nature damage every $t1 seconds.", "hash": "da01d47291e34af5", "src": "db2@1.60.1.70291"}
+{"id": 442623, "field": "name", "en": "Wing Buffet", "hash": "1f10ac0f617ea114", "src": "db2@1.60.1.70291"}
+{"id": 442623, "field": "description", "en": "Strikes enemies in a cone in front of the caster, knocking them back.", "hash": "61a1859ee1117be6", "src": "db2@1.60.1.70291"}
+{"id": 442625, "field": "name", "en": "Delayed Wing Buffet", "hash": "09353ee84637fae0", "src": "db2@1.60.1.70291"}
+{"id": 442625, "field": "description", "en": "Strikes enemies in a cone in front of the caster, knocking them back.", "hash": "61a1859ee1117be6", "src": "db2@1.60.1.70291"}
+{"id": 442813, "field": "name", "en": "Sword Specialization", "hash": "112aed18a7bde3f7", "src": "db2@1.60.1.70291"}
+{"id": 442813, "field": "description", "en": "Skill with Swords and Two-Handed Swords increased by $s1. This effect is not cumulative with racial bonuses or other ring runes.", "hash": "5a0c4a9dd46ac869", "src": "db2@1.60.1.70291"}
+{"id": 442876, "field": "name", "en": "Axe Specialization", "hash": "5ca7455386a9666f", "src": "db2@1.60.1.70291"}
+{"id": 442876, "field": "description", "en": "Skill with Axes and Two-Handed Axes increased by $s1. This effect is not cumulative with racial bonuses or other ring runes.", "hash": "6f92e49cfd36afa9", "src": "db2@1.60.1.70291"}
+{"id": 442881, "field": "name", "en": "Mace Specialization", "hash": "4f9bf4cba0fb7a59", "src": "db2@1.60.1.70291"}
+{"id": 442881, "field": "description", "en": "Skill with Maces and Two-Handed Maces increased by $s1. This effect is not cumulative with racial bonuses or other ring runes.", "hash": "877c0f3922618d9f", "src": "db2@1.60.1.70291"}
+{"id": 442887, "field": "name", "en": "Dagger Specialization", "hash": "80d3a4e9e8320e0c", "src": "db2@1.60.1.70291"}
+{"id": 442887, "field": "description", "en": "Skill with Daggers increased by $s1. This effect is not cumulative with racial bonuses or other ring runes.", "hash": "6bc0ff0e5be00d57", "src": "db2@1.60.1.70291"}
+{"id": 442890, "field": "name", "en": "Fist Weapon Specialization", "hash": "ff700782ab4fb5cf", "src": "db2@1.60.1.70291"}
+{"id": 442890, "field": "description", "en": "Skill with Fist Weapons (Unarmed) increased by $s1. This effect is not cumulative with racial bonuses or other ring runes.", "hash": "f93015081a83d148", "src": "db2@1.60.1.70291"}
+{"id": 442891, "field": "name", "en": "Ranged Weapon Specialization", "hash": "9c25e78f068bce73", "src": "db2@1.60.1.70291"}
+{"id": 442891, "field": "description", "en": "Skill with Bows, Guns, Crossbows, and Thrown weapons increased by $s1.  This effect is not cumulative with racial bonuses or other ring runes.", "hash": "30ea1cb8a0b0284d", "src": "db2@1.60.1.70291"}
+{"id": 442892, "field": "name", "en": "Pole Weapon Specialization", "hash": "7dc7ed64c7a99386", "src": "db2@1.60.1.70291"}
+{"id": 442892, "field": "description", "en": "Skill with Staves and Polearms increased by $s1. This effect is not cumulative with racial bonuses or other ring runes.", "hash": "9764dec06de34fa2", "src": "db2@1.60.1.70291"}
+{"id": 442893, "field": "name", "en": "Spell Specialization", "hash": "86132601c2ad58d2", "src": "db2@1.60.1.70291"}
+{"id": 442893, "field": "description", "en": "Chance to hit with spells increased by $s1%. Not cumulative with other ring runes.", "hash": "9b8102c2365a1c4e", "src": "db2@1.60.1.70291"}
+{"id": 442894, "field": "name", "en": "Spell Specialization", "hash": "86132601c2ad58d2", "src": "db2@1.60.1.70291"}
+{"id": 442894, "field": "description", "en": "Chance to hit with spells increased by $s1%. Not cumulative with other ring runes.", "hash": "9b8102c2365a1c4e", "src": "db2@1.60.1.70291"}
+{"id": 442895, "field": "name", "en": "Spell Specialization", "hash": "86132601c2ad58d2", "src": "db2@1.60.1.70291"}
+{"id": 442895, "field": "description", "en": "Chance to hit with spells increased by $s1%. Not cumulative with other ring runes.", "hash": "9b8102c2365a1c4e", "src": "db2@1.60.1.70291"}
+{"id": 442896, "field": "name", "en": "Spell Specialization", "hash": "86132601c2ad58d2", "src": "db2@1.60.1.70291"}
+{"id": 442896, "field": "description", "en": "Chance to hit with spells increased by $s1%. Not cumulative with other ring runes.", "hash": "9b8102c2365a1c4e", "src": "db2@1.60.1.70291"}
+{"id": 442897, "field": "name", "en": "Spell Specialization", "hash": "86132601c2ad58d2", "src": "db2@1.60.1.70291"}
+{"id": 442897, "field": "description", "en": "Chance to hit with spells increased by $s1%. Not cumulative with other ring runes.", "hash": "9b8102c2365a1c4e", "src": "db2@1.60.1.70291"}
+{"id": 442898, "field": "name", "en": "Spell Specialization", "hash": "86132601c2ad58d2", "src": "db2@1.60.1.70291"}
+{"id": 442898, "field": "description", "en": "Chance to hit with spells increased by $s1%. Not cumulative with other ring runes.", "hash": "9b8102c2365a1c4e", "src": "db2@1.60.1.70291"}
+{"id": 442901, "field": "name", "en": "Shapeshifting Specialization", "hash": "44090bb860e56b43", "src": "db2@1.60.1.70291"}
+{"id": 442901, "field": "description", "en": "Chance to hit with melee attacks increased by $s2% and chance for enemies to dodge your melee attacks reduced by $s1% while in Bear Form, Cat Form, or Dire Bear Form. Not cumulative with other ring runes.", "hash": "aa91877b36543267", "src": "db2@1.60.1.70291"}
+{"id": 442945, "field": "name", "en": "Saved by the Light", "hash": "aeba242a7def3f4a", "src": "db2@1.60.1.70291"}
+{"id": 442946, "field": "name", "en": "Near Death", "hash": "e58e79b9de2ac6c0", "src": "db2@1.60.1.70291"}
+{"id": 442947, "field": "name", "en": "Feeling much better, thank you!", "hash": "953727ccaed7d1bf", "src": "db2@1.60.1.70291"}
+{"id": 442948, "field": "name", "en": "Blessing of Protection", "hash": "562a2b896dfaaf27", "src": "db2@1.60.1.70291"}
+{"id": 442948, "field": "description", "en": "A targeted party member is protected from all physical attacks for $d, but during that time they cannot attack or use physical abilities.  Players may only have one Blessing on them per Paladin at any one time.  Once protected, the target cannot be made invulnerable by Divine Shield, Divine Protection or Blessing of Protection again for $25771d.", "hash": "4d3043833ebe2293", "src": "db2@1.60.1.70291"}
+{"id": 442948, "field": "aura", "en": "Immune to physical attacks.  Cannot attack or use physical abilities.", "hash": "3445333b2579043a", "src": "db2@1.60.1.70291"}

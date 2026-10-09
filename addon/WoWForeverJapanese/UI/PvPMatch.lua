@@ -27,7 +27,9 @@
 --     restricted to the column words, and registered for its Lua-built tooltip (PVPHeaderMixin:OnEnter, :44–58).
 --     A stat column's name and tooltip are client-table text (C_PvP.GetMatchPVPStatColumns, :371–386):
 --     ADR-042 adds the PvpColumn family to the header set and PvpColumnTooltip (with PvpColumn, the tooltip's
---     title) to the tooltip set ("Flag Captures", "Number of times you have captured the flag"). Headers are pooled:
+--     title) to the tooltip set ("Flag Captures", "Number of times you have captured the flag"). The header set
+--     also holds the PvpStat family (PVPStat.Description_lang): it names stats the column-header table does not
+--     ("Towers Assaulted"), and which of the two tables a column name comes from is [unverified]. Headers are pooled:
 --     records are keyed by widget;
 --   tableBuilder:AddRow (tablebuilder.lua:323–342, called for every initialized row by ScrollUtil.RegisterTableBuilder,
 --     blizzard_sharedxml/shared/scroll/scrollutil.lua:1661–1665) → the honor-level cell's tooltip
@@ -127,7 +129,7 @@ function PvPMatch.onTable(tableBuilder)
       WFJ.HelpTooltip.register(header, WFJ.Labels.familiesWith(HEADER_TOOLTIP.only, "PvpColumn", "PvpColumnTooltip"))
       local text = header.text
       if type(text) == "table" then
-        n = n + WFJ.Labels.show(SURFACE, headerKey(text), text, nil, WFJ.Labels.familiesWith(HEADER.only, "PvpColumn"))
+        n = n + WFJ.Labels.show(SURFACE, headerKey(text), text, nil, WFJ.Labels.familiesWith(HEADER.only, "PvpColumn", "PvpStat"))
       end
     end
   end

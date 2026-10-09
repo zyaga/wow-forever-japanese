@@ -1,57 +1,57 @@
-{"id": 255007, "field": "name", "en": "Golem Isospring", "hash": "66ce56c1e0de436e", "src": "db2@1.60.1.70245"}
-{"id": 255010, "field": "name", "en": "Harvester Gyrostabilizer", "hash": "0e5f5b5760607854", "src": "db2@1.60.1.70245"}
-{"id": 255154, "field": "name", "en": "Ruined Gyrostabilizer", "hash": "73bcd36ab832426a", "src": "db2@1.60.1.70245"}
-{"id": 255155, "field": "name", "en": "Precessive Autocognition Assembly", "hash": "113c51598ad2b8bb", "src": "db2@1.60.1.70245"}
-{"id": 255403, "field": "name", "en": "Enhanced Necromancy Staff", "hash": "1b30ada773ebffe6", "src": "db2@1.60.1.70245"}
-{"id": 255403, "field": "description", "en": "Attempt to raise undead by hurling shadowy magic toward suspicious bones.", "hash": "f184c59499d289c8", "src": "db2@1.60.1.70245"}
-{"id": 255645, "field": "name", "en": "Swollen Venom Sac", "hash": "42775e90b950b52d", "src": "db2@1.60.1.70245"}
-{"id": 255656, "field": "name", "en": "Pylon Fragment", "hash": "c371f551748a8183", "src": "db2@1.60.1.70245"}
-{"id": 255656, "field": "description", "en": "A large fragment of an even larger crystal. Residual magic can be felt trickling between your fingers.", "hash": "ccc6e35c37e864a6", "src": "db2@1.60.1.70245"}
-{"id": 255657, "field": "name", "en": "Pylon Shard", "hash": "a80429b15472c21b", "src": "db2@1.60.1.70245"}
-{"id": 255657, "field": "description", "en": "A large fragment of an even larger crystal. Residual magic can be felt trickling between your fingers.", "hash": "ccc6e35c37e864a6", "src": "db2@1.60.1.70245"}
-{"id": 255658, "field": "name", "en": "Al'Aketh Windstone Charm", "hash": "769a24a67f126e80", "src": "db2@1.60.1.70245"}
-{"id": 255662, "field": "name", "en": "Mana Sieve", "hash": "99be59f23a4eb1cc", "src": "db2@1.60.1.70245"}
-{"id": 255662, "field": "description", "en": "While this is in your possession, you are able to safely interact with unstable mana found throughout Shen'dralas.", "hash": "d0cbbe353e3b8e8a", "src": "db2@1.60.1.70245"}
-{"id": 255663, "field": "name", "en": "Windstone", "hash": "64c88687e8f3a111", "src": "db2@1.60.1.70245"}
-{"id": 255663, "field": "description", "en": "Restores $s1 mana and $s2 health. This item cannot be used outside of Skywall.\nA small glowing stone empowered with the magical essence of Skywall. It is often used as both a currency and a source of magical energy on Zephras Isle.", "hash": "976e150fddc2f56e", "src": "db2@1.60.1.70245"}
-{"id": 255667, "field": "name", "en": "Coalesced Mana Crystal", "hash": "05b7aee63c13a00b", "src": "db2@1.60.1.70245"}
-{"id": 255715, "field": "name", "en": "Potent Anti-Venom", "hash": "fc337fac8d5d893b", "src": "db2@1.60.1.70245"}
-{"id": 255715, "field": "description", "en": "Target is cured of poisons up to level 45.", "hash": "82ffcc162584be5f", "src": "db2@1.60.1.70245"}
-{"id": 255716, "field": "name", "en": "Simple Poultice", "hash": "4b17938347abb59c", "src": "db2@1.60.1.70245"}
-{"id": 255716, "field": "description", "en": "Target is cured of diseases up to level 25. Not usable in combat.", "hash": "72b1a31e3b399eff", "src": "db2@1.60.1.70245"}
-{"id": 255717, "field": "name", "en": "Clever Poultice", "hash": "57c84fa829d81abf", "src": "db2@1.60.1.70245"}
-{"id": 255717, "field": "description", "en": "Target is cured of diseases up to level 35. Not usable in combat.", "hash": "b9943eeb14dec02b", "src": "db2@1.60.1.70245"}
-{"id": 255718, "field": "name", "en": "Superior Poultice", "hash": "94f90864e38ad776", "src": "db2@1.60.1.70245"}
-{"id": 255718, "field": "description", "en": "Target is cured of diseases up to level 45. Not usable in combat.", "hash": "0076dabdee83e146", "src": "db2@1.60.1.70245"}
-{"id": 255719, "field": "name", "en": "Powerful Poultice", "hash": "e28534384d450521", "src": "db2@1.60.1.70245"}
-{"id": 255719, "field": "description", "en": "Target is cured of diseases up to level 65. Not usable in combat.", "hash": "8e3c1257a1ce239e", "src": "db2@1.60.1.70245"}
-{"id": 255720, "field": "name", "en": "Woolen Tourniquet", "hash": "e884b528b465dcd9", "src": "db2@1.60.1.70245"}
-{"id": 255720, "field": "description", "en": "Target is cured of bleeds up to level 30. Not usable in combat.", "hash": "405b7fca53825340", "src": "db2@1.60.1.70245"}
-{"id": 255721, "field": "name", "en": "Leather Tourniquet", "hash": "02a8cd7059d66720", "src": "db2@1.60.1.70245"}
-{"id": 255721, "field": "description", "en": "Target is cured of bleeds up to level 45. Not usable in combat.", "hash": "35eae8df8a4bb14e", "src": "db2@1.60.1.70245"}
-{"id": 255722, "field": "name", "en": "Surgical Tourniquet", "hash": "5804762e9fe44836", "src": "db2@1.60.1.70245"}
-{"id": 255722, "field": "description", "en": "Target is cured of bleeds up to level 65. Not usable in combat.", "hash": "c3b020793d95f3a6", "src": "db2@1.60.1.70245"}
-{"id": 255723, "field": "name", "en": "Manual: Greater Healing Potion", "hash": "dd0bc68db30c8c73", "src": "db2@1.60.1.70245"}
-{"id": 255723, "field": "description", "en": "Teaches you how to make a Greater Healing Potion.", "hash": "d8c9118ae91effe8", "src": "db2@1.60.1.70245"}
-{"id": 255724, "field": "name", "en": "Manual: Clever Poultice", "hash": "e15fd0f412bca4a7", "src": "db2@1.60.1.70245"}
-{"id": 255724, "field": "description", "en": "Teaches you how to make a Clever Poultice.", "hash": "1f3c5952b204f0fd", "src": "db2@1.60.1.70245"}
-{"id": 255725, "field": "name", "en": "Manual: Superior Healing Potion", "hash": "94d859a2e79d6b31", "src": "db2@1.60.1.70245"}
-{"id": 255725, "field": "description", "en": "Teaches you how to make a Superior Healing Potion.", "hash": "3f37c07069bced94", "src": "db2@1.60.1.70245"}
-{"id": 255726, "field": "name", "en": "Manual: Leather Tourniquet", "hash": "0fbc219dafbf5929", "src": "db2@1.60.1.70245"}
-{"id": 255726, "field": "description", "en": "Teaches you how to make a Leather Tourniquet.", "hash": "eef4bce4549b7b6a", "src": "db2@1.60.1.70245"}
-{"id": 255727, "field": "name", "en": "Manual: Superior Poultice", "hash": "12242c3892971aa4", "src": "db2@1.60.1.70245"}
-{"id": 255727, "field": "description", "en": "Teaches you how to make a Superior Poultice.", "hash": "251a7135e3e9e2ff", "src": "db2@1.60.1.70245"}
-{"id": 255728, "field": "name", "en": "Manual: Potent Anti-Venom", "hash": "795ea3803c69cc69", "src": "db2@1.60.1.70245"}
-{"id": 255728, "field": "description", "en": "Teaches you how to make a Potent Anti-Venom.", "hash": "f8057c11a99e45b9", "src": "db2@1.60.1.70245"}
-{"id": 255729, "field": "name", "en": "Manual: Major Healing Potion", "hash": "0136ddc2b91a4d4d", "src": "db2@1.60.1.70245"}
-{"id": 255729, "field": "description", "en": "Teaches you how to make a Major Healing Potion.", "hash": "7f29d9e0ee57a831", "src": "db2@1.60.1.70245"}
-{"id": 255730, "field": "name", "en": "Manual: Surgical Tourniquet", "hash": "08e8895856f0cf02", "src": "db2@1.60.1.70245"}
-{"id": 255730, "field": "description", "en": "Teaches you how to make a Surgical Tourniquet.", "hash": "0bd181b326a7ae22", "src": "db2@1.60.1.70245"}
-{"id": 255731, "field": "name", "en": "Manual: Powerful Poultice", "hash": "5fb0580cfc51483e", "src": "db2@1.60.1.70245"}
-{"id": 255731, "field": "description", "en": "Teaches you how to make a Powerful Poultice.", "hash": "d3d4df745c127d34", "src": "db2@1.60.1.70245"}
-{"id": 255875, "field": "name", "en": "Necromantic Garb", "hash": "797d3c03b760310e", "src": "db2@1.60.1.70245"}
-{"id": 255878, "field": "name", "en": "Tear of Theradras", "hash": "ea0f432d0d5c3a7a", "src": "db2@1.60.1.70245"}
-{"id": 255878, "field": "description", "en": "It hums with power. You feel emboldened in your journey while holding this.", "hash": "8f43d8687498662d", "src": "db2@1.60.1.70245"}
-{"id": 255941, "field": "name", "en": "Gelkis Necromantic Garb", "hash": "41faddb7d99b97fd", "src": "db2@1.60.1.70245"}
-{"id": 255945, "field": "name", "en": "Accursed Skull", "hash": "1eb023cb83a72fb1", "src": "db2@1.60.1.70245"}
-{"id": 255945, "field": "description", "en": "An evil presence can be felt within.", "hash": "2b3ec1f9d5b5e77c", "src": "db2@1.60.1.70245"}
+{"id": 255007, "field": "name", "en": "Golem Isospring", "hash": "66ce56c1e0de436e", "src": "db2@1.60.1.70291"}
+{"id": 255010, "field": "name", "en": "Harvester Gyrostabilizer", "hash": "0e5f5b5760607854", "src": "db2@1.60.1.70291"}
+{"id": 255154, "field": "name", "en": "Ruined Gyrostabilizer", "hash": "73bcd36ab832426a", "src": "db2@1.60.1.70291"}
+{"id": 255155, "field": "name", "en": "Precessive Autocognition Assembly", "hash": "113c51598ad2b8bb", "src": "db2@1.60.1.70291"}
+{"id": 255403, "field": "name", "en": "Enhanced Necromancy Staff", "hash": "1b30ada773ebffe6", "src": "db2@1.60.1.70291"}
+{"id": 255403, "field": "description", "en": "Attempt to raise undead by hurling shadowy magic toward suspicious bones.", "hash": "f184c59499d289c8", "src": "db2@1.60.1.70291"}
+{"id": 255645, "field": "name", "en": "Swollen Venom Sac", "hash": "42775e90b950b52d", "src": "db2@1.60.1.70291"}
+{"id": 255656, "field": "name", "en": "Pylon Fragment", "hash": "c371f551748a8183", "src": "db2@1.60.1.70291"}
+{"id": 255656, "field": "description", "en": "A large fragment of an even larger crystal. Residual magic can be felt trickling between your fingers.", "hash": "ccc6e35c37e864a6", "src": "db2@1.60.1.70291"}
+{"id": 255657, "field": "name", "en": "Pylon Shard", "hash": "a80429b15472c21b", "src": "db2@1.60.1.70291"}
+{"id": 255657, "field": "description", "en": "A large fragment of an even larger crystal. Residual magic can be felt trickling between your fingers.", "hash": "ccc6e35c37e864a6", "src": "db2@1.60.1.70291"}
+{"id": 255658, "field": "name", "en": "Al'Aketh Windstone Charm", "hash": "769a24a67f126e80", "src": "db2@1.60.1.70291"}
+{"id": 255662, "field": "name", "en": "Mana Sieve", "hash": "99be59f23a4eb1cc", "src": "db2@1.60.1.70291"}
+{"id": 255662, "field": "description", "en": "While this is in your possession, you are able to safely interact with unstable mana found throughout Shen'dralas.", "hash": "d0cbbe353e3b8e8a", "src": "db2@1.60.1.70291"}
+{"id": 255663, "field": "name", "en": "Windstone", "hash": "64c88687e8f3a111", "src": "db2@1.60.1.70291"}
+{"id": 255663, "field": "description", "en": "Restores $s1 mana and $s2 health. This item cannot be used outside of Skywall.\nA small glowing stone empowered with the magical essence of Skywall. It is often used as both a currency and a source of magical energy on Zephras Isle.", "hash": "976e150fddc2f56e", "src": "db2@1.60.1.70291"}
+{"id": 255667, "field": "name", "en": "Coalesced Mana Crystal", "hash": "05b7aee63c13a00b", "src": "db2@1.60.1.70291"}
+{"id": 255715, "field": "name", "en": "Potent Anti-Venom", "hash": "fc337fac8d5d893b", "src": "db2@1.60.1.70291"}
+{"id": 255715, "field": "description", "en": "Target is cured of poisons up to level 45.", "hash": "82ffcc162584be5f", "src": "db2@1.60.1.70291"}
+{"id": 255716, "field": "name", "en": "Simple Poultice", "hash": "4b17938347abb59c", "src": "db2@1.60.1.70291"}
+{"id": 255716, "field": "description", "en": "Target is cured of diseases up to level 25. Not usable in combat.", "hash": "72b1a31e3b399eff", "src": "db2@1.60.1.70291"}
+{"id": 255717, "field": "name", "en": "Clever Poultice", "hash": "57c84fa829d81abf", "src": "db2@1.60.1.70291"}
+{"id": 255717, "field": "description", "en": "Target is cured of diseases up to level 35. Not usable in combat.", "hash": "b9943eeb14dec02b", "src": "db2@1.60.1.70291"}
+{"id": 255718, "field": "name", "en": "Superior Poultice", "hash": "94f90864e38ad776", "src": "db2@1.60.1.70291"}
+{"id": 255718, "field": "description", "en": "Target is cured of diseases up to level 45. Not usable in combat.", "hash": "0076dabdee83e146", "src": "db2@1.60.1.70291"}
+{"id": 255719, "field": "name", "en": "Powerful Poultice", "hash": "e28534384d450521", "src": "db2@1.60.1.70291"}
+{"id": 255719, "field": "description", "en": "Target is cured of diseases up to level 65. Not usable in combat.", "hash": "8e3c1257a1ce239e", "src": "db2@1.60.1.70291"}
+{"id": 255720, "field": "name", "en": "Woolen Tourniquet", "hash": "e884b528b465dcd9", "src": "db2@1.60.1.70291"}
+{"id": 255720, "field": "description", "en": "Target is cured of bleeds up to level 30. Not usable in combat.", "hash": "405b7fca53825340", "src": "db2@1.60.1.70291"}
+{"id": 255721, "field": "name", "en": "Leather Tourniquet", "hash": "02a8cd7059d66720", "src": "db2@1.60.1.70291"}
+{"id": 255721, "field": "description", "en": "Target is cured of bleeds up to level 45. Not usable in combat.", "hash": "35eae8df8a4bb14e", "src": "db2@1.60.1.70291"}
+{"id": 255722, "field": "name", "en": "Surgical Tourniquet", "hash": "5804762e9fe44836", "src": "db2@1.60.1.70291"}
+{"id": 255722, "field": "description", "en": "Target is cured of bleeds up to level 65. Not usable in combat.", "hash": "c3b020793d95f3a6", "src": "db2@1.60.1.70291"}
+{"id": 255723, "field": "name", "en": "Manual: Greater Healing Potion", "hash": "dd0bc68db30c8c73", "src": "db2@1.60.1.70291"}
+{"id": 255723, "field": "description", "en": "Teaches you how to make a Greater Healing Potion.", "hash": "d8c9118ae91effe8", "src": "db2@1.60.1.70291"}
+{"id": 255724, "field": "name", "en": "Manual: Clever Poultice", "hash": "e15fd0f412bca4a7", "src": "db2@1.60.1.70291"}
+{"id": 255724, "field": "description", "en": "Teaches you how to make a Clever Poultice.", "hash": "1f3c5952b204f0fd", "src": "db2@1.60.1.70291"}
+{"id": 255725, "field": "name", "en": "Manual: Superior Healing Potion", "hash": "94d859a2e79d6b31", "src": "db2@1.60.1.70291"}
+{"id": 255725, "field": "description", "en": "Teaches you how to make a Superior Healing Potion.", "hash": "3f37c07069bced94", "src": "db2@1.60.1.70291"}
+{"id": 255726, "field": "name", "en": "Manual: Leather Tourniquet", "hash": "0fbc219dafbf5929", "src": "db2@1.60.1.70291"}
+{"id": 255726, "field": "description", "en": "Teaches you how to make a Leather Tourniquet.", "hash": "eef4bce4549b7b6a", "src": "db2@1.60.1.70291"}
+{"id": 255727, "field": "name", "en": "Manual: Superior Poultice", "hash": "12242c3892971aa4", "src": "db2@1.60.1.70291"}
+{"id": 255727, "field": "description", "en": "Teaches you how to make a Superior Poultice.", "hash": "251a7135e3e9e2ff", "src": "db2@1.60.1.70291"}
+{"id": 255728, "field": "name", "en": "Manual: Potent Anti-Venom", "hash": "795ea3803c69cc69", "src": "db2@1.60.1.70291"}
+{"id": 255728, "field": "description", "en": "Teaches you how to make a Potent Anti-Venom.", "hash": "f8057c11a99e45b9", "src": "db2@1.60.1.70291"}
+{"id": 255729, "field": "name", "en": "Manual: Major Healing Potion", "hash": "0136ddc2b91a4d4d", "src": "db2@1.60.1.70291"}
+{"id": 255729, "field": "description", "en": "Teaches you how to make a Major Healing Potion.", "hash": "7f29d9e0ee57a831", "src": "db2@1.60.1.70291"}
+{"id": 255730, "field": "name", "en": "Manual: Surgical Tourniquet", "hash": "08e8895856f0cf02", "src": "db2@1.60.1.70291"}
+{"id": 255730, "field": "description", "en": "Teaches you how to make a Surgical Tourniquet.", "hash": "0bd181b326a7ae22", "src": "db2@1.60.1.70291"}
+{"id": 255731, "field": "name", "en": "Manual: Powerful Poultice", "hash": "5fb0580cfc51483e", "src": "db2@1.60.1.70291"}
+{"id": 255731, "field": "description", "en": "Teaches you how to make a Powerful Poultice.", "hash": "d3d4df745c127d34", "src": "db2@1.60.1.70291"}
+{"id": 255875, "field": "name", "en": "Necromantic Garb", "hash": "797d3c03b760310e", "src": "db2@1.60.1.70291"}
+{"id": 255878, "field": "name", "en": "Tear of Theradras", "hash": "ea0f432d0d5c3a7a", "src": "db2@1.60.1.70291"}
+{"id": 255878, "field": "description", "en": "It hums with power. You feel emboldened in your journey while holding this.", "hash": "8f43d8687498662d", "src": "db2@1.60.1.70291"}
+{"id": 255941, "field": "name", "en": "Gelkis Necromantic Garb", "hash": "41faddb7d99b97fd", "src": "db2@1.60.1.70291"}
+{"id": 255945, "field": "name", "en": "Accursed Skull", "hash": "1eb023cb83a72fb1", "src": "db2@1.60.1.70291"}
+{"id": 255945, "field": "description", "en": "An evil presence can be felt within.", "hash": "2b3ec1f9d5b5e77c", "src": "db2@1.60.1.70291"}
