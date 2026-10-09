@@ -275,7 +275,9 @@ def test_every_table_can_take_its_hotfixes():
             assert t.text_only, name
             continue
         parent = any(c.source == client_tables.PARENT for c in t.columns)
-        assert len(t.record) == t.field_count + parent, name
+        assert len(t.record) == t.field_count + parent + t.record_extra, name
+        # a flattened array sits past every written column, so the field numbers before it still index `record`
+        assert all(int(c.source) < t.field_count - 1 for c in t.columns if t.record_extra and str(c.source).isdigit()), name
         assert all(ty == "str" for n, ty in enumerate(t.record) if n in t.string_fields), name
         assert set(t.record) <= {"str", *dbcache.TYPES}, name
         # a build's own record is the fields plus the relation of a table that writes one, except a
@@ -289,5 +291,5 @@ def test_every_table_can_take_its_hotfixes():
             assert not relationless or (name, alt.layout_hash) == ("ItemEffect", 0x4CA77678), (name, hex(alt.layout_hash))
             assert set(alt.record) <= {"str", *dbcache.TYPES}, (name, hex(alt.layout_hash))
     assert {n for n, t in client_tables.TABLES.items() if t.record} == {
-        "QuestV2", "ItemEffect", "ItemSubClass", "ItemXItemEffect"
+        "QuestV2", "ItemEffect", "ItemSubClass", "ItemXItemEffect", "CreatureDisplayInfo", "CreatureDisplayInfoExtra"
     }

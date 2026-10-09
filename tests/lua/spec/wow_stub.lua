@@ -347,6 +347,8 @@ function Stub.install(tocPath)
       tex.SetSize = function(t, w, h) t.size = { w, h } end
       tex.SetHeight = function(t, h) t.height = h end
       tex.SetTexture = function(t, path) t.texture = path end
+      tex.SetAtlas = function(t, atlas) t.atlas = atlas end
+      tex.SetAllPoints = function(t, rel) t.allPoints = rel or true end
       tex.ClearAllPoints = function(t) t.point = nil end
       tex.Show = function(t) t.shown = true end
       tex.Hide = function(t) t.shown = false end
@@ -367,6 +369,7 @@ function Stub.install(tocPath)
     function frame:keyDown(key) if self.scripts.OnKeyDown then self.scripts.OnKeyDown(self, key) end end
     function frame:mouseDown(button) if self.scripts.OnMouseDown then self.scripts.OnMouseDown(self, button) end end
     function frame:GetFrameLevel() return self.level or 1 end
+    function frame:SetAlpha(a) self.alpha = a end
     function frame:SetFrameLevel(l) self.level = l end
     function frame:SetChecked(v) self.checked = v and true or false end
     function frame:GetChecked() return self.checked end

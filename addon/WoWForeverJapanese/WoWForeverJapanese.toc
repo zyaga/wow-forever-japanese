@@ -1734,6 +1734,8 @@ Core\Glosses.lua
 Core\Align.lua
 Core\State.lua
 Core\Settings.lua
+Core\Voice.lua
+Core\VoiceQueue.lua
 Core\Modifier.lua
 Core\Placeholders.lua
 Core\Translator.lua
@@ -1753,6 +1755,13 @@ UI\Font.lua
 UI\ReadingPopup.lua
 UI\Readings.lua
 UI\Render.lua
+UI\VoicePlayer.lua
+UI\VoicePanelLooks.lua
+UI\VoicePanelHead.lua
+UI\VoicePanelText.lua
+UI\VoicePanel.lua
+UI\VoiceQuestLog.lua
+UI\VoiceErrors.lua
 UI\ButtonText.lua
 UI\Labels.lua
 UI\TextWatch.lua

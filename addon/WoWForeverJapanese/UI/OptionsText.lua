@@ -10,6 +10,8 @@ Text.T = {
   ["page.main"] = { en = "WoW Forever Japanese (日本語化)", ja = "WoW Forever Japanese (日本語化)" },
   ["page.collector"] = { en = "English Collector", ja = "英語テキスト収集" },
   ["page.about"] = { en = "About & Help", ja = "情報とヘルプ" },
+  ["page.voice"] = { en = "Voice", ja = "音声" },
+  ["page.voicePanel"] = { en = "Voice panel", ja = "音声パネル" },
   ["tagline"] = {
     en = "Japanese quest, NPC and tooltip text. Hold a key for the game's English.",
     ja = "クエスト・NPC・ツールチップを日本語で。キーを押している間は英語で表示します。",
@@ -18,6 +20,10 @@ Text.T = {
   ["section.translation"] = { en = "Translation", ja = "翻訳" },
   ["section.areas"] = { en = "What to translate", ja = "翻訳する範囲" },
   ["section.markers"] = { en = "Markers", ja = "マーカー" },
+  ["section.voice"] = { en = "Japanese voice", ja = "日本語の音声" },
+  ["section.voiceKinds"] = { en = "What to read aloud", ja = "読み上げる内容" },
+  ["section.voicePanel"] = { en = "Voice panel", ja = "音声パネル" },
+  ["section.voicePanelMore"] = { en = "Panel behaviour", ja = "パネルの動作" },
   ["section.collector"] = { en = "Collector", ja = "収集" },
   ["section.files"] = { en = "Sending it in", ja = "送り方" },
   ["section.help"] = { en = "How it works", ja = "使い方" },
@@ -189,6 +195,12 @@ Text.T = {
     en = "Point at a Japanese word in a quest or NPC window to see its reading.",
     ja = "クエストやNPCの画面で日本語の単語にカーソルを合わせると、読み方が表示されます。",
   },
+  -- the About page's voice line (UI/Options aboutVoice); %s: the packs that loaded, in the line's language
+  ["about.voice.none"] = {
+    en = "Japanese voice: not installed. Add \"WoW Forever Japanese Voice\" in the CurseForge app, or copy its page:",
+    ja = "日本語音声：未インストール。CurseForge アプリで「WoW Forever Japanese Voice」を追加するか、ページをコピー：",
+  },
+  ["about.voice.loaded"] = { en = "Japanese voice: %s", ja = "日本語音声：%s" },
   -- %s, %s: the two markers as they show (WFJ.MARKER.stale, .missing)
   ["about.markers"] = {
     en = "%s  the English changed after translation.\n%s  this line has no translation yet.",
@@ -300,6 +312,9 @@ Text.T = {
   ["reminder.later"] = { en = "Later", ja = "あとで" },
   ["reminder.stop"] = { en = "Don't remind me again", ja = "今後は知らせない" },
   ["minimap.sendEnglish"] = { en = "Send collected English (%s)", ja = "集めた英語を送る（%s）" },
+  ["minimap.version"] = { en = "Version %s", ja = "バージョン %s" },
+  ["minimap.collected"] = { en = "The collector has %s lines we need. Right-click to send them.",
+    ja = "収集した英語のうち%s行が翻訳に必要です。右クリックで送れます。" },
 }
 
 -- Slash reference on the About page (English: it is the literal grammar, like the chat output).

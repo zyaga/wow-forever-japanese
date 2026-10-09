@@ -1,0 +1,82 @@
+# How the voice ships (ADR-062; runbook docs/operations/voice.md, "Releasing the voice").
+#
+# The entry is the one thing a player clicks on CurseForge: a tiny addon with no audio whose file names every pack
+# below as a required dependency, so the CurseForge app installs all of them with it. Each pack is its own
+# CurseForge project and addon folder. `wfj voice pack` fills them from data/voice/audio.jsonl and the audio store.
+#
+# A quest line goes to the pack whose band holds the quest's level (the client's quest cache first, VMaNGOS second).
+# An NPC's talk goes with the lowest band of the quests that NPC starts or ends, else to the first band. The pack
+# with no band takes the rest: books and letters, the character's error lines, quests of no known level or above
+# the last band, and anything else without a level.
+#
+# A pack over cap_mb cannot be uploaded (the upload API sits behind Cloudflare, whose request limit is 500 MB), and
+# `wfj voice pack` refuses it. The fix is a new row, a new project and a new entry file, never a silent re-split.
+# project_id is 0 until the project exists on CurseForge; a release refuses to upload a pack that has none.
+
+cap_mb = 420
+warn_mb = 315
+# The main addon's CurseForge slug. The entry requires it, so installing the voice installs the addon too (in the
+# game every voice TOC already depends on it). The main addon never requires the voice.
+addon_slug = "wow-forever-japanese"
+
+[entry]
+folder = "WoWForeverJapanese_Voice"
+title = "WoW Forever Japanese Voice (日本語音声)"
+slug = "wow-forever-japanese-voice"
+project_id = 1732046
+holds = "No audio. Installs every voice pack below."
+
+[[pack]]
+folder = "WoWForeverJapanese_VoiceLevels1to10"
+title = "WoW Forever Japanese Voice: Levels 1-10"
+slug = "wow-forever-japanese-voice-levels-1-10"
+project_id = 1732050
+levels = [1, 10]
+holds = "Quests of levels 1 to 10, and the talk of their NPCs."
+
+[[pack]]
+folder = "WoWForeverJapanese_VoiceLevels11to20"
+title = "WoW Forever Japanese Voice: Levels 11-20"
+slug = "wow-forever-japanese-voice-levels-11-20"
+project_id = 1733398
+levels = [11, 20]
+holds = "Quests of levels 11 to 20, and the talk of their NPCs."
+
+[[pack]]
+folder = "WoWForeverJapanese_VoiceLevels21to30"
+title = "WoW Forever Japanese Voice: Levels 21-30"
+slug = "wow-forever-japanese-voice-levels-21-30"
+project_id = 1733400
+levels = [21, 30]
+holds = "Quests of levels 21 to 30, and the talk of their NPCs."
+
+[[pack]]
+folder = "WoWForeverJapanese_VoiceLevels31to40"
+title = "WoW Forever Japanese Voice: Levels 31-40"
+slug = "wow-forever-japanese-voice-levels-31-40"
+project_id = 1733402
+levels = [31, 40]
+holds = "Quests of levels 31 to 40, and the talk of their NPCs."
+
+[[pack]]
+folder = "WoWForeverJapanese_VoiceLevels41to50"
+title = "WoW Forever Japanese Voice: Levels 41-50"
+slug = "wow-forever-japanese-voice-levels-41-50"
+project_id = 1733404
+levels = [41, 50]
+holds = "Quests of levels 41 to 50, and the talk of their NPCs."
+
+[[pack]]
+folder = "WoWForeverJapanese_VoiceLevels51to60"
+title = "WoW Forever Japanese Voice: Levels 51-60"
+slug = "wow-forever-japanese-voice-levels-51-60"
+project_id = 1733406
+levels = [51, 60]
+holds = "Quests of levels 51 to 60, and the talk of their NPCs."
+
+[[pack]]
+folder = "WoWForeverJapanese_VoiceOther"
+title = "WoW Forever Japanese Voice: Other"
+slug = "wow-forever-japanese-voice-other"
+project_id = 1733407
+holds = "Books and letters, the character's own error lines, and quests with no known level."

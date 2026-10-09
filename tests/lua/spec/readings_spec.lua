@@ -416,6 +416,23 @@ describe("Readings", function()
       assert.is_nil(coverOf(t))
     end)
 
+    it("a caller's own words (rec.spans) are used as given: the voice panel's sentence of a longer line", function()
+      local page = "私は元気だ。"
+      local fs = spanFontString(page)
+      fs.parentFrame = CreateFrame("Frame")
+      local s, e = page:find("元気", 1, true)
+      local rec = { surface = "voicepanel", key = "text", fs = fs, applied = page,
+        meta = { kind = "gossip", id = "g1" }, spans = { { first = s, last = e, word = "元気", reading = "げんき" } } }
+      assert.is_true(V.attach(rec))
+      local cover = coverOf(fs)
+      assert.is_true(cover:IsShown())
+      assert.are.equal(1, #cover.spans)
+      assert.are.equal("元気", cover.spans[1].word) -- not the line's own lookup (私)
+      rec.spans = nil
+      assert.is_true(V.attach(rec)) -- without them: looked up in the text as before
+      assert.are.equal("私", cover.spans[1].word)
+    end)
+
     it("a cover on a widget the client rewrote behind Render does nothing on enter, and hides", function()
       local fs = questFs()
       R.show("questframe.detail", "description", fs, fs:GetText(), "quests", "quest.description", 456)

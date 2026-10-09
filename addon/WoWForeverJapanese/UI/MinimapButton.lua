@@ -81,14 +81,23 @@ end
 -- ── Tooltip ─────────────────────────────────────────────────────────────────
 
 local tip
+-- Name, version, the collector's count of lines that ship no Japanese yet (only when there are some, never their
+-- text, the same count as the menu's send entry), then how to use the button.
 function MinimapButton.showTooltip(owner)
   tip = tip or CreateFrame("GameTooltip", "WFJMinimapTooltip", C.resolve("UIParent"), "GameTooltipTemplate")
-  local text = tx("minimap.tip")
   tip:SetOwner(owner, "ANCHOR_LEFT")
   tip:SetText("WoW Forever Japanese", 1, 0.82, 0)
-  tip:AddLine(text, 1, 1, 1)
-  local line = C.resolve("WFJMinimapTooltipTextLeft2")
-  if line then W.setText(line, text, 12) end
+  local lines = { { tx("minimap.version"):format(tostring(WFJ.VERSION)), 0.6, 0.6, 0.6 } }
+  local ok, status = pcall(function() return WFJ.Collector.status() end)
+  if ok and type(status) == "table" and not status.readOnly and (status.unsent or 0) > 0 then
+    lines[#lines + 1] = { tx("minimap.collected"):format(status.unsent), 0.25, 1, 0.25 }
+  end
+  lines[#lines + 1] = { tx("minimap.tip"), 1, 1, 1 }
+  for i, l in ipairs(lines) do
+    tip:AddLine(l[1], l[2], l[3], l[4], true)
+    local fs = C.resolve("WFJMinimapTooltipTextLeft" .. (i + 1))
+    if fs then W.setText(fs, l[1], 12) end
+  end
   tip:Show()
   return tip
 end

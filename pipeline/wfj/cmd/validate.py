@@ -24,6 +24,8 @@ Rules, each a function returning problems:
      changed since it was written, or whose line no longer ships, is stale: reported with its ids, not a
      failure; it does not ship. Prints how many shipped quest / gossip / ui lines have a reading, the lines
      still owed one (a kanji or kana, no `|`) and the words without a meaning.
+  9. voice (ADR-061): data/voice/speakers.jsonl and voices.jsonl are well formed, carry provenance, hold no
+     duplicate key or creature, and every creature that speaks has a voice.
 `luac -p` over the generated files is `make luac` (part of `make validate`); the pipeline runs no Lua.
 """
 
@@ -37,8 +39,9 @@ from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
 
-from wfj.cmd import check, generate
-from wfj.core import decisions, glosses, markup, numbered, placeholders, readings, specifiers
+from wfj.cmd import check, generate, voice_make
+from wfj.cmd.voice import read_rows, voice_dir
+from wfj.core import casting, decisions, glosses, markup, numbered, placeholders, readings, specifiers, voice
 from wfj.core.model import ENGLISH_FIELDS, FIELDS, SCHEMA, ui_family, validate_line
 from wfj.core.normalize import normalize_for, normalize_v1
 from wfj.core.report import SHIPPED
@@ -522,7 +525,40 @@ def validate(
         store, english, ui_arg_kinds(addon_dir), ui_chat_families(addon_dir), ui_own(addon_dir)
     )
     problems += rule_objective(store)
+    problems += rule_voice(root)
     problems += rule_readings(store)
+    return problems
+
+
+def rule_voice(root: Path, config: Path | None = None) -> list[str]:
+    """data/voice/: the speakers and voice tables, the profiles, and the cast in step with voice.toml (a cast
+    row changed without `make voice-cast` would leave the record naming voices nobody would make). How much
+    audio is in step with the translation is printed, not returned: the CI test owns that gate."""
+    d = voice_dir(root)
+    speakers, voices = read_rows(d / "speakers.jsonl"), read_rows(d / "voices.jsonl")
+    problems = voice.speaker_problems(speakers, voices) + casting.problems(read_rows(d / "profiles.jsonl"))
+    cfg_path = config or root.parent / "pipeline" / "voice.toml"
+    if not cfg_path.is_file() or not voices:
+        return problems
+    try:
+        cfg = voice_make.load_config(cfg_path)
+    except ValueError as e:
+        return [*problems, f"voice: {e}"]
+    fresh = {r["creature"]: {k: r[k] for k in r if k not in ("creature", "provenance")}
+             for r in voice_make.cast_rows(root, cfg, "")}
+    have = {r["creature"]: {k: r[k] for k in r if k not in ("creature", "provenance")} for r in voices}
+    moved = sorted(c for c in fresh.keys() | have.keys() if fresh.get(c) != have.get(c))
+    if moved:
+        problems.append(f"voice voices: {len(moved)} creature(s) not cast as voice.toml casts them now "
+                        f"(e.g. {moved[:5]}); run make voice-cast")
+    lines = voice_make.shipped_lines(root)
+    cast = {r["creature"]: r for r in voices}
+    jobs = voice.jobs(speakers, cast, cfg["narrator"], cfg["book_narrator"], lines)
+    values = voice_make.line_values(root, lines)
+    state = voice.in_step(jobs, lines, cfg["roster"], voice_make.audio_record(root), values)
+    stale, missing = len(state["stale"]), len(state["missing"])
+    print(f"validate: voice: {len(jobs)} files; {len(jobs) - stale - missing} in step, {stale} stale,"
+          f" {missing} not made")
     return problems
 
 

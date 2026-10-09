@@ -1,0 +1,25 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>Voice casting</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"><style>
+body{font:15px/1.5 system-ui,sans-serif;margin:16px;background:#111;color:#eee;max-width:1100px}
+.row{border:1px solid #333;border-radius:8px;padding:10px 12px;margin:12px 0}
+h3{margin:0;font-size:17px} small{color:#999;font-weight:normal} .who{margin:4px 0;color:#ccc} .who i{color:#999}
+a{color:#7bf} .line{margin:6px 0 10px;font-size:16px} .en{color:#888;font-size:13px}
+.v{display:flex;align-items:center;gap:10px;margin:4px 0} audio{height:32px}
+.pick{border:1px solid #555;border-radius:12px;padding:2px 10px;cursor:pointer}
+.pick.on{background:#2b6;border-color:#2b6;color:#000} #saved{position:fixed;top:8px;right:12px;font-size:13px;color:#8c8}
+</style></head><body><div id="saved"></div><h1>Voice casting</h1>
+<p>One row per kind of speaker, biggest first. Each row shows who is speaking and one of their real lines, read by
+3 or 4 candidate voices. Click the name of the best voice (it turns green). If two are good, click both: creatures of
+that kind are then spread over them. A row you leave alone keeps its first voice. Every click is saved.</p>
+@@ROWS@@
+<script>
+let picks={};
+function save(){fetch('picks',{method:'POST',body:JSON.stringify(picks)}).then(r=>{
+ document.getElementById('saved').textContent=r.ok?'saved '+new Date().toLocaleTimeString():'NOT saved';});}
+function draw(){document.querySelectorAll('.row').forEach(r=>{const k=r.dataset.kind;
+ r.querySelectorAll('.v').forEach(v=>v.querySelector('.pick').classList.toggle('on',(picks[k]||[]).includes(v.dataset.id)));});}
+document.querySelectorAll('.row').forEach(r=>r.querySelectorAll('.v').forEach(v=>v.querySelector('.pick').onclick=()=>{
+ const k=r.dataset.kind,l=picks[k]||(picks[k]=[]),i=l.indexOf(v.dataset.id);
+ if(i<0)l.push(v.dataset.id);else l.splice(i,1); if(!l.length)delete picks[k]; draw(); save();}));
+fetch('picks.json').then(r=>r.ok?r.json():{}).catch(()=>({})).then(p=>{picks=p||{};draw();});
+</script></body></html>

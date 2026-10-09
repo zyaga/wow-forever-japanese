@@ -31,6 +31,7 @@ View.SURFACES = {
   ["questframe.detail"] = true, ["questframe.reward"] = true, ["questframe.progress"] = true,
   ["questframe.greeting"] = true, ["questmap.info"] = true, ["questmap.popup.info"] = true, gossip = true,
   itemtext = true,
+  voicepanel = true, -- the voice panel's text and its whole-text window (UI/VoicePanelText)
 }
 
 -- A label (a `ui` record, UI/Labels) takes readings on every surface EXCEPT these: HUD text, toasts, banners, the
@@ -322,7 +323,9 @@ function View.attach(rec)
     View.detach(rec)
     return false
   end
-  local listed = WFJ.Readings.lookup(rec.meta.kind, rec.meta.id, rec.applied)
+  -- rec.spans: words already located by the caller (the voice panel shows one sentence of a line whose word list is
+  -- written for the whole line, so it locates them in the whole line and passes the sentence's share)
+  local listed = rec.spans or WFJ.Readings.lookup(rec.meta.kind, rec.meta.id, rec.applied)
   -- a window label takes a cover only for its own word list; the class / race words are for prose
   if rec.meta.kind == "ui" and not (listed and listed[1]) then
     View.detach(rec)

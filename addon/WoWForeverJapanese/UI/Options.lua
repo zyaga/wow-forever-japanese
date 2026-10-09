@@ -38,9 +38,26 @@ Options.PAGES = {
     { title = "section.files", rows = { "collectorSteps", "collectorSend", "collectorPath" } },
   } },
   { id = "about", title = "page.about", header = true, sections = {
-    { title = "section.help", rows = { "aboutHold", "aboutReadings", "aboutMarkers", "aboutOpen" } },
+    { title = "section.help", rows = { "aboutHold", "aboutReadings", "aboutMarkers", "aboutOpen", "aboutVoice" } },
     { title = "section.slash", rows = { "slashHelp" } },
-    { rows = { "aboutFix", "aboutBug" } }, -- the fix window, then the bug and idea window
+    { columns = 2, rows = { "aboutFix", "aboutBug" } }, -- the fix window beside the bug and idea window
+  } },
+  -- Only when the voice pack has registered (Core/Voice): built with the others when the pack is already there, else
+  -- added by Options.addPage when it registers.
+  { id = "voice", title = "page.voice", requires = function() return WFJ.Voice ~= nil and WFJ.Voice.hasPack() end,
+    sections = {
+    { title = "section.voice", rows = { "voice.enabled", "voice.muteDialog", "voice.button" } },
+    { title = "section.voiceKinds", columns = 2,
+      rows = { "voice.offer", "voice.progress", "voice.turnin", "voice.greeting", "voice.books", "voice.errors" } },
+  } },
+  -- The voice panel's choices: a page of their own (a page does not scroll, and the Voice page is full).
+  { id = "voicepanel", title = "page.voicePanel",
+    requires = function() return WFJ.Voice ~= nil and WFJ.Voice.hasPack() end, sections = {
+    { title = "section.voicePanel",
+      rows = { "voice.panel.size", "voice.panel.style", "voice.panel.keep", "voice.panel.head" } },
+    { title = "section.voicePanelMore", -- one column: the labels are long, and two columns wrapped into each other
+      rows = { "voice.panel.hoverButtons", "voice.panel.fade", "voice.panel.combatDim",
+        "voice.panel.questLog", "voice.panel.lock" } },
   } },
 }
 
@@ -125,9 +142,27 @@ local function keyRow(page, d, x, y, width)
   return 48
 end
 
+-- A choice setting: its label, and a dropdown of its choices (English: the dropdown's font has no Japanese glyphs).
+local function choiceRow(page, d, x, y)
+  W.label(page, d.label, d.ja, x, y, 300)
+  local ctl = { id = d.id, kind = "choice" }
+  ctl.dropdown = W.dropdown(page, x + 310, y, 170, function(_, root)
+    for _, c in ipairs(d.choices) do
+      local text = d.choiceText and d.choiceText[c] or c
+      root:CreateRadio(text, function() return S.get(d.id) == c end, function()
+        S.set(d.id, c)
+        Options.refresh()
+      end, c)
+    end
+  end)
+  Options.controls[#Options.controls + 1] = ctl
+  return 40
+end
+
 local function settingRow(page, id, x, y, width)
   local d = assert(definition(id), "Options: no setting " .. id)
   if d.kind == "key" then return keyRow(page, d, x, y, width) end
+  if d.kind == "choice" then return choiceRow(page, d, x, y) end
   assert(d.kind == "boolean", "Options: no row for kind " .. d.kind)
   -- a marker row's label stops before the sample shown at x + 400
   local labelWidth = Options.SAMPLES[id] and math.min(width, 390) or width
@@ -298,6 +333,64 @@ function A.aboutBug(page, x, y, width)
   return h + 36
 end
 
+-- The Voice entry players install from CurseForge (pipeline/voice-packs.toml's entry slug).
+Options.VOICE_URL = "https://www.curseforge.com/wow/addons/wow-forever-japanese-voice"
+
+-- A pack folder as the About page names it: WoWForeverJapanese_VoiceLevels1to10 → "Levels 1-10" / "レベル1-10",
+-- …VoiceOther → "Other" / "その他". → en, ja, and the band's first level to sort by (nil for a pack with no band)
+function Options.voicePackName(folder)
+  local rest = folder:sub(#"WoWForeverJapanese_Voice" + 1)
+  local lo, hi = rest:match("^Levels(%d+)to(%d+)$")
+  if lo then return ("Levels %s-%s"):format(lo, hi), ("レベル%s-%s"):format(lo, hi), tonumber(lo) end
+  if rest == "Other" then return "Other", "その他" end
+  if rest == "" then return "Voice", "音声" end
+  return rest, rest
+end
+
+-- → the English and Japanese list of the voice packs that registered, bands in level order, the rest after; nil when
+-- none did
+local function voiceLoaded()
+  local packs = WFJ.Voice and WFJ.Voice.hasPack() and WFJ.Voice.packs()
+  if not packs then return nil end
+  local rows = {}
+  for folder in pairs(packs) do
+    local en, ja, lo = Options.voicePackName(folder)
+    rows[#rows + 1] = { en = en, ja = ja, lo = lo or math.huge, folder = folder }
+  end
+  if #rows == 0 then return nil end
+  table.sort(rows, function(a, b)
+    if a.lo ~= b.lo then return a.lo < b.lo end
+    return a.folder < b.folder
+  end)
+  local en, ja = {}, {}
+  for i, r in ipairs(rows) do en[i], ja[i] = r.en, r.ja end
+  return table.concat(en, ", "), table.concat(ja, "、")
+end
+
+-- The way to the voice: with no pack, "not installed" and the Voice entry's address to copy; with packs, which
+-- loaded. Filled on every refresh (a pack registers after the pages are built). No voice setting is shown here.
+function A.aboutVoice(page, x, y, width)
+  local l = W.label(page, "", "", x, y, width)
+  local box = W.copyBox(page, x, y - 32, width - 12, Options.VOICE_URL)
+  Options.copyBoxes = Options.copyBoxes or {}
+  Options.copyBoxes["about.voice"] = box
+  local function fill()
+    local en, ja = voiceLoaded()
+    if en then
+      local t = Text.T["about.voice.loaded"]
+      W.setPair(l, t.en:format(en), t.ja:format(ja))
+      box:Hide()
+    else
+      W.setPair(l, Text.get("about.voice.none"))
+      box:Show()
+    end
+  end
+  fill()
+  Options.refreshers[#Options.refreshers + 1] = fill
+  Options.aboutVoice = l
+  return 58
+end
+
 local function helpRow(key)
   return function(page, x, y, width)
     return W.labelHeight(W.label(page, Text.T[key].en, Text.T[key].ja, x, y, width), 24)
@@ -396,19 +489,40 @@ local function buildPage(spec)
   return page
 end
 
+local function pageName(spec)
+  return spec.id == "main" and Options.TITLE or Text.T[spec.title].en -- the category list has no Japanese font
+end
+
 -- Builds every page. → the ordered page list for Compat.registerOptions
 function Options.build()
   Options.controls, Options.captures, Options.refreshers, Options.pages = {}, {}, {}, {}
   local list = {}
   for _, spec in ipairs(Options.PAGES) do
-    local page = buildPage(spec)
-    Options.pages[spec.id] = page
-    local name = spec.id == "main" and Options.TITLE or Text.T[spec.title].en -- the category list has no Japanese font
-    list[#list + 1] = { id = spec.id, frame = page, name = name }
+    if not spec.requires or spec.requires() then
+      local page = buildPage(spec)
+      Options.pages[spec.id] = page
+      list[#list + 1] = { id = spec.id, frame = page, name = pageName(spec) }
+    end
   end
   Options.frame = Options.pages.main
   Options.refresh()
   return list
+end
+
+-- Builds one page that `requires` something which arrived after the others were registered (the voice pack), and adds
+-- it under the addon's category. A page already built, or still not required, is left alone. → true when added
+function Options.addPage(id)
+  if Options.pages[id] or not Options.frame then return false end
+  for _, spec in ipairs(Options.PAGES) do
+    if spec.id == id and (not spec.requires or spec.requires()) then
+      local page = buildPage(spec)
+      Options.pages[id] = page
+      WFJ.Compat.registerOptionsPage({ id = id, frame = page, name = pageName(spec) })
+      Options.refresh()
+      return true
+    end
+  end
+  return false
 end
 
 -- ── Refresh ─────────────────────────────────────────────────────────────────
@@ -452,7 +566,13 @@ end
 function Options.refresh()
   local combat = inCombat()
   for _, c in ipairs(Options.controls) do
-    if c.kind == "boolean" then c.widget:SetChecked(S.get(c.id) == true) else refreshKeyRow(c, combat) end
+    if c.kind == "boolean" then
+      c.widget:SetChecked(S.get(c.id) == true)
+    elseif c.kind == "choice" then
+      if c.dropdown.GenerateMenu then c.dropdown:GenerateMenu() end
+    else
+      refreshKeyRow(c, combat)
+    end
   end
   if Options.toggle then refreshToggle(Options.toggle, combat) end
   for _, fn in ipairs(Options.refreshers) do fn() end

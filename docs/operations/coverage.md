@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-07 at commit `afe7c94a`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-09 at commit `1b21deca`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -10,14 +10,14 @@
 | Surface | English lines | Ship Japanese | Nothing to translate | Done | Not yet |
 |---|---|---|---|---|---|
 | Quest text | 20,424 | 20,319 | 105 | 100.0% | 0 |
-| NPC dialogue (gossip, speech) | 10,953 | 10,953 | 0 | 100.0% | 0 |
+| NPC dialogue (gossip, speech) | 10,958 | 10,958 | 0 | 100.0% | 0 |
 | Book / letter pages | 1,257 | 1,205 | 52 | 100.0% | 0 |
 | Quest objective lines | 427 | 389 | 38 | 100.0% | 0 |
 | Exploration / event objectives | 223 | 221 | 2 | 100.0% | 0 |
 | Item descriptions | 10,172 | 8,646 | 0 | 85.0% | 1,526 |
 | Spell tooltips + auras | 25,458 | 25,271 | 0 | 99.3% | 187 |
 | Interface strings | 15,852 | 15,852 | 0 | 100.0% | 0 |
-| **All** | **84,766** | | | **98.0%** | **1,713** |
+| **All** | **84,771** | | | **98.0%** | **1,713** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
 professions, internal strings): quest 331, gossip 81, item 892, spell 300, ui 313.
@@ -358,10 +358,39 @@ Lines are non-empty values; a server cache counts the records this install holds
 
 | Type | Lines that can carry a word list | With one | Done | Stale | Words | With a meaning |
 |---|---|---|---|---|---|---|
-| quest | 18,997 | 18,997 | 100.0% | 180 | 302,684 | 100.0% |
-| gossip | 10,825 | 10,825 | 100.0% | 0 | 103,557 | 100.0% |
-| ui | 15,147 | 15,147 | 100.0% | 0 | 46,189 | 100.0% |
-| book | 1,167 | 1,167 | 100.0% | 0 | 39,571 | 100.0% |
+| quest | 18,997 | 18,997 | 100.0% | 180 | 303,246 | 100.0% |
+| gossip | 10,830 | 10,830 | 100.0% | 0 | 103,741 | 100.0% |
+| ui | 15,147 | 15,147 | 100.0% | 0 | 46,198 | 100.0% |
+| book | 1,167 | 1,167 | 100.0% | 0 | 39,619 | 100.0% |
 
 Item, spell, objective and area text take no word cards; HTML book pages
 and lines holding a `|` escape are not counted.
+
+## Voice
+
+Lines the voice reads, from `data/voice/` and the audio record `data/voice/audio.jsonl`.
+In step: the recorded file was made from the Japanese that ships now, in the speaker's cast
+voice. A line several differently cast speakers say has a file per voice, so files can
+outnumber lines.
+
+| Kind | Lines | Files | In step | Stale | Not made | Read by the narrator |
+|---|---|---|---|---|---|---|
+| Quest offer | 4,304 | 4,373 | 4,373 | 0 | 0 | 885 |
+| Quest progress | 2,917 | 2,940 | 2,940 | 0 | 0 | 85 |
+| Quest turn-in | 4,040 | 4,064 | 4,064 | 0 | 0 | 169 |
+| NPC talk (greetings, gossip, quest text keyed by its English) | 2,077 | 2,823 | 2,823 | 0 | 0 | 15 |
+| Book and letter pages | 1,102 | 1,102 | 1,102 | 0 | 0 | 1,039 |
+| The character's error lines (one file per race and sex) | 50 | 900 | 900 | 0 | 0 | 0 |
+
+Lines that play another line's file (a female wording of a gossip line, or a quest's text Forever repeats under another id): 1.
+
+### Silent lines
+
+Shipped Japanese the voice does not read, by reason.
+
+| Why | Lines |
+|---|---|
+| NPC speech in chat, or other NPC text no voiced window shows (from VMaNGOS) | 8,855 |
+| HTML book page (keeps the client's layout) | 38 |
+| Collected in game with no known speaker | 17 |
+| A quest log line (the completion text the tracker shows) | 8 |

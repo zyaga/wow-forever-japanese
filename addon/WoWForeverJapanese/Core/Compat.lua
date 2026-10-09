@@ -113,6 +113,22 @@ function Compat.registerOptions(pages)
   return Compat.optionsIds[pages[1].id] or parent
 end
 
+-- Adds one page under the category registered by registerOptions (a page that appears only once another addon has
+-- loaded). → its category, or nil when there is no category to add it to. That the Settings panel lists a subcategory
+-- added after RegisterAddOnCategory [unverified; the in-game check is in docs/testing/strategy.md].
+function Compat.registerOptionsPage(page)
+  local S = env("Settings")
+  local parent = Compat.optionsCategories and Compat.optionsCategories[Compat.optionsMain]
+  if parent == nil or type(S) ~= "table" or type(S.RegisterCanvasLayoutSubcategory) ~= "function"
+      or type(page) ~= "table" then
+    return nil
+  end
+  local sub = S.RegisterCanvasLayoutSubcategory(parent, page.frame, page.name)
+  Compat.optionsCategories[page.id] = sub
+  Compat.optionsIds[page.id] = (type(sub) == "table" and type(sub.GetID) == "function") and sub:GetID() or nil
+  return sub
+end
+
 -- Opens a registered page (default: the first). An unregistered page falls back to the first. → true | false
 function Compat.openOptions(page)
   local S = env("Settings")

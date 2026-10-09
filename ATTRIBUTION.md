@@ -140,6 +140,23 @@ cache, the Classic Era quest cache, wago.tools DB2 exports (`ItemSparse`, `Spell
   GPL-2.0: quest progress and completion text, gossip and book pages.
 - forever-vo (https://github.com/quinn-dougherty/forever-vo), under the MIT License (below): quest progress
   and turn-in text and NPC greetings that players of the Forever client recorded with its addon and sent in.
+  The same captures name the NPC who says each line: the voice over's speaker table
+  (`data/voice/speakers.jsonl`, rows with the source `forever-vo`) takes those speakers for lines the
+  VMaNGOS database has none for, and they decide the voice those lines are read in.
+  The voice over follows forever-vo in these parts, adapted from its addon (no file was copied whole):
+  - the voice panel's design, after forever-vo's talking-head panel and its "up next" list (the speaker's
+    head, name and title, the line's text, the lines waiting their turn, its place and size at the bottom of
+    the screen), and from `ForeverVO/UI/TalkingHead.lua`: loading the head from the unit on screen or else
+    the creature id and checking the model after a short wait, the talk animation and the model's framing
+    (`UI/VoicePanelHead.lua`), choosing the faction parchment art (`UI/VoicePanel.lua`), and the parchment
+    look's layout and title colour (`UI/VoicePanelLooks.lua`; its name and text colours are the client's own);
+  - keeping a line playing after its window closes, after forever-vo's option for it;
+  - from `ForeverVO/Core/Audio.lua`: turning the game's dialog sound off while a line plays and keeping that
+    fact in the saved variables, so a reload mid-line never leaves the player's NPC voices off
+    (`UI/VoicePlayer.lua`);
+  - from `ForeverVO/UI/QuestLog.lua`: the quest log's play button on the quest details' top bar, set up from
+    the hook on `QuestMapFrame_ShowQuestDetails` (`UI/VoiceQuestLog.lua`);
+  - the audio format of the voice packs (mono MP3, 22.05 kHz, 32 kbps), the one forever-vo ships.
 
 ## pfQuest license
 
@@ -182,6 +199,15 @@ cache, the Classic Era quest cache, wago.tools DB2 exports (`ItemSparse`, `Spell
 > EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
 > AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 > OR OTHER DEALINGS IN THE SOFTWARE.
+
+## Voice
+
+The Japanese voice (the separate `WoWForeverJapanese_Voice` addons) was made on the maintainer's own computer with
+the AivisSpeech Engine (https://aivis-project.com) and these voice models, used under their licences. The audio
+files are not part of this repository.
+
+- Aivis Common Model License 1.0: Lux, MarkN, TANAKA, fumifumi, hinakoyuhara, kokuren_3rd, kokuren_voice, morioki, かりん(現実20代女子AIボイチェン@リアボVC公式モデル), さつき(現実20代女子AIボイチェン@リアボVC公式モデル), すみれ(現実20代女子AIボイチェン@リアボVC公式モデル), にせ, はきみて れく(瞭魅推 れく), ほのか(~現実20代女子AIボイチェン~リアボVC公式モデル), まい, まお, みちのくあいり, もえ(現実20代女子AIボイチェン@リアボVC公式モデル), らせつん, るな, れな(現実20代女子AIボイチェン@リアボVC公式モデル), ろてじん（匿名インタビュー風）, ろてじん（長老ボイス）, わかな(現実20代女子AIボイチェン@リアボVC公式モデル), コハク, 中2, 凛音エル, 桜音, 澤原 玄二郎, 猩々博士 (雑談ボイス), 立神ケイ, 花音, 観測症, 阿井田 茂
+- CC0 1.0: すきやき馬太郎
 
 ## This project
 

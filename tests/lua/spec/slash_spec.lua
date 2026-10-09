@@ -77,6 +77,15 @@ describe("/wfj covers every setting", function()
     assert.are.equal("WFJ: errors: 0 recorded, 0 not sent (/wfj bug)", Stub.prints[#Stub.prints])
   end)
 
+  it("panel reset puts the voice panel back without saving anything new; other panel words get the help", function()
+    wfj("panel reset")
+    assert.are.equal("WFJ: voice panel: back at the bottom centre", Stub.prints[#Stub.prints])
+    assert.is_nil(WFJ_DB.voicePanel)
+    wfj("panel look 2")
+    assert.are.equal("WFJ: panel: /wfj panel reset puts the voice panel back at the bottom centre",
+      Stub.prints[#Stub.prints])
+  end)
+
   it("reads a setting when no value is given; rejects a bad value with the reason", function()
     wfj("modifier")
     assert.is_truthy(Stub.prints[#Stub.prints]:find("modifier = alt", 1, true))

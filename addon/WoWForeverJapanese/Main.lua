@@ -32,6 +32,22 @@ function WFJ_OnAddonCompartmentLeave()
   WFJ.MinimapButton.hideTooltip()
 end
 
+-- Global entry point for the voice pack (ADR-061): its Register.lua runs in its own addon's chunk and cannot see this
+-- namespace. The pack loads after this addon (it lists it as a dependency), so the settings pages may already be
+-- built: its page is added then.
+function WoWForeverJapanese_RegisterVoice(tbl)
+  local n, invalid = WFJ.Voice.register(tbl)
+  -- a pack loads after this addon: the character's error lines can only take over once it has registered
+  if WFJ.loaded and WFJ.VoiceErrors then pcall(WFJ.VoiceErrors.refresh) end
+  if WFJ.loaded and WFJ.Options and WFJ.Voice.hasPack() then
+    local ok, err = pcall(WFJ.Options.addPage, "voice")
+    if not ok then WFJ.initErrors[#WFJ.initErrors + 1] = { surface = "options.voice", err = tostring(err) } end
+    ok, err = pcall(WFJ.Options.addPage, "voicepanel")
+    if not ok then WFJ.initErrors[#WFJ.initErrors + 1] = { surface = "options.voicepanel", err = tostring(err) } end
+  end
+  return n, invalid
+end
+
 -- The one reader of the player's own name / class / race / sex, shared by Core/Placeholders (the corpus tokens)
 -- and Core/Collector (English normalization). Read at call time rather than cached at load. Each API
 -- is guarded: a client without one leaves that token literal and makes the collector refuse (no_player) instead of
@@ -248,6 +264,19 @@ function WFJ.OnLoad()
 
   step("uiindex", WFJ.BuildUIIndex)
   step("objectiveindex", WFJ.BuildObjectiveIndex)
+  -- voice over: the pack's lines are matched against the shipped Japanese (tokens unfilled) by its hash
+  step("voice", function() WFJ.Voice.init({
+    lookup = WFJ.Lookup.get,
+    hash = WFJ.Hash.key,
+    setting = WFJ.Settings.get,
+    revealed = WFJ.Modifier.isDown,
+    enabled = function() return WFJ.State.enabled end,
+  }) end)
+  step("voicequeue", function() WFJ.VoiceQueue.init(WFJ_DB) end)
+  step("voiceplayer", function() WFJ.VoicePlayer.init(WFJ_DB) end)
+  step("voicepanel", function() WFJ.VoicePanel.init() end)
+  step("voicequestlog", function() WFJ.VoiceQuestLog.init(WFJ_DB) end)
+  step("voiceerrors", function() WFJ.VoiceErrors.init(WFJ_DB) end)
   step("render", function() WFJ.Render.init(WFJ.Translator.new({
     enabled = function() return WFJ.State.enabled end,
     areaEnabled = WFJ.State.areaEnabled,
@@ -408,6 +437,7 @@ frame:SetScript("OnEvent", function(self, event, name, ...)
       self:RegisterEvent("PLAYER_ENTERING_WORLD")
       self:RegisterEvent("PLAYER_REGEN_DISABLED")
       self:RegisterEvent("PLAYER_REGEN_ENABLED")
+      self:RegisterEvent("PLAYER_LOGOUT")
       for _, blocked in ipairs(WFJ.Diag.BLOCK_EVENTS) do self:RegisterEvent(blocked) end
     else
       -- Guarded like the load sequence. These run the deferred setup for the talent frame, the trainer and the
@@ -427,6 +457,9 @@ frame:SetScript("OnEvent", function(self, event, name, ...)
   elseif event == "PLAYER_REGEN_ENABLED" then
     WFJ.RevealBinding.flush() -- a modifier change made in combat
     WFJ.Options.setCombat(false)
+  elseif event == "PLAYER_LOGOUT" then
+    WFJ.VoicePlayer.stop() -- the dialog channel is saved with the logout: put it back first
+    WFJ.VoiceErrors.restore() -- and the error speech
   elseif event == "MODIFIER_STATE_CHANGED" then
     WFJ.Modifier.refresh()
   elseif event == "PLAYER_ENTERING_WORLD" then

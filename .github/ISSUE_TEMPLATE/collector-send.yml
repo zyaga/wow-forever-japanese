@@ -18,8 +18,9 @@ body:
         and the addon version. It saves your class and race, because some game lines change depending on
         them. It holds **no character name, account, realm, location, chat
         or time data.** Wording that depends on your character's gender ("sir" / "madam") is kept as your game
-        shows it. A zipped saved file also holds the addon's settings and its problem log (`WFJ_Log`: times, Lua
-        memory, and the names of game functions and frames that failed). This issue is public.
+        shows it. A zipped saved file also holds the addon's settings, the names and titles of quest NPCs you met (for the
+        voice panel, with the voice installed) and its problem log (`WFJ_Log`: times, Lua memory, and the names of game
+        functions and frames that failed). This issue is public.
 
         ありがとうございます。このフォームはゲームから開きます。設定の「英語テキスト収集」ページで「英語を送る」をクリックするか
         `/wfj collector send` と入力し、ウィンドウの手順に従ってください。下の欄はリンクで入力されるか、ウィンドウの文字列を貼り付けます。
@@ -33,7 +34,7 @@ body:
         クラスと種族は保存されます。ゲームの文章の一部がそれによって変わるためです。
         **キャラクター名・アカウント・レルム・位置・チャット・時刻の情報は含まれません。**
         キャラクターの性別で変わる言い回し（"sir" / "madam"）はゲームの表示どおりに残ります。
-        zip にした保存ファイルには、アドオンの設定と問題ログ（`WFJ_Log`：時刻、Lua のメモリ量、失敗したゲームの関数やフレームの名前）も含まれます。
+        zip にした保存ファイルには、アドオンの設定、出会ったクエストNPCの名前と肩書き（音声パネル用、音声を入れている場合）、問題ログ（`WFJ_Log`：時刻、Lua のメモリ量、失敗したゲームの関数やフレームの名前）も含まれます。
         この Issue は公開されます。
   - type: textarea
     id: dump

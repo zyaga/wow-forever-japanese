@@ -3,6 +3,7 @@
 {"id": 251363, "field": "name", "en": "Dalia the Collector", "hash": "be85119e5c031549", "src": "collector@1.60.1.70205"}
 {"id": 251366, "field": "name", "en": "Aetheen of the Gales", "hash": "09ec0d2f0f22a887", "src": "collector@1.60.1.70205"}
 {"id": 251368, "field": "name", "en": "Elatrell Featherlight", "hash": "7e28f9700b3762e6", "src": "collector@1.60.1.70205"}
+{"id": 251371, "field": "name", "en": "Falorne Fallwind", "hash": "a96387125f9f0b6d", "src": "collector@1.60.1.70245"}
 {"id": 251376, "field": "name", "en": "Tai'ree Farsight", "hash": "b23776c70277e036", "src": "collector@1.60.1.70205"}
 {"id": 251487, "field": "name", "en": "Ventaari Brightwish", "hash": "55b612f86655d751", "src": "collector@1.60.1.70205"}
 {"id": 251523, "field": "name", "en": "Constable Aonda", "hash": "b014102f975ee5a5", "src": "collector@1.60.1.70205"}
@@ -10,5 +11,6 @@
 {"id": 251904, "field": "name", "en": "Sania Silverstream", "hash": "91b50ae4d60a2f88", "src": "collector@1.60.1.70205"}
 {"id": 251905, "field": "name", "en": "Zerril Softbreeze", "hash": "4a81503d3f768eba", "src": "collector@1.60.1.70205"}
 {"id": 251906, "field": "name", "en": "Teeri Wellwind", "hash": "51f6e168c0103b52", "src": "collector@1.60.1.70205"}
+{"id": 251964, "field": "name", "en": "Blademaster Ren", "hash": "659ede26755fe9e7", "src": "collector@1.60.1.70245"}
 {"id": 251991, "field": "name", "en": "Taleen Shimmerthread", "hash": "b87f3f0f017f9548", "src": "collector@1.60.1.70205"}
 {"id": 251993, "field": "name", "en": "Indari Sunseam", "hash": "4c207daa4af37d26", "src": "collector@1.60.1.70205"}

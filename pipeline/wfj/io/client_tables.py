@@ -64,6 +64,10 @@ class Table:
     # it: the hotfix decode reads every field at this size, and the sign of a number column comes from it.
     # Text-only tables leave it empty (their hotfixes are read as leading strings).
     record: tuple[str, ...] = ()
+    # the record entries an array field adds past one per field, when `record` flattens it
+    # (CreatureDisplayInfo's four TextureVariationFileDataIDs: 3). A flattened array is the last field read,
+    # so no written column after it shifts.
+    record_extra: int = 0
     # builds other than this table's own that the map has been verified on: `for_layout` picks one
     layouts: tuple[Layout, ...] = ()
     # a table only some builds ship. Its ABSENCE FROM THE ROOT is reported, not a failure: Classic
@@ -570,6 +574,46 @@ TABLES: dict[str, Table] = {
             (_c("ID", ID), _c("ItemEffectID", 0), _c("ItemID", PARENT)),
             record=("i32", "i32"),
             optional=True,  # Classic Era does the join inline and ships no such table
+        ),
+        # Who a speaking creature is, for voice casting (docs/systems/voice.md): a display's gender, and for a
+        # humanoid display its race and sex through ExtendedDisplayInfoID. Forever only, no Classic Era map.
+        # Every written column was matched to wago.tools' export of 1.60.1.70170, row for row (0 rows differ).
+        Table(
+            "CreatureDisplayInfo",
+            1108759,
+            0x7275F5F6,
+            28,
+            (_c("ID", ID), _c("ModelID", 1), _c("ExtendedDisplayInfoID", 7), _c("Gender", 21)),
+            # the record's fields in order, the TextureVariationFileDataID array (field 27) flattened to four:
+            # fitted to this build's own hotfix of display 4613 (90 bytes), which decodes to wago's row for
+            # it field for field. Floats are read as their bits (u32); none is written.
+            record=(
+                "i32", "u16", "u16", "i8", "u32", "u8", "u8", "i32", "u16", "u16", "i32", "i32", "u16", "u16",
+                "i32", "i32", "u32", "u32", "i8", "i32", "i32", "i8", "i32", "i8", "u16", "u32", "u16",
+                "i32", "i32", "i32", "i32",
+            ),
+            record_extra=3,
+        ),
+        Table(
+            "CreatureDisplayInfoExtra",
+            1264997,
+            0x4D9FE25C,
+            7,
+            (_c("ID", ID), _c("DisplayRaceID", 1), _c("DisplaySexID", 2)),
+            # the record's fields: the inline id, the race, the sex, the class, the flags and two bake
+            # material ids. [unverified] for hotfix decoding: this build's hotfix cache holds no
+            # row of this table, so the sizes are WoWDBDefs' and none has been decoded.
+            record=("i32", "i8", "i8", "i8", "i8", "i32", "i32"),
+        ),
+        # Race names for the ids above (ClientFileString: "NightElf", "Tauren"). Fields 0-14 are strings: the
+        # client prefix, then the name forms and lore names, all unwritten.
+        _forever_text(
+            "ChrRaces",
+            1305311,
+            0x4F44C796,
+            51,
+            (_c("ID", ID), Column("ClientFileString", 1, text=True)),
+            frozenset({0, *range(2, 15)}),
         ),
         # the client-table text families (ADR-042). Every written column is the row id or a leading
         # string field, so each table is text-only and a hotfix is read as its leading strings (no `record`).

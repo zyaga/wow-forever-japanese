@@ -20,6 +20,12 @@ portrait giver text / name, portrait turn-in text / name, completion log. An obj
 per entry of its own inner list, then its description's length byte, a flag byte whose low 7 bits are zero,
 and the description.
 
+The fixed part also holds the quest's level (offset 8) and minimum level (offset 16) as signed 32-bit
+integers on the Forever layouts, verified against VMaNGOS on every Forever build's full cache (70124: 1,527
+levels and 1,534 minimum levels of the 1,536 shared quests agree; the rest are Forever's own edits). Classic
+Era keeps the level at 8 but not the minimum level at 16, and its levels are never read, so its layout pins
+neither.
+
 The text is Blizzard's raw template (`$B`, `$N`, `$G a : b;`); normalization and hashing belong to the
 importer.
 """
@@ -77,6 +83,8 @@ class Layout:
     post_list_count_at: int | None = None
     conditional_counts_at: tuple[int, ...] = ()
     objective_list_count_at: int | None = None
+    level_at: int | None = None
+    min_level_at: int | None = None
 
     @property
     def fixed_part(self) -> int:
@@ -118,6 +126,8 @@ LAYOUTS: tuple[Layout, ...] = (
         post_list_count_at=448,
         conditional_counts_at=(472, 476),
         objective_list_count_at=33,
+        level_at=8,
+        min_level_at=16,
     ),
     # 1.60.1.70009 and 1.60.1.70124 bumped only the build: dev/wdb_layout read every record of each full
     # scan with the 69913 offsets (70009: 2,231 of 2,231, 2,164 quests, 67 placeholders, 16 conditional
@@ -156,6 +166,8 @@ class WdbQuest:
     portrait_turnin_text: str = ""
     portrait_turnin_name: str = ""
     completion_log: str = ""
+    level: int | None = None  # None on a layout that does not pin it
+    min_level: int | None = None
 
 
 @dataclass
@@ -168,6 +180,10 @@ class WdbCache:
 
 def _u32(buf: bytes, at: int) -> int:
     return struct.unpack_from("<I", buf, at)[0]
+
+
+def _i32(buf: bytes, at: int | None) -> int | None:
+    return None if at is None else struct.unpack_from("<i", buf, at)[0]
 
 
 def _string_lengths(block: bytes, pad_bits: int) -> list[int]:
@@ -286,6 +302,7 @@ def decode_payload(qid: int, payload: bytes, lay: Layout) -> WdbQuest:
     return WdbQuest(
         qid, strings[0], strings[1], strings[2], strings[3], tuple(texts), tuple(conditional),
         strings[4], strings[5], strings[6], strings[7], strings[8],
+        _i32(payload, lay.level_at), _i32(payload, lay.min_level_at),
     )
 
 

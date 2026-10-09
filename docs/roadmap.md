@@ -24,6 +24,13 @@
   - **Quest turn-in and progress text Forever reworded.** Only the server sends it, at the NPC, so those quests show the stale marker until the text is seen in game and the collector dump is imported ([Collector](systems/collector.md)).
   - **Player reports** as they arrive.
 
+## Voice over (in progress)
+- **Goal:** quest and NPC talk, book and letter pages and the character's error lines read aloud in Japanese from the shipped Japanese, generated locally with AivisSpeech and shipped as separate voice addons ([ADR-061](adr/061-voice-over-from-a-separate-pack.md), [ADR-062](adr/062-voice-cast-per-speaker-in-step-with-the-text.md), [research](research/2026-10-04-japanese-voice-over.md)).
+- **Done:** every voiced line in the game, cast per kind of speaker by ear (16,199 files, 1.2 GB), in the Voice entry and seven packs named for what they hold; the audio in its own repository with every older take; a CI test that fails a pull request whose voiced lines lack their audio; one Release button for the addon and the packs that changed ([Voice over](systems/voice.md), [runbook](operations/voice.md)). Passed in game in two starting zones.
+- **Open:**
+  - **The voice panel:** a talking-head panel with the NPC's face, the line's Japanese and a queue, so a line can keep playing after its window closes. The voice is published together with it.
+  - **Not voiced:** quest objectives, audio per class or race (the player's name, class and race are spoken as 冒険者).
+
 ## Release
 - **Done:** one-action releases to CurseForge and GitHub ([Release](operations/release.md), [ADR-046](adr/046-one-action-release.md)); the CurseForge project exists and its id (1717928) is in the TOC.
 - **Open:** the rest of the one-time setup (the `CF_API_KEY` secret on the public repository, the `main` ruleset bypass), then the first alpha.

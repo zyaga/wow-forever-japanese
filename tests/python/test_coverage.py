@@ -2,6 +2,8 @@
 
 from pathlib import Path
 
+import pytest
+
 from wfj.dev import coverage
 
 
@@ -83,3 +85,43 @@ def test_a_spell_once_off_the_visible_list_ships_its_japanese(root: Path):
     shard = (root / "addon/WoWForeverJapanese/Data/Spell/Spell_1283.lua").read_text(encoding="utf-8")
     line = next(ln for ln in shard.splitlines() if "[1283391]" in ln)
     assert "キャンプファイア" in line
+
+
+def test_the_voice_section_counts_every_voiced_line(root: Path, tmp_path: Path):
+    committed = (root / "docs" / "operations" / "coverage.md").read_text(encoding="utf-8")
+    assert "## Voice" in committed and "### Silent lines" in committed
+    assert "| Quest offer |" in committed and "| Book and letter pages |" in committed
+    data, _ = _store(tmp_path)  # a store without the voice tables gets no voice section
+    assert coverage.measure(data)["voice"] == {}
+    assert coverage._render_voice({}) == []
+
+
+def test_silent_voice_lines_are_counted_by_reason_and_an_unknown_kind_does_not_crash():
+    assert coverage._voice_kind("123-description") == "description"
+    assert coverage._voice_kind("g-0123456789abcdef") == "g"
+    assert coverage._voice_kind("z-something-new") == "other"  # a key kind this page does not know yet
+    out = "\n".join(coverage._render_voice({
+        "kinds": {"other": {"lines": 1, "files": 1, "in_step": 1}}, "narrator": {}, "shared": 2,
+        "silent": {coverage.GOSSIP_SILENT["vmangos"]: 5, coverage.GOSSIP_SILENT["wdb"]: 3}}))
+    assert "| Other | 1 | 1 | 1 | 0 | 0 | 0 |" in out
+    assert f"| {coverage.GOSSIP_SILENT['vmangos']} | 5 |" in out and f"| {coverage.GOSSIP_SILENT['wdb']} | 3 |" in out
+    assert "another line's file" in out and ": 2." in out
+
+
+def test_a_line_sharing_a_stale_file_counts_as_shared_not_silent(monkeypatch):
+    """A female wording plays its male line's file: it is a shared line whether that file is in step or
+    stale, never a silent line with no speaker."""
+    from wfj.cmd import voice_make
+
+    root = Path(__file__).resolve().parents[2] / "data"
+    real = voice_make.aliases(root)
+    if not real:
+        pytest.skip("no aliased lines in the data")
+    before = coverage.voice_coverage(root)
+    rec = voice_make.audio_record(root)
+    sources = set(real.values())
+    stale = {k: ({**v, "fingerprint": "x"} if v["key"] in sources else v) for k, v in rec.items()}
+    monkeypatch.setattr(voice_make, "audio_record", lambda r: stale)
+    after = coverage.voice_coverage(root)
+    assert after["shared"] == before["shared"] and after["silent"] == before["silent"]
+    assert sum(c.get("stale", 0) for c in after["kinds"].values()) > 0

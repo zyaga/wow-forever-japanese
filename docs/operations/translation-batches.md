@@ -51,14 +51,14 @@ One batch goes from untranslated English to imported, checked, generated `machin
 5. **Import and rebuild** (repository root):
    ```sh
    make import-draft DRAFT=pipeline/batches/progress-sg11.quest.jsonl TYPE=quest NAME=progress-sg11 MODEL=<model id> DATE=<YYYY-MM-DD>
-   make check
    make generate
    make validate
    ```
-   `TYPE` is `quest`, `gossip`, `book`, `objective`, `area`, `item` or `spell`. The import refuses a name whose `-sg<N>` is not the style guide's current version, and refuses to run without a style guide. It prints `added · unchanged · replaced · appended`. Provenance becomes `{class: machine, model, source: draft-<name>@<date>, imported}`. Pass `CRITIC=<model id>` only when a second model actually reviewed the draft.
+   `make import-draft` runs `make check` and the voice step itself. `TYPE` is `quest`, `gossip`, `book`, `objective`, `area`, `item` or `spell`. The import refuses a name whose `-sg<N>` is not the style guide's current version, and refuses to run without a style guide. It prints `added · unchanged · replaced · appended`. Provenance becomes `{class: machine, model, source: draft-<name>@<date>, imported}`. Pass `CRITIC=<model id>` only when a second model actually reviewed the draft.
 6. **Import the readings**, when the batch wrote `words` ([Readings for a batch](#readings-for-a-batch)), then `make generate` and `make validate` again.
 7. **Coverage.** `make coverage` rewrites [Coverage](coverage.md); a test fails while the committed file is out of date.
-8. **Look in the game.** Copy the addon into the Forever client's `Interface/AddOns/WoWForeverJapanese/` and read the lines ([Testing strategy](../testing/strategy.md)).
+8. **Voice.** The import already remade the voice of the changed lines ([Voice for a batch](#voice-for-a-batch)); commit the audio record and the pin with the batch.
+9. **Look in the game.** Copy the addon into the Forever client's `Interface/AddOns/WoWForeverJapanese/` and read the lines ([Testing strategy](../testing/strategy.md)).
 9. **The pull request** states, under its Data table:
    - lines added / changed / removed by provenance class (`human` / `correction` / `machine`), and that no hand-written line was overwritten by machine output;
    - that the generated Lua was regenerated in the same PR, never hand-patched;
@@ -277,7 +277,7 @@ Every batch that adds or changes shipped quest, gossip, UI or plain-text book Ja
 2. **Expand** also writes `<name>.words.jsonl`, one `{type, id, field, ja_hash, words}` row per target.
 3. **Import the lines first** (`make import-draft`, `make check`, `make generate`): readings are pinned to the Japanese as it ships.
 4. **Import the readings.** `wfj readings import batches/<name>.words.jsonl --model <model id> --batch <name> --dry-run` lists every rejected row with its reason (for example `written for Japanese that has since changed; export it again`, or `written for a variant that does not ship`, when a hand-written line still wins). Fix the rows, then run it without `--dry-run`. A `correction` reading is never replaced.
-5. **Generate and validate.** `make validate` checks every reading, prints stale ones, the lines still owed one (`validate: readings: N <type> lines with words to annotate have none: …`) and, per type, the words without a meaning.
+5. **Generate and validate.** A word the line uses more than once needs no second entry: the import copies its entry to each further place. `make validate` fails on a reading that still misses a repeat (`wfj readings fill-repeats` fills them). It checks every reading, prints stale ones, the lines still owed one (`validate: readings: N <type> lines with words to annotate have none: …`) and, per type, the words without a meaning.
 
 **The meaning numbers file.** `make generate` gives each new meaning the next free number and appends it to `data/reading/meaning-numbers.tsv` (`generate: N meanings numbered for the first time`). Commit that file with the batch, beside the generated Lua. A meaning keeps its number, so a batch changes only the Reading files that use its words and the last Gloss file ([ADR-060](../adr/060-stable-meaning-numbers.md)). `make validate` fails when the file is missing or is not what `generate` would write; run `make generate`, never edit it by hand.
 
@@ -303,6 +303,10 @@ Two branches that both import readings conflict only in generated or reading fil
 1. Take `origin/main`'s side of those files.
 2. Re-run `wfj readings import` on this branch's `.words.jsonl` files. A row written for Japanese that has since changed, or for a variant that does not ship, is rejected: export that line again and write its words anew.
 3. `make generate`, then `make validate`. `generate` numbers this branch's new meanings after main's, so they take new numbers.
+
+## Voice for a batch
+
+Every batch that changes shipped Japanese the voice reads (quest offers, progress and turn-ins, greetings, gossip, plain-text book pages) also remakes that audio, the way it writes readings ([Voice over](voice.md), ADR-062). `make import-draft` ends with `make check` and `make voice-generate`: it makes exactly the files whose Japanese changed or that are missing, then, when it made any, commits and pushes them to the audio repository and writes the audio pin. Commit `data/voice/audio.jsonl` and `pipeline/voice-audio-commit.txt` with the batch. With nothing voiced in the batch (items, spells, interface text) the step makes nothing and needs neither the engine nor the audio store, and the pin stays as it is. With voiced lines it needs both: the AivisSpeech Engine running, and the audio store (`build/voice`, a checkout of the voice audio repository) on its `main` branch. Without the engine it stops and says how to start it; without the store it stops and says how to clone it. Then run `make voice-generate`. `test_audio_in_step` fails a pull request whose voiced lines have no audio, or audio made from other Japanese.
 
 ## Fix-report batches
 

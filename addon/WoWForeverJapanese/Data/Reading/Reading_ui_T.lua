@@ -8,7 +8,7 @@ WFJ.Data.add("reading", {
   ["ui:TAKE_ATTACHMENTS"] = { text = "添付物=てんぷぶつ=96733 受け取る=うけとる=55915" },
   ["ui:TALENTS"] = { text = "タレント=タレント=33502" },
   ["ui:TALENTS_INSPECT_FORMAT"] = { text = "タレント=タレント=33502" },
-  ["ui:TALENTS_INVOLUNTARILY_RESET"] = { text = "タレント=タレント=33501 ツリー=ツリー=33673 変更=へんこう=61659 により=により=23991 一部=いちぶ=36822 リセットされました=リセットされました=35358" },
+  ["ui:TALENTS_INVOLUNTARILY_RESET"] = { text = "タレント=タレント=33501 ツリー=ツリー=33673 変更=へんこう=61659 により=により=23991 一部=いちぶ=36822 タレント=タレント=33501 リセットされました=リセットされました=35358" },
   ["ui:TALENTS_INVOLUNTARILY_RESET_PET"] = { text = "ペット=ペット=34892 タレント=タレント=33502 リセットされました=リセットされました=35358" },
   ["ui:TALENTS_LINK_FORMAT"] = { text = "リンクされた=リンクされた=35402 タレント=タレント=33502" },
   ["ui:TALENT_ACTIVE_SPEC_STATUS"] = { text = "現在=げんざい=100776 有効な=ゆうこうな=88878 タレント=タレント=33502" },

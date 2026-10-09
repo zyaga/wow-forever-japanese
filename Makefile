@@ -15,7 +15,7 @@ VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
 
-.PHONY: letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
+.PHONY: voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
 
 help:
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | sed 's/:.*## /: /'
@@ -355,9 +355,10 @@ import-collector: ## add one collector dump to data/english/ (replaces stand-in 
 
 # A machine draft (ADR-014): DRAFT=<file.jsonl> TYPE=<type> NAME=<draft name> MODEL=<model id> [CRITIC=<id>] DATE=<YYYY-MM-DD>
 # [REVERIFY=1] (ui, quest, objective, item, spell): every named line records the current English, so a stale line is judged fresh.
-import-draft: ## merge machine-drafted text into data/ as `machine` variants (never edits hand-written text)
+import-draft: ## merge machine-drafted text into data/ as `machine` variants (never edits hand-written text), then check and remake the voice of changed lines
 	@test -n "$(DRAFT)" -a -n "$(TYPE)" -a -n "$(NAME)" -a -n "$(MODEL)" -a -n "$(DATE)" || { echo "usage: make import-draft DRAFT=<file> TYPE=<type> NAME=<name> MODEL=<id> [CRITIC=<id>] DATE=<YYYY-MM-DD> [REVERIFY=1]"; exit 2; }
 	cd pipeline && $(PY) -m wfj import draft $(TYPE) $(abspath $(DRAFT)) --model $(MODEL) $(if $(CRITIC),--critic $(CRITIC)) --date $(DATE) --name $(NAME) $(if $(REVERIFY),--reverify)
+	$(MAKE) -s check voice-generate
 
 check: ## assign statuses to every data/ line (pure rules); --report prints the yield
 	cd pipeline && $(PY) -m wfj check --report
@@ -376,10 +377,62 @@ report-intake: ## a player's fix report (GitHub issue ISSUE=N, or a saved body R
 	@test -n "$(ISSUE)" || { echo "usage: make report-intake ISSUE=<n> [REPORT=<saved issue body>] [CREDIT=<name>] [FORCE=1]"; exit 2; }
 	cd pipeline && $(PY) -m wfj report intake $(if $(REPORT),--file $(abspath $(REPORT)) --number $(ISSUE),--issue $(ISSUE)) $(if $(CREDIT),--credit "$(CREDIT)") $(if $(FORCE),--force)
 
-report-apply: ## batches/reports/issue-N/decisions.jsonl → data/ + readings + ATTRIBUTION.md + reply.md, then check / generate / validate / coverage
+report-apply: ## batches/reports/issue-N/decisions.jsonl → data/ + readings + ATTRIBUTION.md + reply.md, then check / generate / voice / validate / coverage
 	@test -n "$(ISSUE)" -a -n "$(MODEL)" || { echo "usage: make report-apply ISSUE=<n> MODEL=<id> [DATE=YYYY-MM-DD]"; exit 2; }
 	cd pipeline && $(PY) -m wfj report apply --issue $(ISSUE) --model $(MODEL) $(if $(DATE),--date $(DATE))
-	$(MAKE) -s check generate validate coverage
+	$(MAKE) -s check generate voice-generate validate coverage
+
+# Voice over (ADR-061; runbook docs/operations/voice.md). Generation needs the local AivisSpeech Engine running and
+# `lame`; the audio and the pack are build output under build/, never committed.
+voice-speakers: voice-levels ## data/voice/ speakers + voices for the voice scope, from the pinned VMaNGOS database and the collector's NPC ids
+	cd pipeline && $(PY) -m wfj voice speakers --vmangos $(VMANGOS_DB) --commit $(VMANGOS_SHA) \
+		--wdb "$(call client_dir,forever)/questcache.wdb" --forever-vo "$(FOREVER_VO)" --forever-vo-commit $(FOREVER_VO_SHA)
+
+voice-generate: ## the missing and changed voice files from the shipped Japanese, through the local engine, then voice-sync
+	cd pipeline && $(PY) -m wfj voice generate --scope all --players all --store "$(VOICE_STORE)" && $(PY) -m wfj voice store-sync --if-changed --store "$(VOICE_STORE)"
+
+# The audio store: a checkout of the voice audio repository (zyaga/wow-forever-japanese-voice), inside the main checkout.
+VOICE_STORE ?= $(REPO_ROOT)/build/voice
+# Each quest's level, for the packs' level bands (pipeline/voice-packs.toml): Forever's pinned quest cache, then VMaNGOS.
+VOICE_LEVELS = --wdb "$(call client_dir,forever)/questcache.wdb" --vmangos "$(VMANGOS_DB)"
+
+voice-levels: ## pipeline/voice_quest_levels.txt: each quest's level for the voice packs (rerun after a re-pull, with voice-speakers)
+	cd pipeline && $(PY) -m wfj voice levels $(VOICE_LEVELS)
+
+voice-sync: ## commit and push the audio store's new files, and pin that audio commit in pipeline/voice-audio-commit.txt
+	cd pipeline && $(PY) -m wfj voice store-sync --store "$(VOICE_STORE)"
+
+voice-pack: ## build/voice-pack/: the Voice entry and every voice pack from the audio record, with each pack's size and room under the cap
+	cd pipeline && $(PY) -m wfj voice pack --store "$(VOICE_STORE)"
+
+voice: voice-speakers voice-generate voice-pack ## speakers → generate → pack
+
+# The upload token is CF_API_KEY, else what $(VOICE_TOKEN_CMD) prints (a local, untracked setting). It is read for the
+# one run and never written anywhere. DRY=1 builds, checks the zips and prints what would go up. CF_ONLY=1 skips the
+# GitHub release (a rehearsal). ONLY=<folder>,… uploads just those (with CF_ONLY=1 only, so the GitHub release never
+# records a pack that was not uploaded); ENTRY_WITHOUT_PACKS=1 makes the entry require the
+# main addon alone (a new entry's first file, while its packs wait for approval).
+VOICE_RELEASE_FLAGS = $(if $(CF_ONLY),--curseforge-only) $(if $(ONLY),--only "$(ONLY)") $(if $(ENTRY_WITHOUT_PACKS),--entry-without-packs)
+voice-release: ## the voice packs whose audio changed to CurseForge and every zip to one GitHub release (DRY=1: nothing leaves the machine)
+	@if [ -n "$(DRY)" ]; then \
+		cd pipeline && $(PY) -m wfj voice release --dry-run $(VOICE_RELEASE_FLAGS) --store "$(VOICE_STORE)"; \
+	else \
+		key="$${CF_API_KEY:-$$($(or $(VOICE_TOKEN_CMD),true))}"; \
+		if [ -z "$$key" ]; then echo "voice-release: no upload token (CF_API_KEY or VOICE_TOKEN_CMD; docs/operations/voice.md)"; exit 1; fi; \
+		cd pipeline && CF_API_KEY="$$key" $(PY) -m wfj voice release $(VOICE_RELEASE_FLAGS) --store "$(VOICE_STORE)"; \
+	fi
+
+voice-run: ## the whole game's voice, in the background, the Mac kept awake; resumes where it stopped (make voice-status, make voice-stop)
+	@mkdir -p "$(VOICE_STORE)"
+	@if pgrep -f "wfj voice generate" >/dev/null; then echo "voice-run: a run is already going (make voice-status)"; exit 1; fi
+	cd pipeline && nohup caffeinate -i sh -c '$(PY) -m wfj voice generate --scope all --players all --store "$(VOICE_STORE)" && $(PY) -m wfj voice store-sync --if-changed --store "$(VOICE_STORE)"' > "$(VOICE_STORE)/run.log" 2>&1 &
+	@echo "voice-run: started; make voice-status shows progress, make voice-stop stops it"
+
+voice-status: ## how far the background voice run is, and the time left
+	@cd pipeline && $(PY) -m wfj voice status --store "$(VOICE_STORE)"
+
+voice-stop: ## stop the background voice run (make voice-run resumes it)
+	@pkill -f "wfj voice generate" && echo "voice-stop: stopped; make voice-run resumes" || echo "voice-stop: no run going"
 
 generate: ## data/ → addon Data/*.lua + the TOC's generated block (deterministic; validate diffs it)
 	cd pipeline && $(PY) -m wfj generate

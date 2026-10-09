@@ -84,6 +84,11 @@ of one), or `machine` (drafted by a model), plus who or what produced it and a h
 from. Machine text never replaces a human translation unless a ruling on that line says so, and `make validate`
 checks it. If you change data by hand, add a `correction` with your name as the translator.
 
+The Japanese voice is made from the shipped Japanese on the maintainer's computer, and a check fails while a voiced
+line's audio does not match its text. If your pull request changes a line the voice reads (a quest's offer,
+progress or turn-in, an NPC greeting, a book page), that check fails on it: that is expected. The maintainer
+remakes the audio on your branch before it merges.
+
 ## Pull requests
 
 - One topic per pull request, with a short title that says what changes.

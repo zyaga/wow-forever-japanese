@@ -16,6 +16,8 @@
 --                             fingerprint / ambiguous
 --   /wfj debug ui scan        English still showing on visible frames: "hook?" = the dictionary knows it, "key?" = not
 --   /wfj debug fonts          the refused-font retry: timer state, one pending widget, then a retry now
+--   (plain /wfj debug also prints the voice packs' counts: lines, matched, missing, stale, played, refused,
+--   and the lines of each pack)
 --   /wfj version              the addon, normalization and Lua versions
 --   /wfj bug                  the report window (a bug, with the addon's own Lua errors, or an idea)
 --   /wfj log [<n>]            the problem log's last n entries, then how many Lua errors it holds
@@ -25,6 +27,7 @@
 --                             clicks); send opens the send window (all: every line again)
 --   /wfj glosses [on|off]     readings.glosses · /wfj readings [on|off]  readings.enabled
 --   /wfj togglekey [<key>|none]   the toggle binding the settings page's Set key / Unbind row writes
+--   /wfj panel reset          the voice panel back at the bottom centre
 local _, WFJ = ...
 local Slash = {}
 WFJ.Slash = Slash
@@ -67,7 +70,7 @@ function Slash.status()
   say("translation %s · hold %s for English · modifier %s", fmt(WFJ.State.enabled),
     WFJ.Modifier.display(S.get("modifier")), WFJ.State.modifierHeld and "held" or "up")
   for _, d in ipairs(S.list()) do
-    if not d.hidden then print(("  %s = %s"):format(d.id, fmt(S.get(d.id)))) end
+    if not S.isHidden(d) then print(("  %s = %s"):format(d.id, fmt(S.get(d.id)))) end
   end
   print(("  togglekey = %s"):format(toggleText())) -- a binding, not a setting, but set on the same page
   print("  /wfj on|off|toggle · /wfj <setting> <value> · /wfj readings|glosses [on|off] · /wfj togglekey [<key>|none]"
@@ -293,6 +296,33 @@ function Slash.debug(sub, arg)
   local areas = {}
   for _, a in ipairs(WFJ.AREAS) do areas[#areas + 1] = a .. "=" .. fmt(WFJ.State.areaEnabled(a)) end
   say("enabled=%s held=%s %s", fmt(WFJ.State.enabled), fmt(WFJ.State.modifierHeld), table.concat(areas, " "))
+  -- the voice pack (ADR-061): lines registered, then since registration: voiced, no file, Japanese changed since the
+  -- file was made, and what the player could not play
+  local V, P = WFJ.Voice, WFJ.VoicePlayer
+  if V and V.hasPack() then
+    local c = V.counts
+    say("voice: %d lines (%d invalid) · matched %d · missing %d · stale %d · played %d · refused %d",
+      c.registered, c.invalid, c.matched, c.missing, c.stale, P and P.counts.played or 0, P and P.counts.refused or 0)
+    local list = {}
+    for folder, n in pairs(V.packs()) do list[#list + 1] = ("%s=%d"):format(folder, n) end
+    table.sort(list)
+    say("voice packs: %s", table.concat(list, " · "))
+    if WFJ.VoicePanel and WFJ.VoiceQueue then
+      local st = WFJ.VoicePlayer.state()
+      say("voice panel: look %d · %d waiting · playing %s · paused %s", WFJ.VoiceQueue.opt.look, #st.waiting,
+        st.item and st.playing and tostring(st.item.key) or "none", st.paused and "yes" or "no")
+    end
+    local E = WFJ.VoiceErrors
+    if E then
+      local ec, l = E.counts, E.last
+      say("voice errors: game asked %d · message known %d · played %d · repeats skipped %d · refused %d",
+        ec.calls, ec.shown, ec.played, ec.skipped, ec.refused)
+      say("voice errors, last: voice id %s · message %s · %s %s · %s", tostring(l.voiceID), tostring(l.message),
+        tostring(l.race), tostring(l.sex), tostring(l.why))
+    end
+  else
+    say("voice: no pack%s", V and V.counts.invalid > 0 and " (a pack registered an invalid table)" or "")
+  end
   local fails = {}
   for surface, f in pairs(WFJ.Render.fontFailureSurfaces) do fails[#fails + 1] = { surface = surface, f = f } end
   table.sort(fails, function(a, b)
@@ -465,6 +495,11 @@ function Slash.handle(msg)
     return say("readings %s", fmt(S.get("readings.enabled")))
   end
   if lower == "togglekey" then return Slash.togglekey(words[2], words[3]) end
+  if lower == "panel" and WFJ.VoicePanel then -- /wfj panel reset: the voice panel back at the bottom centre
+    local rest = {}
+    for i = 2, #words do rest[#rest + 1] = words[i] end
+    return WFJ.VoicePanel.command(rest, say)
+  end
   if lower == "log" then -- the diagnostics log (Core/Diag): the last N entries, 10 by default
     for _, line in ipairs(WFJ.Diag.lines(words[2])) do say("%s", line) end
     local errors = WFJ.ErrorLog.status()

@@ -170,3 +170,34 @@ def read_greetings(folder: Path, titles: Mapping[int, str]) -> list[Greeting]:
         for _, (text, origins, npcs) in sorted(by.items())
         if len(origins) >= MIN_ORIGINS
     ]
+
+
+# a capture event → the quest window it is: the offer is read by who gives the quest, progress and turn-in by
+# who takes it back
+SPEAKER_EVENTS = {"accept": "description", "progress": "progress", "complete": "completion"}
+
+
+def read_quest_speakers(folder: Path) -> dict[tuple[int, str], list[int | None]]:
+    """{(quest id, field): the creature ids the submissions name as the speaker of that window, one per
+    submission (None for an object: a shrine or a sign)}. The NPC is the client's own, read from the window's
+    unit, so a capture names who really said it on Forever, also for quests the open database lacks."""
+    out: dict[tuple[int, str], dict[str, int | None]] = {}
+    for path in sorted((folder / "captures").glob("*.json")):
+        doc = json.loads(path.read_text(encoding="utf-8"))
+        origin = str(doc.get("origin") or path.stem)
+        entries = doc.get("quests") or []
+        for e in entries.values() if isinstance(entries, dict) else entries:
+            if not isinstance(e, dict) or e.get("event") not in SPEAKER_EVENTS:
+                continue
+            qid = _qid(e)
+            if qid is None:
+                continue
+            npc = None if e.get("isObject") else e.get("npc")
+            try:
+                who = int(npc) if npc not in (None, "") else None
+            except (TypeError, ValueError):
+                continue
+            if who is None and not e.get("isObject"):
+                continue
+            out.setdefault((qid, SPEAKER_EVENTS[e["event"]]), {})[origin] = who
+    return {k: list(v.values()) for k, v in sorted(out.items())}

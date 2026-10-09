@@ -160,7 +160,7 @@ The check only reads the paste: whether it parses, and for each fix whether the 
 |---|---|---|---|
 | `wfj report check --body-file F` | (the workflow) | an issue body, `data/` | stdout: the markdown summary; exit 0 reads / 1 does not / 3 internal error |
 | `wfj report intake --issue N` (or `--file F --number N`) `[--credit NAME] [--force]` | `make report-intake ISSUE=N [REPORT=<saved body>] [CREDIT=…] [FORCE=1]` | the issue via `gh issue view N --json body,author`, `data/`, `data/english/` | the issue's working folder, `batches/reports/issue-N/` at the repository root (git ignores `batches/`): `report.txt` (canonical text), `meta.json` (`issue`, `credit`, `addon`, `client`), `triage.jsonl`, `skipped.jsonl`. Refuses an existing triage without `--force`. |
-| `wfj report apply --issue N --model M [--date D] [--by WHO] [--dry-run]` | `make report-apply ISSUE=N MODEL=M [DATE=…]` | `triage.jsonl`, `skipped.jsonl`, `decisions.jsonl`, `meta.json` | `data/` lines, `data/reading/` records, `ATTRIBUTION.md` Correctors, `reply.md`; then the Make target runs `check generate validate coverage` |
+| `wfj report apply --issue N --model M [--date D] [--by WHO] [--dry-run]` | `make report-apply ISSUE=N MODEL=M [DATE=…]` | `triage.jsonl`, `skipped.jsonl`, `decisions.jsonl`, `meta.json` | `data/` lines, `data/reading/` records, `ATTRIBUTION.md` Correctors, `reply.md`; then the Make target runs `check generate voice-generate validate coverage` |
 
 ### Resolving a fix
 

@@ -171,12 +171,12 @@ describe("the minimap button", function()
     b.scripts.OnEnter(b)
     local tip = _G.WFJMinimapTooltip
     assert.is_true(tip:IsShown())
-    assert.are.same({ "左クリック：翻訳を報告 ・ 右クリック：メニュー" }, tip.lines)
+    assert.are.same({ "バージョン " .. tostring(WFJ.VERSION), "左クリック：翻訳を報告 ・ 右クリック：メニュー" }, tip.lines)
     b.scripts.OnLeave(b)
     Stub.keys.alt = true
     WFJ.Modifier.refresh()
     b.scripts.OnEnter(b)
-    assert.are.same({ "Left-click: report a line · Right-click: menu" }, tip.lines)
+    assert.are.same({ "Version " .. tostring(WFJ.VERSION), "Left-click: report a line · Right-click: menu" }, tip.lines)
     Stub.keys.alt = false
     WFJ.Modifier.refresh()
     b.scripts.OnLeave(b)
@@ -233,6 +233,20 @@ describe("the minimap menu's send entry", function()
     WFJ.Settings.set("enabled", false)
     assert.are.equal("Send collected English (3)", WFJ.MinimapButton.items()[4].text)
     WFJ.Settings.set("enabled", true)
+  end)
+
+  it("the tooltip gives the collector's count between the version and the click help, only when there is one",
+    function()
+    C.load(nil, H.collectorDeps())
+    local b = _G.WFJMinimapButton
+    b.scripts.OnEnter(b)
+    local tip = _G.WFJMinimapTooltip
+    assert.are.equal(2, #tip.lines) -- nothing unsent: no count line
+    record(3)
+    b.scripts.OnEnter(b)
+    assert.are.same({ "バージョン " .. tostring(WFJ.VERSION), "収集した英語のうち3行が翻訳に必要です。右クリックで送れます。",
+      "左クリック：翻訳を報告 ・ 右クリック：メニュー" }, tip.lines)
+    b.scripts.OnLeave(b)
   end)
 
   it("a collector that cannot answer leaves the menu as it was", function()

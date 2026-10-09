@@ -645,6 +645,83 @@ The addon's own record of problems seen in game, kept in the `WFJ_Log` SavedVari
 _Avoid_: error log, debug log, diagnostics file, BugSack
 → [Diagnostics log](systems/diagnostics.md) · [ADR-057](adr/057-catching-the-addons-own-lua-errors.md)
 
+## Voice over
+
+**Voice pack**:
+One of the separate addons that hold the Japanese voice over audio, named for what it holds: `WoWForeverJapanese_VoiceLevels1to10` to `…Levels51to60` (the quests of a level band and their NPCs' talk) and `…VoiceOther` (book and letter pages, the character's error lines, quests with no known level). Each holds one MP3 per voiced line (and per [[Voice variant]]), and a `Register.lua` that hands the main addon a table of [[Pack key]] → file, [[Japanese hash]] and length. Every pack depends on the main addon; the main addon plays nothing and shows no voice setting without one. Built by `wfj voice pack`, never committed to this repository.
+_Avoid_: voice addon, sound pack, part, audio data (the main addon ships no audio)
+→ [Voice over](systems/voice.md) · [ADR-061](adr/061-voice-over-from-a-separate-pack.md) · [ADR-062](adr/062-voice-cast-per-speaker-in-step-with-the-text.md)
+
+**Voice entry**:
+The addon players install for the voice, "WoW Forever Japanese Voice" (`WoWForeverJapanese_Voice`): no audio of its own; on CurseForge its file requires the main addon and every [[Voice pack]], so the app installs them all from one click. Its list of required projects is the one place that says what the voice consists of.
+_Avoid_: voice pack (it holds none), installer, bundle
+→ [Voice over](systems/voice.md) · [Voice over runbook](operations/voice.md)
+
+**Pack key**:
+The name a voiced line goes by in a [[Voice pack]] and in `data/voice/`: `<quest id>-<field>` for a quest's offer (`description`), `progress` or turn-in (`completion`), `g-<gossip key>` for a greeting (and quest text keyed by its English), `b-<page key>` for a book or letter page. It is the audio file's name without `.mp3` (plus `_<voice id>` for a [[Voice variant]]), and keys the audio the same way the Japanese is keyed, never by position.
+_Avoid_: file index, line number
+→ [Voice over](systems/voice.md)
+
+**Japanese hash**:
+The hash of a line's shipped Japanese exactly as stored, tokens unfilled (`Hash.key`; `ja_hash` in the pipeline). A [[Voice pack]] entry carries the Japanese hash its audio was made from, and the addon plays the file only when it equals the hash of the Japanese it ships; otherwise the line stays silent. A [[Reading]] record pins itself to its Japanese the same way.
+_Avoid_: [[Source hash]] (that's the English side), audio hash
+→ [Voice over](systems/voice.md) · [Readings](systems/readings.md)
+
+**Speaker**:
+The creature that says a voiced line, by creature id: the quest's starter for its offer, its ender for progress and turn-in, the creature whose greeting it is for a gossip line. Recorded in `data/voice/speakers.jsonl` (with the others who say the line too); a creature id the [[Collector]] recorded wins over VMaNGOS. A speaker's voice comes from [[Casting]].
+_Avoid_: NPC (too broad), voice actor, quest giver (only one of the cases)
+→ [Voice over](systems/voice.md) · [Data model](architecture/data-model.md#voice-over-tables)
+
+**Speaker profile**:
+Who a speaking creature is, for casting: race (or creature family), gender (`male`, `female`, `none`, `mixed`), age band, archetype and role, each field with its provenance (the client's display tables, VMaNGOS, a machine casting pass, or the maintainer's ruling). `data/voice/profiles.jsonl`.
+_Avoid_: character sheet, NPC data
+→ [Data model](architecture/data-model.md#voice-over-tables)
+
+**Roster**:
+Every voice the addon may use: a voice model, its style and its engine settings (speed, pitch, intonation) and its licence, each with a voice id. `[roster.*]` in `pipeline/voice.toml`.
+_Avoid_: voice list, cast
+→ [Voice over runbook](operations/voice.md#configuration)
+
+**Casting**:
+Choosing each [[Speaker]]'s voice: the casting table (`[[cast]]` rows in `pipeline/voice.toml`) maps kinds of [[Speaker profile]] to ordered [[Roster]] voices, the pick within a row is stable per creature (so an NPC never changes voice and neighbours differ), and an override names a voice for one NPC. The result is `data/voice/voices.jsonl`.
+_Avoid_: voice assignment, mapping
+→ [Voice over](systems/voice.md) · [ADR-062](adr/062-voice-cast-per-speaker-in-step-with-the-text.md)
+
+**Voice variant**:
+A second file for a line that differently cast creatures say: `<pack key>_<voice id>.mp3`, same key and [[Japanese hash]]. The addon plays the file of the creature on screen, else the line's main voice.
+_Avoid_: alternate take, duplicate
+→ [Voice over](systems/voice.md)
+
+**Audio record**:
+`data/voice/audio.jsonl`: one row per made audio file, with the [[Japanese hash]] and voice it was made from. Committed; the CI test compares it with the shipped Japanese and the [[Casting]], so a voiced line with missing or stale audio fails the pull request.
+_Avoid_: manifest, audio index
+→ [Data model](architecture/data-model.md#voice-over-tables)
+
+**Audio pin**:
+`pipeline/voice-audio-commit.txt`: the commit of the voice audio repository (`zyaga/wow-forever-japanese-voice`) that goes with this repository's text. A voice run writes it; a release builds the [[Voice pack]]s from exactly that commit.
+_Avoid_: audio version, lock file
+→ [Voice over runbook](operations/voice.md)
+
+**Narrator**:
+The voice that reads a line no creature says: the offer of a quest an item or object starts, or a creature whose display has no gender. Book and letter pages have a book narrator of their own. Both are [[Roster]] voices chosen at the audition.
+_Avoid_: system voice, default voice
+→ [Voice over](systems/voice.md)
+
+**Voice panel**:
+The panel that shows a voiced line while it plays: the speaking NPC's head, their name and title as the client showed them, and the line's Japanese a sentence at a time in step with the audio, with word cards, plus pause, play again, whole text and close. With it on, a line outlives its window and the reveal key shows the line's English without stopping the voice. Panel size Off turns it off.
+_Avoid_: talking head (that is the client's own frame), subtitle box, player window
+→ [Voice over](systems/voice.md#the-voice-panel-uivoicepanellua) · [ADR-063](adr/063-the-voice-panel.md)
+
+**Waiting list**:
+The voiced lines that started while another plays and wait their turn (`Core/VoiceQueue`), shown above the [[Voice panel]] as "Up next (click to play)"; a click on a row plays that line now and drops the line it interrupts. There is no skip control and no count.
+_Avoid_: queue box, playlist, backlog
+→ [Voice over](systems/voice.md#the-voice-panel-uivoicepanellua)
+
+**Remembered speaker**:
+The quest NPC the addon saw show a quest line (creature id, sex, name, title), saved in `WFJ_DB.voiceSpeakers` each time the quest window shows it, and used when that line is played from the quest log. Kept on the player's machine, never shipped; not the [[Speaker]] table in `data/voice/`.
+_Avoid_: speaker table, cached NPC, quest giver record
+→ [Voice over](systems/voice.md) · [Data model](architecture/data-model.md)
+
 ## Client
 
 **Game type**:

@@ -40,8 +40,11 @@ read_globals = {
 globals = {
   "SlashCmdList", "WFJ_DB", "WFJ_Collector", "WFJ_Log", "SLASH_WFJ1", "SLASH_WFJ2", "BINDING_HEADER_WFJ", "BINDING_NAME_WFJ_TOGGLE",
   "WFJ_ToggleTranslation", "WFJ_RevealKey", "BINDING_NAME_WFJ_REVEAL",
+  -- the voice panel's key bindings
+  "WFJ_VoicePause", "WFJ_VoiceReplay", "BINDING_NAME_WFJ_VOICE_PAUSE", "BINDING_NAME_WFJ_VOICE_REPLAY",
   -- The TOC's AddonCompartmentFunc handlers (Blizzard's addon dropdown calls them by name)
   "WFJ_OnAddonCompartmentClick", "WFJ_OnAddonCompartmentEnter", "WFJ_OnAddonCompartmentLeave",
+  "WoWForeverJapanese_RegisterVoice", -- the voice pack calls it from its own chunk (ADR-061)
 }
 
 files["addon/WoWForeverJapanese/Data/"] = { ignore = { ".*" } }

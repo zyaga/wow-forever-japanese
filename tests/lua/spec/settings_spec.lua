@@ -4,14 +4,24 @@ local Stub = require("tests.lua.spec.wow_stub")
 local CORE = { "Core/Const.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua" }
 local IDS = { "enabled", "modifier", "area.quests", "area.gossip", "area.itemTooltips", "area.spellTooltips",
   "area.interface", "area.books", "marker.stale", "marker.missing", "readings.enabled", "readings.glosses",
-  "minimapButton" }
+  "minimapButton", "voice.enabled", "voice.offer", "voice.progress", "voice.turnin", "voice.greeting", "voice.books",
+  "voice.errors",
+  "voice.muteDialog", "voice.button", "voice.panel.size", "voice.panel.style", "voice.panel.keep", "voice.panel.head",
+  "voice.panel.hoverButtons", "voice.panel.fade", "voice.panel.combatDim", "voice.panel.questLog", "voice.panel.lock" }
 local DEFAULTS = { enabled = true, modifier = "alt", ["area.quests"] = true, ["area.gossip"] = true,
   ["area.itemTooltips"] = true, ["area.spellTooltips"] = true, ["area.interface"] = true, ["area.books"] = true,
   ["marker.stale"] = true,
   ["marker.missing"] = true, -- on by default
   ["readings.enabled"] = true, -- on by default
   ["readings.glosses"] = true, -- on by default
-  minimapButton = true } -- on by default
+  minimapButton = true, -- on by default
+  ["voice.enabled"] = true, ["voice.offer"] = true, ["voice.progress"] = true, ["voice.turnin"] = true,
+  ["voice.greeting"] = true, ["voice.books"] = true, ["voice.errors"] = true, ["voice.muteDialog"] = true,
+  ["voice.button"] = true, -- on, but listed only while a voice pack is installed
+  -- the voice panel: Full, Parchment, keep reading, head, controls on mouse-over, fade, dim in combat, quest log on
+  ["voice.panel.size"] = "full", ["voice.panel.style"] = "parchment", ["voice.panel.keep"] = true,
+  ["voice.panel.head"] = true, ["voice.panel.hoverButtons"] = true, ["voice.panel.fade"] = true,
+  ["voice.panel.combatDim"] = true, ["voice.panel.questLog"] = true, ["voice.panel.lock"] = false }
 
 describe("Settings registry", function()
   local WFJ, S
@@ -21,12 +31,13 @@ describe("Settings registry", function()
     S = WFJ.Settings
   end)
 
-  -- every setting has an Options row, so none is hidden
-  it("defines exactly these ids, in order; none is hidden", function()
+  -- every setting has an Options row, so none is hidden; the voice settings' row is on the page that exists only
+  -- while a voice pack is installed, so they are hidden exactly when it is not
+  it("defines exactly these ids, in order; only the voice settings may be hidden", function()
     local ids = {}
     for i, d in ipairs(S.list()) do
       ids[i] = d.id
-      assert.is_nil(d.hidden, d.id)
+      if d.id:find("^voice%.") then assert.is_function(d.hidden, d.id) else assert.is_nil(d.hidden, d.id) end
     end
     assert.are.same(IDS, ids)
   end)

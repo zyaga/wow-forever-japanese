@@ -800,7 +800,6 @@ WFJ.Data.add("gloss", {
   [49797] = "分かる\tわかる\tfound out",
   [49798] = "分かる\tわかる\tgain insight (know)",
   [49799] = "分かる\tわかる\tgathered (understood)",
-  [49800] = "分かる\tわかる\tget it",
   [49801] = "分かる\tわかる\tget it (understand)",
   [49802] = "分かる\tわかる\tget me? (understood?)",
   [49803] = "分かる\tわかる\tgives it away (can tell)",

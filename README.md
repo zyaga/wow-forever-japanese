@@ -7,6 +7,9 @@ and the game's interface. Hold **Alt** and the game's own English comes back; le
 is only the default: any key can be chosen. Names of people, places, creatures, items and spells stay in English
 everywhere.
 
+With the free voice download it also reads its Japanese aloud: over 14,000 quest texts, NPC lines and book pages,
+each NPC in a voice cast for who they are, with a panel that shows who is speaking and what they say.
+
 It is made for **World of Warcraft: Forever** only. It is not for WoW Classic or for the modern game.
 
 Website: [foreverjapanese.com](https://foreverjapanese.com)
@@ -20,7 +23,7 @@ Website: [foreverjapanese.com](https://foreverjapanese.com)
 | | In Japanese |
 |---|---|
 | Quests | 4,757 |
-| NPC dialogue lines | 10,953 |
+| NPC dialogue lines | 10,958 |
 | Book pages | 923 |
 | Letter pages | 209 |
 | Item tooltips | 9,159 |
@@ -54,6 +57,23 @@ At the character select screen, click **AddOns**, make sure **WoW Forever Japane
 
 ![The AddOns list at character select with WoW Forever Japanese ticked](docs/images/addon-list.jpg)
 
+### Add the Japanese voice
+
+The voice is a separate, free download of about 1.1 GB, so installing the addon never pulls it in. It needs the
+addon: installing it from the CurseForge app brings the addon too, and the game never loads the voice without it.
+
+- **With the CurseForge app:** install the addon first, then search for **WoW Forever Japanese Voice** and click
+  **Install**. The app installs every voice pack with it and keeps them up to date. In the game, the packs show as
+  extra rows under the addon in the AddOns list; leave them ticked.
+- **By hand:** on the [releases page](https://github.com/zyaga/wow-forever-japanese/releases), open the latest
+  release whose name starts with **Voice**, download the zip whose name ends in `-all-` and a date, and unzip it into
+  the same `AddOns` folder. It holds `WoWForeverJapanese_Voice` and one folder per voice pack.
+
+The addon's **About & Help** page says whether the voice is installed and which packs loaded. One setting on its
+**Voice** page turns the voice off; removing the voice folders removes it, and the addon keeps working. The voices
+were made on the maintainer's own computer with the AivisSpeech Engine and the voice models listed in
+[`ATTRIBUTION.md`](ATTRIBUTION.md).
+
 ## Using it
 
 **Hold Alt to read the English.** Wherever Japanese is showing, holding Alt shows the game's own English until you
@@ -68,6 +88,18 @@ small popup shows how to read it, its dictionary form, and a short English meani
 
 ![The popup dictionary above a word in a quest text, showing its reading and meaning](docs/images/word-card.jpg)
 
+**Japanese voice.** With the voice installed ([see below](#add-the-japanese-voice)), quest offers, progress and
+turn-ins, NPC greetings and talk, and book and letter pages are read aloud in Japanese: over 14,000 lines. Each NPC
+speaks in a voice cast for their race or kind of creature, gender and age. Your character says its own error lines,
+such as being out of range, in Japanese too, in a voice for its race and sex.
+
+**Voice panel.** While a line plays, a panel at the bottom of the screen shows who is speaking: their face, their
+name and title, and the Japanese a sentence at a time, with the popup dictionary on every word. Close the window and
+the line keeps playing, so you can walk on while the NPC finishes. A line that starts meanwhile waits its turn in a
+list above the panel; click it to hear it now. Hold Alt and the panel shows the line's English while the voice goes
+on. Point at the panel for pause, play again, the whole text and close. The quest log has a play button too, for a
+quest you already took. The panel can be moved, shrunk to a small strip, switched to a dark style or turned off.
+
 **Markers.** A line with no translation yet shows **[未翻訳 / Not Translated]** and stays in the game's English. A
 line whose English has changed since it was translated shows **[要更新 / English Changed]**. Either marker can be
 turned off.
@@ -81,7 +113,8 @@ translates them.
 **Settings.** Open **Esc > Options > AddOns > WoW Forever Japanese**, or type `/wfj config`. You can turn the whole
 translation on or off, turn each area on or off (quests, NPC talk, tooltips, the interface, books), change the key
 you hold for English, set a key that switches translation on and off, and turn the markers, the popup dictionary and
-the minimap button on or off.
+the minimap button on or off. With the voice installed, the **Voice** page sets what is read aloud and how the voice
+panel looks.
 
 ![The addon's settings page](docs/images/settings.jpg)
 
@@ -186,6 +219,8 @@ and why: [docs](docs/overview.md). What changed in each release: [`CHANGELOG.md`
 
 World of Warcraft: Forever を日本語で遊べるようにするアドオンです。クエスト、NPC の会話、本、アイテムと呪文のツールチップ、ゲームのインターフェースを日本語で表示します。**Alt** キーを押している間はゲーム本来の英語が表示され、離すと日本語に戻ります。Alt は初期設定のキーで、好きなキーに変更できます。人物・地名・モンスター・アイテム・呪文の名前はすべて英語のままです。
 
+無料の音声を追加すると、日本語を読み上げることもできます。クエスト、NPC の会話、本のページなど 14,000 行以上を、NPC ごとに合わせて選んだ声で読み上げ、誰が何を話しているかをパネルに表示します。
+
 対応しているのは **World of Warcraft: Forever** のみです。WoW Classic や現行の World of Warcraft 用ではありません。
 
 ウェブサイト: [foreverjapanese.com](https://foreverjapanese.com)
@@ -197,7 +232,7 @@ World of Warcraft: Forever を日本語で遊べるようにするアドオン�
 | | 日本語化済み |
 |---|---|
 | クエスト | 4,757 |
-| NPC の会話 | 10,953 行 |
+| NPC の会話 | 10,958 行 |
 | 本 | 923 ページ |
 | 手紙 | 209 ページ |
 | アイテムのツールチップ | 9,159 |
@@ -227,6 +262,15 @@ World of Warcraft: Forever を日本語で遊べるようにするアドオン�
 
 ![キャラクター選択画面の AddOns 一覧で WoW Forever Japanese にチェックが入っている画面](docs/images/addon-list.jpg)
 
+#### 日本語音声を追加する
+
+音声は約 1.1 GB の無料の別ダウンロードで、アドオンをインストールしても音声は入りません。音声にはアドオンが必要です。CurseForge アプリで音声を入れるとアドオンも一緒に入り、ゲームもアドオンなしで音声を読み込むことはありません。
+
+- **CurseForge アプリで:** 先にアドオンを入れてから、**WoW Forever Japanese Voice** を検索して **Install** を押します。すべての音声パックが一緒に入り、更新もアプリが行います。ゲーム内の AddOns 一覧では、アドオンの下に音声パックの行が並びます。チェックは入れたままにしてください。
+- **手動で:** [リリースページ](https://github.com/zyaga/wow-forever-japanese/releases)で名前が **Voice** で始まる最新のリリースを開き、名前が `-all-` と日付で終わる zip をダウンロードして、同じ `AddOns` フォルダに展開します。中身は `WoWForeverJapanese_Voice` と音声パックごとのフォルダです。
+
+アドオンの **情報とヘルプ** ページに、音声が入っているか、どのパックが読み込まれたかが表示されます。**音声** ページの設定ひとつで音声をオフにできます。音声のフォルダを削除すれば音声はなくなり、アドオンはそのまま動きます。音声は、メンテナーのコンピューター上で AivisSpeech Engine と [`ATTRIBUTION.md`](ATTRIBUTION.md) に記載した音声モデルを使って作りました。
+
 ### 使い方
 
 **Alt で英語を表示。** 日本語が表示されているところでは、Alt を押している間だけゲームの英語が表示されます。Alt は初期設定です。Ctrl、Shift、左右どちらかの修飾キー、文字キー、マウスボタンなど、好きなキーに変更できます。
@@ -239,11 +283,15 @@ World of Warcraft: Forever を日本語で遊べるようにするアドオン�
 
 ![クエスト本文の単語の上に読み方と意味が表示されたポップアップ辞書](docs/images/word-card.jpg)
 
+**日本語音声。** 音声を入れると（[下記](#日本語音声を追加する)）、クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページを日本語で読み上げます。合わせて 14,000 行以上です。NPC はそれぞれ、種族やモンスターの種類・性別・年齢に合わせて選んだ声で話します。自分のキャラクターも、射程外などのエラーの一言を、種族と性別に合わせた声で日本語で話します。
+
+**音声パネル。** 読み上げ中は、画面下のパネルに話している NPC の顔、名前と肩書き、読み上げ中の日本語が 1 文ずつ表示されます。どの単語にもポップアップ辞書が使えます。ウィンドウを閉じても読み上げは続くので、NPC の話を聞きながら先へ進めます。その間に始まった行はパネルの上の一覧で順番を待ち、クリックするとすぐに再生できます。Alt を押している間は、声はそのままでパネルにその行の英語が表示されます。パネルにマウスを合わせると、一時停止・もう一度再生・全文表示・閉じるのボタンが出ます。クエストログにも再生ボタンがあり、受けたあとのクエストの文も聞けます。パネルは移動でき、小さな帯の表示、暗い背景、オフに切り替えられます。
+
 **マーカー。** まだ翻訳のない行は **[未翻訳 / Not Translated]** と表示され、英語のままになります。翻訳後に英語が変わった行には **[要更新 / English Changed]** が付きます。どちらも非表示にできます。
 
 **英語のまま残るテキスト。** NPC の会話、クエストの進行中や報告時の文章、チャットに出る NPC のセリフなど、一部の英語はゲームのファイルに入っておらず、プレイヤーが目にしたときにだけサーバーから届きます。まだ誰も記録していない行には日本語訳がないため、**[未翻訳 / Not Translated]** マーカー付きの英語のまま表示されます。アドオンはこうした行をプレイ中に記録します（下記）。誰かが送ってくれれば、以降の更新で翻訳されます。
 
-**設定。** **Esc > オプション > AddOns > WoW Forever Japanese**、または `/wfj config` で開きます。翻訳全体や項目ごとのオン・オフ、英語表示キーの変更、翻訳を切り替えるキーの設定、マーカー・ポップアップ辞書・ミニマップボタンの表示を切り替えられます。
+**設定。** **Esc > オプション > AddOns > WoW Forever Japanese**、または `/wfj config` で開きます。翻訳全体や項目ごとのオン・オフ、英語表示キーの変更、翻訳を切り替えるキーの設定、マーカー・ポップアップ辞書・ミニマップボタンの表示を切り替えられます。音声を入れている場合は、**音声** ページで読み上げる内容と音声パネルの見た目を設定できます。
 
 ![アドオンの設定画面](docs/images/settings.jpg)
 

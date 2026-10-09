@@ -61,6 +61,49 @@ describe("Settings pages from the registry and PAGES", function()
     assert.is_nil(WFJ.OptionsText.T["nav.main"]) -- and no copy left for them
   end)
 
+  it("the voice page exists only with a voice pack: built with the others, or added when the pack registers", function()
+    H.loadChunk("Core/Voice.lua", nil, WFJ)
+    assert.is_nil(O.pages.voice) -- no pack when the pages were built
+    WFJ.Compat.registerOptions(list)
+    assert.is_false(O.addPage("voice")) -- still no pack
+    WFJ.Voice.register({ format = 1, folder = "WoWForeverJapanese_Voice", lines = {} })
+    assert.is_true(O.addPage("voice"))
+    local last = Stub.settingsCalls[#Stub.settingsCalls]
+    assert.are.equal("RegisterCanvasLayoutSubcategory", last[1])
+    assert.are.equal(O.pages.voice, last[3])
+    assert.are.equal("Voice", last[4])
+    assert.is_truthy(control("voice.enabled"))
+    assert.is_truthy(control("voice.greeting"))
+    assert.is_truthy(control("voice.books"))
+    assert.is_false(O.addPage("voice")) -- once
+    assert.is_true(O.addPage("voicepanel"))
+    assert.are.equal("Voice panel", Stub.settingsCalls[#Stub.settingsCalls][4])
+    local again = O.build() -- a pack present at build time: the pages are built with the others, after About
+    assert.are.same({ "main", "collector", "about", "voice", "voicepanel" },
+      { again[1].id, again[2].id, again[3].id, again[4].id, again[5].id })
+  end)
+
+  it("the voice panel page: Panel size and Panel style as dropdowns, then its switches", function()
+    H.loadChunk("Core/Voice.lua", nil, WFJ)
+    WFJ.Voice.register({ format = 1, folder = "WoWForeverJapanese_Voice", lines = {} })
+    O.build()
+    local size, style = control("voice.panel.size"), control("voice.panel.style")
+    assert.are.equal("choice", size.kind)
+    local items = size.dropdown:menuItems()
+    assert.are.same({ "Off", "Full", "Compact strip" }, { items[1].text, items[2].text, items[3].text })
+    assert.is_true(items[2].isSelected()) -- Full by default
+    items[3].setSelected()
+    assert.are.equal("strip", S.get("voice.panel.size"))
+    local styles = style.dropdown:menuItems()
+    assert.are.same({ "Dark", "Parchment" }, { styles[1].text, styles[2].text })
+    assert.is_true(styles[2].isSelected()) -- Parchment by default
+    for _, id in ipairs({ "voice.panel.keep", "voice.panel.head", "voice.panel.hoverButtons", "voice.panel.fade",
+      "voice.panel.combatDim", "voice.panel.questLog", "voice.panel.lock" }) do
+      assert.are.equal("boolean", control(id).kind, id)
+    end
+    assert.is_nil(control("voice.panel.queueBox"))
+  end)
+
   it("our category starts expanded, so its sub-pages show in the list without a click", function()
     local expanded
     local real = _G.Settings.RegisterCanvasLayoutCategory
@@ -392,6 +435,34 @@ describe("Settings pages from the registry and PAGES", function()
     assert.are.equal(select(2, WFJ.OptionsText.get("button.reportBug")), O.reportBug.caption:GetText())
     O.reportBug.scripts.OnClick(O.reportBug, "LeftButton")
     assert.is_true(opened)
+  end)
+
+  it("the about page's voice line: not installed with the Voice entry's address, else the packs that loaded", function()
+    local about = O.pages.about
+    about:Show()
+    -- no pack (Core/Voice not even loaded): the line and the copyable address
+    assert.are.equal(WFJ.OptionsText.T["about.voice.none"].ja, O.aboutVoice.en:GetText())
+    local box = O.copyBoxes["about.voice"]
+    assert.are.equal("https://www.curseforge.com/wow/addons/wow-forever-japanese-voice", box:GetText())
+    assert.is_true(box:IsShown())
+    box:SetText("edited")
+    box.scripts.OnTextChanged(box, true)
+    assert.are.equal(O.VOICE_URL, box:GetText()) -- snaps back
+    H.loadChunk("Core/Voice.lua", nil, WFJ)
+    O.refresh()
+    assert.is_true(box:IsShown()) -- Voice loaded, still no pack
+    for _, folder in ipairs({ "WoWForeverJapanese_VoiceOther", "WoWForeverJapanese_VoiceLevels11to20",
+      "WoWForeverJapanese_VoiceLevels1to10" }) do
+      WFJ.Voice.register({ format = 2, folder = folder, lines = {} })
+    end
+    O.refresh()
+    assert.are.equal("日本語音声：レベル1-10、レベル11-20、その他", O.aboutVoice.en:GetText())
+    assert.are.equal("Japanese voice: Levels 1-10, Levels 11-20, Other", O.aboutVoice.pair[1])
+    assert.is_false(box:IsShown())
+    -- no voice setting on the About page: those stay on the voice page
+    for _, c in ipairs(O.controls) do assert.is_nil(c.id:match("^voice%."), c.id) end
+    assert.are.same({ "Levels 51-60", "レベル51-60", 51 }, { O.voicePackName("WoWForeverJapanese_VoiceLevels51to60") })
+    assert.are.same({ "Voice", "音声" }, { O.voicePackName("WoWForeverJapanese_Voice") })
   end)
 
   it("never takes keyboard input outside a capture: pages built hidden, no OnKeyDown until a capture starts", function()

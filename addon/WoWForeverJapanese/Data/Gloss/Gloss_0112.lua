@@ -194,7 +194,6 @@ WFJ.Data.add("gloss", {
   [112191] = "聞きつける\tききつける\theard of",
   [112192] = "聞きに来る\tききにくる\t(here) to hear",
   [112193] = "聞きに来る\tききにくる\tare here to inquire",
-  [112194] = "聞きに来る\tききにくる\tcame here for (came to hear)",
   [112195] = "聞きに行く\tききにいく\tsee (go ask)",
   [112196] = "聞き入る\tききいる\tlistened to (intently)",
   [112197] = "聞き入れる\tききいれる\t(they) would not listen (deaf ears)",

@@ -136,6 +136,60 @@ def word_problems(ja: str, words: Any) -> list[str]:
     return p
 
 
+def uncovered_repeats(ja: str, words: Any) -> list[str]:
+    """Each place a listed word stands again in `ja` with no card of its own. The addon places entries in
+    order, each at the next place its word stands (UI/Readings `locate`), so a word written once but used
+    twice gets one card and the second place none. A place inside another entry's span is covered by that
+    entry. → the words, once per uncovered place, in text order."""
+    if not isinstance(words, list):
+        return []
+    spans: list[tuple[int, int]] = []
+    cursor = 0
+    for entry in words:
+        if not (isinstance(entry, list) and entry and isinstance(entry[0], str) and entry[0]):
+            continue
+        at = ja.find(entry[0], cursor)
+        if at >= 0:
+            spans.append((at, at + len(entry[0])))
+            cursor = at + len(entry[0])
+    out: list[tuple[int, str]] = []
+    for word in {e[0] for e in words if isinstance(e, list) and e and isinstance(e[0], str) and e[0]}:
+        at = ja.find(word)
+        while at >= 0:
+            end = at + len(word)
+            if not any(s < end and at < e for s, e in spans):
+                out.append((at, word))
+            at = ja.find(word, at + 1)
+    return [w for _, w in sorted(out)]
+
+
+def fill_repeats(ja: str, words: list[list[str]]) -> list[list[str]]:
+    """`words` with a copy of a word's entry at every place the word stands again in `ja` with no card, so a
+    word used twice in a line gets its card both times (the same reading and meaning: it is the same word in
+    the same line). Entries stay in text order, the order the addon places them in. A place that would overlap
+    another card is left alone. → a new list; `words` itself is unchanged."""
+    placed: list[tuple[int, int, list[str]]] = []
+    cursor = 0
+    for entry in words:
+        at = ja.find(entry[0], cursor)
+        if at < 0:
+            return [list(w) for w in words]  # word_problems reports a word out of order; nothing to fill
+        placed.append((at, at + len(entry[0]), list(entry)))
+        cursor = at + len(entry[0])
+    first = {}
+    for _, _, entry in placed:
+        first.setdefault(entry[0], entry)
+    for word, entry in first.items():
+        at = ja.find(word)
+        while at >= 0:
+            end = at + len(word)
+            if not any(s < end and at < e for s, e, _ in placed):
+                placed.append((at, end, list(entry)))
+            at = ja.find(word, at + 1)
+    placed.sort(key=lambda p: (p[0], -p[1]))
+    return [entry for _, _, entry in placed]
+
+
 def meaning_problems(lemma: str, lemma_reading: str, meaning: str) -> list[str]:
     """A word's dictionary form, its reading and its meaning in the sentence."""
     p: list[str] = []
@@ -230,6 +284,10 @@ def check(
         if bad:
             problems += [f"{where}: {x}" for x in bad]
             continue
+        # a word the line uses again with no card of its own: the reading import fills these, so one here was
+        # written around the import
+        problems += [f"{where}: {w!r} stands again with no card (wfj readings fill-repeats)"
+                     for w in uncovered_repeats(ja, rec["words"])]
         current.append(rec)
     return {"problems": problems, "stale": stale, "current": current}
 

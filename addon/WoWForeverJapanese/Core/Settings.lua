@@ -39,6 +39,13 @@ function Settings.find(name)
   return nil
 end
 
+-- A definition's optional `hidden`: true, or a function asked each time (a setting that only exists while another
+-- addon is installed). Hidden settings stay readable and settable; they are only left out of lists.
+function Settings.isHidden(d)
+  if type(d.hidden) == "function" then return d.hidden() and true or false end
+  return d.hidden and true or false
+end
+
 function Settings.list()
   local out = {}
   for i, id in ipairs(order) do out[i] = defs[id] end
@@ -203,3 +210,55 @@ Settings.define{ id = "readings.glosses", kind = "boolean", default = true,
 Settings.define{ id = "minimapButton", kind = "boolean", default = true,
   label = "Show the minimap button (report a line)", ja = "ミニマップにボタンを表示（翻訳の報告）",
   apply = function(v) WFJ.State.fire("minimapButton", v) end }
+-- Voice over (ADR-061): shown only when the voice pack has registered (Core/Voice), so a player without the pack
+-- never sees a setting that does nothing. UI/VoicePlayer listens for the State event and stops a line switched off.
+local function voiceHidden() return not (WFJ.Voice and WFJ.Voice.hasPack()) end
+local function voiceChanged() WFJ.State.fire("voice") end
+Settings.define{ id = "voice.enabled", kind = "boolean", default = true, hidden = voiceHidden,
+  label = "Read lines aloud in Japanese", ja = "日本語で読み上げる", apply = voiceChanged }
+Settings.define{ id = "voice.offer", kind = "boolean", default = true, hidden = voiceHidden,
+  label = "Quest offers", ja = "クエストの依頼", apply = voiceChanged }
+Settings.define{ id = "voice.progress", kind = "boolean", default = true, hidden = voiceHidden,
+  label = "Quest progress", ja = "クエストの途中経過", apply = voiceChanged }
+Settings.define{ id = "voice.turnin", kind = "boolean", default = true, hidden = voiceHidden,
+  label = "Quest turn-ins", ja = "クエストの完了", apply = voiceChanged }
+Settings.define{ id = "voice.greeting", kind = "boolean", default = true, hidden = voiceHidden,
+  label = "NPC greetings", ja = "NPCのあいさつ", apply = voiceChanged }
+Settings.define{ id = "voice.books", kind = "boolean", default = true, hidden = voiceHidden,
+  label = "Books and letters", ja = "本と手紙", apply = voiceChanged }
+Settings.define{ id = "voice.errors", kind = "boolean", default = true, hidden = voiceHidden,
+  label = "Your character's error lines (\"out of range\")", ja = "自分のキャラクターのエラー音声（「遠すぎる」など）",
+  apply = voiceChanged }
+-- While a line plays the game's own English voice is turned off, and put back afterwards (UI/VoicePlayer).
+Settings.define{ id = "voice.muteDialog", kind = "boolean", default = true, hidden = voiceHidden,
+  label = "Silence the game's English voices while a line plays",
+  ja = "読み上げ中はゲームの英語音声を消す", apply = voiceChanged }
+-- The play / pause button on the quest, gossip and book windows and the quest log's details: shown while the voice
+-- panel is not on screen (the panel has its own controls).
+Settings.define{ id = "voice.button", kind = "boolean", default = true, hidden = voiceHidden,
+  label = "Show the play / pause button on the window when the voice panel is not showing",
+  ja = "音声パネルが出ていないとき、ウィンドウに再生／一時停止ボタンを表示", apply = voiceChanged }
+-- The voice panel (UI/VoicePanel). Core/VoiceQueue.opt reads these; a change redraws the panel (State "voicePanel")
+-- and never stops the line playing, except switching the panel off.
+local function panelChanged() WFJ.State.fire("voicePanel") end
+local function panelSetting(id, default, label, ja)
+  Settings.define{ id = id, kind = "boolean", default = default, hidden = voiceHidden, label = label, ja = ja,
+    apply = panelChanged }
+end
+-- Two dropdowns: the panel's size (off switches it off) and its style. `choiceText` is what each choice reads as.
+Settings.define{ id = "voice.panel.size", kind = "choice", choices = { "off", "full", "strip" }, default = "full",
+  hidden = voiceHidden, apply = panelChanged,
+  label = "Panel size", ja = "パネルの大きさ",
+  choiceText = { off = "Off", full = "Full", strip = "Compact strip" } }
+Settings.define{ id = "voice.panel.style", kind = "choice", choices = { "dark", "parchment" }, default = "parchment",
+  hidden = voiceHidden, apply = panelChanged, label = "Panel style", ja = "パネルのスタイル",
+  choiceText = { dark = "Dark", parchment = "Parchment" } }
+panelSetting("voice.panel.keep", true, "Keep reading after the window closes", "ウィンドウを閉じても読み上げを続ける")
+panelSetting("voice.panel.head", true, "Show the speaker's head", "話し手の顔を表示")
+panelSetting("voice.panel.hoverButtons", true, "Show the controls only while the mouse is on the panel",
+  "マウスを乗せたときだけ操作ボタンを表示")
+panelSetting("voice.panel.fade", true, "Fade out after the last line", "最後の文のあと消える")
+panelSetting("voice.panel.combatDim", true, "Dim the panel in combat", "戦闘中はパネルを薄くする")
+panelSetting("voice.panel.questLog", true, "The book button opens the quest in the quest log",
+  "本のボタンでクエストログを開く")
+panelSetting("voice.panel.lock", false, "Lock the panel where it is", "パネルの位置を固定")

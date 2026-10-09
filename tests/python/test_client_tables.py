@@ -73,6 +73,9 @@ HEADERS = {
     "TransmogSituation": ["ID", "Name_lang"],
     "TransmogSituationTrigger": ["ID", "Name_lang", "Description_lang"],
     "TransmogOutfitSlotOption": ["ID", "Name_lang"],
+    "CreatureDisplayInfo": ["ID", "ModelID", "ExtendedDisplayInfoID", "Gender"],
+    "CreatureDisplayInfoExtra": ["ID", "DisplayRaceID", "DisplaySexID"],
+    "ChrRaces": ["ID", "ClientFileString"],
 }
 
 

@@ -2,6 +2,7 @@
 {"id": "7c04671c3165b2ac", "field": "text", "en": "There.  I am finished with your robe, $n.", "hash": "7c04671c3165b2ac", "src": "vmangos@13b49dc"}
 {"id": "7c0cc604fd01a113", "field": "text", "en": "You were right, Fairbanks. That is tragic.", "hash": "7c0cc604fd01a113", "src": "vmangos@13b49dc"}
 {"id": "7c10c002093f0a77", "field": "text", "en": "Certainly, $g sir:miss;. We were once servants of the house Barov: What is now known as the Scholomance.$B$BI was the head maid and Lucien was Master Barov's butler.$B$BWe had worked for the Barovs for decades, until...$B$B<Eva weeps.>", "hash": "7c10c002093f0a77", "src": "vmangos@13b49dc"}
+{"id": "7c1b6ff4f915b6fc", "field": "text", "en": "What can you tell me about the status of the High Order?", "hash": "7c1b6ff4f915b6fc", "src": "collector@1.60.1.70245", "npcs": [251371]}
 {"id": "7c1b716564b26b20", "field": "text", "en": "Maywiki, I've lost my talisman and require a replacement.", "hash": "7c1b716564b26b20", "src": "vmangos@13b49dc"}
 {"id": "7c258328e4d48f8e", "field": "text", "en": "I will take you up on that offer, Eitrigg.", "hash": "7c258328e4d48f8e", "src": "vmangos@13b49dc"}
 {"id": "7c279e046295b09d", "field": "text", "en": "Well now, it would appear that we have some time on our hands. The Horde has completed its gathering tasks, and all is being prepared for final shipment to Silithus. We're only waiting on the Alliance to finish with theirs. You should go ask that silly, little ambassador of theirs how far along they are.", "hash": "7c279e046295b09d", "src": "vmangos@13b49dc"}

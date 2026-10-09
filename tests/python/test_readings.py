@@ -938,3 +938,34 @@ def test_a_reading_for_an_html_book_page_is_refused(data, tmp_path, capsys):
     assert _import(_batch(tmp_path, [_row(BOOK_WORDS, html, 13, "text", "book")])) == 0
     result = readings.check("book", Store(data / "reading").load("book"), {(13, "text"): html})
     assert result["current"] == [] and "an HTML book page takes no reading" in result["problems"][0]
+
+
+JOKE = "分かるか? 冗談だよ。わしのつまらん冗談を聞きに来たわけじゃない。"
+JOKE_CARD = ["冗談", "じょうだん", "冗談", "じょうだん", "joke"]
+
+
+def test_a_word_used_twice_with_one_entry_is_found_at_its_second_place():
+    words = [["分かる", "わかる", "分かる", "わかる", "get it"], JOKE_CARD, ["聞きに来た", "ききにきた", "聞きに来る", "ききにくる", "came to hear"]]
+    assert readings.uncovered_repeats(JOKE, words) == ["冗談"]
+
+
+def test_fill_repeats_copies_the_card_to_every_place_in_text_order():
+    words = [["分かる", "わかる", "分かる", "わかる", "get it"], JOKE_CARD, ["聞きに来た", "ききにきた", "聞きに来る", "ききにくる", "came to hear"]]
+    filled = readings.fill_repeats(JOKE, words)
+    assert [w[0] for w in filled] == ["分かる", "冗談", "冗談", "聞きに来た"]
+    assert filled[2] == JOKE_CARD
+    assert readings.uncovered_repeats(JOKE, filled) == [] and readings.word_problems(JOKE, filled) == []
+    assert words[1] == JOKE_CARD and len(words) == 3  # the input list is not changed
+
+
+def test_a_repeat_inside_another_card_needs_no_card_of_its_own():
+    ja = "冗談話をした。冗談だ。"
+    words = [["冗談話", "じょうだんばなし", "冗談話", "じょうだんばなし", "a joke"], JOKE_CARD]
+    assert readings.uncovered_repeats(ja, words) == []
+    assert readings.fill_repeats(ja, words) == words
+
+
+def test_check_reports_a_reading_that_misses_a_repeat():
+    """`validate` fails on it: a build cannot ship a word whose second place has no card."""
+    result = _check([_rec(ja=JOKE, words=[JOKE_CARD])], japanese={(456, "description"): JOKE})
+    assert result["problems"] == ["reading quest 456/description: '冗談' stands again with no card (wfj readings fill-repeats)"]

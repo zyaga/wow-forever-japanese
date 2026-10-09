@@ -443,7 +443,6 @@ WFJ.Data.add("gloss", {
   [31440] = "わざわざ\tわざわざ\tall the way (go out of my way)",
   [31441] = "わざわざ\tわざわざ\tall the way (going out of my way)",
   [31442] = "わざわざ\tわざわざ\tall the way (going to trouble)",
-  [31443] = "わざわざ\tわざわざ\tall this way (expressly)",
   [31444] = "わざわざ\tわざわざ\tbother (go out of one's way)",
   [31445] = "わざわざ\tわざわざ\tbother to",
   [31446] = "わざわざ\tわざわざ\tgo out of your way",

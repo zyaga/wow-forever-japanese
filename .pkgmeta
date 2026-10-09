@@ -5,6 +5,11 @@ package-as: WoWForeverJapanese
 
 enable-nolib-creation: no
 
+# The voice is optional: the addon's CurseForge page shows the Voice entry, and installing the addon never pulls it in
+# (pipeline/voice-packs.toml, entry slug). The TOC carries no dependency line.
+optional-dependencies:
+  - wow-forever-japanese-voice
+
 # The release run writes this version's notes here from CHANGELOG.md (a dotfile, so it is never packaged).
 manual-changelog:
   filename: .release-notes.md

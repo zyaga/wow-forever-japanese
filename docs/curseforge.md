@@ -16,6 +16,8 @@ prefers it as text only.
 
 **WoW Forever Japanese** shows World of Warcraft: Forever in Japanese. The game's own <span style="color:#8CB8E8;">English</span> is always one key away: hold <span style="color:#E0605A;">**Alt**</span> and it comes back, let go and the Japanese returns. It is for players who read Japanese, and for learners who want to play in it.
 
+<span style="color:#E8C77E;">**New: Japanese voice.**</span> With the free voice download it also reads its Japanese aloud: over 14,000 quest texts, NPC lines and book pages, each NPC in a voice cast for who they are.
+
 **Website:** https://foreverjapanese.com (screenshots and a short guide to how it works).
 
 ### <span style="color:#E8C77E;">What it translates</span>
@@ -26,7 +28,7 @@ prefers it as text only.
 - **Item and spell tooltips**, and buff and debuff text, with the game's live numbers filled in.
 - **The interface:** windows, labels, menus, popups and messages.
 
-In numbers: **4,757** quests, **10,953** NPC dialogue lines, **923** book pages, **209** letter pages, **9,159** item tooltips, **19,977** spell tooltips, **15,852** UI.
+In numbers: **4,757** quests, **10,958** NPC dialogue lines, **923** book pages, **209** letter pages, **9,159** item tooltips, **19,977** spell tooltips, **15,852** UI.
 
 Names of people, places, creatures, items and spells stay in <span style="color:#8CB8E8;">English</span> everywhere, so you can still talk with other players, read guides and search by name.
 
@@ -34,9 +36,15 @@ Names of people, places, creatures, items and spells stay in <span style="color:
 
 Point at a Japanese word in quest text, NPC dialogue, a book page or a window label, and a small popup shows its reading, its dictionary form and a short English meaning of the word as that sentence uses it. Nothing is drawn until the pointer is on a word.
 
+### <span style="color:#E8C77E;">Japanese voice</span>
+
+With **WoW Forever Japanese Voice** installed (a free, separate download), quest offers, progress and turn-ins, NPC greetings and talk, and book and letter pages are read aloud in Japanese: over 14,000 lines. Each NPC speaks in a voice cast for their race or kind of creature, gender and age, and your character says its own error lines, such as being out of range, in Japanese too.
+
+While a line plays, a **voice panel** at the bottom of the screen shows the speaker's face, their name and title, and the Japanese a sentence at a time, with the popup dictionary on every word. Close the window and the line keeps playing, so you can walk on while the NPC finishes; lines that start meanwhile wait their turn in a list above the panel. Hold <span style="color:#E0605A;">**Alt**</span> and the panel shows the line's English while the voice goes on. The quest log has a play button too. The panel can be moved, shrunk to a small strip, switched to a dark style or turned off.
+
 ### <span style="color:#E8C77E;">Settings</span>
 
-**Esc > Options > AddOns**, or type **/wfj config**. Turn translation on or off, for everything or per area; change the key you hold for English; set a key that switches translation on and off; turn the markers (<span style="color:#FFD100;">**[未翻訳 / Not Translated]**</span>, <span style="color:#FFD100;">**[要更新 / English Changed]**</span>), the popup dictionary and the minimap button on or off.
+**Esc > Options > AddOns**, or type **/wfj config**. Turn translation on or off, for everything or per area; change the key you hold for English; set a key that switches translation on and off; turn the markers (<span style="color:#FFD100;">**[未翻訳 / Not Translated]**</span>, <span style="color:#FFD100;">**[要更新 / English Changed]**</span>), the popup dictionary and the minimap button on or off. With the voice installed, the **Voice** page sets what is read aloud and how the voice panel looks.
 
 ### <span style="color:#E8C77E;">What the addon records</span>
 
@@ -49,6 +57,8 @@ When 10 or more lines are waiting, a small window at login or reload says how ma
 ### <span style="color:#E8C77E;">Install</span>
 
 Install it with the CurseForge app (make sure your **Forever** install is selected), or unzip the download into your Forever client's `Interface/AddOns` folder. World of Warcraft: Forever only; no other addons or libraries needed.
+
+**Japanese voice:** a separate download of about 1.1 GB. After the addon, install **WoW Forever Japanese Voice** with the CurseForge app; it brings every voice pack. The addon's About & Help page says whether the voice is installed.
 
 ### <span style="color:#E8C77E;">Report a translation problem</span>
 
@@ -73,7 +83,7 @@ Both can be turned off in the settings.
 
 ### <span style="color:#E8C77E;">Credits</span>
 
-The hand-written translations are the work of the Japanese translators of WoWJapanizer, QuestJapanizer and CraftJapanizer_Quest, listed by name in `ATTRIBUTION.md`, which ships inside the addon. Lines those projects did not cover are machine-drafted and marked as such in the project's data.
+The hand-written translations are the work of the Japanese translators of WoWJapanizer, QuestJapanizer and CraftJapanizer_Quest, listed by name in `ATTRIBUTION.md`, which ships inside the addon. Lines those projects did not cover are machine-drafted and marked as such in the project's data. The Japanese voice was made with the AivisSpeech Engine and the voice models listed in `ATTRIBUTION.md`.
 
 ### <span style="color:#E8C77E;">License</span>
 
@@ -87,6 +97,8 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 
 **WoW Forever Japanese** は、World of Warcraft: Forever を日本語で遊べるようにするアドオンです。<span style="color:#E0605A;">**Alt**</span> キーを押している間だけゲーム本来の<span style="color:#8CB8E8;">英語</span>が表示され、離すと日本語に戻ります。日本語で遊びたい方にも、日本語を勉強中の方にもおすすめです。
 
+<span style="color:#E8C77E;">**新機能：日本語音声。**</span>無料の音声を追加すると、日本語を読み上げることもできます。クエスト、NPC の会話、本のページなど 14,000 行以上を、NPC ごとに合わせて選んだ声で読み上げます。
+
 **ウェブサイト:** https://foreverjapanese.com （スクリーンショットと使い方の紹介）
 
 ### <span style="color:#E8C77E;">翻訳される内容</span>
@@ -97,7 +109,7 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 - **アイテムと呪文のツールチップ**、バフ・デバフの説明（数値はゲームの実際の値が入ります）
 - **インターフェース:** ウィンドウ、ラベル、メニュー、ポップアップ、メッセージ
 
-数で見ると: クエスト **4,757**、NPC の会話 **10,953** 行、本 **923** ページ、手紙 **209** ページ、アイテムのツールチップ **9,159**、呪文のツールチップ **19,977**、UI **15,852**。
+数で見ると: クエスト **4,757**、NPC の会話 **10,958** 行、本 **923** ページ、手紙 **209** ページ、アイテムのツールチップ **9,159**、呪文のツールチップ **19,977**、UI **15,852**。
 
 人物・地名・モンスター・アイテム・呪文の名前はすべて<span style="color:#8CB8E8;">英語</span>のままです。ほかのプレイヤーとの会話や、攻略情報の検索にそのまま使えます。
 
@@ -105,9 +117,15 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 
 クエスト本文、NPC の会話、本のページ、ウィンドウのラベルで日本語の単語にマウスを合わせると、読み方・辞書形・その文脈での短い英語の意味が小さなポップアップに表示されます。マウスを合わせるまでは何も表示されません。
 
+### <span style="color:#E8C77E;">日本語音声</span>
+
+**WoW Forever Japanese Voice**（無料の別ダウンロード）を入れると、クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページを日本語で読み上げます。合わせて 14,000 行以上です。NPC はそれぞれ、種族やモンスターの種類・性別・年齢に合わせて選んだ声で話し、自分のキャラクターも射程外などのエラーの一言を日本語で話します。
+
+読み上げ中は、画面下の **音声パネル** に話している NPC の顔、名前と肩書き、読み上げ中の日本語が 1 文ずつ表示されます。どの単語にもポップアップ辞書が使えます。ウィンドウを閉じても読み上げは続くので、NPC の話を聞きながら先へ進めます。その間に始まった行はパネルの上の一覧で順番を待ちます。<span style="color:#E0605A;">**Alt**</span> を押している間は、声はそのままでパネルにその行の英語が表示されます。クエストログにも再生ボタンがあります。パネルは移動でき、小さな帯の表示、暗い背景、オフに切り替えられます。
+
 ### <span style="color:#E8C77E;">設定</span>
 
-**Esc > オプション > AddOns**、または **/wfj config** で開きます。翻訳のオン・オフ（全体または項目ごと）、英語を表示するキーの変更、翻訳を切り替えるキーの設定、マーカー（<span style="color:#FFD100;">**[未翻訳 / Not Translated]**</span>、<span style="color:#FFD100;">**[要更新 / English Changed]**</span>）・ポップアップ辞書・ミニマップボタンの表示を切り替えられます。
+**Esc > オプション > AddOns**、または **/wfj config** で開きます。翻訳のオン・オフ（全体または項目ごと）、英語を表示するキーの変更、翻訳を切り替えるキーの設定、マーカー（<span style="color:#FFD100;">**[未翻訳 / Not Translated]**</span>、<span style="color:#FFD100;">**[要更新 / English Changed]**</span>）・ポップアップ辞書・ミニマップボタンの表示を切り替えられます。音声を入れている場合は、**音声** ページで読み上げる内容と音声パネルの見た目を設定できます。
 
 ### <span style="color:#E8C77E;">アドオンが記録するもの</span>
 
@@ -120,6 +138,8 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 ### <span style="color:#E8C77E;">インストール</span>
 
 CurseForge アプリでインストールしてください（**Forever** のインストール先が選ばれていることを確認）。手動の場合は、ダウンロードした zip を Forever クライアントの `Interface/AddOns` フォルダに展開します。World of Warcraft: Forever 専用です。ほかのアドオンやライブラリは不要です。
+
+**日本語音声:** 約 1.1 GB の別ダウンロードです。アドオンのあとに、CurseForge アプリで **WoW Forever Japanese Voice** をインストールしてください。すべての音声パックが一緒に入ります。音声が入っているかどうかは、アドオンの「情報とヘルプ」ページに表示されます。
 
 ### <span style="color:#E8C77E;">翻訳の問題を報告する</span>
 
@@ -144,7 +164,7 @@ CurseForge アプリでインストールしてください（**Forever** のイ
 
 ### <span style="color:#E8C77E;">クレジット</span>
 
-手書きの翻訳は、WoWJapanizer、QuestJapanizer、CraftJapanizer_Quest の翻訳者の皆さんによるものです。翻訳者の名前はアドオンに同梱の `ATTRIBUTION.md` に記載しています。これらのプロジェクトが扱っていない行は機械で下訳したもので、データ上でその旨を記録しています。
+手書きの翻訳は、WoWJapanizer、QuestJapanizer、CraftJapanizer_Quest の翻訳者の皆さんによるものです。翻訳者の名前はアドオンに同梱の `ATTRIBUTION.md` に記載しています。これらのプロジェクトが扱っていない行は機械で下訳したもので、データ上でその旨を記録しています。日本語音声は AivisSpeech Engine と `ATTRIBUTION.md` に記載した音声モデルで作りました。
 
 ### <span style="color:#E8C77E;">ライセンス</span>
 
