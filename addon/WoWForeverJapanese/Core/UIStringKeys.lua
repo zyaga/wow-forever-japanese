@@ -259,7 +259,7 @@ UIStrings.ARGS = {
   GUILD_MOTD_TEMPLATE = { [1] = "verbatim" }, TIME_PLAYED_TOTAL = { [1] = "entry" },
   TIME_PLAYED_LEVEL = { [1] = "entry" },
   -- the voice service a group switched to: VOICE_CHAT_SERVICE_DISCORD / _LEGACY (channelframe.lua:326)
-  VOICE_CHAT_SERVICE_SWITCHING = { [1] = "entry" },
+  VOICE_CHAT_SERVICE_SWITCHING = { [1] = "entryOrText" }, -- "Discord" is a name and stays as written
   -- a group finder listing's voice mode, VOICE_CHAT_MODE_NONE / _LEGACY / _DISCORD / _CUSTOM
   -- (blizzard_groupfinder_vanillastyle/blizzard_lfgvanilla_browse.lua:676–679)
   VOICE_CHAT_MODE_FORMAT = { [1] = "entry" },

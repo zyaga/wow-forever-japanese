@@ -257,8 +257,22 @@ function GroupFinder.onLocked() return GroupFinder.show("lockedError", "lockedAc
 function GroupFinder.onActivityView() return GroupFinder.show("instructions") end
 function GroupFinder.onResults() return GroupFinder.show("noResults") end
 function GroupFinder.onButtons() return GroupFinder.show("groupInvite", "sendMessage") end
+-- The client sizes the tooltip from the English voice line before this hook runs, and that line does not wrap
+-- (blizzard_lfgvanilla_browse.lua:680, 813; browse.xml:406), so a wider Japanese line would be cut short.
+local function fitVoiceLine()
+  local fs = get("label.tipVoice")
+  if type(fs) ~= "table" or type(fs.GetParent) ~= "function" or type(fs.GetStringWidth) ~= "function" then return end
+  if type(fs.IsShown) == "function" and not fs:IsShown() then return end
+  local tip = fs:GetParent()
+  if type(tip) ~= "table" or type(tip.GetWidth) ~= "function" or type(tip.SetWidth) ~= "function" then return end
+  local need = (fs:GetStringWidth() or 0) + 22
+  if need > (tip:GetWidth() or 0) then tip:SetWidth(need) end
+end
+
 function GroupFinder.onTooltip()
-  return GroupFinder.show("tipDelisted", "tipNewPlayer", "tipBosses", "tipMembers", "tipVoice")
+  local n = GroupFinder.show("tipDelisted", "tipNewPlayer", "tipBosses", "tipMembers", "tipVoice")
+  fitVoiceLine()
+  return n
 end
 
 local hooked = false

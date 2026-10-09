@@ -287,6 +287,20 @@ describe("the group finder on Forever", function()
         assert.are.equal("Voice Chat: |cnHIGHLIGHT_FONT_COLOR:Other|r", tip.VoiceChat:GetText())
       end)
 
+      it("a Japanese voice line wider than the tooltip widens it; a narrower one leaves the width", function()
+        local tip = _G.LFGBrowseSearchEntryTooltip
+        local width = 100
+        tip.GetWidth = function() return width end
+        tip.SetWidth = function(_, w) width = w end
+        tip.VoiceChat.GetParent = function() return tip end
+        tip.VoiceChat.GetStringWidth = function() return 300 end
+        _G.LFGBrowseSearchEntryTooltip_UpdateAndShow(tip, 1, nil, "In-Game Voice (Legacy)")
+        assert.are.equal(322, width)
+        tip.VoiceChat.GetStringWidth = function() return 50 end
+        _G.LFGBrowseSearchEntryTooltip_UpdateAndShow(tip, 1, nil, "In-Game Voice (Legacy)")
+        assert.are.equal(322, width)
+      end)
+
       it("dropdown buttons: default and fixed selections translate; a category name does not", function()
         local browse, roles = _G.LFGBrowseFrame, _G.LFGListingFrame.GroupRoleButtons.RoleDropdown
         assert.are.equal("カテゴリ", browse.CategoryDropdown.Text:GetText())

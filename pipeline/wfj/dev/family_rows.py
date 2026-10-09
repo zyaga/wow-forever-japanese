@@ -90,11 +90,16 @@ def read(path: Path) -> tuple[str | None, dict[str, tuple[str, str, str]]]:
 
 def render(build: str, rows: dict[str, str], old: dict[str, tuple[str, str, str]]) -> str:
     lines = [HEADER.rstrip("\n"), f"# build: {build}"]
+    # a row is named by the lowest id holding its English, which a build can change, so a reason
+    # follows the English
+    by_english = {(key.split(":", 1)[0], h): (reason, comment) for key, (reason, h, comment) in old.items()}
     for k, text in rows.items():
         h = english_hash(text)
         reason, comment = UNREVIEWED, ""
         if k in old and old[k][1] == h:
             reason, comment = old[k][0], old[k][2]
+        elif (k.split(":", 1)[0], h) in by_english:
+            reason, comment = by_english[(k.split(":", 1)[0], h)]
         shown = " ".join(text.split())
         comment = comment or (shown[:90] + ("..." if len(shown) > 90 else ""))
         lines.append(f"{k}  {reason}  {h}  # {comment}")

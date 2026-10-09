@@ -385,7 +385,7 @@ describe("SYSTEM chat lines", function()
     assert.are.equal("総プレイ時間: 0日、14時間、17分、49秒", f:Last())
   end)
 
-  it("in game: the voice-service switch fills its service name; an unknown service stays English", function()
+  it("in game: the voice-service switch fills its service name; a service named by a name keeps it", function()
     local f = _G.ChatFrame1
     system(f, "Switching to voice chat service: Legacy")
     assert.are.equal("ボイスチャットサービスを切り替えます: レガシー", f:Last())
@@ -395,8 +395,8 @@ describe("SYSTEM chat lines", function()
     alt(WFJ, true)
     assert.are.equal("Switching to voice chat service: Legacy", f.visibleLines[1]:GetText())
     alt(WFJ, false)
-    system(f, "Switching to voice chat service: Discord") -- not a dictionary entry here
-    assert.are.equal("Switching to voice chat service: Discord", f:Last())
+    system(f, "Switching to voice chat service: Discord") -- a name, kept as written
+    assert.are.equal("ボイスチャットサービスを切り替えます: Discord", f:Last())
   end)
 
   it("in game: Blizzard's Lua lines; a role change fills its role word; a line with no chat type is exact only",

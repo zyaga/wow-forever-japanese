@@ -77,3 +77,10 @@ def test_a_reworded_row_comes_back_unreviewed(tmp_path: Path):
     rows = fr.uncovered(folder, [])
     old = {"AchievementTitle:1": ("curated", fr.english_hash("Times camped"), "")}
     assert "AchievementTitle:1  ?  " in fr.render("1.60.1.1", rows, old)
+
+
+def test_a_row_renamed_to_a_lower_id_keeps_its_reason(tmp_path: Path):
+    folder = _folder(tmp_path, "1,Times camped,,\n")
+    rows = fr.uncovered(folder, [])
+    old = {"AchievementTitle:9": ("name", fr.english_hash("Times camped"), "kept")}
+    assert "AchievementTitle:1  name  " in fr.render("1.60.1.1", rows, old)
