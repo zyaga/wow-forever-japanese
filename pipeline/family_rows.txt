@@ -5,7 +5,7 @@
 # professions, ranks, developer and test rows; ADR-042, ADR-052), developer (a developer or tracking row the
 # client never shows), name (a name; names stay English), gossip (an NPC's own line, shipped by the gossip
 # surface), not-shown (a row no window shows, with the evidence after the hash).
-# build: 1.60.1.70291
+# build: 1.60.1.70338
 AchievementCategory:14777  curated  f637121589807471  # Eastern Kingdoms
 AchievementCategory:14778  curated  d39c33bd6a607c7c  # Kalimdor
 AchievementCategory:15577  curated  b909d5daff1892c3  # Druid
@@ -67,10 +67,7 @@ AreaPoiDescription:1699  curated  b3f774926f02484a  # Burning Steppes
 AreaPoiDescription:1701  curated  6b3fed213b5ef5f4  # Eastern Plaguelands
 AreaPoiDescription:1754  curated  fed8faa4c6a149e9  # Horde
 AreaPoiDescription:1755  curated  eb41bc3608906055  # Alliance
-BroadcastText:7159  gossip  0ddf1ecde6f2ff89  # I hope the Light is with you, $n. Is there anything I can do for you today?
-BroadcastText:7588  gossip  db152bcd2f85b3f0  # Ah, the beauty of Shadowglen never ceases to delight my senses!
 BroadcastText:7589  gossip  6f84bab72a9159d8  # Ah, well aren't you a sturdy-looking one? Perhaps you can assist me with a thing or two. N...
-BroadcastText:313486  gossip  03f20943662a27a9  # Greetings, traveler.
 CriteriaText:248  curated  0704dadfa13d47e5  # Defeat Emperor Dagran Thaurissan.
 CriteriaText:251  curated  3376bfe55eddd6ae  # Emperor Dagran Thaurissan
 CriteriaText:253  curated  4e67a87d1f512d41  # Defeat Darkmaster Gandling

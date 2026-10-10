@@ -1,576 +1,576 @@
-{"id": "TABARDSLOT", "field": "text", "en": "Tabard", "hash": "3b563bc3daf16475", "src": "db2@1.60.1.70291"}
-{"id": "TABARDVENDORCOST", "field": "text", "en": "Cost:", "hash": "a714b61d70070e39", "src": "db2@1.60.1.70291"}
-{"id": "TABARDVENDORGREETING", "field": "text", "en": "Greetings! Choose the symbol and colors of your guild.", "hash": "23b8883453f7315c", "src": "db2@1.60.1.70291"}
-{"id": "TABARDVENDORNOGUILDGREETING", "field": "text", "en": "You must be a guild master to purchase a tabard, but feel free to browse.", "hash": "d45b2aa0705168e7", "src": "db2@1.60.1.70291"}
-{"id": "TAKE_ATTACHMENTS", "field": "text", "en": "Take Attachments:", "hash": "d9bbe8a723a2bf15", "src": "db2@1.60.1.70291"}
-{"id": "TALENTS", "field": "text", "en": "Talents", "hash": "0d31e779843effa2", "src": "db2@1.60.1.70291"}
-{"id": "TALENTS_INSPECT_FORMAT", "field": "text", "en": "Talents - %s", "hash": "12043a171c1a4bfc", "src": "db2@1.60.1.70291"}
-{"id": "TALENTS_INVOLUNTARILY_RESET", "field": "text", "en": "Some of your talents have been reset due to changes in the talent tree.", "hash": "96c9978b41ae006a", "src": "db2@1.60.1.70291"}
-{"id": "TALENTS_INVOLUNTARILY_RESET_PET", "field": "text", "en": "Your pet's talents have been reset.", "hash": "76bbdbfc7e0ddf37", "src": "db2@1.60.1.70291"}
-{"id": "TALENTS_LINK_FORMAT", "field": "text", "en": "Linked Talents (%s %s)", "hash": "9c1d664d69905b5a", "src": "db2@1.60.1.70291"}
+{"id": "TABARDSLOT", "field": "text", "en": "Tabard", "hash": "3b563bc3daf16475", "src": "db2@1.60.1.70338"}
+{"id": "TABARDVENDORCOST", "field": "text", "en": "Cost:", "hash": "a714b61d70070e39", "src": "db2@1.60.1.70338"}
+{"id": "TABARDVENDORGREETING", "field": "text", "en": "Greetings! Choose the symbol and colors of your guild.", "hash": "23b8883453f7315c", "src": "db2@1.60.1.70338"}
+{"id": "TABARDVENDORNOGUILDGREETING", "field": "text", "en": "You must be a guild master to purchase a tabard, but feel free to browse.", "hash": "d45b2aa0705168e7", "src": "db2@1.60.1.70338"}
+{"id": "TAKE_ATTACHMENTS", "field": "text", "en": "Take Attachments:", "hash": "d9bbe8a723a2bf15", "src": "db2@1.60.1.70338"}
+{"id": "TALENTS", "field": "text", "en": "Talents", "hash": "0d31e779843effa2", "src": "db2@1.60.1.70338"}
+{"id": "TALENTS_INSPECT_FORMAT", "field": "text", "en": "Talents - %s", "hash": "12043a171c1a4bfc", "src": "db2@1.60.1.70338"}
+{"id": "TALENTS_INVOLUNTARILY_RESET", "field": "text", "en": "Some of your talents have been reset due to changes in the talent tree.", "hash": "96c9978b41ae006a", "src": "db2@1.60.1.70338"}
+{"id": "TALENTS_INVOLUNTARILY_RESET_PET", "field": "text", "en": "Your pet's talents have been reset.", "hash": "76bbdbfc7e0ddf37", "src": "db2@1.60.1.70338"}
+{"id": "TALENTS_LINK_FORMAT", "field": "text", "en": "Linked Talents (%s %s)", "hash": "9c1d664d69905b5a", "src": "db2@1.60.1.70338"}
 {"id": "TALENT_ACTIVE_SPEC_STATUS", "field": "text", "en": "These are your active talents", "hash": "5fe8f700ac8a9194", "src": "db2@1.60.1.69913"}
-{"id": "TALENT_BUTTON_TOOLTIP_CAPSTONE_RANK_NEXT_STAGE_PREVIEW_TITLE", "field": "text", "en": "Next:", "hash": "66d5d2bc91e452da", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_BUTTON_TOOLTIP_CLEAR_REPURCHASE_INSTRUCTIONS", "field": "text", "en": "Right click to clear all history nodes", "hash": "42bada2d00b0c529", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_BUTTON_TOOLTIP_COST_FORMAT", "field": "text", "en": "Cost: %s", "hash": "94a3620f027ac1c6", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_BUTTON_TOOLTIP_NEXT_RANK", "field": "text", "en": "Next Rank:", "hash": "ff60c3734494f41f", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_BUTTON_TOOLTIP_NOT_ON_ACTION_BAR", "field": "text", "en": "You haven't added this to your action bars", "hash": "842a2e59faddb8e7", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_BUTTON_TOOLTIP_ON_DISABLED_ACTIONBAR", "field": "text", "en": "You've added this to an action bar that is hidden or disabled", "hash": "8b63516fb4b91e8a", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_BUTTON_TOOLTIP_ON_INACTIVE_BONUSBAR", "field": "text", "en": "You've added this to your action bar, but on a different stance", "hash": "62ac2d80852e6b55", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_BUTTON_TOOLTIP_PURCHASE_INSTRUCTIONS", "field": "text", "en": "Click to learn", "hash": "eab07e27b4d92214", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_BUTTON_TOOLTIP_QUICK_ASSIGN_INSTRUCTIONS", "field": "text", "en": "Ctrl-Click to Quick Assign", "hash": "d8fc74216707149a", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_BUTTON_TOOLTIP_RANK_FORMAT", "field": "text", "en": "Rank %s/%s", "hash": "0b9a48e74160872f", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_BUTTON_TOOLTIP_RANK_NO_MAX_FORMAT", "field": "text", "en": "Rank %s", "hash": "c7a12ae6b1a81120", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_BUTTON_TOOLTIP_REFUND_INSTRUCTIONS", "field": "text", "en": "Right click to unlearn", "hash": "f81177abb34f21a5", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_BUTTON_TOOLTIP_REFUND_INVALID_CONDITIONS_ERROR", "field": "text", "en": "Spend more points to restore this talent or right click to unlearn it", "hash": "890437e8fac7d13c", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_BUTTON_TOOLTIP_REFUND_INVALID_LINKS_ERROR", "field": "text", "en": "No active links. Reconnect or unlearn this talent.", "hash": "532346ef0c5cacce", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_BUTTON_TOOLTIP_REPLACED_BY_FORMAT", "field": "text", "en": "Replaced by %s", "hash": "f2d396ba9aa2d8fe", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_BUTTON_TOOLTIP_REPURCHASE_INSTRUCTIONS", "field": "text", "en": "Shift click to learn all connected history nodes", "hash": "a63a3e59aa33e196", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_BUTTON_TOOLTIP_SELECTION_CHOICE_ERROR", "field": "text", "en": "Select another choice", "hash": "60b9055716c11312", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_BUTTON_TOOLTIP_SELECTION_COST_ERROR", "field": "text", "en": "You can't afford this choice", "hash": "e9c10b782d0a98ef", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_BUTTON_TOOLTIP_SELECTION_CURRENT_INSTRUCTIONS", "field": "text", "en": "This is already learned", "hash": "350d864ff72fd1c7", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_BUTTON_TOOLTIP_SELECTION_ERROR", "field": "text", "en": "This node isn't active", "hash": "dd07974cae44d78a", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_FRAME_APPLY_BUTTON_TEXT", "field": "text", "en": "Apply Changes", "hash": "3753f4eac1a5f045", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_FRAME_CONFIG_OPERATION_TOO_FAST", "field": "text", "en": "Talent operation still in progress, try again later.", "hash": "cbb7bc9f9eca1a67", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_FRAME_CONFIRM_CLOSE", "field": "text", "en": "You will lose any pending changes if you continue.", "hash": "1f6ed5001924b90d", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_FRAME_DISCARD_CHANGES_BUTTON_TOOLTIP", "field": "text", "en": "Undo Pending Changes", "hash": "743989d75f0aa54b", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_FRAME_GATE_TOOLTIP_FORMAT", "field": "text", "en": "Spend %d more |4point:points; to unlock this row", "hash": "a00b6446b81b685d", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_FRAME_INCREASED_RANKS_TEXT", "field": "text", "en": "(+%d |4Rank:Ranks; from %s)", "hash": "dd65d276995f9154", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_FRAME_RESET_BUTTON_DROPDOWN_ALL", "field": "text", "en": "All", "hash": "00113cf90216a76a", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_FRAME_RESET_BUTTON_DROPDOWN_LEFT", "field": "text", "en": "Left Tree", "hash": "8e85915b94ce6c33", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_FRAME_RESET_BUTTON_DROPDOWN_RIGHT", "field": "text", "en": "Right Tree", "hash": "cda56bbba3f51dec", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_FRAME_RESET_BUTTON_DROPDOWN_TITLE", "field": "text", "en": "Reset Talents", "hash": "2b3a887cea9d2f33", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_FRAME_SEARCH_NOT_ON_ACTIONBAR", "field": "text", "en": "Missing from action bar", "hash": "00b4f3b1dca8ffd8", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_FRAME_SEARCH_PREVIEW_OVERFLOW_FORMAT", "field": "text", "en": "And %s more", "hash": "f75e3607415b2b33", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_FRAME_SEARCH_TOOLTIP_EXACT_MATCH", "field": "text", "en": "Exact search match", "hash": "5397d9d74c138674", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_FRAME_SEARCH_TOOLTIP_MATCH", "field": "text", "en": "Search match", "hash": "ca3f3511279d8b66", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_FRAME_SEARCH_TOOLTIP_NOT_ON_ACTIONBAR", "field": "text", "en": "Not on action bar", "hash": "e25763e38c340da2", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_FRAME_SEARCH_TOOLTIP_ON_DISABLED_ACTIONBAR", "field": "text", "en": "On a disabled action bar", "hash": "577670d3d5b14f98", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_FRAME_SEARCH_TOOLTIP_ON_INACTIVE_BONUSBAR", "field": "text", "en": "On an action bar belonging to a different stance", "hash": "bac7ed4519e13247", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_FRAME_SEARCH_TOOLTIP_RELATED_MATCH", "field": "text", "en": "Related to the talent you searched for", "hash": "32f58c106669b4e4", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_MICRO_BUTTON_TALENT_TUTORIAL", "field": "text", "en": "Talents are now available! Click here, and select your \"Talents\" tab to choose your talent.", "hash": "fc4ab902082bbfa8", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_MICRO_BUTTON_UNSPENT_TALENTS", "field": "text", "en": "You have unspent Talent points.", "hash": "35db637e6322072d", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_SPEC_ACTIVATE", "field": "text", "en": "Activate", "hash": "6fe8ceb4f8802433", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_SPEC_ACTIVE", "field": "text", "en": "Active", "hash": "b60b9ac09ca08a46", "src": "db2@1.60.1.70291"}
-{"id": "TALENT_SPEC_LOCKED", "field": "text", "en": "Locked", "hash": "5518bc84349007b8", "src": "db2@1.60.1.70291"}
+{"id": "TALENT_BUTTON_TOOLTIP_CAPSTONE_RANK_NEXT_STAGE_PREVIEW_TITLE", "field": "text", "en": "Next:", "hash": "66d5d2bc91e452da", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_BUTTON_TOOLTIP_CLEAR_REPURCHASE_INSTRUCTIONS", "field": "text", "en": "Right click to clear all history nodes", "hash": "42bada2d00b0c529", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_BUTTON_TOOLTIP_COST_FORMAT", "field": "text", "en": "Cost: %s", "hash": "94a3620f027ac1c6", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_BUTTON_TOOLTIP_NEXT_RANK", "field": "text", "en": "Next Rank:", "hash": "ff60c3734494f41f", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_BUTTON_TOOLTIP_NOT_ON_ACTION_BAR", "field": "text", "en": "You haven't added this to your action bars", "hash": "842a2e59faddb8e7", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_BUTTON_TOOLTIP_ON_DISABLED_ACTIONBAR", "field": "text", "en": "You've added this to an action bar that is hidden or disabled", "hash": "8b63516fb4b91e8a", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_BUTTON_TOOLTIP_ON_INACTIVE_BONUSBAR", "field": "text", "en": "You've added this to your action bar, but on a different stance", "hash": "62ac2d80852e6b55", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_BUTTON_TOOLTIP_PURCHASE_INSTRUCTIONS", "field": "text", "en": "Click to learn", "hash": "eab07e27b4d92214", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_BUTTON_TOOLTIP_QUICK_ASSIGN_INSTRUCTIONS", "field": "text", "en": "Ctrl-Click to Quick Assign", "hash": "d8fc74216707149a", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_BUTTON_TOOLTIP_RANK_FORMAT", "field": "text", "en": "Rank %s/%s", "hash": "0b9a48e74160872f", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_BUTTON_TOOLTIP_RANK_NO_MAX_FORMAT", "field": "text", "en": "Rank %s", "hash": "c7a12ae6b1a81120", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_BUTTON_TOOLTIP_REFUND_INSTRUCTIONS", "field": "text", "en": "Right click to unlearn", "hash": "f81177abb34f21a5", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_BUTTON_TOOLTIP_REFUND_INVALID_CONDITIONS_ERROR", "field": "text", "en": "Spend more points to restore this talent or right click to unlearn it", "hash": "890437e8fac7d13c", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_BUTTON_TOOLTIP_REFUND_INVALID_LINKS_ERROR", "field": "text", "en": "No active links. Reconnect or unlearn this talent.", "hash": "532346ef0c5cacce", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_BUTTON_TOOLTIP_REPLACED_BY_FORMAT", "field": "text", "en": "Replaced by %s", "hash": "f2d396ba9aa2d8fe", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_BUTTON_TOOLTIP_REPURCHASE_INSTRUCTIONS", "field": "text", "en": "Shift click to learn all connected history nodes", "hash": "a63a3e59aa33e196", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_BUTTON_TOOLTIP_SELECTION_CHOICE_ERROR", "field": "text", "en": "Select another choice", "hash": "60b9055716c11312", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_BUTTON_TOOLTIP_SELECTION_COST_ERROR", "field": "text", "en": "You can't afford this choice", "hash": "e9c10b782d0a98ef", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_BUTTON_TOOLTIP_SELECTION_CURRENT_INSTRUCTIONS", "field": "text", "en": "This is already learned", "hash": "350d864ff72fd1c7", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_BUTTON_TOOLTIP_SELECTION_ERROR", "field": "text", "en": "This node isn't active", "hash": "dd07974cae44d78a", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_FRAME_APPLY_BUTTON_TEXT", "field": "text", "en": "Apply Changes", "hash": "3753f4eac1a5f045", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_FRAME_CONFIG_OPERATION_TOO_FAST", "field": "text", "en": "Talent operation still in progress, try again later.", "hash": "cbb7bc9f9eca1a67", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_FRAME_CONFIRM_CLOSE", "field": "text", "en": "You will lose any pending changes if you continue.", "hash": "1f6ed5001924b90d", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_FRAME_DISCARD_CHANGES_BUTTON_TOOLTIP", "field": "text", "en": "Undo Pending Changes", "hash": "743989d75f0aa54b", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_FRAME_GATE_TOOLTIP_FORMAT", "field": "text", "en": "Spend %d more |4point:points; to unlock this row", "hash": "a00b6446b81b685d", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_FRAME_INCREASED_RANKS_TEXT", "field": "text", "en": "(+%d |4Rank:Ranks; from %s)", "hash": "dd65d276995f9154", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_FRAME_RESET_BUTTON_DROPDOWN_ALL", "field": "text", "en": "All", "hash": "00113cf90216a76a", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_FRAME_RESET_BUTTON_DROPDOWN_LEFT", "field": "text", "en": "Left Tree", "hash": "8e85915b94ce6c33", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_FRAME_RESET_BUTTON_DROPDOWN_RIGHT", "field": "text", "en": "Right Tree", "hash": "cda56bbba3f51dec", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_FRAME_RESET_BUTTON_DROPDOWN_TITLE", "field": "text", "en": "Reset Talents", "hash": "2b3a887cea9d2f33", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_FRAME_SEARCH_NOT_ON_ACTIONBAR", "field": "text", "en": "Missing from action bar", "hash": "00b4f3b1dca8ffd8", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_FRAME_SEARCH_PREVIEW_OVERFLOW_FORMAT", "field": "text", "en": "And %s more", "hash": "f75e3607415b2b33", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_FRAME_SEARCH_TOOLTIP_EXACT_MATCH", "field": "text", "en": "Exact search match", "hash": "5397d9d74c138674", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_FRAME_SEARCH_TOOLTIP_MATCH", "field": "text", "en": "Search match", "hash": "ca3f3511279d8b66", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_FRAME_SEARCH_TOOLTIP_NOT_ON_ACTIONBAR", "field": "text", "en": "Not on action bar", "hash": "e25763e38c340da2", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_FRAME_SEARCH_TOOLTIP_ON_DISABLED_ACTIONBAR", "field": "text", "en": "On a disabled action bar", "hash": "577670d3d5b14f98", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_FRAME_SEARCH_TOOLTIP_ON_INACTIVE_BONUSBAR", "field": "text", "en": "On an action bar belonging to a different stance", "hash": "bac7ed4519e13247", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_FRAME_SEARCH_TOOLTIP_RELATED_MATCH", "field": "text", "en": "Related to the talent you searched for", "hash": "32f58c106669b4e4", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_MICRO_BUTTON_TALENT_TUTORIAL", "field": "text", "en": "Talents are now available! Click here, and select your \"Talents\" tab to choose your talent.", "hash": "fc4ab902082bbfa8", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_MICRO_BUTTON_UNSPENT_TALENTS", "field": "text", "en": "You have unspent Talent points.", "hash": "35db637e6322072d", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_SPEC_ACTIVATE", "field": "text", "en": "Activate", "hash": "6fe8ceb4f8802433", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_SPEC_ACTIVE", "field": "text", "en": "Active", "hash": "b60b9ac09ca08a46", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_SPEC_LOCKED", "field": "text", "en": "Locked", "hash": "5518bc84349007b8", "src": "db2@1.60.1.70338"}
 {"id": "TALENT_SPEC_PRIMARY", "field": "text", "en": "Primary Talents", "hash": "090b4b85ebb32b9b", "src": "db2@1.60.1.69913"}
 {"id": "TALENT_SPEC_SECONDARY", "field": "text", "en": "Secondary Talents", "hash": "6231633f04fc9c31", "src": "db2@1.60.1.69913"}
-{"id": "TALL", "field": "text", "en": "Tall", "hash": "0b5b14f5e73b3244", "src": "db2@1.60.1.70291"}
-{"id": "TANK", "field": "text", "en": "Tank", "hash": "0b5b15fae73b7205", "src": "db2@1.60.1.70291"}
-{"id": "TARGET", "field": "text", "en": "Target", "hash": "3d7ca112c9409d27", "src": "db2@1.60.1.70291"}
-{"id": "TARGETFPS", "field": "text", "en": "Target FPS", "hash": "114c8470406ce40f", "src": "db2@1.60.1.70291"}
-{"id": "TARGETICONS", "field": "text", "en": "Target Icons", "hash": "d99681c0c8f7682a", "src": "db2@1.60.1.70291"}
-{"id": "TARGETING_HEADER", "field": "text", "en": "Targeting", "hash": "1b90d93d84ea51ee", "src": "db2@1.60.1.70291"}
-{"id": "TARGET_TOOLTIP_OPTION", "field": "text", "en": "Show Target Tooltip", "hash": "2e52119fa43f32fd", "src": "db2@1.60.1.70291"}
-{"id": "TAXINODEYOUAREHERE", "field": "text", "en": "You are here", "hash": "f8f247b6918cd44c", "src": "db2@1.60.1.70291"}
-{"id": "TAXI_CANCEL", "field": "text", "en": "Request Stop", "hash": "4259160b8509b1e3", "src": "db2@1.60.1.70291"}
-{"id": "TAXI_CANCEL_DESCRIPTION", "field": "text", "en": "Land at the next available Flight Master.", "hash": "3d76b7db4051df7e", "src": "db2@1.60.1.70291"}
-{"id": "TAXI_PATH_UNREACHABLE", "field": "text", "en": "Not Discovered", "hash": "0e64867979816e5c", "src": "db2@1.60.1.70291"}
-{"id": "TELEPORT_OUT_OF_DUNGEON", "field": "text", "en": "Teleport Out Of Dungeon", "hash": "151d9114b8813b1e", "src": "db2@1.60.1.70291"}
-{"id": "TELEPORT_TO_DUNGEON", "field": "text", "en": "Teleport To Dungeon", "hash": "fe190788e79a756e", "src": "db2@1.60.1.70291"}
-{"id": "TEXTTOSPEECH_COMMAND_SYNTAX_ERROR", "field": "text", "en": "Invalid Text to Speech command. Type \"/tts help\" to see a list of commands.", "hash": "95b87646baf93565", "src": "db2@1.60.1.70291"}
-{"id": "TEXTTOSPEECH_HELP_OVERVIEW", "field": "text", "en": "Text to Speech Commands: |nType /tts to enable Text to Speech or set an option by typing /tts followed by one of the commands below:", "hash": "145c3ad12934037d", "src": "db2@1.60.1.70291"}
-{"id": "TEXTURE_DETAIL", "field": "text", "en": "Texture Resolution", "hash": "0b66c3062c84de6c", "src": "db2@1.60.1.70291"}
-{"id": "TEXT_MODE_A_STRING_RESULT_ABSORB", "field": "text", "en": "(%s Absorbed)", "hash": "cbac862641ed00e9", "src": "db2@1.60.1.70291"}
-{"id": "TEXT_MODE_A_STRING_RESULT_BLOCK", "field": "text", "en": "(%s Blocked)", "hash": "a32880785a98e48a", "src": "db2@1.60.1.70291"}
-{"id": "TEXT_MODE_A_STRING_RESULT_OVERKILLING", "field": "text", "en": "(%s Overkill)", "hash": "6a9691ea5418266f", "src": "db2@1.60.1.70291"}
-{"id": "TEXT_MODE_A_STRING_RESULT_RESIST", "field": "text", "en": "(%s Resisted)", "hash": "7152ebbc0298710d", "src": "db2@1.60.1.70291"}
-{"id": "TEXT_MODE_A_STRING_VALUE_SCHOOL", "field": "text", "en": "%s %s", "hash": "98ecaae23ca42057", "src": "db2@1.60.1.70291"}
-{"id": "TEXT_SCALE_PREVIEW_BODY", "field": "text", "en": "This is a preview of the text size. Adjust this setting to change text size in most dialogs, some social menus, and Text-to-Speech options.", "hash": "2c87e5a30a2aedb5", "src": "db2@1.60.1.70291"}
-{"id": "TEXT_SCALE_PREVIEW_TITLE", "field": "text", "en": "Example", "hash": "4f9851a7b2e6384c", "src": "db2@1.60.1.70291"}
-{"id": "TEXT_TO_SPEECH", "field": "text", "en": "Text To Speech", "hash": "e01c9f29dcae756b", "src": "db2@1.60.1.70291"}
-{"id": "TEXT_TO_SPEECH_ADD_CHARACTER_NAME", "field": "text", "en": "Add <Character Name says> in speech", "hash": "8b6b0ec9ed703baa", "src": "db2@1.60.1.70291"}
-{"id": "TEXT_TO_SPEECH_ADJUST_RATE", "field": "text", "en": "Adjust Rate of Speech", "hash": "a6df1958c0e8f927", "src": "db2@1.60.1.70291"}
-{"id": "TEXT_TO_SPEECH_ADJUST_VOLUME", "field": "text", "en": "Speech Volume", "hash": "318687f77a9db402", "src": "db2@1.60.1.70291"}
-{"id": "TEXT_TO_SPEECH_ALTERNATE_SYSTEM_VOICE", "field": "text", "en": "Use alternate voice for System Messages", "hash": "1bd173a137e70de3", "src": "db2@1.60.1.70291"}
-{"id": "TEXT_TO_SPEECH_CHAT_MESSAGE_TYPES", "field": "text", "en": "Enable Text to Speech for specific messages", "hash": "5ac2cc3bc0df5bbe", "src": "db2@1.60.1.70291"}
-{"id": "TEXT_TO_SPEECH_CONFIG", "field": "text", "en": "Text To Speech Config", "hash": "2e5a6a07ce18c562", "src": "db2@1.60.1.70291"}
-{"id": "TEXT_TO_SPEECH_DEFAULTS", "field": "text", "en": "Text to Speech Defaults", "hash": "f0736469dbc03415", "src": "db2@1.60.1.70291"}
-{"id": "TEXT_TO_SPEECH_MORE_VOICES", "field": "text", "en": "For more voice options see our |cff00aaff|HurlIndex:56|hSupport Page|h|r", "hash": "c796543e60812625", "src": "db2@1.60.1.70291"}
-{"id": "TEXT_TO_SPEECH_NARRATE_MY_MESSAGES", "field": "text", "en": "Read my own messages out loud", "hash": "7cb55655b407d72c", "src": "db2@1.60.1.70291"}
-{"id": "TEXT_TO_SPEECH_PLAY_ACTIVITY_SOUND", "field": "text", "en": "Play a sound when a chat window has activity and is not focused", "hash": "0c4ef4942704e14f", "src": "db2@1.60.1.70291"}
-{"id": "TEXT_TO_SPEECH_PLAY_LINE_BREAK_SOUND", "field": "text", "en": "Play a sound between each new message", "hash": "d79c734f14c07438", "src": "db2@1.60.1.70291"}
-{"id": "TEXT_TO_SPEECH_PLAY_SAMPLE", "field": "text", "en": "Play Sample", "hash": "3519b2be50dd4aa0", "src": "db2@1.60.1.70291"}
-{"id": "TEXT_TO_SPEECH_TUTORIAL", "field": "text", "en": "Click to open Text To Speech options", "hash": "255a82fbf98606bf", "src": "db2@1.60.1.70291"}
-{"id": "TEXT_TO_SPEECH_VOICE_OPTIONS", "field": "text", "en": "Voice Options", "hash": "b4b08928c19667e2", "src": "db2@1.60.1.70291"}
-{"id": "THREAT_TOOLTIP", "field": "text", "en": "%d%% Threat", "hash": "5f8f239f7dea7270", "src": "db2@1.60.1.70291"}
-{"id": "TICKET_STATUS", "field": "text", "en": "You have an open ticket.", "hash": "041f07db3f1e9768", "src": "db2@1.60.1.70291"}
-{"id": "TICKET_STATUS_NMI", "field": "text", "en": "Your ticket requires additional information", "hash": "fad7b20640aa47c0", "src": "db2@1.60.1.70291"}
-{"id": "TIMEMANAGER_24HOURMODE", "field": "text", "en": "24 Hour Mode", "hash": "c6dd9e9f6850e33f", "src": "db2@1.60.1.70291"}
-{"id": "TIMEMANAGER_ALARM_ENABLED", "field": "text", "en": "Alarm Enabled", "hash": "b466b8804453e06e", "src": "db2@1.60.1.70291"}
-{"id": "TIMEMANAGER_ALARM_MESSAGE", "field": "text", "en": "Alarm Message", "hash": "c090bf2cf7eb108d", "src": "db2@1.60.1.70291"}
-{"id": "TIMEMANAGER_ALARM_TIME", "field": "text", "en": "Alarm Time", "hash": "20ff560536494738", "src": "db2@1.60.1.70291"}
-{"id": "TIMEMANAGER_ALARM_TOOLTIP_TURN_OFF", "field": "text", "en": "Click to turn off alarm.", "hash": "4cc7247a08a929d7", "src": "db2@1.60.1.70291"}
-{"id": "TIMEMANAGER_AM", "field": "text", "en": "AM", "hash": "000021900008186e", "src": "db2@1.60.1.70291"}
-{"id": "TIMEMANAGER_LOCALTIME", "field": "text", "en": "Use Local Time", "hash": "5a05fc67d9d8b2e1", "src": "db2@1.60.1.70291"}
-{"id": "TIMEMANAGER_PM", "field": "text", "en": "PM", "hash": "0000293d0009f69d", "src": "db2@1.60.1.70291"}
-{"id": "TIMEMANAGER_SHOW_STOPWATCH", "field": "text", "en": "Show Stopwatch", "hash": "88a9caf26feff67b", "src": "db2@1.60.1.70291"}
-{"id": "TIMEMANAGER_TITLE", "field": "text", "en": "Clock", "hash": "a6acb8a6b7ec0556", "src": "db2@1.60.1.70291"}
-{"id": "TIMEMANAGER_TOOLTIP_LOCALTIME", "field": "text", "en": "Local time:", "hash": "8101d7815d0cbd8b", "src": "db2@1.60.1.70291"}
-{"id": "TIMEMANAGER_TOOLTIP_REALMTIME", "field": "text", "en": "Realm time:", "hash": "fdb1342c6482bccd", "src": "db2@1.60.1.70291"}
-{"id": "TIMEMANAGER_TOOLTIP_TITLE", "field": "text", "en": "Time Info", "hash": "97a2f8061f5c3e6b", "src": "db2@1.60.1.70291"}
-{"id": "TIMESTAMPS_LABEL", "field": "text", "en": "Chat Timestamps", "hash": "e5fa7075f8d97070", "src": "db2@1.60.1.70291"}
-{"id": "TIMESTAMP_COMBATLOG_TOOLTIP", "field": "text", "en": "Display the timestamp for combat log messages.", "hash": "6bd7df52df6d1e2d", "src": "db2@1.60.1.70291"}
-{"id": "TIMESTAMP_FORMAT_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70291"}
-{"id": "TIME_DAYHOURMINUTESECOND", "field": "text", "en": "%d |4day:days;, %d |4hour:hours;, %d |4minute:minutes;, %d |4second:seconds;", "hash": "e9928be63618ffd0", "src": "db2@1.60.1.70291"}
-{"id": "TIME_IN_QUEUE", "field": "text", "en": "Time In Queue: %s", "hash": "bf026e82fa90025c", "src": "db2@1.60.1.70291"}
-{"id": "TIME_LEFT_LONG", "field": "text", "en": "Long", "hash": "0a4c539cb38f8653", "src": "db2@1.60.1.70291"}
-{"id": "TIME_LEFT_MEDIUM", "field": "text", "en": "Medium", "hash": "a135b8b7566a21ae", "src": "db2@1.60.1.70291"}
-{"id": "TIME_LEFT_SHORT", "field": "text", "en": "Short", "hash": "befeef0570f60afe", "src": "db2@1.60.1.70291"}
-{"id": "TIME_LEFT_VERY_LONG", "field": "text", "en": "Very Long", "hash": "2643556fd2a8bac7", "src": "db2@1.60.1.70291"}
-{"id": "TIME_PLAYED_ALERT", "field": "text", "en": "You have been playing for %s. Excessive gameplay can interfere with your daily life.", "hash": "d0c1dbc27368e424", "src": "db2@1.60.1.70291"}
-{"id": "TIME_PLAYED_LEVEL", "field": "text", "en": "Time played this level: %s", "hash": "5585cf40887fbfd8", "src": "db2@1.60.1.70291"}
-{"id": "TIME_PLAYED_TOTAL", "field": "text", "en": "Total time played: %s", "hash": "125e655e44a7ef8b", "src": "db2@1.60.1.70291"}
-{"id": "TIME_REMAINING", "field": "text", "en": "Time Remaining:", "hash": "16a4682689dff12a", "src": "db2@1.60.1.70291"}
-{"id": "TIME_UNTIL_DELETED", "field": "text", "en": "Time until message is deleted", "hash": "df69583b385526d4", "src": "db2@1.60.1.70291"}
-{"id": "TIME_UNTIL_RETURNED", "field": "text", "en": "Time until message is returned", "hash": "cfd8d212c22978e7", "src": "db2@1.60.1.70291"}
-{"id": "TITLE_DOESNT_EXIST", "field": "text", "en": "You don't have that title.", "hash": "1d40100f0cd5f115", "src": "db2@1.60.1.70291"}
-{"id": "TITLE_FRIEND_REQUEST", "field": "text", "en": "Send a WoW Friend Request to:", "hash": "3466cc09037c3c03", "src": "db2@1.60.1.70291"}
-{"id": "TOAST_OBJECTIVE_COMPLETE", "field": "text", "en": "Objective Complete!", "hash": "300574e1e519ed6e", "src": "db2@1.60.1.70291"}
-{"id": "TOAST_SETTINGS_LABEL", "field": "text", "en": "Toasts", "hash": "30f89e52c5d16c71", "src": "db2@1.60.1.70291"}
-{"id": "TOGGLE_BATTLEFIELD_MAP", "field": "text", "en": "Toggle Zone Map", "hash": "3793a30cc82d7a98", "src": "db2@1.60.1.70291"}
-{"id": "TOGGLE_SCOREBOARD", "field": "text", "en": "Toggle Scoreboard", "hash": "ab04584af0558348", "src": "db2@1.60.1.70291"}
-{"id": "TOKEN_AUCTIONABLE_TOKEN_OWNED", "field": "text", "en": "All WoW Tokens bought from the Shop must be sold before you can buy one from the auction house.", "hash": "c325f429f2e01d57", "src": "db2@1.60.1.70291"}
-{"id": "TOKEN_AUCTIONS_UNAVAILABLE", "field": "text", "en": "|cffff2020WoW Token auctions are currently unavailable.|r", "hash": "82a5d8d92f5bb452", "src": "db2@1.60.1.70291"}
-{"id": "TOKEN_BUYOUT_PRICE_UPDATES", "field": "text", "en": "This is the current market price of WoW Tokens. It updates periodically.", "hash": "c30ec772a3798030", "src": "db2@1.60.1.70291"}
-{"id": "TOKEN_CREATE_AUCTION_LOCKED_PRICE", "field": "text", "en": "This is the current market price of WoW Tokens. You can't change this price.", "hash": "4b7db08bdbe8bbe7", "src": "db2@1.60.1.70291"}
-{"id": "TOKEN_CURRENT_BUYOUT_PRICE", "field": "text", "en": "Buyout Price", "hash": "681301ea8d0e996f", "src": "db2@1.60.1.70291"}
-{"id": "TOKEN_CURRENT_MARKET_PRICE", "field": "text", "en": "Current Price", "hash": "cdb249cf6cc4c6d7", "src": "db2@1.60.1.70291"}
-{"id": "TOKEN_DETAIL_SELECT_PROMPT", "field": "text", "en": "Select a currency to view its details.", "hash": "2d1ee46e6fc89d3c", "src": "db2@1.60.1.70291"}
-{"id": "TOKEN_MARKET_PRICE_NOT_AVAILABLE", "field": "text", "en": "|cffff2020Not Available|r", "hash": "a4dbd5db18a1bd77", "src": "db2@1.60.1.70291"}
-{"id": "TOKEN_MOVE_TO_UNUSED", "field": "text", "en": "Moves this currency to the bottom of your list under the unused heading. Useful for currencies you are no longer interested in tracking.", "hash": "ae962d93fe0cfb87", "src": "db2@1.60.1.70291"}
-{"id": "TOKEN_NONE_FOR_SALE", "field": "text", "en": "There are currently no WoW Tokens for sale. Please check back later.", "hash": "6c1c6694d1044bce", "src": "db2@1.60.1.70291"}
-{"id": "TOKEN_REMOVE_FROM_BACKPACK_INSTRUCTION", "field": "text", "en": "<Shift click to untrack>", "hash": "40e44a26dc62afb4", "src": "db2@1.60.1.70291"}
-{"id": "TOKEN_SHOW_ON_BACKPACK", "field": "text", "en": "Checking this option will allow you to track this currency type on your backpack.\n\nYou can also shift click a currency to add or remove it from your backpack.", "hash": "8182deacc5b29d33", "src": "db2@1.60.1.70291"}
-{"id": "TOKEN_TRIAL_RESTRICTIONS", "field": "text", "en": "To redeem this WoW Token, log out to the character select screen.", "hash": "4fa5af1fe08ced49", "src": "db2@1.60.1.70291"}
-{"id": "TOKEN_TRY_AGAIN_LATER", "field": "text", "en": "Please wait %s before trying again.", "hash": "fc7eeba4b957ac48", "src": "db2@1.60.1.70291"}
-{"id": "TOOLTIP_BATTLE_PET", "field": "text", "en": "Battle Pet", "hash": "b2c624c4d89c069f", "src": "db2@1.60.1.70291"}
-{"id": "TOOLTIP_TALENT_LEARN", "field": "text", "en": "Click to learn", "hash": "eab07e27b4d92214", "src": "db2@1.60.1.70291"}
-{"id": "TOOLTIP_TALENT_NEXT_RANK", "field": "text", "en": "Next rank:", "hash": "31178da221e4e33b", "src": "db2@1.60.1.70291"}
-{"id": "TOOLTIP_TALENT_RANK", "field": "text", "en": "Rank %d/%d", "hash": "0997bcc3f8493a96", "src": "db2@1.60.1.70291"}
-{"id": "TOOLTIP_TALENT_RANK_CURRENT_ONLY", "field": "text", "en": "Rank %d", "hash": "c7a12ad7b1a81111", "src": "db2@1.60.1.70291"}
-{"id": "TOOLTIP_TALENT_TIER_POINTS", "field": "text", "en": "Requires %1$d points in %2$s Talents", "hash": "b6295a028918bf2a", "src": "db2@1.60.1.70291"}
-{"id": "TOOLTIP_TRACKER_FIND_GROUP_BUTTON", "field": "text", "en": "Find Group", "hash": "859d27b7ea4cbdd3", "src": "db2@1.60.1.70291"}
-{"id": "TOOLTIP_UNIT_LEVEL", "field": "text", "en": "Level %s", "hash": "aa985aef4e775377", "src": "db2@1.60.1.70291"}
-{"id": "TOOLTIP_UNIT_LEVEL_RACE", "field": "text", "en": "Level %s %s", "hash": "31d1b1f6ecd51ed8", "src": "db2@1.60.1.70291"}
-{"id": "TOOLTIP_UNIT_LEVEL_RACE_TYPE", "field": "text", "en": "Level %s %s (%s)", "hash": "b9ca614204ea7c31", "src": "db2@1.60.1.70291"}
-{"id": "TOOLTIP_UNIT_LEVEL_TYPE", "field": "text", "en": "Level %s (%s)", "hash": "a2459bf26e0f46d4", "src": "db2@1.60.1.70291"}
-{"id": "TOOLTIP_VIGNETTE_OBJECTIVE_DEFEAT", "field": "text", "en": "- Defeat %s", "hash": "91072d2f655c46a4", "src": "db2@1.60.1.70291"}
-{"id": "TOOLTIP_VIGNETTE_OBJECTIVE_DEFEAT_SHOW_HEALTH", "field": "text", "en": "- Defeat %s (Current Health: %s)", "hash": "d81e492f8a7b36fd", "src": "db2@1.60.1.70291"}
-{"id": "TOO_MANY_LUA_ERRORS", "field": "text", "en": "Your AddOns are experiencing a large number of errors and may be slowing down the game.  You can turn on display of Lua errors in the interface options.", "hash": "05aae378160369e3", "src": "db2@1.60.1.70291"}
-{"id": "TOO_MANY_WATCHED_TOKENS", "field": "text", "en": "You may only watch %d currencies at a time", "hash": "4fb585f24b1817bf", "src": "db2@1.60.1.70291"}
-{"id": "TOTAL_MEM_KB_ABBR", "field": "text", "en": "AddOn Memory: %.0f KB", "hash": "edaa7f55781afee3", "src": "db2@1.60.1.70291"}
-{"id": "TOTAL_MEM_MB_ABBR", "field": "text", "en": "AddOn Memory: %.2f MB", "hash": "10c5ed0235f03d9b", "src": "db2@1.60.1.70291"}
-{"id": "TOTAL_MOUNTS", "field": "text", "en": "Total Mounts", "hash": "50edd0f9b361ec79", "src": "db2@1.60.1.70291"}
-{"id": "TOTAL_STACKS", "field": "text", "en": "%d Total", "hash": "1b3d3ffcd9c4cda1", "src": "db2@1.60.1.70291"}
-{"id": "TOTAL_TOYS", "field": "text", "en": "Total Toys", "hash": "9c52e9b859cb99fd", "src": "db2@1.60.1.70291"}
-{"id": "TOWNSFOLK_TRACKING_TEXT", "field": "text", "en": "Townsfolk", "hash": "ffc2da7e64522c6c", "src": "db2@1.60.1.70291"}
-{"id": "TOY", "field": "text", "en": "Toy", "hash": "0016383a4d840e6d", "src": "db2@1.60.1.70291"}
-{"id": "TOYBOX_FAVORITE_HELP", "field": "text", "en": "Right-click to favorite a toy. Favorite toys are pinned to the first page.", "hash": "e4220f64526c9bb9", "src": "db2@1.60.1.70291"}
-{"id": "TOYBOX_MOUSEWHEEL_PAGING_HELP", "field": "text", "en": "Tip: You can use your mouse wheel to quickly page through the Toy Box.", "hash": "e17db5ea77e3854b", "src": "db2@1.60.1.70291"}
-{"id": "TOY_BOX", "field": "text", "en": "Toy Box", "hash": "a955d9797ffdbade", "src": "db2@1.60.1.70291"}
-{"id": "TRACKED_ITEMS_FILTER_DESCRIPTION", "field": "text", "en": "Indicator on items and locations you have manually pinned to the map and are tracking", "hash": "a51cf649320e53d6", "src": "db2@1.60.1.70291"}
-{"id": "TRACKER_ALL_OBJECTIVES", "field": "text", "en": "All Objectives", "hash": "3aafd2f8091c4d5b", "src": "db2@1.60.1.70291"}
-{"id": "TRACKER_HEADER_ACHIEVEMENTS", "field": "text", "en": "Achievements", "hash": "be06f999ba912297", "src": "db2@1.60.1.70291"}
-{"id": "TRACKER_HEADER_BONUS_OBJECTIVES", "field": "text", "en": "Bonus Objectives", "hash": "6124231dcd3597e1", "src": "db2@1.60.1.70291"}
-{"id": "TRACKER_HEADER_CAMPAIGN_QUESTS", "field": "text", "en": "Campaign", "hash": "8cda0d5a9c045697", "src": "db2@1.60.1.70291"}
-{"id": "TRACKER_HEADER_DUNGEON", "field": "text", "en": "Dungeon", "hash": "8bba4ca03e80dc45", "src": "db2@1.60.1.70291"}
-{"id": "TRACKER_HEADER_OBJECTIVE", "field": "text", "en": "Objectives", "hash": "952e1dab3372fd3f", "src": "db2@1.60.1.70291"}
-{"id": "TRACKER_HEADER_PROVINGGROUNDS", "field": "text", "en": "Proving Grounds", "hash": "04d66e208f50d637", "src": "db2@1.60.1.70291"}
-{"id": "TRACKER_HEADER_QUESTS", "field": "text", "en": "Quests", "hash": "a84737c440533b3c", "src": "db2@1.60.1.70291"}
-{"id": "TRACKER_HEADER_SCENARIO", "field": "text", "en": "Scenario", "hash": "6e1c31cf775a3229", "src": "db2@1.60.1.70291"}
-{"id": "TRACKER_HEADER_WORLD_QUESTS", "field": "text", "en": "World Quests", "hash": "7b33982eac7929ff", "src": "db2@1.60.1.70291"}
-{"id": "TRACKING", "field": "text", "en": "Tracking", "hash": "ce32da4878b198ed", "src": "db2@1.60.1.70291"}
-{"id": "TRACK_ACHIEVEMENT", "field": "text", "en": "Track", "hash": "d1dffb309e5a7ffe", "src": "db2@1.60.1.70291"}
-{"id": "TRACK_ACHIEVEMENT_TOOLTIP", "field": "text", "en": "Check to track this achievement.", "hash": "9606ed07420f9225", "src": "db2@1.60.1.70291"}
-{"id": "TRACK_QUEST", "field": "text", "en": "Track Quest", "hash": "6ebfac6916a1d128", "src": "db2@1.60.1.70291"}
-{"id": "TRACK_QUEST_ABBREV", "field": "text", "en": "Track", "hash": "d1dffb309e5a7ffe", "src": "db2@1.60.1.70291"}
-{"id": "TRADE", "field": "text", "en": "Trade", "hash": "d1dffbad9e5a9fd9", "src": "db2@1.60.1.70291"}
-{"id": "TRADEFRAME_ENCHANT_SLOT_LABEL", "field": "text", "en": "Will not be traded", "hash": "cdaed407ed114760", "src": "db2@1.60.1.70291"}
-{"id": "TRADEFRAME_NOT_MODIFIED_TEXT", "field": "text", "en": "Item not yet modified", "hash": "c9ae9014b1a9480f", "src": "db2@1.60.1.70291"}
-{"id": "TRADESKILLS", "field": "text", "en": "Tradeskills", "hash": "fcb035ad18dff8cd", "src": "db2@1.60.1.70291"}
-{"id": "TRADESKILL_CHARGES_REMAINING", "field": "text", "en": "Available Crafts: %i / %i.", "hash": "9474f86b4338de5d", "src": "db2@1.60.1.70291"}
-{"id": "TRADESKILL_FILTER_HAS_SKILL_UP", "field": "text", "en": "Has skill up", "hash": "44aa2d87343e4336", "src": "db2@1.60.1.70291"}
-{"id": "TRADESKILL_FILTER_SLOTS", "field": "text", "en": "Slots", "hash": "bf882676a6961add", "src": "db2@1.60.1.70291"}
-{"id": "TRADESKILL_LOG_FIRSTPERSON", "field": "text", "en": "You create %s.", "hash": "9a3c621dc7c6bf88", "src": "db2@1.60.1.70291"}
-{"id": "TRADESKILL_LOG_THIRDPERSON", "field": "text", "en": "%s creates %s.", "hash": "3e128f2db81d2ad5", "src": "db2@1.60.1.70291"}
-{"id": "TRADESKILL_NEXT_RANK_HEADER", "field": "text", "en": "Next Rank", "hash": "80f8ebfc0d26e252", "src": "db2@1.60.1.70291"}
-{"id": "TRADESKILL_POST", "field": "text", "en": "Post in chat", "hash": "636fba66cd890c39", "src": "db2@1.60.1.70291"}
-{"id": "TRADESKILL_RECIPE_LEVEL_DROPDOWN_OPTION_FORMAT", "field": "text", "en": "Rank %s", "hash": "c7a12ae6b1a81120", "src": "db2@1.60.1.70291"}
-{"id": "TRADESKILL_RECIPE_LEVEL_RECIPE_FORMAT", "field": "text", "en": "%s (Rank %i)", "hash": "049a4b573a78dc45", "src": "db2@1.60.1.70291"}
-{"id": "TRADESKILL_UNLEARNED_RECIPE_HEADER", "field": "text", "en": "Recipe Unlearned", "hash": "36516edf3ee04189", "src": "db2@1.60.1.70291"}
-{"id": "TRADE_POTENTIAL_BIND_ENCHANT", "field": "text", "en": "Having this item enchanted will bind it to you.", "hash": "9830f49299702fe2", "src": "db2@1.60.1.70291"}
-{"id": "TRADE_POTENTIAL_REMOVE_TRANSMOG", "field": "text", "en": "Trading %s will remove it from your appearances collection.", "hash": "61c54108f969b8d1", "src": "db2@1.60.1.70291"}
-{"id": "TRADE_SKILLS", "field": "text", "en": "Professions", "hash": "dc45e8a4b82090c7", "src": "db2@1.60.1.70291"}
-{"id": "TRADE_WARNING_CHANGED_OFFER", "field": "text", "en": "%s has changed their trade offer. Please ensure you are receiving the correct items and gold.", "hash": "39262819c93577ae", "src": "db2@1.60.1.70291"}
-{"id": "TRADE_WITH_QUESTION", "field": "text", "en": "Trade with %s?", "hash": "3086b6550bf89c76", "src": "db2@1.60.1.70291"}
-{"id": "TRAIN", "field": "text", "en": "Train", "hash": "d1dffe459e5b3f47", "src": "db2@1.60.1.70291"}
-{"id": "TRAINER_CANNOT_EXCEED_MAX_PROFESSIONS", "field": "text", "en": "You can only learn two primary professions", "hash": "5f40e9d396395ce0", "src": "db2@1.60.1.70291"}
-{"id": "TRAINER_REQ_LEVEL", "field": "text", "en": "Level |cffffffff%d|r", "hash": "aa985ae04e775368", "src": "db2@1.60.1.70291"}
-{"id": "TRAINER_REQ_LEVEL_RED", "field": "text", "en": "Level |cffff2020%d|r", "hash": "aa985ae04e775368", "src": "db2@1.60.1.70291"}
-{"id": "TRAINER_REQ_SKILL_RANK", "field": "text", "en": "%s (|cffffffff%d|r)", "hash": "515e9f9188174410", "src": "db2@1.60.1.70291"}
-{"id": "TRAINER_REQ_SKILL_RANK_RED", "field": "text", "en": "%s (|cffff2020%d|r)", "hash": "515e9f9188174410", "src": "db2@1.60.1.70291"}
-{"id": "TRAINING_POINTS", "field": "text", "en": "Training Points: %s", "hash": "b9b47f3ba4c6c567", "src": "db2@1.60.1.70291"}
-{"id": "TRAINING_POINTS_ABBREV", "field": "text", "en": "%s TP", "hash": "98ecc2cc3ca9fa83", "src": "db2@1.60.1.70291"}
-{"id": "TRAINING_POINTS_TUTORIAL", "field": "text", "en": "Increase your pet's loyalty and level to gain Training Points.", "hash": "e31bdd9359377490", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOGRIFICATION", "field": "text", "en": "Transmogrification", "hash": "7e07cc018becc4ca", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOGRIFIED_ENCHANT", "field": "text", "en": "Illusion: %s", "hash": "47a61515c31cc1cd", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOGRIFY", "field": "text", "en": "Transmogrify", "hash": "9cce4d2a4d4acb67", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOGRIFY_CLEAR_ALL_PENDING", "field": "text", "en": "Undo all pending changes", "hash": "afe62cce96e55fe8", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOGRIFY_ILLUSION_INVALID_ITEM", "field": "text", "en": "This weapon appearance cannot be transmogrified with enchants.", "hash": "0c55a5e5891fa80f", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOGRIFY_RIGHT_SHOULDER", "field": "text", "en": "Transmog Each Shoulder Separately", "hash": "4697f05999c019db", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOGRIFY_TOOLTIP_APPEARANCE_KNOWN", "field": "text", "en": "You've collected this appearance", "hash": "9eaa6b3d4ada4edc", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOGRIFY_TOOLTIP_APPEARANCE_UNCOLLECTABLE", "field": "text", "en": "This item can't be used for transmogrification, but may be worn as equipment", "hash": "541ad5875c49c04c", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOGRIFY_TOOLTIP_APPEARANCE_UNKNOWN", "field": "text", "en": "You haven't collected this appearance", "hash": "11c6310d6f88bb4b", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOGRIFY_TOOLTIP_APPEARANCE_UNUSABLE", "field": "text", "en": "This appearance can't be used by your character", "hash": "4250f2240e3f29eb", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOGRIFY_TOOLTIP_HIDDEN", "field": "text", "en": "Hidden", "hash": "fdd5c07f26887c68", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOGRIFY_TOOLTIP_ITEM_UNKNOWN_APPEARANCE_KNOWN", "field": "text", "en": "You've collected this appearance, but not from this item", "hash": "23716b808f7e1ba4", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOGRIFY_TOOLTIP_REVERT", "field": "text", "en": "To be reverted", "hash": "ec8a85d0e9c3f967", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_AND_MOUNT_DRESSUP_FRAME_SHOW_MOUNT", "field": "text", "en": "Show Mount", "hash": "7ae97e586a4c38ab", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_APPEARANCE_USABLE_HOLIDAY", "field": "text", "en": "This appearance is only usable during holiday: %s.", "hash": "be1d872beab47aca", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_ARTIFACT_OPTIONS_HEADER", "field": "text", "en": "Legion Artifact Override", "hash": "3ba7d7019a89c88f", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_COLLECTED", "field": "text", "en": "Collected", "hash": "3e728695d5235bc6", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SETS_HELPTIP", "field": "text", "en": "Create outfits from scratch with your Custom Sets.", "hash": "dfcb5c7f2ea0bc41", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SETS_MIGRATION_HELPTIP", "field": "text", "en": "Your previously applied Transmog and legacy outfits are available in Custom Sets.", "hash": "36eba7737c625a55", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SETS_NONE", "field": "text", "en": "You don't have any Custom Sets", "hash": "115c76330bd2b460", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SET_ALL_INVALID_APPEARANCES", "field": "text", "en": "You can't save this custom set because none of the item appearances can be transmogrified by your character.", "hash": "95bad42f8b140fcf", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SET_ALREADY_EXISTS", "field": "text", "en": "A custom set with that name already exists.", "hash": "aa6e88aaa3f49a79", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SET_CHECKING_APPEARANCES", "field": "text", "en": "Checking appearances...", "hash": "c91f0f4bf96cd46b", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SET_CONFIRM_DELETE", "field": "text", "en": "Are you sure you want to delete the custom set %s?", "hash": "b4bf4295957c0a52", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SET_CONFIRM_OVERWRITE", "field": "text", "en": "You already have a custom set named %s. Would you like to overwrite it?", "hash": "c17071a40beb70d2", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SET_COPY_TO_CLIPBOARD", "field": "text", "en": "Copy to Clipboard |cffffd100(to share online)|r", "hash": "10b21e9ac901e8c6", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SET_COPY_TO_CLIPBOARD_NOTICE", "field": "text", "en": "Custom Set link copied to clipboard", "hash": "b4c869696e08d087", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SET_DELETE", "field": "text", "en": "Delete", "hash": "caa07040d3f1985e", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SET_DRESSING_ROOM", "field": "text", "en": "View in Dressing Room (Exits Transmogrify)", "hash": "d852439a0a7bc696", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SET_EDIT", "field": "text", "en": "Rename/Delete", "hash": "a9f3ce23f5490bcf", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SET_EDIT_DELETE", "field": "text", "en": "Delete Custom Set", "hash": "12bd0214fdbd61b8", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SET_LINK_INVALID", "field": "text", "en": "Invalid custom set link.", "hash": "98b8cdae5b15701d", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SET_NAME", "field": "text", "en": "Enter Custom Set Name:", "hash": "3302c4350e9f21ad", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SET_NEW", "field": "text", "en": "New Custom Set", "hash": "7a1fd68ea373f954", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SET_NEW_TOOLTIP_DISABLED", "field": "text", "en": "Add an appearance to create a Custom Set", "hash": "aba4541c3c41d97f", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SET_NEW_TOOLTIP_DISABLED_MAX_COUNT", "field": "text", "en": "You have reached the maximum number of Custom Sets", "hash": "26a6250f98ad3227", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SET_NONE", "field": "text", "en": "No Custom Set", "hash": "2c03125e5844612e", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SET_POST_IN_CHAT", "field": "text", "en": "Post in Chat", "hash": "5f260706208a8b38", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SET_RENAME", "field": "text", "en": "Rename", "hash": "8c201e7d5466df3f", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SET_REPLACE", "field": "text", "en": "Replace With Current Appearance", "hash": "aa79b5ed8496fc71", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_CUSTOM_SET_SOME_INVALID_APPEARANCES", "field": "text", "en": "One or more item appearances won't be saved in this custom set because they can't be transmogrified by your character.", "hash": "c56dbb9012823ebd", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_DRACTHYR_APPEARANCE_INVISIBLE", "field": "text", "en": "This appearance isn't visible in Dracthyr form", "hash": "2996431b225421d0", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_EDIT_OUTFIT_SLOT", "field": "text", "en": "Change Name/Icon", "hash": "dadd8a80751638b5", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_FAVORITE_LOSE_REFUND_AND_TRADE", "field": "text", "en": "Favoriting this appearance will make the item in your inventory non-refundable and non-tradeable.\nDo you wish to continue?", "hash": "030b8919cc41a1ca", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_HELP_1", "field": "text", "en": "Begin by selecting an |cnBRIGHTBLUE_FONT_COLOR:Outfit|r to customize.\n\nAdditional outfits can be purchased with gold.", "hash": "956874255af5dbe8", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_HELP_2", "field": "text", "en": "Assign appearances to any gear slot in an outfit to override the look of the equipment in that slot.\n\nAssigning or updating appearances costs gold, but once saved, you can switch to that outfit anytime for free.", "hash": "5325666e6ac60c30", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_HELP_3", "field": "text", "en": "Select appearances or sets to customize your outfit.\n\nYou can configure outfits to swap automatically by assigning specific rules in the |cnBRIGHTBLUE_FONT_COLOR:Situations|r tab.", "hash": "50a72ee3d75d72b8", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_HIDE_UNASSIGNED_SLOTS", "field": "text", "en": "Hide Ignored Slots", "hash": "c15c8c642c0aed6b", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_ITEM_SET_FAVORITE", "field": "text", "en": "Set Favorite", "hash": "3c52bfc8d42635fc", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_ITEM_UNSET_FAVORITE", "field": "text", "en": "Remove Favorite", "hash": "575757be67e9a10f", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_OUTFITS_HELPTIP", "field": "text", "en": "Create outfits to change the appearance of your equipped weapons and armor.\n\nAdd outfits to your action bars for manual control, or setup situations where outfits automatically swap.", "hash": "4f0972ac906dd774", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_OUTFIT_INVALID_NAME", "field": "text", "en": "That name is unavailable. Please choose a different name and try again.", "hash": "5067ceef6b8f097e", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_OUTFIT_SLOT_POPUP_TEXT", "field": "text", "en": "Enter Outfit Name (Max 16 Characters):", "hash": "aee4334b4c14c010", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_PENDING_CHANGES", "field": "text", "en": "This outfit has pending changes. Continuing will cause your pending changes to be lost.", "hash": "25021cf9ffae2a2e", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_PREVIEWED_WEAPON_TOGGLE", "field": "text", "en": "View Ranged Weapon", "hash": "a88ed97530d7cb12", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_PURCHASE_OUTFIT_SLOT", "field": "text", "en": "Purchase Outfit Slot", "hash": "249b747408cdde3e", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SAVE_OUTFIT", "field": "text", "en": "Save Outfit", "hash": "5fd4e894aeb7650a", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SAVE_OUTFIT_CANNOT_AFFORD_TOOLTIP", "field": "text", "en": "You can't afford to save outfit changes", "hash": "9ec5cad35718ed6a", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SAVE_OUTFIT_TOOLTIP", "field": "text", "en": "Save and apply outfit changes", "hash": "dfe17107e962a778", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SETS_FAVORITE_WITH_DESCRIPTION", "field": "text", "en": "Set Favorite (%s)", "hash": "1edc1467f6b30142", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SETS_HELPTIP", "field": "text", "en": "Create outfits from Set appearances you've collected.", "hash": "416c5b687e93e50c", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SETS_NONE", "field": "text", "en": "You don't have any Set appearances", "hash": "3121210a7f25832d", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SETS_TAB_TUTORIAL", "field": "text", "en": "View all the appearance sets you can collect for your class here.", "hash": "db40802d1fff1a12", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SETS_UNFAVORITE_WITH_DESCRIPTION", "field": "text", "en": "Remove Favorite (%s)", "hash": "e4ba7d0caf124d94", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SET_GRANTS_PRECEDING_VARIANTS", "field": "text", "en": "Completing this appearance set unlocks all preceding set variants.", "hash": "15c07825825e51d1", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SET_LIMITED_TIME_SET", "field": "text", "en": "Limited Time Set", "hash": "af33dd97af166d71", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SET_LIMITED_TIME_SET_TOOLTIP", "field": "text", "en": "This set can be collected during the current season only.", "hash": "7ed42f150ac2753b", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SET_OPEN_COLLECTION", "field": "text", "en": "Open Appearances", "hash": "3e59220f59ceb5e5", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SET_PVE", "field": "text", "en": "PvE", "hash": "00152f773da3de5c", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SET_PVP", "field": "text", "en": "PvP", "hash": "00152f823da3de67", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SHEATHE_WEAPON", "field": "text", "en": "Sheathe Weapon", "hash": "0c42ce86092b9b64", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SHEATHE_WEAPON_TOOLTIP", "field": "text", "en": "Sheathe/Unsheathe Weapon", "hash": "a6bcf3a8c5d3015a", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SITUATIONS_APPLY", "field": "text", "en": "Apply Changes", "hash": "3753f4eac1a5f045", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SITUATIONS_APPLY_DISABLED_TOOLTIP", "field": "text", "en": "You must select a valid option to apply changes", "hash": "77e689c89e497afd", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SITUATIONS_DEFAULTS", "field": "text", "en": "Defaults", "hash": "f1d97b2b35500d03", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SITUATIONS_DESCRIPTION", "field": "text", "en": "Choose specific Situations options below to automatically change into this outfit. You must meet all conditions listed for the change to occur. \n\nIf multiple outfits are equally valid, one will be chosen randomly.", "hash": "ca63e59295584dad", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SITUATIONS_ENABLED", "field": "text", "en": "Situations Enabled", "hash": "4d06515fe13d5759", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SITUATIONS_HELPTIP", "field": "text", "en": "Configure options for when you automatically swap to the selected outfit.", "hash": "143e7e244264a83c", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SITUATIONS_NO_VALID_OPTIONS", "field": "text", "en": "No valid options selected", "hash": "4fdc585ece2412c3", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SITUATIONS_UNDO", "field": "text", "en": "Undo Pending Changes", "hash": "743989d75f0aa54b", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SLOT_APPEARANCE_INVISIBLE", "field": "text", "en": "This appearance isn't visible on your character", "hash": "8652ed074fb07994", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SLOT_DISPLAY_TYPE_EQUIPPED", "field": "text", "en": "Show Equipped Gear", "hash": "7907f7da667356b3", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SLOT_DISPLAY_TYPE_EQUIPPED_TOOLTIP", "field": "text", "en": "The appearance of this slot will show the currently equipped gear.", "hash": "fdad3da0a36ed3e1", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SLOT_DISPLAY_TYPE_UNASSIGNED", "field": "text", "en": "Unassigned", "hash": "2129953ca143ed16", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SLOT_DISPLAY_TYPE_UNASSIGNED_ARTIFACT", "field": "text", "en": "Ignore Override", "hash": "99b6cbd5645ede4f", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SLOT_DISPLAY_TYPE_UNASSIGNED_ARTIFACT_TOOLTIP", "field": "text", "en": "When this outfit is applied, items in this slot will not have their appearance overridden.", "hash": "827c2414f68a52eb", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_SLOT_DISPLAY_TYPE_UNASSIGNED_TOOLTIP", "field": "text", "en": "The appearance of this slot will not be changed.", "hash": "052f56e542282d56", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_TAB_CUSTOM_SETS", "field": "text", "en": "Custom Sets", "hash": "4ee7d4f68c2d0391", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_TAB_ITEMS", "field": "text", "en": "Items", "hash": "110ed23534f93bbc", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_TAB_SETS", "field": "text", "en": "Sets", "hash": "0b39d79d69b54c58", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_TAB_SITUATIONS", "field": "text", "en": "Situations", "hash": "0e30258c349f184c", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_TRIAL_OF_STYLE_HELPTIP", "field": "text", "en": "Dress to impress with this special Trial of Style outfit.\n\nUpdating this outfit is free during the Trial of Style event.", "hash": "4137fb2b3a1480a3", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_USABLE_DISCOUNT", "field": "text", "en": "Free Transmog outfit update available", "hash": "2e70f1c5ed3e129b", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_USABLE_DISCOUNT_CLAIM", "field": "text", "en": "Claim Free", "hash": "9545897cd4b32d7c", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_USABLE_DISCOUNT_CONFIRM", "field": "text", "en": "You have a free Transmog outfit update. This offer is limited to a single use per character.", "hash": "9f7d79e1c31f9d9f", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_USABLE_DISCOUNT_USE_GOLD", "field": "text", "en": "Use Gold", "hash": "4b802e7767ab8546", "src": "db2@1.60.1.70291"}
-{"id": "TRANSMOG_WEAPON_OPTIONS_HELPTIP", "field": "text", "en": "Different appearances can be assigned for different weapon types you equip.", "hash": "d1633e0eee82ae1e", "src": "db2@1.60.1.70291"}
-{"id": "TRAVEL_PASS_INVITE", "field": "text", "en": "Invite to Group", "hash": "36db2de9f846c335", "src": "db2@1.60.1.70291"}
-{"id": "TRIAL_CAP_BANKED_LEVELS_TOOLTIP", "field": "text", "en": "You have earned XP that exceeds your level cap.  Buy the game to apply your banked XP and gain %d levels.", "hash": "fc59d79507458b1c", "src": "db2@1.60.1.70291"}
-{"id": "TRIAL_CAP_BANKED_XP_TOOLTIP", "field": "text", "en": "You have earned XP that exceeds your level cap.  Buy the game to apply your banked XP.", "hash": "cac483c048808589", "src": "db2@1.60.1.70291"}
-{"id": "TRIAL_RESTRICTED", "field": "text", "en": "You need to upgrade your account to access this feature.", "hash": "91bda89550edd17f", "src": "db2@1.60.1.70291"}
-{"id": "TRINKET0SLOT", "field": "text", "en": "Trinket", "hash": "8d85b3cd3e60b73e", "src": "db2@1.60.1.70291"}
-{"id": "TRINKET1SLOT", "field": "text", "en": "Trinket", "hash": "8d85b3cd3e60b73e", "src": "db2@1.60.1.70291"}
-{"id": "TRIPLE_BUFFER", "field": "text", "en": "Triple Buffering", "hash": "feb345862b360000", "src": "db2@1.60.1.70291"}
-{"id": "TRIVIAL_QUESTS_FILTER_DESCRIPTION", "field": "text", "en": "These quests are significantly lower than your current level and will award no experience", "hash": "f7f7c18fb7e7564a", "src": "db2@1.60.1.70291"}
-{"id": "TRIVIAL_QUEST_DISPLAY", "field": "text", "en": "|cff000000%s (low level)|r", "hash": "26fd5f79b0a9ee1e", "src": "db2@1.60.1.70291"}
-{"id": "TTS_CONFIRM_SAVE_SETTINGS", "field": "text", "en": "Do you want this character to use the Text to Speech settings saved on this computer? If you are logging in from a different computer, this will save over any previous settings you had.", "hash": "1f1d7c300a92ad4b", "src": "db2@1.60.1.70291"}
-{"id": "TURN_IN_ITEMS", "field": "text", "en": "Required items:", "hash": "bbe9aa899667d980", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL17", "field": "text", "en": "You can reply to that player by hitting the R key and then typing a message, or by typing /w <theirname> and then the message.", "hash": "7a30263203ea179c", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL18", "field": "text", "en": "You can invite another player to your group by |cffffd200Right Clicking|r their portrait and selecting the |cffffd200Invite|r option from the popup menu.|n|nYou can leave a group by Right Clicking on your own portrait and choosing the option to leave the party.", "hash": "7814ee3b585fff6e", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL22", "field": "text", "en": "If there is another player you have enjoyed playing with, add them to your friends list! Click on the |cffffd200Social Button|r and add them to your list of friends.|n|nYou can only add friends from your own realm.", "hash": "f6dcc955cec01764", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL27", "field": "text", "en": "If you stray into deep and uncharted waters, you will see a Fatigue bar. If you become completely fatigued, you will begin to drown.", "hash": "cbd572f20c6b163e", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL28", "field": "text", "en": "Swimming is much like walking, except you can steer upwards and downwards by holding down the |cffffd200Right Mouse Button|r and looking in the direction you want to go.", "hash": "c5c14f6c7ae69268", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL37", "field": "text", "en": "One of your items has broken! The character icon below your minimap indicates the broken item in red.|n|nYou can get the item repaired by a vendor in town. Until you do, you will gain no benefit from the item.", "hash": "dd6f43590f01f44f", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL46", "field": "text", "en": "You have joined a raid group: a group with an increased limit of 40 members, though usually 10 or 25. Raid groups are necessary to enter the most challenging dungeons or to defeat the most powerful enemies, typically at high level.|n|n|cffff2020While in a raid group, you will not earn credit towards most quests. To leave a raid group, Right Click on your character portrait and select Leave party.|r", "hash": "4bb17c250c1c7808", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL52", "field": "text", "en": "Congratulations, you have received your first Battle Pet. This little fellow will follow you during all of your adventures in Azeroth and beyond.|n|nYou can see all of your Battle Pets by clicking the |cffffd200Collections|r button and then looking for the  |cffffd200Pet Journal|r tab.", "hash": "e53f8fb8de5cb06f", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL_HUD_REVAMP_BAG_CHANGES", "field": "text", "en": "Click on this icon to review new filters and bag combining options.", "hash": "816f918e4f1d0e2f", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL_HUD_REVAMP_LFG_QUEUE_CHANGES", "field": "text", "en": "You are queued for an activity.\n\nGroup Finder queue information appears in this location.", "hash": "7d6058bcdc243020", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL_SUPERTRACK_STEP_1", "field": "text", "en": "Focus on a quest by clicking its icon", "hash": "38d5cc67d418ae89", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL_TITLE17", "field": "text", "en": "Replying to Whispers", "hash": "5fd6748b9e60d156", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL_TITLE18", "field": "text", "en": "Grouping", "hash": "bb4daef567685336", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL_TITLE22", "field": "text", "en": "Friends", "hash": "aa8bfa51a365a614", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL_TITLE27", "field": "text", "en": "Fatigue", "hash": "b8613403e72ce8d4", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL_TITLE28", "field": "text", "en": "Swimming", "hash": "6a2eed120b7fb021", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL_TITLE37", "field": "text", "en": "Broken Items", "hash": "3085baf21e2ad6dd", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL_TITLE46", "field": "text", "en": "Raid Groups", "hash": "6f17dbc4f025a2ad", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL_TITLE52", "field": "text", "en": "Companions", "hash": "10662233ca1efb1b", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL_TOKEN_ABOUT_TOKENS", "field": "text", "en": "About WoW Tokens", "hash": "af5105db11810927", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL_TOKEN_GAME_TIME_STEP_1", "field": "text", "en": "1. Buy a WoW Token from the|n    |cffffffffauction house|r.", "hash": "6512a5bc8ccdd559", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL_TOKEN_GAME_TIME_STEP_2", "field": "text", "en": "2. Redeem it for 30 days of game|ntime.", "hash": "eee5f6713028e3c9", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL_TOKEN_GAME_TIME_STEP_2_BALANCE", "field": "text", "en": "2. Redeem it for 30 days of game|ntime (or %s of Blizzard Balance).", "hash": "9e1077e632e6681b", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL_TOKEN_GOLD_STEP_1", "field": "text", "en": "1. Buy a WoW Token from the|n    |cffffffffShop|r.", "hash": "537eb4e08ab69fdd", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL_TOKEN_GOLD_STEP_2", "field": "text", "en": "2. Sell it in the |cffffffffauction house|r for|n    gold.", "hash": "f4f4c38026b0f40e", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL_TOKEN_I_NEED_GAME_TIME", "field": "text", "en": "I Need Game Time", "hash": "7ae029d842e97cdb", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL_TOKEN_I_NEED_GOLD", "field": "text", "en": "I Need Gold", "hash": "c5430312f982d546", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL_TOKEN_PAY_FOR_TIME_WITH_GOLD", "field": "text", "en": "Buy game time with gold", "hash": "7cf417f4f8aac124", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL_TOKEN_SELL_FOR_GOLD", "field": "text", "en": "Sell a WoW Token for gold", "hash": "9b45cc06bee0d5fb", "src": "db2@1.60.1.70291"}
-{"id": "TUTORIAL_VOICE", "field": "text", "en": "You can join or leave voice chat here.", "hash": "d4d8b465aeeae2c8", "src": "db2@1.60.1.70291"}
-{"id": "TYPE", "field": "text", "en": "Type", "hash": "0b615fd246820bea", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2436", "field": "text", "en": "Alchemy - UNCATEGORIZED", "hash": "e8215730da2c9ba6", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2437", "field": "text", "en": "Blacksmithing - UNCATEGORIZED", "hash": "2b700668d93e7562", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2438", "field": "text", "en": "Cooking - UNCATEGORIZED", "hash": "f21be7939871c7b8", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2439", "field": "text", "en": "Enchanting - UNCATEGORIZED", "hash": "bd11fe293c6b81be", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2440", "field": "text", "en": "Engineering - UNCATEGORIZED", "hash": "756d97aabb72630d", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2441", "field": "text", "en": "First Aid - UNCATEGORIZED", "hash": "0c89364cd816eb5c", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2442", "field": "text", "en": "Fishing - UNCATEGORIZED", "hash": "22f8e33e2dbab8de", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2443", "field": "text", "en": "Herbalism - UNCATEGORIZED", "hash": "77d9cffeba9a3176", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2444", "field": "text", "en": "Leatherworking - UNCATEGORIZED", "hash": "d8393025787c9493", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2445", "field": "text", "en": "Mining - UNCATEGORIZED", "hash": "10d474f66719e17f", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2446", "field": "text", "en": "Skinning - UNCATEGORIZED", "hash": "e586641269ecba52", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2447", "field": "text", "en": "Tailoring - UNCATEGORIZED", "hash": "d7f116a978a9dcf2", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2448", "field": "text", "en": "Reagents", "hash": "f7a719e8744e51c0", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2449", "field": "text", "en": "Potions", "hash": "889a67d1d4574851", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2450", "field": "text", "en": "Elixirs", "hash": "1349fc3ecf749ca7", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2451", "field": "text", "en": "Flasks", "hash": "3b135404b389822b", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2452", "field": "text", "en": "Lesser Transmutations", "hash": "d58df28f7a1d665e", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2453", "field": "text", "en": "Miscellaneous", "hash": "b3c7747f3cef66e5", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2454", "field": "text", "en": "Camping", "hash": "2059c10bb3c701a8", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2455", "field": "text", "en": "Weapon Oils", "hash": "43d92228fc5b2090", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2460", "field": "text", "en": "Weapon Stones", "hash": "e620d5fd06e5103e", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2461", "field": "text", "en": "Mail Helmets", "hash": "ce0af07e60a9d5e6", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2462", "field": "text", "en": "Mail Pauldrons", "hash": "832e918a6f15abca", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2463", "field": "text", "en": "Mail Chestguards", "hash": "9c7b35d4330f2410", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2464", "field": "text", "en": "Mail Bracers", "hash": "9524b81068fcb78d", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2465", "field": "text", "en": "Mail Gauntlets", "hash": "7a7cf0925773af26", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2466", "field": "text", "en": "Mail Belts", "hash": "dd43fdc0b5515033", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2467", "field": "text", "en": "Mail Legguards", "hash": "41646f30d045938d", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2468", "field": "text", "en": "Mail Boots", "hash": "de9bcee94749a3d2", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2469", "field": "text", "en": "Plate Helmets", "hash": "dc40e5e0a8aa61db", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2470", "field": "text", "en": "Plate Pauldrons", "hash": "224cea9963737759", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2471", "field": "text", "en": "Plate Chestguards", "hash": "25dac585d682ebba", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2472", "field": "text", "en": "Plate Bracers", "hash": "a35aad72b0fd4382", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2473", "field": "text", "en": "Plate Gauntlets", "hash": "199b49a14bd17ab5", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2474", "field": "text", "en": "Plate Belts", "hash": "5774beb45f745f8d", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2475", "field": "text", "en": "Plate Legguards", "hash": "e082c83ac4a35f1c", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2476", "field": "text", "en": "Plate Boots", "hash": "58cc8fddf16cb31b", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2481", "field": "text", "en": "One-Handed Axes", "hash": "11e3a286f24718bb", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2484", "field": "text", "en": "One-Handed Maces", "hash": "f70b30d5433229c6", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2485", "field": "text", "en": "One-Handed Swords", "hash": "d3a073af08003389", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2486", "field": "text", "en": "Shields", "hash": "047394cec4ba0cf2", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2488", "field": "text", "en": "Inert Enchanting Rods", "hash": "6564eb19355d1cc8", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2491", "field": "text", "en": "Runed Enchanting Rods", "hash": "83c10eb94e187a1f", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2492", "field": "text", "en": "Wizard Oils", "hash": "391c24c61f92d272", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2493", "field": "text", "en": "Helmet Enchants", "hash": "c103c152025831cc", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2494", "field": "text", "en": "Shoulder Enchants", "hash": "1f7a9222929324b0", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2495", "field": "text", "en": "Chest Enchants", "hash": "a1813bb08b9e22cd", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2496", "field": "text", "en": "Bracer Enchants", "hash": "2245dd9d36e4372a", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2497", "field": "text", "en": "Glove Enchants", "hash": "5c867b66d7a1c17e", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2498", "field": "text", "en": "Belt Enchants", "hash": "4288b081dc211b87", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2499", "field": "text", "en": "Pants Enchants", "hash": "9f5f851aebf5e57a", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2500", "field": "text", "en": "Boots Enchants", "hash": "993026a937b65056", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2501", "field": "text", "en": "Two-Handed Weapon Enchants", "hash": "16135f047a331b10", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2502", "field": "text", "en": "Weapon Enchants", "hash": "b6b47770db2f4df3", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2503", "field": "text", "en": "Shield Enchants", "hash": "41073ba1a00ffeda", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2504", "field": "text", "en": "Off-Hand Enchants", "hash": "a7e861ec28d6b44b", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2505", "field": "text", "en": "Amulet Enchants", "hash": "4ea3fc42295e796b", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2506", "field": "text", "en": "Cloak Enchants", "hash": "43ad51fa5d41fdc3", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2507", "field": "text", "en": "Ring Enchants", "hash": "57b4ad3648ea5efb", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2508", "field": "text", "en": "Trinket Enchants", "hash": "1c256295508e1071", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2509", "field": "text", "en": "Relics", "hash": "8bdd967f5957d67c", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2510", "field": "text", "en": "Curios", "hash": "e8c664fad1600dba", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2513", "field": "text", "en": "Off-Hands", "hash": "6169368b1b274b18", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2515", "field": "text", "en": "Parts", "hash": "896676f50247eb65", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2516", "field": "text", "en": "Explosives", "hash": "a523f6b229cb0256", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2517", "field": "text", "en": "Fireworks", "hash": "682f427fdbf1928e", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2518", "field": "text", "en": "Consumable Devices", "hash": "77d229abfb57406b", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2519", "field": "text", "en": "Devices", "hash": "60275538301858bf", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2520", "field": "text", "en": "Gadgets", "hash": "53f360072b5af716", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2521", "field": "text", "en": "Pets and Guardians", "hash": "93f0e9bf12ebb87e", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2522", "field": "text", "en": "Cloth Headgear", "hash": "119010d172b46fc5", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2523", "field": "text", "en": "Leather Headgear", "hash": "264d25f13422065a", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2524", "field": "text", "en": "Mail Headgear", "hash": "032f0eb90e458e26", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2525", "field": "text", "en": "Plate Headgear", "hash": "48cba00267b3d3e2", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2526", "field": "text", "en": "Ranged Weapons", "hash": "0245ca1218e093c1", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2527", "field": "text", "en": "Scopes", "hash": "64af3493b10e77ba", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2528", "field": "text", "en": "Ammunition", "hash": "f8b675be3066b388", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2530", "field": "text", "en": "Bandages", "hash": "3e47c357fd3639c6", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2531", "field": "text", "en": "Healing Potions", "hash": "0049ce42431f9a09", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2532", "field": "text", "en": "Poultices", "hash": "34eeb108c97578f3", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2533", "field": "text", "en": "Curatives", "hash": "80b88ebf7e546789", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2537", "field": "text", "en": "Necks", "hash": "66d04e9d3e85a555", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2538", "field": "text", "en": "Rings", "hash": "ad933da41b79dd26", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2539", "field": "text", "en": "Crowns", "hash": "b3ba0331c3fc47e8", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2540", "field": "text", "en": "Cuffs", "hash": "a7df19598cd99784", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2541", "field": "text", "en": "Trinkets", "hash": "6b6b03c2893213f5", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2542", "field": "text", "en": "Red Gems", "hash": "07def52ddff81b7e", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2543", "field": "text", "en": "Orange Gems", "hash": "0389d7ade1de792b", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2544", "field": "text", "en": "Yellow Gems", "hash": "3a0e8fac134c0519", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2545", "field": "text", "en": "Green Gems", "hash": "f7403d17e6d21873", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2546", "field": "text", "en": "Blue Gems", "hash": "73bbc33a8b4b3b18", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2547", "field": "text", "en": "Purple Gems", "hash": "16bd0c8c8a5d9ba9", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2548", "field": "text", "en": "Meta Gems", "hash": "e2ce50dbbcf7c010", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2551", "field": "text", "en": "Bags", "hash": "08f19d87f5eb6a4e", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2552", "field": "text", "en": "Cloaks", "hash": "4a61f8fc332718de", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2553", "field": "text", "en": "Leather Helmets", "hash": "7c3c062cd1f8c93e", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2554", "field": "text", "en": "Leather Pauldrons", "hash": "7b94738c6869eda5", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2555", "field": "text", "en": "Leather Chestguards", "hash": "0236a3f59436e9dc", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2556", "field": "text", "en": "Leather Bracers", "hash": "4355cdbeda4baae5", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2557", "field": "text", "en": "Leather Gauntlets", "hash": "72e2d29450c7f101", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2558", "field": "text", "en": "Leather Belts", "hash": "bf3b5787489116f7", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2559", "field": "text", "en": "Leather Legguards", "hash": "39ca5132c999d568", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2560", "field": "text", "en": "Leather Boots", "hash": "c09328b0da896a85", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2569", "field": "text", "en": "Armor Kits", "hash": "3f1d977ecba332e9", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2570", "field": "text", "en": "Quivers", "hash": "630b5f7885a99e1b", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2571", "field": "text", "en": "Ammo Pouches", "hash": "a221706579b9697f", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2573", "field": "text", "en": "Arrows", "hash": "bd164115a95fd0bf", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2575", "field": "text", "en": "Smelted Bars", "hash": "a23b1f0d395f5285", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2577", "field": "text", "en": "Embroideries", "hash": "0513c5c2c2bd71bf", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2579", "field": "text", "en": "Specialty Bags", "hash": "80f01d642ae33b15", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2581", "field": "text", "en": "Hoods", "hash": "fed83197bab87eb4", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2582", "field": "text", "en": "Spaulders", "hash": "3639f4c1759c1ba3", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2583", "field": "text", "en": "Robes and Vests", "hash": "1c0a20c04ee131f7", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2584", "field": "text", "en": "Bracers", "hash": "4b0c8d19172eca26", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2585", "field": "text", "en": "Gloves", "hash": "3878a427ccaa90ae", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2586", "field": "text", "en": "Belts", "hash": "942e22b8ef432c54", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2587", "field": "text", "en": "Leggings", "hash": "10a0fee9d2b05c26", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2588", "field": "text", "en": "Shoes", "hash": "befee85d70f46c90", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2589", "field": "text", "en": "Shirts", "hash": "bba68045c325a294", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2590", "field": "text", "en": "Dressed for the Occasion", "hash": "3c0e68d9d0f2a5c5", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2592", "field": "text", "en": "SEASON OF DISCOVERY", "hash": "18a0ec4f6deb1946", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2620", "field": "text", "en": "Greater Transmutations", "hash": "c4fd36f933eb7372", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2621", "field": "text", "en": "Recovery Potions", "hash": "53dbd8a5766f2f63", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2632", "field": "text", "en": "Everyday Meals", "hash": "0f663a7c7d6e5b88", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2633", "field": "text", "en": "Strength Food", "hash": "bebabc13b5c6d06f", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2634", "field": "text", "en": "Agility Food", "hash": "215d04cf8036d3e9", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2635", "field": "text", "en": "Intellect Food", "hash": "395f48a5bb655ba3", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2636", "field": "text", "en": "Miscellaneous Cuisines", "hash": "637e43d302b21e3a", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2638", "field": "text", "en": "Winter Veil Treats", "hash": "0bbc149af379a8d7", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2639", "field": "text", "en": "Meal Prep", "hash": "497268c40ff702e7", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2640", "field": "text", "en": "Stamina Food", "hash": "31015cac7779a40f", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2641", "field": "text", "en": "Spell Damage Food", "hash": "970ca0f74a240d55", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2642", "field": "text", "en": "Combat Prowess Food", "hash": "a1509e8f81494094", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2643", "field": "text", "en": "Attack Power Food", "hash": "e3dbd82298173f45", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2644", "field": "text", "en": "Fisherman's Delights", "hash": "cfa320a93ed6255c", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2645", "field": "text", "en": "Delightful Drinks", "hash": "e98ba53f847e39ed", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2646", "field": "text", "en": "Soothing Drinks", "hash": "917948ef6debdffd", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2651", "field": "text", "en": "Draughts", "hash": "928809959506dbac", "src": "db2@1.60.1.70291"}
-{"id": "TradeSkillCategory:2771", "field": "text", "en": "Armor Food", "hash": "3e73a30f206c65de", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:1", "field": "text", "en": "All Specializations", "hash": "4cd9d3a591935eb8", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:10", "field": "text", "en": "Raids", "hash": "ac7f80169c608a71", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:11", "field": "text", "en": "Arenas", "hash": "bb5801eb771d6b3e", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:12", "field": "text", "en": "Battlegrounds", "hash": "ee710fa995072d7b", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:13", "field": "text", "en": "All Movement", "hash": "f81d4d28f802f9b3", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:14", "field": "text", "en": "Unmounted", "hash": "b81fb50b0e84b0df", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:15", "field": "text", "en": "Swimming", "hash": "6a2eed120b7fb021", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:16", "field": "text", "en": "Ground Mount", "hash": "8e092feb7ea64052", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:17", "field": "text", "en": "Flying Mount", "hash": "f9ce0e0b6670666b", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:18", "field": "text", "en": "All Equipment Sets", "hash": "51146237b2bb9fa0", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:19", "field": "text", "en": "Equipment Set", "hash": "2cb92e44ffa913f9", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:2", "field": "text", "en": "Specialization", "hash": "3477492c268fa0c4", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:20", "field": "text", "en": "All Racial Forms", "hash": "d826380ddfc36f97", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:21", "field": "text", "en": "Native Form", "hash": "53f66a935b742b5e", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:22", "field": "text", "en": "Non Native Form", "hash": "793252e80e651ea4", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:3", "field": "text", "en": "All Locations", "hash": "fbfd93c91f82a653", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:32", "field": "text", "en": "All Weather", "hash": "1f35721cee5d7fb9", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:33", "field": "text", "en": "Clear", "hash": "a6aa194d90392011", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:34", "field": "text", "en": "Rain", "hash": "0b167838cc6aea94", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:35", "field": "text", "en": "Snow", "hash": "0b3c30638d6f0ec0", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:36", "field": "text", "en": "Sand", "hash": "0b38c85859d37dff", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:37", "field": "text", "en": "All Times", "hash": "c50e9a03d50ff184", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:38", "field": "text", "en": "Morning", "hash": "4810d477c0f4b77d", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:39", "field": "text", "en": "Midday", "hash": "e76b389ebe384f3c", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:4", "field": "text", "en": "Rest Area", "hash": "73905939e4e4a92e", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:40", "field": "text", "en": "Evening", "hash": "9ee70d0ffd1b3b8b", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:41", "field": "text", "en": "Night", "hash": "675a8fa5840624d5", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:5", "field": "text", "en": "World", "hash": "0626ad84d65fc103", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:8", "field": "text", "en": "Character Select", "hash": "ed36fb3ea6a6c83d", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSituation:9", "field": "text", "en": "Dungeons", "hash": "805537b689ee7860", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:1", "field": "text", "en": "One Handed Weapon", "hash": "b5bdb346388284eb", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:2", "field": "text", "en": "One Handed Weapon", "hash": "b5bdb346388284eb", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:20", "field": "text", "en": "Cloth", "hash": "a6acc156b7ee2344", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:21", "field": "text", "en": "Leather", "hash": "96979c04bae15c34", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:22", "field": "text", "en": "Mail", "hash": "0a6af42f09632675", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:23", "field": "text", "en": "Plate", "hash": "8adb58f7d242e7d0", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:24", "field": "text", "en": "Cloth", "hash": "a6acc156b7ee2344", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:25", "field": "text", "en": "Leather", "hash": "96979c04bae15c34", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:26", "field": "text", "en": "Mail", "hash": "0a6af42f09632675", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:27", "field": "text", "en": "Plate", "hash": "8adb58f7d242e7d0", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:28", "field": "text", "en": "Cloth", "hash": "a6acc156b7ee2344", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:29", "field": "text", "en": "Leather", "hash": "96979c04bae15c34", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:30", "field": "text", "en": "Mail", "hash": "0a6af42f09632675", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:31", "field": "text", "en": "Plate", "hash": "8adb58f7d242e7d0", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:32", "field": "text", "en": "Cloth", "hash": "a6acc156b7ee2344", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:33", "field": "text", "en": "Leather", "hash": "96979c04bae15c34", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:34", "field": "text", "en": "Mail", "hash": "0a6af42f09632675", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:35", "field": "text", "en": "Plate", "hash": "8adb58f7d242e7d0", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:36", "field": "text", "en": "Cloth", "hash": "a6acc156b7ee2344", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:37", "field": "text", "en": "Leather", "hash": "96979c04bae15c34", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:38", "field": "text", "en": "Mail", "hash": "0a6af42f09632675", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:39", "field": "text", "en": "Plate", "hash": "8adb58f7d242e7d0", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:40", "field": "text", "en": "Cloth", "hash": "a6acc156b7ee2344", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:41", "field": "text", "en": "Leather", "hash": "96979c04bae15c34", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:42", "field": "text", "en": "Mail", "hash": "0a6af42f09632675", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:43", "field": "text", "en": "Plate", "hash": "8adb58f7d242e7d0", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:44", "field": "text", "en": "Cloth", "hash": "a6acc156b7ee2344", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:45", "field": "text", "en": "Leather", "hash": "96979c04bae15c34", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:46", "field": "text", "en": "Mail", "hash": "0a6af42f09632675", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:47", "field": "text", "en": "Plate", "hash": "8adb58f7d242e7d0", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:48", "field": "text", "en": "Cloth", "hash": "a6acc156b7ee2344", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:49", "field": "text", "en": "Leather", "hash": "96979c04bae15c34", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:5", "field": "text", "en": "Two Handed Weapon", "hash": "6646d67c57066a2f", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:50", "field": "text", "en": "Mail", "hash": "0a6af42f09632675", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:51", "field": "text", "en": "Plate", "hash": "8adb58f7d242e7d0", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:52", "field": "text", "en": "Cloth", "hash": "a6acc156b7ee2344", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:53", "field": "text", "en": "Leather", "hash": "96979c04bae15c34", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:54", "field": "text", "en": "Mail", "hash": "0a6af42f09632675", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:55", "field": "text", "en": "Plate", "hash": "8adb58f7d242e7d0", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:7", "field": "text", "en": "Ranged Weapon", "hash": "59e915133241766c", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:8", "field": "text", "en": "Shield", "hash": "bba314a98f8932b0", "src": "db2@1.60.1.70291"}
-{"id": "TransmogSlotOption:9", "field": "text", "en": "Off Hand", "hash": "4d66f8e7f5edf7c5", "src": "db2@1.60.1.70291"}
-{"id": "TransmogTrigger:11", "field": "text", "en": "Weather", "hash": "5a454b276859c4f9", "src": "db2@1.60.1.70291"}
-{"id": "TransmogTrigger:12", "field": "text", "en": "Time of Day", "hash": "bb6e4f2457d4b01a", "src": "db2@1.60.1.70291"}
-{"id": "TransmogTrigger:3", "field": "text", "en": "Locations", "hash": "355a6384cf7e74ed", "src": "db2@1.60.1.70291"}
-{"id": "TransmogTrigger:4", "field": "text", "en": "Movement", "hash": "31395e64bb1d7b43", "src": "db2@1.60.1.70291"}
-{"id": "TransmogTrigger:5", "field": "text", "en": "Specializations", "hash": "d90a727948b45a54", "src": "db2@1.60.1.70291"}
-{"id": "TransmogTrigger:6", "field": "text", "en": "Equipment Sets", "hash": "e2c2adad2d07d282", "src": "db2@1.60.1.70291"}
-{"id": "TransmogTrigger:7", "field": "text", "en": "Racial Forms", "hash": "142427d7972ffdaa", "src": "db2@1.60.1.70291"}
-{"id": "TransmogTriggerDescription:3", "field": "text", "en": "|cnHIGHLIGHT_FONT_COLOR:All Locations:|r This outfit is valid for all locations. Outfits assigned a specific location will be prioritized.|n|n|cnHIGHLIGHT_FONT_COLOR:Rest Areas:|r Non-combat areas such as towns and neighborhoods.|n|n|cnHIGHLIGHT_FONT_COLOR:House:|r Your Warband's house.|n|n|cnHIGHLIGHT_FONT_COLOR:Character Select:|r The display for your Warband camp as well as standalone view.|n|n|cnHIGHLIGHT_FONT_COLOR:World:|r Outdoor combat areas.", "hash": "6607e84ceb65dfaf", "src": "db2@1.60.1.70291"}
-{"id": "TransmogTriggerDescription:4", "field": "text", "en": "Choose the movement type for which this outfit is valid.", "hash": "af1ac89e995cbae6", "src": "db2@1.60.1.70291"}
-{"id": "TransmogTriggerDescription:5", "field": "text", "en": "Choose the specializations for which this outfit is valid.", "hash": "3e12c672b8aa6327", "src": "db2@1.60.1.70291"}
-{"id": "TransmogTriggerDescription:6", "field": "text", "en": "Choose the equipment sets for which this outfit is valid.", "hash": "80bb82018f4778cc", "src": "db2@1.60.1.70291"}
-{"id": "TransmogTriggerDescription:7", "field": "text", "en": "Choose the racial forms for which this outfit is valid.", "hash": "9960583fcc12962e", "src": "db2@1.60.1.70291"}
+{"id": "TALL", "field": "text", "en": "Tall", "hash": "0b5b14f5e73b3244", "src": "db2@1.60.1.70338"}
+{"id": "TANK", "field": "text", "en": "Tank", "hash": "0b5b15fae73b7205", "src": "db2@1.60.1.70338"}
+{"id": "TARGET", "field": "text", "en": "Target", "hash": "3d7ca112c9409d27", "src": "db2@1.60.1.70338"}
+{"id": "TARGETFPS", "field": "text", "en": "Target FPS", "hash": "114c8470406ce40f", "src": "db2@1.60.1.70338"}
+{"id": "TARGETICONS", "field": "text", "en": "Target Icons", "hash": "d99681c0c8f7682a", "src": "db2@1.60.1.70338"}
+{"id": "TARGETING_HEADER", "field": "text", "en": "Targeting", "hash": "1b90d93d84ea51ee", "src": "db2@1.60.1.70338"}
+{"id": "TARGET_TOOLTIP_OPTION", "field": "text", "en": "Show Target Tooltip", "hash": "2e52119fa43f32fd", "src": "db2@1.60.1.70338"}
+{"id": "TAXINODEYOUAREHERE", "field": "text", "en": "You are here", "hash": "f8f247b6918cd44c", "src": "db2@1.60.1.70338"}
+{"id": "TAXI_CANCEL", "field": "text", "en": "Request Stop", "hash": "4259160b8509b1e3", "src": "db2@1.60.1.70338"}
+{"id": "TAXI_CANCEL_DESCRIPTION", "field": "text", "en": "Land at the next available Flight Master.", "hash": "3d76b7db4051df7e", "src": "db2@1.60.1.70338"}
+{"id": "TAXI_PATH_UNREACHABLE", "field": "text", "en": "Not Discovered", "hash": "0e64867979816e5c", "src": "db2@1.60.1.70338"}
+{"id": "TELEPORT_OUT_OF_DUNGEON", "field": "text", "en": "Teleport Out Of Dungeon", "hash": "151d9114b8813b1e", "src": "db2@1.60.1.70338"}
+{"id": "TELEPORT_TO_DUNGEON", "field": "text", "en": "Teleport To Dungeon", "hash": "fe190788e79a756e", "src": "db2@1.60.1.70338"}
+{"id": "TEXTTOSPEECH_COMMAND_SYNTAX_ERROR", "field": "text", "en": "Invalid Text to Speech command. Type \"/tts help\" to see a list of commands.", "hash": "95b87646baf93565", "src": "db2@1.60.1.70338"}
+{"id": "TEXTTOSPEECH_HELP_OVERVIEW", "field": "text", "en": "Text to Speech Commands: |nType /tts to enable Text to Speech or set an option by typing /tts followed by one of the commands below:", "hash": "145c3ad12934037d", "src": "db2@1.60.1.70338"}
+{"id": "TEXTURE_DETAIL", "field": "text", "en": "Texture Resolution", "hash": "0b66c3062c84de6c", "src": "db2@1.60.1.70338"}
+{"id": "TEXT_MODE_A_STRING_RESULT_ABSORB", "field": "text", "en": "(%s Absorbed)", "hash": "cbac862641ed00e9", "src": "db2@1.60.1.70338"}
+{"id": "TEXT_MODE_A_STRING_RESULT_BLOCK", "field": "text", "en": "(%s Blocked)", "hash": "a32880785a98e48a", "src": "db2@1.60.1.70338"}
+{"id": "TEXT_MODE_A_STRING_RESULT_OVERKILLING", "field": "text", "en": "(%s Overkill)", "hash": "6a9691ea5418266f", "src": "db2@1.60.1.70338"}
+{"id": "TEXT_MODE_A_STRING_RESULT_RESIST", "field": "text", "en": "(%s Resisted)", "hash": "7152ebbc0298710d", "src": "db2@1.60.1.70338"}
+{"id": "TEXT_MODE_A_STRING_VALUE_SCHOOL", "field": "text", "en": "%s %s", "hash": "98ecaae23ca42057", "src": "db2@1.60.1.70338"}
+{"id": "TEXT_SCALE_PREVIEW_BODY", "field": "text", "en": "This is a preview of the text size. Adjust this setting to change text size in most dialogs, some social menus, and Text-to-Speech options.", "hash": "2c87e5a30a2aedb5", "src": "db2@1.60.1.70338"}
+{"id": "TEXT_SCALE_PREVIEW_TITLE", "field": "text", "en": "Example", "hash": "4f9851a7b2e6384c", "src": "db2@1.60.1.70338"}
+{"id": "TEXT_TO_SPEECH", "field": "text", "en": "Text To Speech", "hash": "e01c9f29dcae756b", "src": "db2@1.60.1.70338"}
+{"id": "TEXT_TO_SPEECH_ADD_CHARACTER_NAME", "field": "text", "en": "Add <Character Name says> in speech", "hash": "8b6b0ec9ed703baa", "src": "db2@1.60.1.70338"}
+{"id": "TEXT_TO_SPEECH_ADJUST_RATE", "field": "text", "en": "Adjust Rate of Speech", "hash": "a6df1958c0e8f927", "src": "db2@1.60.1.70338"}
+{"id": "TEXT_TO_SPEECH_ADJUST_VOLUME", "field": "text", "en": "Speech Volume", "hash": "318687f77a9db402", "src": "db2@1.60.1.70338"}
+{"id": "TEXT_TO_SPEECH_ALTERNATE_SYSTEM_VOICE", "field": "text", "en": "Use alternate voice for System Messages", "hash": "1bd173a137e70de3", "src": "db2@1.60.1.70338"}
+{"id": "TEXT_TO_SPEECH_CHAT_MESSAGE_TYPES", "field": "text", "en": "Enable Text to Speech for specific messages", "hash": "5ac2cc3bc0df5bbe", "src": "db2@1.60.1.70338"}
+{"id": "TEXT_TO_SPEECH_CONFIG", "field": "text", "en": "Text To Speech Config", "hash": "2e5a6a07ce18c562", "src": "db2@1.60.1.70338"}
+{"id": "TEXT_TO_SPEECH_DEFAULTS", "field": "text", "en": "Text to Speech Defaults", "hash": "f0736469dbc03415", "src": "db2@1.60.1.70338"}
+{"id": "TEXT_TO_SPEECH_MORE_VOICES", "field": "text", "en": "For more voice options see our |cff00aaff|HurlIndex:56|hSupport Page|h|r", "hash": "c796543e60812625", "src": "db2@1.60.1.70338"}
+{"id": "TEXT_TO_SPEECH_NARRATE_MY_MESSAGES", "field": "text", "en": "Read my own messages out loud", "hash": "7cb55655b407d72c", "src": "db2@1.60.1.70338"}
+{"id": "TEXT_TO_SPEECH_PLAY_ACTIVITY_SOUND", "field": "text", "en": "Play a sound when a chat window has activity and is not focused", "hash": "0c4ef4942704e14f", "src": "db2@1.60.1.70338"}
+{"id": "TEXT_TO_SPEECH_PLAY_LINE_BREAK_SOUND", "field": "text", "en": "Play a sound between each new message", "hash": "d79c734f14c07438", "src": "db2@1.60.1.70338"}
+{"id": "TEXT_TO_SPEECH_PLAY_SAMPLE", "field": "text", "en": "Play Sample", "hash": "3519b2be50dd4aa0", "src": "db2@1.60.1.70338"}
+{"id": "TEXT_TO_SPEECH_TUTORIAL", "field": "text", "en": "Click to open Text To Speech options", "hash": "255a82fbf98606bf", "src": "db2@1.60.1.70338"}
+{"id": "TEXT_TO_SPEECH_VOICE_OPTIONS", "field": "text", "en": "Voice Options", "hash": "b4b08928c19667e2", "src": "db2@1.60.1.70338"}
+{"id": "THREAT_TOOLTIP", "field": "text", "en": "%d%% Threat", "hash": "5f8f239f7dea7270", "src": "db2@1.60.1.70338"}
+{"id": "TICKET_STATUS", "field": "text", "en": "You have an open ticket.", "hash": "041f07db3f1e9768", "src": "db2@1.60.1.70338"}
+{"id": "TICKET_STATUS_NMI", "field": "text", "en": "Your ticket requires additional information", "hash": "fad7b20640aa47c0", "src": "db2@1.60.1.70338"}
+{"id": "TIMEMANAGER_24HOURMODE", "field": "text", "en": "24 Hour Mode", "hash": "c6dd9e9f6850e33f", "src": "db2@1.60.1.70338"}
+{"id": "TIMEMANAGER_ALARM_ENABLED", "field": "text", "en": "Alarm Enabled", "hash": "b466b8804453e06e", "src": "db2@1.60.1.70338"}
+{"id": "TIMEMANAGER_ALARM_MESSAGE", "field": "text", "en": "Alarm Message", "hash": "c090bf2cf7eb108d", "src": "db2@1.60.1.70338"}
+{"id": "TIMEMANAGER_ALARM_TIME", "field": "text", "en": "Alarm Time", "hash": "20ff560536494738", "src": "db2@1.60.1.70338"}
+{"id": "TIMEMANAGER_ALARM_TOOLTIP_TURN_OFF", "field": "text", "en": "Click to turn off alarm.", "hash": "4cc7247a08a929d7", "src": "db2@1.60.1.70338"}
+{"id": "TIMEMANAGER_AM", "field": "text", "en": "AM", "hash": "000021900008186e", "src": "db2@1.60.1.70338"}
+{"id": "TIMEMANAGER_LOCALTIME", "field": "text", "en": "Use Local Time", "hash": "5a05fc67d9d8b2e1", "src": "db2@1.60.1.70338"}
+{"id": "TIMEMANAGER_PM", "field": "text", "en": "PM", "hash": "0000293d0009f69d", "src": "db2@1.60.1.70338"}
+{"id": "TIMEMANAGER_SHOW_STOPWATCH", "field": "text", "en": "Show Stopwatch", "hash": "88a9caf26feff67b", "src": "db2@1.60.1.70338"}
+{"id": "TIMEMANAGER_TITLE", "field": "text", "en": "Clock", "hash": "a6acb8a6b7ec0556", "src": "db2@1.60.1.70338"}
+{"id": "TIMEMANAGER_TOOLTIP_LOCALTIME", "field": "text", "en": "Local time:", "hash": "8101d7815d0cbd8b", "src": "db2@1.60.1.70338"}
+{"id": "TIMEMANAGER_TOOLTIP_REALMTIME", "field": "text", "en": "Realm time:", "hash": "fdb1342c6482bccd", "src": "db2@1.60.1.70338"}
+{"id": "TIMEMANAGER_TOOLTIP_TITLE", "field": "text", "en": "Time Info", "hash": "97a2f8061f5c3e6b", "src": "db2@1.60.1.70338"}
+{"id": "TIMESTAMPS_LABEL", "field": "text", "en": "Chat Timestamps", "hash": "e5fa7075f8d97070", "src": "db2@1.60.1.70338"}
+{"id": "TIMESTAMP_COMBATLOG_TOOLTIP", "field": "text", "en": "Display the timestamp for combat log messages.", "hash": "6bd7df52df6d1e2d", "src": "db2@1.60.1.70338"}
+{"id": "TIMESTAMP_FORMAT_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70338"}
+{"id": "TIME_DAYHOURMINUTESECOND", "field": "text", "en": "%d |4day:days;, %d |4hour:hours;, %d |4minute:minutes;, %d |4second:seconds;", "hash": "e9928be63618ffd0", "src": "db2@1.60.1.70338"}
+{"id": "TIME_IN_QUEUE", "field": "text", "en": "Time In Queue: %s", "hash": "bf026e82fa90025c", "src": "db2@1.60.1.70338"}
+{"id": "TIME_LEFT_LONG", "field": "text", "en": "Long", "hash": "0a4c539cb38f8653", "src": "db2@1.60.1.70338"}
+{"id": "TIME_LEFT_MEDIUM", "field": "text", "en": "Medium", "hash": "a135b8b7566a21ae", "src": "db2@1.60.1.70338"}
+{"id": "TIME_LEFT_SHORT", "field": "text", "en": "Short", "hash": "befeef0570f60afe", "src": "db2@1.60.1.70338"}
+{"id": "TIME_LEFT_VERY_LONG", "field": "text", "en": "Very Long", "hash": "2643556fd2a8bac7", "src": "db2@1.60.1.70338"}
+{"id": "TIME_PLAYED_ALERT", "field": "text", "en": "You have been playing for %s. Excessive gameplay can interfere with your daily life.", "hash": "d0c1dbc27368e424", "src": "db2@1.60.1.70338"}
+{"id": "TIME_PLAYED_LEVEL", "field": "text", "en": "Time played this level: %s", "hash": "5585cf40887fbfd8", "src": "db2@1.60.1.70338"}
+{"id": "TIME_PLAYED_TOTAL", "field": "text", "en": "Total time played: %s", "hash": "125e655e44a7ef8b", "src": "db2@1.60.1.70338"}
+{"id": "TIME_REMAINING", "field": "text", "en": "Time Remaining:", "hash": "16a4682689dff12a", "src": "db2@1.60.1.70338"}
+{"id": "TIME_UNTIL_DELETED", "field": "text", "en": "Time until message is deleted", "hash": "df69583b385526d4", "src": "db2@1.60.1.70338"}
+{"id": "TIME_UNTIL_RETURNED", "field": "text", "en": "Time until message is returned", "hash": "cfd8d212c22978e7", "src": "db2@1.60.1.70338"}
+{"id": "TITLE_DOESNT_EXIST", "field": "text", "en": "You don't have that title.", "hash": "1d40100f0cd5f115", "src": "db2@1.60.1.70338"}
+{"id": "TITLE_FRIEND_REQUEST", "field": "text", "en": "Send a WoW Friend Request to:", "hash": "3466cc09037c3c03", "src": "db2@1.60.1.70338"}
+{"id": "TOAST_OBJECTIVE_COMPLETE", "field": "text", "en": "Objective Complete!", "hash": "300574e1e519ed6e", "src": "db2@1.60.1.70338"}
+{"id": "TOAST_SETTINGS_LABEL", "field": "text", "en": "Toasts", "hash": "30f89e52c5d16c71", "src": "db2@1.60.1.70338"}
+{"id": "TOGGLE_BATTLEFIELD_MAP", "field": "text", "en": "Toggle Zone Map", "hash": "3793a30cc82d7a98", "src": "db2@1.60.1.70338"}
+{"id": "TOGGLE_SCOREBOARD", "field": "text", "en": "Toggle Scoreboard", "hash": "ab04584af0558348", "src": "db2@1.60.1.70338"}
+{"id": "TOKEN_AUCTIONABLE_TOKEN_OWNED", "field": "text", "en": "All WoW Tokens bought from the Shop must be sold before you can buy one from the auction house.", "hash": "c325f429f2e01d57", "src": "db2@1.60.1.70338"}
+{"id": "TOKEN_AUCTIONS_UNAVAILABLE", "field": "text", "en": "|cffff2020WoW Token auctions are currently unavailable.|r", "hash": "82a5d8d92f5bb452", "src": "db2@1.60.1.70338"}
+{"id": "TOKEN_BUYOUT_PRICE_UPDATES", "field": "text", "en": "This is the current market price of WoW Tokens. It updates periodically.", "hash": "c30ec772a3798030", "src": "db2@1.60.1.70338"}
+{"id": "TOKEN_CREATE_AUCTION_LOCKED_PRICE", "field": "text", "en": "This is the current market price of WoW Tokens. You can't change this price.", "hash": "4b7db08bdbe8bbe7", "src": "db2@1.60.1.70338"}
+{"id": "TOKEN_CURRENT_BUYOUT_PRICE", "field": "text", "en": "Buyout Price", "hash": "681301ea8d0e996f", "src": "db2@1.60.1.70338"}
+{"id": "TOKEN_CURRENT_MARKET_PRICE", "field": "text", "en": "Current Price", "hash": "cdb249cf6cc4c6d7", "src": "db2@1.60.1.70338"}
+{"id": "TOKEN_DETAIL_SELECT_PROMPT", "field": "text", "en": "Select a currency to view its details.", "hash": "2d1ee46e6fc89d3c", "src": "db2@1.60.1.70338"}
+{"id": "TOKEN_MARKET_PRICE_NOT_AVAILABLE", "field": "text", "en": "|cffff2020Not Available|r", "hash": "a4dbd5db18a1bd77", "src": "db2@1.60.1.70338"}
+{"id": "TOKEN_MOVE_TO_UNUSED", "field": "text", "en": "Moves this currency to the bottom of your list under the unused heading. Useful for currencies you are no longer interested in tracking.", "hash": "ae962d93fe0cfb87", "src": "db2@1.60.1.70338"}
+{"id": "TOKEN_NONE_FOR_SALE", "field": "text", "en": "There are currently no WoW Tokens for sale. Please check back later.", "hash": "6c1c6694d1044bce", "src": "db2@1.60.1.70338"}
+{"id": "TOKEN_REMOVE_FROM_BACKPACK_INSTRUCTION", "field": "text", "en": "<Shift click to untrack>", "hash": "40e44a26dc62afb4", "src": "db2@1.60.1.70338"}
+{"id": "TOKEN_SHOW_ON_BACKPACK", "field": "text", "en": "Checking this option will allow you to track this currency type on your backpack.\n\nYou can also shift click a currency to add or remove it from your backpack.", "hash": "8182deacc5b29d33", "src": "db2@1.60.1.70338"}
+{"id": "TOKEN_TRIAL_RESTRICTIONS", "field": "text", "en": "To redeem this WoW Token, log out to the character select screen.", "hash": "4fa5af1fe08ced49", "src": "db2@1.60.1.70338"}
+{"id": "TOKEN_TRY_AGAIN_LATER", "field": "text", "en": "Please wait %s before trying again.", "hash": "fc7eeba4b957ac48", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_BATTLE_PET", "field": "text", "en": "Battle Pet", "hash": "b2c624c4d89c069f", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_TALENT_LEARN", "field": "text", "en": "Click to learn", "hash": "eab07e27b4d92214", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_TALENT_NEXT_RANK", "field": "text", "en": "Next rank:", "hash": "31178da221e4e33b", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_TALENT_RANK", "field": "text", "en": "Rank %d/%d", "hash": "0997bcc3f8493a96", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_TALENT_RANK_CURRENT_ONLY", "field": "text", "en": "Rank %d", "hash": "c7a12ad7b1a81111", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_TALENT_TIER_POINTS", "field": "text", "en": "Requires %1$d points in %2$s Talents", "hash": "b6295a028918bf2a", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_TRACKER_FIND_GROUP_BUTTON", "field": "text", "en": "Find Group", "hash": "859d27b7ea4cbdd3", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_UNIT_LEVEL", "field": "text", "en": "Level %s", "hash": "aa985aef4e775377", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_UNIT_LEVEL_RACE", "field": "text", "en": "Level %s %s", "hash": "31d1b1f6ecd51ed8", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_UNIT_LEVEL_RACE_TYPE", "field": "text", "en": "Level %s %s (%s)", "hash": "b9ca614204ea7c31", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_UNIT_LEVEL_TYPE", "field": "text", "en": "Level %s (%s)", "hash": "a2459bf26e0f46d4", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_VIGNETTE_OBJECTIVE_DEFEAT", "field": "text", "en": "- Defeat %s", "hash": "91072d2f655c46a4", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_VIGNETTE_OBJECTIVE_DEFEAT_SHOW_HEALTH", "field": "text", "en": "- Defeat %s (Current Health: %s)", "hash": "d81e492f8a7b36fd", "src": "db2@1.60.1.70338"}
+{"id": "TOO_MANY_LUA_ERRORS", "field": "text", "en": "Your AddOns are experiencing a large number of errors and may be slowing down the game.  You can turn on display of Lua errors in the interface options.", "hash": "05aae378160369e3", "src": "db2@1.60.1.70338"}
+{"id": "TOO_MANY_WATCHED_TOKENS", "field": "text", "en": "You may only watch %d currencies at a time", "hash": "4fb585f24b1817bf", "src": "db2@1.60.1.70338"}
+{"id": "TOTAL_MEM_KB_ABBR", "field": "text", "en": "AddOn Memory: %.0f KB", "hash": "edaa7f55781afee3", "src": "db2@1.60.1.70338"}
+{"id": "TOTAL_MEM_MB_ABBR", "field": "text", "en": "AddOn Memory: %.2f MB", "hash": "10c5ed0235f03d9b", "src": "db2@1.60.1.70338"}
+{"id": "TOTAL_MOUNTS", "field": "text", "en": "Total Mounts", "hash": "50edd0f9b361ec79", "src": "db2@1.60.1.70338"}
+{"id": "TOTAL_STACKS", "field": "text", "en": "%d Total", "hash": "1b3d3ffcd9c4cda1", "src": "db2@1.60.1.70338"}
+{"id": "TOTAL_TOYS", "field": "text", "en": "Total Toys", "hash": "9c52e9b859cb99fd", "src": "db2@1.60.1.70338"}
+{"id": "TOWNSFOLK_TRACKING_TEXT", "field": "text", "en": "Townsfolk", "hash": "ffc2da7e64522c6c", "src": "db2@1.60.1.70338"}
+{"id": "TOY", "field": "text", "en": "Toy", "hash": "0016383a4d840e6d", "src": "db2@1.60.1.70338"}
+{"id": "TOYBOX_FAVORITE_HELP", "field": "text", "en": "Right-click to favorite a toy. Favorite toys are pinned to the first page.", "hash": "e4220f64526c9bb9", "src": "db2@1.60.1.70338"}
+{"id": "TOYBOX_MOUSEWHEEL_PAGING_HELP", "field": "text", "en": "Tip: You can use your mouse wheel to quickly page through the Toy Box.", "hash": "e17db5ea77e3854b", "src": "db2@1.60.1.70338"}
+{"id": "TOY_BOX", "field": "text", "en": "Toy Box", "hash": "a955d9797ffdbade", "src": "db2@1.60.1.70338"}
+{"id": "TRACKED_ITEMS_FILTER_DESCRIPTION", "field": "text", "en": "Indicator on items and locations you have manually pinned to the map and are tracking", "hash": "a51cf649320e53d6", "src": "db2@1.60.1.70338"}
+{"id": "TRACKER_ALL_OBJECTIVES", "field": "text", "en": "All Objectives", "hash": "3aafd2f8091c4d5b", "src": "db2@1.60.1.70338"}
+{"id": "TRACKER_HEADER_ACHIEVEMENTS", "field": "text", "en": "Achievements", "hash": "be06f999ba912297", "src": "db2@1.60.1.70338"}
+{"id": "TRACKER_HEADER_BONUS_OBJECTIVES", "field": "text", "en": "Bonus Objectives", "hash": "6124231dcd3597e1", "src": "db2@1.60.1.70338"}
+{"id": "TRACKER_HEADER_CAMPAIGN_QUESTS", "field": "text", "en": "Campaign", "hash": "8cda0d5a9c045697", "src": "db2@1.60.1.70338"}
+{"id": "TRACKER_HEADER_DUNGEON", "field": "text", "en": "Dungeon", "hash": "8bba4ca03e80dc45", "src": "db2@1.60.1.70338"}
+{"id": "TRACKER_HEADER_OBJECTIVE", "field": "text", "en": "Objectives", "hash": "952e1dab3372fd3f", "src": "db2@1.60.1.70338"}
+{"id": "TRACKER_HEADER_PROVINGGROUNDS", "field": "text", "en": "Proving Grounds", "hash": "04d66e208f50d637", "src": "db2@1.60.1.70338"}
+{"id": "TRACKER_HEADER_QUESTS", "field": "text", "en": "Quests", "hash": "a84737c440533b3c", "src": "db2@1.60.1.70338"}
+{"id": "TRACKER_HEADER_SCENARIO", "field": "text", "en": "Scenario", "hash": "6e1c31cf775a3229", "src": "db2@1.60.1.70338"}
+{"id": "TRACKER_HEADER_WORLD_QUESTS", "field": "text", "en": "World Quests", "hash": "7b33982eac7929ff", "src": "db2@1.60.1.70338"}
+{"id": "TRACKING", "field": "text", "en": "Tracking", "hash": "ce32da4878b198ed", "src": "db2@1.60.1.70338"}
+{"id": "TRACK_ACHIEVEMENT", "field": "text", "en": "Track", "hash": "d1dffb309e5a7ffe", "src": "db2@1.60.1.70338"}
+{"id": "TRACK_ACHIEVEMENT_TOOLTIP", "field": "text", "en": "Check to track this achievement.", "hash": "9606ed07420f9225", "src": "db2@1.60.1.70338"}
+{"id": "TRACK_QUEST", "field": "text", "en": "Track Quest", "hash": "6ebfac6916a1d128", "src": "db2@1.60.1.70338"}
+{"id": "TRACK_QUEST_ABBREV", "field": "text", "en": "Track", "hash": "d1dffb309e5a7ffe", "src": "db2@1.60.1.70338"}
+{"id": "TRADE", "field": "text", "en": "Trade", "hash": "d1dffbad9e5a9fd9", "src": "db2@1.60.1.70338"}
+{"id": "TRADEFRAME_ENCHANT_SLOT_LABEL", "field": "text", "en": "Will not be traded", "hash": "cdaed407ed114760", "src": "db2@1.60.1.70338"}
+{"id": "TRADEFRAME_NOT_MODIFIED_TEXT", "field": "text", "en": "Item not yet modified", "hash": "c9ae9014b1a9480f", "src": "db2@1.60.1.70338"}
+{"id": "TRADESKILLS", "field": "text", "en": "Tradeskills", "hash": "fcb035ad18dff8cd", "src": "db2@1.60.1.70338"}
+{"id": "TRADESKILL_CHARGES_REMAINING", "field": "text", "en": "Available Crafts: %i / %i.", "hash": "9474f86b4338de5d", "src": "db2@1.60.1.70338"}
+{"id": "TRADESKILL_FILTER_HAS_SKILL_UP", "field": "text", "en": "Has skill up", "hash": "44aa2d87343e4336", "src": "db2@1.60.1.70338"}
+{"id": "TRADESKILL_FILTER_SLOTS", "field": "text", "en": "Slots", "hash": "bf882676a6961add", "src": "db2@1.60.1.70338"}
+{"id": "TRADESKILL_LOG_FIRSTPERSON", "field": "text", "en": "You create %s.", "hash": "9a3c621dc7c6bf88", "src": "db2@1.60.1.70338"}
+{"id": "TRADESKILL_LOG_THIRDPERSON", "field": "text", "en": "%s creates %s.", "hash": "3e128f2db81d2ad5", "src": "db2@1.60.1.70338"}
+{"id": "TRADESKILL_NEXT_RANK_HEADER", "field": "text", "en": "Next Rank", "hash": "80f8ebfc0d26e252", "src": "db2@1.60.1.70338"}
+{"id": "TRADESKILL_POST", "field": "text", "en": "Post in chat", "hash": "636fba66cd890c39", "src": "db2@1.60.1.70338"}
+{"id": "TRADESKILL_RECIPE_LEVEL_DROPDOWN_OPTION_FORMAT", "field": "text", "en": "Rank %s", "hash": "c7a12ae6b1a81120", "src": "db2@1.60.1.70338"}
+{"id": "TRADESKILL_RECIPE_LEVEL_RECIPE_FORMAT", "field": "text", "en": "%s (Rank %i)", "hash": "049a4b573a78dc45", "src": "db2@1.60.1.70338"}
+{"id": "TRADESKILL_UNLEARNED_RECIPE_HEADER", "field": "text", "en": "Recipe Unlearned", "hash": "36516edf3ee04189", "src": "db2@1.60.1.70338"}
+{"id": "TRADE_POTENTIAL_BIND_ENCHANT", "field": "text", "en": "Having this item enchanted will bind it to you.", "hash": "9830f49299702fe2", "src": "db2@1.60.1.70338"}
+{"id": "TRADE_POTENTIAL_REMOVE_TRANSMOG", "field": "text", "en": "Trading %s will remove it from your appearances collection.", "hash": "61c54108f969b8d1", "src": "db2@1.60.1.70338"}
+{"id": "TRADE_SKILLS", "field": "text", "en": "Professions", "hash": "dc45e8a4b82090c7", "src": "db2@1.60.1.70338"}
+{"id": "TRADE_WARNING_CHANGED_OFFER", "field": "text", "en": "%s has changed their trade offer. Please ensure you are receiving the correct items and gold.", "hash": "39262819c93577ae", "src": "db2@1.60.1.70338"}
+{"id": "TRADE_WITH_QUESTION", "field": "text", "en": "Trade with %s?", "hash": "3086b6550bf89c76", "src": "db2@1.60.1.70338"}
+{"id": "TRAIN", "field": "text", "en": "Train", "hash": "d1dffe459e5b3f47", "src": "db2@1.60.1.70338"}
+{"id": "TRAINER_CANNOT_EXCEED_MAX_PROFESSIONS", "field": "text", "en": "You can only learn two primary professions", "hash": "5f40e9d396395ce0", "src": "db2@1.60.1.70338"}
+{"id": "TRAINER_REQ_LEVEL", "field": "text", "en": "Level |cffffffff%d|r", "hash": "aa985ae04e775368", "src": "db2@1.60.1.70338"}
+{"id": "TRAINER_REQ_LEVEL_RED", "field": "text", "en": "Level |cffff2020%d|r", "hash": "aa985ae04e775368", "src": "db2@1.60.1.70338"}
+{"id": "TRAINER_REQ_SKILL_RANK", "field": "text", "en": "%s (|cffffffff%d|r)", "hash": "515e9f9188174410", "src": "db2@1.60.1.70338"}
+{"id": "TRAINER_REQ_SKILL_RANK_RED", "field": "text", "en": "%s (|cffff2020%d|r)", "hash": "515e9f9188174410", "src": "db2@1.60.1.70338"}
+{"id": "TRAINING_POINTS", "field": "text", "en": "Training Points: %s", "hash": "b9b47f3ba4c6c567", "src": "db2@1.60.1.70338"}
+{"id": "TRAINING_POINTS_ABBREV", "field": "text", "en": "%s TP", "hash": "98ecc2cc3ca9fa83", "src": "db2@1.60.1.70338"}
+{"id": "TRAINING_POINTS_TUTORIAL", "field": "text", "en": "Increase your pet's loyalty and level to gain Training Points.", "hash": "e31bdd9359377490", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOGRIFICATION", "field": "text", "en": "Transmogrification", "hash": "7e07cc018becc4ca", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOGRIFIED_ENCHANT", "field": "text", "en": "Illusion: %s", "hash": "47a61515c31cc1cd", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOGRIFY", "field": "text", "en": "Transmogrify", "hash": "9cce4d2a4d4acb67", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOGRIFY_CLEAR_ALL_PENDING", "field": "text", "en": "Undo all pending changes", "hash": "afe62cce96e55fe8", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOGRIFY_ILLUSION_INVALID_ITEM", "field": "text", "en": "This weapon appearance cannot be transmogrified with enchants.", "hash": "0c55a5e5891fa80f", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOGRIFY_RIGHT_SHOULDER", "field": "text", "en": "Transmog Each Shoulder Separately", "hash": "4697f05999c019db", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOGRIFY_TOOLTIP_APPEARANCE_KNOWN", "field": "text", "en": "You've collected this appearance", "hash": "9eaa6b3d4ada4edc", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOGRIFY_TOOLTIP_APPEARANCE_UNCOLLECTABLE", "field": "text", "en": "This item can't be used for transmogrification, but may be worn as equipment", "hash": "541ad5875c49c04c", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOGRIFY_TOOLTIP_APPEARANCE_UNKNOWN", "field": "text", "en": "You haven't collected this appearance", "hash": "11c6310d6f88bb4b", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOGRIFY_TOOLTIP_APPEARANCE_UNUSABLE", "field": "text", "en": "This appearance can't be used by your character", "hash": "4250f2240e3f29eb", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOGRIFY_TOOLTIP_HIDDEN", "field": "text", "en": "Hidden", "hash": "fdd5c07f26887c68", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOGRIFY_TOOLTIP_ITEM_UNKNOWN_APPEARANCE_KNOWN", "field": "text", "en": "You've collected this appearance, but not from this item", "hash": "23716b808f7e1ba4", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOGRIFY_TOOLTIP_REVERT", "field": "text", "en": "To be reverted", "hash": "ec8a85d0e9c3f967", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_AND_MOUNT_DRESSUP_FRAME_SHOW_MOUNT", "field": "text", "en": "Show Mount", "hash": "7ae97e586a4c38ab", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_APPEARANCE_USABLE_HOLIDAY", "field": "text", "en": "This appearance is only usable during holiday: %s.", "hash": "be1d872beab47aca", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_ARTIFACT_OPTIONS_HEADER", "field": "text", "en": "Legion Artifact Override", "hash": "3ba7d7019a89c88f", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_COLLECTED", "field": "text", "en": "Collected", "hash": "3e728695d5235bc6", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SETS_HELPTIP", "field": "text", "en": "Create outfits from scratch with your Custom Sets.", "hash": "dfcb5c7f2ea0bc41", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SETS_MIGRATION_HELPTIP", "field": "text", "en": "Your previously applied Transmog and legacy outfits are available in Custom Sets.", "hash": "36eba7737c625a55", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SETS_NONE", "field": "text", "en": "You don't have any Custom Sets", "hash": "115c76330bd2b460", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SET_ALL_INVALID_APPEARANCES", "field": "text", "en": "You can't save this custom set because none of the item appearances can be transmogrified by your character.", "hash": "95bad42f8b140fcf", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SET_ALREADY_EXISTS", "field": "text", "en": "A custom set with that name already exists.", "hash": "aa6e88aaa3f49a79", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SET_CHECKING_APPEARANCES", "field": "text", "en": "Checking appearances...", "hash": "c91f0f4bf96cd46b", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SET_CONFIRM_DELETE", "field": "text", "en": "Are you sure you want to delete the custom set %s?", "hash": "b4bf4295957c0a52", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SET_CONFIRM_OVERWRITE", "field": "text", "en": "You already have a custom set named %s. Would you like to overwrite it?", "hash": "c17071a40beb70d2", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SET_COPY_TO_CLIPBOARD", "field": "text", "en": "Copy to Clipboard |cffffd100(to share online)|r", "hash": "10b21e9ac901e8c6", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SET_COPY_TO_CLIPBOARD_NOTICE", "field": "text", "en": "Custom Set link copied to clipboard", "hash": "b4c869696e08d087", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SET_DELETE", "field": "text", "en": "Delete", "hash": "caa07040d3f1985e", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SET_DRESSING_ROOM", "field": "text", "en": "View in Dressing Room (Exits Transmogrify)", "hash": "d852439a0a7bc696", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SET_EDIT", "field": "text", "en": "Rename/Delete", "hash": "a9f3ce23f5490bcf", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SET_EDIT_DELETE", "field": "text", "en": "Delete Custom Set", "hash": "12bd0214fdbd61b8", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SET_LINK_INVALID", "field": "text", "en": "Invalid custom set link.", "hash": "98b8cdae5b15701d", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SET_NAME", "field": "text", "en": "Enter Custom Set Name:", "hash": "3302c4350e9f21ad", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SET_NEW", "field": "text", "en": "New Custom Set", "hash": "7a1fd68ea373f954", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SET_NEW_TOOLTIP_DISABLED", "field": "text", "en": "Add an appearance to create a Custom Set", "hash": "aba4541c3c41d97f", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SET_NEW_TOOLTIP_DISABLED_MAX_COUNT", "field": "text", "en": "You have reached the maximum number of Custom Sets", "hash": "26a6250f98ad3227", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SET_NONE", "field": "text", "en": "No Custom Set", "hash": "2c03125e5844612e", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SET_POST_IN_CHAT", "field": "text", "en": "Post in Chat", "hash": "5f260706208a8b38", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SET_RENAME", "field": "text", "en": "Rename", "hash": "8c201e7d5466df3f", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SET_REPLACE", "field": "text", "en": "Replace With Current Appearance", "hash": "aa79b5ed8496fc71", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_CUSTOM_SET_SOME_INVALID_APPEARANCES", "field": "text", "en": "One or more item appearances won't be saved in this custom set because they can't be transmogrified by your character.", "hash": "c56dbb9012823ebd", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_DRACTHYR_APPEARANCE_INVISIBLE", "field": "text", "en": "This appearance isn't visible in Dracthyr form", "hash": "2996431b225421d0", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_EDIT_OUTFIT_SLOT", "field": "text", "en": "Change Name/Icon", "hash": "dadd8a80751638b5", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_FAVORITE_LOSE_REFUND_AND_TRADE", "field": "text", "en": "Favoriting this appearance will make the item in your inventory non-refundable and non-tradeable.\nDo you wish to continue?", "hash": "030b8919cc41a1ca", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_HELP_1", "field": "text", "en": "Begin by selecting an |cnBRIGHTBLUE_FONT_COLOR:Outfit|r to customize.\n\nAdditional outfits can be purchased with gold.", "hash": "956874255af5dbe8", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_HELP_2", "field": "text", "en": "Assign appearances to any gear slot in an outfit to override the look of the equipment in that slot.\n\nAssigning or updating appearances costs gold, but once saved, you can switch to that outfit anytime for free.", "hash": "5325666e6ac60c30", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_HELP_3", "field": "text", "en": "Select appearances or sets to customize your outfit.\n\nYou can configure outfits to swap automatically by assigning specific rules in the |cnBRIGHTBLUE_FONT_COLOR:Situations|r tab.", "hash": "50a72ee3d75d72b8", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_HIDE_UNASSIGNED_SLOTS", "field": "text", "en": "Hide Ignored Slots", "hash": "c15c8c642c0aed6b", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_ITEM_SET_FAVORITE", "field": "text", "en": "Set Favorite", "hash": "3c52bfc8d42635fc", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_ITEM_UNSET_FAVORITE", "field": "text", "en": "Remove Favorite", "hash": "575757be67e9a10f", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_OUTFITS_HELPTIP", "field": "text", "en": "Create outfits to change the appearance of your equipped weapons and armor.\n\nAdd outfits to your action bars for manual control, or setup situations where outfits automatically swap.", "hash": "4f0972ac906dd774", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_OUTFIT_INVALID_NAME", "field": "text", "en": "That name is unavailable. Please choose a different name and try again.", "hash": "5067ceef6b8f097e", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_OUTFIT_SLOT_POPUP_TEXT", "field": "text", "en": "Enter Outfit Name (Max 16 Characters):", "hash": "aee4334b4c14c010", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_PENDING_CHANGES", "field": "text", "en": "This outfit has pending changes. Continuing will cause your pending changes to be lost.", "hash": "25021cf9ffae2a2e", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_PREVIEWED_WEAPON_TOGGLE", "field": "text", "en": "View Ranged Weapon", "hash": "a88ed97530d7cb12", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_PURCHASE_OUTFIT_SLOT", "field": "text", "en": "Purchase Outfit Slot", "hash": "249b747408cdde3e", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SAVE_OUTFIT", "field": "text", "en": "Save Outfit", "hash": "5fd4e894aeb7650a", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SAVE_OUTFIT_CANNOT_AFFORD_TOOLTIP", "field": "text", "en": "You can't afford to save outfit changes", "hash": "9ec5cad35718ed6a", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SAVE_OUTFIT_TOOLTIP", "field": "text", "en": "Save and apply outfit changes", "hash": "dfe17107e962a778", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SETS_FAVORITE_WITH_DESCRIPTION", "field": "text", "en": "Set Favorite (%s)", "hash": "1edc1467f6b30142", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SETS_HELPTIP", "field": "text", "en": "Create outfits from Set appearances you've collected.", "hash": "416c5b687e93e50c", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SETS_NONE", "field": "text", "en": "You don't have any Set appearances", "hash": "3121210a7f25832d", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SETS_TAB_TUTORIAL", "field": "text", "en": "View all the appearance sets you can collect for your class here.", "hash": "db40802d1fff1a12", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SETS_UNFAVORITE_WITH_DESCRIPTION", "field": "text", "en": "Remove Favorite (%s)", "hash": "e4ba7d0caf124d94", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SET_GRANTS_PRECEDING_VARIANTS", "field": "text", "en": "Completing this appearance set unlocks all preceding set variants.", "hash": "15c07825825e51d1", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SET_LIMITED_TIME_SET", "field": "text", "en": "Limited Time Set", "hash": "af33dd97af166d71", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SET_LIMITED_TIME_SET_TOOLTIP", "field": "text", "en": "This set can be collected during the current season only.", "hash": "7ed42f150ac2753b", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SET_OPEN_COLLECTION", "field": "text", "en": "Open Appearances", "hash": "3e59220f59ceb5e5", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SET_PVE", "field": "text", "en": "PvE", "hash": "00152f773da3de5c", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SET_PVP", "field": "text", "en": "PvP", "hash": "00152f823da3de67", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SHEATHE_WEAPON", "field": "text", "en": "Sheathe Weapon", "hash": "0c42ce86092b9b64", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SHEATHE_WEAPON_TOOLTIP", "field": "text", "en": "Sheathe/Unsheathe Weapon", "hash": "a6bcf3a8c5d3015a", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SITUATIONS_APPLY", "field": "text", "en": "Apply Changes", "hash": "3753f4eac1a5f045", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SITUATIONS_APPLY_DISABLED_TOOLTIP", "field": "text", "en": "You must select a valid option to apply changes", "hash": "77e689c89e497afd", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SITUATIONS_DEFAULTS", "field": "text", "en": "Defaults", "hash": "f1d97b2b35500d03", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SITUATIONS_DESCRIPTION", "field": "text", "en": "Choose specific Situations options below to automatically change into this outfit. You must meet all conditions listed for the change to occur. \n\nIf multiple outfits are equally valid, one will be chosen randomly.", "hash": "ca63e59295584dad", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SITUATIONS_ENABLED", "field": "text", "en": "Situations Enabled", "hash": "4d06515fe13d5759", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SITUATIONS_HELPTIP", "field": "text", "en": "Configure options for when you automatically swap to the selected outfit.", "hash": "143e7e244264a83c", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SITUATIONS_NO_VALID_OPTIONS", "field": "text", "en": "No valid options selected", "hash": "4fdc585ece2412c3", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SITUATIONS_UNDO", "field": "text", "en": "Undo Pending Changes", "hash": "743989d75f0aa54b", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SLOT_APPEARANCE_INVISIBLE", "field": "text", "en": "This appearance isn't visible on your character", "hash": "8652ed074fb07994", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SLOT_DISPLAY_TYPE_EQUIPPED", "field": "text", "en": "Show Equipped Gear", "hash": "7907f7da667356b3", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SLOT_DISPLAY_TYPE_EQUIPPED_TOOLTIP", "field": "text", "en": "The appearance of this slot will show the currently equipped gear.", "hash": "fdad3da0a36ed3e1", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SLOT_DISPLAY_TYPE_UNASSIGNED", "field": "text", "en": "Unassigned", "hash": "2129953ca143ed16", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SLOT_DISPLAY_TYPE_UNASSIGNED_ARTIFACT", "field": "text", "en": "Ignore Override", "hash": "99b6cbd5645ede4f", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SLOT_DISPLAY_TYPE_UNASSIGNED_ARTIFACT_TOOLTIP", "field": "text", "en": "When this outfit is applied, items in this slot will not have their appearance overridden.", "hash": "827c2414f68a52eb", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SLOT_DISPLAY_TYPE_UNASSIGNED_TOOLTIP", "field": "text", "en": "The appearance of this slot will not be changed.", "hash": "052f56e542282d56", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_TAB_CUSTOM_SETS", "field": "text", "en": "Custom Sets", "hash": "4ee7d4f68c2d0391", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_TAB_ITEMS", "field": "text", "en": "Items", "hash": "110ed23534f93bbc", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_TAB_SETS", "field": "text", "en": "Sets", "hash": "0b39d79d69b54c58", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_TAB_SITUATIONS", "field": "text", "en": "Situations", "hash": "0e30258c349f184c", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_TRIAL_OF_STYLE_HELPTIP", "field": "text", "en": "Dress to impress with this special Trial of Style outfit.\n\nUpdating this outfit is free during the Trial of Style event.", "hash": "4137fb2b3a1480a3", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_USABLE_DISCOUNT", "field": "text", "en": "Free Transmog outfit update available", "hash": "2e70f1c5ed3e129b", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_USABLE_DISCOUNT_CLAIM", "field": "text", "en": "Claim Free", "hash": "9545897cd4b32d7c", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_USABLE_DISCOUNT_CONFIRM", "field": "text", "en": "You have a free Transmog outfit update. This offer is limited to a single use per character.", "hash": "9f7d79e1c31f9d9f", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_USABLE_DISCOUNT_USE_GOLD", "field": "text", "en": "Use Gold", "hash": "4b802e7767ab8546", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_WEAPON_OPTIONS_HELPTIP", "field": "text", "en": "Different appearances can be assigned for different weapon types you equip.", "hash": "d1633e0eee82ae1e", "src": "db2@1.60.1.70338"}
+{"id": "TRAVEL_PASS_INVITE", "field": "text", "en": "Invite to Group", "hash": "36db2de9f846c335", "src": "db2@1.60.1.70338"}
+{"id": "TRIAL_CAP_BANKED_LEVELS_TOOLTIP", "field": "text", "en": "You have earned XP that exceeds your level cap.  Buy the game to apply your banked XP and gain %d levels.", "hash": "fc59d79507458b1c", "src": "db2@1.60.1.70338"}
+{"id": "TRIAL_CAP_BANKED_XP_TOOLTIP", "field": "text", "en": "You have earned XP that exceeds your level cap.  Buy the game to apply your banked XP.", "hash": "cac483c048808589", "src": "db2@1.60.1.70338"}
+{"id": "TRIAL_RESTRICTED", "field": "text", "en": "You need to upgrade your account to access this feature.", "hash": "91bda89550edd17f", "src": "db2@1.60.1.70338"}
+{"id": "TRINKET0SLOT", "field": "text", "en": "Trinket", "hash": "8d85b3cd3e60b73e", "src": "db2@1.60.1.70338"}
+{"id": "TRINKET1SLOT", "field": "text", "en": "Trinket", "hash": "8d85b3cd3e60b73e", "src": "db2@1.60.1.70338"}
+{"id": "TRIPLE_BUFFER", "field": "text", "en": "Triple Buffering", "hash": "feb345862b360000", "src": "db2@1.60.1.70338"}
+{"id": "TRIVIAL_QUESTS_FILTER_DESCRIPTION", "field": "text", "en": "These quests are significantly lower than your current level and will award no experience", "hash": "f7f7c18fb7e7564a", "src": "db2@1.60.1.70338"}
+{"id": "TRIVIAL_QUEST_DISPLAY", "field": "text", "en": "|cff000000%s (low level)|r", "hash": "26fd5f79b0a9ee1e", "src": "db2@1.60.1.70338"}
+{"id": "TTS_CONFIRM_SAVE_SETTINGS", "field": "text", "en": "Do you want this character to use the Text to Speech settings saved on this computer? If you are logging in from a different computer, this will save over any previous settings you had.", "hash": "1f1d7c300a92ad4b", "src": "db2@1.60.1.70338"}
+{"id": "TURN_IN_ITEMS", "field": "text", "en": "Required items:", "hash": "bbe9aa899667d980", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL17", "field": "text", "en": "You can reply to that player by hitting the R key and then typing a message, or by typing /w <theirname> and then the message.", "hash": "7a30263203ea179c", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL18", "field": "text", "en": "You can invite another player to your group by |cffffd200Right Clicking|r their portrait and selecting the |cffffd200Invite|r option from the popup menu.|n|nYou can leave a group by Right Clicking on your own portrait and choosing the option to leave the party.", "hash": "7814ee3b585fff6e", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL22", "field": "text", "en": "If there is another player you have enjoyed playing with, add them to your friends list! Click on the |cffffd200Social Button|r and add them to your list of friends.|n|nYou can only add friends from your own realm.", "hash": "f6dcc955cec01764", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL27", "field": "text", "en": "If you stray into deep and uncharted waters, you will see a Fatigue bar. If you become completely fatigued, you will begin to drown.", "hash": "cbd572f20c6b163e", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL28", "field": "text", "en": "Swimming is much like walking, except you can steer upwards and downwards by holding down the |cffffd200Right Mouse Button|r and looking in the direction you want to go.", "hash": "c5c14f6c7ae69268", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL37", "field": "text", "en": "One of your items has broken! The character icon below your minimap indicates the broken item in red.|n|nYou can get the item repaired by a vendor in town. Until you do, you will gain no benefit from the item.", "hash": "dd6f43590f01f44f", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL46", "field": "text", "en": "You have joined a raid group: a group with an increased limit of 40 members, though usually 10 or 25. Raid groups are necessary to enter the most challenging dungeons or to defeat the most powerful enemies, typically at high level.|n|n|cffff2020While in a raid group, you will not earn credit towards most quests. To leave a raid group, Right Click on your character portrait and select Leave party.|r", "hash": "4bb17c250c1c7808", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL52", "field": "text", "en": "Congratulations, you have received your first Battle Pet. This little fellow will follow you during all of your adventures in Azeroth and beyond.|n|nYou can see all of your Battle Pets by clicking the |cffffd200Collections|r button and then looking for the  |cffffd200Pet Journal|r tab.", "hash": "e53f8fb8de5cb06f", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_HUD_REVAMP_BAG_CHANGES", "field": "text", "en": "Click on this icon to review new filters and bag combining options.", "hash": "816f918e4f1d0e2f", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_HUD_REVAMP_LFG_QUEUE_CHANGES", "field": "text", "en": "You are queued for an activity.\n\nGroup Finder queue information appears in this location.", "hash": "7d6058bcdc243020", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_SUPERTRACK_STEP_1", "field": "text", "en": "Focus on a quest by clicking its icon", "hash": "38d5cc67d418ae89", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_TITLE17", "field": "text", "en": "Replying to Whispers", "hash": "5fd6748b9e60d156", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_TITLE18", "field": "text", "en": "Grouping", "hash": "bb4daef567685336", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_TITLE22", "field": "text", "en": "Friends", "hash": "aa8bfa51a365a614", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_TITLE27", "field": "text", "en": "Fatigue", "hash": "b8613403e72ce8d4", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_TITLE28", "field": "text", "en": "Swimming", "hash": "6a2eed120b7fb021", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_TITLE37", "field": "text", "en": "Broken Items", "hash": "3085baf21e2ad6dd", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_TITLE46", "field": "text", "en": "Raid Groups", "hash": "6f17dbc4f025a2ad", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_TITLE52", "field": "text", "en": "Companions", "hash": "10662233ca1efb1b", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_TOKEN_ABOUT_TOKENS", "field": "text", "en": "About WoW Tokens", "hash": "af5105db11810927", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_TOKEN_GAME_TIME_STEP_1", "field": "text", "en": "1. Buy a WoW Token from the|n    |cffffffffauction house|r.", "hash": "6512a5bc8ccdd559", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_TOKEN_GAME_TIME_STEP_2", "field": "text", "en": "2. Redeem it for 30 days of game|ntime.", "hash": "eee5f6713028e3c9", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_TOKEN_GAME_TIME_STEP_2_BALANCE", "field": "text", "en": "2. Redeem it for 30 days of game|ntime (or %s of Blizzard Balance).", "hash": "9e1077e632e6681b", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_TOKEN_GOLD_STEP_1", "field": "text", "en": "1. Buy a WoW Token from the|n    |cffffffffShop|r.", "hash": "537eb4e08ab69fdd", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_TOKEN_GOLD_STEP_2", "field": "text", "en": "2. Sell it in the |cffffffffauction house|r for|n    gold.", "hash": "f4f4c38026b0f40e", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_TOKEN_I_NEED_GAME_TIME", "field": "text", "en": "I Need Game Time", "hash": "7ae029d842e97cdb", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_TOKEN_I_NEED_GOLD", "field": "text", "en": "I Need Gold", "hash": "c5430312f982d546", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_TOKEN_PAY_FOR_TIME_WITH_GOLD", "field": "text", "en": "Buy game time with gold", "hash": "7cf417f4f8aac124", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_TOKEN_SELL_FOR_GOLD", "field": "text", "en": "Sell a WoW Token for gold", "hash": "9b45cc06bee0d5fb", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_VOICE", "field": "text", "en": "You can join or leave voice chat here.", "hash": "d4d8b465aeeae2c8", "src": "db2@1.60.1.70338"}
+{"id": "TYPE", "field": "text", "en": "Type", "hash": "0b615fd246820bea", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2436", "field": "text", "en": "Alchemy - UNCATEGORIZED", "hash": "e8215730da2c9ba6", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2437", "field": "text", "en": "Blacksmithing - UNCATEGORIZED", "hash": "2b700668d93e7562", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2438", "field": "text", "en": "Cooking - UNCATEGORIZED", "hash": "f21be7939871c7b8", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2439", "field": "text", "en": "Enchanting - UNCATEGORIZED", "hash": "bd11fe293c6b81be", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2440", "field": "text", "en": "Engineering - UNCATEGORIZED", "hash": "756d97aabb72630d", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2441", "field": "text", "en": "First Aid - UNCATEGORIZED", "hash": "0c89364cd816eb5c", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2442", "field": "text", "en": "Fishing - UNCATEGORIZED", "hash": "22f8e33e2dbab8de", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2443", "field": "text", "en": "Herbalism - UNCATEGORIZED", "hash": "77d9cffeba9a3176", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2444", "field": "text", "en": "Leatherworking - UNCATEGORIZED", "hash": "d8393025787c9493", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2445", "field": "text", "en": "Mining - UNCATEGORIZED", "hash": "10d474f66719e17f", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2446", "field": "text", "en": "Skinning - UNCATEGORIZED", "hash": "e586641269ecba52", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2447", "field": "text", "en": "Tailoring - UNCATEGORIZED", "hash": "d7f116a978a9dcf2", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2448", "field": "text", "en": "Reagents", "hash": "f7a719e8744e51c0", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2449", "field": "text", "en": "Potions", "hash": "889a67d1d4574851", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2450", "field": "text", "en": "Elixirs", "hash": "1349fc3ecf749ca7", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2451", "field": "text", "en": "Flasks", "hash": "3b135404b389822b", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2452", "field": "text", "en": "Lesser Transmutations", "hash": "d58df28f7a1d665e", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2453", "field": "text", "en": "Miscellaneous", "hash": "b3c7747f3cef66e5", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2454", "field": "text", "en": "Camping", "hash": "2059c10bb3c701a8", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2455", "field": "text", "en": "Weapon Oils", "hash": "43d92228fc5b2090", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2460", "field": "text", "en": "Weapon Stones", "hash": "e620d5fd06e5103e", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2461", "field": "text", "en": "Mail Helmets", "hash": "ce0af07e60a9d5e6", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2462", "field": "text", "en": "Mail Pauldrons", "hash": "832e918a6f15abca", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2463", "field": "text", "en": "Mail Chestguards", "hash": "9c7b35d4330f2410", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2464", "field": "text", "en": "Mail Bracers", "hash": "9524b81068fcb78d", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2465", "field": "text", "en": "Mail Gauntlets", "hash": "7a7cf0925773af26", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2466", "field": "text", "en": "Mail Belts", "hash": "dd43fdc0b5515033", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2467", "field": "text", "en": "Mail Legguards", "hash": "41646f30d045938d", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2468", "field": "text", "en": "Mail Boots", "hash": "de9bcee94749a3d2", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2469", "field": "text", "en": "Plate Helmets", "hash": "dc40e5e0a8aa61db", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2470", "field": "text", "en": "Plate Pauldrons", "hash": "224cea9963737759", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2471", "field": "text", "en": "Plate Chestguards", "hash": "25dac585d682ebba", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2472", "field": "text", "en": "Plate Bracers", "hash": "a35aad72b0fd4382", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2473", "field": "text", "en": "Plate Gauntlets", "hash": "199b49a14bd17ab5", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2474", "field": "text", "en": "Plate Belts", "hash": "5774beb45f745f8d", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2475", "field": "text", "en": "Plate Legguards", "hash": "e082c83ac4a35f1c", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2476", "field": "text", "en": "Plate Boots", "hash": "58cc8fddf16cb31b", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2481", "field": "text", "en": "One-Handed Axes", "hash": "11e3a286f24718bb", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2484", "field": "text", "en": "One-Handed Maces", "hash": "f70b30d5433229c6", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2485", "field": "text", "en": "One-Handed Swords", "hash": "d3a073af08003389", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2486", "field": "text", "en": "Shields", "hash": "047394cec4ba0cf2", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2488", "field": "text", "en": "Inert Enchanting Rods", "hash": "6564eb19355d1cc8", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2491", "field": "text", "en": "Runed Enchanting Rods", "hash": "83c10eb94e187a1f", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2492", "field": "text", "en": "Wizard Oils", "hash": "391c24c61f92d272", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2493", "field": "text", "en": "Helmet Enchants", "hash": "c103c152025831cc", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2494", "field": "text", "en": "Shoulder Enchants", "hash": "1f7a9222929324b0", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2495", "field": "text", "en": "Chest Enchants", "hash": "a1813bb08b9e22cd", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2496", "field": "text", "en": "Bracer Enchants", "hash": "2245dd9d36e4372a", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2497", "field": "text", "en": "Glove Enchants", "hash": "5c867b66d7a1c17e", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2498", "field": "text", "en": "Belt Enchants", "hash": "4288b081dc211b87", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2499", "field": "text", "en": "Pants Enchants", "hash": "9f5f851aebf5e57a", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2500", "field": "text", "en": "Boots Enchants", "hash": "993026a937b65056", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2501", "field": "text", "en": "Two-Handed Weapon Enchants", "hash": "16135f047a331b10", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2502", "field": "text", "en": "Weapon Enchants", "hash": "b6b47770db2f4df3", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2503", "field": "text", "en": "Shield Enchants", "hash": "41073ba1a00ffeda", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2504", "field": "text", "en": "Off-Hand Enchants", "hash": "a7e861ec28d6b44b", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2505", "field": "text", "en": "Amulet Enchants", "hash": "4ea3fc42295e796b", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2506", "field": "text", "en": "Cloak Enchants", "hash": "43ad51fa5d41fdc3", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2507", "field": "text", "en": "Ring Enchants", "hash": "57b4ad3648ea5efb", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2508", "field": "text", "en": "Trinket Enchants", "hash": "1c256295508e1071", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2509", "field": "text", "en": "Relics", "hash": "8bdd967f5957d67c", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2510", "field": "text", "en": "Curios", "hash": "e8c664fad1600dba", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2513", "field": "text", "en": "Off-Hands", "hash": "6169368b1b274b18", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2515", "field": "text", "en": "Parts", "hash": "896676f50247eb65", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2516", "field": "text", "en": "Explosives", "hash": "a523f6b229cb0256", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2517", "field": "text", "en": "Fireworks", "hash": "682f427fdbf1928e", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2518", "field": "text", "en": "Consumable Devices", "hash": "77d229abfb57406b", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2519", "field": "text", "en": "Devices", "hash": "60275538301858bf", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2520", "field": "text", "en": "Gadgets", "hash": "53f360072b5af716", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2521", "field": "text", "en": "Pets and Guardians", "hash": "93f0e9bf12ebb87e", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2522", "field": "text", "en": "Cloth Headgear", "hash": "119010d172b46fc5", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2523", "field": "text", "en": "Leather Headgear", "hash": "264d25f13422065a", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2524", "field": "text", "en": "Mail Headgear", "hash": "032f0eb90e458e26", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2525", "field": "text", "en": "Plate Headgear", "hash": "48cba00267b3d3e2", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2526", "field": "text", "en": "Ranged Weapons", "hash": "0245ca1218e093c1", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2527", "field": "text", "en": "Scopes", "hash": "64af3493b10e77ba", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2528", "field": "text", "en": "Ammunition", "hash": "f8b675be3066b388", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2530", "field": "text", "en": "Bandages", "hash": "3e47c357fd3639c6", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2531", "field": "text", "en": "Healing Potions", "hash": "0049ce42431f9a09", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2532", "field": "text", "en": "Poultices", "hash": "34eeb108c97578f3", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2533", "field": "text", "en": "Curatives", "hash": "80b88ebf7e546789", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2537", "field": "text", "en": "Necks", "hash": "66d04e9d3e85a555", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2538", "field": "text", "en": "Rings", "hash": "ad933da41b79dd26", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2539", "field": "text", "en": "Crowns", "hash": "b3ba0331c3fc47e8", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2540", "field": "text", "en": "Cuffs", "hash": "a7df19598cd99784", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2541", "field": "text", "en": "Trinkets", "hash": "6b6b03c2893213f5", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2542", "field": "text", "en": "Red Gems", "hash": "07def52ddff81b7e", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2543", "field": "text", "en": "Orange Gems", "hash": "0389d7ade1de792b", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2544", "field": "text", "en": "Yellow Gems", "hash": "3a0e8fac134c0519", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2545", "field": "text", "en": "Green Gems", "hash": "f7403d17e6d21873", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2546", "field": "text", "en": "Blue Gems", "hash": "73bbc33a8b4b3b18", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2547", "field": "text", "en": "Purple Gems", "hash": "16bd0c8c8a5d9ba9", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2548", "field": "text", "en": "Meta Gems", "hash": "e2ce50dbbcf7c010", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2551", "field": "text", "en": "Bags", "hash": "08f19d87f5eb6a4e", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2552", "field": "text", "en": "Cloaks", "hash": "4a61f8fc332718de", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2553", "field": "text", "en": "Leather Helmets", "hash": "7c3c062cd1f8c93e", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2554", "field": "text", "en": "Leather Pauldrons", "hash": "7b94738c6869eda5", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2555", "field": "text", "en": "Leather Chestguards", "hash": "0236a3f59436e9dc", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2556", "field": "text", "en": "Leather Bracers", "hash": "4355cdbeda4baae5", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2557", "field": "text", "en": "Leather Gauntlets", "hash": "72e2d29450c7f101", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2558", "field": "text", "en": "Leather Belts", "hash": "bf3b5787489116f7", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2559", "field": "text", "en": "Leather Legguards", "hash": "39ca5132c999d568", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2560", "field": "text", "en": "Leather Boots", "hash": "c09328b0da896a85", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2569", "field": "text", "en": "Armor Kits", "hash": "3f1d977ecba332e9", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2570", "field": "text", "en": "Quivers", "hash": "630b5f7885a99e1b", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2571", "field": "text", "en": "Ammo Pouches", "hash": "a221706579b9697f", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2573", "field": "text", "en": "Arrows", "hash": "bd164115a95fd0bf", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2575", "field": "text", "en": "Smelted Bars", "hash": "a23b1f0d395f5285", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2577", "field": "text", "en": "Embroideries", "hash": "0513c5c2c2bd71bf", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2579", "field": "text", "en": "Specialty Bags", "hash": "80f01d642ae33b15", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2581", "field": "text", "en": "Hoods", "hash": "fed83197bab87eb4", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2582", "field": "text", "en": "Spaulders", "hash": "3639f4c1759c1ba3", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2583", "field": "text", "en": "Robes and Vests", "hash": "1c0a20c04ee131f7", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2584", "field": "text", "en": "Bracers", "hash": "4b0c8d19172eca26", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2585", "field": "text", "en": "Gloves", "hash": "3878a427ccaa90ae", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2586", "field": "text", "en": "Belts", "hash": "942e22b8ef432c54", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2587", "field": "text", "en": "Leggings", "hash": "10a0fee9d2b05c26", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2588", "field": "text", "en": "Shoes", "hash": "befee85d70f46c90", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2589", "field": "text", "en": "Shirts", "hash": "bba68045c325a294", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2590", "field": "text", "en": "Dressed for the Occasion", "hash": "3c0e68d9d0f2a5c5", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2592", "field": "text", "en": "SEASON OF DISCOVERY", "hash": "18a0ec4f6deb1946", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2620", "field": "text", "en": "Greater Transmutations", "hash": "c4fd36f933eb7372", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2621", "field": "text", "en": "Recovery Potions", "hash": "53dbd8a5766f2f63", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2632", "field": "text", "en": "Everyday Meals", "hash": "0f663a7c7d6e5b88", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2633", "field": "text", "en": "Strength Food", "hash": "bebabc13b5c6d06f", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2634", "field": "text", "en": "Agility Food", "hash": "215d04cf8036d3e9", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2635", "field": "text", "en": "Intellect Food", "hash": "395f48a5bb655ba3", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2636", "field": "text", "en": "Miscellaneous Cuisines", "hash": "637e43d302b21e3a", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2638", "field": "text", "en": "Winter Veil Treats", "hash": "0bbc149af379a8d7", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2639", "field": "text", "en": "Meal Prep", "hash": "497268c40ff702e7", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2640", "field": "text", "en": "Stamina Food", "hash": "31015cac7779a40f", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2641", "field": "text", "en": "Spell Damage Food", "hash": "970ca0f74a240d55", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2642", "field": "text", "en": "Combat Prowess Food", "hash": "a1509e8f81494094", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2643", "field": "text", "en": "Attack Power Food", "hash": "e3dbd82298173f45", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2644", "field": "text", "en": "Fisherman's Delights", "hash": "cfa320a93ed6255c", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2645", "field": "text", "en": "Delightful Drinks", "hash": "e98ba53f847e39ed", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2646", "field": "text", "en": "Soothing Drinks", "hash": "917948ef6debdffd", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2651", "field": "text", "en": "Draughts", "hash": "928809959506dbac", "src": "db2@1.60.1.70338"}
+{"id": "TradeSkillCategory:2771", "field": "text", "en": "Armor Food", "hash": "3e73a30f206c65de", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:1", "field": "text", "en": "All Specializations", "hash": "4cd9d3a591935eb8", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:10", "field": "text", "en": "Raids", "hash": "ac7f80169c608a71", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:11", "field": "text", "en": "Arenas", "hash": "bb5801eb771d6b3e", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:12", "field": "text", "en": "Battlegrounds", "hash": "ee710fa995072d7b", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:13", "field": "text", "en": "All Movement", "hash": "f81d4d28f802f9b3", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:14", "field": "text", "en": "Unmounted", "hash": "b81fb50b0e84b0df", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:15", "field": "text", "en": "Swimming", "hash": "6a2eed120b7fb021", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:16", "field": "text", "en": "Ground Mount", "hash": "8e092feb7ea64052", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:17", "field": "text", "en": "Flying Mount", "hash": "f9ce0e0b6670666b", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:18", "field": "text", "en": "All Equipment Sets", "hash": "51146237b2bb9fa0", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:19", "field": "text", "en": "Equipment Set", "hash": "2cb92e44ffa913f9", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:2", "field": "text", "en": "Specialization", "hash": "3477492c268fa0c4", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:20", "field": "text", "en": "All Racial Forms", "hash": "d826380ddfc36f97", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:21", "field": "text", "en": "Native Form", "hash": "53f66a935b742b5e", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:22", "field": "text", "en": "Non Native Form", "hash": "793252e80e651ea4", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:3", "field": "text", "en": "All Locations", "hash": "fbfd93c91f82a653", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:32", "field": "text", "en": "All Weather", "hash": "1f35721cee5d7fb9", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:33", "field": "text", "en": "Clear", "hash": "a6aa194d90392011", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:34", "field": "text", "en": "Rain", "hash": "0b167838cc6aea94", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:35", "field": "text", "en": "Snow", "hash": "0b3c30638d6f0ec0", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:36", "field": "text", "en": "Sand", "hash": "0b38c85859d37dff", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:37", "field": "text", "en": "All Times", "hash": "c50e9a03d50ff184", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:38", "field": "text", "en": "Morning", "hash": "4810d477c0f4b77d", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:39", "field": "text", "en": "Midday", "hash": "e76b389ebe384f3c", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:4", "field": "text", "en": "Rest Area", "hash": "73905939e4e4a92e", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:40", "field": "text", "en": "Evening", "hash": "9ee70d0ffd1b3b8b", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:41", "field": "text", "en": "Night", "hash": "675a8fa5840624d5", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:5", "field": "text", "en": "World", "hash": "0626ad84d65fc103", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:8", "field": "text", "en": "Character Select", "hash": "ed36fb3ea6a6c83d", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSituation:9", "field": "text", "en": "Dungeons", "hash": "805537b689ee7860", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:1", "field": "text", "en": "One Handed Weapon", "hash": "b5bdb346388284eb", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:2", "field": "text", "en": "One Handed Weapon", "hash": "b5bdb346388284eb", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:20", "field": "text", "en": "Cloth", "hash": "a6acc156b7ee2344", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:21", "field": "text", "en": "Leather", "hash": "96979c04bae15c34", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:22", "field": "text", "en": "Mail", "hash": "0a6af42f09632675", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:23", "field": "text", "en": "Plate", "hash": "8adb58f7d242e7d0", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:24", "field": "text", "en": "Cloth", "hash": "a6acc156b7ee2344", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:25", "field": "text", "en": "Leather", "hash": "96979c04bae15c34", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:26", "field": "text", "en": "Mail", "hash": "0a6af42f09632675", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:27", "field": "text", "en": "Plate", "hash": "8adb58f7d242e7d0", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:28", "field": "text", "en": "Cloth", "hash": "a6acc156b7ee2344", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:29", "field": "text", "en": "Leather", "hash": "96979c04bae15c34", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:30", "field": "text", "en": "Mail", "hash": "0a6af42f09632675", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:31", "field": "text", "en": "Plate", "hash": "8adb58f7d242e7d0", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:32", "field": "text", "en": "Cloth", "hash": "a6acc156b7ee2344", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:33", "field": "text", "en": "Leather", "hash": "96979c04bae15c34", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:34", "field": "text", "en": "Mail", "hash": "0a6af42f09632675", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:35", "field": "text", "en": "Plate", "hash": "8adb58f7d242e7d0", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:36", "field": "text", "en": "Cloth", "hash": "a6acc156b7ee2344", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:37", "field": "text", "en": "Leather", "hash": "96979c04bae15c34", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:38", "field": "text", "en": "Mail", "hash": "0a6af42f09632675", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:39", "field": "text", "en": "Plate", "hash": "8adb58f7d242e7d0", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:40", "field": "text", "en": "Cloth", "hash": "a6acc156b7ee2344", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:41", "field": "text", "en": "Leather", "hash": "96979c04bae15c34", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:42", "field": "text", "en": "Mail", "hash": "0a6af42f09632675", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:43", "field": "text", "en": "Plate", "hash": "8adb58f7d242e7d0", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:44", "field": "text", "en": "Cloth", "hash": "a6acc156b7ee2344", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:45", "field": "text", "en": "Leather", "hash": "96979c04bae15c34", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:46", "field": "text", "en": "Mail", "hash": "0a6af42f09632675", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:47", "field": "text", "en": "Plate", "hash": "8adb58f7d242e7d0", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:48", "field": "text", "en": "Cloth", "hash": "a6acc156b7ee2344", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:49", "field": "text", "en": "Leather", "hash": "96979c04bae15c34", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:5", "field": "text", "en": "Two Handed Weapon", "hash": "6646d67c57066a2f", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:50", "field": "text", "en": "Mail", "hash": "0a6af42f09632675", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:51", "field": "text", "en": "Plate", "hash": "8adb58f7d242e7d0", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:52", "field": "text", "en": "Cloth", "hash": "a6acc156b7ee2344", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:53", "field": "text", "en": "Leather", "hash": "96979c04bae15c34", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:54", "field": "text", "en": "Mail", "hash": "0a6af42f09632675", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:55", "field": "text", "en": "Plate", "hash": "8adb58f7d242e7d0", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:7", "field": "text", "en": "Ranged Weapon", "hash": "59e915133241766c", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:8", "field": "text", "en": "Shield", "hash": "bba314a98f8932b0", "src": "db2@1.60.1.70338"}
+{"id": "TransmogSlotOption:9", "field": "text", "en": "Off Hand", "hash": "4d66f8e7f5edf7c5", "src": "db2@1.60.1.70338"}
+{"id": "TransmogTrigger:11", "field": "text", "en": "Weather", "hash": "5a454b276859c4f9", "src": "db2@1.60.1.70338"}
+{"id": "TransmogTrigger:12", "field": "text", "en": "Time of Day", "hash": "bb6e4f2457d4b01a", "src": "db2@1.60.1.70338"}
+{"id": "TransmogTrigger:3", "field": "text", "en": "Locations", "hash": "355a6384cf7e74ed", "src": "db2@1.60.1.70338"}
+{"id": "TransmogTrigger:4", "field": "text", "en": "Movement", "hash": "31395e64bb1d7b43", "src": "db2@1.60.1.70338"}
+{"id": "TransmogTrigger:5", "field": "text", "en": "Specializations", "hash": "d90a727948b45a54", "src": "db2@1.60.1.70338"}
+{"id": "TransmogTrigger:6", "field": "text", "en": "Equipment Sets", "hash": "e2c2adad2d07d282", "src": "db2@1.60.1.70338"}
+{"id": "TransmogTrigger:7", "field": "text", "en": "Racial Forms", "hash": "142427d7972ffdaa", "src": "db2@1.60.1.70338"}
+{"id": "TransmogTriggerDescription:3", "field": "text", "en": "|cnHIGHLIGHT_FONT_COLOR:All Locations:|r This outfit is valid for all locations. Outfits assigned a specific location will be prioritized.|n|n|cnHIGHLIGHT_FONT_COLOR:Rest Areas:|r Non-combat areas such as towns and neighborhoods.|n|n|cnHIGHLIGHT_FONT_COLOR:House:|r Your Warband's house.|n|n|cnHIGHLIGHT_FONT_COLOR:Character Select:|r The display for your Warband camp as well as standalone view.|n|n|cnHIGHLIGHT_FONT_COLOR:World:|r Outdoor combat areas.", "hash": "6607e84ceb65dfaf", "src": "db2@1.60.1.70338"}
+{"id": "TransmogTriggerDescription:4", "field": "text", "en": "Choose the movement type for which this outfit is valid.", "hash": "af1ac89e995cbae6", "src": "db2@1.60.1.70338"}
+{"id": "TransmogTriggerDescription:5", "field": "text", "en": "Choose the specializations for which this outfit is valid.", "hash": "3e12c672b8aa6327", "src": "db2@1.60.1.70338"}
+{"id": "TransmogTriggerDescription:6", "field": "text", "en": "Choose the equipment sets for which this outfit is valid.", "hash": "80bb82018f4778cc", "src": "db2@1.60.1.70338"}
+{"id": "TransmogTriggerDescription:7", "field": "text", "en": "Choose the racial forms for which this outfit is valid.", "hash": "9960583fcc12962e", "src": "db2@1.60.1.70338"}

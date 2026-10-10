@@ -1,113 +1,113 @@
-{"id": 1270031, "field": "name", "en": "Flee", "hash": "097db4425735e3f8", "src": "db2@1.60.1.70291"}
-{"id": 1270031, "field": "aura", "en": "Running away in fear.", "hash": "f07ba538f7857903", "src": "db2@1.60.1.70291"}
-{"id": 1270035, "field": "name", "en": "Stealth", "hash": "87e718bee5e635c1", "src": "db2@1.60.1.70291"}
-{"id": 1270035, "field": "description", "en": "Enter stealth mode for $d.", "hash": "2b8d6e92eb39906a", "src": "db2@1.60.1.70291"}
-{"id": 1270035, "field": "aura", "en": "Stealthed.", "hash": "150ed46572cb7a09", "src": "db2@1.60.1.70291"}
-{"id": 1270060, "field": "name", "en": "Charged Stone", "hash": "2df5107b74d9b024", "src": "db2@1.60.1.70291"}
-{"id": 1270099, "field": "name", "en": "Soul Sunder", "hash": "2513251376038fab", "src": "db2@1.60.1.70291"}
-{"id": 1270104, "field": "name", "en": "[DNT] Illusion", "hash": "7ca1644f8eba096b", "src": "db2@1.60.1.70291"}
-{"id": 1270105, "field": "name", "en": "[DNT] Illusion", "hash": "7ca1644f8eba096b", "src": "db2@1.60.1.70291"}
-{"id": 1270173, "field": "name", "en": "Alliance Standard", "hash": "548e59d38d551ce7", "src": "db2@1.60.1.70291"}
-{"id": 1270173, "field": "description", "en": "Carrying the Alliance battle standard.", "hash": "fdcd9a3720d099d5", "src": "db2@1.60.1.70291"}
-{"id": 1270173, "field": "aura", "en": "Carrying the Alliance battle standard.", "hash": "fdcd9a3720d099d5", "src": "db2@1.60.1.70291"}
-{"id": 1270178, "field": "name", "en": "Cosmic Wrath", "hash": "fcee8e49fa3d0768", "src": "db2@1.60.1.70291"}
-{"id": 1270178, "field": "description", "en": "Hurls a bolt of lightning at an enemy, inflicting Nature damage.", "hash": "b05756c5b4997492", "src": "db2@1.60.1.70291"}
-{"id": 1270187, "field": "name", "en": "Soul Vigor", "hash": "faa82b7f2ab389a6", "src": "db2@1.60.1.70291"}
-{"id": 1270187, "field": "description", "en": "Invigorated by fragmented souls. For each stack of $@spellname1270187 you gain a $s1% increase to Shadow damage.", "hash": "bf3ca36af831e08b", "src": "db2@1.60.1.70291"}
-{"id": 1270187, "field": "aura", "en": "Invigorated by stolen souls. Shadow damage is increased by $s1%.", "hash": "16d23ca83fe10514", "src": "db2@1.60.1.70291"}
-{"id": 1270195, "field": "name", "en": "Trigger", "hash": "8c94886a50a7fbfb", "src": "db2@1.60.1.70291"}
-{"id": 1270197, "field": "name", "en": "Lightning Breath", "hash": "d85f4534ee718b14", "src": "db2@1.60.1.70291"}
-{"id": 1270197, "field": "description", "en": "Breathes lightning at an enemy, inflicting Nature damage.", "hash": "d008edde50fea0ca", "src": "db2@1.60.1.70291"}
-{"id": 1270201, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70291"}
-{"id": 1270201, "field": "description", "en": "Strikes an enemy with a lightning bolt that arcs to another nearby enemy. The spell affects up to $x1 targets, inflicting greater Nature damage to each successive target.", "hash": "245b0721929b5b67", "src": "db2@1.60.1.70291"}
-{"id": 1270257, "field": "name", "en": "Rootbound Agony", "hash": "167b0ac95fcf02ca", "src": "db2@1.60.1.70291"}
-{"id": 1270257, "field": "description", "en": "Inflicts $1270260s1 Nature damage to all players every $T1 sec.", "hash": "f9719a9a39e0d083", "src": "db2@1.60.1.70291"}
-{"id": 1270257, "field": "aura", "en": "$1270260s1 Nature damage dealt to all players every $T1 sec.", "hash": "297a3f4c70f4df87", "src": "db2@1.60.1.70291"}
-{"id": 1270260, "field": "name", "en": "Rootbound Agony", "hash": "167b0ac95fcf02ca", "src": "db2@1.60.1.70291"}
-{"id": 1270260, "field": "description", "en": "$@spelldesc1270257", "hash": "db3960f3eb80d422", "src": "db2@1.60.1.70291"}
-{"id": 1270262, "field": "name", "en": "Emerald Lightning", "hash": "e8202b6b7e00bf66", "src": "db2@1.60.1.70291"}
-{"id": 1270262, "field": "description", "en": "Strikes an enemy with a lightning bolt that arcs to another nearby enemy. The spell affects up to $x1 targets, causing Nature damage to each.", "hash": "91b98b1ace781456", "src": "db2@1.60.1.70291"}
-{"id": 1270400, "field": "name", "en": "Wind Strike", "hash": "5c93e279394655cd", "src": "db2@1.60.1.70291"}
-{"id": 1270400, "field": "description", "en": "Instantly throws a bolt of lightning at an enemy, inflicting Nature damage.", "hash": "40d9deb75ef49ffa", "src": "db2@1.60.1.70291"}
-{"id": 1270422, "field": "name", "en": "Levitate", "hash": "f1f2ceb33773fc12", "src": "db2@1.60.1.70291"}
-{"id": 1270422, "field": "description", "en": "Levitate, floating a few feet above the ground. While levitating, you will fall at a reduced speed and travel over water-like surfaces.", "hash": "9cbb89b737a49ed8", "src": "db2@1.60.1.70291"}
-{"id": 1270422, "field": "aura", "en": "Levitating.", "hash": "fb3d50819d1cb8ed", "src": "db2@1.60.1.70291"}
-{"id": 1270427, "field": "name", "en": "Malady", "hash": "5c0f2b5c263b8822", "src": "db2@1.60.1.70291"}
-{"id": 1270427, "field": "description", "en": "Inflicts $s1 Shadow damage every $t1 sec to enemies within $a1 yds.", "hash": "6f0daf03c3f53736", "src": "db2@1.60.1.70291"}
-{"id": 1270427, "field": "aura", "en": "$s1 Shadow damage inflicted every $t1 sec.", "hash": "62c40fe2273e4d07", "src": "db2@1.60.1.70291"}
-{"id": 1270462, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70291"}
-{"id": 1270462, "field": "description", "en": "Surrounds you with $n balls of lightning that have $h% chance of striking melee or ranged attackers for $s1 damage. Each time the lightning shield strikes, a ball of lightning dissipates. Thus, the shield expires after $d or after it has struck $n times.", "hash": "417941df71846cfd", "src": "db2@1.60.1.70291"}
-{"id": 1270462, "field": "aura", "en": "$h% chance of inflicting $s1 Nature damage on hit.", "hash": "87c6dd5acd347256", "src": "db2@1.60.1.70291"}
-{"id": 1270470, "field": "name", "en": "Clever Shapeshifter", "hash": "3a94ddbae9ee34fa", "src": "db2@1.60.1.70291"}
-{"id": 1270470, "field": "description", "en": "Reduces the mana cost of shapeshifting spells by $s1.", "hash": "d507d0826360b503", "src": "db2@1.60.1.70291"}
-{"id": 1270478, "field": "name", "en": "Flame Charged", "hash": "a8abec065e6cc212", "src": "db2@1.60.1.70291"}
-{"id": 1270478, "field": "description", "en": "Reduces the mana cost of Flame Shock and Lightning Bolt by $s1 Mana.", "hash": "b8ccd48e83911eb9", "src": "db2@1.60.1.70291"}
-{"id": 1270490, "field": "name", "en": "Thicker Hide", "hash": "f0b76622224a91af", "src": "db2@1.60.1.70291"}
-{"id": 1270490, "field": "description", "en": "Increases your Armor contribution from items by $s1%.", "hash": "f6b6e46c504356a6", "src": "db2@1.60.1.70291"}
-{"id": 1270492, "field": "name", "en": "Totem Affinity", "hash": "44430f6e19c8c1d5", "src": "db2@1.60.1.70291"}
-{"id": 1270492, "field": "description", "en": "Reduces the mana cost of your totems by $s1%.", "hash": "a905b49a878b8b9c", "src": "db2@1.60.1.70291"}
-{"id": 1270498, "field": "name", "en": "Soul Tether", "hash": "088ae9643936096b", "src": "db2@1.60.1.70291"}
-{"id": 1270498, "field": "description", "en": "Attempts to sunder the soul of a nearby enemy.", "hash": "59361208a0639eab", "src": "db2@1.60.1.70291"}
-{"id": 1270498, "field": "aura", "en": "Calling all Fragmented Souls to Kathris. Souls that reach Kathris apply $@spellname1270427 to players within $1270427a1 yds inflicting $1270427s1 Shadow damage every $1270427t1 sec for $1270427d.", "hash": "1516bf6a40c2a694", "src": "db2@1.60.1.70291"}
-{"id": 1270518, "field": "name", "en": "Read Note", "hash": "08783bc0ea140297", "src": "db2@1.60.1.70291"}
-{"id": 1270518, "field": "description", "en": "Read the label to identify the shipment.", "hash": "ef5de1733eb2f405", "src": "db2@1.60.1.70291"}
-{"id": 1270576, "field": "name", "en": "Soul Siphon", "hash": "52b445b62db7cbe2", "src": "db2@1.60.1.70291"}
-{"id": 1270585, "field": "name", "en": "Stun Self", "hash": "18fe9c722eba6868", "src": "db2@1.60.1.70291"}
-{"id": 1270590, "field": "name", "en": "Pick Up Note", "hash": "a825b5d9b8c88014", "src": "db2@1.60.1.70291"}
-{"id": 1270593, "field": "name", "en": "Snare Limit", "hash": "6443999ae5ed9581", "src": "db2@1.60.1.70291"}
-{"id": 1270593, "field": "aura", "en": "Unable to be slowed by more than ${100-$m1}%.", "hash": "da7b95d89c0c3720", "src": "db2@1.60.1.70291"}
-{"id": 1270602, "field": "name", "en": "Blue Beam", "hash": "73103909c841f858", "src": "db2@1.60.1.70291"}
-{"id": 1270602, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70291"}
-{"id": 1270623, "field": "name", "en": "(DNT) Mana Regen", "hash": "e36e275f79194cba", "src": "db2@1.60.1.70291"}
-{"id": 1270631, "field": "name", "en": "(DNT) Mana Regen", "hash": "e36e275f79194cba", "src": "db2@1.60.1.70291"}
-{"id": 1270632, "field": "name", "en": "Critter Cookie", "hash": "bbac120a98b8b33c", "src": "db2@1.60.1.70291"}
-{"id": 1270633, "field": "name", "en": "Skywall Souffle", "hash": "f87757399e91aa4c", "src": "db2@1.60.1.70291"}
-{"id": 1270635, "field": "name", "en": "Pincer Bites", "hash": "12bb216b9d8c02e2", "src": "db2@1.60.1.70291"}
-{"id": 1270643, "field": "name", "en": "Unstable Dream", "hash": "3e3f8263a3551fc8", "src": "db2@1.60.1.70291"}
-{"id": 1270643, "field": "description", "en": "The power of the Emerald Dream seeps out of Nythus, reducing his mana regeneration by 100% for $d.", "hash": "0162d0913f42eba2", "src": "db2@1.60.1.70291"}
-{"id": 1270643, "field": "aura", "en": "Mana regeneration reduced by 100% for $d.", "hash": "c4e2c8233d60418d", "src": "db2@1.60.1.70291"}
-{"id": 1270648, "field": "name", "en": "Dreamless Waking", "hash": "09dfed03d07b883b", "src": "db2@1.60.1.70291"}
-{"id": 1270648, "field": "description", "en": "Nythus has awakened from the dream, and is unable to maintain his connection to the waking world. He is stunned, and all incoming damage is increased by $S2%.", "hash": "4b3d3d497e685dbe", "src": "db2@1.60.1.70291"}
-{"id": 1270648, "field": "aura", "en": "Stunned. Incoming damage increased by $S2%.", "hash": "62382cc6c96d1659", "src": "db2@1.60.1.70291"}
-{"id": 1270650, "field": "name", "en": "Lunar Fire", "hash": "2bb3af6a4289015c", "src": "db2@1.60.1.70291"}
-{"id": 1270650, "field": "description", "en": "Inflicts $s2 Arcane damage to an enemy, then an additional $1271100s1 damage every $1271100t1 sec.\r\nUpon expiration, inflicts $1270830s1 Arcane damage to players within $1270830A1 yds.", "hash": "943acd9da90f1557", "src": "db2@1.60.1.70291"}
-{"id": 1270650, "field": "aura", "en": "$1271100s1 Arcane damage inflicted every $t1 sec.\r\nUpon expiration, inflicts $1270830s1 Arcane damage to players within $1270830A1 yds.", "hash": "af1105c05b8cddb5", "src": "db2@1.60.1.70291"}
-{"id": 1270651, "field": "name", "en": "Umbral Fire", "hash": "120944f6e25440d9", "src": "db2@1.60.1.70291"}
-{"id": 1270651, "field": "description", "en": "Inflicts $s2 Shadow damage to an enemy, then an additional $1271100s1 Shadow damage every $1271100t1 sec.\r\nUpon expiration, inflicts $1270830s1 Shadow damage to players within $1270830A1 yds.\r\n", "hash": "fed2bc971dc0f2ca", "src": "db2@1.60.1.70291"}
-{"id": 1270651, "field": "aura", "en": "$1271047s1 Shadow damage inflicted every $t1 sec.\r\nUpon expiration, inflicts $1271008s1 Shadow damage to players within $1271008A1 yds.", "hash": "758e5a5c972b80e1", "src": "db2@1.60.1.70291"}
-{"id": 1270781, "field": "name", "en": "Enchanted", "hash": "7815da1b81232fcf", "src": "db2@1.60.1.70291"}
-{"id": 1270781, "field": "description", "en": "Increases the Spirit of nearby party members by $M1.", "hash": "51ab01bf2be5a9b8", "src": "db2@1.60.1.70291"}
-{"id": 1270782, "field": "name", "en": "Dispel Magic", "hash": "87826d000137cc51", "src": "db2@1.60.1.70291"}
-{"id": 1270784, "field": "name", "en": "Dispel Magic", "hash": "87826d000137cc51", "src": "db2@1.60.1.70291"}
-{"id": 1270802, "field": "name", "en": "Berserker Charge", "hash": "7c17953211ae09aa", "src": "db2@1.60.1.70291"}
-{"id": 1270802, "field": "description", "en": "Charges at an enemy, knocking it back and inflicting normal damage plus $s3.", "hash": "a2823b6bf655acc1", "src": "db2@1.60.1.70291"}
-{"id": 1270803, "field": "name", "en": "Lunar Decay", "hash": "394a3184e2939c36", "src": "db2@1.60.1.70291"}
-{"id": 1270810, "field": "name", "en": "Unstable Dream", "hash": "3e3f8263a3551fc8", "src": "db2@1.60.1.70291"}
-{"id": 1270810, "field": "description", "en": "The power of the Emerald Dream seeps out of Nythus, increasing mana regeneration for all players by $S1% but increasing all the damage they receive by $S2%.\r\n\r\nHaste is also increased by $S4%.", "hash": "b4854124aff280f9", "src": "db2@1.60.1.70291"}
-{"id": 1270810, "field": "aura", "en": "Mana regeneration increased by $S1%. \r\n\r\nAll damage received is increased by $S2%.\r\n\r\nHaste increased by $S4%.", "hash": "606ab3acf86ebd8a", "src": "db2@1.60.1.70291"}
-{"id": 1270811, "field": "name", "en": "Intimidating Shout", "hash": "1a572d55632e5d45", "src": "db2@1.60.1.70291"}
-{"id": 1270811, "field": "description", "en": "Shouts at an enemy, paralyzing it with terror for $d. and causing all other nearby enemies to flee in fear.", "hash": "3743a9ab914cd07c", "src": "db2@1.60.1.70291"}
-{"id": 1270811, "field": "aura", "en": "Intimidated.", "hash": "441534cfc845bce9", "src": "db2@1.60.1.70291"}
-{"id": 1270825, "field": "name", "en": "Furious Breach", "hash": "63ee747fb8d9a871", "src": "db2@1.60.1.70291"}
-{"id": 1270825, "field": "description", "en": "Inflicts $s1 Physical damage to the current target, applying an aura that reduces armor by $s2%.", "hash": "96002d91939ca5dd", "src": "db2@1.60.1.70291"}
-{"id": 1270825, "field": "aura", "en": "Armor reduced by $s2%.", "hash": "7bc85918eef84e11", "src": "db2@1.60.1.70291"}
-{"id": 1270830, "field": "name", "en": "Lunar Expulsion", "hash": "f843a380eee28b4d", "src": "db2@1.60.1.70291"}
-{"id": 1270842, "field": "name", "en": "Energized", "hash": "1d4e881ce9f9cdfa", "src": "db2@1.60.1.70291"}
-{"id": 1270842, "field": "aura", "en": "Mana and health regeneration rate increased by $s1%.", "hash": "df5d4faceedb3787", "src": "db2@1.60.1.70291"}
-{"id": 1270893, "field": "name", "en": "Elemental Blessing", "hash": "3cdd12de343534e1", "src": "db2@1.60.1.70291"}
-{"id": 1270893, "field": "aura", "en": "Movement speed and mounted movement speed increased by $s1%.", "hash": "c7a5c1df13671e14", "src": "db2@1.60.1.70291"}
-{"id": 1270940, "field": "name", "en": "Ultrasafe Rechargeable Battery", "hash": "e778a8545deff705", "src": "db2@1.60.1.70291"}
-{"id": 1270940, "field": "description", "en": "Restores $s1 charges to a SAF-T or EZ-Thro brand device in your possession that does not involve explosions. It would be completely Unsafe with explosives.", "hash": "848cf013b5cb9f61", "src": "db2@1.60.1.70291"}
-{"id": 1270941, "field": "name", "en": "Poultryizer", "hash": "af1929fb312fadf7", "src": "db2@1.60.1.70291"}
-{"id": 1270941, "field": "description", "en": "Turns the target into a chicken for $1270942d. Well, that is assuming the transmogrification polarity has not been reversed...", "hash": "4ecdd5b21a94da12", "src": "db2@1.60.1.70291"}
-{"id": 1270942, "field": "name", "en": "Poultryized!", "hash": "99e0762500f7790a", "src": "db2@1.60.1.70291"}
-{"id": 1270942, "field": "description", "en": "Transforms the enemy into a chicken that cannot cast, and does $s3% less damage for up to $d or until they are damaged.", "hash": "f2b8a056d9e4437a", "src": "db2@1.60.1.70291"}
-{"id": 1270942, "field": "aura", "en": "Cannot cast spells and damage reduced by $s3%.", "hash": "4bb28e5ce7de371a", "src": "db2@1.60.1.70291"}
-{"id": 1270943, "field": "name", "en": "Poultryized!", "hash": "99e0762500f7790a", "src": "db2@1.60.1.70291"}
-{"id": 1270943, "field": "description", "en": "Transforms the enemy into a chicken that cannot cast, and does $s3% less damage for up to $d.", "hash": "31dfe6ad78642d74", "src": "db2@1.60.1.70291"}
-{"id": 1270943, "field": "aura", "en": "Cannot cast spells and damage reduced by $s3%.", "hash": "4bb28e5ce7de371a", "src": "db2@1.60.1.70291"}
-{"id": 1270944, "field": "name", "en": "Poultryized!", "hash": "99e0762500f7790a", "src": "db2@1.60.1.70291"}
-{"id": 1270944, "field": "description", "en": "Transforms the enemy into a chicken that cannot cast, and does $s3% less damage for up to $d.", "hash": "31dfe6ad78642d74", "src": "db2@1.60.1.70291"}
-{"id": 1270944, "field": "aura", "en": "Cannot cast spells and damage reduced by $s3%.", "hash": "4bb28e5ce7de371a", "src": "db2@1.60.1.70291"}
-{"id": 1270957, "field": "name", "en": "(DNT) Linken' Boots of Iron", "hash": "7a400e3bcfea7ddb", "src": "db2@1.60.1.70291"}
-{"id": 1270998, "field": "name", "en": "Crushing Brambles", "hash": "ccc07c81af2d9ca3", "src": "db2@1.60.1.70291"}
+{"id": 1270031, "field": "name", "en": "Flee", "hash": "097db4425735e3f8", "src": "db2@1.60.1.70338"}
+{"id": 1270031, "field": "aura", "en": "Running away in fear.", "hash": "f07ba538f7857903", "src": "db2@1.60.1.70338"}
+{"id": 1270035, "field": "name", "en": "Stealth", "hash": "87e718bee5e635c1", "src": "db2@1.60.1.70338"}
+{"id": 1270035, "field": "description", "en": "Enter stealth mode for $d.", "hash": "2b8d6e92eb39906a", "src": "db2@1.60.1.70338"}
+{"id": 1270035, "field": "aura", "en": "Stealthed.", "hash": "150ed46572cb7a09", "src": "db2@1.60.1.70338"}
+{"id": 1270060, "field": "name", "en": "Charged Stone", "hash": "2df5107b74d9b024", "src": "db2@1.60.1.70338"}
+{"id": 1270099, "field": "name", "en": "Soul Sunder", "hash": "2513251376038fab", "src": "db2@1.60.1.70338"}
+{"id": 1270104, "field": "name", "en": "[DNT] Illusion", "hash": "7ca1644f8eba096b", "src": "db2@1.60.1.70338"}
+{"id": 1270105, "field": "name", "en": "[DNT] Illusion", "hash": "7ca1644f8eba096b", "src": "db2@1.60.1.70338"}
+{"id": 1270173, "field": "name", "en": "Alliance Standard", "hash": "548e59d38d551ce7", "src": "db2@1.60.1.70338"}
+{"id": 1270173, "field": "description", "en": "Carrying the Alliance battle standard.", "hash": "fdcd9a3720d099d5", "src": "db2@1.60.1.70338"}
+{"id": 1270173, "field": "aura", "en": "Carrying the Alliance battle standard.", "hash": "fdcd9a3720d099d5", "src": "db2@1.60.1.70338"}
+{"id": 1270178, "field": "name", "en": "Cosmic Wrath", "hash": "fcee8e49fa3d0768", "src": "db2@1.60.1.70338"}
+{"id": 1270178, "field": "description", "en": "Hurls a bolt of lightning at an enemy, inflicting Nature damage.", "hash": "b05756c5b4997492", "src": "db2@1.60.1.70338"}
+{"id": 1270187, "field": "name", "en": "Soul Vigor", "hash": "faa82b7f2ab389a6", "src": "db2@1.60.1.70338"}
+{"id": 1270187, "field": "description", "en": "Invigorated by fragmented souls. For each stack of $@spellname1270187 you gain a $s1% increase to Shadow damage.", "hash": "bf3ca36af831e08b", "src": "db2@1.60.1.70338"}
+{"id": 1270187, "field": "aura", "en": "Invigorated by stolen souls. Shadow damage is increased by $s1%.", "hash": "16d23ca83fe10514", "src": "db2@1.60.1.70338"}
+{"id": 1270195, "field": "name", "en": "Trigger", "hash": "8c94886a50a7fbfb", "src": "db2@1.60.1.70338"}
+{"id": 1270197, "field": "name", "en": "Lightning Breath", "hash": "d85f4534ee718b14", "src": "db2@1.60.1.70338"}
+{"id": 1270197, "field": "description", "en": "Breathes lightning at an enemy, inflicting Nature damage.", "hash": "d008edde50fea0ca", "src": "db2@1.60.1.70338"}
+{"id": 1270201, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70338"}
+{"id": 1270201, "field": "description", "en": "Strikes an enemy with a lightning bolt that arcs to another nearby enemy. The spell affects up to $x1 targets, inflicting greater Nature damage to each successive target.", "hash": "245b0721929b5b67", "src": "db2@1.60.1.70338"}
+{"id": 1270257, "field": "name", "en": "Rootbound Agony", "hash": "167b0ac95fcf02ca", "src": "db2@1.60.1.70338"}
+{"id": 1270257, "field": "description", "en": "Inflicts $1270260s1 Nature damage to all players every $T1 sec.", "hash": "f9719a9a39e0d083", "src": "db2@1.60.1.70338"}
+{"id": 1270257, "field": "aura", "en": "$1270260s1 Nature damage dealt to all players every $T1 sec.", "hash": "297a3f4c70f4df87", "src": "db2@1.60.1.70338"}
+{"id": 1270260, "field": "name", "en": "Rootbound Agony", "hash": "167b0ac95fcf02ca", "src": "db2@1.60.1.70338"}
+{"id": 1270260, "field": "description", "en": "$@spelldesc1270257", "hash": "db3960f3eb80d422", "src": "db2@1.60.1.70338"}
+{"id": 1270262, "field": "name", "en": "Emerald Lightning", "hash": "e8202b6b7e00bf66", "src": "db2@1.60.1.70338"}
+{"id": 1270262, "field": "description", "en": "Strikes an enemy with a lightning bolt that arcs to another nearby enemy. The spell affects up to $x1 targets, causing Nature damage to each.", "hash": "91b98b1ace781456", "src": "db2@1.60.1.70338"}
+{"id": 1270400, "field": "name", "en": "Wind Strike", "hash": "5c93e279394655cd", "src": "db2@1.60.1.70338"}
+{"id": 1270400, "field": "description", "en": "Instantly throws a bolt of lightning at an enemy, inflicting Nature damage.", "hash": "40d9deb75ef49ffa", "src": "db2@1.60.1.70338"}
+{"id": 1270422, "field": "name", "en": "Levitate", "hash": "f1f2ceb33773fc12", "src": "db2@1.60.1.70338"}
+{"id": 1270422, "field": "description", "en": "Levitate, floating a few feet above the ground. While levitating, you will fall at a reduced speed and travel over water-like surfaces.", "hash": "9cbb89b737a49ed8", "src": "db2@1.60.1.70338"}
+{"id": 1270422, "field": "aura", "en": "Levitating.", "hash": "fb3d50819d1cb8ed", "src": "db2@1.60.1.70338"}
+{"id": 1270427, "field": "name", "en": "Malady", "hash": "5c0f2b5c263b8822", "src": "db2@1.60.1.70338"}
+{"id": 1270427, "field": "description", "en": "Inflicts $s1 Shadow damage every $t1 sec to enemies within $a1 yds.", "hash": "6f0daf03c3f53736", "src": "db2@1.60.1.70338"}
+{"id": 1270427, "field": "aura", "en": "$s1 Shadow damage inflicted every $t1 sec.", "hash": "62c40fe2273e4d07", "src": "db2@1.60.1.70338"}
+{"id": 1270462, "field": "name", "en": "Lightning Shield", "hash": "dd296a19e8ecbb9f", "src": "db2@1.60.1.70338"}
+{"id": 1270462, "field": "description", "en": "Surrounds you with $n balls of lightning that have $h% chance of striking melee or ranged attackers for $s1 damage. Each time the lightning shield strikes, a ball of lightning dissipates. Thus, the shield expires after $d or after it has struck $n times.", "hash": "417941df71846cfd", "src": "db2@1.60.1.70338"}
+{"id": 1270462, "field": "aura", "en": "$h% chance of inflicting $s1 Nature damage on hit.", "hash": "87c6dd5acd347256", "src": "db2@1.60.1.70338"}
+{"id": 1270470, "field": "name", "en": "Clever Shapeshifter", "hash": "3a94ddbae9ee34fa", "src": "db2@1.60.1.70338"}
+{"id": 1270470, "field": "description", "en": "Reduces the mana cost of shapeshifting spells by $s1.", "hash": "d507d0826360b503", "src": "db2@1.60.1.70338"}
+{"id": 1270478, "field": "name", "en": "Flame Charged", "hash": "a8abec065e6cc212", "src": "db2@1.60.1.70338"}
+{"id": 1270478, "field": "description", "en": "Reduces the mana cost of Flame Shock and Lightning Bolt by $s1 Mana.", "hash": "b8ccd48e83911eb9", "src": "db2@1.60.1.70338"}
+{"id": 1270490, "field": "name", "en": "Thicker Hide", "hash": "f0b76622224a91af", "src": "db2@1.60.1.70338"}
+{"id": 1270490, "field": "description", "en": "Increases your Armor contribution from items by $s1%.", "hash": "f6b6e46c504356a6", "src": "db2@1.60.1.70338"}
+{"id": 1270492, "field": "name", "en": "Totem Affinity", "hash": "44430f6e19c8c1d5", "src": "db2@1.60.1.70338"}
+{"id": 1270492, "field": "description", "en": "Reduces the mana cost of your totems by $s1%.", "hash": "a905b49a878b8b9c", "src": "db2@1.60.1.70338"}
+{"id": 1270498, "field": "name", "en": "Soul Tether", "hash": "088ae9643936096b", "src": "db2@1.60.1.70338"}
+{"id": 1270498, "field": "description", "en": "Attempts to sunder the soul of a nearby enemy.", "hash": "59361208a0639eab", "src": "db2@1.60.1.70338"}
+{"id": 1270498, "field": "aura", "en": "Calling all Fragmented Souls to Kathris. Souls that reach Kathris apply $@spellname1270427 to players within $1270427a1 yds inflicting $1270427s1 Shadow damage every $1270427t1 sec for $1270427d.", "hash": "1516bf6a40c2a694", "src": "db2@1.60.1.70338"}
+{"id": 1270518, "field": "name", "en": "Read Note", "hash": "08783bc0ea140297", "src": "db2@1.60.1.70338"}
+{"id": 1270518, "field": "description", "en": "Read the label to identify the shipment.", "hash": "ef5de1733eb2f405", "src": "db2@1.60.1.70338"}
+{"id": 1270576, "field": "name", "en": "Soul Siphon", "hash": "52b445b62db7cbe2", "src": "db2@1.60.1.70338"}
+{"id": 1270585, "field": "name", "en": "Stun Self", "hash": "18fe9c722eba6868", "src": "db2@1.60.1.70338"}
+{"id": 1270590, "field": "name", "en": "Pick Up Note", "hash": "a825b5d9b8c88014", "src": "db2@1.60.1.70338"}
+{"id": 1270593, "field": "name", "en": "Snare Limit", "hash": "6443999ae5ed9581", "src": "db2@1.60.1.70338"}
+{"id": 1270593, "field": "aura", "en": "Unable to be slowed by more than ${100-$m1}%.", "hash": "da7b95d89c0c3720", "src": "db2@1.60.1.70338"}
+{"id": 1270602, "field": "name", "en": "Blue Beam", "hash": "73103909c841f858", "src": "db2@1.60.1.70338"}
+{"id": 1270602, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70338"}
+{"id": 1270623, "field": "name", "en": "(DNT) Mana Regen", "hash": "e36e275f79194cba", "src": "db2@1.60.1.70338"}
+{"id": 1270631, "field": "name", "en": "(DNT) Mana Regen", "hash": "e36e275f79194cba", "src": "db2@1.60.1.70338"}
+{"id": 1270632, "field": "name", "en": "Critter Cookie", "hash": "bbac120a98b8b33c", "src": "db2@1.60.1.70338"}
+{"id": 1270633, "field": "name", "en": "Skywall Souffle", "hash": "f87757399e91aa4c", "src": "db2@1.60.1.70338"}
+{"id": 1270635, "field": "name", "en": "Pincer Bites", "hash": "12bb216b9d8c02e2", "src": "db2@1.60.1.70338"}
+{"id": 1270643, "field": "name", "en": "Unstable Dream", "hash": "3e3f8263a3551fc8", "src": "db2@1.60.1.70338"}
+{"id": 1270643, "field": "description", "en": "The power of the Emerald Dream seeps out of Nythus, reducing his mana regeneration by 100% for $d.", "hash": "0162d0913f42eba2", "src": "db2@1.60.1.70338"}
+{"id": 1270643, "field": "aura", "en": "Mana regeneration reduced by 100% for $d.", "hash": "c4e2c8233d60418d", "src": "db2@1.60.1.70338"}
+{"id": 1270648, "field": "name", "en": "Dreamless Waking", "hash": "09dfed03d07b883b", "src": "db2@1.60.1.70338"}
+{"id": 1270648, "field": "description", "en": "Nythus has awakened from the dream, and is unable to maintain his connection to the waking world. He is stunned, and all incoming damage is increased by $S2%.", "hash": "4b3d3d497e685dbe", "src": "db2@1.60.1.70338"}
+{"id": 1270648, "field": "aura", "en": "Stunned. Incoming damage increased by $S2%.", "hash": "62382cc6c96d1659", "src": "db2@1.60.1.70338"}
+{"id": 1270650, "field": "name", "en": "Lunar Fire", "hash": "2bb3af6a4289015c", "src": "db2@1.60.1.70338"}
+{"id": 1270650, "field": "description", "en": "Inflicts $s2 Arcane damage to an enemy, then an additional $1271100s1 damage every $1271100t1 sec.\r\nUpon expiration, inflicts $1270830s1 Arcane damage to players within $1270830A1 yds.", "hash": "943acd9da90f1557", "src": "db2@1.60.1.70338"}
+{"id": 1270650, "field": "aura", "en": "$1271100s1 Arcane damage inflicted every $t1 sec.\r\nUpon expiration, inflicts $1270830s1 Arcane damage to players within $1270830A1 yds.", "hash": "af1105c05b8cddb5", "src": "db2@1.60.1.70338"}
+{"id": 1270651, "field": "name", "en": "Umbral Fire", "hash": "120944f6e25440d9", "src": "db2@1.60.1.70338"}
+{"id": 1270651, "field": "description", "en": "Inflicts $s2 Shadow damage to an enemy, then an additional $1271100s1 Shadow damage every $1271100t1 sec.\r\nUpon expiration, inflicts $1270830s1 Shadow damage to players within $1270830A1 yds.\r\n", "hash": "fed2bc971dc0f2ca", "src": "db2@1.60.1.70338"}
+{"id": 1270651, "field": "aura", "en": "$1271047s1 Shadow damage inflicted every $t1 sec.\r\nUpon expiration, inflicts $1271008s1 Shadow damage to players within $1271008A1 yds.", "hash": "758e5a5c972b80e1", "src": "db2@1.60.1.70338"}
+{"id": 1270781, "field": "name", "en": "Enchanted", "hash": "7815da1b81232fcf", "src": "db2@1.60.1.70338"}
+{"id": 1270781, "field": "description", "en": "Increases the Spirit of nearby party members by $M1.", "hash": "51ab01bf2be5a9b8", "src": "db2@1.60.1.70338"}
+{"id": 1270782, "field": "name", "en": "Dispel Magic", "hash": "87826d000137cc51", "src": "db2@1.60.1.70338"}
+{"id": 1270784, "field": "name", "en": "Dispel Magic", "hash": "87826d000137cc51", "src": "db2@1.60.1.70338"}
+{"id": 1270802, "field": "name", "en": "Berserker Charge", "hash": "7c17953211ae09aa", "src": "db2@1.60.1.70338"}
+{"id": 1270802, "field": "description", "en": "Charges at an enemy, knocking it back and inflicting normal damage plus $s3.", "hash": "a2823b6bf655acc1", "src": "db2@1.60.1.70338"}
+{"id": 1270803, "field": "name", "en": "Lunar Decay", "hash": "394a3184e2939c36", "src": "db2@1.60.1.70338"}
+{"id": 1270810, "field": "name", "en": "Unstable Dream", "hash": "3e3f8263a3551fc8", "src": "db2@1.60.1.70338"}
+{"id": 1270810, "field": "description", "en": "The power of the Emerald Dream seeps out of Nythus, increasing mana regeneration for all players by $S1% but increasing all the damage they receive by $S2%.\r\n\r\nHaste is also increased by $S4%.", "hash": "b4854124aff280f9", "src": "db2@1.60.1.70338"}
+{"id": 1270810, "field": "aura", "en": "Mana regeneration increased by $S1%. \r\n\r\nAll damage received is increased by $S2%.\r\n\r\nHaste increased by $S4%.", "hash": "606ab3acf86ebd8a", "src": "db2@1.60.1.70338"}
+{"id": 1270811, "field": "name", "en": "Intimidating Shout", "hash": "1a572d55632e5d45", "src": "db2@1.60.1.70338"}
+{"id": 1270811, "field": "description", "en": "Shouts at an enemy, paralyzing it with terror for $d. and causing all other nearby enemies to flee in fear.", "hash": "3743a9ab914cd07c", "src": "db2@1.60.1.70338"}
+{"id": 1270811, "field": "aura", "en": "Intimidated.", "hash": "441534cfc845bce9", "src": "db2@1.60.1.70338"}
+{"id": 1270825, "field": "name", "en": "Furious Breach", "hash": "63ee747fb8d9a871", "src": "db2@1.60.1.70338"}
+{"id": 1270825, "field": "description", "en": "Inflicts $s1 Physical damage to the current target, applying an aura that reduces armor by $s2%.", "hash": "96002d91939ca5dd", "src": "db2@1.60.1.70338"}
+{"id": 1270825, "field": "aura", "en": "Armor reduced by $s2%.", "hash": "7bc85918eef84e11", "src": "db2@1.60.1.70338"}
+{"id": 1270830, "field": "name", "en": "Lunar Expulsion", "hash": "f843a380eee28b4d", "src": "db2@1.60.1.70338"}
+{"id": 1270842, "field": "name", "en": "Energized", "hash": "1d4e881ce9f9cdfa", "src": "db2@1.60.1.70338"}
+{"id": 1270842, "field": "aura", "en": "Mana and health regeneration rate increased by $s1%.", "hash": "df5d4faceedb3787", "src": "db2@1.60.1.70338"}
+{"id": 1270893, "field": "name", "en": "Elemental Blessing", "hash": "3cdd12de343534e1", "src": "db2@1.60.1.70338"}
+{"id": 1270893, "field": "aura", "en": "Movement speed and mounted movement speed increased by $s1%.", "hash": "c7a5c1df13671e14", "src": "db2@1.60.1.70338"}
+{"id": 1270940, "field": "name", "en": "Ultrasafe Rechargeable Battery", "hash": "e778a8545deff705", "src": "db2@1.60.1.70338"}
+{"id": 1270940, "field": "description", "en": "Restores $s1 charges to a SAF-T or EZ-Thro brand device in your possession that does not involve explosions. It would be completely Unsafe with explosives.", "hash": "848cf013b5cb9f61", "src": "db2@1.60.1.70338"}
+{"id": 1270941, "field": "name", "en": "Poultryizer", "hash": "af1929fb312fadf7", "src": "db2@1.60.1.70338"}
+{"id": 1270941, "field": "description", "en": "Turns the target into a chicken for $1270942d. Well, that is assuming the transmogrification polarity has not been reversed...", "hash": "4ecdd5b21a94da12", "src": "db2@1.60.1.70338"}
+{"id": 1270942, "field": "name", "en": "Poultryized!", "hash": "99e0762500f7790a", "src": "db2@1.60.1.70338"}
+{"id": 1270942, "field": "description", "en": "Transforms the enemy into a chicken that cannot cast, and does $s3% less damage for up to $d or until they are damaged.", "hash": "f2b8a056d9e4437a", "src": "db2@1.60.1.70338"}
+{"id": 1270942, "field": "aura", "en": "Cannot cast spells and damage reduced by $s3%.", "hash": "4bb28e5ce7de371a", "src": "db2@1.60.1.70338"}
+{"id": 1270943, "field": "name", "en": "Poultryized!", "hash": "99e0762500f7790a", "src": "db2@1.60.1.70338"}
+{"id": 1270943, "field": "description", "en": "Transforms the enemy into a chicken that cannot cast, and does $s3% less damage for up to $d.", "hash": "31dfe6ad78642d74", "src": "db2@1.60.1.70338"}
+{"id": 1270943, "field": "aura", "en": "Cannot cast spells and damage reduced by $s3%.", "hash": "4bb28e5ce7de371a", "src": "db2@1.60.1.70338"}
+{"id": 1270944, "field": "name", "en": "Poultryized!", "hash": "99e0762500f7790a", "src": "db2@1.60.1.70338"}
+{"id": 1270944, "field": "description", "en": "Transforms the enemy into a chicken that cannot cast, and does $s3% less damage for up to $d.", "hash": "31dfe6ad78642d74", "src": "db2@1.60.1.70338"}
+{"id": 1270944, "field": "aura", "en": "Cannot cast spells and damage reduced by $s3%.", "hash": "4bb28e5ce7de371a", "src": "db2@1.60.1.70338"}
+{"id": 1270957, "field": "name", "en": "(DNT) Linken' Boots of Iron", "hash": "7a400e3bcfea7ddb", "src": "db2@1.60.1.70338"}
+{"id": 1270998, "field": "name", "en": "Crushing Brambles", "hash": "ccc07c81af2d9ca3", "src": "db2@1.60.1.70338"}

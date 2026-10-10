@@ -1,5 +1,5 @@
-{"id": 77746, "field": "name", "en": "Totemic Wrath", "hash": "146fd2be5631d04e", "src": "db2@1.60.1.70291"}
-{"id": 77746, "field": "description", "en": "Causes your Fire totems to increase the spell power of party and raid members within $77747a1 yds by $s1%.", "hash": "f8f56d4c8531e7d4", "src": "db2@1.60.1.70291"}
-{"id": 77747, "field": "name", "en": "Totemic Wrath", "hash": "146fd2be5631d04e", "src": "db2@1.60.1.70291"}
-{"id": 77747, "field": "description", "en": "Causes your Fire totems to increase the spell power of party and raid members within $a1 yds by $s1%.", "hash": "1c74433ccb727dc8", "src": "db2@1.60.1.70291"}
-{"id": 77747, "field": "aura", "en": "Spell power increased by $s1%.", "hash": "232b01bbb0deca6d", "src": "db2@1.60.1.70291"}
+{"id": 77746, "field": "name", "en": "Totemic Wrath", "hash": "146fd2be5631d04e", "src": "db2@1.60.1.70338"}
+{"id": 77746, "field": "description", "en": "Causes your Fire totems to increase the spell power of party and raid members within $77747a1 yds by $s1%.", "hash": "f8f56d4c8531e7d4", "src": "db2@1.60.1.70338"}
+{"id": 77747, "field": "name", "en": "Totemic Wrath", "hash": "146fd2be5631d04e", "src": "db2@1.60.1.70338"}
+{"id": 77747, "field": "description", "en": "Causes your Fire totems to increase the spell power of party and raid members within $a1 yds by $s1%.", "hash": "1c74433ccb727dc8", "src": "db2@1.60.1.70338"}
+{"id": 77747, "field": "aura", "en": "Spell power increased by $s1%.", "hash": "232b01bbb0deca6d", "src": "db2@1.60.1.70338"}

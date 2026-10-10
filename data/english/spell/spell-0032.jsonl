@@ -1,4 +1,4 @@
-{"id": 32061, "field": "name", "en": "(TXT) ToWoW - Tower Kill Credit (DND)", "hash": "76013d16862d549f", "src": "db2@1.60.1.70291"}
-{"id": 32309, "field": "name", "en": "Slime Bolt", "hash": "ca53338ecdd97871", "src": "db2@1.60.1.70291"}
-{"id": 32309, "field": "description", "en": "Shoots poison at an enemy, inflicting Nature damage, then additional damage every $t2 sec. for $d.", "hash": "2c66ca3a5e6ed22c", "src": "db2@1.60.1.70291"}
-{"id": 32309, "field": "aura", "en": "Nature damage inflicted every $t2 sec.", "hash": "aae6fcde14863898", "src": "db2@1.60.1.70291"}
+{"id": 32061, "field": "name", "en": "(TXT) ToWoW - Tower Kill Credit (DND)", "hash": "76013d16862d549f", "src": "db2@1.60.1.70338"}
+{"id": 32309, "field": "name", "en": "Slime Bolt", "hash": "ca53338ecdd97871", "src": "db2@1.60.1.70338"}
+{"id": 32309, "field": "description", "en": "Shoots poison at an enemy, inflicting Nature damage, then additional damage every $t2 sec. for $d.", "hash": "2c66ca3a5e6ed22c", "src": "db2@1.60.1.70338"}
+{"id": 32309, "field": "aura", "en": "Nature damage inflicted every $t2 sec.", "hash": "aae6fcde14863898", "src": "db2@1.60.1.70338"}

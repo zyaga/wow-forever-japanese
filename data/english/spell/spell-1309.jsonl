@@ -1,216 +1,216 @@
-{"id": 1309005, "field": "name", "en": "Buriza-Do Spike", "hash": "fcc03c847ba9b7eb", "src": "db2@1.60.1.70291"}
-{"id": 1309005, "field": "description", "en": "Deal $s2 Frost damage and slow movement speed by $s1% for $d. Strikes up to ${$x2-1} additional nearby enemies, may strike the original target multiple times.", "hash": "27921a251c6e7585", "src": "db2@1.60.1.70291"}
-{"id": 1309005, "field": "aura", "en": "Movement slowed by $w1%.", "hash": "be1d3d2480027757", "src": "db2@1.60.1.70291"}
-{"id": 1309013, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70291"}
-{"id": 1309050, "field": "name", "en": "Cat Form", "hash": "ed928dc95b5c5fa4", "src": "db2@1.60.1.70291"}
-{"id": 1309054, "field": "name", "en": "Feline Blessing of the Silent Shadow", "hash": "ff9c8e5172d11bd5", "src": "db2@1.60.1.70291"}
-{"id": 1309054, "field": "description", "en": "Stealth to sneak around. Can only be used when out of combat.", "hash": "03854a1328c03f19", "src": "db2@1.60.1.70291"}
-{"id": 1309054, "field": "aura", "en": "Stealthed. You will be revealed if you are too close to enemies or enter combat.", "hash": "f49ee9ce75cbde25", "src": "db2@1.60.1.70291"}
-{"id": 1309062, "field": "name", "en": "Idol of Primal Attraction", "hash": "1a4f9a09cc09595f", "src": "db2@1.60.1.70291"}
-{"id": 1309062, "field": "description", "en": "Shred damage extends the duration of your Rake on the target by ${$s1/1000} sec. Against Demons, this duration is extended by an additional ${$s2/1000} sec.", "hash": "53dfa6710b98a5e7", "src": "db2@1.60.1.70291"}
-{"id": 1309069, "field": "name", "en": "Rend Flesh", "hash": "d971b5d24327bb13", "src": "db2@1.60.1.70291"}
-{"id": 1309069, "field": "description", "en": "Inflicts $s1 damage to an enemy every $t1 sec. for $d.", "hash": "02f9cbe1eebffb1c", "src": "db2@1.60.1.70291"}
-{"id": 1309069, "field": "aura", "en": "$s1 damage inflicted every $t1 sec.", "hash": "2613e2e65d0025e0", "src": "db2@1.60.1.70291"}
-{"id": 1309071, "field": "name", "en": "Intense Heat", "hash": "cecdb9325b970daf", "src": "db2@1.60.1.70291"}
-{"id": 1309072, "field": "name", "en": "Intense Heat", "hash": "cecdb9325b970daf", "src": "db2@1.60.1.70291"}
-{"id": 1309072, "field": "description", "en": "Inflicts $1309071s1 Fire damage every $t1 sec to units within $1309071a1 yds.", "hash": "520cfa32176f2b06", "src": "db2@1.60.1.70291"}
-{"id": 1309072, "field": "aura", "en": "Inflicts $1309071s1 Fire damage every $t1 sec to all nearby units.", "hash": "7efea4da8edef9ba", "src": "db2@1.60.1.70291"}
-{"id": 1309073, "field": "name", "en": "Heavy Leather Ball", "hash": "b4538607af2eedd6", "src": "db2@1.60.1.70291"}
-{"id": 1309073, "field": "description", "en": "Throw the ball to a friendly player. If they have free room in their pack, they will catch it!", "hash": "1af44740e59d7f3e", "src": "db2@1.60.1.70291"}
-{"id": 1309120, "field": "name", "en": "Destroy Sunscale Feathers", "hash": "61a037b3303197f6", "src": "db2@1.60.1.70291"}
-{"id": 1309143, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70291"}
-{"id": 1309170, "field": "name", "en": "[DNT] Can't Be Healed", "hash": "06adfa23c605ee47", "src": "db2@1.60.1.70291"}
-{"id": 1309170, "field": "aura", "en": "Healing reduced by $s1%.", "hash": "c820b7b9cc4f044a", "src": "db2@1.60.1.70291"}
-{"id": 1309191, "field": "name", "en": "Riftbite", "hash": "97d16971f83042e6", "src": "db2@1.60.1.70291"}
-{"id": 1309191, "field": "description", "en": "Deal $s1 Arcane damage to the target. Deals $s2 times as much damage if the target is casting.", "hash": "272e5187cdbca9e1", "src": "db2@1.60.1.70291"}
-{"id": 1309208, "field": "name", "en": "Cerulean Prideclaw", "hash": "66edc0264cad6ccb", "src": "db2@1.60.1.70291"}
-{"id": 1309208, "field": "description", "en": "Summons and dismisses a rideable prideclaw.", "hash": "25ed91ad2e513e24", "src": "db2@1.60.1.70291"}
-{"id": 1309208, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
-{"id": 1309214, "field": "name", "en": "(DNT) Death Warning", "hash": "804470e69a23e5e1", "src": "db2@1.60.1.70291"}
-{"id": 1309230, "field": "name", "en": "Resist Snare/Root 10", "hash": "3ffbd5ef3f3289f6", "src": "db2@1.60.1.70291"}
-{"id": 1309230, "field": "description", "en": "Reduces the hit chance of Root and Snare effects against you by $s1%.", "hash": "2ff366ecb1f1b4d7", "src": "db2@1.60.1.70291"}
-{"id": 1309241, "field": "name", "en": "Legwraps of Suspended Time", "hash": "51037cfbaa04fb02", "src": "db2@1.60.1.70291"}
-{"id": 1309241, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects. When you have not moved for $s3 sec, this effect is doubled.", "hash": "088bce8de7774246", "src": "db2@1.60.1.70291"}
-{"id": 1309241, "field": "aura", "en": "Healing done increased by up to $s1 and damage done increased by up to $s2.", "hash": "23d08faca85d9393", "src": "db2@1.60.1.70291"}
-{"id": 1309243, "field": "name", "en": "Legwraps of Suspended Time", "hash": "51037cfbaa04fb02", "src": "db2@1.60.1.70291"}
-{"id": 1309243, "field": "aura", "en": "Healing done increased by up to $s1 and damage done increased by up to $s2.", "hash": "23d08faca85d9393", "src": "db2@1.60.1.70291"}
-{"id": 1309245, "field": "name", "en": "(DNT) Death Warning", "hash": "804470e69a23e5e1", "src": "db2@1.60.1.70291"}
-{"id": 1309268, "field": "name", "en": "Black Warden Saber Mount", "hash": "97892f6c3cd4f6a5", "src": "db2@1.60.1.70291"}
-{"id": 1309268, "field": "description", "en": "Summons and dismisses a rideable warden saber.", "hash": "daf9f742f08ab797", "src": "db2@1.60.1.70291"}
-{"id": 1309268, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
-{"id": 1309270, "field": "name", "en": "Brown Warden Saber Mount", "hash": "dfde77e87400638a", "src": "db2@1.60.1.70291"}
-{"id": 1309270, "field": "description", "en": "Summons and dismisses a rideable warden saber.", "hash": "daf9f742f08ab797", "src": "db2@1.60.1.70291"}
-{"id": 1309270, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
-{"id": 1309271, "field": "name", "en": "Gray Warden Saber Mount", "hash": "efcba4378690cd8f", "src": "db2@1.60.1.70291"}
-{"id": 1309271, "field": "description", "en": "Summons and dismisses a rideable warden saber.", "hash": "daf9f742f08ab797", "src": "db2@1.60.1.70291"}
-{"id": 1309271, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
-{"id": 1309272, "field": "name", "en": "White Warden Saber Mount", "hash": "2da3fdfb7012b8c8", "src": "db2@1.60.1.70291"}
-{"id": 1309272, "field": "description", "en": "Summons and dismisses a rideable warden saber.", "hash": "daf9f742f08ab797", "src": "db2@1.60.1.70291"}
-{"id": 1309272, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
-{"id": 1309283, "field": "name", "en": "!deepS", "hash": "550c41b9f15cacb1", "src": "db2@1.60.1.70291"}
-{"id": 1309283, "field": "description", "en": "Increases movement speed while walking backwards by $s1% for $d1.", "hash": "cc14c902ac13f57b", "src": "db2@1.60.1.70291"}
-{"id": 1309283, "field": "aura", "en": "Increases backwards run speed by $s1%.", "hash": "a56c7511c46fed30", "src": "db2@1.60.1.70291"}
-{"id": 1309310, "field": "name", "en": "Opening", "hash": "c8c8439c6bc312c3", "src": "db2@1.60.1.70291"}
-{"id": 1309315, "field": "name", "en": "Poison", "hash": "43f9da16eae9c502", "src": "db2@1.60.1.70291"}
-{"id": 1309315, "field": "description", "en": "Poisons target for $s1 Nature damage every $t1 sec for $d.", "hash": "c6bab04662dda29a", "src": "db2@1.60.1.70291"}
-{"id": 1309315, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.", "hash": "f6322beccc18b2dd", "src": "db2@1.60.1.70291"}
-{"id": 1309318, "field": "name", "en": "Avatar of Vengeance", "hash": "38dba117e75219f7", "src": "db2@1.60.1.70291"}
-{"id": 1309318, "field": "description", "en": "Increases Attack Power by $s1 for $d. This effect is doubled against Demons.", "hash": "d468566f8da330ed", "src": "db2@1.60.1.70291"}
-{"id": 1309318, "field": "aura", "en": "Attack Power increased by $s1. This effect is doubled against Demons.", "hash": "11d197f85e431e45", "src": "db2@1.60.1.70291"}
-{"id": 1309320, "field": "name", "en": "Left Tusk of Umbrinoth", "hash": "3e4829af6f76a3be", "src": "db2@1.60.1.70291"}
-{"id": 1309320, "field": "description", "en": "Harmful spell casts against Demons have a chance to deal $1309321s1 Shadowflame damage.", "hash": "e5ce57b86fb88f86", "src": "db2@1.60.1.70291"}
-{"id": 1309321, "field": "name", "en": "Left Tusk of Umbrinoth", "hash": "3e4829af6f76a3be", "src": "db2@1.60.1.70291"}
-{"id": 1309321, "field": "description", "en": "Deals $s1 Shadowflame damage.", "hash": "28b9964012a697f0", "src": "db2@1.60.1.70291"}
-{"id": 1309322, "field": "name", "en": "Right Tusk of Umbrinoth", "hash": "143c1e3c3a6ad134", "src": "db2@1.60.1.70291"}
-{"id": 1309322, "field": "description", "en": "Melee and ranged attacks against Demons have a chance to deal $1309321s1 Shadowflame damage.", "hash": "cd8165f835362f51", "src": "db2@1.60.1.70291"}
-{"id": 1309323, "field": "name", "en": "Right Tusk of Umbrinoth", "hash": "143c1e3c3a6ad134", "src": "db2@1.60.1.70291"}
-{"id": 1309323, "field": "description", "en": "Deals $s1 Shadowflame damage.", "hash": "28b9964012a697f0", "src": "db2@1.60.1.70291"}
-{"id": 1309346, "field": "name", "en": "Black Devilsaur Mount", "hash": "0409c1d7f6808a9f", "src": "db2@1.60.1.70291"}
-{"id": 1309346, "field": "description", "en": "Summons and dismisses a rideable devilsaur.", "hash": "3f8ce1450c9775ce", "src": "db2@1.60.1.70291"}
-{"id": 1309346, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
-{"id": 1309347, "field": "name", "en": "Blue Devilsaur Mount", "hash": "bee97d8b4af7a9c9", "src": "db2@1.60.1.70291"}
-{"id": 1309347, "field": "description", "en": "Summons and dismisses a rideable devilsaur.", "hash": "3f8ce1450c9775ce", "src": "db2@1.60.1.70291"}
-{"id": 1309347, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
-{"id": 1309348, "field": "name", "en": "Green Devilsaur Mount", "hash": "07b990511a4643ee", "src": "db2@1.60.1.70291"}
-{"id": 1309348, "field": "description", "en": "Summons and dismisses a rideable devilsaur.", "hash": "3f8ce1450c9775ce", "src": "db2@1.60.1.70291"}
-{"id": 1309348, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
-{"id": 1309349, "field": "name", "en": "Purple Devilsaur Mount", "hash": "7fdab2ec97f09956", "src": "db2@1.60.1.70291"}
-{"id": 1309349, "field": "description", "en": "Summons and dismisses a rideable devilsaur.", "hash": "3f8ce1450c9775ce", "src": "db2@1.60.1.70291"}
-{"id": 1309349, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
-{"id": 1309350, "field": "name", "en": "White Devilsaur Mount", "hash": "94e71e65a26425a2", "src": "db2@1.60.1.70291"}
-{"id": 1309350, "field": "description", "en": "Summons and dismisses a rideable devilsaur.", "hash": "3f8ce1450c9775ce", "src": "db2@1.60.1.70291"}
-{"id": 1309350, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
-{"id": 1309369, "field": "name", "en": "Forsaken Weapons", "hash": "18586606c005e210", "src": "db2@1.60.1.70291"}
-{"id": 1309369, "field": "description", "en": "Increases movement speed by $s1% in Silverpine Forest and Hillsbrad Foothills.", "hash": "cc314d8c1813ff53", "src": "db2@1.60.1.70291"}
-{"id": 1309369, "field": "aura", "en": "Movement speed increased by $s1%.", "hash": "d5c3ac7c81779613", "src": "db2@1.60.1.70291"}
-{"id": 1309377, "field": "name", "en": "Black Druid Moose Mount", "hash": "b49a1de71cbb65f9", "src": "db2@1.60.1.70291"}
-{"id": 1309377, "field": "description", "en": "Summons and dismisses a rideable moose.", "hash": "15f349b8ecd6ffdc", "src": "db2@1.60.1.70291"}
-{"id": 1309377, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
-{"id": 1309379, "field": "name", "en": "White Druid Moose Mount", "hash": "bb9c469062a0b608", "src": "db2@1.60.1.70291"}
-{"id": 1309379, "field": "description", "en": "Summons and dismisses a rideable moose.", "hash": "15f349b8ecd6ffdc", "src": "db2@1.60.1.70291"}
-{"id": 1309379, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
-{"id": 1309380, "field": "name", "en": "Green Druid Moose Mount", "hash": "d8d253040bc56cd6", "src": "db2@1.60.1.70291"}
-{"id": 1309380, "field": "description", "en": "Summons and dismisses a rideable moose.", "hash": "15f349b8ecd6ffdc", "src": "db2@1.60.1.70291"}
-{"id": 1309380, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
-{"id": 1309381, "field": "name", "en": "Gray Druid Moose Mount", "hash": "ab81383383f1b069", "src": "db2@1.60.1.70291"}
-{"id": 1309381, "field": "description", "en": "Summons and dismisses a rideable moose.", "hash": "15f349b8ecd6ffdc", "src": "db2@1.60.1.70291"}
-{"id": 1309381, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
-{"id": 1309405, "field": "name", "en": "Veteran Adventurer's Loyal Companion", "hash": "96faf7d3e097194a", "src": "db2@1.60.1.70291"}
-{"id": 1309405, "field": "description", "en": "Summons and dismisses a rideable bear.", "hash": "c29c0c4c4be13ad6", "src": "db2@1.60.1.70291"}
-{"id": 1309405, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
-{"id": 1309410, "field": "name", "en": "Night Watchman's Torch", "hash": "3644c6cf78affe53", "src": "db2@1.60.1.70291"}
-{"id": 1309410, "field": "description", "en": "Light the Night Watchman's Torch.", "hash": "49e8f9faaf833460", "src": "db2@1.60.1.70291"}
-{"id": 1309410, "field": "aura", "en": "Holding the Night Watchman's Torch.\r\n\r\nThis effect will end if you enter combat.", "hash": "7ac3b4b68d334d8d", "src": "db2@1.60.1.70291"}
-{"id": 1309420, "field": "name", "en": "Summon Pachimari", "hash": "76f8efe5b95ec0e2", "src": "db2@1.60.1.70291"}
-{"id": 1309420, "field": "description", "en": "Right Click to summon and dismiss your Pachimara.", "hash": "095b613c4aa3896c", "src": "db2@1.60.1.70291"}
-{"id": 1309422, "field": "name", "en": "Rage of Earth", "hash": "ae0e7697ec7ee76a", "src": "db2@1.60.1.70291"}
-{"id": 1309422, "field": "description", "en": "Increases the damage dealt by your Stormstrike ability by $m1%.", "hash": "631b983b0a3ba79b", "src": "db2@1.60.1.70291"}
-{"id": 1309423, "field": "name", "en": "Galestrider Chick", "hash": "a029eb16e9f6fef7", "src": "db2@1.60.1.70291"}
-{"id": 1309423, "field": "description", "en": "Right Click to summon and dismiss your Galestrider Chick.", "hash": "d89d46d155a4b40f", "src": "db2@1.60.1.70291"}
-{"id": 1309436, "field": "name", "en": "Summon Black Furbolg Pet", "hash": "c950f40cf33d6a21", "src": "db2@1.60.1.70291"}
-{"id": 1309436, "field": "description", "en": "Right Click to summon and dismiss your pet furbolg.", "hash": "37b51f427171ffc7", "src": "db2@1.60.1.70291"}
-{"id": 1309437, "field": "name", "en": "Summon Brown Furbolg Pet", "hash": "6b8eba8969c210d8", "src": "db2@1.60.1.70291"}
-{"id": 1309437, "field": "description", "en": "Right Click to summon and dismiss your pet furbolg.", "hash": "37b51f427171ffc7", "src": "db2@1.60.1.70291"}
-{"id": 1309438, "field": "name", "en": "Summon Gray Furbolg Pet", "hash": "8dc593ce0c017664", "src": "db2@1.60.1.70291"}
-{"id": 1309438, "field": "description", "en": "Right Click to summon and dismiss your pet furbolg.", "hash": "37b51f427171ffc7", "src": "db2@1.60.1.70291"}
-{"id": 1309439, "field": "name", "en": "Summon Tan Furbolg Pet", "hash": "6adc6fe602107e23", "src": "db2@1.60.1.70291"}
-{"id": 1309439, "field": "description", "en": "Right Click to summon and dismiss your pet furbolg.", "hash": "37b51f427171ffc7", "src": "db2@1.60.1.70291"}
-{"id": 1309440, "field": "name", "en": "Summon White Furbolg Pet", "hash": "e6095b7b9028a49f", "src": "db2@1.60.1.70291"}
-{"id": 1309440, "field": "description", "en": "Right Click to summon and dismiss your pet furbolg.", "hash": "37b51f427171ffc7", "src": "db2@1.60.1.70291"}
-{"id": 1309442, "field": "name", "en": "Storm's Grasp", "hash": "536241bee0ac24b6", "src": "db2@1.60.1.70291"}
-{"id": 1309442, "field": "description", "en": "Increases the critical strike chance of your Lightning Bolt spell by $m1%.", "hash": "9a0e8a224e8b13a0", "src": "db2@1.60.1.70291"}
-{"id": 1309501, "field": "name", "en": "Summon Purple Ent Pet", "hash": "e205da762a754008", "src": "db2@1.60.1.70291"}
-{"id": 1309501, "field": "description", "en": "Right Click to summon and dismiss your pet ent.", "hash": "8145c7adf51aeba1", "src": "db2@1.60.1.70291"}
-{"id": 1309503, "field": "name", "en": "Summon Red Ent Pet", "hash": "f9e7a5463f6743f7", "src": "db2@1.60.1.70291"}
-{"id": 1309503, "field": "description", "en": "Right Click to summon and dismiss your pet ent.", "hash": "8145c7adf51aeba1", "src": "db2@1.60.1.70291"}
-{"id": 1309504, "field": "name", "en": "Summon Blue Ent Pet", "hash": "8ad0796d36068c81", "src": "db2@1.60.1.70291"}
-{"id": 1309504, "field": "description", "en": "Right Click to summon and dismiss your pet ent.", "hash": "8145c7adf51aeba1", "src": "db2@1.60.1.70291"}
-{"id": 1309505, "field": "name", "en": "Summon Gray Ent Pet", "hash": "87c6cd514ce03000", "src": "db2@1.60.1.70291"}
-{"id": 1309505, "field": "description", "en": "Right Click to summon and dismiss your pet ent.", "hash": "8145c7adf51aeba1", "src": "db2@1.60.1.70291"}
-{"id": 1309506, "field": "name", "en": "Summon Orange Ent Pet", "hash": "d572e756950ff0f9", "src": "db2@1.60.1.70291"}
-{"id": 1309506, "field": "description", "en": "Right Click to summon and dismiss your pet ent.", "hash": "8145c7adf51aeba1", "src": "db2@1.60.1.70291"}
-{"id": 1309507, "field": "name", "en": "Summon Yellow Ent Pet", "hash": "332888839bfff4f6", "src": "db2@1.60.1.70291"}
-{"id": 1309507, "field": "description", "en": "Right Click to summon and dismiss your pet ent.", "hash": "8145c7adf51aeba1", "src": "db2@1.60.1.70291"}
-{"id": 1309513, "field": "name", "en": "Summon Greater Tarantula", "hash": "a59fd3117fe31368", "src": "db2@1.60.1.70291"}
-{"id": 1309539, "field": "name", "en": "Tidebringer's Claw", "hash": "026c91b1c547f392", "src": "db2@1.60.1.70291"}
-{"id": 1309539, "field": "description", "en": "Increases the critical strike chance of your Healing Wave and Lesser Healing Wave spells by $m1%.", "hash": "710ee120b4ad9a2c", "src": "db2@1.60.1.70291"}
-{"id": 1309544, "field": "name", "en": "[DNT] Tarantula Egg Quest Credit", "hash": "f6178d3e488703c9", "src": "db2@1.60.1.70291"}
-{"id": 1309545, "field": "name", "en": "Summon Plagued Cockroach", "hash": "7b89f52440fd0979", "src": "db2@1.60.1.70291"}
-{"id": 1309545, "field": "description", "en": "Right Click to summon and dismiss your cockroach.", "hash": "116a19fb043e73c0", "src": "db2@1.60.1.70291"}
-{"id": 1309546, "field": "name", "en": "Summon Undercity Cockroach", "hash": "b97ad1b38ff294f9", "src": "db2@1.60.1.70291"}
-{"id": 1309546, "field": "description", "en": "Right Click to summon and dismiss your cockroach.", "hash": "116a19fb043e73c0", "src": "db2@1.60.1.70291"}
-{"id": 1309547, "field": "name", "en": "Summon Jungle Boa", "hash": "a85ea29efd6c7797", "src": "db2@1.60.1.70291"}
-{"id": 1309547, "field": "description", "en": "Right Click to summon and dismiss your snake.", "hash": "ab309446134ff027", "src": "db2@1.60.1.70291"}
-{"id": 1309549, "field": "name", "en": "Sad-Sack Sandals", "hash": "09ac8204409b002d", "src": "db2@1.60.1.70291"}
-{"id": 1309549, "field": "description", "en": "You have a $s1% chance to resist Fear.", "hash": "65c20a22b884eb4b", "src": "db2@1.60.1.70291"}
-{"id": 1309549, "field": "aura", "en": "You have a $s1% chance to resist Fear.", "hash": "65c20a22b884eb4b", "src": "db2@1.60.1.70291"}
-{"id": 1309550, "field": "name", "en": "Claymore of Two Moons", "hash": "ecff037bf475abfd", "src": "db2@1.60.1.70291"}
-{"id": 1309550, "field": "description", "en": "Your attacks have a chance to Wax, dealing $1319378s1 Arcane damage or Wane, granting $1319382s1 Strength for $1319382d.", "hash": "92f3b255410f4315", "src": "db2@1.60.1.70291"}
-{"id": 1309551, "field": "name", "en": "Scalding Flamehoof", "hash": "ea0138fe3a2072f6", "src": "db2@1.60.1.70291"}
-{"id": 1309551, "field": "description", "en": "Increases Fire damage taken by $s1% and movement speed by $s2% for $d.", "hash": "11d99fba9ea87a55", "src": "db2@1.60.1.70291"}
-{"id": 1309551, "field": "aura", "en": "Fire damage taken increased by $w1%.\r\nMovement speed increased by $w2%.", "hash": "a677b51a4259ffcb", "src": "db2@1.60.1.70291"}
-{"id": 1309588, "field": "name", "en": "[DNT] Play Sound - Spawn Virulent Blood", "hash": "35abc7f882487e6f", "src": "db2@1.60.1.70291"}
-{"id": 1309595, "field": "name", "en": "Shadow Word: Death", "hash": "5d3ad1015601a405", "src": "db2@1.60.1.70291"}
-{"id": 1309595, "field": "description", "en": "A word of dark binding that inflicts $s1 Shadow damage to the target. If your target is not killed by Shadow Word: Death, you take backlash damage equal to $s3% of your maximum health.", "hash": "c614e8d0520d1a44", "src": "db2@1.60.1.70291"}
-{"id": 1309598, "field": "name", "en": "Shadow Word: Death", "hash": "5d3ad1015601a405", "src": "db2@1.60.1.70291"}
-{"id": 1309598, "field": "description", "en": "A word of dark binding that inflicts Shadow damage to the target. If the target is not killed by Shadow Word: Death, the caster takes damage equal to the damage inflicted upon the target.", "hash": "dc4620157d6947c1", "src": "db2@1.60.1.70291"}
-{"id": 1309618, "field": "name", "en": "Shen'dorei Windwell", "hash": "7d00d1521eb9998f", "src": "db2@1.60.1.70291"}
-{"id": 1309618, "field": "description", "en": "Summons your own portable Windwell for $d.", "hash": "f17e3f1326c81e32", "src": "db2@1.60.1.70291"}
-{"id": 1309631, "field": "name", "en": "Living Spirit", "hash": "92e3216cf7c7ac3f", "src": "db2@1.60.1.70291"}
-{"id": 1309631, "field": "description", "en": "Increases your Spirit by $m1%.", "hash": "531062daa4947c43", "src": "db2@1.60.1.70291"}
-{"id": 1309633, "field": "name", "en": "Shadow Word: Death", "hash": "5d3ad1015601a405", "src": "db2@1.60.1.70291"}
-{"id": 1309633, "field": "description", "en": "A word of dark binding that inflicts $s1 Shadow damage to the target. If your target is not killed by Shadow Word: Death, you take backlash damage equal to $s3% of your maximum health.", "hash": "c614e8d0520d1a44", "src": "db2@1.60.1.70291"}
-{"id": 1309635, "field": "name", "en": "Shadow Word: Death", "hash": "5d3ad1015601a405", "src": "db2@1.60.1.70291"}
-{"id": 1309635, "field": "description", "en": "A word of dark binding that inflicts $s1 Shadow damage to the target. If your target is not killed by Shadow Word: Death, you take backlash damage equal to $s3% of your maximum health.", "hash": "c614e8d0520d1a44", "src": "db2@1.60.1.70291"}
-{"id": 1309636, "field": "name", "en": "Shadow Word: Death", "hash": "5d3ad1015601a405", "src": "db2@1.60.1.70291"}
-{"id": 1309636, "field": "description", "en": "A word of dark binding that inflicts $s1 Shadow damage to the target. If your target is not killed by Shadow Word: Death, you take backlash damage equal to $s3% of your maximum health.", "hash": "c614e8d0520d1a44", "src": "db2@1.60.1.70291"}
-{"id": 1309678, "field": "name", "en": "Flamebreak Talisman", "hash": "7584b9ba8cd327d4", "src": "db2@1.60.1.70291"}
-{"id": 1309678, "field": "description", "en": "[NYI] Grants you a shield which absorbs up to $s1 damage over $d. Fire damage is reduced by $s2% while the shield is active.", "hash": "0690948f45a67370", "src": "db2@1.60.1.70291"}
-{"id": 1309685, "field": "name", "en": "Satchel of Potions", "hash": "e8bfc0399b633a8c", "src": "db2@1.60.1.70291"}
-{"id": 1309685, "field": "description", "en": "Reach into the bag and hope for the best.", "hash": "6b1ca24c5c1998bd", "src": "db2@1.60.1.70291"}
-{"id": 1309702, "field": "name", "en": "Spawn Forsaken Adventurer", "hash": "7aa4915c6e0ef752", "src": "db2@1.60.1.70291"}
-{"id": 1309718, "field": "name", "en": "Axe Pin", "hash": "b8aaa559d0e8a342", "src": "db2@1.60.1.70291"}
-{"id": 1309718, "field": "description", "en": "If an enemy strikes the imbiber, the attacker is struck by a swift axe, pinning them to the ground temporarily.", "hash": "548b1644ce46102a", "src": "db2@1.60.1.70291"}
-{"id": 1309718, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70291"}
-{"id": 1309719, "field": "name", "en": "Axe Pin", "hash": "b8aaa559d0e8a342", "src": "db2@1.60.1.70291"}
-{"id": 1309719, "field": "description", "en": "Stuns an enemy, rendering it unable to move or attack for $d.", "hash": "79289398718d04d2", "src": "db2@1.60.1.70291"}
-{"id": 1309719, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70291"}
-{"id": 1309725, "field": "name", "en": "Healing Potion", "hash": "61b64dc74c0bc45e", "src": "db2@1.60.1.70291"}
-{"id": 1309725, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70291"}
-{"id": 1309726, "field": "name", "en": "Restore Mana", "hash": "2bd8bfcbb243fb0a", "src": "db2@1.60.1.70291"}
-{"id": 1309726, "field": "description", "en": "Restores $s1 mana.", "hash": "09fdd6de4213d4dd", "src": "db2@1.60.1.70291"}
-{"id": 1309728, "field": "name", "en": "Speed", "hash": "c00eb6ccb4816733", "src": "db2@1.60.1.70291"}
-{"id": 1309728, "field": "description", "en": "Increases movement speed by $s1% for $d1.", "hash": "5ce3b122b612c751", "src": "db2@1.60.1.70291"}
-{"id": 1309728, "field": "aura", "en": "Increases movement speed by $s1%", "hash": "ea644adaae6f3486", "src": "db2@1.60.1.70291"}
-{"id": 1309730, "field": "name", "en": "Summon Brown Ground Squirrel", "hash": "4f93ce284f4cc3df", "src": "db2@1.60.1.70291"}
-{"id": 1309730, "field": "description", "en": "Right Click to summon and dismiss your ground squirrel.", "hash": "e54eb85327e69143", "src": "db2@1.60.1.70291"}
-{"id": 1309736, "field": "name", "en": "Summon Red Ground Squirrel", "hash": "f2c40b38afb212a5", "src": "db2@1.60.1.70291"}
-{"id": 1309736, "field": "description", "en": "Right Click to summon and dismiss your ground squirrel.", "hash": "e54eb85327e69143", "src": "db2@1.60.1.70291"}
-{"id": 1309752, "field": "name", "en": "Summon Brown Rabbit", "hash": "bf1d6b4e2f45de72", "src": "db2@1.60.1.70291"}
-{"id": 1309752, "field": "description", "en": "Right Click to summon and dismiss your rabbit.", "hash": "2fcb839623ef6e02", "src": "db2@1.60.1.70291"}
-{"id": 1309761, "field": "name", "en": "Quickening", "hash": "a8e0b285a30326e1", "src": "db2@1.60.1.70291"}
-{"id": 1309761, "field": "description", "en": "Increases ranged attack speed by $s1%.", "hash": "3009bf393dc16067", "src": "db2@1.60.1.70291"}
-{"id": 1309761, "field": "aura", "en": "Attack speed with Wands increased by $s1%.", "hash": "d652b56d3d884f2a", "src": "db2@1.60.1.70291"}
-{"id": 1309763, "field": "name", "en": "Sweeping Slam", "hash": "005844ee73e703ff", "src": "db2@1.60.1.70291"}
-{"id": 1309763, "field": "description", "en": "Inflicts normal damage plus $s1 to enemies in a cone in front of the caster, knocking them back.", "hash": "b5e00217a2d500b0", "src": "db2@1.60.1.70291"}
-{"id": 1309765, "field": "name", "en": "Quickening", "hash": "a8e0b285a30326e1", "src": "db2@1.60.1.70291"}
-{"id": 1309765, "field": "description", "en": "Spell hits have a chance to increase your wand attack speed.", "hash": "b784eabdc45ee804", "src": "db2@1.60.1.70291"}
-{"id": 1309784, "field": "name", "en": "Fire", "hash": "097cf1ce4b4eb722", "src": "db2@1.60.1.70291"}
-{"id": 1309788, "field": "name", "en": "Confuse Beast", "hash": "3ebc62a02add0ae9", "src": "db2@1.60.1.70291"}
-{"id": 1309788, "field": "description", "en": "Bewitch the target Beast, reducing the Physical damage it does to you by $s1%.", "hash": "0af0d110a18ce001", "src": "db2@1.60.1.70291"}
-{"id": 1309788, "field": "aura", "en": "Dealing $s1% reduced Physical damage to the caster.", "hash": "32bd1d8c5ee0df01", "src": "db2@1.60.1.70291"}
-{"id": 1309823, "field": "name", "en": "Deafening Shriek", "hash": "012c8d88da9c65be", "src": "db2@1.60.1.70291"}
-{"id": 1309823, "field": "description", "en": "Silences a nearby enemy, preventing them from casting spells for $d.", "hash": "0c4733150131295d", "src": "db2@1.60.1.70291"}
-{"id": 1309823, "field": "aura", "en": "Cannot cast spells.", "hash": "6d133d61246b88a5", "src": "db2@1.60.1.70291"}
-{"id": 1309871, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70291"}
-{"id": 1309950, "field": "name", "en": "Devouring Contagion", "hash": "fad58fa1d2616fed", "src": "db2@1.60.1.70291"}
-{"id": 1309950, "field": "description", "en": "Reduces the mana cost of your Devouring Plague by $s1%.\r\n\r\nTargets that die while Devouring Plague is active spreads it, jumping to a nearby enemy within $s2 yds for the remaining duration.\r\n", "hash": "4b049177544cf96d", "src": "db2@1.60.1.70291"}
-{"id": 1309957, "field": "name", "en": "Holy Precision", "hash": "b58eeb8cf9532d25", "src": "db2@1.60.1.70291"}
-{"id": 1309957, "field": "description", "en": "Improves your chance to hit with Holy spells by $s1%.", "hash": "9e735c140a566e65", "src": "db2@1.60.1.70291"}
-{"id": 1309965, "field": "name", "en": "Comprehend Scroll", "hash": "63c3d078da437095", "src": "db2@1.60.1.70291"}
-{"id": 1309965, "field": "description", "en": "Decipher an untranslated scroll.", "hash": "2551fb8b19248831", "src": "db2@1.60.1.70291"}
-{"id": 1309969, "field": "name", "en": "Power in Light", "hash": "38110945d2e7750b", "src": "db2@1.60.1.70291"}
-{"id": 1309969, "field": "description", "en": "Your Smite and Penance spells deal $m1% increased damage to targets afflicted with your Holy Fire.", "hash": "fa3e5bcf8039b8b7", "src": "db2@1.60.1.70291"}
-{"id": 1309973, "field": "name", "en": "Comprehend Scroll", "hash": "63c3d078da437095", "src": "db2@1.60.1.70291"}
-{"id": 1309973, "field": "description", "en": "Decipher an untranslated scroll.", "hash": "2551fb8b19248831", "src": "db2@1.60.1.70291"}
-{"id": 1309978, "field": "name", "en": "Opening", "hash": "c8c8439c6bc312c3", "src": "db2@1.60.1.70291"}
+{"id": 1309005, "field": "name", "en": "Buriza-Do Spike", "hash": "fcc03c847ba9b7eb", "src": "db2@1.60.1.70338"}
+{"id": 1309005, "field": "description", "en": "Deal $s2 Frost damage and slow movement speed by $s1% for $d. Strikes up to ${$x2-1} additional nearby enemies, may strike the original target multiple times.", "hash": "27921a251c6e7585", "src": "db2@1.60.1.70338"}
+{"id": 1309005, "field": "aura", "en": "Movement slowed by $w1%.", "hash": "be1d3d2480027757", "src": "db2@1.60.1.70338"}
+{"id": 1309013, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70338"}
+{"id": 1309050, "field": "name", "en": "Cat Form", "hash": "ed928dc95b5c5fa4", "src": "db2@1.60.1.70338"}
+{"id": 1309054, "field": "name", "en": "Feline Blessing of the Silent Shadow", "hash": "ff9c8e5172d11bd5", "src": "db2@1.60.1.70338"}
+{"id": 1309054, "field": "description", "en": "Stealth to sneak around. Can only be used when out of combat.", "hash": "03854a1328c03f19", "src": "db2@1.60.1.70338"}
+{"id": 1309054, "field": "aura", "en": "Stealthed. You will be revealed if you are too close to enemies or enter combat.", "hash": "f49ee9ce75cbde25", "src": "db2@1.60.1.70338"}
+{"id": 1309062, "field": "name", "en": "Idol of Primal Attraction", "hash": "1a4f9a09cc09595f", "src": "db2@1.60.1.70338"}
+{"id": 1309062, "field": "description", "en": "Shred damage extends the duration of your Rake on the target by ${$s1/1000} sec. Against Demons, this duration is extended by an additional ${$s2/1000} sec.", "hash": "53dfa6710b98a5e7", "src": "db2@1.60.1.70338"}
+{"id": 1309069, "field": "name", "en": "Rend Flesh", "hash": "d971b5d24327bb13", "src": "db2@1.60.1.70338"}
+{"id": 1309069, "field": "description", "en": "Inflicts $s1 damage to an enemy every $t1 sec. for $d.", "hash": "02f9cbe1eebffb1c", "src": "db2@1.60.1.70338"}
+{"id": 1309069, "field": "aura", "en": "$s1 damage inflicted every $t1 sec.", "hash": "2613e2e65d0025e0", "src": "db2@1.60.1.70338"}
+{"id": 1309071, "field": "name", "en": "Intense Heat", "hash": "cecdb9325b970daf", "src": "db2@1.60.1.70338"}
+{"id": 1309072, "field": "name", "en": "Intense Heat", "hash": "cecdb9325b970daf", "src": "db2@1.60.1.70338"}
+{"id": 1309072, "field": "description", "en": "Inflicts $1309071s1 Fire damage every $t1 sec to units within $1309071a1 yds.", "hash": "520cfa32176f2b06", "src": "db2@1.60.1.70338"}
+{"id": 1309072, "field": "aura", "en": "Inflicts $1309071s1 Fire damage every $t1 sec to all nearby units.", "hash": "7efea4da8edef9ba", "src": "db2@1.60.1.70338"}
+{"id": 1309073, "field": "name", "en": "Heavy Leather Ball", "hash": "b4538607af2eedd6", "src": "db2@1.60.1.70338"}
+{"id": 1309073, "field": "description", "en": "Throw the ball to a friendly player. If they have free room in their pack, they will catch it!", "hash": "1af44740e59d7f3e", "src": "db2@1.60.1.70338"}
+{"id": 1309120, "field": "name", "en": "Destroy Sunscale Feathers", "hash": "61a037b3303197f6", "src": "db2@1.60.1.70338"}
+{"id": 1309143, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70338"}
+{"id": 1309170, "field": "name", "en": "[DNT] Can't Be Healed", "hash": "06adfa23c605ee47", "src": "db2@1.60.1.70338"}
+{"id": 1309170, "field": "aura", "en": "Healing reduced by $s1%.", "hash": "c820b7b9cc4f044a", "src": "db2@1.60.1.70338"}
+{"id": 1309191, "field": "name", "en": "Riftbite", "hash": "97d16971f83042e6", "src": "db2@1.60.1.70338"}
+{"id": 1309191, "field": "description", "en": "Deal $s1 Arcane damage to the target. Deals $s2 times as much damage if the target is casting.", "hash": "272e5187cdbca9e1", "src": "db2@1.60.1.70338"}
+{"id": 1309208, "field": "name", "en": "Cerulean Prideclaw", "hash": "66edc0264cad6ccb", "src": "db2@1.60.1.70338"}
+{"id": 1309208, "field": "description", "en": "Summons and dismisses a rideable prideclaw.", "hash": "25ed91ad2e513e24", "src": "db2@1.60.1.70338"}
+{"id": 1309208, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70338"}
+{"id": 1309214, "field": "name", "en": "(DNT) Death Warning", "hash": "804470e69a23e5e1", "src": "db2@1.60.1.70338"}
+{"id": 1309230, "field": "name", "en": "Resist Snare/Root 10", "hash": "3ffbd5ef3f3289f6", "src": "db2@1.60.1.70338"}
+{"id": 1309230, "field": "description", "en": "Reduces the hit chance of Root and Snare effects against you by $s1%.", "hash": "2ff366ecb1f1b4d7", "src": "db2@1.60.1.70338"}
+{"id": 1309241, "field": "name", "en": "Legwraps of Suspended Time", "hash": "51037cfbaa04fb02", "src": "db2@1.60.1.70338"}
+{"id": 1309241, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects. When you have not moved for $s3 sec, this effect is doubled.", "hash": "088bce8de7774246", "src": "db2@1.60.1.70338"}
+{"id": 1309241, "field": "aura", "en": "Healing done increased by up to $s1 and damage done increased by up to $s2.", "hash": "23d08faca85d9393", "src": "db2@1.60.1.70338"}
+{"id": 1309243, "field": "name", "en": "Legwraps of Suspended Time", "hash": "51037cfbaa04fb02", "src": "db2@1.60.1.70338"}
+{"id": 1309243, "field": "aura", "en": "Healing done increased by up to $s1 and damage done increased by up to $s2.", "hash": "23d08faca85d9393", "src": "db2@1.60.1.70338"}
+{"id": 1309245, "field": "name", "en": "(DNT) Death Warning", "hash": "804470e69a23e5e1", "src": "db2@1.60.1.70338"}
+{"id": 1309268, "field": "name", "en": "Black Warden Saber Mount", "hash": "97892f6c3cd4f6a5", "src": "db2@1.60.1.70338"}
+{"id": 1309268, "field": "description", "en": "Summons and dismisses a rideable warden saber.", "hash": "daf9f742f08ab797", "src": "db2@1.60.1.70338"}
+{"id": 1309268, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70338"}
+{"id": 1309270, "field": "name", "en": "Brown Warden Saber Mount", "hash": "dfde77e87400638a", "src": "db2@1.60.1.70338"}
+{"id": 1309270, "field": "description", "en": "Summons and dismisses a rideable warden saber.", "hash": "daf9f742f08ab797", "src": "db2@1.60.1.70338"}
+{"id": 1309270, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70338"}
+{"id": 1309271, "field": "name", "en": "Gray Warden Saber Mount", "hash": "efcba4378690cd8f", "src": "db2@1.60.1.70338"}
+{"id": 1309271, "field": "description", "en": "Summons and dismisses a rideable warden saber.", "hash": "daf9f742f08ab797", "src": "db2@1.60.1.70338"}
+{"id": 1309271, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70338"}
+{"id": 1309272, "field": "name", "en": "White Warden Saber Mount", "hash": "2da3fdfb7012b8c8", "src": "db2@1.60.1.70338"}
+{"id": 1309272, "field": "description", "en": "Summons and dismisses a rideable warden saber.", "hash": "daf9f742f08ab797", "src": "db2@1.60.1.70338"}
+{"id": 1309272, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70338"}
+{"id": 1309283, "field": "name", "en": "!deepS", "hash": "550c41b9f15cacb1", "src": "db2@1.60.1.70338"}
+{"id": 1309283, "field": "description", "en": "Increases movement speed while walking backwards by $s1% for $d1.", "hash": "cc14c902ac13f57b", "src": "db2@1.60.1.70338"}
+{"id": 1309283, "field": "aura", "en": "Increases backwards run speed by $s1%.", "hash": "a56c7511c46fed30", "src": "db2@1.60.1.70338"}
+{"id": 1309310, "field": "name", "en": "Opening", "hash": "c8c8439c6bc312c3", "src": "db2@1.60.1.70338"}
+{"id": 1309315, "field": "name", "en": "Poison", "hash": "43f9da16eae9c502", "src": "db2@1.60.1.70338"}
+{"id": 1309315, "field": "description", "en": "Poisons target for $s1 Nature damage every $t1 sec for $d.", "hash": "c6bab04662dda29a", "src": "db2@1.60.1.70338"}
+{"id": 1309315, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.", "hash": "f6322beccc18b2dd", "src": "db2@1.60.1.70338"}
+{"id": 1309318, "field": "name", "en": "Avatar of Vengeance", "hash": "38dba117e75219f7", "src": "db2@1.60.1.70338"}
+{"id": 1309318, "field": "description", "en": "Increases Attack Power by $s1 for $d. This effect is doubled against Demons.", "hash": "d468566f8da330ed", "src": "db2@1.60.1.70338"}
+{"id": 1309318, "field": "aura", "en": "Attack Power increased by $s1. This effect is doubled against Demons.", "hash": "11d197f85e431e45", "src": "db2@1.60.1.70338"}
+{"id": 1309320, "field": "name", "en": "Left Tusk of Umbrinoth", "hash": "3e4829af6f76a3be", "src": "db2@1.60.1.70338"}
+{"id": 1309320, "field": "description", "en": "Harmful spell casts against Demons have a chance to deal $1309321s1 Shadowflame damage.", "hash": "e5ce57b86fb88f86", "src": "db2@1.60.1.70338"}
+{"id": 1309321, "field": "name", "en": "Left Tusk of Umbrinoth", "hash": "3e4829af6f76a3be", "src": "db2@1.60.1.70338"}
+{"id": 1309321, "field": "description", "en": "Deals $s1 Shadowflame damage.", "hash": "28b9964012a697f0", "src": "db2@1.60.1.70338"}
+{"id": 1309322, "field": "name", "en": "Right Tusk of Umbrinoth", "hash": "143c1e3c3a6ad134", "src": "db2@1.60.1.70338"}
+{"id": 1309322, "field": "description", "en": "Melee and ranged attacks against Demons have a chance to deal $1309321s1 Shadowflame damage.", "hash": "cd8165f835362f51", "src": "db2@1.60.1.70338"}
+{"id": 1309323, "field": "name", "en": "Right Tusk of Umbrinoth", "hash": "143c1e3c3a6ad134", "src": "db2@1.60.1.70338"}
+{"id": 1309323, "field": "description", "en": "Deals $s1 Shadowflame damage.", "hash": "28b9964012a697f0", "src": "db2@1.60.1.70338"}
+{"id": 1309346, "field": "name", "en": "Black Devilsaur Mount", "hash": "0409c1d7f6808a9f", "src": "db2@1.60.1.70338"}
+{"id": 1309346, "field": "description", "en": "Summons and dismisses a rideable devilsaur.", "hash": "3f8ce1450c9775ce", "src": "db2@1.60.1.70338"}
+{"id": 1309346, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70338"}
+{"id": 1309347, "field": "name", "en": "Blue Devilsaur Mount", "hash": "bee97d8b4af7a9c9", "src": "db2@1.60.1.70338"}
+{"id": 1309347, "field": "description", "en": "Summons and dismisses a rideable devilsaur.", "hash": "3f8ce1450c9775ce", "src": "db2@1.60.1.70338"}
+{"id": 1309347, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70338"}
+{"id": 1309348, "field": "name", "en": "Green Devilsaur Mount", "hash": "07b990511a4643ee", "src": "db2@1.60.1.70338"}
+{"id": 1309348, "field": "description", "en": "Summons and dismisses a rideable devilsaur.", "hash": "3f8ce1450c9775ce", "src": "db2@1.60.1.70338"}
+{"id": 1309348, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70338"}
+{"id": 1309349, "field": "name", "en": "Purple Devilsaur Mount", "hash": "7fdab2ec97f09956", "src": "db2@1.60.1.70338"}
+{"id": 1309349, "field": "description", "en": "Summons and dismisses a rideable devilsaur.", "hash": "3f8ce1450c9775ce", "src": "db2@1.60.1.70338"}
+{"id": 1309349, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70338"}
+{"id": 1309350, "field": "name", "en": "White Devilsaur Mount", "hash": "94e71e65a26425a2", "src": "db2@1.60.1.70338"}
+{"id": 1309350, "field": "description", "en": "Summons and dismisses a rideable devilsaur.", "hash": "3f8ce1450c9775ce", "src": "db2@1.60.1.70338"}
+{"id": 1309350, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70338"}
+{"id": 1309369, "field": "name", "en": "Forsaken Weapons", "hash": "18586606c005e210", "src": "db2@1.60.1.70338"}
+{"id": 1309369, "field": "description", "en": "Increases movement speed by $s1% in Silverpine Forest and Hillsbrad Foothills.", "hash": "cc314d8c1813ff53", "src": "db2@1.60.1.70338"}
+{"id": 1309369, "field": "aura", "en": "Movement speed increased by $s1%.", "hash": "d5c3ac7c81779613", "src": "db2@1.60.1.70338"}
+{"id": 1309377, "field": "name", "en": "Black Druid Moose Mount", "hash": "b49a1de71cbb65f9", "src": "db2@1.60.1.70338"}
+{"id": 1309377, "field": "description", "en": "Summons and dismisses a rideable moose.", "hash": "15f349b8ecd6ffdc", "src": "db2@1.60.1.70338"}
+{"id": 1309377, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70338"}
+{"id": 1309379, "field": "name", "en": "White Druid Moose Mount", "hash": "bb9c469062a0b608", "src": "db2@1.60.1.70338"}
+{"id": 1309379, "field": "description", "en": "Summons and dismisses a rideable moose.", "hash": "15f349b8ecd6ffdc", "src": "db2@1.60.1.70338"}
+{"id": 1309379, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70338"}
+{"id": 1309380, "field": "name", "en": "Green Druid Moose Mount", "hash": "d8d253040bc56cd6", "src": "db2@1.60.1.70338"}
+{"id": 1309380, "field": "description", "en": "Summons and dismisses a rideable moose.", "hash": "15f349b8ecd6ffdc", "src": "db2@1.60.1.70338"}
+{"id": 1309380, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70338"}
+{"id": 1309381, "field": "name", "en": "Gray Druid Moose Mount", "hash": "ab81383383f1b069", "src": "db2@1.60.1.70338"}
+{"id": 1309381, "field": "description", "en": "Summons and dismisses a rideable moose.", "hash": "15f349b8ecd6ffdc", "src": "db2@1.60.1.70338"}
+{"id": 1309381, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70338"}
+{"id": 1309405, "field": "name", "en": "Veteran Adventurer's Loyal Companion", "hash": "96faf7d3e097194a", "src": "db2@1.60.1.70338"}
+{"id": 1309405, "field": "description", "en": "Summons and dismisses a rideable bear.", "hash": "c29c0c4c4be13ad6", "src": "db2@1.60.1.70338"}
+{"id": 1309405, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70338"}
+{"id": 1309410, "field": "name", "en": "Night Watchman's Torch", "hash": "3644c6cf78affe53", "src": "db2@1.60.1.70338"}
+{"id": 1309410, "field": "description", "en": "Light the Night Watchman's Torch.", "hash": "49e8f9faaf833460", "src": "db2@1.60.1.70338"}
+{"id": 1309410, "field": "aura", "en": "Holding the Night Watchman's Torch.\r\n\r\nThis effect will end if you enter combat.", "hash": "7ac3b4b68d334d8d", "src": "db2@1.60.1.70338"}
+{"id": 1309420, "field": "name", "en": "Summon Pachimari", "hash": "76f8efe5b95ec0e2", "src": "db2@1.60.1.70338"}
+{"id": 1309420, "field": "description", "en": "Right Click to summon and dismiss your Pachimara.", "hash": "095b613c4aa3896c", "src": "db2@1.60.1.70338"}
+{"id": 1309422, "field": "name", "en": "Rage of Earth", "hash": "ae0e7697ec7ee76a", "src": "db2@1.60.1.70338"}
+{"id": 1309422, "field": "description", "en": "Increases the damage dealt by your Stormstrike ability by $m1%.", "hash": "631b983b0a3ba79b", "src": "db2@1.60.1.70338"}
+{"id": 1309423, "field": "name", "en": "Galestrider Chick", "hash": "a029eb16e9f6fef7", "src": "db2@1.60.1.70338"}
+{"id": 1309423, "field": "description", "en": "Right Click to summon and dismiss your Galestrider Chick.", "hash": "d89d46d155a4b40f", "src": "db2@1.60.1.70338"}
+{"id": 1309436, "field": "name", "en": "Summon Black Furbolg Pet", "hash": "c950f40cf33d6a21", "src": "db2@1.60.1.70338"}
+{"id": 1309436, "field": "description", "en": "Right Click to summon and dismiss your pet furbolg.", "hash": "37b51f427171ffc7", "src": "db2@1.60.1.70338"}
+{"id": 1309437, "field": "name", "en": "Summon Brown Furbolg Pet", "hash": "6b8eba8969c210d8", "src": "db2@1.60.1.70338"}
+{"id": 1309437, "field": "description", "en": "Right Click to summon and dismiss your pet furbolg.", "hash": "37b51f427171ffc7", "src": "db2@1.60.1.70338"}
+{"id": 1309438, "field": "name", "en": "Summon Gray Furbolg Pet", "hash": "8dc593ce0c017664", "src": "db2@1.60.1.70338"}
+{"id": 1309438, "field": "description", "en": "Right Click to summon and dismiss your pet furbolg.", "hash": "37b51f427171ffc7", "src": "db2@1.60.1.70338"}
+{"id": 1309439, "field": "name", "en": "Summon Tan Furbolg Pet", "hash": "6adc6fe602107e23", "src": "db2@1.60.1.70338"}
+{"id": 1309439, "field": "description", "en": "Right Click to summon and dismiss your pet furbolg.", "hash": "37b51f427171ffc7", "src": "db2@1.60.1.70338"}
+{"id": 1309440, "field": "name", "en": "Summon White Furbolg Pet", "hash": "e6095b7b9028a49f", "src": "db2@1.60.1.70338"}
+{"id": 1309440, "field": "description", "en": "Right Click to summon and dismiss your pet furbolg.", "hash": "37b51f427171ffc7", "src": "db2@1.60.1.70338"}
+{"id": 1309442, "field": "name", "en": "Storm's Grasp", "hash": "536241bee0ac24b6", "src": "db2@1.60.1.70338"}
+{"id": 1309442, "field": "description", "en": "Increases the critical strike chance of your Lightning Bolt spell by $m1%.", "hash": "9a0e8a224e8b13a0", "src": "db2@1.60.1.70338"}
+{"id": 1309501, "field": "name", "en": "Summon Purple Ent Pet", "hash": "e205da762a754008", "src": "db2@1.60.1.70338"}
+{"id": 1309501, "field": "description", "en": "Right Click to summon and dismiss your pet ent.", "hash": "8145c7adf51aeba1", "src": "db2@1.60.1.70338"}
+{"id": 1309503, "field": "name", "en": "Summon Red Ent Pet", "hash": "f9e7a5463f6743f7", "src": "db2@1.60.1.70338"}
+{"id": 1309503, "field": "description", "en": "Right Click to summon and dismiss your pet ent.", "hash": "8145c7adf51aeba1", "src": "db2@1.60.1.70338"}
+{"id": 1309504, "field": "name", "en": "Summon Blue Ent Pet", "hash": "8ad0796d36068c81", "src": "db2@1.60.1.70338"}
+{"id": 1309504, "field": "description", "en": "Right Click to summon and dismiss your pet ent.", "hash": "8145c7adf51aeba1", "src": "db2@1.60.1.70338"}
+{"id": 1309505, "field": "name", "en": "Summon Gray Ent Pet", "hash": "87c6cd514ce03000", "src": "db2@1.60.1.70338"}
+{"id": 1309505, "field": "description", "en": "Right Click to summon and dismiss your pet ent.", "hash": "8145c7adf51aeba1", "src": "db2@1.60.1.70338"}
+{"id": 1309506, "field": "name", "en": "Summon Orange Ent Pet", "hash": "d572e756950ff0f9", "src": "db2@1.60.1.70338"}
+{"id": 1309506, "field": "description", "en": "Right Click to summon and dismiss your pet ent.", "hash": "8145c7adf51aeba1", "src": "db2@1.60.1.70338"}
+{"id": 1309507, "field": "name", "en": "Summon Yellow Ent Pet", "hash": "332888839bfff4f6", "src": "db2@1.60.1.70338"}
+{"id": 1309507, "field": "description", "en": "Right Click to summon and dismiss your pet ent.", "hash": "8145c7adf51aeba1", "src": "db2@1.60.1.70338"}
+{"id": 1309513, "field": "name", "en": "Summon Greater Tarantula", "hash": "a59fd3117fe31368", "src": "db2@1.60.1.70338"}
+{"id": 1309539, "field": "name", "en": "Tidebringer's Claw", "hash": "026c91b1c547f392", "src": "db2@1.60.1.70338"}
+{"id": 1309539, "field": "description", "en": "Increases the critical strike chance of your Healing Wave and Lesser Healing Wave spells by $m1%.", "hash": "710ee120b4ad9a2c", "src": "db2@1.60.1.70338"}
+{"id": 1309544, "field": "name", "en": "[DNT] Tarantula Egg Quest Credit", "hash": "f6178d3e488703c9", "src": "db2@1.60.1.70338"}
+{"id": 1309545, "field": "name", "en": "Summon Plagued Cockroach", "hash": "7b89f52440fd0979", "src": "db2@1.60.1.70338"}
+{"id": 1309545, "field": "description", "en": "Right Click to summon and dismiss your cockroach.", "hash": "116a19fb043e73c0", "src": "db2@1.60.1.70338"}
+{"id": 1309546, "field": "name", "en": "Summon Undercity Cockroach", "hash": "b97ad1b38ff294f9", "src": "db2@1.60.1.70338"}
+{"id": 1309546, "field": "description", "en": "Right Click to summon and dismiss your cockroach.", "hash": "116a19fb043e73c0", "src": "db2@1.60.1.70338"}
+{"id": 1309547, "field": "name", "en": "Summon Jungle Boa", "hash": "a85ea29efd6c7797", "src": "db2@1.60.1.70338"}
+{"id": 1309547, "field": "description", "en": "Right Click to summon and dismiss your snake.", "hash": "ab309446134ff027", "src": "db2@1.60.1.70338"}
+{"id": 1309549, "field": "name", "en": "Sad-Sack Sandals", "hash": "09ac8204409b002d", "src": "db2@1.60.1.70338"}
+{"id": 1309549, "field": "description", "en": "You have a $s1% chance to resist Fear.", "hash": "65c20a22b884eb4b", "src": "db2@1.60.1.70338"}
+{"id": 1309549, "field": "aura", "en": "You have a $s1% chance to resist Fear.", "hash": "65c20a22b884eb4b", "src": "db2@1.60.1.70338"}
+{"id": 1309550, "field": "name", "en": "Claymore of Two Moons", "hash": "ecff037bf475abfd", "src": "db2@1.60.1.70338"}
+{"id": 1309550, "field": "description", "en": "Your attacks have a chance to Wax, dealing $1319378s1 Arcane damage or Wane, granting $1319382s1 Strength for $1319382d.", "hash": "92f3b255410f4315", "src": "db2@1.60.1.70338"}
+{"id": 1309551, "field": "name", "en": "Scalding Flamehoof", "hash": "ea0138fe3a2072f6", "src": "db2@1.60.1.70338"}
+{"id": 1309551, "field": "description", "en": "Increases Fire damage taken by $s1% and movement speed by $s2% for $d.", "hash": "11d99fba9ea87a55", "src": "db2@1.60.1.70338"}
+{"id": 1309551, "field": "aura", "en": "Fire damage taken increased by $w1%.\r\nMovement speed increased by $w2%.", "hash": "a677b51a4259ffcb", "src": "db2@1.60.1.70338"}
+{"id": 1309588, "field": "name", "en": "[DNT] Play Sound - Spawn Virulent Blood", "hash": "35abc7f882487e6f", "src": "db2@1.60.1.70338"}
+{"id": 1309595, "field": "name", "en": "Shadow Word: Death", "hash": "5d3ad1015601a405", "src": "db2@1.60.1.70338"}
+{"id": 1309595, "field": "description", "en": "A word of dark binding that inflicts $s1 Shadow damage to the target. If your target is not killed by Shadow Word: Death, you take backlash damage equal to $s3% of your maximum health.", "hash": "c614e8d0520d1a44", "src": "db2@1.60.1.70338"}
+{"id": 1309598, "field": "name", "en": "Shadow Word: Death", "hash": "5d3ad1015601a405", "src": "db2@1.60.1.70338"}
+{"id": 1309598, "field": "description", "en": "A word of dark binding that inflicts Shadow damage to the target. If the target is not killed by Shadow Word: Death, the caster takes damage equal to the damage inflicted upon the target.", "hash": "dc4620157d6947c1", "src": "db2@1.60.1.70338"}
+{"id": 1309618, "field": "name", "en": "Shen'dorei Windwell", "hash": "7d00d1521eb9998f", "src": "db2@1.60.1.70338"}
+{"id": 1309618, "field": "description", "en": "Summons your own portable Windwell for $d.", "hash": "f17e3f1326c81e32", "src": "db2@1.60.1.70338"}
+{"id": 1309631, "field": "name", "en": "Living Spirit", "hash": "92e3216cf7c7ac3f", "src": "db2@1.60.1.70338"}
+{"id": 1309631, "field": "description", "en": "Increases your Spirit by $m1%.", "hash": "531062daa4947c43", "src": "db2@1.60.1.70338"}
+{"id": 1309633, "field": "name", "en": "Shadow Word: Death", "hash": "5d3ad1015601a405", "src": "db2@1.60.1.70338"}
+{"id": 1309633, "field": "description", "en": "A word of dark binding that inflicts $s1 Shadow damage to the target. If your target is not killed by Shadow Word: Death, you take backlash damage equal to $s3% of your maximum health.", "hash": "c614e8d0520d1a44", "src": "db2@1.60.1.70338"}
+{"id": 1309635, "field": "name", "en": "Shadow Word: Death", "hash": "5d3ad1015601a405", "src": "db2@1.60.1.70338"}
+{"id": 1309635, "field": "description", "en": "A word of dark binding that inflicts $s1 Shadow damage to the target. If your target is not killed by Shadow Word: Death, you take backlash damage equal to $s3% of your maximum health.", "hash": "c614e8d0520d1a44", "src": "db2@1.60.1.70338"}
+{"id": 1309636, "field": "name", "en": "Shadow Word: Death", "hash": "5d3ad1015601a405", "src": "db2@1.60.1.70338"}
+{"id": 1309636, "field": "description", "en": "A word of dark binding that inflicts $s1 Shadow damage to the target. If your target is not killed by Shadow Word: Death, you take backlash damage equal to $s3% of your maximum health.", "hash": "c614e8d0520d1a44", "src": "db2@1.60.1.70338"}
+{"id": 1309678, "field": "name", "en": "Flamebreak Talisman", "hash": "7584b9ba8cd327d4", "src": "db2@1.60.1.70338"}
+{"id": 1309678, "field": "description", "en": "[NYI] Grants you a shield which absorbs up to $s1 damage over $d. Fire damage is reduced by $s2% while the shield is active.", "hash": "0690948f45a67370", "src": "db2@1.60.1.70338"}
+{"id": 1309685, "field": "name", "en": "Satchel of Potions", "hash": "e8bfc0399b633a8c", "src": "db2@1.60.1.70338"}
+{"id": 1309685, "field": "description", "en": "Reach into the bag and hope for the best.", "hash": "6b1ca24c5c1998bd", "src": "db2@1.60.1.70338"}
+{"id": 1309702, "field": "name", "en": "Spawn Forsaken Adventurer", "hash": "7aa4915c6e0ef752", "src": "db2@1.60.1.70338"}
+{"id": 1309718, "field": "name", "en": "Axe Pin", "hash": "b8aaa559d0e8a342", "src": "db2@1.60.1.70338"}
+{"id": 1309718, "field": "description", "en": "If an enemy strikes the imbiber, the attacker is struck by a swift axe, pinning them to the ground temporarily.", "hash": "548b1644ce46102a", "src": "db2@1.60.1.70338"}
+{"id": 1309718, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70338"}
+{"id": 1309719, "field": "name", "en": "Axe Pin", "hash": "b8aaa559d0e8a342", "src": "db2@1.60.1.70338"}
+{"id": 1309719, "field": "description", "en": "Stuns an enemy, rendering it unable to move or attack for $d.", "hash": "79289398718d04d2", "src": "db2@1.60.1.70338"}
+{"id": 1309719, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70338"}
+{"id": 1309725, "field": "name", "en": "Healing Potion", "hash": "61b64dc74c0bc45e", "src": "db2@1.60.1.70338"}
+{"id": 1309725, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70338"}
+{"id": 1309726, "field": "name", "en": "Restore Mana", "hash": "2bd8bfcbb243fb0a", "src": "db2@1.60.1.70338"}
+{"id": 1309726, "field": "description", "en": "Restores $s1 mana.", "hash": "09fdd6de4213d4dd", "src": "db2@1.60.1.70338"}
+{"id": 1309728, "field": "name", "en": "Speed", "hash": "c00eb6ccb4816733", "src": "db2@1.60.1.70338"}
+{"id": 1309728, "field": "description", "en": "Increases movement speed by $s1% for $d1.", "hash": "5ce3b122b612c751", "src": "db2@1.60.1.70338"}
+{"id": 1309728, "field": "aura", "en": "Increases movement speed by $s1%", "hash": "ea644adaae6f3486", "src": "db2@1.60.1.70338"}
+{"id": 1309730, "field": "name", "en": "Summon Brown Ground Squirrel", "hash": "4f93ce284f4cc3df", "src": "db2@1.60.1.70338"}
+{"id": 1309730, "field": "description", "en": "Right Click to summon and dismiss your ground squirrel.", "hash": "e54eb85327e69143", "src": "db2@1.60.1.70338"}
+{"id": 1309736, "field": "name", "en": "Summon Red Ground Squirrel", "hash": "f2c40b38afb212a5", "src": "db2@1.60.1.70338"}
+{"id": 1309736, "field": "description", "en": "Right Click to summon and dismiss your ground squirrel.", "hash": "e54eb85327e69143", "src": "db2@1.60.1.70338"}
+{"id": 1309752, "field": "name", "en": "Summon Brown Rabbit", "hash": "bf1d6b4e2f45de72", "src": "db2@1.60.1.70338"}
+{"id": 1309752, "field": "description", "en": "Right Click to summon and dismiss your rabbit.", "hash": "2fcb839623ef6e02", "src": "db2@1.60.1.70338"}
+{"id": 1309761, "field": "name", "en": "Quickening", "hash": "a8e0b285a30326e1", "src": "db2@1.60.1.70338"}
+{"id": 1309761, "field": "description", "en": "Increases ranged attack speed by $s1%.", "hash": "3009bf393dc16067", "src": "db2@1.60.1.70338"}
+{"id": 1309761, "field": "aura", "en": "Attack speed with Wands increased by $s1%.", "hash": "d652b56d3d884f2a", "src": "db2@1.60.1.70338"}
+{"id": 1309763, "field": "name", "en": "Sweeping Slam", "hash": "005844ee73e703ff", "src": "db2@1.60.1.70338"}
+{"id": 1309763, "field": "description", "en": "Inflicts normal damage plus $s1 to enemies in a cone in front of the caster, knocking them back.", "hash": "b5e00217a2d500b0", "src": "db2@1.60.1.70338"}
+{"id": 1309765, "field": "name", "en": "Quickening", "hash": "a8e0b285a30326e1", "src": "db2@1.60.1.70338"}
+{"id": 1309765, "field": "description", "en": "Spell hits have a chance to increase your wand attack speed.", "hash": "b784eabdc45ee804", "src": "db2@1.60.1.70338"}
+{"id": 1309784, "field": "name", "en": "Fire", "hash": "097cf1ce4b4eb722", "src": "db2@1.60.1.70338"}
+{"id": 1309788, "field": "name", "en": "Confuse Beast", "hash": "3ebc62a02add0ae9", "src": "db2@1.60.1.70338"}
+{"id": 1309788, "field": "description", "en": "Bewitch the target Beast, reducing the Physical damage it does to you by $s1%.", "hash": "0af0d110a18ce001", "src": "db2@1.60.1.70338"}
+{"id": 1309788, "field": "aura", "en": "Dealing $s1% reduced Physical damage to the caster.", "hash": "32bd1d8c5ee0df01", "src": "db2@1.60.1.70338"}
+{"id": 1309823, "field": "name", "en": "Deafening Shriek", "hash": "012c8d88da9c65be", "src": "db2@1.60.1.70338"}
+{"id": 1309823, "field": "description", "en": "Silences a nearby enemy, preventing them from casting spells for $d.", "hash": "0c4733150131295d", "src": "db2@1.60.1.70338"}
+{"id": 1309823, "field": "aura", "en": "Cannot cast spells.", "hash": "6d133d61246b88a5", "src": "db2@1.60.1.70338"}
+{"id": 1309871, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70338"}
+{"id": 1309950, "field": "name", "en": "Devouring Contagion", "hash": "fad58fa1d2616fed", "src": "db2@1.60.1.70338"}
+{"id": 1309950, "field": "description", "en": "Reduces the mana cost of your Devouring Plague by $s1%.\r\n\r\nTargets that die while Devouring Plague is active spreads it, jumping to a nearby enemy within $s2 yds for the remaining duration.\r\n", "hash": "4b049177544cf96d", "src": "db2@1.60.1.70338"}
+{"id": 1309957, "field": "name", "en": "Holy Precision", "hash": "b58eeb8cf9532d25", "src": "db2@1.60.1.70338"}
+{"id": 1309957, "field": "description", "en": "Improves your chance to hit with Holy spells by $s1%.", "hash": "9e735c140a566e65", "src": "db2@1.60.1.70338"}
+{"id": 1309965, "field": "name", "en": "Comprehend Scroll", "hash": "63c3d078da437095", "src": "db2@1.60.1.70338"}
+{"id": 1309965, "field": "description", "en": "Decipher an untranslated scroll.", "hash": "2551fb8b19248831", "src": "db2@1.60.1.70338"}
+{"id": 1309969, "field": "name", "en": "Power in Light", "hash": "38110945d2e7750b", "src": "db2@1.60.1.70338"}
+{"id": 1309969, "field": "description", "en": "Your Smite and Penance spells deal $m1% increased damage to targets afflicted with your Holy Fire.", "hash": "fa3e5bcf8039b8b7", "src": "db2@1.60.1.70338"}
+{"id": 1309973, "field": "name", "en": "Comprehend Scroll", "hash": "63c3d078da437095", "src": "db2@1.60.1.70338"}
+{"id": 1309973, "field": "description", "en": "Decipher an untranslated scroll.", "hash": "2551fb8b19248831", "src": "db2@1.60.1.70338"}
+{"id": 1309978, "field": "name", "en": "Opening", "hash": "c8c8439c6bc312c3", "src": "db2@1.60.1.70338"}

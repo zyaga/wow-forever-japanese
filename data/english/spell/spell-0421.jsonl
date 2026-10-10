@@ -1,62 +1,62 @@
-{"id": 421023, "field": "name", "en": "Transform into Nightmare", "hash": "452e7217394aae39", "src": "db2@1.60.1.70291"}
-{"id": 421041, "field": "name", "en": "No Steps Puzzle Aura", "hash": "b1c2ea18b5e4b129", "src": "db2@1.60.1.70291"}
-{"id": 421058, "field": "name", "en": "Reveal Poacher", "hash": "9069b58a9ac151c3", "src": "db2@1.60.1.70291"}
-{"id": 421063, "field": "name", "en": "Path of no Steps", "hash": "097b3034d31b82d9", "src": "db2@1.60.1.70291"}
-{"id": 421063, "field": "aura", "en": "You are on the path", "hash": "2e8f15cbd9e79e39", "src": "db2@1.60.1.70291"}
-{"id": 421084, "field": "name", "en": "Path of no Steps", "hash": "097b3034d31b82d9", "src": "db2@1.60.1.70291"}
-{"id": 421084, "field": "aura", "en": "You are on the path", "hash": "2e8f15cbd9e79e39", "src": "db2@1.60.1.70291"}
-{"id": 421096, "field": "name", "en": "Path of No Steps - Give Rune", "hash": "453716da3bee992d", "src": "db2@1.60.1.70291"}
-{"id": 421188, "field": "name", "en": "[DNT] Player is in Wishing Well Trigger", "hash": "212e968cb10ed397", "src": "db2@1.60.1.70291"}
-{"id": 421197, "field": "name", "en": "Wishing Well - Give Rune", "hash": "ce5be8095c5ca9f1", "src": "db2@1.60.1.70291"}
-{"id": 421197, "field": "description", "en": "Toss into a nearby well to make a wish", "hash": "d9e84748df3f4e91", "src": "db2@1.60.1.70291"}
-{"id": 421239, "field": "name", "en": "Heretic Idol", "hash": "fa8bb64edffc55d2", "src": "db2@1.60.1.70291"}
-{"id": 421239, "field": "aura", "en": "Dare you kneel before it?", "hash": "67b17310851eb8c4", "src": "db2@1.60.1.70291"}
-{"id": 421242, "field": "name", "en": "Heretic Altar - Give Rune", "hash": "05328bb4871dc9b6", "src": "db2@1.60.1.70291"}
-{"id": 421248, "field": "name", "en": "Shadowguard", "hash": "cf44b409d1d1665d", "src": "db2@1.60.1.70291"}
-{"id": 421248, "field": "description", "en": "The caster is surrounded by shadows.  When a spell, melee or ranged attack hits the caster, the attacker will be struck for $28377s1 Shadow damage.  Attackers can only be damaged once every few seconds.  This damage causes no threat.  $n charges.  Lasts $d.", "hash": "3a134e5f4059d1d0", "src": "db2@1.60.1.70291"}
-{"id": 421248, "field": "aura", "en": "Causes $s1 Shadow damage to attacker on hit.  This damage causes no threat.  $n charges.", "hash": "49d9a2325f572e6c", "src": "db2@1.60.1.70291"}
-{"id": 421262, "field": "name", "en": "Hellish Indigestion", "hash": "d3857582cb8d9c07", "src": "db2@1.60.1.70291"}
-{"id": 421262, "field": "aura", "en": "That pie isn't sitting right...", "hash": "c7597fda2231b752", "src": "db2@1.60.1.70291"}
-{"id": 421268, "field": "name", "en": "Malevolent Pie", "hash": "658aebdb6ecefd01", "src": "db2@1.60.1.70291"}
-{"id": 421276, "field": "name", "en": "Malevolent Pie", "hash": "658aebdb6ecefd01", "src": "db2@1.60.1.70291"}
-{"id": 421289, "field": "name", "en": "[DNT] Player is in Mowgh Trigger", "hash": "7173818470f8702a", "src": "db2@1.60.1.70291"}
-{"id": 421295, "field": "name", "en": "Place Bait", "hash": "4725dee5be1ab96a", "src": "db2@1.60.1.70291"}
-{"id": 421295, "field": "description", "en": "Place as bait inside a great bear's den", "hash": "638bcf4293e96435", "src": "db2@1.60.1.70291"}
-{"id": 421299, "field": "name", "en": "Track Mowgh (Third)", "hash": "eaff99c59ec21915", "src": "db2@1.60.1.70291"}
-{"id": 421303, "field": "name", "en": "Track Mowgh (Second)", "hash": "2fd5aa6e057278d0", "src": "db2@1.60.1.70291"}
-{"id": 421304, "field": "name", "en": "Track Mowgh (First)", "hash": "3c86330704c721c1", "src": "db2@1.60.1.70291"}
-{"id": 421311, "field": "name", "en": "Deer Musk", "hash": "e92bb0de82025782", "src": "db2@1.60.1.70291"}
-{"id": 421311, "field": "description", "en": "Your Tame Beast ability also works on deer (as companion pet)", "hash": "26fbe948bc5675cc", "src": "db2@1.60.1.70291"}
-{"id": 421311, "field": "aura", "en": "Your Tame Beast ability also works on deer (as companion pet)", "hash": "26fbe948bc5675cc", "src": "db2@1.60.1.70291"}
-{"id": 421312, "field": "name", "en": "Tame Deer", "hash": "db6902228d51c8fa", "src": "db2@1.60.1.70291"}
-{"id": 421312, "field": "aura", "en": "You've made a friend!", "hash": "135ae248dc96d3c5", "src": "db2@1.60.1.70291"}
-{"id": 421322, "field": "name", "en": "Cursed Discovery", "hash": "bd21001aed6b6d91", "src": "db2@1.60.1.70291"}
-{"id": 421322, "field": "aura", "en": "The bones hunger for cursed energy", "hash": "3b356f3d73b2e024", "src": "db2@1.60.1.70291"}
-{"id": 421338, "field": "name", "en": "Resurrect Demon", "hash": "17f43ec988806f19", "src": "db2@1.60.1.70291"}
-{"id": 421352, "field": "name", "en": "Escape Rope", "hash": "2f98181df6758220", "src": "db2@1.60.1.70291"}
-{"id": 421406, "field": "name", "en": "Battle Totem", "hash": "6c259662a544e2b6", "src": "db2@1.60.1.70291"}
-{"id": 421406, "field": "description", "en": "Challenge a Tauren to a duel", "hash": "21d0c0b258b7ef18", "src": "db2@1.60.1.70291"}
-{"id": 421406, "field": "aura", "en": "Taking increased physical damage", "hash": "f95df00ffc07861f", "src": "db2@1.60.1.70291"}
-{"id": 421423, "field": "name", "en": "Near Buried Cache", "hash": "54d97c75af45c5e9", "src": "db2@1.60.1.70291"}
-{"id": 421424, "field": "name", "en": "Dig Up Treasure", "hash": "785217e3e0581aee", "src": "db2@1.60.1.70291"}
-{"id": 421424, "field": "description", "en": "Dig up treasure at the marked location", "hash": "cb9fbb49acaf7910", "src": "db2@1.60.1.70291"}
-{"id": 421425, "field": "name", "en": "Combine Map Pieces", "hash": "32952a73e4a1a5e7", "src": "db2@1.60.1.70291"}
-{"id": 421425, "field": "description", "en": "Combine with 3 other pieces to make the full map.", "hash": "dcc7f5cfbaee489f", "src": "db2@1.60.1.70291"}
-{"id": 421436, "field": "name", "en": "Combine Glade Flowers", "hash": "0f0d5acd7c5f25e7", "src": "db2@1.60.1.70291"}
-{"id": 421436, "field": "description", "en": "Combine 3 Glade Flowers to make a crown.", "hash": "ebce6cc74cb0ae00", "src": "db2@1.60.1.70291"}
-{"id": 421476, "field": "name", "en": "Skull Thump", "hash": "c9de887765c81981", "src": "db2@1.60.1.70291"}
-{"id": 421478, "field": "name", "en": "Open Skull Geode", "hash": "e1bb19c1ecf085b1", "src": "db2@1.60.1.70291"}
-{"id": 421479, "field": "name", "en": "Skull-Shaped Geode", "hash": "dfc7584eda8ff1e2", "src": "db2@1.60.1.70291"}
-{"id": 421508, "field": "name", "en": "Learn Relic", "hash": "334b771812120465", "src": "db2@1.60.1.70291"}
-{"id": 421510, "field": "name", "en": "Libram of Blessings", "hash": "cfa3603525b44464", "src": "db2@1.60.1.70291"}
-{"id": 421510, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70291"}
-{"id": 421513, "field": "name", "en": "Libram of Blessings Spam Prevention Dummy", "hash": "7b816f401b679077", "src": "db2@1.60.1.70291"}
-{"id": 421535, "field": "name", "en": "Libram of Justice", "hash": "11adfcb39f6c6270", "src": "db2@1.60.1.70291"}
-{"id": 421535, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70291"}
-{"id": 421545, "field": "name", "en": "Libram of Justice Stun Dummy", "hash": "cd315b36c1bcdb27", "src": "db2@1.60.1.70291"}
-{"id": 421596, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70291"}
-{"id": 421596, "field": "description", "en": "Decipher the spell notes with a Comprehension Charm to learn a new Engraving spell.", "hash": "7ccaad212b331d71", "src": "db2@1.60.1.70291"}
-{"id": 421599, "field": "name", "en": "Feed Chum", "hash": "64c0f18424dd9365", "src": "db2@1.60.1.70291"}
-{"id": 421599, "field": "description", "en": "Feed chum to target.", "hash": "69e51170172b4cc3", "src": "db2@1.60.1.70291"}
-{"id": 421600, "field": "name", "en": "Young Threshadon - Give Rune", "hash": "fa4313564be4486f", "src": "db2@1.60.1.70291"}
-{"id": 421609, "field": "name", "en": "Young Threshadon - Give Rune Visual", "hash": "ea170fb3bbab5398", "src": "db2@1.60.1.70291"}
+{"id": 421023, "field": "name", "en": "Transform into Nightmare", "hash": "452e7217394aae39", "src": "db2@1.60.1.70338"}
+{"id": 421041, "field": "name", "en": "No Steps Puzzle Aura", "hash": "b1c2ea18b5e4b129", "src": "db2@1.60.1.70338"}
+{"id": 421058, "field": "name", "en": "Reveal Poacher", "hash": "9069b58a9ac151c3", "src": "db2@1.60.1.70338"}
+{"id": 421063, "field": "name", "en": "Path of no Steps", "hash": "097b3034d31b82d9", "src": "db2@1.60.1.70338"}
+{"id": 421063, "field": "aura", "en": "You are on the path", "hash": "2e8f15cbd9e79e39", "src": "db2@1.60.1.70338"}
+{"id": 421084, "field": "name", "en": "Path of no Steps", "hash": "097b3034d31b82d9", "src": "db2@1.60.1.70338"}
+{"id": 421084, "field": "aura", "en": "You are on the path", "hash": "2e8f15cbd9e79e39", "src": "db2@1.60.1.70338"}
+{"id": 421096, "field": "name", "en": "Path of No Steps - Give Rune", "hash": "453716da3bee992d", "src": "db2@1.60.1.70338"}
+{"id": 421188, "field": "name", "en": "[DNT] Player is in Wishing Well Trigger", "hash": "212e968cb10ed397", "src": "db2@1.60.1.70338"}
+{"id": 421197, "field": "name", "en": "Wishing Well - Give Rune", "hash": "ce5be8095c5ca9f1", "src": "db2@1.60.1.70338"}
+{"id": 421197, "field": "description", "en": "Toss into a nearby well to make a wish", "hash": "d9e84748df3f4e91", "src": "db2@1.60.1.70338"}
+{"id": 421239, "field": "name", "en": "Heretic Idol", "hash": "fa8bb64edffc55d2", "src": "db2@1.60.1.70338"}
+{"id": 421239, "field": "aura", "en": "Dare you kneel before it?", "hash": "67b17310851eb8c4", "src": "db2@1.60.1.70338"}
+{"id": 421242, "field": "name", "en": "Heretic Altar - Give Rune", "hash": "05328bb4871dc9b6", "src": "db2@1.60.1.70338"}
+{"id": 421248, "field": "name", "en": "Shadowguard", "hash": "cf44b409d1d1665d", "src": "db2@1.60.1.70338"}
+{"id": 421248, "field": "description", "en": "The caster is surrounded by shadows.  When a spell, melee or ranged attack hits the caster, the attacker will be struck for $28377s1 Shadow damage.  Attackers can only be damaged once every few seconds.  This damage causes no threat.  $n charges.  Lasts $d.", "hash": "3a134e5f4059d1d0", "src": "db2@1.60.1.70338"}
+{"id": 421248, "field": "aura", "en": "Causes $s1 Shadow damage to attacker on hit.  This damage causes no threat.  $n charges.", "hash": "49d9a2325f572e6c", "src": "db2@1.60.1.70338"}
+{"id": 421262, "field": "name", "en": "Hellish Indigestion", "hash": "d3857582cb8d9c07", "src": "db2@1.60.1.70338"}
+{"id": 421262, "field": "aura", "en": "That pie isn't sitting right...", "hash": "c7597fda2231b752", "src": "db2@1.60.1.70338"}
+{"id": 421268, "field": "name", "en": "Malevolent Pie", "hash": "658aebdb6ecefd01", "src": "db2@1.60.1.70338"}
+{"id": 421276, "field": "name", "en": "Malevolent Pie", "hash": "658aebdb6ecefd01", "src": "db2@1.60.1.70338"}
+{"id": 421289, "field": "name", "en": "[DNT] Player is in Mowgh Trigger", "hash": "7173818470f8702a", "src": "db2@1.60.1.70338"}
+{"id": 421295, "field": "name", "en": "Place Bait", "hash": "4725dee5be1ab96a", "src": "db2@1.60.1.70338"}
+{"id": 421295, "field": "description", "en": "Place as bait inside a great bear's den", "hash": "638bcf4293e96435", "src": "db2@1.60.1.70338"}
+{"id": 421299, "field": "name", "en": "Track Mowgh (Third)", "hash": "eaff99c59ec21915", "src": "db2@1.60.1.70338"}
+{"id": 421303, "field": "name", "en": "Track Mowgh (Second)", "hash": "2fd5aa6e057278d0", "src": "db2@1.60.1.70338"}
+{"id": 421304, "field": "name", "en": "Track Mowgh (First)", "hash": "3c86330704c721c1", "src": "db2@1.60.1.70338"}
+{"id": 421311, "field": "name", "en": "Deer Musk", "hash": "e92bb0de82025782", "src": "db2@1.60.1.70338"}
+{"id": 421311, "field": "description", "en": "Your Tame Beast ability also works on deer (as companion pet)", "hash": "26fbe948bc5675cc", "src": "db2@1.60.1.70338"}
+{"id": 421311, "field": "aura", "en": "Your Tame Beast ability also works on deer (as companion pet)", "hash": "26fbe948bc5675cc", "src": "db2@1.60.1.70338"}
+{"id": 421312, "field": "name", "en": "Tame Deer", "hash": "db6902228d51c8fa", "src": "db2@1.60.1.70338"}
+{"id": 421312, "field": "aura", "en": "You've made a friend!", "hash": "135ae248dc96d3c5", "src": "db2@1.60.1.70338"}
+{"id": 421322, "field": "name", "en": "Cursed Discovery", "hash": "bd21001aed6b6d91", "src": "db2@1.60.1.70338"}
+{"id": 421322, "field": "aura", "en": "The bones hunger for cursed energy", "hash": "3b356f3d73b2e024", "src": "db2@1.60.1.70338"}
+{"id": 421338, "field": "name", "en": "Resurrect Demon", "hash": "17f43ec988806f19", "src": "db2@1.60.1.70338"}
+{"id": 421352, "field": "name", "en": "Escape Rope", "hash": "2f98181df6758220", "src": "db2@1.60.1.70338"}
+{"id": 421406, "field": "name", "en": "Battle Totem", "hash": "6c259662a544e2b6", "src": "db2@1.60.1.70338"}
+{"id": 421406, "field": "description", "en": "Challenge a Tauren to a duel", "hash": "21d0c0b258b7ef18", "src": "db2@1.60.1.70338"}
+{"id": 421406, "field": "aura", "en": "Taking increased physical damage", "hash": "f95df00ffc07861f", "src": "db2@1.60.1.70338"}
+{"id": 421423, "field": "name", "en": "Near Buried Cache", "hash": "54d97c75af45c5e9", "src": "db2@1.60.1.70338"}
+{"id": 421424, "field": "name", "en": "Dig Up Treasure", "hash": "785217e3e0581aee", "src": "db2@1.60.1.70338"}
+{"id": 421424, "field": "description", "en": "Dig up treasure at the marked location", "hash": "cb9fbb49acaf7910", "src": "db2@1.60.1.70338"}
+{"id": 421425, "field": "name", "en": "Combine Map Pieces", "hash": "32952a73e4a1a5e7", "src": "db2@1.60.1.70338"}
+{"id": 421425, "field": "description", "en": "Combine with 3 other pieces to make the full map.", "hash": "dcc7f5cfbaee489f", "src": "db2@1.60.1.70338"}
+{"id": 421436, "field": "name", "en": "Combine Glade Flowers", "hash": "0f0d5acd7c5f25e7", "src": "db2@1.60.1.70338"}
+{"id": 421436, "field": "description", "en": "Combine 3 Glade Flowers to make a crown.", "hash": "ebce6cc74cb0ae00", "src": "db2@1.60.1.70338"}
+{"id": 421476, "field": "name", "en": "Skull Thump", "hash": "c9de887765c81981", "src": "db2@1.60.1.70338"}
+{"id": 421478, "field": "name", "en": "Open Skull Geode", "hash": "e1bb19c1ecf085b1", "src": "db2@1.60.1.70338"}
+{"id": 421479, "field": "name", "en": "Skull-Shaped Geode", "hash": "dfc7584eda8ff1e2", "src": "db2@1.60.1.70338"}
+{"id": 421508, "field": "name", "en": "Learn Relic", "hash": "334b771812120465", "src": "db2@1.60.1.70338"}
+{"id": 421510, "field": "name", "en": "Libram of Blessings", "hash": "cfa3603525b44464", "src": "db2@1.60.1.70338"}
+{"id": 421510, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70338"}
+{"id": 421513, "field": "name", "en": "Libram of Blessings Spam Prevention Dummy", "hash": "7b816f401b679077", "src": "db2@1.60.1.70338"}
+{"id": 421535, "field": "name", "en": "Libram of Justice", "hash": "11adfcb39f6c6270", "src": "db2@1.60.1.70338"}
+{"id": 421535, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70338"}
+{"id": 421545, "field": "name", "en": "Libram of Justice Stun Dummy", "hash": "cd315b36c1bcdb27", "src": "db2@1.60.1.70338"}
+{"id": 421596, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70338"}
+{"id": 421596, "field": "description", "en": "Decipher the spell notes with a Comprehension Charm to learn a new Engraving spell.", "hash": "7ccaad212b331d71", "src": "db2@1.60.1.70338"}
+{"id": 421599, "field": "name", "en": "Feed Chum", "hash": "64c0f18424dd9365", "src": "db2@1.60.1.70338"}
+{"id": 421599, "field": "description", "en": "Feed chum to target.", "hash": "69e51170172b4cc3", "src": "db2@1.60.1.70338"}
+{"id": 421600, "field": "name", "en": "Young Threshadon - Give Rune", "hash": "fa4313564be4486f", "src": "db2@1.60.1.70338"}
+{"id": 421609, "field": "name", "en": "Young Threshadon - Give Rune Visual", "hash": "ea170fb3bbab5398", "src": "db2@1.60.1.70338"}

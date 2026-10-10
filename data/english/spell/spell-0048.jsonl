@@ -1,3 +1,3 @@
-{"id": 48108, "field": "name", "en": "Hot Streak", "hash": "0f000625e3864a46", "src": "db2@1.60.1.70291"}
-{"id": 48108, "field": "description", "en": "Any time you score 2 spell criticals in a row using using Fireball, Fire Blast, Scorch, Living Bomb, or Frostfire Bolt, you have a chance the next Pyroblast spell cast within $d will be instant cast.", "hash": "200c4cec9aba8a9f", "src": "db2@1.60.1.70291"}
-{"id": 48108, "field": "aura", "en": "Your next Pyroblast spell is instant cast.", "hash": "bf94c763ffb3a580", "src": "db2@1.60.1.70291"}
+{"id": 48108, "field": "name", "en": "Hot Streak", "hash": "0f000625e3864a46", "src": "db2@1.60.1.70338"}
+{"id": 48108, "field": "description", "en": "Any time you score 2 spell criticals in a row using using Fireball, Fire Blast, Scorch, Living Bomb, or Frostfire Bolt, you have a chance the next Pyroblast spell cast within $d will be instant cast.", "hash": "200c4cec9aba8a9f", "src": "db2@1.60.1.70338"}
+{"id": 48108, "field": "aura", "en": "Your next Pyroblast spell is instant cast.", "hash": "bf94c763ffb3a580", "src": "db2@1.60.1.70338"}

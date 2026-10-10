@@ -74,7 +74,7 @@ If the game's English NPC voices stay silent after a test (the dialog channel le
 |---|---|
 | The MP3s | `build/voice/` in the main checkout, a checkout of `zyaga/wow-forever-japanese-voice`. Set it up once on a new machine: `git clone git@github.com:zyaga/wow-forever-japanese-voice.git build/voice` from the main checkout. |
 | Which audio goes with this text | `pipeline/voice-audio-commit.txt`: one commit of the audio repository |
-| Each quest's level, for the packs | `pipeline/voice_quest_levels.txt`, written by `make voice-levels` (the quest cache and VMaNGOS, which only the maintainer's computer has). `make voice-speakers` runs it first; rerun both after a re-pull. |
+| Each quest's level, for the packs | `pipeline/voice_quest_levels.txt`, written by `make voice-levels` (the quest cache and VMaNGOS, which only the maintainer's computer has; a quest neither gives a level keeps the one the table had, so a quest the new cache does not answer stays in its pack). `make voice-speakers` runs it first; rerun both after a re-pull. |
 
 `make voice-run` and `make voice-generate` end with `store-sync --if-changed`: when the run made files, or an earlier sync committed but could not push, it commits them to the audio repository, pushes them, and writes that commit to the pin; when there is nothing new, nothing moves. Commit the pin with the audio record in the same pull request. A release builds the packs from exactly the pinned commit, so a line never plays audio made from other words. `make voice-sync` alone does the same after a run that was stopped.
 

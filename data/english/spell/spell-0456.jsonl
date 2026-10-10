@@ -1,119 +1,119 @@
-{"id": 456010, "field": "name", "en": "Higher Power", "hash": "83185468cf7cbcde", "src": "db2@1.60.1.70291"}
-{"id": 456010, "field": "description", "en": "Recover mana.", "hash": "d2c09394459d05b2", "src": "db2@1.60.1.70291"}
-{"id": 456010, "field": "aura", "en": "Drawing in energy.", "hash": "87d0b35a87e6a133", "src": "db2@1.60.1.70291"}
-{"id": 456194, "field": "name", "en": "S03 - Item - T1 - Druid - Restoration 2P Bonus", "hash": "6892a22d67286d19", "src": "db2@1.60.1.70291"}
-{"id": 456194, "field": "description", "en": "When you cast Innervate on another player, it is also cast on you.", "hash": "834884b21d13e07c", "src": "db2@1.60.1.70291"}
-{"id": 456195, "field": "name", "en": "Innervate", "hash": "f104e057cb800cd8", "src": "db2@1.60.1.70291"}
-{"id": 456195, "field": "description", "en": "Increases the target's Mana regeneration by $s2% and allows $s1% of the target's Mana regeneration to continue while casting.  Lasts $d.", "hash": "5be633907b603b8e", "src": "db2@1.60.1.70291"}
-{"id": 456195, "field": "aura", "en": "Mana regeneration increased by $s2%.  $s1% Mana regeneration may continue while casting.", "hash": "7042e9d9f6813495", "src": "db2@1.60.1.70291"}
-{"id": 456222, "field": "name", "en": "S03 - Item - T1 - Druid - Restoration 4P Bonus", "hash": "5775a7b051fa7900", "src": "db2@1.60.1.70291"}
-{"id": 456222, "field": "description", "en": "Casting your Healing Touch or Nourish spells gives you a $h% chance to gain Mana equal to $s1% of the base cost of the spell.", "hash": "c885b4ef4304d648", "src": "db2@1.60.1.70291"}
-{"id": 456223, "field": "name", "en": "Voltaic  Icon", "hash": "a1b4cfbf9f0fce8c", "src": "db2@1.60.1.70291"}
-{"id": 456223, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70291"}
-{"id": 456224, "field": "name", "en": "Mana Surge", "hash": "9b5d5cfe0ec7b4d5", "src": "db2@1.60.1.70291"}
-{"id": 456322, "field": "name", "en": "S03 - Item - T1 - Druid - Restoration 6P Bonus", "hash": "4658ad333ccc84e7", "src": "db2@1.60.1.70291"}
-{"id": 456322, "field": "description", "en": "Reduces the cooldown on Tranquility by $s1% and increases its healing by $s2%.", "hash": "6c52156a8e0877b0", "src": "db2@1.60.1.70291"}
-{"id": 456325, "field": "name", "en": "S03 - Item - T1 - Druid - Guardian 2P Bonus", "hash": "654bc1c57664b893", "src": "db2@1.60.1.70291"}
-{"id": 456325, "field": "description", "en": "You may cast Rebirth and Innervate while in Bear Form or Dire Bear Form.", "hash": "9fbea8ff668e4437", "src": "db2@1.60.1.70291"}
-{"id": 456328, "field": "name", "en": "S03 - Item - T1 - Druid - Guardian 4P Bonus", "hash": "542ec7486136c47a", "src": "db2@1.60.1.70291"}
-{"id": 456328, "field": "description", "en": "Reduces the cooldown of Enrage by ${$m1/-1000} sec and it no longer reduces your armor.", "hash": "4a9ae80994d7bf2f", "src": "db2@1.60.1.70291"}
-{"id": 456332, "field": "name", "en": "S03 - Item - T1 - Druid - Guardian 6P Bonus", "hash": "4311cccb4c08d061", "src": "db2@1.60.1.70291"}
-{"id": 456332, "field": "description", "en": "Bear Form and Dire Bear Form increase all threat you generate by an additional $s1%, and Cower now removes all your threat against the target but has a ${$m2/1000} sec longer cooldown.", "hash": "52f3f82ff9b55f46", "src": "db2@1.60.1.70291"}
-{"id": 456333, "field": "name", "en": "Cower", "hash": "a715bacc7fe63f46", "src": "db2@1.60.1.70291"}
-{"id": 456337, "field": "name", "en": "S03 - Item - T1 - Hunter - Ranged 2P Bonus", "hash": "1e17fae3e72de80b", "src": "db2@1.60.1.70291"}
-{"id": 456337, "field": "description", "en": "You generate $456339s1% more threat for $456339d after using Distracting Shot.", "hash": "93783f15ce63cca8", "src": "db2@1.60.1.70291"}
-{"id": 456339, "field": "name", "en": "Ferocity", "hash": "9e45c6a626311681", "src": "db2@1.60.1.70291"}
-{"id": 456339, "field": "aura", "en": "Generating $s1% increased threat.", "hash": "2c27018189edfbbd", "src": "db2@1.60.1.70291"}
-{"id": 456341, "field": "name", "en": "S03 - Item - T1 - Hunter - Melee 4P Bonus", "hash": "bfc07f1e4ce1a51f", "src": "db2@1.60.1.70291"}
-{"id": 456341, "field": "description", "en": "While tracking a creature type, you deal $s1% increased damage to that creature type.", "hash": "06e1f4d3ade6a2c5", "src": "db2@1.60.1.70291"}
-{"id": 456344, "field": "name", "en": "Undead Slaying", "hash": "5c2c0413f79b9e47", "src": "db2@1.60.1.70291"}
-{"id": 456344, "field": "aura", "en": "Increases damage dealt to Undead by $s1%.", "hash": "e83d68dc12b1a587", "src": "db2@1.60.1.70291"}
-{"id": 456347, "field": "name", "en": "Beast Slaying", "hash": "822ec93c46041475", "src": "db2@1.60.1.70291"}
-{"id": 456347, "field": "aura", "en": "Increases damage dealt to Beasts by $s1%.", "hash": "459f58ccd42a8215", "src": "db2@1.60.1.70291"}
-{"id": 456348, "field": "name", "en": "Dragon Slaying", "hash": "1daa567444fb06d0", "src": "db2@1.60.1.70291"}
-{"id": 456348, "field": "aura", "en": "Increases damage dealt to Dragons by $s1%.", "hash": "c154ef1853f54cc8", "src": "db2@1.60.1.70291"}
-{"id": 456349, "field": "name", "en": "Elemental Slaying", "hash": "d450bfb6decbdff1", "src": "db2@1.60.1.70291"}
-{"id": 456349, "field": "aura", "en": "Increases damage dealt to Elementals by $s1%.", "hash": "ce591fa4d9bb6c1a", "src": "db2@1.60.1.70291"}
-{"id": 456352, "field": "name", "en": "Demon Slaying", "hash": "2e2a9f6706b91fab", "src": "db2@1.60.1.70291"}
-{"id": 456352, "field": "aura", "en": "Increases damage dealt to Demons by $s1%.", "hash": "3a86b34fec37b1cf", "src": "db2@1.60.1.70291"}
-{"id": 456360, "field": "name", "en": "Giant Slaying", "hash": "1f90ac314b15bd5c", "src": "db2@1.60.1.70291"}
-{"id": 456360, "field": "aura", "en": "Increases damage dealt to Giants by $s1%.", "hash": "6c75f14a9bcd638a", "src": "db2@1.60.1.70291"}
-{"id": 456361, "field": "name", "en": "Humanoid Slaying", "hash": "2a927a7c270d53be", "src": "db2@1.60.1.70291"}
-{"id": 456361, "field": "aura", "en": "Increases damage dealt to Humanoids by $s1%.", "hash": "b03cc68607a03322", "src": "db2@1.60.1.70291"}
-{"id": 456379, "field": "name", "en": "S03 - Item - T1 - Hunter - Ranged 6P Bonus", "hash": "fbde05e4bcd1ffd9", "src": "db2@1.60.1.70291"}
-{"id": 456379, "field": "description", "en": "Your next Shot ability within $456382d after Aimed Shot deals $456382s1% more damage.", "hash": "c93eccb9aad2a0e0", "src": "db2@1.60.1.70291"}
-{"id": 456382, "field": "name", "en": "Precision", "hash": "b8b32d40fc3f2110", "src": "db2@1.60.1.70291"}
-{"id": 456382, "field": "aura", "en": "Your next Shot ability deals $s1% more damage.", "hash": "f4f33584144270ae", "src": "db2@1.60.1.70291"}
-{"id": 456389, "field": "name", "en": "S03 - Item - T1 - Hunter - Melee 2P Bonus", "hash": "d0dd799b620f9938", "src": "db2@1.60.1.70291"}
-{"id": 456389, "field": "description", "en": "Your Mongoose Bite also reduces its target's chance to Dodge by $456393s1% and increases your chance to hit by $458403s1% for $456393d.", "hash": "cadc8782e57e17d1", "src": "db2@1.60.1.70291"}
-{"id": 456393, "field": "name", "en": "Stalked", "hash": "43294a6979b9924d", "src": "db2@1.60.1.70291"}
-{"id": 456393, "field": "aura", "en": "Chance to dodge reduced by $s1%.", "hash": "ff7d72d026bc4307", "src": "db2@1.60.1.70291"}
-{"id": 456394, "field": "name", "en": "S03 - Item - T1 - Hunter - Melee 6P Bonus", "hash": "aea384a137b3b106", "src": "db2@1.60.1.70291"}
-{"id": 456394, "field": "description", "en": "Mongoose Bite also activates for $5302d whenever your target Parries or Blocks or when your melee attack misses.", "hash": "48c707fc5ef4b8ea", "src": "db2@1.60.1.70291"}
-{"id": 456396, "field": "name", "en": "S03 - Item - T1 - Mage - Damage 2P Bonus", "hash": "438d077a1ec65710", "src": "db2@1.60.1.70291"}
-{"id": 456396, "field": "description", "en": "You are immune to all damage while channeling Evocation.", "hash": "8b4bef8d8a7cb542", "src": "db2@1.60.1.70291"}
-{"id": 456397, "field": "name", "en": "Evocation", "hash": "c337cd62bc9018ab", "src": "db2@1.60.1.70291"}
-{"id": 456397, "field": "aura", "en": "Immune to all damage.", "hash": "ec662d6c9a23e268", "src": "db2@1.60.1.70291"}
-{"id": 456398, "field": "name", "en": "S03 - Item - T1 - Mage - Damage 4P Bonus", "hash": "32700cfd099862f7", "src": "db2@1.60.1.70291"}
-{"id": 456398, "field": "description", "en": "You gain $456400s1% increased damage for $456400d each time you cast a spell from a different school of magic.", "hash": "f4d8eb8078943009", "src": "db2@1.60.1.70291"}
-{"id": 456399, "field": "name", "en": "Selfless", "hash": "2d27e9a445d4518b", "src": "db2@1.60.1.70291"}
-{"id": 456399, "field": "aura", "en": "Increases magic damage dealt by $s1%.", "hash": "acc6a053fc4c056f", "src": "db2@1.60.1.70291"}
-{"id": 456400, "field": "name", "en": "Noble", "hash": "68271417c09d09b2", "src": "db2@1.60.1.70291"}
-{"id": 456400, "field": "aura", "en": "Increases magic damage dealt by $s1%.", "hash": "acc6a053fc4c056f", "src": "db2@1.60.1.70291"}
-{"id": 456401, "field": "name", "en": "Fool", "hash": "097e8282631fee0c", "src": "db2@1.60.1.70291"}
-{"id": 456401, "field": "aura", "en": "Increases magic damage dealt by $s1%.", "hash": "acc6a053fc4c056f", "src": "db2@1.60.1.70291"}
-{"id": 456402, "field": "name", "en": "S03 - Item - T1 - Mage - Damage 6P Bonus", "hash": "21531280f46a6ecd", "src": "db2@1.60.1.70291"}
-{"id": 456402, "field": "description", "en": "Mage Armor increases your mana regeneration while casting by an additional $s1%. Molten Armor increases your spell damage and healing by $s2. Ice Armor grants $s3% increased chance to trigger Fingers of Frost.", "hash": "6d945af4f6d12b23", "src": "db2@1.60.1.70291"}
-{"id": 456403, "field": "name", "en": "Molten Armor", "hash": "5af61ad5fceacaa0", "src": "db2@1.60.1.70291"}
-{"id": 456403, "field": "aura", "en": "Damage and healing increased by up to $s1.", "hash": "c76fb09f66e2e4a8", "src": "db2@1.60.1.70291"}
-{"id": 456404, "field": "name", "en": "S03 - Item - T1 - Mage - Healer 2P Bonus", "hash": "269f396453ba0975", "src": "db2@1.60.1.70291"}
-{"id": 456404, "field": "description", "en": "Your Temporal Beacons last $s1% longer.", "hash": "010ed9f25a7aa172", "src": "db2@1.60.1.70291"}
-{"id": 456463, "field": "name", "en": "Epoch's End", "hash": "f5737eb88d88e71e", "src": "db2@1.60.1.70291"}
-{"id": 456477, "field": "name", "en": "S03 - Item - T1 - Mage - Healer 4P Bonus", "hash": "15823ee73e8c155c", "src": "db2@1.60.1.70291"}
-{"id": 456477, "field": "description", "en": "Increases all chronomantic healing you deal by $s1%.", "hash": "4290484219bdfca8", "src": "db2@1.60.1.70291"}
-{"id": 456481, "field": "name", "en": "S03 - Item - T1 - Mage - Healer 6P Bonus", "hash": "0465446a295e2143", "src": "db2@1.60.1.70291"}
-{"id": 456481, "field": "description", "en": "Each time you heal a target with Regeneration, the remaining cooldown on Rewind Time is reduced by $s1 sec.", "hash": "2fa4d80e203486a5", "src": "db2@1.60.1.70291"}
-{"id": 456485, "field": "name", "en": "Regeneration", "hash": "1270364d50efbed3", "src": "db2@1.60.1.70291"}
-{"id": 456485, "field": "description", "en": "Heals the target for ${$<healpower>*$m1/100*3} health over $d and applies Temporal Beacon for $400735s3 sec. \r\n\r\nTemporal Beacon\r\n$@spellicon400735\r\n$@spelldesc400735", "hash": "7470eeff860033ca", "src": "db2@1.60.1.70291"}
-{"id": 456485, "field": "aura", "en": "Healing ${$w1*3} health over $d.", "hash": "71292dfdea88bb37", "src": "db2@1.60.1.70291"}
-{"id": 456488, "field": "name", "en": "S03 - Item - T1 - Paladin - Holy 2P Bonus", "hash": "d5e25869cee3dca0", "src": "db2@1.60.1.70291"}
-{"id": 456488, "field": "description", "en": "Increases the chance for allies to trigger your Judgement of Light or Judgement of Wisdom to $s1%.", "hash": "3b4294c7808f1796", "src": "db2@1.60.1.70291"}
-{"id": 456489, "field": "name", "en": "S03 - Item - T1 - Paladin - Retribution 4P Bonus", "hash": "661af586b45e9da8", "src": "db2@1.60.1.70291"}
-{"id": 456489, "field": "description", "en": "Increases your critical strike chance with spells and attacks by $s1%.", "hash": "436f0749144fb866", "src": "db2@1.60.1.70291"}
-{"id": 456492, "field": "name", "en": "S03 - Item - T1 - Paladin - Holy 6P Bonus", "hash": "b3a8636fa487f46e", "src": "db2@1.60.1.70291"}
-{"id": 456492, "field": "description", "en": "Whenever your Flash of Light, Holy Light, or Beacon of Light heals a target to full health, you also heal all members of their party for $s1 health.", "hash": "8719d64eb0839ddf", "src": "db2@1.60.1.70291"}
-{"id": 456493, "field": "name", "en": "Healing Circle", "hash": "326601c3bbed465b", "src": "db2@1.60.1.70291"}
-{"id": 456494, "field": "name", "en": "S03 - Item - T1 - Paladin - Retribution 2P Bonus", "hash": "7737f003c98c91c1", "src": "db2@1.60.1.70291"}
-{"id": 456494, "field": "description", "en": "Your Judgement of Light and Judgement of Wisdom also grant the effects of Judgement of the Crusader.", "hash": "3b750957209be417", "src": "db2@1.60.1.70291"}
-{"id": 456496, "field": "name", "en": "Judgement of the Crusader", "hash": "4b28e4293ab37858", "src": "db2@1.60.1.70291"}
-{"id": 456496, "field": "aura", "en": "Increases Holy damage taken by up to $s1.", "hash": "6174ebc291d84ede", "src": "db2@1.60.1.70291"}
-{"id": 456533, "field": "name", "en": "S03 - Item - T1 - Paladin - Retribution 6P Bonus", "hash": "54fdfb099f30a98f", "src": "db2@1.60.1.70291"}
-{"id": 456533, "field": "description", "en": "Your Seal of Command, Seal of Righteousness, Seal of Martyrdom, and Sunlight deal $s2% less damage, but now persist for $s1 seconds after you cast another Seal, or until you cast a third Seal. Your Judgements can now trigger multiple Seals if active.", "hash": "828f4d53feaf8f92", "src": "db2@1.60.1.70291"}
-{"id": 456536, "field": "name", "en": "S03 - Item - T1 - Paladin - Protection 2P Bonus", "hash": "d4457e3c01da3e9b", "src": "db2@1.60.1.70291"}
-{"id": 456536, "field": "description", "en": "Increases the block value of your shield by $s1.", "hash": "b2abc9558bfdc8b6", "src": "db2@1.60.1.70291"}
-{"id": 456538, "field": "name", "en": "S03 - Item - T1 - Paladin - Protection 4P Bonus", "hash": "c32883bfecac4a71", "src": "db2@1.60.1.70291"}
-{"id": 456538, "field": "description", "en": "Heal for $456540s1 when you Block. Can only heal once every few seconds.", "hash": "1c3ed248767ea817", "src": "db2@1.60.1.70291"}
-{"id": 456540, "field": "name", "en": "Bastion of Light", "hash": "e9bee877f4ea56ac", "src": "db2@1.60.1.70291"}
-{"id": 456541, "field": "name", "en": "S03 - Item - T1 - Paladin - Protection 6P Bonus", "hash": "b20b8942d77e5658", "src": "db2@1.60.1.70291"}
-{"id": 456541, "field": "description", "en": "Holy Shield no longer has charges and instead always lasts its full duration. In addition, its damage is increased by $s2% of your shield block value.", "hash": "a145325b609af0b5", "src": "db2@1.60.1.70291"}
-{"id": 456544, "field": "name", "en": "Holy Shield", "hash": "2024172cc5ef0d21", "src": "db2@1.60.1.70291"}
-{"id": 456545, "field": "name", "en": "S03 - Item - T1 - Priest - Healer 2P Bonus", "hash": "76fea1bc6ab5a6ab", "src": "db2@1.60.1.70291"}
-{"id": 456545, "field": "description", "en": "-$/1000;S1 sec to the casting time of Flash Heal and -$/1000;S2 sec to the casting time of Greater Heal.", "hash": "1a3a3a7fba081dda", "src": "db2@1.60.1.70291"}
-{"id": 456546, "field": "name", "en": "S03 - Item - T1 - Priest - Healer 4P Bonus", "hash": "65e1a73f5587b292", "src": "db2@1.60.1.70291"}
-{"id": 456546, "field": "description", "en": "Increases your critical strike chance with spells and attacks by $s1%.", "hash": "436f0749144fb866", "src": "db2@1.60.1.70291"}
-{"id": 456547, "field": "name", "en": "S03 - Item - T1 - Priest - Healer 6P Bonus", "hash": "54c4acc24059be79", "src": "db2@1.60.1.70291"}
-{"id": 456547, "field": "description", "en": "Increases your critical strike chance with Prayer of Healing and Circle of Healing by $s1%.", "hash": "f86bba7897f1749a", "src": "db2@1.60.1.70291"}
-{"id": 456548, "field": "name", "en": "S03 - Item - T1 - Priest - Shadow 2P Bonus", "hash": "2679c85ce65c3dab", "src": "db2@1.60.1.70291"}
-{"id": 456548, "field": "description", "en": "You may cast Flash Heal while in Shadowform.", "hash": "16810cf9359a4b4f", "src": "db2@1.60.1.70291"}
-{"id": 456549, "field": "name", "en": "Melting Faces", "hash": "39a2a3676bae1274", "src": "db2@1.60.1.70291"}
-{"id": 456549, "field": "aura", "en": "Reduces the channeled duration of your next Mind Flay spell by $s1% and increases its total damage by $s3%.", "hash": "f868a885d891e778", "src": "db2@1.60.1.70291"}
-{"id": 456635, "field": "name", "en": "[DNT] Ice Chains Effect", "hash": "7190a840402c0b34", "src": "db2@1.60.1.70291"}
-{"id": 456677, "field": "name", "en": "Dispel Chains", "hash": "fea504c26c62e349", "src": "db2@1.60.1.70291"}
-{"id": 456692, "field": "name", "en": "[DNT] Dispel Chains Trigger", "hash": "81f20116f05bc455", "src": "db2@1.60.1.70291"}
-{"id": 456694, "field": "name", "en": "[DNT] Frijidar Scale", "hash": "10ea06cc152e7aae", "src": "db2@1.60.1.70291"}
-{"id": 456695, "field": "name", "en": "[DNT] Frijidar Scale", "hash": "10ea06cc152e7aae", "src": "db2@1.60.1.70291"}
-{"id": 456740, "field": "name", "en": "Pilfershard - Trade Souls for Rune", "hash": "6610f378b7284de8", "src": "db2@1.60.1.70291"}
-{"id": 456881, "field": "name", "en": "Diplomatic Immunity", "hash": "787f8b63c740481f", "src": "db2@1.60.1.70291"}
-{"id": 456881, "field": "description", "en": "Your presence is tolerated by the Horde. For now.", "hash": "5c6033f395e4e1ce", "src": "db2@1.60.1.70291"}
-{"id": 456937, "field": "name", "en": "Combine Torn Spell Notes", "hash": "657ddf27f152ae41", "src": "db2@1.60.1.70291"}
-{"id": 456937, "field": "description", "en": "Combine the collected Torn Spell Notes into a scroll that will teach a new Engraving spell.", "hash": "4b522d6c0465a397", "src": "db2@1.60.1.70291"}
+{"id": 456010, "field": "name", "en": "Higher Power", "hash": "83185468cf7cbcde", "src": "db2@1.60.1.70338"}
+{"id": 456010, "field": "description", "en": "Recover mana.", "hash": "d2c09394459d05b2", "src": "db2@1.60.1.70338"}
+{"id": 456010, "field": "aura", "en": "Drawing in energy.", "hash": "87d0b35a87e6a133", "src": "db2@1.60.1.70338"}
+{"id": 456194, "field": "name", "en": "S03 - Item - T1 - Druid - Restoration 2P Bonus", "hash": "6892a22d67286d19", "src": "db2@1.60.1.70338"}
+{"id": 456194, "field": "description", "en": "When you cast Innervate on another player, it is also cast on you.", "hash": "834884b21d13e07c", "src": "db2@1.60.1.70338"}
+{"id": 456195, "field": "name", "en": "Innervate", "hash": "f104e057cb800cd8", "src": "db2@1.60.1.70338"}
+{"id": 456195, "field": "description", "en": "Increases the target's Mana regeneration by $s2% and allows $s1% of the target's Mana regeneration to continue while casting.  Lasts $d.", "hash": "5be633907b603b8e", "src": "db2@1.60.1.70338"}
+{"id": 456195, "field": "aura", "en": "Mana regeneration increased by $s2%.  $s1% Mana regeneration may continue while casting.", "hash": "7042e9d9f6813495", "src": "db2@1.60.1.70338"}
+{"id": 456222, "field": "name", "en": "S03 - Item - T1 - Druid - Restoration 4P Bonus", "hash": "5775a7b051fa7900", "src": "db2@1.60.1.70338"}
+{"id": 456222, "field": "description", "en": "Casting your Healing Touch or Nourish spells gives you a $h% chance to gain Mana equal to $s1% of the base cost of the spell.", "hash": "c885b4ef4304d648", "src": "db2@1.60.1.70338"}
+{"id": 456223, "field": "name", "en": "Voltaic  Icon", "hash": "a1b4cfbf9f0fce8c", "src": "db2@1.60.1.70338"}
+{"id": 456223, "field": "aura", "en": "Filled with inspiration.", "hash": "12978998abfaafe3", "src": "db2@1.60.1.70338"}
+{"id": 456224, "field": "name", "en": "Mana Surge", "hash": "9b5d5cfe0ec7b4d5", "src": "db2@1.60.1.70338"}
+{"id": 456322, "field": "name", "en": "S03 - Item - T1 - Druid - Restoration 6P Bonus", "hash": "4658ad333ccc84e7", "src": "db2@1.60.1.70338"}
+{"id": 456322, "field": "description", "en": "Reduces the cooldown on Tranquility by $s1% and increases its healing by $s2%.", "hash": "6c52156a8e0877b0", "src": "db2@1.60.1.70338"}
+{"id": 456325, "field": "name", "en": "S03 - Item - T1 - Druid - Guardian 2P Bonus", "hash": "654bc1c57664b893", "src": "db2@1.60.1.70338"}
+{"id": 456325, "field": "description", "en": "You may cast Rebirth and Innervate while in Bear Form or Dire Bear Form.", "hash": "9fbea8ff668e4437", "src": "db2@1.60.1.70338"}
+{"id": 456328, "field": "name", "en": "S03 - Item - T1 - Druid - Guardian 4P Bonus", "hash": "542ec7486136c47a", "src": "db2@1.60.1.70338"}
+{"id": 456328, "field": "description", "en": "Reduces the cooldown of Enrage by ${$m1/-1000} sec and it no longer reduces your armor.", "hash": "4a9ae80994d7bf2f", "src": "db2@1.60.1.70338"}
+{"id": 456332, "field": "name", "en": "S03 - Item - T1 - Druid - Guardian 6P Bonus", "hash": "4311cccb4c08d061", "src": "db2@1.60.1.70338"}
+{"id": 456332, "field": "description", "en": "Bear Form and Dire Bear Form increase all threat you generate by an additional $s1%, and Cower now removes all your threat against the target but has a ${$m2/1000} sec longer cooldown.", "hash": "52f3f82ff9b55f46", "src": "db2@1.60.1.70338"}
+{"id": 456333, "field": "name", "en": "Cower", "hash": "a715bacc7fe63f46", "src": "db2@1.60.1.70338"}
+{"id": 456337, "field": "name", "en": "S03 - Item - T1 - Hunter - Ranged 2P Bonus", "hash": "1e17fae3e72de80b", "src": "db2@1.60.1.70338"}
+{"id": 456337, "field": "description", "en": "You generate $456339s1% more threat for $456339d after using Distracting Shot.", "hash": "93783f15ce63cca8", "src": "db2@1.60.1.70338"}
+{"id": 456339, "field": "name", "en": "Ferocity", "hash": "9e45c6a626311681", "src": "db2@1.60.1.70338"}
+{"id": 456339, "field": "aura", "en": "Generating $s1% increased threat.", "hash": "2c27018189edfbbd", "src": "db2@1.60.1.70338"}
+{"id": 456341, "field": "name", "en": "S03 - Item - T1 - Hunter - Melee 4P Bonus", "hash": "bfc07f1e4ce1a51f", "src": "db2@1.60.1.70338"}
+{"id": 456341, "field": "description", "en": "While tracking a creature type, you deal $s1% increased damage to that creature type.", "hash": "06e1f4d3ade6a2c5", "src": "db2@1.60.1.70338"}
+{"id": 456344, "field": "name", "en": "Undead Slaying", "hash": "5c2c0413f79b9e47", "src": "db2@1.60.1.70338"}
+{"id": 456344, "field": "aura", "en": "Increases damage dealt to Undead by $s1%.", "hash": "e83d68dc12b1a587", "src": "db2@1.60.1.70338"}
+{"id": 456347, "field": "name", "en": "Beast Slaying", "hash": "822ec93c46041475", "src": "db2@1.60.1.70338"}
+{"id": 456347, "field": "aura", "en": "Increases damage dealt to Beasts by $s1%.", "hash": "459f58ccd42a8215", "src": "db2@1.60.1.70338"}
+{"id": 456348, "field": "name", "en": "Dragon Slaying", "hash": "1daa567444fb06d0", "src": "db2@1.60.1.70338"}
+{"id": 456348, "field": "aura", "en": "Increases damage dealt to Dragons by $s1%.", "hash": "c154ef1853f54cc8", "src": "db2@1.60.1.70338"}
+{"id": 456349, "field": "name", "en": "Elemental Slaying", "hash": "d450bfb6decbdff1", "src": "db2@1.60.1.70338"}
+{"id": 456349, "field": "aura", "en": "Increases damage dealt to Elementals by $s1%.", "hash": "ce591fa4d9bb6c1a", "src": "db2@1.60.1.70338"}
+{"id": 456352, "field": "name", "en": "Demon Slaying", "hash": "2e2a9f6706b91fab", "src": "db2@1.60.1.70338"}
+{"id": 456352, "field": "aura", "en": "Increases damage dealt to Demons by $s1%.", "hash": "3a86b34fec37b1cf", "src": "db2@1.60.1.70338"}
+{"id": 456360, "field": "name", "en": "Giant Slaying", "hash": "1f90ac314b15bd5c", "src": "db2@1.60.1.70338"}
+{"id": 456360, "field": "aura", "en": "Increases damage dealt to Giants by $s1%.", "hash": "6c75f14a9bcd638a", "src": "db2@1.60.1.70338"}
+{"id": 456361, "field": "name", "en": "Humanoid Slaying", "hash": "2a927a7c270d53be", "src": "db2@1.60.1.70338"}
+{"id": 456361, "field": "aura", "en": "Increases damage dealt to Humanoids by $s1%.", "hash": "b03cc68607a03322", "src": "db2@1.60.1.70338"}
+{"id": 456379, "field": "name", "en": "S03 - Item - T1 - Hunter - Ranged 6P Bonus", "hash": "fbde05e4bcd1ffd9", "src": "db2@1.60.1.70338"}
+{"id": 456379, "field": "description", "en": "Your next Shot ability within $456382d after Aimed Shot deals $456382s1% more damage.", "hash": "c93eccb9aad2a0e0", "src": "db2@1.60.1.70338"}
+{"id": 456382, "field": "name", "en": "Precision", "hash": "b8b32d40fc3f2110", "src": "db2@1.60.1.70338"}
+{"id": 456382, "field": "aura", "en": "Your next Shot ability deals $s1% more damage.", "hash": "f4f33584144270ae", "src": "db2@1.60.1.70338"}
+{"id": 456389, "field": "name", "en": "S03 - Item - T1 - Hunter - Melee 2P Bonus", "hash": "d0dd799b620f9938", "src": "db2@1.60.1.70338"}
+{"id": 456389, "field": "description", "en": "Your Mongoose Bite also reduces its target's chance to Dodge by $456393s1% and increases your chance to hit by $458403s1% for $456393d.", "hash": "cadc8782e57e17d1", "src": "db2@1.60.1.70338"}
+{"id": 456393, "field": "name", "en": "Stalked", "hash": "43294a6979b9924d", "src": "db2@1.60.1.70338"}
+{"id": 456393, "field": "aura", "en": "Chance to dodge reduced by $s1%.", "hash": "ff7d72d026bc4307", "src": "db2@1.60.1.70338"}
+{"id": 456394, "field": "name", "en": "S03 - Item - T1 - Hunter - Melee 6P Bonus", "hash": "aea384a137b3b106", "src": "db2@1.60.1.70338"}
+{"id": 456394, "field": "description", "en": "Mongoose Bite also activates for $5302d whenever your target Parries or Blocks or when your melee attack misses.", "hash": "48c707fc5ef4b8ea", "src": "db2@1.60.1.70338"}
+{"id": 456396, "field": "name", "en": "S03 - Item - T1 - Mage - Damage 2P Bonus", "hash": "438d077a1ec65710", "src": "db2@1.60.1.70338"}
+{"id": 456396, "field": "description", "en": "You are immune to all damage while channeling Evocation.", "hash": "8b4bef8d8a7cb542", "src": "db2@1.60.1.70338"}
+{"id": 456397, "field": "name", "en": "Evocation", "hash": "c337cd62bc9018ab", "src": "db2@1.60.1.70338"}
+{"id": 456397, "field": "aura", "en": "Immune to all damage.", "hash": "ec662d6c9a23e268", "src": "db2@1.60.1.70338"}
+{"id": 456398, "field": "name", "en": "S03 - Item - T1 - Mage - Damage 4P Bonus", "hash": "32700cfd099862f7", "src": "db2@1.60.1.70338"}
+{"id": 456398, "field": "description", "en": "You gain $456400s1% increased damage for $456400d each time you cast a spell from a different school of magic.", "hash": "f4d8eb8078943009", "src": "db2@1.60.1.70338"}
+{"id": 456399, "field": "name", "en": "Selfless", "hash": "2d27e9a445d4518b", "src": "db2@1.60.1.70338"}
+{"id": 456399, "field": "aura", "en": "Increases magic damage dealt by $s1%.", "hash": "acc6a053fc4c056f", "src": "db2@1.60.1.70338"}
+{"id": 456400, "field": "name", "en": "Noble", "hash": "68271417c09d09b2", "src": "db2@1.60.1.70338"}
+{"id": 456400, "field": "aura", "en": "Increases magic damage dealt by $s1%.", "hash": "acc6a053fc4c056f", "src": "db2@1.60.1.70338"}
+{"id": 456401, "field": "name", "en": "Fool", "hash": "097e8282631fee0c", "src": "db2@1.60.1.70338"}
+{"id": 456401, "field": "aura", "en": "Increases magic damage dealt by $s1%.", "hash": "acc6a053fc4c056f", "src": "db2@1.60.1.70338"}
+{"id": 456402, "field": "name", "en": "S03 - Item - T1 - Mage - Damage 6P Bonus", "hash": "21531280f46a6ecd", "src": "db2@1.60.1.70338"}
+{"id": 456402, "field": "description", "en": "Mage Armor increases your mana regeneration while casting by an additional $s1%. Molten Armor increases your spell damage and healing by $s2. Ice Armor grants $s3% increased chance to trigger Fingers of Frost.", "hash": "6d945af4f6d12b23", "src": "db2@1.60.1.70338"}
+{"id": 456403, "field": "name", "en": "Molten Armor", "hash": "5af61ad5fceacaa0", "src": "db2@1.60.1.70338"}
+{"id": 456403, "field": "aura", "en": "Damage and healing increased by up to $s1.", "hash": "c76fb09f66e2e4a8", "src": "db2@1.60.1.70338"}
+{"id": 456404, "field": "name", "en": "S03 - Item - T1 - Mage - Healer 2P Bonus", "hash": "269f396453ba0975", "src": "db2@1.60.1.70338"}
+{"id": 456404, "field": "description", "en": "Your Temporal Beacons last $s1% longer.", "hash": "010ed9f25a7aa172", "src": "db2@1.60.1.70338"}
+{"id": 456463, "field": "name", "en": "Epoch's End", "hash": "f5737eb88d88e71e", "src": "db2@1.60.1.70338"}
+{"id": 456477, "field": "name", "en": "S03 - Item - T1 - Mage - Healer 4P Bonus", "hash": "15823ee73e8c155c", "src": "db2@1.60.1.70338"}
+{"id": 456477, "field": "description", "en": "Increases all chronomantic healing you deal by $s1%.", "hash": "4290484219bdfca8", "src": "db2@1.60.1.70338"}
+{"id": 456481, "field": "name", "en": "S03 - Item - T1 - Mage - Healer 6P Bonus", "hash": "0465446a295e2143", "src": "db2@1.60.1.70338"}
+{"id": 456481, "field": "description", "en": "Each time you heal a target with Regeneration, the remaining cooldown on Rewind Time is reduced by $s1 sec.", "hash": "2fa4d80e203486a5", "src": "db2@1.60.1.70338"}
+{"id": 456485, "field": "name", "en": "Regeneration", "hash": "1270364d50efbed3", "src": "db2@1.60.1.70338"}
+{"id": 456485, "field": "description", "en": "Heals the target for ${$<healpower>*$m1/100*3} health over $d and applies Temporal Beacon for $400735s3 sec. \r\n\r\nTemporal Beacon\r\n$@spellicon400735\r\n$@spelldesc400735", "hash": "7470eeff860033ca", "src": "db2@1.60.1.70338"}
+{"id": 456485, "field": "aura", "en": "Healing ${$w1*3} health over $d.", "hash": "71292dfdea88bb37", "src": "db2@1.60.1.70338"}
+{"id": 456488, "field": "name", "en": "S03 - Item - T1 - Paladin - Holy 2P Bonus", "hash": "d5e25869cee3dca0", "src": "db2@1.60.1.70338"}
+{"id": 456488, "field": "description", "en": "Increases the chance for allies to trigger your Judgement of Light or Judgement of Wisdom to $s1%.", "hash": "3b4294c7808f1796", "src": "db2@1.60.1.70338"}
+{"id": 456489, "field": "name", "en": "S03 - Item - T1 - Paladin - Retribution 4P Bonus", "hash": "661af586b45e9da8", "src": "db2@1.60.1.70338"}
+{"id": 456489, "field": "description", "en": "Increases your critical strike chance with spells and attacks by $s1%.", "hash": "436f0749144fb866", "src": "db2@1.60.1.70338"}
+{"id": 456492, "field": "name", "en": "S03 - Item - T1 - Paladin - Holy 6P Bonus", "hash": "b3a8636fa487f46e", "src": "db2@1.60.1.70338"}
+{"id": 456492, "field": "description", "en": "Whenever your Flash of Light, Holy Light, or Beacon of Light heals a target to full health, you also heal all members of their party for $s1 health.", "hash": "8719d64eb0839ddf", "src": "db2@1.60.1.70338"}
+{"id": 456493, "field": "name", "en": "Healing Circle", "hash": "326601c3bbed465b", "src": "db2@1.60.1.70338"}
+{"id": 456494, "field": "name", "en": "S03 - Item - T1 - Paladin - Retribution 2P Bonus", "hash": "7737f003c98c91c1", "src": "db2@1.60.1.70338"}
+{"id": 456494, "field": "description", "en": "Your Judgement of Light and Judgement of Wisdom also grant the effects of Judgement of the Crusader.", "hash": "3b750957209be417", "src": "db2@1.60.1.70338"}
+{"id": 456496, "field": "name", "en": "Judgement of the Crusader", "hash": "4b28e4293ab37858", "src": "db2@1.60.1.70338"}
+{"id": 456496, "field": "aura", "en": "Increases Holy damage taken by up to $s1.", "hash": "6174ebc291d84ede", "src": "db2@1.60.1.70338"}
+{"id": 456533, "field": "name", "en": "S03 - Item - T1 - Paladin - Retribution 6P Bonus", "hash": "54fdfb099f30a98f", "src": "db2@1.60.1.70338"}
+{"id": 456533, "field": "description", "en": "Your Seal of Command, Seal of Righteousness, Seal of Martyrdom, and Sunlight deal $s2% less damage, but now persist for $s1 seconds after you cast another Seal, or until you cast a third Seal. Your Judgements can now trigger multiple Seals if active.", "hash": "828f4d53feaf8f92", "src": "db2@1.60.1.70338"}
+{"id": 456536, "field": "name", "en": "S03 - Item - T1 - Paladin - Protection 2P Bonus", "hash": "d4457e3c01da3e9b", "src": "db2@1.60.1.70338"}
+{"id": 456536, "field": "description", "en": "Increases the block value of your shield by $s1.", "hash": "b2abc9558bfdc8b6", "src": "db2@1.60.1.70338"}
+{"id": 456538, "field": "name", "en": "S03 - Item - T1 - Paladin - Protection 4P Bonus", "hash": "c32883bfecac4a71", "src": "db2@1.60.1.70338"}
+{"id": 456538, "field": "description", "en": "Heal for $456540s1 when you Block. Can only heal once every few seconds.", "hash": "1c3ed248767ea817", "src": "db2@1.60.1.70338"}
+{"id": 456540, "field": "name", "en": "Bastion of Light", "hash": "e9bee877f4ea56ac", "src": "db2@1.60.1.70338"}
+{"id": 456541, "field": "name", "en": "S03 - Item - T1 - Paladin - Protection 6P Bonus", "hash": "b20b8942d77e5658", "src": "db2@1.60.1.70338"}
+{"id": 456541, "field": "description", "en": "Holy Shield no longer has charges and instead always lasts its full duration. In addition, its damage is increased by $s2% of your shield block value.", "hash": "a145325b609af0b5", "src": "db2@1.60.1.70338"}
+{"id": 456544, "field": "name", "en": "Holy Shield", "hash": "2024172cc5ef0d21", "src": "db2@1.60.1.70338"}
+{"id": 456545, "field": "name", "en": "S03 - Item - T1 - Priest - Healer 2P Bonus", "hash": "76fea1bc6ab5a6ab", "src": "db2@1.60.1.70338"}
+{"id": 456545, "field": "description", "en": "-$/1000;S1 sec to the casting time of Flash Heal and -$/1000;S2 sec to the casting time of Greater Heal.", "hash": "1a3a3a7fba081dda", "src": "db2@1.60.1.70338"}
+{"id": 456546, "field": "name", "en": "S03 - Item - T1 - Priest - Healer 4P Bonus", "hash": "65e1a73f5587b292", "src": "db2@1.60.1.70338"}
+{"id": 456546, "field": "description", "en": "Increases your critical strike chance with spells and attacks by $s1%.", "hash": "436f0749144fb866", "src": "db2@1.60.1.70338"}
+{"id": 456547, "field": "name", "en": "S03 - Item - T1 - Priest - Healer 6P Bonus", "hash": "54c4acc24059be79", "src": "db2@1.60.1.70338"}
+{"id": 456547, "field": "description", "en": "Increases your critical strike chance with Prayer of Healing and Circle of Healing by $s1%.", "hash": "f86bba7897f1749a", "src": "db2@1.60.1.70338"}
+{"id": 456548, "field": "name", "en": "S03 - Item - T1 - Priest - Shadow 2P Bonus", "hash": "2679c85ce65c3dab", "src": "db2@1.60.1.70338"}
+{"id": 456548, "field": "description", "en": "You may cast Flash Heal while in Shadowform.", "hash": "16810cf9359a4b4f", "src": "db2@1.60.1.70338"}
+{"id": 456549, "field": "name", "en": "Melting Faces", "hash": "39a2a3676bae1274", "src": "db2@1.60.1.70338"}
+{"id": 456549, "field": "aura", "en": "Reduces the channeled duration of your next Mind Flay spell by $s1% and increases its total damage by $s3%.", "hash": "f868a885d891e778", "src": "db2@1.60.1.70338"}
+{"id": 456635, "field": "name", "en": "[DNT] Ice Chains Effect", "hash": "7190a840402c0b34", "src": "db2@1.60.1.70338"}
+{"id": 456677, "field": "name", "en": "Dispel Chains", "hash": "fea504c26c62e349", "src": "db2@1.60.1.70338"}
+{"id": 456692, "field": "name", "en": "[DNT] Dispel Chains Trigger", "hash": "81f20116f05bc455", "src": "db2@1.60.1.70338"}
+{"id": 456694, "field": "name", "en": "[DNT] Frijidar Scale", "hash": "10ea06cc152e7aae", "src": "db2@1.60.1.70338"}
+{"id": 456695, "field": "name", "en": "[DNT] Frijidar Scale", "hash": "10ea06cc152e7aae", "src": "db2@1.60.1.70338"}
+{"id": 456740, "field": "name", "en": "Pilfershard - Trade Souls for Rune", "hash": "6610f378b7284de8", "src": "db2@1.60.1.70338"}
+{"id": 456881, "field": "name", "en": "Diplomatic Immunity", "hash": "787f8b63c740481f", "src": "db2@1.60.1.70338"}
+{"id": 456881, "field": "description", "en": "Your presence is tolerated by the Horde. For now.", "hash": "5c6033f395e4e1ce", "src": "db2@1.60.1.70338"}
+{"id": 456937, "field": "name", "en": "Combine Torn Spell Notes", "hash": "657ddf27f152ae41", "src": "db2@1.60.1.70338"}
+{"id": 456937, "field": "description", "en": "Combine the collected Torn Spell Notes into a scroll that will teach a new Engraving spell.", "hash": "4b522d6c0465a397", "src": "db2@1.60.1.70338"}

@@ -1,114 +1,114 @@
-{"id": 1227019, "field": "name", "en": "Combine Fel-Touched Flowers", "hash": "67d9bcf6d659b546", "src": "db2@1.60.1.70291"}
-{"id": 1227019, "field": "description", "en": "Combine three Fel-Touched Flowers into a potion that will temporarily show demonic shades.", "hash": "d8072b95f1d3793c", "src": "db2@1.60.1.70291"}
-{"id": 1227022, "field": "name", "en": "Demonic Shade Vision", "hash": "9b27df13a98c4429", "src": "db2@1.60.1.70291"}
-{"id": 1227022, "field": "description", "en": "Allows the user to temporarily see demonic shades within Felwood.", "hash": "e41c07dc27c6146a", "src": "db2@1.60.1.70291"}
-{"id": 1227022, "field": "aura", "en": "Temporarily detect demonic shades.", "hash": "adfae0b1047c935b", "src": "db2@1.60.1.70291"}
-{"id": 1227024, "field": "name", "en": "Fel-Touched Shade", "hash": "93b68fc112ac4f5d", "src": "db2@1.60.1.70291"}
-{"id": 1227080, "field": "name", "en": "Read Cookbook", "hash": "3f47f1ca23721a22", "src": "db2@1.60.1.70291"}
-{"id": 1227080, "field": "description", "en": "Teaches you how to cook Carrie Hearthfire's most desirable feast recipes.", "hash": "86b738e261df9fa5", "src": "db2@1.60.1.70291"}
-{"id": 1227088, "field": "name", "en": "Swiftearth", "hash": "ab7c173781c9fa3f", "src": "db2@1.60.1.70291"}
-{"id": 1227088, "field": "description", "en": "Reduces the cast time of your next Lesser Healing Wave, Healing Wave, or Chain Heal by $s1%.", "hash": "48076aecc817d219", "src": "db2@1.60.1.70291"}
-{"id": 1227088, "field": "aura", "en": "Cast time of your next Lesser Healing Wave, Healing Wave, or Chain Heal spell reduced by $s1%.", "hash": "818b57863c2c8beb", "src": "db2@1.60.1.70291"}
-{"id": 1227093, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Restoration 2P Bonus", "hash": "eb1e96592187b9e8", "src": "db2@1.60.1.70291"}
-{"id": 1227093, "field": "description", "en": "Heals from your Earth Shield have a $s1% chance to make your next cast time heal instant cast.", "hash": "33442dfd4821cc32", "src": "db2@1.60.1.70291"}
-{"id": 1227099, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Restoration 4P Bonus", "hash": "da019bdc0c59c5cf", "src": "db2@1.60.1.70291"}
-{"id": 1227099, "field": "description", "en": "Your Healing Wave and Lesser Healing Wave also heal your Earth Shield target for $s1% as much, if that is a different target.", "hash": "3e304e89e747cd0f", "src": "db2@1.60.1.70291"}
-{"id": 1227108, "field": "name", "en": "Healing Waves", "hash": "46f00f90fc0f360a", "src": "db2@1.60.1.70291"}
-{"id": 1227111, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Restoration 6P Bonus", "hash": "c8e4a15ff72bd1a5", "src": "db2@1.60.1.70291"}
-{"id": 1227111, "field": "description", "en": "Your Chain Heal jumps to $s1 additional targets and its magnitude reduces $s2% less per jump.", "hash": "334bd51153324d8b", "src": "db2@1.60.1.70291"}
-{"id": 1227128, "field": "name", "en": "[DNT] Lifebloom Instant Heal Tracker", "hash": "388d0a9dd89bf4ea", "src": "db2@1.60.1.70291"}
-{"id": 1227153, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Tank 2P Bonus", "hash": "0f26bade50c38919", "src": "db2@1.60.1.70291"}
-{"id": 1227153, "field": "description", "en": "Your Shock spells activate your Shield Mastery rune ability, and the effect of Shield Mastery can now stack up to $s1 times.", "hash": "f5d10fd32e14bbaa", "src": "db2@1.60.1.70291"}
-{"id": 1227155, "field": "name", "en": "Shield Mastery", "hash": "5e7eedf979fc4ac6", "src": "db2@1.60.1.70291"}
-{"id": 1227159, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Tank 4P Bonus", "hash": "fe09c05c3b959500", "src": "db2@1.60.1.70291"}
-{"id": 1227159, "field": "description", "en": "Each time your Lightning Shield deals damage, you heal for $s1% of the damage it dealt, no more than once every $s2 sec.", "hash": "de3b1bd65368c7e4", "src": "db2@1.60.1.70291"}
-{"id": 1227160, "field": "name", "en": "Spark of Life", "hash": "1a7cd32d7b88b763", "src": "db2@1.60.1.70291"}
-{"id": 1227164, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Tank 6P Bonus", "hash": "ececc5df2667a0e7", "src": "db2@1.60.1.70291"}
-{"id": 1227164, "field": "description", "en": "Your Shield Mastery stacks also reduce the cast time of your Lava Burst by $s1% per stack. Lava Burst no longer consumes Maelstrom Weapon charges.", "hash": "399b80aeda06a33b", "src": "db2@1.60.1.70291"}
-{"id": 1227175, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warlock - Damage 2P Bonus", "hash": "22b60b6b15fb864c", "src": "db2@1.60.1.70291"}
-{"id": 1227175, "field": "description", "en": "Your Shadow and Fire non-periodic critical strikes cause the target to Burn for $s1% of the damage they deal over $1227177d.", "hash": "021ac618ffed1778", "src": "db2@1.60.1.70291"}
-{"id": 1227177, "field": "name", "en": "Burn", "hash": "08f6dfd745521419", "src": "db2@1.60.1.70291"}
-{"id": 1227177, "field": "aura", "en": "Burning.", "hash": "faec4c732f533e08", "src": "db2@1.60.1.70291"}
-{"id": 1227180, "field": "name", "en": "Burn", "hash": "08f6dfd745521419", "src": "db2@1.60.1.70291"}
-{"id": 1227186, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warlock - Damage 4P Bonus", "hash": "119910ee00cd9233", "src": "db2@1.60.1.70291"}
-{"id": 1227186, "field": "description", "en": "Your Shadow Bolt, Haunt, Chaos Bolt, Shadow Cleave, and Soul Fire deal $s1% more damage to targets afflicted with your Corruption.", "hash": "fc2d1b7b64fba90a", "src": "db2@1.60.1.70291"}
-{"id": 1227196, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warlock - Damage 6P Bonus", "hash": "007c1671eb9f9e09", "src": "db2@1.60.1.70291"}
-{"id": 1227196, "field": "description", "en": "Your periodic critical strikes grant $1227200s1% spellcasting haste for $1227200d, and your Backdraft grants an additional $s2% spellcasting haste.", "hash": "889565239c280e7b", "src": "db2@1.60.1.70291"}
-{"id": 1227200, "field": "name", "en": "Wickedness", "hash": "8762f47274ee832a", "src": "db2@1.60.1.70291"}
-{"id": 1227200, "field": "aura", "en": "Spellcasting haste increased by $w1%.", "hash": "0f60ce954fa84da4", "src": "db2@1.60.1.70291"}
-{"id": 1227204, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warlock - Tank 4P Bonus", "hash": "19c5d51822dcf5ce", "src": "db2@1.60.1.70291"}
-{"id": 1227204, "field": "description", "en": "You heal for $s1% of all damage done by your Corruption. This healing is increased to $s2% if the target is also afflicted with your Drain Life.", "hash": "e500dc4e1013bc8a", "src": "db2@1.60.1.70291"}
-{"id": 1227207, "field": "name", "en": "Filthy Lucre", "hash": "e0ee84e29db1fce5", "src": "db2@1.60.1.70291"}
-{"id": 1227214, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warlock - Tank 2P Bonus", "hash": "2ae2cf95380ae9e7", "src": "db2@1.60.1.70291"}
-{"id": 1227214, "field": "description", "en": "Your Shadow Cleave now applies your Corruption Rank 7 to every target it hits but its duration is only $1223963d.", "hash": "0fb8057d99596b73", "src": "db2@1.60.1.70291"}
-{"id": 1227228, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warlock - Tank 6P Bonus", "hash": "08a8da9b0daf01b5", "src": "db2@1.60.1.70291"}
-{"id": 1227228, "field": "description", "en": "Your Infernal Armor now also increases all magical damage you deal by $440882s1% and lasts an additional ${$m1/1000} sec.", "hash": "a83b102973064ae2", "src": "db2@1.60.1.70291"}
-{"id": 1227231, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warrior - Damage 2P Bonus", "hash": "bb6c818587d61844", "src": "db2@1.60.1.70291"}
-{"id": 1227231, "field": "description", "en": "Your Heroic Strike, Cleave, and Quick Strike damage is increased by $s2% while in Battle Stance or Berserker Stance. Your Cleave strikes $s1 additional target and can trigger Blood Surge.", "hash": "085c450ed32a2879", "src": "db2@1.60.1.70291"}
-{"id": 1227232, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warrior - Damage 4P Bonus", "hash": "aa4f870872a8242b", "src": "db2@1.60.1.70291"}
-{"id": 1227232, "field": "description", "en": "Each time you hit a target with Whirlwind, Heroic Strike, Quick Strike, or Cleave, the damage of your next Slam is increased by $1234005s1%, stacking up to $1234005u times.", "hash": "6e0b8c343fd83a39", "src": "db2@1.60.1.70291"}
-{"id": 1227234, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warrior - Damage 6P Bonus", "hash": "99328c8b5d7a3012", "src": "db2@1.60.1.70291"}
-{"id": 1227234, "field": "description", "en": "Each time Deep Wounds deals damage, it reduces the remaining cooldown on your Whirlwind by $s1 sec. Whirlwind deals $s2% increased damage to targets afflicted with your Deep Wounds.", "hash": "81685309e1121e1c", "src": "db2@1.60.1.70291"}
-{"id": 1227237, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warrior - Protection 2P Bonus", "hash": "e9ee632f823562ea", "src": "db2@1.60.1.70291"}
-{"id": 1227237, "field": "description", "en": "Your Shockwave deals $s1% increased damage and its cooldown is reduced by ${$m2/1000}.1 sec each time you hit a target with Heroic Strike or Cleave.", "hash": "8f2389fcb2c45ec1", "src": "db2@1.60.1.70291"}
-{"id": 1227242, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warrior - Protection 4P Bonus", "hash": "d8d168b26d076ed1", "src": "db2@1.60.1.70291"}
-{"id": 1227242, "field": "description", "en": "Your Recklessness, Retaliation, and Shield Wall abilities no longer share a cooldown. Additionally, your Recklessness ability lasts ${$m1/1000} sec longer, and while it is active you gain $s2% of your Defense Skill over 300 as Strength. ", "hash": "4b0f569f1cad1df4", "src": "db2@1.60.1.70291"}
-{"id": 1227245, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warrior - Protection 6P Bonus", "hash": "c7b46e3557d97ab8", "src": "db2@1.60.1.70291"}
-{"id": 1227245, "field": "description", "en": "Your abilities no longer have stance requirements. In addition, hits from Revenge, Devastate, or Shield Slam increase the damage done by your next Whirlwind or Execute by $1234067s3%, stacking up to $1234067u times.", "hash": "00b0d496e0ab9a95", "src": "db2@1.60.1.70291"}
-{"id": 1227268, "field": "name", "en": "Torment's Illusion", "hash": "db18f44dc9646c6d", "src": "db2@1.60.1.70291"}
-{"id": 1227298, "field": "name", "en": "Retrieve the Blade", "hash": "25ebaa5104a52c44", "src": "db2@1.60.1.70291"}
-{"id": 1227309, "field": "name", "en": "Retrieve the Blade", "hash": "25ebaa5104a52c44", "src": "db2@1.60.1.70291"}
-{"id": 1227343, "field": "name", "en": "VIP Haute Club Membership", "hash": "49d54b5a00422668", "src": "db2@1.60.1.70291"}
-{"id": 1227343, "field": "description", "en": "Grants you permanent access to the New Avalon tavern without the need to carry a Haute Club Membership Card.\r\n\r\nYou must still be disguised to enter.", "hash": "a3d914eb87cdbf7e", "src": "db2@1.60.1.70291"}
-{"id": 1227358, "field": "name", "en": "Retrieve the Blade", "hash": "25ebaa5104a52c44", "src": "db2@1.60.1.70291"}
-{"id": 1227358, "field": "description", "en": "Briefly stunned by your own ineptitude.", "hash": "68bfe0fbb6221826", "src": "db2@1.60.1.70291"}
-{"id": 1227358, "field": "aura", "en": "Briefly stunned by your own ineptitude.", "hash": "68bfe0fbb6221826", "src": "db2@1.60.1.70291"}
-{"id": 1227368, "field": "name", "en": "Retrieve the Blade", "hash": "25ebaa5104a52c44", "src": "db2@1.60.1.70291"}
-{"id": 1227369, "field": "name", "en": "Searing Flames", "hash": "85fcb0f6babf3bb7", "src": "db2@1.60.1.70291"}
-{"id": 1227369, "field": "description", "en": "Reduce the cast time and global cooldown of Searing Pain and Shadow Cleave by ${$m/-1000}.1 sec for $d.", "hash": "18f4cfb0e2dc6da0", "src": "db2@1.60.1.70291"}
-{"id": 1227369, "field": "aura", "en": "Reduce the cast time and global cooldown of Searing Pain and Shadow Cleave by ${$m/-1000}.1 sec for $d.", "hash": "18f4cfb0e2dc6da0", "src": "db2@1.60.1.70291"}
-{"id": 1227393, "field": "name", "en": "Carrion Swarm", "hash": "c644f259afbb3961", "src": "db2@1.60.1.70291"}
-{"id": 1227406, "field": "name", "en": "Shades of Darkness", "hash": "ccb1a27b2b915d44", "src": "db2@1.60.1.70291"}
-{"id": 1227417, "field": "name", "en": "Eradication", "hash": "012727e937a36cc7", "src": "db2@1.60.1.70291"}
-{"id": 1227421, "field": "name", "en": "Carrion Volley", "hash": "dcdef5ab186f8af7", "src": "db2@1.60.1.70291"}
-{"id": 1227421, "field": "description", "en": "Inflicts $s2 Frost damage to nearby enemies, reducing their movement speed by $s1% for $d.", "hash": "e513fa9266cd5c3a", "src": "db2@1.60.1.70291"}
-{"id": 1227435, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70291"}
-{"id": 1227435, "field": "description", "en": "Place targets into a deep sleep.", "hash": "d195b15c81607069", "src": "db2@1.60.1.70291"}
-{"id": 1227435, "field": "aura", "en": "Placed into a deep slumber.", "hash": "ae5c2b993ed6f09b", "src": "db2@1.60.1.70291"}
-{"id": 1227466, "field": "name", "en": "Portal", "hash": "452ed066e787debf", "src": "db2@1.60.1.70291"}
-{"id": 1227468, "field": "name", "en": "Portal", "hash": "452ed066e787debf", "src": "db2@1.60.1.70291"}
-{"id": 1227509, "field": "name", "en": "Kodo Bones", "hash": "8a4267c57eb7d882", "src": "db2@1.60.1.70291"}
-{"id": 1227520, "field": "name", "en": "Lightforge", "hash": "2cbe49c2d809a649", "src": "db2@1.60.1.70291"}
-{"id": 1227571, "field": "name", "en": "Radiant Light", "hash": "9e8840d4cf736307", "src": "db2@1.60.1.70291"}
-{"id": 1227571, "field": "description", "en": "$@spelldesc445575", "hash": "b3676a6c2c7857b2", "src": "db2@1.60.1.70291"}
-{"id": 1227572, "field": "name", "en": "Radiant Light", "hash": "9e8840d4cf736307", "src": "db2@1.60.1.70291"}
-{"id": 1227573, "field": "name", "en": "Radiant Light", "hash": "9e8840d4cf736307", "src": "db2@1.60.1.70291"}
-{"id": 1227574, "field": "name", "en": "Radiant Light", "hash": "9e8840d4cf736307", "src": "db2@1.60.1.70291"}
-{"id": 1227574, "field": "description", "en": "Acid rain falls from above, inflicting $s1 Nature damage to players struck.", "hash": "d27b3641aee9d68a", "src": "db2@1.60.1.70291"}
-{"id": 1227576, "field": "name", "en": "Radiant Light", "hash": "9e8840d4cf736307", "src": "db2@1.60.1.70291"}
-{"id": 1227592, "field": "name", "en": "Play Camera Grab Scene (DNT)", "hash": "209c49cbad5bd20c", "src": "db2@1.60.1.70291"}
-{"id": 1227593, "field": "name", "en": "Play Timeline Scene (DNT)", "hash": "16c307ac87f1f078", "src": "db2@1.60.1.70291"}
-{"id": 1227692, "field": "name", "en": "Combat Pulse", "hash": "ff93f6f60c23ad71", "src": "db2@1.60.1.70291"}
-{"id": 1227696, "field": "name", "en": "Hallowed Dive", "hash": "85d5b49406bf5fb7", "src": "db2@1.60.1.70291"}
-{"id": 1227700, "field": "name", "en": "Invisibility", "hash": "757e6c9bba4b0fca", "src": "db2@1.60.1.70291"}
-{"id": 1227703, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70291"}
-{"id": 1227723, "field": "name", "en": "Crusader's Knapsack", "hash": "9520a610c105ebec", "src": "db2@1.60.1.70291"}
-{"id": 1227724, "field": "name", "en": "Crimson Dawnwoven Bag", "hash": "2a6bcb61af20e12f", "src": "db2@1.60.1.70291"}
-{"id": 1227736, "field": "name", "en": "Hallowed Dive", "hash": "85d5b49406bf5fb7", "src": "db2@1.60.1.70291"}
-{"id": 1227736, "field": "description", "en": "$@spelldesc445575", "hash": "b3676a6c2c7857b2", "src": "db2@1.60.1.70291"}
-{"id": 1227737, "field": "name", "en": "Hallowed Dive", "hash": "85d5b49406bf5fb7", "src": "db2@1.60.1.70291"}
-{"id": 1227738, "field": "name", "en": "Hallowed Dive", "hash": "85d5b49406bf5fb7", "src": "db2@1.60.1.70291"}
-{"id": 1227739, "field": "name", "en": "Hallowed Dive", "hash": "85d5b49406bf5fb7", "src": "db2@1.60.1.70291"}
-{"id": 1227739, "field": "description", "en": "Acid rain falls from above, inflicting $s1 Nature damage to players struck.", "hash": "d27b3641aee9d68a", "src": "db2@1.60.1.70291"}
-{"id": 1227739, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70291"}
-{"id": 1227772, "field": "name", "en": "Rapid Fire", "hash": "027f22c8da0522ec", "src": "db2@1.60.1.70291"}
-{"id": 1227772, "field": "description", "en": "Shoot with determination and malicious intent.", "hash": "25c712a100ad9af6", "src": "db2@1.60.1.70291"}
-{"id": 1227772, "field": "aura", "en": "Shooting with determination and malicious intent.", "hash": "805a0a280b46e5cd", "src": "db2@1.60.1.70291"}
-{"id": 1227807, "field": "name", "en": "Hallowed Dive", "hash": "85d5b49406bf5fb7", "src": "db2@1.60.1.70291"}
-{"id": 1227807, "field": "description", "en": "Acid rain falls from above, inflicting $s1 Nature damage to players struck.", "hash": "d27b3641aee9d68a", "src": "db2@1.60.1.70291"}
-{"id": 1227820, "field": "name", "en": "Might of Menethil", "hash": "38bc17843fd19e95", "src": "db2@1.60.1.70291"}
-{"id": 1227820, "field": "description", "en": "Knocks down all nearby enemies for $d.", "hash": "2c47ce6ca40fb222", "src": "db2@1.60.1.70291"}
-{"id": 1227820, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70291"}
-{"id": 1227879, "field": "name", "en": "Hallowed Dive", "hash": "85d5b49406bf5fb7", "src": "db2@1.60.1.70291"}
-{"id": 1227887, "field": "name", "en": "Shoot Arrow", "hash": "16745375164eed4d", "src": "db2@1.60.1.70291"}
-{"id": 1227889, "field": "name", "en": "Shoot Arrow", "hash": "16745375164eed4d", "src": "db2@1.60.1.70291"}
+{"id": 1227019, "field": "name", "en": "Combine Fel-Touched Flowers", "hash": "67d9bcf6d659b546", "src": "db2@1.60.1.70338"}
+{"id": 1227019, "field": "description", "en": "Combine three Fel-Touched Flowers into a potion that will temporarily show demonic shades.", "hash": "d8072b95f1d3793c", "src": "db2@1.60.1.70338"}
+{"id": 1227022, "field": "name", "en": "Demonic Shade Vision", "hash": "9b27df13a98c4429", "src": "db2@1.60.1.70338"}
+{"id": 1227022, "field": "description", "en": "Allows the user to temporarily see demonic shades within Felwood.", "hash": "e41c07dc27c6146a", "src": "db2@1.60.1.70338"}
+{"id": 1227022, "field": "aura", "en": "Temporarily detect demonic shades.", "hash": "adfae0b1047c935b", "src": "db2@1.60.1.70338"}
+{"id": 1227024, "field": "name", "en": "Fel-Touched Shade", "hash": "93b68fc112ac4f5d", "src": "db2@1.60.1.70338"}
+{"id": 1227080, "field": "name", "en": "Read Cookbook", "hash": "3f47f1ca23721a22", "src": "db2@1.60.1.70338"}
+{"id": 1227080, "field": "description", "en": "Teaches you how to cook Carrie Hearthfire's most desirable feast recipes.", "hash": "86b738e261df9fa5", "src": "db2@1.60.1.70338"}
+{"id": 1227088, "field": "name", "en": "Swiftearth", "hash": "ab7c173781c9fa3f", "src": "db2@1.60.1.70338"}
+{"id": 1227088, "field": "description", "en": "Reduces the cast time of your next Lesser Healing Wave, Healing Wave, or Chain Heal by $s1%.", "hash": "48076aecc817d219", "src": "db2@1.60.1.70338"}
+{"id": 1227088, "field": "aura", "en": "Cast time of your next Lesser Healing Wave, Healing Wave, or Chain Heal spell reduced by $s1%.", "hash": "818b57863c2c8beb", "src": "db2@1.60.1.70338"}
+{"id": 1227093, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Restoration 2P Bonus", "hash": "eb1e96592187b9e8", "src": "db2@1.60.1.70338"}
+{"id": 1227093, "field": "description", "en": "Heals from your Earth Shield have a $s1% chance to make your next cast time heal instant cast.", "hash": "33442dfd4821cc32", "src": "db2@1.60.1.70338"}
+{"id": 1227099, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Restoration 4P Bonus", "hash": "da019bdc0c59c5cf", "src": "db2@1.60.1.70338"}
+{"id": 1227099, "field": "description", "en": "Your Healing Wave and Lesser Healing Wave also heal your Earth Shield target for $s1% as much, if that is a different target.", "hash": "3e304e89e747cd0f", "src": "db2@1.60.1.70338"}
+{"id": 1227108, "field": "name", "en": "Healing Waves", "hash": "46f00f90fc0f360a", "src": "db2@1.60.1.70338"}
+{"id": 1227111, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Restoration 6P Bonus", "hash": "c8e4a15ff72bd1a5", "src": "db2@1.60.1.70338"}
+{"id": 1227111, "field": "description", "en": "Your Chain Heal jumps to $s1 additional targets and its magnitude reduces $s2% less per jump.", "hash": "334bd51153324d8b", "src": "db2@1.60.1.70338"}
+{"id": 1227128, "field": "name", "en": "[DNT] Lifebloom Instant Heal Tracker", "hash": "388d0a9dd89bf4ea", "src": "db2@1.60.1.70338"}
+{"id": 1227153, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Tank 2P Bonus", "hash": "0f26bade50c38919", "src": "db2@1.60.1.70338"}
+{"id": 1227153, "field": "description", "en": "Your Shock spells activate your Shield Mastery rune ability, and the effect of Shield Mastery can now stack up to $s1 times.", "hash": "f5d10fd32e14bbaa", "src": "db2@1.60.1.70338"}
+{"id": 1227155, "field": "name", "en": "Shield Mastery", "hash": "5e7eedf979fc4ac6", "src": "db2@1.60.1.70338"}
+{"id": 1227159, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Tank 4P Bonus", "hash": "fe09c05c3b959500", "src": "db2@1.60.1.70338"}
+{"id": 1227159, "field": "description", "en": "Each time your Lightning Shield deals damage, you heal for $s1% of the damage it dealt, no more than once every $s2 sec.", "hash": "de3b1bd65368c7e4", "src": "db2@1.60.1.70338"}
+{"id": 1227160, "field": "name", "en": "Spark of Life", "hash": "1a7cd32d7b88b763", "src": "db2@1.60.1.70338"}
+{"id": 1227164, "field": "name", "en": "S03 - Item - Scarlet Enclave - Shaman - Tank 6P Bonus", "hash": "ececc5df2667a0e7", "src": "db2@1.60.1.70338"}
+{"id": 1227164, "field": "description", "en": "Your Shield Mastery stacks also reduce the cast time of your Lava Burst by $s1% per stack. Lava Burst no longer consumes Maelstrom Weapon charges.", "hash": "399b80aeda06a33b", "src": "db2@1.60.1.70338"}
+{"id": 1227175, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warlock - Damage 2P Bonus", "hash": "22b60b6b15fb864c", "src": "db2@1.60.1.70338"}
+{"id": 1227175, "field": "description", "en": "Your Shadow and Fire non-periodic critical strikes cause the target to Burn for $s1% of the damage they deal over $1227177d.", "hash": "021ac618ffed1778", "src": "db2@1.60.1.70338"}
+{"id": 1227177, "field": "name", "en": "Burn", "hash": "08f6dfd745521419", "src": "db2@1.60.1.70338"}
+{"id": 1227177, "field": "aura", "en": "Burning.", "hash": "faec4c732f533e08", "src": "db2@1.60.1.70338"}
+{"id": 1227180, "field": "name", "en": "Burn", "hash": "08f6dfd745521419", "src": "db2@1.60.1.70338"}
+{"id": 1227186, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warlock - Damage 4P Bonus", "hash": "119910ee00cd9233", "src": "db2@1.60.1.70338"}
+{"id": 1227186, "field": "description", "en": "Your Shadow Bolt, Haunt, Chaos Bolt, Shadow Cleave, and Soul Fire deal $s1% more damage to targets afflicted with your Corruption.", "hash": "fc2d1b7b64fba90a", "src": "db2@1.60.1.70338"}
+{"id": 1227196, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warlock - Damage 6P Bonus", "hash": "007c1671eb9f9e09", "src": "db2@1.60.1.70338"}
+{"id": 1227196, "field": "description", "en": "Your periodic critical strikes grant $1227200s1% spellcasting haste for $1227200d, and your Backdraft grants an additional $s2% spellcasting haste.", "hash": "889565239c280e7b", "src": "db2@1.60.1.70338"}
+{"id": 1227200, "field": "name", "en": "Wickedness", "hash": "8762f47274ee832a", "src": "db2@1.60.1.70338"}
+{"id": 1227200, "field": "aura", "en": "Spellcasting haste increased by $w1%.", "hash": "0f60ce954fa84da4", "src": "db2@1.60.1.70338"}
+{"id": 1227204, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warlock - Tank 4P Bonus", "hash": "19c5d51822dcf5ce", "src": "db2@1.60.1.70338"}
+{"id": 1227204, "field": "description", "en": "You heal for $s1% of all damage done by your Corruption. This healing is increased to $s2% if the target is also afflicted with your Drain Life.", "hash": "e500dc4e1013bc8a", "src": "db2@1.60.1.70338"}
+{"id": 1227207, "field": "name", "en": "Filthy Lucre", "hash": "e0ee84e29db1fce5", "src": "db2@1.60.1.70338"}
+{"id": 1227214, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warlock - Tank 2P Bonus", "hash": "2ae2cf95380ae9e7", "src": "db2@1.60.1.70338"}
+{"id": 1227214, "field": "description", "en": "Your Shadow Cleave now applies your Corruption Rank 7 to every target it hits but its duration is only $1223963d.", "hash": "0fb8057d99596b73", "src": "db2@1.60.1.70338"}
+{"id": 1227228, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warlock - Tank 6P Bonus", "hash": "08a8da9b0daf01b5", "src": "db2@1.60.1.70338"}
+{"id": 1227228, "field": "description", "en": "Your Infernal Armor now also increases all magical damage you deal by $440882s1% and lasts an additional ${$m1/1000} sec.", "hash": "a83b102973064ae2", "src": "db2@1.60.1.70338"}
+{"id": 1227231, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warrior - Damage 2P Bonus", "hash": "bb6c818587d61844", "src": "db2@1.60.1.70338"}
+{"id": 1227231, "field": "description", "en": "Your Heroic Strike, Cleave, and Quick Strike damage is increased by $s2% while in Battle Stance or Berserker Stance. Your Cleave strikes $s1 additional target and can trigger Blood Surge.", "hash": "085c450ed32a2879", "src": "db2@1.60.1.70338"}
+{"id": 1227232, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warrior - Damage 4P Bonus", "hash": "aa4f870872a8242b", "src": "db2@1.60.1.70338"}
+{"id": 1227232, "field": "description", "en": "Each time you hit a target with Whirlwind, Heroic Strike, Quick Strike, or Cleave, the damage of your next Slam is increased by $1234005s1%, stacking up to $1234005u times.", "hash": "6e0b8c343fd83a39", "src": "db2@1.60.1.70338"}
+{"id": 1227234, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warrior - Damage 6P Bonus", "hash": "99328c8b5d7a3012", "src": "db2@1.60.1.70338"}
+{"id": 1227234, "field": "description", "en": "Each time Deep Wounds deals damage, it reduces the remaining cooldown on your Whirlwind by $s1 sec. Whirlwind deals $s2% increased damage to targets afflicted with your Deep Wounds.", "hash": "81685309e1121e1c", "src": "db2@1.60.1.70338"}
+{"id": 1227237, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warrior - Protection 2P Bonus", "hash": "e9ee632f823562ea", "src": "db2@1.60.1.70338"}
+{"id": 1227237, "field": "description", "en": "Your Shockwave deals $s1% increased damage and its cooldown is reduced by ${$m2/1000}.1 sec each time you hit a target with Heroic Strike or Cleave.", "hash": "8f2389fcb2c45ec1", "src": "db2@1.60.1.70338"}
+{"id": 1227242, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warrior - Protection 4P Bonus", "hash": "d8d168b26d076ed1", "src": "db2@1.60.1.70338"}
+{"id": 1227242, "field": "description", "en": "Your Recklessness, Retaliation, and Shield Wall abilities no longer share a cooldown. Additionally, your Recklessness ability lasts ${$m1/1000} sec longer, and while it is active you gain $s2% of your Defense Skill over 300 as Strength. ", "hash": "4b0f569f1cad1df4", "src": "db2@1.60.1.70338"}
+{"id": 1227245, "field": "name", "en": "S03 - Item - Scarlet Enclave - Warrior - Protection 6P Bonus", "hash": "c7b46e3557d97ab8", "src": "db2@1.60.1.70338"}
+{"id": 1227245, "field": "description", "en": "Your abilities no longer have stance requirements. In addition, hits from Revenge, Devastate, or Shield Slam increase the damage done by your next Whirlwind or Execute by $1234067s3%, stacking up to $1234067u times.", "hash": "00b0d496e0ab9a95", "src": "db2@1.60.1.70338"}
+{"id": 1227268, "field": "name", "en": "Torment's Illusion", "hash": "db18f44dc9646c6d", "src": "db2@1.60.1.70338"}
+{"id": 1227298, "field": "name", "en": "Retrieve the Blade", "hash": "25ebaa5104a52c44", "src": "db2@1.60.1.70338"}
+{"id": 1227309, "field": "name", "en": "Retrieve the Blade", "hash": "25ebaa5104a52c44", "src": "db2@1.60.1.70338"}
+{"id": 1227343, "field": "name", "en": "VIP Haute Club Membership", "hash": "49d54b5a00422668", "src": "db2@1.60.1.70338"}
+{"id": 1227343, "field": "description", "en": "Grants you permanent access to the New Avalon tavern without the need to carry a Haute Club Membership Card.\r\n\r\nYou must still be disguised to enter.", "hash": "a3d914eb87cdbf7e", "src": "db2@1.60.1.70338"}
+{"id": 1227358, "field": "name", "en": "Retrieve the Blade", "hash": "25ebaa5104a52c44", "src": "db2@1.60.1.70338"}
+{"id": 1227358, "field": "description", "en": "Briefly stunned by your own ineptitude.", "hash": "68bfe0fbb6221826", "src": "db2@1.60.1.70338"}
+{"id": 1227358, "field": "aura", "en": "Briefly stunned by your own ineptitude.", "hash": "68bfe0fbb6221826", "src": "db2@1.60.1.70338"}
+{"id": 1227368, "field": "name", "en": "Retrieve the Blade", "hash": "25ebaa5104a52c44", "src": "db2@1.60.1.70338"}
+{"id": 1227369, "field": "name", "en": "Searing Flames", "hash": "85fcb0f6babf3bb7", "src": "db2@1.60.1.70338"}
+{"id": 1227369, "field": "description", "en": "Reduce the cast time and global cooldown of Searing Pain and Shadow Cleave by ${$m/-1000}.1 sec for $d.", "hash": "18f4cfb0e2dc6da0", "src": "db2@1.60.1.70338"}
+{"id": 1227369, "field": "aura", "en": "Reduce the cast time and global cooldown of Searing Pain and Shadow Cleave by ${$m/-1000}.1 sec for $d.", "hash": "18f4cfb0e2dc6da0", "src": "db2@1.60.1.70338"}
+{"id": 1227393, "field": "name", "en": "Carrion Swarm", "hash": "c644f259afbb3961", "src": "db2@1.60.1.70338"}
+{"id": 1227406, "field": "name", "en": "Shades of Darkness", "hash": "ccb1a27b2b915d44", "src": "db2@1.60.1.70338"}
+{"id": 1227417, "field": "name", "en": "Eradication", "hash": "012727e937a36cc7", "src": "db2@1.60.1.70338"}
+{"id": 1227421, "field": "name", "en": "Carrion Volley", "hash": "dcdef5ab186f8af7", "src": "db2@1.60.1.70338"}
+{"id": 1227421, "field": "description", "en": "Inflicts $s2 Frost damage to nearby enemies, reducing their movement speed by $s1% for $d.", "hash": "e513fa9266cd5c3a", "src": "db2@1.60.1.70338"}
+{"id": 1227435, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70338"}
+{"id": 1227435, "field": "description", "en": "Place targets into a deep sleep.", "hash": "d195b15c81607069", "src": "db2@1.60.1.70338"}
+{"id": 1227435, "field": "aura", "en": "Placed into a deep slumber.", "hash": "ae5c2b993ed6f09b", "src": "db2@1.60.1.70338"}
+{"id": 1227466, "field": "name", "en": "Portal", "hash": "452ed066e787debf", "src": "db2@1.60.1.70338"}
+{"id": 1227468, "field": "name", "en": "Portal", "hash": "452ed066e787debf", "src": "db2@1.60.1.70338"}
+{"id": 1227509, "field": "name", "en": "Kodo Bones", "hash": "8a4267c57eb7d882", "src": "db2@1.60.1.70338"}
+{"id": 1227520, "field": "name", "en": "Lightforge", "hash": "2cbe49c2d809a649", "src": "db2@1.60.1.70338"}
+{"id": 1227571, "field": "name", "en": "Radiant Light", "hash": "9e8840d4cf736307", "src": "db2@1.60.1.70338"}
+{"id": 1227571, "field": "description", "en": "$@spelldesc445575", "hash": "b3676a6c2c7857b2", "src": "db2@1.60.1.70338"}
+{"id": 1227572, "field": "name", "en": "Radiant Light", "hash": "9e8840d4cf736307", "src": "db2@1.60.1.70338"}
+{"id": 1227573, "field": "name", "en": "Radiant Light", "hash": "9e8840d4cf736307", "src": "db2@1.60.1.70338"}
+{"id": 1227574, "field": "name", "en": "Radiant Light", "hash": "9e8840d4cf736307", "src": "db2@1.60.1.70338"}
+{"id": 1227574, "field": "description", "en": "Acid rain falls from above, inflicting $s1 Nature damage to players struck.", "hash": "d27b3641aee9d68a", "src": "db2@1.60.1.70338"}
+{"id": 1227576, "field": "name", "en": "Radiant Light", "hash": "9e8840d4cf736307", "src": "db2@1.60.1.70338"}
+{"id": 1227592, "field": "name", "en": "Play Camera Grab Scene (DNT)", "hash": "209c49cbad5bd20c", "src": "db2@1.60.1.70338"}
+{"id": 1227593, "field": "name", "en": "Play Timeline Scene (DNT)", "hash": "16c307ac87f1f078", "src": "db2@1.60.1.70338"}
+{"id": 1227692, "field": "name", "en": "Combat Pulse", "hash": "ff93f6f60c23ad71", "src": "db2@1.60.1.70338"}
+{"id": 1227696, "field": "name", "en": "Hallowed Dive", "hash": "85d5b49406bf5fb7", "src": "db2@1.60.1.70338"}
+{"id": 1227700, "field": "name", "en": "Invisibility", "hash": "757e6c9bba4b0fca", "src": "db2@1.60.1.70338"}
+{"id": 1227703, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70338"}
+{"id": 1227723, "field": "name", "en": "Crusader's Knapsack", "hash": "9520a610c105ebec", "src": "db2@1.60.1.70338"}
+{"id": 1227724, "field": "name", "en": "Crimson Dawnwoven Bag", "hash": "2a6bcb61af20e12f", "src": "db2@1.60.1.70338"}
+{"id": 1227736, "field": "name", "en": "Hallowed Dive", "hash": "85d5b49406bf5fb7", "src": "db2@1.60.1.70338"}
+{"id": 1227736, "field": "description", "en": "$@spelldesc445575", "hash": "b3676a6c2c7857b2", "src": "db2@1.60.1.70338"}
+{"id": 1227737, "field": "name", "en": "Hallowed Dive", "hash": "85d5b49406bf5fb7", "src": "db2@1.60.1.70338"}
+{"id": 1227738, "field": "name", "en": "Hallowed Dive", "hash": "85d5b49406bf5fb7", "src": "db2@1.60.1.70338"}
+{"id": 1227739, "field": "name", "en": "Hallowed Dive", "hash": "85d5b49406bf5fb7", "src": "db2@1.60.1.70338"}
+{"id": 1227739, "field": "description", "en": "Acid rain falls from above, inflicting $s1 Nature damage to players struck.", "hash": "d27b3641aee9d68a", "src": "db2@1.60.1.70338"}
+{"id": 1227739, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70338"}
+{"id": 1227772, "field": "name", "en": "Rapid Fire", "hash": "027f22c8da0522ec", "src": "db2@1.60.1.70338"}
+{"id": 1227772, "field": "description", "en": "Shoot with determination and malicious intent.", "hash": "25c712a100ad9af6", "src": "db2@1.60.1.70338"}
+{"id": 1227772, "field": "aura", "en": "Shooting with determination and malicious intent.", "hash": "805a0a280b46e5cd", "src": "db2@1.60.1.70338"}
+{"id": 1227807, "field": "name", "en": "Hallowed Dive", "hash": "85d5b49406bf5fb7", "src": "db2@1.60.1.70338"}
+{"id": 1227807, "field": "description", "en": "Acid rain falls from above, inflicting $s1 Nature damage to players struck.", "hash": "d27b3641aee9d68a", "src": "db2@1.60.1.70338"}
+{"id": 1227820, "field": "name", "en": "Might of Menethil", "hash": "38bc17843fd19e95", "src": "db2@1.60.1.70338"}
+{"id": 1227820, "field": "description", "en": "Knocks down all nearby enemies for $d.", "hash": "2c47ce6ca40fb222", "src": "db2@1.60.1.70338"}
+{"id": 1227820, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70338"}
+{"id": 1227879, "field": "name", "en": "Hallowed Dive", "hash": "85d5b49406bf5fb7", "src": "db2@1.60.1.70338"}
+{"id": 1227887, "field": "name", "en": "Shoot Arrow", "hash": "16745375164eed4d", "src": "db2@1.60.1.70338"}
+{"id": 1227889, "field": "name", "en": "Shoot Arrow", "hash": "16745375164eed4d", "src": "db2@1.60.1.70338"}

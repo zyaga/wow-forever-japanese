@@ -1,6 +1,6 @@
-{"id": 219003, "field": "name", "en": "Idle", "hash": "09e28860dfac8125", "src": "db2@1.60.1.70291"}
-{"id": 219003, "field": "description", "en": "Your teammates have reported you for laziness!  Enter PvP combat or you will be marked Inactive and unable to receive Honor Points.", "hash": "bce38590e1c1317b", "src": "db2@1.60.1.70291"}
-{"id": 219003, "field": "aura", "en": "Your teammates have reported you for laziness!  Enter PvP combat or you will be marked Inactive and unable to receive Honor Points.", "hash": "bce38590e1c1317b", "src": "db2@1.60.1.70291"}
-{"id": 219004, "field": "name", "en": "Inactive", "hash": "dabc2f300f7c9634", "src": "db2@1.60.1.70291"}
-{"id": 219004, "field": "description", "en": "Cannot receive Honor Points until you enter PvP combat.\r\nYou will be kicked from the battleground if you remain Inactive.", "hash": "152fece1ba84eb52", "src": "db2@1.60.1.70291"}
-{"id": 219004, "field": "aura", "en": "Cannot receive Honor Points until you enter PvP combat.\r\nYou will be kicked from the battleground if you remain Inactive.", "hash": "152fece1ba84eb52", "src": "db2@1.60.1.70291"}
+{"id": 219003, "field": "name", "en": "Idle", "hash": "09e28860dfac8125", "src": "db2@1.60.1.70338"}
+{"id": 219003, "field": "description", "en": "Your teammates have reported you for laziness!  Enter PvP combat or you will be marked Inactive and unable to receive Honor Points.", "hash": "bce38590e1c1317b", "src": "db2@1.60.1.70338"}
+{"id": 219003, "field": "aura", "en": "Your teammates have reported you for laziness!  Enter PvP combat or you will be marked Inactive and unable to receive Honor Points.", "hash": "bce38590e1c1317b", "src": "db2@1.60.1.70338"}
+{"id": 219004, "field": "name", "en": "Inactive", "hash": "dabc2f300f7c9634", "src": "db2@1.60.1.70338"}
+{"id": 219004, "field": "description", "en": "Cannot receive Honor Points until you enter PvP combat.\r\nYou will be kicked from the battleground if you remain Inactive.", "hash": "152fece1ba84eb52", "src": "db2@1.60.1.70338"}
+{"id": 219004, "field": "aura", "en": "Cannot receive Honor Points until you enter PvP combat.\r\nYou will be kicked from the battleground if you remain Inactive.", "hash": "152fece1ba84eb52", "src": "db2@1.60.1.70338"}

@@ -1,63 +1,63 @@
-{"id": 257029, "field": "name", "en": "Shen'dar Ledgers", "hash": "215fcf24ec7b5160", "src": "db2@1.60.1.70291"}
-{"id": 257029, "field": "description", "en": "An old satchel containing several unbound books of loose parchment.", "hash": "cec2da857d6ecf38", "src": "db2@1.60.1.70291"}
-{"id": 257103, "field": "name", "en": "(DNT) Trophy Axe REUSE", "hash": "0d8eafca4b431ab5", "src": "db2@1.60.1.70291"}
-{"id": 257107, "field": "name", "en": "Shriekling Matriarch's Head", "hash": "7b8722bb6a6a3294", "src": "db2@1.60.1.70291"}
-{"id": 257126, "field": "name", "en": "Heart of the Obliterator", "hash": "d743fc17e13bbfdd", "src": "db2@1.60.1.70291"}
-{"id": 257126, "field": "description", "en": "It has the glow of life, but no warmth.", "hash": "5af3da13873b2a88", "src": "db2@1.60.1.70291"}
-{"id": 257127, "field": "name", "en": "Roasted Zephyrseed Pie", "hash": "efac7b01cdb1c485", "src": "db2@1.60.1.70291"}
-{"id": 257128, "field": "name", "en": "Zephyrseed", "hash": "531ad018ee007c05", "src": "db2@1.60.1.70291"}
-{"id": 257135, "field": "name", "en": "Huntress' Kite Shield", "hash": "d8a34b3a0af28e68", "src": "db2@1.60.1.70291"}
-{"id": 257215, "field": "name", "en": "Rusty Gadget", "hash": "2f55b8dcea5f6b9e", "src": "db2@1.60.1.70291"}
-{"id": 257224, "field": "name", "en": "Cracked Windstone", "hash": "3ff06a18375d8ca6", "src": "db2@1.60.1.70291"}
-{"id": 257226, "field": "name", "en": "Lesser Essence of the Four Winds", "hash": "0ae84d6634bf766e", "src": "db2@1.60.1.70291"}
-{"id": 257228, "field": "name", "en": "Untainted Giblets", "hash": "34052df311985f48", "src": "db2@1.60.1.70291"}
-{"id": 257255, "field": "name", "en": "Highlands Defender's Shield", "hash": "22e83e0790d2f0c0", "src": "db2@1.60.1.70291"}
-{"id": 257257, "field": "name", "en": "Thendal Ranger's Shoes", "hash": "6da08f2a971b3b7c", "src": "db2@1.60.1.70291"}
-{"id": 257263, "field": "name", "en": "Thendal Ranger's Belt", "hash": "79ab99f4ba754ce6", "src": "db2@1.60.1.70291"}
-{"id": 257264, "field": "name", "en": "Thendal Ranger's Gloves", "hash": "9530fe3c07d552eb", "src": "db2@1.60.1.70291"}
-{"id": 257272, "field": "name", "en": "Skychain Belt", "hash": "30fb87af25b29f4c", "src": "db2@1.60.1.70291"}
-{"id": 257273, "field": "name", "en": "Worn Greatblade", "hash": "9e8bbdb77aa5100f", "src": "db2@1.60.1.70291"}
-{"id": 257274, "field": "name", "en": "Flowing Tunic", "hash": "f81ca5791e84ff3f", "src": "db2@1.60.1.70291"}
-{"id": 257275, "field": "name", "en": "Ranger-Apprentice Cape", "hash": "337ab0f494211d5f", "src": "db2@1.60.1.70291"}
-{"id": 257276, "field": "name", "en": "Peacekeeper's Pickhammer", "hash": "a1642a93719e7930", "src": "db2@1.60.1.70291"}
-{"id": 257277, "field": "name", "en": "Windblown Short Cloak", "hash": "4c526609b532eb44", "src": "db2@1.60.1.70291"}
-{"id": 257278, "field": "name", "en": "Plain Skirt", "hash": "bb128cc5685580bf", "src": "db2@1.60.1.70291"}
-{"id": 257280, "field": "name", "en": "Vuldren Hide Bracers", "hash": "2e8764f933b6999d", "src": "db2@1.60.1.70291"}
-{"id": 257281, "field": "name", "en": "Fur-Lined Shoes", "hash": "3b4bf8a44563570f", "src": "db2@1.60.1.70291"}
-{"id": 257282, "field": "name", "en": "Novice's Quarterstaff", "hash": "565d1d5dc0833a21", "src": "db2@1.60.1.70291"}
-{"id": 257283, "field": "name", "en": "Scout Ranger's Dagger", "hash": "5ad8e5233f80b59b", "src": "db2@1.60.1.70291"}
-{"id": 257328, "field": "name", "en": "Highlander Gloves", "hash": "146e428ecb9cc1e7", "src": "db2@1.60.1.70291"}
-{"id": 257329, "field": "name", "en": "Smooth Waistband", "hash": "d1d7ae143ac5f950", "src": "db2@1.60.1.70291"}
-{"id": 257330, "field": "name", "en": "Homestitched Robe", "hash": "7ba8bd2edac08822", "src": "db2@1.60.1.70291"}
-{"id": 257331, "field": "name", "en": "Brass-Banded Bracers", "hash": "192e5d54c7162b9b", "src": "db2@1.60.1.70291"}
-{"id": 257332, "field": "name", "en": "Stained Ritual Dagger", "hash": "7d1f1af697defd62", "src": "db2@1.60.1.70291"}
-{"id": 257333, "field": "name", "en": "Curved Scimitar", "hash": "a79caa8be9cac1e7", "src": "db2@1.60.1.70291"}
-{"id": 257334, "field": "name", "en": "Well-Worn Pants", "hash": "0f36853ab87f7ecd", "src": "db2@1.60.1.70291"}
-{"id": 257335, "field": "name", "en": "Windblown Kilt", "hash": "780c0a0056b65e40", "src": "db2@1.60.1.70291"}
-{"id": 257336, "field": "name", "en": "Peacekeeper's Buckler", "hash": "8e66b0d70cddc85d", "src": "db2@1.60.1.70291"}
-{"id": 257337, "field": "name", "en": "Solid Copper Club", "hash": "3f306355f3cc017b", "src": "db2@1.60.1.70291"}
-{"id": 257338, "field": "name", "en": "Valanaar Chain Gloves", "hash": "a2ea5e24495915b6", "src": "db2@1.60.1.70291"}
-{"id": 257339, "field": "name", "en": "Skysilk Wristguards", "hash": "5e09aca8622bf882", "src": "db2@1.60.1.70291"}
-{"id": 257340, "field": "name", "en": "Farmer's Field Boots", "hash": "89f9074915cd8288", "src": "db2@1.60.1.70291"}
-{"id": 257341, "field": "name", "en": "Wind-Worn Boots", "hash": "9979e519453e0e7a", "src": "db2@1.60.1.70291"}
-{"id": 257342, "field": "name", "en": "Elite Peacekeeper's Leggings", "hash": "ac3a86c7263abef1", "src": "db2@1.60.1.70291"}
-{"id": 257343, "field": "name", "en": "Balanced Quarterstaff", "hash": "b5aa2fe5cbc971c8", "src": "db2@1.60.1.70291"}
-{"id": 257344, "field": "name", "en": "Skywatcher's Vestments", "hash": "a749efb3380a2466", "src": "db2@1.60.1.70291"}
-{"id": 257345, "field": "name", "en": "Honed Greathammer", "hash": "5efc220565cd1db0", "src": "db2@1.60.1.70291"}
-{"id": 257346, "field": "name", "en": "Quickblade's Dagger", "hash": "907476a6bf74fc68", "src": "db2@1.60.1.70291"}
-{"id": 257348, "field": "name", "en": "Essence of Innovation", "hash": "a8f69c228e05f064", "src": "db2@1.60.1.70291"}
-{"id": 257348, "field": "description", "en": "Contains the very spark of creativity.", "hash": "8c5b2473a4087177", "src": "db2@1.60.1.70291"}
-{"id": 257517, "field": "name", "en": "Ultimate Necromancy Staff", "hash": "a959200a6712b9ee", "src": "db2@1.60.1.70291"}
-{"id": 257517, "field": "description", "en": "Resurrect the fallen Khan.", "hash": "941c111c0188fe4e", "src": "db2@1.60.1.70291"}
-{"id": 257685, "field": "name", "en": "Totem Tote", "hash": "6aa1fe0e01aef944", "src": "db2@1.60.1.70291"}
-{"id": 257685, "field": "description", "en": "Packed to the brim with totems used by the centaur as currency. Delivering this to one of the rivaling clans is sure to earn their favor.", "hash": "60cf6f0d955ca345", "src": "db2@1.60.1.70291"}
-{"id": 257808, "field": "name", "en": "Parcel of Mail", "hash": "ecd0cd22c6a087ce", "src": "db2@1.60.1.70291"}
-{"id": 257808, "field": "description", "en": "Letters and packages for delivery to Everlook.", "hash": "1659230819a2f2fd", "src": "db2@1.60.1.70291"}
-{"id": 257809, "field": "name", "en": "Parcel of Mail", "hash": "ecd0cd22c6a087ce", "src": "db2@1.60.1.70291"}
-{"id": 257809, "field": "description", "en": "Letters and packages for delivery to Mount Hyjal.", "hash": "a8d1552c5bdb0904", "src": "db2@1.60.1.70291"}
-{"id": 257878, "field": "name", "en": "Highlander's Chain Vest", "hash": "d4085513da022ba3", "src": "db2@1.60.1.70291"}
-{"id": 257879, "field": "name", "en": "Prideclaw Hide Armor", "hash": "8e718fabf8b1d52c", "src": "db2@1.60.1.70291"}
-{"id": 257941, "field": "name", "en": "Windsong Crawler Meat", "hash": "726e8fd430837375", "src": "db2@1.60.1.70291"}
-{"id": 257942, "field": "name", "en": "Vulgara's Head", "hash": "50ffe857830864c2", "src": "db2@1.60.1.70291"}
-{"id": 257943, "field": "name", "en": "Hunter's Simple Cloak", "hash": "b06c57f621d992f0", "src": "db2@1.60.1.70291"}
-{"id": 257945, "field": "name", "en": "Pilfered Windstone", "hash": "f8af91f4daf44b6e", "src": "db2@1.60.1.70291"}
+{"id": 257029, "field": "name", "en": "Shen'dar Ledgers", "hash": "215fcf24ec7b5160", "src": "db2@1.60.1.70338"}
+{"id": 257029, "field": "description", "en": "An old satchel containing several unbound books of loose parchment.", "hash": "cec2da857d6ecf38", "src": "db2@1.60.1.70338"}
+{"id": 257103, "field": "name", "en": "(DNT) Trophy Axe REUSE", "hash": "0d8eafca4b431ab5", "src": "db2@1.60.1.70338"}
+{"id": 257107, "field": "name", "en": "Shriekling Matriarch's Head", "hash": "7b8722bb6a6a3294", "src": "db2@1.60.1.70338"}
+{"id": 257126, "field": "name", "en": "Heart of the Obliterator", "hash": "d743fc17e13bbfdd", "src": "db2@1.60.1.70338"}
+{"id": 257126, "field": "description", "en": "It has the glow of life, but no warmth.", "hash": "5af3da13873b2a88", "src": "db2@1.60.1.70338"}
+{"id": 257127, "field": "name", "en": "Roasted Zephyrseed Pie", "hash": "efac7b01cdb1c485", "src": "db2@1.60.1.70338"}
+{"id": 257128, "field": "name", "en": "Zephyrseed", "hash": "531ad018ee007c05", "src": "db2@1.60.1.70338"}
+{"id": 257135, "field": "name", "en": "Huntress' Kite Shield", "hash": "d8a34b3a0af28e68", "src": "db2@1.60.1.70338"}
+{"id": 257215, "field": "name", "en": "Rusty Gadget", "hash": "2f55b8dcea5f6b9e", "src": "db2@1.60.1.70338"}
+{"id": 257224, "field": "name", "en": "Cracked Windstone", "hash": "3ff06a18375d8ca6", "src": "db2@1.60.1.70338"}
+{"id": 257226, "field": "name", "en": "Lesser Essence of the Four Winds", "hash": "0ae84d6634bf766e", "src": "db2@1.60.1.70338"}
+{"id": 257228, "field": "name", "en": "Untainted Giblets", "hash": "34052df311985f48", "src": "db2@1.60.1.70338"}
+{"id": 257255, "field": "name", "en": "Highlands Defender's Shield", "hash": "22e83e0790d2f0c0", "src": "db2@1.60.1.70338"}
+{"id": 257257, "field": "name", "en": "Thendal Ranger's Shoes", "hash": "6da08f2a971b3b7c", "src": "db2@1.60.1.70338"}
+{"id": 257263, "field": "name", "en": "Thendal Ranger's Belt", "hash": "79ab99f4ba754ce6", "src": "db2@1.60.1.70338"}
+{"id": 257264, "field": "name", "en": "Thendal Ranger's Gloves", "hash": "9530fe3c07d552eb", "src": "db2@1.60.1.70338"}
+{"id": 257272, "field": "name", "en": "Skychain Belt", "hash": "30fb87af25b29f4c", "src": "db2@1.60.1.70338"}
+{"id": 257273, "field": "name", "en": "Worn Greatblade", "hash": "9e8bbdb77aa5100f", "src": "db2@1.60.1.70338"}
+{"id": 257274, "field": "name", "en": "Flowing Tunic", "hash": "f81ca5791e84ff3f", "src": "db2@1.60.1.70338"}
+{"id": 257275, "field": "name", "en": "Ranger-Apprentice Cape", "hash": "337ab0f494211d5f", "src": "db2@1.60.1.70338"}
+{"id": 257276, "field": "name", "en": "Peacekeeper's Pickhammer", "hash": "a1642a93719e7930", "src": "db2@1.60.1.70338"}
+{"id": 257277, "field": "name", "en": "Windblown Short Cloak", "hash": "4c526609b532eb44", "src": "db2@1.60.1.70338"}
+{"id": 257278, "field": "name", "en": "Plain Skirt", "hash": "bb128cc5685580bf", "src": "db2@1.60.1.70338"}
+{"id": 257280, "field": "name", "en": "Vuldren Hide Bracers", "hash": "2e8764f933b6999d", "src": "db2@1.60.1.70338"}
+{"id": 257281, "field": "name", "en": "Fur-Lined Shoes", "hash": "3b4bf8a44563570f", "src": "db2@1.60.1.70338"}
+{"id": 257282, "field": "name", "en": "Novice's Quarterstaff", "hash": "565d1d5dc0833a21", "src": "db2@1.60.1.70338"}
+{"id": 257283, "field": "name", "en": "Scout Ranger's Dagger", "hash": "5ad8e5233f80b59b", "src": "db2@1.60.1.70338"}
+{"id": 257328, "field": "name", "en": "Highlander Gloves", "hash": "146e428ecb9cc1e7", "src": "db2@1.60.1.70338"}
+{"id": 257329, "field": "name", "en": "Smooth Waistband", "hash": "d1d7ae143ac5f950", "src": "db2@1.60.1.70338"}
+{"id": 257330, "field": "name", "en": "Homestitched Robe", "hash": "7ba8bd2edac08822", "src": "db2@1.60.1.70338"}
+{"id": 257331, "field": "name", "en": "Brass-Banded Bracers", "hash": "192e5d54c7162b9b", "src": "db2@1.60.1.70338"}
+{"id": 257332, "field": "name", "en": "Stained Ritual Dagger", "hash": "7d1f1af697defd62", "src": "db2@1.60.1.70338"}
+{"id": 257333, "field": "name", "en": "Curved Scimitar", "hash": "a79caa8be9cac1e7", "src": "db2@1.60.1.70338"}
+{"id": 257334, "field": "name", "en": "Well-Worn Pants", "hash": "0f36853ab87f7ecd", "src": "db2@1.60.1.70338"}
+{"id": 257335, "field": "name", "en": "Windblown Kilt", "hash": "780c0a0056b65e40", "src": "db2@1.60.1.70338"}
+{"id": 257336, "field": "name", "en": "Peacekeeper's Buckler", "hash": "8e66b0d70cddc85d", "src": "db2@1.60.1.70338"}
+{"id": 257337, "field": "name", "en": "Solid Copper Club", "hash": "3f306355f3cc017b", "src": "db2@1.60.1.70338"}
+{"id": 257338, "field": "name", "en": "Valanaar Chain Gloves", "hash": "a2ea5e24495915b6", "src": "db2@1.60.1.70338"}
+{"id": 257339, "field": "name", "en": "Skysilk Wristguards", "hash": "5e09aca8622bf882", "src": "db2@1.60.1.70338"}
+{"id": 257340, "field": "name", "en": "Farmer's Field Boots", "hash": "89f9074915cd8288", "src": "db2@1.60.1.70338"}
+{"id": 257341, "field": "name", "en": "Wind-Worn Boots", "hash": "9979e519453e0e7a", "src": "db2@1.60.1.70338"}
+{"id": 257342, "field": "name", "en": "Elite Peacekeeper's Leggings", "hash": "ac3a86c7263abef1", "src": "db2@1.60.1.70338"}
+{"id": 257343, "field": "name", "en": "Balanced Quarterstaff", "hash": "b5aa2fe5cbc971c8", "src": "db2@1.60.1.70338"}
+{"id": 257344, "field": "name", "en": "Skywatcher's Vestments", "hash": "a749efb3380a2466", "src": "db2@1.60.1.70338"}
+{"id": 257345, "field": "name", "en": "Honed Greathammer", "hash": "5efc220565cd1db0", "src": "db2@1.60.1.70338"}
+{"id": 257346, "field": "name", "en": "Quickblade's Dagger", "hash": "907476a6bf74fc68", "src": "db2@1.60.1.70338"}
+{"id": 257348, "field": "name", "en": "Essence of Innovation", "hash": "a8f69c228e05f064", "src": "db2@1.60.1.70338"}
+{"id": 257348, "field": "description", "en": "Contains the very spark of creativity.", "hash": "8c5b2473a4087177", "src": "db2@1.60.1.70338"}
+{"id": 257517, "field": "name", "en": "Ultimate Necromancy Staff", "hash": "a959200a6712b9ee", "src": "db2@1.60.1.70338"}
+{"id": 257517, "field": "description", "en": "Resurrect the fallen Khan.", "hash": "941c111c0188fe4e", "src": "db2@1.60.1.70338"}
+{"id": 257685, "field": "name", "en": "Totem Tote", "hash": "6aa1fe0e01aef944", "src": "db2@1.60.1.70338"}
+{"id": 257685, "field": "description", "en": "Packed to the brim with totems used by the centaur as currency. Delivering this to one of the rivaling clans is sure to earn their favor.", "hash": "60cf6f0d955ca345", "src": "db2@1.60.1.70338"}
+{"id": 257808, "field": "name", "en": "Parcel of Mail", "hash": "ecd0cd22c6a087ce", "src": "db2@1.60.1.70338"}
+{"id": 257808, "field": "description", "en": "Letters and packages for delivery to Everlook.", "hash": "1659230819a2f2fd", "src": "db2@1.60.1.70338"}
+{"id": 257809, "field": "name", "en": "Parcel of Mail", "hash": "ecd0cd22c6a087ce", "src": "db2@1.60.1.70338"}
+{"id": 257809, "field": "description", "en": "Letters and packages for delivery to Mount Hyjal.", "hash": "a8d1552c5bdb0904", "src": "db2@1.60.1.70338"}
+{"id": 257878, "field": "name", "en": "Highlander's Chain Vest", "hash": "d4085513da022ba3", "src": "db2@1.60.1.70338"}
+{"id": 257879, "field": "name", "en": "Prideclaw Hide Armor", "hash": "8e718fabf8b1d52c", "src": "db2@1.60.1.70338"}
+{"id": 257941, "field": "name", "en": "Windsong Crawler Meat", "hash": "726e8fd430837375", "src": "db2@1.60.1.70338"}
+{"id": 257942, "field": "name", "en": "Vulgara's Head", "hash": "50ffe857830864c2", "src": "db2@1.60.1.70338"}
+{"id": 257943, "field": "name", "en": "Hunter's Simple Cloak", "hash": "b06c57f621d992f0", "src": "db2@1.60.1.70338"}
+{"id": 257945, "field": "name", "en": "Pilfered Windstone", "hash": "f8af91f4daf44b6e", "src": "db2@1.60.1.70338"}

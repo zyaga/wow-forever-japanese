@@ -1,120 +1,120 @@
-{"id": 248001, "field": "name", "en": "Lost Book", "hash": "639d88d7865785b6", "src": "db2@1.60.1.70291"}
-{"id": 248001, "field": "description", "en": "In fairly good condition, for being handled by kobolds.", "hash": "d91ecd39ca8a498d", "src": "db2@1.60.1.70291"}
-{"id": 248002, "field": "name", "en": "Picture Book: Fun with Elementals", "hash": "d05afc207d359da9", "src": "db2@1.60.1.70291"}
-{"id": 248002, "field": "description", "en": "This book is in pristine condition.", "hash": "6239f1b5faeb1fd7", "src": "db2@1.60.1.70291"}
-{"id": 248003, "field": "name", "en": "Geomancy for Curious Young Wizards", "hash": "a182732af7a76bab", "src": "db2@1.60.1.70291"}
-{"id": 248003, "field": "description", "en": "This beautifully illustrated primer is covered in sticky spiderwebs, like someone recovered it from a spider's nest.", "hash": "d2c6b41021e1b1a9", "src": "db2@1.60.1.70291"}
-{"id": 248004, "field": "name", "en": "Arcane Explainer: Magical Stuff in Simple Words", "hash": "6b9d70290fb89550", "src": "db2@1.60.1.70291"}
-{"id": 248004, "field": "description", "en": "A collection of annotated diagrams illustrating the principles of arcane artificery. It's covered in sticky spiderwebs.", "hash": "02029c4f48cbc239", "src": "db2@1.60.1.70291"}
-{"id": 248005, "field": "name", "en": "Northshire Hammer", "hash": "97cdc44d8a84fffd", "src": "db2@1.60.1.70291"}
-{"id": 248006, "field": "name", "en": "Militia Sword", "hash": "4f119f57e4341332", "src": "db2@1.60.1.70291"}
-{"id": 248007, "field": "name", "en": "Militia Shortblade", "hash": "b06fdf8b22897588", "src": "db2@1.60.1.70291"}
-{"id": 248008, "field": "name", "en": "Apprentice's Spellstaff", "hash": "d1b5cc6e6a3e6f62", "src": "db2@1.60.1.70291"}
+{"id": 248001, "field": "name", "en": "Lost Book", "hash": "639d88d7865785b6", "src": "db2@1.60.1.70338"}
+{"id": 248001, "field": "description", "en": "In fairly good condition, for being handled by kobolds.", "hash": "d91ecd39ca8a498d", "src": "db2@1.60.1.70338"}
+{"id": 248002, "field": "name", "en": "Picture Book: Fun with Elementals", "hash": "d05afc207d359da9", "src": "db2@1.60.1.70338"}
+{"id": 248002, "field": "description", "en": "This book is in pristine condition.", "hash": "6239f1b5faeb1fd7", "src": "db2@1.60.1.70338"}
+{"id": 248003, "field": "name", "en": "Geomancy for Curious Young Wizards", "hash": "a182732af7a76bab", "src": "db2@1.60.1.70338"}
+{"id": 248003, "field": "description", "en": "This beautifully illustrated primer is covered in sticky spiderwebs, like someone recovered it from a spider's nest.", "hash": "d2c6b41021e1b1a9", "src": "db2@1.60.1.70338"}
+{"id": 248004, "field": "name", "en": "Arcane Explainer: Magical Stuff in Simple Words", "hash": "6b9d70290fb89550", "src": "db2@1.60.1.70338"}
+{"id": 248004, "field": "description", "en": "A collection of annotated diagrams illustrating the principles of arcane artificery. It's covered in sticky spiderwebs.", "hash": "02029c4f48cbc239", "src": "db2@1.60.1.70338"}
+{"id": 248005, "field": "name", "en": "Northshire Hammer", "hash": "97cdc44d8a84fffd", "src": "db2@1.60.1.70338"}
+{"id": 248006, "field": "name", "en": "Militia Sword", "hash": "4f119f57e4341332", "src": "db2@1.60.1.70338"}
+{"id": 248007, "field": "name", "en": "Militia Shortblade", "hash": "b06fdf8b22897588", "src": "db2@1.60.1.70338"}
+{"id": 248008, "field": "name", "en": "Apprentice's Spellstaff", "hash": "d1b5cc6e6a3e6f62", "src": "db2@1.60.1.70338"}
 {"id": 248008, "field": "description", "en": "Equip: Increases damage and healing done by magical spells and effects by up to 4.", "hash": "48243bb37fa8887f", "src": "collector@1.60.1.70205"}
-{"id": 248206, "field": "name", "en": "Sealed Craftsman's Writ", "hash": "158e6e929a7ddbe0", "src": "db2@1.60.1.70291"}
-{"id": 248206, "field": "description", "en": "Tear open the envelope to reveal the writ.\nA pending crafting order intercepted in transit. Perhaps you can be the means to its end.", "hash": "752c35f2721c96c4", "src": "db2@1.60.1.70291"}
-{"id": 248549, "field": "name", "en": "Waylaid Crate", "hash": "3ac358515174c57b", "src": "db2@1.60.1.70291"}
-{"id": 248549, "field": "description", "en": "Read the label to identify the shipment.\nAn eagerly awaited shipment that never arrived at its destination. Some of its supplies are missing.", "hash": "be6e1722fbd34ed1", "src": "db2@1.60.1.70291"}
-{"id": 248584, "field": "name", "en": "Monster - Sword, 2h - Kirin Tor", "hash": "cca3695dbeda9c5d", "src": "db2@1.60.1.70291"}
-{"id": 248613, "field": "name", "en": "Lightning in a Bottle", "hash": "085a729f38389731", "src": "db2@1.60.1.70291"}
-{"id": 248613, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.\nThe \"Lightning\" is just mustard.", "hash": "6a50a409c4bbfbf6", "src": "db2@1.60.1.70291"}
-{"id": 248682, "field": "name", "en": "Waylaid Crate: Apprentice Herbs", "hash": "b01cbd92d48d5f90", "src": "db2@1.60.1.70291"}
-{"id": 248682, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\n- $M3 Peacebloom\n- $M4 Silverleaf\n- $M5 Earthroot\n- $M6 Mageroyal\n- $M7 Briarthorn|r", "hash": "66153d7630a9e70c", "src": "db2@1.60.1.70291"}
-{"id": 248683, "field": "name", "en": "Waylaid Crate: Apprentice Ore", "hash": "c9d273d2401526cd", "src": "db2@1.60.1.70291"}
-{"id": 248683, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Copper Ore\r\n- $M4 Tin Ore|r", "hash": "7983c5c68342eac8", "src": "db2@1.60.1.70291"}
-{"id": 248684, "field": "name", "en": "Waylaid Crate: Apprentice Textiles", "hash": "2d6ddbd3b6bfbb52", "src": "db2@1.60.1.70291"}
-{"id": 248684, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Linen Cloth\r\n- $M4 Light Leather", "hash": "a7a4d894bea33802", "src": "db2@1.60.1.70291"}
-{"id": 248685, "field": "name", "en": "Waylaid Crate: Apprentice Curiosities", "hash": "b993552a75ca7b3a", "src": "db2@1.60.1.70291"}
-{"id": 248685, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Strange Dust\r\n- $M4 Greater Magic Essence\r\n- $M5 Small Glimmering Shard\r\n- $M6 Large Glimmering Shard|r", "hash": "179b884a9c45df10", "src": "db2@1.60.1.70291"}
-{"id": 248686, "field": "name", "en": "Waylaid Crate: Journeyman Herbs", "hash": "65ee8d63f41c9a74", "src": "db2@1.60.1.70291"}
-{"id": 248686, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Stranglekelp\r\n- $M4 Bruiseweed\r\n- $M5 Wild Steelbloom\r\n- $M6 Grave Moss\r\n- $M7 Kingsblood", "hash": "fca2bae6805f3b28", "src": "db2@1.60.1.70291"}
-{"id": 248687, "field": "name", "en": "Waylaid Crate: Journeyman Ore", "hash": "7d1c9ad92da3b090", "src": "db2@1.60.1.70291"}
-{"id": 248687, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Silver Ore\r\n- $M4 Iron Ore", "hash": "cf09ae817b671dae", "src": "db2@1.60.1.70291"}
-{"id": 248688, "field": "name", "en": "Waylaid Crate: Journeyman Textiles", "hash": "f888d93e8967c6f4", "src": "db2@1.60.1.70291"}
-{"id": 248688, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Wool Cloth\r\n- $M4 Silk Cloth\r\n- $M5 Medium Leather", "hash": "c7ad40ca5794f667", "src": "db2@1.60.1.70291"}
-{"id": 248689, "field": "name", "en": "Waylaid Crate: Journeyman Curiosities", "hash": "79e207bb0c9d4924", "src": "db2@1.60.1.70291"}
-{"id": 248689, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Soul Dust\r\n- $M4 Greater Astral Essence\r\n- $M5 Small Glowing Shard\r\n- $M6 Large Glowing Shard", "hash": "92f4af49754805be", "src": "db2@1.60.1.70291"}
-{"id": 248690, "field": "name", "en": "Waylaid Crate: Earthly Expert Herbs", "hash": "caea59a9e19d7635", "src": "db2@1.60.1.70291"}
-{"id": 248690, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Liferoot\r\n- $M4 Fadeleaf\r\n- $M5 Goldthorn\r\n- $M6 Khadgar's Whisker", "hash": "fbba70d3c3e30935", "src": "db2@1.60.1.70291"}
-{"id": 248691, "field": "name", "en": "Waylaid Crate: Flowering Expert Herbs", "hash": "7899365037eea832", "src": "db2@1.60.1.70291"}
-{"id": 248691, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Wintersbite\r\n- $M4 Firebloom\r\n- $M5 Purple Lotus\r\n- $M6 Arthas' Tears", "hash": "e4f527271208da56", "src": "db2@1.60.1.70291"}
-{"id": 248692, "field": "name", "en": "Waylaid Crate: Expert Ore", "hash": "b3fc1dcb10a34e79", "src": "db2@1.60.1.70291"}
-{"id": 248692, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Gold Ore\r\n- $M4 Mithril Ore", "hash": "15a2a13863ed6b79", "src": "db2@1.60.1.70291"}
-{"id": 248693, "field": "name", "en": "Waylaid Crate: Expert Textiles", "hash": "85918c0189e8b83e", "src": "db2@1.60.1.70291"}
-{"id": 248693, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Mageweave Cloth\r\n- $M4 Heavy Leather", "hash": "3df4ff4c4be31930", "src": "db2@1.60.1.70291"}
-{"id": 248694, "field": "name", "en": "Waylaid Crate: Expert Curiosities", "hash": "3983e452cd97ad2b", "src": "db2@1.60.1.70291"}
-{"id": 248694, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Vision Dust\r\n- $M4 Greater Mystic Essence\r\n- $M5 Small Radiant Shard\r\n- $M6 Large Radiant Shard", "hash": "9fa6383d8fe5aa60", "src": "db2@1.60.1.70291"}
-{"id": 248695, "field": "name", "en": "Waylaid Crate: Earthly Artisan Herbs", "hash": "7f281f6ff996ebcb", "src": "db2@1.60.1.70291"}
-{"id": 248695, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Golden Sansam\r\n- $M4 Sungrass\r\n- $M5 Blindweed\r\n- $M6 Ghost Mushroom\r\n- $M7 Gromsblood", "hash": "5745d12cded481a0", "src": "db2@1.60.1.70291"}
-{"id": 248696, "field": "name", "en": "Waylaid Crate: Flowering Artisan Herbs", "hash": "5fa30812ac0016f7", "src": "db2@1.60.1.70291"}
-{"id": 248696, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Dreamfoil\r\n- $M4 Mountain Silversage\r\n- $M5 Plaguebloom\r\n- $M6 Icecap", "hash": "86c5d525dfa6fff7", "src": "db2@1.60.1.70291"}
-{"id": 248697, "field": "name", "en": "Waylaid Crate: Artisan Ore", "hash": "10a676aadb671fe8", "src": "db2@1.60.1.70291"}
-{"id": 248697, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Truesilver Ore\r\n- $M4 Thorium Ore\r\n- $M5 Dark Iron Ore", "hash": "82ba0bf23c6994ba", "src": "db2@1.60.1.70291"}
-{"id": 248698, "field": "name", "en": "Waylaid Crate: Artisan Textiles", "hash": "de5bbf9e91762a65", "src": "db2@1.60.1.70291"}
-{"id": 248698, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Runecloth\r\n- $M4 Thick Leather\r\n- $M5 Rugged Leather", "hash": "20e1f34a42809728", "src": "db2@1.60.1.70291"}
-{"id": 248699, "field": "name", "en": "Waylaid Crate: Artisan Curiosities", "hash": "a88cda3a4673efc0", "src": "db2@1.60.1.70291"}
-{"id": 248699, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Dream Dust\r\n- $M4 Greater Nether Essence\r\n- $M5 Small Brilliant Shard\r\n- $M6 Large Brilliant Shard", "hash": "170f9f60c3a28e2f", "src": "db2@1.60.1.70291"}
-{"id": 248702, "field": "name", "en": "Waylaid Crate: Apprentice Fabrics", "hash": "48713be988fd3f73", "src": "db2@1.60.1.70291"}
-{"id": 248702, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Cured Light Hide\r\n- $M4 Bolt of Linen Cloth", "hash": "d0ab91ccb4e1cd5e", "src": "db2@1.60.1.70291"}
-{"id": 248703, "field": "name", "en": "Waylaid Crate: Apprentice Ingots", "hash": "b6becab336c1699c", "src": "db2@1.60.1.70291"}
-{"id": 248703, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Copper Bar\r\n- $M4 Tin Bar\r\n- $M5 Bronze Bar", "hash": "2b9fb06b670e1136", "src": "db2@1.60.1.70291"}
-{"id": 248704, "field": "name", "en": "Waylaid Crate: Apprentice Parts", "hash": "3c0142e99643c90b", "src": "db2@1.60.1.70291"}
-{"id": 248704, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Handful of Copper Bolts\r\n- $M4 Copper Tube\r\n- $M5 Copper Modulator", "hash": "262b3ebba50f618f", "src": "db2@1.60.1.70291"}
-{"id": 248705, "field": "name", "en": "Waylaid Crate: Journeyman Fabrics", "hash": "9634dc21919426e3", "src": "db2@1.60.1.70291"}
-{"id": 248705, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Bolt of Woolen Cloth\r\n- $M4 Bolt of Silk Cloth\r\n- $M5 Cured Medium Hide", "hash": "e6b9dfbe963ba3dc", "src": "db2@1.60.1.70291"}
-{"id": 248706, "field": "name", "en": "Waylaid Crate: Journeyman Ingots", "hash": "c11c21e84bc60ace", "src": "db2@1.60.1.70291"}
-{"id": 248706, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Silver Bar\r\n- $M4 Iron Bar", "hash": "fddbc4bdf579ee61", "src": "db2@1.60.1.70291"}
-{"id": 248707, "field": "name", "en": "Waylaid Crate: Journeyman Parts", "hash": "f1d312b5b5d303ef", "src": "db2@1.60.1.70291"}
-{"id": 248707, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Bronze Tube\r\n- $M4 Whirring Bronze Gizmo\r\n- $M5 Bronze Framework\r\n- $M6 Gold Power Core", "hash": "b57e956247e1fc60", "src": "db2@1.60.1.70291"}
-{"id": 248708, "field": "name", "en": "Waylaid Crate: Expert Fabrics", "hash": "1e1f6e1d166cdce3", "src": "db2@1.60.1.70291"}
-{"id": 248708, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Bolt of Mageweave\r\n- $M4 Cured Heavy Hide", "hash": "142238fc352f65d9", "src": "db2@1.60.1.70291"}
-{"id": 248709, "field": "name", "en": "Waylaid Crate: Expert Ingots", "hash": "991bf808d8b2b6d1", "src": "db2@1.60.1.70291"}
-{"id": 248709, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Mithril Bar\r\n- $M4 Steel Bar\r\n- $M5 Gold Bar", "hash": "463a150445276aba", "src": "db2@1.60.1.70291"}
-{"id": 248710, "field": "name", "en": "Waylaid Crate: Expert Parts", "hash": "5ef44b126befd746", "src": "db2@1.60.1.70291"}
-{"id": 248710, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Iron Strut\r\n- $M4 Mithril Tube\r\n- $M5 Unstable Trigger\r\n- $M6 Mithril Casing", "hash": "88268837401e81ad", "src": "db2@1.60.1.70291"}
-{"id": 248711, "field": "name", "en": "Waylaid Crate: Artisan Fabrics", "hash": "150791af9b65ea8b", "src": "db2@1.60.1.70291"}
-{"id": 248711, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Bolt of Runecloth\r\n- $M4 Cured Thick Hide", "hash": "f5d562a7dd2555b4", "src": "db2@1.60.1.70291"}
-{"id": 248712, "field": "name", "en": "Waylaid Crate: Artisan Ingots", "hash": "be2b6b998838e89f", "src": "db2@1.60.1.70291"}
-{"id": 248712, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Dark Iron Bar\r\n- $M4 Truesilver Bar\r\n- $M5 Thorium Bar", "hash": "75656bc171b5f3c6", "src": "db2@1.60.1.70291"}
-{"id": 248713, "field": "name", "en": "Waylaid Crate: Artisan Parts", "hash": "3632f210ef5ca4d6", "src": "db2@1.60.1.70291"}
-{"id": 248713, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Thorium Widget\r\n- $M4 Truesilver Transformer\r\n- $M5 Thorium Tube", "hash": "83d2d58cd702b9c7", "src": "db2@1.60.1.70291"}
-{"id": 248765, "field": "name", "en": "Sealed Apprentice Crate", "hash": "c60eb97f4fc1a39d", "src": "db2@1.60.1.70291"}
-{"id": 248765, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70291"}
-{"id": 248766, "field": "name", "en": "Sealed Journeyman Crate", "hash": "7be089506f50de81", "src": "db2@1.60.1.70291"}
-{"id": 248766, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70291"}
-{"id": 248767, "field": "name", "en": "Sealed Expert Crate", "hash": "bc7263b620831ab0", "src": "db2@1.60.1.70291"}
-{"id": 248767, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70291"}
-{"id": 248768, "field": "name", "en": "Sealed Artisan Crate", "hash": "c95fea9802ca75a6", "src": "db2@1.60.1.70291"}
-{"id": 248768, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70291"}
-{"id": 248769, "field": "name", "en": "Sealed Elite Crate", "hash": "7c24ef01abc0a831", "src": "db2@1.60.1.70291"}
-{"id": 248769, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70291"}
-{"id": 248770, "field": "name", "en": "Sealed Apprentice Crate", "hash": "c60eb97f4fc1a39d", "src": "db2@1.60.1.70291"}
-{"id": 248770, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70291"}
-{"id": 248771, "field": "name", "en": "Sealed Journeyman Crate", "hash": "7be089506f50de81", "src": "db2@1.60.1.70291"}
-{"id": 248771, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70291"}
-{"id": 248772, "field": "name", "en": "Sealed Expert Crate", "hash": "bc7263b620831ab0", "src": "db2@1.60.1.70291"}
-{"id": 248772, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70291"}
-{"id": 248773, "field": "name", "en": "Sealed Artisan Crate", "hash": "c95fea9802ca75a6", "src": "db2@1.60.1.70291"}
-{"id": 248773, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70291"}
-{"id": 248774, "field": "name", "en": "Sealed Elite Crate", "hash": "7c24ef01abc0a831", "src": "db2@1.60.1.70291"}
-{"id": 248774, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70291"}
-{"id": 248775, "field": "name", "en": "Sealed Apprentice Crate", "hash": "c60eb97f4fc1a39d", "src": "db2@1.60.1.70291"}
-{"id": 248775, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70291"}
-{"id": 248776, "field": "name", "en": "Sealed Journeyman Crate", "hash": "7be089506f50de81", "src": "db2@1.60.1.70291"}
-{"id": 248776, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70291"}
-{"id": 248777, "field": "name", "en": "Sealed Expert Crate", "hash": "bc7263b620831ab0", "src": "db2@1.60.1.70291"}
-{"id": 248777, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70291"}
-{"id": 248778, "field": "name", "en": "Sealed Artisan Crate", "hash": "c95fea9802ca75a6", "src": "db2@1.60.1.70291"}
-{"id": 248778, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70291"}
-{"id": 248779, "field": "name", "en": "Sealed Elite Crate", "hash": "7c24ef01abc0a831", "src": "db2@1.60.1.70291"}
-{"id": 248779, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70291"}
-{"id": 248815, "field": "name", "en": "Heavy Thorium Ore", "hash": "91278f9e01a99114", "src": "db2@1.60.1.70291"}
-{"id": 248819, "field": "name", "en": "Fel Crystal", "hash": "35500da274ed6847", "src": "db2@1.60.1.70291"}
-{"id": 248820, "field": "name", "en": "Torbernite", "hash": "246338a635a5e45a", "src": "db2@1.60.1.70291"}
-{"id": 248821, "field": "name", "en": "Demonsage", "hash": "fa74338fd39448f0", "src": "db2@1.60.1.70291"}
-{"id": 248822, "field": "name", "en": "Death Lotus", "hash": "e02813b54d5a2570", "src": "db2@1.60.1.70291"}
-{"id": 248823, "field": "name", "en": "Marefoil", "hash": "6074e4ca109504b4", "src": "db2@1.60.1.70291"}
-{"id": 248824, "field": "name", "en": "Fel Hide", "hash": "4ad2863188a108c4", "src": "db2@1.60.1.70291"}
-{"id": 248825, "field": "name", "en": "Fel Leather", "hash": "24b6939dcb0456fd", "src": "db2@1.60.1.70291"}
-{"id": 248930, "field": "name", "en": "Quinn's Potion", "hash": "cb6486dfee3c2553", "src": "db2@1.60.1.70291"}
-{"id": 248975, "field": "name", "en": "Seed of the Ancients", "hash": "97e7de000be6c8de", "src": "db2@1.60.1.70291"}
+{"id": 248206, "field": "name", "en": "Sealed Craftsman's Writ", "hash": "158e6e929a7ddbe0", "src": "db2@1.60.1.70338"}
+{"id": 248206, "field": "description", "en": "Tear open the envelope to reveal the writ.\nA pending crafting order intercepted in transit. Perhaps you can be the means to its end.", "hash": "752c35f2721c96c4", "src": "db2@1.60.1.70338"}
+{"id": 248549, "field": "name", "en": "Waylaid Crate", "hash": "3ac358515174c57b", "src": "db2@1.60.1.70338"}
+{"id": 248549, "field": "description", "en": "Read the label to identify the shipment.\nAn eagerly awaited shipment that never arrived at its destination. Some of its supplies are missing.", "hash": "be6e1722fbd34ed1", "src": "db2@1.60.1.70338"}
+{"id": 248584, "field": "name", "en": "Monster - Sword, 2h - Kirin Tor", "hash": "cca3695dbeda9c5d", "src": "db2@1.60.1.70338"}
+{"id": 248613, "field": "name", "en": "Lightning in a Bottle", "hash": "085a729f38389731", "src": "db2@1.60.1.70338"}
+{"id": 248613, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.\nThe \"Lightning\" is just mustard.", "hash": "6a50a409c4bbfbf6", "src": "db2@1.60.1.70338"}
+{"id": 248682, "field": "name", "en": "Waylaid Crate: Apprentice Herbs", "hash": "b01cbd92d48d5f90", "src": "db2@1.60.1.70338"}
+{"id": 248682, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\n- $M3 Peacebloom\n- $M4 Silverleaf\n- $M5 Earthroot\n- $M6 Mageroyal\n- $M7 Briarthorn|r", "hash": "66153d7630a9e70c", "src": "db2@1.60.1.70338"}
+{"id": 248683, "field": "name", "en": "Waylaid Crate: Apprentice Ore", "hash": "c9d273d2401526cd", "src": "db2@1.60.1.70338"}
+{"id": 248683, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Copper Ore\r\n- $M4 Tin Ore|r", "hash": "7983c5c68342eac8", "src": "db2@1.60.1.70338"}
+{"id": 248684, "field": "name", "en": "Waylaid Crate: Apprentice Textiles", "hash": "2d6ddbd3b6bfbb52", "src": "db2@1.60.1.70338"}
+{"id": 248684, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Linen Cloth\r\n- $M4 Light Leather", "hash": "a7a4d894bea33802", "src": "db2@1.60.1.70338"}
+{"id": 248685, "field": "name", "en": "Waylaid Crate: Apprentice Curiosities", "hash": "b993552a75ca7b3a", "src": "db2@1.60.1.70338"}
+{"id": 248685, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Strange Dust\r\n- $M4 Greater Magic Essence\r\n- $M5 Small Glimmering Shard\r\n- $M6 Large Glimmering Shard|r", "hash": "179b884a9c45df10", "src": "db2@1.60.1.70338"}
+{"id": 248686, "field": "name", "en": "Waylaid Crate: Journeyman Herbs", "hash": "65ee8d63f41c9a74", "src": "db2@1.60.1.70338"}
+{"id": 248686, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Stranglekelp\r\n- $M4 Bruiseweed\r\n- $M5 Wild Steelbloom\r\n- $M6 Grave Moss\r\n- $M7 Kingsblood", "hash": "fca2bae6805f3b28", "src": "db2@1.60.1.70338"}
+{"id": 248687, "field": "name", "en": "Waylaid Crate: Journeyman Ore", "hash": "7d1c9ad92da3b090", "src": "db2@1.60.1.70338"}
+{"id": 248687, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Silver Ore\r\n- $M4 Iron Ore", "hash": "cf09ae817b671dae", "src": "db2@1.60.1.70338"}
+{"id": 248688, "field": "name", "en": "Waylaid Crate: Journeyman Textiles", "hash": "f888d93e8967c6f4", "src": "db2@1.60.1.70338"}
+{"id": 248688, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Wool Cloth\r\n- $M4 Silk Cloth\r\n- $M5 Medium Leather", "hash": "c7ad40ca5794f667", "src": "db2@1.60.1.70338"}
+{"id": 248689, "field": "name", "en": "Waylaid Crate: Journeyman Curiosities", "hash": "79e207bb0c9d4924", "src": "db2@1.60.1.70338"}
+{"id": 248689, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Soul Dust\r\n- $M4 Greater Astral Essence\r\n- $M5 Small Glowing Shard\r\n- $M6 Large Glowing Shard", "hash": "92f4af49754805be", "src": "db2@1.60.1.70338"}
+{"id": 248690, "field": "name", "en": "Waylaid Crate: Earthly Expert Herbs", "hash": "caea59a9e19d7635", "src": "db2@1.60.1.70338"}
+{"id": 248690, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Liferoot\r\n- $M4 Fadeleaf\r\n- $M5 Goldthorn\r\n- $M6 Khadgar's Whisker", "hash": "fbba70d3c3e30935", "src": "db2@1.60.1.70338"}
+{"id": 248691, "field": "name", "en": "Waylaid Crate: Flowering Expert Herbs", "hash": "7899365037eea832", "src": "db2@1.60.1.70338"}
+{"id": 248691, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Wintersbite\r\n- $M4 Firebloom\r\n- $M5 Purple Lotus\r\n- $M6 Arthas' Tears", "hash": "e4f527271208da56", "src": "db2@1.60.1.70338"}
+{"id": 248692, "field": "name", "en": "Waylaid Crate: Expert Ore", "hash": "b3fc1dcb10a34e79", "src": "db2@1.60.1.70338"}
+{"id": 248692, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Gold Ore\r\n- $M4 Mithril Ore", "hash": "15a2a13863ed6b79", "src": "db2@1.60.1.70338"}
+{"id": 248693, "field": "name", "en": "Waylaid Crate: Expert Textiles", "hash": "85918c0189e8b83e", "src": "db2@1.60.1.70338"}
+{"id": 248693, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Mageweave Cloth\r\n- $M4 Heavy Leather", "hash": "3df4ff4c4be31930", "src": "db2@1.60.1.70338"}
+{"id": 248694, "field": "name", "en": "Waylaid Crate: Expert Curiosities", "hash": "3983e452cd97ad2b", "src": "db2@1.60.1.70338"}
+{"id": 248694, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Vision Dust\r\n- $M4 Greater Mystic Essence\r\n- $M5 Small Radiant Shard\r\n- $M6 Large Radiant Shard", "hash": "9fa6383d8fe5aa60", "src": "db2@1.60.1.70338"}
+{"id": 248695, "field": "name", "en": "Waylaid Crate: Earthly Artisan Herbs", "hash": "7f281f6ff996ebcb", "src": "db2@1.60.1.70338"}
+{"id": 248695, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Golden Sansam\r\n- $M4 Sungrass\r\n- $M5 Blindweed\r\n- $M6 Ghost Mushroom\r\n- $M7 Gromsblood", "hash": "5745d12cded481a0", "src": "db2@1.60.1.70338"}
+{"id": 248696, "field": "name", "en": "Waylaid Crate: Flowering Artisan Herbs", "hash": "5fa30812ac0016f7", "src": "db2@1.60.1.70338"}
+{"id": 248696, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Dreamfoil\r\n- $M4 Mountain Silversage\r\n- $M5 Plaguebloom\r\n- $M6 Icecap", "hash": "86c5d525dfa6fff7", "src": "db2@1.60.1.70338"}
+{"id": 248697, "field": "name", "en": "Waylaid Crate: Artisan Ore", "hash": "10a676aadb671fe8", "src": "db2@1.60.1.70338"}
+{"id": 248697, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Truesilver Ore\r\n- $M4 Thorium Ore\r\n- $M5 Dark Iron Ore", "hash": "82ba0bf23c6994ba", "src": "db2@1.60.1.70338"}
+{"id": 248698, "field": "name", "en": "Waylaid Crate: Artisan Textiles", "hash": "de5bbf9e91762a65", "src": "db2@1.60.1.70338"}
+{"id": 248698, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Runecloth\r\n- $M4 Thick Leather\r\n- $M5 Rugged Leather", "hash": "20e1f34a42809728", "src": "db2@1.60.1.70338"}
+{"id": 248699, "field": "name", "en": "Waylaid Crate: Artisan Curiosities", "hash": "a88cda3a4673efc0", "src": "db2@1.60.1.70338"}
+{"id": 248699, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Dream Dust\r\n- $M4 Greater Nether Essence\r\n- $M5 Small Brilliant Shard\r\n- $M6 Large Brilliant Shard", "hash": "170f9f60c3a28e2f", "src": "db2@1.60.1.70338"}
+{"id": 248702, "field": "name", "en": "Waylaid Crate: Apprentice Fabrics", "hash": "48713be988fd3f73", "src": "db2@1.60.1.70338"}
+{"id": 248702, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Cured Light Hide\r\n- $M4 Bolt of Linen Cloth", "hash": "d0ab91ccb4e1cd5e", "src": "db2@1.60.1.70338"}
+{"id": 248703, "field": "name", "en": "Waylaid Crate: Apprentice Ingots", "hash": "b6becab336c1699c", "src": "db2@1.60.1.70338"}
+{"id": 248703, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Copper Bar\r\n- $M4 Tin Bar\r\n- $M5 Bronze Bar", "hash": "2b9fb06b670e1136", "src": "db2@1.60.1.70338"}
+{"id": 248704, "field": "name", "en": "Waylaid Crate: Apprentice Parts", "hash": "3c0142e99643c90b", "src": "db2@1.60.1.70338"}
+{"id": 248704, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Handful of Copper Bolts\r\n- $M4 Copper Tube\r\n- $M5 Copper Modulator", "hash": "262b3ebba50f618f", "src": "db2@1.60.1.70338"}
+{"id": 248705, "field": "name", "en": "Waylaid Crate: Journeyman Fabrics", "hash": "9634dc21919426e3", "src": "db2@1.60.1.70338"}
+{"id": 248705, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Bolt of Woolen Cloth\r\n- $M4 Bolt of Silk Cloth\r\n- $M5 Cured Medium Hide", "hash": "e6b9dfbe963ba3dc", "src": "db2@1.60.1.70338"}
+{"id": 248706, "field": "name", "en": "Waylaid Crate: Journeyman Ingots", "hash": "c11c21e84bc60ace", "src": "db2@1.60.1.70338"}
+{"id": 248706, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Silver Bar\r\n- $M4 Iron Bar", "hash": "fddbc4bdf579ee61", "src": "db2@1.60.1.70338"}
+{"id": 248707, "field": "name", "en": "Waylaid Crate: Journeyman Parts", "hash": "f1d312b5b5d303ef", "src": "db2@1.60.1.70338"}
+{"id": 248707, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Bronze Tube\r\n- $M4 Whirring Bronze Gizmo\r\n- $M5 Bronze Framework\r\n- $M6 Gold Power Core", "hash": "b57e956247e1fc60", "src": "db2@1.60.1.70338"}
+{"id": 248708, "field": "name", "en": "Waylaid Crate: Expert Fabrics", "hash": "1e1f6e1d166cdce3", "src": "db2@1.60.1.70338"}
+{"id": 248708, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Bolt of Mageweave\r\n- $M4 Cured Heavy Hide", "hash": "142238fc352f65d9", "src": "db2@1.60.1.70338"}
+{"id": 248709, "field": "name", "en": "Waylaid Crate: Expert Ingots", "hash": "991bf808d8b2b6d1", "src": "db2@1.60.1.70338"}
+{"id": 248709, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Mithril Bar\r\n- $M4 Steel Bar\r\n- $M5 Gold Bar", "hash": "463a150445276aba", "src": "db2@1.60.1.70338"}
+{"id": 248710, "field": "name", "en": "Waylaid Crate: Expert Parts", "hash": "5ef44b126befd746", "src": "db2@1.60.1.70338"}
+{"id": 248710, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Iron Strut\r\n- $M4 Mithril Tube\r\n- $M5 Unstable Trigger\r\n- $M6 Mithril Casing", "hash": "88268837401e81ad", "src": "db2@1.60.1.70338"}
+{"id": 248711, "field": "name", "en": "Waylaid Crate: Artisan Fabrics", "hash": "150791af9b65ea8b", "src": "db2@1.60.1.70338"}
+{"id": 248711, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Bolt of Runecloth\r\n- $M4 Cured Thick Hide", "hash": "f5d562a7dd2555b4", "src": "db2@1.60.1.70338"}
+{"id": 248712, "field": "name", "en": "Waylaid Crate: Artisan Ingots", "hash": "be2b6b998838e89f", "src": "db2@1.60.1.70338"}
+{"id": 248712, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Dark Iron Bar\r\n- $M4 Truesilver Bar\r\n- $M5 Thorium Bar", "hash": "75656bc171b5f3c6", "src": "db2@1.60.1.70338"}
+{"id": 248713, "field": "name", "en": "Waylaid Crate: Artisan Parts", "hash": "3632f210ef5ca4d6", "src": "db2@1.60.1.70338"}
+{"id": 248713, "field": "description", "en": "$@spelldesc1308117|cnIQ1:\r\n- $M3 Thorium Widget\r\n- $M4 Truesilver Transformer\r\n- $M5 Thorium Tube", "hash": "83d2d58cd702b9c7", "src": "db2@1.60.1.70338"}
+{"id": 248765, "field": "name", "en": "Sealed Apprentice Crate", "hash": "c60eb97f4fc1a39d", "src": "db2@1.60.1.70338"}
+{"id": 248765, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70338"}
+{"id": 248766, "field": "name", "en": "Sealed Journeyman Crate", "hash": "7be089506f50de81", "src": "db2@1.60.1.70338"}
+{"id": 248766, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70338"}
+{"id": 248767, "field": "name", "en": "Sealed Expert Crate", "hash": "bc7263b620831ab0", "src": "db2@1.60.1.70338"}
+{"id": 248767, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70338"}
+{"id": 248768, "field": "name", "en": "Sealed Artisan Crate", "hash": "c95fea9802ca75a6", "src": "db2@1.60.1.70338"}
+{"id": 248768, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70338"}
+{"id": 248769, "field": "name", "en": "Sealed Elite Crate", "hash": "7c24ef01abc0a831", "src": "db2@1.60.1.70338"}
+{"id": 248769, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70338"}
+{"id": 248770, "field": "name", "en": "Sealed Apprentice Crate", "hash": "c60eb97f4fc1a39d", "src": "db2@1.60.1.70338"}
+{"id": 248770, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70338"}
+{"id": 248771, "field": "name", "en": "Sealed Journeyman Crate", "hash": "7be089506f50de81", "src": "db2@1.60.1.70338"}
+{"id": 248771, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70338"}
+{"id": 248772, "field": "name", "en": "Sealed Expert Crate", "hash": "bc7263b620831ab0", "src": "db2@1.60.1.70338"}
+{"id": 248772, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70338"}
+{"id": 248773, "field": "name", "en": "Sealed Artisan Crate", "hash": "c95fea9802ca75a6", "src": "db2@1.60.1.70338"}
+{"id": 248773, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70338"}
+{"id": 248774, "field": "name", "en": "Sealed Elite Crate", "hash": "7c24ef01abc0a831", "src": "db2@1.60.1.70338"}
+{"id": 248774, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70338"}
+{"id": 248775, "field": "name", "en": "Sealed Apprentice Crate", "hash": "c60eb97f4fc1a39d", "src": "db2@1.60.1.70338"}
+{"id": 248775, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70338"}
+{"id": 248776, "field": "name", "en": "Sealed Journeyman Crate", "hash": "7be089506f50de81", "src": "db2@1.60.1.70338"}
+{"id": 248776, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70338"}
+{"id": 248777, "field": "name", "en": "Sealed Expert Crate", "hash": "bc7263b620831ab0", "src": "db2@1.60.1.70338"}
+{"id": 248777, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70338"}
+{"id": 248778, "field": "name", "en": "Sealed Artisan Crate", "hash": "c95fea9802ca75a6", "src": "db2@1.60.1.70338"}
+{"id": 248778, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70338"}
+{"id": 248779, "field": "name", "en": "Sealed Elite Crate", "hash": "7c24ef01abc0a831", "src": "db2@1.60.1.70338"}
+{"id": 248779, "field": "description", "en": "Deliver the completed crate to your faction's trade representative.", "hash": "3628cc87cb7c6830", "src": "db2@1.60.1.70338"}
+{"id": 248815, "field": "name", "en": "Heavy Thorium Ore", "hash": "91278f9e01a99114", "src": "db2@1.60.1.70338"}
+{"id": 248819, "field": "name", "en": "Fel Crystal", "hash": "35500da274ed6847", "src": "db2@1.60.1.70338"}
+{"id": 248820, "field": "name", "en": "Torbernite", "hash": "246338a635a5e45a", "src": "db2@1.60.1.70338"}
+{"id": 248821, "field": "name", "en": "Demonsage", "hash": "fa74338fd39448f0", "src": "db2@1.60.1.70338"}
+{"id": 248822, "field": "name", "en": "Death Lotus", "hash": "e02813b54d5a2570", "src": "db2@1.60.1.70338"}
+{"id": 248823, "field": "name", "en": "Marefoil", "hash": "6074e4ca109504b4", "src": "db2@1.60.1.70338"}
+{"id": 248824, "field": "name", "en": "Fel Hide", "hash": "4ad2863188a108c4", "src": "db2@1.60.1.70338"}
+{"id": 248825, "field": "name", "en": "Fel Leather", "hash": "24b6939dcb0456fd", "src": "db2@1.60.1.70338"}
+{"id": 248930, "field": "name", "en": "Quinn's Potion", "hash": "cb6486dfee3c2553", "src": "db2@1.60.1.70338"}
+{"id": 248975, "field": "name", "en": "Seed of the Ancients", "hash": "97e7de000be6c8de", "src": "db2@1.60.1.70338"}

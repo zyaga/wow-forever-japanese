@@ -1,26 +1,26 @@
-{"id": 1086, "field": "text", "en": "Place the Toxic Fogger", "hash": "84b3843937f6f040", "src": "wdb@1.60.1.70291"}
-{"id": 1090, "field": "text", "en": "Keep Piznik safe while he mines the mysterious ore", "hash": "d85325e06ce6cf04", "src": "wdb@1.60.1.70291"}
-{"id": 1144, "field": "text", "en": "Help Willix the Importer escape from Razorfen Kraul", "hash": "4212ad82efb83d1b", "src": "wdb@1.60.1.70291"}
+{"id": 1086, "field": "text", "en": "Place the Toxic Fogger", "hash": "84b3843937f6f040", "src": "wdb@1.60.1.70338"}
+{"id": 1090, "field": "text", "en": "Keep Piznik safe while he mines the mysterious ore", "hash": "d85325e06ce6cf04", "src": "wdb@1.60.1.70338"}
+{"id": 1144, "field": "text", "en": "Help Willix the Importer escape from Razorfen Kraul", "hash": "4212ad82efb83d1b", "src": "wdb@1.60.1.70338"}
 {"id": 1173, "field": "text", "en": "Drive Overlord Mok'Morokk from Brackenwall Village", "hash": "c7d01dc684c86c70", "src": "wdb@1.15.9.69722"}
-{"id": 1222, "field": "text", "en": "Help Stinky find Bogbean Leaves", "hash": "82f55d1f9f24fc33", "src": "wdb@1.60.1.70291"}
-{"id": 1249, "field": "text", "en": "Defeat Tapoke Jahn", "hash": "8784c5a766697de0", "src": "wdb@1.60.1.70291"}
-{"id": 1265, "field": "text", "en": "Sentry Point explored", "hash": "d3a636c8e982244f", "src": "wdb@1.60.1.70291"}
-{"id": 1270, "field": "text", "en": "Help Stinky find Bogbean Leaves", "hash": "82f55d1f9f24fc33", "src": "wdb@1.60.1.70291"}
-{"id": 1273, "field": "text", "en": "Question Reethe with Ogron", "hash": "6d2f844f17611da9", "src": "wdb@1.60.1.70291"}
-{"id": 1324, "field": "text", "en": "Subdue Private Hendel", "hash": "2797f7971ec383d1", "src": "wdb@1.60.1.70291"}
-{"id": 1393, "field": "text", "en": "Escort Galen out of the Fallow Sanctuary.", "hash": "17e0f70ef463a02f", "src": "wdb@1.60.1.70291"}
-{"id": 1440, "field": "text", "en": "Rescue Dalinda Malem", "hash": "3d1707603cca431f", "src": "wdb@1.60.1.70245"}
-{"id": 1447, "field": "text", "en": "Defeat Dashel Stonefist", "hash": "f984f72fd2149b7f", "src": "wdb@1.60.1.70291"}
+{"id": 1222, "field": "text", "en": "Help Stinky find Bogbean Leaves", "hash": "82f55d1f9f24fc33", "src": "wdb@1.60.1.70338"}
+{"id": 1249, "field": "text", "en": "Defeat Tapoke Jahn", "hash": "8784c5a766697de0", "src": "wdb@1.60.1.70338"}
+{"id": 1265, "field": "text", "en": "Sentry Point explored", "hash": "d3a636c8e982244f", "src": "wdb@1.60.1.70338"}
+{"id": 1270, "field": "text", "en": "Help Stinky find Bogbean Leaves", "hash": "82f55d1f9f24fc33", "src": "wdb@1.60.1.70338"}
+{"id": 1273, "field": "text", "en": "Question Reethe with Ogron", "hash": "6d2f844f17611da9", "src": "wdb@1.60.1.70338"}
+{"id": 1324, "field": "text", "en": "Subdue Private Hendel", "hash": "2797f7971ec383d1", "src": "wdb@1.60.1.70338"}
+{"id": 1393, "field": "text", "en": "Escort Galen out of the Fallow Sanctuary.", "hash": "17e0f70ef463a02f", "src": "wdb@1.60.1.70338"}
+{"id": 1440, "field": "text", "en": "Rescue Dalinda Malem", "hash": "3d1707603cca431f", "src": "wdb@1.60.1.70338"}
+{"id": 1447, "field": "text", "en": "Defeat Dashel Stonefist", "hash": "f984f72fd2149b7f", "src": "wdb@1.60.1.70338"}
 {"id": 1448, "field": "text", "en": "Search for the Temple of Atal'Hakkar", "hash": "3888600b10d9d818", "src": "wdb@1.15.9.69722"}
 {"id": 1479, "field": "text", "en": "Go to the bank in Darnassus, otherwise known as the Bough of the Eternals.", "hash": "528a1671cb90b1f3", "src": "wdb@1.15.9.69722"}
 {"id": 1558, "field": "text", "en": "Go to the top of the Stonewrought Dam in Loch Modan.", "hash": "87ee0ffc44d1b6eb", "src": "wdb@1.15.9.69722"}
 {"id": 1560, "field": "text", "en": "Lead Tooga to Torta", "hash": "3ba736787746d1ae", "src": "wdb@1.15.9.69722"}
-{"id": 1640, "field": "text", "en": "Beat Bartleby", "hash": "26ecfd0de8d33886", "src": "wdb@1.60.1.70291"}
-{"id": 1651, "field": "text", "en": "Protect Daphne Stilwell", "hash": "34d3c2bd214a826e", "src": "wdb@1.60.1.70291"}
+{"id": 1640, "field": "text", "en": "Beat Bartleby", "hash": "26ecfd0de8d33886", "src": "wdb@1.60.1.70338"}
+{"id": 1651, "field": "text", "en": "Protect Daphne Stilwell", "hash": "34d3c2bd214a826e", "src": "wdb@1.60.1.70338"}
 {"id": 1658, "field": "text", "en": "Scout out the Forsaken's Wickerman Festival.", "hash": "39d07fb82f2a734e", "src": "wdb@1.60.1.70245"}
 {"id": 1687, "field": "text", "en": "Go to the Westfall Lighthouse.", "hash": "b387c48ec37fa5ce", "src": "wdb@1.15.9.69722"}
-{"id": 1699, "field": "text", "en": "Enter the Rethban Caverns", "hash": "e5e3683ebda7c920", "src": "wdb@1.60.1.70291"}
-{"id": 1719, "field": "text", "en": "Step on the grate to begin the Affray", "hash": "36bbc64603e1d67a", "src": "wdb@1.60.1.70291"}
+{"id": 1699, "field": "text", "en": "Enter the Rethban Caverns", "hash": "e5e3683ebda7c920", "src": "wdb@1.60.1.70338"}
+{"id": 1719, "field": "text", "en": "Step on the grate to begin the Affray", "hash": "36bbc64603e1d67a", "src": "wdb@1.60.1.70338"}
 {"id": 1800, "field": "text", "en": "Go to the old Lordaeron Throne Room that lies just before descending into the Undercity.", "hash": "1bb698e19d70f93a", "src": "wdb@1.15.9.69722"}
-{"id": 1950, "field": "text", "en": "Secret phrase found", "hash": "915db56e76fa42c6", "src": "wdb@1.60.1.70291"}
+{"id": 1950, "field": "text", "en": "Secret phrase found", "hash": "915db56e76fa42c6", "src": "wdb@1.60.1.70338"}
 {"id": 1955, "field": "text", "en": "Kill the Demon of the Orb", "hash": "52d023cf8290a299", "src": "wdb@1.15.9.69722"}

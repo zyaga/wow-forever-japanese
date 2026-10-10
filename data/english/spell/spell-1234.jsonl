@@ -1,171 +1,171 @@
-{"id": 1234005, "field": "name", "en": "Slammin'", "hash": "ca5ee0afd1b9f689", "src": "db2@1.60.1.70291"}
-{"id": 1234005, "field": "aura", "en": "Increases damage done by your next Slam by $s1%.", "hash": "a045740ae0220f16", "src": "db2@1.60.1.70291"}
-{"id": 1234031, "field": "name", "en": "Reckless Strength", "hash": "4beca55549498315", "src": "db2@1.60.1.70291"}
-{"id": 1234031, "field": "aura", "en": "Strength Increased by $w1.", "hash": "555fd88419f3a946", "src": "db2@1.60.1.70291"}
-{"id": 1234033, "field": "name", "en": "Block Value 07", "hash": "1dfa46283f0e2835", "src": "db2@1.60.1.70291"}
-{"id": 1234033, "field": "description", "en": "Increases the block value of your shield by $s1.", "hash": "b2abc9558bfdc8b6", "src": "db2@1.60.1.70291"}
-{"id": 1234034, "field": "name", "en": "Block Value 09", "hash": "1dfa462a3f0e2837", "src": "db2@1.60.1.70291"}
-{"id": 1234034, "field": "description", "en": "Increases the block value of your shield by $s1.", "hash": "b2abc9558bfdc8b6", "src": "db2@1.60.1.70291"}
-{"id": 1234035, "field": "name", "en": "Block Value 06", "hash": "1dfa46273f0e2834", "src": "db2@1.60.1.70291"}
-{"id": 1234035, "field": "description", "en": "Increases the block value of your shield by $s1.", "hash": "b2abc9558bfdc8b6", "src": "db2@1.60.1.70291"}
-{"id": 1234036, "field": "name", "en": "Block Value 04", "hash": "1dfa46253f0e2832", "src": "db2@1.60.1.70291"}
-{"id": 1234036, "field": "description", "en": "Increases the block value of your shield by $s1.", "hash": "b2abc9558bfdc8b6", "src": "db2@1.60.1.70291"}
-{"id": 1234037, "field": "name", "en": "Block Value 03", "hash": "1dfa46243f0e2831", "src": "db2@1.60.1.70291"}
-{"id": 1234037, "field": "description", "en": "Increases the block value of your shield by $s1.", "hash": "b2abc9558bfdc8b6", "src": "db2@1.60.1.70291"}
-{"id": 1234039, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70291"}
-{"id": 1234040, "field": "name", "en": "Increased Expertise 2/Caster Hit 2", "hash": "c9e37c1ce3c5c842", "src": "db2@1.60.1.70291"}
-{"id": 1234040, "field": "description", "en": "$?a435395|a435884[Improves your chance to hit with all spells and attacks by $460230s1%.][Reduces the chance for your attacks to be dodged or parried by $1213289s1%.]", "hash": "46981872370baa58", "src": "db2@1.60.1.70291"}
-{"id": 1234041, "field": "name", "en": "Increased Hit Chance 2", "hash": "c4bdf101cb9677af", "src": "db2@1.60.1.70291"}
-{"id": 1234041, "field": "description", "en": "Improves your chance to hit by ${$s1}.1%.", "hash": "47acc177fb6340a6", "src": "db2@1.60.1.70291"}
-{"id": 1234042, "field": "name", "en": "Increased Expertise 2", "hash": "957752294bc159a1", "src": "db2@1.60.1.70291"}
-{"id": 1234042, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.", "hash": "7dffe525c9aa95cc", "src": "db2@1.60.1.70291"}
-{"id": 1234046, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70291"}
-{"id": 1234048, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70291"}
-{"id": 1234055, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70291"}
-{"id": 1234056, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70291"}
-{"id": 1234067, "field": "name", "en": "Gladiator's Cunning", "hash": "345d3527ce44c4fe", "src": "db2@1.60.1.70291"}
-{"id": 1234067, "field": "aura", "en": "Increases damage done by your next Whirlwind or Execute by $s1%.", "hash": "61d6969be3bddfb8", "src": "db2@1.60.1.70291"}
-{"id": 1234069, "field": "name", "en": "Punch Harder", "hash": "f2a3751d30188655", "src": "db2@1.60.1.70291"}
-{"id": 1234069, "field": "aura", "en": "Damage done increased by $w1%.", "hash": "3436d245160fce1a", "src": "db2@1.60.1.70291"}
-{"id": 1234071, "field": "name", "en": "Flurry of Blades", "hash": "9c686588bf5264ee", "src": "db2@1.60.1.70291"}
-{"id": 1234071, "field": "aura", "en": "Attack Speed increased by $s1%.", "hash": "5da18de62da4ba3c", "src": "db2@1.60.1.70291"}
-{"id": 1234085, "field": "name", "en": "Increase Shadow Dam 76", "hash": "a9550bb3c8346eed", "src": "db2@1.60.1.70291"}
-{"id": 1234085, "field": "description", "en": "Increases damage done by Shadow spells and effects by up to $s1.", "hash": "f6473b19fc5c4f99", "src": "db2@1.60.1.70291"}
-{"id": 1234086, "field": "name", "en": "Increase Shadow Dam 73", "hash": "a9550bb0c8346eea", "src": "db2@1.60.1.70291"}
-{"id": 1234086, "field": "description", "en": "Increases damage done by Shadow spells and effects by up to $s1.", "hash": "f6473b19fc5c4f99", "src": "db2@1.60.1.70291"}
-{"id": 1234196, "field": "name", "en": "Invisibility and Stealth Detection", "hash": "8563c35412a38acc", "src": "db2@1.60.1.70291"}
-{"id": 1234213, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70291"}
-{"id": 1234214, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70291"}
-{"id": 1234253, "field": "name", "en": "Heating the Blade", "hash": "609d6a903d93a4b8", "src": "db2@1.60.1.70291"}
-{"id": 1234253, "field": "description", "en": "Use the ancient flames created from the branches of Nordassil to heat the blade. ", "hash": "2fc2f133288cfc14", "src": "db2@1.60.1.70291"}
-{"id": 1234256, "field": "name", "en": "DO NOT TRANSLATE", "hash": "c36d4c98bec2b30d", "src": "db2@1.60.1.70291"}
-{"id": 1234299, "field": "name", "en": "Leogan", "hash": "a72a32731064eee8", "src": "db2@1.60.1.70291"}
-{"id": 1234299, "field": "description", "en": "The Global Cooldown of your Exorcism and Holy Wrath spells is reduced by ${$m1/-1000}.1 seconds.", "hash": "d78a911609e05f7c", "src": "db2@1.60.1.70291"}
-{"id": 1234299, "field": "aura", "en": "The Global Cooldown of your offensive spells is reduced by ${$m1/-1000}.1 seconds.", "hash": "a6d72f7b412d2cd7", "src": "db2@1.60.1.70291"}
-{"id": 1234306, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70291"}
-{"id": 1234307, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70291"}
-{"id": 1234318, "field": "name", "en": "Hack and Smash", "hash": "6dab5183cef41991", "src": "db2@1.60.1.70291"}
-{"id": 1234318, "field": "description", "en": "The damage increases from Mercy's and Crimson Cleaver's effects are increased by $s1%.", "hash": "fd7ffa0930327efa", "src": "db2@1.60.1.70291"}
-{"id": 1234320, "field": "name", "en": "Epoch's End", "hash": "f5737eb88d88e71e", "src": "db2@1.60.1.70291"}
-{"id": 1234320, "field": "aura", "en": "Magic follows you in this space like a ripple, leaving an echo of where you are in time.", "hash": "41aa39fcd8166b9d", "src": "db2@1.60.1.70291"}
-{"id": 1234325, "field": "name", "en": "Waiting to Resurrect", "hash": "88781a944ddd7d6e", "src": "db2@1.60.1.70291"}
-{"id": 1234326, "field": "name", "en": "Scarlet Smashbringer", "hash": "dccc27ebd9fa6ac9", "src": "db2@1.60.1.70291"}
-{"id": 1234326, "field": "description", "en": "The Global Cooldown of your Shock, Lightning, and Lava Burst spells is reduced by ${$m1/-1000}.1 seconds.", "hash": "2c6b772bf7331cfb", "src": "db2@1.60.1.70291"}
-{"id": 1234326, "field": "aura", "en": "The Global Cooldown of your offensive spells is reduced by ${$m1/-1000}.1 seconds.", "hash": "a6d72f7b412d2cd7", "src": "db2@1.60.1.70291"}
-{"id": 1234343, "field": "name", "en": "[DNT] 15s Delay", "hash": "678cb0d5fc490478", "src": "db2@1.60.1.70291"}
-{"id": 1234347, "field": "name", "en": "Ignite Flesh", "hash": "cfd5a4b3103320eb", "src": "db2@1.60.1.70291"}
-{"id": 1234347, "field": "aura", "en": "Deals $s1 damage every $t1 sec.", "hash": "2af65718435cbcd2", "src": "db2@1.60.1.70291"}
-{"id": 1234350, "field": "name", "en": "[DNT] Remove Cannonballs", "hash": "7ba91ee9d5ace186", "src": "db2@1.60.1.70291"}
-{"id": 1234352, "field": "name", "en": "[DNT] Consume Cannonball", "hash": "f15839203e67072f", "src": "db2@1.60.1.70291"}
-{"id": 1234354, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70291"}
-{"id": 1234355, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70291"}
-{"id": 1234540, "field": "name", "en": "Ignite", "hash": "d796fe5c5427e0c5", "src": "db2@1.60.1.70291"}
-{"id": 1234540, "field": "description", "en": "Inflicts $s1 Fire damage to an enemy every $t1 sec. for $d.", "hash": "999bb95c89eb13b9", "src": "db2@1.60.1.70291"}
-{"id": 1234540, "field": "aura", "en": "$s1 Fire damage inflicted every $t1 sec.", "hash": "5a5656deae0c1567", "src": "db2@1.60.1.70291"}
-{"id": 1234542, "field": "name", "en": "Redeemed", "hash": "c7184561a71c2f00", "src": "db2@1.60.1.70291"}
-{"id": 1234542, "field": "aura", "en": "All healing done increased by $s1%.", "hash": "454f76bea1b20f66", "src": "db2@1.60.1.70291"}
-{"id": 1234545, "field": "name", "en": "Immolation Aura", "hash": "cc524f5d6efe9a15", "src": "db2@1.60.1.70291"}
-{"id": 1234580, "field": "name", "en": "[DNT] Transform Precast Visual", "hash": "3b4d1dcc74fbc93e", "src": "db2@1.60.1.70291"}
-{"id": 1234584, "field": "name", "en": "Carrion Swarm", "hash": "c644f259afbb3961", "src": "db2@1.60.1.70291"}
-{"id": 1234584, "field": "description", "en": "$@spelldesc1231836", "hash": "952666791510211a", "src": "db2@1.60.1.70291"}
-{"id": 1234584, "field": "aura", "en": "$@spellaura1231836", "hash": "8f5db06dbcafd004", "src": "db2@1.60.1.70291"}
-{"id": 1234592, "field": "name", "en": "Opening", "hash": "c8c8439c6bc312c3", "src": "db2@1.60.1.70291"}
-{"id": 1234593, "field": "name", "en": "Dragon Tracker", "hash": "b484a53564cc084b", "src": "db2@1.60.1.70291"}
-{"id": 1234593, "field": "description", "en": "Shows the location of all nearby dragons on the minimap for $d.", "hash": "366067ee5f55a9e0", "src": "db2@1.60.1.70291"}
-{"id": 1234594, "field": "name", "en": "Soul Claim", "hash": "ad88f6fb2fb199f5", "src": "db2@1.60.1.70291"}
-{"id": 1234594, "field": "description", "en": "Claim the promised soul.", "hash": "4fd08b9fd52279a8", "src": "db2@1.60.1.70291"}
-{"id": 1234595, "field": "name", "en": "Vanish", "hash": "33fc8f163ea666f6", "src": "db2@1.60.1.70291"}
-{"id": 1234596, "field": "name", "en": "Create", "hash": "b25d3b61e697ac2e", "src": "db2@1.60.1.70291"}
-{"id": 1234597, "field": "name", "en": "[DNT] Summon Scarlet Cannoneer", "hash": "edb2bab9e4e52726", "src": "db2@1.60.1.70291"}
-{"id": 1234598, "field": "name", "en": "Imbue Wand", "hash": "3b92df0a7451a4d8", "src": "db2@1.60.1.70291"}
-{"id": 1234598, "field": "description", "en": "Imbue with wild magic.", "hash": "90fdaadc3e970f5e", "src": "db2@1.60.1.70291"}
-{"id": 1234675, "field": "name", "en": "Bubble Beam", "hash": "083ae1ef1d147118", "src": "db2@1.60.1.70291"}
-{"id": 1234682, "field": "name", "en": "[DNT] Putress Prison", "hash": "1713229f6abe4ce6", "src": "db2@1.60.1.70291"}
-{"id": 1234703, "field": "name", "en": "Controller Timer", "hash": "3676a58beef2f0cb", "src": "db2@1.60.1.70291"}
-{"id": 1234708, "field": "name", "en": "Toxic Pool", "hash": "477ea733c8ac5177", "src": "db2@1.60.1.70291"}
-{"id": 1234708, "field": "description", "en": "Deals $s1 Nature damage every $t1 sec.", "hash": "9d4ac814ae8948bc", "src": "db2@1.60.1.70291"}
-{"id": 1234708, "field": "aura", "en": "Deals $s1 Nature damage every $t1 sec.", "hash": "9d4ac814ae8948bc", "src": "db2@1.60.1.70291"}
-{"id": 1234722, "field": "name", "en": "Carrion Swarm", "hash": "c644f259afbb3961", "src": "db2@1.60.1.70291"}
-{"id": 1234744, "field": "name", "en": "[DNT] Arena Victory", "hash": "e3e49166ee17039a", "src": "db2@1.60.1.70291"}
-{"id": 1234770, "field": "name", "en": "Dreamform", "hash": "911e26f6d210cf6a", "src": "db2@1.60.1.70291"}
-{"id": 1234792, "field": "name", "en": "Haste", "hash": "fcf907630eec3351", "src": "db2@1.60.1.70291"}
-{"id": 1234792, "field": "description", "en": "Increases your attack speed by $s1%.", "hash": "dd436c29dbcc4bee", "src": "db2@1.60.1.70291"}
-{"id": 1234793, "field": "name", "en": "Haste", "hash": "fcf907630eec3351", "src": "db2@1.60.1.70291"}
-{"id": 1234793, "field": "description", "en": "Increases your attack speed by $s1%.", "hash": "dd436c29dbcc4bee", "src": "db2@1.60.1.70291"}
-{"id": 1234804, "field": "name", "en": "Carrion Swarm", "hash": "c644f259afbb3961", "src": "db2@1.60.1.70291"}
-{"id": 1234805, "field": "name", "en": "Increased Expertise 2/Caster Hit 2", "hash": "c9e37c1ce3c5c842", "src": "db2@1.60.1.70291"}
-{"id": 1234805, "field": "description", "en": "$?a435395|a435884[Improves your chance to hit with all spells and attacks by $460230s1%.][Reduces the chance for your attacks to be dodged or parried by $1213289s1%.]", "hash": "46981872370baa58", "src": "db2@1.60.1.70291"}
-{"id": 1234806, "field": "name", "en": "Increased Hit Chance 2", "hash": "c4bdf101cb9677af", "src": "db2@1.60.1.70291"}
-{"id": 1234806, "field": "description", "en": "Improves your chance to hit by ${$s1}.1%.", "hash": "47acc177fb6340a6", "src": "db2@1.60.1.70291"}
-{"id": 1234807, "field": "name", "en": "Increased Expertise 2", "hash": "957752294bc159a1", "src": "db2@1.60.1.70291"}
-{"id": 1234807, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.", "hash": "7dffe525c9aa95cc", "src": "db2@1.60.1.70291"}
-{"id": 1234809, "field": "name", "en": "Carrion Swarm", "hash": "c644f259afbb3961", "src": "db2@1.60.1.70291"}
-{"id": 1234812, "field": "name", "en": "Spiritual Protection", "hash": "5adde44f1810c364", "src": "db2@1.60.1.70291"}
-{"id": 1234812, "field": "description", "en": "Reduces damage inflicted to all nearby Spirits by $s1%.", "hash": "6e293676e90405b3", "src": "db2@1.60.1.70291"}
-{"id": 1234812, "field": "aura", "en": "Reduces damage inflicted to all nearby Spirits by $s1%.", "hash": "6e293676e90405b3", "src": "db2@1.60.1.70291"}
-{"id": 1234823, "field": "name", "en": "Stealth", "hash": "87e718bee5e635c1", "src": "db2@1.60.1.70291"}
-{"id": 1234823, "field": "description", "en": "Allows the rogue to sneak around, but reduces your speed by $s3%.  Lasts until cancelled.", "hash": "e555a300f38d7c37", "src": "db2@1.60.1.70291"}
-{"id": 1234823, "field": "aura", "en": "Stealthed.  Movement slowed by $s3%.", "hash": "baa30eb03bf0e7e0", "src": "db2@1.60.1.70291"}
-{"id": 1234825, "field": "name", "en": "On Fire!!", "hash": "898cf2f15213365f", "src": "db2@1.60.1.70291"}
-{"id": 1234831, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70291"}
-{"id": 1234831, "field": "description", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70291"}
-{"id": 1234831, "field": "aura", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70291"}
-{"id": 1234842, "field": "name", "en": "Permanent Feign Death", "hash": "8d0656e759e47199", "src": "db2@1.60.1.70291"}
-{"id": 1234852, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70291"}
-{"id": 1234856, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70291"}
-{"id": 1234862, "field": "name", "en": "Fire's Glow", "hash": "da117c1b09a6b5ac", "src": "db2@1.60.1.70291"}
-{"id": 1234862, "field": "description", "en": "Increase the Spirit of nearby party members by $M1.", "hash": "23ae3f5e01538d19", "src": "db2@1.60.1.70291"}
-{"id": 1234863, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70291"}
-{"id": 1234864, "field": "name", "en": "Fire's Glow", "hash": "da117c1b09a6b5ac", "src": "db2@1.60.1.70291"}
-{"id": 1234864, "field": "description", "en": "Increase the Spirit of nearby party members by $M1.", "hash": "23ae3f5e01538d19", "src": "db2@1.60.1.70291"}
-{"id": 1234865, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70291"}
-{"id": 1234865, "field": "description", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70291"}
-{"id": 1234865, "field": "aura", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70291"}
-{"id": 1234866, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70291"}
-{"id": 1234870, "field": "name", "en": "Holy Strike", "hash": "f3fe690d41758a44", "src": "db2@1.60.1.70291"}
-{"id": 1234870, "field": "description", "en": "Consecrates the caster's weapon, inflicting $s1 additional damage on its next attack. All damage inflicted is based on Holy magic.", "hash": "d04665c0cd6af27f", "src": "db2@1.60.1.70291"}
-{"id": 1234891, "field": "name", "en": "[DNT] Arena Victory", "hash": "e3e49166ee17039a", "src": "db2@1.60.1.70291"}
-{"id": 1234892, "field": "name", "en": "[DNT] Spawn Challenge", "hash": "da852efd0e40c273", "src": "db2@1.60.1.70291"}
-{"id": 1234893, "field": "name", "en": "Crusader Strike", "hash": "803d227f2d23d8b5", "src": "db2@1.60.1.70291"}
-{"id": 1234893, "field": "description", "en": "Inflicts $s1 damage to an enemy and increases the Holy damage it takes by $s2 per Crusader Strike. Can be applied up to 5 times. Lasts $d.", "hash": "e1adbda338dac753", "src": "db2@1.60.1.70291"}
-{"id": 1234893, "field": "aura", "en": "Holy damage taken is increased.", "hash": "6508d97f817d05a9", "src": "db2@1.60.1.70291"}
-{"id": 1234894, "field": "name", "en": "Holy Cleave", "hash": "ad8bf8ffe37ec990", "src": "db2@1.60.1.70291"}
-{"id": 1234894, "field": "description", "en": "Inflicts weapon damage plus $s1 to an enemy and its nearest allies, affecting up to $x1 targets.", "hash": "bd91ba0f19e05ae9", "src": "db2@1.60.1.70291"}
-{"id": 1234895, "field": "name", "en": "Fireworks", "hash": "682f427fdbf1928e", "src": "db2@1.60.1.70291"}
-{"id": 1234895, "field": "description", "en": "Victory!", "hash": "84cae0122b39c1e4", "src": "db2@1.60.1.70291"}
-{"id": 1234903, "field": "name", "en": "Dedication", "hash": "b22ed76b2133d474", "src": "db2@1.60.1.70291"}
-{"id": 1234905, "field": "name", "en": "[DNT] Spawn Challenge", "hash": "da852efd0e40c273", "src": "db2@1.60.1.70291"}
-{"id": 1234908, "field": "name", "en": "[DNT] Spawn Challenge", "hash": "da852efd0e40c273", "src": "db2@1.60.1.70291"}
-{"id": 1234937, "field": "name", "en": "(DNT) Hallway Corpse Roar", "hash": "1f551e184abe1a36", "src": "db2@1.60.1.70291"}
-{"id": 1234946, "field": "name", "en": "(DNT) Hallway Corpse Cheer", "hash": "00519e86d88c7e5d", "src": "db2@1.60.1.70291"}
-{"id": 1234951, "field": "name", "en": "(DNT) Hallway Corpse Kneel", "hash": "8d8d22aa2050325c", "src": "db2@1.60.1.70291"}
-{"id": 1234952, "field": "name", "en": "(DNT) Hallway Corpse Laugh", "hash": "9d6119ae1077c93b", "src": "db2@1.60.1.70291"}
-{"id": 1234955, "field": "name", "en": "(DNT) Hallway Corpse Point", "hash": "e57510a1182ed1b7", "src": "db2@1.60.1.70291"}
-{"id": 1234958, "field": "name", "en": "(DNT) Hallway Corpse Shout", "hash": "192faa27eee91987", "src": "db2@1.60.1.70291"}
-{"id": 1234959, "field": "name", "en": "(DNT) Hallway Corpse Stun", "hash": "1f78c518ec01de8a", "src": "db2@1.60.1.70291"}
-{"id": 1234960, "field": "name", "en": "(DNT) Hallway Corpse Exclamation", "hash": "73c018acfe3a34c1", "src": "db2@1.60.1.70291"}
-{"id": 1234961, "field": "name", "en": "(DNT) Hallway Corpse Wave", "hash": "1ffd0253d634c72d", "src": "db2@1.60.1.70291"}
-{"id": 1234962, "field": "name", "en": "(DNT) Hallway Corpse Fall", "hash": "1db5d5f1724c53e2", "src": "db2@1.60.1.70291"}
-{"id": 1234964, "field": "name", "en": "(DNT) Hallway Corpse Cast Directed", "hash": "1cadc708f7fc4753", "src": "db2@1.60.1.70291"}
-{"id": 1234965, "field": "name", "en": "(DNT) Hallway Corpse Cast Omni", "hash": "1c2a5af43599c074", "src": "db2@1.60.1.70291"}
-{"id": 1234967, "field": "name", "en": "Poultry Precision (Guns) 1", "hash": "f180a25c06d03b35", "src": "db2@1.60.1.70291"}
-{"id": 1234968, "field": "name", "en": "Poultry Precision (Guns) 2", "hash": "f180a25d06d03b36", "src": "db2@1.60.1.70291"}
-{"id": 1234972, "field": "name", "en": "Poultry Precision (Guns) - Auto Shot", "hash": "de62d69282a94e97", "src": "db2@1.60.1.70291"}
-{"id": 1234973, "field": "name", "en": "Poultry Precision (Guns) - Arcane Shot", "hash": "2877ce94976774c0", "src": "db2@1.60.1.70291"}
-{"id": 1234976, "field": "name", "en": "Poultry Precision (Guns) - Multi-Shot", "hash": "95eddbb0201fde3c", "src": "db2@1.60.1.70291"}
-{"id": 1234977, "field": "name", "en": "Poultry Precision (Guns) - Scorpid Sting", "hash": "67709f70ad8a61aa", "src": "db2@1.60.1.70291"}
-{"id": 1234978, "field": "name", "en": "Poultry Precision (Guns) - Serpent Sting", "hash": "0eb1c0cac86e85ba", "src": "db2@1.60.1.70291"}
-{"id": 1234979, "field": "name", "en": "Poultry Precision (Guns) - Viper Sting", "hash": "5aa14a19cbd88452", "src": "db2@1.60.1.70291"}
-{"id": 1234980, "field": "name", "en": "Poultry Precision (Guns) - Steady Shot", "hash": "b19c68076442143a", "src": "db2@1.60.1.70291"}
-{"id": 1234981, "field": "name", "en": "Poultry Precision (Guns) - Kill Shot", "hash": "e3c955507aadaab1", "src": "db2@1.60.1.70291"}
-{"id": 1234983, "field": "name", "en": "Poultry Precision (Guns) 3", "hash": "f180a25e06d03b37", "src": "db2@1.60.1.70291"}
-{"id": 1234984, "field": "name", "en": "Poultry Precision (Guns) - Distracting Shot", "hash": "52a8f8394ca45ebd", "src": "db2@1.60.1.70291"}
-{"id": 1234987, "field": "name", "en": "Poultry Precision (Guns) - Tranquilizing Shot", "hash": "874006bfd57cba11", "src": "db2@1.60.1.70291"}
-{"id": 1234990, "field": "name", "en": "Poultry Precision (Guns) - Aimed Shot", "hash": "518de35c67cb2f90", "src": "db2@1.60.1.70291"}
-{"id": 1234991, "field": "name", "en": "Poultry Precision (Guns) - Explosive Shot", "hash": "10b5ba30a46cee91", "src": "db2@1.60.1.70291"}
-{"id": 1234992, "field": "name", "en": "Poultry Precision (Guns) - Explosive Shot Impact", "hash": "3dcfce706ca318f9", "src": "db2@1.60.1.70291"}
-{"id": 1234993, "field": "name", "en": "Poultry Precision (Guns) - Wyvern Sting", "hash": "17d7b1040d1c2dd5", "src": "db2@1.60.1.70291"}
-{"id": 1234994, "field": "name", "en": "Poultry Precision (Guns) - Trap Launcher Freezing", "hash": "1635422f5c4144be", "src": "db2@1.60.1.70291"}
-{"id": 1234997, "field": "name", "en": "Poultry Precision (Guns) - Trap Launcher Frost", "hash": "00435640afd1b33c", "src": "db2@1.60.1.70291"}
-{"id": 1234998, "field": "name", "en": "Poultry Precision (Guns) - Trap Launcher Immolation", "hash": "5312955ac330cf2e", "src": "db2@1.60.1.70291"}
-{"id": 1234999, "field": "name", "en": "Poultry Precision (Guns) - Trap Launcher Explosive", "hash": "ef5eb1d09a815c03", "src": "db2@1.60.1.70291"}
+{"id": 1234005, "field": "name", "en": "Slammin'", "hash": "ca5ee0afd1b9f689", "src": "db2@1.60.1.70338"}
+{"id": 1234005, "field": "aura", "en": "Increases damage done by your next Slam by $s1%.", "hash": "a045740ae0220f16", "src": "db2@1.60.1.70338"}
+{"id": 1234031, "field": "name", "en": "Reckless Strength", "hash": "4beca55549498315", "src": "db2@1.60.1.70338"}
+{"id": 1234031, "field": "aura", "en": "Strength Increased by $w1.", "hash": "555fd88419f3a946", "src": "db2@1.60.1.70338"}
+{"id": 1234033, "field": "name", "en": "Block Value 07", "hash": "1dfa46283f0e2835", "src": "db2@1.60.1.70338"}
+{"id": 1234033, "field": "description", "en": "Increases the block value of your shield by $s1.", "hash": "b2abc9558bfdc8b6", "src": "db2@1.60.1.70338"}
+{"id": 1234034, "field": "name", "en": "Block Value 09", "hash": "1dfa462a3f0e2837", "src": "db2@1.60.1.70338"}
+{"id": 1234034, "field": "description", "en": "Increases the block value of your shield by $s1.", "hash": "b2abc9558bfdc8b6", "src": "db2@1.60.1.70338"}
+{"id": 1234035, "field": "name", "en": "Block Value 06", "hash": "1dfa46273f0e2834", "src": "db2@1.60.1.70338"}
+{"id": 1234035, "field": "description", "en": "Increases the block value of your shield by $s1.", "hash": "b2abc9558bfdc8b6", "src": "db2@1.60.1.70338"}
+{"id": 1234036, "field": "name", "en": "Block Value 04", "hash": "1dfa46253f0e2832", "src": "db2@1.60.1.70338"}
+{"id": 1234036, "field": "description", "en": "Increases the block value of your shield by $s1.", "hash": "b2abc9558bfdc8b6", "src": "db2@1.60.1.70338"}
+{"id": 1234037, "field": "name", "en": "Block Value 03", "hash": "1dfa46243f0e2831", "src": "db2@1.60.1.70338"}
+{"id": 1234037, "field": "description", "en": "Increases the block value of your shield by $s1.", "hash": "b2abc9558bfdc8b6", "src": "db2@1.60.1.70338"}
+{"id": 1234039, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70338"}
+{"id": 1234040, "field": "name", "en": "Increased Expertise 2/Caster Hit 2", "hash": "c9e37c1ce3c5c842", "src": "db2@1.60.1.70338"}
+{"id": 1234040, "field": "description", "en": "$?a435395|a435884[Improves your chance to hit with all spells and attacks by $460230s1%.][Reduces the chance for your attacks to be dodged or parried by $1213289s1%.]", "hash": "46981872370baa58", "src": "db2@1.60.1.70338"}
+{"id": 1234041, "field": "name", "en": "Increased Hit Chance 2", "hash": "c4bdf101cb9677af", "src": "db2@1.60.1.70338"}
+{"id": 1234041, "field": "description", "en": "Improves your chance to hit by ${$s1}.1%.", "hash": "47acc177fb6340a6", "src": "db2@1.60.1.70338"}
+{"id": 1234042, "field": "name", "en": "Increased Expertise 2", "hash": "957752294bc159a1", "src": "db2@1.60.1.70338"}
+{"id": 1234042, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.", "hash": "7dffe525c9aa95cc", "src": "db2@1.60.1.70338"}
+{"id": 1234046, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70338"}
+{"id": 1234048, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70338"}
+{"id": 1234055, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70338"}
+{"id": 1234056, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70338"}
+{"id": 1234067, "field": "name", "en": "Gladiator's Cunning", "hash": "345d3527ce44c4fe", "src": "db2@1.60.1.70338"}
+{"id": 1234067, "field": "aura", "en": "Increases damage done by your next Whirlwind or Execute by $s1%.", "hash": "61d6969be3bddfb8", "src": "db2@1.60.1.70338"}
+{"id": 1234069, "field": "name", "en": "Punch Harder", "hash": "f2a3751d30188655", "src": "db2@1.60.1.70338"}
+{"id": 1234069, "field": "aura", "en": "Damage done increased by $w1%.", "hash": "3436d245160fce1a", "src": "db2@1.60.1.70338"}
+{"id": 1234071, "field": "name", "en": "Flurry of Blades", "hash": "9c686588bf5264ee", "src": "db2@1.60.1.70338"}
+{"id": 1234071, "field": "aura", "en": "Attack Speed increased by $s1%.", "hash": "5da18de62da4ba3c", "src": "db2@1.60.1.70338"}
+{"id": 1234085, "field": "name", "en": "Increase Shadow Dam 76", "hash": "a9550bb3c8346eed", "src": "db2@1.60.1.70338"}
+{"id": 1234085, "field": "description", "en": "Increases damage done by Shadow spells and effects by up to $s1.", "hash": "f6473b19fc5c4f99", "src": "db2@1.60.1.70338"}
+{"id": 1234086, "field": "name", "en": "Increase Shadow Dam 73", "hash": "a9550bb0c8346eea", "src": "db2@1.60.1.70338"}
+{"id": 1234086, "field": "description", "en": "Increases damage done by Shadow spells and effects by up to $s1.", "hash": "f6473b19fc5c4f99", "src": "db2@1.60.1.70338"}
+{"id": 1234196, "field": "name", "en": "Invisibility and Stealth Detection", "hash": "8563c35412a38acc", "src": "db2@1.60.1.70338"}
+{"id": 1234213, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70338"}
+{"id": 1234214, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70338"}
+{"id": 1234253, "field": "name", "en": "Heating the Blade", "hash": "609d6a903d93a4b8", "src": "db2@1.60.1.70338"}
+{"id": 1234253, "field": "description", "en": "Use the ancient flames created from the branches of Nordassil to heat the blade. ", "hash": "2fc2f133288cfc14", "src": "db2@1.60.1.70338"}
+{"id": 1234256, "field": "name", "en": "DO NOT TRANSLATE", "hash": "c36d4c98bec2b30d", "src": "db2@1.60.1.70338"}
+{"id": 1234299, "field": "name", "en": "Leogan", "hash": "a72a32731064eee8", "src": "db2@1.60.1.70338"}
+{"id": 1234299, "field": "description", "en": "The Global Cooldown of your Exorcism and Holy Wrath spells is reduced by ${$m1/-1000}.1 seconds.", "hash": "d78a911609e05f7c", "src": "db2@1.60.1.70338"}
+{"id": 1234299, "field": "aura", "en": "The Global Cooldown of your offensive spells is reduced by ${$m1/-1000}.1 seconds.", "hash": "a6d72f7b412d2cd7", "src": "db2@1.60.1.70338"}
+{"id": 1234306, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70338"}
+{"id": 1234307, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70338"}
+{"id": 1234318, "field": "name", "en": "Hack and Smash", "hash": "6dab5183cef41991", "src": "db2@1.60.1.70338"}
+{"id": 1234318, "field": "description", "en": "The damage increases from Mercy's and Crimson Cleaver's effects are increased by $s1%.", "hash": "fd7ffa0930327efa", "src": "db2@1.60.1.70338"}
+{"id": 1234320, "field": "name", "en": "Epoch's End", "hash": "f5737eb88d88e71e", "src": "db2@1.60.1.70338"}
+{"id": 1234320, "field": "aura", "en": "Magic follows you in this space like a ripple, leaving an echo of where you are in time.", "hash": "41aa39fcd8166b9d", "src": "db2@1.60.1.70338"}
+{"id": 1234325, "field": "name", "en": "Waiting to Resurrect", "hash": "88781a944ddd7d6e", "src": "db2@1.60.1.70338"}
+{"id": 1234326, "field": "name", "en": "Scarlet Smashbringer", "hash": "dccc27ebd9fa6ac9", "src": "db2@1.60.1.70338"}
+{"id": 1234326, "field": "description", "en": "The Global Cooldown of your Shock, Lightning, and Lava Burst spells is reduced by ${$m1/-1000}.1 seconds.", "hash": "2c6b772bf7331cfb", "src": "db2@1.60.1.70338"}
+{"id": 1234326, "field": "aura", "en": "The Global Cooldown of your offensive spells is reduced by ${$m1/-1000}.1 seconds.", "hash": "a6d72f7b412d2cd7", "src": "db2@1.60.1.70338"}
+{"id": 1234343, "field": "name", "en": "[DNT] 15s Delay", "hash": "678cb0d5fc490478", "src": "db2@1.60.1.70338"}
+{"id": 1234347, "field": "name", "en": "Ignite Flesh", "hash": "cfd5a4b3103320eb", "src": "db2@1.60.1.70338"}
+{"id": 1234347, "field": "aura", "en": "Deals $s1 damage every $t1 sec.", "hash": "2af65718435cbcd2", "src": "db2@1.60.1.70338"}
+{"id": 1234350, "field": "name", "en": "[DNT] Remove Cannonballs", "hash": "7ba91ee9d5ace186", "src": "db2@1.60.1.70338"}
+{"id": 1234352, "field": "name", "en": "[DNT] Consume Cannonball", "hash": "f15839203e67072f", "src": "db2@1.60.1.70338"}
+{"id": 1234354, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70338"}
+{"id": 1234355, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70338"}
+{"id": 1234540, "field": "name", "en": "Ignite", "hash": "d796fe5c5427e0c5", "src": "db2@1.60.1.70338"}
+{"id": 1234540, "field": "description", "en": "Inflicts $s1 Fire damage to an enemy every $t1 sec. for $d.", "hash": "999bb95c89eb13b9", "src": "db2@1.60.1.70338"}
+{"id": 1234540, "field": "aura", "en": "$s1 Fire damage inflicted every $t1 sec.", "hash": "5a5656deae0c1567", "src": "db2@1.60.1.70338"}
+{"id": 1234542, "field": "name", "en": "Redeemed", "hash": "c7184561a71c2f00", "src": "db2@1.60.1.70338"}
+{"id": 1234542, "field": "aura", "en": "All healing done increased by $s1%.", "hash": "454f76bea1b20f66", "src": "db2@1.60.1.70338"}
+{"id": 1234545, "field": "name", "en": "Immolation Aura", "hash": "cc524f5d6efe9a15", "src": "db2@1.60.1.70338"}
+{"id": 1234580, "field": "name", "en": "[DNT] Transform Precast Visual", "hash": "3b4d1dcc74fbc93e", "src": "db2@1.60.1.70338"}
+{"id": 1234584, "field": "name", "en": "Carrion Swarm", "hash": "c644f259afbb3961", "src": "db2@1.60.1.70338"}
+{"id": 1234584, "field": "description", "en": "$@spelldesc1231836", "hash": "952666791510211a", "src": "db2@1.60.1.70338"}
+{"id": 1234584, "field": "aura", "en": "$@spellaura1231836", "hash": "8f5db06dbcafd004", "src": "db2@1.60.1.70338"}
+{"id": 1234592, "field": "name", "en": "Opening", "hash": "c8c8439c6bc312c3", "src": "db2@1.60.1.70338"}
+{"id": 1234593, "field": "name", "en": "Dragon Tracker", "hash": "b484a53564cc084b", "src": "db2@1.60.1.70338"}
+{"id": 1234593, "field": "description", "en": "Shows the location of all nearby dragons on the minimap for $d.", "hash": "366067ee5f55a9e0", "src": "db2@1.60.1.70338"}
+{"id": 1234594, "field": "name", "en": "Soul Claim", "hash": "ad88f6fb2fb199f5", "src": "db2@1.60.1.70338"}
+{"id": 1234594, "field": "description", "en": "Claim the promised soul.", "hash": "4fd08b9fd52279a8", "src": "db2@1.60.1.70338"}
+{"id": 1234595, "field": "name", "en": "Vanish", "hash": "33fc8f163ea666f6", "src": "db2@1.60.1.70338"}
+{"id": 1234596, "field": "name", "en": "Create", "hash": "b25d3b61e697ac2e", "src": "db2@1.60.1.70338"}
+{"id": 1234597, "field": "name", "en": "[DNT] Summon Scarlet Cannoneer", "hash": "edb2bab9e4e52726", "src": "db2@1.60.1.70338"}
+{"id": 1234598, "field": "name", "en": "Imbue Wand", "hash": "3b92df0a7451a4d8", "src": "db2@1.60.1.70338"}
+{"id": 1234598, "field": "description", "en": "Imbue with wild magic.", "hash": "90fdaadc3e970f5e", "src": "db2@1.60.1.70338"}
+{"id": 1234675, "field": "name", "en": "Bubble Beam", "hash": "083ae1ef1d147118", "src": "db2@1.60.1.70338"}
+{"id": 1234682, "field": "name", "en": "[DNT] Putress Prison", "hash": "1713229f6abe4ce6", "src": "db2@1.60.1.70338"}
+{"id": 1234703, "field": "name", "en": "Controller Timer", "hash": "3676a58beef2f0cb", "src": "db2@1.60.1.70338"}
+{"id": 1234708, "field": "name", "en": "Toxic Pool", "hash": "477ea733c8ac5177", "src": "db2@1.60.1.70338"}
+{"id": 1234708, "field": "description", "en": "Deals $s1 Nature damage every $t1 sec.", "hash": "9d4ac814ae8948bc", "src": "db2@1.60.1.70338"}
+{"id": 1234708, "field": "aura", "en": "Deals $s1 Nature damage every $t1 sec.", "hash": "9d4ac814ae8948bc", "src": "db2@1.60.1.70338"}
+{"id": 1234722, "field": "name", "en": "Carrion Swarm", "hash": "c644f259afbb3961", "src": "db2@1.60.1.70338"}
+{"id": 1234744, "field": "name", "en": "[DNT] Arena Victory", "hash": "e3e49166ee17039a", "src": "db2@1.60.1.70338"}
+{"id": 1234770, "field": "name", "en": "Dreamform", "hash": "911e26f6d210cf6a", "src": "db2@1.60.1.70338"}
+{"id": 1234792, "field": "name", "en": "Haste", "hash": "fcf907630eec3351", "src": "db2@1.60.1.70338"}
+{"id": 1234792, "field": "description", "en": "Increases your attack speed by $s1%.", "hash": "dd436c29dbcc4bee", "src": "db2@1.60.1.70338"}
+{"id": 1234793, "field": "name", "en": "Haste", "hash": "fcf907630eec3351", "src": "db2@1.60.1.70338"}
+{"id": 1234793, "field": "description", "en": "Increases your attack speed by $s1%.", "hash": "dd436c29dbcc4bee", "src": "db2@1.60.1.70338"}
+{"id": 1234804, "field": "name", "en": "Carrion Swarm", "hash": "c644f259afbb3961", "src": "db2@1.60.1.70338"}
+{"id": 1234805, "field": "name", "en": "Increased Expertise 2/Caster Hit 2", "hash": "c9e37c1ce3c5c842", "src": "db2@1.60.1.70338"}
+{"id": 1234805, "field": "description", "en": "$?a435395|a435884[Improves your chance to hit with all spells and attacks by $460230s1%.][Reduces the chance for your attacks to be dodged or parried by $1213289s1%.]", "hash": "46981872370baa58", "src": "db2@1.60.1.70338"}
+{"id": 1234806, "field": "name", "en": "Increased Hit Chance 2", "hash": "c4bdf101cb9677af", "src": "db2@1.60.1.70338"}
+{"id": 1234806, "field": "description", "en": "Improves your chance to hit by ${$s1}.1%.", "hash": "47acc177fb6340a6", "src": "db2@1.60.1.70338"}
+{"id": 1234807, "field": "name", "en": "Increased Expertise 2", "hash": "957752294bc159a1", "src": "db2@1.60.1.70338"}
+{"id": 1234807, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.", "hash": "7dffe525c9aa95cc", "src": "db2@1.60.1.70338"}
+{"id": 1234809, "field": "name", "en": "Carrion Swarm", "hash": "c644f259afbb3961", "src": "db2@1.60.1.70338"}
+{"id": 1234812, "field": "name", "en": "Spiritual Protection", "hash": "5adde44f1810c364", "src": "db2@1.60.1.70338"}
+{"id": 1234812, "field": "description", "en": "Reduces damage inflicted to all nearby Spirits by $s1%.", "hash": "6e293676e90405b3", "src": "db2@1.60.1.70338"}
+{"id": 1234812, "field": "aura", "en": "Reduces damage inflicted to all nearby Spirits by $s1%.", "hash": "6e293676e90405b3", "src": "db2@1.60.1.70338"}
+{"id": 1234823, "field": "name", "en": "Stealth", "hash": "87e718bee5e635c1", "src": "db2@1.60.1.70338"}
+{"id": 1234823, "field": "description", "en": "Allows the rogue to sneak around, but reduces your speed by $s3%.  Lasts until cancelled.", "hash": "e555a300f38d7c37", "src": "db2@1.60.1.70338"}
+{"id": 1234823, "field": "aura", "en": "Stealthed.  Movement slowed by $s3%.", "hash": "baa30eb03bf0e7e0", "src": "db2@1.60.1.70338"}
+{"id": 1234825, "field": "name", "en": "On Fire!!", "hash": "898cf2f15213365f", "src": "db2@1.60.1.70338"}
+{"id": 1234831, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70338"}
+{"id": 1234831, "field": "description", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70338"}
+{"id": 1234831, "field": "aura", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70338"}
+{"id": 1234842, "field": "name", "en": "Permanent Feign Death", "hash": "8d0656e759e47199", "src": "db2@1.60.1.70338"}
+{"id": 1234852, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70338"}
+{"id": 1234856, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70338"}
+{"id": 1234862, "field": "name", "en": "Fire's Glow", "hash": "da117c1b09a6b5ac", "src": "db2@1.60.1.70338"}
+{"id": 1234862, "field": "description", "en": "Increase the Spirit of nearby party members by $M1.", "hash": "23ae3f5e01538d19", "src": "db2@1.60.1.70338"}
+{"id": 1234863, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70338"}
+{"id": 1234864, "field": "name", "en": "Fire's Glow", "hash": "da117c1b09a6b5ac", "src": "db2@1.60.1.70338"}
+{"id": 1234864, "field": "description", "en": "Increase the Spirit of nearby party members by $M1.", "hash": "23ae3f5e01538d19", "src": "db2@1.60.1.70338"}
+{"id": 1234865, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70338"}
+{"id": 1234865, "field": "description", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70338"}
+{"id": 1234865, "field": "aura", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70338"}
+{"id": 1234866, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70338"}
+{"id": 1234870, "field": "name", "en": "Holy Strike", "hash": "f3fe690d41758a44", "src": "db2@1.60.1.70338"}
+{"id": 1234870, "field": "description", "en": "Consecrates the caster's weapon, inflicting $s1 additional damage on its next attack. All damage inflicted is based on Holy magic.", "hash": "d04665c0cd6af27f", "src": "db2@1.60.1.70338"}
+{"id": 1234891, "field": "name", "en": "[DNT] Arena Victory", "hash": "e3e49166ee17039a", "src": "db2@1.60.1.70338"}
+{"id": 1234892, "field": "name", "en": "[DNT] Spawn Challenge", "hash": "da852efd0e40c273", "src": "db2@1.60.1.70338"}
+{"id": 1234893, "field": "name", "en": "Crusader Strike", "hash": "803d227f2d23d8b5", "src": "db2@1.60.1.70338"}
+{"id": 1234893, "field": "description", "en": "Inflicts $s1 damage to an enemy and increases the Holy damage it takes by $s2 per Crusader Strike. Can be applied up to 5 times. Lasts $d.", "hash": "e1adbda338dac753", "src": "db2@1.60.1.70338"}
+{"id": 1234893, "field": "aura", "en": "Holy damage taken is increased.", "hash": "6508d97f817d05a9", "src": "db2@1.60.1.70338"}
+{"id": 1234894, "field": "name", "en": "Holy Cleave", "hash": "ad8bf8ffe37ec990", "src": "db2@1.60.1.70338"}
+{"id": 1234894, "field": "description", "en": "Inflicts weapon damage plus $s1 to an enemy and its nearest allies, affecting up to $x1 targets.", "hash": "bd91ba0f19e05ae9", "src": "db2@1.60.1.70338"}
+{"id": 1234895, "field": "name", "en": "Fireworks", "hash": "682f427fdbf1928e", "src": "db2@1.60.1.70338"}
+{"id": 1234895, "field": "description", "en": "Victory!", "hash": "84cae0122b39c1e4", "src": "db2@1.60.1.70338"}
+{"id": 1234903, "field": "name", "en": "Dedication", "hash": "b22ed76b2133d474", "src": "db2@1.60.1.70338"}
+{"id": 1234905, "field": "name", "en": "[DNT] Spawn Challenge", "hash": "da852efd0e40c273", "src": "db2@1.60.1.70338"}
+{"id": 1234908, "field": "name", "en": "[DNT] Spawn Challenge", "hash": "da852efd0e40c273", "src": "db2@1.60.1.70338"}
+{"id": 1234937, "field": "name", "en": "(DNT) Hallway Corpse Roar", "hash": "1f551e184abe1a36", "src": "db2@1.60.1.70338"}
+{"id": 1234946, "field": "name", "en": "(DNT) Hallway Corpse Cheer", "hash": "00519e86d88c7e5d", "src": "db2@1.60.1.70338"}
+{"id": 1234951, "field": "name", "en": "(DNT) Hallway Corpse Kneel", "hash": "8d8d22aa2050325c", "src": "db2@1.60.1.70338"}
+{"id": 1234952, "field": "name", "en": "(DNT) Hallway Corpse Laugh", "hash": "9d6119ae1077c93b", "src": "db2@1.60.1.70338"}
+{"id": 1234955, "field": "name", "en": "(DNT) Hallway Corpse Point", "hash": "e57510a1182ed1b7", "src": "db2@1.60.1.70338"}
+{"id": 1234958, "field": "name", "en": "(DNT) Hallway Corpse Shout", "hash": "192faa27eee91987", "src": "db2@1.60.1.70338"}
+{"id": 1234959, "field": "name", "en": "(DNT) Hallway Corpse Stun", "hash": "1f78c518ec01de8a", "src": "db2@1.60.1.70338"}
+{"id": 1234960, "field": "name", "en": "(DNT) Hallway Corpse Exclamation", "hash": "73c018acfe3a34c1", "src": "db2@1.60.1.70338"}
+{"id": 1234961, "field": "name", "en": "(DNT) Hallway Corpse Wave", "hash": "1ffd0253d634c72d", "src": "db2@1.60.1.70338"}
+{"id": 1234962, "field": "name", "en": "(DNT) Hallway Corpse Fall", "hash": "1db5d5f1724c53e2", "src": "db2@1.60.1.70338"}
+{"id": 1234964, "field": "name", "en": "(DNT) Hallway Corpse Cast Directed", "hash": "1cadc708f7fc4753", "src": "db2@1.60.1.70338"}
+{"id": 1234965, "field": "name", "en": "(DNT) Hallway Corpse Cast Omni", "hash": "1c2a5af43599c074", "src": "db2@1.60.1.70338"}
+{"id": 1234967, "field": "name", "en": "Poultry Precision (Guns) 1", "hash": "f180a25c06d03b35", "src": "db2@1.60.1.70338"}
+{"id": 1234968, "field": "name", "en": "Poultry Precision (Guns) 2", "hash": "f180a25d06d03b36", "src": "db2@1.60.1.70338"}
+{"id": 1234972, "field": "name", "en": "Poultry Precision (Guns) - Auto Shot", "hash": "de62d69282a94e97", "src": "db2@1.60.1.70338"}
+{"id": 1234973, "field": "name", "en": "Poultry Precision (Guns) - Arcane Shot", "hash": "2877ce94976774c0", "src": "db2@1.60.1.70338"}
+{"id": 1234976, "field": "name", "en": "Poultry Precision (Guns) - Multi-Shot", "hash": "95eddbb0201fde3c", "src": "db2@1.60.1.70338"}
+{"id": 1234977, "field": "name", "en": "Poultry Precision (Guns) - Scorpid Sting", "hash": "67709f70ad8a61aa", "src": "db2@1.60.1.70338"}
+{"id": 1234978, "field": "name", "en": "Poultry Precision (Guns) - Serpent Sting", "hash": "0eb1c0cac86e85ba", "src": "db2@1.60.1.70338"}
+{"id": 1234979, "field": "name", "en": "Poultry Precision (Guns) - Viper Sting", "hash": "5aa14a19cbd88452", "src": "db2@1.60.1.70338"}
+{"id": 1234980, "field": "name", "en": "Poultry Precision (Guns) - Steady Shot", "hash": "b19c68076442143a", "src": "db2@1.60.1.70338"}
+{"id": 1234981, "field": "name", "en": "Poultry Precision (Guns) - Kill Shot", "hash": "e3c955507aadaab1", "src": "db2@1.60.1.70338"}
+{"id": 1234983, "field": "name", "en": "Poultry Precision (Guns) 3", "hash": "f180a25e06d03b37", "src": "db2@1.60.1.70338"}
+{"id": 1234984, "field": "name", "en": "Poultry Precision (Guns) - Distracting Shot", "hash": "52a8f8394ca45ebd", "src": "db2@1.60.1.70338"}
+{"id": 1234987, "field": "name", "en": "Poultry Precision (Guns) - Tranquilizing Shot", "hash": "874006bfd57cba11", "src": "db2@1.60.1.70338"}
+{"id": 1234990, "field": "name", "en": "Poultry Precision (Guns) - Aimed Shot", "hash": "518de35c67cb2f90", "src": "db2@1.60.1.70338"}
+{"id": 1234991, "field": "name", "en": "Poultry Precision (Guns) - Explosive Shot", "hash": "10b5ba30a46cee91", "src": "db2@1.60.1.70338"}
+{"id": 1234992, "field": "name", "en": "Poultry Precision (Guns) - Explosive Shot Impact", "hash": "3dcfce706ca318f9", "src": "db2@1.60.1.70338"}
+{"id": 1234993, "field": "name", "en": "Poultry Precision (Guns) - Wyvern Sting", "hash": "17d7b1040d1c2dd5", "src": "db2@1.60.1.70338"}
+{"id": 1234994, "field": "name", "en": "Poultry Precision (Guns) - Trap Launcher Freezing", "hash": "1635422f5c4144be", "src": "db2@1.60.1.70338"}
+{"id": 1234997, "field": "name", "en": "Poultry Precision (Guns) - Trap Launcher Frost", "hash": "00435640afd1b33c", "src": "db2@1.60.1.70338"}
+{"id": 1234998, "field": "name", "en": "Poultry Precision (Guns) - Trap Launcher Immolation", "hash": "5312955ac330cf2e", "src": "db2@1.60.1.70338"}
+{"id": 1234999, "field": "name", "en": "Poultry Precision (Guns) - Trap Launcher Explosive", "hash": "ef5eb1d09a815c03", "src": "db2@1.60.1.70338"}

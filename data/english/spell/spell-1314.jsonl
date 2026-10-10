@@ -1,57 +1,57 @@
-{"id": 1314011, "field": "name", "en": "Wound", "hash": "062777a5e248cc08", "src": "db2@1.60.1.70291"}
-{"id": 1314011, "field": "description", "en": "Smash the target for $s1 damage.", "hash": "fefebd7e3f713888", "src": "db2@1.60.1.70291"}
-{"id": 1314040, "field": "name", "en": "Burning Shell", "hash": "2228ec130d5af507", "src": "db2@1.60.1.70291"}
-{"id": 1314040, "field": "description", "en": "Strike the target with a Flaming Shell, inflicting $s1 Fire damage every 3 sec for 9 sec.", "hash": "f008d9b83a673544", "src": "db2@1.60.1.70291"}
-{"id": 1314040, "field": "aura", "en": "Suffering $s1 Fire damage every 3 sec.", "hash": "f8ebdcafd1021a2c", "src": "db2@1.60.1.70291"}
-{"id": 1314065, "field": "name", "en": "Mount Speed", "hash": "f84a9c6f27b3fa2a", "src": "db2@1.60.1.70291"}
-{"id": 1314065, "field": "description", "en": "Increases movement speed while mounted by $s1%. This effect does not stack with similar effects.", "hash": "aacb8fe4003528df", "src": "db2@1.60.1.70291"}
-{"id": 1314065, "field": "aura", "en": "Movement speed increased by $s1% while mounted.", "hash": "939516e9c948c73d", "src": "db2@1.60.1.70291"}
-{"id": 1314069, "field": "name", "en": "Fire Blast", "hash": "bf7fd8d732ef40f5", "src": "db2@1.60.1.70291"}
-{"id": 1314069, "field": "description", "en": "Blast the enemy, inflicting $s1 Fire damage.", "hash": "52ed7264e1fa9105", "src": "db2@1.60.1.70291"}
-{"id": 1314102, "field": "name", "en": "Relentless Strikes Effect", "hash": "2c0f5f47295b9bfa", "src": "db2@1.60.1.70291"}
-{"id": 1314102, "field": "description", "en": "Restores $s1 Energy.", "hash": "b74f845214a1da51", "src": "db2@1.60.1.70291"}
-{"id": 1314103, "field": "name", "en": "Improved Seal of Fury", "hash": "e179671876392eff", "src": "db2@1.60.1.70291"}
-{"id": 1314103, "field": "description", "en": "When Seal of Fury's shield is fully absorbed, restore $m1 Mana, increased by $m2% per level the attacker is above you, up to ${$m2*$m3}%.", "hash": "e595b5646a5756c1", "src": "db2@1.60.1.70291"}
-{"id": 1314104, "field": "name", "en": "Improved Seal of Fury", "hash": "e179671876392eff", "src": "db2@1.60.1.70291"}
-{"id": 1314104, "field": "description", "en": "When Seal of Fury's shield is fully absorbed, restore $PL Mana, increased by $1314103m2% per level the attacker is above you, up to ${$1314103m2*$1314103m3}%.\r\n", "hash": "353b2939acdd7d10", "src": "db2@1.60.1.70291"}
-{"id": 1314104, "field": "aura", "en": "Restoring Mana.", "hash": "52547f1d85ecb946", "src": "db2@1.60.1.70291"}
-{"id": 1314120, "field": "name", "en": "Summon Condor Hatchling", "hash": "855fd6dc253830fa", "src": "db2@1.60.1.70291"}
-{"id": 1314120, "field": "description", "en": "Right Click to summon and dismiss your condor hatchling.", "hash": "6697ca6aa0c83aae", "src": "db2@1.60.1.70291"}
-{"id": 1314143, "field": "name", "en": "Ancestor's Vengeance", "hash": "b37c00f3a0d8f83e", "src": "db2@1.60.1.70291"}
-{"id": 1314143, "field": "description", "en": "$@spelldesc16939", "hash": "d6c07a6874219b86", "src": "db2@1.60.1.70291"}
-{"id": 1314159, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70291"}
-{"id": 1314174, "field": "name", "en": "[DNT] Herb Event", "hash": "3d9fe5762d543e39", "src": "db2@1.60.1.70291"}
-{"id": 1314192, "field": "name", "en": "[DNT] Spawn Herb", "hash": "84adcc7e590b1da4", "src": "db2@1.60.1.70291"}
-{"id": 1314197, "field": "name", "en": "[DNT] Spawn Herb", "hash": "84adcc7e590b1da4", "src": "db2@1.60.1.70291"}
-{"id": 1314202, "field": "name", "en": "[DNT] Spawn Herb", "hash": "84adcc7e590b1da4", "src": "db2@1.60.1.70291"}
-{"id": 1314205, "field": "name", "en": "[DNT] Spawn Herb", "hash": "84adcc7e590b1da4", "src": "db2@1.60.1.70291"}
-{"id": 1314274, "field": "name", "en": "Shadow Bolt Volley", "hash": "62ed89ea2de9d24d", "src": "db2@1.60.1.70291"}
-{"id": 1314274, "field": "description", "en": "Unleash a shadow bolt volley at all nearby targets, inflicting $s1 damage to each enemy struck.", "hash": "f928fef9ace77ac9", "src": "db2@1.60.1.70291"}
-{"id": 1314281, "field": "name", "en": "Flamestrike", "hash": "c9551094a475804b", "src": "db2@1.60.1.70291"}
-{"id": 1314281, "field": "description", "en": "Inflicting Fire damage to all enemies within an area.", "hash": "1764421881365cb0", "src": "db2@1.60.1.70291"}
-{"id": 1314281, "field": "aura", "en": "Taking Fire damage every 2 sec.", "hash": "68ae0eaad01e359e", "src": "db2@1.60.1.70291"}
-{"id": 1314305, "field": "name", "en": "Puncture", "hash": "d5749fc8f01a2453", "src": "db2@1.60.1.70291"}
-{"id": 1314305, "field": "description", "en": "Puncture the target, inflicting $s1 Physical damage.", "hash": "970d45f0a0a3e668", "src": "db2@1.60.1.70291"}
-{"id": 1314364, "field": "name", "en": "Summon Spider", "hash": "2e70d8d8a841afd8", "src": "db2@1.60.1.70291"}
-{"id": 1314364, "field": "description", "en": "Summons a swarm of spiders that will protect you for $d.", "hash": "08920823291a1c0f", "src": "db2@1.60.1.70291"}
-{"id": 1314368, "field": "name", "en": "[DNT] Tim's Test Visual 3", "hash": "14664b59a3e3ad61", "src": "db2@1.60.1.70291"}
-{"id": 1314412, "field": "name", "en": "Renewing Flame", "hash": "89bdfb1c543188bb", "src": "db2@1.60.1.70291"}
-{"id": 1314412, "field": "description", "en": "Absorbs $w1 Fire damage, healing for all damage absorbed.", "hash": "daf8bde4046e7fb1", "src": "db2@1.60.1.70291"}
-{"id": 1314412, "field": "aura", "en": "Absorbs $w1 Fire damage, healing for all damage absorbed.", "hash": "daf8bde4046e7fb1", "src": "db2@1.60.1.70291"}
-{"id": 1314415, "field": "name", "en": "Renewing Blaze", "hash": "4387287fd889293c", "src": "db2@1.60.1.70291"}
-{"id": 1314415, "field": "description", "en": "Fire damage absorbed heals the user.", "hash": "bf6c1f8c78c7bdb8", "src": "db2@1.60.1.70291"}
-{"id": 1314415, "field": "aura", "en": "Fire damage absorbed heals the user.", "hash": "bf6c1f8c78c7bdb8", "src": "db2@1.60.1.70291"}
-{"id": 1314784, "field": "name", "en": "Fingerbreaker Stamp", "hash": "dd0f90dd62c92420", "src": "db2@1.60.1.70291"}
-{"id": 1314784, "field": "description", "en": "Increases Strength by $s1 while affected by a Bleed.", "hash": "9d3d89fbb49c3791", "src": "db2@1.60.1.70291"}
-{"id": 1314795, "field": "name", "en": "Increased Critical 1 - All - Gladiator Set", "hash": "f428672972d067c0", "src": "db2@1.60.1.70291"}
-{"id": 1314795, "field": "description", "en": "Improves your chance to get a critical strike by ${$s1}.1%.", "hash": "ff9a12de55e3926a", "src": "db2@1.60.1.70291"}
-{"id": 1314828, "field": "name", "en": "Spirit of Eskhandar", "hash": "8c30a5760841de7f", "src": "db2@1.60.1.70291"}
-{"id": 1314828, "field": "description", "en": "Improves your chance to get a critical strike by ${$s1}.1%. This effect is doubled at Night.", "hash": "bc0e222c5aac116c", "src": "db2@1.60.1.70291"}
-{"id": 1314829, "field": "name", "en": "Spirit of Eskhandar", "hash": "8c30a5760841de7f", "src": "db2@1.60.1.70291"}
-{"id": 1314829, "field": "aura", "en": "Deadlier at Night. Critical strike chance increased.", "hash": "93fb57a8e7ff5d5c", "src": "db2@1.60.1.70291"}
-{"id": 1314842, "field": "name", "en": "Blessed by the Great Cat Spirit", "hash": "a3756b64f6c23e93", "src": "db2@1.60.1.70291"}
-{"id": 1314842, "field": "description", "en": "Receive the blessing of the Great Cat Spirit.", "hash": "816089ed33aff267", "src": "db2@1.60.1.70291"}
-{"id": 1314842, "field": "aura", "en": "Carrying the blessing of the Great Cat Spirit for passing its trials.", "hash": "55c854266b4b0ada", "src": "db2@1.60.1.70291"}
-{"id": 1314888, "field": "name", "en": "Poison Sting", "hash": "74f46cb1a92b5124", "src": "db2@1.60.1.70291"}
-{"id": 1314888, "field": "description", "en": "Strike your target with a Poisonous Sting, inflicting $s1 damage every 3 sec for $d1.", "hash": "eb8de5e300486dc5", "src": "db2@1.60.1.70291"}
-{"id": 1314888, "field": "aura", "en": "$w1 Nature damage inflicted every 3 sec.", "hash": "1d04837891215654", "src": "db2@1.60.1.70291"}
+{"id": 1314011, "field": "name", "en": "Wound", "hash": "062777a5e248cc08", "src": "db2@1.60.1.70338"}
+{"id": 1314011, "field": "description", "en": "Smash the target for $s1 damage.", "hash": "fefebd7e3f713888", "src": "db2@1.60.1.70338"}
+{"id": 1314040, "field": "name", "en": "Burning Shell", "hash": "2228ec130d5af507", "src": "db2@1.60.1.70338"}
+{"id": 1314040, "field": "description", "en": "Strike the target with a Flaming Shell, inflicting $s1 Fire damage every 3 sec for 9 sec.", "hash": "f008d9b83a673544", "src": "db2@1.60.1.70338"}
+{"id": 1314040, "field": "aura", "en": "Suffering $s1 Fire damage every 3 sec.", "hash": "f8ebdcafd1021a2c", "src": "db2@1.60.1.70338"}
+{"id": 1314065, "field": "name", "en": "Mount Speed", "hash": "f84a9c6f27b3fa2a", "src": "db2@1.60.1.70338"}
+{"id": 1314065, "field": "description", "en": "Increases movement speed while mounted by $s1%. This effect does not stack with similar effects.", "hash": "aacb8fe4003528df", "src": "db2@1.60.1.70338"}
+{"id": 1314065, "field": "aura", "en": "Movement speed increased by $s1% while mounted.", "hash": "939516e9c948c73d", "src": "db2@1.60.1.70338"}
+{"id": 1314069, "field": "name", "en": "Fire Blast", "hash": "bf7fd8d732ef40f5", "src": "db2@1.60.1.70338"}
+{"id": 1314069, "field": "description", "en": "Blast the enemy, inflicting $s1 Fire damage.", "hash": "52ed7264e1fa9105", "src": "db2@1.60.1.70338"}
+{"id": 1314102, "field": "name", "en": "Relentless Strikes Effect", "hash": "2c0f5f47295b9bfa", "src": "db2@1.60.1.70338"}
+{"id": 1314102, "field": "description", "en": "Restores $s1 Energy.", "hash": "b74f845214a1da51", "src": "db2@1.60.1.70338"}
+{"id": 1314103, "field": "name", "en": "Improved Seal of Fury", "hash": "e179671876392eff", "src": "db2@1.60.1.70338"}
+{"id": 1314103, "field": "description", "en": "When Seal of Fury's shield is fully absorbed, restore $m1 Mana, increased by $m2% per level the attacker is above you, up to ${$m2*$m3}%.", "hash": "e595b5646a5756c1", "src": "db2@1.60.1.70338"}
+{"id": 1314104, "field": "name", "en": "Improved Seal of Fury", "hash": "e179671876392eff", "src": "db2@1.60.1.70338"}
+{"id": 1314104, "field": "description", "en": "When Seal of Fury's shield is fully absorbed, restore $PL Mana, increased by $1314103m2% per level the attacker is above you, up to ${$1314103m2*$1314103m3}%.\r\n", "hash": "353b2939acdd7d10", "src": "db2@1.60.1.70338"}
+{"id": 1314104, "field": "aura", "en": "Restoring Mana.", "hash": "52547f1d85ecb946", "src": "db2@1.60.1.70338"}
+{"id": 1314120, "field": "name", "en": "Summon Condor Hatchling", "hash": "855fd6dc253830fa", "src": "db2@1.60.1.70338"}
+{"id": 1314120, "field": "description", "en": "Right Click to summon and dismiss your condor hatchling.", "hash": "6697ca6aa0c83aae", "src": "db2@1.60.1.70338"}
+{"id": 1314143, "field": "name", "en": "Ancestor's Vengeance", "hash": "b37c00f3a0d8f83e", "src": "db2@1.60.1.70338"}
+{"id": 1314143, "field": "description", "en": "$@spelldesc16939", "hash": "d6c07a6874219b86", "src": "db2@1.60.1.70338"}
+{"id": 1314159, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70338"}
+{"id": 1314174, "field": "name", "en": "[DNT] Herb Event", "hash": "3d9fe5762d543e39", "src": "db2@1.60.1.70338"}
+{"id": 1314192, "field": "name", "en": "[DNT] Spawn Herb", "hash": "84adcc7e590b1da4", "src": "db2@1.60.1.70338"}
+{"id": 1314197, "field": "name", "en": "[DNT] Spawn Herb", "hash": "84adcc7e590b1da4", "src": "db2@1.60.1.70338"}
+{"id": 1314202, "field": "name", "en": "[DNT] Spawn Herb", "hash": "84adcc7e590b1da4", "src": "db2@1.60.1.70338"}
+{"id": 1314205, "field": "name", "en": "[DNT] Spawn Herb", "hash": "84adcc7e590b1da4", "src": "db2@1.60.1.70338"}
+{"id": 1314274, "field": "name", "en": "Shadow Bolt Volley", "hash": "62ed89ea2de9d24d", "src": "db2@1.60.1.70338"}
+{"id": 1314274, "field": "description", "en": "Unleash a shadow bolt volley at all nearby targets, inflicting $s1 damage to each enemy struck.", "hash": "f928fef9ace77ac9", "src": "db2@1.60.1.70338"}
+{"id": 1314281, "field": "name", "en": "Flamestrike", "hash": "c9551094a475804b", "src": "db2@1.60.1.70338"}
+{"id": 1314281, "field": "description", "en": "Inflicting Fire damage to all enemies within an area.", "hash": "1764421881365cb0", "src": "db2@1.60.1.70338"}
+{"id": 1314281, "field": "aura", "en": "Taking Fire damage every 2 sec.", "hash": "68ae0eaad01e359e", "src": "db2@1.60.1.70338"}
+{"id": 1314305, "field": "name", "en": "Puncture", "hash": "d5749fc8f01a2453", "src": "db2@1.60.1.70338"}
+{"id": 1314305, "field": "description", "en": "Puncture the target, inflicting $s1 Physical damage.", "hash": "970d45f0a0a3e668", "src": "db2@1.60.1.70338"}
+{"id": 1314364, "field": "name", "en": "Summon Spider", "hash": "2e70d8d8a841afd8", "src": "db2@1.60.1.70338"}
+{"id": 1314364, "field": "description", "en": "Summons a swarm of spiders that will protect you for $d.", "hash": "08920823291a1c0f", "src": "db2@1.60.1.70338"}
+{"id": 1314368, "field": "name", "en": "[DNT] Tim's Test Visual 3", "hash": "14664b59a3e3ad61", "src": "db2@1.60.1.70338"}
+{"id": 1314412, "field": "name", "en": "Renewing Flame", "hash": "89bdfb1c543188bb", "src": "db2@1.60.1.70338"}
+{"id": 1314412, "field": "description", "en": "Absorbs $w1 Fire damage, healing for all damage absorbed.", "hash": "daf8bde4046e7fb1", "src": "db2@1.60.1.70338"}
+{"id": 1314412, "field": "aura", "en": "Absorbs $w1 Fire damage, healing for all damage absorbed.", "hash": "daf8bde4046e7fb1", "src": "db2@1.60.1.70338"}
+{"id": 1314415, "field": "name", "en": "Renewing Blaze", "hash": "4387287fd889293c", "src": "db2@1.60.1.70338"}
+{"id": 1314415, "field": "description", "en": "Fire damage absorbed heals the user.", "hash": "bf6c1f8c78c7bdb8", "src": "db2@1.60.1.70338"}
+{"id": 1314415, "field": "aura", "en": "Fire damage absorbed heals the user.", "hash": "bf6c1f8c78c7bdb8", "src": "db2@1.60.1.70338"}
+{"id": 1314784, "field": "name", "en": "Fingerbreaker Stamp", "hash": "dd0f90dd62c92420", "src": "db2@1.60.1.70338"}
+{"id": 1314784, "field": "description", "en": "Increases Strength by $s1 while affected by a Bleed.", "hash": "9d3d89fbb49c3791", "src": "db2@1.60.1.70338"}
+{"id": 1314795, "field": "name", "en": "Increased Critical 1 - All - Gladiator Set", "hash": "f428672972d067c0", "src": "db2@1.60.1.70338"}
+{"id": 1314795, "field": "description", "en": "Improves your chance to get a critical strike by ${$s1}.1%.", "hash": "ff9a12de55e3926a", "src": "db2@1.60.1.70338"}
+{"id": 1314828, "field": "name", "en": "Spirit of Eskhandar", "hash": "8c30a5760841de7f", "src": "db2@1.60.1.70338"}
+{"id": 1314828, "field": "description", "en": "Improves your chance to get a critical strike by ${$s1}.1%. This effect is doubled at Night.", "hash": "bc0e222c5aac116c", "src": "db2@1.60.1.70338"}
+{"id": 1314829, "field": "name", "en": "Spirit of Eskhandar", "hash": "8c30a5760841de7f", "src": "db2@1.60.1.70338"}
+{"id": 1314829, "field": "aura", "en": "Deadlier at Night. Critical strike chance increased.", "hash": "93fb57a8e7ff5d5c", "src": "db2@1.60.1.70338"}
+{"id": 1314842, "field": "name", "en": "Blessed by the Great Cat Spirit", "hash": "a3756b64f6c23e93", "src": "db2@1.60.1.70338"}
+{"id": 1314842, "field": "description", "en": "Receive the blessing of the Great Cat Spirit.", "hash": "816089ed33aff267", "src": "db2@1.60.1.70338"}
+{"id": 1314842, "field": "aura", "en": "Carrying the blessing of the Great Cat Spirit for passing its trials.", "hash": "55c854266b4b0ada", "src": "db2@1.60.1.70338"}
+{"id": 1314888, "field": "name", "en": "Poison Sting", "hash": "74f46cb1a92b5124", "src": "db2@1.60.1.70338"}
+{"id": 1314888, "field": "description", "en": "Strike your target with a Poisonous Sting, inflicting $s1 damage every 3 sec for $d1.", "hash": "eb8de5e300486dc5", "src": "db2@1.60.1.70338"}
+{"id": 1314888, "field": "aura", "en": "$w1 Nature damage inflicted every 3 sec.", "hash": "1d04837891215654", "src": "db2@1.60.1.70338"}

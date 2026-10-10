@@ -4,6 +4,7 @@ runbook docs/operations/voice.md).
   levels --wdb CACHE --vmangos DB [--out voice_quest_levels.txt]
       Writes each quest's level (the client's quest cache first, VMaNGOS for quests it has not answered) to a
       committed table, so the packs can be split where the client files are not, such as the Release workflow.
+      A quest the table already has and neither source gives a level keeps its level (ADR-050).
   store-sync [--store DIR] [--pin voice-audio-commit.txt] [--if-changed]
       Commits whatever the audio store (a checkout of the voice audio repository) holds new or changed,
       pushes it, and writes that commit to the pin file: the audio commit that goes with this checkout's text.
@@ -27,7 +28,8 @@ LEVELS = "voice_quest_levels.txt"
 PIN = "voice-audio-commit.txt"
 LEVELS_HEAD = (
     "# Each quest's level for the voice packs' level bands, written by `make voice-levels`.\n"
-    "# Do not edit by hand. The client's quest cache first, VMaNGOS for quests it has not answered.\n"
+    "# Do not edit by hand. The client's quest cache first, VMaNGOS for quests it has not answered, then\n"
+    "# the level this table had for a quest neither gives (an earlier build's quest keeps its band).\n"
     "# `<quest id> <level>` per line.\n"
 )
 PIN_HEAD = (
@@ -112,7 +114,15 @@ def run(argv: Sequence[str]) -> int:
             from wfj.cmd.voice_ship import quest_levels  # voice_ship reads this module's files
 
             levels = quest_levels(Path(a.wdb), Path(a.vmangos))
-            Path(a.out).write_text(levels_text(levels), encoding="utf-8")
+            # English is additive (ADR-050): a quest the new cache does not answer keeps its voice, so it
+            # keeps the level it had too, and its audio stays in its level band's pack
+            out = Path(a.out)
+            if out.is_file():
+                answered = {q.id for q in wdb.read_quests(Path(a.wdb)).quests}
+                for q, lv in read_levels(out).items():
+                    if q not in levels and q not in answered:
+                        levels[q] = lv
+            out.write_text(levels_text(levels), encoding="utf-8")
             print(f"voice levels: {len(levels)} quests → {a.out}")
             return 0
         store = voice_make.store_dir(a.store)

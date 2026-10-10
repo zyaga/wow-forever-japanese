@@ -1,5 +1,5 @@
-{"id": 78156, "field": "name", "en": "Tremor Totem", "hash": "dc8cb9627a772d1a", "src": "db2@1.60.1.70291"}
-{"id": 78156, "field": "description", "en": "Summons a Tremor Totem with $s1 health at your feet that shakes the ground around it, removing Fear, Charm, and Sleep effects from party members within $8146a1 yds.", "hash": "c1259d2b4d2aaedb", "src": "db2@1.60.1.70291"}
-{"id": 78159, "field": "name", "en": "Windfury Totem", "hash": "f3b3b61482a8e7aa", "src": "db2@1.60.1.70291"}
-{"id": 78159, "field": "description", "en": "Summons a Windfury Totem with $s1 health at the feet of the caster. The totem provides $8515s1% melee haste to all party and raid members within $8515a1 yds. Lasts $d.", "hash": "4a946e59ad178732", "src": "db2@1.60.1.70291"}
-{"id": 78159, "field": "aura", "en": "Increases melee haste by $8515s1%.", "hash": "535a2ca1a30faaba", "src": "db2@1.60.1.70291"}
+{"id": 78156, "field": "name", "en": "Tremor Totem", "hash": "dc8cb9627a772d1a", "src": "db2@1.60.1.70338"}
+{"id": 78156, "field": "description", "en": "Summons a Tremor Totem with $s1 health at your feet that shakes the ground around it, removing Fear, Charm, and Sleep effects from party members within $8146a1 yds.", "hash": "c1259d2b4d2aaedb", "src": "db2@1.60.1.70338"}
+{"id": 78159, "field": "name", "en": "Windfury Totem", "hash": "f3b3b61482a8e7aa", "src": "db2@1.60.1.70338"}
+{"id": 78159, "field": "description", "en": "Summons a Windfury Totem with $s1 health at the feet of the caster. The totem provides $8515s1% melee haste to all party and raid members within $8515a1 yds. Lasts $d.", "hash": "4a946e59ad178732", "src": "db2@1.60.1.70338"}
+{"id": 78159, "field": "aura", "en": "Increases melee haste by $8515s1%.", "hash": "535a2ca1a30faaba", "src": "db2@1.60.1.70338"}

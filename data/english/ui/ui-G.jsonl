@@ -1,355 +1,355 @@
-{"id": "GAINING_LOYALTY", "field": "text", "en": "Gaining Loyalty", "hash": "1ca6df0bdfe554bf", "src": "db2@1.60.1.70291"}
-{"id": "GAMEFIELD_DESELECT_TEXT", "field": "text", "en": "Sticky Targeting", "hash": "f57c0afd45ddb9b4", "src": "db2@1.60.1.70291"}
-{"id": "GAMEMENU_EXTERNALEVENT", "field": "text", "en": "Activities", "hash": "69b7e5a8d540a60a", "src": "db2@1.60.1.70291"}
-{"id": "GAMEMENU_NEW_BUTTON", "field": "text", "en": "What's New", "hash": "e67bfb5282cb2d40", "src": "db2@1.60.1.70291"}
-{"id": "GAMEMENU_OPTIONS", "field": "text", "en": "Options", "hash": "cf6c009bd04a5d3a", "src": "db2@1.60.1.70291"}
-{"id": "GAMEMENU_SUPPORT", "field": "text", "en": "Support", "hash": "46858e142083321c", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_ACTION_BAR_HIGHLIGHT_TOGGLE", "field": "text", "en": "Show Action Bar Highlight", "hash": "66df7c8c6eeaffd7", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_ACTION_BAR_INPUT_PROMPT_TOGGLE", "field": "text", "en": "Show Input Prompts", "hash": "ea3b9cf2258ed57d", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_ACTION_BAR_SCALING_TOGGLE", "field": "text", "en": "Enable Action Bar Scaling", "hash": "e470ac551560de6b", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_BACK_PEDAL_THRESHOLD", "field": "text", "en": "Backpedal Stick Threshold", "hash": "fa7134367695fde3", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_BAR_PAGE1_BOTTOM", "field": "text", "en": "Page 1 Bottom Bar", "hash": "a0c7e8d0f60968e9", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_BAR_PAGE1_LEFT", "field": "text", "en": "Page 1 Left Bar", "hash": "9998eb4f598e6d88", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_BAR_PAGE1_RIGHT", "field": "text", "en": "Page 1 Right Bar", "hash": "d9f270a7a6720d69", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_BAR_PAGE2_BOTTOM", "field": "text", "en": "Page 2 Bottom Bar", "hash": "f9cc5a93aa4a0a4f", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_BAR_PAGE2_LEFT", "field": "text", "en": "Page 2 Left Bar", "hash": "81cf1d69f5e3fab5", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_BAR_PAGE2_RIGHT", "field": "text", "en": "Page 2 Right Bar", "hash": "adae13b969bcdfee", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_BAR_PAGE2_TOP", "field": "text", "en": "Page 2 Top Bar", "hash": "5e8be81ac9c5aa5c", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_BAR_PAGE3_BOTTOM", "field": "text", "en": "Page 3 Bottom Bar", "hash": "52d0cc5b5e8aabb5", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_BAR_PAGE3_LEFT", "field": "text", "en": "Page 3 Left Bar", "hash": "6a054f83923987f3", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_BAR_PAGE3_RIGHT", "field": "text", "en": "Page 3 Right Bar", "hash": "8169b6cb2d07b273", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_BAR_PAGE3_TOP", "field": "text", "en": "Page 3 Top Bar", "hash": "7da1d108b2cc4b76", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_BIND_FAILURE_FAILED_REBIND_OLD_ACTION", "field": "text", "en": "Failed to rebind old action to selected slot", "hash": "da657f6a9e70b797", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_BIND_FAILURE_GENERIC_FAIL", "field": "text", "en": "Failed to bind action to gamepad slot.", "hash": "bee2f50fbcd012cf", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_BIND_FAILURE_INVALID_POSSESS_SLOT", "field": "text", "en": "Attempted to bind to an invalid gamepad possess bar slot.", "hash": "85a4ac4723344709", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_BIND_FAILURE_INVALID_STANDARD_SLOT", "field": "text", "en": "Attempted to bind to an invalid standard gamepad slot.", "hash": "9b727280bc897bd4", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_BIND_FAILURE_NON_PET_ACTION", "field": "text", "en": "Only pet actions can be assigned to this slot.", "hash": "02e125d3aa370b5e", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_BIND_FAILURE_NO_ACTION_ON_CURSOR", "field": "text", "en": "Failed to pick up an action to bind to the gamepad slot.", "hash": "3263275fc1a36717", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_BIND_FAILURE_NO_ACTIVE_PET", "field": "text", "en": "The action cannot be assigned because there is no active pet.", "hash": "9f0132f13be449f5", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_EDIT_FRAME_ABORT_BIND_PET_NOT_ACTIVE", "field": "text", "en": "Action binding canceled because pet is no longer active.", "hash": "d06d1ff1e9852978", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_EDIT_FRAME_ABORT_MOVE_PET_NOT_ACTIVE", "field": "text", "en": "Action movement canceled because pet is no longer active.", "hash": "78628037de1088bd", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_EDIT_FRAME_ATTEMPTED_MOVE_EMPTY_SLOT", "field": "text", "en": "Selected slot did not contain an action to move.", "hash": "b118f4a4ba54c1f3", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_EDIT_FRAME_BIND_INFO_FRAME_BIND_INSTRUCTION", "field": "text", "en": "Press the button combination you want to use for:", "hash": "17a97847f2d4ea69", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_EDIT_FRAME_BIND_INFO_FRAME_TITLE", "field": "text", "en": "Bind to Action Bar", "hash": "20eb06c5946f863b", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_EDIT_FRAME_EDIT_ACTION_BARS_INFO_FRAME_PICKUP_INSTRUCTION", "field": "text", "en": "Press the button combination you want to change.", "hash": "ae9ad7f1fa5affb0", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_EDIT_FRAME_EDIT_ACTION_BARS_INFO_FRAME_TITLE", "field": "text", "en": "Edit Action Bars", "hash": "1d6213562991d2d2", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_FACE_MOVEMENT_GLIDING", "field": "text", "en": "Face Movement while Gliding", "hash": "1f0b098e8837cbd1", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_FACE_MOVEMENT_MOUNTED", "field": "text", "en": "Face Movement while Mounted", "hash": "21c68e0ca3139557", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_FACE_MOVEMENT_SWIMMING", "field": "text", "en": "Face Movement while Swimming", "hash": "de29083ea1241a4e", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_FOLLOW_CAMERA", "field": "text", "en": "Follow Camera", "hash": "a3c8355dfc90ce9f", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_FOLLOW_CAMERA_PITCH_OFFSET", "field": "text", "en": "Follow Camera Pitch Offset", "hash": "c8aaccbac9940145", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_LABEL", "field": "text", "en": "Gamepad (Alpha)", "hash": "559f645a6e038972", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_MODIFIER_LABEL", "field": "text", "en": "HUD Modifier", "hash": "aee35f54deb4b5a7", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_MODIFIER_TOGGLE", "field": "text", "en": "Press to Toggle", "hash": "676409ee8f288277", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_MOVEMENT_FACE_ANGLE", "field": "text", "en": "Movement Face Angle", "hash": "91d8c6c61e71d724", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_MOVEMENT_FACE_ANGLE_COMBAT", "field": "text", "en": "Movement Face Angle Combat", "hash": "166e20d636b75ba8", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_MOVE_ACTION_FAILURE_NO_PICK_UP", "field": "text", "en": "The action bound to the selected gamepad slot could not be moved.", "hash": "5af772473420bd0f", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_MOVE_ACTION_FAILURE_PLACEMENT_NO_LONGER_AVAILABLE", "field": "text", "en": "The action can no longer be placed in a gamepad slot.", "hash": "6025f4be72835702", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_MOVE_ACTION_FAILURE_UNKNOWN_PET_ACTION", "field": "text", "en": "The action bound to the selected gamepad slot could not be moved because the active pet doesn't know the action.", "hash": "5eeaaa66ff3906da", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_PARTY_TARGETING_TOGGLE", "field": "text", "en": "Fixed Party Targeting", "hash": "906aee5212ebc1bb", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_PARTY_TARGETING_TOGGLE_TOOLTIP", "field": "text", "en": "While in a party, target specific party members with the directional pad rather than using it for directional targeting. One button becomes dedicated to party member 1, another for party member 2, and so on.", "hash": "70ee95260e53b81f", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_PITCH_SPEED", "field": "text", "en": "Vertical Speed", "hash": "6f846dbf0002a86b", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_PITCH_SPEED_TOOLTIP", "field": "text", "en": "Adjust the speed at which you turn the camera vertically with the analog stick.", "hash": "5b88dd6142eea5a0", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_POSSESS_BAR_MODIFICATION_NOT_POSSIBLE", "field": "text", "en": "Modifying this pet's actions is not possible.", "hash": "27ad576087a04773", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_POSSESS_BAR_OVERRIDE", "field": "text", "en": "Possess Bar Override", "hash": "7eaaba361b385c5f", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_POSSESS_BAR_SPECIAL_PAGE", "field": "text", "en": "Special Page", "hash": "ef0004053821d462", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_RUN_THRESHOLD", "field": "text", "en": "Stick Run Threshold", "hash": "e374359aec9dcc8d", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_SHOW_EMPTY_ACTIONBARS", "field": "text", "en": "Show Empty Action Bars", "hash": "2d84c3b9b40027f3", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_SHOW_LEGEND", "field": "text", "en": "Show Input Legend", "hash": "671dbe22c03c3fd7", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_STANCE_BAR_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_STANCE_BAR_OVERRIDE", "field": "text", "en": "Stance Bar Override", "hash": "ed1234af2babbbeb", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_SWAP_FRIENDLY_TARGET_ACTIONS", "field": "text", "en": "Swap Friendly Targeting Action Sides", "hash": "d05171916efd7f09", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_SWAP_FRIENDLY_TARGET_ACTIONS_TOOLTIP", "field": "text", "en": "Swaps the directional pad and face button actions when holding the friendly target modifier.", "hash": "669fbd0b9db24a3f", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_SWAP_HOSTILE_TARGET_ACTIONS", "field": "text", "en": "Swap Hostile Targeting Action Sides", "hash": "7881063cfeca4451", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_SWAP_HOSTILE_TARGET_ACTIONS_TOOLTIP", "field": "text", "en": "Swaps the directional pad and face button actions when holding the hostile target modifier.", "hash": "85d89fba290dcdd5", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_SWAP_TARGET_MODIFIERS", "field": "text", "en": "Swap Target Modifier Sides", "hash": "da965fedaa46b7a9", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_SWAP_TARGET_MODIFIERS_TOOLTIP", "field": "text", "en": "Switch sides of the two targeting modifiers, putting friendly targeting on the right side, and hostile targeting on the left side.", "hash": "e509be38da4fda54", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_TALENT_ADD_POINT", "field": "text", "en": "Add Point", "hash": "1e82de2c41f8e2e6", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_TALENT_APPLY", "field": "text", "en": "Hold To Apply", "hash": "bf1d27a1de65e509", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_TALENT_REMOVE_POINT", "field": "text", "en": "Remove Point", "hash": "baa7b91c11c8b410", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_TOGGLE_COMPACT_ACTION_BAR", "field": "text", "en": "Use Compact Action Bar", "hash": "93c5fe208805c51b", "src": "db2@1.60.1.70291"}
+{"id": "GAINING_LOYALTY", "field": "text", "en": "Gaining Loyalty", "hash": "1ca6df0bdfe554bf", "src": "db2@1.60.1.70338"}
+{"id": "GAMEFIELD_DESELECT_TEXT", "field": "text", "en": "Sticky Targeting", "hash": "f57c0afd45ddb9b4", "src": "db2@1.60.1.70338"}
+{"id": "GAMEMENU_EXTERNALEVENT", "field": "text", "en": "Activities", "hash": "69b7e5a8d540a60a", "src": "db2@1.60.1.70338"}
+{"id": "GAMEMENU_NEW_BUTTON", "field": "text", "en": "What's New", "hash": "e67bfb5282cb2d40", "src": "db2@1.60.1.70338"}
+{"id": "GAMEMENU_OPTIONS", "field": "text", "en": "Options", "hash": "cf6c009bd04a5d3a", "src": "db2@1.60.1.70338"}
+{"id": "GAMEMENU_SUPPORT", "field": "text", "en": "Support", "hash": "46858e142083321c", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_ACTION_BAR_HIGHLIGHT_TOGGLE", "field": "text", "en": "Show Action Bar Highlight", "hash": "66df7c8c6eeaffd7", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_ACTION_BAR_INPUT_PROMPT_TOGGLE", "field": "text", "en": "Show Input Prompts", "hash": "ea3b9cf2258ed57d", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_ACTION_BAR_SCALING_TOGGLE", "field": "text", "en": "Enable Action Bar Scaling", "hash": "e470ac551560de6b", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_BACK_PEDAL_THRESHOLD", "field": "text", "en": "Backpedal Stick Threshold", "hash": "fa7134367695fde3", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_BAR_PAGE1_BOTTOM", "field": "text", "en": "Page 1 Bottom Bar", "hash": "a0c7e8d0f60968e9", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_BAR_PAGE1_LEFT", "field": "text", "en": "Page 1 Left Bar", "hash": "9998eb4f598e6d88", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_BAR_PAGE1_RIGHT", "field": "text", "en": "Page 1 Right Bar", "hash": "d9f270a7a6720d69", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_BAR_PAGE2_BOTTOM", "field": "text", "en": "Page 2 Bottom Bar", "hash": "f9cc5a93aa4a0a4f", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_BAR_PAGE2_LEFT", "field": "text", "en": "Page 2 Left Bar", "hash": "81cf1d69f5e3fab5", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_BAR_PAGE2_RIGHT", "field": "text", "en": "Page 2 Right Bar", "hash": "adae13b969bcdfee", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_BAR_PAGE2_TOP", "field": "text", "en": "Page 2 Top Bar", "hash": "5e8be81ac9c5aa5c", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_BAR_PAGE3_BOTTOM", "field": "text", "en": "Page 3 Bottom Bar", "hash": "52d0cc5b5e8aabb5", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_BAR_PAGE3_LEFT", "field": "text", "en": "Page 3 Left Bar", "hash": "6a054f83923987f3", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_BAR_PAGE3_RIGHT", "field": "text", "en": "Page 3 Right Bar", "hash": "8169b6cb2d07b273", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_BAR_PAGE3_TOP", "field": "text", "en": "Page 3 Top Bar", "hash": "7da1d108b2cc4b76", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_BIND_FAILURE_FAILED_REBIND_OLD_ACTION", "field": "text", "en": "Failed to rebind old action to selected slot", "hash": "da657f6a9e70b797", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_BIND_FAILURE_GENERIC_FAIL", "field": "text", "en": "Failed to bind action to gamepad slot.", "hash": "bee2f50fbcd012cf", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_BIND_FAILURE_INVALID_POSSESS_SLOT", "field": "text", "en": "Attempted to bind to an invalid gamepad possess bar slot.", "hash": "85a4ac4723344709", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_BIND_FAILURE_INVALID_STANDARD_SLOT", "field": "text", "en": "Attempted to bind to an invalid standard gamepad slot.", "hash": "9b727280bc897bd4", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_BIND_FAILURE_NON_PET_ACTION", "field": "text", "en": "Only pet actions can be assigned to this slot.", "hash": "02e125d3aa370b5e", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_BIND_FAILURE_NO_ACTION_ON_CURSOR", "field": "text", "en": "Failed to pick up an action to bind to the gamepad slot.", "hash": "3263275fc1a36717", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_BIND_FAILURE_NO_ACTIVE_PET", "field": "text", "en": "The action cannot be assigned because there is no active pet.", "hash": "9f0132f13be449f5", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_EDIT_FRAME_ABORT_BIND_PET_NOT_ACTIVE", "field": "text", "en": "Action binding canceled because pet is no longer active.", "hash": "d06d1ff1e9852978", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_EDIT_FRAME_ABORT_MOVE_PET_NOT_ACTIVE", "field": "text", "en": "Action movement canceled because pet is no longer active.", "hash": "78628037de1088bd", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_EDIT_FRAME_ATTEMPTED_MOVE_EMPTY_SLOT", "field": "text", "en": "Selected slot did not contain an action to move.", "hash": "b118f4a4ba54c1f3", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_EDIT_FRAME_BIND_INFO_FRAME_BIND_INSTRUCTION", "field": "text", "en": "Press the button combination you want to use for:", "hash": "17a97847f2d4ea69", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_EDIT_FRAME_BIND_INFO_FRAME_TITLE", "field": "text", "en": "Bind to Action Bar", "hash": "20eb06c5946f863b", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_EDIT_FRAME_EDIT_ACTION_BARS_INFO_FRAME_PICKUP_INSTRUCTION", "field": "text", "en": "Press the button combination you want to change.", "hash": "ae9ad7f1fa5affb0", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_EDIT_FRAME_EDIT_ACTION_BARS_INFO_FRAME_TITLE", "field": "text", "en": "Edit Action Bars", "hash": "1d6213562991d2d2", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_FACE_MOVEMENT_GLIDING", "field": "text", "en": "Face Movement while Gliding", "hash": "1f0b098e8837cbd1", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_FACE_MOVEMENT_MOUNTED", "field": "text", "en": "Face Movement while Mounted", "hash": "21c68e0ca3139557", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_FACE_MOVEMENT_SWIMMING", "field": "text", "en": "Face Movement while Swimming", "hash": "de29083ea1241a4e", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_FOLLOW_CAMERA", "field": "text", "en": "Follow Camera", "hash": "a3c8355dfc90ce9f", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_FOLLOW_CAMERA_PITCH_OFFSET", "field": "text", "en": "Follow Camera Pitch Offset", "hash": "c8aaccbac9940145", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_LABEL", "field": "text", "en": "Gamepad (Alpha)", "hash": "559f645a6e038972", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_MODIFIER_LABEL", "field": "text", "en": "HUD Modifier", "hash": "aee35f54deb4b5a7", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_MODIFIER_TOGGLE", "field": "text", "en": "Press to Toggle", "hash": "676409ee8f288277", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_MOVEMENT_FACE_ANGLE", "field": "text", "en": "Movement Face Angle", "hash": "91d8c6c61e71d724", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_MOVEMENT_FACE_ANGLE_COMBAT", "field": "text", "en": "Movement Face Angle Combat", "hash": "166e20d636b75ba8", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_MOVE_ACTION_FAILURE_NO_PICK_UP", "field": "text", "en": "The action bound to the selected gamepad slot could not be moved.", "hash": "5af772473420bd0f", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_MOVE_ACTION_FAILURE_PLACEMENT_NO_LONGER_AVAILABLE", "field": "text", "en": "The action can no longer be placed in a gamepad slot.", "hash": "6025f4be72835702", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_MOVE_ACTION_FAILURE_UNKNOWN_PET_ACTION", "field": "text", "en": "The action bound to the selected gamepad slot could not be moved because the active pet doesn't know the action.", "hash": "5eeaaa66ff3906da", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_PARTY_TARGETING_TOGGLE", "field": "text", "en": "Fixed Party Targeting", "hash": "906aee5212ebc1bb", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_PARTY_TARGETING_TOGGLE_TOOLTIP", "field": "text", "en": "While in a party, target specific party members with the directional pad rather than using it for directional targeting. One button becomes dedicated to party member 1, another for party member 2, and so on.", "hash": "70ee95260e53b81f", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_PITCH_SPEED", "field": "text", "en": "Vertical Speed", "hash": "6f846dbf0002a86b", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_PITCH_SPEED_TOOLTIP", "field": "text", "en": "Adjust the speed at which you turn the camera vertically with the analog stick.", "hash": "5b88dd6142eea5a0", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_POSSESS_BAR_MODIFICATION_NOT_POSSIBLE", "field": "text", "en": "Modifying this pet's actions is not possible.", "hash": "27ad576087a04773", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_POSSESS_BAR_OVERRIDE", "field": "text", "en": "Possess Bar Override", "hash": "7eaaba361b385c5f", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_POSSESS_BAR_SPECIAL_PAGE", "field": "text", "en": "Special Page", "hash": "ef0004053821d462", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_RUN_THRESHOLD", "field": "text", "en": "Stick Run Threshold", "hash": "e374359aec9dcc8d", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_SHOW_EMPTY_ACTIONBARS", "field": "text", "en": "Show Empty Action Bars", "hash": "2d84c3b9b40027f3", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_SHOW_LEGEND", "field": "text", "en": "Show Input Legend", "hash": "671dbe22c03c3fd7", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_STANCE_BAR_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_STANCE_BAR_OVERRIDE", "field": "text", "en": "Stance Bar Override", "hash": "ed1234af2babbbeb", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_SWAP_FRIENDLY_TARGET_ACTIONS", "field": "text", "en": "Swap Friendly Targeting Action Sides", "hash": "d05171916efd7f09", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_SWAP_FRIENDLY_TARGET_ACTIONS_TOOLTIP", "field": "text", "en": "Swaps the directional pad and face button actions when holding the friendly target modifier.", "hash": "669fbd0b9db24a3f", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_SWAP_HOSTILE_TARGET_ACTIONS", "field": "text", "en": "Swap Hostile Targeting Action Sides", "hash": "7881063cfeca4451", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_SWAP_HOSTILE_TARGET_ACTIONS_TOOLTIP", "field": "text", "en": "Swaps the directional pad and face button actions when holding the hostile target modifier.", "hash": "85d89fba290dcdd5", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_SWAP_TARGET_MODIFIERS", "field": "text", "en": "Swap Target Modifier Sides", "hash": "da965fedaa46b7a9", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_SWAP_TARGET_MODIFIERS_TOOLTIP", "field": "text", "en": "Switch sides of the two targeting modifiers, putting friendly targeting on the right side, and hostile targeting on the left side.", "hash": "e509be38da4fda54", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_TALENT_ADD_POINT", "field": "text", "en": "Add Point", "hash": "1e82de2c41f8e2e6", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_TALENT_APPLY", "field": "text", "en": "Hold To Apply", "hash": "bf1d27a1de65e509", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_TALENT_REMOVE_POINT", "field": "text", "en": "Remove Point", "hash": "baa7b91c11c8b410", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_TOGGLE_COMPACT_ACTION_BAR", "field": "text", "en": "Use Compact Action Bar", "hash": "93c5fe208805c51b", "src": "db2@1.60.1.70338"}
 {"id": "GAMEPAD_TOGGLE_COMPACT_ACTION_BAR_TOOLTIP", "field": "text", "en": "Enables a more compact action bar layout that only displays the currently active bar.", "hash": "fdfa1da710853bf8", "src": "db2@1.60.1.70245"}
-{"id": "GAMEPAD_TURN_WITH_CAMERA", "field": "text", "en": "Turn Player with Camera", "hash": "7e8f64b49f39058d", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_TURN_WITH_CAMERA_OPTION_ALWAYS", "field": "text", "en": "Player always turns with camera", "hash": "dfdf6c49218844bd", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_TURN_WITH_CAMERA_OPTION_MOVING", "field": "text", "en": "Player turns with camera when moving", "hash": "152441fd00a861bd", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_TURN_WITH_CAMERA_OPTION_MOVING_COMBAT", "field": "text", "en": "Player turns with camera when moving or in combat", "hash": "e544265bd832cabd", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_TURN_WITH_CAMERA_OPTION_MOVING_COMBAT_CASTING", "field": "text", "en": "Player turns with camera when moving, in combat or casting", "hash": "ba8a6bee7d286c96", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_YAW_SPEED", "field": "text", "en": "Horizontal Speed", "hash": "f8dbf492f52365ae", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPAD_YAW_SPEED_TOOLTIP", "field": "text", "en": "Adjust the speed at which you turn the camera horizontally with the analog stick.", "hash": "c6b20a64694b1760", "src": "db2@1.60.1.70291"}
-{"id": "GAMEPLAY_SFX_VOLUME", "field": "text", "en": "Gameplay Sound Effects", "hash": "dc6f218cac140a0c", "src": "db2@1.60.1.70291"}
-{"id": "GAMETIME_TOOLTIP_CALENDAR_INVITES", "field": "text", "en": "You have pending calendar invites.", "hash": "0b587bbb95331ad0", "src": "db2@1.60.1.70291"}
-{"id": "GAMETIME_TOOLTIP_TOGGLE_CALENDAR", "field": "text", "en": "Click to show the calendar.", "hash": "f3de208c072b0b67", "src": "db2@1.60.1.70291"}
-{"id": "GAMETIME_TOOLTIP_TOGGLE_CLOCK", "field": "text", "en": "Click to show clock settings.", "hash": "db6653b4420e9a26", "src": "db2@1.60.1.70291"}
-{"id": "GAME_MENU_SHOW_REWARDS", "field": "text", "en": "Rewards", "hash": "526c53558d8b389a", "src": "db2@1.60.1.70291"}
-{"id": "GAMMA", "field": "text", "en": "Gamma", "hash": "eb69bb43182f3e25", "src": "db2@1.60.1.70291"}
-{"id": "GARRISON_BOOT_TIMER", "field": "text", "en": "This garrison does not belong to you or your group leader. You will be teleported outside the garrison in %d %s.", "hash": "6e0c6dc37b890461", "src": "db2@1.60.1.70291"}
-{"id": "GARRISON_FOLLOWER_ADDED_TOAST", "field": "text", "en": "Garrison Follower Gained", "hash": "87524b6a3a5fdf8f", "src": "db2@1.60.1.70291"}
-{"id": "GARRISON_MISSION_COMPLETE", "field": "text", "en": "Mission Complete", "hash": "9ff0079337a01118", "src": "db2@1.60.1.70291"}
-{"id": "GARRISON_MISSION_RARE", "field": "text", "en": "Rare!", "hash": "ac81db98c01b0bc9", "src": "db2@1.60.1.70291"}
-{"id": "GARRISON_SHIPYARD_FOLLOWER_ADDED_TOAST", "field": "text", "en": "Ship added to your fleet", "hash": "98c9067c3a13a8f2", "src": "db2@1.60.1.70291"}
-{"id": "GARRISON_SHIPYARD_FOLLOWER_ADDED_UPGRADED_TOAST", "field": "text", "en": "Upgraded ship added to your fleet", "hash": "659c487c14d87631", "src": "db2@1.60.1.70291"}
-{"id": "GARRISON_TALENT_ORDER_ADVANCEMENT", "field": "text", "en": "Order Advancement", "hash": "a494959674e65668", "src": "db2@1.60.1.70291"}
-{"id": "GARRISON_UPDATE", "field": "text", "en": "Garrison Update", "hash": "26c6e7c6b8573a73", "src": "db2@1.60.1.70291"}
-{"id": "GEARSETS_POPUP_TEXT", "field": "text", "en": "Enter Set Name (Max 16 Characters):", "hash": "11f38931985b00a3", "src": "db2@1.60.1.70291"}
-{"id": "GENERAL_MACROS", "field": "text", "en": "General Macros", "hash": "d250f72a6394de08", "src": "db2@1.60.1.70291"}
-{"id": "GENERIC_ITEM_CONVERSION_SLOT_TOOLTIP", "field": "text", "en": "Insert an eligible item to convert to a set item.", "hash": "f64835c8f62cd737", "src": "db2@1.60.1.70291"}
-{"id": "GENERIC_MONEY_GAINED_RECEIPT", "field": "text", "en": "You gained: |cffffffff%s|r", "hash": "6aa618b890a635f2", "src": "db2@1.60.1.70291"}
-{"id": "GENERIC_TRAIT_FRAME_CONFIRM_PURCHASE", "field": "text", "en": "Are you sure you want to unlock this talent?", "hash": "5553db0bb532eae2", "src": "db2@1.60.1.70291"}
-{"id": "GENERIC_TRAIT_FRAME_CONFIRM_PURCHASE_FORMAT", "field": "text", "en": "Are you sure you want to spend %s to unlock this talent?", "hash": "d4ea8f0c32d15511", "src": "db2@1.60.1.70291"}
-{"id": "GENERIC_TRAIT_FRAME_EDGE_REQUIREMENTS_BUTTON_TOOLTIP", "field": "text", "en": "Requires all preceding talents", "hash": "402ec3a42c5b4012", "src": "db2@1.60.1.70291"}
-{"id": "GENERIC_TRAIT_FRAME_INTERNAL_ERROR", "field": "text", "en": "Internal error. Try again later.", "hash": "be2cf1d3edaddac6", "src": "db2@1.60.1.70291"}
-{"id": "GLOBAL_CHANNELS", "field": "text", "en": "Channels", "hash": "922ae057814067c5", "src": "db2@1.60.1.70291"}
-{"id": "GM_CHAT", "field": "text", "en": "Chatting with a GM", "hash": "3b2ce1eb397aafa0", "src": "db2@1.60.1.70291"}
-{"id": "GM_CHAT_LAST_SESSION", "field": "text", "en": "In your last session, you were speaking with %s.", "hash": "e2eff4b6bf80c919", "src": "db2@1.60.1.70291"}
-{"id": "GM_CHAT_STATUS_READY", "field": "text", "en": "GM Chat Request", "hash": "da2480ea906e0c82", "src": "db2@1.60.1.70291"}
-{"id": "GM_CHAT_STATUS_READY_DESCRIPTION", "field": "text", "en": "A GM would like to chat with you. Click here to begin.", "hash": "55ac2b8d63445bc1", "src": "db2@1.60.1.70291"}
-{"id": "GM_RESPONSE_ALERT", "field": "text", "en": "You have received a ticket response. Click here to read it.", "hash": "d7c1b29a992fee48", "src": "db2@1.60.1.70291"}
-{"id": "GM_TICKET_HIGH_VOLUME", "field": "text", "en": "We are currently experiencing a high volume of petitions.", "hash": "1f421236f24e90e1", "src": "db2@1.60.1.70291"}
-{"id": "GM_TICKET_UNAVAILABLE", "field": "text", "en": "Wait time currently unavailable.", "hash": "fcfc9f651e6810e4", "src": "db2@1.60.1.70291"}
-{"id": "GM_TICKET_WAIT_TIME", "field": "text", "en": "Average ticket wait time:\n%s", "hash": "ade219b5636440f2", "src": "db2@1.60.1.70291"}
-{"id": "GOLD_PER_DAY", "field": "text", "en": "(gold/day)", "hash": "5615a7e9b7a949e3", "src": "db2@1.60.1.70291"}
-{"id": "GOODBYE", "field": "text", "en": "Goodbye", "hash": "d5dea8d780d5b62f", "src": "db2@1.60.1.70291"}
-{"id": "GOSSIP_OPTION_PREPEND", "field": "text", "en": "|cnPURE_BLUE_COLOR:%s|r %s", "hash": "3c1b2dd1da5ab79e", "src": "db2@1.60.1.70291"}
-{"id": "GRAPHICS_CARD", "field": "text", "en": "Graphics Card", "hash": "5b0bed4f6f9d2c52", "src": "db2@1.60.1.70291"}
-{"id": "GRAPHICS_LABEL", "field": "text", "en": "Graphics", "hash": "a13a8a332c0b8a08", "src": "db2@1.60.1.70291"}
-{"id": "GRAPHICS_QUALITY", "field": "text", "en": "Graphics Quality", "hash": "9a352dd3c140f7e9", "src": "db2@1.60.1.70291"}
-{"id": "GRAVEYARD_ELIGIBLE", "field": "text", "en": "Eligible Graveyard", "hash": "a15b900c5a60aea7", "src": "db2@1.60.1.70291"}
-{"id": "GRAVEYARD_ELIGIBLE_TOOLTIP", "field": "text", "en": "Click to select this graveyard. You will resurrect here when you die.", "hash": "35abe0da7fadf836", "src": "db2@1.60.1.70291"}
-{"id": "GRAVEYARD_SELECTED", "field": "text", "en": "Selected Graveyard", "hash": "87171cbc431a4dac", "src": "db2@1.60.1.70291"}
-{"id": "GRAVEYARD_SELECTED_TOOLTIP", "field": "text", "en": "You will resurrect at this graveyard.", "hash": "3802cbd5cb0a1521", "src": "db2@1.60.1.70291"}
-{"id": "GREED", "field": "text", "en": "Greed", "hash": "edaec6315c5355a0", "src": "db2@1.60.1.70291"}
-{"id": "GROUND_CLUTTER", "field": "text", "en": "Ground Clutter", "hash": "652410ce68fc8904", "src": "db2@1.60.1.70291"}
-{"id": "GROUP", "field": "text", "en": "Group", "hash": "edb16cc78407f946", "src": "db2@1.60.1.70291"}
-{"id": "GROUPMANAGER_GROUND_MARKER", "field": "text", "en": "Ground", "hash": "a1caab90023268a9", "src": "db2@1.60.1.70291"}
-{"id": "GROUPMANAGER_UNIT_MARKER", "field": "text", "en": "Unit", "hash": "0b80c884a83e3786", "src": "db2@1.60.1.70291"}
-{"id": "GROUP_BUFF_FILTER_MOVE_TO_HIDDEN", "field": "text", "en": "Move to Not Displayed", "hash": "50425ee4675f2331", "src": "db2@1.60.1.70291"}
-{"id": "GROUP_BUFF_FILTER_MOVE_TO_SHOWN", "field": "text", "en": "Move to Group Frame Buffs", "hash": "af1cad204b40bba2", "src": "db2@1.60.1.70291"}
-{"id": "GROUP_BUFF_FILTER_NEW_VISUAL_ALERT", "field": "text", "en": "New Visual Alert", "hash": "f5f2cbfa9bff9135", "src": "db2@1.60.1.70291"}
-{"id": "GROUP_BUFF_FILTER_SECTION_HIDDEN", "field": "text", "en": "Not Displayed", "hash": "868e93607807adf1", "src": "db2@1.60.1.70291"}
-{"id": "GROUP_BUFF_FILTER_SECTION_SHOWN", "field": "text", "en": "Group Frame Buffs", "hash": "4173070117f7849f", "src": "db2@1.60.1.70291"}
-{"id": "GROUP_BUFF_FILTER_VISUAL_ALERT_DIALOG_LABEL_VISUAL_TYPE", "field": "text", "en": "Visual Type", "hash": "bd998dbe0927f7cb", "src": "db2@1.60.1.70291"}
-{"id": "GROUP_FINDER_AUTHENTICATOR_POPUP_DESC", "field": "text", "en": "Unlock full access to the group finder by attaching an Authenticator and SMS Protect to your account.|n|nThe Battle.net Authenticator is a free, easy-to-use service that protects your account from intruders, and SMS Protect notifies you when important changes are made to your account.|n|nClick \"Activate\" to launch the Authenticator setup website.", "hash": "304e2ca5f52c645b", "src": "db2@1.60.1.70291"}
-{"id": "GROUP_FINDER_DELIST_WARNING_SUBTEXT", "field": "text", "en": "|n%s until automatic delist", "hash": "44226196d7ce0b6a", "src": "db2@1.60.1.70291"}
-{"id": "GROUP_FINDER_DELIST_WARNING_TITLE", "field": "text", "en": "You have been promoted to Leader|TInterface\\GroupFrame\\UI-Group-LeaderIcon:0:0:0:-1|t |n|n|cffffd200Would you like to relist the group:|r|n%s|n", "hash": "326594d398ae946d", "src": "db2@1.60.1.70291"}
-{"id": "GROUP_FINDER_DESLIST_WARNING_EDIT_LISTING", "field": "text", "en": "Edit Listing", "hash": "b676b14ff35cc03f", "src": "db2@1.60.1.70291"}
-{"id": "GROUP_FINDER_GENERAL_PLAYSTYLE1", "field": "text", "en": "Learning", "hash": "ed4847072cb92a78", "src": "db2@1.60.1.70291"}
-{"id": "GROUP_FINDER_GENERAL_PLAYSTYLE2", "field": "text", "en": "Relaxed", "hash": "9157107f114974cb", "src": "db2@1.60.1.70291"}
-{"id": "GROUP_FINDER_GENERAL_PLAYSTYLE3", "field": "text", "en": "Competitive", "hash": "1cd2481c5467c60e", "src": "db2@1.60.1.70291"}
-{"id": "GROUP_FINDER_GENERAL_PLAYSTYLE4", "field": "text", "en": "Carry Offered", "hash": "0b44ada7d0b8148f", "src": "db2@1.60.1.70291"}
-{"id": "GROUP_FINDER_PLAYSTYLE_REQUIRED", "field": "text", "en": "Select Playstyle (required)", "hash": "426490637d25317d", "src": "db2@1.60.1.70291"}
-{"id": "GROUP_INVITE", "field": "text", "en": "Group Invite", "hash": "09d64fe926f4972e", "src": "db2@1.60.1.70291"}
-{"id": "GROUP_NUMBER", "field": "text", "en": "Group %d", "hash": "bb3a6c064593e9f0", "src": "db2@1.60.1.70291"}
-{"id": "GROUP_TARGETING_CLOSE", "field": "text", "en": "Close", "hash": "a6acc0d0b7ee0360", "src": "db2@1.60.1.70291"}
-{"id": "GUILD", "field": "text", "en": "Guild", "hash": "ee16bebb146d1fea", "src": "db2@1.60.1.70291"}
+{"id": "GAMEPAD_TURN_WITH_CAMERA", "field": "text", "en": "Turn Player with Camera", "hash": "7e8f64b49f39058d", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_TURN_WITH_CAMERA_OPTION_ALWAYS", "field": "text", "en": "Player always turns with camera", "hash": "dfdf6c49218844bd", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_TURN_WITH_CAMERA_OPTION_MOVING", "field": "text", "en": "Player turns with camera when moving", "hash": "152441fd00a861bd", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_TURN_WITH_CAMERA_OPTION_MOVING_COMBAT", "field": "text", "en": "Player turns with camera when moving or in combat", "hash": "e544265bd832cabd", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_TURN_WITH_CAMERA_OPTION_MOVING_COMBAT_CASTING", "field": "text", "en": "Player turns with camera when moving, in combat or casting", "hash": "ba8a6bee7d286c96", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_YAW_SPEED", "field": "text", "en": "Horizontal Speed", "hash": "f8dbf492f52365ae", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPAD_YAW_SPEED_TOOLTIP", "field": "text", "en": "Adjust the speed at which you turn the camera horizontally with the analog stick.", "hash": "c6b20a64694b1760", "src": "db2@1.60.1.70338"}
+{"id": "GAMEPLAY_SFX_VOLUME", "field": "text", "en": "Gameplay Sound Effects", "hash": "dc6f218cac140a0c", "src": "db2@1.60.1.70338"}
+{"id": "GAMETIME_TOOLTIP_CALENDAR_INVITES", "field": "text", "en": "You have pending calendar invites.", "hash": "0b587bbb95331ad0", "src": "db2@1.60.1.70338"}
+{"id": "GAMETIME_TOOLTIP_TOGGLE_CALENDAR", "field": "text", "en": "Click to show the calendar.", "hash": "f3de208c072b0b67", "src": "db2@1.60.1.70338"}
+{"id": "GAMETIME_TOOLTIP_TOGGLE_CLOCK", "field": "text", "en": "Click to show clock settings.", "hash": "db6653b4420e9a26", "src": "db2@1.60.1.70338"}
+{"id": "GAME_MENU_SHOW_REWARDS", "field": "text", "en": "Rewards", "hash": "526c53558d8b389a", "src": "db2@1.60.1.70338"}
+{"id": "GAMMA", "field": "text", "en": "Gamma", "hash": "eb69bb43182f3e25", "src": "db2@1.60.1.70338"}
+{"id": "GARRISON_BOOT_TIMER", "field": "text", "en": "This garrison does not belong to you or your group leader. You will be teleported outside the garrison in %d %s.", "hash": "6e0c6dc37b890461", "src": "db2@1.60.1.70338"}
+{"id": "GARRISON_FOLLOWER_ADDED_TOAST", "field": "text", "en": "Garrison Follower Gained", "hash": "87524b6a3a5fdf8f", "src": "db2@1.60.1.70338"}
+{"id": "GARRISON_MISSION_COMPLETE", "field": "text", "en": "Mission Complete", "hash": "9ff0079337a01118", "src": "db2@1.60.1.70338"}
+{"id": "GARRISON_MISSION_RARE", "field": "text", "en": "Rare!", "hash": "ac81db98c01b0bc9", "src": "db2@1.60.1.70338"}
+{"id": "GARRISON_SHIPYARD_FOLLOWER_ADDED_TOAST", "field": "text", "en": "Ship added to your fleet", "hash": "98c9067c3a13a8f2", "src": "db2@1.60.1.70338"}
+{"id": "GARRISON_SHIPYARD_FOLLOWER_ADDED_UPGRADED_TOAST", "field": "text", "en": "Upgraded ship added to your fleet", "hash": "659c487c14d87631", "src": "db2@1.60.1.70338"}
+{"id": "GARRISON_TALENT_ORDER_ADVANCEMENT", "field": "text", "en": "Order Advancement", "hash": "a494959674e65668", "src": "db2@1.60.1.70338"}
+{"id": "GARRISON_UPDATE", "field": "text", "en": "Garrison Update", "hash": "26c6e7c6b8573a73", "src": "db2@1.60.1.70338"}
+{"id": "GEARSETS_POPUP_TEXT", "field": "text", "en": "Enter Set Name (Max 16 Characters):", "hash": "11f38931985b00a3", "src": "db2@1.60.1.70338"}
+{"id": "GENERAL_MACROS", "field": "text", "en": "General Macros", "hash": "d250f72a6394de08", "src": "db2@1.60.1.70338"}
+{"id": "GENERIC_ITEM_CONVERSION_SLOT_TOOLTIP", "field": "text", "en": "Insert an eligible item to convert to a set item.", "hash": "f64835c8f62cd737", "src": "db2@1.60.1.70338"}
+{"id": "GENERIC_MONEY_GAINED_RECEIPT", "field": "text", "en": "You gained: |cffffffff%s|r", "hash": "6aa618b890a635f2", "src": "db2@1.60.1.70338"}
+{"id": "GENERIC_TRAIT_FRAME_CONFIRM_PURCHASE", "field": "text", "en": "Are you sure you want to unlock this talent?", "hash": "5553db0bb532eae2", "src": "db2@1.60.1.70338"}
+{"id": "GENERIC_TRAIT_FRAME_CONFIRM_PURCHASE_FORMAT", "field": "text", "en": "Are you sure you want to spend %s to unlock this talent?", "hash": "d4ea8f0c32d15511", "src": "db2@1.60.1.70338"}
+{"id": "GENERIC_TRAIT_FRAME_EDGE_REQUIREMENTS_BUTTON_TOOLTIP", "field": "text", "en": "Requires all preceding talents", "hash": "402ec3a42c5b4012", "src": "db2@1.60.1.70338"}
+{"id": "GENERIC_TRAIT_FRAME_INTERNAL_ERROR", "field": "text", "en": "Internal error. Try again later.", "hash": "be2cf1d3edaddac6", "src": "db2@1.60.1.70338"}
+{"id": "GLOBAL_CHANNELS", "field": "text", "en": "Channels", "hash": "922ae057814067c5", "src": "db2@1.60.1.70338"}
+{"id": "GM_CHAT", "field": "text", "en": "Chatting with a GM", "hash": "3b2ce1eb397aafa0", "src": "db2@1.60.1.70338"}
+{"id": "GM_CHAT_LAST_SESSION", "field": "text", "en": "In your last session, you were speaking with %s.", "hash": "e2eff4b6bf80c919", "src": "db2@1.60.1.70338"}
+{"id": "GM_CHAT_STATUS_READY", "field": "text", "en": "GM Chat Request", "hash": "da2480ea906e0c82", "src": "db2@1.60.1.70338"}
+{"id": "GM_CHAT_STATUS_READY_DESCRIPTION", "field": "text", "en": "A GM would like to chat with you. Click here to begin.", "hash": "55ac2b8d63445bc1", "src": "db2@1.60.1.70338"}
+{"id": "GM_RESPONSE_ALERT", "field": "text", "en": "You have received a ticket response. Click here to read it.", "hash": "d7c1b29a992fee48", "src": "db2@1.60.1.70338"}
+{"id": "GM_TICKET_HIGH_VOLUME", "field": "text", "en": "We are currently experiencing a high volume of petitions.", "hash": "1f421236f24e90e1", "src": "db2@1.60.1.70338"}
+{"id": "GM_TICKET_UNAVAILABLE", "field": "text", "en": "Wait time currently unavailable.", "hash": "fcfc9f651e6810e4", "src": "db2@1.60.1.70338"}
+{"id": "GM_TICKET_WAIT_TIME", "field": "text", "en": "Average ticket wait time:\n%s", "hash": "ade219b5636440f2", "src": "db2@1.60.1.70338"}
+{"id": "GOLD_PER_DAY", "field": "text", "en": "(gold/day)", "hash": "5615a7e9b7a949e3", "src": "db2@1.60.1.70338"}
+{"id": "GOODBYE", "field": "text", "en": "Goodbye", "hash": "d5dea8d780d5b62f", "src": "db2@1.60.1.70338"}
+{"id": "GOSSIP_OPTION_PREPEND", "field": "text", "en": "|cnPURE_BLUE_COLOR:%s|r %s", "hash": "3c1b2dd1da5ab79e", "src": "db2@1.60.1.70338"}
+{"id": "GRAPHICS_CARD", "field": "text", "en": "Graphics Card", "hash": "5b0bed4f6f9d2c52", "src": "db2@1.60.1.70338"}
+{"id": "GRAPHICS_LABEL", "field": "text", "en": "Graphics", "hash": "a13a8a332c0b8a08", "src": "db2@1.60.1.70338"}
+{"id": "GRAPHICS_QUALITY", "field": "text", "en": "Graphics Quality", "hash": "9a352dd3c140f7e9", "src": "db2@1.60.1.70338"}
+{"id": "GRAVEYARD_ELIGIBLE", "field": "text", "en": "Eligible Graveyard", "hash": "a15b900c5a60aea7", "src": "db2@1.60.1.70338"}
+{"id": "GRAVEYARD_ELIGIBLE_TOOLTIP", "field": "text", "en": "Click to select this graveyard. You will resurrect here when you die.", "hash": "35abe0da7fadf836", "src": "db2@1.60.1.70338"}
+{"id": "GRAVEYARD_SELECTED", "field": "text", "en": "Selected Graveyard", "hash": "87171cbc431a4dac", "src": "db2@1.60.1.70338"}
+{"id": "GRAVEYARD_SELECTED_TOOLTIP", "field": "text", "en": "You will resurrect at this graveyard.", "hash": "3802cbd5cb0a1521", "src": "db2@1.60.1.70338"}
+{"id": "GREED", "field": "text", "en": "Greed", "hash": "edaec6315c5355a0", "src": "db2@1.60.1.70338"}
+{"id": "GROUND_CLUTTER", "field": "text", "en": "Ground Clutter", "hash": "652410ce68fc8904", "src": "db2@1.60.1.70338"}
+{"id": "GROUP", "field": "text", "en": "Group", "hash": "edb16cc78407f946", "src": "db2@1.60.1.70338"}
+{"id": "GROUPMANAGER_GROUND_MARKER", "field": "text", "en": "Ground", "hash": "a1caab90023268a9", "src": "db2@1.60.1.70338"}
+{"id": "GROUPMANAGER_UNIT_MARKER", "field": "text", "en": "Unit", "hash": "0b80c884a83e3786", "src": "db2@1.60.1.70338"}
+{"id": "GROUP_BUFF_FILTER_MOVE_TO_HIDDEN", "field": "text", "en": "Move to Not Displayed", "hash": "50425ee4675f2331", "src": "db2@1.60.1.70338"}
+{"id": "GROUP_BUFF_FILTER_MOVE_TO_SHOWN", "field": "text", "en": "Move to Group Frame Buffs", "hash": "af1cad204b40bba2", "src": "db2@1.60.1.70338"}
+{"id": "GROUP_BUFF_FILTER_NEW_VISUAL_ALERT", "field": "text", "en": "New Visual Alert", "hash": "f5f2cbfa9bff9135", "src": "db2@1.60.1.70338"}
+{"id": "GROUP_BUFF_FILTER_SECTION_HIDDEN", "field": "text", "en": "Not Displayed", "hash": "868e93607807adf1", "src": "db2@1.60.1.70338"}
+{"id": "GROUP_BUFF_FILTER_SECTION_SHOWN", "field": "text", "en": "Group Frame Buffs", "hash": "4173070117f7849f", "src": "db2@1.60.1.70338"}
+{"id": "GROUP_BUFF_FILTER_VISUAL_ALERT_DIALOG_LABEL_VISUAL_TYPE", "field": "text", "en": "Visual Type", "hash": "bd998dbe0927f7cb", "src": "db2@1.60.1.70338"}
+{"id": "GROUP_FINDER_AUTHENTICATOR_POPUP_DESC", "field": "text", "en": "Unlock full access to the group finder by attaching an Authenticator and SMS Protect to your account.|n|nThe Battle.net Authenticator is a free, easy-to-use service that protects your account from intruders, and SMS Protect notifies you when important changes are made to your account.|n|nClick \"Activate\" to launch the Authenticator setup website.", "hash": "304e2ca5f52c645b", "src": "db2@1.60.1.70338"}
+{"id": "GROUP_FINDER_DELIST_WARNING_SUBTEXT", "field": "text", "en": "|n%s until automatic delist", "hash": "44226196d7ce0b6a", "src": "db2@1.60.1.70338"}
+{"id": "GROUP_FINDER_DELIST_WARNING_TITLE", "field": "text", "en": "You have been promoted to Leader|TInterface\\GroupFrame\\UI-Group-LeaderIcon:0:0:0:-1|t |n|n|cffffd200Would you like to relist the group:|r|n%s|n", "hash": "326594d398ae946d", "src": "db2@1.60.1.70338"}
+{"id": "GROUP_FINDER_DESLIST_WARNING_EDIT_LISTING", "field": "text", "en": "Edit Listing", "hash": "b676b14ff35cc03f", "src": "db2@1.60.1.70338"}
+{"id": "GROUP_FINDER_GENERAL_PLAYSTYLE1", "field": "text", "en": "Learning", "hash": "ed4847072cb92a78", "src": "db2@1.60.1.70338"}
+{"id": "GROUP_FINDER_GENERAL_PLAYSTYLE2", "field": "text", "en": "Relaxed", "hash": "9157107f114974cb", "src": "db2@1.60.1.70338"}
+{"id": "GROUP_FINDER_GENERAL_PLAYSTYLE3", "field": "text", "en": "Competitive", "hash": "1cd2481c5467c60e", "src": "db2@1.60.1.70338"}
+{"id": "GROUP_FINDER_GENERAL_PLAYSTYLE4", "field": "text", "en": "Carry Offered", "hash": "0b44ada7d0b8148f", "src": "db2@1.60.1.70338"}
+{"id": "GROUP_FINDER_PLAYSTYLE_REQUIRED", "field": "text", "en": "Select Playstyle (required)", "hash": "426490637d25317d", "src": "db2@1.60.1.70338"}
+{"id": "GROUP_INVITE", "field": "text", "en": "Group Invite", "hash": "09d64fe926f4972e", "src": "db2@1.60.1.70338"}
+{"id": "GROUP_NUMBER", "field": "text", "en": "Group %d", "hash": "bb3a6c064593e9f0", "src": "db2@1.60.1.70338"}
+{"id": "GROUP_TARGETING_CLOSE", "field": "text", "en": "Close", "hash": "a6acc0d0b7ee0360", "src": "db2@1.60.1.70338"}
+{"id": "GUILD", "field": "text", "en": "Guild", "hash": "ee16bebb146d1fea", "src": "db2@1.60.1.70338"}
 {"id": "GUILDADDRANK_BUTTON_TOOLTIP", "field": "text", "en": "Click to add rank", "hash": "6dd15ac17f08f034", "src": "db2@1.60.1.69913"}
-{"id": "GUILDBANK_AVAILABLE_MONEY", "field": "text", "en": "Available Amount:", "hash": "96729b4dbbb9a980", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_AWARD_MONEY_SUMMARY_FORMAT", "field": "text", "en": "A total of %s was deposited last week from Guild Challenges", "hash": "a0c34a6b1abda5cb", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_BUYTAB_MONEY_FORMAT", "field": "text", "en": "%s purchased a guild bank tab for %s", "hash": "312ecb6a8537db94", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_DEPOSIT", "field": "text", "en": "Amount to deposit:", "hash": "15f6fc12ecf1a642", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_DEPOSIT_FORMAT", "field": "text", "en": "%s deposited %s", "hash": "23ee63e0641713c0", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_DEPOSIT_MONEY_FORMAT", "field": "text", "en": "%s deposited %s", "hash": "23ee63e0641713c0", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_GUILD_RENAME_PURCHASE", "field": "text", "en": "%s renamed the guild for %s", "hash": "0d7c1cfb3318d0bf", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_GUILD_RENAME_REFUND", "field": "text", "en": "%s refunded the guild rename for %s", "hash": "a5f2217fb731ae89", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_INFO_TITLE_FORMAT", "field": "text", "en": "%s Info", "hash": "55ddbf69e4494b43", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_LOG_TITLE_FORMAT", "field": "text", "en": "%s  Log", "hash": "4125a7e6c6fd491e", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_MOVE_FORMAT", "field": "text", "en": "%s moved %s x %d from %s to %s", "hash": "e24188af9de56267", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_POPUP_TEXT", "field": "text", "en": "Enter Guild Bank Tab Name:", "hash": "5f94e4a9dbe63446", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_REMAINING_MONEY", "field": "text", "en": "Remaining Daily Withdrawals for %s:  |cffffffff%s|r", "hash": "dd9e353dc97c377c", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_REPAIR", "field": "text", "en": "Remaining amount for today's Guild Bank repairs:", "hash": "5af2dd0d45cdcf1a", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_REPAIR_INSUFFICIENT_FUNDS", "field": "text", "en": "Insufficient funds to repair all items", "hash": "0d72dd0a4e05ace9", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_REPAIR_MONEY_FORMAT", "field": "text", "en": "%s withdrew %s for repairs", "hash": "a206fe7cab26f1bd", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_REPAIR_PERSONAL", "field": "text", "en": "Personal amount to be spent:", "hash": "5196fce70d911266", "src": "db2@1.60.1.70291"}
+{"id": "GUILDBANK_AVAILABLE_MONEY", "field": "text", "en": "Available Amount:", "hash": "96729b4dbbb9a980", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_AWARD_MONEY_SUMMARY_FORMAT", "field": "text", "en": "A total of %s was deposited last week from Guild Challenges", "hash": "a0c34a6b1abda5cb", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_BUYTAB_MONEY_FORMAT", "field": "text", "en": "%s purchased a guild bank tab for %s", "hash": "312ecb6a8537db94", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_DEPOSIT", "field": "text", "en": "Amount to deposit:", "hash": "15f6fc12ecf1a642", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_DEPOSIT_FORMAT", "field": "text", "en": "%s deposited %s", "hash": "23ee63e0641713c0", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_DEPOSIT_MONEY_FORMAT", "field": "text", "en": "%s deposited %s", "hash": "23ee63e0641713c0", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_GUILD_RENAME_PURCHASE", "field": "text", "en": "%s renamed the guild for %s", "hash": "0d7c1cfb3318d0bf", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_GUILD_RENAME_REFUND", "field": "text", "en": "%s refunded the guild rename for %s", "hash": "a5f2217fb731ae89", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_INFO_TITLE_FORMAT", "field": "text", "en": "%s Info", "hash": "55ddbf69e4494b43", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_LOG_TITLE_FORMAT", "field": "text", "en": "%s  Log", "hash": "4125a7e6c6fd491e", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_MOVE_FORMAT", "field": "text", "en": "%s moved %s x %d from %s to %s", "hash": "e24188af9de56267", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_POPUP_TEXT", "field": "text", "en": "Enter Guild Bank Tab Name:", "hash": "5f94e4a9dbe63446", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_REMAINING_MONEY", "field": "text", "en": "Remaining Daily Withdrawals for %s:  |cffffffff%s|r", "hash": "dd9e353dc97c377c", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_REPAIR", "field": "text", "en": "Remaining amount for today's Guild Bank repairs:", "hash": "5af2dd0d45cdcf1a", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_REPAIR_INSUFFICIENT_FUNDS", "field": "text", "en": "Insufficient funds to repair all items", "hash": "0d72dd0a4e05ace9", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_REPAIR_MONEY_FORMAT", "field": "text", "en": "%s withdrew %s for repairs", "hash": "a206fe7cab26f1bd", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_REPAIR_PERSONAL", "field": "text", "en": "Personal amount to be spent:", "hash": "5196fce70d911266", "src": "db2@1.60.1.70338"}
 {"id": "GUILDBANK_TAB_COLON", "field": "text", "en": "Guild Bank Tab:", "hash": "2d5f30cf01257b81", "src": "db2@1.60.1.69913"}
-{"id": "GUILDBANK_TAB_DEPOSIT_ONLY", "field": "text", "en": "|cffff2020(Deposit Only)|r", "hash": "6bc03797b097f391", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_TAB_FULL_ACCESS", "field": "text", "en": "|cff20ff20(Full Access)|r", "hash": "2e3a33af9379c25d", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_TAB_LOCKED", "field": "text", "en": "|cffff2020(Locked)|r", "hash": "3564e6c3fbef6e06", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_TAB_WITHDRAW_ONLY", "field": "text", "en": "|cffff2020(Withdraw Only)|r", "hash": "3ccdabbdc3f82980", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_UNLOCKTAB_FORMAT", "field": "text", "en": "%s unlocked a guild bank tab with a Guild Vault Voucher.", "hash": "90ab7857544e371c", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_WITHDRAW", "field": "text", "en": "Amount to withdraw:", "hash": "55d83d8f5dc47c11", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_WITHDRAWFORTAB_MONEY_FORMAT", "field": "text", "en": "%s withdrew %s to purchase a guild bank tab", "hash": "03f230e395ad30c6", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_WITHDRAW_FORMAT", "field": "text", "en": "%s |cffff2020withdrew|r %s", "hash": "45aa5d21ec687d8c", "src": "db2@1.60.1.70291"}
-{"id": "GUILDBANK_WITHDRAW_MONEY_FORMAT", "field": "text", "en": "%s |cffff2020withdrew|r %s", "hash": "45aa5d21ec687d8c", "src": "db2@1.60.1.70291"}
-{"id": "GUILDCONTROL", "field": "text", "en": "Guild Control", "hash": "b2c2f65e5d2d984b", "src": "db2@1.60.1.70291"}
+{"id": "GUILDBANK_TAB_DEPOSIT_ONLY", "field": "text", "en": "|cffff2020(Deposit Only)|r", "hash": "6bc03797b097f391", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_TAB_FULL_ACCESS", "field": "text", "en": "|cff20ff20(Full Access)|r", "hash": "2e3a33af9379c25d", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_TAB_LOCKED", "field": "text", "en": "|cffff2020(Locked)|r", "hash": "3564e6c3fbef6e06", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_TAB_WITHDRAW_ONLY", "field": "text", "en": "|cffff2020(Withdraw Only)|r", "hash": "3ccdabbdc3f82980", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_UNLOCKTAB_FORMAT", "field": "text", "en": "%s unlocked a guild bank tab with a Guild Vault Voucher.", "hash": "90ab7857544e371c", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_WITHDRAW", "field": "text", "en": "Amount to withdraw:", "hash": "55d83d8f5dc47c11", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_WITHDRAWFORTAB_MONEY_FORMAT", "field": "text", "en": "%s withdrew %s to purchase a guild bank tab", "hash": "03f230e395ad30c6", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_WITHDRAW_FORMAT", "field": "text", "en": "%s |cffff2020withdrew|r %s", "hash": "45aa5d21ec687d8c", "src": "db2@1.60.1.70338"}
+{"id": "GUILDBANK_WITHDRAW_MONEY_FORMAT", "field": "text", "en": "%s |cffff2020withdrew|r %s", "hash": "45aa5d21ec687d8c", "src": "db2@1.60.1.70338"}
+{"id": "GUILDCONTROL", "field": "text", "en": "Guild Control", "hash": "b2c2f65e5d2d984b", "src": "db2@1.60.1.70338"}
 {"id": "GUILDCONTROL_ALLOWRANK", "field": "text", "en": "Allow this rank to:", "hash": "1ff4e5803c1e8fed", "src": "db2@1.60.1.69913"}
-{"id": "GUILDCONTROL_BANK_PERMISSIONS", "field": "text", "en": "Bank Tab Permissions", "hash": "4a0735d146931ab8", "src": "db2@1.60.1.70291"}
-{"id": "GUILDCONTROL_DEPOSIT_ITEMS", "field": "text", "en": "Deposit Items", "hash": "4df6500e73534599", "src": "db2@1.60.1.70291"}
-{"id": "GUILDCONTROL_DISCORD_SETTINGS", "field": "text", "en": "%s Discord Settings", "hash": "6fa6dd8be23ee6fe", "src": "db2@1.60.1.70291"}
-{"id": "GUILDCONTROL_GUILDRANKS", "field": "text", "en": "Guild Ranks", "hash": "b086f4b40922c406", "src": "db2@1.60.1.70291"}
-{"id": "GUILDCONTROL_OPTION1", "field": "text", "en": "Guildchat Listen", "hash": "a3f6fa081035a3da", "src": "db2@1.60.1.70291"}
-{"id": "GUILDCONTROL_OPTION10", "field": "text", "en": "Edit Public Note", "hash": "06ba2c80ecbd6b4f", "src": "db2@1.60.1.70291"}
-{"id": "GUILDCONTROL_OPTION11", "field": "text", "en": "View Officer Note", "hash": "975348f0a98f4a00", "src": "db2@1.60.1.70291"}
-{"id": "GUILDCONTROL_OPTION12", "field": "text", "en": "Edit Officer Note", "hash": "f51157073f89e073", "src": "db2@1.60.1.70291"}
-{"id": "GUILDCONTROL_OPTION13", "field": "text", "en": "Modify Guild Info", "hash": "4d7913793305f56e", "src": "db2@1.60.1.70291"}
-{"id": "GUILDCONTROL_OPTION15", "field": "text", "en": "Guild Bank Repair", "hash": "d3380cb603ffa5b0", "src": "db2@1.60.1.70291"}
+{"id": "GUILDCONTROL_BANK_PERMISSIONS", "field": "text", "en": "Bank Tab Permissions", "hash": "4a0735d146931ab8", "src": "db2@1.60.1.70338"}
+{"id": "GUILDCONTROL_DEPOSIT_ITEMS", "field": "text", "en": "Deposit Items", "hash": "4df6500e73534599", "src": "db2@1.60.1.70338"}
+{"id": "GUILDCONTROL_DISCORD_SETTINGS", "field": "text", "en": "%s Discord Settings", "hash": "6fa6dd8be23ee6fe", "src": "db2@1.60.1.70338"}
+{"id": "GUILDCONTROL_GUILDRANKS", "field": "text", "en": "Guild Ranks", "hash": "b086f4b40922c406", "src": "db2@1.60.1.70338"}
+{"id": "GUILDCONTROL_OPTION1", "field": "text", "en": "Guildchat Listen", "hash": "a3f6fa081035a3da", "src": "db2@1.60.1.70338"}
+{"id": "GUILDCONTROL_OPTION10", "field": "text", "en": "Edit Public Note", "hash": "06ba2c80ecbd6b4f", "src": "db2@1.60.1.70338"}
+{"id": "GUILDCONTROL_OPTION11", "field": "text", "en": "View Officer Note", "hash": "975348f0a98f4a00", "src": "db2@1.60.1.70338"}
+{"id": "GUILDCONTROL_OPTION12", "field": "text", "en": "Edit Officer Note", "hash": "f51157073f89e073", "src": "db2@1.60.1.70338"}
+{"id": "GUILDCONTROL_OPTION13", "field": "text", "en": "Modify Guild Info", "hash": "4d7913793305f56e", "src": "db2@1.60.1.70338"}
+{"id": "GUILDCONTROL_OPTION15", "field": "text", "en": "Guild Bank Repair", "hash": "d3380cb603ffa5b0", "src": "db2@1.60.1.70338"}
 {"id": "GUILDCONTROL_OPTION15_TOOLTIP", "field": "text", "en": "Use guild funds for repairs", "hash": "65eb0342eac81752", "src": "db2@1.60.1.69913"}
-{"id": "GUILDCONTROL_OPTION16", "field": "text", "en": "Withdraw Gold", "hash": "bf618d683f84ef01", "src": "db2@1.60.1.70291"}
+{"id": "GUILDCONTROL_OPTION16", "field": "text", "en": "Withdraw Gold", "hash": "bf618d683f84ef01", "src": "db2@1.60.1.70338"}
 {"id": "GUILDCONTROL_OPTION16_TOOLTIP", "field": "text", "en": "Withdraw gold from the guild bank", "hash": "991d4688b9c5c936", "src": "db2@1.60.1.69913"}
-{"id": "GUILDCONTROL_OPTION18", "field": "text", "en": "Requires Authenticator", "hash": "4660c73ee024b886", "src": "db2@1.60.1.70291"}
-{"id": "GUILDCONTROL_OPTION19", "field": "text", "en": "Modify Bank Tabs", "hash": "3632f20a8cb50b2b", "src": "db2@1.60.1.70291"}
-{"id": "GUILDCONTROL_OPTION2", "field": "text", "en": "Guildchat Speak", "hash": "a039c50390af0bc3", "src": "db2@1.60.1.70291"}
-{"id": "GUILDCONTROL_OPTION21", "field": "text", "en": "Recruitment", "hash": "675c60cbf9db1c1c", "src": "db2@1.60.1.70291"}
-{"id": "GUILDCONTROL_OPTION3", "field": "text", "en": "Officerchat Listen", "hash": "7d0b653d4889a602", "src": "db2@1.60.1.70291"}
-{"id": "GUILDCONTROL_OPTION4", "field": "text", "en": "Officerchat Speak", "hash": "b1842f5bf09dbd99", "src": "db2@1.60.1.70291"}
-{"id": "GUILDCONTROL_OPTION5", "field": "text", "en": "Promote", "hash": "23ebf48ca4005886", "src": "db2@1.60.1.70291"}
-{"id": "GUILDCONTROL_OPTION6", "field": "text", "en": "Demote", "hash": "cac55c35890c31f8", "src": "db2@1.60.1.70291"}
-{"id": "GUILDCONTROL_OPTION7", "field": "text", "en": "Invite Member", "hash": "ce1b8be1c0246ee1", "src": "db2@1.60.1.70291"}
-{"id": "GUILDCONTROL_OPTION8", "field": "text", "en": "Remove Member", "hash": "e243c3e54b69241a", "src": "db2@1.60.1.70291"}
-{"id": "GUILDCONTROL_OPTION9", "field": "text", "en": "Set MOTD", "hash": "385d33ce67128afe", "src": "db2@1.60.1.70291"}
+{"id": "GUILDCONTROL_OPTION18", "field": "text", "en": "Requires Authenticator", "hash": "4660c73ee024b886", "src": "db2@1.60.1.70338"}
+{"id": "GUILDCONTROL_OPTION19", "field": "text", "en": "Modify Bank Tabs", "hash": "3632f20a8cb50b2b", "src": "db2@1.60.1.70338"}
+{"id": "GUILDCONTROL_OPTION2", "field": "text", "en": "Guildchat Speak", "hash": "a039c50390af0bc3", "src": "db2@1.60.1.70338"}
+{"id": "GUILDCONTROL_OPTION21", "field": "text", "en": "Recruitment", "hash": "675c60cbf9db1c1c", "src": "db2@1.60.1.70338"}
+{"id": "GUILDCONTROL_OPTION3", "field": "text", "en": "Officerchat Listen", "hash": "7d0b653d4889a602", "src": "db2@1.60.1.70338"}
+{"id": "GUILDCONTROL_OPTION4", "field": "text", "en": "Officerchat Speak", "hash": "b1842f5bf09dbd99", "src": "db2@1.60.1.70338"}
+{"id": "GUILDCONTROL_OPTION5", "field": "text", "en": "Promote", "hash": "23ebf48ca4005886", "src": "db2@1.60.1.70338"}
+{"id": "GUILDCONTROL_OPTION6", "field": "text", "en": "Demote", "hash": "cac55c35890c31f8", "src": "db2@1.60.1.70338"}
+{"id": "GUILDCONTROL_OPTION7", "field": "text", "en": "Invite Member", "hash": "ce1b8be1c0246ee1", "src": "db2@1.60.1.70338"}
+{"id": "GUILDCONTROL_OPTION8", "field": "text", "en": "Remove Member", "hash": "e243c3e54b69241a", "src": "db2@1.60.1.70338"}
+{"id": "GUILDCONTROL_OPTION9", "field": "text", "en": "Set MOTD", "hash": "385d33ce67128afe", "src": "db2@1.60.1.70338"}
 {"id": "GUILDCONTROL_RANKLABEL", "field": "text", "en": "Rank Label:", "hash": "0c0a36bd0f77aced", "src": "db2@1.60.1.69913"}
-{"id": "GUILDCONTROL_RANK_PERMISSIONS", "field": "text", "en": "Rank Permissions", "hash": "7bb86e61cacae9b1", "src": "db2@1.60.1.70291"}
-{"id": "GUILDCONTROL_SELECTRANK", "field": "text", "en": "Rank to modify:", "hash": "81556d54f0ff61a9", "src": "db2@1.60.1.70291"}
-{"id": "GUILDCONTROL_VIEW_TAB", "field": "text", "en": "View Tab", "hash": "a5dec05b50dd585b", "src": "db2@1.60.1.70291"}
+{"id": "GUILDCONTROL_RANK_PERMISSIONS", "field": "text", "en": "Rank Permissions", "hash": "7bb86e61cacae9b1", "src": "db2@1.60.1.70338"}
+{"id": "GUILDCONTROL_SELECTRANK", "field": "text", "en": "Rank to modify:", "hash": "81556d54f0ff61a9", "src": "db2@1.60.1.70338"}
+{"id": "GUILDCONTROL_VIEW_TAB", "field": "text", "en": "View Tab", "hash": "a5dec05b50dd585b", "src": "db2@1.60.1.70338"}
 {"id": "GUILDCONTROL_WITHDRAW_GOLD", "field": "text", "en": "Withdraw:", "hash": "8773f5f9ce81d254", "src": "db2@1.60.1.69913"}
-{"id": "GUILDCONTROL_WITHDRAW_ITEMS", "field": "text", "en": "Withdraw Items\n(stacks/day):", "hash": "bc2d50184e7a3429", "src": "db2@1.60.1.70291"}
-{"id": "GUILDEVENT_TYPE_DEMOTE", "field": "text", "en": "%s demotes %s to %s", "hash": "102e0b9a91593a80", "src": "db2@1.60.1.70291"}
-{"id": "GUILDEVENT_TYPE_INVITE", "field": "text", "en": "%s invites %s", "hash": "99284e7411f15bd6", "src": "db2@1.60.1.70291"}
-{"id": "GUILDEVENT_TYPE_JOIN", "field": "text", "en": "%s joins the guild", "hash": "eb5325ef0fd83c00", "src": "db2@1.60.1.70291"}
-{"id": "GUILDEVENT_TYPE_PROMOTE", "field": "text", "en": "%s promotes %s to %s", "hash": "becf0ca735648f6c", "src": "db2@1.60.1.70291"}
-{"id": "GUILDEVENT_TYPE_QUIT", "field": "text", "en": "%s leaves the guild", "hash": "97cc48bf6d933301", "src": "db2@1.60.1.70291"}
-{"id": "GUILDEVENT_TYPE_REMOVE", "field": "text", "en": "%s removes %s from the guild", "hash": "2c6d9d75b5d7679f", "src": "db2@1.60.1.70291"}
-{"id": "GUILDMEMBER_ALERT", "field": "text", "en": "Guild Member Alert", "hash": "fd8c9812ebb169a5", "src": "db2@1.60.1.70291"}
-{"id": "GUILDREMOVERANK_BUTTON_TOOLTIP", "field": "text", "en": "Click to remove this rank", "hash": "4526bb53a2cfedd1", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_ACHIEVEMENT", "field": "text", "en": "Guild Announce", "hash": "7ed06d8573c60f8e", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_ACHIEVEMENTS_ELIGIBLE", "field": "text", "en": "At least %1$d out of %2$d players in your group are members of %3$s. Guild achievements can be earned.", "hash": "e9ad227650379e26", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_ACHIEVEMENTS_ELIGIBLE_MAXXP", "field": "text", "en": "Your entire group is composed of guild members of %1$s. Guild achievements can be earned.", "hash": "4f8c2caaf0edabee", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_ACHIEVEMENTS_ELIGIBLE_MINXP", "field": "text", "en": "At least %1$d out of %2$d players in your group are members of %3$s. Guild achievements can be earned.", "hash": "e9ad227650379e26", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_ACHIEVEMENTS_TITLE", "field": "text", "en": "Guild Achievements", "hash": "1b4b21422a3ce324", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_ACHIEVEMENT_EARNED_BY", "field": "text", "en": "Earned by:", "hash": "4e2e7d88ef0c3e68", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_ACHIEVEMENT_UNLOCKED", "field": "text", "en": "Guild Achievement Earned", "hash": "587b7b4e8fd63111", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_AND_COMMUNITIES", "field": "text", "en": "Guild & Communities", "hash": "ef69e4cf6bd83922", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_BANK", "field": "text", "en": "Guild Bank", "hash": "4f5362cccc5ecfa2", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_BANK_LOG", "field": "text", "en": "Log", "hash": "00141fe02dc1f053", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_BANK_LOG_TIME", "field": "text", "en": "|cff009999   ( %s ago )|r", "hash": "c00910d43e912c79", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_BANK_MONEY_LOG", "field": "text", "en": "Money Log", "hash": "54226eb32922ea76", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_BANK_TAB_INFO", "field": "text", "en": "Info", "hash": "09e523b2075e6784", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_CHARTER_PURCHASE", "field": "text", "en": "Purchase a Guild Charter", "hash": "d504bd78c0832edd", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_CHARTER_REGISTER", "field": "text", "en": "Register a Guild Charter", "hash": "cb605ec0ea0660b5", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_CHARTER_TEMPLATE", "field": "text", "en": "%s Guild Charter", "hash": "c0a5f8c4ea3e75bc", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_CHAT", "field": "text", "en": "Guild Chat", "hash": "4f777f08758eff95", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_CONTROL_BUTTON_TEXT", "field": "text", "en": "Guild Settings", "hash": "c5c609cf55ccc526", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_CONTROL_RANK_PERMISSION_HAS_OFFICER_PRIVLEGES", "field": "text", "en": "Is Officer", "hash": "22fa2f872ff2d525", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_CRAFTERS", "field": "text", "en": "Guild Crafters", "hash": "dca65d2c0995da65", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_CREATION", "field": "text", "en": "Guild Creation", "hash": "72f406ad0508b4ac", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_CREST_DESIGN", "field": "text", "en": "Design a Guild Crest", "hash": "3622f116a04373e6", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_DISCORD_CHAT", "field": "text", "en": "Guild Discord Chat", "hash": "ec7f3e141e508937", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_DUP_RANK", "field": "text", "en": "Duplicate Rank", "hash": "9c39a20f12278700", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_EDIT_TEXT_LINK", "field": "text", "en": "[Click to edit]", "hash": "bb4dec7da0f2f940", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_EVENT_FORMAT", "field": "text", "en": "%1$s %2$s: %3$s", "hash": "307db2f887e37f68", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_EVENT_LOG", "field": "text", "en": "Log", "hash": "00141fe02dc1f053", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_EVENT_TODAY", "field": "text", "en": "TODAY", "hash": "cd27b582d60039fc", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_EXPERIENCE_CURRENT", "field": "text", "en": "Current: %s/%s (%s%%)", "hash": "3c001b049f0bbf50", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_FEAT_OF_STRENGTH_DESCRIPTION", "field": "text", "en": "Feats of Strength are accomplishments that guilds will find very difficult if not impossible to earn.  Worth no points, Feats of Strength are a collection of past glories on Azeroth.", "hash": "2093413057d444e7", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_FINDER_POSTING_EXPIRED", "field": "text", "en": "Guild Finder posting has expired!", "hash": "bf7ed46a34b8e537", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_FINDER_POSTING_GOING_TO_EXPIRE", "field": "text", "en": "Guild Finder posting expires in:", "hash": "27fccad36fc7ada6", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_FRAME_CHALLENGES", "field": "text", "en": "Guild Challenges", "hash": "74e37f622b427125", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_GROUP", "field": "text", "en": "Guild Group", "hash": "f1b78ea3dcf000de", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_IMPEACH_BUTTON_TEXT", "field": "text", "en": "|cFFFF0000Guild Master Inactive!|r |cFFFFFFFF[Click Here for Info]|r", "hash": "78a54db2ba330b02", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_IMPEACH_POPUP_CONFIRM", "field": "text", "en": "Dethrone", "hash": "2d8f775126f1061c", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_IMPEACH_POPUP_TEXT", "field": "text", "en": "Your guild master has been flagged as inactive. You may assume control of the guild. Do you want to remove the guild master?", "hash": "42b02bd5b6df1421", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_INFORMATION", "field": "text", "en": "Guild Information", "hash": "6fb68b7ab64c086b", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_INFO_EDITLABEL", "field": "text", "en": "Guild Information", "hash": "6fb68b7ab64c086b", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_INFO_TITLE", "field": "text", "en": "Info", "hash": "09e523b2075e6784", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_INTEREST_DUNGEON", "field": "text", "en": "Dungeons", "hash": "805537b689ee7860", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_INTEREST_RAID", "field": "text", "en": "Raids", "hash": "ac7f80169c608a71", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_INTEREST_RP", "field": "text", "en": "Role Playing", "hash": "c526cadb0dfb557f", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_INVITATION", "field": "text", "en": "invites you to join the guild:", "hash": "3d51647181342fa8", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_INVITE_DECLINE", "field": "text", "en": "Decline Invitation", "hash": "dae5e49891171db3", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_INVITE_JOIN", "field": "text", "en": "Join Guild", "hash": "9b22262f6f0495c1", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_LEAVE", "field": "text", "en": "Leave Guild", "hash": "f7d675411bee3877", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_LOWERRANK_BUTTON_TOOLTIP", "field": "text", "en": "Click to lower this rank", "hash": "39ff574571c61971", "src": "db2@1.60.1.70291"}
+{"id": "GUILDCONTROL_WITHDRAW_ITEMS", "field": "text", "en": "Withdraw Items\n(stacks/day):", "hash": "bc2d50184e7a3429", "src": "db2@1.60.1.70338"}
+{"id": "GUILDEVENT_TYPE_DEMOTE", "field": "text", "en": "%s demotes %s to %s", "hash": "102e0b9a91593a80", "src": "db2@1.60.1.70338"}
+{"id": "GUILDEVENT_TYPE_INVITE", "field": "text", "en": "%s invites %s", "hash": "99284e7411f15bd6", "src": "db2@1.60.1.70338"}
+{"id": "GUILDEVENT_TYPE_JOIN", "field": "text", "en": "%s joins the guild", "hash": "eb5325ef0fd83c00", "src": "db2@1.60.1.70338"}
+{"id": "GUILDEVENT_TYPE_PROMOTE", "field": "text", "en": "%s promotes %s to %s", "hash": "becf0ca735648f6c", "src": "db2@1.60.1.70338"}
+{"id": "GUILDEVENT_TYPE_QUIT", "field": "text", "en": "%s leaves the guild", "hash": "97cc48bf6d933301", "src": "db2@1.60.1.70338"}
+{"id": "GUILDEVENT_TYPE_REMOVE", "field": "text", "en": "%s removes %s from the guild", "hash": "2c6d9d75b5d7679f", "src": "db2@1.60.1.70338"}
+{"id": "GUILDMEMBER_ALERT", "field": "text", "en": "Guild Member Alert", "hash": "fd8c9812ebb169a5", "src": "db2@1.60.1.70338"}
+{"id": "GUILDREMOVERANK_BUTTON_TOOLTIP", "field": "text", "en": "Click to remove this rank", "hash": "4526bb53a2cfedd1", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_ACHIEVEMENT", "field": "text", "en": "Guild Announce", "hash": "7ed06d8573c60f8e", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_ACHIEVEMENTS_ELIGIBLE", "field": "text", "en": "At least %1$d out of %2$d players in your group are members of %3$s. Guild achievements can be earned.", "hash": "e9ad227650379e26", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_ACHIEVEMENTS_ELIGIBLE_MAXXP", "field": "text", "en": "Your entire group is composed of guild members of %1$s. Guild achievements can be earned.", "hash": "4f8c2caaf0edabee", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_ACHIEVEMENTS_ELIGIBLE_MINXP", "field": "text", "en": "At least %1$d out of %2$d players in your group are members of %3$s. Guild achievements can be earned.", "hash": "e9ad227650379e26", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_ACHIEVEMENTS_TITLE", "field": "text", "en": "Guild Achievements", "hash": "1b4b21422a3ce324", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_ACHIEVEMENT_EARNED_BY", "field": "text", "en": "Earned by:", "hash": "4e2e7d88ef0c3e68", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_ACHIEVEMENT_UNLOCKED", "field": "text", "en": "Guild Achievement Earned", "hash": "587b7b4e8fd63111", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_AND_COMMUNITIES", "field": "text", "en": "Guild & Communities", "hash": "ef69e4cf6bd83922", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_BANK", "field": "text", "en": "Guild Bank", "hash": "4f5362cccc5ecfa2", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_BANK_LOG", "field": "text", "en": "Log", "hash": "00141fe02dc1f053", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_BANK_LOG_TIME", "field": "text", "en": "|cff009999   ( %s ago )|r", "hash": "c00910d43e912c79", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_BANK_MONEY_LOG", "field": "text", "en": "Money Log", "hash": "54226eb32922ea76", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_BANK_TAB_INFO", "field": "text", "en": "Info", "hash": "09e523b2075e6784", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_CHARTER_PURCHASE", "field": "text", "en": "Purchase a Guild Charter", "hash": "d504bd78c0832edd", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_CHARTER_REGISTER", "field": "text", "en": "Register a Guild Charter", "hash": "cb605ec0ea0660b5", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_CHARTER_TEMPLATE", "field": "text", "en": "%s Guild Charter", "hash": "c0a5f8c4ea3e75bc", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_CHAT", "field": "text", "en": "Guild Chat", "hash": "4f777f08758eff95", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_CONTROL_BUTTON_TEXT", "field": "text", "en": "Guild Settings", "hash": "c5c609cf55ccc526", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_CONTROL_RANK_PERMISSION_HAS_OFFICER_PRIVLEGES", "field": "text", "en": "Is Officer", "hash": "22fa2f872ff2d525", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_CRAFTERS", "field": "text", "en": "Guild Crafters", "hash": "dca65d2c0995da65", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_CREATION", "field": "text", "en": "Guild Creation", "hash": "72f406ad0508b4ac", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_CREST_DESIGN", "field": "text", "en": "Design a Guild Crest", "hash": "3622f116a04373e6", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_DISCORD_CHAT", "field": "text", "en": "Guild Discord Chat", "hash": "ec7f3e141e508937", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_DUP_RANK", "field": "text", "en": "Duplicate Rank", "hash": "9c39a20f12278700", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_EDIT_TEXT_LINK", "field": "text", "en": "[Click to edit]", "hash": "bb4dec7da0f2f940", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_EVENT_FORMAT", "field": "text", "en": "%1$s %2$s: %3$s", "hash": "307db2f887e37f68", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_EVENT_LOG", "field": "text", "en": "Log", "hash": "00141fe02dc1f053", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_EVENT_TODAY", "field": "text", "en": "TODAY", "hash": "cd27b582d60039fc", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_EXPERIENCE_CURRENT", "field": "text", "en": "Current: %s/%s (%s%%)", "hash": "3c001b049f0bbf50", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_FEAT_OF_STRENGTH_DESCRIPTION", "field": "text", "en": "Feats of Strength are accomplishments that guilds will find very difficult if not impossible to earn.  Worth no points, Feats of Strength are a collection of past glories on Azeroth.", "hash": "2093413057d444e7", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_FINDER_POSTING_EXPIRED", "field": "text", "en": "Guild Finder posting has expired!", "hash": "bf7ed46a34b8e537", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_FINDER_POSTING_GOING_TO_EXPIRE", "field": "text", "en": "Guild Finder posting expires in:", "hash": "27fccad36fc7ada6", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_FRAME_CHALLENGES", "field": "text", "en": "Guild Challenges", "hash": "74e37f622b427125", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_GROUP", "field": "text", "en": "Guild Group", "hash": "f1b78ea3dcf000de", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_IMPEACH_BUTTON_TEXT", "field": "text", "en": "|cFFFF0000Guild Master Inactive!|r |cFFFFFFFF[Click Here for Info]|r", "hash": "78a54db2ba330b02", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_IMPEACH_POPUP_CONFIRM", "field": "text", "en": "Dethrone", "hash": "2d8f775126f1061c", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_IMPEACH_POPUP_TEXT", "field": "text", "en": "Your guild master has been flagged as inactive. You may assume control of the guild. Do you want to remove the guild master?", "hash": "42b02bd5b6df1421", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_INFORMATION", "field": "text", "en": "Guild Information", "hash": "6fb68b7ab64c086b", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_INFO_EDITLABEL", "field": "text", "en": "Guild Information", "hash": "6fb68b7ab64c086b", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_INFO_TITLE", "field": "text", "en": "Info", "hash": "09e523b2075e6784", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_INTEREST_DUNGEON", "field": "text", "en": "Dungeons", "hash": "805537b689ee7860", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_INTEREST_RAID", "field": "text", "en": "Raids", "hash": "ac7f80169c608a71", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_INTEREST_RP", "field": "text", "en": "Role Playing", "hash": "c526cadb0dfb557f", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_INVITATION", "field": "text", "en": "invites you to join the guild:", "hash": "3d51647181342fa8", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_INVITE_DECLINE", "field": "text", "en": "Decline Invitation", "hash": "dae5e49891171db3", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_INVITE_JOIN", "field": "text", "en": "Join Guild", "hash": "9b22262f6f0495c1", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_LEAVE", "field": "text", "en": "Leave Guild", "hash": "f7d675411bee3877", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_LOWERRANK_BUTTON_TOOLTIP", "field": "text", "en": "Click to lower this rank", "hash": "39ff574571c61971", "src": "db2@1.60.1.70338"}
 {"id": "GUILD_MEMBER_OPTIONS", "field": "text", "en": "Guild Member Options", "hash": "8bae2e979c0df744", "src": "db2@1.60.1.69913"}
-{"id": "GUILD_MESSAGE", "field": "text", "en": "Guild Chat", "hash": "4f777f08758eff95", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_MOTD_EDITLABEL", "field": "text", "en": "Message of the Day", "hash": "450676f4fff50f54", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_MOTD_LABEL", "field": "text", "en": "Message of the Day", "hash": "450676f4fff50f54", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_MOTD_TEMPLATE", "field": "text", "en": "Guild Message of the Day: \"%s\"", "hash": "047fb7e62b5a976b", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_NAME", "field": "text", "en": "Guild Name", "hash": "50ef05876d3e2026", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_NAME_ALERT", "field": "text", "en": "Guild Name Change Alert", "hash": "3345f257226705df", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_NAME_ALERT_GM_HELP", "field": "text", "en": "You must pick a new name within the guidelines of our naming policy.", "hash": "fc078862e84ab92d", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_NAME_ALERT_MEMBER_HELP", "field": "text", "en": "Your guildmaster must pick a new name within the guidelines of our naming policy.", "hash": "41d7652fcbc93839", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_NAME_ALERT_WARNING", "field": "text", "en": "Your guild has been flagged for a rename.", "hash": "a415f88b17dfd312", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_NEWS", "field": "text", "en": "Guild News", "hash": "50f016d77d206e02", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_NEWS_DUNGEON_ENCOUNTER_HEROIC", "field": "text", "en": "|cffd10000[Heroic: %s]|r", "hash": "d0990339bf520bed", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_NEWS_DUNGEON_ENCOUNTER_MYTHIC", "field": "text", "en": "|cffd10000[Mythic: %s]|r", "hash": "11905b2562a54959", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_NEWS_FILTERS", "field": "text", "en": "Guild News Filters", "hash": "e56e1926f66e8ce4", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_NEWS_LINK_ITEM", "field": "text", "en": "Link Item to Chat", "hash": "0befbce6ec1ee9a5", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_NEWS_MAKE_STICKY", "field": "text", "en": "Make Sticky", "hash": "ee876e5f5f89aaf0", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_NEWS_MOTD", "field": "text", "en": "MotD: %s", "hash": "f00499fa1e26c0ab", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_NEWS_REMOVE_STICKY", "field": "text", "en": "Remove Sticky", "hash": "ce22481f12b9cb87", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_NEWS_TITLE", "field": "text", "en": "Guild News", "hash": "50f016d77d206e02", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_NEWS_VIEW_ACHIEVEMENT", "field": "text", "en": "View Achievement", "hash": "4b4094cd3fcd4b40", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_NEW_RANK", "field": "text", "en": "New Rank", "hash": "d662d1021b22303b", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_NOTE_EDITLABEL", "field": "text", "en": "Click here to set a Public Note.", "hash": "421bc0f23c6065bf", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_NO_GUILD_NEWS", "field": "text", "en": "No Guild News", "hash": "6cb6c3eca97de619", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_OFFICERNOTE_EDITLABEL", "field": "text", "en": "Click here to set an Officer's Note.", "hash": "94b97071f3a6aadd", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_OFFICER_PERMISSION_ACCESS_CHANNELS", "field": "text", "en": "- Access officer channels", "hash": "805bd751cfdccadd", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_OFFICER_PERMISSION_DELETE_EVENTS", "field": "text", "en": "- Delete other people's guild events", "hash": "4ac7ba441cca62b4", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_OFFICER_PERMISSION_DELETE_MESSAGES", "field": "text", "en": "- Delete other people's chat messages", "hash": "da7a4f67b4a5828a", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_OFFICER_PERMISSION_FINDER_LIST", "field": "text", "en": "- List in Guild Finder", "hash": "97b0dba7c5762fb7", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_OFFICER_PERMISSION_GUILD_INFO", "field": "text", "en": "- Edit Guild Info", "hash": "c9a56b0ed3a99c00", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_OFFICER_PERMISSION_INVITE_APPLICANTS", "field": "text", "en": "- Invite Applicants from Guild Finder", "hash": "51cc20737312a442", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_OFFICER_PERMISSION_MOTD", "field": "text", "en": "- Edit Message of the Day", "hash": "e02780427b29b1bb", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_OFFICER_PERMISSION_OFFICER_NOTES", "field": "text", "en": "- View and edit officer notes", "hash": "8e03b8740d87e6f6", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_OFFICER_PERMISSION_PUBLIC_NOTES", "field": "text", "en": "- Edit public notes", "hash": "a313cbd99579518b", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_OFFICER_PERMISSION_REMOVE_FROM_VOICE", "field": "text", "en": "- Remove people from voice chat", "hash": "710e35e678c0a004", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_OFFICER_PERMISSION_SET_DISCORD", "field": "text", "en": "- Link Guild Chat to Discord", "hash": "5e81684c1bf40147", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_ONLINE_LABEL", "field": "text", "en": "Online", "hash": "374c22103afab226", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_PERKS_TITLE", "field": "text", "en": "Guild Perks", "hash": "8df5caa290cea432", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_PETITION_LEADER_INSTRUCTIONS", "field": "text", "en": "Select a player you wish to invite and click <request signature>.   To create this guild, turn it in to the guild registrar when you have filled the charter.", "hash": "8184b92319d30fa0", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_PETITION_MEMBER_INSTRUCTIONS", "field": "text", "en": "Click the <Sign Charter> button to become a charter member of this guild.", "hash": "b1df32f4cbdf685f", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_POINTS_TT", "field": "text", "en": "Guild Achievements", "hash": "1b4b21422a3ce324", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_PREFERRED_PLAY_SETTINGS_NO_PERMISSION", "field": "text", "en": "Only the guild master can change these settings.", "hash": "1b6554962bf90902", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_PROMOTE", "field": "text", "en": "Promote to Guildmaster", "hash": "aaacb5370a6f0ef3", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RAISERANK_BUTTON_TOOLTIP", "field": "text", "en": "Click to raise this rank", "hash": "951168b65a4edfa1", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RANK_AUTHENTICATOR_TOOLTIP", "field": "text", "en": "Only characters with an Authenticator attached to their account can obtain this rank.\nGo to |cff82c5ffwww.battle.net|r for more information.", "hash": "fbdf178196327676", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RANK_UNAVAILABLE", "field": "text", "en": "Rank unavailable", "hash": "6d9187379783b50f", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RANK_UNAVAILABLE_AUTHENTICATOR", "field": "text", "en": "Only characters with an Authenticator attached to their account can obtain this rank.", "hash": "69105d174e5b8469", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RECRUITMENT", "field": "text", "en": "Recruitment", "hash": "675c60cbf9db1c1c", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_REGISTRAR_PURCHASE_TEXT", "field": "text", "en": "To create a guild you must purchase this charter, get 9 unique player signatures, and return the charter to me.  Please enter the desired name for your guild.", "hash": "6a8bf83bee1c998d", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_COMMAND_DO_RENAME", "field": "text", "en": "Rename", "hash": "8c201e7d5466df3f", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_COSTS_LABEL", "field": "text", "en": "This cost will be deducted from your guild bank funds:", "hash": "4f3de2354de3d0f4", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_COSTS_TOOLTIP", "field": "text", "en": "The costs will be deducted from your guild bank", "hash": "a6cdc084acddbfce", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_DESCRIPTION", "field": "text", "en": "Please tell me the desired name for your guild and I'll check if it's unique. There is a waiting period to change the guild name again if you change your mind.", "hash": "74e114a40bab14c1", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_DIALOG_CANCEL_BUTTON", "field": "text", "en": "Cancel", "hash": "892958da199b72dc", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_DIALOG_CONFIRM_BUTTON", "field": "text", "en": "Confirm", "hash": "f1cc941b8229c54e", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_DIALOG_TEXT", "field": "text", "en": "Are you sure you want to spend %s to rename your guild to <%s>?|nThis process has a waiting period before it can be done again.", "hash": "46308c9fcc81ab78", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_EDITBOX_INSTRUCTIONS", "field": "text", "en": "Enter New Guild Name", "hash": "316758dbd891c5e4", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_ERROR_IN_COOLDOWN", "field": "text", "en": "Rename cooldown is active", "hash": "4cda2f6bdc291937", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_ERROR_MUST_BE_IN_A_GUILD", "field": "text", "en": "You must be the Guildmaster of a guild in order to use the guild rename feature.", "hash": "d6a46c488f6e4b7d", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_ERROR_NAME_ALREADY_EXISTS", "field": "text", "en": "Name already in use", "hash": "15326247b0231cb6", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_ERROR_NAME_INVALID", "field": "text", "en": "Invalid name", "hash": "2e96ab314978c2e6", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_ERROR_NOT_ENOUGH_MONEY", "field": "text", "en": "Insufficient funds", "hash": "e37ba137f11830a9", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_ERROR_NO_PERMISSION", "field": "text", "en": "Only the Guildmaster can rename the guild", "hash": "e339c61dd6327188", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_ERROR_RESERVATION_EXPIRED", "field": "text", "en": "Rename reservation expired", "hash": "552c0200aba3a367", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_ERROR_TOO_MUCH_MONEY", "field": "text", "en": "Refund would exceed the amount the guild bank can hold", "hash": "624776903a490534", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_ERROR_UNKNOWN", "field": "text", "en": "Unknown error", "hash": "80d3b108e33d2ae6", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_GUILD_BANK_MONEY_TOOLTIP", "field": "text", "en": "Available guild bank funds", "hash": "5fa5f632a72362a2", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_OPTIONS_DESCRIPTION", "field": "text", "en": "Here are your guild rename options:", "hash": "e5cae1ccd513b801", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_OPTIONS_DESCRIPTION_DISABLED", "field": "text", "en": "The Guild Rename feature is currently disabled, check back later.", "hash": "a9952e4ebe0fa0d1", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_OPTIONS_REFUND", "field": "text", "en": "I would like to refund my guild rename purchase|n(Time remaining to refund: %s)", "hash": "0432e0229efee3a0", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_OPTIONS_RENAME_AVAILABLE", "field": "text", "en": "I want to rename my guild", "hash": "b55359777d31d4f3", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_OPTIONS_RENAME_COOLDOWN", "field": "text", "en": "I want to rename my guild|n(available in %s)", "hash": "70cb1f4e395d0d53", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_REFUND_DIALOG_SUBTEXT", "field": "text", "en": "Time remaining to refund: %s", "hash": "b0c1ef310270c108", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_REFUND_DIALOG_TEXT", "field": "text", "en": "Reverse the guild rename of |CnGREEN_FONT_COLOR:<%s>|r to |cnGREEN_FONT_COLOR:<%s>|r for a refund of %s?", "hash": "c3b63d85b6e24f55", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_RENAME_TOAST_LABEL", "field": "text", "en": "Guild Renamed", "hash": "738365c09f0e02c3", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_REPUTATION", "field": "text", "en": "Guild Reputation", "hash": "a3778768e5a93cd8", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_REPUTATION_COLON", "field": "text", "en": "Guild Reputation:", "hash": "a62a4c11581e883b", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_REPUTATION_WARNING", "field": "text", "en": "You will lose one rank of guild reputation with %s", "hash": "eb7b5cf427921978", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_REPUTATION_WARNING_GENERIC", "field": "text", "en": "You will lose one rank of guild reputation with your previous guild.", "hash": "7b5cb0e3e2a6bfc6", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_REWARDS_TITLE", "field": "text", "en": "Guild Rewards", "hash": "11801d578925b0f8", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_REWARDS_VISIT_VENDOR", "field": "text", "en": "Visit a Guild Vendor in any capital city to purchase rewards", "hash": "c227386b61bd2322", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_ROSTER_DROPDOWN_ACHIEVEMENT_POINTS", "field": "text", "en": "Achievement Points", "hash": "6a507bf49e112502", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_ROSTER_DROPDOWN_PROFESSION", "field": "text", "en": "Profession", "hash": "5f7ba5eb177479d9", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_SET_FILTERS_LINK", "field": "text", "en": "[Click to set news filters]", "hash": "72e291bef4a7f358", "src": "db2@1.60.1.70291"}
+{"id": "GUILD_MESSAGE", "field": "text", "en": "Guild Chat", "hash": "4f777f08758eff95", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_MOTD_EDITLABEL", "field": "text", "en": "Message of the Day", "hash": "450676f4fff50f54", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_MOTD_LABEL", "field": "text", "en": "Message of the Day", "hash": "450676f4fff50f54", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_MOTD_TEMPLATE", "field": "text", "en": "Guild Message of the Day: \"%s\"", "hash": "047fb7e62b5a976b", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_NAME", "field": "text", "en": "Guild Name", "hash": "50ef05876d3e2026", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_NAME_ALERT", "field": "text", "en": "Guild Name Change Alert", "hash": "3345f257226705df", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_NAME_ALERT_GM_HELP", "field": "text", "en": "You must pick a new name within the guidelines of our naming policy.", "hash": "fc078862e84ab92d", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_NAME_ALERT_MEMBER_HELP", "field": "text", "en": "Your guildmaster must pick a new name within the guidelines of our naming policy.", "hash": "41d7652fcbc93839", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_NAME_ALERT_WARNING", "field": "text", "en": "Your guild has been flagged for a rename.", "hash": "a415f88b17dfd312", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_NEWS", "field": "text", "en": "Guild News", "hash": "50f016d77d206e02", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_NEWS_DUNGEON_ENCOUNTER_HEROIC", "field": "text", "en": "|cffd10000[Heroic: %s]|r", "hash": "d0990339bf520bed", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_NEWS_DUNGEON_ENCOUNTER_MYTHIC", "field": "text", "en": "|cffd10000[Mythic: %s]|r", "hash": "11905b2562a54959", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_NEWS_FILTERS", "field": "text", "en": "Guild News Filters", "hash": "e56e1926f66e8ce4", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_NEWS_LINK_ITEM", "field": "text", "en": "Link Item to Chat", "hash": "0befbce6ec1ee9a5", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_NEWS_MAKE_STICKY", "field": "text", "en": "Make Sticky", "hash": "ee876e5f5f89aaf0", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_NEWS_MOTD", "field": "text", "en": "MotD: %s", "hash": "f00499fa1e26c0ab", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_NEWS_REMOVE_STICKY", "field": "text", "en": "Remove Sticky", "hash": "ce22481f12b9cb87", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_NEWS_TITLE", "field": "text", "en": "Guild News", "hash": "50f016d77d206e02", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_NEWS_VIEW_ACHIEVEMENT", "field": "text", "en": "View Achievement", "hash": "4b4094cd3fcd4b40", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_NEW_RANK", "field": "text", "en": "New Rank", "hash": "d662d1021b22303b", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_NOTE_EDITLABEL", "field": "text", "en": "Click here to set a Public Note.", "hash": "421bc0f23c6065bf", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_NO_GUILD_NEWS", "field": "text", "en": "No Guild News", "hash": "6cb6c3eca97de619", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_OFFICERNOTE_EDITLABEL", "field": "text", "en": "Click here to set an Officer's Note.", "hash": "94b97071f3a6aadd", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_OFFICER_PERMISSION_ACCESS_CHANNELS", "field": "text", "en": "- Access officer channels", "hash": "805bd751cfdccadd", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_OFFICER_PERMISSION_DELETE_EVENTS", "field": "text", "en": "- Delete other people's guild events", "hash": "4ac7ba441cca62b4", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_OFFICER_PERMISSION_DELETE_MESSAGES", "field": "text", "en": "- Delete other people's chat messages", "hash": "da7a4f67b4a5828a", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_OFFICER_PERMISSION_FINDER_LIST", "field": "text", "en": "- List in Guild Finder", "hash": "97b0dba7c5762fb7", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_OFFICER_PERMISSION_GUILD_INFO", "field": "text", "en": "- Edit Guild Info", "hash": "c9a56b0ed3a99c00", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_OFFICER_PERMISSION_INVITE_APPLICANTS", "field": "text", "en": "- Invite Applicants from Guild Finder", "hash": "51cc20737312a442", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_OFFICER_PERMISSION_MOTD", "field": "text", "en": "- Edit Message of the Day", "hash": "e02780427b29b1bb", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_OFFICER_PERMISSION_OFFICER_NOTES", "field": "text", "en": "- View and edit officer notes", "hash": "8e03b8740d87e6f6", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_OFFICER_PERMISSION_PUBLIC_NOTES", "field": "text", "en": "- Edit public notes", "hash": "a313cbd99579518b", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_OFFICER_PERMISSION_REMOVE_FROM_VOICE", "field": "text", "en": "- Remove people from voice chat", "hash": "710e35e678c0a004", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_OFFICER_PERMISSION_SET_DISCORD", "field": "text", "en": "- Link Guild Chat to Discord", "hash": "5e81684c1bf40147", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_ONLINE_LABEL", "field": "text", "en": "Online", "hash": "374c22103afab226", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_PERKS_TITLE", "field": "text", "en": "Guild Perks", "hash": "8df5caa290cea432", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_PETITION_LEADER_INSTRUCTIONS", "field": "text", "en": "Select a player you wish to invite and click <request signature>.   To create this guild, turn it in to the guild registrar when you have filled the charter.", "hash": "8184b92319d30fa0", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_PETITION_MEMBER_INSTRUCTIONS", "field": "text", "en": "Click the <Sign Charter> button to become a charter member of this guild.", "hash": "b1df32f4cbdf685f", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_POINTS_TT", "field": "text", "en": "Guild Achievements", "hash": "1b4b21422a3ce324", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_PREFERRED_PLAY_SETTINGS_NO_PERMISSION", "field": "text", "en": "Only the guild master can change these settings.", "hash": "1b6554962bf90902", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_PROMOTE", "field": "text", "en": "Promote to Guildmaster", "hash": "aaacb5370a6f0ef3", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RAISERANK_BUTTON_TOOLTIP", "field": "text", "en": "Click to raise this rank", "hash": "951168b65a4edfa1", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RANK_AUTHENTICATOR_TOOLTIP", "field": "text", "en": "Only characters with an Authenticator attached to their account can obtain this rank.\nGo to |cff82c5ffwww.battle.net|r for more information.", "hash": "fbdf178196327676", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RANK_UNAVAILABLE", "field": "text", "en": "Rank unavailable", "hash": "6d9187379783b50f", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RANK_UNAVAILABLE_AUTHENTICATOR", "field": "text", "en": "Only characters with an Authenticator attached to their account can obtain this rank.", "hash": "69105d174e5b8469", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RECRUITMENT", "field": "text", "en": "Recruitment", "hash": "675c60cbf9db1c1c", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_REGISTRAR_PURCHASE_TEXT", "field": "text", "en": "To create a guild you must purchase this charter, get 9 unique player signatures, and return the charter to me.  Please enter the desired name for your guild.", "hash": "6a8bf83bee1c998d", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_COMMAND_DO_RENAME", "field": "text", "en": "Rename", "hash": "8c201e7d5466df3f", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_COSTS_LABEL", "field": "text", "en": "This cost will be deducted from your guild bank funds:", "hash": "4f3de2354de3d0f4", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_COSTS_TOOLTIP", "field": "text", "en": "The costs will be deducted from your guild bank", "hash": "a6cdc084acddbfce", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_DESCRIPTION", "field": "text", "en": "Please tell me the desired name for your guild and I'll check if it's unique. There is a waiting period to change the guild name again if you change your mind.", "hash": "74e114a40bab14c1", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_DIALOG_CANCEL_BUTTON", "field": "text", "en": "Cancel", "hash": "892958da199b72dc", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_DIALOG_CONFIRM_BUTTON", "field": "text", "en": "Confirm", "hash": "f1cc941b8229c54e", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_DIALOG_TEXT", "field": "text", "en": "Are you sure you want to spend %s to rename your guild to <%s>?|nThis process has a waiting period before it can be done again.", "hash": "46308c9fcc81ab78", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_EDITBOX_INSTRUCTIONS", "field": "text", "en": "Enter New Guild Name", "hash": "316758dbd891c5e4", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_ERROR_IN_COOLDOWN", "field": "text", "en": "Rename cooldown is active", "hash": "4cda2f6bdc291937", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_ERROR_MUST_BE_IN_A_GUILD", "field": "text", "en": "You must be the Guildmaster of a guild in order to use the guild rename feature.", "hash": "d6a46c488f6e4b7d", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_ERROR_NAME_ALREADY_EXISTS", "field": "text", "en": "Name already in use", "hash": "15326247b0231cb6", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_ERROR_NAME_INVALID", "field": "text", "en": "Invalid name", "hash": "2e96ab314978c2e6", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_ERROR_NOT_ENOUGH_MONEY", "field": "text", "en": "Insufficient funds", "hash": "e37ba137f11830a9", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_ERROR_NO_PERMISSION", "field": "text", "en": "Only the Guildmaster can rename the guild", "hash": "e339c61dd6327188", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_ERROR_RESERVATION_EXPIRED", "field": "text", "en": "Rename reservation expired", "hash": "552c0200aba3a367", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_ERROR_TOO_MUCH_MONEY", "field": "text", "en": "Refund would exceed the amount the guild bank can hold", "hash": "624776903a490534", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_ERROR_UNKNOWN", "field": "text", "en": "Unknown error", "hash": "80d3b108e33d2ae6", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_GUILD_BANK_MONEY_TOOLTIP", "field": "text", "en": "Available guild bank funds", "hash": "5fa5f632a72362a2", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_OPTIONS_DESCRIPTION", "field": "text", "en": "Here are your guild rename options:", "hash": "e5cae1ccd513b801", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_OPTIONS_DESCRIPTION_DISABLED", "field": "text", "en": "The Guild Rename feature is currently disabled, check back later.", "hash": "a9952e4ebe0fa0d1", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_OPTIONS_REFUND", "field": "text", "en": "I would like to refund my guild rename purchase|n(Time remaining to refund: %s)", "hash": "0432e0229efee3a0", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_OPTIONS_RENAME_AVAILABLE", "field": "text", "en": "I want to rename my guild", "hash": "b55359777d31d4f3", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_OPTIONS_RENAME_COOLDOWN", "field": "text", "en": "I want to rename my guild|n(available in %s)", "hash": "70cb1f4e395d0d53", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_REFUND_DIALOG_SUBTEXT", "field": "text", "en": "Time remaining to refund: %s", "hash": "b0c1ef310270c108", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_REFUND_DIALOG_TEXT", "field": "text", "en": "Reverse the guild rename of |CnGREEN_FONT_COLOR:<%s>|r to |cnGREEN_FONT_COLOR:<%s>|r for a refund of %s?", "hash": "c3b63d85b6e24f55", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_RENAME_TOAST_LABEL", "field": "text", "en": "Guild Renamed", "hash": "738365c09f0e02c3", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_REPUTATION", "field": "text", "en": "Guild Reputation", "hash": "a3778768e5a93cd8", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_REPUTATION_COLON", "field": "text", "en": "Guild Reputation:", "hash": "a62a4c11581e883b", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_REPUTATION_WARNING", "field": "text", "en": "You will lose one rank of guild reputation with %s", "hash": "eb7b5cf427921978", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_REPUTATION_WARNING_GENERIC", "field": "text", "en": "You will lose one rank of guild reputation with your previous guild.", "hash": "7b5cb0e3e2a6bfc6", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_REWARDS_TITLE", "field": "text", "en": "Guild Rewards", "hash": "11801d578925b0f8", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_REWARDS_VISIT_VENDOR", "field": "text", "en": "Visit a Guild Vendor in any capital city to purchase rewards", "hash": "c227386b61bd2322", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_ROSTER_DROPDOWN_ACHIEVEMENT_POINTS", "field": "text", "en": "Achievement Points", "hash": "6a507bf49e112502", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_ROSTER_DROPDOWN_PROFESSION", "field": "text", "en": "Profession", "hash": "5f7ba5eb177479d9", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_SET_FILTERS_LINK", "field": "text", "en": "[Click to set news filters]", "hash": "72e291bef4a7f358", "src": "db2@1.60.1.70338"}
 {"id": "GUILD_STATUS", "field": "text", "en": "Guild Status", "hash": "9c5c79710faf7438", "src": "db2@1.60.1.69913"}
-{"id": "GUILD_TOTAL", "field": "text", "en": "|cffffffff%d|r |4Guild Member:Guild Members;", "hash": "8fc860b3c1d90d10", "src": "db2@1.60.1.70291"}
+{"id": "GUILD_TOTAL", "field": "text", "en": "|cffffffff%d|r |4Guild Member:Guild Members;", "hash": "8fc860b3c1d90d10", "src": "db2@1.60.1.70338"}
 {"id": "GUILD_TOTALONLINE", "field": "text", "en": "(|cffffffff%d|r |cff00ff00Online|r)", "hash": "03db7ca401afa37b", "src": "db2@1.60.1.69913"}
-{"id": "GUILD_TRADE_SKILL_TITLE", "field": "text", "en": "Guild %s", "hash": "54a1b2b5e5ffc162", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_TRADE_SKILL_VIEW_CRAFTERS", "field": "text", "en": "View Crafters", "hash": "6ae519fe97a08dcb", "src": "db2@1.60.1.70291"}
-{"id": "GUILD_VIEW_LOG", "field": "text", "en": "View Log", "hash": "a5dcaf42311cf8a6", "src": "db2@1.60.1.70291"}
-{"id": "GXAPI", "field": "text", "en": "Graphics API", "hash": "5e7e8e3b4ca2c80a", "src": "db2@1.60.1.70291"}
-{"id": "GXAPI_TOOLTIP_AUTO_SELECTED", "field": "text", "en": "Selected Graphics API. \r\nAuto-detect best available Graphics API.", "hash": "96cdab59dd4c123c", "src": "db2@1.60.1.70291"}
-{"id": "GXAPI_TOOLTIP_CURRENT_API", "field": "text", "en": "Current Graphics API.", "hash": "12c8c0beb194b19b", "src": "db2@1.60.1.70291"}
-{"id": "GXAPI_TOOLTIP_FAILED_SELECTED", "field": "text", "en": "Selected Graphics API.\r\nFailed to load, next attempt on restart.", "hash": "7297dc88abcf3d23", "src": "db2@1.60.1.70291"}
-{"id": "GX_ADAPTER_AUTO_DETECT", "field": "text", "en": "Auto Detect", "hash": "2597ba007aa55047", "src": "db2@1.60.1.70291"}
-{"id": "GX_ADAPTER_EXTERNAL", "field": "text", "en": "%s (External)", "hash": "824b75767054f19c", "src": "db2@1.60.1.70291"}
-{"id": "GX_ADAPTER_LOW_POWER", "field": "text", "en": "%s (Low Power)", "hash": "4d6a46a47d7b5b54", "src": "db2@1.60.1.70291"}
+{"id": "GUILD_TRADE_SKILL_TITLE", "field": "text", "en": "Guild %s", "hash": "54a1b2b5e5ffc162", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_TRADE_SKILL_VIEW_CRAFTERS", "field": "text", "en": "View Crafters", "hash": "6ae519fe97a08dcb", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_VIEW_LOG", "field": "text", "en": "View Log", "hash": "a5dcaf42311cf8a6", "src": "db2@1.60.1.70338"}
+{"id": "GXAPI", "field": "text", "en": "Graphics API", "hash": "5e7e8e3b4ca2c80a", "src": "db2@1.60.1.70338"}
+{"id": "GXAPI_TOOLTIP_AUTO_SELECTED", "field": "text", "en": "Selected Graphics API. \r\nAuto-detect best available Graphics API.", "hash": "96cdab59dd4c123c", "src": "db2@1.60.1.70338"}
+{"id": "GXAPI_TOOLTIP_CURRENT_API", "field": "text", "en": "Current Graphics API.", "hash": "12c8c0beb194b19b", "src": "db2@1.60.1.70338"}
+{"id": "GXAPI_TOOLTIP_FAILED_SELECTED", "field": "text", "en": "Selected Graphics API.\r\nFailed to load, next attempt on restart.", "hash": "7297dc88abcf3d23", "src": "db2@1.60.1.70338"}
+{"id": "GX_ADAPTER_AUTO_DETECT", "field": "text", "en": "Auto Detect", "hash": "2597ba007aa55047", "src": "db2@1.60.1.70338"}
+{"id": "GX_ADAPTER_EXTERNAL", "field": "text", "en": "%s (External)", "hash": "824b75767054f19c", "src": "db2@1.60.1.70338"}
+{"id": "GX_ADAPTER_LOW_POWER", "field": "text", "en": "%s (Low Power)", "hash": "4d6a46a47d7b5b54", "src": "db2@1.60.1.70338"}

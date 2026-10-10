@@ -1,15 +1,15 @@
-{"id": 230008, "field": "name", "en": "Linkue Combatant Icon", "hash": "303e9483fb83b881", "src": "db2@1.60.1.70291"}
-{"id": 230008, "field": "description", "en": "Take on the guise of a ninja assassin.", "hash": "dd70614639d178f8", "src": "db2@1.60.1.70291"}
-{"id": 230018, "field": "name", "en": "Mannoroc Orb Fragments", "hash": "436a0b55c4bb1189", "src": "db2@1.60.1.70291"}
-{"id": 230903, "field": "name", "en": "Scroll: Essence of Fire", "hash": "20c2a9bf082aa047", "src": "db2@1.60.1.70291"}
-{"id": 230903, "field": "description", "en": "Imbue the Depleted Essence of Fire with magic.\nFiery magic emanates from the unusual scroll.", "hash": "470f0a6ee2c46bda", "src": "db2@1.60.1.70291"}
-{"id": 230908, "field": "name", "en": "Imbued Essence of Fire", "hash": "e8e66e14112c5973", "src": "db2@1.60.1.70291"}
-{"id": 230909, "field": "name", "en": "Depleted Essence of Fire", "hash": "74deb23437df45fb", "src": "db2@1.60.1.70291"}
-{"id": 230909, "field": "description", "en": "Imbue the Depleted Essence of Fire with magic.", "hash": "2a35ab2579915dfa", "src": "db2@1.60.1.70291"}
-{"id": 230946, "field": "name", "en": "Scroll: SEENECS FO ROFTS", "hash": "e76539d7a6e3fcf8", "src": "db2@1.60.1.70291"}
-{"id": 230946, "field": "description", "en": "Decipher the scroll with a Comprehension Charm. Who knows what magic it contains?", "hash": "ce6c2da9150fd222", "src": "db2@1.60.1.70291"}
-{"id": 230947, "field": "name", "en": "Scroll: Essence of Frost", "hash": "c4d0d60343a01076", "src": "db2@1.60.1.70291"}
-{"id": 230947, "field": "description", "en": "Imbue the Depleted Essence of Frost with magic.\nFrosty magic emanates from the unusual scroll.", "hash": "a3207054b58739d5", "src": "db2@1.60.1.70291"}
-{"id": 230948, "field": "name", "en": "Imbued Essence of Frost", "hash": "2f1e4f8563903731", "src": "db2@1.60.1.70291"}
-{"id": 230949, "field": "name", "en": "Depleted Essence of Frost", "hash": "cf292ab91176e4ab", "src": "db2@1.60.1.70291"}
-{"id": 230949, "field": "description", "en": "Imbue the Depleted Essence of Frost with magic.", "hash": "e983ec96f9829eb5", "src": "db2@1.60.1.70291"}
+{"id": 230008, "field": "name", "en": "Linkue Combatant Icon", "hash": "303e9483fb83b881", "src": "db2@1.60.1.70338"}
+{"id": 230008, "field": "description", "en": "Take on the guise of a ninja assassin.", "hash": "dd70614639d178f8", "src": "db2@1.60.1.70338"}
+{"id": 230018, "field": "name", "en": "Mannoroc Orb Fragments", "hash": "436a0b55c4bb1189", "src": "db2@1.60.1.70338"}
+{"id": 230903, "field": "name", "en": "Scroll: Essence of Fire", "hash": "20c2a9bf082aa047", "src": "db2@1.60.1.70338"}
+{"id": 230903, "field": "description", "en": "Imbue the Depleted Essence of Fire with magic.\nFiery magic emanates from the unusual scroll.", "hash": "470f0a6ee2c46bda", "src": "db2@1.60.1.70338"}
+{"id": 230908, "field": "name", "en": "Imbued Essence of Fire", "hash": "e8e66e14112c5973", "src": "db2@1.60.1.70338"}
+{"id": 230909, "field": "name", "en": "Depleted Essence of Fire", "hash": "74deb23437df45fb", "src": "db2@1.60.1.70338"}
+{"id": 230909, "field": "description", "en": "Imbue the Depleted Essence of Fire with magic.", "hash": "2a35ab2579915dfa", "src": "db2@1.60.1.70338"}
+{"id": 230946, "field": "name", "en": "Scroll: SEENECS FO ROFTS", "hash": "e76539d7a6e3fcf8", "src": "db2@1.60.1.70338"}
+{"id": 230946, "field": "description", "en": "Decipher the scroll with a Comprehension Charm. Who knows what magic it contains?", "hash": "ce6c2da9150fd222", "src": "db2@1.60.1.70338"}
+{"id": 230947, "field": "name", "en": "Scroll: Essence of Frost", "hash": "c4d0d60343a01076", "src": "db2@1.60.1.70338"}
+{"id": 230947, "field": "description", "en": "Imbue the Depleted Essence of Frost with magic.\nFrosty magic emanates from the unusual scroll.", "hash": "a3207054b58739d5", "src": "db2@1.60.1.70338"}
+{"id": 230948, "field": "name", "en": "Imbued Essence of Frost", "hash": "2f1e4f8563903731", "src": "db2@1.60.1.70338"}
+{"id": 230949, "field": "name", "en": "Depleted Essence of Frost", "hash": "cf292ab91176e4ab", "src": "db2@1.60.1.70338"}
+{"id": 230949, "field": "description", "en": "Imbue the Depleted Essence of Frost with magic.", "hash": "e983ec96f9829eb5", "src": "db2@1.60.1.70338"}

@@ -1,96 +1,96 @@
-{"id": 424015, "field": "name", "en": "Green Whelp Dummy Effect", "hash": "0e3539c69e7a7082", "src": "db2@1.60.1.70291"}
-{"id": 424016, "field": "name", "en": "Alonso Knockdown", "hash": "f1e89acd6a166693", "src": "db2@1.60.1.70291"}
-{"id": 424019, "field": "name", "en": "Alonso Threat Reduce", "hash": "dafece0335e7405c", "src": "db2@1.60.1.70291"}
-{"id": 424035, "field": "name", "en": "Secrets of the Light", "hash": "20506e03f9a4a93f", "src": "db2@1.60.1.70291"}
-{"id": 424035, "field": "description", "en": "Allows you to meditate on the mysteries of the Light in holy places.", "hash": "0f73053bebeaf55f", "src": "db2@1.60.1.70291"}
-{"id": 424036, "field": "name", "en": "Secrets of Elune", "hash": "2e219711d637fa36", "src": "db2@1.60.1.70291"}
-{"id": 424036, "field": "description", "en": "Allows you to meditate on the mysteries of Elune at moonwells.", "hash": "6ccb10266e05a0c5", "src": "db2@1.60.1.70291"}
-{"id": 424037, "field": "name", "en": "Secrets of the Loa", "hash": "8520487f6e723668", "src": "db2@1.60.1.70291"}
-{"id": 424037, "field": "description", "en": "Allows you to meditate on the mysteries of the loa at altars.", "hash": "0c46c3a0b668f60a", "src": "db2@1.60.1.70291"}
-{"id": 424041, "field": "name", "en": "Secrets of Undeath", "hash": "804d1d4b8be897f2", "src": "db2@1.60.1.70291"}
-{"id": 424041, "field": "description", "en": "Allows you to meditate on the mysteries of undeath in graveyards.", "hash": "d5b327b5cce108fb", "src": "db2@1.60.1.70291"}
-{"id": 424137, "field": "name", "en": "Give Extra Rune", "hash": "250d4a0cec66aace", "src": "db2@1.60.1.70291"}
-{"id": 424160, "field": "name", "en": "Warrior Rune", "hash": "4f45d73f3129d78a", "src": "db2@1.60.1.70291"}
-{"id": 424181, "field": "name", "en": "Twin Owl Aura", "hash": "6f8b6c3a4e18ced3", "src": "db2@1.60.1.70291"}
-{"id": 424181, "field": "aura", "en": "Seek the other twin.", "hash": "c38a4c16dcf2cfe4", "src": "db2@1.60.1.70291"}
-{"id": 424182, "field": "name", "en": "Twin Owl Aura", "hash": "6f8b6c3a4e18ced3", "src": "db2@1.60.1.70291"}
-{"id": 424182, "field": "aura", "en": "Seek the other twin.", "hash": "c38a4c16dcf2cfe4", "src": "db2@1.60.1.70291"}
-{"id": 424190, "field": "name", "en": "Unbalanced Idol", "hash": "df33bfff55535ded", "src": "db2@1.60.1.70291"}
-{"id": 424190, "field": "aura", "en": "Balancing yourself with the powers of the moon.", "hash": "f397fcbce3f92eb1", "src": "db2@1.60.1.70291"}
-{"id": 424191, "field": "name", "en": "Twin Owl Reward", "hash": "04d3ed5f8765e98a", "src": "db2@1.60.1.70291"}
-{"id": 424191, "field": "aura", "en": "Find the other twin.", "hash": "64a28047c23e77b7", "src": "db2@1.60.1.70291"}
-{"id": 424250, "field": "name", "en": "Secrets of the Light", "hash": "20506e03f9a4a93f", "src": "db2@1.60.1.70291"}
-{"id": 424251, "field": "name", "en": "Secrets of Elune", "hash": "2e219711d637fa36", "src": "db2@1.60.1.70291"}
-{"id": 424252, "field": "name", "en": "Secrets of the Loa", "hash": "8520487f6e723668", "src": "db2@1.60.1.70291"}
-{"id": 424253, "field": "name", "en": "Secrets of Undeath", "hash": "804d1d4b8be897f2", "src": "db2@1.60.1.70291"}
-{"id": 424308, "field": "name", "en": "Hidden Spirit", "hash": "1ddf33ed321a4bc0", "src": "db2@1.60.1.70291"}
-{"id": 424310, "field": "name", "en": "Eyes of the Owl", "hash": "5708c2dd0975a503", "src": "db2@1.60.1.70291"}
-{"id": 424310, "field": "aura", "en": "Can see spirit beasts in Duskwood.", "hash": "9e1a1c57de501634", "src": "db2@1.60.1.70291"}
-{"id": 424336, "field": "name", "en": "Unbalanced Idol Wild", "hash": "d80341e6f7a357df", "src": "db2@1.60.1.70291"}
-{"id": 424336, "field": "aura", "en": "Balancing yourself with the powers of nature.", "hash": "2b38d4f592609785", "src": "db2@1.60.1.70291"}
-{"id": 424339, "field": "name", "en": "Unbalanced Idol Dream", "hash": "3d5916e8bfac2d05", "src": "db2@1.60.1.70291"}
-{"id": 424378, "field": "name", "en": "Summon Wisp", "hash": "88128ad0abdda4bc", "src": "db2@1.60.1.70291"}
-{"id": 424397, "field": "name", "en": "Summon Corrupt Spirit Beasts", "hash": "f11fff19e3e23ffd", "src": "db2@1.60.1.70291"}
-{"id": 424472, "field": "name", "en": "Near Death Experience", "hash": "f46fe0a8e49ca3e6", "src": "db2@1.60.1.70291"}
-{"id": 424472, "field": "aura", "en": "At the precipice of death.", "hash": "70aba022309dcf96", "src": "db2@1.60.1.70291"}
-{"id": 424553, "field": "name", "en": "Call Your Shot", "hash": "78317568d246e1bd", "src": "db2@1.60.1.70291"}
-{"id": 424553, "field": "aura", "en": "Warning! Expert Marksman Only!", "hash": "b82ef196073f44b5", "src": "db2@1.60.1.70291"}
-{"id": 424563, "field": "name", "en": "Call Vile Fin Hunter", "hash": "0c340c33b0a8b7ec", "src": "db2@1.60.1.70291"}
-{"id": 424570, "field": "name", "en": "Gift of the Wisp", "hash": "fc856dab1f741f50", "src": "db2@1.60.1.70291"}
-{"id": 424573, "field": "name", "en": "Wounded", "hash": "8bb39feca1bb97ce", "src": "db2@1.60.1.70291"}
-{"id": 424573, "field": "description", "en": "Wounded, suffering damage over time and other debilitating effects.", "hash": "e7b7d961c6bab2fe", "src": "db2@1.60.1.70291"}
-{"id": 424573, "field": "aura", "en": "Wounded, suffering damage over time and other debilitating effects.", "hash": "e7b7d961c6bab2fe", "src": "db2@1.60.1.70291"}
-{"id": 424574, "field": "name", "en": "Out of breath!", "hash": "a5ec024a5d674bd3", "src": "db2@1.60.1.70291"}
-{"id": 424574, "field": "description", "en": "Exhausted.", "hash": "0c78d8908a3f42c3", "src": "db2@1.60.1.70291"}
-{"id": 424574, "field": "aura", "en": "Exhausted.", "hash": "0c78d8908a3f42c3", "src": "db2@1.60.1.70291"}
-{"id": 424631, "field": "name", "en": "Give Extra Rune", "hash": "250d4a0cec66aace", "src": "db2@1.60.1.70291"}
-{"id": 424641, "field": "name", "en": "Shredder Autosalvage Unit", "hash": "f943d01ee980a95c", "src": "db2@1.60.1.70291"}
-{"id": 424645, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70291"}
-{"id": 424645, "field": "description", "en": "Translate the spell notes into a new runecarving recipe.  Requires a reference for the author's shorthand.", "hash": "adb28b80001eeceb", "src": "db2@1.60.1.70291"}
-{"id": 424684, "field": "name", "en": "S03 - Rogue 25 Quest Start", "hash": "ca27387f75348f2c", "src": "db2@1.60.1.70291"}
-{"id": 424715, "field": "name", "en": "Starsurge", "hash": "9e9da22f068df835", "src": "db2@1.60.1.70291"}
-{"id": 424715, "field": "description", "en": "Gain the Starsurge ability:\r\n\r\n$@spellicon417157\r\n$@spelldesc417157", "hash": "b4f41bbfd76cd91f", "src": "db2@1.60.1.70291"}
-{"id": 424718, "field": "name", "en": "Engrave Pants - Starsurge", "hash": "d09877c96370d3fc", "src": "db2@1.60.1.70291"}
-{"id": 424718, "field": "description", "en": "Engrave your pants with the Starsurge rune:\r\n\r\n$@spellicon417157\r\n$@spelldesc417157", "hash": "9a8618a920b5864b", "src": "db2@1.60.1.70291"}
-{"id": 424732, "field": "name", "en": "Spawn Portal", "hash": "1c8bd6ea7daae169", "src": "db2@1.60.1.70291"}
-{"id": 424735, "field": "name", "en": "Exit Dream", "hash": "30f76f8f3f423455", "src": "db2@1.60.1.70291"}
-{"id": 424759, "field": "name", "en": "Berserk", "hash": "b1e2ab079742debf", "src": "db2@1.60.1.70291"}
-{"id": 424759, "field": "description", "en": "Gain the Berserk ability:\r\n\r\n$@spellicon417141\r\n$@spelldesc417141", "hash": "1cd4f479f8f3d23b", "src": "db2@1.60.1.70291"}
-{"id": 424760, "field": "name", "en": "Engrave Belt - Berserk", "hash": "ee13a29320ca5984", "src": "db2@1.60.1.70291"}
-{"id": 424760, "field": "description", "en": "Engrave your belt with the Berserk rune:\r\n\r\n$@spellicon417141\r\n$@spelldesc417141", "hash": "cfb3cf54db179228", "src": "db2@1.60.1.70291"}
-{"id": 424762, "field": "name", "en": "King of the Jungle", "hash": "97afb7f136c97630", "src": "db2@1.60.1.70291"}
-{"id": 424762, "field": "description", "en": "Gain the King of the Jungle ability:\r\n\r\n$@spellicon417046\r\n$@spelldesc417046", "hash": "fb8ee4640c93eea7", "src": "db2@1.60.1.70291"}
-{"id": 424765, "field": "name", "en": "Engrave Boots - King of the Jungle", "hash": "c66ee44d78a9da0e", "src": "db2@1.60.1.70291"}
-{"id": 424765, "field": "description", "en": "Engrave your boots with the King of the Jungle rune:\r\n\r\n$@spellicon417046\r\n$@spelldesc417046", "hash": "d414c04d9f9bd870", "src": "db2@1.60.1.70291"}
-{"id": 424785, "field": "name", "en": "Saber Slash", "hash": "502c2de7d1ebba9d", "src": "db2@1.60.1.70291"}
-{"id": 424785, "field": "description", "en": "Viciously slash an enemy for $s2% weapon damage, and cause the target to bleed for ${$AP*$m4/100} damage every $t4 sec for $d, stacking up to $u times. Each stack also increases damage done by your Saber Slash and Sinister Strike by $s5%. Awards $s3 combo $lpoint:points;.\r\n\r\nSaber Slash benefits from all talents and effects that trigger from or modify Sinister Strike.", "hash": "72e45558842548d5", "src": "db2@1.60.1.70291"}
-{"id": 424785, "field": "aura", "en": "Bleeding for $w4 damage every $t4 sec.\r\nDamage taken from Saber Slash and Sinister Strike increased by $s5%.", "hash": "7fbbf4707d1fc44e", "src": "db2@1.60.1.70291"}
-{"id": 424788, "field": "name", "en": "Salvage", "hash": "5ac2edc45ef28fbf", "src": "db2@1.60.1.70291"}
-{"id": 424788, "field": "description", "en": "Salvage the wreckage of a shredder for spare parts.", "hash": "30b9e1d2052efdf8", "src": "db2@1.60.1.70291"}
-{"id": 424799, "field": "name", "en": "Shiv", "hash": "0b3a9b1a759cb8f3", "src": "db2@1.60.1.70291"}
-{"id": 424799, "field": "description", "en": "Instantly attack with your off-hand weapon to deal normal off-hand weapon damage with a 100% chance to apply the poison from your off-hand weapon to the target. Slower weapons require more energy. Awards $s2 combo $lpoint:points;.\r\n\r\nShiv benefits from all talents and effects that trigger from or modify Sinister Strike.", "hash": "b5aa7d3f22b1d824", "src": "db2@1.60.1.70291"}
-{"id": 424800, "field": "name", "en": "Shiv", "hash": "0b3a9b1a759cb8f3", "src": "db2@1.60.1.70291"}
-{"id": 424800, "field": "description", "en": "Instantly attack with your off-hand weapon with a 100% chance to apply the poison from your off-hand weapon to the target. Slower weapons require more energy. Awards $s2 combo $lpoint:points;.\r\n", "hash": "282f1a89ee17223f", "src": "db2@1.60.1.70291"}
-{"id": 424919, "field": "name", "en": "Main Gauche", "hash": "cd3cc36df1314024", "src": "db2@1.60.1.70291"}
-{"id": 424919, "field": "description", "en": "Instantly strike with your off-hand weapon for normal off-hand weapon damage and increase your chance to parry by $s2% for $d or until you successfully parry. For $462752d after using Main Gauche, Sinister Strike costs $462752s1 less Energy, deals $462752s2% more threat, grants stacks of Rolling with the Punches, and both Sinister Strike and Eviscerate deal $462752s3% more damage. Awards $s3 combo $lpoint:points;.\r\n\r\nMain Gauche benefits from most talents and effects that trigger from or modify Sinister Strike. Main Gauche's effect will not discount or empower Main Gauche.", "hash": "c4245e6a12245f26", "src": "db2@1.60.1.70291"}
-{"id": 424919, "field": "aura", "en": "Parry chance increased by $s2%.", "hash": "ea59a9beb469fd5a", "src": "db2@1.60.1.70291"}
-{"id": 424925, "field": "name", "en": "Slaughter from the Shadows", "hash": "3db987080858943f", "src": "db2@1.60.1.70291"}
-{"id": 424925, "field": "description", "en": "Reduces the Energy cost of your Backstab and Ambush abilities by $s1, and increases the damage they deal to non-player controlled targets by $s2%. $?s400094[Does not apply to Mutilate.][Does not apply to abilities learned from other runes.]", "hash": "2c1b4225ed0610ae", "src": "db2@1.60.1.70291"}
-{"id": 424941, "field": "name", "en": "Teach Living Bomb", "hash": "2a4550528c638764", "src": "db2@1.60.1.70291"}
-{"id": 424976, "field": "name", "en": "Begin Ratchet Arms Dealer Quest", "hash": "54ae26af7647cbae", "src": "db2@1.60.1.70291"}
-{"id": 424979, "field": "name", "en": "Saber Slash", "hash": "502c2de7d1ebba9d", "src": "db2@1.60.1.70291"}
-{"id": 424979, "field": "description", "en": "Gain the Saber Slash ability:\r\n\r\n$@spellicon424785\r\n$@spelldesc424785", "hash": "d3ed0eabd0963baf", "src": "db2@1.60.1.70291"}
-{"id": 424980, "field": "name", "en": "Cutthroat", "hash": "c37de89ea09871f9", "src": "db2@1.60.1.70291"}
-{"id": 424980, "field": "description", "en": "Gain the Cutthroat ability:\r\n\r\n$@spellicon462708\r\n$@spelldesc462708", "hash": "c5e9cf59cc098813", "src": "db2@1.60.1.70291"}
-{"id": 424982, "field": "name", "en": "Main Gauche", "hash": "cd3cc36df1314024", "src": "db2@1.60.1.70291"}
-{"id": 424982, "field": "description", "en": "Gain the Main Gauche ability:\r\n\r\n$@spellicon424919\r\n$@spelldesc424919", "hash": "b2b7138c5fb0e7b3", "src": "db2@1.60.1.70291"}
-{"id": 424983, "field": "name", "en": "Slaughter from the Shadows", "hash": "3db987080858943f", "src": "db2@1.60.1.70291"}
-{"id": 424983, "field": "description", "en": "Gain the Slaughter from the Shadows ability:\r\n\r\n$@spellicon424925\r\n$@spelldesc424925", "hash": "9b32cf65c4100a9e", "src": "db2@1.60.1.70291"}
-{"id": 424984, "field": "name", "en": "Engrave Gloves - Saber Slash", "hash": "b72ad3d9dfb5113c", "src": "db2@1.60.1.70291"}
-{"id": 424984, "field": "description", "en": "Engrave your gloves with the Saber Slash rune:\r\n\r\n$@spellicon424785\r\n$@spelldesc424785", "hash": "9ee44fa73898f414", "src": "db2@1.60.1.70291"}
-{"id": 424988, "field": "name", "en": "Engrave Gloves - Cutthroat", "hash": "900fe8182591cf1e", "src": "db2@1.60.1.70291"}
-{"id": 424988, "field": "description", "en": "Engrave your gloves with the Cutthroat rune:\r\n\r\n$@spellicon462708\r\n$@spelldesc462708", "hash": "e753d8162e292eb1", "src": "db2@1.60.1.70291"}
-{"id": 424990, "field": "name", "en": "Engrave Gloves - Main Gauche", "hash": "343b6964fefa96c3", "src": "db2@1.60.1.70291"}
-{"id": 424990, "field": "description", "en": "Engrave your gloves with the Main Gauche rune:\r\n\r\n$@spellicon424919\r\n$@spelldesc424919", "hash": "279ea8074913f62d", "src": "db2@1.60.1.70291"}
-{"id": 424992, "field": "name", "en": "Engrave Chest - Slaughter from the Shadows", "hash": "f29038444abd85f7", "src": "db2@1.60.1.70291"}
-{"id": 424992, "field": "description", "en": "Engrave your chest or robe with the Slaughter from the Shadows rune:\r\n\r\n$@spellicon424925\r\n$@spelldesc424925", "hash": "9ddaea85c0615828", "src": "db2@1.60.1.70291"}
+{"id": 424015, "field": "name", "en": "Green Whelp Dummy Effect", "hash": "0e3539c69e7a7082", "src": "db2@1.60.1.70338"}
+{"id": 424016, "field": "name", "en": "Alonso Knockdown", "hash": "f1e89acd6a166693", "src": "db2@1.60.1.70338"}
+{"id": 424019, "field": "name", "en": "Alonso Threat Reduce", "hash": "dafece0335e7405c", "src": "db2@1.60.1.70338"}
+{"id": 424035, "field": "name", "en": "Secrets of the Light", "hash": "20506e03f9a4a93f", "src": "db2@1.60.1.70338"}
+{"id": 424035, "field": "description", "en": "Allows you to meditate on the mysteries of the Light in holy places.", "hash": "0f73053bebeaf55f", "src": "db2@1.60.1.70338"}
+{"id": 424036, "field": "name", "en": "Secrets of Elune", "hash": "2e219711d637fa36", "src": "db2@1.60.1.70338"}
+{"id": 424036, "field": "description", "en": "Allows you to meditate on the mysteries of Elune at moonwells.", "hash": "6ccb10266e05a0c5", "src": "db2@1.60.1.70338"}
+{"id": 424037, "field": "name", "en": "Secrets of the Loa", "hash": "8520487f6e723668", "src": "db2@1.60.1.70338"}
+{"id": 424037, "field": "description", "en": "Allows you to meditate on the mysteries of the loa at altars.", "hash": "0c46c3a0b668f60a", "src": "db2@1.60.1.70338"}
+{"id": 424041, "field": "name", "en": "Secrets of Undeath", "hash": "804d1d4b8be897f2", "src": "db2@1.60.1.70338"}
+{"id": 424041, "field": "description", "en": "Allows you to meditate on the mysteries of undeath in graveyards.", "hash": "d5b327b5cce108fb", "src": "db2@1.60.1.70338"}
+{"id": 424137, "field": "name", "en": "Give Extra Rune", "hash": "250d4a0cec66aace", "src": "db2@1.60.1.70338"}
+{"id": 424160, "field": "name", "en": "Warrior Rune", "hash": "4f45d73f3129d78a", "src": "db2@1.60.1.70338"}
+{"id": 424181, "field": "name", "en": "Twin Owl Aura", "hash": "6f8b6c3a4e18ced3", "src": "db2@1.60.1.70338"}
+{"id": 424181, "field": "aura", "en": "Seek the other twin.", "hash": "c38a4c16dcf2cfe4", "src": "db2@1.60.1.70338"}
+{"id": 424182, "field": "name", "en": "Twin Owl Aura", "hash": "6f8b6c3a4e18ced3", "src": "db2@1.60.1.70338"}
+{"id": 424182, "field": "aura", "en": "Seek the other twin.", "hash": "c38a4c16dcf2cfe4", "src": "db2@1.60.1.70338"}
+{"id": 424190, "field": "name", "en": "Unbalanced Idol", "hash": "df33bfff55535ded", "src": "db2@1.60.1.70338"}
+{"id": 424190, "field": "aura", "en": "Balancing yourself with the powers of the moon.", "hash": "f397fcbce3f92eb1", "src": "db2@1.60.1.70338"}
+{"id": 424191, "field": "name", "en": "Twin Owl Reward", "hash": "04d3ed5f8765e98a", "src": "db2@1.60.1.70338"}
+{"id": 424191, "field": "aura", "en": "Find the other twin.", "hash": "64a28047c23e77b7", "src": "db2@1.60.1.70338"}
+{"id": 424250, "field": "name", "en": "Secrets of the Light", "hash": "20506e03f9a4a93f", "src": "db2@1.60.1.70338"}
+{"id": 424251, "field": "name", "en": "Secrets of Elune", "hash": "2e219711d637fa36", "src": "db2@1.60.1.70338"}
+{"id": 424252, "field": "name", "en": "Secrets of the Loa", "hash": "8520487f6e723668", "src": "db2@1.60.1.70338"}
+{"id": 424253, "field": "name", "en": "Secrets of Undeath", "hash": "804d1d4b8be897f2", "src": "db2@1.60.1.70338"}
+{"id": 424308, "field": "name", "en": "Hidden Spirit", "hash": "1ddf33ed321a4bc0", "src": "db2@1.60.1.70338"}
+{"id": 424310, "field": "name", "en": "Eyes of the Owl", "hash": "5708c2dd0975a503", "src": "db2@1.60.1.70338"}
+{"id": 424310, "field": "aura", "en": "Can see spirit beasts in Duskwood.", "hash": "9e1a1c57de501634", "src": "db2@1.60.1.70338"}
+{"id": 424336, "field": "name", "en": "Unbalanced Idol Wild", "hash": "d80341e6f7a357df", "src": "db2@1.60.1.70338"}
+{"id": 424336, "field": "aura", "en": "Balancing yourself with the powers of nature.", "hash": "2b38d4f592609785", "src": "db2@1.60.1.70338"}
+{"id": 424339, "field": "name", "en": "Unbalanced Idol Dream", "hash": "3d5916e8bfac2d05", "src": "db2@1.60.1.70338"}
+{"id": 424378, "field": "name", "en": "Summon Wisp", "hash": "88128ad0abdda4bc", "src": "db2@1.60.1.70338"}
+{"id": 424397, "field": "name", "en": "Summon Corrupt Spirit Beasts", "hash": "f11fff19e3e23ffd", "src": "db2@1.60.1.70338"}
+{"id": 424472, "field": "name", "en": "Near Death Experience", "hash": "f46fe0a8e49ca3e6", "src": "db2@1.60.1.70338"}
+{"id": 424472, "field": "aura", "en": "At the precipice of death.", "hash": "70aba022309dcf96", "src": "db2@1.60.1.70338"}
+{"id": 424553, "field": "name", "en": "Call Your Shot", "hash": "78317568d246e1bd", "src": "db2@1.60.1.70338"}
+{"id": 424553, "field": "aura", "en": "Warning! Expert Marksman Only!", "hash": "b82ef196073f44b5", "src": "db2@1.60.1.70338"}
+{"id": 424563, "field": "name", "en": "Call Vile Fin Hunter", "hash": "0c340c33b0a8b7ec", "src": "db2@1.60.1.70338"}
+{"id": 424570, "field": "name", "en": "Gift of the Wisp", "hash": "fc856dab1f741f50", "src": "db2@1.60.1.70338"}
+{"id": 424573, "field": "name", "en": "Wounded", "hash": "8bb39feca1bb97ce", "src": "db2@1.60.1.70338"}
+{"id": 424573, "field": "description", "en": "Wounded, suffering damage over time and other debilitating effects.", "hash": "e7b7d961c6bab2fe", "src": "db2@1.60.1.70338"}
+{"id": 424573, "field": "aura", "en": "Wounded, suffering damage over time and other debilitating effects.", "hash": "e7b7d961c6bab2fe", "src": "db2@1.60.1.70338"}
+{"id": 424574, "field": "name", "en": "Out of breath!", "hash": "a5ec024a5d674bd3", "src": "db2@1.60.1.70338"}
+{"id": 424574, "field": "description", "en": "Exhausted.", "hash": "0c78d8908a3f42c3", "src": "db2@1.60.1.70338"}
+{"id": 424574, "field": "aura", "en": "Exhausted.", "hash": "0c78d8908a3f42c3", "src": "db2@1.60.1.70338"}
+{"id": 424631, "field": "name", "en": "Give Extra Rune", "hash": "250d4a0cec66aace", "src": "db2@1.60.1.70338"}
+{"id": 424641, "field": "name", "en": "Shredder Autosalvage Unit", "hash": "f943d01ee980a95c", "src": "db2@1.60.1.70338"}
+{"id": 424645, "field": "name", "en": "Translate Spell Notes", "hash": "825765f56825d409", "src": "db2@1.60.1.70338"}
+{"id": 424645, "field": "description", "en": "Translate the spell notes into a new runecarving recipe.  Requires a reference for the author's shorthand.", "hash": "adb28b80001eeceb", "src": "db2@1.60.1.70338"}
+{"id": 424684, "field": "name", "en": "S03 - Rogue 25 Quest Start", "hash": "ca27387f75348f2c", "src": "db2@1.60.1.70338"}
+{"id": 424715, "field": "name", "en": "Starsurge", "hash": "9e9da22f068df835", "src": "db2@1.60.1.70338"}
+{"id": 424715, "field": "description", "en": "Gain the Starsurge ability:\r\n\r\n$@spellicon417157\r\n$@spelldesc417157", "hash": "b4f41bbfd76cd91f", "src": "db2@1.60.1.70338"}
+{"id": 424718, "field": "name", "en": "Engrave Pants - Starsurge", "hash": "d09877c96370d3fc", "src": "db2@1.60.1.70338"}
+{"id": 424718, "field": "description", "en": "Engrave your pants with the Starsurge rune:\r\n\r\n$@spellicon417157\r\n$@spelldesc417157", "hash": "9a8618a920b5864b", "src": "db2@1.60.1.70338"}
+{"id": 424732, "field": "name", "en": "Spawn Portal", "hash": "1c8bd6ea7daae169", "src": "db2@1.60.1.70338"}
+{"id": 424735, "field": "name", "en": "Exit Dream", "hash": "30f76f8f3f423455", "src": "db2@1.60.1.70338"}
+{"id": 424759, "field": "name", "en": "Berserk", "hash": "b1e2ab079742debf", "src": "db2@1.60.1.70338"}
+{"id": 424759, "field": "description", "en": "Gain the Berserk ability:\r\n\r\n$@spellicon417141\r\n$@spelldesc417141", "hash": "1cd4f479f8f3d23b", "src": "db2@1.60.1.70338"}
+{"id": 424760, "field": "name", "en": "Engrave Belt - Berserk", "hash": "ee13a29320ca5984", "src": "db2@1.60.1.70338"}
+{"id": 424760, "field": "description", "en": "Engrave your belt with the Berserk rune:\r\n\r\n$@spellicon417141\r\n$@spelldesc417141", "hash": "cfb3cf54db179228", "src": "db2@1.60.1.70338"}
+{"id": 424762, "field": "name", "en": "King of the Jungle", "hash": "97afb7f136c97630", "src": "db2@1.60.1.70338"}
+{"id": 424762, "field": "description", "en": "Gain the King of the Jungle ability:\r\n\r\n$@spellicon417046\r\n$@spelldesc417046", "hash": "fb8ee4640c93eea7", "src": "db2@1.60.1.70338"}
+{"id": 424765, "field": "name", "en": "Engrave Boots - King of the Jungle", "hash": "c66ee44d78a9da0e", "src": "db2@1.60.1.70338"}
+{"id": 424765, "field": "description", "en": "Engrave your boots with the King of the Jungle rune:\r\n\r\n$@spellicon417046\r\n$@spelldesc417046", "hash": "d414c04d9f9bd870", "src": "db2@1.60.1.70338"}
+{"id": 424785, "field": "name", "en": "Saber Slash", "hash": "502c2de7d1ebba9d", "src": "db2@1.60.1.70338"}
+{"id": 424785, "field": "description", "en": "Viciously slash an enemy for $s2% weapon damage, and cause the target to bleed for ${$AP*$m4/100} damage every $t4 sec for $d, stacking up to $u times. Each stack also increases damage done by your Saber Slash and Sinister Strike by $s5%. Awards $s3 combo $lpoint:points;.\r\n\r\nSaber Slash benefits from all talents and effects that trigger from or modify Sinister Strike.", "hash": "72e45558842548d5", "src": "db2@1.60.1.70338"}
+{"id": 424785, "field": "aura", "en": "Bleeding for $w4 damage every $t4 sec.\r\nDamage taken from Saber Slash and Sinister Strike increased by $s5%.", "hash": "7fbbf4707d1fc44e", "src": "db2@1.60.1.70338"}
+{"id": 424788, "field": "name", "en": "Salvage", "hash": "5ac2edc45ef28fbf", "src": "db2@1.60.1.70338"}
+{"id": 424788, "field": "description", "en": "Salvage the wreckage of a shredder for spare parts.", "hash": "30b9e1d2052efdf8", "src": "db2@1.60.1.70338"}
+{"id": 424799, "field": "name", "en": "Shiv", "hash": "0b3a9b1a759cb8f3", "src": "db2@1.60.1.70338"}
+{"id": 424799, "field": "description", "en": "Instantly attack with your off-hand weapon to deal normal off-hand weapon damage with a 100% chance to apply the poison from your off-hand weapon to the target. Slower weapons require more energy. Awards $s2 combo $lpoint:points;.\r\n\r\nShiv benefits from all talents and effects that trigger from or modify Sinister Strike.", "hash": "b5aa7d3f22b1d824", "src": "db2@1.60.1.70338"}
+{"id": 424800, "field": "name", "en": "Shiv", "hash": "0b3a9b1a759cb8f3", "src": "db2@1.60.1.70338"}
+{"id": 424800, "field": "description", "en": "Instantly attack with your off-hand weapon with a 100% chance to apply the poison from your off-hand weapon to the target. Slower weapons require more energy. Awards $s2 combo $lpoint:points;.\r\n", "hash": "282f1a89ee17223f", "src": "db2@1.60.1.70338"}
+{"id": 424919, "field": "name", "en": "Main Gauche", "hash": "cd3cc36df1314024", "src": "db2@1.60.1.70338"}
+{"id": 424919, "field": "description", "en": "Instantly strike with your off-hand weapon for normal off-hand weapon damage and increase your chance to parry by $s2% for $d or until you successfully parry. For $462752d after using Main Gauche, Sinister Strike costs $462752s1 less Energy, deals $462752s2% more threat, grants stacks of Rolling with the Punches, and both Sinister Strike and Eviscerate deal $462752s3% more damage. Awards $s3 combo $lpoint:points;.\r\n\r\nMain Gauche benefits from most talents and effects that trigger from or modify Sinister Strike. Main Gauche's effect will not discount or empower Main Gauche.", "hash": "c4245e6a12245f26", "src": "db2@1.60.1.70338"}
+{"id": 424919, "field": "aura", "en": "Parry chance increased by $s2%.", "hash": "ea59a9beb469fd5a", "src": "db2@1.60.1.70338"}
+{"id": 424925, "field": "name", "en": "Slaughter from the Shadows", "hash": "3db987080858943f", "src": "db2@1.60.1.70338"}
+{"id": 424925, "field": "description", "en": "Reduces the Energy cost of your Backstab and Ambush abilities by $s1, and increases the damage they deal to non-player controlled targets by $s2%. $?s400094[Does not apply to Mutilate.][Does not apply to abilities learned from other runes.]", "hash": "2c1b4225ed0610ae", "src": "db2@1.60.1.70338"}
+{"id": 424941, "field": "name", "en": "Teach Living Bomb", "hash": "2a4550528c638764", "src": "db2@1.60.1.70338"}
+{"id": 424976, "field": "name", "en": "Begin Ratchet Arms Dealer Quest", "hash": "54ae26af7647cbae", "src": "db2@1.60.1.70338"}
+{"id": 424979, "field": "name", "en": "Saber Slash", "hash": "502c2de7d1ebba9d", "src": "db2@1.60.1.70338"}
+{"id": 424979, "field": "description", "en": "Gain the Saber Slash ability:\r\n\r\n$@spellicon424785\r\n$@spelldesc424785", "hash": "d3ed0eabd0963baf", "src": "db2@1.60.1.70338"}
+{"id": 424980, "field": "name", "en": "Cutthroat", "hash": "c37de89ea09871f9", "src": "db2@1.60.1.70338"}
+{"id": 424980, "field": "description", "en": "Gain the Cutthroat ability:\r\n\r\n$@spellicon462708\r\n$@spelldesc462708", "hash": "c5e9cf59cc098813", "src": "db2@1.60.1.70338"}
+{"id": 424982, "field": "name", "en": "Main Gauche", "hash": "cd3cc36df1314024", "src": "db2@1.60.1.70338"}
+{"id": 424982, "field": "description", "en": "Gain the Main Gauche ability:\r\n\r\n$@spellicon424919\r\n$@spelldesc424919", "hash": "b2b7138c5fb0e7b3", "src": "db2@1.60.1.70338"}
+{"id": 424983, "field": "name", "en": "Slaughter from the Shadows", "hash": "3db987080858943f", "src": "db2@1.60.1.70338"}
+{"id": 424983, "field": "description", "en": "Gain the Slaughter from the Shadows ability:\r\n\r\n$@spellicon424925\r\n$@spelldesc424925", "hash": "9b32cf65c4100a9e", "src": "db2@1.60.1.70338"}
+{"id": 424984, "field": "name", "en": "Engrave Gloves - Saber Slash", "hash": "b72ad3d9dfb5113c", "src": "db2@1.60.1.70338"}
+{"id": 424984, "field": "description", "en": "Engrave your gloves with the Saber Slash rune:\r\n\r\n$@spellicon424785\r\n$@spelldesc424785", "hash": "9ee44fa73898f414", "src": "db2@1.60.1.70338"}
+{"id": 424988, "field": "name", "en": "Engrave Gloves - Cutthroat", "hash": "900fe8182591cf1e", "src": "db2@1.60.1.70338"}
+{"id": 424988, "field": "description", "en": "Engrave your gloves with the Cutthroat rune:\r\n\r\n$@spellicon462708\r\n$@spelldesc462708", "hash": "e753d8162e292eb1", "src": "db2@1.60.1.70338"}
+{"id": 424990, "field": "name", "en": "Engrave Gloves - Main Gauche", "hash": "343b6964fefa96c3", "src": "db2@1.60.1.70338"}
+{"id": 424990, "field": "description", "en": "Engrave your gloves with the Main Gauche rune:\r\n\r\n$@spellicon424919\r\n$@spelldesc424919", "hash": "279ea8074913f62d", "src": "db2@1.60.1.70338"}
+{"id": 424992, "field": "name", "en": "Engrave Chest - Slaughter from the Shadows", "hash": "f29038444abd85f7", "src": "db2@1.60.1.70338"}
+{"id": 424992, "field": "description", "en": "Engrave your chest or robe with the Slaughter from the Shadows rune:\r\n\r\n$@spellicon424925\r\n$@spelldesc424925", "hash": "9ddaea85c0615828", "src": "db2@1.60.1.70338"}

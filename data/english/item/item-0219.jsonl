@@ -1,170 +1,170 @@
-{"id": 219147, "field": "name", "en": "Rune of Grace", "hash": "91e6e70d36d4da47", "src": "db2@1.60.1.70291"}
-{"id": 219147, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 219345, "field": "name", "en": "Infernal Lasso", "hash": "07a60fe4118ca704", "src": "db2@1.60.1.70291"}
-{"id": 219345, "field": "description", "en": "Deals $o1 Fire damage over $d. Demons and Beasts are Rooted in place for $1312052d.", "hash": "c1da90e1e0cefc95", "src": "db2@1.60.1.70291"}
-{"id": 219399, "field": "name", "en": "Nightmare Moss", "hash": "414b63a313f8e319", "src": "db2@1.60.1.70291"}
-{"id": 219399, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70291"}
-{"id": 219401, "field": "name", "en": "Cold Iron Ore", "hash": "a1f10c7b372321ec", "src": "db2@1.60.1.70291"}
-{"id": 219401, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70291"}
-{"id": 219402, "field": "name", "en": "Dream-Touched Dragonscale", "hash": "999a69ad52306f5e", "src": "db2@1.60.1.70291"}
-{"id": 219402, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70291"}
-{"id": 219404, "field": "name", "en": "Shadowscythe", "hash": "a19cab7c3418e16e", "src": "db2@1.60.1.70291"}
-{"id": 219404, "field": "description", "en": "The ephemeral echo of one of Elune's powerful lost artifacts.", "hash": "f0af2d86a1770e94", "src": "db2@1.60.1.70291"}
-{"id": 219405, "field": "name", "en": "Ogre Magi Text", "hash": "e076e08b31eb1226", "src": "db2@1.60.1.70291"}
-{"id": 219405, "field": "description", "en": "This text is written with the indecipherable scrawl of a madman.", "hash": "e79491163bf512d1", "src": "db2@1.60.1.70291"}
-{"id": 219406, "field": "name", "en": "Unhatched Green Dragon Egg", "hash": "8a0d44f82cac46ab", "src": "db2@1.60.1.70291"}
-{"id": 219406, "field": "description", "en": "A healthy green dragon egg, but shimmering from the energy of the dream.", "hash": "b42d0b4847645fc4", "src": "db2@1.60.1.70291"}
-{"id": 219414, "field": "name", "en": "Shattered Eggshells", "hash": "5b7550208b553b1e", "src": "db2@1.60.1.70291"}
-{"id": 219414, "field": "description", "en": "Whatever life they once held has been consumed by the nightmare.", "hash": "13ef13a17b94d0ad", "src": "db2@1.60.1.70291"}
-{"id": 219444, "field": "name", "en": "Dreamroot", "hash": "92b9c8b872efe039", "src": "db2@1.60.1.70291"}
-{"id": 219444, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70291"}
-{"id": 219445, "field": "name", "en": "Fool's Gold Dust", "hash": "b2d769c1e66f318c", "src": "db2@1.60.1.70291"}
-{"id": 219445, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70291"}
-{"id": 219446, "field": "name", "en": "Dream-Infused Dragonscale", "hash": "fa47c6ff7eebbbf3", "src": "db2@1.60.1.70291"}
-{"id": 219446, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70291"}
-{"id": 219447, "field": "name", "en": "Dream-Touched Dragon Egg", "hash": "36823c1f5e5ffb51", "src": "db2@1.60.1.70291"}
-{"id": 219447, "field": "description", "en": "A glowing green dragon egg.", "hash": "22d4ee5eb7c80928", "src": "db2@1.60.1.70291"}
-{"id": 219448, "field": "name", "en": "Dreamengine", "hash": "efb65392d546aa56", "src": "db2@1.60.1.70291"}
-{"id": 219448, "field": "description", "en": "A machine to manufacture nightmares.", "hash": "649fd48a9feab2ab", "src": "db2@1.60.1.70291"}
-{"id": 219449, "field": "name", "en": "Azsharan Prophecy", "hash": "267001fd5588eded", "src": "db2@1.60.1.70291"}
-{"id": 219449, "field": "description", "en": "An ancient prophecy on a delicate scroll.", "hash": "bb62fbab5f82b2ac", "src": "db2@1.60.1.70291"}
-{"id": 219454, "field": "name", "en": "Star Lotus", "hash": "ceafcf065c0aa4ab", "src": "db2@1.60.1.70291"}
-{"id": 219454, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70291"}
-{"id": 219486, "field": "name", "en": "Starsilver Ore", "hash": "22a3e30fd478d0bf", "src": "db2@1.60.1.70291"}
-{"id": 219486, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70291"}
-{"id": 219487, "field": "name", "en": "Starshell", "hash": "9cdc4c71a4abc259", "src": "db2@1.60.1.70291"}
-{"id": 219487, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70291"}
-{"id": 219488, "field": "name", "en": "Star-Touched Dragonegg", "hash": "79f21224d765431e", "src": "db2@1.60.1.70291"}
-{"id": 219488, "field": "description", "en": "A radiant dragon egg.", "hash": "4f774cd876016268", "src": "db2@1.60.1.70291"}
-{"id": 219490, "field": "name", "en": "Elunar Relic", "hash": "a4b3957335e7c4dc", "src": "db2@1.60.1.70291"}
-{"id": 219490, "field": "description", "en": "A lost gift from Elune to the Wildkin.", "hash": "194eac84e365fed1", "src": "db2@1.60.1.70291"}
-{"id": 219491, "field": "name", "en": "Dreampearl", "hash": "f09b97d295837133", "src": "db2@1.60.1.70291"}
-{"id": 219491, "field": "description", "en": "Recovered from a shell beneath the Dreaming Sea.", "hash": "70f5b578f928ef60", "src": "db2@1.60.1.70291"}
-{"id": 219514, "field": "name", "en": "Moonroot", "hash": "ef44d8c14152d9a8", "src": "db2@1.60.1.70291"}
-{"id": 219514, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70291"}
-{"id": 219515, "field": "name", "en": "Greater Moonstone", "hash": "bb11d82d5c0bb8f8", "src": "db2@1.60.1.70291"}
-{"id": 219515, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70291"}
-{"id": 219517, "field": "name", "en": "Moondragon Scale", "hash": "824557e4beb4783b", "src": "db2@1.60.1.70291"}
-{"id": 219517, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70291"}
-{"id": 219518, "field": "name", "en": "Harpy Screed", "hash": "b5216479a19862d2", "src": "db2@1.60.1.70291"}
-{"id": 219518, "field": "description", "en": "Delirious rantings of the Harpy Queen.", "hash": "c0e15a54ea4f97fe", "src": "db2@1.60.1.70291"}
-{"id": 219519, "field": "name", "en": "Mad Keeper's Notes", "hash": "37d22464c2396b56", "src": "db2@1.60.1.70291"}
-{"id": 219519, "field": "description", "en": "Battle plans of a Keeper of the Grove gone mad.", "hash": "cdba5d1dfa88c26b", "src": "db2@1.60.1.70291"}
-{"id": 219520, "field": "name", "en": "Moonglow Dragonegg", "hash": "ab75f55925be56ce", "src": "db2@1.60.1.70291"}
-{"id": 219526, "field": "name", "en": "Mission Brief: Duskwood", "hash": "42780ccda79c35e9", "src": "db2@1.60.1.70291"}
-{"id": 219759, "field": "name", "en": "Charla's Field Report", "hash": "71ba31fd0b772144", "src": "db2@1.60.1.70291"}
-{"id": 219759, "field": "description", "en": "Field Report from the Twilight Grove", "hash": "896b5622faf796e4", "src": "db2@1.60.1.70291"}
-{"id": 219770, "field": "name", "en": "Gemeron's Field Report", "hash": "87ae729e676f74bd", "src": "db2@1.60.1.70291"}
-{"id": 219770, "field": "description", "en": "Field Report from Bough Shadow.", "hash": "1a0a074b7b0b6d3f", "src": "db2@1.60.1.70291"}
-{"id": 219771, "field": "name", "en": "Thandros' Field Report", "hash": "0768fce9b7ba9bc0", "src": "db2@1.60.1.70291"}
-{"id": 219771, "field": "description", "en": "Field Report from Dream Bough.", "hash": "c82b8d5dcbe7d3e6", "src": "db2@1.60.1.70291"}
-{"id": 219772, "field": "name", "en": "Fallia's Field Report", "hash": "87ce033a06800a43", "src": "db2@1.60.1.70291"}
-{"id": 219772, "field": "description", "en": "Field Report from Seradane.", "hash": "069441204ebdd3dd", "src": "db2@1.60.1.70291"}
-{"id": 219773, "field": "name", "en": "Mission Brief: Ashenvale", "hash": "717368bfce42230e", "src": "db2@1.60.1.70291"}
-{"id": 219774, "field": "name", "en": "Mission Brief: Hinterlands", "hash": "1aed767213ed002e", "src": "db2@1.60.1.70291"}
-{"id": 219775, "field": "name", "en": "Mission Brief: Feralas", "hash": "893be39f40255e6c", "src": "db2@1.60.1.70291"}
-{"id": 219776, "field": "name", "en": "Intelligence Report: Vul'gol Ogre Mound", "hash": "dc40c4739437151c", "src": "db2@1.60.1.70291"}
-{"id": 219776, "field": "description", "en": "Intelligence report from Vul'gol Ogre Mound", "hash": "508fdc5d67e1a8b6", "src": "db2@1.60.1.70291"}
-{"id": 219778, "field": "name", "en": "Intelligence Report: Rotting Orchard", "hash": "f4689760a4ebd431", "src": "db2@1.60.1.70291"}
-{"id": 219778, "field": "description", "en": "Intelligence report from the Rotting Orchard", "hash": "aa1522d3e076e280", "src": "db2@1.60.1.70291"}
-{"id": 219803, "field": "name", "en": "Intelligence Report: Yorgen Farmstead", "hash": "7a734f5381732543", "src": "db2@1.60.1.70291"}
-{"id": 219803, "field": "description", "en": "Intelligence report from the Yorgen Farmstead", "hash": "71beaa6ead66c7bc", "src": "db2@1.60.1.70291"}
-{"id": 219918, "field": "name", "en": "Bloody Missive", "hash": "1c4c2a5ddaada7f0", "src": "db2@1.60.1.70291"}
-{"id": 219918, "field": "description", "en": "This crumpled letter is thick with blood and gore. Gross.", "hash": "b0cb8eae38658c66", "src": "db2@1.60.1.70291"}
-{"id": 219924, "field": "name", "en": "Intelligence Report: Forest Song", "hash": "ce219d6c847b42ac", "src": "db2@1.60.1.70291"}
-{"id": 219924, "field": "description", "en": "Intelligence report from Forest Song", "hash": "3ef89afbc86fcf5d", "src": "db2@1.60.1.70291"}
-{"id": 219925, "field": "name", "en": "Intelligence Report: Satyrnaar", "hash": "65f36fb56ff53906", "src": "db2@1.60.1.70291"}
-{"id": 219925, "field": "description", "en": "Intelligence report from Satyrnaar", "hash": "095970aff3c77125", "src": "db2@1.60.1.70291"}
-{"id": 219926, "field": "name", "en": "Intelligence Report: Warsong Lumber Camp", "hash": "03f9575d0d9a549e", "src": "db2@1.60.1.70291"}
-{"id": 219926, "field": "description", "en": "Intelligence report from the Warsong Lumber Camp", "hash": "8290ca8cb8e8a60d", "src": "db2@1.60.1.70291"}
-{"id": 219927, "field": "name", "en": "Emerald Chip", "hash": "921aa9951d819849", "src": "db2@1.60.1.70291"}
-{"id": 219927, "field": "description", "en": "A marker for your service to the Emerald Wardens.", "hash": "3d2f2ed81448f9d5", "src": "db2@1.60.1.70291"}
-{"id": 219928, "field": "name", "en": "Intelligence Report: Agol'watha", "hash": "fe39adca2b365e39", "src": "db2@1.60.1.70291"}
-{"id": 219928, "field": "description", "en": "Intelligence report from Agol'watha", "hash": "9b6c2ccd7bc68982", "src": "db2@1.60.1.70291"}
-{"id": 219929, "field": "name", "en": "Bloody Missive", "hash": "1c4c2a5ddaada7f0", "src": "db2@1.60.1.70291"}
-{"id": 219930, "field": "name", "en": "Bloody Missive", "hash": "1c4c2a5ddaada7f0", "src": "db2@1.60.1.70291"}
-{"id": 219935, "field": "name", "en": "Kajind's Blade", "hash": "7f5564af836bf10c", "src": "db2@1.60.1.70291"}
-{"id": 219937, "field": "name", "en": "Intelligence Report: Shaol'watha", "hash": "3085079bf94da22d", "src": "db2@1.60.1.70291"}
-{"id": 219937, "field": "description", "en": "Intelligence report from Shaol'watha", "hash": "a15c05253d422eef", "src": "db2@1.60.1.70291"}
-{"id": 219938, "field": "name", "en": "Intelligence Report: Skulk Rock", "hash": "71012ae917b99025", "src": "db2@1.60.1.70291"}
-{"id": 219938, "field": "description", "en": "Intelligence report from Skulk Rock", "hash": "0e33a9ec6849bb6e", "src": "db2@1.60.1.70291"}
-{"id": 219957, "field": "name", "en": "Intelligence Report: Oneiros", "hash": "e8376e2a9c77536f", "src": "db2@1.60.1.70291"}
-{"id": 219957, "field": "description", "en": "Intelligence report from Oneiros", "hash": "cdce9c56909ab642", "src": "db2@1.60.1.70291"}
-{"id": 219958, "field": "name", "en": "Intelligence Report: Twin Colossals", "hash": "45740956a374db4f", "src": "db2@1.60.1.70291"}
-{"id": 219958, "field": "description", "en": "Intelligence report from the Twin Colossals", "hash": "d196932f7a8f1916", "src": "db2@1.60.1.70291"}
-{"id": 219959, "field": "name", "en": "Intelligence Report: Ruins of Ravenwind", "hash": "1dfa10ee62aa1607", "src": "db2@1.60.1.70291"}
-{"id": 219959, "field": "description", "en": "Intelligence report from the Ruins of Ravenwind", "hash": "88784a7924ab61bf", "src": "db2@1.60.1.70291"}
-{"id": 219962, "field": "name", "en": "Nightmare Incursions: Duskwood Mission I", "hash": "54c0257d61e87fd7", "src": "db2@1.60.1.70291"}
-{"id": 219962, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70291"}
-{"id": 219963, "field": "name", "en": "Deputization Authorization: Duskwood Mission I", "hash": "a80fd594c4c241a8", "src": "db2@1.60.1.70291"}
-{"id": 219963, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70291"}
-{"id": 219965, "field": "name", "en": "Deputization Authorization: Duskwood Mission II", "hash": "001a4cb374b0ad71", "src": "db2@1.60.1.70291"}
-{"id": 219965, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70291"}
-{"id": 219966, "field": "name", "en": "Nightmare Incursions: Duskwood Mission II", "hash": "5e53301734d43481", "src": "db2@1.60.1.70291"}
-{"id": 219966, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70291"}
-{"id": 219967, "field": "name", "en": "Nightmare Incursions: Duskwood Mission III", "hash": "44919cfe20de347e", "src": "db2@1.60.1.70291"}
-{"id": 219967, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70291"}
-{"id": 219968, "field": "name", "en": "Nightmare Incursions: Duskwood Mission IV", "hash": "5e53302434d4348e", "src": "db2@1.60.1.70291"}
-{"id": 219968, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70291"}
-{"id": 219969, "field": "name", "en": "Nightmare Incursions: Duskwood Mission V", "hash": "54c0258a61e87fe4", "src": "db2@1.60.1.70291"}
-{"id": 219969, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70291"}
-{"id": 219970, "field": "name", "en": "Nightmare Incursions: Duskwood Mission VI", "hash": "5e5336be34d5d2ee", "src": "db2@1.60.1.70291"}
-{"id": 219970, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70291"}
-{"id": 219971, "field": "name", "en": "Nightmare Incursions: Duskwood Mission VII", "hash": "449504735479a54b", "src": "db2@1.60.1.70291"}
-{"id": 219971, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70291"}
-{"id": 219972, "field": "name", "en": "Nightmare Incursions: Duskwood Mission VIII", "hash": "184147d1f9ef0ef8", "src": "db2@1.60.1.70291"}
-{"id": 219972, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70291"}
-{"id": 219973, "field": "name", "en": "Nightmare Incursions: Duskwood Mission IX", "hash": "5e53302634d43490", "src": "db2@1.60.1.70291"}
-{"id": 219973, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70291"}
-{"id": 219974, "field": "name", "en": "Nightmare Incursions: Duskwood Mission X", "hash": "54c0258c61e87fe6", "src": "db2@1.60.1.70291"}
-{"id": 219974, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70291"}
-{"id": 219975, "field": "name", "en": "Nightmare Incursions: Duskwood Mission XI", "hash": "5e5337c434d612b0", "src": "db2@1.60.1.70291"}
-{"id": 219975, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70291"}
-{"id": 219976, "field": "name", "en": "Nightmare Incursions: Duskwood Mission XII", "hash": "44958a855c6a2ccd", "src": "db2@1.60.1.70291"}
-{"id": 219976, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70291"}
-{"id": 219977, "field": "name", "en": "Nightmare Incursions: Duskwood Mission XIII", "hash": "1885e30714bef718", "src": "db2@1.60.1.70291"}
-{"id": 219977, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70291"}
-{"id": 219978, "field": "name", "en": "Nightmare Incursions: Duskwood Mission XIV", "hash": "44958a925c6a2cda", "src": "db2@1.60.1.70291"}
-{"id": 219978, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70291"}
-{"id": 219979, "field": "name", "en": "Nightmare Incursions: Duskwood Mission XV", "hash": "5e5337d134d612bd", "src": "db2@1.60.1.70291"}
-{"id": 219979, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70291"}
-{"id": 219980, "field": "name", "en": "Nightmare Incursions: Duskwood Mission XVI", "hash": "4495912c5c6bcb3a", "src": "db2@1.60.1.70291"}
-{"id": 219980, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70291"}
-{"id": 219981, "field": "name", "en": "Nightmare Incursions: Duskwood Mission XVII", "hash": "18894a7c485a67e5", "src": "db2@1.60.1.70291"}
-{"id": 219981, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70291"}
-{"id": 219982, "field": "name", "en": "Nightmare Incursions: Duskwood Mission XVIII", "hash": "8e411df98a0aa4b0", "src": "db2@1.60.1.70291"}
-{"id": 219982, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70291"}
-{"id": 219983, "field": "name", "en": "Deputization Authorization: Duskwood Mission III", "hash": "0d753fe2f44a1691", "src": "db2@1.60.1.70291"}
-{"id": 219983, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70291"}
-{"id": 219984, "field": "name", "en": "Deputization Authorization: Duskwood Mission IV", "hash": "001a4cc074b0ad7e", "src": "db2@1.60.1.70291"}
-{"id": 219984, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70291"}
-{"id": 219985, "field": "name", "en": "Deputization Authorization: Duskwood Mission V", "hash": "a80fd5a1c4c241b5", "src": "db2@1.60.1.70291"}
-{"id": 219985, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70291"}
-{"id": 219986, "field": "name", "en": "Deputization Authorization: Duskwood Mission VI", "hash": "001a535a74b24bde", "src": "db2@1.60.1.70291"}
-{"id": 219986, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70291"}
-{"id": 219987, "field": "name", "en": "Deputization Authorization: Duskwood Mission VII", "hash": "0d78a75727e5876f", "src": "db2@1.60.1.70291"}
-{"id": 219987, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70291"}
-{"id": 219988, "field": "name", "en": "Deputization Authorization: Duskwood Mission VIII", "hash": "e4bda1ecdc22ce3f", "src": "db2@1.60.1.70291"}
-{"id": 219988, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70291"}
-{"id": 219989, "field": "name", "en": "Deputization Authorization: Duskwood Mission IX", "hash": "001a4cc274b0ad80", "src": "db2@1.60.1.70291"}
-{"id": 219989, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70291"}
-{"id": 219990, "field": "name", "en": "Deputization Authorization: Duskwood Mission X", "hash": "a80fd5a3c4c241b7", "src": "db2@1.60.1.70291"}
-{"id": 219990, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70291"}
-{"id": 219991, "field": "name", "en": "Deputization Authorization: Duskwood Mission XI", "hash": "001a546074b28ba0", "src": "db2@1.60.1.70291"}
-{"id": 219991, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70291"}
-{"id": 219992, "field": "name", "en": "Deputization Authorization: Duskwood Mission XII", "hash": "0d792d692fd60ef1", "src": "db2@1.60.1.70291"}
-{"id": 219992, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70291"}
-{"id": 219993, "field": "name", "en": "Deputization Authorization: Duskwood Mission XIII", "hash": "e5023d22f6f2b64e", "src": "db2@1.60.1.70291"}
-{"id": 219993, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70291"}
-{"id": 219994, "field": "name", "en": "Deputization Authorization: Duskwood Mission XIV", "hash": "0d792d762fd60efe", "src": "db2@1.60.1.70291"}
-{"id": 219994, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70291"}
-{"id": 219995, "field": "name", "en": "Deputization Authorization: Duskwood Mission XV", "hash": "001a546d74b28bad", "src": "db2@1.60.1.70291"}
-{"id": 219995, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70291"}
-{"id": 219996, "field": "name", "en": "Deputization Authorization: Duskwood Mission XVI", "hash": "0d7934102fd7ad5e", "src": "db2@1.60.1.70291"}
-{"id": 219996, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70291"}
-{"id": 219997, "field": "name", "en": "Deputization Authorization: Duskwood Mission XVII", "hash": "e505a4972a8e272c", "src": "db2@1.60.1.70291"}
-{"id": 219997, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70291"}
-{"id": 219998, "field": "name", "en": "Deputization Authorization: Duskwood Mission XVIII", "hash": "31e33bd79daf1c01", "src": "db2@1.60.1.70291"}
-{"id": 219998, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70291"}
-{"id": 219999, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission I", "hash": "e7f35e3de2e1fbd4", "src": "db2@1.60.1.70291"}
-{"id": 219999, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70291"}
+{"id": 219147, "field": "name", "en": "Rune of Grace", "hash": "91e6e70d36d4da47", "src": "db2@1.60.1.70338"}
+{"id": 219147, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 219345, "field": "name", "en": "Infernal Lasso", "hash": "07a60fe4118ca704", "src": "db2@1.60.1.70338"}
+{"id": 219345, "field": "description", "en": "Deals $o1 Fire damage over $d. Demons and Beasts are Rooted in place for $1312052d.", "hash": "c1da90e1e0cefc95", "src": "db2@1.60.1.70338"}
+{"id": 219399, "field": "name", "en": "Nightmare Moss", "hash": "414b63a313f8e319", "src": "db2@1.60.1.70338"}
+{"id": 219399, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70338"}
+{"id": 219401, "field": "name", "en": "Cold Iron Ore", "hash": "a1f10c7b372321ec", "src": "db2@1.60.1.70338"}
+{"id": 219401, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70338"}
+{"id": 219402, "field": "name", "en": "Dream-Touched Dragonscale", "hash": "999a69ad52306f5e", "src": "db2@1.60.1.70338"}
+{"id": 219402, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70338"}
+{"id": 219404, "field": "name", "en": "Shadowscythe", "hash": "a19cab7c3418e16e", "src": "db2@1.60.1.70338"}
+{"id": 219404, "field": "description", "en": "The ephemeral echo of one of Elune's powerful lost artifacts.", "hash": "f0af2d86a1770e94", "src": "db2@1.60.1.70338"}
+{"id": 219405, "field": "name", "en": "Ogre Magi Text", "hash": "e076e08b31eb1226", "src": "db2@1.60.1.70338"}
+{"id": 219405, "field": "description", "en": "This text is written with the indecipherable scrawl of a madman.", "hash": "e79491163bf512d1", "src": "db2@1.60.1.70338"}
+{"id": 219406, "field": "name", "en": "Unhatched Green Dragon Egg", "hash": "8a0d44f82cac46ab", "src": "db2@1.60.1.70338"}
+{"id": 219406, "field": "description", "en": "A healthy green dragon egg, but shimmering from the energy of the dream.", "hash": "b42d0b4847645fc4", "src": "db2@1.60.1.70338"}
+{"id": 219414, "field": "name", "en": "Shattered Eggshells", "hash": "5b7550208b553b1e", "src": "db2@1.60.1.70338"}
+{"id": 219414, "field": "description", "en": "Whatever life they once held has been consumed by the nightmare.", "hash": "13ef13a17b94d0ad", "src": "db2@1.60.1.70338"}
+{"id": 219444, "field": "name", "en": "Dreamroot", "hash": "92b9c8b872efe039", "src": "db2@1.60.1.70338"}
+{"id": 219444, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70338"}
+{"id": 219445, "field": "name", "en": "Fool's Gold Dust", "hash": "b2d769c1e66f318c", "src": "db2@1.60.1.70338"}
+{"id": 219445, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70338"}
+{"id": 219446, "field": "name", "en": "Dream-Infused Dragonscale", "hash": "fa47c6ff7eebbbf3", "src": "db2@1.60.1.70338"}
+{"id": 219446, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70338"}
+{"id": 219447, "field": "name", "en": "Dream-Touched Dragon Egg", "hash": "36823c1f5e5ffb51", "src": "db2@1.60.1.70338"}
+{"id": 219447, "field": "description", "en": "A glowing green dragon egg.", "hash": "22d4ee5eb7c80928", "src": "db2@1.60.1.70338"}
+{"id": 219448, "field": "name", "en": "Dreamengine", "hash": "efb65392d546aa56", "src": "db2@1.60.1.70338"}
+{"id": 219448, "field": "description", "en": "A machine to manufacture nightmares.", "hash": "649fd48a9feab2ab", "src": "db2@1.60.1.70338"}
+{"id": 219449, "field": "name", "en": "Azsharan Prophecy", "hash": "267001fd5588eded", "src": "db2@1.60.1.70338"}
+{"id": 219449, "field": "description", "en": "An ancient prophecy on a delicate scroll.", "hash": "bb62fbab5f82b2ac", "src": "db2@1.60.1.70338"}
+{"id": 219454, "field": "name", "en": "Star Lotus", "hash": "ceafcf065c0aa4ab", "src": "db2@1.60.1.70338"}
+{"id": 219454, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70338"}
+{"id": 219486, "field": "name", "en": "Starsilver Ore", "hash": "22a3e30fd478d0bf", "src": "db2@1.60.1.70338"}
+{"id": 219486, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70338"}
+{"id": 219487, "field": "name", "en": "Starshell", "hash": "9cdc4c71a4abc259", "src": "db2@1.60.1.70338"}
+{"id": 219487, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70338"}
+{"id": 219488, "field": "name", "en": "Star-Touched Dragonegg", "hash": "79f21224d765431e", "src": "db2@1.60.1.70338"}
+{"id": 219488, "field": "description", "en": "A radiant dragon egg.", "hash": "4f774cd876016268", "src": "db2@1.60.1.70338"}
+{"id": 219490, "field": "name", "en": "Elunar Relic", "hash": "a4b3957335e7c4dc", "src": "db2@1.60.1.70338"}
+{"id": 219490, "field": "description", "en": "A lost gift from Elune to the Wildkin.", "hash": "194eac84e365fed1", "src": "db2@1.60.1.70338"}
+{"id": 219491, "field": "name", "en": "Dreampearl", "hash": "f09b97d295837133", "src": "db2@1.60.1.70338"}
+{"id": 219491, "field": "description", "en": "Recovered from a shell beneath the Dreaming Sea.", "hash": "70f5b578f928ef60", "src": "db2@1.60.1.70338"}
+{"id": 219514, "field": "name", "en": "Moonroot", "hash": "ef44d8c14152d9a8", "src": "db2@1.60.1.70338"}
+{"id": 219514, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70338"}
+{"id": 219515, "field": "name", "en": "Greater Moonstone", "hash": "bb11d82d5c0bb8f8", "src": "db2@1.60.1.70338"}
+{"id": 219515, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70338"}
+{"id": 219517, "field": "name", "en": "Moondragon Scale", "hash": "824557e4beb4783b", "src": "db2@1.60.1.70338"}
+{"id": 219517, "field": "description", "en": "Ephemeral and unstable.", "hash": "284073cdc214a69f", "src": "db2@1.60.1.70338"}
+{"id": 219518, "field": "name", "en": "Harpy Screed", "hash": "b5216479a19862d2", "src": "db2@1.60.1.70338"}
+{"id": 219518, "field": "description", "en": "Delirious rantings of the Harpy Queen.", "hash": "c0e15a54ea4f97fe", "src": "db2@1.60.1.70338"}
+{"id": 219519, "field": "name", "en": "Mad Keeper's Notes", "hash": "37d22464c2396b56", "src": "db2@1.60.1.70338"}
+{"id": 219519, "field": "description", "en": "Battle plans of a Keeper of the Grove gone mad.", "hash": "cdba5d1dfa88c26b", "src": "db2@1.60.1.70338"}
+{"id": 219520, "field": "name", "en": "Moonglow Dragonegg", "hash": "ab75f55925be56ce", "src": "db2@1.60.1.70338"}
+{"id": 219526, "field": "name", "en": "Mission Brief: Duskwood", "hash": "42780ccda79c35e9", "src": "db2@1.60.1.70338"}
+{"id": 219759, "field": "name", "en": "Charla's Field Report", "hash": "71ba31fd0b772144", "src": "db2@1.60.1.70338"}
+{"id": 219759, "field": "description", "en": "Field Report from the Twilight Grove", "hash": "896b5622faf796e4", "src": "db2@1.60.1.70338"}
+{"id": 219770, "field": "name", "en": "Gemeron's Field Report", "hash": "87ae729e676f74bd", "src": "db2@1.60.1.70338"}
+{"id": 219770, "field": "description", "en": "Field Report from Bough Shadow.", "hash": "1a0a074b7b0b6d3f", "src": "db2@1.60.1.70338"}
+{"id": 219771, "field": "name", "en": "Thandros' Field Report", "hash": "0768fce9b7ba9bc0", "src": "db2@1.60.1.70338"}
+{"id": 219771, "field": "description", "en": "Field Report from Dream Bough.", "hash": "c82b8d5dcbe7d3e6", "src": "db2@1.60.1.70338"}
+{"id": 219772, "field": "name", "en": "Fallia's Field Report", "hash": "87ce033a06800a43", "src": "db2@1.60.1.70338"}
+{"id": 219772, "field": "description", "en": "Field Report from Seradane.", "hash": "069441204ebdd3dd", "src": "db2@1.60.1.70338"}
+{"id": 219773, "field": "name", "en": "Mission Brief: Ashenvale", "hash": "717368bfce42230e", "src": "db2@1.60.1.70338"}
+{"id": 219774, "field": "name", "en": "Mission Brief: Hinterlands", "hash": "1aed767213ed002e", "src": "db2@1.60.1.70338"}
+{"id": 219775, "field": "name", "en": "Mission Brief: Feralas", "hash": "893be39f40255e6c", "src": "db2@1.60.1.70338"}
+{"id": 219776, "field": "name", "en": "Intelligence Report: Vul'gol Ogre Mound", "hash": "dc40c4739437151c", "src": "db2@1.60.1.70338"}
+{"id": 219776, "field": "description", "en": "Intelligence report from Vul'gol Ogre Mound", "hash": "508fdc5d67e1a8b6", "src": "db2@1.60.1.70338"}
+{"id": 219778, "field": "name", "en": "Intelligence Report: Rotting Orchard", "hash": "f4689760a4ebd431", "src": "db2@1.60.1.70338"}
+{"id": 219778, "field": "description", "en": "Intelligence report from the Rotting Orchard", "hash": "aa1522d3e076e280", "src": "db2@1.60.1.70338"}
+{"id": 219803, "field": "name", "en": "Intelligence Report: Yorgen Farmstead", "hash": "7a734f5381732543", "src": "db2@1.60.1.70338"}
+{"id": 219803, "field": "description", "en": "Intelligence report from the Yorgen Farmstead", "hash": "71beaa6ead66c7bc", "src": "db2@1.60.1.70338"}
+{"id": 219918, "field": "name", "en": "Bloody Missive", "hash": "1c4c2a5ddaada7f0", "src": "db2@1.60.1.70338"}
+{"id": 219918, "field": "description", "en": "This crumpled letter is thick with blood and gore. Gross.", "hash": "b0cb8eae38658c66", "src": "db2@1.60.1.70338"}
+{"id": 219924, "field": "name", "en": "Intelligence Report: Forest Song", "hash": "ce219d6c847b42ac", "src": "db2@1.60.1.70338"}
+{"id": 219924, "field": "description", "en": "Intelligence report from Forest Song", "hash": "3ef89afbc86fcf5d", "src": "db2@1.60.1.70338"}
+{"id": 219925, "field": "name", "en": "Intelligence Report: Satyrnaar", "hash": "65f36fb56ff53906", "src": "db2@1.60.1.70338"}
+{"id": 219925, "field": "description", "en": "Intelligence report from Satyrnaar", "hash": "095970aff3c77125", "src": "db2@1.60.1.70338"}
+{"id": 219926, "field": "name", "en": "Intelligence Report: Warsong Lumber Camp", "hash": "03f9575d0d9a549e", "src": "db2@1.60.1.70338"}
+{"id": 219926, "field": "description", "en": "Intelligence report from the Warsong Lumber Camp", "hash": "8290ca8cb8e8a60d", "src": "db2@1.60.1.70338"}
+{"id": 219927, "field": "name", "en": "Emerald Chip", "hash": "921aa9951d819849", "src": "db2@1.60.1.70338"}
+{"id": 219927, "field": "description", "en": "A marker for your service to the Emerald Wardens.", "hash": "3d2f2ed81448f9d5", "src": "db2@1.60.1.70338"}
+{"id": 219928, "field": "name", "en": "Intelligence Report: Agol'watha", "hash": "fe39adca2b365e39", "src": "db2@1.60.1.70338"}
+{"id": 219928, "field": "description", "en": "Intelligence report from Agol'watha", "hash": "9b6c2ccd7bc68982", "src": "db2@1.60.1.70338"}
+{"id": 219929, "field": "name", "en": "Bloody Missive", "hash": "1c4c2a5ddaada7f0", "src": "db2@1.60.1.70338"}
+{"id": 219930, "field": "name", "en": "Bloody Missive", "hash": "1c4c2a5ddaada7f0", "src": "db2@1.60.1.70338"}
+{"id": 219935, "field": "name", "en": "Kajind's Blade", "hash": "7f5564af836bf10c", "src": "db2@1.60.1.70338"}
+{"id": 219937, "field": "name", "en": "Intelligence Report: Shaol'watha", "hash": "3085079bf94da22d", "src": "db2@1.60.1.70338"}
+{"id": 219937, "field": "description", "en": "Intelligence report from Shaol'watha", "hash": "a15c05253d422eef", "src": "db2@1.60.1.70338"}
+{"id": 219938, "field": "name", "en": "Intelligence Report: Skulk Rock", "hash": "71012ae917b99025", "src": "db2@1.60.1.70338"}
+{"id": 219938, "field": "description", "en": "Intelligence report from Skulk Rock", "hash": "0e33a9ec6849bb6e", "src": "db2@1.60.1.70338"}
+{"id": 219957, "field": "name", "en": "Intelligence Report: Oneiros", "hash": "e8376e2a9c77536f", "src": "db2@1.60.1.70338"}
+{"id": 219957, "field": "description", "en": "Intelligence report from Oneiros", "hash": "cdce9c56909ab642", "src": "db2@1.60.1.70338"}
+{"id": 219958, "field": "name", "en": "Intelligence Report: Twin Colossals", "hash": "45740956a374db4f", "src": "db2@1.60.1.70338"}
+{"id": 219958, "field": "description", "en": "Intelligence report from the Twin Colossals", "hash": "d196932f7a8f1916", "src": "db2@1.60.1.70338"}
+{"id": 219959, "field": "name", "en": "Intelligence Report: Ruins of Ravenwind", "hash": "1dfa10ee62aa1607", "src": "db2@1.60.1.70338"}
+{"id": 219959, "field": "description", "en": "Intelligence report from the Ruins of Ravenwind", "hash": "88784a7924ab61bf", "src": "db2@1.60.1.70338"}
+{"id": 219962, "field": "name", "en": "Nightmare Incursions: Duskwood Mission I", "hash": "54c0257d61e87fd7", "src": "db2@1.60.1.70338"}
+{"id": 219962, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70338"}
+{"id": 219963, "field": "name", "en": "Deputization Authorization: Duskwood Mission I", "hash": "a80fd594c4c241a8", "src": "db2@1.60.1.70338"}
+{"id": 219963, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70338"}
+{"id": 219965, "field": "name", "en": "Deputization Authorization: Duskwood Mission II", "hash": "001a4cb374b0ad71", "src": "db2@1.60.1.70338"}
+{"id": 219965, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70338"}
+{"id": 219966, "field": "name", "en": "Nightmare Incursions: Duskwood Mission II", "hash": "5e53301734d43481", "src": "db2@1.60.1.70338"}
+{"id": 219966, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70338"}
+{"id": 219967, "field": "name", "en": "Nightmare Incursions: Duskwood Mission III", "hash": "44919cfe20de347e", "src": "db2@1.60.1.70338"}
+{"id": 219967, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70338"}
+{"id": 219968, "field": "name", "en": "Nightmare Incursions: Duskwood Mission IV", "hash": "5e53302434d4348e", "src": "db2@1.60.1.70338"}
+{"id": 219968, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70338"}
+{"id": 219969, "field": "name", "en": "Nightmare Incursions: Duskwood Mission V", "hash": "54c0258a61e87fe4", "src": "db2@1.60.1.70338"}
+{"id": 219969, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70338"}
+{"id": 219970, "field": "name", "en": "Nightmare Incursions: Duskwood Mission VI", "hash": "5e5336be34d5d2ee", "src": "db2@1.60.1.70338"}
+{"id": 219970, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70338"}
+{"id": 219971, "field": "name", "en": "Nightmare Incursions: Duskwood Mission VII", "hash": "449504735479a54b", "src": "db2@1.60.1.70338"}
+{"id": 219971, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70338"}
+{"id": 219972, "field": "name", "en": "Nightmare Incursions: Duskwood Mission VIII", "hash": "184147d1f9ef0ef8", "src": "db2@1.60.1.70338"}
+{"id": 219972, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70338"}
+{"id": 219973, "field": "name", "en": "Nightmare Incursions: Duskwood Mission IX", "hash": "5e53302634d43490", "src": "db2@1.60.1.70338"}
+{"id": 219973, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70338"}
+{"id": 219974, "field": "name", "en": "Nightmare Incursions: Duskwood Mission X", "hash": "54c0258c61e87fe6", "src": "db2@1.60.1.70338"}
+{"id": 219974, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70338"}
+{"id": 219975, "field": "name", "en": "Nightmare Incursions: Duskwood Mission XI", "hash": "5e5337c434d612b0", "src": "db2@1.60.1.70338"}
+{"id": 219975, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70338"}
+{"id": 219976, "field": "name", "en": "Nightmare Incursions: Duskwood Mission XII", "hash": "44958a855c6a2ccd", "src": "db2@1.60.1.70338"}
+{"id": 219976, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70338"}
+{"id": 219977, "field": "name", "en": "Nightmare Incursions: Duskwood Mission XIII", "hash": "1885e30714bef718", "src": "db2@1.60.1.70338"}
+{"id": 219977, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70338"}
+{"id": 219978, "field": "name", "en": "Nightmare Incursions: Duskwood Mission XIV", "hash": "44958a925c6a2cda", "src": "db2@1.60.1.70338"}
+{"id": 219978, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70338"}
+{"id": 219979, "field": "name", "en": "Nightmare Incursions: Duskwood Mission XV", "hash": "5e5337d134d612bd", "src": "db2@1.60.1.70338"}
+{"id": 219979, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70338"}
+{"id": 219980, "field": "name", "en": "Nightmare Incursions: Duskwood Mission XVI", "hash": "4495912c5c6bcb3a", "src": "db2@1.60.1.70338"}
+{"id": 219980, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70338"}
+{"id": 219981, "field": "name", "en": "Nightmare Incursions: Duskwood Mission XVII", "hash": "18894a7c485a67e5", "src": "db2@1.60.1.70338"}
+{"id": 219981, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70338"}
+{"id": 219982, "field": "name", "en": "Nightmare Incursions: Duskwood Mission XVIII", "hash": "8e411df98a0aa4b0", "src": "db2@1.60.1.70338"}
+{"id": 219982, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70338"}
+{"id": 219983, "field": "name", "en": "Deputization Authorization: Duskwood Mission III", "hash": "0d753fe2f44a1691", "src": "db2@1.60.1.70338"}
+{"id": 219983, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70338"}
+{"id": 219984, "field": "name", "en": "Deputization Authorization: Duskwood Mission IV", "hash": "001a4cc074b0ad7e", "src": "db2@1.60.1.70338"}
+{"id": 219984, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70338"}
+{"id": 219985, "field": "name", "en": "Deputization Authorization: Duskwood Mission V", "hash": "a80fd5a1c4c241b5", "src": "db2@1.60.1.70338"}
+{"id": 219985, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70338"}
+{"id": 219986, "field": "name", "en": "Deputization Authorization: Duskwood Mission VI", "hash": "001a535a74b24bde", "src": "db2@1.60.1.70338"}
+{"id": 219986, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70338"}
+{"id": 219987, "field": "name", "en": "Deputization Authorization: Duskwood Mission VII", "hash": "0d78a75727e5876f", "src": "db2@1.60.1.70338"}
+{"id": 219987, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70338"}
+{"id": 219988, "field": "name", "en": "Deputization Authorization: Duskwood Mission VIII", "hash": "e4bda1ecdc22ce3f", "src": "db2@1.60.1.70338"}
+{"id": 219988, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70338"}
+{"id": 219989, "field": "name", "en": "Deputization Authorization: Duskwood Mission IX", "hash": "001a4cc274b0ad80", "src": "db2@1.60.1.70338"}
+{"id": 219989, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70338"}
+{"id": 219990, "field": "name", "en": "Deputization Authorization: Duskwood Mission X", "hash": "a80fd5a3c4c241b7", "src": "db2@1.60.1.70338"}
+{"id": 219990, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70338"}
+{"id": 219991, "field": "name", "en": "Deputization Authorization: Duskwood Mission XI", "hash": "001a546074b28ba0", "src": "db2@1.60.1.70338"}
+{"id": 219991, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70338"}
+{"id": 219992, "field": "name", "en": "Deputization Authorization: Duskwood Mission XII", "hash": "0d792d692fd60ef1", "src": "db2@1.60.1.70338"}
+{"id": 219992, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70338"}
+{"id": 219993, "field": "name", "en": "Deputization Authorization: Duskwood Mission XIII", "hash": "e5023d22f6f2b64e", "src": "db2@1.60.1.70338"}
+{"id": 219993, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70338"}
+{"id": 219994, "field": "name", "en": "Deputization Authorization: Duskwood Mission XIV", "hash": "0d792d762fd60efe", "src": "db2@1.60.1.70338"}
+{"id": 219994, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70338"}
+{"id": 219995, "field": "name", "en": "Deputization Authorization: Duskwood Mission XV", "hash": "001a546d74b28bad", "src": "db2@1.60.1.70338"}
+{"id": 219995, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70338"}
+{"id": 219996, "field": "name", "en": "Deputization Authorization: Duskwood Mission XVI", "hash": "0d7934102fd7ad5e", "src": "db2@1.60.1.70338"}
+{"id": 219996, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70338"}
+{"id": 219997, "field": "name", "en": "Deputization Authorization: Duskwood Mission XVII", "hash": "e505a4972a8e272c", "src": "db2@1.60.1.70338"}
+{"id": 219997, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70338"}
+{"id": 219998, "field": "name", "en": "Deputization Authorization: Duskwood Mission XVIII", "hash": "31e33bd79daf1c01", "src": "db2@1.60.1.70338"}
+{"id": 219998, "field": "description", "en": "Deputize a party member, sharing this quest with them so they can complete it with you.\nAllows you to share this mission with party members.", "hash": "0ad93c3feb825a6a", "src": "db2@1.60.1.70338"}
+{"id": 219999, "field": "name", "en": "Nightmare Incursions: Ashenvale Mission I", "hash": "e7f35e3de2e1fbd4", "src": "db2@1.60.1.70338"}
+{"id": 219999, "field": "description", "en": "This message will self-destruct when you accept it. The Field Captain will disavow all knowledge of your actions.", "hash": "7483a84df6fd1079", "src": "db2@1.60.1.70338"}

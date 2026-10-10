@@ -1,419 +1,419 @@
-{"id": 250065, "field": "name", "en": "Savory Stag Sliders", "hash": "849b291e08f1a581", "src": "db2@1.60.1.70291"}
-{"id": 250065, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 sec eating, you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "ed5c3d4ee6c00e25", "src": "db2@1.60.1.70291"}
-{"id": 250066, "field": "name", "en": "Soaring Pamplona", "hash": "2f2668268779d663", "src": "db2@1.60.1.70291"}
-{"id": 250066, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "6cc9869718fe44b2", "src": "db2@1.60.1.70291"}
-{"id": 250067, "field": "name", "en": "Bat Hachee", "hash": "cc52939f31a8653c", "src": "db2@1.60.1.70291"}
-{"id": 250067, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "6cc9869718fe44b2", "src": "db2@1.60.1.70291"}
-{"id": 250068, "field": "name", "en": "Savory Turtle Stew", "hash": "f1b5c85817c78f54", "src": "db2@1.60.1.70291"}
-{"id": 250068, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "0011a95a93328cc7", "src": "db2@1.60.1.70291"}
-{"id": 250069, "field": "name", "en": "Flank au Poivre", "hash": "359b561f692d7335", "src": "db2@1.60.1.70291"}
-{"id": 250069, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2 Agility for $1248420d. $@spelldesc1243969", "hash": "a5acb2b930a6fb25", "src": "db2@1.60.1.70291"}
-{"id": 250070, "field": "name", "en": "Bear Bruscitti", "hash": "b77e35a5d0f2239d", "src": "db2@1.60.1.70291"}
-{"id": 250070, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "7069cd92dc107b46", "src": "db2@1.60.1.70291"}
-{"id": 250071, "field": "name", "en": "Steaming Stag Steak", "hash": "04f0f44150edd125", "src": "db2@1.60.1.70291"}
-{"id": 250071, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "7069cd92dc107b46", "src": "db2@1.60.1.70291"}
-{"id": 250072, "field": "name", "en": "Swiftstrike Steak", "hash": "76e49ee40fd9d07f", "src": "db2@1.60.1.70291"}
-{"id": 250072, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2 Agility for $1248420d. $@spelldesc1243969", "hash": "a5acb2b930a6fb25", "src": "db2@1.60.1.70291"}
-{"id": 250073, "field": "name", "en": "Raging Raptor Ribs", "hash": "a70c891961138d34", "src": "db2@1.60.1.70291"}
-{"id": 250073, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 sec eating, you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "afd6df6b9148d80f", "src": "db2@1.60.1.70291"}
-{"id": 250074, "field": "name", "en": "Bear Brisket", "hash": "18485d79307fa3aa", "src": "db2@1.60.1.70291"}
-{"id": 250074, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 sec eating, you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "d87f66ab5e3a562f", "src": "db2@1.60.1.70291"}
-{"id": 250075, "field": "name", "en": "Prehistoric Pulled Raptor", "hash": "29d080e8d18152d2", "src": "db2@1.60.1.70291"}
-{"id": 250075, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "6cc9869718fe44b2", "src": "db2@1.60.1.70291"}
-{"id": 250076, "field": "name", "en": "Raptor Rouladen", "hash": "d9c753cff162023f", "src": "db2@1.60.1.70291"}
-{"id": 250076, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 sec eating, you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "5cd8b50bc0177245", "src": "db2@1.60.1.70291"}
-{"id": 250077, "field": "name", "en": "Twice-Spiced Raptor Slice", "hash": "d0ccd6dd59b6db9d", "src": "db2@1.60.1.70291"}
-{"id": 250077, "field": "description", "en": "$@spelldesc434 If you spend at least 10 sec eating, you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "07943e036d775c20", "src": "db2@1.60.1.70291"}
-{"id": 250078, "field": "name", "en": "Giant Scrambled Eggs", "hash": "752a4b15c180cdfe", "src": "db2@1.60.1.70291"}
-{"id": 250078, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 sec eating, you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "a8ecb2539d5872cc", "src": "db2@1.60.1.70291"}
-{"id": 250079, "field": "name", "en": "Tasty Raptor Bites", "hash": "f17982245d465090", "src": "db2@1.60.1.70291"}
-{"id": 250079, "field": "description", "en": "$@spelldesc433 If you spend at least 10 sec eating, you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "3113533356100f05", "src": "db2@1.60.1.70291"}
-{"id": 250080, "field": "name", "en": "Breakfast Omelette", "hash": "36c652105aca8d07", "src": "db2@1.60.1.70291"}
-{"id": 250080, "field": "description", "en": "$@spelldesc434 If you spend at least 10 sec eating, you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "e5a4e500add7a0f0", "src": "db2@1.60.1.70291"}
-{"id": 250081, "field": "name", "en": "Clam Linguine", "hash": "48ce009f83e33f1d", "src": "db2@1.60.1.70291"}
-{"id": 250081, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70291"}
-{"id": 250101, "field": "name", "en": "Summit Guardian Polearm", "hash": "7cd32a857155764c", "src": "db2@1.60.1.70291"}
-{"id": 250173, "field": "name", "en": "Recipe: Savory Stag Sliders", "hash": "b0f323452039d596", "src": "db2@1.60.1.70291"}
-{"id": 250173, "field": "description", "en": "Teaches you how to cook Savory Stag Sliders.", "hash": "8c37fb6a2f278857", "src": "db2@1.60.1.70291"}
-{"id": 250174, "field": "name", "en": "Recipe: Soaring Pamplona", "hash": "847b51504c7615e4", "src": "db2@1.60.1.70291"}
-{"id": 250174, "field": "description", "en": "Teaches you how to cook Soaring Pamplona.", "hash": "6341f09c89faee04", "src": "db2@1.60.1.70291"}
-{"id": 250175, "field": "name", "en": "Recipe: Bat Hachee", "hash": "2457f2c1a723fb04", "src": "db2@1.60.1.70291"}
-{"id": 250175, "field": "description", "en": "Teaches you how to cook Bat Hachee.", "hash": "55b0bbcc198877d5", "src": "db2@1.60.1.70291"}
-{"id": 250176, "field": "name", "en": "Recipe: Savory Turtle Stew", "hash": "2ab8688f96fb83e2", "src": "db2@1.60.1.70291"}
-{"id": 250176, "field": "description", "en": "Teaches you how to cook Savory Turtle Stew.", "hash": "808433767703e697", "src": "db2@1.60.1.70291"}
-{"id": 250177, "field": "name", "en": "Recipe: Flank au Poivre", "hash": "3e1330d1e8970958", "src": "db2@1.60.1.70291"}
-{"id": 250177, "field": "description", "en": "Teaches you how to cook Flank au Poivre.", "hash": "e82844ac090aaddf", "src": "db2@1.60.1.70291"}
-{"id": 250178, "field": "name", "en": "Recipe: Bear Bruscitti", "hash": "d0f654a0e955bf67", "src": "db2@1.60.1.70291"}
-{"id": 250178, "field": "description", "en": "Teaches you how to cook Bear Bruscitti.", "hash": "c35646ea8a828819", "src": "db2@1.60.1.70291"}
-{"id": 250179, "field": "name", "en": "Recipe: Steaming Stag Steak", "hash": "3148ee686836013a", "src": "db2@1.60.1.70291"}
-{"id": 250179, "field": "description", "en": "Teaches you how to cook Steaming Stag Steak.", "hash": "381eed0efd1357d1", "src": "db2@1.60.1.70291"}
-{"id": 250180, "field": "name", "en": "Recipe: Swiftstrike Steak", "hash": "2157f03ebd3dc2e6", "src": "db2@1.60.1.70291"}
-{"id": 250180, "field": "description", "en": "Teaches you how to cook Swiftstrike Steak.", "hash": "ec1f803cf4738a11", "src": "db2@1.60.1.70291"}
-{"id": 250181, "field": "name", "en": "Recipe: Raging Raptor Ribs", "hash": "e00f294be04781c2", "src": "db2@1.60.1.70291"}
-{"id": 250181, "field": "description", "en": "Teaches you how to cook Raging Raptor Ribs.", "hash": "4be8d57b168cc3a8", "src": "db2@1.60.1.70291"}
-{"id": 250182, "field": "name", "en": "Recipe: Bear Brisket", "hash": "985dbfbaab976224", "src": "db2@1.60.1.70291"}
-{"id": 250182, "field": "description", "en": "Teaches you how to cook Bear Brisket.", "hash": "894c1f4609718f29", "src": "db2@1.60.1.70291"}
-{"id": 250183, "field": "name", "en": "Recipe: Prehistoric Pulled Raptor", "hash": "8130e8ecadfd65c5", "src": "db2@1.60.1.70291"}
-{"id": 250183, "field": "description", "en": "Teaches you how to cook Prehistoric Pulled Raptor.", "hash": "926e77dea6aecb79", "src": "db2@1.60.1.70291"}
-{"id": 250184, "field": "name", "en": "Recipe: Raptor Rouladen", "hash": "e23f2e8170cb9873", "src": "db2@1.60.1.70291"}
-{"id": 250184, "field": "description", "en": "Teaches you how to cook Raptor Rouladen.", "hash": "eaab17601c8fbbff", "src": "db2@1.60.1.70291"}
-{"id": 250185, "field": "name", "en": "Recipe: Twice-Spiced Raptor Slice", "hash": "282d3ee63632ee90", "src": "db2@1.60.1.70291"}
-{"id": 250185, "field": "description", "en": "Teaches you how to cook Twice-Spiced Raptor Slice.", "hash": "058e75ebd94b9d49", "src": "db2@1.60.1.70291"}
-{"id": 250186, "field": "name", "en": "Recipe: Giant Scrambled Eggs", "hash": "262f4d7df5c5ccb9", "src": "db2@1.60.1.70291"}
-{"id": 250186, "field": "description", "en": "Teaches you how to cook Giant Scrambled Eggs.", "hash": "701204850f924dd5", "src": "db2@1.60.1.70291"}
-{"id": 250187, "field": "name", "en": "Recipe: Tasty Raptor Bites", "hash": "2a7c225bdc7a451e", "src": "db2@1.60.1.70291"}
-{"id": 250187, "field": "description", "en": "Teaches you how to cook Tasty Raptor Bites.", "hash": "61ac46dae4d2936a", "src": "db2@1.60.1.70291"}
-{"id": 250188, "field": "name", "en": "Recipe: Breakfast Omelette", "hash": "6fc8f242d9fe8195", "src": "db2@1.60.1.70291"}
-{"id": 250188, "field": "description", "en": "Teaches you how to cook Breakfast Omelette.", "hash": "d7faaabeb95e1bc2", "src": "db2@1.60.1.70291"}
-{"id": 250189, "field": "name", "en": "Recipe: Clam Linguine", "hash": "d3bf492793d372eb", "src": "db2@1.60.1.70291"}
-{"id": 250189, "field": "description", "en": "Teaches you how to cook Clam Linguine.", "hash": "b85c28ddecf6575d", "src": "db2@1.60.1.70291"}
-{"id": 250217, "field": "name", "en": "Purveyor of Light", "hash": "c35f5d1d0d92065a", "src": "db2@1.60.1.70291"}
-{"id": 250327, "field": "name", "en": "Draught of Predatory Senses", "hash": "4492affcff128d8f", "src": "db2@1.60.1.70291"}
-{"id": 250327, "field": "description", "en": "Drink to slightly increase your stealth detection. While you are not moving for $s2 sec, nearby moving stealthed enemies may reveal a heat trail. Lasts for $d.\r\n\r\nThis effect persists through death.", "hash": "15f9f95fd9341965", "src": "db2@1.60.1.70291"}
-{"id": 250328, "field": "name", "en": "Elixir of Cunning", "hash": "f3f9a6b27d4594f2", "src": "db2@1.60.1.70291"}
-{"id": 250328, "field": "description", "en": "Drink to gain $s1 Agility and Intellect. Lasts for $d.", "hash": "82b4c68790948231", "src": "db2@1.60.1.70291"}
-{"id": 250329, "field": "name", "en": "Elixir of the Phalanx", "hash": "feb0f3c6c799b153", "src": "db2@1.60.1.70291"}
-{"id": 250329, "field": "description", "en": "Drink to gain $s1 Maximum Health and $s2 Armor. Lasts for $d.", "hash": "9f753fd20dacadb1", "src": "db2@1.60.1.70291"}
-{"id": 250330, "field": "name", "en": "Minor Cleric's Elixir", "hash": "87677f3aafab7212", "src": "db2@1.60.1.70291"}
-{"id": 250330, "field": "description", "en": "Drink to increase healing done by spells and effects by up to $s1. Lasts $d.", "hash": "b7fa738d0c484e08", "src": "db2@1.60.1.70291"}
-{"id": 250331, "field": "name", "en": "Lesser Cleric's Elixir", "hash": "242dbd2993f05c0b", "src": "db2@1.60.1.70291"}
-{"id": 250331, "field": "description", "en": "Drink to increase healing done by spells and effects by up to $s1. Lasts $d.", "hash": "b7fa738d0c484e08", "src": "db2@1.60.1.70291"}
-{"id": 250332, "field": "name", "en": "Cleric's Elixir", "hash": "e82da1b81e552156", "src": "db2@1.60.1.70291"}
-{"id": 250332, "field": "description", "en": "Drink to increase healing done by spells and effects by up to $s1. Lasts $d.", "hash": "b7fa738d0c484e08", "src": "db2@1.60.1.70291"}
-{"id": 250333, "field": "name", "en": "Greater Cleric's Elixir", "hash": "aa1dbf3ad59eb201", "src": "db2@1.60.1.70291"}
-{"id": 250333, "field": "description", "en": "Drink to increase healing done by spells and effects by up to $s1. Lasts $d.", "hash": "b7fa738d0c484e08", "src": "db2@1.60.1.70291"}
-{"id": 250334, "field": "name", "en": "Elixir of Fortitude", "hash": "33b79cb6ab28b455", "src": "db2@1.60.1.70291"}
-{"id": 250334, "field": "description", "en": "Drink to increase your maximum health by $s1. Lasts for $d.", "hash": "ea92604eb5440eaa", "src": "db2@1.60.1.70291"}
-{"id": 250335, "field": "name", "en": "Elixir of Greater Fortitude", "hash": "ca5857b9ee0fa7ef", "src": "db2@1.60.1.70291"}
-{"id": 250335, "field": "description", "en": "Drink to increase your maximum health by $s1. Lasts for $d.", "hash": "ea92604eb5440eaa", "src": "db2@1.60.1.70291"}
-{"id": 250336, "field": "name", "en": "Elixir of Wicked Regeneration", "hash": "73aa3b3899b02c01", "src": "db2@1.60.1.70291"}
-{"id": 250336, "field": "description", "en": "Drink to restore $s1 health and $s2 mana every 5 sec. Lasts for $d.", "hash": "02bd932a8009927d", "src": "db2@1.60.1.70291"}
-{"id": 250337, "field": "name", "en": "Elixir of the Owl", "hash": "1c0031e567f9e65a", "src": "db2@1.60.1.70291"}
-{"id": 250337, "field": "description", "en": "Drink to increase your Intellect by $s1 and chance to critically hit by $s2%. Lasts for $d.", "hash": "b485271efb1d9691", "src": "db2@1.60.1.70291"}
-{"id": 250338, "field": "name", "en": "Elixir of Sages", "hash": "1e135075f0b9d475", "src": "db2@1.60.1.70291"}
-{"id": 250338, "field": "description", "en": "Drink to increase your Spirit by $s1 and chance to critically hit by $s2%. Lasts for $d.", "hash": "39d4b1c4cf27ff6a", "src": "db2@1.60.1.70291"}
-{"id": 250339, "field": "name", "en": "Minor Mageblood Elixir", "hash": "c2152ec813e20eda", "src": "db2@1.60.1.70291"}
-{"id": 250339, "field": "description", "en": "Drink to regenerate $s1 mana every 5 sec. Lasts for $d.", "hash": "52733d23fc207290", "src": "db2@1.60.1.70291"}
-{"id": 250340, "field": "name", "en": "Lesser Mageblood Elixir", "hash": "fb86df160cc89eff", "src": "db2@1.60.1.70291"}
-{"id": 250340, "field": "description", "en": "Drink to regenerate $s1 mana every 5 sec. Lasts for $d.", "hash": "52733d23fc207290", "src": "db2@1.60.1.70291"}
-{"id": 250341, "field": "name", "en": "Greater Mageblood Elixir", "hash": "8557ef22e36b8132", "src": "db2@1.60.1.70291"}
-{"id": 250341, "field": "description", "en": "Drink to regenerate $s1 mana every 5 sec. Lasts for $d.", "hash": "52733d23fc207290", "src": "db2@1.60.1.70291"}
-{"id": 250342, "field": "name", "en": "Lesser Arcane Elixir", "hash": "f80f15c18a53ca45", "src": "db2@1.60.1.70291"}
-{"id": 250342, "field": "description", "en": "Drink to increase spell damage by up to $s1. Lasts for $d.", "hash": "fc832a6e4126203b", "src": "db2@1.60.1.70291"}
-{"id": 250343, "field": "name", "en": "Elixir of Nature Power", "hash": "39fc601ddb1ee306", "src": "db2@1.60.1.70291"}
-{"id": 250343, "field": "description", "en": "Drink to increase nature spell damage by up to $s1. Lasts for $d.", "hash": "a293594aede2905f", "src": "db2@1.60.1.70291"}
-{"id": 250344, "field": "name", "en": "Elixir of Minor Spirit", "hash": "eb24edaac6e9d0f7", "src": "db2@1.60.1.70291"}
-{"id": 250344, "field": "description", "en": "Drink to increase your Spirit by $s1. Lasts for $d.", "hash": "abdf52e805ed21e4", "src": "db2@1.60.1.70291"}
-{"id": 250345, "field": "name", "en": "Elixir of Lesser Spirit", "hash": "d0670d95147218ca", "src": "db2@1.60.1.70291"}
-{"id": 250345, "field": "description", "en": "Drink to increase your Spirit by $s1. Lasts for $d.", "hash": "abdf52e805ed21e4", "src": "db2@1.60.1.70291"}
-{"id": 250346, "field": "name", "en": "Elixir of Spirit", "hash": "6b77d8ef72377608", "src": "db2@1.60.1.70291"}
-{"id": 250346, "field": "description", "en": "Drink to increase your Spirit by $s1. Lasts for $d.", "hash": "abdf52e805ed21e4", "src": "db2@1.60.1.70291"}
-{"id": 250347, "field": "name", "en": "Elixir of Greater Spirit", "hash": "deb809def9230064", "src": "db2@1.60.1.70291"}
-{"id": 250347, "field": "description", "en": "Drink to increase your Spirit by $s1. Lasts for $d.", "hash": "abdf52e805ed21e4", "src": "db2@1.60.1.70291"}
-{"id": 250348, "field": "name", "en": "Elixir of the Whale", "hash": "9379516f9de8695c", "src": "db2@1.60.1.70291"}
-{"id": 250348, "field": "description", "en": "Drink to increase your Spirit by $s1 and chance to critically hit by $s2%. Lasts for $d.", "hash": "39d4b1c4cf27ff6a", "src": "db2@1.60.1.70291"}
-{"id": 250349, "field": "name", "en": "Elixir of Strength", "hash": "ebe5443d9f53bf9a", "src": "db2@1.60.1.70291"}
-{"id": 250349, "field": "description", "en": "Drink to increase your Strength by $s1. Lasts for $d.", "hash": "02a96a9595f151bb", "src": "db2@1.60.1.70291"}
-{"id": 250350, "field": "name", "en": "Elixir of Ferocity", "hash": "f2b9759f4ecdbad8", "src": "db2@1.60.1.70291"}
-{"id": 250350, "field": "description", "en": "Drink to increase your Strength and Agility by $s1. Lasts for $d.", "hash": "11af8b9a19cd71e6", "src": "db2@1.60.1.70291"}
-{"id": 250351, "field": "name", "en": "Elixir of the Grizzly", "hash": "05e81a720af0c9fa", "src": "db2@1.60.1.70291"}
-{"id": 250351, "field": "description", "en": "Drink to increase your Strength by $s1 and chance to critically hit by $s2%. Lasts for $d.", "hash": "81682e2402502346", "src": "db2@1.60.1.70291"}
-{"id": 250353, "field": "name", "en": "Elixir of Lesser Intellect", "hash": "07b9bf7ced5741de", "src": "db2@1.60.1.70291"}
-{"id": 250353, "field": "description", "en": "Drink to increase your Intellect by $s1. Lasts for $d.", "hash": "8848828403984a62", "src": "db2@1.60.1.70291"}
-{"id": 250354, "field": "name", "en": "Elixir of Intellect", "hash": "f9bf511fc6eb4737", "src": "db2@1.60.1.70291"}
-{"id": 250354, "field": "description", "en": "Drink to increase your Intellect by $s1. Lasts for $d.", "hash": "8848828403984a62", "src": "db2@1.60.1.70291"}
-{"id": 250363, "field": "name", "en": "Recipe: Draught of Predatory Senses", "hash": "922fd685dc9da317", "src": "db2@1.60.1.70291"}
-{"id": 250363, "field": "description", "en": "Teaches you how to craft Draught of Predatory Senses.", "hash": "dfc6fe23b77c0b8e", "src": "db2@1.60.1.70291"}
-{"id": 250364, "field": "name", "en": "Recipe: Elixir of Cunning", "hash": "9e6cf80c2aa9876a", "src": "db2@1.60.1.70291"}
-{"id": 250364, "field": "description", "en": "Teaches you how to craft Elixir of Cunning.", "hash": "c74ccbbce4acbe0c", "src": "db2@1.60.1.70291"}
-{"id": 250365, "field": "name", "en": "Recipe: Elixir of the Phalanx", "hash": "94412e361316a761", "src": "db2@1.60.1.70291"}
-{"id": 250365, "field": "description", "en": "Teaches you how to craft Elixir of the Phalanx.", "hash": "c7d0e0c1b44cae43", "src": "db2@1.60.1.70291"}
-{"id": 250366, "field": "name", "en": "Recipe: Minor Cleric's Elixir", "hash": "1cf7b9aafb28680f", "src": "db2@1.60.1.70291"}
-{"id": 250366, "field": "description", "en": "Teaches you how to craft Minor Cleric's Elixir.", "hash": "bd3a3becd23e0477", "src": "db2@1.60.1.70291"}
-{"id": 250367, "field": "name", "en": "Recipe: Lesser Cleric's Elixir", "hash": "acfba3660e8ed23f", "src": "db2@1.60.1.70291"}
-{"id": 250367, "field": "description", "en": "Teaches you how to craft Lesser Cleric's Elixir.", "hash": "7f44084f3794c90f", "src": "db2@1.60.1.70291"}
-{"id": 250368, "field": "name", "en": "Recipe: Cleric's Elixir", "hash": "f0a57c6a9dbeb779", "src": "db2@1.60.1.70291"}
-{"id": 250368, "field": "description", "en": "Teaches you how to craft Cleric's Elixir.", "hash": "ac2119c58fc8b2a0", "src": "db2@1.60.1.70291"}
-{"id": 250369, "field": "name", "en": "Recipe: Greater Cleric's Elixir", "hash": "ab7a91cfcb33c759", "src": "db2@1.60.1.70291"}
-{"id": 250369, "field": "description", "en": "Teaches you how to craft Greater Cleric's Elixir.", "hash": "eeeb75e4f32e78f5", "src": "db2@1.60.1.70291"}
-{"id": 250370, "field": "name", "en": "Recipe: Elixir of Fortitude", "hash": "600f96ddc270e46a", "src": "db2@1.60.1.70291"}
-{"id": 250370, "field": "description", "en": "Teaches you how to craft Elixir of Fortitude.", "hash": "9e5c9b64197e8278", "src": "db2@1.60.1.70291"}
-{"id": 250371, "field": "name", "en": "Recipe: Elixir of Greater Fortitude", "hash": "17f57e47cb9abd77", "src": "db2@1.60.1.70291"}
-{"id": 250371, "field": "description", "en": "Teaches you how to craft Elixir of Greater Fortitude.", "hash": "53ebd5336a21b5f0", "src": "db2@1.60.1.70291"}
-{"id": 250372, "field": "name", "en": "Recipe: Elixir of Wicked Regeneration", "hash": "4f46d6a870d8a458", "src": "db2@1.60.1.70291"}
-{"id": 250372, "field": "description", "en": "Teaches you how to craft Elixir of Wicked Regeneration.", "hash": "1f2e35aac7753419", "src": "db2@1.60.1.70291"}
-{"id": 250373, "field": "name", "en": "Recipe: Elixir of the Owl", "hash": "c673833a155dd8d2", "src": "db2@1.60.1.70291"}
-{"id": 250373, "field": "description", "en": "Teaches you how to craft Elixir of the Owl.", "hash": "42a604af0303b56e", "src": "db2@1.60.1.70291"}
-{"id": 250374, "field": "name", "en": "Recipe: Elixir of Sages", "hash": "268b2b2770236aa9", "src": "db2@1.60.1.70291"}
-{"id": 250374, "field": "description", "en": "Teaches you how to craft Elixir of Sages.", "hash": "40a98279abfc9f42", "src": "db2@1.60.1.70291"}
-{"id": 250375, "field": "name", "en": "Recipe: Minor Mageblood Elixir", "hash": "4ae3150a8e8084fd", "src": "db2@1.60.1.70291"}
-{"id": 250375, "field": "description", "en": "Teaches you how to craft Minor Mageblood Elixir.", "hash": "4cb32e41efa8f2db", "src": "db2@1.60.1.70291"}
-{"id": 250376, "field": "name", "en": "Recipe: Lesser Mageblood Elixir", "hash": "fce3b1ab025db457", "src": "db2@1.60.1.70291"}
-{"id": 250376, "field": "description", "en": "Teaches you how to craft Lesser Mageblood Elixir.", "hash": "97b6c44a82b8dd11", "src": "db2@1.60.1.70291"}
-{"id": 250377, "field": "name", "en": "Recipe: Greater Mageblood Elixir", "hash": "37d7b166c908d57e", "src": "db2@1.60.1.70291"}
-{"id": 250377, "field": "description", "en": "Teaches you how to craft Greater Mageblood Elixir.", "hash": "ba63d8a6011add64", "src": "db2@1.60.1.70291"}
-{"id": 250378, "field": "name", "en": "Recipe: Lesser Arcane Elixir", "hash": "a9141829be98c900", "src": "db2@1.60.1.70291"}
-{"id": 250378, "field": "description", "en": "Teaches you how to craft Lesser Arcane Elixir.", "hash": "19a32a86e3c2de25", "src": "db2@1.60.1.70291"}
-{"id": 250379, "field": "name", "en": "Recipe: Elixir of Nature Power", "hash": "c2ca465a55bd593a", "src": "db2@1.60.1.70291"}
-{"id": 250379, "field": "description", "en": "Teaches you how to craft Elixir of Nature Power.", "hash": "a8016b6269d26757", "src": "db2@1.60.1.70291"}
-{"id": 250380, "field": "name", "en": "Recipe: Elixir of Minor Spirit", "hash": "73f2d3ec4188472b", "src": "db2@1.60.1.70291"}
-{"id": 250380, "field": "description", "en": "Teaches you how to craft Elixir of Minor Spirit.", "hash": "4fc1dc5039fd8c64", "src": "db2@1.60.1.70291"}
-{"id": 250381, "field": "name", "en": "Recipe: Elixir of Lesser Spirit", "hash": "d1c3e02a0a072e22", "src": "db2@1.60.1.70291"}
-{"id": 250381, "field": "description", "en": "Teaches you how to craft Elixir of Lesser Spirit.", "hash": "866e8ed9c46c8db0", "src": "db2@1.60.1.70291"}
-{"id": 250382, "field": "name", "en": "Recipe: Elixir of Spirit", "hash": "c0ccc2193733b589", "src": "db2@1.60.1.70291"}
-{"id": 250382, "field": "description", "en": "Teaches you how to craft Elixir of Spirit.", "hash": "f85516124bd5cf9f", "src": "db2@1.60.1.70291"}
-{"id": 250383, "field": "name", "en": "Recipe: Elixir of Greater Spirit", "hash": "9137cc22dec054b0", "src": "db2@1.60.1.70291"}
-{"id": 250383, "field": "description", "en": "Teaches you how to craft Elixir of Greater Spirit.", "hash": "769187c04fc8e44a", "src": "db2@1.60.1.70291"}
-{"id": 250384, "field": "name", "en": "Recipe: Elixir of the Whale", "hash": "bfd14b96b5309971", "src": "db2@1.60.1.70291"}
-{"id": 250384, "field": "description", "en": "Teaches you how to craft Elixir of the Whale.", "hash": "9e7c1704aae85a88", "src": "db2@1.60.1.70291"}
-{"id": 250385, "field": "name", "en": "Recipe: Elixir of Strength", "hash": "24e7e4741e87b439", "src": "db2@1.60.1.70291"}
-{"id": 250385, "field": "description", "en": "Teaches you how to craft Elixir of Strength.", "hash": "c83567b42abc4156", "src": "db2@1.60.1.70291"}
-{"id": 250386, "field": "name", "en": "Recipe: Elixir of Ferocity", "hash": "2bbc15d6ce01af66", "src": "db2@1.60.1.70291"}
-{"id": 250386, "field": "description", "en": "Teaches you how to craft Elixir of Ferocity.", "hash": "46caacee2a5dea5d", "src": "db2@1.60.1.70291"}
-{"id": 250387, "field": "name", "en": "Recipe: Elixir of the Grizzly", "hash": "9b7854dd566dbff7", "src": "db2@1.60.1.70291"}
-{"id": 250387, "field": "description", "en": "Teaches you how to craft Elixir of the Grizzly.", "hash": "7909a84a6fd402ac", "src": "db2@1.60.1.70291"}
-{"id": 250388, "field": "name", "en": "Recipe: Elixir of Lesser Intellect", "hash": "be0efa64bcaf0b45", "src": "db2@1.60.1.70291"}
-{"id": 250388, "field": "description", "en": "Teaches you how to craft Elixir of Lesser Intellect.", "hash": "b12f9adc860f8ca7", "src": "db2@1.60.1.70291"}
-{"id": 250389, "field": "name", "en": "Recipe: Elixir of Intellect", "hash": "26174b4bde33774c", "src": "db2@1.60.1.70291"}
-{"id": 250389, "field": "description", "en": "Teaches you how to craft Elixir of Intellect.", "hash": "f44def180f4b33df", "src": "db2@1.60.1.70291"}
-{"id": 250482, "field": "name", "en": "Glowing Copper Boots", "hash": "5dc042fbd3024767", "src": "db2@1.60.1.70291"}
-{"id": 250483, "field": "name", "en": "Sterling Silver Boots", "hash": "c09279c1c9b8bdcf", "src": "db2@1.60.1.70291"}
-{"id": 250484, "field": "name", "en": "Sterling Silver Leggings", "hash": "ad574517a15de1da", "src": "db2@1.60.1.70291"}
-{"id": 250485, "field": "name", "en": "Sterling Silver Gauntlet", "hash": "c2e9d988996dedd4", "src": "db2@1.60.1.70291"}
-{"id": 250486, "field": "name", "en": "Sterling Silver Shoulders", "hash": "8db9916f2242fb16", "src": "db2@1.60.1.70291"}
-{"id": 250487, "field": "name", "en": "Sterling Silver Breastplate", "hash": "6cf1daad2d6d2c78", "src": "db2@1.60.1.70291"}
-{"id": 250488, "field": "name", "en": "Veteran's Chain Shirt", "hash": "99bb09ae8737445d", "src": "db2@1.60.1.70291"}
-{"id": 250489, "field": "name", "en": "Guard's Chain Shirt", "hash": "f726fd113c38107b", "src": "db2@1.60.1.70291"}
-{"id": 250490, "field": "name", "en": "Protector's Chain Shirt", "hash": "6111e8607ca59d91", "src": "db2@1.60.1.70291"}
-{"id": 250491, "field": "name", "en": "Acolyte's Chain Shirt", "hash": "e0a0f50acb45982c", "src": "db2@1.60.1.70291"}
-{"id": 250492, "field": "name", "en": "Crusader's Chain Shirt", "hash": "5ac326ce9039f1a1", "src": "db2@1.60.1.70291"}
-{"id": 250493, "field": "name", "en": "Veteran's Chain Leggings", "hash": "83fcc667098b0230", "src": "db2@1.60.1.70291"}
-{"id": 250494, "field": "name", "en": "Guard's Chain Leggings", "hash": "dff281a0fceb8e52", "src": "db2@1.60.1.70291"}
-{"id": 250495, "field": "name", "en": "Protector's Chain Leggings", "hash": "ea0f2ff965cf7cb0", "src": "db2@1.60.1.70291"}
-{"id": 250496, "field": "name", "en": "Acolyte's Chain Leggings", "hash": "db64733ea7b6eded", "src": "db2@1.60.1.70291"}
-{"id": 250497, "field": "name", "en": "Crusader's Chain Leggings", "hash": "b2bed8b80ca56895", "src": "db2@1.60.1.70291"}
-{"id": 250498, "field": "name", "en": "Veteran's Chain Helm", "hash": "01a694a7fd784311", "src": "db2@1.60.1.70291"}
-{"id": 250499, "field": "name", "en": "Guard's Chain Helm", "hash": "69efb5c501a1f38b", "src": "db2@1.60.1.70291"}
-{"id": 250500, "field": "name", "en": "Protector's Chain Helm", "hash": "d639cf0297bd6180", "src": "db2@1.60.1.70291"}
-{"id": 250501, "field": "name", "en": "Acolyte's Chain Helm", "hash": "15bbe0b5e2682bef", "src": "db2@1.60.1.70291"}
-{"id": 250502, "field": "name", "en": "Crusader's Chain Helm", "hash": "7a5490f5b2d03861", "src": "db2@1.60.1.70291"}
-{"id": 250503, "field": "name", "en": "Veteran's Boots", "hash": "4c36b28e3ba74e43", "src": "db2@1.60.1.70291"}
-{"id": 250504, "field": "name", "en": "Guard's Boots", "hash": "08ec2eb4e63a20a6", "src": "db2@1.60.1.70291"}
-{"id": 250505, "field": "name", "en": "Protector's Boots", "hash": "9cddf63f12d1011d", "src": "db2@1.60.1.70291"}
-{"id": 250506, "field": "name", "en": "Acolyte's Boots", "hash": "18a61fe72545be31", "src": "db2@1.60.1.70291"}
-{"id": 250507, "field": "name", "en": "Crusader's Boots", "hash": "a88d7c49bfa081cd", "src": "db2@1.60.1.70291"}
-{"id": 250508, "field": "name", "en": "Veteran's Gloves", "hash": "b4ea35f0b36601b4", "src": "db2@1.60.1.70291"}
-{"id": 250509, "field": "name", "en": "Guard's Gloves", "hash": "45c8bcb865ec50d5", "src": "db2@1.60.1.70291"}
-{"id": 250510, "field": "name", "en": "Protector's Gloves", "hash": "fa81da50dbb442d8", "src": "db2@1.60.1.70291"}
-{"id": 250511, "field": "name", "en": "Acolyte's Gloves", "hash": "51ef29f937340489", "src": "db2@1.60.1.70291"}
-{"id": 250512, "field": "name", "en": "Crusader's Gloves", "hash": "f553718cdeab1b5d", "src": "db2@1.60.1.70291"}
-{"id": 250513, "field": "name", "en": "Veteran's Chain Belt", "hash": "00d8c30cad088aeb", "src": "db2@1.60.1.70291"}
-{"id": 250514, "field": "name", "en": "Guard's Chain Belt", "hash": "6921e42ab1323b54", "src": "db2@1.60.1.70291"}
-{"id": 250515, "field": "name", "en": "Protector's Chain Belt", "hash": "d56bfd67474da95a", "src": "db2@1.60.1.70291"}
-{"id": 250516, "field": "name", "en": "Acolyte's Chain Belt", "hash": "14ee0f1a91f873c9", "src": "db2@1.60.1.70291"}
-{"id": 250517, "field": "name", "en": "Crusader's Chain Belt", "hash": "7986bf5a6260803b", "src": "db2@1.60.1.70291"}
-{"id": 250518, "field": "name", "en": "Veteran's Silvered Chain Shirt", "hash": "53c1556111aba354", "src": "db2@1.60.1.70291"}
-{"id": 250519, "field": "name", "en": "Guard's Silvered Chain Shirt", "hash": "c9bbac9b569c3b51", "src": "db2@1.60.1.70291"}
-{"id": 250520, "field": "name", "en": "Protector's Silvered Chain Shirt", "hash": "edf2053cddbe0e42", "src": "db2@1.60.1.70291"}
-{"id": 250521, "field": "name", "en": "Acolyte's Silvered Chain Shirt", "hash": "538a7a44a69b70f5", "src": "db2@1.60.1.70291"}
-{"id": 250522, "field": "name", "en": "Crusader's Silvered Chain Shirt", "hash": "c64615e975b177c9", "src": "db2@1.60.1.70291"}
-{"id": 250523, "field": "name", "en": "Veteran's Silvered Chain Leggings", "hash": "182890e85a333d7c", "src": "db2@1.60.1.70291"}
-{"id": 250524, "field": "name", "en": "Guard's Silvered Chain Leggings", "hash": "68fade156d476f6a", "src": "db2@1.60.1.70291"}
-{"id": 250525, "field": "name", "en": "Protector's Silvered Chain Leggings", "hash": "7405378ab416dac4", "src": "db2@1.60.1.70291"}
-{"id": 250526, "field": "name", "en": "Acolyte's Silvered Chain Leggings", "hash": "5d30089734955e02", "src": "db2@1.60.1.70291"}
-{"id": 250527, "field": "name", "en": "Crusader's Silvered Chain Leggings", "hash": "eecec4f81bfcfc1d", "src": "db2@1.60.1.70291"}
-{"id": 250528, "field": "name", "en": "Veteran's Silvered Chain Helm", "hash": "011dd5b848fdc011", "src": "db2@1.60.1.70291"}
-{"id": 250529, "field": "name", "en": "Guard's Silvered Chain Helm", "hash": "dce32a66b4901d59", "src": "db2@1.60.1.70291"}
-{"id": 250530, "field": "name", "en": "Protector's Silvered Chain Helm", "hash": "bde588e117a45205", "src": "db2@1.60.1.70291"}
-{"id": 250531, "field": "name", "en": "Acolyte's Silvered Chain Helm", "hash": "e5c191962b2d85d9", "src": "db2@1.60.1.70291"}
-{"id": 250532, "field": "name", "en": "Crusader's Silvered Chain Helm", "hash": "ee72e0f1c813fdc3", "src": "db2@1.60.1.70291"}
-{"id": 250533, "field": "name", "en": "Hard Gold Cuirass", "hash": "b21bf597a8b6a3ea", "src": "db2@1.60.1.70291"}
-{"id": 250534, "field": "name", "en": "Hard Gold Boots", "hash": "2ef7cf1cb6ae99ce", "src": "db2@1.60.1.70291"}
-{"id": 250535, "field": "name", "en": "Hard Gold Bracers", "hash": "7c6d2ce52df8b775", "src": "db2@1.60.1.70291"}
-{"id": 250536, "field": "name", "en": "Hard Gold Leggings", "hash": "5512c4ca4de6afdc", "src": "db2@1.60.1.70291"}
-{"id": 250537, "field": "name", "en": "Hard Gold Coif", "hash": "19e5a5f3c381536a", "src": "db2@1.60.1.70291"}
-{"id": 250538, "field": "name", "en": "Hard Gold Gauntlet", "hash": "6aa5593b45f6bbd6", "src": "db2@1.60.1.70291"}
-{"id": 250539, "field": "name", "en": "Hard Gold Pauldrons", "hash": "9b4e4baa763c9243", "src": "db2@1.60.1.70291"}
-{"id": 250540, "field": "name", "en": "Shining Mithril Breastplate", "hash": "a57932e07e0d084e", "src": "db2@1.60.1.70291"}
-{"id": 250541, "field": "name", "en": "Shining Mithril Pauldrons", "hash": "5bb78a26fdfc9c93", "src": "db2@1.60.1.70291"}
-{"id": 250542, "field": "name", "en": "Shining Mithril Boots", "hash": "e7ec8c29065cb05f", "src": "db2@1.60.1.70291"}
-{"id": 250543, "field": "name", "en": "Shining Mithril Helm", "hash": "7bb97538d47b4672", "src": "db2@1.60.1.70291"}
-{"id": 250544, "field": "name", "en": "Shining Mithril Pants", "hash": "dbcc031977880cbc", "src": "db2@1.60.1.70291"}
-{"id": 250545, "field": "name", "en": "Shining Mithril Gauntlet", "hash": "1fe6a3f95d71b8fa", "src": "db2@1.60.1.70291"}
-{"id": 250546, "field": "name", "en": "Officer's Boots", "hash": "8e4a9618cd5da456", "src": "db2@1.60.1.70291"}
-{"id": 250547, "field": "name", "en": "Sentinel's Boots", "hash": "d7064d28922238a1", "src": "db2@1.60.1.70291"}
-{"id": 250548, "field": "name", "en": "Warder's Boots", "hash": "31b23a0ed1dcb228", "src": "db2@1.60.1.70291"}
-{"id": 250549, "field": "name", "en": "Prefect's Boots", "hash": "e665c9b32a493c87", "src": "db2@1.60.1.70291"}
-{"id": 250550, "field": "name", "en": "Justicar's Boots", "hash": "5813c885ac247488", "src": "db2@1.60.1.70291"}
-{"id": 250551, "field": "name", "en": "Officer's Gloves", "hash": "8517a638d91529dc", "src": "db2@1.60.1.70291"}
-{"id": 250552, "field": "name", "en": "Sentinel's Gloves", "hash": "bd26542197d01767", "src": "db2@1.60.1.70291"}
-{"id": 250553, "field": "name", "en": "Warder's Gloves", "hash": "23208c2f2f6cc6fe", "src": "db2@1.60.1.70291"}
-{"id": 250554, "field": "name", "en": "Prefect's Gloves", "hash": "9b030f6a0b9282bf", "src": "db2@1.60.1.70291"}
-{"id": 250555, "field": "name", "en": "Justicar's Gloves", "hash": "c70c7373b907ed7b", "src": "db2@1.60.1.70291"}
-{"id": 250556, "field": "name", "en": "Officer's Belt", "hash": "b8c545e2f31d5f8f", "src": "db2@1.60.1.70291"}
-{"id": 250557, "field": "name", "en": "Sentinel's Belt", "hash": "2aab58e183f7d961", "src": "db2@1.60.1.70291"}
-{"id": 250558, "field": "name", "en": "Warder's Belt", "hash": "eec804b0f99bce02", "src": "db2@1.60.1.70291"}
-{"id": 250559, "field": "name", "en": "Prefect's Belt", "hash": "4fea9c45926291fb", "src": "db2@1.60.1.70291"}
-{"id": 250560, "field": "name", "en": "Justicar's Belt", "hash": "d993ffea885ceb5c", "src": "db2@1.60.1.70291"}
-{"id": 250561, "field": "name", "en": "Officer's Sabatons", "hash": "7fa48d082cc0f6e5", "src": "db2@1.60.1.70291"}
-{"id": 250562, "field": "name", "en": "Sentinel's Sabatons", "hash": "4facee9f924c9bc8", "src": "db2@1.60.1.70291"}
-{"id": 250563, "field": "name", "en": "Warder's Sabatons", "hash": "6223c774a524bf57", "src": "db2@1.60.1.70291"}
-{"id": 250564, "field": "name", "en": "Prefect's Sabatons", "hash": "e173727b9a3f3f5c", "src": "db2@1.60.1.70291"}
-{"id": 250565, "field": "name", "en": "Justicar's Sabatons", "hash": "e2f68b74e28e0180", "src": "db2@1.60.1.70291"}
-{"id": 250566, "field": "name", "en": "Officer's Gauntlet", "hash": "75557d43ff0addb7", "src": "db2@1.60.1.70291"}
-{"id": 250567, "field": "name", "en": "Sentinel's Gauntlet", "hash": "455ddeda649682ab", "src": "db2@1.60.1.70291"}
-{"id": 250568, "field": "name", "en": "Warder's Gauntlet", "hash": "57d4b7af776ea63a", "src": "db2@1.60.1.70291"}
-{"id": 250569, "field": "name", "en": "Prefect's Gauntlet", "hash": "d72462b66c89263f", "src": "db2@1.60.1.70291"}
-{"id": 250570, "field": "name", "en": "Justicar's Gauntlet", "hash": "d8a77bafb4d7e863", "src": "db2@1.60.1.70291"}
-{"id": 250571, "field": "name", "en": "Officer's Waistguard", "hash": "9bb493cf71a550dd", "src": "db2@1.60.1.70291"}
-{"id": 250572, "field": "name", "en": "Sentinel's Waistguard", "hash": "1d8a48530bc0f787", "src": "db2@1.60.1.70291"}
-{"id": 250573, "field": "name", "en": "Warder's Waistguard", "hash": "de77bef9f681eeaf", "src": "db2@1.60.1.70291"}
-{"id": 250574, "field": "name", "en": "Prefect's Waistguard", "hash": "32083debbff6645e", "src": "db2@1.60.1.70291"}
-{"id": 250575, "field": "name", "en": "Justicar's Waistguard", "hash": "8f2d4ba57215f498", "src": "db2@1.60.1.70291"}
-{"id": 250576, "field": "name", "en": "Officer's Pauldrons", "hash": "1370bbe0910a1fd0", "src": "db2@1.60.1.70291"}
-{"id": 250577, "field": "name", "en": "Sentinel's Pauldrons", "hash": "87baaba8b9be5f48", "src": "db2@1.60.1.70291"}
-{"id": 250578, "field": "name", "en": "Warder's Pauldrons", "hash": "fa8ba0d4760418e0", "src": "db2@1.60.1.70291"}
-{"id": 250579, "field": "name", "en": "Prefect's Pauldrons", "hash": "205026b317cf213a", "src": "db2@1.60.1.70291"}
-{"id": 250580, "field": "name", "en": "Justicar's Pauldrons", "hash": "e665ee1e2e8ab7ef", "src": "db2@1.60.1.70291"}
-{"id": 250581, "field": "name", "en": "Officer's Wristguards", "hash": "1900f8a048c626ee", "src": "db2@1.60.1.70291"}
-{"id": 250582, "field": "name", "en": "Sentinel's Wristguards", "hash": "895c56e7144160a8", "src": "db2@1.60.1.70291"}
-{"id": 250583, "field": "name", "en": "Warder's Wristguards", "hash": "42e00fc8c5ca63bb", "src": "db2@1.60.1.70291"}
-{"id": 250584, "field": "name", "en": "Prefect's Wristguards", "hash": "05d103e6ef65900f", "src": "db2@1.60.1.70291"}
-{"id": 250585, "field": "name", "en": "Justicar's Wristguards", "hash": "afc70aff4f99b437", "src": "db2@1.60.1.70291"}
-{"id": 250586, "field": "name", "en": "Blessed Plate Pauldrons", "hash": "88d71fae2977068f", "src": "db2@1.60.1.70291"}
-{"id": 250587, "field": "name", "en": "Blessed Plate Boots", "hash": "8c167c11913452a0", "src": "db2@1.60.1.70291"}
-{"id": 250588, "field": "name", "en": "Blessed Plate Gauntlet", "hash": "ff062613862a87d3", "src": "db2@1.60.1.70291"}
-{"id": 250589, "field": "name", "en": "Imperial Plate Gauntlets", "hash": "88c000400512d1c8", "src": "db2@1.60.1.70291"}
-{"id": 250590, "field": "name", "en": "Blessed Plate Bracers", "hash": "c9c5da6c63b6c931", "src": "db2@1.60.1.70291"}
-{"id": 250591, "field": "name", "en": "Blessed Plate Leggings", "hash": "e97391a28e1a7bd9", "src": "db2@1.60.1.70291"}
-{"id": 250592, "field": "name", "en": "Blessed Plate Belt", "hash": "bab53ddef48ce24b", "src": "db2@1.60.1.70291"}
-{"id": 250593, "field": "name", "en": "Blessed Plate Helm", "hash": "bb830f7944fc9a82", "src": "db2@1.60.1.70291"}
-{"id": 250594, "field": "name", "en": "Blessed Plate Chest", "hash": "9cb174496a946074", "src": "db2@1.60.1.70291"}
-{"id": 250595, "field": "name", "en": "Enriched Thorium Breastplate", "hash": "5fe1aa1cb7c58f23", "src": "db2@1.60.1.70291"}
-{"id": 250596, "field": "name", "en": "Enriched Thorium Leggings", "hash": "1ce4c3f5edc922dd", "src": "db2@1.60.1.70291"}
-{"id": 250597, "field": "name", "en": "Enriched Thorium Helm", "hash": "783fb8446b67c9de", "src": "db2@1.60.1.70291"}
-{"id": 250598, "field": "name", "en": "Champion's Legplates", "hash": "349df624a3034e3d", "src": "db2@1.60.1.70291"}
-{"id": 250599, "field": "name", "en": "Stalwart Helm", "hash": "b4ec87b08f4ee9fa", "src": "db2@1.60.1.70291"}
-{"id": 250600, "field": "name", "en": "Martyr's Legplates", "hash": "4ae60ee72005c333", "src": "db2@1.60.1.70291"}
-{"id": 250601, "field": "name", "en": "Breastplate of Salvation", "hash": "3b471144b6e8db17", "src": "db2@1.60.1.70291"}
-{"id": 250602, "field": "name", "en": "Brass Knuckles", "hash": "b4913e5af999258d", "src": "db2@1.60.1.70291"}
-{"id": 250603, "field": "name", "en": "Bronze Dory", "hash": "5f144abd8f1712de", "src": "db2@1.60.1.70291"}
-{"id": 250604, "field": "name", "en": "Iron Fists", "hash": "c9b00854f622c441", "src": "db2@1.60.1.70291"}
-{"id": 250605, "field": "name", "en": "Steel Spear", "hash": "adcda8ff6b503b74", "src": "db2@1.60.1.70291"}
-{"id": 250606, "field": "name", "en": "Iron Morningstar", "hash": "23c8f4d3f86c6977", "src": "db2@1.60.1.70291"}
-{"id": 250607, "field": "name", "en": "Mithril Shortsword", "hash": "2b43a482942970e8", "src": "db2@1.60.1.70291"}
-{"id": 250608, "field": "name", "en": "Mithril Warhammer", "hash": "025a9e6b92fc35d8", "src": "db2@1.60.1.70291"}
-{"id": 250609, "field": "name", "en": "Mithril Claws", "hash": "6fe2006c03edb799", "src": "db2@1.60.1.70291"}
-{"id": 250610, "field": "name", "en": "Mithril Claymore", "hash": "e90499acfd9be529", "src": "db2@1.60.1.70291"}
-{"id": 250611, "field": "name", "en": "Mithril Stiletto", "hash": "fc915aa8e3dfb755", "src": "db2@1.60.1.70291"}
-{"id": 250612, "field": "name", "en": "Charged Mithril Battleaxe", "hash": "623d9da03cbab707", "src": "db2@1.60.1.70291"}
-{"id": 250613, "field": "name", "en": "Thorium Greatmace", "hash": "bcbb327ec1557534", "src": "db2@1.60.1.70291"}
-{"id": 250614, "field": "name", "en": "Thorium Cestus", "hash": "923cf070beda514f", "src": "db2@1.60.1.70291"}
-{"id": 250615, "field": "name", "en": "Thorium Poleaxe", "hash": "588551c004dc5f1a", "src": "db2@1.60.1.70291"}
-{"id": 250616, "field": "name", "en": "Bold Dirk", "hash": "83dddc3fff5b36b2", "src": "db2@1.60.1.70291"}
-{"id": 250617, "field": "name", "en": "Stormcarver", "hash": "73c7ed20b7a5cb75", "src": "db2@1.60.1.70291"}
-{"id": 250618, "field": "name", "en": "Bagh Nakh", "hash": "63915234941f2d0c", "src": "db2@1.60.1.70291"}
-{"id": 250619, "field": "name", "en": "Legionite Glaive", "hash": "93c31b6f8bdd34dc", "src": "db2@1.60.1.70291"}
-{"id": 250620, "field": "name", "en": "Gemmed Copper Boots", "hash": "683ef97a54675cce", "src": "db2@1.60.1.70291"}
-{"id": 250621, "field": "name", "en": "Strange Copper Boots", "hash": "a10aebfb42cab98a", "src": "db2@1.60.1.70291"}
-{"id": 250725, "field": "name", "en": "Crate of Exotic Parts", "hash": "ba194cba9f25d394", "src": "db2@1.60.1.70291"}
-{"id": 250725, "field": "description", "en": "Handle with care.\nA bill of lading is attached that clearly marks the shipment as hazardous and requiring gentle transport. Notes on the contents indicate that they will soon expire if not secured properly by the recipient.", "hash": "714c6e5648288420", "src": "db2@1.60.1.70291"}
-{"id": 250744, "field": "name", "en": "Firestarter Fir", "hash": "15f3de7bd8ca16f8", "src": "db2@1.60.1.70291"}
-{"id": 250744, "field": "description", "en": "A twisted handful of viable kindling.", "hash": "2287c3e1c0b13b71", "src": "db2@1.60.1.70291"}
-{"id": 250773, "field": "name", "en": "Nordrassil Root Cap", "hash": "f1dbd80737901dc4", "src": "db2@1.60.1.70291"}
-{"id": 250773, "field": "description", "en": "Covered in freshly broken soil. It has been digging through the earth for centuries.", "hash": "615128b5b4b65544", "src": "db2@1.60.1.70291"}
-{"id": 250775, "field": "name", "en": "Frayed Wire", "hash": "510df16cf96a6e8f", "src": "db2@1.60.1.70291"}
-{"id": 250932, "field": "name", "en": "Minor Spellblasting Potion", "hash": "c8202e0239ebafae", "src": "db2@1.60.1.70291"}
-{"id": 250932, "field": "description", "en": "Increases Spell Damage by $s1 for $d.", "hash": "e3e0c85cb6b7cc7f", "src": "db2@1.60.1.70291"}
-{"id": 250933, "field": "name", "en": "Lesser Spellblasting Potion", "hash": "251828e119a02da7", "src": "db2@1.60.1.70291"}
-{"id": 250933, "field": "description", "en": "Increases Spell Damage by $s1 for $d.", "hash": "e3e0c85cb6b7cc7f", "src": "db2@1.60.1.70291"}
-{"id": 250934, "field": "name", "en": "Spellblasting Potion", "hash": "9a8f5b2654b522f4", "src": "db2@1.60.1.70291"}
-{"id": 250934, "field": "description", "en": "Increases Spell Damage by $s1 for $d.", "hash": "e3e0c85cb6b7cc7f", "src": "db2@1.60.1.70291"}
-{"id": 250935, "field": "name", "en": "Greater Spellblasting Potion", "hash": "dbbe12e42d2abe60", "src": "db2@1.60.1.70291"}
-{"id": 250935, "field": "description", "en": "Increases Spell Damage by $s1 for $d.", "hash": "e3e0c85cb6b7cc7f", "src": "db2@1.60.1.70291"}
-{"id": 250936, "field": "name", "en": "Superior Spellblasting Potion", "hash": "6a04c06cc1655b6d", "src": "db2@1.60.1.70291"}
-{"id": 250936, "field": "description", "en": "Increases Spell Damage by $s1 for $d.", "hash": "e3e0c85cb6b7cc7f", "src": "db2@1.60.1.70291"}
-{"id": 250937, "field": "name", "en": "Major Spellblasting Potion", "hash": "6bb444f2223f4277", "src": "db2@1.60.1.70291"}
-{"id": 250937, "field": "description", "en": "Increases Spell Damage by $s1 for $d.", "hash": "e3e0c85cb6b7cc7f", "src": "db2@1.60.1.70291"}
-{"id": 250938, "field": "name", "en": "Minor Frenzy Potion", "hash": "d6e8db649d2be954", "src": "db2@1.60.1.70291"}
-{"id": 250938, "field": "description", "en": "Increases Attack Power by $s1 for $d.", "hash": "b593685aba28cb9e", "src": "db2@1.60.1.70291"}
-{"id": 250939, "field": "name", "en": "Lesser Frenzy Potion", "hash": "fb58eddc51169526", "src": "db2@1.60.1.70291"}
-{"id": 250939, "field": "description", "en": "Increases Attack Power by $s1 for $d.", "hash": "b593685aba28cb9e", "src": "db2@1.60.1.70291"}
-{"id": 250940, "field": "name", "en": "Frenzy Potion", "hash": "b65d7aa02b95fad2", "src": "db2@1.60.1.70291"}
-{"id": 250940, "field": "description", "en": "Increases Attack Power by $s1 for $d.", "hash": "b593685aba28cb9e", "src": "db2@1.60.1.70291"}
-{"id": 250941, "field": "name", "en": "Greater Frenzy Potion", "hash": "c8696980380c2178", "src": "db2@1.60.1.70291"}
-{"id": 250941, "field": "description", "en": "Increases Attack Power by $s1 for $d.", "hash": "b593685aba28cb9e", "src": "db2@1.60.1.70291"}
-{"id": 250942, "field": "name", "en": "Superior Frenzy Potion", "hash": "6fb611cc00c2150e", "src": "db2@1.60.1.70291"}
-{"id": 250942, "field": "description", "en": "Increases Attack Power by $s1 for $d.", "hash": "b593685aba28cb9e", "src": "db2@1.60.1.70291"}
-{"id": 250943, "field": "name", "en": "Major Frenzy Potion", "hash": "33a36c7cd663a7d6", "src": "db2@1.60.1.70291"}
-{"id": 250943, "field": "description", "en": "Increases Attack Power by $s1 for $d.", "hash": "b593685aba28cb9e", "src": "db2@1.60.1.70291"}
-{"id": 250944, "field": "name", "en": "Minor Mender's Potion", "hash": "558db6668d522c7b", "src": "db2@1.60.1.70291"}
-{"id": 250944, "field": "description", "en": "Increases Spell Healing by $s1 for $d.", "hash": "ca86de190e9930de", "src": "db2@1.60.1.70291"}
-{"id": 250945, "field": "name", "en": "Lesser Mender's Potion", "hash": "f253f45071971674", "src": "db2@1.60.1.70291"}
-{"id": 250945, "field": "description", "en": "Increases Spell Healing by $s1 for $d.", "hash": "ca86de190e9930de", "src": "db2@1.60.1.70291"}
-{"id": 250946, "field": "name", "en": "Mender's Potion", "hash": "b653d8e4fbfbdbae", "src": "db2@1.60.1.70291"}
-{"id": 250946, "field": "description", "en": "Increases Spell Healing by $s1 for $d.", "hash": "ca86de190e9930de", "src": "db2@1.60.1.70291"}
-{"id": 250947, "field": "name", "en": "Greater Mender's Potion", "hash": "7843f666b3456c6a", "src": "db2@1.60.1.70291"}
-{"id": 250947, "field": "description", "en": "Increases Spell Healing by $s1 for $d.", "hash": "ca86de190e9930de", "src": "db2@1.60.1.70291"}
-{"id": 250948, "field": "name", "en": "Superior Mender's Potion", "hash": "6a0150f04fef0dcd", "src": "db2@1.60.1.70291"}
-{"id": 250948, "field": "description", "en": "Increases Spell Healing by $s1 for $d.", "hash": "ca86de190e9930de", "src": "db2@1.60.1.70291"}
-{"id": 250949, "field": "name", "en": "Major Mender's Potion", "hash": "6c1542796a3a3cee", "src": "db2@1.60.1.70291"}
-{"id": 250949, "field": "description", "en": "Increases Spell Healing by $s1 for $d.", "hash": "ca86de190e9930de", "src": "db2@1.60.1.70291"}
-{"id": 250950, "field": "name", "en": "Potion of Venomous Blood", "hash": "2bd0c5572f39ab4b", "src": "db2@1.60.1.70291"}
-{"id": 250950, "field": "description", "en": "Gain $U doses of Venomous Blood. Whenever you suffer Bleed damage, one dose is spread to a nearby enemy within $s2 yds. Lasts up to $d.\r\n\r\nVenomous Blood deals $s1 Nature damage per dose when it expires.", "hash": "8b8489255b4ecbbe", "src": "db2@1.60.1.70291"}
-{"id": 250951, "field": "name", "en": "Caustic Smog Potion", "hash": "52ed896f18367044", "src": "db2@1.60.1.70291"}
-{"id": 250951, "field": "description", "en": "Throw a fragile concoction at the target area, revealing a cloud of Caustic Smog for $1252526d. Enemies standing within the cloud suffer $1252543s1 Nature damage every $1252543t1 sec.", "hash": "a6d056008637f824", "src": "db2@1.60.1.70291"}
-{"id": 250952, "field": "name", "en": "Disorienting Smog Potion", "hash": "471958b23f2cdf9a", "src": "db2@1.60.1.70291"}
-{"id": 250952, "field": "description", "en": "Throw a fragile concoction at the target area, revealing a cloud of Disorienting Smog for $1252545d. Enemies standing within the cloud have their Hit Chance reduced by $1252546s1%. Ineffective against targets above level $1252546s2.", "hash": "9e622abad513a446", "src": "db2@1.60.1.70291"}
-{"id": 250953, "field": "name", "en": "Dragonfire Potion", "hash": "d13b5266ead57173", "src": "db2@1.60.1.70291"}
-{"id": 250953, "field": "description", "en": "Unleash a belch of dragonfire, dealing $s1 Fire damage instantly in a narrow cone in front of you. Affected targets will suffer $s2 additional damage every $t2 sec for $d.", "hash": "416cdf8142f57470", "src": "db2@1.60.1.70291"}
-{"id": 250954, "field": "name", "en": "Potion of Elemental Purging", "hash": "2072950bb4b67899", "src": "db2@1.60.1.70291"}
-{"id": 250954, "field": "description", "en": "Increases Spell Damage by $s1 against Elementals. Lasts $d.", "hash": "6b5184209264faaa", "src": "db2@1.60.1.70291"}
-{"id": 250955, "field": "name", "en": "Potion of Beast Slaying", "hash": "ebd97780ec1b549e", "src": "db2@1.60.1.70291"}
-{"id": 250955, "field": "description", "en": "Increases Attack Power by $s1 against Beasts. Lasts $d.", "hash": "c2c3cf7e34839b30", "src": "db2@1.60.1.70291"}
-{"id": 250976, "field": "name", "en": "Recipe: Minor Spellblasting Potion", "hash": "7e7568ef09437915", "src": "db2@1.60.1.70291"}
-{"id": 250976, "field": "description", "en": "Teaches you how to craft Minor Spellblasting Potion.", "hash": "259a2b5dcdcec49f", "src": "db2@1.60.1.70291"}
-{"id": 250977, "field": "name", "en": "Recipe: Lesser Spellblasting Potion", "hash": "72b54f6af72b431e", "src": "db2@1.60.1.70291"}
-{"id": 250977, "field": "description", "en": "Teaches you how to craft Lesser Spellblasting Potion.", "hash": "c413db023456c2f4", "src": "db2@1.60.1.70291"}
-{"id": 250978, "field": "name", "en": "Recipe: Spellblasting Potion", "hash": "4b945d8e88fa21af", "src": "db2@1.60.1.70291"}
-{"id": 250978, "field": "description", "en": "Teaches you how to craft Spellblasting Potion.", "hash": "4146ac458d0e8f77", "src": "db2@1.60.1.70291"}
-{"id": 250979, "field": "name", "en": "Recipe: Greater Spellblasting Potion", "hash": "9328cbc7bc03d9ed", "src": "db2@1.60.1.70291"}
-{"id": 250979, "field": "description", "en": "Teaches you how to craft Greater Spellblasting Potion.", "hash": "27e02603ee3868b3", "src": "db2@1.60.1.70291"}
-{"id": 250980, "field": "name", "en": "Recipe: Superior Spellblasting Potion", "hash": "45a15bdc988dd3c4", "src": "db2@1.60.1.70291"}
-{"id": 250980, "field": "description", "en": "Teaches you how to craft Superior Spellblasting Potion.", "hash": "2f805f2d9e724a17", "src": "db2@1.60.1.70291"}
-{"id": 250981, "field": "name", "en": "Recipe: Major Spellblasting Potion", "hash": "22097fdff1970bcd", "src": "db2@1.60.1.70291"}
-{"id": 250981, "field": "description", "en": "Teaches you how to craft Major Spellblasting Potion.", "hash": "da61e73d1e08ec36", "src": "db2@1.60.1.70291"}
-{"id": 250982, "field": "name", "en": "Recipe: Minor Frenzy Potion", "hash": "0340d590b4741969", "src": "db2@1.60.1.70291"}
-{"id": 250982, "field": "description", "en": "Teaches you how to craft Minor Frenzy Potion.", "hash": "208fb01231bad9f9", "src": "db2@1.60.1.70291"}
-{"id": 250983, "field": "name", "en": "Recipe: Lesser Frenzy Potion", "hash": "ac5df044855b93e1", "src": "db2@1.60.1.70291"}
-{"id": 250983, "field": "description", "en": "Teaches you how to craft Lesser Frenzy Potion.", "hash": "c86cc05c2b87f3c6", "src": "db2@1.60.1.70291"}
-{"id": 250984, "field": "name", "en": "Recipe: Frenzy Potion", "hash": "414ec32d3b862ea0", "src": "db2@1.60.1.70291"}
-{"id": 250984, "field": "description", "en": "Teaches you how to craft Frenzy Potion.", "hash": "f38dd62334a801a6", "src": "db2@1.60.1.70291"}
-{"id": 250985, "field": "name", "en": "Recipe: Greater Frenzy Potion", "hash": "5df9a3f083891775", "src": "db2@1.60.1.70291"}
-{"id": 250985, "field": "description", "en": "Teaches you how to craft Greater Frenzy Potion.", "hash": "01351e68647489e8", "src": "db2@1.60.1.70291"}
-{"id": 250986, "field": "name", "en": "Recipe: Superior Frenzy Potion", "hash": "f883f8097b608b31", "src": "db2@1.60.1.70291"}
-{"id": 250986, "field": "description", "en": "Teaches you how to craft Superior Frenzy Potion.", "hash": "2607587b414e8a1e", "src": "db2@1.60.1.70291"}
-{"id": 250987, "field": "name", "en": "Recipe: Major Frenzy Potion", "hash": "5ffb66a3edabd7eb", "src": "db2@1.60.1.70291"}
-{"id": 250987, "field": "description", "en": "Teaches you how to craft Major Frenzy Potion.", "hash": "9407edb63bcb815b", "src": "db2@1.60.1.70291"}
-{"id": 250988, "field": "name", "en": "Recipe: Minor Mender's Potion", "hash": "eb1df0d1d8cf2278", "src": "db2@1.60.1.70291"}
-{"id": 250988, "field": "description", "en": "Teaches you how to craft Minor Mender's Potion.", "hash": "3ac876f3d25a4909", "src": "db2@1.60.1.70291"}
-{"id": 250989, "field": "name", "en": "Recipe: Lesser Mender's Potion", "hash": "7b21da92ec358c97", "src": "db2@1.60.1.70291"}
-{"id": 250989, "field": "description", "en": "Teaches you how to craft Lesser Mender's Potion.", "hash": "fcd2435137b10da1", "src": "db2@1.60.1.70291"}
-{"id": 250990, "field": "name", "en": "Recipe: Mender's Potion", "hash": "becbb3967b6571e2", "src": "db2@1.60.1.70291"}
-{"id": 250990, "field": "description", "en": "Teaches you how to craft Mender's Potion.", "hash": "29af54cc8fe4f732", "src": "db2@1.60.1.70291"}
-{"id": 250992, "field": "name", "en": "Recipe: Superior Mender's Potion", "hash": "1c811334358c6219", "src": "db2@1.60.1.70291"}
-{"id": 250992, "field": "description", "en": "Teaches you how to craft Superior Mender's Potion.", "hash": "bd10e4ca4ebefe61", "src": "db2@1.60.1.70291"}
-{"id": 250993, "field": "name", "en": "Recipe: Major Mender's Potion", "hash": "01a57ce9b5b732eb", "src": "db2@1.60.1.70291"}
-{"id": 250993, "field": "description", "en": "Teaches you how to craft Major Mender's Potion.", "hash": "c22524e3144e60de", "src": "db2@1.60.1.70291"}
-{"id": 250994, "field": "name", "en": "Recipe: Potion of Venomous Blood", "hash": "de50879614d6ff97", "src": "db2@1.60.1.70291"}
-{"id": 250994, "field": "description", "en": "Teaches you how to craft Potion of Venomous Blood.", "hash": "ea3974df986566dc", "src": "db2@1.60.1.70291"}
-{"id": 250995, "field": "name", "en": "Recipe: Caustic Smog Potion", "hash": "7f4583962f7ea059", "src": "db2@1.60.1.70291"}
-{"id": 250995, "field": "description", "en": "Teaches you how to craft Caustic Smog Potion.", "hash": "96f4be5f9c51696a", "src": "db2@1.60.1.70291"}
-{"id": 250996, "field": "name", "en": "Recipe: Disorienting Smog Potion", "hash": "f9991af124ca33e6", "src": "db2@1.60.1.70291"}
-{"id": 250996, "field": "description", "en": "Teaches you how to craft Disorienting Smog Potion.", "hash": "e05cdcb6107c1318", "src": "db2@1.60.1.70291"}
-{"id": 250997, "field": "name", "en": "Recipe: Dragonfire Potion", "hash": "7baea3c0983963eb", "src": "db2@1.60.1.70291"}
-{"id": 250997, "field": "description", "en": "Teaches you how to craft Dragonfire Potion.", "hash": "ffe7a87e9bd21262", "src": "db2@1.60.1.70291"}
-{"id": 250998, "field": "name", "en": "Recipe: Potion of Elemental Purging", "hash": "6e0fbb9492418e21", "src": "db2@1.60.1.70291"}
-{"id": 250998, "field": "description", "en": "Teaches you how to craft Potion of Elemental Purging.", "hash": "63593476360337f6", "src": "db2@1.60.1.70291"}
-{"id": 250999, "field": "name", "en": "Recipe: Potion of Beast Slaying", "hash": "ed364a15e1b069f6", "src": "db2@1.60.1.70291"}
-{"id": 250999, "field": "description", "en": "Teaches you how to craft Potion of Beast Slaying.", "hash": "91fac260ce6a978f", "src": "db2@1.60.1.70291"}
+{"id": 250065, "field": "name", "en": "Savory Stag Sliders", "hash": "849b291e08f1a581", "src": "db2@1.60.1.70338"}
+{"id": 250065, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 sec eating, you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "ed5c3d4ee6c00e25", "src": "db2@1.60.1.70338"}
+{"id": 250066, "field": "name", "en": "Soaring Pamplona", "hash": "2f2668268779d663", "src": "db2@1.60.1.70338"}
+{"id": 250066, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "6cc9869718fe44b2", "src": "db2@1.60.1.70338"}
+{"id": 250067, "field": "name", "en": "Bat Hachee", "hash": "cc52939f31a8653c", "src": "db2@1.60.1.70338"}
+{"id": 250067, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "6cc9869718fe44b2", "src": "db2@1.60.1.70338"}
+{"id": 250068, "field": "name", "en": "Savory Turtle Stew", "hash": "f1b5c85817c78f54", "src": "db2@1.60.1.70338"}
+{"id": 250068, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "0011a95a93328cc7", "src": "db2@1.60.1.70338"}
+{"id": 250069, "field": "name", "en": "Flank au Poivre", "hash": "359b561f692d7335", "src": "db2@1.60.1.70338"}
+{"id": 250069, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2 Agility for $1248420d. $@spelldesc1243969", "hash": "a5acb2b930a6fb25", "src": "db2@1.60.1.70338"}
+{"id": 250070, "field": "name", "en": "Bear Bruscitti", "hash": "b77e35a5d0f2239d", "src": "db2@1.60.1.70338"}
+{"id": 250070, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "7069cd92dc107b46", "src": "db2@1.60.1.70338"}
+{"id": 250071, "field": "name", "en": "Steaming Stag Steak", "hash": "04f0f44150edd125", "src": "db2@1.60.1.70338"}
+{"id": 250071, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "7069cd92dc107b46", "src": "db2@1.60.1.70338"}
+{"id": 250072, "field": "name", "en": "Swiftstrike Steak", "hash": "76e49ee40fd9d07f", "src": "db2@1.60.1.70338"}
+{"id": 250072, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2 Agility for $1248420d. $@spelldesc1243969", "hash": "a5acb2b930a6fb25", "src": "db2@1.60.1.70338"}
+{"id": 250073, "field": "name", "en": "Raging Raptor Ribs", "hash": "a70c891961138d34", "src": "db2@1.60.1.70338"}
+{"id": 250073, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 sec eating, you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "afd6df6b9148d80f", "src": "db2@1.60.1.70338"}
+{"id": 250074, "field": "name", "en": "Bear Brisket", "hash": "18485d79307fa3aa", "src": "db2@1.60.1.70338"}
+{"id": 250074, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 sec eating, you will become well fed and gain $s2 Strength for $1248422d. $@spelldesc1243969", "hash": "d87f66ab5e3a562f", "src": "db2@1.60.1.70338"}
+{"id": 250075, "field": "name", "en": "Prehistoric Pulled Raptor", "hash": "29d080e8d18152d2", "src": "db2@1.60.1.70338"}
+{"id": 250075, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "6cc9869718fe44b2", "src": "db2@1.60.1.70338"}
+{"id": 250076, "field": "name", "en": "Raptor Rouladen", "hash": "d9c753cff162023f", "src": "db2@1.60.1.70338"}
+{"id": 250076, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 sec eating, you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "5cd8b50bc0177245", "src": "db2@1.60.1.70338"}
+{"id": 250077, "field": "name", "en": "Twice-Spiced Raptor Slice", "hash": "d0ccd6dd59b6db9d", "src": "db2@1.60.1.70338"}
+{"id": 250077, "field": "description", "en": "$@spelldesc434 If you spend at least 10 sec eating, you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "07943e036d775c20", "src": "db2@1.60.1.70338"}
+{"id": 250078, "field": "name", "en": "Giant Scrambled Eggs", "hash": "752a4b15c180cdfe", "src": "db2@1.60.1.70338"}
+{"id": 250078, "field": "description", "en": "$@spelldesc1127 If you spend at least 10 sec eating, you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "a8ecb2539d5872cc", "src": "db2@1.60.1.70338"}
+{"id": 250079, "field": "name", "en": "Tasty Raptor Bites", "hash": "f17982245d465090", "src": "db2@1.60.1.70338"}
+{"id": 250079, "field": "description", "en": "$@spelldesc433 If you spend at least 10 sec eating, you will become well fed and gain $s2 Intellect for $1248421d. $@spelldesc1243969", "hash": "3113533356100f05", "src": "db2@1.60.1.70338"}
+{"id": 250080, "field": "name", "en": "Breakfast Omelette", "hash": "36c652105aca8d07", "src": "db2@1.60.1.70338"}
+{"id": 250080, "field": "description", "en": "$@spelldesc434 If you spend at least 10 sec eating, you will become well fed and gain $s2 Stamina for $1248406d. $@spelldesc1243969", "hash": "e5a4e500add7a0f0", "src": "db2@1.60.1.70338"}
+{"id": 250081, "field": "name", "en": "Clam Linguine", "hash": "48ce009f83e33f1d", "src": "db2@1.60.1.70338"}
+{"id": 250081, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70338"}
+{"id": 250101, "field": "name", "en": "Summit Guardian Polearm", "hash": "7cd32a857155764c", "src": "db2@1.60.1.70338"}
+{"id": 250173, "field": "name", "en": "Recipe: Savory Stag Sliders", "hash": "b0f323452039d596", "src": "db2@1.60.1.70338"}
+{"id": 250173, "field": "description", "en": "Teaches you how to cook Savory Stag Sliders.", "hash": "8c37fb6a2f278857", "src": "db2@1.60.1.70338"}
+{"id": 250174, "field": "name", "en": "Recipe: Soaring Pamplona", "hash": "847b51504c7615e4", "src": "db2@1.60.1.70338"}
+{"id": 250174, "field": "description", "en": "Teaches you how to cook Soaring Pamplona.", "hash": "6341f09c89faee04", "src": "db2@1.60.1.70338"}
+{"id": 250175, "field": "name", "en": "Recipe: Bat Hachee", "hash": "2457f2c1a723fb04", "src": "db2@1.60.1.70338"}
+{"id": 250175, "field": "description", "en": "Teaches you how to cook Bat Hachee.", "hash": "55b0bbcc198877d5", "src": "db2@1.60.1.70338"}
+{"id": 250176, "field": "name", "en": "Recipe: Savory Turtle Stew", "hash": "2ab8688f96fb83e2", "src": "db2@1.60.1.70338"}
+{"id": 250176, "field": "description", "en": "Teaches you how to cook Savory Turtle Stew.", "hash": "808433767703e697", "src": "db2@1.60.1.70338"}
+{"id": 250177, "field": "name", "en": "Recipe: Flank au Poivre", "hash": "3e1330d1e8970958", "src": "db2@1.60.1.70338"}
+{"id": 250177, "field": "description", "en": "Teaches you how to cook Flank au Poivre.", "hash": "e82844ac090aaddf", "src": "db2@1.60.1.70338"}
+{"id": 250178, "field": "name", "en": "Recipe: Bear Bruscitti", "hash": "d0f654a0e955bf67", "src": "db2@1.60.1.70338"}
+{"id": 250178, "field": "description", "en": "Teaches you how to cook Bear Bruscitti.", "hash": "c35646ea8a828819", "src": "db2@1.60.1.70338"}
+{"id": 250179, "field": "name", "en": "Recipe: Steaming Stag Steak", "hash": "3148ee686836013a", "src": "db2@1.60.1.70338"}
+{"id": 250179, "field": "description", "en": "Teaches you how to cook Steaming Stag Steak.", "hash": "381eed0efd1357d1", "src": "db2@1.60.1.70338"}
+{"id": 250180, "field": "name", "en": "Recipe: Swiftstrike Steak", "hash": "2157f03ebd3dc2e6", "src": "db2@1.60.1.70338"}
+{"id": 250180, "field": "description", "en": "Teaches you how to cook Swiftstrike Steak.", "hash": "ec1f803cf4738a11", "src": "db2@1.60.1.70338"}
+{"id": 250181, "field": "name", "en": "Recipe: Raging Raptor Ribs", "hash": "e00f294be04781c2", "src": "db2@1.60.1.70338"}
+{"id": 250181, "field": "description", "en": "Teaches you how to cook Raging Raptor Ribs.", "hash": "4be8d57b168cc3a8", "src": "db2@1.60.1.70338"}
+{"id": 250182, "field": "name", "en": "Recipe: Bear Brisket", "hash": "985dbfbaab976224", "src": "db2@1.60.1.70338"}
+{"id": 250182, "field": "description", "en": "Teaches you how to cook Bear Brisket.", "hash": "894c1f4609718f29", "src": "db2@1.60.1.70338"}
+{"id": 250183, "field": "name", "en": "Recipe: Prehistoric Pulled Raptor", "hash": "8130e8ecadfd65c5", "src": "db2@1.60.1.70338"}
+{"id": 250183, "field": "description", "en": "Teaches you how to cook Prehistoric Pulled Raptor.", "hash": "926e77dea6aecb79", "src": "db2@1.60.1.70338"}
+{"id": 250184, "field": "name", "en": "Recipe: Raptor Rouladen", "hash": "e23f2e8170cb9873", "src": "db2@1.60.1.70338"}
+{"id": 250184, "field": "description", "en": "Teaches you how to cook Raptor Rouladen.", "hash": "eaab17601c8fbbff", "src": "db2@1.60.1.70338"}
+{"id": 250185, "field": "name", "en": "Recipe: Twice-Spiced Raptor Slice", "hash": "282d3ee63632ee90", "src": "db2@1.60.1.70338"}
+{"id": 250185, "field": "description", "en": "Teaches you how to cook Twice-Spiced Raptor Slice.", "hash": "058e75ebd94b9d49", "src": "db2@1.60.1.70338"}
+{"id": 250186, "field": "name", "en": "Recipe: Giant Scrambled Eggs", "hash": "262f4d7df5c5ccb9", "src": "db2@1.60.1.70338"}
+{"id": 250186, "field": "description", "en": "Teaches you how to cook Giant Scrambled Eggs.", "hash": "701204850f924dd5", "src": "db2@1.60.1.70338"}
+{"id": 250187, "field": "name", "en": "Recipe: Tasty Raptor Bites", "hash": "2a7c225bdc7a451e", "src": "db2@1.60.1.70338"}
+{"id": 250187, "field": "description", "en": "Teaches you how to cook Tasty Raptor Bites.", "hash": "61ac46dae4d2936a", "src": "db2@1.60.1.70338"}
+{"id": 250188, "field": "name", "en": "Recipe: Breakfast Omelette", "hash": "6fc8f242d9fe8195", "src": "db2@1.60.1.70338"}
+{"id": 250188, "field": "description", "en": "Teaches you how to cook Breakfast Omelette.", "hash": "d7faaabeb95e1bc2", "src": "db2@1.60.1.70338"}
+{"id": 250189, "field": "name", "en": "Recipe: Clam Linguine", "hash": "d3bf492793d372eb", "src": "db2@1.60.1.70338"}
+{"id": 250189, "field": "description", "en": "Teaches you how to cook Clam Linguine.", "hash": "b85c28ddecf6575d", "src": "db2@1.60.1.70338"}
+{"id": 250217, "field": "name", "en": "Purveyor of Light", "hash": "c35f5d1d0d92065a", "src": "db2@1.60.1.70338"}
+{"id": 250327, "field": "name", "en": "Draught of Predatory Senses", "hash": "4492affcff128d8f", "src": "db2@1.60.1.70338"}
+{"id": 250327, "field": "description", "en": "Drink to slightly increase your stealth detection. While you are not moving for $s2 sec, nearby moving stealthed enemies may reveal a heat trail. Lasts for $d.\r\n\r\nThis effect persists through death.", "hash": "15f9f95fd9341965", "src": "db2@1.60.1.70338"}
+{"id": 250328, "field": "name", "en": "Elixir of Cunning", "hash": "f3f9a6b27d4594f2", "src": "db2@1.60.1.70338"}
+{"id": 250328, "field": "description", "en": "Drink to gain $s1 Agility and Intellect. Lasts for $d.", "hash": "82b4c68790948231", "src": "db2@1.60.1.70338"}
+{"id": 250329, "field": "name", "en": "Elixir of the Phalanx", "hash": "feb0f3c6c799b153", "src": "db2@1.60.1.70338"}
+{"id": 250329, "field": "description", "en": "Drink to gain $s1 Maximum Health and $s2 Armor. Lasts for $d.", "hash": "9f753fd20dacadb1", "src": "db2@1.60.1.70338"}
+{"id": 250330, "field": "name", "en": "Minor Cleric's Elixir", "hash": "87677f3aafab7212", "src": "db2@1.60.1.70338"}
+{"id": 250330, "field": "description", "en": "Drink to increase healing done by spells and effects by up to $s1. Lasts $d.", "hash": "b7fa738d0c484e08", "src": "db2@1.60.1.70338"}
+{"id": 250331, "field": "name", "en": "Lesser Cleric's Elixir", "hash": "242dbd2993f05c0b", "src": "db2@1.60.1.70338"}
+{"id": 250331, "field": "description", "en": "Drink to increase healing done by spells and effects by up to $s1. Lasts $d.", "hash": "b7fa738d0c484e08", "src": "db2@1.60.1.70338"}
+{"id": 250332, "field": "name", "en": "Cleric's Elixir", "hash": "e82da1b81e552156", "src": "db2@1.60.1.70338"}
+{"id": 250332, "field": "description", "en": "Drink to increase healing done by spells and effects by up to $s1. Lasts $d.", "hash": "b7fa738d0c484e08", "src": "db2@1.60.1.70338"}
+{"id": 250333, "field": "name", "en": "Greater Cleric's Elixir", "hash": "aa1dbf3ad59eb201", "src": "db2@1.60.1.70338"}
+{"id": 250333, "field": "description", "en": "Drink to increase healing done by spells and effects by up to $s1. Lasts $d.", "hash": "b7fa738d0c484e08", "src": "db2@1.60.1.70338"}
+{"id": 250334, "field": "name", "en": "Elixir of Fortitude", "hash": "33b79cb6ab28b455", "src": "db2@1.60.1.70338"}
+{"id": 250334, "field": "description", "en": "Drink to increase your maximum health by $s1. Lasts for $d.", "hash": "ea92604eb5440eaa", "src": "db2@1.60.1.70338"}
+{"id": 250335, "field": "name", "en": "Elixir of Greater Fortitude", "hash": "ca5857b9ee0fa7ef", "src": "db2@1.60.1.70338"}
+{"id": 250335, "field": "description", "en": "Drink to increase your maximum health by $s1. Lasts for $d.", "hash": "ea92604eb5440eaa", "src": "db2@1.60.1.70338"}
+{"id": 250336, "field": "name", "en": "Elixir of Wicked Regeneration", "hash": "73aa3b3899b02c01", "src": "db2@1.60.1.70338"}
+{"id": 250336, "field": "description", "en": "Drink to restore $s1 health and $s2 mana every 5 sec. Lasts for $d.", "hash": "02bd932a8009927d", "src": "db2@1.60.1.70338"}
+{"id": 250337, "field": "name", "en": "Elixir of the Owl", "hash": "1c0031e567f9e65a", "src": "db2@1.60.1.70338"}
+{"id": 250337, "field": "description", "en": "Drink to increase your Intellect by $s1 and chance to critically hit by $s2%. Lasts for $d.", "hash": "b485271efb1d9691", "src": "db2@1.60.1.70338"}
+{"id": 250338, "field": "name", "en": "Elixir of Sages", "hash": "1e135075f0b9d475", "src": "db2@1.60.1.70338"}
+{"id": 250338, "field": "description", "en": "Drink to increase your Spirit by $s1 and chance to critically hit by $s2%. Lasts for $d.", "hash": "39d4b1c4cf27ff6a", "src": "db2@1.60.1.70338"}
+{"id": 250339, "field": "name", "en": "Minor Mageblood Elixir", "hash": "c2152ec813e20eda", "src": "db2@1.60.1.70338"}
+{"id": 250339, "field": "description", "en": "Drink to regenerate $s1 mana every 5 sec. Lasts for $d.", "hash": "52733d23fc207290", "src": "db2@1.60.1.70338"}
+{"id": 250340, "field": "name", "en": "Lesser Mageblood Elixir", "hash": "fb86df160cc89eff", "src": "db2@1.60.1.70338"}
+{"id": 250340, "field": "description", "en": "Drink to regenerate $s1 mana every 5 sec. Lasts for $d.", "hash": "52733d23fc207290", "src": "db2@1.60.1.70338"}
+{"id": 250341, "field": "name", "en": "Greater Mageblood Elixir", "hash": "8557ef22e36b8132", "src": "db2@1.60.1.70338"}
+{"id": 250341, "field": "description", "en": "Drink to regenerate $s1 mana every 5 sec. Lasts for $d.", "hash": "52733d23fc207290", "src": "db2@1.60.1.70338"}
+{"id": 250342, "field": "name", "en": "Lesser Arcane Elixir", "hash": "f80f15c18a53ca45", "src": "db2@1.60.1.70338"}
+{"id": 250342, "field": "description", "en": "Drink to increase spell damage by up to $s1. Lasts for $d.", "hash": "fc832a6e4126203b", "src": "db2@1.60.1.70338"}
+{"id": 250343, "field": "name", "en": "Elixir of Nature Power", "hash": "39fc601ddb1ee306", "src": "db2@1.60.1.70338"}
+{"id": 250343, "field": "description", "en": "Drink to increase nature spell damage by up to $s1. Lasts for $d.", "hash": "a293594aede2905f", "src": "db2@1.60.1.70338"}
+{"id": 250344, "field": "name", "en": "Elixir of Minor Spirit", "hash": "eb24edaac6e9d0f7", "src": "db2@1.60.1.70338"}
+{"id": 250344, "field": "description", "en": "Drink to increase your Spirit by $s1. Lasts for $d.", "hash": "abdf52e805ed21e4", "src": "db2@1.60.1.70338"}
+{"id": 250345, "field": "name", "en": "Elixir of Lesser Spirit", "hash": "d0670d95147218ca", "src": "db2@1.60.1.70338"}
+{"id": 250345, "field": "description", "en": "Drink to increase your Spirit by $s1. Lasts for $d.", "hash": "abdf52e805ed21e4", "src": "db2@1.60.1.70338"}
+{"id": 250346, "field": "name", "en": "Elixir of Spirit", "hash": "6b77d8ef72377608", "src": "db2@1.60.1.70338"}
+{"id": 250346, "field": "description", "en": "Drink to increase your Spirit by $s1. Lasts for $d.", "hash": "abdf52e805ed21e4", "src": "db2@1.60.1.70338"}
+{"id": 250347, "field": "name", "en": "Elixir of Greater Spirit", "hash": "deb809def9230064", "src": "db2@1.60.1.70338"}
+{"id": 250347, "field": "description", "en": "Drink to increase your Spirit by $s1. Lasts for $d.", "hash": "abdf52e805ed21e4", "src": "db2@1.60.1.70338"}
+{"id": 250348, "field": "name", "en": "Elixir of the Whale", "hash": "9379516f9de8695c", "src": "db2@1.60.1.70338"}
+{"id": 250348, "field": "description", "en": "Drink to increase your Spirit by $s1 and chance to critically hit by $s2%. Lasts for $d.", "hash": "39d4b1c4cf27ff6a", "src": "db2@1.60.1.70338"}
+{"id": 250349, "field": "name", "en": "Elixir of Strength", "hash": "ebe5443d9f53bf9a", "src": "db2@1.60.1.70338"}
+{"id": 250349, "field": "description", "en": "Drink to increase your Strength by $s1. Lasts for $d.", "hash": "02a96a9595f151bb", "src": "db2@1.60.1.70338"}
+{"id": 250350, "field": "name", "en": "Elixir of Ferocity", "hash": "f2b9759f4ecdbad8", "src": "db2@1.60.1.70338"}
+{"id": 250350, "field": "description", "en": "Drink to increase your Strength and Agility by $s1. Lasts for $d.", "hash": "11af8b9a19cd71e6", "src": "db2@1.60.1.70338"}
+{"id": 250351, "field": "name", "en": "Elixir of the Grizzly", "hash": "05e81a720af0c9fa", "src": "db2@1.60.1.70338"}
+{"id": 250351, "field": "description", "en": "Drink to increase your Strength by $s1 and chance to critically hit by $s2%. Lasts for $d.", "hash": "81682e2402502346", "src": "db2@1.60.1.70338"}
+{"id": 250353, "field": "name", "en": "Elixir of Lesser Intellect", "hash": "07b9bf7ced5741de", "src": "db2@1.60.1.70338"}
+{"id": 250353, "field": "description", "en": "Drink to increase your Intellect by $s1. Lasts for $d.", "hash": "8848828403984a62", "src": "db2@1.60.1.70338"}
+{"id": 250354, "field": "name", "en": "Elixir of Intellect", "hash": "f9bf511fc6eb4737", "src": "db2@1.60.1.70338"}
+{"id": 250354, "field": "description", "en": "Drink to increase your Intellect by $s1. Lasts for $d.", "hash": "8848828403984a62", "src": "db2@1.60.1.70338"}
+{"id": 250363, "field": "name", "en": "Recipe: Draught of Predatory Senses", "hash": "922fd685dc9da317", "src": "db2@1.60.1.70338"}
+{"id": 250363, "field": "description", "en": "Teaches you how to craft Draught of Predatory Senses.", "hash": "dfc6fe23b77c0b8e", "src": "db2@1.60.1.70338"}
+{"id": 250364, "field": "name", "en": "Recipe: Elixir of Cunning", "hash": "9e6cf80c2aa9876a", "src": "db2@1.60.1.70338"}
+{"id": 250364, "field": "description", "en": "Teaches you how to craft Elixir of Cunning.", "hash": "c74ccbbce4acbe0c", "src": "db2@1.60.1.70338"}
+{"id": 250365, "field": "name", "en": "Recipe: Elixir of the Phalanx", "hash": "94412e361316a761", "src": "db2@1.60.1.70338"}
+{"id": 250365, "field": "description", "en": "Teaches you how to craft Elixir of the Phalanx.", "hash": "c7d0e0c1b44cae43", "src": "db2@1.60.1.70338"}
+{"id": 250366, "field": "name", "en": "Recipe: Minor Cleric's Elixir", "hash": "1cf7b9aafb28680f", "src": "db2@1.60.1.70338"}
+{"id": 250366, "field": "description", "en": "Teaches you how to craft Minor Cleric's Elixir.", "hash": "bd3a3becd23e0477", "src": "db2@1.60.1.70338"}
+{"id": 250367, "field": "name", "en": "Recipe: Lesser Cleric's Elixir", "hash": "acfba3660e8ed23f", "src": "db2@1.60.1.70338"}
+{"id": 250367, "field": "description", "en": "Teaches you how to craft Lesser Cleric's Elixir.", "hash": "7f44084f3794c90f", "src": "db2@1.60.1.70338"}
+{"id": 250368, "field": "name", "en": "Recipe: Cleric's Elixir", "hash": "f0a57c6a9dbeb779", "src": "db2@1.60.1.70338"}
+{"id": 250368, "field": "description", "en": "Teaches you how to craft Cleric's Elixir.", "hash": "ac2119c58fc8b2a0", "src": "db2@1.60.1.70338"}
+{"id": 250369, "field": "name", "en": "Recipe: Greater Cleric's Elixir", "hash": "ab7a91cfcb33c759", "src": "db2@1.60.1.70338"}
+{"id": 250369, "field": "description", "en": "Teaches you how to craft Greater Cleric's Elixir.", "hash": "eeeb75e4f32e78f5", "src": "db2@1.60.1.70338"}
+{"id": 250370, "field": "name", "en": "Recipe: Elixir of Fortitude", "hash": "600f96ddc270e46a", "src": "db2@1.60.1.70338"}
+{"id": 250370, "field": "description", "en": "Teaches you how to craft Elixir of Fortitude.", "hash": "9e5c9b64197e8278", "src": "db2@1.60.1.70338"}
+{"id": 250371, "field": "name", "en": "Recipe: Elixir of Greater Fortitude", "hash": "17f57e47cb9abd77", "src": "db2@1.60.1.70338"}
+{"id": 250371, "field": "description", "en": "Teaches you how to craft Elixir of Greater Fortitude.", "hash": "53ebd5336a21b5f0", "src": "db2@1.60.1.70338"}
+{"id": 250372, "field": "name", "en": "Recipe: Elixir of Wicked Regeneration", "hash": "4f46d6a870d8a458", "src": "db2@1.60.1.70338"}
+{"id": 250372, "field": "description", "en": "Teaches you how to craft Elixir of Wicked Regeneration.", "hash": "1f2e35aac7753419", "src": "db2@1.60.1.70338"}
+{"id": 250373, "field": "name", "en": "Recipe: Elixir of the Owl", "hash": "c673833a155dd8d2", "src": "db2@1.60.1.70338"}
+{"id": 250373, "field": "description", "en": "Teaches you how to craft Elixir of the Owl.", "hash": "42a604af0303b56e", "src": "db2@1.60.1.70338"}
+{"id": 250374, "field": "name", "en": "Recipe: Elixir of Sages", "hash": "268b2b2770236aa9", "src": "db2@1.60.1.70338"}
+{"id": 250374, "field": "description", "en": "Teaches you how to craft Elixir of Sages.", "hash": "40a98279abfc9f42", "src": "db2@1.60.1.70338"}
+{"id": 250375, "field": "name", "en": "Recipe: Minor Mageblood Elixir", "hash": "4ae3150a8e8084fd", "src": "db2@1.60.1.70338"}
+{"id": 250375, "field": "description", "en": "Teaches you how to craft Minor Mageblood Elixir.", "hash": "4cb32e41efa8f2db", "src": "db2@1.60.1.70338"}
+{"id": 250376, "field": "name", "en": "Recipe: Lesser Mageblood Elixir", "hash": "fce3b1ab025db457", "src": "db2@1.60.1.70338"}
+{"id": 250376, "field": "description", "en": "Teaches you how to craft Lesser Mageblood Elixir.", "hash": "97b6c44a82b8dd11", "src": "db2@1.60.1.70338"}
+{"id": 250377, "field": "name", "en": "Recipe: Greater Mageblood Elixir", "hash": "37d7b166c908d57e", "src": "db2@1.60.1.70338"}
+{"id": 250377, "field": "description", "en": "Teaches you how to craft Greater Mageblood Elixir.", "hash": "ba63d8a6011add64", "src": "db2@1.60.1.70338"}
+{"id": 250378, "field": "name", "en": "Recipe: Lesser Arcane Elixir", "hash": "a9141829be98c900", "src": "db2@1.60.1.70338"}
+{"id": 250378, "field": "description", "en": "Teaches you how to craft Lesser Arcane Elixir.", "hash": "19a32a86e3c2de25", "src": "db2@1.60.1.70338"}
+{"id": 250379, "field": "name", "en": "Recipe: Elixir of Nature Power", "hash": "c2ca465a55bd593a", "src": "db2@1.60.1.70338"}
+{"id": 250379, "field": "description", "en": "Teaches you how to craft Elixir of Nature Power.", "hash": "a8016b6269d26757", "src": "db2@1.60.1.70338"}
+{"id": 250380, "field": "name", "en": "Recipe: Elixir of Minor Spirit", "hash": "73f2d3ec4188472b", "src": "db2@1.60.1.70338"}
+{"id": 250380, "field": "description", "en": "Teaches you how to craft Elixir of Minor Spirit.", "hash": "4fc1dc5039fd8c64", "src": "db2@1.60.1.70338"}
+{"id": 250381, "field": "name", "en": "Recipe: Elixir of Lesser Spirit", "hash": "d1c3e02a0a072e22", "src": "db2@1.60.1.70338"}
+{"id": 250381, "field": "description", "en": "Teaches you how to craft Elixir of Lesser Spirit.", "hash": "866e8ed9c46c8db0", "src": "db2@1.60.1.70338"}
+{"id": 250382, "field": "name", "en": "Recipe: Elixir of Spirit", "hash": "c0ccc2193733b589", "src": "db2@1.60.1.70338"}
+{"id": 250382, "field": "description", "en": "Teaches you how to craft Elixir of Spirit.", "hash": "f85516124bd5cf9f", "src": "db2@1.60.1.70338"}
+{"id": 250383, "field": "name", "en": "Recipe: Elixir of Greater Spirit", "hash": "9137cc22dec054b0", "src": "db2@1.60.1.70338"}
+{"id": 250383, "field": "description", "en": "Teaches you how to craft Elixir of Greater Spirit.", "hash": "769187c04fc8e44a", "src": "db2@1.60.1.70338"}
+{"id": 250384, "field": "name", "en": "Recipe: Elixir of the Whale", "hash": "bfd14b96b5309971", "src": "db2@1.60.1.70338"}
+{"id": 250384, "field": "description", "en": "Teaches you how to craft Elixir of the Whale.", "hash": "9e7c1704aae85a88", "src": "db2@1.60.1.70338"}
+{"id": 250385, "field": "name", "en": "Recipe: Elixir of Strength", "hash": "24e7e4741e87b439", "src": "db2@1.60.1.70338"}
+{"id": 250385, "field": "description", "en": "Teaches you how to craft Elixir of Strength.", "hash": "c83567b42abc4156", "src": "db2@1.60.1.70338"}
+{"id": 250386, "field": "name", "en": "Recipe: Elixir of Ferocity", "hash": "2bbc15d6ce01af66", "src": "db2@1.60.1.70338"}
+{"id": 250386, "field": "description", "en": "Teaches you how to craft Elixir of Ferocity.", "hash": "46caacee2a5dea5d", "src": "db2@1.60.1.70338"}
+{"id": 250387, "field": "name", "en": "Recipe: Elixir of the Grizzly", "hash": "9b7854dd566dbff7", "src": "db2@1.60.1.70338"}
+{"id": 250387, "field": "description", "en": "Teaches you how to craft Elixir of the Grizzly.", "hash": "7909a84a6fd402ac", "src": "db2@1.60.1.70338"}
+{"id": 250388, "field": "name", "en": "Recipe: Elixir of Lesser Intellect", "hash": "be0efa64bcaf0b45", "src": "db2@1.60.1.70338"}
+{"id": 250388, "field": "description", "en": "Teaches you how to craft Elixir of Lesser Intellect.", "hash": "b12f9adc860f8ca7", "src": "db2@1.60.1.70338"}
+{"id": 250389, "field": "name", "en": "Recipe: Elixir of Intellect", "hash": "26174b4bde33774c", "src": "db2@1.60.1.70338"}
+{"id": 250389, "field": "description", "en": "Teaches you how to craft Elixir of Intellect.", "hash": "f44def180f4b33df", "src": "db2@1.60.1.70338"}
+{"id": 250482, "field": "name", "en": "Glowing Copper Boots", "hash": "5dc042fbd3024767", "src": "db2@1.60.1.70338"}
+{"id": 250483, "field": "name", "en": "Sterling Silver Boots", "hash": "c09279c1c9b8bdcf", "src": "db2@1.60.1.70338"}
+{"id": 250484, "field": "name", "en": "Sterling Silver Leggings", "hash": "ad574517a15de1da", "src": "db2@1.60.1.70338"}
+{"id": 250485, "field": "name", "en": "Sterling Silver Gauntlet", "hash": "c2e9d988996dedd4", "src": "db2@1.60.1.70338"}
+{"id": 250486, "field": "name", "en": "Sterling Silver Shoulders", "hash": "8db9916f2242fb16", "src": "db2@1.60.1.70338"}
+{"id": 250487, "field": "name", "en": "Sterling Silver Breastplate", "hash": "6cf1daad2d6d2c78", "src": "db2@1.60.1.70338"}
+{"id": 250488, "field": "name", "en": "Veteran's Chain Shirt", "hash": "99bb09ae8737445d", "src": "db2@1.60.1.70338"}
+{"id": 250489, "field": "name", "en": "Guard's Chain Shirt", "hash": "f726fd113c38107b", "src": "db2@1.60.1.70338"}
+{"id": 250490, "field": "name", "en": "Protector's Chain Shirt", "hash": "6111e8607ca59d91", "src": "db2@1.60.1.70338"}
+{"id": 250491, "field": "name", "en": "Acolyte's Chain Shirt", "hash": "e0a0f50acb45982c", "src": "db2@1.60.1.70338"}
+{"id": 250492, "field": "name", "en": "Crusader's Chain Shirt", "hash": "5ac326ce9039f1a1", "src": "db2@1.60.1.70338"}
+{"id": 250493, "field": "name", "en": "Veteran's Chain Leggings", "hash": "83fcc667098b0230", "src": "db2@1.60.1.70338"}
+{"id": 250494, "field": "name", "en": "Guard's Chain Leggings", "hash": "dff281a0fceb8e52", "src": "db2@1.60.1.70338"}
+{"id": 250495, "field": "name", "en": "Protector's Chain Leggings", "hash": "ea0f2ff965cf7cb0", "src": "db2@1.60.1.70338"}
+{"id": 250496, "field": "name", "en": "Acolyte's Chain Leggings", "hash": "db64733ea7b6eded", "src": "db2@1.60.1.70338"}
+{"id": 250497, "field": "name", "en": "Crusader's Chain Leggings", "hash": "b2bed8b80ca56895", "src": "db2@1.60.1.70338"}
+{"id": 250498, "field": "name", "en": "Veteran's Chain Helm", "hash": "01a694a7fd784311", "src": "db2@1.60.1.70338"}
+{"id": 250499, "field": "name", "en": "Guard's Chain Helm", "hash": "69efb5c501a1f38b", "src": "db2@1.60.1.70338"}
+{"id": 250500, "field": "name", "en": "Protector's Chain Helm", "hash": "d639cf0297bd6180", "src": "db2@1.60.1.70338"}
+{"id": 250501, "field": "name", "en": "Acolyte's Chain Helm", "hash": "15bbe0b5e2682bef", "src": "db2@1.60.1.70338"}
+{"id": 250502, "field": "name", "en": "Crusader's Chain Helm", "hash": "7a5490f5b2d03861", "src": "db2@1.60.1.70338"}
+{"id": 250503, "field": "name", "en": "Veteran's Boots", "hash": "4c36b28e3ba74e43", "src": "db2@1.60.1.70338"}
+{"id": 250504, "field": "name", "en": "Guard's Boots", "hash": "08ec2eb4e63a20a6", "src": "db2@1.60.1.70338"}
+{"id": 250505, "field": "name", "en": "Protector's Boots", "hash": "9cddf63f12d1011d", "src": "db2@1.60.1.70338"}
+{"id": 250506, "field": "name", "en": "Acolyte's Boots", "hash": "18a61fe72545be31", "src": "db2@1.60.1.70338"}
+{"id": 250507, "field": "name", "en": "Crusader's Boots", "hash": "a88d7c49bfa081cd", "src": "db2@1.60.1.70338"}
+{"id": 250508, "field": "name", "en": "Veteran's Gloves", "hash": "b4ea35f0b36601b4", "src": "db2@1.60.1.70338"}
+{"id": 250509, "field": "name", "en": "Guard's Gloves", "hash": "45c8bcb865ec50d5", "src": "db2@1.60.1.70338"}
+{"id": 250510, "field": "name", "en": "Protector's Gloves", "hash": "fa81da50dbb442d8", "src": "db2@1.60.1.70338"}
+{"id": 250511, "field": "name", "en": "Acolyte's Gloves", "hash": "51ef29f937340489", "src": "db2@1.60.1.70338"}
+{"id": 250512, "field": "name", "en": "Crusader's Gloves", "hash": "f553718cdeab1b5d", "src": "db2@1.60.1.70338"}
+{"id": 250513, "field": "name", "en": "Veteran's Chain Belt", "hash": "00d8c30cad088aeb", "src": "db2@1.60.1.70338"}
+{"id": 250514, "field": "name", "en": "Guard's Chain Belt", "hash": "6921e42ab1323b54", "src": "db2@1.60.1.70338"}
+{"id": 250515, "field": "name", "en": "Protector's Chain Belt", "hash": "d56bfd67474da95a", "src": "db2@1.60.1.70338"}
+{"id": 250516, "field": "name", "en": "Acolyte's Chain Belt", "hash": "14ee0f1a91f873c9", "src": "db2@1.60.1.70338"}
+{"id": 250517, "field": "name", "en": "Crusader's Chain Belt", "hash": "7986bf5a6260803b", "src": "db2@1.60.1.70338"}
+{"id": 250518, "field": "name", "en": "Veteran's Silvered Chain Shirt", "hash": "53c1556111aba354", "src": "db2@1.60.1.70338"}
+{"id": 250519, "field": "name", "en": "Guard's Silvered Chain Shirt", "hash": "c9bbac9b569c3b51", "src": "db2@1.60.1.70338"}
+{"id": 250520, "field": "name", "en": "Protector's Silvered Chain Shirt", "hash": "edf2053cddbe0e42", "src": "db2@1.60.1.70338"}
+{"id": 250521, "field": "name", "en": "Acolyte's Silvered Chain Shirt", "hash": "538a7a44a69b70f5", "src": "db2@1.60.1.70338"}
+{"id": 250522, "field": "name", "en": "Crusader's Silvered Chain Shirt", "hash": "c64615e975b177c9", "src": "db2@1.60.1.70338"}
+{"id": 250523, "field": "name", "en": "Veteran's Silvered Chain Leggings", "hash": "182890e85a333d7c", "src": "db2@1.60.1.70338"}
+{"id": 250524, "field": "name", "en": "Guard's Silvered Chain Leggings", "hash": "68fade156d476f6a", "src": "db2@1.60.1.70338"}
+{"id": 250525, "field": "name", "en": "Protector's Silvered Chain Leggings", "hash": "7405378ab416dac4", "src": "db2@1.60.1.70338"}
+{"id": 250526, "field": "name", "en": "Acolyte's Silvered Chain Leggings", "hash": "5d30089734955e02", "src": "db2@1.60.1.70338"}
+{"id": 250527, "field": "name", "en": "Crusader's Silvered Chain Leggings", "hash": "eecec4f81bfcfc1d", "src": "db2@1.60.1.70338"}
+{"id": 250528, "field": "name", "en": "Veteran's Silvered Chain Helm", "hash": "011dd5b848fdc011", "src": "db2@1.60.1.70338"}
+{"id": 250529, "field": "name", "en": "Guard's Silvered Chain Helm", "hash": "dce32a66b4901d59", "src": "db2@1.60.1.70338"}
+{"id": 250530, "field": "name", "en": "Protector's Silvered Chain Helm", "hash": "bde588e117a45205", "src": "db2@1.60.1.70338"}
+{"id": 250531, "field": "name", "en": "Acolyte's Silvered Chain Helm", "hash": "e5c191962b2d85d9", "src": "db2@1.60.1.70338"}
+{"id": 250532, "field": "name", "en": "Crusader's Silvered Chain Helm", "hash": "ee72e0f1c813fdc3", "src": "db2@1.60.1.70338"}
+{"id": 250533, "field": "name", "en": "Hard Gold Cuirass", "hash": "b21bf597a8b6a3ea", "src": "db2@1.60.1.70338"}
+{"id": 250534, "field": "name", "en": "Hard Gold Boots", "hash": "2ef7cf1cb6ae99ce", "src": "db2@1.60.1.70338"}
+{"id": 250535, "field": "name", "en": "Hard Gold Bracers", "hash": "7c6d2ce52df8b775", "src": "db2@1.60.1.70338"}
+{"id": 250536, "field": "name", "en": "Hard Gold Leggings", "hash": "5512c4ca4de6afdc", "src": "db2@1.60.1.70338"}
+{"id": 250537, "field": "name", "en": "Hard Gold Coif", "hash": "19e5a5f3c381536a", "src": "db2@1.60.1.70338"}
+{"id": 250538, "field": "name", "en": "Hard Gold Gauntlet", "hash": "6aa5593b45f6bbd6", "src": "db2@1.60.1.70338"}
+{"id": 250539, "field": "name", "en": "Hard Gold Pauldrons", "hash": "9b4e4baa763c9243", "src": "db2@1.60.1.70338"}
+{"id": 250540, "field": "name", "en": "Shining Mithril Breastplate", "hash": "a57932e07e0d084e", "src": "db2@1.60.1.70338"}
+{"id": 250541, "field": "name", "en": "Shining Mithril Pauldrons", "hash": "5bb78a26fdfc9c93", "src": "db2@1.60.1.70338"}
+{"id": 250542, "field": "name", "en": "Shining Mithril Boots", "hash": "e7ec8c29065cb05f", "src": "db2@1.60.1.70338"}
+{"id": 250543, "field": "name", "en": "Shining Mithril Helm", "hash": "7bb97538d47b4672", "src": "db2@1.60.1.70338"}
+{"id": 250544, "field": "name", "en": "Shining Mithril Pants", "hash": "dbcc031977880cbc", "src": "db2@1.60.1.70338"}
+{"id": 250545, "field": "name", "en": "Shining Mithril Gauntlet", "hash": "1fe6a3f95d71b8fa", "src": "db2@1.60.1.70338"}
+{"id": 250546, "field": "name", "en": "Officer's Boots", "hash": "8e4a9618cd5da456", "src": "db2@1.60.1.70338"}
+{"id": 250547, "field": "name", "en": "Sentinel's Boots", "hash": "d7064d28922238a1", "src": "db2@1.60.1.70338"}
+{"id": 250548, "field": "name", "en": "Warder's Boots", "hash": "31b23a0ed1dcb228", "src": "db2@1.60.1.70338"}
+{"id": 250549, "field": "name", "en": "Prefect's Boots", "hash": "e665c9b32a493c87", "src": "db2@1.60.1.70338"}
+{"id": 250550, "field": "name", "en": "Justicar's Boots", "hash": "5813c885ac247488", "src": "db2@1.60.1.70338"}
+{"id": 250551, "field": "name", "en": "Officer's Gloves", "hash": "8517a638d91529dc", "src": "db2@1.60.1.70338"}
+{"id": 250552, "field": "name", "en": "Sentinel's Gloves", "hash": "bd26542197d01767", "src": "db2@1.60.1.70338"}
+{"id": 250553, "field": "name", "en": "Warder's Gloves", "hash": "23208c2f2f6cc6fe", "src": "db2@1.60.1.70338"}
+{"id": 250554, "field": "name", "en": "Prefect's Gloves", "hash": "9b030f6a0b9282bf", "src": "db2@1.60.1.70338"}
+{"id": 250555, "field": "name", "en": "Justicar's Gloves", "hash": "c70c7373b907ed7b", "src": "db2@1.60.1.70338"}
+{"id": 250556, "field": "name", "en": "Officer's Belt", "hash": "b8c545e2f31d5f8f", "src": "db2@1.60.1.70338"}
+{"id": 250557, "field": "name", "en": "Sentinel's Belt", "hash": "2aab58e183f7d961", "src": "db2@1.60.1.70338"}
+{"id": 250558, "field": "name", "en": "Warder's Belt", "hash": "eec804b0f99bce02", "src": "db2@1.60.1.70338"}
+{"id": 250559, "field": "name", "en": "Prefect's Belt", "hash": "4fea9c45926291fb", "src": "db2@1.60.1.70338"}
+{"id": 250560, "field": "name", "en": "Justicar's Belt", "hash": "d993ffea885ceb5c", "src": "db2@1.60.1.70338"}
+{"id": 250561, "field": "name", "en": "Officer's Sabatons", "hash": "7fa48d082cc0f6e5", "src": "db2@1.60.1.70338"}
+{"id": 250562, "field": "name", "en": "Sentinel's Sabatons", "hash": "4facee9f924c9bc8", "src": "db2@1.60.1.70338"}
+{"id": 250563, "field": "name", "en": "Warder's Sabatons", "hash": "6223c774a524bf57", "src": "db2@1.60.1.70338"}
+{"id": 250564, "field": "name", "en": "Prefect's Sabatons", "hash": "e173727b9a3f3f5c", "src": "db2@1.60.1.70338"}
+{"id": 250565, "field": "name", "en": "Justicar's Sabatons", "hash": "e2f68b74e28e0180", "src": "db2@1.60.1.70338"}
+{"id": 250566, "field": "name", "en": "Officer's Gauntlet", "hash": "75557d43ff0addb7", "src": "db2@1.60.1.70338"}
+{"id": 250567, "field": "name", "en": "Sentinel's Gauntlet", "hash": "455ddeda649682ab", "src": "db2@1.60.1.70338"}
+{"id": 250568, "field": "name", "en": "Warder's Gauntlet", "hash": "57d4b7af776ea63a", "src": "db2@1.60.1.70338"}
+{"id": 250569, "field": "name", "en": "Prefect's Gauntlet", "hash": "d72462b66c89263f", "src": "db2@1.60.1.70338"}
+{"id": 250570, "field": "name", "en": "Justicar's Gauntlet", "hash": "d8a77bafb4d7e863", "src": "db2@1.60.1.70338"}
+{"id": 250571, "field": "name", "en": "Officer's Waistguard", "hash": "9bb493cf71a550dd", "src": "db2@1.60.1.70338"}
+{"id": 250572, "field": "name", "en": "Sentinel's Waistguard", "hash": "1d8a48530bc0f787", "src": "db2@1.60.1.70338"}
+{"id": 250573, "field": "name", "en": "Warder's Waistguard", "hash": "de77bef9f681eeaf", "src": "db2@1.60.1.70338"}
+{"id": 250574, "field": "name", "en": "Prefect's Waistguard", "hash": "32083debbff6645e", "src": "db2@1.60.1.70338"}
+{"id": 250575, "field": "name", "en": "Justicar's Waistguard", "hash": "8f2d4ba57215f498", "src": "db2@1.60.1.70338"}
+{"id": 250576, "field": "name", "en": "Officer's Pauldrons", "hash": "1370bbe0910a1fd0", "src": "db2@1.60.1.70338"}
+{"id": 250577, "field": "name", "en": "Sentinel's Pauldrons", "hash": "87baaba8b9be5f48", "src": "db2@1.60.1.70338"}
+{"id": 250578, "field": "name", "en": "Warder's Pauldrons", "hash": "fa8ba0d4760418e0", "src": "db2@1.60.1.70338"}
+{"id": 250579, "field": "name", "en": "Prefect's Pauldrons", "hash": "205026b317cf213a", "src": "db2@1.60.1.70338"}
+{"id": 250580, "field": "name", "en": "Justicar's Pauldrons", "hash": "e665ee1e2e8ab7ef", "src": "db2@1.60.1.70338"}
+{"id": 250581, "field": "name", "en": "Officer's Wristguards", "hash": "1900f8a048c626ee", "src": "db2@1.60.1.70338"}
+{"id": 250582, "field": "name", "en": "Sentinel's Wristguards", "hash": "895c56e7144160a8", "src": "db2@1.60.1.70338"}
+{"id": 250583, "field": "name", "en": "Warder's Wristguards", "hash": "42e00fc8c5ca63bb", "src": "db2@1.60.1.70338"}
+{"id": 250584, "field": "name", "en": "Prefect's Wristguards", "hash": "05d103e6ef65900f", "src": "db2@1.60.1.70338"}
+{"id": 250585, "field": "name", "en": "Justicar's Wristguards", "hash": "afc70aff4f99b437", "src": "db2@1.60.1.70338"}
+{"id": 250586, "field": "name", "en": "Blessed Plate Pauldrons", "hash": "88d71fae2977068f", "src": "db2@1.60.1.70338"}
+{"id": 250587, "field": "name", "en": "Blessed Plate Boots", "hash": "8c167c11913452a0", "src": "db2@1.60.1.70338"}
+{"id": 250588, "field": "name", "en": "Blessed Plate Gauntlet", "hash": "ff062613862a87d3", "src": "db2@1.60.1.70338"}
+{"id": 250589, "field": "name", "en": "Imperial Plate Gauntlets", "hash": "88c000400512d1c8", "src": "db2@1.60.1.70338"}
+{"id": 250590, "field": "name", "en": "Blessed Plate Bracers", "hash": "c9c5da6c63b6c931", "src": "db2@1.60.1.70338"}
+{"id": 250591, "field": "name", "en": "Blessed Plate Leggings", "hash": "e97391a28e1a7bd9", "src": "db2@1.60.1.70338"}
+{"id": 250592, "field": "name", "en": "Blessed Plate Belt", "hash": "bab53ddef48ce24b", "src": "db2@1.60.1.70338"}
+{"id": 250593, "field": "name", "en": "Blessed Plate Helm", "hash": "bb830f7944fc9a82", "src": "db2@1.60.1.70338"}
+{"id": 250594, "field": "name", "en": "Blessed Plate Chest", "hash": "9cb174496a946074", "src": "db2@1.60.1.70338"}
+{"id": 250595, "field": "name", "en": "Enriched Thorium Breastplate", "hash": "5fe1aa1cb7c58f23", "src": "db2@1.60.1.70338"}
+{"id": 250596, "field": "name", "en": "Enriched Thorium Leggings", "hash": "1ce4c3f5edc922dd", "src": "db2@1.60.1.70338"}
+{"id": 250597, "field": "name", "en": "Enriched Thorium Helm", "hash": "783fb8446b67c9de", "src": "db2@1.60.1.70338"}
+{"id": 250598, "field": "name", "en": "Champion's Legplates", "hash": "349df624a3034e3d", "src": "db2@1.60.1.70338"}
+{"id": 250599, "field": "name", "en": "Stalwart Helm", "hash": "b4ec87b08f4ee9fa", "src": "db2@1.60.1.70338"}
+{"id": 250600, "field": "name", "en": "Martyr's Legplates", "hash": "4ae60ee72005c333", "src": "db2@1.60.1.70338"}
+{"id": 250601, "field": "name", "en": "Breastplate of Salvation", "hash": "3b471144b6e8db17", "src": "db2@1.60.1.70338"}
+{"id": 250602, "field": "name", "en": "Brass Knuckles", "hash": "b4913e5af999258d", "src": "db2@1.60.1.70338"}
+{"id": 250603, "field": "name", "en": "Bronze Dory", "hash": "5f144abd8f1712de", "src": "db2@1.60.1.70338"}
+{"id": 250604, "field": "name", "en": "Iron Fists", "hash": "c9b00854f622c441", "src": "db2@1.60.1.70338"}
+{"id": 250605, "field": "name", "en": "Steel Spear", "hash": "adcda8ff6b503b74", "src": "db2@1.60.1.70338"}
+{"id": 250606, "field": "name", "en": "Iron Morningstar", "hash": "23c8f4d3f86c6977", "src": "db2@1.60.1.70338"}
+{"id": 250607, "field": "name", "en": "Mithril Shortsword", "hash": "2b43a482942970e8", "src": "db2@1.60.1.70338"}
+{"id": 250608, "field": "name", "en": "Mithril Warhammer", "hash": "025a9e6b92fc35d8", "src": "db2@1.60.1.70338"}
+{"id": 250609, "field": "name", "en": "Mithril Claws", "hash": "6fe2006c03edb799", "src": "db2@1.60.1.70338"}
+{"id": 250610, "field": "name", "en": "Mithril Claymore", "hash": "e90499acfd9be529", "src": "db2@1.60.1.70338"}
+{"id": 250611, "field": "name", "en": "Mithril Stiletto", "hash": "fc915aa8e3dfb755", "src": "db2@1.60.1.70338"}
+{"id": 250612, "field": "name", "en": "Charged Mithril Battleaxe", "hash": "623d9da03cbab707", "src": "db2@1.60.1.70338"}
+{"id": 250613, "field": "name", "en": "Thorium Greatmace", "hash": "bcbb327ec1557534", "src": "db2@1.60.1.70338"}
+{"id": 250614, "field": "name", "en": "Thorium Cestus", "hash": "923cf070beda514f", "src": "db2@1.60.1.70338"}
+{"id": 250615, "field": "name", "en": "Thorium Poleaxe", "hash": "588551c004dc5f1a", "src": "db2@1.60.1.70338"}
+{"id": 250616, "field": "name", "en": "Bold Dirk", "hash": "83dddc3fff5b36b2", "src": "db2@1.60.1.70338"}
+{"id": 250617, "field": "name", "en": "Stormcarver", "hash": "73c7ed20b7a5cb75", "src": "db2@1.60.1.70338"}
+{"id": 250618, "field": "name", "en": "Bagh Nakh", "hash": "63915234941f2d0c", "src": "db2@1.60.1.70338"}
+{"id": 250619, "field": "name", "en": "Legionite Glaive", "hash": "93c31b6f8bdd34dc", "src": "db2@1.60.1.70338"}
+{"id": 250620, "field": "name", "en": "Gemmed Copper Boots", "hash": "683ef97a54675cce", "src": "db2@1.60.1.70338"}
+{"id": 250621, "field": "name", "en": "Strange Copper Boots", "hash": "a10aebfb42cab98a", "src": "db2@1.60.1.70338"}
+{"id": 250725, "field": "name", "en": "Crate of Exotic Parts", "hash": "ba194cba9f25d394", "src": "db2@1.60.1.70338"}
+{"id": 250725, "field": "description", "en": "Handle with care.\nA bill of lading is attached that clearly marks the shipment as hazardous and requiring gentle transport. Notes on the contents indicate that they will soon expire if not secured properly by the recipient.", "hash": "714c6e5648288420", "src": "db2@1.60.1.70338"}
+{"id": 250744, "field": "name", "en": "Firestarter Fir", "hash": "15f3de7bd8ca16f8", "src": "db2@1.60.1.70338"}
+{"id": 250744, "field": "description", "en": "A twisted handful of viable kindling.", "hash": "2287c3e1c0b13b71", "src": "db2@1.60.1.70338"}
+{"id": 250773, "field": "name", "en": "Nordrassil Root Cap", "hash": "f1dbd80737901dc4", "src": "db2@1.60.1.70338"}
+{"id": 250773, "field": "description", "en": "Covered in freshly broken soil. It has been digging through the earth for centuries.", "hash": "615128b5b4b65544", "src": "db2@1.60.1.70338"}
+{"id": 250775, "field": "name", "en": "Frayed Wire", "hash": "510df16cf96a6e8f", "src": "db2@1.60.1.70338"}
+{"id": 250932, "field": "name", "en": "Minor Spellblasting Potion", "hash": "c8202e0239ebafae", "src": "db2@1.60.1.70338"}
+{"id": 250932, "field": "description", "en": "Increases Spell Damage by $s1 for $d.", "hash": "e3e0c85cb6b7cc7f", "src": "db2@1.60.1.70338"}
+{"id": 250933, "field": "name", "en": "Lesser Spellblasting Potion", "hash": "251828e119a02da7", "src": "db2@1.60.1.70338"}
+{"id": 250933, "field": "description", "en": "Increases Spell Damage by $s1 for $d.", "hash": "e3e0c85cb6b7cc7f", "src": "db2@1.60.1.70338"}
+{"id": 250934, "field": "name", "en": "Spellblasting Potion", "hash": "9a8f5b2654b522f4", "src": "db2@1.60.1.70338"}
+{"id": 250934, "field": "description", "en": "Increases Spell Damage by $s1 for $d.", "hash": "e3e0c85cb6b7cc7f", "src": "db2@1.60.1.70338"}
+{"id": 250935, "field": "name", "en": "Greater Spellblasting Potion", "hash": "dbbe12e42d2abe60", "src": "db2@1.60.1.70338"}
+{"id": 250935, "field": "description", "en": "Increases Spell Damage by $s1 for $d.", "hash": "e3e0c85cb6b7cc7f", "src": "db2@1.60.1.70338"}
+{"id": 250936, "field": "name", "en": "Superior Spellblasting Potion", "hash": "6a04c06cc1655b6d", "src": "db2@1.60.1.70338"}
+{"id": 250936, "field": "description", "en": "Increases Spell Damage by $s1 for $d.", "hash": "e3e0c85cb6b7cc7f", "src": "db2@1.60.1.70338"}
+{"id": 250937, "field": "name", "en": "Major Spellblasting Potion", "hash": "6bb444f2223f4277", "src": "db2@1.60.1.70338"}
+{"id": 250937, "field": "description", "en": "Increases Spell Damage by $s1 for $d.", "hash": "e3e0c85cb6b7cc7f", "src": "db2@1.60.1.70338"}
+{"id": 250938, "field": "name", "en": "Minor Frenzy Potion", "hash": "d6e8db649d2be954", "src": "db2@1.60.1.70338"}
+{"id": 250938, "field": "description", "en": "Increases Attack Power by $s1 for $d.", "hash": "b593685aba28cb9e", "src": "db2@1.60.1.70338"}
+{"id": 250939, "field": "name", "en": "Lesser Frenzy Potion", "hash": "fb58eddc51169526", "src": "db2@1.60.1.70338"}
+{"id": 250939, "field": "description", "en": "Increases Attack Power by $s1 for $d.", "hash": "b593685aba28cb9e", "src": "db2@1.60.1.70338"}
+{"id": 250940, "field": "name", "en": "Frenzy Potion", "hash": "b65d7aa02b95fad2", "src": "db2@1.60.1.70338"}
+{"id": 250940, "field": "description", "en": "Increases Attack Power by $s1 for $d.", "hash": "b593685aba28cb9e", "src": "db2@1.60.1.70338"}
+{"id": 250941, "field": "name", "en": "Greater Frenzy Potion", "hash": "c8696980380c2178", "src": "db2@1.60.1.70338"}
+{"id": 250941, "field": "description", "en": "Increases Attack Power by $s1 for $d.", "hash": "b593685aba28cb9e", "src": "db2@1.60.1.70338"}
+{"id": 250942, "field": "name", "en": "Superior Frenzy Potion", "hash": "6fb611cc00c2150e", "src": "db2@1.60.1.70338"}
+{"id": 250942, "field": "description", "en": "Increases Attack Power by $s1 for $d.", "hash": "b593685aba28cb9e", "src": "db2@1.60.1.70338"}
+{"id": 250943, "field": "name", "en": "Major Frenzy Potion", "hash": "33a36c7cd663a7d6", "src": "db2@1.60.1.70338"}
+{"id": 250943, "field": "description", "en": "Increases Attack Power by $s1 for $d.", "hash": "b593685aba28cb9e", "src": "db2@1.60.1.70338"}
+{"id": 250944, "field": "name", "en": "Minor Mender's Potion", "hash": "558db6668d522c7b", "src": "db2@1.60.1.70338"}
+{"id": 250944, "field": "description", "en": "Increases Spell Healing by $s1 for $d.", "hash": "ca86de190e9930de", "src": "db2@1.60.1.70338"}
+{"id": 250945, "field": "name", "en": "Lesser Mender's Potion", "hash": "f253f45071971674", "src": "db2@1.60.1.70338"}
+{"id": 250945, "field": "description", "en": "Increases Spell Healing by $s1 for $d.", "hash": "ca86de190e9930de", "src": "db2@1.60.1.70338"}
+{"id": 250946, "field": "name", "en": "Mender's Potion", "hash": "b653d8e4fbfbdbae", "src": "db2@1.60.1.70338"}
+{"id": 250946, "field": "description", "en": "Increases Spell Healing by $s1 for $d.", "hash": "ca86de190e9930de", "src": "db2@1.60.1.70338"}
+{"id": 250947, "field": "name", "en": "Greater Mender's Potion", "hash": "7843f666b3456c6a", "src": "db2@1.60.1.70338"}
+{"id": 250947, "field": "description", "en": "Increases Spell Healing by $s1 for $d.", "hash": "ca86de190e9930de", "src": "db2@1.60.1.70338"}
+{"id": 250948, "field": "name", "en": "Superior Mender's Potion", "hash": "6a0150f04fef0dcd", "src": "db2@1.60.1.70338"}
+{"id": 250948, "field": "description", "en": "Increases Spell Healing by $s1 for $d.", "hash": "ca86de190e9930de", "src": "db2@1.60.1.70338"}
+{"id": 250949, "field": "name", "en": "Major Mender's Potion", "hash": "6c1542796a3a3cee", "src": "db2@1.60.1.70338"}
+{"id": 250949, "field": "description", "en": "Increases Spell Healing by $s1 for $d.", "hash": "ca86de190e9930de", "src": "db2@1.60.1.70338"}
+{"id": 250950, "field": "name", "en": "Potion of Venomous Blood", "hash": "2bd0c5572f39ab4b", "src": "db2@1.60.1.70338"}
+{"id": 250950, "field": "description", "en": "Gain $U doses of Venomous Blood. Whenever you suffer Bleed damage, one dose is spread to a nearby enemy within $s2 yds. Lasts up to $d.\r\n\r\nVenomous Blood deals $s1 Nature damage per dose when it expires.", "hash": "8b8489255b4ecbbe", "src": "db2@1.60.1.70338"}
+{"id": 250951, "field": "name", "en": "Caustic Smog Potion", "hash": "52ed896f18367044", "src": "db2@1.60.1.70338"}
+{"id": 250951, "field": "description", "en": "Throw a fragile concoction at the target area, revealing a cloud of Caustic Smog for $1252526d. Enemies standing within the cloud suffer $1252543s1 Nature damage every $1252543t1 sec.", "hash": "a6d056008637f824", "src": "db2@1.60.1.70338"}
+{"id": 250952, "field": "name", "en": "Disorienting Smog Potion", "hash": "471958b23f2cdf9a", "src": "db2@1.60.1.70338"}
+{"id": 250952, "field": "description", "en": "Throw a fragile concoction at the target area, revealing a cloud of Disorienting Smog for $1252545d. Enemies standing within the cloud have their Hit Chance reduced by $1252546s1%. Ineffective against targets above level $1252546s2.", "hash": "9e622abad513a446", "src": "db2@1.60.1.70338"}
+{"id": 250953, "field": "name", "en": "Dragonfire Potion", "hash": "d13b5266ead57173", "src": "db2@1.60.1.70338"}
+{"id": 250953, "field": "description", "en": "Unleash a belch of dragonfire, dealing $s1 Fire damage instantly in a narrow cone in front of you. Affected targets will suffer $s2 additional damage every $t2 sec for $d.", "hash": "416cdf8142f57470", "src": "db2@1.60.1.70338"}
+{"id": 250954, "field": "name", "en": "Potion of Elemental Purging", "hash": "2072950bb4b67899", "src": "db2@1.60.1.70338"}
+{"id": 250954, "field": "description", "en": "Increases Spell Damage by $s1 against Elementals. Lasts $d.", "hash": "6b5184209264faaa", "src": "db2@1.60.1.70338"}
+{"id": 250955, "field": "name", "en": "Potion of Beast Slaying", "hash": "ebd97780ec1b549e", "src": "db2@1.60.1.70338"}
+{"id": 250955, "field": "description", "en": "Increases Attack Power by $s1 against Beasts. Lasts $d.", "hash": "c2c3cf7e34839b30", "src": "db2@1.60.1.70338"}
+{"id": 250976, "field": "name", "en": "Recipe: Minor Spellblasting Potion", "hash": "7e7568ef09437915", "src": "db2@1.60.1.70338"}
+{"id": 250976, "field": "description", "en": "Teaches you how to craft Minor Spellblasting Potion.", "hash": "259a2b5dcdcec49f", "src": "db2@1.60.1.70338"}
+{"id": 250977, "field": "name", "en": "Recipe: Lesser Spellblasting Potion", "hash": "72b54f6af72b431e", "src": "db2@1.60.1.70338"}
+{"id": 250977, "field": "description", "en": "Teaches you how to craft Lesser Spellblasting Potion.", "hash": "c413db023456c2f4", "src": "db2@1.60.1.70338"}
+{"id": 250978, "field": "name", "en": "Recipe: Spellblasting Potion", "hash": "4b945d8e88fa21af", "src": "db2@1.60.1.70338"}
+{"id": 250978, "field": "description", "en": "Teaches you how to craft Spellblasting Potion.", "hash": "4146ac458d0e8f77", "src": "db2@1.60.1.70338"}
+{"id": 250979, "field": "name", "en": "Recipe: Greater Spellblasting Potion", "hash": "9328cbc7bc03d9ed", "src": "db2@1.60.1.70338"}
+{"id": 250979, "field": "description", "en": "Teaches you how to craft Greater Spellblasting Potion.", "hash": "27e02603ee3868b3", "src": "db2@1.60.1.70338"}
+{"id": 250980, "field": "name", "en": "Recipe: Superior Spellblasting Potion", "hash": "45a15bdc988dd3c4", "src": "db2@1.60.1.70338"}
+{"id": 250980, "field": "description", "en": "Teaches you how to craft Superior Spellblasting Potion.", "hash": "2f805f2d9e724a17", "src": "db2@1.60.1.70338"}
+{"id": 250981, "field": "name", "en": "Recipe: Major Spellblasting Potion", "hash": "22097fdff1970bcd", "src": "db2@1.60.1.70338"}
+{"id": 250981, "field": "description", "en": "Teaches you how to craft Major Spellblasting Potion.", "hash": "da61e73d1e08ec36", "src": "db2@1.60.1.70338"}
+{"id": 250982, "field": "name", "en": "Recipe: Minor Frenzy Potion", "hash": "0340d590b4741969", "src": "db2@1.60.1.70338"}
+{"id": 250982, "field": "description", "en": "Teaches you how to craft Minor Frenzy Potion.", "hash": "208fb01231bad9f9", "src": "db2@1.60.1.70338"}
+{"id": 250983, "field": "name", "en": "Recipe: Lesser Frenzy Potion", "hash": "ac5df044855b93e1", "src": "db2@1.60.1.70338"}
+{"id": 250983, "field": "description", "en": "Teaches you how to craft Lesser Frenzy Potion.", "hash": "c86cc05c2b87f3c6", "src": "db2@1.60.1.70338"}
+{"id": 250984, "field": "name", "en": "Recipe: Frenzy Potion", "hash": "414ec32d3b862ea0", "src": "db2@1.60.1.70338"}
+{"id": 250984, "field": "description", "en": "Teaches you how to craft Frenzy Potion.", "hash": "f38dd62334a801a6", "src": "db2@1.60.1.70338"}
+{"id": 250985, "field": "name", "en": "Recipe: Greater Frenzy Potion", "hash": "5df9a3f083891775", "src": "db2@1.60.1.70338"}
+{"id": 250985, "field": "description", "en": "Teaches you how to craft Greater Frenzy Potion.", "hash": "01351e68647489e8", "src": "db2@1.60.1.70338"}
+{"id": 250986, "field": "name", "en": "Recipe: Superior Frenzy Potion", "hash": "f883f8097b608b31", "src": "db2@1.60.1.70338"}
+{"id": 250986, "field": "description", "en": "Teaches you how to craft Superior Frenzy Potion.", "hash": "2607587b414e8a1e", "src": "db2@1.60.1.70338"}
+{"id": 250987, "field": "name", "en": "Recipe: Major Frenzy Potion", "hash": "5ffb66a3edabd7eb", "src": "db2@1.60.1.70338"}
+{"id": 250987, "field": "description", "en": "Teaches you how to craft Major Frenzy Potion.", "hash": "9407edb63bcb815b", "src": "db2@1.60.1.70338"}
+{"id": 250988, "field": "name", "en": "Recipe: Minor Mender's Potion", "hash": "eb1df0d1d8cf2278", "src": "db2@1.60.1.70338"}
+{"id": 250988, "field": "description", "en": "Teaches you how to craft Minor Mender's Potion.", "hash": "3ac876f3d25a4909", "src": "db2@1.60.1.70338"}
+{"id": 250989, "field": "name", "en": "Recipe: Lesser Mender's Potion", "hash": "7b21da92ec358c97", "src": "db2@1.60.1.70338"}
+{"id": 250989, "field": "description", "en": "Teaches you how to craft Lesser Mender's Potion.", "hash": "fcd2435137b10da1", "src": "db2@1.60.1.70338"}
+{"id": 250990, "field": "name", "en": "Recipe: Mender's Potion", "hash": "becbb3967b6571e2", "src": "db2@1.60.1.70338"}
+{"id": 250990, "field": "description", "en": "Teaches you how to craft Mender's Potion.", "hash": "29af54cc8fe4f732", "src": "db2@1.60.1.70338"}
+{"id": 250992, "field": "name", "en": "Recipe: Superior Mender's Potion", "hash": "1c811334358c6219", "src": "db2@1.60.1.70338"}
+{"id": 250992, "field": "description", "en": "Teaches you how to craft Superior Mender's Potion.", "hash": "bd10e4ca4ebefe61", "src": "db2@1.60.1.70338"}
+{"id": 250993, "field": "name", "en": "Recipe: Major Mender's Potion", "hash": "01a57ce9b5b732eb", "src": "db2@1.60.1.70338"}
+{"id": 250993, "field": "description", "en": "Teaches you how to craft Major Mender's Potion.", "hash": "c22524e3144e60de", "src": "db2@1.60.1.70338"}
+{"id": 250994, "field": "name", "en": "Recipe: Potion of Venomous Blood", "hash": "de50879614d6ff97", "src": "db2@1.60.1.70338"}
+{"id": 250994, "field": "description", "en": "Teaches you how to craft Potion of Venomous Blood.", "hash": "ea3974df986566dc", "src": "db2@1.60.1.70338"}
+{"id": 250995, "field": "name", "en": "Recipe: Caustic Smog Potion", "hash": "7f4583962f7ea059", "src": "db2@1.60.1.70338"}
+{"id": 250995, "field": "description", "en": "Teaches you how to craft Caustic Smog Potion.", "hash": "96f4be5f9c51696a", "src": "db2@1.60.1.70338"}
+{"id": 250996, "field": "name", "en": "Recipe: Disorienting Smog Potion", "hash": "f9991af124ca33e6", "src": "db2@1.60.1.70338"}
+{"id": 250996, "field": "description", "en": "Teaches you how to craft Disorienting Smog Potion.", "hash": "e05cdcb6107c1318", "src": "db2@1.60.1.70338"}
+{"id": 250997, "field": "name", "en": "Recipe: Dragonfire Potion", "hash": "7baea3c0983963eb", "src": "db2@1.60.1.70338"}
+{"id": 250997, "field": "description", "en": "Teaches you how to craft Dragonfire Potion.", "hash": "ffe7a87e9bd21262", "src": "db2@1.60.1.70338"}
+{"id": 250998, "field": "name", "en": "Recipe: Potion of Elemental Purging", "hash": "6e0fbb9492418e21", "src": "db2@1.60.1.70338"}
+{"id": 250998, "field": "description", "en": "Teaches you how to craft Potion of Elemental Purging.", "hash": "63593476360337f6", "src": "db2@1.60.1.70338"}
+{"id": 250999, "field": "name", "en": "Recipe: Potion of Beast Slaying", "hash": "ed364a15e1b069f6", "src": "db2@1.60.1.70338"}
+{"id": 250999, "field": "description", "en": "Teaches you how to craft Potion of Beast Slaying.", "hash": "91fac260ce6a978f", "src": "db2@1.60.1.70338"}

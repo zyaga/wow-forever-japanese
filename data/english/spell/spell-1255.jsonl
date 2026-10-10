@@ -1,193 +1,193 @@
-{"id": 1255000, "field": "name", "en": "Mender's Mail Bracers", "hash": "571f6c8c6e0af3e1", "src": "db2@1.60.1.70291"}
-{"id": 1255001, "field": "name", "en": "Skirmisher's Mail Bracers", "hash": "67f16f349be27d07", "src": "db2@1.60.1.70291"}
-{"id": 1255002, "field": "name", "en": "Skycaller's Mail Bracers", "hash": "f15b7d0270f2effb", "src": "db2@1.60.1.70291"}
-{"id": 1255003, "field": "name", "en": "Stalker's Mail Bracers", "hash": "fcb72aa3623d30e2", "src": "db2@1.60.1.70291"}
-{"id": 1255004, "field": "name", "en": "Mender's Mail Shoulder", "hash": "72c2a18847878f79", "src": "db2@1.60.1.70291"}
-{"id": 1255005, "field": "name", "en": "Skirmisher's Mail Shoulder", "hash": "0e39fdadab9314e4", "src": "db2@1.60.1.70291"}
-{"id": 1255006, "field": "name", "en": "Skycaller's Mail Shoulder", "hash": "5f7f0f75ecf34e6f", "src": "db2@1.60.1.70291"}
-{"id": 1255007, "field": "name", "en": "Stalker's Mail Shoulder", "hash": "2f68e8f6fd123351", "src": "db2@1.60.1.70291"}
-{"id": 1255008, "field": "name", "en": "Mender's Mail Boots", "hash": "2200a2bc7c4f6aff", "src": "db2@1.60.1.70291"}
-{"id": 1255009, "field": "name", "en": "Skirmisher's Mail Boots", "hash": "7f726c8c6b6355c4", "src": "db2@1.60.1.70291"}
-{"id": 1255010, "field": "name", "en": "Skycaller's Mail Boots", "hash": "f81f7d157c02e483", "src": "db2@1.60.1.70291"}
-{"id": 1255011, "field": "name", "en": "Stalker's Mail Boots", "hash": "c77e123ae697cb31", "src": "db2@1.60.1.70291"}
-{"id": 1255012, "field": "name", "en": "Ironfeather Leggings", "hash": "fd1961fc81421c69", "src": "db2@1.60.1.70291"}
-{"id": 1255013, "field": "name", "en": "Warbear Helm", "hash": "9d003c13574b81d9", "src": "db2@1.60.1.70291"}
-{"id": 1255014, "field": "name", "en": "Timbermaw Tunic", "hash": "8b265de47a0142ac", "src": "db2@1.60.1.70291"}
-{"id": 1255015, "field": "name", "en": "Dawn Armor", "hash": "9527421ea08f602a", "src": "db2@1.60.1.70291"}
-{"id": 1255016, "field": "name", "en": "Living Crown", "hash": "2cef752e5c517945", "src": "db2@1.60.1.70291"}
-{"id": 1255017, "field": "name", "en": "Blue Suede Hat", "hash": "5060778b3351fd53", "src": "db2@1.60.1.70291"}
-{"id": 1255018, "field": "name", "en": "Tooled Leather Pants", "hash": "065fdcd2c0671bb4", "src": "db2@1.60.1.70291"}
-{"id": 1255019, "field": "name", "en": "Blue Suede Bracers", "hash": "6913216b899893b9", "src": "db2@1.60.1.70291"}
-{"id": 1255020, "field": "name", "en": "Tooled Leather Epaulets", "hash": "c4f66ceb4487ebd2", "src": "db2@1.60.1.70291"}
-{"id": 1255021, "field": "name", "en": "Blue Suede Belt", "hash": "209063ccc82d77c9", "src": "db2@1.60.1.70291"}
-{"id": 1255022, "field": "name", "en": "Tooled Leather Bracers", "hash": "3bb02697fda78039", "src": "db2@1.60.1.70291"}
-{"id": 1255023, "field": "name", "en": "Wicked Leather Shoulder", "hash": "151cd428ca86b233", "src": "db2@1.60.1.70291"}
-{"id": 1255024, "field": "name", "en": "Blue Suede Armor", "hash": "9a138d2ec4cdd023", "src": "db2@1.60.1.70291"}
-{"id": 1255025, "field": "name", "en": "Tooled Leather Crown", "hash": "24750688d65e7a7e", "src": "db2@1.60.1.70291"}
-{"id": 1255026, "field": "name", "en": "Blue Suede Shoulder", "hash": "a2782fd2a55c6e9f", "src": "db2@1.60.1.70291"}
-{"id": 1255027, "field": "name", "en": "Tooled Leather Gauntlets", "hash": "d350b330b08afc47", "src": "db2@1.60.1.70291"}
-{"id": 1255028, "field": "name", "en": "Wicked Leather Boots", "hash": "abbd96b65afe0e1d", "src": "db2@1.60.1.70291"}
-{"id": 1255029, "field": "name", "en": "Blue Suede Pants", "hash": "9f1a5a40749cf6d5", "src": "db2@1.60.1.70291"}
-{"id": 1255030, "field": "name", "en": "Tooled Leather Armor", "hash": "01590fc01097f513", "src": "db2@1.60.1.70291"}
-{"id": 1255031, "field": "name", "en": "Mender's Leather Waistguard", "hash": "687c0e96aac8b9f0", "src": "db2@1.60.1.70291"}
-{"id": 1255032, "field": "name", "en": "Skycaller's Leather Waistguard", "hash": "a15904507ffbd512", "src": "db2@1.60.1.70291"}
-{"id": 1255033, "field": "name", "en": "Warden's Leather Waistguard", "hash": "faba91a33a580bcb", "src": "db2@1.60.1.70291"}
-{"id": 1255034, "field": "name", "en": "Skulker's Leather Waistguard", "hash": "0073cfa79b72b545", "src": "db2@1.60.1.70291"}
-{"id": 1255035, "field": "name", "en": "Prowler's Leather Waistguard", "hash": "3a89e27a918e06fb", "src": "db2@1.60.1.70291"}
-{"id": 1255036, "field": "name", "en": "Mender's Leather Gauntlets", "hash": "cbd23730f9d65701", "src": "db2@1.60.1.70291"}
-{"id": 1255037, "field": "name", "en": "Skycaller's Leather Gauntlets", "hash": "eb85bbfe5dc5d0a2", "src": "db2@1.60.1.70291"}
-{"id": 1255038, "field": "name", "en": "Warden's Leather Gauntlets", "hash": "b770fb9ce647e17b", "src": "db2@1.60.1.70291"}
-{"id": 1255039, "field": "name", "en": "Skulker's Leather Gauntlets", "hash": "55c66d6fede247e3", "src": "db2@1.60.1.70291"}
-{"id": 1255040, "field": "name", "en": "Prowler's Leather Gauntlets", "hash": "080cf278e9ade5ff", "src": "db2@1.60.1.70291"}
-{"id": 1255041, "field": "name", "en": "Blue Suede Gloves", "hash": "540f2a2bcb6cf049", "src": "db2@1.60.1.70291"}
-{"id": 1255042, "field": "name", "en": "Tooled Leather Boots", "hash": "128065e24f3bbf57", "src": "db2@1.60.1.70291"}
-{"id": 1255043, "field": "name", "en": "Mender's Leather Boots", "hash": "03dd8389055aa71b", "src": "db2@1.60.1.70291"}
-{"id": 1255044, "field": "name", "en": "Skycaller's Leather Boots", "hash": "f099f171aac66611", "src": "db2@1.60.1.70291"}
-{"id": 1255045, "field": "name", "en": "Warden's Leather Boots", "hash": "01fb0a34b41d3e33", "src": "db2@1.60.1.70291"}
-{"id": 1255046, "field": "name", "en": "Skulker's Leather Boots", "hash": "83621925fe5e0c46", "src": "db2@1.60.1.70291"}
-{"id": 1255047, "field": "name", "en": "Prowler's Leather Boots", "hash": "e3d8bd392151d6e3", "src": "db2@1.60.1.70291"}
-{"id": 1255048, "field": "name", "en": "Blue Suede Shoes", "hash": "d4b3d7ccf32a8704", "src": "db2@1.60.1.70291"}
-{"id": 1255049, "field": "name", "en": "Tooled Leather Belt", "hash": "830ff17dd0a80cda", "src": "db2@1.60.1.70291"}
-{"id": 1255050, "field": "name", "en": "Mender's Leather Bracers", "hash": "16b8d34d2002afc8", "src": "db2@1.60.1.70291"}
-{"id": 1255051, "field": "name", "en": "Skycaller's Leather Bracers", "hash": "ba1d9e661523af04", "src": "db2@1.60.1.70291"}
-{"id": 1255052, "field": "name", "en": "Warden's Leather Bracers", "hash": "c0014dd5a393cbe8", "src": "db2@1.60.1.70291"}
-{"id": 1255053, "field": "name", "en": "Skulker's Leather Bracers", "hash": "458a90bd835933a4", "src": "db2@1.60.1.70291"}
-{"id": 1255054, "field": "name", "en": "Prowler's Leather Bracers", "hash": "b6a80fbb8ffe58bc", "src": "db2@1.60.1.70291"}
-{"id": 1255055, "field": "name", "en": "Mender's Leather Shoulder", "hash": "7e4235a6b2040948", "src": "db2@1.60.1.70291"}
-{"id": 1255056, "field": "name", "en": "Skycaller's Leather Shoulder", "hash": "1ad6251522ec8a0a", "src": "db2@1.60.1.70291"}
-{"id": 1255057, "field": "name", "en": "Warden's Leather Shoulder", "hash": "1e58eaf1e6f6b7ea", "src": "db2@1.60.1.70291"}
-{"id": 1255058, "field": "name", "en": "Skulker's Leather Shoulder", "hash": "7396266e7b0663f3", "src": "db2@1.60.1.70291"}
-{"id": 1255059, "field": "name", "en": "Prowler's Leather Shoulder", "hash": "55ae238a97aa00ce", "src": "db2@1.60.1.70291"}
-{"id": 1255060, "field": "name", "en": "Mender's Leather Shoes", "hash": "2d567805f51393a7", "src": "db2@1.60.1.70291"}
-{"id": 1255061, "field": "name", "en": "Skycaller's Leather Shoes", "hash": "1a12e5f29a7f52ae", "src": "db2@1.60.1.70291"}
-{"id": 1255062, "field": "name", "en": "Warden's Leather Shoes", "hash": "2b73feb0a3d62ad0", "src": "db2@1.60.1.70291"}
-{"id": 1255063, "field": "name", "en": "Skulker's Leather Shoes", "hash": "acdb0da1ee16f8e3", "src": "db2@1.60.1.70291"}
-{"id": 1255064, "field": "name", "en": "Prowler's Leather Shoes", "hash": "0d51b1ba110ac380", "src": "db2@1.60.1.70291"}
-{"id": 1255065, "field": "name", "en": "Mender's Leather Gloves", "hash": "af4725a8b1c8cc99", "src": "db2@1.60.1.70291"}
-{"id": 1255066, "field": "name", "en": "Skycaller's Leather Gloves", "hash": "d3b365bd219ccb09", "src": "db2@1.60.1.70291"}
-{"id": 1255067, "field": "name", "en": "Skirmisher's Leather Gloves", "hash": "3d5b4b980511d87a", "src": "db2@1.60.1.70291"}
-{"id": 1255068, "field": "name", "en": "Warden's Leather Gloves", "hash": "b8630f24db1cf2a4", "src": "db2@1.60.1.70291"}
-{"id": 1255069, "field": "name", "en": "Stalker's Leather Gloves", "hash": "385db2480a7b75cd", "src": "db2@1.60.1.70291"}
-{"id": 1255070, "field": "name", "en": "Skulker's Leather Gloves", "hash": "f01fb5c1f706fb86", "src": "db2@1.60.1.70291"}
-{"id": 1255071, "field": "name", "en": "Prowler's Leather Gloves", "hash": "4cd5acf734d33e9d", "src": "db2@1.60.1.70291"}
-{"id": 1255073, "field": "name", "en": "Forceful Thick Armor Kit", "hash": "e11929f7efeec50d", "src": "db2@1.60.1.70291"}
-{"id": 1255074, "field": "name", "en": "Mystic Thick Armor Kit", "hash": "04f4775e7c457426", "src": "db2@1.60.1.70291"}
-{"id": 1255075, "field": "name", "en": "Mender's Leather Belt", "hash": "d6fb286d11acba66", "src": "db2@1.60.1.70291"}
-{"id": 1255076, "field": "name", "en": "Skycaller's Leather Belt", "hash": "713738e81494b680", "src": "db2@1.60.1.70291"}
-{"id": 1255077, "field": "name", "en": "Skirmisher's Leather Belt", "hash": "e7cd2b153f84438c", "src": "db2@1.60.1.70291"}
-{"id": 1255078, "field": "name", "en": "Warden's Leather Belt", "hash": "dcd44ca148dfa9cf", "src": "db2@1.60.1.70291"}
-{"id": 1255079, "field": "name", "en": "Stalker's Leather Belt", "hash": "7c92e68905def767", "src": "db2@1.60.1.70291"}
-{"id": 1255080, "field": "name", "en": "Skulker's Leather Belt", "hash": "2bfc2b89e397de3e", "src": "db2@1.60.1.70291"}
-{"id": 1255081, "field": "name", "en": "Prowler's Leather Belt", "hash": "e65ec91c72432bd7", "src": "db2@1.60.1.70291"}
-{"id": 1255082, "field": "name", "en": "Wisdom's Leather Leggings", "hash": "d52472ad96e98263", "src": "db2@1.60.1.70291"}
-{"id": 1255083, "field": "name", "en": "Stormrider's Leather Kilt", "hash": "a4c4577cd92587d7", "src": "db2@1.60.1.70291"}
-{"id": 1255084, "field": "name", "en": "Totemic Leather Leggings", "hash": "4475b72d271d9b7c", "src": "db2@1.60.1.70291"}
-{"id": 1255085, "field": "name", "en": "Defender's Leather Kilt", "hash": "2c2f899260dce466", "src": "db2@1.60.1.70291"}
-{"id": 1255086, "field": "name", "en": "Trapper's Leather Legguards", "hash": "25da4b00b6eb1a16", "src": "db2@1.60.1.70291"}
-{"id": 1255087, "field": "name", "en": "Brawler's Leather Legguards", "hash": "bc250790b3d6bc94", "src": "db2@1.60.1.70291"}
-{"id": 1255088, "field": "name", "en": "Wisdom's Leather Helm", "hash": "4501696dd9f1534a", "src": "db2@1.60.1.70291"}
-{"id": 1255089, "field": "name", "en": "Stormrider's Leather Helm", "hash": "a45c6280210c9cbe", "src": "db2@1.60.1.70291"}
-{"id": 1255090, "field": "name", "en": "Totemic Leather Helm", "hash": "8327454a6c839d88", "src": "db2@1.60.1.70291"}
-{"id": 1255091, "field": "name", "en": "Defender's Leather Helm", "hash": "2bc79496a8c3f93c", "src": "db2@1.60.1.70291"}
-{"id": 1255092, "field": "name", "en": "Trapper's Leather Helm", "hash": "8d6ad7c7a8ad9a5f", "src": "db2@1.60.1.70291"}
-{"id": 1255093, "field": "name", "en": "Brawler's Leather Helm", "hash": "2a3e22908ad72d00", "src": "db2@1.60.1.70291"}
-{"id": 1255095, "field": "name", "en": "Forceful Heavy Armor Kit", "hash": "a539419150a520ad", "src": "db2@1.60.1.70291"}
-{"id": 1255096, "field": "name", "en": "Mystic Heavy Armor Kit", "hash": "c9148ef3dcfbcfb5", "src": "db2@1.60.1.70291"}
-{"id": 1255097, "field": "name", "en": "Wisdom's Leather Tunic", "hash": "2482dd60179f39fa", "src": "db2@1.60.1.70291"}
-{"id": 1255098, "field": "name", "en": "Stormrider's Leather Tunic", "hash": "f0105309e47e4d77", "src": "db2@1.60.1.70291"}
-{"id": 1255099, "field": "name", "en": "Totemic Leather Tunic", "hash": "f1e26012a12f14c7", "src": "db2@1.60.1.70291"}
-{"id": 1255100, "field": "name", "en": "Defender's Leather Tunic", "hash": "3beaf31a60daf98c", "src": "db2@1.60.1.70291"}
-{"id": 1255101, "field": "name", "en": "Trapper's Leather Tunic", "hash": "3276562797b4d61c", "src": "db2@1.60.1.70291"}
-{"id": 1255102, "field": "name", "en": "Brawler's Leather Tunic", "hash": "72959a0366fff576", "src": "db2@1.60.1.70291"}
-{"id": 1255103, "field": "name", "en": "Hillman's Leather Boots", "hash": "9babee377d43a3d8", "src": "db2@1.60.1.70291"}
-{"id": 1255104, "field": "name", "en": "Wisdom's Leather Hood", "hash": "4504094701a4587f", "src": "db2@1.60.1.70291"}
-{"id": 1255105, "field": "name", "en": "Stormrider's Leather Hood", "hash": "a45f025a48bfa1e2", "src": "db2@1.60.1.70291"}
-{"id": 1255106, "field": "name", "en": "Totemic Leather Hood", "hash": "8329e5249436a2ac", "src": "db2@1.60.1.70291"}
-{"id": 1255107, "field": "name", "en": "Defender's Leather Hood", "hash": "2bca3470d076fe60", "src": "db2@1.60.1.70291"}
-{"id": 1255108, "field": "name", "en": "Trapper's Leather Hood", "hash": "8d6d77a1d0609f83", "src": "db2@1.60.1.70291"}
-{"id": 1255109, "field": "name", "en": "Brawler's Leather Hood", "hash": "2a40c26ab28a3224", "src": "db2@1.60.1.70291"}
-{"id": 1255110, "field": "name", "en": "Wisdom's Leather Pants", "hash": "db9df9ac8fd78a22", "src": "db2@1.60.1.70291"}
-{"id": 1255111, "field": "name", "en": "Stormrider's Leather Pants", "hash": "a72b6f5a5cb69db0", "src": "db2@1.60.1.70291"}
-{"id": 1255112, "field": "name", "en": "Totemic Leather Pants", "hash": "a8fd7c6319676500", "src": "db2@1.60.1.70291"}
-{"id": 1255113, "field": "name", "en": "Defender's Leather Pants", "hash": "f3060f66d91349b4", "src": "db2@1.60.1.70291"}
-{"id": 1255114, "field": "name", "en": "Trapper's Leather Pants", "hash": "e99172730fed2655", "src": "db2@1.60.1.70291"}
-{"id": 1255115, "field": "name", "en": "Brawler's Leather Pants", "hash": "29b0b654df38459e", "src": "db2@1.60.1.70291"}
-{"id": 1255116, "field": "name", "en": "Wisdom's Leather Boots", "hash": "e7be82bc1eac2dc5", "src": "db2@1.60.1.70291"}
-{"id": 1255117, "field": "name", "en": "Stormrider's Leather Boots", "hash": "b34bf86aeb8b4142", "src": "db2@1.60.1.70291"}
-{"id": 1255118, "field": "name", "en": "Totemic Leather Boots", "hash": "b51e0573a83c0892", "src": "db2@1.60.1.70291"}
-{"id": 1255119, "field": "name", "en": "Defender's Leather Boots", "hash": "ff26987667e7ed57", "src": "db2@1.60.1.70291"}
-{"id": 1255120, "field": "name", "en": "Trapper's Leather Boots", "hash": "f5b1fb839ec1c9e7", "src": "db2@1.60.1.70291"}
-{"id": 1255121, "field": "name", "en": "Brawler's Leather Boots", "hash": "35d13f646e0ce941", "src": "db2@1.60.1.70291"}
-{"id": 1255123, "field": "name", "en": "Forceful Medium Armor Kit", "hash": "7e9c9ee4f8e5c757", "src": "db2@1.60.1.70291"}
-{"id": 1255124, "field": "name", "en": "Mystic Medium Armor Kit", "hash": "d7d53864d048be79", "src": "db2@1.60.1.70291"}
-{"id": 1255125, "field": "name", "en": "Wisdom's Leather Gloves", "hash": "4b69bf0ad1bef39a", "src": "db2@1.60.1.70291"}
-{"id": 1255126, "field": "name", "en": "Stormrider's Leather Gloves", "hash": "74ccf68de52ce92a", "src": "db2@1.60.1.70291"}
-{"id": 1255127, "field": "name", "en": "Totemic Leather Gloves", "hash": "6349a22d24ae3809", "src": "db2@1.60.1.70291"}
-{"id": 1255128, "field": "name", "en": "Defender's Leather Gloves", "hash": "45acdd746b759bfb", "src": "db2@1.60.1.70291"}
-{"id": 1255129, "field": "name", "en": "Trapper's Leather Gloves", "hash": "6f008d0202a65ab0", "src": "db2@1.60.1.70291"}
-{"id": 1255130, "field": "name", "en": "Brawler's Leather Gloves", "hash": "3f00473b4c7867a9", "src": "db2@1.60.1.70291"}
-{"id": 1255131, "field": "name", "en": "Wisdom's Leather Armor", "hash": "d6972c9ae0086370", "src": "db2@1.60.1.70291"}
-{"id": 1255132, "field": "name", "en": "Stormrider's Leather Armor", "hash": "a224a248ace776fe", "src": "db2@1.60.1.70291"}
-{"id": 1255133, "field": "name", "en": "Totemic Leather Armor", "hash": "a3f6af5169983e4e", "src": "db2@1.60.1.70291"}
-{"id": 1255134, "field": "name", "en": "Defender's Leather Armor", "hash": "edff425429442313", "src": "db2@1.60.1.70291"}
-{"id": 1255135, "field": "name", "en": "Trapper's Leather Armor", "hash": "e48aa561601dffa3", "src": "db2@1.60.1.70291"}
-{"id": 1255136, "field": "name", "en": "Brawler's Leather Armor", "hash": "24a9e9422f691efd", "src": "db2@1.60.1.70291"}
-{"id": 1255137, "field": "name", "en": "Wisdom's Leather Belt", "hash": "443397d289819b24", "src": "db2@1.60.1.70291"}
-{"id": 1255138, "field": "name", "en": "Stormrider's Leather Belt", "hash": "a38e90e5d09ce487", "src": "db2@1.60.1.70291"}
-{"id": 1255139, "field": "name", "en": "Totemic Leather Belt", "hash": "825973af1c13e562", "src": "db2@1.60.1.70291"}
-{"id": 1255140, "field": "name", "en": "Defender's Leather Belt", "hash": "2af9c2fb58544116", "src": "db2@1.60.1.70291"}
-{"id": 1255141, "field": "name", "en": "Trapper's Leather Belt", "hash": "8c9d062c583de239", "src": "db2@1.60.1.70291"}
-{"id": 1255142, "field": "name", "en": "Brawler's Leather Belt", "hash": "297050f53a6774da", "src": "db2@1.60.1.70291"}
-{"id": 1255143, "field": "name", "en": "Moonglow Boots", "hash": "b91fe91e2b2bf3cc", "src": "db2@1.60.1.70291"}
-{"id": 1255144, "field": "name", "en": "Murloc Scale Shoes", "hash": "732ff3d0b0aa7be9", "src": "db2@1.60.1.70291"}
-{"id": 1255145, "field": "name", "en": "Dark Leather Boots", "hash": "ece8c7e2559345f9", "src": "db2@1.60.1.70291"}
-{"id": 1255146, "field": "name", "en": "Black Whelp Slippers", "hash": "e45a5ceb550a5465", "src": "db2@1.60.1.70291"}
+{"id": 1255000, "field": "name", "en": "Mender's Mail Bracers", "hash": "571f6c8c6e0af3e1", "src": "db2@1.60.1.70338"}
+{"id": 1255001, "field": "name", "en": "Skirmisher's Mail Bracers", "hash": "67f16f349be27d07", "src": "db2@1.60.1.70338"}
+{"id": 1255002, "field": "name", "en": "Skycaller's Mail Bracers", "hash": "f15b7d0270f2effb", "src": "db2@1.60.1.70338"}
+{"id": 1255003, "field": "name", "en": "Stalker's Mail Bracers", "hash": "fcb72aa3623d30e2", "src": "db2@1.60.1.70338"}
+{"id": 1255004, "field": "name", "en": "Mender's Mail Shoulder", "hash": "72c2a18847878f79", "src": "db2@1.60.1.70338"}
+{"id": 1255005, "field": "name", "en": "Skirmisher's Mail Shoulder", "hash": "0e39fdadab9314e4", "src": "db2@1.60.1.70338"}
+{"id": 1255006, "field": "name", "en": "Skycaller's Mail Shoulder", "hash": "5f7f0f75ecf34e6f", "src": "db2@1.60.1.70338"}
+{"id": 1255007, "field": "name", "en": "Stalker's Mail Shoulder", "hash": "2f68e8f6fd123351", "src": "db2@1.60.1.70338"}
+{"id": 1255008, "field": "name", "en": "Mender's Mail Boots", "hash": "2200a2bc7c4f6aff", "src": "db2@1.60.1.70338"}
+{"id": 1255009, "field": "name", "en": "Skirmisher's Mail Boots", "hash": "7f726c8c6b6355c4", "src": "db2@1.60.1.70338"}
+{"id": 1255010, "field": "name", "en": "Skycaller's Mail Boots", "hash": "f81f7d157c02e483", "src": "db2@1.60.1.70338"}
+{"id": 1255011, "field": "name", "en": "Stalker's Mail Boots", "hash": "c77e123ae697cb31", "src": "db2@1.60.1.70338"}
+{"id": 1255012, "field": "name", "en": "Ironfeather Leggings", "hash": "fd1961fc81421c69", "src": "db2@1.60.1.70338"}
+{"id": 1255013, "field": "name", "en": "Warbear Helm", "hash": "9d003c13574b81d9", "src": "db2@1.60.1.70338"}
+{"id": 1255014, "field": "name", "en": "Timbermaw Tunic", "hash": "8b265de47a0142ac", "src": "db2@1.60.1.70338"}
+{"id": 1255015, "field": "name", "en": "Dawn Armor", "hash": "9527421ea08f602a", "src": "db2@1.60.1.70338"}
+{"id": 1255016, "field": "name", "en": "Living Crown", "hash": "2cef752e5c517945", "src": "db2@1.60.1.70338"}
+{"id": 1255017, "field": "name", "en": "Blue Suede Hat", "hash": "5060778b3351fd53", "src": "db2@1.60.1.70338"}
+{"id": 1255018, "field": "name", "en": "Tooled Leather Pants", "hash": "065fdcd2c0671bb4", "src": "db2@1.60.1.70338"}
+{"id": 1255019, "field": "name", "en": "Blue Suede Bracers", "hash": "6913216b899893b9", "src": "db2@1.60.1.70338"}
+{"id": 1255020, "field": "name", "en": "Tooled Leather Epaulets", "hash": "c4f66ceb4487ebd2", "src": "db2@1.60.1.70338"}
+{"id": 1255021, "field": "name", "en": "Blue Suede Belt", "hash": "209063ccc82d77c9", "src": "db2@1.60.1.70338"}
+{"id": 1255022, "field": "name", "en": "Tooled Leather Bracers", "hash": "3bb02697fda78039", "src": "db2@1.60.1.70338"}
+{"id": 1255023, "field": "name", "en": "Wicked Leather Shoulder", "hash": "151cd428ca86b233", "src": "db2@1.60.1.70338"}
+{"id": 1255024, "field": "name", "en": "Blue Suede Armor", "hash": "9a138d2ec4cdd023", "src": "db2@1.60.1.70338"}
+{"id": 1255025, "field": "name", "en": "Tooled Leather Crown", "hash": "24750688d65e7a7e", "src": "db2@1.60.1.70338"}
+{"id": 1255026, "field": "name", "en": "Blue Suede Shoulder", "hash": "a2782fd2a55c6e9f", "src": "db2@1.60.1.70338"}
+{"id": 1255027, "field": "name", "en": "Tooled Leather Gauntlets", "hash": "d350b330b08afc47", "src": "db2@1.60.1.70338"}
+{"id": 1255028, "field": "name", "en": "Wicked Leather Boots", "hash": "abbd96b65afe0e1d", "src": "db2@1.60.1.70338"}
+{"id": 1255029, "field": "name", "en": "Blue Suede Pants", "hash": "9f1a5a40749cf6d5", "src": "db2@1.60.1.70338"}
+{"id": 1255030, "field": "name", "en": "Tooled Leather Armor", "hash": "01590fc01097f513", "src": "db2@1.60.1.70338"}
+{"id": 1255031, "field": "name", "en": "Mender's Leather Waistguard", "hash": "687c0e96aac8b9f0", "src": "db2@1.60.1.70338"}
+{"id": 1255032, "field": "name", "en": "Skycaller's Leather Waistguard", "hash": "a15904507ffbd512", "src": "db2@1.60.1.70338"}
+{"id": 1255033, "field": "name", "en": "Warden's Leather Waistguard", "hash": "faba91a33a580bcb", "src": "db2@1.60.1.70338"}
+{"id": 1255034, "field": "name", "en": "Skulker's Leather Waistguard", "hash": "0073cfa79b72b545", "src": "db2@1.60.1.70338"}
+{"id": 1255035, "field": "name", "en": "Prowler's Leather Waistguard", "hash": "3a89e27a918e06fb", "src": "db2@1.60.1.70338"}
+{"id": 1255036, "field": "name", "en": "Mender's Leather Gauntlets", "hash": "cbd23730f9d65701", "src": "db2@1.60.1.70338"}
+{"id": 1255037, "field": "name", "en": "Skycaller's Leather Gauntlets", "hash": "eb85bbfe5dc5d0a2", "src": "db2@1.60.1.70338"}
+{"id": 1255038, "field": "name", "en": "Warden's Leather Gauntlets", "hash": "b770fb9ce647e17b", "src": "db2@1.60.1.70338"}
+{"id": 1255039, "field": "name", "en": "Skulker's Leather Gauntlets", "hash": "55c66d6fede247e3", "src": "db2@1.60.1.70338"}
+{"id": 1255040, "field": "name", "en": "Prowler's Leather Gauntlets", "hash": "080cf278e9ade5ff", "src": "db2@1.60.1.70338"}
+{"id": 1255041, "field": "name", "en": "Blue Suede Gloves", "hash": "540f2a2bcb6cf049", "src": "db2@1.60.1.70338"}
+{"id": 1255042, "field": "name", "en": "Tooled Leather Boots", "hash": "128065e24f3bbf57", "src": "db2@1.60.1.70338"}
+{"id": 1255043, "field": "name", "en": "Mender's Leather Boots", "hash": "03dd8389055aa71b", "src": "db2@1.60.1.70338"}
+{"id": 1255044, "field": "name", "en": "Skycaller's Leather Boots", "hash": "f099f171aac66611", "src": "db2@1.60.1.70338"}
+{"id": 1255045, "field": "name", "en": "Warden's Leather Boots", "hash": "01fb0a34b41d3e33", "src": "db2@1.60.1.70338"}
+{"id": 1255046, "field": "name", "en": "Skulker's Leather Boots", "hash": "83621925fe5e0c46", "src": "db2@1.60.1.70338"}
+{"id": 1255047, "field": "name", "en": "Prowler's Leather Boots", "hash": "e3d8bd392151d6e3", "src": "db2@1.60.1.70338"}
+{"id": 1255048, "field": "name", "en": "Blue Suede Shoes", "hash": "d4b3d7ccf32a8704", "src": "db2@1.60.1.70338"}
+{"id": 1255049, "field": "name", "en": "Tooled Leather Belt", "hash": "830ff17dd0a80cda", "src": "db2@1.60.1.70338"}
+{"id": 1255050, "field": "name", "en": "Mender's Leather Bracers", "hash": "16b8d34d2002afc8", "src": "db2@1.60.1.70338"}
+{"id": 1255051, "field": "name", "en": "Skycaller's Leather Bracers", "hash": "ba1d9e661523af04", "src": "db2@1.60.1.70338"}
+{"id": 1255052, "field": "name", "en": "Warden's Leather Bracers", "hash": "c0014dd5a393cbe8", "src": "db2@1.60.1.70338"}
+{"id": 1255053, "field": "name", "en": "Skulker's Leather Bracers", "hash": "458a90bd835933a4", "src": "db2@1.60.1.70338"}
+{"id": 1255054, "field": "name", "en": "Prowler's Leather Bracers", "hash": "b6a80fbb8ffe58bc", "src": "db2@1.60.1.70338"}
+{"id": 1255055, "field": "name", "en": "Mender's Leather Shoulder", "hash": "7e4235a6b2040948", "src": "db2@1.60.1.70338"}
+{"id": 1255056, "field": "name", "en": "Skycaller's Leather Shoulder", "hash": "1ad6251522ec8a0a", "src": "db2@1.60.1.70338"}
+{"id": 1255057, "field": "name", "en": "Warden's Leather Shoulder", "hash": "1e58eaf1e6f6b7ea", "src": "db2@1.60.1.70338"}
+{"id": 1255058, "field": "name", "en": "Skulker's Leather Shoulder", "hash": "7396266e7b0663f3", "src": "db2@1.60.1.70338"}
+{"id": 1255059, "field": "name", "en": "Prowler's Leather Shoulder", "hash": "55ae238a97aa00ce", "src": "db2@1.60.1.70338"}
+{"id": 1255060, "field": "name", "en": "Mender's Leather Shoes", "hash": "2d567805f51393a7", "src": "db2@1.60.1.70338"}
+{"id": 1255061, "field": "name", "en": "Skycaller's Leather Shoes", "hash": "1a12e5f29a7f52ae", "src": "db2@1.60.1.70338"}
+{"id": 1255062, "field": "name", "en": "Warden's Leather Shoes", "hash": "2b73feb0a3d62ad0", "src": "db2@1.60.1.70338"}
+{"id": 1255063, "field": "name", "en": "Skulker's Leather Shoes", "hash": "acdb0da1ee16f8e3", "src": "db2@1.60.1.70338"}
+{"id": 1255064, "field": "name", "en": "Prowler's Leather Shoes", "hash": "0d51b1ba110ac380", "src": "db2@1.60.1.70338"}
+{"id": 1255065, "field": "name", "en": "Mender's Leather Gloves", "hash": "af4725a8b1c8cc99", "src": "db2@1.60.1.70338"}
+{"id": 1255066, "field": "name", "en": "Skycaller's Leather Gloves", "hash": "d3b365bd219ccb09", "src": "db2@1.60.1.70338"}
+{"id": 1255067, "field": "name", "en": "Skirmisher's Leather Gloves", "hash": "3d5b4b980511d87a", "src": "db2@1.60.1.70338"}
+{"id": 1255068, "field": "name", "en": "Warden's Leather Gloves", "hash": "b8630f24db1cf2a4", "src": "db2@1.60.1.70338"}
+{"id": 1255069, "field": "name", "en": "Stalker's Leather Gloves", "hash": "385db2480a7b75cd", "src": "db2@1.60.1.70338"}
+{"id": 1255070, "field": "name", "en": "Skulker's Leather Gloves", "hash": "f01fb5c1f706fb86", "src": "db2@1.60.1.70338"}
+{"id": 1255071, "field": "name", "en": "Prowler's Leather Gloves", "hash": "4cd5acf734d33e9d", "src": "db2@1.60.1.70338"}
+{"id": 1255073, "field": "name", "en": "Forceful Thick Armor Kit", "hash": "e11929f7efeec50d", "src": "db2@1.60.1.70338"}
+{"id": 1255074, "field": "name", "en": "Mystic Thick Armor Kit", "hash": "04f4775e7c457426", "src": "db2@1.60.1.70338"}
+{"id": 1255075, "field": "name", "en": "Mender's Leather Belt", "hash": "d6fb286d11acba66", "src": "db2@1.60.1.70338"}
+{"id": 1255076, "field": "name", "en": "Skycaller's Leather Belt", "hash": "713738e81494b680", "src": "db2@1.60.1.70338"}
+{"id": 1255077, "field": "name", "en": "Skirmisher's Leather Belt", "hash": "e7cd2b153f84438c", "src": "db2@1.60.1.70338"}
+{"id": 1255078, "field": "name", "en": "Warden's Leather Belt", "hash": "dcd44ca148dfa9cf", "src": "db2@1.60.1.70338"}
+{"id": 1255079, "field": "name", "en": "Stalker's Leather Belt", "hash": "7c92e68905def767", "src": "db2@1.60.1.70338"}
+{"id": 1255080, "field": "name", "en": "Skulker's Leather Belt", "hash": "2bfc2b89e397de3e", "src": "db2@1.60.1.70338"}
+{"id": 1255081, "field": "name", "en": "Prowler's Leather Belt", "hash": "e65ec91c72432bd7", "src": "db2@1.60.1.70338"}
+{"id": 1255082, "field": "name", "en": "Wisdom's Leather Leggings", "hash": "d52472ad96e98263", "src": "db2@1.60.1.70338"}
+{"id": 1255083, "field": "name", "en": "Stormrider's Leather Kilt", "hash": "a4c4577cd92587d7", "src": "db2@1.60.1.70338"}
+{"id": 1255084, "field": "name", "en": "Totemic Leather Leggings", "hash": "4475b72d271d9b7c", "src": "db2@1.60.1.70338"}
+{"id": 1255085, "field": "name", "en": "Defender's Leather Kilt", "hash": "2c2f899260dce466", "src": "db2@1.60.1.70338"}
+{"id": 1255086, "field": "name", "en": "Trapper's Leather Legguards", "hash": "25da4b00b6eb1a16", "src": "db2@1.60.1.70338"}
+{"id": 1255087, "field": "name", "en": "Brawler's Leather Legguards", "hash": "bc250790b3d6bc94", "src": "db2@1.60.1.70338"}
+{"id": 1255088, "field": "name", "en": "Wisdom's Leather Helm", "hash": "4501696dd9f1534a", "src": "db2@1.60.1.70338"}
+{"id": 1255089, "field": "name", "en": "Stormrider's Leather Helm", "hash": "a45c6280210c9cbe", "src": "db2@1.60.1.70338"}
+{"id": 1255090, "field": "name", "en": "Totemic Leather Helm", "hash": "8327454a6c839d88", "src": "db2@1.60.1.70338"}
+{"id": 1255091, "field": "name", "en": "Defender's Leather Helm", "hash": "2bc79496a8c3f93c", "src": "db2@1.60.1.70338"}
+{"id": 1255092, "field": "name", "en": "Trapper's Leather Helm", "hash": "8d6ad7c7a8ad9a5f", "src": "db2@1.60.1.70338"}
+{"id": 1255093, "field": "name", "en": "Brawler's Leather Helm", "hash": "2a3e22908ad72d00", "src": "db2@1.60.1.70338"}
+{"id": 1255095, "field": "name", "en": "Forceful Heavy Armor Kit", "hash": "a539419150a520ad", "src": "db2@1.60.1.70338"}
+{"id": 1255096, "field": "name", "en": "Mystic Heavy Armor Kit", "hash": "c9148ef3dcfbcfb5", "src": "db2@1.60.1.70338"}
+{"id": 1255097, "field": "name", "en": "Wisdom's Leather Tunic", "hash": "2482dd60179f39fa", "src": "db2@1.60.1.70338"}
+{"id": 1255098, "field": "name", "en": "Stormrider's Leather Tunic", "hash": "f0105309e47e4d77", "src": "db2@1.60.1.70338"}
+{"id": 1255099, "field": "name", "en": "Totemic Leather Tunic", "hash": "f1e26012a12f14c7", "src": "db2@1.60.1.70338"}
+{"id": 1255100, "field": "name", "en": "Defender's Leather Tunic", "hash": "3beaf31a60daf98c", "src": "db2@1.60.1.70338"}
+{"id": 1255101, "field": "name", "en": "Trapper's Leather Tunic", "hash": "3276562797b4d61c", "src": "db2@1.60.1.70338"}
+{"id": 1255102, "field": "name", "en": "Brawler's Leather Tunic", "hash": "72959a0366fff576", "src": "db2@1.60.1.70338"}
+{"id": 1255103, "field": "name", "en": "Hillman's Leather Boots", "hash": "9babee377d43a3d8", "src": "db2@1.60.1.70338"}
+{"id": 1255104, "field": "name", "en": "Wisdom's Leather Hood", "hash": "4504094701a4587f", "src": "db2@1.60.1.70338"}
+{"id": 1255105, "field": "name", "en": "Stormrider's Leather Hood", "hash": "a45f025a48bfa1e2", "src": "db2@1.60.1.70338"}
+{"id": 1255106, "field": "name", "en": "Totemic Leather Hood", "hash": "8329e5249436a2ac", "src": "db2@1.60.1.70338"}
+{"id": 1255107, "field": "name", "en": "Defender's Leather Hood", "hash": "2bca3470d076fe60", "src": "db2@1.60.1.70338"}
+{"id": 1255108, "field": "name", "en": "Trapper's Leather Hood", "hash": "8d6d77a1d0609f83", "src": "db2@1.60.1.70338"}
+{"id": 1255109, "field": "name", "en": "Brawler's Leather Hood", "hash": "2a40c26ab28a3224", "src": "db2@1.60.1.70338"}
+{"id": 1255110, "field": "name", "en": "Wisdom's Leather Pants", "hash": "db9df9ac8fd78a22", "src": "db2@1.60.1.70338"}
+{"id": 1255111, "field": "name", "en": "Stormrider's Leather Pants", "hash": "a72b6f5a5cb69db0", "src": "db2@1.60.1.70338"}
+{"id": 1255112, "field": "name", "en": "Totemic Leather Pants", "hash": "a8fd7c6319676500", "src": "db2@1.60.1.70338"}
+{"id": 1255113, "field": "name", "en": "Defender's Leather Pants", "hash": "f3060f66d91349b4", "src": "db2@1.60.1.70338"}
+{"id": 1255114, "field": "name", "en": "Trapper's Leather Pants", "hash": "e99172730fed2655", "src": "db2@1.60.1.70338"}
+{"id": 1255115, "field": "name", "en": "Brawler's Leather Pants", "hash": "29b0b654df38459e", "src": "db2@1.60.1.70338"}
+{"id": 1255116, "field": "name", "en": "Wisdom's Leather Boots", "hash": "e7be82bc1eac2dc5", "src": "db2@1.60.1.70338"}
+{"id": 1255117, "field": "name", "en": "Stormrider's Leather Boots", "hash": "b34bf86aeb8b4142", "src": "db2@1.60.1.70338"}
+{"id": 1255118, "field": "name", "en": "Totemic Leather Boots", "hash": "b51e0573a83c0892", "src": "db2@1.60.1.70338"}
+{"id": 1255119, "field": "name", "en": "Defender's Leather Boots", "hash": "ff26987667e7ed57", "src": "db2@1.60.1.70338"}
+{"id": 1255120, "field": "name", "en": "Trapper's Leather Boots", "hash": "f5b1fb839ec1c9e7", "src": "db2@1.60.1.70338"}
+{"id": 1255121, "field": "name", "en": "Brawler's Leather Boots", "hash": "35d13f646e0ce941", "src": "db2@1.60.1.70338"}
+{"id": 1255123, "field": "name", "en": "Forceful Medium Armor Kit", "hash": "7e9c9ee4f8e5c757", "src": "db2@1.60.1.70338"}
+{"id": 1255124, "field": "name", "en": "Mystic Medium Armor Kit", "hash": "d7d53864d048be79", "src": "db2@1.60.1.70338"}
+{"id": 1255125, "field": "name", "en": "Wisdom's Leather Gloves", "hash": "4b69bf0ad1bef39a", "src": "db2@1.60.1.70338"}
+{"id": 1255126, "field": "name", "en": "Stormrider's Leather Gloves", "hash": "74ccf68de52ce92a", "src": "db2@1.60.1.70338"}
+{"id": 1255127, "field": "name", "en": "Totemic Leather Gloves", "hash": "6349a22d24ae3809", "src": "db2@1.60.1.70338"}
+{"id": 1255128, "field": "name", "en": "Defender's Leather Gloves", "hash": "45acdd746b759bfb", "src": "db2@1.60.1.70338"}
+{"id": 1255129, "field": "name", "en": "Trapper's Leather Gloves", "hash": "6f008d0202a65ab0", "src": "db2@1.60.1.70338"}
+{"id": 1255130, "field": "name", "en": "Brawler's Leather Gloves", "hash": "3f00473b4c7867a9", "src": "db2@1.60.1.70338"}
+{"id": 1255131, "field": "name", "en": "Wisdom's Leather Armor", "hash": "d6972c9ae0086370", "src": "db2@1.60.1.70338"}
+{"id": 1255132, "field": "name", "en": "Stormrider's Leather Armor", "hash": "a224a248ace776fe", "src": "db2@1.60.1.70338"}
+{"id": 1255133, "field": "name", "en": "Totemic Leather Armor", "hash": "a3f6af5169983e4e", "src": "db2@1.60.1.70338"}
+{"id": 1255134, "field": "name", "en": "Defender's Leather Armor", "hash": "edff425429442313", "src": "db2@1.60.1.70338"}
+{"id": 1255135, "field": "name", "en": "Trapper's Leather Armor", "hash": "e48aa561601dffa3", "src": "db2@1.60.1.70338"}
+{"id": 1255136, "field": "name", "en": "Brawler's Leather Armor", "hash": "24a9e9422f691efd", "src": "db2@1.60.1.70338"}
+{"id": 1255137, "field": "name", "en": "Wisdom's Leather Belt", "hash": "443397d289819b24", "src": "db2@1.60.1.70338"}
+{"id": 1255138, "field": "name", "en": "Stormrider's Leather Belt", "hash": "a38e90e5d09ce487", "src": "db2@1.60.1.70338"}
+{"id": 1255139, "field": "name", "en": "Totemic Leather Belt", "hash": "825973af1c13e562", "src": "db2@1.60.1.70338"}
+{"id": 1255140, "field": "name", "en": "Defender's Leather Belt", "hash": "2af9c2fb58544116", "src": "db2@1.60.1.70338"}
+{"id": 1255141, "field": "name", "en": "Trapper's Leather Belt", "hash": "8c9d062c583de239", "src": "db2@1.60.1.70338"}
+{"id": 1255142, "field": "name", "en": "Brawler's Leather Belt", "hash": "297050f53a6774da", "src": "db2@1.60.1.70338"}
+{"id": 1255143, "field": "name", "en": "Moonglow Boots", "hash": "b91fe91e2b2bf3cc", "src": "db2@1.60.1.70338"}
+{"id": 1255144, "field": "name", "en": "Murloc Scale Shoes", "hash": "732ff3d0b0aa7be9", "src": "db2@1.60.1.70338"}
+{"id": 1255145, "field": "name", "en": "Dark Leather Boots", "hash": "ece8c7e2559345f9", "src": "db2@1.60.1.70338"}
+{"id": 1255146, "field": "name", "en": "Black Whelp Slippers", "hash": "e45a5ceb550a5465", "src": "db2@1.60.1.70338"}
 {"id": 1255160, "field": "name", "en": "Awaken", "hash": "129294059029ccb2", "src": "db2@1.60.1.69913"}
 {"id": 1255160, "field": "description", "en": "The Metamorphic Fury has been summoned onto this world!", "hash": "883090f70936b6a2", "src": "db2@1.60.1.69913"}
 {"id": 1255194, "field": "name", "en": "Furious Flame Shock", "hash": "44b8d6606fd1ce09", "src": "db2@1.60.1.69913"}
 {"id": 1255194, "field": "description", "en": "Deal $s1 Fire damage instantly and an additional $s2 Fire damage every $t2 sec.", "hash": "433026257835a2ee", "src": "db2@1.60.1.69913"}
 {"id": 1255194, "field": "aura", "en": "Suffering $w2 Fire damage every $t2 sec.", "hash": "2ca459b738c57e3b", "src": "db2@1.60.1.69913"}
 {"id": 1255210, "field": "name", "en": "TEST", "hash": "0b53b3167810ac17", "src": "db2@1.60.1.69913"}
-{"id": 1255229, "field": "name", "en": "Recently Dropped Flag", "hash": "25ed43e13c07b648", "src": "db2@1.60.1.70291"}
-{"id": 1255229, "field": "description", "en": "Unable to pick up dropped flags.", "hash": "05dc33749204eee4", "src": "db2@1.60.1.70291"}
-{"id": 1255229, "field": "aura", "en": "Unable to pick up dropped flags.", "hash": "05dc33749204eee4", "src": "db2@1.60.1.70291"}
-{"id": 1255230, "field": "name", "en": "Mark of Honor", "hash": "ac8ce15201898558", "src": "db2@1.60.1.70291"}
-{"id": 1255231, "field": "name", "en": "Mark of Honor", "hash": "ac8ce15201898558", "src": "db2@1.60.1.70291"}
-{"id": 1255241, "field": "name", "en": "Cleansing Stew", "hash": "5e8b92d527fa96ea", "src": "db2@1.60.1.70291"}
-{"id": 1255248, "field": "name", "en": "Camp Tent", "hash": "9bc8a8776b4bc48d", "src": "db2@1.60.1.70291"}
-{"id": 1255249, "field": "name", "en": "Faction Banner", "hash": "920e49ce79d643b5", "src": "db2@1.60.1.70291"}
-{"id": 1255250, "field": "name", "en": "Camp Chair", "hash": "8da89737216e4c19", "src": "db2@1.60.1.70291"}
-{"id": 1255251, "field": "name", "en": "Incense Candle", "hash": "0556be08df4ec55b", "src": "db2@1.60.1.70291"}
-{"id": 1255254, "field": "name", "en": "Fish Bowl", "hash": "123d7b537d46a1ab", "src": "db2@1.60.1.70291"}
-{"id": 1255255, "field": "name", "en": "First Aid Kit", "hash": "ac6617d413b0822b", "src": "db2@1.60.1.70291"}
-{"id": 1255256, "field": "name", "en": "Lodestone", "hash": "c809e41f9fc8af34", "src": "db2@1.60.1.70291"}
-{"id": 1255257, "field": "name", "en": "Sharpening Wheel", "hash": "d8707d4dc5b9be35", "src": "db2@1.60.1.70291"}
-{"id": 1255259, "field": "name", "en": "Mana Well", "hash": "cafcee01bc4b49ef", "src": "db2@1.60.1.70291"}
-{"id": 1255260, "field": "name", "en": "Enchanted Lute", "hash": "94fb1453e4194e9c", "src": "db2@1.60.1.70291"}
-{"id": 1255261, "field": "name", "en": "Reagent Bot", "hash": "9b5fbc1e475c0e43", "src": "db2@1.60.1.70291"}
-{"id": 1255415, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70291"}
-{"id": 1255415, "field": "description", "en": "$@spelldesc1248398", "hash": "a7a2efeebdf9b944", "src": "db2@1.60.1.70291"}
-{"id": 1255745, "field": "name", "en": "[DNT] Kill Credit", "hash": "5787af819f4bc284", "src": "db2@1.60.1.70291"}
-{"id": 1255746, "field": "name", "en": "[DNT] Kill Credit", "hash": "5787af819f4bc284", "src": "db2@1.60.1.70291"}
-{"id": 1255747, "field": "name", "en": "[DNT] Kill Credit", "hash": "5787af819f4bc284", "src": "db2@1.60.1.70291"}
-{"id": 1255770, "field": "name", "en": "[DNT] Vehicle Force Cast", "hash": "f4a1014a769329b0", "src": "db2@1.60.1.70291"}
-{"id": 1255924, "field": "name", "en": "Ear Irritant", "hash": "4dcb0a723d695d87", "src": "db2@1.60.1.70291"}
-{"id": 1255924, "field": "description", "en": "Emits a short blast of sound that can only be heard by animals, beasts, and non-speaking beings.", "hash": "4a7e0e08a43f4afd", "src": "db2@1.60.1.70291"}
-{"id": 1255924, "field": "aura", "en": "The most annoying sound in the world, that nobody else can hear!", "hash": "8bb1906fab627684", "src": "db2@1.60.1.70291"}
-{"id": 1255935, "field": "name", "en": "Cool Heat", "hash": "9db65c489b2f8b0b", "src": "db2@1.60.1.70291"}
-{"id": 1255935, "field": "description", "en": "Makes the air around the target uncomfortable, regardless of ambient temperature or weather.", "hash": "7d077aa87edf42f6", "src": "db2@1.60.1.70291"}
-{"id": 1255935, "field": "aura", "en": "It's too hot... AND it's too cold.", "hash": "ba47bd95fb2901d5", "src": "db2@1.60.1.70291"}
-{"id": 1255936, "field": "name", "en": "Miniature Morphologic Mimic Encabulate", "hash": "7ce1c902cdc131d7", "src": "db2@1.60.1.70291"}
-{"id": 1255936, "field": "description", "en": "Temporarily gives the user an enchantment disguising them as their target.", "hash": "8ad96d4e6d4958c0", "src": "db2@1.60.1.70291"}
-{"id": 1255936, "field": "aura", "en": "Altered appearance.", "hash": "dfc4a6f24eb6fc97", "src": "db2@1.60.1.70291"}
-{"id": 1255937, "field": "name", "en": "Trigger", "hash": "8c94886a50a7fbfb", "src": "db2@1.60.1.70291"}
-{"id": 1255938, "field": "name", "en": "Skunk Spray", "hash": "f392c2757b6e6740", "src": "db2@1.60.1.70291"}
-{"id": 1255938, "field": "description", "en": "Inflicts $s1 Fire damage to those in the blast radius plus an additional $s3 Nature damage every 2 sec for 10 sec. Also reduces the movement speed of affected targets by 25% for $d.", "hash": "caa0796096aff782", "src": "db2@1.60.1.70291"}
-{"id": 1255938, "field": "aura", "en": "Suffering from the overwhelming vile odor of the skunk.", "hash": "01a852d5b61766e5", "src": "db2@1.60.1.70291"}
-{"id": 1255939, "field": "name", "en": "Trigger", "hash": "8c94886a50a7fbfb", "src": "db2@1.60.1.70291"}
-{"id": 1255944, "field": "name", "en": "Spirit of Wind", "hash": "f6714946ddb9bf94", "src": "db2@1.60.1.70291"}
-{"id": 1255945, "field": "name", "en": "Wind Hollow", "hash": "35530c9b19411c5b", "src": "db2@1.60.1.70291"}
-{"id": 1255946, "field": "name", "en": "Forest Gale", "hash": "ebe5286e423aae17", "src": "db2@1.60.1.70291"}
-{"id": 1255949, "field": "name", "en": "Trigger Aura", "hash": "d3b069d8e37a7661", "src": "db2@1.60.1.70291"}
-{"id": 1255950, "field": "name", "en": "Sit A While...", "hash": "81e40a6e3eaf124f", "src": "db2@1.60.1.70291"}
-{"id": 1255951, "field": "name", "en": "Sit A While...", "hash": "81e40a6e3eaf124f", "src": "db2@1.60.1.70291"}
+{"id": 1255229, "field": "name", "en": "Recently Dropped Flag", "hash": "25ed43e13c07b648", "src": "db2@1.60.1.70338"}
+{"id": 1255229, "field": "description", "en": "Unable to pick up dropped flags.", "hash": "05dc33749204eee4", "src": "db2@1.60.1.70338"}
+{"id": 1255229, "field": "aura", "en": "Unable to pick up dropped flags.", "hash": "05dc33749204eee4", "src": "db2@1.60.1.70338"}
+{"id": 1255230, "field": "name", "en": "Mark of Honor", "hash": "ac8ce15201898558", "src": "db2@1.60.1.70338"}
+{"id": 1255231, "field": "name", "en": "Mark of Honor", "hash": "ac8ce15201898558", "src": "db2@1.60.1.70338"}
+{"id": 1255241, "field": "name", "en": "Cleansing Stew", "hash": "5e8b92d527fa96ea", "src": "db2@1.60.1.70338"}
+{"id": 1255248, "field": "name", "en": "Camp Tent", "hash": "9bc8a8776b4bc48d", "src": "db2@1.60.1.70338"}
+{"id": 1255249, "field": "name", "en": "Faction Banner", "hash": "920e49ce79d643b5", "src": "db2@1.60.1.70338"}
+{"id": 1255250, "field": "name", "en": "Camp Chair", "hash": "8da89737216e4c19", "src": "db2@1.60.1.70338"}
+{"id": 1255251, "field": "name", "en": "Incense Candle", "hash": "0556be08df4ec55b", "src": "db2@1.60.1.70338"}
+{"id": 1255254, "field": "name", "en": "Fish Bowl", "hash": "123d7b537d46a1ab", "src": "db2@1.60.1.70338"}
+{"id": 1255255, "field": "name", "en": "First Aid Kit", "hash": "ac6617d413b0822b", "src": "db2@1.60.1.70338"}
+{"id": 1255256, "field": "name", "en": "Lodestone", "hash": "c809e41f9fc8af34", "src": "db2@1.60.1.70338"}
+{"id": 1255257, "field": "name", "en": "Sharpening Wheel", "hash": "d8707d4dc5b9be35", "src": "db2@1.60.1.70338"}
+{"id": 1255259, "field": "name", "en": "Mana Well", "hash": "cafcee01bc4b49ef", "src": "db2@1.60.1.70338"}
+{"id": 1255260, "field": "name", "en": "Enchanted Lute", "hash": "94fb1453e4194e9c", "src": "db2@1.60.1.70338"}
+{"id": 1255261, "field": "name", "en": "Reagent Bot", "hash": "9b5fbc1e475c0e43", "src": "db2@1.60.1.70338"}
+{"id": 1255415, "field": "name", "en": "Nutritious Food", "hash": "21ec69bb0c643da9", "src": "db2@1.60.1.70338"}
+{"id": 1255415, "field": "description", "en": "$@spelldesc1248398", "hash": "a7a2efeebdf9b944", "src": "db2@1.60.1.70338"}
+{"id": 1255745, "field": "name", "en": "[DNT] Kill Credit", "hash": "5787af819f4bc284", "src": "db2@1.60.1.70338"}
+{"id": 1255746, "field": "name", "en": "[DNT] Kill Credit", "hash": "5787af819f4bc284", "src": "db2@1.60.1.70338"}
+{"id": 1255747, "field": "name", "en": "[DNT] Kill Credit", "hash": "5787af819f4bc284", "src": "db2@1.60.1.70338"}
+{"id": 1255770, "field": "name", "en": "[DNT] Vehicle Force Cast", "hash": "f4a1014a769329b0", "src": "db2@1.60.1.70338"}
+{"id": 1255924, "field": "name", "en": "Ear Irritant", "hash": "4dcb0a723d695d87", "src": "db2@1.60.1.70338"}
+{"id": 1255924, "field": "description", "en": "Emits a short blast of sound that can only be heard by animals, beasts, and non-speaking beings.", "hash": "4a7e0e08a43f4afd", "src": "db2@1.60.1.70338"}
+{"id": 1255924, "field": "aura", "en": "The most annoying sound in the world, that nobody else can hear!", "hash": "8bb1906fab627684", "src": "db2@1.60.1.70338"}
+{"id": 1255935, "field": "name", "en": "Cool Heat", "hash": "9db65c489b2f8b0b", "src": "db2@1.60.1.70338"}
+{"id": 1255935, "field": "description", "en": "Makes the air around the target uncomfortable, regardless of ambient temperature or weather.", "hash": "7d077aa87edf42f6", "src": "db2@1.60.1.70338"}
+{"id": 1255935, "field": "aura", "en": "It's too hot... AND it's too cold.", "hash": "ba47bd95fb2901d5", "src": "db2@1.60.1.70338"}
+{"id": 1255936, "field": "name", "en": "Miniature Morphologic Mimic Encabulate", "hash": "7ce1c902cdc131d7", "src": "db2@1.60.1.70338"}
+{"id": 1255936, "field": "description", "en": "Temporarily gives the user an enchantment disguising them as their target.", "hash": "8ad96d4e6d4958c0", "src": "db2@1.60.1.70338"}
+{"id": 1255936, "field": "aura", "en": "Altered appearance.", "hash": "dfc4a6f24eb6fc97", "src": "db2@1.60.1.70338"}
+{"id": 1255937, "field": "name", "en": "Trigger", "hash": "8c94886a50a7fbfb", "src": "db2@1.60.1.70338"}
+{"id": 1255938, "field": "name", "en": "Skunk Spray", "hash": "f392c2757b6e6740", "src": "db2@1.60.1.70338"}
+{"id": 1255938, "field": "description", "en": "Inflicts $s1 Fire damage to those in the blast radius plus an additional $s3 Nature damage every 2 sec for 10 sec. Also reduces the movement speed of affected targets by 25% for $d.", "hash": "caa0796096aff782", "src": "db2@1.60.1.70338"}
+{"id": 1255938, "field": "aura", "en": "Suffering from the overwhelming vile odor of the skunk.", "hash": "01a852d5b61766e5", "src": "db2@1.60.1.70338"}
+{"id": 1255939, "field": "name", "en": "Trigger", "hash": "8c94886a50a7fbfb", "src": "db2@1.60.1.70338"}
+{"id": 1255944, "field": "name", "en": "Spirit of Wind", "hash": "f6714946ddb9bf94", "src": "db2@1.60.1.70338"}
+{"id": 1255945, "field": "name", "en": "Wind Hollow", "hash": "35530c9b19411c5b", "src": "db2@1.60.1.70338"}
+{"id": 1255946, "field": "name", "en": "Forest Gale", "hash": "ebe5286e423aae17", "src": "db2@1.60.1.70338"}
+{"id": 1255949, "field": "name", "en": "Trigger Aura", "hash": "d3b069d8e37a7661", "src": "db2@1.60.1.70338"}
+{"id": 1255950, "field": "name", "en": "Sit A While...", "hash": "81e40a6e3eaf124f", "src": "db2@1.60.1.70338"}
+{"id": 1255951, "field": "name", "en": "Sit A While...", "hash": "81e40a6e3eaf124f", "src": "db2@1.60.1.70338"}

@@ -13,7 +13,9 @@ BUILD = "1.15.9.69722"
 # db2@<forever build>; one Forever does not have keeps its Vanilla stamp (the union merge), and that stamp is
 # what `wfj stats --unseen-since` reads to find what the newer client has never had. Both are pinned builds:
 # the assertion is that no line carries an unpinned or unknown source, not that there is only ever one.
-FOREVER_BUILD = "1.60.1.70291"
+# One exception (ADR-050): a listed key whose row left the pinned Forever build keeps the English of the last
+# build that served it, the build `pipeline/served/ui.tsv` records for it.
+FOREVER_BUILD = "1.60.1.70338"
 ENGLISH_SOURCES = {f"wago@{BUILD}", f"db2@{FOREVER_BUILD}"}
 # UI words that are also the exact name of some item or spell (e.g. an item called "Cloth", the spell "Shield").
 # They are allowed because the addon never walks the line that reads as the item / spell name and labels are matched
@@ -140,8 +142,10 @@ def test_every_key_has_one_machine_line_and_its_english(root):
     # record); its machine Japanese stays in data/. Any other unlisted key lost its English (the served step,
     # ADR-034) and its line is `no_english_id`.
     record = root / "pipeline" / "served" / "ui.tsv"
-    served = {r.split("\t")[0] for r in record.read_text(encoding="utf-8").splitlines()
-              if r and not r.startswith("#")} if record.is_file() else set()
+    rows = [r.split("\t") for r in record.read_text(encoding="utf-8").splitlines()
+            if r and not r.startswith("#")] if record.is_file() else []
+    served = {r[0] for r in rows}
+    last_build = {r[0]: r[2] for r in rows}
     assert set(english) - set(keys) <= served
     for key in set(lines) - set(keys):
         assert lines[key]["provenance"]["class"] == "machine", key
@@ -159,7 +163,8 @@ def test_every_key_has_one_machine_line_and_its_english(root):
         # a critic is recorded only when a second model reviewed the draft
         assert prov.get("critic") is None or (prov["critic"] and prov["critic"] != prov["model"]), key
         assert prov["source"].split("@")[0] in DRAFT_SOURCES, key
-        assert english[key]["src"] in ENGLISH_SOURCES, (key, english[key]["src"])
+        assert english[key]["src"] in ENGLISH_SOURCES or (
+            key in last_build and english[key]["src"] == f"db2@{last_build[key]}"), (key, english[key]["src"])
         # A key whose English the Forever client reworded keeps its Japanese and ships it behind the 要更新 marker
         # (ADR-003) until it is re-drafted: that is the queue, not a fault. The guarantee below still holds: only a `trusted` line is asserted to
         # match its English's specifiers, because a stale one is by definition checked against older English.

@@ -1,12 +1,12 @@
-{"id": 301089, "field": "name", "en": "Horde Flag", "hash": "067e7e3b195be7a6", "src": "db2@1.60.1.70291"}
-{"id": 301089, "field": "description", "en": "Carrying the Horde flag. Take it back to your home base to capture it.", "hash": "b3934403cec6358c", "src": "db2@1.60.1.70291"}
-{"id": 301089, "field": "aura", "en": "Carrying the Horde flag. Take it back to your home base to capture it.", "hash": "b3934403cec6358c", "src": "db2@1.60.1.70291"}
-{"id": 301091, "field": "name", "en": "Alliance Flag", "hash": "6fac65b51c1e29ed", "src": "db2@1.60.1.70291"}
-{"id": 301091, "field": "description", "en": "Carrying the Alliance flag. Take it back to your home base to capture it.", "hash": "044823fc084dd2f3", "src": "db2@1.60.1.70291"}
-{"id": 301091, "field": "aura", "en": "Carrying the Alliance flag. Take it back to your home base to capture it.", "hash": "044823fc084dd2f3", "src": "db2@1.60.1.70291"}
-{"id": 301100, "field": "name", "en": "Recently Dropped Flag", "hash": "25ed43e13c07b648", "src": "db2@1.60.1.70291"}
-{"id": 301100, "field": "description", "en": "Unable to pick up dropped flags.", "hash": "05dc33749204eee4", "src": "db2@1.60.1.70291"}
-{"id": 301100, "field": "aura", "en": "Unable to pick up dropped flags.", "hash": "05dc33749204eee4", "src": "db2@1.60.1.70291"}
-{"id": 301101, "field": "name", "en": "Recently Dropped Flag", "hash": "25ed43e13c07b648", "src": "db2@1.60.1.70291"}
-{"id": 301101, "field": "description", "en": "Unable to pick up dropped flags.", "hash": "05dc33749204eee4", "src": "db2@1.60.1.70291"}
-{"id": 301101, "field": "aura", "en": "Unable to pick up dropped flags.", "hash": "05dc33749204eee4", "src": "db2@1.60.1.70291"}
+{"id": 301089, "field": "name", "en": "Horde Flag", "hash": "067e7e3b195be7a6", "src": "db2@1.60.1.70338"}
+{"id": 301089, "field": "description", "en": "Carrying the Horde flag. Take it back to your home base to capture it.", "hash": "b3934403cec6358c", "src": "db2@1.60.1.70338"}
+{"id": 301089, "field": "aura", "en": "Carrying the Horde flag. Take it back to your home base to capture it.", "hash": "b3934403cec6358c", "src": "db2@1.60.1.70338"}
+{"id": 301091, "field": "name", "en": "Alliance Flag", "hash": "6fac65b51c1e29ed", "src": "db2@1.60.1.70338"}
+{"id": 301091, "field": "description", "en": "Carrying the Alliance flag. Take it back to your home base to capture it.", "hash": "044823fc084dd2f3", "src": "db2@1.60.1.70338"}
+{"id": 301091, "field": "aura", "en": "Carrying the Alliance flag. Take it back to your home base to capture it.", "hash": "044823fc084dd2f3", "src": "db2@1.60.1.70338"}
+{"id": 301100, "field": "name", "en": "Recently Dropped Flag", "hash": "25ed43e13c07b648", "src": "db2@1.60.1.70338"}
+{"id": 301100, "field": "description", "en": "Unable to pick up dropped flags.", "hash": "05dc33749204eee4", "src": "db2@1.60.1.70338"}
+{"id": 301100, "field": "aura", "en": "Unable to pick up dropped flags.", "hash": "05dc33749204eee4", "src": "db2@1.60.1.70338"}
+{"id": 301101, "field": "name", "en": "Recently Dropped Flag", "hash": "25ed43e13c07b648", "src": "db2@1.60.1.70338"}
+{"id": 301101, "field": "description", "en": "Unable to pick up dropped flags.", "hash": "05dc33749204eee4", "src": "db2@1.60.1.70338"}
+{"id": 301101, "field": "aura", "en": "Unable to pick up dropped flags.", "hash": "05dc33749204eee4", "src": "db2@1.60.1.70338"}

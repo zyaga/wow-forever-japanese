@@ -1,112 +1,112 @@
-{"id": 1297001, "field": "name", "en": "Lava Eruption", "hash": "7d93fcce09608f01", "src": "db2@1.60.1.70291"}
-{"id": 1297028, "field": "name", "en": "Skyship Arrival", "hash": "2bfa53d12eb67f89", "src": "db2@1.60.1.70291"}
-{"id": 1297048, "field": "name", "en": "Create", "hash": "b25d3b61e697ac2e", "src": "db2@1.60.1.70291"}
-{"id": 1297068, "field": "name", "en": "Comprehension Failure", "hash": "df5dc595f8a5f072", "src": "db2@1.60.1.70291"}
-{"id": 1297068, "field": "aura", "en": "You made a small mistake while deciphering the scroll.", "hash": "68b2aeef6e3c69bb", "src": "db2@1.60.1.70291"}
-{"id": 1297076, "field": "name", "en": "Spell Focus", "hash": "6cba6852489ab924", "src": "db2@1.60.1.70291"}
-{"id": 1297082, "field": "name", "en": "Eye of Influence", "hash": "bfbc1642ddd51e5b", "src": "db2@1.60.1.70291"}
-{"id": 1297082, "field": "description", "en": "Reduces target's attack power by $s1 for $d.", "hash": "b8f65f4b461a7c86", "src": "db2@1.60.1.70291"}
-{"id": 1297082, "field": "aura", "en": "Attack power lowered by $s1.", "hash": "3ac7251302b5bc93", "src": "db2@1.60.1.70291"}
-{"id": 1297085, "field": "name", "en": "Eye of Influence", "hash": "bfbc1642ddd51e5b", "src": "db2@1.60.1.70291"}
-{"id": 1297085, "field": "description", "en": "Chance on harmful spell cast to reduce target's attack power by $1297082s1 for $1297082d.\r\n", "hash": "eef8f4bfa11f845f", "src": "db2@1.60.1.70291"}
-{"id": 1297109, "field": "name", "en": "Foxtail Ward", "hash": "cd7e6f2b409e8244", "src": "db2@1.60.1.70291"}
-{"id": 1297109, "field": "description", "en": "Causes all Beasts in a $a2 yard radius to run away for $d.", "hash": "f30282934dde2d79", "src": "db2@1.60.1.70291"}
-{"id": 1297109, "field": "aura", "en": "Feared.", "hash": "5a2205f292a109c9", "src": "db2@1.60.1.70291"}
-{"id": 1297120, "field": "name", "en": "Venomspew Gloves", "hash": "d3ad89a13be8f348", "src": "db2@1.60.1.70291"}
-{"id": 1297121, "field": "name", "en": "Venomspew Cord", "hash": "7e78f61083d35736", "src": "db2@1.60.1.70291"}
-{"id": 1297122, "field": "name", "en": "Venomspew Footpads", "hash": "61200a8c516b4361", "src": "db2@1.60.1.70291"}
-{"id": 1297123, "field": "name", "en": "Swarmtender's Gloves", "hash": "94784a3f9419f046", "src": "db2@1.60.1.70291"}
-{"id": 1297124, "field": "name", "en": "Swarmtender's Cord", "hash": "eff62566aedd9f91", "src": "db2@1.60.1.70291"}
-{"id": 1297125, "field": "name", "en": "Swarmtender's Footpads", "hash": "38a9d759c7e02ed2", "src": "db2@1.60.1.70291"}
-{"id": 1297126, "field": "name", "en": "Bileblister Claws", "hash": "a92077303bfd802c", "src": "db2@1.60.1.70291"}
-{"id": 1297127, "field": "name", "en": "Bileblister Girdle", "hash": "4747353b2e33f1f8", "src": "db2@1.60.1.70291"}
-{"id": 1297128, "field": "name", "en": "Bileblister Boots", "hash": "97fd52a53cde31bb", "src": "db2@1.60.1.70291"}
-{"id": 1297129, "field": "name", "en": "Hivethrasher's Claws", "hash": "a96d3db494ecd55d", "src": "db2@1.60.1.70291"}
-{"id": 1297130, "field": "name", "en": "Hivethrasher's Girdle", "hash": "6e90cac753df7d4c", "src": "db2@1.60.1.70291"}
-{"id": 1297131, "field": "name", "en": "Hivethrasher's Boots", "hash": "984a192995cd86ec", "src": "db2@1.60.1.70291"}
-{"id": 1297132, "field": "name", "en": "Scalegut Clenchers", "hash": "97f8fe0de118aec3", "src": "db2@1.60.1.70291"}
-{"id": 1297133, "field": "name", "en": "Scalegut Belt", "hash": "8609f044a55709cf", "src": "db2@1.60.1.70291"}
-{"id": 1297134, "field": "name", "en": "Scalegut Treaders", "hash": "f3ca53cd4e1eb83e", "src": "db2@1.60.1.70291"}
-{"id": 1297135, "field": "name", "en": "Broodwatcher's Clenchers", "hash": "3587048fd5a7437f", "src": "db2@1.60.1.70291"}
-{"id": 1297136, "field": "name", "en": "Broodwatcher's Belt", "hash": "d9d3d70a5c153c8b", "src": "db2@1.60.1.70291"}
-{"id": 1297137, "field": "name", "en": "Broodwatcher's Treaders", "hash": "5e850f777f762965", "src": "db2@1.60.1.70291"}
-{"id": 1297138, "field": "name", "en": "Goregasher Grips", "hash": "e296a92f4854126e", "src": "db2@1.60.1.70291"}
-{"id": 1297139, "field": "name", "en": "Goregasher Support", "hash": "4b60d806c0187896", "src": "db2@1.60.1.70291"}
-{"id": 1297140, "field": "name", "en": "Goregasher Stompers", "hash": "adcd4ffae20a42b4", "src": "db2@1.60.1.70291"}
-{"id": 1297141, "field": "name", "en": "Clutchlord's Grips", "hash": "33eeb93f46348463", "src": "db2@1.60.1.70291"}
-{"id": 1297142, "field": "name", "en": "Clutchlord's Support", "hash": "33acb3ea27ea36d0", "src": "db2@1.60.1.70291"}
-{"id": 1297143, "field": "name", "en": "Clutchlord's Stompers", "hash": "8c9ed56a876a378b", "src": "db2@1.60.1.70291"}
-{"id": 1297324, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70291"}
-{"id": 1297328, "field": "name", "en": "Fade to Black", "hash": "0fdc7ef91f0938c8", "src": "db2@1.60.1.70291"}
-{"id": 1297356, "field": "name", "en": "Seaforium Blasting Powder", "hash": "b603bb809459b75a", "src": "db2@1.60.1.70291"}
-{"id": 1297357, "field": "name", "en": "Reforged Spear", "hash": "d35acc94e9529734", "src": "db2@1.60.1.70291"}
-{"id": 1297357, "field": "description", "en": "Heals the wielder for $o1 damage over $d.", "hash": "4d66375f05781471", "src": "db2@1.60.1.70291"}
-{"id": 1297357, "field": "aura", "en": "Heals $s1 damage every $t1 sec.", "hash": "b325951b820b7d92", "src": "db2@1.60.1.70291"}
-{"id": 1297369, "field": "name", "en": "Ritual Cleansing", "hash": "a96ba621a14dae39", "src": "db2@1.60.1.70291"}
-{"id": 1297369, "field": "description", "en": "Removes $s1 poison effect.", "hash": "ac41a7c72a797e50", "src": "db2@1.60.1.70291"}
-{"id": 1297369, "field": "aura", "en": "Removes $s1 poison effect.", "hash": "ac41a7c72a797e50", "src": "db2@1.60.1.70291"}
-{"id": 1297370, "field": "name", "en": "Ritual Cleansing", "hash": "a96ba621a14dae39", "src": "db2@1.60.1.70291"}
-{"id": 1297370, "field": "description", "en": "Your healing spells have a $h% chance to remove $1297369s1 Poison effect from the target.", "hash": "163f309db1c1a7e3", "src": "db2@1.60.1.70291"}
-{"id": 1297378, "field": "name", "en": "Brambles", "hash": "168cd1faffb840a5", "src": "db2@1.60.1.70291"}
-{"id": 1297378, "field": "description", "en": "When struck in combat, inflicts $s1 Nature damage to the attacker.", "hash": "a5e493101d6270ee", "src": "db2@1.60.1.70291"}
-{"id": 1297431, "field": "name", "en": "Lava Eruption", "hash": "7d93fcce09608f01", "src": "db2@1.60.1.70291"}
-{"id": 1297442, "field": "name", "en": "Increased Fist Weapons 01", "hash": "aabbf2db7f9dcd09", "src": "db2@1.60.1.70291"}
-{"id": 1297442, "field": "description", "en": "Increased Fist Weapons +$s1.", "hash": "cffc03044977ec6c", "src": "db2@1.60.1.70291"}
-{"id": 1297448, "field": "name", "en": "Field Agent Beverage", "hash": "542dab9667f86b29", "src": "db2@1.60.1.70291"}
-{"id": 1297448, "field": "description", "en": "Increases your effective stealth detection level by ${$s1/5} for $d, then reduces your effective stealth detection level by ${$1297449s1/-5} for $1297449d.", "hash": "3f0ad5022f0524bb", "src": "db2@1.60.1.70291"}
-{"id": 1297448, "field": "aura", "en": "Increased stealth detection.", "hash": "2751c8b996f035fb", "src": "db2@1.60.1.70291"}
-{"id": 1297449, "field": "name", "en": "Dizzy", "hash": "b7d6735c1a4c6f53", "src": "db2@1.60.1.70291"}
-{"id": 1297449, "field": "aura", "en": "Reduced stealth detection.", "hash": "2e151c404c96e039", "src": "db2@1.60.1.70291"}
-{"id": 1297455, "field": "name", "en": "Resist Charm 06", "hash": "cd7a87468e18204e", "src": "db2@1.60.1.70291"}
-{"id": 1297455, "field": "description", "en": "Reduces the hit chance of Charm effects against you by $s1%.", "hash": "7e411fc29be68a2d", "src": "db2@1.60.1.70291"}
-{"id": 1297517, "field": "name", "en": "Breath", "hash": "b6d8efc4950e0225", "src": "db2@1.60.1.70291"}
-{"id": 1297588, "field": "name", "en": "Breath", "hash": "b6d8efc4950e0225", "src": "db2@1.60.1.70291"}
-{"id": 1297589, "field": "name", "en": "Engulfing Flames", "hash": "7eebb422917f1f0d", "src": "db2@1.60.1.70291"}
-{"id": 1297594, "field": "name", "en": "[DNT] Emote State - Dance", "hash": "1cb9e4d6401d3897", "src": "db2@1.60.1.70291"}
-{"id": 1297608, "field": "name", "en": "Summon Excitable Slime", "hash": "df5f0939dcd79723", "src": "db2@1.60.1.70291"}
-{"id": 1297608, "field": "description", "en": "Right Click to summon and dismiss your slimeling.", "hash": "744e4a9c5053fa4d", "src": "db2@1.60.1.70291"}
-{"id": 1297626, "field": "name", "en": "Decharge Other", "hash": "2d61b55c300ee85c", "src": "db2@1.60.1.70291"}
-{"id": 1297626, "field": "description", "en": "Target player loses all mana.", "hash": "447910a97f31292f", "src": "db2@1.60.1.70291"}
-{"id": 1297653, "field": "name", "en": "Foul Breath", "hash": "7ae438b57fc49421", "src": "db2@1.60.1.70291"}
-{"id": 1297653, "field": "description", "en": "Noxious venom and fire erupt around you, inflicting $s1 damage.", "hash": "20ec795cb8944cd5", "src": "db2@1.60.1.70291"}
-{"id": 1297653, "field": "aura", "en": "Engulfed in noxious, superheated fumes.", "hash": "93acc39503bbb929", "src": "db2@1.60.1.70291"}
-{"id": 1297659, "field": "name", "en": "Teleport: Dalaran", "hash": "2a9fae8757d3431e", "src": "db2@1.60.1.70291"}
-{"id": 1297659, "field": "description", "en": "Teleports the caster to Dalaran.", "hash": "a416287d9400fbd0", "src": "db2@1.60.1.70291"}
-{"id": 1297660, "field": "name", "en": "Teleport: Dalaran", "hash": "2a9fae8757d3431e", "src": "db2@1.60.1.70291"}
-{"id": 1297670, "field": "name", "en": "Test", "hash": "0b5c24b6f71d2077", "src": "db2@1.60.1.70291"}
-{"id": 1297671, "field": "name", "en": "Recycled Power", "hash": "d91bbb3aeee89bfe", "src": "db2@1.60.1.70291"}
-{"id": 1297671, "field": "description", "en": "Converts $s1% of your maximum health into $1297672s1% of your maximum mana, energy, or rage.", "hash": "966cc7f8fb05d0be", "src": "db2@1.60.1.70291"}
-{"id": 1297672, "field": "name", "en": "Recycled Power", "hash": "d91bbb3aeee89bfe", "src": "db2@1.60.1.70291"}
-{"id": 1297672, "field": "description", "en": "$s1% of maximum health converted into $s1% of maximum mana, rage, or energy.", "hash": "d41d1968431f0766", "src": "db2@1.60.1.70291"}
-{"id": 1297672, "field": "aura", "en": "$s1% resource restored.", "hash": "15bfacf06b2e7c77", "src": "db2@1.60.1.70291"}
-{"id": 1297685, "field": "name", "en": "[DNT] TEST - DELETE - Increased Mana Regen", "hash": "95d0e841da7f1930", "src": "db2@1.60.1.70291"}
-{"id": 1297685, "field": "description", "en": "Restores $s1 mana per 5 sec.", "hash": "9ac76902e577cf95", "src": "db2@1.60.1.70291"}
-{"id": 1297705, "field": "name", "en": "Syndicate Uniform", "hash": "87b2410a02891dc0", "src": "db2@1.60.1.70291"}
-{"id": 1297705, "field": "description", "en": "Disguise yourself as a member of the Syndicate. Suspicious activity will break the disguise.", "hash": "d22bf96d5bf12721", "src": "db2@1.60.1.70291"}
-{"id": 1297705, "field": "aura", "en": "Disguised as a member of the Syndicate.", "hash": "ca912f9d33b5562a", "src": "db2@1.60.1.70291"}
-{"id": 1297727, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70291"}
-{"id": 1297727, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70291"}
-{"id": 1297729, "field": "name", "en": "Zephras Cult Plans Conversation", "hash": "a96079e6ca6c5ee9", "src": "db2@1.60.1.70291"}
-{"id": 1297748, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70291"}
-{"id": 1297762, "field": "name", "en": "Propellerstorm", "hash": "eb0f70d938bf6b7d", "src": "db2@1.60.1.70291"}
-{"id": 1297762, "field": "description", "en": "Perform a Propellerstorm, reducing your fall speed for $d and dealing $1297967s1% weapon damage to nearby enemies when you land.", "hash": "4a646b85699a6f9c", "src": "db2@1.60.1.70291"}
-{"id": 1297762, "field": "aura", "en": "Reduced fall speed.", "hash": "48e6f892d27fdf52", "src": "db2@1.60.1.70291"}
-{"id": 1297774, "field": "name", "en": "Magical Awareness", "hash": "0d638bbe7740858a", "src": "db2@1.60.1.70291"}
-{"id": 1297774, "field": "description", "en": "Suffuse yourself with magical energy, allowing the detection and acquisition of Motes of Unstable Magic from certain spellcasters and powerful enemies.", "hash": "ebca25f03a7b6474", "src": "db2@1.60.1.70291"}
-{"id": 1297774, "field": "aura", "en": "Allows the acquisition of Motes of Unstable Magic.", "hash": "294a8fcd0679c8d4", "src": "db2@1.60.1.70291"}
-{"id": 1297791, "field": "name", "en": "Portal to the Violet Chamber", "hash": "94d29abc0d3611cf", "src": "db2@1.60.1.70291"}
-{"id": 1297803, "field": "name", "en": "Stolen Scroll", "hash": "7ad7bf0c9669bee6", "src": "db2@1.60.1.70291"}
-{"id": 1297813, "field": "name", "en": "Summon Imp", "hash": "e79eae9190e45da9", "src": "db2@1.60.1.70291"}
-{"id": 1297813, "field": "aura", "en": "Being summoned by a presumably very angry warlock.", "hash": "4ad7e4facb30bc62", "src": "db2@1.60.1.70291"}
-{"id": 1297817, "field": "name", "en": "Summon Imp", "hash": "e79eae9190e45da9", "src": "db2@1.60.1.70291"}
-{"id": 1297872, "field": "name", "en": "Cooldown", "hash": "1fda162d31b545c8", "src": "db2@1.60.1.70291"}
-{"id": 1297909, "field": "name", "en": "Test Spell", "hash": "2efc4a14a7d0afe5", "src": "db2@1.60.1.70291"}
-{"id": 1297910, "field": "name", "en": "Bristlecone", "hash": "5d8fcae2d202fa86", "src": "db2@1.60.1.70291"}
-{"id": 1297910, "field": "description", "en": "When struck in combat, inflicts $s1 Nature damage to the attacker.", "hash": "a5e493101d6270ee", "src": "db2@1.60.1.70291"}
-{"id": 1297921, "field": "name", "en": "Cremate", "hash": "474c16155e9e1630", "src": "db2@1.60.1.70291"}
-{"id": 1297921, "field": "description", "en": "Cremate the target for $s1 Fire damage.", "hash": "23318d7e1481f376", "src": "db2@1.60.1.70291"}
-{"id": 1297938, "field": "name", "en": "Portal to the Violet Chamber", "hash": "94d29abc0d3611cf", "src": "db2@1.60.1.70291"}
-{"id": 1297958, "field": "name", "en": "Transform: Dock Worker w/ Bag", "hash": "1919e68834451963", "src": "db2@1.60.1.70291"}
-{"id": 1297967, "field": "name", "en": "Propellerstorm", "hash": "eb0f70d938bf6b7d", "src": "db2@1.60.1.70291"}
-{"id": 1297967, "field": "description", "en": "Deals $s1% weapon damage to nearby enemies.", "hash": "31d7dda1bae3bd94", "src": "db2@1.60.1.70291"}
-{"id": 1297994, "field": "name", "en": "Spirit of Wind", "hash": "f6714946ddb9bf94", "src": "db2@1.60.1.70291"}
+{"id": 1297001, "field": "name", "en": "Lava Eruption", "hash": "7d93fcce09608f01", "src": "db2@1.60.1.70338"}
+{"id": 1297028, "field": "name", "en": "Skyship Arrival", "hash": "2bfa53d12eb67f89", "src": "db2@1.60.1.70338"}
+{"id": 1297048, "field": "name", "en": "Create", "hash": "b25d3b61e697ac2e", "src": "db2@1.60.1.70338"}
+{"id": 1297068, "field": "name", "en": "Comprehension Failure", "hash": "df5dc595f8a5f072", "src": "db2@1.60.1.70338"}
+{"id": 1297068, "field": "aura", "en": "You made a small mistake while deciphering the scroll.", "hash": "68b2aeef6e3c69bb", "src": "db2@1.60.1.70338"}
+{"id": 1297076, "field": "name", "en": "Spell Focus", "hash": "6cba6852489ab924", "src": "db2@1.60.1.70338"}
+{"id": 1297082, "field": "name", "en": "Eye of Influence", "hash": "bfbc1642ddd51e5b", "src": "db2@1.60.1.70338"}
+{"id": 1297082, "field": "description", "en": "Reduces target's attack power by $s1 for $d.", "hash": "b8f65f4b461a7c86", "src": "db2@1.60.1.70338"}
+{"id": 1297082, "field": "aura", "en": "Attack power lowered by $s1.", "hash": "3ac7251302b5bc93", "src": "db2@1.60.1.70338"}
+{"id": 1297085, "field": "name", "en": "Eye of Influence", "hash": "bfbc1642ddd51e5b", "src": "db2@1.60.1.70338"}
+{"id": 1297085, "field": "description", "en": "Chance on harmful spell cast to reduce target's attack power by $1297082s1 for $1297082d.\r\n", "hash": "eef8f4bfa11f845f", "src": "db2@1.60.1.70338"}
+{"id": 1297109, "field": "name", "en": "Foxtail Ward", "hash": "cd7e6f2b409e8244", "src": "db2@1.60.1.70338"}
+{"id": 1297109, "field": "description", "en": "Causes all Beasts in a $a2 yard radius to run away for $d.", "hash": "f30282934dde2d79", "src": "db2@1.60.1.70338"}
+{"id": 1297109, "field": "aura", "en": "Feared.", "hash": "5a2205f292a109c9", "src": "db2@1.60.1.70338"}
+{"id": 1297120, "field": "name", "en": "Venomspew Gloves", "hash": "d3ad89a13be8f348", "src": "db2@1.60.1.70338"}
+{"id": 1297121, "field": "name", "en": "Venomspew Cord", "hash": "7e78f61083d35736", "src": "db2@1.60.1.70338"}
+{"id": 1297122, "field": "name", "en": "Venomspew Footpads", "hash": "61200a8c516b4361", "src": "db2@1.60.1.70338"}
+{"id": 1297123, "field": "name", "en": "Swarmtender's Gloves", "hash": "94784a3f9419f046", "src": "db2@1.60.1.70338"}
+{"id": 1297124, "field": "name", "en": "Swarmtender's Cord", "hash": "eff62566aedd9f91", "src": "db2@1.60.1.70338"}
+{"id": 1297125, "field": "name", "en": "Swarmtender's Footpads", "hash": "38a9d759c7e02ed2", "src": "db2@1.60.1.70338"}
+{"id": 1297126, "field": "name", "en": "Bileblister Claws", "hash": "a92077303bfd802c", "src": "db2@1.60.1.70338"}
+{"id": 1297127, "field": "name", "en": "Bileblister Girdle", "hash": "4747353b2e33f1f8", "src": "db2@1.60.1.70338"}
+{"id": 1297128, "field": "name", "en": "Bileblister Boots", "hash": "97fd52a53cde31bb", "src": "db2@1.60.1.70338"}
+{"id": 1297129, "field": "name", "en": "Hivethrasher's Claws", "hash": "a96d3db494ecd55d", "src": "db2@1.60.1.70338"}
+{"id": 1297130, "field": "name", "en": "Hivethrasher's Girdle", "hash": "6e90cac753df7d4c", "src": "db2@1.60.1.70338"}
+{"id": 1297131, "field": "name", "en": "Hivethrasher's Boots", "hash": "984a192995cd86ec", "src": "db2@1.60.1.70338"}
+{"id": 1297132, "field": "name", "en": "Scalegut Clenchers", "hash": "97f8fe0de118aec3", "src": "db2@1.60.1.70338"}
+{"id": 1297133, "field": "name", "en": "Scalegut Belt", "hash": "8609f044a55709cf", "src": "db2@1.60.1.70338"}
+{"id": 1297134, "field": "name", "en": "Scalegut Treaders", "hash": "f3ca53cd4e1eb83e", "src": "db2@1.60.1.70338"}
+{"id": 1297135, "field": "name", "en": "Broodwatcher's Clenchers", "hash": "3587048fd5a7437f", "src": "db2@1.60.1.70338"}
+{"id": 1297136, "field": "name", "en": "Broodwatcher's Belt", "hash": "d9d3d70a5c153c8b", "src": "db2@1.60.1.70338"}
+{"id": 1297137, "field": "name", "en": "Broodwatcher's Treaders", "hash": "5e850f777f762965", "src": "db2@1.60.1.70338"}
+{"id": 1297138, "field": "name", "en": "Goregasher Grips", "hash": "e296a92f4854126e", "src": "db2@1.60.1.70338"}
+{"id": 1297139, "field": "name", "en": "Goregasher Support", "hash": "4b60d806c0187896", "src": "db2@1.60.1.70338"}
+{"id": 1297140, "field": "name", "en": "Goregasher Stompers", "hash": "adcd4ffae20a42b4", "src": "db2@1.60.1.70338"}
+{"id": 1297141, "field": "name", "en": "Clutchlord's Grips", "hash": "33eeb93f46348463", "src": "db2@1.60.1.70338"}
+{"id": 1297142, "field": "name", "en": "Clutchlord's Support", "hash": "33acb3ea27ea36d0", "src": "db2@1.60.1.70338"}
+{"id": 1297143, "field": "name", "en": "Clutchlord's Stompers", "hash": "8c9ed56a876a378b", "src": "db2@1.60.1.70338"}
+{"id": 1297324, "field": "name", "en": "Kill Credit (DNT)", "hash": "0dab0fa5cf43c242", "src": "db2@1.60.1.70338"}
+{"id": 1297328, "field": "name", "en": "Fade to Black", "hash": "0fdc7ef91f0938c8", "src": "db2@1.60.1.70338"}
+{"id": 1297356, "field": "name", "en": "Seaforium Blasting Powder", "hash": "b603bb809459b75a", "src": "db2@1.60.1.70338"}
+{"id": 1297357, "field": "name", "en": "Reforged Spear", "hash": "d35acc94e9529734", "src": "db2@1.60.1.70338"}
+{"id": 1297357, "field": "description", "en": "Heals the wielder for $o1 damage over $d.", "hash": "4d66375f05781471", "src": "db2@1.60.1.70338"}
+{"id": 1297357, "field": "aura", "en": "Heals $s1 damage every $t1 sec.", "hash": "b325951b820b7d92", "src": "db2@1.60.1.70338"}
+{"id": 1297369, "field": "name", "en": "Ritual Cleansing", "hash": "a96ba621a14dae39", "src": "db2@1.60.1.70338"}
+{"id": 1297369, "field": "description", "en": "Removes $s1 poison effect.", "hash": "ac41a7c72a797e50", "src": "db2@1.60.1.70338"}
+{"id": 1297369, "field": "aura", "en": "Removes $s1 poison effect.", "hash": "ac41a7c72a797e50", "src": "db2@1.60.1.70338"}
+{"id": 1297370, "field": "name", "en": "Ritual Cleansing", "hash": "a96ba621a14dae39", "src": "db2@1.60.1.70338"}
+{"id": 1297370, "field": "description", "en": "Your healing spells have a $h% chance to remove $1297369s1 Poison effect from the target.", "hash": "163f309db1c1a7e3", "src": "db2@1.60.1.70338"}
+{"id": 1297378, "field": "name", "en": "Brambles", "hash": "168cd1faffb840a5", "src": "db2@1.60.1.70338"}
+{"id": 1297378, "field": "description", "en": "When struck in combat, inflicts $s1 Nature damage to the attacker.", "hash": "a5e493101d6270ee", "src": "db2@1.60.1.70338"}
+{"id": 1297431, "field": "name", "en": "Lava Eruption", "hash": "7d93fcce09608f01", "src": "db2@1.60.1.70338"}
+{"id": 1297442, "field": "name", "en": "Increased Fist Weapons 01", "hash": "aabbf2db7f9dcd09", "src": "db2@1.60.1.70338"}
+{"id": 1297442, "field": "description", "en": "Increased Fist Weapons +$s1.", "hash": "cffc03044977ec6c", "src": "db2@1.60.1.70338"}
+{"id": 1297448, "field": "name", "en": "Field Agent Beverage", "hash": "542dab9667f86b29", "src": "db2@1.60.1.70338"}
+{"id": 1297448, "field": "description", "en": "Increases your effective stealth detection level by ${$s1/5} for $d, then reduces your effective stealth detection level by ${$1297449s1/-5} for $1297449d.", "hash": "3f0ad5022f0524bb", "src": "db2@1.60.1.70338"}
+{"id": 1297448, "field": "aura", "en": "Increased stealth detection.", "hash": "2751c8b996f035fb", "src": "db2@1.60.1.70338"}
+{"id": 1297449, "field": "name", "en": "Dizzy", "hash": "b7d6735c1a4c6f53", "src": "db2@1.60.1.70338"}
+{"id": 1297449, "field": "aura", "en": "Reduced stealth detection.", "hash": "2e151c404c96e039", "src": "db2@1.60.1.70338"}
+{"id": 1297455, "field": "name", "en": "Resist Charm 06", "hash": "cd7a87468e18204e", "src": "db2@1.60.1.70338"}
+{"id": 1297455, "field": "description", "en": "Reduces the hit chance of Charm effects against you by $s1%.", "hash": "7e411fc29be68a2d", "src": "db2@1.60.1.70338"}
+{"id": 1297517, "field": "name", "en": "Breath", "hash": "b6d8efc4950e0225", "src": "db2@1.60.1.70338"}
+{"id": 1297588, "field": "name", "en": "Breath", "hash": "b6d8efc4950e0225", "src": "db2@1.60.1.70338"}
+{"id": 1297589, "field": "name", "en": "Engulfing Flames", "hash": "7eebb422917f1f0d", "src": "db2@1.60.1.70338"}
+{"id": 1297594, "field": "name", "en": "[DNT] Emote State - Dance", "hash": "1cb9e4d6401d3897", "src": "db2@1.60.1.70338"}
+{"id": 1297608, "field": "name", "en": "Summon Excitable Slime", "hash": "df5f0939dcd79723", "src": "db2@1.60.1.70338"}
+{"id": 1297608, "field": "description", "en": "Right Click to summon and dismiss your slimeling.", "hash": "744e4a9c5053fa4d", "src": "db2@1.60.1.70338"}
+{"id": 1297626, "field": "name", "en": "Decharge Other", "hash": "2d61b55c300ee85c", "src": "db2@1.60.1.70338"}
+{"id": 1297626, "field": "description", "en": "Target player loses all mana.", "hash": "447910a97f31292f", "src": "db2@1.60.1.70338"}
+{"id": 1297653, "field": "name", "en": "Foul Breath", "hash": "7ae438b57fc49421", "src": "db2@1.60.1.70338"}
+{"id": 1297653, "field": "description", "en": "Noxious venom and fire erupt around you, inflicting $s1 damage.", "hash": "20ec795cb8944cd5", "src": "db2@1.60.1.70338"}
+{"id": 1297653, "field": "aura", "en": "Engulfed in noxious, superheated fumes.", "hash": "93acc39503bbb929", "src": "db2@1.60.1.70338"}
+{"id": 1297659, "field": "name", "en": "Teleport: Dalaran", "hash": "2a9fae8757d3431e", "src": "db2@1.60.1.70338"}
+{"id": 1297659, "field": "description", "en": "Teleports the caster to Dalaran.", "hash": "a416287d9400fbd0", "src": "db2@1.60.1.70338"}
+{"id": 1297660, "field": "name", "en": "Teleport: Dalaran", "hash": "2a9fae8757d3431e", "src": "db2@1.60.1.70338"}
+{"id": 1297670, "field": "name", "en": "Test", "hash": "0b5c24b6f71d2077", "src": "db2@1.60.1.70338"}
+{"id": 1297671, "field": "name", "en": "Recycled Power", "hash": "d91bbb3aeee89bfe", "src": "db2@1.60.1.70338"}
+{"id": 1297671, "field": "description", "en": "Converts $s1% of your maximum health into $1297672s1% of your maximum mana, energy, or rage.", "hash": "966cc7f8fb05d0be", "src": "db2@1.60.1.70338"}
+{"id": 1297672, "field": "name", "en": "Recycled Power", "hash": "d91bbb3aeee89bfe", "src": "db2@1.60.1.70338"}
+{"id": 1297672, "field": "description", "en": "$s1% of maximum health converted into $s1% of maximum mana, rage, or energy.", "hash": "d41d1968431f0766", "src": "db2@1.60.1.70338"}
+{"id": 1297672, "field": "aura", "en": "$s1% resource restored.", "hash": "15bfacf06b2e7c77", "src": "db2@1.60.1.70338"}
+{"id": 1297685, "field": "name", "en": "[DNT] TEST - DELETE - Increased Mana Regen", "hash": "95d0e841da7f1930", "src": "db2@1.60.1.70338"}
+{"id": 1297685, "field": "description", "en": "Restores $s1 mana per 5 sec.", "hash": "9ac76902e577cf95", "src": "db2@1.60.1.70338"}
+{"id": 1297705, "field": "name", "en": "Syndicate Uniform", "hash": "87b2410a02891dc0", "src": "db2@1.60.1.70338"}
+{"id": 1297705, "field": "description", "en": "Disguise yourself as a member of the Syndicate. Suspicious activity will break the disguise.", "hash": "d22bf96d5bf12721", "src": "db2@1.60.1.70338"}
+{"id": 1297705, "field": "aura", "en": "Disguised as a member of the Syndicate.", "hash": "ca912f9d33b5562a", "src": "db2@1.60.1.70338"}
+{"id": 1297727, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70338"}
+{"id": 1297727, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70338"}
+{"id": 1297729, "field": "name", "en": "Zephras Cult Plans Conversation", "hash": "a96079e6ca6c5ee9", "src": "db2@1.60.1.70338"}
+{"id": 1297748, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70338"}
+{"id": 1297762, "field": "name", "en": "Propellerstorm", "hash": "eb0f70d938bf6b7d", "src": "db2@1.60.1.70338"}
+{"id": 1297762, "field": "description", "en": "Perform a Propellerstorm, reducing your fall speed for $d and dealing $1297967s1% weapon damage to nearby enemies when you land.", "hash": "4a646b85699a6f9c", "src": "db2@1.60.1.70338"}
+{"id": 1297762, "field": "aura", "en": "Reduced fall speed.", "hash": "48e6f892d27fdf52", "src": "db2@1.60.1.70338"}
+{"id": 1297774, "field": "name", "en": "Magical Awareness", "hash": "0d638bbe7740858a", "src": "db2@1.60.1.70338"}
+{"id": 1297774, "field": "description", "en": "Suffuse yourself with magical energy, allowing the detection and acquisition of Motes of Unstable Magic from certain spellcasters and powerful enemies.", "hash": "ebca25f03a7b6474", "src": "db2@1.60.1.70338"}
+{"id": 1297774, "field": "aura", "en": "Allows the acquisition of Motes of Unstable Magic.", "hash": "294a8fcd0679c8d4", "src": "db2@1.60.1.70338"}
+{"id": 1297791, "field": "name", "en": "Portal to the Violet Chamber", "hash": "94d29abc0d3611cf", "src": "db2@1.60.1.70338"}
+{"id": 1297803, "field": "name", "en": "Stolen Scroll", "hash": "7ad7bf0c9669bee6", "src": "db2@1.60.1.70338"}
+{"id": 1297813, "field": "name", "en": "Summon Imp", "hash": "e79eae9190e45da9", "src": "db2@1.60.1.70338"}
+{"id": 1297813, "field": "aura", "en": "Being summoned by a presumably very angry warlock.", "hash": "4ad7e4facb30bc62", "src": "db2@1.60.1.70338"}
+{"id": 1297817, "field": "name", "en": "Summon Imp", "hash": "e79eae9190e45da9", "src": "db2@1.60.1.70338"}
+{"id": 1297872, "field": "name", "en": "Cooldown", "hash": "1fda162d31b545c8", "src": "db2@1.60.1.70338"}
+{"id": 1297909, "field": "name", "en": "Test Spell", "hash": "2efc4a14a7d0afe5", "src": "db2@1.60.1.70338"}
+{"id": 1297910, "field": "name", "en": "Bristlecone", "hash": "5d8fcae2d202fa86", "src": "db2@1.60.1.70338"}
+{"id": 1297910, "field": "description", "en": "When struck in combat, inflicts $s1 Nature damage to the attacker.", "hash": "a5e493101d6270ee", "src": "db2@1.60.1.70338"}
+{"id": 1297921, "field": "name", "en": "Cremate", "hash": "474c16155e9e1630", "src": "db2@1.60.1.70338"}
+{"id": 1297921, "field": "description", "en": "Cremate the target for $s1 Fire damage.", "hash": "23318d7e1481f376", "src": "db2@1.60.1.70338"}
+{"id": 1297938, "field": "name", "en": "Portal to the Violet Chamber", "hash": "94d29abc0d3611cf", "src": "db2@1.60.1.70338"}
+{"id": 1297958, "field": "name", "en": "Transform: Dock Worker w/ Bag", "hash": "1919e68834451963", "src": "db2@1.60.1.70338"}
+{"id": 1297967, "field": "name", "en": "Propellerstorm", "hash": "eb0f70d938bf6b7d", "src": "db2@1.60.1.70338"}
+{"id": 1297967, "field": "description", "en": "Deals $s1% weapon damage to nearby enemies.", "hash": "31d7dda1bae3bd94", "src": "db2@1.60.1.70338"}
+{"id": 1297994, "field": "name", "en": "Spirit of Wind", "hash": "f6714946ddb9bf94", "src": "db2@1.60.1.70338"}

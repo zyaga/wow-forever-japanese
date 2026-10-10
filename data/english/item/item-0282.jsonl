@@ -1,93 +1,93 @@
-{"id": 282003, "field": "name", "en": "Lost Chieftain's Greatsword", "hash": "6055117a7ae0af99", "src": "db2@1.60.1.70291"}
-{"id": 282006, "field": "name", "en": "Crumbling Hearthstone", "hash": "b161ced11576e04a", "src": "db2@1.60.1.70291"}
-{"id": 282006, "field": "description", "en": "Returns you to $?pc923[Orgrimmar][Stormwind]. Single-use.", "hash": "5a5581335fabb81e", "src": "db2@1.60.1.70291"}
-{"id": 282007, "field": "name", "en": "Emerald Watcher's Dreamstaff", "hash": "734239c592005d3c", "src": "db2@1.60.1.70291"}
-{"id": 282008, "field": "name", "en": "Wyrmak's Cuirass", "hash": "9edfe8dda6340e8d", "src": "db2@1.60.1.70291"}
-{"id": 282010, "field": "name", "en": "Tusk of Grunter", "hash": "78b51405111fe0f4", "src": "db2@1.60.1.70291"}
-{"id": 282011, "field": "name", "en": "Restored Healing Potion", "hash": "87cf6dc5ff413e48", "src": "db2@1.60.1.70291"}
-{"id": 282011, "field": "description", "en": "Restores $s1% health.", "hash": "bfc764d330bfd9d0", "src": "db2@1.60.1.70291"}
-{"id": 282012, "field": "name", "en": "Corsepickers", "hash": "a8f7e3e43c5957ca", "src": "db2@1.60.1.70291"}
-{"id": 282013, "field": "name", "en": "Restored Mana Potion", "hash": "d9f41339d9aa86ee", "src": "db2@1.60.1.70291"}
-{"id": 282013, "field": "description", "en": "Restores $s1% mana.", "hash": "ce81cf6a181687ba", "src": "db2@1.60.1.70291"}
-{"id": 282015, "field": "name", "en": "Restored Small Brown Pouch", "hash": "ab4d8d3ee411d75a", "src": "db2@1.60.1.70291"}
-{"id": 282016, "field": "name", "en": "Restored Brown Leather Satchel", "hash": "85ecdde1a5cda104", "src": "db2@1.60.1.70291"}
-{"id": 282017, "field": "name", "en": "Restored Heavy Brown Bag", "hash": "8359925e7475e613", "src": "db2@1.60.1.70291"}
-{"id": 282018, "field": "name", "en": "Restorative Bread", "hash": "461748477038cf26", "src": "db2@1.60.1.70291"}
-{"id": 282018, "field": "description", "en": "Restores $o3% health and $o1% Mana over $d. Must remain seated while drinking.", "hash": "c98bf5195be81742", "src": "db2@1.60.1.70291"}
-{"id": 282019, "field": "name", "en": "Braided Seer Stones", "hash": "90eccdb2e987499e", "src": "db2@1.60.1.70291"}
-{"id": 282023, "field": "name", "en": "Clack's Claw", "hash": "4c3b13513470ec46", "src": "db2@1.60.1.70291"}
-{"id": 282026, "field": "name", "en": "Unyielding Battle Signet", "hash": "04c2d3d32bb8c5c8", "src": "db2@1.60.1.70291"}
-{"id": 282028, "field": "name", "en": "Broken Frond of Celastrus", "hash": "661e06f3fbe51357", "src": "db2@1.60.1.70291"}
-{"id": 282029, "field": "name", "en": "Reaver's Repeater", "hash": "9a04638e3a328685", "src": "db2@1.60.1.70291"}
-{"id": 282046, "field": "name", "en": "Gnome Skull", "hash": "5099d54b84b74b18", "src": "db2@1.60.1.70291"}
-{"id": 282046, "field": "description", "en": "That explains how the beast became so large.", "hash": "16ecfb253da820b2", "src": "db2@1.60.1.70291"}
-{"id": 282047, "field": "name", "en": "Baby Crocolisk", "hash": "a334cee1994b82ff", "src": "db2@1.60.1.70291"}
-{"id": 282047, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70291"}
-{"id": 282048, "field": "name", "en": "Ragged Dark Iron Cuffs", "hash": "f7a769e3620d4fc7", "src": "db2@1.60.1.70291"}
-{"id": 282064, "field": "name", "en": "Tim's Lost Rib", "hash": "a7d037155cb6ffb9", "src": "db2@1.60.1.70291"}
-{"id": 282064, "field": "description", "en": "Tim probably won't miss it.", "hash": "b4971c8bb8f7fdd1", "src": "db2@1.60.1.70291"}
-{"id": 282065, "field": "name", "en": "Sealed Letter", "hash": "47a6502074283fde", "src": "db2@1.60.1.70291"}
-{"id": 282070, "field": "name", "en": "Gruklash's Basher", "hash": "8444028352de2d44", "src": "db2@1.60.1.70291"}
-{"id": 282074, "field": "name", "en": "Ogre Sorcerer Belt", "hash": "550027e8578e98b2", "src": "db2@1.60.1.70291"}
-{"id": 282074, "field": "description", "en": "Even the magically inclined ogre values physical strength.", "hash": "80b41cfb0393cdd7", "src": "db2@1.60.1.70291"}
-{"id": 282080, "field": "name", "en": "Flame Seared Signet", "hash": "c71cd17b5bb9e2f3", "src": "db2@1.60.1.70291"}
-{"id": 282080, "field": "description", "en": "When struck in combat, inflicts $s1 Fire damage to the attacker.", "hash": "ddbd4603dffccca9", "src": "db2@1.60.1.70291"}
-{"id": 282088, "field": "name", "en": "Heart of Smoldar", "hash": "e694e130fb9dec5c", "src": "db2@1.60.1.70291"}
-{"id": 282097, "field": "name", "en": "Unbreakable Golem Grips", "hash": "62c1390aaa2d52ad", "src": "db2@1.60.1.70291"}
-{"id": 282283, "field": "name", "en": "Malignant Root", "hash": "5bf387693e5f22d5", "src": "db2@1.60.1.70291"}
-{"id": 282284, "field": "name", "en": "Webwood Slicer", "hash": "1e337a90f90b4438", "src": "db2@1.60.1.70291"}
-{"id": 282285, "field": "name", "en": "Clearcutter Key", "hash": "7b43c68df3ee1d49", "src": "db2@1.60.1.70291"}
-{"id": 282285, "field": "description", "en": "Melt the key at a forge for $s1 Bronze Bars.", "hash": "8a94dcd76d227f33", "src": "db2@1.60.1.70291"}
-{"id": 282286, "field": "name", "en": "Shipwright's Satchel", "hash": "04b339633c020c91", "src": "db2@1.60.1.70291"}
-{"id": 282294, "field": "name", "en": "Guild Tabard", "hash": "4a798f6117cc3550", "src": "db2@1.60.1.70291"}
-{"id": 282338, "field": "name", "en": "Hallowed Memorandum", "hash": "9246c933756747db", "src": "db2@1.60.1.70291"}
-{"id": 282346, "field": "name", "en": "Tainted Tablet", "hash": "918917d0271ff7ee", "src": "db2@1.60.1.70291"}
-{"id": 282380, "field": "name", "en": "Glyphic Parchment", "hash": "6fd02ac30c3ccbc6", "src": "db2@1.60.1.70291"}
-{"id": 282400, "field": "name", "en": "Archaic Rune", "hash": "31d52645f46dbcf5", "src": "db2@1.60.1.70291"}
-{"id": 282406, "field": "name", "en": "Azsharan Key", "hash": "08c47322d9bdff61", "src": "db2@1.60.1.70291"}
-{"id": 282416, "field": "name", "en": "Glowing Recall Crystal", "hash": "84ec235ba4ff7d12", "src": "db2@1.60.1.70291"}
-{"id": 282418, "field": "name", "en": "Humming Recall Crystal", "hash": "fa574eee092e668f", "src": "db2@1.60.1.70291"}
-{"id": 282419, "field": "name", "en": "Crumpled Note", "hash": "051efdd9b2aa6427", "src": "db2@1.60.1.70291"}
-{"id": 282420, "field": "name", "en": "Folded Parchment", "hash": "5480a48cd0113395", "src": "db2@1.60.1.70291"}
-{"id": 282421, "field": "name", "en": "Scribbled Note", "hash": "5ee613086873ab4b", "src": "db2@1.60.1.70291"}
-{"id": 282422, "field": "name", "en": "Simple Note", "hash": "14ead102f8a57ff2", "src": "db2@1.60.1.70291"}
-{"id": 282423, "field": "name", "en": "Consecrated Scroll", "hash": "f0d940da1a855a57", "src": "db2@1.60.1.70291"}
-{"id": 282431, "field": "name", "en": "Tears of Anguish", "hash": "e7c260aa42c3b9b5", "src": "db2@1.60.1.70291"}
-{"id": 282551, "field": "name", "en": "Golem Fist", "hash": "e2738b91928d8f05", "src": "db2@1.60.1.70291"}
-{"id": 282551, "field": "description", "en": "Smash the target for $s1 damage.", "hash": "fefebd7e3f713888", "src": "db2@1.60.1.70291"}
-{"id": 282555, "field": "name", "en": "Shadowforge Shield", "hash": "a1d9165e616dca99", "src": "db2@1.60.1.70291"}
-{"id": 282557, "field": "name", "en": "Broken Tooth's Flayed Hide", "hash": "8f250cde34de6998", "src": "db2@1.60.1.70291"}
-{"id": 282557, "field": "description", "en": "The hide of a fallen friend.", "hash": "6a12888dca20865e", "src": "db2@1.60.1.70291"}
-{"id": 282558, "field": "name", "en": "Firebird's Cowl", "hash": "613c870d7ef1facc", "src": "db2@1.60.1.70291"}
-{"id": 282559, "field": "name", "en": "Fallen Adventurer's Femur", "hash": "795e04c547896736", "src": "db2@1.60.1.70291"}
-{"id": 282559, "field": "description", "en": "Consumed, never to return.", "hash": "0c0bfcd9a830b0e3", "src": "db2@1.60.1.70291"}
-{"id": 282560, "field": "name", "en": "Earth-Infused Rockguards", "hash": "24707ba340f0fb8f", "src": "db2@1.60.1.70291"}
-{"id": 282561, "field": "name", "en": "Siegebreaker's Blaster", "hash": "6b26b364f34409bb", "src": "db2@1.60.1.70291"}
-{"id": 282561, "field": "description", "en": "Strike the target with a Flaming Shell, inflicting $s1 Fire damage every 3 sec for 9 sec.", "hash": "f008d9b83a673544", "src": "db2@1.60.1.70291"}
-{"id": 282636, "field": "name", "en": "Silkspun Gloves", "hash": "213187a212aa52b3", "src": "db2@1.60.1.70291"}
-{"id": 282637, "field": "name", "en": "Shaking Egg", "hash": "f41d4ea6c5a547dc", "src": "db2@1.60.1.70291"}
-{"id": 282637, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70291"}
-{"id": 282639, "field": "name", "en": "Emogg's \"Crusher\"", "hash": "7c4f058b0aff7fa3", "src": "db2@1.60.1.70291"}
-{"id": 282639, "field": "description", "en": "Ogres will crush you with anything.", "hash": "397b0b4c3f62c01c", "src": "db2@1.60.1.70291"}
-{"id": 282642, "field": "name", "en": "Feather-Stitched Moccasins", "hash": "a9e4ca4905a9e0d9", "src": "db2@1.60.1.70291"}
-{"id": 282653, "field": "name", "en": "Dissolved Locket", "hash": "8a46c56a9c5699ff", "src": "db2@1.60.1.70291"}
-{"id": 282654, "field": "name", "en": "Gnawed Bone", "hash": "923ef906ded712a2", "src": "db2@1.60.1.70291"}
-{"id": 282655, "field": "name", "en": "Bog Pickers", "hash": "2f3a593da1d6a664", "src": "db2@1.60.1.70291"}
-{"id": 282658, "field": "name", "en": "Dragonmaw Battle Shroud", "hash": "8fe189229aeabeac", "src": "db2@1.60.1.70291"}
-{"id": 282702, "field": "name", "en": "Molok's Masher", "hash": "8dbc3438a1257eb8", "src": "db2@1.60.1.70291"}
-{"id": 282703, "field": "name", "en": "Needletooth's Needletooth", "hash": "a9a3507b402b6244", "src": "db2@1.60.1.70291"}
-{"id": 282703, "field": "description", "en": "Puncture the target, inflicting $s1 Physical damage.", "hash": "970d45f0a0a3e668", "src": "db2@1.60.1.70291"}
-{"id": 282704, "field": "name", "en": "Shadow Council Apprentice's Mantle", "hash": "0e4b01c50fdd1370", "src": "db2@1.60.1.70291"}
-{"id": 282706, "field": "name", "en": "Rotting Meat", "hash": "b0f911838ba80dc8", "src": "db2@1.60.1.70291"}
-{"id": 282706, "field": "description", "en": "There's no questioning how Foulbelly earned that name.", "hash": "5f9003959592dac2", "src": "db2@1.60.1.70291"}
-{"id": 282710, "field": "name", "en": "Dun Garok Rifle", "hash": "72c51d840d0362d3", "src": "db2@1.60.1.70291"}
-{"id": 282711, "field": "name", "en": "Naga Maiden's Gown", "hash": "48d38692a9113bb6", "src": "db2@1.60.1.70291"}
-{"id": 282713, "field": "name", "en": "Bloodstained Pants", "hash": "8987c979d47dee14", "src": "db2@1.60.1.70291"}
-{"id": 282716, "field": "name", "en": "Imbued Scaled Cuffs", "hash": "85789d8876de4d80", "src": "db2@1.60.1.70291"}
-{"id": 282717, "field": "name", "en": "Durable Bearhide Pauldrons", "hash": "d125a775a886bafa", "src": "db2@1.60.1.70291"}
-{"id": 282719, "field": "name", "en": "Monster - Bow, Skyborne (Gray)", "hash": "5d9c8691e77a9290", "src": "db2@1.60.1.70291"}
-{"id": 282720, "field": "name", "en": "Spider Swarm", "hash": "aa3541742a8aee21", "src": "db2@1.60.1.70291"}
-{"id": 282720, "field": "description", "en": "Summons a swarm of spiders that will protect you for $d.", "hash": "08920823291a1c0f", "src": "db2@1.60.1.70291"}
-{"id": 282721, "field": "name", "en": "Gnoll Shaman's Staff", "hash": "ce92bd81a0958895", "src": "db2@1.60.1.70291"}
-{"id": 282778, "field": "name", "en": "Mark of the Red Flight", "hash": "d522e3ebd894e9e5", "src": "db2@1.60.1.70291"}
-{"id": 282778, "field": "description", "en": "Absorbs $w1 Fire damage, healing for all damage absorbed.", "hash": "daf8bde4046e7fb1", "src": "db2@1.60.1.70291"}
+{"id": 282003, "field": "name", "en": "Lost Chieftain's Greatsword", "hash": "6055117a7ae0af99", "src": "db2@1.60.1.70338"}
+{"id": 282006, "field": "name", "en": "Crumbling Hearthstone", "hash": "b161ced11576e04a", "src": "db2@1.60.1.70338"}
+{"id": 282006, "field": "description", "en": "Returns you to $?pc923[Orgrimmar][Stormwind]. Single-use.", "hash": "5a5581335fabb81e", "src": "db2@1.60.1.70338"}
+{"id": 282007, "field": "name", "en": "Emerald Watcher's Dreamstaff", "hash": "734239c592005d3c", "src": "db2@1.60.1.70338"}
+{"id": 282008, "field": "name", "en": "Wyrmak's Cuirass", "hash": "9edfe8dda6340e8d", "src": "db2@1.60.1.70338"}
+{"id": 282010, "field": "name", "en": "Tusk of Grunter", "hash": "78b51405111fe0f4", "src": "db2@1.60.1.70338"}
+{"id": 282011, "field": "name", "en": "Restored Healing Potion", "hash": "87cf6dc5ff413e48", "src": "db2@1.60.1.70338"}
+{"id": 282011, "field": "description", "en": "Restores $s1% health.", "hash": "bfc764d330bfd9d0", "src": "db2@1.60.1.70338"}
+{"id": 282012, "field": "name", "en": "Corsepickers", "hash": "a8f7e3e43c5957ca", "src": "db2@1.60.1.70338"}
+{"id": 282013, "field": "name", "en": "Restored Mana Potion", "hash": "d9f41339d9aa86ee", "src": "db2@1.60.1.70338"}
+{"id": 282013, "field": "description", "en": "Restores $s1% mana.", "hash": "ce81cf6a181687ba", "src": "db2@1.60.1.70338"}
+{"id": 282015, "field": "name", "en": "Restored Small Brown Pouch", "hash": "ab4d8d3ee411d75a", "src": "db2@1.60.1.70338"}
+{"id": 282016, "field": "name", "en": "Restored Brown Leather Satchel", "hash": "85ecdde1a5cda104", "src": "db2@1.60.1.70338"}
+{"id": 282017, "field": "name", "en": "Restored Heavy Brown Bag", "hash": "8359925e7475e613", "src": "db2@1.60.1.70338"}
+{"id": 282018, "field": "name", "en": "Restorative Bread", "hash": "461748477038cf26", "src": "db2@1.60.1.70338"}
+{"id": 282018, "field": "description", "en": "Restores $o3% health and $o1% Mana over $d. Must remain seated while drinking.", "hash": "c98bf5195be81742", "src": "db2@1.60.1.70338"}
+{"id": 282019, "field": "name", "en": "Braided Seer Stones", "hash": "90eccdb2e987499e", "src": "db2@1.60.1.70338"}
+{"id": 282023, "field": "name", "en": "Clack's Claw", "hash": "4c3b13513470ec46", "src": "db2@1.60.1.70338"}
+{"id": 282026, "field": "name", "en": "Unyielding Battle Signet", "hash": "04c2d3d32bb8c5c8", "src": "db2@1.60.1.70338"}
+{"id": 282028, "field": "name", "en": "Broken Frond of Celastrus", "hash": "661e06f3fbe51357", "src": "db2@1.60.1.70338"}
+{"id": 282029, "field": "name", "en": "Reaver's Repeater", "hash": "9a04638e3a328685", "src": "db2@1.60.1.70338"}
+{"id": 282046, "field": "name", "en": "Gnome Skull", "hash": "5099d54b84b74b18", "src": "db2@1.60.1.70338"}
+{"id": 282046, "field": "description", "en": "That explains how the beast became so large.", "hash": "16ecfb253da820b2", "src": "db2@1.60.1.70338"}
+{"id": 282047, "field": "name", "en": "Baby Crocolisk", "hash": "a334cee1994b82ff", "src": "db2@1.60.1.70338"}
+{"id": 282047, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70338"}
+{"id": 282048, "field": "name", "en": "Ragged Dark Iron Cuffs", "hash": "f7a769e3620d4fc7", "src": "db2@1.60.1.70338"}
+{"id": 282064, "field": "name", "en": "Tim's Lost Rib", "hash": "a7d037155cb6ffb9", "src": "db2@1.60.1.70338"}
+{"id": 282064, "field": "description", "en": "Tim probably won't miss it.", "hash": "b4971c8bb8f7fdd1", "src": "db2@1.60.1.70338"}
+{"id": 282065, "field": "name", "en": "Sealed Letter", "hash": "47a6502074283fde", "src": "db2@1.60.1.70338"}
+{"id": 282070, "field": "name", "en": "Gruklash's Basher", "hash": "8444028352de2d44", "src": "db2@1.60.1.70338"}
+{"id": 282074, "field": "name", "en": "Ogre Sorcerer Belt", "hash": "550027e8578e98b2", "src": "db2@1.60.1.70338"}
+{"id": 282074, "field": "description", "en": "Even the magically inclined ogre values physical strength.", "hash": "80b41cfb0393cdd7", "src": "db2@1.60.1.70338"}
+{"id": 282080, "field": "name", "en": "Flame Seared Signet", "hash": "c71cd17b5bb9e2f3", "src": "db2@1.60.1.70338"}
+{"id": 282080, "field": "description", "en": "When struck in combat, inflicts $s1 Fire damage to the attacker.", "hash": "ddbd4603dffccca9", "src": "db2@1.60.1.70338"}
+{"id": 282088, "field": "name", "en": "Heart of Smoldar", "hash": "e694e130fb9dec5c", "src": "db2@1.60.1.70338"}
+{"id": 282097, "field": "name", "en": "Unbreakable Golem Grips", "hash": "62c1390aaa2d52ad", "src": "db2@1.60.1.70338"}
+{"id": 282283, "field": "name", "en": "Malignant Root", "hash": "5bf387693e5f22d5", "src": "db2@1.60.1.70338"}
+{"id": 282284, "field": "name", "en": "Webwood Slicer", "hash": "1e337a90f90b4438", "src": "db2@1.60.1.70338"}
+{"id": 282285, "field": "name", "en": "Clearcutter Key", "hash": "7b43c68df3ee1d49", "src": "db2@1.60.1.70338"}
+{"id": 282285, "field": "description", "en": "Melt the key at a forge for $s1 Bronze Bars.", "hash": "8a94dcd76d227f33", "src": "db2@1.60.1.70338"}
+{"id": 282286, "field": "name", "en": "Shipwright's Satchel", "hash": "04b339633c020c91", "src": "db2@1.60.1.70338"}
+{"id": 282294, "field": "name", "en": "Guild Tabard", "hash": "4a798f6117cc3550", "src": "db2@1.60.1.70338"}
+{"id": 282338, "field": "name", "en": "Hallowed Memorandum", "hash": "9246c933756747db", "src": "db2@1.60.1.70338"}
+{"id": 282346, "field": "name", "en": "Tainted Tablet", "hash": "918917d0271ff7ee", "src": "db2@1.60.1.70338"}
+{"id": 282380, "field": "name", "en": "Glyphic Parchment", "hash": "6fd02ac30c3ccbc6", "src": "db2@1.60.1.70338"}
+{"id": 282400, "field": "name", "en": "Archaic Rune", "hash": "31d52645f46dbcf5", "src": "db2@1.60.1.70338"}
+{"id": 282406, "field": "name", "en": "Azsharan Key", "hash": "08c47322d9bdff61", "src": "db2@1.60.1.70338"}
+{"id": 282416, "field": "name", "en": "Glowing Recall Crystal", "hash": "84ec235ba4ff7d12", "src": "db2@1.60.1.70338"}
+{"id": 282418, "field": "name", "en": "Humming Recall Crystal", "hash": "fa574eee092e668f", "src": "db2@1.60.1.70338"}
+{"id": 282419, "field": "name", "en": "Crumpled Note", "hash": "051efdd9b2aa6427", "src": "db2@1.60.1.70338"}
+{"id": 282420, "field": "name", "en": "Folded Parchment", "hash": "5480a48cd0113395", "src": "db2@1.60.1.70338"}
+{"id": 282421, "field": "name", "en": "Scribbled Note", "hash": "5ee613086873ab4b", "src": "db2@1.60.1.70338"}
+{"id": 282422, "field": "name", "en": "Simple Note", "hash": "14ead102f8a57ff2", "src": "db2@1.60.1.70338"}
+{"id": 282423, "field": "name", "en": "Consecrated Scroll", "hash": "f0d940da1a855a57", "src": "db2@1.60.1.70338"}
+{"id": 282431, "field": "name", "en": "Tears of Anguish", "hash": "e7c260aa42c3b9b5", "src": "db2@1.60.1.70338"}
+{"id": 282551, "field": "name", "en": "Golem Fist", "hash": "e2738b91928d8f05", "src": "db2@1.60.1.70338"}
+{"id": 282551, "field": "description", "en": "Smash the target for $s1 damage.", "hash": "fefebd7e3f713888", "src": "db2@1.60.1.70338"}
+{"id": 282555, "field": "name", "en": "Shadowforge Shield", "hash": "a1d9165e616dca99", "src": "db2@1.60.1.70338"}
+{"id": 282557, "field": "name", "en": "Broken Tooth's Flayed Hide", "hash": "8f250cde34de6998", "src": "db2@1.60.1.70338"}
+{"id": 282557, "field": "description", "en": "The hide of a fallen friend.", "hash": "6a12888dca20865e", "src": "db2@1.60.1.70338"}
+{"id": 282558, "field": "name", "en": "Firebird's Cowl", "hash": "613c870d7ef1facc", "src": "db2@1.60.1.70338"}
+{"id": 282559, "field": "name", "en": "Fallen Adventurer's Femur", "hash": "795e04c547896736", "src": "db2@1.60.1.70338"}
+{"id": 282559, "field": "description", "en": "Consumed, never to return.", "hash": "0c0bfcd9a830b0e3", "src": "db2@1.60.1.70338"}
+{"id": 282560, "field": "name", "en": "Earth-Infused Rockguards", "hash": "24707ba340f0fb8f", "src": "db2@1.60.1.70338"}
+{"id": 282561, "field": "name", "en": "Siegebreaker's Blaster", "hash": "6b26b364f34409bb", "src": "db2@1.60.1.70338"}
+{"id": 282561, "field": "description", "en": "Strike the target with a Flaming Shell, inflicting $s1 Fire damage every 3 sec for 9 sec.", "hash": "f008d9b83a673544", "src": "db2@1.60.1.70338"}
+{"id": 282636, "field": "name", "en": "Silkspun Gloves", "hash": "213187a212aa52b3", "src": "db2@1.60.1.70338"}
+{"id": 282637, "field": "name", "en": "Shaking Egg", "hash": "f41d4ea6c5a547dc", "src": "db2@1.60.1.70338"}
+{"id": 282637, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70338"}
+{"id": 282639, "field": "name", "en": "Emogg's \"Crusher\"", "hash": "7c4f058b0aff7fa3", "src": "db2@1.60.1.70338"}
+{"id": 282639, "field": "description", "en": "Ogres will crush you with anything.", "hash": "397b0b4c3f62c01c", "src": "db2@1.60.1.70338"}
+{"id": 282642, "field": "name", "en": "Feather-Stitched Moccasins", "hash": "a9e4ca4905a9e0d9", "src": "db2@1.60.1.70338"}
+{"id": 282653, "field": "name", "en": "Dissolved Locket", "hash": "8a46c56a9c5699ff", "src": "db2@1.60.1.70338"}
+{"id": 282654, "field": "name", "en": "Gnawed Bone", "hash": "923ef906ded712a2", "src": "db2@1.60.1.70338"}
+{"id": 282655, "field": "name", "en": "Bog Pickers", "hash": "2f3a593da1d6a664", "src": "db2@1.60.1.70338"}
+{"id": 282658, "field": "name", "en": "Dragonmaw Battle Shroud", "hash": "8fe189229aeabeac", "src": "db2@1.60.1.70338"}
+{"id": 282702, "field": "name", "en": "Molok's Masher", "hash": "8dbc3438a1257eb8", "src": "db2@1.60.1.70338"}
+{"id": 282703, "field": "name", "en": "Needletooth's Needletooth", "hash": "a9a3507b402b6244", "src": "db2@1.60.1.70338"}
+{"id": 282703, "field": "description", "en": "Puncture the target, inflicting $s1 Physical damage.", "hash": "970d45f0a0a3e668", "src": "db2@1.60.1.70338"}
+{"id": 282704, "field": "name", "en": "Shadow Council Apprentice's Mantle", "hash": "0e4b01c50fdd1370", "src": "db2@1.60.1.70338"}
+{"id": 282706, "field": "name", "en": "Rotting Meat", "hash": "b0f911838ba80dc8", "src": "db2@1.60.1.70338"}
+{"id": 282706, "field": "description", "en": "There's no questioning how Foulbelly earned that name.", "hash": "5f9003959592dac2", "src": "db2@1.60.1.70338"}
+{"id": 282710, "field": "name", "en": "Dun Garok Rifle", "hash": "72c51d840d0362d3", "src": "db2@1.60.1.70338"}
+{"id": 282711, "field": "name", "en": "Naga Maiden's Gown", "hash": "48d38692a9113bb6", "src": "db2@1.60.1.70338"}
+{"id": 282713, "field": "name", "en": "Bloodstained Pants", "hash": "8987c979d47dee14", "src": "db2@1.60.1.70338"}
+{"id": 282716, "field": "name", "en": "Imbued Scaled Cuffs", "hash": "85789d8876de4d80", "src": "db2@1.60.1.70338"}
+{"id": 282717, "field": "name", "en": "Durable Bearhide Pauldrons", "hash": "d125a775a886bafa", "src": "db2@1.60.1.70338"}
+{"id": 282719, "field": "name", "en": "Monster - Bow, Skyborne (Gray)", "hash": "5d9c8691e77a9290", "src": "db2@1.60.1.70338"}
+{"id": 282720, "field": "name", "en": "Spider Swarm", "hash": "aa3541742a8aee21", "src": "db2@1.60.1.70338"}
+{"id": 282720, "field": "description", "en": "Summons a swarm of spiders that will protect you for $d.", "hash": "08920823291a1c0f", "src": "db2@1.60.1.70338"}
+{"id": 282721, "field": "name", "en": "Gnoll Shaman's Staff", "hash": "ce92bd81a0958895", "src": "db2@1.60.1.70338"}
+{"id": 282778, "field": "name", "en": "Mark of the Red Flight", "hash": "d522e3ebd894e9e5", "src": "db2@1.60.1.70338"}
+{"id": 282778, "field": "description", "en": "Absorbs $w1 Fire damage, healing for all damage absorbed.", "hash": "daf8bde4046e7fb1", "src": "db2@1.60.1.70338"}

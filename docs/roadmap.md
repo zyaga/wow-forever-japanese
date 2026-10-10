@@ -12,7 +12,7 @@
 
 ## Phase 3: Beta (in progress)
 - **Goal:** verify the addon on the Forever client, harvest its English, and measure what changed.
-- **Done:** the addon runs on the Forever beta and targets it alone ([ADR-034](adr/034-forever-is-the-only-target.md)). The client tables and the quest cache are read from the installed client ([ADR-020](adr/020-quest-cache-harvest.md), [ADR-021](adr/021-client-tables-from-the-local-archive.md)), currently at build 1.60.1.70291. The English the collector records in game replaces stand-in English for quest and gossip text and is checked like any source ([ADR-053](adr/053-forever-shown-english-is-the-english.md)).
+- **Done:** the addon runs on the Forever beta and targets it alone ([ADR-034](adr/034-forever-is-the-only-target.md)). The client tables and the quest cache are read from the installed client ([ADR-020](adr/020-quest-cache-harvest.md), [ADR-021](adr/021-client-tables-from-the-local-archive.md)), currently at build 1.60.1.70338. The English the collector records in game replaces stand-in English for quest and gossip text and is checked like any source ([ADR-053](adr/053-forever-shown-english-is-the-english.md)).
 - **Open:** the in-game checks listed in [Testing strategy](testing/strategy.md). Most surfaces pass their stub-client tests and await a look in game on Forever.
 
 ## Phase 4: Translation (in progress)

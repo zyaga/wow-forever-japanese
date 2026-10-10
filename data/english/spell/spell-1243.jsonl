@@ -1,92 +1,92 @@
-{"id": 1243028, "field": "name", "en": "Demonic Energies", "hash": "1f1a489b308a4ec6", "src": "db2@1.60.1.70291"}
-{"id": 1243030, "field": "name", "en": "Demonic Tactics", "hash": "5059ebfba049fe12", "src": "db2@1.60.1.70291"}
-{"id": 1243030, "field": "aura", "en": "Increases Warlock's critical strike chance by $w1% while their Demon pet is active.", "hash": "99236c477f07437d", "src": "db2@1.60.1.70291"}
-{"id": 1243064, "field": "name", "en": "Improved Shadowbolt", "hash": "5f266ed102d927c8", "src": "db2@1.60.1.70291"}
-{"id": 1243064, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70291"}
-{"id": 1243067, "field": "name", "en": "Improvised Shadowbolt", "hash": "c4a5b4b23a32ce04", "src": "db2@1.60.1.70291"}
-{"id": 1243067, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70291"}
-{"id": 1243068, "field": "name", "en": "Impressive Shadowbolt", "hash": "48352135bab9733d", "src": "db2@1.60.1.70291"}
-{"id": 1243068, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70291"}
-{"id": 1243070, "field": "name", "en": "Impractical Shadowbolt", "hash": "c4c60a1792c115c6", "src": "db2@1.60.1.70291"}
-{"id": 1243070, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70291"}
-{"id": 1243071, "field": "name", "en": "Impossible Shadowbolt", "hash": "4620c98aa0504d39", "src": "db2@1.60.1.70291"}
-{"id": 1243071, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70291"}
-{"id": 1243072, "field": "name", "en": "Imprecise Shadowbolt", "hash": "1c6a71b0fda05931", "src": "db2@1.60.1.70291"}
-{"id": 1243072, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70291"}
-{"id": 1243073, "field": "name", "en": "Impure Shadowbolt", "hash": "30b870595019ae39", "src": "db2@1.60.1.70291"}
-{"id": 1243073, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70291"}
-{"id": 1243074, "field": "name", "en": "Important Shadowbolt", "hash": "789dee89b7ec0281", "src": "db2@1.60.1.70291"}
-{"id": 1243074, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70291"}
-{"id": 1243076, "field": "name", "en": "Implausible Shadowbolt", "hash": "a2076286d5885517", "src": "db2@1.60.1.70291"}
-{"id": 1243076, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70291"}
-{"id": 1243077, "field": "name", "en": "Imperfect Shadowbolt", "hash": "2f2f0574a636de07", "src": "db2@1.60.1.70291"}
-{"id": 1243077, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70291"}
-{"id": 1243079, "field": "name", "en": "Impatient Shadowbolt", "hash": "5c4bac4411f53a00", "src": "db2@1.60.1.70291"}
-{"id": 1243079, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70291"}
-{"id": 1243080, "field": "name", "en": "Impeccable Shadowbolt", "hash": "91fef27c2ead3542", "src": "db2@1.60.1.70291"}
-{"id": 1243080, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70291"}
-{"id": 1243081, "field": "name", "en": "Impalpable Shadowbolt", "hash": "407871cdbb7a1190", "src": "db2@1.60.1.70291"}
-{"id": 1243081, "field": "description", "en": "Inflicts $S1 Shadow damage to the current enemy target.", "hash": "e96d314eeb7ff53f", "src": "db2@1.60.1.70291"}
-{"id": 1243082, "field": "name", "en": "Impotent Shadowbolt", "hash": "7da491f50c90fab3", "src": "db2@1.60.1.70291"}
-{"id": 1243082, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70291"}
-{"id": 1243083, "field": "name", "en": "Impish Shadowbolt", "hash": "45de1c7a4f7abb36", "src": "db2@1.60.1.70291"}
-{"id": 1243083, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70291"}
-{"id": 1243084, "field": "name", "en": "Impetuous Shadowbolt", "hash": "f56cf06868cf3520", "src": "db2@1.60.1.70291"}
-{"id": 1243084, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70291"}
-{"id": 1243088, "field": "name", "en": "Impassioned Shadowbolt", "hash": "d0486500ffeb84d4", "src": "db2@1.60.1.70291"}
-{"id": 1243088, "field": "description", "en": "$@spelldesc<1243081>", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70291"}
-{"id": 1243089, "field": "name", "en": "Improper Shadowbolt", "hash": "7bcdb7262f85455a", "src": "db2@1.60.1.70291"}
-{"id": 1243089, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70291"}
-{"id": 1243090, "field": "name", "en": "Imperiling Shadowbolt", "hash": "dea59f54a3943ffe", "src": "db2@1.60.1.70291"}
-{"id": 1243090, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70291"}
-{"id": 1243108, "field": "name", "en": "(DNT) Summon Implode Stalker", "hash": "81ff57fbf2e8d844", "src": "db2@1.60.1.70291"}
-{"id": 1243120, "field": "name", "en": "Demonic Knowledge", "hash": "f4c22403efce748b", "src": "db2@1.60.1.70291"}
-{"id": 1243120, "field": "aura", "en": "Spell damage increased by up to $w1.", "hash": "9d2a37e70485f926", "src": "db2@1.60.1.70291"}
-{"id": 1243170, "field": "name", "en": "Slipped!", "hash": "db90382b931c53c7", "src": "db2@1.60.1.70291"}
-{"id": 1243170, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70291"}
-{"id": 1243229, "field": "name", "en": "Impair", "hash": "412bc1a188b348ff", "src": "db2@1.60.1.70291"}
-{"id": 1243229, "field": "description", "en": "Inflicts $S1 Shadow damage to the current enemy target and slows their movement speed by $S2%.", "hash": "86d24a68a4fdbcca", "src": "db2@1.60.1.70291"}
-{"id": 1243229, "field": "aura", "en": "Movement speed slowed by $S2%.", "hash": "755873880e673c7d", "src": "db2@1.60.1.70291"}
-{"id": 1243264, "field": "name", "en": "Impervious", "hash": "265d11cfb64ed766", "src": "db2@1.60.1.70291"}
-{"id": 1243265, "field": "name", "en": "Impervious", "hash": "265d11cfb64ed766", "src": "db2@1.60.1.70291"}
-{"id": 1243268, "field": "name", "en": "Impervious", "hash": "265d11cfb64ed766", "src": "db2@1.60.1.70291"}
-{"id": 1243268, "field": "aura", "en": "Massively reduces any incoming damage while Imps still live.", "hash": "46ed8cae86a4931d", "src": "db2@1.60.1.70291"}
-{"id": 1243312, "field": "name", "en": "Imps!!", "hash": "4130531ad01f14f8", "src": "db2@1.60.1.70291"}
-{"id": 1243312, "field": "description", "en": "$@spelldesc<1243318>", "hash": "0fbff6353d0fb20e", "src": "db2@1.60.1.70291"}
-{"id": 1243318, "field": "name", "en": "Imps!", "hash": "1021971b82cd37be", "src": "db2@1.60.1.70291"}
-{"id": 1243318, "field": "description", "en": "Summons an imp.", "hash": "1d36900bc0c8530f", "src": "db2@1.60.1.70291"}
-{"id": 1243319, "field": "name", "en": "(DNT) Imp Spawn Spell", "hash": "4367f0d8e74f84a0", "src": "db2@1.60.1.70291"}
-{"id": 1243327, "field": "name", "en": "Open Book Visual", "hash": "00b7f84eb3b90881", "src": "db2@1.60.1.70291"}
-{"id": 1243338, "field": "name", "en": "Bane of Havoc", "hash": "d8769dc6eaa15242", "src": "db2@1.60.1.70291"}
-{"id": 1243339, "field": "name", "en": "Bane of Havoc", "hash": "d8769dc6eaa15242", "src": "db2@1.60.1.70291"}
-{"id": 1243339, "field": "description", "en": "Afflicts the target for $1225228d, causing $1225228s1% of all damage done by the Warlock to other targets to also be dealt to the cursed target. Bane of Havoc is limited to 1 target, and only one Bane per Warlock can be active on any one target.", "hash": "e974267cf236c172", "src": "db2@1.60.1.70291"}
-{"id": 1243356, "field": "name", "en": "Dig", "hash": "001204860dff1305", "src": "db2@1.60.1.70291"}
-{"id": 1243356, "field": "description", "en": "Dig up treasure.", "hash": "954d90f3819ca76f", "src": "db2@1.60.1.70291"}
-{"id": 1243419, "field": "name", "en": "Flee", "hash": "097db4425735e3f8", "src": "db2@1.60.1.70291"}
-{"id": 1243419, "field": "aura", "en": "Running away in fear.", "hash": "f07ba538f7857903", "src": "db2@1.60.1.70291"}
-{"id": 1243433, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70291"}
-{"id": 1243434, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70291"}
-{"id": 1243461, "field": "name", "en": "Concerned", "hash": "d2323d7bd3bf4171", "src": "db2@1.60.1.70291"}
-{"id": 1243461, "field": "aura", "en": "Running away in fear.", "hash": "f07ba538f7857903", "src": "db2@1.60.1.70291"}
-{"id": 1243562, "field": "name", "en": "(DNT) Bonesnout Charge Active", "hash": "22c0ea05037a3843", "src": "db2@1.60.1.70291"}
-{"id": 1243564, "field": "name", "en": "(DNT) Bonesnout Charge Active", "hash": "22c0ea05037a3843", "src": "db2@1.60.1.70291"}
-{"id": 1243805, "field": "name", "en": "Wild Charge", "hash": "9139fcc69b73268e", "src": "db2@1.60.1.70291"}
-{"id": 1243823, "field": "name", "en": "Severe Weather", "hash": "8d573ef970b56264", "src": "db2@1.60.1.70291"}
-{"id": 1243845, "field": "name", "en": "Sated", "hash": "be10183ea6f61309", "src": "db2@1.60.1.70291"}
-{"id": 1243845, "field": "description", "en": "Boosts effect of $@spellname1269960 for $d.", "hash": "cfb1de908e18812b", "src": "db2@1.60.1.70291"}
-{"id": 1243845, "field": "aura", "en": "Stamina increased by $w1 for $d from sating of your hunger.", "hash": "151c8de6639c139a", "src": "db2@1.60.1.70291"}
-{"id": 1243846, "field": "name", "en": "Soothed", "hash": "50656c7972330d91", "src": "db2@1.60.1.70291"}
-{"id": 1243846, "field": "description", "en": "Boosts effect of $@spellname1269929 for $d.", "hash": "469e46904dfdf62e", "src": "db2@1.60.1.70291"}
-{"id": 1243846, "field": "aura", "en": "Agility increased by $w1 for $d from being soothed of sand irritation.", "hash": "202257cfc8c603f8", "src": "db2@1.60.1.70291"}
-{"id": 1243847, "field": "name", "en": "Quenched", "hash": "340bba04843b6614", "src": "db2@1.60.1.70291"}
-{"id": 1243847, "field": "description", "en": "Boosts effect of $@spellname1269957 for $d.", "hash": "c1150afd50f15ba3", "src": "db2@1.60.1.70291"}
-{"id": 1243847, "field": "aura", "en": "Strength increased by $w1 for $d from quenching your thirst.", "hash": "d52b513d683d282f", "src": "db2@1.60.1.70291"}
-{"id": 1243958, "field": "name", "en": "[DNT] Vek'zol Trigger", "hash": "d979e42981e1fc1e", "src": "db2@1.60.1.70291"}
-{"id": 1243960, "field": "name", "en": "Summon Vek'zol", "hash": "2e1c3cf0b54e924d", "src": "db2@1.60.1.70291"}
-{"id": 1243960, "field": "description", "en": "Summon Vek'zol.", "hash": "98732f71ddc7689e", "src": "db2@1.60.1.70291"}
-{"id": 1243965, "field": "name", "en": "[DNT] Summon Noxious Slimes", "hash": "c5d386d2e816b34b", "src": "db2@1.60.1.70291"}
-{"id": 1243969, "field": "name", "en": "Well Fed XP Boost", "hash": "862a362f51fcc616", "src": "db2@1.60.1.70291"}
-{"id": 1243969, "field": "description", "en": "$?pc142418[Additionally, experience gained from kills is increased by $s1%.][]", "hash": "ecd828bc2b338885", "src": "db2@1.60.1.70291"}
-{"id": 1243969, "field": "aura", "en": "Experience gained from kills increased by $w1%.", "hash": "7639831e1a27edb6", "src": "db2@1.60.1.70291"}
-{"id": 1243974, "field": "name", "en": "Smoldering Smash", "hash": "891fff949473eadc", "src": "db2@1.60.1.70291"}
-{"id": 1243974, "field": "description", "en": "Deals $S1 Fire damage to all enemies within $r yds.", "hash": "40e898ee7b3df186", "src": "db2@1.60.1.70291"}
+{"id": 1243028, "field": "name", "en": "Demonic Energies", "hash": "1f1a489b308a4ec6", "src": "db2@1.60.1.70338"}
+{"id": 1243030, "field": "name", "en": "Demonic Tactics", "hash": "5059ebfba049fe12", "src": "db2@1.60.1.70338"}
+{"id": 1243030, "field": "aura", "en": "Increases Warlock's critical strike chance by $w1% while their Demon pet is active.", "hash": "99236c477f07437d", "src": "db2@1.60.1.70338"}
+{"id": 1243064, "field": "name", "en": "Improved Shadowbolt", "hash": "5f266ed102d927c8", "src": "db2@1.60.1.70338"}
+{"id": 1243064, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70338"}
+{"id": 1243067, "field": "name", "en": "Improvised Shadowbolt", "hash": "c4a5b4b23a32ce04", "src": "db2@1.60.1.70338"}
+{"id": 1243067, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70338"}
+{"id": 1243068, "field": "name", "en": "Impressive Shadowbolt", "hash": "48352135bab9733d", "src": "db2@1.60.1.70338"}
+{"id": 1243068, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70338"}
+{"id": 1243070, "field": "name", "en": "Impractical Shadowbolt", "hash": "c4c60a1792c115c6", "src": "db2@1.60.1.70338"}
+{"id": 1243070, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70338"}
+{"id": 1243071, "field": "name", "en": "Impossible Shadowbolt", "hash": "4620c98aa0504d39", "src": "db2@1.60.1.70338"}
+{"id": 1243071, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70338"}
+{"id": 1243072, "field": "name", "en": "Imprecise Shadowbolt", "hash": "1c6a71b0fda05931", "src": "db2@1.60.1.70338"}
+{"id": 1243072, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70338"}
+{"id": 1243073, "field": "name", "en": "Impure Shadowbolt", "hash": "30b870595019ae39", "src": "db2@1.60.1.70338"}
+{"id": 1243073, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70338"}
+{"id": 1243074, "field": "name", "en": "Important Shadowbolt", "hash": "789dee89b7ec0281", "src": "db2@1.60.1.70338"}
+{"id": 1243074, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70338"}
+{"id": 1243076, "field": "name", "en": "Implausible Shadowbolt", "hash": "a2076286d5885517", "src": "db2@1.60.1.70338"}
+{"id": 1243076, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70338"}
+{"id": 1243077, "field": "name", "en": "Imperfect Shadowbolt", "hash": "2f2f0574a636de07", "src": "db2@1.60.1.70338"}
+{"id": 1243077, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70338"}
+{"id": 1243079, "field": "name", "en": "Impatient Shadowbolt", "hash": "5c4bac4411f53a00", "src": "db2@1.60.1.70338"}
+{"id": 1243079, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70338"}
+{"id": 1243080, "field": "name", "en": "Impeccable Shadowbolt", "hash": "91fef27c2ead3542", "src": "db2@1.60.1.70338"}
+{"id": 1243080, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70338"}
+{"id": 1243081, "field": "name", "en": "Impalpable Shadowbolt", "hash": "407871cdbb7a1190", "src": "db2@1.60.1.70338"}
+{"id": 1243081, "field": "description", "en": "Inflicts $S1 Shadow damage to the current enemy target.", "hash": "e96d314eeb7ff53f", "src": "db2@1.60.1.70338"}
+{"id": 1243082, "field": "name", "en": "Impotent Shadowbolt", "hash": "7da491f50c90fab3", "src": "db2@1.60.1.70338"}
+{"id": 1243082, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70338"}
+{"id": 1243083, "field": "name", "en": "Impish Shadowbolt", "hash": "45de1c7a4f7abb36", "src": "db2@1.60.1.70338"}
+{"id": 1243083, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70338"}
+{"id": 1243084, "field": "name", "en": "Impetuous Shadowbolt", "hash": "f56cf06868cf3520", "src": "db2@1.60.1.70338"}
+{"id": 1243084, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70338"}
+{"id": 1243088, "field": "name", "en": "Impassioned Shadowbolt", "hash": "d0486500ffeb84d4", "src": "db2@1.60.1.70338"}
+{"id": 1243088, "field": "description", "en": "$@spelldesc<1243081>", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70338"}
+{"id": 1243089, "field": "name", "en": "Improper Shadowbolt", "hash": "7bcdb7262f85455a", "src": "db2@1.60.1.70338"}
+{"id": 1243089, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70338"}
+{"id": 1243090, "field": "name", "en": "Imperiling Shadowbolt", "hash": "dea59f54a3943ffe", "src": "db2@1.60.1.70338"}
+{"id": 1243090, "field": "description", "en": "$@spelldesc<1243081>\r\n", "hash": "0f5adf0eb0a0d10f", "src": "db2@1.60.1.70338"}
+{"id": 1243108, "field": "name", "en": "(DNT) Summon Implode Stalker", "hash": "81ff57fbf2e8d844", "src": "db2@1.60.1.70338"}
+{"id": 1243120, "field": "name", "en": "Demonic Knowledge", "hash": "f4c22403efce748b", "src": "db2@1.60.1.70338"}
+{"id": 1243120, "field": "aura", "en": "Spell damage increased by up to $w1.", "hash": "9d2a37e70485f926", "src": "db2@1.60.1.70338"}
+{"id": 1243170, "field": "name", "en": "Slipped!", "hash": "db90382b931c53c7", "src": "db2@1.60.1.70338"}
+{"id": 1243170, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70338"}
+{"id": 1243229, "field": "name", "en": "Impair", "hash": "412bc1a188b348ff", "src": "db2@1.60.1.70338"}
+{"id": 1243229, "field": "description", "en": "Inflicts $S1 Shadow damage to the current enemy target and slows their movement speed by $S2%.", "hash": "86d24a68a4fdbcca", "src": "db2@1.60.1.70338"}
+{"id": 1243229, "field": "aura", "en": "Movement speed slowed by $S2%.", "hash": "755873880e673c7d", "src": "db2@1.60.1.70338"}
+{"id": 1243264, "field": "name", "en": "Impervious", "hash": "265d11cfb64ed766", "src": "db2@1.60.1.70338"}
+{"id": 1243265, "field": "name", "en": "Impervious", "hash": "265d11cfb64ed766", "src": "db2@1.60.1.70338"}
+{"id": 1243268, "field": "name", "en": "Impervious", "hash": "265d11cfb64ed766", "src": "db2@1.60.1.70338"}
+{"id": 1243268, "field": "aura", "en": "Massively reduces any incoming damage while Imps still live.", "hash": "46ed8cae86a4931d", "src": "db2@1.60.1.70338"}
+{"id": 1243312, "field": "name", "en": "Imps!!", "hash": "4130531ad01f14f8", "src": "db2@1.60.1.70338"}
+{"id": 1243312, "field": "description", "en": "$@spelldesc<1243318>", "hash": "0fbff6353d0fb20e", "src": "db2@1.60.1.70338"}
+{"id": 1243318, "field": "name", "en": "Imps!", "hash": "1021971b82cd37be", "src": "db2@1.60.1.70338"}
+{"id": 1243318, "field": "description", "en": "Summons an imp.", "hash": "1d36900bc0c8530f", "src": "db2@1.60.1.70338"}
+{"id": 1243319, "field": "name", "en": "(DNT) Imp Spawn Spell", "hash": "4367f0d8e74f84a0", "src": "db2@1.60.1.70338"}
+{"id": 1243327, "field": "name", "en": "Open Book Visual", "hash": "00b7f84eb3b90881", "src": "db2@1.60.1.70338"}
+{"id": 1243338, "field": "name", "en": "Bane of Havoc", "hash": "d8769dc6eaa15242", "src": "db2@1.60.1.70338"}
+{"id": 1243339, "field": "name", "en": "Bane of Havoc", "hash": "d8769dc6eaa15242", "src": "db2@1.60.1.70338"}
+{"id": 1243339, "field": "description", "en": "Afflicts the target for $1225228d, causing $1225228s1% of all damage done by the Warlock to other targets to also be dealt to the cursed target. Bane of Havoc is limited to 1 target, and only one Bane per Warlock can be active on any one target.", "hash": "e974267cf236c172", "src": "db2@1.60.1.70338"}
+{"id": 1243356, "field": "name", "en": "Dig", "hash": "001204860dff1305", "src": "db2@1.60.1.70338"}
+{"id": 1243356, "field": "description", "en": "Dig up treasure.", "hash": "954d90f3819ca76f", "src": "db2@1.60.1.70338"}
+{"id": 1243419, "field": "name", "en": "Flee", "hash": "097db4425735e3f8", "src": "db2@1.60.1.70338"}
+{"id": 1243419, "field": "aura", "en": "Running away in fear.", "hash": "f07ba538f7857903", "src": "db2@1.60.1.70338"}
+{"id": 1243433, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70338"}
+{"id": 1243434, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70338"}
+{"id": 1243461, "field": "name", "en": "Concerned", "hash": "d2323d7bd3bf4171", "src": "db2@1.60.1.70338"}
+{"id": 1243461, "field": "aura", "en": "Running away in fear.", "hash": "f07ba538f7857903", "src": "db2@1.60.1.70338"}
+{"id": 1243562, "field": "name", "en": "(DNT) Bonesnout Charge Active", "hash": "22c0ea05037a3843", "src": "db2@1.60.1.70338"}
+{"id": 1243564, "field": "name", "en": "(DNT) Bonesnout Charge Active", "hash": "22c0ea05037a3843", "src": "db2@1.60.1.70338"}
+{"id": 1243805, "field": "name", "en": "Wild Charge", "hash": "9139fcc69b73268e", "src": "db2@1.60.1.70338"}
+{"id": 1243823, "field": "name", "en": "Severe Weather", "hash": "8d573ef970b56264", "src": "db2@1.60.1.70338"}
+{"id": 1243845, "field": "name", "en": "Sated", "hash": "be10183ea6f61309", "src": "db2@1.60.1.70338"}
+{"id": 1243845, "field": "description", "en": "Boosts effect of $@spellname1269960 for $d.", "hash": "cfb1de908e18812b", "src": "db2@1.60.1.70338"}
+{"id": 1243845, "field": "aura", "en": "Stamina increased by $w1 for $d from sating of your hunger.", "hash": "151c8de6639c139a", "src": "db2@1.60.1.70338"}
+{"id": 1243846, "field": "name", "en": "Soothed", "hash": "50656c7972330d91", "src": "db2@1.60.1.70338"}
+{"id": 1243846, "field": "description", "en": "Boosts effect of $@spellname1269929 for $d.", "hash": "469e46904dfdf62e", "src": "db2@1.60.1.70338"}
+{"id": 1243846, "field": "aura", "en": "Agility increased by $w1 for $d from being soothed of sand irritation.", "hash": "202257cfc8c603f8", "src": "db2@1.60.1.70338"}
+{"id": 1243847, "field": "name", "en": "Quenched", "hash": "340bba04843b6614", "src": "db2@1.60.1.70338"}
+{"id": 1243847, "field": "description", "en": "Boosts effect of $@spellname1269957 for $d.", "hash": "c1150afd50f15ba3", "src": "db2@1.60.1.70338"}
+{"id": 1243847, "field": "aura", "en": "Strength increased by $w1 for $d from quenching your thirst.", "hash": "d52b513d683d282f", "src": "db2@1.60.1.70338"}
+{"id": 1243958, "field": "name", "en": "[DNT] Vek'zol Trigger", "hash": "d979e42981e1fc1e", "src": "db2@1.60.1.70338"}
+{"id": 1243960, "field": "name", "en": "Summon Vek'zol", "hash": "2e1c3cf0b54e924d", "src": "db2@1.60.1.70338"}
+{"id": 1243960, "field": "description", "en": "Summon Vek'zol.", "hash": "98732f71ddc7689e", "src": "db2@1.60.1.70338"}
+{"id": 1243965, "field": "name", "en": "[DNT] Summon Noxious Slimes", "hash": "c5d386d2e816b34b", "src": "db2@1.60.1.70338"}
+{"id": 1243969, "field": "name", "en": "Well Fed XP Boost", "hash": "862a362f51fcc616", "src": "db2@1.60.1.70338"}
+{"id": 1243969, "field": "description", "en": "$?pc142418[Additionally, experience gained from kills is increased by $s1%.][]", "hash": "ecd828bc2b338885", "src": "db2@1.60.1.70338"}
+{"id": 1243969, "field": "aura", "en": "Experience gained from kills increased by $w1%.", "hash": "7639831e1a27edb6", "src": "db2@1.60.1.70338"}
+{"id": 1243974, "field": "name", "en": "Smoldering Smash", "hash": "891fff949473eadc", "src": "db2@1.60.1.70338"}
+{"id": 1243974, "field": "description", "en": "Deals $S1 Fire damage to all enemies within $r yds.", "hash": "40e898ee7b3df186", "src": "db2@1.60.1.70338"}

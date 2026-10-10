@@ -1,87 +1,87 @@
-{"id": 1229005, "field": "name", "en": "Mortal Wound", "hash": "06d8b0a5c5cbee37", "src": "db2@1.60.1.70291"}
-{"id": 1229005, "field": "aura", "en": "Armor, Resistances, and Health reduced by $s2%.", "hash": "0f24a5e87bec74f7", "src": "db2@1.60.1.70291"}
-{"id": 1229007, "field": "name", "en": "Permanent Feign Death (Scarlet Adds)", "hash": "be0abff326a6d13e", "src": "db2@1.60.1.70291"}
-{"id": 1229013, "field": "name", "en": "Full Heal", "hash": "a9890f1615f5d28c", "src": "db2@1.60.1.70291"}
-{"id": 1229045, "field": "name", "en": "Friend of Pupper", "hash": "9badcd337570fb90", "src": "db2@1.60.1.70291"}
-{"id": 1229045, "field": "description", "en": "Increases your maximum health, damage dealt, and happiness when you pet Pupper.", "hash": "79eb68c193cbfa4e", "src": "db2@1.60.1.70291"}
-{"id": 1229045, "field": "aura", "en": "Maximum health increased by $w1%.\r\nDamage dealt increased by $w2%.\r\nHappiness increased immeasurably.\r\n\r\nOnly active while in New Avalon and Tyr's Hand.", "hash": "b403b79eb8c2a7b8", "src": "db2@1.60.1.70291"}
-{"id": 1229114, "field": "name", "en": "Devoted Offering", "hash": "8e83ea4d7c02c92e", "src": "db2@1.60.1.70291"}
-{"id": 1229226, "field": "name", "en": "Righteous Flame", "hash": "080c8aa184a3f083", "src": "db2@1.60.1.70291"}
-{"id": 1229228, "field": "name", "en": "Pounce", "hash": "4594280077ee6413", "src": "db2@1.60.1.70291"}
-{"id": 1229228, "field": "description", "en": "Pounce, stunning the target for $d and causing $9826o1 damage over $9826d.  Must be prowling and behind the target.  Awards $s3 combo $lpoint:points;.", "hash": "97420bb276fee973", "src": "db2@1.60.1.70291"}
-{"id": 1229228, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70291"}
-{"id": 1229236, "field": "name", "en": "Reclamation", "hash": "1e3b29fe32195eb4", "src": "db2@1.60.1.70291"}
-{"id": 1229249, "field": "name", "en": "Demonic Transformation", "hash": "bf40176730eaa4ff", "src": "db2@1.60.1.70291"}
-{"id": 1229271, "field": "name", "en": "Fishing", "hash": "82d40f960f176e4a", "src": "db2@1.60.1.70291"}
-{"id": 1229272, "field": "name", "en": "Divine Conflagration", "hash": "fd3d64b45f38835b", "src": "db2@1.60.1.70291"}
-{"id": 1229275, "field": "name", "en": "Divine Conflagration", "hash": "fd3d64b45f38835b", "src": "db2@1.60.1.70291"}
-{"id": 1229305, "field": "name", "en": "Climhazzard", "hash": "1ffed4246cdd3a04", "src": "db2@1.60.1.70291"}
-{"id": 1229305, "field": "description", "en": "Summon Climhazzard, Mount of the High Commander.  Speed is increased by $s2%.", "hash": "1e8d4e88f72f0a14", "src": "db2@1.60.1.70291"}
-{"id": 1229305, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
-{"id": 1229308, "field": "name", "en": "Scarlet Steed", "hash": "2bd8696bb3f6817e", "src": "db2@1.60.1.70291"}
-{"id": 1229308, "field": "description", "en": "Summons and dismisses a rideable Scarlet Steed.  This is a very fast mount.", "hash": "c130c7fd4be8136d", "src": "db2@1.60.1.70291"}
-{"id": 1229308, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
-{"id": 1229332, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70291"}
-{"id": 1229337, "field": "name", "en": "Forging the Blade", "hash": "6b8338dfc618f005", "src": "db2@1.60.1.70291"}
-{"id": 1229339, "field": "name", "en": "Omarion's Gift", "hash": "153a1660cf6f43a3", "src": "db2@1.60.1.70291"}
-{"id": 1229339, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70291"}
-{"id": 1229340, "field": "name", "en": "The Will of the Ashbringer", "hash": "322105539253547c", "src": "db2@1.60.1.70291"}
-{"id": 1229340, "field": "description", "en": "Attempt to make contact with the Will of The Ashbringer.", "hash": "15e33fe89b6ae90a", "src": "db2@1.60.1.70291"}
-{"id": 1229370, "field": "name", "en": "Divine Conflagration", "hash": "fd3d64b45f38835b", "src": "db2@1.60.1.70291"}
-{"id": 1229372, "field": "name", "en": "Divine Conflagration", "hash": "fd3d64b45f38835b", "src": "db2@1.60.1.70291"}
-{"id": 1229374, "field": "name", "en": "Dawnwoven Fabric Proc [DNT]", "hash": "7b64b423bc51d816", "src": "db2@1.60.1.70291"}
-{"id": 1229396, "field": "name", "en": "Divine Conflagration", "hash": "fd3d64b45f38835b", "src": "db2@1.60.1.70291"}
-{"id": 1229397, "field": "name", "en": "Divine Conflagration", "hash": "fd3d64b45f38835b", "src": "db2@1.60.1.70291"}
-{"id": 1229397, "field": "aura", "en": "Burned by divine light, suffering $s1 Radiant damage every second.", "hash": "7c8b4442a6e6072a", "src": "db2@1.60.1.70291"}
-{"id": 1229402, "field": "name", "en": "Read Tinker Manual", "hash": "09bca6b763a307a5", "src": "db2@1.60.1.70291"}
-{"id": 1229402, "field": "description", "en": "Teaches you how to augment your belts with reusable tinkers.", "hash": "baa982affd0104a4", "src": "db2@1.60.1.70291"}
-{"id": 1229409, "field": "name", "en": "Overflowing Light", "hash": "1615e1853af211ec", "src": "db2@1.60.1.70291"}
-{"id": 1229409, "field": "description", "en": "The suffusion of light chokes and smothers you, dealing Holy damage every $t1 seconds.", "hash": "b4733b027bfa2552", "src": "db2@1.60.1.70291"}
-{"id": 1229409, "field": "aura", "en": "The suffusion of light chokes and smothers you, dealing Holy damage every $t1 seconds.", "hash": "b4733b027bfa2552", "src": "db2@1.60.1.70291"}
-{"id": 1229423, "field": "name", "en": "[DNT] Tim's Test Visual", "hash": "f1b1fcb4e9cd16cb", "src": "db2@1.60.1.70291"}
-{"id": 1229432, "field": "name", "en": "Camp Tent", "hash": "9bc8a8776b4bc48d", "src": "db2@1.60.1.70291"}
-{"id": 1229432, "field": "description", "en": "Craft a Camp Tent.", "hash": "689e3f0effab1477", "src": "db2@1.60.1.70291"}
-{"id": 1229444, "field": "name", "en": "[DNT] Kill Credit", "hash": "5787af819f4bc284", "src": "db2@1.60.1.70291"}
-{"id": 1229444, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70291"}
-{"id": 1229451, "field": "name", "en": "Boosted Rest", "hash": "4e4410fe28909b5a", "src": "db2@1.60.1.70291"}
-{"id": 1229451, "field": "aura", "en": "You cannot gain more rested experience from a Camp Tent for $d.", "hash": "02bcf44c6e8e04f6", "src": "db2@1.60.1.70291"}
-{"id": 1229462, "field": "name", "en": "Blade of Malice", "hash": "3083145705f2e157", "src": "db2@1.60.1.70291"}
-{"id": 1229487, "field": "name", "en": "Camp Tent", "hash": "9bc8a8776b4bc48d", "src": "db2@1.60.1.70291"}
-{"id": 1229487, "field": "aura", "en": "Increases Rested Experience after $d spent resting near the tent. You may only gain this benefit once per hour.", "hash": "184958785634613a", "src": "db2@1.60.1.70291"}
-{"id": 1229503, "field": "name", "en": "Execution Sentence", "hash": "57ccd1207d7e3b54", "src": "db2@1.60.1.70291"}
-{"id": 1229503, "field": "description", "en": "Judged by the power of the Ashbringer.", "hash": "a885366cf05f9908", "src": "db2@1.60.1.70291"}
-{"id": 1229503, "field": "aura", "en": "Judged by the power of the Ashbringer.", "hash": "a885366cf05f9908", "src": "db2@1.60.1.70291"}
-{"id": 1229504, "field": "name", "en": "Faction Banner", "hash": "920e49ce79d643b5", "src": "db2@1.60.1.70291"}
-{"id": 1229504, "field": "description", "en": "Craft a Faction Banner.", "hash": "d67a2145d938cf49", "src": "db2@1.60.1.70291"}
-{"id": 1229506, "field": "name", "en": "Ritual of Summoning", "hash": "1b1da07c2f6e68be", "src": "db2@1.60.1.70291"}
-{"id": 1229508, "field": "name", "en": "Execution Sentence", "hash": "57ccd1207d7e3b54", "src": "db2@1.60.1.70291"}
-{"id": 1229508, "field": "description", "en": "Judged by the power of the Ashbringer. Stunned, and armor and dodge chance are reduced.", "hash": "f0e131a57bbb5a5e", "src": "db2@1.60.1.70291"}
-{"id": 1229508, "field": "aura", "en": "Judged by the power of the Ashbringer. Stunned, and armor and dodge chance are reduced.", "hash": "f0e131a57bbb5a5e", "src": "db2@1.60.1.70291"}
-{"id": 1229513, "field": "name", "en": "Boosted Intellect", "hash": "2b29986a2882a991", "src": "db2@1.60.1.70291"}
-{"id": 1229517, "field": "name", "en": "Camp Chair", "hash": "8da89737216e4c19", "src": "db2@1.60.1.70291"}
-{"id": 1229517, "field": "description", "en": "Craft a Camp Chair.", "hash": "0819b343458ae049", "src": "db2@1.60.1.70291"}
-{"id": 1229519, "field": "name", "en": "Boosted Critical Chance", "hash": "4cea17924bb28904", "src": "db2@1.60.1.70291"}
-{"id": 1229683, "field": "name", "en": "(DNT) Summon Martyr", "hash": "8690f9c77b56318f", "src": "db2@1.60.1.70291"}
-{"id": 1229685, "field": "name", "en": "(DNT) Summon Ravager", "hash": "a753aa3e38304e42", "src": "db2@1.60.1.70291"}
-{"id": 1229686, "field": "name", "en": "(DNT) Summon Magus", "hash": "0cbdbd5701348997", "src": "db2@1.60.1.70291"}
-{"id": 1229704, "field": "name", "en": "Divine Conflagration", "hash": "fd3d64b45f38835b", "src": "db2@1.60.1.70291"}
-{"id": 1229705, "field": "name", "en": "Incense Candle", "hash": "0556be08df4ec55b", "src": "db2@1.60.1.70291"}
-{"id": 1229705, "field": "description", "en": "Craft an Incense Candle.", "hash": "53987f019ede435e", "src": "db2@1.60.1.70291"}
-{"id": 1229714, "field": "name", "en": "Blinding Flare", "hash": "303e77cc57abc0ca", "src": "db2@1.60.1.70291"}
-{"id": 1229718, "field": "name", "en": "Boosted Spirit", "hash": "4c1b42935d3967f2", "src": "db2@1.60.1.70291"}
-{"id": 1229730, "field": "name", "en": "Blinding Flare", "hash": "303e77cc57abc0ca", "src": "db2@1.60.1.70291"}
-{"id": 1229730, "field": "aura", "en": "Blinded and disoriented.", "hash": "c5a7aaff07229f8a", "src": "db2@1.60.1.70291"}
-{"id": 1229736, "field": "name", "en": "Campfire", "hash": "8d8596f95f0d7967", "src": "db2@1.60.1.70291"}
-{"id": 1229737, "field": "name", "en": "Basic Campfire", "hash": "eb447f35ecbc0dc1", "src": "db2@1.60.1.70291"}
-{"id": 1229737, "field": "description", "en": "Craft a Basic Campfire.", "hash": "7d3775e0a8a7cb14", "src": "db2@1.60.1.70291"}
-{"id": 1229739, "field": "name", "en": "Welcoming Campfire", "hash": "985749a78c7aefbc", "src": "db2@1.60.1.70291"}
-{"id": 1229739, "field": "aura", "en": "Grants various camp benefits after $d spent sitting near the campfire, based on what additional camp objects are placed near the campfire.", "hash": "139e85ad36e1ecd5", "src": "db2@1.60.1.70291"}
-{"id": 1229741, "field": "name", "en": "Camp Benefits", "hash": "78b37bcdce3eb965", "src": "db2@1.60.1.70291"}
-{"id": 1229741, "field": "aura", "en": "Gained the following camp benefits:\r\n\r\n$?a1229451[Tent: You received a small amount of rest experience. You can only receive this effect once per $1229451d.\r\n\r\n][]$?a1230587[Mana Well: Restores $1230587w1 Mana every $1230587t seconds.\r\n\r\n][]$?a1230172[Sharpening Wheel: Strength increased by $1230172w1.\r\n\r\n][]$?a1230653[Enchanted Lute: Armor increased by $1230653w1, all attributes increased by $1230653w2, and all resistances increased by $1230653w3.\r\n\r\n][]$?a1230124[First Aid Kit: Stamina increased by $1230124w1.\r\n\r\n][]$?a1230098[Fish Bowl: All stats increased by $1230098w1%.\r\n\r\n][]$?a1229513[Incense Candle: Intellect increased by $1229513w1.\r\n\r\n][]$?a1230164[Lodestone: Melee Attack Power increased by $1230164w1.\r\n\r\n][]$?a1229519[Camp Chair: Critical strike chance with all spells and attacks increased by $1229519w1%.\r\n\r\n][]$?a1229718[Faction Banner: Spirit increased by $1229718w1.][]", "hash": "a862eba5bb5ec6e0", "src": "db2@1.60.1.70291"}
-{"id": 1229745, "field": "name", "en": "Fish Bowl", "hash": "123d7b537d46a1ab", "src": "db2@1.60.1.70291"}
-{"id": 1229745, "field": "description", "en": "Craft a Fish Bowl.", "hash": "066624442dee33f3", "src": "db2@1.60.1.70291"}
-{"id": 1229754, "field": "name", "en": "Fish", "hash": "097cf2544b4ed706", "src": "db2@1.60.1.70291"}
-{"id": 1229756, "field": "name", "en": "(DNT) Caldoran Phase 1 to 2 Transition Aura", "hash": "f436b9a324275817", "src": "db2@1.60.1.70291"}
-{"id": 1229760, "field": "name", "en": "Authoritative Slam", "hash": "1899cd15ce6b9462", "src": "db2@1.60.1.70291"}
-{"id": 1229760, "field": "description", "en": "Deal significant physical damage to a trespasser and stun them for $d. ", "hash": "c54908f11b895a99", "src": "db2@1.60.1.70291"}
-{"id": 1229760, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70291"}
+{"id": 1229005, "field": "name", "en": "Mortal Wound", "hash": "06d8b0a5c5cbee37", "src": "db2@1.60.1.70338"}
+{"id": 1229005, "field": "aura", "en": "Armor, Resistances, and Health reduced by $s2%.", "hash": "0f24a5e87bec74f7", "src": "db2@1.60.1.70338"}
+{"id": 1229007, "field": "name", "en": "Permanent Feign Death (Scarlet Adds)", "hash": "be0abff326a6d13e", "src": "db2@1.60.1.70338"}
+{"id": 1229013, "field": "name", "en": "Full Heal", "hash": "a9890f1615f5d28c", "src": "db2@1.60.1.70338"}
+{"id": 1229045, "field": "name", "en": "Friend of Pupper", "hash": "9badcd337570fb90", "src": "db2@1.60.1.70338"}
+{"id": 1229045, "field": "description", "en": "Increases your maximum health, damage dealt, and happiness when you pet Pupper.", "hash": "79eb68c193cbfa4e", "src": "db2@1.60.1.70338"}
+{"id": 1229045, "field": "aura", "en": "Maximum health increased by $w1%.\r\nDamage dealt increased by $w2%.\r\nHappiness increased immeasurably.\r\n\r\nOnly active while in New Avalon and Tyr's Hand.", "hash": "b403b79eb8c2a7b8", "src": "db2@1.60.1.70338"}
+{"id": 1229114, "field": "name", "en": "Devoted Offering", "hash": "8e83ea4d7c02c92e", "src": "db2@1.60.1.70338"}
+{"id": 1229226, "field": "name", "en": "Righteous Flame", "hash": "080c8aa184a3f083", "src": "db2@1.60.1.70338"}
+{"id": 1229228, "field": "name", "en": "Pounce", "hash": "4594280077ee6413", "src": "db2@1.60.1.70338"}
+{"id": 1229228, "field": "description", "en": "Pounce, stunning the target for $d and causing $9826o1 damage over $9826d.  Must be prowling and behind the target.  Awards $s3 combo $lpoint:points;.", "hash": "97420bb276fee973", "src": "db2@1.60.1.70338"}
+{"id": 1229228, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70338"}
+{"id": 1229236, "field": "name", "en": "Reclamation", "hash": "1e3b29fe32195eb4", "src": "db2@1.60.1.70338"}
+{"id": 1229249, "field": "name", "en": "Demonic Transformation", "hash": "bf40176730eaa4ff", "src": "db2@1.60.1.70338"}
+{"id": 1229271, "field": "name", "en": "Fishing", "hash": "82d40f960f176e4a", "src": "db2@1.60.1.70338"}
+{"id": 1229272, "field": "name", "en": "Divine Conflagration", "hash": "fd3d64b45f38835b", "src": "db2@1.60.1.70338"}
+{"id": 1229275, "field": "name", "en": "Divine Conflagration", "hash": "fd3d64b45f38835b", "src": "db2@1.60.1.70338"}
+{"id": 1229305, "field": "name", "en": "Climhazzard", "hash": "1ffed4246cdd3a04", "src": "db2@1.60.1.70338"}
+{"id": 1229305, "field": "description", "en": "Summon Climhazzard, Mount of the High Commander.  Speed is increased by $s2%.", "hash": "1e8d4e88f72f0a14", "src": "db2@1.60.1.70338"}
+{"id": 1229305, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70338"}
+{"id": 1229308, "field": "name", "en": "Scarlet Steed", "hash": "2bd8696bb3f6817e", "src": "db2@1.60.1.70338"}
+{"id": 1229308, "field": "description", "en": "Summons and dismisses a rideable Scarlet Steed.  This is a very fast mount.", "hash": "c130c7fd4be8136d", "src": "db2@1.60.1.70338"}
+{"id": 1229308, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70338"}
+{"id": 1229332, "field": "name", "en": "Flag Tracking Quest", "hash": "80907e8b86d937cd", "src": "db2@1.60.1.70338"}
+{"id": 1229337, "field": "name", "en": "Forging the Blade", "hash": "6b8338dfc618f005", "src": "db2@1.60.1.70338"}
+{"id": 1229339, "field": "name", "en": "Omarion's Gift", "hash": "153a1660cf6f43a3", "src": "db2@1.60.1.70338"}
+{"id": 1229339, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70338"}
+{"id": 1229340, "field": "name", "en": "The Will of the Ashbringer", "hash": "322105539253547c", "src": "db2@1.60.1.70338"}
+{"id": 1229340, "field": "description", "en": "Attempt to make contact with the Will of The Ashbringer.", "hash": "15e33fe89b6ae90a", "src": "db2@1.60.1.70338"}
+{"id": 1229370, "field": "name", "en": "Divine Conflagration", "hash": "fd3d64b45f38835b", "src": "db2@1.60.1.70338"}
+{"id": 1229372, "field": "name", "en": "Divine Conflagration", "hash": "fd3d64b45f38835b", "src": "db2@1.60.1.70338"}
+{"id": 1229374, "field": "name", "en": "Dawnwoven Fabric Proc [DNT]", "hash": "7b64b423bc51d816", "src": "db2@1.60.1.70338"}
+{"id": 1229396, "field": "name", "en": "Divine Conflagration", "hash": "fd3d64b45f38835b", "src": "db2@1.60.1.70338"}
+{"id": 1229397, "field": "name", "en": "Divine Conflagration", "hash": "fd3d64b45f38835b", "src": "db2@1.60.1.70338"}
+{"id": 1229397, "field": "aura", "en": "Burned by divine light, suffering $s1 Radiant damage every second.", "hash": "7c8b4442a6e6072a", "src": "db2@1.60.1.70338"}
+{"id": 1229402, "field": "name", "en": "Read Tinker Manual", "hash": "09bca6b763a307a5", "src": "db2@1.60.1.70338"}
+{"id": 1229402, "field": "description", "en": "Teaches you how to augment your belts with reusable tinkers.", "hash": "baa982affd0104a4", "src": "db2@1.60.1.70338"}
+{"id": 1229409, "field": "name", "en": "Overflowing Light", "hash": "1615e1853af211ec", "src": "db2@1.60.1.70338"}
+{"id": 1229409, "field": "description", "en": "The suffusion of light chokes and smothers you, dealing Holy damage every $t1 seconds.", "hash": "b4733b027bfa2552", "src": "db2@1.60.1.70338"}
+{"id": 1229409, "field": "aura", "en": "The suffusion of light chokes and smothers you, dealing Holy damage every $t1 seconds.", "hash": "b4733b027bfa2552", "src": "db2@1.60.1.70338"}
+{"id": 1229423, "field": "name", "en": "[DNT] Tim's Test Visual", "hash": "f1b1fcb4e9cd16cb", "src": "db2@1.60.1.70338"}
+{"id": 1229432, "field": "name", "en": "Camp Tent", "hash": "9bc8a8776b4bc48d", "src": "db2@1.60.1.70338"}
+{"id": 1229432, "field": "description", "en": "Craft a Camp Tent.", "hash": "689e3f0effab1477", "src": "db2@1.60.1.70338"}
+{"id": 1229444, "field": "name", "en": "[DNT] Kill Credit", "hash": "5787af819f4bc284", "src": "db2@1.60.1.70338"}
+{"id": 1229444, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70338"}
+{"id": 1229451, "field": "name", "en": "Boosted Rest", "hash": "4e4410fe28909b5a", "src": "db2@1.60.1.70338"}
+{"id": 1229451, "field": "aura", "en": "You cannot gain more rested experience from a Camp Tent for $d.", "hash": "02bcf44c6e8e04f6", "src": "db2@1.60.1.70338"}
+{"id": 1229462, "field": "name", "en": "Blade of Malice", "hash": "3083145705f2e157", "src": "db2@1.60.1.70338"}
+{"id": 1229487, "field": "name", "en": "Camp Tent", "hash": "9bc8a8776b4bc48d", "src": "db2@1.60.1.70338"}
+{"id": 1229487, "field": "aura", "en": "Increases Rested Experience after $d spent resting near the tent. You may only gain this benefit once per hour.", "hash": "184958785634613a", "src": "db2@1.60.1.70338"}
+{"id": 1229503, "field": "name", "en": "Execution Sentence", "hash": "57ccd1207d7e3b54", "src": "db2@1.60.1.70338"}
+{"id": 1229503, "field": "description", "en": "Judged by the power of the Ashbringer.", "hash": "a885366cf05f9908", "src": "db2@1.60.1.70338"}
+{"id": 1229503, "field": "aura", "en": "Judged by the power of the Ashbringer.", "hash": "a885366cf05f9908", "src": "db2@1.60.1.70338"}
+{"id": 1229504, "field": "name", "en": "Faction Banner", "hash": "920e49ce79d643b5", "src": "db2@1.60.1.70338"}
+{"id": 1229504, "field": "description", "en": "Craft a Faction Banner.", "hash": "d67a2145d938cf49", "src": "db2@1.60.1.70338"}
+{"id": 1229506, "field": "name", "en": "Ritual of Summoning", "hash": "1b1da07c2f6e68be", "src": "db2@1.60.1.70338"}
+{"id": 1229508, "field": "name", "en": "Execution Sentence", "hash": "57ccd1207d7e3b54", "src": "db2@1.60.1.70338"}
+{"id": 1229508, "field": "description", "en": "Judged by the power of the Ashbringer. Stunned, and armor and dodge chance are reduced.", "hash": "f0e131a57bbb5a5e", "src": "db2@1.60.1.70338"}
+{"id": 1229508, "field": "aura", "en": "Judged by the power of the Ashbringer. Stunned, and armor and dodge chance are reduced.", "hash": "f0e131a57bbb5a5e", "src": "db2@1.60.1.70338"}
+{"id": 1229513, "field": "name", "en": "Boosted Intellect", "hash": "2b29986a2882a991", "src": "db2@1.60.1.70338"}
+{"id": 1229517, "field": "name", "en": "Camp Chair", "hash": "8da89737216e4c19", "src": "db2@1.60.1.70338"}
+{"id": 1229517, "field": "description", "en": "Craft a Camp Chair.", "hash": "0819b343458ae049", "src": "db2@1.60.1.70338"}
+{"id": 1229519, "field": "name", "en": "Boosted Critical Chance", "hash": "4cea17924bb28904", "src": "db2@1.60.1.70338"}
+{"id": 1229683, "field": "name", "en": "(DNT) Summon Martyr", "hash": "8690f9c77b56318f", "src": "db2@1.60.1.70338"}
+{"id": 1229685, "field": "name", "en": "(DNT) Summon Ravager", "hash": "a753aa3e38304e42", "src": "db2@1.60.1.70338"}
+{"id": 1229686, "field": "name", "en": "(DNT) Summon Magus", "hash": "0cbdbd5701348997", "src": "db2@1.60.1.70338"}
+{"id": 1229704, "field": "name", "en": "Divine Conflagration", "hash": "fd3d64b45f38835b", "src": "db2@1.60.1.70338"}
+{"id": 1229705, "field": "name", "en": "Incense Candle", "hash": "0556be08df4ec55b", "src": "db2@1.60.1.70338"}
+{"id": 1229705, "field": "description", "en": "Craft an Incense Candle.", "hash": "53987f019ede435e", "src": "db2@1.60.1.70338"}
+{"id": 1229714, "field": "name", "en": "Blinding Flare", "hash": "303e77cc57abc0ca", "src": "db2@1.60.1.70338"}
+{"id": 1229718, "field": "name", "en": "Boosted Spirit", "hash": "4c1b42935d3967f2", "src": "db2@1.60.1.70338"}
+{"id": 1229730, "field": "name", "en": "Blinding Flare", "hash": "303e77cc57abc0ca", "src": "db2@1.60.1.70338"}
+{"id": 1229730, "field": "aura", "en": "Blinded and disoriented.", "hash": "c5a7aaff07229f8a", "src": "db2@1.60.1.70338"}
+{"id": 1229736, "field": "name", "en": "Campfire", "hash": "8d8596f95f0d7967", "src": "db2@1.60.1.70338"}
+{"id": 1229737, "field": "name", "en": "Basic Campfire", "hash": "eb447f35ecbc0dc1", "src": "db2@1.60.1.70338"}
+{"id": 1229737, "field": "description", "en": "Craft a Basic Campfire.", "hash": "7d3775e0a8a7cb14", "src": "db2@1.60.1.70338"}
+{"id": 1229739, "field": "name", "en": "Welcoming Campfire", "hash": "985749a78c7aefbc", "src": "db2@1.60.1.70338"}
+{"id": 1229739, "field": "aura", "en": "Grants various camp benefits after $d spent sitting near the campfire, based on what additional camp objects are placed near the campfire.", "hash": "139e85ad36e1ecd5", "src": "db2@1.60.1.70338"}
+{"id": 1229741, "field": "name", "en": "Camp Benefits", "hash": "78b37bcdce3eb965", "src": "db2@1.60.1.70338"}
+{"id": 1229741, "field": "aura", "en": "Gained the following camp benefits:\r\n\r\n$?a1229451[Tent: You received a small amount of rest experience. You can only receive this effect once per $1229451d.\r\n\r\n][]$?a1230587[Mana Well: Restores $1230587w1 Mana every $1230587t seconds.\r\n\r\n][]$?a1230172[Sharpening Wheel: Strength increased by $1230172w1.\r\n\r\n][]$?a1230653[Enchanted Lute: Armor increased by $1230653w1, all attributes increased by $1230653w2, and all resistances increased by $1230653w3.\r\n\r\n][]$?a1230124[First Aid Kit: Stamina increased by $1230124w1.\r\n\r\n][]$?a1230098[Fish Bowl: All stats increased by $1230098w1%.\r\n\r\n][]$?a1229513[Incense Candle: Intellect increased by $1229513w1.\r\n\r\n][]$?a1230164[Lodestone: Melee Attack Power increased by $1230164w1.\r\n\r\n][]$?a1229519[Camp Chair: Critical strike chance with all spells and attacks increased by $1229519w1%.\r\n\r\n][]$?a1229718[Faction Banner: Spirit increased by $1229718w1.][]", "hash": "a862eba5bb5ec6e0", "src": "db2@1.60.1.70338"}
+{"id": 1229745, "field": "name", "en": "Fish Bowl", "hash": "123d7b537d46a1ab", "src": "db2@1.60.1.70338"}
+{"id": 1229745, "field": "description", "en": "Craft a Fish Bowl.", "hash": "066624442dee33f3", "src": "db2@1.60.1.70338"}
+{"id": 1229754, "field": "name", "en": "Fish", "hash": "097cf2544b4ed706", "src": "db2@1.60.1.70338"}
+{"id": 1229756, "field": "name", "en": "(DNT) Caldoran Phase 1 to 2 Transition Aura", "hash": "f436b9a324275817", "src": "db2@1.60.1.70338"}
+{"id": 1229760, "field": "name", "en": "Authoritative Slam", "hash": "1899cd15ce6b9462", "src": "db2@1.60.1.70338"}
+{"id": 1229760, "field": "description", "en": "Deal significant physical damage to a trespasser and stun them for $d. ", "hash": "c54908f11b895a99", "src": "db2@1.60.1.70338"}
+{"id": 1229760, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70338"}

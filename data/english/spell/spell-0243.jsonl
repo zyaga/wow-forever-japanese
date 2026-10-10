@@ -1,2 +1,2 @@
-{"id": 243819, "field": "name", "en": "Summon Random Favorite Pet", "hash": "4345f3441f6bdc6a", "src": "db2@1.60.1.70291"}
-{"id": 243819, "field": "description", "en": "Summons and dismisses a favorite pet. If you don't have any favorite pets, it'll choose from your whole collection.", "hash": "bf957e76583d17c6", "src": "db2@1.60.1.70291"}
+{"id": 243819, "field": "name", "en": "Summon Random Favorite Pet", "hash": "4345f3441f6bdc6a", "src": "db2@1.60.1.70338"}
+{"id": 243819, "field": "description", "en": "Summons and dismisses a favorite pet. If you don't have any favorite pets, it'll choose from your whole collection.", "hash": "bf957e76583d17c6", "src": "db2@1.60.1.70338"}

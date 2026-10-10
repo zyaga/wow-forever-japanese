@@ -1,600 +1,600 @@
-{"id": 227001, "field": "name", "en": "Bindings of The Five Thunders", "hash": "87a6a917dfe60636", "src": "db2@1.60.1.70291"}
+{"id": 227001, "field": "name", "en": "Bindings of The Five Thunders", "hash": "87a6a917dfe60636", "src": "db2@1.60.1.70338"}
 {"id": 227001, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 227002, "field": "name", "en": "Coif of The Five Thunders", "hash": "ab74fec37df924cf", "src": "db2@1.60.1.70291"}
+{"id": 227002, "field": "name", "en": "Coif of The Five Thunders", "hash": "ab74fec37df924cf", "src": "db2@1.60.1.70338"}
 {"id": 227002, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 227003, "field": "name", "en": "Pauldrons of The Five Thunders", "hash": "66d2ea856c40af4c", "src": "db2@1.60.1.70291"}
+{"id": 227003, "field": "name", "en": "Pauldrons of The Five Thunders", "hash": "66d2ea856c40af4c", "src": "db2@1.60.1.70338"}
 {"id": 227003, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 227004, "field": "name", "en": "Vest of The Five Thunders", "hash": "8a37856c083edc67", "src": "db2@1.60.1.70291"}
+{"id": 227004, "field": "name", "en": "Vest of The Five Thunders", "hash": "8a37856c083edc67", "src": "db2@1.60.1.70338"}
 {"id": 227004, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 227005, "field": "name", "en": "Kilt of The Five Thunders", "hash": "09ea9928d03e986e", "src": "db2@1.60.1.70291"}
+{"id": 227005, "field": "name", "en": "Kilt of The Five Thunders", "hash": "09ea9928d03e986e", "src": "db2@1.60.1.70338"}
 {"id": 227005, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 227006, "field": "name", "en": "Gauntlets of The Five Thunders", "hash": "038e3804a2c318fa", "src": "db2@1.60.1.70291"}
+{"id": 227006, "field": "name", "en": "Gauntlets of The Five Thunders", "hash": "038e3804a2c318fa", "src": "db2@1.60.1.70338"}
 {"id": 227006, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 227007, "field": "name", "en": "Slippers of The Five Thunders", "hash": "8425eb227cebaff5", "src": "db2@1.60.1.70291"}
+{"id": 227007, "field": "name", "en": "Slippers of The Five Thunders", "hash": "8425eb227cebaff5", "src": "db2@1.60.1.70338"}
 {"id": 227007, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "ddcc8385fe195f38", "src": "wago@1.15.9.69722"}
-{"id": 227008, "field": "name", "en": "Cord of The Five Thunders", "hash": "efbda9b6484a0405", "src": "db2@1.60.1.70291"}
+{"id": 227008, "field": "name", "en": "Cord of The Five Thunders", "hash": "efbda9b6484a0405", "src": "db2@1.60.1.70338"}
 {"id": 227008, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "20608b2d4310fc2c", "src": "wago@1.15.9.69722"}
-{"id": 227009, "field": "name", "en": "Bracers of The Five Thunders", "hash": "2e999318b0baedca", "src": "db2@1.60.1.70291"}
+{"id": 227009, "field": "name", "en": "Bracers of The Five Thunders", "hash": "2e999318b0baedca", "src": "db2@1.60.1.70338"}
 {"id": 227009, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 227010, "field": "name", "en": "Sash of The Five Thunders", "hash": "3d86ddc3b6e3d1a0", "src": "db2@1.60.1.70291"}
+{"id": 227010, "field": "name", "en": "Sash of The Five Thunders", "hash": "3d86ddc3b6e3d1a0", "src": "db2@1.60.1.70338"}
 {"id": 227010, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 227011, "field": "name", "en": "Mantle of The Five Thunders", "hash": "919ea3fc47c60abe", "src": "db2@1.60.1.70291"}
+{"id": 227011, "field": "name", "en": "Mantle of The Five Thunders", "hash": "919ea3fc47c60abe", "src": "db2@1.60.1.70338"}
 {"id": 227011, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 227012, "field": "name", "en": "Leggings of The Five Thunders", "hash": "332f3b4f7847cada", "src": "db2@1.60.1.70291"}
+{"id": 227012, "field": "name", "en": "Leggings of The Five Thunders", "hash": "332f3b4f7847cada", "src": "db2@1.60.1.70338"}
 {"id": 227012, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 227013, "field": "name", "en": "Crown of The Five Thunders", "hash": "13f9d6658fb8a6fc", "src": "db2@1.60.1.70291"}
+{"id": 227013, "field": "name", "en": "Crown of The Five Thunders", "hash": "13f9d6658fb8a6fc", "src": "db2@1.60.1.70338"}
 {"id": 227013, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by spells and effects by up to $s1.", "hash": "b6f7f21337645d33", "src": "wago@1.15.9.69722"}
-{"id": 227014, "field": "name", "en": "Grasp of The Five Thunders", "hash": "1bea58e002137509", "src": "db2@1.60.1.70291"}
+{"id": 227014, "field": "name", "en": "Grasp of The Five Thunders", "hash": "1bea58e002137509", "src": "db2@1.60.1.70338"}
 {"id": 227014, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 227015, "field": "name", "en": "Greaves of The Five Thunders", "hash": "705d43aaa4376b99", "src": "db2@1.60.1.70291"}
+{"id": 227015, "field": "name", "en": "Greaves of The Five Thunders", "hash": "705d43aaa4376b99", "src": "db2@1.60.1.70338"}
 {"id": 227015, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 227016, "field": "name", "en": "Tunic of The Five Thunders", "hash": "1a5673544fa4a517", "src": "db2@1.60.1.70291"}
+{"id": 227016, "field": "name", "en": "Tunic of The Five Thunders", "hash": "1a5673544fa4a517", "src": "db2@1.60.1.70338"}
 {"id": 227016, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 227017, "field": "name", "en": "Bands of The Five Thunders", "hash": "b1dff78a5a65df54", "src": "db2@1.60.1.70291"}
-{"id": 227018, "field": "name", "en": "Girdle of The Five Thunders", "hash": "7b03c986535dcb61", "src": "db2@1.60.1.70291"}
+{"id": 227017, "field": "name", "en": "Bands of The Five Thunders", "hash": "b1dff78a5a65df54", "src": "db2@1.60.1.70338"}
+{"id": 227018, "field": "name", "en": "Girdle of The Five Thunders", "hash": "7b03c986535dcb61", "src": "db2@1.60.1.70338"}
 {"id": 227018, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227019, "field": "name", "en": "Spaulders of The Five Thunders", "hash": "b006a207c2486f63", "src": "db2@1.60.1.70291"}
+{"id": 227019, "field": "name", "en": "Spaulders of The Five Thunders", "hash": "b006a207c2486f63", "src": "db2@1.60.1.70338"}
 {"id": 227019, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227020, "field": "name", "en": "Legplates of The Five Thunders", "hash": "b14cce6b64cc5aeb", "src": "db2@1.60.1.70291"}
+{"id": 227020, "field": "name", "en": "Legplates of The Five Thunders", "hash": "b14cce6b64cc5aeb", "src": "db2@1.60.1.70338"}
 {"id": 227020, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 227021, "field": "name", "en": "Face of The Five Thunders", "hash": "b8b59af2aea4418b", "src": "db2@1.60.1.70291"}
+{"id": 227021, "field": "name", "en": "Face of The Five Thunders", "hash": "b8b59af2aea4418b", "src": "db2@1.60.1.70338"}
 {"id": 227021, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227022, "field": "name", "en": "Fists of The Five Thunders", "hash": "c61b74a005ae9f9b", "src": "db2@1.60.1.70291"}
+{"id": 227022, "field": "name", "en": "Fists of The Five Thunders", "hash": "c61b74a005ae9f9b", "src": "db2@1.60.1.70338"}
 {"id": 227022, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 227023, "field": "name", "en": "Treads of The Five Thunders", "hash": "20a3dae433bec7ab", "src": "db2@1.60.1.70291"}
+{"id": 227023, "field": "name", "en": "Treads of The Five Thunders", "hash": "20a3dae433bec7ab", "src": "db2@1.60.1.70338"}
 {"id": 227023, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 227024, "field": "name", "en": "Chain of The Five Thunders", "hash": "98a09119b9a3077c", "src": "db2@1.60.1.70291"}
+{"id": 227024, "field": "name", "en": "Chain of The Five Thunders", "hash": "98a09119b9a3077c", "src": "db2@1.60.1.70338"}
 {"id": 227024, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
-{"id": 227041, "field": "name", "en": "Scourge Shadow Scalpel", "hash": "188b535b32fe9c2c", "src": "db2@1.60.1.70291"}
-{"id": 227041, "field": "description", "en": "This device channels and directs foul necrotic energies to dissolve flesh, metal, or any other material mundane or magical. This may be able to disrupt the shield protecting Arkonos.", "hash": "57c6965c8641c7af", "src": "db2@1.60.1.70291"}
-{"id": 227042, "field": "name", "en": "Champion's Plate Shoulders", "hash": "b4838ccf37dfa2aa", "src": "db2@1.60.1.70291"}
+{"id": 227041, "field": "name", "en": "Scourge Shadow Scalpel", "hash": "188b535b32fe9c2c", "src": "db2@1.60.1.70338"}
+{"id": 227041, "field": "description", "en": "This device channels and directs foul necrotic energies to dissolve flesh, metal, or any other material mundane or magical. This may be able to disrupt the shield protecting Arkonos.", "hash": "57c6965c8641c7af", "src": "db2@1.60.1.70338"}
+{"id": 227042, "field": "name", "en": "Champion's Plate Shoulders", "hash": "b4838ccf37dfa2aa", "src": "db2@1.60.1.70338"}
 {"id": 227042, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227043, "field": "name", "en": "Champion's Plate Helm", "hash": "11ea20d6f09e78ce", "src": "db2@1.60.1.70291"}
+{"id": 227043, "field": "name", "en": "Champion's Plate Helm", "hash": "11ea20d6f09e78ce", "src": "db2@1.60.1.70338"}
 {"id": 227043, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 227044, "field": "name", "en": "Lieutenant Commander's Plate Helm", "hash": "ad7a3fc3cd9dd1cb", "src": "db2@1.60.1.70291"}
+{"id": 227044, "field": "name", "en": "Lieutenant Commander's Plate Helm", "hash": "ad7a3fc3cd9dd1cb", "src": "db2@1.60.1.70338"}
 {"id": 227044, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 227045, "field": "name", "en": "Lieutenant Commander's Plate Shoulders", "hash": "6b3b324113ce51f4", "src": "db2@1.60.1.70291"}
+{"id": 227045, "field": "name", "en": "Lieutenant Commander's Plate Shoulders", "hash": "6b3b324113ce51f4", "src": "db2@1.60.1.70338"}
 {"id": 227045, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227046, "field": "name", "en": "Knight-Captain's Plate Hauberk", "hash": "8ca3bcbcac05d36d", "src": "db2@1.60.1.70291"}
+{"id": 227046, "field": "name", "en": "Knight-Captain's Plate Hauberk", "hash": "8ca3bcbcac05d36d", "src": "db2@1.60.1.70338"}
 {"id": 227046, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227047, "field": "name", "en": "Knight-Captain's Plate Leggings", "hash": "3f6b01791c8450d7", "src": "db2@1.60.1.70291"}
+{"id": 227047, "field": "name", "en": "Knight-Captain's Plate Leggings", "hash": "3f6b01791c8450d7", "src": "db2@1.60.1.70338"}
 {"id": 227047, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227048, "field": "name", "en": "Legionnaire's Plate Leggings", "hash": "03f6ef884df0154b", "src": "db2@1.60.1.70291"}
+{"id": 227048, "field": "name", "en": "Legionnaire's Plate Leggings", "hash": "03f6ef884df0154b", "src": "db2@1.60.1.70338"}
 {"id": 227048, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227049, "field": "name", "en": "Legionnaire's Plate Hauberk", "hash": "3ff8d60264f2841b", "src": "db2@1.60.1.70291"}
+{"id": 227049, "field": "name", "en": "Legionnaire's Plate Hauberk", "hash": "3ff8d60264f2841b", "src": "db2@1.60.1.70338"}
 {"id": 227049, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227050, "field": "name", "en": "Blood Guard's Plate Gauntlets", "hash": "76b832e7e6db4745", "src": "db2@1.60.1.70291"}
-{"id": 227050, "field": "description", "en": "Hamstring Rage cost reduced by $/10;s1.", "hash": "1c20335d00f6f368", "src": "db2@1.60.1.70291"}
-{"id": 227051, "field": "name", "en": "Blood Guard's Plate Greaves", "hash": "d3fc3819e4f9c5d0", "src": "db2@1.60.1.70291"}
-{"id": 227052, "field": "name", "en": "Knight-Lieutenant's Plate Greaves", "hash": "9579becc8b7ec5f0", "src": "db2@1.60.1.70291"}
-{"id": 227053, "field": "name", "en": "Knight-Lieutenant's Plate Gauntlets", "hash": "1e62765ca7920a2f", "src": "db2@1.60.1.70291"}
-{"id": 227053, "field": "description", "en": "Hamstring Rage cost reduced by $/10;s1.", "hash": "1c20335d00f6f368", "src": "db2@1.60.1.70291"}
-{"id": 227054, "field": "name", "en": "Lieutenant Commander's Leather Shoulders", "hash": "ad91f72d95186a16", "src": "db2@1.60.1.70291"}
+{"id": 227050, "field": "name", "en": "Blood Guard's Plate Gauntlets", "hash": "76b832e7e6db4745", "src": "db2@1.60.1.70338"}
+{"id": 227050, "field": "description", "en": "Hamstring Rage cost reduced by $/10;s1.", "hash": "1c20335d00f6f368", "src": "db2@1.60.1.70338"}
+{"id": 227051, "field": "name", "en": "Blood Guard's Plate Greaves", "hash": "d3fc3819e4f9c5d0", "src": "db2@1.60.1.70338"}
+{"id": 227052, "field": "name", "en": "Knight-Lieutenant's Plate Greaves", "hash": "9579becc8b7ec5f0", "src": "db2@1.60.1.70338"}
+{"id": 227053, "field": "name", "en": "Knight-Lieutenant's Plate Gauntlets", "hash": "1e62765ca7920a2f", "src": "db2@1.60.1.70338"}
+{"id": 227053, "field": "description", "en": "Hamstring Rage cost reduced by $/10;s1.", "hash": "1c20335d00f6f368", "src": "db2@1.60.1.70338"}
+{"id": 227054, "field": "name", "en": "Lieutenant Commander's Leather Shoulders", "hash": "ad91f72d95186a16", "src": "db2@1.60.1.70338"}
 {"id": 227054, "field": "description", "en": "+$s1 Attack Power.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "ad05ede1bb15e94b", "src": "wago@1.15.9.69722"}
-{"id": 227055, "field": "name", "en": "Lieutenant Commander's Leather Helm", "hash": "87f622e8b8912637", "src": "db2@1.60.1.70291"}
+{"id": 227055, "field": "name", "en": "Lieutenant Commander's Leather Helm", "hash": "87f622e8b8912637", "src": "db2@1.60.1.70338"}
 {"id": 227055, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "53aef39c392d614a", "src": "wago@1.15.9.69722"}
-{"id": 227056, "field": "name", "en": "Champion's Leather Shoulders", "hash": "30d0b020aa17f7d0", "src": "db2@1.60.1.70291"}
+{"id": 227056, "field": "name", "en": "Champion's Leather Shoulders", "hash": "30d0b020aa17f7d0", "src": "db2@1.60.1.70338"}
 {"id": 227056, "field": "description", "en": "+$s1 Attack Power.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "ad05ede1bb15e94b", "src": "wago@1.15.9.69722"}
-{"id": 227057, "field": "name", "en": "Champion's Leather Helm", "hash": "57cc39e724e70a05", "src": "db2@1.60.1.70291"}
+{"id": 227057, "field": "name", "en": "Champion's Leather Helm", "hash": "57cc39e724e70a05", "src": "db2@1.60.1.70338"}
 {"id": 227057, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "53aef39c392d614a", "src": "wago@1.15.9.69722"}
-{"id": 227058, "field": "name", "en": "Knight-Captain's Leather Chestpiece", "hash": "d194b375a4cfc0d8", "src": "db2@1.60.1.70291"}
+{"id": 227058, "field": "name", "en": "Knight-Captain's Leather Chestpiece", "hash": "d194b375a4cfc0d8", "src": "db2@1.60.1.70338"}
 {"id": 227058, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "53aef39c392d614a", "src": "wago@1.15.9.69722"}
-{"id": 227059, "field": "name", "en": "Legionnaire's Leather Legguards", "hash": "09457bd8528bc4de", "src": "db2@1.60.1.70291"}
+{"id": 227059, "field": "name", "en": "Legionnaire's Leather Legguards", "hash": "09457bd8528bc4de", "src": "db2@1.60.1.70338"}
 {"id": 227059, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "53aef39c392d614a", "src": "wago@1.15.9.69722"}
-{"id": 227060, "field": "name", "en": "Legionnaire's Leather Chestpiece", "hash": "85fa97e69780f5fa", "src": "db2@1.60.1.70291"}
+{"id": 227060, "field": "name", "en": "Legionnaire's Leather Chestpiece", "hash": "85fa97e69780f5fa", "src": "db2@1.60.1.70338"}
 {"id": 227060, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "53aef39c392d614a", "src": "wago@1.15.9.69722"}
-{"id": 227061, "field": "name", "en": "Knight-Captain's Leather Legguards", "hash": "541baaf30df9c1e6", "src": "db2@1.60.1.70291"}
+{"id": 227061, "field": "name", "en": "Knight-Captain's Leather Legguards", "hash": "541baaf30df9c1e6", "src": "db2@1.60.1.70338"}
 {"id": 227061, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "53aef39c392d614a", "src": "wago@1.15.9.69722"}
-{"id": 227062, "field": "name", "en": "Blood Guard's Leather Walkers", "hash": "817b9f2c0fde832f", "src": "db2@1.60.1.70291"}
-{"id": 227062, "field": "description", "en": "Increases the duration of your Sprint ability by $/1000;s1 sec.", "hash": "6fa7b4485a0185d5", "src": "db2@1.60.1.70291"}
-{"id": 227063, "field": "name", "en": "Blood Guard's Leather Grips", "hash": "7bea6e57a93a4f3d", "src": "db2@1.60.1.70291"}
+{"id": 227062, "field": "name", "en": "Blood Guard's Leather Walkers", "hash": "817b9f2c0fde832f", "src": "db2@1.60.1.70338"}
+{"id": 227062, "field": "description", "en": "Increases the duration of your Sprint ability by $/1000;s1 sec.", "hash": "6fa7b4485a0185d5", "src": "db2@1.60.1.70338"}
+{"id": 227063, "field": "name", "en": "Blood Guard's Leather Grips", "hash": "7bea6e57a93a4f3d", "src": "db2@1.60.1.70338"}
 {"id": 227063, "field": "description", "en": "+$s1 Attack Power.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "01cfe2ef09cf3334", "src": "wago@1.15.9.69722"}
-{"id": 227064, "field": "name", "en": "Knight-Lieutenant's Leather Walkers", "hash": "2925e2a1d0954608", "src": "db2@1.60.1.70291"}
-{"id": 227064, "field": "description", "en": "Increases the duration of your Sprint ability by $/1000;s1 sec.", "hash": "6fa7b4485a0185d5", "src": "db2@1.60.1.70291"}
-{"id": 227065, "field": "name", "en": "Knight-Lieutenant's Leather Grips", "hash": "3d67f50a4fbf4f5d", "src": "db2@1.60.1.70291"}
+{"id": 227064, "field": "name", "en": "Knight-Lieutenant's Leather Walkers", "hash": "2925e2a1d0954608", "src": "db2@1.60.1.70338"}
+{"id": 227064, "field": "description", "en": "Increases the duration of your Sprint ability by $/1000;s1 sec.", "hash": "6fa7b4485a0185d5", "src": "db2@1.60.1.70338"}
+{"id": 227065, "field": "name", "en": "Knight-Lieutenant's Leather Grips", "hash": "3d67f50a4fbf4f5d", "src": "db2@1.60.1.70338"}
 {"id": 227065, "field": "description", "en": "+$s1 Attack Power.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "01cfe2ef09cf3334", "src": "wago@1.15.9.69722"}
-{"id": 227066, "field": "name", "en": "Lieutenant Commander's Chain Helm", "hash": "7a5b0a3b6989b37d", "src": "db2@1.60.1.70291"}
+{"id": 227066, "field": "name", "en": "Lieutenant Commander's Chain Helm", "hash": "7a5b0a3b6989b37d", "src": "db2@1.60.1.70338"}
 {"id": 227066, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227067, "field": "name", "en": "Champion's Chain Helm", "hash": "decaeb498c8a5a80", "src": "db2@1.60.1.70291"}
+{"id": 227067, "field": "name", "en": "Champion's Chain Helm", "hash": "decaeb498c8a5a80", "src": "db2@1.60.1.70338"}
 {"id": 227067, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227068, "field": "name", "en": "Lieutenant Commander's Chain Shoulders", "hash": "6564d983031bfe05", "src": "db2@1.60.1.70291"}
+{"id": 227068, "field": "name", "en": "Lieutenant Commander's Chain Shoulders", "hash": "6564d983031bfe05", "src": "db2@1.60.1.70338"}
 {"id": 227068, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227069, "field": "name", "en": "Champion's Chain Shoulders", "hash": "aead3411272d4ebb", "src": "db2@1.60.1.70291"}
+{"id": 227069, "field": "name", "en": "Champion's Chain Shoulders", "hash": "aead3411272d4ebb", "src": "db2@1.60.1.70338"}
 {"id": 227069, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227070, "field": "name", "en": "Knight-Captain's Chain Hauberk", "hash": "19722b3010125e9c", "src": "db2@1.60.1.70291"}
+{"id": 227070, "field": "name", "en": "Knight-Captain's Chain Hauberk", "hash": "19722b3010125e9c", "src": "db2@1.60.1.70338"}
 {"id": 227070, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227071, "field": "name", "en": "Legionnaire's Chain Hauberk", "hash": "ccc74471c8ff0f39", "src": "db2@1.60.1.70291"}
+{"id": 227071, "field": "name", "en": "Legionnaire's Chain Hauberk", "hash": "ccc74471c8ff0f39", "src": "db2@1.60.1.70338"}
 {"id": 227071, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227072, "field": "name", "en": "Knight-Captain's Chain Legguards", "hash": "3ed4dde875c29f2c", "src": "db2@1.60.1.70291"}
+{"id": 227072, "field": "name", "en": "Knight-Captain's Chain Legguards", "hash": "3ed4dde875c29f2c", "src": "db2@1.60.1.70338"}
 {"id": 227072, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227073, "field": "name", "en": "Legionnaire's Chain Legguards", "hash": "d26faefaf244bdb7", "src": "db2@1.60.1.70291"}
+{"id": 227073, "field": "name", "en": "Legionnaire's Chain Legguards", "hash": "d26faefaf244bdb7", "src": "db2@1.60.1.70338"}
 {"id": 227073, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227074, "field": "name", "en": "Blood Guard's Chain Greaves", "hash": "60caa68d490650ff", "src": "db2@1.60.1.70291"}
-{"id": 227075, "field": "name", "en": "Blood Guard's Chain Vices", "hash": "399c83f20abe833f", "src": "db2@1.60.1.70291"}
-{"id": 227075, "field": "description", "en": "Increases the damage done by your Multi-Shot by $s1%.", "hash": "6c155d83d4c3ec46", "src": "db2@1.60.1.70291"}
-{"id": 227076, "field": "name", "en": "Knight-Lieutenant's Chain Greaves", "hash": "22482d40ef8b510e", "src": "db2@1.60.1.70291"}
-{"id": 227077, "field": "name", "en": "Knight-Lieutenant's Chain Vices", "hash": "c3948310322159af", "src": "db2@1.60.1.70291"}
-{"id": 227077, "field": "description", "en": "Increases the damage done by your Multi-Shot by $s1%.", "hash": "6c155d83d4c3ec46", "src": "db2@1.60.1.70291"}
-{"id": 227078, "field": "name", "en": "Champion's Chain Pauldrons", "hash": "e74f969445f848db", "src": "db2@1.60.1.70291"}
+{"id": 227074, "field": "name", "en": "Blood Guard's Chain Greaves", "hash": "60caa68d490650ff", "src": "db2@1.60.1.70338"}
+{"id": 227075, "field": "name", "en": "Blood Guard's Chain Vices", "hash": "399c83f20abe833f", "src": "db2@1.60.1.70338"}
+{"id": 227075, "field": "description", "en": "Increases the damage done by your Multi-Shot by $s1%.", "hash": "6c155d83d4c3ec46", "src": "db2@1.60.1.70338"}
+{"id": 227076, "field": "name", "en": "Knight-Lieutenant's Chain Greaves", "hash": "22482d40ef8b510e", "src": "db2@1.60.1.70338"}
+{"id": 227077, "field": "name", "en": "Knight-Lieutenant's Chain Vices", "hash": "c3948310322159af", "src": "db2@1.60.1.70338"}
+{"id": 227077, "field": "description", "en": "Increases the damage done by your Multi-Shot by $s1%.", "hash": "6c155d83d4c3ec46", "src": "db2@1.60.1.70338"}
+{"id": 227078, "field": "name", "en": "Champion's Chain Pauldrons", "hash": "e74f969445f848db", "src": "db2@1.60.1.70338"}
 {"id": 227078, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "fd7c17b67f188fd9", "src": "wago@1.15.9.69722"}
-{"id": 227079, "field": "name", "en": "Legionnaire's Chain Legplates", "hash": "0c1b755601cde488", "src": "db2@1.60.1.70291"}
+{"id": 227079, "field": "name", "en": "Legionnaire's Chain Legplates", "hash": "0c1b755601cde488", "src": "db2@1.60.1.70338"}
 {"id": 227079, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "fd7c17b67f188fd9", "src": "wago@1.15.9.69722"}
-{"id": 227080, "field": "name", "en": "Champion's Chain Greathelm", "hash": "bbbb65824747ecb8", "src": "db2@1.60.1.70291"}
+{"id": 227080, "field": "name", "en": "Champion's Chain Greathelm", "hash": "bbbb65824747ecb8", "src": "db2@1.60.1.70338"}
 {"id": 227080, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "fd7c17b67f188fd9", "src": "wago@1.15.9.69722"}
-{"id": 227081, "field": "name", "en": "Blood Guard's Chain Grips", "hash": "338527780b7b94a9", "src": "db2@1.60.1.70291"}
-{"id": 227081, "field": "description", "en": "Increases the damage done by your Raptor Strike by $s1%.", "hash": "ef4467a5a4b11bf4", "src": "db2@1.60.1.70291"}
-{"id": 227082, "field": "name", "en": "Blood Guard's Chain Sabatons", "hash": "2e589a39dc8e2bab", "src": "db2@1.60.1.70291"}
+{"id": 227081, "field": "name", "en": "Blood Guard's Chain Grips", "hash": "338527780b7b94a9", "src": "db2@1.60.1.70338"}
+{"id": 227081, "field": "description", "en": "Increases the damage done by your Raptor Strike by $s1%.", "hash": "ef4467a5a4b11bf4", "src": "db2@1.60.1.70338"}
+{"id": 227082, "field": "name", "en": "Blood Guard's Chain Sabatons", "hash": "2e589a39dc8e2bab", "src": "db2@1.60.1.70338"}
 {"id": 227082, "field": "description", "en": "+$s1 Attack Power.", "hash": "ff5c97b29bc1954f", "src": "wago@1.15.9.69722"}
-{"id": 227083, "field": "name", "en": "Legionnaire's Chain Armor", "hash": "f5967cf94835b1d1", "src": "db2@1.60.1.70291"}
+{"id": 227083, "field": "name", "en": "Legionnaire's Chain Armor", "hash": "f5967cf94835b1d1", "src": "db2@1.60.1.70338"}
 {"id": 227083, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "fd7c17b67f188fd9", "src": "wago@1.15.9.69722"}
-{"id": 227084, "field": "name", "en": "Lieutenant Commander's Chain Pauldrons", "hash": "9e073c0621e6f825", "src": "db2@1.60.1.70291"}
+{"id": 227084, "field": "name", "en": "Lieutenant Commander's Chain Pauldrons", "hash": "9e073c0621e6f825", "src": "db2@1.60.1.70338"}
 {"id": 227084, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "fd7c17b67f188fd9", "src": "wago@1.15.9.69722"}
-{"id": 227085, "field": "name", "en": "Knight-Captain's Chain Legplates", "hash": "7880a43f854bc5ec", "src": "db2@1.60.1.70291"}
+{"id": 227085, "field": "name", "en": "Knight-Captain's Chain Legplates", "hash": "7880a43f854bc5ec", "src": "db2@1.60.1.70338"}
 {"id": 227085, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "fd7c17b67f188fd9", "src": "wago@1.15.9.69722"}
-{"id": 227086, "field": "name", "en": "Lieutenant Commander's Chain Greathelm", "hash": "72730af423369c02", "src": "db2@1.60.1.70291"}
+{"id": 227086, "field": "name", "en": "Lieutenant Commander's Chain Greathelm", "hash": "72730af423369c02", "src": "db2@1.60.1.70338"}
 {"id": 227086, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "fd7c17b67f188fd9", "src": "wago@1.15.9.69722"}
-{"id": 227087, "field": "name", "en": "Knight-Lieutenant's Chain Grips", "hash": "bd7d269632de6b19", "src": "db2@1.60.1.70291"}
-{"id": 227087, "field": "description", "en": "Increases the damage done by your Raptor Strike by $s1%.", "hash": "ef4467a5a4b11bf4", "src": "db2@1.60.1.70291"}
-{"id": 227088, "field": "name", "en": "Knight-Lieutenant's Chain Sabatons", "hash": "3194873252766a67", "src": "db2@1.60.1.70291"}
+{"id": 227087, "field": "name", "en": "Knight-Lieutenant's Chain Grips", "hash": "bd7d269632de6b19", "src": "db2@1.60.1.70338"}
+{"id": 227087, "field": "description", "en": "Increases the damage done by your Raptor Strike by $s1%.", "hash": "ef4467a5a4b11bf4", "src": "db2@1.60.1.70338"}
+{"id": 227088, "field": "name", "en": "Knight-Lieutenant's Chain Sabatons", "hash": "3194873252766a67", "src": "db2@1.60.1.70338"}
 {"id": 227088, "field": "description", "en": "+$s1 Attack Power.", "hash": "ff5c97b29bc1954f", "src": "wago@1.15.9.69722"}
-{"id": 227089, "field": "name", "en": "Knight-Captain's Chain Armor", "hash": "af456065c6730e04", "src": "db2@1.60.1.70291"}
+{"id": 227089, "field": "name", "en": "Knight-Captain's Chain Armor", "hash": "af456065c6730e04", "src": "db2@1.60.1.70338"}
 {"id": 227089, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 Attack Power.", "hash": "fd7c17b67f188fd9", "src": "wago@1.15.9.69722"}
-{"id": 227090, "field": "name", "en": "Champion's Dreadweave Cowl", "hash": "efa6b5ab3beb4b4e", "src": "db2@1.60.1.70291"}
+{"id": 227090, "field": "name", "en": "Champion's Dreadweave Cowl", "hash": "efa6b5ab3beb4b4e", "src": "db2@1.60.1.70338"}
 {"id": 227090, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "9cfc692f399135a7", "src": "wago@1.15.9.69722"}
-{"id": 227091, "field": "name", "en": "Lieutenant Commander's Dreadweave Spaulders", "hash": "29725f72f461802d", "src": "db2@1.60.1.70291"}
+{"id": 227091, "field": "name", "en": "Lieutenant Commander's Dreadweave Spaulders", "hash": "29725f72f461802d", "src": "db2@1.60.1.70338"}
 {"id": 227091, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "9cfc692f399135a7", "src": "wago@1.15.9.69722"}
-{"id": 227092, "field": "name", "en": "Champion's Dreadweave Spaulders", "hash": "0dffdc22af7b00b9", "src": "db2@1.60.1.70291"}
+{"id": 227092, "field": "name", "en": "Champion's Dreadweave Spaulders", "hash": "0dffdc22af7b00b9", "src": "db2@1.60.1.70338"}
 {"id": 227092, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "9cfc692f399135a7", "src": "wago@1.15.9.69722"}
-{"id": 227093, "field": "name", "en": "Lieutenant Commander's Dreadweave Cowl", "hash": "a65e5b1d17d9fa98", "src": "db2@1.60.1.70291"}
+{"id": 227093, "field": "name", "en": "Lieutenant Commander's Dreadweave Cowl", "hash": "a65e5b1d17d9fa98", "src": "db2@1.60.1.70338"}
 {"id": 227093, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "9cfc692f399135a7", "src": "wago@1.15.9.69722"}
-{"id": 227094, "field": "name", "en": "Legionnaire's Dreadweave Tunic", "hash": "c95f9a279b623784", "src": "db2@1.60.1.70291"}
+{"id": 227094, "field": "name", "en": "Legionnaire's Dreadweave Tunic", "hash": "c95f9a279b623784", "src": "db2@1.60.1.70338"}
 {"id": 227094, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 227095, "field": "name", "en": "Knight-Captain's Dreadweave Legguards", "hash": "615fbc5b7b986fb7", "src": "db2@1.60.1.70291"}
+{"id": 227095, "field": "name", "en": "Knight-Captain's Dreadweave Legguards", "hash": "615fbc5b7b986fb7", "src": "db2@1.60.1.70338"}
 {"id": 227095, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 227096, "field": "name", "en": "Knight-Captain's Dreadweave Tunic", "hash": "41269c7a6b5182c8", "src": "db2@1.60.1.70291"}
+{"id": 227096, "field": "name", "en": "Knight-Captain's Dreadweave Tunic", "hash": "41269c7a6b5182c8", "src": "db2@1.60.1.70338"}
 {"id": 227096, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 227097, "field": "name", "en": "Legionnaire's Dreadweave Legguards", "hash": "63bdf458af874c6e", "src": "db2@1.60.1.70291"}
+{"id": 227097, "field": "name", "en": "Legionnaire's Dreadweave Legguards", "hash": "63bdf458af874c6e", "src": "db2@1.60.1.70338"}
 {"id": 227097, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 227098, "field": "name", "en": "Blood Guard's Dreadweave Walkers", "hash": "50d0a2b4be7c7528", "src": "db2@1.60.1.70291"}
+{"id": 227098, "field": "name", "en": "Blood Guard's Dreadweave Walkers", "hash": "50d0a2b4be7c7528", "src": "db2@1.60.1.70338"}
 {"id": 227098, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 227099, "field": "name", "en": "Blood Guard's Dreadweave Handwraps", "hash": "645c414985913a63", "src": "db2@1.60.1.70291"}
-{"id": 227099, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Searing Pain.", "hash": "326fd9774abc03cd", "src": "db2@1.60.1.70291"}
-{"id": 227100, "field": "name", "en": "Knight-Lieutenant's Dreadweave Handwraps", "hash": "9799d14eee2043ba", "src": "db2@1.60.1.70291"}
-{"id": 227100, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Searing Pain.", "hash": "326fd9774abc03cd", "src": "db2@1.60.1.70291"}
-{"id": 227101, "field": "name", "en": "Knight-Lieutenant's Dreadweave Walkers", "hash": "00807cb92b6d19ce", "src": "db2@1.60.1.70291"}
+{"id": 227099, "field": "name", "en": "Blood Guard's Dreadweave Handwraps", "hash": "645c414985913a63", "src": "db2@1.60.1.70338"}
+{"id": 227099, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Searing Pain.", "hash": "326fd9774abc03cd", "src": "db2@1.60.1.70338"}
+{"id": 227100, "field": "name", "en": "Knight-Lieutenant's Dreadweave Handwraps", "hash": "9799d14eee2043ba", "src": "db2@1.60.1.70338"}
+{"id": 227100, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Searing Pain.", "hash": "326fd9774abc03cd", "src": "db2@1.60.1.70338"}
+{"id": 227101, "field": "name", "en": "Knight-Lieutenant's Dreadweave Walkers", "hash": "00807cb92b6d19ce", "src": "db2@1.60.1.70338"}
 {"id": 227101, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 227102, "field": "name", "en": "Lieutenant Commander's Silk Mantle", "hash": "e537173e4c82e8cd", "src": "db2@1.60.1.70291"}
+{"id": 227102, "field": "name", "en": "Lieutenant Commander's Silk Mantle", "hash": "e537173e4c82e8cd", "src": "db2@1.60.1.70338"}
 {"id": 227102, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "9cfc692f399135a7", "src": "wago@1.15.9.69722"}
-{"id": 227103, "field": "name", "en": "Lieutenant Commander's Silk Cowl", "hash": "56d9b8b2011b2a62", "src": "db2@1.60.1.70291"}
+{"id": 227103, "field": "name", "en": "Lieutenant Commander's Silk Cowl", "hash": "56d9b8b2011b2a62", "src": "db2@1.60.1.70338"}
 {"id": 227103, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 227104, "field": "name", "en": "Champion's Silk Mantle", "hash": "4a77426c244f598c", "src": "db2@1.60.1.70291"}
+{"id": 227104, "field": "name", "en": "Champion's Silk Mantle", "hash": "4a77426c244f598c", "src": "db2@1.60.1.70338"}
 {"id": 227104, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "9cfc692f399135a7", "src": "wago@1.15.9.69722"}
-{"id": 227105, "field": "name", "en": "Champion's Silk Cowl", "hash": "4fcce5681872df5d", "src": "db2@1.60.1.70291"}
+{"id": 227105, "field": "name", "en": "Champion's Silk Cowl", "hash": "4fcce5681872df5d", "src": "db2@1.60.1.70338"}
 {"id": 227105, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 227106, "field": "name", "en": "Legionnaire's Silk Tunic", "hash": "c165ab0806322cdb", "src": "db2@1.60.1.70291"}
+{"id": 227106, "field": "name", "en": "Legionnaire's Silk Tunic", "hash": "c165ab0806322cdb", "src": "db2@1.60.1.70338"}
 {"id": 227106, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 227107, "field": "name", "en": "Legionnaire's Silk Legguards", "hash": "67da31712771a2f3", "src": "db2@1.60.1.70291"}
+{"id": 227107, "field": "name", "en": "Legionnaire's Silk Legguards", "hash": "67da31712771a2f3", "src": "db2@1.60.1.70338"}
 {"id": 227107, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "9cfc692f399135a7", "src": "wago@1.15.9.69722"}
-{"id": 227108, "field": "name", "en": "Knight-Captain's Silk Tunic", "hash": "5949b0af4c520da3", "src": "db2@1.60.1.70291"}
+{"id": 227108, "field": "name", "en": "Knight-Captain's Silk Tunic", "hash": "5949b0af4c520da3", "src": "db2@1.60.1.70338"}
 {"id": 227108, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 227109, "field": "name", "en": "Knight-Captain's Silk Legguards", "hash": "a34e4362f605de6e", "src": "db2@1.60.1.70291"}
+{"id": 227109, "field": "name", "en": "Knight-Captain's Silk Legguards", "hash": "a34e4362f605de6e", "src": "db2@1.60.1.70338"}
 {"id": 227109, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "9cfc692f399135a7", "src": "wago@1.15.9.69722"}
-{"id": 227110, "field": "name", "en": "Blood Guard's Silk Walkers", "hash": "89d3a2163aa8d7ff", "src": "db2@1.60.1.70291"}
+{"id": 227110, "field": "name", "en": "Blood Guard's Silk Walkers", "hash": "89d3a2163aa8d7ff", "src": "db2@1.60.1.70338"}
 {"id": 227110, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 227111, "field": "name", "en": "Blood Guard's Silk Handwraps", "hash": "2e4e2c61e36d84fe", "src": "db2@1.60.1.70291"}
-{"id": 227111, "field": "description", "en": "Increases the damage absorbed by your Mana Shield by $s1.", "hash": "56c4b35d74b1ab9c", "src": "db2@1.60.1.70291"}
-{"id": 227112, "field": "name", "en": "Knight-Lieutenant's Silk Walkers", "hash": "23bb2fd3d07f33c6", "src": "db2@1.60.1.70291"}
+{"id": 227111, "field": "name", "en": "Blood Guard's Silk Handwraps", "hash": "2e4e2c61e36d84fe", "src": "db2@1.60.1.70338"}
+{"id": 227111, "field": "description", "en": "Increases the damage absorbed by your Mana Shield by $s1.", "hash": "56c4b35d74b1ab9c", "src": "db2@1.60.1.70338"}
+{"id": 227112, "field": "name", "en": "Knight-Lieutenant's Silk Walkers", "hash": "23bb2fd3d07f33c6", "src": "db2@1.60.1.70338"}
 {"id": 227112, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 227113, "field": "name", "en": "Knight-Lieutenant's Silk Handwraps", "hash": "318a195a5955c3ba", "src": "db2@1.60.1.70291"}
-{"id": 227113, "field": "description", "en": "Increases the damage absorbed by your Mana Shield by $s1.", "hash": "56c4b35d74b1ab9c", "src": "db2@1.60.1.70291"}
-{"id": 227114, "field": "name", "en": "Knight-Lieutenant's Silk Gauntlets", "hash": "a10c22121980335d", "src": "db2@1.60.1.70291"}
-{"id": 227114, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Arcane Blast.", "hash": "a28ca1371dff8ac8", "src": "db2@1.60.1.70291"}
-{"id": 227115, "field": "name", "en": "Blood Guard's Silk Gauntlets", "hash": "9dd03519a397f4a1", "src": "db2@1.60.1.70291"}
-{"id": 227115, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Arcane Blast.", "hash": "a28ca1371dff8ac8", "src": "db2@1.60.1.70291"}
-{"id": 227118, "field": "name", "en": "Champion's Satin Hood", "hash": "66040291d1333c72", "src": "db2@1.60.1.70291"}
+{"id": 227113, "field": "name", "en": "Knight-Lieutenant's Silk Handwraps", "hash": "318a195a5955c3ba", "src": "db2@1.60.1.70338"}
+{"id": 227113, "field": "description", "en": "Increases the damage absorbed by your Mana Shield by $s1.", "hash": "56c4b35d74b1ab9c", "src": "db2@1.60.1.70338"}
+{"id": 227114, "field": "name", "en": "Knight-Lieutenant's Silk Gauntlets", "hash": "a10c22121980335d", "src": "db2@1.60.1.70338"}
+{"id": 227114, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Arcane Blast.", "hash": "a28ca1371dff8ac8", "src": "db2@1.60.1.70338"}
+{"id": 227115, "field": "name", "en": "Blood Guard's Silk Gauntlets", "hash": "9dd03519a397f4a1", "src": "db2@1.60.1.70338"}
+{"id": 227115, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Arcane Blast.", "hash": "a28ca1371dff8ac8", "src": "db2@1.60.1.70338"}
+{"id": 227118, "field": "name", "en": "Champion's Satin Hood", "hash": "66040291d1333c72", "src": "db2@1.60.1.70338"}
 {"id": 227118, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 227119, "field": "name", "en": "Lieutenant Commander's Satin Mantle", "hash": "c6b214f3e8b9bf51", "src": "db2@1.60.1.70291"}
+{"id": 227119, "field": "name", "en": "Lieutenant Commander's Satin Mantle", "hash": "c6b214f3e8b9bf51", "src": "db2@1.60.1.70338"}
 {"id": 227119, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 227120, "field": "name", "en": "Champion's Satin Mantle", "hash": "96882bf2550fa31f", "src": "db2@1.60.1.70291"}
+{"id": 227120, "field": "name", "en": "Champion's Satin Mantle", "hash": "96882bf2550fa31f", "src": "db2@1.60.1.70338"}
 {"id": 227120, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 227121, "field": "name", "en": "Lieutenant Commander's Satin Hood", "hash": "01942183ae32956f", "src": "db2@1.60.1.70291"}
+{"id": 227121, "field": "name", "en": "Lieutenant Commander's Satin Hood", "hash": "01942183ae32956f", "src": "db2@1.60.1.70338"}
 {"id": 227121, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 227122, "field": "name", "en": "Knight-Captain's Satin Tunic", "hash": "2e102d3f37de24e7", "src": "db2@1.60.1.70291"}
+{"id": 227122, "field": "name", "en": "Knight-Captain's Satin Tunic", "hash": "2e102d3f37de24e7", "src": "db2@1.60.1.70338"}
 {"id": 227122, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 227123, "field": "name", "en": "Legionnaire's Satin Legguards", "hash": "c2c3221487791bed", "src": "db2@1.60.1.70291"}
+{"id": 227123, "field": "name", "en": "Legionnaire's Satin Legguards", "hash": "c2c3221487791bed", "src": "db2@1.60.1.70338"}
 {"id": 227123, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 227124, "field": "name", "en": "Legionnaire's Satin Tunic", "hash": "746149d3b9a0c8a3", "src": "db2@1.60.1.70291"}
+{"id": 227124, "field": "name", "en": "Legionnaire's Satin Tunic", "hash": "746149d3b9a0c8a3", "src": "db2@1.60.1.70338"}
 {"id": 227124, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 227125, "field": "name", "en": "Knight-Captain's Satin Legguards", "hash": "2f2851020af6fd62", "src": "db2@1.60.1.70291"}
+{"id": 227125, "field": "name", "en": "Knight-Captain's Satin Legguards", "hash": "2f2851020af6fd62", "src": "db2@1.60.1.70338"}
 {"id": 227125, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 227126, "field": "name", "en": "Blood Guard's Satin Handwraps", "hash": "f1b34486ab32e1e9", "src": "db2@1.60.1.70291"}
-{"id": 227126, "field": "description", "en": "Reduces the duration of your Weakened Soul by ${$m1/-1000} sec.", "hash": "8a93c1226dcc084e", "src": "db2@1.60.1.70291"}
-{"id": 227127, "field": "name", "en": "Blood Guard's Satin Walkers", "hash": "9090de3c299bf63d", "src": "db2@1.60.1.70291"}
+{"id": 227126, "field": "name", "en": "Blood Guard's Satin Handwraps", "hash": "f1b34486ab32e1e9", "src": "db2@1.60.1.70338"}
+{"id": 227126, "field": "description", "en": "Reduces the duration of your Weakened Soul by ${$m1/-1000} sec.", "hash": "8a93c1226dcc084e", "src": "db2@1.60.1.70338"}
+{"id": 227127, "field": "name", "en": "Blood Guard's Satin Walkers", "hash": "9090de3c299bf63d", "src": "db2@1.60.1.70338"}
 {"id": 227127, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 227128, "field": "name", "en": "Knight-Lieutenant's Satin Handwraps", "hash": "995d87fb6be9a4d3", "src": "db2@1.60.1.70291"}
-{"id": 227128, "field": "description", "en": "Reduces the duration of your Weakened Soul by ${$m1/-1000} sec.", "hash": "8a93c1226dcc084e", "src": "db2@1.60.1.70291"}
-{"id": 227129, "field": "name", "en": "Knight-Lieutenant's Satin Walkers", "hash": "520e64efd020f64c", "src": "db2@1.60.1.70291"}
+{"id": 227128, "field": "name", "en": "Knight-Lieutenant's Satin Handwraps", "hash": "995d87fb6be9a4d3", "src": "db2@1.60.1.70338"}
+{"id": 227128, "field": "description", "en": "Reduces the duration of your Weakened Soul by ${$m1/-1000} sec.", "hash": "8a93c1226dcc084e", "src": "db2@1.60.1.70338"}
+{"id": 227129, "field": "name", "en": "Knight-Lieutenant's Satin Walkers", "hash": "520e64efd020f64c", "src": "db2@1.60.1.70338"}
 {"id": 227129, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 227130, "field": "name", "en": "Champion's Satin Epaulets", "hash": "150d2603c57569d9", "src": "db2@1.60.1.70291"}
+{"id": 227130, "field": "name", "en": "Champion's Satin Epaulets", "hash": "150d2603c57569d9", "src": "db2@1.60.1.70338"}
 {"id": 227130, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "ddcc8385fe195f38", "src": "wago@1.15.9.69722"}
-{"id": 227131, "field": "name", "en": "Legionnaire's Satin Leggings", "hash": "7eea3613dd26f67c", "src": "db2@1.60.1.70291"}
+{"id": 227131, "field": "name", "en": "Legionnaire's Satin Leggings", "hash": "7eea3613dd26f67c", "src": "db2@1.60.1.70338"}
 {"id": 227131, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "ddcc8385fe195f38", "src": "wago@1.15.9.69722"}
-{"id": 227132, "field": "name", "en": "Champion's Satin Crown", "hash": "dcafb495600165e8", "src": "db2@1.60.1.70291"}
+{"id": 227132, "field": "name", "en": "Champion's Satin Crown", "hash": "dcafb495600165e8", "src": "db2@1.60.1.70338"}
 {"id": 227132, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "ddcc8385fe195f38", "src": "wago@1.15.9.69722"}
-{"id": 227133, "field": "name", "en": "Blood Guard's Satin Grips", "hash": "6464438c454fd502", "src": "db2@1.60.1.70291"}
-{"id": 227133, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Mind Blast.", "hash": "b2bcf464a8b1a90d", "src": "db2@1.60.1.70291"}
-{"id": 227134, "field": "name", "en": "Blood Guard's Satin Treads", "hash": "24793d9648c6042a", "src": "db2@1.60.1.70291"}
+{"id": 227133, "field": "name", "en": "Blood Guard's Satin Grips", "hash": "6464438c454fd502", "src": "db2@1.60.1.70338"}
+{"id": 227133, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Mind Blast.", "hash": "b2bcf464a8b1a90d", "src": "db2@1.60.1.70338"}
+{"id": 227134, "field": "name", "en": "Blood Guard's Satin Treads", "hash": "24793d9648c6042a", "src": "db2@1.60.1.70338"}
 {"id": 227134, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 227135, "field": "name", "en": "Legionnaire's Satin Robe", "hash": "27b2b970fd291d87", "src": "db2@1.60.1.70291"}
+{"id": 227135, "field": "name", "en": "Legionnaire's Satin Robe", "hash": "27b2b970fd291d87", "src": "db2@1.60.1.70338"}
 {"id": 227135, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "ddcc8385fe195f38", "src": "wago@1.15.9.69722"}
-{"id": 227136, "field": "name", "en": "Lieutenant Commander's Satin Epaulets", "hash": "be81d918ab731710", "src": "db2@1.60.1.70291"}
+{"id": 227136, "field": "name", "en": "Lieutenant Commander's Satin Epaulets", "hash": "be81d918ab731710", "src": "db2@1.60.1.70338"}
 {"id": 227136, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "ddcc8385fe195f38", "src": "wago@1.15.9.69722"}
-{"id": 227137, "field": "name", "en": "Knight-Captain's Satin Leggings", "hash": "ba5e4804abbb3208", "src": "db2@1.60.1.70291"}
+{"id": 227137, "field": "name", "en": "Knight-Captain's Satin Leggings", "hash": "ba5e4804abbb3208", "src": "db2@1.60.1.70338"}
 {"id": 227137, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "ddcc8385fe195f38", "src": "wago@1.15.9.69722"}
-{"id": 227138, "field": "name", "en": "Lieutenant Commander's Satin Crown", "hash": "776f896c8834f529", "src": "db2@1.60.1.70291"}
+{"id": 227138, "field": "name", "en": "Lieutenant Commander's Satin Crown", "hash": "776f896c8834f529", "src": "db2@1.60.1.70338"}
 {"id": 227138, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "ddcc8385fe195f38", "src": "wago@1.15.9.69722"}
-{"id": 227139, "field": "name", "en": "Knight-Lieutenant's Satin Grips", "hash": "ee5c42aa6cb2ab72", "src": "db2@1.60.1.70291"}
-{"id": 227139, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Mind Blast.", "hash": "b2bcf464a8b1a90d", "src": "db2@1.60.1.70291"}
-{"id": 227140, "field": "name", "en": "Knight-Lieutenant's Satin Treads", "hash": "be60cb4ede9c5ff1", "src": "db2@1.60.1.70291"}
+{"id": 227139, "field": "name", "en": "Knight-Lieutenant's Satin Grips", "hash": "ee5c42aa6cb2ab72", "src": "db2@1.60.1.70338"}
+{"id": 227139, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Mind Blast.", "hash": "b2bcf464a8b1a90d", "src": "db2@1.60.1.70338"}
+{"id": 227140, "field": "name", "en": "Knight-Lieutenant's Satin Treads", "hash": "be60cb4ede9c5ff1", "src": "db2@1.60.1.70338"}
 {"id": 227140, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 227141, "field": "name", "en": "Knight-Captain's Satin Robe", "hash": "bf96bf124348fe60", "src": "db2@1.60.1.70291"}
+{"id": 227141, "field": "name", "en": "Knight-Captain's Satin Robe", "hash": "bf96bf124348fe60", "src": "db2@1.60.1.70338"}
 {"id": 227141, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "ddcc8385fe195f38", "src": "wago@1.15.9.69722"}
-{"id": 227142, "field": "name", "en": "Knight-Captain's Lamellar Breastplate", "hash": "2b42f521ba3a538f", "src": "db2@1.60.1.70291"}
+{"id": 227142, "field": "name", "en": "Knight-Captain's Lamellar Breastplate", "hash": "2b42f521ba3a538f", "src": "db2@1.60.1.70338"}
 {"id": 227142, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "9cfc692f399135a7", "src": "wago@1.15.9.69722"}
-{"id": 227143, "field": "name", "en": "Knight-Captain's Lamellar Leggings", "hash": "71fad7ce7f44f243", "src": "db2@1.60.1.70291"}
+{"id": 227143, "field": "name", "en": "Knight-Captain's Lamellar Leggings", "hash": "71fad7ce7f44f243", "src": "db2@1.60.1.70338"}
 {"id": 227143, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "9cfc692f399135a7", "src": "wago@1.15.9.69722"}
-{"id": 227144, "field": "name", "en": "Lieutenant Commander's Lamellar Headguard", "hash": "9e4cafb1f80ee1a5", "src": "db2@1.60.1.70291"}
+{"id": 227144, "field": "name", "en": "Lieutenant Commander's Lamellar Headguard", "hash": "9e4cafb1f80ee1a5", "src": "db2@1.60.1.70338"}
 {"id": 227144, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "367c864f247b579e", "src": "wago@1.15.9.69722"}
-{"id": 227145, "field": "name", "en": "Lieutenant Commander's Lamellar Shoulders", "hash": "459f7bf47a81aad6", "src": "db2@1.60.1.70291"}
+{"id": 227145, "field": "name", "en": "Lieutenant Commander's Lamellar Shoulders", "hash": "459f7bf47a81aad6", "src": "db2@1.60.1.70338"}
 {"id": 227145, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 227146, "field": "name", "en": "Knight-Lieutenant's Lamellar Sabatons", "hash": "c340ac1676c44889", "src": "db2@1.60.1.70291"}
+{"id": 227146, "field": "name", "en": "Knight-Lieutenant's Lamellar Sabatons", "hash": "c340ac1676c44889", "src": "db2@1.60.1.70338"}
 {"id": 227146, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "9cfc692f399135a7", "src": "wago@1.15.9.69722"}
-{"id": 227147, "field": "name", "en": "Knight-Lieutenant's Lamellar Gauntlets", "hash": "a3a2ffbced365cf7", "src": "db2@1.60.1.70291"}
-{"id": 227147, "field": "description", "en": "Your damaging Judgements deal $s1 additional damage.", "hash": "71c97da06f3216d7", "src": "db2@1.60.1.70291"}
-{"id": 227148, "field": "name", "en": "Lieutenant Commander's Lamellar Pauldrons", "hash": "7e41de77994ca4f6", "src": "db2@1.60.1.70291"}
+{"id": 227147, "field": "name", "en": "Knight-Lieutenant's Lamellar Gauntlets", "hash": "a3a2ffbced365cf7", "src": "db2@1.60.1.70338"}
+{"id": 227147, "field": "description", "en": "Your damaging Judgements deal $s1 additional damage.", "hash": "71c97da06f3216d7", "src": "db2@1.60.1.70338"}
+{"id": 227148, "field": "name", "en": "Lieutenant Commander's Lamellar Pauldrons", "hash": "7e41de77994ca4f6", "src": "db2@1.60.1.70338"}
 {"id": 227148, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 227149, "field": "name", "en": "Lieutenant Commander's Lamellar Helmet", "hash": "df8345cd49c2e73b", "src": "db2@1.60.1.70291"}
+{"id": 227149, "field": "name", "en": "Lieutenant Commander's Lamellar Helmet", "hash": "df8345cd49c2e73b", "src": "db2@1.60.1.70338"}
 {"id": 227149, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 227150, "field": "name", "en": "Knight-Captain's Lamellar Legguards", "hash": "2445e4a7a54fb813", "src": "db2@1.60.1.70291"}
+{"id": 227150, "field": "name", "en": "Knight-Captain's Lamellar Legguards", "hash": "2445e4a7a54fb813", "src": "db2@1.60.1.70338"}
 {"id": 227150, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 227151, "field": "name", "en": "Knight-Captain's Lamellar Chestplate", "hash": "57961f79a886bcc9", "src": "db2@1.60.1.70291"}
+{"id": 227151, "field": "name", "en": "Knight-Captain's Lamellar Chestplate", "hash": "57961f79a886bcc9", "src": "db2@1.60.1.70338"}
 {"id": 227151, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 227152, "field": "name", "en": "Knight-Lieutenant's Lamellar Gloves", "hash": "e27ebd15692fb221", "src": "db2@1.60.1.70291"}
-{"id": 227152, "field": "description", "en": "Increases the critical strike chance of your Holy Shock by $s1%.", "hash": "80b211150e5254f8", "src": "db2@1.60.1.70291"}
-{"id": 227153, "field": "name", "en": "Knight-Lieutenant's Lamellar Greaves", "hash": "199f79bf17832ba7", "src": "db2@1.60.1.70291"}
+{"id": 227152, "field": "name", "en": "Knight-Lieutenant's Lamellar Gloves", "hash": "e27ebd15692fb221", "src": "db2@1.60.1.70338"}
+{"id": 227152, "field": "description", "en": "Increases the critical strike chance of your Holy Shock by $s1%.", "hash": "80b211150e5254f8", "src": "db2@1.60.1.70338"}
+{"id": 227153, "field": "name", "en": "Knight-Lieutenant's Lamellar Greaves", "hash": "199f79bf17832ba7", "src": "db2@1.60.1.70338"}
 {"id": 227153, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 227154, "field": "name", "en": "Champion's Mail Pauldrons", "hash": "4c0f00f85fc670c3", "src": "db2@1.60.1.70291"}
+{"id": 227154, "field": "name", "en": "Champion's Mail Pauldrons", "hash": "4c0f00f85fc670c3", "src": "db2@1.60.1.70338"}
 {"id": 227154, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "e382aefff8399a75", "src": "wago@1.15.9.69722"}
-{"id": 227155, "field": "name", "en": "Champion's Mail Headguard", "hash": "6c19d232be88ad72", "src": "db2@1.60.1.70291"}
+{"id": 227155, "field": "name", "en": "Champion's Mail Headguard", "hash": "6c19d232be88ad72", "src": "db2@1.60.1.70338"}
 {"id": 227155, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227156, "field": "name", "en": "Legionnaire's Mail Legguards", "hash": "04bfd1631c59393f", "src": "db2@1.60.1.70291"}
+{"id": 227156, "field": "name", "en": "Legionnaire's Mail Legguards", "hash": "04bfd1631c59393f", "src": "db2@1.60.1.70338"}
 {"id": 227156, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "e382aefff8399a75", "src": "wago@1.15.9.69722"}
-{"id": 227157, "field": "name", "en": "Legionnaire's Mail Hauberk", "hash": "760cfb5375472749", "src": "db2@1.60.1.70291"}
+{"id": 227157, "field": "name", "en": "Legionnaire's Mail Hauberk", "hash": "760cfb5375472749", "src": "db2@1.60.1.70338"}
 {"id": 227157, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 227158, "field": "name", "en": "Blood Guard's Mail Greaves", "hash": "28ba7295b0914a80", "src": "db2@1.60.1.70291"}
-{"id": 227158, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70291"}
-{"id": 227159, "field": "name", "en": "Blood Guard's Mail Vices", "hash": "24c4affbfec24adb", "src": "db2@1.60.1.70291"}
+{"id": 227158, "field": "name", "en": "Blood Guard's Mail Greaves", "hash": "28ba7295b0914a80", "src": "db2@1.60.1.70338"}
+{"id": 227158, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70338"}
+{"id": 227159, "field": "name", "en": "Blood Guard's Mail Vices", "hash": "24c4affbfec24adb", "src": "db2@1.60.1.70338"}
 {"id": 227159, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 227160, "field": "name", "en": "Champion's Mail Spaulders", "hash": "ed32ecdc3e077e00", "src": "db2@1.60.1.70291"}
+{"id": 227160, "field": "name", "en": "Champion's Mail Spaulders", "hash": "ed32ecdc3e077e00", "src": "db2@1.60.1.70338"}
 {"id": 227160, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "9cfc692f399135a7", "src": "wago@1.15.9.69722"}
-{"id": 227161, "field": "name", "en": "Legionnaire's Mail Leggings", "hash": "b0460882e8163541", "src": "db2@1.60.1.70291"}
+{"id": 227161, "field": "name", "en": "Legionnaire's Mail Leggings", "hash": "b0460882e8163541", "src": "db2@1.60.1.70338"}
 {"id": 227161, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "9cfc692f399135a7", "src": "wago@1.15.9.69722"}
-{"id": 227162, "field": "name", "en": "Champion's Mail Helm", "hash": "b7d26cf3e31c93b1", "src": "db2@1.60.1.70291"}
+{"id": 227162, "field": "name", "en": "Champion's Mail Helm", "hash": "b7d26cf3e31c93b1", "src": "db2@1.60.1.70338"}
 {"id": 227162, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 227163, "field": "name", "en": "Blood Guard's Mail Gauntlets", "hash": "3ab5d50b987f8aed", "src": "db2@1.60.1.70291"}
+{"id": 227163, "field": "name", "en": "Blood Guard's Mail Gauntlets", "hash": "3ab5d50b987f8aed", "src": "db2@1.60.1.70338"}
 {"id": 227163, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 227164, "field": "name", "en": "Blood Guard's Mail Sabatons", "hash": "7e0e01c0b1eaf041", "src": "db2@1.60.1.70291"}
-{"id": 227164, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70291"}
-{"id": 227165, "field": "name", "en": "Legionnaire's Mail Breastplate", "hash": "f881527377b81ac4", "src": "db2@1.60.1.70291"}
+{"id": 227164, "field": "name", "en": "Blood Guard's Mail Sabatons", "hash": "7e0e01c0b1eaf041", "src": "db2@1.60.1.70338"}
+{"id": 227164, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70338"}
+{"id": 227165, "field": "name", "en": "Legionnaire's Mail Breastplate", "hash": "f881527377b81ac4", "src": "db2@1.60.1.70338"}
 {"id": 227165, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 227166, "field": "name", "en": "Champion's Mail Epaulets", "hash": "5090e768d3570131", "src": "db2@1.60.1.70291"}
+{"id": 227166, "field": "name", "en": "Champion's Mail Epaulets", "hash": "5090e768d3570131", "src": "db2@1.60.1.70338"}
 {"id": 227166, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nRestores $s1 mana per 5 sec.", "hash": "382ff1aea50fa8aa", "src": "wago@1.15.9.69722"}
-{"id": 227167, "field": "name", "en": "Legionnaire's Mail Pants", "hash": "5cea7ddc818fa843", "src": "db2@1.60.1.70291"}
+{"id": 227167, "field": "name", "en": "Legionnaire's Mail Pants", "hash": "5cea7ddc818fa843", "src": "db2@1.60.1.70338"}
 {"id": 227167, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "bf3c9bba9e24a5c4", "src": "wago@1.15.9.69722"}
-{"id": 227168, "field": "name", "en": "Champion's Mail Skullcap", "hash": "59a27fa813b4539e", "src": "db2@1.60.1.70291"}
+{"id": 227168, "field": "name", "en": "Champion's Mail Skullcap", "hash": "59a27fa813b4539e", "src": "db2@1.60.1.70338"}
 {"id": 227168, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "c21d9a00596f9fdc", "src": "wago@1.15.9.69722"}
-{"id": 227169, "field": "name", "en": "Blood Guard's Mail Gloves", "hash": "4a2ed28929df248d", "src": "db2@1.60.1.70291"}
+{"id": 227169, "field": "name", "en": "Blood Guard's Mail Gloves", "hash": "4a2ed28929df248d", "src": "db2@1.60.1.70338"}
 {"id": 227169, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by spells and effects by up to $s1.", "hash": "b6f7f21337645d33", "src": "wago@1.15.9.69722"}
-{"id": 227170, "field": "name", "en": "Blood Guard's Mail Boots", "hash": "c6836f58148518eb", "src": "db2@1.60.1.70291"}
-{"id": 227170, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70291"}
-{"id": 227171, "field": "name", "en": "Legionnaire's Mail Chestguard", "hash": "993393eb90ed4fce", "src": "db2@1.60.1.70291"}
+{"id": 227170, "field": "name", "en": "Blood Guard's Mail Boots", "hash": "c6836f58148518eb", "src": "db2@1.60.1.70338"}
+{"id": 227170, "field": "description", "en": "Increases the speed of your Ghost Wolf ability by $s1%.", "hash": "fb6a1db05f84222c", "src": "db2@1.60.1.70338"}
+{"id": 227171, "field": "name", "en": "Legionnaire's Mail Chestguard", "hash": "993393eb90ed4fce", "src": "db2@1.60.1.70338"}
 {"id": 227171, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by spells and effects by up to $s1.", "hash": "b6f7f21337645d33", "src": "wago@1.15.9.69722"}
-{"id": 227172, "field": "name", "en": "Lieutenant Commander's Dragonhide Shoulders", "hash": "8e7ad51bbc4f9877", "src": "db2@1.60.1.70291"}
+{"id": 227172, "field": "name", "en": "Lieutenant Commander's Dragonhide Shoulders", "hash": "8e7ad51bbc4f9877", "src": "db2@1.60.1.70338"}
 {"id": 227172, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227173, "field": "name", "en": "Lieutenant Commander's Dragonhide Headguard", "hash": "e72808d839dccf57", "src": "db2@1.60.1.70291"}
+{"id": 227173, "field": "name", "en": "Lieutenant Commander's Dragonhide Headguard", "hash": "e72808d839dccf57", "src": "db2@1.60.1.70338"}
 {"id": 227173, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227174, "field": "name", "en": "Champion's Dragonhide Headguard", "hash": "cbb58588f4f64fd2", "src": "db2@1.60.1.70291"}
+{"id": 227174, "field": "name", "en": "Champion's Dragonhide Headguard", "hash": "cbb58588f4f64fd2", "src": "db2@1.60.1.70338"}
 {"id": 227174, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227175, "field": "name", "en": "Champion's Dragonhide Shoulders", "hash": "730851cb77691903", "src": "db2@1.60.1.70291"}
+{"id": 227175, "field": "name", "en": "Champion's Dragonhide Shoulders", "hash": "730851cb77691903", "src": "db2@1.60.1.70338"}
 {"id": 227175, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227176, "field": "name", "en": "Knight-Captain's Dragonhide Chestpiece", "hash": "bf37f32f9dfe4a6d", "src": "db2@1.60.1.70291"}
+{"id": 227176, "field": "name", "en": "Knight-Captain's Dragonhide Chestpiece", "hash": "bf37f32f9dfe4a6d", "src": "db2@1.60.1.70338"}
 {"id": 227176, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 227177, "field": "name", "en": "Legionnaire's Dragonhide Leggings", "hash": "190cf8b2a5c8bb79", "src": "db2@1.60.1.70291"}
+{"id": 227177, "field": "name", "en": "Legionnaire's Dragonhide Leggings", "hash": "190cf8b2a5c8bb79", "src": "db2@1.60.1.70338"}
 {"id": 227177, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 227178, "field": "name", "en": "Knight-Captain's Dragonhide Leggings", "hash": "c8e9139de29a06bf", "src": "db2@1.60.1.70291"}
+{"id": 227178, "field": "name", "en": "Knight-Captain's Dragonhide Leggings", "hash": "c8e9139de29a06bf", "src": "db2@1.60.1.70338"}
 {"id": 227178, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 227179, "field": "name", "en": "Legionnaire's Dragonhide Chestpiece", "hash": "f56e99ab2fa8de3c", "src": "db2@1.60.1.70291"}
+{"id": 227179, "field": "name", "en": "Legionnaire's Dragonhide Chestpiece", "hash": "f56e99ab2fa8de3c", "src": "db2@1.60.1.70338"}
 {"id": 227179, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "17b81bf60f6b8618", "src": "wago@1.15.9.69722"}
-{"id": 227180, "field": "name", "en": "Blood Guard's Dragonhide Grips", "hash": "9281327b366c458c", "src": "db2@1.60.1.70291"}
-{"id": 227180, "field": "description", "en": "Reduces the mana cost of your shapeshifts by $s1.", "hash": "d3e6c51b983d0b71", "src": "db2@1.60.1.70291"}
-{"id": 227181, "field": "name", "en": "Blood Guard's Dragonhide Treads", "hash": "bd478256a46583e9", "src": "db2@1.60.1.70291"}
+{"id": 227180, "field": "name", "en": "Blood Guard's Dragonhide Grips", "hash": "9281327b366c458c", "src": "db2@1.60.1.70338"}
+{"id": 227180, "field": "description", "en": "Reduces the mana cost of your shapeshifts by $s1.", "hash": "d3e6c51b983d0b71", "src": "db2@1.60.1.70338"}
+{"id": 227181, "field": "name", "en": "Blood Guard's Dragonhide Treads", "hash": "bd478256a46583e9", "src": "db2@1.60.1.70338"}
 {"id": 227181, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227182, "field": "name", "en": "Knight-Lieutenant's Dragonhide Treads", "hash": "31eb0cce4332c249", "src": "db2@1.60.1.70291"}
+{"id": 227182, "field": "name", "en": "Knight-Lieutenant's Dragonhide Treads", "hash": "31eb0cce4332c249", "src": "db2@1.60.1.70338"}
 {"id": 227182, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227183, "field": "name", "en": "Knight-Lieutenant's Dragonhide Grips", "hash": "5ea1b679b8a76534", "src": "db2@1.60.1.70291"}
-{"id": 227183, "field": "description", "en": "Reduces the mana cost of your shapeshifts by $s1.", "hash": "d3e6c51b983d0b71", "src": "db2@1.60.1.70291"}
-{"id": 227184, "field": "name", "en": "Champion's Dragonhide Spaulders", "hash": "4ccea03774752060", "src": "db2@1.60.1.70291"}
+{"id": 227183, "field": "name", "en": "Knight-Lieutenant's Dragonhide Grips", "hash": "5ea1b679b8a76534", "src": "db2@1.60.1.70338"}
+{"id": 227183, "field": "description", "en": "Reduces the mana cost of your shapeshifts by $s1.", "hash": "d3e6c51b983d0b71", "src": "db2@1.60.1.70338"}
+{"id": 227184, "field": "name", "en": "Champion's Dragonhide Spaulders", "hash": "4ccea03774752060", "src": "db2@1.60.1.70338"}
 {"id": 227184, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "9cfc692f399135a7", "src": "wago@1.15.9.69722"}
-{"id": 227185, "field": "name", "en": "Legionnaire's Dragonhide Pants", "hash": "5154e2eb336900fd", "src": "db2@1.60.1.70291"}
+{"id": 227185, "field": "name", "en": "Legionnaire's Dragonhide Pants", "hash": "5154e2eb336900fd", "src": "db2@1.60.1.70338"}
 {"id": 227185, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 227186, "field": "name", "en": "Champion's Dragonhide Helm", "hash": "24b6de61565b2cf4", "src": "db2@1.60.1.70291"}
+{"id": 227186, "field": "name", "en": "Champion's Dragonhide Helm", "hash": "24b6de61565b2cf4", "src": "db2@1.60.1.70338"}
 {"id": 227186, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 227187, "field": "name", "en": "Blood Guard's Dragonhide Gloves", "hash": "8f99ed9e20561b4a", "src": "db2@1.60.1.70291"}
-{"id": 227187, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Wrath.", "hash": "62fc21714cd03512", "src": "db2@1.60.1.70291"}
-{"id": 227188, "field": "name", "en": "Blood Guard's Dragonhide Boots", "hash": "3a574e574b720221", "src": "db2@1.60.1.70291"}
+{"id": 227187, "field": "name", "en": "Blood Guard's Dragonhide Gloves", "hash": "8f99ed9e20561b4a", "src": "db2@1.60.1.70338"}
+{"id": 227187, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Wrath.", "hash": "62fc21714cd03512", "src": "db2@1.60.1.70338"}
+{"id": 227188, "field": "name", "en": "Blood Guard's Dragonhide Boots", "hash": "3a574e574b720221", "src": "db2@1.60.1.70338"}
 {"id": 227188, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 227189, "field": "name", "en": "Legionnaire's Dragonhide Armor", "hash": "4c4e15d98399da4b", "src": "db2@1.60.1.70291"}
+{"id": 227189, "field": "name", "en": "Legionnaire's Dragonhide Armor", "hash": "4c4e15d98399da4b", "src": "db2@1.60.1.70338"}
 {"id": 227189, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 227190, "field": "name", "en": "Lieutenant Commander's Dragonhide Spaulders", "hash": "68412387b95b9fd4", "src": "db2@1.60.1.70291"}
+{"id": 227190, "field": "name", "en": "Lieutenant Commander's Dragonhide Spaulders", "hash": "68412387b95b9fd4", "src": "db2@1.60.1.70338"}
 {"id": 227190, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "9cfc692f399135a7", "src": "wago@1.15.9.69722"}
-{"id": 227191, "field": "name", "en": "Knight-Captain's Dragonhide Pants", "hash": "c91be53903584c41", "src": "db2@1.60.1.70291"}
+{"id": 227191, "field": "name", "en": "Knight-Captain's Dragonhide Pants", "hash": "c91be53903584c41", "src": "db2@1.60.1.70338"}
 {"id": 227191, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 227192, "field": "name", "en": "Lieutenant Commander's Dragonhide Helm", "hash": "db6e83ce3249dc3e", "src": "db2@1.60.1.70291"}
+{"id": 227192, "field": "name", "en": "Lieutenant Commander's Dragonhide Helm", "hash": "db6e83ce3249dc3e", "src": "db2@1.60.1.70338"}
 {"id": 227192, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 227193, "field": "name", "en": "Knight-Lieutenant's Dragonhide Gloves", "hash": "043d7816bf235999", "src": "db2@1.60.1.70291"}
-{"id": 227193, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Wrath.", "hash": "62fc21714cd03512", "src": "db2@1.60.1.70291"}
-{"id": 227194, "field": "name", "en": "Knight-Lieutenant's Dragonhide Boots", "hash": "0677d255cdad21c9", "src": "db2@1.60.1.70291"}
+{"id": 227193, "field": "name", "en": "Knight-Lieutenant's Dragonhide Gloves", "hash": "043d7816bf235999", "src": "db2@1.60.1.70338"}
+{"id": 227193, "field": "description", "en": "Gives you a $s1% chance to avoid interruption caused by damage while casting Wrath.", "hash": "62fc21714cd03512", "src": "db2@1.60.1.70338"}
+{"id": 227194, "field": "name", "en": "Knight-Lieutenant's Dragonhide Boots", "hash": "0677d255cdad21c9", "src": "db2@1.60.1.70338"}
 {"id": 227194, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
-{"id": 227195, "field": "name", "en": "Knight-Captain's Dragonhide Armor", "hash": "c41518275389258f", "src": "db2@1.60.1.70291"}
+{"id": 227195, "field": "name", "en": "Knight-Captain's Dragonhide Armor", "hash": "c41518275389258f", "src": "db2@1.60.1.70338"}
 {"id": 227195, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 227196, "field": "name", "en": "Knight-Captain's Dragonhide Tunic", "hash": "1200c8ed8b1ffc08", "src": "db2@1.60.1.70291"}
+{"id": 227196, "field": "name", "en": "Knight-Captain's Dragonhide Tunic", "hash": "1200c8ed8b1ffc08", "src": "db2@1.60.1.70338"}
 {"id": 227196, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 227197, "field": "name", "en": "Knight-Lieutenant's Dragonhide Greaves", "hash": "5e39290823f19a13", "src": "db2@1.60.1.70291"}
+{"id": 227197, "field": "name", "en": "Knight-Lieutenant's Dragonhide Greaves", "hash": "5e39290823f19a13", "src": "db2@1.60.1.70338"}
 {"id": 227197, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 227198, "field": "name", "en": "Knight-Lieutenant's Dragonhide Gauntlets", "hash": "45ea9e207344d304", "src": "db2@1.60.1.70291"}
-{"id": 227198, "field": "description", "en": "Increases the duration of your Barkskin by ${$m1/1000} sec.", "hash": "8598ff6f45f44932", "src": "db2@1.60.1.70291"}
-{"id": 227199, "field": "name", "en": "Lieutenant Commander's Dragonhide Headdress", "hash": "b21909ca04c6a3cc", "src": "db2@1.60.1.70291"}
+{"id": 227198, "field": "name", "en": "Knight-Lieutenant's Dragonhide Gauntlets", "hash": "45ea9e207344d304", "src": "db2@1.60.1.70338"}
+{"id": 227198, "field": "description", "en": "Increases the duration of your Barkskin by ${$m1/1000} sec.", "hash": "8598ff6f45f44932", "src": "db2@1.60.1.70338"}
+{"id": 227199, "field": "name", "en": "Lieutenant Commander's Dragonhide Headdress", "hash": "b21909ca04c6a3cc", "src": "db2@1.60.1.70338"}
 {"id": 227199, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 227200, "field": "name", "en": "Knight-Captain's Dragonhide Legguards", "hash": "a02e807040928f5e", "src": "db2@1.60.1.70291"}
+{"id": 227200, "field": "name", "en": "Knight-Captain's Dragonhide Legguards", "hash": "a02e807040928f5e", "src": "db2@1.60.1.70338"}
 {"id": 227200, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 227201, "field": "name", "en": "Lieutenant Commander's Dragonhide Pauldrons", "hash": "c71d379edb1a9297", "src": "db2@1.60.1.70291"}
+{"id": 227201, "field": "name", "en": "Lieutenant Commander's Dragonhide Pauldrons", "hash": "c71d379edb1a9297", "src": "db2@1.60.1.70338"}
 {"id": 227201, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 227202, "field": "name", "en": "Legionnaire's Dragonhide Tunic", "hash": "9a39c69abb30b0c4", "src": "db2@1.60.1.70291"}
+{"id": 227202, "field": "name", "en": "Legionnaire's Dragonhide Tunic", "hash": "9a39c69abb30b0c4", "src": "db2@1.60.1.70338"}
 {"id": 227202, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 227203, "field": "name", "en": "Blood Guard's Dragonhide Greaves", "hash": "ae894f03b700f56d", "src": "db2@1.60.1.70291"}
+{"id": 227203, "field": "name", "en": "Blood Guard's Dragonhide Greaves", "hash": "ae894f03b700f56d", "src": "db2@1.60.1.70338"}
 {"id": 227203, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 227204, "field": "name", "en": "Blood Guard's Dragonhide Gauntlets", "hash": "12ad0e1b0ab5c9ad", "src": "db2@1.60.1.70291"}
-{"id": 227204, "field": "description", "en": "Increases the duration of your Barkskin by ${$m1/1000} sec.", "hash": "8598ff6f45f44932", "src": "db2@1.60.1.70291"}
-{"id": 227205, "field": "name", "en": "Champion's Dragonhide Headdress", "hash": "96a6867abfe02447", "src": "db2@1.60.1.70291"}
+{"id": 227204, "field": "name", "en": "Blood Guard's Dragonhide Gauntlets", "hash": "12ad0e1b0ab5c9ad", "src": "db2@1.60.1.70338"}
+{"id": 227204, "field": "description", "en": "Increases the duration of your Barkskin by ${$m1/1000} sec.", "hash": "8598ff6f45f44932", "src": "db2@1.60.1.70338"}
+{"id": 227205, "field": "name", "en": "Champion's Dragonhide Headdress", "hash": "96a6867abfe02447", "src": "db2@1.60.1.70338"}
 {"id": 227205, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 227206, "field": "name", "en": "Legionnaire's Dragonhide Legguards", "hash": "a28cb86d74816c15", "src": "db2@1.60.1.70291"}
+{"id": 227206, "field": "name", "en": "Legionnaire's Dragonhide Legguards", "hash": "a28cb86d74816c15", "src": "db2@1.60.1.70338"}
 {"id": 227206, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 227207, "field": "name", "en": "Champion's Dragonhide Pauldrons", "hash": "abaab44e96341323", "src": "db2@1.60.1.70291"}
+{"id": 227207, "field": "name", "en": "Champion's Dragonhide Pauldrons", "hash": "abaab44e96341323", "src": "db2@1.60.1.70338"}
 {"id": 227207, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 227285, "field": "name", "en": "Fantastic Inventions", "hash": "8ee57829dbc9d874", "src": "db2@1.60.1.70291"}
-{"id": 227285, "field": "description", "en": "A well-worn tome with countless chapters of mechanisms, schematics, experimental drawings, and universal philosophy.", "hash": "5125a27e1bb5a664", "src": "db2@1.60.1.70291"}
-{"id": 227286, "field": "name", "en": "Warmed Rumsey Rum with Cream", "hash": "c067133b3460cebe", "src": "db2@1.60.1.70291"}
-{"id": 227286, "field": "description", "en": "Increases Stamina by $s2 for $d and gets you drunk to boot!", "hash": "2fc5d66d4688fc4f", "src": "db2@1.60.1.70291"}
-{"id": 227337, "field": "name", "en": "Feline Gloves and Belt Set", "hash": "cedc51fcc412f458", "src": "db2@1.60.1.70291"}
-{"id": 227337, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Fists|r and |cnRARE_BLUE_COLOR:Feralheart Girdle|r (Feral DPS Specialization)", "hash": "20ba4424f8774afd", "src": "db2@1.60.1.70291"}
-{"id": 227338, "field": "name", "en": "Astral Gloves and Belt Set", "hash": "670f1e2808d5eab1", "src": "db2@1.60.1.70291"}
-{"id": 227338, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Hands|r and |cnRARE_BLUE_COLOR:Feralheart Sash|r (Balance Specialization)", "hash": "d11e41303a3fbfb5", "src": "db2@1.60.1.70291"}
-{"id": 227339, "field": "name", "en": "Guardian's Gloves and Belt Set", "hash": "4427bd8313156490", "src": "db2@1.60.1.70291"}
-{"id": 227339, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Grips|r and |cnRARE_BLUE_COLOR:Feralheart Waistguard|r (Feral Tank Specialization)", "hash": "e259cc0d4193a9a4", "src": "db2@1.60.1.70291"}
-{"id": 227340, "field": "name", "en": "Mender's Gloves and Belt Set", "hash": "8508ea90ddb524c8", "src": "db2@1.60.1.70291"}
-{"id": 227340, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Gauntlets|r and |cnRARE_BLUE_COLOR:Feralheart Cord|r (Restoration Specialization)", "hash": "89ba701c24413b5f", "src": "db2@1.60.1.70291"}
-{"id": 227341, "field": "name", "en": "Pursuer's Gloves and Belt Set", "hash": "1ee7d5c8f84153a4", "src": "db2@1.60.1.70291"}
-{"id": 227341, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Beastmaster's Gauntlets|r and |cnRARE_BLUE_COLOR:Beastmaster's Belt|r (Ranged DPS Specialization)", "hash": "e4e126ee830afabe", "src": "db2@1.60.1.70291"}
-{"id": 227343, "field": "name", "en": "Merciful Gloves and Belt Set", "hash": "86c13b5095106f33", "src": "db2@1.60.1.70291"}
-{"id": 227343, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Soulforge Fists|r and |cnRARE_BLUE_COLOR:Soulforge Cord|r (Holy Specialization)", "hash": "5a39c63f890bedd4", "src": "db2@1.60.1.70291"}
-{"id": 227344, "field": "name", "en": "Radiant Gloves and Belt Set", "hash": "4740c2996cf4d622", "src": "db2@1.60.1.70291"}
-{"id": 227344, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Soulforge Gauntlets|r and |cnRARE_BLUE_COLOR:Soulforge Belt|r Retribution Specialization)", "hash": "ad0344d9b008dad9", "src": "db2@1.60.1.70291"}
-{"id": 227345, "field": "name", "en": "Divine Will Gloves and Belt Set", "hash": "27589e3209abd935", "src": "db2@1.60.1.70291"}
-{"id": 227345, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Soulforge Handguards|r and |cnRARE_BLUE_COLOR:Soulforge Waistguard|r Protection Specialization)", "hash": "40a42012b1f8268d", "src": "db2@1.60.1.70291"}
-{"id": 227346, "field": "name", "en": "Dawn Gloves and Belt Set", "hash": "5d9156cf444cdf63", "src": "db2@1.60.1.70291"}
-{"id": 227346, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Virtuous Mitts|r and |cnRARE_BLUE_COLOR:Virtuous Belt|r Healer Specialization)", "hash": "69cff63ce891193d", "src": "db2@1.60.1.70291"}
-{"id": 227347, "field": "name", "en": "Twilight Gloves and Belt Set", "hash": "10e09230127f96f4", "src": "db2@1.60.1.70291"}
-{"id": 227347, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Virtuous Hands|r and |cnRARE_BLUE_COLOR:Virtuous Cord|r Shadow Specialization)", "hash": "aaa9b3bb9d853907", "src": "db2@1.60.1.70291"}
-{"id": 227348, "field": "name", "en": "Thrill's Gloves and Belt Set", "hash": "e4bcfa645ceef2ba", "src": "db2@1.60.1.70291"}
-{"id": 227348, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Darkmantle Grips|r and |cnRARE_BLUE_COLOR:Darkmantle Belt|r (Melee DPS Specialization)", "hash": "d19c701cb4bbc47a", "src": "db2@1.60.1.70291"}
-{"id": 227350, "field": "name", "en": "Relief's Gloves and Belt Set", "hash": "e5f4bf68d6e85031", "src": "db2@1.60.1.70291"}
-{"id": 227350, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Grasp of the Five Thunders|r and |cnRARE_BLUE_COLOR:Sash of the Five Thunders|r (Restoration Specialization)", "hash": "97e26f9955a8a103", "src": "db2@1.60.1.70291"}
-{"id": 227351, "field": "name", "en": "Eruption's Gloves and Belt Set", "hash": "d1b56577c305e052", "src": "db2@1.60.1.70291"}
-{"id": 227351, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Gauntlets of the Five Thunders|r and |cnRARE_BLUE_COLOR:Cord of the Five Thunders|r (Elemental Specialization)", "hash": "8faa1ecdbe26de31", "src": "db2@1.60.1.70291"}
-{"id": 227352, "field": "name", "en": "Impact's Gloves and Belt Set", "hash": "5c7f63dd3cd0ae80", "src": "db2@1.60.1.70291"}
-{"id": 227352, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Fists of the Five Thunders|r and |cnRARE_BLUE_COLOR:Girdle of the Five Thunders|r (Enhancement DPS Specialization)", "hash": "5c47a2205328fa2d", "src": "db2@1.60.1.70291"}
-{"id": 227354, "field": "name", "en": "Corrupted Gloves and Belt Set", "hash": "3508e519d4dcd4b3", "src": "db2@1.60.1.70291"}
-{"id": 227354, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Deathmist Wraps|r and |cnRARE_BLUE_COLOR:Deathmist Belt|r (Ranged DPS Specialization)", "hash": "63c859cf5622b297", "src": "db2@1.60.1.70291"}
-{"id": 227356, "field": "name", "en": "Immoveable Gloves and Belt Set", "hash": "d1d1074a468e3ae3", "src": "db2@1.60.1.70291"}
-{"id": 227356, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Handguard of Heroism|r and |cnRARE_BLUE_COLOR:Waistguard of Heroism|r (Protection Specialization)", "hash": "c9c1e8fcad99866d", "src": "db2@1.60.1.70291"}
-{"id": 227357, "field": "name", "en": "Unstoppable Gloves and Belt Set", "hash": "f7abad1e94a3bf77", "src": "db2@1.60.1.70291"}
-{"id": 227357, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Gauntlets of Heroism|r and |cnRARE_BLUE_COLOR:Belt of Heroism|r (Melee DPS Specialization)", "hash": "96ce7af52a4417ec", "src": "db2@1.60.1.70291"}
-{"id": 227359, "field": "name", "en": "Feline Boots, Legs, and Shoulders Set", "hash": "5b31033f5251eaaf", "src": "db2@1.60.1.70291"}
-{"id": 227359, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Walkers|r,  |cnRARE_BLUE_COLOR:Feralheart Trousers|r, and |cnRARE_BLUE_COLOR:Feralheart Epaulets|r (Feral DPS Specialization)", "hash": "bb90d2b7f361434b", "src": "db2@1.60.1.70291"}
-{"id": 227360, "field": "name", "en": "Astral Boots, Legs, and Shoulders Set", "hash": "7e393efc2d027de8", "src": "db2@1.60.1.70291"}
-{"id": 227360, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Galoshes|r,  |cnRARE_BLUE_COLOR:Feralheart Kilt|r, and |cnRARE_BLUE_COLOR:Feralheart Spaulders|r (Balance Specialization)", "hash": "3ba45afcfc7a8de3", "src": "db2@1.60.1.70291"}
-{"id": 227361, "field": "name", "en": "Guardian's Boots, Legs, and Shoulders Set", "hash": "aa0e91ab3e25ec48", "src": "db2@1.60.1.70291"}
-{"id": 227361, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Treads|r,  |cnRARE_BLUE_COLOR:Feralheart Legguards|r, and |cnRARE_BLUE_COLOR:Feralheart Pauldrons|r (Feral Tank Specialization)", "hash": "ca6ac144954d84ed", "src": "db2@1.60.1.70291"}
-{"id": 227365, "field": "name", "en": "Mender's Boots, Legs, and Shoulders Set", "hash": "2477aca6e4771ed2", "src": "db2@1.60.1.70291"}
-{"id": 227365, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Sandals|r,  |cnRARE_BLUE_COLOR:Feralheart Pants|r, and |cnRARE_BLUE_COLOR:Feralheart Mantle|r (Restoration Specialization)", "hash": "a2a06604f51d72ef", "src": "db2@1.60.1.70291"}
-{"id": 227366, "field": "name", "en": "Pursuer's Boots, Legs, and Shoulders Set", "hash": "326831a983409a49", "src": "db2@1.60.1.70291"}
-{"id": 227366, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Beastmaster's Treads|r,  |cnRARE_BLUE_COLOR:Beastmaster's Pants|r, and |cnRARE_BLUE_COLOR:Beastmaster's Mantle|r (Ranged DPS Specialization)", "hash": "7470dce787532f13", "src": "db2@1.60.1.70291"}
-{"id": 227368, "field": "name", "en": "Merciful Boots, Legs, and Shoulders Set", "hash": "d57f7979a0cb8e64", "src": "db2@1.60.1.70291"}
-{"id": 227368, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Soulforge Treads|r,  |cnRARE_BLUE_COLOR:Soulforge Leggings|r, and |cnRARE_BLUE_COLOR:Soulforge Epaulets|r (Holy Specialization)", "hash": "438d2a3e4fdc2ee9", "src": "db2@1.60.1.70291"}
-{"id": 227369, "field": "name", "en": "Radiant Boots, Legs, and Shoulders Set", "hash": "d116ea1adc080600", "src": "db2@1.60.1.70291"}
-{"id": 227369, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Soulforge Warboots|r,  |cnRARE_BLUE_COLOR:Soulforge Legplates|r, and |cnRARE_BLUE_COLOR:Soulforge Spaulders|r (Retribution Specialization)", "hash": "b45ae54a86d09859", "src": "db2@1.60.1.70291"}
-{"id": 227370, "field": "name", "en": "Divine Will Boots, Legs, and Shoulders Set", "hash": "731c6c577a0c70e3", "src": "db2@1.60.1.70291"}
-{"id": 227370, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Soulforge Sabatons|r,  |cnRARE_BLUE_COLOR:Soulforge Legguards|r, and |cnRARE_BLUE_COLOR:Soulforge Pauldrons|r (Protection Specialization)", "hash": "56c27cbc61207fdd", "src": "db2@1.60.1.70291"}
-{"id": 227371, "field": "name", "en": "Dawn Boots, Legs, and Shoulders Set", "hash": "9f87a6c0d7aecaa8", "src": "db2@1.60.1.70291"}
-{"id": 227371, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Virtuous Sandals|r,  |cnRARE_BLUE_COLOR:Virtuous Skirt|r, and |cnRARE_BLUE_COLOR:Virtuous Mantle|r (Healer Specialization)", "hash": "011cd9cc9e70503e", "src": "db2@1.60.1.70291"}
-{"id": 227372, "field": "name", "en": "Twilight Boots, Legs, and Shoulders Set", "hash": "4f45c4a4b8186ad8", "src": "db2@1.60.1.70291"}
-{"id": 227372, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Virtuous Slippers|r,  |cnRARE_BLUE_COLOR:Virtuous Leggings|r, and |cnRARE_BLUE_COLOR:Virtuous Epaulets|r (Shadow Specialization)", "hash": "bdda1022dcd3d869", "src": "db2@1.60.1.70291"}
-{"id": 227373, "field": "name", "en": "Thrill's Boots, Legs, and Shoulders Set", "hash": "1f509d5f1c43f591", "src": "db2@1.60.1.70291"}
-{"id": 227373, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Darkmantle Footpads|r,  |cnRARE_BLUE_COLOR:Darkmantle Pants|r, and |cnRARE_BLUE_COLOR:Darkmantle Spaulders|r (Melee DPS Specialization)", "hash": "15354a15a24a75f7", "src": "db2@1.60.1.70291"}
-{"id": 227375, "field": "name", "en": "Relief's Boots, Legs, and Shoulders Set", "hash": "24f07ff32d9c0537", "src": "db2@1.60.1.70291"}
-{"id": 227375, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Greaves of the Five Thunders|r,  |cnRARE_BLUE_COLOR:Leggings of the Five Thunders|r, and |cnRARE_BLUE_COLOR:Mantle of the Five Thunders|r (Restoration Specialization)", "hash": "d712da940300e4fb", "src": "db2@1.60.1.70291"}
-{"id": 227376, "field": "name", "en": "Eruption's Boots, Legs, and Shoulders Set", "hash": "6e03bb16794da87e", "src": "db2@1.60.1.70291"}
-{"id": 227376, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Slippers of the Five Thunders|r,  |cnRARE_BLUE_COLOR:Kilt of the Five Thunders|r, and |cnRARE_BLUE_COLOR:Pauldrons of the Five Thunders|r (Elemental Specialization)", "hash": "97cbafecc8915d0e", "src": "db2@1.60.1.70291"}
-{"id": 227377, "field": "name", "en": "Impact's Boots, Legs, and Shoulders Set", "hash": "f2fa7b52125b33f6", "src": "db2@1.60.1.70291"}
-{"id": 227377, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Treads of the Five Thunders|r,  |cnRARE_BLUE_COLOR:Legplates of the Five Thunders|r, and |cnRARE_BLUE_COLOR:Spaulders of the Five Thunders|r (Enhancement DPS Specialization)", "hash": "8216910b4e866440", "src": "db2@1.60.1.70291"}
-{"id": 227379, "field": "name", "en": "Corrupted Boots, Legs, and Shoulders Set", "hash": "321700bdb727bf83", "src": "db2@1.60.1.70291"}
-{"id": 227379, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Deathmist Sandals|r,  |cnRARE_BLUE_COLOR:Deathmist Leggings|r, and |cnRARE_BLUE_COLOR:Deathmist Mantle|r (Ranged DPS Specialization)", "hash": "b7863d801f3c9821", "src": "db2@1.60.1.70291"}
-{"id": 227381, "field": "name", "en": "Immoveable Boots, Legs, and Shoulders Set", "hash": "97fa2c80acec93d1", "src": "db2@1.60.1.70291"}
-{"id": 227381, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Sabatons of Heroism|r,  |cnRARE_BLUE_COLOR:Legguards of Heroism|r, and |cnRARE_BLUE_COLOR:Pauldrons of Heroism|r (Tank Specialization)", "hash": "19ca89ccc5b85ead", "src": "db2@1.60.1.70291"}
-{"id": 227382, "field": "name", "en": "Unstoppable Boots, Legs, and Shoulders Set", "hash": "7dd96c70fe1b01e7", "src": "db2@1.60.1.70291"}
-{"id": 227382, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Battleboots of Heroism|r,  |cnRARE_BLUE_COLOR:Legplates of Heroism|r, and |cnRARE_BLUE_COLOR:Spaulders of Heroism|r (Melee DPS Specialization)", "hash": "fdf7d7e20f94fe48", "src": "db2@1.60.1.70291"}
-{"id": 227383, "field": "name", "en": "Feline Helm and Chestpiece Set", "hash": "8acfe9374fdabb17", "src": "db2@1.60.1.70291"}
-{"id": 227383, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Cap|r and |cnEPIC_PURPLE_COLOR:Feralheart Tunic|r (Feral DPS Specialization)", "hash": "16da6f0e4ed9b165", "src": "db2@1.60.1.70291"}
-{"id": 227384, "field": "name", "en": "Astral Helm and Chestpiece Set", "hash": "0caf5b3408735b3c", "src": "db2@1.60.1.70291"}
-{"id": 227384, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Cowl|r and |cnEPIC_PURPLE_COLOR:Feralheart Vest|r (Balance Specialization)", "hash": "75ad81342ac0956f", "src": "db2@1.60.1.70291"}
-{"id": 227385, "field": "name", "en": "Guardian's Helm and Chestpiece Set", "hash": "46ec0a6c23bace51", "src": "db2@1.60.1.70291"}
-{"id": 227385, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Faceguard|r and |cnEPIC_PURPLE_COLOR:Feralheart Armor|r (Feral Tank Specialization)", "hash": "87404af1cdb8e7ba", "src": "db2@1.60.1.70291"}
-{"id": 227387, "field": "name", "en": "Mender's Helm and Chestpiece Set", "hash": "a799e0a144de8acc", "src": "db2@1.60.1.70291"}
-{"id": 227387, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Headdress|r and |cnEPIC_PURPLE_COLOR:Feralheart Embrace|r (Restoration Specialization)", "hash": "83826a1c9b82e63f", "src": "db2@1.60.1.70291"}
-{"id": 227388, "field": "name", "en": "Pursuer's Helm and Chestpiece Set", "hash": "f53074abf43d17b1", "src": "db2@1.60.1.70291"}
-{"id": 227388, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Beastmaster's Cap|r and |cnEPIC_PURPLE_COLOR:Beastmaster's Tunic|r (Ranged DPS Specialization)", "hash": "dc1b72c3b5ba47b1", "src": "db2@1.60.1.70291"}
-{"id": 227390, "field": "name", "en": "Merciful Helm and Chestpiece Set", "hash": "76aae2e8170d0cd9", "src": "db2@1.60.1.70291"}
-{"id": 227390, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Soulforge Crown|r and |cnEPIC_PURPLE_COLOR:Soulforge Embrace|r (Holy Specialization)", "hash": "b71687f0e38f3d04", "src": "db2@1.60.1.70291"}
-{"id": 227391, "field": "name", "en": "Radiant Helm and Chestpiece Set", "hash": "4fa22c01d16ed1df", "src": "db2@1.60.1.70291"}
-{"id": 227391, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Soulforge Greathelm|r and |cnEPIC_PURPLE_COLOR:Soulforge Breastplate|r (Retribution Specialization)", "hash": "13e5db89c534330e", "src": "db2@1.60.1.70291"}
-{"id": 227392, "field": "name", "en": "Divine Will Helm and Chestpiece Set", "hash": "3ea2096a0b626f81", "src": "db2@1.60.1.70291"}
-{"id": 227392, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Soulforge Faceguard|r and |cnEPIC_PURPLE_COLOR:Soulforge Chestguards|r (Protection Specialization)", "hash": "84b2eb12c35d6d9e", "src": "db2@1.60.1.70291"}
-{"id": 227393, "field": "name", "en": "Dawn Helm and Chestpiece Set", "hash": "e7e3f9a8220ea41a", "src": "db2@1.60.1.70291"}
-{"id": 227393, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Virtuous Crown|r and |cnEPIC_PURPLE_COLOR:Virtuous Robe|r (Healer Specialization)", "hash": "693431ebafd6fb3a", "src": "db2@1.60.1.70291"}
-{"id": 227394, "field": "name", "en": "Twilight Helm and Chestpiece Set", "hash": "034ec4315371bdd3", "src": "db2@1.60.1.70291"}
-{"id": 227394, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Virtuous Cowl|r and |cnEPIC_PURPLE_COLOR:Virtuous Gown|r (Shadow Specialization)", "hash": "e69cc599b55bee60", "src": "db2@1.60.1.70291"}
-{"id": 227395, "field": "name", "en": "Thrill's Helm and Chestpiece Set", "hash": "df67479f48edbf3f", "src": "db2@1.60.1.70291"}
-{"id": 227395, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Darkmantle Capl|r and |cnEPIC_PURPLE_COLOR:Darkmantle Tunic|r (Melee DPS Specialization)", "hash": "af431c14a380f584", "src": "db2@1.60.1.70291"}
-{"id": 227397, "field": "name", "en": "Relief's Helm and Chestpiece Set", "hash": "afbc593a2de810ce", "src": "db2@1.60.1.70291"}
-{"id": 227397, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Crown of the Five Thunders|r and |cnEPIC_PURPLE_COLOR:Tunic of the Five Thunders|r (Restoration Specialization)", "hash": "fff65e73cde8da40", "src": "db2@1.60.1.70291"}
-{"id": 227398, "field": "name", "en": "Eruption's Helm and Chestpiece Set", "hash": "ac117a8cd2764b43", "src": "db2@1.60.1.70291"}
-{"id": 227398, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Coif of the Five Thunders|r and |cnEPIC_PURPLE_COLOR:Vest of the Five Thunders|r (Elemental Specialization)", "hash": "1c015fa7323018f0", "src": "db2@1.60.1.70291"}
-{"id": 227399, "field": "name", "en": "Impact's Helm and Chestpiece Set", "hash": "ecd6232e74166138", "src": "db2@1.60.1.70291"}
-{"id": 227399, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Face of the Five Thunders|r and |cnEPIC_PURPLE_COLOR:Chain of the Five Thunders|r (Enhancement DPS Specialization)", "hash": "11a62d4eac312f0c", "src": "db2@1.60.1.70291"}
-{"id": 227401, "field": "name", "en": "Corrupted Helm and Chestpiece Set", "hash": "4ebd1d3d5f724e57", "src": "db2@1.60.1.70291"}
-{"id": 227401, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Deathmist Maskl|r and |cnEPIC_PURPLE_COLOR:Deathmist Robe|r (Ranged DPS Specialization)", "hash": "240cf8ebb4b9d0b4", "src": "db2@1.60.1.70291"}
-{"id": 227403, "field": "name", "en": "Immoveable Helm and Chestpiece Set", "hash": "7e1c298641e5a8b0", "src": "db2@1.60.1.70291"}
-{"id": 227403, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Faceguard of Heroisml|r and |cnEPIC_PURPLE_COLOR:Chestguard of Heroism|r (Protection Specialization)", "hash": "31f1f26ad0b525f5", "src": "db2@1.60.1.70291"}
-{"id": 227404, "field": "name", "en": "Unstoppable Helm and Chestpiece Set", "hash": "60edb8984ebd21cd", "src": "db2@1.60.1.70291"}
-{"id": 227404, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Crown of Heroisml|r and |cnEPIC_PURPLE_COLOR:Breastplate of Heroism|r (Melee DPS Specialization)", "hash": "15abdbb0e857e486", "src": "db2@1.60.1.70291"}
-{"id": 227444, "field": "name", "en": "Idol of the Huntress", "hash": "ab88f985b4ea9a6a", "src": "db2@1.60.1.70291"}
-{"id": 227444, "field": "description", "en": "Kill 5 sleeping targets while in Cat Form. Then, use this idol to learn a new ability.", "hash": "c5868517d39faef5", "src": "db2@1.60.1.70291"}
-{"id": 227451, "field": "name", "en": "Sending Sigil", "hash": "92a1d31e7c0805aa", "src": "db2@1.60.1.70291"}
-{"id": 227451, "field": "description", "en": "The symbols ' > v ^ < '  are engraved along the border.", "hash": "2643d272d1e6e6f6", "src": "db2@1.60.1.70291"}
-{"id": 227456, "field": "name", "en": "Rune of the Crimson Tempest", "hash": "b4fb25d34e04623f", "src": "db2@1.60.1.70291"}
-{"id": 227456, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 227549, "field": "name", "en": "Scrap of Parchment", "hash": "387ddbbb777b595c", "src": "db2@1.60.1.70291"}
-{"id": 227552, "field": "name", "en": "Shredded Parchment", "hash": "43c6c642a1c11fdb", "src": "db2@1.60.1.70291"}
-{"id": 227552, "field": "description", "en": "Seems to have been damaged in combat.", "hash": "45c905219e28ef76", "src": "db2@1.60.1.70291"}
-{"id": 227658, "field": "name", "en": "Shadowsworn Note", "hash": "f98b043af583f717", "src": "db2@1.60.1.70291"}
-{"id": 227685, "field": "name", "en": "Modified Shadow Scalpel", "hash": "14f42bf3b419dd17", "src": "db2@1.60.1.70291"}
-{"id": 227685, "field": "description", "en": "Focus the Modified Shadow Scalpel on Arkonos the Cursed to dispel his barrier of protection.\nCuthbert has imparted Rowan's final blessing upon this instrument. Hopefully it should function to undo the barrier protecting Arkonos.", "hash": "4dbd455f8df846c1", "src": "db2@1.60.1.70291"}
-{"id": 227686, "field": "name", "en": "Ornate Warhammer", "hash": "14d11c1657e27d65", "src": "db2@1.60.1.70291"}
-{"id": 227687, "field": "name", "en": "Orthas' Favorite Gold Tooth", "hash": "5cd9ae4faf94724d", "src": "db2@1.60.1.70291"}
-{"id": 227687, "field": "description", "en": "Give Orthas' tooth a... rub. Gross.\nIt smells awful.", "hash": "d64f070124de23c9", "src": "db2@1.60.1.70291"}
-{"id": 227689, "field": "name", "en": "Partially-Digested Plate Armor", "hash": "1c4dc717da42994f", "src": "db2@1.60.1.70291"}
-{"id": 227690, "field": "name", "en": "Necrotic Runestone", "hash": "c588d0a2ef2e0ca0", "src": "db2@1.60.1.70291"}
-{"id": 227690, "field": "description", "en": "You feel sick to your stomach when your bare flesh makes contact with this runestone.", "hash": "a232d3e5ae9e9241", "src": "db2@1.60.1.70291"}
-{"id": 227727, "field": "name", "en": "Plans: Sulfuron Hammer", "hash": "83735a1c2d2221ca", "src": "db2@1.60.1.70291"}
-{"id": 227727, "field": "description", "en": "Teaches you how to make a Sulfuron Hammer.", "hash": "381d3f18bd12e41d", "src": "db2@1.60.1.70291"}
-{"id": 227730, "field": "name", "en": "Thorium Brotherhood Contract", "hash": "e43bb0918924c1f7", "src": "db2@1.60.1.70291"}
-{"id": 227730, "field": "description", "en": "Bound in Dark Iron Wiring", "hash": "67930b269d70f38f", "src": "db2@1.60.1.70291"}
-{"id": 227743, "field": "name", "en": "Obsidian Power Core", "hash": "c5bf02c8a3126bb6", "src": "db2@1.60.1.70291"}
-{"id": 227745, "field": "name", "en": "Family Heirloom", "hash": "03c30e3b5240302e", "src": "db2@1.60.1.70291"}
-{"id": 227746, "field": "name", "en": "Rune of the World Tree", "hash": "7ce8f4ba6a2cdacb", "src": "db2@1.60.1.70291"}
-{"id": 227746, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 227747, "field": "name", "en": "Family Records", "hash": "4f4e9cb881c1ed07", "src": "db2@1.60.1.70291"}
-{"id": 227748, "field": "name", "en": "Survivor Journal", "hash": "f12a019deea7a248", "src": "db2@1.60.1.70291"}
-{"id": 227749, "field": "name", "en": "Rune of the Falling Star", "hash": "da1c328539a8296a", "src": "db2@1.60.1.70291"}
-{"id": 227749, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 227767, "field": "name", "en": "Flamestone Cluster", "hash": "f9866d89d39cfe25", "src": "db2@1.60.1.70291"}
-{"id": 227768, "field": "name", "en": "Dreamjuice", "hash": "89703c305243f4bd", "src": "db2@1.60.1.70291"}
-{"id": 227768, "field": "description", "en": "Drink the Dreamjuice to enter a state of waking sleep, allowing you to see hidden enemies. Only usable in Thorium Point.", "hash": "7630378ff3ff221d", "src": "db2@1.60.1.70291"}
-{"id": 227796, "field": "name", "en": "Mysterious 'Darnassian' Scroll", "hash": "3f4007112a4cd0df", "src": "db2@1.60.1.70291"}
-{"id": 227796, "field": "description", "en": "Weak magic emanates from the scroll. It seems to be pointing you towards something... or someone.", "hash": "8eba7b09a128e3b9", "src": "db2@1.60.1.70291"}
-{"id": 227797, "field": "name", "en": "Mysterious 'Darnassian' Scroll", "hash": "3f4007112a4cd0df", "src": "db2@1.60.1.70291"}
-{"id": 227797, "field": "description", "en": "Weak magic emanates from the scroll. It seems to be pointing you towards something... or someone.", "hash": "8eba7b09a128e3b9", "src": "db2@1.60.1.70291"}
-{"id": 227801, "field": "name", "en": "Firelands Ember", "hash": "90c8e7fbc97e315c", "src": "db2@1.60.1.70291"}
-{"id": 227802, "field": "name", "en": "Monster - Torch", "hash": "036cc2c2fb999fe1", "src": "db2@1.60.1.70291"}
-{"id": 227803, "field": "name", "en": "Dire Warbear Harness", "hash": "c2c612593d624ebb", "src": "db2@1.60.1.70291"}
+{"id": 227285, "field": "name", "en": "Fantastic Inventions", "hash": "8ee57829dbc9d874", "src": "db2@1.60.1.70338"}
+{"id": 227285, "field": "description", "en": "A well-worn tome with countless chapters of mechanisms, schematics, experimental drawings, and universal philosophy.", "hash": "5125a27e1bb5a664", "src": "db2@1.60.1.70338"}
+{"id": 227286, "field": "name", "en": "Warmed Rumsey Rum with Cream", "hash": "c067133b3460cebe", "src": "db2@1.60.1.70338"}
+{"id": 227286, "field": "description", "en": "Increases Stamina by $s2 for $d and gets you drunk to boot!", "hash": "2fc5d66d4688fc4f", "src": "db2@1.60.1.70338"}
+{"id": 227337, "field": "name", "en": "Feline Gloves and Belt Set", "hash": "cedc51fcc412f458", "src": "db2@1.60.1.70338"}
+{"id": 227337, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Fists|r and |cnRARE_BLUE_COLOR:Feralheart Girdle|r (Feral DPS Specialization)", "hash": "20ba4424f8774afd", "src": "db2@1.60.1.70338"}
+{"id": 227338, "field": "name", "en": "Astral Gloves and Belt Set", "hash": "670f1e2808d5eab1", "src": "db2@1.60.1.70338"}
+{"id": 227338, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Hands|r and |cnRARE_BLUE_COLOR:Feralheart Sash|r (Balance Specialization)", "hash": "d11e41303a3fbfb5", "src": "db2@1.60.1.70338"}
+{"id": 227339, "field": "name", "en": "Guardian's Gloves and Belt Set", "hash": "4427bd8313156490", "src": "db2@1.60.1.70338"}
+{"id": 227339, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Grips|r and |cnRARE_BLUE_COLOR:Feralheart Waistguard|r (Feral Tank Specialization)", "hash": "e259cc0d4193a9a4", "src": "db2@1.60.1.70338"}
+{"id": 227340, "field": "name", "en": "Mender's Gloves and Belt Set", "hash": "8508ea90ddb524c8", "src": "db2@1.60.1.70338"}
+{"id": 227340, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Gauntlets|r and |cnRARE_BLUE_COLOR:Feralheart Cord|r (Restoration Specialization)", "hash": "89ba701c24413b5f", "src": "db2@1.60.1.70338"}
+{"id": 227341, "field": "name", "en": "Pursuer's Gloves and Belt Set", "hash": "1ee7d5c8f84153a4", "src": "db2@1.60.1.70338"}
+{"id": 227341, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Beastmaster's Gauntlets|r and |cnRARE_BLUE_COLOR:Beastmaster's Belt|r (Ranged DPS Specialization)", "hash": "e4e126ee830afabe", "src": "db2@1.60.1.70338"}
+{"id": 227343, "field": "name", "en": "Merciful Gloves and Belt Set", "hash": "86c13b5095106f33", "src": "db2@1.60.1.70338"}
+{"id": 227343, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Soulforge Fists|r and |cnRARE_BLUE_COLOR:Soulforge Cord|r (Holy Specialization)", "hash": "5a39c63f890bedd4", "src": "db2@1.60.1.70338"}
+{"id": 227344, "field": "name", "en": "Radiant Gloves and Belt Set", "hash": "4740c2996cf4d622", "src": "db2@1.60.1.70338"}
+{"id": 227344, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Soulforge Gauntlets|r and |cnRARE_BLUE_COLOR:Soulforge Belt|r Retribution Specialization)", "hash": "ad0344d9b008dad9", "src": "db2@1.60.1.70338"}
+{"id": 227345, "field": "name", "en": "Divine Will Gloves and Belt Set", "hash": "27589e3209abd935", "src": "db2@1.60.1.70338"}
+{"id": 227345, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Soulforge Handguards|r and |cnRARE_BLUE_COLOR:Soulforge Waistguard|r Protection Specialization)", "hash": "40a42012b1f8268d", "src": "db2@1.60.1.70338"}
+{"id": 227346, "field": "name", "en": "Dawn Gloves and Belt Set", "hash": "5d9156cf444cdf63", "src": "db2@1.60.1.70338"}
+{"id": 227346, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Virtuous Mitts|r and |cnRARE_BLUE_COLOR:Virtuous Belt|r Healer Specialization)", "hash": "69cff63ce891193d", "src": "db2@1.60.1.70338"}
+{"id": 227347, "field": "name", "en": "Twilight Gloves and Belt Set", "hash": "10e09230127f96f4", "src": "db2@1.60.1.70338"}
+{"id": 227347, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Virtuous Hands|r and |cnRARE_BLUE_COLOR:Virtuous Cord|r Shadow Specialization)", "hash": "aaa9b3bb9d853907", "src": "db2@1.60.1.70338"}
+{"id": 227348, "field": "name", "en": "Thrill's Gloves and Belt Set", "hash": "e4bcfa645ceef2ba", "src": "db2@1.60.1.70338"}
+{"id": 227348, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Darkmantle Grips|r and |cnRARE_BLUE_COLOR:Darkmantle Belt|r (Melee DPS Specialization)", "hash": "d19c701cb4bbc47a", "src": "db2@1.60.1.70338"}
+{"id": 227350, "field": "name", "en": "Relief's Gloves and Belt Set", "hash": "e5f4bf68d6e85031", "src": "db2@1.60.1.70338"}
+{"id": 227350, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Grasp of the Five Thunders|r and |cnRARE_BLUE_COLOR:Sash of the Five Thunders|r (Restoration Specialization)", "hash": "97e26f9955a8a103", "src": "db2@1.60.1.70338"}
+{"id": 227351, "field": "name", "en": "Eruption's Gloves and Belt Set", "hash": "d1b56577c305e052", "src": "db2@1.60.1.70338"}
+{"id": 227351, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Gauntlets of the Five Thunders|r and |cnRARE_BLUE_COLOR:Cord of the Five Thunders|r (Elemental Specialization)", "hash": "8faa1ecdbe26de31", "src": "db2@1.60.1.70338"}
+{"id": 227352, "field": "name", "en": "Impact's Gloves and Belt Set", "hash": "5c7f63dd3cd0ae80", "src": "db2@1.60.1.70338"}
+{"id": 227352, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Fists of the Five Thunders|r and |cnRARE_BLUE_COLOR:Girdle of the Five Thunders|r (Enhancement DPS Specialization)", "hash": "5c47a2205328fa2d", "src": "db2@1.60.1.70338"}
+{"id": 227354, "field": "name", "en": "Corrupted Gloves and Belt Set", "hash": "3508e519d4dcd4b3", "src": "db2@1.60.1.70338"}
+{"id": 227354, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Deathmist Wraps|r and |cnRARE_BLUE_COLOR:Deathmist Belt|r (Ranged DPS Specialization)", "hash": "63c859cf5622b297", "src": "db2@1.60.1.70338"}
+{"id": 227356, "field": "name", "en": "Immoveable Gloves and Belt Set", "hash": "d1d1074a468e3ae3", "src": "db2@1.60.1.70338"}
+{"id": 227356, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Handguard of Heroism|r and |cnRARE_BLUE_COLOR:Waistguard of Heroism|r (Protection Specialization)", "hash": "c9c1e8fcad99866d", "src": "db2@1.60.1.70338"}
+{"id": 227357, "field": "name", "en": "Unstoppable Gloves and Belt Set", "hash": "f7abad1e94a3bf77", "src": "db2@1.60.1.70338"}
+{"id": 227357, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Gauntlets of Heroism|r and |cnRARE_BLUE_COLOR:Belt of Heroism|r (Melee DPS Specialization)", "hash": "96ce7af52a4417ec", "src": "db2@1.60.1.70338"}
+{"id": 227359, "field": "name", "en": "Feline Boots, Legs, and Shoulders Set", "hash": "5b31033f5251eaaf", "src": "db2@1.60.1.70338"}
+{"id": 227359, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Walkers|r,  |cnRARE_BLUE_COLOR:Feralheart Trousers|r, and |cnRARE_BLUE_COLOR:Feralheart Epaulets|r (Feral DPS Specialization)", "hash": "bb90d2b7f361434b", "src": "db2@1.60.1.70338"}
+{"id": 227360, "field": "name", "en": "Astral Boots, Legs, and Shoulders Set", "hash": "7e393efc2d027de8", "src": "db2@1.60.1.70338"}
+{"id": 227360, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Galoshes|r,  |cnRARE_BLUE_COLOR:Feralheart Kilt|r, and |cnRARE_BLUE_COLOR:Feralheart Spaulders|r (Balance Specialization)", "hash": "3ba45afcfc7a8de3", "src": "db2@1.60.1.70338"}
+{"id": 227361, "field": "name", "en": "Guardian's Boots, Legs, and Shoulders Set", "hash": "aa0e91ab3e25ec48", "src": "db2@1.60.1.70338"}
+{"id": 227361, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Treads|r,  |cnRARE_BLUE_COLOR:Feralheart Legguards|r, and |cnRARE_BLUE_COLOR:Feralheart Pauldrons|r (Feral Tank Specialization)", "hash": "ca6ac144954d84ed", "src": "db2@1.60.1.70338"}
+{"id": 227365, "field": "name", "en": "Mender's Boots, Legs, and Shoulders Set", "hash": "2477aca6e4771ed2", "src": "db2@1.60.1.70338"}
+{"id": 227365, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Sandals|r,  |cnRARE_BLUE_COLOR:Feralheart Pants|r, and |cnRARE_BLUE_COLOR:Feralheart Mantle|r (Restoration Specialization)", "hash": "a2a06604f51d72ef", "src": "db2@1.60.1.70338"}
+{"id": 227366, "field": "name", "en": "Pursuer's Boots, Legs, and Shoulders Set", "hash": "326831a983409a49", "src": "db2@1.60.1.70338"}
+{"id": 227366, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Beastmaster's Treads|r,  |cnRARE_BLUE_COLOR:Beastmaster's Pants|r, and |cnRARE_BLUE_COLOR:Beastmaster's Mantle|r (Ranged DPS Specialization)", "hash": "7470dce787532f13", "src": "db2@1.60.1.70338"}
+{"id": 227368, "field": "name", "en": "Merciful Boots, Legs, and Shoulders Set", "hash": "d57f7979a0cb8e64", "src": "db2@1.60.1.70338"}
+{"id": 227368, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Soulforge Treads|r,  |cnRARE_BLUE_COLOR:Soulforge Leggings|r, and |cnRARE_BLUE_COLOR:Soulforge Epaulets|r (Holy Specialization)", "hash": "438d2a3e4fdc2ee9", "src": "db2@1.60.1.70338"}
+{"id": 227369, "field": "name", "en": "Radiant Boots, Legs, and Shoulders Set", "hash": "d116ea1adc080600", "src": "db2@1.60.1.70338"}
+{"id": 227369, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Soulforge Warboots|r,  |cnRARE_BLUE_COLOR:Soulforge Legplates|r, and |cnRARE_BLUE_COLOR:Soulforge Spaulders|r (Retribution Specialization)", "hash": "b45ae54a86d09859", "src": "db2@1.60.1.70338"}
+{"id": 227370, "field": "name", "en": "Divine Will Boots, Legs, and Shoulders Set", "hash": "731c6c577a0c70e3", "src": "db2@1.60.1.70338"}
+{"id": 227370, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Soulforge Sabatons|r,  |cnRARE_BLUE_COLOR:Soulforge Legguards|r, and |cnRARE_BLUE_COLOR:Soulforge Pauldrons|r (Protection Specialization)", "hash": "56c27cbc61207fdd", "src": "db2@1.60.1.70338"}
+{"id": 227371, "field": "name", "en": "Dawn Boots, Legs, and Shoulders Set", "hash": "9f87a6c0d7aecaa8", "src": "db2@1.60.1.70338"}
+{"id": 227371, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Virtuous Sandals|r,  |cnRARE_BLUE_COLOR:Virtuous Skirt|r, and |cnRARE_BLUE_COLOR:Virtuous Mantle|r (Healer Specialization)", "hash": "011cd9cc9e70503e", "src": "db2@1.60.1.70338"}
+{"id": 227372, "field": "name", "en": "Twilight Boots, Legs, and Shoulders Set", "hash": "4f45c4a4b8186ad8", "src": "db2@1.60.1.70338"}
+{"id": 227372, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Virtuous Slippers|r,  |cnRARE_BLUE_COLOR:Virtuous Leggings|r, and |cnRARE_BLUE_COLOR:Virtuous Epaulets|r (Shadow Specialization)", "hash": "bdda1022dcd3d869", "src": "db2@1.60.1.70338"}
+{"id": 227373, "field": "name", "en": "Thrill's Boots, Legs, and Shoulders Set", "hash": "1f509d5f1c43f591", "src": "db2@1.60.1.70338"}
+{"id": 227373, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Darkmantle Footpads|r,  |cnRARE_BLUE_COLOR:Darkmantle Pants|r, and |cnRARE_BLUE_COLOR:Darkmantle Spaulders|r (Melee DPS Specialization)", "hash": "15354a15a24a75f7", "src": "db2@1.60.1.70338"}
+{"id": 227375, "field": "name", "en": "Relief's Boots, Legs, and Shoulders Set", "hash": "24f07ff32d9c0537", "src": "db2@1.60.1.70338"}
+{"id": 227375, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Greaves of the Five Thunders|r,  |cnRARE_BLUE_COLOR:Leggings of the Five Thunders|r, and |cnRARE_BLUE_COLOR:Mantle of the Five Thunders|r (Restoration Specialization)", "hash": "d712da940300e4fb", "src": "db2@1.60.1.70338"}
+{"id": 227376, "field": "name", "en": "Eruption's Boots, Legs, and Shoulders Set", "hash": "6e03bb16794da87e", "src": "db2@1.60.1.70338"}
+{"id": 227376, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Slippers of the Five Thunders|r,  |cnRARE_BLUE_COLOR:Kilt of the Five Thunders|r, and |cnRARE_BLUE_COLOR:Pauldrons of the Five Thunders|r (Elemental Specialization)", "hash": "97cbafecc8915d0e", "src": "db2@1.60.1.70338"}
+{"id": 227377, "field": "name", "en": "Impact's Boots, Legs, and Shoulders Set", "hash": "f2fa7b52125b33f6", "src": "db2@1.60.1.70338"}
+{"id": 227377, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Treads of the Five Thunders|r,  |cnRARE_BLUE_COLOR:Legplates of the Five Thunders|r, and |cnRARE_BLUE_COLOR:Spaulders of the Five Thunders|r (Enhancement DPS Specialization)", "hash": "8216910b4e866440", "src": "db2@1.60.1.70338"}
+{"id": 227379, "field": "name", "en": "Corrupted Boots, Legs, and Shoulders Set", "hash": "321700bdb727bf83", "src": "db2@1.60.1.70338"}
+{"id": 227379, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Deathmist Sandals|r,  |cnRARE_BLUE_COLOR:Deathmist Leggings|r, and |cnRARE_BLUE_COLOR:Deathmist Mantle|r (Ranged DPS Specialization)", "hash": "b7863d801f3c9821", "src": "db2@1.60.1.70338"}
+{"id": 227381, "field": "name", "en": "Immoveable Boots, Legs, and Shoulders Set", "hash": "97fa2c80acec93d1", "src": "db2@1.60.1.70338"}
+{"id": 227381, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Sabatons of Heroism|r,  |cnRARE_BLUE_COLOR:Legguards of Heroism|r, and |cnRARE_BLUE_COLOR:Pauldrons of Heroism|r (Tank Specialization)", "hash": "19ca89ccc5b85ead", "src": "db2@1.60.1.70338"}
+{"id": 227382, "field": "name", "en": "Unstoppable Boots, Legs, and Shoulders Set", "hash": "7dd96c70fe1b01e7", "src": "db2@1.60.1.70338"}
+{"id": 227382, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Battleboots of Heroism|r,  |cnRARE_BLUE_COLOR:Legplates of Heroism|r, and |cnRARE_BLUE_COLOR:Spaulders of Heroism|r (Melee DPS Specialization)", "hash": "fdf7d7e20f94fe48", "src": "db2@1.60.1.70338"}
+{"id": 227383, "field": "name", "en": "Feline Helm and Chestpiece Set", "hash": "8acfe9374fdabb17", "src": "db2@1.60.1.70338"}
+{"id": 227383, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Cap|r and |cnEPIC_PURPLE_COLOR:Feralheart Tunic|r (Feral DPS Specialization)", "hash": "16da6f0e4ed9b165", "src": "db2@1.60.1.70338"}
+{"id": 227384, "field": "name", "en": "Astral Helm and Chestpiece Set", "hash": "0caf5b3408735b3c", "src": "db2@1.60.1.70338"}
+{"id": 227384, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Cowl|r and |cnEPIC_PURPLE_COLOR:Feralheart Vest|r (Balance Specialization)", "hash": "75ad81342ac0956f", "src": "db2@1.60.1.70338"}
+{"id": 227385, "field": "name", "en": "Guardian's Helm and Chestpiece Set", "hash": "46ec0a6c23bace51", "src": "db2@1.60.1.70338"}
+{"id": 227385, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Faceguard|r and |cnEPIC_PURPLE_COLOR:Feralheart Armor|r (Feral Tank Specialization)", "hash": "87404af1cdb8e7ba", "src": "db2@1.60.1.70338"}
+{"id": 227387, "field": "name", "en": "Mender's Helm and Chestpiece Set", "hash": "a799e0a144de8acc", "src": "db2@1.60.1.70338"}
+{"id": 227387, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Feralheart Headdress|r and |cnEPIC_PURPLE_COLOR:Feralheart Embrace|r (Restoration Specialization)", "hash": "83826a1c9b82e63f", "src": "db2@1.60.1.70338"}
+{"id": 227388, "field": "name", "en": "Pursuer's Helm and Chestpiece Set", "hash": "f53074abf43d17b1", "src": "db2@1.60.1.70338"}
+{"id": 227388, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Beastmaster's Cap|r and |cnEPIC_PURPLE_COLOR:Beastmaster's Tunic|r (Ranged DPS Specialization)", "hash": "dc1b72c3b5ba47b1", "src": "db2@1.60.1.70338"}
+{"id": 227390, "field": "name", "en": "Merciful Helm and Chestpiece Set", "hash": "76aae2e8170d0cd9", "src": "db2@1.60.1.70338"}
+{"id": 227390, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Soulforge Crown|r and |cnEPIC_PURPLE_COLOR:Soulforge Embrace|r (Holy Specialization)", "hash": "b71687f0e38f3d04", "src": "db2@1.60.1.70338"}
+{"id": 227391, "field": "name", "en": "Radiant Helm and Chestpiece Set", "hash": "4fa22c01d16ed1df", "src": "db2@1.60.1.70338"}
+{"id": 227391, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Soulforge Greathelm|r and |cnEPIC_PURPLE_COLOR:Soulforge Breastplate|r (Retribution Specialization)", "hash": "13e5db89c534330e", "src": "db2@1.60.1.70338"}
+{"id": 227392, "field": "name", "en": "Divine Will Helm and Chestpiece Set", "hash": "3ea2096a0b626f81", "src": "db2@1.60.1.70338"}
+{"id": 227392, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Soulforge Faceguard|r and |cnEPIC_PURPLE_COLOR:Soulforge Chestguards|r (Protection Specialization)", "hash": "84b2eb12c35d6d9e", "src": "db2@1.60.1.70338"}
+{"id": 227393, "field": "name", "en": "Dawn Helm and Chestpiece Set", "hash": "e7e3f9a8220ea41a", "src": "db2@1.60.1.70338"}
+{"id": 227393, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Virtuous Crown|r and |cnEPIC_PURPLE_COLOR:Virtuous Robe|r (Healer Specialization)", "hash": "693431ebafd6fb3a", "src": "db2@1.60.1.70338"}
+{"id": 227394, "field": "name", "en": "Twilight Helm and Chestpiece Set", "hash": "034ec4315371bdd3", "src": "db2@1.60.1.70338"}
+{"id": 227394, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Virtuous Cowl|r and |cnEPIC_PURPLE_COLOR:Virtuous Gown|r (Shadow Specialization)", "hash": "e69cc599b55bee60", "src": "db2@1.60.1.70338"}
+{"id": 227395, "field": "name", "en": "Thrill's Helm and Chestpiece Set", "hash": "df67479f48edbf3f", "src": "db2@1.60.1.70338"}
+{"id": 227395, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Darkmantle Capl|r and |cnEPIC_PURPLE_COLOR:Darkmantle Tunic|r (Melee DPS Specialization)", "hash": "af431c14a380f584", "src": "db2@1.60.1.70338"}
+{"id": 227397, "field": "name", "en": "Relief's Helm and Chestpiece Set", "hash": "afbc593a2de810ce", "src": "db2@1.60.1.70338"}
+{"id": 227397, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Crown of the Five Thunders|r and |cnEPIC_PURPLE_COLOR:Tunic of the Five Thunders|r (Restoration Specialization)", "hash": "fff65e73cde8da40", "src": "db2@1.60.1.70338"}
+{"id": 227398, "field": "name", "en": "Eruption's Helm and Chestpiece Set", "hash": "ac117a8cd2764b43", "src": "db2@1.60.1.70338"}
+{"id": 227398, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Coif of the Five Thunders|r and |cnEPIC_PURPLE_COLOR:Vest of the Five Thunders|r (Elemental Specialization)", "hash": "1c015fa7323018f0", "src": "db2@1.60.1.70338"}
+{"id": 227399, "field": "name", "en": "Impact's Helm and Chestpiece Set", "hash": "ecd6232e74166138", "src": "db2@1.60.1.70338"}
+{"id": 227399, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Face of the Five Thunders|r and |cnEPIC_PURPLE_COLOR:Chain of the Five Thunders|r (Enhancement DPS Specialization)", "hash": "11a62d4eac312f0c", "src": "db2@1.60.1.70338"}
+{"id": 227401, "field": "name", "en": "Corrupted Helm and Chestpiece Set", "hash": "4ebd1d3d5f724e57", "src": "db2@1.60.1.70338"}
+{"id": 227401, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Deathmist Maskl|r and |cnEPIC_PURPLE_COLOR:Deathmist Robe|r (Ranged DPS Specialization)", "hash": "240cf8ebb4b9d0b4", "src": "db2@1.60.1.70338"}
+{"id": 227403, "field": "name", "en": "Immoveable Helm and Chestpiece Set", "hash": "7e1c298641e5a8b0", "src": "db2@1.60.1.70338"}
+{"id": 227403, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Faceguard of Heroisml|r and |cnEPIC_PURPLE_COLOR:Chestguard of Heroism|r (Protection Specialization)", "hash": "31f1f26ad0b525f5", "src": "db2@1.60.1.70338"}
+{"id": 227404, "field": "name", "en": "Unstoppable Helm and Chestpiece Set", "hash": "60edb8984ebd21cd", "src": "db2@1.60.1.70338"}
+{"id": 227404, "field": "description", "en": "|cnEPIC_PURPLE_COLOR:Crown of Heroisml|r and |cnEPIC_PURPLE_COLOR:Breastplate of Heroism|r (Melee DPS Specialization)", "hash": "15abdbb0e857e486", "src": "db2@1.60.1.70338"}
+{"id": 227444, "field": "name", "en": "Idol of the Huntress", "hash": "ab88f985b4ea9a6a", "src": "db2@1.60.1.70338"}
+{"id": 227444, "field": "description", "en": "Kill 5 sleeping targets while in Cat Form. Then, use this idol to learn a new ability.", "hash": "c5868517d39faef5", "src": "db2@1.60.1.70338"}
+{"id": 227451, "field": "name", "en": "Sending Sigil", "hash": "92a1d31e7c0805aa", "src": "db2@1.60.1.70338"}
+{"id": 227451, "field": "description", "en": "The symbols ' > v ^ < '  are engraved along the border.", "hash": "2643d272d1e6e6f6", "src": "db2@1.60.1.70338"}
+{"id": 227456, "field": "name", "en": "Rune of the Crimson Tempest", "hash": "b4fb25d34e04623f", "src": "db2@1.60.1.70338"}
+{"id": 227456, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 227549, "field": "name", "en": "Scrap of Parchment", "hash": "387ddbbb777b595c", "src": "db2@1.60.1.70338"}
+{"id": 227552, "field": "name", "en": "Shredded Parchment", "hash": "43c6c642a1c11fdb", "src": "db2@1.60.1.70338"}
+{"id": 227552, "field": "description", "en": "Seems to have been damaged in combat.", "hash": "45c905219e28ef76", "src": "db2@1.60.1.70338"}
+{"id": 227658, "field": "name", "en": "Shadowsworn Note", "hash": "f98b043af583f717", "src": "db2@1.60.1.70338"}
+{"id": 227685, "field": "name", "en": "Modified Shadow Scalpel", "hash": "14f42bf3b419dd17", "src": "db2@1.60.1.70338"}
+{"id": 227685, "field": "description", "en": "Focus the Modified Shadow Scalpel on Arkonos the Cursed to dispel his barrier of protection.\nCuthbert has imparted Rowan's final blessing upon this instrument. Hopefully it should function to undo the barrier protecting Arkonos.", "hash": "4dbd455f8df846c1", "src": "db2@1.60.1.70338"}
+{"id": 227686, "field": "name", "en": "Ornate Warhammer", "hash": "14d11c1657e27d65", "src": "db2@1.60.1.70338"}
+{"id": 227687, "field": "name", "en": "Orthas' Favorite Gold Tooth", "hash": "5cd9ae4faf94724d", "src": "db2@1.60.1.70338"}
+{"id": 227687, "field": "description", "en": "Give Orthas' tooth a... rub. Gross.\nIt smells awful.", "hash": "d64f070124de23c9", "src": "db2@1.60.1.70338"}
+{"id": 227689, "field": "name", "en": "Partially-Digested Plate Armor", "hash": "1c4dc717da42994f", "src": "db2@1.60.1.70338"}
+{"id": 227690, "field": "name", "en": "Necrotic Runestone", "hash": "c588d0a2ef2e0ca0", "src": "db2@1.60.1.70338"}
+{"id": 227690, "field": "description", "en": "You feel sick to your stomach when your bare flesh makes contact with this runestone.", "hash": "a232d3e5ae9e9241", "src": "db2@1.60.1.70338"}
+{"id": 227727, "field": "name", "en": "Plans: Sulfuron Hammer", "hash": "83735a1c2d2221ca", "src": "db2@1.60.1.70338"}
+{"id": 227727, "field": "description", "en": "Teaches you how to make a Sulfuron Hammer.", "hash": "381d3f18bd12e41d", "src": "db2@1.60.1.70338"}
+{"id": 227730, "field": "name", "en": "Thorium Brotherhood Contract", "hash": "e43bb0918924c1f7", "src": "db2@1.60.1.70338"}
+{"id": 227730, "field": "description", "en": "Bound in Dark Iron Wiring", "hash": "67930b269d70f38f", "src": "db2@1.60.1.70338"}
+{"id": 227743, "field": "name", "en": "Obsidian Power Core", "hash": "c5bf02c8a3126bb6", "src": "db2@1.60.1.70338"}
+{"id": 227745, "field": "name", "en": "Family Heirloom", "hash": "03c30e3b5240302e", "src": "db2@1.60.1.70338"}
+{"id": 227746, "field": "name", "en": "Rune of the World Tree", "hash": "7ce8f4ba6a2cdacb", "src": "db2@1.60.1.70338"}
+{"id": 227746, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 227747, "field": "name", "en": "Family Records", "hash": "4f4e9cb881c1ed07", "src": "db2@1.60.1.70338"}
+{"id": 227748, "field": "name", "en": "Survivor Journal", "hash": "f12a019deea7a248", "src": "db2@1.60.1.70338"}
+{"id": 227749, "field": "name", "en": "Rune of the Falling Star", "hash": "da1c328539a8296a", "src": "db2@1.60.1.70338"}
+{"id": 227749, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 227767, "field": "name", "en": "Flamestone Cluster", "hash": "f9866d89d39cfe25", "src": "db2@1.60.1.70338"}
+{"id": 227768, "field": "name", "en": "Dreamjuice", "hash": "89703c305243f4bd", "src": "db2@1.60.1.70338"}
+{"id": 227768, "field": "description", "en": "Drink the Dreamjuice to enter a state of waking sleep, allowing you to see hidden enemies. Only usable in Thorium Point.", "hash": "7630378ff3ff221d", "src": "db2@1.60.1.70338"}
+{"id": 227796, "field": "name", "en": "Mysterious 'Darnassian' Scroll", "hash": "3f4007112a4cd0df", "src": "db2@1.60.1.70338"}
+{"id": 227796, "field": "description", "en": "Weak magic emanates from the scroll. It seems to be pointing you towards something... or someone.", "hash": "8eba7b09a128e3b9", "src": "db2@1.60.1.70338"}
+{"id": 227797, "field": "name", "en": "Mysterious 'Darnassian' Scroll", "hash": "3f4007112a4cd0df", "src": "db2@1.60.1.70338"}
+{"id": 227797, "field": "description", "en": "Weak magic emanates from the scroll. It seems to be pointing you towards something... or someone.", "hash": "8eba7b09a128e3b9", "src": "db2@1.60.1.70338"}
+{"id": 227801, "field": "name", "en": "Firelands Ember", "hash": "90c8e7fbc97e315c", "src": "db2@1.60.1.70338"}
+{"id": 227802, "field": "name", "en": "Monster - Torch", "hash": "036cc2c2fb999fe1", "src": "db2@1.60.1.70338"}
+{"id": 227803, "field": "name", "en": "Dire Warbear Harness", "hash": "c2c612593d624ebb", "src": "db2@1.60.1.70338"}
 {"id": 227803, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreased Defense +$s1.", "hash": "ff2db7fc13d1e425", "src": "wago@1.15.9.69722"}
-{"id": 227804, "field": "name", "en": "Dire Warbear Woolies", "hash": "e58df65b0f0c4350", "src": "db2@1.60.1.70291"}
+{"id": 227804, "field": "name", "en": "Dire Warbear Woolies", "hash": "e58df65b0f0c4350", "src": "db2@1.60.1.70338"}
 {"id": 227804, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreased Defense +$s1.", "hash": "ff2db7fc13d1e425", "src": "wago@1.15.9.69722"}
-{"id": 227805, "field": "name", "en": "Ferocity of the Timbermaw", "hash": "3d9ed0493d7e4d65", "src": "db2@1.60.1.70291"}
-{"id": 227807, "field": "name", "en": "Dense Timbermaw Belt", "hash": "92771695b341a9b5", "src": "db2@1.60.1.70291"}
+{"id": 227805, "field": "name", "en": "Ferocity of the Timbermaw", "hash": "3d9ed0493d7e4d65", "src": "db2@1.60.1.70338"}
+{"id": 227807, "field": "name", "en": "Dense Timbermaw Belt", "hash": "92771695b341a9b5", "src": "db2@1.60.1.70338"}
 {"id": 227807, "field": "description", "en": "+$s1 Attack Power.", "hash": "ff5c97b29bc1954f", "src": "wago@1.15.9.69722"}
-{"id": 227808, "field": "name", "en": "Rugged Mantle of the Timbermaw", "hash": "65a39757e231b41c", "src": "db2@1.60.1.70291"}
+{"id": 227808, "field": "name", "en": "Rugged Mantle of the Timbermaw", "hash": "65a39757e231b41c", "src": "db2@1.60.1.70338"}
 {"id": 227808, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
-{"id": 227809, "field": "name", "en": "Studded Timbermaw Brawlers", "hash": "ca4187295533c6dc", "src": "db2@1.60.1.70291"}
+{"id": 227809, "field": "name", "en": "Studded Timbermaw Brawlers", "hash": "ca4187295533c6dc", "src": "db2@1.60.1.70338"}
 {"id": 227809, "field": "description", "en": "+$s1 Weapon Damage.", "hash": "f887b76a4d870c20", "src": "wago@1.15.9.69722"}
-{"id": 227810, "field": "name", "en": "Dense Timbermaw Boots", "hash": "f448614d123ce299", "src": "db2@1.60.1.70291"}
+{"id": 227810, "field": "name", "en": "Dense Timbermaw Boots", "hash": "f448614d123ce299", "src": "db2@1.60.1.70338"}
 {"id": 227810, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreased Defense +$s1.", "hash": "ff2db7fc13d1e425", "src": "wago@1.15.9.69722"}
-{"id": 227813, "field": "name", "en": "Drinkable Stratholme Holy Water", "hash": "74900b43f385df5a", "src": "db2@1.60.1.70291"}
-{"id": 227813, "field": "description", "en": "Restores $o1 mana over $d.  Must remain seated while drinking.", "hash": "792a9d04713a780c", "src": "db2@1.60.1.70291"}
-{"id": 227814, "field": "name", "en": "Radiant Girdle of the Dawn", "hash": "116557299fe70cca", "src": "db2@1.60.1.70291"}
+{"id": 227813, "field": "name", "en": "Drinkable Stratholme Holy Water", "hash": "74900b43f385df5a", "src": "db2@1.60.1.70338"}
+{"id": 227813, "field": "description", "en": "Restores $o1 mana over $d.  Must remain seated while drinking.", "hash": "792a9d04713a780c", "src": "db2@1.60.1.70338"}
+{"id": 227814, "field": "name", "en": "Radiant Girdle of the Dawn", "hash": "116557299fe70cca", "src": "db2@1.60.1.70338"}
 {"id": 227814, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
-{"id": 227815, "field": "name", "en": "Fine Dawn Treaders", "hash": "4ce77181bfe3b407", "src": "db2@1.60.1.70291"}
+{"id": 227815, "field": "name", "en": "Fine Dawn Treaders", "hash": "4ce77181bfe3b407", "src": "db2@1.60.1.70338"}
 {"id": 227815, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreased Defense +$s1.", "hash": "ff2db7fc13d1e425", "src": "wago@1.15.9.69722"}
-{"id": 227816, "field": "name", "en": "Argent Elite Boots", "hash": "01752060236254d0", "src": "db2@1.60.1.70291"}
+{"id": 227816, "field": "name", "en": "Argent Elite Boots", "hash": "01752060236254d0", "src": "db2@1.60.1.70338"}
 {"id": 227816, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreased Defense +$s1.", "hash": "ff2db7fc13d1e425", "src": "wago@1.15.9.69722"}
-{"id": 227817, "field": "name", "en": "Radiant Gloves of the Dawn", "hash": "0d6401d1c2ac9c7f", "src": "db2@1.60.1.70291"}
-{"id": 227818, "field": "name", "en": "Glowing Mantle of the Dawn", "hash": "492b5172a894d08b", "src": "db2@1.60.1.70291"}
+{"id": 227817, "field": "name", "en": "Radiant Gloves of the Dawn", "hash": "0d6401d1c2ac9c7f", "src": "db2@1.60.1.70338"}
+{"id": 227818, "field": "name", "en": "Glowing Mantle of the Dawn", "hash": "492b5172a894d08b", "src": "db2@1.60.1.70338"}
 {"id": 227818, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreased Defense +$s1.", "hash": "ff2db7fc13d1e425", "src": "wago@1.15.9.69722"}
-{"id": 227819, "field": "name", "en": "Blessed Flame Mantle of the Dawn", "hash": "d487bcc68a1c2ad5", "src": "db2@1.60.1.70291"}
-{"id": 227819, "field": "description", "en": "Permanently adds $460962s1 fire resistance to a shoulder slot item.", "hash": "ab976a01a5d9c8fb", "src": "db2@1.60.1.70291"}
-{"id": 227844, "field": "name", "en": "Leather-Reinforced Runecloth Bag", "hash": "ac2a397889f95308", "src": "db2@1.60.1.70291"}
-{"id": 227859, "field": "name", "en": "Shimmering Dawnbringer Shoulders", "hash": "f63e87477c8df7de", "src": "db2@1.60.1.70291"}
+{"id": 227819, "field": "name", "en": "Blessed Flame Mantle of the Dawn", "hash": "d487bcc68a1c2ad5", "src": "db2@1.60.1.70338"}
+{"id": 227819, "field": "description", "en": "Permanently adds $460962s1 fire resistance to a shoulder slot item.", "hash": "ab976a01a5d9c8fb", "src": "db2@1.60.1.70338"}
+{"id": 227844, "field": "name", "en": "Leather-Reinforced Runecloth Bag", "hash": "ac2a397889f95308", "src": "db2@1.60.1.70338"}
+{"id": 227859, "field": "name", "en": "Shimmering Dawnbringer Shoulders", "hash": "f63e87477c8df7de", "src": "db2@1.60.1.70338"}
 {"id": 227859, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by spells and effects by up to $s1.", "hash": "b6f7f21337645d33", "src": "wago@1.15.9.69722"}
-{"id": 227862, "field": "name", "en": "Incandescent Mooncloth Boots", "hash": "47ceeda3904b0a46", "src": "db2@1.60.1.70291"}
+{"id": 227862, "field": "name", "en": "Incandescent Mooncloth Boots", "hash": "47ceeda3904b0a46", "src": "db2@1.60.1.70338"}
 {"id": 227862, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
-{"id": 227888, "field": "name", "en": "Argent Elite Shoulders", "hash": "4af29cb5ab02e5d3", "src": "db2@1.60.1.70291"}
+{"id": 227888, "field": "name", "en": "Argent Elite Shoulders", "hash": "4af29cb5ab02e5d3", "src": "db2@1.60.1.70338"}
 {"id": 227888, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
-{"id": 227895, "field": "name", "en": "Pattern: Golden Mantle of the Dawn", "hash": "bfed251f2761ffc1", "src": "db2@1.60.1.70291"}
-{"id": 227895, "field": "description", "en": "Teaches you how to craft a Golden Mantle of the Dawn.", "hash": "e11650286073a646", "src": "db2@1.60.1.70291"}
-{"id": 227896, "field": "name", "en": "Pattern: Argent Boots", "hash": "31865612b5dba6b3", "src": "db2@1.60.1.70291"}
-{"id": 227896, "field": "description", "en": "Teaches you how to sew Argent Boots.", "hash": "b0ab8d90b76efbfa", "src": "db2@1.60.1.70291"}
-{"id": 227897, "field": "name", "en": "Pattern: Argent Shoulders", "hash": "3215e76aac9dd918", "src": "db2@1.60.1.70291"}
-{"id": 227897, "field": "description", "en": "Teaches you how to sew Argent Shoulders.", "hash": "c96ddd126e418651", "src": "db2@1.60.1.70291"}
-{"id": 227898, "field": "name", "en": "Pattern: Honed Blue Dragonscale Breastplate", "hash": "876a3cf3d18a505e", "src": "db2@1.60.1.70291"}
-{"id": 227898, "field": "description", "en": "Teaches you how to craft a Blue Dragonscale Breastplate.", "hash": "23f5546798d82018", "src": "db2@1.60.1.70291"}
-{"id": 227899, "field": "name", "en": "Pattern: Honed Blue Dragonscale Shoulders", "hash": "32ec5e9043ab85af", "src": "db2@1.60.1.70291"}
-{"id": 227899, "field": "description", "en": "Teaches you how to craft Blue Dragonscale Shoulders.", "hash": "4778a26afe9084ef", "src": "db2@1.60.1.70291"}
-{"id": 227900, "field": "name", "en": "Pattern: Living Green Dragonscale Leggings", "hash": "188fefc1eb78f9f6", "src": "db2@1.60.1.70291"}
-{"id": 227900, "field": "description", "en": "Teaches you how to craft Green Dragonscale Leggings.", "hash": "6467b3c095601f2a", "src": "db2@1.60.1.70291"}
-{"id": 227901, "field": "name", "en": "Plans: Tempered Dark Iron Plate", "hash": "bbe160c9646022f5", "src": "db2@1.60.1.70291"}
-{"id": 227901, "field": "description", "en": "Teaches you how to make Dark Iron Plate.", "hash": "f78a4dd7548325d7", "src": "db2@1.60.1.70291"}
-{"id": 227902, "field": "name", "en": "Pattern: Hardened Black Dragonscale Breastplate", "hash": "6c3283d86f992439", "src": "db2@1.60.1.70291"}
-{"id": 227902, "field": "description", "en": "Teaches you how to craft a Black Dragonscale Breastplate.", "hash": "a8d3c9f41e1c7b12", "src": "db2@1.60.1.70291"}
-{"id": 227903, "field": "name", "en": "Pattern: Hardened Black Dragonscale Leggings", "hash": "7cb16d42b9e5e719", "src": "db2@1.60.1.70291"}
-{"id": 227903, "field": "description", "en": "Teaches you how to craft Black Dragonscale Leggings.", "hash": "be785e2bb0e1f13c", "src": "db2@1.60.1.70291"}
-{"id": 227904, "field": "name", "en": "Pattern: Hardened Black Dragonscale Shoulders", "hash": "a8dc1ef32a726c63", "src": "db2@1.60.1.70291"}
-{"id": 227904, "field": "description", "en": "Teaches you how to craft Black Dragonscale Shoulders.", "hash": "0e6632014e704745", "src": "db2@1.60.1.70291"}
-{"id": 227905, "field": "name", "en": "Plans: Skyrider's Masterwork Stormhammer", "hash": "ae16907d4c8f7fbe", "src": "db2@1.60.1.70291"}
-{"id": 227905, "field": "description", "en": "Teaches you how to make a Masterwork Stormhammer.", "hash": "74ab820d43aa4818", "src": "db2@1.60.1.70291"}
-{"id": 227906, "field": "name", "en": "Pattern: Masterwork Volcanic Breastplate", "hash": "687587b4f98eadac", "src": "db2@1.60.1.70291"}
-{"id": 227906, "field": "description", "en": "Teaches you how to craft a Volcanic Breastplate.", "hash": "e26cc2fa7e24f1d1", "src": "db2@1.60.1.70291"}
-{"id": 227907, "field": "name", "en": "Pattern: Masterwork Volcanic Shoulders", "hash": "877d3458ed1bb587", "src": "db2@1.60.1.70291"}
-{"id": 227907, "field": "description", "en": "Teaches you how to craft Volcanic Shoulders.", "hash": "7cb6e99208fe6e21", "src": "db2@1.60.1.70291"}
-{"id": 227908, "field": "name", "en": "Pattern: Masterwork Volcanic Leggings", "hash": "6308a424ed15928e", "src": "db2@1.60.1.70291"}
-{"id": 227908, "field": "description", "en": "Teaches you how to craft Volcanic Leggings.", "hash": "ec424435a1c925a9", "src": "db2@1.60.1.70291"}
-{"id": 227909, "field": "name", "en": "Plans: Fiery Plate Gauntlets of the Hidden Technique", "hash": "7eff20d016d40082", "src": "db2@1.60.1.70291"}
-{"id": 227909, "field": "description", "en": "Teaches you how to make Fiery Plate Gaunlets.", "hash": "482fc05f4b13909d", "src": "db2@1.60.1.70291"}
-{"id": 227910, "field": "name", "en": "Pattern: Brilliant Chromatic Cloak", "hash": "74568c95ddfc18a9", "src": "db2@1.60.1.70291"}
-{"id": 227910, "field": "description", "en": "Teaches you how to craft a Chromatic Cloak.", "hash": "af365e970a6b3aa8", "src": "db2@1.60.1.70291"}
-{"id": 227911, "field": "name", "en": "Head of Rend Blackhand", "hash": "6789e0f839deb758", "src": "db2@1.60.1.70291"}
-{"id": 227911, "field": "description", "en": "Proof of demise of the Warchief of Blackrock Mountain", "hash": "2a47a693be130b2f", "src": "db2@1.60.1.70291"}
-{"id": 227912, "field": "name", "en": "Applied Divinity", "hash": "ece5b6de528fb9a3", "src": "db2@1.60.1.70291"}
-{"id": 227921, "field": "name", "en": "Rune of Knives", "hash": "5219f94b78ac37e3", "src": "db2@1.60.1.70291"}
-{"id": 227921, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 227922, "field": "name", "en": "Rune of the Swashbuckler", "hash": "dd715a06474bb0af", "src": "db2@1.60.1.70291"}
-{"id": 227922, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 227924, "field": "name", "en": "Unusual Flask", "hash": "3b988676b3781740", "src": "db2@1.60.1.70291"}
-{"id": 227924, "field": "description", "en": "An unusual mixture that smells foul and emanates a strange power.", "hash": "7cbda480467447c8", "src": "db2@1.60.1.70291"}
-{"id": 227928, "field": "name", "en": "Toolbox Key", "hash": "8104a4b3e2dc2ffa", "src": "db2@1.60.1.70291"}
-{"id": 227930, "field": "name", "en": "Safe Box Key", "hash": "b130c72c175887f3", "src": "db2@1.60.1.70291"}
-{"id": 227931, "field": "name", "en": "Hidden Bundle", "hash": "c28298e5adfeed18", "src": "db2@1.60.1.70291"}
-{"id": 227932, "field": "name", "en": "Rusty Crowbar", "hash": "dd16b022fe5930ad", "src": "db2@1.60.1.70291"}
-{"id": 227937, "field": "name", "en": "Puzzle Box", "hash": "dc48b0f42439827d", "src": "db2@1.60.1.70291"}
-{"id": 227938, "field": "name", "en": "Shard of Light", "hash": "ca333934dc3c5573", "src": "db2@1.60.1.70291"}
-{"id": 227939, "field": "name", "en": "Shard of Light", "hash": "ca333934dc3c5573", "src": "db2@1.60.1.70291"}
-{"id": 227947, "field": "name", "en": "Golem Fitted Pauldrons", "hash": "660af79d28774b43", "src": "db2@1.60.1.70291"}
+{"id": 227895, "field": "name", "en": "Pattern: Golden Mantle of the Dawn", "hash": "bfed251f2761ffc1", "src": "db2@1.60.1.70338"}
+{"id": 227895, "field": "description", "en": "Teaches you how to craft a Golden Mantle of the Dawn.", "hash": "e11650286073a646", "src": "db2@1.60.1.70338"}
+{"id": 227896, "field": "name", "en": "Pattern: Argent Boots", "hash": "31865612b5dba6b3", "src": "db2@1.60.1.70338"}
+{"id": 227896, "field": "description", "en": "Teaches you how to sew Argent Boots.", "hash": "b0ab8d90b76efbfa", "src": "db2@1.60.1.70338"}
+{"id": 227897, "field": "name", "en": "Pattern: Argent Shoulders", "hash": "3215e76aac9dd918", "src": "db2@1.60.1.70338"}
+{"id": 227897, "field": "description", "en": "Teaches you how to sew Argent Shoulders.", "hash": "c96ddd126e418651", "src": "db2@1.60.1.70338"}
+{"id": 227898, "field": "name", "en": "Pattern: Honed Blue Dragonscale Breastplate", "hash": "876a3cf3d18a505e", "src": "db2@1.60.1.70338"}
+{"id": 227898, "field": "description", "en": "Teaches you how to craft a Blue Dragonscale Breastplate.", "hash": "23f5546798d82018", "src": "db2@1.60.1.70338"}
+{"id": 227899, "field": "name", "en": "Pattern: Honed Blue Dragonscale Shoulders", "hash": "32ec5e9043ab85af", "src": "db2@1.60.1.70338"}
+{"id": 227899, "field": "description", "en": "Teaches you how to craft Blue Dragonscale Shoulders.", "hash": "4778a26afe9084ef", "src": "db2@1.60.1.70338"}
+{"id": 227900, "field": "name", "en": "Pattern: Living Green Dragonscale Leggings", "hash": "188fefc1eb78f9f6", "src": "db2@1.60.1.70338"}
+{"id": 227900, "field": "description", "en": "Teaches you how to craft Green Dragonscale Leggings.", "hash": "6467b3c095601f2a", "src": "db2@1.60.1.70338"}
+{"id": 227901, "field": "name", "en": "Plans: Tempered Dark Iron Plate", "hash": "bbe160c9646022f5", "src": "db2@1.60.1.70338"}
+{"id": 227901, "field": "description", "en": "Teaches you how to make Dark Iron Plate.", "hash": "f78a4dd7548325d7", "src": "db2@1.60.1.70338"}
+{"id": 227902, "field": "name", "en": "Pattern: Hardened Black Dragonscale Breastplate", "hash": "6c3283d86f992439", "src": "db2@1.60.1.70338"}
+{"id": 227902, "field": "description", "en": "Teaches you how to craft a Black Dragonscale Breastplate.", "hash": "a8d3c9f41e1c7b12", "src": "db2@1.60.1.70338"}
+{"id": 227903, "field": "name", "en": "Pattern: Hardened Black Dragonscale Leggings", "hash": "7cb16d42b9e5e719", "src": "db2@1.60.1.70338"}
+{"id": 227903, "field": "description", "en": "Teaches you how to craft Black Dragonscale Leggings.", "hash": "be785e2bb0e1f13c", "src": "db2@1.60.1.70338"}
+{"id": 227904, "field": "name", "en": "Pattern: Hardened Black Dragonscale Shoulders", "hash": "a8dc1ef32a726c63", "src": "db2@1.60.1.70338"}
+{"id": 227904, "field": "description", "en": "Teaches you how to craft Black Dragonscale Shoulders.", "hash": "0e6632014e704745", "src": "db2@1.60.1.70338"}
+{"id": 227905, "field": "name", "en": "Plans: Skyrider's Masterwork Stormhammer", "hash": "ae16907d4c8f7fbe", "src": "db2@1.60.1.70338"}
+{"id": 227905, "field": "description", "en": "Teaches you how to make a Masterwork Stormhammer.", "hash": "74ab820d43aa4818", "src": "db2@1.60.1.70338"}
+{"id": 227906, "field": "name", "en": "Pattern: Masterwork Volcanic Breastplate", "hash": "687587b4f98eadac", "src": "db2@1.60.1.70338"}
+{"id": 227906, "field": "description", "en": "Teaches you how to craft a Volcanic Breastplate.", "hash": "e26cc2fa7e24f1d1", "src": "db2@1.60.1.70338"}
+{"id": 227907, "field": "name", "en": "Pattern: Masterwork Volcanic Shoulders", "hash": "877d3458ed1bb587", "src": "db2@1.60.1.70338"}
+{"id": 227907, "field": "description", "en": "Teaches you how to craft Volcanic Shoulders.", "hash": "7cb6e99208fe6e21", "src": "db2@1.60.1.70338"}
+{"id": 227908, "field": "name", "en": "Pattern: Masterwork Volcanic Leggings", "hash": "6308a424ed15928e", "src": "db2@1.60.1.70338"}
+{"id": 227908, "field": "description", "en": "Teaches you how to craft Volcanic Leggings.", "hash": "ec424435a1c925a9", "src": "db2@1.60.1.70338"}
+{"id": 227909, "field": "name", "en": "Plans: Fiery Plate Gauntlets of the Hidden Technique", "hash": "7eff20d016d40082", "src": "db2@1.60.1.70338"}
+{"id": 227909, "field": "description", "en": "Teaches you how to make Fiery Plate Gaunlets.", "hash": "482fc05f4b13909d", "src": "db2@1.60.1.70338"}
+{"id": 227910, "field": "name", "en": "Pattern: Brilliant Chromatic Cloak", "hash": "74568c95ddfc18a9", "src": "db2@1.60.1.70338"}
+{"id": 227910, "field": "description", "en": "Teaches you how to craft a Chromatic Cloak.", "hash": "af365e970a6b3aa8", "src": "db2@1.60.1.70338"}
+{"id": 227911, "field": "name", "en": "Head of Rend Blackhand", "hash": "6789e0f839deb758", "src": "db2@1.60.1.70338"}
+{"id": 227911, "field": "description", "en": "Proof of demise of the Warchief of Blackrock Mountain", "hash": "2a47a693be130b2f", "src": "db2@1.60.1.70338"}
+{"id": 227912, "field": "name", "en": "Applied Divinity", "hash": "ece5b6de528fb9a3", "src": "db2@1.60.1.70338"}
+{"id": 227921, "field": "name", "en": "Rune of Knives", "hash": "5219f94b78ac37e3", "src": "db2@1.60.1.70338"}
+{"id": 227921, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 227922, "field": "name", "en": "Rune of the Swashbuckler", "hash": "dd715a06474bb0af", "src": "db2@1.60.1.70338"}
+{"id": 227922, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 227924, "field": "name", "en": "Unusual Flask", "hash": "3b988676b3781740", "src": "db2@1.60.1.70338"}
+{"id": 227924, "field": "description", "en": "An unusual mixture that smells foul and emanates a strange power.", "hash": "7cbda480467447c8", "src": "db2@1.60.1.70338"}
+{"id": 227928, "field": "name", "en": "Toolbox Key", "hash": "8104a4b3e2dc2ffa", "src": "db2@1.60.1.70338"}
+{"id": 227930, "field": "name", "en": "Safe Box Key", "hash": "b130c72c175887f3", "src": "db2@1.60.1.70338"}
+{"id": 227931, "field": "name", "en": "Hidden Bundle", "hash": "c28298e5adfeed18", "src": "db2@1.60.1.70338"}
+{"id": 227932, "field": "name", "en": "Rusty Crowbar", "hash": "dd16b022fe5930ad", "src": "db2@1.60.1.70338"}
+{"id": 227937, "field": "name", "en": "Puzzle Box", "hash": "dc48b0f42439827d", "src": "db2@1.60.1.70338"}
+{"id": 227938, "field": "name", "en": "Shard of Light", "hash": "ca333934dc3c5573", "src": "db2@1.60.1.70338"}
+{"id": 227939, "field": "name", "en": "Shard of Light", "hash": "ca333934dc3c5573", "src": "db2@1.60.1.70338"}
+{"id": 227947, "field": "name", "en": "Golem Fitted Pauldrons", "hash": "660af79d28774b43", "src": "db2@1.60.1.70338"}
