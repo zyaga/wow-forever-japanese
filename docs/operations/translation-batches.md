@@ -341,9 +341,10 @@ previous build, with what was drafted for it. The round's batches follow the ste
 ### 1.60.1.70291 → 1.60.1.70338 (2026-10-10)
 
 Quest cache: 2,986 records, 2,916 quests (the finished WFJScan scan: 4 passes, 8,957 ids asked, 2,986 answered);
-4 quests have new text (81570, 95817, 95818 and the title of 79096), three `<UNUSED>` placeholder quests (810, 814,
-7904) are answered and stay untranslated, and 7 quests an earlier build answered are not answered on 70338 (they keep
-their English and Japanese, [ADR-050](../adr/050-english-is-additive.md)). Client tables: 62, with the build's own
+4 quests have new text (81570, 95817, 95818 and the title of 79096); three `<UNUSED>` placeholder quests (810, 814,
+7904) are no longer answered, so their pfQuest stand-in English is back, untranslated (placeholder quests are never
+drafted), and quest 137 is now answered as a placeholder and its pfQuest stand-in dropped; 7 quests an earlier build
+answered are not answered on 70338 (they keep their English and Japanese, [ADR-050](../adr/050-english-is-additive.md)). Client tables: 62, with the build's own
 hotfixes (ItemSparse 17 replaced, 4,706 added; SpellName and Spell 1 replaced; QuestV2 25 replaced; BroadcastText 1
 added); no layout hash changed. The wago.tools cross-check: nothing differs except five rows wago has and ours lacks
 (ItemSparse 285352 to 285354, SpellName and Spell 1318286, ItemEffect 237926 and 237927: a tabard, a backpack and a
@@ -355,12 +356,13 @@ file held nothing newer than 70291 (364 entries, none rejected, nothing added).
 | Type | Reworded (shipped line now stale) | New English lines (to draft) | Not served on this build (English kept) | Drafted |
 |---|---|---|---|---|
 | quest | 0 | 10 (3 titles, 3 objectives, 3 descriptions, and the title of 79096) | 7 | 10, all with word lists where there is something to annotate (79096's title and 95817's title are names and ship in English letters) |
-| item | 0 | 9 items (names); 5 descriptions still Classic Era English | 12 | 1: item 6723 gained a Forever tooltip, and its hand-written line (a different stat with a fixed number) was ruled out and redrafted |
+| item | 0 | 9 items (names); 4 descriptions still Classic Era English | 12 | 1: item 6723 gained a Forever tooltip, and its hand-written line (a different stat with a fixed number) was ruled out and redrafted |
 | spell | 0 | 0 | 108 | none |
 | ui, gossip, book, objective, area | 0 | 0 | ui 168 | none |
 
 Voice: 3 files made, for the three new quest descriptions (read by the narrator: no quest giver in the open database
-yet).
+yet). `make voice-levels` now keeps the level of a quest the new cache does not answer, so its audio stays in its
+level band's pack (92480, 94559 and 98471 on this build).
 
 ### 1.60.1.70245 → 1.60.1.70291 (2026-10-09)
 

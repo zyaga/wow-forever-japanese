@@ -1,5 +1,6 @@
 # Each quest's level for the voice packs' level bands, written by `make voice-levels`.
-# Do not edit by hand. The client's quest cache first, VMaNGOS for quests it has not answered.
+# Do not edit by hand. The client's quest cache first, VMaNGOS for quests it has not answered, then
+# the level this table had for a quest neither gives (a quest an earlier build answered keeps its band).
 # `<quest id> <level>` per line.
 1 4
 2 30
@@ -4598,6 +4599,7 @@
 92473 4
 92474 2
 92479 1
+92480 6
 92481 2
 92482 2
 92483 2
@@ -4938,6 +4940,7 @@
 94502 23
 94503 23
 94505 23
+94559 11
 94568 11
 94616 20
 94638 10
@@ -5326,6 +5329,7 @@
 98459 21
 98461 21
 98463 33
+98471 35
 98512 11
 98517 10
 98545 12

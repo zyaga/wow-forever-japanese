@@ -197,6 +197,18 @@ def test_the_levels_command_writes_the_table(tmp_path, monkeypatch, capsys):
     assert capsys.readouterr().out == f"voice levels: 2 quests → {out}\n"
 
 
+def test_the_levels_command_keeps_the_level_of_a_quest_the_new_cache_does_not_answer(tmp_path, monkeypatch, capsys):
+    """English is additive (ADR-050): a quest an earlier cache answered keeps its voice and its level band.
+    A quest the new cache answers with no level loses its level, as before."""
+    db = _levels_db(tmp_path / "m.sqlite")
+    cache = SimpleNamespace(quests=[SimpleNamespace(id=7, level=0)])
+    monkeypatch.setattr(voice_ship.wdb, "read_quests", lambda path: cache)
+    out = tmp_path / "levels.txt"
+    out.write_text(voice_store.levels_text({1: 9, 6: 11, 7: 3}), encoding="utf-8")
+    assert voice_store.run(["levels", "--wdb", "c.wdb", "--vmangos", str(db), "--out", str(out)]) == 0
+    assert voice_store.read_levels(out) == {1: 5, 2: 8, 6: 11}
+
+
 def test_store_sync_refuses_a_store_that_is_not_a_checkout(tmp_path, monkeypatch, capsys):
     monkeypatch.setattr(voice_store, "data_root", lambda: tmp_path / "data")
     assert voice_store.run(["store-sync", "--store", str(tmp_path / "plain"), "--pin", str(tmp_path / "pin")]) == 1
