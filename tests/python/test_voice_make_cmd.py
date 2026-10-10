@@ -232,7 +232,9 @@ def _fake_lame(monkeypatch):
 def test_the_generate_command_makes_files_into_a_store_checkout(world, monkeypatch, capsys):
     _fake_lame(monkeypatch)
     (world.store / ".git").mkdir(parents=True)
-    assert voice_make.run(["generate", "--config", str(world.cfg), "--store", str(world.store)]) == 0
+    no_engine = str(world.store / "no-engine")  # the fake engine answers; nothing is started
+    assert voice_make.run(["generate", "--config", str(world.cfg), "--store", str(world.store),
+                           "--engine-run", no_engine]) == 0
     assert capsys.readouterr().out.startswith("voice generate: made 3 of 3 files in ")
     assert voice_make.audio_file(world.store, "456-description").read_bytes() == b"MP3"
     assert not list((world.store / "audio").glob("*.wav"))  # the WAV handed to the encoder is removed
@@ -241,7 +243,8 @@ def test_the_generate_command_makes_files_into_a_store_checkout(world, monkeypat
 
 def test_the_generate_command_refuses_a_store_that_is_not_a_checkout(world, monkeypatch, capsys):
     _fake_lame(monkeypatch)
-    assert voice_make.run(["generate", "--config", str(world.cfg), "--store", str(world.store)]) == 1
+    assert voice_make.run(["generate", "--config", str(world.cfg), "--store", str(world.store),
+                           "--engine-run", str(world.store / "no-engine")]) == 1
     err = capsys.readouterr().err
     assert err.startswith("voice generate: 3 file(s) to make, but ") and "git clone" in err
 

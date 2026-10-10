@@ -6,19 +6,14 @@ Make the Japanese voice from the Japanese the addon ships, copy it into the Fore
 
 ## Prerequisites
 
-- **AivisSpeech Engine 1.2.0** (the Apple Silicon build), unpacked into `build/aivis/` (gitignored), with the two voice models installed in it: 阿井田 茂 (male and narrator, style *Calm*) and morioki (female). Both are under the Aivis Common Model License 1.0.
+- **AivisSpeech Engine 1.2.0** (the Apple Silicon build), unpacked once into `build/aivis/` (gitignored) of the main checkout, with the two voice models installed in it: 阿井田 茂 (male and narrator, style *Calm*) and morioki (female). Both are under the Aivis Common Model License 1.0. `wfj voice generate` starts and stops it (below).
 - **`lame`** on the `PATH` (WAV to MP3).
 - The pinned VMaNGOS database (`VMANGOS_DB`, commit `VMANGOS_SHA` in the Makefile), as for `make import-english`.
 - The repo venv (`.venv`); `make` uses it when it exists, or pass `PY=<repo>/.venv/bin/python`.
 
 ## Steps
 
-1. **Start the engine** and leave it running in its own terminal:
-   ```bash
-   build/aivis/macOS-arm64/run
-   ```
-   It listens on `http://localhost:10101`. Check it answers: `curl -s http://127.0.0.1:10101/version` prints `"1.2.0"`.
-2. **Make everything:**
+1. **Make everything:**
    ```bash
    make voice
    ```
@@ -26,7 +21,9 @@ Make the Japanese voice from the Japanese the addon ships, copy it into the Fore
    - `make voice-speakers`: writes `data/voice/speakers.jsonl` (who says each voiced line) from VMaNGOS, the quest cache's conditional descriptions, forever-vo's player captures and the collector's NPC ids; a signed book page is read by its writer. It runs `make voice-levels` first (the committed quest level table). Read its report: narrator lines, conflicts (two creatures for one line), lines with no Japanese. Who each creature is (`data/voice/profiles.jsonl`) and the voice it is cast in (`data/voice/voices.jsonl`, written by `wfj voice cast` from `pipeline/voice.toml`) are separate steps (`wfj voice profiles`, `wfj voice cast`). The files are data: commit them with the ticket, after `make validate` passes.
    - `make voice-generate`: makes the missing and changed files in the audio store (`build/voice/audio/<key>.mp3`, `<key>_<voice>.mp3` for a variant; the store keeps its README and license at the top) and records each in `data/voice/audio.jsonl`. A file is made again only when its fingerprint changed: the hash of its Japanese, its roster voice and that voice's engine settings (style, speed, pitch, intonation). With nothing to make it needs no engine. When it made files it then commits and pushes the store and writes the audio pin (`store-sync --if-changed`); when it made nothing, the store, the remote and the pin are left alone. `wfj voice plan` shows what it would make, without making anything.
    - `make voice-pack`: writes the entry and every pack under `build/voice-pack/`, split by `pipeline/voice-packs.toml` (below), and prints each pack's lines, files, size and room left under the 420 MB cap. Lines whose Japanese changed since their file was made are left out and counted. A pack past 315 MB is marked; a pack past 420 MB stops the build and nothing is written, as does a missing audio store or a store file that is not the recorded take (its SHA-256 differs from the audio record's). `wfj voice record-hashes` fills the SHA-256 of rows made before the field existed, reading the store only.
-3. **Validate** the voice tables with the rest: `make validate`.
+2. **Validate** the voice tables with the rest: `make validate`.
+
+There is no engine to start by hand. When `wfj voice generate` (behind `make voice-generate`, `make voice-run`, `make import-draft` and `make report-apply`) has files to make and no engine answers at the address in `pipeline/voice.toml`, it starts `build/aivis/macOS-arm64/run` of the main checkout on that address, waits until it answers (up to 120 s; the 1.2.0 engine takes about 16 s), and stops it when the run ends: finished, failed, stopped with `make voice-stop`, or its terminal closed. An engine already answering when the run starts is used and left running. When two runs overlap (a `make voice-run` in the background and an import, say), the one that started the engine waits for the other to end before stopping it, and says so. A file a stopped run was encoding is never left half written. Start one by hand (`build/aivis/macOS-arm64/run`) for `wfj voice audition`, or to keep it warm across runs; check it answers with `curl -s http://127.0.0.1:10101/version`, which prints `"1.2.0"`. `--engine-run PATH` points `wfj voice generate` at another engine. With no engine answering and no engine at that path, the run stops and says to start one or unpack it into `build/aivis/`.
 
 ## Configuration
 
