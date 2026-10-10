@@ -1,70 +1,70 @@
-{"id": 235044, "field": "name", "en": "Goo-Covered Demonic Gauntlet", "hash": "7649a00e3a27c355", "src": "db2@1.60.1.70291"}
-{"id": 235256, "field": "name", "en": "Severed Legashi Horn", "hash": "42598b8c9a3abaed", "src": "db2@1.60.1.70291"}
-{"id": 235256, "field": "description", "en": "These may be gathered for the Blackmaw furbolgs to earn their trust.", "hash": "eb645c95c5b179fd", "src": "db2@1.60.1.70291"}
-{"id": 235275, "field": "name", "en": "Portals Deck", "hash": "d291201b6dd2faf0", "src": "db2@1.60.1.70291"}
-{"id": 235275, "field": "description", "en": "Property of the Darkmoon Faire.", "hash": "8ab4331f71e37736", "src": "db2@1.60.1.70291"}
-{"id": 235276, "field": "name", "en": "Elementals Deck", "hash": "15f3934cb8386f49", "src": "db2@1.60.1.70291"}
-{"id": 235276, "field": "description", "en": "Property of the Darkmoon Faire.", "hash": "8ab4331f71e37736", "src": "db2@1.60.1.70291"}
-{"id": 235277, "field": "name", "en": "Warlords Deck", "hash": "762de207763ad68b", "src": "db2@1.60.1.70291"}
-{"id": 235277, "field": "description", "en": "Property of the Darkmoon Faire.", "hash": "8ab4331f71e37736", "src": "db2@1.60.1.70291"}
-{"id": 235278, "field": "name", "en": "Beasts Deck", "hash": "bb61dbd877ba7fad", "src": "db2@1.60.1.70291"}
-{"id": 235278, "field": "description", "en": "Property of the Darkmoon Faire.", "hash": "8ab4331f71e37736", "src": "db2@1.60.1.70291"}
-{"id": 235334, "field": "name", "en": "Feardred's Amulet", "hash": "63dbe2a16576d47d", "src": "db2@1.60.1.70291"}
-{"id": 235470, "field": "name", "en": "Satyrweed", "hash": "f9c5c162ecfcf7a4", "src": "db2@1.60.1.70291"}
-{"id": 235471, "field": "name", "en": "Fel Mote", "hash": "4b7fa49e637c6188", "src": "db2@1.60.1.70291"}
-{"id": 235472, "field": "name", "en": "Legashi Firewater", "hash": "78d0a8d411c73be5", "src": "db2@1.60.1.70291"}
-{"id": 235473, "field": "name", "en": "Grand Marshal's Barricade", "hash": "7b3261596ddd48d1", "src": "db2@1.60.1.70291"}
-{"id": 235473, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70291"}
-{"id": 235474, "field": "name", "en": "High Warlord's Barricade", "hash": "738da379404cd885", "src": "db2@1.60.1.70291"}
-{"id": 235474, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70291"}
-{"id": 235476, "field": "name", "en": "High Warlord's Hacker", "hash": "9502b05086be3cd0", "src": "db2@1.60.1.70291"}
-{"id": 235476, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70291"}
-{"id": 235477, "field": "name", "en": "High Warlord's Bonecracker", "hash": "c80f2d8139a30359", "src": "db2@1.60.1.70291"}
-{"id": 235477, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70291"}
-{"id": 235478, "field": "name", "en": "High Warlord's Shiv", "hash": "14e1f638d20e3f52", "src": "db2@1.60.1.70291"}
-{"id": 235478, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70291"}
-{"id": 235479, "field": "name", "en": "Grand Marshal's Shiv", "hash": "129592cc78fc71ae", "src": "db2@1.60.1.70291"}
-{"id": 235479, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70291"}
-{"id": 235480, "field": "name", "en": "Grand Marshal's Bonecracker", "hash": "2a8b84661a8e86c2", "src": "db2@1.60.1.70291"}
-{"id": 235480, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70291"}
-{"id": 235481, "field": "name", "en": "Grand Marshal's Hacker", "hash": "824dea827d254e41", "src": "db2@1.60.1.70291"}
-{"id": 235481, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70291"}
-{"id": 235509, "field": "name", "en": "Satyrweed Tincture", "hash": "4211def5a62330cb", "src": "db2@1.60.1.70291"}
-{"id": 235509, "field": "description", "en": "Purge satyr corruption from a weakened Mosshoof Courser or Thunderhead Skystormer.", "hash": "421d941d380f7d01", "src": "db2@1.60.1.70291"}
-{"id": 235510, "field": "name", "en": "Bramblesnap's Panacea", "hash": "0d41b2ab7f9634bc", "src": "db2@1.60.1.70291"}
-{"id": 235517, "field": "name", "en": "Torch", "hash": "d17d85f5399f23be", "src": "db2@1.60.1.70291"}
-{"id": 235518, "field": "name", "en": "Timbermaw War Banner", "hash": "0a1967a8b6ad054c", "src": "db2@1.60.1.70291"}
-{"id": 235518, "field": "description", "en": "Call forth Timbermaw reinforcements to face Prince Halanox.", "hash": "ad22882a5b95f216", "src": "db2@1.60.1.70291"}
-{"id": 235597, "field": "name", "en": "Spell Notes: Deep Freeze", "hash": "6080c42241d53971", "src": "db2@1.60.1.70291"}
-{"id": 235597, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 235598, "field": "name", "en": "Spell Notes: Icy Veins", "hash": "631f9fcc247ee2be", "src": "db2@1.60.1.70291"}
-{"id": 235598, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 235599, "field": "name", "en": "Spell Notes: Temporal Anomaly", "hash": "03cb860452475a81", "src": "db2@1.60.1.70291"}
-{"id": 235599, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 235600, "field": "name", "en": "Rune of Divine Storm", "hash": "71a8cc9b9a36cb74", "src": "db2@1.60.1.70291"}
-{"id": 235600, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 235601, "field": "name", "en": "Rune of Fanaticism", "hash": "56e2303515872bdf", "src": "db2@1.60.1.70291"}
-{"id": 235601, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 235602, "field": "name", "en": "Rune of Hammer of the Righteous", "hash": "3b991457aff3c2a9", "src": "db2@1.60.1.70291"}
-{"id": 235602, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 235603, "field": "name", "en": "Rune of Righteous Vengeance", "hash": "fe077ea87cda8ecb", "src": "db2@1.60.1.70291"}
-{"id": 235603, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 235604, "field": "name", "en": "Rune of Shield of Righteousness", "hash": "3d578bf4560070c5", "src": "db2@1.60.1.70291"}
-{"id": 235604, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 235605, "field": "name", "en": "Rune of Shock and Awe", "hash": "920e2586dcce740f", "src": "db2@1.60.1.70291"}
-{"id": 235605, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 235645, "field": "name", "en": "Legashi Firewater Recipe", "hash": "65d5acd60e1deb72", "src": "db2@1.60.1.70291"}
-{"id": 235785, "field": "name", "en": "Deadwind Cage \"Key\"", "hash": "90822c8eb7d3f754", "src": "db2@1.60.1.70291"}
-{"id": 235785, "field": "description", "en": "Your astute powers of observation quickly determine that this \"key\" is really just a rock with a sharp edge on it. You suspect that simply bashing this against the lock should open the cage.", "hash": "8e847f30ae78a150", "src": "db2@1.60.1.70291"}
-{"id": 235786, "field": "name", "en": "Karazhan Curio", "hash": "a37edfd50c212d4e", "src": "db2@1.60.1.70291"}
-{"id": 235787, "field": "name", "en": "Ancient Ironwood Branch", "hash": "f924f6d6b6f27b90", "src": "db2@1.60.1.70291"}
-{"id": 235788, "field": "name", "en": "Enthusiastic Wisp", "hash": "5a16f01cc23e0fbc", "src": "db2@1.60.1.70291"}
-{"id": 235788, "field": "description", "en": "This thing just won't hold still...", "hash": "e0709d5c917ee333", "src": "db2@1.60.1.70291"}
-{"id": 235789, "field": "name", "en": "Flame of Life", "hash": "4647c83ce233215e", "src": "db2@1.60.1.70291"}
-{"id": 235790, "field": "name", "en": "Enchanted Firebrand", "hash": "8506702fecde4061", "src": "db2@1.60.1.70291"}
-{"id": 235790, "field": "description", "en": "Hold up the Enchanted Torch and attempt to dispel the darkness near Karazhan Crypts.", "hash": "c521877515c15cf6", "src": "db2@1.60.1.70291"}
-{"id": 235852, "field": "name", "en": "Violet Satchel", "hash": "9027708ff4d7ef5e", "src": "db2@1.60.1.70291"}
-{"id": 235852, "field": "description", "en": "This small satchel bears the mark of the Kirin Tor of Dalaran. It seems to contain a few small objects but curiously, you find that you are unable to open the flap to see what is inside.", "hash": "3babe23474f3dbff", "src": "db2@1.60.1.70291"}
-{"id": 235867, "field": "name", "en": "Scrap of Parchment", "hash": "387ddbbb777b595c", "src": "db2@1.60.1.70291"}
-{"id": 235867, "field": "description", "en": "The scrap of parchment appears to have been torn off of a larger poster or flyer. The only words legible on it seem to be a name ...Archmage Tarsis Kir-Moldir", "hash": "f6a4064423c62dc0", "src": "db2@1.60.1.70291"}
-{"id": 235899, "field": "name", "en": "Corrupted Core", "hash": "6a2cc891bdcb8954", "src": "db2@1.60.1.70291"}
+{"id": 235044, "field": "name", "en": "Goo-Covered Demonic Gauntlet", "hash": "7649a00e3a27c355", "src": "db2@1.60.1.70338"}
+{"id": 235256, "field": "name", "en": "Severed Legashi Horn", "hash": "42598b8c9a3abaed", "src": "db2@1.60.1.70338"}
+{"id": 235256, "field": "description", "en": "These may be gathered for the Blackmaw furbolgs to earn their trust.", "hash": "eb645c95c5b179fd", "src": "db2@1.60.1.70338"}
+{"id": 235275, "field": "name", "en": "Portals Deck", "hash": "d291201b6dd2faf0", "src": "db2@1.60.1.70338"}
+{"id": 235275, "field": "description", "en": "Property of the Darkmoon Faire.", "hash": "8ab4331f71e37736", "src": "db2@1.60.1.70338"}
+{"id": 235276, "field": "name", "en": "Elementals Deck", "hash": "15f3934cb8386f49", "src": "db2@1.60.1.70338"}
+{"id": 235276, "field": "description", "en": "Property of the Darkmoon Faire.", "hash": "8ab4331f71e37736", "src": "db2@1.60.1.70338"}
+{"id": 235277, "field": "name", "en": "Warlords Deck", "hash": "762de207763ad68b", "src": "db2@1.60.1.70338"}
+{"id": 235277, "field": "description", "en": "Property of the Darkmoon Faire.", "hash": "8ab4331f71e37736", "src": "db2@1.60.1.70338"}
+{"id": 235278, "field": "name", "en": "Beasts Deck", "hash": "bb61dbd877ba7fad", "src": "db2@1.60.1.70338"}
+{"id": 235278, "field": "description", "en": "Property of the Darkmoon Faire.", "hash": "8ab4331f71e37736", "src": "db2@1.60.1.70338"}
+{"id": 235334, "field": "name", "en": "Feardred's Amulet", "hash": "63dbe2a16576d47d", "src": "db2@1.60.1.70338"}
+{"id": 235470, "field": "name", "en": "Satyrweed", "hash": "f9c5c162ecfcf7a4", "src": "db2@1.60.1.70338"}
+{"id": 235471, "field": "name", "en": "Fel Mote", "hash": "4b7fa49e637c6188", "src": "db2@1.60.1.70338"}
+{"id": 235472, "field": "name", "en": "Legashi Firewater", "hash": "78d0a8d411c73be5", "src": "db2@1.60.1.70338"}
+{"id": 235473, "field": "name", "en": "Grand Marshal's Barricade", "hash": "7b3261596ddd48d1", "src": "db2@1.60.1.70338"}
+{"id": 235473, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70338"}
+{"id": 235474, "field": "name", "en": "High Warlord's Barricade", "hash": "738da379404cd885", "src": "db2@1.60.1.70338"}
+{"id": 235474, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70338"}
+{"id": 235476, "field": "name", "en": "High Warlord's Hacker", "hash": "9502b05086be3cd0", "src": "db2@1.60.1.70338"}
+{"id": 235476, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70338"}
+{"id": 235477, "field": "name", "en": "High Warlord's Bonecracker", "hash": "c80f2d8139a30359", "src": "db2@1.60.1.70338"}
+{"id": 235477, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70338"}
+{"id": 235478, "field": "name", "en": "High Warlord's Shiv", "hash": "14e1f638d20e3f52", "src": "db2@1.60.1.70338"}
+{"id": 235478, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70338"}
+{"id": 235479, "field": "name", "en": "Grand Marshal's Shiv", "hash": "129592cc78fc71ae", "src": "db2@1.60.1.70338"}
+{"id": 235479, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70338"}
+{"id": 235480, "field": "name", "en": "Grand Marshal's Bonecracker", "hash": "2a8b84661a8e86c2", "src": "db2@1.60.1.70338"}
+{"id": 235480, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70338"}
+{"id": 235481, "field": "name", "en": "Grand Marshal's Hacker", "hash": "824dea827d254e41", "src": "db2@1.60.1.70338"}
+{"id": 235481, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70338"}
+{"id": 235509, "field": "name", "en": "Satyrweed Tincture", "hash": "4211def5a62330cb", "src": "db2@1.60.1.70338"}
+{"id": 235509, "field": "description", "en": "Purge satyr corruption from a weakened Mosshoof Courser or Thunderhead Skystormer.", "hash": "421d941d380f7d01", "src": "db2@1.60.1.70338"}
+{"id": 235510, "field": "name", "en": "Bramblesnap's Panacea", "hash": "0d41b2ab7f9634bc", "src": "db2@1.60.1.70338"}
+{"id": 235517, "field": "name", "en": "Torch", "hash": "d17d85f5399f23be", "src": "db2@1.60.1.70338"}
+{"id": 235518, "field": "name", "en": "Timbermaw War Banner", "hash": "0a1967a8b6ad054c", "src": "db2@1.60.1.70338"}
+{"id": 235518, "field": "description", "en": "Call forth Timbermaw reinforcements to face Prince Halanox.", "hash": "ad22882a5b95f216", "src": "db2@1.60.1.70338"}
+{"id": 235597, "field": "name", "en": "Spell Notes: Deep Freeze", "hash": "6080c42241d53971", "src": "db2@1.60.1.70338"}
+{"id": 235597, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 235598, "field": "name", "en": "Spell Notes: Icy Veins", "hash": "631f9fcc247ee2be", "src": "db2@1.60.1.70338"}
+{"id": 235598, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 235599, "field": "name", "en": "Spell Notes: Temporal Anomaly", "hash": "03cb860452475a81", "src": "db2@1.60.1.70338"}
+{"id": 235599, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 235600, "field": "name", "en": "Rune of Divine Storm", "hash": "71a8cc9b9a36cb74", "src": "db2@1.60.1.70338"}
+{"id": 235600, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 235601, "field": "name", "en": "Rune of Fanaticism", "hash": "56e2303515872bdf", "src": "db2@1.60.1.70338"}
+{"id": 235601, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 235602, "field": "name", "en": "Rune of Hammer of the Righteous", "hash": "3b991457aff3c2a9", "src": "db2@1.60.1.70338"}
+{"id": 235602, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 235603, "field": "name", "en": "Rune of Righteous Vengeance", "hash": "fe077ea87cda8ecb", "src": "db2@1.60.1.70338"}
+{"id": 235603, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 235604, "field": "name", "en": "Rune of Shield of Righteousness", "hash": "3d578bf4560070c5", "src": "db2@1.60.1.70338"}
+{"id": 235604, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 235605, "field": "name", "en": "Rune of Shock and Awe", "hash": "920e2586dcce740f", "src": "db2@1.60.1.70338"}
+{"id": 235605, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 235645, "field": "name", "en": "Legashi Firewater Recipe", "hash": "65d5acd60e1deb72", "src": "db2@1.60.1.70338"}
+{"id": 235785, "field": "name", "en": "Deadwind Cage \"Key\"", "hash": "90822c8eb7d3f754", "src": "db2@1.60.1.70338"}
+{"id": 235785, "field": "description", "en": "Your astute powers of observation quickly determine that this \"key\" is really just a rock with a sharp edge on it. You suspect that simply bashing this against the lock should open the cage.", "hash": "8e847f30ae78a150", "src": "db2@1.60.1.70338"}
+{"id": 235786, "field": "name", "en": "Karazhan Curio", "hash": "a37edfd50c212d4e", "src": "db2@1.60.1.70338"}
+{"id": 235787, "field": "name", "en": "Ancient Ironwood Branch", "hash": "f924f6d6b6f27b90", "src": "db2@1.60.1.70338"}
+{"id": 235788, "field": "name", "en": "Enthusiastic Wisp", "hash": "5a16f01cc23e0fbc", "src": "db2@1.60.1.70338"}
+{"id": 235788, "field": "description", "en": "This thing just won't hold still...", "hash": "e0709d5c917ee333", "src": "db2@1.60.1.70338"}
+{"id": 235789, "field": "name", "en": "Flame of Life", "hash": "4647c83ce233215e", "src": "db2@1.60.1.70338"}
+{"id": 235790, "field": "name", "en": "Enchanted Firebrand", "hash": "8506702fecde4061", "src": "db2@1.60.1.70338"}
+{"id": 235790, "field": "description", "en": "Hold up the Enchanted Torch and attempt to dispel the darkness near Karazhan Crypts.", "hash": "c521877515c15cf6", "src": "db2@1.60.1.70338"}
+{"id": 235852, "field": "name", "en": "Violet Satchel", "hash": "9027708ff4d7ef5e", "src": "db2@1.60.1.70338"}
+{"id": 235852, "field": "description", "en": "This small satchel bears the mark of the Kirin Tor of Dalaran. It seems to contain a few small objects but curiously, you find that you are unable to open the flap to see what is inside.", "hash": "3babe23474f3dbff", "src": "db2@1.60.1.70338"}
+{"id": 235867, "field": "name", "en": "Scrap of Parchment", "hash": "387ddbbb777b595c", "src": "db2@1.60.1.70338"}
+{"id": 235867, "field": "description", "en": "The scrap of parchment appears to have been torn off of a larger poster or flyer. The only words legible on it seem to be a name ...Archmage Tarsis Kir-Moldir", "hash": "f6a4064423c62dc0", "src": "db2@1.60.1.70338"}
+{"id": 235899, "field": "name", "en": "Corrupted Core", "hash": "6a2cc891bdcb8954", "src": "db2@1.60.1.70338"}

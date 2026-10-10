@@ -1,50 +1,50 @@
-{"id": 203723, "field": "name", "en": "Cutty's Note", "hash": "93fd4da5b0fd790b", "src": "db2@1.60.1.70291"}
-{"id": 203723, "field": "description", "en": "A message written in thieves' cant", "hash": "a0e450931b72e270", "src": "db2@1.60.1.70291"}
-{"id": 203726, "field": "name", "en": "Cutty's Rune", "hash": "94881335fe6e2069", "src": "db2@1.60.1.70291"}
-{"id": 203745, "field": "name", "en": "Spell Notes: Ice Lance", "hash": "95189b159dca64bc", "src": "db2@1.60.1.70291"}
-{"id": 203745, "field": "description", "en": "Teaches you a new Runecarving ability.", "hash": "01f5084297290498", "src": "db2@1.60.1.70291"}
-{"id": 203746, "field": "name", "en": "Spell Notes: Living Flame", "hash": "0af59d078c92337f", "src": "db2@1.60.1.70291"}
-{"id": 203746, "field": "description", "en": "Teaches you a new Runecarving ability.", "hash": "01f5084297290498", "src": "db2@1.60.1.70291"}
-{"id": 203747, "field": "name", "en": "Spell Notes: Fingers of Frost", "hash": "26370069e44bd4fd", "src": "db2@1.60.1.70291"}
-{"id": 203747, "field": "description", "en": "Teaches you a new Runecarving ability.", "hash": "01f5084297290498", "src": "db2@1.60.1.70291"}
-{"id": 203748, "field": "name", "en": "Spell Notes: Burnout", "hash": "f9c139c9e521da93", "src": "db2@1.60.1.70291"}
-{"id": 203748, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 203749, "field": "name", "en": "Spell Notes: Enlightenment", "hash": "b8baa623acea455b", "src": "db2@1.60.1.70291"}
-{"id": 203749, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 203750, "field": "name", "en": "Elwynn Treasure Map", "hash": "81fbc5b95ba9d3cd", "src": "db2@1.60.1.70291"}
-{"id": 203750, "field": "description", "en": "Dig up treasure at the marked location\nWest of ridgepoint tower. Near the stump behind the prowler den.", "hash": "43750d83f949bba0", "src": "db2@1.60.1.70291"}
-{"id": 203751, "field": "name", "en": "Spell Notes: CALE ENCI", "hash": "aa08faa0b627c961", "src": "db2@1.60.1.70291"}
-{"id": 203751, "field": "description", "en": "Decipher the spell notes with a Comphrehension Primer to learn a new Engraving spell.", "hash": "1278ff255eb6f475", "src": "db2@1.60.1.70291"}
-{"id": 203752, "field": "name", "en": "Spell Notes: MILEGIN VALF", "hash": "a9123bbf6bcd65ac", "src": "db2@1.60.1.70291"}
-{"id": 203752, "field": "description", "en": "Decipher the spell notes with a Comprehension Charm to learn a new Engraving spell.", "hash": "7ccaad212b331d71", "src": "db2@1.60.1.70291"}
-{"id": 203753, "field": "name", "en": "Spell Notes: RING SEFF OSTROF", "hash": "81cd6c5341f2a4d9", "src": "db2@1.60.1.70291"}
-{"id": 203753, "field": "description", "en": "Decipher the spell notes with a Comprehension Charm to learn a new Engraving spell.", "hash": "7ccaad212b331d71", "src": "db2@1.60.1.70291"}
-{"id": 203754, "field": "name", "en": "Archmage Antonidas: The Unabridged Autobiography", "hash": "009cff456dea6ccb", "src": "db2@1.60.1.70291"}
-{"id": 203754, "field": "description", "en": "Somewhat self-indulgent, but nevertheless a fine addition to any library's collection.", "hash": "df21acf3d9738456", "src": "db2@1.60.1.70291"}
-{"id": 203755, "field": "name", "en": "Archmage Theocritus' Research Journal", "hash": "276fbac6493e581b", "src": "db2@1.60.1.70291"}
-{"id": 203755, "field": "description", "en": "Research notes from the Tower of Azora. A fine addition to any library's collection.", "hash": "0ab22fa5fc085d71", "src": "db2@1.60.1.70291"}
-{"id": 203756, "field": "name", "en": "Azora Apprentice Notes: Page 1", "hash": "4cf235331f30920a", "src": "db2@1.60.1.70291"}
-{"id": 203756, "field": "description", "en": "Combine 6 Azora Apprentice Notes to create a new engraving recipe.", "hash": "d52540109976f7a1", "src": "db2@1.60.1.70291"}
-{"id": 203784, "field": "name", "en": "Top-Right Map Piece", "hash": "d2c25c13c201ab06", "src": "db2@1.60.1.70291"}
-{"id": 203784, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70291"}
-{"id": 203785, "field": "name", "en": "Top-Left Map Piece", "hash": "43317739522763d4", "src": "db2@1.60.1.70291"}
-{"id": 203785, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70291"}
-{"id": 203786, "field": "name", "en": "Bottom-Right Map Piece", "hash": "7d2c08e1941d33fc", "src": "db2@1.60.1.70291"}
-{"id": 203786, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70291"}
-{"id": 203787, "field": "name", "en": "Bottom-Left Map Piece", "hash": "7d2a74a126dc03ae", "src": "db2@1.60.1.70291"}
-{"id": 203787, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70291"}
-{"id": 203960, "field": "name", "en": "Azora Apprentice Notes: Page 2", "hash": "4cf235341f30920b", "src": "db2@1.60.1.70291"}
-{"id": 203960, "field": "description", "en": "Combine 6 Azora Apprentice Notes to create a new engraving recipe.", "hash": "d52540109976f7a1", "src": "db2@1.60.1.70291"}
-{"id": 203961, "field": "name", "en": "Azora Apprentice Notes: Page 3", "hash": "4cf235351f30920c", "src": "db2@1.60.1.70291"}
-{"id": 203961, "field": "description", "en": "Combine 6 Azora Apprentice Notes to create a new engraving recipe.", "hash": "d52540109976f7a1", "src": "db2@1.60.1.70291"}
-{"id": 203962, "field": "name", "en": "Azora Apprentice Notes: Page 4", "hash": "4cf235361f30920d", "src": "db2@1.60.1.70291"}
-{"id": 203962, "field": "description", "en": "Combine 6 Azora Apprentice Notes to create a new engraving recipe.", "hash": "d52540109976f7a1", "src": "db2@1.60.1.70291"}
-{"id": 203990, "field": "name", "en": "Rune of Mutilation", "hash": "2a097e6fddd2d3ef", "src": "db2@1.60.1.70291"}
-{"id": 203990, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 203991, "field": "name", "en": "Rune of Quick Draw", "hash": "f5e5a860f745229e", "src": "db2@1.60.1.70291"}
-{"id": 203991, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 203992, "field": "name", "en": "Rune of Trickery", "hash": "68370e27fdbc97e0", "src": "db2@1.60.1.70291"}
-{"id": 203993, "field": "name", "en": "Rune of Slaughter", "hash": "2c558bf6732024c0", "src": "db2@1.60.1.70291"}
-{"id": 203993, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 203994, "field": "name", "en": "Rune of Deadly Brew", "hash": "b6b6352d457a5c9d", "src": "db2@1.60.1.70291"}
-{"id": 203994, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
+{"id": 203723, "field": "name", "en": "Cutty's Note", "hash": "93fd4da5b0fd790b", "src": "db2@1.60.1.70338"}
+{"id": 203723, "field": "description", "en": "A message written in thieves' cant", "hash": "a0e450931b72e270", "src": "db2@1.60.1.70338"}
+{"id": 203726, "field": "name", "en": "Cutty's Rune", "hash": "94881335fe6e2069", "src": "db2@1.60.1.70338"}
+{"id": 203745, "field": "name", "en": "Spell Notes: Ice Lance", "hash": "95189b159dca64bc", "src": "db2@1.60.1.70338"}
+{"id": 203745, "field": "description", "en": "Teaches you a new Runecarving ability.", "hash": "01f5084297290498", "src": "db2@1.60.1.70338"}
+{"id": 203746, "field": "name", "en": "Spell Notes: Living Flame", "hash": "0af59d078c92337f", "src": "db2@1.60.1.70338"}
+{"id": 203746, "field": "description", "en": "Teaches you a new Runecarving ability.", "hash": "01f5084297290498", "src": "db2@1.60.1.70338"}
+{"id": 203747, "field": "name", "en": "Spell Notes: Fingers of Frost", "hash": "26370069e44bd4fd", "src": "db2@1.60.1.70338"}
+{"id": 203747, "field": "description", "en": "Teaches you a new Runecarving ability.", "hash": "01f5084297290498", "src": "db2@1.60.1.70338"}
+{"id": 203748, "field": "name", "en": "Spell Notes: Burnout", "hash": "f9c139c9e521da93", "src": "db2@1.60.1.70338"}
+{"id": 203748, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 203749, "field": "name", "en": "Spell Notes: Enlightenment", "hash": "b8baa623acea455b", "src": "db2@1.60.1.70338"}
+{"id": 203749, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 203750, "field": "name", "en": "Elwynn Treasure Map", "hash": "81fbc5b95ba9d3cd", "src": "db2@1.60.1.70338"}
+{"id": 203750, "field": "description", "en": "Dig up treasure at the marked location\nWest of ridgepoint tower. Near the stump behind the prowler den.", "hash": "43750d83f949bba0", "src": "db2@1.60.1.70338"}
+{"id": 203751, "field": "name", "en": "Spell Notes: CALE ENCI", "hash": "aa08faa0b627c961", "src": "db2@1.60.1.70338"}
+{"id": 203751, "field": "description", "en": "Decipher the spell notes with a Comphrehension Primer to learn a new Engraving spell.", "hash": "1278ff255eb6f475", "src": "db2@1.60.1.70338"}
+{"id": 203752, "field": "name", "en": "Spell Notes: MILEGIN VALF", "hash": "a9123bbf6bcd65ac", "src": "db2@1.60.1.70338"}
+{"id": 203752, "field": "description", "en": "Decipher the spell notes with a Comprehension Charm to learn a new Engraving spell.", "hash": "7ccaad212b331d71", "src": "db2@1.60.1.70338"}
+{"id": 203753, "field": "name", "en": "Spell Notes: RING SEFF OSTROF", "hash": "81cd6c5341f2a4d9", "src": "db2@1.60.1.70338"}
+{"id": 203753, "field": "description", "en": "Decipher the spell notes with a Comprehension Charm to learn a new Engraving spell.", "hash": "7ccaad212b331d71", "src": "db2@1.60.1.70338"}
+{"id": 203754, "field": "name", "en": "Archmage Antonidas: The Unabridged Autobiography", "hash": "009cff456dea6ccb", "src": "db2@1.60.1.70338"}
+{"id": 203754, "field": "description", "en": "Somewhat self-indulgent, but nevertheless a fine addition to any library's collection.", "hash": "df21acf3d9738456", "src": "db2@1.60.1.70338"}
+{"id": 203755, "field": "name", "en": "Archmage Theocritus' Research Journal", "hash": "276fbac6493e581b", "src": "db2@1.60.1.70338"}
+{"id": 203755, "field": "description", "en": "Research notes from the Tower of Azora. A fine addition to any library's collection.", "hash": "0ab22fa5fc085d71", "src": "db2@1.60.1.70338"}
+{"id": 203756, "field": "name", "en": "Azora Apprentice Notes: Page 1", "hash": "4cf235331f30920a", "src": "db2@1.60.1.70338"}
+{"id": 203756, "field": "description", "en": "Combine 6 Azora Apprentice Notes to create a new engraving recipe.", "hash": "d52540109976f7a1", "src": "db2@1.60.1.70338"}
+{"id": 203784, "field": "name", "en": "Top-Right Map Piece", "hash": "d2c25c13c201ab06", "src": "db2@1.60.1.70338"}
+{"id": 203784, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70338"}
+{"id": 203785, "field": "name", "en": "Top-Left Map Piece", "hash": "43317739522763d4", "src": "db2@1.60.1.70338"}
+{"id": 203785, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70338"}
+{"id": 203786, "field": "name", "en": "Bottom-Right Map Piece", "hash": "7d2c08e1941d33fc", "src": "db2@1.60.1.70338"}
+{"id": 203786, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70338"}
+{"id": 203787, "field": "name", "en": "Bottom-Left Map Piece", "hash": "7d2a74a126dc03ae", "src": "db2@1.60.1.70338"}
+{"id": 203787, "field": "description", "en": "Combine with 3 other pieces to make the full map.\nA torn piece of what seems to be a map...", "hash": "abd980f23a21e5cf", "src": "db2@1.60.1.70338"}
+{"id": 203960, "field": "name", "en": "Azora Apprentice Notes: Page 2", "hash": "4cf235341f30920b", "src": "db2@1.60.1.70338"}
+{"id": 203960, "field": "description", "en": "Combine 6 Azora Apprentice Notes to create a new engraving recipe.", "hash": "d52540109976f7a1", "src": "db2@1.60.1.70338"}
+{"id": 203961, "field": "name", "en": "Azora Apprentice Notes: Page 3", "hash": "4cf235351f30920c", "src": "db2@1.60.1.70338"}
+{"id": 203961, "field": "description", "en": "Combine 6 Azora Apprentice Notes to create a new engraving recipe.", "hash": "d52540109976f7a1", "src": "db2@1.60.1.70338"}
+{"id": 203962, "field": "name", "en": "Azora Apprentice Notes: Page 4", "hash": "4cf235361f30920d", "src": "db2@1.60.1.70338"}
+{"id": 203962, "field": "description", "en": "Combine 6 Azora Apprentice Notes to create a new engraving recipe.", "hash": "d52540109976f7a1", "src": "db2@1.60.1.70338"}
+{"id": 203990, "field": "name", "en": "Rune of Mutilation", "hash": "2a097e6fddd2d3ef", "src": "db2@1.60.1.70338"}
+{"id": 203990, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 203991, "field": "name", "en": "Rune of Quick Draw", "hash": "f5e5a860f745229e", "src": "db2@1.60.1.70338"}
+{"id": 203991, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 203992, "field": "name", "en": "Rune of Trickery", "hash": "68370e27fdbc97e0", "src": "db2@1.60.1.70338"}
+{"id": 203993, "field": "name", "en": "Rune of Slaughter", "hash": "2c558bf6732024c0", "src": "db2@1.60.1.70338"}
+{"id": 203993, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 203994, "field": "name", "en": "Rune of Deadly Brew", "hash": "b6b6352d457a5c9d", "src": "db2@1.60.1.70338"}
+{"id": 203994, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}

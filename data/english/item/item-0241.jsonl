@@ -1,28 +1,28 @@
-{"id": 241086, "field": "name", "en": "Scarlet Tower Shield", "hash": "abdb8c7ac1884770", "src": "db2@1.60.1.70291"}
-{"id": 241087, "field": "name", "en": "Scarlet Staff", "hash": "2bd75dcca415925d", "src": "db2@1.60.1.70291"}
-{"id": 241088, "field": "name", "en": "Scarlet Staff", "hash": "2bd75dcca415925d", "src": "db2@1.60.1.70291"}
-{"id": 241089, "field": "name", "en": "Scarlet Dagger", "hash": "65be1e04d59fb193", "src": "db2@1.60.1.70291"}
-{"id": 241090, "field": "name", "en": "Scarlet Great Axe", "hash": "bf9ddf4d57efee35", "src": "db2@1.60.1.70291"}
-{"id": 241128, "field": "name", "en": "Pile of Portiporters", "hash": "0e6109e5a8b0c50e", "src": "db2@1.60.1.70291"}
-{"id": 241128, "field": "description", "en": "Attempt to use a Portiporter yourself to see what the fuss is about.\r\n\r\nCan only be used in New Avalon and after ensuring relative safety with other test subjects.", "hash": "5565caac3965124e", "src": "db2@1.60.1.70291"}
-{"id": 241169, "field": "name", "en": "Prototype Nitro Boosts", "hash": "0a3aad0b4ecf7cbc", "src": "db2@1.60.1.70291"}
-{"id": 241169, "field": "description", "en": "Insert a variable amount of gunpowder into the device and press the button.\r\n\r\nYour speed and likelihood of serious injury or death will increase based on the amount of gunpowder added.\r\n\r\nCan only be used in New Avalon.", "hash": "0469fc89424d1dd9", "src": "db2@1.60.1.70291"}
-{"id": 241190, "field": "name", "en": "Bird Whistle", "hash": "1f1d966adab15785", "src": "db2@1.60.1.70291"}
-{"id": 241190, "field": "description", "en": "Summon Pepe to join you on your adventures!", "hash": "5d1b97e40f9e1c65", "src": "db2@1.60.1.70291"}
-{"id": 241191, "field": "name", "en": "Formula: Enchant Weapon - Grand Crusader", "hash": "79202aac0770985f", "src": "db2@1.60.1.70291"}
-{"id": 241191, "field": "description", "en": "Teaches you how to permanently enchant a weapon to occasionally bless the wielder with incredible strength.", "hash": "e02eee332dbc961f", "src": "db2@1.60.1.70291"}
-{"id": 241195, "field": "name", "en": "Formula: Enchant 2H Weapon - Grand Arcanist", "hash": "1ff4e2e46ee8d27c", "src": "db2@1.60.1.70291"}
-{"id": 241195, "field": "description", "en": "Teaches you how to permanently enchant a two-handed melee weapon to occasionally bless the wielder with enhanced spell power.", "hash": "6f3e5bc1eed9e0ad", "src": "db2@1.60.1.70291"}
-{"id": 241201, "field": "name", "en": "Formula: Enchant Weapon - Grand Sorcerer", "hash": "c744d737e72bc6f5", "src": "db2@1.60.1.70291"}
-{"id": 241201, "field": "description", "en": "Teaches you how to permanently enchant a melee weapon to occasionally bless the wielder with enhanced spell power.", "hash": "0b3e82359f5048aa", "src": "db2@1.60.1.70291"}
-{"id": 241233, "field": "name", "en": "[DNT] Super Strong Lockbox", "hash": "1647475da1fc2d53", "src": "db2@1.60.1.70291"}
-{"id": 241613, "field": "name", "en": "No Longer Used", "hash": "b497814b1e38984d", "src": "db2@1.60.1.70291"}
-{"id": 241650, "field": "name", "en": "Major Discolored Healing Potion", "hash": "4f54a27a5f1d6b6c", "src": "db2@1.60.1.70291"}
-{"id": 241650, "field": "description", "en": "Restores $s1 health instantly, however you also suffer $s2% of that amount over time.\r\n\r\nThe symptoms of this effect can manifest as either a $1231579d poison or a $1231580d disease.", "hash": "998c6850a5009550", "src": "db2@1.60.1.70291"}
-{"id": 241651, "field": "name", "en": "Recipe: Major Discolored Healing Potion", "hash": "048439c7baa2a4b1", "src": "db2@1.60.1.70291"}
-{"id": 241651, "field": "description", "en": "Teaches you how to craft Major Discolored Healing Potion.", "hash": "af4f724e413a56ff", "src": "db2@1.60.1.70291"}
-{"id": 241652, "field": "name", "en": "Discolored Beast Heart", "hash": "484147891a310d01", "src": "db2@1.60.1.70291"}
-{"id": 241655, "field": "name", "en": "Mishandled Healing Potion", "hash": "2ae9d51e6934bcb9", "src": "db2@1.60.1.70291"}
-{"id": 241655, "field": "description", "en": "A truly disgusting potion.", "hash": "f1da8a2fed478c08", "src": "db2@1.60.1.70291"}
-{"id": 241656, "field": "name", "en": "Mishandled Healing Potion", "hash": "2ae9d51e6934bcb9", "src": "db2@1.60.1.70291"}
-{"id": 241656, "field": "description", "en": "A truly disgusting potion.", "hash": "f1da8a2fed478c08", "src": "db2@1.60.1.70291"}
+{"id": 241086, "field": "name", "en": "Scarlet Tower Shield", "hash": "abdb8c7ac1884770", "src": "db2@1.60.1.70338"}
+{"id": 241087, "field": "name", "en": "Scarlet Staff", "hash": "2bd75dcca415925d", "src": "db2@1.60.1.70338"}
+{"id": 241088, "field": "name", "en": "Scarlet Staff", "hash": "2bd75dcca415925d", "src": "db2@1.60.1.70338"}
+{"id": 241089, "field": "name", "en": "Scarlet Dagger", "hash": "65be1e04d59fb193", "src": "db2@1.60.1.70338"}
+{"id": 241090, "field": "name", "en": "Scarlet Great Axe", "hash": "bf9ddf4d57efee35", "src": "db2@1.60.1.70338"}
+{"id": 241128, "field": "name", "en": "Pile of Portiporters", "hash": "0e6109e5a8b0c50e", "src": "db2@1.60.1.70338"}
+{"id": 241128, "field": "description", "en": "Attempt to use a Portiporter yourself to see what the fuss is about.\r\n\r\nCan only be used in New Avalon and after ensuring relative safety with other test subjects.", "hash": "5565caac3965124e", "src": "db2@1.60.1.70338"}
+{"id": 241169, "field": "name", "en": "Prototype Nitro Boosts", "hash": "0a3aad0b4ecf7cbc", "src": "db2@1.60.1.70338"}
+{"id": 241169, "field": "description", "en": "Insert a variable amount of gunpowder into the device and press the button.\r\n\r\nYour speed and likelihood of serious injury or death will increase based on the amount of gunpowder added.\r\n\r\nCan only be used in New Avalon.", "hash": "0469fc89424d1dd9", "src": "db2@1.60.1.70338"}
+{"id": 241190, "field": "name", "en": "Bird Whistle", "hash": "1f1d966adab15785", "src": "db2@1.60.1.70338"}
+{"id": 241190, "field": "description", "en": "Summon Pepe to join you on your adventures!", "hash": "5d1b97e40f9e1c65", "src": "db2@1.60.1.70338"}
+{"id": 241191, "field": "name", "en": "Formula: Enchant Weapon - Grand Crusader", "hash": "79202aac0770985f", "src": "db2@1.60.1.70338"}
+{"id": 241191, "field": "description", "en": "Teaches you how to permanently enchant a weapon to occasionally bless the wielder with incredible strength.", "hash": "e02eee332dbc961f", "src": "db2@1.60.1.70338"}
+{"id": 241195, "field": "name", "en": "Formula: Enchant 2H Weapon - Grand Arcanist", "hash": "1ff4e2e46ee8d27c", "src": "db2@1.60.1.70338"}
+{"id": 241195, "field": "description", "en": "Teaches you how to permanently enchant a two-handed melee weapon to occasionally bless the wielder with enhanced spell power.", "hash": "6f3e5bc1eed9e0ad", "src": "db2@1.60.1.70338"}
+{"id": 241201, "field": "name", "en": "Formula: Enchant Weapon - Grand Sorcerer", "hash": "c744d737e72bc6f5", "src": "db2@1.60.1.70338"}
+{"id": 241201, "field": "description", "en": "Teaches you how to permanently enchant a melee weapon to occasionally bless the wielder with enhanced spell power.", "hash": "0b3e82359f5048aa", "src": "db2@1.60.1.70338"}
+{"id": 241233, "field": "name", "en": "[DNT] Super Strong Lockbox", "hash": "1647475da1fc2d53", "src": "db2@1.60.1.70338"}
+{"id": 241613, "field": "name", "en": "No Longer Used", "hash": "b497814b1e38984d", "src": "db2@1.60.1.70338"}
+{"id": 241650, "field": "name", "en": "Major Discolored Healing Potion", "hash": "4f54a27a5f1d6b6c", "src": "db2@1.60.1.70338"}
+{"id": 241650, "field": "description", "en": "Restores $s1 health instantly, however you also suffer $s2% of that amount over time.\r\n\r\nThe symptoms of this effect can manifest as either a $1231579d poison or a $1231580d disease.", "hash": "998c6850a5009550", "src": "db2@1.60.1.70338"}
+{"id": 241651, "field": "name", "en": "Recipe: Major Discolored Healing Potion", "hash": "048439c7baa2a4b1", "src": "db2@1.60.1.70338"}
+{"id": 241651, "field": "description", "en": "Teaches you how to craft Major Discolored Healing Potion.", "hash": "af4f724e413a56ff", "src": "db2@1.60.1.70338"}
+{"id": 241652, "field": "name", "en": "Discolored Beast Heart", "hash": "484147891a310d01", "src": "db2@1.60.1.70338"}
+{"id": 241655, "field": "name", "en": "Mishandled Healing Potion", "hash": "2ae9d51e6934bcb9", "src": "db2@1.60.1.70338"}
+{"id": 241655, "field": "description", "en": "A truly disgusting potion.", "hash": "f1da8a2fed478c08", "src": "db2@1.60.1.70338"}
+{"id": 241656, "field": "name", "en": "Mishandled Healing Potion", "hash": "2ae9d51e6934bcb9", "src": "db2@1.60.1.70338"}
+{"id": 241656, "field": "description", "en": "A truly disgusting potion.", "hash": "f1da8a2fed478c08", "src": "db2@1.60.1.70338"}

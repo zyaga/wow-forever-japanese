@@ -17,7 +17,7 @@ def _recipe(makefile: str, target: str) -> list[str]:
     return m.group(1).splitlines()
 
 
-CLIENTS = {"classic-era": ("1.15.9.69722", "wago", "wow_classic_era"), "forever": ("1.60.1.70291", "db2", "wow_classic_beta")}
+CLIENTS = {"classic-era": ("1.15.9.69722", "wago", "wow_classic_era"), "forever": ("1.60.1.70338", "db2", "wow_classic_beta")}
 
 
 def _dry(root, *args: str) -> list[str]:
@@ -65,7 +65,7 @@ def test_the_served_step_names_forevers_folder(root, tmp_path, target):
     Forever named explicitly, not "the last client"; the other clients' caches only map objectives to quests."""
     out = [ln for ln in _dry(root, target, f"INPUTS={tmp_path}") if "import english served" in ln]
     assert len(out) == 1
-    forever = f"{tmp_path}/clients/forever-1.60.1.70291/"
+    forever = f"{tmp_path}/clients/forever-1.60.1.70338/"
     for table in ("QuestV2.csv", "questcache.wdb", "ItemSparse.csv", "SpellName.csv"):
         assert f'"{forever}{table}"' in out[0], table
     assert f'--map-cache "{tmp_path}/clients/classic-era-1.15.9.69722/questcache.wdb"' in out[0]
@@ -97,7 +97,7 @@ def test_a_broken_second_client_stops_the_import_before_any_write(makefile, root
     assert r.returncode != 0 and "import english wdb" not in r.stdout
     r = subprocess.run(["make", "-s", "-C", str(root), "client-preflight", "CLIENT=forever", f"INPUTS={tmp_path}"],
                        capture_output=True, text=True, check=False)
-    assert r.returncode != 0 and f"import: forever: no quest cache at {tmp_path}/clients/forever-1.60.1.70291/" in r.stdout
+    assert r.returncode != 0 and f"import: forever: no quest cache at {tmp_path}/clients/forever-1.60.1.70338/" in r.stdout
     for target in ("import", "import-english"):
         lines = _recipe(makefile, target)
         assert "$(ONE_CLIENT_GUARD)" in lines[0] and "wdb-preflight" in lines[1]
@@ -273,12 +273,12 @@ def test_tables_extract_refuses_a_wago_client_and_pins_the_build(root, tmp_path,
     assert r.returncode == 2 and "CLIENT=classic-era is pinned to wago tables and not db2" in r.stdout
     assert "--expect-build $(WAGO_BUILD)" in "\n".join(_recipe(makefile, "tables-extract"))
     out = "\n".join(_dry(root, "tables-extract", f"WOW_DIR={tmp_path}", f"INPUTS={tmp_path}/in"))
-    assert "--expect-build 1.60.1.70291" in out
+    assert "--expect-build 1.60.1.70338" in out
 
 
 def test_a_cross_check_folder_lifts_the_source_guard(root, tmp_path):
     out = "\n".join(_dry(root, "wago-fetch", "CLIENT=forever", f"CLIENT_DIR={tmp_path}/wago-check", f"INPUTS={tmp_path}"))
-    assert f"{tmp_path}/wago-check/" in out and "build=1.60.1.70291" in out and "/clients/" not in out
+    assert f"{tmp_path}/wago-check/" in out and "build=1.60.1.70338" in out and "/clients/" not in out
 
 
 def test_wdb_copy_refuses_a_cache_of_another_build(makefile):
@@ -310,7 +310,7 @@ def test_a_per_client_knob_in_the_environment_is_refused(root, tmp_path):
 
 def test_a_relative_inputs_is_made_absolute(root):
     out = "\n".join(_dry(root, "wdb-copy", "WOW_DIR=/nonexistent", "INPUTS=rel-inputs"))
-    assert f"{root}/rel-inputs/clients/forever-1.60.1.70291/questcache.wdb" in out
+    assert f"{root}/rel-inputs/clients/forever-1.60.1.70338/questcache.wdb" in out
 
 
 def test_inputs_default_to_the_main_checkouts_folder(root):

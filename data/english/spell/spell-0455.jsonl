@@ -1,35 +1,35 @@
-{"id": 455350, "field": "name", "en": "Veil of Shadow", "hash": "2834a97d04448afe", "src": "db2@1.60.1.70291"}
-{"id": 455350, "field": "description", "en": "Reduces healing effects for an enemy by $s1% for $d.", "hash": "c00ea3cbdffcc981", "src": "db2@1.60.1.70291"}
-{"id": 455350, "field": "aura", "en": "Healing effects reduced by $s1%.", "hash": "2574590189e5ac01", "src": "db2@1.60.1.70291"}
-{"id": 455586, "field": "name", "en": "Molten Obsidian Core", "hash": "8d3a08d6dade2f85", "src": "db2@1.60.1.70291"}
-{"id": 455595, "field": "name", "en": "Molten Obsidian Core Proc Effect", "hash": "da96596269da581c", "src": "db2@1.60.1.70291"}
-{"id": 455823, "field": "name", "en": "[DNT] Swim Area Trigger", "hash": "55ea58553302a8ad", "src": "db2@1.60.1.70291"}
-{"id": 455852, "field": "name", "en": "S03 - Item - T1 - Druid - Balance 2P Bonus", "hash": "aa56796065ff97e8", "src": "db2@1.60.1.70291"}
-{"id": 455852, "field": "description", "en": "Damage dealt by Thorns increased by $s1% and duration increased by $s2%.", "hash": "79fba92fdedd6a6f", "src": "db2@1.60.1.70291"}
-{"id": 455858, "field": "name", "en": "S03 - Item - T1 - Druid - Balance 4P Bonus", "hash": "99397ee350d1a3cf", "src": "db2@1.60.1.70291"}
-{"id": 455858, "field": "description", "en": "Increases your chance to hit with spells and attacks by $s1%.", "hash": "f76ce6d76de0323c", "src": "db2@1.60.1.70291"}
-{"id": 455859, "field": "name", "en": "S03 - Item - T1 - Druid - Balance 6P Bonus", "hash": "881c84663ba3afb6", "src": "db2@1.60.1.70291"}
-{"id": 455859, "field": "description", "en": "Reduces the cooldown on Starfall by $s1%.", "hash": "380667fdfb9887a4", "src": "db2@1.60.1.70291"}
-{"id": 455864, "field": "name", "en": "S03 - Item - T1 - Druid - Feral 2P Bonus", "hash": "4de58e4afea7b62f", "src": "db2@1.60.1.70291"}
-{"id": 455864, "field": "description", "en": "Your Faerie Fire (Feral) also increases the chance for all attacks to hit that target by $455868s1% for $455868d.", "hash": "fcdba91498721793", "src": "db2@1.60.1.70291"}
-{"id": 455868, "field": "name", "en": "Revealed Weakness", "hash": "3d981fb000cf824a", "src": "db2@1.60.1.70291"}
-{"id": 455868, "field": "aura", "en": "Increases chance to be hit by all attacks by $s1%.", "hash": "bbd13c2a75d244d8", "src": "db2@1.60.1.70291"}
-{"id": 455872, "field": "name", "en": "S03 - Item - T1 - Druid - Feral 4P Bonus", "hash": "3cc893cde979c216", "src": "db2@1.60.1.70291"}
-{"id": 455872, "field": "description", "en": "Periodic damage from your Rake and Rip can now be critical strikes.", "hash": "334ed61dce933499", "src": "db2@1.60.1.70291"}
-{"id": 455873, "field": "name", "en": "S03 - Item - T1 - Druid - Feral 6P Bonus", "hash": "2bab9950d44bcdfd", "src": "db2@1.60.1.70291"}
-{"id": 455873, "field": "description", "en": "Your Rip and Ferocious Bite have a $455903s1% chance per combo point spent to refresh the duration of Savage Roar back to its initial value.", "hash": "ffae246bf86d98b1", "src": "db2@1.60.1.70291"}
-{"id": 455876, "field": "name", "en": "Polish", "hash": "445e26936b6f7b15", "src": "db2@1.60.1.70291"}
-{"id": 455876, "field": "description", "en": "Polish off the soot.", "hash": "2b57291db5cbf692", "src": "db2@1.60.1.70291"}
-{"id": 455903, "field": "name", "en": "Sustained Roar", "hash": "a0b9cf5dea6e1e4e", "src": "db2@1.60.1.70291"}
-{"id": 455987, "field": "name", "en": "Decisive Strike", "hash": "0cffda187f390b5c", "src": "db2@1.60.1.70291"}
-{"id": 455987, "field": "description", "en": "A sweeping attack that strikes all enemies to the left of the caster.", "hash": "a8cf8863d8b6b735", "src": "db2@1.60.1.70291"}
-{"id": 455987, "field": "aura", "en": "Wounded.", "hash": "7cead755dd43b48f", "src": "db2@1.60.1.70291"}
-{"id": 455989, "field": "name", "en": "Decisive Strike", "hash": "0cffda187f390b5c", "src": "db2@1.60.1.70291"}
-{"id": 455989, "field": "description", "en": "A sweeping attack that strikes all enemies to the right of the caster.", "hash": "2cade6c582f24925", "src": "db2@1.60.1.70291"}
-{"id": 455989, "field": "aura", "en": "Wounded.", "hash": "7cead755dd43b48f", "src": "db2@1.60.1.70291"}
-{"id": 455991, "field": "name", "en": "Thunder Stomp", "hash": "fdf2c43c7e65eb73", "src": "db2@1.60.1.70291"}
-{"id": 455991, "field": "description", "en": "Discharge power with the impact of your stomp, knocking back and damaging nearby enemies.", "hash": "f45894b7c5af8d31", "src": "db2@1.60.1.70291"}
-{"id": 455991, "field": "aura", "en": "Blasted off.", "hash": "23fd71115abfb4ce", "src": "db2@1.60.1.70291"}
-{"id": 455994, "field": "name", "en": "Crescent Smash", "hash": "36447abc188853b8", "src": "db2@1.60.1.70291"}
-{"id": 455994, "field": "description", "en": "A sweeping attack that strikes all enemies in front of the caster.", "hash": "b405a060c0d408f5", "src": "db2@1.60.1.70291"}
-{"id": 455994, "field": "aura", "en": "Wounded.", "hash": "7cead755dd43b48f", "src": "db2@1.60.1.70291"}
+{"id": 455350, "field": "name", "en": "Veil of Shadow", "hash": "2834a97d04448afe", "src": "db2@1.60.1.70338"}
+{"id": 455350, "field": "description", "en": "Reduces healing effects for an enemy by $s1% for $d.", "hash": "c00ea3cbdffcc981", "src": "db2@1.60.1.70338"}
+{"id": 455350, "field": "aura", "en": "Healing effects reduced by $s1%.", "hash": "2574590189e5ac01", "src": "db2@1.60.1.70338"}
+{"id": 455586, "field": "name", "en": "Molten Obsidian Core", "hash": "8d3a08d6dade2f85", "src": "db2@1.60.1.70338"}
+{"id": 455595, "field": "name", "en": "Molten Obsidian Core Proc Effect", "hash": "da96596269da581c", "src": "db2@1.60.1.70338"}
+{"id": 455823, "field": "name", "en": "[DNT] Swim Area Trigger", "hash": "55ea58553302a8ad", "src": "db2@1.60.1.70338"}
+{"id": 455852, "field": "name", "en": "S03 - Item - T1 - Druid - Balance 2P Bonus", "hash": "aa56796065ff97e8", "src": "db2@1.60.1.70338"}
+{"id": 455852, "field": "description", "en": "Damage dealt by Thorns increased by $s1% and duration increased by $s2%.", "hash": "79fba92fdedd6a6f", "src": "db2@1.60.1.70338"}
+{"id": 455858, "field": "name", "en": "S03 - Item - T1 - Druid - Balance 4P Bonus", "hash": "99397ee350d1a3cf", "src": "db2@1.60.1.70338"}
+{"id": 455858, "field": "description", "en": "Increases your chance to hit with spells and attacks by $s1%.", "hash": "f76ce6d76de0323c", "src": "db2@1.60.1.70338"}
+{"id": 455859, "field": "name", "en": "S03 - Item - T1 - Druid - Balance 6P Bonus", "hash": "881c84663ba3afb6", "src": "db2@1.60.1.70338"}
+{"id": 455859, "field": "description", "en": "Reduces the cooldown on Starfall by $s1%.", "hash": "380667fdfb9887a4", "src": "db2@1.60.1.70338"}
+{"id": 455864, "field": "name", "en": "S03 - Item - T1 - Druid - Feral 2P Bonus", "hash": "4de58e4afea7b62f", "src": "db2@1.60.1.70338"}
+{"id": 455864, "field": "description", "en": "Your Faerie Fire (Feral) also increases the chance for all attacks to hit that target by $455868s1% for $455868d.", "hash": "fcdba91498721793", "src": "db2@1.60.1.70338"}
+{"id": 455868, "field": "name", "en": "Revealed Weakness", "hash": "3d981fb000cf824a", "src": "db2@1.60.1.70338"}
+{"id": 455868, "field": "aura", "en": "Increases chance to be hit by all attacks by $s1%.", "hash": "bbd13c2a75d244d8", "src": "db2@1.60.1.70338"}
+{"id": 455872, "field": "name", "en": "S03 - Item - T1 - Druid - Feral 4P Bonus", "hash": "3cc893cde979c216", "src": "db2@1.60.1.70338"}
+{"id": 455872, "field": "description", "en": "Periodic damage from your Rake and Rip can now be critical strikes.", "hash": "334ed61dce933499", "src": "db2@1.60.1.70338"}
+{"id": 455873, "field": "name", "en": "S03 - Item - T1 - Druid - Feral 6P Bonus", "hash": "2bab9950d44bcdfd", "src": "db2@1.60.1.70338"}
+{"id": 455873, "field": "description", "en": "Your Rip and Ferocious Bite have a $455903s1% chance per combo point spent to refresh the duration of Savage Roar back to its initial value.", "hash": "ffae246bf86d98b1", "src": "db2@1.60.1.70338"}
+{"id": 455876, "field": "name", "en": "Polish", "hash": "445e26936b6f7b15", "src": "db2@1.60.1.70338"}
+{"id": 455876, "field": "description", "en": "Polish off the soot.", "hash": "2b57291db5cbf692", "src": "db2@1.60.1.70338"}
+{"id": 455903, "field": "name", "en": "Sustained Roar", "hash": "a0b9cf5dea6e1e4e", "src": "db2@1.60.1.70338"}
+{"id": 455987, "field": "name", "en": "Decisive Strike", "hash": "0cffda187f390b5c", "src": "db2@1.60.1.70338"}
+{"id": 455987, "field": "description", "en": "A sweeping attack that strikes all enemies to the left of the caster.", "hash": "a8cf8863d8b6b735", "src": "db2@1.60.1.70338"}
+{"id": 455987, "field": "aura", "en": "Wounded.", "hash": "7cead755dd43b48f", "src": "db2@1.60.1.70338"}
+{"id": 455989, "field": "name", "en": "Decisive Strike", "hash": "0cffda187f390b5c", "src": "db2@1.60.1.70338"}
+{"id": 455989, "field": "description", "en": "A sweeping attack that strikes all enemies to the right of the caster.", "hash": "2cade6c582f24925", "src": "db2@1.60.1.70338"}
+{"id": 455989, "field": "aura", "en": "Wounded.", "hash": "7cead755dd43b48f", "src": "db2@1.60.1.70338"}
+{"id": 455991, "field": "name", "en": "Thunder Stomp", "hash": "fdf2c43c7e65eb73", "src": "db2@1.60.1.70338"}
+{"id": 455991, "field": "description", "en": "Discharge power with the impact of your stomp, knocking back and damaging nearby enemies.", "hash": "f45894b7c5af8d31", "src": "db2@1.60.1.70338"}
+{"id": 455991, "field": "aura", "en": "Blasted off.", "hash": "23fd71115abfb4ce", "src": "db2@1.60.1.70338"}
+{"id": 455994, "field": "name", "en": "Crescent Smash", "hash": "36447abc188853b8", "src": "db2@1.60.1.70338"}
+{"id": 455994, "field": "description", "en": "A sweeping attack that strikes all enemies in front of the caster.", "hash": "b405a060c0d408f5", "src": "db2@1.60.1.70338"}
+{"id": 455994, "field": "aura", "en": "Wounded.", "hash": "7cead755dd43b48f", "src": "db2@1.60.1.70338"}

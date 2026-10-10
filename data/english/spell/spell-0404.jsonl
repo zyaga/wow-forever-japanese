@@ -1,12 +1,12 @@
-{"id": 404000, "field": "name", "en": "Aqua Strike", "hash": "df6a460c5277fe44", "src": "db2@1.60.1.70291"}
-{"id": 404275, "field": "name", "en": "Aqua Strike", "hash": "df6a460c5277fe44", "src": "db2@1.60.1.70291"}
-{"id": 404275, "field": "description", "en": "Inflicts Frost damage to nearby enemies, immobilizing them for up to $d.", "hash": "1eb0ef79be5f0091", "src": "db2@1.60.1.70291"}
-{"id": 404275, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70291"}
-{"id": 404316, "field": "name", "en": "Greater Frostbolt", "hash": "4086bc81e263cca2", "src": "db2@1.60.1.70291"}
-{"id": 404316, "field": "aura", "en": "Movement slowed by $s2%.", "hash": "bd9449c14e5aeafa", "src": "db2@1.60.1.70291"}
-{"id": 404373, "field": "name", "en": "Bubble Beam", "hash": "083ae1ef1d147118", "src": "db2@1.60.1.70291"}
-{"id": 404433, "field": "name", "en": "Torrential Downpour", "hash": "79e3b9234db1aa37", "src": "db2@1.60.1.70291"}
-{"id": 404433, "field": "aura", "en": "$s1 damage every $t1 seconds, and increasing the time between attacks by $s2%.", "hash": "82fe525ec250ee29", "src": "db2@1.60.1.70291"}
-{"id": 404805, "field": "name", "en": "Depth Charge", "hash": "fa9bd1238ee58471", "src": "db2@1.60.1.70291"}
-{"id": 404806, "field": "name", "en": "Depth Charge", "hash": "fa9bd1238ee58471", "src": "db2@1.60.1.70291"}
-{"id": 404806, "field": "aura", "en": "Unstable particles of water coalesce around your body.", "hash": "6a1b0a065ddfa08a", "src": "db2@1.60.1.70291"}
+{"id": 404000, "field": "name", "en": "Aqua Strike", "hash": "df6a460c5277fe44", "src": "db2@1.60.1.70338"}
+{"id": 404275, "field": "name", "en": "Aqua Strike", "hash": "df6a460c5277fe44", "src": "db2@1.60.1.70338"}
+{"id": 404275, "field": "description", "en": "Inflicts Frost damage to nearby enemies, immobilizing them for up to $d.", "hash": "1eb0ef79be5f0091", "src": "db2@1.60.1.70338"}
+{"id": 404275, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70338"}
+{"id": 404316, "field": "name", "en": "Greater Frostbolt", "hash": "4086bc81e263cca2", "src": "db2@1.60.1.70338"}
+{"id": 404316, "field": "aura", "en": "Movement slowed by $s2%.", "hash": "bd9449c14e5aeafa", "src": "db2@1.60.1.70338"}
+{"id": 404373, "field": "name", "en": "Bubble Beam", "hash": "083ae1ef1d147118", "src": "db2@1.60.1.70338"}
+{"id": 404433, "field": "name", "en": "Torrential Downpour", "hash": "79e3b9234db1aa37", "src": "db2@1.60.1.70338"}
+{"id": 404433, "field": "aura", "en": "$s1 damage every $t1 seconds, and increasing the time between attacks by $s2%.", "hash": "82fe525ec250ee29", "src": "db2@1.60.1.70338"}
+{"id": 404805, "field": "name", "en": "Depth Charge", "hash": "fa9bd1238ee58471", "src": "db2@1.60.1.70338"}
+{"id": 404806, "field": "name", "en": "Depth Charge", "hash": "fa9bd1238ee58471", "src": "db2@1.60.1.70338"}
+{"id": 404806, "field": "aura", "en": "Unstable particles of water coalesce around your body.", "hash": "6a1b0a065ddfa08a", "src": "db2@1.60.1.70338"}

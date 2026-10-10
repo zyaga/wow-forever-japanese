@@ -1,50 +1,50 @@
-{"id": 453009, "field": "name", "en": "Gla'sir", "hash": "e569bb0bed1b1b2b", "src": "db2@1.60.1.70291"}
-{"id": 453017, "field": "name", "en": "Gla'sir", "hash": "e569bb0bed1b1b2b", "src": "db2@1.60.1.70291"}
-{"id": 453017, "field": "description", "en": "Critical effects from heals have a chance to heal 3 nearby allies for $453009s1, and critical spell hits have a chance to damage 3 nearby enemies for $452424s1 nature damage.", "hash": "376f5ceb5c071f46", "src": "db2@1.60.1.70291"}
-{"id": 453017, "field": "aura", "en": "Critical healing spell effects have a chance to heal up to 3 nearby allies for $453009s1.", "hash": "25f66d43155ddeb3", "src": "db2@1.60.1.70291"}
-{"id": 453021, "field": "name", "en": "Gla'sir", "hash": "e569bb0bed1b1b2b", "src": "db2@1.60.1.70291"}
-{"id": 453028, "field": "name", "en": "Gla'sir", "hash": "e569bb0bed1b1b2b", "src": "db2@1.60.1.70291"}
-{"id": 453053, "field": "name", "en": "Attack Power - Feral (+260)", "hash": "39db95ad5877e945", "src": "db2@1.60.1.70291"}
-{"id": 453053, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.", "hash": "a798bce2a303c5f6", "src": "db2@1.60.1.70291"}
-{"id": 453081, "field": "name", "en": "Boon of Water", "hash": "bba560231042a0e8", "src": "db2@1.60.1.70291"}
-{"id": 453085, "field": "name", "en": "Boon of Fire", "hash": "860098bf7ef02899", "src": "db2@1.60.1.70291"}
-{"id": 453124, "field": "name", "en": "S03 - Tuning and Overrides Passive - Druid", "hash": "4c3b87eef71bcd55", "src": "db2@1.60.1.70291"}
-{"id": 453165, "field": "name", "en": "Sniper Training", "hash": "ad5789b9d11bc6c2", "src": "db2@1.60.1.70291"}
-{"id": 453341, "field": "name", "en": "[DNT] Overture", "hash": "4323b0598c9a5c80", "src": "db2@1.60.1.70291"}
-{"id": 453342, "field": "name", "en": "[DNT] Beatdown", "hash": "6566013f70a34686", "src": "db2@1.60.1.70291"}
-{"id": 453343, "field": "name", "en": "[DNT] Beatdown", "hash": "6566013f70a34686", "src": "db2@1.60.1.70291"}
-{"id": 453344, "field": "name", "en": "[DNT] Beatdown", "hash": "6566013f70a34686", "src": "db2@1.60.1.70291"}
-{"id": 453482, "field": "name", "en": "Astral Form", "hash": "2831a73dc4c6085c", "src": "db2@1.60.1.70291"}
-{"id": 453482, "field": "description", "en": "Attune with the heavens, allowing you to replace your Moonkin form with a more celestial visage.", "hash": "7d88df025b23e3a9", "src": "db2@1.60.1.70291"}
-{"id": 453482, "field": "aura", "en": "Taking on an astral aspect...", "hash": "f73bad519fe2f36e", "src": "db2@1.60.1.70291"}
-{"id": 453593, "field": "name", "en": "S03 - PvP - Damage Reduction Aura", "hash": "d18c4914e1216b50", "src": "db2@1.60.1.70291"}
-{"id": 453622, "field": "name", "en": "Feral Combat Specialization", "hash": "ed212e6759acf3ca", "src": "db2@1.60.1.70291"}
-{"id": 453622, "field": "description", "en": "Feral Combat skill increased by $s1. Not cumulative with other ring runes.", "hash": "3a8a2bf4cb61ca44", "src": "db2@1.60.1.70291"}
-{"id": 453635, "field": "name", "en": "Engrave Ring - Sword Specialization", "hash": "61f52f7d73764379", "src": "db2@1.60.1.70291"}
-{"id": 453635, "field": "description", "en": "Engrave your ring with the Sword Specialization rune:\r\n\r\n$@spellicon442813\r\n$@spelldesc442813", "hash": "619fe81652e53001", "src": "db2@1.60.1.70291"}
-{"id": 453688, "field": "name", "en": "Engrave Ring - Axe Specialization", "hash": "4d78d82251ac32cc", "src": "db2@1.60.1.70291"}
-{"id": 453688, "field": "description", "en": "Engrave your ring with the Axe Specialization rune:\r\n\r\n$@spellicon442876\r\n$@spelldesc442876", "hash": "80944dc11374b581", "src": "db2@1.60.1.70291"}
-{"id": 453689, "field": "name", "en": "Engrave Ring - Mace Specialization", "hash": "8ada1490652feaed", "src": "db2@1.60.1.70291"}
-{"id": 453689, "field": "description", "en": "Engrave your ring with the Mace Specialization rune:\r\n\r\n$@spellicon442881\r\n$@spelldesc442881", "hash": "f8361805cd56b0dc", "src": "db2@1.60.1.70291"}
-{"id": 453690, "field": "name", "en": "Engrave Ring - Dagger Specialization", "hash": "d8539f6548ce4eac", "src": "db2@1.60.1.70291"}
-{"id": 453690, "field": "description", "en": "Engrave your ring with the Dagger Specialization rune:\r\n\r\n$@spellicon442887\r\n$@spelldesc442887", "hash": "422d65698cdec646", "src": "db2@1.60.1.70291"}
-{"id": 453691, "field": "name", "en": "Engrave Ring - Fist Weapon Specialization", "hash": "e21580bccc245a5d", "src": "db2@1.60.1.70291"}
-{"id": 453691, "field": "description", "en": "Engrave your ring with the Fist Weapon Specialization rune:\r\n\r\n$@spellicon442890\r\n$@spelldesc442890", "hash": "ba06bcf26e2110c6", "src": "db2@1.60.1.70291"}
-{"id": 453692, "field": "name", "en": "Engrave Ring - Ranged Weapon Specialization", "hash": "e2b132298a24a5ee", "src": "db2@1.60.1.70291"}
-{"id": 453692, "field": "description", "en": "Engrave your ring with the Ranged Weapon Specialization rune:\r\n\r\n$@spellicon442891\r\n$@spelldesc442891", "hash": "139ba8eb759e543a", "src": "db2@1.60.1.70291"}
-{"id": 453694, "field": "name", "en": "Engrave Ring - Pole Weapon Specialization", "hash": "606d669ee87e3814", "src": "db2@1.60.1.70291"}
-{"id": 453694, "field": "description", "en": "Engrave your ring with the Pole Weapon Specialization rune:\r\n\r\n$@spellicon442892\r\n$@spelldesc442892", "hash": "78d36c5354a962ae", "src": "db2@1.60.1.70291"}
-{"id": 453695, "field": "name", "en": "Engrave Ring - Arcane Specialization", "hash": "0b78be3f96b0e5ee", "src": "db2@1.60.1.70291"}
-{"id": 453695, "field": "description", "en": "Engrave your ring with the Arcane Specialization rune:\r\n\r\n$@spellicon442893\r\n$@spelldesc442893", "hash": "f9b5ffe640cfffcb", "src": "db2@1.60.1.70291"}
-{"id": 453696, "field": "name", "en": "Engrave Ring - Fire Specialization", "hash": "1bc851fe0d023efa", "src": "db2@1.60.1.70291"}
-{"id": 453696, "field": "description", "en": "Engrave your ring with the Fire Specialization rune:\r\n\r\n$@spellicon442894\r\n$@spelldesc442894", "hash": "8e19242bcbe8b0a1", "src": "db2@1.60.1.70291"}
-{"id": 453697, "field": "name", "en": "Engrave Ring - Frost Specialization", "hash": "ff726c712b892ae0", "src": "db2@1.60.1.70291"}
-{"id": 453697, "field": "description", "en": "Engrave your ring with the Frost Specialization rune:\r\n\r\n$@spellicon442895\r\n$@spelldesc442895", "hash": "7c83ee460a75b673", "src": "db2@1.60.1.70291"}
-{"id": 453698, "field": "name", "en": "Engrave Ring - Nature Specialization", "hash": "ebba08f09d7c944c", "src": "db2@1.60.1.70291"}
-{"id": 453698, "field": "description", "en": "Engrave your ring with the Nature Specialization rune:\r\n\r\n$@spellicon442896\r\n$@spelldesc442896", "hash": "916cd76f6da3b9b9", "src": "db2@1.60.1.70291"}
-{"id": 453700, "field": "name", "en": "Engrave Ring - Shadow Specialization", "hash": "8d19e806f20b7ff8", "src": "db2@1.60.1.70291"}
-{"id": 453700, "field": "description", "en": "Engrave your ring with the Shadow Specialization rune:\r\n\r\n$@spellicon442897\r\n$@spelldesc442897", "hash": "54313767394c9082", "src": "db2@1.60.1.70291"}
-{"id": 453702, "field": "name", "en": "Engrave Ring - Holy Specialization", "hash": "7d4308be2425b3b0", "src": "db2@1.60.1.70291"}
-{"id": 453702, "field": "description", "en": "Engrave your ring with the Holy Specialization rune:\r\n\r\n$@spellicon442898\r\n$@spelldesc442898", "hash": "363fe6df9bd90780", "src": "db2@1.60.1.70291"}
-{"id": 453703, "field": "name", "en": "Engrave Ring - Feral Combat Specialization", "hash": "e7ce36caf47f0c0e", "src": "db2@1.60.1.70291"}
-{"id": 453703, "field": "description", "en": "Engrave your ring with the Feral Combat Specialization rune:\r\n\r\n$@spellicon453622\r\n$@spelldesc453622", "hash": "7e65f7a7d4f52c63", "src": "db2@1.60.1.70291"}
+{"id": 453009, "field": "name", "en": "Gla'sir", "hash": "e569bb0bed1b1b2b", "src": "db2@1.60.1.70338"}
+{"id": 453017, "field": "name", "en": "Gla'sir", "hash": "e569bb0bed1b1b2b", "src": "db2@1.60.1.70338"}
+{"id": 453017, "field": "description", "en": "Critical effects from heals have a chance to heal 3 nearby allies for $453009s1, and critical spell hits have a chance to damage 3 nearby enemies for $452424s1 nature damage.", "hash": "376f5ceb5c071f46", "src": "db2@1.60.1.70338"}
+{"id": 453017, "field": "aura", "en": "Critical healing spell effects have a chance to heal up to 3 nearby allies for $453009s1.", "hash": "25f66d43155ddeb3", "src": "db2@1.60.1.70338"}
+{"id": 453021, "field": "name", "en": "Gla'sir", "hash": "e569bb0bed1b1b2b", "src": "db2@1.60.1.70338"}
+{"id": 453028, "field": "name", "en": "Gla'sir", "hash": "e569bb0bed1b1b2b", "src": "db2@1.60.1.70338"}
+{"id": 453053, "field": "name", "en": "Attack Power - Feral (+260)", "hash": "39db95ad5877e945", "src": "db2@1.60.1.70338"}
+{"id": 453053, "field": "description", "en": "+$s1 Attack Power in Cat, Bear, and Dire Bear forms only.", "hash": "a798bce2a303c5f6", "src": "db2@1.60.1.70338"}
+{"id": 453081, "field": "name", "en": "Boon of Water", "hash": "bba560231042a0e8", "src": "db2@1.60.1.70338"}
+{"id": 453085, "field": "name", "en": "Boon of Fire", "hash": "860098bf7ef02899", "src": "db2@1.60.1.70338"}
+{"id": 453124, "field": "name", "en": "S03 - Tuning and Overrides Passive - Druid", "hash": "4c3b87eef71bcd55", "src": "db2@1.60.1.70338"}
+{"id": 453165, "field": "name", "en": "Sniper Training", "hash": "ad5789b9d11bc6c2", "src": "db2@1.60.1.70338"}
+{"id": 453341, "field": "name", "en": "[DNT] Overture", "hash": "4323b0598c9a5c80", "src": "db2@1.60.1.70338"}
+{"id": 453342, "field": "name", "en": "[DNT] Beatdown", "hash": "6566013f70a34686", "src": "db2@1.60.1.70338"}
+{"id": 453343, "field": "name", "en": "[DNT] Beatdown", "hash": "6566013f70a34686", "src": "db2@1.60.1.70338"}
+{"id": 453344, "field": "name", "en": "[DNT] Beatdown", "hash": "6566013f70a34686", "src": "db2@1.60.1.70338"}
+{"id": 453482, "field": "name", "en": "Astral Form", "hash": "2831a73dc4c6085c", "src": "db2@1.60.1.70338"}
+{"id": 453482, "field": "description", "en": "Attune with the heavens, allowing you to replace your Moonkin form with a more celestial visage.", "hash": "7d88df025b23e3a9", "src": "db2@1.60.1.70338"}
+{"id": 453482, "field": "aura", "en": "Taking on an astral aspect...", "hash": "f73bad519fe2f36e", "src": "db2@1.60.1.70338"}
+{"id": 453593, "field": "name", "en": "S03 - PvP - Damage Reduction Aura", "hash": "d18c4914e1216b50", "src": "db2@1.60.1.70338"}
+{"id": 453622, "field": "name", "en": "Feral Combat Specialization", "hash": "ed212e6759acf3ca", "src": "db2@1.60.1.70338"}
+{"id": 453622, "field": "description", "en": "Feral Combat skill increased by $s1. Not cumulative with other ring runes.", "hash": "3a8a2bf4cb61ca44", "src": "db2@1.60.1.70338"}
+{"id": 453635, "field": "name", "en": "Engrave Ring - Sword Specialization", "hash": "61f52f7d73764379", "src": "db2@1.60.1.70338"}
+{"id": 453635, "field": "description", "en": "Engrave your ring with the Sword Specialization rune:\r\n\r\n$@spellicon442813\r\n$@spelldesc442813", "hash": "619fe81652e53001", "src": "db2@1.60.1.70338"}
+{"id": 453688, "field": "name", "en": "Engrave Ring - Axe Specialization", "hash": "4d78d82251ac32cc", "src": "db2@1.60.1.70338"}
+{"id": 453688, "field": "description", "en": "Engrave your ring with the Axe Specialization rune:\r\n\r\n$@spellicon442876\r\n$@spelldesc442876", "hash": "80944dc11374b581", "src": "db2@1.60.1.70338"}
+{"id": 453689, "field": "name", "en": "Engrave Ring - Mace Specialization", "hash": "8ada1490652feaed", "src": "db2@1.60.1.70338"}
+{"id": 453689, "field": "description", "en": "Engrave your ring with the Mace Specialization rune:\r\n\r\n$@spellicon442881\r\n$@spelldesc442881", "hash": "f8361805cd56b0dc", "src": "db2@1.60.1.70338"}
+{"id": 453690, "field": "name", "en": "Engrave Ring - Dagger Specialization", "hash": "d8539f6548ce4eac", "src": "db2@1.60.1.70338"}
+{"id": 453690, "field": "description", "en": "Engrave your ring with the Dagger Specialization rune:\r\n\r\n$@spellicon442887\r\n$@spelldesc442887", "hash": "422d65698cdec646", "src": "db2@1.60.1.70338"}
+{"id": 453691, "field": "name", "en": "Engrave Ring - Fist Weapon Specialization", "hash": "e21580bccc245a5d", "src": "db2@1.60.1.70338"}
+{"id": 453691, "field": "description", "en": "Engrave your ring with the Fist Weapon Specialization rune:\r\n\r\n$@spellicon442890\r\n$@spelldesc442890", "hash": "ba06bcf26e2110c6", "src": "db2@1.60.1.70338"}
+{"id": 453692, "field": "name", "en": "Engrave Ring - Ranged Weapon Specialization", "hash": "e2b132298a24a5ee", "src": "db2@1.60.1.70338"}
+{"id": 453692, "field": "description", "en": "Engrave your ring with the Ranged Weapon Specialization rune:\r\n\r\n$@spellicon442891\r\n$@spelldesc442891", "hash": "139ba8eb759e543a", "src": "db2@1.60.1.70338"}
+{"id": 453694, "field": "name", "en": "Engrave Ring - Pole Weapon Specialization", "hash": "606d669ee87e3814", "src": "db2@1.60.1.70338"}
+{"id": 453694, "field": "description", "en": "Engrave your ring with the Pole Weapon Specialization rune:\r\n\r\n$@spellicon442892\r\n$@spelldesc442892", "hash": "78d36c5354a962ae", "src": "db2@1.60.1.70338"}
+{"id": 453695, "field": "name", "en": "Engrave Ring - Arcane Specialization", "hash": "0b78be3f96b0e5ee", "src": "db2@1.60.1.70338"}
+{"id": 453695, "field": "description", "en": "Engrave your ring with the Arcane Specialization rune:\r\n\r\n$@spellicon442893\r\n$@spelldesc442893", "hash": "f9b5ffe640cfffcb", "src": "db2@1.60.1.70338"}
+{"id": 453696, "field": "name", "en": "Engrave Ring - Fire Specialization", "hash": "1bc851fe0d023efa", "src": "db2@1.60.1.70338"}
+{"id": 453696, "field": "description", "en": "Engrave your ring with the Fire Specialization rune:\r\n\r\n$@spellicon442894\r\n$@spelldesc442894", "hash": "8e19242bcbe8b0a1", "src": "db2@1.60.1.70338"}
+{"id": 453697, "field": "name", "en": "Engrave Ring - Frost Specialization", "hash": "ff726c712b892ae0", "src": "db2@1.60.1.70338"}
+{"id": 453697, "field": "description", "en": "Engrave your ring with the Frost Specialization rune:\r\n\r\n$@spellicon442895\r\n$@spelldesc442895", "hash": "7c83ee460a75b673", "src": "db2@1.60.1.70338"}
+{"id": 453698, "field": "name", "en": "Engrave Ring - Nature Specialization", "hash": "ebba08f09d7c944c", "src": "db2@1.60.1.70338"}
+{"id": 453698, "field": "description", "en": "Engrave your ring with the Nature Specialization rune:\r\n\r\n$@spellicon442896\r\n$@spelldesc442896", "hash": "916cd76f6da3b9b9", "src": "db2@1.60.1.70338"}
+{"id": 453700, "field": "name", "en": "Engrave Ring - Shadow Specialization", "hash": "8d19e806f20b7ff8", "src": "db2@1.60.1.70338"}
+{"id": 453700, "field": "description", "en": "Engrave your ring with the Shadow Specialization rune:\r\n\r\n$@spellicon442897\r\n$@spelldesc442897", "hash": "54313767394c9082", "src": "db2@1.60.1.70338"}
+{"id": 453702, "field": "name", "en": "Engrave Ring - Holy Specialization", "hash": "7d4308be2425b3b0", "src": "db2@1.60.1.70338"}
+{"id": 453702, "field": "description", "en": "Engrave your ring with the Holy Specialization rune:\r\n\r\n$@spellicon442898\r\n$@spelldesc442898", "hash": "363fe6df9bd90780", "src": "db2@1.60.1.70338"}
+{"id": 453703, "field": "name", "en": "Engrave Ring - Feral Combat Specialization", "hash": "e7ce36caf47f0c0e", "src": "db2@1.60.1.70338"}
+{"id": 453703, "field": "description", "en": "Engrave your ring with the Feral Combat Specialization rune:\r\n\r\n$@spellicon453622\r\n$@spelldesc453622", "hash": "7e65f7a7d4f52c63", "src": "db2@1.60.1.70338"}

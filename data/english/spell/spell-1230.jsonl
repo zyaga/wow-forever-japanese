@@ -1,199 +1,199 @@
-{"id": 1230086, "field": "name", "en": "Threat of Arrest", "hash": "4be1e9d96bf64801", "src": "db2@1.60.1.70291"}
-{"id": 1230086, "field": "description", "en": "Threaten to put the target in stocks, causing them to run in fear for $d.", "hash": "6aa8cc4fe560941a", "src": "db2@1.60.1.70291"}
-{"id": 1230086, "field": "aura", "en": "Running away in fear.", "hash": "f07ba538f7857903", "src": "db2@1.60.1.70291"}
-{"id": 1230090, "field": "name", "en": "Summon Weapon", "hash": "5a5bee861eb9a988", "src": "db2@1.60.1.70291"}
-{"id": 1230092, "field": "name", "en": "(DNT) Ride Caldoran Vehicle", "hash": "110e1fc2d6ffeb31", "src": "db2@1.60.1.70291"}
-{"id": 1230098, "field": "name", "en": "Boosted Stats", "hash": "20603ef90a75cecc", "src": "db2@1.60.1.70291"}
-{"id": 1230099, "field": "name", "en": "Rending Slash", "hash": "05c0f729cc16f5b1", "src": "db2@1.60.1.70291"}
-{"id": 1230099, "field": "description", "en": "Inflicts $s1% of weapon damage to enemies in front of the caster, and causes a Searing Wound on the caster's primary target.\r\n", "hash": "0677e3cac297a88e", "src": "db2@1.60.1.70291"}
-{"id": 1230102, "field": "name", "en": "Open Wound", "hash": "7d91b77e5dee8d50", "src": "db2@1.60.1.70291"}
-{"id": 1230102, "field": "description", "en": "Deals $1230099s1 damage every $1230102t1 sec for $1230102d. Stacks.", "hash": "419827f922223ee3", "src": "db2@1.60.1.70291"}
-{"id": 1230102, "field": "aura", "en": "Suffering $s1 Physical damage every $t1 sec.", "hash": "ec1bbb750f4a3a11", "src": "db2@1.60.1.70291"}
-{"id": 1230105, "field": "name", "en": "Wild Aperture", "hash": "eeb88ee1f7551039", "src": "db2@1.60.1.70291"}
-{"id": 1230105, "field": "description", "en": "Calls the might of the wild creating fissures that erupt dealing damage to nearby foes in front of the caster", "hash": "eb7ea3becd13e827", "src": "db2@1.60.1.70291"}
-{"id": 1230106, "field": "name", "en": "Wild Fissure", "hash": "a6658fbd55a90553", "src": "db2@1.60.1.70291"}
-{"id": 1230106, "field": "description", "en": "Deals damage to enemies in the blast.", "hash": "f8b7021352b64c80", "src": "db2@1.60.1.70291"}
-{"id": 1230117, "field": "name", "en": "First Aid Kit", "hash": "ac6617d413b0822b", "src": "db2@1.60.1.70291"}
-{"id": 1230117, "field": "description", "en": "Craft a First Aid Kit.", "hash": "d4c55d1ba1b0809c", "src": "db2@1.60.1.70291"}
-{"id": 1230123, "field": "name", "en": "Wild Fissure", "hash": "a6658fbd55a90553", "src": "db2@1.60.1.70291"}
-{"id": 1230123, "field": "description", "en": "Deals $s1 Nature damage to enemies in the blast.", "hash": "7185d351d8857205", "src": "db2@1.60.1.70291"}
-{"id": 1230124, "field": "name", "en": "Boosted Stamina", "hash": "52eb07376ed59875", "src": "db2@1.60.1.70291"}
-{"id": 1230125, "field": "name", "en": "Wrath of the Crusade", "hash": "943f07f8c11cd49d", "src": "db2@1.60.1.70291"}
-{"id": 1230125, "field": "aura", "en": "Unrestrained light spills forth from the Ashbringer, dealing Holy damage every second.", "hash": "bd16af3625afe800", "src": "db2@1.60.1.70291"}
-{"id": 1230137, "field": "name", "en": "Wrath of the Crusade", "hash": "943f07f8c11cd49d", "src": "db2@1.60.1.70291"}
-{"id": 1230145, "field": "name", "en": "Wrath of the Crusade", "hash": "943f07f8c11cd49d", "src": "db2@1.60.1.70291"}
-{"id": 1230161, "field": "name", "en": "Lodestone", "hash": "c809e41f9fc8af34", "src": "db2@1.60.1.70291"}
-{"id": 1230161, "field": "description", "en": "Craft a Lodestone.", "hash": "0dffc67941dff968", "src": "db2@1.60.1.70291"}
-{"id": 1230164, "field": "name", "en": "Boosted Attack Power", "hash": "94b959425b1d3572", "src": "db2@1.60.1.70291"}
-{"id": 1230171, "field": "name", "en": "Sharpening Wheel", "hash": "d8707d4dc5b9be35", "src": "db2@1.60.1.70291"}
-{"id": 1230171, "field": "description", "en": "Craft a Sharpening Wheel.", "hash": "b9ede7c1ef2469a1", "src": "db2@1.60.1.70291"}
-{"id": 1230172, "field": "name", "en": "Extra Strength", "hash": "817bbf6afd004ab8", "src": "db2@1.60.1.70291"}
-{"id": 1230200, "field": "name", "en": "Enervate", "hash": "f29783568aca28ff", "src": "db2@1.60.1.70291"}
-{"id": 1230200, "field": "description", "en": "Inflicts $s2 Nature damage to an enemy and increases the Nature damage it takes by $s1% for $d.\r\n", "hash": "1cb219acca094b8d", "src": "db2@1.60.1.70291"}
-{"id": 1230200, "field": "aura", "en": "Nature damage taken is increased by $s1%. $s3 Nature damage every second.", "hash": "abbf78ea68e5e065", "src": "db2@1.60.1.70291"}
-{"id": 1230203, "field": "name", "en": "Incite Truth", "hash": "9634ee3b7058ddcd", "src": "db2@1.60.1.70291"}
-{"id": 1230203, "field": "description", "en": "Deal $s1 Holy damage to the target and increase their damage dealt by $s2%.", "hash": "3fccb5a142fbce05", "src": "db2@1.60.1.70291"}
-{"id": 1230203, "field": "aura", "en": "Damage dealt increased by $w2%.", "hash": "d7cc9fd9f771c1f3", "src": "db2@1.60.1.70291"}
-{"id": 1230206, "field": "name", "en": "Snuff Out", "hash": "3617d52a530b7de1", "src": "db2@1.60.1.70291"}
-{"id": 1230206, "field": "description", "en": "Snuff out the target's inner flame, dealing $s1% of their maximum health as Holy Damage per stack of Incite Holy Flame. Survivors will suffer.", "hash": "684a649505267bf4", "src": "db2@1.60.1.70291"}
-{"id": 1230206, "field": "aura", "en": "Damage taken from Holy spells and abilities increased by $w3. Enemy detection range increased.", "hash": "6b94960dd8274329", "src": "db2@1.60.1.70291"}
-{"id": 1230215, "field": "name", "en": "Crimson Smite", "hash": "ea6ef4d970ade89d", "src": "db2@1.60.1.70291"}
-{"id": 1230215, "field": "description", "en": "Smite an enemy for $s1 Holy damage. Heal for $s2% of the damage dealt.", "hash": "d5fc62d58adc915f", "src": "db2@1.60.1.70291"}
-{"id": 1230224, "field": "name", "en": "Seal of the Dawn", "hash": "576a8d0cbf1a3693", "src": "db2@1.60.1.70291"}
-{"id": 1230224, "field": "description", "en": "Unlocks your potential while inside Naxxramas.  Increasing your damage by ${$m1/100}.2% and your health by ${$m2/100}.2% for each piece of Sanctified armor equipped.", "hash": "8b6a6a81ed814079", "src": "db2@1.60.1.70291"}
-{"id": 1230225, "field": "name", "en": "(DNT) Power Up Cosmetic", "hash": "b5f16126e95e4129", "src": "db2@1.60.1.70291"}
-{"id": 1230228, "field": "name", "en": "Pity", "hash": "0ad3faf6d15e7f43", "src": "db2@1.60.1.70291"}
-{"id": 1230228, "field": "description", "en": "Heal the enemy for $s1% of their maximum health, however they will suffer $s2% of their maximum health every $t2 sec until they leave combat.", "hash": "79bbf67a99283515", "src": "db2@1.60.1.70291"}
-{"id": 1230228, "field": "aura", "en": "Suffering $w2% of your maximum health every $t2 sec until you exit combat.", "hash": "599a26f8381d5db2", "src": "db2@1.60.1.70291"}
-{"id": 1230239, "field": "name", "en": "Deep Slumber", "hash": "1996b0c4fce3a400", "src": "db2@1.60.1.70291"}
-{"id": 1230242, "field": "name", "en": "Enkindle", "hash": "38a438683e6dd626", "src": "db2@1.60.1.70291"}
-{"id": 1230242, "field": "description", "en": "Inflicts $s2 Fire damage to an enemy and increases the Fire damage it takes by $s1% for $d.\r\n", "hash": "d3356f040ac2c8bf", "src": "db2@1.60.1.70291"}
-{"id": 1230242, "field": "aura", "en": "Fire damage taken is increased by $s1%. $s3 Fire damage every second.", "hash": "6a3280bdb8fc9b9e", "src": "db2@1.60.1.70291"}
-{"id": 1230255, "field": "name", "en": "Entangling Shot", "hash": "42e7dd05c218ef12", "src": "db2@1.60.1.70291"}
-{"id": 1230255, "field": "description", "en": "Fires a shot infused with magic that entangles enemies in a small area.", "hash": "fb8e3bc88874b09d", "src": "db2@1.60.1.70291"}
-{"id": 1230268, "field": "name", "en": "Dying Light", "hash": "7ae642113224b641", "src": "db2@1.60.1.70291"}
-{"id": 1230270, "field": "name", "en": "Dying Light", "hash": "7ae642113224b641", "src": "db2@1.60.1.70291"}
-{"id": 1230271, "field": "name", "en": "Dying Light", "hash": "7ae642113224b641", "src": "db2@1.60.1.70291"}
-{"id": 1230276, "field": "name", "en": "Blessed Fetters", "hash": "7e45d9468a4ea8d2", "src": "db2@1.60.1.70291"}
-{"id": 1230276, "field": "aura", "en": "Held in place by divine fetters. Unable to move or act.", "hash": "24e9a69de7090cf3", "src": "db2@1.60.1.70291"}
-{"id": 1230279, "field": "name", "en": "Entangling Shot", "hash": "42e7dd05c218ef12", "src": "db2@1.60.1.70291"}
-{"id": 1230283, "field": "name", "en": "Entangling Shot", "hash": "42e7dd05c218ef12", "src": "db2@1.60.1.70291"}
-{"id": 1230283, "field": "description", "en": "Entangles an enemy in roots, inflicting Nature damage every $t2 sec. and immobilizing it for up to $d.", "hash": "ed46cb1a9bc2abfc", "src": "db2@1.60.1.70291"}
-{"id": 1230283, "field": "aura", "en": "Immobilized.\r\nNature damage inflicted every $t2 sec.", "hash": "e6768e6a91f2334b", "src": "db2@1.60.1.70291"}
-{"id": 1230288, "field": "name", "en": "Gol'gere Death", "hash": "2d5cba7d3274e77d", "src": "db2@1.60.1.70291"}
-{"id": 1230292, "field": "name", "en": "Profane Inferno", "hash": "73bb6d47270dfe07", "src": "db2@1.60.1.70291"}
-{"id": 1230295, "field": "name", "en": "Profane Inferno", "hash": "73bb6d47270dfe07", "src": "db2@1.60.1.70291"}
-{"id": 1230312, "field": "name", "en": "(DNT) Fire Visuals", "hash": "b4bf00f581b72747", "src": "db2@1.60.1.70291"}
-{"id": 1230313, "field": "name", "en": "(DNT) Fire Visuals", "hash": "b4bf00f581b72747", "src": "db2@1.60.1.70291"}
-{"id": 1230314, "field": "name", "en": "Cat Form", "hash": "ed928dc95b5c5fa4", "src": "db2@1.60.1.70291"}
-{"id": 1230314, "field": "description", "en": "Shapeshifts into a cat for $d., increasing attack power and allowing the use of various cat abilities.", "hash": "fe1149073ef092a3", "src": "db2@1.60.1.70291"}
-{"id": 1230314, "field": "aura", "en": "Shapeshifted into cat.\r\nMelee attack power increased.", "hash": "59bc0688f52be0c2", "src": "db2@1.60.1.70291"}
-{"id": 1230319, "field": "name", "en": "Vengeful Rage", "hash": "c5edb35f70ea337d", "src": "db2@1.60.1.70291"}
-{"id": 1230319, "field": "description", "en": "The death of a companion awakens a surge of energy, increasing damage dealt by $s1% and attack speed by $s3%.\r\n", "hash": "4bfe8e44c585fa03", "src": "db2@1.60.1.70291"}
-{"id": 1230319, "field": "aura", "en": "Damage dealt increased by $s1%.\r\nAttack speed increased by $s3%.", "hash": "26cd84b457c98394", "src": "db2@1.60.1.70291"}
-{"id": 1230325, "field": "name", "en": "Glacial Aegis", "hash": "f3f2aba4b20213e0", "src": "db2@1.60.1.70291"}
-{"id": 1230326, "field": "name", "en": "Glacial Aegis", "hash": "f3f2aba4b20213e0", "src": "db2@1.60.1.70291"}
-{"id": 1230328, "field": "name", "en": "Glacial Aegis", "hash": "f3f2aba4b20213e0", "src": "db2@1.60.1.70291"}
-{"id": 1230328, "field": "aura", "en": "Protected by a shield of magical frost.", "hash": "4245f5550362166c", "src": "db2@1.60.1.70291"}
-{"id": 1230330, "field": "name", "en": "Glacial Aegis", "hash": "f3f2aba4b20213e0", "src": "db2@1.60.1.70291"}
-{"id": 1230333, "field": "name", "en": "Conjure Portal", "hash": "bd4bbec6274b3424", "src": "db2@1.60.1.70291"}
-{"id": 1230361, "field": "name", "en": "Radiant Portal", "hash": "7899133f10278a8f", "src": "db2@1.60.1.70291"}
-{"id": 1230362, "field": "name", "en": "Gol'gere Despawn", "hash": "187d8429c33f7cb1", "src": "db2@1.60.1.70291"}
-{"id": 1230438, "field": "name", "en": "Shoot", "hash": "befeed7c70f5ab5b", "src": "db2@1.60.1.70291"}
-{"id": 1230438, "field": "description", "en": "Shoots at an enemy, inflicting Holy damage.", "hash": "0f5106ba3be68b51", "src": "db2@1.60.1.70291"}
-{"id": 1230509, "field": "name", "en": "Collapsing Cathedral", "hash": "bfbc506136ba2adc", "src": "db2@1.60.1.70291"}
-{"id": 1230510, "field": "name", "en": "Collapsing Cathedral", "hash": "bfbc506136ba2adc", "src": "db2@1.60.1.70291"}
-{"id": 1230511, "field": "name", "en": "Collapsing Cathedral", "hash": "bfbc506136ba2adc", "src": "db2@1.60.1.70291"}
-{"id": 1230512, "field": "name", "en": "Collapsing Cathedral", "hash": "bfbc506136ba2adc", "src": "db2@1.60.1.70291"}
-{"id": 1230512, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70291"}
-{"id": 1230517, "field": "name", "en": "[DNT] Kill Credit", "hash": "5787af819f4bc284", "src": "db2@1.60.1.70291"}
-{"id": 1230517, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70291"}
-{"id": 1230537, "field": "name", "en": "Foreman Bark", "hash": "71e56094ccfdb015", "src": "db2@1.60.1.70291"}
-{"id": 1230538, "field": "name", "en": "Call Thisalee", "hash": "93b21617bdc5abb5", "src": "db2@1.60.1.70291"}
-{"id": 1230538, "field": "description", "en": "Attempt to make contact with the disembodied voice of The Ashbringer.", "hash": "728f118df5002a78", "src": "db2@1.60.1.70291"}
-{"id": 1230545, "field": "name", "en": "Deep Slumber", "hash": "1996b0c4fce3a400", "src": "db2@1.60.1.70291"}
-{"id": 1230548, "field": "name", "en": "(DNT) Move to Vehicle", "hash": "5ef31a59384bf151", "src": "db2@1.60.1.70291"}
-{"id": 1230549, "field": "name", "en": "[DNT] Combat Check", "hash": "af684ca63ff0b4e0", "src": "db2@1.60.1.70291"}
-{"id": 1230552, "field": "name", "en": "Boosted Spell Power", "hash": "d4a33ac055d599a9", "src": "db2@1.60.1.70291"}
-{"id": 1230552, "field": "aura", "en": "Spell Damage increased by up to $w1  and Spell Healing increased by up to $w2.", "hash": "343a8b7238f36b21", "src": "db2@1.60.1.70291"}
-{"id": 1230558, "field": "name", "en": "[DNT] Vehicle Force Cast", "hash": "f4a1014a769329b0", "src": "db2@1.60.1.70291"}
-{"id": 1230564, "field": "name", "en": "Mana Well", "hash": "cafcee01bc4b49ef", "src": "db2@1.60.1.70291"}
-{"id": 1230564, "field": "description", "en": "Craft a Mana Well.", "hash": "905dd5242166d920", "src": "db2@1.60.1.70291"}
-{"id": 1230576, "field": "name", "en": "Panic", "hash": "89656520f2657d95", "src": "db2@1.60.1.70291"}
-{"id": 1230576, "field": "aura", "en": "Fleeing in fear.", "hash": "fa67e4a8461af331", "src": "db2@1.60.1.70291"}
-{"id": 1230578, "field": "name", "en": "Hyjal Teleport", "hash": "5c6545a68ce4157b", "src": "db2@1.60.1.70291"}
-{"id": 1230578, "field": "description", "en": "Sends player to Blackfathom Deeps", "hash": "952d86877648516c", "src": "db2@1.60.1.70291"}
-{"id": 1230579, "field": "name", "en": "Holding on For Dear Life", "hash": "aaaf4e40e68e0dc2", "src": "db2@1.60.1.70291"}
-{"id": 1230583, "field": "name", "en": "Prototype Magnet", "hash": "ccd4f1d23ff98e1b", "src": "db2@1.60.1.70291"}
-{"id": 1230583, "field": "description", "en": "Briefly reveal and supercharge your prototype magnet in attempt to catch stray metallic objects.", "hash": "2133869e06031add", "src": "db2@1.60.1.70291"}
-{"id": 1230587, "field": "name", "en": "Boosted Mana Regeneration", "hash": "8b4dc10c489ae95d", "src": "db2@1.60.1.70291"}
-{"id": 1230589, "field": "name", "en": "Reveal Metal", "hash": "9c4a3c5634e33b58", "src": "db2@1.60.1.70291"}
-{"id": 1230595, "field": "name", "en": "Ashbringer", "hash": "e201e97bef197416", "src": "db2@1.60.1.70291"}
-{"id": 1230596, "field": "name", "en": "Ashbringer", "hash": "e201e97bef197416", "src": "db2@1.60.1.70291"}
-{"id": 1230596, "field": "aura", "en": "Strength increased by $s1.", "hash": "90d8a2f83ee1c8bf", "src": "db2@1.60.1.70291"}
-{"id": 1230613, "field": "name", "en": "Immolation Trap", "hash": "cedd401fe1cacd87", "src": "db2@1.60.1.70291"}
-{"id": 1230613, "field": "description", "en": "Throws a trap that will coat the one who triggers it in flame, dealing Fire damage and increasing damage taken.\r\n", "hash": "bf960b8f4395763a", "src": "db2@1.60.1.70291"}
-{"id": 1230633, "field": "name", "en": "Immolation Trap", "hash": "cedd401fe1cacd87", "src": "db2@1.60.1.70291"}
-{"id": 1230633, "field": "description", "en": "Calls forth magma eruptions to damage nearby foes.\r\n", "hash": "ed4b74887d1b32b1", "src": "db2@1.60.1.70291"}
-{"id": 1230636, "field": "name", "en": "(DNT) Caldoran RP Stun", "hash": "2aaa81fbd40673aa", "src": "db2@1.60.1.70291"}
-{"id": 1230637, "field": "name", "en": "Fiery Eruption", "hash": "d5f682dc61ff719d", "src": "db2@1.60.1.70291"}
-{"id": 1230637, "field": "description", "en": "Deals $s1 Fire damage to enemies in the blast.\r\n", "hash": "618f12fbc93377c5", "src": "db2@1.60.1.70291"}
-{"id": 1230638, "field": "name", "en": "Fiery Eruption", "hash": "d5f682dc61ff719d", "src": "db2@1.60.1.70291"}
-{"id": 1230638, "field": "description", "en": "Deals damage to enemies in the blast.\r\n", "hash": "f8b7021352b64c80", "src": "db2@1.60.1.70291"}
-{"id": 1230639, "field": "name", "en": "Immolation Trap", "hash": "cedd401fe1cacd87", "src": "db2@1.60.1.70291"}
-{"id": 1230643, "field": "name", "en": "Enchanted Lute", "hash": "94fb1453e4194e9c", "src": "db2@1.60.1.70291"}
-{"id": 1230643, "field": "description", "en": "Craft an Enchanted Lute.", "hash": "d4b0a8cf5b7fcea8", "src": "db2@1.60.1.70291"}
-{"id": 1230646, "field": "name", "en": "[DNT] Vehicle Force Cast", "hash": "f4a1014a769329b0", "src": "db2@1.60.1.70291"}
-{"id": 1230647, "field": "name", "en": "Holding on For Dear Life", "hash": "aaaf4e40e68e0dc2", "src": "db2@1.60.1.70291"}
-{"id": 1230649, "field": "name", "en": "Everlook Teleport", "hash": "f68b7d5151e856c2", "src": "db2@1.60.1.70291"}
-{"id": 1230649, "field": "description", "en": "Sends player to Blackfathom Deeps", "hash": "952d86877648516c", "src": "db2@1.60.1.70291"}
-{"id": 1230653, "field": "name", "en": "Boosted Stats", "hash": "20603ef90a75cecc", "src": "db2@1.60.1.70291"}
-{"id": 1230656, "field": "name", "en": "Reagent Bot", "hash": "9b5fbc1e475c0e43", "src": "db2@1.60.1.70291"}
-{"id": 1230656, "field": "description", "en": "Craft a Reagent Bot.", "hash": "8ca2797fafbc0327", "src": "db2@1.60.1.70291"}
-{"id": 1230664, "field": "name", "en": "Bear Witness", "hash": "d3b426b0113ec332", "src": "db2@1.60.1.70291"}
-{"id": 1230664, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70291"}
-{"id": 1230671, "field": "name", "en": "Reassemble the Blade", "hash": "36ce5151e23a6f11", "src": "db2@1.60.1.70291"}
-{"id": 1230671, "field": "description", "en": "Combine the Emblem of the Ashbringer, Reforged Blade of the Ashbringer, and the Hilt of the Ashbringer. ", "hash": "abb8282b2504edbb", "src": "db2@1.60.1.70291"}
-{"id": 1230673, "field": "name", "en": "[DNT] Kill Credit", "hash": "5787af819f4bc284", "src": "db2@1.60.1.70291"}
-{"id": 1230673, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70291"}
-{"id": 1230695, "field": "name", "en": "Cessation", "hash": "2191d2028d7e6717", "src": "db2@1.60.1.70291"}
-{"id": 1230697, "field": "name", "en": "Cessation", "hash": "2191d2028d7e6717", "src": "db2@1.60.1.70291"}
-{"id": 1230700, "field": "name", "en": "Blade Flurry", "hash": "5b462e5ee02f0510", "src": "db2@1.60.1.70291"}
-{"id": 1230700, "field": "description", "en": "Your next $n melee weapon swings strike an additional nearby opponent.", "hash": "015e68228d3c2cf7", "src": "db2@1.60.1.70291"}
-{"id": 1230700, "field": "aura", "en": "Blade Flurry.", "hash": "b4e9bb2ebaf23dc8", "src": "db2@1.60.1.70291"}
-{"id": 1230702, "field": "name", "en": "Sweeping Strikes", "hash": "efe80818d7ec0d24", "src": "db2@1.60.1.70291"}
-{"id": 1230702, "field": "description", "en": "Your next $n melee weapon swings strike an additional nearby opponent.", "hash": "015e68228d3c2cf7", "src": "db2@1.60.1.70291"}
-{"id": 1230702, "field": "aura", "en": "Sweeping Strikes.", "hash": "c3bc26d85c10b1e5", "src": "db2@1.60.1.70291"}
-{"id": 1230704, "field": "name", "en": "Sweeping Strikes", "hash": "efe80818d7ec0d24", "src": "db2@1.60.1.70291"}
-{"id": 1230704, "field": "description", "en": "Your next $n melee weapon swings strike an additional nearby opponent.", "hash": "015e68228d3c2cf7", "src": "db2@1.60.1.70291"}
-{"id": 1230704, "field": "aura", "en": "Sweeping Strikes.", "hash": "c3bc26d85c10b1e5", "src": "db2@1.60.1.70291"}
-{"id": 1230705, "field": "name", "en": "(DNT) Power Bar Manager Corrupted", "hash": "29a97050c89793d9", "src": "db2@1.60.1.70291"}
-{"id": 1230711, "field": "name", "en": "Cat Form", "hash": "ed928dc95b5c5fa4", "src": "db2@1.60.1.70291"}
-{"id": 1230711, "field": "description", "en": "Shapeshifts into a cat for $d., increasing attack power and allowing the use of various cat abilities.", "hash": "fe1149073ef092a3", "src": "db2@1.60.1.70291"}
-{"id": 1230711, "field": "aura", "en": "Shapeshifted into cat.\r\nMelee attack power increased.", "hash": "59bc0688f52be0c2", "src": "db2@1.60.1.70291"}
-{"id": 1230712, "field": "name", "en": "Sweeping Strikes", "hash": "efe80818d7ec0d24", "src": "db2@1.60.1.70291"}
-{"id": 1230712, "field": "description", "en": "Your next $n melee weapon swings strike an additional nearby opponent.", "hash": "015e68228d3c2cf7", "src": "db2@1.60.1.70291"}
-{"id": 1230712, "field": "aura", "en": "Sweeping Strikes.", "hash": "c3bc26d85c10b1e5", "src": "db2@1.60.1.70291"}
-{"id": 1230716, "field": "name", "en": "Bloodflame", "hash": "6ba0f61175de0b63", "src": "db2@1.60.1.70291"}
-{"id": 1230717, "field": "name", "en": "Bloodflame", "hash": "6ba0f61175de0b63", "src": "db2@1.60.1.70291"}
-{"id": 1230796, "field": "name", "en": "Tim's Test Weapon Visual", "hash": "aa33606a148d148c", "src": "db2@1.60.1.70291"}
-{"id": 1230807, "field": "name", "en": "Immolation Trap", "hash": "cedd401fe1cacd87", "src": "db2@1.60.1.70291"}
-{"id": 1230809, "field": "name", "en": "Bloodflame", "hash": "6ba0f61175de0b63", "src": "db2@1.60.1.70291"}
-{"id": 1230809, "field": "aura", "en": "Deals Shadowflame damage every second.", "hash": "7128f16a1fb7a787", "src": "db2@1.60.1.70291"}
-{"id": 1230812, "field": "name", "en": "(DNT) Ash Weather", "hash": "f2ca45413f4e7ad2", "src": "db2@1.60.1.70291"}
-{"id": 1230895, "field": "name", "en": "Ruinous Presence", "hash": "6ec4b71ca3fd7706", "src": "db2@1.60.1.70291"}
-{"id": 1230897, "field": "name", "en": "Ruinous Presence", "hash": "6ec4b71ca3fd7706", "src": "db2@1.60.1.70291"}
-{"id": 1230897, "field": "description", "en": "Maximum health reduced by $S1%.", "hash": "37c55b04fcbfc54f", "src": "db2@1.60.1.70291"}
-{"id": 1230897, "field": "aura", "en": "Maximum health reduced by $S1%.", "hash": "37c55b04fcbfc54f", "src": "db2@1.60.1.70291"}
-{"id": 1230899, "field": "name", "en": "Immolation Trap", "hash": "cedd401fe1cacd87", "src": "db2@1.60.1.70291"}
-{"id": 1230899, "field": "description", "en": "Throws a trap that will coat the one who triggers it in flame, dealing Fire damage and increasing damage taken.\r\n", "hash": "bf960b8f4395763a", "src": "db2@1.60.1.70291"}
-{"id": 1230908, "field": "name", "en": "Judge Unworthy", "hash": "94313b690b767fbb", "src": "db2@1.60.1.70291"}
-{"id": 1230908, "field": "aura", "en": "Knocked down and stunned.", "hash": "ed5f557d68da9b22", "src": "db2@1.60.1.70291"}
-{"id": 1230914, "field": "name", "en": "Flight Form", "hash": "4694181f23847f94", "src": "db2@1.60.1.70291"}
-{"id": 1230927, "field": "name", "en": "(DNT) Knights of the Crusade Cosmetic Aura", "hash": "6462f5dd46f3639f", "src": "db2@1.60.1.70291"}
-{"id": 1230940, "field": "name", "en": "(DNT) Golden Ghost Aura", "hash": "85a46431f6b0bafd", "src": "db2@1.60.1.70291"}
-{"id": 1230942, "field": "name", "en": "Heart of Light", "hash": "6d845056caa17436", "src": "db2@1.60.1.70291"}
-{"id": 1230942, "field": "description", "en": "Increases maximum health by $s1 for $d.", "hash": "173c41c44d3a8789", "src": "db2@1.60.1.70291"}
-{"id": 1230942, "field": "aura", "en": "Health increased by $s1.", "hash": "9cba3d80f34981e2", "src": "db2@1.60.1.70291"}
-{"id": 1230943, "field": "name", "en": "Abandoned Experiment", "hash": "289f66dfedacd1ee", "src": "db2@1.60.1.70291"}
-{"id": 1230943, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70291"}
-{"id": 1230944, "field": "name", "en": "Sir Dornel's Didgeridoo", "hash": "1f120451dd2a2b5f", "src": "db2@1.60.1.70291"}
-{"id": 1230944, "field": "description", "en": "Playing the didgeridoo summons a random beast to your side, increasing your physical abilities for $d.  May only be used while in combat.", "hash": "7883db3377e20a4c", "src": "db2@1.60.1.70291"}
-{"id": 1230944, "field": "aura", "en": "Didgeridoo played. Beast summoned.", "hash": "61299cf6c4f2bda9", "src": "db2@1.60.1.70291"}
-{"id": 1230948, "field": "name", "en": "Infusion of Souls", "hash": "b2ed61bc64b89cf5", "src": "db2@1.60.1.70291"}
-{"id": 1230948, "field": "description", "en": "The Global Cooldown of your offensive spells is reduced by ${$m1/-1000}.1 seconds.", "hash": "a6d72f7b412d2cd7", "src": "db2@1.60.1.70291"}
-{"id": 1230948, "field": "aura", "en": "The Global Cooldown of your offensive spells is reduced by ${$m1/-1000}.1 seconds.", "hash": "a6d72f7b412d2cd7", "src": "db2@1.60.1.70291"}
-{"id": 1230980, "field": "name", "en": "Stiltz's Standard", "hash": "f3bbb8de8465d357", "src": "db2@1.60.1.70291"}
-{"id": 1230980, "field": "description", "en": "Throw down the Standard of Stiltz, increasing the maximum health of all nearby allies by $1231903s1 for $d.", "hash": "94a7136df907c0c4", "src": "db2@1.60.1.70291"}
-{"id": 1230980, "field": "aura", "en": "Rallied by the Standard.", "hash": "b6fa816c6635b067", "src": "db2@1.60.1.70291"}
-{"id": 1230990, "field": "name", "en": "Molten Armaments", "hash": "bf175b7078901f2a", "src": "db2@1.60.1.70291"}
-{"id": 1230990, "field": "description", "en": "Imbued weapons now cause melee attacks to inflict $1230996s1 additional Fire damage.", "hash": "b0d270d46cb09755", "src": "db2@1.60.1.70291"}
-{"id": 1230990, "field": "aura", "en": "Weapons are imbued with fire.", "hash": "a56b93161255870f", "src": "db2@1.60.1.70291"}
-{"id": 1230992, "field": "name", "en": "Fel Fumes", "hash": "283d3e379c5e6528", "src": "db2@1.60.1.70291"}
-{"id": 1230992, "field": "description", "en": "You feel a sickening feeling. Turn back now!", "hash": "00a959670079f674", "src": "db2@1.60.1.70291"}
-{"id": 1230992, "field": "aura", "en": "A crushing darkness envelops you...", "hash": "7e9d050537a15f3e", "src": "db2@1.60.1.70291"}
-{"id": 1230996, "field": "name", "en": "Imbued Assault", "hash": "db122e8a6799e56c", "src": "db2@1.60.1.70291"}
-{"id": 1230996, "field": "description", "en": "Inflicts $s1 Fire damage and an additional $s2 Fire damage every $t2 sec for $d.\r\n", "hash": "7be2b1ea9f5bd772", "src": "db2@1.60.1.70291"}
-{"id": 1230996, "field": "aura", "en": "Inflicts $s2 Fire damage every $t2 sec.", "hash": "c2271fc2ea3e4cbd", "src": "db2@1.60.1.70291"}
-{"id": 1230997, "field": "name", "en": "Molten Decay", "hash": "8ddea76c43ae80d6", "src": "db2@1.60.1.70291"}
-{"id": 1230998, "field": "name", "en": "Molten Remnant", "hash": "d5aca81947e299be", "src": "db2@1.60.1.70291"}
+{"id": 1230086, "field": "name", "en": "Threat of Arrest", "hash": "4be1e9d96bf64801", "src": "db2@1.60.1.70338"}
+{"id": 1230086, "field": "description", "en": "Threaten to put the target in stocks, causing them to run in fear for $d.", "hash": "6aa8cc4fe560941a", "src": "db2@1.60.1.70338"}
+{"id": 1230086, "field": "aura", "en": "Running away in fear.", "hash": "f07ba538f7857903", "src": "db2@1.60.1.70338"}
+{"id": 1230090, "field": "name", "en": "Summon Weapon", "hash": "5a5bee861eb9a988", "src": "db2@1.60.1.70338"}
+{"id": 1230092, "field": "name", "en": "(DNT) Ride Caldoran Vehicle", "hash": "110e1fc2d6ffeb31", "src": "db2@1.60.1.70338"}
+{"id": 1230098, "field": "name", "en": "Boosted Stats", "hash": "20603ef90a75cecc", "src": "db2@1.60.1.70338"}
+{"id": 1230099, "field": "name", "en": "Rending Slash", "hash": "05c0f729cc16f5b1", "src": "db2@1.60.1.70338"}
+{"id": 1230099, "field": "description", "en": "Inflicts $s1% of weapon damage to enemies in front of the caster, and causes a Searing Wound on the caster's primary target.\r\n", "hash": "0677e3cac297a88e", "src": "db2@1.60.1.70338"}
+{"id": 1230102, "field": "name", "en": "Open Wound", "hash": "7d91b77e5dee8d50", "src": "db2@1.60.1.70338"}
+{"id": 1230102, "field": "description", "en": "Deals $1230099s1 damage every $1230102t1 sec for $1230102d. Stacks.", "hash": "419827f922223ee3", "src": "db2@1.60.1.70338"}
+{"id": 1230102, "field": "aura", "en": "Suffering $s1 Physical damage every $t1 sec.", "hash": "ec1bbb750f4a3a11", "src": "db2@1.60.1.70338"}
+{"id": 1230105, "field": "name", "en": "Wild Aperture", "hash": "eeb88ee1f7551039", "src": "db2@1.60.1.70338"}
+{"id": 1230105, "field": "description", "en": "Calls the might of the wild creating fissures that erupt dealing damage to nearby foes in front of the caster", "hash": "eb7ea3becd13e827", "src": "db2@1.60.1.70338"}
+{"id": 1230106, "field": "name", "en": "Wild Fissure", "hash": "a6658fbd55a90553", "src": "db2@1.60.1.70338"}
+{"id": 1230106, "field": "description", "en": "Deals damage to enemies in the blast.", "hash": "f8b7021352b64c80", "src": "db2@1.60.1.70338"}
+{"id": 1230117, "field": "name", "en": "First Aid Kit", "hash": "ac6617d413b0822b", "src": "db2@1.60.1.70338"}
+{"id": 1230117, "field": "description", "en": "Craft a First Aid Kit.", "hash": "d4c55d1ba1b0809c", "src": "db2@1.60.1.70338"}
+{"id": 1230123, "field": "name", "en": "Wild Fissure", "hash": "a6658fbd55a90553", "src": "db2@1.60.1.70338"}
+{"id": 1230123, "field": "description", "en": "Deals $s1 Nature damage to enemies in the blast.", "hash": "7185d351d8857205", "src": "db2@1.60.1.70338"}
+{"id": 1230124, "field": "name", "en": "Boosted Stamina", "hash": "52eb07376ed59875", "src": "db2@1.60.1.70338"}
+{"id": 1230125, "field": "name", "en": "Wrath of the Crusade", "hash": "943f07f8c11cd49d", "src": "db2@1.60.1.70338"}
+{"id": 1230125, "field": "aura", "en": "Unrestrained light spills forth from the Ashbringer, dealing Holy damage every second.", "hash": "bd16af3625afe800", "src": "db2@1.60.1.70338"}
+{"id": 1230137, "field": "name", "en": "Wrath of the Crusade", "hash": "943f07f8c11cd49d", "src": "db2@1.60.1.70338"}
+{"id": 1230145, "field": "name", "en": "Wrath of the Crusade", "hash": "943f07f8c11cd49d", "src": "db2@1.60.1.70338"}
+{"id": 1230161, "field": "name", "en": "Lodestone", "hash": "c809e41f9fc8af34", "src": "db2@1.60.1.70338"}
+{"id": 1230161, "field": "description", "en": "Craft a Lodestone.", "hash": "0dffc67941dff968", "src": "db2@1.60.1.70338"}
+{"id": 1230164, "field": "name", "en": "Boosted Attack Power", "hash": "94b959425b1d3572", "src": "db2@1.60.1.70338"}
+{"id": 1230171, "field": "name", "en": "Sharpening Wheel", "hash": "d8707d4dc5b9be35", "src": "db2@1.60.1.70338"}
+{"id": 1230171, "field": "description", "en": "Craft a Sharpening Wheel.", "hash": "b9ede7c1ef2469a1", "src": "db2@1.60.1.70338"}
+{"id": 1230172, "field": "name", "en": "Extra Strength", "hash": "817bbf6afd004ab8", "src": "db2@1.60.1.70338"}
+{"id": 1230200, "field": "name", "en": "Enervate", "hash": "f29783568aca28ff", "src": "db2@1.60.1.70338"}
+{"id": 1230200, "field": "description", "en": "Inflicts $s2 Nature damage to an enemy and increases the Nature damage it takes by $s1% for $d.\r\n", "hash": "1cb219acca094b8d", "src": "db2@1.60.1.70338"}
+{"id": 1230200, "field": "aura", "en": "Nature damage taken is increased by $s1%. $s3 Nature damage every second.", "hash": "abbf78ea68e5e065", "src": "db2@1.60.1.70338"}
+{"id": 1230203, "field": "name", "en": "Incite Truth", "hash": "9634ee3b7058ddcd", "src": "db2@1.60.1.70338"}
+{"id": 1230203, "field": "description", "en": "Deal $s1 Holy damage to the target and increase their damage dealt by $s2%.", "hash": "3fccb5a142fbce05", "src": "db2@1.60.1.70338"}
+{"id": 1230203, "field": "aura", "en": "Damage dealt increased by $w2%.", "hash": "d7cc9fd9f771c1f3", "src": "db2@1.60.1.70338"}
+{"id": 1230206, "field": "name", "en": "Snuff Out", "hash": "3617d52a530b7de1", "src": "db2@1.60.1.70338"}
+{"id": 1230206, "field": "description", "en": "Snuff out the target's inner flame, dealing $s1% of their maximum health as Holy Damage per stack of Incite Holy Flame. Survivors will suffer.", "hash": "684a649505267bf4", "src": "db2@1.60.1.70338"}
+{"id": 1230206, "field": "aura", "en": "Damage taken from Holy spells and abilities increased by $w3. Enemy detection range increased.", "hash": "6b94960dd8274329", "src": "db2@1.60.1.70338"}
+{"id": 1230215, "field": "name", "en": "Crimson Smite", "hash": "ea6ef4d970ade89d", "src": "db2@1.60.1.70338"}
+{"id": 1230215, "field": "description", "en": "Smite an enemy for $s1 Holy damage. Heal for $s2% of the damage dealt.", "hash": "d5fc62d58adc915f", "src": "db2@1.60.1.70338"}
+{"id": 1230224, "field": "name", "en": "Seal of the Dawn", "hash": "576a8d0cbf1a3693", "src": "db2@1.60.1.70338"}
+{"id": 1230224, "field": "description", "en": "Unlocks your potential while inside Naxxramas.  Increasing your damage by ${$m1/100}.2% and your health by ${$m2/100}.2% for each piece of Sanctified armor equipped.", "hash": "8b6a6a81ed814079", "src": "db2@1.60.1.70338"}
+{"id": 1230225, "field": "name", "en": "(DNT) Power Up Cosmetic", "hash": "b5f16126e95e4129", "src": "db2@1.60.1.70338"}
+{"id": 1230228, "field": "name", "en": "Pity", "hash": "0ad3faf6d15e7f43", "src": "db2@1.60.1.70338"}
+{"id": 1230228, "field": "description", "en": "Heal the enemy for $s1% of their maximum health, however they will suffer $s2% of their maximum health every $t2 sec until they leave combat.", "hash": "79bbf67a99283515", "src": "db2@1.60.1.70338"}
+{"id": 1230228, "field": "aura", "en": "Suffering $w2% of your maximum health every $t2 sec until you exit combat.", "hash": "599a26f8381d5db2", "src": "db2@1.60.1.70338"}
+{"id": 1230239, "field": "name", "en": "Deep Slumber", "hash": "1996b0c4fce3a400", "src": "db2@1.60.1.70338"}
+{"id": 1230242, "field": "name", "en": "Enkindle", "hash": "38a438683e6dd626", "src": "db2@1.60.1.70338"}
+{"id": 1230242, "field": "description", "en": "Inflicts $s2 Fire damage to an enemy and increases the Fire damage it takes by $s1% for $d.\r\n", "hash": "d3356f040ac2c8bf", "src": "db2@1.60.1.70338"}
+{"id": 1230242, "field": "aura", "en": "Fire damage taken is increased by $s1%. $s3 Fire damage every second.", "hash": "6a3280bdb8fc9b9e", "src": "db2@1.60.1.70338"}
+{"id": 1230255, "field": "name", "en": "Entangling Shot", "hash": "42e7dd05c218ef12", "src": "db2@1.60.1.70338"}
+{"id": 1230255, "field": "description", "en": "Fires a shot infused with magic that entangles enemies in a small area.", "hash": "fb8e3bc88874b09d", "src": "db2@1.60.1.70338"}
+{"id": 1230268, "field": "name", "en": "Dying Light", "hash": "7ae642113224b641", "src": "db2@1.60.1.70338"}
+{"id": 1230270, "field": "name", "en": "Dying Light", "hash": "7ae642113224b641", "src": "db2@1.60.1.70338"}
+{"id": 1230271, "field": "name", "en": "Dying Light", "hash": "7ae642113224b641", "src": "db2@1.60.1.70338"}
+{"id": 1230276, "field": "name", "en": "Blessed Fetters", "hash": "7e45d9468a4ea8d2", "src": "db2@1.60.1.70338"}
+{"id": 1230276, "field": "aura", "en": "Held in place by divine fetters. Unable to move or act.", "hash": "24e9a69de7090cf3", "src": "db2@1.60.1.70338"}
+{"id": 1230279, "field": "name", "en": "Entangling Shot", "hash": "42e7dd05c218ef12", "src": "db2@1.60.1.70338"}
+{"id": 1230283, "field": "name", "en": "Entangling Shot", "hash": "42e7dd05c218ef12", "src": "db2@1.60.1.70338"}
+{"id": 1230283, "field": "description", "en": "Entangles an enemy in roots, inflicting Nature damage every $t2 sec. and immobilizing it for up to $d.", "hash": "ed46cb1a9bc2abfc", "src": "db2@1.60.1.70338"}
+{"id": 1230283, "field": "aura", "en": "Immobilized.\r\nNature damage inflicted every $t2 sec.", "hash": "e6768e6a91f2334b", "src": "db2@1.60.1.70338"}
+{"id": 1230288, "field": "name", "en": "Gol'gere Death", "hash": "2d5cba7d3274e77d", "src": "db2@1.60.1.70338"}
+{"id": 1230292, "field": "name", "en": "Profane Inferno", "hash": "73bb6d47270dfe07", "src": "db2@1.60.1.70338"}
+{"id": 1230295, "field": "name", "en": "Profane Inferno", "hash": "73bb6d47270dfe07", "src": "db2@1.60.1.70338"}
+{"id": 1230312, "field": "name", "en": "(DNT) Fire Visuals", "hash": "b4bf00f581b72747", "src": "db2@1.60.1.70338"}
+{"id": 1230313, "field": "name", "en": "(DNT) Fire Visuals", "hash": "b4bf00f581b72747", "src": "db2@1.60.1.70338"}
+{"id": 1230314, "field": "name", "en": "Cat Form", "hash": "ed928dc95b5c5fa4", "src": "db2@1.60.1.70338"}
+{"id": 1230314, "field": "description", "en": "Shapeshifts into a cat for $d., increasing attack power and allowing the use of various cat abilities.", "hash": "fe1149073ef092a3", "src": "db2@1.60.1.70338"}
+{"id": 1230314, "field": "aura", "en": "Shapeshifted into cat.\r\nMelee attack power increased.", "hash": "59bc0688f52be0c2", "src": "db2@1.60.1.70338"}
+{"id": 1230319, "field": "name", "en": "Vengeful Rage", "hash": "c5edb35f70ea337d", "src": "db2@1.60.1.70338"}
+{"id": 1230319, "field": "description", "en": "The death of a companion awakens a surge of energy, increasing damage dealt by $s1% and attack speed by $s3%.\r\n", "hash": "4bfe8e44c585fa03", "src": "db2@1.60.1.70338"}
+{"id": 1230319, "field": "aura", "en": "Damage dealt increased by $s1%.\r\nAttack speed increased by $s3%.", "hash": "26cd84b457c98394", "src": "db2@1.60.1.70338"}
+{"id": 1230325, "field": "name", "en": "Glacial Aegis", "hash": "f3f2aba4b20213e0", "src": "db2@1.60.1.70338"}
+{"id": 1230326, "field": "name", "en": "Glacial Aegis", "hash": "f3f2aba4b20213e0", "src": "db2@1.60.1.70338"}
+{"id": 1230328, "field": "name", "en": "Glacial Aegis", "hash": "f3f2aba4b20213e0", "src": "db2@1.60.1.70338"}
+{"id": 1230328, "field": "aura", "en": "Protected by a shield of magical frost.", "hash": "4245f5550362166c", "src": "db2@1.60.1.70338"}
+{"id": 1230330, "field": "name", "en": "Glacial Aegis", "hash": "f3f2aba4b20213e0", "src": "db2@1.60.1.70338"}
+{"id": 1230333, "field": "name", "en": "Conjure Portal", "hash": "bd4bbec6274b3424", "src": "db2@1.60.1.70338"}
+{"id": 1230361, "field": "name", "en": "Radiant Portal", "hash": "7899133f10278a8f", "src": "db2@1.60.1.70338"}
+{"id": 1230362, "field": "name", "en": "Gol'gere Despawn", "hash": "187d8429c33f7cb1", "src": "db2@1.60.1.70338"}
+{"id": 1230438, "field": "name", "en": "Shoot", "hash": "befeed7c70f5ab5b", "src": "db2@1.60.1.70338"}
+{"id": 1230438, "field": "description", "en": "Shoots at an enemy, inflicting Holy damage.", "hash": "0f5106ba3be68b51", "src": "db2@1.60.1.70338"}
+{"id": 1230509, "field": "name", "en": "Collapsing Cathedral", "hash": "bfbc506136ba2adc", "src": "db2@1.60.1.70338"}
+{"id": 1230510, "field": "name", "en": "Collapsing Cathedral", "hash": "bfbc506136ba2adc", "src": "db2@1.60.1.70338"}
+{"id": 1230511, "field": "name", "en": "Collapsing Cathedral", "hash": "bfbc506136ba2adc", "src": "db2@1.60.1.70338"}
+{"id": 1230512, "field": "name", "en": "Collapsing Cathedral", "hash": "bfbc506136ba2adc", "src": "db2@1.60.1.70338"}
+{"id": 1230512, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70338"}
+{"id": 1230517, "field": "name", "en": "[DNT] Kill Credit", "hash": "5787af819f4bc284", "src": "db2@1.60.1.70338"}
+{"id": 1230517, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70338"}
+{"id": 1230537, "field": "name", "en": "Foreman Bark", "hash": "71e56094ccfdb015", "src": "db2@1.60.1.70338"}
+{"id": 1230538, "field": "name", "en": "Call Thisalee", "hash": "93b21617bdc5abb5", "src": "db2@1.60.1.70338"}
+{"id": 1230538, "field": "description", "en": "Attempt to make contact with the disembodied voice of The Ashbringer.", "hash": "728f118df5002a78", "src": "db2@1.60.1.70338"}
+{"id": 1230545, "field": "name", "en": "Deep Slumber", "hash": "1996b0c4fce3a400", "src": "db2@1.60.1.70338"}
+{"id": 1230548, "field": "name", "en": "(DNT) Move to Vehicle", "hash": "5ef31a59384bf151", "src": "db2@1.60.1.70338"}
+{"id": 1230549, "field": "name", "en": "[DNT] Combat Check", "hash": "af684ca63ff0b4e0", "src": "db2@1.60.1.70338"}
+{"id": 1230552, "field": "name", "en": "Boosted Spell Power", "hash": "d4a33ac055d599a9", "src": "db2@1.60.1.70338"}
+{"id": 1230552, "field": "aura", "en": "Spell Damage increased by up to $w1  and Spell Healing increased by up to $w2.", "hash": "343a8b7238f36b21", "src": "db2@1.60.1.70338"}
+{"id": 1230558, "field": "name", "en": "[DNT] Vehicle Force Cast", "hash": "f4a1014a769329b0", "src": "db2@1.60.1.70338"}
+{"id": 1230564, "field": "name", "en": "Mana Well", "hash": "cafcee01bc4b49ef", "src": "db2@1.60.1.70338"}
+{"id": 1230564, "field": "description", "en": "Craft a Mana Well.", "hash": "905dd5242166d920", "src": "db2@1.60.1.70338"}
+{"id": 1230576, "field": "name", "en": "Panic", "hash": "89656520f2657d95", "src": "db2@1.60.1.70338"}
+{"id": 1230576, "field": "aura", "en": "Fleeing in fear.", "hash": "fa67e4a8461af331", "src": "db2@1.60.1.70338"}
+{"id": 1230578, "field": "name", "en": "Hyjal Teleport", "hash": "5c6545a68ce4157b", "src": "db2@1.60.1.70338"}
+{"id": 1230578, "field": "description", "en": "Sends player to Blackfathom Deeps", "hash": "952d86877648516c", "src": "db2@1.60.1.70338"}
+{"id": 1230579, "field": "name", "en": "Holding on For Dear Life", "hash": "aaaf4e40e68e0dc2", "src": "db2@1.60.1.70338"}
+{"id": 1230583, "field": "name", "en": "Prototype Magnet", "hash": "ccd4f1d23ff98e1b", "src": "db2@1.60.1.70338"}
+{"id": 1230583, "field": "description", "en": "Briefly reveal and supercharge your prototype magnet in attempt to catch stray metallic objects.", "hash": "2133869e06031add", "src": "db2@1.60.1.70338"}
+{"id": 1230587, "field": "name", "en": "Boosted Mana Regeneration", "hash": "8b4dc10c489ae95d", "src": "db2@1.60.1.70338"}
+{"id": 1230589, "field": "name", "en": "Reveal Metal", "hash": "9c4a3c5634e33b58", "src": "db2@1.60.1.70338"}
+{"id": 1230595, "field": "name", "en": "Ashbringer", "hash": "e201e97bef197416", "src": "db2@1.60.1.70338"}
+{"id": 1230596, "field": "name", "en": "Ashbringer", "hash": "e201e97bef197416", "src": "db2@1.60.1.70338"}
+{"id": 1230596, "field": "aura", "en": "Strength increased by $s1.", "hash": "90d8a2f83ee1c8bf", "src": "db2@1.60.1.70338"}
+{"id": 1230613, "field": "name", "en": "Immolation Trap", "hash": "cedd401fe1cacd87", "src": "db2@1.60.1.70338"}
+{"id": 1230613, "field": "description", "en": "Throws a trap that will coat the one who triggers it in flame, dealing Fire damage and increasing damage taken.\r\n", "hash": "bf960b8f4395763a", "src": "db2@1.60.1.70338"}
+{"id": 1230633, "field": "name", "en": "Immolation Trap", "hash": "cedd401fe1cacd87", "src": "db2@1.60.1.70338"}
+{"id": 1230633, "field": "description", "en": "Calls forth magma eruptions to damage nearby foes.\r\n", "hash": "ed4b74887d1b32b1", "src": "db2@1.60.1.70338"}
+{"id": 1230636, "field": "name", "en": "(DNT) Caldoran RP Stun", "hash": "2aaa81fbd40673aa", "src": "db2@1.60.1.70338"}
+{"id": 1230637, "field": "name", "en": "Fiery Eruption", "hash": "d5f682dc61ff719d", "src": "db2@1.60.1.70338"}
+{"id": 1230637, "field": "description", "en": "Deals $s1 Fire damage to enemies in the blast.\r\n", "hash": "618f12fbc93377c5", "src": "db2@1.60.1.70338"}
+{"id": 1230638, "field": "name", "en": "Fiery Eruption", "hash": "d5f682dc61ff719d", "src": "db2@1.60.1.70338"}
+{"id": 1230638, "field": "description", "en": "Deals damage to enemies in the blast.\r\n", "hash": "f8b7021352b64c80", "src": "db2@1.60.1.70338"}
+{"id": 1230639, "field": "name", "en": "Immolation Trap", "hash": "cedd401fe1cacd87", "src": "db2@1.60.1.70338"}
+{"id": 1230643, "field": "name", "en": "Enchanted Lute", "hash": "94fb1453e4194e9c", "src": "db2@1.60.1.70338"}
+{"id": 1230643, "field": "description", "en": "Craft an Enchanted Lute.", "hash": "d4b0a8cf5b7fcea8", "src": "db2@1.60.1.70338"}
+{"id": 1230646, "field": "name", "en": "[DNT] Vehicle Force Cast", "hash": "f4a1014a769329b0", "src": "db2@1.60.1.70338"}
+{"id": 1230647, "field": "name", "en": "Holding on For Dear Life", "hash": "aaaf4e40e68e0dc2", "src": "db2@1.60.1.70338"}
+{"id": 1230649, "field": "name", "en": "Everlook Teleport", "hash": "f68b7d5151e856c2", "src": "db2@1.60.1.70338"}
+{"id": 1230649, "field": "description", "en": "Sends player to Blackfathom Deeps", "hash": "952d86877648516c", "src": "db2@1.60.1.70338"}
+{"id": 1230653, "field": "name", "en": "Boosted Stats", "hash": "20603ef90a75cecc", "src": "db2@1.60.1.70338"}
+{"id": 1230656, "field": "name", "en": "Reagent Bot", "hash": "9b5fbc1e475c0e43", "src": "db2@1.60.1.70338"}
+{"id": 1230656, "field": "description", "en": "Craft a Reagent Bot.", "hash": "8ca2797fafbc0327", "src": "db2@1.60.1.70338"}
+{"id": 1230664, "field": "name", "en": "Bear Witness", "hash": "d3b426b0113ec332", "src": "db2@1.60.1.70338"}
+{"id": 1230664, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70338"}
+{"id": 1230671, "field": "name", "en": "Reassemble the Blade", "hash": "36ce5151e23a6f11", "src": "db2@1.60.1.70338"}
+{"id": 1230671, "field": "description", "en": "Combine the Emblem of the Ashbringer, Reforged Blade of the Ashbringer, and the Hilt of the Ashbringer. ", "hash": "abb8282b2504edbb", "src": "db2@1.60.1.70338"}
+{"id": 1230673, "field": "name", "en": "[DNT] Kill Credit", "hash": "5787af819f4bc284", "src": "db2@1.60.1.70338"}
+{"id": 1230673, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70338"}
+{"id": 1230695, "field": "name", "en": "Cessation", "hash": "2191d2028d7e6717", "src": "db2@1.60.1.70338"}
+{"id": 1230697, "field": "name", "en": "Cessation", "hash": "2191d2028d7e6717", "src": "db2@1.60.1.70338"}
+{"id": 1230700, "field": "name", "en": "Blade Flurry", "hash": "5b462e5ee02f0510", "src": "db2@1.60.1.70338"}
+{"id": 1230700, "field": "description", "en": "Your next $n melee weapon swings strike an additional nearby opponent.", "hash": "015e68228d3c2cf7", "src": "db2@1.60.1.70338"}
+{"id": 1230700, "field": "aura", "en": "Blade Flurry.", "hash": "b4e9bb2ebaf23dc8", "src": "db2@1.60.1.70338"}
+{"id": 1230702, "field": "name", "en": "Sweeping Strikes", "hash": "efe80818d7ec0d24", "src": "db2@1.60.1.70338"}
+{"id": 1230702, "field": "description", "en": "Your next $n melee weapon swings strike an additional nearby opponent.", "hash": "015e68228d3c2cf7", "src": "db2@1.60.1.70338"}
+{"id": 1230702, "field": "aura", "en": "Sweeping Strikes.", "hash": "c3bc26d85c10b1e5", "src": "db2@1.60.1.70338"}
+{"id": 1230704, "field": "name", "en": "Sweeping Strikes", "hash": "efe80818d7ec0d24", "src": "db2@1.60.1.70338"}
+{"id": 1230704, "field": "description", "en": "Your next $n melee weapon swings strike an additional nearby opponent.", "hash": "015e68228d3c2cf7", "src": "db2@1.60.1.70338"}
+{"id": 1230704, "field": "aura", "en": "Sweeping Strikes.", "hash": "c3bc26d85c10b1e5", "src": "db2@1.60.1.70338"}
+{"id": 1230705, "field": "name", "en": "(DNT) Power Bar Manager Corrupted", "hash": "29a97050c89793d9", "src": "db2@1.60.1.70338"}
+{"id": 1230711, "field": "name", "en": "Cat Form", "hash": "ed928dc95b5c5fa4", "src": "db2@1.60.1.70338"}
+{"id": 1230711, "field": "description", "en": "Shapeshifts into a cat for $d., increasing attack power and allowing the use of various cat abilities.", "hash": "fe1149073ef092a3", "src": "db2@1.60.1.70338"}
+{"id": 1230711, "field": "aura", "en": "Shapeshifted into cat.\r\nMelee attack power increased.", "hash": "59bc0688f52be0c2", "src": "db2@1.60.1.70338"}
+{"id": 1230712, "field": "name", "en": "Sweeping Strikes", "hash": "efe80818d7ec0d24", "src": "db2@1.60.1.70338"}
+{"id": 1230712, "field": "description", "en": "Your next $n melee weapon swings strike an additional nearby opponent.", "hash": "015e68228d3c2cf7", "src": "db2@1.60.1.70338"}
+{"id": 1230712, "field": "aura", "en": "Sweeping Strikes.", "hash": "c3bc26d85c10b1e5", "src": "db2@1.60.1.70338"}
+{"id": 1230716, "field": "name", "en": "Bloodflame", "hash": "6ba0f61175de0b63", "src": "db2@1.60.1.70338"}
+{"id": 1230717, "field": "name", "en": "Bloodflame", "hash": "6ba0f61175de0b63", "src": "db2@1.60.1.70338"}
+{"id": 1230796, "field": "name", "en": "Tim's Test Weapon Visual", "hash": "aa33606a148d148c", "src": "db2@1.60.1.70338"}
+{"id": 1230807, "field": "name", "en": "Immolation Trap", "hash": "cedd401fe1cacd87", "src": "db2@1.60.1.70338"}
+{"id": 1230809, "field": "name", "en": "Bloodflame", "hash": "6ba0f61175de0b63", "src": "db2@1.60.1.70338"}
+{"id": 1230809, "field": "aura", "en": "Deals Shadowflame damage every second.", "hash": "7128f16a1fb7a787", "src": "db2@1.60.1.70338"}
+{"id": 1230812, "field": "name", "en": "(DNT) Ash Weather", "hash": "f2ca45413f4e7ad2", "src": "db2@1.60.1.70338"}
+{"id": 1230895, "field": "name", "en": "Ruinous Presence", "hash": "6ec4b71ca3fd7706", "src": "db2@1.60.1.70338"}
+{"id": 1230897, "field": "name", "en": "Ruinous Presence", "hash": "6ec4b71ca3fd7706", "src": "db2@1.60.1.70338"}
+{"id": 1230897, "field": "description", "en": "Maximum health reduced by $S1%.", "hash": "37c55b04fcbfc54f", "src": "db2@1.60.1.70338"}
+{"id": 1230897, "field": "aura", "en": "Maximum health reduced by $S1%.", "hash": "37c55b04fcbfc54f", "src": "db2@1.60.1.70338"}
+{"id": 1230899, "field": "name", "en": "Immolation Trap", "hash": "cedd401fe1cacd87", "src": "db2@1.60.1.70338"}
+{"id": 1230899, "field": "description", "en": "Throws a trap that will coat the one who triggers it in flame, dealing Fire damage and increasing damage taken.\r\n", "hash": "bf960b8f4395763a", "src": "db2@1.60.1.70338"}
+{"id": 1230908, "field": "name", "en": "Judge Unworthy", "hash": "94313b690b767fbb", "src": "db2@1.60.1.70338"}
+{"id": 1230908, "field": "aura", "en": "Knocked down and stunned.", "hash": "ed5f557d68da9b22", "src": "db2@1.60.1.70338"}
+{"id": 1230914, "field": "name", "en": "Flight Form", "hash": "4694181f23847f94", "src": "db2@1.60.1.70338"}
+{"id": 1230927, "field": "name", "en": "(DNT) Knights of the Crusade Cosmetic Aura", "hash": "6462f5dd46f3639f", "src": "db2@1.60.1.70338"}
+{"id": 1230940, "field": "name", "en": "(DNT) Golden Ghost Aura", "hash": "85a46431f6b0bafd", "src": "db2@1.60.1.70338"}
+{"id": 1230942, "field": "name", "en": "Heart of Light", "hash": "6d845056caa17436", "src": "db2@1.60.1.70338"}
+{"id": 1230942, "field": "description", "en": "Increases maximum health by $s1 for $d.", "hash": "173c41c44d3a8789", "src": "db2@1.60.1.70338"}
+{"id": 1230942, "field": "aura", "en": "Health increased by $s1.", "hash": "9cba3d80f34981e2", "src": "db2@1.60.1.70338"}
+{"id": 1230943, "field": "name", "en": "Abandoned Experiment", "hash": "289f66dfedacd1ee", "src": "db2@1.60.1.70338"}
+{"id": 1230943, "field": "aura", "en": "Attack speed increased by $s1%.", "hash": "8859e2db81bfd99e", "src": "db2@1.60.1.70338"}
+{"id": 1230944, "field": "name", "en": "Sir Dornel's Didgeridoo", "hash": "1f120451dd2a2b5f", "src": "db2@1.60.1.70338"}
+{"id": 1230944, "field": "description", "en": "Playing the didgeridoo summons a random beast to your side, increasing your physical abilities for $d.  May only be used while in combat.", "hash": "7883db3377e20a4c", "src": "db2@1.60.1.70338"}
+{"id": 1230944, "field": "aura", "en": "Didgeridoo played. Beast summoned.", "hash": "61299cf6c4f2bda9", "src": "db2@1.60.1.70338"}
+{"id": 1230948, "field": "name", "en": "Infusion of Souls", "hash": "b2ed61bc64b89cf5", "src": "db2@1.60.1.70338"}
+{"id": 1230948, "field": "description", "en": "The Global Cooldown of your offensive spells is reduced by ${$m1/-1000}.1 seconds.", "hash": "a6d72f7b412d2cd7", "src": "db2@1.60.1.70338"}
+{"id": 1230948, "field": "aura", "en": "The Global Cooldown of your offensive spells is reduced by ${$m1/-1000}.1 seconds.", "hash": "a6d72f7b412d2cd7", "src": "db2@1.60.1.70338"}
+{"id": 1230980, "field": "name", "en": "Stiltz's Standard", "hash": "f3bbb8de8465d357", "src": "db2@1.60.1.70338"}
+{"id": 1230980, "field": "description", "en": "Throw down the Standard of Stiltz, increasing the maximum health of all nearby allies by $1231903s1 for $d.", "hash": "94a7136df907c0c4", "src": "db2@1.60.1.70338"}
+{"id": 1230980, "field": "aura", "en": "Rallied by the Standard.", "hash": "b6fa816c6635b067", "src": "db2@1.60.1.70338"}
+{"id": 1230990, "field": "name", "en": "Molten Armaments", "hash": "bf175b7078901f2a", "src": "db2@1.60.1.70338"}
+{"id": 1230990, "field": "description", "en": "Imbued weapons now cause melee attacks to inflict $1230996s1 additional Fire damage.", "hash": "b0d270d46cb09755", "src": "db2@1.60.1.70338"}
+{"id": 1230990, "field": "aura", "en": "Weapons are imbued with fire.", "hash": "a56b93161255870f", "src": "db2@1.60.1.70338"}
+{"id": 1230992, "field": "name", "en": "Fel Fumes", "hash": "283d3e379c5e6528", "src": "db2@1.60.1.70338"}
+{"id": 1230992, "field": "description", "en": "You feel a sickening feeling. Turn back now!", "hash": "00a959670079f674", "src": "db2@1.60.1.70338"}
+{"id": 1230992, "field": "aura", "en": "A crushing darkness envelops you...", "hash": "7e9d050537a15f3e", "src": "db2@1.60.1.70338"}
+{"id": 1230996, "field": "name", "en": "Imbued Assault", "hash": "db122e8a6799e56c", "src": "db2@1.60.1.70338"}
+{"id": 1230996, "field": "description", "en": "Inflicts $s1 Fire damage and an additional $s2 Fire damage every $t2 sec for $d.\r\n", "hash": "7be2b1ea9f5bd772", "src": "db2@1.60.1.70338"}
+{"id": 1230996, "field": "aura", "en": "Inflicts $s2 Fire damage every $t2 sec.", "hash": "c2271fc2ea3e4cbd", "src": "db2@1.60.1.70338"}
+{"id": 1230997, "field": "name", "en": "Molten Decay", "hash": "8ddea76c43ae80d6", "src": "db2@1.60.1.70338"}
+{"id": 1230998, "field": "name", "en": "Molten Remnant", "hash": "d5aca81947e299be", "src": "db2@1.60.1.70338"}

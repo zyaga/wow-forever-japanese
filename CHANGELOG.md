@@ -9,6 +9,13 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Added
+- Japanese for the quests Forever build 1.60.1.70338 opens (Jarl Needs a Blade, Rotgath Stonebeard and A Quick Craft: titles, objectives and descriptions, with word readings), read aloud in Japanese.
+- The Medal of Courage tooltip is in Japanese: its new text on this build (lower hit chance of Fear effects against you) got a new translation, replacing an old one that named the wrong stat.
+
+### Changed
+- The game text is read from Forever build 1.60.1.70338.
+
 ## 0.1.0 - 2026-10-10
 
 ### Added

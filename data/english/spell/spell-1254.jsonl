@@ -1,125 +1,125 @@
-{"id": 1254002, "field": "name", "en": "Summon Undead", "hash": "01b2c05ece70050c", "src": "db2@1.60.1.70291"}
-{"id": 1254017, "field": "name", "en": "Death Pact", "hash": "7f4d25906a353243", "src": "db2@1.60.1.70291"}
-{"id": 1254021, "field": "name", "en": "Lift", "hash": "0a4abd5b9bbcf0d2", "src": "db2@1.60.1.70291"}
-{"id": 1254026, "field": "name", "en": "Death Pact", "hash": "7f4d25906a353243", "src": "db2@1.60.1.70291"}
-{"id": 1254090, "field": "name", "en": "Sharpen the Tools", "hash": "09162c0f6de8a4f9", "src": "db2@1.60.1.70291"}
-{"id": 1254114, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70291"}
-{"id": 1254115, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70291"}
-{"id": 1254164, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70291"}
-{"id": 1254170, "field": "name", "en": "Roll the dice!", "hash": "6a41359abbf70ee8", "src": "db2@1.60.1.70291"}
-{"id": 1254215, "field": "name", "en": "Roll the dice!", "hash": "6a41359abbf70ee8", "src": "db2@1.60.1.70291"}
-{"id": 1254217, "field": "name", "en": "Roll the dice!", "hash": "6a41359abbf70ee8", "src": "db2@1.60.1.70291"}
-{"id": 1254220, "field": "name", "en": "Roll the dice!", "hash": "6a41359abbf70ee8", "src": "db2@1.60.1.70291"}
-{"id": 1254221, "field": "name", "en": "Roll the dice!", "hash": "6a41359abbf70ee8", "src": "db2@1.60.1.70291"}
-{"id": 1254233, "field": "name", "en": "Roll the dice!", "hash": "6a41359abbf70ee8", "src": "db2@1.60.1.70291"}
+{"id": 1254002, "field": "name", "en": "Summon Undead", "hash": "01b2c05ece70050c", "src": "db2@1.60.1.70338"}
+{"id": 1254017, "field": "name", "en": "Death Pact", "hash": "7f4d25906a353243", "src": "db2@1.60.1.70338"}
+{"id": 1254021, "field": "name", "en": "Lift", "hash": "0a4abd5b9bbcf0d2", "src": "db2@1.60.1.70338"}
+{"id": 1254026, "field": "name", "en": "Death Pact", "hash": "7f4d25906a353243", "src": "db2@1.60.1.70338"}
+{"id": 1254090, "field": "name", "en": "Sharpen the Tools", "hash": "09162c0f6de8a4f9", "src": "db2@1.60.1.70338"}
+{"id": 1254114, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70338"}
+{"id": 1254115, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70338"}
+{"id": 1254164, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70338"}
+{"id": 1254170, "field": "name", "en": "Roll the dice!", "hash": "6a41359abbf70ee8", "src": "db2@1.60.1.70338"}
+{"id": 1254215, "field": "name", "en": "Roll the dice!", "hash": "6a41359abbf70ee8", "src": "db2@1.60.1.70338"}
+{"id": 1254217, "field": "name", "en": "Roll the dice!", "hash": "6a41359abbf70ee8", "src": "db2@1.60.1.70338"}
+{"id": 1254220, "field": "name", "en": "Roll the dice!", "hash": "6a41359abbf70ee8", "src": "db2@1.60.1.70338"}
+{"id": 1254221, "field": "name", "en": "Roll the dice!", "hash": "6a41359abbf70ee8", "src": "db2@1.60.1.70338"}
+{"id": 1254233, "field": "name", "en": "Roll the dice!", "hash": "6a41359abbf70ee8", "src": "db2@1.60.1.70338"}
 {"id": 1254234, "field": "name", "en": "Earthquake", "hash": "6c814df326a339a5", "src": "db2@1.60.1.69913"}
 {"id": 1254237, "field": "name", "en": "Earthquake", "hash": "6c814df326a339a5", "src": "db2@1.60.1.69913"}
 {"id": 1254237, "field": "description", "en": "Deal roughly $s1 Nature damage every $t1 sec to enemies standing in the earthquake.", "hash": "46e866d967c2dfc9", "src": "db2@1.60.1.69913"}
 {"id": 1254237, "field": "aura", "en": "Suffering $w1 Nature damage every $t1 sec.", "hash": "0c4dce3beae64d3f", "src": "db2@1.60.1.69913"}
-{"id": 1254268, "field": "name", "en": "Eternal Reward", "hash": "b48db06b9854b717", "src": "db2@1.60.1.70291"}
-{"id": 1254269, "field": "name", "en": "Eternal Reward", "hash": "b48db06b9854b717", "src": "db2@1.60.1.70291"}
-{"id": 1254287, "field": "name", "en": "Eternal Reward", "hash": "b48db06b9854b717", "src": "db2@1.60.1.70291"}
-{"id": 1254290, "field": "name", "en": "Light", "hash": "443f2303c63125df", "src": "db2@1.60.1.70291"}
-{"id": 1254344, "field": "name", "en": "(DNT) Coin Area Trigger", "hash": "2a567edffdc511d6", "src": "db2@1.60.1.70291"}
-{"id": 1254348, "field": "name", "en": "(DNT) Coin Area Trigger", "hash": "2a567edffdc511d6", "src": "db2@1.60.1.70291"}
-{"id": 1254358, "field": "name", "en": "(DNT) Coin Area Trigger", "hash": "2a567edffdc511d6", "src": "db2@1.60.1.70291"}
-{"id": 1254360, "field": "name", "en": "(DNT) Coin Area Trigger", "hash": "2a567edffdc511d6", "src": "db2@1.60.1.70291"}
-{"id": 1254362, "field": "name", "en": "(DNT) Coin Area Trigger", "hash": "2a567edffdc511d6", "src": "db2@1.60.1.70291"}
-{"id": 1254364, "field": "name", "en": "(DNT) Coin Area Trigger", "hash": "2a567edffdc511d6", "src": "db2@1.60.1.70291"}
-{"id": 1254365, "field": "name", "en": "(DNT) Coin Area Trigger", "hash": "2a567edffdc511d6", "src": "db2@1.60.1.70291"}
-{"id": 1254368, "field": "name", "en": "(DNT) Coin Area Trigger", "hash": "2a567edffdc511d6", "src": "db2@1.60.1.70291"}
-{"id": 1254369, "field": "name", "en": "(DNT) Coin Area Trigger", "hash": "2a567edffdc511d6", "src": "db2@1.60.1.70291"}
-{"id": 1254372, "field": "name", "en": "(DNT) Coin Area Trigger", "hash": "2a567edffdc511d6", "src": "db2@1.60.1.70291"}
-{"id": 1254375, "field": "name", "en": "(DNT) Coin Area Trigger", "hash": "2a567edffdc511d6", "src": "db2@1.60.1.70291"}
-{"id": 1254442, "field": "name", "en": "Dread Bite", "hash": "97fd72dfd8f0a171", "src": "db2@1.60.1.70291"}
-{"id": 1254443, "field": "name", "en": "Dread Bite", "hash": "97fd72dfd8f0a171", "src": "db2@1.60.1.70291"}
-{"id": 1254444, "field": "name", "en": "Dread Bite", "hash": "97fd72dfd8f0a171", "src": "db2@1.60.1.70291"}
-{"id": 1254446, "field": "name", "en": "Dread Bite", "hash": "97fd72dfd8f0a171", "src": "db2@1.60.1.70291"}
-{"id": 1254480, "field": "name", "en": "Bloodfury", "hash": "b8868d024e89a570", "src": "db2@1.60.1.70291"}
-{"id": 1254480, "field": "aura", "en": "Empowered by sheer, raw fury.", "hash": "36ad239c68dc444c", "src": "db2@1.60.1.70291"}
-{"id": 1254492, "field": "name", "en": "Buzzing Insects", "hash": "4a8d08288d7494cc", "src": "db2@1.60.1.70291"}
-{"id": 1254516, "field": "name", "en": "Wild Detonation", "hash": "b23d22d0e719df71", "src": "db2@1.60.1.70291"}
-{"id": 1254516, "field": "aura", "en": "Primed to detonate.", "hash": "22145ee33b1ddb82", "src": "db2@1.60.1.70291"}
-{"id": 1254518, "field": "name", "en": "Wild Detonation", "hash": "b23d22d0e719df71", "src": "db2@1.60.1.70291"}
-{"id": 1254523, "field": "name", "en": "Wild Detonation", "hash": "b23d22d0e719df71", "src": "db2@1.60.1.70291"}
-{"id": 1254523, "field": "aura", "en": "Primed to detonate.", "hash": "22145ee33b1ddb82", "src": "db2@1.60.1.70291"}
-{"id": 1254524, "field": "name", "en": "Wild Detonation", "hash": "b23d22d0e719df71", "src": "db2@1.60.1.70291"}
-{"id": 1254546, "field": "name", "en": "Cleansed", "hash": "6ed83ee2036bc0ef", "src": "db2@1.60.1.70291"}
-{"id": 1254546, "field": "description", "en": "Reduces shadow damage taken from $@spellname1269955 by $1269955w2% for $d.", "hash": "3a6a33d93f3ed320", "src": "db2@1.60.1.70291"}
-{"id": 1254546, "field": "aura", "en": "Shadow damage done increased by $w1% for $d from cleansing yourself of the fel-touched ash.", "hash": "71e95636b4666409", "src": "db2@1.60.1.70291"}
-{"id": 1254562, "field": "name", "en": "On Thin Ice", "hash": "5349e465e6600168", "src": "db2@1.60.1.70291"}
-{"id": 1254565, "field": "name", "en": "On Thin Ice", "hash": "5349e465e6600168", "src": "db2@1.60.1.70291"}
-{"id": 1254565, "field": "aura", "en": "The ice makes it difficult to move or keep your footing.", "hash": "135acf8a60011d85", "src": "db2@1.60.1.70291"}
-{"id": 1254585, "field": "name", "en": "Pirates!", "hash": "2805cf6135d8b354", "src": "db2@1.60.1.70291"}
-{"id": 1254586, "field": "name", "en": "Pirates!", "hash": "2805cf6135d8b354", "src": "db2@1.60.1.70291"}
-{"id": 1254738, "field": "name", "en": "Armor +16, Stamina +2", "hash": "3aab0e7f6c47d2e4", "src": "db2@1.60.1.70291"}
-{"id": 1254738, "field": "description", "en": "Permanently increase the Stamina value by 2 and the armor value by 16 of an item worn on the chest, legs, hands, or feet.", "hash": "54a971003b39fb77", "src": "db2@1.60.1.70291"}
-{"id": 1254740, "field": "name", "en": "Armor +16, Attack Power +4", "hash": "78d2ab2fb585995b", "src": "db2@1.60.1.70291"}
-{"id": 1254740, "field": "description", "en": "Permanently increase the Attack Power value by 4 and the armor value by 16 of an item worn on the chest, legs, hands, or feet.", "hash": "0c98764158345e2e", "src": "db2@1.60.1.70291"}
-{"id": 1254742, "field": "name", "en": "Armor +16, Spell Power +2", "hash": "551d3da8ca636595", "src": "db2@1.60.1.70291"}
-{"id": 1254742, "field": "description", "en": "Permanently increase the Spell Power value by 2 and the armor value by 16 of an item worn on the chest, legs, hands, or feet.", "hash": "8d5ed25b9138db6f", "src": "db2@1.60.1.70291"}
-{"id": 1254747, "field": "name", "en": "Armor +24, Stamina +3", "hash": "6b0d1c8d33661df1", "src": "db2@1.60.1.70291"}
-{"id": 1254747, "field": "description", "en": "Permanently increase the Stamina value by 3 and armor value by 24 of an item worn on the chest, legs, hands, or feet. Only usable on items level 15 and above.", "hash": "4bc9d25af37eedc7", "src": "db2@1.60.1.70291"}
-{"id": 1254748, "field": "name", "en": "Forceful Heavy Armor Kit", "hash": "a539419150a520ad", "src": "db2@1.60.1.70291"}
-{"id": 1254748, "field": "description", "en": "Permanently increase the Attack Power value by $ec2 and armor value by $ec1 of an item worn on the chest, legs, hands, or feet. Only usable on items level $ecim and above.", "hash": "34fceb3171daf04f", "src": "db2@1.60.1.70291"}
-{"id": 1254750, "field": "name", "en": "Mystic Heavy Armor Kit", "hash": "c9148ef3dcfbcfb5", "src": "db2@1.60.1.70291"}
-{"id": 1254750, "field": "description", "en": "Permanently increase the Spell Power value by $ec2 and armor value by $ec1 of an item worn on the chest, legs, hands, or feet. Only usable on items level $ecim and above.", "hash": "5c30c1ba070487d3", "src": "db2@1.60.1.70291"}
-{"id": 1254766, "field": "name", "en": "Armor +32, Stamina +4", "hash": "9b6f2a9bfa8468ed", "src": "db2@1.60.1.70291"}
-{"id": 1254766, "field": "description", "en": "Permanently increase the Stamina value by 4 and armor value by 32 of an item worn on the chest, legs, hands, or feet. Only usable on items level 25 and above.", "hash": "1e56063c6bdfded6", "src": "db2@1.60.1.70291"}
-{"id": 1254767, "field": "name", "en": "Mystic Thick Armor Kit", "hash": "04f4775e7c457426", "src": "db2@1.60.1.70291"}
-{"id": 1254767, "field": "description", "en": "Permanently increase the Spell Power value by $ec2 and armor value by $ec1 of an item worn on the chest, legs, hands, or feet. Only usable on items level $ecim and above.", "hash": "5c30c1ba070487d3", "src": "db2@1.60.1.70291"}
-{"id": 1254768, "field": "name", "en": "Forceful Thick Armor Kit", "hash": "e11929f7efeec50d", "src": "db2@1.60.1.70291"}
-{"id": 1254768, "field": "description", "en": "Permanently increase the Attack Power value by $ec2 and armor value by $ec1 of an item worn on the chest, legs, hands, or feet. Only usable on items level $ecim and above.", "hash": "34fceb3171daf04f", "src": "db2@1.60.1.70291"}
-{"id": 1254770, "field": "name", "en": "Mystic Rugged Armor Kit", "hash": "5edd97ef4a84599f", "src": "db2@1.60.1.70291"}
-{"id": 1254770, "field": "description", "en": "Permanently increase the Spell Power value by $ec2 and armor value by $ec1 of an item worn on the chest, legs, hands, or feet. Only usable on items level $ecim and above.", "hash": "5c30c1ba070487d3", "src": "db2@1.60.1.70291"}
-{"id": 1254771, "field": "name", "en": "Armor +40, Stamina +5", "hash": "cbd138a9c1a2b3fa", "src": "db2@1.60.1.70291"}
-{"id": 1254771, "field": "description", "en": "Permanently increase the Stamina value by 5 and armor value by 40 of an item worn on the chest, legs, hands, or feet. Only usable on items level 35 and above.", "hash": "f0e23a19e440cfd4", "src": "db2@1.60.1.70291"}
-{"id": 1254772, "field": "name", "en": "Forceful Rugged Armor Kit", "hash": "05a4fe6f7321627d", "src": "db2@1.60.1.70291"}
-{"id": 1254772, "field": "description", "en": "Permanently increase the Attack Power value by $ec2 and armor value by $ec1 of an item worn on the chest, legs, hands, or feet. Only usable on items level $ecim and above.", "hash": "34fceb3171daf04f", "src": "db2@1.60.1.70291"}
-{"id": 1254832, "field": "name", "en": "Mark of Akir", "hash": "1fa46a43ee73fd88", "src": "db2@1.60.1.70291"}
-{"id": 1254832, "field": "description", "en": "The Mark of Akir will let the members of The Al'Aketh know that you are friendly.", "hash": "24662161e1f007c5", "src": "db2@1.60.1.70291"}
-{"id": 1254832, "field": "aura", "en": "The Mark of Akir will let the members of The Al'Aketh know that you are friendly.", "hash": "24662161e1f007c5", "src": "db2@1.60.1.70291"}
-{"id": 1254837, "field": "name", "en": "[DNT] Complete Quest", "hash": "4a24b7dd4103160a", "src": "db2@1.60.1.70291"}
-{"id": 1254871, "field": "name", "en": "Eavesdropped", "hash": "6f323f9851f1d5a5", "src": "db2@1.60.1.70291"}
-{"id": 1254874, "field": "name", "en": "(DNT) Cancel Aura", "hash": "8a413a4c4fe16994", "src": "db2@1.60.1.70291"}
-{"id": 1254892, "field": "name", "en": "Channel Winds", "hash": "510878c2739f8b41", "src": "db2@1.60.1.70291"}
+{"id": 1254268, "field": "name", "en": "Eternal Reward", "hash": "b48db06b9854b717", "src": "db2@1.60.1.70338"}
+{"id": 1254269, "field": "name", "en": "Eternal Reward", "hash": "b48db06b9854b717", "src": "db2@1.60.1.70338"}
+{"id": 1254287, "field": "name", "en": "Eternal Reward", "hash": "b48db06b9854b717", "src": "db2@1.60.1.70338"}
+{"id": 1254290, "field": "name", "en": "Light", "hash": "443f2303c63125df", "src": "db2@1.60.1.70338"}
+{"id": 1254344, "field": "name", "en": "(DNT) Coin Area Trigger", "hash": "2a567edffdc511d6", "src": "db2@1.60.1.70338"}
+{"id": 1254348, "field": "name", "en": "(DNT) Coin Area Trigger", "hash": "2a567edffdc511d6", "src": "db2@1.60.1.70338"}
+{"id": 1254358, "field": "name", "en": "(DNT) Coin Area Trigger", "hash": "2a567edffdc511d6", "src": "db2@1.60.1.70338"}
+{"id": 1254360, "field": "name", "en": "(DNT) Coin Area Trigger", "hash": "2a567edffdc511d6", "src": "db2@1.60.1.70338"}
+{"id": 1254362, "field": "name", "en": "(DNT) Coin Area Trigger", "hash": "2a567edffdc511d6", "src": "db2@1.60.1.70338"}
+{"id": 1254364, "field": "name", "en": "(DNT) Coin Area Trigger", "hash": "2a567edffdc511d6", "src": "db2@1.60.1.70338"}
+{"id": 1254365, "field": "name", "en": "(DNT) Coin Area Trigger", "hash": "2a567edffdc511d6", "src": "db2@1.60.1.70338"}
+{"id": 1254368, "field": "name", "en": "(DNT) Coin Area Trigger", "hash": "2a567edffdc511d6", "src": "db2@1.60.1.70338"}
+{"id": 1254369, "field": "name", "en": "(DNT) Coin Area Trigger", "hash": "2a567edffdc511d6", "src": "db2@1.60.1.70338"}
+{"id": 1254372, "field": "name", "en": "(DNT) Coin Area Trigger", "hash": "2a567edffdc511d6", "src": "db2@1.60.1.70338"}
+{"id": 1254375, "field": "name", "en": "(DNT) Coin Area Trigger", "hash": "2a567edffdc511d6", "src": "db2@1.60.1.70338"}
+{"id": 1254442, "field": "name", "en": "Dread Bite", "hash": "97fd72dfd8f0a171", "src": "db2@1.60.1.70338"}
+{"id": 1254443, "field": "name", "en": "Dread Bite", "hash": "97fd72dfd8f0a171", "src": "db2@1.60.1.70338"}
+{"id": 1254444, "field": "name", "en": "Dread Bite", "hash": "97fd72dfd8f0a171", "src": "db2@1.60.1.70338"}
+{"id": 1254446, "field": "name", "en": "Dread Bite", "hash": "97fd72dfd8f0a171", "src": "db2@1.60.1.70338"}
+{"id": 1254480, "field": "name", "en": "Bloodfury", "hash": "b8868d024e89a570", "src": "db2@1.60.1.70338"}
+{"id": 1254480, "field": "aura", "en": "Empowered by sheer, raw fury.", "hash": "36ad239c68dc444c", "src": "db2@1.60.1.70338"}
+{"id": 1254492, "field": "name", "en": "Buzzing Insects", "hash": "4a8d08288d7494cc", "src": "db2@1.60.1.70338"}
+{"id": 1254516, "field": "name", "en": "Wild Detonation", "hash": "b23d22d0e719df71", "src": "db2@1.60.1.70338"}
+{"id": 1254516, "field": "aura", "en": "Primed to detonate.", "hash": "22145ee33b1ddb82", "src": "db2@1.60.1.70338"}
+{"id": 1254518, "field": "name", "en": "Wild Detonation", "hash": "b23d22d0e719df71", "src": "db2@1.60.1.70338"}
+{"id": 1254523, "field": "name", "en": "Wild Detonation", "hash": "b23d22d0e719df71", "src": "db2@1.60.1.70338"}
+{"id": 1254523, "field": "aura", "en": "Primed to detonate.", "hash": "22145ee33b1ddb82", "src": "db2@1.60.1.70338"}
+{"id": 1254524, "field": "name", "en": "Wild Detonation", "hash": "b23d22d0e719df71", "src": "db2@1.60.1.70338"}
+{"id": 1254546, "field": "name", "en": "Cleansed", "hash": "6ed83ee2036bc0ef", "src": "db2@1.60.1.70338"}
+{"id": 1254546, "field": "description", "en": "Reduces shadow damage taken from $@spellname1269955 by $1269955w2% for $d.", "hash": "3a6a33d93f3ed320", "src": "db2@1.60.1.70338"}
+{"id": 1254546, "field": "aura", "en": "Shadow damage done increased by $w1% for $d from cleansing yourself of the fel-touched ash.", "hash": "71e95636b4666409", "src": "db2@1.60.1.70338"}
+{"id": 1254562, "field": "name", "en": "On Thin Ice", "hash": "5349e465e6600168", "src": "db2@1.60.1.70338"}
+{"id": 1254565, "field": "name", "en": "On Thin Ice", "hash": "5349e465e6600168", "src": "db2@1.60.1.70338"}
+{"id": 1254565, "field": "aura", "en": "The ice makes it difficult to move or keep your footing.", "hash": "135acf8a60011d85", "src": "db2@1.60.1.70338"}
+{"id": 1254585, "field": "name", "en": "Pirates!", "hash": "2805cf6135d8b354", "src": "db2@1.60.1.70338"}
+{"id": 1254586, "field": "name", "en": "Pirates!", "hash": "2805cf6135d8b354", "src": "db2@1.60.1.70338"}
+{"id": 1254738, "field": "name", "en": "Armor +16, Stamina +2", "hash": "3aab0e7f6c47d2e4", "src": "db2@1.60.1.70338"}
+{"id": 1254738, "field": "description", "en": "Permanently increase the Stamina value by 2 and the armor value by 16 of an item worn on the chest, legs, hands, or feet.", "hash": "54a971003b39fb77", "src": "db2@1.60.1.70338"}
+{"id": 1254740, "field": "name", "en": "Armor +16, Attack Power +4", "hash": "78d2ab2fb585995b", "src": "db2@1.60.1.70338"}
+{"id": 1254740, "field": "description", "en": "Permanently increase the Attack Power value by 4 and the armor value by 16 of an item worn on the chest, legs, hands, or feet.", "hash": "0c98764158345e2e", "src": "db2@1.60.1.70338"}
+{"id": 1254742, "field": "name", "en": "Armor +16, Spell Power +2", "hash": "551d3da8ca636595", "src": "db2@1.60.1.70338"}
+{"id": 1254742, "field": "description", "en": "Permanently increase the Spell Power value by 2 and the armor value by 16 of an item worn on the chest, legs, hands, or feet.", "hash": "8d5ed25b9138db6f", "src": "db2@1.60.1.70338"}
+{"id": 1254747, "field": "name", "en": "Armor +24, Stamina +3", "hash": "6b0d1c8d33661df1", "src": "db2@1.60.1.70338"}
+{"id": 1254747, "field": "description", "en": "Permanently increase the Stamina value by 3 and armor value by 24 of an item worn on the chest, legs, hands, or feet. Only usable on items level 15 and above.", "hash": "4bc9d25af37eedc7", "src": "db2@1.60.1.70338"}
+{"id": 1254748, "field": "name", "en": "Forceful Heavy Armor Kit", "hash": "a539419150a520ad", "src": "db2@1.60.1.70338"}
+{"id": 1254748, "field": "description", "en": "Permanently increase the Attack Power value by $ec2 and armor value by $ec1 of an item worn on the chest, legs, hands, or feet. Only usable on items level $ecim and above.", "hash": "34fceb3171daf04f", "src": "db2@1.60.1.70338"}
+{"id": 1254750, "field": "name", "en": "Mystic Heavy Armor Kit", "hash": "c9148ef3dcfbcfb5", "src": "db2@1.60.1.70338"}
+{"id": 1254750, "field": "description", "en": "Permanently increase the Spell Power value by $ec2 and armor value by $ec1 of an item worn on the chest, legs, hands, or feet. Only usable on items level $ecim and above.", "hash": "5c30c1ba070487d3", "src": "db2@1.60.1.70338"}
+{"id": 1254766, "field": "name", "en": "Armor +32, Stamina +4", "hash": "9b6f2a9bfa8468ed", "src": "db2@1.60.1.70338"}
+{"id": 1254766, "field": "description", "en": "Permanently increase the Stamina value by 4 and armor value by 32 of an item worn on the chest, legs, hands, or feet. Only usable on items level 25 and above.", "hash": "1e56063c6bdfded6", "src": "db2@1.60.1.70338"}
+{"id": 1254767, "field": "name", "en": "Mystic Thick Armor Kit", "hash": "04f4775e7c457426", "src": "db2@1.60.1.70338"}
+{"id": 1254767, "field": "description", "en": "Permanently increase the Spell Power value by $ec2 and armor value by $ec1 of an item worn on the chest, legs, hands, or feet. Only usable on items level $ecim and above.", "hash": "5c30c1ba070487d3", "src": "db2@1.60.1.70338"}
+{"id": 1254768, "field": "name", "en": "Forceful Thick Armor Kit", "hash": "e11929f7efeec50d", "src": "db2@1.60.1.70338"}
+{"id": 1254768, "field": "description", "en": "Permanently increase the Attack Power value by $ec2 and armor value by $ec1 of an item worn on the chest, legs, hands, or feet. Only usable on items level $ecim and above.", "hash": "34fceb3171daf04f", "src": "db2@1.60.1.70338"}
+{"id": 1254770, "field": "name", "en": "Mystic Rugged Armor Kit", "hash": "5edd97ef4a84599f", "src": "db2@1.60.1.70338"}
+{"id": 1254770, "field": "description", "en": "Permanently increase the Spell Power value by $ec2 and armor value by $ec1 of an item worn on the chest, legs, hands, or feet. Only usable on items level $ecim and above.", "hash": "5c30c1ba070487d3", "src": "db2@1.60.1.70338"}
+{"id": 1254771, "field": "name", "en": "Armor +40, Stamina +5", "hash": "cbd138a9c1a2b3fa", "src": "db2@1.60.1.70338"}
+{"id": 1254771, "field": "description", "en": "Permanently increase the Stamina value by 5 and armor value by 40 of an item worn on the chest, legs, hands, or feet. Only usable on items level 35 and above.", "hash": "f0e23a19e440cfd4", "src": "db2@1.60.1.70338"}
+{"id": 1254772, "field": "name", "en": "Forceful Rugged Armor Kit", "hash": "05a4fe6f7321627d", "src": "db2@1.60.1.70338"}
+{"id": 1254772, "field": "description", "en": "Permanently increase the Attack Power value by $ec2 and armor value by $ec1 of an item worn on the chest, legs, hands, or feet. Only usable on items level $ecim and above.", "hash": "34fceb3171daf04f", "src": "db2@1.60.1.70338"}
+{"id": 1254832, "field": "name", "en": "Mark of Akir", "hash": "1fa46a43ee73fd88", "src": "db2@1.60.1.70338"}
+{"id": 1254832, "field": "description", "en": "The Mark of Akir will let the members of The Al'Aketh know that you are friendly.", "hash": "24662161e1f007c5", "src": "db2@1.60.1.70338"}
+{"id": 1254832, "field": "aura", "en": "The Mark of Akir will let the members of The Al'Aketh know that you are friendly.", "hash": "24662161e1f007c5", "src": "db2@1.60.1.70338"}
+{"id": 1254837, "field": "name", "en": "[DNT] Complete Quest", "hash": "4a24b7dd4103160a", "src": "db2@1.60.1.70338"}
+{"id": 1254871, "field": "name", "en": "Eavesdropped", "hash": "6f323f9851f1d5a5", "src": "db2@1.60.1.70338"}
+{"id": 1254874, "field": "name", "en": "(DNT) Cancel Aura", "hash": "8a413a4c4fe16994", "src": "db2@1.60.1.70338"}
+{"id": 1254892, "field": "name", "en": "Channel Winds", "hash": "510878c2739f8b41", "src": "db2@1.60.1.70338"}
 {"id": 1254902, "field": "name", "en": "Eruption", "hash": "5a49169340dbb669", "src": "db2@1.60.1.69913"}
 {"id": 1254902, "field": "description", "en": "Magma seeps through tremors on the ground, causing up to ${$s1+$s2} pillars to erupt near the Metamorphic Fury.", "hash": "b12727a960cce43f", "src": "db2@1.60.1.69913"}
 {"id": 1254903, "field": "name", "en": "Eruption", "hash": "5a49169340dbb669", "src": "db2@1.60.1.69913"}
 {"id": 1254918, "field": "name", "en": "Eruption", "hash": "5a49169340dbb669", "src": "db2@1.60.1.69913"}
-{"id": 1254945, "field": "name", "en": "Shen'dar Offering", "hash": "04b6f8dd6cdb79ce", "src": "db2@1.60.1.70291"}
-{"id": 1254965, "field": "name", "en": "Forceful Rugged Armor Kit", "hash": "05a4fe6f7321627d", "src": "db2@1.60.1.70291"}
-{"id": 1254966, "field": "name", "en": "Mystic Rugged Armor Kit", "hash": "5edd97ef4a84599f", "src": "db2@1.60.1.70291"}
-{"id": 1254967, "field": "name", "en": "Pristine Scorpid Leggings", "hash": "973ea1eda8cac68f", "src": "db2@1.60.1.70291"}
-{"id": 1254968, "field": "name", "en": "Black Dragonscale Helm", "hash": "30333766437b1300", "src": "db2@1.60.1.70291"}
-{"id": 1254969, "field": "name", "en": "Blue Dragonscale Helm", "hash": "d0b0465decf221bd", "src": "db2@1.60.1.70291"}
-{"id": 1254970, "field": "name", "en": "Red Dragonscale Leggings", "hash": "3ca0554fd1f71899", "src": "db2@1.60.1.70291"}
-{"id": 1254971, "field": "name", "en": "Charged Scorpid Boots", "hash": "d2acf6b1be205c77", "src": "db2@1.60.1.70291"}
-{"id": 1254972, "field": "name", "en": "Supple Scorpid Sabatons", "hash": "f0e8710847aa1d2b", "src": "db2@1.60.1.70291"}
-{"id": 1254973, "field": "name", "en": "Charged Scorpid Leggings", "hash": "32e13b7160e49098", "src": "db2@1.60.1.70291"}
-{"id": 1254974, "field": "name", "en": "Supple Scorpid Vest", "hash": "163c0a1bf0f8b946", "src": "db2@1.60.1.70291"}
-{"id": 1254975, "field": "name", "en": "Charged Scorpid Vest", "hash": "c3ca15ea61840a02", "src": "db2@1.60.1.70291"}
-{"id": 1254976, "field": "name", "en": "Supple Scorpid Helm", "hash": "145bc805354881af", "src": "db2@1.60.1.70291"}
-{"id": 1254977, "field": "name", "en": "Charged Scorpid Gauntlets", "hash": "134361d2cdf40708", "src": "db2@1.60.1.70291"}
-{"id": 1254978, "field": "name", "en": "Supple Scorpid Belt", "hash": "138df66ae4d8c978", "src": "db2@1.60.1.70291"}
-{"id": 1254979, "field": "name", "en": "Heavy Scorpid Boots", "hash": "2c075749ad9ab55b", "src": "db2@1.60.1.70291"}
-{"id": 1254980, "field": "name", "en": "Charged Scorpid Bracers", "hash": "a7286678215d18a3", "src": "db2@1.60.1.70291"}
-{"id": 1254981, "field": "name", "en": "Supple Scorpid Shoulder", "hash": "0580177f962c211a", "src": "db2@1.60.1.70291"}
-{"id": 1254982, "field": "name", "en": "Mender's Mail Belt", "hash": "44a570fb21aff52c", "src": "db2@1.60.1.70291"}
-{"id": 1254983, "field": "name", "en": "Skirmisher's Mail Belt", "hash": "976f97a5a9fb76e8", "src": "db2@1.60.1.70291"}
-{"id": 1254984, "field": "name", "en": "Skycaller's Mail Belt", "hash": "1184749baf390f90", "src": "db2@1.60.1.70291"}
-{"id": 1254985, "field": "name", "en": "Stalker's Mail Belt", "hash": "dc62007ad5615b3e", "src": "db2@1.60.1.70291"}
-{"id": 1254986, "field": "name", "en": "Mender's Mail Gauntlets", "hash": "e9896bb84fae55b0", "src": "db2@1.60.1.70291"}
-{"id": 1254987, "field": "name", "en": "Skirmisher's Mail Gauntlets", "hash": "779d91a8a2f76180", "src": "db2@1.60.1.70291"}
-{"id": 1254988, "field": "name", "en": "Skycaller's Mail Gauntlets", "hash": "0df5abd2bf82540f", "src": "db2@1.60.1.70291"}
-{"id": 1254989, "field": "name", "en": "Stalker's Mail Gauntlets", "hash": "729ff858a860fed3", "src": "db2@1.60.1.70291"}
-{"id": 1254990, "field": "name", "en": "Charged Scorpid Shoulder", "hash": "675a8619d52cb99e", "src": "db2@1.60.1.70291"}
-{"id": 1254991, "field": "name", "en": "Supple Scorpid Bracers", "hash": "46a7b5c10467124a", "src": "db2@1.60.1.70291"}
-{"id": 1254992, "field": "name", "en": "Charged Scorpid Helm", "hash": "c1e9d3d4a5d3d25a", "src": "db2@1.60.1.70291"}
-{"id": 1254993, "field": "name", "en": "Supple Scorpid Leggings", "hash": "d106ccd221e3f814", "src": "db2@1.60.1.70291"}
-{"id": 1254994, "field": "name", "en": "Mender's Mail Sabatons", "hash": "5e2afb16f9058b79", "src": "db2@1.60.1.70291"}
-{"id": 1254995, "field": "name", "en": "Skirmisher's Mail Sabatons", "hash": "f9a257365d1110f5", "src": "db2@1.60.1.70291"}
-{"id": 1254996, "field": "name", "en": "Skycaller's Mail Sabatons", "hash": "4ae769039e714a80", "src": "db2@1.60.1.70291"}
-{"id": 1254997, "field": "name", "en": "Stalker's Mail Sabatons", "hash": "1ad14284ae902f62", "src": "db2@1.60.1.70291"}
-{"id": 1254998, "field": "name", "en": "Charged Scorpid Belt", "hash": "c11c023955641a34", "src": "db2@1.60.1.70291"}
-{"id": 1254999, "field": "name", "en": "Supple Scorpid Boots", "hash": "02fcea0cf4e8d2e8", "src": "db2@1.60.1.70291"}
+{"id": 1254945, "field": "name", "en": "Shen'dar Offering", "hash": "04b6f8dd6cdb79ce", "src": "db2@1.60.1.70338"}
+{"id": 1254965, "field": "name", "en": "Forceful Rugged Armor Kit", "hash": "05a4fe6f7321627d", "src": "db2@1.60.1.70338"}
+{"id": 1254966, "field": "name", "en": "Mystic Rugged Armor Kit", "hash": "5edd97ef4a84599f", "src": "db2@1.60.1.70338"}
+{"id": 1254967, "field": "name", "en": "Pristine Scorpid Leggings", "hash": "973ea1eda8cac68f", "src": "db2@1.60.1.70338"}
+{"id": 1254968, "field": "name", "en": "Black Dragonscale Helm", "hash": "30333766437b1300", "src": "db2@1.60.1.70338"}
+{"id": 1254969, "field": "name", "en": "Blue Dragonscale Helm", "hash": "d0b0465decf221bd", "src": "db2@1.60.1.70338"}
+{"id": 1254970, "field": "name", "en": "Red Dragonscale Leggings", "hash": "3ca0554fd1f71899", "src": "db2@1.60.1.70338"}
+{"id": 1254971, "field": "name", "en": "Charged Scorpid Boots", "hash": "d2acf6b1be205c77", "src": "db2@1.60.1.70338"}
+{"id": 1254972, "field": "name", "en": "Supple Scorpid Sabatons", "hash": "f0e8710847aa1d2b", "src": "db2@1.60.1.70338"}
+{"id": 1254973, "field": "name", "en": "Charged Scorpid Leggings", "hash": "32e13b7160e49098", "src": "db2@1.60.1.70338"}
+{"id": 1254974, "field": "name", "en": "Supple Scorpid Vest", "hash": "163c0a1bf0f8b946", "src": "db2@1.60.1.70338"}
+{"id": 1254975, "field": "name", "en": "Charged Scorpid Vest", "hash": "c3ca15ea61840a02", "src": "db2@1.60.1.70338"}
+{"id": 1254976, "field": "name", "en": "Supple Scorpid Helm", "hash": "145bc805354881af", "src": "db2@1.60.1.70338"}
+{"id": 1254977, "field": "name", "en": "Charged Scorpid Gauntlets", "hash": "134361d2cdf40708", "src": "db2@1.60.1.70338"}
+{"id": 1254978, "field": "name", "en": "Supple Scorpid Belt", "hash": "138df66ae4d8c978", "src": "db2@1.60.1.70338"}
+{"id": 1254979, "field": "name", "en": "Heavy Scorpid Boots", "hash": "2c075749ad9ab55b", "src": "db2@1.60.1.70338"}
+{"id": 1254980, "field": "name", "en": "Charged Scorpid Bracers", "hash": "a7286678215d18a3", "src": "db2@1.60.1.70338"}
+{"id": 1254981, "field": "name", "en": "Supple Scorpid Shoulder", "hash": "0580177f962c211a", "src": "db2@1.60.1.70338"}
+{"id": 1254982, "field": "name", "en": "Mender's Mail Belt", "hash": "44a570fb21aff52c", "src": "db2@1.60.1.70338"}
+{"id": 1254983, "field": "name", "en": "Skirmisher's Mail Belt", "hash": "976f97a5a9fb76e8", "src": "db2@1.60.1.70338"}
+{"id": 1254984, "field": "name", "en": "Skycaller's Mail Belt", "hash": "1184749baf390f90", "src": "db2@1.60.1.70338"}
+{"id": 1254985, "field": "name", "en": "Stalker's Mail Belt", "hash": "dc62007ad5615b3e", "src": "db2@1.60.1.70338"}
+{"id": 1254986, "field": "name", "en": "Mender's Mail Gauntlets", "hash": "e9896bb84fae55b0", "src": "db2@1.60.1.70338"}
+{"id": 1254987, "field": "name", "en": "Skirmisher's Mail Gauntlets", "hash": "779d91a8a2f76180", "src": "db2@1.60.1.70338"}
+{"id": 1254988, "field": "name", "en": "Skycaller's Mail Gauntlets", "hash": "0df5abd2bf82540f", "src": "db2@1.60.1.70338"}
+{"id": 1254989, "field": "name", "en": "Stalker's Mail Gauntlets", "hash": "729ff858a860fed3", "src": "db2@1.60.1.70338"}
+{"id": 1254990, "field": "name", "en": "Charged Scorpid Shoulder", "hash": "675a8619d52cb99e", "src": "db2@1.60.1.70338"}
+{"id": 1254991, "field": "name", "en": "Supple Scorpid Bracers", "hash": "46a7b5c10467124a", "src": "db2@1.60.1.70338"}
+{"id": 1254992, "field": "name", "en": "Charged Scorpid Helm", "hash": "c1e9d3d4a5d3d25a", "src": "db2@1.60.1.70338"}
+{"id": 1254993, "field": "name", "en": "Supple Scorpid Leggings", "hash": "d106ccd221e3f814", "src": "db2@1.60.1.70338"}
+{"id": 1254994, "field": "name", "en": "Mender's Mail Sabatons", "hash": "5e2afb16f9058b79", "src": "db2@1.60.1.70338"}
+{"id": 1254995, "field": "name", "en": "Skirmisher's Mail Sabatons", "hash": "f9a257365d1110f5", "src": "db2@1.60.1.70338"}
+{"id": 1254996, "field": "name", "en": "Skycaller's Mail Sabatons", "hash": "4ae769039e714a80", "src": "db2@1.60.1.70338"}
+{"id": 1254997, "field": "name", "en": "Stalker's Mail Sabatons", "hash": "1ad14284ae902f62", "src": "db2@1.60.1.70338"}
+{"id": 1254998, "field": "name", "en": "Charged Scorpid Belt", "hash": "c11c023955641a34", "src": "db2@1.60.1.70338"}
+{"id": 1254999, "field": "name", "en": "Supple Scorpid Boots", "hash": "02fcea0cf4e8d2e8", "src": "db2@1.60.1.70338"}

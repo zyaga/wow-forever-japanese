@@ -1,3 +1,3 @@
-{"id": 39104, "field": "name", "en": "Totemic Recall", "hash": "a7b0bf2dafccd22a", "src": "db2@1.60.1.70291"}
-{"id": 39104, "field": "description", "en": "Returns your totems to the earth, giving you $36936s1% of the mana required to cast each totem destroyed by Totemic Recall.", "hash": "2b160cfde27b2740", "src": "db2@1.60.1.70291"}
-{"id": 39104, "field": "aura", "en": "Regenerating $s1 mana every $t1 sec.", "hash": "b8d127967215c90f", "src": "db2@1.60.1.70291"}
+{"id": 39104, "field": "name", "en": "Totemic Recall", "hash": "a7b0bf2dafccd22a", "src": "db2@1.60.1.70338"}
+{"id": 39104, "field": "description", "en": "Returns your totems to the earth, giving you $36936s1% of the mana required to cast each totem destroyed by Totemic Recall.", "hash": "2b160cfde27b2740", "src": "db2@1.60.1.70338"}
+{"id": 39104, "field": "aura", "en": "Regenerating $s1 mana every $t1 sec.", "hash": "b8d127967215c90f", "src": "db2@1.60.1.70338"}

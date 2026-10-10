@@ -1,24 +1,24 @@
-{"id": 406112, "field": "name", "en": "Viktoria Woods - Trade Kobold Head For Rune Fragment", "hash": "c49fd0cb231b20df", "src": "db2@1.60.1.70291"}
-{"id": 406113, "field": "name", "en": "Viktoria Woods - Trade Murloc Head For Rune Fragment", "hash": "c6326e633c9b13f8", "src": "db2@1.60.1.70291"}
-{"id": 406116, "field": "name", "en": "Viktoria Woods - Trade Gnoll Head For Rune Fragment", "hash": "475e582f2ff035bd", "src": "db2@1.60.1.70291"}
-{"id": 406634, "field": "name", "en": "Animated Lobster Molt", "hash": "87fe014b2e21c642", "src": "db2@1.60.1.70291"}
-{"id": 406634, "field": "description", "en": "Summons and dismisses a rideable Animated Lobster Molt.", "hash": "8f33b9b6a82b4334", "src": "db2@1.60.1.70291"}
-{"id": 406634, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
-{"id": 406651, "field": "name", "en": "Combine Rune Pieces", "hash": "f1b53c24eb6c3753", "src": "db2@1.60.1.70291"}
-{"id": 406651, "field": "description", "en": "Combine with 2 other pieces to make the full rune.", "hash": "4c2b39fdedceacfb", "src": "db2@1.60.1.70291"}
-{"id": 406662, "field": "name", "en": "Fight Stuart", "hash": "83899bf06e695ecf", "src": "db2@1.60.1.70291"}
-{"id": 406680, "field": "name", "en": "Frostbolt", "hash": "07e909249a76c75c", "src": "db2@1.60.1.70291"}
-{"id": 406680, "field": "aura", "en": "Movement slowed by $s2%.", "hash": "bd9449c14e5aeafa", "src": "db2@1.60.1.70291"}
-{"id": 406722, "field": "name", "en": "Shadowstep", "hash": "090d407791fba601", "src": "db2@1.60.1.70291"}
-{"id": 406722, "field": "description", "en": "Attempts to step through the shadows and reappear behind your enemy and increases movement speed by $s2% for $d.", "hash": "9443ecbd6238b18a", "src": "db2@1.60.1.70291"}
-{"id": 406722, "field": "aura", "en": "Movement speed increased by $s2%.", "hash": "d5c3ef85856fd9d4", "src": "db2@1.60.1.70291"}
-{"id": 406731, "field": "name", "en": "Liv Bradford - Give Warrior Rune", "hash": "3cac3f0fe3ff4fd2", "src": "db2@1.60.1.70291"}
-{"id": 406746, "field": "name", "en": "Fathomblast", "hash": "b584247d3f334f8e", "src": "db2@1.60.1.70291"}
-{"id": 406746, "field": "description", "en": "Blasts all enemies in front of you with pressurized water.", "hash": "ed9b064ca0de9bc3", "src": "db2@1.60.1.70291"}
-{"id": 406754, "field": "name", "en": "Shadowstep", "hash": "090d407791fba601", "src": "db2@1.60.1.70291"}
-{"id": 406970, "field": "name", "en": "Aqua Shell", "hash": "ec8ad03f1f2c1b95", "src": "db2@1.60.1.70291"}
-{"id": 406970, "field": "aura", "en": "Damage taken reduced by 50%.", "hash": "400c6ec2f7342f2d", "src": "db2@1.60.1.70291"}
-{"id": 406973, "field": "name", "en": "Aqua Shell", "hash": "ec8ad03f1f2c1b95", "src": "db2@1.60.1.70291"}
-{"id": 406973, "field": "aura", "en": "Damage taken reduced by $s1%.", "hash": "a4f10210fada6a4f", "src": "db2@1.60.1.70291"}
-{"id": 406985, "field": "name", "en": "Unstable Bubble", "hash": "17b99f163217f2fd", "src": "db2@1.60.1.70291"}
-{"id": 406992, "field": "name", "en": "Unstable Bubble", "hash": "17b99f163217f2fd", "src": "db2@1.60.1.70291"}
+{"id": 406112, "field": "name", "en": "Viktoria Woods - Trade Kobold Head For Rune Fragment", "hash": "c49fd0cb231b20df", "src": "db2@1.60.1.70338"}
+{"id": 406113, "field": "name", "en": "Viktoria Woods - Trade Murloc Head For Rune Fragment", "hash": "c6326e633c9b13f8", "src": "db2@1.60.1.70338"}
+{"id": 406116, "field": "name", "en": "Viktoria Woods - Trade Gnoll Head For Rune Fragment", "hash": "475e582f2ff035bd", "src": "db2@1.60.1.70338"}
+{"id": 406634, "field": "name", "en": "Animated Lobster Molt", "hash": "87fe014b2e21c642", "src": "db2@1.60.1.70338"}
+{"id": 406634, "field": "description", "en": "Summons and dismisses a rideable Animated Lobster Molt.", "hash": "8f33b9b6a82b4334", "src": "db2@1.60.1.70338"}
+{"id": 406634, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70338"}
+{"id": 406651, "field": "name", "en": "Combine Rune Pieces", "hash": "f1b53c24eb6c3753", "src": "db2@1.60.1.70338"}
+{"id": 406651, "field": "description", "en": "Combine with 2 other pieces to make the full rune.", "hash": "4c2b39fdedceacfb", "src": "db2@1.60.1.70338"}
+{"id": 406662, "field": "name", "en": "Fight Stuart", "hash": "83899bf06e695ecf", "src": "db2@1.60.1.70338"}
+{"id": 406680, "field": "name", "en": "Frostbolt", "hash": "07e909249a76c75c", "src": "db2@1.60.1.70338"}
+{"id": 406680, "field": "aura", "en": "Movement slowed by $s2%.", "hash": "bd9449c14e5aeafa", "src": "db2@1.60.1.70338"}
+{"id": 406722, "field": "name", "en": "Shadowstep", "hash": "090d407791fba601", "src": "db2@1.60.1.70338"}
+{"id": 406722, "field": "description", "en": "Attempts to step through the shadows and reappear behind your enemy and increases movement speed by $s2% for $d.", "hash": "9443ecbd6238b18a", "src": "db2@1.60.1.70338"}
+{"id": 406722, "field": "aura", "en": "Movement speed increased by $s2%.", "hash": "d5c3ef85856fd9d4", "src": "db2@1.60.1.70338"}
+{"id": 406731, "field": "name", "en": "Liv Bradford - Give Warrior Rune", "hash": "3cac3f0fe3ff4fd2", "src": "db2@1.60.1.70338"}
+{"id": 406746, "field": "name", "en": "Fathomblast", "hash": "b584247d3f334f8e", "src": "db2@1.60.1.70338"}
+{"id": 406746, "field": "description", "en": "Blasts all enemies in front of you with pressurized water.", "hash": "ed9b064ca0de9bc3", "src": "db2@1.60.1.70338"}
+{"id": 406754, "field": "name", "en": "Shadowstep", "hash": "090d407791fba601", "src": "db2@1.60.1.70338"}
+{"id": 406970, "field": "name", "en": "Aqua Shell", "hash": "ec8ad03f1f2c1b95", "src": "db2@1.60.1.70338"}
+{"id": 406970, "field": "aura", "en": "Damage taken reduced by 50%.", "hash": "400c6ec2f7342f2d", "src": "db2@1.60.1.70338"}
+{"id": 406973, "field": "name", "en": "Aqua Shell", "hash": "ec8ad03f1f2c1b95", "src": "db2@1.60.1.70338"}
+{"id": 406973, "field": "aura", "en": "Damage taken reduced by $s1%.", "hash": "a4f10210fada6a4f", "src": "db2@1.60.1.70338"}
+{"id": 406985, "field": "name", "en": "Unstable Bubble", "hash": "17b99f163217f2fd", "src": "db2@1.60.1.70338"}
+{"id": 406992, "field": "name", "en": "Unstable Bubble", "hash": "17b99f163217f2fd", "src": "db2@1.60.1.70338"}

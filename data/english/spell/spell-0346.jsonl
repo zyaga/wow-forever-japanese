@@ -1,3 +1,3 @@
-{"id": 346285, "field": "name", "en": "Just Pretend", "hash": "49d122a37f6cad82", "src": "db2@1.60.1.70291"}
-{"id": 346285, "field": "description", "en": "This is all just pretend.  \r\nYou imagine yourself stronger, and more resilient.  \r\nYou're sure you can handle the Plague...", "hash": "282a3728949e5a51", "src": "db2@1.60.1.70291"}
-{"id": 346285, "field": "aura", "en": "This is all just pretend.  \r\nYou imagine yourself stronger, and more resilient.  \r\nAlso, it's really not THAT cold...\r\nIncreases health by $s1.\r\nIncreases damage by $s2%.\r\nIncreases healing by $s3%.\r\nIncreases frost resist by $s4.", "hash": "7682f7436aa05ac6", "src": "db2@1.60.1.70291"}
+{"id": 346285, "field": "name", "en": "Just Pretend", "hash": "49d122a37f6cad82", "src": "db2@1.60.1.70338"}
+{"id": 346285, "field": "description", "en": "This is all just pretend.  \r\nYou imagine yourself stronger, and more resilient.  \r\nYou're sure you can handle the Plague...", "hash": "282a3728949e5a51", "src": "db2@1.60.1.70338"}
+{"id": 346285, "field": "aura", "en": "This is all just pretend.  \r\nYou imagine yourself stronger, and more resilient.  \r\nAlso, it's really not THAT cold...\r\nIncreases health by $s1.\r\nIncreases damage by $s2%.\r\nIncreases healing by $s3%.\r\nIncreases frost resist by $s4.", "hash": "7682f7436aa05ac6", "src": "db2@1.60.1.70338"}

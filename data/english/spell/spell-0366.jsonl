@@ -1,49 +1,49 @@
-{"id": 366305, "field": "name", "en": "Static Electricity", "hash": "8bcb268d3d5ece30", "src": "db2@1.60.1.70291"}
-{"id": 366305, "field": "aura", "en": "Pulsing with Static Electricity, shocking nearby players for nature damage at 10 stacks.", "hash": "70a9b8016f4dcd0d", "src": "db2@1.60.1.70291"}
-{"id": 366315, "field": "name", "en": "Electrostatic Discharge", "hash": "4e6dbb2bfa907f66", "src": "db2@1.60.1.70291"}
-{"id": 366403, "field": "name", "en": "[DNT] Tower Capture - Honor Cooldown (24 Hours)", "hash": "35e6000a961531d2", "src": "db2@1.60.1.70291"}
-{"id": 366430, "field": "name", "en": "Inferno", "hash": "a5ead299d1258ca6", "src": "db2@1.60.1.70291"}
-{"id": 366541, "field": "name", "en": "Static Electricity", "hash": "8bcb268d3d5ece30", "src": "db2@1.60.1.70291"}
-{"id": 366567, "field": "name", "en": "Greater Mender's Potion", "hash": "7843f666b3456c6a", "src": "db2@1.60.1.70291"}
-{"id": 366586, "field": "name", "en": "Soulflayer's Fervor", "hash": "f11e43e2aba1161c", "src": "db2@1.60.1.70291"}
-{"id": 366587, "field": "name", "en": "Soulflayer's Fervor", "hash": "f11e43e2aba1161c", "src": "db2@1.60.1.70291"}
-{"id": 366587, "field": "aura", "en": "$?$W2==1[Immune to snare and root effects][Immune to snare effects].\r\n$?$W3==1[Movement speed increased by 50%.][]", "hash": "d7a55b6da85a0f75", "src": "db2@1.60.1.70291"}
-{"id": 366588, "field": "name", "en": "Soulflayer's Fervor", "hash": "f11e43e2aba1161c", "src": "db2@1.60.1.70291"}
-{"id": 366590, "field": "name", "en": "Soulflayer's Fervor", "hash": "f11e43e2aba1161c", "src": "db2@1.60.1.70291"}
-{"id": 366591, "field": "name", "en": "Soulflayer's Fervor", "hash": "f11e43e2aba1161c", "src": "db2@1.60.1.70291"}
-{"id": 366643, "field": "name", "en": "Electrostatic Discharge", "hash": "4e6dbb2bfa907f66", "src": "db2@1.60.1.70291"}
-{"id": 366645, "field": "name", "en": "Electrostatic Discharge", "hash": "4e6dbb2bfa907f66", "src": "db2@1.60.1.70291"}
-{"id": 366719, "field": "name", "en": "Static Charge", "hash": "1ff6df284d90bc1a", "src": "db2@1.60.1.70291"}
-{"id": 366719, "field": "aura", "en": "Damage dealt will apply a stack of Static Electricity.", "hash": "f6bcad6b01513ea2", "src": "db2@1.60.1.70291"}
-{"id": 366720, "field": "name", "en": "[DNT] Static Pulse", "hash": "50f9e635fb299a4d", "src": "db2@1.60.1.70291"}
-{"id": 366815, "field": "name", "en": "Teach Summon Incubus", "hash": "0001e5ee05a490b0", "src": "db2@1.60.1.70291"}
-{"id": 366816, "field": "name", "en": "Summoned Incubus", "hash": "4a2c780baef00137", "src": "db2@1.60.1.70291"}
-{"id": 366831, "field": "name", "en": "Ruby Bolt", "hash": "d481a777a5a57b01", "src": "db2@1.60.1.70291"}
-{"id": 366881, "field": "name", "en": "Summon Incubus", "hash": "56af7db4f992bdcb", "src": "db2@1.60.1.70291"}
-{"id": 366881, "field": "description", "en": "Call forth an incubus using the summoning circle.", "hash": "cff16dcb06a296ed", "src": "db2@1.60.1.70291"}
-{"id": 366894, "field": "name", "en": "Summon Incubus", "hash": "56af7db4f992bdcb", "src": "db2@1.60.1.70291"}
-{"id": 366894, "field": "description", "en": "Call forth an incubus using the summoning circle.", "hash": "cff16dcb06a296ed", "src": "db2@1.60.1.70291"}
-{"id": 366902, "field": "name", "en": "Summon Incubus", "hash": "56af7db4f992bdcb", "src": "db2@1.60.1.70291"}
-{"id": 366902, "field": "description", "en": "Call forth an incubus using the summoning circle.", "hash": "cff16dcb06a296ed", "src": "db2@1.60.1.70291"}
-{"id": 366907, "field": "name", "en": "Ruby Breath", "hash": "9b186437fc1f19f4", "src": "db2@1.60.1.70291"}
-{"id": 366908, "field": "name", "en": "Ruby Breath", "hash": "9b186437fc1f19f4", "src": "db2@1.60.1.70291"}
-{"id": 366909, "field": "name", "en": "Ruby Flames", "hash": "1f51332f02c8443f", "src": "db2@1.60.1.70291"}
-{"id": 366909, "field": "description", "en": "Deals $s1 Fire damage every $t1 sec.", "hash": "a9aeaf555afe3aee", "src": "db2@1.60.1.70291"}
-{"id": 366909, "field": "aura", "en": "Deals $s1 Fire damage every $t1 sec.", "hash": "a9aeaf555afe3aee", "src": "db2@1.60.1.70291"}
-{"id": 366910, "field": "name", "en": "Ruby Breath", "hash": "9b186437fc1f19f4", "src": "db2@1.60.1.70291"}
-{"id": 366966, "field": "name", "en": "Emerald Breath", "hash": "d0ca9fe2859028eb", "src": "db2@1.60.1.70291"}
-{"id": 366967, "field": "name", "en": "Emerald Breath", "hash": "d0ca9fe2859028eb", "src": "db2@1.60.1.70291"}
-{"id": 366969, "field": "name", "en": "Emerald Breath", "hash": "d0ca9fe2859028eb", "src": "db2@1.60.1.70291"}
-{"id": 366969, "field": "description", "en": "Deals $s1 Nature damage every $t1 sec.", "hash": "9d4ac814ae8948bc", "src": "db2@1.60.1.70291"}
-{"id": 366969, "field": "aura", "en": "Deals $s1 Nature damage every $t1 sec.", "hash": "9d4ac814ae8948bc", "src": "db2@1.60.1.70291"}
-{"id": 366970, "field": "name", "en": "Emerald Breath", "hash": "d0ca9fe2859028eb", "src": "db2@1.60.1.70291"}
-{"id": 366994, "field": "name", "en": "Obsidian Breath", "hash": "2e96387e60bb3c9f", "src": "db2@1.60.1.70291"}
-{"id": 366994, "field": "description", "en": "Deals $s1 Shadow damage every $t1 sec.", "hash": "89116feef12a229b", "src": "db2@1.60.1.70291"}
-{"id": 366994, "field": "aura", "en": "Deals $s1 Shadow damage every $t1 sec.", "hash": "89116feef12a229b", "src": "db2@1.60.1.70291"}
-{"id": 366995, "field": "name", "en": "Bronze Breath", "hash": "e32321de5d4ad201", "src": "db2@1.60.1.70291"}
-{"id": 366995, "field": "description", "en": "Deals $s1 Arcane damage every $t1 sec.", "hash": "da5c3e9cc79e7bce", "src": "db2@1.60.1.70291"}
-{"id": 366995, "field": "aura", "en": "Deals $s1 Arcane damage every $t1 sec.", "hash": "da5c3e9cc79e7bce", "src": "db2@1.60.1.70291"}
-{"id": 366996, "field": "name", "en": "Azure Breath", "hash": "e70b19a6a86e924f", "src": "db2@1.60.1.70291"}
-{"id": 366996, "field": "description", "en": "Deals $s1 Frost damage every $t1 sec.", "hash": "57de0f0b97c37d3a", "src": "db2@1.60.1.70291"}
-{"id": 366996, "field": "aura", "en": "Deals $s1 Frost damage every $t1 sec.", "hash": "57de0f0b97c37d3a", "src": "db2@1.60.1.70291"}
-{"id": 366999, "field": "name", "en": "Azure Breath", "hash": "e70b19a6a86e924f", "src": "db2@1.60.1.70291"}
+{"id": 366305, "field": "name", "en": "Static Electricity", "hash": "8bcb268d3d5ece30", "src": "db2@1.60.1.70338"}
+{"id": 366305, "field": "aura", "en": "Pulsing with Static Electricity, shocking nearby players for nature damage at 10 stacks.", "hash": "70a9b8016f4dcd0d", "src": "db2@1.60.1.70338"}
+{"id": 366315, "field": "name", "en": "Electrostatic Discharge", "hash": "4e6dbb2bfa907f66", "src": "db2@1.60.1.70338"}
+{"id": 366403, "field": "name", "en": "[DNT] Tower Capture - Honor Cooldown (24 Hours)", "hash": "35e6000a961531d2", "src": "db2@1.60.1.70338"}
+{"id": 366430, "field": "name", "en": "Inferno", "hash": "a5ead299d1258ca6", "src": "db2@1.60.1.70338"}
+{"id": 366541, "field": "name", "en": "Static Electricity", "hash": "8bcb268d3d5ece30", "src": "db2@1.60.1.70338"}
+{"id": 366567, "field": "name", "en": "Greater Mender's Potion", "hash": "7843f666b3456c6a", "src": "db2@1.60.1.70338"}
+{"id": 366586, "field": "name", "en": "Soulflayer's Fervor", "hash": "f11e43e2aba1161c", "src": "db2@1.60.1.70338"}
+{"id": 366587, "field": "name", "en": "Soulflayer's Fervor", "hash": "f11e43e2aba1161c", "src": "db2@1.60.1.70338"}
+{"id": 366587, "field": "aura", "en": "$?$W2==1[Immune to snare and root effects][Immune to snare effects].\r\n$?$W3==1[Movement speed increased by 50%.][]", "hash": "d7a55b6da85a0f75", "src": "db2@1.60.1.70338"}
+{"id": 366588, "field": "name", "en": "Soulflayer's Fervor", "hash": "f11e43e2aba1161c", "src": "db2@1.60.1.70338"}
+{"id": 366590, "field": "name", "en": "Soulflayer's Fervor", "hash": "f11e43e2aba1161c", "src": "db2@1.60.1.70338"}
+{"id": 366591, "field": "name", "en": "Soulflayer's Fervor", "hash": "f11e43e2aba1161c", "src": "db2@1.60.1.70338"}
+{"id": 366643, "field": "name", "en": "Electrostatic Discharge", "hash": "4e6dbb2bfa907f66", "src": "db2@1.60.1.70338"}
+{"id": 366645, "field": "name", "en": "Electrostatic Discharge", "hash": "4e6dbb2bfa907f66", "src": "db2@1.60.1.70338"}
+{"id": 366719, "field": "name", "en": "Static Charge", "hash": "1ff6df284d90bc1a", "src": "db2@1.60.1.70338"}
+{"id": 366719, "field": "aura", "en": "Damage dealt will apply a stack of Static Electricity.", "hash": "f6bcad6b01513ea2", "src": "db2@1.60.1.70338"}
+{"id": 366720, "field": "name", "en": "[DNT] Static Pulse", "hash": "50f9e635fb299a4d", "src": "db2@1.60.1.70338"}
+{"id": 366815, "field": "name", "en": "Teach Summon Incubus", "hash": "0001e5ee05a490b0", "src": "db2@1.60.1.70338"}
+{"id": 366816, "field": "name", "en": "Summoned Incubus", "hash": "4a2c780baef00137", "src": "db2@1.60.1.70338"}
+{"id": 366831, "field": "name", "en": "Ruby Bolt", "hash": "d481a777a5a57b01", "src": "db2@1.60.1.70338"}
+{"id": 366881, "field": "name", "en": "Summon Incubus", "hash": "56af7db4f992bdcb", "src": "db2@1.60.1.70338"}
+{"id": 366881, "field": "description", "en": "Call forth an incubus using the summoning circle.", "hash": "cff16dcb06a296ed", "src": "db2@1.60.1.70338"}
+{"id": 366894, "field": "name", "en": "Summon Incubus", "hash": "56af7db4f992bdcb", "src": "db2@1.60.1.70338"}
+{"id": 366894, "field": "description", "en": "Call forth an incubus using the summoning circle.", "hash": "cff16dcb06a296ed", "src": "db2@1.60.1.70338"}
+{"id": 366902, "field": "name", "en": "Summon Incubus", "hash": "56af7db4f992bdcb", "src": "db2@1.60.1.70338"}
+{"id": 366902, "field": "description", "en": "Call forth an incubus using the summoning circle.", "hash": "cff16dcb06a296ed", "src": "db2@1.60.1.70338"}
+{"id": 366907, "field": "name", "en": "Ruby Breath", "hash": "9b186437fc1f19f4", "src": "db2@1.60.1.70338"}
+{"id": 366908, "field": "name", "en": "Ruby Breath", "hash": "9b186437fc1f19f4", "src": "db2@1.60.1.70338"}
+{"id": 366909, "field": "name", "en": "Ruby Flames", "hash": "1f51332f02c8443f", "src": "db2@1.60.1.70338"}
+{"id": 366909, "field": "description", "en": "Deals $s1 Fire damage every $t1 sec.", "hash": "a9aeaf555afe3aee", "src": "db2@1.60.1.70338"}
+{"id": 366909, "field": "aura", "en": "Deals $s1 Fire damage every $t1 sec.", "hash": "a9aeaf555afe3aee", "src": "db2@1.60.1.70338"}
+{"id": 366910, "field": "name", "en": "Ruby Breath", "hash": "9b186437fc1f19f4", "src": "db2@1.60.1.70338"}
+{"id": 366966, "field": "name", "en": "Emerald Breath", "hash": "d0ca9fe2859028eb", "src": "db2@1.60.1.70338"}
+{"id": 366967, "field": "name", "en": "Emerald Breath", "hash": "d0ca9fe2859028eb", "src": "db2@1.60.1.70338"}
+{"id": 366969, "field": "name", "en": "Emerald Breath", "hash": "d0ca9fe2859028eb", "src": "db2@1.60.1.70338"}
+{"id": 366969, "field": "description", "en": "Deals $s1 Nature damage every $t1 sec.", "hash": "9d4ac814ae8948bc", "src": "db2@1.60.1.70338"}
+{"id": 366969, "field": "aura", "en": "Deals $s1 Nature damage every $t1 sec.", "hash": "9d4ac814ae8948bc", "src": "db2@1.60.1.70338"}
+{"id": 366970, "field": "name", "en": "Emerald Breath", "hash": "d0ca9fe2859028eb", "src": "db2@1.60.1.70338"}
+{"id": 366994, "field": "name", "en": "Obsidian Breath", "hash": "2e96387e60bb3c9f", "src": "db2@1.60.1.70338"}
+{"id": 366994, "field": "description", "en": "Deals $s1 Shadow damage every $t1 sec.", "hash": "89116feef12a229b", "src": "db2@1.60.1.70338"}
+{"id": 366994, "field": "aura", "en": "Deals $s1 Shadow damage every $t1 sec.", "hash": "89116feef12a229b", "src": "db2@1.60.1.70338"}
+{"id": 366995, "field": "name", "en": "Bronze Breath", "hash": "e32321de5d4ad201", "src": "db2@1.60.1.70338"}
+{"id": 366995, "field": "description", "en": "Deals $s1 Arcane damage every $t1 sec.", "hash": "da5c3e9cc79e7bce", "src": "db2@1.60.1.70338"}
+{"id": 366995, "field": "aura", "en": "Deals $s1 Arcane damage every $t1 sec.", "hash": "da5c3e9cc79e7bce", "src": "db2@1.60.1.70338"}
+{"id": 366996, "field": "name", "en": "Azure Breath", "hash": "e70b19a6a86e924f", "src": "db2@1.60.1.70338"}
+{"id": 366996, "field": "description", "en": "Deals $s1 Frost damage every $t1 sec.", "hash": "57de0f0b97c37d3a", "src": "db2@1.60.1.70338"}
+{"id": 366996, "field": "aura", "en": "Deals $s1 Frost damage every $t1 sec.", "hash": "57de0f0b97c37d3a", "src": "db2@1.60.1.70338"}
+{"id": 366999, "field": "name", "en": "Azure Breath", "hash": "e70b19a6a86e924f", "src": "db2@1.60.1.70338"}

@@ -9,6 +9,7 @@ WFJ.Data.add("quest", {
   [79093] = { "Rumi of Gnomeregan: The Collected Works", nil, nil, "私たちのコレクションに加える品を、何か持ってきてくれたか？", "ありがとうございます、{name}。あなたの尽力で私たちの知識は広がります。\n\n図書館の役に立ちそうな魔法の書物をほかにも見つけたら、ぜひ私のところへ持ってきてください。", 0x24c45025, nil, nil, 0x1400fbf0, 0xe184a784, ".mm.." },
   [79094] = { "The Lessons of Ta'zo", nil, nil, nil, nil, 0xfaffd003, nil, nil, nil, nil, ".mmmm" },
   [79095] = { "The Apothecary's Metaphysical Primer", nil, nil, nil, nil, 0xcbb1ebc8, nil, nil, nil, nil, ".mmmm" },
+  [79096] = { "Ataeric: On Arcane Curiosities", nil, nil, nil, nil, 0x673b8f25, nil, nil, nil, nil, ".mmmm" },
   [79097] = { "Baxtan: On Destructive Magics", nil, nil, "私たちのコレクションに加える品を、何か持ってきてくれたか？", "ありがとうございます、{name}。あなたの尽力で私たちの知識は広がります。\n\n図書館の役に立ちそうな魔法の書物をほかにも見つけたら、ぜひ私のところへ持ってきてください。", 0x3e745b06, nil, nil, 0x1400fbf0, 0xe184a784, ".mm.." },
   [79098] = { "森を一掃せよ！", "Silverwing Sentinel Charmを、AshenvaleのBonfireの拠点にいるFar SeerのKazragoreのところへ持って行って下さい。", "こいつは討ち取ったが、腹立たしいallianceどもはまだ戦いを続けている……このお守りは何だ？", nil, nil, 0x47bae5fc, 0x072ac677, 0x0d462d55, nil, nil, "...mm" },
   [79192] = { "踏み石", "板からメモを引きはがし、走り書きを読む。", "メモはこう始まっている。「Missionの話じゃ、二人ともNew Plagueの配達をしてたそうだ。俺にはただの薬剤師の事故にしか見えないがね。安全な場所で話したいなら、BarrensとDesolaceの間の山にある俺の居心地のいい隠れ場所を見つけな」", nil, "辺境の冒険者も傭兵も、ここで野営しているのは間違いない。風にはためくメモの端が目に留まり、あなたはそれに手を伸ばした。", 0x9dd88a3c, 0x42f58b36, 0x18dc9772, nil, 0xf47f0ef5, "...m." },

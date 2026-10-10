@@ -1,139 +1,139 @@
-{"id": 457010, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70291"}
-{"id": 457010, "field": "description", "en": "Teleport player to the Epoch Ender.", "hash": "48ba952c61d1ca7e", "src": "db2@1.60.1.70291"}
-{"id": 457010, "field": "aura", "en": "Teleport player to the Epoch Ender.", "hash": "48ba952c61d1ca7e", "src": "db2@1.60.1.70291"}
-{"id": 457012, "field": "name", "en": "Ichor Coating", "hash": "3ee478328bc311b5", "src": "db2@1.60.1.70291"}
-{"id": 457012, "field": "description", "en": "Coat in ichor.", "hash": "3a8ea46c9189c826", "src": "db2@1.60.1.70291"}
-{"id": 457021, "field": "name", "en": "Rancid Hunk of Flesh", "hash": "3e80e9e8cc8ce9a8", "src": "db2@1.60.1.70291"}
-{"id": 457021, "field": "description", "en": "???", "hash": "00109fb3fa20851d", "src": "db2@1.60.1.70291"}
-{"id": 457097, "field": "name", "en": "[DNT] Spawn Regurgitated Carrion", "hash": "f5efe18b668b1fa2", "src": "db2@1.60.1.70291"}
-{"id": 457107, "field": "name", "en": "[DNT] Poison Dummy Visual", "hash": "3db7a229f0e291b9", "src": "db2@1.60.1.70291"}
-{"id": 457191, "field": "name", "en": "Decisive Strike", "hash": "0cffda187f390b5c", "src": "db2@1.60.1.70291"}
-{"id": 457191, "field": "description", "en": "A sweeping attack that strikes all enemies to the right of the caster.", "hash": "2cade6c582f24925", "src": "db2@1.60.1.70291"}
-{"id": 457191, "field": "aura", "en": "Wounded.", "hash": "7cead755dd43b48f", "src": "db2@1.60.1.70291"}
-{"id": 457322, "field": "name", "en": "S03 - Item - T1 - Priest - Shadow 4P Bonus", "hash": "155ccddfd12e4992", "src": "db2@1.60.1.70291"}
-{"id": 457322, "field": "description", "en": "Increases your critical strike chance with spells and attacks by $s1%.", "hash": "436f0749144fb866", "src": "db2@1.60.1.70291"}
-{"id": 457323, "field": "name", "en": "S03 - Item - T1 - Paladin - Holy 4P Bonus", "hash": "c4c55decb9b5e887", "src": "db2@1.60.1.70291"}
-{"id": 457323, "field": "description", "en": "Increases your critical strike chance with spells and attacks by $s1%.", "hash": "436f0749144fb866", "src": "db2@1.60.1.70291"}
-{"id": 457324, "field": "name", "en": "S03 - Item - T1 - Hunter - Ranged 4P Bonus", "hash": "0cfb0066d1fff3f2", "src": "db2@1.60.1.70291"}
-{"id": 457324, "field": "description", "en": "While tracking a creature type, you deal $s1% increased damage to that creature type.", "hash": "06e1f4d3ade6a2c5", "src": "db2@1.60.1.70291"}
-{"id": 457325, "field": "name", "en": "S03 - Item - T1 - Priest - Shadow 6P Bonus", "hash": "043fd362bc005579", "src": "db2@1.60.1.70291"}
-{"id": 457325, "field": "description", "en": "Mind Blast critical strikes reduce the duration of your next Mind Flay by $456549s1% while increasing its total damage by $456549s3%.", "hash": "d5d45b3786d67b2e", "src": "db2@1.60.1.70291"}
-{"id": 457326, "field": "name", "en": "Hex", "hash": "00130eaf1ddfa296", "src": "db2@1.60.1.70291"}
-{"id": 457326, "field": "aura", "en": "Hexed.", "hash": "ba4d399dbaf5b2c3", "src": "db2@1.60.1.70291"}
-{"id": 457329, "field": "name", "en": "S03 - Item - T1 - Rogue - Damage 2P Bonus", "hash": "7386dd92c3ed8159", "src": "db2@1.60.1.70291"}
-{"id": 457329, "field": "description", "en": "Feint also grants Avoidance for $457331d, reducing all damage taken from area of effect attacks from non-players by $457331s1%.", "hash": "99f6749ec8887555", "src": "db2@1.60.1.70291"}
-{"id": 457331, "field": "name", "en": "Avoidance", "hash": "5e1898dc338fc6b7", "src": "db2@1.60.1.70291"}
-{"id": 457331, "field": "aura", "en": "Reduces all damage taken by $s1% from area of effect attacks made by enemies that are not players or player-controlled pets.", "hash": "365244e4578b8746", "src": "db2@1.60.1.70291"}
-{"id": 457339, "field": "name", "en": "S03 - Item - T1 - Rogue - Damage 4P Bonus", "hash": "6269e315aebf8d40", "src": "db2@1.60.1.70291"}
-{"id": 457339, "field": "description", "en": "Increases the critical strike damage bonus of your Poisons by $s1%.", "hash": "b90eb5b7ee470478", "src": "db2@1.60.1.70291"}
-{"id": 457342, "field": "name", "en": "Clearcasting", "hash": "55196a3ba83be5bd", "src": "db2@1.60.1.70291"}
-{"id": 457342, "field": "aura", "en": "Your next ability has its energy cost reduced by $s1%.", "hash": "086c1299cc4d5e1c", "src": "db2@1.60.1.70291"}
-{"id": 457344, "field": "name", "en": "S03 - Item - T1 - Rogue - Damage 6P Bonus", "hash": "514ce89899919927", "src": "db2@1.60.1.70291"}
-{"id": 457344, "field": "description", "en": "Your finishing moves have a $b1% chance per combo point to make your next ability cost no energy.", "hash": "78c808db8ab2ecb5", "src": "db2@1.60.1.70291"}
-{"id": 457349, "field": "name", "en": "S03 - Item - T1 - Rogue - Tank 2P Bonus", "hash": "3142aee5a3fb2634", "src": "db2@1.60.1.70291"}
-{"id": 457349, "field": "description", "en": "While Just a Flesh Wound and Blade Dance are active, Crimson Tempest, Blunderbuss, and Fan of Knives cost $457351s1  less Energy and generate $457351s2% increased threat.", "hash": "a6231902ad31c7bf", "src": "db2@1.60.1.70291"}
-{"id": 457351, "field": "name", "en": "Blade Dance", "hash": "6eac5b36eaf0159d", "src": "db2@1.60.1.70291"}
-{"id": 457437, "field": "name", "en": "Vanish", "hash": "33fc8f163ea666f6", "src": "db2@1.60.1.70291"}
-{"id": 457437, "field": "description", "en": "Reduces all Magic damage taken by $s1% for $d.", "hash": "2336f97a3cd62e8a", "src": "db2@1.60.1.70291"}
-{"id": 457437, "field": "aura", "en": "Magic damage taken reduced by $s1%.", "hash": "b0b73172a415b059", "src": "db2@1.60.1.70291"}
-{"id": 457440, "field": "name", "en": "S03 - Item - T1 - Rogue - Tank 4P Bonus", "hash": "2025b4688ecd321b", "src": "db2@1.60.1.70291"}
-{"id": 457440, "field": "description", "en": "Vanish now reduces all Magic damage you take by $457437s1% for its duration, but it no longer grants Stealth or breaks movement impairing effects.", "hash": "a367388e23d3df4c", "src": "db2@1.60.1.70291"}
-{"id": 457464, "field": "name", "en": "S03 - Item - T1 - Rogue - Tank 6P Bonus", "hash": "0f08b9eb799f3e02", "src": "db2@1.60.1.70291"}
-{"id": 457464, "field": "description", "en": "Your finishing moves have a $b1% chance per combo point to make you take $457469s1% less Physical damage from the next melee attack that hits you within $457469d.", "hash": "aa9c0e0e9561cd59", "src": "db2@1.60.1.70291"}
-{"id": 457469, "field": "name", "en": "Resilient", "hash": "e04bf6ef763c01ce", "src": "db2@1.60.1.70291"}
-{"id": 457469, "field": "aura", "en": "Reduces all Physical damage taken from the next melee attack to hit you by $s1%.", "hash": "2f0b3692eb494d9d", "src": "db2@1.60.1.70291"}
-{"id": 457475, "field": "name", "en": "S03 - Item - T1 - Shaman - Elemental/Enhancement/Restoration 2P Bonus", "hash": "f589ba82582f8dcb", "src": "db2@1.60.1.70291"}
-{"id": 457475, "field": "description", "en": "The radius of your totems that affect friendly targets is increased to ${$m1+20} yd.", "hash": "80cc84115068f964", "src": "db2@1.60.1.70291"}
-{"id": 457478, "field": "name", "en": "S03 - Item - T1 - Shaman - Restoration 4P Bonus", "hash": "f5f7ba8cbeb51515", "src": "db2@1.60.1.70291"}
-{"id": 457478, "field": "description", "en": "After casting your Healing Wave, Lesser Healing Wave, or Riptide spell, gives you a $h% chance to gain Mana equal to $s1% of the base cost of the spell.", "hash": "36bd0d3367beec83", "src": "db2@1.60.1.70291"}
-{"id": 457479, "field": "name", "en": "Mana Surge", "hash": "9b5d5cfe0ec7b4d5", "src": "db2@1.60.1.70291"}
-{"id": 457480, "field": "name", "en": "Mana Surge", "hash": "9b5d5cfe0ec7b4d5", "src": "db2@1.60.1.70291"}
-{"id": 457494, "field": "name", "en": "S03 - Item - T1 - Shaman - Restoration 6P Bonus", "hash": "e4dac00fa98720fc", "src": "db2@1.60.1.70291"}
-{"id": 457494, "field": "description", "en": "Your Healing Wave will now jump to additional nearby targets. Each jump reduces the effectiveness of the heal by $s2%, and the spell will jump to up to ${$m1-1} additional targets.", "hash": "c364a8c379fccc50", "src": "db2@1.60.1.70291"}
-{"id": 457520, "field": "name", "en": "S03 - Item - T1 - Shaman - Elemental 4P Bonus", "hash": "32e06bdbb8d1598e", "src": "db2@1.60.1.70291"}
-{"id": 457520, "field": "description", "en": "Your Lightning Bolt critical strikes have a $h% chance to reset the cooldown on Lava Burst and Chain Lightning and make the next Lava Burst or Chain Lightning within $415105d instant.\r\n", "hash": "de9bf0de20f3ebe6", "src": "db2@1.60.1.70291"}
-{"id": 457524, "field": "name", "en": "S03 - Item - T1 - Shaman - Elemental 6P Bonus", "hash": "21c3715ea3a36575", "src": "db2@1.60.1.70291"}
-{"id": 457524, "field": "description", "en": "Lava Burst now also refreshes the duration of Flame Shock on your target back to $29228d.\r\n", "hash": "a16e74634829cda3", "src": "db2@1.60.1.70291"}
-{"id": 457530, "field": "name", "en": "S03 - Item - T1 - Shaman - Enhancement 4P Bonus", "hash": "84c5c7b72c2d9e83", "src": "db2@1.60.1.70291"}
-{"id": 457530, "field": "description", "en": "Increases your critical strike chance with spells and attacks by $s1%.", "hash": "436f0749144fb866", "src": "db2@1.60.1.70291"}
-{"id": 457532, "field": "name", "en": "S03 - Item - T1 - Shaman - Enhancement 6P Bonus", "hash": "73a8cd3a16ffaa6a", "src": "db2@1.60.1.70291"}
-{"id": 457532, "field": "description", "en": "Your Flurry talent grants an additional $s1% increase to your attack speed.", "hash": "6d833c263eaad3d4", "src": "db2@1.60.1.70291"}
-{"id": 457534, "field": "name", "en": "Frostbitten", "hash": "dc5623a8195eccd3", "src": "db2@1.60.1.70291"}
-{"id": 457534, "field": "aura", "en": "Weakened from frozen state. Will succumb in $d.", "hash": "76c98d42546b5357", "src": "db2@1.60.1.70291"}
-{"id": 457540, "field": "name", "en": "S03 - Item - T1 - Shaman - Tank 2P Bonus", "hash": "0c0ec20ab8814470", "src": "db2@1.60.1.70291"}
-{"id": 457540, "field": "description", "en": "Increases your attack speed by $16280s1% for your next 3 swings after you parry, dodge, or block.", "hash": "1f104b2536e81984", "src": "db2@1.60.1.70291"}
-{"id": 457541, "field": "name", "en": "S03 - Item - T1 - Shaman - Tank 4P Bonus", "hash": "faf1c788a3535057", "src": "db2@1.60.1.70291"}
-{"id": 457541, "field": "description", "en": "Your parries and dodges also activate your Shield Mastery rune ability.", "hash": "8df856b8c9c9ab9a", "src": "db2@1.60.1.70291"}
-{"id": 457544, "field": "name", "en": "S03 - Item - T1 - Shaman - Tank 6P Bonus", "hash": "e9d4cd0b8e255c3e", "src": "db2@1.60.1.70291"}
-{"id": 457544, "field": "description", "en": "Your Stoneskin Totem also reduces Physical damage taken by $s1% and your Windwall Totem also reduces Magical damage taken by $s1%.", "hash": "fc736365b8c883e0", "src": "db2@1.60.1.70291"}
-{"id": 457548, "field": "name", "en": "S03 - Item - T1 - Warlock - Damage 2P Bonus", "hash": "01308c749df55dee", "src": "db2@1.60.1.70291"}
-{"id": 457548, "field": "description", "en": "Lifetap generates $s1% more mana and $s2% less threat.", "hash": "d6c93698db19dede", "src": "db2@1.60.1.70291"}
-{"id": 457549, "field": "name", "en": "S03 - Item - T1 - Warlock - Damage 4P Bonus", "hash": "f01391f288c769d5", "src": "db2@1.60.1.70291"}
-{"id": 457549, "field": "description", "en": "Increases your critical strike chance with spells and attacks by $s1%.", "hash": "436f0749144fb866", "src": "db2@1.60.1.70291"}
-{"id": 457553, "field": "name", "en": "S03 - Item - T1 - Warlock - Damage 6P Bonus", "hash": "def69775739975bc", "src": "db2@1.60.1.70291"}
-{"id": 457553, "field": "description", "en": "Your Nightfall talent has a $s1% increased chance to trigger. Your Incinerate has a $h% chance to trigger your Decimation regardless of the target's health.", "hash": "13e64d164efe4f7d", "src": "db2@1.60.1.70291"}
-{"id": 457558, "field": "name", "en": "Fire Trance", "hash": "170a379a9e77afda", "src": "db2@1.60.1.70291"}
-{"id": 457558, "field": "aura", "en": "Your next Immolate or Incinerate becomes an instant cast spell.", "hash": "ed9d49545333758e", "src": "db2@1.60.1.70291"}
-{"id": 457559, "field": "name", "en": "Novice Frost Mage - Receive Torn Spell Notes", "hash": "bcdeea3eda535138", "src": "db2@1.60.1.70291"}
-{"id": 457560, "field": "name", "en": "Novice Frost Mage - Receive Torn Spell Notes", "hash": "bcdeea3eda535138", "src": "db2@1.60.1.70291"}
-{"id": 457561, "field": "name", "en": "Novice Frost Mage - Receive Torn Spell Notes", "hash": "bcdeea3eda535138", "src": "db2@1.60.1.70291"}
-{"id": 457563, "field": "name", "en": "Novice Frost Mage - Receive Torn Spell Notes", "hash": "bcdeea3eda535138", "src": "db2@1.60.1.70291"}
-{"id": 457569, "field": "name", "en": "Banish", "hash": "8da6a696dfe51d8f", "src": "db2@1.60.1.70291"}
-{"id": 457569, "field": "description", "en": "Banishes the target, preventing all action but making it invulnerable for up to $d.  Only one target can be banished at a time.  Only works on Demons and Elementals.", "hash": "43e913d0c436bc33", "src": "db2@1.60.1.70291"}
-{"id": 457569, "field": "aura", "en": "Invulnerable, but unable to act.", "hash": "b1a1673e20095e89", "src": "db2@1.60.1.70291"}
-{"id": 457571, "field": "name", "en": "S03 - Item - T1 - Warlock - Tank 2P Bonus", "hash": "959e7b0f5f7cf5f9", "src": "db2@1.60.1.70291"}
-{"id": 457571, "field": "description", "en": "Banish is now instant cast, and can be cast on yourself while you are a Demon. You cannot Banish yourself while you have Forbearance, and doing so will give you Forbearance for $25771d.", "hash": "7516f8093fa06fa0", "src": "db2@1.60.1.70291"}
-{"id": 457572, "field": "name", "en": "S03 - Item - T1 - Warlock - Tank 4P Bonus", "hash": "848180924a4f01e0", "src": "db2@1.60.1.70291"}
-{"id": 457572, "field": "description", "en": "Each time you take damage, you and your pet gain mana equal to the damage taken, up to a maximum of $s1 mana per event. Can only occur once every few seconds.", "hash": "77f61182bc15c6ca", "src": "db2@1.60.1.70291"}
-{"id": 457573, "field": "name", "en": "Pain Tap", "hash": "83b5dee1539ab879", "src": "db2@1.60.1.70291"}
-{"id": 457612, "field": "name", "en": "Decisive Strike", "hash": "0cffda187f390b5c", "src": "db2@1.60.1.70291"}
-{"id": 457612, "field": "description", "en": "A sweeping attack that strikes all enemies to the left of the caster.", "hash": "a8cf8863d8b6b735", "src": "db2@1.60.1.70291"}
-{"id": 457612, "field": "aura", "en": "Wounded.", "hash": "7cead755dd43b48f", "src": "db2@1.60.1.70291"}
-{"id": 457613, "field": "name", "en": "Crescent Smash", "hash": "36447abc188853b8", "src": "db2@1.60.1.70291"}
-{"id": 457613, "field": "description", "en": "Smashes the area in front of the caster.", "hash": "d804ea53d0991bcc", "src": "db2@1.60.1.70291"}
-{"id": 457613, "field": "aura", "en": "Crippled by the smash, movement speed slowed by $s2%", "hash": "d7cf78bc3f5d6e6c", "src": "db2@1.60.1.70291"}
-{"id": 457614, "field": "name", "en": "Thunder Stomp", "hash": "fdf2c43c7e65eb73", "src": "db2@1.60.1.70291"}
-{"id": 457614, "field": "description", "en": "Discharge power with the impact of your stomp, knocking back and damaging nearby enemies.", "hash": "f45894b7c5af8d31", "src": "db2@1.60.1.70291"}
-{"id": 457614, "field": "aura", "en": "Blasted off.", "hash": "23fd71115abfb4ce", "src": "db2@1.60.1.70291"}
-{"id": 457642, "field": "name", "en": "S03 - Item - T1 - Warlock - Tank 6P Bonus", "hash": "7364861535210dc7", "src": "db2@1.60.1.70291"}
-{"id": 457642, "field": "description", "en": "Your Shadow Cleave hits have a $h% chance to grant you a Soul Shard, reset the cooldown on Soul Fire, and make your next Soul Fire within $457643d instant.", "hash": "14e046ea691fe8f5", "src": "db2@1.60.1.70291"}
-{"id": 457643, "field": "name", "en": "Soul Fire!", "hash": "e1cfa25e67b53c48", "src": "db2@1.60.1.70291"}
-{"id": 457643, "field": "aura", "en": "Your next Soulfire is instant cast.", "hash": "2985eaa065445310", "src": "db2@1.60.1.70291"}
-{"id": 457645, "field": "name", "en": "S03 - Item - T1 - Warrior - Tank 2P Bonus", "hash": "e50c89bd2b0e9532", "src": "db2@1.60.1.70291"}
-{"id": 457645, "field": "description", "en": "Increases the block value of your shield by $s1.", "hash": "b2abc9558bfdc8b6", "src": "db2@1.60.1.70291"}
-{"id": 457646, "field": "name", "en": "S03 - Item - T1 - Warrior - Tank 4P Bonus", "hash": "d3ef8f4015e0a119", "src": "db2@1.60.1.70291"}
-{"id": 457646, "field": "description", "en": "You gain ${$457648m1/10} extra Rage every time you take any damage or deal auto attack damage.", "hash": "c42e03fc83a25829", "src": "db2@1.60.1.70291"}
-{"id": 457648, "field": "name", "en": "Inner Fury", "hash": "6c45aa68945773cb", "src": "db2@1.60.1.70291"}
-{"id": 457651, "field": "name", "en": "S03 - Item - T1 - Warrior - Tank 6P Bonus", "hash": "c2d294c300b2ad00", "src": "db2@1.60.1.70291"}
-{"id": 457651, "field": "description", "en": "Increases all threat you generate in Defensive Stance by an additional $s1% and increases all damage you deal in Gladiator Stance by $s2%.", "hash": "e8f0ec12ff9d9780", "src": "db2@1.60.1.70291"}
-{"id": 457652, "field": "name", "en": "S03 - Item - T1 - Warrior - Damage 2P Bonus", "hash": "99e7028e0fcfeff7", "src": "db2@1.60.1.70291"}
-{"id": 457652, "field": "description", "en": "After changing stances, your next offensive ability's rage cost is reduced by $s1.", "hash": "7a6abd9a6bd8a888", "src": "db2@1.60.1.70291"}
-{"id": 457697, "field": "name", "en": "S03 - Item - T1 - Warrior - Damage 4P Bonus", "hash": "88ca0811faa1fbcd", "src": "db2@1.60.1.70291"}
-{"id": 457697, "field": "description", "en": "For $457699d after leaving a stance, you can use abilities requiring that stance as if you were still in that stance.", "hash": "60222b566650c590", "src": "db2@1.60.1.70291"}
-{"id": 457699, "field": "name", "en": "Echoes of Defensive Stance", "hash": "98e06a654ac27647", "src": "db2@1.60.1.70291"}
-{"id": 457699, "field": "aura", "en": "You can temporarily use all abilities that require Defensive Stance.", "hash": "7c75b83b10955cf5", "src": "db2@1.60.1.70291"}
-{"id": 457706, "field": "name", "en": "Echoes of Battle Stance", "hash": "15c7f5ee93b74061", "src": "db2@1.60.1.70291"}
-{"id": 457706, "field": "aura", "en": "You can temporarily use all abilities that require Battle Stance.", "hash": "3c154a10cdb8019e", "src": "db2@1.60.1.70291"}
-{"id": 457708, "field": "name", "en": "Echoes of Berserker Stance", "hash": "97544a7f2fc7daab", "src": "db2@1.60.1.70291"}
-{"id": 457708, "field": "aura", "en": "You can temporarily use all abilities that require Berserker Stance.", "hash": "b1c16584017a7bbd", "src": "db2@1.60.1.70291"}
-{"id": 457814, "field": "name", "en": "Defensive Forecast", "hash": "696b72a3521e325a", "src": "db2@1.60.1.70291"}
-{"id": 457814, "field": "aura", "en": "Reduces Physical damage taken by $s1%.", "hash": "f47d999bf401129b", "src": "db2@1.60.1.70291"}
-{"id": 457816, "field": "name", "en": "Battle Forecast", "hash": "41ced80c7434436f", "src": "db2@1.60.1.70291"}
-{"id": 457816, "field": "aura", "en": "Increases Physical damage done by $s1%.", "hash": "4bd3d5503fd7ca80", "src": "db2@1.60.1.70291"}
-{"id": 457817, "field": "name", "en": "Berserker Forecast", "hash": "af251f85ca385820", "src": "db2@1.60.1.70291"}
-{"id": 457817, "field": "aura", "en": "Increases Critical Strike chance by $s1%.", "hash": "7fa8354c4e8edb63", "src": "db2@1.60.1.70291"}
-{"id": 457819, "field": "name", "en": "Echoes of Gladiator Stance", "hash": "b60d25ba3e4d93a9", "src": "db2@1.60.1.70291"}
-{"id": 457819, "field": "aura", "en": "You can temporarily use all abilities that require Gladiator Stance.", "hash": "6a599505f668f3a9", "src": "db2@1.60.1.70291"}
-{"id": 457820, "field": "name", "en": "S03 - Item - T1 - Warrior - Damage 6P Bonus", "hash": "77ad0d94e57407b4", "src": "db2@1.60.1.70291"}
-{"id": 457820, "field": "description", "en": "For the first $457816d after activating a stance, you can gain an additional benefit:\r\n\r\nBattle Stance/Gladiator Stance: $457816s1% increased damage done.\r\n\r\nBerserker Stance: $457817s1% increased critical strike chance.\r\n\r\nDefensive Stance: $457814s1% reduced Physical damage taken.", "hash": "d3d46aee292f3e43", "src": "db2@1.60.1.70291"}
-{"id": 457844, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70291"}
-{"id": 457845, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70291"}
-{"id": 457846, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70291"}
-{"id": 457847, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70291"}
-{"id": 457847, "field": "description", "en": "Stars fall from above, inflicting $s1 damage. ", "hash": "e0cf85f6c6c2644d", "src": "db2@1.60.1.70291"}
-{"id": 457848, "field": "name", "en": "Holy Strike", "hash": "f3fe690d41758a44", "src": "db2@1.60.1.70291"}
-{"id": 457848, "field": "description", "en": "Consecrates the caster's weapon, inflicting $s1 additional damage on its next attack. All damage inflicted is based on Holy magic.", "hash": "d04665c0cd6af27f", "src": "db2@1.60.1.70291"}
-{"id": 457849, "field": "name", "en": "Controller Timer", "hash": "3676a58beef2f0cb", "src": "db2@1.60.1.70291"}
-{"id": 457851, "field": "name", "en": "Overconfidence", "hash": "51f88754f68d28f9", "src": "db2@1.60.1.70291"}
-{"id": 457851, "field": "aura", "en": "Growing overconfident\r\nDamage taken increased by $s1%\r\nDamage done increased by $s2%", "hash": "cbf4364e33e9a0cf", "src": "db2@1.60.1.70291"}
-{"id": 457870, "field": "name", "en": "Epoch's End", "hash": "f5737eb88d88e71e", "src": "db2@1.60.1.70291"}
+{"id": 457010, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70338"}
+{"id": 457010, "field": "description", "en": "Teleport player to the Epoch Ender.", "hash": "48ba952c61d1ca7e", "src": "db2@1.60.1.70338"}
+{"id": 457010, "field": "aura", "en": "Teleport player to the Epoch Ender.", "hash": "48ba952c61d1ca7e", "src": "db2@1.60.1.70338"}
+{"id": 457012, "field": "name", "en": "Ichor Coating", "hash": "3ee478328bc311b5", "src": "db2@1.60.1.70338"}
+{"id": 457012, "field": "description", "en": "Coat in ichor.", "hash": "3a8ea46c9189c826", "src": "db2@1.60.1.70338"}
+{"id": 457021, "field": "name", "en": "Rancid Hunk of Flesh", "hash": "3e80e9e8cc8ce9a8", "src": "db2@1.60.1.70338"}
+{"id": 457021, "field": "description", "en": "???", "hash": "00109fb3fa20851d", "src": "db2@1.60.1.70338"}
+{"id": 457097, "field": "name", "en": "[DNT] Spawn Regurgitated Carrion", "hash": "f5efe18b668b1fa2", "src": "db2@1.60.1.70338"}
+{"id": 457107, "field": "name", "en": "[DNT] Poison Dummy Visual", "hash": "3db7a229f0e291b9", "src": "db2@1.60.1.70338"}
+{"id": 457191, "field": "name", "en": "Decisive Strike", "hash": "0cffda187f390b5c", "src": "db2@1.60.1.70338"}
+{"id": 457191, "field": "description", "en": "A sweeping attack that strikes all enemies to the right of the caster.", "hash": "2cade6c582f24925", "src": "db2@1.60.1.70338"}
+{"id": 457191, "field": "aura", "en": "Wounded.", "hash": "7cead755dd43b48f", "src": "db2@1.60.1.70338"}
+{"id": 457322, "field": "name", "en": "S03 - Item - T1 - Priest - Shadow 4P Bonus", "hash": "155ccddfd12e4992", "src": "db2@1.60.1.70338"}
+{"id": 457322, "field": "description", "en": "Increases your critical strike chance with spells and attacks by $s1%.", "hash": "436f0749144fb866", "src": "db2@1.60.1.70338"}
+{"id": 457323, "field": "name", "en": "S03 - Item - T1 - Paladin - Holy 4P Bonus", "hash": "c4c55decb9b5e887", "src": "db2@1.60.1.70338"}
+{"id": 457323, "field": "description", "en": "Increases your critical strike chance with spells and attacks by $s1%.", "hash": "436f0749144fb866", "src": "db2@1.60.1.70338"}
+{"id": 457324, "field": "name", "en": "S03 - Item - T1 - Hunter - Ranged 4P Bonus", "hash": "0cfb0066d1fff3f2", "src": "db2@1.60.1.70338"}
+{"id": 457324, "field": "description", "en": "While tracking a creature type, you deal $s1% increased damage to that creature type.", "hash": "06e1f4d3ade6a2c5", "src": "db2@1.60.1.70338"}
+{"id": 457325, "field": "name", "en": "S03 - Item - T1 - Priest - Shadow 6P Bonus", "hash": "043fd362bc005579", "src": "db2@1.60.1.70338"}
+{"id": 457325, "field": "description", "en": "Mind Blast critical strikes reduce the duration of your next Mind Flay by $456549s1% while increasing its total damage by $456549s3%.", "hash": "d5d45b3786d67b2e", "src": "db2@1.60.1.70338"}
+{"id": 457326, "field": "name", "en": "Hex", "hash": "00130eaf1ddfa296", "src": "db2@1.60.1.70338"}
+{"id": 457326, "field": "aura", "en": "Hexed.", "hash": "ba4d399dbaf5b2c3", "src": "db2@1.60.1.70338"}
+{"id": 457329, "field": "name", "en": "S03 - Item - T1 - Rogue - Damage 2P Bonus", "hash": "7386dd92c3ed8159", "src": "db2@1.60.1.70338"}
+{"id": 457329, "field": "description", "en": "Feint also grants Avoidance for $457331d, reducing all damage taken from area of effect attacks from non-players by $457331s1%.", "hash": "99f6749ec8887555", "src": "db2@1.60.1.70338"}
+{"id": 457331, "field": "name", "en": "Avoidance", "hash": "5e1898dc338fc6b7", "src": "db2@1.60.1.70338"}
+{"id": 457331, "field": "aura", "en": "Reduces all damage taken by $s1% from area of effect attacks made by enemies that are not players or player-controlled pets.", "hash": "365244e4578b8746", "src": "db2@1.60.1.70338"}
+{"id": 457339, "field": "name", "en": "S03 - Item - T1 - Rogue - Damage 4P Bonus", "hash": "6269e315aebf8d40", "src": "db2@1.60.1.70338"}
+{"id": 457339, "field": "description", "en": "Increases the critical strike damage bonus of your Poisons by $s1%.", "hash": "b90eb5b7ee470478", "src": "db2@1.60.1.70338"}
+{"id": 457342, "field": "name", "en": "Clearcasting", "hash": "55196a3ba83be5bd", "src": "db2@1.60.1.70338"}
+{"id": 457342, "field": "aura", "en": "Your next ability has its energy cost reduced by $s1%.", "hash": "086c1299cc4d5e1c", "src": "db2@1.60.1.70338"}
+{"id": 457344, "field": "name", "en": "S03 - Item - T1 - Rogue - Damage 6P Bonus", "hash": "514ce89899919927", "src": "db2@1.60.1.70338"}
+{"id": 457344, "field": "description", "en": "Your finishing moves have a $b1% chance per combo point to make your next ability cost no energy.", "hash": "78c808db8ab2ecb5", "src": "db2@1.60.1.70338"}
+{"id": 457349, "field": "name", "en": "S03 - Item - T1 - Rogue - Tank 2P Bonus", "hash": "3142aee5a3fb2634", "src": "db2@1.60.1.70338"}
+{"id": 457349, "field": "description", "en": "While Just a Flesh Wound and Blade Dance are active, Crimson Tempest, Blunderbuss, and Fan of Knives cost $457351s1  less Energy and generate $457351s2% increased threat.", "hash": "a6231902ad31c7bf", "src": "db2@1.60.1.70338"}
+{"id": 457351, "field": "name", "en": "Blade Dance", "hash": "6eac5b36eaf0159d", "src": "db2@1.60.1.70338"}
+{"id": 457437, "field": "name", "en": "Vanish", "hash": "33fc8f163ea666f6", "src": "db2@1.60.1.70338"}
+{"id": 457437, "field": "description", "en": "Reduces all Magic damage taken by $s1% for $d.", "hash": "2336f97a3cd62e8a", "src": "db2@1.60.1.70338"}
+{"id": 457437, "field": "aura", "en": "Magic damage taken reduced by $s1%.", "hash": "b0b73172a415b059", "src": "db2@1.60.1.70338"}
+{"id": 457440, "field": "name", "en": "S03 - Item - T1 - Rogue - Tank 4P Bonus", "hash": "2025b4688ecd321b", "src": "db2@1.60.1.70338"}
+{"id": 457440, "field": "description", "en": "Vanish now reduces all Magic damage you take by $457437s1% for its duration, but it no longer grants Stealth or breaks movement impairing effects.", "hash": "a367388e23d3df4c", "src": "db2@1.60.1.70338"}
+{"id": 457464, "field": "name", "en": "S03 - Item - T1 - Rogue - Tank 6P Bonus", "hash": "0f08b9eb799f3e02", "src": "db2@1.60.1.70338"}
+{"id": 457464, "field": "description", "en": "Your finishing moves have a $b1% chance per combo point to make you take $457469s1% less Physical damage from the next melee attack that hits you within $457469d.", "hash": "aa9c0e0e9561cd59", "src": "db2@1.60.1.70338"}
+{"id": 457469, "field": "name", "en": "Resilient", "hash": "e04bf6ef763c01ce", "src": "db2@1.60.1.70338"}
+{"id": 457469, "field": "aura", "en": "Reduces all Physical damage taken from the next melee attack to hit you by $s1%.", "hash": "2f0b3692eb494d9d", "src": "db2@1.60.1.70338"}
+{"id": 457475, "field": "name", "en": "S03 - Item - T1 - Shaman - Elemental/Enhancement/Restoration 2P Bonus", "hash": "f589ba82582f8dcb", "src": "db2@1.60.1.70338"}
+{"id": 457475, "field": "description", "en": "The radius of your totems that affect friendly targets is increased to ${$m1+20} yd.", "hash": "80cc84115068f964", "src": "db2@1.60.1.70338"}
+{"id": 457478, "field": "name", "en": "S03 - Item - T1 - Shaman - Restoration 4P Bonus", "hash": "f5f7ba8cbeb51515", "src": "db2@1.60.1.70338"}
+{"id": 457478, "field": "description", "en": "After casting your Healing Wave, Lesser Healing Wave, or Riptide spell, gives you a $h% chance to gain Mana equal to $s1% of the base cost of the spell.", "hash": "36bd0d3367beec83", "src": "db2@1.60.1.70338"}
+{"id": 457479, "field": "name", "en": "Mana Surge", "hash": "9b5d5cfe0ec7b4d5", "src": "db2@1.60.1.70338"}
+{"id": 457480, "field": "name", "en": "Mana Surge", "hash": "9b5d5cfe0ec7b4d5", "src": "db2@1.60.1.70338"}
+{"id": 457494, "field": "name", "en": "S03 - Item - T1 - Shaman - Restoration 6P Bonus", "hash": "e4dac00fa98720fc", "src": "db2@1.60.1.70338"}
+{"id": 457494, "field": "description", "en": "Your Healing Wave will now jump to additional nearby targets. Each jump reduces the effectiveness of the heal by $s2%, and the spell will jump to up to ${$m1-1} additional targets.", "hash": "c364a8c379fccc50", "src": "db2@1.60.1.70338"}
+{"id": 457520, "field": "name", "en": "S03 - Item - T1 - Shaman - Elemental 4P Bonus", "hash": "32e06bdbb8d1598e", "src": "db2@1.60.1.70338"}
+{"id": 457520, "field": "description", "en": "Your Lightning Bolt critical strikes have a $h% chance to reset the cooldown on Lava Burst and Chain Lightning and make the next Lava Burst or Chain Lightning within $415105d instant.\r\n", "hash": "de9bf0de20f3ebe6", "src": "db2@1.60.1.70338"}
+{"id": 457524, "field": "name", "en": "S03 - Item - T1 - Shaman - Elemental 6P Bonus", "hash": "21c3715ea3a36575", "src": "db2@1.60.1.70338"}
+{"id": 457524, "field": "description", "en": "Lava Burst now also refreshes the duration of Flame Shock on your target back to $29228d.\r\n", "hash": "a16e74634829cda3", "src": "db2@1.60.1.70338"}
+{"id": 457530, "field": "name", "en": "S03 - Item - T1 - Shaman - Enhancement 4P Bonus", "hash": "84c5c7b72c2d9e83", "src": "db2@1.60.1.70338"}
+{"id": 457530, "field": "description", "en": "Increases your critical strike chance with spells and attacks by $s1%.", "hash": "436f0749144fb866", "src": "db2@1.60.1.70338"}
+{"id": 457532, "field": "name", "en": "S03 - Item - T1 - Shaman - Enhancement 6P Bonus", "hash": "73a8cd3a16ffaa6a", "src": "db2@1.60.1.70338"}
+{"id": 457532, "field": "description", "en": "Your Flurry talent grants an additional $s1% increase to your attack speed.", "hash": "6d833c263eaad3d4", "src": "db2@1.60.1.70338"}
+{"id": 457534, "field": "name", "en": "Frostbitten", "hash": "dc5623a8195eccd3", "src": "db2@1.60.1.70338"}
+{"id": 457534, "field": "aura", "en": "Weakened from frozen state. Will succumb in $d.", "hash": "76c98d42546b5357", "src": "db2@1.60.1.70338"}
+{"id": 457540, "field": "name", "en": "S03 - Item - T1 - Shaman - Tank 2P Bonus", "hash": "0c0ec20ab8814470", "src": "db2@1.60.1.70338"}
+{"id": 457540, "field": "description", "en": "Increases your attack speed by $16280s1% for your next 3 swings after you parry, dodge, or block.", "hash": "1f104b2536e81984", "src": "db2@1.60.1.70338"}
+{"id": 457541, "field": "name", "en": "S03 - Item - T1 - Shaman - Tank 4P Bonus", "hash": "faf1c788a3535057", "src": "db2@1.60.1.70338"}
+{"id": 457541, "field": "description", "en": "Your parries and dodges also activate your Shield Mastery rune ability.", "hash": "8df856b8c9c9ab9a", "src": "db2@1.60.1.70338"}
+{"id": 457544, "field": "name", "en": "S03 - Item - T1 - Shaman - Tank 6P Bonus", "hash": "e9d4cd0b8e255c3e", "src": "db2@1.60.1.70338"}
+{"id": 457544, "field": "description", "en": "Your Stoneskin Totem also reduces Physical damage taken by $s1% and your Windwall Totem also reduces Magical damage taken by $s1%.", "hash": "fc736365b8c883e0", "src": "db2@1.60.1.70338"}
+{"id": 457548, "field": "name", "en": "S03 - Item - T1 - Warlock - Damage 2P Bonus", "hash": "01308c749df55dee", "src": "db2@1.60.1.70338"}
+{"id": 457548, "field": "description", "en": "Lifetap generates $s1% more mana and $s2% less threat.", "hash": "d6c93698db19dede", "src": "db2@1.60.1.70338"}
+{"id": 457549, "field": "name", "en": "S03 - Item - T1 - Warlock - Damage 4P Bonus", "hash": "f01391f288c769d5", "src": "db2@1.60.1.70338"}
+{"id": 457549, "field": "description", "en": "Increases your critical strike chance with spells and attacks by $s1%.", "hash": "436f0749144fb866", "src": "db2@1.60.1.70338"}
+{"id": 457553, "field": "name", "en": "S03 - Item - T1 - Warlock - Damage 6P Bonus", "hash": "def69775739975bc", "src": "db2@1.60.1.70338"}
+{"id": 457553, "field": "description", "en": "Your Nightfall talent has a $s1% increased chance to trigger. Your Incinerate has a $h% chance to trigger your Decimation regardless of the target's health.", "hash": "13e64d164efe4f7d", "src": "db2@1.60.1.70338"}
+{"id": 457558, "field": "name", "en": "Fire Trance", "hash": "170a379a9e77afda", "src": "db2@1.60.1.70338"}
+{"id": 457558, "field": "aura", "en": "Your next Immolate or Incinerate becomes an instant cast spell.", "hash": "ed9d49545333758e", "src": "db2@1.60.1.70338"}
+{"id": 457559, "field": "name", "en": "Novice Frost Mage - Receive Torn Spell Notes", "hash": "bcdeea3eda535138", "src": "db2@1.60.1.70338"}
+{"id": 457560, "field": "name", "en": "Novice Frost Mage - Receive Torn Spell Notes", "hash": "bcdeea3eda535138", "src": "db2@1.60.1.70338"}
+{"id": 457561, "field": "name", "en": "Novice Frost Mage - Receive Torn Spell Notes", "hash": "bcdeea3eda535138", "src": "db2@1.60.1.70338"}
+{"id": 457563, "field": "name", "en": "Novice Frost Mage - Receive Torn Spell Notes", "hash": "bcdeea3eda535138", "src": "db2@1.60.1.70338"}
+{"id": 457569, "field": "name", "en": "Banish", "hash": "8da6a696dfe51d8f", "src": "db2@1.60.1.70338"}
+{"id": 457569, "field": "description", "en": "Banishes the target, preventing all action but making it invulnerable for up to $d.  Only one target can be banished at a time.  Only works on Demons and Elementals.", "hash": "43e913d0c436bc33", "src": "db2@1.60.1.70338"}
+{"id": 457569, "field": "aura", "en": "Invulnerable, but unable to act.", "hash": "b1a1673e20095e89", "src": "db2@1.60.1.70338"}
+{"id": 457571, "field": "name", "en": "S03 - Item - T1 - Warlock - Tank 2P Bonus", "hash": "959e7b0f5f7cf5f9", "src": "db2@1.60.1.70338"}
+{"id": 457571, "field": "description", "en": "Banish is now instant cast, and can be cast on yourself while you are a Demon. You cannot Banish yourself while you have Forbearance, and doing so will give you Forbearance for $25771d.", "hash": "7516f8093fa06fa0", "src": "db2@1.60.1.70338"}
+{"id": 457572, "field": "name", "en": "S03 - Item - T1 - Warlock - Tank 4P Bonus", "hash": "848180924a4f01e0", "src": "db2@1.60.1.70338"}
+{"id": 457572, "field": "description", "en": "Each time you take damage, you and your pet gain mana equal to the damage taken, up to a maximum of $s1 mana per event. Can only occur once every few seconds.", "hash": "77f61182bc15c6ca", "src": "db2@1.60.1.70338"}
+{"id": 457573, "field": "name", "en": "Pain Tap", "hash": "83b5dee1539ab879", "src": "db2@1.60.1.70338"}
+{"id": 457612, "field": "name", "en": "Decisive Strike", "hash": "0cffda187f390b5c", "src": "db2@1.60.1.70338"}
+{"id": 457612, "field": "description", "en": "A sweeping attack that strikes all enemies to the left of the caster.", "hash": "a8cf8863d8b6b735", "src": "db2@1.60.1.70338"}
+{"id": 457612, "field": "aura", "en": "Wounded.", "hash": "7cead755dd43b48f", "src": "db2@1.60.1.70338"}
+{"id": 457613, "field": "name", "en": "Crescent Smash", "hash": "36447abc188853b8", "src": "db2@1.60.1.70338"}
+{"id": 457613, "field": "description", "en": "Smashes the area in front of the caster.", "hash": "d804ea53d0991bcc", "src": "db2@1.60.1.70338"}
+{"id": 457613, "field": "aura", "en": "Crippled by the smash, movement speed slowed by $s2%", "hash": "d7cf78bc3f5d6e6c", "src": "db2@1.60.1.70338"}
+{"id": 457614, "field": "name", "en": "Thunder Stomp", "hash": "fdf2c43c7e65eb73", "src": "db2@1.60.1.70338"}
+{"id": 457614, "field": "description", "en": "Discharge power with the impact of your stomp, knocking back and damaging nearby enemies.", "hash": "f45894b7c5af8d31", "src": "db2@1.60.1.70338"}
+{"id": 457614, "field": "aura", "en": "Blasted off.", "hash": "23fd71115abfb4ce", "src": "db2@1.60.1.70338"}
+{"id": 457642, "field": "name", "en": "S03 - Item - T1 - Warlock - Tank 6P Bonus", "hash": "7364861535210dc7", "src": "db2@1.60.1.70338"}
+{"id": 457642, "field": "description", "en": "Your Shadow Cleave hits have a $h% chance to grant you a Soul Shard, reset the cooldown on Soul Fire, and make your next Soul Fire within $457643d instant.", "hash": "14e046ea691fe8f5", "src": "db2@1.60.1.70338"}
+{"id": 457643, "field": "name", "en": "Soul Fire!", "hash": "e1cfa25e67b53c48", "src": "db2@1.60.1.70338"}
+{"id": 457643, "field": "aura", "en": "Your next Soulfire is instant cast.", "hash": "2985eaa065445310", "src": "db2@1.60.1.70338"}
+{"id": 457645, "field": "name", "en": "S03 - Item - T1 - Warrior - Tank 2P Bonus", "hash": "e50c89bd2b0e9532", "src": "db2@1.60.1.70338"}
+{"id": 457645, "field": "description", "en": "Increases the block value of your shield by $s1.", "hash": "b2abc9558bfdc8b6", "src": "db2@1.60.1.70338"}
+{"id": 457646, "field": "name", "en": "S03 - Item - T1 - Warrior - Tank 4P Bonus", "hash": "d3ef8f4015e0a119", "src": "db2@1.60.1.70338"}
+{"id": 457646, "field": "description", "en": "You gain ${$457648m1/10} extra Rage every time you take any damage or deal auto attack damage.", "hash": "c42e03fc83a25829", "src": "db2@1.60.1.70338"}
+{"id": 457648, "field": "name", "en": "Inner Fury", "hash": "6c45aa68945773cb", "src": "db2@1.60.1.70338"}
+{"id": 457651, "field": "name", "en": "S03 - Item - T1 - Warrior - Tank 6P Bonus", "hash": "c2d294c300b2ad00", "src": "db2@1.60.1.70338"}
+{"id": 457651, "field": "description", "en": "Increases all threat you generate in Defensive Stance by an additional $s1% and increases all damage you deal in Gladiator Stance by $s2%.", "hash": "e8f0ec12ff9d9780", "src": "db2@1.60.1.70338"}
+{"id": 457652, "field": "name", "en": "S03 - Item - T1 - Warrior - Damage 2P Bonus", "hash": "99e7028e0fcfeff7", "src": "db2@1.60.1.70338"}
+{"id": 457652, "field": "description", "en": "After changing stances, your next offensive ability's rage cost is reduced by $s1.", "hash": "7a6abd9a6bd8a888", "src": "db2@1.60.1.70338"}
+{"id": 457697, "field": "name", "en": "S03 - Item - T1 - Warrior - Damage 4P Bonus", "hash": "88ca0811faa1fbcd", "src": "db2@1.60.1.70338"}
+{"id": 457697, "field": "description", "en": "For $457699d after leaving a stance, you can use abilities requiring that stance as if you were still in that stance.", "hash": "60222b566650c590", "src": "db2@1.60.1.70338"}
+{"id": 457699, "field": "name", "en": "Echoes of Defensive Stance", "hash": "98e06a654ac27647", "src": "db2@1.60.1.70338"}
+{"id": 457699, "field": "aura", "en": "You can temporarily use all abilities that require Defensive Stance.", "hash": "7c75b83b10955cf5", "src": "db2@1.60.1.70338"}
+{"id": 457706, "field": "name", "en": "Echoes of Battle Stance", "hash": "15c7f5ee93b74061", "src": "db2@1.60.1.70338"}
+{"id": 457706, "field": "aura", "en": "You can temporarily use all abilities that require Battle Stance.", "hash": "3c154a10cdb8019e", "src": "db2@1.60.1.70338"}
+{"id": 457708, "field": "name", "en": "Echoes of Berserker Stance", "hash": "97544a7f2fc7daab", "src": "db2@1.60.1.70338"}
+{"id": 457708, "field": "aura", "en": "You can temporarily use all abilities that require Berserker Stance.", "hash": "b1c16584017a7bbd", "src": "db2@1.60.1.70338"}
+{"id": 457814, "field": "name", "en": "Defensive Forecast", "hash": "696b72a3521e325a", "src": "db2@1.60.1.70338"}
+{"id": 457814, "field": "aura", "en": "Reduces Physical damage taken by $s1%.", "hash": "f47d999bf401129b", "src": "db2@1.60.1.70338"}
+{"id": 457816, "field": "name", "en": "Battle Forecast", "hash": "41ced80c7434436f", "src": "db2@1.60.1.70338"}
+{"id": 457816, "field": "aura", "en": "Increases Physical damage done by $s1%.", "hash": "4bd3d5503fd7ca80", "src": "db2@1.60.1.70338"}
+{"id": 457817, "field": "name", "en": "Berserker Forecast", "hash": "af251f85ca385820", "src": "db2@1.60.1.70338"}
+{"id": 457817, "field": "aura", "en": "Increases Critical Strike chance by $s1%.", "hash": "7fa8354c4e8edb63", "src": "db2@1.60.1.70338"}
+{"id": 457819, "field": "name", "en": "Echoes of Gladiator Stance", "hash": "b60d25ba3e4d93a9", "src": "db2@1.60.1.70338"}
+{"id": 457819, "field": "aura", "en": "You can temporarily use all abilities that require Gladiator Stance.", "hash": "6a599505f668f3a9", "src": "db2@1.60.1.70338"}
+{"id": 457820, "field": "name", "en": "S03 - Item - T1 - Warrior - Damage 6P Bonus", "hash": "77ad0d94e57407b4", "src": "db2@1.60.1.70338"}
+{"id": 457820, "field": "description", "en": "For the first $457816d after activating a stance, you can gain an additional benefit:\r\n\r\nBattle Stance/Gladiator Stance: $457816s1% increased damage done.\r\n\r\nBerserker Stance: $457817s1% increased critical strike chance.\r\n\r\nDefensive Stance: $457814s1% reduced Physical damage taken.", "hash": "d3d46aee292f3e43", "src": "db2@1.60.1.70338"}
+{"id": 457844, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70338"}
+{"id": 457845, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70338"}
+{"id": 457846, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70338"}
+{"id": 457847, "field": "name", "en": "Starfall", "hash": "c6c6cea4db691368", "src": "db2@1.60.1.70338"}
+{"id": 457847, "field": "description", "en": "Stars fall from above, inflicting $s1 damage. ", "hash": "e0cf85f6c6c2644d", "src": "db2@1.60.1.70338"}
+{"id": 457848, "field": "name", "en": "Holy Strike", "hash": "f3fe690d41758a44", "src": "db2@1.60.1.70338"}
+{"id": 457848, "field": "description", "en": "Consecrates the caster's weapon, inflicting $s1 additional damage on its next attack. All damage inflicted is based on Holy magic.", "hash": "d04665c0cd6af27f", "src": "db2@1.60.1.70338"}
+{"id": 457849, "field": "name", "en": "Controller Timer", "hash": "3676a58beef2f0cb", "src": "db2@1.60.1.70338"}
+{"id": 457851, "field": "name", "en": "Overconfidence", "hash": "51f88754f68d28f9", "src": "db2@1.60.1.70338"}
+{"id": 457851, "field": "aura", "en": "Growing overconfident\r\nDamage taken increased by $s1%\r\nDamage done increased by $s2%", "hash": "cbf4364e33e9a0cf", "src": "db2@1.60.1.70338"}
+{"id": 457870, "field": "name", "en": "Epoch's End", "hash": "f5737eb88d88e71e", "src": "db2@1.60.1.70338"}

@@ -1,42 +1,42 @@
-{"id": 212160, "field": "name", "en": "Chronoboon Displacer", "hash": "1c832be154ad05dd", "src": "db2@1.60.1.70291"}
-{"id": 212160, "field": "description", "en": "Alters the fabric of time, suspending beneficial world effects from dragonslaying, Dire Maul, Zul'Gurub, and Felwood.", "hash": "51f8d5232ad3300e", "src": "db2@1.60.1.70291"}
-{"id": 212225, "field": "name", "en": "Neverending Soul Vessel", "hash": "2052d0344e6055b7", "src": "db2@1.60.1.70291"}
-{"id": 212225, "field": "description", "en": "Your next Soul Shard consuming spell cost no Soul Shards to cast.", "hash": "4defdf27c50ea89d", "src": "db2@1.60.1.70291"}
-{"id": 212230, "field": "name", "en": "Schematic: Soul Vessel", "hash": "b2eaac79d12424bd", "src": "db2@1.60.1.70291"}
-{"id": 212230, "field": "description", "en": "Teaches you how to make a Soul Vessel.", "hash": "835f91002560dd70", "src": "db2@1.60.1.70291"}
-{"id": 212347, "field": "name", "en": "Illari's Key", "hash": "f99d2bd4d3385f48", "src": "db2@1.60.1.70291"}
-{"id": 212548, "field": "name", "en": "Rune of Eclipse", "hash": "2b59353501d3d0f5", "src": "db2@1.60.1.70291"}
-{"id": 212548, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 212549, "field": "name", "en": "Rune of the Trapper", "hash": "8e7e282fe61d79a7", "src": "db2@1.60.1.70291"}
-{"id": 212549, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 212551, "field": "name", "en": "Rune of Warfare", "hash": "51c89ff3b912022a", "src": "db2@1.60.1.70291"}
-{"id": 212551, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 212552, "field": "name", "en": "Psychosophic Epiphany", "hash": "fb71d904f8525de7", "src": "db2@1.60.1.70291"}
-{"id": 212552, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 212559, "field": "name", "en": "Rune of the Poisoned Blade", "hash": "6cb9d550f6ba0d99", "src": "db2@1.60.1.70291"}
-{"id": 212559, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 212560, "field": "name", "en": "Rune of Ancestral Awakening", "hash": "8c851b0a752d4892", "src": "db2@1.60.1.70291"}
-{"id": 212560, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 212561, "field": "name", "en": "Rune of Burning Darkness", "hash": "46c716830d17df18", "src": "db2@1.60.1.70291"}
-{"id": 212561, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 212562, "field": "name", "en": "Rune of Healing Rage", "hash": "1a900a39326ebecb", "src": "db2@1.60.1.70291"}
-{"id": 212562, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70291"}
-{"id": 212568, "field": "name", "en": "Wolfshead Trophy", "hash": "9bed83f619a8149c", "src": "db2@1.60.1.70291"}
-{"id": 212568, "field": "description", "en": "Permanently enchant a helm slot item, causing you to gain 20 energy or 5 rage when shapeshifting into Cat or Bear form.", "hash": "8b0dbf5fe8b71126", "src": "db2@1.60.1.70291"}
-{"id": 212580, "field": "name", "en": "Lorekeeper's Staff", "hash": "c8341cf1c719d57a", "src": "db2@1.60.1.70291"}
+{"id": 212160, "field": "name", "en": "Chronoboon Displacer", "hash": "1c832be154ad05dd", "src": "db2@1.60.1.70338"}
+{"id": 212160, "field": "description", "en": "Alters the fabric of time, suspending beneficial world effects from dragonslaying, Dire Maul, Zul'Gurub, and Felwood.", "hash": "51f8d5232ad3300e", "src": "db2@1.60.1.70338"}
+{"id": 212225, "field": "name", "en": "Neverending Soul Vessel", "hash": "2052d0344e6055b7", "src": "db2@1.60.1.70338"}
+{"id": 212225, "field": "description", "en": "Your next Soul Shard consuming spell cost no Soul Shards to cast.", "hash": "4defdf27c50ea89d", "src": "db2@1.60.1.70338"}
+{"id": 212230, "field": "name", "en": "Schematic: Soul Vessel", "hash": "b2eaac79d12424bd", "src": "db2@1.60.1.70338"}
+{"id": 212230, "field": "description", "en": "Teaches you how to make a Soul Vessel.", "hash": "835f91002560dd70", "src": "db2@1.60.1.70338"}
+{"id": 212347, "field": "name", "en": "Illari's Key", "hash": "f99d2bd4d3385f48", "src": "db2@1.60.1.70338"}
+{"id": 212548, "field": "name", "en": "Rune of Eclipse", "hash": "2b59353501d3d0f5", "src": "db2@1.60.1.70338"}
+{"id": 212548, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 212549, "field": "name", "en": "Rune of the Trapper", "hash": "8e7e282fe61d79a7", "src": "db2@1.60.1.70338"}
+{"id": 212549, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 212551, "field": "name", "en": "Rune of Warfare", "hash": "51c89ff3b912022a", "src": "db2@1.60.1.70338"}
+{"id": 212551, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 212552, "field": "name", "en": "Psychosophic Epiphany", "hash": "fb71d904f8525de7", "src": "db2@1.60.1.70338"}
+{"id": 212552, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 212559, "field": "name", "en": "Rune of the Poisoned Blade", "hash": "6cb9d550f6ba0d99", "src": "db2@1.60.1.70338"}
+{"id": 212559, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 212560, "field": "name", "en": "Rune of Ancestral Awakening", "hash": "8c851b0a752d4892", "src": "db2@1.60.1.70338"}
+{"id": 212560, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 212561, "field": "name", "en": "Rune of Burning Darkness", "hash": "46c716830d17df18", "src": "db2@1.60.1.70338"}
+{"id": 212561, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 212562, "field": "name", "en": "Rune of Healing Rage", "hash": "1a900a39326ebecb", "src": "db2@1.60.1.70338"}
+{"id": 212562, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70338"}
+{"id": 212568, "field": "name", "en": "Wolfshead Trophy", "hash": "9bed83f619a8149c", "src": "db2@1.60.1.70338"}
+{"id": 212568, "field": "description", "en": "Permanently enchant a helm slot item, causing you to gain 20 energy or 5 rage when shapeshifting into Cat or Bear form.", "hash": "8b0dbf5fe8b71126", "src": "db2@1.60.1.70338"}
+{"id": 212580, "field": "name", "en": "Lorekeeper's Staff", "hash": "c8341cf1c719d57a", "src": "db2@1.60.1.70338"}
 {"id": 212580, "field": "description", "en": "Restores $s1 mana per 5 sec.", "hash": "9ac76902e577cf95", "src": "wago@1.15.9.69722"}
-{"id": 212581, "field": "name", "en": "Outrunner's Bow", "hash": "c8ebc1de1d938425", "src": "db2@1.60.1.70291"}
-{"id": 212582, "field": "name", "en": "Protector's Sword", "hash": "c8597d684ba2d891", "src": "db2@1.60.1.70291"}
-{"id": 212583, "field": "name", "en": "Sentinel's Blade", "hash": "d69bb19bb254a9d6", "src": "db2@1.60.1.70291"}
-{"id": 212584, "field": "name", "en": "Advisor's Gnarled Staff", "hash": "fc622a04402aa16b", "src": "db2@1.60.1.70291"}
+{"id": 212581, "field": "name", "en": "Outrunner's Bow", "hash": "c8ebc1de1d938425", "src": "db2@1.60.1.70338"}
+{"id": 212582, "field": "name", "en": "Protector's Sword", "hash": "c8597d684ba2d891", "src": "db2@1.60.1.70338"}
+{"id": 212583, "field": "name", "en": "Sentinel's Blade", "hash": "d69bb19bb254a9d6", "src": "db2@1.60.1.70338"}
+{"id": 212584, "field": "name", "en": "Advisor's Gnarled Staff", "hash": "fc622a04402aa16b", "src": "db2@1.60.1.70338"}
 {"id": 212584, "field": "description", "en": "Restores $s1 mana per 5 sec.", "hash": "9ac76902e577cf95", "src": "wago@1.15.9.69722"}
-{"id": 212585, "field": "name", "en": "Outrider's Bow", "hash": "8293b31d0da4e7c4", "src": "db2@1.60.1.70291"}
-{"id": 212586, "field": "name", "en": "Legionnaire's Sword", "hash": "adcf1f8c7ba63769", "src": "db2@1.60.1.70291"}
-{"id": 212587, "field": "name", "en": "Scout's Blade", "hash": "a3c03f8e718a68d6", "src": "db2@1.60.1.70291"}
-{"id": 212723, "field": "name", "en": "Rumbling Essence", "hash": "b1e9e554745972ca", "src": "db2@1.60.1.70291"}
-{"id": 212724, "field": "name", "en": "Whirling Essence", "hash": "24159eb5ca324baa", "src": "db2@1.60.1.70291"}
-{"id": 212726, "field": "name", "en": "Rushing Essence", "hash": "c2c1c92250c97ce3", "src": "db2@1.60.1.70291"}
-{"id": 212748, "field": "name", "en": "Tattered Note", "hash": "79f4ec28407ac764", "src": "db2@1.60.1.70291"}
-{"id": 212792, "field": "name", "en": "Eye of the Tempest", "hash": "270eeec35e9e00f4", "src": "db2@1.60.1.70291"}
-{"id": 212982, "field": "name", "en": "Squall-breakers Potion", "hash": "4f41e32dcc79180d", "src": "db2@1.60.1.70291"}
-{"id": 212982, "field": "description", "en": "Protect yourself against the elements as long as you survive.", "hash": "0590d635b2449c7d", "src": "db2@1.60.1.70291"}
+{"id": 212585, "field": "name", "en": "Outrider's Bow", "hash": "8293b31d0da4e7c4", "src": "db2@1.60.1.70338"}
+{"id": 212586, "field": "name", "en": "Legionnaire's Sword", "hash": "adcf1f8c7ba63769", "src": "db2@1.60.1.70338"}
+{"id": 212587, "field": "name", "en": "Scout's Blade", "hash": "a3c03f8e718a68d6", "src": "db2@1.60.1.70338"}
+{"id": 212723, "field": "name", "en": "Rumbling Essence", "hash": "b1e9e554745972ca", "src": "db2@1.60.1.70338"}
+{"id": 212724, "field": "name", "en": "Whirling Essence", "hash": "24159eb5ca324baa", "src": "db2@1.60.1.70338"}
+{"id": 212726, "field": "name", "en": "Rushing Essence", "hash": "c2c1c92250c97ce3", "src": "db2@1.60.1.70338"}
+{"id": 212748, "field": "name", "en": "Tattered Note", "hash": "79f4ec28407ac764", "src": "db2@1.60.1.70338"}
+{"id": 212792, "field": "name", "en": "Eye of the Tempest", "hash": "270eeec35e9e00f4", "src": "db2@1.60.1.70338"}
+{"id": 212982, "field": "name", "en": "Squall-breakers Potion", "hash": "4f41e32dcc79180d", "src": "db2@1.60.1.70338"}
+{"id": 212982, "field": "description", "en": "Protect yourself against the elements as long as you survive.", "hash": "0590d635b2449c7d", "src": "db2@1.60.1.70338"}

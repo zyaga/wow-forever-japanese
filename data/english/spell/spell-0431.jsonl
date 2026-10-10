@@ -1,124 +1,124 @@
-{"id": 431000, "field": "name", "en": "Reputation - Merchant Faction", "hash": "34ea7c34e9cb8765", "src": "db2@1.60.1.70291"}
-{"id": 431001, "field": "name", "en": "Reputation - Merchant Faction", "hash": "34ea7c34e9cb8765", "src": "db2@1.60.1.70291"}
-{"id": 431046, "field": "name", "en": "Frenzied Assault", "hash": "d6eecd481d05f56d", "src": "db2@1.60.1.70291"}
-{"id": 431046, "field": "description", "en": "While wielding 2-handed weapons, your attack speed is increased by $s1%.\r\n", "hash": "e8e8d27acb99a968", "src": "db2@1.60.1.70291"}
-{"id": 431060, "field": "name", "en": "Flight Insurance", "hash": "a34af0ce368b162a", "src": "db2@1.60.1.70291"}
-{"id": 431060, "field": "aura", "en": "Use your Hearthstone!", "hash": "583a7af1a0a84cf4", "src": "db2@1.60.1.70291"}
-{"id": 431111, "field": "name", "en": "Boon of Blackfathom", "hash": "940a8e3475f16ba8", "src": "db2@1.60.1.70291"}
-{"id": 431111, "field": "description", "en": "Increases hit chance of spells by 3%, critical chance of melee, and ranged by 2%, grants 20 attack power, 25 spell damage, and increases movement speed by 20%. 120 minute duration.\r\n", "hash": "bd1770ab89d36167", "src": "db2@1.60.1.70291"}
-{"id": 431111, "field": "aura", "en": "Increases hit chance of spells by 3%, critical chance of melee, and ranged by 2%, grants 20 attack power, 25 spell damage, and increases movement speed by 20%. 120 minute duration.", "hash": "bd1770ab89d36167", "src": "db2@1.60.1.70291"}
-{"id": 431266, "field": "name", "en": "Cancel Mail", "hash": "9566841bf2a5cd0b", "src": "db2@1.60.1.70291"}
-{"id": 431268, "field": "name", "en": "Bough of Shadows", "hash": "c3c2cc26e79627f0", "src": "db2@1.60.1.70291"}
-{"id": 431362, "field": "name", "en": "Soul Vessel", "hash": "ff7414617a8c52c9", "src": "db2@1.60.1.70291"}
-{"id": 431384, "field": "name", "en": "[DNT] Player Health Modifier", "hash": "954e6342a6b4973a", "src": "db2@1.60.1.70291"}
-{"id": 431388, "field": "name", "en": "Improved Barkskin", "hash": "ddc0261fc8116efc", "src": "db2@1.60.1.70291"}
-{"id": 431388, "field": "description", "en": "Your Barkskin can now be cast on allies, no longer penalizes melee combat speed or spellcasting time, and can be cast while shapeshifted.", "hash": "1138f0e7dbdc8aaf", "src": "db2@1.60.1.70291"}
-{"id": 431389, "field": "name", "en": "Improved Frenzied Regeneration", "hash": "7cf09f0ba1aaf6f1", "src": "db2@1.60.1.70291"}
-{"id": 431389, "field": "description", "en": "Your Frenzied Regeneration can now be used in all forms except Moonkin Form or while not shapeshifted. It now converts your active resource into health every second for $428708d. Up to $428708s1 Rage, $428708s2 Energy, or $428708s3% base Mana is converted per second into up to $428708s4% health.\r\n", "hash": "144ef7d327878c92", "src": "db2@1.60.1.70291"}
-{"id": 431446, "field": "name", "en": "Gore", "hash": "09a0d19ff08841a7", "src": "db2@1.60.1.70291"}
-{"id": 431446, "field": "description", "en": "Gain the Gore ability:\r\n\r\n$@spellicon417145\r\n$@spelldesc417145", "hash": "bf6a19c89003676e", "src": "db2@1.60.1.70291"}
-{"id": 431447, "field": "name", "en": "Engrave Helm - Gore", "hash": "994ca0f168e0bc94", "src": "db2@1.60.1.70291"}
-{"id": 431447, "field": "description", "en": "Engrave your helm with the Gore rune:\r\n\r\n$@spellicon417145\r\n$@spelldesc417145", "hash": "744cbcf49197cb8d", "src": "db2@1.60.1.70291"}
-{"id": 431448, "field": "name", "en": "Improved Barkskin", "hash": "ddc0261fc8116efc", "src": "db2@1.60.1.70291"}
-{"id": 431448, "field": "description", "en": "Gain the Improved Barkskin ability:\r\n\r\n$@spellicon431388\r\n$@spelldesc431388", "hash": "f905a951ba59b1d2", "src": "db2@1.60.1.70291"}
-{"id": 431449, "field": "name", "en": "Engrave Helm - Improved Barkskin", "hash": "44ef54fd86433add", "src": "db2@1.60.1.70291"}
-{"id": 431449, "field": "description", "en": "Engrave your helm with the Improved Barkskin rune:\r\n\r\n$@spellicon431388\r\n$@spelldesc431388", "hash": "313924c72c0599ad", "src": "db2@1.60.1.70291"}
-{"id": 431450, "field": "name", "en": "Gale Winds", "hash": "529a1e989b37cd21", "src": "db2@1.60.1.70291"}
-{"id": 431450, "field": "description", "en": "Gain the Gale Winds ability:\r\n\r\n$@spellicon417135\r\n$@spelldesc417135", "hash": "2a12fddebc3862db", "src": "db2@1.60.1.70291"}
-{"id": 431451, "field": "name", "en": "Engrave Helm - Gale Winds", "hash": "de16da8243b97c17", "src": "db2@1.60.1.70291"}
-{"id": 431451, "field": "description", "en": "Engrave your helm with the Gale Winds rune:\r\n\r\n$@spellicon417135\r\n$@spelldesc417135", "hash": "1daa8dad8efd89b2", "src": "db2@1.60.1.70291"}
-{"id": 431457, "field": "name", "en": "Leper Toss!", "hash": "ec0f935c792a1c32", "src": "db2@1.60.1.70291"}
-{"id": 431458, "field": "name", "en": "Improved Frenzied Regeneration", "hash": "7cf09f0ba1aaf6f1", "src": "db2@1.60.1.70291"}
-{"id": 431458, "field": "description", "en": "Gain the Improved Frenzied Regeneration ability:\r\n\r\n$@spellicon431389\r\n$@spelldesc431389", "hash": "9f60bb24019f3aed", "src": "db2@1.60.1.70291"}
-{"id": 431461, "field": "name", "en": "Engrave Bracers - Improved Frenzied Regeneration", "hash": "4f7afb42f7ed02e0", "src": "db2@1.60.1.70291"}
-{"id": 431461, "field": "description", "en": "Engrave your bracers with the Improved Frenzied Regeneration rune:\r\n\r\n$@spellicon431389\r\n$@spelldesc431389", "hash": "7c8d070baa3488e4", "src": "db2@1.60.1.70291"}
-{"id": 431466, "field": "name", "en": "Efflorescence", "hash": "a8c0524f58d87abc", "src": "db2@1.60.1.70291"}
-{"id": 431466, "field": "description", "en": "Gain the Efflorescence ability:\r\n\r\n$@spellicon417149\r\n$@spelldesc417149", "hash": "df1ff38f8eef2ddf", "src": "db2@1.60.1.70291"}
-{"id": 431468, "field": "name", "en": "Engrave Bracers - Efflorescence", "hash": "089d65c5cc72ef64", "src": "db2@1.60.1.70291"}
-{"id": 431468, "field": "description", "en": "Engrave your bracers with the Efflorescence rune:\r\n\r\n$@spellicon417149\r\n$@spelldesc417149", "hash": "666a61dd40f7a13a", "src": "db2@1.60.1.70291"}
-{"id": 431567, "field": "name", "en": "Self-Found Adventurer", "hash": "be276da60271cd8e", "src": "db2@1.60.1.70291"}
-{"id": 431567, "field": "aura", "en": "Unable to trade, use the auction house, or send and receive most mail", "hash": "f67cb55975bb7bf8", "src": "db2@1.60.1.70291"}
-{"id": 431600, "field": "name", "en": "Focus Fire", "hash": "f784b3211829fb50", "src": "db2@1.60.1.70291"}
-{"id": 431600, "field": "description", "en": "Gain the Focus Fire ability:\r\n\r\n$@spellicon428726\r\n$@spelldesc428726", "hash": "c16deb3c85d683fa", "src": "db2@1.60.1.70291"}
-{"id": 431601, "field": "name", "en": "Engrave Bracers - Focus Fire", "hash": "467d22d8bc9e83ee", "src": "db2@1.60.1.70291"}
-{"id": 431601, "field": "description", "en": "Engrave your bracers with the Focus Fire rune:\r\n\r\n$@spellicon428726\r\n$@spelldesc428726", "hash": "402ff8e00c84d839", "src": "db2@1.60.1.70291"}
-{"id": 431606, "field": "name", "en": "Frenzy", "hash": "a4ed88dc0ed0da9b", "src": "db2@1.60.1.70291"}
-{"id": 431606, "field": "description", "en": "Increases pet's melee attack speed by $s1% for $d.", "hash": "c2205de3ae8dc3b9", "src": "db2@1.60.1.70291"}
-{"id": 431606, "field": "aura", "en": "Increases pet's melee attack speed by $s1%.", "hash": "389c7132b75c663a", "src": "db2@1.60.1.70291"}
-{"id": 431610, "field": "name", "en": "T.N.T.", "hash": "b95f6f159ba1b2ac", "src": "db2@1.60.1.70291"}
-{"id": 431610, "field": "description", "en": "Gain the T.N.T. ability:\r\n\r\n$@spellicon428717\r\n$@spelldesc428717", "hash": "9be068df41e408f7", "src": "db2@1.60.1.70291"}
-{"id": 431611, "field": "name", "en": "Engrave Bracers - T.N.T.", "hash": "57dc8b7af276ac72", "src": "db2@1.60.1.70291"}
-{"id": 431611, "field": "description", "en": "Engrave your bracers with the T.N.T. rune:\r\n\r\n$@spellicon428717\r\n$@spelldesc428717", "hash": "fc51a0995cc97cbe", "src": "db2@1.60.1.70291"}
-{"id": 431622, "field": "name", "en": "Divine Aegis", "hash": "d68b046d033f0440", "src": "db2@1.60.1.70291"}
-{"id": 431622, "field": "description", "en": "Your critical heals create a protective shield on the target, absorbing $s1% of the amount healed. Lasts $431624d.", "hash": "e1756dde73e31b56", "src": "db2@1.60.1.70291"}
-{"id": 431624, "field": "name", "en": "Divine Aegis", "hash": "d68b046d033f0440", "src": "db2@1.60.1.70291"}
-{"id": 431624, "field": "description", "en": "Critical heals have a chance to create a protective shield on the target, absorbing a percentage of the amount healed. Lasts $d.\r\n", "hash": "678718ca83e708b6", "src": "db2@1.60.1.70291"}
-{"id": 431624, "field": "aura", "en": "Absorbs $w1 damage.", "hash": "4e7b6db5551b31ff", "src": "db2@1.60.1.70291"}
-{"id": 431649, "field": "name", "en": "Divine Aegis", "hash": "d68b046d033f0440", "src": "db2@1.60.1.70291"}
-{"id": 431649, "field": "description", "en": "Gain the Divine Aegis ability:\r\n\r\n$@spellicon431622\r\n$@spelldesc431622", "hash": "54666a4774a892cb", "src": "db2@1.60.1.70291"}
-{"id": 431650, "field": "name", "en": "Engrave Helm - Divine Aegis", "hash": "631c944a470db19c", "src": "db2@1.60.1.70291"}
-{"id": 431650, "field": "description", "en": "Engrave your helm with the Divine Aegis rune:\r\n\r\n$@spellicon431622\r\n$@spelldesc431622", "hash": "c4df145c258bb5bb", "src": "db2@1.60.1.70291"}
-{"id": 431655, "field": "name", "en": "Mind Spike", "hash": "b176dfa470fed69b", "src": "db2@1.60.1.70291"}
-{"id": 431655, "field": "description", "en": "Blasts the target for ${$m1*$<damagepower>/100} to ${$M1*$<damagepower>/100} Shadowfrost damage, and increases the critical strike chance of your next Mind Blast on the target by $s2%, stacking up to $u times.", "hash": "6285d513151bff75", "src": "db2@1.60.1.70291"}
-{"id": 431655, "field": "aura", "en": "Chance for Mind Blast to critically hit from casting Priest increased by $s2%.", "hash": "7e49ce65aaf4c25a", "src": "db2@1.60.1.70291"}
-{"id": 431662, "field": "name", "en": "Mind Spike", "hash": "b176dfa470fed69b", "src": "db2@1.60.1.70291"}
-{"id": 431662, "field": "description", "en": "Gain the Mind Spike ability:\r\n\r\n$@spellicon431655\r\n$@spelldesc431655", "hash": "c8d6f2aae534e19c", "src": "db2@1.60.1.70291"}
-{"id": 431663, "field": "name", "en": "Engrave Belt - Mind Spike", "hash": "be5231289645d628", "src": "db2@1.60.1.70291"}
-{"id": 431663, "field": "description", "en": "Engrave your belt with the Mind Spike rune:\r\n\r\n$@spellicon431655\r\n$@spelldesc431655", "hash": "e3ddcdbb8106fbc8", "src": "db2@1.60.1.70291"}
-{"id": 431664, "field": "name", "en": "Surge of Light", "hash": "af35cb685125166c", "src": "db2@1.60.1.70291"}
-{"id": 431664, "field": "description", "en": "Critical spellcasts cause your next Smite or Flash Heal cast within $431666d to be instant cast.", "hash": "dae686deceb78da1", "src": "db2@1.60.1.70291"}
-{"id": 431666, "field": "name", "en": "Surge of Light", "hash": "af35cb685125166c", "src": "db2@1.60.1.70291"}
-{"id": 431666, "field": "aura", "en": "Your next Smite, Flash Heal, or Binding Heal is instant.", "hash": "4ef7218327a19900", "src": "db2@1.60.1.70291"}
-{"id": 431668, "field": "name", "en": "Surge of Light", "hash": "af35cb685125166c", "src": "db2@1.60.1.70291"}
-{"id": 431668, "field": "description", "en": "Gain the Surge of Light ability:\r\n\r\n$@spellicon431664\r\n$@spelldesc431664", "hash": "ea12a989bfa3dda4", "src": "db2@1.60.1.70291"}
-{"id": 431669, "field": "name", "en": "Engrave Bracers - Surge of Light", "hash": "bd56bf30a006eac9", "src": "db2@1.60.1.70291"}
-{"id": 431669, "field": "description", "en": "Engrave your bracers with the Surge of Light rune:\r\n\r\n$@spellicon431664\r\n$@spelldesc431664", "hash": "456d61d20d27590b", "src": "db2@1.60.1.70291"}
-{"id": 431670, "field": "name", "en": "Despair", "hash": "2c6dcd7b69407e8c", "src": "db2@1.60.1.70291"}
-{"id": 431670, "field": "description", "en": "Periodic damage from your spells can now be critical strikes and all your damaging spell critical strikes deal ${$m2+100}% damage.", "hash": "e90e51004b88fd1b", "src": "db2@1.60.1.70291"}
-{"id": 431673, "field": "name", "en": "Engrave Bracers - Despair", "hash": "4673543084afb762", "src": "db2@1.60.1.70291"}
-{"id": 431673, "field": "description", "en": "Engrave your bracers with the Despair rune:\r\n\r\n$@spellicon431670\r\n$@spelldesc431670", "hash": "c08da534db0d123a", "src": "db2@1.60.1.70291"}
-{"id": 431675, "field": "name", "en": "Despair", "hash": "2c6dcd7b69407e8c", "src": "db2@1.60.1.70291"}
-{"id": 431675, "field": "description", "en": "Gain the Despair ability:\r\n\r\n$@spellicon431670\r\n$@spelldesc431670", "hash": "b190fd537b1f518f", "src": "db2@1.60.1.70291"}
-{"id": 431678, "field": "name", "en": "Unbroken Self-Found Champion", "hash": "d7df7b050de65466", "src": "db2@1.60.1.70291"}
-{"id": 431681, "field": "name", "en": "Void Zone", "hash": "d67031da71dc1ce1", "src": "db2@1.60.1.70291"}
-{"id": 431681, "field": "description", "en": "Summons a void zone in the target area that deals ${$<damagepower>*$431690m1/100} Shadow damage to enemies that stand within it every second for $d.", "hash": "241200741990c2ed", "src": "db2@1.60.1.70291"}
-{"id": 431681, "field": "aura", "en": "Dealing ${$<damagepower>*$431690m1/100} Shadow damage to enemies within the void zone every second.", "hash": "9eeee5850343428f", "src": "db2@1.60.1.70291"}
-{"id": 431688, "field": "name", "en": "Void Zone", "hash": "d67031da71dc1ce1", "src": "db2@1.60.1.70291"}
-{"id": 431688, "field": "aura", "en": "Within a Priest's Void Zone.", "hash": "84c54eb598f133e2", "src": "db2@1.60.1.70291"}
-{"id": 431690, "field": "name", "en": "Void Zone", "hash": "d67031da71dc1ce1", "src": "db2@1.60.1.70291"}
-{"id": 431704, "field": "name", "en": "Void Zone", "hash": "d67031da71dc1ce1", "src": "db2@1.60.1.70291"}
-{"id": 431704, "field": "description", "en": "Gain the Void Zone ability:\r\n\r\n$@spellicon431681\r\n$@spelldesc431681", "hash": "507d1aeca5138159", "src": "db2@1.60.1.70291"}
-{"id": 431705, "field": "name", "en": "Engrave Bracers - Void Zone", "hash": "32e36f4cd5216ba3", "src": "db2@1.60.1.70291"}
-{"id": 431705, "field": "description", "en": "Engrave your bracers with the Void Zone rune:\r\n\r\n$@spellicon431681\r\n$@spelldesc431681", "hash": "de4479c027e4d0e9", "src": "db2@1.60.1.70291"}
-{"id": 431720, "field": "name", "en": "Gnomeregan Smash", "hash": "c0b9275bb54de9d4", "src": "db2@1.60.1.70291"}
-{"id": 431733, "field": "name", "en": "Level-up Spell", "hash": "cff33ac6c1b2ab66", "src": "db2@1.60.1.70291"}
-{"id": 431742, "field": "name", "en": "Backdraft", "hash": "31cabea74b49648e", "src": "db2@1.60.1.70291"}
-{"id": 431742, "field": "description", "en": "Gain the Backdraft ability:\r\n\r\n$@spellicon427713\r\n$@spelldesc427713", "hash": "0f926fd167312cd6", "src": "db2@1.60.1.70291"}
-{"id": 431743, "field": "name", "en": "Engrave Helm - Pandemic", "hash": "35344d0f7a8ee31f", "src": "db2@1.60.1.70291"}
-{"id": 431743, "field": "description", "en": "Engrave your helm with the Pandemic rune:\r\n\r\n$@spellicon427712\r\n$@spelldesc427712", "hash": "fc32fa3656af6bbd", "src": "db2@1.60.1.70291"}
-{"id": 431745, "field": "name", "en": "Engrave Helm - Backdraft", "hash": "929ccbce986157ca", "src": "db2@1.60.1.70291"}
-{"id": 431745, "field": "description", "en": "Engrave your helm with the Backdraft rune:\r\n\r\n$@spellicon427713\r\n$@spelldesc427713", "hash": "85225ee1bb371705", "src": "db2@1.60.1.70291"}
-{"id": 431747, "field": "name", "en": "Engrave Bracers - Unstable Affliction", "hash": "083d475b5916eec4", "src": "db2@1.60.1.70291"}
-{"id": 431747, "field": "description", "en": "Engrave your bracers with the Unstable Affliction rune:\r\n\r\n$@spellicon427717\r\n$@spelldesc427717", "hash": "fe30632b84639a01", "src": "db2@1.60.1.70291"}
-{"id": 431748, "field": "name", "en": "Unstable Affliction", "hash": "c2560853f19861b4", "src": "db2@1.60.1.70291"}
-{"id": 431748, "field": "description", "en": "Gain the Unstable Affliction ability:\r\n\r\n$@spellicon427717\r\n$@spelldesc427717", "hash": "cde0fe67c3aba11b", "src": "db2@1.60.1.70291"}
-{"id": 431754, "field": "name", "en": "Summon Felguard", "hash": "7f9db81598c5d87b", "src": "db2@1.60.1.70291"}
-{"id": 431754, "field": "description", "en": "Gain the Summon Felguard ability:\r\n\r\n$@spellicon427733\r\n$@spelldesc427733", "hash": "b7f6c829f62872fc", "src": "db2@1.60.1.70291"}
-{"id": 431756, "field": "name", "en": "Engrave Bracers - Summon Felguard", "hash": "ba7a779045f9683b", "src": "db2@1.60.1.70291"}
-{"id": 431756, "field": "description", "en": "Engrave your bracers with the Summon Felguard rune:\r\n\r\n$@spellicon427733\r\n$@spelldesc427733", "hash": "2f46ea21e001d503", "src": "db2@1.60.1.70291"}
-{"id": 431757, "field": "name", "en": "Immolation Aura", "hash": "cc524f5d6efe9a15", "src": "db2@1.60.1.70291"}
-{"id": 431757, "field": "description", "en": "Gain the Immolation Aura ability:\r\n\r\n$@spellicon431757\r\n$@spelldesc427726", "hash": "c84e894446ac71b9", "src": "db2@1.60.1.70291"}
-{"id": 431758, "field": "name", "en": "Engrave Bracers - Immolation Aura", "hash": "072f0edd1c3229d5", "src": "db2@1.60.1.70291"}
-{"id": 431758, "field": "description", "en": "Engrave your bracers with the Immolation Aura rune:\r\n\r\n$@spellicon431757\r\n$@spelldesc427726", "hash": "b234c15ac977f6aa", "src": "db2@1.60.1.70291"}
-{"id": 431781, "field": "name", "en": "Whisper Event", "hash": "c191b115d433834c", "src": "db2@1.60.1.70291"}
-{"id": 431839, "field": "name", "en": "Off Balanced", "hash": "51ca1659b675d006", "src": "db2@1.60.1.70291"}
-{"id": 431839, "field": "aura", "en": "Knockbacks are more effective on you!", "hash": "66406e4bbfec0069", "src": "db2@1.60.1.70291"}
-{"id": 431841, "field": "name", "en": "Gnomeregan Smash", "hash": "c0b9275bb54de9d4", "src": "db2@1.60.1.70291"}
-{"id": 431842, "field": "name", "en": "Gnomeregan Smash", "hash": "c0b9275bb54de9d4", "src": "db2@1.60.1.70291"}
-{"id": 431843, "field": "name", "en": "Gnomeregan Smash", "hash": "c0b9275bb54de9d4", "src": "db2@1.60.1.70291"}
-{"id": 431946, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70291"}
-{"id": 431957, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70291"}
-{"id": 431980, "field": "name", "en": "[DNT] Tauren Rogue Questgiver Invisibility", "hash": "234282670ab42ff7", "src": "db2@1.60.1.70291"}
-{"id": 431981, "field": "name", "en": "[DNT] Tauren Rogue Questgiver Grant Visibility", "hash": "a99f9a6eb44d4985", "src": "db2@1.60.1.70291"}
-{"id": 431990, "field": "name", "en": "Desolace Ritual", "hash": "e0b748ef9de4aa5c", "src": "db2@1.60.1.70291"}
-{"id": 431996, "field": "name", "en": "Event Test", "hash": "e44b7fc96c0ee0f9", "src": "db2@1.60.1.70291"}
+{"id": 431000, "field": "name", "en": "Reputation - Merchant Faction", "hash": "34ea7c34e9cb8765", "src": "db2@1.60.1.70338"}
+{"id": 431001, "field": "name", "en": "Reputation - Merchant Faction", "hash": "34ea7c34e9cb8765", "src": "db2@1.60.1.70338"}
+{"id": 431046, "field": "name", "en": "Frenzied Assault", "hash": "d6eecd481d05f56d", "src": "db2@1.60.1.70338"}
+{"id": 431046, "field": "description", "en": "While wielding 2-handed weapons, your attack speed is increased by $s1%.\r\n", "hash": "e8e8d27acb99a968", "src": "db2@1.60.1.70338"}
+{"id": 431060, "field": "name", "en": "Flight Insurance", "hash": "a34af0ce368b162a", "src": "db2@1.60.1.70338"}
+{"id": 431060, "field": "aura", "en": "Use your Hearthstone!", "hash": "583a7af1a0a84cf4", "src": "db2@1.60.1.70338"}
+{"id": 431111, "field": "name", "en": "Boon of Blackfathom", "hash": "940a8e3475f16ba8", "src": "db2@1.60.1.70338"}
+{"id": 431111, "field": "description", "en": "Increases hit chance of spells by 3%, critical chance of melee, and ranged by 2%, grants 20 attack power, 25 spell damage, and increases movement speed by 20%. 120 minute duration.\r\n", "hash": "bd1770ab89d36167", "src": "db2@1.60.1.70338"}
+{"id": 431111, "field": "aura", "en": "Increases hit chance of spells by 3%, critical chance of melee, and ranged by 2%, grants 20 attack power, 25 spell damage, and increases movement speed by 20%. 120 minute duration.", "hash": "bd1770ab89d36167", "src": "db2@1.60.1.70338"}
+{"id": 431266, "field": "name", "en": "Cancel Mail", "hash": "9566841bf2a5cd0b", "src": "db2@1.60.1.70338"}
+{"id": 431268, "field": "name", "en": "Bough of Shadows", "hash": "c3c2cc26e79627f0", "src": "db2@1.60.1.70338"}
+{"id": 431362, "field": "name", "en": "Soul Vessel", "hash": "ff7414617a8c52c9", "src": "db2@1.60.1.70338"}
+{"id": 431384, "field": "name", "en": "[DNT] Player Health Modifier", "hash": "954e6342a6b4973a", "src": "db2@1.60.1.70338"}
+{"id": 431388, "field": "name", "en": "Improved Barkskin", "hash": "ddc0261fc8116efc", "src": "db2@1.60.1.70338"}
+{"id": 431388, "field": "description", "en": "Your Barkskin can now be cast on allies, no longer penalizes melee combat speed or spellcasting time, and can be cast while shapeshifted.", "hash": "1138f0e7dbdc8aaf", "src": "db2@1.60.1.70338"}
+{"id": 431389, "field": "name", "en": "Improved Frenzied Regeneration", "hash": "7cf09f0ba1aaf6f1", "src": "db2@1.60.1.70338"}
+{"id": 431389, "field": "description", "en": "Your Frenzied Regeneration can now be used in all forms except Moonkin Form or while not shapeshifted. It now converts your active resource into health every second for $428708d. Up to $428708s1 Rage, $428708s2 Energy, or $428708s3% base Mana is converted per second into up to $428708s4% health.\r\n", "hash": "144ef7d327878c92", "src": "db2@1.60.1.70338"}
+{"id": 431446, "field": "name", "en": "Gore", "hash": "09a0d19ff08841a7", "src": "db2@1.60.1.70338"}
+{"id": 431446, "field": "description", "en": "Gain the Gore ability:\r\n\r\n$@spellicon417145\r\n$@spelldesc417145", "hash": "bf6a19c89003676e", "src": "db2@1.60.1.70338"}
+{"id": 431447, "field": "name", "en": "Engrave Helm - Gore", "hash": "994ca0f168e0bc94", "src": "db2@1.60.1.70338"}
+{"id": 431447, "field": "description", "en": "Engrave your helm with the Gore rune:\r\n\r\n$@spellicon417145\r\n$@spelldesc417145", "hash": "744cbcf49197cb8d", "src": "db2@1.60.1.70338"}
+{"id": 431448, "field": "name", "en": "Improved Barkskin", "hash": "ddc0261fc8116efc", "src": "db2@1.60.1.70338"}
+{"id": 431448, "field": "description", "en": "Gain the Improved Barkskin ability:\r\n\r\n$@spellicon431388\r\n$@spelldesc431388", "hash": "f905a951ba59b1d2", "src": "db2@1.60.1.70338"}
+{"id": 431449, "field": "name", "en": "Engrave Helm - Improved Barkskin", "hash": "44ef54fd86433add", "src": "db2@1.60.1.70338"}
+{"id": 431449, "field": "description", "en": "Engrave your helm with the Improved Barkskin rune:\r\n\r\n$@spellicon431388\r\n$@spelldesc431388", "hash": "313924c72c0599ad", "src": "db2@1.60.1.70338"}
+{"id": 431450, "field": "name", "en": "Gale Winds", "hash": "529a1e989b37cd21", "src": "db2@1.60.1.70338"}
+{"id": 431450, "field": "description", "en": "Gain the Gale Winds ability:\r\n\r\n$@spellicon417135\r\n$@spelldesc417135", "hash": "2a12fddebc3862db", "src": "db2@1.60.1.70338"}
+{"id": 431451, "field": "name", "en": "Engrave Helm - Gale Winds", "hash": "de16da8243b97c17", "src": "db2@1.60.1.70338"}
+{"id": 431451, "field": "description", "en": "Engrave your helm with the Gale Winds rune:\r\n\r\n$@spellicon417135\r\n$@spelldesc417135", "hash": "1daa8dad8efd89b2", "src": "db2@1.60.1.70338"}
+{"id": 431457, "field": "name", "en": "Leper Toss!", "hash": "ec0f935c792a1c32", "src": "db2@1.60.1.70338"}
+{"id": 431458, "field": "name", "en": "Improved Frenzied Regeneration", "hash": "7cf09f0ba1aaf6f1", "src": "db2@1.60.1.70338"}
+{"id": 431458, "field": "description", "en": "Gain the Improved Frenzied Regeneration ability:\r\n\r\n$@spellicon431389\r\n$@spelldesc431389", "hash": "9f60bb24019f3aed", "src": "db2@1.60.1.70338"}
+{"id": 431461, "field": "name", "en": "Engrave Bracers - Improved Frenzied Regeneration", "hash": "4f7afb42f7ed02e0", "src": "db2@1.60.1.70338"}
+{"id": 431461, "field": "description", "en": "Engrave your bracers with the Improved Frenzied Regeneration rune:\r\n\r\n$@spellicon431389\r\n$@spelldesc431389", "hash": "7c8d070baa3488e4", "src": "db2@1.60.1.70338"}
+{"id": 431466, "field": "name", "en": "Efflorescence", "hash": "a8c0524f58d87abc", "src": "db2@1.60.1.70338"}
+{"id": 431466, "field": "description", "en": "Gain the Efflorescence ability:\r\n\r\n$@spellicon417149\r\n$@spelldesc417149", "hash": "df1ff38f8eef2ddf", "src": "db2@1.60.1.70338"}
+{"id": 431468, "field": "name", "en": "Engrave Bracers - Efflorescence", "hash": "089d65c5cc72ef64", "src": "db2@1.60.1.70338"}
+{"id": 431468, "field": "description", "en": "Engrave your bracers with the Efflorescence rune:\r\n\r\n$@spellicon417149\r\n$@spelldesc417149", "hash": "666a61dd40f7a13a", "src": "db2@1.60.1.70338"}
+{"id": 431567, "field": "name", "en": "Self-Found Adventurer", "hash": "be276da60271cd8e", "src": "db2@1.60.1.70338"}
+{"id": 431567, "field": "aura", "en": "Unable to trade, use the auction house, or send and receive most mail", "hash": "f67cb55975bb7bf8", "src": "db2@1.60.1.70338"}
+{"id": 431600, "field": "name", "en": "Focus Fire", "hash": "f784b3211829fb50", "src": "db2@1.60.1.70338"}
+{"id": 431600, "field": "description", "en": "Gain the Focus Fire ability:\r\n\r\n$@spellicon428726\r\n$@spelldesc428726", "hash": "c16deb3c85d683fa", "src": "db2@1.60.1.70338"}
+{"id": 431601, "field": "name", "en": "Engrave Bracers - Focus Fire", "hash": "467d22d8bc9e83ee", "src": "db2@1.60.1.70338"}
+{"id": 431601, "field": "description", "en": "Engrave your bracers with the Focus Fire rune:\r\n\r\n$@spellicon428726\r\n$@spelldesc428726", "hash": "402ff8e00c84d839", "src": "db2@1.60.1.70338"}
+{"id": 431606, "field": "name", "en": "Frenzy", "hash": "a4ed88dc0ed0da9b", "src": "db2@1.60.1.70338"}
+{"id": 431606, "field": "description", "en": "Increases pet's melee attack speed by $s1% for $d.", "hash": "c2205de3ae8dc3b9", "src": "db2@1.60.1.70338"}
+{"id": 431606, "field": "aura", "en": "Increases pet's melee attack speed by $s1%.", "hash": "389c7132b75c663a", "src": "db2@1.60.1.70338"}
+{"id": 431610, "field": "name", "en": "T.N.T.", "hash": "b95f6f159ba1b2ac", "src": "db2@1.60.1.70338"}
+{"id": 431610, "field": "description", "en": "Gain the T.N.T. ability:\r\n\r\n$@spellicon428717\r\n$@spelldesc428717", "hash": "9be068df41e408f7", "src": "db2@1.60.1.70338"}
+{"id": 431611, "field": "name", "en": "Engrave Bracers - T.N.T.", "hash": "57dc8b7af276ac72", "src": "db2@1.60.1.70338"}
+{"id": 431611, "field": "description", "en": "Engrave your bracers with the T.N.T. rune:\r\n\r\n$@spellicon428717\r\n$@spelldesc428717", "hash": "fc51a0995cc97cbe", "src": "db2@1.60.1.70338"}
+{"id": 431622, "field": "name", "en": "Divine Aegis", "hash": "d68b046d033f0440", "src": "db2@1.60.1.70338"}
+{"id": 431622, "field": "description", "en": "Your critical heals create a protective shield on the target, absorbing $s1% of the amount healed. Lasts $431624d.", "hash": "e1756dde73e31b56", "src": "db2@1.60.1.70338"}
+{"id": 431624, "field": "name", "en": "Divine Aegis", "hash": "d68b046d033f0440", "src": "db2@1.60.1.70338"}
+{"id": 431624, "field": "description", "en": "Critical heals have a chance to create a protective shield on the target, absorbing a percentage of the amount healed. Lasts $d.\r\n", "hash": "678718ca83e708b6", "src": "db2@1.60.1.70338"}
+{"id": 431624, "field": "aura", "en": "Absorbs $w1 damage.", "hash": "4e7b6db5551b31ff", "src": "db2@1.60.1.70338"}
+{"id": 431649, "field": "name", "en": "Divine Aegis", "hash": "d68b046d033f0440", "src": "db2@1.60.1.70338"}
+{"id": 431649, "field": "description", "en": "Gain the Divine Aegis ability:\r\n\r\n$@spellicon431622\r\n$@spelldesc431622", "hash": "54666a4774a892cb", "src": "db2@1.60.1.70338"}
+{"id": 431650, "field": "name", "en": "Engrave Helm - Divine Aegis", "hash": "631c944a470db19c", "src": "db2@1.60.1.70338"}
+{"id": 431650, "field": "description", "en": "Engrave your helm with the Divine Aegis rune:\r\n\r\n$@spellicon431622\r\n$@spelldesc431622", "hash": "c4df145c258bb5bb", "src": "db2@1.60.1.70338"}
+{"id": 431655, "field": "name", "en": "Mind Spike", "hash": "b176dfa470fed69b", "src": "db2@1.60.1.70338"}
+{"id": 431655, "field": "description", "en": "Blasts the target for ${$m1*$<damagepower>/100} to ${$M1*$<damagepower>/100} Shadowfrost damage, and increases the critical strike chance of your next Mind Blast on the target by $s2%, stacking up to $u times.", "hash": "6285d513151bff75", "src": "db2@1.60.1.70338"}
+{"id": 431655, "field": "aura", "en": "Chance for Mind Blast to critically hit from casting Priest increased by $s2%.", "hash": "7e49ce65aaf4c25a", "src": "db2@1.60.1.70338"}
+{"id": 431662, "field": "name", "en": "Mind Spike", "hash": "b176dfa470fed69b", "src": "db2@1.60.1.70338"}
+{"id": 431662, "field": "description", "en": "Gain the Mind Spike ability:\r\n\r\n$@spellicon431655\r\n$@spelldesc431655", "hash": "c8d6f2aae534e19c", "src": "db2@1.60.1.70338"}
+{"id": 431663, "field": "name", "en": "Engrave Belt - Mind Spike", "hash": "be5231289645d628", "src": "db2@1.60.1.70338"}
+{"id": 431663, "field": "description", "en": "Engrave your belt with the Mind Spike rune:\r\n\r\n$@spellicon431655\r\n$@spelldesc431655", "hash": "e3ddcdbb8106fbc8", "src": "db2@1.60.1.70338"}
+{"id": 431664, "field": "name", "en": "Surge of Light", "hash": "af35cb685125166c", "src": "db2@1.60.1.70338"}
+{"id": 431664, "field": "description", "en": "Critical spellcasts cause your next Smite or Flash Heal cast within $431666d to be instant cast.", "hash": "dae686deceb78da1", "src": "db2@1.60.1.70338"}
+{"id": 431666, "field": "name", "en": "Surge of Light", "hash": "af35cb685125166c", "src": "db2@1.60.1.70338"}
+{"id": 431666, "field": "aura", "en": "Your next Smite, Flash Heal, or Binding Heal is instant.", "hash": "4ef7218327a19900", "src": "db2@1.60.1.70338"}
+{"id": 431668, "field": "name", "en": "Surge of Light", "hash": "af35cb685125166c", "src": "db2@1.60.1.70338"}
+{"id": 431668, "field": "description", "en": "Gain the Surge of Light ability:\r\n\r\n$@spellicon431664\r\n$@spelldesc431664", "hash": "ea12a989bfa3dda4", "src": "db2@1.60.1.70338"}
+{"id": 431669, "field": "name", "en": "Engrave Bracers - Surge of Light", "hash": "bd56bf30a006eac9", "src": "db2@1.60.1.70338"}
+{"id": 431669, "field": "description", "en": "Engrave your bracers with the Surge of Light rune:\r\n\r\n$@spellicon431664\r\n$@spelldesc431664", "hash": "456d61d20d27590b", "src": "db2@1.60.1.70338"}
+{"id": 431670, "field": "name", "en": "Despair", "hash": "2c6dcd7b69407e8c", "src": "db2@1.60.1.70338"}
+{"id": 431670, "field": "description", "en": "Periodic damage from your spells can now be critical strikes and all your damaging spell critical strikes deal ${$m2+100}% damage.", "hash": "e90e51004b88fd1b", "src": "db2@1.60.1.70338"}
+{"id": 431673, "field": "name", "en": "Engrave Bracers - Despair", "hash": "4673543084afb762", "src": "db2@1.60.1.70338"}
+{"id": 431673, "field": "description", "en": "Engrave your bracers with the Despair rune:\r\n\r\n$@spellicon431670\r\n$@spelldesc431670", "hash": "c08da534db0d123a", "src": "db2@1.60.1.70338"}
+{"id": 431675, "field": "name", "en": "Despair", "hash": "2c6dcd7b69407e8c", "src": "db2@1.60.1.70338"}
+{"id": 431675, "field": "description", "en": "Gain the Despair ability:\r\n\r\n$@spellicon431670\r\n$@spelldesc431670", "hash": "b190fd537b1f518f", "src": "db2@1.60.1.70338"}
+{"id": 431678, "field": "name", "en": "Unbroken Self-Found Champion", "hash": "d7df7b050de65466", "src": "db2@1.60.1.70338"}
+{"id": 431681, "field": "name", "en": "Void Zone", "hash": "d67031da71dc1ce1", "src": "db2@1.60.1.70338"}
+{"id": 431681, "field": "description", "en": "Summons a void zone in the target area that deals ${$<damagepower>*$431690m1/100} Shadow damage to enemies that stand within it every second for $d.", "hash": "241200741990c2ed", "src": "db2@1.60.1.70338"}
+{"id": 431681, "field": "aura", "en": "Dealing ${$<damagepower>*$431690m1/100} Shadow damage to enemies within the void zone every second.", "hash": "9eeee5850343428f", "src": "db2@1.60.1.70338"}
+{"id": 431688, "field": "name", "en": "Void Zone", "hash": "d67031da71dc1ce1", "src": "db2@1.60.1.70338"}
+{"id": 431688, "field": "aura", "en": "Within a Priest's Void Zone.", "hash": "84c54eb598f133e2", "src": "db2@1.60.1.70338"}
+{"id": 431690, "field": "name", "en": "Void Zone", "hash": "d67031da71dc1ce1", "src": "db2@1.60.1.70338"}
+{"id": 431704, "field": "name", "en": "Void Zone", "hash": "d67031da71dc1ce1", "src": "db2@1.60.1.70338"}
+{"id": 431704, "field": "description", "en": "Gain the Void Zone ability:\r\n\r\n$@spellicon431681\r\n$@spelldesc431681", "hash": "507d1aeca5138159", "src": "db2@1.60.1.70338"}
+{"id": 431705, "field": "name", "en": "Engrave Bracers - Void Zone", "hash": "32e36f4cd5216ba3", "src": "db2@1.60.1.70338"}
+{"id": 431705, "field": "description", "en": "Engrave your bracers with the Void Zone rune:\r\n\r\n$@spellicon431681\r\n$@spelldesc431681", "hash": "de4479c027e4d0e9", "src": "db2@1.60.1.70338"}
+{"id": 431720, "field": "name", "en": "Gnomeregan Smash", "hash": "c0b9275bb54de9d4", "src": "db2@1.60.1.70338"}
+{"id": 431733, "field": "name", "en": "Level-up Spell", "hash": "cff33ac6c1b2ab66", "src": "db2@1.60.1.70338"}
+{"id": 431742, "field": "name", "en": "Backdraft", "hash": "31cabea74b49648e", "src": "db2@1.60.1.70338"}
+{"id": 431742, "field": "description", "en": "Gain the Backdraft ability:\r\n\r\n$@spellicon427713\r\n$@spelldesc427713", "hash": "0f926fd167312cd6", "src": "db2@1.60.1.70338"}
+{"id": 431743, "field": "name", "en": "Engrave Helm - Pandemic", "hash": "35344d0f7a8ee31f", "src": "db2@1.60.1.70338"}
+{"id": 431743, "field": "description", "en": "Engrave your helm with the Pandemic rune:\r\n\r\n$@spellicon427712\r\n$@spelldesc427712", "hash": "fc32fa3656af6bbd", "src": "db2@1.60.1.70338"}
+{"id": 431745, "field": "name", "en": "Engrave Helm - Backdraft", "hash": "929ccbce986157ca", "src": "db2@1.60.1.70338"}
+{"id": 431745, "field": "description", "en": "Engrave your helm with the Backdraft rune:\r\n\r\n$@spellicon427713\r\n$@spelldesc427713", "hash": "85225ee1bb371705", "src": "db2@1.60.1.70338"}
+{"id": 431747, "field": "name", "en": "Engrave Bracers - Unstable Affliction", "hash": "083d475b5916eec4", "src": "db2@1.60.1.70338"}
+{"id": 431747, "field": "description", "en": "Engrave your bracers with the Unstable Affliction rune:\r\n\r\n$@spellicon427717\r\n$@spelldesc427717", "hash": "fe30632b84639a01", "src": "db2@1.60.1.70338"}
+{"id": 431748, "field": "name", "en": "Unstable Affliction", "hash": "c2560853f19861b4", "src": "db2@1.60.1.70338"}
+{"id": 431748, "field": "description", "en": "Gain the Unstable Affliction ability:\r\n\r\n$@spellicon427717\r\n$@spelldesc427717", "hash": "cde0fe67c3aba11b", "src": "db2@1.60.1.70338"}
+{"id": 431754, "field": "name", "en": "Summon Felguard", "hash": "7f9db81598c5d87b", "src": "db2@1.60.1.70338"}
+{"id": 431754, "field": "description", "en": "Gain the Summon Felguard ability:\r\n\r\n$@spellicon427733\r\n$@spelldesc427733", "hash": "b7f6c829f62872fc", "src": "db2@1.60.1.70338"}
+{"id": 431756, "field": "name", "en": "Engrave Bracers - Summon Felguard", "hash": "ba7a779045f9683b", "src": "db2@1.60.1.70338"}
+{"id": 431756, "field": "description", "en": "Engrave your bracers with the Summon Felguard rune:\r\n\r\n$@spellicon427733\r\n$@spelldesc427733", "hash": "2f46ea21e001d503", "src": "db2@1.60.1.70338"}
+{"id": 431757, "field": "name", "en": "Immolation Aura", "hash": "cc524f5d6efe9a15", "src": "db2@1.60.1.70338"}
+{"id": 431757, "field": "description", "en": "Gain the Immolation Aura ability:\r\n\r\n$@spellicon431757\r\n$@spelldesc427726", "hash": "c84e894446ac71b9", "src": "db2@1.60.1.70338"}
+{"id": 431758, "field": "name", "en": "Engrave Bracers - Immolation Aura", "hash": "072f0edd1c3229d5", "src": "db2@1.60.1.70338"}
+{"id": 431758, "field": "description", "en": "Engrave your bracers with the Immolation Aura rune:\r\n\r\n$@spellicon431757\r\n$@spelldesc427726", "hash": "b234c15ac977f6aa", "src": "db2@1.60.1.70338"}
+{"id": 431781, "field": "name", "en": "Whisper Event", "hash": "c191b115d433834c", "src": "db2@1.60.1.70338"}
+{"id": 431839, "field": "name", "en": "Off Balanced", "hash": "51ca1659b675d006", "src": "db2@1.60.1.70338"}
+{"id": 431839, "field": "aura", "en": "Knockbacks are more effective on you!", "hash": "66406e4bbfec0069", "src": "db2@1.60.1.70338"}
+{"id": 431841, "field": "name", "en": "Gnomeregan Smash", "hash": "c0b9275bb54de9d4", "src": "db2@1.60.1.70338"}
+{"id": 431842, "field": "name", "en": "Gnomeregan Smash", "hash": "c0b9275bb54de9d4", "src": "db2@1.60.1.70338"}
+{"id": 431843, "field": "name", "en": "Gnomeregan Smash", "hash": "c0b9275bb54de9d4", "src": "db2@1.60.1.70338"}
+{"id": 431946, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70338"}
+{"id": 431957, "field": "name", "en": "Gear Toss", "hash": "74912d69acc1fbe1", "src": "db2@1.60.1.70338"}
+{"id": 431980, "field": "name", "en": "[DNT] Tauren Rogue Questgiver Invisibility", "hash": "234282670ab42ff7", "src": "db2@1.60.1.70338"}
+{"id": 431981, "field": "name", "en": "[DNT] Tauren Rogue Questgiver Grant Visibility", "hash": "a99f9a6eb44d4985", "src": "db2@1.60.1.70338"}
+{"id": 431990, "field": "name", "en": "Desolace Ritual", "hash": "e0b748ef9de4aa5c", "src": "db2@1.60.1.70338"}
+{"id": 431996, "field": "name", "en": "Event Test", "hash": "e44b7fc96c0ee0f9", "src": "db2@1.60.1.70338"}

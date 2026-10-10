@@ -1,161 +1,161 @@
-{"id": 249144, "field": "name", "en": "Twisted Nether Wand", "hash": "3b65773cecce91d8", "src": "db2@1.60.1.70291"}
-{"id": 249232, "field": "name", "en": "Lesser Eternal Wand", "hash": "b1b1418d9d5ec77c", "src": "db2@1.60.1.70291"}
-{"id": 249234, "field": "name", "en": "Dreambough Wand", "hash": "746c6a465f1c36bd", "src": "db2@1.60.1.70291"}
-{"id": 249237, "field": "name", "en": "Greater Eternal Wand", "hash": "110f2ef72bb7e585", "src": "db2@1.60.1.70291"}
-{"id": 249274, "field": "name", "en": "Stranglevine", "hash": "1c36cd4ae29236ab", "src": "db2@1.60.1.70291"}
-{"id": 249385, "field": "name", "en": "Brilliant Wand", "hash": "e3ccb11fa774239d", "src": "db2@1.60.1.70291"}
-{"id": 249390, "field": "name", "en": "Seals of the Sin'dorei", "hash": "10a86abdf1679137", "src": "db2@1.60.1.70291"}
-{"id": 249390, "field": "description", "en": "Break the seals, releasing their energy.", "hash": "faa7f8aa539a4e3f", "src": "db2@1.60.1.70291"}
-{"id": 249391, "field": "name", "en": "Pyrite", "hash": "f4b517df71084ddd", "src": "db2@1.60.1.70291"}
-{"id": 249392, "field": "name", "en": "Glimmering Staff", "hash": "80675b12847292e0", "src": "db2@1.60.1.70291"}
-{"id": 249393, "field": "name", "en": "Soulstaff", "hash": "821b858eb125f173", "src": "db2@1.60.1.70291"}
-{"id": 249394, "field": "name", "en": "Orb of Mystic Insight", "hash": "594325057729d75d", "src": "db2@1.60.1.70291"}
-{"id": 249395, "field": "name", "en": "Orb of Souls", "hash": "834f08d72b348fc5", "src": "db2@1.60.1.70291"}
-{"id": 249396, "field": "name", "en": "Mystic Mushroom", "hash": "ea335f64aac292be", "src": "db2@1.60.1.70291"}
-{"id": 249396, "field": "description", "en": "Increases Spirit by $s1%.", "hash": "c3913d0e848baefe", "src": "db2@1.60.1.70291"}
-{"id": 249397, "field": "name", "en": "Tenets of the Silver Hand", "hash": "d73ffc2b3ab1c2e8", "src": "db2@1.60.1.70291"}
-{"id": 249397, "field": "description", "en": "Increases your damage against Undead by $s1%.\nA pristine copy of the holy tome.", "hash": "ba0be7b7725f135e", "src": "db2@1.60.1.70291"}
-{"id": 249398, "field": "name", "en": "Polished Driftwood Icon", "hash": "19db5237c88033ac", "src": "db2@1.60.1.70291"}
-{"id": 249398, "field": "description", "en": "Allows $s1% of your Mana regeneration to continue while casting.", "hash": "86815c0ca3893a62", "src": "db2@1.60.1.70291"}
-{"id": 249399, "field": "name", "en": "Frilled Lichen", "hash": "a16baeaefef4ffac", "src": "db2@1.60.1.70291"}
-{"id": 249409, "field": "name", "en": "Cerulean Dye", "hash": "fd1b56b00d32f038", "src": "db2@1.60.1.70291"}
-{"id": 249409, "field": "description", "en": "Crafted by alchemists.", "hash": "fb76007ec37740bc", "src": "db2@1.60.1.70291"}
-{"id": 249410, "field": "name", "en": "Sulfuric Acid", "hash": "5717b59ba5794d87", "src": "db2@1.60.1.70291"}
-{"id": 249410, "field": "description", "en": "Crafted by alchemists.", "hash": "fb76007ec37740bc", "src": "db2@1.60.1.70291"}
-{"id": 249424, "field": "name", "en": "Rosecap", "hash": "dfe5b5a53b555793", "src": "db2@1.60.1.70291"}
-{"id": 249425, "field": "name", "en": "Bauxite", "hash": "f92730a5c0c4c7cc", "src": "db2@1.60.1.70291"}
-{"id": 249426, "field": "name", "en": "Pitchblende", "hash": "d65cc228aaa152c1", "src": "db2@1.60.1.70291"}
-{"id": 249427, "field": "name", "en": "Pristine Leather", "hash": "44facb8d82cb2a11", "src": "db2@1.60.1.70291"}
-{"id": 249428, "field": "name", "en": "Pristine Hide", "hash": "21299df1a91a6b7a", "src": "db2@1.60.1.70291"}
-{"id": 249429, "field": "name", "en": "Pristine Scale", "hash": "b89411600af9787c", "src": "db2@1.60.1.70291"}
-{"id": 249430, "field": "name", "en": "Magenta Dye", "hash": "955b46c7f8f5029f", "src": "db2@1.60.1.70291"}
-{"id": 249430, "field": "description", "en": "Crafted by alchemists.", "hash": "fb76007ec37740bc", "src": "db2@1.60.1.70291"}
-{"id": 249431, "field": "name", "en": "Viridian Dye", "hash": "89961ea939eccc52", "src": "db2@1.60.1.70291"}
-{"id": 249431, "field": "description", "en": "Crafted by alchemists.", "hash": "fb76007ec37740bc", "src": "db2@1.60.1.70291"}
-{"id": 249432, "field": "name", "en": "Sandpaper", "hash": "f5b025c5821176fb", "src": "db2@1.60.1.70291"}
-{"id": 249432, "field": "description", "en": "Crafted by engineers.", "hash": "db685ac8fcc13901", "src": "db2@1.60.1.70291"}
-{"id": 249441, "field": "name", "en": "Talons of Wrath", "hash": "e873feb00319be87", "src": "db2@1.60.1.70291"}
-{"id": 249441, "field": "description", "en": "Causes Wrath to have a $h% chance to restore $1302521s1 Mana.", "hash": "bb56b72c7660a9ea", "src": "db2@1.60.1.70291"}
-{"id": 249442, "field": "name", "en": "Libram of Invocation", "hash": "b01c3ad0ce2cda9b", "src": "db2@1.60.1.70291"}
-{"id": 249442, "field": "description", "en": "Reduces the mana cost of your Seal spells by $s1%.", "hash": "42f7644fbf8e760b", "src": "db2@1.60.1.70291"}
-{"id": 249443, "field": "name", "en": "Totem of Ancestral Protection", "hash": "db39cbd8f390cf43", "src": "db2@1.60.1.70291"}
-{"id": 249443, "field": "description", "en": "Reduces the cooldown of Grounding Totem by ${$s1/-1000} sec.", "hash": "830f5b068e6436ea", "src": "db2@1.60.1.70291"}
-{"id": 249453, "field": "name", "en": "Radiant Staff", "hash": "1adfff6fe3828558", "src": "db2@1.60.1.70291"}
-{"id": 249454, "field": "name", "en": "Dreamstaff", "hash": "274740b57b58bd8b", "src": "db2@1.60.1.70291"}
-{"id": 249455, "field": "name", "en": "Truesilver Conduit", "hash": "1356c65baef22088", "src": "db2@1.60.1.70291"}
-{"id": 249456, "field": "name", "en": "Twisting Essence Jar", "hash": "c62edcf11265ac08", "src": "db2@1.60.1.70291"}
-{"id": 249469, "field": "name", "en": "Frozen Heart of the Mountain", "hash": "4d08da6703860b3c", "src": "db2@1.60.1.70291"}
-{"id": 249469, "field": "description", "en": "Increases Frost and Shadow spell damage done by up to $s1 for $d. This effect is doubled in Snowy areas.", "hash": "32cef3b4504eebe8", "src": "db2@1.60.1.70291"}
-{"id": 249470, "field": "name", "en": "Molten Heart of the Mountain", "hash": "d1f5ee004ebada16", "src": "db2@1.60.1.70291"}
-{"id": 249470, "field": "description", "en": "Increases Attack Power by $s1 for $d. This effect is doubled in Volcanic areas.", "hash": "1d721895bfd20f26", "src": "db2@1.60.1.70291"}
-{"id": 249473, "field": "name", "en": "Dormant Heart of the Mountain", "hash": "942f66ff78725ade", "src": "db2@1.60.1.70291"}
-{"id": 249473, "field": "description", "en": "Your casts of $?s2060[Greater Heal]?s5185[Healing Touch]?s331[Healing Wave]?s635[Holy Light][Greater Heal, Healing Touch, Healing Wave, or Holy Light] in combat grant up to $1249119s1 increased healing and up to $1249119s2 increased damage for $1249119d.", "hash": "6530993a50527355", "src": "db2@1.60.1.70291"}
-{"id": 249474, "field": "name", "en": "Formula: Enchant Bracer - Minor Intellect", "hash": "994e5b9e988e3c99", "src": "db2@1.60.1.70291"}
-{"id": 249474, "field": "description", "en": "Teaches you how to permanently enchant bracers to give +3 Intellect.", "hash": "42ac3f62219f996c", "src": "db2@1.60.1.70291"}
-{"id": 249475, "field": "name", "en": "Formula: Enchant Bracer - Minor Healing Power", "hash": "121afa8c23b33f98", "src": "db2@1.60.1.70291"}
-{"id": 249475, "field": "description", "en": "Teaches you how to permanently enchant bracers to increase Healing Power by up to 8 and Spell Damage by up to 3.", "hash": "42b82ec2dbed31ce", "src": "db2@1.60.1.70291"}
-{"id": 249476, "field": "name", "en": "Formula: Mystic Mushroom", "hash": "8a888fc06d08331b", "src": "db2@1.60.1.70291"}
-{"id": 249476, "field": "description", "en": "Teaches you how to craft a Mystic Mushroom.", "hash": "83d55cf7bd452896", "src": "db2@1.60.1.70291"}
-{"id": 249477, "field": "name", "en": "Formula: Tenets of the Silver Hand", "hash": "d4f27d9571259de1", "src": "db2@1.60.1.70291"}
-{"id": 249477, "field": "description", "en": "Teaches you how to craft Tenets of the Silver Hand.", "hash": "d327d6cfc4fca1f2", "src": "db2@1.60.1.70291"}
-{"id": 249478, "field": "name", "en": "Formula: Polished Driftwood Icon", "hash": "3e584bbb12c775a0", "src": "db2@1.60.1.70291"}
-{"id": 249478, "field": "description", "en": "Teaches you how to craft a Polished Driftwood Icon.", "hash": "47140c1d5330e3cb", "src": "db2@1.60.1.70291"}
-{"id": 249479, "field": "name", "en": "Formula: Enchant Weapon - Insight", "hash": "a15abab65b6531ac", "src": "db2@1.60.1.70291"}
-{"id": 249479, "field": "description", "en": "Teaches you how to permanently enchant a weapon to grant a chance to gain Insight when you cast a spell, which gives +5% Spirit for a short duration.", "hash": "c3e746688ee72bfc", "src": "db2@1.60.1.70291"}
-{"id": 249480, "field": "name", "en": "Formula: Enchant Weapon - Recovery", "hash": "1d322a68116dd270", "src": "db2@1.60.1.70291"}
-{"id": 249480, "field": "description", "en": "Teaches you how to permanently enchant a weapon to grant a chance to trigger Recovery when your attacks are dodged or parried, which heals you for 5% of your maximum health. Cannot occur more than once every 10 sec.", "hash": "25d8238f4eed0012", "src": "db2@1.60.1.70291"}
-{"id": 249481, "field": "name", "en": "Formula: Enchant Weapon - Revelation", "hash": "dd2d6a46a22fa835", "src": "db2@1.60.1.70291"}
-{"id": 249481, "field": "description", "en": "Teaches you how to permanently enchant a weapon to grant a chance to trigger Revelation when your direct spells fail to deal a critical strike. Revelation grants 100% increased critical strike chance to your next spell cast.", "hash": "6c1be56ba972dfa6", "src": "db2@1.60.1.70291"}
-{"id": 249482, "field": "name", "en": "Formula: Glimmering Staff", "hash": "8bff1931b20f44ed", "src": "db2@1.60.1.70291"}
-{"id": 249482, "field": "description", "en": "Teaches you how to craft a Glimmering Staff.", "hash": "7d4b5eb0c9ffa84f", "src": "db2@1.60.1.70291"}
-{"id": 249483, "field": "name", "en": "Formula: Soulstaff", "hash": "9447c86887622a3d", "src": "db2@1.60.1.70291"}
-{"id": 249483, "field": "description", "en": "Teaches you how to craft a Soulstaff.", "hash": "f606fb016c800438", "src": "db2@1.60.1.70291"}
-{"id": 249484, "field": "name", "en": "Formula: Orb of Mystic Insight", "hash": "78c5302905aca568", "src": "db2@1.60.1.70291"}
-{"id": 249484, "field": "description", "en": "Teaches you how to craft an Orb of Mystic Insight.", "hash": "37bce678194755f6", "src": "db2@1.60.1.70291"}
-{"id": 249485, "field": "name", "en": "Formula: Orb of Souls", "hash": "b53741c44e306fcd", "src": "db2@1.60.1.70291"}
-{"id": 249485, "field": "description", "en": "Teaches you how to craft an Orb of Souls.", "hash": "414aab98ebd22af1", "src": "db2@1.60.1.70291"}
-{"id": 249486, "field": "name", "en": "Formula: Enchant Bracer - Lesser Agility", "hash": "ebc1612a0ce49aa2", "src": "db2@1.60.1.70291"}
-{"id": 249486, "field": "description", "en": "Teaches you how to permanently enchant bracers to give +4 Agility.", "hash": "8d5f562e136ff4b2", "src": "db2@1.60.1.70291"}
-{"id": 249487, "field": "name", "en": "Formula: Twisted Nether Wand", "hash": "249aab58917050e3", "src": "db2@1.60.1.70291"}
-{"id": 249487, "field": "description", "en": "Teaches you how to craft a Twisted Nether Wand.", "hash": "d830f5566ae3cefb", "src": "db2@1.60.1.70291"}
-{"id": 249488, "field": "name", "en": "Formula: Enchant Bracer - Agility", "hash": "776cb01df12b0fe1", "src": "db2@1.60.1.70291"}
-{"id": 249488, "field": "description", "en": "Teaches you how to permanently enchant bracers to give +5 Agility.", "hash": "75958848afc581df", "src": "db2@1.60.1.70291"}
-{"id": 249489, "field": "name", "en": "Formula: Enchant Bracer - Lesser Healing Power", "hash": "4d4b8db8fd004911", "src": "db2@1.60.1.70291"}
-{"id": 249489, "field": "description", "en": "Teaches you how to permanently enchant bracers to increase Healing Power by up to 16 and Spell Damage by up to 6.", "hash": "1ca14f2b9599ff24", "src": "db2@1.60.1.70291"}
-{"id": 249493, "field": "name", "en": "Formula: Talons of Wrath", "hash": "88c92f0cc55f5ed3", "src": "db2@1.60.1.70291"}
-{"id": 249493, "field": "description", "en": "Teaches you how to craft Talons of Wrath.", "hash": "d022acad6f9f900d", "src": "db2@1.60.1.70291"}
-{"id": 249494, "field": "name", "en": "Formula: Libram of Invocation", "hash": "0655e4ed167756e6", "src": "db2@1.60.1.70291"}
-{"id": 249494, "field": "description", "en": "Teaches you how to craft a Libram of Invocation.", "hash": "1ab95d2184965cfa", "src": "db2@1.60.1.70291"}
-{"id": 249495, "field": "name", "en": "Formula: Totem of Ancestral Protection", "hash": "594dffc034d4e8c5", "src": "db2@1.60.1.70291"}
-{"id": 249495, "field": "description", "en": "Teaches you how to craft a Totem of Ancestral Protection.", "hash": "b74a73b74fdb6e6e", "src": "db2@1.60.1.70291"}
-{"id": 249496, "field": "name", "en": "Formula: Enchant Necklace - Strength", "hash": "2045cbee59ac32ca", "src": "db2@1.60.1.70291"}
-{"id": 249496, "field": "description", "en": "Teaches you how to permanently enchant a necklace to give +5 Strength.", "hash": "9f32ba8a50a75f81", "src": "db2@1.60.1.70291"}
-{"id": 249502, "field": "name", "en": "Formula: Enchant Necklace - Spell Power", "hash": "0b7b1f3dc637f65f", "src": "db2@1.60.1.70291"}
-{"id": 249502, "field": "description", "en": "Teaches you how to permanently enchant a necklace to increase Spell Damage and Healing by up to 6.", "hash": "3d0a9e99dd451fd7", "src": "db2@1.60.1.70291"}
-{"id": 249503, "field": "name", "en": "Formula: Enchant Necklace - Healing Power", "hash": "66ade6d9b967e99c", "src": "db2@1.60.1.70291"}
-{"id": 249503, "field": "description", "en": "Teaches you how to permanently enchant a necklace to increase Healing Power by up to 11 and Spell Damage by up to 4.", "hash": "bd130bcf89062b4d", "src": "db2@1.60.1.70291"}
-{"id": 249504, "field": "name", "en": "Formula: Enchant Necklace - Agility", "hash": "a48476b2d9ae370f", "src": "db2@1.60.1.70291"}
-{"id": 249504, "field": "description", "en": "Teaches you how to permanently enchant a necklace to give +5 Agility.", "hash": "35db46796502993f", "src": "db2@1.60.1.70291"}
-{"id": 249505, "field": "name", "en": "Formula: Enchant Necklace - Deflection", "hash": "3311c74305c10a10", "src": "db2@1.60.1.70291"}
-{"id": 249505, "field": "description", "en": "Teaches you how to permanently enchant a necklace to give +5 Defense Skill.", "hash": "55ece48fbbc6f395", "src": "db2@1.60.1.70291"}
-{"id": 249506, "field": "name", "en": "Formula: Radiant Staff", "hash": "a4b521332303ae7c", "src": "db2@1.60.1.70291"}
-{"id": 249506, "field": "description", "en": "Teaches you how to craft a Radiant Staff.", "hash": "9f8fc9befd4cf382", "src": "db2@1.60.1.70291"}
-{"id": 249507, "field": "name", "en": "Formula: Dreamstaff", "hash": "73ed76701126c4b2", "src": "db2@1.60.1.70291"}
-{"id": 249507, "field": "description", "en": "Teaches you how to craft a Dreamstaff.", "hash": "381bf3481a0de436", "src": "db2@1.60.1.70291"}
-{"id": 249508, "field": "name", "en": "Formula: Truesilver Conduit", "hash": "326ea19fc44bf49a", "src": "db2@1.60.1.70291"}
-{"id": 249508, "field": "description", "en": "Teaches you how to craft a Truesilver Conduit.", "hash": "1917e865bc550739", "src": "db2@1.60.1.70291"}
-{"id": 249509, "field": "name", "en": "Formula: Twisting Essence Jar", "hash": "1c68870e5ab02842", "src": "db2@1.60.1.70291"}
-{"id": 249509, "field": "description", "en": "Teaches you how to craft a Twisting Essence Jar.", "hash": "6642543b5be11345", "src": "db2@1.60.1.70291"}
-{"id": 249510, "field": "name", "en": "Formula: Enchant Chest - Absorption", "hash": "09b9654981da4584", "src": "db2@1.60.1.70291"}
-{"id": 249510, "field": "description", "en": "Teaches you how to permanently enchant chest armor to give a 25% chance per hit of granting 50 points of damage absorption. Cannot occur more than once every 5 sec.", "hash": "1646cf840ff20986", "src": "db2@1.60.1.70291"}
-{"id": 249511, "field": "name", "en": "Formula: Enchant 2H Weapon - Lesser Agility", "hash": "2aa5b098ed3bb3eb", "src": "db2@1.60.1.70291"}
-{"id": 249511, "field": "description", "en": "Teaches you how to permanently enchant a Two-Handed Melee Weapon to grant +15 Agility.", "hash": "edb26d049d4202c1", "src": "db2@1.60.1.70291"}
-{"id": 249512, "field": "name", "en": "Formula: Dreambough Wand", "hash": "14c19aa22161d71a", "src": "db2@1.60.1.70291"}
-{"id": 249512, "field": "description", "en": "Teaches you how to craft a Dreambough Wand.", "hash": "3f05ed711ae98c9a", "src": "db2@1.60.1.70291"}
-{"id": 249513, "field": "name", "en": "Formula: Enchant 2H Weapon - Lesser Strength", "hash": "c3466b65ab25bd85", "src": "db2@1.60.1.70291"}
-{"id": 249513, "field": "description", "en": "Teaches you how to permanently enchant a Two-Handed Melee Weapon to grant +15 Strength.", "hash": "b24b75816e2a4fd4", "src": "db2@1.60.1.70291"}
-{"id": 249514, "field": "name", "en": "Formula: Enchant Bracer - Greater Agility", "hash": "ec83b5e4d5222e76", "src": "db2@1.60.1.70291"}
-{"id": 249514, "field": "description", "en": "Teaches you how to permanently enchant bracers to give +7 Agility.", "hash": "4601ec7ce8709c4a", "src": "db2@1.60.1.70291"}
-{"id": 249515, "field": "name", "en": "Formula: Lesser Eternal Wand", "hash": "9ae675a942008687", "src": "db2@1.60.1.70291"}
-{"id": 249515, "field": "description", "en": "Teaches you how to craft a Lesser Eternal Wand.", "hash": "60f97dfa102127fb", "src": "db2@1.60.1.70291"}
-{"id": 249516, "field": "name", "en": "Formula: Enchant Gloves - Advanced Skinning", "hash": "59af46014a00da65", "src": "db2@1.60.1.70291"}
-{"id": 249516, "field": "description", "en": "Teaches you how to permanently enchant gloves to grant +10 Skinning Skill.", "hash": "98dfc05ff836c72f", "src": "db2@1.60.1.70291"}
-{"id": 249522, "field": "name", "en": "Formula: Greater Eternal Wand", "hash": "6748d90f740261bf", "src": "db2@1.60.1.70291"}
-{"id": 249522, "field": "description", "en": "Teaches you how to craft a Greater Eternal Wand.", "hash": "b70c4b7c921bf2b9", "src": "db2@1.60.1.70291"}
-{"id": 249523, "field": "name", "en": "Formula: Enchant 2H Weapon - Strength", "hash": "a9ec4eb4e752cbf2", "src": "db2@1.60.1.70291"}
-{"id": 249523, "field": "description", "en": "Teaches you how to permanently enchant a Two-Handed Melee Weapon to increase Strength by 25.", "hash": "1619ce43e3780da7", "src": "db2@1.60.1.70291"}
-{"id": 249524, "field": "name", "en": "Formula: Enchant Bracer - Superior Agility", "hash": "912447d8b5da5fcc", "src": "db2@1.60.1.70291"}
-{"id": 249524, "field": "description", "en": "Teaches you how to permanently enchant bracers to give +9 Agility.", "hash": "166e50b0211bb6c6", "src": "db2@1.60.1.70291"}
-{"id": 249525, "field": "name", "en": "Formula: Enchant 2H Weapon - Mighty Spell Power", "hash": "2ff6d1328b913f6f", "src": "db2@1.60.1.70291"}
-{"id": 249525, "field": "description", "en": "Teaches you how to permanently enchant a Two-Handed Melee Weapon to increase Spell Damage and Healing by up to 55.", "hash": "5b147a23c334e10b", "src": "db2@1.60.1.70291"}
-{"id": 249526, "field": "name", "en": "Formula: Enchant 2H Weapon - Mighty Healing Power", "hash": "0e9a773cc7e106c0", "src": "db2@1.60.1.70291"}
-{"id": 249526, "field": "description", "en": "Teaches you how to permanently enchant a Two-Handed Melee Weapon to increase Healing Power by up to 100 and Spell Damage by up to 34.", "hash": "d8cb47ab51ab6441", "src": "db2@1.60.1.70291"}
-{"id": 249529, "field": "name", "en": "Formula: Idol of the Dream", "hash": "dd32b9e02ebe06a9", "src": "db2@1.60.1.70291"}
-{"id": 249529, "field": "description", "en": "Teaches you how to craft an Idol of the Dream.", "hash": "c31b032f1719a011", "src": "db2@1.60.1.70291"}
-{"id": 249530, "field": "name", "en": "Formula: Libram of Holy Alacrity", "hash": "473f166f8ed4e9db", "src": "db2@1.60.1.70291"}
-{"id": 249530, "field": "description", "en": "Teaches you how to craft a Libram of Holy Alacrity.", "hash": "d52dc64dfc183738", "src": "db2@1.60.1.70291"}
-{"id": 249532, "field": "name", "en": "Formula: Totem of Thunder", "hash": "29bfa9795226751d", "src": "db2@1.60.1.70291"}
-{"id": 249532, "field": "description", "en": "Teaches you how to craft a Totem of Thunder.", "hash": "36d5328e4d36077e", "src": "db2@1.60.1.70291"}
-{"id": 249534, "field": "name", "en": "Formula: Enchant Gloves - Arcane Power", "hash": "2f64d18eb6ef30de", "src": "db2@1.60.1.70291"}
-{"id": 249534, "field": "description", "en": "Teaches you how to permanently enchant gloves to increase Arcane damage by up to 20.", "hash": "c93df79b738fa555", "src": "db2@1.60.1.70291"}
-{"id": 249535, "field": "name", "en": "Formula: Enchant Gloves - Natural Power", "hash": "b127f184052b12c6", "src": "db2@1.60.1.70291"}
-{"id": 249535, "field": "description", "en": "Teaches you how to permanently enchant gloves to increase Nature damage by up to 20.", "hash": "0d8f948439fff26d", "src": "db2@1.60.1.70291"}
-{"id": 249536, "field": "name", "en": "Formula: Enchant Gloves - Holy Power", "hash": "79bf10bd1ccf51be", "src": "db2@1.60.1.70291"}
-{"id": 249536, "field": "description", "en": "Teaches you how to permanently enchant gloves to increase Holy damage by up to 20.", "hash": "65df3ebe00b9e717", "src": "db2@1.60.1.70291"}
-{"id": 249537, "field": "name", "en": "Formula: Brilliant Wand", "hash": "6bdcf9ce1bf310c9", "src": "db2@1.60.1.70291"}
-{"id": 249537, "field": "description", "en": "Teaches you how to craft a Brilliant Wand.", "hash": "a698a0800ff976a4", "src": "db2@1.60.1.70291"}
-{"id": 249538, "field": "name", "en": "Formula: Enchant Bracer - Superior Intellect", "hash": "ec7ff1a17535109e", "src": "db2@1.60.1.70291"}
-{"id": 249538, "field": "description", "en": "Teaches you how to permanently enchant bracers to give +9 Intellect.", "hash": "58c6e9fe5b2361ae", "src": "db2@1.60.1.70291"}
-{"id": 249539, "field": "name", "en": "Formula: Enchant Bracer - Superior Deflection", "hash": "50bcdc076d062c30", "src": "db2@1.60.1.70291"}
-{"id": 249539, "field": "description", "en": "Teaches you how to permanently enchant bracers to give +6 Defense Skill.", "hash": "1aca44bbc9414f34", "src": "db2@1.60.1.70291"}
-{"id": 249692, "field": "name", "en": "Head of Varrox Bleakhoof", "hash": "a717c7c02a9dc09e", "src": "db2@1.60.1.70291"}
-{"id": 249693, "field": "name", "en": "Totem of Ursol", "hash": "95f5743fda033372", "src": "db2@1.60.1.70291"}
-{"id": 249694, "field": "name", "en": "Totem of Ursoc", "hash": "95f57436da033369", "src": "db2@1.60.1.70291"}
-{"id": 249695, "field": "name", "en": "Fel-Tainted Flesh", "hash": "545fcc99a73880b7", "src": "db2@1.60.1.70291"}
-{"id": 249696, "field": "name", "en": "Tusks of the Unbroken", "hash": "d770118fed644958", "src": "db2@1.60.1.70291"}
-{"id": 249697, "field": "name", "en": "Claws of the Great Bear", "hash": "4cecaca7f9a36d5a", "src": "db2@1.60.1.70291"}
-{"id": 249698, "field": "name", "en": "Feathered Charm Necklace", "hash": "05836f02fec0ce08", "src": "db2@1.60.1.70291"}
-{"id": 249726, "field": "name", "en": "Azerothium Bar", "hash": "9c51fb3d090a5044", "src": "db2@1.60.1.70291"}
+{"id": 249144, "field": "name", "en": "Twisted Nether Wand", "hash": "3b65773cecce91d8", "src": "db2@1.60.1.70338"}
+{"id": 249232, "field": "name", "en": "Lesser Eternal Wand", "hash": "b1b1418d9d5ec77c", "src": "db2@1.60.1.70338"}
+{"id": 249234, "field": "name", "en": "Dreambough Wand", "hash": "746c6a465f1c36bd", "src": "db2@1.60.1.70338"}
+{"id": 249237, "field": "name", "en": "Greater Eternal Wand", "hash": "110f2ef72bb7e585", "src": "db2@1.60.1.70338"}
+{"id": 249274, "field": "name", "en": "Stranglevine", "hash": "1c36cd4ae29236ab", "src": "db2@1.60.1.70338"}
+{"id": 249385, "field": "name", "en": "Brilliant Wand", "hash": "e3ccb11fa774239d", "src": "db2@1.60.1.70338"}
+{"id": 249390, "field": "name", "en": "Seals of the Sin'dorei", "hash": "10a86abdf1679137", "src": "db2@1.60.1.70338"}
+{"id": 249390, "field": "description", "en": "Break the seals, releasing their energy.", "hash": "faa7f8aa539a4e3f", "src": "db2@1.60.1.70338"}
+{"id": 249391, "field": "name", "en": "Pyrite", "hash": "f4b517df71084ddd", "src": "db2@1.60.1.70338"}
+{"id": 249392, "field": "name", "en": "Glimmering Staff", "hash": "80675b12847292e0", "src": "db2@1.60.1.70338"}
+{"id": 249393, "field": "name", "en": "Soulstaff", "hash": "821b858eb125f173", "src": "db2@1.60.1.70338"}
+{"id": 249394, "field": "name", "en": "Orb of Mystic Insight", "hash": "594325057729d75d", "src": "db2@1.60.1.70338"}
+{"id": 249395, "field": "name", "en": "Orb of Souls", "hash": "834f08d72b348fc5", "src": "db2@1.60.1.70338"}
+{"id": 249396, "field": "name", "en": "Mystic Mushroom", "hash": "ea335f64aac292be", "src": "db2@1.60.1.70338"}
+{"id": 249396, "field": "description", "en": "Increases Spirit by $s1%.", "hash": "c3913d0e848baefe", "src": "db2@1.60.1.70338"}
+{"id": 249397, "field": "name", "en": "Tenets of the Silver Hand", "hash": "d73ffc2b3ab1c2e8", "src": "db2@1.60.1.70338"}
+{"id": 249397, "field": "description", "en": "Increases your damage against Undead by $s1%.\nA pristine copy of the holy tome.", "hash": "ba0be7b7725f135e", "src": "db2@1.60.1.70338"}
+{"id": 249398, "field": "name", "en": "Polished Driftwood Icon", "hash": "19db5237c88033ac", "src": "db2@1.60.1.70338"}
+{"id": 249398, "field": "description", "en": "Allows $s1% of your Mana regeneration to continue while casting.", "hash": "86815c0ca3893a62", "src": "db2@1.60.1.70338"}
+{"id": 249399, "field": "name", "en": "Frilled Lichen", "hash": "a16baeaefef4ffac", "src": "db2@1.60.1.70338"}
+{"id": 249409, "field": "name", "en": "Cerulean Dye", "hash": "fd1b56b00d32f038", "src": "db2@1.60.1.70338"}
+{"id": 249409, "field": "description", "en": "Crafted by alchemists.", "hash": "fb76007ec37740bc", "src": "db2@1.60.1.70338"}
+{"id": 249410, "field": "name", "en": "Sulfuric Acid", "hash": "5717b59ba5794d87", "src": "db2@1.60.1.70338"}
+{"id": 249410, "field": "description", "en": "Crafted by alchemists.", "hash": "fb76007ec37740bc", "src": "db2@1.60.1.70338"}
+{"id": 249424, "field": "name", "en": "Rosecap", "hash": "dfe5b5a53b555793", "src": "db2@1.60.1.70338"}
+{"id": 249425, "field": "name", "en": "Bauxite", "hash": "f92730a5c0c4c7cc", "src": "db2@1.60.1.70338"}
+{"id": 249426, "field": "name", "en": "Pitchblende", "hash": "d65cc228aaa152c1", "src": "db2@1.60.1.70338"}
+{"id": 249427, "field": "name", "en": "Pristine Leather", "hash": "44facb8d82cb2a11", "src": "db2@1.60.1.70338"}
+{"id": 249428, "field": "name", "en": "Pristine Hide", "hash": "21299df1a91a6b7a", "src": "db2@1.60.1.70338"}
+{"id": 249429, "field": "name", "en": "Pristine Scale", "hash": "b89411600af9787c", "src": "db2@1.60.1.70338"}
+{"id": 249430, "field": "name", "en": "Magenta Dye", "hash": "955b46c7f8f5029f", "src": "db2@1.60.1.70338"}
+{"id": 249430, "field": "description", "en": "Crafted by alchemists.", "hash": "fb76007ec37740bc", "src": "db2@1.60.1.70338"}
+{"id": 249431, "field": "name", "en": "Viridian Dye", "hash": "89961ea939eccc52", "src": "db2@1.60.1.70338"}
+{"id": 249431, "field": "description", "en": "Crafted by alchemists.", "hash": "fb76007ec37740bc", "src": "db2@1.60.1.70338"}
+{"id": 249432, "field": "name", "en": "Sandpaper", "hash": "f5b025c5821176fb", "src": "db2@1.60.1.70338"}
+{"id": 249432, "field": "description", "en": "Crafted by engineers.", "hash": "db685ac8fcc13901", "src": "db2@1.60.1.70338"}
+{"id": 249441, "field": "name", "en": "Talons of Wrath", "hash": "e873feb00319be87", "src": "db2@1.60.1.70338"}
+{"id": 249441, "field": "description", "en": "Causes Wrath to have a $h% chance to restore $1302521s1 Mana.", "hash": "bb56b72c7660a9ea", "src": "db2@1.60.1.70338"}
+{"id": 249442, "field": "name", "en": "Libram of Invocation", "hash": "b01c3ad0ce2cda9b", "src": "db2@1.60.1.70338"}
+{"id": 249442, "field": "description", "en": "Reduces the mana cost of your Seal spells by $s1%.", "hash": "42f7644fbf8e760b", "src": "db2@1.60.1.70338"}
+{"id": 249443, "field": "name", "en": "Totem of Ancestral Protection", "hash": "db39cbd8f390cf43", "src": "db2@1.60.1.70338"}
+{"id": 249443, "field": "description", "en": "Reduces the cooldown of Grounding Totem by ${$s1/-1000} sec.", "hash": "830f5b068e6436ea", "src": "db2@1.60.1.70338"}
+{"id": 249453, "field": "name", "en": "Radiant Staff", "hash": "1adfff6fe3828558", "src": "db2@1.60.1.70338"}
+{"id": 249454, "field": "name", "en": "Dreamstaff", "hash": "274740b57b58bd8b", "src": "db2@1.60.1.70338"}
+{"id": 249455, "field": "name", "en": "Truesilver Conduit", "hash": "1356c65baef22088", "src": "db2@1.60.1.70338"}
+{"id": 249456, "field": "name", "en": "Twisting Essence Jar", "hash": "c62edcf11265ac08", "src": "db2@1.60.1.70338"}
+{"id": 249469, "field": "name", "en": "Frozen Heart of the Mountain", "hash": "4d08da6703860b3c", "src": "db2@1.60.1.70338"}
+{"id": 249469, "field": "description", "en": "Increases Frost and Shadow spell damage done by up to $s1 for $d. This effect is doubled in Snowy areas.", "hash": "32cef3b4504eebe8", "src": "db2@1.60.1.70338"}
+{"id": 249470, "field": "name", "en": "Molten Heart of the Mountain", "hash": "d1f5ee004ebada16", "src": "db2@1.60.1.70338"}
+{"id": 249470, "field": "description", "en": "Increases Attack Power by $s1 for $d. This effect is doubled in Volcanic areas.", "hash": "1d721895bfd20f26", "src": "db2@1.60.1.70338"}
+{"id": 249473, "field": "name", "en": "Dormant Heart of the Mountain", "hash": "942f66ff78725ade", "src": "db2@1.60.1.70338"}
+{"id": 249473, "field": "description", "en": "Your casts of $?s2060[Greater Heal]?s5185[Healing Touch]?s331[Healing Wave]?s635[Holy Light][Greater Heal, Healing Touch, Healing Wave, or Holy Light] in combat grant up to $1249119s1 increased healing and up to $1249119s2 increased damage for $1249119d.", "hash": "6530993a50527355", "src": "db2@1.60.1.70338"}
+{"id": 249474, "field": "name", "en": "Formula: Enchant Bracer - Minor Intellect", "hash": "994e5b9e988e3c99", "src": "db2@1.60.1.70338"}
+{"id": 249474, "field": "description", "en": "Teaches you how to permanently enchant bracers to give +3 Intellect.", "hash": "42ac3f62219f996c", "src": "db2@1.60.1.70338"}
+{"id": 249475, "field": "name", "en": "Formula: Enchant Bracer - Minor Healing Power", "hash": "121afa8c23b33f98", "src": "db2@1.60.1.70338"}
+{"id": 249475, "field": "description", "en": "Teaches you how to permanently enchant bracers to increase Healing Power by up to 8 and Spell Damage by up to 3.", "hash": "42b82ec2dbed31ce", "src": "db2@1.60.1.70338"}
+{"id": 249476, "field": "name", "en": "Formula: Mystic Mushroom", "hash": "8a888fc06d08331b", "src": "db2@1.60.1.70338"}
+{"id": 249476, "field": "description", "en": "Teaches you how to craft a Mystic Mushroom.", "hash": "83d55cf7bd452896", "src": "db2@1.60.1.70338"}
+{"id": 249477, "field": "name", "en": "Formula: Tenets of the Silver Hand", "hash": "d4f27d9571259de1", "src": "db2@1.60.1.70338"}
+{"id": 249477, "field": "description", "en": "Teaches you how to craft Tenets of the Silver Hand.", "hash": "d327d6cfc4fca1f2", "src": "db2@1.60.1.70338"}
+{"id": 249478, "field": "name", "en": "Formula: Polished Driftwood Icon", "hash": "3e584bbb12c775a0", "src": "db2@1.60.1.70338"}
+{"id": 249478, "field": "description", "en": "Teaches you how to craft a Polished Driftwood Icon.", "hash": "47140c1d5330e3cb", "src": "db2@1.60.1.70338"}
+{"id": 249479, "field": "name", "en": "Formula: Enchant Weapon - Insight", "hash": "a15abab65b6531ac", "src": "db2@1.60.1.70338"}
+{"id": 249479, "field": "description", "en": "Teaches you how to permanently enchant a weapon to grant a chance to gain Insight when you cast a spell, which gives +5% Spirit for a short duration.", "hash": "c3e746688ee72bfc", "src": "db2@1.60.1.70338"}
+{"id": 249480, "field": "name", "en": "Formula: Enchant Weapon - Recovery", "hash": "1d322a68116dd270", "src": "db2@1.60.1.70338"}
+{"id": 249480, "field": "description", "en": "Teaches you how to permanently enchant a weapon to grant a chance to trigger Recovery when your attacks are dodged or parried, which heals you for 5% of your maximum health. Cannot occur more than once every 10 sec.", "hash": "25d8238f4eed0012", "src": "db2@1.60.1.70338"}
+{"id": 249481, "field": "name", "en": "Formula: Enchant Weapon - Revelation", "hash": "dd2d6a46a22fa835", "src": "db2@1.60.1.70338"}
+{"id": 249481, "field": "description", "en": "Teaches you how to permanently enchant a weapon to grant a chance to trigger Revelation when your direct spells fail to deal a critical strike. Revelation grants 100% increased critical strike chance to your next spell cast.", "hash": "6c1be56ba972dfa6", "src": "db2@1.60.1.70338"}
+{"id": 249482, "field": "name", "en": "Formula: Glimmering Staff", "hash": "8bff1931b20f44ed", "src": "db2@1.60.1.70338"}
+{"id": 249482, "field": "description", "en": "Teaches you how to craft a Glimmering Staff.", "hash": "7d4b5eb0c9ffa84f", "src": "db2@1.60.1.70338"}
+{"id": 249483, "field": "name", "en": "Formula: Soulstaff", "hash": "9447c86887622a3d", "src": "db2@1.60.1.70338"}
+{"id": 249483, "field": "description", "en": "Teaches you how to craft a Soulstaff.", "hash": "f606fb016c800438", "src": "db2@1.60.1.70338"}
+{"id": 249484, "field": "name", "en": "Formula: Orb of Mystic Insight", "hash": "78c5302905aca568", "src": "db2@1.60.1.70338"}
+{"id": 249484, "field": "description", "en": "Teaches you how to craft an Orb of Mystic Insight.", "hash": "37bce678194755f6", "src": "db2@1.60.1.70338"}
+{"id": 249485, "field": "name", "en": "Formula: Orb of Souls", "hash": "b53741c44e306fcd", "src": "db2@1.60.1.70338"}
+{"id": 249485, "field": "description", "en": "Teaches you how to craft an Orb of Souls.", "hash": "414aab98ebd22af1", "src": "db2@1.60.1.70338"}
+{"id": 249486, "field": "name", "en": "Formula: Enchant Bracer - Lesser Agility", "hash": "ebc1612a0ce49aa2", "src": "db2@1.60.1.70338"}
+{"id": 249486, "field": "description", "en": "Teaches you how to permanently enchant bracers to give +4 Agility.", "hash": "8d5f562e136ff4b2", "src": "db2@1.60.1.70338"}
+{"id": 249487, "field": "name", "en": "Formula: Twisted Nether Wand", "hash": "249aab58917050e3", "src": "db2@1.60.1.70338"}
+{"id": 249487, "field": "description", "en": "Teaches you how to craft a Twisted Nether Wand.", "hash": "d830f5566ae3cefb", "src": "db2@1.60.1.70338"}
+{"id": 249488, "field": "name", "en": "Formula: Enchant Bracer - Agility", "hash": "776cb01df12b0fe1", "src": "db2@1.60.1.70338"}
+{"id": 249488, "field": "description", "en": "Teaches you how to permanently enchant bracers to give +5 Agility.", "hash": "75958848afc581df", "src": "db2@1.60.1.70338"}
+{"id": 249489, "field": "name", "en": "Formula: Enchant Bracer - Lesser Healing Power", "hash": "4d4b8db8fd004911", "src": "db2@1.60.1.70338"}
+{"id": 249489, "field": "description", "en": "Teaches you how to permanently enchant bracers to increase Healing Power by up to 16 and Spell Damage by up to 6.", "hash": "1ca14f2b9599ff24", "src": "db2@1.60.1.70338"}
+{"id": 249493, "field": "name", "en": "Formula: Talons of Wrath", "hash": "88c92f0cc55f5ed3", "src": "db2@1.60.1.70338"}
+{"id": 249493, "field": "description", "en": "Teaches you how to craft Talons of Wrath.", "hash": "d022acad6f9f900d", "src": "db2@1.60.1.70338"}
+{"id": 249494, "field": "name", "en": "Formula: Libram of Invocation", "hash": "0655e4ed167756e6", "src": "db2@1.60.1.70338"}
+{"id": 249494, "field": "description", "en": "Teaches you how to craft a Libram of Invocation.", "hash": "1ab95d2184965cfa", "src": "db2@1.60.1.70338"}
+{"id": 249495, "field": "name", "en": "Formula: Totem of Ancestral Protection", "hash": "594dffc034d4e8c5", "src": "db2@1.60.1.70338"}
+{"id": 249495, "field": "description", "en": "Teaches you how to craft a Totem of Ancestral Protection.", "hash": "b74a73b74fdb6e6e", "src": "db2@1.60.1.70338"}
+{"id": 249496, "field": "name", "en": "Formula: Enchant Necklace - Strength", "hash": "2045cbee59ac32ca", "src": "db2@1.60.1.70338"}
+{"id": 249496, "field": "description", "en": "Teaches you how to permanently enchant a necklace to give +5 Strength.", "hash": "9f32ba8a50a75f81", "src": "db2@1.60.1.70338"}
+{"id": 249502, "field": "name", "en": "Formula: Enchant Necklace - Spell Power", "hash": "0b7b1f3dc637f65f", "src": "db2@1.60.1.70338"}
+{"id": 249502, "field": "description", "en": "Teaches you how to permanently enchant a necklace to increase Spell Damage and Healing by up to 6.", "hash": "3d0a9e99dd451fd7", "src": "db2@1.60.1.70338"}
+{"id": 249503, "field": "name", "en": "Formula: Enchant Necklace - Healing Power", "hash": "66ade6d9b967e99c", "src": "db2@1.60.1.70338"}
+{"id": 249503, "field": "description", "en": "Teaches you how to permanently enchant a necklace to increase Healing Power by up to 11 and Spell Damage by up to 4.", "hash": "bd130bcf89062b4d", "src": "db2@1.60.1.70338"}
+{"id": 249504, "field": "name", "en": "Formula: Enchant Necklace - Agility", "hash": "a48476b2d9ae370f", "src": "db2@1.60.1.70338"}
+{"id": 249504, "field": "description", "en": "Teaches you how to permanently enchant a necklace to give +5 Agility.", "hash": "35db46796502993f", "src": "db2@1.60.1.70338"}
+{"id": 249505, "field": "name", "en": "Formula: Enchant Necklace - Deflection", "hash": "3311c74305c10a10", "src": "db2@1.60.1.70338"}
+{"id": 249505, "field": "description", "en": "Teaches you how to permanently enchant a necklace to give +5 Defense Skill.", "hash": "55ece48fbbc6f395", "src": "db2@1.60.1.70338"}
+{"id": 249506, "field": "name", "en": "Formula: Radiant Staff", "hash": "a4b521332303ae7c", "src": "db2@1.60.1.70338"}
+{"id": 249506, "field": "description", "en": "Teaches you how to craft a Radiant Staff.", "hash": "9f8fc9befd4cf382", "src": "db2@1.60.1.70338"}
+{"id": 249507, "field": "name", "en": "Formula: Dreamstaff", "hash": "73ed76701126c4b2", "src": "db2@1.60.1.70338"}
+{"id": 249507, "field": "description", "en": "Teaches you how to craft a Dreamstaff.", "hash": "381bf3481a0de436", "src": "db2@1.60.1.70338"}
+{"id": 249508, "field": "name", "en": "Formula: Truesilver Conduit", "hash": "326ea19fc44bf49a", "src": "db2@1.60.1.70338"}
+{"id": 249508, "field": "description", "en": "Teaches you how to craft a Truesilver Conduit.", "hash": "1917e865bc550739", "src": "db2@1.60.1.70338"}
+{"id": 249509, "field": "name", "en": "Formula: Twisting Essence Jar", "hash": "1c68870e5ab02842", "src": "db2@1.60.1.70338"}
+{"id": 249509, "field": "description", "en": "Teaches you how to craft a Twisting Essence Jar.", "hash": "6642543b5be11345", "src": "db2@1.60.1.70338"}
+{"id": 249510, "field": "name", "en": "Formula: Enchant Chest - Absorption", "hash": "09b9654981da4584", "src": "db2@1.60.1.70338"}
+{"id": 249510, "field": "description", "en": "Teaches you how to permanently enchant chest armor to give a 25% chance per hit of granting 50 points of damage absorption. Cannot occur more than once every 5 sec.", "hash": "1646cf840ff20986", "src": "db2@1.60.1.70338"}
+{"id": 249511, "field": "name", "en": "Formula: Enchant 2H Weapon - Lesser Agility", "hash": "2aa5b098ed3bb3eb", "src": "db2@1.60.1.70338"}
+{"id": 249511, "field": "description", "en": "Teaches you how to permanently enchant a Two-Handed Melee Weapon to grant +15 Agility.", "hash": "edb26d049d4202c1", "src": "db2@1.60.1.70338"}
+{"id": 249512, "field": "name", "en": "Formula: Dreambough Wand", "hash": "14c19aa22161d71a", "src": "db2@1.60.1.70338"}
+{"id": 249512, "field": "description", "en": "Teaches you how to craft a Dreambough Wand.", "hash": "3f05ed711ae98c9a", "src": "db2@1.60.1.70338"}
+{"id": 249513, "field": "name", "en": "Formula: Enchant 2H Weapon - Lesser Strength", "hash": "c3466b65ab25bd85", "src": "db2@1.60.1.70338"}
+{"id": 249513, "field": "description", "en": "Teaches you how to permanently enchant a Two-Handed Melee Weapon to grant +15 Strength.", "hash": "b24b75816e2a4fd4", "src": "db2@1.60.1.70338"}
+{"id": 249514, "field": "name", "en": "Formula: Enchant Bracer - Greater Agility", "hash": "ec83b5e4d5222e76", "src": "db2@1.60.1.70338"}
+{"id": 249514, "field": "description", "en": "Teaches you how to permanently enchant bracers to give +7 Agility.", "hash": "4601ec7ce8709c4a", "src": "db2@1.60.1.70338"}
+{"id": 249515, "field": "name", "en": "Formula: Lesser Eternal Wand", "hash": "9ae675a942008687", "src": "db2@1.60.1.70338"}
+{"id": 249515, "field": "description", "en": "Teaches you how to craft a Lesser Eternal Wand.", "hash": "60f97dfa102127fb", "src": "db2@1.60.1.70338"}
+{"id": 249516, "field": "name", "en": "Formula: Enchant Gloves - Advanced Skinning", "hash": "59af46014a00da65", "src": "db2@1.60.1.70338"}
+{"id": 249516, "field": "description", "en": "Teaches you how to permanently enchant gloves to grant +10 Skinning Skill.", "hash": "98dfc05ff836c72f", "src": "db2@1.60.1.70338"}
+{"id": 249522, "field": "name", "en": "Formula: Greater Eternal Wand", "hash": "6748d90f740261bf", "src": "db2@1.60.1.70338"}
+{"id": 249522, "field": "description", "en": "Teaches you how to craft a Greater Eternal Wand.", "hash": "b70c4b7c921bf2b9", "src": "db2@1.60.1.70338"}
+{"id": 249523, "field": "name", "en": "Formula: Enchant 2H Weapon - Strength", "hash": "a9ec4eb4e752cbf2", "src": "db2@1.60.1.70338"}
+{"id": 249523, "field": "description", "en": "Teaches you how to permanently enchant a Two-Handed Melee Weapon to increase Strength by 25.", "hash": "1619ce43e3780da7", "src": "db2@1.60.1.70338"}
+{"id": 249524, "field": "name", "en": "Formula: Enchant Bracer - Superior Agility", "hash": "912447d8b5da5fcc", "src": "db2@1.60.1.70338"}
+{"id": 249524, "field": "description", "en": "Teaches you how to permanently enchant bracers to give +9 Agility.", "hash": "166e50b0211bb6c6", "src": "db2@1.60.1.70338"}
+{"id": 249525, "field": "name", "en": "Formula: Enchant 2H Weapon - Mighty Spell Power", "hash": "2ff6d1328b913f6f", "src": "db2@1.60.1.70338"}
+{"id": 249525, "field": "description", "en": "Teaches you how to permanently enchant a Two-Handed Melee Weapon to increase Spell Damage and Healing by up to 55.", "hash": "5b147a23c334e10b", "src": "db2@1.60.1.70338"}
+{"id": 249526, "field": "name", "en": "Formula: Enchant 2H Weapon - Mighty Healing Power", "hash": "0e9a773cc7e106c0", "src": "db2@1.60.1.70338"}
+{"id": 249526, "field": "description", "en": "Teaches you how to permanently enchant a Two-Handed Melee Weapon to increase Healing Power by up to 100 and Spell Damage by up to 34.", "hash": "d8cb47ab51ab6441", "src": "db2@1.60.1.70338"}
+{"id": 249529, "field": "name", "en": "Formula: Idol of the Dream", "hash": "dd32b9e02ebe06a9", "src": "db2@1.60.1.70338"}
+{"id": 249529, "field": "description", "en": "Teaches you how to craft an Idol of the Dream.", "hash": "c31b032f1719a011", "src": "db2@1.60.1.70338"}
+{"id": 249530, "field": "name", "en": "Formula: Libram of Holy Alacrity", "hash": "473f166f8ed4e9db", "src": "db2@1.60.1.70338"}
+{"id": 249530, "field": "description", "en": "Teaches you how to craft a Libram of Holy Alacrity.", "hash": "d52dc64dfc183738", "src": "db2@1.60.1.70338"}
+{"id": 249532, "field": "name", "en": "Formula: Totem of Thunder", "hash": "29bfa9795226751d", "src": "db2@1.60.1.70338"}
+{"id": 249532, "field": "description", "en": "Teaches you how to craft a Totem of Thunder.", "hash": "36d5328e4d36077e", "src": "db2@1.60.1.70338"}
+{"id": 249534, "field": "name", "en": "Formula: Enchant Gloves - Arcane Power", "hash": "2f64d18eb6ef30de", "src": "db2@1.60.1.70338"}
+{"id": 249534, "field": "description", "en": "Teaches you how to permanently enchant gloves to increase Arcane damage by up to 20.", "hash": "c93df79b738fa555", "src": "db2@1.60.1.70338"}
+{"id": 249535, "field": "name", "en": "Formula: Enchant Gloves - Natural Power", "hash": "b127f184052b12c6", "src": "db2@1.60.1.70338"}
+{"id": 249535, "field": "description", "en": "Teaches you how to permanently enchant gloves to increase Nature damage by up to 20.", "hash": "0d8f948439fff26d", "src": "db2@1.60.1.70338"}
+{"id": 249536, "field": "name", "en": "Formula: Enchant Gloves - Holy Power", "hash": "79bf10bd1ccf51be", "src": "db2@1.60.1.70338"}
+{"id": 249536, "field": "description", "en": "Teaches you how to permanently enchant gloves to increase Holy damage by up to 20.", "hash": "65df3ebe00b9e717", "src": "db2@1.60.1.70338"}
+{"id": 249537, "field": "name", "en": "Formula: Brilliant Wand", "hash": "6bdcf9ce1bf310c9", "src": "db2@1.60.1.70338"}
+{"id": 249537, "field": "description", "en": "Teaches you how to craft a Brilliant Wand.", "hash": "a698a0800ff976a4", "src": "db2@1.60.1.70338"}
+{"id": 249538, "field": "name", "en": "Formula: Enchant Bracer - Superior Intellect", "hash": "ec7ff1a17535109e", "src": "db2@1.60.1.70338"}
+{"id": 249538, "field": "description", "en": "Teaches you how to permanently enchant bracers to give +9 Intellect.", "hash": "58c6e9fe5b2361ae", "src": "db2@1.60.1.70338"}
+{"id": 249539, "field": "name", "en": "Formula: Enchant Bracer - Superior Deflection", "hash": "50bcdc076d062c30", "src": "db2@1.60.1.70338"}
+{"id": 249539, "field": "description", "en": "Teaches you how to permanently enchant bracers to give +6 Defense Skill.", "hash": "1aca44bbc9414f34", "src": "db2@1.60.1.70338"}
+{"id": 249692, "field": "name", "en": "Head of Varrox Bleakhoof", "hash": "a717c7c02a9dc09e", "src": "db2@1.60.1.70338"}
+{"id": 249693, "field": "name", "en": "Totem of Ursol", "hash": "95f5743fda033372", "src": "db2@1.60.1.70338"}
+{"id": 249694, "field": "name", "en": "Totem of Ursoc", "hash": "95f57436da033369", "src": "db2@1.60.1.70338"}
+{"id": 249695, "field": "name", "en": "Fel-Tainted Flesh", "hash": "545fcc99a73880b7", "src": "db2@1.60.1.70338"}
+{"id": 249696, "field": "name", "en": "Tusks of the Unbroken", "hash": "d770118fed644958", "src": "db2@1.60.1.70338"}
+{"id": 249697, "field": "name", "en": "Claws of the Great Bear", "hash": "4cecaca7f9a36d5a", "src": "db2@1.60.1.70338"}
+{"id": 249698, "field": "name", "en": "Feathered Charm Necklace", "hash": "05836f02fec0ce08", "src": "db2@1.60.1.70338"}
+{"id": 249726, "field": "name", "en": "Azerothium Bar", "hash": "9c51fb3d090a5044", "src": "db2@1.60.1.70338"}
 {"id": 249791, "field": "name", "en": "Shiny Green Apple", "hash": "8b02396032a9f8ff", "src": "db2@1.60.1.69913"}
 {"id": 249791, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.69913"}
 {"id": 249792, "field": "name", "en": "Sweetsour Grapes", "hash": "4026f5cf86982663", "src": "db2@1.60.1.69913"}
@@ -166,66 +166,66 @@
 {"id": 249794, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.69913"}
 {"id": 249795, "field": "name", "en": "Flame Papaya", "hash": "e881506f7736fa04", "src": "db2@1.60.1.69913"}
 {"id": 249795, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.69913"}
-{"id": 249796, "field": "name", "en": "Hyjal Berries", "hash": "3443ef217a82b769", "src": "db2@1.60.1.70291"}
-{"id": 249796, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70291"}
+{"id": 249796, "field": "name", "en": "Hyjal Berries", "hash": "3443ef217a82b769", "src": "db2@1.60.1.70338"}
+{"id": 249796, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70338"}
 {"id": 249802, "field": "name", "en": "Grainy Fruit Pulp", "hash": "3afbb81c28323a55", "src": "db2@1.60.1.69913"}
 {"id": 249803, "field": "name", "en": "Tangy Fruit Pulp", "hash": "849bb47d807d8230", "src": "db2@1.60.1.69913"}
-{"id": 249865, "field": "name", "en": "Peace Tea", "hash": "83c936af07d294dc", "src": "db2@1.60.1.70291"}
-{"id": 249865, "field": "description", "en": "$@spelldesc430 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "83f655af096291c3", "src": "db2@1.60.1.70291"}
-{"id": 249866, "field": "name", "en": "Royal Tea", "hash": "e0fc4cfeeb6e3675", "src": "db2@1.60.1.70291"}
-{"id": 249866, "field": "description", "en": "$@spelldesc431 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "200674bb388837f2", "src": "db2@1.60.1.70291"}
-{"id": 249867, "field": "name", "en": "Root Tea", "hash": "a2cab9a70f62654f", "src": "db2@1.60.1.70291"}
-{"id": 249867, "field": "description", "en": "$@spelldesc432 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "bc1693c267adde21", "src": "db2@1.60.1.70291"}
-{"id": 249868, "field": "name", "en": "Triage Tea", "hash": "a251d04562911053", "src": "db2@1.60.1.70291"}
-{"id": 249868, "field": "description", "en": "$@spelldesc1133 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "04030ffc66809d41", "src": "db2@1.60.1.70291"}
-{"id": 249869, "field": "name", "en": "Sunny Tea", "hash": "b2f7b0945d58ae8d", "src": "db2@1.60.1.70291"}
-{"id": 249869, "field": "description", "en": "$@spelldesc1135 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "3c234e0fc4cbe99f", "src": "db2@1.60.1.70291"}
-{"id": 249870, "field": "name", "en": "Sage's Tea", "hash": "a23bfc9b86bb8d77", "src": "db2@1.60.1.70291"}
-{"id": 249870, "field": "description", "en": "$@spelldesc1137 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "74438c222317360e", "src": "db2@1.60.1.70291"}
-{"id": 249871, "field": "name", "en": "Venomous Smoothie", "hash": "c357102a360f903a", "src": "db2@1.60.1.70291"}
-{"id": 249871, "field": "description", "en": "$@spelldesc430 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "0abbfb9a30d77fb6", "src": "db2@1.60.1.70291"}
-{"id": 249872, "field": "name", "en": "Slimy Smoothie", "hash": "975d0619bcce6112", "src": "db2@1.60.1.70291"}
-{"id": 249872, "field": "description", "en": "$@spelldesc431 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "049c7bc0ad8e0e69", "src": "db2@1.60.1.70291"}
-{"id": 249873, "field": "name", "en": "Mrrggl Smrrthle", "hash": "28f98184bb486e4d", "src": "db2@1.60.1.70291"}
-{"id": 249873, "field": "description", "en": "$@spelldesc432 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "fe7cfbe12a449d2d", "src": "db2@1.60.1.70291"}
-{"id": 249874, "field": "name", "en": "Calcified Smoothie", "hash": "99662a5b47007a5b", "src": "db2@1.60.1.70291"}
-{"id": 249874, "field": "description", "en": "$@spelldesc1133 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "1519389daeab02b2", "src": "db2@1.60.1.70291"}
-{"id": 249875, "field": "name", "en": "Spicy Smoothie", "hash": "872186211d447940", "src": "db2@1.60.1.70291"}
-{"id": 249875, "field": "description", "en": "$@spelldesc1135 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "08da38e9a8182029", "src": "db2@1.60.1.70291"}
-{"id": 249876, "field": "name", "en": "Wicked Smoothie", "hash": "039275fba180bb8c", "src": "db2@1.60.1.70291"}
-{"id": 249876, "field": "description", "en": "$@spelldesc1137 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "fc9b3930a1853da0", "src": "db2@1.60.1.70291"}
-{"id": 249879, "field": "name", "en": "Recipe: Peace Tea", "hash": "86697fb7ffee9bcf", "src": "db2@1.60.1.70291"}
-{"id": 249879, "field": "description", "en": "Teaches you how to cook Peace Tea.", "hash": "a25797c703facc88", "src": "db2@1.60.1.70291"}
-{"id": 249880, "field": "name", "en": "Recipe: Royal Tea", "hash": "e39c9606e38a3d79", "src": "db2@1.60.1.70291"}
-{"id": 249880, "field": "description", "en": "Teaches you how to cook Royal Tea.", "hash": "537c0324e8573cc8", "src": "db2@1.60.1.70291"}
-{"id": 249881, "field": "name", "en": "Recipe: Root Tea", "hash": "7fa2e91d12bd6658", "src": "db2@1.60.1.70291"}
-{"id": 249881, "field": "description", "en": "Teaches you how to cook Root Tea.", "hash": "f43ad09e2c134c19", "src": "db2@1.60.1.70291"}
-{"id": 249882, "field": "name", "en": "Recipe: Triage Tea", "hash": "fa572f62d80ca61b", "src": "db2@1.60.1.70291"}
-{"id": 249882, "field": "description", "en": "Teaches you how to cook Triage Tea.", "hash": "d74cc45042bf0793", "src": "db2@1.60.1.70291"}
-{"id": 249883, "field": "name", "en": "Recipe: Sunny Tea", "hash": "b597f99c5574b591", "src": "db2@1.60.1.70291"}
-{"id": 249883, "field": "description", "en": "Teaches you how to cook Sunny Tea.", "hash": "c71ff86e6bf4851f", "src": "db2@1.60.1.70291"}
-{"id": 249884, "field": "name", "en": "Recipe: Sage's Tea", "hash": "fa415bb8fc37233f", "src": "db2@1.60.1.70291"}
-{"id": 249884, "field": "description", "en": "Teaches you how to cook Sage's Tea.", "hash": "cc217452313eacc8", "src": "db2@1.60.1.70291"}
-{"id": 249885, "field": "name", "en": "Recipe: Venomous Smoothie", "hash": "6dca6184e37382a1", "src": "db2@1.60.1.70291"}
-{"id": 249885, "field": "description", "en": "Teaches you how to cook Venomous Smoothie.", "hash": "0aaf77d60be9035f", "src": "db2@1.60.1.70291"}
-{"id": 249886, "field": "name", "en": "Recipe: Slimy Smoothie", "hash": "b0d52514d531fcdc", "src": "db2@1.60.1.70291"}
-{"id": 249886, "field": "description", "en": "Teaches you how to cook Slimy Smoothie.", "hash": "525af1f682858c4c", "src": "db2@1.60.1.70291"}
-{"id": 249887, "field": "name", "en": "Recipe: Mrrggl Smrrthle", "hash": "31715c363ab20481", "src": "db2@1.60.1.70291"}
-{"id": 249887, "field": "description", "en": "Teaches you how to cook Mrrggl Smrrthle.", "hash": "7158793d7729f3c0", "src": "db2@1.60.1.70291"}
-{"id": 249888, "field": "name", "en": "Recipe: Calcified Smoothie", "hash": "d268ca8dc6346ee9", "src": "db2@1.60.1.70291"}
-{"id": 249888, "field": "description", "en": "Teaches you how to cook Calcified Smoothie.", "hash": "4fc65a1edc80b4af", "src": "db2@1.60.1.70291"}
-{"id": 249889, "field": "name", "en": "Recipe: Spicy Smoothie", "hash": "a099a51c35a8150a", "src": "db2@1.60.1.70291"}
-{"id": 249889, "field": "description", "en": "Teaches you how to cook Spicy Smoothie.", "hash": "03e875e6973d0cfc", "src": "db2@1.60.1.70291"}
-{"id": 249890, "field": "name", "en": "Recipe: Wicked Smoothie", "hash": "0c0a50ad20ea51c0", "src": "db2@1.60.1.70291"}
-{"id": 249890, "field": "description", "en": "Teaches you how to cook Wicked Smoothie.", "hash": "4d9d91c3a0004289", "src": "db2@1.60.1.70291"}
-{"id": 249895, "field": "name", "en": "Frosty Lashling Bud", "hash": "269636787b8fae92", "src": "db2@1.60.1.70291"}
-{"id": 249895, "field": "description", "en": "Right Click to summon and dismiss a lashling.", "hash": "c7c97aee80ec4abe", "src": "db2@1.60.1.70291"}
-{"id": 249896, "field": "name", "en": "Viridian Lashling Bud", "hash": "95c59abe5dbe500c", "src": "db2@1.60.1.70291"}
-{"id": 249896, "field": "description", "en": "Right Click to summon and dismiss a lashling.", "hash": "c7c97aee80ec4abe", "src": "db2@1.60.1.70291"}
-{"id": 249897, "field": "name", "en": "Flowery Lashling Bud", "hash": "3469e473ba7b7576", "src": "db2@1.60.1.70291"}
-{"id": 249897, "field": "description", "en": "Right Click to summon and dismiss a lashling.", "hash": "c7c97aee80ec4abe", "src": "db2@1.60.1.70291"}
-{"id": 249898, "field": "name", "en": "Wilted Lashling Bud", "hash": "a5ca556c029bf924", "src": "db2@1.60.1.70291"}
-{"id": 249898, "field": "description", "en": "Right Click to summon and dismiss a lashling.", "hash": "c7c97aee80ec4abe", "src": "db2@1.60.1.70291"}
-{"id": 249900, "field": "name", "en": "Regurgitated Seed Pod", "hash": "d00943e3903e9dc3", "src": "db2@1.60.1.70291"}
-{"id": 249905, "field": "name", "en": "Scribbled I.O.U.", "hash": "297e081776ace8ab", "src": "db2@1.60.1.70291"}
-{"id": 249905, "field": "description", "en": "The handwriting is difficult to read but it seems to be a voucher for free potions and elixirs at her future alchemy shop!", "hash": "5e743b27356a0439", "src": "db2@1.60.1.70291"}
+{"id": 249865, "field": "name", "en": "Peace Tea", "hash": "83c936af07d294dc", "src": "db2@1.60.1.70338"}
+{"id": 249865, "field": "description", "en": "$@spelldesc430 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "83f655af096291c3", "src": "db2@1.60.1.70338"}
+{"id": 249866, "field": "name", "en": "Royal Tea", "hash": "e0fc4cfeeb6e3675", "src": "db2@1.60.1.70338"}
+{"id": 249866, "field": "description", "en": "$@spelldesc431 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "200674bb388837f2", "src": "db2@1.60.1.70338"}
+{"id": 249867, "field": "name", "en": "Root Tea", "hash": "a2cab9a70f62654f", "src": "db2@1.60.1.70338"}
+{"id": 249867, "field": "description", "en": "$@spelldesc432 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "bc1693c267adde21", "src": "db2@1.60.1.70338"}
+{"id": 249868, "field": "name", "en": "Triage Tea", "hash": "a251d04562911053", "src": "db2@1.60.1.70338"}
+{"id": 249868, "field": "description", "en": "$@spelldesc1133 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "04030ffc66809d41", "src": "db2@1.60.1.70338"}
+{"id": 249869, "field": "name", "en": "Sunny Tea", "hash": "b2f7b0945d58ae8d", "src": "db2@1.60.1.70338"}
+{"id": 249869, "field": "description", "en": "$@spelldesc1135 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "3c234e0fc4cbe99f", "src": "db2@1.60.1.70338"}
+{"id": 249870, "field": "name", "en": "Sage's Tea", "hash": "a23bfc9b86bb8d77", "src": "db2@1.60.1.70338"}
+{"id": 249870, "field": "description", "en": "$@spelldesc1137 If you spend at least 10 sec eating, you will become well fed and gain $s2 Healing Power for $1249927d. $@spelldesc1243969", "hash": "74438c222317360e", "src": "db2@1.60.1.70338"}
+{"id": 249871, "field": "name", "en": "Venomous Smoothie", "hash": "c357102a360f903a", "src": "db2@1.60.1.70338"}
+{"id": 249871, "field": "description", "en": "$@spelldesc430 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "0abbfb9a30d77fb6", "src": "db2@1.60.1.70338"}
+{"id": 249872, "field": "name", "en": "Slimy Smoothie", "hash": "975d0619bcce6112", "src": "db2@1.60.1.70338"}
+{"id": 249872, "field": "description", "en": "$@spelldesc431 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "049c7bc0ad8e0e69", "src": "db2@1.60.1.70338"}
+{"id": 249873, "field": "name", "en": "Mrrggl Smrrthle", "hash": "28f98184bb486e4d", "src": "db2@1.60.1.70338"}
+{"id": 249873, "field": "description", "en": "$@spelldesc432 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "fe7cfbe12a449d2d", "src": "db2@1.60.1.70338"}
+{"id": 249874, "field": "name", "en": "Calcified Smoothie", "hash": "99662a5b47007a5b", "src": "db2@1.60.1.70338"}
+{"id": 249874, "field": "description", "en": "$@spelldesc1133 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "1519389daeab02b2", "src": "db2@1.60.1.70338"}
+{"id": 249875, "field": "name", "en": "Spicy Smoothie", "hash": "872186211d447940", "src": "db2@1.60.1.70338"}
+{"id": 249875, "field": "description", "en": "$@spelldesc1135 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "08da38e9a8182029", "src": "db2@1.60.1.70338"}
+{"id": 249876, "field": "name", "en": "Wicked Smoothie", "hash": "039275fba180bb8c", "src": "db2@1.60.1.70338"}
+{"id": 249876, "field": "description", "en": "$@spelldesc1137 If you spend at least 10 sec eating, you will become well fed and gain $s2 Spirit for $1249926d. $@spelldesc1243969", "hash": "fc9b3930a1853da0", "src": "db2@1.60.1.70338"}
+{"id": 249879, "field": "name", "en": "Recipe: Peace Tea", "hash": "86697fb7ffee9bcf", "src": "db2@1.60.1.70338"}
+{"id": 249879, "field": "description", "en": "Teaches you how to cook Peace Tea.", "hash": "a25797c703facc88", "src": "db2@1.60.1.70338"}
+{"id": 249880, "field": "name", "en": "Recipe: Royal Tea", "hash": "e39c9606e38a3d79", "src": "db2@1.60.1.70338"}
+{"id": 249880, "field": "description", "en": "Teaches you how to cook Royal Tea.", "hash": "537c0324e8573cc8", "src": "db2@1.60.1.70338"}
+{"id": 249881, "field": "name", "en": "Recipe: Root Tea", "hash": "7fa2e91d12bd6658", "src": "db2@1.60.1.70338"}
+{"id": 249881, "field": "description", "en": "Teaches you how to cook Root Tea.", "hash": "f43ad09e2c134c19", "src": "db2@1.60.1.70338"}
+{"id": 249882, "field": "name", "en": "Recipe: Triage Tea", "hash": "fa572f62d80ca61b", "src": "db2@1.60.1.70338"}
+{"id": 249882, "field": "description", "en": "Teaches you how to cook Triage Tea.", "hash": "d74cc45042bf0793", "src": "db2@1.60.1.70338"}
+{"id": 249883, "field": "name", "en": "Recipe: Sunny Tea", "hash": "b597f99c5574b591", "src": "db2@1.60.1.70338"}
+{"id": 249883, "field": "description", "en": "Teaches you how to cook Sunny Tea.", "hash": "c71ff86e6bf4851f", "src": "db2@1.60.1.70338"}
+{"id": 249884, "field": "name", "en": "Recipe: Sage's Tea", "hash": "fa415bb8fc37233f", "src": "db2@1.60.1.70338"}
+{"id": 249884, "field": "description", "en": "Teaches you how to cook Sage's Tea.", "hash": "cc217452313eacc8", "src": "db2@1.60.1.70338"}
+{"id": 249885, "field": "name", "en": "Recipe: Venomous Smoothie", "hash": "6dca6184e37382a1", "src": "db2@1.60.1.70338"}
+{"id": 249885, "field": "description", "en": "Teaches you how to cook Venomous Smoothie.", "hash": "0aaf77d60be9035f", "src": "db2@1.60.1.70338"}
+{"id": 249886, "field": "name", "en": "Recipe: Slimy Smoothie", "hash": "b0d52514d531fcdc", "src": "db2@1.60.1.70338"}
+{"id": 249886, "field": "description", "en": "Teaches you how to cook Slimy Smoothie.", "hash": "525af1f682858c4c", "src": "db2@1.60.1.70338"}
+{"id": 249887, "field": "name", "en": "Recipe: Mrrggl Smrrthle", "hash": "31715c363ab20481", "src": "db2@1.60.1.70338"}
+{"id": 249887, "field": "description", "en": "Teaches you how to cook Mrrggl Smrrthle.", "hash": "7158793d7729f3c0", "src": "db2@1.60.1.70338"}
+{"id": 249888, "field": "name", "en": "Recipe: Calcified Smoothie", "hash": "d268ca8dc6346ee9", "src": "db2@1.60.1.70338"}
+{"id": 249888, "field": "description", "en": "Teaches you how to cook Calcified Smoothie.", "hash": "4fc65a1edc80b4af", "src": "db2@1.60.1.70338"}
+{"id": 249889, "field": "name", "en": "Recipe: Spicy Smoothie", "hash": "a099a51c35a8150a", "src": "db2@1.60.1.70338"}
+{"id": 249889, "field": "description", "en": "Teaches you how to cook Spicy Smoothie.", "hash": "03e875e6973d0cfc", "src": "db2@1.60.1.70338"}
+{"id": 249890, "field": "name", "en": "Recipe: Wicked Smoothie", "hash": "0c0a50ad20ea51c0", "src": "db2@1.60.1.70338"}
+{"id": 249890, "field": "description", "en": "Teaches you how to cook Wicked Smoothie.", "hash": "4d9d91c3a0004289", "src": "db2@1.60.1.70338"}
+{"id": 249895, "field": "name", "en": "Frosty Lashling Bud", "hash": "269636787b8fae92", "src": "db2@1.60.1.70338"}
+{"id": 249895, "field": "description", "en": "Right Click to summon and dismiss a lashling.", "hash": "c7c97aee80ec4abe", "src": "db2@1.60.1.70338"}
+{"id": 249896, "field": "name", "en": "Viridian Lashling Bud", "hash": "95c59abe5dbe500c", "src": "db2@1.60.1.70338"}
+{"id": 249896, "field": "description", "en": "Right Click to summon and dismiss a lashling.", "hash": "c7c97aee80ec4abe", "src": "db2@1.60.1.70338"}
+{"id": 249897, "field": "name", "en": "Flowery Lashling Bud", "hash": "3469e473ba7b7576", "src": "db2@1.60.1.70338"}
+{"id": 249897, "field": "description", "en": "Right Click to summon and dismiss a lashling.", "hash": "c7c97aee80ec4abe", "src": "db2@1.60.1.70338"}
+{"id": 249898, "field": "name", "en": "Wilted Lashling Bud", "hash": "a5ca556c029bf924", "src": "db2@1.60.1.70338"}
+{"id": 249898, "field": "description", "en": "Right Click to summon and dismiss a lashling.", "hash": "c7c97aee80ec4abe", "src": "db2@1.60.1.70338"}
+{"id": 249900, "field": "name", "en": "Regurgitated Seed Pod", "hash": "d00943e3903e9dc3", "src": "db2@1.60.1.70338"}
+{"id": 249905, "field": "name", "en": "Scribbled I.O.U.", "hash": "297e081776ace8ab", "src": "db2@1.60.1.70338"}
+{"id": 249905, "field": "description", "en": "The handwriting is difficult to read but it seems to be a voucher for free potions and elixirs at her future alchemy shop!", "hash": "5e743b27356a0439", "src": "db2@1.60.1.70338"}

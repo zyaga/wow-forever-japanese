@@ -1,5 +1,5 @@
-{"id": 350025, "field": "name", "en": "Frostbolt", "hash": "07e909249a76c75c", "src": "db2@1.60.1.70291"}
-{"id": 350025, "field": "description", "en": "Launches a bolt of frost at the enemy, causing $s2 Frost damage and slowing movement speed by $s1% for $d.", "hash": "f9aa34f55d4a90e8", "src": "db2@1.60.1.70291"}
-{"id": 350025, "field": "aura", "en": "Movement slowed by $s1%.", "hash": "bd9406b84a62a739", "src": "db2@1.60.1.70291"}
-{"id": 350026, "field": "name", "en": "Shadow Bolt", "hash": "ea2555140aa56399", "src": "db2@1.60.1.70291"}
-{"id": 350026, "field": "description", "en": "Sends a shadowy bolt at the enemy, causing $s1 Shadow damage.", "hash": "c6f8d47dd7606954", "src": "db2@1.60.1.70291"}
+{"id": 350025, "field": "name", "en": "Frostbolt", "hash": "07e909249a76c75c", "src": "db2@1.60.1.70338"}
+{"id": 350025, "field": "description", "en": "Launches a bolt of frost at the enemy, causing $s2 Frost damage and slowing movement speed by $s1% for $d.", "hash": "f9aa34f55d4a90e8", "src": "db2@1.60.1.70338"}
+{"id": 350025, "field": "aura", "en": "Movement slowed by $s1%.", "hash": "bd9406b84a62a739", "src": "db2@1.60.1.70338"}
+{"id": 350026, "field": "name", "en": "Shadow Bolt", "hash": "ea2555140aa56399", "src": "db2@1.60.1.70338"}
+{"id": 350026, "field": "description", "en": "Sends a shadowy bolt at the enemy, causing $s1 Shadow damage.", "hash": "c6f8d47dd7606954", "src": "db2@1.60.1.70338"}

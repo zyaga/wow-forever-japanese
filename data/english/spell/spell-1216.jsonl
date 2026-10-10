@@ -1,145 +1,145 @@
-{"id": 1216005, "field": "name", "en": "Libram of Righteousness", "hash": "df0810765df8e0f1", "src": "db2@1.60.1.70291"}
-{"id": 1216007, "field": "name", "en": "Libram of the Exorcist", "hash": "7dea723bdb05e332", "src": "db2@1.60.1.70291"}
-{"id": 1216010, "field": "name", "en": "Libram of Sanctity", "hash": "0e8c4a7675251c71", "src": "db2@1.60.1.70291"}
-{"id": 1216014, "field": "name", "en": "Totem of Pyroclastic Thunder", "hash": "ad15d2f90d44f27f", "src": "db2@1.60.1.70291"}
-{"id": 1216016, "field": "name", "en": "Totem of Thunderous Strikes", "hash": "0475144d99806ed2", "src": "db2@1.60.1.70291"}
-{"id": 1216018, "field": "name", "en": "Totem of Flowing Magma", "hash": "64fb55663b403d94", "src": "db2@1.60.1.70291"}
-{"id": 1216020, "field": "name", "en": "Idol of Sidereal Wrath", "hash": "691b791e0c09be05", "src": "db2@1.60.1.70291"}
-{"id": 1216022, "field": "name", "en": "Idol of Feline Ferocity", "hash": "0b730011bede234a", "src": "db2@1.60.1.70291"}
-{"id": 1216024, "field": "name", "en": "Idol of Ursin Power", "hash": "fb648c6404cf9d0c", "src": "db2@1.60.1.70291"}
-{"id": 1216026, "field": "name", "en": "Blood Alchemy", "hash": "5f9c1f0f2595d979", "src": "db2@1.60.1.70291"}
-{"id": 1216026, "field": "description", "en": "Transmute 100 Blood-Caked Silver Coins into 1 Blood-Caked Gold Coin.", "hash": "b6a2335706a93026", "src": "db2@1.60.1.70291"}
-{"id": 1216027, "field": "name", "en": "Blood Alchemy", "hash": "5f9c1f0f2595d979", "src": "db2@1.60.1.70291"}
-{"id": 1216027, "field": "description", "en": "Transmute 100 Blood-Caked Copper Coins into 1 Blood-Caked Silver Coin.", "hash": "faa9213f5be89285", "src": "db2@1.60.1.70291"}
-{"id": 1216028, "field": "name", "en": "[DNT] Madness Tracker", "hash": "f7cc54942d77e139", "src": "db2@1.60.1.70291"}
-{"id": 1216029, "field": "name", "en": "[DNT] Madness Tracker", "hash": "f7cc54942d77e139", "src": "db2@1.60.1.70291"}
-{"id": 1216030, "field": "name", "en": "[DNT] Madness Tracker", "hash": "f7cc54942d77e139", "src": "db2@1.60.1.70291"}
-{"id": 1216031, "field": "name", "en": "[DNT] Madness Tracker", "hash": "f7cc54942d77e139", "src": "db2@1.60.1.70291"}
-{"id": 1216032, "field": "name", "en": "[DNT] Madness Tracker", "hash": "f7cc54942d77e139", "src": "db2@1.60.1.70291"}
-{"id": 1216033, "field": "name", "en": "[DNT] Find Players", "hash": "e9a77a8b16bf7d23", "src": "db2@1.60.1.70291"}
-{"id": 1216034, "field": "name", "en": "[DNT] Test Sound", "hash": "41005e118dd5e7ff", "src": "db2@1.60.1.70291"}
-{"id": 1216043, "field": "name", "en": "[DNT] Find Players", "hash": "e9a77a8b16bf7d23", "src": "db2@1.60.1.70291"}
-{"id": 1216047, "field": "name", "en": "[DNT] Find Players", "hash": "e9a77a8b16bf7d23", "src": "db2@1.60.1.70291"}
-{"id": 1216049, "field": "name", "en": "[DNT] Find Players", "hash": "e9a77a8b16bf7d23", "src": "db2@1.60.1.70291"}
-{"id": 1216051, "field": "name", "en": "[DNT] Find Players", "hash": "e9a77a8b16bf7d23", "src": "db2@1.60.1.70291"}
-{"id": 1216053, "field": "name", "en": "[DNT] Find Players", "hash": "e9a77a8b16bf7d23", "src": "db2@1.60.1.70291"}
-{"id": 1216119, "field": "name", "en": "Dark Offering", "hash": "8a84821c31deeb2f", "src": "db2@1.60.1.70291"}
-{"id": 1216141, "field": "name", "en": "Summon Mouth Tentacle", "hash": "ebf0007279bbb00c", "src": "db2@1.60.1.70291"}
-{"id": 1216183, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70291"}
-{"id": 1216208, "field": "name", "en": "Portal Effect: Stormwind", "hash": "f2ee35de624baa58", "src": "db2@1.60.1.70291"}
-{"id": 1216252, "field": "name", "en": "Portal Effect: Stormwind", "hash": "f2ee35de624baa58", "src": "db2@1.60.1.70291"}
-{"id": 1216261, "field": "name", "en": "Portal Effect: Stormwind", "hash": "f2ee35de624baa58", "src": "db2@1.60.1.70291"}
-{"id": 1216264, "field": "name", "en": "Portal Effect: Stormwind", "hash": "f2ee35de624baa58", "src": "db2@1.60.1.70291"}
-{"id": 1216267, "field": "name", "en": "Portal Effect: Stormwind", "hash": "f2ee35de624baa58", "src": "db2@1.60.1.70291"}
-{"id": 1216272, "field": "name", "en": "Portal Effect: Stormwind", "hash": "f2ee35de624baa58", "src": "db2@1.60.1.70291"}
-{"id": 1216279, "field": "name", "en": "Portal Effect: Stormwind", "hash": "f2ee35de624baa58", "src": "db2@1.60.1.70291"}
-{"id": 1216287, "field": "name", "en": "Elementals Deck", "hash": "15f3934cb8386f49", "src": "db2@1.60.1.70291"}
-{"id": 1216287, "field": "description", "en": "Combine the Ace through Eight of Elementals to complete the set.", "hash": "df7e1b89b0b931ac", "src": "db2@1.60.1.70291"}
-{"id": 1216291, "field": "name", "en": "Portals Deck", "hash": "d291201b6dd2faf0", "src": "db2@1.60.1.70291"}
-{"id": 1216291, "field": "description", "en": "Combine the Ace through Eight of Portals to complete the set.", "hash": "a3b78c861244432b", "src": "db2@1.60.1.70291"}
-{"id": 1216294, "field": "name", "en": "Beasts Deck", "hash": "bb61dbd877ba7fad", "src": "db2@1.60.1.70291"}
-{"id": 1216294, "field": "description", "en": "Combine the Ace through Eight of Beasts to complete the set.", "hash": "d93caf4bbe69185a", "src": "db2@1.60.1.70291"}
-{"id": 1216296, "field": "name", "en": "Warlord Deck", "hash": "bc62f3470b7fb402", "src": "db2@1.60.1.70291"}
-{"id": 1216296, "field": "description", "en": "Combine the Ace through Eight of Warlords to complete the set.", "hash": "aa0fd953dafa7a9b", "src": "db2@1.60.1.70291"}
-{"id": 1216303, "field": "name", "en": "Portal Effect: Stormwind", "hash": "f2ee35de624baa58", "src": "db2@1.60.1.70291"}
-{"id": 1216319, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216327, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216337, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70291"}
-{"id": 1216340, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216341, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70291"}
-{"id": 1216343, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70291"}
-{"id": 1216345, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70291"}
-{"id": 1216346, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70291"}
-{"id": 1216347, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70291"}
-{"id": 1216348, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70291"}
-{"id": 1216349, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216350, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216353, "field": "name", "en": "[DNT] Void-Touched Cover Spell", "hash": "71068fadd8d4d1d6", "src": "db2@1.60.1.70291"}
-{"id": 1216354, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216355, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216356, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216357, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216358, "field": "name", "en": "[DNT] Death Aura", "hash": "8f720dd3a46dbf49", "src": "db2@1.60.1.70291"}
-{"id": 1216359, "field": "name", "en": "[DNT] Player Death", "hash": "27632e190a38e9aa", "src": "db2@1.60.1.70291"}
-{"id": 1216360, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216361, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216362, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216363, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216364, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216365, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216366, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216367, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216368, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216369, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216370, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216371, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216372, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216373, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216374, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216375, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216376, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216377, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216378, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216379, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216380, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216381, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216382, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216383, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216384, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216385, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216386, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216387, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216388, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216389, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216390, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216436, "field": "name", "en": "Summon [DNT]", "hash": "e2b4ed625d806a8a", "src": "db2@1.60.1.70291"}
-{"id": 1216456, "field": "name", "en": "Shadowy Figure Whisper [DNT]", "hash": "577615149a6da486", "src": "db2@1.60.1.70291"}
-{"id": 1216479, "field": "name", "en": "Noxious Breath", "hash": "81d7c4fdaec7b1db", "src": "db2@1.60.1.70291"}
-{"id": 1216479, "field": "aura", "en": "Deals $s2 damage every $t2 sec.\r\nCooldowns increased by $/1000;s1 sec.", "hash": "56f7a396f7e4bb29", "src": "db2@1.60.1.70291"}
-{"id": 1216480, "field": "name", "en": "Noxious Breath", "hash": "81d7c4fdaec7b1db", "src": "db2@1.60.1.70291"}
-{"id": 1216480, "field": "aura", "en": "Deals $s2 damage every $t2 sec.\r\nCooldowns increased by $/1000;s1 sec.", "hash": "56f7a396f7e4bb29", "src": "db2@1.60.1.70291"}
-{"id": 1216481, "field": "name", "en": "Noxious Breath", "hash": "81d7c4fdaec7b1db", "src": "db2@1.60.1.70291"}
-{"id": 1216481, "field": "aura", "en": "Deals $s2 damage every $t2 sec.\r\nCooldowns increased by $/1000;s1 sec.", "hash": "56f7a396f7e4bb29", "src": "db2@1.60.1.70291"}
-{"id": 1216482, "field": "name", "en": "Noxious Breath", "hash": "81d7c4fdaec7b1db", "src": "db2@1.60.1.70291"}
-{"id": 1216482, "field": "aura", "en": "Deals $s2 damage every $t2 sec.\r\nCooldowns increased by $/1000;s1 sec.", "hash": "56f7a396f7e4bb29", "src": "db2@1.60.1.70291"}
-{"id": 1216483, "field": "name", "en": "Noxious Breath", "hash": "81d7c4fdaec7b1db", "src": "db2@1.60.1.70291"}
-{"id": 1216483, "field": "aura", "en": "Deals $s2 damage every $t2 sec.\r\nCooldowns increased by $/1000;s1 sec.", "hash": "56f7a396f7e4bb29", "src": "db2@1.60.1.70291"}
-{"id": 1216484, "field": "name", "en": "Noxious Breath", "hash": "81d7c4fdaec7b1db", "src": "db2@1.60.1.70291"}
-{"id": 1216484, "field": "aura", "en": "Deals $s2 damage every $t2 sec.\r\nCooldowns increased by $/1000;s1 sec.", "hash": "56f7a396f7e4bb29", "src": "db2@1.60.1.70291"}
-{"id": 1216485, "field": "name", "en": "Noxious Breath", "hash": "81d7c4fdaec7b1db", "src": "db2@1.60.1.70291"}
-{"id": 1216485, "field": "aura", "en": "Deals $s2 damage every $t2 sec.\r\nCooldowns increased by $/1000;s1 sec.", "hash": "56f7a396f7e4bb29", "src": "db2@1.60.1.70291"}
-{"id": 1216486, "field": "name", "en": "Noxious Breath", "hash": "81d7c4fdaec7b1db", "src": "db2@1.60.1.70291"}
-{"id": 1216486, "field": "aura", "en": "Deals $s2 damage every $t2 sec.\r\nCooldowns increased by $/1000;s1 sec.", "hash": "56f7a396f7e4bb29", "src": "db2@1.60.1.70291"}
-{"id": 1216487, "field": "name", "en": "Noxious Breath", "hash": "81d7c4fdaec7b1db", "src": "db2@1.60.1.70291"}
-{"id": 1216487, "field": "aura", "en": "Deals $s2 damage every $t2 sec.\r\nCooldowns increased by $/1000;s1 sec.", "hash": "56f7a396f7e4bb29", "src": "db2@1.60.1.70291"}
-{"id": 1216494, "field": "name", "en": "[DNT] Dummy Equip Aura", "hash": "e1b9fd93c82dd39f", "src": "db2@1.60.1.70291"}
-{"id": 1216500, "field": "name", "en": "Drain Mana", "hash": "346f2d0ad31676a2", "src": "db2@1.60.1.70291"}
-{"id": 1216501, "field": "name", "en": "Drain Mana", "hash": "346f2d0ad31676a2", "src": "db2@1.60.1.70291"}
-{"id": 1216528, "field": "name", "en": "[DNT] Teleport to Nightmare Grove Raid Exit (Duskwood)", "hash": "4e5abfbcc84efae7", "src": "db2@1.60.1.70291"}
-{"id": 1216532, "field": "name", "en": "[DNT] Teleport to Twilight Grove Raid", "hash": "bfcfd936dd87e795", "src": "db2@1.60.1.70291"}
-{"id": 1216532, "field": "description", "en": "Teleport player to Ahn'Qiraj.", "hash": "ebae91fd017fd6a0", "src": "db2@1.60.1.70291"}
-{"id": 1216533, "field": "name", "en": "[DNT] Teleport to AQ20", "hash": "0336158679b447c8", "src": "db2@1.60.1.70291"}
-{"id": 1216533, "field": "description", "en": "Teleport player to Ahn'Qiraj.", "hash": "ebae91fd017fd6a0", "src": "db2@1.60.1.70291"}
-{"id": 1216535, "field": "name", "en": "[DNT] Teleport to Nightmare Grove Raid Exit (Feralas)", "hash": "345b12bf3b75913d", "src": "db2@1.60.1.70291"}
-{"id": 1216536, "field": "name", "en": "[DNT] Teleport to Nightmare Grove Raid Exit (Ashenvale)", "hash": "64ec32cc88623bfa", "src": "db2@1.60.1.70291"}
-{"id": 1216537, "field": "name", "en": "[DNT] Teleport to Nightmare Grove Raid Exit (Hinterlands)", "hash": "d406b05faadb6d9e", "src": "db2@1.60.1.70291"}
-{"id": 1216566, "field": "name", "en": "Traces of Silithyst", "hash": "d0a7b59da4d71907", "src": "db2@1.60.1.70291"}
-{"id": 1216566, "field": "aura", "en": "Melee and spell damage dealt increased by $s2%.", "hash": "6c7d1b07cfa182ff", "src": "db2@1.60.1.70291"}
-{"id": 1216602, "field": "name", "en": "Teleport to Deadwind Pass [DNT]", "hash": "b135209146189d1c", "src": "db2@1.60.1.70291"}
-{"id": 1216844, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70291"}
-{"id": 1216928, "field": "name", "en": "Guiding Torchlight", "hash": "c8e2d24ef9cb5d63", "src": "db2@1.60.1.70291"}
-{"id": 1216928, "field": "description", "en": "The way is lit. The path is clear. You require only the strength to follow it.\r\n", "hash": "54f255bde99607f7", "src": "db2@1.60.1.70291"}
-{"id": 1216928, "field": "aura", "en": "The way is lit. The path is clear. You require only the strength to follow it.", "hash": "54f255bde99607f7", "src": "db2@1.60.1.70291"}
-{"id": 1216932, "field": "name", "en": "Oppressive Darkness", "hash": "608496d20f15b791", "src": "db2@1.60.1.70291"}
-{"id": 1216932, "field": "description", "en": "This all feels wrong. You're out of space. Out of time.", "hash": "0f95f18f4c55c21c", "src": "db2@1.60.1.70291"}
-{"id": 1216932, "field": "aura", "en": "This all feels wrong. You're out of space. Out of time.", "hash": "0f95f18f4c55c21c", "src": "db2@1.60.1.70291"}
-{"id": 1216968, "field": "name", "en": "Electrostatic Charge", "hash": "d2d5ba4bd2fbbb2d", "src": "db2@1.60.1.70291"}
-{"id": 1216968, "field": "description", "en": "When struck in combat has a $h% chance of inflicting $16782s1 Nature damage to the attacker.", "hash": "fb53f46d659b1de4", "src": "db2@1.60.1.70291"}
-{"id": 1216971, "field": "name", "en": "Hybrid Healing/Spell Dam 44/24", "hash": "f12a9e6455ded4e1", "src": "db2@1.60.1.70291"}
-{"id": 1216971, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70291"}
-{"id": 1216982, "field": "name", "en": "Within Light", "hash": "490df003c34a8e01", "src": "db2@1.60.1.70291"}
-{"id": 1216982, "field": "description", "en": "Light drives away the spirits and the darkness, affording some measure of safety.", "hash": "39449ec83862d0ec", "src": "db2@1.60.1.70291"}
-{"id": 1216982, "field": "aura", "en": "Light drives away the spirits and the darkness, affording some measure of safety.", "hash": "39449ec83862d0ec", "src": "db2@1.60.1.70291"}
-{"id": 1216997, "field": "name", "en": "Unflinching Morale", "hash": "3d9e204ec3104c70", "src": "db2@1.60.1.70291"}
-{"id": 1216997, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70291"}
-{"id": 1216997, "field": "aura", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70291"}
+{"id": 1216005, "field": "name", "en": "Libram of Righteousness", "hash": "df0810765df8e0f1", "src": "db2@1.60.1.70338"}
+{"id": 1216007, "field": "name", "en": "Libram of the Exorcist", "hash": "7dea723bdb05e332", "src": "db2@1.60.1.70338"}
+{"id": 1216010, "field": "name", "en": "Libram of Sanctity", "hash": "0e8c4a7675251c71", "src": "db2@1.60.1.70338"}
+{"id": 1216014, "field": "name", "en": "Totem of Pyroclastic Thunder", "hash": "ad15d2f90d44f27f", "src": "db2@1.60.1.70338"}
+{"id": 1216016, "field": "name", "en": "Totem of Thunderous Strikes", "hash": "0475144d99806ed2", "src": "db2@1.60.1.70338"}
+{"id": 1216018, "field": "name", "en": "Totem of Flowing Magma", "hash": "64fb55663b403d94", "src": "db2@1.60.1.70338"}
+{"id": 1216020, "field": "name", "en": "Idol of Sidereal Wrath", "hash": "691b791e0c09be05", "src": "db2@1.60.1.70338"}
+{"id": 1216022, "field": "name", "en": "Idol of Feline Ferocity", "hash": "0b730011bede234a", "src": "db2@1.60.1.70338"}
+{"id": 1216024, "field": "name", "en": "Idol of Ursin Power", "hash": "fb648c6404cf9d0c", "src": "db2@1.60.1.70338"}
+{"id": 1216026, "field": "name", "en": "Blood Alchemy", "hash": "5f9c1f0f2595d979", "src": "db2@1.60.1.70338"}
+{"id": 1216026, "field": "description", "en": "Transmute 100 Blood-Caked Silver Coins into 1 Blood-Caked Gold Coin.", "hash": "b6a2335706a93026", "src": "db2@1.60.1.70338"}
+{"id": 1216027, "field": "name", "en": "Blood Alchemy", "hash": "5f9c1f0f2595d979", "src": "db2@1.60.1.70338"}
+{"id": 1216027, "field": "description", "en": "Transmute 100 Blood-Caked Copper Coins into 1 Blood-Caked Silver Coin.", "hash": "faa9213f5be89285", "src": "db2@1.60.1.70338"}
+{"id": 1216028, "field": "name", "en": "[DNT] Madness Tracker", "hash": "f7cc54942d77e139", "src": "db2@1.60.1.70338"}
+{"id": 1216029, "field": "name", "en": "[DNT] Madness Tracker", "hash": "f7cc54942d77e139", "src": "db2@1.60.1.70338"}
+{"id": 1216030, "field": "name", "en": "[DNT] Madness Tracker", "hash": "f7cc54942d77e139", "src": "db2@1.60.1.70338"}
+{"id": 1216031, "field": "name", "en": "[DNT] Madness Tracker", "hash": "f7cc54942d77e139", "src": "db2@1.60.1.70338"}
+{"id": 1216032, "field": "name", "en": "[DNT] Madness Tracker", "hash": "f7cc54942d77e139", "src": "db2@1.60.1.70338"}
+{"id": 1216033, "field": "name", "en": "[DNT] Find Players", "hash": "e9a77a8b16bf7d23", "src": "db2@1.60.1.70338"}
+{"id": 1216034, "field": "name", "en": "[DNT] Test Sound", "hash": "41005e118dd5e7ff", "src": "db2@1.60.1.70338"}
+{"id": 1216043, "field": "name", "en": "[DNT] Find Players", "hash": "e9a77a8b16bf7d23", "src": "db2@1.60.1.70338"}
+{"id": 1216047, "field": "name", "en": "[DNT] Find Players", "hash": "e9a77a8b16bf7d23", "src": "db2@1.60.1.70338"}
+{"id": 1216049, "field": "name", "en": "[DNT] Find Players", "hash": "e9a77a8b16bf7d23", "src": "db2@1.60.1.70338"}
+{"id": 1216051, "field": "name", "en": "[DNT] Find Players", "hash": "e9a77a8b16bf7d23", "src": "db2@1.60.1.70338"}
+{"id": 1216053, "field": "name", "en": "[DNT] Find Players", "hash": "e9a77a8b16bf7d23", "src": "db2@1.60.1.70338"}
+{"id": 1216119, "field": "name", "en": "Dark Offering", "hash": "8a84821c31deeb2f", "src": "db2@1.60.1.70338"}
+{"id": 1216141, "field": "name", "en": "Summon Mouth Tentacle", "hash": "ebf0007279bbb00c", "src": "db2@1.60.1.70338"}
+{"id": 1216183, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70338"}
+{"id": 1216208, "field": "name", "en": "Portal Effect: Stormwind", "hash": "f2ee35de624baa58", "src": "db2@1.60.1.70338"}
+{"id": 1216252, "field": "name", "en": "Portal Effect: Stormwind", "hash": "f2ee35de624baa58", "src": "db2@1.60.1.70338"}
+{"id": 1216261, "field": "name", "en": "Portal Effect: Stormwind", "hash": "f2ee35de624baa58", "src": "db2@1.60.1.70338"}
+{"id": 1216264, "field": "name", "en": "Portal Effect: Stormwind", "hash": "f2ee35de624baa58", "src": "db2@1.60.1.70338"}
+{"id": 1216267, "field": "name", "en": "Portal Effect: Stormwind", "hash": "f2ee35de624baa58", "src": "db2@1.60.1.70338"}
+{"id": 1216272, "field": "name", "en": "Portal Effect: Stormwind", "hash": "f2ee35de624baa58", "src": "db2@1.60.1.70338"}
+{"id": 1216279, "field": "name", "en": "Portal Effect: Stormwind", "hash": "f2ee35de624baa58", "src": "db2@1.60.1.70338"}
+{"id": 1216287, "field": "name", "en": "Elementals Deck", "hash": "15f3934cb8386f49", "src": "db2@1.60.1.70338"}
+{"id": 1216287, "field": "description", "en": "Combine the Ace through Eight of Elementals to complete the set.", "hash": "df7e1b89b0b931ac", "src": "db2@1.60.1.70338"}
+{"id": 1216291, "field": "name", "en": "Portals Deck", "hash": "d291201b6dd2faf0", "src": "db2@1.60.1.70338"}
+{"id": 1216291, "field": "description", "en": "Combine the Ace through Eight of Portals to complete the set.", "hash": "a3b78c861244432b", "src": "db2@1.60.1.70338"}
+{"id": 1216294, "field": "name", "en": "Beasts Deck", "hash": "bb61dbd877ba7fad", "src": "db2@1.60.1.70338"}
+{"id": 1216294, "field": "description", "en": "Combine the Ace through Eight of Beasts to complete the set.", "hash": "d93caf4bbe69185a", "src": "db2@1.60.1.70338"}
+{"id": 1216296, "field": "name", "en": "Warlord Deck", "hash": "bc62f3470b7fb402", "src": "db2@1.60.1.70338"}
+{"id": 1216296, "field": "description", "en": "Combine the Ace through Eight of Warlords to complete the set.", "hash": "aa0fd953dafa7a9b", "src": "db2@1.60.1.70338"}
+{"id": 1216303, "field": "name", "en": "Portal Effect: Stormwind", "hash": "f2ee35de624baa58", "src": "db2@1.60.1.70338"}
+{"id": 1216319, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216327, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216337, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70338"}
+{"id": 1216340, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216341, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70338"}
+{"id": 1216343, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70338"}
+{"id": 1216345, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70338"}
+{"id": 1216346, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70338"}
+{"id": 1216347, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70338"}
+{"id": 1216348, "field": "name", "en": "Enter Dream", "hash": "afb554d9c734c86f", "src": "db2@1.60.1.70338"}
+{"id": 1216349, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216350, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216353, "field": "name", "en": "[DNT] Void-Touched Cover Spell", "hash": "71068fadd8d4d1d6", "src": "db2@1.60.1.70338"}
+{"id": 1216354, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216355, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216356, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216357, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216358, "field": "name", "en": "[DNT] Death Aura", "hash": "8f720dd3a46dbf49", "src": "db2@1.60.1.70338"}
+{"id": 1216359, "field": "name", "en": "[DNT] Player Death", "hash": "27632e190a38e9aa", "src": "db2@1.60.1.70338"}
+{"id": 1216360, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216361, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216362, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216363, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216364, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216365, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216366, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216367, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216368, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216369, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216370, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216371, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216372, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216373, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216374, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216375, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216376, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216377, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216378, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216379, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216380, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216381, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216382, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216383, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216384, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216385, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216386, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216387, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216388, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216389, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216390, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216436, "field": "name", "en": "Summon [DNT]", "hash": "e2b4ed625d806a8a", "src": "db2@1.60.1.70338"}
+{"id": 1216456, "field": "name", "en": "Shadowy Figure Whisper [DNT]", "hash": "577615149a6da486", "src": "db2@1.60.1.70338"}
+{"id": 1216479, "field": "name", "en": "Noxious Breath", "hash": "81d7c4fdaec7b1db", "src": "db2@1.60.1.70338"}
+{"id": 1216479, "field": "aura", "en": "Deals $s2 damage every $t2 sec.\r\nCooldowns increased by $/1000;s1 sec.", "hash": "56f7a396f7e4bb29", "src": "db2@1.60.1.70338"}
+{"id": 1216480, "field": "name", "en": "Noxious Breath", "hash": "81d7c4fdaec7b1db", "src": "db2@1.60.1.70338"}
+{"id": 1216480, "field": "aura", "en": "Deals $s2 damage every $t2 sec.\r\nCooldowns increased by $/1000;s1 sec.", "hash": "56f7a396f7e4bb29", "src": "db2@1.60.1.70338"}
+{"id": 1216481, "field": "name", "en": "Noxious Breath", "hash": "81d7c4fdaec7b1db", "src": "db2@1.60.1.70338"}
+{"id": 1216481, "field": "aura", "en": "Deals $s2 damage every $t2 sec.\r\nCooldowns increased by $/1000;s1 sec.", "hash": "56f7a396f7e4bb29", "src": "db2@1.60.1.70338"}
+{"id": 1216482, "field": "name", "en": "Noxious Breath", "hash": "81d7c4fdaec7b1db", "src": "db2@1.60.1.70338"}
+{"id": 1216482, "field": "aura", "en": "Deals $s2 damage every $t2 sec.\r\nCooldowns increased by $/1000;s1 sec.", "hash": "56f7a396f7e4bb29", "src": "db2@1.60.1.70338"}
+{"id": 1216483, "field": "name", "en": "Noxious Breath", "hash": "81d7c4fdaec7b1db", "src": "db2@1.60.1.70338"}
+{"id": 1216483, "field": "aura", "en": "Deals $s2 damage every $t2 sec.\r\nCooldowns increased by $/1000;s1 sec.", "hash": "56f7a396f7e4bb29", "src": "db2@1.60.1.70338"}
+{"id": 1216484, "field": "name", "en": "Noxious Breath", "hash": "81d7c4fdaec7b1db", "src": "db2@1.60.1.70338"}
+{"id": 1216484, "field": "aura", "en": "Deals $s2 damage every $t2 sec.\r\nCooldowns increased by $/1000;s1 sec.", "hash": "56f7a396f7e4bb29", "src": "db2@1.60.1.70338"}
+{"id": 1216485, "field": "name", "en": "Noxious Breath", "hash": "81d7c4fdaec7b1db", "src": "db2@1.60.1.70338"}
+{"id": 1216485, "field": "aura", "en": "Deals $s2 damage every $t2 sec.\r\nCooldowns increased by $/1000;s1 sec.", "hash": "56f7a396f7e4bb29", "src": "db2@1.60.1.70338"}
+{"id": 1216486, "field": "name", "en": "Noxious Breath", "hash": "81d7c4fdaec7b1db", "src": "db2@1.60.1.70338"}
+{"id": 1216486, "field": "aura", "en": "Deals $s2 damage every $t2 sec.\r\nCooldowns increased by $/1000;s1 sec.", "hash": "56f7a396f7e4bb29", "src": "db2@1.60.1.70338"}
+{"id": 1216487, "field": "name", "en": "Noxious Breath", "hash": "81d7c4fdaec7b1db", "src": "db2@1.60.1.70338"}
+{"id": 1216487, "field": "aura", "en": "Deals $s2 damage every $t2 sec.\r\nCooldowns increased by $/1000;s1 sec.", "hash": "56f7a396f7e4bb29", "src": "db2@1.60.1.70338"}
+{"id": 1216494, "field": "name", "en": "[DNT] Dummy Equip Aura", "hash": "e1b9fd93c82dd39f", "src": "db2@1.60.1.70338"}
+{"id": 1216500, "field": "name", "en": "Drain Mana", "hash": "346f2d0ad31676a2", "src": "db2@1.60.1.70338"}
+{"id": 1216501, "field": "name", "en": "Drain Mana", "hash": "346f2d0ad31676a2", "src": "db2@1.60.1.70338"}
+{"id": 1216528, "field": "name", "en": "[DNT] Teleport to Nightmare Grove Raid Exit (Duskwood)", "hash": "4e5abfbcc84efae7", "src": "db2@1.60.1.70338"}
+{"id": 1216532, "field": "name", "en": "[DNT] Teleport to Twilight Grove Raid", "hash": "bfcfd936dd87e795", "src": "db2@1.60.1.70338"}
+{"id": 1216532, "field": "description", "en": "Teleport player to Ahn'Qiraj.", "hash": "ebae91fd017fd6a0", "src": "db2@1.60.1.70338"}
+{"id": 1216533, "field": "name", "en": "[DNT] Teleport to AQ20", "hash": "0336158679b447c8", "src": "db2@1.60.1.70338"}
+{"id": 1216533, "field": "description", "en": "Teleport player to Ahn'Qiraj.", "hash": "ebae91fd017fd6a0", "src": "db2@1.60.1.70338"}
+{"id": 1216535, "field": "name", "en": "[DNT] Teleport to Nightmare Grove Raid Exit (Feralas)", "hash": "345b12bf3b75913d", "src": "db2@1.60.1.70338"}
+{"id": 1216536, "field": "name", "en": "[DNT] Teleport to Nightmare Grove Raid Exit (Ashenvale)", "hash": "64ec32cc88623bfa", "src": "db2@1.60.1.70338"}
+{"id": 1216537, "field": "name", "en": "[DNT] Teleport to Nightmare Grove Raid Exit (Hinterlands)", "hash": "d406b05faadb6d9e", "src": "db2@1.60.1.70338"}
+{"id": 1216566, "field": "name", "en": "Traces of Silithyst", "hash": "d0a7b59da4d71907", "src": "db2@1.60.1.70338"}
+{"id": 1216566, "field": "aura", "en": "Melee and spell damage dealt increased by $s2%.", "hash": "6c7d1b07cfa182ff", "src": "db2@1.60.1.70338"}
+{"id": 1216602, "field": "name", "en": "Teleport to Deadwind Pass [DNT]", "hash": "b135209146189d1c", "src": "db2@1.60.1.70338"}
+{"id": 1216844, "field": "name", "en": "Void-Touched", "hash": "83bab019a1accc70", "src": "db2@1.60.1.70338"}
+{"id": 1216928, "field": "name", "en": "Guiding Torchlight", "hash": "c8e2d24ef9cb5d63", "src": "db2@1.60.1.70338"}
+{"id": 1216928, "field": "description", "en": "The way is lit. The path is clear. You require only the strength to follow it.\r\n", "hash": "54f255bde99607f7", "src": "db2@1.60.1.70338"}
+{"id": 1216928, "field": "aura", "en": "The way is lit. The path is clear. You require only the strength to follow it.", "hash": "54f255bde99607f7", "src": "db2@1.60.1.70338"}
+{"id": 1216932, "field": "name", "en": "Oppressive Darkness", "hash": "608496d20f15b791", "src": "db2@1.60.1.70338"}
+{"id": 1216932, "field": "description", "en": "This all feels wrong. You're out of space. Out of time.", "hash": "0f95f18f4c55c21c", "src": "db2@1.60.1.70338"}
+{"id": 1216932, "field": "aura", "en": "This all feels wrong. You're out of space. Out of time.", "hash": "0f95f18f4c55c21c", "src": "db2@1.60.1.70338"}
+{"id": 1216968, "field": "name", "en": "Electrostatic Charge", "hash": "d2d5ba4bd2fbbb2d", "src": "db2@1.60.1.70338"}
+{"id": 1216968, "field": "description", "en": "When struck in combat has a $h% chance of inflicting $16782s1 Nature damage to the attacker.", "hash": "fb53f46d659b1de4", "src": "db2@1.60.1.70338"}
+{"id": 1216971, "field": "name", "en": "Hybrid Healing/Spell Dam 44/24", "hash": "f12a9e6455ded4e1", "src": "db2@1.60.1.70338"}
+{"id": 1216971, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "db2@1.60.1.70338"}
+{"id": 1216982, "field": "name", "en": "Within Light", "hash": "490df003c34a8e01", "src": "db2@1.60.1.70338"}
+{"id": 1216982, "field": "description", "en": "Light drives away the spirits and the darkness, affording some measure of safety.", "hash": "39449ec83862d0ec", "src": "db2@1.60.1.70338"}
+{"id": 1216982, "field": "aura", "en": "Light drives away the spirits and the darkness, affording some measure of safety.", "hash": "39449ec83862d0ec", "src": "db2@1.60.1.70338"}
+{"id": 1216997, "field": "name", "en": "Unflinching Morale", "hash": "3d9e204ec3104c70", "src": "db2@1.60.1.70338"}
+{"id": 1216997, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70338"}
+{"id": 1216997, "field": "aura", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70338"}

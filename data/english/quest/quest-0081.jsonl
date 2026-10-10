@@ -1,3 +1,6 @@
+{"id": 81570, "field": "title", "en": "Jarl Needs a Blade", "hash": "83fbbd6841bb5d5d", "src": "wdb@1.60.1.70338"}
+{"id": 81570, "field": "objectives", "en": "Bring a Moonsteel Broadsword to Jarl in Dustwallow Marsh.", "hash": "b3fd67552931e0fa", "src": "wdb@1.60.1.70338"}
+{"id": 81570, "field": "description", "en": "I have cutting to do.  I can't tell you what I'm going to cut, but... I need myself a blade.  A certain blade...$B$BSome people call it a moonsteel broadsword.  I call it a swing blade.$B$BYou help me?  Maybe you find it in town, maybe you talk to a blacksmith and he'll make it special.$B$BBut don't sleep on this.  What I'm cutting won't keep forever...", "hash": "b542ec6729f33b70", "src": "wdb@1.60.1.70338"}
 {"id": 81730, "field": "title", "en": "Duskwood Mission I: Defeat Worgen", "hash": "0cf2dd2a27b25747", "src": "wdb@1.15.9.69722"}
 {"id": 81730, "field": "objectives", "en": "Defeat 10 Nightmare Runners and 10 Nightmare Weavers in the Duskwood Nightmare Incursion in the Rotting Orchard and return to Field Captain Palandar.", "hash": "e1a2c79f3dfdbeb2", "src": "wdb@1.15.9.69722"}
 {"id": 81730, "field": "description", "en": "While these demons distract us here, the Emerald Dream is being corrupted into nightmare. Quick, travel through the Emerald Dream Portal in the Twilight Grove, and journey to the Nightmare Incursion in the Rotting Orchard. Defeat worgen there and return to me.", "hash": "982208ee45495264", "src": "wdb@1.15.9.69722"}
@@ -214,10 +217,10 @@
 {"id": 81874, "field": "title", "en": "Feralas Mission XVIII: Rescue Jamniss Treemender", "hash": "f0855febcf4bb8d6", "src": "wdb@1.15.9.69722"}
 {"id": 81874, "field": "objectives", "en": "Rescue Jamnice Treemender from the Feralas Nightmare Incursion at the northern edge of the Ruins of Ravenwind and return to Field Captain Arunnel.", "hash": "a6ed25e87728d30e", "src": "wdb@1.15.9.69722"}
 {"id": 81874, "field": "description", "en": "While these demons distract us here, the Emerald Dream is being corrupted into nightmare. Quick, travel through the Emerald Dream Portal in Dream Bough, and journey to the Nightmare Incursion at the Ruins of Ravenwind. Find the sleeping Druid of the Claw Jamnice Treemender there and escort her to safety. Then return to me.", "hash": "240a63e6374e7dd2", "src": "wdb@1.15.9.69722"}
-{"id": 81947, "field": "title", "en": "Sanguine Sorcery", "hash": "b07ca90062e39043", "src": "wdb@1.60.1.70291"}
-{"id": 81949, "field": "title", "en": "Legends of the Tidesages", "hash": "caf7c331c2292471", "src": "wdb@1.60.1.70291"}
-{"id": 81952, "field": "title", "en": "Everyday Etiquette", "hash": "cb655342bbe93a80", "src": "wdb@1.60.1.70291"}
-{"id": 81953, "field": "title", "en": "Stonewrought Design", "hash": "eff6b9fbc8236e9d", "src": "wdb@1.60.1.70291"}
-{"id": 81954, "field": "title", "en": "Venomous Journeys", "hash": "12b3333fea2e7a71", "src": "wdb@1.60.1.70291"}
-{"id": 81955, "field": "title", "en": "A Mind of Metal", "hash": "db1a6c5d87da9b03", "src": "wdb@1.60.1.70291"}
-{"id": 81956, "field": "title", "en": "Conjurer's Codex", "hash": "36983124473a6f5d", "src": "wdb@1.60.1.70291"}
+{"id": 81947, "field": "title", "en": "Sanguine Sorcery", "hash": "b07ca90062e39043", "src": "wdb@1.60.1.70338"}
+{"id": 81949, "field": "title", "en": "Legends of the Tidesages", "hash": "caf7c331c2292471", "src": "wdb@1.60.1.70338"}
+{"id": 81952, "field": "title", "en": "Everyday Etiquette", "hash": "cb655342bbe93a80", "src": "wdb@1.60.1.70338"}
+{"id": 81953, "field": "title", "en": "Stonewrought Design", "hash": "eff6b9fbc8236e9d", "src": "wdb@1.60.1.70338"}
+{"id": 81954, "field": "title", "en": "Venomous Journeys", "hash": "12b3333fea2e7a71", "src": "wdb@1.60.1.70338"}
+{"id": 81955, "field": "title", "en": "A Mind of Metal", "hash": "db1a6c5d87da9b03", "src": "wdb@1.60.1.70338"}
+{"id": 81956, "field": "title", "en": "Conjurer's Codex", "hash": "36983124473a6f5d", "src": "wdb@1.60.1.70338"}

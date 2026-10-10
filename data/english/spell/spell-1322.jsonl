@@ -7,45 +7,45 @@
 {"id": 1322004, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
 {"id": 1322005, "field": "name", "en": "Infernal", "hash": "e729bf315e08b4bf", "src": "db2@1.60.1.70124"}
 {"id": 1322005, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70124"}
-{"id": 1322007, "field": "name", "en": "Summon Voidwalker", "hash": "efc807f53254d107", "src": "db2@1.60.1.70291"}
-{"id": 1322007, "field": "description", "en": "Summons a Voidwalker under the command of the Warlock.", "hash": "e766a608e584028d", "src": "db2@1.60.1.70291"}
-{"id": 1322054, "field": "name", "en": "Summon Skeletal Servant", "hash": "4b7bfb2e55e60278", "src": "db2@1.60.1.70291"}
-{"id": 1322054, "field": "description", "en": "Summons $s1 $lSkeletal Servant:Skeletal Servants; to accompany the caster until dismissed.", "hash": "2e4fdb3c6f182639", "src": "db2@1.60.1.70291"}
-{"id": 1322065, "field": "name", "en": "[DNT]Avatar of Hakkar Player Checker", "hash": "f1cd31c632798dcc", "src": "db2@1.60.1.70291"}
-{"id": 1322067, "field": "name", "en": "[DNT]Avatar of Hakkar Player Checker Ping", "hash": "314aa00b44030e3a", "src": "db2@1.60.1.70291"}
-{"id": 1322218, "field": "name", "en": "Holy Forgefire", "hash": "eb8ec49b73b10901", "src": "db2@1.60.1.70291"}
-{"id": 1322218, "field": "description", "en": "Ignite the target in the flames of the Great Forge, dealing $s1 Holyfire damage. Deals $s2 times as much damage to Fire Elementals and Earth Elementals.", "hash": "1fe0e4bc286dee00", "src": "db2@1.60.1.70291"}
-{"id": 1322287, "field": "name", "en": "Shadow Channeling", "hash": "4ec8b9e69140df23", "src": "db2@1.60.1.70291"}
-{"id": 1322295, "field": "name", "en": "Firebolt", "hash": "c166b34851cb13db", "src": "db2@1.60.1.70291"}
-{"id": 1322295, "field": "description", "en": "Blasts a target for $s1 Fire damage.", "hash": "9d8bd0af55935a2e", "src": "db2@1.60.1.70291"}
-{"id": 1322296, "field": "name", "en": "Ritual Circle", "hash": "acc2545f4916ed4d", "src": "db2@1.60.1.70291"}
-{"id": 1322297, "field": "name", "en": "(DNT) Mod Armor No Mods", "hash": "3c3ed71adbb4d663", "src": "db2@1.60.1.70291"}
-{"id": 1322297, "field": "description", "en": "Increases armor by $s1 for $d.", "hash": "92291afa4ecdce72", "src": "db2@1.60.1.70291"}
-{"id": 1322297, "field": "aura", "en": "Increased armor.", "hash": "d44e6a602bca0b87", "src": "db2@1.60.1.70291"}
-{"id": 1322299, "field": "name", "en": "(DNT) Mod Resistance by Bonus Defense", "hash": "ee7f18f8c6329f32", "src": "db2@1.60.1.70291"}
-{"id": 1322299, "field": "description", "en": "Increases armor by $s1 for $d.", "hash": "92291afa4ecdce72", "src": "db2@1.60.1.70291"}
-{"id": 1322299, "field": "aura", "en": "Increased armor.", "hash": "d44e6a602bca0b87", "src": "db2@1.60.1.70291"}
-{"id": 1322303, "field": "name", "en": "Corpse Chopper", "hash": "ca31c697068ca438", "src": "db2@1.60.1.70291"}
-{"id": 1322303, "field": "description", "en": "Chop nearby Humanoid or Undead corpse in two, restoring $1322305s1 Health, $1322305s2 Mana, and ${$1322305s3/10} Rage.", "hash": "52063f378dd4c05f", "src": "db2@1.60.1.70291"}
-{"id": 1322304, "field": "name", "en": "Crystal Breaker", "hash": "b60a97586d9424da", "src": "db2@1.60.1.70291"}
-{"id": 1322304, "field": "description", "en": "A massive crystalline punch dealing $s1 Physical damage in a cone and knocking back all targets struck.", "hash": "18fcd8528d66fd19", "src": "db2@1.60.1.70291"}
-{"id": 1322305, "field": "name", "en": "Corpse Chopper", "hash": "ca31c697068ca438", "src": "db2@1.60.1.70291"}
-{"id": 1322305, "field": "description", "en": "Restore $s1 Health, $s2 Mana, and ${$s3/10} Rage.", "hash": "08c6a32ce0fa40c1", "src": "db2@1.60.1.70291"}
-{"id": 1322311, "field": "name", "en": "Recently Siphoned the Grave", "hash": "59834f29586d3af0", "src": "db2@1.60.1.70291"}
-{"id": 1322311, "field": "description", "en": "Cannot benefit from Siphon the Grave.", "hash": "77e9d49971d18f84", "src": "db2@1.60.1.70291"}
-{"id": 1322311, "field": "aura", "en": "Cannot benefit from Siphon the Grave.", "hash": "77e9d49971d18f84", "src": "db2@1.60.1.70291"}
-{"id": 1322312, "field": "name", "en": "Cookie's Stirring Rod", "hash": "02b8515dadc5dfa4", "src": "db2@1.60.1.70291"}
-{"id": 1322312, "field": "description", "en": "Increases your Cooking speed by $s1%.", "hash": "2371bf1ddf3e8a89", "src": "db2@1.60.1.70291"}
-{"id": 1322318, "field": "name", "en": "Twilight Empowerment", "hash": "be942d151b144e76", "src": "db2@1.60.1.70291"}
-{"id": 1322318, "field": "description", "en": "Melee attacks have a chance to inflict $s1 additional Shadow damage", "hash": "c298e39c4bffe158", "src": "db2@1.60.1.70291"}
-{"id": 1322574, "field": "name", "en": "Rule of Rage (DND)", "hash": "ad211ce30af7e3b5", "src": "db2@1.60.1.70291"}
-{"id": 1322587, "field": "name", "en": "Yay", "hash": "0017803d615ba2e4", "src": "db2@1.60.1.70291"}
-{"id": 1322587, "field": "description", "en": "Cheesecake makes you happy.", "hash": "81d403b473235fb8", "src": "db2@1.60.1.70291"}
-{"id": 1322587, "field": "aura", "en": "Yay cheesecake!", "hash": "c00888367ba2bc65", "src": "db2@1.60.1.70291"}
-{"id": 1322605, "field": "name", "en": "Shifting Power", "hash": "8a77ba307ac767a1", "src": "db2@1.60.1.70291"}
-{"id": 1322605, "field": "description", "en": "Instantly convert $c Mana into $s2 Energy. Shifting Power's cost is reduced by effects that reduce the cost of Shapeshifting.", "hash": "a7e4f4f61f313448", "src": "db2@1.60.1.70291"}
-{"id": 1322629, "field": "name", "en": "Capturing", "hash": "80059cb85822275e", "src": "db2@1.60.1.70291"}
-{"id": 1322670, "field": "name", "en": "Improved Shifting Power", "hash": "9dac4d55c6701d26", "src": "db2@1.60.1.70291"}
-{"id": 1322670, "field": "description", "en": "Reduces the cooldown of your Shifting Power spell by ${$m1/-1000} sec.", "hash": "9860d8d1697e4b84", "src": "db2@1.60.1.70291"}
-{"id": 1322901, "field": "name", "en": "Dummy", "hash": "b96ea884878ed073", "src": "db2@1.60.1.70291"}
-{"id": 1322935, "field": "name", "en": "Dummy", "hash": "b96ea884878ed073", "src": "db2@1.60.1.70291"}
+{"id": 1322007, "field": "name", "en": "Summon Voidwalker", "hash": "efc807f53254d107", "src": "db2@1.60.1.70338"}
+{"id": 1322007, "field": "description", "en": "Summons a Voidwalker under the command of the Warlock.", "hash": "e766a608e584028d", "src": "db2@1.60.1.70338"}
+{"id": 1322054, "field": "name", "en": "Summon Skeletal Servant", "hash": "4b7bfb2e55e60278", "src": "db2@1.60.1.70338"}
+{"id": 1322054, "field": "description", "en": "Summons $s1 $lSkeletal Servant:Skeletal Servants; to accompany the caster until dismissed.", "hash": "2e4fdb3c6f182639", "src": "db2@1.60.1.70338"}
+{"id": 1322065, "field": "name", "en": "[DNT]Avatar of Hakkar Player Checker", "hash": "f1cd31c632798dcc", "src": "db2@1.60.1.70338"}
+{"id": 1322067, "field": "name", "en": "[DNT]Avatar of Hakkar Player Checker Ping", "hash": "314aa00b44030e3a", "src": "db2@1.60.1.70338"}
+{"id": 1322218, "field": "name", "en": "Holy Forgefire", "hash": "eb8ec49b73b10901", "src": "db2@1.60.1.70338"}
+{"id": 1322218, "field": "description", "en": "Ignite the target in the flames of the Great Forge, dealing $s1 Holyfire damage. Deals $s2 times as much damage to Fire Elementals and Earth Elementals.", "hash": "1fe0e4bc286dee00", "src": "db2@1.60.1.70338"}
+{"id": 1322287, "field": "name", "en": "Shadow Channeling", "hash": "4ec8b9e69140df23", "src": "db2@1.60.1.70338"}
+{"id": 1322295, "field": "name", "en": "Firebolt", "hash": "c166b34851cb13db", "src": "db2@1.60.1.70338"}
+{"id": 1322295, "field": "description", "en": "Blasts a target for $s1 Fire damage.", "hash": "9d8bd0af55935a2e", "src": "db2@1.60.1.70338"}
+{"id": 1322296, "field": "name", "en": "Ritual Circle", "hash": "acc2545f4916ed4d", "src": "db2@1.60.1.70338"}
+{"id": 1322297, "field": "name", "en": "(DNT) Mod Armor No Mods", "hash": "3c3ed71adbb4d663", "src": "db2@1.60.1.70338"}
+{"id": 1322297, "field": "description", "en": "Increases armor by $s1 for $d.", "hash": "92291afa4ecdce72", "src": "db2@1.60.1.70338"}
+{"id": 1322297, "field": "aura", "en": "Increased armor.", "hash": "d44e6a602bca0b87", "src": "db2@1.60.1.70338"}
+{"id": 1322299, "field": "name", "en": "(DNT) Mod Resistance by Bonus Defense", "hash": "ee7f18f8c6329f32", "src": "db2@1.60.1.70338"}
+{"id": 1322299, "field": "description", "en": "Increases armor by $s1 for $d.", "hash": "92291afa4ecdce72", "src": "db2@1.60.1.70338"}
+{"id": 1322299, "field": "aura", "en": "Increased armor.", "hash": "d44e6a602bca0b87", "src": "db2@1.60.1.70338"}
+{"id": 1322303, "field": "name", "en": "Corpse Chopper", "hash": "ca31c697068ca438", "src": "db2@1.60.1.70338"}
+{"id": 1322303, "field": "description", "en": "Chop nearby Humanoid or Undead corpse in two, restoring $1322305s1 Health, $1322305s2 Mana, and ${$1322305s3/10} Rage.", "hash": "52063f378dd4c05f", "src": "db2@1.60.1.70338"}
+{"id": 1322304, "field": "name", "en": "Crystal Breaker", "hash": "b60a97586d9424da", "src": "db2@1.60.1.70338"}
+{"id": 1322304, "field": "description", "en": "A massive crystalline punch dealing $s1 Physical damage in a cone and knocking back all targets struck.", "hash": "18fcd8528d66fd19", "src": "db2@1.60.1.70338"}
+{"id": 1322305, "field": "name", "en": "Corpse Chopper", "hash": "ca31c697068ca438", "src": "db2@1.60.1.70338"}
+{"id": 1322305, "field": "description", "en": "Restore $s1 Health, $s2 Mana, and ${$s3/10} Rage.", "hash": "08c6a32ce0fa40c1", "src": "db2@1.60.1.70338"}
+{"id": 1322311, "field": "name", "en": "Recently Siphoned the Grave", "hash": "59834f29586d3af0", "src": "db2@1.60.1.70338"}
+{"id": 1322311, "field": "description", "en": "Cannot benefit from Siphon the Grave.", "hash": "77e9d49971d18f84", "src": "db2@1.60.1.70338"}
+{"id": 1322311, "field": "aura", "en": "Cannot benefit from Siphon the Grave.", "hash": "77e9d49971d18f84", "src": "db2@1.60.1.70338"}
+{"id": 1322312, "field": "name", "en": "Cookie's Stirring Rod", "hash": "02b8515dadc5dfa4", "src": "db2@1.60.1.70338"}
+{"id": 1322312, "field": "description", "en": "Increases your Cooking speed by $s1%.", "hash": "2371bf1ddf3e8a89", "src": "db2@1.60.1.70338"}
+{"id": 1322318, "field": "name", "en": "Twilight Empowerment", "hash": "be942d151b144e76", "src": "db2@1.60.1.70338"}
+{"id": 1322318, "field": "description", "en": "Melee attacks have a chance to inflict $s1 additional Shadow damage", "hash": "c298e39c4bffe158", "src": "db2@1.60.1.70338"}
+{"id": 1322574, "field": "name", "en": "Rule of Rage (DND)", "hash": "ad211ce30af7e3b5", "src": "db2@1.60.1.70338"}
+{"id": 1322587, "field": "name", "en": "Yay", "hash": "0017803d615ba2e4", "src": "db2@1.60.1.70338"}
+{"id": 1322587, "field": "description", "en": "Cheesecake makes you happy.", "hash": "81d403b473235fb8", "src": "db2@1.60.1.70338"}
+{"id": 1322587, "field": "aura", "en": "Yay cheesecake!", "hash": "c00888367ba2bc65", "src": "db2@1.60.1.70338"}
+{"id": 1322605, "field": "name", "en": "Shifting Power", "hash": "8a77ba307ac767a1", "src": "db2@1.60.1.70338"}
+{"id": 1322605, "field": "description", "en": "Instantly convert $c Mana into $s2 Energy. Shifting Power's cost is reduced by effects that reduce the cost of Shapeshifting.", "hash": "a7e4f4f61f313448", "src": "db2@1.60.1.70338"}
+{"id": 1322629, "field": "name", "en": "Capturing", "hash": "80059cb85822275e", "src": "db2@1.60.1.70338"}
+{"id": 1322670, "field": "name", "en": "Improved Shifting Power", "hash": "9dac4d55c6701d26", "src": "db2@1.60.1.70338"}
+{"id": 1322670, "field": "description", "en": "Reduces the cooldown of your Shifting Power spell by ${$m1/-1000} sec.", "hash": "9860d8d1697e4b84", "src": "db2@1.60.1.70338"}
+{"id": 1322901, "field": "name", "en": "Dummy", "hash": "b96ea884878ed073", "src": "db2@1.60.1.70338"}
+{"id": 1322935, "field": "name", "en": "Dummy", "hash": "b96ea884878ed073", "src": "db2@1.60.1.70338"}

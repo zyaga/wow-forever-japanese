@@ -1,115 +1,115 @@
-{"id": 1235000, "field": "name", "en": "Poultry Precision (Guns) - Flare", "hash": "fc44860c89aa0c01", "src": "db2@1.60.1.70291"}
-{"id": 1235002, "field": "name", "en": "Poultry Precision (Guns) - Volley", "hash": "05763b8846e9d519", "src": "db2@1.60.1.70291"}
-{"id": 1235003, "field": "name", "en": "Poultry Precision (Guns) - Concussive Shot", "hash": "63c919c72176ca42", "src": "db2@1.60.1.70291"}
-{"id": 1235004, "field": "name", "en": "Poultry Precision (Guns) - Scatter Shot", "hash": "e8cfcff1a793b528", "src": "db2@1.60.1.70291"}
-{"id": 1235011, "field": "name", "en": "Poultry Precision Scope", "hash": "aa4a56df55d5d1b3", "src": "db2@1.60.1.70291"}
-{"id": 1235011, "field": "description", "en": "Attaches a permanent scope to a bow or gun that increases its damage by 10.", "hash": "d11292291f3a2918", "src": "db2@1.60.1.70291"}
-{"id": 1235080, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70291"}
-{"id": 1235104, "field": "name", "en": "[DNT] Portal", "hash": "15e11ec34c98d7b5", "src": "db2@1.60.1.70291"}
-{"id": 1235116, "field": "name", "en": "Ninja Costume", "hash": "b03a8edaefc63d68", "src": "db2@1.60.1.70291"}
-{"id": 1235116, "field": "description", "en": "Take on the guise of a ninja assassin.", "hash": "dd70614639d178f8", "src": "db2@1.60.1.70291"}
-{"id": 1235119, "field": "name", "en": "Ninja Costume", "hash": "b03a8edaefc63d68", "src": "db2@1.60.1.70291"}
-{"id": 1235119, "field": "description", "en": "Take on the guise of a ninja assassin.", "hash": "dd70614639d178f8", "src": "db2@1.60.1.70291"}
-{"id": 1235122, "field": "name", "en": "Ninja Costume", "hash": "b03a8edaefc63d68", "src": "db2@1.60.1.70291"}
-{"id": 1235122, "field": "description", "en": "Take on the guise of a ninja assassin.", "hash": "dd70614639d178f8", "src": "db2@1.60.1.70291"}
-{"id": 1235126, "field": "name", "en": "Hearthstone of the Dawn", "hash": "12c3253b61bb5558", "src": "db2@1.60.1.70291"}
-{"id": 1235126, "field": "description", "en": "Returns you to Light's Hope Chapel.", "hash": "10fb821bc5983e1f", "src": "db2@1.60.1.70291"}
-{"id": 1235132, "field": "name", "en": "Trigger", "hash": "8c94886a50a7fbfb", "src": "db2@1.60.1.70291"}
-{"id": 1235133, "field": "name", "en": "Portal Effect: Scarlet Enclave", "hash": "fb5f086fecaab8f8", "src": "db2@1.60.1.70291"}
-{"id": 1235139, "field": "name", "en": "[DNT] Force Summoner to Ride Vehicle", "hash": "c0c5f189b9d20049", "src": "db2@1.60.1.70291"}
-{"id": 1235140, "field": "name", "en": "Ride Gryphon", "hash": "bbf4fe9d67d8f5e1", "src": "db2@1.60.1.70291"}
-{"id": 1235141, "field": "name", "en": "[DNT] Eject all Passengers", "hash": "fe34e1f44669538e", "src": "db2@1.60.1.70291"}
-{"id": 1235181, "field": "name", "en": "Flight Path", "hash": "47e776b07200930e", "src": "db2@1.60.1.70291"}
-{"id": 1235190, "field": "name", "en": "Infinite Midnight", "hash": "4f6c64a822d218f4", "src": "db2@1.60.1.70291"}
-{"id": 1235190, "field": "aura", "en": "The end of an epoch is nigh!", "hash": "a1468809cbf22533", "src": "db2@1.60.1.70291"}
-{"id": 1235230, "field": "name", "en": "Mining", "hash": "e8c3966e5822c8b8", "src": "db2@1.60.1.70291"}
-{"id": 1235236, "field": "name", "en": "Herb Gathering", "hash": "7475b0cfb8e42fd2", "src": "db2@1.60.1.70291"}
-{"id": 1235244, "field": "name", "en": "Engineering", "hash": "3481b5cc37605013", "src": "db2@1.60.1.70291"}
-{"id": 1235263, "field": "name", "en": "Summon Blizzard", "hash": "ee5dba0e741210bc", "src": "db2@1.60.1.70291"}
-{"id": 1235316, "field": "name", "en": "Demonic Aegis", "hash": "a9083f79b4d6809e", "src": "db2@1.60.1.70291"}
-{"id": 1235316, "field": "description", "en": "Increases the effectiveness of your Demon Skin and Demon Armor spells by $m1%.", "hash": "fc65ad42d7d73264", "src": "db2@1.60.1.70291"}
-{"id": 1235317, "field": "name", "en": "Immolate", "hash": "c1cd0d857455f570", "src": "db2@1.60.1.70291"}
-{"id": 1235317, "field": "description", "en": "Burns an enemy, then inflicts additional Fire damage every $t1 sec. for $d.", "hash": "2a506f3c533f3725", "src": "db2@1.60.1.70291"}
-{"id": 1235317, "field": "aura", "en": "Fire damage inflicted every $t1 sec.", "hash": "01f62b3493464c51", "src": "db2@1.60.1.70291"}
-{"id": 1235318, "field": "name", "en": "Blast Wave", "hash": "9eeb2174eb6fecfe", "src": "db2@1.60.1.70291"}
-{"id": 1235318, "field": "description", "en": "Unleashes a wave of flame, inflicting Fire damage to nearby enemies and reducing their movement speed for $d.", "hash": "7ebaea7040d4910c", "src": "db2@1.60.1.70291"}
-{"id": 1235318, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70291"}
-{"id": 1235320, "field": "name", "en": "Crimson Crusade", "hash": "b8e84c07d7d23062", "src": "db2@1.60.1.70291"}
-{"id": 1235320, "field": "description", "en": "$?a435884[Chance on hit to cause your next $1232893u instances of Nature damage to be increased by $1231456s1%.  Lasts $1232893d.]?a446658[Chance on hit to cause your next $1235336u instances of Cleave damage to be increased by $1235337s1%. Lasts $1235336d.]?a446374[Chance on hit to cause your next $1235341u instances of Raptor Strike damage to be increased by $1235344s1%. Lasts $1235341d.]?a462814[Chance on hit to cause your next $1235348u instances of Holy damage to be increased by $1235349s1%. Lasts $1235348d.][The Crimson Cleaver does not respond to your presence, maybe another class could benefit from this?]", "hash": "507a64e8097762c4", "src": "db2@1.60.1.70291"}
-{"id": 1235321, "field": "name", "en": "Imbued Assault", "hash": "db122e8a6799e56c", "src": "db2@1.60.1.70291"}
-{"id": 1235321, "field": "description", "en": "Inflicts $s1 Fire damage and an additional $s2 Fire damage every $t2 sec for $d.\r\n", "hash": "7be2b1ea9f5bd772", "src": "db2@1.60.1.70291"}
-{"id": 1235321, "field": "aura", "en": "Inflicts $s2 Fire damage every $t2 sec.", "hash": "c2271fc2ea3e4cbd", "src": "db2@1.60.1.70291"}
-{"id": 1235322, "field": "name", "en": "Molten Armaments", "hash": "bf175b7078901f2a", "src": "db2@1.60.1.70291"}
-{"id": 1235322, "field": "description", "en": "Imbued weapons now cause melee attacks to inflict $1230996s1 additional Fire damage.", "hash": "b0d270d46cb09755", "src": "db2@1.60.1.70291"}
-{"id": 1235322, "field": "aura", "en": "Weapons are imbued with fire.", "hash": "a56b93161255870f", "src": "db2@1.60.1.70291"}
-{"id": 1235327, "field": "name", "en": "Decrepit Fever", "hash": "bac440117726ca2a", "src": "db2@1.60.1.70291"}
-{"id": 1235327, "field": "aura", "en": "Maximum health reduced by $s1%\r\nDeals $s2 nature damage every $t2 seconds.", "hash": "8611aea9a55d833a", "src": "db2@1.60.1.70291"}
-{"id": 1235328, "field": "name", "en": "Curse of Impotence", "hash": "8cd90cc5415c75bd", "src": "db2@1.60.1.70291"}
-{"id": 1235328, "field": "description", "en": "Decreases the Magical damage dealt by the target by $s1 for $d.", "hash": "ac9351771ca26d13", "src": "db2@1.60.1.70291"}
-{"id": 1235328, "field": "aura", "en": "Magical damage dealt is reduced by $s1%.", "hash": "fb9d37e0feeb2796", "src": "db2@1.60.1.70291"}
-{"id": 1235330, "field": "name", "en": "Crimson Crusade", "hash": "b8e84c07d7d23062", "src": "db2@1.60.1.70291"}
-{"id": 1235335, "field": "name", "en": "Crimson Crusade", "hash": "b8e84c07d7d23062", "src": "db2@1.60.1.70291"}
-{"id": 1235336, "field": "name", "en": "Crimson Crusade", "hash": "b8e84c07d7d23062", "src": "db2@1.60.1.70291"}
-{"id": 1235336, "field": "description", "en": "Your next $u instances of Cleave damage are increased by $s1%.  Lasts $d.", "hash": "af52e7a083298ffb", "src": "db2@1.60.1.70291"}
-{"id": 1235336, "field": "aura", "en": "Cleave damage dealt increased by ${$s1/$m2}%.", "hash": "4de31fc9d34516c8", "src": "db2@1.60.1.70291"}
-{"id": 1235337, "field": "name", "en": "Crimson Crusade", "hash": "b8e84c07d7d23062", "src": "db2@1.60.1.70291"}
-{"id": 1235340, "field": "name", "en": "Crimson Crusade", "hash": "b8e84c07d7d23062", "src": "db2@1.60.1.70291"}
-{"id": 1235341, "field": "name", "en": "Crimson Crusade", "hash": "b8e84c07d7d23062", "src": "db2@1.60.1.70291"}
-{"id": 1235341, "field": "description", "en": "Your next $u instances of Raptor Strike damage are increased by $s1%.  Lasts $d.", "hash": "19035894f69f14d9", "src": "db2@1.60.1.70291"}
-{"id": 1235341, "field": "aura", "en": "Raptor Strike damage dealt increased by ${$s1/$m2}%.", "hash": "322582771c566136", "src": "db2@1.60.1.70291"}
-{"id": 1235344, "field": "name", "en": "Crimson Crusade", "hash": "b8e84c07d7d23062", "src": "db2@1.60.1.70291"}
-{"id": 1235347, "field": "name", "en": "Crimson Crusade", "hash": "b8e84c07d7d23062", "src": "db2@1.60.1.70291"}
-{"id": 1235348, "field": "name", "en": "Crimson Crusade", "hash": "b8e84c07d7d23062", "src": "db2@1.60.1.70291"}
-{"id": 1235348, "field": "description", "en": "Your next $u instances of Holy damage are increased by $s1%.  Lasts $d.", "hash": "f4cb7e9c75baa229", "src": "db2@1.60.1.70291"}
-{"id": 1235348, "field": "aura", "en": "Holy damage dealt increased by ${$s1/$m2}%.", "hash": "7aa0a74b82cc66ac", "src": "db2@1.60.1.70291"}
-{"id": 1235349, "field": "name", "en": "Crimson Crusade", "hash": "b8e84c07d7d23062", "src": "db2@1.60.1.70291"}
-{"id": 1235351, "field": "name", "en": "Mercy by Fire", "hash": "9c12fff02c23a4b6", "src": "db2@1.60.1.70291"}
-{"id": 1235351, "field": "description", "en": "$?a435884[Chance on hit to cause your next $1235353u instances of Fire damage to be increased by $1232890s1%. Lasts $1235353d.]?a446658[Chance on hit to cause your next $1235355u instances of Whirlwind damage to be increased by $1235357s1%. Lasts $1235355d.]?a446374[Chance on hit to cause your next $1235359u instances of damage from your pet's special abilities to be increased by $1235361s1%. Lasts $1235359d.][]", "hash": "8572b3217e1bc1b8", "src": "db2@1.60.1.70291"}
-{"id": 1235353, "field": "name", "en": "Mercy by Fire", "hash": "9c12fff02c23a4b6", "src": "db2@1.60.1.70291"}
-{"id": 1235353, "field": "description", "en": "Your next $u instances of Fire damage are increased by $s1%.  Lasts $d.", "hash": "9bc5209767f6e979", "src": "db2@1.60.1.70291"}
-{"id": 1235353, "field": "aura", "en": "Fire damage dealt increased by ${$s1/$m2}%.", "hash": "c240d961b249fa32", "src": "db2@1.60.1.70291"}
-{"id": 1235354, "field": "name", "en": "Mercy by Fire", "hash": "9c12fff02c23a4b6", "src": "db2@1.60.1.70291"}
-{"id": 1235355, "field": "name", "en": "Mercy by Fire", "hash": "9c12fff02c23a4b6", "src": "db2@1.60.1.70291"}
-{"id": 1235355, "field": "description", "en": "Your next $u instances of Whirlwind damage are increased by $s1%.  Lasts $d.", "hash": "18bf73049fdd8cfa", "src": "db2@1.60.1.70291"}
-{"id": 1235355, "field": "aura", "en": "Whirlwind damage dealt increased by ${$s1/$m2}%.", "hash": "4eeda48fe8513d73", "src": "db2@1.60.1.70291"}
-{"id": 1235357, "field": "name", "en": "Mercy by Fire", "hash": "9c12fff02c23a4b6", "src": "db2@1.60.1.70291"}
-{"id": 1235358, "field": "name", "en": "Mercy by Fire", "hash": "9c12fff02c23a4b6", "src": "db2@1.60.1.70291"}
-{"id": 1235359, "field": "name", "en": "Mercy by Fire", "hash": "9c12fff02c23a4b6", "src": "db2@1.60.1.70291"}
-{"id": 1235359, "field": "description", "en": "Your next $u instances of damage from your pet's special abilities are increased by $s1%.  Lasts $d.", "hash": "745f2ea19c12fa9d", "src": "db2@1.60.1.70291"}
-{"id": 1235359, "field": "aura", "en": "Pet special ability damage dealt increased by ${$s1/$m2}%.", "hash": "bea11dc4afd150f7", "src": "db2@1.60.1.70291"}
-{"id": 1235361, "field": "name", "en": "Mercy by Fire", "hash": "9c12fff02c23a4b6", "src": "db2@1.60.1.70291"}
-{"id": 1235390, "field": "name", "en": "Mercy by Fire", "hash": "9c12fff02c23a4b6", "src": "db2@1.60.1.70291"}
-{"id": 1235390, "field": "description", "en": "Your next $u instances of damage from your pet's special abilities are increased by $s1%.  Lasts $d.", "hash": "745f2ea19c12fa9d", "src": "db2@1.60.1.70291"}
-{"id": 1235390, "field": "aura", "en": "Pet special ability damage dealt increased by ${$s1/$m2}%.", "hash": "bea11dc4afd150f7", "src": "db2@1.60.1.70291"}
-{"id": 1235413, "field": "name", "en": "(DNT) Power Up Cosmetic", "hash": "b5f16126e95e4129", "src": "db2@1.60.1.70291"}
-{"id": 1235421, "field": "name", "en": "Arcane Explosion", "hash": "147926cf0bf9df21", "src": "db2@1.60.1.70291"}
-{"id": 1235421, "field": "description", "en": "Causes an explosion of arcane magic around the caster, causing $s1 Arcane damage to all targets within $a1 yards.", "hash": "51d9ff5b0410d3ef", "src": "db2@1.60.1.70291"}
-{"id": 1235473, "field": "name", "en": "Restoration", "hash": "968110afb3b81a5a", "src": "db2@1.60.1.70291"}
-{"id": 1235492, "field": "name", "en": "[DNT] Tim's Test Visual", "hash": "f1b1fcb4e9cd16cb", "src": "db2@1.60.1.70291"}
-{"id": 1235493, "field": "name", "en": "Combo PROC Test", "hash": "64d9af6b8e6273d8", "src": "db2@1.60.1.70291"}
-{"id": 1235493, "field": "description", "en": "Casts a spell when you do something.", "hash": "ccd4b2bed15c5030", "src": "db2@1.60.1.70291"}
-{"id": 1235537, "field": "name", "en": "(DNT) Screen Shake", "hash": "79bdab6174d20e03", "src": "db2@1.60.1.70291"}
-{"id": 1235538, "field": "name", "en": "Charge", "hash": "024f52bd3f49c2c8", "src": "db2@1.60.1.70291"}
-{"id": 1235538, "field": "description", "en": "Charges an enemy, inflicting normal damage plus $s3 and stuns the opponent for $d.", "hash": "af4293e676932a45", "src": "db2@1.60.1.70291"}
-{"id": 1235539, "field": "name", "en": "(DNT) Screen Shake", "hash": "79bdab6174d20e03", "src": "db2@1.60.1.70291"}
-{"id": 1235570, "field": "name", "en": "Out of Bounds", "hash": "6be7cd0fcc6aa261", "src": "db2@1.60.1.70291"}
-{"id": 1235571, "field": "name", "en": "Out of Bounds", "hash": "6be7cd0fcc6aa261", "src": "db2@1.60.1.70291"}
-{"id": 1235681, "field": "name", "en": "Feral Dedication", "hash": "f5af97ecbd4a7d1f", "src": "db2@1.60.1.70291"}
-{"id": 1235681, "field": "description", "en": "Increases the damage caused by your Ferocious Bite by $s1%.", "hash": "e0beeda00255a4ab", "src": "db2@1.60.1.70291"}
-{"id": 1235689, "field": "name", "en": "Transformation", "hash": "f760ecd969461a04", "src": "db2@1.60.1.70291"}
-{"id": 1235703, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70291"}
-{"id": 1235705, "field": "name", "en": "Darkgraven Blade", "hash": "7d89da512ea16615", "src": "db2@1.60.1.70291"}
-{"id": 1235708, "field": "name", "en": "Darkgraven Blade", "hash": "7d89da512ea16615", "src": "db2@1.60.1.70291"}
-{"id": 1235749, "field": "name", "en": "Portal Effect: Scarlet Enclave", "hash": "fb5f086fecaab8f8", "src": "db2@1.60.1.70291"}
-{"id": 1235777, "field": "name", "en": "Light Torch", "hash": "44dcce5dc0b2a1ce", "src": "db2@1.60.1.70291"}
-{"id": 1235793, "field": "name", "en": "[DNT] Protected from Darkness", "hash": "b870b15d4b119705", "src": "db2@1.60.1.70291"}
-{"id": 1235793, "field": "description", "en": "Reduces damage from falling.", "hash": "879f36ddea9501a1", "src": "db2@1.60.1.70291"}
-{"id": 1235805, "field": "name", "en": "[DNT] Frozen Emote", "hash": "b5823774348b64ab", "src": "db2@1.60.1.70291"}
-{"id": 1235826, "field": "name", "en": "Lacerate", "hash": "2ddaf20b3d682230", "src": "db2@1.60.1.70291"}
-{"id": 1235826, "field": "description", "en": "Lacerates the enemy target, making them bleed for $o1 damage over $d plus $s2% weapon damage per existing application of Lacerate on the target. Causes a high amount of threat. This effect stacks up to $u times on the same target.", "hash": "58e2b59589e53f8f", "src": "db2@1.60.1.70291"}
-{"id": 1235826, "field": "aura", "en": "$w1 damage every $t sec.", "hash": "8522e0deacb4440d", "src": "db2@1.60.1.70291"}
-{"id": 1235827, "field": "name", "en": "Lacerate", "hash": "2ddaf20b3d682230", "src": "db2@1.60.1.70291"}
-{"id": 1235827, "field": "description", "en": "Lacerates the enemy target, making them bleed for $o1 damage over $d plus $s2% weapon damage per existing application of Lacerate on the target. Causes a high amount of threat. This effect stacks up to $u times on the same target.", "hash": "58e2b59589e53f8f", "src": "db2@1.60.1.70291"}
-{"id": 1235827, "field": "aura", "en": "$w1 damage every $t sec.", "hash": "8522e0deacb4440d", "src": "db2@1.60.1.70291"}
-{"id": 1235880, "field": "name", "en": "Climbing Rope", "hash": "360fc9d65f9469ec", "src": "db2@1.60.1.70291"}
-{"id": 1235882, "field": "name", "en": "Climbing Rope", "hash": "360fc9d65f9469ec", "src": "db2@1.60.1.70291"}
+{"id": 1235000, "field": "name", "en": "Poultry Precision (Guns) - Flare", "hash": "fc44860c89aa0c01", "src": "db2@1.60.1.70338"}
+{"id": 1235002, "field": "name", "en": "Poultry Precision (Guns) - Volley", "hash": "05763b8846e9d519", "src": "db2@1.60.1.70338"}
+{"id": 1235003, "field": "name", "en": "Poultry Precision (Guns) - Concussive Shot", "hash": "63c919c72176ca42", "src": "db2@1.60.1.70338"}
+{"id": 1235004, "field": "name", "en": "Poultry Precision (Guns) - Scatter Shot", "hash": "e8cfcff1a793b528", "src": "db2@1.60.1.70338"}
+{"id": 1235011, "field": "name", "en": "Poultry Precision Scope", "hash": "aa4a56df55d5d1b3", "src": "db2@1.60.1.70338"}
+{"id": 1235011, "field": "description", "en": "Attaches a permanent scope to a bow or gun that increases its damage by 10.", "hash": "d11292291f3a2918", "src": "db2@1.60.1.70338"}
+{"id": 1235080, "field": "name", "en": "[DNT] Spawn Event", "hash": "b28a49442eea69f5", "src": "db2@1.60.1.70338"}
+{"id": 1235104, "field": "name", "en": "[DNT] Portal", "hash": "15e11ec34c98d7b5", "src": "db2@1.60.1.70338"}
+{"id": 1235116, "field": "name", "en": "Ninja Costume", "hash": "b03a8edaefc63d68", "src": "db2@1.60.1.70338"}
+{"id": 1235116, "field": "description", "en": "Take on the guise of a ninja assassin.", "hash": "dd70614639d178f8", "src": "db2@1.60.1.70338"}
+{"id": 1235119, "field": "name", "en": "Ninja Costume", "hash": "b03a8edaefc63d68", "src": "db2@1.60.1.70338"}
+{"id": 1235119, "field": "description", "en": "Take on the guise of a ninja assassin.", "hash": "dd70614639d178f8", "src": "db2@1.60.1.70338"}
+{"id": 1235122, "field": "name", "en": "Ninja Costume", "hash": "b03a8edaefc63d68", "src": "db2@1.60.1.70338"}
+{"id": 1235122, "field": "description", "en": "Take on the guise of a ninja assassin.", "hash": "dd70614639d178f8", "src": "db2@1.60.1.70338"}
+{"id": 1235126, "field": "name", "en": "Hearthstone of the Dawn", "hash": "12c3253b61bb5558", "src": "db2@1.60.1.70338"}
+{"id": 1235126, "field": "description", "en": "Returns you to Light's Hope Chapel.", "hash": "10fb821bc5983e1f", "src": "db2@1.60.1.70338"}
+{"id": 1235132, "field": "name", "en": "Trigger", "hash": "8c94886a50a7fbfb", "src": "db2@1.60.1.70338"}
+{"id": 1235133, "field": "name", "en": "Portal Effect: Scarlet Enclave", "hash": "fb5f086fecaab8f8", "src": "db2@1.60.1.70338"}
+{"id": 1235139, "field": "name", "en": "[DNT] Force Summoner to Ride Vehicle", "hash": "c0c5f189b9d20049", "src": "db2@1.60.1.70338"}
+{"id": 1235140, "field": "name", "en": "Ride Gryphon", "hash": "bbf4fe9d67d8f5e1", "src": "db2@1.60.1.70338"}
+{"id": 1235141, "field": "name", "en": "[DNT] Eject all Passengers", "hash": "fe34e1f44669538e", "src": "db2@1.60.1.70338"}
+{"id": 1235181, "field": "name", "en": "Flight Path", "hash": "47e776b07200930e", "src": "db2@1.60.1.70338"}
+{"id": 1235190, "field": "name", "en": "Infinite Midnight", "hash": "4f6c64a822d218f4", "src": "db2@1.60.1.70338"}
+{"id": 1235190, "field": "aura", "en": "The end of an epoch is nigh!", "hash": "a1468809cbf22533", "src": "db2@1.60.1.70338"}
+{"id": 1235230, "field": "name", "en": "Mining", "hash": "e8c3966e5822c8b8", "src": "db2@1.60.1.70338"}
+{"id": 1235236, "field": "name", "en": "Herb Gathering", "hash": "7475b0cfb8e42fd2", "src": "db2@1.60.1.70338"}
+{"id": 1235244, "field": "name", "en": "Engineering", "hash": "3481b5cc37605013", "src": "db2@1.60.1.70338"}
+{"id": 1235263, "field": "name", "en": "Summon Blizzard", "hash": "ee5dba0e741210bc", "src": "db2@1.60.1.70338"}
+{"id": 1235316, "field": "name", "en": "Demonic Aegis", "hash": "a9083f79b4d6809e", "src": "db2@1.60.1.70338"}
+{"id": 1235316, "field": "description", "en": "Increases the effectiveness of your Demon Skin and Demon Armor spells by $m1%.", "hash": "fc65ad42d7d73264", "src": "db2@1.60.1.70338"}
+{"id": 1235317, "field": "name", "en": "Immolate", "hash": "c1cd0d857455f570", "src": "db2@1.60.1.70338"}
+{"id": 1235317, "field": "description", "en": "Burns an enemy, then inflicts additional Fire damage every $t1 sec. for $d.", "hash": "2a506f3c533f3725", "src": "db2@1.60.1.70338"}
+{"id": 1235317, "field": "aura", "en": "Fire damage inflicted every $t1 sec.", "hash": "01f62b3493464c51", "src": "db2@1.60.1.70338"}
+{"id": 1235318, "field": "name", "en": "Blast Wave", "hash": "9eeb2174eb6fecfe", "src": "db2@1.60.1.70338"}
+{"id": 1235318, "field": "description", "en": "Unleashes a wave of flame, inflicting Fire damage to nearby enemies and reducing their movement speed for $d.", "hash": "7ebaea7040d4910c", "src": "db2@1.60.1.70338"}
+{"id": 1235318, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70338"}
+{"id": 1235320, "field": "name", "en": "Crimson Crusade", "hash": "b8e84c07d7d23062", "src": "db2@1.60.1.70338"}
+{"id": 1235320, "field": "description", "en": "$?a435884[Chance on hit to cause your next $1232893u instances of Nature damage to be increased by $1231456s1%.  Lasts $1232893d.]?a446658[Chance on hit to cause your next $1235336u instances of Cleave damage to be increased by $1235337s1%. Lasts $1235336d.]?a446374[Chance on hit to cause your next $1235341u instances of Raptor Strike damage to be increased by $1235344s1%. Lasts $1235341d.]?a462814[Chance on hit to cause your next $1235348u instances of Holy damage to be increased by $1235349s1%. Lasts $1235348d.][The Crimson Cleaver does not respond to your presence, maybe another class could benefit from this?]", "hash": "507a64e8097762c4", "src": "db2@1.60.1.70338"}
+{"id": 1235321, "field": "name", "en": "Imbued Assault", "hash": "db122e8a6799e56c", "src": "db2@1.60.1.70338"}
+{"id": 1235321, "field": "description", "en": "Inflicts $s1 Fire damage and an additional $s2 Fire damage every $t2 sec for $d.\r\n", "hash": "7be2b1ea9f5bd772", "src": "db2@1.60.1.70338"}
+{"id": 1235321, "field": "aura", "en": "Inflicts $s2 Fire damage every $t2 sec.", "hash": "c2271fc2ea3e4cbd", "src": "db2@1.60.1.70338"}
+{"id": 1235322, "field": "name", "en": "Molten Armaments", "hash": "bf175b7078901f2a", "src": "db2@1.60.1.70338"}
+{"id": 1235322, "field": "description", "en": "Imbued weapons now cause melee attacks to inflict $1230996s1 additional Fire damage.", "hash": "b0d270d46cb09755", "src": "db2@1.60.1.70338"}
+{"id": 1235322, "field": "aura", "en": "Weapons are imbued with fire.", "hash": "a56b93161255870f", "src": "db2@1.60.1.70338"}
+{"id": 1235327, "field": "name", "en": "Decrepit Fever", "hash": "bac440117726ca2a", "src": "db2@1.60.1.70338"}
+{"id": 1235327, "field": "aura", "en": "Maximum health reduced by $s1%\r\nDeals $s2 nature damage every $t2 seconds.", "hash": "8611aea9a55d833a", "src": "db2@1.60.1.70338"}
+{"id": 1235328, "field": "name", "en": "Curse of Impotence", "hash": "8cd90cc5415c75bd", "src": "db2@1.60.1.70338"}
+{"id": 1235328, "field": "description", "en": "Decreases the Magical damage dealt by the target by $s1 for $d.", "hash": "ac9351771ca26d13", "src": "db2@1.60.1.70338"}
+{"id": 1235328, "field": "aura", "en": "Magical damage dealt is reduced by $s1%.", "hash": "fb9d37e0feeb2796", "src": "db2@1.60.1.70338"}
+{"id": 1235330, "field": "name", "en": "Crimson Crusade", "hash": "b8e84c07d7d23062", "src": "db2@1.60.1.70338"}
+{"id": 1235335, "field": "name", "en": "Crimson Crusade", "hash": "b8e84c07d7d23062", "src": "db2@1.60.1.70338"}
+{"id": 1235336, "field": "name", "en": "Crimson Crusade", "hash": "b8e84c07d7d23062", "src": "db2@1.60.1.70338"}
+{"id": 1235336, "field": "description", "en": "Your next $u instances of Cleave damage are increased by $s1%.  Lasts $d.", "hash": "af52e7a083298ffb", "src": "db2@1.60.1.70338"}
+{"id": 1235336, "field": "aura", "en": "Cleave damage dealt increased by ${$s1/$m2}%.", "hash": "4de31fc9d34516c8", "src": "db2@1.60.1.70338"}
+{"id": 1235337, "field": "name", "en": "Crimson Crusade", "hash": "b8e84c07d7d23062", "src": "db2@1.60.1.70338"}
+{"id": 1235340, "field": "name", "en": "Crimson Crusade", "hash": "b8e84c07d7d23062", "src": "db2@1.60.1.70338"}
+{"id": 1235341, "field": "name", "en": "Crimson Crusade", "hash": "b8e84c07d7d23062", "src": "db2@1.60.1.70338"}
+{"id": 1235341, "field": "description", "en": "Your next $u instances of Raptor Strike damage are increased by $s1%.  Lasts $d.", "hash": "19035894f69f14d9", "src": "db2@1.60.1.70338"}
+{"id": 1235341, "field": "aura", "en": "Raptor Strike damage dealt increased by ${$s1/$m2}%.", "hash": "322582771c566136", "src": "db2@1.60.1.70338"}
+{"id": 1235344, "field": "name", "en": "Crimson Crusade", "hash": "b8e84c07d7d23062", "src": "db2@1.60.1.70338"}
+{"id": 1235347, "field": "name", "en": "Crimson Crusade", "hash": "b8e84c07d7d23062", "src": "db2@1.60.1.70338"}
+{"id": 1235348, "field": "name", "en": "Crimson Crusade", "hash": "b8e84c07d7d23062", "src": "db2@1.60.1.70338"}
+{"id": 1235348, "field": "description", "en": "Your next $u instances of Holy damage are increased by $s1%.  Lasts $d.", "hash": "f4cb7e9c75baa229", "src": "db2@1.60.1.70338"}
+{"id": 1235348, "field": "aura", "en": "Holy damage dealt increased by ${$s1/$m2}%.", "hash": "7aa0a74b82cc66ac", "src": "db2@1.60.1.70338"}
+{"id": 1235349, "field": "name", "en": "Crimson Crusade", "hash": "b8e84c07d7d23062", "src": "db2@1.60.1.70338"}
+{"id": 1235351, "field": "name", "en": "Mercy by Fire", "hash": "9c12fff02c23a4b6", "src": "db2@1.60.1.70338"}
+{"id": 1235351, "field": "description", "en": "$?a435884[Chance on hit to cause your next $1235353u instances of Fire damage to be increased by $1232890s1%. Lasts $1235353d.]?a446658[Chance on hit to cause your next $1235355u instances of Whirlwind damage to be increased by $1235357s1%. Lasts $1235355d.]?a446374[Chance on hit to cause your next $1235359u instances of damage from your pet's special abilities to be increased by $1235361s1%. Lasts $1235359d.][]", "hash": "8572b3217e1bc1b8", "src": "db2@1.60.1.70338"}
+{"id": 1235353, "field": "name", "en": "Mercy by Fire", "hash": "9c12fff02c23a4b6", "src": "db2@1.60.1.70338"}
+{"id": 1235353, "field": "description", "en": "Your next $u instances of Fire damage are increased by $s1%.  Lasts $d.", "hash": "9bc5209767f6e979", "src": "db2@1.60.1.70338"}
+{"id": 1235353, "field": "aura", "en": "Fire damage dealt increased by ${$s1/$m2}%.", "hash": "c240d961b249fa32", "src": "db2@1.60.1.70338"}
+{"id": 1235354, "field": "name", "en": "Mercy by Fire", "hash": "9c12fff02c23a4b6", "src": "db2@1.60.1.70338"}
+{"id": 1235355, "field": "name", "en": "Mercy by Fire", "hash": "9c12fff02c23a4b6", "src": "db2@1.60.1.70338"}
+{"id": 1235355, "field": "description", "en": "Your next $u instances of Whirlwind damage are increased by $s1%.  Lasts $d.", "hash": "18bf73049fdd8cfa", "src": "db2@1.60.1.70338"}
+{"id": 1235355, "field": "aura", "en": "Whirlwind damage dealt increased by ${$s1/$m2}%.", "hash": "4eeda48fe8513d73", "src": "db2@1.60.1.70338"}
+{"id": 1235357, "field": "name", "en": "Mercy by Fire", "hash": "9c12fff02c23a4b6", "src": "db2@1.60.1.70338"}
+{"id": 1235358, "field": "name", "en": "Mercy by Fire", "hash": "9c12fff02c23a4b6", "src": "db2@1.60.1.70338"}
+{"id": 1235359, "field": "name", "en": "Mercy by Fire", "hash": "9c12fff02c23a4b6", "src": "db2@1.60.1.70338"}
+{"id": 1235359, "field": "description", "en": "Your next $u instances of damage from your pet's special abilities are increased by $s1%.  Lasts $d.", "hash": "745f2ea19c12fa9d", "src": "db2@1.60.1.70338"}
+{"id": 1235359, "field": "aura", "en": "Pet special ability damage dealt increased by ${$s1/$m2}%.", "hash": "bea11dc4afd150f7", "src": "db2@1.60.1.70338"}
+{"id": 1235361, "field": "name", "en": "Mercy by Fire", "hash": "9c12fff02c23a4b6", "src": "db2@1.60.1.70338"}
+{"id": 1235390, "field": "name", "en": "Mercy by Fire", "hash": "9c12fff02c23a4b6", "src": "db2@1.60.1.70338"}
+{"id": 1235390, "field": "description", "en": "Your next $u instances of damage from your pet's special abilities are increased by $s1%.  Lasts $d.", "hash": "745f2ea19c12fa9d", "src": "db2@1.60.1.70338"}
+{"id": 1235390, "field": "aura", "en": "Pet special ability damage dealt increased by ${$s1/$m2}%.", "hash": "bea11dc4afd150f7", "src": "db2@1.60.1.70338"}
+{"id": 1235413, "field": "name", "en": "(DNT) Power Up Cosmetic", "hash": "b5f16126e95e4129", "src": "db2@1.60.1.70338"}
+{"id": 1235421, "field": "name", "en": "Arcane Explosion", "hash": "147926cf0bf9df21", "src": "db2@1.60.1.70338"}
+{"id": 1235421, "field": "description", "en": "Causes an explosion of arcane magic around the caster, causing $s1 Arcane damage to all targets within $a1 yards.", "hash": "51d9ff5b0410d3ef", "src": "db2@1.60.1.70338"}
+{"id": 1235473, "field": "name", "en": "Restoration", "hash": "968110afb3b81a5a", "src": "db2@1.60.1.70338"}
+{"id": 1235492, "field": "name", "en": "[DNT] Tim's Test Visual", "hash": "f1b1fcb4e9cd16cb", "src": "db2@1.60.1.70338"}
+{"id": 1235493, "field": "name", "en": "Combo PROC Test", "hash": "64d9af6b8e6273d8", "src": "db2@1.60.1.70338"}
+{"id": 1235493, "field": "description", "en": "Casts a spell when you do something.", "hash": "ccd4b2bed15c5030", "src": "db2@1.60.1.70338"}
+{"id": 1235537, "field": "name", "en": "(DNT) Screen Shake", "hash": "79bdab6174d20e03", "src": "db2@1.60.1.70338"}
+{"id": 1235538, "field": "name", "en": "Charge", "hash": "024f52bd3f49c2c8", "src": "db2@1.60.1.70338"}
+{"id": 1235538, "field": "description", "en": "Charges an enemy, inflicting normal damage plus $s3 and stuns the opponent for $d.", "hash": "af4293e676932a45", "src": "db2@1.60.1.70338"}
+{"id": 1235539, "field": "name", "en": "(DNT) Screen Shake", "hash": "79bdab6174d20e03", "src": "db2@1.60.1.70338"}
+{"id": 1235570, "field": "name", "en": "Out of Bounds", "hash": "6be7cd0fcc6aa261", "src": "db2@1.60.1.70338"}
+{"id": 1235571, "field": "name", "en": "Out of Bounds", "hash": "6be7cd0fcc6aa261", "src": "db2@1.60.1.70338"}
+{"id": 1235681, "field": "name", "en": "Feral Dedication", "hash": "f5af97ecbd4a7d1f", "src": "db2@1.60.1.70338"}
+{"id": 1235681, "field": "description", "en": "Increases the damage caused by your Ferocious Bite by $s1%.", "hash": "e0beeda00255a4ab", "src": "db2@1.60.1.70338"}
+{"id": 1235689, "field": "name", "en": "Transformation", "hash": "f760ecd969461a04", "src": "db2@1.60.1.70338"}
+{"id": 1235703, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70338"}
+{"id": 1235705, "field": "name", "en": "Darkgraven Blade", "hash": "7d89da512ea16615", "src": "db2@1.60.1.70338"}
+{"id": 1235708, "field": "name", "en": "Darkgraven Blade", "hash": "7d89da512ea16615", "src": "db2@1.60.1.70338"}
+{"id": 1235749, "field": "name", "en": "Portal Effect: Scarlet Enclave", "hash": "fb5f086fecaab8f8", "src": "db2@1.60.1.70338"}
+{"id": 1235777, "field": "name", "en": "Light Torch", "hash": "44dcce5dc0b2a1ce", "src": "db2@1.60.1.70338"}
+{"id": 1235793, "field": "name", "en": "[DNT] Protected from Darkness", "hash": "b870b15d4b119705", "src": "db2@1.60.1.70338"}
+{"id": 1235793, "field": "description", "en": "Reduces damage from falling.", "hash": "879f36ddea9501a1", "src": "db2@1.60.1.70338"}
+{"id": 1235805, "field": "name", "en": "[DNT] Frozen Emote", "hash": "b5823774348b64ab", "src": "db2@1.60.1.70338"}
+{"id": 1235826, "field": "name", "en": "Lacerate", "hash": "2ddaf20b3d682230", "src": "db2@1.60.1.70338"}
+{"id": 1235826, "field": "description", "en": "Lacerates the enemy target, making them bleed for $o1 damage over $d plus $s2% weapon damage per existing application of Lacerate on the target. Causes a high amount of threat. This effect stacks up to $u times on the same target.", "hash": "58e2b59589e53f8f", "src": "db2@1.60.1.70338"}
+{"id": 1235826, "field": "aura", "en": "$w1 damage every $t sec.", "hash": "8522e0deacb4440d", "src": "db2@1.60.1.70338"}
+{"id": 1235827, "field": "name", "en": "Lacerate", "hash": "2ddaf20b3d682230", "src": "db2@1.60.1.70338"}
+{"id": 1235827, "field": "description", "en": "Lacerates the enemy target, making them bleed for $o1 damage over $d plus $s2% weapon damage per existing application of Lacerate on the target. Causes a high amount of threat. This effect stacks up to $u times on the same target.", "hash": "58e2b59589e53f8f", "src": "db2@1.60.1.70338"}
+{"id": 1235827, "field": "aura", "en": "$w1 damage every $t sec.", "hash": "8522e0deacb4440d", "src": "db2@1.60.1.70338"}
+{"id": 1235880, "field": "name", "en": "Climbing Rope", "hash": "360fc9d65f9469ec", "src": "db2@1.60.1.70338"}
+{"id": 1235882, "field": "name", "en": "Climbing Rope", "hash": "360fc9d65f9469ec", "src": "db2@1.60.1.70338"}

@@ -338,6 +338,30 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
 
+### 1.60.1.70291 → 1.60.1.70338 (2026-10-10)
+
+Quest cache: 2,986 records, 2,916 quests (the finished WFJScan scan: 4 passes, 8,957 ids asked, 2,986 answered);
+4 quests have new text (81570, 95817, 95818 and the title of 79096), three `<UNUSED>` placeholder quests (810, 814,
+7904) are answered and stay untranslated, and 7 quests an earlier build answered are not answered on 70338 (they keep
+their English and Japanese, [ADR-050](../adr/050-english-is-additive.md)). Client tables: 62, with the build's own
+hotfixes (ItemSparse 17 replaced, 4,706 added; SpellName and Spell 1 replaced; QuestV2 25 replaced; BroadcastText 1
+added); no layout hash changed. The wago.tools cross-check: nothing differs except five rows wago has and ours lacks
+(ItemSparse 285352 to 285354, SpellName and Spell 1318286, ItemEffect 237926 and 237927: a tabard, a backpack and a
+companion with its summon spell). The UI extract: 4,434 files, none changed. The served-text inventory: 10 columns
+changed (row counts only), none added or dropped; `make family-rows` found no new row. The gnome intro subtitles
+(BroadcastText 329279 to 329282) left the archive and keep their 70291 English and Japanese. The English Collector
+file held nothing newer than 70291 (364 entries, none rejected, nothing added).
+
+| Type | Reworded (shipped line now stale) | New English lines (to draft) | Not served on this build (English kept) | Drafted |
+|---|---|---|---|---|
+| quest | 0 | 10 (3 titles, 3 objectives, 3 descriptions, and the title of 79096) | 7 | 10, all with word lists where there is something to annotate (79096's title and 95817's title are names and ship in English letters) |
+| item | 0 | 9 items (names); 5 descriptions still Classic Era English | 12 | 1: item 6723 gained a Forever tooltip, and its hand-written line (a different stat with a fixed number) was ruled out and redrafted |
+| spell | 0 | 0 | 108 | none |
+| ui, gossip, book, objective, area | 0 | 0 | ui 168 | none |
+
+Voice: 3 files made, for the three new quest descriptions (read by the narrator: no quest giver in the open database
+yet).
+
 ### 1.60.1.70245 → 1.60.1.70291 (2026-10-09)
 
 Quest cache: 2,880 records, 2,809 quests (the finished WFJScan scan: 4 passes, 9,421 ids asked, 2,880 answered);

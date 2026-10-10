@@ -1,172 +1,172 @@
-{"id": 260166, "field": "name", "en": "Rageroar's Best Club", "hash": "531742a086208f74", "src": "db2@1.60.1.70291"}
-{"id": 260167, "field": "name", "en": "Adventurer's Lost Boots", "hash": "b48b568351ebc0bc", "src": "db2@1.60.1.70291"}
-{"id": 260167, "field": "description", "en": "Inscribed on the boot tongue: ...16, 23...", "hash": "868b9272d2ac2a8c", "src": "db2@1.60.1.70291"}
-{"id": 260168, "field": "name", "en": "Mourner's Shroud", "hash": "360e37da78cb52b0", "src": "db2@1.60.1.70291"}
-{"id": 260169, "field": "name", "en": "Amice of Sorrow", "hash": "103ea2caee2a0b20", "src": "db2@1.60.1.70291"}
-{"id": 260171, "field": "name", "en": "Timbermaw Prayer Beads", "hash": "b21528ff331b25c6", "src": "db2@1.60.1.70291"}
-{"id": 260172, "field": "name", "en": "Assassin's Dagger", "hash": "a9856d785540e96d", "src": "db2@1.60.1.70291"}
-{"id": 260176, "field": "name", "en": "Untainted Seed", "hash": "a5aa7b2e834d7a2a", "src": "db2@1.60.1.70291"}
-{"id": 260178, "field": "name", "en": "Honor Guard's Plate", "hash": "9c8bb26d9153211a", "src": "db2@1.60.1.70291"}
-{"id": 260179, "field": "name", "en": "Barkwoven Belt", "hash": "0e85504f4ed40936", "src": "db2@1.60.1.70291"}
-{"id": 260180, "field": "name", "en": "Scout's Dagger", "hash": "0220e43df8b15c3c", "src": "db2@1.60.1.70291"}
-{"id": 260181, "field": "name", "en": "Sentinel's Plate", "hash": "cc5bb23ee329a07e", "src": "db2@1.60.1.70291"}
-{"id": 260182, "field": "name", "en": "Elunar Belt", "hash": "4382a0a62ae3c6af", "src": "db2@1.60.1.70291"}
-{"id": 260183, "field": "name", "en": "Sacred Bangle", "hash": "e21df8b2a4a7c22b", "src": "db2@1.60.1.70291"}
-{"id": 260184, "field": "name", "en": "Cliff Walker's Cinch", "hash": "c7fb3c9b8c4d483f", "src": "db2@1.60.1.70291"}
-{"id": 260185, "field": "name", "en": "Hippogryph Hide Boots", "hash": "ad7b8541cdd25cb1", "src": "db2@1.60.1.70291"}
-{"id": 260186, "field": "name", "en": "Darkblade", "hash": "e285cb9b12e46d30", "src": "db2@1.60.1.70291"}
-{"id": 260186, "field": "description", "en": "Sends a shadowy bolt at the enemy causing $s1 Shadow damage.", "hash": "eeaaaf002d0d6463", "src": "db2@1.60.1.70291"}
-{"id": 260195, "field": "name", "en": "Headdress of the Damned", "hash": "7d85268902557548", "src": "db2@1.60.1.70291"}
-{"id": 260196, "field": "name", "en": "Belt of Shadows", "hash": "221d821ab980d52b", "src": "db2@1.60.1.70291"}
-{"id": 260201, "field": "name", "en": "Highborne Memory Crystal", "hash": "29f00b762f66c70f", "src": "db2@1.60.1.70291"}
-{"id": 260205, "field": "name", "en": "Highborne Research Tablet", "hash": "86faa0e2d1fd4db3", "src": "db2@1.60.1.70291"}
-{"id": 260205, "field": "description", "en": "Chance on hit to deal $1265634s1 Arcane damage. Deals $s1 times as much damage to Naga and Satyrs.", "hash": "8c73a969295e488e", "src": "db2@1.60.1.70291"}
-{"id": 260207, "field": "name", "en": "Staff of Archmage Selwyn", "hash": "07f5e0cd123faaa2", "src": "db2@1.60.1.70291"}
-{"id": 260208, "field": "name", "en": "Prelate's Orb", "hash": "b33ca1c11a8f3279", "src": "db2@1.60.1.70291"}
-{"id": 260209, "field": "name", "en": "Truesong's Hammer", "hash": "2f6d319ddf427103", "src": "db2@1.60.1.70291"}
-{"id": 260210, "field": "name", "en": "A Bigger Shield", "hash": "0bc92d2ec5165fdb", "src": "db2@1.60.1.70291"}
-{"id": 260211, "field": "name", "en": "Panic Hands", "hash": "cec0f51dd23ac6c8", "src": "db2@1.60.1.70291"}
-{"id": 260212, "field": "name", "en": "Bad Hat", "hash": "c2eaba24d4735455", "src": "db2@1.60.1.70291"}
-{"id": 260236, "field": "name", "en": "Scribbled Directions to Sulfur Vents", "hash": "c6b3b8526d14ccfb", "src": "db2@1.60.1.70291"}
-{"id": 260236, "field": "description", "en": "A hastily scrawled list of locations for prospecting.", "hash": "1c674d4c8f0eecf1", "src": "db2@1.60.1.70291"}
-{"id": 260237, "field": "name", "en": "Virulent Blood of Agamaggan", "hash": "92ea32aedec1403e", "src": "db2@1.60.1.70291"}
-{"id": 260237, "field": "description", "en": "Whether it is actually the blood of the fallen god is unclear, but what is certain is how eager it seems to escape the vial.", "hash": "b462a23cfcfee8c3", "src": "db2@1.60.1.70291"}
-{"id": 260244, "field": "name", "en": "Benevolent Bouquet", "hash": "9115a8369360cdc2", "src": "db2@1.60.1.70291"}
-{"id": 260244, "field": "description", "en": "Do quilboar even like flowers?", "hash": "a49d59922c0b3830", "src": "db2@1.60.1.70291"}
-{"id": 260245, "field": "name", "en": "Vibrant Flower", "hash": "c5da697b3edb6ac4", "src": "db2@1.60.1.70291"}
-{"id": 260245, "field": "description", "en": "Assemble $s2 Vibrant Flowers to create a Benevolent Bouquet.\nIts beauty is a stark contrast from the gardens in which it grew.", "hash": "7f166c3e30ce1786", "src": "db2@1.60.1.70291"}
-{"id": 260247, "field": "name", "en": "Forlorn Necklace", "hash": "a52640681b274761", "src": "db2@1.60.1.70291"}
-{"id": 260247, "field": "description", "en": "Once an enchanted necklace that sustained life in the gardens of Shen'dralas. Whatever magic it once contained has since been depleted.", "hash": "80eb4bb80f72d7a9", "src": "db2@1.60.1.70291"}
-{"id": 260307, "field": "name", "en": "Hyjal Postal Satchel", "hash": "3da2cb3a0046ecf0", "src": "db2@1.60.1.70291"}
-{"id": 260307, "field": "description", "en": "Neither snow nor rain nor heat nor gloom of night...", "hash": "0ad73fee6b9325ed", "src": "db2@1.60.1.70291"}
-{"id": 260347, "field": "name", "en": "Tattered Journal", "hash": "20929582dbd8032f", "src": "db2@1.60.1.70291"}
-{"id": 260347, "field": "description", "en": "Most of the pages are missing.", "hash": "8eb6ce67e643788d", "src": "db2@1.60.1.70291"}
-{"id": 260348, "field": "name", "en": "Barely Legible Journal Entry, Page I", "hash": "6050d7fe7967ade5", "src": "db2@1.60.1.70291"}
-{"id": 260348, "field": "description", "en": "Add a missing page to Evenshade's journal.", "hash": "7643c4e28cdebdb0", "src": "db2@1.60.1.70291"}
-{"id": 260349, "field": "name", "en": "Barely Legible Journal Entry, Page II", "hash": "495e8838422f928c", "src": "db2@1.60.1.70291"}
-{"id": 260349, "field": "description", "en": "Add a missing page to Evenshade's journal.", "hash": "7643c4e28cdebdb0", "src": "db2@1.60.1.70291"}
-{"id": 260350, "field": "name", "en": "Barely Legible Journal Entry, Page III", "hash": "8b5fb5aaee8f4d62", "src": "db2@1.60.1.70291"}
-{"id": 260350, "field": "description", "en": "Add a missing page to Evenshade's journal.", "hash": "7643c4e28cdebdb0", "src": "db2@1.60.1.70291"}
-{"id": 260351, "field": "name", "en": "Barely Legible Journal Entry, Page IV", "hash": "495e8845422f9299", "src": "db2@1.60.1.70291"}
-{"id": 260351, "field": "description", "en": "Add a missing page to Evenshade's journal.", "hash": "7643c4e28cdebdb0", "src": "db2@1.60.1.70291"}
-{"id": 260352, "field": "name", "en": "Barely Legible Journal Entry, Page V", "hash": "6050d80b7967adf2", "src": "db2@1.60.1.70291"}
-{"id": 260352, "field": "description", "en": "Add a missing page to Evenshade's journal.", "hash": "7643c4e28cdebdb0", "src": "db2@1.60.1.70291"}
-{"id": 260353, "field": "name", "en": "Barely Legible Journal Entry, Page VI", "hash": "495e8edf423130f9", "src": "db2@1.60.1.70291"}
-{"id": 260353, "field": "description", "en": "Add a missing page to Evenshade's journal.", "hash": "7643c4e28cdebdb0", "src": "db2@1.60.1.70291"}
-{"id": 260354, "field": "name", "en": "Barely Legible Journal Entry, Page VII", "hash": "8b631d1f222abe40", "src": "db2@1.60.1.70291"}
-{"id": 260354, "field": "description", "en": "Add a missing page to Evenshade's journal.", "hash": "7643c4e28cdebdb0", "src": "db2@1.60.1.70291"}
-{"id": 260356, "field": "name", "en": "Barely Legible Journal Entry, Page VIII", "hash": "53b7e889349b3eda", "src": "db2@1.60.1.70291"}
-{"id": 260356, "field": "description", "en": "Add a missing page to Evenshade's journal.", "hash": "7643c4e28cdebdb0", "src": "db2@1.60.1.70291"}
-{"id": 260357, "field": "name", "en": "Barely Legible Journal Entry, Page IX", "hash": "495e8847422f929b", "src": "db2@1.60.1.70291"}
-{"id": 260357, "field": "description", "en": "Add a missing page to Evenshade's journal.", "hash": "7643c4e28cdebdb0", "src": "db2@1.60.1.70291"}
-{"id": 260358, "field": "name", "en": "Barely Legible Journal Entry, Page X", "hash": "6050d80d7967adf4", "src": "db2@1.60.1.70291"}
-{"id": 260358, "field": "description", "en": "Add a missing page to Evenshade's journal.", "hash": "7643c4e28cdebdb0", "src": "db2@1.60.1.70291"}
-{"id": 260452, "field": "name", "en": "Courier's Shipment", "hash": "5e7f33ec9cd802e5", "src": "db2@1.60.1.70291"}
-{"id": 260466, "field": "name", "en": "A Blood Spattered Letter", "hash": "fa1312a290773800", "src": "db2@1.60.1.70291"}
-{"id": 260518, "field": "name", "en": "Azore's Transcription", "hash": "ff0afa320433e889", "src": "db2@1.60.1.70291"}
-{"id": 260518, "field": "description", "en": "Gimashi's findings on draenethyst; organized and edited for clarity.", "hash": "0212ff72af974664", "src": "db2@1.60.1.70291"}
-{"id": 260623, "field": "name", "en": "Candied Fruit Sampler", "hash": "76591f78c57ac741", "src": "db2@1.60.1.70291"}
-{"id": 260623, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70291"}
-{"id": 260624, "field": "name", "en": "Pristine Peach", "hash": "842f850b8908c334", "src": "db2@1.60.1.70291"}
-{"id": 260624, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70291"}
-{"id": 260625, "field": "name", "en": "Garnished Rice Cake", "hash": "2bf5f39ceeeaf71a", "src": "db2@1.60.1.70291"}
-{"id": 260625, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70291"}
-{"id": 260627, "field": "name", "en": "Savory Shen'dralar Steak", "hash": "80a1371b1e483d21", "src": "db2@1.60.1.70291"}
-{"id": 260627, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70291"}
-{"id": 260628, "field": "name", "en": "Stuffed Pumpkin", "hash": "88e12cbbf824a623", "src": "db2@1.60.1.70291"}
-{"id": 260628, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70291"}
-{"id": 260629, "field": "name", "en": "Spectral Spirits", "hash": "88938de1d0a9a71f", "src": "db2@1.60.1.70291"}
-{"id": 260629, "field": "description", "en": "A fairly weak alcoholic beverage.", "hash": "213802eef37287e5", "src": "db2@1.60.1.70291"}
-{"id": 260631, "field": "name", "en": "Arcane Wine", "hash": "8fb7e4df4cfd6e7f", "src": "db2@1.60.1.70291"}
-{"id": 260631, "field": "description", "en": "A typical alcoholic beverage.", "hash": "66a23e91fe49d4ca", "src": "db2@1.60.1.70291"}
-{"id": 260632, "field": "name", "en": "Slushberry Brandy", "hash": "54a6d5ddd21fdbb8", "src": "db2@1.60.1.70291"}
-{"id": 260632, "field": "description", "en": "A typical alcoholic beverage.", "hash": "66a23e91fe49d4ca", "src": "db2@1.60.1.70291"}
-{"id": 260633, "field": "name", "en": "Sip of Lemonale", "hash": "efe5a1ab0d749418", "src": "db2@1.60.1.70291"}
-{"id": 260633, "field": "description", "en": "A strong alcoholic beverage.", "hash": "6f5754c9fcdc96aa", "src": "db2@1.60.1.70291"}
-{"id": 260704, "field": "name", "en": "Polished Bronze Safety Goggles", "hash": "1fc39ae7a9e07bcb", "src": "db2@1.60.1.70291"}
-{"id": 260784, "field": "name", "en": "SAF-T Tabs", "hash": "5f103d968651390e", "src": "db2@1.60.1.70291"}
-{"id": 260784, "field": "description", "en": "SAF-T brand tabs make it SAF to hand out dynamite to all your friends!", "hash": "98f5345b2a352f16", "src": "db2@1.60.1.70291"}
-{"id": 260792, "field": "name", "en": "SAF-T Dynamite", "hash": "b8bdba31a3b25721", "src": "db2@1.60.1.70291"}
-{"id": 260792, "field": "description", "en": "Inflicts $s1 Fire damage in a 5 yd radius.\nEasy to throw, and SAF-T too!", "hash": "03ef7ef0353b3ef9", "src": "db2@1.60.1.70291"}
-{"id": 260793, "field": "name", "en": "SAF-T Copper Bomb", "hash": "69d50df5d806557d", "src": "db2@1.60.1.70291"}
-{"id": 260793, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a 3 yd radius for $d. Any damage will break the effect.\nSAF-T Brand bombs *almost* never blow up in your hands (or your paws!)", "hash": "9d043dfd4e29c14d", "src": "db2@1.60.1.70291"}
-{"id": 260794, "field": "name", "en": "EZ-Thro Wrap", "hash": "bc6bfc440997e240", "src": "db2@1.60.1.70291"}
-{"id": 260795, "field": "name", "en": "EZ-Thro Copper Bomb XL", "hash": "f30c7e05dbeea927", "src": "db2@1.60.1.70291"}
-{"id": 260795, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a 5 yd radius for $d. Any damage will break the effect.", "hash": "109f3d4746b30855", "src": "db2@1.60.1.70291"}
-{"id": 260796, "field": "name", "en": "No Slip SAF-T Padding", "hash": "626aa09cbd594916", "src": "db2@1.60.1.70291"}
-{"id": 260796, "field": "description", "en": "SAF-T Padding prevents those easy throwing accidents.", "hash": "ee6bfa8feac0acdb", "src": "db2@1.60.1.70291"}
-{"id": 260797, "field": "name", "en": "SAF-T Bronze Bomb", "hash": "4db3e710f7401716", "src": "db2@1.60.1.70291"}
-{"id": 260797, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a 3 yd radius for $d. Any damage will break the effect.", "hash": "1f15bb8e35cef00c", "src": "db2@1.60.1.70291"}
-{"id": 260798, "field": "name", "en": "SAF-T Jumbo Dynamite", "hash": "afbde7f157557a61", "src": "db2@1.60.1.70291"}
-{"id": 260798, "field": "description", "en": "Inflicts $s1 Fire damage in a 5 yd radius.\nIf it's easy to throw, it's not SAF-T!", "hash": "f2c5be9b097325cd", "src": "db2@1.60.1.70291"}
-{"id": 260799, "field": "name", "en": "SAF-T Bell", "hash": "5ca7d9eba4e45e3d", "src": "db2@1.60.1.70291"}
-{"id": 260799, "field": "description", "en": "Do you know where your Sheep is?! SAF-T Knows.", "hash": "c32aa110fe3871ef", "src": "db2@1.60.1.70291"}
-{"id": 260800, "field": "name", "en": "Shafety Sheep", "hash": "b2536eca724174d0", "src": "db2@1.60.1.70291"}
-{"id": 260800, "field": "description", "en": "Summons an Explosive Sheep which will charge at a nearby enemy and explode for $4050s1 damage. Lasts for 3 min or until it explodes.\nGuaranteed to blow up only where it's SAF!", "hash": "8630c13073f69c0f", "src": "db2@1.60.1.70291"}
-{"id": 260801, "field": "name", "en": "EZ-Thro Fireproof Fuse", "hash": "93ffcdf823d5ba1a", "src": "db2@1.60.1.70291"}
-{"id": 260801, "field": "description", "en": "Guaranteed not to burn!", "hash": "a4ec5a4b4a6ab6b3", "src": "db2@1.60.1.70291"}
-{"id": 260802, "field": "name", "en": "EZ-Thro Bronze Mortar", "hash": "bf4f90940da5d3f1", "src": "db2@1.60.1.70291"}
-{"id": 260802, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a 5 yd radius for $d. Any damage will break the effect.\nThro mo mo tar!", "hash": "4f16c3c93bb8dca7", "src": "db2@1.60.1.70291"}
-{"id": 260803, "field": "name", "en": "EZ-Thro Grenade", "hash": "0ca9193be4715c40", "src": "db2@1.60.1.70291"}
-{"id": 260803, "field": "description", "en": "Inflicts $s1 Fire damage in a 5 yd radius.\nWho needs safety when it's this easy to throw?", "hash": "6076ad34b0092ab1", "src": "db2@1.60.1.70291"}
-{"id": 260804, "field": "name", "en": "SAF-T Casing", "hash": "e62ca4bcea4138c6", "src": "db2@1.60.1.70291"}
-{"id": 260804, "field": "description", "en": "Extra padding for SAF-T!", "hash": "2c48d4209eb9cea8", "src": "db2@1.60.1.70291"}
-{"id": 260805, "field": "name", "en": "SAF-T Bomb", "hash": "5caa78becc97239e", "src": "db2@1.60.1.70291"}
-{"id": 260805, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a 5 yd radius for $d. Any damage will break the effect.\nS. A. F. T. B. O. M. B. SAF-T. Bomb.", "hash": "ebf1711d964b2bc9", "src": "db2@1.60.1.70291"}
-{"id": 260806, "field": "name", "en": "Emergency Field Cloak", "hash": "9ce19f0a0d2193ef", "src": "db2@1.60.1.70291"}
-{"id": 260806, "field": "description", "en": "Gives invisibility for $d1.\nSAF-T means not getting caught.", "hash": "64ccf8e137958d21", "src": "db2@1.60.1.70291"}
-{"id": 260807, "field": "name", "en": "Compact Critter Carrier", "hash": "13b08ca8e879e38c", "src": "db2@1.60.1.70291"}
-{"id": 260807, "field": "description", "en": "Place a Compact Critter Carrier for $d that allows Hunters in your group to access their stabled pets.", "hash": "fe7715de9db31031", "src": "db2@1.60.1.70291"}
-{"id": 260808, "field": "name", "en": "EZ-Thro Tru-Trigger", "hash": "54a30ed69db3753f", "src": "db2@1.60.1.70291"}
-{"id": 260808, "field": "description", "en": "EZ to use and almost never misfires!", "hash": "bd2ae103e979c3e7", "src": "db2@1.60.1.70291"}
-{"id": 260809, "field": "name", "en": "Tru-Trigger Frag Bomb", "hash": "19922d57bc6e181a", "src": "db2@1.60.1.70291"}
-{"id": 260809, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in an 8 yd radius for $d. Any damage will break the effect.\nTru-Trigger frags enemies, not in your hands.", "hash": "d4f89e18591648fc", "src": "db2@1.60.1.70291"}
-{"id": 260810, "field": "name", "en": "SAF-T Disposable Parachute", "hash": "3b938c8933406a7c", "src": "db2@1.60.1.70291"}
-{"id": 260810, "field": "description", "en": "Reduces your fall speed for $d.\nSAF-T in case you need to jump.", "hash": "be09a55350d4486a", "src": "db2@1.60.1.70291"}
-{"id": 260811, "field": "name", "en": "Gnomish Army Knife", "hash": "526c421c487b1df7", "src": "db2@1.60.1.70291"}
-{"id": 260811, "field": "description", "en": "It's got everything: a spanner, a wrench, a hammer... even a mining pick.", "hash": "46133832811d7ffa", "src": "db2@1.60.1.70291"}
-{"id": 260812, "field": "name", "en": "Loot-A-Rang", "hash": "e6238b37bbd59db0", "src": "db2@1.60.1.70291"}
-{"id": 260812, "field": "description", "en": "Retrieves the loot from a nearby corpse.", "hash": "eb0158d63b90dd2c", "src": "db2@1.60.1.70291"}
-{"id": 260813, "field": "name", "en": "SAF-T Tube", "hash": "5f157a3cd5b68414", "src": "db2@1.60.1.70291"}
-{"id": 260813, "field": "description", "en": "Prevents accidental oxygen exposure. That wouldn't be SAF.", "hash": "caa28cbfb973bd8d", "src": "db2@1.60.1.70291"}
-{"id": 260814, "field": "name", "en": "SAF-T Clever Dynamite", "hash": "27656d47c8dafc7f", "src": "db2@1.60.1.70291"}
-{"id": 260814, "field": "description", "en": "Inflicts $s1 Fire damage in a 5 yd radius.\nSAF-T isn't dense. It's clever!", "hash": "6f0df3ed496b30c7", "src": "db2@1.60.1.70291"}
-{"id": 260815, "field": "name", "en": "EZ-Thro Shell", "hash": "23b541dee10ab836", "src": "db2@1.60.1.70291"}
-{"id": 260815, "field": "description", "en": "Encase your explosives in EZ to Thro thorium-plated shells.", "hash": "b5bfed554551904f", "src": "db2@1.60.1.70291"}
-{"id": 260816, "field": "name", "en": "EZ-Thro Thorium Grenade", "hash": "c12c35ced5e8f142", "src": "db2@1.60.1.70291"}
-{"id": 260816, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets for $d in a 3 yd radius. Any damage will break the effect.\nAnyone can use grenades with EZ-Thro!", "hash": "759cf92a536b88cb", "src": "db2@1.60.1.70291"}
-{"id": 260817, "field": "name", "en": "EZ-Thro Dark Bomb", "hash": "28c06a34e236ceb7", "src": "db2@1.60.1.70291"}
-{"id": 260817, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a $a1 yd radius for $d. Any damage will break the effect.\nSo EZ, you can Thro it in the dark.", "hash": "61cf766f6cf51331", "src": "db2@1.60.1.70291"}
-{"id": 260818, "field": "name", "en": "EZ-Thro Mana Bomb", "hash": "9a8fdb048db77f48", "src": "db2@1.60.1.70291"}
-{"id": 260818, "field": "description", "en": "Burns $s1 mana from those in the blast radius and deals 50% of the mana drained in damage to the target. Also Silences targets in the blast for $d.", "hash": "d08b899999e4054a", "src": "db2@1.60.1.70291"}
-{"id": 260819, "field": "name", "en": "EZ-Thro Field Transporter: Gadgetzan", "hash": "16607a54bea93eed", "src": "db2@1.60.1.70291"}
-{"id": 260819, "field": "description", "en": "Safely transport yourself to Gadgetzan in Tanaris!    Emphasis on Safe!   Yup, nothing bad could ever happen while using this device!", "hash": "a6aec356f4ad3813", "src": "db2@1.60.1.70291"}
-{"id": 260820, "field": "name", "en": "SAF-T Emergency Ripper: Everlook", "hash": "d748982e7accdc46", "src": "db2@1.60.1.70291"}
-{"id": 260820, "field": "description", "en": "Rips the dimensional walls asunder and transports you to Everlook in Winterspring.   There are technical problems that sometimes occur, but that's what Goblin Engineering is all about!", "hash": "e4f8b06f33dc8dea", "src": "db2@1.60.1.70291"}
-{"id": 260821, "field": "name", "en": "EZ and SAF Field Transporter: Mt. Hyjal", "hash": "0d55e08bdf030715", "src": "db2@1.60.1.70291"}
-{"id": 260821, "field": "description", "en": "Rips the dimensional walls asunder and transports you to Kaylaena's Workshop on Mount Hyjal. Technical problems have a high chance to occur with this mad combination of goblin and gnomish engineering.\nNot only combining Goblin and Gnome tech, but also combining plans from the EZ-Thro and SAF-T corporations. Who knows if this will even work?", "hash": "4c55dbf713a48aa7", "src": "db2@1.60.1.70291"}
-{"id": 260822, "field": "name", "en": "Ultrasafe Rechargeable Battery", "hash": "e778a8545deff705", "src": "db2@1.60.1.70291"}
-{"id": 260822, "field": "description", "en": "Restores $s1 charges to a SAF-T or EZ-Thro brand device in your possession that does not involve explosions. It would be completely Unsafe with explosives.", "hash": "848cf013b5cb9f61", "src": "db2@1.60.1.70291"}
-{"id": 260823, "field": "name", "en": "Dimensional Transporter - Mt. Hyjal", "hash": "3fe3553d619798e1", "src": "db2@1.60.1.70291"}
-{"id": 260823, "field": "description", "en": "Rips the dimensional walls asunder and transports you to Kaylaena's Workshop on Mount Hyjal. Technical problems have a high chance to occur with this mad combination of goblin and gnomish engineering.\nA dangerous amalgamation of Goblin and Gnome engineering techniques.", "hash": "a3c2df842f06d9fe", "src": "db2@1.60.1.70291"}
-{"id": 260824, "field": "name", "en": "Gnomish Poultryizer", "hash": "2193b63ceff2e18c", "src": "db2@1.60.1.70291"}
-{"id": 260824, "field": "description", "en": "Turns the target into a chicken for $1270942d. Well, that is assuming the transmogrification polarity has not been reversed...", "hash": "4ecdd5b21a94da12", "src": "db2@1.60.1.70291"}
-{"id": 260825, "field": "name", "en": "Ultralight Goblin Glider", "hash": "dcdf53dbc18205ca", "src": "db2@1.60.1.70291"}
-{"id": 260825, "field": "description", "en": "Glide downward through the air for $1271020d while controlling your direction of travel.", "hash": "0e9703cc3cf54963", "src": "db2@1.60.1.70291"}
-{"id": 260826, "field": "name", "en": "Gnomish Weather Machine NYI", "hash": "d6e260aba8523079", "src": "db2@1.60.1.70291"}
-{"id": 260827, "field": "name", "en": "Stealthman 52", "hash": "1b6a33278ab1a7c6", "src": "db2@1.60.1.70291"}
-{"id": 260827, "field": "description", "en": "Cloaks the user in a stealth field for up to $d. Cannot be used in combat. The field lasts for up to ${$m4/1000} sec after moving.\nUsed by real secret agents.", "hash": "fc7d7a887bb458e2", "src": "db2@1.60.1.70291"}
-{"id": 260828, "field": "name", "en": "SAF-T Nitro Boosts", "hash": "2a8457a05789ce28", "src": "db2@1.60.1.70291"}
-{"id": 260828, "field": "description", "en": "$@spelldesc1225987\nRocket to safety with SAF-T.", "hash": "24b3dfe7ea7a6653", "src": "db2@1.60.1.70291"}
-{"id": 260829, "field": "name", "en": "EZ-Thro Magnetic Displacer", "hash": "ed811ca6ec37b4c9", "src": "db2@1.60.1.70291"}
-{"id": 260829, "field": "description", "en": "$@spelldesc1226007\nEZ-Thro corporation not responsible for magnets preventing grenades from being thrown.", "hash": "7c2a433aae6014a9", "src": "db2@1.60.1.70291"}
-{"id": 260830, "field": "name", "en": "SAF-T Teleport", "hash": "6176a9c3e31eebca", "src": "db2@1.60.1.70291"}
-{"id": 260830, "field": "description", "en": "$@spelldesc1225960\nTeleport to SAF-T!", "hash": "df16b971aa993f88", "src": "db2@1.60.1.70291"}
-{"id": 260880, "field": "name", "en": "Air Construct Core", "hash": "6e164ffade0474fe", "src": "db2@1.60.1.70291"}
-{"id": 260880, "field": "description", "en": "The glowing orb seems to be looking at you, following your movements with quiet curiosity.", "hash": "0b957eb6d69a49a2", "src": "db2@1.60.1.70291"}
-{"id": 260881, "field": "name", "en": "Crystallized Lightning", "hash": "a4b8ef89fdd62adb", "src": "db2@1.60.1.70291"}
-{"id": 260881, "field": "description", "en": "The surface of this object is smooth to the touch and makes the hair on the back of your neck stand up when you hold it.", "hash": "a785cc8295e32f6c", "src": "db2@1.60.1.70291"}
-{"id": 260883, "field": "name", "en": "Enchanted Gyrozephyr", "hash": "ad11009b220d8862", "src": "db2@1.60.1.70291"}
-{"id": 260883, "field": "description", "en": "This object softly vibrates, constantly in a state of perpetual motion. If you try to hold it still, the force it exerts increases greatly in intensity.", "hash": "81e5fb2d2b9d2d45", "src": "db2@1.60.1.70291"}
-{"id": 260897, "field": "name", "en": "(DNT) Moonglaive", "hash": "c4b251e518d6a77d", "src": "db2@1.60.1.70291"}
-{"id": 260927, "field": "name", "en": "Rusted Construct Parts", "hash": "dd7adfa7ffb9a366", "src": "db2@1.60.1.70291"}
+{"id": 260166, "field": "name", "en": "Rageroar's Best Club", "hash": "531742a086208f74", "src": "db2@1.60.1.70338"}
+{"id": 260167, "field": "name", "en": "Adventurer's Lost Boots", "hash": "b48b568351ebc0bc", "src": "db2@1.60.1.70338"}
+{"id": 260167, "field": "description", "en": "Inscribed on the boot tongue: ...16, 23...", "hash": "868b9272d2ac2a8c", "src": "db2@1.60.1.70338"}
+{"id": 260168, "field": "name", "en": "Mourner's Shroud", "hash": "360e37da78cb52b0", "src": "db2@1.60.1.70338"}
+{"id": 260169, "field": "name", "en": "Amice of Sorrow", "hash": "103ea2caee2a0b20", "src": "db2@1.60.1.70338"}
+{"id": 260171, "field": "name", "en": "Timbermaw Prayer Beads", "hash": "b21528ff331b25c6", "src": "db2@1.60.1.70338"}
+{"id": 260172, "field": "name", "en": "Assassin's Dagger", "hash": "a9856d785540e96d", "src": "db2@1.60.1.70338"}
+{"id": 260176, "field": "name", "en": "Untainted Seed", "hash": "a5aa7b2e834d7a2a", "src": "db2@1.60.1.70338"}
+{"id": 260178, "field": "name", "en": "Honor Guard's Plate", "hash": "9c8bb26d9153211a", "src": "db2@1.60.1.70338"}
+{"id": 260179, "field": "name", "en": "Barkwoven Belt", "hash": "0e85504f4ed40936", "src": "db2@1.60.1.70338"}
+{"id": 260180, "field": "name", "en": "Scout's Dagger", "hash": "0220e43df8b15c3c", "src": "db2@1.60.1.70338"}
+{"id": 260181, "field": "name", "en": "Sentinel's Plate", "hash": "cc5bb23ee329a07e", "src": "db2@1.60.1.70338"}
+{"id": 260182, "field": "name", "en": "Elunar Belt", "hash": "4382a0a62ae3c6af", "src": "db2@1.60.1.70338"}
+{"id": 260183, "field": "name", "en": "Sacred Bangle", "hash": "e21df8b2a4a7c22b", "src": "db2@1.60.1.70338"}
+{"id": 260184, "field": "name", "en": "Cliff Walker's Cinch", "hash": "c7fb3c9b8c4d483f", "src": "db2@1.60.1.70338"}
+{"id": 260185, "field": "name", "en": "Hippogryph Hide Boots", "hash": "ad7b8541cdd25cb1", "src": "db2@1.60.1.70338"}
+{"id": 260186, "field": "name", "en": "Darkblade", "hash": "e285cb9b12e46d30", "src": "db2@1.60.1.70338"}
+{"id": 260186, "field": "description", "en": "Sends a shadowy bolt at the enemy causing $s1 Shadow damage.", "hash": "eeaaaf002d0d6463", "src": "db2@1.60.1.70338"}
+{"id": 260195, "field": "name", "en": "Headdress of the Damned", "hash": "7d85268902557548", "src": "db2@1.60.1.70338"}
+{"id": 260196, "field": "name", "en": "Belt of Shadows", "hash": "221d821ab980d52b", "src": "db2@1.60.1.70338"}
+{"id": 260201, "field": "name", "en": "Highborne Memory Crystal", "hash": "29f00b762f66c70f", "src": "db2@1.60.1.70338"}
+{"id": 260205, "field": "name", "en": "Highborne Research Tablet", "hash": "86faa0e2d1fd4db3", "src": "db2@1.60.1.70338"}
+{"id": 260205, "field": "description", "en": "Chance on hit to deal $1265634s1 Arcane damage. Deals $s1 times as much damage to Naga and Satyrs.", "hash": "8c73a969295e488e", "src": "db2@1.60.1.70338"}
+{"id": 260207, "field": "name", "en": "Staff of Archmage Selwyn", "hash": "07f5e0cd123faaa2", "src": "db2@1.60.1.70338"}
+{"id": 260208, "field": "name", "en": "Prelate's Orb", "hash": "b33ca1c11a8f3279", "src": "db2@1.60.1.70338"}
+{"id": 260209, "field": "name", "en": "Truesong's Hammer", "hash": "2f6d319ddf427103", "src": "db2@1.60.1.70338"}
+{"id": 260210, "field": "name", "en": "A Bigger Shield", "hash": "0bc92d2ec5165fdb", "src": "db2@1.60.1.70338"}
+{"id": 260211, "field": "name", "en": "Panic Hands", "hash": "cec0f51dd23ac6c8", "src": "db2@1.60.1.70338"}
+{"id": 260212, "field": "name", "en": "Bad Hat", "hash": "c2eaba24d4735455", "src": "db2@1.60.1.70338"}
+{"id": 260236, "field": "name", "en": "Scribbled Directions to Sulfur Vents", "hash": "c6b3b8526d14ccfb", "src": "db2@1.60.1.70338"}
+{"id": 260236, "field": "description", "en": "A hastily scrawled list of locations for prospecting.", "hash": "1c674d4c8f0eecf1", "src": "db2@1.60.1.70338"}
+{"id": 260237, "field": "name", "en": "Virulent Blood of Agamaggan", "hash": "92ea32aedec1403e", "src": "db2@1.60.1.70338"}
+{"id": 260237, "field": "description", "en": "Whether it is actually the blood of the fallen god is unclear, but what is certain is how eager it seems to escape the vial.", "hash": "b462a23cfcfee8c3", "src": "db2@1.60.1.70338"}
+{"id": 260244, "field": "name", "en": "Benevolent Bouquet", "hash": "9115a8369360cdc2", "src": "db2@1.60.1.70338"}
+{"id": 260244, "field": "description", "en": "Do quilboar even like flowers?", "hash": "a49d59922c0b3830", "src": "db2@1.60.1.70338"}
+{"id": 260245, "field": "name", "en": "Vibrant Flower", "hash": "c5da697b3edb6ac4", "src": "db2@1.60.1.70338"}
+{"id": 260245, "field": "description", "en": "Assemble $s2 Vibrant Flowers to create a Benevolent Bouquet.\nIts beauty is a stark contrast from the gardens in which it grew.", "hash": "7f166c3e30ce1786", "src": "db2@1.60.1.70338"}
+{"id": 260247, "field": "name", "en": "Forlorn Necklace", "hash": "a52640681b274761", "src": "db2@1.60.1.70338"}
+{"id": 260247, "field": "description", "en": "Once an enchanted necklace that sustained life in the gardens of Shen'dralas. Whatever magic it once contained has since been depleted.", "hash": "80eb4bb80f72d7a9", "src": "db2@1.60.1.70338"}
+{"id": 260307, "field": "name", "en": "Hyjal Postal Satchel", "hash": "3da2cb3a0046ecf0", "src": "db2@1.60.1.70338"}
+{"id": 260307, "field": "description", "en": "Neither snow nor rain nor heat nor gloom of night...", "hash": "0ad73fee6b9325ed", "src": "db2@1.60.1.70338"}
+{"id": 260347, "field": "name", "en": "Tattered Journal", "hash": "20929582dbd8032f", "src": "db2@1.60.1.70338"}
+{"id": 260347, "field": "description", "en": "Most of the pages are missing.", "hash": "8eb6ce67e643788d", "src": "db2@1.60.1.70338"}
+{"id": 260348, "field": "name", "en": "Barely Legible Journal Entry, Page I", "hash": "6050d7fe7967ade5", "src": "db2@1.60.1.70338"}
+{"id": 260348, "field": "description", "en": "Add a missing page to Evenshade's journal.", "hash": "7643c4e28cdebdb0", "src": "db2@1.60.1.70338"}
+{"id": 260349, "field": "name", "en": "Barely Legible Journal Entry, Page II", "hash": "495e8838422f928c", "src": "db2@1.60.1.70338"}
+{"id": 260349, "field": "description", "en": "Add a missing page to Evenshade's journal.", "hash": "7643c4e28cdebdb0", "src": "db2@1.60.1.70338"}
+{"id": 260350, "field": "name", "en": "Barely Legible Journal Entry, Page III", "hash": "8b5fb5aaee8f4d62", "src": "db2@1.60.1.70338"}
+{"id": 260350, "field": "description", "en": "Add a missing page to Evenshade's journal.", "hash": "7643c4e28cdebdb0", "src": "db2@1.60.1.70338"}
+{"id": 260351, "field": "name", "en": "Barely Legible Journal Entry, Page IV", "hash": "495e8845422f9299", "src": "db2@1.60.1.70338"}
+{"id": 260351, "field": "description", "en": "Add a missing page to Evenshade's journal.", "hash": "7643c4e28cdebdb0", "src": "db2@1.60.1.70338"}
+{"id": 260352, "field": "name", "en": "Barely Legible Journal Entry, Page V", "hash": "6050d80b7967adf2", "src": "db2@1.60.1.70338"}
+{"id": 260352, "field": "description", "en": "Add a missing page to Evenshade's journal.", "hash": "7643c4e28cdebdb0", "src": "db2@1.60.1.70338"}
+{"id": 260353, "field": "name", "en": "Barely Legible Journal Entry, Page VI", "hash": "495e8edf423130f9", "src": "db2@1.60.1.70338"}
+{"id": 260353, "field": "description", "en": "Add a missing page to Evenshade's journal.", "hash": "7643c4e28cdebdb0", "src": "db2@1.60.1.70338"}
+{"id": 260354, "field": "name", "en": "Barely Legible Journal Entry, Page VII", "hash": "8b631d1f222abe40", "src": "db2@1.60.1.70338"}
+{"id": 260354, "field": "description", "en": "Add a missing page to Evenshade's journal.", "hash": "7643c4e28cdebdb0", "src": "db2@1.60.1.70338"}
+{"id": 260356, "field": "name", "en": "Barely Legible Journal Entry, Page VIII", "hash": "53b7e889349b3eda", "src": "db2@1.60.1.70338"}
+{"id": 260356, "field": "description", "en": "Add a missing page to Evenshade's journal.", "hash": "7643c4e28cdebdb0", "src": "db2@1.60.1.70338"}
+{"id": 260357, "field": "name", "en": "Barely Legible Journal Entry, Page IX", "hash": "495e8847422f929b", "src": "db2@1.60.1.70338"}
+{"id": 260357, "field": "description", "en": "Add a missing page to Evenshade's journal.", "hash": "7643c4e28cdebdb0", "src": "db2@1.60.1.70338"}
+{"id": 260358, "field": "name", "en": "Barely Legible Journal Entry, Page X", "hash": "6050d80d7967adf4", "src": "db2@1.60.1.70338"}
+{"id": 260358, "field": "description", "en": "Add a missing page to Evenshade's journal.", "hash": "7643c4e28cdebdb0", "src": "db2@1.60.1.70338"}
+{"id": 260452, "field": "name", "en": "Courier's Shipment", "hash": "5e7f33ec9cd802e5", "src": "db2@1.60.1.70338"}
+{"id": 260466, "field": "name", "en": "A Blood Spattered Letter", "hash": "fa1312a290773800", "src": "db2@1.60.1.70338"}
+{"id": 260518, "field": "name", "en": "Azore's Transcription", "hash": "ff0afa320433e889", "src": "db2@1.60.1.70338"}
+{"id": 260518, "field": "description", "en": "Gimashi's findings on draenethyst; organized and edited for clarity.", "hash": "0212ff72af974664", "src": "db2@1.60.1.70338"}
+{"id": 260623, "field": "name", "en": "Candied Fruit Sampler", "hash": "76591f78c57ac741", "src": "db2@1.60.1.70338"}
+{"id": 260623, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70338"}
+{"id": 260624, "field": "name", "en": "Pristine Peach", "hash": "842f850b8908c334", "src": "db2@1.60.1.70338"}
+{"id": 260624, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70338"}
+{"id": 260625, "field": "name", "en": "Garnished Rice Cake", "hash": "2bf5f39ceeeaf71a", "src": "db2@1.60.1.70338"}
+{"id": 260625, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70338"}
+{"id": 260627, "field": "name", "en": "Savory Shen'dralar Steak", "hash": "80a1371b1e483d21", "src": "db2@1.60.1.70338"}
+{"id": 260627, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70338"}
+{"id": 260628, "field": "name", "en": "Stuffed Pumpkin", "hash": "88e12cbbf824a623", "src": "db2@1.60.1.70338"}
+{"id": 260628, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70338"}
+{"id": 260629, "field": "name", "en": "Spectral Spirits", "hash": "88938de1d0a9a71f", "src": "db2@1.60.1.70338"}
+{"id": 260629, "field": "description", "en": "A fairly weak alcoholic beverage.", "hash": "213802eef37287e5", "src": "db2@1.60.1.70338"}
+{"id": 260631, "field": "name", "en": "Arcane Wine", "hash": "8fb7e4df4cfd6e7f", "src": "db2@1.60.1.70338"}
+{"id": 260631, "field": "description", "en": "A typical alcoholic beverage.", "hash": "66a23e91fe49d4ca", "src": "db2@1.60.1.70338"}
+{"id": 260632, "field": "name", "en": "Slushberry Brandy", "hash": "54a6d5ddd21fdbb8", "src": "db2@1.60.1.70338"}
+{"id": 260632, "field": "description", "en": "A typical alcoholic beverage.", "hash": "66a23e91fe49d4ca", "src": "db2@1.60.1.70338"}
+{"id": 260633, "field": "name", "en": "Sip of Lemonale", "hash": "efe5a1ab0d749418", "src": "db2@1.60.1.70338"}
+{"id": 260633, "field": "description", "en": "A strong alcoholic beverage.", "hash": "6f5754c9fcdc96aa", "src": "db2@1.60.1.70338"}
+{"id": 260704, "field": "name", "en": "Polished Bronze Safety Goggles", "hash": "1fc39ae7a9e07bcb", "src": "db2@1.60.1.70338"}
+{"id": 260784, "field": "name", "en": "SAF-T Tabs", "hash": "5f103d968651390e", "src": "db2@1.60.1.70338"}
+{"id": 260784, "field": "description", "en": "SAF-T brand tabs make it SAF to hand out dynamite to all your friends!", "hash": "98f5345b2a352f16", "src": "db2@1.60.1.70338"}
+{"id": 260792, "field": "name", "en": "SAF-T Dynamite", "hash": "b8bdba31a3b25721", "src": "db2@1.60.1.70338"}
+{"id": 260792, "field": "description", "en": "Inflicts $s1 Fire damage in a 5 yd radius.\nEasy to throw, and SAF-T too!", "hash": "03ef7ef0353b3ef9", "src": "db2@1.60.1.70338"}
+{"id": 260793, "field": "name", "en": "SAF-T Copper Bomb", "hash": "69d50df5d806557d", "src": "db2@1.60.1.70338"}
+{"id": 260793, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a 3 yd radius for $d. Any damage will break the effect.\nSAF-T Brand bombs *almost* never blow up in your hands (or your paws!)", "hash": "9d043dfd4e29c14d", "src": "db2@1.60.1.70338"}
+{"id": 260794, "field": "name", "en": "EZ-Thro Wrap", "hash": "bc6bfc440997e240", "src": "db2@1.60.1.70338"}
+{"id": 260795, "field": "name", "en": "EZ-Thro Copper Bomb XL", "hash": "f30c7e05dbeea927", "src": "db2@1.60.1.70338"}
+{"id": 260795, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a 5 yd radius for $d. Any damage will break the effect.", "hash": "109f3d4746b30855", "src": "db2@1.60.1.70338"}
+{"id": 260796, "field": "name", "en": "No Slip SAF-T Padding", "hash": "626aa09cbd594916", "src": "db2@1.60.1.70338"}
+{"id": 260796, "field": "description", "en": "SAF-T Padding prevents those easy throwing accidents.", "hash": "ee6bfa8feac0acdb", "src": "db2@1.60.1.70338"}
+{"id": 260797, "field": "name", "en": "SAF-T Bronze Bomb", "hash": "4db3e710f7401716", "src": "db2@1.60.1.70338"}
+{"id": 260797, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a 3 yd radius for $d. Any damage will break the effect.", "hash": "1f15bb8e35cef00c", "src": "db2@1.60.1.70338"}
+{"id": 260798, "field": "name", "en": "SAF-T Jumbo Dynamite", "hash": "afbde7f157557a61", "src": "db2@1.60.1.70338"}
+{"id": 260798, "field": "description", "en": "Inflicts $s1 Fire damage in a 5 yd radius.\nIf it's easy to throw, it's not SAF-T!", "hash": "f2c5be9b097325cd", "src": "db2@1.60.1.70338"}
+{"id": 260799, "field": "name", "en": "SAF-T Bell", "hash": "5ca7d9eba4e45e3d", "src": "db2@1.60.1.70338"}
+{"id": 260799, "field": "description", "en": "Do you know where your Sheep is?! SAF-T Knows.", "hash": "c32aa110fe3871ef", "src": "db2@1.60.1.70338"}
+{"id": 260800, "field": "name", "en": "Shafety Sheep", "hash": "b2536eca724174d0", "src": "db2@1.60.1.70338"}
+{"id": 260800, "field": "description", "en": "Summons an Explosive Sheep which will charge at a nearby enemy and explode for $4050s1 damage. Lasts for 3 min or until it explodes.\nGuaranteed to blow up only where it's SAF!", "hash": "8630c13073f69c0f", "src": "db2@1.60.1.70338"}
+{"id": 260801, "field": "name", "en": "EZ-Thro Fireproof Fuse", "hash": "93ffcdf823d5ba1a", "src": "db2@1.60.1.70338"}
+{"id": 260801, "field": "description", "en": "Guaranteed not to burn!", "hash": "a4ec5a4b4a6ab6b3", "src": "db2@1.60.1.70338"}
+{"id": 260802, "field": "name", "en": "EZ-Thro Bronze Mortar", "hash": "bf4f90940da5d3f1", "src": "db2@1.60.1.70338"}
+{"id": 260802, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a 5 yd radius for $d. Any damage will break the effect.\nThro mo mo tar!", "hash": "4f16c3c93bb8dca7", "src": "db2@1.60.1.70338"}
+{"id": 260803, "field": "name", "en": "EZ-Thro Grenade", "hash": "0ca9193be4715c40", "src": "db2@1.60.1.70338"}
+{"id": 260803, "field": "description", "en": "Inflicts $s1 Fire damage in a 5 yd radius.\nWho needs safety when it's this easy to throw?", "hash": "6076ad34b0092ab1", "src": "db2@1.60.1.70338"}
+{"id": 260804, "field": "name", "en": "SAF-T Casing", "hash": "e62ca4bcea4138c6", "src": "db2@1.60.1.70338"}
+{"id": 260804, "field": "description", "en": "Extra padding for SAF-T!", "hash": "2c48d4209eb9cea8", "src": "db2@1.60.1.70338"}
+{"id": 260805, "field": "name", "en": "SAF-T Bomb", "hash": "5caa78becc97239e", "src": "db2@1.60.1.70338"}
+{"id": 260805, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a 5 yd radius for $d. Any damage will break the effect.\nS. A. F. T. B. O. M. B. SAF-T. Bomb.", "hash": "ebf1711d964b2bc9", "src": "db2@1.60.1.70338"}
+{"id": 260806, "field": "name", "en": "Emergency Field Cloak", "hash": "9ce19f0a0d2193ef", "src": "db2@1.60.1.70338"}
+{"id": 260806, "field": "description", "en": "Gives invisibility for $d1.\nSAF-T means not getting caught.", "hash": "64ccf8e137958d21", "src": "db2@1.60.1.70338"}
+{"id": 260807, "field": "name", "en": "Compact Critter Carrier", "hash": "13b08ca8e879e38c", "src": "db2@1.60.1.70338"}
+{"id": 260807, "field": "description", "en": "Place a Compact Critter Carrier for $d that allows Hunters in your group to access their stabled pets.", "hash": "fe7715de9db31031", "src": "db2@1.60.1.70338"}
+{"id": 260808, "field": "name", "en": "EZ-Thro Tru-Trigger", "hash": "54a30ed69db3753f", "src": "db2@1.60.1.70338"}
+{"id": 260808, "field": "description", "en": "EZ to use and almost never misfires!", "hash": "bd2ae103e979c3e7", "src": "db2@1.60.1.70338"}
+{"id": 260809, "field": "name", "en": "Tru-Trigger Frag Bomb", "hash": "19922d57bc6e181a", "src": "db2@1.60.1.70338"}
+{"id": 260809, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in an 8 yd radius for $d. Any damage will break the effect.\nTru-Trigger frags enemies, not in your hands.", "hash": "d4f89e18591648fc", "src": "db2@1.60.1.70338"}
+{"id": 260810, "field": "name", "en": "SAF-T Disposable Parachute", "hash": "3b938c8933406a7c", "src": "db2@1.60.1.70338"}
+{"id": 260810, "field": "description", "en": "Reduces your fall speed for $d.\nSAF-T in case you need to jump.", "hash": "be09a55350d4486a", "src": "db2@1.60.1.70338"}
+{"id": 260811, "field": "name", "en": "Gnomish Army Knife", "hash": "526c421c487b1df7", "src": "db2@1.60.1.70338"}
+{"id": 260811, "field": "description", "en": "It's got everything: a spanner, a wrench, a hammer... even a mining pick.", "hash": "46133832811d7ffa", "src": "db2@1.60.1.70338"}
+{"id": 260812, "field": "name", "en": "Loot-A-Rang", "hash": "e6238b37bbd59db0", "src": "db2@1.60.1.70338"}
+{"id": 260812, "field": "description", "en": "Retrieves the loot from a nearby corpse.", "hash": "eb0158d63b90dd2c", "src": "db2@1.60.1.70338"}
+{"id": 260813, "field": "name", "en": "SAF-T Tube", "hash": "5f157a3cd5b68414", "src": "db2@1.60.1.70338"}
+{"id": 260813, "field": "description", "en": "Prevents accidental oxygen exposure. That wouldn't be SAF.", "hash": "caa28cbfb973bd8d", "src": "db2@1.60.1.70338"}
+{"id": 260814, "field": "name", "en": "SAF-T Clever Dynamite", "hash": "27656d47c8dafc7f", "src": "db2@1.60.1.70338"}
+{"id": 260814, "field": "description", "en": "Inflicts $s1 Fire damage in a 5 yd radius.\nSAF-T isn't dense. It's clever!", "hash": "6f0df3ed496b30c7", "src": "db2@1.60.1.70338"}
+{"id": 260815, "field": "name", "en": "EZ-Thro Shell", "hash": "23b541dee10ab836", "src": "db2@1.60.1.70338"}
+{"id": 260815, "field": "description", "en": "Encase your explosives in EZ to Thro thorium-plated shells.", "hash": "b5bfed554551904f", "src": "db2@1.60.1.70338"}
+{"id": 260816, "field": "name", "en": "EZ-Thro Thorium Grenade", "hash": "c12c35ced5e8f142", "src": "db2@1.60.1.70338"}
+{"id": 260816, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets for $d in a 3 yd radius. Any damage will break the effect.\nAnyone can use grenades with EZ-Thro!", "hash": "759cf92a536b88cb", "src": "db2@1.60.1.70338"}
+{"id": 260817, "field": "name", "en": "EZ-Thro Dark Bomb", "hash": "28c06a34e236ceb7", "src": "db2@1.60.1.70338"}
+{"id": 260817, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets in a $a1 yd radius for $d. Any damage will break the effect.\nSo EZ, you can Thro it in the dark.", "hash": "61cf766f6cf51331", "src": "db2@1.60.1.70338"}
+{"id": 260818, "field": "name", "en": "EZ-Thro Mana Bomb", "hash": "9a8fdb048db77f48", "src": "db2@1.60.1.70338"}
+{"id": 260818, "field": "description", "en": "Burns $s1 mana from those in the blast radius and deals 50% of the mana drained in damage to the target. Also Silences targets in the blast for $d.", "hash": "d08b899999e4054a", "src": "db2@1.60.1.70338"}
+{"id": 260819, "field": "name", "en": "EZ-Thro Field Transporter: Gadgetzan", "hash": "16607a54bea93eed", "src": "db2@1.60.1.70338"}
+{"id": 260819, "field": "description", "en": "Safely transport yourself to Gadgetzan in Tanaris!    Emphasis on Safe!   Yup, nothing bad could ever happen while using this device!", "hash": "a6aec356f4ad3813", "src": "db2@1.60.1.70338"}
+{"id": 260820, "field": "name", "en": "SAF-T Emergency Ripper: Everlook", "hash": "d748982e7accdc46", "src": "db2@1.60.1.70338"}
+{"id": 260820, "field": "description", "en": "Rips the dimensional walls asunder and transports you to Everlook in Winterspring.   There are technical problems that sometimes occur, but that's what Goblin Engineering is all about!", "hash": "e4f8b06f33dc8dea", "src": "db2@1.60.1.70338"}
+{"id": 260821, "field": "name", "en": "EZ and SAF Field Transporter: Mt. Hyjal", "hash": "0d55e08bdf030715", "src": "db2@1.60.1.70338"}
+{"id": 260821, "field": "description", "en": "Rips the dimensional walls asunder and transports you to Kaylaena's Workshop on Mount Hyjal. Technical problems have a high chance to occur with this mad combination of goblin and gnomish engineering.\nNot only combining Goblin and Gnome tech, but also combining plans from the EZ-Thro and SAF-T corporations. Who knows if this will even work?", "hash": "4c55dbf713a48aa7", "src": "db2@1.60.1.70338"}
+{"id": 260822, "field": "name", "en": "Ultrasafe Rechargeable Battery", "hash": "e778a8545deff705", "src": "db2@1.60.1.70338"}
+{"id": 260822, "field": "description", "en": "Restores $s1 charges to a SAF-T or EZ-Thro brand device in your possession that does not involve explosions. It would be completely Unsafe with explosives.", "hash": "848cf013b5cb9f61", "src": "db2@1.60.1.70338"}
+{"id": 260823, "field": "name", "en": "Dimensional Transporter - Mt. Hyjal", "hash": "3fe3553d619798e1", "src": "db2@1.60.1.70338"}
+{"id": 260823, "field": "description", "en": "Rips the dimensional walls asunder and transports you to Kaylaena's Workshop on Mount Hyjal. Technical problems have a high chance to occur with this mad combination of goblin and gnomish engineering.\nA dangerous amalgamation of Goblin and Gnome engineering techniques.", "hash": "a3c2df842f06d9fe", "src": "db2@1.60.1.70338"}
+{"id": 260824, "field": "name", "en": "Gnomish Poultryizer", "hash": "2193b63ceff2e18c", "src": "db2@1.60.1.70338"}
+{"id": 260824, "field": "description", "en": "Turns the target into a chicken for $1270942d. Well, that is assuming the transmogrification polarity has not been reversed...", "hash": "4ecdd5b21a94da12", "src": "db2@1.60.1.70338"}
+{"id": 260825, "field": "name", "en": "Ultralight Goblin Glider", "hash": "dcdf53dbc18205ca", "src": "db2@1.60.1.70338"}
+{"id": 260825, "field": "description", "en": "Glide downward through the air for $1271020d while controlling your direction of travel.", "hash": "0e9703cc3cf54963", "src": "db2@1.60.1.70338"}
+{"id": 260826, "field": "name", "en": "Gnomish Weather Machine NYI", "hash": "d6e260aba8523079", "src": "db2@1.60.1.70338"}
+{"id": 260827, "field": "name", "en": "Stealthman 52", "hash": "1b6a33278ab1a7c6", "src": "db2@1.60.1.70338"}
+{"id": 260827, "field": "description", "en": "Cloaks the user in a stealth field for up to $d. Cannot be used in combat. The field lasts for up to ${$m4/1000} sec after moving.\nUsed by real secret agents.", "hash": "fc7d7a887bb458e2", "src": "db2@1.60.1.70338"}
+{"id": 260828, "field": "name", "en": "SAF-T Nitro Boosts", "hash": "2a8457a05789ce28", "src": "db2@1.60.1.70338"}
+{"id": 260828, "field": "description", "en": "$@spelldesc1225987\nRocket to safety with SAF-T.", "hash": "24b3dfe7ea7a6653", "src": "db2@1.60.1.70338"}
+{"id": 260829, "field": "name", "en": "EZ-Thro Magnetic Displacer", "hash": "ed811ca6ec37b4c9", "src": "db2@1.60.1.70338"}
+{"id": 260829, "field": "description", "en": "$@spelldesc1226007\nEZ-Thro corporation not responsible for magnets preventing grenades from being thrown.", "hash": "7c2a433aae6014a9", "src": "db2@1.60.1.70338"}
+{"id": 260830, "field": "name", "en": "SAF-T Teleport", "hash": "6176a9c3e31eebca", "src": "db2@1.60.1.70338"}
+{"id": 260830, "field": "description", "en": "$@spelldesc1225960\nTeleport to SAF-T!", "hash": "df16b971aa993f88", "src": "db2@1.60.1.70338"}
+{"id": 260880, "field": "name", "en": "Air Construct Core", "hash": "6e164ffade0474fe", "src": "db2@1.60.1.70338"}
+{"id": 260880, "field": "description", "en": "The glowing orb seems to be looking at you, following your movements with quiet curiosity.", "hash": "0b957eb6d69a49a2", "src": "db2@1.60.1.70338"}
+{"id": 260881, "field": "name", "en": "Crystallized Lightning", "hash": "a4b8ef89fdd62adb", "src": "db2@1.60.1.70338"}
+{"id": 260881, "field": "description", "en": "The surface of this object is smooth to the touch and makes the hair on the back of your neck stand up when you hold it.", "hash": "a785cc8295e32f6c", "src": "db2@1.60.1.70338"}
+{"id": 260883, "field": "name", "en": "Enchanted Gyrozephyr", "hash": "ad11009b220d8862", "src": "db2@1.60.1.70338"}
+{"id": 260883, "field": "description", "en": "This object softly vibrates, constantly in a state of perpetual motion. If you try to hold it still, the force it exerts increases greatly in intensity.", "hash": "81e5fb2d2b9d2d45", "src": "db2@1.60.1.70338"}
+{"id": 260897, "field": "name", "en": "(DNT) Moonglaive", "hash": "c4b251e518d6a77d", "src": "db2@1.60.1.70338"}
+{"id": 260927, "field": "name", "en": "Rusted Construct Parts", "hash": "dd7adfa7ffb9a366", "src": "db2@1.60.1.70338"}

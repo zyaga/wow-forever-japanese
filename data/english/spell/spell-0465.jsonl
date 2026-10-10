@@ -1,65 +1,65 @@
-{"id": 465003, "field": "name", "en": "(DNT) TMC Spawn Visuals", "hash": "fb34fa4be507f32a", "src": "db2@1.60.1.70291"}
-{"id": 465108, "field": "name", "en": "Frigid Current", "hash": "897e04e516a2c2bc", "src": "db2@1.60.1.70291"}
-{"id": 465124, "field": "name", "en": "(DNT) TMC Summoning Steam", "hash": "963e903354682d5b", "src": "db2@1.60.1.70291"}
-{"id": 465155, "field": "name", "en": "Explosion", "hash": "3411d9337e3ab8ed", "src": "db2@1.60.1.70291"}
-{"id": 465191, "field": "name", "en": "Heal Max Health", "hash": "ca436708529a9f59", "src": "db2@1.60.1.70291"}
-{"id": 465192, "field": "name", "en": "Lucifron's Curse", "hash": "577d29df7d60bdda", "src": "db2@1.60.1.70291"}
-{"id": 465193, "field": "name", "en": "Lucifron's Curse", "hash": "577d29df7d60bdda", "src": "db2@1.60.1.70291"}
-{"id": 465194, "field": "name", "en": "Shazzrah's Curse", "hash": "8e13bf7c4ef387ab", "src": "db2@1.60.1.70291"}
-{"id": 465195, "field": "name", "en": "Shazzrah's Curse", "hash": "8e13bf7c4ef387ab", "src": "db2@1.60.1.70291"}
-{"id": 465196, "field": "name", "en": "Water Bubble", "hash": "a8cd0a8e90d65af4", "src": "db2@1.60.1.70291"}
-{"id": 465230, "field": "name", "en": "Entrapment", "hash": "92de9b1dc691f1ee", "src": "db2@1.60.1.70291"}
-{"id": 465230, "field": "aura", "en": "Immobile.", "hash": "7d75228d3e9ac562", "src": "db2@1.60.1.70291"}
-{"id": 465273, "field": "name", "en": "(DNT) Core Hound Summon Stalker", "hash": "e243e669af1099cb", "src": "db2@1.60.1.70291"}
-{"id": 465323, "field": "name", "en": "Combat Pulse", "hash": "ff93f6f60c23ad71", "src": "db2@1.60.1.70291"}
-{"id": 465352, "field": "name", "en": "Banish", "hash": "8da6a696dfe51d8f", "src": "db2@1.60.1.70291"}
-{"id": 465352, "field": "description", "en": "Banishes the target, preventing all action but making it invulnerable for up to $d.  Only one target can be banished at a time.  Only works on Demons and Elementals.", "hash": "43e913d0c436bc33", "src": "db2@1.60.1.70291"}
-{"id": 465352, "field": "aura", "en": "Invulnerable, but unable to act.", "hash": "b1a1673e20095e89", "src": "db2@1.60.1.70291"}
-{"id": 465404, "field": "name", "en": "Molten to the Core", "hash": "e71954cb65dfc8df", "src": "db2@1.60.1.70291"}
-{"id": 465411, "field": "name", "en": "Avenging Strike", "hash": "dfc26b8f1010a463", "src": "db2@1.60.1.70291"}
-{"id": 465411, "field": "description", "en": "Does $s1 additional Holy damage to the target.", "hash": "9a46a8d762f6947d", "src": "db2@1.60.1.70291"}
-{"id": 465412, "field": "name", "en": "Add Holy Dam - Weap 04", "hash": "6bd944fd95ac5130", "src": "db2@1.60.1.70291"}
-{"id": 465412, "field": "description", "en": "Adds $465411s1 holy damage to your melee attacks.", "hash": "5d5a7f1a4f95ff9d", "src": "db2@1.60.1.70291"}
-{"id": 465414, "field": "name", "en": "Crusader's Zeal", "hash": "1bf14fda3ee42cc9", "src": "db2@1.60.1.70291"}
-{"id": 465414, "field": "description", "en": "Increases damage done by $s1 and attack speed by $s2% for $d.", "hash": "1e1de541c540ff88", "src": "db2@1.60.1.70291"}
-{"id": 465414, "field": "aura", "en": "Increased melee damage and attack speed.", "hash": "7fac8986a53d8a13", "src": "db2@1.60.1.70291"}
-{"id": 465417, "field": "name", "en": "Change Stance", "hash": "e9b84dcabf7a6d72", "src": "db2@1.60.1.70291"}
-{"id": 465417, "field": "description", "en": "Shift your combat stance in order to wield Truthbearer as a hand-and-a-half sword, allowing you to use it with a shield.", "hash": "f7d921bf79be9306", "src": "db2@1.60.1.70291"}
-{"id": 465418, "field": "name", "en": "Change Stance", "hash": "e9b84dcabf7a6d72", "src": "db2@1.60.1.70291"}
-{"id": 465418, "field": "description", "en": "Shift your combat stance in order to wield Truthbearer as a two-handed sword. ", "hash": "ba5cc9b20a797278", "src": "db2@1.60.1.70291"}
-{"id": 465447, "field": "name", "en": "Create Campsite", "hash": "e0a8b9914dd71ef2", "src": "db2@1.60.1.70291"}
-{"id": 465447, "field": "description", "en": "Builds a foundation for a survival campsite. Bring additional supplies to this campsite to construct a shelter.", "hash": "ac130273fd850288", "src": "db2@1.60.1.70291"}
-{"id": 465483, "field": "name", "en": "Mangle", "hash": "5c555ccc58de05ab", "src": "db2@1.60.1.70291"}
-{"id": 465483, "field": "description", "en": "Inflicts $s2 damage to an enemy every $t2 sec. and slows its movement by $s1% for $d.", "hash": "d454f63c98aeb915", "src": "db2@1.60.1.70291"}
-{"id": 465483, "field": "aura", "en": "Movement speed reduced by $s1%.\r\n$s2 Physical damage inflicted every $t2 sec.", "hash": "7d78c0d3289e3ff3", "src": "db2@1.60.1.70291"}
-{"id": 465546, "field": "name", "en": "(DNT) Dual Spec", "hash": "82c9a088e7cf120c", "src": "db2@1.60.1.70291"}
-{"id": 465626, "field": "name", "en": "Create Campsite Accessories", "hash": "20666b16bbd7377c", "src": "db2@1.60.1.70291"}
-{"id": 465626, "field": "description", "en": "Adds amenities to a survival campsite.", "hash": "feb1aed50a2f0e55", "src": "db2@1.60.1.70291"}
-{"id": 465675, "field": "name", "en": "Increase Reputation", "hash": "5b39825024f3b628", "src": "db2@1.60.1.70291"}
-{"id": 465675, "field": "description", "en": "Increase your reputation permanently with the Cenarion Circle.", "hash": "8f12afce553d0beb", "src": "db2@1.60.1.70291"}
-{"id": 465693, "field": "name", "en": "Clean Up Quel'Serrar Era to SoD [DNT]", "hash": "35f8b2ae0dd9caa3", "src": "db2@1.60.1.70291"}
-{"id": 465699, "field": "name", "en": "Clean Up Quel'Serrar SoD to Era [DNT]", "hash": "9514d91bbd17c267", "src": "db2@1.60.1.70291"}
-{"id": 465700, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70291"}
-{"id": 465700, "field": "description", "en": "Directs a bolt of lightning at the enemy, dealing $s1  Nature damage and then jumping to additional nearby enemies. Each jump increases the damage. ", "hash": "32da96b426841c7b", "src": "db2@1.60.1.70291"}
-{"id": 465719, "field": "name", "en": "Clean Up Masterwork Volcanic Leggings in Era [DNT]", "hash": "3803853b417cc101", "src": "db2@1.60.1.70291"}
-{"id": 465725, "field": "name", "en": "Living Bomb", "hash": "7d464eaf4a566d95", "src": "db2@1.60.1.70291"}
-{"id": 465725, "field": "description", "en": "Throws a bomb at an enemy. After $t1 sec., the bomb explodes, inflicting $20476s1 Fire damage to the target and its nearby allies.", "hash": "e8a918116ce50b94", "src": "db2@1.60.1.70291"}
-{"id": 465725, "field": "aura", "en": "$20476s1 Fire damage inflicted to nearby allies after $t1 sec.", "hash": "d37684b69d6249dc", "src": "db2@1.60.1.70291"}
-{"id": 465727, "field": "name", "en": "Explosion", "hash": "3411d9337e3ab8ed", "src": "db2@1.60.1.70291"}
-{"id": 465779, "field": "name", "en": "Test Summon Boss Creature", "hash": "3c5d6f3aad0b5ae8", "src": "db2@1.60.1.70291"}
-{"id": 465787, "field": "name", "en": "Prophetic Insight", "hash": "9ba4ceb39dc6b2d7", "src": "db2@1.60.1.70291"}
-{"id": 465787, "field": "description", "en": "Grants a chance to notice odd or overlooked items dropped by powerful foes.", "hash": "1ed51d7d3ab3a0c1", "src": "db2@1.60.1.70291"}
-{"id": 465787, "field": "aura", "en": "You may notice odd or overlooked items dropped by powerful foes.", "hash": "98b8859a6ecf5360", "src": "db2@1.60.1.70291"}
-{"id": 465789, "field": "name", "en": "Teleport: Elsewhen", "hash": "3257c1227deeec49", "src": "db2@1.60.1.70291"}
-{"id": 465789, "field": "description", "en": "Travel to a place outside of time. Requires you to be in Tanaris.", "hash": "4361d6e8b005db5a", "src": "db2@1.60.1.70291"}
-{"id": 465841, "field": "name", "en": "Winterspring Survival Fade Out", "hash": "3c8407228d264921", "src": "db2@1.60.1.70291"}
-{"id": 465849, "field": "name", "en": "Combat Pulse", "hash": "ff93f6f60c23ad71", "src": "db2@1.60.1.70291"}
-{"id": 465944, "field": "name", "en": "Create Campsite Accessories - Fur Rug", "hash": "5a0fdeefbafdd5a1", "src": "db2@1.60.1.70291"}
-{"id": 465944, "field": "description", "en": "Adds amenities to a survival campsite.", "hash": "feb1aed50a2f0e55", "src": "db2@1.60.1.70291"}
-{"id": 465945, "field": "name", "en": "Create Campsite Accessories - Small Campfire", "hash": "ac0e76ecca1f7d19", "src": "db2@1.60.1.70291"}
-{"id": 465945, "field": "description", "en": "Adds amenities to a survival campsite.", "hash": "feb1aed50a2f0e55", "src": "db2@1.60.1.70291"}
-{"id": 465946, "field": "name", "en": "Create Campsite Accessories - Meat Rack", "hash": "c99464e4948bfa3e", "src": "db2@1.60.1.70291"}
-{"id": 465946, "field": "description", "en": "Adds amenities to a survival campsite.", "hash": "feb1aed50a2f0e55", "src": "db2@1.60.1.70291"}
-{"id": 465973, "field": "name", "en": "(DNT) Music Beat - TEST", "hash": "80d099166f31b544", "src": "db2@1.60.1.70291"}
-{"id": 465975, "field": "name", "en": "(DNT) Music Off Beat - TEST", "hash": "17150d2af002fb09", "src": "db2@1.60.1.70291"}
-{"id": 465994, "field": "name", "en": "(DNT) Overture", "hash": "2a9e878d7ce5a4a0", "src": "db2@1.60.1.70291"}
+{"id": 465003, "field": "name", "en": "(DNT) TMC Spawn Visuals", "hash": "fb34fa4be507f32a", "src": "db2@1.60.1.70338"}
+{"id": 465108, "field": "name", "en": "Frigid Current", "hash": "897e04e516a2c2bc", "src": "db2@1.60.1.70338"}
+{"id": 465124, "field": "name", "en": "(DNT) TMC Summoning Steam", "hash": "963e903354682d5b", "src": "db2@1.60.1.70338"}
+{"id": 465155, "field": "name", "en": "Explosion", "hash": "3411d9337e3ab8ed", "src": "db2@1.60.1.70338"}
+{"id": 465191, "field": "name", "en": "Heal Max Health", "hash": "ca436708529a9f59", "src": "db2@1.60.1.70338"}
+{"id": 465192, "field": "name", "en": "Lucifron's Curse", "hash": "577d29df7d60bdda", "src": "db2@1.60.1.70338"}
+{"id": 465193, "field": "name", "en": "Lucifron's Curse", "hash": "577d29df7d60bdda", "src": "db2@1.60.1.70338"}
+{"id": 465194, "field": "name", "en": "Shazzrah's Curse", "hash": "8e13bf7c4ef387ab", "src": "db2@1.60.1.70338"}
+{"id": 465195, "field": "name", "en": "Shazzrah's Curse", "hash": "8e13bf7c4ef387ab", "src": "db2@1.60.1.70338"}
+{"id": 465196, "field": "name", "en": "Water Bubble", "hash": "a8cd0a8e90d65af4", "src": "db2@1.60.1.70338"}
+{"id": 465230, "field": "name", "en": "Entrapment", "hash": "92de9b1dc691f1ee", "src": "db2@1.60.1.70338"}
+{"id": 465230, "field": "aura", "en": "Immobile.", "hash": "7d75228d3e9ac562", "src": "db2@1.60.1.70338"}
+{"id": 465273, "field": "name", "en": "(DNT) Core Hound Summon Stalker", "hash": "e243e669af1099cb", "src": "db2@1.60.1.70338"}
+{"id": 465323, "field": "name", "en": "Combat Pulse", "hash": "ff93f6f60c23ad71", "src": "db2@1.60.1.70338"}
+{"id": 465352, "field": "name", "en": "Banish", "hash": "8da6a696dfe51d8f", "src": "db2@1.60.1.70338"}
+{"id": 465352, "field": "description", "en": "Banishes the target, preventing all action but making it invulnerable for up to $d.  Only one target can be banished at a time.  Only works on Demons and Elementals.", "hash": "43e913d0c436bc33", "src": "db2@1.60.1.70338"}
+{"id": 465352, "field": "aura", "en": "Invulnerable, but unable to act.", "hash": "b1a1673e20095e89", "src": "db2@1.60.1.70338"}
+{"id": 465404, "field": "name", "en": "Molten to the Core", "hash": "e71954cb65dfc8df", "src": "db2@1.60.1.70338"}
+{"id": 465411, "field": "name", "en": "Avenging Strike", "hash": "dfc26b8f1010a463", "src": "db2@1.60.1.70338"}
+{"id": 465411, "field": "description", "en": "Does $s1 additional Holy damage to the target.", "hash": "9a46a8d762f6947d", "src": "db2@1.60.1.70338"}
+{"id": 465412, "field": "name", "en": "Add Holy Dam - Weap 04", "hash": "6bd944fd95ac5130", "src": "db2@1.60.1.70338"}
+{"id": 465412, "field": "description", "en": "Adds $465411s1 holy damage to your melee attacks.", "hash": "5d5a7f1a4f95ff9d", "src": "db2@1.60.1.70338"}
+{"id": 465414, "field": "name", "en": "Crusader's Zeal", "hash": "1bf14fda3ee42cc9", "src": "db2@1.60.1.70338"}
+{"id": 465414, "field": "description", "en": "Increases damage done by $s1 and attack speed by $s2% for $d.", "hash": "1e1de541c540ff88", "src": "db2@1.60.1.70338"}
+{"id": 465414, "field": "aura", "en": "Increased melee damage and attack speed.", "hash": "7fac8986a53d8a13", "src": "db2@1.60.1.70338"}
+{"id": 465417, "field": "name", "en": "Change Stance", "hash": "e9b84dcabf7a6d72", "src": "db2@1.60.1.70338"}
+{"id": 465417, "field": "description", "en": "Shift your combat stance in order to wield Truthbearer as a hand-and-a-half sword, allowing you to use it with a shield.", "hash": "f7d921bf79be9306", "src": "db2@1.60.1.70338"}
+{"id": 465418, "field": "name", "en": "Change Stance", "hash": "e9b84dcabf7a6d72", "src": "db2@1.60.1.70338"}
+{"id": 465418, "field": "description", "en": "Shift your combat stance in order to wield Truthbearer as a two-handed sword. ", "hash": "ba5cc9b20a797278", "src": "db2@1.60.1.70338"}
+{"id": 465447, "field": "name", "en": "Create Campsite", "hash": "e0a8b9914dd71ef2", "src": "db2@1.60.1.70338"}
+{"id": 465447, "field": "description", "en": "Builds a foundation for a survival campsite. Bring additional supplies to this campsite to construct a shelter.", "hash": "ac130273fd850288", "src": "db2@1.60.1.70338"}
+{"id": 465483, "field": "name", "en": "Mangle", "hash": "5c555ccc58de05ab", "src": "db2@1.60.1.70338"}
+{"id": 465483, "field": "description", "en": "Inflicts $s2 damage to an enemy every $t2 sec. and slows its movement by $s1% for $d.", "hash": "d454f63c98aeb915", "src": "db2@1.60.1.70338"}
+{"id": 465483, "field": "aura", "en": "Movement speed reduced by $s1%.\r\n$s2 Physical damage inflicted every $t2 sec.", "hash": "7d78c0d3289e3ff3", "src": "db2@1.60.1.70338"}
+{"id": 465546, "field": "name", "en": "(DNT) Dual Spec", "hash": "82c9a088e7cf120c", "src": "db2@1.60.1.70338"}
+{"id": 465626, "field": "name", "en": "Create Campsite Accessories", "hash": "20666b16bbd7377c", "src": "db2@1.60.1.70338"}
+{"id": 465626, "field": "description", "en": "Adds amenities to a survival campsite.", "hash": "feb1aed50a2f0e55", "src": "db2@1.60.1.70338"}
+{"id": 465675, "field": "name", "en": "Increase Reputation", "hash": "5b39825024f3b628", "src": "db2@1.60.1.70338"}
+{"id": 465675, "field": "description", "en": "Increase your reputation permanently with the Cenarion Circle.", "hash": "8f12afce553d0beb", "src": "db2@1.60.1.70338"}
+{"id": 465693, "field": "name", "en": "Clean Up Quel'Serrar Era to SoD [DNT]", "hash": "35f8b2ae0dd9caa3", "src": "db2@1.60.1.70338"}
+{"id": 465699, "field": "name", "en": "Clean Up Quel'Serrar SoD to Era [DNT]", "hash": "9514d91bbd17c267", "src": "db2@1.60.1.70338"}
+{"id": 465700, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70338"}
+{"id": 465700, "field": "description", "en": "Directs a bolt of lightning at the enemy, dealing $s1  Nature damage and then jumping to additional nearby enemies. Each jump increases the damage. ", "hash": "32da96b426841c7b", "src": "db2@1.60.1.70338"}
+{"id": 465719, "field": "name", "en": "Clean Up Masterwork Volcanic Leggings in Era [DNT]", "hash": "3803853b417cc101", "src": "db2@1.60.1.70338"}
+{"id": 465725, "field": "name", "en": "Living Bomb", "hash": "7d464eaf4a566d95", "src": "db2@1.60.1.70338"}
+{"id": 465725, "field": "description", "en": "Throws a bomb at an enemy. After $t1 sec., the bomb explodes, inflicting $20476s1 Fire damage to the target and its nearby allies.", "hash": "e8a918116ce50b94", "src": "db2@1.60.1.70338"}
+{"id": 465725, "field": "aura", "en": "$20476s1 Fire damage inflicted to nearby allies after $t1 sec.", "hash": "d37684b69d6249dc", "src": "db2@1.60.1.70338"}
+{"id": 465727, "field": "name", "en": "Explosion", "hash": "3411d9337e3ab8ed", "src": "db2@1.60.1.70338"}
+{"id": 465779, "field": "name", "en": "Test Summon Boss Creature", "hash": "3c5d6f3aad0b5ae8", "src": "db2@1.60.1.70338"}
+{"id": 465787, "field": "name", "en": "Prophetic Insight", "hash": "9ba4ceb39dc6b2d7", "src": "db2@1.60.1.70338"}
+{"id": 465787, "field": "description", "en": "Grants a chance to notice odd or overlooked items dropped by powerful foes.", "hash": "1ed51d7d3ab3a0c1", "src": "db2@1.60.1.70338"}
+{"id": 465787, "field": "aura", "en": "You may notice odd or overlooked items dropped by powerful foes.", "hash": "98b8859a6ecf5360", "src": "db2@1.60.1.70338"}
+{"id": 465789, "field": "name", "en": "Teleport: Elsewhen", "hash": "3257c1227deeec49", "src": "db2@1.60.1.70338"}
+{"id": 465789, "field": "description", "en": "Travel to a place outside of time. Requires you to be in Tanaris.", "hash": "4361d6e8b005db5a", "src": "db2@1.60.1.70338"}
+{"id": 465841, "field": "name", "en": "Winterspring Survival Fade Out", "hash": "3c8407228d264921", "src": "db2@1.60.1.70338"}
+{"id": 465849, "field": "name", "en": "Combat Pulse", "hash": "ff93f6f60c23ad71", "src": "db2@1.60.1.70338"}
+{"id": 465944, "field": "name", "en": "Create Campsite Accessories - Fur Rug", "hash": "5a0fdeefbafdd5a1", "src": "db2@1.60.1.70338"}
+{"id": 465944, "field": "description", "en": "Adds amenities to a survival campsite.", "hash": "feb1aed50a2f0e55", "src": "db2@1.60.1.70338"}
+{"id": 465945, "field": "name", "en": "Create Campsite Accessories - Small Campfire", "hash": "ac0e76ecca1f7d19", "src": "db2@1.60.1.70338"}
+{"id": 465945, "field": "description", "en": "Adds amenities to a survival campsite.", "hash": "feb1aed50a2f0e55", "src": "db2@1.60.1.70338"}
+{"id": 465946, "field": "name", "en": "Create Campsite Accessories - Meat Rack", "hash": "c99464e4948bfa3e", "src": "db2@1.60.1.70338"}
+{"id": 465946, "field": "description", "en": "Adds amenities to a survival campsite.", "hash": "feb1aed50a2f0e55", "src": "db2@1.60.1.70338"}
+{"id": 465973, "field": "name", "en": "(DNT) Music Beat - TEST", "hash": "80d099166f31b544", "src": "db2@1.60.1.70338"}
+{"id": 465975, "field": "name", "en": "(DNT) Music Off Beat - TEST", "hash": "17150d2af002fb09", "src": "db2@1.60.1.70338"}
+{"id": 465994, "field": "name", "en": "(DNT) Overture", "hash": "2a9e878d7ce5a4a0", "src": "db2@1.60.1.70338"}

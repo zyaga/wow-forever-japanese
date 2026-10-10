@@ -1,8 +1,8 @@
-{"id": 243065, "field": "name", "en": "Broken Wand", "hash": "0045d58d4e7ba7c5", "src": "db2@1.60.1.70291"}
-{"id": 243065, "field": "description", "en": "Imbue with wild magic.", "hash": "90fdaadc3e970f5e", "src": "db2@1.60.1.70291"}
-{"id": 243177, "field": "name", "en": "Ingenious Toy", "hash": "e3c2c6f4d4deec47", "src": "db2@1.60.1.70291"}
-{"id": 243203, "field": "name", "en": "Humongous Crystal", "hash": "88db9385acbe592f", "src": "db2@1.60.1.70291"}
-{"id": 243203, "field": "description", "en": "A fist-sized hunk of crystal with a pale blue luster.", "hash": "f7d2875540d067ae", "src": "db2@1.60.1.70291"}
-{"id": 243266, "field": "name", "en": "Fel-Tainted Giblets", "hash": "9676ab4eb82e1eec", "src": "db2@1.60.1.70291"}
-{"id": 243299, "field": "name", "en": "Big Bag o' Gold", "hash": "4f242157c849683b", "src": "db2@1.60.1.70291"}
-{"id": 243299, "field": "description", "en": "Don't spend it all in one place.", "hash": "9777e5ed79794f62", "src": "db2@1.60.1.70291"}
+{"id": 243065, "field": "name", "en": "Broken Wand", "hash": "0045d58d4e7ba7c5", "src": "db2@1.60.1.70338"}
+{"id": 243065, "field": "description", "en": "Imbue with wild magic.", "hash": "90fdaadc3e970f5e", "src": "db2@1.60.1.70338"}
+{"id": 243177, "field": "name", "en": "Ingenious Toy", "hash": "e3c2c6f4d4deec47", "src": "db2@1.60.1.70338"}
+{"id": 243203, "field": "name", "en": "Humongous Crystal", "hash": "88db9385acbe592f", "src": "db2@1.60.1.70338"}
+{"id": 243203, "field": "description", "en": "A fist-sized hunk of crystal with a pale blue luster.", "hash": "f7d2875540d067ae", "src": "db2@1.60.1.70338"}
+{"id": 243266, "field": "name", "en": "Fel-Tainted Giblets", "hash": "9676ab4eb82e1eec", "src": "db2@1.60.1.70338"}
+{"id": 243299, "field": "name", "en": "Big Bag o' Gold", "hash": "4f242157c849683b", "src": "db2@1.60.1.70338"}
+{"id": 243299, "field": "description", "en": "Don't spend it all in one place.", "hash": "9777e5ed79794f62", "src": "db2@1.60.1.70338"}

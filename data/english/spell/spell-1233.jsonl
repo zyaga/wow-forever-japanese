@@ -1,99 +1,99 @@
-{"id": 1233003, "field": "name", "en": "Dragon Orb", "hash": "19af46f6422ba3af", "src": "db2@1.60.1.70291"}
-{"id": 1233016, "field": "name", "en": "Mortar Combat", "hash": "a61ffa2e50e857df", "src": "db2@1.60.1.70291"}
-{"id": 1233025, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70291"}
-{"id": 1233028, "field": "name", "en": "No Man's Land", "hash": "cdcddab8f4d06a35", "src": "db2@1.60.1.70291"}
-{"id": 1233028, "field": "aura", "en": "You are where you should not be...", "hash": "0b90d906e592e8d9", "src": "db2@1.60.1.70291"}
-{"id": 1233029, "field": "name", "en": "Imprisonment", "hash": "ca6c53283c1a75f3", "src": "db2@1.60.1.70291"}
-{"id": 1233069, "field": "name", "en": "Divine Consecration", "hash": "d571c758df259eb2", "src": "db2@1.60.1.70291"}
-{"id": 1233069, "field": "aura", "en": "$s1 damage every $t1 $lsecond:seconds;.", "hash": "6e1476427b33cc94", "src": "db2@1.60.1.70291"}
-{"id": 1233077, "field": "name", "en": "Curse of Agony", "hash": "2bc0446b6c8f359d", "src": "db2@1.60.1.70291"}
-{"id": 1233077, "field": "description", "en": "Curses nearby enemies with agony, inflicting Shadow damage every $t1 sec. for $d. Only one curse per warlock can be active on any one target.", "hash": "3cac0b7e7485d29d", "src": "db2@1.60.1.70291"}
-{"id": 1233077, "field": "aura", "en": "Shadow damage every $t1 sec.", "hash": "4cc78b5ec26c5ff1", "src": "db2@1.60.1.70291"}
-{"id": 1233078, "field": "name", "en": "Radiant Missiles", "hash": "95f04523ef05e582", "src": "db2@1.60.1.70291"}
-{"id": 1233078, "field": "description", "en": "Launches a magical missile at an enemy, inflicting Radiant damage.", "hash": "250a07d4115c18b8", "src": "db2@1.60.1.70291"}
-{"id": 1233079, "field": "name", "en": "Radiant Missiles", "hash": "95f04523ef05e582", "src": "db2@1.60.1.70291"}
-{"id": 1233079, "field": "description", "en": "Launches magical missiles at an enemy, inflicting Radiant damage each second for $d.", "hash": "fcdf06b601192388", "src": "db2@1.60.1.70291"}
-{"id": 1233151, "field": "name", "en": "Scarlet Arrows", "hash": "9f15cdb2e1d1029d", "src": "db2@1.60.1.70291"}
-{"id": 1233247, "field": "name", "en": "Rose's Thorn", "hash": "856ce74a6aebab66", "src": "db2@1.60.1.70291"}
-{"id": 1233255, "field": "name", "en": "Counterspell", "hash": "f353765b476dc176", "src": "db2@1.60.1.70291"}
-{"id": 1233255, "field": "description", "en": "Counters an enemy's spell, preventing the enemy from casting that spell again for $d. Generates a high amount of threat.", "hash": "3870ef6f6fbc1d80", "src": "db2@1.60.1.70291"}
-{"id": 1233280, "field": "name", "en": "Lucky Doubloon", "hash": "2e5348105b084ed1", "src": "db2@1.60.1.70291"}
-{"id": 1233280, "field": "description", "en": "Flip the Lucky Doubloon. On heads, the cooldown of Lucky Doubloon is refreshed, and your critical strike chance with all spells and attacks is increased by $1232052s1% for $1232052d, stacking up to $1232052u times. On tails, all stacks of Lucky Doubloon are removed. (Must be in combat.)", "hash": "22b09205e940e612", "src": "db2@1.60.1.70291"}
-{"id": 1233291, "field": "name", "en": "Unleashed Radiance", "hash": "1200cf8f1d8258ed", "src": "db2@1.60.1.70291"}
-{"id": 1233293, "field": "name", "en": "Battle Cry", "hash": "b2c2c3fba5023444", "src": "db2@1.60.1.70291"}
-{"id": 1233293, "field": "description", "en": "Unleashes an intimidating $@spellname1233293 inflicting $s1 Physical damage to all players.\r\n\r\nThis shout inspires nearby crusaders, increasing their damage done by $s2% for $d.", "hash": "42e7c8c7fc4241b5", "src": "db2@1.60.1.70291"}
-{"id": 1233293, "field": "aura", "en": "Damage done increased by $s2%.", "hash": "33addee2e46841ac", "src": "db2@1.60.1.70291"}
-{"id": 1233297, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70291"}
-{"id": 1233297, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70291"}
-{"id": 1233344, "field": "name", "en": "Devotion Aura", "hash": "a7c022197c5c909c", "src": "db2@1.60.1.70291"}
-{"id": 1233344, "field": "description", "en": "Gives $s1 additional armor to nearby party members for $d. Players may only have one aura on them per paladin at any one time.", "hash": "6d8fef2ae34c27a4", "src": "db2@1.60.1.70291"}
-{"id": 1233344, "field": "aura", "en": "Armor and Resistances increased by $s1.", "hash": "486c6c138900ab43", "src": "db2@1.60.1.70291"}
-{"id": 1233347, "field": "name", "en": "(DNT) Hallway Corpse Beg", "hash": "a4601aaebc20a3fa", "src": "db2@1.60.1.70291"}
-{"id": 1233348, "field": "name", "en": "Divine Hammer", "hash": "645955129b4f3507", "src": "db2@1.60.1.70291"}
-{"id": 1233350, "field": "name", "en": "Divine Hammer", "hash": "645955129b4f3507", "src": "db2@1.60.1.70291"}
-{"id": 1233361, "field": "name", "en": "Divine Hammer", "hash": "645955129b4f3507", "src": "db2@1.60.1.70291"}
-{"id": 1233361, "field": "aura", "en": "Bleeding for $s2 Physical damage every $t2 sec.", "hash": "7d453afc96db9326", "src": "db2@1.60.1.70291"}
-{"id": 1233362, "field": "name", "en": "Divine Hammer", "hash": "645955129b4f3507", "src": "db2@1.60.1.70291"}
-{"id": 1233369, "field": "name", "en": "(DNT) Hallway Corpse Cry", "hash": "a4606470c01a863a", "src": "db2@1.60.1.70291"}
-{"id": 1233376, "field": "name", "en": "(DNT) Ash Weather", "hash": "f2ca45413f4e7ad2", "src": "db2@1.60.1.70291"}
-{"id": 1233396, "field": "name", "en": "Righteous Reckoning", "hash": "e6a119a034aa7285", "src": "db2@1.60.1.70291"}
-{"id": 1233442, "field": "name", "en": "Righteous Reckoning", "hash": "e6a119a034aa7285", "src": "db2@1.60.1.70291"}
-{"id": 1233444, "field": "name", "en": "[DNT] Hammer Time", "hash": "70f47aa623e0be7e", "src": "db2@1.60.1.70291"}
-{"id": 1233451, "field": "name", "en": "Trick Shots", "hash": "88cf0e7d161739dd", "src": "db2@1.60.1.70291"}
-{"id": 1233451, "field": "description", "en": "Your next Multi-Shot deals $s1% increased damage.", "hash": "bc8236355967b90b", "src": "db2@1.60.1.70291"}
-{"id": 1233451, "field": "aura", "en": "Your next Multi-Shot deals $s1% increased damage.", "hash": "bc8236355967b90b", "src": "db2@1.60.1.70291"}
-{"id": 1233468, "field": "name", "en": "[DNT] Righteous Reckoning", "hash": "952b19ee46cd5d0d", "src": "db2@1.60.1.70291"}
-{"id": 1233507, "field": "name", "en": "Reckoning", "hash": "c17f13f92f8e54f7", "src": "db2@1.60.1.70291"}
-{"id": 1233525, "field": "name", "en": "Avenging Shield", "hash": "0be819ae948a2740", "src": "db2@1.60.1.70291"}
-{"id": 1233525, "field": "aura", "en": "Increases Block Value by $s1%.", "hash": "6f336ed69ae8b28e", "src": "db2@1.60.1.70291"}
-{"id": 1233543, "field": "name", "en": "Time Lapse", "hash": "cb52bf7251cd52dc", "src": "db2@1.60.1.70291"}
-{"id": 1233545, "field": "name", "en": "Time Lapse", "hash": "cb52bf7251cd52dc", "src": "db2@1.60.1.70291"}
-{"id": 1233551, "field": "name", "en": "Soul of the Starcaller", "hash": "170da77379124612", "src": "db2@1.60.1.70291"}
-{"id": 1233551, "field": "description", "en": "$@spelldesc455859", "hash": "c4f5e8d6174b62b2", "src": "db2@1.60.1.70291"}
-{"id": 1233552, "field": "name", "en": "Spiked Bulwark", "hash": "cdc938d3fb6130ef", "src": "db2@1.60.1.70291"}
-{"id": 1233552, "field": "aura", "en": "$s1 Physical damage inflicted to melee attackers.", "hash": "2f39479a27b43271", "src": "db2@1.60.1.70291"}
-{"id": 1233570, "field": "name", "en": "Fire Torrent", "hash": "02a06e1ddc0533d6", "src": "db2@1.60.1.70291"}
-{"id": 1233571, "field": "name", "en": "Fire Torrent", "hash": "02a06e1ddc0533d6", "src": "db2@1.60.1.70291"}
-{"id": 1233625, "field": "name", "en": "Fire Torrent", "hash": "02a06e1ddc0533d6", "src": "db2@1.60.1.70291"}
-{"id": 1233736, "field": "name", "en": "Invisibility and Stealth Detection", "hash": "8563c35412a38acc", "src": "db2@1.60.1.70291"}
-{"id": 1233815, "field": "name", "en": "Cannon Fire", "hash": "bc5cb3953b09c6f1", "src": "db2@1.60.1.70291"}
-{"id": 1233815, "field": "description", "en": "Load yourself into a cannon. Seems safe enough.", "hash": "03f6f963f82ac298", "src": "db2@1.60.1.70291"}
-{"id": 1233831, "field": "name", "en": "Cannon Fire", "hash": "bc5cb3953b09c6f1", "src": "db2@1.60.1.70291"}
-{"id": 1233831, "field": "description", "en": "Load yourself into a cannon. Seems safe enough.", "hash": "03f6f963f82ac298", "src": "db2@1.60.1.70291"}
-{"id": 1233832, "field": "name", "en": "Fire's Glow", "hash": "da117c1b09a6b5ac", "src": "db2@1.60.1.70291"}
-{"id": 1233832, "field": "description", "en": "Increase the Spirit of nearby party members by $M1.", "hash": "23ae3f5e01538d19", "src": "db2@1.60.1.70291"}
-{"id": 1233834, "field": "name", "en": "Cannon Fire", "hash": "bc5cb3953b09c6f1", "src": "db2@1.60.1.70291"}
-{"id": 1233834, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70291"}
-{"id": 1233835, "field": "name", "en": "Thunder and Lava", "hash": "08a19916d677c4e3", "src": "db2@1.60.1.70291"}
-{"id": 1233835, "field": "aura", "en": "Damage done by your next Lava Burst increased by $s1%.", "hash": "ed4dbcd4c8231a7b", "src": "db2@1.60.1.70291"}
-{"id": 1233840, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70291"}
-{"id": 1233840, "field": "description", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70291"}
-{"id": 1233840, "field": "aura", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70291"}
-{"id": 1233842, "field": "name", "en": "Fire's Glow", "hash": "da117c1b09a6b5ac", "src": "db2@1.60.1.70291"}
-{"id": 1233842, "field": "description", "en": "Increase the Spirit of nearby party members by $M1.", "hash": "23ae3f5e01538d19", "src": "db2@1.60.1.70291"}
-{"id": 1233847, "field": "name", "en": "Scarlet Grasp", "hash": "58ee3d7616494f23", "src": "db2@1.60.1.70291"}
-{"id": 1233848, "field": "name", "en": "Scarlet Grasp", "hash": "58ee3d7616494f23", "src": "db2@1.60.1.70291"}
-{"id": 1233849, "field": "name", "en": "Unstable Concoction", "hash": "f0e52f3aedb61390", "src": "db2@1.60.1.70291"}
-{"id": 1233852, "field": "name", "en": "Unstable Concoction", "hash": "f0e52f3aedb61390", "src": "db2@1.60.1.70291"}
-{"id": 1233853, "field": "name", "en": "Serrated Blades", "hash": "ea9b33ed57ff1403", "src": "db2@1.60.1.70291"}
-{"id": 1233853, "field": "aura", "en": "Attacks are serrated with poison, causing the next 10 attacks to deal additional Nature damage.", "hash": "65dad3ded2d26443", "src": "db2@1.60.1.70291"}
-{"id": 1233854, "field": "name", "en": "Serrated Blades", "hash": "ea9b33ed57ff1403", "src": "db2@1.60.1.70291"}
-{"id": 1233880, "field": "name", "en": "Toxic Coagulant", "hash": "b00c688543512811", "src": "db2@1.60.1.70291"}
-{"id": 1233883, "field": "name", "en": "Intoxicating Venom", "hash": "3e111aad1f636538", "src": "db2@1.60.1.70291"}
-{"id": 1233883, "field": "aura", "en": "This sticky toxin is hardening, and will become thick as ooze at 5 stacks.\r\nMovement will render the toxin unable to fully coagulate.", "hash": "76c8a9129c3d636d", "src": "db2@1.60.1.70291"}
-{"id": 1233884, "field": "name", "en": "Sludge Toxin", "hash": "102249cbd286922a", "src": "db2@1.60.1.70291"}
-{"id": 1233884, "field": "aura", "en": "Encased in ooze!\r\n$s1 Nature damage inflicted every $t1 sec.", "hash": "87b88bb07ab769d3", "src": "db2@1.60.1.70291"}
-{"id": 1233901, "field": "name", "en": "Noxious Poison", "hash": "0ef8af4f04a374c9", "src": "db2@1.60.1.70291"}
-{"id": 1233901, "field": "aura", "en": "Deals $s1 nature damage every $t1 sec.\r\nLeaves behind a pool of noxious poison when removed.", "hash": "8469d4bf4b364737", "src": "db2@1.60.1.70291"}
-{"id": 1233908, "field": "name", "en": "Cannon Fire", "hash": "bc5cb3953b09c6f1", "src": "db2@1.60.1.70291"}
-{"id": 1233908, "field": "description", "en": "Load yourself into a cannon. Seems safe enough.", "hash": "03f6f963f82ac298", "src": "db2@1.60.1.70291"}
-{"id": 1233911, "field": "name", "en": "Toxic Pool", "hash": "477ea733c8ac5177", "src": "db2@1.60.1.70291"}
-{"id": 1233915, "field": "name", "en": "Toxic Pool", "hash": "477ea733c8ac5177", "src": "db2@1.60.1.70291"}
-{"id": 1233924, "field": "name", "en": "Cannon Fire", "hash": "bc5cb3953b09c6f1", "src": "db2@1.60.1.70291"}
-{"id": 1233926, "field": "name", "en": "Cannon Fire", "hash": "bc5cb3953b09c6f1", "src": "db2@1.60.1.70291"}
-{"id": 1233927, "field": "name", "en": "Cannon Fire", "hash": "bc5cb3953b09c6f1", "src": "db2@1.60.1.70291"}
-{"id": 1233955, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70291"}
-{"id": 1233964, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70291"}
-{"id": 1233987, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70291"}
-{"id": 1233988, "field": "name", "en": "Infernalist Armor", "hash": "305f7c5718a6af5d", "src": "db2@1.60.1.70291"}
-{"id": 1233988, "field": "aura", "en": "Magical damage done increased by $s1%.", "hash": "01773a7fa081a2f9", "src": "db2@1.60.1.70291"}
+{"id": 1233003, "field": "name", "en": "Dragon Orb", "hash": "19af46f6422ba3af", "src": "db2@1.60.1.70338"}
+{"id": 1233016, "field": "name", "en": "Mortar Combat", "hash": "a61ffa2e50e857df", "src": "db2@1.60.1.70338"}
+{"id": 1233025, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70338"}
+{"id": 1233028, "field": "name", "en": "No Man's Land", "hash": "cdcddab8f4d06a35", "src": "db2@1.60.1.70338"}
+{"id": 1233028, "field": "aura", "en": "You are where you should not be...", "hash": "0b90d906e592e8d9", "src": "db2@1.60.1.70338"}
+{"id": 1233029, "field": "name", "en": "Imprisonment", "hash": "ca6c53283c1a75f3", "src": "db2@1.60.1.70338"}
+{"id": 1233069, "field": "name", "en": "Divine Consecration", "hash": "d571c758df259eb2", "src": "db2@1.60.1.70338"}
+{"id": 1233069, "field": "aura", "en": "$s1 damage every $t1 $lsecond:seconds;.", "hash": "6e1476427b33cc94", "src": "db2@1.60.1.70338"}
+{"id": 1233077, "field": "name", "en": "Curse of Agony", "hash": "2bc0446b6c8f359d", "src": "db2@1.60.1.70338"}
+{"id": 1233077, "field": "description", "en": "Curses nearby enemies with agony, inflicting Shadow damage every $t1 sec. for $d. Only one curse per warlock can be active on any one target.", "hash": "3cac0b7e7485d29d", "src": "db2@1.60.1.70338"}
+{"id": 1233077, "field": "aura", "en": "Shadow damage every $t1 sec.", "hash": "4cc78b5ec26c5ff1", "src": "db2@1.60.1.70338"}
+{"id": 1233078, "field": "name", "en": "Radiant Missiles", "hash": "95f04523ef05e582", "src": "db2@1.60.1.70338"}
+{"id": 1233078, "field": "description", "en": "Launches a magical missile at an enemy, inflicting Radiant damage.", "hash": "250a07d4115c18b8", "src": "db2@1.60.1.70338"}
+{"id": 1233079, "field": "name", "en": "Radiant Missiles", "hash": "95f04523ef05e582", "src": "db2@1.60.1.70338"}
+{"id": 1233079, "field": "description", "en": "Launches magical missiles at an enemy, inflicting Radiant damage each second for $d.", "hash": "fcdf06b601192388", "src": "db2@1.60.1.70338"}
+{"id": 1233151, "field": "name", "en": "Scarlet Arrows", "hash": "9f15cdb2e1d1029d", "src": "db2@1.60.1.70338"}
+{"id": 1233247, "field": "name", "en": "Rose's Thorn", "hash": "856ce74a6aebab66", "src": "db2@1.60.1.70338"}
+{"id": 1233255, "field": "name", "en": "Counterspell", "hash": "f353765b476dc176", "src": "db2@1.60.1.70338"}
+{"id": 1233255, "field": "description", "en": "Counters an enemy's spell, preventing the enemy from casting that spell again for $d. Generates a high amount of threat.", "hash": "3870ef6f6fbc1d80", "src": "db2@1.60.1.70338"}
+{"id": 1233280, "field": "name", "en": "Lucky Doubloon", "hash": "2e5348105b084ed1", "src": "db2@1.60.1.70338"}
+{"id": 1233280, "field": "description", "en": "Flip the Lucky Doubloon. On heads, the cooldown of Lucky Doubloon is refreshed, and your critical strike chance with all spells and attacks is increased by $1232052s1% for $1232052d, stacking up to $1232052u times. On tails, all stacks of Lucky Doubloon are removed. (Must be in combat.)", "hash": "22b09205e940e612", "src": "db2@1.60.1.70338"}
+{"id": 1233291, "field": "name", "en": "Unleashed Radiance", "hash": "1200cf8f1d8258ed", "src": "db2@1.60.1.70338"}
+{"id": 1233293, "field": "name", "en": "Battle Cry", "hash": "b2c2c3fba5023444", "src": "db2@1.60.1.70338"}
+{"id": 1233293, "field": "description", "en": "Unleashes an intimidating $@spellname1233293 inflicting $s1 Physical damage to all players.\r\n\r\nThis shout inspires nearby crusaders, increasing their damage done by $s2% for $d.", "hash": "42e7c8c7fc4241b5", "src": "db2@1.60.1.70338"}
+{"id": 1233293, "field": "aura", "en": "Damage done increased by $s2%.", "hash": "33addee2e46841ac", "src": "db2@1.60.1.70338"}
+{"id": 1233297, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70338"}
+{"id": 1233297, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70338"}
+{"id": 1233344, "field": "name", "en": "Devotion Aura", "hash": "a7c022197c5c909c", "src": "db2@1.60.1.70338"}
+{"id": 1233344, "field": "description", "en": "Gives $s1 additional armor to nearby party members for $d. Players may only have one aura on them per paladin at any one time.", "hash": "6d8fef2ae34c27a4", "src": "db2@1.60.1.70338"}
+{"id": 1233344, "field": "aura", "en": "Armor and Resistances increased by $s1.", "hash": "486c6c138900ab43", "src": "db2@1.60.1.70338"}
+{"id": 1233347, "field": "name", "en": "(DNT) Hallway Corpse Beg", "hash": "a4601aaebc20a3fa", "src": "db2@1.60.1.70338"}
+{"id": 1233348, "field": "name", "en": "Divine Hammer", "hash": "645955129b4f3507", "src": "db2@1.60.1.70338"}
+{"id": 1233350, "field": "name", "en": "Divine Hammer", "hash": "645955129b4f3507", "src": "db2@1.60.1.70338"}
+{"id": 1233361, "field": "name", "en": "Divine Hammer", "hash": "645955129b4f3507", "src": "db2@1.60.1.70338"}
+{"id": 1233361, "field": "aura", "en": "Bleeding for $s2 Physical damage every $t2 sec.", "hash": "7d453afc96db9326", "src": "db2@1.60.1.70338"}
+{"id": 1233362, "field": "name", "en": "Divine Hammer", "hash": "645955129b4f3507", "src": "db2@1.60.1.70338"}
+{"id": 1233369, "field": "name", "en": "(DNT) Hallway Corpse Cry", "hash": "a4606470c01a863a", "src": "db2@1.60.1.70338"}
+{"id": 1233376, "field": "name", "en": "(DNT) Ash Weather", "hash": "f2ca45413f4e7ad2", "src": "db2@1.60.1.70338"}
+{"id": 1233396, "field": "name", "en": "Righteous Reckoning", "hash": "e6a119a034aa7285", "src": "db2@1.60.1.70338"}
+{"id": 1233442, "field": "name", "en": "Righteous Reckoning", "hash": "e6a119a034aa7285", "src": "db2@1.60.1.70338"}
+{"id": 1233444, "field": "name", "en": "[DNT] Hammer Time", "hash": "70f47aa623e0be7e", "src": "db2@1.60.1.70338"}
+{"id": 1233451, "field": "name", "en": "Trick Shots", "hash": "88cf0e7d161739dd", "src": "db2@1.60.1.70338"}
+{"id": 1233451, "field": "description", "en": "Your next Multi-Shot deals $s1% increased damage.", "hash": "bc8236355967b90b", "src": "db2@1.60.1.70338"}
+{"id": 1233451, "field": "aura", "en": "Your next Multi-Shot deals $s1% increased damage.", "hash": "bc8236355967b90b", "src": "db2@1.60.1.70338"}
+{"id": 1233468, "field": "name", "en": "[DNT] Righteous Reckoning", "hash": "952b19ee46cd5d0d", "src": "db2@1.60.1.70338"}
+{"id": 1233507, "field": "name", "en": "Reckoning", "hash": "c17f13f92f8e54f7", "src": "db2@1.60.1.70338"}
+{"id": 1233525, "field": "name", "en": "Avenging Shield", "hash": "0be819ae948a2740", "src": "db2@1.60.1.70338"}
+{"id": 1233525, "field": "aura", "en": "Increases Block Value by $s1%.", "hash": "6f336ed69ae8b28e", "src": "db2@1.60.1.70338"}
+{"id": 1233543, "field": "name", "en": "Time Lapse", "hash": "cb52bf7251cd52dc", "src": "db2@1.60.1.70338"}
+{"id": 1233545, "field": "name", "en": "Time Lapse", "hash": "cb52bf7251cd52dc", "src": "db2@1.60.1.70338"}
+{"id": 1233551, "field": "name", "en": "Soul of the Starcaller", "hash": "170da77379124612", "src": "db2@1.60.1.70338"}
+{"id": 1233551, "field": "description", "en": "$@spelldesc455859", "hash": "c4f5e8d6174b62b2", "src": "db2@1.60.1.70338"}
+{"id": 1233552, "field": "name", "en": "Spiked Bulwark", "hash": "cdc938d3fb6130ef", "src": "db2@1.60.1.70338"}
+{"id": 1233552, "field": "aura", "en": "$s1 Physical damage inflicted to melee attackers.", "hash": "2f39479a27b43271", "src": "db2@1.60.1.70338"}
+{"id": 1233570, "field": "name", "en": "Fire Torrent", "hash": "02a06e1ddc0533d6", "src": "db2@1.60.1.70338"}
+{"id": 1233571, "field": "name", "en": "Fire Torrent", "hash": "02a06e1ddc0533d6", "src": "db2@1.60.1.70338"}
+{"id": 1233625, "field": "name", "en": "Fire Torrent", "hash": "02a06e1ddc0533d6", "src": "db2@1.60.1.70338"}
+{"id": 1233736, "field": "name", "en": "Invisibility and Stealth Detection", "hash": "8563c35412a38acc", "src": "db2@1.60.1.70338"}
+{"id": 1233815, "field": "name", "en": "Cannon Fire", "hash": "bc5cb3953b09c6f1", "src": "db2@1.60.1.70338"}
+{"id": 1233815, "field": "description", "en": "Load yourself into a cannon. Seems safe enough.", "hash": "03f6f963f82ac298", "src": "db2@1.60.1.70338"}
+{"id": 1233831, "field": "name", "en": "Cannon Fire", "hash": "bc5cb3953b09c6f1", "src": "db2@1.60.1.70338"}
+{"id": 1233831, "field": "description", "en": "Load yourself into a cannon. Seems safe enough.", "hash": "03f6f963f82ac298", "src": "db2@1.60.1.70338"}
+{"id": 1233832, "field": "name", "en": "Fire's Glow", "hash": "da117c1b09a6b5ac", "src": "db2@1.60.1.70338"}
+{"id": 1233832, "field": "description", "en": "Increase the Spirit of nearby party members by $M1.", "hash": "23ae3f5e01538d19", "src": "db2@1.60.1.70338"}
+{"id": 1233834, "field": "name", "en": "Cannon Fire", "hash": "bc5cb3953b09c6f1", "src": "db2@1.60.1.70338"}
+{"id": 1233834, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70338"}
+{"id": 1233835, "field": "name", "en": "Thunder and Lava", "hash": "08a19916d677c4e3", "src": "db2@1.60.1.70338"}
+{"id": 1233835, "field": "aura", "en": "Damage done by your next Lava Burst increased by $s1%.", "hash": "ed4dbcd4c8231a7b", "src": "db2@1.60.1.70338"}
+{"id": 1233840, "field": "name", "en": "Teleport", "hash": "93978a5639a52dd4", "src": "db2@1.60.1.70338"}
+{"id": 1233840, "field": "description", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70338"}
+{"id": 1233840, "field": "aura", "en": "Teleport player to relative safety.", "hash": "2b174d0fb09fcff0", "src": "db2@1.60.1.70338"}
+{"id": 1233842, "field": "name", "en": "Fire's Glow", "hash": "da117c1b09a6b5ac", "src": "db2@1.60.1.70338"}
+{"id": 1233842, "field": "description", "en": "Increase the Spirit of nearby party members by $M1.", "hash": "23ae3f5e01538d19", "src": "db2@1.60.1.70338"}
+{"id": 1233847, "field": "name", "en": "Scarlet Grasp", "hash": "58ee3d7616494f23", "src": "db2@1.60.1.70338"}
+{"id": 1233848, "field": "name", "en": "Scarlet Grasp", "hash": "58ee3d7616494f23", "src": "db2@1.60.1.70338"}
+{"id": 1233849, "field": "name", "en": "Unstable Concoction", "hash": "f0e52f3aedb61390", "src": "db2@1.60.1.70338"}
+{"id": 1233852, "field": "name", "en": "Unstable Concoction", "hash": "f0e52f3aedb61390", "src": "db2@1.60.1.70338"}
+{"id": 1233853, "field": "name", "en": "Serrated Blades", "hash": "ea9b33ed57ff1403", "src": "db2@1.60.1.70338"}
+{"id": 1233853, "field": "aura", "en": "Attacks are serrated with poison, causing the next 10 attacks to deal additional Nature damage.", "hash": "65dad3ded2d26443", "src": "db2@1.60.1.70338"}
+{"id": 1233854, "field": "name", "en": "Serrated Blades", "hash": "ea9b33ed57ff1403", "src": "db2@1.60.1.70338"}
+{"id": 1233880, "field": "name", "en": "Toxic Coagulant", "hash": "b00c688543512811", "src": "db2@1.60.1.70338"}
+{"id": 1233883, "field": "name", "en": "Intoxicating Venom", "hash": "3e111aad1f636538", "src": "db2@1.60.1.70338"}
+{"id": 1233883, "field": "aura", "en": "This sticky toxin is hardening, and will become thick as ooze at 5 stacks.\r\nMovement will render the toxin unable to fully coagulate.", "hash": "76c8a9129c3d636d", "src": "db2@1.60.1.70338"}
+{"id": 1233884, "field": "name", "en": "Sludge Toxin", "hash": "102249cbd286922a", "src": "db2@1.60.1.70338"}
+{"id": 1233884, "field": "aura", "en": "Encased in ooze!\r\n$s1 Nature damage inflicted every $t1 sec.", "hash": "87b88bb07ab769d3", "src": "db2@1.60.1.70338"}
+{"id": 1233901, "field": "name", "en": "Noxious Poison", "hash": "0ef8af4f04a374c9", "src": "db2@1.60.1.70338"}
+{"id": 1233901, "field": "aura", "en": "Deals $s1 nature damage every $t1 sec.\r\nLeaves behind a pool of noxious poison when removed.", "hash": "8469d4bf4b364737", "src": "db2@1.60.1.70338"}
+{"id": 1233908, "field": "name", "en": "Cannon Fire", "hash": "bc5cb3953b09c6f1", "src": "db2@1.60.1.70338"}
+{"id": 1233908, "field": "description", "en": "Load yourself into a cannon. Seems safe enough.", "hash": "03f6f963f82ac298", "src": "db2@1.60.1.70338"}
+{"id": 1233911, "field": "name", "en": "Toxic Pool", "hash": "477ea733c8ac5177", "src": "db2@1.60.1.70338"}
+{"id": 1233915, "field": "name", "en": "Toxic Pool", "hash": "477ea733c8ac5177", "src": "db2@1.60.1.70338"}
+{"id": 1233924, "field": "name", "en": "Cannon Fire", "hash": "bc5cb3953b09c6f1", "src": "db2@1.60.1.70338"}
+{"id": 1233926, "field": "name", "en": "Cannon Fire", "hash": "bc5cb3953b09c6f1", "src": "db2@1.60.1.70338"}
+{"id": 1233927, "field": "name", "en": "Cannon Fire", "hash": "bc5cb3953b09c6f1", "src": "db2@1.60.1.70338"}
+{"id": 1233955, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70338"}
+{"id": 1233964, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70338"}
+{"id": 1233987, "field": "name", "en": "Incendiary Bomb", "hash": "53db03afcd1af24e", "src": "db2@1.60.1.70338"}
+{"id": 1233988, "field": "name", "en": "Infernalist Armor", "hash": "305f7c5718a6af5d", "src": "db2@1.60.1.70338"}
+{"id": 1233988, "field": "aura", "en": "Magical damage done increased by $s1%.", "hash": "01773a7fa081a2f9", "src": "db2@1.60.1.70338"}

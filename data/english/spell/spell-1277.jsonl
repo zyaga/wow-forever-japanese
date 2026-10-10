@@ -1,139 +1,139 @@
-{"id": 1277018, "field": "name", "en": "Grow", "hash": "09a19943fc70ad59", "src": "db2@1.60.1.70291"}
-{"id": 1277018, "field": "aura", "en": "Will finish growing in $d.", "hash": "aa7844ec142cd5db", "src": "db2@1.60.1.70291"}
-{"id": 1277022, "field": "name", "en": "Growing Herb", "hash": "2c825c2b01241113", "src": "db2@1.60.1.70291"}
-{"id": 1277050, "field": "name", "en": "Water Sample", "hash": "ff00d1f7dbb3e195", "src": "db2@1.60.1.70291"}
-{"id": 1277050, "field": "description", "en": "This container needs to be filled with water from Stonewatch Falls in Redridge Mountains.", "hash": "c4b9e7d2490ec17f", "src": "db2@1.60.1.70291"}
-{"id": 1277093, "field": "name", "en": "Creature - No Health Regeneration", "hash": "e08d64fbf8c1d769", "src": "db2@1.60.1.70291"}
-{"id": 1277095, "field": "name", "en": "Defeated", "hash": "356454e4c49b3a01", "src": "db2@1.60.1.70291"}
-{"id": 1277112, "field": "name", "en": "Water Sample", "hash": "ff00d1f7dbb3e195", "src": "db2@1.60.1.70291"}
-{"id": 1277112, "field": "description", "en": "This container should be filled from the body of water around Astranaar.", "hash": "2983b8ce46f6ef39", "src": "db2@1.60.1.70291"}
-{"id": 1277222, "field": "name", "en": "(DNT) Spawn Visuals", "hash": "47a409d63cfa7d0a", "src": "db2@1.60.1.70291"}
-{"id": 1277246, "field": "name", "en": "Fishing Lure", "hash": "3102b836ae58d9c5", "src": "db2@1.60.1.70291"}
-{"id": 1277257, "field": "name", "en": "Wounded", "hash": "8bb39feca1bb97ce", "src": "db2@1.60.1.70291"}
-{"id": 1277257, "field": "aura", "en": "Bleeding out from a vicious wound.", "hash": "d1b3d02bbedce9bd", "src": "db2@1.60.1.70291"}
-{"id": 1277271, "field": "name", "en": "Unlocking", "hash": "c70c6ae8388f7eba", "src": "db2@1.60.1.70291"}
-{"id": 1277324, "field": "name", "en": "Dark Sacrifice", "hash": "122ac7cabd5eefa4", "src": "db2@1.60.1.70291"}
-{"id": 1277324, "field": "description", "en": "Cannibalize $o1 of your own Health over $d to gain ${$o2+$SPI} Mana.", "hash": "6157ab701df9877d", "src": "db2@1.60.1.70291"}
-{"id": 1277324, "field": "aura", "en": "Converting $s1 Health into $w2 Mana every $t1 sec.", "hash": "f919d57416645592", "src": "db2@1.60.1.70291"}
-{"id": 1277325, "field": "name", "en": "Dark Sacrifice", "hash": "122ac7cabd5eefa4", "src": "db2@1.60.1.70291"}
-{"id": 1277325, "field": "description", "en": "Cannibalize $o1 of your own Health over $d to gain ${$o2+$SPI} Mana.", "hash": "6157ab701df9877d", "src": "db2@1.60.1.70291"}
-{"id": 1277325, "field": "aura", "en": "Converting $s1 Health into $w2 Mana every $t1 sec.", "hash": "f919d57416645592", "src": "db2@1.60.1.70291"}
-{"id": 1277326, "field": "name", "en": "Dark Sacrifice", "hash": "122ac7cabd5eefa4", "src": "db2@1.60.1.70291"}
-{"id": 1277326, "field": "description", "en": "Cannibalize $o1 of your own Health over $d to gain ${$o2+$SPI} Mana.", "hash": "6157ab701df9877d", "src": "db2@1.60.1.70291"}
-{"id": 1277326, "field": "aura", "en": "Converting $s1 Health into $w2 Mana every $t1 sec.", "hash": "f919d57416645592", "src": "db2@1.60.1.70291"}
-{"id": 1277327, "field": "name", "en": "Dark Sacrifice", "hash": "122ac7cabd5eefa4", "src": "db2@1.60.1.70291"}
-{"id": 1277327, "field": "description", "en": "Cannibalize $o1 of your own Health over $d to gain ${$o2+$SPI} Mana.", "hash": "6157ab701df9877d", "src": "db2@1.60.1.70291"}
-{"id": 1277327, "field": "aura", "en": "Converting $s1 Health into $w2 Mana every $t1 sec.", "hash": "f919d57416645592", "src": "db2@1.60.1.70291"}
-{"id": 1277328, "field": "name", "en": "Dark Sacrifice", "hash": "122ac7cabd5eefa4", "src": "db2@1.60.1.70291"}
-{"id": 1277328, "field": "description", "en": "Cannibalize $o1 of your own Health over $d to gain ${$o2+$SPI} Mana.", "hash": "6157ab701df9877d", "src": "db2@1.60.1.70291"}
-{"id": 1277328, "field": "aura", "en": "Converting $s1 Health into $w2 Mana every $t1 sec.", "hash": "f919d57416645592", "src": "db2@1.60.1.70291"}
-{"id": 1277329, "field": "name", "en": "Green Skeletal Horse", "hash": "e91788b7069542ca", "src": "db2@1.60.1.70291"}
-{"id": 1277329, "field": "description", "en": "Summons and dismisses a rideable green skeletal horse. This is a very fast mount.", "hash": "de34cdbaf7ce4e52", "src": "db2@1.60.1.70291"}
-{"id": 1277329, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
-{"id": 1277330, "field": "name", "en": "Dark Skeletal Horse", "hash": "197dd610d8811373", "src": "db2@1.60.1.70291"}
-{"id": 1277330, "field": "description", "en": "Summons and dismisses a rideable dark skeletal horse. This is a very fast mount.", "hash": "a6f0167538d87e8b", "src": "db2@1.60.1.70291"}
-{"id": 1277330, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
-{"id": 1277331, "field": "name", "en": "Chastise", "hash": "eabe51393c268b76", "src": "db2@1.60.1.70291"}
-{"id": 1277331, "field": "description", "en": "Chastise the target, causing $s1 Holy damage and immobilizing them for up to $d. Only works against Humanoids. This spell causes very low threat.", "hash": "faeecfe4568d44f2", "src": "db2@1.60.1.70291"}
-{"id": 1277331, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70291"}
-{"id": 1277332, "field": "name", "en": "Chastise", "hash": "eabe51393c268b76", "src": "db2@1.60.1.70291"}
-{"id": 1277332, "field": "description", "en": "Chastise the target, causing $s1 Holy damage and immobilizing them for up to $d. Only works against Humanoids. This spell causes very low threat.", "hash": "faeecfe4568d44f2", "src": "db2@1.60.1.70291"}
-{"id": 1277332, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70291"}
-{"id": 1277333, "field": "name", "en": "Chastise", "hash": "eabe51393c268b76", "src": "db2@1.60.1.70291"}
-{"id": 1277333, "field": "description", "en": "Chastise the target, causing $s1 Holy damage and Immobilizing them for up to $d. Only works against Humanoids. This spell causes very low threat.", "hash": "951503f716a77ce5", "src": "db2@1.60.1.70291"}
-{"id": 1277333, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70291"}
-{"id": 1277334, "field": "name", "en": "Chastise", "hash": "eabe51393c268b76", "src": "db2@1.60.1.70291"}
-{"id": 1277334, "field": "description", "en": "Chastise the target, causing $s1 Holy damage and Immobilizing them for up to $d. Only works against Humanoids. This spell causes very low threat.", "hash": "951503f716a77ce5", "src": "db2@1.60.1.70291"}
-{"id": 1277334, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70291"}
-{"id": 1277335, "field": "name", "en": "Chastise", "hash": "eabe51393c268b76", "src": "db2@1.60.1.70291"}
-{"id": 1277335, "field": "description", "en": "Chastise the target, causing $s1 Holy damage and Immobilizing them for up to $d. Only works against Humanoids. This spell causes very low threat.", "hash": "951503f716a77ce5", "src": "db2@1.60.1.70291"}
-{"id": 1277335, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70291"}
-{"id": 1277336, "field": "name", "en": "Purple Skeletal Horse", "hash": "5389216bf4073671", "src": "db2@1.60.1.70291"}
-{"id": 1277336, "field": "description", "en": "Summons and dismisses a rideable Purple Skeletal Horse. This is a very fast mount.", "hash": "8d36735f7d92ab75", "src": "db2@1.60.1.70291"}
-{"id": 1277336, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70291"}
-{"id": 1277346, "field": "name", "en": "Call of Water", "hash": "1f0e11aaf286cfe5", "src": "db2@1.60.1.70291"}
-{"id": 1277347, "field": "name", "en": "Call of Water", "hash": "1f0e11aaf286cfe5", "src": "db2@1.60.1.70291"}
-{"id": 1277364, "field": "name", "en": "Desecration", "hash": "8a371a75216a4034", "src": "db2@1.60.1.70291"}
-{"id": 1277364, "field": "description", "en": "Channeling dark and unknowable magic, granting Bonesnout the Unbroken 1 stack of Profane Bulwark.", "hash": "64df2033a1a796eb", "src": "db2@1.60.1.70291"}
-{"id": 1277364, "field": "aura", "en": "Grants Bonesnout the Unbroken 1 stack of Profane Bulwark.", "hash": "08a6e51b0c9c20b7", "src": "db2@1.60.1.70291"}
-{"id": 1277367, "field": "name", "en": "Desecration", "hash": "8a371a75216a4034", "src": "db2@1.60.1.70291"}
-{"id": 1277370, "field": "name", "en": "Divine Grace", "hash": "4199a5e153330fa1", "src": "db2@1.60.1.70291"}
-{"id": 1277370, "field": "description", "en": "Instantly heals a friendly target below $s2% Health for $s1 and removes Weakened Soul from that target. Cannot be cast on self.", "hash": "eb5c111ce9eecee1", "src": "db2@1.60.1.70291"}
-{"id": 1277371, "field": "name", "en": "Divine Grace", "hash": "4199a5e153330fa1", "src": "db2@1.60.1.70291"}
-{"id": 1277371, "field": "description", "en": "Instantly heals a friendly target below $s2% Health for $s1 and removes Weakened Soul from that target. Cannot be cast on self.", "hash": "eb5c111ce9eecee1", "src": "db2@1.60.1.70291"}
-{"id": 1277372, "field": "name", "en": "Divine Grace", "hash": "4199a5e153330fa1", "src": "db2@1.60.1.70291"}
-{"id": 1277372, "field": "description", "en": "Instantly heals a friendly target below $s2% Health for $s1 and removes Weakened Soul from that target. Cannot be cast on self.", "hash": "eb5c111ce9eecee1", "src": "db2@1.60.1.70291"}
-{"id": 1277374, "field": "name", "en": "Divine Grace", "hash": "4199a5e153330fa1", "src": "db2@1.60.1.70291"}
-{"id": 1277374, "field": "description", "en": "Instantly heals a friendly target below $s2% Health for $s1 and removes Weakened Soul from that target. Cannot be cast on self.", "hash": "eb5c111ce9eecee1", "src": "db2@1.60.1.70291"}
-{"id": 1277376, "field": "name", "en": "Divine Grace", "hash": "4199a5e153330fa1", "src": "db2@1.60.1.70291"}
-{"id": 1277376, "field": "description", "en": "Instantly heals a friendly target below $s2% Health for $s1 and removes Weakened Soul from that target. Cannot be cast on self.", "hash": "eb5c111ce9eecee1", "src": "db2@1.60.1.70291"}
-{"id": 1277377, "field": "name", "en": "Divine Grace", "hash": "4199a5e153330fa1", "src": "db2@1.60.1.70291"}
-{"id": 1277377, "field": "description", "en": "Instantly heals a friendly target below $s2% Health for $s1 and removes Weakened Soul from that target. Cannot be cast on self.", "hash": "eb5c111ce9eecee1", "src": "db2@1.60.1.70291"}
-{"id": 1277378, "field": "name", "en": "Divine Grace", "hash": "4199a5e153330fa1", "src": "db2@1.60.1.70291"}
-{"id": 1277378, "field": "description", "en": "Instantly heals a friendly target below $s2% Health for $s1 and removes Weakened Soul from that target. Cannot be cast on self.", "hash": "eb5c111ce9eecee1", "src": "db2@1.60.1.70291"}
-{"id": 1277387, "field": "name", "en": "Divine Grace", "hash": "4199a5e153330fa1", "src": "db2@1.60.1.70291"}
-{"id": 1277397, "field": "name", "en": "[DNT] Ping Scouts", "hash": "1578af70c92c934f", "src": "db2@1.60.1.70291"}
-{"id": 1277405, "field": "name", "en": "Profane Bulwark", "hash": "cf2de412f205b56d", "src": "db2@1.60.1.70291"}
-{"id": 1277406, "field": "name", "en": "Profane Bulwark", "hash": "cf2de412f205b56d", "src": "db2@1.60.1.70291"}
-{"id": 1277406, "field": "description", "en": "The Satyr's rituals empower Bonesnout, reducing incoming damage by $S1% per stack.\r\n", "hash": "c39bc8bcd9227cc8", "src": "db2@1.60.1.70291"}
-{"id": 1277406, "field": "aura", "en": "Damage reduced by $S1%.", "hash": "2391512336f1d82f", "src": "db2@1.60.1.70291"}
-{"id": 1277417, "field": "name", "en": "Desecration", "hash": "8a371a75216a4034", "src": "db2@1.60.1.70291"}
-{"id": 1277417, "field": "description", "en": "$@spelldesc1277364", "hash": "dc29c3b9cd50e3fe", "src": "db2@1.60.1.70291"}
-{"id": 1277417, "field": "aura", "en": "$@spellaura1277364", "hash": "d6610dad74f092f9", "src": "db2@1.60.1.70291"}
-{"id": 1277418, "field": "name", "en": "Desecration", "hash": "8a371a75216a4034", "src": "db2@1.60.1.70291"}
-{"id": 1277424, "field": "name", "en": "Shield Wall", "hash": "94291d211c3b63a0", "src": "db2@1.60.1.70291"}
-{"id": 1277424, "field": "description", "en": "Reduces the Physical and magical damage taken by the caster by $s1% for $d.", "hash": "040d69da407d7cac", "src": "db2@1.60.1.70291"}
-{"id": 1277424, "field": "aura", "en": "Physical and magical damage taken is reduced by $s1%.", "hash": "59c7c6c43f968578", "src": "db2@1.60.1.70291"}
-{"id": 1277430, "field": "name", "en": "Desecration", "hash": "8a371a75216a4034", "src": "db2@1.60.1.70291"}
-{"id": 1277431, "field": "name", "en": "Desecration", "hash": "8a371a75216a4034", "src": "db2@1.60.1.70291"}
-{"id": 1277431, "field": "description", "en": "$@spelldesc1277364", "hash": "dc29c3b9cd50e3fe", "src": "db2@1.60.1.70291"}
-{"id": 1277431, "field": "aura", "en": "$@spellaura1277364", "hash": "d6610dad74f092f9", "src": "db2@1.60.1.70291"}
-{"id": 1277455, "field": "name", "en": "Confounding Flash", "hash": "d878232481a61444", "src": "db2@1.60.1.70291"}
-{"id": 1277455, "field": "description", "en": "Confuses up to $i enemies within $a1 yds for $d. Any damage taken will break the effect.", "hash": "5ae2d78d02fd672b", "src": "db2@1.60.1.70291"}
-{"id": 1277455, "field": "aura", "en": "Confused.", "hash": "ddba770120b1a964", "src": "db2@1.60.1.70291"}
-{"id": 1277456, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70291"}
-{"id": 1277456, "field": "aura", "en": "Healing $s1 damage every $t1 sec.", "hash": "c0a3840975cd3a7a", "src": "db2@1.60.1.70291"}
-{"id": 1277457, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70291"}
-{"id": 1277457, "field": "aura", "en": "Healing $s1 damage every $t1 sec.", "hash": "c0a3840975cd3a7a", "src": "db2@1.60.1.70291"}
-{"id": 1277458, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70291"}
-{"id": 1277458, "field": "aura", "en": "Healing $s1 damage every $t1 sec.", "hash": "c0a3840975cd3a7a", "src": "db2@1.60.1.70291"}
-{"id": 1277459, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70291"}
-{"id": 1277459, "field": "aura", "en": "Healing $s1 damage every $t1 sec.", "hash": "c0a3840975cd3a7a", "src": "db2@1.60.1.70291"}
-{"id": 1277460, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70291"}
-{"id": 1277460, "field": "aura", "en": "Healing $s1 damage every $t1 sec.", "hash": "c0a3840975cd3a7a", "src": "db2@1.60.1.70291"}
-{"id": 1277462, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70291"}
-{"id": 1277462, "field": "description", "en": "Place a Holy ward on an ally for $d. The next time this ally takes damage dropping their Health below $s1%, they will gain a shield absorbing $1277463s2 damage and begin healing for $1277456o2 Health over $1277456d. A target may be affected by only one Contingency Plan.", "hash": "a271d039f23b6c36", "src": "db2@1.60.1.70291"}
-{"id": 1277462, "field": "aura", "en": "Warded against damage taking Health below $s1%.", "hash": "2f181d0b7e56df41", "src": "db2@1.60.1.70291"}
-{"id": 1277463, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70291"}
-{"id": 1277463, "field": "aura", "en": "Absorbing $w1 damage.", "hash": "e074129ac35bf95c", "src": "db2@1.60.1.70291"}
-{"id": 1277464, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70291"}
-{"id": 1277464, "field": "aura", "en": "Absorbing $w1 damage.", "hash": "e074129ac35bf95c", "src": "db2@1.60.1.70291"}
-{"id": 1277465, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70291"}
-{"id": 1277465, "field": "aura", "en": "Absorbing $w1 damage.", "hash": "e074129ac35bf95c", "src": "db2@1.60.1.70291"}
-{"id": 1277466, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70291"}
-{"id": 1277466, "field": "aura", "en": "Absorbing $w1 damage.", "hash": "e074129ac35bf95c", "src": "db2@1.60.1.70291"}
-{"id": 1277467, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70291"}
-{"id": 1277467, "field": "aura", "en": "Absorbing $w1 damage.", "hash": "e074129ac35bf95c", "src": "db2@1.60.1.70291"}
-{"id": 1277634, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70291"}
-{"id": 1277634, "field": "description", "en": "Place a Holy ward on an ally for $d. The next time this ally takes damage that drops their Health below $s1%, they will gain a shield absorbing $1277464s2 damage and begin healing for $1277457o2 Health over $1277457d. A target may be affected by only one Contingency Plan.", "hash": "0ccedb350c02f934", "src": "db2@1.60.1.70291"}
-{"id": 1277634, "field": "aura", "en": "Warded against damage that would take Health below $s1%.", "hash": "01cbf0e92d6b8283", "src": "db2@1.60.1.70291"}
-{"id": 1277636, "field": "name", "en": "Coral Visual Test", "hash": "86f048216ae09cba", "src": "db2@1.60.1.70291"}
-{"id": 1277638, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70291"}
-{"id": 1277638, "field": "description", "en": "Place a Holy ward on an ally for $d. The next time this ally takes damage that drops their Health below $s1%, they will gain a shield absorbing $1277465s2 damage and begin healing for $1277458o2 Health over $1277458d. A target may be affected by only one Contingency Plan.", "hash": "62a2187568a3e5bd", "src": "db2@1.60.1.70291"}
-{"id": 1277638, "field": "aura", "en": "Warded against damage that would take Health below $s1%.", "hash": "01cbf0e92d6b8283", "src": "db2@1.60.1.70291"}
-{"id": 1277639, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70291"}
-{"id": 1277639, "field": "description", "en": "Place a Holy ward on an ally for $d. The next time this ally takes damage that drops their Health below $s1%, they will gain a shield absorbing $1277467s2 damage and begin healing for $1277459o2 Health over $1277459d. A target may be affected by only one Contingency Plan.", "hash": "7c6d7dbcd9660d8b", "src": "db2@1.60.1.70291"}
-{"id": 1277639, "field": "aura", "en": "Warded against damage taking Health below $s1%.", "hash": "2f181d0b7e56df41", "src": "db2@1.60.1.70291"}
-{"id": 1277640, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70291"}
-{"id": 1277640, "field": "description", "en": "Place a Holy ward on an ally for $d. The next time this ally takes damage dropping their Health below $s1%, they will gain a shield absorbing $1277466s2 damage and begin healing for $1277460o2 Health over $1277460d. A target may be affected by only one Contingency Plan.", "hash": "2653a686aa539897", "src": "db2@1.60.1.70291"}
-{"id": 1277640, "field": "aura", "en": "Warded against damage that would take Health below $s1%.", "hash": "01cbf0e92d6b8283", "src": "db2@1.60.1.70291"}
-{"id": 1277662, "field": "name", "en": "Confounding Flash", "hash": "d878232481a61444", "src": "db2@1.60.1.70291"}
-{"id": 1277663, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70291"}
-{"id": 1277794, "field": "name", "en": "Tame Beast", "hash": "239fa1c74e83273e", "src": "db2@1.60.1.70291"}
-{"id": 1277794, "field": "description", "en": "Begins taming a Rockhide Boar to be your companion for 10 min. If you lose the beast's attention for any reason, the taming process will fail.", "hash": "2f79cf82c4275383", "src": "db2@1.60.1.70291"}
-{"id": 1277794, "field": "aura", "en": "Taming Boar", "hash": "c1ac9ff350c36f89", "src": "db2@1.60.1.70291"}
-{"id": 1277808, "field": "name", "en": "Plant Seed", "hash": "c9dc2db6a66bdd30", "src": "db2@1.60.1.70291"}
-{"id": 1277808, "field": "description", "en": "Plant a seedling.", "hash": "312e4f4db6db0fcc", "src": "db2@1.60.1.70291"}
-{"id": 1277851, "field": "name", "en": "Tame Boar", "hash": "db27033a9a3406f1", "src": "db2@1.60.1.70291"}
-{"id": 1277851, "field": "aura", "en": "Tamed.", "hash": "3cd09630fe483150", "src": "db2@1.60.1.70291"}
-{"id": 1277874, "field": "name", "en": "Burying", "hash": "6af640bd102dc78e", "src": "db2@1.60.1.70291"}
+{"id": 1277018, "field": "name", "en": "Grow", "hash": "09a19943fc70ad59", "src": "db2@1.60.1.70338"}
+{"id": 1277018, "field": "aura", "en": "Will finish growing in $d.", "hash": "aa7844ec142cd5db", "src": "db2@1.60.1.70338"}
+{"id": 1277022, "field": "name", "en": "Growing Herb", "hash": "2c825c2b01241113", "src": "db2@1.60.1.70338"}
+{"id": 1277050, "field": "name", "en": "Water Sample", "hash": "ff00d1f7dbb3e195", "src": "db2@1.60.1.70338"}
+{"id": 1277050, "field": "description", "en": "This container needs to be filled with water from Stonewatch Falls in Redridge Mountains.", "hash": "c4b9e7d2490ec17f", "src": "db2@1.60.1.70338"}
+{"id": 1277093, "field": "name", "en": "Creature - No Health Regeneration", "hash": "e08d64fbf8c1d769", "src": "db2@1.60.1.70338"}
+{"id": 1277095, "field": "name", "en": "Defeated", "hash": "356454e4c49b3a01", "src": "db2@1.60.1.70338"}
+{"id": 1277112, "field": "name", "en": "Water Sample", "hash": "ff00d1f7dbb3e195", "src": "db2@1.60.1.70338"}
+{"id": 1277112, "field": "description", "en": "This container should be filled from the body of water around Astranaar.", "hash": "2983b8ce46f6ef39", "src": "db2@1.60.1.70338"}
+{"id": 1277222, "field": "name", "en": "(DNT) Spawn Visuals", "hash": "47a409d63cfa7d0a", "src": "db2@1.60.1.70338"}
+{"id": 1277246, "field": "name", "en": "Fishing Lure", "hash": "3102b836ae58d9c5", "src": "db2@1.60.1.70338"}
+{"id": 1277257, "field": "name", "en": "Wounded", "hash": "8bb39feca1bb97ce", "src": "db2@1.60.1.70338"}
+{"id": 1277257, "field": "aura", "en": "Bleeding out from a vicious wound.", "hash": "d1b3d02bbedce9bd", "src": "db2@1.60.1.70338"}
+{"id": 1277271, "field": "name", "en": "Unlocking", "hash": "c70c6ae8388f7eba", "src": "db2@1.60.1.70338"}
+{"id": 1277324, "field": "name", "en": "Dark Sacrifice", "hash": "122ac7cabd5eefa4", "src": "db2@1.60.1.70338"}
+{"id": 1277324, "field": "description", "en": "Cannibalize $o1 of your own Health over $d to gain ${$o2+$SPI} Mana.", "hash": "6157ab701df9877d", "src": "db2@1.60.1.70338"}
+{"id": 1277324, "field": "aura", "en": "Converting $s1 Health into $w2 Mana every $t1 sec.", "hash": "f919d57416645592", "src": "db2@1.60.1.70338"}
+{"id": 1277325, "field": "name", "en": "Dark Sacrifice", "hash": "122ac7cabd5eefa4", "src": "db2@1.60.1.70338"}
+{"id": 1277325, "field": "description", "en": "Cannibalize $o1 of your own Health over $d to gain ${$o2+$SPI} Mana.", "hash": "6157ab701df9877d", "src": "db2@1.60.1.70338"}
+{"id": 1277325, "field": "aura", "en": "Converting $s1 Health into $w2 Mana every $t1 sec.", "hash": "f919d57416645592", "src": "db2@1.60.1.70338"}
+{"id": 1277326, "field": "name", "en": "Dark Sacrifice", "hash": "122ac7cabd5eefa4", "src": "db2@1.60.1.70338"}
+{"id": 1277326, "field": "description", "en": "Cannibalize $o1 of your own Health over $d to gain ${$o2+$SPI} Mana.", "hash": "6157ab701df9877d", "src": "db2@1.60.1.70338"}
+{"id": 1277326, "field": "aura", "en": "Converting $s1 Health into $w2 Mana every $t1 sec.", "hash": "f919d57416645592", "src": "db2@1.60.1.70338"}
+{"id": 1277327, "field": "name", "en": "Dark Sacrifice", "hash": "122ac7cabd5eefa4", "src": "db2@1.60.1.70338"}
+{"id": 1277327, "field": "description", "en": "Cannibalize $o1 of your own Health over $d to gain ${$o2+$SPI} Mana.", "hash": "6157ab701df9877d", "src": "db2@1.60.1.70338"}
+{"id": 1277327, "field": "aura", "en": "Converting $s1 Health into $w2 Mana every $t1 sec.", "hash": "f919d57416645592", "src": "db2@1.60.1.70338"}
+{"id": 1277328, "field": "name", "en": "Dark Sacrifice", "hash": "122ac7cabd5eefa4", "src": "db2@1.60.1.70338"}
+{"id": 1277328, "field": "description", "en": "Cannibalize $o1 of your own Health over $d to gain ${$o2+$SPI} Mana.", "hash": "6157ab701df9877d", "src": "db2@1.60.1.70338"}
+{"id": 1277328, "field": "aura", "en": "Converting $s1 Health into $w2 Mana every $t1 sec.", "hash": "f919d57416645592", "src": "db2@1.60.1.70338"}
+{"id": 1277329, "field": "name", "en": "Green Skeletal Horse", "hash": "e91788b7069542ca", "src": "db2@1.60.1.70338"}
+{"id": 1277329, "field": "description", "en": "Summons and dismisses a rideable green skeletal horse. This is a very fast mount.", "hash": "de34cdbaf7ce4e52", "src": "db2@1.60.1.70338"}
+{"id": 1277329, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70338"}
+{"id": 1277330, "field": "name", "en": "Dark Skeletal Horse", "hash": "197dd610d8811373", "src": "db2@1.60.1.70338"}
+{"id": 1277330, "field": "description", "en": "Summons and dismisses a rideable dark skeletal horse. This is a very fast mount.", "hash": "a6f0167538d87e8b", "src": "db2@1.60.1.70338"}
+{"id": 1277330, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70338"}
+{"id": 1277331, "field": "name", "en": "Chastise", "hash": "eabe51393c268b76", "src": "db2@1.60.1.70338"}
+{"id": 1277331, "field": "description", "en": "Chastise the target, causing $s1 Holy damage and immobilizing them for up to $d. Only works against Humanoids. This spell causes very low threat.", "hash": "faeecfe4568d44f2", "src": "db2@1.60.1.70338"}
+{"id": 1277331, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70338"}
+{"id": 1277332, "field": "name", "en": "Chastise", "hash": "eabe51393c268b76", "src": "db2@1.60.1.70338"}
+{"id": 1277332, "field": "description", "en": "Chastise the target, causing $s1 Holy damage and immobilizing them for up to $d. Only works against Humanoids. This spell causes very low threat.", "hash": "faeecfe4568d44f2", "src": "db2@1.60.1.70338"}
+{"id": 1277332, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70338"}
+{"id": 1277333, "field": "name", "en": "Chastise", "hash": "eabe51393c268b76", "src": "db2@1.60.1.70338"}
+{"id": 1277333, "field": "description", "en": "Chastise the target, causing $s1 Holy damage and Immobilizing them for up to $d. Only works against Humanoids. This spell causes very low threat.", "hash": "951503f716a77ce5", "src": "db2@1.60.1.70338"}
+{"id": 1277333, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70338"}
+{"id": 1277334, "field": "name", "en": "Chastise", "hash": "eabe51393c268b76", "src": "db2@1.60.1.70338"}
+{"id": 1277334, "field": "description", "en": "Chastise the target, causing $s1 Holy damage and Immobilizing them for up to $d. Only works against Humanoids. This spell causes very low threat.", "hash": "951503f716a77ce5", "src": "db2@1.60.1.70338"}
+{"id": 1277334, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70338"}
+{"id": 1277335, "field": "name", "en": "Chastise", "hash": "eabe51393c268b76", "src": "db2@1.60.1.70338"}
+{"id": 1277335, "field": "description", "en": "Chastise the target, causing $s1 Holy damage and Immobilizing them for up to $d. Only works against Humanoids. This spell causes very low threat.", "hash": "951503f716a77ce5", "src": "db2@1.60.1.70338"}
+{"id": 1277335, "field": "aura", "en": "Immobilized.", "hash": "18deeb81fd599789", "src": "db2@1.60.1.70338"}
+{"id": 1277336, "field": "name", "en": "Purple Skeletal Horse", "hash": "5389216bf4073671", "src": "db2@1.60.1.70338"}
+{"id": 1277336, "field": "description", "en": "Summons and dismisses a rideable Purple Skeletal Horse. This is a very fast mount.", "hash": "8d36735f7d92ab75", "src": "db2@1.60.1.70338"}
+{"id": 1277336, "field": "aura", "en": "$?j1g[Increases ground speed by $j1g%. ][]", "hash": "2195529a9fc68c06", "src": "db2@1.60.1.70338"}
+{"id": 1277346, "field": "name", "en": "Call of Water", "hash": "1f0e11aaf286cfe5", "src": "db2@1.60.1.70338"}
+{"id": 1277347, "field": "name", "en": "Call of Water", "hash": "1f0e11aaf286cfe5", "src": "db2@1.60.1.70338"}
+{"id": 1277364, "field": "name", "en": "Desecration", "hash": "8a371a75216a4034", "src": "db2@1.60.1.70338"}
+{"id": 1277364, "field": "description", "en": "Channeling dark and unknowable magic, granting Bonesnout the Unbroken 1 stack of Profane Bulwark.", "hash": "64df2033a1a796eb", "src": "db2@1.60.1.70338"}
+{"id": 1277364, "field": "aura", "en": "Grants Bonesnout the Unbroken 1 stack of Profane Bulwark.", "hash": "08a6e51b0c9c20b7", "src": "db2@1.60.1.70338"}
+{"id": 1277367, "field": "name", "en": "Desecration", "hash": "8a371a75216a4034", "src": "db2@1.60.1.70338"}
+{"id": 1277370, "field": "name", "en": "Divine Grace", "hash": "4199a5e153330fa1", "src": "db2@1.60.1.70338"}
+{"id": 1277370, "field": "description", "en": "Instantly heals a friendly target below $s2% Health for $s1 and removes Weakened Soul from that target. Cannot be cast on self.", "hash": "eb5c111ce9eecee1", "src": "db2@1.60.1.70338"}
+{"id": 1277371, "field": "name", "en": "Divine Grace", "hash": "4199a5e153330fa1", "src": "db2@1.60.1.70338"}
+{"id": 1277371, "field": "description", "en": "Instantly heals a friendly target below $s2% Health for $s1 and removes Weakened Soul from that target. Cannot be cast on self.", "hash": "eb5c111ce9eecee1", "src": "db2@1.60.1.70338"}
+{"id": 1277372, "field": "name", "en": "Divine Grace", "hash": "4199a5e153330fa1", "src": "db2@1.60.1.70338"}
+{"id": 1277372, "field": "description", "en": "Instantly heals a friendly target below $s2% Health for $s1 and removes Weakened Soul from that target. Cannot be cast on self.", "hash": "eb5c111ce9eecee1", "src": "db2@1.60.1.70338"}
+{"id": 1277374, "field": "name", "en": "Divine Grace", "hash": "4199a5e153330fa1", "src": "db2@1.60.1.70338"}
+{"id": 1277374, "field": "description", "en": "Instantly heals a friendly target below $s2% Health for $s1 and removes Weakened Soul from that target. Cannot be cast on self.", "hash": "eb5c111ce9eecee1", "src": "db2@1.60.1.70338"}
+{"id": 1277376, "field": "name", "en": "Divine Grace", "hash": "4199a5e153330fa1", "src": "db2@1.60.1.70338"}
+{"id": 1277376, "field": "description", "en": "Instantly heals a friendly target below $s2% Health for $s1 and removes Weakened Soul from that target. Cannot be cast on self.", "hash": "eb5c111ce9eecee1", "src": "db2@1.60.1.70338"}
+{"id": 1277377, "field": "name", "en": "Divine Grace", "hash": "4199a5e153330fa1", "src": "db2@1.60.1.70338"}
+{"id": 1277377, "field": "description", "en": "Instantly heals a friendly target below $s2% Health for $s1 and removes Weakened Soul from that target. Cannot be cast on self.", "hash": "eb5c111ce9eecee1", "src": "db2@1.60.1.70338"}
+{"id": 1277378, "field": "name", "en": "Divine Grace", "hash": "4199a5e153330fa1", "src": "db2@1.60.1.70338"}
+{"id": 1277378, "field": "description", "en": "Instantly heals a friendly target below $s2% Health for $s1 and removes Weakened Soul from that target. Cannot be cast on self.", "hash": "eb5c111ce9eecee1", "src": "db2@1.60.1.70338"}
+{"id": 1277387, "field": "name", "en": "Divine Grace", "hash": "4199a5e153330fa1", "src": "db2@1.60.1.70338"}
+{"id": 1277397, "field": "name", "en": "[DNT] Ping Scouts", "hash": "1578af70c92c934f", "src": "db2@1.60.1.70338"}
+{"id": 1277405, "field": "name", "en": "Profane Bulwark", "hash": "cf2de412f205b56d", "src": "db2@1.60.1.70338"}
+{"id": 1277406, "field": "name", "en": "Profane Bulwark", "hash": "cf2de412f205b56d", "src": "db2@1.60.1.70338"}
+{"id": 1277406, "field": "description", "en": "The Satyr's rituals empower Bonesnout, reducing incoming damage by $S1% per stack.\r\n", "hash": "c39bc8bcd9227cc8", "src": "db2@1.60.1.70338"}
+{"id": 1277406, "field": "aura", "en": "Damage reduced by $S1%.", "hash": "2391512336f1d82f", "src": "db2@1.60.1.70338"}
+{"id": 1277417, "field": "name", "en": "Desecration", "hash": "8a371a75216a4034", "src": "db2@1.60.1.70338"}
+{"id": 1277417, "field": "description", "en": "$@spelldesc1277364", "hash": "dc29c3b9cd50e3fe", "src": "db2@1.60.1.70338"}
+{"id": 1277417, "field": "aura", "en": "$@spellaura1277364", "hash": "d6610dad74f092f9", "src": "db2@1.60.1.70338"}
+{"id": 1277418, "field": "name", "en": "Desecration", "hash": "8a371a75216a4034", "src": "db2@1.60.1.70338"}
+{"id": 1277424, "field": "name", "en": "Shield Wall", "hash": "94291d211c3b63a0", "src": "db2@1.60.1.70338"}
+{"id": 1277424, "field": "description", "en": "Reduces the Physical and magical damage taken by the caster by $s1% for $d.", "hash": "040d69da407d7cac", "src": "db2@1.60.1.70338"}
+{"id": 1277424, "field": "aura", "en": "Physical and magical damage taken is reduced by $s1%.", "hash": "59c7c6c43f968578", "src": "db2@1.60.1.70338"}
+{"id": 1277430, "field": "name", "en": "Desecration", "hash": "8a371a75216a4034", "src": "db2@1.60.1.70338"}
+{"id": 1277431, "field": "name", "en": "Desecration", "hash": "8a371a75216a4034", "src": "db2@1.60.1.70338"}
+{"id": 1277431, "field": "description", "en": "$@spelldesc1277364", "hash": "dc29c3b9cd50e3fe", "src": "db2@1.60.1.70338"}
+{"id": 1277431, "field": "aura", "en": "$@spellaura1277364", "hash": "d6610dad74f092f9", "src": "db2@1.60.1.70338"}
+{"id": 1277455, "field": "name", "en": "Confounding Flash", "hash": "d878232481a61444", "src": "db2@1.60.1.70338"}
+{"id": 1277455, "field": "description", "en": "Confuses up to $i enemies within $a1 yds for $d. Any damage taken will break the effect.", "hash": "5ae2d78d02fd672b", "src": "db2@1.60.1.70338"}
+{"id": 1277455, "field": "aura", "en": "Confused.", "hash": "ddba770120b1a964", "src": "db2@1.60.1.70338"}
+{"id": 1277456, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70338"}
+{"id": 1277456, "field": "aura", "en": "Healing $s1 damage every $t1 sec.", "hash": "c0a3840975cd3a7a", "src": "db2@1.60.1.70338"}
+{"id": 1277457, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70338"}
+{"id": 1277457, "field": "aura", "en": "Healing $s1 damage every $t1 sec.", "hash": "c0a3840975cd3a7a", "src": "db2@1.60.1.70338"}
+{"id": 1277458, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70338"}
+{"id": 1277458, "field": "aura", "en": "Healing $s1 damage every $t1 sec.", "hash": "c0a3840975cd3a7a", "src": "db2@1.60.1.70338"}
+{"id": 1277459, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70338"}
+{"id": 1277459, "field": "aura", "en": "Healing $s1 damage every $t1 sec.", "hash": "c0a3840975cd3a7a", "src": "db2@1.60.1.70338"}
+{"id": 1277460, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70338"}
+{"id": 1277460, "field": "aura", "en": "Healing $s1 damage every $t1 sec.", "hash": "c0a3840975cd3a7a", "src": "db2@1.60.1.70338"}
+{"id": 1277462, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70338"}
+{"id": 1277462, "field": "description", "en": "Place a Holy ward on an ally for $d. The next time this ally takes damage dropping their Health below $s1%, they will gain a shield absorbing $1277463s2 damage and begin healing for $1277456o2 Health over $1277456d. A target may be affected by only one Contingency Plan.", "hash": "a271d039f23b6c36", "src": "db2@1.60.1.70338"}
+{"id": 1277462, "field": "aura", "en": "Warded against damage taking Health below $s1%.", "hash": "2f181d0b7e56df41", "src": "db2@1.60.1.70338"}
+{"id": 1277463, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70338"}
+{"id": 1277463, "field": "aura", "en": "Absorbing $w1 damage.", "hash": "e074129ac35bf95c", "src": "db2@1.60.1.70338"}
+{"id": 1277464, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70338"}
+{"id": 1277464, "field": "aura", "en": "Absorbing $w1 damage.", "hash": "e074129ac35bf95c", "src": "db2@1.60.1.70338"}
+{"id": 1277465, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70338"}
+{"id": 1277465, "field": "aura", "en": "Absorbing $w1 damage.", "hash": "e074129ac35bf95c", "src": "db2@1.60.1.70338"}
+{"id": 1277466, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70338"}
+{"id": 1277466, "field": "aura", "en": "Absorbing $w1 damage.", "hash": "e074129ac35bf95c", "src": "db2@1.60.1.70338"}
+{"id": 1277467, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70338"}
+{"id": 1277467, "field": "aura", "en": "Absorbing $w1 damage.", "hash": "e074129ac35bf95c", "src": "db2@1.60.1.70338"}
+{"id": 1277634, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70338"}
+{"id": 1277634, "field": "description", "en": "Place a Holy ward on an ally for $d. The next time this ally takes damage that drops their Health below $s1%, they will gain a shield absorbing $1277464s2 damage and begin healing for $1277457o2 Health over $1277457d. A target may be affected by only one Contingency Plan.", "hash": "0ccedb350c02f934", "src": "db2@1.60.1.70338"}
+{"id": 1277634, "field": "aura", "en": "Warded against damage that would take Health below $s1%.", "hash": "01cbf0e92d6b8283", "src": "db2@1.60.1.70338"}
+{"id": 1277636, "field": "name", "en": "Coral Visual Test", "hash": "86f048216ae09cba", "src": "db2@1.60.1.70338"}
+{"id": 1277638, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70338"}
+{"id": 1277638, "field": "description", "en": "Place a Holy ward on an ally for $d. The next time this ally takes damage that drops their Health below $s1%, they will gain a shield absorbing $1277465s2 damage and begin healing for $1277458o2 Health over $1277458d. A target may be affected by only one Contingency Plan.", "hash": "62a2187568a3e5bd", "src": "db2@1.60.1.70338"}
+{"id": 1277638, "field": "aura", "en": "Warded against damage that would take Health below $s1%.", "hash": "01cbf0e92d6b8283", "src": "db2@1.60.1.70338"}
+{"id": 1277639, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70338"}
+{"id": 1277639, "field": "description", "en": "Place a Holy ward on an ally for $d. The next time this ally takes damage that drops their Health below $s1%, they will gain a shield absorbing $1277467s2 damage and begin healing for $1277459o2 Health over $1277459d. A target may be affected by only one Contingency Plan.", "hash": "7c6d7dbcd9660d8b", "src": "db2@1.60.1.70338"}
+{"id": 1277639, "field": "aura", "en": "Warded against damage taking Health below $s1%.", "hash": "2f181d0b7e56df41", "src": "db2@1.60.1.70338"}
+{"id": 1277640, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70338"}
+{"id": 1277640, "field": "description", "en": "Place a Holy ward on an ally for $d. The next time this ally takes damage dropping their Health below $s1%, they will gain a shield absorbing $1277466s2 damage and begin healing for $1277460o2 Health over $1277460d. A target may be affected by only one Contingency Plan.", "hash": "2653a686aa539897", "src": "db2@1.60.1.70338"}
+{"id": 1277640, "field": "aura", "en": "Warded against damage that would take Health below $s1%.", "hash": "01cbf0e92d6b8283", "src": "db2@1.60.1.70338"}
+{"id": 1277662, "field": "name", "en": "Confounding Flash", "hash": "d878232481a61444", "src": "db2@1.60.1.70338"}
+{"id": 1277663, "field": "name", "en": "Contingency Plan", "hash": "584b30b7c38163b4", "src": "db2@1.60.1.70338"}
+{"id": 1277794, "field": "name", "en": "Tame Beast", "hash": "239fa1c74e83273e", "src": "db2@1.60.1.70338"}
+{"id": 1277794, "field": "description", "en": "Begins taming a Rockhide Boar to be your companion for 10 min. If you lose the beast's attention for any reason, the taming process will fail.", "hash": "2f79cf82c4275383", "src": "db2@1.60.1.70338"}
+{"id": 1277794, "field": "aura", "en": "Taming Boar", "hash": "c1ac9ff350c36f89", "src": "db2@1.60.1.70338"}
+{"id": 1277808, "field": "name", "en": "Plant Seed", "hash": "c9dc2db6a66bdd30", "src": "db2@1.60.1.70338"}
+{"id": 1277808, "field": "description", "en": "Plant a seedling.", "hash": "312e4f4db6db0fcc", "src": "db2@1.60.1.70338"}
+{"id": 1277851, "field": "name", "en": "Tame Boar", "hash": "db27033a9a3406f1", "src": "db2@1.60.1.70338"}
+{"id": 1277851, "field": "aura", "en": "Tamed.", "hash": "3cd09630fe483150", "src": "db2@1.60.1.70338"}
+{"id": 1277874, "field": "name", "en": "Burying", "hash": "6af640bd102dc78e", "src": "db2@1.60.1.70338"}

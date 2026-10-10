@@ -1,103 +1,103 @@
-{"id": 367000, "field": "name", "en": "Obsidian Breath", "hash": "2e96387e60bb3c9f", "src": "db2@1.60.1.70291"}
-{"id": 367001, "field": "name", "en": "Bronze Breath", "hash": "e32321de5d4ad201", "src": "db2@1.60.1.70291"}
-{"id": 367002, "field": "name", "en": "Azure Breath", "hash": "e70b19a6a86e924f", "src": "db2@1.60.1.70291"}
-{"id": 367003, "field": "name", "en": "Obsidian Breath", "hash": "2e96387e60bb3c9f", "src": "db2@1.60.1.70291"}
-{"id": 367004, "field": "name", "en": "Bronze Breath", "hash": "e32321de5d4ad201", "src": "db2@1.60.1.70291"}
-{"id": 367006, "field": "name", "en": "Azure Breath", "hash": "e70b19a6a86e924f", "src": "db2@1.60.1.70291"}
-{"id": 367007, "field": "name", "en": "Obsidian Breath", "hash": "2e96387e60bb3c9f", "src": "db2@1.60.1.70291"}
-{"id": 367009, "field": "name", "en": "Bronze Breath", "hash": "e32321de5d4ad201", "src": "db2@1.60.1.70291"}
-{"id": 367058, "field": "name", "en": "Unlit Torch", "hash": "526393e1ae89f5da", "src": "db2@1.60.1.70291"}
-{"id": 367060, "field": "name", "en": "Fire", "hash": "097cf1ce4b4eb722", "src": "db2@1.60.1.70291"}
-{"id": 367062, "field": "name", "en": "Torch Toss", "hash": "28c4184fd3ff50d5", "src": "db2@1.60.1.70291"}
-{"id": 367062, "field": "description", "en": "Tosses a torch at the target location, starting a fire.", "hash": "069f4ed7615dce8c", "src": "db2@1.60.1.70291"}
-{"id": 367063, "field": "name", "en": "Ruby Essence", "hash": "6d5f484cfc6a6ddf", "src": "db2@1.60.1.70291"}
-{"id": 367064, "field": "name", "en": "Emerald Essence", "hash": "e793d15479978303", "src": "db2@1.60.1.70291"}
-{"id": 367065, "field": "name", "en": "Azure Essence", "hash": "4a9220dc0dd589bf", "src": "db2@1.60.1.70291"}
-{"id": 367066, "field": "name", "en": "Obsidian Essence", "hash": "e6c2e78951d65241", "src": "db2@1.60.1.70291"}
-{"id": 367067, "field": "name", "en": "Bronze Essence", "hash": "4ade557aaf1f7415", "src": "db2@1.60.1.70291"}
-{"id": 367068, "field": "name", "en": "Torch Toss (land)", "hash": "2986e5225195958c", "src": "db2@1.60.1.70291"}
-{"id": 367068, "field": "description", "en": "Tosses a practice torch at the target area.", "hash": "c2a776e01be5eab6", "src": "db2@1.60.1.70291"}
-{"id": 367069, "field": "name", "en": "Create Artifact", "hash": "55a19789e6538489", "src": "db2@1.60.1.70291"}
-{"id": 367070, "field": "name", "en": "Tranquility", "hash": "f3d301a233979744", "src": "db2@1.60.1.70291"}
-{"id": 367071, "field": "name", "en": "Frost", "hash": "dc23b574a51d3a0d", "src": "db2@1.60.1.70291"}
-{"id": 367179, "field": "name", "en": "Chromatic Essence", "hash": "712f11564600a6d4", "src": "db2@1.60.1.70291"}
-{"id": 367187, "field": "name", "en": "Chromatic Essence", "hash": "712f11564600a6d4", "src": "db2@1.60.1.70291"}
-{"id": 367369, "field": "name", "en": "Tactical Charge", "hash": "a8a05fa4e5b02f39", "src": "db2@1.60.1.70291"}
-{"id": 367383, "field": "name", "en": "Tactical Charge", "hash": "a8a05fa4e5b02f39", "src": "db2@1.60.1.70291"}
-{"id": 367418, "field": "name", "en": "Tactical Charge", "hash": "a8a05fa4e5b02f39", "src": "db2@1.60.1.70291"}
-{"id": 367427, "field": "name", "en": "Suppression Aura", "hash": "3459e65424d64fa6", "src": "db2@1.60.1.70291"}
-{"id": 367476, "field": "name", "en": "Faulty Wiring", "hash": "f4e3738d9f9a2c14", "src": "db2@1.60.1.70291"}
-{"id": 367507, "field": "name", "en": "Faulty Wiring", "hash": "f4e3738d9f9a2c14", "src": "db2@1.60.1.70291"}
-{"id": 367671, "field": "name", "en": "Hiding Behind Ice", "hash": "c424f8d7c53c7b3e", "src": "db2@1.60.1.70291"}
-{"id": 367671, "field": "aura", "en": "Hiding behind an Ice Block from Chromaggus.", "hash": "baf588accc611160", "src": "db2@1.60.1.70291"}
-{"id": 367672, "field": "name", "en": "Frost Tomb", "hash": "82194314ce06f544", "src": "db2@1.60.1.70291"}
-{"id": 367674, "field": "name", "en": "Missile Test", "hash": "96b316c77ce13527", "src": "db2@1.60.1.70291"}
-{"id": 367675, "field": "name", "en": "Missile Test", "hash": "96b316c77ce13527", "src": "db2@1.60.1.70291"}
-{"id": 367681, "field": "name", "en": "Frost Bomb", "hash": "7fafce2edcb7ccac", "src": "db2@1.60.1.70291"}
-{"id": 367686, "field": "name", "en": "Flame Patch", "hash": "c33e9e4ea39c2563", "src": "db2@1.60.1.70291"}
-{"id": 367688, "field": "name", "en": "Flame Patch", "hash": "c33e9e4ea39c2563", "src": "db2@1.60.1.70291"}
-{"id": 367692, "field": "name", "en": "Flame Patch", "hash": "c33e9e4ea39c2563", "src": "db2@1.60.1.70291"}
-{"id": 367699, "field": "name", "en": "Time Stop", "hash": "98fb96e6bd3e7c26", "src": "db2@1.60.1.70291"}
-{"id": 367700, "field": "name", "en": "Frost Bomb", "hash": "7fafce2edcb7ccac", "src": "db2@1.60.1.70291"}
-{"id": 367701, "field": "name", "en": "Time Stop", "hash": "98fb96e6bd3e7c26", "src": "db2@1.60.1.70291"}
-{"id": 367701, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70291"}
-{"id": 367708, "field": "name", "en": "Shadowflame Bolt", "hash": "efe482086b7c3836", "src": "db2@1.60.1.70291"}
-{"id": 367710, "field": "name", "en": "Shadowflame Bolt", "hash": "efe482086b7c3836", "src": "db2@1.60.1.70291"}
-{"id": 367717, "field": "name", "en": "Flame Patch", "hash": "c33e9e4ea39c2563", "src": "db2@1.60.1.70291"}
-{"id": 367718, "field": "name", "en": "Frost Tomb", "hash": "82194314ce06f544", "src": "db2@1.60.1.70291"}
-{"id": 367719, "field": "name", "en": "Time Stop", "hash": "98fb96e6bd3e7c26", "src": "db2@1.60.1.70291"}
-{"id": 367720, "field": "name", "en": "Dream Fog", "hash": "87b2309484e0db87", "src": "db2@1.60.1.70291"}
-{"id": 367721, "field": "name", "en": "Dream Fog", "hash": "87b2309484e0db87", "src": "db2@1.60.1.70291"}
-{"id": 367723, "field": "name", "en": "Dream Fog", "hash": "87b2309484e0db87", "src": "db2@1.60.1.70291"}
-{"id": 367724, "field": "name", "en": "Dream Fog", "hash": "87b2309484e0db87", "src": "db2@1.60.1.70291"}
-{"id": 367724, "field": "aura", "en": "Movement speed reduced by $s1%.\r\n\r\nFeeling sleepy...", "hash": "162b6e71233f6b85", "src": "db2@1.60.1.70291"}
-{"id": 367728, "field": "name", "en": "Dream Fog", "hash": "87b2309484e0db87", "src": "db2@1.60.1.70291"}
-{"id": 367728, "field": "aura", "en": "Asleep.", "hash": "5339954ec205013e", "src": "db2@1.60.1.70291"}
-{"id": 367729, "field": "name", "en": "Azure Bolt", "hash": "4a860a08bb0f8b11", "src": "db2@1.60.1.70291"}
-{"id": 367735, "field": "name", "en": "Azure Bolt", "hash": "4a860a08bb0f8b11", "src": "db2@1.60.1.70291"}
-{"id": 367739, "field": "name", "en": "Azure Bolt", "hash": "4a860a08bb0f8b11", "src": "db2@1.60.1.70291"}
-{"id": 367740, "field": "name", "en": "Creeping Chill", "hash": "a281d5a0144f70fc", "src": "db2@1.60.1.70291"}
-{"id": 367740, "field": "aura", "en": "Movement speed slowed by $s2%.", "hash": "79a226e8bb65bd7e", "src": "db2@1.60.1.70291"}
-{"id": 367741, "field": "name", "en": "Frozen Solid", "hash": "15bf964ba47b5e0b", "src": "db2@1.60.1.70291"}
-{"id": 367741, "field": "description", "en": "Frozen solid.", "hash": "91935cc1b2079b2e", "src": "db2@1.60.1.70291"}
-{"id": 367741, "field": "aura", "en": "Frozen solid.", "hash": "91935cc1b2079b2e", "src": "db2@1.60.1.70291"}
-{"id": 367756, "field": "name", "en": "Temporal Acceleration", "hash": "7b5515a9f4c4b882", "src": "db2@1.60.1.70291"}
-{"id": 367756, "field": "description", "en": "Movement speed increased by $s1%.\r\nAttack speed increased $s2%.\r\nCasting time decreased by $s3%.", "hash": "76f7b6463fd00660", "src": "db2@1.60.1.70291"}
-{"id": 367756, "field": "aura", "en": "Movement speed increased by $s1%.\r\nAttack speed increased $s2%.\r\nCasting time decreased by $s3%.", "hash": "76f7b6463fd00660", "src": "db2@1.60.1.70291"}
-{"id": 367788, "field": "name", "en": "Bronze Bolt", "hash": "5ecfac7074466b84", "src": "db2@1.60.1.70291"}
-{"id": 367792, "field": "name", "en": "Temporal Acceleration", "hash": "7b5515a9f4c4b882", "src": "db2@1.60.1.70291"}
-{"id": 367792, "field": "description", "en": "Movement speed increased by $s1%.\r\nMelee, ranged, and spell haste increased by $s2%.", "hash": "ebf9077b29ebe891", "src": "db2@1.60.1.70291"}
-{"id": 367792, "field": "aura", "en": "Movement speed increased by $s1%.\r\nMelee, Ranged, and Spell Haste increased by $s2%.", "hash": "9725d4c215006421", "src": "db2@1.60.1.70291"}
-{"id": 367795, "field": "name", "en": "Bronze Bolt", "hash": "5ecfac7074466b84", "src": "db2@1.60.1.70291"}
-{"id": 367796, "field": "name", "en": "Bronze Bolt", "hash": "5ecfac7074466b84", "src": "db2@1.60.1.70291"}
-{"id": 367829, "field": "name", "en": "Copy Ranged Weapon", "hash": "a2eea97a2378a687", "src": "db2@1.60.1.70291"}
-{"id": 367832, "field": "name", "en": "Copy Ranged Weapon", "hash": "a2eea97a2378a687", "src": "db2@1.60.1.70291"}
-{"id": 367840, "field": "name", "en": "Ruby Breath", "hash": "9b186437fc1f19f4", "src": "db2@1.60.1.70291"}
-{"id": 367870, "field": "name", "en": "Obsidian Bolt", "hash": "ef3b7d466676a974", "src": "db2@1.60.1.70291"}
-{"id": 367871, "field": "name", "en": "Obsidian Bolt", "hash": "ef3b7d466676a974", "src": "db2@1.60.1.70291"}
-{"id": 367872, "field": "name", "en": "Obsidian Bolt", "hash": "ef3b7d466676a974", "src": "db2@1.60.1.70291"}
-{"id": 367873, "field": "name", "en": "Blinding Ash", "hash": "ccccfcfb7c8a72d3", "src": "db2@1.60.1.70291"}
-{"id": 367873, "field": "description", "en": "Deals $s1 Shadow damage every $t1 sec.\r\nDecreases your chance to hit with spells and melee attacks by $s2%.", "hash": "ea55b580080c9188", "src": "db2@1.60.1.70291"}
-{"id": 367873, "field": "aura", "en": "Deals $s1 Shadow damage every $t1 sec.\r\nDecreases your chance to hit with spells and melee attacks by $s2%.", "hash": "ea55b580080c9188", "src": "db2@1.60.1.70291"}
-{"id": 367883, "field": "name", "en": "Corrupted Shot", "hash": "6c4fcb8878809002", "src": "db2@1.60.1.70291"}
-{"id": 367884, "field": "name", "en": "Dream Breath", "hash": "7befd30717588bf4", "src": "db2@1.60.1.70291"}
-{"id": 367886, "field": "name", "en": "Dream Breath", "hash": "7befd30717588bf4", "src": "db2@1.60.1.70291"}
-{"id": 367887, "field": "name", "en": "Dream Breath", "hash": "7befd30717588bf4", "src": "db2@1.60.1.70291"}
-{"id": 367888, "field": "name", "en": "Dream Breath", "hash": "7befd30717588bf4", "src": "db2@1.60.1.70291"}
-{"id": 367888, "field": "aura", "en": "Asleep.", "hash": "5339954ec205013e", "src": "db2@1.60.1.70291"}
-{"id": 367889, "field": "name", "en": "Corrupted Shot", "hash": "6c4fcb8878809002", "src": "db2@1.60.1.70291"}
-{"id": 367890, "field": "name", "en": "Corrupted Shot", "hash": "6c4fcb8878809002", "src": "db2@1.60.1.70291"}
-{"id": 367897, "field": "name", "en": "Dream Breath", "hash": "7befd30717588bf4", "src": "db2@1.60.1.70291"}
-{"id": 367897, "field": "aura", "en": "Movement speed reduced by $s1%.\r\n\r\nFeeling sleepy...", "hash": "162b6e71233f6b85", "src": "db2@1.60.1.70291"}
-{"id": 367921, "field": "name", "en": "Copy Melee Weapon", "hash": "c236bd6f77cf4040", "src": "db2@1.60.1.70291"}
-{"id": 367922, "field": "name", "en": "Copy Melee Weapon", "hash": "c236bd6f77cf4040", "src": "db2@1.60.1.70291"}
-{"id": 367927, "field": "name", "en": "Corrupted Slam", "hash": "6c50d07b885fe0b1", "src": "db2@1.60.1.70291"}
-{"id": 367928, "field": "name", "en": "Corrupted Slam", "hash": "6c50d07b885fe0b1", "src": "db2@1.60.1.70291"}
-{"id": 367928, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70291"}
-{"id": 367955, "field": "name", "en": "Chromatic Essence", "hash": "712f11564600a6d4", "src": "db2@1.60.1.70291"}
-{"id": 367968, "field": "name", "en": "Destroy Unstable Chromatic Egg", "hash": "954b7aa540a97298", "src": "db2@1.60.1.70291"}
-{"id": 367968, "field": "description", "en": "Destroys a nearby egg.", "hash": "10a0ae276ba501e1", "src": "db2@1.60.1.70291"}
-{"id": 367985, "field": "name", "en": "Burning Adrenaline", "hash": "aa94191606cc525d", "src": "db2@1.60.1.70291"}
-{"id": 367986, "field": "name", "en": "Burning Adrenaline", "hash": "aa94191606cc525d", "src": "db2@1.60.1.70291"}
-{"id": 367987, "field": "name", "en": "Burning Adrenaline", "hash": "aa94191606cc525d", "src": "db2@1.60.1.70291"}
-{"id": 367987, "field": "aura", "en": "Damage increased by $s2%.\r\nHaste increased by $s3%.\r\nDeals $s1% of max health as damage every $t1 sec.\r\nDeals $23478s1~ damage to surrounding allies on death.", "hash": "cac3e1d62edd840f", "src": "db2@1.60.1.70291"}
+{"id": 367000, "field": "name", "en": "Obsidian Breath", "hash": "2e96387e60bb3c9f", "src": "db2@1.60.1.70338"}
+{"id": 367001, "field": "name", "en": "Bronze Breath", "hash": "e32321de5d4ad201", "src": "db2@1.60.1.70338"}
+{"id": 367002, "field": "name", "en": "Azure Breath", "hash": "e70b19a6a86e924f", "src": "db2@1.60.1.70338"}
+{"id": 367003, "field": "name", "en": "Obsidian Breath", "hash": "2e96387e60bb3c9f", "src": "db2@1.60.1.70338"}
+{"id": 367004, "field": "name", "en": "Bronze Breath", "hash": "e32321de5d4ad201", "src": "db2@1.60.1.70338"}
+{"id": 367006, "field": "name", "en": "Azure Breath", "hash": "e70b19a6a86e924f", "src": "db2@1.60.1.70338"}
+{"id": 367007, "field": "name", "en": "Obsidian Breath", "hash": "2e96387e60bb3c9f", "src": "db2@1.60.1.70338"}
+{"id": 367009, "field": "name", "en": "Bronze Breath", "hash": "e32321de5d4ad201", "src": "db2@1.60.1.70338"}
+{"id": 367058, "field": "name", "en": "Unlit Torch", "hash": "526393e1ae89f5da", "src": "db2@1.60.1.70338"}
+{"id": 367060, "field": "name", "en": "Fire", "hash": "097cf1ce4b4eb722", "src": "db2@1.60.1.70338"}
+{"id": 367062, "field": "name", "en": "Torch Toss", "hash": "28c4184fd3ff50d5", "src": "db2@1.60.1.70338"}
+{"id": 367062, "field": "description", "en": "Tosses a torch at the target location, starting a fire.", "hash": "069f4ed7615dce8c", "src": "db2@1.60.1.70338"}
+{"id": 367063, "field": "name", "en": "Ruby Essence", "hash": "6d5f484cfc6a6ddf", "src": "db2@1.60.1.70338"}
+{"id": 367064, "field": "name", "en": "Emerald Essence", "hash": "e793d15479978303", "src": "db2@1.60.1.70338"}
+{"id": 367065, "field": "name", "en": "Azure Essence", "hash": "4a9220dc0dd589bf", "src": "db2@1.60.1.70338"}
+{"id": 367066, "field": "name", "en": "Obsidian Essence", "hash": "e6c2e78951d65241", "src": "db2@1.60.1.70338"}
+{"id": 367067, "field": "name", "en": "Bronze Essence", "hash": "4ade557aaf1f7415", "src": "db2@1.60.1.70338"}
+{"id": 367068, "field": "name", "en": "Torch Toss (land)", "hash": "2986e5225195958c", "src": "db2@1.60.1.70338"}
+{"id": 367068, "field": "description", "en": "Tosses a practice torch at the target area.", "hash": "c2a776e01be5eab6", "src": "db2@1.60.1.70338"}
+{"id": 367069, "field": "name", "en": "Create Artifact", "hash": "55a19789e6538489", "src": "db2@1.60.1.70338"}
+{"id": 367070, "field": "name", "en": "Tranquility", "hash": "f3d301a233979744", "src": "db2@1.60.1.70338"}
+{"id": 367071, "field": "name", "en": "Frost", "hash": "dc23b574a51d3a0d", "src": "db2@1.60.1.70338"}
+{"id": 367179, "field": "name", "en": "Chromatic Essence", "hash": "712f11564600a6d4", "src": "db2@1.60.1.70338"}
+{"id": 367187, "field": "name", "en": "Chromatic Essence", "hash": "712f11564600a6d4", "src": "db2@1.60.1.70338"}
+{"id": 367369, "field": "name", "en": "Tactical Charge", "hash": "a8a05fa4e5b02f39", "src": "db2@1.60.1.70338"}
+{"id": 367383, "field": "name", "en": "Tactical Charge", "hash": "a8a05fa4e5b02f39", "src": "db2@1.60.1.70338"}
+{"id": 367418, "field": "name", "en": "Tactical Charge", "hash": "a8a05fa4e5b02f39", "src": "db2@1.60.1.70338"}
+{"id": 367427, "field": "name", "en": "Suppression Aura", "hash": "3459e65424d64fa6", "src": "db2@1.60.1.70338"}
+{"id": 367476, "field": "name", "en": "Faulty Wiring", "hash": "f4e3738d9f9a2c14", "src": "db2@1.60.1.70338"}
+{"id": 367507, "field": "name", "en": "Faulty Wiring", "hash": "f4e3738d9f9a2c14", "src": "db2@1.60.1.70338"}
+{"id": 367671, "field": "name", "en": "Hiding Behind Ice", "hash": "c424f8d7c53c7b3e", "src": "db2@1.60.1.70338"}
+{"id": 367671, "field": "aura", "en": "Hiding behind an Ice Block from Chromaggus.", "hash": "baf588accc611160", "src": "db2@1.60.1.70338"}
+{"id": 367672, "field": "name", "en": "Frost Tomb", "hash": "82194314ce06f544", "src": "db2@1.60.1.70338"}
+{"id": 367674, "field": "name", "en": "Missile Test", "hash": "96b316c77ce13527", "src": "db2@1.60.1.70338"}
+{"id": 367675, "field": "name", "en": "Missile Test", "hash": "96b316c77ce13527", "src": "db2@1.60.1.70338"}
+{"id": 367681, "field": "name", "en": "Frost Bomb", "hash": "7fafce2edcb7ccac", "src": "db2@1.60.1.70338"}
+{"id": 367686, "field": "name", "en": "Flame Patch", "hash": "c33e9e4ea39c2563", "src": "db2@1.60.1.70338"}
+{"id": 367688, "field": "name", "en": "Flame Patch", "hash": "c33e9e4ea39c2563", "src": "db2@1.60.1.70338"}
+{"id": 367692, "field": "name", "en": "Flame Patch", "hash": "c33e9e4ea39c2563", "src": "db2@1.60.1.70338"}
+{"id": 367699, "field": "name", "en": "Time Stop", "hash": "98fb96e6bd3e7c26", "src": "db2@1.60.1.70338"}
+{"id": 367700, "field": "name", "en": "Frost Bomb", "hash": "7fafce2edcb7ccac", "src": "db2@1.60.1.70338"}
+{"id": 367701, "field": "name", "en": "Time Stop", "hash": "98fb96e6bd3e7c26", "src": "db2@1.60.1.70338"}
+{"id": 367701, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70338"}
+{"id": 367708, "field": "name", "en": "Shadowflame Bolt", "hash": "efe482086b7c3836", "src": "db2@1.60.1.70338"}
+{"id": 367710, "field": "name", "en": "Shadowflame Bolt", "hash": "efe482086b7c3836", "src": "db2@1.60.1.70338"}
+{"id": 367717, "field": "name", "en": "Flame Patch", "hash": "c33e9e4ea39c2563", "src": "db2@1.60.1.70338"}
+{"id": 367718, "field": "name", "en": "Frost Tomb", "hash": "82194314ce06f544", "src": "db2@1.60.1.70338"}
+{"id": 367719, "field": "name", "en": "Time Stop", "hash": "98fb96e6bd3e7c26", "src": "db2@1.60.1.70338"}
+{"id": 367720, "field": "name", "en": "Dream Fog", "hash": "87b2309484e0db87", "src": "db2@1.60.1.70338"}
+{"id": 367721, "field": "name", "en": "Dream Fog", "hash": "87b2309484e0db87", "src": "db2@1.60.1.70338"}
+{"id": 367723, "field": "name", "en": "Dream Fog", "hash": "87b2309484e0db87", "src": "db2@1.60.1.70338"}
+{"id": 367724, "field": "name", "en": "Dream Fog", "hash": "87b2309484e0db87", "src": "db2@1.60.1.70338"}
+{"id": 367724, "field": "aura", "en": "Movement speed reduced by $s1%.\r\n\r\nFeeling sleepy...", "hash": "162b6e71233f6b85", "src": "db2@1.60.1.70338"}
+{"id": 367728, "field": "name", "en": "Dream Fog", "hash": "87b2309484e0db87", "src": "db2@1.60.1.70338"}
+{"id": 367728, "field": "aura", "en": "Asleep.", "hash": "5339954ec205013e", "src": "db2@1.60.1.70338"}
+{"id": 367729, "field": "name", "en": "Azure Bolt", "hash": "4a860a08bb0f8b11", "src": "db2@1.60.1.70338"}
+{"id": 367735, "field": "name", "en": "Azure Bolt", "hash": "4a860a08bb0f8b11", "src": "db2@1.60.1.70338"}
+{"id": 367739, "field": "name", "en": "Azure Bolt", "hash": "4a860a08bb0f8b11", "src": "db2@1.60.1.70338"}
+{"id": 367740, "field": "name", "en": "Creeping Chill", "hash": "a281d5a0144f70fc", "src": "db2@1.60.1.70338"}
+{"id": 367740, "field": "aura", "en": "Movement speed slowed by $s2%.", "hash": "79a226e8bb65bd7e", "src": "db2@1.60.1.70338"}
+{"id": 367741, "field": "name", "en": "Frozen Solid", "hash": "15bf964ba47b5e0b", "src": "db2@1.60.1.70338"}
+{"id": 367741, "field": "description", "en": "Frozen solid.", "hash": "91935cc1b2079b2e", "src": "db2@1.60.1.70338"}
+{"id": 367741, "field": "aura", "en": "Frozen solid.", "hash": "91935cc1b2079b2e", "src": "db2@1.60.1.70338"}
+{"id": 367756, "field": "name", "en": "Temporal Acceleration", "hash": "7b5515a9f4c4b882", "src": "db2@1.60.1.70338"}
+{"id": 367756, "field": "description", "en": "Movement speed increased by $s1%.\r\nAttack speed increased $s2%.\r\nCasting time decreased by $s3%.", "hash": "76f7b6463fd00660", "src": "db2@1.60.1.70338"}
+{"id": 367756, "field": "aura", "en": "Movement speed increased by $s1%.\r\nAttack speed increased $s2%.\r\nCasting time decreased by $s3%.", "hash": "76f7b6463fd00660", "src": "db2@1.60.1.70338"}
+{"id": 367788, "field": "name", "en": "Bronze Bolt", "hash": "5ecfac7074466b84", "src": "db2@1.60.1.70338"}
+{"id": 367792, "field": "name", "en": "Temporal Acceleration", "hash": "7b5515a9f4c4b882", "src": "db2@1.60.1.70338"}
+{"id": 367792, "field": "description", "en": "Movement speed increased by $s1%.\r\nMelee, ranged, and spell haste increased by $s2%.", "hash": "ebf9077b29ebe891", "src": "db2@1.60.1.70338"}
+{"id": 367792, "field": "aura", "en": "Movement speed increased by $s1%.\r\nMelee, Ranged, and Spell Haste increased by $s2%.", "hash": "9725d4c215006421", "src": "db2@1.60.1.70338"}
+{"id": 367795, "field": "name", "en": "Bronze Bolt", "hash": "5ecfac7074466b84", "src": "db2@1.60.1.70338"}
+{"id": 367796, "field": "name", "en": "Bronze Bolt", "hash": "5ecfac7074466b84", "src": "db2@1.60.1.70338"}
+{"id": 367829, "field": "name", "en": "Copy Ranged Weapon", "hash": "a2eea97a2378a687", "src": "db2@1.60.1.70338"}
+{"id": 367832, "field": "name", "en": "Copy Ranged Weapon", "hash": "a2eea97a2378a687", "src": "db2@1.60.1.70338"}
+{"id": 367840, "field": "name", "en": "Ruby Breath", "hash": "9b186437fc1f19f4", "src": "db2@1.60.1.70338"}
+{"id": 367870, "field": "name", "en": "Obsidian Bolt", "hash": "ef3b7d466676a974", "src": "db2@1.60.1.70338"}
+{"id": 367871, "field": "name", "en": "Obsidian Bolt", "hash": "ef3b7d466676a974", "src": "db2@1.60.1.70338"}
+{"id": 367872, "field": "name", "en": "Obsidian Bolt", "hash": "ef3b7d466676a974", "src": "db2@1.60.1.70338"}
+{"id": 367873, "field": "name", "en": "Blinding Ash", "hash": "ccccfcfb7c8a72d3", "src": "db2@1.60.1.70338"}
+{"id": 367873, "field": "description", "en": "Deals $s1 Shadow damage every $t1 sec.\r\nDecreases your chance to hit with spells and melee attacks by $s2%.", "hash": "ea55b580080c9188", "src": "db2@1.60.1.70338"}
+{"id": 367873, "field": "aura", "en": "Deals $s1 Shadow damage every $t1 sec.\r\nDecreases your chance to hit with spells and melee attacks by $s2%.", "hash": "ea55b580080c9188", "src": "db2@1.60.1.70338"}
+{"id": 367883, "field": "name", "en": "Corrupted Shot", "hash": "6c4fcb8878809002", "src": "db2@1.60.1.70338"}
+{"id": 367884, "field": "name", "en": "Dream Breath", "hash": "7befd30717588bf4", "src": "db2@1.60.1.70338"}
+{"id": 367886, "field": "name", "en": "Dream Breath", "hash": "7befd30717588bf4", "src": "db2@1.60.1.70338"}
+{"id": 367887, "field": "name", "en": "Dream Breath", "hash": "7befd30717588bf4", "src": "db2@1.60.1.70338"}
+{"id": 367888, "field": "name", "en": "Dream Breath", "hash": "7befd30717588bf4", "src": "db2@1.60.1.70338"}
+{"id": 367888, "field": "aura", "en": "Asleep.", "hash": "5339954ec205013e", "src": "db2@1.60.1.70338"}
+{"id": 367889, "field": "name", "en": "Corrupted Shot", "hash": "6c4fcb8878809002", "src": "db2@1.60.1.70338"}
+{"id": 367890, "field": "name", "en": "Corrupted Shot", "hash": "6c4fcb8878809002", "src": "db2@1.60.1.70338"}
+{"id": 367897, "field": "name", "en": "Dream Breath", "hash": "7befd30717588bf4", "src": "db2@1.60.1.70338"}
+{"id": 367897, "field": "aura", "en": "Movement speed reduced by $s1%.\r\n\r\nFeeling sleepy...", "hash": "162b6e71233f6b85", "src": "db2@1.60.1.70338"}
+{"id": 367921, "field": "name", "en": "Copy Melee Weapon", "hash": "c236bd6f77cf4040", "src": "db2@1.60.1.70338"}
+{"id": 367922, "field": "name", "en": "Copy Melee Weapon", "hash": "c236bd6f77cf4040", "src": "db2@1.60.1.70338"}
+{"id": 367927, "field": "name", "en": "Corrupted Slam", "hash": "6c50d07b885fe0b1", "src": "db2@1.60.1.70338"}
+{"id": 367928, "field": "name", "en": "Corrupted Slam", "hash": "6c50d07b885fe0b1", "src": "db2@1.60.1.70338"}
+{"id": 367928, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70338"}
+{"id": 367955, "field": "name", "en": "Chromatic Essence", "hash": "712f11564600a6d4", "src": "db2@1.60.1.70338"}
+{"id": 367968, "field": "name", "en": "Destroy Unstable Chromatic Egg", "hash": "954b7aa540a97298", "src": "db2@1.60.1.70338"}
+{"id": 367968, "field": "description", "en": "Destroys a nearby egg.", "hash": "10a0ae276ba501e1", "src": "db2@1.60.1.70338"}
+{"id": 367985, "field": "name", "en": "Burning Adrenaline", "hash": "aa94191606cc525d", "src": "db2@1.60.1.70338"}
+{"id": 367986, "field": "name", "en": "Burning Adrenaline", "hash": "aa94191606cc525d", "src": "db2@1.60.1.70338"}
+{"id": 367987, "field": "name", "en": "Burning Adrenaline", "hash": "aa94191606cc525d", "src": "db2@1.60.1.70338"}
+{"id": 367987, "field": "aura", "en": "Damage increased by $s2%.\r\nHaste increased by $s3%.\r\nDeals $s1% of max health as damage every $t1 sec.\r\nDeals $23478s1~ damage to surrounding allies on death.", "hash": "cac3e1d62edd840f", "src": "db2@1.60.1.70338"}

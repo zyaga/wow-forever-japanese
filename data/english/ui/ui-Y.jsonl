@@ -1,15 +1,15 @@
-{"id": "YELL", "field": "text", "en": "Yell", "hash": "0c07a520ba240576", "src": "db2@1.60.1.70291"}
-{"id": "YELLOW_GEM", "field": "text", "en": "Yellow", "hash": "6c7c7722a005c6c5", "src": "db2@1.60.1.70291"}
-{"id": "YELL_MESSAGE", "field": "text", "en": "Yell", "hash": "0c07a520ba240576", "src": "db2@1.60.1.70291"}
-{"id": "YES", "field": "text", "en": "Yes", "hash": "00178243615c2262", "src": "db2@1.60.1.70291"}
-{"id": "YOUR_CLASS_MAY_NOT_PERFORM_ROLE", "field": "text", "en": "Your class may not perform this role.", "hash": "22cc94612f782ce4", "src": "db2@1.60.1.70291"}
-{"id": "YOUR_ROLE", "field": "text", "en": "Your Role", "hash": "6c3c037f3a466b05", "src": "db2@1.60.1.70291"}
-{"id": "YOU_ARE_NOT_SPECIALIZED_IN_ROLE", "field": "text", "en": "You are not specialized for this role.", "hash": "bfd957972900b251", "src": "db2@1.60.1.70291"}
-{"id": "YOU_COLLECTED_LABEL", "field": "text", "en": "You Collected", "hash": "c050fff627d8bee6", "src": "db2@1.60.1.70291"}
-{"id": "YOU_EARNED_LABEL", "field": "text", "en": "You Earned", "hash": "e34c8f22dd69cf44", "src": "db2@1.60.1.70291"}
-{"id": "YOU_LOOT_MONEY", "field": "text", "en": "You loot %s", "hash": "64b51f408b50605f", "src": "db2@1.60.1.70291"}
-{"id": "YOU_LOOT_MONEY_GUILD", "field": "text", "en": "You loot %s (%s deposited to guild bank)", "hash": "7a7c23cc048c04ab", "src": "db2@1.60.1.70291"}
-{"id": "YOU_LOOT_MONEY_MOD", "field": "text", "en": "You loot %s (+%s)", "hash": "7a00279447cb861c", "src": "db2@1.60.1.70291"}
-{"id": "YOU_RECEIVED", "field": "text", "en": "You Received:", "hash": "f602dd1dbae8110c", "src": "db2@1.60.1.70291"}
-{"id": "YOU_RECEIVED_LABEL", "field": "text", "en": "You received", "hash": "7eb928fd47e4833c", "src": "db2@1.60.1.70291"}
-{"id": "YOU_WON_LABEL", "field": "text", "en": "You Won!", "hash": "10e5029dd60f6983", "src": "db2@1.60.1.70291"}
+{"id": "YELL", "field": "text", "en": "Yell", "hash": "0c07a520ba240576", "src": "db2@1.60.1.70338"}
+{"id": "YELLOW_GEM", "field": "text", "en": "Yellow", "hash": "6c7c7722a005c6c5", "src": "db2@1.60.1.70338"}
+{"id": "YELL_MESSAGE", "field": "text", "en": "Yell", "hash": "0c07a520ba240576", "src": "db2@1.60.1.70338"}
+{"id": "YES", "field": "text", "en": "Yes", "hash": "00178243615c2262", "src": "db2@1.60.1.70338"}
+{"id": "YOUR_CLASS_MAY_NOT_PERFORM_ROLE", "field": "text", "en": "Your class may not perform this role.", "hash": "22cc94612f782ce4", "src": "db2@1.60.1.70338"}
+{"id": "YOUR_ROLE", "field": "text", "en": "Your Role", "hash": "6c3c037f3a466b05", "src": "db2@1.60.1.70338"}
+{"id": "YOU_ARE_NOT_SPECIALIZED_IN_ROLE", "field": "text", "en": "You are not specialized for this role.", "hash": "bfd957972900b251", "src": "db2@1.60.1.70338"}
+{"id": "YOU_COLLECTED_LABEL", "field": "text", "en": "You Collected", "hash": "c050fff627d8bee6", "src": "db2@1.60.1.70338"}
+{"id": "YOU_EARNED_LABEL", "field": "text", "en": "You Earned", "hash": "e34c8f22dd69cf44", "src": "db2@1.60.1.70338"}
+{"id": "YOU_LOOT_MONEY", "field": "text", "en": "You loot %s", "hash": "64b51f408b50605f", "src": "db2@1.60.1.70338"}
+{"id": "YOU_LOOT_MONEY_GUILD", "field": "text", "en": "You loot %s (%s deposited to guild bank)", "hash": "7a7c23cc048c04ab", "src": "db2@1.60.1.70338"}
+{"id": "YOU_LOOT_MONEY_MOD", "field": "text", "en": "You loot %s (+%s)", "hash": "7a00279447cb861c", "src": "db2@1.60.1.70338"}
+{"id": "YOU_RECEIVED", "field": "text", "en": "You Received:", "hash": "f602dd1dbae8110c", "src": "db2@1.60.1.70338"}
+{"id": "YOU_RECEIVED_LABEL", "field": "text", "en": "You received", "hash": "7eb928fd47e4833c", "src": "db2@1.60.1.70338"}
+{"id": "YOU_WON_LABEL", "field": "text", "en": "You Won!", "hash": "10e5029dd60f6983", "src": "db2@1.60.1.70338"}

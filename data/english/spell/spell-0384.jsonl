@@ -1,6 +1,6 @@
-{"id": 384121, "field": "name", "en": "[DNT] Bonus Boss Difficulty Update", "hash": "d1a31ece22181a39", "src": "db2@1.60.1.70291"}
-{"id": 384135, "field": "name", "en": "Rune of Fortune", "hash": "150c5bb88aad8b78", "src": "db2@1.60.1.70291"}
-{"id": 384135, "field": "description", "en": "Grants all raid members the chance to discover additional rewards from Kel'Thuzad and his lieutenants.\r\n\r\nThis effect stacks and lasts for an entire week.", "hash": "38da2bad2ec8c924", "src": "db2@1.60.1.70291"}
-{"id": 384255, "field": "name", "en": "Changing Talents", "hash": "3ea413d2355d2288", "src": "db2@1.60.1.70291"}
-{"id": 384255, "field": "description", "en": "Apply changes to your talents.", "hash": "9ee07359a01e6008", "src": "db2@1.60.1.70291"}
-{"id": 384255, "field": "aura", "en": "Apply changes to your talents.", "hash": "9ee07359a01e6008", "src": "db2@1.60.1.70291"}
+{"id": 384121, "field": "name", "en": "[DNT] Bonus Boss Difficulty Update", "hash": "d1a31ece22181a39", "src": "db2@1.60.1.70338"}
+{"id": 384135, "field": "name", "en": "Rune of Fortune", "hash": "150c5bb88aad8b78", "src": "db2@1.60.1.70338"}
+{"id": 384135, "field": "description", "en": "Grants all raid members the chance to discover additional rewards from Kel'Thuzad and his lieutenants.\r\n\r\nThis effect stacks and lasts for an entire week.", "hash": "38da2bad2ec8c924", "src": "db2@1.60.1.70338"}
+{"id": 384255, "field": "name", "en": "Changing Talents", "hash": "3ea413d2355d2288", "src": "db2@1.60.1.70338"}
+{"id": 384255, "field": "description", "en": "Apply changes to your talents.", "hash": "9ee07359a01e6008", "src": "db2@1.60.1.70338"}
+{"id": 384255, "field": "aura", "en": "Apply changes to your talents.", "hash": "9ee07359a01e6008", "src": "db2@1.60.1.70338"}

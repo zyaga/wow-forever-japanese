@@ -19,7 +19,7 @@ from wfj.core.model import ui_family
 from wfj.emit.lua_writer import shipped
 from wfj.io.jsonl_store import Store
 
-FOREVER_SRC = "db2@1.60.1.70291"
+FOREVER_SRC = "db2@1.60.1.70338"
 FINGERPRINTED = ("ItemSubClass:", "SpellItemEnchantment:", "SpellSubtext:")  # no client string: matched by the live line's hash
 PLURAL = re.compile(r"\|4([^:;|]*):([^;|]*);")
 
