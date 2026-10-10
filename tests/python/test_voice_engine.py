@@ -8,6 +8,7 @@ import signal
 import socket
 import subprocess
 import sys
+import threading
 import time
 from pathlib import Path
 
@@ -220,3 +221,50 @@ def test_the_command_passes_the_engine_path_to_generate(tmp_path, monkeypatch):
     monkeypatch.chdir(tmp_path)
     voice_make.run(["generate", "--store", str(tmp_path / "voice"), "--engine-run", str(tmp_path / "e")])
     assert seen["engine_run"] == tmp_path / "e"
+
+
+def test_an_engine_that_accepts_but_never_replies_fails_within_the_wait(tmp_path, url, reap):
+    run = FakeRun(tmp_path, mode="mute")
+    start = time.monotonic()
+    with (
+        pytest.raises(EngineError, match=str(run.path)),
+        aivis.running(Engine(url), run.path, wait=1, log=lambda *_: None),
+    ):
+        pass
+    reap.append(run.pid)
+    assert time.monotonic() - start < 15
+    assert _gone(run.pid)
+
+
+def test_the_run_that_started_the_engine_stops_it_only_after_another_run_using_it_ends(tmp_path, url, reap):
+    run = FakeRun(tmp_path)
+    up, release, done = threading.Event(), threading.Event(), threading.Event()
+
+    def first():
+        with aivis.running(Engine(url), run.path, log=lambda *_: None):
+            up.set()
+            release.wait(20)
+        done.set()
+
+    owner = threading.Thread(target=first)
+    owner.start()
+    assert up.wait(20)
+    reap.append(run.pid)
+    with aivis.running(Engine(url), tmp_path / "missing" / "run", log=lambda *_: None) as version:
+        assert version == "1.2.0"
+        release.set()
+        time.sleep(0.5)
+        assert not done.is_set()
+        assert Engine(url).version() == "1.2.0"
+    owner.join(20)
+    assert done.is_set()
+    assert _gone(run.pid)
+
+
+def test_a_run_stopped_mid_encode_leaves_no_mp3(tmp_path, monkeypatch):
+    out = tmp_path / "a.mp3"
+    monkeypatch.setattr(voice_make, "LAME", ("sh", "-c", 'printf partial > "$2"; exit 1', "sh"))
+    with pytest.raises(subprocess.CalledProcessError):
+        voice_make.to_mp3(b"RIFF", out)
+    assert not out.exists()
+    assert list(tmp_path.iterdir()) == []

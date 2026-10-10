@@ -324,12 +324,16 @@ def wav_seconds(wav: bytes) -> float:
 
 
 def to_mp3(wav: bytes, out: Path) -> None:
+    # encoded beside the file and renamed, so a run stopped mid-encode leaves no cut-off mp3 at its name
     tmp = out.with_suffix(".wav")
+    part = out.with_name(out.name + ".part")
     tmp.write_bytes(wav)
     try:
-        subprocess.run([*LAME, str(tmp), str(out)], check=True)
+        subprocess.run([*LAME, str(tmp), str(part)], check=True)
+        part.replace(out)
     finally:
         tmp.unlink(missing_ok=True)
+        part.unlink(missing_ok=True)
 
 
 def _status(path: Path, **fields: Any) -> None:

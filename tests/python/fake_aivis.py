@@ -2,7 +2,7 @@
 
 Takes the engine's `--host` and `--port`, writes its pid to $FAKE_AIVIS_PIDFILE, then by $FAKE_AIVIS_MODE:
 `serve` (default) answers /version, /audio_query and /synthesis, `exit` quits at once, `silent` never
-listens.
+listens, `mute` accepts connections and never replies.
 """
 
 from __future__ import annotations
@@ -11,6 +11,7 @@ import argparse
 import io
 import json
 import os
+import socket
 import time
 import wave
 from http.server import BaseHTTPRequestHandler, HTTPServer
@@ -60,6 +61,11 @@ def main() -> None:
     if mode == "silent":
         while True:
             time.sleep(1)
+    if mode == "mute":
+        server = socket.create_server((a.host, a.port))
+        held = []
+        while True:
+            held.append(server.accept()[0])
     HTTPServer((a.host, a.port), Handler).serve_forever()
 
 
