@@ -29,7 +29,7 @@ PIN = "voice-audio-commit.txt"
 LEVELS_HEAD = (
     "# Each quest's level for the voice packs' level bands, written by `make voice-levels`.\n"
     "# Do not edit by hand. The client's quest cache first, VMaNGOS for quests it has not answered, then\n"
-    "# the level this table had for a quest neither gives (a quest an earlier build answered keeps its band).\n"
+    "# the level this table had for a quest neither gives (an earlier build's quest keeps its band).\n"
     "# `<quest id> <level>` per line.\n"
 )
 PIN_HEAD = (
