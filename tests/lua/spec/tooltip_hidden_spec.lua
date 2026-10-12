@@ -115,7 +115,8 @@ local function setup()
     align = WFJ.Align.check,
   }))
   WFJ.Lookup = { get = function(kind, id) return DATA[kind] and DATA[kind][id] end }
-  WFJ.UIIndex = { match = function(_, t) if UI_LINES[t] then return t, {} end end }
+  WFJ.UIIndex = { match = function(_, t) if UI_LINES[t] then return t, {} end end,
+    clientTail = function() return nil end } -- no line here carries a cooldown or max-level tail
   Stub.spellDescriptions[17] = SHIELD_DESC
   WFJ.Tooltip.init()
   return WFJ, _G.GameTooltip
