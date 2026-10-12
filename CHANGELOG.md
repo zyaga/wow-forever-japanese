@@ -9,6 +9,9 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Fixed
+- The English Collector counts only lines the addon cannot show in Japanese: tooltips with your numbers filled in, quest lines that name your class or race, and NPC names no longer count, and lines a newer version covers are removed from the collector file at the next login or reload.
+
 ## 0.2.0 - 2026-10-11
 
 ### Added

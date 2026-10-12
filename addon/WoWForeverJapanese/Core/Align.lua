@@ -255,6 +255,12 @@ local DURATION_SHAPES = {
   "^([%d%.,]+%s*[^%s%d]+%s+[%d%.,]+%s*[^%s%d]+)", -- two entries: "1 hr 30 min"
   "^([%d%.,]+%s*[^%s%d]+)",                        -- one entry: "30 sec", "18秒"
 }
+-- The same in the client's plural code, which the spell API's text keeps ("for 1 |4hour:hrs;."). Its closing ";"
+-- is part of the phrase, so these are not trimmed.
+local PLURAL_SHAPES = {
+  "^([%d%.,]+%s*|4[^;]*;%s+[%d%.,]+%s*|4[^;]*;)", -- "5 |4Hr:Hrs; 30 |4Min:Mins;"
+  "^([%d%.,]+%s*|4[^;]*;)",                       -- "1 |4hour:hrs;"
+}
 
 -- → the live line's durations in reading order, each already in Japanese. Never overlapping: a phrase that
 -- matched is skipped past, so "1 hr 30 min" is one duration and not also "30 min".
@@ -270,17 +276,25 @@ function Align.durations(scope, duration)
     local _, numEnd = scope:find("^[%d%.,]+", s)
     local step = numEnd + 1
     if not isLetter(scope:byte(s - 1)) then
-      for _, shape in ipairs(DURATION_SHAPES) do
-        local cand = scope:match(shape, s)
-        if cand then
-          local trimmed = cand:gsub(DURATION_TRAIL, "")
-          local ja = trimmed ~= "" and duration(trimmed) or nil
-          if ja then
-            out[#out + 1] = ja
-            step = s + #trimmed
-            break
+      local ja, phrase
+      for _, shape in ipairs(PLURAL_SHAPES) do
+        phrase = scope:match(shape, s)
+        ja = phrase and duration(phrase) or nil
+        if ja then break end
+      end
+      if not ja then
+        for _, shape in ipairs(DURATION_SHAPES) do
+          local cand = scope:match(shape, s)
+          if cand then
+            phrase = cand:gsub(DURATION_TRAIL, "")
+            ja = phrase ~= "" and duration(phrase) or nil
+            if ja then break end
           end
         end
+      end
+      if ja then
+        out[#out + 1] = ja
+        step = s + #phrase
       end
     end
     i = step

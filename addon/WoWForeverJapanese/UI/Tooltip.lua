@@ -190,19 +190,20 @@ end
 -- first line is empty is refused: an empty English is never a translation target (addon-modules §7).
 local runColors -- below anySecretOf, which it needs
 
-local function showRun(surface, area, kind, id, lines, first, last, refit, runArgs)
+local function showRun(surface, area, kind, id, lines, first, last, refit, runArgs, tag)
+  tag = tag or "desc"
   local texts = {}
   for i = first, last do texts[#texts + 1] = lines[i].text end
   local n = 0
   -- line 1 is the name: never replaced, never a number source, but a name the Japanese may legitimately use
-  if WFJ.Render.show(surface, "desc", lines[first].fs, lines[first].text, area, kind, id,
+  if WFJ.Render.show(surface, tag, lines[first].fs, lines[first].text, area, kind, id,
       { lines = texts, nameScope = lines[1] and lines[1].text or nil, refit = refit, args = runArgs,
         partColors = runColors(lines, first, last) }) then
     n = n + 1
   end
   for i = first + 1, last do
-    if WFJ.Render.show(surface, "desc." .. i, lines[i].fs, lines[i].text, area, kind, id,
-        { follow = "desc", refit = refit }) then n = n + 1 end
+    if WFJ.Render.show(surface, tag .. "." .. i, lines[i].fs, lines[i].text, area, kind, id,
+        { follow = tag, refit = refit }) then n = n + 1 end
   end
   return n
 end
@@ -212,14 +213,14 @@ end
 local HEADED = { ShoppingTooltip1 = true, ShoppingTooltip2 = true, ItemRefShoppingTooltip1 = true,
   ItemRefShoppingTooltip2 = true } -- comparison tooltips: line 1 is "Currently Equipped", the name follows
 
-local function showStructural(surface, frame, lines, first, last, refit, name)
+local function showStructural(surface, frame, lines, first, last, refit, name, skip)
   local index = WFJ.UIIndex
   if not index then return 0 end
   local n = 0
   local headed = HEADED[frame:GetName()]
   local sides = { { "L", lines }, { "R", Tooltip.lines(frame, "Right") } }
   for i = 1, #lines do
-    if not (first and i >= first and i <= last) then
+    if not (first and i >= first and i <= last) and i ~= skip then
       for _, side in ipairs(sides) do
         local l = side[2][i]
         -- an uncached item has no name yet: on a comparison tooltip the name is then line 2 by position
@@ -487,7 +488,8 @@ function Tooltip.installCallTrace()
 end
 Tooltip.traceNote = traceNote
 
-local function show(frame, area, kind, id, lines, first, last, name, runArgs)
+-- `learn` = { row, id }: a recipe's own "Teaches you" line, a run of its own under the recipe's id.
+local function show(frame, area, kind, id, lines, first, last, name, runArgs, learn)
   local surface = surfaceOf(frame)
   WFJ.Render.forget(surface)
   if first and lines[first].text == "" then first, last = nil, nil end
@@ -508,7 +510,10 @@ local function show(frame, area, kind, id, lines, first, last, name, runArgs)
     if first and matched == 0 then
       written = showRun(surface, area, kind, id, lines, first, last, refit, runArgs)
     end
-    return written + showStructural(surface, frame, lines, first, last, refit, name)
+    if learn then
+      written = written + showRun(surface, area, kind, learn.id, lines, learn.row, learn.row, refit, nil, "learn")
+    end
+    return written + showStructural(surface, frame, lines, first, last, refit, name, learn and learn.row)
   end)
   inRefit[frame] = false
   if not ok then error(n, 0) end
@@ -867,6 +872,33 @@ function Tooltip.itemOf(frame)
   return name, link
 end
 
+-- A recipe's tooltip on Forever is the crafted item's tooltip as a nested block, then the recipe's own "Use: Teaches
+-- you …" line [seen in game: the tooltip data of a recipe on Forever 1.60.1.70338]. The tooltip data names both
+-- items: its id is the recipe, the nested block's tooltipID the crafted item, and the recipe's line has its own
+-- type. The item link may name either of them. → crafted id, recipe id, the recipe line's row | nil
+function Tooltip.recipeOf(frame, lineCount)
+  if type(frame.GetPrimaryTooltipInfo) ~= "function" then return nil end
+  local ok, info = pcall(frame.GetPrimaryTooltipInfo, frame)
+  local data = ok and type(info) == "table" and info.tooltipData or nil
+  local lineTypes, dataTypes = Compat.resolve("Enum.TooltipDataLineType"), Compat.resolve("Enum.TooltipDataType")
+  if type(data) ~= "table" or type(data.lines) ~= "table" or type(lineTypes) ~= "table" then return nil end
+  local itemType = type(dataTypes) == "table" and dataTypes.Item or 0
+  local crafted, row
+  for _, line in ipairs(data.lines) do
+    if type(line) == "table" and not anySecretOf(line.type, line.tooltipID, line.tooltipType, line.lineIndex) then
+      if line.type == lineTypes.NestedBlock and line.tooltipType == itemType and type(line.tooltipID) == "number" then
+        crafted = crafted or line.tooltipID
+      elseif line.type == lineTypes.ItemSpellTriggerLearn and type(line.lineIndex) == "number" then
+        row = row or line.lineIndex
+      end
+    end
+  end
+  local recipe = data.id
+  if anySecretOf(recipe) or type(recipe) ~= "number" or not crafted or crafted == recipe then return nil end
+  if not row or row < 2 or row > lineCount then return nil end
+  return crafted, recipe, row
+end
+
 -- The Item post-call's target.
 function Tooltip.onItem(frame)
   if inRefit[frame] then return 0 end -- our own refit re-runs the post-call; nothing new to read
@@ -884,23 +916,28 @@ function Tooltip.onItem(frame)
     return n
   end
   local id = type(link) == "string" and tonumber(link:match("item:(%d+)")) or nil
+  local crafted, recipe, learnRow = Tooltip.recipeOf(frame, #lines)
+  if crafted then id = crafted end
   if not id or id <= 0 then
     WFJ.Render.forget(surfaceOf(frame))
     traceFrame(frame, "item without an id", nil, lines, "-> 0 (link " .. plain(link) .. ")")
     return 0
   end
   traceFrame(frame, "item as the client laid it out", id, lines, "")
-  local first, last = Tooltip.itemRun(texts)
+  -- a recipe: the crafted item's run ends above the recipe's own line, which is a run of its own
+  local first, last = Tooltip.itemRun(learnRow and { unpack(texts, 1, learnRow - 1) } or texts)
+  local learn = learnRow and texts[learnRow] ~= "" and { row = learnRow, id = recipe } or nil
   local runArgs = first and peelTrailer(texts, first, last) or nil
   -- The run is read before we write (the client rewrote every line); the Collector refuses our own text anyway.
   if first then WFJ.Collector.record("item", id, "description", table.concat(texts, "\n", first, last)) end
+  if learn then WFJ.Collector.record("item", recipe, "description", texts[learnRow]) end
   if runArgs then -- only an ungated translation takes the trailer's Japanese; a gated one keeps the whole line
     local lookup = WFJ.Lookup and WFJ.Lookup.get
     local entry = type(lookup) == "function" and lookup("item.description", id) or nil
     if not (entry and entry.status == ".") then runArgs = nil end
   end
   -- No run still has structural lines.
-  local n = show(frame, "items", "item.description", id, lines, first, last, itemName, runArgs)
+  local n = show(frame, "items", "item.description", id, lines, first, last, itemName, runArgs, learn)
   traceFrame(frame, "readable item", id, lines, ("-> rendered %d"):format(n))
   -- the same tooltip one frame later, as the client drew it: a wrap that moves after this pass shows there
   local after = Tooltip.trace and Compat.resolve("C_Timer.After")

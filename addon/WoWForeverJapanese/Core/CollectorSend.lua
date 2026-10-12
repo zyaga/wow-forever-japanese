@@ -65,8 +65,10 @@ local function encode(payload)
 end
 
 function CollectorSend.pack(all)
-  local list, shipped, shippedList = WFJ.Collector.pending(all)
-  local result = { count = #list, shipped = shipped, url = CollectorSend.ISSUE_URL, sent = {}, later = 0 }
+  local list, shipped, shippedList, names = WFJ.Collector.pending(all)
+  -- NPC names ride along with the lines and are not counted as lines
+  local result = { count = #list - (names or 0), shipped = shipped, url = CollectorSend.ISSUE_URL, sent = {},
+    later = 0 }
   if WFJ.Collector.isReadOnly() then
     result.mode = "readonly" -- a file from a newer version of the addon: this one neither reads nor sends it
     return result
@@ -100,7 +102,7 @@ function CollectorSend.pack(all)
   for i, item in ipairs(result.sent) do
     if WFJ.Collector.onDisk(item.key, item.h) then
       kept[#kept + 1] = item
-    elseif i <= #list then
+    elseif i <= #list and item.key:sub(1, 4) ~= "npc:" then
       result.later = result.later + 1
     end
   end

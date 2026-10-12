@@ -129,6 +129,24 @@ describe("durations", function()
     assert.are.same({ "30秒", "10日" }, A.durations("Stuns for 30 sec. Expires in 10 days.", SEC))
   end)
 
+  -- the spell API's text keeps the client's plural code ("for 1 |4hour:hrs;."); the line the tooltip holds is
+  -- that same text, and the renderer understands it whole, closing ";" included
+  it("reads a duration written in the client's plural code, one or two of them", function()
+    local raw = renderer({ ["1 |4hour:hrs;"] = "1時間", ["5 |4Hr:Hrs; 30 |4Min:Mins;"] = "5時間30分" })
+    assert.are.same({ "1時間" }, A.durations("Increases armor by 34 for 1 |4hour:hrs;.", raw))
+    assert.are.same({ "1時間" }, A.durations("for 1 |4hour:hrs;. Only one Blessing.", raw))
+    assert.are.same({ "5時間30分" }, A.durations("Lasts 5 |4Hr:Hrs; 30 |4Min:Mins;.", raw))
+    assert.are.same({}, A.durations("for 2 |4item:items;.", raw))
+  end)
+
+  it("a gated line in the plural code passes the gate and is filled from it", function()
+    local raw = renderer({ ["1 |4hour:hrs;"] = "1時間" })
+    local ok, text = A.check("$D1の間、味方の対象のアーマーを$N1上げます。",
+      { "Increases the friendly target's armor by 34 for 1 |4hour:hrs;." }, nil, raw)
+    assert.is_true(ok)
+    assert.are.equal("1時間の間、味方の対象のアーマーを34上げます。", text)
+  end)
+
   it("ignores a number that is not a duration, and a line already in Japanese is read too", function()
     assert.are.same({}, A.durations("Restores 61 health.", SEC))
     assert.are.same({}, A.durations("Deals 120 Fire damage to 5 enemies.", SEC))

@@ -242,6 +242,15 @@ function WFJ.OnLoad()
     -- [verified: forever-ui Blizzard_APIDocumentationGenerated/BuildDocumentation.lua:48 IsBetaBuild; that it is
     -- true on the Forever beta client is unverified: checklist 8 of docs/testing/strategy.md looks at the path shown]
     beta = function() return type(IsBetaBuild) == "function" and IsBetaBuild() == true end,
+    -- the tooltip gate the Translator's align deps run, so an item / spell line counts as covered only when its
+    -- Japanese would show for it
+    aligns = function(entry, lines)
+      if entry.variants then
+        return (WFJ.Align.checkVariants(entry.variants, entry.shapes, lines, nil, spellDuration)) == true
+      end
+      if entry.sections then return (WFJ.Align.sections(entry.sections, lines, nil, spellDuration)) == true end
+      return (WFJ.Align.check(entry.ja, lines, nil, spellDuration)) == true
+    end,
   }) end) or WFJ_Collector
   -- the client's own encoder [verified: forever-ui Blizzard_APIDocumentationGenerated/EncodingUtilDocumentation.lua
   -- (Environment "All"; CompressionMethod.Zlib, Base64Variant.StandardUrlSafe), used the same way by
@@ -263,6 +272,8 @@ function WFJ.OnLoad()
   }) end)
 
   step("uiindex", WFJ.BuildUIIndex)
+  -- lines a newer addon covers leave the collector file; the tooltip gate needs the UI index's duration strings
+  step("collectorprune", function() WFJ.Collector.prune() end)
   step("objectiveindex", WFJ.BuildObjectiveIndex)
   -- voice over: the pack's lines are matched against the shipped Japanese (tokens unfilled) by its hash
   step("voice", function() WFJ.Voice.init({
