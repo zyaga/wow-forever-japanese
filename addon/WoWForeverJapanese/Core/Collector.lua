@@ -453,8 +453,13 @@ local function evaluate(kind, id, field, raw, key, npc)
   end
   -- gossip: the key is the hash, and a row shipped under any candidate key is this English
   if covered(kind, id, field, e, h1, who, kind == "gossip" and Collector.keys(raw, player) or nil) then
-    -- the line as the game shows it now ships in Japanese: an older recording of it is no longer needed
-    if drop(key) then db.capped = false end
+    -- the line as the game shows it now ships in Japanese: an older recording under the same key goes only when
+    -- it is covered too (another wording, a class's conditional text, stays until it is)
+    local old = db.entries[key]
+    if old then
+      local ok, yes = pcall(storedCovered, old)
+      if ok and yes and drop(key) then db.capped = false end
+    end
     return "known"
   end
 

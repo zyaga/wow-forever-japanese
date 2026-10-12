@@ -45,6 +45,17 @@ def test_the_forever_map_resolves_on_a_lowercased_extract(tmp_path):
     assert {s for s, _ in rows} == set(ui_inventory.FOREVER_WINDOWS)
 
 
+def test_the_tooltip_families_take_the_item_stat_lines_but_never_a_name_a_key_cannot_hold(tmp_path):
+    addons = _lowercased_tree(tmp_path, ui_inventory.FOREVER_WINDOWS, "")
+    strings = {
+        "TOOLTIP_ITEM_STAT_HIT_PERCENT_INCREASE": "Equip: Improves your chance to hit by %1$.1f%%.",
+        "TOOLTIP_ITEM_STAT_SKILL_TWO-HANDED_SWORDS_INCREASE": "Equip: Increased Two-Handed Swords +%1$d.",
+    }
+    rows = ui_inventory.inventory(addons, strings, ui_inventory.FOREVER_WINDOWS)
+    assert ("tooltip", "TOOLTIP_ITEM_STAT_HIT_PERCENT_INCREASE") in rows
+    assert not any(k == "TOOLTIP_ITEM_STAT_SKILL_TWO-HANDED_SWORDS_INCREASE" for _, k in rows)
+
+
 def test_the_forever_map_keeps_blizzard_casing():
     # a map written in lowercase would pass on the extract and hide a typo; the casing is Blizzard's TOC casing
     assert all(any(c.isupper() for c in rel) for files in ui_inventory.FOREVER_WINDOWS.values() for rel in files)

@@ -1,5 +1,5 @@
--- An item set's bonus lines: the client fills "(2) Set: %s" / "Set: %s" with a bonus spell's description. Each line
--- takes the one bonus spell whose Japanese the gate accepts for it; a line none fits stays English whole.
+-- An item set's bonus lines: the client fills "(2) Set: %s" / "Set: %s" with a bonus spell's description. A line takes
+-- the bonus spell whose rendered description is the line, when the gate accepts its Japanese; else it stays English.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 
@@ -32,6 +32,8 @@ describe("UI/Tooltip set bonus lines", function()
     WFJ.Lookup = { get = function(kind, id) return kind == "spell.description" and SPELLS[id] or nil end }
     WFJ.GateText = function(entry, lines) return WFJ.Align.check(entry and entry.ja, lines) end
     bonuses = { 460230 }
+    -- the bonus spell's description as the client renders it (C_Spell.GetSpellDescription)
+    Stub.spellDescriptions[460230] = "Improves your chance to hit by 2.0%."
     _G.C_Item = { GetSetBonusesForSpecializationByItemID = function(_, id)
       return id == 15062 and bonuses or {}
     end }
@@ -72,8 +74,9 @@ describe("UI/Tooltip set bonus lines", function()
     assert.are.equal("(3) セット: 攻撃力が40上昇します。", left(3):GetText())
   end)
 
-  it("two spells whose Japanese both fit a line, with no description loaded, leave it English", function()
+  it("a line whose spell the client does not name stays English, even when a Japanese would fit it", function()
     bonuses = { 460231, 460230 }
+    Stub.spellDescriptions[460230] = nil
     show({ "Devilsaur Leggings", "(2) Set: Improves your chance to hit by 2.0%." })
     assert.are.equal("(2) Set: Improves your chance to hit by 2.0%.", left(2):GetText())
   end)

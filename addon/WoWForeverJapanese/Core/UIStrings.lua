@@ -10,8 +10,10 @@
 --   index:match(text)     → key, args | nil     exact string (by English, then by h1), then templates (most literal
 --                                               text first), then labels
 --   index:fill(ja, args)  → text                the Japanese with the captured values put back (verbatim)
---   index:statLine(text)  → key, args | nil     an item's "Equip:" stat line the dictionary translates whole:
+--   index:statLine(text)  → key, args | nil     an item stat line the dictionary translates whole:
 --                                               "Equip: " + an ITEM_MOD template, or a TOOLTIP_ITEM_STAT_* line
+--   index:clientTail(text) → head, key, args | nil  a line's tail the client adds to an item's text: the
+--                                               max-usable-level trailer or the cooldown ("(1 Sec Cooldown)")
 --   index:matchOnly(text, keys) → key, args | nil   match, but only a key of the set (a widget that may hold a name)
 --   index.counts          { shipped, indexed, hashed, mismatched, ambiguous, unresolved, unsupported } · index.problems
 -- Plural grammar (`|4Day:Days;`) is matched in its singular, plural and raw forms (ADR-016). The label forms reach
@@ -378,6 +380,21 @@ function Index:statLine(text)
     return key, args
   end
   return nil
+end
+
+-- The tail the client adds to a line of an item's text, no part of that text: the max-usable-level trailer
+-- (" (Requires level 60 or below)") or the item's cooldown ("(1 Sec Cooldown)"). → head, key, args | nil
+local CLIENT_TAILS = { "ITEM_SPELL_MAX_USABLE_LEVEL", "ITEM_COOLDOWN_TOTAL", "ITEM_COOLDOWN_TOTAL_SEC",
+  "ITEM_COOLDOWN_TOTAL_MIN" }
+function Index:clientTail(text)
+  if type(text) ~= "string" then return nil end
+  local head, tail = text:match("^(.-)( %([^()]*%))$")
+  if not head then return nil end
+  -- the max-level template starts with its space, the cooldown templates with the bracket
+  local key, args = self:matchOnly(tail, CLIENT_TAILS)
+  if not key then key, args = self:matchOnly(tail:sub(2), CLIENT_TAILS) end
+  if not key then return nil end
+  return head, key, args
 end
 
 local MEMO_LIMIT = 512 -- distinct line texts remembered between resets (a hover re-reads the same lines)

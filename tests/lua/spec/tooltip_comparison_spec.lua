@@ -143,7 +143,18 @@ describe("UI/Tooltip comparison lines and the max-usable-level trailer", functio
         "Use: Restores 50 health. (1 Sec Cooldown)", "Sell Price: 5c" })
       assert.are.equal("体力を50回復する。(クールダウン 1秒)", _G.GameTooltipTextLeft2:GetText())
       assert.are.equal("Use: Restores 50 health.", recorded)
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      assert.are.equal("Use: Restores 50 health. (1 Sec Cooldown)", _G.GameTooltipTextLeft2:GetText())
     end)
+
+  it("clientTail splits a line from the tail the client adds, and from nothing else", function()
+    local head, key = WFJ.UIIndex:clientTail("Use: Restores 50 health. (1 Sec Cooldown)")
+    assert.are.same({ "Use: Restores 50 health.", "ITEM_COOLDOWN_TOTAL_SEC" }, { head, key })
+    head, key = WFJ.UIIndex:clientTail("Use: Restores 50 health. (Requires level 60 or below)")
+    assert.are.same({ "Use: Restores 50 health.", "ITEM_SPELL_MAX_USABLE_LEVEL" }, { head, key })
+    assert.is_nil(WFJ.UIIndex:clientTail("Use: Teaches you (Rank 2)"))
+    assert.is_nil(WFJ.UIIndex:clientTail("Use: Restores 50 health."))
+  end)
 
   it("a branch line is matched without the cooldown tail, so its number never picks the other variant", function()
     local function line(text)

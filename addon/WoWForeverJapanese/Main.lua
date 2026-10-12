@@ -140,14 +140,10 @@ local function spellDuration(text)
   return WFJ.UIIndex and WFJ.UIIndex:duration(text, true) or nil
 end
 
--- The Japanese the tooltip gate shows for a shipped item / spell entry against these live lines: the calls the
--- Translator's align deps make, without the switches. → ok, text
+-- The Japanese the tooltip shows for a shipped item / spell entry against these live lines (Align.gate, with the
+-- client's spell durations). → ok, text
 function WFJ.GateText(entry, lines)
-  if type(entry) ~= "table" then return false end
-  if entry.variants then return WFJ.Align.checkVariants(entry.variants, entry.shapes, lines, nil, spellDuration) end
-  if entry.sections then return WFJ.Align.sections(entry.sections, lines, nil, spellDuration) end
-  if type(entry.ja) ~= "string" or entry.ja == "" then return false end
-  return WFJ.Align.check(entry.ja, lines, nil, spellDuration)
+  return WFJ.Align.gate(entry, lines, spellDuration)
 end
 
 local function uiEnglish(key)
@@ -254,7 +250,14 @@ function WFJ.OnLoad()
     beta = function() return type(IsBetaBuild) == "function" and IsBetaBuild() == true end,
     -- the tooltip gate the Translator's align deps run, so an item / spell line counts as covered only when its
     -- Japanese would show for it
-    aligns = function(entry, lines) return (WFJ.GateText(entry, lines)) == true end,
+    -- a line recorded with the client's tail on it (an older version kept it) is gated as the tooltip gates it
+    aligns = function(entry, lines)
+      local index = WFJ.UIIndex
+      if index then
+        for i, line in ipairs(lines) do lines[i] = index:clientTail(line) or line end
+      end
+      return (WFJ.GateText(entry, lines)) == true
+    end,
     statLine = function(text) return WFJ.UIIndex ~= nil and WFJ.UIIndex:statLine(text) ~= nil end,
   }) end) or WFJ_Collector
   -- the client's own encoder [verified: forever-ui Blizzard_APIDocumentationGenerated/EncodingUtilDocumentation.lua

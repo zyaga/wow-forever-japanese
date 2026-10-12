@@ -268,19 +268,23 @@ describe("Core/Collector covered lines", function()
       assert.is_nil(db.entries["spell:5:description"])
     end)
 
-    it("a line seen again in a form the addon shows drops its older recording", function()
-      local food = entry("item", 9, "description", "Use: Restores 58 health. (1 Sec Cooldown)")
-      local db = C.load(saved({ food, reworded }, { ["item:9:description"] = food.h }), deps())
+    it("a covered sighting drops an older recording under the key only when that one is covered too", function()
+      local older = entry("item", 9, "description", "Use: Restores 58 health over 18 sec.")
+      local other = entry("quest", 922, "description", "He walks the Cenarian Enclave, $C.", "Druid|Night Elf")
+      local db = C.load(saved({ older, other }, { ["item:9:description"] = older.h }), deps())
       shipped["item.description"] = { [9] = { ja = "x", status = "u", h1 = 1 } }
-      aligned = function(_, lines) return lines[1] == "Use: Restores 58 health." end
-      assert.are.equal(0, C.prune()) -- stored with the tail it is not covered, so it stays
-      assert.is_table(db.entries["item:9:description"])
-      assert.are.equal("known", C.record("item", 9, "description", "Use: Restores 58 health."))
+      aligned = function() return true end
+      assert.are.equal("known", C.record("item", 9, "description", "Use: Restores 60 health over 18 sec."))
       assert.is_nil(db.entries["item:9:description"])
       assert.is_nil(db.sent["item:9:description"])
       local want = 0
       for k, e in pairs(db.entries) do want = want + C.size(k, e.e, e.n, e.p) end
       assert.are.equal(want, db.bytes)
+      -- another wording of the quest line (a class's own text) is not covered: a covered sighting leaves it
+      shipped["quest.description"] = { [922] = { ja = "x", status = ".",
+        h1 = h1Of("He walks the Cenarion Enclave, $N.") } }
+      assert.are.equal("known", C.record("quest", 922, "description", "He walks the Cenarion Enclave, Reyn."))
+      assert.is_table(db.entries["quest:922:description"])
     end)
 
     it("before load, nothing to prune", function()

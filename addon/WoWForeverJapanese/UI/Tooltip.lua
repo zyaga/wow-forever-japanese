@@ -534,20 +534,12 @@ end
 -- Cooldown)"), neither part of the item's text. `texts` is rewritten in place without it: what the Collector records
 -- and what the run is matched against, so the tail's number never counts as one of the line's values.
 -- → affix args carrying the tail's Japanese | nil (none, or not one Japanese for it)
-local TRAILER = { "ITEM_SPELL_MAX_USABLE_LEVEL", "ITEM_COOLDOWN_TOTAL", "ITEM_COOLDOWN_TOTAL_SEC",
-  "ITEM_COOLDOWN_TOTAL_MIN" }
 local function peelTrailer(texts, first, last)
   local index = WFJ.UIIndex
   if not index then return nil end
   local after
   for i = first, last do
-    local head, tail = (texts[i] or ""):match("^(.-)( %([^()]*%))$")
-    local key, args
-    if head then
-      -- the max-level template starts with its space, the cooldown templates with the bracket
-      key, args = index:matchOnly(tail, TRAILER)
-      if not key then key, args = index:matchOnly(tail:sub(2), TRAILER) end
-    end
+    local head, key, args = index:clientTail(texts[i])
     if key then
       texts[i] = head
       local ja = index.rows[key] and index:fill(index.rows[key][1], args)
@@ -915,8 +907,9 @@ end
 
 -- An item's set bonus lines ("(2) Set: Improves your chance to hit by 2.0%.", ITEM_SET_BONUS_GRAY; "Set: …" once
 -- the bonus is active): the client fills them with a bonus spell's description. A line belongs to the bonus spell
--- whose description, as the client renders it, is the line's text; when the client has not loaded one, to the one
--- spell whose Japanese the tooltip gate accepts for it (WFJ.GateText). A line no spell fits stays English whole.
+-- whose description, as the client renders it, is the line's text, and shows that spell's Japanese when the
+-- tooltip gate accepts it (WFJ.GateText). The gate alone cannot tell two bonuses apart (a Japanese with no number
+-- fits any line), so a line whose spell the client does not name stays English whole.
 -- → { [row] = { key, args with the Japanese in place } | false }, the English lines' { text }, the bonus spells no
 -- line took | nil when the tooltip has no set line
 local function setBonuses(id, lines, taken)
@@ -944,15 +937,11 @@ local function setBonuses(id, lines, taken)
     local slot = f.key == "ITEM_SET_BONUS" and 1 or 2 -- the %s
     local inner = f.args[slot]
     local hit, hitId
-    local candidates = type(inner) == "string" and spells or {}
-    for _, sid in ipairs(candidates) do
-      if Tooltip.spellDescription(sid) == inner then candidates = { sid }; break end
-    end
-    for _, sid in ipairs(candidates) do
-      local ok, text = gate(lookup("spell.description", sid), { inner })
-      if ok then
-        if hit ~= nil and hit ~= text then hit = nil; break end
-        hit, hitId = text, sid
+    for _, sid in ipairs(type(inner) == "string" and spells or {}) do
+      if not used[sid] and Tooltip.spellDescription(sid) == inner then
+        local ok, text = gate(lookup("spell.description", sid), { inner })
+        if ok then hit, hitId = text, sid end
+        break
       end
     end
     if hit then
@@ -983,11 +972,11 @@ function Tooltip.recipeOf(frame, lineCount)
   local lineTypes, dataTypes = Compat.resolve("Enum.TooltipDataLineType"), Compat.resolve("Enum.TooltipDataType")
   if type(data) ~= "table" or type(data.lines) ~= "table" or type(lineTypes) ~= "table" then return nil end
   local itemType = type(dataTypes) == "table" and dataTypes.Item or 0
-  local crafted, row
+  local crafted, nestedRow, row
   for _, line in ipairs(data.lines) do
     if type(line) == "table" and not anySecretOf(line.type, line.tooltipID, line.tooltipType, line.lineIndex) then
       if line.type == lineTypes.NestedBlock and line.tooltipType == itemType and type(line.tooltipID) == "number" then
-        crafted = crafted or line.tooltipID
+        crafted, nestedRow = crafted or line.tooltipID, nestedRow or line.lineIndex
       elseif line.type == lineTypes.ItemSpellTriggerLearn and type(line.lineIndex) == "number" then
         row = row or line.lineIndex
       end
@@ -996,6 +985,8 @@ function Tooltip.recipeOf(frame, lineCount)
   local recipe = data.id
   if anySecretOf(recipe) or type(recipe) ~= "number" or not crafted or crafted == recipe then return nil end
   if not row or row < 2 or row > lineCount then return nil end
+  -- the layout seen on Forever: the crafted item's block first, the recipe's line after it; any other is one item
+  if type(nestedRow) ~= "number" or nestedRow >= row then return nil end
   return crafted, recipe, row
 end
 

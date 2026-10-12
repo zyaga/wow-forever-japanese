@@ -97,6 +97,39 @@ end)
 -- `$D<k>`: the one value whose UNIT the client chooses. `$d` renders through
 -- INT_SPELL_DURATION_SEC / _MIN / _HOURS / _DAYS, so the same template shows seconds on one item and minutes
 -- on another; the Japanese must never name the unit itself. The renderer is UIStrings', stubbed here.
+-- Align.gate: what the tooltip shows for a shipped item / spell entry, by the Translator's status rules.
+describe("gate", function()
+  local A
+  setup(function()
+    local ns = {}
+    H.loadPure("Core/Align.lua", "WoWForeverJapanese", ns)
+    A = ns.Align
+  end)
+  local LINE = { "Restores 50 health." }
+
+  it("an unaligned or stale line goes through the gate", function()
+    assert.are.same({ true, "体力を50回復する。" }, { A.gate({ ja = "体力を$N1回復する。", status = "u" }, LINE) })
+    assert.are.same({ true, "体力を50回復する。" }, { A.gate({ ja = "体力を$N1回復する。", status = "s" }, LINE) })
+    assert.is_false(A.gate({ ja = "体力を99回復する。", status = "u" }, LINE))
+  end)
+
+  it("a trusted line is shown ungated with its live values filled in", function()
+    assert.are.same({ true, "体力を50回復する。" }, { A.gate({ ja = "体力を$N1回復する。", status = "." }, LINE) })
+    assert.are.same({ true, "回復する。" }, { A.gate({ ja = "回復する。", status = "." }, LINE) })
+  end)
+
+  it("a branch line only when unaligned or stale; no Japanese, or another status, shows nothing", function()
+    local branch = { variants = { "体力を$N1回復する。" }, shapes = { "1/0" } }
+    branch.status = "u"
+    assert.is_true((A.gate(branch, LINE)))
+    branch.status = "."
+    assert.is_false(A.gate(branch, LINE))
+    assert.is_false(A.gate({ ja = "", status = "u" }, LINE))
+    assert.is_false(A.gate({ ja = "x", status = "m" }, LINE))
+    assert.is_false(A.gate(nil, LINE))
+  end)
+end)
+
 describe("durations", function()
   local A
   setup(function()

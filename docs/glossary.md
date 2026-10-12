@@ -321,7 +321,7 @@ _Avoid_: random suffix (the "of the Eagle" part of an item name), enchant name, 
 → [Data model](architecture/data-model.md) · [ADR-016](adr/016-whole-window-interface-coverage.md)
 
 **Item stat line**:
-An `Equip:` line in an item's [[Description run]] that the [[UI dictionary]] translates whole: `Equip: ` + an `ITEM_MOD_*` template, or a line the Forever client writes from one `TOOLTIP_ITEM_STAT_*` string ("Equip: Improves your chance to hit by 1%."). Shown line by line when the item has no Japanese of its own, and an item whose only text is such lines never waits in the [[Collector]]. `Index:statLine` is the one test.
+A line in an item's [[Description run]] that the [[UI dictionary]] translates whole: `Equip: ` + an `ITEM_MOD_*` template, or a line the Forever client writes from any `TOOLTIP_ITEM_STAT_*` string, with or without "Equip:" ("Equip: Improves your chance to hit by 1%.", "+%1$d Armor", "+%1$d to All Resistances"). Shown line by line when the item has no Japanese of its own, and an item whose only text is such lines never waits in the [[Collector]]. `Index:statLine` is the one test.
 _Avoid_: stat line on its own (reads as a [[Structural line]]), enchantment stat line (a different family)
 → [Addon modules](architecture/addon-modules.md) · [ADR-066](adr/066-recipe-and-set-bonus-lines-from-the-tooltip-data.md)
 
