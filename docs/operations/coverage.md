@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-10 at commit `5e694875`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-12 at commit `aec8af33`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -16,8 +16,8 @@
 | Exploration / event objectives | 223 | 221 | 2 | 100.0% | 0 |
 | Item descriptions | 10,201 | 8,670 | 0 | 85.0% | 1,531 |
 | Spell tooltips + auras | 25,648 | 25,402 | 0 | 99.0% | 246 |
-| Interface strings | 15,906 | 15,906 | 0 | 100.0% | 0 |
-| **All** | **85,072** | | | **97.9%** | **1,777** |
+| Interface strings | 16,060 | 16,060 | 0 | 100.0% | 0 |
+| **All** | **85,226** | | | **97.9%** | **1,777** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
 professions, internal strings): quest 331, gossip 81, item 893, spell 300, ui 313.
@@ -363,7 +363,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 |---|---|---|---|---|---|---|
 | quest | 19,006 | 19,006 | 100.0% | 180 | 303,371 | 100.0% |
 | gossip | 10,831 | 10,831 | 100.0% | 0 | 103,748 | 100.0% |
-| ui | 15,200 | 15,200 | 100.0% | 0 | 46,497 | 100.0% |
+| ui | 15,354 | 15,354 | 100.0% | 0 | 47,066 | 100.0% |
 | book | 1,167 | 1,167 | 100.0% | 0 | 39,619 | 100.0% |
 
 Item, spell, objective and area text take no word cards; HTML book pages

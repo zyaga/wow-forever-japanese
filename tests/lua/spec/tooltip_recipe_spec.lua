@@ -67,7 +67,10 @@ describe("UI/Tooltip on a recipe's tooltip", function()
     tt = _G.GameTooltip
   end)
 
-  after_each(function() _G.Enum = nil end)
+  after_each(function()
+    _G.Enum = nil
+    Stub.keys.alt = false
+  end)
 
   for _, case in ipairs({
     { "the link names the crafted item (a chat link)", "|Hitem:117::|h[Tough Jerky]|h" },
@@ -108,9 +111,11 @@ describe("UI/Tooltip on a recipe's tooltip", function()
 
   it("the reveal key shows the recipe's English again", function()
     show("|Hitem:117::|h[Tough Jerky]|h", LINES, recipeData())
-    WFJ.Modifier.isDown = function() return true end
-    show("|Hitem:117::|h[Tough Jerky]|h", LINES, recipeData())
+    assert.are.equal(RECIPE_JA, text(5))
+    Stub.keys.alt = true; WFJ.Modifier.refresh()
     assert.are.equal(LINES[3], text(3))
     assert.are.equal(LINES[5], text(5))
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
+    assert.are.equal(RECIPE_JA, text(5))
   end)
 end)

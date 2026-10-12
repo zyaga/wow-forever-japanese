@@ -5,7 +5,8 @@
 --     deps = { enabled(), lookup(kind, id) → {h1}|nil, player() → {name, class, race}, build() → string|nil,
 --              print(msg), beta() → true on a beta client (optional),
 --              aligns(entry, lines) → true when the tooltip gate shows `entry`'s Japanese for these lines
---              (optional; without it no item or spell line is covered) }
+--              (optional; without it no item or spell line is covered),
+--              statLine(text) → true when the dictionary shows this item stat line in Japanese (optional) }
 --   Collector.record(kind, id, field, raw) → result[, reason]   never raises
 --     "off" · "known" · "seen" · "recorded" · "replaced" · "capped" · "refused", reason · "error", message
 --   Collector.recordGossip(raw, guid) → result[, reason]   never raises (keyed by the gossip key, `n` = NPC ids)
@@ -368,7 +369,15 @@ local function covered(kind, id, field, e, h1, p, keys)
   end
   if kind == "npc" then return false end
   local entry = deps.lookup(kind .. "." .. field, id) -- field-qualified: spell has two fields
-  if type(entry) ~= "table" then return false end
+  if type(entry) ~= "table" then
+    -- an item with no text of its own shows its "Equip:" stat lines through the dictionary (UI/Tooltip): covered
+    -- when every line is one of them
+    if kind ~= "item" or type(deps.statLine) ~= "function" then return false end
+    for seg in (e .. "$B$B"):gmatch("(.-)%$B%$B") do
+      if not deps.statLine(seg) then return false end
+    end
+    return true
+  end
   if entry.h1 == h1 or (entry.h1f ~= nil and entry.h1f == h1) then return true end
   if kind == "quest" then
     local masked = type(entry.ja) == "string" and entry.ja:find("%$[ND]%d") ~= nil
@@ -390,6 +399,19 @@ end
 -- A stored entry through `covered`.
 local function storedCovered(e)
   return covered(e.t, e.i, e.f, e.e, tonumber(e.h:sub(1, 8), 16), e.p, { e.h })
+end
+
+-- Removes entry `key` and its sent row from the file, with their size. → true when there was one
+local function drop(key)
+  local e = db.entries[key]
+  if not e then return false end
+  db.bytes = db.bytes - Collector.size(key, e.e, e.n, e.p)
+  if type(db.sent) == "table" and db.sent[key] ~= nil then
+    db.bytes = db.bytes - Collector.sentSize(key)
+    db.sent[key] = nil
+  end
+  db.entries[key], onDisk[key] = nil, nil
+  return true
 end
 
 -- kind "gossip": `id` and `key` are derived from the text; `npc` is the speaker's creature id or nil.
@@ -431,6 +453,8 @@ local function evaluate(kind, id, field, raw, key, npc)
   end
   -- gossip: the key is the hash, and a row shipped under any candidate key is this English
   if covered(kind, id, field, e, h1, who, kind == "gossip" and Collector.keys(raw, player) or nil) then
+    -- the line as the game shows it now ships in Japanese: an older recording of it is no longer needed
+    if drop(key) then db.capped = false end
     return "known"
   end
 
@@ -740,25 +764,16 @@ end
 -- raises is kept. → the number dropped
 function Collector.prune()
   if not db or not deps or readOnly or type(db.entries) ~= "table" then return 0 end
-  local sent = type(db.sent) == "table" and db.sent or nil
-  local drop = {}
+  local covers = {}
   for key, e in pairs(db.entries) do
     if e.t ~= "npc" then
       local ok, yes = pcall(storedCovered, e)
-      if ok and yes then drop[#drop + 1] = key end
+      if ok and yes then covers[#covers + 1] = key end
     end
   end
-  for _, key in ipairs(drop) do
-    local e = db.entries[key]
-    db.bytes = db.bytes - Collector.size(key, e.e, e.n, e.p)
-    if sent and sent[key] ~= nil then
-      db.bytes = db.bytes - Collector.sentSize(key)
-      sent[key] = nil
-    end
-    db.entries[key], onDisk[key] = nil, nil
-  end
-  if #drop > 0 then db.capped = false end -- space was freed
-  return #drop
+  for _, key in ipairs(covers) do drop(key) end
+  if #covers > 0 then db.capped = false end -- space was freed
+  return #covers
 end
 
 -- Whether the saved file on disk holds this entry with this hash: it was in the file when the addon loaded it.

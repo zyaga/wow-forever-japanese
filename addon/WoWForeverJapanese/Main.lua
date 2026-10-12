@@ -140,6 +140,16 @@ local function spellDuration(text)
   return WFJ.UIIndex and WFJ.UIIndex:duration(text, true) or nil
 end
 
+-- The Japanese the tooltip gate shows for a shipped item / spell entry against these live lines: the calls the
+-- Translator's align deps make, without the switches. → ok, text
+function WFJ.GateText(entry, lines)
+  if type(entry) ~= "table" then return false end
+  if entry.variants then return WFJ.Align.checkVariants(entry.variants, entry.shapes, lines, nil, spellDuration) end
+  if entry.sections then return WFJ.Align.sections(entry.sections, lines, nil, spellDuration) end
+  if type(entry.ja) ~= "string" or entry.ja == "" then return false end
+  return WFJ.Align.check(entry.ja, lines, nil, spellDuration)
+end
+
 local function uiEnglish(key)
   -- item subclasses and enchantment stat lines are fingerprint rows: no client string to read
   if WFJ.UIStrings.isFingerprintKey(key) then return nil end
@@ -244,13 +254,8 @@ function WFJ.OnLoad()
     beta = function() return type(IsBetaBuild) == "function" and IsBetaBuild() == true end,
     -- the tooltip gate the Translator's align deps run, so an item / spell line counts as covered only when its
     -- Japanese would show for it
-    aligns = function(entry, lines)
-      if entry.variants then
-        return (WFJ.Align.checkVariants(entry.variants, entry.shapes, lines, nil, spellDuration)) == true
-      end
-      if entry.sections then return (WFJ.Align.sections(entry.sections, lines, nil, spellDuration)) == true end
-      return (WFJ.Align.check(entry.ja, lines, nil, spellDuration)) == true
-    end,
+    aligns = function(entry, lines) return (WFJ.GateText(entry, lines)) == true end,
+    statLine = function(text) return WFJ.UIIndex ~= nil and WFJ.UIIndex:statLine(text) ~= nil end,
   }) end) or WFJ_Collector
   -- the client's own encoder [verified: forever-ui Blizzard_APIDocumentationGenerated/EncodingUtilDocumentation.lua
   -- (Environment "All"; CompressionMethod.Zlib, Base64Variant.StandardUrlSafe), used the same way by

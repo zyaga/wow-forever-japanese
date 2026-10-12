@@ -12,6 +12,7 @@ local UI = {
   ITEM_COMPARISON_SWAP_ITEM_MAINHAND_DESCRIPTION = { "Press %s to cycle through your main-hand items.",
     "%sでメインハンドのアイテムを切り替えます。" },
   ITEM_SPELL_MAX_USABLE_LEVEL = { " (Requires level %d or below)", "(レベル%d以下が必要)" },
+  ITEM_COOLDOWN_TOTAL_SEC = { "(%d Sec Cooldown)", "(クールダウン %d秒)" },
   INVTYPE_WEAPONMAINHAND = { "Main Hand", "メインハンド" },
   ARMOR_TEMPLATE = { "%s Armor", "アーマー %s" },
   ITEM_MOD_DAMAGE_PER_SECOND_SHORT = { "damage per second", "秒間ダメージ" },
@@ -20,6 +21,9 @@ local UI = {
 local DATA = {
   [1001] = { ja = "体力を50回復する。", status = "." }, -- trusted, ungated
   [1002] = { ja = "体力を$N1回復する。", status = "u" }, -- gated
+  -- gated, a branch line: with the extra clause or without it (ADR-043)
+  [1003] = { variants = { "体力を$N1回復し、さらに精神が$N2上がる。", "体力を$N1回復する。" }, shapes = { "2/0", "1/0" },
+    status = "u" },
 }
 local POTION_LINES = function(id)
   return "|Hitem:" .. id .. ":0:0:0|h[Minor Potion]|h", { "Minor Potion",
@@ -41,6 +45,20 @@ describe("UI/Tooltip comparison lines and the max-usable-level trailer", functio
       if kind == "item.description" then return DATA[id] end
     end })
     WFJ.Lookup = { get = function(kind, id) return kind == "item.description" and DATA[id] or nil end }
+    local translator = WFJ.Translator.new({
+      enabled = function() return WFJ.State.enabled end,
+      areaEnabled = WFJ.State.areaEnabled,
+      modifierHeld = WFJ.Modifier.isDown,
+      lookup = function(kind, id)
+        if kind == "item.description" then return DATA[id] end
+        if kind == "ui" and WFJ.UIIndex.rows[id] then return { ja = WFJ.UIIndex.rows[id][1], status = "." } end
+      end,
+      marker = function(n) return WFJ.Settings.get("marker." .. n) end,
+      align = WFJ.Align.check,
+      alignVariants = WFJ.Align.checkVariants,
+      fill = function(ja, args) return WFJ.UIIndex:fill(ja, args) end,
+    })
+    WFJ.Render.init(translator)
     -- a C method on the client that never calls the Lua Show; here it only records the state
     _G.ShoppingTooltip1.SetShown = function(self, shown) self.wfjShown = shown end
     WFJ.Tooltip.init()
@@ -116,6 +134,26 @@ describe("UI/Tooltip comparison lines and the max-usable-level trailer", functio
       Stub.keys.alt = true; WFJ.Modifier.refresh()
       assert.are.equal("Use: Restores 50 health. (Requires level 60 or below)", _G.GameTooltipTextLeft2:GetText())
     end)
+
+  it("the client's cooldown tail is set aside like the trailer: trusted gets it in Japanese, the Collector none",
+    function()
+      local recorded
+      WFJ.Collector.record = function(_, _, _, text) recorded = text end
+      Stub.setItemTooltip(_G.GameTooltip, "|Hitem:1001:0:0:0|h[Minor Potion]|h", { "Minor Potion",
+        "Use: Restores 50 health. (1 Sec Cooldown)", "Sell Price: 5c" })
+      assert.are.equal("体力を50回復する。(クールダウン 1秒)", _G.GameTooltipTextLeft2:GetText())
+      assert.are.equal("Use: Restores 50 health.", recorded)
+    end)
+
+  it("a branch line is matched without the cooldown tail, so its number never picks the other variant", function()
+    local function line(text)
+      Stub.setItemTooltip(_G.GameTooltip, "|Hitem:1003:0:0:0|h[Snack]|h", { "Snack", text, "Sell Price: 5c" })
+      return _G.GameTooltipTextLeft2:GetText()
+    end
+    assert.are.equal("体力を50回復し、さらに精神が5上がる。", line("Use: Restores 50 health and 5 Spirit. (1 Sec Cooldown)"))
+    assert.are.equal("体力を50回復する。", line("Use: Restores 50 health. (1 Sec Cooldown)"))
+    assert.are.equal("体力を50回復する。", line("Use: Restores 50 health."))
+  end)
 
   it("a gated item translation keeps the whole line to its gate (no trailer appended)", function()
     Stub.setItemTooltip(_G.GameTooltip, POTION_LINES(1002))

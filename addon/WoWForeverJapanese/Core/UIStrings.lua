@@ -10,6 +10,8 @@
 --   index:match(text)     → key, args | nil     exact string (by English, then by h1), then templates (most literal
 --                                               text first), then labels
 --   index:fill(ja, args)  → text                the Japanese with the captured values put back (verbatim)
+--   index:statLine(text)  → key, args | nil     an item's "Equip:" stat line the dictionary translates whole:
+--                                               "Equip: " + an ITEM_MOD template, or a TOOLTIP_ITEM_STAT_* line
 --   index:matchOnly(text, keys) → key, args | nil   match, but only a key of the set (a widget that may hold a name)
 --   index.counts          { shipped, indexed, hashed, mismatched, ambiguous, unresolved, unsupported } · index.problems
 -- Plural grammar (`|4Day:Days;`) is matched in its singular, plural and raw forms (ADR-016). The label forms reach
@@ -365,6 +367,17 @@ local NONE = {}
 function Index:restrictedKeys(text)
   if type(text) ~= "string" or text == "" or next(self.byRestricted) == nil then return NONE end
   return self.byRestricted[self.hash(text)] or NONE
+end
+
+-- An item's stat line the dictionary translates whole: "Equip: " + an ITEM_MOD template (the "equip" form), or a
+-- line the client writes from one TOOLTIP_ITEM_STAT_* string ("Equip: Improves your chance to hit by 1%.").
+-- The tooltip shows such lines in Japanese, and the Collector counts them as covered. → key, args | nil
+function Index:statLine(text)
+  local key, args = self:match(text)
+  if key and ((type(args) == "table" and args.form == "equip") or key:find("^TOOLTIP_ITEM_STAT_")) then
+    return key, args
+  end
+  return nil
 end
 
 local MEMO_LIMIT = 512 -- distinct line texts remembered between resets (a hover re-reads the same lines)

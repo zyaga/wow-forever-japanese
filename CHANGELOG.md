@@ -9,8 +9,14 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Added
+- Forever's own item stat lines are in Japanese ("Equip: Improves your chance to hit by 1%.", spell damage and healing, weapon skills, attack power against a creature type).
+- Item set bonus lines ("(2) Set: …", and "Set: …" once the bonus is active) are in Japanese.
+
 ### Fixed
 - The English Collector counts only lines the addon cannot show in Japanese: tooltips with your numbers filled in, quest lines that name your class or race, and NPC names no longer count, and lines a newer version covers are removed from the collector file at the next login or reload.
+- Recipe tooltips show the crafted item's text and the recipe's "Use: Teaches you how to …" line in Japanese.
+- An item's cooldown at the end of its line ("(1 Sec Cooldown)") no longer keeps a food's or potion's text in English.
 
 ## 0.2.0 - 2026-10-11
 

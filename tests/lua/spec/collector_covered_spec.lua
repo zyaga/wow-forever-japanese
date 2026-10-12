@@ -108,6 +108,21 @@ describe("Core/Collector covered lines", function()
     end)
   end)
 
+  describe("items shown through their stat lines", function()
+    it("an item with no text of its own is covered when every line is a stat line the dictionary shows", function()
+      local d = deps()
+      d.statLine = function(text) return text:find("^Equip: ") ~= nil end
+      local db = C.load(nil, d)
+      assert.are.equal("known", C.record("item", 2311, "description",
+        "Equip: Increases damage by up to 2.\nEquip: Improves your chance to hit by 1%."))
+      assert.is_nil(db.entries["item:2311:description"])
+      assert.are.equal("recorded", C.record("item", 2312, "description", "Equip: Fine.\nUse: Restores 5 health."))
+      assert.are.equal(1, C.unsentCount())
+      shipped["spell.description"] = {}
+      assert.are.equal("recorded", C.record("spell", 9, "description", "Equip: Not an item."))
+    end)
+  end)
+
   describe("quest lines with the class or race", function()
     it("a race the English writes literally (lowercase) is known for a player of that race", function()
       local db = C.load(nil, deps())
@@ -251,6 +266,21 @@ describe("Core/Collector covered lines", function()
       assert.are.equal(1, C.prune())
       assert.is_table(db.entries["quest:2:title"])
       assert.is_nil(db.entries["spell:5:description"])
+    end)
+
+    it("a line seen again in a form the addon shows drops its older recording", function()
+      local food = entry("item", 9, "description", "Use: Restores 58 health. (1 Sec Cooldown)")
+      local db = C.load(saved({ food, reworded }, { ["item:9:description"] = food.h }), deps())
+      shipped["item.description"] = { [9] = { ja = "x", status = "u", h1 = 1 } }
+      aligned = function(_, lines) return lines[1] == "Use: Restores 58 health." end
+      assert.are.equal(0, C.prune()) -- stored with the tail it is not covered, so it stays
+      assert.is_table(db.entries["item:9:description"])
+      assert.are.equal("known", C.record("item", 9, "description", "Use: Restores 58 health."))
+      assert.is_nil(db.entries["item:9:description"])
+      assert.is_nil(db.sent["item:9:description"])
+      local want = 0
+      for k, e in pairs(db.entries) do want = want + C.size(k, e.e, e.n, e.p) end
+      assert.are.equal(want, db.bytes)
     end)
 
     it("before load, nothing to prune", function()
