@@ -75,3 +75,28 @@ left out: "become well fed" and the experience branch. Spell 5176's `$N1-$N2` fo
 That the client prints `$@spellicon` as a `|T…|t` escape in the line's text is **[likely]**, not sourced
 ([principle 9](../architecture/principles.md)). A line whose live text has no escape stays English (fail closed). The
 in-game check is in the [testing strategy](../testing/strategy.md).
+
+## The lines left on 1.60.1.70338 (as of 2026-10-12)
+
+The lines `translate_batch cut` still left out after the re-pulls, by the reason it gave, and the decision each
+class got ([ADR-064](../adr/064-aura-inclusions-list-tails-and-variant-keys.md)):
+
+| Reason | Lines | Decision |
+|---|---|---|
+| `unsupported_code:$@spellaura` (`$@spellaura<id>`) | 92 | spliced: the included spell's aura text, like `$@spelltooltip` |
+| `unsupported_code:$@spellaura` (bare, no id) | 2 | stays: it does not say which spell's aura |
+| `unsupported_code:$@spelldesc` (the id in angle brackets) | 35 | spliced: `<id>` is read as the id |
+| `missing_included_spell` | 34 | stays: the included spell has no row in the Forever tables |
+| `branches_indistinguishable` | 20 | shipped with a variant key per wording; two variants that mask alike count as one |
+| `unsupported_code:$@expandkey` | 17 | a conditional with an empty else: a short and an expanded variant |
+| `too_many_variants` | 11 | the Riding, Paladin and Hunter lists become name-list tails (4); the lute and the prose-paragraph lists stay, joined by the two Chronoboon-style auras that include `$@null` (9 in all) |
+| `uncountable` | 8 | the Shaman totem lists become name-list tails (7); 459611's aura stays |
+| `unclosed_branch` | 3 | whitespace between a branch and its else is read as the else |
+| `unsupported_code:$@null` | 3 | spliced away; 348779's own line has nothing to translate, and its two includers fall to `too_many_variants` |
+| `unsupported_code:$@auracaster` | 2 | stays: the caster's name is known only in game |
+| **total** | **227** | |
+
+After the change about 49 lines stay English, each under a plain reason in [Coverage](../operations/coverage.md):
+`missing_included_spell` 35, `too_many_variants` 9, `unsupported_code:$@auracaster` 2, bare `$@spellaura` 2,
+`uncountable` 1. The client claims the new shapes rest on, each marked [likely] or [unverified], and their in-game
+checks are in the ADR and the [testing strategy](../testing/strategy.md).

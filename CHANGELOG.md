@@ -9,6 +9,9 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Added
+- More spell and item tooltips are in Japanese: boss and raid debuffs whose text comes from another spell, the weapon skill tables (short and expanded), the class ability lists (a Shaman's totems, a Paladin's or Hunter's abilities; the names in the list stay English), and talents with two wordings for the same numbers. The coverage page gives a plain reason for each tooltip line that stays English.
+
 ## 0.2.0 - 2026-10-11
 
 ### Added

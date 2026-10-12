@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-10 at commit `5e694875`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-12 at commit `525f697d`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -14,10 +14,10 @@
 | Book / letter pages | 1,257 | 1,205 | 52 | 100.0% | 0 |
 | Quest objective lines | 428 | 390 | 38 | 100.0% | 0 |
 | Exploration / event objectives | 223 | 221 | 2 | 100.0% | 0 |
-| Item descriptions | 10,201 | 8,670 | 0 | 85.0% | 1,531 |
-| Spell tooltips + auras | 25,648 | 25,402 | 0 | 99.0% | 246 |
+| Item descriptions | 10,201 | 8,671 | 0 | 85.0% | 1,530 |
+| Spell tooltips + auras | 25,648 | 25,574 | 1 | 99.7% | 73 |
 | Interface strings | 15,906 | 15,906 | 0 | 100.0% | 0 |
-| **All** | **85,072** | | | **97.9%** | **1,777** |
+| **All** | **85,072** | | | **98.1%** | **1,603** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
 professions, internal strings): quest 331, gossip 81, item 893, spell 300, ui 313.
@@ -33,48 +33,21 @@ professions, internal strings): quest 331, gossip 81, item 893, spell 300, ui 31
 | Book / letter pages | Missing Text / picture-only page | 49 |
 | Book / letter pages | picture-only or cipher page | 2 |
 | Book / letter pages | a bare label: names and numbers only (ships as the English) | 1 |
+| Spell tooltips + auras | a template that prints nothing (`$@null`) | 1 |
 
 ### What is not done yet
 
 | Surface | Why | Lines |
 |---|---|---|
 | Item descriptions | no Japanese yet: no text from the Forever tables on this build yet (English still from Classic Era); rechecked at each re-pull | 1,529 |
-| Item descriptions | no Japanese yet: the template uses a code drafting cannot place yet (too_many_variants) | 1 |
-| Item descriptions | no Japanese yet: the template uses a code drafting cannot place yet (branches_indistinguishable) | 1 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (unsupported_code:$@spellaura) | 94 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (unsupported_code:$@spelldesc) | 35 |
-| Spell tooltips + auras | no Japanese yet: no text from the Forever tables on this build yet (English still from Classic Era); rechecked at each re-pull | 22 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (branches_indistinguishable) | 19 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (unsupported_code:$@expandkey) | 17 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (uncountable) | 8 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (too_many_variants) | 8 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:407624) | 4 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (unsupported_code:$@null) | 3 |
+| Item descriptions | no Japanese yet: the template has too many optional parts for one translation | 1 |
+| Spell tooltips + auras | no Japanese yet: the template includes a spell the Forever tables do not hold | 35 |
+| Spell tooltips + auras | no Japanese yet: no text from the Forever tables on this build yet (English still from Classic Era); rechecked at each re-pull | 23 |
+| Spell tooltips + auras | no Japanese yet: the template has too many optional parts for one translation | 8 |
 | Spell tooltips + auras | rejected: ruled_reject | 2 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (unsupported_code:$@auracaster) | 2 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:399963) | 2 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:403338) | 2 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:407613) | 2 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:407631) | 2 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:407676) | 2 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:407669) | 2 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:409541) | 2 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (unclosed_branch) | 2 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:998) | 2 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:134732) | 1 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:364456) | 1 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:407993) | 1 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:409552) | 1 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:409069) | 1 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:426158) | 1 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:19293) | 1 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:377950) | 1 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:414924) | 1 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:1300354) | 1 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:18425) | 1 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:24394) | 1 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:19410) | 1 |
-| Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:18498) | 1 |
+| Spell tooltips + auras | no Japanese yet: the template names the aura's caster, which only the game knows | 2 |
+| Spell tooltips + auras | no Japanese yet: the template includes an aura without saying which spell's | 2 |
+| Spell tooltips + auras | no Japanese yet: the template does not say how many values it prints | 1 |
 
 ## Served text inventory
 

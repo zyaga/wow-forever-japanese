@@ -218,8 +218,9 @@ def check_row(
     # both sides counted the same way: a line holding only spaces between two breaks is one break.
     # A `${…}` sum may hold newlines (`${$m1+\n$m2}`), which are inside a code the client
     # computes, never paragraph breaks the Japanese has to mirror.
+    # a name-list tail is copied from the live line, so the Japanese mirrors the head's paragraphs only
     jp = paragraphs.count(ja)
-    ep = paragraphs.count(paragraphs.normalize_breaks(align.SUM.sub(" ", en)))
+    ep = paragraphs.count(paragraphs.normalize_breaks(align.SUM.sub(" ", align.split_tail(en)[0])))
     if jp != ep:
         reasons.append(f"paragraphs:{jp}/{ep}")
     # A NAME inside a `$G<male>:<female>;` branch ("…the jungles of Stranglethorn…") is English the
@@ -301,7 +302,7 @@ def _check_branches(
     variant, renumbered to its own reading order (`align.ja_variants`), is checked against that variant's
     English by every rule of an ordinary row (a reason is prefixed `v<i>:`); and the addon must be able to
     show at least one variant, refused when on every variant's line another variant passes the gate too
-    (`branches_indistinguishable`, `align.never_shown`)."""
+    (`branches_indistinguishable`, `align.unshowable`: wordings told apart by a key ship)."""
     b = align.branching(row["en"])
     if b.reason:
         return [b.reason]
@@ -317,10 +318,10 @@ def _check_branches(
         return reasons
     shapes = [v.shape for v in b.variants]
     pairs = align.indistinguishable(texts, [v.en for v in b.variants], shapes, allowlist)
-    if not reasons and align.never_shown(pairs, len(texts)):
+    if not reasons and align.unshowable(pairs, b.variants):
         reasons.append("branches_indistinguishable")
-    elif not reasons and align.unsafe_shadow(pairs, texts):
-        reasons.append("branches_unsafe")
+    elif not reasons and not align.never_shown(pairs, len(texts)) and align.unsafe_shadow(pairs, texts):
+        reasons.append("branches_unsafe")  # a keyed line's variants are picked by key, so no shadow matters
     return reasons
 
 

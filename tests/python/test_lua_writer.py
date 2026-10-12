@@ -151,3 +151,11 @@ def test_escape_fixture_matches_writer(root):
     )
     expected = lua_writer.shard_text("quest", 0, rows)
     assert (root / "tests/fixtures/lua/escape_fixture.lua").read_text(encoding="utf-8") == expected
+
+
+def test_a_keyed_branch_slot_ships_its_keys_beside_the_shapes():
+    from wfj.emit.lua_writer import variants_literal
+
+    assert variants_literal([("a", "1/0"), ("b", "1/0")]) == '{ "a", "b", shape = { "1/0", "1/0" } }'
+    assert variants_literal([("a", "1/0", "0123456789abcdef"), ("b", "1/0", "fedcba9876543210")]) == (
+        '{ "a", "b", shape = { "1/0", "1/0" }, key = { "0123456789abcdef", "fedcba9876543210" } }')

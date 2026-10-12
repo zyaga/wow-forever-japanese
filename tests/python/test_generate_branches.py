@@ -27,6 +27,8 @@ def root(tmp_path):
         {"id": 543, "field": "description", "en": EN, "hash": "0123456789abcdef", "src": SRC},
         {"id": 5217, "field": "description", "hash": "0123456789abcdef", "src": SRC,
          "en": "$?a768[|CFFFFFFFFRequires Cat Form|R][|CFFFF2020Requires Cat Form|R] Deals $s1."},
+        {"id": 9, "field": "description", "hash": "0123456789abcdef", "src": SRC,
+         "en": "$?a1[Returns you to $z.][Returns you home.]"},
     ])
     return data
 
@@ -53,7 +55,7 @@ def test_a_branch_line_that_cannot_ship_shows_english_and_never_breaks_the_build
     bad = {
         "stale": {**_line(JA), "status": "stale"},
         "branch_skeleton": _line("$N1吸収$?s1[x][y]$?s2[x][y]。$D1。"),
-        "branches_indistinguishable": {**_line("$?a768[攻撃][攻撃する] $N1のダメージ。"), "id": 5217},
+        "branches_indistinguishable": _line("$?a1[$zへ戻る。][家へ戻る。]", 9),  # a word code: no key
     }
     for reason, ln in bad.items():
         shipped, refused = generate.branch_variants("spell", [ln], english)
@@ -62,3 +64,38 @@ def test_a_branch_line_that_cannot_ship_shows_english_and_never_breaks_the_build
     shipped, refused = generate.branch_variants("spell", lines, english)
     rows = lua_writer.rows("spell", [ln for ln in lines if (ln["id"], ln["field"]) not in refused], branches=shipped)
     assert 543 not in rows and 10 in rows
+
+
+def test_shadowed_wordings_ship_keyed_when_the_colour_or_words_differ(root):
+    """Tiger's Fury's white and red "Requires Cat Form": both Japanese pass on either line, so the line
+    was refused; now each variant ships the key of its English, colour code included."""
+    english = Store(root, english=True)
+    got, refused = generate.branch_variants("spell", [_line("$?a768[攻撃][攻撃する] $N1のダメージ。", 5217)], english)
+    assert refused == {}
+    (a, sa, ka), (b, sb, kb) = got[(5217, "description")]
+    assert (a, sa, b, sb) == ("攻撃 $N1のダメージ。", "1/0", "攻撃する $N1のダメージ。", "1/0") and ka != kb
+
+
+def test_a_keyed_line_ships_its_keys_and_an_expandkey_line_both_variants(root):
+    english = Store(root, english=True)
+    english.save("spell", [*english.load("spell"),
+        {"id": 16902, "field": "description", "hash": "0123456789abcdef", "src": SRC,
+         "en": "$?s436895[Increases all damage you deal by $s1%.][Increases the damage you deal by $s1%.]"},
+        {"id": 1296663, "field": "description", "hash": "0123456789abcdef", "src": SRC,
+         "en": "You have $sk43/$<sc> skill in $@spellname1296663.\r\n$@expandkey[\r\nLevel ${$PL+1}: ${$<hdp1>}%\r\n]"},
+        {"id": 1296663, "field": "name", "hash": "0123456789abcdef", "src": SRC, "en": "Swords"},
+    ])
+    from wfj.core import align
+    keyed = _line("$?s436895[与える全てのダメージが$N1%増加する。][与えるダメージが$N2%増加する。]", 16902)
+    table = _line("Swordsのスキルは$N1/$N2。\r\n$?expandkey[\r\nレベル$N3：$N4%\r\n][]", 1296663)
+    word = _line("$?a1[$zへ戻る。][家へ戻る。]", 9)
+    got, refused = generate.branch_variants("spell", [keyed, table, word], english)
+    assert refused == {(9, "description"): "branches_indistinguishable"}
+    k1 = align.variant_key("Increases all damage you deal by $s1%.")
+    k2 = align.variant_key("Increases the damage you deal by $s1%.")
+    assert got[(16902, "description")] == [("与える全てのダメージが$N1%増加する。", "1/0", k1), ("与えるダメージが$N1%増加する。", "1/0", k2)]
+    assert got[(1296663, "description")] == [("Swordsのスキルは$N1/$N2。\r\n\r\nレベル$N3：$N4%\r\n", "4/0"),
+                                             ("Swordsのスキルは$N1/$N2。\r\n", "2/0")]
+    rows = lua_writer.rows("spell", [keyed], branches=got)
+    assert rows[16902][0] == ('{ "与える全てのダメージが$N1%増加する。", "与えるダメージが$N1%増加する。", '
+                              f'shape = {{ "1/0", "1/0" }}, key = {{ "{k1}", "{k2}" }} }}')

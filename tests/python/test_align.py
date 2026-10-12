@@ -287,15 +287,16 @@ def test_a_trailing_spellname_chain_is_a_name_list_tail():
     assert align.value_slots(armor) == 1
 
 
-def test_a_multi_line_head_is_not_a_tail():
-    """The addon cuts the live description at its FIRST line break, so only a one-line head can be
-    matched against it. Apprentice Riding (33388) ends in the same chain after a three-line head; it stays
-    uncountable, as it was before the tail rule."""
+def test_a_multi_line_head_is_a_tail_too():
+    """The addon cuts the live description at the line break after the head's own breaks, so a head of
+    several lines matches against it: Apprentice Riding (33388) ends in the same chain after a three-line
+    head and is a tail row like Languages."""
     riding = ("Allows you to ride basic ground mounts that require a riding skill of 75.\r\n\r\nKnown abilities:"
               "$?s33388[\r\n$@spellname33388][]")
-    assert align.split_tail(riding) == (riding, False)
-    assert align.value_slots(riding) is None  # uncountable, never drafted as a tail row
-    assert align.tail_problems(riding, "乗れるようになります。") == []
+    head = "Allows you to ride basic ground mounts that require a riding skill of 75.\r\n\r\nKnown abilities:"
+    assert align.split_tail(riding) == (head, True)
+    assert align.value_slots(riding) == 1
+    assert align.tail_problems(riding, "乗れるようになります。\r\n\r\n習得済み：$T") == []
 
 
 def test_only_a_trailing_chain_with_a_head_is_peeled():
@@ -304,7 +305,6 @@ def test_only_a_trailing_chain_with_a_head_is_peeled():
         "Knows $?s668[\r\n$@spellname668][] and more.",  # not the trailing run
         "Fluent:$?s668[\r\n$@spelldesc668][]",  # an inclusion, not a name
         "Fluent:$?s668[\r\n$@spellname668][x]",  # a second branch prints something
-        "Fluent:$?a668[\r\n$@spellname668][]",  # an aura test, not a known spell
     ):
         assert align.split_tail(en)[1] is False, en
         assert align.value_slots(en) is None, en

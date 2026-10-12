@@ -677,7 +677,40 @@ Tooltip lines that include another spell's text, an inline spell icon, or a bran
    ```
    **Pass:** one Japanese sentence covering all of the English under Alt, every number matching; or the English with the missing marker. **Fail:** Japanese with a number that differs from the English, or part of the English left untranslated inside the Japanese. The stew's line also has an experience clause that only some players see (a branch told apart by how many numbers the line shows): **Fail** if the Japanese carries the experience clause while the English under Alt does not, or drops it while the English has it. Line breaks in the Japanese sit where the English's do.
 
-**Not level-1:** a branch that turns on a talent, a form or an aura the character has (Fire Ward with the talent, a druid form line) and the faction sign items; hover each when the character gets there: the Japanese changes with the branch the English shows, and a line whose branches differ only in colour stays English.
+4. **An aura included by id: the [likely] claim that settles wrong text** ([ADR-064](../adr/064-aura-inclusions-list-tails-and-variant-keys.md) claim (a)). A spell whose aura field is `$@spellaura<id>` ships the included spell's aura text; if the client printed the included spell's description instead, both share names and numbers and the Japanese could pass on the wrong text. Open spell 1319309's aura (or one of the 437472 family):
+   ```
+   /run GameTooltip:SetOwner(UIParent,"ANCHOR_CURSOR") GameTooltip:SetSpellByID(1319309) GameTooltip:Show()
+   ```
+   Hold Alt and read the English. **Pass:** the Japanese says what that English says, sentence for sentence (a buff or debuff wording, not a cast description), with every number matching; or the English with the missing marker. **Fail:** Japanese that describes casting or using the spell while the English describes its effect on the target, or any number that differs. Record which you saw: it settles whether `$@spellaura<id>` prints the aura text.
+5. **An id in angle brackets** (claim (b), [likely]). Spell 1243064's line includes `$@spelldesc<1243081>`:
+   ```
+   /run GameTooltip:SetOwner(UIParent,"ANCHOR_CURSOR") GameTooltip:SetSpellByID(1243064) GameTooltip:Show()
+   ```
+   **Pass:** one Japanese sentence covering all of the English under Alt (the included spell's text is inside it), every number matching; or the English with the missing marker. **Fail:** part of the English left untranslated inside the Japanese.
+6. **A weapon skill tooltip, collapsed and expanded** (claim (c), [unverified]). Open the Swords skill (spell 1296663) and read it twice, once as the client first shows it and once expanded (the client's own expand key for tooltips, if the build has one; otherwise note that only the short table showed):
+   ```
+   /run GameTooltip:SetOwner(UIParent,"ANCHOR_CURSOR") GameTooltip:SetSpellByID(1296663) GameTooltip:Show()
+   ```
+   **Pass:** Japanese in both states, the short table with its rows and the expanded one with its extra rows, every number the one the English shows under Alt; or English with the missing marker in a state. **Fail:** Japanese that shows the expanded rows while the English under Alt shows the short table, or the other way round, or a literal `$?expandkey` on screen. Record which states showed Japanese: it settles whether `$@expandkey[…]` prints its text or nothing.
+7. **A blank line between a branch and its else** (claim (d), [unverified]). Spell 436516's description writes `[A]`, a blank line, then `[B]`:
+   ```
+   /run GameTooltip:SetOwner(UIParent,"ANCHOR_CURSOR") GameTooltip:SetSpellByID(436516) GameTooltip:Show()
+   ```
+   **Pass:** the English under Alt shows one of the two texts and no bracket, and the Japanese says that one; or English with the missing marker. **Fail:** a bracket or both texts in the English (the claim is wrong; the line should then be English, never Japanese), or Japanese for the other branch.
+8. **`$@null`** (claim (e)): nothing to check. Spell 348779's own line prints nothing and ships nothing.
+9. **A list after a multi-line head** (claim (f)). A Shaman's totem list (Call of Earth and its kin) or a Paladin's "you currently have access to" list (spell 1323522) on any character (the Riding skills, 33388 and 33391, keep their rejected hand-written lines and stay English until the maintainer rules those out):
+   ```
+   /run GameTooltip:SetOwner(UIParent,"ANCHOR_CURSOR") GameTooltip:SetSpellByID(1323772) GameTooltip:Show()
+   /run GameTooltip:SetOwner(UIParent,"ANCHOR_CURSOR") GameTooltip:SetSpellByID(1323522) GameTooltip:Show()
+   ```
+   **Pass:** the head (its several lines) in Japanese with the same line breaks as the English under Alt, then the list lines exactly as the English shows them (names and icons, in English, byte for byte); or English with the missing marker. **Fail:** a list line translated or missing, a head line left English inside the Japanese, or the Japanese head and the list joined on one line.
+10. **A keyed line: two wordings, the same numbers.** A Druid feral talent (spell 16902) is worded one way without a talent and another with it; the addon picks by the wording, not the numbers:
+    ```
+    /run GameTooltip:SetOwner(UIParent,"ANCHOR_CURSOR") GameTooltip:SetSpellByID(16902) GameTooltip:Show()
+    ```
+    **Pass:** the Japanese says what the English under Alt says ("all damage" against "damage with physical attacks in all forms"), with the same percentage; or English with the missing marker. **Fail:** the Japanese for the other wording. `/wfj debug spell 16902` prints `2 branch variants` for `description`.
+
+**Not level-1:** a branch that turns on a talent, a form or an aura the character has (Fire Ward with the talent, a druid form line) and the faction sign items; hover each when the character gets there: the Japanese changes with the branch the English shows, and a line whose branches differ only in colour stays English. A debuff from the 437472 family on the character (step 4) and a Shaman's totem list on a Shaman (step 9) read the same way as their `/run` lines.
 
 ### Book word card and area text checklist
 Book and letter pages drawn by the addon so the word card works, and a quest's exploration / event objective text in Japanese ([ADR-044](../adr/044-area-text-and-book-word-cards.md)). `/wfj readings` and `/wfj glosses` must print `on` first.

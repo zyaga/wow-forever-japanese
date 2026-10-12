@@ -114,7 +114,7 @@ def branch_variants(
     lines: list[dict[str, Any]],
     english_store: Store,
     en_by: dict[tuple[int, str], str] | None = None,
-) -> tuple[dict[tuple[int, str], list[tuple[str, str]]], dict[tuple[int, str], str]]:
+) -> tuple[dict[tuple[int, str], list[tuple[str, ...]]], dict[tuple[int, str], str]]:
     """→ (shipped, refused), ADR-043. `shipped`: (id, field) → [(variant Japanese, shape)…] for every shipped
     item / spell line whose Japanese keeps `$?` conditionals: its English (inclusions spliced in) split into
     branch combinations, the Japanese renumbered per combination (`align.ja_variants`), identical
@@ -138,7 +138,7 @@ def branch_variants(
         (ln["id"], ln["field"]): ln["en"] for ln in english_store.load("spell")
     }
     allowlist = load_allowlist(allowlist_path(english_store.root.parent).read_text(encoding="utf-8"))
-    shipped: dict[tuple[int, str], list[tuple[str, str]]] = {}
+    shipped: dict[tuple[int, str], list[tuple[str, ...]]] = {}
     refused: dict[tuple[int, str], str] = {}
     for ln in todo:
         key = (ln["id"], ln["field"])
@@ -201,7 +201,7 @@ def _branch_refusal(
     en_by: dict[tuple[int, str], str],
     spells: dict[tuple[int, str], str],
     allowlist: set[str],
-) -> str | list[tuple[str, str]]:
+) -> str | list[tuple[str, ...]]:
     """One branch line → its (variant, shape) list, or the reason it ships nothing (`branch_variants`)."""
     raw, why = _branch_english(ln, en_by, spells)
     if raw is None:
@@ -220,7 +220,11 @@ def _branch_refusal(
     name = en_by.get((ln["id"], "name"), "")
     pairs = align.indistinguishable(texts, [f"{v.en}\n{name}" for v in b.variants], shapes, allowlist)
     if align.never_shown(pairs, len(texts)):
-        return "branches_indistinguishable"
+        # wordings the gate cannot tell apart ship a key each (ADR-064): the addon takes the variant whose
+        # key the live line's masked wording has. No key, or two alike: nothing ships.
+        keys = align.variant_keys(b.variants)
+        return "branches_indistinguishable" if keys is None else list(
+            dict.fromkeys(zip(texts, shapes, keys, strict=True)))
     if align.unsafe_shadow(pairs, texts):
         return "branches_unsafe"
     return list(dict.fromkeys(zip(texts, shapes, strict=True)))
