@@ -99,6 +99,19 @@ describe("UI/Tooltip on a recipe's tooltip", function()
     assert.are.equal(RECIPE_JA, text(4))
   end)
 
+  it("a recipe whose Teaches line comes before the crafted item's block is read as one item", function()
+    local lines = { "Recipe: Tough Jerky", "Use: Teaches you how to cook Tough Jerky.", "Tough Jerky",
+      "Use: Restores 61 health over 18 sec. Must remain seated while eating.", "Sell Price: 5c" }
+    local data = recipeData()
+    data.lines = { { type = 22, lineIndex = 1 }, { type = 38, lineIndex = 2 },
+      { type = 19, lineIndex = 3, tooltipID = 117, tooltipType = 0 }, { type = 22, lineIndex = 3 },
+      { type = 44, lineIndex = 4 }, { type = 11, lineIndex = 5 } }
+    show("|Hitem:117::|h[Tough Jerky]|h", lines, data)
+    assert.is_nil(WFJ.Tooltip.recipeOf(tt, #lines))
+    assert.are.equal(1, #records) -- one run under the link's item, no separate Teaches record
+    assert.are.equal(117, records[1][2])
+  end)
+
   it("without tooltip data, or without a nested item, the tooltip is one item as before", function()
     show("|Hitem:117::|h[Tough Jerky]|h", { "Tough Jerky",
       "Use: Restores 61 health over 18 sec. Must remain seated while eating.", "Sell Price: 5c" })
