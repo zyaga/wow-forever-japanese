@@ -1038,3 +1038,24 @@ def test_only_a_name_only_tooltip_row_may_keep_its_english():
     assert _reasons(name, "Umbrinoth") == []
     flavour = {**_tooltip("Made With Love"), "title_case": True}
     assert _reasons(flavour, "Made With Love") == ["not_japanese"]
+
+
+RIDING = ("Allows you to ride basic ground mounts that require a riding skill of 75.\r\n\r\nKnown abilities:"
+          "$?s824[\r\n$@spellname824][]$?s18995[\r\n$@spellname18995][]")
+
+
+def test_a_tail_after_a_multi_line_head_keeps_the_heads_breaks():
+    row = {**_row(RIDING, "spell_description"), "tail": True, "slots": 1}
+    assert _reasons(row, "ライディングスキル$N1が必要な基本的な地上マウントに乗れます。\n\n習得済みの能力：$T") == []
+    reasons = _reasons(row, "ライディングスキル$N1が必要な基本的な地上マウントに乗れます。習得済みの能力：$T")
+    assert "tail_breaks" in reasons
+
+
+def test_a_keyed_branch_row_passes_when_its_wordings_differ():
+    en = ("$?s436895[Increases all damage you deal by $s1%.]"
+          "[Increases the damage you deal with physical attacks in all forms by $s1%.]")
+    ja = "$?s436895[与える全てのダメージが$N1%増加する。][全ての姿での物理攻撃のダメージが$N2%増加する。]"
+    assert tl.check_row(_branch_row(en), ja, ALLOW, GLOSSARY) == []
+    # a wording the key cannot tell apart (a word code) is still refused
+    word = "$?a1[Returns you to $z.][Returns you home.]"
+    assert tl.check_row(_branch_row(word), "$?a1[$zへ戻る。][家へ戻る。]", ALLOW, GLOSSARY) != []

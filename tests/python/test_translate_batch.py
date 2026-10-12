@@ -720,3 +720,61 @@ def test_cut_marks_a_tooltip_line_that_is_only_a_name(flavour):
     assert rows["-Hinterlands"]["name_only"] is True  # a zone in a list, with its dash
     auras = {r["en"]: r for r in tb.cut(flavour / "data", "spell_aura", 20, flavour / "b.jsonl", src=FOREVER)}
     assert auras["Lightning Shield"]["name_only"] is True  # a spell name
+
+
+# --- the templates the first pass left out: aura inclusions, expandkey, list tails, keyed branches ---
+
+SWORDS = ("You have $sk43/$<sc> skill in $@spellname1296663.\r\n\r\nLevel $PL target:\r\nHit: ${$<hdp>}.1%\r\n"
+          "$@expandkey[\r\nLevel ${$PL+1} target:\r\nHit: ${$<hdp1>}.1%\r\n\r\n$@spelldesc1302929\r\n]")
+RIDING = ("Allows you to ride basic ground mounts that require a riding skill of 75.\r\n\r\nKnown abilities:"
+          "$?s824[\r\n$@spellname824][]$?s18995[\r\n$@spellname18995][]")
+TOTEMS = ("Provide the Shaman with earth enchanted totems. \r\n\r\nYou currently have access to:\r\n$?pc166190\r\n"
+          "[$@spellicon8075$@spellname8075][]\r\n$?pc166245\r\n[$@spellicon2484 $@spellname2484][]\r\n\r\n")
+
+
+def test_cut_takes_the_templates_the_first_pass_could_not_place(client, capsys):
+    data = client / "data"
+    Store(data, english=True).save("spell", [
+        _client_en(437472, "aura", "$@spellaura437479", FOREVER),
+        _client_en(437472, "description", "$@spelldesc<437479>\r\n", FOREVER),
+        _client_en(437479, "aura", "Inflicting $s1 Shadow damage every $t1 sec.", FOREVER),
+        _client_en(437479, "description", "Unleashes a swarm causing $s1 Shadow damage every $t1 sec.", FOREVER),
+        _client_en(1296663, "description", SWORDS, FOREVER),
+        _client_en(1296663, "name", "Swords", FOREVER),
+        _client_en(1302929, "description", "Expanded by the client.", FOREVER),
+        _client_en(33388, "description", RIDING, FOREVER),
+        _client_en(1323772, "description", TOTEMS, FOREVER),
+        _client_en(436516, "description", "$?a443369[Heals for $s1.]\r\n\r\n[Stores energy for $d. Heals for $s1.]",
+                   FOREVER),
+        _client_en(16902, "description", "$?s436895[Increases all damage you deal by $s1%.]"
+                   "[Increases the damage you deal with physical attacks in all forms by $s1%.]", FOREVER),
+        _client_en(1218700, "description",
+                   "Your Evocation grants you $?a1218232|a1224428[$1218701s1%][$1218701s2%] damage.", FOREVER),
+        _client_en(348779, "description", "$@null\r\n$@null", FOREVER),
+        _client_en(9, "description", "$?a1[Returns you to $z.][Returns you home.]", FOREVER),  # a word code: no key
+        _client_en(8, "description", "Controlled by $@auracaster.", FOREVER),
+        _client_en(7, "description", "$@spellaura", FOREVER),
+    ])
+    rows = tb.cut(data, "spell_description", 20, client / "b.jsonl", src=FOREVER)
+    by = {r["targets"][0][0]: r for r in rows}
+    assert sorted(by) == [16902, 33388, 436516, 437472, 1218700, 1296663, 1302929, 1323772]
+    assert by[437472]["en"] == "Unleashes a swarm causing $s1 Shadow damage every $t1 sec."
+    assert (by[1296663]["slots"], by[1296663]["branches"]) == (6, 2)
+    assert "$?expandkey[" in by[1296663]["en"] and "$@" not in by[1296663]["en"]
+    assert by[33388]["tail"] is True and by[33388]["slots"] == 1
+    assert by[1323772]["tail"] is True and by[1323772]["slots"] == 0 and "icons" not in by[1323772]
+    assert by[436516]["branches"] == 2
+    assert by[16902]["branches"] == 2  # told apart by their keys
+    assert by[1218700]["branches"] == 2  # masked alike: nothing is shadowed
+    assert tb.read_jsonl(client / "b.dropped.jsonl") == [
+        {"id": 7, "field": "description", "reason": "unsupported_code:$@spellaura"},
+        {"id": 8, "field": "description", "reason": "unsupported_code:$@auracaster"},
+        {"id": 9, "field": "description", "reason": "branches_indistinguishable"},
+    ]
+    aura = tb.cut(data, "spell_aura", 20, client / "a.jsonl", src=FOREVER)
+    assert {r["targets"][0][0]: r["en"] for r in aura}[437472] == "Inflicting $s1 Shadow damage every $t1 sec."
+    assert tb.undraftable(data, "spell_description") == {
+        (7, "description"): "unsupported_code:$@spellaura",
+        (8, "description"): "unsupported_code:$@auracaster",
+        (9, "description"): "branches_indistinguishable",
+    }

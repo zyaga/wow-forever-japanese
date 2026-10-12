@@ -45,7 +45,7 @@ def test_nested_inclusions_names_tooltips_and_icons():
     ("$@spelldesc399963 More.", "missing_included_spell:399963"),
     ("$@spelldesc5", "inclusion_cycle:5"),
     ("Controlled by $@auracaster.", "unsupported_code:$@auracaster"),
-    ("$@spellaura12 x", "unsupported_code:$@spellaura"),
+    ("$@spellaura12 x", "missing_included_spell:12"),
 ])
 def test_what_cannot_be_expanded_says_why(en, reason):
     assert align.expand_inclusions(en, SPELLS) == align.Expansion(None, reason)
@@ -159,8 +159,10 @@ def test_a_shadowed_variant_ships_but_a_line_with_nothing_to_show_does_not():
     (`[$1230172s1]`) is shadowed the same way on its literal branches."""
     cat = "$?a768[|CFFFFFFFFRequires Cat Form|R][|CFFFF2020Requires Cat Form|R]  Increases damage by $s1."
     assert _pairs(cat) == [(0, 1)] and not align.never_shown(_pairs(cat), 2)
+    # a level table whose top branch is a code prints the same wording on every branch: the pre-draft check
+    # reads the three as one (the Japanese side still sees the literal branches shadowed by the code)
     table = "grants $?$PL<24[6]?$PL<38[11][$1230172s1] Strength for $d."
-    assert {a for a, _ in _pairs(table)} == {0, 1} and not align.never_shown(_pairs(table), 3)
+    assert _pairs(table) == [] and not align.never_shown(_pairs(table), 3)
 
 
 def test_a_japanese_that_drops_the_name_is_never_shown():
@@ -200,3 +202,158 @@ def test_a_stray_bracket_is_not_read_as_a_branch():
     """A stray or nested bracket is never read as a branch."""
     assert align.parse_branches("$?s1[A[1]][B]") is None
     assert align.branching("Deals ] damage $?s1[a][b]").reason == "unclosed_branch"
+
+
+# the templates the first pass could not place: spellaura, angle ids, $@null, expandkey, a whitespace else,
+# the widened name-list tail, and variant keys --------------------------------------------------------------
+
+BOSS = {
+    (437479, "description"): "Balnazzar unleashes a swarm, causing $s1 Shadow damage every $t1 sec for $d.",
+    (437479, "aura"): "Inflicting $s1 Shadow damage every $t1 sec to allies within $437480A1 yards.",
+    (1243081, "description"): "Inflicts $S1 Shadow damage to the current enemy target.",
+    (1302929, "description"): "Expanded by the client.",
+    (1296663, "name"): "Swords",
+}
+
+
+def test_spellaura_splices_the_included_spells_aura_text():
+    x = align.expand_inclusions("$@spellaura437479", BOSS)
+    assert x.text == BOSS[(437479, "aura")]
+    assert align.included_spells("$@spellaura437479", BOSS) == [(437479, "aura")]
+
+
+def test_an_id_in_angle_brackets_is_the_same_id_for_every_inclusion():
+    assert align.expand_inclusions("$@spelldesc<1243081>\r\n", BOSS).text == BOSS[(1243081, "description")] + "\r\n"
+    assert align.expand_inclusions("$@spellaura<437479>", BOSS).text == BOSS[(437479, "aura")]
+    assert align.expand_inclusions("$@spellname<1296663>!", BOSS).text == "Swords!"
+    assert align.included_spells("$@spelldesc<1243081> $@spellicon<7>", BOSS) == [(1243081, "description")]
+
+
+def test_a_bare_spellaura_still_names_its_reason():
+    assert align.expand_inclusions("$@spellaura x", BOSS) == align.Expansion(None, "unsupported_code:$@spellaura")
+
+
+def test_null_splices_nothing():
+    assert align.expand_inclusions("$@null\r\n$@null", BOSS).text == "\r\n"
+    assert align.expand_inclusions("Gain $@null$s1.", BOSS).text == "Gain $s1."
+    assert align.expand_inclusions("$@null5", BOSS).reason == "unsupported_code:$@null"  # not a 5
+    assert align.included_spells("$@null", BOSS) == []
+
+
+EXPANDKEY = ("You have $sk43/$<sc> skill in $@spellname1296663.\r\n\r\nLevel $PL target:\r\nHit: ${$<hdp>}.1%\r\n"
+             "$@expandkey[\r\nLevel ${$PL+1} target:\r\nHit: ${$<hdp1>}.1%\r\n\r\n$@spelldesc1302929\r\n]")
+
+
+def test_expandkey_is_a_branch_with_an_empty_else():
+    x = align.expand_inclusions(EXPANDKEY, BOSS)
+    assert x.reason is None and "$@" not in x.text and "$?expandkey[" in x.text
+    b = align.branching(x.text)
+    assert b.reason is None
+    assert [v.shape for v in b.variants] == ["6/0", "4/0"]
+    assert b.variants[1].en == "You have $sk43/$<sc> skill in Swords.\r\n\r\nLevel $PL target:\r\nHit: ${$<hdp>}.1%\r\n"
+    texts, bad = align.ja_variants("Swordsのスキルは$N1/$N2。\r\n\r\nレベル$N3：\r\n命中：$N4%\r\n$?expandkey[\r\n"
+                                   "レベル$N5：\r\n命中：$N6%\r\n\r\nExpanded。\r\n][]", b)
+    assert bad == [] and len(texts) == 2 and texts[1].endswith("命中：$N4%\r\n")
+
+
+def test_whitespace_between_a_branch_and_its_else_reads_as_the_else():
+    en = "$?a443369[Heals for $s1.]\r\n\r\n[Stores energy for $d. Heals for $s1.]"
+    b = align.branching(en)
+    assert b.reason is None
+    assert [v.en for v in b.variants] == ["Heals for $s1.", "Stores energy for $d. Heals for $s1."]
+    ja = "$?a443369[$N1回復する。]\r\n\r\n[$D1の間エネルギーを蓄える。$N3回復する。]"
+    assert align.ja_variants(ja, b) == (["$N1回復する。", "$D1の間エネルギーを蓄える。$N2回復する。"], [])
+    assert align.ja_variants("$?a443369[$N1回復する。][$D1の間蓄える。$N3回復する。]", b)[1] == []
+    # text other than whitespace before the bracket is no else: the bracket is stray
+    assert align.parse_branches("$?a1[A] then [B]") is None
+    assert align.branching("$?a1[A] then [B]").reason == "unclosed_branch"
+
+
+def test_a_line_break_between_a_condition_and_its_bracket_is_still_the_conditional():
+    b = align.branching("Known:\r\n$?pc1\r\n[A $s1][]")
+    assert [v.en for v in b.variants] == ["Known:\r\nA $s1", "Known:\r\n"]
+
+
+RIDING = ("Allows you to ride basic ground mounts that require a riding skill of 75.\r\n\r\nKnown abilities:"
+          "$?s824[\r\n$@spellname824][]$?s18995[\r\n$@spellname18995][]")
+TOTEMS = ("Provide the Shaman with earth enchanted totems. \r\n\r\nYou currently have access to:\r\n$?pc166190\r\n"
+          "[$@spellicon8075$@spellname8075][]\r\n$?pc166245\r\n[$@spellicon2484 \r\n$@spellname2484][]\r\n\r\n")
+PALADIN = ("Fill the Paladin with various divine enhancements. \r\n\r\nYou currently have access to:\r\n"
+           "$?pc166120[$@spellicon21082 $@spellname21082][]\r\n$?pc166138[|cFFFFFFFF$@spellicon25742 $@spellname20287|r][]")
+LANGUAGES = "You are fluent in the following languages:$?s668[\r\n$@spellname668][]$?s669[\r\n$@spellname669][]"
+
+
+@pytest.mark.parametrize(("en", "head"), [
+    (RIDING, "Allows you to ride basic ground mounts that require a riding skill of 75.\r\n\r\nKnown abilities:"),
+    (TOTEMS, "Provide the Shaman with earth enchanted totems. \r\n\r\nYou currently have access to:"),
+    (PALADIN, "Fill the Paladin with various divine enhancements. \r\n\r\nYou currently have access to:"),
+    (LANGUAGES, "You are fluent in the following languages:"),
+])
+def test_an_icon_or_name_list_after_a_multi_line_head_is_a_tail(en, head):
+    assert align.split_tail(en) == (head, True)
+    assert align.value_slots(en) == (1 if en is RIDING else 0)
+
+
+def test_what_is_not_a_tail():
+    # a head holding a conditional of its own, a branch with prose, an empty head, a chain that is not trailing
+    assert align.split_tail("$?s1[A][B] Known:$?s824[\r\n$@spellname824][]")[1] is False
+    assert align.split_tail("Known:$?s824[\r\nYou know $@spellname824][]")[1] is False
+    assert align.split_tail("$?s824[\r\n$@spellname824][]")[1] is False
+    assert align.split_tail("Known:$?s824[\r\n$@spellname824][] and more.")[1] is False
+    assert align.split_tail("Known:$?s824[\r\n$@spellname824][$@spellname825]")[1] is False
+    # an element that prints no name or icon is no list
+    for empty in ("", " ", "|cFFFFFFFF|r"):
+        assert align.split_tail(f"Known:$?s824[{empty}][]")[1] is False
+
+
+def test_a_tail_draft_keeps_the_heads_line_breaks():
+    ja_ok = "基本的な地上マウントに乗れます。\r\n\r\n習得済み：$T"
+    assert align.tail_problems(RIDING, ja_ok) == []
+    assert align.tail_problems(RIDING, "基本的な地上マウントに乗れます。\n\n習得済み：$T") == []  # a bare \n counts alike
+    assert align.tail_problems(RIDING, "基本的な地上マウントに乗れます。習得済み：$T") == ["tail_breaks"]
+    assert align.tail_problems(RIDING, "基本的な地上マウントに乗れます。\r\n\r\n\r\n習得済み：$T") == ["tail_breaks"]
+    assert align.tail_problems(LANGUAGES, "次の言語：$T") == []
+
+
+# variant keys --------------------------------------------------------------------------------------------------
+
+
+def test_a_variant_key_is_the_wording_with_its_values_masked():
+    a = align.variant_key("Increases all damage you deal by $s1%.")
+    b = align.variant_key("Increases the damage you deal with physical attacks in all forms by $s1%.")
+    assert a != b and len(a) == 16
+    # a value, a sum, a duration with its unit word, a range, an icon and a code all mask alike
+    assert align.variant_key("Deals $s1 damage") == align.variant_key("Deals ${$s1*2}.1 damage")
+    assert align.variant_key("Lasts $d.") == align.variant_key("Lasts 30 sec.")
+    assert align.variant_key("Causes $s1 to $s2 Fire damage") == align.variant_key("Causes 14 Fire damage")
+    assert align.variant_key("$I1 Fire: $s1") == align.variant_key("Fire: 5")
+    assert align.variant_key("Hit  $s1\r\n") == align.variant_key("Hit 5")  # normalized whitespace
+    # the masked wording is what the key hashes
+    from wfj.core.hashing import key as hash_key
+    from wfj.core.normalize import normalize_v1
+    assert a == hash_key(normalize_v1("Increases all damage you deal by #%.", player_tokens=False))
+
+
+def test_a_variant_holding_a_word_code_has_no_key():
+    assert align.variant_key("Returns you to $z.") is None
+    assert align.variant_key("Lasts $s1 $lsecond:seconds;.") is None
+    assert align.variant_key("Deals $s1 damage.") is not None
+
+
+def test_variant_keys_are_the_lines_keys_or_none():
+    b = align.branching("$?s436895[Increases all damage you deal by $s1%.][Increases the damage you deal by $s1%.]")
+    keys = align.variant_keys(b.variants)
+    assert keys and len(keys) == 2 and keys[0] != keys[1]
+    same = align.branching("Gain $?a1[$s1][$s2] armor.")  # masked alike: no key tells them apart
+    assert align.variant_keys(same.variants) is None
+    word = align.branching("$?a1[Returns you to $z.][Returns you home.]")
+    assert align.variant_keys(word.variants) is None
+
+
+def test_the_pre_draft_check_reads_masked_equal_variants_as_one():
+    """1218700 prints one of two codes: the same wording either way, so nothing is shadowed."""
+    b = align.branching("Your Evocation grants you $?a1218232|a1224428[$1218701s1%][$1218701s2%] damage, lasting $1218701d.")
+    texts = [v.en for v in b.variants]
+    assert align.indistinguishable(texts, texts, [v.shape for v in b.variants], set(), english=True) == []
+    # two wordings still shadow each other (the Japanese side is unchanged)
+    assert _pairs("$?s1[Increases all damage by $s1%.][Increases the damage by $s1%.]") == [(0, 1), (1, 0)]
