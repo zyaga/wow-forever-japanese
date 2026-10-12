@@ -27,6 +27,8 @@ describe("Core/Align: shared vectors", function()
         table.sort(got, function(x, y) if #x ~= #y then return #x < #y end return x < y end)
       elseif c.op == "numberWords" then
         got = A.numberWords(c.text)
+      else
+        got = c.expected -- variantKey needs Normalize and Hash: its vectors run in their own block below
       end
       assert.are.same(c.expected, got, c.id)
     end
@@ -367,6 +369,117 @@ describe("Core/Align: icons and branch variants (ADR-043)", function()
 
   it("identical variant texts count once", function()
     local ok, text = A.checkVariants({ "$N1回復。", "$N1回復。" }, { "1/0", "1/0" }, { "Restores 5." })
+    assert.is_true(ok)
+    assert.are.equal("5回復。", text)
+  end)
+end)
+
+-- a list tail after a head of several lines (Riding, the Shaman totem lists): the Japanese head keeps the
+-- English head's line breaks, so the live text is cut at the break after them.
+describe("name-list tail after a multi-line head", function()
+  local A
+  setup(function()
+    local ns = {}
+    H.loadPure("Core/Align.lua", "WoWForeverJapanese", ns)
+    A = ns.Align
+  end)
+  local live = "Allows you to ride basic ground mounts that require a riding skill of 75.\r\n\r\nKnown abilities:"
+    .. "\r\nApprentice Riding\r\nBlack Stallion"
+  local ja = "ライディングスキル$N1が必要な基本的な地上マウントに乗れます。\r\n\r\n習得済みの能力：$T"
+
+  it("cuts the live text at the break after the head's own breaks", function()
+    local head, tail = A.splitTail(ja, live)
+    assert.are.equal("ライディングスキル$N1が必要な基本的な地上マウントに乗れます。\r\n\r\n習得済みの能力：", head)
+    assert.are.equal("Allows you to ride basic ground mounts that require a riding skill of 75.\r\n\r\n"
+      .. "Known abilities:", tail.scope)
+    assert.are.equal("\r\nApprentice Riding\r\nBlack Stallion", tail.text)
+    assert.are.equal("ライディングスキル75が必要な基本的な地上マウントに乗れます。\r\n\r\n習得済みの能力："
+      .. "\r\nApprentice Riding\r\nBlack Stallion", A.fillValues(ja, live))
+    local ok, text = A.check(ja, { live })
+    assert.is_true(ok)
+    assert.are.equal(A.fillValues(ja, live), text)
+  end)
+
+  it("a head written with bare line breaks counts them the same", function()
+    local _, tail = A.splitTail("乗れます。\n\n習得済み：$T", "Ride.\n\nKnown:\nFoo\nBar")
+    assert.are.equal("Ride.\n\nKnown:", tail.scope)
+    assert.are.equal("\nFoo\nBar", tail.text)
+  end)
+
+  it("with nothing after the head there is no tail; with fewer breaks than the head it fails closed", function()
+    local head, tail = A.splitTail(ja, "Allows you to ride.\r\n\r\nKnown abilities:")
+    assert.are.equal("ライディングスキル$N1が必要な基本的な地上マウントに乗れます。\r\n\r\n習得済みの能力：", head)
+    assert.are.same({ scope = "Allows you to ride.\r\n\r\nKnown abilities:", text = "" }, tail)
+    assert.is_nil(A.splitTail(ja, "Allows you to ride. Known abilities:\r\nApprentice Riding"))
+    assert.is_nil(A.fillValues(ja, "Allows you to ride. Known abilities:\r\nApprentice Riding"))
+    assert.is_false(A.check(ja, { "Allows you to ride. Known abilities:\r\nApprentice Riding" }))
+  end)
+
+  it("a one-line head still cuts at the first break", function()
+    local head, tail = A.splitTail("次の言語：$T", "You know:\r\nCommon\r\nDwarvish")
+    assert.are.equal("次の言語：", head)
+    assert.are.same({ scope = "You know:", text = "\r\nCommon\r\nDwarvish" }, tail)
+  end)
+end)
+
+-- a VARIANT KEY: the hash of a live line's wording with its values masked, which picks between variants whose
+-- numbers alone cannot tell them apart (the Druid feral talents). Python `align.variant_key` keys the English
+-- template the same way; the vectors hold the pairs.
+describe("Core/Align.variantKey and keyed variants", function()
+  local A
+  local SEC = function(t) return ({ ["30 sec"] = "30秒", ["18 sec"] = "18秒", ["3 sec"] = "3秒", ["2 min"] = "2分",
+    ["1 hr 30 min"] = "1時間30分" })[t] end
+  setup(function()
+    local ns = {}
+    H.loadPure("Core/Normalize.lua", "WoWForeverJapanese", ns)
+    H.loadPure("Core/Hash.lua", "WoWForeverJapanese", ns)
+    H.loadPure("Core/Align.lua", "WoWForeverJapanese", ns)
+    A = ns.Align
+  end)
+
+  it("matches every vector: the live text keys to its template's key", function()
+    local V = dofile(H.ROOT .. "/vectors/align_vectors.lua")
+    local n = 0
+    for _, c in ipairs(V.cases) do
+      if c.op == "variantKey" then
+        assert.are.equal(c.expected, A.variantKey(c.text, SEC), c.id)
+        n = n + 1
+      end
+    end
+    assert.is_true(n >= 8)
+  end)
+
+  it("masks values, durations with their unit, ranges and icons; the wording stays", function()
+    local ICON = "|Tinterface\\icons\\x:0|t"
+    assert.are.equal(A.variantKey("Deals 5 damage.", SEC), A.variantKey("Deals 1,200 damage.", SEC))
+    assert.are.equal(A.variantKey("Lasts 30 sec.", SEC), A.variantKey("Lasts 2 min.", SEC))
+    assert.are.equal(A.variantKey("Causes 14 to 22 damage.", SEC), A.variantKey("Causes 7 damage.", SEC))
+    assert.are.equal(A.variantKey(ICON .. " Fire: 5", SEC), A.variantKey("Fire: 9", SEC))
+    assert.are_not.equal(A.variantKey("Deals 5 damage.", SEC), A.variantKey("Deals 5 Fire damage.", SEC))
+    assert.is_nil(A.variantKey(nil, SEC))
+  end)
+
+  it("checkVariants takes only the variant whose key the live line has", function()
+    local V = { "与える全てのダメージが$N1%増加する。", "物理攻撃のダメージが$N1%増加する。" }
+    V.shape = { "1/0", "1/0" }
+    V.key = { A.variantKey("Increases all damage you deal by 10%.", SEC),
+              A.variantKey("Increases the damage you deal with physical attacks by 10%.", SEC) }
+    local ok, text = A.checkVariants(V, V.shape, { "Increases all damage you deal by 4%." }, nil, SEC)
+    assert.is_true(ok)
+    assert.are.equal("与える全てのダメージが4%増加する。", text)
+    ok, text = A.checkVariants(V, V.shape, { "Increases the damage you deal with physical attacks by 4%." }, nil, SEC)
+    assert.is_true(ok)
+    assert.are.equal("物理攻撃のダメージが4%増加する。", text)
+    -- a wording neither key matches, or a line without the values, fails closed
+    assert.is_false(A.checkVariants(V, V.shape, { "Increases all damage you deal by 4% and more." }, nil, SEC))
+    assert.is_false(A.checkVariants(V, V.shape, { "Increases all damage you deal." }, nil, SEC))
+  end)
+
+  it("a slot without keys behaves exactly as before", function()
+    local V = { "攻撃する。", "防御する。" }
+    assert.is_false(A.checkVariants(V, { "0/0", "0/0" }, { "Requires Cat Form." }))
+    local one = { "$N1回復。" }
+    local ok, text = A.checkVariants(one, { "1/0" }, { "Restores 5." })
     assert.is_true(ok)
     assert.are.equal("5回復。", text)
   end)

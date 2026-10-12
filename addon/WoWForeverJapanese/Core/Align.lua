@@ -16,10 +16,13 @@
 --                                         nil when a placeholder cannot be filled (fail closed); the
 --                                         Japanese unchanged when it holds no placeholder at all.
 --   Align.splitTail(ja, scope)            a trailing `$T` (name-list tail) → head, { scope, text } | ja, nil
---                                         | nil (a misplaced `$T`)
+--                                         | nil (a misplaced `$T`, or a live text with fewer lines than the head)
+--   Align.variantKey(scope, duration)     (ADR-064) the key of a live line's wording with its values masked,
+--                                         the twin of align.variant_key; nil without Normalize / Hash
 --   Align.checkVariants(variants, shapes, lines, nameScope, duration)  (ADR-043) → ok, text: the one
 --                                         variant of a branch line that passes `check` (and, where the
---                                         variants' shapes differ, has the live line's shape); false when none
+--                                         variants' shapes differ, has the live line's shape; and, where the
+--                                         slot carries `key`, whose key the live line has); false when none
 --                                         or several do. The Translator's `alignVariants` dependency.
 --   Align.check(ja, lines, nameScope, duration)  → ok, text: the Translator's `align` dependency; `nameScope`
 --                                         (optional) is extra text names may come from (the tooltip's name line),
@@ -225,21 +228,30 @@ end
 -- A value the client prints as a RANGE ("causes 14 to 22 Fire damage" for Fireball's `$s1`) is
 -- one value, filled as "14～22": counted as two it shifted every later `$N`, and the pipeline's
 -- `core/align.slots` counts "A to B" as one slot to match.
-function Align.values(scope)
-  local out, last = {}, nil
+-- Every value token of `scope` in reading order: fn(start, end, token, value, isRange), `isRange` when the
+-- token continues the previous value as "A to B". One scanner for `values` and the variant key's mask.
+local function eachValue(scope, fn)
+  local last = nil
   for s, tok, e in scope:gmatch("()([%d%.,]+)()") do
     if not isLetter(scope:byte(s - 1)) and not isLetter(scope:byte(e)) then
       local v = tok:gsub(",", ""):gsub("^%.+", ""):gsub("%.+$", "")
       if v ~= "" then
-        if last and scope:sub(last.e, s - 1) == " to " then
-          out[#out] = out[#out] .. "～" .. v
-        else
-          out[#out + 1] = v
-        end
-        last = { e = e }
+        fn(s, e, tok, v, last ~= nil and scope:sub(last, s - 1) == " to ")
+        last = e
       end
     end
   end
+end
+
+function Align.values(scope)
+  local out = {}
+  eachValue(scope, function(_, _, _, v, isRange)
+    if isRange then
+      out[#out] = out[#out] .. "～" .. v
+    else
+      out[#out + 1] = v
+    end
+  end)
   return out
 end
 
@@ -262,11 +274,10 @@ local PLURAL_SHAPES = {
   "^([%d%.,]+%s*|4[^;]*;)",                       -- "1 |4hour:hrs;"
 }
 
--- → the live line's durations in reading order, each already in Japanese. Never overlapping: a phrase that
+-- Every duration phrase of `scope` in reading order: fn(start, length, ja). Never overlapping: a phrase that
 -- matched is skipped past, so "1 hr 30 min" is one duration and not also "30 min".
-function Align.durations(scope, duration)
-  local out = {}
-  if type(scope) ~= "string" or type(duration) ~= "function" then return out end
+local function eachDuration(scope, duration, fn)
+  if type(scope) ~= "string" or type(duration) ~= "function" then return end
   local i, len = 1, #scope
   while i <= len do
     local s = scope:find("%d", i)
@@ -293,12 +304,18 @@ function Align.durations(scope, duration)
         end
       end
       if ja then
-        out[#out + 1] = ja
+        fn(s, #phrase, ja)
         step = s + #phrase
       end
     end
     i = step
   end
+end
+
+-- → the live line's durations in reading order, each already in Japanese.
+function Align.durations(scope, duration)
+  local out = {}
+  eachDuration(scope, duration, function(_, _, ja) out[#out + 1] = ja end)
   return out
 end
 
@@ -339,20 +356,49 @@ function Align.textures(text)
   return (plain:gsub(ESCAPED, "||")), icons
 end
 
--- A name-list tail (ADR-033). A Japanese ending in `$T` translates only the head of a description whose
--- English ends in a `$?s<id>[<break>$@spellname<id>][]` chain (Languages, Armor Proficiency): the client prints the
--- head, then one line per spell the player knows, each that spell's NAME in live English. The live lines
--- from the first line break on are copied byte for byte after the Japanese; the head is checked and filled
--- against the live text before that break only.
+-- A name-list tail (ADR-033, widened by ADR-064). A Japanese ending in `$T` translates only the head of a
+-- description whose English ends in a chain of `$?<cond>[<break>$@spellname<id>][]` elements (Languages, Armor
+-- Proficiency, the Riding skills, the class "you currently have access to" lists, with an icon before each
+-- name): the client prints the head, then one line per spell the player knows, each that spell's NAME in
+-- live English. The Japanese head keeps the English head's line breaks, so the live text is cut at the
+-- break after as many breaks as the Japanese head has; the lines from there on are copied byte for byte
+-- after the Japanese, and the head is checked and filled against the live text before that break only.
 -- → ja, nil (no `$T`) · head, { scope = the live head, text = the live tail } · nil when `$T` is anywhere but the
--- end, or appears twice (fail closed).
+-- end, appears twice, or the live text has fewer line breaks than the head (another layout: fail closed).
+-- The guard counts the whole live text: should the client print the head with fewer breaks than the
+-- template [unverified; the in-game check is in docs/testing/strategy.md], the list's own breaks could make
+-- up the count and the first list line would be read as part of the head. Without English the addon cannot
+-- tell the two apart; the lint keeps the Japanese head's breaks equal to the template's (`tail_breaks`).
 local TAIL = "$T"
+local BREAK = "\r?\n"
+
+local function countBreaks(text)
+  local n = 0
+  for _ in text:gmatch(BREAK) do n = n + 1 end
+  return n
+end
+
+-- the start of the k-th line break of `text`, or nil
+local function nthBreak(text, k)
+  local at, s = 0, nil
+  for _ = 1, k do
+    local e
+    s, e = text:find(BREAK, at + 1)
+    if not s then return nil end
+    at = e
+  end
+  return s
+end
+
 function Align.splitTail(ja, scope)
   local at = ja:find(TAIL, 1, true)
   if at == nil then return ja, nil end
   if at ~= #ja - #TAIL + 1 then return nil end
-  local brk = scope:find("\r?\n")
-  return ja:sub(1, at - 1), { scope = brk and scope:sub(1, brk - 1) or scope, text = brk and scope:sub(brk) or "" }
+  local head = ja:sub(1, at - 1)
+  local n = countBreaks(head)
+  if countBreaks(scope) < n then return nil end
+  local brk = nthBreak(scope, n + 1)
+  return head, { scope = brk and scope:sub(1, brk - 1) or scope, text = brk and scope:sub(brk) or "" }
 end
 
 -- $N<k> / $D<k> filled from the live text, with no gate. A quest line is `trusted`: its names and
@@ -439,14 +485,59 @@ function Align.sections(sec, lines, nameScope, duration)
   return true, table.concat(out, "\n\n")
 end
 
+-- A VARIANT KEY (ADR-064): the hash of a live line's wording with every value masked, the twin of
+-- `align.variant_key` on the English template (parity-tested by the align vectors). Icon escapes out, each
+-- duration phrase with its unit one `#` (so the unit the client chose does not matter), then each value token
+-- one `#` (a range "14 to 22" is one, as `values` reads it), then normalize_v1 and the hash. A key, never
+-- the English, is what a keyed branch line ships per variant.
+local function maskDurations(text, duration)
+  local out, at = {}, 1
+  eachDuration(text, duration, function(s, len)
+    out[#out + 1] = text:sub(at, s - 1) .. "#"
+    at = s + len
+  end)
+  out[#out + 1] = text:sub(at)
+  return table.concat(out)
+end
+
+local function maskValues(text)
+  local out, at = {}, 1
+  eachValue(text, function(s, e, tok, _, isRange)
+    -- a sentence mark around the number is text, not value ("by 5." masks to "by #."); the second number
+    -- of a range folds into the first "#" (" to 22" goes), its mark kept
+    if isRange then
+      out[#out + 1] = tok:match("[%.,]*$")
+    else
+      out[#out + 1] = text:sub(at, s - 1) .. tok:match("^[%.,]*") .. "#" .. tok:match("[%.,]*$")
+    end
+    at = e
+  end)
+  out[#out + 1] = text:sub(at)
+  return table.concat(out)
+end
+
+-- the key of a live line already stripped of its icon escapes
+local function keyOfPlain(plain, duration)
+  local N, H = WFJ.Normalize, WFJ.Hash
+  if not N or not H then return nil end
+  return H.key(N.v1(maskValues(maskDurations(plain, duration))))
+end
+
+function Align.variantKey(scope, duration)
+  if type(scope) ~= "string" then return nil end
+  return keyOfPlain((Align.textures(scope)), duration)
+end
+
 -- A branch line (`$?<cond>[A][B]`, ADR-043) ships one Japanese per branch combination, each numbered to
 -- its own reading order, with its shape "<values>/<durations>": what `values` / `durations` read off a live
 -- line showing that combination. The client chose the branch; the addon reads which one from the live line and
 -- never evaluates the condition. A variant is a candidate when it passes `check` and, where the variants'
 -- shapes differ (that is what tells a line with an extra clause from one without), the live line has its
--- shape. Exactly one candidate (identical texts count once) → true, its filled text; none or several → false,
+-- shape. A line whose variants differ only in their words carries a key per variant (`variants.key`,
+-- ADR-064): then a variant is a candidate only when the live line's key (`variantKey`) is its own.
+-- Exactly one candidate (identical texts count once) → true, its filled text; none or several → false,
 -- and the tooltip keeps its English. The pipeline refuses to ship a line whose variants could both
--- pass on one of their lines (`align.indistinguishable`).
+-- pass on one of their lines (`align.indistinguishable`) and carry no keys.
 function Align.checkVariants(variants, shapes, lines, nameScope, duration)
   if type(variants) ~= "table" or #variants == 0 or type(lines) ~= "table" or #lines == 0 then return false end
   local compare = false
@@ -455,14 +546,16 @@ function Align.checkVariants(variants, shapes, lines, nameScope, duration)
       if shapes[i] ~= shapes[1] then compare = true; break end
     end
   end
-  local live
-  if compare then
+  local keys = type(variants.key) == "table" and variants.key or nil
+  local live, liveKey
+  if compare or keys then
     local plain = Align.textures(table.concat(lines, "\n"))
-    live = #Align.values(plain) .. "/" .. #Align.durations(plain, duration)
+    if compare then live = #Align.values(plain) .. "/" .. #Align.durations(plain, duration) end
+    if keys then liveKey = keyOfPlain(plain, duration) end
   end
   local found, count = nil, 0
   for i, ja in ipairs(variants) do
-    if not compare or shapes[i] == live then
+    if (not compare or shapes[i] == live) and (not keys or (liveKey ~= nil and keys[i] == liveKey)) then
       local ok, text = Align.check(ja, lines, nameScope, duration)
       if ok and text ~= found then
         found = text

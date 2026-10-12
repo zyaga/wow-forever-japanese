@@ -1,12 +1,12 @@
-# ADR-065: Recipe and set bonus lines from the tooltip data
+# ADR-066: Recipe and set bonus lines from the tooltip data
 
 - **Status:** Accepted
 - **Date:** 2026-10-12
-- **Related:** [ADR-010](010-tooltip-in-place-run-replacement.md) (the description run) · [ADR-007](007-unaligned-ships-with-runtime-gate.md) (the tooltip align gate) · [ADR-016](016-whole-window-interface-coverage.md) (the UI dictionary) · [ADR-028](028-a-duration-is-copied-not-named.md) (durations) · [ADR-064](064-collector-keeps-only-what-the-addon-cannot-show.md) (what the collector keeps) · [Addon modules](../architecture/addon-modules.md)
+- **Related:** [ADR-010](010-tooltip-in-place-run-replacement.md) (the description run) · [ADR-007](007-unaligned-ships-with-runtime-gate.md) (the tooltip align gate) · [ADR-016](016-whole-window-interface-coverage.md) (the UI dictionary) · [ADR-028](028-a-duration-is-copied-not-named.md) (durations) · [ADR-065](065-collector-keeps-only-what-the-addon-cannot-show.md) (what the collector keeps) · [Addon modules](../architecture/addon-modules.md)
 
 ## Context
 
-After [ADR-064](064-collector-keeps-only-what-the-addon-cannot-show.md), the English Collector's waiting count on the maintainer's file was down to a few lines, and each was an item tooltip that really showed English in game on Forever 1.60.1.70338:
+After [ADR-065](065-collector-keeps-only-what-the-addon-cannot-show.md), the English Collector's waiting count on the maintainer's file was down to a few lines, and each was an item tooltip that really showed English in game on Forever 1.60.1.70338:
 
 - **Recipes.** On Forever a recipe's tooltip is the crafted item's whole tooltip as a nested block, then the recipe's own "Use: Teaches you how to …" line. The description run took both items' lines as one run under one id, which matched neither item's Japanese.
 - **The cooldown tail.** The client appends an item's cooldown to its spell line ("… over 18 sec. (1 Sec Cooldown)"). The tail's number counted as one of the line's values, so a branch line picked the wrong variant or none.

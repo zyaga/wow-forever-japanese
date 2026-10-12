@@ -12,6 +12,7 @@ an old setting stops working). A release moves those lines under its version num
 ### Added
 - Forever's own item stat lines are in Japanese ("Equip: Improves your chance to hit by 1%.", spell damage and healing, weapon skills, attack power against a creature type).
 - Item set bonus lines ("(2) Set: …", and "Set: …" once the bonus is active) are in Japanese.
+- More spell and item tooltips are in Japanese: boss and raid debuffs whose text comes from another spell, the weapon skill tables (short and expanded), the Riding skills and the class ability lists (a Shaman's totems, a Paladin's or Hunter's abilities; the names in the list stay English), and talents with two wordings for the same numbers. The coverage page gives a plain reason for each tooltip line that stays English.
 
 ### Fixed
 - The English Collector counts only lines the addon cannot show in Japanese: tooltips with your numbers filled in, quest lines that name your class or race, and NPC names no longer count, and lines a newer version covers are removed from the collector file at the next login or reload.

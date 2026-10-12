@@ -1,7 +1,9 @@
 """Generate vectors/align_vectors.{jsonl,lua}: the shared contract between core/align.py and Core/Align.lua.
 
-Each row: {id, op, text, scope?, allowlist, expected}. `op` ∈ names · checkNames · numbers · numberWords.
-`expected` is the Python result (numbers: sorted multiset as a list). Both suites iterate every row.
+Each row: {id, op, text, scope?, allowlist, expected}. `op` ∈ names · checkNames · numbers · numberWords ·
+variantKey. `expected` is the Python result (numbers: sorted multiset as a list; variantKey: the key of the
+English template in `scope`, which the Lua side must compute from the rendered live line in `text`). Both
+suites iterate every row.
 Usage: python -m wfj.dev.gen_align_vectors [out_dir]
 """
 
@@ -56,6 +58,35 @@ CASES: list[tuple[str, str, str, str | None]] = [
     ("words-05", "numberWords", "thirteen-fourteen fifty two", None),
     ("words-06", "numberWords", "one2 and 3three and ten thousand and twenty five", None),
     ("words-07", "numberWords", "Hundred one-time a single", None),
+    # variantKey: text = the live line as the client renders it, scope = the English template it came from
+    ("key-01", "variantKey", "Increases all damage you deal by 4%.",
+     "Increases all damage you deal by $s1%."),
+    ("key-02", "variantKey", "Increases the damage you deal with physical attacks in all forms by 4%.",
+     "Increases the damage you deal with physical attacks in all forms by $s1%."),
+    ("key-03", "variantKey", "The Enrage ability instantly generates an additional 5 Rage.",
+     "The Enrage ability instantly generates an additional $/10;17080s1 Rage."),
+    ("key-04", "variantKey", "Immune to snare and root effects.\r\nMovement speed increased by 50%.",
+     "Immune to snare and root effects.\r\nMovement speed increased by 50%."),
+    ("key-05", "variantKey", "3 trophies gathered as victories while Dueling to the Death.",
+     "$w trophies gathered as victories while Dueling to the Death."),
+    ("key-06", "variantKey", "Absorbs 1,230 Fire damage for 30 sec.", "Absorbs $s1 Fire damage for $d."),
+    ("key-07", "variantKey", "Causes 14 to 22 Fire damage every 3 sec.",
+     "Causes $s1 to $s2 Fire damage every $t1 sec."),
+    ("key-08", "variantKey", "Deals 2.5% damage over 2 min and lasts 1 hr 30 min.",
+     "Deals ${$s1/4}.1% damage over $d and lasts $1d."),
+    ("key-09", "variantKey", "|Tinterface\\icons\\x:0|t Quick Draw: 25 damage.",
+     "$I1 Quick Draw: $s1 damage."),
+    ("key-10", "variantKey", "|cFFFFFFFFRequires Cat Form|r  Increases damage by 5.",
+     "|cFFFFFFFFRequires Cat Form|r  Increases damage by $s1."),
+    ("key-11", "variantKey",
+     "Each melee attack or non-instant spell cast has a chance of causing Clearcasting.",
+     "Each melee attack or non-instant spell cast has a chance of causing Clearcasting."),
+    ("key-12", "variantKey", "Heals a friendly target for 120 to 140.",
+     "Heals a friendly target for ${$<healpower>*$436517m1/100} to ${$<healpower>*$436517M1/100}."),
+    ("key-13", "variantKey", "Stacks up to 5. Lasts 2 min, then 3 sec.",
+     "Stacks up to $m2. Lasts $d, then 3 sec."),
+    ("key-14", "variantKey", "Restores 61 health over 18 sec.  Must remain seated.",
+     "Restores 61 health over 18 sec.  Must remain seated."),
 ]
 
 
@@ -71,6 +102,8 @@ def build() -> list[dict]:
             expected = sorted(align.numbers(text).elements(), key=lambda s: (len(s), s))
         elif op == "numberWords":
             expected = align.english_number_words(text)
+        elif op == "variantKey":
+            expected = align.variant_key(scope or "")
         else:
             raise ValueError(op)
         row = {"id": id_, "op": op, "text": text, "scope": scope, "allowlist": AL, "expected": expected}
@@ -86,10 +119,14 @@ def to_lua(rows: list[dict]) -> str:
     al = ", ".join(lua_string(a) for a in AL)
     for r in rows:
         scope = lua_string(r["scope"]) if r["scope"] is not None else "nil"
-        exp = ", ".join(lua_string(e) for e in r["expected"])
+        # a key is one string; every other op expects a list
+        if isinstance(r["expected"], str):
+            exp = lua_string(r["expected"])
+        else:
+            exp = "{ " + ", ".join(lua_string(e) for e in r["expected"]) + " }"
         lines.append(
             f"  {{ id = {lua_string(r['id'])}, op = {lua_string(r['op'])}, text = {lua_string(r['text'])}, "
-            f"scope = {scope}, allowlist = {{ {al} }}, expected = {{ {exp} }} }},"
+            f"scope = {scope}, allowlist = {{ {al} }}, expected = {exp} }},"
         )
     lines.append("} }")
     return "\n".join(lines) + "\n"
