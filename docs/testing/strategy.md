@@ -698,9 +698,9 @@ Tooltip lines that include another spell's text, an inline spell icon, or a bran
    ```
    **Pass:** the English under Alt shows one of the two texts and no bracket, and the Japanese says that one; or English with the missing marker. **Fail:** a bracket or both texts in the English (the claim is wrong; the line should then be English, never Japanese), or Japanese for the other branch.
 8. **`$@null`** (claim (e)): nothing to check. Spell 348779's own line prints nothing and ships nothing.
-9. **A list after a multi-line head** (claim (f)). A Shaman's totem list (Call of Earth and its kin) or a Paladin's "you currently have access to" list (spell 1323522) on any character (the Riding skills, 33388 and 33391, keep their rejected hand-written lines and stay English until the maintainer rules those out):
+9. **A list after a multi-line head** (claim (f)). A Shaman's totem list (Call of Earth and its kin) or a Paladin's "you currently have access to" list (spell 1323522), or Apprentice Riding (spell 33388) on any character:
    ```
-   /run GameTooltip:SetOwner(UIParent,"ANCHOR_CURSOR") GameTooltip:SetSpellByID(1323772) GameTooltip:Show()
+   /run GameTooltip:SetOwner(UIParent,"ANCHOR_CURSOR") GameTooltip:SetSpellByID(33388) GameTooltip:Show()
    /run GameTooltip:SetOwner(UIParent,"ANCHOR_CURSOR") GameTooltip:SetSpellByID(1323522) GameTooltip:Show()
    ```
    **Pass:** the head (its several lines) in Japanese with the same line breaks as the English under Alt, then the list lines exactly as the English shows them (names and icons, in English, byte for byte); or English with the missing marker. **Fail:** a list line translated or missing, a head line left English inside the Japanese, or the Japanese head and the list joined on one line.

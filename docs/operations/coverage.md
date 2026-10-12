@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-12 at commit `525f697d`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-12 at commit `eb23304d`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -15,9 +15,9 @@
 | Quest objective lines | 428 | 390 | 38 | 100.0% | 0 |
 | Exploration / event objectives | 223 | 221 | 2 | 100.0% | 0 |
 | Item descriptions | 10,201 | 8,671 | 0 | 85.0% | 1,530 |
-| Spell tooltips + auras | 25,648 | 25,574 | 1 | 99.7% | 73 |
+| Spell tooltips + auras | 25,648 | 25,576 | 1 | 99.7% | 71 |
 | Interface strings | 15,906 | 15,906 | 0 | 100.0% | 0 |
-| **All** | **85,072** | | | **98.1%** | **1,603** |
+| **All** | **85,072** | | | **98.1%** | **1,601** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
 professions, internal strings): quest 331, gossip 81, item 893, spell 300, ui 313.
@@ -44,7 +44,6 @@ professions, internal strings): quest 331, gossip 81, item 893, spell 300, ui 31
 | Spell tooltips + auras | no Japanese yet: the template includes a spell the Forever tables do not hold | 35 |
 | Spell tooltips + auras | no Japanese yet: no text from the Forever tables on this build yet (English still from Classic Era); rechecked at each re-pull | 23 |
 | Spell tooltips + auras | no Japanese yet: the template has too many optional parts for one translation | 8 |
-| Spell tooltips + auras | rejected: ruled_reject | 2 |
 | Spell tooltips + auras | no Japanese yet: the template names the aura's caster, which only the game knows | 2 |
 | Spell tooltips + auras | no Japanese yet: the template includes an aura without saying which spell's | 2 |
 | Spell tooltips + auras | no Japanese yet: the template does not say how many values it prints | 1 |

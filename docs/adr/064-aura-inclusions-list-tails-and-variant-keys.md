@@ -102,10 +102,9 @@ Each fails closed: if a claim is wrong the line shows English, never wrong text.
 ## Consequences
 
 - About 180 of the 227 lines become draftable and ship Japanese: boss and raid debuffs built from another spell's
-  aura, the weapon-skill tables, the class ability lists (the names in the list stay the client's English), and
-  the talents with two wordings. About 50 stay English, each counted under its reason in `coverage.md`. The two
-  Riding skills (33388, 33391) are tail rows now, but each still carries a rejected hand-written line, which a
-  machine draft never replaces without a ruling; they stay English until the maintainer rules those lines out.
+  aura, the weapon-skill tables, the Riding and class ability lists (the names in the list stay the client's
+  English), and the talents with two wordings. About 50 stay English, each counted under its reason in
+  `coverage.md`.
 - Nothing that shipped before changes: old slots carry no `key`, old tails have a one-line head, and generate
   output for every previously shipped slot is byte-identical.
 - The data format grows additively: a branch slot may carry a `key` table beside `shape`. Reverting the PR re-emits
