@@ -1,21 +1,19 @@
-# ADR-064: Interface lines with links, colour-wrapped names, plural groups and set bonuses; a line stays English only on a proven reason
+# ADR-067: Interface lines with links, colour-wrapped names and plural groups; a line stays English only on a proven reason
 
 - **Status:** Accepted
 - **Date:** 2026-10-12
 - **Amends:** [ADR-016](016-whole-window-interface-coverage.md) §10 (links barred from the dictionary), [ADR-031](031-objective-lines-menus-and-helptips.md) §4 (the curation test forbids `|H`), [ADR-035](035-ui-errors-frame-surface.md) (a chat line whose English carries a link stays English).
-- **Related:** [ADR-014](014-machine-drafted-text-and-ui-dictionary.md) (the UI dictionary) · [ADR-015](015-ui-text-surfaces.md) (one dictionary, targeted hooks) · [ADR-037](037-staticpopup-dialogs-and-owned-keys.md) (dialogs whose caller formats the line) · [ADR-052](052-coverage-by-served-data.md) (coverage from served data) · [Addon modules](../architecture/addon-modules.md) · [Coverage](../operations/coverage.md)
+- **Related:** [ADR-014](014-machine-drafted-text-and-ui-dictionary.md) (the UI dictionary) · [ADR-015](015-ui-text-surfaces.md) (one dictionary, targeted hooks) · [ADR-037](037-staticpopup-dialogs-and-owned-keys.md) (dialogs whose caller formats the line) · [ADR-066](066-recipe-and-set-bonus-lines-from-the-tooltip-data.md) (the set bonus lines) · [ADR-052](052-coverage-by-served-data.md) (coverage from served data) · [Addon modules](../architecture/addon-modules.md) · [Coverage](../operations/coverage.md)
 
 ## Context
 
-`pipeline/ui_exclusions.txt` is the list of interface strings the addon leaves English, each with a reason. Four hundred and two of those reasons were weak: "a retail-era system, unverified in game", "colour / link / texture markup (curation rule)", "not matched in v1", "messages are not covered", or a reason that was simply wrong (the set bonus lines were called "not a single tooltip line"; they are one line each). Nothing checked those reasons against the Forever client, so a line the client does show on Forever (the account bank's title, the quest log's story header, the newcomer chat hint, the cross-faction invite words) stayed English for no reason a reader could verify.
+`pipeline/ui_exclusions.txt` is the list of interface strings the addon leaves English, each with a reason. Four hundred and two of those reasons were weak: "a retail-era system, unverified in game", "colour / link / texture markup (curation rule)", "not matched in v1", "messages are not covered", or a reason that was simply wrong (the set bonus lines were called "not a single tooltip line"; they are one line each, shown since by ADR-066). Nothing checked those reasons against the Forever client, so a line the client does show on Forever (the account bank's title, the quest log's story header, the newcomer chat hint, the cross-faction invite words) stayed English for no reason a reader could verify.
 
 Three of the old reasons were rules, not facts:
 
 - **Links.** The dictionary never carried a `|H…|h…|h` link except one static URL. Every system chat line with a player or loot-history link (a friend coming online, a loot roll, the level-up line) and every dialog with a store link stayed English, even though the words outside the link are ordinary prose.
 - **Colour codes around a name.** A template like `|cff00ff00<Made by %s>|r` was refused as markup. The client sometimes prints the same line without the colour code, with the colour set on the line instead, so one shipped form could not match both.
 - **Plural groups.** `%d |4day:days;` was admitted in principle, but the keys that carried one had been left out on the markup reason.
-
-And one reason was a wrong model of the client: a set bonus line, `(2) Set: +4 Stamina.`, is `ITEM_SET_BONUS_GRAY` around the description of the set's bonus spell, printed by the compiled client. The bonus text is a spell description the addon already ships in Japanese; only the mapping from the item to its set and from the set to its spells was missing.
 
 ## Decision
 
@@ -27,7 +25,7 @@ And one reason was a wrong model of the client: a set bonus line, `(2) Set: +4 S
 
 4. **A plural group is English-only.** The Japanese drops the `|4singular:plural;` group and keeps the specifier (`%d |4day:days;` is `%d日`); the addon matches the English in its singular and plural forms as before (ADR-016 §10). The plural keys left out on the markup reason are listed.
 
-5. **A set bonus line shows whole or not at all.** `Core/SetBonus.lua` (pure) resolves an item tooltip's `Set: <bonus>` / `(N) Set: <bonus>` line: the generated `Data/ItemSets.lua` maps each served item to its set and each set to its bonus spells in threshold order, so the k-th set line of a tooltip is the k-th spell of the item's set, and a gray line's count must equal that spell's threshold. The line is matched only by key (`ITEM_SET_BONUS`, `ITEM_SET_BONUS_GRAY` and the boss banner's `BOSS_BANNER_LOOT_SET`, which shares "Set: %s", are in `UIStrings.ONLY`), so no other surface ever shows half of it. The bonus text (captured whole, kind `verbatim`) goes through the same gate as a spell tooltip (the Translator's align check over the live text) and is replaced by the spell's shipped Japanese; a bonus whose spell ships no Japanese, whose numbers do not fit, or whose count is not the spell's threshold leaves the whole line English, never `セット: +4 Stamina.`. The line is an interface line on the item tooltip: it follows the interface area switch and the reveal key like every structural tooltip line, while the bonus text is the spell's Japanese whatever the spell tooltip switch says. `pipeline/wfj/dev/item_sets.py` (`make item-sets`) reads the client's `ItemSet` and `ItemSetSpell` tables into `pipeline/item_sets.txt` (committed, re-run per build; the column map is checked by layout hash), and `wfj generate` keeps the sets with an item Forever serves. All 267 bonus spells of the 269 sets with a served item already had machine Japanese.
+5. **Set bonus lines are ADR-066's.** The set bonus keys were among the 402; their lines are shown by the tooltip-data path [ADR-066](066-recipe-and-set-bonus-lines-from-the-tooltip-data.md) decides (the client's own set spells, matched to the line's text), not here. `ITEM_SET_BONUS_NO_VALID_SPEC` stays English: every ItemSetSpell row on 1.60.1.70338 has ChrSpecID 0.
 
 6. **Coverage reports why the rest is English.** `make coverage` adds "Interface lines left English, by reason" to `docs/operations/coverage.md`: every exclusion counted under one reason category, and a reason no category recognises is listed, never dropped (`tests/python/test_coverage.py`).
 
@@ -52,7 +50,7 @@ The translated keys needed hooks on the surfaces that write them. Each hook has 
 | Friends (`UI/MenusTags`) | `TRAVEL_PASS_INVITE_CROSS_FACTION`, `SUGGEST_INVITE_CROSS_FACTION`, `REQUEST_INVITE_CROSS_FACTION` | the travel pass menu |
 | Communities, guild, petition, raid, talents, report frame, PvP match | the cross-faction member lines, the challenge reward hover, the arena petition instructions, the story raid lock reason, the refund error, the housing report categories, the matchmaking value line | each module's existing `only` lists |
 | Popups (`UI/Popups`) | `REMOVE_FRIEND_CONFIRMATION`, `BATTLETAG_REMOVE_FRIEND_CONFIRMATION`, `REMOVE_TITLE_FRIEND_CONFIRMATION` | the `CONFIRM_REMOVE_BN_FRIEND` dialog, whose caller formats the line (pass-through, ADR-037) |
-| Item tooltips (`UI/Tooltip`) | `ITEM_SET_BONUS`, `ITEM_SET_BONUS_GRAY`, `ITEM_CREATED_BY`, `ITEM_WRAPPED_BY`, `MINIMUM`, `MAXIMUM`, the dual-wield comparison lines, the cooldown, enchant time-left and charges lines | the structural pass; a whole-line colour is matched without its codes first |
+| Item tooltips (`UI/Tooltip`) | `ITEM_CREATED_BY`, `ITEM_WRAPPED_BY`, `MINIMUM`, `MAXIMUM`, the dual-wield comparison lines, the cooldown, enchant time-left and charges lines | the structural pass; a whole-line colour is matched without its codes first |
 | System chat (`UI/ChatSystem`) | the loot roll lines, `ERR_FRIEND_ONLINE_SS`, the invite lines, `LEVEL_UP`, `COUNTDOWN_SET` / `_CLEAR`, the newcomer welcome, the trial restriction notices | `CHAT_FAMILIES` |
 
 ## Consequences
@@ -60,8 +58,6 @@ The translated keys needed hooks on the surfaces that write them. Each hook has 
 - 202 more interface lines ship Japanese, with word readings and meanings; 201 stay English, each with a reason a reader can check in the client's files or tables. The coverage report says how many stay English and why.
 - A chat line with a link shows Japanese around the English link; the link, its label and its arguments are exactly as the client wrote them. Holding the reveal key shows the English line.
 - A new build that moves a cited line number does not break anything by itself; the proof goes stale and the next re-judging updates it. A new build that adds content behind a table counted at zero (an item upgrade, a bonus roll) is caught by re-running `make forever-table-counts`.
-- `pipeline/item_sets.txt` is one more file to regenerate per build (`make item-sets`), beside the table counts. A set a new build adds ships English bonus lines until the file is regenerated.
-- The set bonus line depends on the client printing bonuses in threshold order, one line per bonus spell. A tooltip whose set lines do not follow that order would show the wrong spell's Japanese only if its text also passed the align check against the live bonus; the check compares numbers and names, so a mismatch leaves the line English.
 - A positional specifier inside a link stays refused by design (`link_refused`). A line that is only a link and its label stays English for another reason: it has no words to translate, and the UI lint fails a draft with no Japanese in it.
 - Rollback is a PR revert; the dictionary rows it leaves behind are harmless.
 
@@ -69,5 +65,4 @@ The translated keys needed hooks on the surfaces that write them. Each hook has 
 
 - **Keep links out of the dictionary and translate the words around a link at run time, from a second template with the link cut out.** Two templates per line, and the addon would have to rebuild the link's arguments from a line it did not match whole. Keeping the link in the English and in the Japanese is one template and one byte-for-byte check.
 - **Allow positional specifiers inside a link.** The Japanese would have to keep the link's argument order while reordering the sentence's; `format` cannot mix numbered and plain specifiers, so the whole line would need numbering and the link would no longer be byte for byte. Refused; the one line that needed it is not in the client's loaded files.
-- **Ship the set bonus text as its own `ui` entries.** It is the set spell's description, already shipped and gated as a spell line; a second copy would drift from it. The item → set → spells map is the only new data.
 - **Hand-check the 402 keys in game.** Nobody can reach every surface on one character, and a check proves presence, not absence. A client file and line, or a table row count, proves either and can be re-run per build.

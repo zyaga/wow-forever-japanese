@@ -39,6 +39,10 @@ UIStrings.ARGS = {
   ITEM_WRITTEN_BY = { [1] = "text" }, ITEM_LIMIT_CATEGORY = { [1] = "text" },
   ITEM_LIMIT_CATEGORY_MULTIPLE = { [1] = "text" }, TOOLTIP_TALENT_TIER_POINTS = { [2] = "text" },
   ITEM_COOLDOWN_TIME = { [1] = "time" }, ITEM_COOLDOWN_TOTAL = { [1] = "time" },
+  -- an item set's bonus line not yet active: the bonus spell's description, a sentence; UI/Tooltip puts that
+  -- spell's Japanese in. The active line's "Set: %s" is BOSS_BANNER_LOOT_SET's English too, so it is declared as that
+  -- key is; UI/Tooltip reads it by its prefix, never through this template
+  ITEM_SET_BONUS = { [1] = "text" }, ITEM_SET_BONUS_GRAY = { [2] = "verbatim" },
   -- a quest's title inside a system line ("The Balance of Nature completed."): its Japanese title when exactly one
   -- quest title answers it (UIStrings.questTitle, set by UI/TooltipUnit), else as written
   ERR_QUEST_ACCEPTED_S = { [1] = "questTitle" }, ERR_QUEST_COMPLETE_S = { [1] = "questTitle" },
@@ -205,7 +209,6 @@ UIStrings.ARGS = {
   ITEM_DISENCHANT_MIN_SKILL = { [1] = "text" }, REAGENT_COST_CONSUME_CHARGES = { [1] = "text" },
   REAGENT_COST_CONSUME_SINGLE_CHARGE = { [1] = "text" }, MAP_TOOLTIP_TIME_LEFT = { [1] = "entryOrText" },
   BONUS_OBJECTIVE_TIME_LEFT = { [1] = "entryOrText" }, WAYPOINT_OBJECTIVE_FORMAT_OPTIONAL = { [1] = "text" },
-  ITEM_SET_BONUS = { [1] = "verbatim" }, ITEM_SET_BONUS_GRAY = { [2] = "verbatim" },
   DUEL_TO_THE_DEATH_REQUESTED = { [1] = "text", [2] = "text" },
   -- GetResSicknessDuration's C-side string, kept as written
   CONFIRM_XP_LOSS = { [1] = "text" },
@@ -260,7 +263,7 @@ UIStrings.ARGS = {
   MAC_MIC_PREMISSIONS_NOTIFICATION = { [1] = "text" }, CAA_DEBUFF_SELF_ALERT_FORMAT_DEBUFF_TYPE = { [1] = "word" },
   PREFERRED_PLAY_SETTINGS_LOCKED_REASON_FORMAT = { [1] = "time" }, GUILD_REPUTATION_WARNING = { [1] = "text" },
   GUILD_ACHIEVEMENTS_ELIGIBLE = { [3] = "text" }, GUILD_ACHIEVEMENTS_ELIGIBLE_MINXP = { [3] = "text" },
-  GUILD_ACHIEVEMENTS_ELIGIBLE_MAXXP = { [1] = "text" }, BOSS_BANNER_LOOT_SET = { [1] = "verbatim" },
+  GUILD_ACHIEVEMENTS_ELIGIBLE_MAXXP = { [1] = "text" }, BOSS_BANNER_LOOT_SET = { [1] = "text" },
   LOSS_OF_CONTROL_DISPLAY_INTERRUPT_SCHOOL = { [1] = "word" }, AUTOFOLLOWSTART = { [1] = "text" },
   AUTOFOLLOWSTOP = { [1] = "text" }, READY_CHECK_MESSAGE = { [1] = "text" },
   -- error keys whose English is another surface's template. One template is compiled per distinct English
@@ -673,11 +676,10 @@ UIStrings.ONLY = { COOLDOWN_VIEWER_SETTINGS_ACTION_ADD_ALERT = true,
   -- "%s Reputation" and "%s Unbound" would take any line ending in that word: the quest reward row and the click
   -- binding window ask for them by key
   QUEST_REPUTATION_REWARD_TITLE = true, CLICK_BINDING_UNBOUND_OUTPUT = true,
-  -- "Set: %s" takes any text after it: a set bonus line is shown only whole, through the set spell's Japanese
-  -- (UI/Tooltip asks by key), and the boss banner asks for its own; never "セット: +4 Stamina."
-  ITEM_SET_BONUS = true, ITEM_SET_BONUS_GRAY = true, BOSS_BANNER_LOOT_SET = true,
   -- "%s Player" would take any line ending in "Player": the communities roster tooltip asks for it by key
   COMMUNITIES_CROSS_FACTION_BUTTON_TOOLTIP_TITLE = true,
+  -- a set bonus line is translated only with its spell's Japanese (UI/Tooltip setBonuses), never around the English
+  ITEM_SET_BONUS_GRAY = true,
   -- "%s in %s" and "%s by %s": two free-text halves around one short word would split any sentence without a
   -- period at that word and show the halves in the Japanese order ("Cannot change equip status while in combat"
   -- in an item tooltip became "combatのCannot change equip status while"); the death recap asks for its own by key

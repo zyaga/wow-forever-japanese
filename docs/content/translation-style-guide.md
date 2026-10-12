@@ -153,7 +153,41 @@ EN   Absorbs $s1 Fire damage$?s11094[ and grants a $s2% chance to reflect Fire s
 JA   $N1のFireダメージを吸収します$?s11094[。さらに$N2%の確率でFireの呪文と効果を反射します][]。効果時間は$D1です。
 ```
 
-A row whose branches could not be told apart on screen (Tiger's Fury: the same "Requires Cat Form" in white or red) is never handed to you. If the Japanese of two branches would read identically where the English differs, say so rather than guessing.
+A row whose branches differ only in colour (Tiger's Fury: the same "Requires Cat Form" in white or red) is never handed to you. A row whose branches differ only in their **words**, with the same values, is: translate each branch faithfully to its own wording, and where the only difference is a plural (`$lsecond:seconds;` against the bare word) write the same Japanese in both brackets. The addon tells such branches apart by their wording, not by their numbers.
+
+```
+EN   $?s436895[Increases all damage you deal by $s1%.][Increases the damage you deal with physical attacks in all forms by $s1%.]
+     slots 2 · branches 2
+JA   $?s436895[与えるすべてのダメージが$N1%増加します。][すべての形態での物理攻撃によるダメージが$N2%増加します。]
+```
+
+A weapon skill's table carries `$?expandkey[…][]`: the first branch is the rows the client adds when the tooltip is expanded, the else is empty. Keep the skeleton and translate the rows inside it as they stand:
+
+```
+EN   Hit, Dodge, and Parry: ${$<hdp>}.1%$?expandkey[
+     Hit, Dodge, and Parry: ${$<hdp1>}.1%][]        (a weapon skill's table, shortened)
+     slots 2 · branches 2
+JA   命中・回避・受け流し：$N1%$?expandkey[
+     命中・回避・受け流し：$N2%][]
+```
+
+A blank line between a branch and its else (`[A]`, a blank line, `[B]`) belongs to the English's layout: keep it in the Japanese, between the same brackets.
+
+### Name-list tails
+
+A row with `"tail": true` ends, in the English, in a list of spell names the character knows, one per line (Languages, Armor Proficiency, the Riding skills, a Shaman's totems, a Paladin's or Hunter's abilities). The row shows you the **head** only; the list is never translated, since it prints names the client writes in English. Translate the head, keep its line breaks (the Japanese head has exactly as many as the English head), and end in `$T` as the one last token. Never write the list, a `$?` or a `$@` yourself.
+
+```
+EN   You are fluent in the following languages:
+JA   次の言語に堪能です：$T
+EN   Allows you to ride basic ground mounts that require a riding skill of 75.
+
+     Known abilities:
+     slots 1
+JA   騎乗スキル$N1が必要な基本的な地上騎乗動物に乗れるようになります。
+
+     習得済みの能力：$T
+```
 
 ### Names and fixed words in tooltips
 

@@ -50,7 +50,7 @@ def rows(
     lines: Iterable[dict[str, Any]],
     female: dict[tuple[int, str], tuple[str, str]] | None = None,
     masked: dict[tuple[int, str], tuple[str, str, str | None]] | None = None,
-    branches: dict[tuple[int, str], list[tuple[str, str]]] | None = None,
+    branches: dict[tuple[int, str], list[tuple[str, ...]]] | None = None,
 ) -> dict[int, list[str]]:
     """{id: [slot literals…]} for a numeric-id type; ids with no shipped field are absent.
     `female` (quest only): (id, field) → (English hash, female-variant key). A row with any field
@@ -115,9 +115,10 @@ def rows(
 _FILLED = re.compile(r"\$[ND]\d")
 
 
-def variants_literal(variants: list[tuple[str, str]] | dict[str, Any]) -> str:
-    """A branch line's slot: its variants' Japanese, then their shapes (`<values>/<durations>`). A sectioned
-    line (`generate._sections`) ships `{ sections = { head, hkey, { n, key, ja, shape }… } }` instead."""
+def variants_literal(variants: list[tuple[str, ...]] | dict[str, Any]) -> str:
+    """A branch line's slot: its variants' Japanese, then their shapes (`<values>/<durations>`), then, for a
+    keyed line (variant, shape, key), their keys. A sectioned line (`generate._sections`) ships
+    `{ sections = { head, hkey, { n, key, ja, shape }… } }` instead."""
     if isinstance(variants, dict):
         secs = ", ".join(
             f"{{ n = {s['n']}, key = {lua_string(s['key'])}, ja = {lua_string(s['ja'])}, "
@@ -126,9 +127,10 @@ def variants_literal(variants: list[tuple[str, str]] | dict[str, Any]) -> str:
         )
         head, hkey = lua_string(variants["head"]), lua_string(variants["hkey"])
         return f"{{ sections = {{ head = {head}, hkey = {hkey}, {secs} }} }}"
-    texts = ", ".join(lua_string(ja) for ja, _ in variants)
-    shapes = ", ".join(lua_string(shape) for _, shape in variants)
-    return f"{{ {texts}, shape = {{ {shapes} }} }}"
+    texts = ", ".join(lua_string(v[0]) for v in variants)
+    shapes = ", ".join(lua_string(v[1]) for v in variants)
+    keys = ", ".join(lua_string(v[2]) for v in variants if len(v) > 2)
+    return f"{{ {texts}, shape = {{ {shapes} }}{f', key = {{ {keys} }}' if keys else ''} }}"
 
 
 def _female_of(
@@ -364,17 +366,4 @@ def vectors_text(rows: list[dict], head: str = "return") -> str:
             f"key = {lua_string(r['key'])} }},"
         )
     lines.append("} }")
-    return "\n".join(lines) + "\n"
-
-
-def item_sets_text(sets: dict[int, list[tuple[int, int]]], items: dict[int, int]) -> str:
-    """`Data/ItemSets.lua`: `WFJ.Data.itemSets[set id] = { spell id, threshold, … }` (threshold order) and
-    `WFJ.Data.setItems[item id] = set id`, both sorted by id."""
-    lines = [HEADER.format(src="pipeline/item_sets.txt"), "local _, WFJ = ...", "WFJ.Data.itemSets = {"]
-    for set_id in sorted(sets):
-        pairs = ", ".join(f"{spell}, {threshold}" for spell, threshold in sets[set_id])
-        lines.append(f"  [{set_id}] = {{ {pairs} }},")
-    lines += ["}", "WFJ.Data.setItems = {"]
-    lines += [f"  [{item}] = {items[item]}," for item in sorted(items)]
-    lines.append("}")
     return "\n".join(lines) + "\n"

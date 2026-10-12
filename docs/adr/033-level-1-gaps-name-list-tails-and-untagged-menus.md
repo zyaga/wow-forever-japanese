@@ -106,6 +106,14 @@ Four of them need a design decision:
 - **List each `%%` key in its plain-text form ("100%")**: rejected. It duplicates the English and breaks when the
   client's string changes; the client already prints it through `format()`.
 
+## Amended by ADR-064
+
+[ADR-064](064-aura-inclusions-list-tails-and-variant-keys.md) widens decision 1: the tail chain may be any
+condition whose branches hold only spell icons, spell names, whitespace and colour codes, and the head may span
+several lines (the Riding skills, the Shaman totem lists, the Paladin and Hunter ability lists). The Japanese head
+keeps the English head's line breaks (`tail_breaks`), and `Align.splitTail` cuts the live text after as many breaks
+as the Japanese head has. A one-line head behaves as written here.
+
 ## Related
 
 - [ADR-007: unaligned ships with a runtime gate](007-unaligned-ships-with-runtime-gate.md)

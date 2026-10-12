@@ -21,7 +21,6 @@ import argparse
 import sys
 from pathlib import Path
 
-from wfj.dev.item_sets import TABLES as ITEM_SET_TABLES
 from wfj.io import casc, db2, dbcache
 
 # The sweep §5 tables, and TraitSubTree (hero talents), with their FileDataIDs: the root of this client
@@ -60,13 +59,14 @@ TABLES: dict[str, int] = {
     "DelvesSeason": 5920079,
     "TraitSubTree": 5534447,
     # the systems the interface lines left English ask about: bonus rolls, item upgrades, quest lines,
-    # crafting orders, transmog sets; and the item sets behind the set bonus lines (ItemSet / ItemSetSpell)
+    # crafting orders, transmog sets, and the item sets and their bonus spells (ItemSet / ItemSetSpell)
     "BonusRoll": 1983274,
     "ItemUpgrade": 801687,
     "QuestLine": 973430,
     "CraftingOrder": 4529122,
     "TransmogSet": 1376213,
-    **ITEM_SET_TABLES,
+    "ItemSet": 1343609,
+    "ItemSetSpell": 1314689,
     "ChrClasses": 1361031,
 }
 

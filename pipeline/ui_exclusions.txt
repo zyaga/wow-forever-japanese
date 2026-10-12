@@ -401,7 +401,7 @@ ITEM_REQ_PURCHASE_ACHIEVEMENT  # no Forever UI file writes it: a retail / other-
 ITEM_REQ_PURCHASE_GUILD  # no Forever UI file writes it: a retail / other-expansion tooltip line Vanilla content never produces (verified absent from the Forever UI extract)
 ITEM_REQ_PURCHASE_GUILD_LEVEL  # no Forever UI file writes it: a retail / other-expansion tooltip line Vanilla content never produces (verified absent from the Forever UI extract)
 ITEM_REQ_SPECIALIZATION  # no Forever UI file writes it: a retail / other-expansion tooltip line Vanilla content never produces (verified absent from the Forever UI extract)
-ITEM_SET_BONUS_NO_VALID_SPEC  # not on Forever: every set bonus row of a served set has ChrSpecID 0 (ItemSetSpell, 759 rows of the 269 served sets, pipeline/item_sets.txt), so no set bonus depends on a specialization
+ITEM_SET_BONUS_NO_VALID_SPEC  # not on Forever: every ItemSetSpell row has ChrSpecID 0 (1477 rows on 1.60.1.70338, the client's own table), so no set bonus depends on a specialization
 ITEM_SET_LEGACY_INACTIVE_BONUS  # no Forever UI file writes it: a retail / other-expansion tooltip line Vanilla content never produces (verified absent from the Forever UI extract)
 ITEM_SET_NAME  # permanent: no words of its own: "%s (%d/%d)" is a set name and counts (blizzard_collections/shared/blizzard_wardrobe_sets.lua:164)
 ITEM_SOCKETABLE  # no Forever UI file writes it: a retail / other-expansion tooltip line Vanilla content never produces (verified absent from the Forever UI extract)
@@ -943,6 +943,8 @@ TIMESTAMP_FORMAT_HHMM_AMPM  # regex noise, not a displayed string: a strftime pa
 TIME_TWELVEHOURAM  # a clock value, not a label: "%d:%02d AM" is the realm / local time GameTime_GetFormattedTime writes beside the clock tooltip's labels and on the calendar (blizzard_framexmlutil/gametimeutil.lua); times keep the client's format
 TIME_TWELVEHOURPM  # a clock value, not a label: "%d:%02d PM" is the realm / local time GameTime_GetFormattedTime writes beside the clock tooltip's labels and on the calendar (blizzard_framexmlutil/gametimeutil.lua); times keep the client's format
 TOKEN_FILTER_LABEL  # a name: the "WoW Token" product, the auction house category camelot creates for it (camelot/blizzard_auctiondata.lua:215)
+TOOLTIP_ITEM_STAT_FORMAT  # a bare layout string (colour, number, stat word), no words of its own; the stat word it holds is its own key
+TOOLTIP_ITEM_STAT_RANGE_FORMAT  # a bare layout string (colour, range, stat word), no words of its own; the stat word it holds is its own key
 TOOLTIP_RAID_CLASS_BUTTON  # no registrable owner: the class-button tooltip is anchored with GameTooltip_SetDefaultAnchor(GameTooltip, UIParent) (Blizzard_RaidUI.lua:124, 144); registering UIParent would walk every default-anchored tooltip
 TORGHAST_REROLL_COUNT  # not displayed on Forever: a tooltip line of TorghastPlayerChoiceToggleButton (playerchoicetogglebutton.lua:211–215), shown only for a Torghast choice (ShouldShow by textureKit, :40–46); Forever's client tables carry no Torghast content (docs/research/2026-09-19-forever-window-sweep.md, finding 5)
 TORGHAST_REROLL_TIP  # permanent: a Torghast HelpTip on the player-choice toggle (blizzard_playerchoice/blizzard_playerchoicetogglebutton.lua:196), a Shadowlands system with no Classic-content counterpart; its siblings TORGHAST_REROLL_* are excluded the same way

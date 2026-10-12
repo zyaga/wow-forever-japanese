@@ -126,7 +126,10 @@ def has_prose(en: str) -> bool:
 
 def _cuttable(kind: str, en: str) -> bool:
     """A title-case kind is never a bare label ("Blackrock Menace" is still a title to translate), nor is a
-    tooltip line ("Soft Like Pudding" is flavour text); any other line needs prose."""
+    tooltip line ("Soft Like Pudding" is flavour text); any other line needs prose. A template that prints
+    nothing (`$@null`, spliced away) has nothing to translate."""
+    if not en.strip():
+        return False
     return kind in TITLE_CASE_KINDS or kind in TEMPLATE_KINDS or has_prose(en)
 
 
@@ -289,7 +292,7 @@ def _annotate_branches(row: dict[str, Any]) -> None:
     """A `$?` template: the Japanese keeps its conditionals and numbers `$N` / `$D` over the WHOLE template,
     every branch's values included (`align.branching`). `slots` / `durations` are those whole-template
     counts and `branches` the number of variants. A row whose branches cannot be written, or whose English
-    variants the addon could never show one of (`align.never_shown`, the pre-draft check), keeps
+    variants the addon could never show one of (`align.unshowable`, the pre-draft check), keeps
     `slots: None` and says why in `dropped`."""
     b = align.branching(row["en"])
     if b.reason:
@@ -297,8 +300,9 @@ def _annotate_branches(row: dict[str, Any]) -> None:
         return
     texts = [v.en for v in b.variants]
     pairs = align.indistinguishable(texts, texts, [v.shape for v in b.variants], set(), english=True)
-    # a sectioned line's paragraphs are told apart by their opening words, not by which variant passes
-    if not b.sectioned and align.never_shown(pairs, len(texts)):
+    # a sectioned line's paragraphs are told apart by their opening words, not by which variant passes; a
+    # line whose wordings differ only in their words is told apart by their keys (`align.variant_keys`)
+    if not b.sectioned and align.unshowable(pairs, b.variants):
         row[_DROPPED] = "branches_indistinguishable"
         return
     row["slots"] = b.slots
@@ -316,7 +320,7 @@ def spell_english(data: Path) -> dict[tuple[int, str], str]:
 def expand_included(
     kind: str, lines: list[dict[str, Any]], spells: dict[tuple[int, str], str]
 ) -> tuple[list[dict[str, Any]], list[tuple[dict[str, Any], str]]]:
-    """A template line (ADR-043) that includes another spell's text (`$@spelldesc<id>`,
+    """A template line (ADR-043) that includes another spell's text (`$@spelldesc<id>`, `$@spellaura<id>`,
     `$@spellicon`, `$@spellname`) and cannot be counted as it is gets that text spliced in, so the drafter
     translates the line the client shows. Lines the slot model already counts are untouched (a name-list
     tail's `$@spellname` stays as it is). → (lines, [(line, reason)] for the ones that cannot be expanded)."""

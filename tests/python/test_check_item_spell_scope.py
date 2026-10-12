@@ -177,3 +177,17 @@ def test_a_change_to_an_included_spell_marks_the_line_stale(tmp_path):
     store.save("item", [_en(117, "description", TEMPLATE)])
     plain = check_type([line | {"english": None}], build_scopes(store, "item"), set(), Included(store))[0]
     assert plain["status"] == "unaligned" and "includes" not in plain["english"]
+
+
+def test_a_name_list_tail_after_a_multi_line_head_records_no_includes(tmp_path):
+    """The names in a list tail are copied from the live line, never translated, so a change to one of
+    those spells does not make the line stale: only the head's inclusions are recorded."""
+    from wfj.cmd.check import Included
+
+    en = "Allows you to ride.\r\n\r\nKnown abilities:$?s824[\r\n$@spellname824][]$?s825[\r\n$@spellname825][]"
+    store = Store(tmp_path, english=True)
+    store.save("spell", [_en(33388, "description", en), _en(824, "name", "Apprentice Riding")])
+    line = entry(33388, "description", "乗れます。\n\n習得済み：$T", prov=PROV)
+    line["status"], line["english"] = "unaligned", {"hash": key(normalize_v1(en)), "src": WAGO}
+    out = check_type([line], build_scopes(store, "spell"), set(), Included(store))[0]
+    assert out["status"] == "unaligned" and "includes" not in out["english"]

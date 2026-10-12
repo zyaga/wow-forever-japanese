@@ -32,7 +32,7 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
-from wfj.core import readings
+from wfj.core import align, readings
 from wfj.dev import counts as readme_counts
 from wfj.dev import served_dispositions
 from wfj.dev.served_columns import inventory_build, read_inventory
@@ -86,7 +86,33 @@ def nothing_to_translate(type_: str, en: str, title: str | None, field: str = ""
             return "a bare label: names and numbers only (ships as the English)"
     if type_ == "quest" and field != "title" and not has_prose(en):
         return "a bare label: a name or a one-word placeholder (ships as the English)"
+    if type_ in ("item", "spell") and "$@null" in en and not align.NULL.sub("", en).strip():
+        return "a template that prints nothing (`$@null`)"  # spell 348779, which exists to be included
     return None
+
+
+# why a tooltip template cannot be drafted, in the reader's words: one class per reason `translate_batch`
+# gives, never one row per spell id
+_TEMPLATE_REASONS = {
+    "missing_included_spell": "includes a spell the Forever tables do not hold",
+    "unsupported_code:$@auracaster": "names the aura's caster, which only the game knows",
+    "unsupported_code:$@spellaura": "includes an aura without saying which spell's",
+    "too_many_variants": "has too many optional parts for one translation",
+    "branches_indistinguishable": "has wordings the addon could not tell apart on screen",
+    "unclosed_branch": "has a conditional the pipeline cannot read",
+    "uncountable": "does not say how many values it prints",
+}
+
+
+def template_reason(reason: str) -> str:
+    """The plain reason class for a `translate_batch.undraftable` reason (`missing_included_spell:998` is
+    the class `missing_included_spell`)."""
+    plain = _TEMPLATE_REASONS.get(reason) or _TEMPLATE_REASONS.get(reason.split(":", 1)[0])
+    if plain:
+        return plain
+    if reason.startswith("unsupported_code:"):
+        return "uses a template code the pipeline cannot place (" + reason.split("$@", 1)[-1] + ")"
+    return "cannot be drafted (" + reason.replace(":", " ").replace("$", "") + ")"
 
 
 UI_EXCLUDED = "left out with its reason in `pipeline/ui_exclusions.txt`"
@@ -240,7 +266,7 @@ def measure(root: Path) -> dict[str, Any]:
                             " (English still from Classic Era); rechecked at each re-pull")
                 block = blocked.get((type_, ln["id"], ln["field"])) if j is None else None
                 if block:
-                    wait = f": the template uses a code drafting cannot place yet ({block})"
+                    wait = f": the template {template_reason(block)}"
                 missing[_why(j) + wait] += 1
                 if not wait and (j is None or not j.get("reasons")):
                     uncounted += 1

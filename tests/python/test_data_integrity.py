@@ -300,8 +300,9 @@ AUDIT_RULING_DATE = "2026-09-26"
 
 def test_every_rejected_hand_written_line_with_english_is_accounted_for(root):
     """Every line with English and hand-written text that ships nothing was read and corrected, accepted or
-    redrafted. What is left stays English by an existing rule (the tooltip audit's rulings). Tiger's Fury
-    ("Requires Cat Form" in white or red) ships as branch variants."""
+    redrafted. Whatever is left stays English by an existing rule (the tooltip audit's rulings); since the
+    Riding skills were redrafted nothing is left. Tiger's Fury ("Requires Cat Form" in white or red) ships
+    as branch variants."""
     from wfj.core import decisions
 
     left = []
@@ -315,7 +316,7 @@ def test_every_rejected_hand_written_line_with_english_is_accounted_for(root):
     # drafted, ship the English, each ruled by the audit. Tiger's Fury (5217) ships: its red variant shows
     # Japanese, the white one English.
     audit = left
-    assert ("spell", 5217, "description") not in left and 0 < len(audit) <= 40
+    assert ("spell", 5217, "description") not in left and len(audit) <= 40
     for type_, id_, field in audit:
         ln = next(x for x in Store(root / "data").load(type_) if x["id"] == id_ and x["field"] == field)
         assert all(

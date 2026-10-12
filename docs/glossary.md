@@ -318,27 +318,32 @@ _Avoid_: pluralization token, `|4` code (fine in code, not as the term)
 **Link-only line**:
 A [[UI string]] whose only words are a link's label: `|HlootHistory:%d|h[Loot]|h: %s` (the loot roll header), `%s |Hreportcensoredmessage:%s|h[Report]|h`. A link is kept byte for byte, label included, so such a line has nothing to translate and stays English, with the reason "no words outside the link" in `pipeline/ui_exclusions.txt`. A line with words outside its link is translated around the link.
 _Avoid_: link label (that is the part inside the link), static link (the old rule: only a link that never changed was listed)
-→ [ADR-064](adr/064-ui-lines-with-links-colour-wrapped-names-plural-groups-and-set-bonuses.md)
+→ [ADR-067](adr/067-ui-lines-with-links-colour-wrapped-names-and-plural-groups.md)
 
 **Bare form**:
 A colour-wrapped [[UI string]] template with its colour codes taken out: `<Made by %s>` for `|cff00ff00<Made by %s>|r`. The client prints some lines either way (the colour on the line instead of in the text), so the [[UI dictionary]] indexes both forms and fills the bare one with the Japanese's colour codes stripped. A bare form never names a dialog's template.
 _Avoid_: stripped template, plain form, uncoloured variant
-→ [Addon modules](architecture/addon-modules.md) · [ADR-064](adr/064-ui-lines-with-links-colour-wrapped-names-plural-groups-and-set-bonuses.md)
-
-**Set bonus**:
-An item tooltip's `Set: <bonus>` or `(N) Set: <bonus>` line: the description of the item set's bonus spell, printed by the compiled client in threshold order, grey with its count until enough pieces are worn. The addon maps the item to its set and the set to its spells (`pipeline/item_sets.txt`, generated `Data/ItemSets.lua`) and shows the line through the spell's shipped [[Tooltip text]], as a whole line or not at all; a bonus whose spell has no Japanese, or whose count is not the spell's threshold, stays English.
-_Avoid_: set effect, tier bonus, set line (the set's name line, "Devilsaur Armor (1/2)", is a name and stays as written)
-→ [ADR-064](adr/064-ui-lines-with-links-colour-wrapped-names-plural-groups-and-set-bonuses.md)
+→ [Addon modules](architecture/addon-modules.md) · [ADR-067](adr/067-ui-lines-with-links-colour-wrapped-names-and-plural-groups.md)
 
 **Proven reason**:
 The reason a [[UI key]] stays out of `pipeline/ui_keys.txt`, written in `pipeline/ui_exclusions.txt`, when it names something a reader can check: a Forever client file and line, a client table's row count or absence on the current build, a spell id against `SpellName`, a disposition file, another key that ships the same English, or the line being a name, a [[Link-only line]] or wordless markup. A test holds every re-judged key to its verdict and refuses the old unproven phrases ("unverified in game", "curation rule").
 _Avoid_: exclusion reason (any reason), curation rule, in-game check (a check proves presence, not absence)
-→ [Coverage](operations/coverage.md) · [ADR-064](adr/064-ui-lines-with-links-colour-wrapped-names-plural-groups-and-set-bonuses.md)
+→ [Coverage](operations/coverage.md) · [ADR-067](adr/067-ui-lines-with-links-colour-wrapped-names-and-plural-groups.md)
 
 **Enchantment stat line**:
 A tooltip line an enchantment or random suffix prints as a signed amount and words ("+3 Fire Spell Damage", "+5 Stamina"): a [[UI string]] keyed `SpellItemEnchantment:<id>` whose English is that enchantment's display text. Matched by fingerprint. An enchantment's *name* ("Crusader") is a name, never one of these.
 _Avoid_: random suffix (the "of the Eagle" part of an item name), enchant name, stat mod, `ITEM_MOD_*_SHORT` (a different, unused key family)
 → [Data model](architecture/data-model.md) · [ADR-016](adr/016-whole-window-interface-coverage.md)
+
+**Item stat line**:
+A line in an item's [[Description run]] that the [[UI dictionary]] translates whole: `Equip: ` + an `ITEM_MOD_*` template, or a line the Forever client writes from any `TOOLTIP_ITEM_STAT_*` string, with or without "Equip:" ("Equip: Improves your chance to hit by 1%.", "+%1$d Armor", "+%1$d to All Resistances"). Shown line by line when the item has no Japanese of its own, and an item whose only text is such lines never waits in the [[Collector]]. `Index:statLine` is the one test.
+_Avoid_: stat line on its own (reads as a [[Structural line]]), enchantment stat line (a different family)
+→ [Addon modules](architecture/addon-modules.md) · [ADR-066](adr/066-recipe-and-set-bonus-lines-from-the-tooltip-data.md)
+
+**Set bonus line**:
+A tooltip line an item set adds for one of its bonuses: "(2) Set: …" while the bonus is not active (`ITEM_SET_BONUS_GRAY`), "Set: …" once it is (`ITEM_SET_BONUS`). The text after the prefix is a bonus spell's description, so the line shows the set wrapper's Japanese with that spell's Japanese inside, or stays English whole when no bonus spell fits.
+_Avoid_: set line, set effect
+→ [ADR-066](adr/066-recipe-and-set-bonus-lines-from-the-tooltip-data.md)
 
 **Spell subtext**:
 The short word under a spell's name in the spellbook ("Racial Passive", "Summon", "Tier 2"): the Spell table's `NameSubtext_lang`, not a global string. A prose subtext is a [[UI string]] keyed `SpellSubtext:<spellID>` with one representative spell per distinct English, shown on every spell with that subtext by [[Fingerprint match]]. A subtext that is a name (a pet family "Cat", a form) is never listed ([[Name policy]]). Not "Passive" or "Rank 3": those the client writes from global strings (`SPELL_PASSIVE`, `RANK`).
@@ -361,12 +366,12 @@ _Avoid_: widget template, token row, `$N` token (that is a [[Value placeholder]]
 → [Pipeline](systems/pipeline.md) · [Addon modules](architecture/addon-modules.md) · [ADR-042](adr/042-client-table-text-families.md)
 
 **Name-list tail**:
-The end of a spell description that lists names rather than prose: a chain of `$?s<id>[<line break>$@spellname<id>][]`, one line per spell the character knows, each that spell's name (Languages: "Common", "Dwarvish"; Armor Proficiency: "Mail"). The Japanese translates only the text before it and ends in the placeholder **`$T`**; the addon appends the client's live lines from the first line break on, so the names stay [[Live English]] ([[Name policy]]). Only a chain that is the description's trailing run counts.
-_Avoid_: spell list, name list, `$@spellname` chain (fine in code, not as the term), tail flag (the shipped data has none; `$T` carries it)
-→ [Data model](architecture/data-model.md) · [Pipeline](systems/pipeline.md) · [ADR-033](adr/033-level-1-gaps-name-list-tails-and-untagged-menus.md)
+The end of a spell description that lists names rather than prose: a chain of conditionals, each with an empty else, whose branches hold only a spell's name (and its icon), one line per spell the character knows (Languages: "Common", "Dwarvish"; Armor Proficiency: "Mail"; the Riding skills, the Shaman totem lists and the Paladin and Hunter ability lists). The Japanese translates only the head before it, keeps the head's line breaks and ends in the placeholder **`$T`**; the addon cuts the client's live text after as many line breaks as the Japanese head has and appends the lines after it as they are, so the names stay [[Live English]] ([[Name policy]]). Only a chain that is the description's trailing run counts, and the head holds no conditional of its own.
+_Avoid_: list tail, spell list, name list, `$@spellname` chain (fine in code, not as the term), tail flag (the shipped data has none; `$T` carries it)
+→ [Data model](architecture/data-model.md) · [Pipeline](systems/pipeline.md) · [ADR-033](adr/033-level-1-gaps-name-list-tails-and-untagged-menus.md) · [ADR-064](adr/064-aura-inclusions-list-tails-and-variant-keys.md)
 
 **Included text**:
-Another spell's text that a tooltip template prints in place: `$@spelldesc<id>` (that spell's description), `$@spelltooltip<id>` (its buff text), `$@spellname<id>` (its name, which stays English: [[Name policy]]). The pipeline splices the included spell's English into the English the drafter reads (nested inclusions too, up to four deep), so the entry's Japanese translates the whole line as one sentence and its [[Value placeholder]]s count the included values where they stand. The entry records the included spells' English hashes (`english.includes`); a change to any of them makes it [[Stale]]. A missing spell, a cycle or any other `$@` code leaves the entry English.
+Another spell's text that a tooltip template prints in place: `$@spelldesc<id>` (that spell's description), `$@spelltooltip<id>` or `$@spellaura<id>` (its buff text), `$@spellname<id>` (its name, which stays English: [[Name policy]]); the id may stand in angle brackets. The pipeline splices the included spell's English into the English the drafter reads (nested inclusions too, up to four deep), so the entry's Japanese translates the whole line as one sentence and its [[Value placeholder]]s count the included values where they stand. The entry records the included spells' English hashes (`english.includes`); a change to any of them makes it [[Stale]]. `$@null` prints nothing and is spliced away; `$@expandkey[A]` is read as a [[Branch variant]] pair (with and without A). A missing spell, a cycle, `$@auracaster` or a `$@spellaura` with no id leaves the entry English.
 _Avoid_: inclusion (fine in code, not as the term), embedded spell, spell reference, sub-description
 → [Pipeline](systems/pipeline.md) · [Data model](architecture/data-model.md) · [ADR-043](adr/043-included-text-icons-and-branch-variants.md)
 
@@ -381,9 +386,14 @@ _Avoid_: signature, arity, slot count (that is the whole template's)
 → [Addon modules](architecture/addon-modules.md) · [ADR-043](adr/043-included-text-icons-and-branch-variants.md)
 
 **Shadowed variant**:
-A [[Branch variant]] that another variant of the same entry also passes on. On the line where it is shown, a second variant's Japanese passes the [[Alignment check]] too (no shape, name or number tells them apart), so the addon shows the English there. It still ships: dropping it would let the other variant pass alone on that line and show the wrong branch. An entry is refused only when **every** variant is shadowed, so nothing could ever show (`branches_indistinguishable`; Tiger's Fury's white / red "Requires Cat Form" is shadowed on one line, not refused).
+A [[Branch variant]] that another variant of the same entry also passes on. On the line where it is shown, a second variant's Japanese passes the [[Alignment check]] too (no shape, name or number tells them apart), so the addon shows the English there. It still ships: dropping it would let the other variant pass alone on that line and show the wrong branch. An entry is refused only when **every** variant is shadowed, so nothing could ever show (`branches_indistinguishable`; Tiger's Fury's white / red "Requires Cat Form" is shadowed on one line, not refused), and even then it ships when each variant has a [[Variant key]].
 _Avoid_: indistinguishable variant (the refusal is for the whole entry), duplicate, dead branch
 → [Pipeline](systems/pipeline.md) · [ADR-043](adr/043-included-text-icons-and-branch-variants.md)
+
+**Variant key**:
+The hash that tells apart [[Branch variant]]s whose wordings print the same numbers (the Druid feral talents' "Increases all damage you deal by N%" against "Increases the damage you deal with physical attacks in all forms by N%"): each variant's English with its icons removed and every value, range and duration masked, normalized and hashed. Shipped beside the variants (`key`, next to the [[Variant shape]]) only for an entry whose variants would otherwise all be [[Shadowed variant]]s; the addon masks the [[Live English]] line the same way and shows only the variant whose key it equals. A hash, never the English. A variant that prints a word the template does not name (a plural or gender code) has no key, and its entry stays refused.
+_Avoid_: wording hash, branch key, text key, English key (nothing English ships)
+→ [Pipeline](systems/pipeline.md) · [Addon modules](architecture/addon-modules.md) · [ADR-064](adr/064-aura-inclusions-list-tails-and-variant-keys.md)
 
 **UI dictionary**:
 The set of shipped [[UI string]]s, and the addon's index over them (`Core/UIStrings`, `WFJ.UIIndex`) built once at load: exact strings, templates, and labels, from which every interface surface looks up the line or widget it just saw. One dictionary for every surface; new coverage on a hooked surface is dictionary rows, not code.

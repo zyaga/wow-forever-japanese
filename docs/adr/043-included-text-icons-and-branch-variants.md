@@ -114,6 +114,14 @@ Claims about the client this design rests on ([principle 9](../architecture/prin
 - **Drop shadowed variants.** Rejected: the shadowing variant would then pass alone on the shadowed variant's
   line and show the wrong branch.
 
+## Amended by ADR-064
+
+[ADR-064](064-aura-inclusions-list-tails-and-variant-keys.md) widens decision 1 (`$@spellaura<id>` is spliced, ids
+may stand in angle brackets, `$@null` splices nothing, `$@expandkey[A]` reads as `$?expandkey[A][]`), lets
+`parse_branches` accept whitespace around a conditional's brackets, and adds **variant keys** to decision 6: a line
+whose variants are all shadowed ships when each variant has a distinct key (a hash of its masked English) that the
+addon matches against the live line. A slot without `key` behaves as written here.
+
 ## Amendment (2026-10-03): sectioned lines
 
 A line with more than `MAX_VARIANTS` combinations is still shipped when it has one shape: a heading paragraph with

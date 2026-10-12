@@ -3,7 +3,10 @@
 -- Pure: every world access is an injected dep (Main wires them); no frame access (lint-core-gate).
 --   Collector.load(saved, deps) → the table to keep in WFJ_Collector
 --     deps = { enabled(), lookup(kind, id) → {h1}|nil, player() → {name, class, race}, build() → string|nil,
---              print(msg), beta() → true on a beta client (optional) }
+--              print(msg), beta() → true on a beta client (optional),
+--              aligns(entry, lines) → true when the tooltip gate shows `entry`'s Japanese for these lines
+--              (optional; without it no item or spell line is covered),
+--              statLine(text) → true when the dictionary shows this item stat line in Japanese (optional) }
 --   Collector.record(kind, id, field, raw) → result[, reason]   never raises
 --     "off" · "known" · "seen" · "recorded" · "replaced" · "capped" · "refused", reason · "error", message
 --   Collector.recordGossip(raw, guid) → result[, reason]   never raises (keyed by the gossip key, `n` = NPC ids)
@@ -13,9 +16,11 @@
 --   Collector.fingerprints(raw, player, masked) → each candidate's h1, inconclusive: the quest live check
 --     (ADR-019); `masked`: digit runs `#` first, for a quest line filled from live values
 --   Collector.recordNpc(guid, name) · Collector.disclose() · Collector.status() · Collector.clear()
---   Collector.unsentCount() → #Collector.pending() without building or sorting the list
+--   Collector.unsentCount() → the lines Collector.pending() carries, NPC names left out, without building the list
 --   Collector.pending(all) → the entries a send carries, sorted by key: { { key, entry }, … } (unsent ones, or every
---     one with `all`), leaving out lines that ship in Japanese now; and how many were left out for that
+--     one with `all`), leaving out lines the addon shows in Japanese now; how many were left out for that; their
+--     { key, h }; and how many NPC names ride along (only with at least one line, or with `all`)
+--   Collector.prune() → how many entries a newer addon covers were dropped, with their sent rows
 --   Collector.markSent(list) · list = { { key = …, h = … }, … }: the player sent these (the `sent` map)
 --   Collector.buildName(b) → the build string an entry's `b` points at
 --   Collector.onDisk(key, h) → whether the saved file holds that entry (it was loaded with it) · isReadOnly()
@@ -326,9 +331,36 @@ local function withNpc(entry, npc)
   return out
 end
 
--- Whether Japanese ships for this English: `e` is the stored text, `h1` its first hash half. Gossip is looked up
--- under each key in `keys`; an NPC name never ships in Japanese (names stay English).
-local function shipped(kind, id, field, e, h1, keys)
+local function escaped(s)
+  return (s:gsub("%%", "%%%%"))
+end
+
+-- The texts a stored quest line may have been on screen: each of `$C` / `$R` kept, or the recording character's
+-- word from `p` ("Class|Race") as written or lowercased. Recording turns the reader's own class or race into the
+-- token, so a Warrior stores "the warrior trainer" as "the $C trainer"; the shipped English says it literally.
+local function questForms(e, p)
+  local class, race
+  if type(p) == "string" then class, race = p:match("^(.-)|(.*)$") end
+  local function choices(token, word)
+    if not e:find(token, 1, true) or type(word) ~= "string" or word == "" then return { token } end
+    return { token, word, word:lower() }
+  end
+  local out = {}
+  for _, c in ipairs(choices("$C", class)) do
+    for _, r in ipairs(choices("$R", race)) do
+      out[#out + 1] = (e:gsub("%$C", escaped(c)):gsub("%$R", escaped(r)))
+    end
+  end
+  return out
+end
+
+-- Whether the addon shows Japanese for this English: `e` is the stored text, `h1` its first hash half, `p` the
+-- recording character's "Class|Race" (a line holding $C / $R). Gossip is looked up under each key in `keys`; an
+-- NPC name never ships in Japanese (names stay English). A quest line is the shipped English when one of its forms
+-- hashes to the shipped h1 (masked when the Japanese is filled from live values: the count is the server's, a
+-- rewording is new English). An item or spell line is recorded with the client's numbers filled in, so no hash
+-- can match its template: it is covered when the tooltip gate itself accepts the Japanese for it.
+local function covered(kind, id, field, e, h1, p, keys)
   if kind == "gossip" then
     for _, k in ipairs(keys) do
       if deps.lookup("gossip", k) then return true end
@@ -337,15 +369,49 @@ local function shipped(kind, id, field, e, h1, keys)
   end
   if kind == "npc" then return false end
   local entry = deps.lookup(kind .. "." .. field, id) -- field-qualified: spell has two fields
-  if entry and (entry.h1 == h1 or (entry.h1f ~= nil and entry.h1f == h1)) then return true end
-  -- a shipped quest line filled from the live values (`$N<k>` for `Collect $1oa …`) ships a masked h1
-  -- (`fingerprints(…, masked)`): the count is the server's, a rewording is new English.
-  -- Item / spell templates are recorded this way too.
-  if kind == "quest" and entry and type(entry.ja) == "string" and entry.ja:find("%$[ND]%d") then
-    local m1 = Hash.h32x2(Collector.mask(Normalize.v1(e)))
-    if entry.h1 == m1 or (entry.h1f ~= nil and entry.h1f == m1) then return true end
+  if type(entry) ~= "table" then
+    -- an item with no text of its own shows its "Equip:" stat lines through the dictionary (UI/Tooltip): covered
+    -- when every line is one of them
+    if kind ~= "item" or type(deps.statLine) ~= "function" then return false end
+    for seg in (e .. "$B$B"):gmatch("(.-)%$B%$B") do
+      if not deps.statLine(seg) then return false end
+    end
+    return true
   end
-  return false
+  if entry.h1 == h1 or (entry.h1f ~= nil and entry.h1f == h1) then return true end
+  if kind == "quest" then
+    local masked = type(entry.ja) == "string" and entry.ja:find("%$[ND]%d") ~= nil
+    for _, text in ipairs(questForms(e, p)) do
+      local norm = Normalize.v1(text)
+      if masked then norm = Collector.mask(norm) end
+      local m1 = Hash.h32x2(norm)
+      if entry.h1 == m1 or (entry.h1f ~= nil and entry.h1f == m1) then return true end
+    end
+    return false
+  end
+  if type(deps.aligns) ~= "function" or entry.ja == "" then return false end
+  if entry.ja == nil and entry.variants == nil and entry.sections == nil then return false end
+  local lines = {}
+  for seg in (e .. "$B$B"):gmatch("(.-)%$B%$B") do lines[#lines + 1] = seg end
+  return deps.aligns(entry, lines) == true
+end
+
+-- A stored entry through `covered`.
+local function storedCovered(e)
+  return covered(e.t, e.i, e.f, e.e, tonumber(e.h:sub(1, 8), 16), e.p, { e.h })
+end
+
+-- Removes entry `key` and its sent row from the file, with their size. → true when there was one
+local function drop(key)
+  local e = db.entries[key]
+  if not e then return false end
+  db.bytes = db.bytes - Collector.size(key, e.e, e.n, e.p)
+  if type(db.sent) == "table" and db.sent[key] ~= nil then
+    db.bytes = db.bytes - Collector.sentSize(key)
+    db.sent[key] = nil
+  end
+  db.entries[key], onDisk[key] = nil, nil
+  return true
 end
 
 -- kind "gossip": `id` and `key` are derived from the text; `npc` is the speaker's creature id or nil.
@@ -386,7 +452,16 @@ local function evaluate(kind, id, field, raw, key, npc)
     id, key = h, "gossip:" .. h .. ":text"
   end
   -- gossip: the key is the hash, and a row shipped under any candidate key is this English
-  if shipped(kind, id, field, e, h1, kind == "gossip" and Collector.keys(raw, player) or nil) then return "known" end
+  if covered(kind, id, field, e, h1, who, kind == "gossip" and Collector.keys(raw, player) or nil) then
+    -- the line as the game shows it now ships in Japanese: an older recording under the same key goes only when
+    -- it is covered too (another wording, a class's conditional text, stays until it is)
+    local old = db.entries[key]
+    if old then
+      local ok, yes = pcall(storedCovered, old)
+      if ok and yes and drop(key) then db.capped = false end
+    end
+    return "known"
+  end
 
   local old = db.entries[key]
   local n = kind == "gossip" and npc and { npc } or nil
@@ -641,41 +716,69 @@ end
 -- ── Send ───────────────────────────────────────────────────────────────────
 
 -- The entries a send carries, sorted by key: those not sent yet (a line replaced since it was sent counts as not
--- sent), or every entry with `all`. A line that ships in Japanese now is left out and counted: the collector recorded
--- it before a release translated it. → { { key = …, entry = … }, … }, the number left out, their { key, h }
+-- sent), or every entry with `all`. A line the addon shows in Japanese now is left out and counted: the collector
+-- recorded it before a release translated it. NPC names never need Japanese, so they are no reason to send: they
+-- ride along with at least one line (or with `all`) for the English store.
+-- → { { key = …, entry = … }, … }, the number left out, their { key, h }, the number of NPC names in the list
 function Collector.pending(all)
-  local out, left, leftList = {}, 0, {}
-  if not db or not deps or readOnly or type(db.entries) ~= "table" then return out, left, leftList end
+  local out, left, leftList, names = {}, 0, {}, {}
+  if not db or not deps or readOnly or type(db.entries) ~= "table" then return out, left, leftList, 0 end
   local sent = type(db.sent) == "table" and db.sent or {}
   for key, e in pairs(db.entries) do
     if all or sent[key] ~= e.h then
-      local h1 = tonumber(e.h:sub(1, 8), 16)
-      local ok, yes = pcall(shipped, e.t, e.i, e.f, e.e, h1, { e.h })
-      if ok and yes then
-        left = left + 1
-        leftList[left] = { key = key, h = e.h }
+      if e.t == "npc" then
+        names[#names + 1] = { key = key, entry = e }
       else
-        out[#out + 1] = { key = key, entry = e }
+        local ok, yes = pcall(storedCovered, e)
+        if ok and yes then
+          left = left + 1
+          leftList[left] = { key = key, h = e.h }
+        else
+          out[#out + 1] = { key = key, entry = e }
+        end
       end
     end
   end
+  local riding = 0
+  if #out > 0 or all then
+    for _, item in ipairs(names) do out[#out + 1] = item end
+    riding = #names
+  end
   table.sort(out, function(x, y) return x.key < y.key end)
-  return out, left, leftList
+  return out, left, leftList, riding
 end
 
--- How many entries a send would carry now: Collector.pending()'s length without building or sorting the list
--- (the minimap menu asks on every open). → number
+-- How many lines a send would carry now, NPC names left out: what the reminder, the minimap button and the status
+-- show, without building or sorting the list (the minimap menu asks on every open). → number
 function Collector.unsentCount()
   if not db or not deps or readOnly or type(db.entries) ~= "table" then return 0 end
   local sent = type(db.sent) == "table" and db.sent or {}
   local n = 0
   for key, e in pairs(db.entries) do
-    if sent[key] ~= e.h then
-      local ok, yes = pcall(shipped, e.t, e.i, e.f, e.e, tonumber(e.h:sub(1, 8), 16), { e.h })
+    if sent[key] ~= e.h and e.t ~= "npc" then
+      local ok, yes = pcall(storedCovered, e)
       if not (ok and yes) then n = n + 1 end
     end
   end
   return n
+end
+
+-- Drops every entry the addon shows in Japanese now (a newer addon covers it) and its sent row, so the file holds
+-- only what is still missing; a line the game reworded is not covered and stays. Main runs it once the data and
+-- the tooltip gate's duration strings exist. A file from a newer version is never written; an entry whose check
+-- raises is kept. → the number dropped
+function Collector.prune()
+  if not db or not deps or readOnly or type(db.entries) ~= "table" then return 0 end
+  local covers = {}
+  for key, e in pairs(db.entries) do
+    if e.t ~= "npc" then
+      local ok, yes = pcall(storedCovered, e)
+      if ok and yes then covers[#covers + 1] = key end
+    end
+  end
+  for _, key in ipairs(covers) do drop(key) end
+  if #covers > 0 then db.capped = false end -- space was freed
+  return #covers
 end
 
 -- Whether the saved file on disk holds this entry with this hash: it was in the file when the addon loaded it.

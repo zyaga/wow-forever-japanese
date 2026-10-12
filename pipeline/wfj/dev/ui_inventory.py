@@ -37,11 +37,12 @@ FAMILIES = re.compile(
     r"^(ITEM_|CHANCE_TO_|INVTYPE_"
     r"|SPELL_(CAST|RECAST|RANGE|REAGENTS|TOTEMS|ON_NEXT|REQUIRED_FORM|EQUIPPED|SCHOOL\d_CAP)"
     r"|[A-Z]+_COST(_|$)|[A-Z_]*DAMAGE_TEMPLATE|SINGLE_DAMAGE|PLUS_DAMAGE|DPS_TEMPLATE|ARMOR_TEMPLATE|SHIELD_BLOCK"
-    r"|DURABILITY_TEMPLATE|MELEE_RANGE$|TOOLTIP_TALENT|RANK$|SPEED$|SELL_PRICE$|CURRENTLY_EQUIPPED$"
+    r"|DURABILITY_TEMPLATE|MELEE_RANGE$|TOOLTIP_TALENT|TOOLTIP_ITEM_STAT_|RANK$|SPEED$|SELL_PRICE$|CURRENTLY_EQUIPPED$"
     r"|FACTION_STANDING_LABEL\d$|CONTAINER_SLOTS$"
     # the socket lines (the GemSocket line kind) and the loot-trade window line (TradeTimeRemaining)
     r"|EMPTY_SOCKET|SOCKET_ITEM_|BIND_TRADE_TIME_REMAINING$)"
 )
+_UI_KEY = re.compile(r"^[A-Z][A-Z0-9_]*$")
 _NAMES = re.compile(
     r'text="([A-Z][A-Z0-9_]+)"|value="([A-Z][A-Z0-9_]+)" type="global"'
     # a bare name, or one in a `..NAME..` concatenation, never a field (`t.NAME`)
@@ -320,7 +321,11 @@ def inventory(
     if "settingspanel" in windows:  # the key bindings page (the quick keybind tooltip uses the same list)
         rows |= {("settingspanel", k) for k in binding_keys(addons, strings, index)}
 
-    rows |= {("tooltip", k) for k, v in strings.items() if FAMILIES.match(k) and v.strip()}
+    # a name a UI key cannot be (a TOOLTIP_ITEM_STAT_SKILL_TWO-HANDED_* string holds a hyphen) is left out:
+    # the dictionary keys every line by a global name of letters, digits and underscores (core/model.py)
+    rows |= {
+        ("tooltip", k) for k, v in strings.items() if FAMILIES.match(k) and _UI_KEY.match(k) and v.strip()
+    }
     return sorted(rows)
 
 

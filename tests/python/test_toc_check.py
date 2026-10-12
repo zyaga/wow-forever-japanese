@@ -19,7 +19,7 @@ def test_real_toc_fields_and_load_order(root):
     # Dependency order as shipped: Core, then Data, the generated block, the Lookup slot, then the UI modules.
     head = ["Core/ErrorLog.lua", "Core/Const.lua", "Core/Compat.lua", "Core/Normalize.lua", "Core/Hash.lua", "Core/Data.lua"]
     tail = [
-        "Core/Lookup.lua", "Core/SetBonus.lua", "Core/Readings.lua", "Core/Glosses.lua",
+        "Core/Lookup.lua", "Core/Readings.lua", "Core/Glosses.lua",
         "Core/Align.lua", "Core/State.lua", "Core/Settings.lua",
         "Core/Voice.lua",  # the voice packs' registry, before the settings that read it
         "Core/VoiceQueue.lua",  # the voice panel's order and choices
@@ -97,12 +97,12 @@ def test_real_toc_fields_and_load_order(root):
     ]
     assert files[: len(head)] == head and files[-len(tail) :] == tail
     generated = files[len(head) : -len(tail)]
-    assert generated[:3] == ["Data/Meta.lua", "Data/Vectors.lua", "Data/ItemSets.lua"]
+    assert generated[:2] == ["Data/Meta.lua", "Data/Vectors.lua"]
     assert all(f.startswith("Data/") and (root / "addon/WoWForeverJapanese" / f).is_file() for f in generated)
     assert generated == sorted(
         generated,
         key=lambda f: (
-            ["Meta", "Vectors", "ItemSets", "Quest", "Item", "Spell", "Objective", "Area", "Gossip", "Book", "UI", "Reading", "Gloss"].index(
+            ["Meta", "Vectors", "Quest", "Item", "Spell", "Objective", "Area", "Gossip", "Book", "UI", "Reading", "Gloss"].index(
                 f.split("/")[1].split("_")[0].replace(".lua", "")
             ),
             f,

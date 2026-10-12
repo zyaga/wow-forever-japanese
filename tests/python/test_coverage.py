@@ -127,6 +127,22 @@ def test_a_line_sharing_a_stale_file_counts_as_shared_not_silent(monkeypatch):
     assert sum(c.get("stale", 0) for c in after["kinds"].values()) > 0
 
 
+def test_a_template_that_prints_nothing_is_nothing_to_translate():
+    assert coverage.nothing_to_translate("spell", "$@null\r\n$@null", None, "description")
+    assert coverage.nothing_to_translate("spell", "$@null $@spelldesc5", None, "description") is None
+    assert coverage.nothing_to_translate("item", "$@nullify", None, "description") is None
+
+
+def test_the_lines_that_stay_english_are_counted_by_reason_class():
+    plain = coverage.template_reason
+    assert plain("missing_included_spell:407624") == plain("missing_included_spell:998")
+    assert "Forever tables" in plain("missing_included_spell:998")
+    assert plain("unsupported_code:$@auracaster") != plain("unsupported_code:$@spellaura")
+    assert "optional parts" in plain("too_many_variants")
+    for r in ("uncountable", "branches_indistinguishable", "unclosed_branch", "unsupported_code:$@other"):
+        assert plain(r) and ":" not in plain(r) and "$" not in plain(r)
+
+
 def test_every_ui_exclusion_has_one_reason_category(root: Path):
     """coverage.md counts the interface lines left English by the kind of reason: every reason in
     pipeline/ui_exclusions.txt falls in exactly one category (the first pattern that matches, in order), and

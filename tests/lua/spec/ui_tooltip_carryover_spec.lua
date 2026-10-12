@@ -13,6 +13,12 @@ local UI = {
   ITEM_SPELL_TRIGGER_ONEQUIP = { "Equip:", "装備時:" },
   ITEM_MOD_SPELL_POWER = { "Increases spell power by %s.", "呪文パワーが%s上昇。" },
   ITEM_MOD_HIT_RATING = { "Improves your chance to hit by %s%%.", "命中率が%s%%上昇。" },
+  -- Forever's own stat lines, written whole by the client
+  TOOLTIP_ITEM_STAT_SPELL_POWER_INCREASE = {
+    "Equip: Increases damage and healing done by magical spells and effects by up to %1$d.",
+    "装備時: 呪文と効果によるダメージと回復量が最大%1$d増加。" },
+  TOOLTIP_ITEM_STAT_CRIT_PERCENT_INCREASE = { "Equip: Improves your chance to get a critical strike by %1$.1f%%.",
+    "装備時: クリティカル率が%1$.1f%%上昇。" },
 }
 local RUN_JA = "【装備】翻訳済みの説明。"
 
@@ -84,6 +90,16 @@ describe("item tooltip carry-overs", function()
     assert.are.equal("Equip: Increases spell power by 12.", left(3):GetText())
     Stub.keys.alt = false; WFJ.Modifier.refresh()
     assert.are.equal("装備時: 呪文パワーが12上昇。", left(3):GetText())
+  end)
+
+  it("Forever's whole stat lines (TOOLTIP_ITEM_STAT_*) translate the same way, with no missing marker", function()
+    Stub.setItemTooltip(tt, "|Hitem:2311:0:0:0|h[White Leather Jerkin]|h", { "White Leather Jerkin", "Chest",
+      "Equip: Increases damage and healing done by magical spells and effects by up to 2.",
+      "Equip: Improves your chance to get a critical strike by 1.0%." })
+    assert.are.equal("装備時: 呪文と効果によるダメージと回復量が最大2増加。", left(3):GetText())
+    assert.are.equal("装備時: クリティカル率が1.0%上昇。", left(4):GetText())
+    assert.is_truthy(WFJ.UIIndex:statLine("Equip: Improves your chance to get a critical strike by 1.0%."))
+    assert.is_nil(WFJ.UIIndex:statLine("Use: Restores 500 health."))
   end)
 
   it("an untranslated item hovered with the modifier held gets its Equip lines on release, never the marker",

@@ -278,12 +278,6 @@ forever-table-counts: ## row counts of the no-content windows' client tables and
 	W="$$(cd "$(WOW_DIR)/.." && pwd)" && H="$(HOTFIXES)" && case "$$H" in ""|/*) ;; *) H="$$PWD/$$H";; esac && \
 		cd pipeline && $(PY) -m wfj.dev.table_counts --wow "$$W" --product "$(forever_PRODUCT)" $${H:+--hotfixes "$$H"}
 
-item-sets: ## regenerate pipeline/item_sets.txt (the item sets and their bonus spells, behind the set bonus tooltip lines) from the installed client (read-only; re-run per build; commit the result): WOW_DIR=<client folder>
-	@test -n "$(WOW_DIR)" || { echo "usage: make item-sets WOW_DIR=<client folder, e.g. .../World of Warcraft/_classic_beta_>"; exit 2; }
-	@test -d "$(WOW_DIR)" || { echo "item-sets: no folder $(WOW_DIR)"; exit 1; }
-	W="$$(cd "$(WOW_DIR)/.." && pwd)" && cd pipeline && \
-		$(PY) -m wfj.dev.item_sets --wow "$$W" --product "$(forever_PRODUCT)" > item_sets.txt.part && mv item_sets.txt.part item_sets.txt
-
 wdb-copy: ## copy the client's quest cache into WDB_QUEST, its client folder (read-only on the game folder): WOW_DIR=<client folder> [CLIENT=forever]
 	@test -n "$(WOW_DIR)" || { echo "usage: make wdb-copy WOW_DIR=<client folder holding Cache/, e.g. .../World of Warcraft/_classic_beta_> [CLIENT=forever]"; exit 2; }
 	@test -f "$(WOW_DIR)/Cache/WDB/enUS/questcache.wdb" || { echo "wdb-copy: no Cache/WDB/enUS/questcache.wdb under $(WOW_DIR) (did the client Exit Game?)"; exit 1; }

@@ -26,9 +26,9 @@ Website: [foreverjapanese.com](https://foreverjapanese.com)
 | NPC dialogue lines | 10,959 |
 | Book pages | 923 |
 | Letter pages | 209 |
-| Item tooltips | 9,183 |
-| Spell tooltips | 20,061 |
-| UI | 16,108 |
+| Item tooltips | 9,184 |
+| Spell tooltips | 20,153 |
+| UI | 16,260 |
 
 ## Install
 
@@ -235,9 +235,9 @@ World of Warcraft: Forever を日本語で遊べるようにするアドオン�
 | NPC の会話 | 10,959 行 |
 | 本 | 923 ページ |
 | 手紙 | 209 ページ |
-| アイテムのツールチップ | 9,183 |
-| 呪文のツールチップ | 20,061 |
-| UI | 16,108 |
+| アイテムのツールチップ | 9,184 |
+| 呪文のツールチップ | 20,153 |
+| UI | 16,260 |
 
 ### インストール
 

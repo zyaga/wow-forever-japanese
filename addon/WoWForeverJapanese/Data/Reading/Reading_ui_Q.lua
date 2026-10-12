@@ -40,7 +40,7 @@ WFJ.Data.add("reading", {
   ["ui:QUEST_PLAYERS_KILLED_NOPROGRESS"] = { text = "プレイヤー=プレイヤー=34800" },
   ["ui:QUEST_PREPEND"] = { text = "クエスト=クエスト=32656" },
   ["ui:QUEST_REPUTATION_REWARD_TITLE"] = { text = "評価=ひょうか=122235" },
-  ["ui:QUEST_REPUTATION_REWARD_TOOLTIP"] = { text = "評価=ひょうか=122235 獲得します=かくとくします=140190" },
+  ["ui:QUEST_REPUTATION_REWARD_TOOLTIP"] = { text = "評価=ひょうか=122235 獲得します=かくとくします=140205" },
   ["ui:QUEST_REWARDS"] = { text = "報酬=ほうしゅう=60821" },
   ["ui:QUEST_REWARDS_CONTAINS_ONE_TIME_REP_BONUS"] = { text = "アカウント=アカウント=31757 一度=いちど=36132 評判=ひょうばん=122265 ボーナス=ボーナス=34986 獲得=かくとく=100459" },
   ["ui:QUEST_REWARDS_IS_ONE_TIME_REP_BONUS"] = { text = "これ=これ=9127 アカウント=アカウント=31757 一度=いちど=36132 評判=ひょうばん=122265 ボーナス=ボーナス=34986" },

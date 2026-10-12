@@ -13,6 +13,9 @@ from collections import Counter
 from collections.abc import Mapping
 from dataclasses import dataclass, field
 
+from wfj.core.hashing import key as hash_key
+from wfj.core.normalize import normalize_v1
+
 NAME_RUN = re.compile(r"[A-Za-z][A-Za-z'’\-]{2,}")
 PLACEHOLDER = re.compile(r"\{(?:name|class|race)\}")
 # A whole run; "Mk12" yields nothing, not "2". An ENGLISH ordinal is that number: "40th level" reads as
@@ -57,29 +60,35 @@ _NOT_VALUE = re.compile(f"{WORD_CODE.pattern}|{ICON.pattern}")
 # inclusion rows against ~27,000 that count exactly, so `translate_batch` leaves these out, except a
 # conditional whose branches read the same apart from their numbers, counted as one.
 UNCOUNTABLE = re.compile(r"\$\?|\$@")
-# A NAME-LIST TAIL (ADR-033). Languages (1293657) and Armor Proficiency (1293712) end in a chain of
-# `$?s<id>[<line break>$@spellname<id>][]`: one line per spell the player knows, each printing that spell's
-# NAME. The chain is the description's trailing run; everything before it (the head) is an ordinary template.
-# The names are live English (names stay in English), so the Japanese is the head's translation followed
-# by `$T`: the addon copies the live lines from the first line break on, byte for byte (`Align.check`,
-# Core/Align.lua).
-NAME_LIST_TAIL = re.compile(r"(?:\$\?s\d+\[(?:\r\n|\n)\$@spellname\d+\]\[\])+\Z")
+# A NAME-LIST TAIL (ADR-033, widened by ADR-064). Languages (1293657) and Armor Proficiency (1293712) end in
+# a chain of `$?s<id>[<line break>$@spellname<id>][]`: one line per spell the player knows, each printing that
+# spell's NAME. The Riding skills, the Shaman totem lists and the Paladin / Hunter "you currently have access
+# to" lists end the same way, with an icon before the name and whitespace around the brackets, after a head
+# of several lines. The chain is the description's trailing run; everything before it (the head) is an
+# ordinary template holding no conditional of its own. The names are live English (names stay in English),
+# so the Japanese is the head's translation followed by `$T`: the addon copies the live lines after the
+# head's line breaks, byte for byte (`Align.splitTail`, Core/Align.lua).
+_TAIL_ITEM = r"(?:\s|\$@spell(?:icon|name)\d+|\|c[0-9A-Fa-f]{8}|\|r)*"
+# an element prints at least one name or icon: an empty branch would make the head a tail of nothing
+_TAIL_ELEMENT = rf"\$\?[^\s\[\]]+\s*\[{_TAIL_ITEM}\$@spell(?:icon|name)\d+{_TAIL_ITEM}\]\s*\[\]"
+NAME_LIST_TAIL = re.compile(rf"(?:\s*{_TAIL_ELEMENT})+\s*\Z")
 TAIL = "$T"
+_BREAK = re.compile(r"\r\n|\n")
 
 MIN_LEN = 3
 
 
 def split_tail(en: str) -> tuple[str, bool]:
     """(the head, whether a name-list tail was peeled off). The tail is peeled only when the chain is the
-    description's trailing run, the head before it is not empty, and the head is ONE line: the addon cuts the
-    live description at its first line break (`Align.splitTail`, Core/Align.lua), so a head that is itself
-    several lines could not be matched against it. Apprentice / Journeyman Riding (33388, 33391) end in the
-    same chain after a three-line head, and stay uncountable."""
+    description's trailing run and the head before it is not empty and holds no conditional: the addon cuts
+    the live description at the line break after the head's own (`Align.splitTail`), which a head that
+    branches could not be matched against. A line break right before the chain belongs to the tail, so a
+    head never ends in one."""
     m = NAME_LIST_TAIL.search(en or "")
     if m is None or m.start() == 0:
         return en or "", False
     head = en[: m.start()]
-    if "\n" in head or "\r" in head:
+    if "$?" in head:
         return en, False
     return head, True
 
@@ -89,8 +98,9 @@ def tail_problems(en: str, ja: str) -> list[str]:
     Japanese does not end in `$T`), `tail_unexpected` (a `$T` with no tail), `tail_misplaced` (a `$T` that is
     not the line's one last token), `tail_empty` (the Japanese is nothing but `$T`, which would render a blank
     head), `tail_chain` (the Japanese writes a chain element itself: a `$?` or `$@`, which the addon would
-    show raw). `[]` when the line is right."""
-    has_tail = split_tail(en)[1]
+    show raw), `tail_breaks` (the Japanese head has a different number of line breaks than the English head,
+    so the addon would cut the live text in the wrong place). `[]` when the line is right."""
+    head, has_tail = split_tail(en)
     n = (ja or "").count(TAIL)
     out: list[str] = []
     if UNCOUNTABLE.search(ja or ""):
@@ -103,6 +113,8 @@ def tail_problems(en: str, ja: str) -> list[str]:
         out.append("tail_unexpected")
     elif n and (n > 1 or not ja.endswith(TAIL)):
         out.append("tail_misplaced")
+    elif n and len(_BREAK.findall(head)) != len(_BREAK.findall(ja[: -len(TAIL)])):
+        out.append("tail_breaks")
     return out
 
 
@@ -485,8 +497,20 @@ def slot_problems(en: str, ja: str) -> list[str] | None:
 # the live line and nothing when none or several do (`Align.checkVariants`). It never evaluates the
 # condition itself.
 
-INCLUSION = re.compile(r"\$@([A-Za-z]+)(\d+)")
-_INCLUDED_FIELD = {"spelldesc": "description", "spelltooltip": "aura", "spellname": "name"}
+# the id may stand in angle brackets (`$@spelldesc<1243081>`), the same id [likely: the same spells pair
+# `$@spelldesc<id>` and `$@spellaura<id>` as the bare form does; in-game check in docs/testing/strategy.md]
+INCLUSION = re.compile(r"\$@([A-Za-z]+)<?(\d+)>?")
+# `$@spellaura<id>` prints spell <id>'s aura text [likely: every whole-line case pairs it with
+# `$@spelldesc<id>` in the same spell's description field; in-game check in docs/testing/strategy.md]
+_INCLUDED_FIELD = {
+    "spelldesc": "description", "spelltooltip": "aura", "spellaura": "aura", "spellname": "name",
+}
+# `$@null` prints nothing [likely: spell 348779 is `$@null` twice and exists only to be included]
+NULL = re.compile(r"\$@null(?![A-Za-z0-9])")
+# `$@expandkey[A]` prints A when the player expands the tooltip, else nothing [unverified; the addon picks by
+# the live line's shape, so any other rendering matches neither variant and the line stays English]: read as
+# a conditional with an empty else, so the weapon-skill tables ship a short and an expanded variant
+_EXPANDKEY = re.compile(r"\$@expandkey(?=\s*\[)")
 MAX_INCLUDE_DEPTH = 4
 MAX_VARIANTS = 16
 
@@ -504,17 +528,19 @@ class _Stop(Exception):
 
 
 def expand_inclusions(en: str, spell_english: Mapping[tuple[int, str], str]) -> Expansion:
-    """`en` with `$@spelldesc<id>` / `$@spelltooltip<id>` replaced by that spell's description / aura English
-    (recursively, `MAX_INCLUDE_DEPTH` deep), `$@spellname<id>` by its English name, and each `$@spellicon<id>`
-    by `$I1`, `$I2`… in reading order. `spell_english` maps (spell id, field) → raw English. A spell the
-    tables lack, a cycle, too deep a chain or any other `$@` code (`$@auracaster`: the caster's name) →
-    `Expansion(None, reason)`: the line stays English, listed with that reason."""
+    """`en` with `$@spelldesc<id>` / `$@spelltooltip<id>` / `$@spellaura<id>` replaced by that spell's
+    description / aura English (recursively, `MAX_INCLUDE_DEPTH` deep), `$@spellname<id>` by its English name,
+    each `$@spellicon<id>` by `$I1`, `$I2`… in reading order, `$@null` by nothing and `$@expandkey[` by
+    `$?expandkey[`. `spell_english` maps (spell id, field) → raw English. A spell the tables lack, a cycle,
+    too deep a chain or any other `$@` code (`$@auracaster`: the caster's name; a bare `$@spellaura` with no
+    id) → `Expansion(None, reason)`: the line stays English, listed with that reason."""
     icons = 0
 
     def walk(text: str, depth: int, seen: frozenset[int]) -> str:
         nonlocal icons
         out: list[str] = []
         at = 0
+        text = _EXPANDKEY.sub("$?expandkey", NULL.sub("", text))
         for m in INCLUSION.finditer(text):
             out.append(text[at:m.start()])
             at = m.end()
@@ -581,13 +607,18 @@ class _Cond:
     branches: tuple[tuple, ...]  # each a sequence of str | _Cond
 
 
-_CHAIN = re.compile(r"\?([^\s\[\]?]+)\[")
-_OPEN = re.compile(r"\$\?([^\s\[\]]+)\[")
+# whitespace may stand between a condition and its `[` (the Shaman totem lists put a line break there)
+_CHAIN = re.compile(r"\?([^\s\[\]?]+)\s*\[")
+_OPEN = re.compile(r"\$\?([^\s\[\]]+)\s*\[")
+_ELSE = re.compile(r"\s*\[")
 
 
 def parse_branches(text: str) -> tuple | None:
     """`text` as a sequence of plain strings and conditionals, or None when a bracket does not close or stands
-    where no conditional puts one (a `[` inside a branch, a `]` outside every branch)."""
+    where no conditional puts one (a `[` inside a branch, a `]` outside every branch). Whitespace alone
+    between a branch's `]` and the else's `[` belongs to neither (436516 puts a blank line there [unverified
+    that the client prints one branch; a literal bracket would change the value count, so the line would
+    match neither variant and stay English])."""
     counter = [0]
 
     def seq(i: int, nested: bool) -> tuple[list, int]:
@@ -630,8 +661,9 @@ def parse_branches(text: str) -> tuple | None:
             body, i = seq(c.end(), True)
             branches.append(tuple(body))
             i += 1
-        if i < len(text) and text[i] == "[":
-            body, i = seq(i + 1, True)
+        e = _ELSE.match(text, i)
+        if e:
+            body, i = seq(e.end(), True)
             branches.append(tuple(body))
             i += 1
         else:
@@ -888,10 +920,15 @@ def indistinguishable(texts: list[str], scopes: list[str], shapes: list[str], al
     `texts` as English (the pre-draft check `cut` runs): only capitalised runs count as names there, since
     every English word is a Latin run."""
     compare_shapes = len(set(shapes)) > 1
+    residues = [_residue(t) for t in texts] if english else []
     out: list[tuple[int, int]] = []
     for a in range(len(texts)):
         for b in range(len(texts)):
             if a == b or (texts[a] == texts[b] and shapes[a] == shapes[b]):
+                continue
+            if english and shapes[a] == shapes[b] and residues[a] == residues[b]:
+                # the same wording printing one code or another (`[$1218701s1%][$1218701s2%]`): one
+                # Japanese is right for both, so neither shadows the other
                 continue
             if compare_shapes and shapes[a] != shapes[b]:
                 continue
@@ -923,8 +960,53 @@ def unsafe_shadow(pairs: list[tuple[int, int]], texts: list[str]) -> bool:
 def never_shown(pairs: list[tuple[int, int]], n: int) -> bool:
     """Every one of the `n` variants is shadowed: another passes the gate on its line too, so the addon
     would show nothing for any of them (`Align.checkVariants` wants exactly one). Only then is a branch line
-    refused:
+    refused, unless its variants carry keys (`variant_keys`):
     a shadowed variant costs its players the Japanese (they see the English), never the wrong text, and it
     still ships; dropped, the variant that shadows it would pass alone on its line and show the wrong
     branch."""
     return n > 0 and len({a for a, _ in pairs}) == n
+
+
+# A VARIANT KEY (ADR-064). Branches that differ only in their words (`$?s436895[Increases all damage you
+# deal by $s1%.][Increases the damage you deal with physical attacks in all forms by $s1%.]`) print the same
+# numbers, so the shape and the gate cannot tell their lines apart. Each such variant ships the hash of its
+# English with every value masked: the addon masks the live line the same way (`Align.variantKey`) and takes
+# only the variant whose key it equals. A hash, never the English (the same rule as a sectioned line's
+# opening words). Masked exactly as `_count` reads the template and `Align.values` / `Align.durations` read
+# the live line: a value, a sum, a range and an icon are each one `#`, a duration and its unit word one `#`.
+_KEY_UNIT = re.compile("#" + UNIT.pattern)
+
+
+def variant_key(en: str) -> str | None:
+    """The key of one variant's English, or None when it holds a word code (`$lsecond:seconds;`, `$z`): the
+    live line prints a word there that the template does not name, so no key could match it."""
+    if WORD_CODE.search(en):
+        return None
+
+    def mask(m: re.Match[str]) -> str:
+        # a literal's sentence mark is read as part of the number ("by 5." is one token to both readers)
+        # but a code's is not (`$s1.`): the mark is given back so both wordings mask alike
+        g = m.group()
+        if m.lastgroup != "literal":
+            return "#"
+        lead, core = len(g) - len(g.lstrip(".,")), len(g.rstrip(".,"))
+        return g[:lead] + "#" + g[core:]
+
+    masked = _SLOT.sub(mask, ICON.sub(" ", en))
+    masked = _KEY_UNIT.sub("#", masked).replace("# to #", "#")
+    return hash_key(normalize_v1(masked, player_tokens=False))
+
+
+def variant_keys(variants: tuple[Variant, ...]) -> list[str] | None:
+    """One key per variant, or None when a variant has no key or two variants share one: then the keys
+    could not pick a variant, and the line is refused as before."""
+    keys = [k for v in variants if (k := variant_key(v.en)) is not None]
+    if len(keys) != len(variants) or len(set(keys)) != len(keys):
+        return None
+    return keys
+
+
+def unshowable(pairs: list[tuple[int, int]], variants: tuple[Variant, ...]) -> bool:
+    """The one refusal rule for a branch line: every variant is shadowed (`never_shown`) and no keys could
+    pick one (`variant_keys`). Used by the pre-draft check, the lint and `generate` alike."""
+    return never_shown(pairs, len(variants)) and variant_keys(variants) is None

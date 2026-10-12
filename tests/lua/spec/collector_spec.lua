@@ -409,7 +409,7 @@ describe("Core/Collector", function()
       assert.are.equal(1, left)
     end)
 
-    it("leaves out a gossip line shipped under its key; an NPC name always goes", function()
+    it("leaves out a gossip line shipped under its key; an NPC name goes only with another line", function()
       C.load(nil, deps())
       C.recordGossip("Hello there, traveler.", nil)
       C.recordNpc("Creature-0-0-0-0-3100-0000000000", "Senani Thunderheart")
@@ -418,7 +418,7 @@ describe("Core/Collector", function()
       assert.are.equal(0, left)
       shipped.gossip = { [C.key("Hello there, traveler.", PLAYER)] = { ja = "やあ。", status = "." } }
       list, left = C.pending()
-      assert.are.same({ "npc:3100:name" }, keysOf(list))
+      assert.are.same({}, keysOf(list))
       assert.are.equal(1, left)
     end)
 

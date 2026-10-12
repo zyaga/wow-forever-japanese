@@ -34,7 +34,6 @@ describe("Core/UIStrings: links, plurals, colour-wrapped names", function()
     TOOLTIP_TALENT_PREREQ = { "Requires %1$d |4point:points; in %2$s", "%2$sに%1$dポイント必要" },
     ITEM_ENCHANT_TIME_LEFT_MIN = { "%s (%d min)", "%s (%d分)" },
     ITEM_ENCHANT_TIME_LEFT_DAYS = { "%s (%d |4day:days;)", "%s (%d日)" },
-    ITEM_SET_BONUS = { "Set: %s", "セット: %s" }, ITEM_SET_BONUS_GRAY = { "(%d) Set: %s", "(%d) セット: %s" },
     -- a coloured template whose bare form is another key's English, the coloured one sorting first
     AUCTION_HOUSE_TOOLTIP_DURATION_FORMAT = { "Time Left: |cffffffff%s|r", "残り時間: |cffffffff%s|r" },
     BONUS_OBJECTIVE_TIME_LEFT = { "Time Left: %s", "残り時間：%s" }, AUCTION_TIME_LEFT3 = { "Long", "長い" },
@@ -161,17 +160,5 @@ describe("Core/UIStrings: links, plurals, colour-wrapped names", function()
     key, args = index:match("Time Left: 5 min")
     assert.are.equal("BONUS_OBJECTIVE_TIME_LEFT", key)
     assert.is_nil(args.bare)
-  end)
-
-  it("a set bonus line is matched only by key, the bonus text captured whole, periods included", function()
-    local SET = { "ITEM_SET_BONUS", "ITEM_SET_BONUS_GRAY" }
-    -- an unrestricted match never takes it: it would show "セット: +4 Stamina."
-    assert.is_nil(index:match("Set: Increases your armor by 50."))
-    local key, args = index:matchOnly("Set: Increases your armor by 50.", SET)
-    assert.are.equal("ITEM_SET_BONUS", key)
-    assert.are.equal("Increases your armor by 50.", args[1])
-    key, args = index:matchOnly("(3) Set: +4 Stamina.", SET)
-    assert.are.equal("ITEM_SET_BONUS_GRAY", key)
-    assert.are.same({ "3", "+4 Stamina." }, { args[1], args[2] })
   end)
 end)

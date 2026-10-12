@@ -95,6 +95,7 @@ No headless game exists, so what only the client can show is checked by a person
 7. **Settings** from Esc → Options → AddOns and `/wfj config`; they survive `/reload` and logout; the downgrade path. The client templates and font objects resolve (a failure there is caught by `pcall` and reported by `/wfj debug`, and `/wfj` keeps working). The pages in detail are item 14.
 8. **Collector:** the two-line disclosure appears once (not again after `/reload`); `/wfj collector` and `/wfj collector path` print the status and the path. After viewing a quest (accept / progress / turn-in), selecting it in the quest map and hovering an item and a spell, then `/reload`, `WTF\Account\<ACCOUNT>\SavedVariables\WoWForeverJapanese.lua` holds `WFJ_Collector` entries (`quest:`, `item:`, `spell:`, `npc:`; the `npc:` entries confirm `UnitGUID("questnpc")`); stored text uses `$N` / `$C` / `$R` / `$B$B`, never the character's name; `make import-collector DUMP=<that file>` succeeds with no rejections; a search of the file for the character's name and realm finds nothing. Hover the Hearthstone item, the Hearthstone spell and (on a shaman) Astral Recall: their descriptions name the bind location, and no `item:6948`, `spell:8690` or `spell:556` entry is written. Repeat a few quests on a second character of another class and race (ideally female, to see gender-dependent `$G` wording kept as shown) and compare the two dumps: the `$C` / `$R` lines agree, and any line that differs is a literal class or race word. String escaping of quotes inside `e` is not yet observed in a real dump. The cap message is not practical to reach in game (4 MiB); `collector_spec` covers it. Importing a dump can move quest and gossip hashes (`check` consults that English), so run `make check` after it and review the delta ([Collector](../systems/collector.md)).
    **Sending it** ([Collector sends](../operations/collector-sends.md)): `/wfj collector send` opens the send window with a count of lines and the steps; `/wfj collector status` shows `(N unsent)`. Copy the link (click it, Ctrl+C) and open it in a browser: the *Collected English* form opens with the box filled in (`WFJC1:…`). Submit it: within a minute the issue gets the `collector-ok` label and a comment of counts with no English in it. `make collector-intake ISSUE=N` imports it, and running it again changes nothing. Click **I sent it**, then `/wfj collector send` again: it says there is nothing new to send, and `/wfj collector send all` packs everything again. With a large dump (play a while, or a copied-in file of another character) the window shows a second box with the string to paste instead of a filled-in link: click it, Ctrl+C, paste it into the form, and check that the whole string arrived (it can be close to 60,000 characters) and the check reads it the same way. **File mode** (a dump too long to paste): the window shows the file step and path; zip the file, drag it into the form's box, submit; the issue gets `collector-ok`, and `make collector-intake ISSUE=N` downloads the attachment and imports it. In file mode after recording new lines since login, the window says how many are not in the file yet and asks for `/reload` first. On the beta, the English Collector settings page's path and `/wfj collector path` name `_classic_beta_` instead of `<client folder>` (this confirms `IsBetaBuild()` is true there).
+   **After an update** ([ADR-065](../adr/065-collector-keeps-only-what-the-addon-cannot-show.md)): note `/wfj collector status` before installing a newer addon, then log in: lines the new version shows in Japanese no longer count in `(N unsent)`, and after `/reload` they are gone from the file, also with **Record English** off. A line that still shows English keeps its entry.
 9. **Memory and login time:** `/wfj debug`'s `memory:` line (also in the settings-panel header) about ten seconds after `/reload`, against a baseline without the addon; login time. Readings for every line add about 10 MB of client memory; record the total with every data release.
 10. **Combat:** open tooltips, a quest frame and the gossip window mid-combat; no protected-function errors (for gossip: scroll the list and hold Alt with a translated row, since `FullUpdate(true)` runs from the addon's code, ADR-017).
 11. **Client parity:** `## Interface` accepted; every Compat candidate resolves (`/wfj debug` prints unresolved widgets).
@@ -493,23 +494,27 @@ The pop-up dialogs, the tooltip frames of their own, the dressing room's custom-
 2. Rest at a camp until the Camp Benefits buff shows, then hover it: the heading and one paragraph per camp item
    are Japanese, the item names stay English, the numbers and the duration are the live ones.
 3. Hover an item whose description has gold flavour text under a green Use: line: the flavour text stays gold.
+4. Hover a recipe (a pattern or plans in a bag or a vendor's list): the crafted item's text and the recipe's
+   "Use: Teaches you how to …" line are both Japanese; Alt shows the English of both.
+5. Hover an item with Forever's own stat lines ("Equip: Improves your chance to hit by 1%."): each such line is
+   Japanese and starts with `装備時:`; Alt shows the English.
+6. `/run SetItemRef("item:15062", "", "LeftButton")` opens Devilsaur Leggings: the set bonus line reads
+   `(2) セット: 命中率を2.0%上昇させます。`; Alt shows the English. A set line whose bonus the client does not
+   name stays English whole.
 
-### Interface lines with links, set bonuses, the bank title and the story header checklist
-Interface lines with links, colour-wrapped names, plural groups and set bonuses ([ADR-064](../adr/064-ui-lines-with-links-colour-wrapped-names-plural-groups-and-set-bonuses.md)). With a **fresh level-1 character and an empty quest log**. Alt shows the English line in every step.
+### Interface lines with links, the bank title and the story header checklist
+Interface lines with links, colour-wrapped names and plural groups ([ADR-067](../adr/067-ui-lines-with-links-colour-wrapped-names-and-plural-groups.md)). With a **fresh level-1 character and an empty quest log**. Alt shows the English line in every step.
 
 1. **A system chat line with a link.** Kill mobs until the character reaches level 2: the level-up line in chat is Japanese around the English link (the link, its label and the level exactly as the game wrote them). Click the link: it still opens what it opened before.
 2. **The bank's title.** Walk to a banker and open the bank: if the bank has an account bank tab, its title is Japanese; the character bank's title stays as written. The page tabs' hover and the money buttons' disabled reason (if shown) are Japanese.
 3. **The quest log story header.** Open the quest log (L): if the list shows a story header for the zone, its progress line is Japanese and the story's name stays English; hover it: the tooltip's progress label and chapter count are Japanese, the chapter names as written. (If no story header shows, record it and skip.)
 4. **A sell price.** Hover an item that sells (a drop such as Linen Cloth): the "Sell Price" line is Japanese, the money kept. Where a tooltip shows a price range instead (a "Sell Price:" header, then indented "Minimum" and "Maximum" lines), those are Japanese too, indent kept.
 5. **A crafted item.** Hover a crafted item (buy one from a crafter, or craft a Linen Bandage with First Aid): the "Made by" line is Japanese with the crafter's name kept, in green as before.
+6. **The duel to the death popup does not taint.** Have a second character challenge this one to a duel to the death (or skip this step solo): the popup's line is Japanese around the challenger's name, accepting works, and afterwards `/wfj log` shows no blocked action from this addon.
 
 **Needs a friend online (not level-1 solo):** when a friend comes online, the chat line is Japanese around the friend's name link. **Needs a group:** a loot roll's lines (need, greed, won) are Japanese around the item link; the "[Loot]" header line stays English.
 
-6. **The duel to the death popup does not taint.** Have a second character challenge this one to a duel to the death (or skip this step solo): the popup's line is Japanese around the challenger's name, accepting works, and afterwards `/wfj log` shows no blocked action from this addon.
-
 **Needs a friend on the friends list:** remove a Battle.net friend (or open the remove dialog and cancel): the confirmation is Japanese with the friend's name kept as written.
-
-**Needs a set piece (not level-1):** hover an item that belongs to a set (a Devilsaur piece, a dungeon set piece, or a chat link to one): the set's name line stays as written, and each "Set:" / "(N) Set:" bonus line is Japanese as a whole line. If one bonus has no Japanese yet, that whole line is English, never half. Where a set has two bonuses at the same count (Wildheart Raiment, 3 pieces), check each line's Japanese says what its English says: the order the client prints them in is not yet checked against the addon's. If a bonus you do not have yet shows grey, check it is Japanese too (the grey form the client writes is not yet checked).
 
 ### Readings checklist
 The word-reading box on quest and NPC-talk prose ([Readings](../systems/readings.md), [ADR-036](../adr/036-readings-hover-word-lists.md)). With a **fresh level-1 Night Elf** in Shadowglen. A crash to desktop at any step is a failure: record the step and the text under the mouse.
@@ -694,7 +699,40 @@ Tooltip lines that include another spell's text, an inline spell icon, or a bran
    ```
    **Pass:** one Japanese sentence covering all of the English under Alt, every number matching; or the English with the missing marker. **Fail:** Japanese with a number that differs from the English, or part of the English left untranslated inside the Japanese. The stew's line also has an experience clause that only some players see (a branch told apart by how many numbers the line shows): **Fail** if the Japanese carries the experience clause while the English under Alt does not, or drops it while the English has it. Line breaks in the Japanese sit where the English's do.
 
-**Not level-1:** a branch that turns on a talent, a form or an aura the character has (Fire Ward with the talent, a druid form line) and the faction sign items; hover each when the character gets there: the Japanese changes with the branch the English shows, and a line whose branches differ only in colour stays English.
+4. **An aura included by id: the [likely] claim that settles wrong text** ([ADR-064](../adr/064-aura-inclusions-list-tails-and-variant-keys.md) claim (a)). A spell whose aura field is `$@spellaura<id>` ships the included spell's aura text; if the client printed the included spell's description instead, both share names and numbers and the Japanese could pass on the wrong text. Open spell 1319309's aura (or one of the 437472 family):
+   ```
+   /run GameTooltip:SetOwner(UIParent,"ANCHOR_CURSOR") GameTooltip:SetSpellByID(1319309) GameTooltip:Show()
+   ```
+   Hold Alt and read the English. **Pass:** the Japanese says what that English says, sentence for sentence (a buff or debuff wording, not a cast description), with every number matching; or the English with the missing marker. **Fail:** Japanese that describes casting or using the spell while the English describes its effect on the target, or any number that differs. Record which you saw: it settles whether `$@spellaura<id>` prints the aura text.
+5. **An id in angle brackets** (claim (b), [likely]). Spell 1243064's line includes `$@spelldesc<1243081>`:
+   ```
+   /run GameTooltip:SetOwner(UIParent,"ANCHOR_CURSOR") GameTooltip:SetSpellByID(1243064) GameTooltip:Show()
+   ```
+   **Pass:** one Japanese sentence covering all of the English under Alt (the included spell's text is inside it), every number matching; or the English with the missing marker. **Fail:** part of the English left untranslated inside the Japanese.
+6. **A weapon skill tooltip, collapsed and expanded** (claim (c), [unverified]). Open the Swords skill (spell 1296663) and read it twice, once as the client first shows it and once expanded (the client's own expand key for tooltips, if the build has one; otherwise note that only the short table showed):
+   ```
+   /run GameTooltip:SetOwner(UIParent,"ANCHOR_CURSOR") GameTooltip:SetSpellByID(1296663) GameTooltip:Show()
+   ```
+   **Pass:** Japanese in both states, the short table with its rows and the expanded one with its extra rows, every number the one the English shows under Alt; or English with the missing marker in a state. **Fail:** Japanese that shows the expanded rows while the English under Alt shows the short table, or the other way round, or a literal `$?expandkey` on screen. Record which states showed Japanese: it settles whether `$@expandkey[…]` prints its text or nothing.
+7. **A blank line between a branch and its else** (claim (d), [unverified]). Spell 436516's description writes `[A]`, a blank line, then `[B]`:
+   ```
+   /run GameTooltip:SetOwner(UIParent,"ANCHOR_CURSOR") GameTooltip:SetSpellByID(436516) GameTooltip:Show()
+   ```
+   **Pass:** the English under Alt shows one of the two texts and no bracket, and the Japanese says that one; or English with the missing marker. **Fail:** a bracket or both texts in the English (the claim is wrong; the line should then be English, never Japanese), or Japanese for the other branch.
+8. **`$@null`** (claim (e)): nothing to check. Spell 348779's own line prints nothing and ships nothing.
+9. **A list after a multi-line head** (claim (f)). A Shaman's totem list (Call of Earth and its kin) or a Paladin's "you currently have access to" list (spell 1323522), or Apprentice Riding (spell 33388) on any character:
+   ```
+   /run GameTooltip:SetOwner(UIParent,"ANCHOR_CURSOR") GameTooltip:SetSpellByID(33388) GameTooltip:Show()
+   /run GameTooltip:SetOwner(UIParent,"ANCHOR_CURSOR") GameTooltip:SetSpellByID(1323522) GameTooltip:Show()
+   ```
+   **Pass:** the head (its several lines) in Japanese with the same line breaks as the English under Alt, then the list lines exactly as the English shows them (names and icons, in English, byte for byte); or English with the missing marker. **Fail:** a list line translated or missing, a head line left English inside the Japanese, or the Japanese head and the list joined on one line.
+10. **A keyed line: two wordings, the same numbers.** A Druid feral talent (spell 16902) is worded one way without a talent and another with it; the addon picks by the wording, not the numbers:
+    ```
+    /run GameTooltip:SetOwner(UIParent,"ANCHOR_CURSOR") GameTooltip:SetSpellByID(16902) GameTooltip:Show()
+    ```
+    **Pass:** the Japanese says what the English under Alt says ("all damage" against "damage with physical attacks in all forms"), with the same percentage; or English with the missing marker. **Fail:** the Japanese for the other wording. `/wfj debug spell 16902` prints `2 branch variants` for `description`.
+
+**Not level-1:** a branch that turns on a talent, a form or an aura the character has (Fire Ward with the talent, a druid form line) and the faction sign items; hover each when the character gets there: the Japanese changes with the branch the English shows, and a line whose branches differ only in colour stays English. A debuff from the 437472 family on the character (step 4) and a Shaman's totem list on a Shaman (step 9) read the same way as their `/run` lines.
 
 ### Book word card and area text checklist
 Book and letter pages drawn by the addon so the word card works, and a quest's exploration / event objective text in Japanese ([ADR-044](../adr/044-area-text-and-book-word-cards.md)). `/wfj readings` and `/wfj glosses` must print `on` first.

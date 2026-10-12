@@ -90,7 +90,7 @@ characters with a |T…AvailableQuestIcon:16:16|t above their head.") were kept 
 4. **`|T…|t` is markup, not a label form.** `core/markup.TOKEN` counts each file texture verbatim (path and size) and
    the `|n` break escape, like colour codes and `\n`; a Japanese that drops, adds or alters one is `rejected`
    (`markup_changed`). The curation test forbids `|H`, `|K` and `$`.
-   **Amended by [ADR-064](064-ui-lines-with-links-colour-wrapped-names-plural-groups-and-set-bonuses.md):** `|H` is
+   **Amended by [ADR-067](067-ui-lines-with-links-colour-wrapped-names-and-plural-groups.md):** `|H` is
    no longer forbidden; a link whose content is literal text plus plain specifiers is listed and kept byte for byte,
    label included (`core/markup.link_refused` is the gate). `|K` and `$` stay forbidden.
    An atlas `|A…|a` is counted verbatim like a file texture and a named colour opener `|cnNAME:` like a hex one, and

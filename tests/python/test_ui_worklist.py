@@ -16,7 +16,7 @@ from wfj.io.jsonl_store import Store
 # or the line being a name, a link label or wordless markup
 _PROOF = re.compile(
     r"\.(?:lua|xml|toc):\d+|\d+ rows on \d|absent from the [\d.]+ archive|not in SpellName|forever_addon_dispositions\.txt"
-    r"|forever_addons\.txt|item_sets\.txt|same English as [A-Z0-9_]+|no words (?:of its own|outside the link)|^a name:"
+    r"|forever_addons\.txt|same English as [A-Z0-9_]+|no words (?:of its own|outside the link)|^a name:"
     r"|never displayed|wfj\.dev\.ui_reach"
 )
 

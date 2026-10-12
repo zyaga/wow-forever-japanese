@@ -126,7 +126,7 @@ WFJ.Data.add("reading", {
   ["ui:MINIMAP_TRACKING_TRAINER_CLASS"] = { text = "クラス=クラス=32689 トレーナー=トレーナー=33865" },
   ["ui:MINIMAP_TRACKING_TRAINER_PROFESSION"] = { text = "専門技能=せんもんぎのう=67128 トレーナー=トレーナー=33866" },
   ["ui:MINIMAP_TRACKING_TRIVIAL_QUESTS"] = { text = "低レベル=ていレベル=42518 クエスト=クエスト=32659" },
-  ["ui:MINIMUM"] = { text = "最小=さいしょう=140188" },
+  ["ui:MINIMUM"] = { text = "最小=さいしょう=140203" },
   ["ui:MINIMUM_CHARACTER_NAME_SIZE_TEXT"] = { text = "キャラクター名=キャラクターめい=32544 最小=さいしょう=88561 サイズ=サイズ=33022" },
   ["ui:MINUTES"] = { text = "分=ふん=49507" },
   ["ui:MINUTES_ABBR"] = { text = "分=ふん=49503" },
