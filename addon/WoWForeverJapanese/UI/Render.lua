@@ -193,6 +193,15 @@ desired = function(rec)
   return text, font, action
 end
 
+-- The Japanese an entry carries for the live text `ctx` describes, whatever the switches and the modifier say,
+-- without a marker (Translator.content). → ja | nil
+function Render.content(kind, id, ctx)
+  if not translator or type(translator.content) ~= "function" then return nil end
+  local action, payload = translator.content(kind, id, ctx)
+  if action == "apply" and type(payload) == "table" then return payload.ja end
+  return nil
+end
+
 -- The text and font the policy would show for an element that has no record: a widget the client only measures
 -- with (the gossip ScrollBox's measure widgets) → text, font | nil (show the English as is). Writes nothing.
 -- `ctx` (optional): as Render.show's (a UI template's `args`).

@@ -33,6 +33,7 @@
 {"id": "HEIRLOOMS_CATEGORY_TRINKETS_RINGS_AND_NECKLACES", "field": "text", "en": "Trinkets, Rings & Necklaces", "hash": "22e6fd2a19327955", "src": "db2@1.60.1.70338"}
 {"id": "HEIRLOOMS_CATEGORY_WEAPON", "field": "text", "en": "Weapons", "hash": "59bdee964e84ee0c", "src": "db2@1.60.1.70338"}
 {"id": "HEIRLOOMS_JOURNAL_TUTORIAL_UPGRADE", "field": "text", "en": "This is the max level of the heirloom. You can raise this level by using special upgrade tokens.", "hash": "74013e35b9dfb14a", "src": "db2@1.60.1.70338"}
+{"id": "HEIRLOOMS_MICRO_BUTTON_SPEC_TUTORIAL", "field": "text", "en": "Visit the Heirlooms pane to view your heirloom collection.", "hash": "4af9dfb8fc717142", "src": "db2@1.60.1.70338"}
 {"id": "HEIRLOOMS_PVP", "field": "text", "en": "PvP", "hash": "00152f823da3de67", "src": "db2@1.60.1.70338"}
 {"id": "HELPFRAME_REPORTLAG_TEXT1", "field": "text", "en": "Your lag report has been successfully submitted.", "hash": "b70ff6d79832a917", "src": "db2@1.60.1.70338"}
 {"id": "HELPFRAME_TICKET_CLICK_HELP", "field": "text", "en": "Click here to open your ticket.", "hash": "38feb5bdfd074bab", "src": "db2@1.60.1.70338"}

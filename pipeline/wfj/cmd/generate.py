@@ -263,12 +263,39 @@ def plan(store: Store, vectors: list[dict], report: dict[str, Any] | None = None
         raise ValueError(
             f"english sources pinned at several versions: {mixed}; re-run `make import-english`"
         )
+    out["Data/ItemSets.lua"] = _item_sets_text(store, english_store)
     out["Data/Meta.lua"] = lua_writer.meta_text(
         SCHEMA, {n: sorted(v) for n, v in english.items()}, counts
     )
     head, _, body = lua_writer.vectors_text(vectors, head=VECTORS_HEAD).partition("\n")
     out["Data/Vectors.lua"] = head + "\nlocal _, WFJ = ...\n" + body
     return out
+
+
+ITEM_SETS = "item_sets.txt"
+
+
+def _item_sets_text(store: Store, english_store: Store) -> str:
+    """The set map (lua_writer.item_sets_text) from pipeline/item_sets.txt, kept to the sets with an item
+    Forever serves (an item with English in data/); a missing file plans an empty map."""
+    path = store.root.parent / "pipeline" / ITEM_SETS
+    served = {ln["id"] for ln in english_store.load("item")}
+    sets: dict[int, list[tuple[int, int]]] = {}
+    items: dict[int, int] = {}
+    if path.is_file():
+        for raw in path.read_text(encoding="utf-8").splitlines():
+            if raw.startswith("#") or not raw.strip():
+                continue
+            # a set with no bonus spell ends in an empty column: split on the first three tabs only
+            set_id, _name, item_ids, bonuses = (raw.split("\t", 3) + [""])[:4]
+            mine = [int(i) for i in item_ids.split(",") if int(i) in served]
+            if not mine:
+                continue
+            sets[int(set_id)] = [tuple(map(int, b.split(":"))) for b in bonuses.split(",") if b]
+            for item in mine:
+                # an item in two sets (a client table quirk) keeps the lower set id: the file is in id order
+                items.setdefault(item, int(set_id))
+    return lua_writer.item_sets_text(sets, items)
 
 
 def _check_store(store: Store) -> None:
@@ -532,16 +559,20 @@ def load_numbers(store: Store) -> tuple[dict[glosses.Meaning, int], list[str]]:
     return glosses.parse_numbers(path.read_bytes().decode("utf-8-sig"))
 
 
+# the generated files that are not shards, in load order: Meta, the hash vectors, the item set map
+FIXED = ("Data/Meta.lua", "Data/Vectors.lua", "Data/ItemSets.lua")
+
+
 def toc_files(planned: dict[str, str]) -> list[str]:
-    """Load order inside the generated block: Meta, Vectors, then shards by type then range."""
-    shards = [p for p in planned if p not in ("Data/Meta.lua", "Data/Vectors.lua")]
+    """Load order inside the generated block: Meta, Vectors, ItemSets, then shards by type then range."""
+    shards = [p for p in planned if p not in FIXED]
     order = {t: i for i, t in enumerate(schema.TOC_ORDER)}
 
     def type_of(rel: str) -> str:
         return next(t for t, pre in schema.FILE_PREFIX.items() if rel.startswith(f"Data/{pre}/"))
 
     shards.sort(key=lambda p: (order[type_of(p)], p))
-    return ["Data/Meta.lua", "Data/Vectors.lua", *shards]
+    return [*FIXED, *shards]
 
 
 def toc_with_block(toc_text: str, files: list[str]) -> str:
@@ -559,13 +590,13 @@ def toc_with_block(toc_text: str, files: list[str]) -> str:
 
 
 def generated_on_disk(addon_dir: Path) -> set[str]:
-    """The files under Data/ that generate owns: `<Type>/<Type>_*.lua`, Meta.lua, Vectors.lua. Nothing else
-    under Data/ is ever deleted or diffed (a README or a stray note is left alone)."""
+    """The files under Data/ that generate owns: `<Type>/<Type>_*.lua`, Meta.lua, Vectors.lua, ItemSets.lua.
+    Nothing else under Data/ is ever deleted or diffed (a README or a stray note is left alone)."""
     found: set[str] = set()
     data = addon_dir / "Data"
-    for name in ("Meta.lua", "Vectors.lua"):
-        if (data / name).is_file():
-            found.add(f"Data/{name}")
+    for rel in FIXED:
+        if (addon_dir / rel).is_file():
+            found.add(rel)
     for prefix in schema.FILE_PREFIX.values():
         for p in (data / prefix).glob(f"{prefix}_*.lua"):
             if p.is_file():

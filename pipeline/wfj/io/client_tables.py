@@ -678,7 +678,7 @@ def extract(
         # an optional table the root does not name is this build not shipping it, which is a fact about the
         # build; anything else is a failure to read something that is there
         # a root that lists the FileDataID with no enUS content key is the same fact
-        if table.optional and ("names 0 enUS files" in str(e) or "has 0 enUS content keys" in str(e)):
+        if table.optional and casc.is_absent(e):
             raise TableAbsent(f"{table.name}: not shipped on this build ({e})") from e
         raise TableError(str(e)) from e
     except db2.Db2Error as e:

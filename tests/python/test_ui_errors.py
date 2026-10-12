@@ -18,6 +18,9 @@ ALLOWED = re.compile(
     r"^a pass-through wrapper: its English is only \"%s\""
     r"|^a link \(\|H…\|h\) the dictionary never carries"
     r"|^not on Forever: .+(forever_addon_dispositions\.txt|\.toc)\)$"
+    # a line a client table count, an absent table or a camelot file line proves away (make forever-table-counts;
+    # the camelot overrides)
+    r"|^not on Forever: .+(\d+ rows on [\d.]+|absent from the [\d.]+ archive|\.lua:\d+(–\d+)?)"
     r"|chat / system message line|ChatFrameUtil|DEFAULT_CHAT_FRAME|primary chat frame"
     r"|^not displayed on Forever: |^a retail-era system"
 )

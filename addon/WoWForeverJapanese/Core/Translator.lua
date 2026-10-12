@@ -84,7 +84,13 @@ function Translator.new(deps)
     if not deps.enabled() then return "leave" end
     if not deps.areaEnabled(area) then return "leave" end
     if deps.modifierHeld() then return "leave" end
+    return T.content(kind, id, ctx)
+  end
 
+  -- What the entry would show, past the master switch, the area and the modifier: "none" or "apply" as resolve
+  -- answers them. A line built from another entry's Japanese (an item's set bonus through the set spell) asks this,
+  -- and its own record then follows the switches and the modifier like any other.
+  function T.content(kind, id, ctx)
     local entry = deps.lookup(kind, id)
     if entry ~= nil and entry.sections ~= nil then return T.sections(entry, ctx) end
     if entry ~= nil and entry.variants ~= nil then return T.variants(entry, ctx) end

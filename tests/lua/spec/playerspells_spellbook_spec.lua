@@ -29,6 +29,7 @@ local UI = {
   BATTLE_PET_SUMMON = { "Summon", "呼び出す" }, ["SpellSubtext:126"] = { "Summon", "呼び出す" },
   -- a flyout's name: a SpellFlyout row, matched only on a Flyout-typed item
   ["FlyoutName:248"] = { "Portal", "ポータル" },
+  ASSISTED_COMBAT_ROTATION_SPELLBOOK_LABEL = { "Single-Button|nAssistant", "シングルボタン|nアシスタント" },
 }
 
 describe("spellbook on the Forever client", function()
@@ -67,6 +68,14 @@ describe("spellbook on the Forever client", function()
     }
     PS.book = { 10, 11, 12, 13, 14, 15 }
   end
+
+  it("the assisted combat button's label (UIPanelSpellButtonFrameTemplate, labelText) is Japanese", function()
+    PS.loadPlayerSpells(); book()
+    local frame = { Label = Stub.fontString(_G.ASSISTED_COMBAT_ROTATION_SPELLBOOK_LABEL) }
+    _G.PlayerSpellsFrame.SpellBookFrame.AssistedCombatRotationSpellFrame = frame
+    WFJ.SpellBook.init()
+    assert.are.equal("シングルボタン|nアシスタント", frame.Label:GetText())
+  end)
 
   describe("load-on-demand wait", function()
     it("nothing is hooked before Blizzard_PlayerSpells loads; its ADDON_LOADED sets the book up once", function()

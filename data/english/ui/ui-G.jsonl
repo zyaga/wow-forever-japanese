@@ -1,6 +1,7 @@
 {"id": "GAINING_LOYALTY", "field": "text", "en": "Gaining Loyalty", "hash": "1ca6df0bdfe554bf", "src": "db2@1.60.1.70338"}
 {"id": "GAMEFIELD_DESELECT_TEXT", "field": "text", "en": "Sticky Targeting", "hash": "f57c0afd45ddb9b4", "src": "db2@1.60.1.70338"}
 {"id": "GAMEMENU_EXTERNALEVENT", "field": "text", "en": "Activities", "hash": "69b7e5a8d540a60a", "src": "db2@1.60.1.70338"}
+{"id": "GAMEMENU_EXTERNALEVENT_FAILURE", "field": "text", "en": "Something went wrong. Try restarting the game from the Battle.net Desktop App. If the problem persists, please see our support article: |HurlIndex:67|h|cnVISITABLE_URL_DEFAULT_CHAT_LINK_COLOR:https://support.blizzard.com/help/article/000384713|r|h.", "hash": "b0dd00d81ea4d566", "src": "db2@1.60.1.70338"}
 {"id": "GAMEMENU_NEW_BUTTON", "field": "text", "en": "What's New", "hash": "e67bfb5282cb2d40", "src": "db2@1.60.1.70338"}
 {"id": "GAMEMENU_OPTIONS", "field": "text", "en": "Options", "hash": "cf6c009bd04a5d3a", "src": "db2@1.60.1.70338"}
 {"id": "GAMEMENU_SUPPORT", "field": "text", "en": "Support", "hash": "46858e142083321c", "src": "db2@1.60.1.70338"}
@@ -222,6 +223,7 @@
 {"id": "GUILD_BANK_LOG_TIME", "field": "text", "en": "|cff009999   ( %s ago )|r", "hash": "c00910d43e912c79", "src": "db2@1.60.1.70338"}
 {"id": "GUILD_BANK_MONEY_LOG", "field": "text", "en": "Money Log", "hash": "54226eb32922ea76", "src": "db2@1.60.1.70338"}
 {"id": "GUILD_BANK_TAB_INFO", "field": "text", "en": "Info", "hash": "09e523b2075e6784", "src": "db2@1.60.1.70338"}
+{"id": "GUILD_CHALLENGE_REWARD_GOLD", "field": "text", "en": "Each guild challenge completed will reward gold deposited directly into your guild bank.\n\n|cffffd200Reward:|r\n%s", "hash": "625e3088199630fb", "src": "db2@1.60.1.70338"}
 {"id": "GUILD_CHARTER_PURCHASE", "field": "text", "en": "Purchase a Guild Charter", "hash": "d504bd78c0832edd", "src": "db2@1.60.1.70338"}
 {"id": "GUILD_CHARTER_REGISTER", "field": "text", "en": "Register a Guild Charter", "hash": "cb605ec0ea0660b5", "src": "db2@1.60.1.70338"}
 {"id": "GUILD_CHARTER_TEMPLATE", "field": "text", "en": "%s Guild Charter", "hash": "c0a5f8c4ea3e75bc", "src": "db2@1.60.1.70338"}

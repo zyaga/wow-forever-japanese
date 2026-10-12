@@ -37,6 +37,16 @@ local UI = {
   VOICE_CHAT_JOIN_GROUP_BUTTON = { "Join Voice Chat", "ボイスチャットに参加" },
   CONFIRM_LEAVE_INSTANCE_PARTY = { "Are you sure you want to leave the instance group?",
     "インスタンスグループから離れますか？" },
+  -- the remove-friend confirmation (unitpopupsharedbuttonmixins.lua:626–640: the caller formats one of three lines)
+  REMOVE_TITLE_FRIEND_CONFIRMATION = { "Are you sure you want to remove %s as a WoW friend?",
+    "%sをWoWフレンドから外しますか？" },
+  BATTLETAG_REMOVE_FRIEND_CONFIRMATION = { "Are you sure you want to remove %s as a BattleTag friend?",
+    "%sをバトルタグフレンドから外しますか？" },
+  REMOVE_FRIEND_CONFIRMATION = { "Are you sure you want to remove %s as a Real ID friend?",
+    "%sをReal IDフレンドから外しますか？" },
+  -- the Hardcore duel request: a dialog line with a player link (gamedialogdefs.lua:3516)
+  DUEL_TO_THE_DEATH_REQUESTED = { "|Hplayer:%s|h[%s]|h has challenged you to a duel to the death.",
+    "|Hplayer:%s|h[%s]|hから死闘の決闘を申し込まれました。" },
 }
 local NAMES = { "StaticPopup_Show", "StaticPopup_OnUpdate", "StaticPopupDialogs", "GameDialogDefsUtil",
   "StaticPopup1", "StaticPopup2", "StaticPopup3", "StaticPopup4" }
@@ -119,9 +129,31 @@ describe("the StaticPopup dialogs on Forever", function()
       end }
     D.AGE_VERIFICATION_RESTRICTED_MINOR = { text = _G.SOCIAL_FEATURES_UNAVAILABLE,
       subText = _G.SOCIAL_FEATURES_UNAVAILABLE_DESCRIPTION, button1 = _G.OKAY }
+    D.CONFIRM_REMOVE_BN_FRIEND = { text = "%s", button1 = _G.YES, button2 = _G.NO }
+    D.DUEL_TO_THE_DEATH_REQUESTED = { text = _G.DUEL_TO_THE_DEATH_REQUESTED, button1 = _G.ACCEPT, button2 = _G.DECLINE }
     assert.is_true(WFJ.Popups.init())
   end)
   after_each(function() X.teardown(NAMES) end)
+
+  it("the remove-friend confirmation: the caller's line with the friend's name kept; Alt shows English", function()
+    local d = _G.StaticPopup_Show("CONFIRM_REMOVE_BN_FRIEND",
+      string.format(_G.REMOVE_TITLE_FRIEND_CONFIRMATION, "Reyn"))
+    assert.are.equal("ReynをWoWフレンドから外しますか？", d.Text:GetText())
+    assert.are.equal("はい", d.ButtonContainer.Buttons[1]:GetText())
+    X.alt(WFJ, true)
+    assert.are.equal("Are you sure you want to remove Reyn as a WoW friend?", d.Text:GetText())
+    X.alt(WFJ, false)
+    _G.StaticPopup1.shown = false
+    local e = _G.StaticPopup_Show("CONFIRM_REMOVE_BN_FRIEND",
+      string.format(_G.BATTLETAG_REMOVE_FRIEND_CONFIRMATION, "Wind Mami#1234"))
+    assert.are.equal("Wind Mami#1234をバトルタグフレンドから外しますか？", e.Text:GetText())
+  end)
+
+  it("the duel to the death request: the player link kept byte for byte", function()
+    local d = _G.StaticPopup_Show("DUEL_TO_THE_DEATH_REQUESTED", "Reyn", "Reyn")
+    assert.are.equal("|Hplayer:Reyn|h[Reyn]|hから死闘の決闘を申し込まれました。", d.Text:GetText())
+    assert.are.equal("承諾", d.ButtonContainer.Buttons[1]:GetText())
+  end)
 
   it("a plain dialog and its buttons translate; Alt shows the live English", function()
     local d = _G.StaticPopup_Show("CONFIRM_RESET_INSTANCES")

@@ -87,7 +87,8 @@ local TOOLTIPS = {
   { "play", "LocaleApplyButton", LOCKOUT }, { "play", "DatacenterApplyButton", LOCKOUT },
 }
 local SUBTEXT = { "REQUIRES_GUILD_FACTION", "REQUIRES_LABEL" }
-local REWARD_LINES = { "REQUIRES_GUILD_ACHIEVEMENT", "REQUIRES_GUILD_FACTION_TOOLTIP", "INSPECT_REQUIREMENTS" }
+local REWARD_LINES = { "REQUIRES_GUILD_ACHIEVEMENT", "REQUIRES_GUILD_FACTION_TOOLTIP", "INSPECT_REQUIREMENTS",
+  "GUILD_CHALLENGE_REWARD_GOLD" } -- the challenge reward's hover, the gold amount kept (guildinfo.xml:44)
 
 function CommunitiesGuild.showStatic() return k.showUnder(STATIC) end
 

@@ -70,7 +70,21 @@ HelpTips.KEYS = { "ACCOUNT_WIDE_REPUTATION_TUTORIAL", "REPUTATION_EXALTED_PLUS_H
   -- (blizzard_sharedxmlgame/dressupmodelframemixin.lua:23–30), a new profession (blizzard_tutorials_professions.lua),
   -- the text-to-speech button (blizzard_chatframe/shared/texttospeech.lua)
   "LINK_TRANSMOG_CUSTOM_SET_HELPTIP", "PROFESSIONS_NEW_TUTORIAL", "PROFESSIONS_NEW_TUTORIAL_ICON",
-  "TEXT_TO_SPEECH_TUTORIAL" }
+  "TEXT_TO_SPEECH_TUTORIAL",
+  -- callouts the Forever client shows: the micro-button alerts (mainmenubarmicrobuttons.lua:17–21,
+  -- 1554–1607), the bag tutorials (containerframe.lua:496–498; blizzard_tutorialreagentbag.lua:8–18), the map's
+  -- bounty board and events tab (worldmapbountyboard.lua:516–637; questmapframe.lua:260–274), skyriding and
+  -- lorewalking widgets, the Pandaren faction choice (destinyframe.lua:9–17), the friends list
+  -- (friendslisttemplates.lua:285; camelot/friendsframe.lua:1328) and the spellbook's assisted combat
+  -- (blizzard_spellbookframetutorials.lua:142)
+  "COLLECTION_UNOPENED_PLURAL", "COLLECTION_UNOPENED_SINGULAR", "HEIRLOOMS_MICRO_BUTTON_SPEC_TUTORIAL",
+  "TOYBOX_MICRO_BUTTON_SPEC_TUTORIAL", "SPEC_CHANGED_HAS_NEW_ABILITIES", "TALENT_MICRO_BUTTON_NO_SPEC",
+  "TUTORIAL_REAGENT_BAG_STEP_1", "TUTORIAL_REAGENT_BAG_STEP_2", "DRAGON_RIDING_ACTIONBAR_TUTORIAL",
+  "LOREWALKING_QUESTS_HIDDEN_HELP_TIP", "BOUNTY_TUTORIAL_INTRO", "BOUNTY_TUTORIAL_BOUNTY_FINISHED",
+  "WORLD_MAP_ACTIVITY_TRACKER_LIST_INTRO", "RECRUIT_A_FRIEND_FACTION_PANDAREN_ALLIANCE",
+  "RECRUIT_A_FRIEND_FACTION_PANDAREN_HORDE", "BIND_TO_ACCOUNT_UNTIL_EQUIP_TUTORIAL", "CROSS_FACTION_INVITE_HELPTIP",
+  "SOCIAL_QUICK_JOIN_TAB_HELP_TIP", "EVENT_SCHEDULER_WORLD_MAP_HELP_TEXT", "WORLD_MAP_TUTORIAL6",
+  "ASSISTED_COMBAT_ROTATION_DRAG_HELPTIP" }
 
 -- The help-plate tooltip's texts; nothing else is ever read off it. A plate tile's hover is the same Init
 -- with the section's ToolTipText (blizzard_helpplate.lua:141–146, 243): the spellbook's two sections

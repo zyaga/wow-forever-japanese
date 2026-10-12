@@ -73,6 +73,7 @@ local SLOT_WORDS = { "HEADSLOT", "SHOULDERSLOT", "BACKSLOT", "CHESTSLOT", "SHIRT
 local LABELS = {
   { "discount", F .. ".OutfitCollection.UsableDiscountText", { "TRANSMOG_USABLE_DISCOUNT" } },
   { "purchase", F .. ".OutfitCollection.PurchaseOutfitButton.Text", { "TRANSMOG_PURCHASE_OUTFIT_SLOT" } },
+  { "showEquipped", F .. ".OutfitCollection.ShowEquippedGearSpellFrame.Label", { "TRANSMOG_SHOW_EQUIPPED_GEAR" } },
   { "save", F .. ".OutfitCollection.SaveOutfitButton", { "TRANSMOG_SAVE_OUTFIT" } },
   { "popupHeader", F .. ".OutfitPopup.BorderBox.EditBoxHeaderText", { "TRANSMOG_OUTFIT_SLOT_POPUP_TEXT" } },
   { "hideIgnored", TOGGLES .. ".HideIgnoredToggle.Text", { "TRANSMOG_HIDE_UNASSIGNED_SLOTS" } },
@@ -125,6 +126,12 @@ local TOOLTIPS = {
   { SITUATIONS .. ".ApplyButton", { "TRANSMOG_SITUATIONS_APPLY_DISABLED_TOOLTIP" } },
   { SITUATIONS .. ".UndoButton", { "TRANSMOG_SITUATIONS_UNDO" } },
   { TOGGLES .. ".SheatheWeaponToggle.Checkbox", { "TRANSMOG_SHEATHE_WEAPON_TOOLTIP" } },
+  -- the outfit cost's discount hover (lua:127–131) and the outfit slot button's disabled reason (lua:427–429)
+  { F .. ".OutfitCollection.MoneyFrame.TooltipOverlay", { "TRANSMOG_COST_MODIFIER_TOOLTIP_AURA",
+    "TRANSMOG_COST_MODIFIER_TOOLTIP_AURA_OUTFIT", "TRANSMOG_COST_MODIFIER_TOOLTIP_AURA_VOID_ELF",
+    "TRANSMOG_COST_MODIFIER_TOOLTIP_FREE", "TRANSMOG_COST_MODIFIER_TOOLTIP_OUTFIT",
+    "TRANSMOG_COST_MODIFIER_TOOLTIP_OUTFIT_VOID_ELF", "TRANSMOG_COST_MODIFIER_TOOLTIP_VOID_ELF" } },
+  { F .. ".OutfitCollection.PurchaseOutfitButton", { "TRANSMOG_PURCHASE_OUTFIT_SLOT_TOOLTIP_DISABLED" } },
 }
 local SITUATION = { only = { "TRANSMOG_SITUATIONS_NO_VALID_OPTIONS" } }
 local situationKey = WFJ.Labels.keyer("situation.") -- a pooled situation dropdown's record key

@@ -93,6 +93,10 @@ local SPECIAL_ONLY = { only = {
 local PASS_THROUGH = {
   PARTY_INVITE = { line = { "INVITATION", "INVITATION_XREALM" }, after = { "ACCEPTING_INVITE_WILL_REMOVE_QUEUE" } },
   VOICE_CHAT_JOIN_GROUP = { line = { "VOICE_CHAT_JOIN_GROUP_TEXT" }, after = { "VOICE_CHAT_JOIN_GROUP_DISCORD_TEXT" } },
+  -- the remove-friend confirmation: the caller formats one of three lines around the friend's name
+  -- (blizzard_unitpopupshared/unitpopupsharedbuttonmixins.lua:626–640)
+  CONFIRM_REMOVE_BN_FRIEND = { line = { "REMOVE_TITLE_FRIEND_CONFIRMATION", "BATTLETAG_REMOVE_FRIEND_CONFIRMATION",
+    "REMOVE_FRIEND_CONFIRMATION" }, after = {} },
 }
 
 local CANDIDATES = { show = { "StaticPopup_Show" }, update = { "StaticPopup_OnUpdate" },

@@ -36,6 +36,7 @@ local UI = {
   CLICK_BINDINGS_UNBOUND_TEXT = { "Unbound - Mouseover and click to set", "未設定 - マウスを合わせてクリックで設定" },
   OPTION_TOOLTIP_ENABLE_MOUSEOVER_CAST = { "Once enabled, mousing over a unit frame casts on it.", "有効にすると…" },
   MACROS = { "Macros", "マクロ" }, PLAYERSPELLS_BUTTON = { "Talents", "タレント" },
+  CLICK_BINDING_UNBOUND_OUTPUT = { "%s Unbound", "%s 未設定" },
 }
 
 local function en(key) return _G[key] end
@@ -68,6 +69,10 @@ local function loadClickBinding()
   t.SummaryText, t.InfoText = fs(en("CLICK_CAST_TITLE")), fs(en("CLICK_CAST_INFO"))
   t.AlternateText, t.ThrallName = fs(en("CLICK_CAST_ALTERNATE")), fs(en("THRALL_NAME"))
   f.ScrollBox = Stub.scrollBox()
+  f.UnboundText = fs() -- ClickBindingFrameMixin:SetUnboundText (lua:746–750)
+  function f.SetUnboundText(self, name)
+    self.UnboundText.text = string.format(en("CLICK_BINDING_UNBOUND_OUTPUT"), name)
+  end
   C.rows = {}
   function C.row(i, data) -- ClickBindingLineMixin:Init / ClickBindingHeaderMixin:Init
     local row = C.rows[i]
@@ -132,6 +137,15 @@ describe("the Click Cast Bindings window on Forever", function()
   for _, order in ipairs({ { true, "loaded before the addon" }, { false, "loaded on demand" } }) do
     describe("Blizzard_ClickBindingUI " .. order[2], function()
       before_each(function() setup(order[1]) end)
+
+      it("the unbound line keeps the spell's name inside the Japanese", function()
+        local f = _G.ClickBindingFrame
+        f:SetUnboundText("Fireball")
+        assert.are.equal("Fireball 未設定", f.UnboundText:GetText())
+        alt(true)
+        assert.are.equal("Fireball Unbound", f.UnboundText:GetText())
+        alt(false)
+      end)
 
       it("both titles are Japanese and stay Japanese after a second SetTitle", function()
         local f = _G.ClickBindingFrame

@@ -1356,6 +1356,9 @@ DYNAMIC: dict[str, list[str]] = {
         r"CHAT_(SAY|YELL|EMOTE|WHISPER|WHISPER_INFORM|PARTY|PARTY_LEADER|PARTY_GUIDE|RAID|RAID_LEADER|"
         r"RAID_WARNING|GUILD|OFFICER|INSTANCE_CHAT|INSTANCE_CHAT_LEADER|BN_WHISPER|BN_WHISPER_INFORM|AFK|DND|"
         r"CHANNEL|CHANNEL_JOIN|CHANNEL_LEAVE)_GET",
+        # the countdown timer's lines (blizzard_framexml/timer.lua:165–167) and the level-up line with its
+        # link (chatframeutiloverrides.lua:84), printed as system chat
+        r"COUNTDOWN_(SET|CLEAR)", r"LEVEL_UP",
         # all system chat: the lines the game sends as SYSTEM / LOOT / MONEY /
         # CURRENCY / COMBAT_XP_GAIN / COMBAT_HONOR_GAIN / COMBAT_FACTION_CHANGE / SKILL / TRADESKILLS /
         # OPENING chat, added plain by ChatFrameMixin:MessageEventHandler (chatframeoverrides.lua:397–408) or

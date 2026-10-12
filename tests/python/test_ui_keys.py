@@ -125,6 +125,7 @@ DRAFT_SOURCES = {"draft-ui",
                  "draft-ui-review-role",  # the "role" lines brought to the settled term
                  "draft-repull70170-ui-sg12",  # the keys new on 1.60.1.70170 and the lines it reworded
                  "draft-b70291-ui-sg12", "draft-b70291-ui-trial-sg12",  # a re-pull's new and reworded keys
+                 "draft-ui-left", "draft-ui-left-tooltip",  # lines a Forever client file shows, links and set bonuses
                  # the last interface lines, the tooltip owner / socket / trade lines and the unit lines the
                  # tooltip line kinds surfaced
                  "draft-repull70170-lastui-sg12", "draft-repull70170-kinds-sg12", "draft-repull70170-unitlines-sg12",
@@ -173,22 +174,18 @@ def test_every_key_has_one_machine_line_and_its_english(root):
             assert specifiers.mismatch(english[key]["en"], lines[key]["ja"]) is None, key
 
 
-def test_no_listed_english_carries_links_key_markup_or_tokens(root):
-    # Colour codes (|c … |r), plural grammar (|4), file textures (|T…|t), atlas textures (|A…|a) and named colours
-    # (|cnNAME:) are matched (core/markup.py, Core/UIStrings.lua) and kept verbatim by the markup check. Links (other than the static ones below), key markup and $ tokens are
-    # still never a key
+def test_no_listed_english_carries_a_refused_link_key_markup_or_tokens(root):
+    # Colour codes (|c … |r), plural grammar (|4), file textures (|T…|t), atlas textures (|A…|a), named colours
+    # (|cnNAME:) and links (|H…|h[label]|h, kept byte for byte with their label) are matched (core/markup.py,
+    # Core/UIStrings.lua) and kept verbatim by the markup check. core/markup.py link_refused is the one gate on
+    # links and on |K key markup; a $ quest token is never a key
     import re
 
+    from wfj.core.markup import link_refused
+
     token_dollar = re.compile(r"(?<!%\d)\$")  # a $N / $B quest token, never the `$` of a `%1$s` positional
-    # A link that never changes ( the client prints the same GlobalString every time) is matched as the
-    # whole exact line and kept verbatim by the markup check. Only these keys: the speech-to-text and text-to-speech
-    # settings' help links and the Recruit-a-Friend description.
-    static_links = {"ONLINE_SAFETY_NOTICE", "RAF_NO_RECRUITS_DESC", "SPEECH_TO_TEXT_SUBTEXT", "TEXT_TO_SPEECH_MORE_VOICES"}
     for ln in Store(root / "data", english=True).load("ui"):
-        for token in ("|H", "|K"):
-            if token == "|H" and ln["id"] in static_links:
-                continue
-            assert token not in ln["en"], (ln["id"], token)
+        assert link_refused(ln["en"]) is None, (ln["id"], link_refused(ln["en"]))
         # an NPC mail body keeps the client's $N / $B: the mail surface fills them the way the quest surface does
         if not ln["id"].startswith("MailBody:"):
             assert not token_dollar.search(ln["en"]), (ln["id"], "$")
@@ -293,3 +290,21 @@ def test_family_name_collisions_are_restricted_family_keys(root):
         family = ln["id"].split(":")[0]
         if ln["en"] in names and family in RESTRICTED_FAMILIES:
             assert family in restricted, ln["id"]
+
+
+def test_a_listed_link_holds_only_literal_text_and_plain_specifiers(root):
+    """A listed English may carry a |H…|h…|h link when the link's content is literal text plus plain `%s` / `%d`
+    specifiers (a player link, a loot-history link, a store link): the Japanese keeps the whole link byte for
+    byte, label included, and the arguments inside it keep the English order. A link holding a positional
+    specifier, a |K key, a `$` token or any other escape is still never a key."""
+    from wfj.core import markup
+
+    assert markup.link_refused("|Hplayer:%s|h[%s]|h has come online.") is None
+    assert markup.link_refused("|HlootHistory:%d|h[Loot]|h: %s won: %s") is None
+    assert markup.link_refused("|cffffd000|Hstorecategory:gametime|h[Click To Upgrade]|h|r") is None
+    assert markup.link_refused("|HurlIndex:64|h|cnVISITABLE_URL_DEFAULT_CHAT_LINK_COLOR:https://x|r|h") is None
+    assert markup.link_refused("no link at all %s") is None
+    assert markup.link_refused("|Hplayer:%1$s|h[%2$s]|h") == "positional specifier inside a link"
+    assert markup.link_refused("|Hplayer:%s|h[%s]|h |Kq1|k") == "|K key markup"
+    assert markup.link_refused("|Hspell:$N1|h[x]|h") == "$ token inside a link"
+    assert markup.link_refused("|Hplayer:%s|h[%s|Tx:0|t]|h") == "an escape inside a link: |T"

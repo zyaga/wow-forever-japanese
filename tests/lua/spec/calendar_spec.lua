@@ -23,6 +23,7 @@ local UI = {
   CALENDAR_TYPE_RAID = { "Raid", "レイド" }, CALENDAR_TYPE_DUNGEON = { "Dungeon", "ダンジョン" },
   CALENDAR_VIEW_EVENT = { "View Event", "イベントを表示" },
   CALENDAR_VIEW_GUILD_EVENT = { "View Guild Event", "ギルドイベントを表示" },
+  CALENDAR_VIEW_EVENTTITLE_LOCKED = { "|cff7f7f7f%s|r |cffffd200(Locked)|r", "|cff7f7f7f%s|r |cffffd200(ロック中)|r" },
   CALENDAR_CREATE_EVENT = { "Create Event", "イベントを作成" },
   CALENDAR_TEXTURE_PICKER_TITLE_RAID = { "Choose a Raid", "レイドを選択" },
   CALENDAR_SIGNUP = { "Sign Up", "参加登録" }, ACCEPT = { "Accept", "承諾" },
@@ -243,6 +244,19 @@ describe("the calendar on Forever", function()
         assert.is_true(WFJ.Labels.forbidden(_G.CalendarViewEventTitle))
         assert.are.equal(0, WFJ.Labels.show("calendar", "x", _G.CalendarViewEventTitle))
         assert.are.equal("Close", _G.CalendarViewEventTitle:GetText())
+      end)
+
+      it("a locked event's title takes the locked form around the title the player typed", function()
+        _G.CalendarViewEventTitle:SetText(string.format(en("CALENDAR_VIEW_EVENTTITLE_LOCKED"), "Close"))
+        _G.CalendarViewEventFrame_Update()
+        assert.are.equal("|cff7f7f7fClose|r |cffffd200(ロック中)|r", _G.CalendarViewEventTitle:GetText())
+        _G.CalendarViewEventTitle:SetText("Close")
+        _G.CalendarViewEventFrame_Update()
+        assert.are.equal("Close", _G.CalendarViewEventTitle:GetText())
+        -- an unlocked event's title is written as typed (lua:2855): a player's "(Locked)" is never the locked form
+        _G.CalendarViewEventTitle:SetText("Raid night (Locked)")
+        _G.CalendarViewEventFrame_Update()
+        assert.are.equal("Raid night (Locked)", _G.CalendarViewEventTitle:GetText())
       end)
 
       it("a response button's help tooltip translates", function()

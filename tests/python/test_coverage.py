@@ -125,3 +125,20 @@ def test_a_line_sharing_a_stale_file_counts_as_shared_not_silent(monkeypatch):
     after = coverage.voice_coverage(root)
     assert after["shared"] == before["shared"] and after["silent"] == before["silent"]
     assert sum(c.get("stale", 0) for c in after["kinds"].values()) > 0
+
+
+def test_every_ui_exclusion_has_one_reason_category(root: Path):
+    """coverage.md counts the interface lines left English by the kind of reason: every reason in
+    pipeline/ui_exclusions.txt falls in exactly one category (the first pattern that matches, in order), and
+    one that falls in none fails here instead of vanishing from the count."""
+    from wfj.dev import coverage
+
+    counts, uncategorized = coverage.ui_exclusions_by_reason(root)
+    assert uncategorized == []
+    assert sum(counts.values()) > 2000
+    assert counts["Not on Forever (a retail-era system, a gated addon, an empty client table)"] > 1000
+    assert "A link label, or a line that is only a link" in counts
+    # the committed report is the fresh render (test_the_committed_report_is_current): it carries the table
+    rendered = (root / "docs/operations/coverage.md").read_text(encoding="utf-8")
+    assert "### Interface lines left English, by reason" in rendered
+    assert "| Not on Forever (a retail-era system, a gated addon, an empty client table) |" in rendered

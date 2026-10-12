@@ -13,7 +13,10 @@ local UI = { CHAT_TAB_NAME = { "%s Tab", "%sタブ" },
   CHAT_CHANNELS = { "Chat Channels", "チャットチャンネル" },
   CHAT_WINDOWS_COUNT = { "%d Chat Windows", "チャットウィンドウ %d個" }, GENERAL = { "General", "一般" },
   -- the edit box header (Lua's "Say:\32" is "Say: " in _G)
-  CHAT_SAY_SEND = { "Say: ", "発言： " }, CHAT_WHISPER_SEND = { "Tell %s: ", "%sへ囁く： " } }
+  CHAT_SAY_SEND = { "Say: ", "発言： " }, CHAT_WHISPER_SEND = { "Tell %s: ", "%sへ囁く： " },
+  -- the newcomer chat hint under the edit box (chatframeeditboxoverrides.lua:33–45)
+  NPEV2_CHAT_HELP_HINT_HERE = { "Type here to ask questions in Newcomer Chat", "ここに入力して初心者チャットで質問" },
+  NPEV2_CHAT_HELP_HINT_DIFFERENT = { "Type %s to ask questions in Newcomer Chat", "%sと入力して初心者チャットで質問" } }
 
 -- An edit box replayed from ChatFrameEditBoxMixin:UpdateHeader (chatframeeditbox.lua:613–711): the header's width is
 -- its text's (6 per byte here), the typed text inset by it.
@@ -27,7 +30,7 @@ local function editBox(name)
   suffix.shown = false -- the client shows it only for a capped header
   function suffix:SetShown(v) self.shown = v end
   function suffix.GetWidth() return 12 end
-  local box = { chatType = "SAY", target = nil }
+  local box = { chatType = "SAY", target = nil, NewcomerHint = Stub.fontString("") }
   function box.GetName() return name end
   function box.GetLeft() return 0 end
   function box.GetRight() return 400 end
@@ -40,6 +43,11 @@ local function editBox(name)
     if self.chatType == "WHISPER" then header:SetFormattedText(_G.CHAT_WHISPER_SEND, self.target)
     else header:SetText(_G["CHAT_" .. self.chatType .. "_SEND"]) end
     self:SetTextInsets(15 + header:GetWidth() + (self.extra or 0), 13, 0, 0)
+  end
+  -- ChatFrameEditBoxMixin:UpdateNewcomerEditBoxHint: "here" in the newcomer channel, else its slash command
+  function box:UpdateNewcomerEditBoxHint()
+    if self.sameChannel then self.NewcomerHint:SetText(_G.NPEV2_CHAT_HELP_HINT_HERE)
+    else self.NewcomerHint:SetText(string.format(_G.NPEV2_CHAT_HELP_HINT_DIFFERENT, "/1")) end
   end
   _G[name], _G[name .. "Header"], _G[name .. "HeaderSuffix"] = box, header, suffix
   return box, header
@@ -164,5 +172,45 @@ describe("the chat frame's hovers on Forever", function()
     assert.are.equal(0, WFJ.ChatTabs.registerEditBoxes()) -- hooked once
     for _, n in ipairs({ "ChatFrame1EditBox", "ChatFrame1EditBoxHeader", "ChatFrame1EditBoxHeaderSuffix",
       "CHAT_CHANNEL_SEND" }) do _G[n] = nil end
+  end)
+end)
+
+-- UI/ChatTabs: the newcomer chat hint (ChatFrameEditBoxMixin:UpdateNewcomerEditBoxHint) in Japanese, the slash
+-- command kept.
+describe("the newcomer chat hint on Forever", function()
+  local WFJ
+
+  before_each(function()
+    Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
+    Stub.installTooltipAPI()
+    WFJ = H.loadChunks(FILES)
+    H.uiSetup(WFJ, UI)
+    Stub.button("ChatFrame1Tab", "General")
+    CreateFrame("Button", "ChatFrameChannelButton")
+    editBox("ChatFrame1EditBox")
+    assert.is_true(WFJ.ChatTabs.init())
+  end)
+
+  after_each(function()
+    H.uiTeardown()
+    Stub.keys.alt = false
+    for _, n in ipairs({ "ChatFrame1Tab", "ChatFrameChannelButton", "ChatFrame1EditBox", "ChatFrame1EditBoxHeader",
+      "ChatFrame1EditBoxHeaderSuffix" }) do _G[n] = nil end
+  end)
+
+  it("the hint is Japanese after the client writes it; the slash command stays; Alt shows English", function()
+    local box = _G.ChatFrame1EditBox
+    box.sameChannel = true
+    box:UpdateNewcomerEditBoxHint()
+    assert.are.equal("ここに入力して初心者チャットで質問", box.NewcomerHint:GetText())
+    box.sameChannel = false
+    box:UpdateNewcomerEditBoxHint()
+    assert.are.equal("/1と入力して初心者チャットで質問", box.NewcomerHint:GetText())
+    Stub.keys.alt = true
+    WFJ.Modifier.refresh()
+    assert.are.equal("Type /1 to ask questions in Newcomer Chat", box.NewcomerHint:GetText())
+    Stub.keys.alt = false
+    WFJ.Modifier.refresh()
+    assert.are.equal("/1と入力して初心者チャットで質問", box.NewcomerHint:GetText())
   end)
 end)

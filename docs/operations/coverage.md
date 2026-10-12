@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-10 at commit `5e694875`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-12 at commit `525f697d`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -16,8 +16,8 @@
 | Exploration / event objectives | 223 | 221 | 2 | 100.0% | 0 |
 | Item descriptions | 10,201 | 8,670 | 0 | 85.0% | 1,531 |
 | Spell tooltips + auras | 25,648 | 25,402 | 0 | 99.0% | 246 |
-| Interface strings | 15,906 | 15,906 | 0 | 100.0% | 0 |
-| **All** | **85,072** | | | **97.9%** | **1,777** |
+| Interface strings | 16,108 | 16,108 | 0 | 100.0% | 0 |
+| **All** | **85,274** | | | **97.9%** | **1,777** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
 professions, internal strings): quest 331, gossip 81, item 893, spell 300, ui 313.
@@ -75,6 +75,30 @@ professions, internal strings): quest 331, gossip 81, item 893, spell 300, ui 31
 | Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:24394) | 1 |
 | Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:19410) | 1 |
 | Spell tooltips + auras | no Japanese yet: the template uses a code drafting cannot place yet (missing_included_spell:18498) | 1 |
+
+### Interface lines left English, by reason
+
+Every interface line in `pipeline/ui_exclusions.txt`, by the kind of reason it carries.
+A reason that fits no category fails a test instead of dropping out of the count. The reasons
+checked against the Forever client cite the file, table or disposition that proves the line
+never shows, or the key that already shows the same English.
+
+| Reason | Lines |
+|---|---|
+| Not on Forever (a retail-era system, a gated addon, an empty client table) | 1,310 |
+| Spoken by screen narration or text-to-speech, never drawn | 101 |
+| A slash command word or its argument | 122 |
+| Shown through another key with the same English | 13 |
+| A link label, or a line that is only a link | 20 |
+| No words of its own (markup, numbers, punctuation, an abbreviation) | 226 |
+| A name, or text the player types or edits | 162 |
+| No Forever file writes it (a C-side line of other content) | 9 |
+| A chat, error or system line another surface owns | 20 |
+| Regex noise: a string no screen shows | 43 |
+| A composite line no form renders | 14 |
+| A glossary decision: the English word is the Japanese one | 1 |
+| Decided per key: the reason names the client file | 68 |
+| **All** | **2,109** |
 
 ## Served text inventory
 
@@ -363,7 +387,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 |---|---|---|---|---|---|---|
 | quest | 19,006 | 19,006 | 100.0% | 180 | 303,371 | 100.0% |
 | gossip | 10,831 | 10,831 | 100.0% | 0 | 103,748 | 100.0% |
-| ui | 15,200 | 15,200 | 100.0% | 0 | 46,497 | 100.0% |
+| ui | 15,320 | 15,320 | 100.0% | 0 | 46,882 | 100.0% |
 | book | 1,167 | 1,167 | 100.0% | 0 | 39,619 | 100.0% |
 
 Item, spell, objective and area text take no word cards; HTML book pages

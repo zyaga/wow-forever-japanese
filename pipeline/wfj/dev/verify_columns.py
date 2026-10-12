@@ -80,7 +80,7 @@ def _rows(archive: casc.LocalArchive, table: client_tables.Table, name: str):
     try:
         buf, gaps = archive.read_file(archive.file_data_id(table.path, table.file_data_id))
     except casc.CascError as e:
-        if table.optional and "names 0 enUS files" in str(e):
+        if table.optional and casc.is_absent(e):
             raise client_tables.TableAbsent(f"{name} is not shipped on one of the two clients") from e
         raise
     header = db2.read_header(buf, name)

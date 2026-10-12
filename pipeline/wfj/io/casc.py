@@ -49,6 +49,12 @@ class CascError(ValueError):
     """The archive is not laid out the way this reader understands."""
 
 
+def is_absent(e: CascError) -> bool:
+    """The root names no enUS file for the path, or lists the FileDataID with no enUS content key: the build
+    does not ship it, which is a fact about the build, not a failure to read something that is there."""
+    return "names 0 enUS files" in str(e) or "has 0 enUS content keys" in str(e)
+
+
 @dataclass(frozen=True)
 class BuildInfo:
     product: str

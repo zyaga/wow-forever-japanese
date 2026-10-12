@@ -365,3 +365,16 @@ def vectors_text(rows: list[dict], head: str = "return") -> str:
         )
     lines.append("} }")
     return "\n".join(lines) + "\n"
+
+
+def item_sets_text(sets: dict[int, list[tuple[int, int]]], items: dict[int, int]) -> str:
+    """`Data/ItemSets.lua`: `WFJ.Data.itemSets[set id] = { spell id, threshold, … }` (threshold order) and
+    `WFJ.Data.setItems[item id] = set id`, both sorted by id."""
+    lines = [HEADER.format(src="pipeline/item_sets.txt"), "local _, WFJ = ...", "WFJ.Data.itemSets = {"]
+    for set_id in sorted(sets):
+        pairs = ", ".join(f"{spell}, {threshold}" for spell, threshold in sets[set_id])
+        lines.append(f"  [{set_id}] = {{ {pairs} }},")
+    lines += ["}", "WFJ.Data.setItems = {"]
+    lines += [f"  [{item}] = {items[item]}," for item in sorted(items)]
+    lines.append("}")
+    return "\n".join(lines) + "\n"

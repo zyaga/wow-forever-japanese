@@ -11,7 +11,7 @@ FILES[#FILES + 1] = "UI/Achievement.lua"
 
 local ADDON = "Blizzard_AchievementUI"
 
-local UI = {
+local UI = { FACTION_STANDING_LABEL6 = { "Honored", "尊敬" },
   ACHIEVEMENTS = { "Achievements", "アチーブメント" }, ACHIEVEMENTS_GUILD_TAB = { "Guild", "ギルド" },
   STATISTICS = { "Statistics", "統計" },
   NO_COMPLETED_ACHIEVEMENTS = { "You have not earned any achievements recently", "最近獲得したアチーブメントはありません" },
@@ -34,6 +34,10 @@ local UI = {
   ACHIEVEMENTS_COMPLETED_CATEGORY = { "%s Achievements Earned", "%sの獲得アチーブメント" },
   ENCOUNTER_JOURNAL_SEARCH_RESULTS = { 'Search Results for "%s"(%d)', "「%s」の検索結果(%d)" },
   ACHIEVEMENT_META_COMPLETED_DATE = { "Completed %s", "%sに達成" },
+  ACHIEVEMENT_COMPLETED_BY = { "Completed by: |cffffffff%s|r", "達成者: |cffffffff%s|r" },
+  ACHIEVEMENT_NOT_COMPLETED_BY = { "|cnHIGHLIGHT_FONT_COLOR:%s can still complete this.|r",
+    "|cnHIGHLIGHT_FONT_COLOR:%sはまだ達成できます。|r" },
+  ACHIEVEMENT_REQUIRES_GUILD_REPUTATION = { "|cffffffffRequires guild reputation:|r %s", "|cffffffff必要ギルド評価:|r %s" },
 }
 
 local function en(key) return _G[key] end
@@ -238,6 +242,16 @@ describe("the achievement window on Forever", function()
         tt:AddLine(en("ACCOUNT_WIDE_ACHIEVEMENT_COMPLETED"))
         tt:Show()
         assert.are.equal("アカウントで獲得済み。", _G.GameTooltipTextLeft1:GetText())
+        tt:ClearLines() -- the shield of an earned achievement names who earned it (lua:3356–3361)
+        tt:AddLine(en("ACCOUNT_WIDE_ACHIEVEMENT_COMPLETED"))
+        tt:AddLine(string.format(en("ACHIEVEMENT_COMPLETED_BY"), "Reyn"))
+        tt:Show()
+        assert.are.equal("達成者: |cffffffffReyn|r", _G.GameTooltipTextLeft2:GetText())
+        tt:ClearLines()
+        tt:AddLine(en("ACCOUNT_WIDE_ACHIEVEMENT_COMPLETED"))
+        tt:AddLine(string.format(en("ACHIEVEMENT_NOT_COMPLETED_BY"), "Reyn"))
+        tt:Show()
+        assert.are.equal("|cnHIGHLIGHT_FONT_COLOR:Reynはまだ達成できます。|r", _G.GameTooltipTextLeft2:GetText())
         tt:ClearLines() -- the guild view's member list (AchievementFrameAchievements_CheckGuildMembersTooltip)
         tt:AddLine(en("ACCOUNT_WIDE_ACHIEVEMENT_COMPLETED"))
         tt:AddLine(" ")
@@ -473,6 +487,12 @@ describe("the achievement window's client-table text on Forever", function()
       frames.compareStats:initFrame(button, {})
       assert.are.equal("死亡回数", button:GetText())
     end)
+
+  it("a guild reputation criterion is Japanese around the standing's name", function()
+    local objectives = { RepCriteria = fs(string.format(en("ACHIEVEMENT_REQUIRES_GUILD_REPUTATION"), "Honored")) }
+    _G.AchievementObjectives_DisplayCriteria(objectives)
+    assert.are.equal("|cffffffff必要ギルド評価:|r 尊敬", objectives.RepCriteria:GetText())
+  end)
 
   it("a comparison row's player side: title and description are Japanese", function()
     local row = CreateFrame("Button")

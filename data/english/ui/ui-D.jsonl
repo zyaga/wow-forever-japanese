@@ -101,6 +101,7 @@
 {"id": "DESCRIPTION_OF_YOUR_GROUP_MANDATORY", "field": "text", "en": "More details about your group", "hash": "b9813c47a28bd7e8", "src": "db2@1.60.1.70338"}
 {"id": "DIALOG_INSTRUCTION_REPLACE_MOUNT_EQUIPMENT", "field": "text", "en": "Are you sure you want to replace this Mount Equipment? The existing one will be destroyed.", "hash": "dbe1a05d5a6c4824", "src": "db2@1.60.1.70338"}
 {"id": "DIALOG_VOLUME", "field": "text", "en": "Dialog", "hash": "0f5fc69257ed54d3", "src": "db2@1.60.1.70338"}
+{"id": "DIFFICULTY_LOCKED_REASON_STORY_RAID", "field": "text", "en": "Unavailable in Story mode", "hash": "bba88cc5a7ba21ba", "src": "db2@1.60.1.70338"}
 {"id": "DISABLE", "field": "text", "en": "Disable", "hash": "187cb46b6a487dab", "src": "db2@1.60.1.70338"}
 {"id": "DISABLE_ALL_ADDONS", "field": "text", "en": "Disable All", "hash": "ee6846b6f50ec0f2", "src": "db2@1.60.1.70338"}
 {"id": "DISCORD_CHANNEL_LINK_PROMPT", "field": "text", "en": "Link", "hash": "0a4ac16a9bbdefd1", "src": "db2@1.60.1.70338"}
@@ -140,6 +141,7 @@
 {"id": "DONE_BY", "field": "text", "en": "Done By:", "hash": "17beec26faeaa9a9", "src": "db2@1.60.1.70338"}
 {"id": "DONE_TO", "field": "text", "en": "Done To:", "hash": "17c39daa425e2e82", "src": "db2@1.60.1.70338"}
 {"id": "DPS_TEMPLATE", "field": "text", "en": "(%s damage per second)", "hash": "b854293d4a973159", "src": "db2@1.60.1.70338"}
+{"id": "DRAGON_RIDING_ACTIONBAR_TUTORIAL", "field": "text", "en": "You can add regular abilities to your Skyriding bar to dismount faster for combat", "hash": "4b595f163b9ea370", "src": "db2@1.60.1.70338"}
 {"id": "DRAG_MODEL", "field": "text", "en": "Drag", "hash": "093aa938543712ed", "src": "db2@1.60.1.70338"}
 {"id": "DRAG_MODEL_TOOLTIP", "field": "text", "en": "Right-click on character and drag to move it within the window.", "hash": "4fb6188c39d4b450", "src": "db2@1.60.1.70338"}
 {"id": "DRAINS", "field": "text", "en": "Drains", "hash": "ad5a65d92242e4fd", "src": "db2@1.60.1.70338"}
@@ -154,6 +156,7 @@
 {"id": "DUEL_REQUESTED", "field": "text", "en": "%s has challenged you to a duel.", "hash": "9a28cdc512aab28b", "src": "db2@1.60.1.70338"}
 {"id": "DUEL_TO_DEATH", "field": "text", "en": "Duel to the Death", "hash": "c247f7d5f0c3b234", "src": "db2@1.60.1.70338"}
 {"id": "DUEL_TO_THE_DEATH_CHALLENGE_CONFIRM", "field": "text", "en": "Are you sure you want to challenge %s to a duel to the death?\n\nYour opponent will be able to kill you, and death is permanent on Hardcore Realms.\n\nType \"I Agree\" to issue the challenge.", "hash": "6421076536fcfdd5", "src": "db2@1.60.1.70338"}
+{"id": "DUEL_TO_THE_DEATH_REQUESTED", "field": "text", "en": "|Hplayer:%s|h[%s]|h has challenged you to a duel to the death.", "hash": "06afc13f0322d302", "src": "db2@1.60.1.70338"}
 {"id": "DUEL_TO_THE_DEATH_REQUEST_CONFIRM", "field": "text", "en": "Are you sure you want to accept this duel to the death?\n\nYour opponent will be able to kill you, and death is permanent on Hardcore Realms.\n\nType \"I Agree\" to accept the challenge.", "hash": "d29671129f81659f", "src": "db2@1.60.1.70338"}
 {"id": "DUNGEONS", "field": "text", "en": "Dungeons", "hash": "805537b689ee7860", "src": "db2@1.60.1.70338"}
 {"id": "DUNGEONS_BUTTON", "field": "text", "en": "Group Finder", "hash": "be7119ca58a84a6f", "src": "db2@1.60.1.70338"}
@@ -163,6 +166,7 @@
 {"id": "DUNGEON_DIFFICULTY_BANNER_TOOLTIP_PLAYER_COUNT", "field": "text", "en": "%d/%d Players", "hash": "fd953a4fdffe21fc", "src": "db2@1.60.1.70338"}
 {"id": "DUNGEON_MAP_PIN_FALLBACK_NAME", "field": "text", "en": "Dungeon", "hash": "8bba4ca03e80dc45", "src": "db2@1.60.1.70338"}
 {"id": "DUNGEON_POI_TOOLTIP_INSTRUCTION_LINE", "field": "text", "en": "<Right Click to open Adventure Guide>", "hash": "fa1152d3030c5866", "src": "db2@1.60.1.70338"}
+{"id": "DUNGEON_SCORE", "field": "text", "en": "Mythic+ Rating", "hash": "dafdf651f7ff3727", "src": "db2@1.60.1.70338"}
 {"id": "DURABILITYDAMAGE_DEATH", "field": "text", "en": "Your equipped items suffer a %d%% durability loss.", "hash": "57fa69783cc9d1e7", "src": "db2@1.60.1.70338"}
 {"id": "DURABILITY_TEMPLATE", "field": "text", "en": "Durability %d / %d", "hash": "f7e21f32a083a0bf", "src": "db2@1.60.1.70338"}
 {"id": "D_DAYS", "field": "text", "en": "%d |4Day:Days;", "hash": "7d61147f604734c2", "src": "db2@1.60.1.70338"}

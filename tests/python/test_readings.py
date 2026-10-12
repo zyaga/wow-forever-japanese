@@ -722,7 +722,7 @@ WINDOW_SURFACES = frozenset({
     "loothistory", "macro", "mail", "mail.static", "maplegend", "merchant", "merchant.static", "mountjournal",
     "obliterumforge.static", "partypose", "petition", "petjournal", "playerchoice", "playerchoice.options",
     "playerspells", "popups", "professions", "professions.book", "pvpmatch", "pvprank", "questframe.greeting",
-    "questframe.spellheaders", "questframe.timer", "questmap.list", "questmap.title", "quickjoin",
+    "questframe.reputation", "questframe.spellheaders", "questframe.timer", "questmap.list", "questmap.storytip", "questmap.title", "quickjoin",
     "quickkeybind", "raid", "raid.static", "raidmanager", "readycheck", "recruitafriend", "reportframe",
     "recentallies", "reputation", "reputation.static", "scrappingmachine.static", "settingspanel", "settingspanel.static",
     "settingstutorials", "skills", "spellbook.static", "spellsearch", "stable", "stacksplit",

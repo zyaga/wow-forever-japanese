@@ -21,6 +21,7 @@ import argparse
 import sys
 from pathlib import Path
 
+from wfj.dev.item_sets import TABLES as ITEM_SET_TABLES
 from wfj.io import casc, db2, dbcache
 
 # The sweep §5 tables, and TraitSubTree (hero talents), with their FileDataIDs: the root of this client
@@ -58,6 +59,15 @@ TABLES: dict[str, int] = {
     "Contribution": 1587153,
     "DelvesSeason": 5920079,
     "TraitSubTree": 5534447,
+    # the systems the interface lines left English ask about: bonus rolls, item upgrades, quest lines,
+    # crafting orders, transmog sets; and the item sets behind the set bonus lines (ItemSet / ItemSetSpell)
+    "BonusRoll": 1983274,
+    "ItemUpgrade": 801687,
+    "QuestLine": 973430,
+    "CraftingOrder": 4529122,
+    "TransmogSet": 1376213,
+    **ITEM_SET_TABLES,
+    "ChrClasses": 1361031,
 }
 
 
@@ -96,6 +106,11 @@ def main(argv: list[str] | None = None) -> int:
         try:
             rows, fixes = count(archive, name, cache)
         except (casc.CascError, db2.Db2Error) as e:
+            # a table the root does not name at all is a fact about the build (ItemUpgrade on Forever), the
+            # same proof as 0 rows; a table that is there and cannot be read is a failure
+            if isinstance(e, casc.CascError) and casc.is_absent(e):
+                print(f"{name}: absent from the archive (no row can exist)")
+                continue
             print(f"{name}: unreadable ({e})")
             failed = True
             continue

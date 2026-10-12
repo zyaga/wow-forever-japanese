@@ -32,6 +32,7 @@
 {"id": "WAR_MODE_BONUS_PERCENTAGE_XP_FORMAT", "field": "text", "en": "|cff1eff00+%1$d%% War Mode Bonus|r", "hash": "547d308641a11868", "src": "db2@1.60.1.70338"}
 {"id": "WAR_WITHIN_LANDING_PAGE_ALERT_MAJOR_FACTION_UNLOCKED", "field": "text", "en": "Major Faction Unlocked", "hash": "0689f3cd4c0bc4b4", "src": "db2@1.60.1.70338"}
 {"id": "WATER_COLLISION", "field": "text", "en": "Water Collision", "hash": "4984ce6279b988e6", "src": "db2@1.60.1.70338"}
+{"id": "WAYPOINT_OBJECTIVE_FORMAT_OPTIONAL", "field": "text", "en": "0/1 %s (Optional)", "hash": "b49e40ecf6638f77", "src": "db2@1.60.1.70338"}
 {"id": "WEAPON_ENCHANTMENT", "field": "text", "en": "Weapon Enchantment", "hash": "c3d8433bb9a5018f", "src": "db2@1.60.1.70338"}
 {"id": "WEAPON_SKILL_DETAIL_BOSS", "field": "text", "en": "Chance to |cFFFFFFFFHit|r, and to avoid being |cFFFFFFFFDodged|r or |cFFFFFFFFParried|r: %s\n\nChance to |cFFFFFFFFCritically Hit|r: %s\n\n|cFFFFFFFFGlancing Blows|r occur %s of the time and deal %s less damage", "hash": "c91c0fc64408380e", "src": "db2@1.60.1.70338"}
 {"id": "WEAPON_SKILL_DETAIL_BOSS_HEADER", "field": "text", "en": "|cFFFFFFFFAgainst Raid Bosses|r", "hash": "d531c100573a157e", "src": "db2@1.60.1.70338"}
@@ -69,6 +70,7 @@
 {"id": "WORLD", "field": "text", "en": "World", "hash": "0626ad84d65fc103", "src": "db2@1.60.1.70338"}
 {"id": "WORLDMAP_BUTTON", "field": "text", "en": "World Map", "hash": "cdc6abf08f3d4114", "src": "db2@1.60.1.70338"}
 {"id": "WORLD_MAP", "field": "text", "en": "Map", "hash": "00145bc831b875cf", "src": "db2@1.60.1.70338"}
+{"id": "WORLD_MAP_ACTIVITY_TRACKER_LIST_INTRO", "field": "text", "en": "Track available Major Faction activities on the map by selecting them from the list.", "hash": "c9b1ce551cc226ab", "src": "db2@1.60.1.70338"}
 {"id": "WORLD_MAP_ACTIVITY_TRACKER_RING_TOOLTIP", "field": "text", "en": "<Left-Click to cycle available activities>|n<Right-Click to untrack faction>", "hash": "6e92281fd78e2da2", "src": "db2@1.60.1.70338"}
 {"id": "WORLD_MAP_CROSSHAIR_COORDS", "field": "text", "en": "Crosshair: %.1f, %.1f", "hash": "2f238e3fd01c608f", "src": "db2@1.60.1.70338"}
 {"id": "WORLD_MAP_CROSSHAIR_COORDS_INTEGER", "field": "text", "en": "Crosshair: %d, %d", "hash": "455639a13d0c6e9e", "src": "db2@1.60.1.70338"}
@@ -84,6 +86,7 @@
 {"id": "WORLD_MAP_PLAYER_COORDS_MAP_NAME_INTEGER", "field": "text", "en": "Player (%3$s): %1$d, %2$d", "hash": "e2843c3095e740f4", "src": "db2@1.60.1.70338"}
 {"id": "WORLD_MAP_TUTORIAL2", "field": "text", "en": "Your quests will be listed here based on the Current Map.", "hash": "49370e17e2180fed", "src": "db2@1.60.1.70338"}
 {"id": "WORLD_MAP_TUTORIAL5", "field": "text", "en": "Hover over icons for more information and to highlight them on the map.", "hash": "f14e3add6078f254", "src": "db2@1.60.1.70338"}
+{"id": "WORLD_MAP_TUTORIAL6", "field": "text", "en": "Available events will be listed here based on the current map.|n|nRight click scheduled events to set reminders for them.", "hash": "d7cac9ae44e679e2", "src": "db2@1.60.1.70338"}
 {"id": "WORLD_MARKER", "field": "text", "en": "World Marker %d", "hash": "cbc4d9e159a8eb0e", "src": "db2@1.60.1.70338"}
 {"id": "WORLD_PVP_DESERTER", "field": "text", "en": "You cannot enter %s until your deserter debuff wears off.", "hash": "89dd1780216b5909", "src": "db2@1.60.1.70338"}
 {"id": "WORLD_PVP_ENTER", "field": "text", "en": "You have been called to join the %s battle! Join now?|nTime remaining: %d %s", "hash": "600b4872646f44da", "src": "db2@1.60.1.70338"}

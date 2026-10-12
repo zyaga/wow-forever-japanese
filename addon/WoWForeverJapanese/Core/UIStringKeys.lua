@@ -189,6 +189,34 @@ UIStrings.ARGS = {
   COMMUNITY_INVITATION_FRAME_INVITATION_TEXT = { [1] = "text" },
   REQUIRES_GUILD_FACTION = { [1] = "word" }, REQUIRES_GUILD_FACTION_TOOLTIP = { [1] = "word" },
   UNIT_TYPE_LEVEL_FACTION_TEMPLATE = { [2] = "text", [3] = "text" },
+  -- Lines with a name, colour code, link or plural group around their words: a crafter's or gifter's name
+  -- inside a colour code, a temporary enchant's name before its time left, the loot specialization's name, a
+  -- talent tree's name, an item or skill name, a dialog's duration or player name, a reward faction, a tooltip's
+  -- faction word, a chat hint's slash command, a quest waypoint's text. The dual-wield comparison carries the
+  -- weapon's colour as eight hex digits before its name (`hex`). A set bonus line's text is the whole bonus
+  -- (`verbatim`, periods included); UI/Tooltip resolves it through the set spell's Japanese, never shown as is.
+  ITEM_CREATED_BY = { [1] = "text" }, ITEM_WRAPPED_BY = { [1] = "text" },
+  ITEM_DELTA_DUAL_WIELD_COMPARISON_MAINHAND_DESCRIPTION = { [1] = "hex", [2] = "text" },
+  ITEM_DELTA_DUAL_WIELD_COMPARISON_OFFHAND_DESCRIPTION = { [1] = "hex", [2] = "text" },
+  LOOT_SPECIALIZATION_DEFAULT = { [1] = "text" }, TOOLTIP_TALENT_PREREQ = { [2] = "text" },
+  ITEM_ENCHANT_TIME_LEFT_DAYS = { [1] = "text" }, ITEM_ENCHANT_TIME_LEFT_HOURS = { [1] = "text" },
+  ITEM_ENCHANT_TIME_LEFT_MIN = { [1] = "text" }, ITEM_ENCHANT_TIME_LEFT_SEC = { [1] = "text" },
+  ITEM_CREATE_LOOT_SPEC_ITEM = { [1] = "text" }, ITEM_MISSING = { [1] = "text" },
+  ITEM_DISENCHANT_MIN_SKILL = { [1] = "text" }, REAGENT_COST_CONSUME_CHARGES = { [1] = "text" },
+  REAGENT_COST_CONSUME_SINGLE_CHARGE = { [1] = "text" }, MAP_TOOLTIP_TIME_LEFT = { [1] = "entryOrText" },
+  BONUS_OBJECTIVE_TIME_LEFT = { [1] = "entryOrText" }, WAYPOINT_OBJECTIVE_FORMAT_OPTIONAL = { [1] = "text" },
+  ITEM_SET_BONUS = { [1] = "verbatim" }, ITEM_SET_BONUS_GRAY = { [2] = "verbatim" },
+  DUEL_TO_THE_DEATH_REQUESTED = { [1] = "text", [2] = "text" },
+  -- GetResSicknessDuration's C-side string, kept as written
+  CONFIRM_XP_LOSS = { [1] = "text" },
+  REMOVE_FRIEND_CONFIRMATION = { [1] = "text" }, BATTLETAG_REMOVE_FRIEND_CONFIRMATION = { [1] = "text" },
+  REMOVE_TITLE_FRIEND_CONFIRMATION = { [1] = "text" },
+  ACHIEVEMENT_COMPLETED_BY = { [1] = "text" }, ACHIEVEMENT_NOT_COMPLETED_BY = { [1] = "text" },
+  ACHIEVEMENT_REQUIRES_GUILD_REPUTATION = { [1] = "standing" }, CALENDAR_VIEW_EVENTTITLE_LOCKED = { [1] = "text" },
+  CLICK_BINDING_UNBOUND_OUTPUT = { [1] = "text" }, COMMUNITIES_CROSS_FACTION_BUTTON_TOOLTIP_TITLE = { [1] = "text" },
+  CROSS_FACTION_INVITE_TOOLTIP = { [1] = "text" }, COMMUNITY_MEMBER_LIST_CROSS_FACTION = { [1] = "text" },
+  GUILD_CHALLENGE_REWARD_GOLD = { [1] = "text" }, QUEST_REPUTATION_REWARD_TITLE = { [1] = "text" },
+  QUEST_REPUTATION_REWARD_TOOLTIP = { [2] = "text" }, NPEV2_CHAT_HELP_HINT_DIFFERENT = { [1] = "text" },
   -- the friends tooltip's zone and realm (or region) are names (camelot friendsframe.lua:1964–1967)
   BNET_FRIEND_TOOLTIP_ZONE_AND_REALM = { [1] = "text", [2] = "text" },
   BNET_FRIEND_TOOLTIP_ZONE_AND_REGION = { [1] = "text", [2] = "text" },
@@ -203,14 +231,19 @@ UIStrings.ARGS = {
   UNDISCOVERED_FACTION_FLIGHTPOINT = { [1] = "text" }, CURRENCY_TRANSFER_MENU_TITLE = { [1] = "text" },
   CURRENCY_TRANSFER_NEW_BALANCE_PREVIEW = { [1] = "text" }, GUILD_RENAME_OPTIONS_REFUND = { [1] = "time" },
   GUILD_RENAME_OPTIONS_RENAME_COOLDOWN = { [1] = "time" }, SL_SET_CONVERSION_RECHARGE_TIME = { [1] = "time" },
-  BLACK_MARKET_HOT_ITEM_TIME_LEFT = { [1] = "words" }, FACTION_CONTROLLED_TERRITORY = { [1] = "text" },
+  -- "Time Left: %s": the black market's AUCTION_TIME_LEFT<n> word or a bonus objective's "5 min", one shape
+  -- for the shared English
+  BLACK_MARKET_HOT_ITEM_TIME_LEFT = { [1] = "entryOrText" }, FACTION_CONTROLLED_TERRITORY = { [1] = "text" },
   TIME_IN_QUEUE = { [1] = "time" }, LFG_STATISTIC_AVERAGE_WAIT = { [1] = "time" },
   PVP_LEAVE_BUTTON_TIME = { [1] = "entry", [2] = "text" }, DEATH_RECAP_CAST_BY_TT = { [1] = "text", [2] = "text" },
   PVP_RATING_PREVIOUS = { [1] = "text" }, PVP_RATING_GAINED = { [1] = "text" }, PVP_RATING_NEW = { [1] = "text" },
   PVP_RATING_CURRENT = { [1] = "text" }, BATTLEGROUND_YOUR_PERSONAL_RATING = { [1] = "text" },
   BATTLEGROUND_ROLE_AVERAGE_MMV = { [1] = "text" }, COMBAT_TEXT_HONOR_GAINED = { [1] = "signed" },
   PVP_HONOR_CHANGE = { [1] = "signed" }, PVP_CONQUEST_CHANGE = { [1] = "signed" },
-  PVP_RATING_CHANGE = { [1] = "signed" }, VOICE_CHAT_PROMPT_CHANNEL_ACTIVATE_PARTY = { [1] = "text" },
+  PVP_RATING_CHANGE = { [1] = "signed" },
+  -- two ratings around an arrow texture
+  MATCHMAKING_YOUR_UPDATED_MATCHMAKING_VALUE = { [1] = "verbatim", [2] = "verbatim" },
+  VOICE_CHAT_PROMPT_CHANNEL_ACTIVATE_PARTY = { [1] = "text" },
   VOICE_CHAT_PROMPT_CHANNEL_ACTIVATE_INSTANCE = { [1] = "text" },
   VOICE_CHAT_PROMPT_CHANNEL_ACTIVATE_RAID = { [1] = "text" },
   VOICE_CHAT_NOTIFICATION_CHANNEL_ACTIVATED_PARTY = { [1] = "text" },
@@ -227,7 +260,7 @@ UIStrings.ARGS = {
   MAC_MIC_PREMISSIONS_NOTIFICATION = { [1] = "text" }, CAA_DEBUFF_SELF_ALERT_FORMAT_DEBUFF_TYPE = { [1] = "word" },
   PREFERRED_PLAY_SETTINGS_LOCKED_REASON_FORMAT = { [1] = "time" }, GUILD_REPUTATION_WARNING = { [1] = "text" },
   GUILD_ACHIEVEMENTS_ELIGIBLE = { [3] = "text" }, GUILD_ACHIEVEMENTS_ELIGIBLE_MINXP = { [3] = "text" },
-  GUILD_ACHIEVEMENTS_ELIGIBLE_MAXXP = { [1] = "text" }, BOSS_BANNER_LOOT_SET = { [1] = "text" },
+  GUILD_ACHIEVEMENTS_ELIGIBLE_MAXXP = { [1] = "text" }, BOSS_BANNER_LOOT_SET = { [1] = "verbatim" },
   LOSS_OF_CONTROL_DISPLAY_INTERRUPT_SCHOOL = { [1] = "word" }, AUTOFOLLOWSTART = { [1] = "text" },
   AUTOFOLLOWSTOP = { [1] = "text" }, READY_CHECK_MESSAGE = { [1] = "text" },
   -- error keys whose English is another surface's template. One template is compiled per distinct English
@@ -600,7 +633,12 @@ UIStrings.CHAT_FAMILIES = { "^LOOT_ITEM$", "^LOOT_ITEM_", "^LOOT_ROLL_", "^CREAT
   "^CALENDAR_EVENT_ALARM_MESSAGE$", "^CHAT_LEAVE_CHANNEL_PREVENTED$",
   "^COOLDOWN_VIEWER_SETTINGS_COPY_TO_CLIPBOARD_NOTICE$", "^HUD_EDIT_MODE_COPY_TO_CLIPBOARD_NOTICE$",
   "^HUD_EDIT_MODE_LAYOUT_APPLIED$", "^VOICE_CHAT_CHANNEL_ANNOUNCE_MEMBER_",
-  "^VOICE_CHAT_CHANNEL_MANAGEMENT_TIP$" } -- printed into chat (channelframe.lua)
+  "^VOICE_CHAT_CHANNEL_MANAGEMENT_TIP$", -- printed into chat (channelframe.lua)
+  -- the level-up line and its link (chatframeutiloverrides.lua:84), the countdown timer's lines (timer.lua:165–167),
+  -- the newcomer chat's welcome (channelframe.lua:736–742), the censored-message prompts (chatframeutil.lua:869;
+  -- itemrefhandlersshared.lua:204) and the trial restriction notices (chatframeoverrides.lua:436, 480)
+  "^LEVEL_UP$", "^COUNTDOWN_SET$", "^COUNTDOWN_CLEAR$", "^NPEV2_CHAT_WELCOME_TO_CHANNEL_", "^CENSORED_MESSAGE_",
+  "^CHAT_RESTRICTED_TRIAL$", "^CHAT_TRIAL_RESTRICTED_NOTICE_TRIAL$" }
 
 -- The duration templates a `time` argument may be: which of them the C client prints inside a cooldown line
 -- is not in the UI source, so every candidate is listed.
@@ -626,7 +664,20 @@ UIStrings.SPELL_DURATIONS = { "INT_SPELL_DURATION_DAYS", "INT_SPELL_DURATION_HOU
 -- Templates with almost no literal text of their own ("%2$s %1$s", "%s at %s") would take any
 -- line that starts with a dictionary word ("Return to Verner", "Frost Resistance increased by 30"). They are matched
 -- only where a widget asks for them by key (matchOnly), never by an unrestricted match.
+-- The colour-wrapped templates the compiled client prints without their codes (a tooltip data line carries its
+-- colour as the line's, not in the text): only these get a bare form, so a player's own text in the shape of
+-- another coloured template ("Raid night (Inactive)") is never matched.
+UIStrings.BARE = { ITEM_CREATED_BY = true, ITEM_WRAPPED_BY = true }
+
 UIStrings.ONLY = { COOLDOWN_VIEWER_SETTINGS_ACTION_ADD_ALERT = true,
+  -- "%s Reputation" and "%s Unbound" would take any line ending in that word: the quest reward row and the click
+  -- binding window ask for them by key
+  QUEST_REPUTATION_REWARD_TITLE = true, CLICK_BINDING_UNBOUND_OUTPUT = true,
+  -- "Set: %s" takes any text after it: a set bonus line is shown only whole, through the set spell's Japanese
+  -- (UI/Tooltip asks by key), and the boss banner asks for its own; never "セット: +4 Stamina."
+  ITEM_SET_BONUS = true, ITEM_SET_BONUS_GRAY = true, BOSS_BANNER_LOOT_SET = true,
+  -- "%s Player" would take any line ending in "Player": the communities roster tooltip asks for it by key
+  COMMUNITIES_CROSS_FACTION_BUTTON_TOOLTIP_TITLE = true,
   -- "%s in %s" and "%s by %s": two free-text halves around one short word would split any sentence without a
   -- period at that word and show the halves in the Japanese order ("Cannot change equip status while in combat"
   -- in an item tooltip became "combatのCannot change equip status while"); the death recap asks for its own by key
@@ -774,6 +825,9 @@ UIStrings.OWN = {
   -- the PvP scoreboard's two-line column headers ("Damage\nDone"; the one-line English is the header tooltips' title)
   SCORE_DAMAGE_DONE = true, SCORE_HEALING_DONE = true, SCORE_HONORABLE_KILLS = true, SCORE_KILLING_BLOWS = true,
   SCORE_RATING_CHANGE = true,
+  -- the spell book's two-line assisted combat button label ("Single-Button|nAssistant"; the one-line English is
+  -- the settings category's); only UI/SpellBook.lua's `only` match shows it
+  ASSISTED_COMBAT_ROTATION_SPELLBOOK_LABEL = true,
   -- "Back" (the equipment slot is 背中): the auction house, the quest map, the crafting order form
   AUCTION_HOUSE_BACK_BUTTON = true, BACK = true, PROFESSIONS_CRAFTING_FORM_BACK = true,
   -- "Available" (the friends status is 在席): the auction house column, the trainer filter, a cooldown alert event
@@ -822,7 +876,10 @@ UIStrings.FAMILY_LIST_KINDS = { petFoodList = "PetFood" }
 --              "<label>: <tooltip>" line, blizzard_settings.lua:441–457): both halves in Japanese, each colour kept
 -- `wrapped` also takes a `number`-form label inside the colour ("|cffffffffStrength 18|r", the paperdoll hovers), and
 -- `binding` also takes the pet bar's "|cffffd200 (Ctrl-1)|r" variant with the space inside the colour.
-UIStrings.LABELS = { SELL_PRICE = "colon", SPEED = "number", RANK = "number",
+UIStrings.LABELS = { SPEED = "number", RANK = "number",
+  -- the sell price, and a stack's range: a "Sell Price:" header, then each value indented four spaces
+  -- (gametooltip.lua:325–333)
+  SELL_PRICE = { "colon", "bareColon" }, MINIMUM = "colon", MAXIMUM = "colon",
   -- paperdoll / pet stat labels ("Strength:")
   SPELL_STAT1_NAME = { "bareColon", "number", "wrapped" }, SPELL_STAT2_NAME = { "bareColon", "number", "wrapped" },
   SPELL_STAT3_NAME = { "bareColon", "number", "wrapped" }, SPELL_STAT4_NAME = { "bareColon", "number", "wrapped" },

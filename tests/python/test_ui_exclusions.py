@@ -104,3 +104,15 @@ def test_every_composite_reason_is_permanent_or_a_named_follow_up(root):
     # the two composites a form now renders are listed (the quest list title tooltip; the Spirit paragraphs)
     listed = set(wago.read_keys(root / "pipeline/ui_keys.txt"))
     assert {"CLICK_QUEST_DETAILS", "SPIRIT_STANDING_WARNING"} <= listed
+
+
+# The reasons that once held lines back without proof: a rule the matcher has outgrown, an unverified guess, or a
+# decision record that was superseded. None may stay in the file; a line stays English only for a reason a
+# Forever client file, table or disposition proves.
+WEAK_PHRASES = ("[unverified in game]", "curation rule", "not matched in v1", "messages are not covered",
+                "not a single tooltip line", "ADR-015 §5")
+
+
+def test_no_exclusion_rests_on_a_weak_reason(root):
+    weak = {k: r for k, r in _exclusions(root).items() if any(p in r for p in WEAK_PHRASES)}
+    assert weak == {}

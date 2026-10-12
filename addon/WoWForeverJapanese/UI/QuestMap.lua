@@ -7,6 +7,9 @@
 --                        .ScrollFrame.ScrollChild) [verified: questmapframe.lua:2688–2689]
 --   questmap.list        the quest list's title rows, after QuestLogQuests_Update [verified: :2104, rows :1808–1836]
 --   questmap.listlabels  the list's fixed words (empty / no results / search / count)
+--   questmap.storytip    the story tooltip's progress label and chapter count, after StoryHeaderMixin:ShowTooltip
+--                        [verified: questmapframe.lua:2710–2768]; its own surface, so a list update while it is open
+--                        never puts its words back
 --   questmap.tracker     the objective tracker's quest headers [verified: blizzard_questobjectivetracker.lua:289–307]
 --   questmap.trackerlabels  the tracker's two fixed headers (TRACKER_ALL_OBJECTIVES, TRACKER_HEADER_QUESTS)
 --   questmap.trackerobjectives  the tracker's objective lines [verified: blizzard_objectivetrackerblock.lua:79–209]
@@ -38,6 +41,7 @@ local INFO = "questmap.info"
 local POPUP_INFO = "questmap.popup.info"
 local LIST = "questmap.list"
 local LIST_LABELS = "questmap.listlabels"
+local STORY_TIP = "questmap.storytip"
 local TRACKER = "questmap.tracker"
 local TRACKER_LABELS = "questmap.trackerlabels"
 local TRACKER_OBJECTIVES = "questmap.trackerobjectives"
@@ -85,6 +89,9 @@ local CANDIDATES = {
   -- QuestMapLogTitleButton_OnEnter fires "QuestMapLogTitleButton.OnEnter" after GameTooltip:Show
   -- [verified: mainline/questmapframe.lua:2219–2302]
   eventRegistry   = { "EventRegistry" },
+  storyHeader     = { "QuestScrollFrame.Contents.StoryHeader" },             -- .xml:552; lua:2142
+  storyTooltip    = { "QuestScrollFrame.StoryTooltip" },                     -- lua:1239, 2711–2768
+  eventsTab       = { "QuestMapFrame.EventsTab", "QuestMapFrame.QuestsFrame.EventsTab" }, -- .xml:450
   -- readers
   selectedQuest   = { "C_QuestLog.GetSelectedQuest" },
   titleFor        = { "C_QuestLog.GetTitleForQuestID" },
@@ -654,11 +661,29 @@ local TAG_ONLY = { only = { "PARENS_TEMPLATE" } }
 -- records from before are forgotten (their widgets are rewritten or hidden), then every active row is walked
 -- [verified: mainline/questmapframe.lua:2105, 1228; pools: blizzard_sharedxmlbase/pools.lua:166–168]. The list's
 -- fixed words follow. → the number of titles shown
+local STORY_PROGRESS = { only = { "QUEST_STORY_STATUS" } }
+local STORY_TIP_LABEL = { only = { "STORY_PROGRESS" } }
+local STORY_TIP_COUNT = { only = { "STORY_CHAPTERS" } }
+
+-- hooksecurefunc target on the story header's ShowTooltip (StoryHeaderMixin, applied in XML to the header,
+-- questmapframe.xml:552; OnEnter calls it, lua:2780): the story tooltip's progress label and count; the story's
+-- name (its Title) and the chapter names are never touched. → the number shown
+function QuestMap.onStoryTooltip()
+  local tip = get("storyTooltip")
+  if type(tip) ~= "table" then return 0 end
+  return WFJ.Labels.show(STORY_TIP, "story.tipLabel", tip.ProgressLabel, nil, STORY_TIP_LABEL)
+    + WFJ.Labels.show(STORY_TIP, "story.tipCount", tip.ProgressCount, nil, STORY_TIP_COUNT)
+end
+
 function QuestMap.onListUpdate()
   WFJ.Render.forget(LIST)
   titleButtons = {}
   listBatch, listMoved = true, false
   local n = 0
+  local story = get("storyHeader") -- the story header's progress line; its Text is the story's name
+  if type(story) == "table" then
+    n = n + WFJ.Labels.show(LIST, "story.progress", story.Progress, nil, STORY_PROGRESS)
+  end
   local scroll = get("listScroll")
   local pool = type(scroll) == "table" and scroll.titleFramePool or nil
   local ok, err = pcall(function()
@@ -1105,6 +1130,11 @@ function QuestMap.init()
   if type(help) == "table" and type(help.register) == "function" then
     help.register(get("destinationButton"), { only = { "QUEST_WAYPOINT_FINAL" } })
     help.register(get("waypointButton"), { only = { "QUEST_WAYPOINT_ROUTE" } })
+    help.register(get("eventsTab"), { only = { "EVENT_SCHEDULER_FRAME_LABEL" } })
+  end
+  local storyHeader = get("storyHeader")
+  if type(storyHeader) == "table" and type(storyHeader.ShowTooltip) == "function" then
+    hooksecurefunc(storyHeader, "ShowTooltip", QuestMap.onStoryTooltip)
   end
   if type(get("detailsButtons")) == "function" then
     hooksecurefunc("QuestMapFrame_UpdateQuestDetailsButtons", QuestMap.onButtons)

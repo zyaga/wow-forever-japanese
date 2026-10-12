@@ -212,10 +212,41 @@ end
 local HEADED = { ShoppingTooltip1 = true, ShoppingTooltip2 = true, ItemRefShoppingTooltip1 = true,
   ItemRefShoppingTooltip2 = true } -- comparison tooltips: line 1 is "Currently Equipped", the name follows
 
-local function showStructural(surface, frame, lines, first, last, refit, name)
+-- The set bonus resolver's dependencies: the set map and the spell gate (Core/SetBonus). The spell's Japanese is
+-- its content past the switches and the modifier (a hover with Alt held still records the line, shown when Alt is
+-- let go) and without a marker; the set map is read at each call, so a reload's data is seen.
+local bonusDeps = { preview = function(spellId, text)
+  return WFJ.Render.content("spell.description", spellId, { lines = { text } })
+end }
+local function setBonusDeps()
+  local data = WFJ.Data or {}
+  bonusDeps.sets, bonusDeps.items = data.itemSets, data.setItems
+  return bonusDeps
+end
+
+-- A set bonus line ("Set: %s" / "(%d) Set: %s", asked for by key: an unrestricted match never takes it) resolved
+-- whole: the captured bonus text becomes the set spell's Japanese, or the line is left alone (never
+-- "セット: +4 Stamina."). `position` is the line's rank among the tooltip's set lines. → key, args | nil
+local SET_BONUS = { only = { "ITEM_SET_BONUS", "ITEM_SET_BONUS_GRAY" } }
+local function setBonusLine(index, id, text, position)
+  local key, args = index:matchOnly(text, SET_BONUS.only)
+  local resolver = WFJ.SetBonus
+  if not key or type(resolver) ~= "table" or type(args) ~= "table" then return nil end
+  local gray = key == "ITEM_SET_BONUS_GRAY"
+  local slot = gray and 2 or 1
+  if type(args[slot]) ~= "string" then return nil end
+  local ja = resolver.resolve(setBonusDeps(), id, position, args[slot], gray and tonumber(args[1]) or nil)
+  if not ja then return nil end
+  local copy = {} -- the index memoizes `args` per text: never written to
+  for k, v in pairs(args) do copy[k] = v end
+  copy[slot] = ja
+  return key, copy
+end
+
+local function showStructural(surface, frame, lines, first, last, refit, name, id)
   local index = WFJ.UIIndex
   if not index then return 0 end
-  local n = 0
+  local n, setLines = 0, 0
   local headed = HEADED[frame:GetName()]
   local sides = { { "L", lines }, { "R", Tooltip.lines(frame, "Right") } }
   for i = 1, #lines do
@@ -226,14 +257,24 @@ local function showStructural(surface, frame, lines, first, last, refit, name)
         local isName = side[1] == "L" and ((i == 1 and not headed) or (name ~= nil and l and l.text == name)
           or (headed and name == nil and i == 2))
         if l and l.text ~= "" and not isName then
-          local key, args = index:match(l.text)
+          local key, args, runs
+          if l.text:find("Set: ", 1, true) and index:matchOnly(l.text, SET_BONUS.only) then
+            setLines = setLines + 1
+            key, args = setBonusLine(index, id, l.text, setLines)
+          elseif l.text:find("|c%x%x%x%x%x%x%x%x") then
+            -- a line the client coloured ("|cffff2020-11|r Armor"): matched as written, else without the colour
+            -- codes, and the coloured runs no argument holds get their colour back, as in the comparison pass
+            key, args, runs = Tooltip.matchColoured(index, l.text)
+          else
+            key, args = index:match(l.text)
+          end
           -- ADR-042: the right side of line 1 is never a name: on an aura it is the dispel type ("Curse"),
           -- a restricted family found only where it is asked for
           if not key and side[1] == "R" and i == 1 then
             key, args = index:matchOnly(l.text, WFJ.Labels.families("DispelType").only)
           end
           if key and WFJ.Render.show(surface, "ui." .. side[1] .. i, l.fs, l.text, "ui", "ui", key,
-              { args = args, refit = refit }) then
+              { args = args, refit = refit, runColours = runs }) then
             n = n + 1
           end
         end
@@ -508,7 +549,9 @@ local function show(frame, area, kind, id, lines, first, last, name, runArgs)
     if first and matched == 0 then
       written = showRun(surface, area, kind, id, lines, first, last, refit, runArgs)
     end
-    return written + showStructural(surface, frame, lines, first, last, refit, name)
+    -- only an item has set bonus lines: a spell or aura id is never read as an item's
+    return written + showStructural(surface, frame, lines, first, last, refit, name,
+      kind == "item.description" and id or nil)
   end)
   inRefit[frame] = false
   if not ok then error(n, 0) end
@@ -951,7 +994,10 @@ end
 -- The lines a comparison tooltip gets after its item post-call (see the header). → the number shown
 local COMPARE_KEYS = { "ITEM_DELTA_DESCRIPTION", "ITEM_DELTA_MULTIPLE_COMPARISON_DESCRIPTION",
   "ITEM_COMPARISON_SWAP_ITEM_MAINHAND_DESCRIPTION", "ITEM_COMPARISON_SWAP_ITEM_OFFHAND_DESCRIPTION",
-  "ITEM_COMPARISON_CYCLING_DISABLED_MSG_MAINHAND", "ITEM_COMPARISON_CYCLING_DISABLED_MSG_OFFHAND" }
+  "ITEM_COMPARISON_CYCLING_DISABLED_MSG_MAINHAND", "ITEM_COMPARISON_CYCLING_DISABLED_MSG_OFFHAND",
+  -- the dual-wield comparison's "(With |c<hex><weapon>|r equipped in your main-hand)"
+  -- (tooltipcomparisonmanager.lua:271)
+  "ITEM_DELTA_DUAL_WIELD_COMPARISON_MAINHAND_DESCRIPTION", "ITEM_DELTA_DUAL_WIELD_COMPARISON_OFFHAND_DESCRIPTION" }
 Tooltip.COMPARE_KEYS = COMPARE_KEYS
 
 -- A stat change line colours its number on its own ("|cffff2020-11|r Armor", seen in game): the line is matched with
@@ -962,11 +1008,14 @@ Tooltip.COMPARE_KEYS = COMPARE_KEYS
 function Tooltip.matchColoured(index, text)
   local key, args = index:match(text)
   if not key then
-    local bare = text:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
+    local bare = WFJ.UIStrings.stripColour(text)
     if bare == text then return nil end
     local shared
     key, shared = index:match(bare)
     if not key then return nil end
+    -- a line the client coloured end to end ("|cffff2020Requires Level 60|r"): the Japanese in the same colour
+    local open = text:match("^(|c%x%x%x%x%x%x%x%x)[^|]*|r$")
+    if open then return key, { form = "wrapped", open = open, close = "|r", inner = shared } end
     -- the index memoizes `args` per text: a copy takes the colour, never the memo
     args = {}
     for k, v in pairs(shared or {}) do args[k] = v end
@@ -977,6 +1026,9 @@ function Tooltip.matchColoured(index, text)
       end
     end
   end
+  -- a key whose Japanese writes its own colour codes (the dual-wield line's "|c%s%s|r") colours its runs itself
+  local row = index.rows and index.rows[key]
+  if type(row) == "table" and type(row[1]) == "string" and row[1]:find("|c", 1, true) then return key, args end
   local runs
   for coloured, code, run in text:gmatch("((|c%x%x%x%x%x%x%x%x)([^|]+)|r)") do
     local held = false
@@ -996,7 +1048,7 @@ end
 -- → key, args | nil
 local statNameKeys = setmetatable({}, { __mode = "k" }) -- index → the list of its stat name keys
 function Tooltip.matchStatChange(index, text)
-  local bare = text:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "")
+  local bare = WFJ.UIStrings.stripColour(text)
   local name = bare:match("^[%+%-][%d%.,]+ (.+)$")
   if not name or #text <= #name + 1 or text:sub(-#name - 1) ~= " " .. name then return nil end
   local keys = statNameKeys[index]

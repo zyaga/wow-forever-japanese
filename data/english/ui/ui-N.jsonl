@@ -103,9 +103,15 @@
 {"id": "NPC_NAMES_DROPDOWN_TRACKED", "field": "text", "en": "Quest NPCs", "hash": "2e6a0447df2886ff", "src": "db2@1.60.1.70338"}
 {"id": "NPC_NAMES_DROPDOWN_TRACKED_TOOLTIP", "field": "text", "en": "Display names for NPCs involved with quests, as well as tracked NPCs using the minimap tracker.", "hash": "f9c9b36f8a3c9ead", "src": "db2@1.60.1.70338"}
 {"id": "NPEV2_CHAT_AVAILABLE", "field": "text", "en": "Newcomer Chat is now available.", "hash": "4678a6a0cc7a1ffb", "src": "db2@1.60.1.70338"}
+{"id": "NPEV2_CHAT_HELP_HINT_DIFFERENT", "field": "text", "en": "Type %s to ask questions in Newcomer Chat", "hash": "11cfe5fac15def9d", "src": "db2@1.60.1.70338"}
+{"id": "NPEV2_CHAT_HELP_HINT_HERE", "field": "text", "en": "Type here to ask questions in Newcomer Chat", "hash": "4728bc7cc39dbb68", "src": "db2@1.60.1.70338"}
 {"id": "NPEV2_CHAT_NEWCOMER_GRADUATION", "field": "text", "en": "You've graduated from Newcomer Chat! You'll be removed the next time you log on. Feel free to ask any questions in General Chat (%s) from now on.", "hash": "9b5cdaba3f0486a1", "src": "db2@1.60.1.70338"}
 {"id": "NPEV2_CHAT_NEWCOMER_GRADUATION_REMINDER", "field": "text", "en": "|A:newplayerchat-chaticon-guide:0:0:0:0|a|cff00ff00You've graduated from Newcomer Chat!|r Feel free to ask any questions in General (%s) from now on.", "hash": "18aa6f6c3a265039", "src": "db2@1.60.1.70338"}
 {"id": "NPEV2_CHAT_UNAVAILABLE", "field": "text", "en": "Newcomer Chat is temporarily unavailable.", "hash": "e12f7088647a7970", "src": "db2@1.60.1.70338"}
+{"id": "NPEV2_CHAT_WELCOME_TO_CHANNEL_GUIDE", "field": "text", "en": "|A:newplayerchat-chaticon-guide:0:0:0:0|a Joined Newcomer Chat (%s) as a |cff81b558Guide|r. Help newcomers by answering questions and giving tips.", "hash": "70a9a6e09656f8c5", "src": "db2@1.60.1.70338"}
+{"id": "NPEV2_CHAT_WELCOME_TO_CHANNEL_NEWCOMER", "field": "text", "en": "Welcome to Newcomer Chat!", "hash": "b4ff450f87b2a25b", "src": "db2@1.60.1.70338"}
+{"id": "NPEV2_CHAT_WELCOME_TO_CHANNEL_NEWCOMER1", "field": "text", "en": "|A:newplayerchat-chaticon-guide:0:0:0:0|a|cff81b558Guides|r are here to help if you have any questions.", "hash": "43814f4848959e80", "src": "db2@1.60.1.70338"}
+{"id": "NPEV2_CHAT_WELCOME_TO_CHANNEL_NEWCOMER2", "field": "text", "en": "To chat, type |cff00ff00%s|r and your message.", "hash": "d5c0fed8197b18b9", "src": "db2@1.60.1.70338"}
 {"id": "NPEV2_REGIONAL_CHAT_AVAILABLE", "field": "text", "en": "Regional Chat Service is now available.", "hash": "5edf22c9a4915d21", "src": "db2@1.60.1.70338"}
 {"id": "NPEV2_REGIONAL_CHAT_UNAVAILABLE", "field": "text", "en": "Regional Chat Service is temporarily unavailable.", "hash": "414c9f53f895fbc2", "src": "db2@1.60.1.70338"}
 {"id": "NPEV2_SELECT_TALENTS_TAB", "field": "text", "en": "Select the |cFF00FFFFTalents|r Tab", "hash": "a183d3f96d233a10", "src": "db2@1.60.1.70338"}

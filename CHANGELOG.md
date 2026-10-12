@@ -9,6 +9,10 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Added
+- Japanese for 202 more interface lines, with word readings: system chat lines that carry a link (a friend coming online, loot rolls, the level-up line) show Japanese around the link, which stays as the game wrote it; the "Made by" line on crafted items, cooldown and enchant time lines, the account bank, the quest log's story header, help callouts, cross-faction invite words and more.
+- An item tooltip's set bonus lines ("(2) Set: +4 Stamina.") are in Japanese, through the set's own spell text; a bonus with no Japanese yet stays English as a whole line.
+
 ## 0.2.0 - 2026-10-11
 
 ### Added

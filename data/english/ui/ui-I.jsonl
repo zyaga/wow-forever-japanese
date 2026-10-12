@@ -120,29 +120,53 @@
 {"id": "ISLAND_LEAVE", "field": "text", "en": "Leave Island", "hash": "a70f3a47c702cbd5", "src": "db2@1.60.1.70338"}
 {"id": "ITEMS", "field": "text", "en": "Items", "hash": "110ed23534f93bbc", "src": "db2@1.60.1.70338"}
 {"id": "ITEMSLOTTEXT", "field": "text", "en": "Item Slots", "hash": "8d522a9fc6be7c07", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_ACCOUNTBOUND_UNTIL_EQUIP", "field": "text", "en": "Account bound until equipped", "hash": "b5d981dc0626daa8", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_BIND_ON_EQUIP", "field": "text", "en": "Binds when equipped", "hash": "421c36d3a912ab1b", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_BIND_ON_PICKUP", "field": "text", "en": "Binds when picked up", "hash": "ee887e158bc4920f", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_BIND_ON_USE", "field": "text", "en": "Binds when used", "hash": "a491a9dc6f47e220", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_BIND_QUEST", "field": "text", "en": "Quest Item", "hash": "2dc7fee4ab0e85e2", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_BIND_TO_ACCOUNT_UNTIL_EQUIP", "field": "text", "en": "Binds to Account until equipped", "hash": "82b56702646e4627", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_CAN_BE_READ", "field": "text", "en": "<This item can be read>", "hash": "3e1f4527625046b8", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_CHARGEUP_TOTAL_DAYS", "field": "text", "en": "(Requires %d |4Day:Days;)", "hash": "ad318c17d34412a0", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_CHARGEUP_TOTAL_HOURS", "field": "text", "en": "(Requires %d |4Hour:Hours;)", "hash": "3a2fc3b564e0757d", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_CLASSES_ALLOWED", "field": "text", "en": "Classes: %s", "hash": "2232eb3e64441ce0", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_COMPARISON_CYCLING_DISABLED_MSG_MAINHAND", "field": "text", "en": "Visit the Key Bindings menu to enable cycling through your main-hand items. (SHIFT-C recommended)", "hash": "7e9809a39664e35c", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_COMPARISON_CYCLING_DISABLED_MSG_OFFHAND", "field": "text", "en": "Visit the Key Bindings menu to enable cycling through your off-hand items. (SHIFT-C recommended)", "hash": "69f23b552d60a531", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_COMPARISON_SWAP_ITEM_MAINHAND_DESCRIPTION", "field": "text", "en": "Press %s to cycle through your main-hand items.", "hash": "2675faf297f13e9c", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_COMPARISON_SWAP_ITEM_OFFHAND_DESCRIPTION", "field": "text", "en": "Press %s to cycle through your off-hand items.", "hash": "1f7c17a5ee5a2286", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_CONJURED", "field": "text", "en": "Conjured Item", "hash": "deb9fd7408431083", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_CONTAINER", "field": "text", "en": "Container", "hash": "3e8faf72c991fa79", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_COOLDOWN_TIME", "field": "text", "en": "Cooldown remaining: %s", "hash": "eeb13cd9b0f3b728", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_COOLDOWN_TIME_DAYS", "field": "text", "en": "Cooldown remaining: %d |4day:days;", "hash": "978a5378f8fc8866", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_COOLDOWN_TIME_HOURS", "field": "text", "en": "Cooldown remaining: %d |4hour:hours;", "hash": "ba2f3664795b7cf7", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_COOLDOWN_TIME_MIN", "field": "text", "en": "Cooldown remaining: %d min", "hash": "c2c9cd81d0c60f9a", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_COOLDOWN_TIME_SEC", "field": "text", "en": "Cooldown remaining: %d sec", "hash": "c2cb5da0e8972691", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_COOLDOWN_TOTAL", "field": "text", "en": "(%s Cooldown)", "hash": "614701d10442abce", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_COOLDOWN_TOTAL_DAYS", "field": "text", "en": "(%d |4Day:Days; Cooldown)", "hash": "41066cbf207c4767", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_COOLDOWN_TOTAL_HOURS", "field": "text", "en": "(%d |4Hour:Hours; Cooldown)", "hash": "b1e319c846bec456", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_COOLDOWN_TOTAL_MIN", "field": "text", "en": "(%d Min Cooldown)", "hash": "43a83fef876cc4dc", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_COOLDOWN_TOTAL_SEC", "field": "text", "en": "(%d Sec Cooldown)", "hash": "162bc52dd446ad8c", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_CORRUPTION_BONUS_STAT", "field": "text", "en": "+%d Corruption", "hash": "d8521e0807d4c5c2", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_COSMETIC", "field": "text", "en": "Cosmetic", "hash": "1f9c9091f805f5ef", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_COSMETIC_LEARN", "field": "text", "en": "Use: Add this appearance to your Account collection.", "hash": "e0037bc6426a5db2", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_CREATED_BY", "field": "text", "en": "|cff00ff00<Made by %s>|r", "hash": "fca55e66186289ff", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_CREATE_LOOT_SPEC_ITEM", "field": "text", "en": "Use: Create a soulbound item appropriate for your loot specialization (%s).", "hash": "56aa08275a9cf2e5", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_DELTA_DESCRIPTION", "field": "text", "en": "If you replace this item, the following stat changes will occur:", "hash": "931160fee1cfe14b", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_DELTA_DUAL_WIELD_COMPARISON_MAINHAND_DESCRIPTION", "field": "text", "en": "(With |c%s%s|r equipped in your main-hand)", "hash": "cc72b925fd827e11", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_DELTA_DUAL_WIELD_COMPARISON_OFFHAND_DESCRIPTION", "field": "text", "en": "(With |c%s%s|r equipped in your off-hand)", "hash": "3f619927f6499cef", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_DELTA_MULTIPLE_COMPARISON_DESCRIPTION", "field": "text", "en": "If you replace these items, the following stat changes will occur:", "hash": "d8791b5b841c0a09", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_DISENCHANT_ANY_SKILL", "field": "text", "en": "Disenchantable", "hash": "3dea77330cecae80", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_DISENCHANT_MIN_SKILL", "field": "text", "en": "Disenchanting requires %s (%d)", "hash": "1970eca36b37797c", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_DISENCHANT_NOT_DISENCHANTABLE", "field": "text", "en": "Cannot be disenchanted", "hash": "32dbd2d74cb18c07", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_DURATION_DAYS", "field": "text", "en": "Duration: %d |4day:days;", "hash": "cbdd57e4edbd215a", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_DURATION_HOURS", "field": "text", "en": "Duration: %d |4hour:hrs;", "hash": "223e4283acedc054", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_DURATION_MIN", "field": "text", "en": "Duration: %d min", "hash": "bd37f8798b032666", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_DURATION_SEC", "field": "text", "en": "Duration: %d sec", "hash": "bd398898a2d43d5d", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_ENCHANT_TIME_LEFT_DAYS", "field": "text", "en": "%s (%d |4day:days;)", "hash": "bd663f1ec334e791", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_ENCHANT_TIME_LEFT_HOURS", "field": "text", "en": "%s (%d |4hour:hours;)", "hash": "3f0afb926f1a3147", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_ENCHANT_TIME_LEFT_MIN", "field": "text", "en": "%s (%d min)", "hash": "14df8e78d97a3eec", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_ENCHANT_TIME_LEFT_SEC", "field": "text", "en": "%s (%d sec)", "hash": "15ac4e551a07897b", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_LEGACY_INACTIVE_EFFECTS", "field": "text", "en": "Legacy Item: Effects are inactive", "hash": "ba819b9fe25b03f1", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_LEVEL", "field": "text", "en": "Item Level %d", "hash": "947990bf12c90d59", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_LEVEL_ABBR", "field": "text", "en": "iLvl", "hash": "0e25f80d2d65e6f0", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_LEVEL_RANGE", "field": "text", "en": "Requires level %d to %d", "hash": "f27575e23239ec21", "src": "db2@1.60.1.70338"}
@@ -152,6 +176,7 @@
 {"id": "ITEM_LOOT", "field": "text", "en": "Item Loot", "hash": "9a868ae9b36079d1", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_MIN_LEVEL", "field": "text", "en": "Requires Level %d", "hash": "6616ed3bf3ef068f", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_MIN_SKILL", "field": "text", "en": "Requires %s (%d)", "hash": "3b59ba17f69f83c4", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_MISSING", "field": "text", "en": "%s missing", "hash": "8063dcab1ff82931", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_MOD_AGILITY", "field": "text", "en": "%c%s Agility", "hash": "895fceadc74a054e", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_MOD_AGILITY_OR_INTELLECT_SHORT", "field": "text", "en": "Agility or Intellect", "hash": "8d401ec9c646889f", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_MOD_AGILITY_OR_STRENGTH_OR_INTELLECT_SHORT", "field": "text", "en": "Agility or Strength or Intellect", "hash": "0308186ef25363db", "src": "db2@1.60.1.70338"}
@@ -185,6 +210,7 @@
 {"id": "ITEM_MOD_BOWS_SHORT", "field": "text", "en": "Bows Skill", "hash": "3a70bde890f5da74", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_MOD_COOKING", "field": "text", "en": "Increases cooking skill by %s.", "hash": "f1a781015d8d3ba0", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_MOD_COOKING_SHORT", "field": "text", "en": "Cooking Skill", "hash": "65e6ee97ad678cf7", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_MOD_CORRUPTION_RESISTANCE", "field": "text", "en": "Corruption Resistance", "hash": "0768760eb5f6b777", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_MOD_CRAFTING_SPEED_SHORT", "field": "text", "en": "Crafting Speed", "hash": "ccf13c30c1f39c67", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_MOD_CRIT_MELEE_RATING_SHORT", "field": "text", "en": "Critical Strike (Melee)", "hash": "882b04536767a7c2", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_MOD_CRIT_RANGED_RATING_SHORT", "field": "text", "en": "Critical Strike (Ranged)", "hash": "6acfadadade24bea", "src": "db2@1.60.1.70338"}
@@ -276,6 +302,8 @@
 {"id": "ITEM_MOD_MELEE_ATTACK_POWER_SHORT", "field": "text", "en": "Melee Attack Power", "hash": "bd1720800a5e8013", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_MOD_MINING", "field": "text", "en": "Increases mining skill by %s.", "hash": "d1d5adfb842e8f8b", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_MOD_MINING_SHORT", "field": "text", "en": "Mining Skill", "hash": "5c2c042526e3070c", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_MOD_MODIFIED_CRAFTING_STAT_1", "field": "text", "en": "Random Stat 1", "hash": "245c94a471a25767", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_MOD_MODIFIED_CRAFTING_STAT_2", "field": "text", "en": "Random Stat 2", "hash": "245c94a571a25768", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_MOD_MULTICRAFT_SHORT", "field": "text", "en": "Multicraft", "hash": "549d68b8f5dc4b92", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_MOD_NATURE_DAMAGE_DONE", "field": "text", "en": "Increases nature damage done by up to %s.", "hash": "4b92bc66d90662a5", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_MOD_NATURE_DAMAGE_DONE_SHORT", "field": "text", "en": "Nature Damage", "hash": "ea4a5881787ddd4b", "src": "db2@1.60.1.70338"}
@@ -364,21 +392,32 @@
 {"id": "ITEM_READABLE", "field": "text", "en": "<Right Click to Read>", "hash": "a7aea02122557af1", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_REQ_ALLIANCE", "field": "text", "en": "Alliance Only", "hash": "70e1abed1cb7a478", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_REQ_AMOUNT_EARNED", "field": "text", "en": "Requires earning a total of %1$d\n%2$s for the season.", "hash": "a843acfcf439c5f9", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_REQ_ARENA_RATING_3V3", "field": "text", "en": "Requires personal arena rating of %d|nin the 3v3 bracket.", "hash": "c9abf5d0e64eec2c", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_REQ_ARENA_RATING_3V3_BG", "field": "text", "en": "Requires battleground rating of %d or|npersonal arena rating of %d|nin the 3v3  bracket.", "hash": "2e6cc6ca38e5921e", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_REQ_ARENA_RATING_5V5", "field": "text", "en": "Requires personal arena rating of %d|nin 5v5 brackets", "hash": "3d91fabc55ce90f4", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_REQ_ARENA_RATING_BG", "field": "text", "en": "Requires battleground rating of %d or|npersonal arena rating of %d", "hash": "3b7facd414dc1a28", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_REQ_HORDE", "field": "text", "en": "Horde Only", "hash": "07b3c47319f56231", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_REQ_REPUTATION", "field": "text", "en": "Requires %s - %s", "hash": "3c03cefea5c61d18", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_REQ_SKILL", "field": "text", "en": "Requires %s", "hash": "d997d8d721f9dfeb", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_RESIST_ALL", "field": "text", "en": "%c%d to All Resistances", "hash": "9e0af13952de007f", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_RESIST_SINGLE", "field": "text", "en": "%c%d %s Resistance", "hash": "5ac30dfd8b384186", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_SCRAPABLE", "field": "text", "en": "Scrappable", "hash": "bc47718cd06d46da", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_SCRAPABLE_NOT", "field": "text", "en": "Cannot be Scrapped", "hash": "efb6a8b9edf70315", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_SET_BONUS", "field": "text", "en": "Set: %s", "hash": "cd26777775fe95cc", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_SET_BONUS_GRAY", "field": "text", "en": "(%d) Set: %s", "hash": "edd50809ea83ee76", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_SIGNABLE", "field": "text", "en": "<Right Click for Details>", "hash": "db947c632166d803", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_SLOTS_IGNORED", "field": "text", "en": "%d |4slot:slots; ignored", "hash": "562cb17e012f556e", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_SOCKETING", "field": "text", "en": "Item Socketing", "hash": "8a875bcfbb4e0c76", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_SOLD_COLON", "field": "text", "en": "Item Sold:", "hash": "8db841ec630b8e9a", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_SOULBOUND", "field": "text", "en": "Soulbound", "hash": "570c26eb6ff20067", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_SPELL_CHARGES", "field": "text", "en": "%d |4Charge:Charges;", "hash": "898e46d2a59f66bf", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_SPELL_CHARGES_NONE", "field": "text", "en": "No charges", "hash": "ee214d249a4f3417", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_SPELL_EFFECT", "field": "text", "en": "Effect: %s", "hash": "1b3edc289b0d5cee", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_SPELL_KNOWN", "field": "text", "en": "Already known", "hash": "015eaec57c21a5b5", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_SPELL_MAX_USABLE_LEVEL", "field": "text", "en": " (Requires level %d or below)", "hash": "304731b8e8aafa42", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_SPELL_TRIGGER_ONEQUIP", "field": "text", "en": "Equip:", "hash": "99ff0c11a1015fbe", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_STARTS_QUEST", "field": "text", "en": "This Item Begins a Quest", "hash": "f90deee246b872b1", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_TOY_ONUSE", "field": "text", "en": "Use: Adds this toy to your Toy Box.", "hash": "2a954a39d838053c", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_UNIQUE", "field": "text", "en": "Unique", "hash": "1c011adc9bbfcfa0", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_UNIQUE_EQUIPPABLE", "field": "text", "en": "Unique-Equipped", "hash": "adc9c572764d41cc", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_UNIQUE_MULTIPLE", "field": "text", "en": "Unique (%d)", "hash": "95a84c193d4cd9ac", "src": "db2@1.60.1.70338"}
@@ -389,7 +428,9 @@
 {"id": "ITEM_UPGRADE_FRAME_UPGRADE_TO", "field": "text", "en": "Upgrade To:", "hash": "400c28657c90f11d", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_UPGRADE_NO_MORE_UPGRADES", "field": "text", "en": "This item cannot be upgraded anymore.", "hash": "37117fe1778e4181", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_VENDOR_STACK_BUY", "field": "text", "en": "<Shift click to buy a different amount>", "hash": "3413f0cee291a047", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_WRAPPED_BY", "field": "text", "en": "|cff00ff00<Gift from %s>|r", "hash": "54150e7ccc78d77d", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_WRITTEN_BY", "field": "text", "en": "Written by %s", "hash": "cae386859fa48097", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_WRONG_RACE", "field": "text", "en": "That item can't be used by players of your race!", "hash": "7b1c222a82115942", "src": "db2@1.60.1.70338"}
 {"id": "InstanceEntryFailure:1553", "field": "text", "en": "This raid is not yet available", "hash": "9013d19e5efc6895", "src": "db2@1.60.1.70338"}
 {"id": "InstanceEntryFailure:1564", "field": "text", "en": "This Dungeon is currently not available.", "hash": "59453de0a1ea3018", "src": "db2@1.60.1.70338"}
 {"id": "InstanceEntryFailure:1565", "field": "text", "en": "This dungeon is not yet available", "hash": "67a5bf22b328a6a7", "src": "db2@1.60.1.70338"}

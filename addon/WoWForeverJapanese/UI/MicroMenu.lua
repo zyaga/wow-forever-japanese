@@ -64,7 +64,8 @@ local NUM_POSSESS_BUTTONS = 2 -- PossessButton1..2
 
 -- `only` lists for owners whose lines may also be names.
 local PET_KEYS = { "PET_ACTION_ATTACK", "PET_ACTION_FOLLOW", "PET_ACTION_WAIT", "PET_ACTION_DISMISS",
-  "PET_MODE_AGGRESSIVE", "PET_MODE_DEFENSIVE", "PET_MODE_PASSIVE", "PET_MODE_ASSIST" }
+  "PET_MODE_AGGRESSIVE", "PET_MODE_DEFENSIVE", "PET_MODE_PASSIVE", "PET_MODE_ASSIST",
+  "PET_ACTION_SUBTEXT", "PET_MODE_SUBTEXT" } -- the tooltip's second line under a command or stance
 local POSSESS_KEYS = { "CANCEL" }
 
 local function petName(i) return "PetActionButton" .. i end

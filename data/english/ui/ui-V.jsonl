@@ -1,3 +1,4 @@
+{"id": "VEHICLE_LEAVE", "field": "text", "en": "Leave", "hash": "43b4617c78c17d7a", "src": "db2@1.60.1.70338"}
 {"id": "VERTICAL_SYNC", "field": "text", "en": "Vertical Sync", "hash": "d7d287d1ef38a1f0", "src": "db2@1.60.1.70338"}
 {"id": "VIDEO_OPTIONS_16XANISOTROPIC", "field": "text", "en": "16x Anisotropic", "hash": "252792ccd81764dd", "src": "db2@1.60.1.70338"}
 {"id": "VIDEO_OPTIONS_2XANISOTROPIC", "field": "text", "en": "2x Anisotropic", "hash": "1f7b33ea2c9c2c3e", "src": "db2@1.60.1.70338"}

@@ -133,6 +133,15 @@ local function declareCamelot()
   Compat.declare(SURFACE, "modifyMenu", { "Menu.ModifyMenu" })
   Compat.declare(SURFACE, "searchInstructions", { "PlayerSpellsFrame.SpellBookFrame.SearchBox.Instructions" })
   Compat.declare(SURFACE, "title", { "PlayerSpellsFrame.TitleContainer.TitleText" })
+  -- the assisted combat button's label (blizzard_spellbookframe.xml:79–81, a UIPanelSpellButtonFrameTemplate
+  -- whose Label shows its labelText, uipanelspellbuttonframe.lua:92)
+  Compat.declare(SURFACE, "assistedLabel",
+    { "PlayerSpellsFrame.SpellBookFrame.AssistedCombatRotationSpellFrame.Label" })
+end
+local ASSISTED_LABEL = { only = { "ASSISTED_COMBAT_ROTATION_SPELLBOOK_LABEL" } }
+
+function SpellBook.showAssistedLabel()
+  return WFJ.Labels.show(STATIC, "assistedLabel", Compat.get(SURFACE, "assistedLabel"), nil, ASSISTED_LABEL)
 end
 
 local camelotSetUp, camelotWaiting = false, false
@@ -153,6 +162,7 @@ function SpellBook.setupCamelot()
   if type(modifyMenu) == "function" then modifyMenu(MENU_TAG, SpellBook.onSettingsMenu) end
   -- what the client already wrote before this ran (the addon may load after the frame was shown)
   SpellBook.showTitle()
+  SpellBook.showAssistedLabel()
   return true
 end
 

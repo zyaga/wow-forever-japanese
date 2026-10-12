@@ -7,6 +7,7 @@
 {"id": "BACKSLOT", "field": "text", "en": "Back", "hash": "08f19b73f5eaeac2", "src": "db2@1.60.1.70338"}
 {"id": "BAGSLOTTEXT", "field": "text", "en": "Bag Slots", "hash": "29a026bed7e229b4", "src": "db2@1.60.1.70338"}
 {"id": "BAGSLOTTEXT_COLON", "field": "text", "en": "Bag Slots:", "hash": "4cf3d3dd20d53c70", "src": "db2@1.60.1.70338"}
+{"id": "BAG_CLEANUP_ACCOUNT_BANK", "field": "text", "en": "Clean Up Account Bank", "hash": "c1ea88c88f14f825", "src": "db2@1.60.1.70338"}
 {"id": "BAG_CLEANUP_BAGS", "field": "text", "en": "Clean Up Bags", "hash": "9a4a2f8ee3d1b1e1", "src": "db2@1.60.1.70338"}
 {"id": "BAG_CLEANUP_BAGS_DESCRIPTION", "field": "text", "en": "Auto-sorts your inventory to make room for new items. You can assign an item type to a specific bag by clicking the bag's top-left icon.", "hash": "baf97ed6734384e8", "src": "db2@1.60.1.70338"}
 {"id": "BAG_CLEANUP_BANK", "field": "text", "en": "Clean Up Bank", "hash": "9a4a331be3d29100", "src": "db2@1.60.1.70338"}
@@ -36,6 +37,7 @@
 {"id": "BANK_DEPOSIT_MONEY_BUTTON_LABEL", "field": "text", "en": "Deposit", "hash": "f7a7138c868dcfb0", "src": "db2@1.60.1.70338"}
 {"id": "BANK_LOCKED_REASON_BANK_CONVERSION_FAILED", "field": "text", "en": "Bank conversion failed. Please relog to try again.", "hash": "54bfdd9aaadcb130", "src": "db2@1.60.1.70338"}
 {"id": "BANK_LOCKED_REASON_BANK_DISABLED", "field": "text", "en": "This bank is currently unavailable.", "hash": "bcc34d713c6e500b", "src": "db2@1.60.1.70338"}
+{"id": "BANK_LOCKED_REASON_NO_ACCOUNT_INVENTORY_LOCK", "field": "text", "en": "The bank is being used by another member of your Account.", "hash": "7efce7c83d43cb17", "src": "db2@1.60.1.70338"}
 {"id": "BANK_MONEY_DEPOSIT_PROMPT", "field": "text", "en": "Amount to deposit:", "hash": "15f6fc12ecf1a642", "src": "db2@1.60.1.70338"}
 {"id": "BANK_MONEY_WITHDRAW_PROMPT", "field": "text", "en": "Amount to withdraw:", "hash": "55d83d8f5dc47c11", "src": "db2@1.60.1.70338"}
 {"id": "BANK_TAB_ASSIGN_CONSUMABLES_CHECKBOX", "field": "text", "en": "Consumables", "hash": "7df36e3bdf92ae0a", "src": "db2@1.60.1.70338"}
@@ -82,6 +84,7 @@
 {"id": "BATTLENET_UNAVAILABLE_ALERT", "field": "text", "en": "Blizzard services are currently unavailable. \n\nYour Real ID and BattleTag friends will not show up. You will also not be able to send or receive new Real ID or BattleTag friend requests. A game restart may be required to re-enable functionality.", "hash": "49f9a5f0ed6e8322", "src": "db2@1.60.1.70338"}
 {"id": "BATTLETAG_AND_REAL_ID_DESCRIPTION", "field": "text", "en": "Send an invite by entering their BattleTag to chat with them in game and across all Blizzard titles. If they use Real ID, you can invite them with their email address. The recipient must accept the request to become friends.", "hash": "a106ee3f76331dd9", "src": "db2@1.60.1.70338"}
 {"id": "BATTLETAG_FRIEND_LABEL", "field": "text", "en": "Enter BattleTag", "hash": "f41a574f53390f81", "src": "db2@1.60.1.70338"}
+{"id": "BATTLETAG_REMOVE_FRIEND_CONFIRMATION", "field": "text", "en": "Are you sure you want to remove %s as a BattleTag friend?", "hash": "827ed9fdbb614c30", "src": "db2@1.60.1.70338"}
 {"id": "BATTLE_PETS_SUMMON_TOOLTIP", "field": "text", "en": "Summons or dismisses your selected pet.", "hash": "d3a391a20341ee5e", "src": "db2@1.60.1.70338"}
 {"id": "BATTLE_PETS_TOTAL_PETS", "field": "text", "en": "Total Pets", "hash": "9bc71263fc7884df", "src": "db2@1.60.1.70338"}
 {"id": "BATTLE_PETS_TOTAL_PETS_TOOLTIP", "field": "text", "en": "Total number of pets owned.", "hash": "6ff5d72298ec9ea9", "src": "db2@1.60.1.70338"}
@@ -416,6 +419,7 @@
 {"id": "BINDING_NAME_TURNRIGHT", "field": "text", "en": "Turn Right", "hash": "5a3bd3c00c7818e3", "src": "db2@1.60.1.70338"}
 {"id": "BINDING_NAME_VEHICLEEXIT", "field": "text", "en": "Exit Vehicle", "hash": "9f777e0e879390d2", "src": "db2@1.60.1.70338"}
 {"id": "BIND_ENCHANT", "field": "text", "en": "Enchanting this item will bind it to you.", "hash": "6abd1b0c6b1f121d", "src": "db2@1.60.1.70338"}
+{"id": "BIND_TO_ACCOUNT_UNTIL_EQUIP_TUTORIAL", "field": "text", "en": "|cnNORMAL_FONT_COLOR:Account bound|r |cnHIGHLIGHT_FONT_COLOR:gear can be shared with your other characters.|n|nOnce equipped, this gear becomes|r |cnNORMAL_FONT_COLOR:Soulbound.|r", "hash": "75f5387ae139d253", "src": "db2@1.60.1.70338"}
 {"id": "BIND_TRADE_TIME_REMAINING", "field": "text", "en": "You may trade this item with players that were also eligible to loot this item for the next %s (including time offline).", "hash": "3f309366ed8b1e6a", "src": "db2@1.60.1.70338"}
 {"id": "BLACK_MARKET_AUCTION_CONFIRMATION", "field": "text", "en": "Are you sure you wish to bid %s on the following item?", "hash": "879efd09ade8c07e", "src": "db2@1.60.1.70338"}
 {"id": "BLACK_MARKET_HOT_ITEM_CURRENT_BID", "field": "text", "en": "Current Bid:", "hash": "47fd8738cfaaa8a4", "src": "db2@1.60.1.70338"}
@@ -538,6 +542,7 @@
 {"id": "BONUS_OBJECTIVE_BANNER", "field": "text", "en": "Bonus Objective", "hash": "ef275c185d50cff0", "src": "db2@1.60.1.70338"}
 {"id": "BONUS_OBJECTIVE_REWARD_FORMAT", "field": "text", "en": "|T%1$s:16:16|t %2$s", "hash": "050262083687fd09", "src": "db2@1.60.1.70338"}
 {"id": "BONUS_OBJECTIVE_REWARD_WITH_COUNT_FORMAT", "field": "text", "en": "|T%1$s:16:16|t %2$s %3$s", "hash": "6e9ec2325e4d0162", "src": "db2@1.60.1.70338"}
+{"id": "BONUS_OBJECTIVE_TIME_LEFT", "field": "text", "en": "Time Left: %s", "hash": "77ce6603a84fd516", "src": "db2@1.60.1.70338"}
 {"id": "BONUS_OBJECTIVE_TOOLTIP_DESCRIPTION", "field": "text", "en": "Completing this bonus objective will reward you with:", "hash": "f482134f212fad59", "src": "db2@1.60.1.70338"}
 {"id": "BONUS_REPUTATION_TITLE", "field": "text", "en": "Bonus Reputation", "hash": "f69722e535c3b898", "src": "db2@1.60.1.70338"}
 {"id": "BONUS_REPUTATION_TOOLTIP", "field": "text", "en": "Your account has unlocked bonus reputation gain with this faction.", "hash": "59ed2320babdbefe", "src": "db2@1.60.1.70338"}
@@ -548,6 +553,8 @@
 {"id": "BOSS_BANNER_LOOT_SET", "field": "text", "en": "Set: %s", "hash": "cd26777775fe95cc", "src": "db2@1.60.1.70338"}
 {"id": "BOSS_KILL_SUBTITLE", "field": "text", "en": "has been defeated", "hash": "36d57d7fa1d3b3b1", "src": "db2@1.60.1.70338"}
 {"id": "BOSS_YOU_DEFEATED", "field": "text", "en": "You Defeated", "hash": "f9cd9a33b0724803", "src": "db2@1.60.1.70338"}
+{"id": "BOUNTY_TUTORIAL_BOUNTY_FINISHED", "field": "text", "en": "Visit the emissary to collect your reward.", "hash": "8abf30de14ba77ba", "src": "db2@1.60.1.70338"}
+{"id": "BOUNTY_TUTORIAL_INTRO", "field": "text", "en": "Complete world quests for this faction to receive a bonus reward.", "hash": "c3d903843e0123aa", "src": "db2@1.60.1.70338"}
 {"id": "BREATH_LABEL", "field": "text", "en": "Breath", "hash": "b6d8efc4950e0225", "src": "db2@1.60.1.70338"}
 {"id": "BROWSER_COPY_LINK", "field": "text", "en": "Copy Link", "hash": "18ab2f6c5a4640a5", "src": "db2@1.60.1.70338"}
 {"id": "BROWSER_DELETE_COOKIES", "field": "text", "en": "Delete Cookies", "hash": "295e551d25730e53", "src": "db2@1.60.1.70338"}

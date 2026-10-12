@@ -1,3 +1,5 @@
+{"id": "QUESTLINE_LOCATED_ABOVE", "field": "text", "en": "Located above", "hash": "57dd7021df7d9208", "src": "db2@1.60.1.70338"}
+{"id": "QUESTLINE_LOCATED_BELOW", "field": "text", "en": "Located below", "hash": "69d142a55ab6434a", "src": "db2@1.60.1.70338"}
 {"id": "QUESTLOG_BUTTON", "field": "text", "en": "Quest Log", "hash": "ac526ca3a65b23aa", "src": "db2@1.60.1.70338"}
 {"id": "QUESTLOG_NO_QUESTS_TEXT", "field": "text", "en": "No Active Quests", "hash": "bd82d186de10bbba", "src": "db2@1.60.1.69913"}
 {"id": "QUEST_ACCEPT", "field": "text", "en": "%s is starting %s\nWould you like to as well?", "hash": "62b9bd59984820cf", "src": "db2@1.60.1.70338"}
@@ -38,11 +40,14 @@
 {"id": "QUEST_PLAYERS_KILLED", "field": "text", "en": "%1$d/%2$d %3$s Players slain", "hash": "491fe8920c77246d", "src": "db2@1.60.1.70338"}
 {"id": "QUEST_PLAYERS_KILLED_NOPROGRESS", "field": "text", "en": "%2$s Players x %1$d", "hash": "950bb0ead023b2d6", "src": "db2@1.60.1.70338"}
 {"id": "QUEST_PREPEND", "field": "text", "en": "(Quest)", "hash": "e43328ae9fda8947", "src": "db2@1.60.1.70338"}
+{"id": "QUEST_REPUTATION_REWARD_TITLE", "field": "text", "en": "%s Reputation", "hash": "0a3aa6f64b315b7a", "src": "db2@1.60.1.70338"}
+{"id": "QUEST_REPUTATION_REWARD_TOOLTIP", "field": "text", "en": "Awards %d reputation with the %s", "hash": "e57986868fdfcb23", "src": "db2@1.60.1.70338"}
 {"id": "QUEST_REWARDS", "field": "text", "en": "Rewards", "hash": "526c53558d8b389a", "src": "db2@1.60.1.70338"}
 {"id": "QUEST_REWARDS_CONTAINS_ONE_TIME_REP_BONUS", "field": "text", "en": "Awards a one-time Account reputation bonus", "hash": "687e9ae8181398ab", "src": "db2@1.60.1.70338"}
 {"id": "QUEST_REWARDS_IS_ONE_TIME_REP_BONUS", "field": "text", "en": "This is a one-time Account reputation bonus", "hash": "c4fd21f48ad1c270", "src": "db2@1.60.1.70338"}
 {"id": "QUEST_SESSION_REPLAY_QUEST_REMOVED", "field": "text", "en": "Replay Quest Removed: %s", "hash": "b2ec17b8f3bfcfa2", "src": "db2@1.60.1.70338"}
 {"id": "QUEST_SETTINGS_LABEL", "field": "text", "en": "Quests", "hash": "a84737c440533b3c", "src": "db2@1.60.1.70338"}
+{"id": "QUEST_STORY_STATUS", "field": "text", "en": "|cffffd200Story Progress:|r %d/%d Chapters", "hash": "3b0608069c5bf861", "src": "db2@1.60.1.70338"}
 {"id": "QUEST_SUGGESTED_GROUP_NUM", "field": "text", "en": "Suggested Players [%d]", "hash": "e0b9b82d6f37d68c", "src": "db2@1.60.1.70338"}
 {"id": "QUEST_TEXT_PREVIEW_BODY", "field": "text", "en": "This preview showcases what your quest description will look like in the quest offer pane when you opt for the alternative background color.", "hash": "795adc6870a59ee5", "src": "db2@1.60.1.70338"}
 {"id": "QUEST_TEXT_PREVIEW_TITLE", "field": "text", "en": "Example", "hash": "4f9851a7b2e6384c", "src": "db2@1.60.1.70338"}

@@ -342,6 +342,7 @@
 {"id": "SOCIAL_QUEUE_FORMAT_BATTLEGROUND", "field": "text", "en": "Battleground: %s", "hash": "6da13dcec81fc4b6", "src": "db2@1.60.1.70338"}
 {"id": "SOCIAL_QUEUE_QUEUED_FOR", "field": "text", "en": "queued for", "hash": "855593cb72edb11a", "src": "db2@1.60.1.70338"}
 {"id": "SOCIAL_QUEUE_QUEUED_FOR_STANDALONE", "field": "text", "en": "Queued for", "hash": "7e8f509ae83c0a26", "src": "db2@1.60.1.70338"}
+{"id": "SOCIAL_QUICK_JOIN_TAB_HELP_TIP", "field": "text", "en": "Quickly join your friends and guildmates when they enter a queue or premade group.", "hash": "ec0964c54a2f2251", "src": "db2@1.60.1.70338"}
 {"id": "SOCIAL_SHARE_TEXT", "field": "text", "en": "Share", "hash": "befb447839625661", "src": "db2@1.60.1.70338"}
 {"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAGS_LABEL", "field": "text", "en": "Add Tags", "hash": "665f7529dccdb758", "src": "db2@1.60.1.70338"}
 {"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_DELVE", "field": "text", "en": "Delves", "hash": "caa4dc3a176c3a1f", "src": "db2@1.60.1.70338"}
@@ -369,6 +370,7 @@
 {"id": "SOURCES", "field": "text", "en": "Sources", "hash": "b971c80b7d08cf9d", "src": "db2@1.60.1.70338"}
 {"id": "SPECIAL", "field": "text", "en": "Special", "hash": "9a19b2a4aea44c9d", "src": "db2@1.60.1.70338"}
 {"id": "SPECIALIZATION", "field": "text", "en": "Specialization", "hash": "3477492c268fa0c4", "src": "db2@1.60.1.70338"}
+{"id": "SPEC_CHANGED_HAS_NEW_ABILITIES", "field": "text", "en": "Open the Spellbook to add your new abilities", "hash": "b7a1699198dfcae9", "src": "db2@1.60.1.70338"}
 {"id": "SPEC_INVOLUNTARILY_CHANGED", "field": "text", "en": "Your Specialization was changed because it has been disabled.", "hash": "95b46ce4e3d14f6a", "src": "db2@1.60.1.70338"}
 {"id": "SPEECH_TO_TEXT_HEADER", "field": "text", "en": "Speech to text allows you to add closed captioning in a voice channel.", "hash": "bb206d302abc4ae5", "src": "db2@1.60.1.70338"}
 {"id": "SPEECH_TO_TEXT_JOINED", "field": "text", "en": "Joined Voice Transcription. Only members who are in the same Voice Chat Channel and have Transcribe Voice Chat enabled can see the transcription log.", "hash": "509e358f6dd13283", "src": "db2@1.60.1.70338"}
@@ -1546,6 +1548,9 @@
 {"id": "SPELL_RANGE_DUAL", "field": "text", "en": "%1$s: %2$s yd range", "hash": "2e61c9a388eb7c14", "src": "db2@1.60.1.70338"}
 {"id": "SPELL_RANGE_UNLIMITED", "field": "text", "en": "Unlimited range", "hash": "09b0a7635424dcca", "src": "db2@1.60.1.70338"}
 {"id": "SPELL_REAGENTS", "field": "text", "en": "Reagents: |n", "hash": "ba824468b4bd1025", "src": "db2@1.60.1.70338"}
+{"id": "SPELL_REAGENTS_OPTIONAL", "field": "text", "en": "Optional Reagents:", "hash": "cbb6f273b77d7178", "src": "db2@1.60.1.70338"}
+{"id": "SPELL_RECAST_TIME_CHARGEUP_DAYS", "field": "text", "en": "%.2g |4day:days; required", "hash": "29ec5fd9cba891c2", "src": "db2@1.60.1.70338"}
+{"id": "SPELL_RECAST_TIME_CHARGEUP_HOURS", "field": "text", "en": "%.2g |4hour:hours; required", "hash": "acf9aab2e7406c2c", "src": "db2@1.60.1.70338"}
 {"id": "SPELL_RECAST_TIME_DAYS", "field": "text", "en": "%.2g day cooldown", "hash": "1725bbff156399ea", "src": "db2@1.60.1.70338"}
 {"id": "SPELL_RECAST_TIME_HOURS", "field": "text", "en": "%.2g hour cooldown", "hash": "bf84e013fa64ee37", "src": "db2@1.60.1.70338"}
 {"id": "SPELL_RECAST_TIME_INSTANT", "field": "text", "en": "Instant cooldown", "hash": "23ef6cd1483917c3", "src": "db2@1.60.1.70338"}
@@ -1655,6 +1660,8 @@
 {"id": "STAT_WARRIOR_CRIT_BONUS", "field": "text", "en": "Increased by |cFFFFFFFFAgility|r for Attacks\r\n\n|cFFBCBCBCMelee and Ranged critical strikes deal 100%% increased damage\n\nSpell and Healing critical strikes are 50%% more effective\n\nMost periodic effects can critically strike|r", "hash": "1ef4ccf5affdddc9", "src": "db2@1.60.1.70338"}
 {"id": "STOPWATCH_TITLE", "field": "text", "en": "Stopwatch", "hash": "cce41fc08931c180", "src": "db2@1.60.1.70338"}
 {"id": "STOP_SUPER_TRACK_QUEST", "field": "text", "en": "Remove Focus", "hash": "0b1d0b5044cf01f3", "src": "db2@1.60.1.70338"}
+{"id": "STORY_CHAPTERS", "field": "text", "en": "%d/%d Chapters", "hash": "43d225859708dbaa", "src": "db2@1.60.1.70338"}
+{"id": "STORY_PROGRESS", "field": "text", "en": "Story Progress", "hash": "cec981a3f7374fe3", "src": "db2@1.60.1.70338"}
 {"id": "STRING_SCHOOL_ARCANE", "field": "text", "en": "Arcane", "hash": "bb1005d928b3b0c1", "src": "db2@1.60.1.70338"}
 {"id": "STRING_SCHOOL_HOLY", "field": "text", "en": "Holy", "hash": "09c31c3c7def7685", "src": "db2@1.60.1.70338"}
 {"id": "STRING_SCHOOL_NATURE", "field": "text", "en": "Nature", "hash": "58ab279e326bdbc9", "src": "db2@1.60.1.70338"}
@@ -1672,6 +1679,7 @@
 {"id": "SUBSCRIPTION_INTERSTITIAL_UPGRADE_TITLE_SUBTEXT", "field": "text", "en": "Subscribe to continue your epic journey", "hash": "b2f89cf21b5a132e", "src": "db2@1.60.1.70338"}
 {"id": "SUCCESS", "field": "text", "en": "Success", "hash": "6092bd3b78a0ceda", "src": "db2@1.60.1.70338"}
 {"id": "SUGGEST_INVITE", "field": "text", "en": "Suggest Invite", "hash": "7b3ae56be3cf4c07", "src": "db2@1.60.1.70338"}
+{"id": "SUGGEST_INVITE_CROSS_FACTION", "field": "text", "en": "Suggest Invite to Instance Group", "hash": "9cb28d707e50a6a1", "src": "db2@1.60.1.70338"}
 {"id": "SUMMARY_ACHIEVEMENT_INCOMPLETE", "field": "text", "en": "Achievement Incomplete", "hash": "e2323d9a6f4370ea", "src": "db2@1.60.1.70338"}
 {"id": "SUMMARY_ACHIEVEMENT_INCOMPLETE_TEXT", "field": "text", "en": "Satisfy the requirements for each achievement to gain points, rewards, and glory!", "hash": "6bc7d2eb128b9d8d", "src": "db2@1.60.1.70338"}
 {"id": "SUMMONS", "field": "text", "en": "Summons", "hash": "11758043db8b5807", "src": "db2@1.60.1.70338"}
