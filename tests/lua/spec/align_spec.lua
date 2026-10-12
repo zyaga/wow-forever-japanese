@@ -97,6 +97,39 @@ end)
 -- `$D<k>`: the one value whose UNIT the client chooses. `$d` renders through
 -- INT_SPELL_DURATION_SEC / _MIN / _HOURS / _DAYS, so the same template shows seconds on one item and minutes
 -- on another; the Japanese must never name the unit itself. The renderer is UIStrings', stubbed here.
+-- Align.gate: what the tooltip shows for a shipped item / spell entry, by the Translator's status rules.
+describe("gate", function()
+  local A
+  setup(function()
+    local ns = {}
+    H.loadPure("Core/Align.lua", "WoWForeverJapanese", ns)
+    A = ns.Align
+  end)
+  local LINE = { "Restores 50 health." }
+
+  it("an unaligned or stale line goes through the gate", function()
+    assert.are.same({ true, "体力を50回復する。" }, { A.gate({ ja = "体力を$N1回復する。", status = "u" }, LINE) })
+    assert.are.same({ true, "体力を50回復する。" }, { A.gate({ ja = "体力を$N1回復する。", status = "s" }, LINE) })
+    assert.is_false(A.gate({ ja = "体力を99回復する。", status = "u" }, LINE))
+  end)
+
+  it("a trusted line is shown ungated with its live values filled in", function()
+    assert.are.same({ true, "体力を50回復する。" }, { A.gate({ ja = "体力を$N1回復する。", status = "." }, LINE) })
+    assert.are.same({ true, "回復する。" }, { A.gate({ ja = "回復する。", status = "." }, LINE) })
+  end)
+
+  it("a branch line only when unaligned or stale; no Japanese, or another status, shows nothing", function()
+    local branch = { variants = { "体力を$N1回復する。" }, shapes = { "1/0" } }
+    branch.status = "u"
+    assert.is_true((A.gate(branch, LINE)))
+    branch.status = "."
+    assert.is_false(A.gate(branch, LINE))
+    assert.is_false(A.gate({ ja = "", status = "u" }, LINE))
+    assert.is_false(A.gate({ ja = "x", status = "m" }, LINE))
+    assert.is_false(A.gate(nil, LINE))
+  end)
+end)
+
 describe("durations", function()
   local A
   setup(function()
@@ -129,6 +162,24 @@ describe("durations", function()
     -- the two-entry phrase is one duration, not also its second half
     assert.are.same({ "1時間30分" }, A.durations("1 hr 30 min", SEC))
     assert.are.same({ "30秒", "10日" }, A.durations("Stuns for 30 sec. Expires in 10 days.", SEC))
+  end)
+
+  -- the spell API's text keeps the client's plural code ("for 1 |4hour:hrs;."); the line the tooltip holds is
+  -- that same text, and the renderer understands it whole, closing ";" included
+  it("reads a duration written in the client's plural code, one or two of them", function()
+    local raw = renderer({ ["1 |4hour:hrs;"] = "1時間", ["5 |4Hr:Hrs; 30 |4Min:Mins;"] = "5時間30分" })
+    assert.are.same({ "1時間" }, A.durations("Increases armor by 34 for 1 |4hour:hrs;.", raw))
+    assert.are.same({ "1時間" }, A.durations("for 1 |4hour:hrs;. Only one Blessing.", raw))
+    assert.are.same({ "5時間30分" }, A.durations("Lasts 5 |4Hr:Hrs; 30 |4Min:Mins;.", raw))
+    assert.are.same({}, A.durations("for 2 |4item:items;.", raw))
+  end)
+
+  it("a gated line in the plural code passes the gate and is filled from it", function()
+    local raw = renderer({ ["1 |4hour:hrs;"] = "1時間" })
+    local ok, text = A.check("$D1の間、味方の対象のアーマーを$N1上げます。",
+      { "Increases the friendly target's armor by 34 for 1 |4hour:hrs;." }, nil, raw)
+    assert.is_true(ok)
+    assert.are.equal("1時間の間、味方の対象のアーマーを34上げます。", text)
   end)
 
   it("ignores a number that is not a duration, and a line already in Japanese is read too", function()

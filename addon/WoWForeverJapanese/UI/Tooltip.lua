@@ -190,19 +190,20 @@ end
 -- first line is empty is refused: an empty English is never a translation target (addon-modules §7).
 local runColors -- below anySecretOf, which it needs
 
-local function showRun(surface, area, kind, id, lines, first, last, refit, runArgs)
+local function showRun(surface, area, kind, id, lines, first, last, refit, runArgs, tag, peeled)
+  tag = tag or "desc"
   local texts = {}
-  for i = first, last do texts[#texts + 1] = lines[i].text end
+  for i = first, last do texts[#texts + 1] = peeled and peeled[i] or lines[i].text end
   local n = 0
   -- line 1 is the name: never replaced, never a number source, but a name the Japanese may legitimately use
-  if WFJ.Render.show(surface, "desc", lines[first].fs, lines[first].text, area, kind, id,
+  if WFJ.Render.show(surface, tag, lines[first].fs, lines[first].text, area, kind, id,
       { lines = texts, nameScope = lines[1] and lines[1].text or nil, refit = refit, args = runArgs,
         partColors = runColors(lines, first, last) }) then
     n = n + 1
   end
   for i = first + 1, last do
-    if WFJ.Render.show(surface, "desc." .. i, lines[i].fs, lines[i].text, area, kind, id,
-        { follow = "desc", refit = refit }) then n = n + 1 end
+    if WFJ.Render.show(surface, tag .. "." .. i, lines[i].fs, lines[i].text, area, kind, id,
+        { follow = tag, refit = refit }) then n = n + 1 end
   end
   return n
 end
@@ -212,20 +213,27 @@ end
 local HEADED = { ShoppingTooltip1 = true, ShoppingTooltip2 = true, ItemRefShoppingTooltip1 = true,
   ItemRefShoppingTooltip2 = true } -- comparison tooltips: line 1 is "Currently Equipped", the name follows
 
-local function showStructural(surface, frame, lines, first, last, refit, name)
+-- `sets`: { [row] = { key, args } | false } from setBonuses: a set bonus line written with its spell's Japanese, or
+-- (false) left English whole, never half translated.
+local function showStructural(surface, frame, lines, first, last, refit, name, skip, sets)
   local index = WFJ.UIIndex
   if not index then return 0 end
   local n = 0
   local headed = HEADED[frame:GetName()]
   local sides = { { "L", lines }, { "R", Tooltip.lines(frame, "Right") } }
   for i = 1, #lines do
-    if not (first and i >= first and i <= last) then
+    if not (first and i >= first and i <= last) and i ~= skip then
       for _, side in ipairs(sides) do
         local l = side[2][i]
         -- an uncached item has no name yet: on a comparison tooltip the name is then line 2 by position
         local isName = side[1] == "L" and ((i == 1 and not headed) or (name ~= nil and l and l.text == name)
           or (headed and name == nil and i == 2))
-        if l and l.text ~= "" and not isName then
+        local set
+        if side[1] == "L" and sets then set = sets[i] end
+        if set ~= nil and set ~= false and l then
+          local ctx = { args = set.args, refit = refit }
+          if WFJ.Render.show(surface, "ui.L" .. i, l.fs, l.text, "ui", "ui", set.key, ctx) then n = n + 1 end
+        elseif set == nil and l and l.text ~= "" and not isName then
           local key, args = index:match(l.text)
           -- ADR-042: the right side of line 1 is never a name: on an aura it is the dispel type ("Curse"),
           -- a restricted family found only where it is asked for
@@ -260,8 +268,8 @@ local function showEquipLines(surface, id, lines, first, last, refit)
   local matched, n = 0, 0
   for i = first, last do
     local l = lines[i]
-    local key, args = index:match(l.text)
-    if key and type(args) == "table" and args.form == "equip" then
+    local key, args = index:statLine(l.text)
+    if key then
       matched = matched + 1
       if WFJ.Render.show(surface, "ui.L" .. i, l.fs, l.text, "ui", "ui", key, { args = args, refit = refit }) then
         n = n + 1
@@ -487,7 +495,10 @@ function Tooltip.installCallTrace()
 end
 Tooltip.traceNote = traceNote
 
-local function show(frame, area, kind, id, lines, first, last, name, runArgs)
+-- `learn` = { row, id }: a recipe's own "Teaches you" line, a run of its own under the recipe's id.
+-- `peeled`: the run's line texts without the client's tail (peelTrailer), what the run is matched against.
+-- `sets`: the set bonus lines (setBonuses).
+local function show(frame, area, kind, id, lines, first, last, name, runArgs, learn, peeled, sets)
   local surface = surfaceOf(frame)
   WFJ.Render.forget(surface)
   if first and lines[first].text == "" then first, last = nil, nil end
@@ -506,9 +517,12 @@ local function show(frame, area, kind, id, lines, first, last, name, runArgs)
       matched, written = showEquipLines(surface, id, lines, first, last, refit)
     end
     if first and matched == 0 then
-      written = showRun(surface, area, kind, id, lines, first, last, refit, runArgs)
+      written = showRun(surface, area, kind, id, lines, first, last, refit, runArgs, nil, peeled)
     end
-    return written + showStructural(surface, frame, lines, first, last, refit, name)
+    if learn then
+      written = written + showRun(surface, area, kind, learn.id, lines, learn.row, learn.row, refit, nil, "learn")
+    end
+    return written + showStructural(surface, frame, lines, first, last, refit, name, learn and learn.row, sets)
   end)
   inRefit[frame] = false
   if not ok then error(n, 0) end
@@ -516,17 +530,16 @@ local function show(frame, area, kind, id, lines, first, last, name, runArgs)
   return n
 end
 
--- The max-usable-level trailer on the run's lines. `texts` is rewritten in place without it (what the Collector
--- records). → affix args carrying the trailer's Japanese | nil (none, or not one Japanese for it)
-local TRAILER = { "ITEM_SPELL_MAX_USABLE_LEVEL" }
+-- The tail the client adds to a run's line: the max-usable-level trailer, or the item's cooldown ("(1 Sec
+-- Cooldown)"), neither part of the item's text. `texts` is rewritten in place without it: what the Collector records
+-- and what the run is matched against, so the tail's number never counts as one of the line's values.
+-- → affix args carrying the tail's Japanese | nil (none, or not one Japanese for it)
 local function peelTrailer(texts, first, last)
   local index = WFJ.UIIndex
   if not index then return nil end
   local after
   for i = first, last do
-    local head, tail = (texts[i] or ""):match("^(.-)( %([^()]*%))$")
-    local key, args
-    if head then key, args = index:matchOnly(tail, TRAILER) end
+    local head, key, args = index:clientTail(texts[i])
     if key then
       texts[i] = head
       local ja = index.rows[key] and index:fill(index.rows[key][1], args)
@@ -867,6 +880,116 @@ function Tooltip.itemOf(frame)
   return name, link
 end
 
+-- An item set's bonus spells, as the client lists them for the player's specialization (0 when it has none)
+-- [seen in game: C_Item.GetSetBonusesForSpecializationByItemID answers on Forever 1.60.1.70338]. → { spell id, … }
+function Tooltip.setSpells(id)
+  local bonuses = Compat.resolve("C_Item.GetSetBonusesForSpecializationByItemID")
+  if type(bonuses) ~= "function" then return {} end
+  local spec = 0
+  local specOf = Compat.resolve("C_SpecializationInfo.GetSpecialization") or Compat.resolve("GetSpecialization")
+  local specInfo = Compat.resolve("C_SpecializationInfo.GetSpecializationInfo")
+    or Compat.resolve("GetSpecializationInfo")
+  if type(specOf) == "function" and type(specInfo) == "function" then
+    local ok, index = pcall(specOf)
+    if ok and type(index) == "number" then
+      local iok, specID = pcall(specInfo, index)
+      if iok and type(specID) == "number" then spec = specID end
+    end
+  end
+  local ok, list = pcall(bonuses, spec, id)
+  local out = {}
+  if not ok or type(list) ~= "table" then return out end
+  for _, sid in ipairs(list) do
+    if type(sid) == "number" and not anySecretOf(sid) then out[#out + 1] = sid end
+  end
+  return out
+end
+
+-- An item's set bonus lines ("(2) Set: Improves your chance to hit by 2.0%.", ITEM_SET_BONUS_GRAY; "Set: …" once
+-- the bonus is active): the client fills them with a bonus spell's description. A line belongs to the bonus spell
+-- whose description, as the client renders it, is the line's text, and shows that spell's Japanese when the
+-- tooltip gate accepts it (WFJ.GateText). The gate alone cannot tell two bonuses apart (a Japanese with no number
+-- fits any line), so a line whose spell the client does not name stays English whole.
+-- → { [row] = { key, args with the Japanese in place } | false }, the English lines' { text }, the bonus spells no
+-- line took | nil when the tooltip has no set line
+local function setBonuses(id, lines, taken)
+  local index, gate = WFJ.UIIndex, WFJ.GateText
+  local lookup = WFJ.Lookup and WFJ.Lookup.get
+  if not index or type(gate) ~= "function" or type(lookup) ~= "function" then return nil end
+  -- the active line by the client's own "Set: " (its "Set: %s" is shared with the boss loot banner's key)
+  local active = Compat.resolve("ITEM_SET_BONUS")
+  local prefix = type(active) == "string" and active:match("^(.-)%%s$") or nil
+  local found = {}
+  for i = 2, #lines do
+    local text = lines[i].text
+    if not taken(i) and text ~= "" then
+      local key, args = index:matchOnly(text, { "ITEM_SET_BONUS_GRAY" })
+      if not key and prefix and prefix ~= "" and text:sub(1, #prefix) == prefix and #text > #prefix then
+        key, args = "ITEM_SET_BONUS", { text:sub(#prefix + 1) }
+      end
+      if key and type(args) == "table" then found[#found + 1] = { row = i, key = key, args = args } end
+    end
+  end
+  if #found == 0 then return nil end
+  local spells = Tooltip.setSpells(id)
+  local out, used, english = {}, {}, {}
+  for _, f in ipairs(found) do
+    local slot = f.key == "ITEM_SET_BONUS" and 1 or 2 -- the %s
+    local inner = f.args[slot]
+    local hit, hitId
+    for _, sid in ipairs(type(inner) == "string" and spells or {}) do
+      if not used[sid] and Tooltip.spellDescription(sid) == inner then
+        local ok, text = gate(lookup("spell.description", sid), { inner })
+        if ok then hit, hitId = text, sid end
+        break
+      end
+    end
+    if hit then
+      local args = {}
+      for k, v in pairs(f.args) do args[k] = v end
+      args[slot] = hit
+      out[f.row], used[hitId] = { key = f.key, args = args }, true
+    else
+      out[f.row] = false
+      english[#english + 1] = { text = inner }
+    end
+  end
+  local free = {}
+  for _, sid in ipairs(spells) do
+    if not used[sid] then free[#free + 1] = sid end
+  end
+  return out, english, free
+end
+
+-- A recipe's tooltip on Forever is the crafted item's tooltip as a nested block, then the recipe's own "Use: Teaches
+-- you …" line [seen in game: the tooltip data of a recipe on Forever 1.60.1.70338]. The tooltip data names both
+-- items: its id is the recipe, the nested block's tooltipID the crafted item, and the recipe's line has its own
+-- type. The item link may name either of them. → crafted id, recipe id, the recipe line's row | nil
+function Tooltip.recipeOf(frame, lineCount)
+  if type(frame.GetPrimaryTooltipInfo) ~= "function" then return nil end
+  local ok, info = pcall(frame.GetPrimaryTooltipInfo, frame)
+  local data = ok and type(info) == "table" and info.tooltipData or nil
+  local lineTypes, dataTypes = Compat.resolve("Enum.TooltipDataLineType"), Compat.resolve("Enum.TooltipDataType")
+  if type(data) ~= "table" or type(data.lines) ~= "table" or type(lineTypes) ~= "table" then return nil end
+  local itemType = type(dataTypes) == "table" and dataTypes.Item or 0
+  local crafted, nestedRow, row
+  for _, line in ipairs(data.lines) do
+    if type(line) == "table" and not anySecretOf(line.type, line.tooltipID, line.tooltipType, line.lineIndex) then
+      if line.type == lineTypes.NestedBlock and line.tooltipType == itemType and type(line.tooltipID) == "number" then
+        crafted, nestedRow = crafted or line.tooltipID, nestedRow or line.lineIndex
+      elseif line.type == lineTypes.ItemSpellTriggerLearn and type(line.lineIndex) == "number" then
+        row = row or line.lineIndex
+      end
+    end
+  end
+  local recipe = data.id
+  if anySecretOf(recipe) or type(recipe) ~= "number" or not crafted or crafted == recipe then return nil end
+  if not row or row < 2 or row > lineCount then return nil end
+  -- the layout seen on Forever: the crafted item's block first, the recipe's line after it; any other is one item
+  if type(nestedRow) ~= "number" or nestedRow >= row then return nil end
+  return crafted, recipe, row
+end
+
 -- The Item post-call's target.
 function Tooltip.onItem(frame)
   if inRefit[frame] then return 0 end -- our own refit re-runs the post-call; nothing new to read
@@ -884,23 +1007,35 @@ function Tooltip.onItem(frame)
     return n
   end
   local id = type(link) == "string" and tonumber(link:match("item:(%d+)")) or nil
+  local crafted, recipe, learnRow = Tooltip.recipeOf(frame, #lines)
+  if crafted then id = crafted end
   if not id or id <= 0 then
     WFJ.Render.forget(surfaceOf(frame))
     traceFrame(frame, "item without an id", nil, lines, "-> 0 (link " .. plain(link) .. ")")
     return 0
   end
   traceFrame(frame, "item as the client laid it out", id, lines, "")
-  local first, last = Tooltip.itemRun(texts)
+  -- a recipe: the crafted item's run ends above the recipe's own line, which is a run of its own
+  local first, last = Tooltip.itemRun(learnRow and { unpack(texts, 1, learnRow - 1) } or texts)
+  local learn = learnRow and texts[learnRow] ~= "" and { row = learnRow, id = recipe } or nil
   local runArgs = first and peelTrailer(texts, first, last) or nil
   -- The run is read before we write (the client rewrote every line); the Collector refuses our own text anyway.
   if first then WFJ.Collector.record("item", id, "description", table.concat(texts, "\n", first, last)) end
+  if learn then WFJ.Collector.record("item", recipe, "description", texts[learnRow]) end
+  local sets, setEnglish, setFree = setBonuses(id, lines, function(i)
+    return (first ~= nil and i >= first and i <= last) or (learn ~= nil and i == learn.row)
+  end)
+  -- a set line no bonus spell's Japanese fits is that spell's English: known only when one line and one spell are left
+  if setEnglish and #setEnglish == 1 and #setFree == 1 and type(setEnglish[1].text) == "string" then
+    WFJ.Collector.record("spell", setFree[1], "description", setEnglish[1].text)
+  end
   if runArgs then -- only an ungated translation takes the trailer's Japanese; a gated one keeps the whole line
     local lookup = WFJ.Lookup and WFJ.Lookup.get
     local entry = type(lookup) == "function" and lookup("item.description", id) or nil
     if not (entry and entry.status == ".") then runArgs = nil end
   end
   -- No run still has structural lines.
-  local n = show(frame, "items", "item.description", id, lines, first, last, itemName, runArgs)
+  local n = show(frame, "items", "item.description", id, lines, first, last, itemName, runArgs, learn, texts, sets)
   traceFrame(frame, "readable item", id, lines, ("-> rendered %d"):format(n))
   -- the same tooltip one frame later, as the client drew it: a wrap that moves after this pass shows there
   local after = Tooltip.trace and Compat.resolve("C_Timer.After")

@@ -144,6 +144,158 @@
 {"id": "TOKEN_TRIAL_RESTRICTIONS", "field": "text", "en": "To redeem this WoW Token, log out to the character select screen.", "hash": "4fa5af1fe08ced49", "src": "db2@1.60.1.70338"}
 {"id": "TOKEN_TRY_AGAIN_LATER", "field": "text", "en": "Please wait %s before trying again.", "hash": "fc7eeba4b957ac48", "src": "db2@1.60.1.70338"}
 {"id": "TOOLTIP_BATTLE_PET", "field": "text", "en": "Battle Pet", "hash": "b2c624c4d89c069f", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_AP_VS_BEAST_DECREASE", "field": "text", "en": "Equip: -%1$d Attack Power against Beasts.", "hash": "36ca283e1da3ee2c", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_AP_VS_BEAST_INCREASE", "field": "text", "en": "Equip: +%1$d Attack Power against Beasts.", "hash": "4348cff02832529f", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_AP_VS_DEMON_DECREASE", "field": "text", "en": "Equip: -%1$d Attack Power against Demons.", "hash": "72495114ee5dab70", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_AP_VS_DEMON_INCREASE", "field": "text", "en": "Equip: +%1$d Attack Power against Demons.", "hash": "7ec7f8c6f8ec0fe3", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_AP_VS_DRAGONKIN_DECREASE", "field": "text", "en": "Equip: -%1$d Attack Power against Dragonkin.", "hash": "05f8ba91b2baa9a3", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_AP_VS_DRAGONKIN_INCREASE", "field": "text", "en": "Equip: +%1$d Attack Power against Dragonkin.", "hash": "f4c52c5e844f02be", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_AP_VS_ELEMENTAL_DECREASE", "field": "text", "en": "Equip: -%1$d Attack Power against Elementals.", "hash": "47ac401d39aa9299", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_AP_VS_ELEMENTAL_INCREASE", "field": "text", "en": "Equip: +%1$d Attack Power against Elementals.", "hash": "7a4a7e6663d6c60c", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_AP_VS_GIANT_DECREASE", "field": "text", "en": "Equip: -%1$d Attack Power against Giants.", "hash": "abad50db4cb3bc10", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_AP_VS_GIANT_INCREASE", "field": "text", "en": "Equip: +%1$d Attack Power against Giants.", "hash": "b82bf88d57422083", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_AP_VS_HUMANOID_DECREASE", "field": "text", "en": "Equip: -%1$d Attack Power against Humanoids.", "hash": "76f8b0b3bd41c42c", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_AP_VS_HUMANOID_INCREASE", "field": "text", "en": "Equip: +%1$d Attack Power against Humanoids.", "hash": "65c522858ed61d47", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_AP_VS_MECHANICAL_DECREASE", "field": "text", "en": "Equip: -%1$d Attack Power against Mechanical units.", "hash": "5c01f9753cabc673", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_AP_VS_MECHANICAL_INCREASE", "field": "text", "en": "Equip: +%1$d Attack Power against Mechanical units.", "hash": "0be892f9febbf289", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_AP_VS_UNDEAD_DECREASE", "field": "text", "en": "Equip: -%1$d Attack Power against Undead.", "hash": "aa77f9c3eb493b2e", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_AP_VS_UNDEAD_INCREASE", "field": "text", "en": "Equip: +%1$d Attack Power against Undead.", "hash": "b6f6a175f5d79fa1", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_ARCANE_DAMAGE_DECREASE", "field": "text", "en": "Equip: Decreases damage done by Arcane spells and effects by up to %1$d.", "hash": "4513855573ce8969", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_ARCANE_DAMAGE_INCREASE", "field": "text", "en": "Equip: Increases damage done by Arcane spells and effects by up to %1$d.", "hash": "4d17f354a5b6e4ee", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_ARCANE_PENETRATION_DECREASE", "field": "text", "en": "Equip: Your spells pierce %1$d less Arcane Resistance.", "hash": "2c04380d842611a0", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_ARCANE_PENETRATION_INCREASE", "field": "text", "en": "Equip: Your spells pierce %1$d Arcane Resistance.", "hash": "4fef50c567d969e6", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_ARMOR_DECREASE", "field": "text", "en": "-%1$d Armor", "hash": "11aecd53ec2d5136", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_ARMOR_INCREASE", "field": "text", "en": "+%1$d Armor", "hash": "6a37872f6597ac3d", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_ARMOR_PENETRATION_DECREASE", "field": "text", "en": "Equip: Your attacks pierce up to %1$d less Armor.", "hash": "ab5ece9884ceabd2", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_ARMOR_PENETRATION_INCREASE", "field": "text", "en": "Equip: Your attacks pierce up to %1$d Armor.", "hash": "2205896b34516849", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_ATTACK_POWER_DECREASE", "field": "text", "en": "Equip: -%1$d Attack Power.", "hash": "cf41e094dd3101bc", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_ATTACK_POWER_INCREASE", "field": "text", "en": "Equip: +%1$d Attack Power.", "hash": "1f9ab68463baf712", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_BLOCK_CHANCE_DECREASE", "field": "text", "en": "Equip: Decreases your chance to Block attacks with a shield by %1$.1f%%.", "hash": "132ee22ed32e1fcf", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_BLOCK_CHANCE_INCREASE", "field": "text", "en": "Equip: Increases your chance to Block attacks with a shield by %1$.1f%%.", "hash": "1b33502d05167b65", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_BLOCK_VALUE_DECREASE", "field": "text", "en": "Equip: Decreases the Block Value of your shield by %1$d.", "hash": "cc2d279a2500df3c", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_BLOCK_VALUE_INCREASE", "field": "text", "en": "Equip: Increases the Block Value of your shield by %1$d.", "hash": "e5af0cc986417e03", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_CRIT_PERCENT_DECREASE", "field": "text", "en": "Equip: Decreases your chance to get a critical strike by %1$.1f%%.", "hash": "35c662cef0763bfa", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_CRIT_PERCENT_INCREASE", "field": "text", "en": "Equip: Improves your chance to get a critical strike by %1$.1f%%.", "hash": "ba5042a4238a8ec8", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_DEFENSE_DECREASE", "field": "text", "en": "Equip: Decreased Defense -%1$d.", "hash": "5b5d47f5e442af3e", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_DEFENSE_INCREASE", "field": "text", "en": "Equip: Increased Defense +%1$d.", "hash": "8fbd1fdfd24b2d1a", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_DODGE_PCT_DECREASE", "field": "text", "en": "Equip: Decreases your chance to Dodge an attack by %1$.1f%%.", "hash": "e17756440862776c", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_DODGE_PCT_INCREASE", "field": "text", "en": "Equip: Increases your chance to Dodge an attack by %1$.1f%%.", "hash": "af21fec9af7000e0", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_EXPERTISE_PCT_DECREASE", "field": "text", "en": "Equip: Increases chance to be Dodged or Parried by %1$.1f%%.", "hash": "ec62909ec3706fb1", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_EXPERTISE_PCT_INCREASE", "field": "text", "en": "Equip: Reduces chance to be Dodged or Parried by %1$.1f%%.", "hash": "c62bcd92837192ef", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_FIRE_DAMAGE_DECREASE", "field": "text", "en": "Equip: Decreases damage done by Fire spells and effects by up to %1$d.", "hash": "240cbe41ed534f0c", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_FIRE_DAMAGE_INCREASE", "field": "text", "en": "Equip: Increases damage done by Fire spells and effects by up to %1$d.", "hash": "2704d27d48311247", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_FIRE_PENETRATION_DECREASE", "field": "text", "en": "Equip: Your spells pierce %1$d less Fire Resistance.", "hash": "af566478337bc2f1", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_FIRE_PENETRATION_INCREASE", "field": "text", "en": "Equip: Your spells pierce %1$d Fire Resistance.", "hash": "63597e7e9599979b", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_FROST_DAMAGE_DECREASE", "field": "text", "en": "Equip: Decreases damage done by Frost spells and effects by up to %1$d.", "hash": "95fa137b5f88f895", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_FROST_DAMAGE_INCREASE", "field": "text", "en": "Equip: Increases damage done by Frost spells and effects by up to %1$d.", "hash": "1aec6e39171456e0", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_FROST_PENETRATION_DECREASE", "field": "text", "en": "Equip: Your spells pierce %1$d less Frost Resistance.", "hash": "6f13eb64fa53079b", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_FROST_PENETRATION_INCREASE", "field": "text", "en": "Equip: Your spells pierce %1$d Frost Resistance.", "hash": "8caa3bb3d34c56bd", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_HASTE_PCT_DECREASE", "field": "text", "en": "Equip: Decreases your attack speed and casting speed by %1$.1f%%.", "hash": "c3a09847357bf99f", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_HASTE_PCT_INCREASE", "field": "text", "en": "Equip: Increases your attack speed and casting speed by %1$.1f%%.", "hash": "9da52995d3006c25", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_HEALTH_REGEN_DECREASE", "field": "text", "en": "Equip: Reduces Health Regen by %1$d Health per 5 sec.", "hash": "0a833971fa898dd0", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_HEALTH_REGEN_INCREASE", "field": "text", "en": "Equip: Restores %1$d Health per 5 sec.", "hash": "dbab628efda774e1", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_HIT_PERCENT_DECREASE", "field": "text", "en": "Equip: Decreases your chance to hit by %1$.1f%%.", "hash": "fdfafe925a21cb5b", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_HIT_PERCENT_INCREASE", "field": "text", "en": "Equip: Improves your chance to hit by %1$.1f%%.", "hash": "246c1fddd14dbf62", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_HOLY_DAMAGE_DECREASE", "field": "text", "en": "Equip: Decreases damage done by Holy spells and effects by up to %1$d.", "hash": "f7f1ab3cc7c3c2cc", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_HOLY_DAMAGE_INCREASE", "field": "text", "en": "Equip: Increases damage done by Holy spells and effects by up to %1$d.", "hash": "fae9bf7822a18607", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_MANA_REGEN_DECREASE", "field": "text", "en": "Equip: Reduces Mana Regen by %1$d Mana per 5 sec.", "hash": "1a0c79db721d9df4", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_MANA_REGEN_INCREASE", "field": "text", "en": "Equip: Restores %1$d Mana per 5 sec.", "hash": "b2932b9b92961f66", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_NATURE_DAMAGE_DECREASE", "field": "text", "en": "Equip: Decreases damage done by Nature spells and effects by up to %1$d.", "hash": "fd52bf4dc4095375", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_NATURE_DAMAGE_INCREASE", "field": "text", "en": "Equip: Increases damage done by Nature spells and effects by up to %1$d.", "hash": "05572d51f5f1aefa", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_NATURE_PENETRATION_DECREASE", "field": "text", "en": "Equip: Your spells pierce %1$d less Nature Resistance.", "hash": "d6a93ef5a36283aa", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_NATURE_PENETRATION_INCREASE", "field": "text", "en": "Equip: Your spells pierce %1$d Nature Resistance.", "hash": "fa9457ad8715dbf0", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_PARRY_PCT_DECREASE", "field": "text", "en": "Equip: Decreases your chance to Parry an attack by %1$.1f%%.", "hash": "8aaa5e219da73cd9", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_PARRY_PCT_INCREASE", "field": "text", "en": "Equip: Increases your chance to Parry an attack by %1$.1f%%.", "hash": "585506a644b4c65e", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_RANGED_ATTACK_POWER_DECREASE", "field": "text", "en": "Equip: -%1$d Ranged Attack Power.", "hash": "4a324bf2128626dc", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_RANGED_ATTACK_POWER_INCREASE", "field": "text", "en": "Equip: +%1$d Ranged Attack Power.", "hash": "be46d6b78039d1e1", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SD_VS_BEAST_DECREASE", "field": "text", "en": "Equip: Decreases damage done to Beasts by magical spells and effects by up to %1$d.", "hash": "88e2b2308963da9c", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SD_VS_BEAST_INCREASE", "field": "text", "en": "Equip: Increases damage done to Beasts by magical spells and effects by up to %1$d.", "hash": "05bc6fcdf7bc7b0b", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SD_VS_DEMON_DECREASE", "field": "text", "en": "Equip: Decreases damage done to Demons by magical spells and effects by up to %1$d.", "hash": "8f757b4de6341d4f", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SD_VS_DEMON_INCREASE", "field": "text", "en": "Equip: Increases damage done to Demons by magical spells and effects by up to %1$d.", "hash": "0c4f38ea548cbdcf", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SD_VS_DRAGONKIN_DECREASE", "field": "text", "en": "Equip: Decreases damage done to Dragonkin by magical spells and effects by up to %1$d.", "hash": "746640ad5d43fbc6", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SD_VS_DRAGONKIN_INCREASE", "field": "text", "en": "Equip: Increases damage done to Dragonkin by magical spells and effects by up to %1$d.", "hash": "b8c6698923abb9ed", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SD_VS_ELEMENTAL_DECREASE", "field": "text", "en": "Equip: Decreases damage done to Elementals by magical spells and effects by up to %1$d.", "hash": "70e43d72c7a623e7", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SD_VS_ELEMENTAL_INCREASE", "field": "text", "en": "Equip: Increases damage done to Elementals by magical spells and effects by up to %1$d.", "hash": "6e1926b5b8da8342", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SD_VS_GIANT_DECREASE", "field": "text", "en": "Equip: Decreases damage done to Giants by magical spells and effects by up to %1$d.", "hash": "f088859fecea6f94", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SD_VS_GIANT_INCREASE", "field": "text", "en": "Equip: Increases damage done to Giants by magical spells and effects by up to %1$d.", "hash": "6d62433c5b431014", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SD_VS_HUMANOID_DECREASE", "field": "text", "en": "Equip: Decreases damage done to Humanoids by magical spells and effects by up to %1$d.", "hash": "995175dcf82a248f", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SD_VS_HUMANOID_INCREASE", "field": "text", "en": "Equip: Increases damage done to Humanoids by magical spells and effects by up to %1$d.", "hash": "ddb19eb8be91e2b6", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SD_VS_MECHANICAL_DECREASE", "field": "text", "en": "Equip: Decreases damage done to Mechanical units by magical spells and effects by up to %1$d.", "hash": "3a67c630416b0537", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SD_VS_MECHANICAL_INCREASE", "field": "text", "en": "Equip: Increases damage done to Mechanical units by magical spells and effects by up to %1$d.", "hash": "ff851020794eb102", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SD_VS_UNDEAD_DECREASE", "field": "text", "en": "Equip: Decreases damage done to Undead by magical spells and effects by up to %1$d.", "hash": "3873b0d0cd730724", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SD_VS_UNDEAD_INCREASE", "field": "text", "en": "Equip: Increases damage done to Undead by magical spells and effects by up to %1$d.", "hash": "b54d6e683bcba7a4", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SHADOW_DAMAGE_DECREASE", "field": "text", "en": "Equip: Decreases damage done by Shadow spells and effects by up to %1$d.", "hash": "fd1c63ecfdf63659", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SHADOW_DAMAGE_INCREASE", "field": "text", "en": "Equip: Increases damage done by Shadow spells and effects by up to %1$d.", "hash": "0520d1f02fde91ef", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SHADOW_PENETRATION_DECREASE", "field": "text", "en": "Equip: Your spells pierce %1$d less Shadow Resistance.", "hash": "5fa40c32958ab1f6", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SHADOW_PENETRATION_INCREASE", "field": "text", "en": "Equip: Your spells pierce %1$d Shadow Resistance.", "hash": "838f24ea793e0a3c", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_ALCHEMY_DECREASE", "field": "text", "en": "Equip: Decreased Alchemy -%1$d.", "hash": "3815e7fb3369af4f", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_ALCHEMY_INCREASE", "field": "text", "en": "Equip: Increased Alchemy +%1$d.", "hash": "6c75bfe521722d2b", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_AXES_DECREASE", "field": "text", "en": "Equip: Decreased Axes -%1$d.", "hash": "4cc567260f91c1c8", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_AXES_INCREASE", "field": "text", "en": "Equip: Increased Axes +%1$d.", "hash": "21651d006a698005", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_BLACKSMITHING_DECREASE", "field": "text", "en": "Equip: Decreased Blacksmithing -%1$d.", "hash": "a767b49149f255a7", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_BLACKSMITHING_INCREASE", "field": "text", "en": "Equip: Increased Blacksmithing +%1$d.", "hash": "2a53ba1df094ca59", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_BOWS_DECREASE", "field": "text", "en": "Equip: Decreased Bows -%1$d.", "hash": "2623a819b651f104", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_BOWS_INCREASE", "field": "text", "en": "Equip: Increased Bows +%1$d.", "hash": "fac35dee1129af52", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_COOKING_DECREASE", "field": "text", "en": "Equip: Decreased Cooking -%1$d.", "hash": "772147f859f4c65e", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_COOKING_INCREASE", "field": "text", "en": "Equip: Increased Cooking +%1$d.", "hash": "ab811fe247fd443a", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_CROSSBOWS_DECREASE", "field": "text", "en": "Equip: Decreased Crossbows -%1$d.", "hash": "f607bd54a11e7920", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_CROSSBOWS_INCREASE", "field": "text", "en": "Equip: Increased Crossbows +%1$d.", "hash": "dac34564129823dd", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_DAGGERS_DECREASE", "field": "text", "en": "Equip: Decreased Daggers -%1$d.", "hash": "65f79be7216c5fbd", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_DAGGERS_INCREASE", "field": "text", "en": "Equip: Increased Daggers +%1$d.", "hash": "9a5773d10f74dd99", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_DUAL_WIELDING_DECREASE", "field": "text", "en": "Equip: Decreased Dual Wielding -%1$d.", "hash": "79ba791c486909d7", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_DUAL_WIELDING_INCREASE", "field": "text", "en": "Equip: Increased Dual Wielding +%1$d.", "hash": "fca67ea3ef0b7e89", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_ENCHANTING_DECREASE", "field": "text", "en": "Equip: Decreased Enchanting -%1$d.", "hash": "ec40b7172742c733", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_ENCHANTING_INCREASE", "field": "text", "en": "Equip: Increased Enchanting +%1$d.", "hash": "6a94256da6f762be", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_ENGINEERING_DECREASE", "field": "text", "en": "Equip: Decreased Engineering -%1$d.", "hash": "d211fa8e8a09f6d5", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_ENGINEERING_INCREASE", "field": "text", "en": "Equip: Increased Engineering +%1$d.", "hash": "e9203dadaeb76585", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_FIRST_AID_DECREASE", "field": "text", "en": "Equip: Decreased First Aid -%1$d.", "hash": "3c232085e3f51257", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_FIRST_AID_INCREASE", "field": "text", "en": "Equip: Increased First Aid +%1$d.", "hash": "20dea895556ebd14", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_FISHING_DECREASE", "field": "text", "en": "Equip: Decreased Fishing -%1$d.", "hash": "f1264fff3671b57a", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_FISHING_INCREASE", "field": "text", "en": "Equip: Increased Fishing +%1$d.", "hash": "258627ee247a3356", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_FIST_WEAPONS_DECREASE", "field": "text", "en": "Equip: Decreased Fist Weapons -%1$d.", "hash": "cb969d8cfd97a82f", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_FIST_WEAPONS_INCREASE", "field": "text", "en": "Equip: Increased Fist Weapons +%1$d.", "hash": "0a3fc511428764bf", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_GUNS_DECREASE", "field": "text", "en": "Equip: Decreased Guns -%1$d.", "hash": "a24dd3a2ff8db2f4", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_GUNS_INCREASE", "field": "text", "en": "Equip: Increased Guns +%1$d.", "hash": "76ed897c5a657142", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_HERBALISM_DECREASE", "field": "text", "en": "Equip: Decreased Herbalism -%1$d.", "hash": "876a353e88074684", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_HERBALISM_INCREASE", "field": "text", "en": "Equip: Increased Herbalism +%1$d.", "hash": "6c25bd4ef980f130", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_JEWELCRAFTING_DECREASE", "field": "text", "en": "Equip: Decreased Jewelcrafting -%1$d.", "hash": "62a34d0034874aa1", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_JEWELCRAFTING_INCREASE", "field": "text", "en": "Equip: Increased Jewelcrafting +%1$d.", "hash": "e58f5287db29bf53", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_LEATHERWORKING_DECREASE", "field": "text", "en": "Equip: Decreased Leatherworking -%1$d.", "hash": "9df356f3cd35b446", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_LEATHERWORKING_INCREASE", "field": "text", "en": "Equip: Increased Leatherworking +%1$d.", "hash": "0f16fac3f63b09a6", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_MACES_DECREASE", "field": "text", "en": "Equip: Decreased Maces -%1$d.", "hash": "83a3c22547cd4632", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_MACES_INCREASE", "field": "text", "en": "Equip: Increased Maces +%1$d.", "hash": "c3ba9eac478f734d", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_MINING_DECREASE", "field": "text", "en": "Equip: Decreased Mining -%1$d.", "hash": "41fe7050626415c9", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_MINING_INCREASE", "field": "text", "en": "Equip: Increased Mining +%1$d.", "hash": "800e1871b79dd52a", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_POLEARMS_DECREASE", "field": "text", "en": "Equip: Decreased Polearms -%1$d.", "hash": "06034fb399053760", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_POLEARMS_INCREASE", "field": "text", "en": "Equip: Increased Polearms +%1$d.", "hash": "456b9b5fddd329dd", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_SKINNING_DECREASE", "field": "text", "en": "Equip: Decreased Skinning -%1$d.", "hash": "782083a497e6f4da", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_SKINNING_INCREASE", "field": "text", "en": "Equip: Increased Skinning +%1$d.", "hash": "b788cf50dcb4e757", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_STAVES_DECREASE", "field": "text", "en": "Equip: Decreased Staves -%1$d.", "hash": "f09ad5e7f87a9776", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_STAVES_INCREASE", "field": "text", "en": "Equip: Increased Staves +%1$d.", "hash": "2eaa7e0d4db456e8", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_SWORDS_DECREASE", "field": "text", "en": "Equip: Decreased Swords -%1$d.", "hash": "cffc64d168f728ba", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_SWORDS_INCREASE", "field": "text", "en": "Equip: Increased Swords +%1$d.", "hash": "0e0c0cf7be30e81b", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_TAILORING_DECREASE", "field": "text", "en": "Equip: Decreased Tailoring -%1$d.", "hash": "14a08fdd4ed530f5", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_TAILORING_INCREASE", "field": "text", "en": "Equip: Increased Tailoring +%1$d.", "hash": "f95c17e8c04edba1", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_THROWN_WEAPONS_DECREASE", "field": "text", "en": "Equip: Decreased Thrown Weapons -%1$d.", "hash": "f9d7eac28fc6217e", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_THROWN_WEAPONS_INCREASE", "field": "text", "en": "Equip: Increased Thrown Weapons +%1$d.", "hash": "6afb8e92b8cb76de", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_WANDS_DECREASE", "field": "text", "en": "Equip: Decreased Wands -%1$d.", "hash": "d90e71fd20fa0447", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SKILL_WANDS_INCREASE", "field": "text", "en": "Equip: Increased Wands +%1$d.", "hash": "19254e8920bc3162", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SPELL_DAMAGE_DECREASE", "field": "text", "en": "Equip: Decreases damage done by magical spells and effects by up to %1$d.", "hash": "26f6aaa6914e30e3", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SPELL_DAMAGE_INCREASE", "field": "text", "en": "Equip: Increases damage done by magical spells and effects by up to %1$d.", "hash": "413af437919c256f", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SPELL_HEALING_DECREASE", "field": "text", "en": "Equip: Decreases healing done by magical spells and effects by up to %1$d.", "hash": "fbd00569f470b002", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SPELL_HEALING_DECREASE_DAMAGE_DECREASE", "field": "text", "en": "Equip: Decreases healing done by up to %1$d and damage done by up to %2$d for all magical spells and effects.", "hash": "fe6700ad1730d4c9", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SPELL_HEALING_DECREASE_DAMAGE_INCREASE", "field": "text", "en": "Equip: Decreases healing done by up to %1$d and increases damage done by up to %2$d for all magical spells and effects.", "hash": "194a6a6ca6c0aeec", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SPELL_HEALING_INCREASE", "field": "text", "en": "Equip: Increases healing done by magical spells and effects by up to %1$d.", "hash": "6cc1aae2a99193b8", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SPELL_HEALING_INCREASE_DAMAGE_DECREASE", "field": "text", "en": "Equip: Increases healing done by up to %1$d and decreases damage done by up to %2$d for all magical spells and effects.", "hash": "3459f38f73102e66", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SPELL_HEALING_INCREASE_DAMAGE_INCREASE", "field": "text", "en": "Equip: Increases healing done by up to %1$d and damage done by up to %2$d for all magical spells and effects.", "hash": "f3cbe366b0124083", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SPELL_PENETRATION_DECREASE", "field": "text", "en": "Equip: Your spells pierce %1$d less Magical Resistance.", "hash": "79bdccfc7bbe7b3a", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SPELL_PENETRATION_INCREASE", "field": "text", "en": "Equip: Your spells pierce %1$d Magical Resistance.", "hash": "db0b737e540f4eda", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SPELL_POWER_DECREASE", "field": "text", "en": "Equip: Decreases damage and healing done by magical spells and effects by up to %1$d.", "hash": "1ab716a59e4b4a90", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SPELL_POWER_INCREASE", "field": "text", "en": "Equip: Increases damage and healing done by magical spells and effects by up to %1$d.", "hash": "7afe2c72d6b82740", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SPELL_RESISTANCE_ALL_SCHOOLS_DECREASE", "field": "text", "en": "-%1$d to All Resistances", "hash": "c87242fa531da219", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_SPELL_RESISTANCE_ALL_SCHOOLS_INCREASE", "field": "text", "en": "+%1$d to All Resistances", "hash": "b5c6bdab2ddbf025", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_WEAPON_DAMAGE_DECREASE", "field": "text", "en": "Equip: -%1$d Weapon Damage.", "hash": "5adc02984e971573", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_ITEM_STAT_WEAPON_DAMAGE_INCREASE", "field": "text", "en": "Equip: +%1$d Weapon Damage.", "hash": "78517aa6428c1ee9", "src": "db2@1.60.1.70338"}
 {"id": "TOOLTIP_TALENT_LEARN", "field": "text", "en": "Click to learn", "hash": "eab07e27b4d92214", "src": "db2@1.60.1.70338"}
 {"id": "TOOLTIP_TALENT_NEXT_RANK", "field": "text", "en": "Next rank:", "hash": "31178da221e4e33b", "src": "db2@1.60.1.70338"}
 {"id": "TOOLTIP_TALENT_RANK", "field": "text", "en": "Rank %d/%d", "hash": "0997bcc3f8493a96", "src": "db2@1.60.1.70338"}

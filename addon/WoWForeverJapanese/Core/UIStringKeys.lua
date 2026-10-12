@@ -39,6 +39,10 @@ UIStrings.ARGS = {
   ITEM_WRITTEN_BY = { [1] = "text" }, ITEM_LIMIT_CATEGORY = { [1] = "text" },
   ITEM_LIMIT_CATEGORY_MULTIPLE = { [1] = "text" }, TOOLTIP_TALENT_TIER_POINTS = { [2] = "text" },
   ITEM_COOLDOWN_TIME = { [1] = "time" }, ITEM_COOLDOWN_TOTAL = { [1] = "time" },
+  -- an item set's bonus line not yet active: the bonus spell's description, a sentence; UI/Tooltip puts that
+  -- spell's Japanese in. The active line's "Set: %s" is BOSS_BANNER_LOOT_SET's English too, so it is declared as that
+  -- key is; UI/Tooltip reads it by its prefix, never through this template
+  ITEM_SET_BONUS = { [1] = "text" }, ITEM_SET_BONUS_GRAY = { [2] = "verbatim" },
   -- a quest's title inside a system line ("The Balance of Nature completed."): its Japanese title when exactly one
   -- quest title answers it (UIStrings.questTitle, set by UI/TooltipUnit), else as written
   ERR_QUEST_ACCEPTED_S = { [1] = "questTitle" }, ERR_QUEST_COMPLETE_S = { [1] = "questTitle" },
@@ -627,6 +631,8 @@ UIStrings.SPELL_DURATIONS = { "INT_SPELL_DURATION_DAYS", "INT_SPELL_DURATION_HOU
 -- line that starts with a dictionary word ("Return to Verner", "Frost Resistance increased by 30"). They are matched
 -- only where a widget asks for them by key (matchOnly), never by an unrestricted match.
 UIStrings.ONLY = { COOLDOWN_VIEWER_SETTINGS_ACTION_ADD_ALERT = true,
+  -- a set bonus line is translated only with its spell's Japanese (UI/Tooltip setBonuses), never around the English
+  ITEM_SET_BONUS_GRAY = true,
   -- "%s in %s" and "%s by %s": two free-text halves around one short word would split any sentence without a
   -- period at that word and show the halves in the Japanese order ("Cannot change equip status while in combat"
   -- in an item tooltip became "combatのCannot change equip status while"); the death recap asks for its own by key

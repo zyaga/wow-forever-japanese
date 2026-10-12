@@ -372,6 +372,8 @@ WFJ.Data.add("ui", {
   ["ITEM_REQ_SKILL"] = { "必要: %s", 0xd997d8d7, "." },
   ["ITEM_RESIST_ALL"] = { "全耐性 %c%d", 0x9e0af139, "." },
   ["ITEM_RESIST_SINGLE"] = { "%3$s耐性 %1$c%2$d", 0x5ac30dfd, "." },
+  ["ITEM_SET_BONUS"] = { "セット: %s", 0xcd267777, "." },
+  ["ITEM_SET_BONUS_GRAY"] = { "(%d) セット: %s", 0xedd50809, "." },
   ["ITEM_SIGNABLE"] = { "<右クリックで詳細>", 0xdb947c63, "." },
   ["ITEM_SOCKETING"] = { "ソケット装着", 0x8a875bcf, "." },
   ["ITEM_SOLD_COLON"] = { "売却したアイテム:", 0x8db841ec, "." },

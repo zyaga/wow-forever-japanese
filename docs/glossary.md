@@ -320,6 +320,16 @@ A tooltip line an enchantment or random suffix prints as a signed amount and wor
 _Avoid_: random suffix (the "of the Eagle" part of an item name), enchant name, stat mod, `ITEM_MOD_*_SHORT` (a different, unused key family)
 → [Data model](architecture/data-model.md) · [ADR-016](adr/016-whole-window-interface-coverage.md)
 
+**Item stat line**:
+A line in an item's [[Description run]] that the [[UI dictionary]] translates whole: `Equip: ` + an `ITEM_MOD_*` template, or a line the Forever client writes from any `TOOLTIP_ITEM_STAT_*` string, with or without "Equip:" ("Equip: Improves your chance to hit by 1%.", "+%1$d Armor", "+%1$d to All Resistances"). Shown line by line when the item has no Japanese of its own, and an item whose only text is such lines never waits in the [[Collector]]. `Index:statLine` is the one test.
+_Avoid_: stat line on its own (reads as a [[Structural line]]), enchantment stat line (a different family)
+→ [Addon modules](architecture/addon-modules.md) · [ADR-066](adr/066-recipe-and-set-bonus-lines-from-the-tooltip-data.md)
+
+**Set bonus line**:
+A tooltip line an item set adds for one of its bonuses: "(2) Set: …" while the bonus is not active (`ITEM_SET_BONUS_GRAY`), "Set: …" once it is (`ITEM_SET_BONUS`). The text after the prefix is a bonus spell's description, so the line shows the set wrapper's Japanese with that spell's Japanese inside, or stays English whole when no bonus spell fits.
+_Avoid_: set line, set effect
+→ [ADR-066](adr/066-recipe-and-set-bonus-lines-from-the-tooltip-data.md)
+
 **Spell subtext**:
 The short word under a spell's name in the spellbook ("Racial Passive", "Summon", "Tier 2"): the Spell table's `NameSubtext_lang`, not a global string. A prose subtext is a [[UI string]] keyed `SpellSubtext:<spellID>` with one representative spell per distinct English, shown on every spell with that subtext by [[Fingerprint match]]. A subtext that is a name (a pet family "Cat", a form) is never listed ([[Name policy]]). Not "Passive" or "Rank 3": those the client writes from global strings (`SPELL_PASSIVE`, `RANK`).
 _Avoid_: subname (the widget, `item.SubName`), rank text, spell subtitle

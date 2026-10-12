@@ -57,7 +57,10 @@ units are therefore never assumed; the system has to get them right every time.
    stays English rather than showing a literal `$D1`. A bare `$N` or `$D` with no digits is left alone.
    `Align.durations` begins a candidate only where a number begins and skips a number that is not a duration
    whole, so a `1.5 sec` whose float form is not shipped never comes back as `5 sec`; a trailing `.,;:)。、` is
-   trimmed from the phrase. `Align` builds the duration list only when the Japanese carries a `$D`.
+   trimmed from the phrase. A phrase in the client's plural code, which the spell API's text keeps while the
+   tooltip shows the words (`1 |4hour:hrs;`, or two entries: `5 |4Hr:Hrs; 30 |4Min:Mins;`), is tried first and
+   not trimmed, since its closing `;` belongs to it ([ADR-016](016-whole-window-interface-coverage.md) matches
+   that code in all its forms). `Align` builds the duration list only when the Japanese carries a `$D`.
 
 5. **Typed slots in the pipeline.** `core.align.slots(en)` returns one `Slot(kind, duration, client_unit)` per
    value the live line will show, in reading order, with `kind` one of `literal` · `code` · `sum` · `counter`.

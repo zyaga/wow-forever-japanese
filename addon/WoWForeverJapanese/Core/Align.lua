@@ -24,6 +24,9 @@
 --                                         variants' shapes differ, has the live line's shape; and, where the
 --                                         slot carries `key`, whose key the live line has); false when none
 --                                         or several do. The Translator's `alignVariants` dependency.
+--   Align.gate(entry, lines, duration)  → ok, text: what the tooltip shows for a shipped item / spell entry
+--                                         against live lines, by the Translator's status rules (UI/Tooltip set
+--                                         bonus lines, the Collector's covered check through Main)
 --   Align.check(ja, lines, nameScope, duration)  → ok, text: the Translator's `align` dependency; `nameScope`
 --                                         (optional) is extra text names may come from (the tooltip's name line),
 --                                         never numbers; `duration` (optional) is UIStrings' duration renderer,
@@ -267,6 +270,12 @@ local DURATION_SHAPES = {
   "^([%d%.,]+%s*[^%s%d]+%s+[%d%.,]+%s*[^%s%d]+)", -- two entries: "1 hr 30 min"
   "^([%d%.,]+%s*[^%s%d]+)",                        -- one entry: "30 sec", "18秒"
 }
+-- The same in the client's plural code, which the spell API's text keeps ("for 1 |4hour:hrs;."). Its closing ";"
+-- is part of the phrase, so these are not trimmed.
+local PLURAL_SHAPES = {
+  "^([%d%.,]+%s*|4[^;]*;%s+[%d%.,]+%s*|4[^;]*;)", -- "5 |4Hr:Hrs; 30 |4Min:Mins;"
+  "^([%d%.,]+%s*|4[^;]*;)",                       -- "1 |4hour:hrs;"
+}
 
 -- Every duration phrase of `scope` in reading order: fn(start, length, ja). Never overlapping: a phrase that
 -- matched is skipped past, so "1 hr 30 min" is one duration and not also "30 min".
@@ -281,17 +290,25 @@ local function eachDuration(scope, duration, fn)
     local _, numEnd = scope:find("^[%d%.,]+", s)
     local step = numEnd + 1
     if not isLetter(scope:byte(s - 1)) then
-      for _, shape in ipairs(DURATION_SHAPES) do
-        local cand = scope:match(shape, s)
-        if cand then
-          local trimmed = cand:gsub(DURATION_TRAIL, "")
-          local ja = trimmed ~= "" and duration(trimmed) or nil
-          if ja then
-            fn(s, #trimmed, ja)
-            step = s + #trimmed
-            break
+      local ja, phrase
+      for _, shape in ipairs(PLURAL_SHAPES) do
+        phrase = scope:match(shape, s)
+        ja = phrase and duration(phrase) or nil
+        if ja then break end
+      end
+      if not ja then
+        for _, shape in ipairs(DURATION_SHAPES) do
+          local cand = scope:match(shape, s)
+          if cand then
+            phrase = cand:gsub(DURATION_TRAIL, "")
+            ja = phrase ~= "" and duration(phrase) or nil
+            if ja then break end
           end
         end
+      end
+      if ja then
+        fn(s, #phrase, ja)
+        step = s + #phrase
       end
     end
     i = step
@@ -551,4 +568,27 @@ function Align.checkVariants(variants, shapes, lines, nameScope, duration)
   end
   if count ~= 1 then return false end
   return true, found
+end
+
+-- What the tooltip shows for a shipped item / spell entry against these live lines, by the Translator's rules for an
+-- item or spell: a trusted line is shown ungated with its live values filled in; an unaligned or stale one through
+-- the gate; a branch or sectioned line only when unaligned or stale; any other status shows nothing. The tooltip's
+-- name line is not offered as a name scope (the callers have none). → ok, text
+function Align.gate(entry, lines, duration)
+  if type(entry) ~= "table" or type(lines) ~= "table" then return false end
+  local status = entry.status
+  local gated = status == "u" or status == "s"
+  if entry.variants or entry.sections then
+    if not gated then return false end
+    if entry.variants then return Align.checkVariants(entry.variants, entry.shapes, lines, nil, duration) end
+    return Align.sections(entry.sections, lines, nil, duration)
+  end
+  if type(entry.ja) ~= "string" or entry.ja == "" then return false end
+  if status == "." then
+    local text = Align.fillValues(entry.ja, table.concat(lines, "\n"), duration)
+    if text == nil then return false end
+    return true, text
+  end
+  if not gated then return false end
+  return Align.check(entry.ja, lines, nil, duration)
 end

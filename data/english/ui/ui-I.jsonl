@@ -369,6 +369,8 @@
 {"id": "ITEM_REQ_SKILL", "field": "text", "en": "Requires %s", "hash": "d997d8d721f9dfeb", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_RESIST_ALL", "field": "text", "en": "%c%d to All Resistances", "hash": "9e0af13952de007f", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_RESIST_SINGLE", "field": "text", "en": "%c%d %s Resistance", "hash": "5ac30dfd8b384186", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_SET_BONUS", "field": "text", "en": "Set: %s", "hash": "cd26777775fe95cc", "src": "db2@1.60.1.70338"}
+{"id": "ITEM_SET_BONUS_GRAY", "field": "text", "en": "(%d) Set: %s", "hash": "edd50809ea83ee76", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_SIGNABLE", "field": "text", "en": "<Right Click for Details>", "hash": "db947c632166d803", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_SOCKETING", "field": "text", "en": "Item Socketing", "hash": "8a875bcfbb4e0c76", "src": "db2@1.60.1.70338"}
 {"id": "ITEM_SOLD_COLON", "field": "text", "en": "Item Sold:", "hash": "8db841ec630b8e9a", "src": "db2@1.60.1.70338"}

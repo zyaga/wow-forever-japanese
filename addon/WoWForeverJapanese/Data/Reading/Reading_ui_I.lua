@@ -366,6 +366,8 @@ WFJ.Data.add("reading", {
   ["ui:ITEM_REQ_SKILL"] = { text = "必要=ひつよう=73124" },
   ["ui:ITEM_RESIST_ALL"] = { text = "全=ぜん=47806 耐性=たいせい=112013" },
   ["ui:ITEM_RESIST_SINGLE"] = { text = "耐性=たいせい=112012" },
+  ["ui:ITEM_SET_BONUS"] = { text = "セット=セット=140127" },
+  ["ui:ITEM_SET_BONUS_GRAY"] = { text = "セット=セット=140127" },
   ["ui:ITEM_SIGNABLE"] = { text = "右クリック=みぎクリック=56496 詳細=しょうさい=123365" },
   ["ui:ITEM_SOCKETING"] = { text = "ソケット=ソケット=33425 装着=そうちゃく=116806" },
   ["ui:ITEM_SOLD_COLON"] = { text = "売却した=ばいきゃくした=61462 アイテム=アイテム=31742" },
