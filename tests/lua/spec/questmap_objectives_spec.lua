@@ -18,6 +18,7 @@ local UI = {
   COMPLETE = { "Complete", "完了" }, PARENS_TEMPLATE = { "(%s)", "(%s)" },
   TRACKER_HEADER_QUESTS = { "Quests", "クエスト" },
   CLICK_QUEST_DETAILS = { "<Click to view Quest Details>", "<クリックでクエストの詳細を表示>" },
+  QUEST_WATCH_QUEST_READY = { "Ready for turn-in", "報告可能" },
   -- a shorter key sharing the kill line's shape: never read on an objective widget
   SPELL_STACK = { "%2$d/%3$d %1$s", "スタック" },
   -- camelot's elite tag and the content-tracking module's client lines
@@ -217,7 +218,8 @@ describe("UI/QuestMap: objective lines", function()
   end)
 
   describe("the list title's tooltip (CLICK_QUEST_DETAILS)", function()
-    it("its hint line and objective lines translate after QuestMapLogTitleButton.OnEnter; the title stays", function()
+    it("its hint line and objective lines translate after the OnEnter event; a title with no Japanese stays",
+      function()
       local tt, button = _G.GameTooltip, CreateFrame("Button")
       tt:SetOwner(button, "ANCHOR_RIGHT")
       tt:AddLine(QUEST.title)
@@ -228,6 +230,136 @@ describe("UI/QuestMap: objective lines", function()
       assert.are.equal(QUEST.title, _G.GameTooltipTextLeft1:GetText())
       assert.are.equal("Kobold Verminを倒す: 3/10", _G.GameTooltipTextLeft2:GetText())
       assert.are.equal("<クリックでクエストの詳細を表示>", _G.GameTooltipTextLeft3:GetText())
+    end)
+  end)
+
+  describe("the list title's tooltip as the client builds it", function()
+    local OBJ_JA = "書庫を焼き払え。"
+    local F6 = "|c0042b1fePress F6 to submit an issue for this Quest"
+
+    -- QuestMapLogTitleButton_OnEnter (questmapframe.lua:2192–2307): SetOwner, SetText(title), a blank line, the
+    -- objectives (GetQuestLogQuestText for the row's log index) or the completion line, the QUEST_DASH lines, the
+    -- hint, Show, then the EventRegistry event
+    local function hover(description)
+      _G.QUEST_DASH = "- "
+      _G.GetQuestLogQuestText = function(index) if index == 4 then return QUEST.description, QUEST.objectives end end
+      local tt, button = _G.GameTooltip, CreateFrame("Button")
+      button.questLogIndex = 4
+      tt:SetOwner(button, "ANCHOR_PRESERVE")
+      tt:SetText(QUEST.title)
+      tt:AddLine(" ")
+      tt:AddLine(description or QUEST.objectives)
+      tt:AddLine(" ")
+      tt:AddLine("- 3/10 Kobold Vermin slain")
+      tt:AddLine(" ")
+      tt:AddLine("<Click to view Quest Details>")
+      tt:Show()
+      registry.cbs["QuestMapLogTitleButton.OnEnter"](button, 9)
+      return tt, button
+    end
+
+    -- the beta's bug-report addon on the same event (blizzard_ptrfeedback_frames.lua:1149–1153)
+    local function appendAndShow(tt)
+      tt:AddLine(" ")
+      tt:AddLine(F6)
+      tt:Show()
+    end
+
+    local function line(i) return _G["GameTooltipTextLeft" .. i]:GetText() end
+
+    before_each(function()
+      DATA["quest.title"] = { [9] = { ja = "燃える書庫", status = "." } }
+      DATA["quest.objectives"] = { [9] = { ja = OBJ_JA, status = "." } }
+    end)
+
+    after_each(function() _G.QUEST_DASH = nil end)
+
+    it("the title, the quest's own objectives line, the objective line and the hint show Japanese", function()
+      hover()
+      assert.are.equal("燃える書庫", line(1))
+      assert.are.equal(OBJ_JA, line(3))
+      assert.are.equal("- Kobold Verminを倒す: 3/10", line(5))
+      assert.are.equal("<クリックでクエストの詳細を表示>", line(7))
+    end)
+
+    it("a description line that is not the quest's own objectives stays as written", function()
+      hover("Burn the other archive.")
+      assert.are.equal("Burn the other archive.", line(3))
+    end)
+
+    it("a finished quest's ready line shows Japanese", function()
+      hover("Ready for turn-in")
+      assert.are.equal("報告可能", line(3))
+    end)
+
+    it("another writer's lines and Show keep every Japanese line; its own lines are untouched", function()
+      local tt = hover()
+      appendAndShow(tt)
+      assert.are.equal("燃える書庫", line(1))
+      assert.are.equal(OBJ_JA, line(3))
+      assert.are.equal("- Kobold Verminを倒す: 3/10", line(5))
+      assert.are.equal("<クリックでクエストの詳細を表示>", line(7))
+      assert.are.equal(F6, line(9))
+    end)
+
+    it("Alt shows every translated line's English after the redraw, and release the Japanese", function()
+      appendAndShow((hover()))
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      assert.are.equal(QUEST.title, line(1))
+      assert.are.equal(QUEST.objectives, line(3))
+      assert.are.equal("- 3/10 Kobold Vermin slain", line(5))
+      assert.are.equal("<Click to view Quest Details>", line(7))
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      assert.are.equal(OBJ_JA, line(3))
+      assert.are.equal("- Kobold Verminを倒す: 3/10", line(5))
+    end)
+
+    it("a redraw while Alt is held keeps every line ours: release shows the Japanese", function()
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      appendAndShow((hover()))
+      assert.are.equal(QUEST.objectives, line(3))
+      assert.are.equal("- 3/10 Kobold Vermin slain", line(5))
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      assert.are.equal("燃える書庫", line(1))
+      assert.are.equal(OBJ_JA, line(3))
+      assert.are.equal("- Kobold Verminを倒す: 3/10", line(5))
+      assert.are.equal("<クリックでクエストの詳細を表示>", line(7))
+    end)
+
+    it("hovered while Alt is held, with no redraw after: release shows every line in Japanese", function()
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      hover()
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      assert.are.equal("燃える書庫", line(1))
+      assert.are.equal(OBJ_JA, line(3))
+      assert.are.equal("- Kobold Verminを倒す: 3/10", line(5))
+      assert.are.equal("<クリックでクエストの詳細を表示>", line(7))
+    end)
+
+    it("a new build for the same owner is walked as foreign: nothing of ours is written into it", function()
+      local tt = hover()
+      tt:SetText("Another writer")
+      tt:AddLine("<Click to view Quest Details>")
+      tt:Show()
+      assert.are.equal("<Click to view Quest Details>", line(2))
+    end)
+
+    it("a different tooltip-data kind ends the pass's hold", function()
+      local tt = hover()
+      tt.primaryInfo = { tooltipData = { type = 2 } }
+      tt:AddLine("<Click to view Quest Details>")
+      tt:Show()
+      assert.are.equal("<Click to view Quest Details>", line(8))
+      tt.primaryInfo = nil
+    end)
+
+    it("hiding ends the hold: the next build for the same owner is foreign", function()
+      local tt, button = hover()
+      tt:Hide()
+      tt:SetOwner(button, "ANCHOR_RIGHT")
+      tt:AddLine("<Click to view Quest Details>")
+      tt:Show()
+      assert.are.equal("<Click to view Quest Details>", line(tt:NumLines()))
     end)
   end)
 

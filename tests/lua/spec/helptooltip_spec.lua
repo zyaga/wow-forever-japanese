@@ -67,6 +67,65 @@ describe("UI/HelpTooltip", function()
     assert.are.equal("バッグを装備", left(1):GetText())
   end)
 
+  describe("walkAs: a pass held for later redraws of the same build", function()
+    local tick
+
+    -- an owner that also owns unrelated tooltips (the exhaustion tick's UIParent): never registered, walked once
+    local function pass()
+      tt:SetOwner(tick)
+      tt:SetText("Rested")
+      tt:AddLine("Equip Container")
+      tt:Show()
+      assert.are.equal("Equip Container", left(2):GetText()) -- foreign until the pass
+      WFJ.HelpTooltip.walkAs(tt, { only = { "EQUIP_CONTAINER" } })
+      assert.are.equal("バッグを装備", left(2):GetText())
+    end
+
+    before_each(function() tick = Stub.button("TickOwner", "") end)
+
+    it("another writer's lines and Show keep the pass's line", function()
+      pass()
+      tt:AddLine("Press F6")
+      tt:Show()
+      assert.are.equal("バッグを装備", left(2):GetText())
+      assert.are.equal("Press F6", left(3):GetText())
+    end)
+
+    it("a SetText (a new build) ends the hold: the owner's next tooltip is foreign", function()
+      pass()
+      tt:SetText("Another writer")
+      tt:AddLine("Equip Container")
+      tt:Show()
+      assert.are.equal("Equip Container", left(2):GetText())
+    end)
+
+    it("a module's setter hooked through after() ends the hold", function()
+      tt.SetCustom = function() end
+      assert.is_true(WFJ.HelpTooltip.after("SetCustom"))
+      pass()
+      tt:SetCustom()
+      tt:Show()
+      assert.are.equal("Equip Container", left(2):GetText())
+    end)
+
+    it("another tooltip-data kind ends the hold", function()
+      pass()
+      tt.primaryInfo = { tooltipData = { type = 2 } }
+      tt:Show()
+      assert.are.equal("Equip Container", left(2):GetText())
+      tt.primaryInfo = nil
+    end)
+
+    it("hiding ends the hold", function()
+      pass()
+      tt:Hide()
+      tt:SetOwner(tick)
+      tt:AddLine("Equip Container")
+      tt:Show()
+      assert.are.equal("Equip Container", left(tt:NumLines()):GetText())
+    end)
+  end)
+
   it("leaves a tooltip owned by an unregistered frame untouched", function()
     hover(Stub.button("SomeAddonButton", ""), "Character Info", "Information about your character.")
     assert.are.equal("Character Info", left(1):GetText())
