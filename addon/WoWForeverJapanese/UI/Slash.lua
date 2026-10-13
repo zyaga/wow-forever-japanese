@@ -16,6 +16,7 @@
 --                             fingerprint / ambiguous
 --   /wfj debug ui scan        English still showing on visible frames: "hook?" = the dictionary knows it, "key?" = not
 --   /wfj debug fonts          the refused-font retry: timer state, one pending widget, then a retry now
+--   /wfj debug intro [novoice] open the first-install window (novoice: drawn as with no voice pack loaded)
 --   (plain /wfj debug also prints the voice packs' counts: lines, matched, missing, stale, played, refused,
 --   and the lines of each pack)
 --   /wfj version              the addon, normalization and Lua versions
@@ -277,6 +278,7 @@ end
 
 function Slash.debug(sub, arg)
   if sub == "fonts" then return debugFonts() end
+  if sub == "intro" then return WFJ.IntroWindow.open(arg ~= nil and arg:lower() == "novoice") end
   if sub == "tooltip" then return debugTooltip(arg) end
   if sub == "hash" then return debugHash() end
   if sub == "quest" or sub == "item" or sub == "spell" then return debugRow(sub, arg) end

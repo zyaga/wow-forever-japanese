@@ -660,6 +660,11 @@ One fix the player saved in the fix window and has not sent yet, listed on its *
 _Avoid_: draft, queued report, saved report (the report is the copied text of all pending fixes)
 → [Fix reports](systems/fix-reports.md)
 
+**Intro window**:
+The window a first install shows once, at its first login or reload (`Core/Intro` decides, `UI/IntroWindow` draws it, the flag is `WFJ_DB.intro`). It says what the addon does, that holding the reveal key shows the game's English, that pointing at a word shows its reading, what the [[Minimap button]] does and, while no voice pack is installed, where to get the free voice. It is the one addon window that shows both languages at once, a Japanese block above an English one, because the player has not learned the reveal key yet. A player who already had the addon never sees it. One of the on-screen additions [Principles §3](architecture/principles.md#3-japanese-by-default-english-one-key-away) allows.
+_Avoid_: welcome screen, splash, onboarding popup, what's new (it never shows after an update)
+→ [Settings → Intro window](systems/settings.md#intro-window)
+
 **Minimap button**:
 The addon's small button on the minimap edge (`UI/MinimapButton`): left-click opens the fix window, right-click opens a menu (Translation on / off, Report a line, Report a bug or idea, Settings, Hide this button); drag moves it around the rim. On by default, hidden by the `minimapButton` setting; the same two clicks are also on the addon's entry in Blizzard's addon dropdown on the minimap. One of the on-screen additions [Principles §3](architecture/principles.md#3-japanese-by-default-english-one-key-away) allows.
 _Avoid_: minimap icon, LDB button, launcher, addon compartment (that is Blizzard's dropdown)

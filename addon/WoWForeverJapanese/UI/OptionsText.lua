@@ -311,6 +311,20 @@ Text.T = {
   ["reminder.send"] = { en = "Send English", ja = "英語を送る" },
   ["reminder.later"] = { en = "Later", ja = "あとで" },
   ["reminder.stop"] = { en = "Don't remind me again", ja = "今後は知らせない" },
+  -- the intro window a first install shows once (UI/IntroWindow): a Japanese block above an English one, each point
+  -- short enough for one line in its block; %s in intro.hold is the reveal key's name
+  ["intro.lead"] = { en = "Quest text, NPC talk and tooltips now show in Japanese.",
+    ja = "クエスト、NPCの会話、ツールチップを日本語で表示します。" },
+  ["intro.hold"] = { en = "Hold %s to see the game's English.", ja = "%sを押している間は、ゲームの英語を表示します。" },
+  ["intro.readings"] = { en = "Point at a Japanese word to see its reading.",
+    ja = "日本語の単語にカーソルを合わせると、読み方が出ます。" },
+  ["intro.minimap"] = { en = "Minimap button: left-click to report a line, right-click for the menu.",
+    ja = "ミニマップのボタン：左クリックで翻訳の報告、右クリックでメニュー。" },
+  -- the voice section under both blocks, shown only while no voice pack has loaded
+  ["intro.voiceTitle"] = { en = "Japanese voice", ja = "日本語音声" },
+  ["intro.voice"] = { en = "Get WoW Forever Japanese Voice free to hear the Japanese read aloud.",
+    ja = "無料の「WoW Forever Japanese Voice」で、日本語を読み上げます。" },
+  ["intro.close"] = { en = "Close", ja = "閉じる" },
   ["minimap.sendEnglish"] = { en = "Send collected English (%s)", ja = "集めた英語を送る（%s）" },
   ["minimap.version"] = { en = "Version %s", ja = "バージョン %s" },
   ["minimap.collected"] = { en = "The collector has %s lines we need. Right-click to send them.",

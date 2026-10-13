@@ -232,6 +232,7 @@ function Stub.install(tocPath)
   Stub.fontSetFails = false
   _G.WFJ_DB = nil -- fresh SavedVariables per install (a real global; it would otherwise leak between specs)
   _G.WFJ_Collector = nil
+  _G.WFJ_Log = nil -- the third SavedVariables: an error one spec caught must not count in the next
   -- the AddOn List is opt-in per spec (Stub.installAddonList), never left over from an earlier one
   _G.AddonList, _G.AddonList_InitAddon, _G.AddonList_HasAnyChanged, _G.HideUIPanel = nil, nil, nil, nil
   _G.UIParent, _G.WFJSettingsTooltip = nil, nil

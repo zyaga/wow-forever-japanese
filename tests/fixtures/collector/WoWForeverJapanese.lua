@@ -2,6 +2,7 @@ WFJ_DB = {
 	["build"] = {
 		["addon"] = "@project-version@",
 	},
+	["intro"] = false,
 	["schema"] = 1,
 	["settings"] = {
 	},

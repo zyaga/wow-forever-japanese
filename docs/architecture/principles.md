@@ -22,9 +22,10 @@ they are ordinary words in the sentence. On interface labels they stay English.
 ## 3. Japanese by default, English one key away
 
 A translated line shows in Japanese. Holding the reveal key (Alt by default, any key can be set) shows the game's
-English instead. One switch turns the whole addon off. There is no "show both" mode.
+English instead. One switch turns the whole addon off. There is no "show both" mode for game text; the one window
+that shows both languages is the intro window below, which holds only the addon's own words.
 
-The only other things the addon adds to the screen, each of which a player can turn off:
+The only other things the addon adds to the screen, each of which a player can turn off or which shows only once:
 
 - the **stale marker**, on a line whose English changed since it was translated;
 - the **missing-translation marker**, on a line with no Japanese yet (not on compact rows such as the quest
@@ -32,7 +33,11 @@ The only other things the addon adds to the screen, each of which a player can t
 - the **word card**: pointing at a Japanese word in quest or NPC prose, a plain-text window label or a plain-text
   book page shows its reading and, where there is one, its dictionary form and a short English meaning. Nothing is
   drawn until the pointer is on a word, and never while English is showing;
-- the **minimap button** that opens the fix-report window.
+- the **minimap button** that opens the fix-report window;
+- the **intro window**, shown once at a first install's first login and never again: the reveal key, the word
+  readings, the minimap button and, while the voice is not installed, where to get it. It is the one window in both
+  languages, a Japanese block above an English one, since the player has not learned the reveal key yet. It has no setting, since it
+  never shows twice.
 
 A line without a translation shows the untouched English the client wrote.
 

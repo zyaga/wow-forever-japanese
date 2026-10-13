@@ -165,6 +165,12 @@ Opened from Esc → Options → AddOns, from a **設定** (Settings) button on t
 - **status:** shipped
 - **regen-triggers:** `UI/Options.lua`, `UI/OptionsText.lua`, `UI/OptionsWidgets.lua`, `UI/KeyCapture.lua`, `UI/AddonListButton.lua`, `UI/Slash.lua`, `UI/ReportWindow.lua`, `Core/Settings.lua`
 
+### Intro window
+A first install shows one small window, once, at its first login or reload. It says what the addon does, that holding the reveal key (named as set, Alt by default) shows the game's English, that pointing at a Japanese word shows its reading, and what the minimap button does. The Japanese comes first as one block, then the same in English below a gold rule: it is the one addon window that shows both languages at once, because a new player has not learned the reveal key yet. While no voice pack is installed, a voice section under both blocks says in one Japanese and one English sentence that the Japanese voice is a free download, with its CurseForge page in a copy box. It opens near the top of the screen, where the game opens its own popups. Holding the key or turning translation off changes nothing in it, and it shows only the addon's own text, never game text. **閉じる / Close** or Esc closes it. A player who already had the addon never sees it, and it does not come back; `/wfj debug intro` (with `novoice` for the voice section) shows it again for a check ([Settings → Intro window](systems/settings.md#intro-window)).
+- **feature-id:** `intro-window`
+- **status:** implemented; checked in game
+- **regen-triggers:** `Core/Intro.lua`, `UI/IntroWindow.lua`, `UI/OptionsText.lua`
+
 ### Report a line (fix reports)
 A player who finds a wrong, awkward or broken Japanese line reports it with clicks only. A **minimap button** (on by default; drag it around the minimap's edge) opens the **fix window** on left-click; right-click opens a menu: Translation on / off, Report a line, Report a bug or idea, Send collected English (only while a line the addon cannot show in Japanese is waiting, with the count), Settings, Hide this button. Its tooltip shows the addon's version and, while the English Collector holds lines not sent yet, how many ("The collector has N lines we need. Right-click to send them."). The addon's entry in Blizzard's addon dropdown on the minimap does the same, so a hidden button never locks anyone out. The About page's **Report a line** button and `/wfj fix` open the window too.
 
