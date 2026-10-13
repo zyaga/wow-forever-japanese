@@ -16,6 +16,7 @@ an old setting stops working). A release moves those lines under its version num
 - More spell and item tooltips are in Japanese: boss and raid debuffs whose text comes from another spell, the weapon skill tables (short and expanded), the Riding skills and the class ability lists (a Shaman's totems, a Paladin's or Hunter's abilities; the names in the list stay English), and talents with two wordings for the same numbers. The coverage page gives a plain reason for each tooltip line that stays English.
 
 ### Fixed
+- Pointing at a quest's title in the quest log shows its tooltip in Japanese: the title, the objective summary, the objective lines and the click hint. On the beta, its bug-report line turned them back to English.
 - The English Collector counts only lines the addon cannot show in Japanese: tooltips with your numbers filled in, quest lines that name your class or race, and NPC names no longer count, and lines a newer version covers are removed from the collector file at the next login or reload.
 - Recipe tooltips show the crafted item's text and the recipe's "Use: Teaches you how to …" line in Japanese.
 - An item's cooldown at the end of its line ("(1 Sec Cooldown)") no longer keeps a food's or potion's text in English.

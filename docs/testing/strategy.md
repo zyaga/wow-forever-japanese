@@ -518,6 +518,13 @@ Interface lines with links, colour-wrapped names and plural groups ([ADR-067](..
 
 **Needs a friend on the friends list:** remove a Battle.net friend (or open the remove dialog and cancel): the confirmation is Japanese with the friend's name kept as written.
 
+### Quest list title tooltip checklist
+The tooltip shown when pointing at a quest's title in the quest log. With a **fresh level-1 character** that has taken the first quest of its starting zone.
+
+1. **Open the quest log** (`/run ToggleQuestLog()`) and point at the quest's title: the title, the objective summary under it ("Kill 7 …" in Japanese, numbers kept), each "- …" objective line and 「<クリックでクエストの詳細を表示>」 are Japanese. On the beta, the "Press F6 …" line under them stays English and the rest stays Japanese.
+2. **Hold Alt** while pointing: every line turns English; release: Japanese again.
+3. **Another quest** with an item objective ("- 0/4 Gnarlpine Totem"): its summary is Japanese; the item line stays as written (only a name and a count).
+
 ### Readings checklist
 The word-reading box on quest and NPC-talk prose ([Readings](../systems/readings.md), [ADR-036](../adr/036-readings-hover-word-lists.md)). With a **fresh level-1 Night Elf** in Shadowglen. A crash to desktop at any step is a failure: record the step and the text under the mouse.
 

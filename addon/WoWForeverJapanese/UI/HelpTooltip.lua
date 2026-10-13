@@ -22,6 +22,10 @@ local owners = setmetatable({}, { __mode = "k" }) -- frame → opts ({ only = �
 -- A tooltip the client built from tooltip data of a kind with no module of its own (UI/TooltipData): walked like a
 -- registered owner's until it hides or shows something else. { owner, opts } | nil
 local adopted = nil
+-- The last walkAs pass: its owner, opts and tooltip-data kind, kept while the same build is shown again (another
+-- writer appends lines and calls Show, as the beta's bug-report addon does on quest tooltips). Ended by a new build
+-- (any hooked method but Show and AppendText), another data kind, or hiding. { owner, opts, kind } | nil
+local held = nil
 local busy = false
 local recorded = 0 -- the highest line number recorded on the last pass
 
@@ -76,6 +80,9 @@ function HelpTooltip.walk(tt)
     -- the adopted kind's data is still what the tooltip shows; any other build ends the adoption
     if HelpTooltip.dataKind(tt) == adopted.kind then opts = adopted.opts else adopted = nil end
   end
+  if not opts and held and held.owner == tt:GetOwner() then
+    if HelpTooltip.dataKind(tt) == held.kind then opts = held.opts else held = nil end
+  end
   local foreign = not opts or (tt.GetItem and tt:GetItem()) or (tt.GetSpell and tt:GetSpell())
   if foreign then -- reused for another owner, an item or a spell: the client rewrote the lines; forget ours
     if recorded > 0 then -- forget, not release: a line the client rewrote must not get our old English back
@@ -101,15 +108,25 @@ function HelpTooltip.walk(tt)
           -- matched again (the `binding` form) and the record carries its font instead of dropping it.
           local rec = WFJ.SurfaceState.get(SURFACE, recKey)
           local current = fs:GetText()
-          if rec and rec.fs == fs and type(rec.applied) == "string" and #current > #rec.applied
-              and current:sub(1, #rec.applied) == rec.applied then
-            fs:SetText(rec.en .. current:sub(#rec.applied + 1))
-          elseif i == 1 and side == "Left" and owned and current:sub(1, #owned.applied) == owned.applied then
-            fs:SetText(owned.en .. current:sub(#owned.applied + 1)) -- the owner's own label, copied by the client
+          local shows = rec and type(rec.fs.GetText) == "function" and rec.fs:GetText() or nil
+          local secret = WFJ.SurfaceState.secret
+          if rec and not secret(shows) and not secret(current)
+              and ((rec.fs ~= fs and rec.applied ~= nil and shows == rec.applied)
+              or (rec.applied == nil and shows == rec.en)) then
+            -- still ours, unchanged: written through another writer's adapter (UI/QuestMap's dashed objective lines),
+            -- or showing its English while the reveal key is held (a lookup here would drop another writer's record)
+            n = n + 1
+          else
+            if rec and rec.fs == fs and type(rec.applied) == "string" and #current > #rec.applied
+                and current:sub(1, #rec.applied) == rec.applied then
+              fs:SetText(rec.en .. current:sub(#rec.applied + 1))
+            elseif i == 1 and side == "Left" and owned and current:sub(1, #owned.applied) == owned.applied then
+              fs:SetText(owned.en .. current:sub(#owned.applied + 1)) -- the owner's own label, copied by the client
+            end
+            local before = fs:GetText()
+            n = n + WFJ.Labels.show(SURFACE, recKey, fs, refit, labelOpts)
+            if fs:GetText() ~= before then changed = true end
           end
-          local before = fs:GetText()
-          n = n + WFJ.Labels.show(SURFACE, recKey, fs, refit, labelOpts)
-          if fs:GetText() ~= before then changed = true end
         else
           WFJ.SurfaceState.drop(SURFACE, recKey)
         end
@@ -131,7 +148,8 @@ end
 -- registered because it owns unrelated tooltips too: Forever's exhaustion tick anchors its tooltip to UIParent
 -- (blizzard_statustrackingbar/mainline/expbaroverrides.lua:29–31). The caller runs it right after the client wrote
 -- the tooltip; `opts.only` should restrict it to the keys that writer shows. The owner's registration (or its absence)
--- is put back before returning, so a later SetText / Show from another writer with the same owner is foreign again.
+-- is put back before returning; a later Show of the same build keeps this pass's opts (`held`), and once the build
+-- changes (SetText or another hooked setter, another data kind, or hiding) the owner's tooltips are foreign again.
 -- Records live on this surface like every walk's: re-rendered on a modifier change, released on OnHide.
 -- → the number of dictionary lines (0 when there is no tooltip or owner, or a walk is running).
 function HelpTooltip.walkAs(tt, opts)
@@ -140,10 +158,12 @@ function HelpTooltip.walkAs(tt, opts)
   local owner = tt:GetOwner()
   if owner == nil then return 0 end
   local previous = owners[owner]
-  owners[owner] = type(opts) == "table" and opts or true
+  local pass = type(opts) == "table" and opts or true
+  owners[owner] = pass
   local ok, n = pcall(HelpTooltip.walk, tt)
   owners[owner] = previous
   if not ok then error(n, 0) end
+  held = { owner = owner, opts = pass, kind = HelpTooltip.dataKind(tt) }
   return n
 end
 
@@ -209,6 +229,7 @@ end
 function HelpTooltip.release()
   recorded = 0
   adopted = nil
+  held = nil
   return WFJ.Render.release(SURFACE)
 end
 
@@ -219,7 +240,11 @@ function HelpTooltip.after(method)
   local tt = tooltip()
   if hookedMethods[method] or type(tt) ~= "table" or type(tt[method]) ~= "function" then return false end
   hookedMethods[method] = true
-  hooksecurefunc(tt, method, function(self) HelpTooltip.walk(self) end)
+  local sameBuild = method == "Show" or method == "AppendText"
+  hooksecurefunc(tt, method, function(self)
+    if not sameBuild then held = nil end
+    HelpTooltip.walk(self)
+  end)
   return true
 end
 

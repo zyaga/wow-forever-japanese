@@ -1037,8 +1037,10 @@ local function dashed(fs, dash)
   return a
 end
 
--- The EventRegistry callback (owner, button, questID). → the number of dictionary lines
-function QuestMap.onTitleTooltip()
+-- The EventRegistry callback (owner, button, questID). Line 1 is the quest's title (the list row's lookup); the
+-- description line under it is the quest's objectives (GetQuestLogQuestText) or, once finished, its completion line
+-- (questmapframe.lua:2243–2252), each shown only when it is that quest's own English. → the number of lines shown
+function QuestMap.onTitleTooltip(_, button, questID)
   local help = WFJ.HelpTooltip
   local n = help.walkAs(nil, { only = QuestMap.TITLE_TOOLTIP_KEYS })
   local tt = Compat.get(help.SURFACE, "tooltip")
@@ -1046,11 +1048,30 @@ function QuestMap.onTitleTooltip()
   if type(tt) ~= "table" or type(tt.NumLines) ~= "function" or type(tt.GetName) ~= "function"
       or type(dash) ~= "string" or dash == "" then return n end
   local name = tt:GetName()
-  for i = 2, tt:NumLines() or 0 do -- line 1 is the quest's title
+  n = n + showTitle(help.SURFACE, questID, Compat.resolve(name .. "TextLeft1"), help.refit)
+  -- the objectives English as the client wrote it into the tooltip (GetQuestLogQuestText for the row's log index):
+  -- numbers filled in, so compared whole, as the details pane compares its own line
+  local questText, objectives = get("questText"), nil
+  if type(questText) == "function" and type(button) == "table" and type(button.questLogIndex) == "number" then
+    objectives = select(2, questText(button.questLogIndex))
+  end
+  for i = 2, tt:NumLines() or 0 do
     local fs = Compat.resolve(name .. "TextLeft" .. i)
     local text = type(fs) == "table" and type(fs.GetText) == "function" and fs:GetText() or nil
-    if type(text) == "string" and #text > #dash and text:sub(1, #dash) == dash then
+    local rec = WFJ.SurfaceState.get(help.SURFACE, "L" .. i)
+    -- blank, or already shown (and counted) by the walk: the click line, also while the reveal key shows its English
+    local skip = type(text) ~= "string" or text:match("^%s*$")
+      or (rec and rec.fs == fs and (rec.applied == text or (rec.applied == nil and rec.en == text)))
+    if not skip and #text > #dash and text:sub(1, #dash) == dash then
       n = n + QuestMap.showObjective(help.SURFACE, "L" .. i, dashed(fs, dash), help.refit)
+    elseif not skip then
+      local shown = QuestMap.showObjective(help.SURFACE, "L" .. i, fs, help.refit)
+      if shown == 0 and type(questID) == "number" and text == objectives then
+        WFJ.Render.show(help.SURFACE, "L" .. i, fs, text, "quests", "quest.objectives", questID,
+          { refit = help.refit, live = text, compact = true })
+        shown = 1
+      end
+      n = n + shown
     end
   end
   return n

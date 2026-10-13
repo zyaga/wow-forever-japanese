@@ -805,7 +805,7 @@ def test_every_registered_surface_is_classified(root):
 
 # The call sites whose surface is a variable (a module's `surface` parameter, a pane's field): the classifier cannot
 # read them. Each is reviewed: they pass a surface named elsewhere (QuestFrame / QuestMap panes, the Communities kit,
-# Collections paging, DamageMeter sessions, Calendar's help tooltip, the gossip and book prose surfaces, UI/Tooltip's
+# Collections paging, DamageMeter sessions, the help tooltip lines Calendar, MapPins and QuestMap's title tooltip write, the gossip and book prose surfaces, UI/Tooltip's
 # "tooltip.<frame>", Labels / LabelTree / Render / TooltipLines internals). A NEW one fails here: resolve it to a literal or constant, or review it and add it to this list.
 REVIEWED_VARIABLE_SURFACES = frozenset({
     "Calendar.lua:help.SURFACE",
@@ -819,6 +819,7 @@ REVIEWED_VARIABLE_SURFACES = frozenset({
     "LabelTree.lua:surface",
     "Labels.lua:surface",
     "QuestFrame.lua:panel.surface",
+    "QuestMap.lua:help.SURFACE",
     "QuestMap.lua:pane.info",
     "QuestMap.lua:pane.surface",
     "QuestMap.lua:surface",
