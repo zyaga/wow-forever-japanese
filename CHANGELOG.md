@@ -9,6 +9,8 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+## 0.3.0 - 2026-10-13
+
 ### Added
 - A first install shows a short welcome window at the first login, in Japanese and English: hold Alt to see the game's English, point at a word to see its reading, what the minimap button does, and, while the voice is not installed, where to get the free Japanese voice. It shows once, and never to players who update.
 - Japanese for 200 more interface lines, with word readings: system chat lines that carry a link (a friend coming online, loot rolls, the level-up line) show Japanese around the link, which stays as the game wrote it; the "Made by" line on crafted items, cooldown and enchant time lines, the account bank, the quest log's story header, help callouts, cross-faction invite words and more.
