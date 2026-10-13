@@ -12,6 +12,7 @@ end
 
 local UI = {
   ITEM_CREATED_BY = { "|cff00ff00<Made by %s>|r", "|cff00ff00<製作者: %s>|r" },
+  ITEM_ENCHANT_TIME_LEFT_MIN = { "%s (%d min)", "%s (%d分)" }, ITEM_MISSING = { "%s missing", "%sが不足" },
   MINIMUM = { "Minimum", "最低" }, MAXIMUM = { "Maximum", "最高" }, SELL_PRICE = { "Sell Price", "売値" },
   ARMOR_TEMPLATE = { "%s Armor", "アーマー %s" }, ITEM_MIN_LEVEL = { "Requires Level %d", "必要レベル %d" },
   ["SpellItemEnchantment:387"] = { "+17 Armor", "アーマー +17" }, -- an enchantment's whole text
@@ -45,6 +46,13 @@ describe("UI/Tooltip: colour-wrapped names, coloured lines, the sell price range
     assert.are.equal("最高: 1g 20s", left(4):GetText())
     Stub.setItemTooltip(tt, "|Hitem:2589:0:0:0|h[Linen Cloth]|h", { "Linen Cloth", "<Made by Wind Mami>" })
     assert.are.equal("<製作者: Wind Mami>", left(2):GetText())
+  end)
+
+  it("an item tooltip asks by key for its lines of a broad shape: an enchant's time left, a missing item", function()
+    Stub.setItemTooltip(tt, "|Hitem:2488:0:0:0|h[Worn Shortsword]|h",
+      { "Worn Shortsword", "Sharpened (5 min)", "Hearthstone missing" })
+    assert.are.equal("Sharpened (5分)", left(2):GetText())
+    assert.are.equal("Hearthstoneが不足", left(3):GetText())
   end)
 
   it("a stack's sell price range as the client writes it: the header, then each value indented four spaces", function()

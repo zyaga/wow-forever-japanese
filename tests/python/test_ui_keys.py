@@ -193,6 +193,26 @@ def test_no_listed_english_carries_a_refused_link_key_markup_or_tokens(root):
             assert not token_dollar.search(ln["en"]), (ln["id"], "$")
 
 
+def test_a_line_with_a_link_keeps_its_specifiers_in_the_english_order(root):
+    # A link's target and label take the line's arguments in the order the English gives them: a Japanese that moved
+    # a plain %s past another would put the wrong value inside the link, and a numbered one cannot sit beside a
+    # plain one in one format string
+    import re
+
+    spec = re.compile(r"%%|%(\d+\$)?[-+#0]*\d*(?:\.\d+)?[sdgfiuxX]")
+    english = {ln["id"]: ln["en"] for ln in Store(root / "data", english=True).load("ui")}
+    checked = 0
+    for ln in Store(root / "data").load("ui"):
+        en = english.get(ln["id"], "")
+        if "|H" not in en or ln.get("status") != "trusted":
+            continue
+        ja_specs = [m.group(0) for m in spec.finditer(ln["ja"]) if m.group(0) != "%%"]
+        assert not any("$" in x for x in ja_specs), (ln["id"], "numbered specifier beside a link")
+        assert ja_specs == [m.group(0) for m in spec.finditer(en) if m.group(0) != "%%"], (ln["id"], ja_specs)
+        checked += 1
+    assert checked > 40
+
+
 def test_nit_terms_are_consistent(root):
     # one term for Focus, and damage templates put the label before the numbers
     lines = {ln["id"]: ln["ja"] for ln in Store(root / "data").load("ui")}

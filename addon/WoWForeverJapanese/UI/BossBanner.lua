@@ -6,9 +6,8 @@
 --   Title     BOSS_YOU_DEFEATED when the PraiseTheSun CVar is on, else the boss's name (a name: `only` restriction)
 --   SubTitle  BOSS_KILL_SUBTITLE "has been defeated" (XML text=, bossbannertoast.xml:225), shown under the name.
 -- Loot rows: BossBanner_ConfigureLootFrame(lootFrame, data), called by its global name (:57, :73–112), writes
---   SetName BOSS_BANNER_LOOT_SET "Set: %s" around the item set's name (stays English inside the Japanese: a
---   `verbatim` argument, Core/UIStrings; the key shares its English with the set bonus line, so it is asked for by
---   key only). The row is pooled (parentArray LootFrames): records are keyed by widget (Labels.keyer).
+--   SetName BOSS_BANNER_LOOT_SET "Set: %s" around the item set's name (stays English inside the Japanese: a `text`
+--   argument, Core/UIStrings). The row is pooled (parentArray LootFrames): records are keyed by widget (Labels.keyer).
 -- Never touched: the loot row's ItemName, Count and PlayerName (an item, a number, a player).
 local _, WFJ = ...
 local BossBanner = {}

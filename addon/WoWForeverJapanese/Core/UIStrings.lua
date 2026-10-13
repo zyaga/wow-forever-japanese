@@ -209,9 +209,9 @@ end
 function UIStrings.isStatNameKey(key)
   return type(key) == "string" and key:sub(1, 9) == "ITEM_MOD_" and key:sub(-6) == "_SHORT"
 end
--- A line or template with its colour codes taken out (`|cAARRGGBB` and `|r`). → string
+-- A line or template with its colour codes taken out (`|cAARRGGBB`, a named `|cnNAME:` and `|r`). → string
 local function stripColour(s)
-  return (s:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", ""))
+  return (s:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|cn[%w_]+:", ""):gsub("|r", ""))
 end
 UIStrings.stripColour = stripColour
 
@@ -1453,7 +1453,8 @@ function UIStrings.build(deps)
     if not bareForms[en] then index.templateKeys[en] = key end
     local pattern, order, literal, word = compile(en, key)
     index.templates[#index.templates + 1] = { key = key, pattern = pattern, order = order, literal = literal,
-      word = word, only = keyOnly(key), bare = bareForms[en] }
+      -- a bare form is matched only where a widget asks for its key (the tooltip pass), never on any line
+      word = word, only = keyOnly(key) or bareForms[en] == true, bare = bareForms[en] }
   end)
   table.sort(index.templates, function(a, b)
     if a.literal ~= b.literal then return a.literal > b.literal end

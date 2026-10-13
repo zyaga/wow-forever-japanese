@@ -514,6 +514,8 @@ Interface lines with links, colour-wrapped names and plural groups ([ADR-067](..
 
 **Needs a friend online (not level-1 solo):** when a friend comes online, the chat line is Japanese around the friend's name link. **Needs a group:** a loot roll's lines (need, greed, won) are Japanese around the item link; the "[Loot]" header line stays English.
 
+**Needs a quest with a reputation reward:** open such a quest's reward page: the reputation row reads "<faction>の評価" with the faction's name in English, and its hover is Japanese.
+
 **Needs a friend on the friends list:** remove a Battle.net friend (or open the remove dialog and cancel): the confirmation is Japanese with the friend's name kept as written.
 
 ### Readings checklist

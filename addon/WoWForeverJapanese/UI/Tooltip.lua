@@ -210,6 +210,12 @@ end
 
 -- Structural lines: lines 2…N, left then right, except the description lines [first, last]. A line whose
 -- text is a dictionary word, template or label becomes a "ui" record with the captured values.
+-- Lines only an item tooltip shows, matched by key: a free text and a word or two after it ("Sharpened (5 min)",
+-- "Hearthstone missing"), and the crafter / gift lines the client may print without their colour (UIStrings.BARE).
+local TOOLTIP_ONLY = { "ITEM_MISSING", "ITEM_ENCHANT_TIME_LEFT_DAYS", "ITEM_ENCHANT_TIME_LEFT_HOURS",
+  "ITEM_ENCHANT_TIME_LEFT_MIN", "ITEM_ENCHANT_TIME_LEFT_SEC", "REAGENT_COST_CONSUME_CHARGES",
+  "REAGENT_COST_CONSUME_SINGLE_CHARGE", "ITEM_CREATED_BY", "ITEM_WRAPPED_BY" }
+
 local HEADED = { ShoppingTooltip1 = true, ShoppingTooltip2 = true, ItemRefShoppingTooltip1 = true,
   ItemRefShoppingTooltip2 = true } -- comparison tooltips: line 1 is "Currently Equipped", the name follows
 
@@ -247,6 +253,8 @@ local function showStructural(surface, frame, lines, first, last, refit, name, s
           if not key and side[1] == "R" and i == 1 then
             key, args = index:matchOnly(l.text, WFJ.Labels.families("DispelType").only)
           end
+          -- the tooltip's own lines that are only matched where asked for (UIStrings.ONLY, the bare forms)
+          if not key then key, args = index:matchOnly(l.text, TOOLTIP_ONLY) end
           if key and WFJ.Render.show(surface, "ui." .. side[1] .. i, l.fs, l.text, "ui", "ui", key,
               { args = args, refit = refit, runColours = runs }) then
             n = n + 1

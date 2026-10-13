@@ -32,7 +32,7 @@ describe("Core/UIStrings: links, plurals, colour-wrapped names", function()
     MINIMUM = { "Minimum", "最低" }, MAXIMUM = { "Maximum", "最高" },
     LOOT_SPECIALIZATION_DEFAULT = { "Current Specialization ( %s )", "現在の専門化 ( %s )" },
     TOOLTIP_TALENT_PREREQ = { "Requires %1$d |4point:points; in %2$s", "%2$sに%1$dポイント必要" },
-    ITEM_ENCHANT_TIME_LEFT_MIN = { "%s (%d min)", "%s (%d分)" },
+    ITEM_ENCHANT_TIME_LEFT_MIN = { "%s (%d min)", "%s (%d分)" }, ITEM_MISSING = { "%s missing", "%sが不足" },
     ITEM_ENCHANT_TIME_LEFT_DAYS = { "%s (%d |4day:days;)", "%s (%d日)" },
     -- a coloured template whose bare form is another key's English, the coloured one sorting first
     AUCTION_HOUSE_TOOLTIP_DURATION_FORMAT = { "Time Left: |cffffffff%s|r", "残り時間: |cffffffff%s|r" },
@@ -108,12 +108,12 @@ describe("Core/UIStrings: links, plurals, colour-wrapped names", function()
     assert.is_nil(index:match("|cff00ff00<Made by Wind. Mami>|r")) -- a period is never a name's
   end)
 
-  it("a colour-wrapped template also matches the line printed without its colour codes", function()
-    local key, args = index:match("<Made by Wind Mami>")
+  it("a colour-wrapped template also matches the line printed without its colour codes, asked by key", function()
+    local key, args = index:matchOnly("<Made by Wind Mami>", { "ITEM_CREATED_BY" })
     assert.are.equal("ITEM_CREATED_BY", key)
     assert.are.equal("Wind Mami", args[1])
     assert.are.equal("<製作者: Wind Mami>", index:fill(rows.ITEM_CREATED_BY[1], args))
-    assert.is_nil(index:match("<Made by Wind Mami>|r"))
+    assert.is_nil(index:matchOnly("<Made by Wind Mami>|r", { "ITEM_CREATED_BY" }))
   end)
 
   it("the dual-wield comparison captures the colour hex and the weapon's name", function()
@@ -138,10 +138,17 @@ describe("Core/UIStrings: links, plurals, colour-wrapped names", function()
     assert.are.equal("Sharpened (2日)", filled("ITEM_ENCHANT_TIME_LEFT_DAYS", "Sharpened (2 days)"))
   end)
 
-  it("only the keys the client prints bare get a bare form", function()
+  it("only the keys the client prints bare get a bare form, and it is matched only by key", function()
     assert.is_nil(index:match("Raid night (Inactive)"))
     assert.are.equal("PLAYER_IS_PVP_AFK", (index:match("|cffff64ffBob (Inactive)|r")))
-    assert.are.equal("ITEM_CREATED_BY", (index:match("<Made by Reyn>")))
+    assert.is_nil(index:match("<Made by Reyn>")) -- a player could type that shape
+    assert.are.equal("ITEM_CREATED_BY", (index:matchOnly("<Made by Reyn>", { "ITEM_CREATED_BY" })))
+  end)
+
+  it("a free text with a word or two after it is matched only by key, never on any line of its shape", function()
+    assert.is_nil(index:match("Talent points missing"))
+    assert.is_nil(index:match("Rank 3 (5 min)"))
+    assert.are.equal("ITEM_MISSING", (index:matchOnly("Hearthstone missing", { "ITEM_MISSING" })))
   end)
 
   it("a bare form never takes another key's English nor makes either key ambiguous", function()

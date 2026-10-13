@@ -40,8 +40,9 @@ def _menu_keys(root: Path) -> set[str]:
     if "WHICH" in unit:
         which = unit[unit.index("WHICH"):].split("function WFJ.MenusUnit.tags", 1)[0]  # the lists, not the builder
         keys |= set(re.findall(r'"([A-Z][A-Z0-9_]*)"', which))
-    for m in re.finditer(r"\b(?:keys|tooltips|KEYS|TOOLTIPS|CHAT_SHORTCUT_KEYS|WORLD_MAP_FILTERS)\s*=\s*\{([^}]*)\}",
-                         body):
+    # a list may open with the unit menus' shared raid target run (raidTargetsThen), whose own list is `out = {…}`
+    for m in re.finditer(r"\b(?:keys|tooltips|KEYS|TOOLTIPS|CHAT_SHORTCUT_KEYS|WORLD_MAP_FILTERS|out)\s*=\s*"
+                         r"(?:raidTargetsThen\()?\{([^}]*)\}", body):
         keys |= set(re.findall(r'"([A-Z][A-Z0-9_]*)"', m.group(1)))
     return keys
 

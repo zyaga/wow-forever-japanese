@@ -12,6 +12,7 @@ for _, f in ipairs({ "UI/SettingsKeys.lua", "UI/MenusUnit.lua", "UI/Menus.lua", 
 local FAV, USABLE = "お気に入りに設定", "使用可能のみ"
 local UI = {
   COOLDOWN_VIEWER_SETTINGS_SHOW_UNLEARNED = { "Show Unlearned", "未習得を表示" },
+  TRAVEL_PASS_INVITE_CROSS_FACTION = { "Invite to Group", "グループに招待" }, -- the friends list's travel pass menu
   COOLDOWN_VIEWER_SETTINGS_CLEAR_ALL_ALERTS = { "Clear all Alerts", "すべてのアラートを消去" },
   COOLDOWN_VIEWER_SETTINGS_RENAME_LAYOUT = { "Change Name", "名前を変更" },
   GROUP_BUFF_FILTER_MOVE_TO_HIDDEN = { "Move to Not Displayed", "非表示に移動" },
@@ -72,6 +73,7 @@ local UI = {
 -- one entry per MenusTags tag: { tag, key }
 local CASES = {
   { "COOLDOWN_VIEWER_SETTINGS_MENU", "COOLDOWN_VIEWER_SETTINGS_SHOW_UNLEARNED" },
+  { "MENU_FRIENDS_TRAVEL_PASS", "TRAVEL_PASS_INVITE_CROSS_FACTION" },
   { "MENU_COOLDOWN_SETTINGS_ITEM", "COOLDOWN_VIEWER_SETTINGS_CLEAR_ALL_ALERTS" },
   { "MENU_COOLDOWN_SETTINGS_LAYOUTS", "COOLDOWN_VIEWER_SETTINGS_RENAME_LAYOUT" },
   { "MENU_GROUP_BUFF_FILTER_ITEM", "GROUP_BUFF_FILTER_MOVE_TO_HIDDEN" },

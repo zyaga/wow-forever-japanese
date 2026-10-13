@@ -197,8 +197,7 @@ UIStrings.ARGS = {
   -- inside a colour code, a temporary enchant's name before its time left, the loot specialization's name, a
   -- talent tree's name, an item or skill name, a dialog's duration or player name, a reward faction, a tooltip's
   -- faction word, a chat hint's slash command, a quest waypoint's text. The dual-wield comparison carries the
-  -- weapon's colour as eight hex digits before its name (`hex`). A set bonus line's text is the whole bonus
-  -- (`verbatim`, periods included); UI/Tooltip resolves it through the set spell's Japanese, never shown as is.
+  -- weapon's colour as eight hex digits before its name (`hex`).
   ITEM_CREATED_BY = { [1] = "text" }, ITEM_WRAPPED_BY = { [1] = "text" },
   ITEM_DELTA_DUAL_WIELD_COMPARISON_MAINHAND_DESCRIPTION = { [1] = "hex", [2] = "text" },
   ITEM_DELTA_DUAL_WIELD_COMPARISON_OFFHAND_DESCRIPTION = { [1] = "hex", [2] = "text" },
@@ -235,7 +234,7 @@ UIStrings.ARGS = {
   CURRENCY_TRANSFER_NEW_BALANCE_PREVIEW = { [1] = "text" }, GUILD_RENAME_OPTIONS_REFUND = { [1] = "time" },
   GUILD_RENAME_OPTIONS_RENAME_COOLDOWN = { [1] = "time" }, SL_SET_CONVERSION_RECHARGE_TIME = { [1] = "time" },
   -- "Time Left: %s": the black market's AUCTION_TIME_LEFT<n> word or a bonus objective's "5 min", one shape
-  -- for the shared English
+  -- for the shared English. Any text after "Time Left:" matches; a value that is no entry is kept as written
   BLACK_MARKET_HOT_ITEM_TIME_LEFT = { [1] = "entryOrText" }, FACTION_CONTROLLED_TERRITORY = { [1] = "text" },
   TIME_IN_QUEUE = { [1] = "time" }, LFG_STATISTIC_AVERAGE_WAIT = { [1] = "time" },
   PVP_LEAVE_BUTTON_TIME = { [1] = "entry", [2] = "text" }, DEATH_RECAP_CAST_BY_TT = { [1] = "text", [2] = "text" },
@@ -678,6 +677,12 @@ UIStrings.ONLY = { COOLDOWN_VIEWER_SETTINGS_ACTION_ADD_ALERT = true,
   QUEST_REPUTATION_REWARD_TITLE = true, CLICK_BINDING_UNBOUND_OUTPUT = true,
   -- "%s Player" would take any line ending in "Player": the communities roster tooltip asks for it by key
   COMMUNITIES_CROSS_FACTION_BUTTON_TOOLTIP_TITLE = true,
+  -- a free text and a word or two after it ("%s missing", "%s (5 min)", "%s (3 charges)") would take any line of that
+  -- shape ("Talent points missing", a talent's "Rank 3 (5 min)"): the item tooltip's pass asks for them by key, and
+  -- the calendar for its locked title
+  ITEM_MISSING = true, ITEM_ENCHANT_TIME_LEFT_DAYS = true, ITEM_ENCHANT_TIME_LEFT_HOURS = true,
+  ITEM_ENCHANT_TIME_LEFT_MIN = true, ITEM_ENCHANT_TIME_LEFT_SEC = true, REAGENT_COST_CONSUME_CHARGES = true,
+  REAGENT_COST_CONSUME_SINGLE_CHARGE = true, CALENDAR_VIEW_EVENTTITLE_LOCKED = true,
   -- a set bonus line is translated only with its spell's Japanese (UI/Tooltip setBonuses), never around the English
   ITEM_SET_BONUS_GRAY = true,
   -- "%s in %s" and "%s by %s": two free-text halves around one short word would split any sentence without a

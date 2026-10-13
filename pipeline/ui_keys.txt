@@ -15260,7 +15260,7 @@ ITEM_MOD_SPELL_DAMAGE_VS_GIANT_SHORT
 ITEM_MOD_SPELL_DAMAGE_VS_BEAST_SHORT
 ITEM_MOD_SPELL_DAMAGE_VS_MECHANICAL_SHORT
 
-# ── interface lines a Forever client file shows: links, colour-wrapped names, plural groups, set bonuses ──
+# ── interface lines a Forever client file shows: links, colour-wrapped names, plural groups ──
 # lines the client can show on Forever (the retail-era reasons were not proven by a client file)
 ACCOUNT_BANK_CONFIRM_CLEANUP_PROMPT
 ACCOUNT_BANK_DEPOSIT_ALL_NO_REFUND_CONFIRM
@@ -15451,7 +15451,7 @@ ITEM_ENCHANT_TIME_LEFT_MIN
 ITEM_ENCHANT_TIME_LEFT_SEC
 ITEM_MISSING
 LOOT_SPECIALIZATION_DEFAULT
-# lines whose old reason was wrong (set bonuses, the pet command tooltip, the sell price range)
+# lines whose old reason was wrong (the pet command tooltip, the sell price range, disenchanting, containers)
 ITEM_CONTAINER
 ITEM_DISENCHANT_ANY_SKILL
 ITEM_DISENCHANT_MIN_SKILL

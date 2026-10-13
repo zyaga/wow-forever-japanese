@@ -10,7 +10,7 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Added
-- Japanese for 202 more interface lines, with word readings: system chat lines that carry a link (a friend coming online, loot rolls, the level-up line) show Japanese around the link, which stays as the game wrote it; the "Made by" line on crafted items, cooldown and enchant time lines, the account bank, the quest log's story header, help callouts, cross-faction invite words and more.
+- Japanese for 200 more interface lines, with word readings: system chat lines that carry a link (a friend coming online, loot rolls, the level-up line) show Japanese around the link, which stays as the game wrote it; the "Made by" line on crafted items, cooldown and enchant time lines, the account bank, the quest log's story header, help callouts, cross-faction invite words and more.
 - Forever's own item stat lines are in Japanese ("Equip: Improves your chance to hit by 1%.", spell damage and healing, weapon skills, attack power against a creature type).
 - Item set bonus lines ("(2) Set: …", and "Set: …" once the bonus is active) are in Japanese.
 - More spell and item tooltips are in Japanese: boss and raid debuffs whose text comes from another spell, the weapon skill tables (short and expanded), the Riding skills and the class ability lists (a Shaman's totems, a Paladin's or Hunter's abilities; the names in the list stay English), and talents with two wordings for the same numbers. The coverage page gives a plain reason for each tooltip line that stays English.

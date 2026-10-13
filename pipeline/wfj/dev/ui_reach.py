@@ -50,7 +50,7 @@ def references(addons: Path, keys: set[str]) -> list[tuple[str, str, str, str, s
 
 
 def main(argv: list[str]) -> int:
-    if len(argv) < 2:
+    if len(argv) < 2 or (argv[1] == "--keys" and len(argv) < 3):
         print(__doc__, file=sys.stderr)
         return 2
     addons = Path(argv[0])

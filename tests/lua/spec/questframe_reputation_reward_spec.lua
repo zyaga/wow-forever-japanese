@@ -52,8 +52,8 @@ describe("UI/QuestFrame's reputation reward row", function()
   it("the row's name and its hover are Japanese around the faction's name; Alt shows English", function()
     local row = { Name = Stub.fontString("") }
     for k, v in pairs(_G.QuestInfoReputationRewardButtonMixin) do row[k] = v end
-    _G.QuestInfoReputationRewardButtonMixin.SetUpMajorFactionReputationReward(row,
-      { name = "Argent Dawn", rewardAmount = 250 })
+    -- a row the client builds after login carries the hooked mixin (questinfo.xml:605, 713: the pool is lazy)
+    row:SetUpMajorFactionReputationReward({ name = "Argent Dawn", rewardAmount = 250 })
     assert.are.equal("Argent Dawnの評価", row.Name:GetText())
     -- the window's display pass runs after the rows are built and forgets its own records, never the row's
     WFJ.Render.forget(WFJ.QuestFrame.SPELL_HEADERS)
