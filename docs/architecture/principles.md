@@ -39,8 +39,10 @@ A line without a translation shows the untouched English the client wrote.
 ## 4. The addon never ships stored English
 
 English on screen is always what the client is showing at that moment. The addon ships Japanese and hashes of the
-English it was translated from, never the English text itself. The one exception is the word card's short meaning
-of a single word, which may use the game's own word where it matches, but never a whole line of the game's text.
+English it was translated from, never the English text itself. The exceptions are the word card's short meaning
+of a single word, which may use the game's own word where it matches, but never a whole line of the game's text,
+and a link's label inside a Japanese interface line ("[Loot]", "[Click To Upgrade]"), kept byte for byte as part of
+the link the client draws and the player clicks ([ADR-067](../adr/067-ui-lines-with-links-colour-wrapped-names-and-plural-groups.md)).
 `lint-no-english-in-addon` and a data test check this. See [ADR-002](../adr/002-live-english-only.md).
 
 ## 5. Every translation is keyed by the game
