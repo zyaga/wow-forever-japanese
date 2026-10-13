@@ -10,7 +10,7 @@ local TAIL = {
   "Core/Voice.lua", "Core/VoiceQueue.lua", "Core/Modifier.lua",
   "Core/Placeholders.lua", "Core/Translator.lua", "Core/UIStringKeys.lua",
   "Core/UIStrings.lua", "Core/Objectives.lua", "Core/SurfaceState.lua",
-  "Core/Collector.lua", "Core/CollectorSend.lua", "Core/CollectorRemind.lua",
+  "Core/Collector.lua", "Core/CollectorSend.lua", "Core/CollectorRemind.lua", "Core/Intro.lua",
   "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua", "Core/Diag.lua", -- the fix reports, the log
   "Core/BugReport.lua",
   "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua",
@@ -69,7 +69,8 @@ local TAIL = {
   "UI/Popups.lua",
   "UI/Scan.lua",
   "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/FixWindow.lua",
-  "UI/CollectorSendWindow.lua", "UI/CollectorReminder.lua", "UI/ReportWindow.lua", "UI/MinimapButton.lua",
+  "UI/CollectorSendWindow.lua", "UI/CollectorReminder.lua", "UI/IntroWindow.lua", "UI/ReportWindow.lua",
+  "UI/MinimapButton.lua",
   "UI/RevealBinding.lua",
   "UI/AddonListButton.lua",
   "UI/Options.lua", "UI/Slash.lua", "Main.lua", -- the settings pages' modules
@@ -233,6 +234,7 @@ describe("addon loads in TOC order and answers /wfj version", function()
       return t
     end }
     CreateFrame("Frame", "UIParent") -- the client always has it; the probe hangs off it
+    _G.WFJ_DB = { schema = 1, settings = {} } -- not a first install: the intro window stays out of this test
     local ns = Loader.load("WoWForeverJapanese")
     Stub.fontSetFails = true -- a fresh launch: the bundled font file is not loaded yet
     Stub.fireAll("ADDON_LOADED", "WoWForeverJapanese")

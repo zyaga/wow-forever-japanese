@@ -28,6 +28,7 @@ def test_real_toc_fields_and_load_order(root):
         "Core/Objectives.lua",  # objective lines
         "Core/SurfaceState.lua",
         "Core/Collector.lua", "Core/CollectorSend.lua", "Core/CollectorRemind.lua",  # the collector, its send, its reminder
+        "Core/Intro.lua",  # whether the first-install window is owed
         "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua",  # fix reports
         "Core/Diag.lua", "Core/BugReport.lua",  # the problem log, the bug report link
         "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua",
@@ -90,7 +91,8 @@ def test_real_toc_fields_and_load_order(root):
         "UI/Scan.lua",
         # the settings pages' copy, widgets, key capture, the modifier's override binding, the AddOn List button
         "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua",
-            "UI/FixWindow.lua", "UI/CollectorSendWindow.lua", "UI/CollectorReminder.lua", "UI/ReportWindow.lua",
+            "UI/FixWindow.lua", "UI/CollectorSendWindow.lua", "UI/CollectorReminder.lua", "UI/IntroWindow.lua",
+            "UI/ReportWindow.lua",
             "UI/MinimapButton.lua",  # the minimap button
             "UI/RevealBinding.lua",
         "UI/AddonListButton.lua", "UI/Options.lua", "UI/Slash.lua", "Main.lua",

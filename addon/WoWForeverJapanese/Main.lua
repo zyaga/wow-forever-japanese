@@ -188,6 +188,8 @@ local function step(name, fn)
   if WFJ.ErrorLog then pcall(WFJ.ErrorLog.recordCaught, value) end
   return nil
 end
+-- the same guard for work a module runs later than the event that asked for it (UI/IntroWindow)
+WFJ.step = step
 
 function WFJ.OnLoad()
   WFJ.initErrors = {}
@@ -228,9 +230,11 @@ function WFJ.OnLoad()
   -- globals (see the TOC). Assigning `step`'s nil would hand the client an empty global to write at logout,
   -- wiping the player's settings and the whole collected English corpus, which cannot be regenerated. A failed
   -- load keeps what was on disk and reports the failure instead.
+  local fresh = type(WFJ_DB) ~= "table" -- a first install: read before the settings load creates the table
   WFJ_DB = step("settings", function()
     return WFJ.Settings.load(WFJ_DB, WFJ.SCHEMA, WFJ.Settings.MIGRATIONS)
   end) or WFJ_DB
+  step("intro.prepare", function() WFJ.Intro.prepare(WFJ_DB, fresh) end)
   step("reports", function() WFJ.Reports.load(WFJ_DB) end) -- pending fixes live in WFJ_DB.reports
   step("forget", function() -- saved tables of mechanisms the addon no longer has
     if type(WFJ_DB) == "table" then WFJ_DB.buffIdentity, WFJ_DB.timeRule = nil, nil end
@@ -492,6 +496,7 @@ frame:SetScript("OnEvent", function(self, event, name, ...)
       step("collectorremind", function()
         WFJ.CollectorRemind.run(WFJ_DB, time(), WFJ.CollectorReminder.open, disclosed)
       end)
+      step("intro", function() WFJ.Intro.run(WFJ_DB, WFJ.IntroWindow.request) end) -- once, on a first install
     end
     -- every addon has loaded by now: another one (BugGrabber) may have replaced our error handler; and the player's
     -- name is known, so an error caught earlier loses it

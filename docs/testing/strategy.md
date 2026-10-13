@@ -810,6 +810,17 @@ The report window and the capture of the addon's own Lua errors ([Fix reports �
 
 **With BugSack (optional, needs another addon).** Enable BugSack, `/reload`, type `/wfj bug`: the summary reads 「別のアドオン（BugSack など）がエラーを取得中。そこから貼り付けてください。」 (Another addon (BugSack or similar) catches Lua errors: paste ours from it.). Errors this addon kept before BugSack was enabled still go in the link, with *送信しました* (I sent it) on step 4. Turn BugSack off again afterwards.
 
+### Intro window checklist
+The window a first install shows once ([Settings → Intro window](../systems/settings.md#intro-window)). Any character, out of combat. A first install is hard to fake, so the step marks the window owed again and reloads.
+
+1. **It opens once.** Type:
+   ```
+   /run WFJ_DB.intro = false; ReloadUI()
+   ```
+   **Pass:** after the reload, near the top of the screen, a window titled *WoW Forever Japanese* opens: a Japanese block starting with the gold line 「クエスト、NPCの会話、ツールチップを日本語で表示します。」 and three ・ points, a gold rule, then the same in English (gold opening line, three • points in grey). The reveal-key point names your current key in gold. Each point fits on one line. With the voice pack installed there is no voice section; to see it, type `/wfj debug intro novoice`: below another rule, the title 日本語音声 / Japanese voice, one sentence in each language and a copy box holding the voice pack's CurseForge address. Holding the reveal key changes nothing, and neither does turning translation off from the minimap button's menu. *閉じる / Close* closes it; `/wfj debug intro` opens it again and Esc closes it. Then type `/reload`: the window does not come back. **Fail:** one language only, a point wrapping, text overlapping or cut off, the window back after the second reload, or `/wfj debug` listing `intro` as a failed step.
+
+2. **A fresh launch with a new character.** Type `/run WFJ_DB.intro = false`, then `/logout`, exit the game fully (not a reload), start it again and create a new character. **Pass:** the window opens about a second after the race intro ends, or after login when there is none, with every line laid out cleanly once the Japanese face has loaded; it does not open during the intro. **Fail:** no window after the intro, or lines overlapping.
+
 ### Voice over checklist
 Japanese voice over from the separate voice pack ([Voice over](../systems/voice.md), [ADR-061](../adr/061-voice-over-from-a-separate-pack.md)). On a fresh level-1 night elf druid in Shadowglen, with the game's sound and voice on. Install both folders first ([runbook → Test install](../operations/voice.md#test-install)) and restart the client fully. Lines are in Japanese; English is given in brackets. This list checks the voice over without the voice panel: after step 2, set **Panel size** to **Off** on the *Voice panel* page (音声パネル), so the window button and the stop rules below apply. The panel has its own list, [Voice panel checklist](#voice-panel-checklist).
 

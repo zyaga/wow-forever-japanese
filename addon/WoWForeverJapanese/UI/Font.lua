@@ -84,6 +84,11 @@ function Font.follow(fs, fontObject)
   return fs:SetFont(path, size, flags or "") ~= false
 end
 
+-- Whether the client refused this FontString's face and the retry has not applied it yet.
+function Font.isPending(fs)
+  return pending[fs] ~= nil
+end
+
 -- → the number still refused after one more try
 function Font.retryPending()
   local n = 0
