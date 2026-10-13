@@ -116,6 +116,84 @@ def template_reason(reason: str) -> str:
 
 
 UI_EXCLUDED = "left out with its reason in `pipeline/ui_exclusions.txt`"
+# The kinds of reason an interface line is left English for (pipeline/ui_exclusions.txt), each a label and the
+# pattern that recognises it; the first match wins, and a reason no pattern matches is reported, never dropped
+# (tests/python/test_coverage.py). A reason checked against the client cites the Forever file, table or
+# disposition that proves the line never shows, or names what shows it instead.
+UI_REASON_CATEGORIES: list[tuple[str, str]] = [
+    ("Not on Forever (a retail-era system, a gated addon, an empty client table)",
+     r"not on Forever|not displayed on Forever|not displayed in game|^(permanent: )?not displayed"
+     r"|retail-era|retail feature|retail-only|not reachable on Forever|unreachable"
+     r"|not loaded on camelot|camelot (hides|omits|never|does not|excludes)|the TOC excludes"
+     r"|never shows|never opens|never appears|never reached|never built|never fires|never runs"
+     r"|never called|which camelot does not load"
+     r"|gated off camelot|gated `standard`|no-content|forever_addon_dispositions|AllowLoadGameType|\d rows on"
+     r"|absent from the|not in SpellName|has no .* on Forever|Forever (has|carries) no"
+     r"|Vanilla (has|recipes have|content|quest templates) (do not show|no)|the Forever tables carry no"
+     r"|IsSystemEnabled\(\)|SocialUIFrame|FriendRequestsListSocialViewTemplate|stubbed out|WoW Labs"
+     r"|Plunderstorm|Dragonflight|Shadowlands|Legion|Battle for Azeroth|BfA|Burning Crusade|Wrath|Mists"
+     r"|Cataclysm|War Within"
+     r"|Timerunning|Companion app|mobile-app|Warband|account-wide"
+     r"|\(in-game check\)|\[in-game check\]|\[likely\]"
+     r"|boosted character|assisted-combat rotation tooltip \(retail\)"),
+    ("Spoken by screen narration or text-to-speech, never drawn",
+     r"spoken|screen narration|SpeakText|narrat"),
+    ("A slash command word or its argument",
+     r"command word|slash command|/community argument|a chat command"),
+    ("Shown through another key with the same English",
+     r"^same English as|its English is also|^one English|shares its English|the same English|an alias of"
+     r"|a duplicate of"),
+    ("A link label, or a line that is only a link",
+     r"no words outside the link|link label|^a link \(|link url|a \|H[a-z]* link|only a link"
+     r"|the label of an? \|H"),
+    ("No words of its own (markup, numbers, punctuation, an abbreviation)",
+     r"no words|no translatable|a number-only|nothing in the ui|format piece|an unnamed label|no text"
+     r"|only format specifiers|a constant|glyph|numbers only|only a number|only numbers|no use site"
+     r"|nothing to translate|no word to translate|abbreviation|quotes around|indentation|a number and"
+     r"|only punctuation|punctuation only|a clock value|^a texture|^an icon|^a colour|^a bare"
+     r"|description-run prefix|never a whole line|a prefix|a suffix|a joiner|a separator|placeholder"),
+    ("A name, or text the player types or edits",
+     r"^(permanent: )?(a name|the name|a player|the word the player|typed|a chat tag|a raid-target tag"
+     r"|a community role name|a battle\.net region label)|name slot|name-carrying|name policy"
+     r"|names stay English"
+     r"|the player (types|typed|edits|names|writes|wrote)|edited by the player|player-edited|player-written"
+     r"|player text|player's name|\ba name\b|only the name|the client reads back"),
+    ("No Forever file writes it (a C-side line of other content)",
+     r"^no Forever UI file writes it|verified absent from the Forever UI extract|no loaded file names it"),
+    ("A chat, error or system line another surface owns",
+     r"^a pass-through wrapper|a wrapper|chat / error / system message|an error / chat message"
+     r"|system message line|chat line|owned by the .* surface|\(UI/[A-Z][A-Za-z]+\)|is the .* surface's"
+     r"|another surface|not an item / spell tooltip line"),
+    ("Regex noise: a string no screen shows",
+     r"regex noise|not read by any|never read|a search tag|a search term|never displayed|only compared"
+     r"|developer|debug|not player-facing|not display text|fallback for"),
+    ("A composite line no form renders", r"^(permanent|follow-up): "),
+    ("A glossary decision: the English word is the Japanese one", r"glossary"),
+    ("Decided per key: the reason names the client file", r"\.(lua|xml|toc):\d+"),
+]
+_UI_CATEGORIES = [(label, re.compile(pattern, re.I)) for label, pattern in UI_REASON_CATEGORIES]
+
+
+def ui_exclusions_by_reason(repo: Path) -> tuple[dict[str, int], list[str]]:
+    """→ ({category label: lines}, [keys whose reason fits no category]) over pipeline/ui_exclusions.txt, the
+    categories in UI_REASON_CATEGORIES order."""
+    counts: dict[str, int] = {label: 0 for label, _ in UI_REASON_CATEGORIES}
+    uncategorized: list[str] = []
+    path = repo / "pipeline" / "ui_exclusions.txt"
+    if not path.is_file():
+        return counts, uncategorized
+    for raw in path.read_text(encoding="utf-8").splitlines():
+        key, sep, reason = raw.partition("#")
+        key, reason = key.strip(), reason.strip()
+        if not key or not sep:
+            continue
+        for label, pattern in _UI_CATEGORIES:
+            if pattern.search(reason):
+                counts[label] += 1
+                break
+        else:
+            uncategorized.append(key)
+    return counts, uncategorized
 UI_FAMILY_LEFT_OUT = "a client-table row its family's key list leaves out (a name or developer row, ADR-042)"
 
 
@@ -211,7 +289,9 @@ def measure(root: Path) -> dict[str, Any]:
         meant = sum(1 for r in result["current"] for w in r["words"] if len(w) == 5)
         words[type_] = {"lines": len(can), "with_words": len(can & covered), "stale": len(result["stale"]),
                         "words": n_words, "with_meaning": meant}
-    return {"types": types, "readings": words, "served": served(repo), "voice": voice_coverage(root)}
+    by_reason, uncategorized = ui_exclusions_by_reason(repo)
+    return {"types": types, "readings": words, "served": served(repo), "voice": voice_coverage(root),
+            "ui_left_english": {"by_reason": by_reason, "uncategorized": uncategorized}}
 
 
 VOICE_KINDS = {
@@ -395,6 +475,7 @@ def render(m: dict[str, Any], stamp: str) -> str:
         out += [f"| {LABELS[type_]} | {why} | {n:,} |" for type_, why, n in rows]
     else:
         out.append("Nothing.")
+    out += _render_ui_left_english(m.get("ui_left_english") or {})
     out += _render_served(m.get("served") or {})
     out += ["", "## Word cards (readings with meanings)", "",
             "| Type | Lines that can carry a word list | With one | Done | Stale | Words | With a meaning |",
@@ -408,6 +489,22 @@ def render(m: dict[str, Any], stamp: str) -> str:
     out += _render_voice(m.get("voice") or {})
     out.append("")
     return "\n".join(out)
+
+
+def _render_ui_left_english(u: dict[str, Any]) -> list[str]:
+    if not u:
+        return []
+    out = ["", "### Interface lines left English, by reason", "",
+           "Every interface line in `pipeline/ui_exclusions.txt`, by the kind of reason it carries.",
+           "A reason that fits no category fails a test instead of dropping out of the count. The reasons",
+           "checked against the Forever client cite the file, table or disposition that proves the line",
+           "never shows, or the key that already shows the same English.", "",
+           "| Reason | Lines |", "|---|---|"]
+    out += [f"| {label} | {n:,} |" for label, n in u["by_reason"].items() if n]
+    out.append(f"| **All** | **{sum(u['by_reason'].values()):,}** |")
+    if u.get("uncategorized"):
+        out.append(f"| (no category: {', '.join(u['uncategorized'][:10])}) | {len(u['uncategorized']):,} |")
+    return out
 
 
 KIND_LABELS = {

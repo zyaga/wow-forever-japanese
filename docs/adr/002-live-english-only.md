@@ -9,6 +9,8 @@ A translation addon has two English texts available: the one it was translated f
 ## Decision
 **Live English is the only English.** The addon ships Japanese values and source hashes, never English text. Holding the modifier key reveals the text the client itself rendered into the frame (captured at hook time from the frame, in memory, for that display only). A `missing` or `rejected` entry leaves the frame untouched. One mechanism ("put back what the client wrote") serves both the modifier and the fallback.
 
+**Amended by [ADR-067](067-ui-lines-with-links-colour-wrapped-names-and-plural-groups.md):** a link's label inside a Japanese interface line ("[Loot]", "[Click To Upgrade]") ships in English, byte for byte with the rest of the link, because it is the link the client draws and the player clicks.
+
 ## Consequences
 - The kobold case (English changed from 10 to 8, Japanese still says 10) is self-correcting for the player: stale marker, hold the modifier, read the truth.
 - The addon's data files shrink (no English), and there is nothing to keep in sync with Blizzard's text.

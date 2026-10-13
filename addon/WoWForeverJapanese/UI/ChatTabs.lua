@@ -45,6 +45,17 @@ local HEADER = { only = { "CHAT_SAY_SEND", "CHAT_YELL_SEND", "CHAT_PARTY_SEND", 
   "CHAT_RAID_WARNING_SEND", "CHAT_INSTANCE_CHAT_SEND", "CHAT_GUILD_SEND", "CHAT_OFFICER_SEND", "CHAT_WHISPER_SEND",
   "CHAT_BN_WHISPER_SEND" } }
 ChatTabs.HEADER_KEYS = HEADER.only
+-- the newcomer chat hint under the box (ChatFrameEditBoxMixin:UpdateNewcomerEditBoxHint,
+-- mainline/chatframeeditboxoverrides.lua:33–45), the slash command kept
+local HINT = { only = { "NPEV2_CHAT_HELP_HINT_HERE", "NPEV2_CHAT_HELP_HINT_DIFFERENT" } }
+
+-- hooksecurefunc target (<edit box>:UpdateNewcomerEditBoxHint). → 1 | 0
+function ChatTabs.onNewcomerHint(box)
+  if type(box) ~= "table" or type(box.GetName) ~= "function" then return 0 end
+  local name = box:GetName()
+  if type(name) ~= "string" then return 0 end -- records are keyed by the box's name; an unnamed box has none
+  return WFJ.Labels.show(SURFACE, "hint." .. name, box.NewcomerHint, nil, HINT)
+end
 local HEADER_PAD, HEADER_RIGHT = 15, 13 -- the client's insets (chatframeeditbox.lua:710)
 
 local function get(key) return Compat.get(SURFACE, key) end
@@ -113,6 +124,9 @@ function ChatTabs.registerEditBoxes()
       headerHooked[box] = true
       hooksecurefunc(box, "UpdateHeader", ChatTabs.onHeader)
       WFJ.Diag.watch(box, "UpdateHeader", WFJ.Diag.nameOf(box))
+      if type(box.UpdateNewcomerEditBoxHint) == "function" then
+        hooksecurefunc(box, "UpdateNewcomerEditBoxHint", ChatTabs.onNewcomerHint)
+      end
       n = n + 1
     end
   end

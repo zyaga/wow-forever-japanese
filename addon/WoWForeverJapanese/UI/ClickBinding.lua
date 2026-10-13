@@ -73,6 +73,12 @@ local ROW_BINDING = { only = BUTTON_KEYS }
 local CHECKBOX_TOOLTIP = { only = { "OPTION_TOOLTIP_ENABLE_MOUSEOVER_CAST" } }
 local SPELLS_TOOLTIP = { only = { "PLAYERSPELLS_BUTTON" } }
 local MACROS_TOOLTIP = { only = { "MACROS" } }
+local UNBOUND = { only = { "CLICK_BINDING_UNBOUND_OUTPUT" } } -- "<spell> Unbound" under the list (lua:746–750)
+
+-- hooksecurefunc target (ClickBindingFrame:SetUnboundText). → 1 | 0
+function ClickBinding.onUnbound(frame)
+  return WFJ.Labels.show(SURFACE, "unbound", type(frame) == "table" and frame.UnboundText or nil, nil, UNBOUND)
+end
 
 local function get(key) return Compat.get(SURFACE, key) end
 
@@ -133,6 +139,10 @@ function ClickBinding.setup()
   if hooked then return false end
   hooked = true
   if type(frame.HookScript) == "function" then frame:HookScript("OnShow", ClickBinding.showStatic) end
+  if type(frame.SetUnboundText) == "function" then
+    hooksecurefunc(frame, "SetUnboundText", ClickBinding.onUnbound)
+    ClickBinding.onUnbound(frame)
+  end
   local list, util = get("list"), get("scrollUtil")
   if type(list) == "table" and type(util) == "table" and type(util.AddInitializedFrameCallback) == "function" then
     util.AddInitializedFrameCallback(list, ClickBinding.onRow, ClickBinding, true)

@@ -23,6 +23,10 @@ local UI = {
   TRANSMOG_SITUATIONS_NO_VALID_OPTIONS = { "No valid options selected", "有効なオプションが選択されていません" },
   -- a situation group's title: a TransmogSituationTrigger row, matched in its own family
   ["TransmogTrigger:4"] = { "Movement", "移動" },
+  TRANSMOG_COST_MODIFIER_TOOLTIP_FREE = { "Updates to this outfit are free", "この衣装の更新は無料です" },
+  TRANSMOG_PURCHASE_OUTFIT_SLOT_TOOLTIP_DISABLED = { "Max %d |4outfit slot:outfit slots; reached.",
+    "衣装スロットは最大%d個までです。" },
+  TRANSMOG_SHOW_EQUIPPED_GEAR = { "Show Currently Equipped Gear", "装備中の装備を表示" },
 }
 
 local F = "TransmogFrame"
@@ -49,6 +53,9 @@ local function build()
     ["WardrobeCollection.TabContent.ItemsFrame.SearchBox.ProgressFrame.LoadingFrame.Text"] = en("SEARCH_LOADING_TEXT"),
     ["WardrobeCollection.TabContent.SituationsFrame.DefaultsButton"] = { button = en("TRANSMOG_SITUATIONS_DEFAULTS") },
     ["CharacterPreview.ToggleOptions.SheatheWeaponToggle.Checkbox"] = { button = "" },
+    ["OutfitCollection.MoneyFrame.TooltipOverlay"] = { button = "" },
+    ["OutfitCollection.PurchaseOutfitButton"] = { button = "" },
+    ["OutfitCollection.ShowEquippedGearSpellFrame.Label"] = en("TRANSMOG_SHOW_EQUIPPED_GEAR"),
   })
   -- the situations' pooled rows: Refresh writes each dropdown's default text, red-wrapped (lua:3104–3120)
   local situations = frame.WardrobeCollection.TabContent.SituationsFrame
@@ -168,6 +175,14 @@ C.suite(getfenv(1), {
       row.Dropdown.defaultText = "Mounted" -- a selected option's name stays
       row.Dropdown:UpdateText()
       assert.are.equal("Mounted", row.Dropdown.Text:GetText())
+    end },
+    { "the cost tooltip, the outfit slot button's disabled tooltip and the show-equipped label", function(frame)
+      frame:Show()
+      assert.are.equal("装備中の装備を表示", frame.OutfitCollection.ShowEquippedGearSpellFrame.Label:GetText())
+      C.tooltip(frame.OutfitCollection.MoneyFrame.TooltipOverlay, { en("TRANSMOG_COST_MODIFIER_TOOLTIP_FREE") })
+      assert.are.equal("この衣装の更新は無料です", _G.GameTooltipTextLeft1:GetText())
+      C.tooltip(frame.OutfitCollection.PurchaseOutfitButton, { "Max 10 outfit slots reached." })
+      assert.are.equal("衣装スロットは最大10個までです。", _G.GameTooltipTextLeft1:GetText())
     end },
   },
   name = function(frame, WFJ)

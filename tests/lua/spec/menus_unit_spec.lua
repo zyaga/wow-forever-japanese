@@ -34,6 +34,8 @@ local UI = {
   TRADE = { "Trade", "取引" }, -- a level-1 entry the club menus never show
   -- the Interact submenu's talent inspect (camelot unitpopupmenus.lua:46–56, unitpopupsharedbuttonmixins.lua:296–300)
   INSPECT_TALENTS = { "View Talents", "タレントを表示" },
+  VEHICLE_LEAVE = { "Leave", "降りる" }, REPORT_PVP_SCOREBOARD = { "Report Player", "プレイヤーを報告" },
+  LOOT_SPECIALIZATION_DEFAULT = { "Current Specialization ( %s )", "現在の専門化 ( %s )" },
 }
 
 -- which → { an entry key it lists }
@@ -48,6 +50,8 @@ local CASES = {
   { "CHAT_ROSTER", "MAKE_MODERATOR" }, { "RECENT_ALLY", "RECENT_ALLIES_MENU_BUTTON_LABEL_PIN" },
   { "RECENT_ALLY_OFFLINE", "RECENT_ALLIES_MENU_BUTTON_LABEL_PIN" },
   { "DISCORD_USER_SELF", "DISCORD_CHAT_MESSAGE_CLICK_DELETE" },
+  { "VEHICLE", "VEHICLE_LEAVE" }, { "PVP_SCOREBOARD", "REPORT_PVP_SCOREBOARD" },
+  { "WORLD_STATE_SCORE", "REPORT_PVP_SCOREBOARD" },
 }
 
 describe("UI/MenusUnit: the unit menus outside level 1", function()
@@ -74,8 +78,8 @@ describe("UI/MenusUnit: the unit menus outside level 1", function()
     return root, M.open(root)
   end
 
-  it("registers the 13 new whichs, each with its own key list and titleIsName", function()
-    assert.are.equal(13, (function() local n = 0; for _ in pairs(WFJ.MenusUnit.WHICH) do n = n + 1 end; return n end)())
+  it("registers the 16 new whichs, each with its own key list and titleIsName", function()
+    assert.are.equal(16, (function() local n = 0; for _ in pairs(WFJ.MenusUnit.WHICH) do n = n + 1 end; return n end)())
     for which, keys in pairs(WFJ.MenusUnit.WHICH) do
       local spec = WFJ.Menus.TAGS["MENU_UNIT_" .. which]
       assert.are.equal(keys, spec.keys, which)
@@ -92,6 +96,12 @@ describe("UI/MenusUnit: the unit menus outside level 1", function()
       assert.are.equal(UI[key][1], frames[root.children[1]].fontString:GetText(), which)
       assert.are.equal(UI[key][2], frames[root.children[2]].fontString:GetText(), which)
     end
+  end)
+
+  it("the loot specialization entry keeps the specialization's name inside the Japanese", function()
+    local root, frames = generate("SELF", "Reyn", { "Current Specialization ( Fury )" }, { name = "Reyn" })
+    assert.are.equal("Reyn", frames[root.children[1]].fontString:GetText())
+    assert.are.equal("現在の専門化 ( Fury )", frames[root.children[2]].fontString:GetText())
   end)
 
   it("a club menu: an entry equal to the club's name (contextData.name) is never matched", function()

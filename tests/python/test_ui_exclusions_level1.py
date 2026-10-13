@@ -34,7 +34,9 @@ def _level1_keys(root: Path) -> set[str]:
     menus = (ui / "Menus.lua").read_text(encoding="utf-8")
     keys = _quoted(_block(menus, "local CHAT_SHORTCUT_KEYS = {", "\nlocal function specOf"))
     unit = (ui / "MenusUnit.lua").read_text(encoding="utf-8")
-    keys |= _quoted(_block(unit, "KEYS = {", "},") + _block(unit, "TOOLTIPS = {", "},"))
+    # KEYS opens with the raid target run every unit menu shares (raidTargetsThen), then its own keys
+    keys |= _quoted(_block(unit, "local function raidTargetsThen(rest)", "for _, k in ipairs(rest)")
+                    + _block(unit, "KEYS = raidTargetsThen({", "}),") + _block(unit, "TOOLTIPS = {", "},"))
     helptips = (ui / "HelpTips.lua").read_text(encoding="utf-8")
     keys |= _quoted(_block(helptips, "HelpTips.KEYS = {", "}") + _block(helptips, "HelpTips.PLATE_KEYS = {", "}"))
     keys |= _quoted(_block((ui / "TooltipUnit.lua").read_text(encoding="utf-8"), "TooltipUnit.KEYS = {", "}"))

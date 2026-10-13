@@ -18,9 +18,22 @@
 {"id": "ACCESSIBILITY_GENERAL_LABEL", "field": "text", "en": "General", "hash": "f14c70303f73c518", "src": "db2@1.60.1.70338"}
 {"id": "ACCESSIBILITY_INTERFACE_LABEL", "field": "text", "en": "Interface", "hash": "2b102ef3f6862d52", "src": "db2@1.60.1.70338"}
 {"id": "ACCESSIBILITY_INTERFACE_SECTION_DISPLAY", "field": "text", "en": "Display", "hash": "1a81d94ddb111117", "src": "db2@1.60.1.70338"}
+{"id": "ACCOUNT_BANK_CONFIRM_CLEANUP_PROMPT", "field": "text", "en": "Are you sure you want to automatically sort your items?|nThis will affect all Account tabs.", "hash": "7b6ac716e505e3cb", "src": "db2@1.60.1.70338"}
+{"id": "ACCOUNT_BANK_DEPOSIT_ALL_NO_REFUND_CONFIRM", "field": "text", "en": "You are about to deposit refundable items into the bank.|n|n|cnRED_FONT_COLOR:All account bound items will have their refund timers removed.|r|n|nWould you like to continue?", "hash": "163e370c3902922a", "src": "db2@1.60.1.70338"}
+{"id": "ACCOUNT_BANK_DEPOSIT_BUTTON_LABEL", "field": "text", "en": "Deposit all account bound items", "hash": "0a174ee5f1ed75e7", "src": "db2@1.60.1.70338"}
+{"id": "ACCOUNT_BANK_ERROR_NO_LOCK", "field": "text", "en": "You cannot access the Account Bank at the same time as another character", "hash": "a8ecf71298231dab", "src": "db2@1.60.1.70338"}
+{"id": "ACCOUNT_BANK_PAGE_NUMBER", "field": "text", "en": "Account Bank Page %d", "hash": "6dd441b94e515b40", "src": "db2@1.60.1.70338"}
+{"id": "ACCOUNT_BANK_PANEL_TITLE", "field": "text", "en": "Account Bank", "hash": "316a9b4cfe9eef63", "src": "db2@1.60.1.70338"}
 {"id": "ACCOUNT_COMPLETED_QUESTS_FILTER_DESCRIPTION", "field": "text", "en": "Toggle map and quest indicators in the world for quests you've previously completed with another character.|n|nCurrently supported for Dragonflight and The War Within.", "hash": "89a7bfd2c23c2076", "src": "db2@1.60.1.70338"}
 {"id": "ACCOUNT_COMPLETED_QUESTS_FILTER_TUTORIAL", "field": "text", "en": "|cnHIGHLIGHT_FONT_COLOR:Quests you have already completed with another character are hidden from the map and their NPC quest indicators are faded in the world.|n|nYou can change this setting here.|r", "hash": "31ccd0abed05b220", "src": "db2@1.60.1.70338"}
+{"id": "ACCOUNT_FIRST_TIME_QUEST_BONUS_CURRENCY_TOOLTIP", "field": "text", "en": "This includes a one-time Account bonus (%d|cnGREEN_FONT_COLOR:+%d|r currency)", "hash": "a2a4c3c8f71c3849", "src": "db2@1.60.1.70338"}
+{"id": "ACCOUNT_FIRST_TIME_QUEST_BONUS_REP_TOOLTIP", "field": "text", "en": "This includes a one-time Account bonus (%d|cnGREEN_FONT_COLOR:+%d|r reputation)", "hash": "dce4a3ba78edf63b", "src": "db2@1.60.1.70338"}
+{"id": "ACCOUNT_FIRST_TIME_QUEST_BONUS_TOOLTIP", "field": "text", "en": "This is a one-time Account bonus.", "hash": "cbf0b0b83755d2da", "src": "db2@1.60.1.70338"}
 {"id": "ACCOUNT_LEVEL_CURRENCY", "field": "text", "en": "Account Currency", "hash": "1eee9c65acb0d09f", "src": "db2@1.60.1.70338"}
+{"id": "ACCOUNT_PREVIOUSLY_COMPLETED_QUEST_BONUS_TOOLTIP", "field": "text", "en": "This is an Account bonus for previously completing this quest.", "hash": "cc4ad604a7662e9e", "src": "db2@1.60.1.70338"}
+{"id": "ACCOUNT_PREVIOUSLY_COMPLETED_QUEST_CURRENCY_BONUS_TOOLTIP", "field": "text", "en": "This is an Account bonus for previously completing this quest (%d|cnGREEN_FONT_COLOR:+%d|r currency)", "hash": "9868a74579a9db48", "src": "db2@1.60.1.70338"}
+{"id": "ACCOUNT_PREVIOUSLY_COMPLETED_QUEST_REP_BONUS_TOOLTIP", "field": "text", "en": "This is an Account bonus for previously completing this quest (%d|cnGREEN_FONT_COLOR:+%d|r reputation)", "hash": "c5514cb9ba54a515", "src": "db2@1.60.1.70338"}
+{"id": "ACCOUNT_QUEST_LABEL", "field": "text", "en": "Account", "hash": "fe54aa4e98bf69d7", "src": "db2@1.60.1.70338"}
 {"id": "ACCOUNT_TRANSFERABLE_CURRENCIES_TUTORIAL", "field": "text", "en": "|cnHIGHLIGHT_FONT_COLOR:Some currencies are|r|n|cnNORMAL_FONT_COLOR:Account Transferable.|r|n|cnHIGHLIGHT_FONT_COLOR:Click a currency to initiate a transfer from another character.|r", "hash": "2fa1853320ee17c8", "src": "db2@1.60.1.70338"}
 {"id": "ACCOUNT_TRANSFERRABLE_CURRENCY", "field": "text", "en": "Account Transferable", "hash": "41f4425fd432c6da", "src": "db2@1.60.1.70338"}
 {"id": "ACCOUNT_WIDE_ACHIEVEMENT", "field": "text", "en": "Any character on your Account can make \nprogress towards this achievement.", "hash": "516a913ff75bbeb8", "src": "db2@1.60.1.70338"}
@@ -37,12 +50,15 @@
 {"id": "ACHIEVEMENT_BROADCAST", "field": "text", "en": "%s has earned the achievement %s!", "hash": "dccb0993b5ced0de", "src": "db2@1.60.1.70338"}
 {"id": "ACHIEVEMENT_BROADCAST_SELF", "field": "text", "en": "You have earned the achievement %s!", "hash": "cae740f4ccf9dfd8", "src": "db2@1.60.1.70338"}
 {"id": "ACHIEVEMENT_CATEGORY_PROGRESS", "field": "text", "en": "Progress Overview", "hash": "637175a109785772", "src": "db2@1.60.1.70338"}
+{"id": "ACHIEVEMENT_COMPLETED_BY", "field": "text", "en": "Completed by: |cffffffff%s|r", "hash": "c59ff6aa84c27dd4", "src": "db2@1.60.1.70338"}
 {"id": "ACHIEVEMENT_FILTER_ALL_EXPLANATION", "field": "text", "en": "Show all achievements", "hash": "f27820ca58988c62", "src": "db2@1.60.1.70338"}
 {"id": "ACHIEVEMENT_FILTER_COMPLETE_EXPLANATION", "field": "text", "en": "Show achievements completed on your Account", "hash": "5278a2c215ed6f16", "src": "db2@1.60.1.70338"}
 {"id": "ACHIEVEMENT_FILTER_INCOMPLETE_EXPLANATION", "field": "text", "en": "Show achievements this character can complete", "hash": "3647314279cd16f9", "src": "db2@1.60.1.70338"}
 {"id": "ACHIEVEMENT_FILTER_TITLE", "field": "text", "en": "Achievement Filter", "hash": "2e3bb527f53917ea", "src": "db2@1.60.1.70338"}
 {"id": "ACHIEVEMENT_META_COMPLETED_DATE", "field": "text", "en": "Completed %s", "hash": "33dc67334af43b01", "src": "db2@1.60.1.70338"}
+{"id": "ACHIEVEMENT_NOT_COMPLETED_BY", "field": "text", "en": "|cnHIGHLIGHT_FONT_COLOR:%s can still complete this.|r", "hash": "779645e1817a36e8", "src": "db2@1.60.1.70338"}
 {"id": "ACHIEVEMENT_PROGRESSED", "field": "text", "en": "Achievement Progress", "hash": "554f9a603076bde3", "src": "db2@1.60.1.70338"}
+{"id": "ACHIEVEMENT_REQUIRES_GUILD_REPUTATION", "field": "text", "en": "|cffffffffRequires guild reputation:|r %s", "hash": "10097aceb5cf18f2", "src": "db2@1.60.1.70338"}
 {"id": "ACHIEVEMENT_SUMMARY_CATEGORY", "field": "text", "en": "Summary", "hash": "1171d7d7a3f82303", "src": "db2@1.60.1.70338"}
 {"id": "ACHIEVEMENT_TITLE", "field": "text", "en": "Account Achievement Points", "hash": "f98a70dfb12a8232", "src": "db2@1.60.1.70338"}
 {"id": "ACHIEVEMENT_TOOLTIP_COMPLETE", "field": "text", "en": "Achievement earned by %1$s on %2$d/%3$02d/20%4$02d", "hash": "c9caa8935fb5443b", "src": "db2@1.60.1.70338"}
@@ -194,6 +210,8 @@
 {"id": "ARENA_3V3", "field": "text", "en": "3v3", "hash": "000d9760ca84315c", "src": "db2@1.60.1.70338"}
 {"id": "ARENA_COMPLETE_MESSAGE", "field": "text", "en": "The battle has ended. This arena will close in %s", "hash": "68ffe23cfc0c5ad8", "src": "db2@1.60.1.70338"}
 {"id": "ARENA_IS_READY", "field": "text", "en": "Your Arena is ready!", "hash": "66e295eafd23f00c", "src": "db2@1.60.1.70338"}
+{"id": "ARENA_PETITION_LEADER_INSTRUCTIONS", "field": "text", "en": "Select a player you wish to invite and click <request signature>.   To create this team, turn it in to the arena team registrar when you have gotten the required number of signatures.", "hash": "5e15a69cac590fa2", "src": "db2@1.60.1.70338"}
+{"id": "ARENA_PETITION_MEMBER_INSTRUCTIONS", "field": "text", "en": "Click the <Sign Charter> button to become a founding member of this arena team.", "hash": "7f7e21223aaf2760", "src": "db2@1.60.1.70338"}
 {"id": "ARENA_SPECTATOR", "field": "text", "en": "You are in Spectator Mode. To abandon this battle, right click the Arena icon on the minimap and select 'Leave Arena'.", "hash": "b382047a2ae51162", "src": "db2@1.60.1.70338"}
 {"id": "ARMOR", "field": "text", "en": "Armor", "hash": "845e9dbf4297b5af", "src": "db2@1.60.1.70338"}
 {"id": "ARMOR_MAX_EFFECTIVENESS_TOOLTIP", "field": "text", "en": "|cffBCBCBCDamage reduction from Armor cannot exceed 75.00%%|r", "hash": "7b00e66b129332a1", "src": "db2@1.60.1.70338"}
@@ -208,8 +226,11 @@
 {"id": "ASSISTED_COMBAT_HIGHLIGHT_LABEL", "field": "text", "en": "Assisted Highlight", "hash": "cdc3728ff78f292c", "src": "db2@1.60.1.70338"}
 {"id": "ASSISTED_COMBAT_HIGHLIGHT_SPELL_INCLUDED", "field": "text", "en": "Included in Assisted Highlight.", "hash": "135764bb0b814edb", "src": "db2@1.60.1.70338"}
 {"id": "ASSISTED_COMBAT_LABEL", "field": "text", "en": "Combat Assistant", "hash": "2472934f4f62beb3", "src": "db2@1.60.1.70338"}
+{"id": "ASSISTED_COMBAT_ROTATION", "field": "text", "en": "Single-Button Assistant", "hash": "cbe27d2718d73a34", "src": "db2@1.60.1.70338"}
 {"id": "ASSISTED_COMBAT_ROTATION_ACTION_BUTTON_HELPTIP", "field": "text", "en": "The Single-Button Assistant will suggest damage abilities for you. Use it like any other ability.", "hash": "d23d6eae7be316a2", "src": "db2@1.60.1.70338"}
+{"id": "ASSISTED_COMBAT_ROTATION_DRAG_HELPTIP", "field": "text", "en": "Drag the Single-Button Assistant to your action bar to consolidate your damage rotation into a single button.", "hash": "c53d7ee904fc6ecb", "src": "db2@1.60.1.70338"}
 {"id": "ASSISTED_COMBAT_ROTATION_REDUCE_HIGHLIGHTS", "field": "text", "en": "Reduce Highlights on Abilities", "hash": "513c35aafec39a35", "src": "db2@1.60.1.70338"}
+{"id": "ASSISTED_COMBAT_ROTATION_SPELLBOOK_LABEL", "field": "text", "en": "Single-Button|nAssistant", "hash": "cbe27d2718d73a34", "src": "db2@1.60.1.70338"}
 {"id": "ASSISTED_COMBAT_ROTATION_SPELL_INCLUDED", "field": "text", "en": "Included in Single-Button Assistant.", "hash": "302569b1fd0e1f82", "src": "db2@1.60.1.70338"}
 {"id": "ASSISTED_COMBAT_ROTATION_VIEW_SPELLBOOK", "field": "text", "en": "View in Spellbook", "hash": "795a43c3935766b5", "src": "db2@1.60.1.70338"}
 {"id": "ASSISTED_COMBAT_SPELL_INCLUDED", "field": "text", "en": "Included in both Assisted Highlight and Single-Button Assistant.", "hash": "cc7d2e3f798c2bc0", "src": "db2@1.60.1.70338"}

@@ -1512,6 +1512,8 @@ WFJ.Data.add("reading", {
   ["ui:EVENTTRACE_TIMESTAMP"] = { text = "タイムスタンプ=タイムスタンプ=33467" },
   ["ui:EVENT_SCHEDULER_CHAT_REMINDER_NOW"] = { text = "始まりました=はじまりました=64196" },
   ["ui:EVENT_SCHEDULER_CHAT_REMINDER_SOON"] = { text = "あと=あと=423 始まります=はじまります=64233" },
+  ["ui:EVENT_SCHEDULER_FRAME_LABEL"] = { text = "イベント=イベント=31948" },
+  ["ui:EVENT_SCHEDULER_WORLD_MAP_HELP_TEXT"] = { text = "開催中=かいさいちゅう=133367 および=および=5386 今後=こんご=140175 イベント=イベント=31948 ここ=ここ=7688 確認できます=かくにんできます=140209" },
   ["ui:EVENT_TOAST_EXPANDED_DESCRIPTION"] = { text = "左クリック=ひだりクリック=68804 詳細=しょうさい=123365 隠す=かくす=134555" },
   ["ui:EVENT_TOAST_NOT_EXPANDED_DESCRIPTION"] = { text = "左クリック=ひだりクリック=68804 詳細=しょうさい=123365 表示=ひょうじ=116520" },
   ["ui:EVERY_X_PERCENT"] = { text = "ごと=ごと=9629" },

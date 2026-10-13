@@ -278,6 +278,10 @@ A banker, the NPC, is `銀行員`: a person, not the bank window. `戦場` is sh
 
 Keep every `%s` / `%d` specifier, colour code (`|cff…` to `|r`), texture (`|T…|t`), atlas, link and line break. When Japanese word order moves the arguments, number them (`%1$s`, `%2$s`). `Requires Level %d` is `必要レベル %d`. `ui_lint` and `make check` refuse a line that drops or changes one.
 
+- **A link is kept byte for byte, label included.** A line with a `|H…|h[label]|h` link (a friend coming online, a loot roll, a store link) translates only the words outside the link; the link, its label and the specifiers inside it are copied exactly, and the arguments keep the English order (never a numbered specifier inside a link). `|Hplayer:%s|h[%s]|h has come online.` is `|Hplayer:%s|h[%s]|hがオンラインになりました。`. A line that is nothing but a link and its label is not translated.
+- **A plural group is dropped.** `|4singular:plural;` is English grammar; the Japanese keeps the specifier before it and drops the group: `%d |4day:days;` is `%d日`.
+- **A colour code around a name stays.** `|cff00ff00<Made by %s>|r` is `|cff00ff00<製作者: %s>|r`; the addon matches the line with or without its colour code, so the Japanese always keeps the English's codes.
+
 ### 6. Names stay English
 
 A name of a person, place, item, spell, faction or zone inside a UI string stays in English letters, as everywhere else ([principle 2](../architecture/principles.md#2-names-stay-in-english)). Race and class words take the glossary's katakana in a sentence; a race or class shown as a label on its own stays English.

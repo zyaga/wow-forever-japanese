@@ -159,6 +159,7 @@ local CANDIDATES = {
   frame = { "CalendarFrame" }, filter = { "CalendarFrame.FilterButton" }, month = { "CalendarMonthName" },
   massInviteFrame = { "CalendarMassInviteFrame" }, typeName = { "CalendarViewEventTypeName" },
   viewHeader = { "CalendarViewEventFrame.Header.Text" }, createHeader = { "CalendarCreateEventFrame.Header.Text" },
+  viewTitle = { "CalendarViewEventTitle" }, -- the event's title: never touched, except in its locked form (below)
   textureHeader = { "CalendarTexturePickerFrame.Header.Text" }, accept = { "CalendarViewEventAcceptButton" },
   createButton = { "CalendarCreateEventCreateButton" }, ampm = { "CalendarCreateEventFrame.AMPMDropdown" },
   createCommunity = { "CalendarCreateEventFrame.CommunityDropdown" },
@@ -283,9 +284,16 @@ end
 
 function Calendar.onMonth() return show("month", "month", MONTH) end
 
+-- A locked event's title is CALENDAR_VIEW_EVENTTITLE_LOCKED around the title the player typed (lua:2848): the only
+-- form of the (forbidden) title FontString that is shown, the title itself kept as written. → 1 | 0
+local LOCKED_TITLE = { only = { "CALENDAR_VIEW_EVENTTITLE_LOCKED" }, evenForbidden = true }
+local function showLockedTitle()
+  return WFJ.Labels.show(SURFACE, "viewTitle", get("viewTitle"), nil, LOCKED_TITLE)
+end
+
 function Calendar.onViewEvent()
   return showTitled("typeName", get("typeName"), EVENT_TYPE) + show("viewHeader", "viewHeader", VIEW_HEADER)
-    + show("viewCreator", "viewCreator", CREATOR) + show("viewDate", "viewDate", DATE)
+    + show("viewCreator", "viewCreator", CREATOR) + show("viewDate", "viewDate", DATE) + showLockedTitle()
 end
 
 -- The day's event `eventIndex` as the client reads it (C_Calendar.GetDayEvent, lua:1553, 2092, 4316). → table | nil

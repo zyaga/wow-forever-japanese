@@ -196,6 +196,10 @@ the screen. NPC speech is server text (VMaNGOS `broadcast_text`), keyed like gos
 
    A key whose own English carries a link (`LEVEL_UP`, the `LOOT_ROLL_*` lines that open the loot history) is
    excluded (the dictionary never carries a link), and its line stays English; an item link passed in a `%s` (`LOOT_ITEM_SELF`) is kept as the client wrote it.
+   **Amended by [ADR-067](067-ui-lines-with-links-colour-wrapped-names-and-plural-groups.md):** those
+   keys are listed now. The link and its label are kept byte for byte, only the words outside it are translated, and
+   the arguments keep the English order. A line that is nothing but a link and its label (`LOOT_ROLL_STARTED`,
+   `CENSORED_MESSAGE_REPORT`) still stays English: it has no words to translate.
    **Font fit:** a Japanese chat line gets the bundled face with `SetFont` directly, at the line's size, then one point
    smaller at a time (never below 8) until its string height fits the height the frame laid the line out at: the
    layout measured the line in the chat font, and without the fit a Japanese line spills over the next one. Never
@@ -285,12 +289,17 @@ the screen. NPC speech is server text (VMaNGOS `broadcast_text`), keyed like gos
   English carries a link stays English (the censored-message notice, loot rolls, the level-up line, the channel-link
   prefixes), except a static link: the code-of-conduct notice at login (`ONLINE_SAFETY_NOTICE`) is always the same
   GlobalString, so it is matched as the whole exact line and its support-site URL link is kept byte for byte
-  (`core/markup.py` counts a link as one verbatim token).
+  (`core/markup.py` counts a link as one verbatim token). **Amended by
+  [ADR-067](067-ui-lines-with-links-colour-wrapped-names-and-plural-groups.md):** a line with a link
+  is Japanese around the link (the loot rolls, the level-up line, the censored-message prompts); the link and its
+  label are kept byte for byte. Only a line that is nothing but a link and its label, and the channel-link
+  prefixes, stay English.
 - An error key that reaches chat as a system line is Japanese there too, with the same Japanese as the errors frame,
   and so is a system line that is exactly one dictionary English. Every plain system chat type (§8) is covered: loot,
   money, experience, honor, reputation, skill-ups, away / busy, level-up, time played and the guild message of the
   day show Japanese, with names, numbers, links and the player's own messages as written. A system line whose key is
-  not a listed chat key, or whose own English carries a link, stays English. A new key of a chat family on a later
+  not a listed chat key stays English (a key whose own English carries a link is listed since ADR-067; only a line
+  that is nothing but a link and its label stays English). A new key of a chat family on a later
   build is picked up by `DYNAMIC["chatsystem"]` and fails the coverage test until triaged; a family that is new
   altogether needs `CHAT_FAMILIES` and `DYNAMIC["chatsystem"]` both.
 - A player's line shows the Japanese prefix words ("の発言", "の叫び") around the name, and the text the player

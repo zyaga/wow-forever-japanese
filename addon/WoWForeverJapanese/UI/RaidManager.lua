@@ -59,7 +59,8 @@ local TOOLTIP_OWNERS = { "editMode", "settings", "hiddenModeToggle", "everyoneIs
 for _, key in ipairs(TOOLTIP_OWNERS) do CANDIDATES[key] = { DISPLAY .. key } end
 
 local TOOLTIP_KEYS = { "CRF_EDIT_MODE", "CRF_SETTINGS", "CRF_HIDE_GROUPS", "CRF_ALL_ASSIST", "CRF_DIFFICULTY",
-  "CRF_READY_CHECK", "CRF_ROLE_POLL", "CRF_COUNTDOWN", "ALL_ASSIST_NOT_LEADER_ERROR" }
+  "CRF_READY_CHECK", "CRF_ROLE_POLL", "CRF_COUNTDOWN", "ALL_ASSIST_NOT_LEADER_ERROR",
+  "DIFFICULTY_LOCKED_REASON_STORY_RAID" } -- the difficulty dropdown's disabled reason (lua:548)
 local LABEL = { only = { "RAID", "PARTY" } }
 local LEAVE_INSTANCE = { only = { "INSTANCE_PARTY_LEAVE", "INSTANCE_WALK_IN_LEAVE" } }
 local STATIC = {

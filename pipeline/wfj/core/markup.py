@@ -6,11 +6,13 @@ colours, breaks and textures as they are, so the Japanese must keep exactly the 
 breaks and textures (same multiset; a texture verbatim, path and size included). Plural grammar is
 English-only: the Japanese may drop a `|4…;` group (the specifier it follows stays,
 `specifiers.mismatch`), and one it keeps must be well-formed.
-A link (`|H…|h<label>|h`) is kept verbatim too, as one token: only a static one is listed (the
-code-of-conduct notice's URL; tests/python/test_ui_keys.py). An atlas texture (`|A<atlas>…|a`) is
-kept verbatim like a file texture, and a named colour opener (`|cnNAME:`) is counted like a hex one,
-its name verbatim; a bare `|cn` or an unclosed `|A…` is a token too, as written. `|K` and `$` tokens stay out
-of the dictionary by curation.
+A link (`|H…|h<label>|h`) is kept verbatim too, as one token, label included: a listed English may
+hold one when the link's content is literal text plus plain `%s` / `%d` specifiers (a player link, a
+loot-history link, a store link, a static support URL), and the Japanese keeps the whole link byte for
+byte with its arguments in the English order (`link_refused`, the one gate; tests/python/test_ui_keys.py).
+An atlas texture (`|A<atlas>…|a`) is kept verbatim like a file texture, and a named colour opener
+(`|cnNAME:`) is counted like a hex one, its name verbatim; a bare `|cn` or an unclosed `|A…` is a token
+too, as written. `|K` and `$` tokens stay out of the dictionary.
 """
 
 from __future__ import annotations
@@ -29,6 +31,29 @@ TOKEN = re.compile(
 VERBATIM = ("|T", "|A", "|cn")  # textures, atlases and named colours are counted as written
 PLURAL = re.compile(r"\|4[^:;|]*:[^;|]*;")
 ADJACENT_GAP = re.compile(r"\s*")
+
+
+_POSITIONAL = re.compile(r"%\d+\$")
+# inside a link, the escapes a listed line may carry: a colour opener (hex or named) and its close, and the
+# client's own `|W…|w` wrap marks around a label
+_LINK_ESCAPE = re.compile(r"\|c[0-9a-fA-F]{8}|\|cn[A-Za-z0-9_]+:|\|r|\|W|\|w|\|H|\|h")
+
+
+def link_refused(en: str) -> str | None:
+    """Why an English with a link cannot be a key, or None when every link in it is literal text plus plain
+    specifiers: a positional specifier inside a link (the Japanese could not keep the English order), `|K`
+    key markup anywhere, a `$` token inside a link, or any other escape inside a link (`|T`, `|A`, `|4`)."""
+    if "|K" in en:
+        return "|K key markup"
+    for link in LINK.findall(en):
+        if _POSITIONAL.search(link):
+            return "positional specifier inside a link"
+        if "$" in link:
+            return "$ token inside a link"
+        rest = _LINK_ESCAPE.sub("", link)
+        if "|" in rest:
+            return f"an escape inside a link: {rest[rest.index('|'):rest.index('|') + 2]}"
+    return None
 
 
 def tokens(text: str) -> Counter:

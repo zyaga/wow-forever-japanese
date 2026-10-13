@@ -143,7 +143,10 @@ local TRACK_KEY = "TRACK_ACHIEVEMENT"
 local TRACKED = { only = { TRACK_KEY } }
 local TRACKED_TOOLTIP = { only = { "TRACK_ACHIEVEMENT_TOOLTIP", "UNTRACK_ACHIEVEMENT_TOOLTIP" } }
 local SHIELD_TOOLTIP = { only = { "ACCOUNT_WIDE_ACHIEVEMENT", "ACCOUNT_WIDE_ACHIEVEMENT_COMPLETED",
-  "CHARACTER_ACHIEVEMENT_DESCRIPTION", "GUILD_ACHIEVEMENT_EARNED_BY", "INCOMPLETE" } }
+  "CHARACTER_ACHIEVEMENT_DESCRIPTION", "GUILD_ACHIEVEMENT_EARNED_BY", "INCOMPLETE",
+  -- who earned it, around the player's name (lua:3356–3361)
+  "ACHIEVEMENT_COMPLETED_BY", "ACHIEVEMENT_NOT_COMPLETED_BY" } }
+local REP_CRITERION = { only = { "ACHIEVEMENT_REQUIRES_GUILD_REPUTATION" } } -- around a standing's name (lua:2045)
 
 local SHOW_ALL = { only = { "ENCOUNTER_JOURNAL_SHOW_SEARCH_RESULTS" } }
 local SUMMARY_TOOLTIP = { only = { "SUMMARY_ACHIEVEMENT_INCOMPLETE", "SUMMARY_ACHIEVEMENT_INCOMPLETE_TEXT" } }
@@ -247,6 +250,8 @@ function Achievement.onCriteria(objectivesFrame)
   for frame in pairs(metas) do
     if frame.Label ~= nil then n = n + WFJ.Labels.show(SURFACE, metaKey(frame), frame.Label, nil, textOnly()) end
   end
+  local rep = type(objectivesFrame) == "table" and objectivesFrame.RepCriteria or nil
+  if type(rep) == "table" then n = n + WFJ.Labels.show(SURFACE, "repCriteria", rep, nil, REP_CRITERION) end
   local criterias = type(objectivesFrame) == "table" and objectivesFrame.criterias or nil
   if type(criterias) == "table" then
     local only = WFJ.Labels.families("CriteriaText")

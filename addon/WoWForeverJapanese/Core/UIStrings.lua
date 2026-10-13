@@ -209,6 +209,12 @@ end
 function UIStrings.isStatNameKey(key)
   return type(key) == "string" and key:sub(1, 9) == "ITEM_MOD_" and key:sub(-6) == "_SHORT"
 end
+-- A line or template with its colour codes taken out (`|cAARRGGBB`, a named `|cnNAME:` and `|r`). → string
+local function stripColour(s)
+  return (s:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|cn[%w_]+:", ""):gsub("|r", ""))
+end
+UIStrings.stripColour = stripColour
+
 local function keyOnly(key)
   return UIStrings.ONLY[key] or UIStrings.isStatNameKey(key)
     or ((isErrorKey(key) or luaFormatted(key) or isChatKey(key)) and not UIStrings.ERROR_UNRESTRICTED[key])
@@ -223,6 +229,7 @@ local KIND_CAPTURE = { word = "(%a+)", standing = "(%a+)", words = "(%a[%a ]-)",
   skill = "(%a[%a' ,%-]-)", entry = "(.-)", verbatim = "(.-)",
   percent = "([%+%-]?%d[%d%.,]*%%)", -- a signed or plain percentage, shown verbatim
   signed = "([%+%-]%d[%d,]*)", -- a signed count ("+25" honor, rating change), shown verbatim
+  hex = "(%x%x%x%x%x%x%x%x)", -- a colour's eight hex digits after a bare `|c` (the dual-wield comparison), kept
   modifiers = "([%u%-]+)", -- modifier key names joined by "-" ("SHIFT-ALT"), key names kept as written
   -- ADR-042: a client-table word of ONE family, shown in Japanese when it is that family's row, else as
   -- written (UIStrings.FAMILY_KINDS), never any other entry, so a class, spec or pet-family name stays English
@@ -439,7 +446,7 @@ function Index:core(text, allow)
         and (t.word == "" or text:find(t.word, 1, true)) then
       local caps = { text:match(t.pattern) }
       if caps[1] ~= nil then
-        local args, ok = { key = t.key }, true
+        local args, ok = { key = t.key, bare = t.bare }, true
         local kinds = argKinds(t.key) or {}
         for i, argIndex in ipairs(t.order) do
           args[argIndex] = caps[i]
@@ -595,9 +602,9 @@ function Index:matchUncached(text)
     local k, a = self:core(after)
     if k and self:has(k, "icon") then return k, { form = "affix", before = icon, after = "", inner = a } end
   end
-  local left, rest = text:match("^(.-): (.+)$") -- "Sell Price: 5c"
+  local lead, left, rest = text:match("^( *)(.-): (.+)$") -- "Sell Price: 5c", "    Minimum: 5c" (the range)
   key = left and self:exactKey(left)
-  if key and self:has(key, "colon") then return key, { form = "colon", rest = rest } end
+  if key and self:has(key, "colon") then return key, { form = "colon", rest = rest, lead = lead } end
   left, rest = text:match("^(.-) ([%d%.,/]+)$") -- "Speed 2.60", "Rank 3"
   key = left and self:exactKey(left)
   if key and self:has(key, "number") then return key, { form = "number", rest = rest } end
@@ -885,7 +892,7 @@ end
 -- Japanese takes the numbers in the order the line has them. → key, { [k] = number text } | nil
 function Index:matchNumbers(text)
   if type(text) ~= "string" or text == "" or next(self.byNumbers) == nil then return nil end
-  local plain = text:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", ""):gsub("|T[^|]*|t", "")
+  local plain = stripColour(text):gsub("|T[^|]*|t", "")
   local numbers = {}
   local skeleton = plain:gsub("%d+", function(d)
     numbers[#numbers + 1] = d
@@ -903,7 +910,7 @@ end
 -- those are matched against the client's own template (index:matchTemplate). → key, args | nil
 function Index:matchCounted(text)
   if type(text) ~= "string" or text == "" or next(self.byTemplate) == nil then return nil end
-  local plain = text:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", ""):gsub("|T[^|]*|t", "")
+  local plain = stripColour(text):gsub("|T[^|]*|t", "")
   if not plain:find("%d") then return nil end
   local args = {}
   local template = plain:gsub("%%", "%%%%"):gsub("%d+", function(d)
@@ -1124,7 +1131,7 @@ function Index:fill(ja, args)
     return out .. " " .. args.tip.open .. tip .. args.tip.close
   end
   if args.form == "prefix" then return ja .. args.rest end
-  if args.form == "colon" then return ja .. ": " .. args.rest end
+  if args.form == "colon" then return (args.lead or "") .. ja .. ": " .. args.rest end
   if args.form == "number" then return ja .. " " .. args.rest end
   if args.form == "bareColon" then return ja .. ":" end
   if args.form == "colonPrefix" then
@@ -1184,6 +1191,7 @@ function Index:fill(ja, args)
     return self.rows[EQUIP_KEY][1] .. " " .. body
   end
   local out = {}
+  if args.bare then ja = stripColour(ja) end -- the live line had no colour: neither has its Japanese
   for _, p in ipairs(parse(ja)) do
     if p.lit then
       out[#out + 1] = p.lit
@@ -1224,6 +1232,8 @@ function UIStrings.build(deps)
       owned = 0 },
     problems = { mismatched = {}, ambiguous = {}, unresolved = {}, unsupported = {} } }, Index)
   local c, byText, templateByText, byH1, bySlots, byNumbers, byRestricted = index.counts, {}, {}, {}, {}, {}, {}
+  local bareForms = {} -- the colour-stripped forms of colour-wrapped templates (see the build loop below)
+  local bareCandidates = {} -- bare form → { key, ja } | false (two keys' Japanese differ there)
   local byTemplate = {}
   for _, key in ipairs(sortedKeys(rows)) do
     local row = rows[key]
@@ -1316,8 +1326,29 @@ function UIStrings.build(deps)
             if seen.ja ~= row[1] then seen.conflict = true end
           end
         end
+        -- a colour-wrapped template the compiled client may print bare ("|cff00ff00<Made by %s>|r" arrives as
+        -- "<Made by Reyn>" when the colour went on the line instead): a candidate for that form too, filled with the
+        -- Japanese's colour codes taken out (Index:fill); added after every key is in (below)
+        if bucket == templateByText and UIStrings.BARE[key] and en:find("|c%x%x%x%x%x%x%x%x") then
+          for _, form in ipairs(forms) do
+            local bare = stripColour(form)
+            if bare ~= form then
+              local cand = bareCandidates[bare]
+              if cand == nil then bareCandidates[bare] = { key = key, ja = row[1] }
+              elseif cand and cand.ja ~= row[1] then bareCandidates[bare] = false end -- two Japanese: no bare form
+            end
+          end
+        end
         if key == EQUIP_KEY then index.equipEnglish = en end
       end
+    end
+  end
+  -- The bare forms, once every key's own English is in: only where no key has that English itself, so a bare form
+  -- never takes another key's line nor makes it ambiguous.
+  for bare, cand in pairs(bareCandidates) do
+    if cand and not templateByText[bare] then
+      templateByText[bare] = { key = cand.key, ja = cand.ja, keys = { cand.key } }
+      bareForms[bare] = true
     end
   end
   -- A key is counted once however many plural forms it has: indexed when every form is admitted, ambiguous when any
@@ -1418,10 +1449,12 @@ function UIStrings.build(deps)
     end
   end
   admit(templateByText, function(en, key)
-    index.templateKeys[en] = key -- a dialog names its template by its English (Index:keyOf)
+    -- a dialog names its template by its English (Index:keyOf); never a bare form
+    if not bareForms[en] then index.templateKeys[en] = key end
     local pattern, order, literal, word = compile(en, key)
     index.templates[#index.templates + 1] = { key = key, pattern = pattern, order = order, literal = literal,
-      word = word, only = keyOnly(key) }
+      -- a bare form is matched only where a widget asks for its key (the tooltip pass), never on any line
+      word = word, only = keyOnly(key) or bareForms[en] == true, bare = bareForms[en] }
   end)
   table.sort(index.templates, function(a, b)
     if a.literal ~= b.literal then return a.literal > b.literal end

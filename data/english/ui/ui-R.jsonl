@@ -141,6 +141,8 @@
 {"id": "READY_CHECK", "field": "text", "en": "Ready Check", "hash": "5e4133d1643cd35c", "src": "db2@1.60.1.70338"}
 {"id": "READY_CHECK_MESSAGE", "field": "text", "en": "%s has initiated a ready check.", "hash": "3cfcfba52577e0ca", "src": "db2@1.60.1.70338"}
 {"id": "READY_CHECK_YOU_WERE_AFK", "field": "text", "en": "You were Away for a ready check", "hash": "702ef727232da046", "src": "db2@1.60.1.70338"}
+{"id": "REAGENT_COST_CONSUME_CHARGES", "field": "text", "en": "%s (%d charges)", "hash": "ebbca2da67e40698", "src": "db2@1.60.1.70338"}
+{"id": "REAGENT_COST_CONSUME_SINGLE_CHARGE", "field": "text", "en": "%s (%d charge)", "hash": "e8651a57e1de0de5", "src": "db2@1.60.1.70338"}
 {"id": "REALID_BATTLETAG_FRIEND_LABEL", "field": "text", "en": "Enter email address\n(or BattleTag)", "hash": "f936eec71b4d6cf5", "src": "db2@1.60.1.70338"}
 {"id": "REALID_FRIEND_LABEL", "field": "text", "en": "Enter email address", "hash": "33e8aeb23b97e9e9", "src": "db2@1.60.1.70338"}
 {"id": "RECENT_ALLIES_CATEGORIES_FILTER_LABEL", "field": "text", "en": "Categories", "hash": "d57ae8fd3d22476e", "src": "db2@1.60.1.70009"}
@@ -160,6 +162,8 @@
 {"id": "RECOVER_CORPSE_TIMER", "field": "text", "en": "%d %s until resurrection", "hash": "c91ccc07d9332323", "src": "db2@1.60.1.70338"}
 {"id": "RECRUITING_FRIENDS_DISABLED", "field": "text", "en": "Recruit A Friend is unavailable due to your privacy settings. ", "hash": "a485c2f58ed3448e", "src": "db2@1.60.1.70338"}
 {"id": "RECRUIT_A_FRIEND", "field": "text", "en": "Recruit A Friend", "hash": "0c392ed6e77a9921", "src": "db2@1.60.1.70338"}
+{"id": "RECRUIT_A_FRIEND_FACTION_PANDAREN_ALLIANCE", "field": "text", "en": "Your friend plays for the Alliance faction. Join the Alliance if you want to play together.", "hash": "32941fc4ec8e4554", "src": "db2@1.60.1.70338"}
+{"id": "RECRUIT_A_FRIEND_FACTION_PANDAREN_HORDE", "field": "text", "en": "Your friend plays for the Horde faction. Join the Horde if you want to play together.", "hash": "2022c5b8951b0334", "src": "db2@1.60.1.70338"}
 {"id": "RED_GEM", "field": "text", "en": "Red", "hash": "0015acf54592480c", "src": "db2@1.60.1.70338"}
 {"id": "REFLECT", "field": "text", "en": "Reflect", "hash": "297925a19fd4ad3f", "src": "db2@1.60.1.70338"}
 {"id": "REFRESH", "field": "text", "en": "Refresh", "hash": "2a46ff67f0466370", "src": "db2@1.60.1.70338"}
@@ -178,9 +182,11 @@
 {"id": "REMOVE_AUTHENTICATOR_FROM_RANK", "field": "text", "en": "Are you sure you want to remove the Authenticator requirement from the %s rank? You won't be able to reapply it as long as there are guild members with this rank.", "hash": "9cde0ea6aa750307", "src": "db2@1.60.1.70338"}
 {"id": "REMOVE_FAVORITE_STATUS", "field": "text", "en": "Remove from Favorites", "hash": "ef4e4c7c17b8e3ef", "src": "db2@1.60.1.70338"}
 {"id": "REMOVE_FRIEND", "field": "text", "en": "Remove Friend", "hash": "e54f8be338d810c1", "src": "db2@1.60.1.70338"}
+{"id": "REMOVE_FRIEND_CONFIRMATION", "field": "text", "en": "Are you sure you want to remove %s as a Real ID friend?", "hash": "ea6d8b1924590c98", "src": "db2@1.60.1.70338"}
 {"id": "REMOVE_GUILDMEMBER_LABEL", "field": "text", "en": "Are you sure you want to remove %s from the guild?", "hash": "a343ef9a4fd7c38e", "src": "db2@1.60.1.70338"}
 {"id": "REMOVE_MODERATOR", "field": "text", "en": "Remove Moderator", "hash": "8ab27db7ca8f737d", "src": "db2@1.60.1.70338"}
 {"id": "REMOVE_PLAYER", "field": "text", "en": "Remove Player", "hash": "4e1b058c12de4498", "src": "db2@1.60.1.69913"}
+{"id": "REMOVE_TITLE_FRIEND_CONFIRMATION", "field": "text", "en": "Are you sure you want to remove %s as a WoW friend?", "hash": "e4be302c44cac873", "src": "db2@1.60.1.70338"}
 {"id": "RENAME_CHAT_WINDOW", "field": "text", "en": "Rename Window", "hash": "04c81f86912ef09e", "src": "db2@1.60.1.70338"}
 {"id": "RENAME_GUILD", "field": "text", "en": "Rename guild", "hash": "5136c73a269128a1", "src": "db2@1.60.1.70338"}
 {"id": "RENAME_GUILD_LABEL", "field": "text", "en": "Enter new guild name:", "hash": "f253234bd05c9f21", "src": "db2@1.60.1.70338"}
@@ -218,7 +224,9 @@
 {"id": "REPORTING_MAJOR_CATEGORY_CHEATING", "field": "text", "en": "Cheating", "hash": "9cd8ab75d5cf9dd0", "src": "db2@1.60.1.70338"}
 {"id": "REPORTING_MAJOR_CATEGORY_CHINA_HARMFUL_MINORS", "field": "text", "en": "Harmful to Minors", "hash": "54fa5822d43e9145", "src": "db2@1.60.1.70338"}
 {"id": "REPORTING_MAJOR_CATEGORY_GAMEPLAY_SABOTAGE", "field": "text", "en": "Gameplay Sabotage", "hash": "3290a07491625e2b", "src": "db2@1.60.1.70338"}
+{"id": "REPORTING_MAJOR_CATEGORY_INAPPROPRIATE_BLUEPRINT", "field": "text", "en": "Inappropriate Blueprint", "hash": "e975c4b975ea8d7d", "src": "db2@1.60.1.70338"}
 {"id": "REPORTING_MAJOR_CATEGORY_INAPPROPRIATE_COMMUNICATION", "field": "text", "en": "Inappropriate Communication", "hash": "7850aca03fad67a1", "src": "db2@1.60.1.70338"}
+{"id": "REPORTING_MAJOR_CATEGORY_INAPPROPRIATE_DECOR", "field": "text", "en": "Inappropriate Decor Placement", "hash": "e3e59baa5db0853e", "src": "db2@1.60.1.70338"}
 {"id": "REPORTING_MAJOR_CATEGORY_INAPPROPRIATE_NAME", "field": "text", "en": "Inappropriate Name", "hash": "2efc8ad0c86e6d33", "src": "db2@1.60.1.70338"}
 {"id": "REPORTING_MAKE_SELECTION", "field": "text", "en": "Make a Selection", "hash": "486095957b7a6f57", "src": "db2@1.60.1.70338"}
 {"id": "REPORTING_MINOR_CATEGORY_ADVERTISEMENT", "field": "text", "en": "Advertisement", "hash": "e6f871ebdee71245", "src": "db2@1.60.1.70338"}
@@ -238,8 +246,10 @@
 {"id": "REPORTING_MINOR_CATEGORY_HACKING", "field": "text", "en": "Hacking", "hash": "f7a29bf9e7872c8e", "src": "db2@1.60.1.70338"}
 {"id": "REPORTING_MINOR_CATEGORY_HARMFUL_INFO_FOR_MINORS", "field": "text", "en": "Harmful info for Minors", "hash": "de446078f351dac6", "src": "db2@1.60.1.70338"}
 {"id": "REPORTING_MINOR_CATEGORY_HARMFUL_TO_MINORS", "field": "text", "en": "Harmful To Minors", "hash": "723d3a4eb36a6e38", "src": "db2@1.60.1.70338"}
+{"id": "REPORTING_MINOR_CATEGORY_HOUSING_BLUEPRINT", "field": "text", "en": "Housing Blueprint", "hash": "84200879d0509e85", "src": "db2@1.60.1.70338"}
 {"id": "REPORTING_MINOR_CATEGORY_INAPPROPRIATE", "field": "text", "en": "Inappropriate", "hash": "6782e104fb2f5b10", "src": "db2@1.60.1.70338"}
 {"id": "REPORTING_MINOR_CATEGORY_NAME", "field": "text", "en": "Name", "hash": "0a8d43cf96cb99f1", "src": "db2@1.60.1.70338"}
+{"id": "REPORTING_MINOR_CATEGORY_NEIGHBORHOOD_NAME", "field": "text", "en": "Neighborhood Name", "hash": "78124c6f8ba640d8", "src": "db2@1.60.1.70338"}
 {"id": "REPORTING_MINOR_CATEGORY_SPAM", "field": "text", "en": "Spam", "hash": "0b3caf41955dd7ea", "src": "db2@1.60.1.70338"}
 {"id": "REPORTING_MINOR_CATEGORY_TEXT_CHAT", "field": "text", "en": "Text-Chat", "hash": "1dade643a7e81164", "src": "db2@1.60.1.70338"}
 {"id": "REPORTING_MINOR_CATEGORY_TVEC", "field": "text", "en": "Terrorist/Violent Content", "hash": "211566bfadd6c24c", "src": "db2@1.60.1.70338"}
@@ -260,6 +270,7 @@
 {"id": "REPORT_IN_WORLD_PLAYER", "field": "text", "en": "Report Player", "hash": "4c9cf45999cb90ea", "src": "db2@1.60.1.70338"}
 {"id": "REPORT_PET_NAME_CONFIRMATION", "field": "text", "en": "Are you sure you want to report %s for inappropriate pet name?", "hash": "c21c9f40d78e8894", "src": "db2@1.60.1.70338"}
 {"id": "REPORT_PLAYER", "field": "text", "en": "Report Player", "hash": "4c9cf45999cb90ea", "src": "db2@1.60.1.70338"}
+{"id": "REPORT_PVP_SCOREBOARD", "field": "text", "en": "Report Player", "hash": "4c9cf45999cb90ea", "src": "db2@1.60.1.70338"}
 {"id": "REPORT_RESULT_REQUIRES_CHAT", "field": "text", "en": "Report failed. Report type only valid on chat lines.", "hash": "8334ac69b068ee8b", "src": "db2@1.60.1.70338"}
 {"id": "REPORT_RESULT_REQUIRES_CHAT_OR_VOICE", "field": "text", "en": "Report failed. Report type only valid on chat lines or when in voice chat.", "hash": "256ec2873da63d76", "src": "db2@1.60.1.70338"}
 {"id": "REPORT_RESULT_TOO_MANY_REPORTS", "field": "text", "en": "Report failed. Too many report attempts. Please try again in a few minutes.", "hash": "aa4fc4e850086669", "src": "db2@1.60.1.70338"}
@@ -276,6 +287,7 @@
 {"id": "REPUTATION_STATUS_AT_WAR", "field": "text", "en": "You are currently at war with this group.", "hash": "baf12bde0ba711cb", "src": "db2@1.60.1.69913"}
 {"id": "REPUTATION_TOOLTIP_ACCOUNT_WIDE_LABEL", "field": "text", "en": "Account Reputation", "hash": "3d26e6cfe49958f0", "src": "db2@1.60.1.70338"}
 {"id": "REQUEST_INVITE", "field": "text", "en": "Request to Join Group", "hash": "c7ef66dc7e7431ec", "src": "db2@1.60.1.70338"}
+{"id": "REQUEST_INVITE_CROSS_FACTION", "field": "text", "en": "Request Invite to Instance Group", "hash": "8d1db76e55a6bfd6", "src": "db2@1.60.1.70338"}
 {"id": "REQUEST_ROLL", "field": "text", "en": "Request Roll", "hash": "423577b6e3c80b67", "src": "db2@1.60.1.70338"}
 {"id": "REQUEST_SIGNATURE", "field": "text", "en": "Request Signature", "hash": "a9dd0d16819839c5", "src": "db2@1.60.1.70338"}
 {"id": "REQUIRED_MONEY", "field": "text", "en": "Required Money:", "hash": "e2df7ab129aaf7cb", "src": "db2@1.60.1.70338"}
@@ -343,11 +355,17 @@
 {"id": "REWARD_AURA", "field": "text", "en": "The following will be cast on you:", "hash": "7bc7618de9022cf2", "src": "db2@1.60.1.70338"}
 {"id": "REWARD_CHOICES", "field": "text", "en": "You will be able to choose one of these rewards:", "hash": "a3187fa8b7114678", "src": "db2@1.60.1.70338"}
 {"id": "REWARD_CHOOSE", "field": "text", "en": "Choose your reward:", "hash": "24b0a5331fc3626f", "src": "db2@1.60.1.70338"}
+{"id": "REWARD_COMPANION", "field": "text", "en": "You will gain these Companions:", "hash": "0936b4efb5316c1f", "src": "db2@1.60.1.70338"}
 {"id": "REWARD_ITEMS", "field": "text", "en": "You will also receive:", "hash": "ef3767f54694405d", "src": "db2@1.60.1.70338"}
 {"id": "REWARD_ITEMS_ONLY", "field": "text", "en": "You will receive:", "hash": "cf2c2a703d848bec", "src": "db2@1.60.1.70338"}
+{"id": "REWARD_POSSIBLE_QUEST_REWARD", "field": "text", "en": "This quest may have additional rewards:", "hash": "186058b96bf0ffaf", "src": "db2@1.60.1.70338"}
+{"id": "REWARD_QUESTLINE_REWARD", "field": "text", "en": "The end of this quest line rewards:", "hash": "4d6ce750b27ea12f", "src": "db2@1.60.1.70338"}
+{"id": "REWARD_QUESTLINE_UNLOCK", "field": "text", "en": "This quest line will unlock:", "hash": "9758b0102140365d", "src": "db2@1.60.1.70338"}
+{"id": "REWARD_QUESTLINE_UNLOCK_PART", "field": "text", "en": "This quest line is part of unlocking:", "hash": "e79a34334b9fa202", "src": "db2@1.60.1.70338"}
 {"id": "REWARD_SPELL", "field": "text", "en": "You will learn the following:", "hash": "507d96bc2f0ec8d6", "src": "db2@1.60.1.70338"}
 {"id": "REWARD_TITLE", "field": "text", "en": "You shall be granted the title:", "hash": "17e14c64fad3ac6a", "src": "db2@1.60.1.70338"}
 {"id": "REWARD_TRADESKILL_SPELL", "field": "text", "en": "You will learn how to create:", "hash": "850c1377e43338f6", "src": "db2@1.60.1.70338"}
+{"id": "REWARD_UNLOCK", "field": "text", "en": "You will unlock access to the following:", "hash": "385ac02b8fffb64f", "src": "db2@1.60.1.70338"}
 {"id": "RID_FRIEND_REQUEST_INFO", "field": "text", "en": "This should be a person you know and trust in real life. You will be able to chat with them no matter which Blizzard game you are playing. If you accept their friend request your real name will be displayed to all of their friends.", "hash": "d0ff4bb5c724b3f6", "src": "db2@1.60.1.70338"}
 {"id": "RIGHTSHOULDERSLOT", "field": "text", "en": "Right Shoulder", "hash": "279b21157fbef384", "src": "db2@1.60.1.70338"}
 {"id": "RIGHT_BUTTON_STRING", "field": "text", "en": "Right Button", "hash": "0d664c5f143bd758", "src": "db2@1.60.1.70338"}

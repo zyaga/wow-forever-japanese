@@ -36,6 +36,7 @@ WFJ.Data.add("reading", {
   ["ui:HEIRLOOMS_CATEGORY_TRINKETS_RINGS_AND_NECKLACES"] = { text = "装身具=そうしんぐ=116833 指輪=ゆびわ=82309 首飾り=くびかざり=137528" },
   ["ui:HEIRLOOMS_CATEGORY_WEAPON"] = { text = "武器=ぶき=92441" },
   ["ui:HEIRLOOMS_JOURNAL_TUTORIAL_UPGRADE"] = { text = "これ=これ=9127 家宝=かほう=66345 最大=さいだい=88530 レベルです=レベルです=35509 特別な=とくべつな=99870 アップグレード=アップグレード=31813 トークン=トークン=33900 使うと=つかうと=44185 この=この=8884 レベル=レベル=35510 上げられます=あげられます=37091" },
+  ["ui:HEIRLOOMS_MICRO_BUTTON_SPEC_TUTORIAL"] = { text = "家宝=かほう=66345 パネル=パネル=140162 開くと=ひらくと=133236 家宝=かほう=66345 コレクション=コレクション=32917 確認できます=かくにんできます=140210" },
   ["ui:HEIRLOOMS_PVP"] = { text = "対人戦=たいじんせん=66852" },
   ["ui:HELPFRAME_REPORTLAG_TEXT1"] = { text = "ラグ=ラグ=35296 報告=ほうこく=60706 送信しました=そうしんしました=128872" },
   ["ui:HELPFRAME_TICKET_CLICK_HELP"] = { text = "ここ=ここ=7688 クリックして=クリックして=32715 チケット=チケット=33596 開きます=ひらきます=133236" },

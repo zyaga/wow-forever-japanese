@@ -118,13 +118,16 @@ function Labels.scrolling(sf)
   return fs, refit
 end
 
--- Shows one label as record `recKey` on `surface`. `opts` (optional): { only = { KEY = true, … } | { "KEY", … } }.
+-- Shows one label as record `recKey` on `surface`. `opts` (optional): { only = { KEY = true, … } | { "KEY", … },
+-- evenForbidden = true }. A forbidden widget is shown only with `evenForbidden` and an `only` list: the one form of it
+-- that is a dictionary line (a locked calendar event's title around the title the player typed).
 -- → 1 when the widget holds a dictionary word (shown or already ours), else 0; and a record from an earlier text on
 -- that key is dropped, never restored over the client's text.
 function Labels.show(surface, recKey, widget, refit, opts)
   local fs = Labels.widget(widget)
   local index = WFJ.UIIndex
-  if not fs or not index or forbidden[widget] or forbidden[fs] then
+  local allowForbidden = opts and opts.evenForbidden and opts.only
+  if not fs or not index or (not allowForbidden and (forbidden[widget] or forbidden[fs])) then
     WFJ.SurfaceState.drop(surface, recKey)
     return 0
   end
@@ -140,6 +143,11 @@ function Labels.show(surface, recKey, widget, refit, opts)
   local key, args
   if type(en) == "string" and en ~= "" then
     if opts and opts.only then key, args = index:matchOnly(en, opts.only) else key, args = index:match(en) end
+  end
+  -- a forbidden widget takes only the form the client writes, colour codes and all: a bare form there would be
+  -- the player's own text ("Raid night (Locked)")
+  if key and allowForbidden and type(args) == "table" and args.bare and (forbidden[widget] or forbidden[fs]) then
+    key = nil
   end
   if not key then
     WFJ.SurfaceState.drop(surface, recKey)

@@ -83,16 +83,19 @@
 {"id": "MAP_PIN_TOOLTIP", "field": "text", "en": "Place a locational pin on the map that can be tracked and shared with other players.", "hash": "3c4eaab5e1a80be2", "src": "db2@1.60.1.70338"}
 {"id": "MAP_PIN_TOOLTIP_INSTRUCTIONS", "field": "text", "en": "Click this button and then the map to drop a pin or <Ctrl click directly on the map>", "hash": "12345b83326e1f2b", "src": "db2@1.60.1.70338"}
 {"id": "MAP_QUEST_DIFFICULTY_TEXT", "field": "text", "en": "Quest Difficulty Color", "hash": "c8b16e9f08779089", "src": "db2@1.60.1.70338"}
+{"id": "MAP_TOOLTIP_TIME_LEFT", "field": "text", "en": "Time Left: %s", "hash": "77ce6603a84fd516", "src": "db2@1.60.1.70338"}
 {"id": "MARKED_AFK", "field": "text", "en": "You are now Away.", "hash": "8f496a7aa86f23ee", "src": "db2@1.60.1.70338"}
 {"id": "MARKED_AFK_MESSAGE", "field": "text", "en": "You are now Away: %s", "hash": "fcb2418f1e2195b6", "src": "db2@1.60.1.70338"}
 {"id": "MARKED_DND", "field": "text", "en": "You are now Busy: %s", "hash": "ba0bafe7a40b6688", "src": "db2@1.60.1.70338"}
 {"id": "MASTERY_POINTS_SPENT", "field": "text", "en": "%1$s Talents: %2$s", "hash": "31aa1e8c7c884a70", "src": "db2@1.60.1.70338"}
 {"id": "MASTER_LOOTER", "field": "text", "en": "Master Looter", "hash": "efe504b71ce1013e", "src": "db2@1.60.1.70338"}
 {"id": "MASTER_VOLUME", "field": "text", "en": "Master Volume", "hash": "c2a9573aa8030c86", "src": "db2@1.60.1.70338"}
+{"id": "MATCHMAKING_YOUR_UPDATED_MATCHMAKING_VALUE", "field": "text", "en": "Your Matchmaking Value: %s |TInterface\\CHATFRAME\\ChatFrameExpandArrow:16:16|t %s", "hash": "bec1e0dd18366bac", "src": "db2@1.60.1.70338"}
 {"id": "MAXFPS", "field": "text", "en": "Max Foreground FPS", "hash": "a5c49dd730ec366a", "src": "db2@1.60.1.70338"}
 {"id": "MAXFPSBK", "field": "text", "en": "Max Background FPS", "hash": "7f56c4a790cdc622", "src": "db2@1.60.1.70338"}
 {"id": "MAXFPSBK_CHECK", "field": "text", "en": "Max Background FPS Toggle", "hash": "717b234ec225d12e", "src": "db2@1.60.1.70338"}
 {"id": "MAXFPS_CHECK", "field": "text", "en": "Max Foreground FPS Toggle", "hash": "6d91107d60401809", "src": "db2@1.60.1.70338"}
+{"id": "MAXIMUM", "field": "text", "en": "Maximum", "hash": "ef7c8355d1c69165", "src": "db2@1.60.1.70338"}
 {"id": "MAX_FOLLOW_DIST", "field": "text", "en": "Max Camera Distance", "hash": "2476ec1bf7a6ad18", "src": "db2@1.60.1.70338"}
 {"id": "MELEE", "field": "text", "en": "Melee", "hash": "5544f07d8354c84f", "src": "db2@1.60.1.70338"}
 {"id": "MELEE_ATTACK", "field": "text", "en": "Melee Attack", "hash": "20711bdf775b3c89", "src": "db2@1.60.1.69913"}
@@ -125,6 +128,7 @@
 {"id": "MINIMAP_TRACKING_TRAINER_CLASS", "field": "text", "en": "Class Trainer", "hash": "f7271dda0743f646", "src": "db2@1.60.1.70338"}
 {"id": "MINIMAP_TRACKING_TRAINER_PROFESSION", "field": "text", "en": "Profession Trainers", "hash": "bed3f8b8567ed448", "src": "db2@1.60.1.70338"}
 {"id": "MINIMAP_TRACKING_TRIVIAL_QUESTS", "field": "text", "en": "Low-Level Quests", "hash": "a7abfcddaeafe4f9", "src": "db2@1.60.1.70338"}
+{"id": "MINIMUM", "field": "text", "en": "Minimum", "hash": "1c15c12ba8eae73b", "src": "db2@1.60.1.70338"}
 {"id": "MINIMUM_CHARACTER_NAME_SIZE_TEXT", "field": "text", "en": "Minimum Character Name Size", "hash": "000605679bff0879", "src": "db2@1.60.1.70338"}
 {"id": "MINUTES", "field": "text", "en": "|4Minute:Minutes;", "hash": "fb46cad156f06a82", "src": "db2@1.60.1.70338"}
 {"id": "MINUTES_ABBR", "field": "text", "en": "%d |4Min:Min;", "hash": "94dafd154cf7b8ed", "src": "db2@1.60.1.70338"}

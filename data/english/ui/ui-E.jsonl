@@ -366,6 +366,7 @@
 {"id": "ERR_BATTLETAG_FRIEND_SUCCESS", "field": "text", "en": "BattleTag friend request has been sent.", "hash": "d6e55bf2d6d988bb", "src": "db2@1.60.1.70338"}
 {"id": "ERR_BATTLETAG_FRIEND_THROTTLED", "field": "text", "en": "Cannot send BattleTag friend requests right now.", "hash": "20e90e90c0d737cb", "src": "db2@1.60.1.70338"}
 {"id": "ERR_BG_DEVELOPER_ONLY", "field": "text", "en": "This battleground is only available for developer testing at this time.", "hash": "fc7eea645cd22736", "src": "db2@1.60.1.70338"}
+{"id": "ERR_BG_PLAYER_JOINED_SS", "field": "text", "en": "|Hplayer:%s|h[%s]|h has joined the battle.", "hash": "f6e0a2b04f789505", "src": "db2@1.60.1.70338"}
 {"id": "ERR_BG_PLAYER_LEFT_S", "field": "text", "en": "%s has left the battle", "hash": "3844b4ce2c13eb87", "src": "db2@1.60.1.70338"}
 {"id": "ERR_BNET_IS_NOT_YOUR_FRIEND", "field": "text", "en": "Add %s as a friend to whisper them.", "hash": "acbaab36a72c9687", "src": "db2@1.60.1.70338"}
 {"id": "ERR_BN_BROADCAST_THROTTLE", "field": "text", "en": "Please wait a few seconds before updating your broadcast message again.", "hash": "272d76916f91fff2", "src": "db2@1.60.1.70338"}
@@ -438,6 +439,10 @@
 {"id": "ERR_CHARTER_SYSTEM_REQUEST_FAILED_GENERIC", "field": "text", "en": "An error has occurred with the Charter system. Try again later.", "hash": "11ad79495a60e83a", "src": "db2@1.60.1.70338"}
 {"id": "ERR_CHAT_PLAYER_AMBIGUOUS_S", "field": "text", "en": "%s: More than one player matches, type more of their server name", "hash": "dfd3f748d364b646", "src": "db2@1.60.1.70338"}
 {"id": "ERR_CHAT_PLAYER_NOT_FOUND_S", "field": "text", "en": "No player named '%s' is currently playing.", "hash": "3c1f1ae353309ce7", "src": "db2@1.60.1.70338"}
+{"id": "ERR_CHAT_RAID_RESTRICTED_TRIAL", "field": "text", "en": "Free Trial accounts cannot send messages to raid channel.  |cffffd000|Hstorecategory:gametime|h[Click To Upgrade]|h|r", "hash": "2b513e592aed3314", "src": "db2@1.60.1.70338"}
+{"id": "ERR_CHAT_RAID_RESTRICTED_VETERAN", "field": "text", "en": "Free Trial accounts cannot send messages to raid channel. |cffffd000|Hstorecategory:gametime|h[Click To Upgrade]|h|r", "hash": "2b513e592aed3314", "src": "db2@1.60.1.70338"}
+{"id": "ERR_CHAT_RESTRICTED", "field": "text", "en": "Free Trial accounts cannot send unlimited tells. You must wait before you can send tells to more players.  |cffffd000|Hstorecategory:gametime|h[Click To Upgrade]|h|r", "hash": "14338b6ed7bbc804", "src": "db2@1.60.1.70338"}
+{"id": "ERR_CHAT_RESTRICTED_TRIAL", "field": "text", "en": "Free Trial accounts cannot send unlimited tells. You must wait before you can send tells to more players.  |cffffd000|Hstorecategory:gametime|h[Click To Upgrade]|h|r", "hash": "14338b6ed7bbc804", "src": "db2@1.60.1.70338"}
 {"id": "ERR_CHAT_THROTTLED", "field": "text", "en": "The number of messages that can be sent is limited, please wait to send another message.", "hash": "4b4bce304f07dcd5", "src": "db2@1.60.1.70338"}
 {"id": "ERR_CHAT_WHILE_DEAD", "field": "text", "en": "You can't chat when you're dead!", "hash": "788e45a355e17a1d", "src": "db2@1.60.1.70338"}
 {"id": "ERR_CHEST_IN_USE", "field": "text", "en": "That is already being used.", "hash": "57ae17bd5a08a85d", "src": "db2@1.60.1.70338"}
@@ -552,6 +557,7 @@
 {"id": "ERR_FRIEND_LIST_FULL", "field": "text", "en": "You don't have room for any more friends.", "hash": "cea6b4efc32c9395", "src": "db2@1.60.1.70338"}
 {"id": "ERR_FRIEND_NOT_FOUND", "field": "text", "en": "Player not found.", "hash": "a00deb50dc822093", "src": "db2@1.60.1.70338"}
 {"id": "ERR_FRIEND_OFFLINE_S", "field": "text", "en": "%s has gone offline.", "hash": "cffdbcb8c12d59a1", "src": "db2@1.60.1.70338"}
+{"id": "ERR_FRIEND_ONLINE_SS", "field": "text", "en": "|Hplayer:%s|h[%s]|h has come online.", "hash": "95f394fa9f9562bd", "src": "db2@1.60.1.70338"}
 {"id": "ERR_FRIEND_REMOVED_S", "field": "text", "en": "%s removed from friends list.", "hash": "68b8f0c4b2a7f7f6", "src": "db2@1.60.1.70338"}
 {"id": "ERR_FRIEND_SELF", "field": "text", "en": "You can't put yourself on your friend list.", "hash": "439693182a94131a", "src": "db2@1.60.1.70338"}
 {"id": "ERR_FRIEND_WRONG_FACTION", "field": "text", "en": "Friends must be part of your alliance.", "hash": "6383ee516c9702f0", "src": "db2@1.60.1.70338"}
@@ -676,14 +682,19 @@
 {"id": "ERR_INVALID_RAID_TARGET", "field": "text", "en": "You cannot target mark enemy players", "hash": "d7d748b2ab078292", "src": "db2@1.60.1.70338"}
 {"id": "ERR_INVALID_TELEPORT_LOCATION", "field": "text", "en": "You do not have a valid teleport location.", "hash": "63fb1a5757ab4657", "src": "db2@1.60.1.70338"}
 {"id": "ERR_INVENTORY_TRADE_TOO_MANY_UNIQUE_ITEM", "field": "text", "en": "Your inventory would contain too many of a unique item.", "hash": "a521b547ddb67150", "src": "db2@1.60.1.70338"}
+{"id": "ERR_INVITED_ALREADY_IN_GROUP_SS", "field": "text", "en": "|Hplayer:%s|h[%s]|h invited you to a group, but you could not accept because you are already in a group.", "hash": "159d99099ab978bf", "src": "db2@1.60.1.70338"}
 {"id": "ERR_INVITED_TO_ARENA_TEAM", "field": "text", "en": "You have already been invited into an arena team.", "hash": "6cf4c61b1f6e0f04", "src": "db2@1.60.1.70338"}
+{"id": "ERR_INVITED_TO_GROUP_SS", "field": "text", "en": "|Hplayer:%s|h[%s]|h has invited you to join a group.", "hash": "aaac68e79386fd6a", "src": "db2@1.60.1.70338"}
 {"id": "ERR_INVITED_TO_GUILD", "field": "text", "en": "You have already been invited into a guild.", "hash": "4944de471043e0ab", "src": "db2@1.60.1.70338"}
+{"id": "ERR_INVITED_TO_GUILD_SSS", "field": "text", "en": "|Hplayer:%s|h[%s]|h invites you to join %s.", "hash": "834eda259e7e9b91", "src": "db2@1.60.1.70338"}
 {"id": "ERR_INVITE_IN_COMBAT", "field": "text", "en": "You cannot invite a player in raid combat", "hash": "22e8bb8241facf92", "src": "db2@1.60.1.70338"}
 {"id": "ERR_INVITE_NO_PARTY_SERVER", "field": "text", "en": "Could not create a party", "hash": "aa7a782d1158eaab", "src": "db2@1.60.1.70338"}
 {"id": "ERR_INVITE_PARTY_BUSY", "field": "text", "en": "Cannot invite additional players until the party is formed", "hash": "622e4d520aea0513", "src": "db2@1.60.1.70338"}
 {"id": "ERR_INVITE_PARTY_BUSY_PENDING_REQUEST", "field": "text", "en": "You already have a pending invite request", "hash": "8713302986d4e7da", "src": "db2@1.60.1.70338"}
 {"id": "ERR_INVITE_PARTY_BUSY_PENDING_SUGGEST", "field": "text", "en": "You already have a pending group referral", "hash": "e0000e1a9f2181b0", "src": "db2@1.60.1.70338"}
 {"id": "ERR_INVITE_PLAYER_S", "field": "text", "en": "You have invited %s to join your group.", "hash": "46824702fd826db6", "src": "db2@1.60.1.70338"}
+{"id": "ERR_INVITE_RESTRICTED", "field": "text", "en": "Free Trial accounts cannot invite characters into groups. |cffffd000|Hstorecategory:gametime|h[Click To Upgrade]|h|r", "hash": "3cc970576f8edd9d", "src": "db2@1.60.1.70338"}
+{"id": "ERR_INVITE_RESTRICTED_TRIAL", "field": "text", "en": "Free Trial accounts cannot invite characters into groups. |cffffd000|Hstorecategory:gametime|h[Click To Upgrade]|h|r", "hash": "3cc970576f8edd9d", "src": "db2@1.60.1.70338"}
 {"id": "ERR_INVITE_SELF", "field": "text", "en": "You can't invite yourself to a group.", "hash": "f9817df5f9203d7b", "src": "db2@1.60.1.70338"}
 {"id": "ERR_INVITE_UNKNOWN_REALM", "field": "text", "en": "You cannot invite players from that realm", "hash": "e7155a38714f71eb", "src": "db2@1.60.1.70338"}
 {"id": "ERR_INV_FULL", "field": "text", "en": "Inventory is full.", "hash": "326b1dedce51b3f4", "src": "db2@1.60.1.70338"}
@@ -1021,6 +1032,8 @@
 {"id": "ERR_PETITION_NOT_ENOUGH_SIGNATURES", "field": "text", "en": "You need more signatures.", "hash": "dcf0beaedae31f03", "src": "db2@1.60.1.70338"}
 {"id": "ERR_PETITION_NOT_SAME_SERVER", "field": "text", "en": "That player is not from your server", "hash": "b0d1a98de9a971f4", "src": "db2@1.60.1.70338"}
 {"id": "ERR_PETITION_OFFERED_S", "field": "text", "en": "You have requested %s's signature.", "hash": "517142ac59b8e51c", "src": "db2@1.60.1.70338"}
+{"id": "ERR_PETITION_RESTRICTED_ACCOUNT", "field": "text", "en": "Free Trial accounts may not sign guild charters. |cffffd000|Hstorecategory:gametime|h[Click To Upgrade]|h|r", "hash": "a73e1257dc0cf1cf", "src": "db2@1.60.1.70338"}
+{"id": "ERR_PETITION_RESTRICTED_ACCOUNT_TRIAL", "field": "text", "en": "Free Trial accounts may not sign guild charters. |cffffd000|Hstorecategory:gametime|h[Click To Upgrade]|h|r", "hash": "a73e1257dc0cf1cf", "src": "db2@1.60.1.70338"}
 {"id": "ERR_PETITION_SIGNED", "field": "text", "en": "Charter signed.", "hash": "6fe1a1e922af528b", "src": "db2@1.60.1.70338"}
 {"id": "ERR_PETITION_SIGNED_S", "field": "text", "en": "%s has signed your charter.", "hash": "b9b792dfee0d1c17", "src": "db2@1.60.1.70338"}
 {"id": "ERR_PET_BROKEN", "field": "text", "en": "Your pet has run away", "hash": "e524c189bb58d4bd", "src": "db2@1.60.1.70338"}
@@ -1221,6 +1234,7 @@
 {"id": "ERR_REMOVE_FROM_PVP_QUEUE_XP_GAIN", "field": "text", "en": "You have been removed from a PVP queue because you have changed your XP gain settings", "hash": "ce672c021c54e2d9", "src": "db2@1.60.1.70338"}
 {"id": "ERR_REPORT_SUBMISSION_FAILED", "field": "text", "en": "Report system unavailable.", "hash": "d8c5134b2f1e4ea8", "src": "db2@1.60.1.70338"}
 {"id": "ERR_REPORT_SUBMITTED_SUCCESSFULLY", "field": "text", "en": "Thank you for your report!", "hash": "2f5d24fa48d9979a", "src": "db2@1.60.1.70338"}
+{"id": "ERR_REQUESTED_INVITE_TO_GROUP_SS", "field": "text", "en": "|Hplayer:%s|h[%s]|h has requested to join your group.", "hash": "e0b37c182d2f1df1", "src": "db2@1.60.1.70338"}
 {"id": "ERR_REQUEST_JOIN_PLAYER_S", "field": "text", "en": "You have requested to join %s's group.", "hash": "dca1a3d2ca90b034", "src": "db2@1.60.1.70338"}
 {"id": "ERR_REQUIRES_EXPANSION_S", "field": "text", "en": "Requires expansion: %s", "hash": "d113b8b629a1867d", "src": "db2@1.60.1.70338"}
 {"id": "ERR_RESTRICTED_ACCOUNT", "field": "text", "en": "Free Trial accounts cannot perform that action", "hash": "8c54f7fddd7912e2", "src": "db2@1.60.1.70338"}
@@ -1491,6 +1505,8 @@
 {"id": "ERR_WRONG_BAG_TYPE_SUBCLASS", "field": "text", "en": "Only %s can be placed in that.", "hash": "d4bda62b2a5c31d2", "src": "db2@1.60.1.70338"}
 {"id": "ERR_WRONG_DIRECTION_FOR_ATTACK", "field": "text", "en": "You aren't facing the right way to attack!", "hash": "e7a16afff470f2df", "src": "db2@1.60.1.70338"}
 {"id": "ERR_WRONG_SLOT", "field": "text", "en": "That item does not go in that slot.", "hash": "6a9c22757a4059fa", "src": "db2@1.60.1.70338"}
+{"id": "ERR_YELL_RESTRICTED", "field": "text", "en": "Free Trial accounts cannot yell. |cffffd000|Hstorecategory:gametime|h[Click To Upgrade]|h|r", "hash": "c35ab339d3bc1584", "src": "db2@1.60.1.70338"}
+{"id": "ERR_YELL_RESTRICTED_TRIAL", "field": "text", "en": "Free Trial accounts cannot yell. |cffffd000|Hstorecategory:gametime|h[Click To Upgrade]|h|r", "hash": "c35ab339d3bc1584", "src": "db2@1.60.1.70338"}
 {"id": "ERR_ZONE_EXPLORED", "field": "text", "en": "Discovered: %s", "hash": "7105b7cd5f8ff2bf", "src": "db2@1.60.1.70338"}
 {"id": "ERR_ZONE_EXPLORED_XP", "field": "text", "en": "Discovered %s: %d experience gained", "hash": "64d8b8dce4e4a524", "src": "db2@1.60.1.70338"}
 {"id": "ESCAPE_TO_UNBIND", "field": "text", "en": "Press the escape key to unbind this action.", "hash": "6b42f43d9fe49e44", "src": "db2@1.60.1.70338"}
@@ -1523,6 +1539,8 @@
 {"id": "EVENTTRACE_TIMESTAMP", "field": "text", "en": "Timestamp:", "hash": "155af6358a2a364c", "src": "db2@1.60.1.70338"}
 {"id": "EVENT_SCHEDULER_CHAT_REMINDER_NOW", "field": "text", "en": "%s has started!", "hash": "5936b2c5ee7dde91", "src": "db2@1.60.1.70338"}
 {"id": "EVENT_SCHEDULER_CHAT_REMINDER_SOON", "field": "text", "en": "%1$s starts in %2$s!", "hash": "1b80a213c6abec70", "src": "db2@1.60.1.70338"}
+{"id": "EVENT_SCHEDULER_FRAME_LABEL", "field": "text", "en": "Events", "hash": "efa0136838f06f1e", "src": "db2@1.60.1.70338"}
+{"id": "EVENT_SCHEDULER_WORLD_MAP_HELP_TEXT", "field": "text", "en": "Ongoing and upcoming events can be found here", "hash": "ec4a4acecbf08bd1", "src": "db2@1.60.1.70338"}
 {"id": "EVENT_TOAST_EXPANDED_DESCRIPTION", "field": "text", "en": "Left click to hide details", "hash": "589f7d3ffa560f2e", "src": "db2@1.60.1.70338"}
 {"id": "EVENT_TOAST_NOT_EXPANDED_DESCRIPTION", "field": "text", "en": "Left click to see details", "hash": "0e318865b0505c34", "src": "db2@1.60.1.70338"}
 {"id": "EVERY_X_PERCENT", "field": "text", "en": "Every %d%%", "hash": "9a5f1a856001bfcb", "src": "db2@1.60.1.70338"}

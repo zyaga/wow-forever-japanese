@@ -64,6 +64,7 @@
 {"id": "PET_ACTION_ATTACK", "field": "text", "en": "Attack", "hash": "e072942b4a6e859a", "src": "db2@1.60.1.70338"}
 {"id": "PET_ACTION_DISMISS", "field": "text", "en": "Dismiss", "hash": "1a1a309126f2a792", "src": "db2@1.60.1.70338"}
 {"id": "PET_ACTION_FOLLOW", "field": "text", "en": "Follow", "hash": "7133f97147f72238", "src": "db2@1.60.1.70338"}
+{"id": "PET_ACTION_SUBTEXT", "field": "text", "en": "Pet Command", "hash": "ad4f80625a989113", "src": "db2@1.60.1.70338"}
 {"id": "PET_ACTION_WAIT", "field": "text", "en": "Stay", "hash": "0b3dbb71a53ee6fa", "src": "db2@1.60.1.70338"}
 {"id": "PET_BATTLE_COMBAT_LOG", "field": "text", "en": "Pet Battle Combat", "hash": "af536275e37dfed6", "src": "db2@1.60.1.70338"}
 {"id": "PET_BATTLE_FORFEIT_CONFIRMATION", "field": "text", "en": "Are you sure you want to forfeit the match? Your opponent will be deemed the winner and your pets will lose %d percent health.", "hash": "d44f638224664b02", "src": "db2@1.60.1.70338"}
@@ -90,6 +91,7 @@
 {"id": "PET_MODE_DEFENSIVE", "field": "text", "en": "Defensive", "hash": "36687b796cd98c65", "src": "db2@1.60.1.70338"}
 {"id": "PET_MODE_DEFENSIVEASSIST", "field": "text", "en": "Defensive", "hash": "36687b796cd98c65", "src": "db2@1.60.1.70338"}
 {"id": "PET_MODE_PASSIVE", "field": "text", "en": "Passive", "hash": "b72608a2ee246ca9", "src": "db2@1.60.1.70338"}
+{"id": "PET_MODE_SUBTEXT", "field": "text", "en": "Pet Stance", "hash": "1791b2a56bc3d60d", "src": "db2@1.60.1.70338"}
 {"id": "PET_RENAME", "field": "text", "en": "Rename", "hash": "8c201e7d5466df3f", "src": "db2@1.60.1.70338"}
 {"id": "PET_RENAME_CONFIRMATION", "field": "text", "en": "Name your pet '%s'?", "hash": "6da1c743ffbc5dd9", "src": "db2@1.60.1.70338"}
 {"id": "PET_TYPE_DEMON", "field": "text", "en": "Demon", "hash": "b749cfcfb10fcfa1", "src": "db2@1.60.1.70338"}

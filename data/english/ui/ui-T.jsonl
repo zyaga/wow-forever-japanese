@@ -35,6 +35,7 @@
 {"id": "TALENT_FRAME_DISCARD_CHANGES_BUTTON_TOOLTIP", "field": "text", "en": "Undo Pending Changes", "hash": "743989d75f0aa54b", "src": "db2@1.60.1.70338"}
 {"id": "TALENT_FRAME_GATE_TOOLTIP_FORMAT", "field": "text", "en": "Spend %d more |4point:points; to unlock this row", "hash": "a00b6446b81b685d", "src": "db2@1.60.1.70338"}
 {"id": "TALENT_FRAME_INCREASED_RANKS_TEXT", "field": "text", "en": "(+%d |4Rank:Ranks; from %s)", "hash": "dd65d276995f9154", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_FRAME_REFUND_INVALID_ERROR", "field": "text", "en": "You must fix all errors. Unlearn talents to free up points and use them elsewhere to create a valid build.", "hash": "dfc05cf478f7d364", "src": "db2@1.60.1.70338"}
 {"id": "TALENT_FRAME_RESET_BUTTON_DROPDOWN_ALL", "field": "text", "en": "All", "hash": "00113cf90216a76a", "src": "db2@1.60.1.70338"}
 {"id": "TALENT_FRAME_RESET_BUTTON_DROPDOWN_LEFT", "field": "text", "en": "Left Tree", "hash": "8e85915b94ce6c33", "src": "db2@1.60.1.70338"}
 {"id": "TALENT_FRAME_RESET_BUTTON_DROPDOWN_RIGHT", "field": "text", "en": "Right Tree", "hash": "cda56bbba3f51dec", "src": "db2@1.60.1.70338"}
@@ -47,6 +48,7 @@
 {"id": "TALENT_FRAME_SEARCH_TOOLTIP_ON_DISABLED_ACTIONBAR", "field": "text", "en": "On a disabled action bar", "hash": "577670d3d5b14f98", "src": "db2@1.60.1.70338"}
 {"id": "TALENT_FRAME_SEARCH_TOOLTIP_ON_INACTIVE_BONUSBAR", "field": "text", "en": "On an action bar belonging to a different stance", "hash": "bac7ed4519e13247", "src": "db2@1.60.1.70338"}
 {"id": "TALENT_FRAME_SEARCH_TOOLTIP_RELATED_MATCH", "field": "text", "en": "Related to the talent you searched for", "hash": "32f58c106669b4e4", "src": "db2@1.60.1.70338"}
+{"id": "TALENT_MICRO_BUTTON_NO_SPEC", "field": "text", "en": "You have not chosen a class specialization.", "hash": "83f4cf2676b9cd51", "src": "db2@1.60.1.70338"}
 {"id": "TALENT_MICRO_BUTTON_TALENT_TUTORIAL", "field": "text", "en": "Talents are now available! Click here, and select your \"Talents\" tab to choose your talent.", "hash": "fc4ab902082bbfa8", "src": "db2@1.60.1.70338"}
 {"id": "TALENT_MICRO_BUTTON_UNSPENT_TALENTS", "field": "text", "en": "You have unspent Talent points.", "hash": "35db637e6322072d", "src": "db2@1.60.1.70338"}
 {"id": "TALENT_SPEC_ACTIVATE", "field": "text", "en": "Activate", "hash": "6fe8ceb4f8802433", "src": "db2@1.60.1.70338"}
@@ -298,7 +300,9 @@
 {"id": "TOOLTIP_ITEM_STAT_WEAPON_DAMAGE_INCREASE", "field": "text", "en": "Equip: +%1$d Weapon Damage.", "hash": "78517aa6428c1ee9", "src": "db2@1.60.1.70338"}
 {"id": "TOOLTIP_TALENT_LEARN", "field": "text", "en": "Click to learn", "hash": "eab07e27b4d92214", "src": "db2@1.60.1.70338"}
 {"id": "TOOLTIP_TALENT_NEXT_RANK", "field": "text", "en": "Next rank:", "hash": "31178da221e4e33b", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_TALENT_PREREQ", "field": "text", "en": "Requires %1$d |4point:points; in %2$s", "hash": "571a1c90cbe5ee4b", "src": "db2@1.60.1.70338"}
 {"id": "TOOLTIP_TALENT_RANK", "field": "text", "en": "Rank %d/%d", "hash": "0997bcc3f8493a96", "src": "db2@1.60.1.70338"}
+{"id": "TOOLTIP_TALENT_RANK_APEX", "field": "text", "en": "Rank %d", "hash": "c7a12ad7b1a81111", "src": "db2@1.60.1.70338"}
 {"id": "TOOLTIP_TALENT_RANK_CURRENT_ONLY", "field": "text", "en": "Rank %d", "hash": "c7a12ad7b1a81111", "src": "db2@1.60.1.70338"}
 {"id": "TOOLTIP_TALENT_TIER_POINTS", "field": "text", "en": "Requires %1$d points in %2$s Talents", "hash": "b6295a028918bf2a", "src": "db2@1.60.1.70338"}
 {"id": "TOOLTIP_TRACKER_FIND_GROUP_BUTTON", "field": "text", "en": "Find Group", "hash": "859d27b7ea4cbdd3", "src": "db2@1.60.1.70338"}
@@ -318,6 +322,7 @@
 {"id": "TOWNSFOLK_TRACKING_TEXT", "field": "text", "en": "Townsfolk", "hash": "ffc2da7e64522c6c", "src": "db2@1.60.1.70338"}
 {"id": "TOY", "field": "text", "en": "Toy", "hash": "0016383a4d840e6d", "src": "db2@1.60.1.70338"}
 {"id": "TOYBOX_FAVORITE_HELP", "field": "text", "en": "Right-click to favorite a toy. Favorite toys are pinned to the first page.", "hash": "e4220f64526c9bb9", "src": "db2@1.60.1.70338"}
+{"id": "TOYBOX_MICRO_BUTTON_SPEC_TUTORIAL", "field": "text", "en": "Visit the Toy Box to view your toy collection.", "hash": "e93860773ffcb0f8", "src": "db2@1.60.1.70338"}
 {"id": "TOYBOX_MOUSEWHEEL_PAGING_HELP", "field": "text", "en": "Tip: You can use your mouse wheel to quickly page through the Toy Box.", "hash": "e17db5ea77e3854b", "src": "db2@1.60.1.70338"}
 {"id": "TOY_BOX", "field": "text", "en": "Toy Box", "hash": "a955d9797ffdbade", "src": "db2@1.60.1.70338"}
 {"id": "TRACKED_ITEMS_FILTER_DESCRIPTION", "field": "text", "en": "Indicator on items and locations you have manually pinned to the map and are tracking", "hash": "a51cf649320e53d6", "src": "db2@1.60.1.70338"}
@@ -381,6 +386,13 @@
 {"id": "TRANSMOG_APPEARANCE_USABLE_HOLIDAY", "field": "text", "en": "This appearance is only usable during holiday: %s.", "hash": "be1d872beab47aca", "src": "db2@1.60.1.70338"}
 {"id": "TRANSMOG_ARTIFACT_OPTIONS_HEADER", "field": "text", "en": "Legion Artifact Override", "hash": "3ba7d7019a89c88f", "src": "db2@1.60.1.70338"}
 {"id": "TRANSMOG_COLLECTED", "field": "text", "en": "Collected", "hash": "3e728695d5235bc6", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_COST_MODIFIER_TOOLTIP_AURA", "field": "text", "en": "Bonus discount applied", "hash": "c476ec0cbc9f86d0", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_COST_MODIFIER_TOOLTIP_AURA_OUTFIT", "field": "text", "en": "Bonus and Outfit discount applied", "hash": "b374c2d36d38e162", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_COST_MODIFIER_TOOLTIP_AURA_VOID_ELF", "field": "text", "en": "Bonus and Void Elf discount applied", "hash": "60fcdbbb3d0ef81d", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_COST_MODIFIER_TOOLTIP_FREE", "field": "text", "en": "Updates to this outfit are free", "hash": "5b0fd8d2c532a243", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_COST_MODIFIER_TOOLTIP_OUTFIT", "field": "text", "en": "Outfit discount applied", "hash": "3f4d6cc7cdb1f6bb", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_COST_MODIFIER_TOOLTIP_OUTFIT_VOID_ELF", "field": "text", "en": "Outfit and Void Elf discount applied", "hash": "08473640c7daf9a3", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_COST_MODIFIER_TOOLTIP_VOID_ELF", "field": "text", "en": "Void Elf discount applied", "hash": "0015193d7b94f69b", "src": "db2@1.60.1.70338"}
 {"id": "TRANSMOG_CUSTOM_SETS_HELPTIP", "field": "text", "en": "Create outfits from scratch with your Custom Sets.", "hash": "dfcb5c7f2ea0bc41", "src": "db2@1.60.1.70338"}
 {"id": "TRANSMOG_CUSTOM_SETS_MIGRATION_HELPTIP", "field": "text", "en": "Your previously applied Transmog and legacy outfits are available in Custom Sets.", "hash": "36eba7737c625a55", "src": "db2@1.60.1.70338"}
 {"id": "TRANSMOG_CUSTOM_SETS_NONE", "field": "text", "en": "You don't have any Custom Sets", "hash": "115c76330bd2b460", "src": "db2@1.60.1.70338"}
@@ -420,6 +432,7 @@
 {"id": "TRANSMOG_PENDING_CHANGES", "field": "text", "en": "This outfit has pending changes. Continuing will cause your pending changes to be lost.", "hash": "25021cf9ffae2a2e", "src": "db2@1.60.1.70338"}
 {"id": "TRANSMOG_PREVIEWED_WEAPON_TOGGLE", "field": "text", "en": "View Ranged Weapon", "hash": "a88ed97530d7cb12", "src": "db2@1.60.1.70338"}
 {"id": "TRANSMOG_PURCHASE_OUTFIT_SLOT", "field": "text", "en": "Purchase Outfit Slot", "hash": "249b747408cdde3e", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_PURCHASE_OUTFIT_SLOT_TOOLTIP_DISABLED", "field": "text", "en": "Max %d |4outfit slot:outfit slots; reached.", "hash": "88cd96145d8f8a97", "src": "db2@1.60.1.70338"}
 {"id": "TRANSMOG_SAVE_OUTFIT", "field": "text", "en": "Save Outfit", "hash": "5fd4e894aeb7650a", "src": "db2@1.60.1.70338"}
 {"id": "TRANSMOG_SAVE_OUTFIT_CANNOT_AFFORD_TOOLTIP", "field": "text", "en": "You can't afford to save outfit changes", "hash": "9ec5cad35718ed6a", "src": "db2@1.60.1.70338"}
 {"id": "TRANSMOG_SAVE_OUTFIT_TOOLTIP", "field": "text", "en": "Save and apply outfit changes", "hash": "dfe17107e962a778", "src": "db2@1.60.1.70338"}
@@ -436,6 +449,7 @@
 {"id": "TRANSMOG_SET_PVP", "field": "text", "en": "PvP", "hash": "00152f823da3de67", "src": "db2@1.60.1.70338"}
 {"id": "TRANSMOG_SHEATHE_WEAPON", "field": "text", "en": "Sheathe Weapon", "hash": "0c42ce86092b9b64", "src": "db2@1.60.1.70338"}
 {"id": "TRANSMOG_SHEATHE_WEAPON_TOOLTIP", "field": "text", "en": "Sheathe/Unsheathe Weapon", "hash": "a6bcf3a8c5d3015a", "src": "db2@1.60.1.70338"}
+{"id": "TRANSMOG_SHOW_EQUIPPED_GEAR", "field": "text", "en": "Show Currently Equipped Gear", "hash": "9880646af553e633", "src": "db2@1.60.1.70338"}
 {"id": "TRANSMOG_SITUATIONS_APPLY", "field": "text", "en": "Apply Changes", "hash": "3753f4eac1a5f045", "src": "db2@1.60.1.70338"}
 {"id": "TRANSMOG_SITUATIONS_APPLY_DISABLED_TOOLTIP", "field": "text", "en": "You must select a valid option to apply changes", "hash": "77e689c89e497afd", "src": "db2@1.60.1.70338"}
 {"id": "TRANSMOG_SITUATIONS_DEFAULTS", "field": "text", "en": "Defaults", "hash": "f1d97b2b35500d03", "src": "db2@1.60.1.70338"}
@@ -462,6 +476,7 @@
 {"id": "TRANSMOG_USABLE_DISCOUNT_USE_GOLD", "field": "text", "en": "Use Gold", "hash": "4b802e7767ab8546", "src": "db2@1.60.1.70338"}
 {"id": "TRANSMOG_WEAPON_OPTIONS_HELPTIP", "field": "text", "en": "Different appearances can be assigned for different weapon types you equip.", "hash": "d1633e0eee82ae1e", "src": "db2@1.60.1.70338"}
 {"id": "TRAVEL_PASS_INVITE", "field": "text", "en": "Invite to Group", "hash": "36db2de9f846c335", "src": "db2@1.60.1.70338"}
+{"id": "TRAVEL_PASS_INVITE_CROSS_FACTION", "field": "text", "en": "Invite to Group", "hash": "36db2de9f846c335", "src": "db2@1.60.1.70338"}
 {"id": "TRIAL_CAP_BANKED_LEVELS_TOOLTIP", "field": "text", "en": "You have earned XP that exceeds your level cap.  Buy the game to apply your banked XP and gain %d levels.", "hash": "fc59d79507458b1c", "src": "db2@1.60.1.70338"}
 {"id": "TRIAL_CAP_BANKED_XP_TOOLTIP", "field": "text", "en": "You have earned XP that exceeds your level cap.  Buy the game to apply your banked XP.", "hash": "cac483c048808589", "src": "db2@1.60.1.70338"}
 {"id": "TRIAL_RESTRICTED", "field": "text", "en": "You need to upgrade your account to access this feature.", "hash": "91bda89550edd17f", "src": "db2@1.60.1.70338"}
@@ -482,6 +497,8 @@
 {"id": "TUTORIAL52", "field": "text", "en": "Congratulations, you have received your first Battle Pet. This little fellow will follow you during all of your adventures in Azeroth and beyond.|n|nYou can see all of your Battle Pets by clicking the |cffffd200Collections|r button and then looking for the  |cffffd200Pet Journal|r tab.", "hash": "e53f8fb8de5cb06f", "src": "db2@1.60.1.70338"}
 {"id": "TUTORIAL_HUD_REVAMP_BAG_CHANGES", "field": "text", "en": "Click on this icon to review new filters and bag combining options.", "hash": "816f918e4f1d0e2f", "src": "db2@1.60.1.70338"}
 {"id": "TUTORIAL_HUD_REVAMP_LFG_QUEUE_CHANGES", "field": "text", "en": "You are queued for an activity.\n\nGroup Finder queue information appears in this location.", "hash": "7d6058bcdc243020", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_REAGENT_BAG_STEP_1", "field": "text", "en": "You've obtained a reagent bag!|n|nOpen your bag.", "hash": "9a0fb64c26471f47", "src": "db2@1.60.1.70338"}
+{"id": "TUTORIAL_REAGENT_BAG_STEP_2", "field": "text", "en": "Equip your new reagent bag!|n|nAny crafting materials you pick up will go into this bag.", "hash": "85f5c0da6b740488", "src": "db2@1.60.1.70338"}
 {"id": "TUTORIAL_SUPERTRACK_STEP_1", "field": "text", "en": "Focus on a quest by clicking its icon", "hash": "38d5cc67d418ae89", "src": "db2@1.60.1.70338"}
 {"id": "TUTORIAL_TITLE17", "field": "text", "en": "Replying to Whispers", "hash": "5fd6748b9e60d156", "src": "db2@1.60.1.70338"}
 {"id": "TUTORIAL_TITLE18", "field": "text", "en": "Grouping", "hash": "bb4daef567685336", "src": "db2@1.60.1.70338"}

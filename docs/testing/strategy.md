@@ -502,6 +502,22 @@ The pop-up dialogs, the tooltip frames of their own, the dressing room's custom-
    `(2) セット: 命中率を2.0%上昇させます。`; Alt shows the English. A set line whose bonus the client does not
    name stays English whole.
 
+### Interface lines with links, the bank title and the story header checklist
+Interface lines with links, colour-wrapped names and plural groups ([ADR-067](../adr/067-ui-lines-with-links-colour-wrapped-names-and-plural-groups.md)). With a **fresh level-1 character and an empty quest log**. Alt shows the English line in every step.
+
+1. **A system chat line with a link.** Kill mobs until the character reaches level 2: the level-up line in chat is Japanese around the English link (the link, its label and the level exactly as the game wrote them). Click the link: it still opens what it opened before.
+2. **The bank's title.** Walk to a banker and open the bank: if the bank has an account bank tab, its title is Japanese; the character bank's title stays as written. The page tabs' hover and the money buttons' disabled reason (if shown) are Japanese.
+3. **The quest log story header.** Open the quest log (L): if the list shows a story header for the zone, its progress line is Japanese and the story's name stays English; hover it: the tooltip's progress label and chapter count are Japanese, the chapter names as written. (If no story header shows, record it and skip.)
+4. **A sell price.** Hover an item that sells (a drop such as Linen Cloth): the "Sell Price" line is Japanese, the money kept. Where a tooltip shows a price range instead (a "Sell Price:" header, then indented "Minimum" and "Maximum" lines), those are Japanese too, indent kept.
+5. **A crafted item.** Hover a crafted item (buy one from a crafter, or craft a Linen Bandage with First Aid): the "Made by" line is Japanese with the crafter's name kept, in green as before.
+6. **The duel to the death popup does not taint.** Have a second character challenge this one to a duel to the death (or skip this step solo): the popup's line is Japanese around the challenger's name, accepting works, and afterwards `/wfj log` shows no blocked action from this addon.
+
+**Needs a friend online (not level-1 solo):** when a friend comes online, the chat line is Japanese around the friend's name link. **Needs a group:** a loot roll's lines (need, greed, won) are Japanese around the item link; the "[Loot]" header line stays English.
+
+**Needs a quest with a reputation reward:** open such a quest's reward page: the reputation row reads "<faction>の評価" with the faction's name in English, and its hover is Japanese.
+
+**Needs a friend on the friends list:** remove a Battle.net friend (or open the remove dialog and cancel): the confirmation is Japanese with the friend's name kept as written.
+
 ### Readings checklist
 The word-reading box on quest and NPC-talk prose ([Readings](../systems/readings.md), [ADR-036](../adr/036-readings-hover-word-lists.md)). With a **fresh level-1 Night Elf** in Shadowglen. A crash to desktop at any step is a failure: record the step and the text under the mouse.
 

@@ -34,6 +34,17 @@ local UI = {
   BANK_TAB_ASSIGN_JUNK_CHECKBOX = { "Junk", "ガラクタ" },
   BANK_TAB_IGNORE_IN_CLEANUP_CHECKBOX = { "Ignore this tab", "このタブを無視" },
   BANK_TAB_TOOLTIP_CLICK_INSTRUCTION = { "<Right-click for settings>", "<右クリックで設定>" },
+  ACCOUNT_BANK_PANEL_TITLE = { "Account Bank", "アカウントバンク" },
+  ACCOUNT_BANK_PAGE_NUMBER = { "Account Bank Page %d", "アカウントバンク %dページ" },
+  BAG_CLEANUP_ACCOUNT_BANK = { "Clean Up Account Bank", "アカウントバンクを整理" },
+  BANK_LOCKED_REASON_NO_ACCOUNT_INVENTORY_LOCK = { "The bank is being used by another member of your Account.",
+    "このバンクはアカウントの別のキャラクターが使用中です。" },
+  ACCOUNT_BANK_ERROR_NO_LOCK = { "You cannot access the Account Bank at the same time as another character",
+    "別のキャラクターと同時にアカウントバンクは使えません" },
+  ACCOUNT_BANK_CONFIRM_CLEANUP_PROMPT = { "Are you sure you want to automatically sort your items?|nThis will affect "
+    .. "all "
+    .. "Account tabs.",
+    "アイテムを自動で整理しますか？|nすべてのアカウントタブに影響します。" },
 }
 
 describe("the bank on the Forever client", function()
@@ -49,6 +60,7 @@ describe("the bank on the Forever client", function()
     Stub.installTooltipAPI()
     for key, pair in pairs(UI) do _G[key] = pair[1] end -- the client's GlobalStrings, read by its XML
     CI.install()
+    _G.BankCleanUpConfirmationPopup = { Text = Stub.fontString(_G.ACCOUNT_BANK_CONFIRM_CLEANUP_PROMPT) }
     WFJ = H.loadChunks(FILES)
     H.uiSetup(WFJ, UI)
     WFJ.Labels.forbidNames(WFJ.Bank.NEVER_TOUCH)
@@ -78,7 +90,25 @@ describe("the bank on the Forever client", function()
     assert.are.equal("Bag Slots:", bank().BagText:GetText())
     alt(false)
     assert.is_false(WFJ.Bank.init()) -- once
-    assert.is_nil(Stub.hooks["BankFrame:SetTitle"]) -- the title is never hooked
+    assert.is_not_nil(Stub.hooks["BankFrame:SetTitle"]) -- hooked for the account bank's title only
+  end)
+
+  it("the account bank: its title, page tooltip, lock reason, cleanup prompt and the locked money buttons", function()
+    bank():SetTitle(_G.ACCOUNT_BANK_PANEL_TITLE)
+    assert.are.equal("アカウントバンク", bank().TitleContainer.TitleText:GetText())
+    bank():SetTitle(_G.BANK)
+    assert.are.equal("Bank", bank().TitleContainer.TitleText:GetText())
+    assert.are.equal("アイテムを自動で整理しますか？|nすべてのアカウントタブに影響します。",
+      _G.BankCleanUpConfirmationPopup.Text:GetText())
+    panel().LockPrompt.PromptText:SetText(_G.BANK_LOCKED_REASON_NO_ACCOUNT_INVENTORY_LOCK) -- Refresh's write (lua:1205)
+    WFJ.Bank.onLockPrompt()
+    assert.are.equal("このバンクはアカウントの別のキャラクターが使用中です。", panel().LockPrompt.PromptText:GetText())
+    local money = panel().MoneyFrame.WithdrawButton
+    money.disabledTooltip = _G.ACCOUNT_BANK_ERROR_NO_LOCK
+    _G.GameTooltip:SetOwner(money)
+    _G.GameTooltip:SetText(money.disabledTooltip)
+    _G.GameTooltip:Show()
+    assert.are.equal("別のキャラクターと同時にアカウントバンクは使えません", left(1))
   end)
 
   it("the title stays the English \"Bank\" (a bare Bank label ships as the English), even"

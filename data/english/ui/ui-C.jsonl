@@ -215,6 +215,7 @@
 {"id": "CALENDAR_VIEW_ANNOUNCEMENT", "field": "text", "en": "View Announcement", "hash": "16012424cae57151", "src": "db2@1.60.1.70338"}
 {"id": "CALENDAR_VIEW_COMMUNITY_EVENT", "field": "text", "en": "View Community Event", "hash": "cba9603bfb163867", "src": "db2@1.60.1.70338"}
 {"id": "CALENDAR_VIEW_EVENT", "field": "text", "en": "View Event", "hash": "1cb11e2a3938ba51", "src": "db2@1.60.1.70338"}
+{"id": "CALENDAR_VIEW_EVENTTITLE_LOCKED", "field": "text", "en": "|cff7f7f7f%s|r |cffffd200(Locked)|r", "hash": "0299178a91026da1", "src": "db2@1.60.1.70338"}
 {"id": "CALENDAR_VIEW_EVENTTYPE", "field": "text", "en": "%1$s - %2$s", "hash": "16e178a4c52a3dff", "src": "db2@1.60.1.70338"}
 {"id": "CALENDAR_VIEW_EVENT_REMOVE", "field": "text", "en": "Remove", "hash": "8c017ffbfe93bea6", "src": "db2@1.60.1.70338"}
 {"id": "CALENDAR_VIEW_EVENT_TENTATIVE", "field": "text", "en": "Tentative", "hash": "a60d1addac88b919", "src": "db2@1.60.1.70338"}
@@ -344,6 +345,7 @@
 {"id": "CDMVIS_MARCHING_ANTS_CYAN", "field": "text", "en": "Marching Ants (Cyan)", "hash": "34b7d7b4e5563026", "src": "db2@1.60.1.70338"}
 {"id": "CDMVIS_MARCHING_ANTS_GREEN", "field": "text", "en": "Marching Ants (Green)", "hash": "6dcb927a404202fd", "src": "db2@1.60.1.70338"}
 {"id": "CDMVIS_MARCHING_ANTS_RED", "field": "text", "en": "Marching Ants (Red)", "hash": "ae5c85166df22937", "src": "db2@1.60.1.70338"}
+{"id": "CENSORED_MESSAGE_SENDER", "field": "text", "en": "%s |cffffff00Message to %s flagged as potentially inappropriate.|Hcensoredmessagerewrite:%d:%d:%s|h |W[Rewrite Message]|w|h or |Hcensoredmessageconfirmsend:%d:%d:%s|h|W[Send Anyways]|w|h|r", "hash": "ae61137d0b61c414", "src": "db2@1.60.1.70338"}
 {"id": "CENSORED_MESSAGE_SENT", "field": "text", "en": "%s |cffffff00Message flagged as potentially inappropriate.|r", "hash": "35e9b8c3d1214553", "src": "db2@1.60.1.70338"}
 {"id": "CENSOR_SOURCE_EVERYONE", "field": "text", "en": "Everyone", "hash": "9897aa391749a3b1", "src": "db2@1.60.1.70338"}
 {"id": "CENSOR_SOURCE_EXCLUDE", "field": "text", "en": "Real Time Chat Filtering", "hash": "9fc1662b6604966d", "src": "db2@1.60.1.70338"}
@@ -433,6 +435,7 @@
 {"id": "CHAT_RAID_SEND", "field": "text", "en": "Raid: ", "hash": "ac7f7fdd9c608a38", "src": "db2@1.60.1.70338"}
 {"id": "CHAT_RAID_WARNING_GET", "field": "text", "en": "[Raid Warning] %s: ", "hash": "e79497492bbdb455", "src": "db2@1.60.1.70338"}
 {"id": "CHAT_RAID_WARNING_SEND", "field": "text", "en": "Raid Warning: ", "hash": "1451907b55f95d40", "src": "db2@1.60.1.70338"}
+{"id": "CHAT_RESTRICTED_TRIAL", "field": "text", "en": "A Free Trial account may only send whispers to players that have your character on their friends list. |cffffd000|Hstorecategory:gametime|h[Click To Upgrade]|h|r", "hash": "21a2b3d08c43648e", "src": "db2@1.60.1.70338"}
 {"id": "CHAT_SAY_GET", "field": "text", "en": "%s says: ", "hash": "cfffe7fd342932a0", "src": "db2@1.60.1.70338"}
 {"id": "CHAT_SAY_SEND", "field": "text", "en": "Say: ", "hash": "0b38cdcf59d4dc80", "src": "db2@1.60.1.70338"}
 {"id": "CHAT_SERVER_DISCONNECTED_MESSAGE", "field": "text", "en": "You have been disconnected from the Chat Server and may be unable to send or receive messages.", "hash": "0232dfa9d1dba7fa", "src": "db2@1.60.1.70338"}
@@ -441,6 +444,7 @@
 {"id": "CHAT_STYLE", "field": "text", "en": "Chat Style", "hash": "bb37f2ac44d8e2a9", "src": "db2@1.60.1.70338"}
 {"id": "CHAT_TAB_NAME", "field": "text", "en": "%s Tab", "hash": "4127b8ffe6bda8d3", "src": "db2@1.60.1.70338"}
 {"id": "CHAT_TAB_RIGHT_CLICK", "field": "text", "en": "<Right click for Tab Settings>", "hash": "b74a522eb4058b8a", "src": "db2@1.60.1.70338"}
+{"id": "CHAT_TRIAL_RESTRICTED_NOTICE_TRIAL", "field": "text", "en": "|Hchannel:%d|h[%s]|h Free Trial accounts cannot send messages to this channel. |cffffd000|Hstorecategory:gametime|h[Click To Upgrade]|h|r", "hash": "a948564fdb3e7624", "src": "db2@1.60.1.70338"}
 {"id": "CHAT_TTS_LABEL", "field": "text", "en": "Chat Text to Speech", "hash": "1a71b4cde110f868", "src": "db2@1.60.1.70338"}
 {"id": "CHAT_VOICE", "field": "text", "en": "Voice Chat", "hash": "d15cfb1477a8eae4", "src": "db2@1.60.1.70338"}
 {"id": "CHAT_WHISPER_GET", "field": "text", "en": "%s whispers: ", "hash": "d06123982836f4e9", "src": "db2@1.60.1.70338"}
@@ -491,6 +495,7 @@
 {"id": "CLICK_BINDING_MACRO_TITLE", "field": "text", "en": "%s (Macro)", "hash": "0ba81415c411a5b1", "src": "db2@1.60.1.70338"}
 {"id": "CLICK_BINDING_OPEN_MENU", "field": "text", "en": "Open Context Menu", "hash": "306d8f36dca4e529", "src": "db2@1.60.1.70338"}
 {"id": "CLICK_BINDING_TARGET_UNIT", "field": "text", "en": "Target Unit Frame", "hash": "2244dda495aa4621", "src": "db2@1.60.1.70338"}
+{"id": "CLICK_BINDING_UNBOUND_OUTPUT", "field": "text", "en": "%s Unbound", "hash": "4e496575ddfb6590", "src": "db2@1.60.1.70338"}
 {"id": "CLICK_BIND_MODE", "field": "text", "en": "Click Casting", "hash": "a2b9c460a704ba20", "src": "db2@1.60.1.70338"}
 {"id": "CLICK_CAST_ABOUT_HEADER", "field": "text", "en": "About Click Cast Bindings", "hash": "c82c0b60867cae4d", "src": "db2@1.60.1.70338"}
 {"id": "CLICK_CAST_ALTERNATE", "field": "text", "en": "Alternate click bindings can be set using Shift, Ctrl, or Alt", "hash": "0e9913aab1c39644", "src": "db2@1.60.1.70338"}
@@ -518,6 +523,7 @@
 {"id": "CLUB_FINDER_ALREADY_IN_THAT_CLUB", "field": "text", "en": "Already a member.", "hash": "5eb999ef3edf0d50", "src": "db2@1.60.1.70338"}
 {"id": "CLUB_FINDER_ANY_FLAG", "field": "text", "en": "Any", "hash": "00113e0c0216e739", "src": "db2@1.60.1.70338"}
 {"id": "CLUB_FINDER_APPLICANTS", "field": "text", "en": "Applicants", "hash": "0c923e920d5df0a3", "src": "db2@1.60.1.70338"}
+{"id": "CLUB_FINDER_APPLICANT_HISTORY", "field": "text", "en": "Applicant History", "hash": "72b1e16316eb5df3", "src": "db2@1.60.1.70338"}
 {"id": "CLUB_FINDER_APPLICANT_LIST_NO_MATCHING_SPECS", "field": "text", "en": "No Matches", "hash": "d1aa1c7f4ae3295e", "src": "db2@1.60.1.70338"}
 {"id": "CLUB_FINDER_APPLY", "field": "text", "en": "Apply", "hash": "841aca2233b03947", "src": "db2@1.60.1.70338"}
 {"id": "CLUB_FINDER_APPROVED", "field": "text", "en": "Approved", "hash": "4bfb76ae56c18eb8", "src": "db2@1.60.1.70338"}
@@ -628,6 +634,8 @@
 {"id": "COLLECTIONS", "field": "text", "en": "Account Collections", "hash": "a642643d00f82ac3", "src": "db2@1.60.1.70338"}
 {"id": "COLLECTIONS_JOUNRAL_DISABLED_TOOLTIP", "field": "text", "en": "You have not collected anything yet.", "hash": "000b2a799c3a6679", "src": "db2@1.60.1.70338"}
 {"id": "COLLECTION_PAGE_NUMBER", "field": "text", "en": "Page %d / %d", "hash": "40ac9ece61b31dd3", "src": "db2@1.60.1.70338"}
+{"id": "COLLECTION_UNOPENED_PLURAL", "field": "text", "en": "You have unopened items in your collection.", "hash": "45fbdd1ab47e87be", "src": "db2@1.60.1.70338"}
+{"id": "COLLECTION_UNOPENED_SINGULAR", "field": "text", "en": "You have an unopened item in your collection.", "hash": "22216a116c6c3a9f", "src": "db2@1.60.1.70338"}
 {"id": "COLOR", "field": "text", "en": "Color", "hash": "a712de87543c94c5", "src": "db2@1.60.1.70338"}
 {"id": "COLORIZE", "field": "text", "en": "Colorize:", "hash": "16010f4583ea21b2", "src": "db2@1.60.1.70338"}
 {"id": "COLORS", "field": "text", "en": "Colors", "hash": "7ea7e1315f434ee5", "src": "db2@1.60.1.70338"}
@@ -810,6 +818,7 @@
 {"id": "COMMUNITIES_CREATE_DIALOG_SHORT_NAME_LABEL", "field": "text", "en": "Short Name", "hash": "607a861dc682d436", "src": "db2@1.60.1.70338"}
 {"id": "COMMUNITIES_CREATE_DIALOG_WOW_LABEL", "field": "text", "en": "Create World of Warcraft Community", "hash": "29182c28d6f4a047", "src": "db2@1.60.1.70338"}
 {"id": "COMMUNITIES_CREATE_GROUP", "field": "text", "en": "Create Group", "hash": "c29218d4cabc816f", "src": "db2@1.60.1.70338"}
+{"id": "COMMUNITIES_CROSS_FACTION_BUTTON_TOOLTIP_TITLE", "field": "text", "en": "%s Player", "hash": "cabe994a19b097d5", "src": "db2@1.60.1.70338"}
 {"id": "COMMUNITIES_EDIT_CHANNEL", "field": "text", "en": "Edit Channel", "hash": "23e6c376b6735cf5", "src": "db2@1.60.1.70338"}
 {"id": "COMMUNITIES_EDIT_DIALOG_CROSS_FACTION", "field": "text", "en": "Cross-Faction", "hash": "414d02368a4882d1", "src": "db2@1.60.1.70338"}
 {"id": "COMMUNITIES_FRAME_JUMP_TO_UNREAD", "field": "text", "en": "Unread", "hash": "1d32a6a664c1b94b", "src": "db2@1.60.1.70338"}
@@ -894,6 +903,7 @@
 {"id": "COMMUNITY_INVITATION_FRAME_INVITATION_TEXT", "field": "text", "en": "%s invited you to join", "hash": "b6e722bd087e943f", "src": "db2@1.60.1.70338"}
 {"id": "COMMUNITY_MEMBER_CANCEL_INVITATION_TOOLTIP", "field": "text", "en": "Click to cancel invitation", "hash": "d5f2a2ac2499a8c1", "src": "db2@1.60.1.70338"}
 {"id": "COMMUNITY_MEMBER_CHARACTER_INFO_FORMAT", "field": "text", "en": "Level %d %s %s", "hash": "48db18c2c09d7d4d", "src": "db2@1.60.1.70338"}
+{"id": "COMMUNITY_MEMBER_LIST_CROSS_FACTION", "field": "text", "en": "%s|r\r\nYou can't do outdoor and queued content with this character.", "hash": "4f8348a8e5247898", "src": "db2@1.60.1.70338"}
 {"id": "COMMUNITY_MEMBER_LIST_DROP_DOWN_BATTLETAG_FRIEND", "field": "text", "en": "Add BattleTag Friend", "hash": "fe6410ce20ec7a40", "src": "db2@1.60.1.70338"}
 {"id": "COMMUNITY_MEMBER_LIST_DROP_DOWN_REMOVE", "field": "text", "en": "Remove from Community", "hash": "fe42a4d55722f8d3", "src": "db2@1.60.1.70338"}
 {"id": "COMMUNITY_MEMBER_LIST_DROP_DOWN_ROLES", "field": "text", "en": "Roles", "hash": "ae60882e63f8ce0f", "src": "db2@1.60.1.70338"}
@@ -1019,6 +1029,7 @@
 {"id": "CONFIRM_TEXT_TO_SPEECH_RESET", "field": "text", "en": "Do you want to reset all text to speech settings to default?", "hash": "e81fc45a48bf7e4a", "src": "db2@1.60.1.70338"}
 {"id": "CONFIRM_UPGRADE_ITEM", "field": "text", "en": "Are you sure you wish to spend %s to upgrade the following item?", "hash": "6ebad073074032b7", "src": "db2@1.60.1.70338"}
 {"id": "CONFIRM_UPGRADE_ITEM_BIND", "field": "text", "en": "Are you sure you wish to spend %s to upgrade the following item? Upgrading will cause this item to become soulbound.", "hash": "0252d3a10cdd0237", "src": "db2@1.60.1.70338"}
+{"id": "CONFIRM_XP_LOSS", "field": "text", "en": "If you find your corpse, you can resurrect for no penalty.  If I resurrect you all of your items will take 25%% durability damage (equipped and inventory) and you will be afflicted by %s of |cff71d5ff|Hspell:15007|h[Resurrection Sickness]|h|r.", "hash": "e3cb77e57d4e03fd", "src": "db2@1.60.1.70338"}
 {"id": "CONFIRM_XP_LOSS_AGAIN", "field": "text", "en": "Remember, if you find your corpse there is no penalty.  Are you sure you want to take 25%% durability damage (equipped and inventory) and incur %s of Resurrection Sickness?", "hash": "f52cd1f5bfc020e6", "src": "db2@1.60.1.70338"}
 {"id": "CONFIRM_XP_LOSS_NO_SICKNESS_NO_DURABILITY", "field": "text", "en": "You can find your corpse and resurrect at that location. Players that are below level 10 can resurrect here with no penalty.", "hash": "36aa310a661addb6", "src": "db2@1.60.1.70338"}
 {"id": "CONFIRM_YOUR_ROLE", "field": "text", "en": "Confirm your role:", "hash": "e6ad91114eb48bd8", "src": "db2@1.60.1.70338"}
@@ -1194,7 +1205,9 @@
 {"id": "CORRUPTED_ITEM_LOOT_LABEL", "field": "text", "en": "Corrupted Item!", "hash": "bee509f23e72bff1", "src": "db2@1.60.1.70338"}
 {"id": "COSTS_LABEL", "field": "text", "en": "Cost:", "hash": "a714b61d70070e39", "src": "db2@1.60.1.70338"}
 {"id": "COUNTDOWN_CANCEL_ENCOUNTER_START", "field": "text", "en": "Encounter started, countdown timer canceled.", "hash": "e269b4822b45cef7", "src": "db2@1.60.1.70338"}
+{"id": "COUNTDOWN_CLEAR", "field": "text", "en": "|Hplayer:%s|h[%s]|h canceled the countdown timer.", "hash": "c7cc074bf88e1d33", "src": "db2@1.60.1.70338"}
 {"id": "COUNTDOWN_FOR_COOLDOWNS_TEXT", "field": "text", "en": "Show Numbers for Cooldowns", "hash": "032dfd541c11518a", "src": "db2@1.60.1.70338"}
+{"id": "COUNTDOWN_SET", "field": "text", "en": "|Hplayer:%s|h[%s]|h started a countdown timer.", "hash": "ea05b5a800ca6d59", "src": "db2@1.60.1.70338"}
 {"id": "CRAFTING_ORDERS_IGNORE_CONFIRMATION", "field": "text", "en": "Are you sure you want to ignore %s?", "hash": "8626eee7f5aa0544", "src": "db2@1.60.1.70338"}
 {"id": "CRAFTING_ORDER_FAILED_ACCOUNT_ITEMS", "field": "text", "en": "You currently cannot use reagents from the Account bank in a crafting order. Place them in your bags or the Reagent bank to use them in this order.", "hash": "063af66c177a2f98", "src": "db2@1.60.1.70338"}
 {"id": "CRAFTING_ORDER_FAILED_INVALID_TARGET", "field": "text", "en": "That player does not exist.", "hash": "f58475b9a2f99448", "src": "db2@1.60.1.70338"}
@@ -1227,6 +1240,8 @@
 {"id": "CRITERIA_NOT_COMPLETED", "field": "text", "en": "Not completed", "hash": "db368f0f908a51fe", "src": "db2@1.60.1.70338"}
 {"id": "CROSS_FACTION_CLUB_FINDER_SEARCH_OPTION", "field": "text", "en": "Cross-Faction", "hash": "414d02368a4882d1", "src": "db2@1.60.1.70338"}
 {"id": "CROSS_FACTION_COMMUNITIES_HELPTIP", "field": "text", "en": "You can change your community to Cross-Faction in Settings", "hash": "3e9fa7075149b450", "src": "db2@1.60.1.70338"}
+{"id": "CROSS_FACTION_INVITE_HELPTIP", "field": "text", "en": "You can invite friends from the opposite faction to do instanced content together", "hash": "e1e70f25c00d234a", "src": "db2@1.60.1.70338"}
+{"id": "CROSS_FACTION_INVITE_TOOLTIP", "field": "text", "en": "You can group with this %s player and do many instanced activities together.\n\n|cffffffffCan do:|r\n- Dungeons (premade groups)\n- Raids (non-queued)\n- Unrated and Rated PvP\n- Torghast\n\n|cffffffffCan't do:|r\n- Outdoor content", "hash": "8f60ab1a84821a8f", "src": "db2@1.60.1.70338"}
 {"id": "CR_BLOCK_TOOLTIP", "field": "text", "en": "Blocking reduces damage of an attack by %0.2f%%.\n|cff888888(Against an evenly matched enemy)|r", "hash": "266a408904ad7667", "src": "db2@1.60.1.70338"}
 {"id": "CR_DEFAULT_HIT_CAP_TOOLTIP", "field": "text", "en": "\n|cffBCBCBCTo never miss|r |cFFFF5A5ARaid Bosses|r|cffBCBCBC:\n  8.00%% Melee\n17.00%% Spells\n\nTo never miss|r |cFF52E31ELvl %d Targets/Players|r|cffBCBCBC:\n  5.00%% Melee\n  4.00%% Spells|r", "hash": "61badde78b56ab48", "src": "db2@1.60.1.70338"}
 {"id": "CR_DODGE_BASE_STAT_TOOLTIP", "field": "text", "en": "Increases chance to |cFFFFFFFFDodge|r by %.2f%%\n\nIncreased by |cFFFFFFFFAgility|r and |cFFFFFFFFDefense|r\n\n|cFFBCBCBCDodging nullifies the attack|r\n\n|cFFBCBCBCFor Players, only Melee attacks from the front may be Dodged\n\nFor Creatures, Melee attacks may be Dodged from any direction|r", "hash": "a47802df98744b94", "src": "db2@1.60.1.70338"}

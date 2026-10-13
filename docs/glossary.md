@@ -301,7 +301,7 @@ Names of people, places, mobs, items, spells, and zones stay in English everywhe
 _Avoid_: localized names, transliteration
 
 **UI string**:
-One of Blizzard's own interface words or templates, such as a button ("Accept"), a header ("Quest Objectives") or a tooltip [[Structural line]] ("Binds when picked up", "Requires Level %d"), stored as an [[Entry]] of type `ui`, field `text`, addressed by its [[UI key]]. Never a name ([[Name policy]]). The addon matches it against the client's [[Live English]] for that key, admitted only when the hash equals the shipped `h1` (an item subclass word, an [[Enchantment stat line]], a [[Spell subtext]] or a [[Text family]] row, which have no client string the addon can read, are matched by the live text's fingerprint instead), and fills a template's values from the live line. Its English may carry colour codes, [[Plural grammar]], file textures (`|T…|t`, an icon inside the text; the Japanese keeps each exactly) and the `|n` break, never links, `|K` or `$` tokens.
+One of Blizzard's own interface words or templates, such as a button ("Accept"), a header ("Quest Objectives") or a tooltip [[Structural line]] ("Binds when picked up", "Requires Level %d"), stored as an [[Entry]] of type `ui`, field `text`, addressed by its [[UI key]]. Never a name ([[Name policy]]). The addon matches it against the client's [[Live English]] for that key, admitted only when the hash equals the shipped `h1` (an item subclass word, an [[Enchantment stat line]], a [[Spell subtext]] or a [[Text family]] row, which have no client string the addon can read, are matched by the live text's fingerprint instead), and fills a template's values from the live line. Its English may carry colour codes, [[Plural grammar]], file textures (`|T…|t`, an icon inside the text; the Japanese keeps each exactly), the `|n` break and a link (`|H…|h[label]|h`) whose content is literal text plus plain specifiers, kept byte for byte with its label; never `|K` or `$` tokens, nor a numbered specifier inside a link.
 _Avoid_: global string (that is the client's variable), locale string, UI text (the whole screen)
 → [Data model](architecture/data-model.md) · [ADR-014](adr/014-machine-drafted-text-and-ui-dictionary.md)
 
@@ -314,6 +314,21 @@ _Avoid_: tag, string id, hash key (UI strings are keyed by name, not by a [[Goss
 Blizzard's singular/plural markup inside a [[UI string]] template, `|4singular:plural;` (`%d |4Day:Days;`): the client picks one form from the number before it. The addon matches a template in its all-singular, all-plural and raw forms; the Japanese may drop the group (Japanese has no plural) but keeps the specifier. A template with more than four groups is not matched (counted `unsupported`).
 _Avoid_: pluralization token, `|4` code (fine in code, not as the term)
 → [Pipeline → Rules](systems/pipeline.md#rules) · [ADR-016](adr/016-whole-window-interface-coverage.md)
+
+**Link-only line**:
+A [[UI string]] whose only words are a link's label: `|HlootHistory:%d|h[Loot]|h: %s` (the loot roll header), `%s |Hreportcensoredmessage:%s|h[Report]|h`. A link is kept byte for byte, label included, so such a line has nothing to translate and stays English, with the reason "no words outside the link" in `pipeline/ui_exclusions.txt`. A line with words outside its link is translated around the link.
+_Avoid_: link label (that is the part inside the link), static link (the old rule: only a link that never changed was listed)
+→ [ADR-067](adr/067-ui-lines-with-links-colour-wrapped-names-and-plural-groups.md)
+
+**Bare form**:
+A colour-wrapped [[UI string]] template with its colour codes taken out: `<Made by %s>` for `|cff00ff00<Made by %s>|r`. The client prints some lines either way (the colour on the line instead of in the text), so the [[UI dictionary]] indexes both forms and fills the bare one with the Japanese's colour codes stripped. A bare form never names a dialog's template.
+_Avoid_: stripped template, plain form, uncoloured variant
+→ [Addon modules](architecture/addon-modules.md) · [ADR-067](adr/067-ui-lines-with-links-colour-wrapped-names-and-plural-groups.md)
+
+**Proven reason**:
+The reason a [[UI key]] stays out of `pipeline/ui_keys.txt`, written in `pipeline/ui_exclusions.txt`, when it names something a reader can check: a Forever client file and line, a client table's row count or absence on the current build, a spell id against `SpellName`, a disposition file, another key that ships the same English, or the line being a name, a [[Link-only line]] or wordless markup. A test holds every re-judged key to its verdict and refuses the old unproven phrases ("unverified in game", "curation rule").
+_Avoid_: exclusion reason (any reason), curation rule, in-game check (a check proves presence, not absence)
+→ [Coverage](operations/coverage.md) · [ADR-067](adr/067-ui-lines-with-links-colour-wrapped-names-and-plural-groups.md)
 
 **Enchantment stat line**:
 A tooltip line an enchantment or random suffix prints as a signed amount and words ("+3 Fire Spell Damage", "+5 Stamina"): a [[UI string]] keyed `SpellItemEnchantment:<id>` whose English is that enchantment's display text. Matched by fingerprint. An enchantment's *name* ("Crusader") is a name, never one of these.

@@ -437,11 +437,31 @@ local hooked = false
 
 -- Called by Main after Compat.init. Declares the candidates, hooks the writers that resolve, hooks OnHide.
 -- d = { key(text) → gossip key | nil }; without it the greeting prose is left English.
+-- The reputation reward row (QuestInfoReputationRewardButtonMixin:SetUpMajorFactionReputationReward, mainline/
+-- questinfo.lua:1367–1378): "<faction> Reputation" on its Name, the faction's name kept, and its hover
+-- (OnEnter, :1380–1393) through UI/HelpTooltip. The mixin is hooked once; every pooled row shares it. Its own
+-- surface: QuestInfo_Display builds the rows before onDisplay forgets the spell headers.
+local REPUTATION = "questframe.reputation"
+QuestFrame.REPUTATION = REPUTATION
+local REP_NAME = { only = { "QUEST_REPUTATION_REWARD_TITLE" } }
+local REP_TIP = { only = { "QUEST_REPUTATION_REWARD_TITLE", "QUEST_REPUTATION_REWARD_TOOLTIP",
+  "REPUTATION_TOOLTIP_ACCOUNT_WIDE_LABEL" } }
+local repKey = WFJ.Labels.keyer("reputation.")
+function QuestFrame.onReputationReward(row)
+  if type(row) ~= "table" then return 0 end
+  WFJ.HelpTooltip.register(row, REP_TIP)
+  return WFJ.Labels.show(REPUTATION, repKey(row), row.Name, nil, REP_NAME)
+end
+
 function QuestFrame.init(d)
   deps = d or deps
   for key, names in pairs(CANDIDATES) do Compat.declare(DECLARE, key, names) end
   if hooked then return false end
   hooked = true
+  local repMixin = Compat.resolve("QuestInfoReputationRewardButtonMixin")
+  if type(repMixin) == "table" and type(repMixin.SetUpMajorFactionReputationReward) == "function" then
+    hooksecurefunc(repMixin, "SetUpMajorFactionReputationReward", QuestFrame.onReputationReward)
+  end
   -- by type, not truthiness: a writer bound to a table is not hooked, and a frame without HookScript is skipped
   if type(Compat.get(DECLARE, "display")) == "function" then
     hooksecurefunc("QuestInfo_Display", QuestFrame.onDisplay)

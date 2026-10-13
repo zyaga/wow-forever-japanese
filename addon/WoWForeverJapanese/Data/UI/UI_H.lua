@@ -36,6 +36,7 @@ WFJ.Data.add("ui", {
   ["HEIRLOOMS_CATEGORY_TRINKETS_RINGS_AND_NECKLACES"] = { "装身具、指輪、首飾り", 0x22e6fd2a, "." },
   ["HEIRLOOMS_CATEGORY_WEAPON"] = { "武器", 0x59bdee96, "." },
   ["HEIRLOOMS_JOURNAL_TUTORIAL_UPGRADE"] = { "これは家宝の最大レベルです。特別なアップグレードトークンを使うと、このレベルを上げられます。", 0x74013e35, "." },
+  ["HEIRLOOMS_MICRO_BUTTON_SPEC_TUTORIAL"] = { "家宝パネルを開くと、家宝コレクションを確認できます。", 0x4af9dfb8, "." },
   ["HEIRLOOMS_PVP"] = { "対人戦", 0x00152f82, "." },
   ["HELPFRAME_REPORTLAG_TEXT1"] = { "ラグの報告を送信しました。", 0xb70ff6d7, "." },
   ["HELPFRAME_TICKET_CLICK_HELP"] = { "ここをクリックしてチケットを開きます。", 0x38feb5bd, "." },

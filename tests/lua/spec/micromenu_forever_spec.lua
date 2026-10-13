@@ -69,6 +69,7 @@ local UI = {
   CANCEL = { "Cancel", "キャンセル" },
   NEWBIE_TOOLTIP_QUESTLOG = { "A list of all the active quests you currently have.", "現在受注しているクエストの一覧です。" },
   ITEM_BIND_ON_EQUIP = { "Binds when equipped", "装備時にソウルバウンド" },
+  PET_ACTION_SUBTEXT = { "Pet Command", "ペットコマンド" }, PET_MODE_SUBTEXT = { "Pet Stance", "ペットの態勢" },
 }
 local function ja(key) return UI[key][2] end
 local function en(key) return UI[key][1] end
@@ -384,6 +385,20 @@ describe("the Forever micro menu and game menu", function()
       assert.are.same({ "Cancel" }, tipLines())
       assert.are.equal(writes, left(1).calls.SetText)
       assert.are.equal(0, records())
+    end)
+
+    it("a pet action's subtext line (Pet Command / Pet Stance) translates under its title", function()
+      MM.cvars.UberTooltips = "0"
+      MM.setPetAction(1, { token = "PET_ACTION_ATTACK" })
+      MM.pets[1].tooltipSubtext = en("PET_ACTION_SUBTEXT")
+      MM.setPetAction(5, { token = "PET_MODE_PASSIVE" })
+      MM.pets[5].tooltipSubtext = en("PET_MODE_SUBTEXT")
+      MM.hover(MM.pets[1])
+      assert.are.same({ "攻撃", "ペットコマンド" }, tipLines())
+      MM.leave(MM.pets[1])
+      MM.hover(MM.pets[5])
+      assert.are.same({ "消極的", "ペットの態勢" }, tipLines())
+      MM.leave(MM.pets[5])
     end)
 
     it("pet action tooltips through the C setter (UberTooltips on) translate after SetPetAction", function()

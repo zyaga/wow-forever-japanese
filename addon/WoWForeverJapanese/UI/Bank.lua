@@ -37,7 +37,7 @@ local Compat = WFJ.Compat
 
 -- Widgets this module must never record: an explicit title FontString. BankItemSearchBox (an EditBox) is not listed:
 -- no widget here resolves to it.
-Bank.NEVER_TOUCH = { "BankFrameTitleText" }
+Bank.NEVER_TOUCH = { "BankFrameTitleText" } -- the title is TitleContainer.TitleText, matched by key (ACCOUNT_TITLE)
 
 local function set(list)
   local s = {}
@@ -56,11 +56,17 @@ local CANDIDATES = {
   promptCost     = { "BankFrame.BankPanel.PurchasePrompt.TabCostFrame.TabCost" },
   promptPurchase = { "BankFrame.BankPanel.PurchasePrompt.TabCostFrame.PurchaseButton" },
   lockPrompt     = { "BankFrame.BankPanel.LockPrompt" },
+  cleanupPrompt  = { "BankCleanUpConfirmationPopup.Text" }, -- the account bank's sort confirmation (xml:703–712)
   autoSort       = { "BankFrame.BankPanel.AutoSortButton" },
   depositMenu    = { "BankFrame.BankPanel.TabSettingsMenu.DepositSettingsMenu" },
 }
 local BAG_SLOT_KEYS = { "BANK_BAG", "BANK_BAG_PURCHASE" }
-local LOCK_ONLY = { only = set({ "BANK_LOCKED_REASON_BANK_CONVERSION_FAILED", "BANK_LOCKED_REASON_BANK_DISABLED" }) }
+local LOCK_ONLY = { only = set({ "BANK_LOCKED_REASON_BANK_CONVERSION_FAILED", "BANK_LOCKED_REASON_BANK_DISABLED",
+  "BANK_LOCKED_REASON_NO_ACCOUNT_INVENTORY_LOCK" }) }
+-- the account bank's title (BankPanel:RequestTitleRefresh → SetTitle, bankframetemplates.lua:960–963); a bare
+-- "Bank" ships as the English, so BANK is no key and the title shows only the account bank's
+local ACCOUNT_TITLE = { only = { "ACCOUNT_BANK_PANEL_TITLE" } }
+local MONEY_LOCK = { only = { "ACCOUNT_BANK_ERROR_NO_LOCK" } } -- the money buttons' disabled reason (lua:1417, 1445)
 local CHECKBOX_ONLY = { only = set({ "BANK_TAB_ASSIGN_EQUIPMENT_CHECKBOX", "BANK_TAB_ASSIGN_CONSUMABLES_CHECKBOX",
   "BANK_TAB_ASSIGN_PROFESSION_GOODS_CHECKBOX", "BANK_TAB_ASSIGN_REAGENTS_CHECKBOX", "BANK_TAB_ASSIGN_JUNK_CHECKBOX",
   "BANK_TAB_IGNORE_IN_CLEANUP_CHECKBOX" }) }
@@ -82,6 +88,7 @@ function Bank.showStatic()
     { "ui.deposit", get("deposit") },
     { "ui.promptCost", get("promptCost") },
     { "ui.promptPurchase", get("promptPurchase") },
+    { "ui.cleanupPrompt", get("cleanupPrompt") },
   }
   for _, key in ipairs(HEADERS) do
     items[#items + 1] = { "ui.header." .. key, type(menu) == "table" and menu[key] or nil }
@@ -107,7 +114,8 @@ function Bank.onBagButtons(self)
   return registerPool(type(self) == "table" and self.itemButtonBagPool or nil, BAG_SLOT_KEYS)
 end
 function Bank.onPageTabs(self)
-  return registerPool(type(self) == "table" and self.bankPageTabPool or nil, { "PAGE_NUMBER" })
+  return registerPool(type(self) == "table" and self.bankPageTabPool or nil,
+    { "PAGE_NUMBER", "ACCOUNT_BANK_PAGE_NUMBER" })
 end
 local BANK_TAB_KEYS = { "BANK_TAB_TOOLTIP_CLICK_INSTRUCTION", "BANK_TAB_EXPANSION_ASSIGNMENT",
   "BANK_TAB_DEPOSIT_ASSIGNMENTS" }
@@ -151,7 +159,11 @@ local function hookWriters(frame)
   if hookMethod(panel, "RefreshBankTabs", Bank.onBankTabs) then Bank.onBankTabs(panel) end
   if hookMethod(get("lockPrompt"), "Refresh", Bank.onLockPrompt) then Bank.onLockPrompt() end
   local autoSort = get("autoSort")
-  if type(autoSort) == "table" then WFJ.HelpTooltip.register(autoSort, { only = { "BAG_CLEANUP_BANK" } }) end
+  if type(autoSort) == "table" then
+    WFJ.HelpTooltip.register(autoSort, { only = { "BAG_CLEANUP_BANK", "BAG_CLEANUP_ACCOUNT_BANK" } })
+  end
+  for _, key in ipairs({ "withdraw", "deposit" }) do WFJ.HelpTooltip.register(get(key), MONEY_LOCK) end
+  WFJ.Labels.title(SURFACE, frame, ACCOUNT_TITLE)
   local menu = get("depositMenu")
   local boxes = type(menu) == "table" and menu.DepositSettingsCheckboxes or nil
   if type(boxes) == "table" then

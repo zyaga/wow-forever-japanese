@@ -36,7 +36,8 @@ local CANDIDATES = {
 }
 for i = 1, MAX_MEMBERS do CANDIDATES["member" .. i] = { "PetitionFrameMemberName" .. i } end
 
-local INSTRUCTIONS = { only = { "GUILD_PETITION_LEADER_INSTRUCTIONS", "GUILD_PETITION_MEMBER_INSTRUCTIONS" } }
+local INSTRUCTIONS = { only = { "GUILD_PETITION_LEADER_INSTRUCTIONS", "GUILD_PETITION_MEMBER_INSTRUCTIONS",
+  "ARENA_PETITION_LEADER_INSTRUCTIONS", "ARENA_PETITION_MEMBER_INSTRUCTIONS" } } -- petitionType "arena" (lua:15, 24)
 local UNSIGNED = { only = { "NOT_YET_SIGNED" } }
 
 local function get(key) return Compat.get(SURFACE, key) end
