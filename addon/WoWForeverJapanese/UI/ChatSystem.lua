@@ -6,8 +6,8 @@
 -- (remember / wanted by area).
 -- Writers [verified: Forever 1.60.1.69913]: ChatFrameMixin:MessageEventHandler adds a CHAT_MSG_SYSTEM (and SKILL,
 --   CURRENCY, …) line as self:AddMessage(arg1, info.r, info.g, info.b, info.id) (blizzard_chatframebase/mainline/
---   chatframeoverrides.lua:395–400), after the whisper-window routing that compares arg1 with the English of
---   ERR_CHAT_PLAYER_NOT_FOUND_S / ERR_FRIEND_ONLINE_SS / ERR_FRIEND_OFFLINE_S (:377–394) and after the message filters
+--   chatframeoverrides.lua:406–411), after the whisper-window routing that compares arg1 with the English of
+--   ERR_CHAT_PLAYER_NOT_FOUND_S / ERR_FRIEND_ONLINE_SS / ERR_FRIEND_OFFLINE_S (:388–405) and after the message filters
 --   (Blizzard's battleground roll-up matches English, battlegroundchatfilters.lua). Blizzard's Lua adds its own with
 --   ChatFrameUtil.AddSystemMessage / DisplaySystemMessage*: the same call with ChatTypeInfo.SYSTEM.id
 --   (chatframeutil.lua:297–315). Each chat frame's AddMessage is post-hooked on the instance, so all of that has
@@ -60,7 +60,7 @@ local function secret(value)
 end
 
 -- All system chat: the chat types the event handler adds as the bare text, no sender
--- prefix: self:AddMessage(arg1, info.r, info.g, info.b, info.id) (chatframeoverrides.lua:397–413): system, loot,
+-- prefix: self:AddMessage(arg1, info.r, info.g, info.b, info.id) (chatframeoverrides.lua:408–424): system, loot,
 -- money, currency, XP / honor / reputation, skill, tradeskill, opening, pet info, target icons, battleground system,
 -- achievements (already formatted with the player's link).
 ChatSystem.PLAIN_TYPES = { "SYSTEM", "SKILL", "CURRENCY", "MONEY", "OPENING", "TRADESKILLS", "PET_INFO",
@@ -69,10 +69,10 @@ ChatSystem.PLAIN_TYPES = { "SYSTEM", "SKILL", "CURRENCY", "MONEY", "OPENING", "T
   "ACHIEVEMENT", "GUILD_ACHIEVEMENT" }
 -- System chat lines outside the UIStrings.CHAT_FAMILIES a SYSTEM line may be (Lua-built: chatframeutil.lua:251–263,
 -- the GMOTD, the community channel notices); key-only through UIStrings.ONLY.
--- The voice channel's announce line (channelframe.lua:502–513, DisplaySystemMessageInPrimary): the
+-- The voice channel's announce line (channelframe.lua:828–840, DisplaySystemMessageInPrimary): the
 -- voiceParts form: its three sentences each an entry, the atlas kept. The voice-service switch line,
 -- VOICE_CHAT_SERVICE_SWITCHING:format(the service's name, an entry), printed when the group's voice provider changes
--- while speech features are in use (channelframe.lua:320–329); its companion TTS/STT line is an exact English.
+-- while speech features are in use (channelframe.lua:574–583); its companion TTS/STT line is an exact English.
 ChatSystem.EXTRA_TEMPLATES = { "GUILD_MOTD_TEMPLATE", "TIME_PLAYED_TOTAL", "TIME_PLAYED_LEVEL",
   "COMMUNITIES_CHANNEL_ADDED_TO_CHAT_WINDOW", "COMMUNITIES_CHANNEL_REMOVED_FROM_CHAT_WINDOW",
   "VOICE_CHAT_CHANNEL_ANNOUNCE", "VOICE_CHAT_SERVICE_SWITCHING" }
@@ -252,7 +252,7 @@ local function eachFrame(fn)
 end
 
 -- The prefix the chat frame puts before a player's (or an NPC's, UI/Speech) line: format(_G["CHAT_" .. type ..
--- "_GET"] .. message, pflag .. name, name) (chatframeutil.lua:352–355, chatframeoverrides.lua:629–633). The words of
+-- "_GET"] .. message, pflag .. name, name) (chatframeutil.lua:352–355, chatframeoverrides.lua:640–644). The words of
 -- the prefix are swapped in the finished line; the name, the link around it, the timestamp and the message are left
 -- exactly as the client wrote them. A prefix with a channel link ("[Party]") is not listed and stays English.
 ChatSystem.PREFIXED_TYPES = { "SAY", "YELL", "WHISPER", "WHISPER_INFORM", "BN_WHISPER", "BN_WHISPER_INFORM", "AFK",
@@ -319,7 +319,7 @@ end
 
 -- An emote's chat line (ADR-042) (CHAT_MSG_TEXT_EMOTE, "Bob waves at you."): the client's EmotesTextData text
 -- with the sender's name turned into a player link (string.gsub(message, arg2, pflag..playerLink, 1)) and a
--- timestamp in front when the player turned them on (chatframeoverrides.lua:635–644, 661–664). Its row is slotted
+-- timestamp in front when the player turned them on (chatframeoverrides.lua:646–655, 672–675). Its row is slotted
 -- (EmoteText:<id>): the line's plain text is matched by putting the names back (UIStrings index:matchSlots: the
 -- sender, the player and the target are the names it knows), and the Japanese is filled with each name exactly as the
 -- line wrote it (the sender's link and chat flag kept), the timestamp in front. A line with no matching row stays

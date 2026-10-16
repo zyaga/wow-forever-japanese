@@ -58,8 +58,8 @@ end
 
 local function build()
   local f = W.toolWindow("WFJIntro", WIDTH, 300)
-  -- where the client opens its own popups, clear of the character [verified: forever-ui-1.60.1.70338
-  -- blizzard_staticpopup_game/gamedialog.xml:341, TOP 0,-135]; it grows down, so the voice section moves nothing
+  -- where the client opens its own popups, clear of the character [verified: forever-ui-1.60.1.70425
+  -- blizzard_staticpopup_game/gamedialog.xml:350, TOP 0,-135]; it grows down, so the voice section moves nothing
   f:ClearAllPoints()
   f:SetPoint("TOP", 0, -135)
   if f.Inset then

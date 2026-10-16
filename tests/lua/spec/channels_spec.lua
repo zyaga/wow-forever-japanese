@@ -1,7 +1,7 @@
 -- UI/Channels.lua over ChannelFrame replayed from camelot
--- blizzard_channels/mainline (channelframe.lua:26, channelframe.xml:21–32, voicechatprompt.lua:39–63 + 87–92 +
--- 165–173, rosterbutton.lua:187–191, channellist.lua:10–13 + 79–86), blizzard_voicetogglebutton's roster buttons and
--- Blizzard_ChatFrame's headset / transcription buttons on the channel list (voicechatheadsetbutton.lua:223–252,
+-- blizzard_channels/mainline (channelframe.lua:27, channelframe.xml:21–32, voicechatprompt.lua:39–63 + 87–92 +
+-- 165–173, rosterbutton.lua:191–195, channellist.lua:10–13 + 102–179), blizzard_voicetogglebutton's roster buttons and
+-- Blizzard_ChatFrame's headset / transcription buttons on the channel list (voicechatheadsetbutton.lua:239–268,
 -- voicechattranscriptionbutton.lua:165–174). Channel and member names stay English.
 local S = require("tests.lua.spec.stub_camelot_social")
 local Stub = require("tests.lua.spec.wow_stub")
@@ -22,10 +22,10 @@ local UI = {
   VOICE_CHAT_JOIN = { "Join Voice Chat", "ボイスチャットに参加" },
   VOICE_CHAT_LEAVE = { "Leave Voice Chat", "ボイスチャットから退出" },
   VOICECHAT_DISABLED = { "Voice Chat Disabled", "ボイスチャットは無効です" },
-  -- the headset's age-restriction title (voicechatheadsetbutton.lua:228–230)
+  -- the headset's age-restriction title (voicechatheadsetbutton.lua:247–249)
   AGE_RESTRICTED_VOICE_CHAT_MINOR_TOOLTIP = { "Voice chat and other social features are unavailable on accounts "
     .. "belonging to minors.", "未成年者のアカウントでは、ボイスチャットやその他のソーシャル機能を利用できません。" },
-  -- a Discord party channel's error line under the headset's title (voicechatheadsetbutton.lua:248–250)
+  -- a Discord party channel's error line under the headset's title (voicechatheadsetbutton.lua:264–266)
   DISCORD_VOICE_TTS_STT_UNSUPPORTED = { "Text-to-Speech and Speech-to-Text are not supported in this channel because "
     .. "it uses the Discord service.", "このチャンネルはDiscordサービスを使用しているため、読み上げと音声入力は使えません。" },
   VOICE_CHAT_TRANSCRIPTION_ENABLE = { "Enable Voice Transcription", "音声の文字起こしを有効化" },
@@ -61,7 +61,7 @@ local function installChannels(o)
     frame.ChannelRoster.ScrollBox:initFrame(row, {})
     return row
   end
-  -- ChannelListMixin (channellist.lua:10–13, 79–86): three frame pools of ChannelButtonTemplate rows, each with a
+  -- ChannelListMixin (channellist.lua:10–13, 102–179): three frame pools of ChannelButtonTemplate rows, each with a
   -- Speaker (VoiceChatHeadsetTemplate: Button + Transcription.Button), refilled by :Update
   local list = S.put(frame, "ChannelList", S.frame(nil, "ChannelList"))
   local function speakerRow()

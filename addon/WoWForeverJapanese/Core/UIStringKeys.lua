@@ -122,7 +122,7 @@ UIStrings.ARGS = {
   BNET_LAST_ONLINE_TIME = { [1] = "time" }, FRIENDS_LIST_STATUS_TOOLTIP = { [1] = "word" },
   -- the talent tooltip's rank arrives colour-wrapped (blizzard_talentbuttonspend.lua:84–92); a
   -- replacing spell, a player and an item are names; the weapon-skill pane's values are FormatSignedPercent /
-  -- FormatPercent output ("+5.00%", "40%": camelot/skillsframe.lua:86–101, 297–315)
+  -- FormatPercent output ("+5.00%", "40%": camelot/skillsframe.lua:87–102, 298–316)
   TALENT_BUTTON_TOOLTIP_RANK_FORMAT = { [1] = "text" }, TALENT_BUTTON_TOOLTIP_RANK_NO_MAX_FORMAT = { [1] = "text" },
   TALENT_BUTTON_TOOLTIP_REPLACED_BY_FORMAT = { [1] = "text" }, TALENT_FRAME_INCREASED_RANKS_TEXT = { [2] = "text" },
   TALENTS_INSPECT_FORMAT = { [1] = "text" },
@@ -185,7 +185,7 @@ UIStrings.ARGS = {
   CLUB_FINDER_RECRUITING_FOUR_SPECS = { [1] = "text", [2] = "text", [3] = "text", [4] = "text", [5] = "text" },
   COMMUNITIES_CALENDAR_EVENT_FORMAT = { [1] = "word", [2] = "text" },
   -- the name-check result is the client's sentence (C_Club.GetCommunityNameResultText, red-wrapped,
-  -- communitiessettings.lua:350–366), periods included: `verbatim`, so these three are key-only (ONLY below)
+  -- communitiessettings.lua:355–371), periods included: `verbatim`, so these three are key-only (ONLY below)
   COMMUNITIES_CREATE_DIALOG_NAME_ERROR = { [1] = "verbatim" },
   COMMUNITIES_CREATE_DIALOG_SHORT_NAME_ERROR = { [1] = "verbatim" },
   COMMUNITIES_CREATE_DIALOG_NAME_AND_SHORT_NAME_ERROR = { [1] = "verbatim", [2] = "verbatim" },
@@ -293,10 +293,10 @@ UIStrings.ARGS = {
   LEVEL_UP_STAT = { [1] = "words" }, MARKED_AFK_MESSAGE = { [1] = "verbatim" }, MARKED_DND = { [1] = "verbatim" },
   GUILD_MOTD_TEMPLATE = { [1] = "verbatim" }, TIME_PLAYED_TOTAL = { [1] = "entry" },
   TIME_PLAYED_LEVEL = { [1] = "entry" },
-  -- the voice service a group switched to: VOICE_CHAT_SERVICE_DISCORD / _LEGACY (channelframe.lua:326)
+  -- the voice service a group switched to: VOICE_CHAT_SERVICE_DISCORD / _LEGACY (channelframe.lua:580)
   VOICE_CHAT_SERVICE_SWITCHING = { [1] = "entryOrText" }, -- "Discord" is a name and stays as written
   -- a group finder listing's voice mode, VOICE_CHAT_MODE_NONE / _LEGACY / _DISCORD / _CUSTOM
-  -- (blizzard_groupfinder_vanillastyle/blizzard_lfgvanilla_browse.lua:676–679)
+  -- (blizzard_groupfinder_vanillastyle/blizzard_lfgvanilla_browse.lua:697–700)
   VOICE_CHAT_MODE_FORMAT = { [1] = "entry" },
   -- the add-alert disabled tooltip, "Cannot add cooldown alert: %s" around a status key
   -- (cooldownviewersettings.lua:291–292, 1793–1798)
@@ -524,8 +524,8 @@ UIStrings.ARGS = {
   CLUB_FINDER_LINK_GUILD = { [1] = "text" },
   CLUB_INVITE_HYPERLINK_TEXT = { [1] = "text" },
   COMMUNITIES_ADD_DIALOG_CREATE_WOW_LABEL = { [1] = "text" },
-  CONFIRM_DESTROY_CHARACTER_COMMUNITY = { [1] = "text" },
-  CONFIRM_DESTROY_COMMUNITY = { [1] = "text" },
+  CONFIRM_DESTROY_CHARACTER_COMMUNITY_UNPROMPTED = { [1] = "text" },
+  CONFIRM_DESTROY_COMMUNITY_UNPROMPTED = { [1] = "text" },
   CONFIRM_GLYPH_PLACEMENT_NO_COST = { [1] = "text", [2] = "text" },
   CONFIRM_GLYPH_REMOVAL = { [1] = "text" },
   CONFIRM_LEAVE_CHARACTER_COMMUNITY_SUBTEXT = { [1] = "verbatim" },
@@ -535,6 +535,7 @@ UIStrings.ARGS = {
   CONFIRM_UPGRADE_ITEM_BIND = { [1] = "text" },
   CONFIRM_XP_LOSS_AGAIN = { [1] = "text" },
   CRITERIA_COMPLETED_DATE = { [1] = "text" },
+  DIALOG_CONFIRMATION_PROMPT_MKB = { [1] = "text" }, -- the word the player types to confirm, as the client wrote it
   DISCORD_USER_WITH_ID = { [1] = "text" },
   FRIENDS_FRIENDS_HEADER = { [1] = "text" },
   GENERIC_TRAIT_FRAME_CONFIRM_PURCHASE_FORMAT = { [1] = "text" },
@@ -576,7 +577,7 @@ UIStrings.ARGS = {
   RENOWN_REWARD_TITLE_NAME_FORMAT = { [1] = "text" },
   RESURRECT_REQUEST_NO_SICKNESS_TIMER = { [1] = "text", [3] = "text" },
   RESURRECT_REQUEST_TIMER = { [1] = "text", [3] = "text" },
-  SHARD_TRANSFER_COUNTDOWN_MESSAGE = { [1] = "text", [2] = "entry" }, -- [2] SECONDS / MINUTES (socialtoast.lua:73-81)
+  SHARD_TRANSFER_COUNTDOWN_MESSAGE = { [1] = "text", [2] = "entry" }, -- [2] SECONDS / MINUTES (socialtoast.lua:78-86)
   SHARD_TRANSFER_COUNTDOWN_STATIC_POPUP_MESSAGE = { [1] = "text", [2] = "text" },
   SHARD_TRANSFER_REFRESH_MESSAGE = { [1] = "text", [2] = "entry" },
   SLASH_CAA_CONFIRMATION = { [1] = "text", [2] = "text" },
@@ -636,11 +637,13 @@ UIStrings.CHAT_FAMILIES = { "^LOOT_ITEM$", "^LOOT_ITEM_", "^LOOT_ROLL_", "^CREAT
   "^COOLDOWN_VIEWER_SETTINGS_COPY_TO_CLIPBOARD_NOTICE$", "^HUD_EDIT_MODE_COPY_TO_CLIPBOARD_NOTICE$",
   "^HUD_EDIT_MODE_LAYOUT_APPLIED$", "^VOICE_CHAT_CHANNEL_ANNOUNCE_MEMBER_",
   "^VOICE_CHAT_CHANNEL_MANAGEMENT_TIP$", -- printed into chat (channelframe.lua)
-  -- the level-up line and its link (chatframeutiloverrides.lua:84), the countdown timer's lines (timer.lua:165–167),
-  -- the newcomer chat's welcome (channelframe.lua:736–742), the censored-message prompts (chatframeutil.lua:869;
-  -- itemrefhandlersshared.lua:204) and the trial restriction notices (chatframeoverrides.lua:436, 480)
-  "^LEVEL_UP$", "^COUNTDOWN_SET$", "^COUNTDOWN_CLEAR$", "^NPEV2_CHAT_WELCOME_TO_CHANNEL_", "^CENSORED_MESSAGE_",
-  "^CHAT_RESTRICTED_TRIAL$", "^CHAT_TRIAL_RESTRICTED_NOTICE_TRIAL$" }
+  -- the level-up lines, the [Level N] link and the talent point line, printed on PLAYER_LEVEL_UP
+  -- (blizzard_chatframebase/camelot/chatframeutiloverrides.lua:1–44, called from camelot/chatframeoverrides.lua:5;
+  -- LEVEL_UP_CHAR_POINTS through GetText at :18), the countdown timer's lines (timer.lua:165–167),
+  -- the newcomer chat's welcome (channelframe.lua:1033–1039), the censored-message prompts (chatframeutil.lua:869;
+  -- itemrefhandlersshared.lua:204) and the trial restriction notices (chatframeoverrides.lua:447, 491)
+  "^LEVEL_UP$", "^LEVEL_UP_CHAR_POINTS$", "^COUNTDOWN_SET$", "^COUNTDOWN_CLEAR$", "^NPEV2_CHAT_WELCOME_TO_CHANNEL_",
+  "^CENSORED_MESSAGE_", "^CHAT_RESTRICTED_TRIAL$", "^CHAT_TRIAL_RESTRICTED_NOTICE_TRIAL$" }
 
 -- The duration templates a `time` argument may be: which of them the C client prints inside a cooldown line
 -- is not in the UI source, so every candidate is listed.
@@ -880,7 +883,7 @@ UIStrings.FAMILY_LIST_KINDS = { petFoodList = "PetFood" }
 --   icon       "|T…|t <entry>" / "|A…|a <entry>" (a role radio's INLINE_TANK_ICON .. " " .. TANK, the friends
 --              status radios): the icon markup kept verbatim in front of the Japanese
 --   optionTip  "|cAARRGGBB<entry>|r: |cAARRGGBB<entry>|r" / "|cAARRGGBB<entry>|r:" (a Settings option's
---              "<label>: <tooltip>" line, blizzard_settings.lua:441–457): both halves in Japanese, each colour kept
+--              "<label>: <tooltip>" line, blizzard_settings.lua:445–461): both halves in Japanese, each colour kept
 -- `wrapped` also takes a `number`-form label inside the colour ("|cffffffffStrength 18|r", the paperdoll hovers), and
 -- `binding` also takes the pet bar's "|cffffd200 (Ctrl-1)|r" variant with the space inside the colour.
 UIStrings.LABELS = { SPEED = "number", RANK = "number",
@@ -910,7 +913,7 @@ UIStrings.LABELS = { SPEED = "number", RANK = "number",
   GROUP = "number", RAID_INSTANCE_EXPIRES_EXPIRED = "wrapped", MAINMENUBAR_LATENCY_LABEL = "colonPrefix",
   WHO_FRAME_TOTAL_TEMPLATE = "joined", WHO_FRAME_SHOWN_TEMPLATE = "joined",
   NEWBIE_TOOLTIP_XPBAR = "paragraphs", EXHAUST_TOOLTIP1 = "paragraphs", -- ExpBarOverrides.lua:23–27
-  -- the camelot Spirit tooltip and the sitting warning joined after it (paperdollframestats.lua:283)
+  -- the camelot Spirit tooltip and the sitting warning joined after it (paperdollframestats.lua:310)
   DEFAULT_SPIRIT_TOOLTIP = "paragraphs", SPIRIT_STANDING_WARNING = "paragraphs",
   SPELLBOOK = "binding", PET_TYPE_PET = "binding", PET_TYPE_DEMON = "binding", -- spellbook tab tooltips (xml:43–45)
   -- Forever's (mainline family) micro-button titles via MicroButtonTooltipText ("Professions |cffffd200(K)|r")
@@ -939,7 +942,7 @@ UIStrings.LABELS = { SPEED = "number", RANK = "number",
   -- an empty key slot on the key bindings page, grey-wrapped (blizzard_sharedxml/bindingutil.lua:228)
   NOT_BOUND = "wrapped",
   -- colour-wrapped Communities menu entries (clubfinder.lua:1101–1102; clubfinderapplicantlist.lua:69–70;
-  -- communitiesstreams.lua:89–90)
+  -- communitiesstreams.lua:90–91)
   CLUB_FINDER_REAPPLY = "wrapped", CLUB_FINDER_INVITE_APPLICANT_REDO = "wrapped",
   COMMUNITIES_CREATE_CHANNEL = "wrapped",
   -- ADR-030
