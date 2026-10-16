@@ -397,7 +397,6 @@ WFJ.Data.add("gloss", {
   [25394] = "ひれ伏す\tひれふす\tgroveling (prostrated)",
   [25395] = "ひれ伏す\tひれふす\tgrovels (while)",
   [25396] = "ひれ伏す\tひれふす\tprostrated himself",
-  [25397] = "ひれ伏す\tひれふす\tsupplicating themselves",
   [25398] = "ひれ伏す\tひれふす\twill be at (bow down)",
   [25399] = "ひんやりする\tひんやりする\tchill (is chilly)",
   [25400] = "ひんやりとした\tひんやりとした\tcool",

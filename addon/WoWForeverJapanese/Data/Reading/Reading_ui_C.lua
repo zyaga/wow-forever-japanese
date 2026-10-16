@@ -743,7 +743,6 @@ WFJ.Data.add("reading", {
   ["ui:COMBO_POINTS"] = { text = "コンボ=コンボ=32947 ポイント=ポイント=34990" },
   ["ui:COMMUNITIES_ADD_DIALOG_BATTLE_NET_LABEL"] = { text = "グループ=グループ=32812 作成=さくせい=43962" },
   ["ui:COMMUNITIES_ADD_DIALOG_CREATE_BNET_LABEL"] = { text = "グループ=グループ=32812 作成=さくせい=43962" },
-  ["ui:COMMUNITIES_ADD_DIALOG_CREATE_WOW_LABEL"] = { text = "コミュニティ=コミュニティ=32910 作成=さくせい=43962 または=または=26678 勢力間=せいりょくかん=53037" },
   ["ui:COMMUNITIES_ADD_DIALOG_CREATE_WOW_LABEL_NO_FACTION"] = { text = "コミュニティ=コミュニティ=32910 作成=さくせい=43962" },
   ["ui:COMMUNITIES_ADD_DIALOG_INVITE_LINK_DESCRIPTION"] = { text = "コミュニティ=コミュニティ=32910 招待=しょうたい=80913 リンク=リンク=35395 または=または=26678 コード=コード=32956 入力=にゅうりょく=47706" },
   ["ui:COMMUNITIES_ADD_DIALOG_INVITE_LINK_JOIN"] = { text = "参加=さんか=54183" },

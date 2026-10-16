@@ -163,6 +163,14 @@ UIStrings.ARGS = {
   -- friends / Communities: the location after a Recruit-A-Friend label, and a member's race and
   -- class in the roster tooltip, are names, kept as written
   RAF_RECRUIT_FRIEND = { [1] = "text" }, RAF_RECRUITER_FRIEND = { [1] = "text" },
+  -- the friends list's privacy notice: the tab's name, a dictionary word (camelot friendsframe.lua:685)
+  SOCIAL_TAB_UNAVAILABLE = { [1] = "word" },
+  -- the new player tutorial: a key name (NPE_UNBOUND_KEYBIND when the key is unbound) and a cyan spell name, both
+  -- shown as the client wrote them (blizzard_newplayerexperience/blizzard_tutorialtutorials.lua; FormatString,
+  -- blizzard_tutorialmanager/blizzard_tutorialhelper.lua:39–67)
+  NPEV2_SHOW_BAGS = { [1] = "text" }, NPEV2_OPENCHARACTERSHEET = { [1] = "text" },
+  NPEV2_PRESS_KEY_TO_USE_ABILITY = { [1] = "text", [2] = "text" },
+  NPEV2_PLACE_ABILITY_BACK_ON_ACTION_BAR = { [1] = "text" },
   COMMUNITY_MEMBER_CHARACTER_INFO_FORMAT = { [2] = "text", [3] = "text" },
   -- objective lines ("3/10 Kobold Vermin slain", "Neutral / Friendly Darnassus"): the mob, the faction
   -- and the player group are names, kept as written; a standing is a dictionary word, shown in Japanese
@@ -854,6 +862,9 @@ UIStrings.OWN = {
   COMBATLOG_FILTER_STRING_FRIENDLY_UNITS = true,
   -- UI/Crafting: the recipe form's "Reagents:" is crafting materials (素材); in a spell tooltip it is 触媒
   PROFESSIONS_REAGENT_CONTAINER_LABEL = true,
+  -- the combat text options' menu entries: "Effects" is the effects shown on a target (効果; the volume slider is
+  -- 効果音) and "Shields" is an absorb shield (シールド; the item subclass is 盾)
+  SHOW_TARGET_EFFECTS = true, SHOW_COMBAT_HEALING_ABSORB_SELF = true, SHOW_COMBAT_HEALING_ABSORB_TARGET = true,
 }
 
 -- argument kind → the one fingerprint family it may be shown as

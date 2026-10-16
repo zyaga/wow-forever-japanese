@@ -73,6 +73,8 @@ WFJ.Data.add("ui", {
   ["FLIGHT_MAP_CLICK_TO_ZOOM_IN"] = { "<クリックで拡大>", 0x0976eefb, "." },
   ["FLIGHT_MAP_CLICK_TO_ZOOM_OUT_HINT"] = { "右クリックで縮小", 0xe4a82053, "." },
   ["FLIGHT_MAP_WORLD_QUESTS"] = { "ここで%d件のワールドクエストが発生中。", 0x3cea66e9, "." },
+  ["FLOATING_COMBAT_TEXT_ON_ME_DROPDOWN_LABEL"] = { "自分のテキスト", 0x6f5d0c38, "." },
+  ["FLOATING_COMBAT_TEXT_ON_TARGET_DROPDOWN_LABEL"] = { "ターゲットのテキスト", 0xa5efc272, "." },
   ["FOCUS"] = { "フォーカス", 0xdbb9a93c, "." },
   ["FOCUS_CAST_KEY_TEXT"] = { "フォーカスキャストキー", 0xd2a4af62, "." },
   ["FOCUS_COST"] = { "フォーカス %s", 0xbbf158a4, "." },
