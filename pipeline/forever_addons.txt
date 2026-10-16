@@ -3,7 +3,7 @@ blizzard_accessibilitytemplates login 8
 blizzard_accountsaveui glue 0
 blizzard_accountstore gated 0
 blizzard_achievementui lod 5
-blizzard_actionbar login 33
+blizzard_actionbar login 35
 blizzard_actionbarcontroller login 2
 blizzard_actionstatus login 2
 blizzard_addfriend login 2
@@ -14,7 +14,7 @@ blizzard_alliedracesui lod 4
 blizzard_animadiversionui lod 8
 blizzard_animatedshine login 2
 blizzard_apidocumentation lod 8
-blizzard_apidocumentationgenerated lod 640
+blizzard_apidocumentationgenerated lod 641
 blizzard_archaeologyui lod 4
 blizzard_ardenwealdgardening lod 3
 blizzard_arrowcalloutframe gated 0
@@ -29,7 +29,7 @@ blizzard_azeriteessenceui lod 3
 blizzard_azeriterespecui lod 3
 blizzard_azeriteui lod 14
 blizzard_barbershopui lod 3
-blizzard_battlefieldmap lod 4
+blizzard_battlefieldmap lod 5
 blizzard_behavioralmessaging lod 4
 blizzard_blackmarketui lod 4
 blizzard_bnet login 3
@@ -48,8 +48,8 @@ blizzard_charactercreate glue 0
 blizzard_charactercustomize lod 3
 blizzard_characterselectnavbar glue 0
 blizzard_chatbubble login 1
-blizzard_chatframe login 21
-blizzard_chatframebase login 30
+blizzard_chatframe login 22
+blizzard_chatframebase login 33
 blizzard_chatframeutil login 1
 blizzard_chromietimeui lod 3
 blizzard_classmenu login 1
@@ -137,7 +137,8 @@ blizzard_gamemenuesc login 1
 blizzard_gamemodeselect glue 0
 blizzard_gamepad login 15
 blizzard_gamepadactionbars login 33
-blizzard_gamepadsharedutility login 24
+blizzard_gamepadsharedutility login 26
+blizzard_gamepadsharedutilitysecure login 2
 blizzard_gamepadsmartnavigation login 4
 blizzard_gamepadsoftcursor login 2
 blizzard_gamepadtargeting login 5
@@ -211,14 +212,14 @@ blizzard_matchmakingqueuedisplay login 2
 blizzard_mawbuffs login 2
 blizzard_menu login 14
 blizzard_micromenu login 9
-blizzard_minimap login 11
+blizzard_minimap login 23
 blizzard_mirrortimer login 2
 blizzard_moneyframe login 9
 blizzard_moneyreceipt login 1
 blizzard_movepad lod 3
 blizzard_nameplates login 21
 blizzard_narration login 6
-blizzard_newplayerexperience lod 9
+blizzard_newplayerexperience lod 10
 blizzard_newplayerexperienceguide lod 4
 blizzard_notification login 2
 blizzard_objectapi login 12
@@ -305,12 +306,12 @@ blizzard_statustrackingbar login 23
 blizzard_statustraymanager login 1
 blizzard_statusui lod 2
 blizzard_storeui login 18
-blizzard_subscriptioninterstitialui lod 3
+blizzard_subscriptioninterstitialui lod 4
 blizzard_subtitles login 2
 blizzard_swingtimer login 2
 blizzard_textstatusbar login 2
 blizzard_tieredentrancetraits login 2
-blizzard_timemanager lod 4
+blizzard_timemanager lod 5
 blizzard_timerunningcharactercreate glue 0
 blizzard_timerunningutil login 1
 blizzard_tokenui login 5
@@ -320,7 +321,7 @@ blizzard_transformmanipulator login 4
 blizzard_transformtree lod 5
 blizzard_transmog lod 7
 blizzard_transmogshared lod 1
-blizzard_tutorialmanager login 12
+blizzard_tutorialmanager login 13
 blizzard_tutorials login 15
 blizzard_tutorialtemplates lod 1
 blizzard_uierrorsframe login 3
@@ -332,7 +333,7 @@ blizzard_uiparent login 1
 blizzard_uiparentpanelmanager login 5
 blizzard_uiparentutil login 1
 blizzard_uiwidgets login 79
-blizzard_unitframe login 71
+blizzard_unitframe login 73
 blizzard_unitpopup login 10
 blizzard_unitpopupshared login 5
 blizzard_visualalerts login 6

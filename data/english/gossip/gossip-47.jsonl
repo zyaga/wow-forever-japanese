@@ -13,6 +13,7 @@
 {"id": "4760a888d757f635", "field": "text", "en": "I need a ride.", "hash": "4760a888d757f635", "src": "vmangos@13b49dc"}
 {"id": "4761cd0695929b55", "field": "text", "en": "%s begins to billow smoke and catches on fire! You get the feeling you should RUN!", "hash": "4761cd0695929b55", "src": "vmangos@13b49dc"}
 {"id": "4769c047a010f78e", "field": "text", "en": "I am Balgaras the Foul.  And you, $n, are about to become nothing more than ash and dust.", "hash": "4769c047a010f78e", "src": "vmangos@13b49dc"}
+{"id": "476a9fd89049cf1e", "field": "text", "en": "Speak with the captive satyr", "hash": "476a9fd89049cf1e", "src": "wdb@1.60.1.70425"}
 {"id": "476af8c4b5742ab5", "field": "text", "en": "Can I go collect more rocks for my necklace, Papa?", "hash": "476af8c4b5742ab5", "src": "vmangos@13b49dc"}
 {"id": "4771c2f623d487df", "field": "text", "en": "You have truly grown more cunning, $n.", "hash": "4771c2f623d487df", "src": "vmangos@13b49dc"}
 {"id": "4772a8d0dfd86173", "field": "text", "en": "The collar is indeed infused with demonic power, $n.  This bodes ill for our people.", "hash": "4772a8d0dfd86173", "src": "vmangos@13b49dc"}
