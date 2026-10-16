@@ -337,7 +337,6 @@ WFJ.Data.add("gloss", {
   [137334] = "飲む\tのむ\tif you drink",
   [137335] = "飲む\tのむ\timbibed (drink)",
   [137336] = "飲む\tのむ\timbiber (drank)",
-  [137337] = "飲む\tのむ\tis not drunk",
   [137338] = "飲む\tのむ\tlet me drink",
   [137339] = "飲む\tのむ\tlet me finish (drink)",
   [137340] = "飲む\tのむ\tlet's drink",

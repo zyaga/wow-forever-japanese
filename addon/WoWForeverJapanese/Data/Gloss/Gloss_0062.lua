@@ -129,7 +129,6 @@ WFJ.Data.add("gloss", {
   [62126] = "大いなる\tおおいなる\tmuch (great)",
   [62128] = "大いに\tおおいに\ta great deal",
   [62129] = "大いに\tおおいに\ta long way (greatly)",
-  [62130] = "大いに\tおおいに\ta lot (greatly)",
   [62131] = "大いに\tおおいに\tbig (greatly)",
   [62132] = "大いに\tおおいに\tdefinitely (greatly)",
   [62133] = "大いに\tおおいに\tdramatically (greatly)",

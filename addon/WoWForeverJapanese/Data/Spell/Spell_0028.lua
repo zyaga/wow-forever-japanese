@@ -292,5 +292,5 @@ WFJ.Data.add("spell", {
   [28991] = { "敵に網をかけ、$D1の間動けなくします。", "移動できません。", 0xc19c3572, 0x18deeb81, "uu" },
   [28995] = { nil, "$D1かけて体力が$N1回復します。", nil, 0x6ed72e1e, "mu" },
   [28996] = { "Fire、Frost、Natureの効果から受けるダメージを$N1%軽減します。", nil, 0x22b34bd2, nil, "um" },
-  [28999] = { "Lightning Bolt、Chain Lightning、Fire Nova、Lava Burstの射程を$N1ヤード延長し、Flame Shockの射程を$N2ヤード延長します。", nil, 0x9466169d, nil, "um" },
+  [28999] = { "Lightning Bolt、Chain Lightning、Fire Nova、Lava Burstの射程を$N1ヤード延長し、Totemic Projectionのクールダウンを$D1短縮します。", nil, 0x6e4fa2f9, nil, "um" },
 })

@@ -590,7 +590,6 @@ WFJ.Data.add("gloss", {
   [10587] = "しっかりと\tしっかりと\ttightly",
   [10588] = "しっかりと\tしっかりと\twell",
   [10589] = "しっかりと\tしっかりと\twell (firmly)",
-  [10590] = "しっかりと\tしっかりと\twell; firmly",
   [10591] = "しっかりとする\tしっかりとする\tstrong (firm)",
   [10592] = "しっくりくる\tしっくりくる\tdoesn't feel quite right",
   [10593] = "しっしっ\tしっしっ\tshoo shoo",

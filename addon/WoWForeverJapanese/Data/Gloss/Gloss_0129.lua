@@ -497,7 +497,6 @@ WFJ.Data.add("gloss", {
   [129495] = "通貨\tつうか\tcurrency",
   [129496] = "通路\tつうろ\tcorridor",
   [129497] = "通路\tつうろ\tcorridors",
-  [129498] = "通路\tつうろ\thighways (passages)",
   [129499] = "通路\tつうろ\thighways; passages",
   [129500] = "通路\tつうろ\tpassage",
   [129501] = "通路\tつうろ\tpassages",

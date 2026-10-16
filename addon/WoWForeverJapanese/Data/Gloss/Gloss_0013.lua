@@ -514,7 +514,6 @@ WFJ.Data.add("gloss", {
   [13512] = "そうだ\tそうだ\t(I) hear that (it is said)",
   [13513] = "そうだ\tそうだ\t(as) he was",
   [13514] = "そうだ\tそうだ\t(he says)",
-  [13515] = "そうだ\tそうだ\t(he) said it is",
   [13516] = "そうだ\tそうだ\t(he) says",
   [13517] = "そうだ\tそうだ\t(it is said)",
   [13518] = "そうだ\tそうだ\t(she) said",

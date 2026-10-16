@@ -18,6 +18,7 @@ WFJ.Data.add("gossip", {
   ["1e5da87e9e3ca51e"] = { "Scourge、Magic Quarter攻撃する！", "." },
   ["1e67ba772d9d01f1"] = { "ああ、Bonescytheだ。実はな、この件を始めるきっかけをくれたのは、我々のテノール歌手、Don Julioという気難しい男だった。Lordaeron中を旅するうちに、Don Julioは多くの興味深い技を身につけた。そのひとつが、倒れたScourgeの骨を使って、恐るべき革鎧一式に仕立てる技だ。暗殺者にうってつけのな。", "." },
   ["1e68edb69bc614f5"] = { "お邪魔して申し訳ありません、Lady Prestor。Highlord Bolvarから、あなたの助言を仰ぐよう勧められまして。", "." },
+  ["1e6baf5bca6a5629"] = { "Bandarion KeepのDeathguard Billmuthと話す。", "." },
   ["1e6c24b0ca6ccdfc"] = { "もう勝ったつもりか？どうやら痛みの教訓がもう一度必要なようだな！", "." },
   ["1e7208e4f34a5862"] = { "ママ、Jesseがまた風の塔に登ったよ。", "." },
   ["1e763eacdb24ddeb"] = { "ここThunder Bluffに、Alterac Valleyへの旅を助けてくれる者を一人知っています。Hunter RiseでTaim Ragetotemを探してください。探しているものが見つかりますように、{name}。", "." },

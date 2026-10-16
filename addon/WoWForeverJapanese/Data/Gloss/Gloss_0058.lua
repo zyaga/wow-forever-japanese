@@ -811,7 +811,6 @@ WFJ.Data.add("gloss", {
   [58808] = "品\tしな\tobjects (items)",
   [58809] = "品\tしな\tones (goods)",
   [58810] = "品\tしな\tparts (items)",
-  [58811] = "品\tしな\tpiece",
   [58812] = "品\tしな\tpiece (item)",
   [58813] = "品\tしな\tpieces (goods)",
   [58814] = "品\tしな\tproduct (item)",

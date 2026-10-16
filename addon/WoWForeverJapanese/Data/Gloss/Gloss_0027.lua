@@ -249,7 +249,6 @@ WFJ.Data.add("gloss", {
   [27246] = "みなす\tみなす\tlest (we) be judged",
   [27247] = "みなす\tみなす\tpresumed (regarded as)",
   [27248] = "みなす\tみなす\tsee (regard)",
-  [27249] = "みなす\tみなす\tview (regard as)",
   [27250] = "みなす\tみなす\tview as",
   [27251] = "みなす\tみなす\tviews as",
   [27252] = "みのしろきん\tみのしろきん\transom (written oddly)",

@@ -166,7 +166,6 @@ WFJ.Data.add("gloss", {
   [71163] = "形\tかたち\tform",
   [71164] = "形\tかたち\tform (reminder)",
   [71165] = "形\tかたち\tform (shape)",
-  [71166] = "形\tかたち\tform (way)",
   [71167] = "形\tかたち\tform (形をなす: take shape)",
   [71168] = "形\tかたち\tform; shape",
   [71169] = "形\tかたち\tforms",

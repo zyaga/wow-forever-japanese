@@ -373,7 +373,6 @@ WFJ.Data.add("gloss", {
   [6370] = "かける\tかける\twhen it comes to (にかけて)",
   [6371] = "かける\tかける\twill be cast (on you)",
   [6372] = "かける\tかける\twill bless you with (cast on you)",
-  [6373] = "かける\tかける\twithout taking (long)",
   [6374] = "かける\tかける\twon't cause (迷惑をかける: cause trouble)",
   [6375] = "かける\tかける\twon't cause (面倒をかける)",
   [6376] = "かける\tかける\twon't give (show)",

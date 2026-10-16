@@ -78,7 +78,6 @@ WFJ.Data.add("gloss", {
   [98075] = "潜入者\tせんにゅうしゃ\tinfiltrators",
   [98076] = "潜入部隊\tせんにゅうぶたい\tinfiltrators (unit)",
   [98077] = "潜在\tせんざい\tlatent",
-  [98078] = "潜在する\tせんざいする\tlatent",
   [98079] = "潜在力\tせんざいりょく\tpotential",
   [98080] = "潜在意識\tせんざいいしき\tsubconscious",
   [98081] = "潜在的\tせんざいてき\tlatent",

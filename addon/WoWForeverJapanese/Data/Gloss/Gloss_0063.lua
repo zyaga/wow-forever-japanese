@@ -564,7 +564,6 @@ WFJ.Data.add("gloss", {
   [63561] = "奪う\tうばう\traided (taken)",
   [63562] = "奪う\tうばう\trelieve them of",
   [63563] = "奪う\tうばう\tremove and retrieve (take away)",
-  [63564] = "奪う\tうばう\tretrieve (seize)",
   [63565] = "奪う\tうばう\trid (them) of (take away)",
   [63566] = "奪う\tうばう\trob (go take)",
   [63567] = "奪う\tうばう\trobbed",

@@ -802,7 +802,6 @@ WFJ.Data.add("gloss", {
   [109800] = "結ぶ\tむすぶ\twas struck",
   [109801] = "結ぶ\tむすぶ\twere (it) to be made",
   [109802] = "結ぶ\tむすぶ\twere bound",
-  [109803] = "結ぶ\tむすぶ\twill be connected",
   [109804] = "結ぶ\tむすぶ\twould ally (手を結ぶ: join hands)",
   [109805] = "結合\tけつごう\tbinding",
   [109806] = "結合\tけつごう\tcombine",

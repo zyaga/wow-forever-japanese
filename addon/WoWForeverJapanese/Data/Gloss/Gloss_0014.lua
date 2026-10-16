@@ -53,7 +53,6 @@ WFJ.Data.add("gloss", {
   [14050] = "その\tその\tthat (its)",
   [14051] = "その\tその\tthat (one's)",
   [14052] = "その\tその\tthat (our)",
-  [14053] = "その\tその\tthat (said)",
   [14054] = "その\tその\tthat (such)",
   [14055] = "その\tその\tthat (the local)",
   [14056] = "その\tその\tthat (the)",

@@ -197,7 +197,6 @@ WFJ.Data.add("gloss", {
   [73195] = "必要がある\tひつようがある\tneeded",
   [73196] = "必要がある\tひつようがある\tneeded to",
   [73197] = "必要がある\tひつようがある\tneeds",
-  [73198] = "必要がある\tひつようがある\tneeds (to)",
   [73199] = "必要がある\tひつようがある\tneeds to",
   [73200] = "必要がある\tひつようがある\tneeds to be (it is necessary)",
   [73201] = "必要がある\tひつようがある\trequire; need",

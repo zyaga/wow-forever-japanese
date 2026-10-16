@@ -461,7 +461,6 @@ WFJ.Data.add("gloss", {
   [64458] = "姿\tすがた\t(how you) look",
   [64459] = "姿\tすがた\t(seen) (figure)",
   [64460] = "姿\tすがた\t(sight) (form)",
-  [64461] = "姿\tすがた\t(the sight)",
   [64462] = "姿\tすがた\t(to) be (form)",
   [64463] = "姿\tすがた\t(you) (figure)",
   [64464] = "姿\tすがた\tappearance",

@@ -556,7 +556,6 @@ WFJ.Data.add("gloss", {
   [103555] = "目指す\tめざす\ton our way to (aiming for)",
   [103556] = "目指す\tめざす\tseek",
   [103557] = "目指す\tめざす\tseek (aim for)",
-  [103558] = "目指す\tめざす\tseek out (head for)",
   [103559] = "目指す\tめざす\tseeks",
   [103560] = "目指す\tめざす\tshould aim for",
   [103561] = "目指す\tめざす\tsought (headed for)",

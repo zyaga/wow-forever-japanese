@@ -817,7 +817,6 @@ WFJ.Data.add("gloss", {
   [1814] = "ある\tある\tone",
   [1815] = "ある\tある\tone (a certain)",
   [1816] = "ある\tある\tone (of)",
-  [1817] = "ある\tある\tonly through (there being)",
   [1818] = "ある\tある\tor (by)",
   [1819] = "ある\tある\tordered (having)",
   [1820] = "ある\tある\tout in",

@@ -741,7 +741,6 @@ WFJ.Data.add("ui", {
   ["TransmogTrigger:5"] = { "専門化", 0xd90a7279, "." },
   ["TransmogTrigger:6"] = { "装備セット", 0xe2c2adad, "." },
   ["TransmogTrigger:7"] = { "種族形態", 0x142427d7, "." },
-  ["TransmogTriggerDescription:3"] = { "|cnHIGHLIGHT_FONT_COLOR:すべての場所:|r この衣装はすべての場所で有効です。特定の場所を割り当てた衣装が優先されます。|n|n|cnHIGHLIGHT_FONT_COLOR:休憩エリア:|r 町や住宅地など、戦闘のないエリアです。|n|n|cnHIGHLIGHT_FONT_COLOR:ハウス:|r あなたのウォーバンドの家です。|n|n|cnHIGHLIGHT_FONT_COLOR:キャラクター選択:|r ウォーバンドのキャンプの表示と、単独の表示です。|n|n|cnHIGHLIGHT_FONT_COLOR:ワールド:|r 屋外の戦闘エリアです。", 0x6607e84c, "." },
   ["TransmogTriggerDescription:4"] = { "この衣装を有効にする移動の種類を選んでください。", 0xaf1ac89e, "." },
   ["TransmogTriggerDescription:5"] = { "この衣装を有効にする専門化を選んでください。", 0x3e12c672, "." },
   ["TransmogTriggerDescription:6"] = { "この衣装を有効にする装備セットを選んでください。", 0x80bb8201, "." },

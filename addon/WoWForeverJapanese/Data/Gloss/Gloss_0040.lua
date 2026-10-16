@@ -909,7 +909,6 @@ WFJ.Data.add("gloss", {
   [40906] = "他\tほか\tany other",
   [40907] = "他\tほか\tanyone else (other)",
   [40908] = "他\tほか\tanything else (other)",
-  [40909] = "他\tほか\tanywhere else (other)",
   [40910] = "他\tほか\telse",
   [40911] = "他\tほか\telse (other)",
   [40912] = "他\tほか\telse; other",

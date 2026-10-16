@@ -499,7 +499,6 @@ WFJ.Data.add("gloss", {
   [107496] = "突き止める\tつきとめる\twill know (find out)",
   [107497] = "突き止める\tつきとめる\twill locate (pin down)",
   [107498] = "突き破る\tつきやぶる\tbreak through",
-  [107499] = "突き破る\tつきやぶる\thave begun to pierce",
   [107500] = "突き破る\tつきやぶる\tmay have smashed through",
   [107501] = "突き立つ\tつきたつ\t(stuck) in (stabbed into)",
   [107502] = "突き立てる\tつきたてる\t(having) stuck in",

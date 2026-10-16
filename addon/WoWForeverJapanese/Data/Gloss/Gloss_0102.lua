@@ -713,7 +713,6 @@ WFJ.Data.add("gloss", {
   [102710] = "発揮し続ける\tはっきしつづける\tcontinue to prove (display)",
   [102711] = "発揮する\tはっきする\tcan be effective (show)",
   [102712] = "発揮する\tはっきする\tcan bring out",
-  [102713] = "発揮する\tはっきする\tcan realize (display)",
   [102714] = "発揮する\tはっきする\tcontinue to prove (show)",
   [102715] = "発揮する\tはっきする\thave (display)",
   [102716] = "発揮する\tはっきする\tprove (display)",
