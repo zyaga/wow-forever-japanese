@@ -102,6 +102,8 @@ WFJ.Data.add("ui", {
   ["DEPTH_EFFECTS"] = { "深度エフェクト", 0x061e7087, "." },
   ["DESCRIPTION_OF_YOUR_GROUP"] = { "グループの詳細 (任意)", 0x6d487bec, "." },
   ["DESCRIPTION_OF_YOUR_GROUP_MANDATORY"] = { "グループの詳細", 0xb9813c47, "." },
+  ["DIALOG_CONFIRMATION_PROMPT_GAMEPAD"] = { "確認のため、ボタンを順番に押してください。", 0x88b36600, "." },
+  ["DIALOG_CONFIRMATION_PROMPT_MKB"] = { "確認するには、欄に「%s」と入力してください。", 0xec00ee8f, "." },
   ["DIALOG_INSTRUCTION_REPLACE_MOUNT_EQUIPMENT"] = { "このマウント装備を置き換えてもよろしいですか？現在の装備は破壊されます。", 0xdbe1a05d, "." },
   ["DIALOG_VOLUME"] = { "会話", 0x0f5fc692, "." },
   ["DIFFICULTY_LOCKED_REASON_STORY_RAID"] = { "ストーリーモードでは利用不可", 0xbba88cc5, "." },

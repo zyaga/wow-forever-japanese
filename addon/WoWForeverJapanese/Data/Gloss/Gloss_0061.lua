@@ -122,7 +122,6 @@ WFJ.Data.add("gloss", {
   [61119] = "増え続ける\tふえつづける\tgrowing",
   [61120] = "増え続ける\tふえつづける\tgrowing (in number)",
   [61121] = "増え続ける\tふえつづける\tgrows (keeps increasing)",
-  [61122] = "増え続ける\tふえつづける\tincreasing",
   [61123] = "増え続ける\tふえつづける\tkeep growing",
   [61124] = "増す\tます\tadding to (increase)",
   [61125] = "増す\tます\tappear in greater (are increasing)",

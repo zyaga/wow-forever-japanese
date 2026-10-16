@@ -816,7 +816,6 @@ WFJ.Data.add("gloss", {
   [85814] = "教団\tきょうだん\tcults",
   [85815] = "教団\tきょうだん\torder",
   [85816] = "教団\tきょうだん\torder (religious order)",
-  [85817] = "教団\tきょうだん\torder (religious)",
   [85818] = "教団\tきょうだん\tsects (cult)",
   [85819] = "教団\tきょうだん\tthe cult",
   [85820] = "教団員\tきょうだんいん\tcultist",

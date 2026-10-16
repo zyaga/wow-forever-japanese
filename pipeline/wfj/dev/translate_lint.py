@@ -191,7 +191,7 @@ def check_row(
         reasons.append(f"counters:{_fmt(Counter(_COUNTER.findall(en)))}→{_fmt(Counter(_COUNTER.findall(ja)))}")
     reasons += [f"leftover:{t}" for t in dict.fromkeys(leftovers)]
     # NPC speech: an emote's `%s` is the speaker's name the client fills in (the chat line is
-    # formatted with it, chatframeoverrides.lua:629–633): the Japanese keeps every `%s` and carries no other
+    # formatted with it, chatframeoverrides.lua:640–644): the Japanese keeps every `%s` and carries no other
     # `%`, which the client's format() would read as a specifier
     if en.count("%s") != ja.count("%s") or ja.replace("%s", "").count("%") > en.replace("%s", "").count("%"):
         reasons.append(f"speaker:{en.count('%s')}→{ja.count('%s')}")

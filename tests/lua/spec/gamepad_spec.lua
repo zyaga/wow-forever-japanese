@@ -1,7 +1,7 @@
 -- UI/Gamepad.lua over the gamepad-mode HUD replayed from camelot's Blizzard_GamepadSharedUtility /
--- Blizzard_Gamepad (inputprompts.lua:34–42, inputlegendpromptgroup.lua:94–121,
+-- Blizzard_Gamepad (inputprompts.lua:34–42, inputlegendpromptgroup.lua:103–132,
 -- gamepadpersistentinputlegend.lua:133–168,
--- gamepadradial.lua:867–909 / 1076–1092 / 1164–1192, consoletemplates.lua:135–147, framereformutility.lua:138–171) and
+-- gamepadradial.lua:883–925 / 1093–1109 / 1181–1209, consoletemplates.lua:135–147, framereformutility.lua:138–171) and
 -- UI/MenusUntagged's gamepad "More Actions" menu recognition (promptedbinding.lua:126–181).
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
@@ -24,7 +24,7 @@ local UI = {
   SKIP = { "Skip", "スキップ" },
   TRAIN = { "Train", "訓練" }, -- the trainer's footer label
   RADIAL_LABEL_TRAIN = { "Train", "汽車" }, -- the radial's emote; owns its Japanese (UIStrings.OWN)
-  -- the combined bag's collapse prompt, its label from SetLabelFunction (containerframe.lua:3318–3324)
+  -- the combined bag's collapse prompt, its label from SetLabelFunction (containerframe.lua:3408–3414)
   CONTEXT_ACTION_LABEL_EXPAND = { "Expand", "展開" }, CONTEXT_ACTION_LABEL_COLLAPSE = { "Collapse", "折りたたむ" },
 }
 
@@ -112,6 +112,25 @@ describe("the gamepad-mode HUD on Forever", function()
     assert.are.equal("選択", old.ControlDescText.FontString:GetText())
     old:SetPromptText("Back") -- a focus change rewrites it in English
     assert.are.equal("戻る", old.ControlDescText.FontString:GetText())
+  end)
+
+  it("the bag search footer's Back (an owned key) and the new footer labels are in the prompt set", function()
+    local frameBack = UI.FRAME_ACTION_BACK
+    UI.FRAME_ACTION_BACK, UI.BACK = nil, { "Back", "戻る" } -- containerframe.lua:3318: BACK, not FRAME_ACTION_BACK
+    setup()
+    UI.FRAME_ACTION_BACK, UI.BACK = frameBack, nil
+    WFJ.Gamepad.init()
+    local prompt = promptFrame({ ApplyDefaultPromptPositioning = function() end })
+    prompt:SetPromptText("Back")
+    assert.are.equal("戻る", prompt.ControlDescText.FontString:GetText())
+    local set = {}
+    for _, k in ipairs(WFJ.Gamepad.PROMPT_KEYS) do set[k] = true end
+    -- the bag search box (containerframe.lua:3318, 3323), the channels window (channelframe.lua:169) and the
+    -- invite manager (communitiesticketmanagerdialog.lua:255) footers
+    for _, k in ipairs({ "BACK", "SEARCH", "ADD_CHAT_CHANNEL", "COMMUNITIES_INVITE_MANAGER_REVOKE_INVITE",
+      "ACTION_LABEL_CHAT_CHANNELS" }) do
+      assert.is_true(set[k], k)
+    end
   end)
 
   it("any label that is exactly a dictionary English is taken; anything else stays as written", function()
@@ -249,6 +268,11 @@ describe("the gamepad \"More Actions\" menu is the tagged MORE_CONTEXT_ACTIONS m
     local keys = {}
     for _, k in ipairs(WFJ.Menus.TAGS.MORE_CONTEXT_ACTIONS.keys) do keys[k] = true end
     for _, k in ipairs(WFJ.Gamepad.MENU_KEYS) do assert.is_true(keys[k], k) end
+    -- the equipment and bag item "More Actions" entries (camelot/paperdollframe.lua:1906, containerframe.lua:3443)
+    assert.is_true(keys.SHARE_IN_CHAT)
+    -- the gamepad chat channel menu is gone; the chat footer's label opens the channels window directly
+    -- (mainline/floatingchatframe.lua:214, 233–243)
+    assert.is_nil(keys.ACTION_LABEL_CHAT_CHANNELS)
     assert.is_true(keys.CONTEXT_ACTION_LABEL_SEE_IN_BAG) -- the tag's own keys stay
   end)
 end)

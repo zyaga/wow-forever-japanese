@@ -814,7 +814,6 @@ WFJ.Data.add("gloss", {
   [43812] = "作る\tつくる\tis able to create (makes)",
   [43813] = "作る\tつくる\tis attempting to create",
   [43814] = "作る\tつくる\tis cooking (making)",
-  [43815] = "作る\tつくる\tis created",
   [43816] = "作る\tつくる\tis made",
   [43817] = "作る\tつくる\tis made up",
   [43818] = "作る\tつくる\tis making",

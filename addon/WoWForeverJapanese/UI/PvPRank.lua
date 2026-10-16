@@ -15,16 +15,16 @@
 --     units, D_DAYS / D_HOURS / D_MINUTES / D_SECONDS, blizzard_sharedxml/timeutil.lua:84–87). The hook shows one
 --     widget and nothing else, so the ticker stays cheap;
 --   PVPRankFrame.DetailFrame:Refresh (:132–217, via CharacterFrameSidePaneMixin, camelot/characterframe.lua:
---     850–951) → Subtitle PVP_RANK_NUMBER, EmptyText PVP_RANK_DETAIL_UNAVAILABLE, the Description's FontString
+--     843–964) → Subtitle PVP_RANK_NUMBER, EmptyText PVP_RANK_DETAIL_UNAVAILABLE, the Description's FontString
 --     PVP_RANK_SEASON_RANKUP_DESCRIPTION (a ScrollingFontTemplate: its FontString is written directly, so the
 --     scroll container keeps the height the English measured; in-game check), and the pooled rows' Labels
---     (rowPools, characterframe.lua:840–845): PVP_RANK_SEASON_PROGRESS[_NO_MAX], PVP_RANK_WEEKLY_CAP_INCREASE,
+--     (rowPools, characterframe.lua:850–854): PVP_RANK_SEASON_PROGRESS[_NO_MAX], PVP_RANK_WEEKLY_CAP_INCREASE,
 --     PVP_RANK_NEXT_REWARD, PVP_RANK_REWARDS_VENDOR_HORDE / _ALLIANCE, and the next rewards' rows: AddNextRewardRows
 --     writes each reward's rewardInfo.description from C_MajorFactions.GetRenownRewardsForLevel with AddIconRow
---     (pvprankframe.lua:185-217; characterframe.lua:918-930), the RenownRewardDescription family. A description
+--     (pvprankframe.lua:185-217; characterframe.lua:919-932), the RenownRewardDescription family. A description
 --     with no shipped row stays as the client wrote it. Rows are keyed by widget, never by position. A row's height
---     was measured from the English (characterframe.lua:909-930), so a shown row is re-heighted to its new text
---     and the pane laid out again (LayoutRows → Content:Layout, :946-948).
+--     was measured from the English (characterframe.lua:910-932), so a shown row is re-heighted to its new text
+--     and the pane laid out again (LayoutRows → Content:Layout, :947-949).
 -- Never touched: DetailFrame.Title (the rank title, GetPVPRankText), the rank badge's level number.
 local _, WFJ = ...
 local PvPRank = {}

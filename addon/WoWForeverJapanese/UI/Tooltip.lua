@@ -22,7 +22,7 @@
 -- The run of an item with no translation gets its "Equip: <stat template>" lines as ui records (showEquipLines).
 -- Auras: a buff or debuff tooltip is GameTooltip:SetUnitAura / SetUnitBuff / SetUnitDebuff or their
 -- *ByAuraInstanceID twins: buff frame, target of target, party, raid, compact frames, nameplates [verified: Forever
--- 1.60.1 blizzard_buffframe/buffframe.lua:1145–1149, unitframe/mainline/targetframe.xml:45,
+-- 1.60.1 blizzard_buffframe/buffframe.lua:1179–1183, unitframe/mainline/targetframe.xml:45,
 -- shared/partymemberframe.lua:202–206]. The target frame's own aura buttons use AuraButtonTooltip, a forbidden
 -- frame no addon can reach (docs/architecture/client-limits.md). Forever types them Enum.TooltipDataType.UnitAura
 -- and GetSpell answers only for Spell (tooltiputil.lua:25–31), so the Spell post-call never sees one; the surface

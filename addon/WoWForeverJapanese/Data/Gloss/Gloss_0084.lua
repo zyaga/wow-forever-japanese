@@ -42,7 +42,6 @@ WFJ.Data.add("gloss", {
   [84039] = "描く\tえがく\tpaints",
   [84040] = "描く\tえがく\tsets (depicts)",
   [84041] = "描く\tえがく\tshow (are drawn)",
-  [84042] = "描く\tえがく\tshow (is drawn)",
   [84043] = "描く\tえがく\tshows (is drawn)",
   [84044] = "描く\tかく\tdid (you) paint",
   [84045] = "描く\tかく\twas drawn",

@@ -29,7 +29,7 @@
 --     the FontString's SetFormattedText, restricted to those two keys (the bare number matches neither);
 --   the buff / debuff durations ("5 m", "30 s"): AuraButtonMixin:UpdateDuration writes
 --     self.Duration:SetFormattedText(SecondsToTimeAbbrev(timeLeft)), one of *_ONELETTER_ABBR and the number
---     (blizzard_buffframe/buffframe.lua:1355–1368; blizzard_sharedxml/timeutil.lua:463–480). It runs from each
+--     (blizzard_buffframe/buffframe.lua:1393–1406; blizzard_sharedxml/timeutil.lua:463–480). It runs from each
 --     button's OnUpdate, every frame (securecall, :1203); on enUS nothing re-fonts the text after it (the smaller
 --     duration font is zhTW-only, blizzard_framexmlutil/localization.lua:17–21). The buttons exist from
 --     AuraFrame_OnLoad (:191–204), so each button of BuffFrame and DebuffFrame is post-hooked on its own. The client

@@ -58,8 +58,8 @@ end
 
 local function build()
   local f = W.toolWindow("WFJIntro", WIDTH, 300)
-  -- where the client opens its own popups, clear of the character [verified: forever-ui-1.60.1.70338
-  -- blizzard_staticpopup_game/gamedialog.xml:341, TOP 0,-135]; it grows down, so the voice section moves nothing
+  -- where the client opens its own popups, clear of the character [verified: forever-ui-1.60.1.70425
+  -- blizzard_staticpopup_game/gamedialog.xml:350, TOP 0,-135]; it grows down, so the voice section moves nothing
   f:ClearAllPoints()
   f:SetPoint("TOP", 0, -135)
   if f.Inset then
@@ -186,7 +186,7 @@ end
 
 -- ── When it opens ───────────────────────────────────────────────────────────
 -- The client closes every window in UISpecialFrames (which is how Esc reaches this one) on its own
--- PLAYER_ENTERING_WORLD [verified: forever-ui-1.60.1.70338 blizzard_game/shared/eventimplementation.lua:306], when a
+-- PLAYER_ENTERING_WORLD [verified: forever-ui-1.60.1.70425 blizzard_game/shared/eventimplementation.lua:306], when a
 -- cinematic starts, such as a new character's race intro (CinematicFrame is a full-area panel, so showing it closes
 -- the other windows [verified: blizzard_framexml/shared/cinematicframe.lua:89,
 -- blizzard_uiparentpanelmanager/shared/uiparentpanelmanager.lua:281]), and again when the interface comes back after

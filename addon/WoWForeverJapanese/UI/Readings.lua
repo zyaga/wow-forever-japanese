@@ -50,6 +50,7 @@ View.NON_WINDOW = {
   cooldownviewer = true, damagemeter = true, ["deathrecap.tip"] = true, ["editmode.selection"] = true,
   errors = true, gamepad = true,
   ghostframe = true, help = true, hudlabels = true, lossofcontrol = true, majorfactiontoast = true,
+  npe = true, -- the new player tutorial's on-screen prompts
   ["questmap.trackerlabels"] = true, ["questmap.trackerobjectives"] = true, questtimer = true, queuestatus = true,
   ["quickjoin.tip"] = true, ["spellbook.menu"] = true, statusnotices = true, tracker = true, unitframes = true,
   widgets = true, -- the UI widgets' HUD lines

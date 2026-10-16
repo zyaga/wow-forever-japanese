@@ -2,9 +2,9 @@
 -- "popups", area "ui", ADR-037; supersedes ADR-015 §5). Blizzard_StaticPopup_Game loads at login on camelot.
 -- StaticPopup_Show(which, text_arg1, text_arg2, …) looks up StaticPopupDialogs[which], calls dialog:Init (which
 -- writes Text with SetFormattedText(dialogInfo.text, text_arg1, text_arg2) (gamedialog.lua:120–128) and each shown
--- button with SetText(dialogInfo.buttonN) (:302–320)), then shows the dialog, runs dialog:Resize() and returns it
+-- button with SetText(dialogInfo.buttonN) (:319–336)), then shows the dialog, runs dialog:Resize() and returns it
 -- (staticpopup.lua:309–433). A post-hook on that GLOBAL runs after all of it; hooksecurefunc hands it the call's
--- arguments, not the dialog, so the dialog is the shown one of StaticPopup1–4 (gamedialog.xml:339–358) whose
+-- arguments, not the dialog, so the dialog is the shown one of StaticPopup1–4 (gamedialog.xml:348–367) whose
 -- `which` is the call's (read only; StaticPopup_FindVisible is not called).
 -- The dialog's own definition names the text: its English template is dialogInfo.text, so the key is the one whose
 -- client English is exactly that template (Index:keyOf), and the Japanese is filled from the dialog's own arguments
@@ -29,7 +29,7 @@
 -- word is a dictionary word: it is put in as its own Japanese, never left English inside a Japanese line. A dialog
 -- with its own expiration function stays as written.
 -- The StaticPopupSpecial dialogs own their text (StaticPopupSpecial_Show(frame) only positions and shows the frame,
--- staticpopup.lua:941): the add-friend dialogs (blizzard_addfriend, addfriendtemplates.lua:54, 88) and the battle
+-- staticpopup.lua:945): the add-friend dialogs (blizzard_addfriend, addfriendtemplates.lua:60, 94) and the battle
 -- popups (blizzard_lfgutil: PVPReadyPopup pvppopup.lua:89, PVPFramePopup / PVPRoleCheckPopup / PVPReadyDialog
 -- pvphelper.lua:106, 180, 287, 436; PlunderstormFramePopup; LFGInvitePopup). A post-hook on StaticPopupSpecial_Show
 -- walks one of those frames' FontStrings and button labels, each restricted to the words those files name
@@ -40,7 +40,7 @@
 -- recruitment frame's writer), every write is a widget method (FontString:SetText through Render, Button text
 -- through Labels). No other Lua field of a dialog, of its dialogInfo or of StaticPopupDialogs is written, and Resize /
 -- Layout are never called: nothing an OnAccept handler reads comes from addon code. The dialog lays out from
--- dialogInfo's widths, not from the string (gamedialog.lua:629–705), so a Japanese line wraps inside the English's
+-- dialogInfo's widths, not from the string (gamedialog.lua:659–730), so a Japanese line wraps inside the English's
 -- width. Whether the layout grows with a taller line is an in-game check.
 local _, WFJ = ...
 local Popups = {}
@@ -61,11 +61,12 @@ local SPECIAL = { "AddFriendFrame", "BattleNetInviteFrame", "PVPReadyPopup", "PV
 local WRITERS = { RecruitAFriendRecruitmentFrame = "UpdateRecruitmentInfo" } -- recruitafriendframe.lua:1522–1573
 local SPECIAL_ONLY = { only = {
   -- blizzard_addfriend/addfriendtemplates.xml|lua
-  "ADD_NEW_FRIEND", "BATTLENET_UNAVAILABLE", "BATTLETAG_AND_REAL_ID_DESCRIPTION", "BATTLETAG_FRIEND_LABEL",
-  "BATTLE_TAG_REQUEST", "BATTLE_TAG_REQUEST_INFO", "CANCEL", "CHARACTER_FRIEND_INFO", "CHARACTER_FRIEND_LABEL",
-  "ENTER_NAME_OR_BATTLETAG", "ENTER_NAME_OR_BATTLETAG_OR_EMAIL", "ENTER_NAME_OR_EMAIL", "ERR_SYSTEM_DISABLED",
-  "OKAY", "OR_CAPS", "REALID_BATTLETAG_FRIEND_LABEL", "REALID_FRIEND_LABEL", "SEND_REQUEST", "TITLE_FRIEND_REQUEST",
-  "WOW_FRIEND_DESCRIPTION",
+  -- (the info title is BATTLETAG_OR_REAL_ID_LABEL or BATTLETAG_LABEL, a product name that stays English, lua:123)
+  "ADD_NEW_FRIEND", "BATTLENET_UNAVAILABLE", "BATTLETAG_AND_REAL_ID_DESCRIPTION", "BATTLETAG_DESCRIPTION",
+  "BATTLETAG_FRIEND_LABEL", "BATTLE_TAG_REQUEST", "BATTLE_TAG_REQUEST_INFO", "CANCEL", "CHARACTER_FRIEND_INFO",
+  "CHARACTER_FRIEND_LABEL", "ENTER_NAME_OR_BATTLETAG_OR_EMAIL", "ENTER_NAME_OR_EMAIL",
+  "ERR_REAL_ID_FRIEND_REQUESTS_DISABLED", "ERR_SYSTEM_DISABLED", "OKAY", "OR_CAPS", "REALID_BATTLETAG_FRIEND_LABEL",
+  "REALID_FRIEND_LABEL", "SEND_REQUEST", "TITLE_FRIEND_REQUEST", "WOW_FRIEND_DESCRIPTION",
   -- blizzard_lfgutil (pvppopup, pvphelper, lfginvitepopup)
   "READY_CHECK", "ACCEPT", "ARENA_COMPLETE_MESSAGE", "ARENA_IS_READY", "BATTLEGROUND_COMPLETE_MESSAGE",
   "BATTLEGROUND_IS_READY", "CONFIRM_YOUR_ROLE", "DECLINE", "ENTER_LFG", "HEALER", "INSTANCE_SHUTDOWN_MESSAGE",
@@ -88,16 +89,33 @@ local SPECIAL_ONLY = { only = {
 -- [verified: blizzard_game/mainline/eventimplementation.lua:757-779, the camelot family's file].
 -- VOICE_CHAT_JOIN_GROUP: text "", its OnShow writes VOICE_CHAT_JOIN_GROUP_TEXT, plus the Discord speech-features
 -- paragraph after "\n\n" when the group's voice runs on Discord and text-to-speech or speech-to-text is on
--- [verified: blizzard_staticpopup_game/mainline/gamedialogdefs.lua:1571–1583, shown from
--- blizzard_channels/mainline/channelframe.lua:632–633].
+-- [verified: blizzard_staticpopup_game/mainline/gamedialogdefs.lua:1560–1571, shown from
+-- blizzard_channels/mainline/channelframe.lua:929–930].
 local PASS_THROUGH = {
   PARTY_INVITE = { line = { "INVITATION", "INVITATION_XREALM" }, after = { "ACCEPTING_INVITE_WILL_REMOVE_QUEUE" } },
   VOICE_CHAT_JOIN_GROUP = { line = { "VOICE_CHAT_JOIN_GROUP_TEXT" }, after = { "VOICE_CHAT_JOIN_GROUP_DISCORD_TEXT" } },
   -- the remove-friend confirmation: the caller formats one of three lines around the friend's name
-  -- (blizzard_unitpopupshared/unitpopupsharedbuttonmixins.lua:626–640)
+  -- (blizzard_unitpopupshared/unitpopupsharedbuttonmixins.lua:661–675)
   CONFIRM_REMOVE_BN_FRIEND = { line = { "REMOVE_TITLE_FRIEND_CONFIRMATION", "BATTLETAG_REMOVE_FRIEND_CONFIRMATION",
     "REMOVE_FRIEND_CONFIRMATION" }, after = {} },
+  -- the community delete: text "", its OnShow writes one of two lines around the community's name
+  -- [verified: blizzard_staticpopup_game/mainline/gamedialogdefs.lua:897–925]
+  CONFIRM_DESTROY_COMMUNITY = { line = { "CONFIRM_DESTROY_COMMUNITY_UNPROMPTED",
+    "CONFIRM_DESTROY_CHARACTER_COMMUNITY_UNPROMPTED" }, after = {} },
 }
+
+-- The typed confirmation under the text: SetupConfirmation writes ConfirmText with the gamepad prompt or the typed
+-- one around the word to type, else "" [verified: blizzard_staticpopup_game/gamedialog.lua:214–235, called from
+-- Init :424; ConfirmText gamedialog.xml:103]. The word (COMMUNITIES_DELETE_CONFIRM_STRING) is what the edit box
+-- compares the player's typing with, so it stays as the client wrote it (a `text` argument).
+local CONFIRM_ONLY = { only = { "DIALOG_CONFIRMATION_PROMPT_MKB", "DIALOG_CONFIRMATION_PROMPT_GAMEPAD" } }
+
+-- The shard-transfer dialogs give button1 a new OnEnter with SetScript on every show, and clear it on hide: in
+-- combat it shows SHARD_TRANSFER_COMBAT on GameTooltip with the button as owner [verified:
+-- blizzard_staticpopup_game/gamedialogdefs.lua:3434–3445, 3470–3482]. The tooltip is caught by its owner, not by
+-- the handler: button1 of each pooled dialog is a UI/HelpTooltip owner restricted to that one key, so any other
+-- tooltip a dialog's button shows is left alone.
+local BUTTON1_TIP = { only = { "SHARD_TRANSFER_COMBAT" } }
 
 local CANDIDATES = { show = { "StaticPopup_Show" }, update = { "StaticPopup_OnUpdate" },
   dialogs = { "StaticPopupDialogs" }, special = { "StaticPopupSpecial_Show" } }
@@ -240,6 +258,10 @@ function Popups.onShow(dialog)
   info = shownInfo(dialog, info)
   local n = showText(dialog, info)
   n = n + showWord(dialog.SubText, info.subText)
+  local confirm = dialog.ConfirmText
+  if type(confirm) == "table" and type(confirm.GetText) == "function" then
+    n = n + WFJ.Labels.show(SURFACE, widgetKey(confirm), confirm, nil, CONFIRM_ONLY)
+  end
   local container = dialog.ButtonContainer
   local buttons = type(container) == "table" and container.Buttons or nil
   if type(buttons) == "table" then
@@ -253,7 +275,7 @@ end
 -- The shown dialog a StaticPopup_Show(which, a1, a2, data) call set up (see the header). A `multiple` dialog type can
 -- be shown more than once with different data (StaticPopup_FindVisible, staticpopup.lua:156–166): the one holding
 -- this call's `data` is it. → dialog | nil
-local DIALOGS = 4 -- StaticPopup1–4 (gamedialog.xml:339–358)
+local DIALOGS = 4 -- StaticPopup1–4 (gamedialog.xml:348–367)
 local function findDialog(which, data)
   local found
   for i = 1, DIALOGS do
@@ -367,6 +389,11 @@ function Popups.init()
   if hooked then return false end
   if type(Compat.get(SURFACE, "show")) ~= "function" then return false end
   hooked = true
+  for i = 1, DIALOGS do
+    local d = _G["StaticPopup" .. i]
+    local buttons = type(d) == "table" and type(d.ButtonContainer) == "table" and d.ButtonContainer.Buttons or nil
+    if type(buttons) == "table" then WFJ.HelpTooltip.register(buttons[1], BUTTON1_TIP) end
+  end
   hooksecurefunc("StaticPopup_Show", Popups.onShowCall)
   if type(Compat.get(SURFACE, "update")) == "function" then
     hooksecurefunc("StaticPopup_OnUpdate", Popups.onUpdate)

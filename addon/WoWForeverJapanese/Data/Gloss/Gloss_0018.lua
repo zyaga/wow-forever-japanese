@@ -34,7 +34,6 @@ WFJ.Data.add("gloss", {
   [18031] = "である\tである\tare (and)",
   [18032] = "である\tである\tare, and",
   [18033] = "である\tである\tas (being)",
-  [18034] = "である\tである\tas though it were",
   [18035] = "である\tである\tbe",
   [18036] = "である\tである\tbeing",
   [18037] = "である\tである\tbeing (and)",

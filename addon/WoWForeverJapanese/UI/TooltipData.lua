@@ -2,7 +2,7 @@
 -- builds them in C from TooltipDataProcessor data and runs the post-calls registered per kind
 -- (tooltipdatahandler.lua): a currency (camelot blizzard_tokenui.lua:170, 760), a mount or companion
 -- (blizzard_mountcollection.lua:653, classic blizzard_petcollection.lua:423), an equipment set (camelot
--- paperdollframe.lua:2691), a raid lock (raidframe.lua:237), a totem (totemframe.lua:73), and party members' quest
+-- paperdollframe.lua:2728), a raid lock (raidframe.lua:237), a totem (totemframe.lua:73), and party members' quest
 -- progress (questobjectivetracker.lua:149), and a spell flyout (matched in its own families). Line 1 is the thing's
 -- name and stays English; every later line goes
 -- through the dictionary on UI/HelpTooltip's surface (HelpTooltip.adopt: released on OnHide, re-rendered on Alt).

@@ -128,7 +128,6 @@ WFJ.Data.add("gloss", {
   [82125] = "持てる\tもてる\tcan carry",
   [82126] = "持てる\tもてる\tcannot have (aren't sure)",
   [82127] = "持てる\tもてる\tcapable of (what you have)",
-  [82128] = "持てる\tもてる\tfull (that one has)",
   [82129] = "持てる限り\tもてるかぎり\teverything we had",
   [82130] = "持て余す\tもてあます\ttwiddling my thumbs (have too much)",
   [82131] = "持久力\tじきゅうりょく\tendurance",

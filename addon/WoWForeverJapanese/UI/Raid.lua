@@ -24,7 +24,7 @@
 -- Tabs and buttons:
 --   RaidParentFrameTab1 / Tab2 (RAID, LOOKING_FOR_RAID; mainline raidframe.xml:95–120 PanelTabButtonTemplate):
 --     static, shown at init so each tab's OnShow → PanelTemplates_TabResize measures the Japanese
---     (shareduipaneltemplates.lua:262–264);
+--     (shareduipaneltemplates.lua:264–266);
 --   RaidInfoCancelButton (CLOSE, xml:321);
 --   RaidInfoExtendButton (xml:309): RaidInfoFrame_UpdateButtons rewrites it with EXTEND_RAID_LOCK /
 --     UNEXTEND_RAID_LOCK / REACTIVATE_RAID_LOCK (lua:247–268), called by global name (lua:193, 230): post-hooked,

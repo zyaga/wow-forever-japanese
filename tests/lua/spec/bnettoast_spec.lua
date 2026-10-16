@@ -16,7 +16,7 @@ local UI = {
   TIME_PLAYED_ALERT = { "You have been playing for %s. Excessive gameplay can interfere with your daily life.",
     "プレイ時間が%sになりました。長時間のプレイは日常生活に支障をきたすおそれがあります。" },
   CLOSE = { "Close", "閉じる" },
-  -- the shard-transfer toast (blizzard_socialtoast/socialtoast.lua:63-85)
+  -- the shard-transfer toast (blizzard_socialtoast/socialtoast.lua:67-91)
   SHARD_TRANSFER_COUNTDOWN_MESSAGE = { "The world around you will refresh in %s %s. Make sure you are out of combat "
     .. "and in a safe area, or click here to refresh now.", "%s%s後に周囲のワールドが更新されます。" },
   SHARD_TRANSFER_REFRESH_MESSAGE = { "World refresh in %s %s", "ワールド更新まで%s%s" },
@@ -69,7 +69,7 @@ local function install()
   function shard.Text.GetStringHeight(fs) return #fs:GetText() end -- a height that follows the line shown
   function shard.SetHeight(self, h) self.height = h end
   function shard.Start() end
-  -- ShardTransferImminentMixin:OnUpdate (socialtoast.lua:63-85): the plural group resolved by the client
+  -- ShardTransferImminentMixin:OnUpdate (socialtoast.lua:67-91): the plural group resolved by the client
   shard:SetScript("OnUpdate", function(self)
     local n = C.left < 60 and C.left or math.ceil(C.left / 60)
     local unit = C.left < 60 and (n == 1 and "Second" or "Seconds") or (n == 1 and "Minute" or "Minutes")

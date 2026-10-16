@@ -21,11 +21,11 @@
 --     PVP_RATING_UNCHANGED (the value is FormatValueWithSign output, "+25");
 --   the rating button's tooltip (PVPMatchResultsRatingMixin:OnEnter, :529–557: GameTooltip_SetTitle, AddNormalLine,
 --     Show), registered with UI/HelpTooltip, restricted to the rating keys;
---   ConstructPVPMatchTable(tableBuilder, …) (pvpmatchtable.lua:340–481; a global, called from both windows' Init)
---     builds the column headers through PVPHeaderStringMixin:Init, which writes header.text (:130–150). After it,
+--   ConstructPVPMatchTable(tableBuilder, …) (pvpmatchtable.lua:369–510; a global, called from both windows' Init)
+--     builds the column headers through PVPHeaderStringMixin:Init, which writes header.text (:154–174). After it,
 --     every active header (tableBuilder:EnumerateHeaders, blizzard_sharedxml/tablebuilder.lua:278–280) is shown,
 --     restricted to the column words, and registered for its Lua-built tooltip (PVPHeaderMixin:OnEnter, :44–58).
---     A stat column's name and tooltip are client-table text (C_PvP.GetMatchPVPStatColumns, :371–386):
+--     A stat column's name and tooltip are client-table text (C_PvP.GetMatchPVPStatColumns, :400–415):
 --     ADR-042 adds the PvpColumn family to the header set and PvpColumnTooltip (with PvpColumn, the tooltip's
 --     title) to the tooltip set ("Flag Captures", "Number of times you have captured the flag"). The header set
 --     also holds the PvpStat family (PVPStat.Description_lang): it names stats the column-header table does not
@@ -33,9 +33,9 @@
 --     records are keyed by widget;
 --   tableBuilder:AddRow (tablebuilder.lua:323–342, called for every initialized row by ScrollUtil.RegisterTableBuilder,
 --     blizzard_sharedxml/shared/scroll/scrollutil.lua:1661–1665) → the honor-level cell's tooltip
---     (PVPCellHonorLevelMixin:OnEnter, pvpmatchtable.lua:115–122, HONOR_LEVEL_TOOLTIP). Icon cells are registered
+--     (PVPCellHonorLevelMixin:OnEnter, pvpmatchtable.lua:139–146, HONOR_LEVEL_TOOLTIP). Icon cells are registered
 --     once each (they are pooled) and restricted to that key, so the class cell's tooltip (a spec and a class name
---     (:87–98)) never matches. No cell text is read: the cells hold names and live numbers.
+--     (:87–99)) never matches. No cell text is read: the cells hold names and live numbers.
 --   Tab1 of both windows is ALL, written in OnLoad (pvpmatchresults.lua:90, pvpmatchscoreboard.lua:24).
 -- Never touched: Tab2 / Tab3 of both windows (a faction name and a count, PVP_TAB_FILTER_COUNTED, :169–170 /
 -- scoreboard :64–65), the name cells (player names), the matchmaking text (two templates joined with "\n" around

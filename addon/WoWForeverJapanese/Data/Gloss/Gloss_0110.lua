@@ -504,7 +504,6 @@ WFJ.Data.add("gloss", {
   [110501] = "縁沿い\tふちぞい\talong the sides (edge)",
   [110502] = "縄\tなわ\tbonds (ropes)",
   [110503] = "縄\tなわ\trope",
-  [110504] = "縄張り\tなわばり\tboundaries (territory)",
   [110505] = "縄張り\tなわばり\tterritories",
   [110506] = "縄張り\tなわばり\tterritory",
   [110507] = "縄張り意識\tなわばりいしき\tprotective (territorial)",

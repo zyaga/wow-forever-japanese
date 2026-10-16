@@ -234,7 +234,7 @@ local KIND_CAPTURE = { word = "(%a+)", standing = "(%a+)", words = "(%a[%a ]-)",
   -- ADR-042: a client-table word of ONE family, shown in Japanese when it is that family's row, else as
   -- written (UIStrings.FAMILY_KINDS), never any other entry, so a class, spec or pet-family name stays English
   creatureType = "([^%.]-)", holidayDescription = "(.-)", customizationChoice = "(.-)",
-  customizationSource = "(.-)", restState = "([^%.]-)", itemSubClassMask = "([^%.]-)",
+  customizationSource = "(.-)", restState = "([^%.]-)", itemSubClassMask = "([^%.]-)", petLoyalty = "(.-)",
   petFoodList = "([^%.]-)", questTitle = "(.-)" }
 -- a template with more `|4` groups is not indexed (counted `unsupported`). 4 for TIME_DAYHOURMINUTESECOND
 -- (the /played duration, the only listed key with 4): the chat line holds its raw form, which is always matched
@@ -274,10 +274,10 @@ do
   end
   -- ADR-038: the existing forms for the keys it lists with them, and the new label forms
   --   colonPrefixEntry "<colonPrefix entry> <entry>": the rest is itself this entry ("Sold By: Multiple Buyers")
-  --   countLabel      "<entry> (<n>)" (mailframe.lua:494)          durationSuffix "<entry> [01:23]" (damage meter)
+  --   countLabel      "<entry> (<n>)" (mailframe.lua:496)          durationSuffix "<entry> [01:23]" (damage meter)
   --   iconAfter       "<entry> |A…|a" (the undo button)             headerLines    "<entry>\n<name>\n…" (unread mail)
   --   voiceParts      "[|A…|a]<sentence>. <sentence>. <n sentence>.": each sentence an entry
-  --                   (channelframe.lua:502–513)
+  --                   (channelframe.lua:831–837)
   -- and `paragraphs` parts may be colour-wrapped (social.lua:21–29).
   local MORE_LABEL_FORMS = {
     binding = { "MAINTANK", "MAINASSIST", "PETS", "VOICE_TOOLTIP_PARENTAL_MUTE_MIC",
@@ -484,7 +484,8 @@ end
 -- unless the enclosing key opts in (ENTRY_TEXT).
 local TEXT_KINDS = { text = true, words = true, skill = true, entry = true, entryOrText = true, entryList = true,
   verbatim = true, creatureType = true, holidayDescription = true, customizationChoice = true,
-  customizationSource = true, restState = true, itemSubClassMask = true, petFoodList = true, questTitle = true }
+  customizationSource = true, restState = true, itemSubClassMask = true, petLoyalty = true,
+  petFoodList = true, questTitle = true }
   -- a family argument is free text too
 -- The enclosing keys whose `entry` argument may itself be a template that carries text (none yet): every other
 -- `entry` is an exact entry or a template whose arguments are numbers, times, percentages or dictionary words, so
@@ -540,7 +541,7 @@ function Index:entryArg(value, outer)
 end
 
 -- An `entryList` argument: LIST_DELIMITER-joined pieces ("Equipment, Consumables";
--- containerframe.lua:2319–2335), every piece an entry, each delimiter kept as written. → { list = { item | sep … } }
+-- containerframe.lua:2339–2356), every piece an entry, each delimiter kept as written. → { list = { item | sep … } }
 -- | nil when any piece is not an entry.
 function Index:entryList(value, outer)
   local items, pos = {}, 1
@@ -573,7 +574,7 @@ function Index:fillArg(v)
 end
 
 -- voiceParts: the voice-channel announce line, "%1$s %2$s %3$s" with no literal of its own
--- (channelframe.lua:502–513): an optional leading atlas, then three sentences (the channel notification, the
+-- (channelframe.lua:831–837): an optional leading atlas, then three sentences (the channel notification, the
 -- communication mode, the member count), each an entry. → a `seq` args | nil
 function Index:voiceParts(text)
   local atlas, body = text:match("^(|A[^|]*|a)(.*)$")
@@ -614,7 +615,7 @@ function Index:matchUncached(text)
   left, rest = text:match("^(.-:) (.+)$") -- "Item Sold: Linen Cloth"
   key = left and self:exactKey(left)
   if key and self:has(key, "colonPrefix") then
-    local restKey = self:exactKey(rest) -- colonPrefixEntry: "Sold By: Multiple Buyers" (mailframe.lua:787)
+    local restKey = self:exactKey(rest) -- colonPrefixEntry: "Sold By: Multiple Buyers" (mailframe.lua:792)
     if restKey and self:has(restKey, "colonPrefixEntry") then
       return key, { form = "colonPrefix", rest = rest, restKey = restKey }
     end
@@ -676,7 +677,7 @@ function Index:matchUncached(text)
     end
     if ok and #parts > 1 then return parts[1].key, { form = "paragraphs", parts = parts } end
     -- a paragraph appended to a template that itself holds "\n\n" (the Spirit tooltip + its sitting
-    -- warning, camelot paperdollframestats.lua:283): the last break splits it in two
+    -- warning, camelot paperdollframestats.lua:310): the last break splits it in two
     local head, last = text:match("^(.*)\n\n(.-)$")
     if head then
       local k1, a1 = self:core(head)
@@ -709,7 +710,7 @@ end
 -- granted it (LABELS). → key, args | nil
 local AFTER_FORMS = {
   { "durationSuffix", "^(.-) (%[[%d:]+%])$" }, -- "Combat 3 [01:23]" (damagemetersessionwindow.lua:418–428)
-  { "countLabel", "^(.-) (%(%d+%))$" }, -- "Multiple items (3)" (mailframe.lua:494)
+  { "countLabel", "^(.-) (%(%d+%))$" }, -- "Multiple items (3)" (mailframe.lua:496)
   { "iconAfter", "^(.-) (|A[^|]*|a)$" }, -- "Revert |A…|a" (cooldownviewersettings.lua:1208–1210)
 }
 function Index:suffixForms(text)
@@ -782,7 +783,7 @@ local function asSet(keys)
   return set
 end
 
--- a Settings option's "<label>: <tooltip>" line (blizzard_settings.lua:441–457), each half wrapped in its
+-- a Settings option's "<label>: <tooltip>" line (blizzard_settings.lua:443–461), each half wrapped in its
 -- own colour. Only a RESTRICTED lookup reaches this form (the Options window walks its tooltip with `only` =
 -- UI/SettingsKeys' list): both halves must be dictionary entries AND the label must be one of the caller's keys, so a
 -- coloured "<word>: <word>" line on any other surface is never taken for an option line. → key, args | nil
@@ -1314,7 +1315,7 @@ function UIStrings.build(deps)
       else
         local _, argc = parse(en)
         -- an English holding "%%" is a format string even with no specifier: the client prints it through
-        -- format() ("100%" in the crit hovers, camelot paperdollframestats.lua:477, 539–545), so it is matched as a
+        -- format() ("100%" in the crit hovers, camelot paperdollframestats.lua:582–591), so it is matched as a
         -- template (its "%%" a literal "%") and its Japanese filled the same way
         local bucket = (argc == 0 and not en:find("%%", 1, true)) and byText or templateByText
         for _, form in ipairs(forms) do

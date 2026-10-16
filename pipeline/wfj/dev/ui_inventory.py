@@ -136,7 +136,7 @@ def chat_call_keys(addons: Path, strings: dict[str, str], index: dict[str, Path]
 
 
 # A dialog definition (`StaticPopupDialogs["X"] = {`), and the fields of it that are on-screen text
-# (gamedialog.lua:120–128 the text, :302–320 the buttons; the SubText and the extra button). A later
+# (gamedialog.lua:120–128 the text, :318–336 the buttons; the SubText and the extra button). A later
 # `StaticPopupDialogs["X"].text = NAME` line counts too.
 _POPUP_DEF = re.compile(r'StaticPopupDialogs\[\s*"[A-Z0-9_]+"\s*\]\s*=\s*\{')
 # a key of any length: a dialog's button2 is often NO

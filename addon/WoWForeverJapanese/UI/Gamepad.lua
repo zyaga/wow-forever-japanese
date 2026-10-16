@@ -3,11 +3,11 @@
 -- and the cinematic skip button. Blizzard_Gamepad / _GamepadSharedUtility / _GamepadTargeting load at login on
 -- camelot (their .toc AllowLoadGameType / AllowLoad lines); all of it shows only in gamepad input mode
 -- (InputUtil.IsGamepadUIEnabled, blizzard_sharedxml/mainline/inpututil.lua:7–13).
--- Writers [verified: Forever 1.60.1.70009 source]:
+-- Writers [verified: Forever 1.60.1.70425 source]:
 --   prompts  InputPromptMixin:SetPromptText (blizzard_gamepadsharedutility/inputprompts/inputprompts.lua:34–42) sets
 --            ControlDescText.FontString, sizes ControlDescText to the text's width and calls RefreshInputPromptSize.
 --            Two callers: a window footer's legend (InputPromptLegendMixin:RefreshWithPromptedBindings,
---            inputlegendpromptgroup.lua:94–121, which lays the prompts out afterwards with
+--            inputlegendpromptgroup.lua:103–130, which lays the prompts out afterwards with
 --            ApplyDefaultPromptPositioning), re-run on every focus change, and the persistent legend
 --            (gamepadpersistentinputlegend.lua:133–168, fixed anchors; four labels arrive colour-wrapped, the
 --            `wrapped` form). Prompt frames copy the mixin when made (Mixin / mixin="…", inputprompts.xml:31, 104):
@@ -16,8 +16,8 @@
 --            a frame made before the mixin hook still holds the method the mixin had then (the HudLabels rule).
 --            After a label changes, the prompt is re-sized exactly as the writer does and its legend re-laid out.
 --   radial   GamepadRadial (gamepadradial.xml:119, made at load): ActivateRadial writes HeaderText and, through
---            FillSegmentData → GamepadRadialSegmentMixin:SetHandler, each segment's IconLabel (lua:867–909,
---            1076–1092); the context selector's SetMenuOptions writes each D-pad indicator's Label (lua:1164–1192,
+--            FillSegmentData → GamepadRadialSegmentMixin:SetHandler, each segment's IconLabel (lua:883–925,
+--            1093–1109); the context selector's SetMenuOptions writes each D-pad indicator's Label (lua:1181–1209,
 --            BasicContextOptionHandler:Attach :352–360). Both are post-hooked on the instances.
 --   skip     GamepadMode.CreateHoldButtonWithTextFromTemplate (framereformutility.lua:138–171) makes the cinematic /
 --            movie skip button (cinematicmovie.lua:21–28); its OnUpdate rewrites the text every frame, SKIP or
@@ -39,7 +39,10 @@ Gamepad.NEVER_TOUCH = {}
 
 -- Every key the gamepad HUD writers show (pipeline/ui_keys.txt, the gamepad block).
 Gamepad.KEYS = {
-  -- window footers (the prompted-binding legends)
+  -- window footers (the prompted-binding legends); BACK and SEARCH are the bag search box's
+  -- (blizzard_uipanels_game/mainline/containerframe.lua:3318, 3323), ADD_CHAT_CHANNEL the channels window's
+  -- (blizzard_channels/mainline/channelframe.lua:169), COMMUNITIES_INVITE_MANAGER_REVOKE_INVITE the invite manager's
+  -- (blizzard_communities/communitiesticketmanagerdialog.lua:255)
   "ACTION_LABEL_ADJUST_BRIGHTNESS", "ACTION_LABEL_ADJUST_COLOR", "ACTION_LABEL_ROTATE", "ACTION_LABEL_SELECT",
   "ACTION_LABEL_CHAT_CHANNELS",
   "ACTION_LABEL_SEND", "ACTION_LABEL_TAB_SETTINGS", "ACTION_LABEL_RESET_VIEW", "ACTION_LABEL_ZOOM_SLASH_ROTATE",
@@ -57,7 +60,8 @@ Gamepad.KEYS = {
   "FRAME_ACTION_MAP_MARKER", "FRAME_ACTION_NAVIGATE", "FRAME_ACTION_OPEN_FULLMAP", "FRAME_ACTION_OPEN_MAP",
   "FRAME_ACTION_PAN", "FRAME_ACTION_ZOOM", "GAMEPAD_TALENT_ADD_POINT", "GAMEPAD_TALENT_APPLY",
   "GAMEPAD_TALENT_REMOVE_POINT", "GROUP_TARGETING_CLOSE", "NARRATION_OBJECT_CLEAR_BUTTON", "PROMPT_TOGGLE_CATEGORY",
-  "PROMPT_TOGGLE_TOOLTIPS", "PURCHASE", "TRAIN",
+  "PROMPT_TOGGLE_TOOLTIPS", "PURCHASE", "TRAIN", "BACK", "SEARCH", "ADD_CHAT_CHANNEL",
+  "COMMUNITIES_INVITE_MANAGER_REVOKE_INVITE",
   -- the persistent controller legend
   "BINDING_NAME_ASSISTTARGET", "BINDING_NAME_TARGETLASTHOSTILE", "PROMPT_APPLY_TARGET_MARKER", "PROMPT_AUTO_RUN",
   "PROMPT_CENTER_CAMERA", "PROMPT_CLEAR_TARGET_MARKER", "PROMPT_EXIT", "PROMPT_FLIP_CAMERA", "PROMPT_FOCUS_UI",
@@ -115,15 +119,15 @@ local function opts(fs, set)
 end
 
 -- The "More Actions" context menu entries (PromptedBindingMixin:CreateMoreActionsMenu, promptedbinding.lua:126–181;
--- camelot/paperdollframe.lua:2950–2956, containerframe.lua:3302–3306, playerspellsframe.lua:841–842,
--- mainmenubarbagbuttons.lua:220, floatingchatframe.lua:329); the menu is tagged MORE_CONTEXT_ACTIONS
+-- camelot/paperdollframe.lua:1904–1907, 2987–2993, mainline/containerframe.lua:3439–3444,
+-- playerspellsframe.lua:841–842, mainmenubarbagbuttons.lua:233); the menu is tagged MORE_CONTEXT_ACTIONS
 -- (promptedbinding.lua:140), so UI/MenusTags appends these to that tag's list.
 Gamepad.MENU_KEYS = {
-  "ACTION_LABEL_BIND_SET", "ACTION_LABEL_CHANGE_NAME_AND_ICON_FOR_SET", "ACTION_LABEL_CHAT_CHANNELS",
+  "ACTION_LABEL_BIND_SET", "ACTION_LABEL_CHANGE_NAME_AND_ICON_FOR_SET",
   "ACTION_LABEL_DELETE_SET", "ACTION_LABEL_EQUIP_SET", "ACTION_LABEL_SAVE_SET", "CONTEXT_ACTION_LABEL_AUTO_CAST",
   "CONTEXT_ACTION_LABEL_BIND_TO_GAMEPAD_ACTION_BAR", "CONTEXT_ACTION_LABEL_CAST", "CONTEXT_ACTION_LABEL_DESTROY_ITEM",
   "CONTEXT_ACTION_LABEL_FEED_TO_PET", "CONTEXT_ACTION_LABEL_SPLIT_ITEM_STACK", "CONTEXT_ACTION_LABEL_UNEQUIP_BAG",
-  "CONTEXT_ACTION_LABEL_USE", "FRAME_ACTION_TOGGLE_ITEM_COMPARE",
+  "CONTEXT_ACTION_LABEL_USE", "FRAME_ACTION_TOGGLE_ITEM_COMPARE", "SHARE_IN_CHAT",
 }
 
 local CANDIDATES = {

@@ -1,7 +1,7 @@
 -- UI/EquipmentFlyout.lua: the character window's equipment flyout on Forever (surface "equipmentflyout", area "ui",
 -- ADR-016). Blizzard_FrameXML loads camelot/equipmentflyout.xml|lua at login on `camelot`; the paper doll
 -- opens it from an item slot (EquipmentFlyout_Show, equipmentflyout.lua:229; blizzard_uipanels_game/camelot/
--- paperdollframe.lua:2466–2485 reads EquipmentFlyoutFrame.button).
+-- paperdollframe.lua:2503–2522 reads EquipmentFlyoutFrame.button).
 -- Tooltips: the three special buttons of an equipment-set edit set their own Lua tooltips, owned by
 --   EquipmentFlyoutFrame.buttonFrame (EquipmentFlyout_DisplaySpecialButton, :582–627): EQUIPMENT_MANAGER_IGNORE_SLOT,
 --   EQUIPMENT_MANAGER_UNIGNORE_SLOT, EQUIPMENT_MANAGER_PLACE_IN_BAGS (GameTooltip:SetText). The same owner shows the

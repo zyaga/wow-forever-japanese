@@ -13,21 +13,21 @@
 --   FilterButton's text FILTER (blizzard_menu/mainline/menutemplates.xml:69);
 --   SearchBox.Instructions SEARCH, the search box's placeholder: SearchBoxTemplate's instructionText, written once by
 --     WardrobeCollectionFrameSearchBoxMixin:OnLoad → SearchBoxTemplate_OnLoad [verified: mainline/
---     blizzard_wardrobe.xml:245; mainline/blizzard_wardrobe.lua:1698–1700; blizzard_sharedxml/shared/inputbox/
---     inputboxtemplates.xml:206–208, inputboxtemplates.lua:174–177]. Instructions is a FontString of its own beside
+--     blizzard_wardrobe.xml:245; mainline/blizzard_wardrobe.lua:1700–1702; blizzard_sharedxml/shared/inputbox/
+--     inputboxtemplates.xml:209–211, inputboxtemplates.lua:174–177]. Instructions is a FontString of its own beside
 --     the EditBox, so what the player types is never read or written.
 -- Writer: ItemsCollectionFrame.PagingFrame:Update → PageText COLLECTION_PAGE_NUMBER (Collections.paging).
 -- Tooltips (help-tooltip owners, each restricted to its keys):
 --   a slot button: SetText(WEAPON_ENCHANTMENT), or _G[self.slot] (HEADSLOT …), or LEFTSHOULDERSLOT /
 --     RIGHTSHOULDERSLOT (mainline/blizzard_wardrobe.lua:430–449). The buttons are created in CreateSlotButtons into
 --     SlotsFrame.Buttons (lua:460–; template parentArray, xml:99, 132);
---   SearchBox: WARDROBE_NO_SEARCH when disabled (lua:1741–1748); the EditBox's own text is never read or written;
+--   SearchBox: WARDROBE_NO_SEARCH when disabled (lua:1744–1751); the EditBox's own text is never read or written;
 --   DetailsFrame.LimitedSet: TRANSMOG_SET_LIMITED_TIME_SET_TOOLTIP (xml:679–685);
 --   DetailsFrame.VariantSetsDropdown.PrecedingVariantIcon: TRANSMOG_SET_GRANTS_PRECEDING_VARIANTS (shared/
 --     blizzard_wardrobe_sets.lua:85–89).
 -- TrackingInterfaceShortcutsFrame's two XML labels, HeaderText WARDROBE_SHORTCUTS_TUTORIAL_2 and Text
 --   WARDROBE_SHORTCUTS_TUTORIAL_3 (xml:164–180): a frame only ever appended to the shortcuts HelpTip
---   (WardrobeCollectionTutorialMixin, lua:1548–1569): static, shown with the other static labels. The HelpTip's own
+--   (WardrobeCollectionTutorialMixin, lua:1549–1571): static, shown with the other static labels. The HelpTip's own
 --   text (_1) is UI/HelpTips'. Filter / right-click menus are UI/Menus'.
 -- ADR-042: the variant dropdown's selection: a set's description, its variant word ("Green", "Blue";
 --   ItemNameDescription through TransmogSet.ItemNameDescriptionID), written with VariantSetsDropdown:SetText

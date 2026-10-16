@@ -1,7 +1,7 @@
 -- UI/ChatConfig.lua over a ChatConfigFrame replayed from camelot
--- blizzard_chatframe/mainline/chatconfigframe.lua (ChatConfig_CreateCheckboxes :819–892, _UpdateCheckboxes
--- :1018–1098, _CreateTieredCheckboxes :894–975, _CreateColorSwatches :977–1016, ChatConfigCategoryFrame_Refresh
--- :2182–2224, ChatTabManager:UpdateTabDisplay :2391–2427) and chatconfigframe.xml. Channel names, chat window names
+-- blizzard_chatframe/mainline/chatconfigframe.lua (ChatConfig_CreateCheckboxes :828–901, _UpdateCheckboxes
+-- :1027–1107, _CreateTieredCheckboxes :903–984, _CreateColorSwatches :986–1025, ChatConfigCategoryFrame_Refresh
+-- :2191–2233, ChatTabManager:UpdateTabDisplay :2400–2436) and chatconfigframe.xml. Channel names, chat window names
 -- and a combat log filter's name stay English. Client writes go to `fs.text`.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
@@ -14,7 +14,7 @@ FILES[#FILES + 1] = "UI/ChatConfig.lua"
 local RESTRICT = "|cnRED_FONT_COLOR:You can't edit chat settings while chat is disabled.|r\r\n"
   .. "|cnGREEN_FONT_COLOR:<Shift Click to View Options>|r"
 local UI = {
-  -- the chat-left check buttons' tooltip while chat is disabled (chatconfigframe.lua:2342–2352); its
+  -- the chat-left check buttons' tooltip while chat is disabled (chatconfigframe.lua:2351–2361); its
   -- named-colour markup is part of the English and kept in the Japanese
   RESTRICT_CHAT_CONFIG_TOOLTIP = { RESTRICT, "|cnRED_FONT_COLOR:チャットが無効の間はチャット設定を編集できません。|r\r\n"
     .. "|cnGREEN_FONT_COLOR:<Shiftクリックでオプションを表示>|r" },
@@ -101,7 +101,7 @@ local function installChatConfig()
   manager.name = "ChatTabManager"
   config.ChatTabManager = manager
   manager.tabPool = pool()
-  function manager.UpdateTabDisplay(self) -- lua:2391–2427, SetChatWindowIndex :2363–2370
+  function manager.UpdateTabDisplay(self) -- lua:2400–2436, SetChatWindowIndex :2372–2379
     self.tabPool:ReleaseAll()
     for _, name in ipairs(C.windows) do self.tabPool:Acquire():SetText(name) end
   end

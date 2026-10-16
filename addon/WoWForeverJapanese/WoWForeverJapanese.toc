@@ -171,6 +171,7 @@ Data\Item\Item_0284.lua
 Data\Item\Item_0285.lua
 Data\Item\Item_0286.lua
 Data\Item\Item_0287.lua
+Data\Item\Item_0288.lua
 Data\Spell\Spell_0000.lua
 Data\Spell\Spell_0001.lua
 Data\Spell\Spell_0002.lua
@@ -221,6 +222,7 @@ Data\Spell\Spell_0066.lua
 Data\Spell\Spell_0077.lua
 Data\Spell\Spell_0078.lua
 Data\Spell\Spell_0079.lua
+Data\Spell\Spell_0088.lua
 Data\Spell\Spell_0104.lua
 Data\Spell\Spell_0134.lua
 Data\Spell\Spell_0150.lua
@@ -438,11 +440,14 @@ Data\Spell\Spell_1321.lua
 Data\Spell\Spell_1322.lua
 Data\Spell\Spell_1323.lua
 Data\Spell\Spell_1324.lua
+Data\Spell\Spell_1325.lua
+Data\Spell\Spell_1326.lua
 Data\Objective\Objective_0380.lua
 Data\Objective\Objective_0381.lua
 Data\Objective\Objective_0382.lua
 Data\Objective\Objective_0383.lua
 Data\Objective\Objective_0384.lua
+Data\Objective\Objective_0385.lua
 Data\Objective\Objective_0445.lua
 Data\Objective\Objective_0447.lua
 Data\Objective\Objective_0448.lua
@@ -1912,7 +1917,6 @@ UI\EquipmentFlyout.lua
 UI\GhostFrame.lua
 UI\GuildInvite.lua
 UI\InstanceAbandon.lua
-UI\InstanceDifficulty.lua
 UI\LootHistory.lua
 UI\LossOfControl.lua
 UI\MajorFactionToast.lua
@@ -1924,6 +1928,7 @@ UI\StackSplit.lua
 UI\StreamingIcon.lua
 UI\ZoneText.lua
 UI\Tutorial.lua
+UI\NewPlayerTutorial.lua
 UI\Popups.lua
 UI\Scan.lua
 UI\OptionsText.lua

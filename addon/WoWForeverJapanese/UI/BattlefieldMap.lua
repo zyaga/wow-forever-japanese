@@ -1,6 +1,6 @@
 -- UI/BattlefieldMap.lua: the zone map on Forever (surface "battlefieldmap", area "ui", ADR-016): the small
 -- movable map of the load-on-demand Blizzard_BattlefieldMap (blizzard_battlefieldmap.toc). Entry points: the key
--- binding TOGGLEBATTLEFIELDMINIMAP (blizzard_framexml/bindings_camelot.xml:1239–1241) and the PvP queue button's
+-- binding TOGGLEBATTLEFIELDMINIMAP (blizzard_framexml/bindings_camelot.xml:1235–1237) and the PvP queue button's
 -- menu (blizzard_queuestatusframe/mainline/queuestatusframe.lua:1348–1352) call ToggleBattlefieldMap →
 -- BattlefieldMap_ToggleUI, which loads the addon (mainline/blizzard_battlefieldmap_bootstrap.lua:3–5;
 -- blizzard_battlefieldmap_bootstrap.lua:3–11). Set up through WFJ.LoadOnDemand.when (either load order).

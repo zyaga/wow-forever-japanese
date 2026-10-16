@@ -142,6 +142,21 @@ function Social.installCamelot()
   frame.IgnoreListWindow = CreateFrame("Frame")
   titled(frame.IgnoreListWindow)
   frame.IgnoreListWindow:SetTitle(en("IGNORE_LIST"))
+  -- the friends list's privacy-restricted state (FriendsListFrame_OnShow, camelot friendsframe.lua:680–692): with
+  -- C_SocialRestrictions.IsFriendsDisabled() the list hides and FriendsDisabledText shows
+  -- SOCIAL_TAB_UNAVAILABLE:format(SOCIAL_UI_FRIENDS_TAB_NAME). Social.friendsDisabled = true turns it on.
+  Social.friendsDisabled = false
+  local list = CreateFrame("Frame", "FriendsListFrame")
+  list.FriendsDisabledText = Stub.fontString("")
+  _G.FriendsListFrame_OnShow = function(self)
+    if Social.friendsDisabled then
+      -- "Friends" is SOCIAL_UI_FRIENDS_TAB_NAME
+      self.FriendsDisabledText.text = string.format(en("SOCIAL_TAB_UNAVAILABLE"), "Friends")
+    end
+  end
+  -- bound the way the XML does (<OnShow function="FriendsListFrame_OnShow"/>, friendsframe.xml:771): the frame
+  -- holds the function itself, so a hook on the global never runs
+  list:SetScript("OnShow", _G.FriendsListFrame_OnShow)
   _G.FriendsFrame_Update = function()
     local tab = _G.FriendsFrame.selectedTab or 1
     if tab == 1 then
@@ -181,11 +196,11 @@ function Social.buildInvites()
   return header
 end
 
--- Blizzard_GroupFinder_VanillaStyle arriving (load-on-demand): LFGWhoListFrame (mainline/wholist.xml:65–156)
+-- Blizzard_GroupFinder_VanillaStyle arriving (load-on-demand): LFGWhoListFrame (mainline/wholist.xml:89–210)
 -- with its parentKey WhoFrameTotals, WhoFrameEditBox (SearchBoxTemplate; Instructions = WHO_LIST_SEARCH_INSTRUCTIONS),
--- a pooled ScrollBox and LFGWhoListMixin:UpdateWhoList (wholist.lua:219–239) copied onto the frame. Social.who =
+-- a pooled ScrollBox and LFGWhoListMixin:UpdateWhoList (wholist.lua:257–276) copied onto the frame. Social.who =
 -- { total, rows = { { name, level, race, class, zone, guild } } }; UpdateWhoList re-initializes one pooled row per
--- entry (LFGWhoListButtonMixin:InitButton, lua:50–88). The spec forwards ADDON_LOADED, as Main does.
+-- entry (LFGWhoListButtonMixin:InitButton, lua:49–97). The spec forwards ADDON_LOADED, as Main does.
 function Social.loadWhoList()
   local frame = CreateFrame("Frame", "LFGWhoListFrame")
   frame.WhoFrameTotals = Stub.fontString("")
@@ -196,7 +211,7 @@ function Social.loadWhoList()
   function edit.SetText(self, t) self.editText = t end
   edit.Instructions = Stub.fontString(en("WHO_LIST_SEARCH_INSTRUCTIONS"))
   frame.EditBox = edit
-  -- the filter DropdownButton (wholist.xml:182): OpenMenu regenerates, then RegisterMenu(root)
+  -- the filter DropdownButton (wholist.xml:184): OpenMenu regenerates, then RegisterMenu(root)
   local dropdown = CreateFrame("Button")
   function dropdown.RegisterMenu(self, root) self.root = root end
   frame.FilterDropdown = dropdown

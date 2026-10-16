@@ -16,7 +16,7 @@
 --     (blizzard_durabilityframe/durabilityframe.lua:31–43);
 --   a totem flyout's empty slot: MultiCastFlyoutButton_SetTooltip (a global function): SetText(
 --     MULTI_CAST_TOOLTIP_NO_TOTEM) with the flyout button as owner (blizzard_actionbar/shared/
---     multicastactionbarframe.lua:527–537); the buttons are created on demand, so the writer is post-hooked and the
+--     multicastactionbarframe.lua:536–546); the buttons are created on demand, so the writer is post-hooked and the
 --     tooltip walked once (HelpTooltip.walkAs) when the button owns it. With a totem in the slot the tooltip is a
 --     spell's and is never walked (UI/HelpTooltip's item / spell rule).
 -- Not here: action, pet, stance, possess and extra-ability buttons show spell / item tooltips (names and C-written

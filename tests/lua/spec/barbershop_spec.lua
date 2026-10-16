@@ -19,8 +19,8 @@ local UI = { CANCEL = { "Cancel", "キャンセル" }, RESET = { "Reset", "リ�
   BARBERSHOP_CUSTOMIZATION_SOURCE_FORMAT = { "Source: %s", "入手方法: %s" } }
 
 -- Blizzard_CustomizationUI's mixins (blizzard_customizationoptiontemplates.lua): SetupOption writes the
--- option's Label (:209, :336, :111–118), CustomizationElementDetailsMixin:UpdateText the choice's SelectionName (:652,
--- "-Select-" when nothing is chosen, :684). Pooled frames copy these methods when they are created (Mixin).
+-- option's Label (:209, :336, :111–118), CustomizationElementDetailsMixin:UpdateText the choice's SelectionName (:654,
+-- "-Select-" when nothing is chosen, :686). Pooled frames copy these methods when they are created (Mixin).
 local CUSTOMIZATION = "Blizzard_CustomizationUI"
 local MIXINS = { "CustomizationOptionCheckButtonMixin", "CustomizationDropdownWithSteppersAndLabelMixin",
   "CustomizationOptionSliderMixin", "CustomizationElementDetailsMixin" }

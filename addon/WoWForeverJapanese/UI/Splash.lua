@@ -2,7 +2,7 @@
 -- SplashFrame is built at login by Blizzard_SplashFrame ([Family]\SplashFrame.lua|xml, mainline). It
 -- opens on OPEN_SPLASH_SCREEN
 -- (blizzard_splashframe/mainline/splashframe.lua:11, 39–40), sent at login for a new season, and by the game menu's
--- What's New button (blizzard_gamemenu/shared/gamemenuframe.lua:233–235, when GameRulesUtil.ShouldShowSplashScreen()).
+-- What's New button (blizzard_gamemenu/shared/gamemenuframe.lua:230–232, when GameRulesUtil.ShouldShowSplashScreen()).
 -- Whether camelot ever sends it is an in-game question (checklist).
 -- Static (XML text=): BottomCloseButton CLOSE (splashframe.xml:70), RightFeature.StartQuestButton.Text
 --   SPLASH_START_QUEST_NOW (xml:147).

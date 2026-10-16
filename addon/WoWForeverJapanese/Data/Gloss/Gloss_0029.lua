@@ -699,7 +699,6 @@ WFJ.Data.add("gloss", {
   [29696] = "よい\tよい\tisn't well (not good)",
   [29697] = "よい\tよい\tit is good",
   [29698] = "よい\tよい\tit was good",
-  [29699] = "よい\tよい\tit would be good",
   [29700] = "よい\tよい\tit would do you good",
   [29701] = "よい\tよい\tit would have been better (should have)",
   [29702] = "よい\tよい\tit's a good thing",

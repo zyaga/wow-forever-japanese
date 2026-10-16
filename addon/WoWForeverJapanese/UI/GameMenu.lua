@@ -12,9 +12,9 @@
 -- MainMenuFrameTemplates.xml:45–50, Classic/Dialog/DialogTemplates.xml:11–36, Shared/Dialog/DialogTemplates.lua:4–22].
 -- Release on GameMenuFrame's OnHide.
 -- Forever: the same frame, pool and InitButtons [verified: Forever blizzard_gamemenu/shared/
--- gamemenuframe.lua:150–154, 163–274; blizzard_sharedxml/shared/frame/mainmenuframetemplates.lua:14, 25–67], with
--- words of its own: GAMEMENU_EXTERNALEVENT (lua:181), GAME_MENU_SHOW_REWARDS (lua:225), and LOG_OUT from
--- the mainline GetLogoutText (lua:284–286) where the Classic override returned LOGOUT. The buttons are matched by their
+-- gamemenuframe.lua:153–158, 160–271; blizzard_sharedxml/shared/frame/mainmenuframetemplates.lua:14, 25–67], with
+-- words of its own: GAMEMENU_EXTERNALEVENT (lua:178), GAME_MENU_SHOW_REWARDS (lua:222), and LOG_OUT from
+-- the mainline GetLogoutText (lua:281–284) where the Classic override returned LOGOUT. The buttons are matched by their
 -- English like every other entry, so only the dictionary had to learn them. The mainline button template is a
 -- 200×36 three-slice button (blizzard_sharedxml/mainline/frame/mainmenuframetemplates.xml:11–16).
 local _, WFJ = ...

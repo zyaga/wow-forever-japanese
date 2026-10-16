@@ -2,7 +2,7 @@
 -- title, and "professions.book": the page's words; area "ui", ADR-016, ADR-029).
 -- Entry points on camelot: the Professions micro button and the TOGGLEPROFESSIONBOOK binding call
 -- ToggleProfessionsBook() (blizzard_micromenu/mainline/mainmenubarmicrobuttons.lua:669;
--- blizzard_framexml/bindings_camelot.xml:1215). camelot does NOT build the standalone ProfessionsBookFrame:
+-- blizzard_framexml/bindings_camelot.xml:1211). camelot does NOT build the standalone ProfessionsBookFrame:
 -- Blizzard_ProfessionsBook.xml is [ExcludeLoadGameType camelot] (blizzard_professionsbook.toc), so the toggle falls
 -- through to ShowProfessionsFrame() + ProfessionsFrame:SelectBookPage() (blizzard_professionsbook_bootstrap.lua:
 -- 7–20): the book is ProfessionsFrame.BookPage, a ProfessionsBookPageTemplate inheriting the camelot
@@ -26,7 +26,7 @@
 --   page's OnShow; released on its OnHide.
 -- Help tooltips: a slot's UnlearnButton (GameTooltip:SetText(UNLEARN_SKILL_TOOLTIP), camelot/
 --   blizzard_professionsbook.lua:3–8) and the overview side tab (tooltipText TRADE_SKILLS, SidePanelTabButtonMixin:
---   OnEnter → SetText; camelot/blizzard_professionsframe.xml:13–17; shareduipaneltemplates.lua:406–420), each
+--   OnEnter → SetText; camelot/blizzard_professionsframe.xml:13–17; shareduipaneltemplates.lua:408–422), each
 --   restricted to its one key. The profession side tabs' tooltipText is the profession's name (camelot/
 --   blizzard_professionsframe.lua:64): never registered.
 -- Never touched: a slot's ProfessionName (GetProfessionInfo's name) and specialization, a secondary slot's

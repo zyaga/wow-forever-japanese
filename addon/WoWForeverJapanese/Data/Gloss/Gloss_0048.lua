@@ -66,7 +66,6 @@ WFJ.Data.add("gloss", {
   [48063] = "共有\tきょうゆう\tshare",
   [48064] = "共有\tきょうゆう\tshare (sharing)",
   [48065] = "共有\tきょうゆう\tshared",
-  [48066] = "共有\tきょうゆう\tshared (sharing)",
   [48067] = "共有\tきょうゆう\tsharing",
   [48068] = "共有する\tきょうゆうする\tI can share",
   [48069] = "共有する\tきょうゆうする\tbeen sharing",

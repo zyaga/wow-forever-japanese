@@ -952,7 +952,6 @@ WFJ.Data.add("gloss", {
   [95952] = "流す\tながす\tflowing",
   [95953] = "流す\tながす\tflush",
   [95954] = "流す\tながす\thad drifted too far",
-  [95955] = "流す\tながす\thad washed",
   [95956] = "流す\tながす\thave shed",
   [95957] = "流す\tながす\thave spilled",
   [95958] = "流す\tながす\thave spilt",

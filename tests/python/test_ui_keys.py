@@ -15,7 +15,7 @@ BUILD = "1.15.9.69722"
 # the assertion is that no line carries an unpinned or unknown source, not that there is only ever one.
 # One exception (ADR-050): a listed key whose row left the pinned Forever build keeps the English of the last
 # build that served it, the build `pipeline/served/ui.tsv` records for it.
-FOREVER_BUILD = "1.60.1.70338"
+FOREVER_BUILD = "1.60.1.70425"
 ENGLISH_SOURCES = {f"wago@{BUILD}", f"db2@{FOREVER_BUILD}"}
 # UI words that are also the exact name of some item or spell (e.g. an item called "Cloth", the spell "Shield").
 # They are allowed because the addon never walks the line that reads as the item / spell name and labels are matched
@@ -56,6 +56,10 @@ KNOWN_NAME_COLLISIONS = {
     "Enrage", "Evade", "Flash", "Frozen", "Hex", "Hide", "Interrupt", "Interrupted", "Languages", "Light", "Misfire",
     "Mission Complete", "Obliterate", "Opening", "Pacified", "Pandemic", "Pause", "Possessed", "Quest",
     "Resourcefulness", "Rooted", "Silenced", "Slow", "Summon", "Tracking", "Unknown", "Whisper", "White",
+    # Words a later Forever build gave a spell's name too: the loss-of-control "Banished" (an `only` list), the
+    # invite manager's gamepad footer "Revoke" (UI/Gamepad's key list) and a barber shop choice "Savage"
+    # (CustomizationChoice, restricted). None is ever matched on an item or spell name line.
+    "Banished", "Revoke", "Savage",
     # The unit menus' "Duel" / "Duel to the Death" (DUEL, DUEL_TO_DEATH) and the spellbook
     # subtext "Shapeshift" (SpellSubtext:768). Each is shown only on a key-restricted widget: a MENU_UNIT_* entry
     # (UI/Menus `only`, the unit's name title never matched) or a spellbook item's SubName (SUBTEXT_KEYS). Spell
@@ -125,6 +129,7 @@ DRAFT_SOURCES = {"draft-ui",
                  "draft-ui-review-role",  # the "role" lines brought to the settled term
                  "draft-repull70170-ui-sg12",  # the keys new on 1.60.1.70170 and the lines it reworded
                  "draft-b70291-ui-sg12", "draft-b70291-ui-trial-sg12",  # a re-pull's new and reworded keys
+                 "draft-r70425-ui-sg12", "draft-r70425-uirv-sg12",  # a re-pull's new and reworded keys
                  "draft-ui-left", "draft-ui-left-tooltip",  # lines a Forever client file shows, links and set bonuses
                  # the last interface lines, the tooltip owner / socket / trade lines and the unit lines the
                  # tooltip line kinds surfaced
@@ -263,7 +268,7 @@ def test_window_name_collision_keys_are_named_in_a_ui_module(root):
     # Reviewed exceptions: a whole-dictionary row walk that only ever shows Blizzard's own strings.
     #   COMBATLOG_FILTER_STRING_UNKNOWN_UNITS: the combat-log source check boxes, whose labels come from Blizzard's
     #   filter tables (`text = COMBATLOG_FILTER_STRING_UNKNOWN_UNITS`, blizzard_chatframe/mainline/
-    #   chatconfigframe.lua:374, 426, 758), never a unit's or a spell's name.
+    #   chatconfigframe.lua:383, 435, 767), never a unit's or a spell's name.
     #   CHANNEL, OPENING: the chat configuration's message-type rows, whose labels are `_G[type]` for the types in
     #   Blizzard's own tables (blizzard_chatframe/mainline/chatconfigframe.lua:229, 281).
     #   WHISPER: the same rows, and a text-to-speech box: UI/TextToSpeech builds its `only` set at run time from the

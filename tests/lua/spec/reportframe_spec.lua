@@ -1,5 +1,5 @@
 -- Report window: UI/ReportFrame.lua over ReportFrame replayed from camelot blizzard_reportframeshared
--- (reportframeshared.xml:69–191, reportframeshared.lua:15, 125–127, 154–199, 278–294, 353–362). The reported
+-- (reportframeshared.xml:69–191, reportframeshared.lua:15, 134–136, 163–208, 287–303, 362–371). The reported
 -- player's name stays English.
 local S = require("tests.lua.spec.stub_camelot_social")
 local Stub = require("tests.lua.spec.wow_stub")

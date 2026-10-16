@@ -115,8 +115,8 @@ local UI = {
   COMMUNITIES_INVITE_MANAGER_COLUMN_TITLE_CREATOR = { "Creator", "作成者" },
   COMMUNITIES_INVITE_MANAGER_COPY_LINK_BUTTON = { "Copy Link", "リンクをコピー" },
   COMMUNITIES_CREATE_DIALOG_AVATAR_PICKER_INSTRUCTIONS = { "Select an Icon", "アイコンを選択" },
-  -- the two-part name check (communitiessettings.lua:350–366), the chat-disabled tab line
-  -- (communitiesframe.lua:1026–1028) and the chat's client-written lines (communitieschatframe.lua:357–397)
+  -- the two-part name check (communitiessettings.lua:355–371), the chat-disabled tab line
+  -- (communitiesframe.lua:1059–1061) and the chat's client-written lines (communitieschatframe.lua:357–397)
   COMMUNITIES_CREATE_DIALOG_SHORT_NAME_ERROR = { "Short Name|n%s", "短縮名|n%s" },
   COMMUNITIES_CREATE_DIALOG_NAME_AND_SHORT_NAME_ERROR = { "Name|n%s|n|nShort Name|n%s", "名前|n%s|n|n短縮名|n%s" },
   RESTRICT_CHAT_TOOLTIP_FORMAT = { "%s\n%s", "%s\n%s" },
@@ -177,7 +177,7 @@ local function loadWindow()
   ctrl.CommunitiesSettingsButton = btn(en("COMMUNITIES_SETTINGS_BUTTON_LABEL"))
   ctrl.GuildControlButton = btn(en("GUILD_CONTROL_BUTTON_TEXT"))
   ctrl.GuildRecruitmentButton = btn(en("GUILD_RECRUITMENT"))
-  function ctrl.Update(self) -- communitiesframe.lua:1757
+  function ctrl.Update(self) -- communitiesframe.lua:1790
     self.CommunitiesSettingsButton:SetText(C.battleNet and en("COMMUNITIES_SETTINGS_BUTTON_LABEL")
       or en("COMMUNITIES_SETTINGS_BUTTON_CHARACTER_LABEL"))
   end

@@ -749,7 +749,6 @@ WFJ.Data.add("gloss", {
   [134747] = "集まる\tあつまる\tcongregates (gathers)",
   [134748] = "集まる\tあつまる\tcontinue to gather",
   [134749] = "集まる\tあつまる\tconverge",
-  [134750] = "集まる\tあつまる\tconverge (gather)",
   [134751] = "集まる\tあつまる\tconverging (gathering)",
   [134752] = "集まる\tあつまる\tflock",
   [134753] = "集まる\tあつまる\tgather",

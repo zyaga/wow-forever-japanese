@@ -18,7 +18,7 @@ local UI = { CHAT_TAB_NAME = { "%s Tab", "%sタブ" },
   NPEV2_CHAT_HELP_HINT_HERE = { "Type here to ask questions in Newcomer Chat", "ここに入力して初心者チャットで質問" },
   NPEV2_CHAT_HELP_HINT_DIFFERENT = { "Type %s to ask questions in Newcomer Chat", "%sと入力して初心者チャットで質問" } }
 
--- An edit box replayed from ChatFrameEditBoxMixin:UpdateHeader (chatframeeditbox.lua:613–711): the header's width is
+-- An edit box replayed from ChatFrameEditBoxMixin:UpdateHeader (chatframeeditbox.lua:617–715): the header's width is
 -- its text's (6 per byte here), the typed text inset by it.
 local function editBox(name)
   local header = Stub.fontString("")

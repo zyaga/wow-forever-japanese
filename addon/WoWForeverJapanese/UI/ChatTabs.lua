@@ -4,18 +4,18 @@
 --   A tab's OnEnter (blizzard_chatframebase/mainline/floatingchatframe.xml:357–372) builds
 --     GameTooltip_SetTitle(format(CHAT_TAB_NAME, <the tab's text>)) ("%s Tab" around the window's name, which is
 --     kept as written) and CHAT_TAB_RIGHT_CLICK. Tabs are ChatFrame<N>Tab; temporary whisper windows add more
---     (FCF_OpenTemporaryWindow, mainline/floatingchatframe.lua:976), so the tabs are registered again after it.
+--     (FCF_OpenTemporaryWindow, mainline/floatingchatframe.lua:881), so the tabs are registered again after it.
 --   ChatFrameChannelButton (blizzard_chatframe/mainline/floatingchatframevoicechat.xml:4) shows
 --     MicroButtonTooltipText(CHAT_CHANNELS, "TOGGLECHATTAB") through PropertyBindingMixin:SetTooltip →
 --     GameTooltip_SetTitle (mainline/channelframebuttonmixin.lua:27–29; blizzard_sharedxml/
 --     propertybindingmixin.lua:126–135): the word with its key binding, the `binding` label form.
 --   The docked-tabs overflow list: FCFDockOverflowList_Update(list, dock) (global, mainline/floatingchatframe.lua:
---     2766–2770; floatingchatframe.xml:702) writes list.numTabs with CHAT_WINDOWS_COUNT ("%d Chat Windows"). The
+--     2671–2675; floatingchatframe.xml:702) writes list.numTabs with CHAT_WINDOWS_COUNT ("%d Chat Windows"). The
 --     list's buttons are chat windows' names: never touched.
 --   the edit box header ("Say:", "Tell <name>:"). ChatFrameEditBoxMixin:UpdateHeader writes it:
 --     header:SetText(_G["CHAT_"..type.."_SEND"]) or SetFormattedText(CHAT_WHISPER_SEND, target), then sizes it
 --     (width 0, capped at half the box with the ": " suffix shown) and insets the typed text by its width
---     (blizzard_chatframebase/shared/chatframeeditbox.lua:613–711; mainline/chatframeeditboxoverrides.lua:5–18 for the
+--     (blizzard_chatframebase/shared/chatframeeditbox.lua:617–715; mainline/chatframeeditboxoverrides.lua:5–18 for the
 --     language header). A post-hook on each edit box's UpdateHeader shows the header in Japanese and sizes it again
 --     the client's way, so the typed text starts after the Japanese; Alt re-sizes it for the English. A whisper
 --     target's name is kept (a `text` argument). ChatFrame<N>EditBox; temporary whisper windows add more.
@@ -56,7 +56,7 @@ function ChatTabs.onNewcomerHint(box)
   if type(name) ~= "string" then return 0 end -- records are keyed by the box's name; an unnamed box has none
   return WFJ.Labels.show(SURFACE, "hint." .. name, box.NewcomerHint, nil, HINT)
 end
-local HEADER_PAD, HEADER_RIGHT = 15, 13 -- the client's insets (chatframeeditbox.lua:710)
+local HEADER_PAD, HEADER_RIGHT = 15, 13 -- the client's insets (chatframeeditbox.lua:714)
 
 local function get(key) return Compat.get(SURFACE, key) end
 
@@ -74,7 +74,7 @@ function ChatTabs.registerTabs()
 end
 
 -- The typed text's start, moved by the header's change in width only: the client has just laid the English header
--- out and set the inset (chatframeeditbox.lua:640, 696–710), so `bases` keeps that inset and the English's width,
+-- out and set the inset (chatframeeditbox.lua:644, 700–714), so `bases` keeps that inset and the English's width,
 -- and our Japanese moves it by the difference, which keeps whatever else the client added to the inset. A capped
 -- header (the suffix shown) keeps the client's inset: its width is fixed at half the box. English back on the
 -- header gives the client's inset.

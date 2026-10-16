@@ -1,6 +1,6 @@
 -- UI/HelpFrame.lua: the Customer Support window and the open-ticket notices on Forever (surface "helpframe", area
 -- "ui", ADR-016). Blizzard_HelpFrame loads at login; ToggleHelpFrame is the game menu's Support button
--- (blizzard_gamemenu/shared/gamemenuframe.lua:253) and the help micro button (blizzard_micromenu/mainline/
+-- (blizzard_gamemenu/shared/gamemenuframe.lua:250) and the help micro button (blizzard_micromenu/mainline/
 -- mainmenubarmicrobuttons.lua:1925). The window's body is an embedded web browser: the client draws nothing but the
 -- frame's chrome around it.
 -- Title: HelpFrame:SetTitle(HELP_FRAME_TITLE) at its OnLoad (helpframe.lua:51; DefaultPanelTemplate's

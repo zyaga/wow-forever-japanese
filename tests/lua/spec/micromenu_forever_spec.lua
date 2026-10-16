@@ -55,7 +55,7 @@ local UI = {
   XP_TEXT_BANKED_XP_HEADER = { "Banked XP", "蓄積経験値" },
   TRIAL_CAP_BANKED_XP_TOOLTIP = { "You have earned XP that exceeds your level cap.  Buy the game to apply your banked "
     .. "XP.", "レベル上限を超える経験値を獲得しました。ゲームを購入すると蓄積した経験値が反映されます。" },
-  -- the game menu (Forever blizzard_gamemenu/shared/gamemenuframe.lua:181, 192, 225, 268–271, 284–286)
+  -- the game menu (Forever blizzard_gamemenu/shared/gamemenuframe.lua:178, 189, 222, 265–268, 281–284)
   GAMEMENU_EXTERNALEVENT = { "Activities", "アクティビティ" },
   GAMEMENU_OPTIONS = { "Options", "オプション" },
   GAME_MENU_SHOW_REWARDS = { "Rewards", "報酬" },
@@ -180,11 +180,11 @@ describe("the Forever micro menu and game menu", function()
 
   it("every disabled reason is walked with its title, including a function reason", function()
     local ej, legacy = MM.buttons.EJMicroButton, MM.buttons.LegacyMicroButton
-    ej.enabled, ej.disabledTooltip = false, en("FEATURE_NOT_YET_AVAILABLE") -- lua:1753
+    ej.enabled, ej.disabledTooltip = false, en("FEATURE_NOT_YET_AVAILABLE") -- lua:1797
     MM.hover(ej)
     assert.are.equal(ja("FEATURE_NOT_YET_AVAILABLE"), left(2):GetText())
     MM.leave(ej)
-    legacy.enabled, legacy.disabledTooltip = false, en("LEGACY_MICRO_BUTTON_LOCKED_TOOLTIP") -- lua:1071
+    legacy.enabled, legacy.disabledTooltip = false, en("LEGACY_MICRO_BUTTON_LOCKED_TOOLTIP") -- lua:1097
     MM.hover(legacy)
     assert.are.equal(ja("LEGACY_MICRO_BUTTON_LOCKED_TOOLTIP"), left(2):GetText())
   end)
@@ -333,25 +333,23 @@ describe("the Forever micro menu and game menu", function()
     MM.leave(mm)
   end)
 
-  it("the stable's pet XP bar (PetStableFrame.expBar) translates like the main bars", function()
-    -- camelot Blizzard_StableUI.xml:190 (parentKey expBar), camelot/petexpbar.lua:24–26
-    local stable = CreateFrame("Frame", "PetStableFrame")
-    local bar = { OverlayFrame = { Text = Stub.fontString("") }, currXP = 300, maxBar = 1200 }
-    function bar:UpdateCurrentText()
-      self.OverlayFrame.Text.text = string.format(en("XP_STATUS_BAR_TEXT"), self.currXP, self.maxBar)
-    end
-    stable.expBar = bar
-    bar:UpdateCurrentText()
-    Stub.loadedAddons.Blizzard_StableUI = true
-    local W = H.loadChunks(FILES)
-    H.uiSetup(W, UI)
-    W.MicroMenu.init()
-    assert.are.equal("経験値: 300/1200", bar.OverlayFrame.Text:GetText())
-    bar.currXP = 450
-    bar:UpdateCurrentText()
-    assert.are.equal("経験値: 450/1200", bar.OverlayFrame.Text:GetText())
-    _G.PetStableFrame = nil
-  end)
+  it("the stable's pet XP bar (PetStableFrame.expBar) is left alone: its literal \"XP %s/%s\" is no global string",
+    function()
+      -- camelot Blizzard_StableUI.xml:183 (PetExpColoredProgressBarTemplate), paperdollframe.lua:3692–3700
+      local stable = CreateFrame("Frame", "PetStableFrame")
+      local bar = { text = "" }
+      function bar:SetText(t) self.text = t end
+      function bar:GetText() return self.text end
+      stable.expBar = bar
+      bar:SetText(string.format("XP %s/%s", 300, 1200))
+      Stub.loadedAddons.Blizzard_StableUI = true
+      local W = H.loadChunks(FILES)
+      H.uiSetup(W, UI)
+      W.MicroMenu.init()
+      assert.is_nil(W.MicroMenu.hookPetStableBar)
+      assert.are.equal("XP 300/1200", bar:GetText())
+      _G.PetStableFrame = nil
+    end)
 
   it("the latency label (three lines, both numbers kept) and its help line translate", function()
     local getCVar = _G.GetCVar

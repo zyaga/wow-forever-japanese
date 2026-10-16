@@ -10,8 +10,8 @@
 --     CurrencyTransferToggleButton CURRENCY_TRANSFER_TOGGLE_BUTTON_LABEL (blizzard_currencytransfer.xml:279).
 --   TokenDetailFrame:Refresh (lua:524–565; OnShow :492, TokenFrame:Update :405, ClearSelectionIfMissing :512), the
 --     frame's own method, post-hooked → EmptyText TOKEN_DETAIL_SELECT_PROMPT (ShowEmptyState :568–570, SetEmpty,
---     blizzard_uipanels_game/camelot/characterframe.lua:939–948) and the pooled rows' Labels (rowPools,
---     characterframe.lua:840–845, AddRow / AddWrappedRow :891–907): CURRENCY_DETAIL_TOTAL_CAP_LABEL,
+--     blizzard_uipanels_game/camelot/characterframe.lua:951–960) and the pooled rows' Labels (rowPools,
+--     characterframe.lua:850–854, AddRow / AddWrappedRow :901–917): CURRENCY_DETAIL_TOTAL_CAP_LABEL,
 --     CURRENCY_DETAIL_WEEKLY_CAP_LABEL, CURRENCY_TRANSFER_LOSS, ACCOUNT_LEVEL_CURRENCY. Rows are keyed by widget.
 --   Tooltips (GameTooltip lines, UI/HelpTooltip owners, each restricted to its keys):
 --     InactiveCheckbox TOKEN_MOVE_TO_UNUSED (lua:602–606); BackpackCheckbox TOKEN_SHOW_ON_BACKPACK (:626–630);
@@ -26,7 +26,7 @@
 --     each watched-currency button on the backpack (BackpackTokenFrame.tokenPool, lua:636–640; OnEnter :759–765):
 --       TOKEN_REMOVE_FROM_BACKPACK_INSTRUCTION, registered after BackpackTokenFrame:Update.
 --   the client-table text (ADR-042): the pane's description, SetDescription (lua:479–482, 537;
---     characterframe.lua:873–885) writes the Description ScrollingFont, the CurrencyDescription:* family only; the
+--     characterframe.lua:874–886) writes the Description ScrollingFont, the CurrencyDescription:* family only; the
 --     same text as a line of an entry's tooltip (GameTooltip:SetCurrencyToken, lua:170); and the list's header rows:
 --     TokenHeaderMixin:Initialize writes `.Name` (lua:5–8), TokenSubHeaderMixin:Initialize `.Text` wrapped in the
 --     highlight colour (lua:215–219), the CurrencyCategory:* family only (the colour kept).

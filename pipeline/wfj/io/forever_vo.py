@@ -6,8 +6,11 @@ Each `captures/*.json` is one player's submission: `origin` (the issue it came f
 entries `{questID, event, title, text, build, …}`. Only `progress` and `complete` events are read.
 
 A text is taken only when it can be trusted as Forever's English:
-- the entry's quest title equals the English title we hold for that quest id (`titles`). The files carry no
-  client language, and a German client's entry has a German title, so this keeps only English clients;
+- the entry's quest title equals the English title we hold for that quest id (`titles`), or, for a quest
+  Forever renamed after the capture, the submission is an English client's with at least
+  `MIN_KNOWN_FOR_RENAME` known quests to tell by (`english_origins`). The files carry no client language,
+  and a German client's entries have German titles; a submission with only a few known quests (whose titles
+  may be names in any language) cannot vouch for a title that differs;
 - at least `MIN_ORIGINS` separate submissions sent the same text (compared normalized), so one tampered or
   garbled submission never decides a line.
 When submissions disagree (another build's wording, one player's race or gender written out), the text sent by
@@ -26,6 +29,7 @@ FIELDS = {"progress": "progress", "complete": "completion"}
 MIN_ORIGINS = 2
 TOKENS = ("{name}", "{class}", "{race}")
 ENGLISH_SHARE = 0.9  # of a submission's known quest titles that must be our English ones
+MIN_KNOWN_FOR_RENAME = 5  # known quests a submission needs before it can vouch for a renamed quest's text
 
 
 @dataclass
@@ -73,6 +77,7 @@ def read_captures(folder: Path, titles: Mapping[int, str]) -> Result:
         raise ValueError(f"forever-vo: no captures/*.json under {folder}")
     by: dict[tuple[int, str], dict[str, Candidate]] = {}
     skipped = {"other_language": 0, "no_title": 0, "malformed": 0}
+    english = english_origins(folder, titles, min_known=MIN_KNOWN_FOR_RENAME)
     for path in files:
         doc = json.loads(path.read_text(encoding="utf-8"))
         origin = str(doc.get("origin") or path.stem)
@@ -85,11 +90,10 @@ def read_captures(folder: Path, titles: Mapping[int, str]) -> Result:
             text = entry.get("text")
             if field_ is None or not isinstance(text, str) or not text.strip():
                 continue
-            title = titles.get(qid)
-            if title is None:
+            if qid not in titles:
                 skipped["no_title"] += 1
                 continue
-            if entry.get("title") != title:
+            if entry.get("title") != titles[qid] and origin not in english:
                 skipped["other_language"] += 1
                 continue
             norm = normalize_v1(text)
@@ -125,7 +129,7 @@ class Greeting:
     npcs: list[int]
 
 
-def english_origins(folder: Path, titles: Mapping[int, str]) -> set[str]:
+def english_origins(folder: Path, titles: Mapping[int, str], min_known: int = 1) -> set[str]:
     """The submissions from an English client: at least ENGLISH_SHARE of the quest entries whose id we know
     carry the English title we hold. A submission is one player's client, so its greetings share its
     language; one with no quest entry to tell by is left out. Not every title must match: Forever renames a
@@ -138,7 +142,8 @@ def english_origins(folder: Path, titles: Mapping[int, str]) -> set[str]:
         seen = [(titles.get(q), e.get("title")) for e in (doc.get("quests") or {}).values()
                 if (q := _qid(e)) is not None]
         known = [(ours, theirs) for ours, theirs in seen if ours is not None]
-        if known and sum(ours == theirs for ours, theirs in known) >= ENGLISH_SHARE * len(known):
+        matched = sum(ours == theirs for ours, theirs in known)
+        if len(known) >= min_known and matched >= ENGLISH_SHARE * len(known):
             good.add(origin)
     return good
 

@@ -1,6 +1,6 @@
 -- UI/Communities.lua over a CommunitiesFrame replayed from camelot
 -- blizzard_communities (communitiesframe.xml:303–613, communitiesmemberlist.lua:395–405 + 591–612, the shared
--- ColumnDisplayMixin:LayoutColumns, guildroster.lua:91–175, guildinfo.{xml,lua}, guildnews.xml). Member names, ranks,
+-- ColumnDisplayMixin:LayoutColumns, guildroster.lua:117–222, guildinfo.{xml,lua}, guildnews.xml). Member names, ranks,
 -- zones and notes stay English; the surface waits for Blizzard_Communities in either load order.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
@@ -43,7 +43,7 @@ local C = {} -- replayed client state
 local function en(key) return _G[key] end
 local function fs(text) return Stub.fontString(text or "") end
 
--- A CreateFramePool-like pool (ColumnDisplayMixin:OnLoad, shareduipaneltemplates.lua:825–827).
+-- A CreateFramePool-like pool (ColumnDisplayMixin:OnLoad, shareduipaneltemplates.lua:842–844).
 local function pool(create)
   local p = { active = {}, inactive = {} }
   function p.Acquire(self)
@@ -85,7 +85,7 @@ local function loadCommunities()
   -- the roster ScrollBox (communitiesmemberlist.lua:454–457): pooled entries, CommunitiesMemberListEntryMixin:Init
   list.ScrollBox = Stub.scrollBox()
   C.rows = {}
-  function C.initEntry(row, data) -- lua:1107–1115 (SetHeader / SetMember)
+  function C.initEntry(row, data) -- lua:1114–1123 (SetHeader / SetMember)
     if data.invitationHeaderCount then
       row.NameFrame.Name.text = string.format(en("COMMUNITIES_MEMBER_LIST_PENDING_INVITE_HEADER"),
         data.invitationHeaderCount)
@@ -108,7 +108,7 @@ local function loadCommunities()
   function list.UpdateMemberCount(self)
     self.MemberCount.text = string.format(en("COMMUNITIES_MEMBER_LIST_MEMBER_COUNT_FORMAT"), C.online, C.total)
   end
-  -- member detail (guildroster.xml:4–98)
+  -- member detail (guildroster.xml:4–111)
   local d = CreateFrame("Frame")
   d.name = "GuildMemberDetailFrame"
   frame.GuildMemberDetailFrame = d

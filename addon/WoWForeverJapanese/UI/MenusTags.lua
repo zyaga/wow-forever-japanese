@@ -134,7 +134,7 @@ local TAGS = {
     "EVENTTRACE_LOG_WHEN_HIDDEN", "EVENTTRACE_SHOW_ARGUMENTS", "EVENTTRACE_SHOW_TIMESTAMP",
     "EVENTTRACE_SHOW_SECRET_VALUES", "EVENTTRACE_LOG_CR_EVENTS" } },
   -- the group finder listing's voice chat dropdown: one radio per voice mode (blizzard_groupfinder_vanillastyle/
-  -- blizzard_lfgvanilla_listing.lua:53–68, the labels blizzard_lfgvanilla_voicechat.lua:3–8)
+  -- blizzard_lfgvanilla_listing.lua:53–71, the labels blizzard_lfgvanilla_voicechat.lua:3–8)
   MENU_LFG_LISTING_VOICE_CHAT = { source = "blizzard_lfgvanilla_listing.lua:54", keys = { "VOICE_CHAT_MODE_NONE",
     "VOICE_CHAT_MODE_LEGACY", "VOICE_CHAT_MODE_DISCORD", "VOICE_CHAT_MODE_CUSTOM" } },
   -- master loot: the title, the assign submenu (class and player names are no keys), the roll request
@@ -145,8 +145,8 @@ local TAGS = {
   MENU_GROUP_MEMBERS_PIN = { source = "groupmembersdataprovider.lua:167", keys = { "PVP_REPORT_AFK",
     "PVP_REPORT_AFK_ALL" } },
   -- guild control's page dropdown; the Discord page's `%s` is CreateAtlasMarkup(…), a `text` argument kept verbatim
-  -- (blizzard_guildcontrolui/blizzard_guildcontrolui.lua:62–74)
-  MENU_GUILD_PERMISSIONS = { source = "blizzard_guildcontrolui.lua:62", keys = { "GUILDCONTROL_GUILDRANKS",
+  -- (blizzard_guildcontrolui/blizzard_guildcontrolui.lua:65–77)
+  MENU_GUILD_PERMISSIONS = { source = "blizzard_guildcontrolui.lua:65", keys = { "GUILDCONTROL_GUILDRANKS",
     "GUILDCONTROL_RANK_PERMISSIONS", "GUILDCONTROL_BANK_PERMISSIONS", "GUILDCONTROL_DISCORD_SETTINGS" } },
   -- collections: filters (source / expansion names are client-table names, no keys) and favourite menus
   -- (blizzard_collections/mainline/blizzard_heirloomcollection.lua:127; mainline/blizzard_mountcollection.lua:192,
@@ -204,7 +204,7 @@ local TAGS = {
   MENU_RAID_FRAME_DIFFICULTY = { source = "blizzard_compactraidframemanager.lua:215",
     keys = { "PLAYER_DIFFICULTY1", "PLAYER_DIFFICULTY2", "PLAYER_DIFFICULTY6" } },
   -- the transmogrifier (blizzard_transmog/blizzard_transmogtemplates.lua:32, 488, 1503, 1706; blizzard_transmog.lua:
-  -- 2676): slot and situation option names are client-table rows; a custom set's delete is red-wrapped
+  -- 2987): slot and situation option names are client-table rows; a custom set's delete is red-wrapped
   MENU_TRANSMOG_OUTFIT_ENTRY = { source = "blizzard_transmogtemplates.lua:32", keys = { "TRANSMOG_EDIT_OUTFIT_SLOT" } },
   MENU_TRANSMOG_OPTIONS = { source = "blizzard_transmogtemplates.lua:488",
     keys = join({ "TRANSMOG_ARTIFACT_OPTIONS_HEADER" }, rows("TransmogSlotOption", SLOT_OPTION_IDS)) },
@@ -215,7 +215,7 @@ local TAGS = {
   MENU_TRANSMOG_CUSTOM_SETS_MODEL_FILTER = { source = "blizzard_transmogtemplates.lua:1706", keys = {
     "TRANSMOG_CUSTOM_SET_DRESSING_ROOM", "TRANSMOG_CUSTOM_SET_RENAME", "TRANSMOG_CUSTOM_SET_REPLACE",
     "TRANSMOG_CUSTOM_SET_DELETE" } },
-  MENU_TRANSMOG_SETS_FILTER = { source = "blizzard_transmog.lua:2676", keys = { "COLLECTED", "NOT_COLLECTED",
+  MENU_TRANSMOG_SETS_FILTER = { source = "blizzard_transmog.lua:2987", keys = { "COLLECTED", "NOT_COLLECTED",
     "TRANSMOG_SET_PVE", "TRANSMOG_SET_PVP" } },
   -- the wardrobe (blizzard_collections/mainline/blizzard_wardrobe.lua:101; shared/blizzard_wardrobe_sets.lua:566,
   -- 938; blizzard_transmogshared/blizzard_transmogshared.lua:695); a set's description is a `text` argument
@@ -243,7 +243,7 @@ local EXTRA = {
   -- queues the camelot client may show (queuestatusframe.lua:1276–1507) [in game: runtime-gated]
   MENU_QUEUE_STATUS_FRAME = { keys = { "ENTER_PET_BATTLE", "LEAVE_ARENA", "SURRENDER_ARENA", "WOW_LABS_LEAVE_QUEUE",
     "LEAVE_ZONE" } },
-  -- the world-quest filters (blizzard_worldmaptemplates.lua:278, 294, 357–359) [in game: world-quest filters]
+  -- the world-quest filters (blizzard_worldmaptemplates.lua:278, 294, 361–363) [in game: world-quest filters]
   MENU_WORLD_MAP_TRACKING = { keys = { "SHOW_WORLD_QUESTS_ON_MAP_TEXT", "SHOW_PRIMARY_PROFESSION_ON_MAP_TEXT",
     "SHOW_SECONDARY_PROFESSION_ON_MAP_TEXT", "WORLD_MAP_FILTER_LABEL_WORLD_QUESTS_SUBMENU_TYPE",
     "WORLD_QUEST_REWARD_FILTERS_TITLE" },

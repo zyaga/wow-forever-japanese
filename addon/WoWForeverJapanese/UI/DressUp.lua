@@ -5,10 +5,10 @@
 -- - Title: DressUpModelFrameMixin:OnLoad → self:SetTitle(DRESSUP_FRAME)
 --   (blizzard_sharedxmlgame/dressupmodelframemixin.lua:155–158) → Labels.title.
 -- - Static (XML text, shown on OnShow): DressUpFrameCancelButton CLOSE (dressupframes.xml:304),
---   DressUpFrame.ResetButton RESET (:434), DressUpFrame.LinkButton LINK_TRANSMOG_CUSTOM_SET (:444; shown while the
+--   DressUpFrame.ResetButton RESET (:435), DressUpFrame.LinkButton LINK_TRANSMOG_CUSTOM_SET (:445; shown while the
 --   model is the player, dressupmodelframemixin.lua:134), SideDressUpFrame.ResetButton RESET (:100).
 -- - Tooltip: DressUpFrame.ToggleCustomSetDetailsButton's inline OnEnter builds
---   GameTooltip_SetTitle(DRESSING_ROOM_APPEARANCE_LIST) (dressupframes.xml:383–387): a help-tooltip owner restricted
+--   GameTooltip_SetTitle(DRESSING_ROOM_APPEARANCE_LIST) (dressupframes.xml:384–388): a help-tooltip owner restricted
 --   to that key.
 -- The custom-set dropdown (WardrobeCustomSetDropdownTemplate,
 --   blizzard_framexml/wardrobecustomsets.xml|lua): its empty text is SetDefaultText(grey-wrapped

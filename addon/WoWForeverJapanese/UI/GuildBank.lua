@@ -9,20 +9,20 @@
 --   (:517), BuyInfo.TabText PURCHASE_TAB_TEXT (:625), GuildBankFrameTabCost COSTS_LABEL (:635), BuyInfo.PurchaseButton
 --   BANKSLOTPURCHASE (:655), GuildBankInfoSaveButton SAVE_CHANGES (:712), and the tab-name popup's header
 --   GuildBankPopupFrame.BorderBox.EditBoxHeaderText GUILDBANK_POPUP_TEXT (KeyValue :804, written by the icon
---   selector's OnLoad, blizzard_sharedxml/mainline/shareduipaneltemplates.lua:1844).
+--   selector's OnLoad, blizzard_sharedxml/mainline/shareduipaneltemplates.lua:1861).
 -- Writers, each the frame's own method called as `self:…()`, post-hooked on the instance:
---   GuildBankFrame:Update (lua:146–229) → ErrorMessage: NO_VIEWABLE_GUILDBANK_TABS (:156), NO_GUILDBANK_TABS (:167),
---     NO_VIEWABLE_GUILDBANK_LOGS (:213);
---   GuildBankFrame:UpdateTabBuyingInfo (:251–269) → BuyInfo.PurchasedText NUM_GUILDBANK_TABS_PURCHASED (:254);
---   GuildBankFrame:UpdateTabs (:271–442) → TabTitle: the two whole-key forms GUILD_BANK_MONEY_LOG (:371) and
---     BUY_GUILDBANK_TAB (:317); every other title is "<head>  <access>" (guildBankTab, :373–398): split at the
+--   GuildBankFrame:Update (lua:148–231) → ErrorMessage: NO_VIEWABLE_GUILDBANK_TABS (:158), NO_GUILDBANK_TABS (:169),
+--     NO_VIEWABLE_GUILDBANK_LOGS (:215);
+--   GuildBankFrame:UpdateTabBuyingInfo (:253–271) → BuyInfo.PurchasedText NUM_GUILDBANK_TABS_PURCHASED (:256);
+--   GuildBankFrame:UpdateTabs (:273–444) → TabTitle: the two whole-key forms GUILD_BANK_MONEY_LOG (:373) and
+--     BUY_GUILDBANK_TAB (:319); every other title is "<head>  <access>" (guildBankTab, :375–400): split at the
 --     LAST double space (GUILDBANK_LOG_TITLE_FORMAT "%s  Log" holds one itself), the access word a GUILDBANK_TAB_*
 --     entry (colour in the English), the head GUILDBANK_LOG_TITLE_FORMAT / GUILDBANK_INFO_TITLE_FORMAT around the
 --     tab's name, or the bare tab name, kept as written. No access word: the whole title stays English.
---     → LimitLabel (:412–421): GUILDBANK_REMAINING_MONEY "for <tab name>: <STACKS | NONE | UNLIMITED>", only
+--     → LimitLabel (:414–423): GUILDBANK_REMAINING_MONEY "for <tab name>: <STACKS | NONE | UNLIMITED>", only
 --     that key: a tab name is a `text` argument, never matched alone.
 -- guildBankLog: GuildBankMessageFrame (a ScrollingMessageFrame) gets one AddMessage per transaction from
---   GuildBankFrame_UpdateLog / _UpdateMoneyLog (:750–816) after a Clear(): "<template>[ x <n>]<GUILD_BANK_LOG_TIME>".
+--   GuildBankFrame_UpdateLog / _UpdateMoneyLog (:752–818) after a Clear(): "<template>[ x <n>]<GUILD_BANK_LOG_TIME>".
 --   Its AddMessage is post-hooked on the instance; the time suffix (the last colour group) and a GUILDBANK_LOG_QUANTITY
 --   " x %d" are peeled, the head is matched by key (the GUILDBANK_* log templates: player names, item links, money and
 --   tab names kept as written), and the entry is rewritten in the frame's history with TransformMessages, as
@@ -30,8 +30,8 @@
 --   are remembered until the next Clear(); Alt / the switch / the area put the English (and the frame's own font) back
 --   on the visible lines and releasing puts the Japanese back (AddOnDisplayRefreshedCallback + State changes). A line
 --   that arrives while the addon or the area is off, or whose row is not trusted, stays English.
--- Tooltip: the buy-tab button's BUY_GUILDBANK_TAB (tabButton.tooltip, :300; GuildBankTabButtonMixin:OnEnter
---   :564–567). The same buttons show a tab's name otherwise, so every tab button is an owner restricted to that key.
+-- Tooltip: the buy-tab button's BUY_GUILDBANK_TAB (tabButton.tooltip, :302; GuildBankTabButtonMixin:OnEnter
+--   :566–569). The same buttons show a tab's name otherwise, so every tab button is an owner restricted to that key.
 -- Never touched: tab names (alone or as template arguments), player and item names in the log, the info EditBox,
 -- the money.
 -- Release on GuildBankFrame's OnHide.

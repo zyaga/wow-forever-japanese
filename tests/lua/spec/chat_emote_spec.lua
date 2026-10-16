@@ -1,6 +1,6 @@
 -- emote chat lines: UI/ChatSystem.lua on a CHAT_MSG_TEXT_EMOTE line, the client's
 -- EmotesTextData text with the sender's name turned into a player link (blizzard_chatframebase/mainline/
--- chatframeoverrides.lua:635–644) and a timestamp in front when the player turned them on (:661–664). The rows are
+-- chatframeoverrides.lua:646–655) and a timestamp in front when the player turned them on (:672–675). The rows are
 -- slotted fingerprint rows (EmoteText:<id>): matched by putting the names back, never by shipped English.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")

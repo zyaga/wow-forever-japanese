@@ -303,7 +303,7 @@ local function installBags()
   end)
   for i = 0, 3 do
     local slot = frame("CheckButton", "CharacterBag" .. i .. "Slot")
-    slot.UpdateTooltip = _G.BagSlotButton_OnEnter -- captured at OnLoad (MainMenuBarBagButtons.lua:240)
+    slot.UpdateTooltip = _G.BagSlotButton_OnEnter -- OnLoad: self.BagSlotOnEnter (shared/mainmenubarbagbuttons.lua:35)
     slot:SetScript("OnEnter", function(self) _G.BagSlotButton_OnEnter(self) end) -- method OnEnter → global
   end
 

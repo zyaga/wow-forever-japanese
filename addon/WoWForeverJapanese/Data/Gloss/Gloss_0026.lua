@@ -313,7 +313,6 @@ WFJ.Data.add("gloss", {
   [26310] = "ほんの\tほんの\tjust (mere)",
   [26311] = "ほんの\tほんの\tjust (merely)",
   [26312] = "ほんの\tほんの\tjust (not)",
-  [26313] = "ほんの\tほんの\tjust (only a)",
   [26314] = "ほんの\tほんの\tjust (only)",
   [26315] = "ほんの\tほんの\tjust a",
   [26316] = "ほんの\tほんの\tjust a (mere)",

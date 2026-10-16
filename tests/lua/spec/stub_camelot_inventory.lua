@@ -76,7 +76,7 @@ local function installBank()
   local panel = frame("Frame", nil)
   panel.name = "BankPanel"
   bank.BankPanel = panel
-  panel.PurchaseButton = button(nil, G("BANKSLOTPURCHASE")) -- nested virtual BankFramePurchaseButton (:108)
+  panel.PurchaseButton = button(nil, G("BANKSLOTPURCHASE")) -- nested virtual BankFramePurchaseButton (:109)
   panel.MoneyFrame = frame("Frame", nil)
   panel.MoneyFrame.WithdrawButton = button(nil, G("BANK_WITHDRAW_MONEY_BUTTON_LABEL")) -- xml:205
   panel.MoneyFrame.DepositButton = button(nil, G("BANK_DEPOSIT_MONEY_BUTTON_LABEL")) -- xml:214
@@ -87,7 +87,7 @@ local function installBank()
   panel.PurchasePrompt.TabCostFrame = cost
   panel.PurchasePrompt.Title = Stub.fontString("Expand your bank") -- server data (tabData.purchasePromptTitle)
 
-  -- LockPrompt: OnShow → self:Refresh() → PromptText (lua:1170–1209)
+  -- LockPrompt: OnShow → self:Refresh() → PromptText (lua:1217–1223)
   local lock = frame("Frame", nil)
   lock.name = "LockPrompt"
   lock.PromptText = Stub.fontString("")
@@ -96,7 +96,7 @@ local function installBank()
   lock:SetScript("OnShow", function(self) self:Refresh() end)
   panel.LockPrompt = lock
 
-  -- AutoSortButton: SetText(BAG_CLEANUP_BANK) (lua:1831–1837)
+  -- AutoSortButton: SetText(BAG_CLEANUP_BANK) (lua:1845–1851)
   local sort = frame("Button", nil)
   sort:SetScript("OnEnter", function(self)
     _G.GameTooltip:SetOwner(self)
@@ -151,7 +151,7 @@ local function installBank()
     self:RequestTitleRefresh()
   end
 
-  -- Bag buttons (camelot/bankframe.lua:136–190, 330–343) and page tabs (:104–134, 285–299)
+  -- Bag buttons (camelot/bankframe.lua:136–191, 329–342) and page tabs (:104–134, 284–298)
   bank.itemButtonBagPool = pool(function()
     local b = frame("Button", nil)
     b:SetScript("OnEnter", function(self)
@@ -219,14 +219,14 @@ local function installBags()
   -- BagSearchBoxTemplate → SearchBoxTemplate: the placeholder is .Instructions, written once at OnLoad (SEARCH)
   local search = frame("EditBox", "BagItemSearchBox")
   search.Instructions = Stub.fontString(G("SEARCH") or "Search")
-  -- ContainerFrameExtendedItemButton_OnEnter (lua:1622–1627): an extended (padlocked) slot's tooltip
+  -- ContainerFrameExtendedItemButton_OnEnter (lua:1633–1638): an extended (padlocked) slot's tooltip
   global("ContainerFrameExtendedItemButton_OnEnter", function(self)
     _G.GameTooltip:SetOwner(self, "ANCHOR_NONE")
     _G.GameTooltip:ClearLines() -- GameTooltip_SetTitle
     _G.GameTooltip:AddLine(G("BACKPACK_AUTHENTICATOR_INCREASE_SIZE"))
     _G.GameTooltip:Show()
   end)
-  -- ContainerFrameItemButtonMixin:UpdateExtended (lua:1956–1979): the frame is made lazily from the template, whose
+  -- ContainerFrameItemButtonMixin:UpdateExtended (lua:1967–1991): the frame is made lazily from the template, whose
   -- OnEnter is bound to the global when the frame is created
   function CI.makeExtended()
     local ext = frame("Frame", nil)
@@ -236,7 +236,7 @@ local function installBags()
 
   local function portraitButton(f, name)
     local p = frame("DropdownButton", name)
-    p:SetScript("OnEnter", function(self) -- ContainerFramePortraitButtonMixin:OnEnter (lua:2000–2040)
+    p:SetScript("OnEnter", function(self) -- ContainerFramePortraitButtonMixin:OnEnter (lua:2009–2051)
       local tt, id = _G.GameTooltip, self:GetParent().bagID
       tt:SetOwner(self, "ANCHOR_LEFT")
       if id == 0 then
@@ -263,9 +263,9 @@ local function installBags()
     return f
   end
   for i = 1, 7 do container("ContainerFrame" .. i) end -- xml:300–306
-  local combined = container("ContainerFrameCombinedBags") -- xml:308
+  local combined = container("ContainerFrameCombinedBags") -- xml:315
   function combined.UpdateName(self) self:SetTitle(G("COMBINED_BAG_TITLE")) end
-  -- ContainerFrameExtendedSlotPack:UpdateAddSlots (lua:2614–2620): an unnamed button made on first use
+  -- ContainerFrameExtendedSlotPack:UpdateAddSlots (lua:2634–2640): an unnamed button made on first use
   local function updateAddSlots(f)
     if f.AddSlotsButton then return end
     local add = frame("Button", nil)
@@ -276,14 +276,14 @@ local function installBags()
     end)
     f.AddSlotsButton = add
   end
-  global("ContainerFrame_GenerateFrame", function(f, size, id) -- lua:1287–1306
+  global("ContainerFrame_GenerateFrame", function(f, size, id) -- lua:1292–1315
     f.bagID, f.size = id, size
     f:Show()
     f:UpdateName()
     if id == 0 then updateAddSlots(f) end
   end)
 
-  local sort = frame("Button", "BagItemAutoSortButton") -- xml:345–367
+  local sort = frame("Button", "BagItemAutoSortButton") -- xml:358–381
   sort:SetScript("OnEnter", function(self)
     _G.GameTooltip:SetOwner(self)
     _G.GameTooltip:ClearLines() -- GameTooltip_SetTitle
@@ -292,7 +292,7 @@ local function installBags()
     _G.GameTooltip:Show()
   end)
 
-  local backpack = frame("ItemButton", "MainMenuBarBackpackButton") -- shared/mainmenubarbagbuttons.lua:284–297
+  local backpack = frame("ItemButton", "MainMenuBarBackpackButton") -- shared/mainmenubarbagbuttons.lua:302–316
   backpack:SetScript("OnEnter", function(self)
     local tt = _G.GameTooltip
     tt:SetOwner(self, "ANCHOR_LEFT")
@@ -402,7 +402,7 @@ local function installMerchant()
     _G.MerchantPageText.text = G("MERCHANT_PAGE_NUMBER"):format(_G.MerchantFrame.page, 3)
     for i = 1, 10 do _G["MerchantItem" .. i .. "Name"].text = CI.merchantItems[i] or "" end
   end)
-  global("MerchantFrame_UpdateBuybackInfo", function() -- lua:532–594
+  global("MerchantFrame_UpdateBuybackInfo", function() -- lua:532–603
     _G.MerchantFrame:SetTitle(G("MERCHANT_BUYBACK"))
     for i = 1, 12 do _G["MerchantItem" .. i .. "Name"].text = CI.merchantItems[i] or "" end
     _G.MerchantPageText:Hide()

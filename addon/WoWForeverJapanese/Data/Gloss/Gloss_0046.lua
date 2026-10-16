@@ -887,7 +887,6 @@ WFJ.Data.add("gloss", {
   [46884] = "元素\tげんそ\telemental (element)",
   [46885] = "元素\tげんそ\telements",
   [46886] = "元素束縛\tげんそそくばく\telemental binding",
-  [46887] = "元素界\tげんそかい\telemental plane",
   [46888] = "元素科学\tげんそかがく\telemental sciences",
   [46889] = "元老院\tげんろういん\tSenate",
   [46890] = "元通り\tもとどおり\tback (as before)",

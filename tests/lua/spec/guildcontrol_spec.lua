@@ -1,6 +1,6 @@
 -- UI/GuildControl.lua over a GuildControlUI replayed from camelot
--- blizzard_guildcontrolui/blizzard_guildcontrolui.xml (:4–300, :402–810) and .lua (OnLoad :88–116, the pane updates
--- :154–247, :412–470, :527–607), load-on-demand in both load orders. Rank and bank tab names stay English.
+-- blizzard_guildcontrolui/blizzard_guildcontrolui.xml (:4–300, :402–813) and .lua (OnLoad :91–119, the pane updates
+-- :157–250, :418–476, :533–613), load-on-demand in both load orders. Rank and bank tab names stay English.
 local Stub = require("tests.lua.spec.wow_stub")
 local C = require("tests.lua.spec.stub_commerce")
 
@@ -36,7 +36,7 @@ local function build()
   C.tree(frame, { ["orderFrame.newButton"] = { button = en("GUILD_NEW_RANK") }, ["dropdown.Text"] = "",
     ["rankPermFrame.dropdown.Text"] = "Guild Bank" }) -- a rank named like a dictionary word
   frame.rankPermFrame.dropdown:addRegion(Stub.fontString(en("GUILDCONTROL_SELECTRANK")))
-  frame.rankPermFrame.OfficerPermissions = Stub.fontString(PERMS) -- GuildControlRankSettings_OnLoad (lua:511–512)
+  frame.rankPermFrame.OfficerPermissions = Stub.fontString(PERMS) -- GuildControlRankSettings_OnLoad (lua:514–515)
   frame.discordFrame = CreateFrame("Frame")
   frame.discordFrame.channelListTitle = Stub.fontString("Channels for server Guild Bank:") -- a server named so
   local link = CreateFrame("Frame", "DiscordLinkFrame")

@@ -19,7 +19,7 @@ end
 
 -- The TOC's AddonCompartmentFunc entries. Blizzard's addon dropdown on the minimap calls these globals by
 -- name with (addonName, buttonName) on a click and (addonName, frame) on hover [verified: Blizzard_Minimap/Mainline/
--- AddonCompartment.lua:77–117]. Left-click opens the fix window, right-click the minimap button's menu.
+-- AddonCompartment.lua:102–142]. Left-click opens the fix window, right-click the minimap button's menu.
 function WFJ_OnAddonCompartmentClick(_, buttonName)
   WFJ.MinimapButton.click(nil, buttonName)
 end
@@ -379,11 +379,11 @@ function WFJ.OnLoad()
     "ChatConfig", "TextToSpeech", "ChatTabs", "CombatLog", "AddonList", "ScriptErrors", "Splash", "EventTrace",
     "ChromieTime", "Alerts", "Errors", "ChatSystem", "ChatInput", "BossBanner", "Cinematic", "Subtitles",
     "CoinPickup", "CombatFeedback", "EquipmentFlyout",
-    "GhostFrame", "GuildInvite", "InstanceAbandon", "InstanceDifficulty", "LootHistory", "LossOfControl",
+    "GhostFrame", "GuildInvite", "InstanceAbandon", "LootHistory", "LossOfControl",
     "MajorFactionToast", "PartyPose", "PetHappiness", "PlayerChoice", "ReadyCheck", "StackSplit", "StreamingIcon",
     "ZoneText",
-    -- the tutorial popup
-    "Tutorial",
+    -- the tutorial popup and the new player experience's screen prompts
+    "Tutorial", "NewPlayerTutorial",
     -- the StaticPopup dialogs (ADR-037)
     "Popups"
   }

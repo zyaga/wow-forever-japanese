@@ -1,12 +1,12 @@
 -- UI/EditMode.lua: HUD Edit Mode on Forever (surfaces "editmode" and "editmode.dialog", area "ui", ADR-016).
 -- Blizzard_EditMode is a login addon on camelot; the Esc menu's "Edit Mode" button shows EditModeManagerFrame
--- (blizzard_gamemenu/shared/gamemenuframe.lua:237–238). The window and its dialogs are data-driven (setting names
+-- (blizzard_gamemenu/shared/gamemenuframe.lua:234–235). The window and its dialogs are data-driven (setting names
 -- and option texts come from shared/editmodesettingdisplayinfo.lua), so labels are walked with UI/LabelTree.lua,
 -- restricted to Edit Mode's keys (UI/SettingsKeys.lua); no per-setting code.
---   EditModeManagerFrame (shared/editmodemanager.xml:4–560): Title HUD_EDIT_MODE_TITLE, LayoutLabel (lua:32), the
+--   EditModeManagerFrame (shared/editmodemanager.xml:4–560): Title HUD_EDIT_MODE_TITLE, LayoutLabel (lua:30), the
 --     grid / snap / advanced check buttons, the AccountSettings check buttons and category titles, Save / Revert.
 --     All written at load; walked at init and on OnShow. AccountSettings:SetExpandedState rewrites Expander.Label
---     (editmodemanager.lua:2916–2918) and SetupStatusTrackingBar2 a check button's label (:2572–2573): both hooked
+--     (editmodemanager.lua:2931–2933) and SetupStatusTrackingBar2 a check button's label (:2588): both hooked
 --     to re-walk. The expander's own text carries |A arrow markup and stays English.
 --   EditModeSystemSettingsDialog (shared/editmodedialogs.xml:254): AttachToSystemFrame writes Title from the
 --     system's name and calls UpdateDialog → UpdateSettings, which re-acquires the pooled dropdown / slider /
@@ -20,12 +20,12 @@
 --     name ("%s") keeps the name as written. Their EditBoxes are never entered.
 --   The selection overlay of every HUD system: Selection:UpdateLabelVisibility writes "Click to Edit" or the
 --     system's name into Label (or HorizontalLabel / VerticalLabel) on every hover and selection
---     (editmodesystemtemplates.lua:3331–3361). Each registered system's Selection is hooked once, when the manager
---     is shown (EditModeManagerFrame.registeredSystemFrames, editmodemanager.lua:24, 225); its hover tooltip
---     (GetAppropriateTooltip():SetText(system name), :3316–3323) goes through HelpTooltip.
+--     (editmodesystemtemplates.lua:3400–3430). Each registered system's Selection is hooked once, when the manager
+--     is shown (EditModeManagerFrame.registeredSystemFrames, editmodemanager.lua:24, 221); its hover tooltip
+--     (GetAppropriateTooltip():SetText(system name), editmodesystemtemplates.lua:3384–3393) goes through HelpTooltip.
 -- Never touched: EditModeManagerFrame.LayoutDropdown: its text is a layout's name, the player's own or a preset's
---   inside HUD_EDIT_MODE_PRESET_LAYOUT (editmodemanager.lua:1367). The dropdown's popup (copy / rename / import /
---   share) is UI/Menus'. The "layout applied" and "copied to clipboard" lines are chat messages (:777, 1606).
+--   inside HUD_EDIT_MODE_PRESET_LAYOUT (editmodemanager.lua:1382). The dropdown's popup (copy / rename / import /
+--   share) is UI/Menus'. The "layout applied" and "copied to clipboard" lines are chat messages (:773, 1621).
 local _, WFJ = ...
 local EditMode = {}
 WFJ.EditMode = EditMode

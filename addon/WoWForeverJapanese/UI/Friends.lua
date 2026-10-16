@@ -11,6 +11,9 @@
 --     writes RAID / QUICK_JOIN to FriendsFrameTitleText (lua:461–473) and the contacts titles with
 --     FriendsFrame:SetTitle (CONTACTS_LIST_TITLE / CONTACTS_RECENT_ALLIES_TITLE / RECRUIT_A_FRIEND, lua:447–459) →
 --     FriendsFrame.TitleContainer.TitleText;
+--   FriendsListFrame's OnShow → FriendsListFrame.FriendsDisabledText, the notice an account with friends turned off by
+--     its privacy settings sees: SOCIAL_TAB_UNAVAILABLE:format(SOCIAL_UI_FRIENDS_TAB_NAME) (camelot friendsframe.lua:
+--     680–692); the tab name has the same English as FRIENDS and comes back as that word's Japanese;
 --   FriendsFrame_UpdateFriendButton → button.info (Offline / "last online %s ago", or a Recruit-A-Friend friend's
 --     RAF_RECRUIT_FRIEND / RAF_RECRUITER_FRIEND: "|cffffd200Recruit:|r <location>", GetOnlineInfoText,
 --     lua:1615–1628; the location is kept as written). Zones, rich presence and names stay as written;
@@ -18,21 +21,21 @@
 --     each global up at call time, so the name hook runs): FriendsFrame_UpdateFriendInviteHeaderButton → the header's
 --     FRIEND_REQUESTS (:1631–1637), FriendsFrame_UpdateFriendInviteButton → the pooled invite row's AcceptButton
 --     (text="ACCEPT", friendsframe.xml:98; the Decline button is an icon).
---   who: the camelot FriendsFrame has no who panel. ShowWhoPanel opens LFGParentFrame tab 3 (lua:1358); the list is
+--   who: the camelot FriendsFrame has no who panel. ShowWhoPanel opens LFGParentFrame tab 3 (lua:1359); the list is
 --     LFGWhoListFrame in the load-on-demand Blizzard_GroupFinder_VanillaStyle (its toc: LoadOnDemand 1), set up
 --     through WFJ.LoadOnDemand.when whichever way it loads.
 --     LFGWhoListMixin:UpdateWhoList writes .WhoFrameTotals = format(WHO_FRAME_TOTAL_TEMPLATE, n) .. "  " .. (shown
---     template or "") (mainline/wholist.lua:219–239; the frame's own method, called as self:UpdateWhoList() from
---     OnEvent, :172–175); the two-space join is the `joined` label form (both halves filled, Core/UIStrings);
---     WhoFrameEditBox's Instructions read WHO_LIST_SEARCH_INSTRUCTIONS (wholist.xml:96, SearchBoxTemplate). Rows are
---     pooled ScrollBox frames: each row's .Level (LFG_WHO_LEVEL, wholist.lua:66–67) is shown from the ScrollBox's
---     initialized-frame callback (ScrollUtil.AddInitializedFrameCallback, the raid-info pattern); Name / Race / Class
---     / Variable / GuildName are never touched (restricted to LFG_WHO_LEVEL on .Level only).
+--     template or "") (mainline/wholist.lua:257–276; the frame's own method, called as self:UpdateWhoList() from
+--     OnEvent, :210–213); the two-space join is the `joined` label form (both halves filled, Core/UIStrings);
+--     WhoFrameEditBox's Instructions read WHO_LIST_SEARCH_INSTRUCTIONS (wholist.xml:141–143, SearchBoxTemplate).
+--     Rows are pooled ScrollBox frames: each row's .Level (LFG_WHO_LEVEL, wholist.lua:71–72) is shown from the
+--     ScrollBox's initialized-frame callback (ScrollUtil.AddInitializedFrameCallback, the raid-info pattern); Name /
+--     Race / Class / Variable / GuildName are never touched (restricted to LFG_WHO_LEVEL on .Level only).
 --     Each row is also a help-tooltip owner restricted to WHO_LIST_LEVEL_TOOLTIP (LFGWhoListButtonMixin:OnEnter,
---     wholist.lua:24–32: line 1 the name, line 3 zone / guild / race, never matched).
+--     wholist.lua:31–39: line 1 the name, line 3 zone / guild / race, never matched).
 --     Since 1.60.1.70009 a row's InviteButton is a help-tooltip owner restricted to WHO_PARTY_BUTTON_TOOLTIP
---     (WhoInviteButtonMixin:ShowTooltip, wholist.lua:117–121). The filter dropdown (FilterDropdown, wholist.xml:182)
---     is an untagged DropdownButton (LFGWhoListFilterUtil.SetupFilterMenu, wholist.lua:278–321, 336–378, 460–526):
+--     (WhoInviteButtonMixin:ShowTooltip, wholist.lua:119–123). The filter dropdown (FilterDropdown, wholist.xml:184)
+--     is an untagged DropdownButton (LFGWhoListFilterUtil.SetupFilterMenu, wholist.lua:278–321, 336–387, 474–540):
 --     hooked through UI/MenusUntagged.hookDropdown as the WHO_FILTER spec, its entries restricted to the section
 --     words and the sort entries; the class, race and zone entries under them are names and never match.
 --   the contacts header's TabSystem tabs (FriendsTabHeaderMixin:GenerateHeaderTabs, camelot friendsframe.lua:
@@ -54,11 +57,12 @@ local STATIC = SURFACE .. ".static"
 local Compat = WFJ.Compat
 
 local WHO_ADDON = "Blizzard_GroupFinder_VanillaStyle"
--- RAID / QUICK_JOIN are what camelot writes here (lua:461–473)
+-- RAID / QUICK_JOIN are what camelot writes here (lua:475–487)
 local TITLE_KEYS = { "FRIENDS_LIST", "IGNORE_LIST", "WHO_LIST", "RAID", "QUICK_JOIN" }
 local CONTACTS_TITLE_KEYS = { "CONTACTS_LIST_TITLE", "CONTACTS_RECENT_ALLIES_TITLE", "RECRUIT_A_FRIEND" }
 local CONTACTS_TITLE = { only = CONTACTS_TITLE_KEYS }
 local IGNORE_TITLE = { only = { "IGNORE_LIST" } }
+local FRIENDS_DISABLED = { only = { "SOCIAL_TAB_UNAVAILABLE" } }
 local WHO_INSTRUCTION_KEYS = { "WHO_LIST_SEARCH_INSTRUCTIONS", "SEARCH" }
 -- The who row's invite button and the filter dropdown's entries (see the header)
 local WHO_INVITE_TIP = { only = { "WHO_PARTY_BUTTON_TOOLTIP" } }
@@ -77,6 +81,7 @@ local CANDIDATES = {
   tab1 = { "FriendsFrameTab1" }, tab3 = { "FriendsFrameTab3" }, tab4 = { "FriendsFrameTab4" },
   addFriend = { "FriendsFrameAddFriendButton" }, sendMessage = { "FriendsFrameSendMessageButton" },
   tooltipPlaying = { "FriendsTooltipOtherGameAccounts" }, statusDropdown = { "FriendsFrameStatusDropdown" },
+  list = { "FriendsListFrame" },
   whoEditBox = { "WhoFrameEditBox" }, whoTotals = { "LFGWhoListFrame.WhoFrameTotals" },
   whoFilter = { "LFGWhoListFrame.FilterDropdown" },
   contactsTitle = { "FriendsFrame.TitleContainer.TitleText" },
@@ -151,6 +156,12 @@ function Friends.onFriendButton(button)
   if type(button.summonButton) == "table" then WFJ.HelpTooltip.register(button.summonButton, SUMMON_TIP) end
   if type(button.info) ~= "table" then return 0 end
   return WFJ.Labels.show(SURFACE, infoKey(button.info), button.info, nil, { only = CAMELOT_INFO_KEYS })
+end
+
+-- HookScript("OnShow") target on FriendsListFrame: the XML binds FriendsListFrame_OnShow by function
+-- (friendsframe.xml:771), so a hook on the global never runs. → 1 | 0
+function Friends.onListShow(list)
+  return WFJ.Labels.show(SURFACE, "ui.friendsDisabled", field(list, "FriendsDisabledText"), nil, FRIENDS_DISABLED)
 end
 
 -- hooksecurefunc target (FriendsFrame_UpdateFriendInviteHeaderButton): the pooled header button. → 1 | 0
@@ -277,6 +288,10 @@ function Friends.init()
     { "inviteUpdate", "FriendsFrame_UpdateFriendInviteButton", Friends.onInvite } }
   for _, w in ipairs(writers) do
     if type(get(w[1])) == "function" then hooksecurefunc(w[2], w[3]) end
+  end
+  local list = get("list")
+  if type(list) == "table" and type(list.HookScript) == "function" then
+    list:HookScript("OnShow", Friends.onListShow)
   end
   Friends.showHeaderTabs()
   WFJ.LoadOnDemand.when(WHO_ADDON, Friends.setupWho)

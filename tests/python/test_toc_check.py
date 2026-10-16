@@ -83,10 +83,11 @@ def test_real_toc_fields_and_load_order(root):
         "UI/Alerts.lua", "UI/Errors.lua", "UI/ChatSystem.lua", "UI/ChatInput.lua", "UI/Speech.lua", "UI/BossBanner.lua", "UI/Cinematic.lua",
         "UI/Subtitles.lua", "UI/CoinPickup.lua", "UI/CombatFeedback.lua",
         "UI/EquipmentFlyout.lua", "UI/GhostFrame.lua", "UI/GuildInvite.lua", "UI/InstanceAbandon.lua",
-        "UI/InstanceDifficulty.lua", "UI/LootHistory.lua", "UI/LossOfControl.lua", "UI/MajorFactionToast.lua",
+        "UI/LootHistory.lua", "UI/LossOfControl.lua", "UI/MajorFactionToast.lua",
         "UI/PartyPose.lua", "UI/PetHappiness.lua", "UI/PlayerChoice.lua", "UI/ReadyCheck.lua", "UI/StackSplit.lua",
         "UI/StreamingIcon.lua", "UI/ZoneText.lua",
         "UI/Tutorial.lua",  # the tutorial popup
+        "UI/NewPlayerTutorial.lua",
         "UI/Popups.lua",
         "UI/Scan.lua",
         # the settings pages' copy, widgets, key capture, the modifier's override binding, the AddOn List button

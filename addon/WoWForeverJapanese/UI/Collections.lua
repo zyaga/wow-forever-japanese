@@ -14,7 +14,7 @@
 --     Forever GlobalStrings table does not have, so that title is "" (in-game check). Through Labels.title;
 --   side tabs: a LargeSideTabButtonTemplate has no text; its tooltip is SidePanelTabButtonMixin:OnEnter →
 --     GetAppropriateTooltip():SetText(self.tooltipText) (blizzard_sharedxml/mainline/shareduipaneltemplates.lua:
---     406–416) with MOUNTS / PET_JOURNAL / TOY_BOX / HEIRLOOMS / WARDROBE. Each tab is a help-tooltip owner
+--     408–418) with MOUNTS / PET_JOURNAL / TOY_BOX / HEIRLOOMS / WARDROBE. Each tab is a help-tooltip owner
 --     restricted to its own key;
 --   Toy Box: ToyBox.ProgressTracker is camelot's count box (camelot/blizzard_toyboxprogresstracker.xml:4–9, isCount):
 --     .Label = TOTAL_TOYS (CollectionsCountTemplateMixin:OnLoad, shared/blizzard_collectiontemplates.lua:144–148);

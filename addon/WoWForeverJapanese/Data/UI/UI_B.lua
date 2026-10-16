@@ -86,6 +86,7 @@ WFJ.Data.add("ui", {
   ["BATTLENET_UNAVAILABLE"] = { "Blizzardサービスを利用できません", 0x87e6d223, "." },
   ["BATTLENET_UNAVAILABLE_ALERT"] = { "現在Blizzardのサービスを利用できません。\n\nReal IDとBattleTagのフレンドは表示されません。新しいReal IDやBattleTagのフレンドリクエストの送受信もできません。機能を再び有効にするには、ゲームの再起動が必要な場合があります。", 0x49f9a5f0, "." },
   ["BATTLETAG_AND_REAL_ID_DESCRIPTION"] = { "BattleTagを入力して招待を送ると、ゲーム内やすべてのBlizzardタイトルでチャットできます。相手がReal IDを使っている場合は、メールアドレスで招待することもできます。フレンドになるには、相手がリクエストを承諾する必要があります。", 0xa106ee3f, "." },
+  ["BATTLETAG_DESCRIPTION"] = { "BattleTagを入力して招待を送ると、ゲーム内やすべてのBlizzardタイトルでチャットできます。フレンドになるには、相手がリクエストを承諾する必要があります。", 0xe7e666da, "." },
   ["BATTLETAG_FRIEND_LABEL"] = { "BattleTagを入力", 0xf41a574f, "." },
   ["BATTLETAG_REMOVE_FRIEND_CONFIRMATION"] = { "%sをBattleTagフレンドから削除してもよろしいですか？", 0x827ed9fd, "." },
   ["BATTLE_PETS_SUMMON_TOOLTIP"] = { "選択したペットを呼び出す、または帰還させます。", 0xd3a391a2, "." },

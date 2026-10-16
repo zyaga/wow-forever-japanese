@@ -2,21 +2,21 @@
 -- ADR-016): community settings (CommunitiesSettingsDialog), the channel create / edit dialog and the
 -- notification settings (CommunitiesFrame.EditStreamDialog / .NotificationSettingsDialog), the invite-link manager
 -- (CommunitiesTicketManagerDialog) and the icon picker (CommunitiesAvatarPickerDialog). Plumbing:
--- UI/CommunitiesKit. Every file:line is the camelot extract 1.60.1.69913, blizzard_communities/.
--- Static labels: communitiessettings.xml:11-289 (labels, check-box labels, the item-level placeholder, buttons) and
+-- UI/CommunitiesKit. Every file:line is the camelot extract 1.60.1.70425, blizzard_communities/.
+-- Static labels: communitiessettings.xml:14-292 (labels, check-box labels, the item-level placeholder, buttons) and
 --   its finder dropdowns' labels (ClubFinderDropdownMixin:OnLoad, clubfinder.lua:18-21; LANGUAGE,
---   communitieslanguage.xml:17); communitiesstreams.xml:85-165, 181-269 (QuickJoinButton.Text is written by its
---   OnLoad, xml:252-254); communitiesticketmanagerdialog.xml:198-422; the picker's unnamed instructions
---   (communitiesavatarpickerdialog.xml:36, found by its text); the edit boxes' placeholders (InputScrollFrame_OnLoad
+--   communitieslanguage.xml:17); communitiesstreams.xml:88-168, 187-275 (QuickJoinButton.Text is written by its
+--   OnLoad, xml:258-260); communitiesticketmanagerdialog.xml:204-428; the picker's unnamed instructions
+--   (communitiesavatarpickerdialog.xml:39, found by its text); the edit boxes' placeholders (InputScrollFrame_OnLoad
 --   writes EditBox.Instructions, blizzard_sharedxml/shared/inputbox/inputboxtemplates.lua:82-95).
--- Writers: the settings dialog's OnShow (XML-bound, HookScript) → DialogLabel (communitiessettings.lua:50-55);
---   SetClubId → the description placeholder (lua:104); HideOrShowCommunityFinderOptions → ClubFinderPostingBannedError
---   (lua:326); EditStreamDialog:ShowCreateDialog / ShowEditDialog → TitleLabel (communitiesstreams.lua:166-194);
---   the ticket manager's OnShow → DialogLabel "Invite to <community>" (communitiesticketmanagerdialog.lua:260),
---   RefreshLink → UsesText / ExpiresText (lua:462-481); a ticket row's SetTicket (the ScrollBox initializer and
---   direct calls, lua:200-202, 351) → Uses / Expires; the dropdowns' selection text (Labels.dropdown).
--- Help tooltips: the settings Accept button's name-check errors (lua:350-367: the error text is the client's, kept
---   as written), the cross-faction toggle (owner its Label, lua:417-425).
+-- Writers: the settings dialog's OnShow (XML-bound, HookScript) → DialogLabel (communitiessettings.lua:55-60);
+--   SetClubId → the description placeholder (lua:114); HideOrShowCommunityFinderOptions → ClubFinderPostingBannedError
+--   (lua:336); EditStreamDialog:ShowCreateDialog / ShowEditDialog → TitleLabel (communitiesstreams.lua:172-200);
+--   the ticket manager's OnShow → DialogLabel "Invite to <community>" (communitiesticketmanagerdialog.lua:314),
+--   RefreshLink → UsesText / ExpiresText (lua:526-545); a ticket row's SetTicket (the ScrollBox initializer and
+--   direct calls, lua:218-220, 405) → Uses / Expires; the dropdowns' selection text (Labels.dropdown).
+-- Help tooltips: the settings Accept button's name-check errors (lua:360-378: the error text is the client's, kept
+--   as written), the cross-faction toggle (owner its Label, lua:428-435).
 -- Never touched: every edit box, a ticket's creator and link, the stream names in the notification list.
 local _, WFJ = ...
 local Kit = WFJ.CommunitiesKit

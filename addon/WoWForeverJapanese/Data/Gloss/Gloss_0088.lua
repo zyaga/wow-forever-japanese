@@ -698,7 +698,6 @@ WFJ.Data.add("gloss", {
   [88696] = "最近\tさいきん\tof late (recent)",
   [88697] = "最近\tさいきん\tof late (recently)",
   [88698] = "最近\tさいきん\trecent",
-  [88699] = "最近\tさいきん\trecent (recently)",
   [88700] = "最近\tさいきん\trecently",
   [88701] = "最近\tさいきん\tthese days",
   [88702] = "最速\tさいそく\tfastest",

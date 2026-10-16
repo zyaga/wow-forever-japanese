@@ -2,12 +2,12 @@
 -- Blizzard_LegacySystem is load-on-demand (blizzard_legacysystem.toc) and opens from the Legacy micro button
 -- (LegacyMicroButtonMixin:OnClick → ToggleLegacySystemUI, blizzard_micromenu/mainline/mainmenubarmicrobuttons.lua:
 -- 1043–1046; camelot places the button, camelot/micromenucontaineroverrides.lua:8) and from the TOGGLELEGACYSYSTEM
--- binding (blizzard_framexml/bindings_camelot.xml:1218). ToggleLegacySystemUI loads the addon on first use
+-- binding (blizzard_framexml/bindings_camelot.xml:1214). ToggleLegacySystemUI loads the addon on first use
 -- (blizzard_legacysystem_bootstrap.lua:7–16), so everything here waits through WFJ.LoadOnDemand.when.
 -- LegacySystemFrame (blizzard_legacysystem.xml:4, PortraitFrameTemplate) has three pages, each a parentKey child:
 --   RewardTrackPage, ChallengesPage, TreePage (xml:40–42). Every widget is parentKey-only (dotted Compat names).
 -- Title: each page's OnShow calls LegacySystemFrame:SetTitle: LEGACY_TRACK_FRAME_TITLE (blizzard_legacyrewardtrack
---   .lua:24), LEGACY_CHALLENGE_FRAME_TITLE (blizzard_legacychallenges.lua:42), LEGACY_TREE_FRAME_TITLE
+--   .lua:24), LEGACY_CHALLENGE_FRAME_TITLE (blizzard_legacychallenges.lua:54), LEGACY_TREE_FRAME_TITLE
 --   (blizzard_legacytree.lua:25), through Labels.title, restricted to those three keys.
 -- Static labels (XML text=, never rewritten; each restricted to its own key):
 --   RewardTrackPage.PointsLabel LEGACY_REWARD_TRACK_POINTS (blizzard_legacyrewardtrack.xml:99);
@@ -25,9 +25,9 @@
 --   LegacyTreePointSummary:RefreshText → AvailablePointsLabel LEGACY_POINTS_AVAILABLE (blizzard_legacytree.lua:
 --     310–318; the number is LEGACY_POINTS_AMOUNT "%d");
 --   ChallengesPage.LegacyChallengePointSummary.PointsBar:Update → Text LEGACY_POINTS_CURR_MAX
---     (blizzard_legacychallenges.lua:309–316);
+--     (blizzard_legacychallenges.lua:359–366);
 --   the challenge cards (ChallengesPage.DetailPane.ScrollBox, pooled LegacyChallengeTemplate): Tracked.Text
---     TRACK_ACHIEVEMENT (blizzard_legacysystemtemplates.xml:75, 279), walked from the ScrollBox's initialized-frame
+--     TRACK_ACHIEVEMENT (blizzard_legacysystemtemplates.xml:76, 281), walked from the ScrollBox's initialized-frame
 --     callback, keyed by widget. ADR-042: a card is an achievement row (LegacyChallengeTemplate inherits
 --     AchievementTemplateMixin:Init, blizzard_legacychallengebutton.lua:202; blizzard_achievementui.lua:1352, 1373):
 --     its Label and Description are the Achievement table's text, restricted to the achievement families
@@ -59,7 +59,7 @@
 -- Tooltips (GameTooltip with the widget as owner, then Show: help-tooltip owners restricted to their keys):
 --   the three side tabs' tooltipText LEGACY_REWARD_TRACK_TAB_TOOLTIP / LEGACY_CHALLENGE_TAB_TOOLTIP /
 --     LEGACY_TREE_TAB_TOOLTIP (blizzard_legacysystem.xml:9, 18, 27; SidePanelTabButtonMixin:OnEnter,
---     blizzard_sharedxml/mainline/shareduipaneltemplates.lua:406–416);
+--     blizzard_sharedxml/mainline/shareduipaneltemplates.lua:408–418);
 --   the tree selection buttons' one line, the tree label (LegacyTreeButtonMixin:SetupLegacyTreeButton,
 --     blizzard_legacytree.lua:246–252; RingedFrameWithTooltipMixin:ShowTooltip, blizzard_sharedxml/shared/
 --     frametemplate/ringedframetemplate.lua:50–71), registered after each RefreshTreeButtons (pooled, :210–223);
@@ -130,8 +130,8 @@ local CANDIDATES = {
   objectives = { "LegacyChallengeObjectives" }, -- the one criteria frame every card borrows (xml:155)
   track = { FRAME .. ".RewardTrackPage.LegacyRewardProgressFrame" },
   -- the label's writer: OnLoad registers RefreshText itself as a currency callback, so a hook on the frame's field
-  -- never runs; UpdateCurrencyInfo fires it on every show and points change [verified: forever-ui-1.60.1.70170
-  -- blizzard_legacysystem/blizzard_legacysystemutil.lua:55-73, blizzard_legacytree.lua:107, 291-293]
+  -- never runs; UpdateCurrencyInfo fires it on every show and points change [verified: forever-ui-1.60.1.70425
+  -- blizzard_legacysystem/blizzard_legacysystemutil.lua:62-80, blizzard_legacytree.lua:107, 291-293]
   system = { "LegacySystem" },
 }
 

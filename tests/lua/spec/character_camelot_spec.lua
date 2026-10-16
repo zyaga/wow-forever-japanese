@@ -20,6 +20,13 @@ local UI = {
   COMMUNITY_MEMBER_CHARACTER_INFO_FORMAT = { "Level %d %s %s", "レベル%d %s %s" },
   STAT_CATEGORY_GENERAL = { "General", "一般" },
   STAT_CATEGORY_PRIMARY_ATTRIBUTES = { "Primary Attributes", "基本能力値" },
+  -- the pet pane's second header (camelot paperdollframeconstants.lua:103)
+  STAT_CATEGORY_COMBAT = { "Combat", "戦闘" },
+  -- a Warlock pet's mana hover, set raw as tooltip2 (camelot paperdollframe.lua:645)
+  STAT_WARLOCK_PET_MANA_TOOLTIP = { "Resource used to cast |cFFFFFFFFSpells|r and |cFFFFFFFFAbilities|r\n\n"
+    .. "|cFFBCBCBCReplenishes automatically after not spending Mana for 5 sec|r", "|cFFFFFFFF呪文|rと"
+    .. "|cFFFFFFFFアビリティ|rに使う資源\n\n|cFFBCBCBCマナを5秒使わないと自動で回復|r" },
+  MANA = { "Mana", "マナ" },
   SPELL_STAT3_NAME = { "Stamina", "スタミナ" },
   DEFAULT_STAMINA_TOOLTIP = { "Increases health points.", "HPが上昇。" },
   HEADSLOT = { "Head", "頭" },
@@ -31,14 +38,14 @@ local UI = {
   ICON_SELECTION_CLICK = { "Click to view in the list", "クリックで一覧に表示" },
   ICON_SELECTION_NOTINLIST = { "This icon is not in the list", "このアイコンは一覧にありません" },
   -- a Warrior's hit hover, `_G["CR_"..class.."_HIT_CAP_TOOLTIP"]` formatted (camelot
-  -- paperdollframestats.lua:449–451): the "%%" of the global string prints one "%"
+  -- paperdollframestats.lua:479–481): the "%%" of the global string prints one "%"
   CR_WARRIOR_HIT_CAP_TOOLTIP = { "\n|cffBCBCBCTo never miss|r |cFFFF5A5ARaid Bosses|r|cffBCBCBC:\n  8.00%% Melee"
     .. "\n\nTo never miss|r |cFF52E31ELvl %d Targets|r", "\n|cffBCBCBC必中には|r |cFFFF5A5Aレイドボス|r|cffBCBCBC："
     .. "\n  8.00%% 近接\n\n必中には|r |cFF52E31ELv%dの対象|r" },
-  -- the crit hover has no specifier at all, and is still printed through format() (:539–545)
+  -- the crit hover has no specifier at all, and is still printed through format() (:582–591)
   STAT_WARRIOR_CRIT_BONUS = { "Melee critical strikes deal 100%% increased damage", "近接クリティカルはダメージが100%%増加" },
   -- the pet damage row's hover title (CharacterDamageFrame_OnEnter, unit "pet", camelot paperdollframe.lua:
-  -- 2293–2294) and the row's label word
+  -- 2369–2370) and the row's label word
   INVTYPE_WEAPONMAINHAND_PET = { "Main Attack", "主攻撃" }, DAMAGE = { "Damage", "ダメージ" },
   -- a pet's loyalty rank, C_PetInfo.GetPetLoyalty() (client-table row: no global; ADR-042)
   ["PetLoyalty:3"] = { "Submissive", "従順" },
@@ -223,6 +230,17 @@ describe("the character window on the Forever client", function()
       "CharacterStatsPanePetScrollBox")
     assert.are.equal("一般", rows[1].Title:GetText())
     assert.are.equal("スタミナ:", rows[2].Label:GetText())
+  end)
+
+  it("the pet pane's Combat header and a Warlock pet's mana hover translate", function()
+    local rows = RC.setStats({ { header = "General" }, { label = "Mana", value = "300", tooltip = "Mana",
+      tooltip2 = UI.STAT_WARLOCK_PET_MANA_TOOLTIP[1] }, { header = "Combat" } }, "CharacterStatsPanePetScrollBox")
+    assert.are.equal("戦闘", rows[3].Title:GetText())
+    RC.hover(rows[2])
+    assert.are.equal(UI.STAT_WARLOCK_PET_MANA_TOOLTIP[2], left(2))
+    alt(true)
+    assert.are.equal("Combat", rows[3].Title:GetText())
+    alt(false)
   end)
 
   it("the pet damage row's hover title (INVTYPE_WEAPONMAINHAND_PET) translates; the numbers stay", function()

@@ -1,37 +1,37 @@
 -- UI/ChatConfig.lua: the chat configuration window on Forever (surfaces "chatconfig" and "chatconfig.static", area
 -- "ui", ADR-016). ChatConfigFrame is built at login by Blizzard_ChatFrame ([Family]\ChatConfigFrame.lua|xml,
--- mainline) and opened from a chat tab's menu (blizzard_chatframebase/mainline/floatingchatframe.lua:782), the
+-- mainline) and opened from a chat tab's menu (blizzard_chatframebase/mainline/floatingchatframe.lua:687), the
 -- communities stream menu, /tts (blizzard_chatframe/shared/texttospeechframe.lua:526) and the ping settings. The
 -- combat log's options are this window's "Combat" category, so they are this surface too.
 -- Static labels (XML text= and OnLoad writes; shown when the window is shown):
 --   the category list ChatConfigCategoryFrameButton1–7: CHAT, COMBAT, GLOBAL_CHANNELS, OTHER, SETTINGS (xml:383–420);
 --   the filter buttons DELETE / ADD_FILTER / COPY_FILTER (xml:617–639); the combat tabs CombatConfigTab1–5, written
---     once in ChatConfigCombat_OnLoad from COMBAT_CONFIG_TABS (lua:1781–1807);
+--     once in ChatConfigCombat_OnLoad from COMBAT_CONFIG_TABS (lua:1790–1816);
 --   the combat panes' check buttons, each `_G[name.."Text"]:SetText(KEY)` in its OnLoad (xml:815–1471), the unnamed
 --     MISCELLANEOUS / COLORIZE / FILTER_NAME labels (xml:749, 911, 1373), EXAMPLE_TEXT and HIGHLIGHTING titles;
 --   the footer buttons CHAT_DEFAULTS, RESET_CHAT_WINDOW_POSITIONS, COMBATLOG_DEFAULTS, TEXT_TO_SPEECH_DEFAULTS, CANCEL,
 --     OKAY (xml:1506–1571), TextToSpeechCharacterSpecificButton.Text (CHARACTER_SPECIFIC_SETTINGS inside a colour,
---     lua:2632–2636) and the text-to-speech message pane's SubTitle (xml:563).
+--     lua:2641–2645) and the text-to-speech message pane's SubTitle (xml:563).
 -- Dynamic, each a global called by name, post-hooked:
---   ChatConfig_CreateCheckboxes(frame, table, template, title) (lua:819–892) → `<frame>Title` and every row's
+--   ChatConfig_CreateCheckboxes(frame, table, template, title) (lua:828–901) → `<frame>Title` and every row's
 --     `<frame>Checkbox<i>CheckText`; a row's text is a table's `text` or `_G[value.type]` (SAY, PARTY_LEADER, …);
---   ChatConfig_UpdateCheckboxes(frame) (lua:1018–1098) rewrites a row whose text is a function (Me / Custom Unit);
---   ChatConfig_CreateTieredCheckboxes (lua:894–975) → `<frame>Checkbox<i>Text` and the sub-rows `…_<k>Text`;
---   ChatConfig_CreateColorSwatches (lua:977–1016) → `<frame>Title`, `<frame>Swatch<i>Text`;
---   ChatConfigCategoryFrame_Refresh (lua:2182–2224) → ChatConfigFrame.Header.Text: TEXT_TO_SPEECH_CONFIG, or
+--   ChatConfig_UpdateCheckboxes(frame) (lua:1027–1107) rewrites a row whose text is a function (Me / Custom Unit);
+--   ChatConfig_CreateTieredCheckboxes (lua:903–984) → `<frame>Checkbox<i>Text` and the sub-rows `…_<k>Text`;
+--   ChatConfig_CreateColorSwatches (lua:986–1025) → `<frame>Title`, `<frame>Swatch<i>Text`;
+--   ChatConfigCategoryFrame_Refresh (lua:2191–2233) → ChatConfigFrame.Header.Text: TEXT_TO_SPEECH_CONFIG, or
 --     CHATCONFIG_HEADER ("%s Config") around the chat window's own name, which is kept as written;
---   ChatConfigFrame.ChatTabManager:UpdateTabDisplay (lua:2391–2427) → the pooled window tabs: a tab shows a chat
---     window's name (never touched) except the text-to-speech tab, TEXT_TO_SPEECH (lua:2363–2370). Keyed by widget.
--- The rows are created on PLAYER_ENTERING_WORLD (lua:772–806), which may be before or after this module's init, so
+--   ChatConfigFrame.ChatTabManager:UpdateTabDisplay (lua:2400–2436) → the pooled window tabs: a tab shows a chat
+--     window's name (never touched) except the text-to-speech tab, TEXT_TO_SPEECH (lua:2372–2379). Keyed by widget.
+-- The rows are created on PLAYER_ENTERING_WORLD (lua:781–815), which may be before or after this module's init, so
 -- every family is also walked when the window is shown. Widgets are found by the global names the client gives them
 -- (`<frame>Checkbox<i>…`); records are keyed by widget, never by that index.
 -- Tooltips: a check button's OnEnter is GameTooltip:SetText(self.tooltip) (xml:85–89), a sentence key
 -- (*_COMBATLOG_TOOLTIP); the move-filter buttons use GameTooltip_SetTitle (xml:661–663, 684–686). Owners are
 -- registered with WFJ.HelpTooltip.
 -- Never touched: the channel rows of ChatConfigChannelSettingsLeft and ChatConfigTextToSpeechChannelSettingsLeft
--- ("1.General": channel names, lua:1717–1724, 1761–1768) and their overflow tooltips (lua:870–875), only those
+-- ("1.General": channel names, lua:1726–1733, 1770–1777) and their overflow tooltips (lua:879–884), only those
 -- frames' titles are shown; the filter list's buttons and the filter name EditBox (a filter's name is the player's,
--- lua:1840–1843, 1917); the example combat lines (lua:1277–1303).
+-- lua:1849–1852, 1926); the example combat lines (lua:1286–1312).
 local _, WFJ = ...
 local ChatConfig = {}
 WFJ.ChatConfig = ChatConfig
@@ -57,7 +57,7 @@ for _, n in ipairs(ROW_FRAMES) do KIND[n] = "rows" end
 for _, n in ipairs(NAME_FRAMES) do KIND[n] = "names" end
 for _, n in ipairs(TIERED_FRAMES) do KIND[n] = "tiered" end
 for _, n in ipairs(SWATCH_FRAMES) do KIND[n] = "swatches" end
--- The combat log's unit rows (done by, done to, unit colours: chatconfigframe.lua:330–432, 732–762) say
+-- The combat log's unit rows (done by, done to, unit colours: chatconfigframe.lua:339–441, 741–771) say
 -- "Friends" for friendly units, which the friends list's "Friends" does not mean. That key owns its Japanese
 -- (UIStrings.OWN), so these rows ask for the unit keys by name.
 local UNIT_ROWS = { only = { "COMBATLOG_FILTER_STRING_ME", "COMBATLOG_FILTER_STRING_CUSTOM_UNIT",

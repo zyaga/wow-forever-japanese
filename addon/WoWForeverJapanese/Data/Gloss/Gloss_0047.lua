@@ -242,7 +242,6 @@ WFJ.Data.add("gloss", {
   [47239] = "入り用\tいりよう\tneeds",
   [47240] = "入り組む\tいりくむ\tintricate",
   [47241] = "入り組む\tいりくむ\tintricately wind",
-  [47242] = "入り組む\tいりくむ\tseries (intertwined)",
   [47243] = "入り組む\tいりくむ\ttwisting (intricate)",
   [47244] = "入り込む\tいりこむ\tstarting to encroach",
   [47245] = "入り込む\tはいりこむ\tattempted to infiltrate",

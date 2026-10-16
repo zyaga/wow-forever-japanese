@@ -237,7 +237,33 @@ describe("UI/HelpTips: the tutorial pointer arrows", function()
     NPEV2_SELECT_TALENTS_TAB = { "Select the |cFF00FFFFTalents|r Tab", "|cFF00FFFFタレント|rタブを選択しましょう" },
     TALENT_MICRO_BUTTON_UNSPENT_TALENTS = { "You have unspent Talent points.", "未使用のタレントポイントがあります。" },
     RAID = { "Raid", "レイド" }, -- a dictionary word that is no pointer key
+    -- the new player experience's arrows (blizzard_newplayerexperience/blizzard_tutorialtutorials.lua)
+    NPEV2_RELEASESPIRIT = { "You died.\n\nClick |cFF00FFFFRelease Spirit|r to continue.",
+      "死んでしまいました。\n\n|cFF00FFFF霊体になる|rをクリックして続けましょう。" },
+    NPEV2_BUY_ITEMS_FROM_VENDOR = { "|cFF00FFFFRight Click|r{Atlas|NPE_RightClick:16} an item to buy it",
+      "アイテムを|cFF00FFFF右クリック|r{Atlas|NPE_RightClick:16}すると購入できます" },
+    NPE_QUESTREWARDCHOCIEREDITEMS = { "You cannot use items shown in |cFFFF0000Red|r.\n\n",
+      "|cFFFF0000赤|rで表示されたアイテムは使えません。\n\n" },
+    NPE_QUESTREWARDCHOICE = { "|cFF00FFFFLeft-Click|r on the item you want to receive.",
+      "受け取りたいアイテムを|cFF00FFFF左クリック|rしましょう。" },
+    NPEV2_SHOW_BAGS = { "You found a new piece of |cFF00FFFFgear|r!\n\nPress |cFF00FFFF%s|r to open your bag.",
+      "新しい|cFF00FFFF装備|rを見つけました！\n\n|cFF00FFFF%s|rを押してバッグを開きましょう。" },
+    NPEV2_PRESS_KEY_TO_USE_ABILITY = { "Press|cFF00FFFF %s|r to %s", "|cFF00FFFF%s|rを押して%sを使いましょう" },
+    -- the key text when the bag key is unbound (TutorialHelper:GetBagBinding, blizzard_tutorialhelper.lua:289–291)
+    NPE_UNBOUND_KEYBIND = { "[Unbound]", "[未設定]" },
   }
+
+  -- TutorialHelper:FormatString (blizzard_tutorialmanager/blizzard_tutorialhelper.lua:39–67) with
+  -- CreateAtlasMarkup (blizzard_sharedxmlbase/textureutil.lua:303–309): a spell's name in cyan, its key, an atlas
+  local function formatString(str)
+    str = str:gsub("{%$(%d+)}", function() return "|cFF00FFFFAttack|r" end)
+    str = str:gsub("{KB|(%d+)}", function() return "1" end)
+    str = str:gsub("{Atlas|([%w_-]+):?(%d*)}", function(atlasName, size)
+      size = tonumber(size) or 0
+      return ("|A:%s:%d:%d:%d:%d|a"):format(atlasName, size, size, 0, 0)
+    end)
+    return str
+  end
 
   local function stringWidth(fs)
     local w = 0
@@ -346,6 +372,66 @@ describe("UI/HelpTips: the tutorial pointer arrows", function()
     frame.Content.Text:SetText(_G.NPEV2_SELECT_TALENTS_TAB) -- as if a key had been shown on it earlier
     assert.are.equal(0, W.HelpTips.onPointer(pointers, "Some other content"))
     assert.are.equal(_G.NPEV2_SELECT_TALENTS_TAB, frame.Content.Text:GetText())
+  end)
+
+  it("a new player experience arrow is Japanese and sized for it", function()
+    W.HelpTips.init()
+    local id = pointers:Show(formatString(_G.NPEV2_RELEASESPIRIT), "LEFT", {}, 0, 0)
+    local frame = pointers.InUseFrames[id]
+    assert.are.equal(UI30.NPEV2_RELEASESPIRIT[2], frame.Content.Text:GetText())
+    sized(frame, 200)
+  end)
+
+  it("an arrow whose English holds an atlas token: matched through the client's markup, the atlas kept in the "
+    .. "Japanese; the reveal key shows the client's line byte for byte", function()
+    W.HelpTips.init()
+    local live = formatString(_G.NPEV2_BUY_ITEMS_FROM_VENDOR)
+    assert.are.equal("|cFF00FFFFRight Click|r|A:NPE_RightClick:16:16:0:0|a an item to buy it", live)
+    local id = pointers:Show(live, "LEFT", {}, 0, 0)
+    local text = pointers.InUseFrames[id].Content.Text
+    local ja = "アイテムを|cFF00FFFF右クリック|r|A:NPE_RightClick:16:16:0:0|aすると購入できます"
+    assert.are.equal(ja, text:GetText())
+    Stub.keys.alt = true; W.Modifier.refresh()
+    assert.are.equal(live, text:GetText())
+    Stub.keys.alt = false; W.Modifier.refresh()
+    assert.are.equal(ja, text:GetText()) -- the record is still ours after a round trip, not dropped as rewritten
+    W.State.setEnabled(false)
+    assert.are.equal(live, text:GetText())
+  end)
+
+  it("the reward-choice arrow: the red-items line before the choice line, each in Japanese", function()
+    W.HelpTips.init()
+    local live = formatString(_G.NPE_QUESTREWARDCHOCIEREDITEMS) .. formatString(_G.NPE_QUESTREWARDCHOICE)
+    local id = pointers:Show(live, "LEFT", {}, -15, 0)
+    local frame = pointers.InUseFrames[id]
+    assert.are.equal(UI30.NPE_QUESTREWARDCHOCIEREDITEMS[2] .. UI30.NPE_QUESTREWARDCHOICE[2],
+      frame.Content.Text:GetText())
+    sized(frame, 200)
+    Stub.keys.alt = true; W.Modifier.refresh()
+    assert.are.equal(live, frame.Content.Text:GetText())
+    sized(frame, 200)
+    Stub.keys.alt = false; W.Modifier.refresh()
+    pointers:Hide(id)
+    -- every item usable: the choice line alone
+    local id2 = pointers:Show(formatString(_G.NPE_QUESTREWARDCHOICE), "LEFT", {}, -15, 0)
+    assert.are.equal(UI30.NPE_QUESTREWARDCHOICE[2], pointers.InUseFrames[id2].Content.Text:GetText())
+  end)
+
+  it("arrows with the player's key and a spell's name keep both as the client wrote them", function()
+    W.HelpTips.init()
+    local bags = formatString(_G.NPEV2_SHOW_BAGS:format("B"))
+    local id = pointers:Show(bags, "DOWN", {}, 0, 0)
+    assert.are.equal("新しい|cFF00FFFF装備|rを見つけました！\n\n|cFF00FFFFB|rを押してバッグを開きましょう。",
+      pointers.InUseFrames[id].Content.Text:GetText())
+    local unbound = formatString(_G.NPEV2_SHOW_BAGS:format(_G.NPE_UNBOUND_KEYBIND))
+    local id3 = pointers:Show(unbound, "DOWN", {}, 0, 0)
+    assert.are.equal("新しい|cFF00FFFF装備|rを見つけました！\n\n|cFF00FFFF[未設定]|rを押してバッグを開きましょう。",
+      pointers.InUseFrames[id3].Content.Text:GetText())
+    local ability = formatString(_G.NPEV2_PRESS_KEY_TO_USE_ABILITY:format("{KB|6603}", "{$6603}"))
+    assert.are.equal("Press|cFF00FFFF 1|r to |cFF00FFFFAttack|r", ability)
+    local id2 = pointers:Show(ability, "DOWN", {}, 0, 10, nil, "DOWN")
+    assert.are.equal("|cFF00FFFF1|rを押して|cFF00FFFFAttack|rを使いましょう",
+      pointers.InUseFrames[id2].Content.Text:GetText())
   end)
 
   it("no TutorialPointerFrame: the pointer part is a no-op, HelpTips.init still hooks HelpTip", function()

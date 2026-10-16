@@ -3,7 +3,7 @@
 -- [Game]\CharacterFrame.*, [Game]\PaperDollFrame.* and the Vanilla, Cata and [Game] PaperDollFrameStats.lua on camelot
 -- [verified: forever blizzard_uipanels_game.toc:44–60]. What is translated:
 --   the level lines, both writers called by name [verified: camelot/paperdollframe.lua:492–515, 522–543, 448, 460;
---     characterframe.lua:813, 837]: CharacterLevelText, the player's line from PaperDollFrame_SetLevel (PLAYER_LEVEL /
+--     characterframe.lua:809, 833]: CharacterLevelText, the player's line from PaperDollFrame_SetLevel (PLAYER_LEVEL /
 --     PLAYER_LEVEL_NO_SPEC: level, class colour, spec, class: `text` captures); and PetCharacterLevelText
 --     (paperdollframe.xml:599), the pet's line from PaperDollFrame_SetPetLevel: UNIT_TYPE_LEVEL_TEMPLATE (level, pet
 --     family), then, when the pet has a loyalty rank, " " .. HIGHLIGHT_FONT_COLOR:WrapTextInColorCode(
@@ -12,30 +12,30 @@
 --     around its PetLoyalty row, the colour kept. A rank that is no PetLoyalty row stays as written; a level part
 --     that is no UNIT_TYPE_LEVEL_TEMPLATE line leaves the whole line English.
 --   the stat pane: CharacterStatsPaneScrollBox / CharacterStatsPanePetScrollBox, a ScrollBox of pooled rows
---     (characterframe.lua:1049–1077, 1107–1226, 1233–1298; characterframe.xml:170–234, 463–484). A header row's Title
---     is a PAPERDOLL_STATCATEGORIES categoryName or STAT_CATEGORY_RESISTANCE (paperdollframeconstants.lua:30–100,
---     characterframe.lua:1200); a stat row's Label is format(STAT_FORMAT "%s:", <stat word>) written by its Init or
---     by PaperDollFrame_SetLabelAndText from the stat's updateFunc (paperdollframe.lua:2428–2437). Followed with
+--     (characterframe.lua:1056–1087, 1116–1239, 1245–1310; characterframe.xml:170–234, 463–484). A header row's Title
+--     is a PAPERDOLL_STATCATEGORIES categoryName or STAT_CATEGORY_RESISTANCE (paperdollframeconstants.lua:35–117,
+--     characterframe.lua:1209); a stat row's Label is format(STAT_FORMAT "%s:", <stat word>) written by its Init or
+--     by PaperDollFrame_SetLabelAndText from the stat's updateFunc (paperdollframe.lua:2504–2513). Followed with
 --     ScrollUtil.AddInitializedFrameCallback (after the element initializer), keyed by the row widget itself; a stat
---     row is also a help-tooltip owner (PaperDollStatTooltip or its onEnterFunc, paperdollframe.lua:2208–2221).
+--     row is also a help-tooltip owner (PaperDollStatTooltip or its onEnterFunc, paperdollframe.lua:2282–2295).
 --     A stat Label is restricted (`only`) to the stat words: PaperDollFrame_SetWeaponSkill labels a row with a skill
---     name (paperdollframe.lua:723–735). CharacterStatsPane (the older category frames) is never shown.
+--     name (paperdollframe.lua:732–744). CharacterStatsPane (the older category frames) is never shown.
 --   help tooltips: the six icon mode tabs (tooltipText CHARACTER_FRAME_TAB_*, SidePanelTabButtonMixin:OnEnter →
---     SetText, shareduipaneltemplates.lua:406–420; characterframe.xml:574–603), the three paperdoll sidebar tabs
---     (paperdollframe.lua:3578–3586), the right-pane toggle (characterframe.lua:337–363), and the equipment slots:
+--     SetText, shareduipaneltemplates.lua:408–422; characterframe.xml:574–603), the three paperdoll sidebar tabs
+--     (paperdollframe.lua:3632–3640), the right-pane toggle (characterframe.lua:353–370), and the equipment slots:
 --     the same CharacterHeadSlot … CharacterAmmoSlot names; an empty slot's SetText(<SLOT>SLOT / RELICSLOT) comes from
---     ItemUtil.DisplayEquipSlotTooltip (blizzard_framexmlutil/itemutil.lua:395–414).
---   the equipment manager (sidebar 2, PaperDollFrame.EquipmentManagerPane, paperdollframe.xml:525–585): the Equip /
+--     ItemUtil.DisplayEquipSlotTooltip (blizzard_framexmlutil/itemutil.lua:465–484).
+--   the equipment manager (sidebar 2, PaperDollFrame.EquipmentManagerPane, paperdollframe.xml:474–554): the Equip /
 --     Save buttons (text= EQUIPSET_EQUIP / SAVE) and the New Set button's unnamed FontString (text=
---     PAPERDOLL_NEWEQUIPMENTSET, xml:16–27), all static; each pooled set row (GearSetButtonTemplate, xml:232–360,
+--     PAPERDOLL_NEWEQUIPMENTSET, xml:17–44), all static; each pooled set row (GearSetButtonTemplate, xml:209–354,
 --     followed with ScrollUtil.AddInitializedFrameCallback) has its set name in `.text` (a name, forbidden) and two
 --     help-tooltip owners, DeleteButton (SetText(DELETE)) and EditButton (SetText(EQUIPMENT_SET_SETTINGS)), each
 --     restricted to its one key. The row's own hover is GameTooltip:SetEquipmentSet (client data, not walked).
---   the set's name-and-icon popup (GearManagerPopupFrame, IconSelectorPopupFrameTemplate, xml:940–947): the edit
---     box header (editBoxHeaderText GEARSETS_POPUP_TEXT, written at OnLoad, shareduipaneltemplates.lua:1844) and
+--   the set's name-and-icon popup (GearManagerPopupFrame, IconSelectorPopupFrameTemplate, xml:943–950): the edit
+--     box header (editBoxHeaderText GEARSETS_POPUP_TEXT, written at OnLoad, shareduipaneltemplates.lua:1861) and
 --     the selected-icon description (ICON_SELECTION_CLICK / ICON_SELECTION_NOTINLIST), written by SetSelectedIconText
---     (a method call, lua:1967–1975) and by the popup's selection callback, which SelectorMixin:OnSelection runs just
---     before self:SetSelectedIndex (blizzard_selectorui.lua:3–15; paperdollframe.lua:2680–2689): both are hooked on
+--     (a method call, lua:1984–1994) and by the popup's selection callback, which SelectorMixin:OnSelection runs just
+--     before self:SetSelectedIndex (blizzard_selectorui.lua:3–15; paperdollframe.lua:2758–2765): both are hooked on
 --     their instances. The name EditBox is forbidden.
 --   the window title: CharacterFrameMixin:UpdateTitle writes SetTitle(characterFrameDisplayInfo[
 --     activeSubframe].title): the player's name (UnitPVPName, the "Default" entry, shown on the paperdoll) or one of
@@ -44,9 +44,9 @@
 --     pane keys, on its own surface "character.title"; and because a player may be named "Skills" or "Currency",
 --     UpdateTitle is post-hooked too: when the active pane is not one of the five, the title is the name and its
 --     record is released (the client's English, the name, is put back).
---   the title pane (PaperDollFrame.TitleManagerPane, the third of PAPERDOLL_SIDEBARS, paperdollframeconstants.lua:23):
---     a pooled row's text is written by PaperDollTitlesPane_InitButton (paperdollframe.lua:3243–3246). The first row is
---     PLAYER_TITLE_NONE (:3304); every other row is a title the character earned, a name, left as written. Rows are
+--   the title pane (PaperDollFrame.TitleManagerPane, the third of PAPERDOLL_SIDEBARS, paperdollframeconstants.lua:28):
+--     a pooled row's text is written by PaperDollTitlesPane_InitButton (paperdollframe.lua:3280–3283). The first row is
+--     PLAYER_TITLE_NONE (:3341); every other row is a title the character earned, a name, left as written. Rows are
 --     walked from the ScrollBox's initialized-frame callback, restricted to that one key.
 -- Not translated: the XP / pet XP bars.
 local _, WFJ = ...
@@ -88,7 +88,8 @@ OWNERS[#OWNERS + 1] = "CharacterFrameRightPaneToggleButton"
 
 -- camelot stat pane: the category headers and the stat words a row's Label can hold
 local CATEGORY_ONLY = { only = { "STAT_CATEGORY_GENERAL", "STAT_CATEGORY_PRIMARY_ATTRIBUTES", "STAT_CATEGORY_WEAPONS",
-  "STAT_CATEGORY_MODIFIERS", "STAT_CATEGORY_DEFENSE", "STAT_CATEGORY_RESISTANCE" } }
+  "STAT_CATEGORY_MODIFIERS", "STAT_CATEGORY_DEFENSE", "STAT_CATEGORY_RESISTANCE",
+  "STAT_CATEGORY_COMBAT" } } -- the pet pane's second header
 local STAT_ONLY = { only = { "HEALTH", "MANA", "RAGE", "ENERGY", "FOCUS", "RUNIC_POWER", "STAT_MOVEMENT_SPEED",
   "SPELL_STAT1_NAME", "SPELL_STAT2_NAME", "SPELL_STAT3_NAME", "SPELL_STAT4_NAME", "SPELL_STAT5_NAME",
   "INVTYPE_WEAPONMAINHAND", "INVTYPE_WEAPONOFFHAND", "INVTYPE_RANGED", "DAMAGE", "WEAPON_SPEED",
@@ -210,7 +211,7 @@ function Character.onStatRow(a, b)
     local stat = isStatLabel(frame.Label) -- read before our write: the client's English
     WFJ.Labels.show(SURFACE, key, frame.Label, nil, STAT_ONLY)
     -- The row's tooltip is walked only while its label is a stat word: a weapon-skill row is labelled with a skill
-    -- name (paperdollframe.lua:723–735) and its tooltip carries that name, so it is never walked; a pooled row that
+    -- name (paperdollframe.lua:732–744) and its tooltip carries that name, so it is never walked; a pooled row that
     -- held a stat earlier is re-registered with an empty key set, which matches nothing.
     WFJ.HelpTooltip.register(frame, stat and true or NO_WALK)
   end

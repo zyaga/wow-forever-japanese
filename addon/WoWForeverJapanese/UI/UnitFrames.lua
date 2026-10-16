@@ -3,11 +3,11 @@
 -- camelot load set is the mainline one (blizzard_unitframe.toc). Almost everything on a unit frame is a NAME (unit,
 -- aura) or a NUMBER (health, power, level) and is never touched; the fixed words are:
 --   the target-style frames' "Dead" / "Unconscious": static XML FontStrings, text="DEAD" / text="UNCONSCIOUS"
---     (mainline/targetframe.xml:182, 187 in TargetFrameContent.TargetFrameContentMain.HealthBarsContainer; :455, :460
---     in the target-of-target HealthBar), shown and hidden by TargetFrameMixin:CheckDead (targetframe.lua:464–478).
+--     (mainline/targetframe.xml:182, 187 in TargetFrameContent.TargetFrameContentMain.HealthBarsContainer; :448, :453
+--     in the target-of-target HealthBar), shown and hidden by TargetFrameMixin:CheckDead (targetframe.lua:475–490).
 --     Shown once at init for TargetFrame, FocusFrame, Boss1..5TargetFrame and their totFrame;
 --   a compact unit frame's status text: CompactUnitFrame_UpdateStatusText (a global function, shared/
---     compactunitframe.lua:1085–1115) writes PLAYER_OFFLINE, DEAD, a health number, LOST_HEALTH or a percentage into
+--     compactunitframe.lua:1084–1114) writes PLAYER_OFFLINE, DEAD, a health number, LOST_HEALTH or a percentage into
 --     frame.statusText. Post-hooked; only the two words are ever shown. The health forms can be SECRET values on this
 --     client (`issecretvalue`, blizzard_sharedxmlbase/securetypes.lua:6): the hook reads the text once, skips a
 --     secret, and calls Labels.show only for one of the two words or to drop a record the client overwrote;
@@ -22,13 +22,13 @@
 --     unit's name, level, class and guild lines never match it;
 --   the "not present" icon tooltips: PartyMemberFrame's NotPresentIcon: SetText(self.tooltip) + Show
 --     (mainline/partyframetemplates.xml:356–360), tooltip = PARTY_IN_PUBLIC_GROUP_MESSAGE | INCOMING_SUMMON_TOOLTIP_*
---     (mainline/partymemberframe.lua:476–495); the compact frame's centerStatusIcon: the same keys
---     (shared/compactunitframe.lua:1477–1500, 2161–2167). Owners registered with UI/HelpTooltip restricted to those
+--     (mainline/partymemberframe.lua:595–614); the compact frame's centerStatusIcon: the same keys
+--     (shared/compactunitframe.lua:1476–1499, 2160–2166). Owners registered with UI/HelpTooltip restricted to those
 --     keys (a phased reason is client-built text and never matches): the party frames from PartyFrame's pool at init,
 --     a compact frame's icon from the post-hook of CompactUnitFrame_UpdateCenterStatusIcon (registering is a table
 --     write, repeated harmlessly).
--- Not here (stay English): a TextStatusBar's zero text (SetBarTextZeroText(DEAD), targetframe.lua:733,
---   partymemberframe.lua:240, 690), written inside the health text update on every health event, beside values that
+-- Not here (stay English): a TextStatusBar's zero text (SetBarTextZeroText(DEAD), targetframe.lua:744,
+--   partymemberframe.lua:359, 809), written inside the health text update on every health event, beside values that
 --   can be secret; unit popup menu titles (RAID_TARGET_ICON, SET_FOCUS: the menu system's); HelpTips; edit-mode
 --   system names.
 local _, WFJ = ...

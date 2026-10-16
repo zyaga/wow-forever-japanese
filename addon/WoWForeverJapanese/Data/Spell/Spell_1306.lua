@@ -20,7 +20,7 @@ WFJ.Data.add("spell", {
   [1306438] = { "ターゲットを吹き飛ばし、脅威をゼロにします。", nil, 0x38521a2c, nil, "um" },
   [1306448] = { "Lesser Healing Wave呪文のクリティカル率が$N1%上昇します。", nil, 0x4c099695, nil, "um" },
   [1306459] = { "Bear Form、Dire Bear Form、Moonkin Formの間、Defenseスキルの$N1%に等しい基本アーマーを追加で得ます。", nil, 0x9469c2c4, nil, "um" },
-  [1306483] = { "Lacerateが命中すると、$N1%の確率でMangle (Bear)のクールダウンがリセットされます。", nil, 0x60414f0c, nil, "um" },
+  [1306483] = { "Lacerateが命中すると、$N1%の確率でPrimal Biteのクールダウンがリセットされます。", nil, 0xa7fe2f7c, nil, "um" },
   [1306488] = { "Swiftmend呪文のクールダウンを$D1短縮します。", nil, 0xa5fb393f, nil, "um" },
   [1306515] = { "Fire呪文と効果によるダメージが最大$N1増加します。", "呪文とアビリティで与えるFireダメージが最大$N1増加します。", 0x6e8982e7, 0x3e469155, "uu" },
   [1306518] = { "Frost呪文と効果によるダメージが最大$N1増加します。", nil, 0x8d8b0ac5, nil, "um" },

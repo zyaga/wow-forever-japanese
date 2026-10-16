@@ -6,7 +6,7 @@
 -- self and party menus add the loot, role and group entries: the loot method's title is the chosen method's name,
 -- the threshold's the quality's (_G["ITEM_QUALITY"..n.."_DESC"],
 -- unitpopupbuttons.lua:609–616, 773–774), a role radio is INLINE_<ROLE>_ICON .. " " .. <ROLE> (the `icon` label form,
--- unitpopupsharedbuttonmixins.lua:3549–3589), the loot opt-out is "Pass on Loot: %s" around Yes / No (:3339).
+-- unitpopupsharedbuttonmixins.lua:3630–3670), the loot opt-out is "Pass on Loot: %s" around Yes / No (:3420).
 local _, WFJ = ...
 
 -- The raid target submenu and the focus entry every unit menu opens with, then `rest`. → list
@@ -39,7 +39,7 @@ WFJ.MenusUnit = {
     -- unitpopupmenus.lua:21) and the pet menu's abandon (the same English as RELEASE_PET_BUTTON_LABEL)
     "VOTE_TO_ABANDON", "PET_ABANDON",
     -- the loot specialization submenu's first entry, around the specialization's name
-    -- (unitpopupsharedbuttonmixins.lua:1877)
+    -- (unitpopupsharedbuttonmixins.lua:1912)
     "LOOT_SPECIALIZATION_DEFAULT" }),
   -- the loot entries' hovers (GetTooltipText → the element's own tooltip)
   TOOLTIPS = { "NEWBIE_TOOLTIP_UNIT_FREE_FOR_ALL", "NEWBIE_TOOLTIP_UNIT_ROUND_ROBIN",
@@ -48,7 +48,7 @@ WFJ.MenusUnit = {
     -- the abandon vote's cooldown hover ("… in %s", a `time` argument)
     "VOTE_TO_ABANDON_ON_COOLDOWN",
     -- the whisper entry's hover on an age-restricted account: its title (the entry's English again) and
-    -- the red warning line (UnitPopupWhisperButtonMixin:TooltipWarning, unitpopupsharedbuttonmixins.lua:469–475;
+    -- the red warning line (UnitPopupWhisperButtonMixin:TooltipWarning, unitpopupsharedbuttonmixins.lua:529–535;
     -- DisplayUnitPopupTooltip :2–23)
     "WHISPER", "AGE_RESTRICTED_CHAT_MINOR_TOOLTIP", "AGE_RESTRICTED_CHAT_UNVERIFIED_TOOLTIP" },
   -- the same hover in the other `which`s that list the whisper entry

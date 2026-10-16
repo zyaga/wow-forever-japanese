@@ -25,7 +25,10 @@ local UI = {
   SEARCH = { "Search", "検索" },
   WHO_FRAME_TOTAL_TEMPLATE = { "%d |4Person:People; Found", "該当 %d人" },
   WHO_FRAME_SHOWN_TEMPLATE = { "(%d displayed)", "(%d人表示)" }, LFG_WHO_LEVEL = { "Level %d", "レベル %d" },
-  FRIENDS = { "Friends", "フレンド" }, CONTACTS_RECENT_ALLIES_TAB_NAME = { "Recent Allies", "最近の仲間" },
+  FRIENDS = { "Friends", "フレンド" },
+  SOCIAL_TAB_UNAVAILABLE = { "The %s feature is unavailable due to your account's privacy settings.",
+    "アカウントのプライバシー設定により、%sの機能は利用できません。" },
+  CONTACTS_RECENT_ALLIES_TAB_NAME = { "Recent Allies", "最近の仲間" },
   CONTACTS_MENU_NAME = { "Menu", "メニュー" }, WHO_LIST_LEVEL_TOOLTIP = { "Level %d", "レベル %d" },
   RAF_RECRUIT_FRIEND = { "|cffffd200Recruit:|r %s", "|cffffd200リクルート:|r %s" },
   RAF_RECRUITER_FRIEND = { "|cffffd200Recruiter:|r %s", "|cffffd200リクルーター:|r %s" },
@@ -42,7 +45,7 @@ local UI = {
   -- a Recruit-A-Friend-linked friend's summon button (camelot friendsframe.lua:1010–1017)
   RAF_SUMMON_LINKED = { "Summon Linked Friend", "リンクしたフレンドを召喚" },
   COOLDOWN_REMAINING = { "Cooldown remaining:", "クールダウン残り:" },
-  -- the who row's invite button and the filter menu (wholist.lua:117–121, 316–526)
+  -- the who row's invite button and the filter menu (wholist.lua:119–123, 316–540)
   WHO_PARTY_BUTTON_TOOLTIP = { "Invite to Group", "グループに招待" }, RACE = { "Race", "種族" },
   CLASS = { "Class", "クラス" }, CHECK_ALL = { "Check All", "すべてチェック" },
   WHO_SORT_LABEL = { "Sort By", "並べ替え" }, NAME = { "Name", "名前" },
@@ -111,6 +114,19 @@ describe("the social window on Forever's camelot FriendsFrame", function()
         alt(false)
         assert.are.equal("クイック参加", _G.FriendsFrameTitleText:GetText())
       end)
+
+    it("the friends list's privacy notice (FriendsListFrame_OnShow) is Japanese, its tab name nested as the"
+      .. " Friends word, and the reveal key shows the client's English", function()
+      Social.friendsDisabled = true
+      local text = _G.FriendsListFrame.FriendsDisabledText
+      _G.FriendsListFrame:Show()
+      assert.are.equal("アカウントのプライバシー設定により、フレンドの機能は利用できません。", text:GetText())
+      alt(true)
+      assert.are.equal("The Friends feature is unavailable due to your account's privacy settings.", text:GetText())
+      alt(false)
+      assert.are.equal("アカウントのプライバシー設定により、フレンドの機能は利用できません。", text:GetText())
+      Social.friendsDisabled = false
+    end)
 
     it("the titles go through Labels.title: re-rendered right after a SetTitle, kept after a second"
       .. " one, and a title that is a name (a dictionary word) stays English", function()

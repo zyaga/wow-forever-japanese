@@ -1,5 +1,5 @@
 -- UI/Speech.lua: NPC speech in the chat window (the event handler's MessageFormatter replayed:
--- format(CHAT_<TYPE>_GET .. message, name, name), chatframeoverrides.lua:543–672), in speech bubbles and as boss emotes
+-- format(CHAT_<TYPE>_GET .. message, name, name), chatframeoverrides.lua:554–683), in speech bubbles and as boss emotes
 -- on RaidWarningFrame (raidwarning.lua:83–119, 205–227). Gossip rows are keyed here by the English itself (the key
 -- function Main passes is the Collector's hash; the module only calls it).
 local H = require("tests.lua.spec.helpers")

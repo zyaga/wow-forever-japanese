@@ -11,7 +11,6 @@ WFJ.Data.add("gloss", {
   [4008] = "いる\tいる\tthere are (have)",
   [4009] = "いる\tいる\tthere are (none)",
   [4010] = "いる\tいる\tthere are (not)",
-  [4011] = "いる\tいる\tthere are (only)",
   [4012] = "いる\tいる\tthere are (some)",
   [4013] = "いる\tいる\tthere are no",
   [4014] = "いる\tいる\tthere are no (don't have)",

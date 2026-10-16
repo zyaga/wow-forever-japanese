@@ -1,22 +1,22 @@
 -- UI/ReportFrame.lua: the Report Player window on Forever (surface "reportframe", area "ui", ADR-016).
 -- Blizzard_ReportFrame (ReportFrame, reportframe.xml:3) inherits Blizzard_ReportFrameShared's
 -- SharedReportFrameTemplate;
--- both load at login. It is an ordinary frame shown with self:Show() (reportframeshared.lua:121), not a StaticPopup,
--- opened by the unit menus' Report entries, the mail frame (blizzard_mailframe/mailframe.lua:1137), the calendar
--- and the group finder (blizzard_groupfinder_vanillastyle/blizzard_lfgvanilla_browse.lua:1442–1456).
+-- both load at login. It is an ordinary frame shown with self:Show() (reportframeshared.lua:130), not a StaticPopup,
+-- opened by the unit menus' Report entries, the mail frame (blizzard_mailframe/mailframe.lua:1142), the calendar
+-- and the group finder (blizzard_groupfinder_vanillastyle/blizzard_lfgvanilla_browse.lua:1463–1477).
 -- Static labels (XML text=; each restricted to its own key): TitleText, ThankYouText (the "thank you" page is part of
 --   the window, whatever its ERR_ name says), ReportingMajorCategoryDropdown.Label, ReportButton,
 --   MinorReportDescription (reportframeshared.xml:69–191); the comment box's Instructions FontString, filled from the
 --   `instructions` key value (xml:168); the EditBox's own text is never touched.
 -- Dynamic, each the frame's own method (the mixin is copied onto the frame at load; every call is `self:…()`):
---   ReportFrame:InitiateReportInternal → ReportString "Report <player>", the name kept as written (lua:125–127);
+--   ReportFrame:InitiateReportInternal → ReportString "Report <player>", the name kept as written (lua:134–136);
 --   ReportFrame:MajorTypeSelected → the pooled minor-category check buttons' Text, _G[C_ReportSystem
---     .GetMinorCategoryString(…)] (MinorCategoryButtonPool, lua:8, 165–175, 278–294), walked from the pool and keyed
---     by widget; each is also a help-tooltip owner for HARMFUL_TO_MINORS_DISABLED_TOOLTIP (lua:308–316);
+--     .GetMinorCategoryString(…)] (MinorCategoryButtonPool, lua:8, 174–184, 287–303), walked from the pool and keyed
+--     by widget; each is also a help-tooltip owner for HARMFUL_TO_MINORS_DISABLED_TOOLTIP (lua:317–325);
 --   the reason dropdown's own text after DropdownTextMixin:UpdateText (blizzard_menu/menutemplates.lua:712–713):
 --     REPORTING_MAKE_SELECTION (SetDefaultText, lua:15) or the selected major category. The popup's entries are
 --     not handled here.
--- Help tooltip: ReportButton's REPORTING_MAKE_SELECTION (lua:353–362).
+-- Help tooltip: ReportButton's REPORTING_MAKE_SELECTION (lua:362–371).
 -- Not here: the screenshot section and ReportScreenshotModeFrame serve decor reports only (housing is gated
 -- `standard`, never loaded on camelot); the reported player's name.
 -- Set up only where ReportFrame.ReportingMajorCategoryDropdown carries the Menu system's UpdateText.

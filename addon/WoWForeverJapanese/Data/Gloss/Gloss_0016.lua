@@ -703,7 +703,6 @@ WFJ.Data.add("gloss", {
   [16700] = "だろう\tだろう\tsurely; must have",
   [16701] = "だろう\tだろう\tsurely; probably",
   [16702] = "だろう\tだろう\tthere will be (probably)",
-  [16703] = "だろう\tだろう\tundoubtedly (probably)",
   [16704] = "だろう\tだろう\twasn't it",
   [16705] = "だろう\tだろう\twere you? (probably)",
   [16706] = "だろう\tだろう\twill",

@@ -569,7 +569,6 @@ WFJ.Data.add("gloss", {
   [17567] = "つける\tつける\tdo not attempt (手をつける: start on)",
   [17568] = "つける\tつける\tfollowed (後をつける: stalk)",
   [17569] = "つける\tつける\tgain",
-  [17570] = "つける\tつける\tgain (thrive)",
   [17571] = "つける\tつける\tgain (力をつける: grow powerful)",
   [17572] = "つける\tつける\tgave",
   [17573] = "つける\tつける\tgetting you (can give)",

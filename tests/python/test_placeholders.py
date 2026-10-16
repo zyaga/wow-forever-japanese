@@ -77,8 +77,27 @@ def test_validate_rule_fails_on_a_shipped_unknown_token_only(tmp_path):
     ]
 
 
+def test_a_ui_line_may_keep_a_tutorial_markup_token_its_english_carries(tmp_path):
+    # a brace token the English carries verbatim is client markup (the new player tutorial's FormatString tokens,
+    # blizzard_tutorialhelper.lua:39–67, drawn by UI/HelpTips); a UI line may keep it, never another type's line
+    data, english = tmp_path / "data", tmp_path / "english"
+    data.mkdir()
+    english.mkdir()
+    atlas = "{Atlas|NPE_RightClick:16}"
+    Store(data).save("ui", [_line("A", f"右クリック{atlas}で購入", field="text"),
+                            _line("B", "右クリック{Atlas|Other:16}で購入", field="text")], allow_empty=True)
+    Store(english).save("ui", [{"id": "A", "field": "text", "en": f"Right Click{atlas} to buy"},
+                               {"id": "B", "field": "text", "en": f"Right Click{atlas} to buy"}], allow_empty=True)
+    Store(data).save("quest", [_line(7, f"右クリック{atlas}")], allow_empty=True)
+    assert validate.rule_placeholders(Store(data), Store(english)) == [
+        "placeholders: quest 7/description ships unknown token(s) {Atlas|NPE_RightClick:16}; known: {name}, {class},"
+        " {race}",
+        "placeholders: ui B/text ships unknown token(s) {Atlas|Other:16}; known: {name}, {class}, {race}",
+    ]
+
+
 def test_committed_store_ships_no_unknown_token(root):
-    assert validate.rule_placeholders(Store(root / "data")) == []
+    assert validate.rule_placeholders(Store(root / "data"), Store(root / "data" / "english")) == []
 
 
 def test_lua_and_python_know_the_same_tokens(root):

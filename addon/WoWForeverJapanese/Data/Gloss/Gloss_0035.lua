@@ -476,7 +476,6 @@ WFJ.Data.add("gloss", {
   [35473] = "レイドフレーム\tレイドフレーム\traid frames",
   [35474] = "レイドロック\tレイドロック\traid lock",
   [35475] = "レイヤー\tレイヤー\tlayered",
-  [35476] = "レイライン\tレイライン\tley line",
   [35477] = "レイライン\tレイライン\tley lines",
   [35478] = "レガシー\tレガシー\tlegacy",
   [35479] = "レガシーツリー\tレガシーツリー\tLegacy Tree",

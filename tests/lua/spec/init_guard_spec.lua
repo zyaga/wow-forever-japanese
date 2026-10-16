@@ -59,7 +59,7 @@ local ORDER = {
   { "bossbanner", "BossBanner" }, { "cinematic", "Cinematic" }, { "subtitles", "Subtitles" },
   { "coinpickup", "CoinPickup" }, { "combatfeedback", "CombatFeedback" }, { "equipmentflyout", "EquipmentFlyout" },
   { "ghostframe", "GhostFrame" }, { "guildinvite", "GuildInvite" }, { "instanceabandon", "InstanceAbandon" },
-  { "instancedifficulty", "InstanceDifficulty" }, { "loothistory", "LootHistory" }, { "lossofcontrol",
+  { "loothistory", "LootHistory" }, { "lossofcontrol",
   "LossOfControl" }, { "majorfactiontoast", "MajorFactionToast" }, { "partypose", "PartyPose" }, { "pethappiness",
   "PetHappiness" }, { "playerchoice", "PlayerChoice" }, { "readycheck", "ReadyCheck" }, { "stacksplit",
   "StackSplit" }, { "streamingicon", "StreamingIcon" }, { "zonetext", "ZoneText" },

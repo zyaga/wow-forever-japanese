@@ -1,5 +1,5 @@
 -- Quick keybind mode on Forever: UI/QuickKeybind.lua over a QuickKeybindFrame and QuickKeybindTooltip
--- replayed from blizzard_quickkeybind (quickkeybind.xml:18–89, quickkeybind.lua:51–72, 106–124, 226–245).
+-- replayed from blizzard_quickkeybind (quickkeybind.xml:18–89, quickkeybind.lua:51–72, 106–124, 228–247).
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 local S = require("tests.lua.spec.stub_settings")

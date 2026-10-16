@@ -1,7 +1,7 @@
 -- UI/Macro.lua: the macro window on Forever (surface "macro", area "ui", ADR-016 / ADR-029).
 -- Blizzard_MacroUI is load-on-demand; ShowMacroFrame / MacroFrame_LoadUI live in its [Bootstrap] file
 -- (blizzard_macroui/blizzard_macroui_bootstrap.lua) and are called by the game menu's Macros button
--- (blizzard_gamemenu/shared/gamemenuframe.lua:261), /macro (blizzard_chatframebase/shared/slashcommands.lua:1218),
+-- (blizzard_gamemenu/shared/gamemenuframe.lua:258), /macro (blizzard_chatframebase/shared/slashcommands.lua:1268),
 -- the chat menu button (blizzard_chatframebase/mainline/chatframemenubutton.lua:91) and the click-binding window's
 -- OnLoad (blizzard_clickbindingui/blizzard_clickbindingui.lua:594).
 -- Static labels (XML text=, blizzard_macroui/blizzard_macroui.xml): an unnamed CREATE_MACROS header (:40),
@@ -16,9 +16,9 @@
 --     never read or written;
 --   the name-and-icon popup (MacroPopupFrame, IconSelectorPopupFrameTemplate, blizzard_macroiconselector.xml:3–10):
 --     BorderBox.EditBoxHeaderText MACRO_POPUP_TEXT (written at OnLoad, blizzard_sharedxml/mainline/
---     shareduipaneltemplates.lua:1844), OkayButton / CancelButton, SelectedIconHeader ICON_SELECTION_TITLE_CURRENT
+--     shareduipaneltemplates.lua:1861), OkayButton / CancelButton, SelectedIconHeader ICON_SELECTION_TITLE_CURRENT
 --     (shareduipaneltemplates.xml:1796), and SelectedIconDescription after MacroPopupFrame:SetSelectedIconText
---     (ICON_SELECTION_CLICK / ICON_SELECTION_NOTINLIST, shareduipaneltemplates.lua:1969–1972).
+--     (ICON_SELECTION_CLICK / ICON_SELECTION_NOTINLIST, shareduipaneltemplates.lua:1986–1989).
 -- Help tooltips (GameTooltip): tab 2's title when truncated (xml:198–203); Edit / Delete / New in click-binding mode
 --   add CLICK_BINDING_BUTTON_DISABLED (blizzard_macroui.lua:233–246).
 -- Never touched: the macro body EditBox, the selected macro's name, the macro buttons' names, the popup's name

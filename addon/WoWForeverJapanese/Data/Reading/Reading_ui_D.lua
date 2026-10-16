@@ -91,6 +91,8 @@ WFJ.Data.add("reading", {
   ["ui:DEPTH_EFFECTS"] = { text = "深度=しんど=96608 エフェクト=エフェクト=32116" },
   ["ui:DESCRIPTION_OF_YOUR_GROUP"] = { text = "グループ=グループ=32812 詳細=しょうさい=123365 任意=にんい=41726" },
   ["ui:DESCRIPTION_OF_YOUR_GROUP_MANDATORY"] = { text = "グループ=グループ=32812 詳細=しょうさい=123365" },
+  ["ui:DIALOG_CONFIRMATION_PROMPT_GAMEPAD"] = { text = "確認=かくにん=106008 ため=ため=15749 ボタン=ボタン=34966 順番=じゅんばん=140433 押してください=おしてください=80759" },
+  ["ui:DIALOG_CONFIRMATION_PROMPT_MKB"] = { text = "確認するには=かくにんするには=140422 欄=らん=91790 入力してください=にゅうりょくしてください=47722" },
   ["ui:DIALOG_INSTRUCTION_REPLACE_MOUNT_EQUIPMENT"] = { text = "この=この=8884 マウント=マウント=35030 装備=そうび=116751 置き換えても=おきかえても=110860 よろしいですか=よろしいですか=30889 現在=げんざい=100779 装備=そうび=116751 破壊されます=はかいされます=105576" },
   ["ui:DIALOG_VOLUME"] = { text = "会話=かいわ=42113" },
   ["ui:DIFFICULTY_LOCKED_REASON_STORY_RAID"] = { text = "ストーリーモード=ストーリーモード=140159 利用不可=りようふか=50729" },

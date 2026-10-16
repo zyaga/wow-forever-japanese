@@ -10,17 +10,17 @@
 --   .AcceptButton ACCEPT (:86).
 -- The customization text (ADR-042) from the client tables, each widget restricted to its family:
 --   an option's label (CustomizationOption: the check button's Label, blizzard_customizationoptiontemplates.lua:209;
---     the dropdown's and the slider's label, :336, :111–118), a choice's SelectionName (CustomizationChoice, :652;
---     the unselected "-Select-" CHARACTER_CUSTOMIZE_POPOUT_UNSELECTED_OPTION, :684), each written by a mixin method
+--     the dropdown's and the slider's label, :336, :111–118), a choice's SelectionName (CustomizationChoice, :654;
+--     the unselected "-Select-" CHARACTER_CUSTOMIZE_POPOUT_UNSELECTED_OPTION, :686), each written by a mixin method
 --     the pooled option frames copy when they are created, so the methods are post-hooked on the mixin tables once
 --     Blizzard_CustomizationUI has loaded (before the barber shop builds its first option);
 --   the option tooltip's choice line CHARACTER_CUSTOMIZATION_CHOICE_TOOLTIP "%d: %s" (:134–137) and a locked
---     choice's BARBERSHOP_CUSTOMIZATION_SOURCE_FORMAT "Source: %s" (:533–539), on CustomizationNoHeaderTooltip, with
+--     choice's BARBERSHOP_CUSTOMIZATION_SOURCE_FORMAT "Source: %s" (:535–541), on CustomizationNoHeaderTooltip, with
 --     their customization argument kinds; a category name in that tooltip (the Customization* families).
 -- Never touched: druid form, demon and mount names (Blizzard_CharacterCustomize's altered-form dropdown),
 -- the body-type buttons, and SDToggleButton.Text (xml:71): its global string is named "HIGH-DEFINITION_MODELS", and a
 -- hyphen is outside the key grammar of pipeline/ui_keys.txt, so it has no dictionary entry (the toggle is hidden
--- unless C_GameRules.IsSDHDToggleEnabled(), blizzard_barbershopui.lua:257–263).
+-- unless C_GameRules.IsSDHDToggleEnabled(), blizzard_barbershopui.lua:260–266).
 -- The camera buttons' tooltip (RESET_CAMERA, ZOOM_IN / ZOOM_OUT, ROTATE_LEFT / ROTATE_RIGHT,
 -- RANDOMIZE_APPEARANCE: simpleTooltipLine, blizzard_customizationui.xml:22–66) is CustomizationNoHeaderTooltip, a
 -- tooltip frame of its own (blizzard_customizationtemplates.lua:27–29): followed through TooltipLines.follow,

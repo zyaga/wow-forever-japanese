@@ -27,12 +27,20 @@ local UI = {
     "この設定の変更にはクライアントの再起動が必要です" },
   -- the audio assist resource option around the player's power word (a dictionary word)
   CAA_SAY_PLAYER_RESOURCE_LABEL = { "Say Your %s", "自分の%sの読み上げ" }, MANA = { "Mana", "マナ" },
+  -- the Combat page (blizzard_settingsdefinitions_frame/mainline/combatoverrides.lua:136–139, 228; combat.lua:200–203);
+  -- "Fading Auras" left that page and the window's keys
+  FLOATING_COMBAT_TEXT_ON_ME_DROPDOWN_LABEL = { "Text on Me", "自分のテキスト" },
+  FLOATING_COMBAT_TEXT_ON_TARGET_DROPDOWN_LABEL = { "Text on Target", "対象のテキスト" },
+  AUTO_RANGED_COMBAT_TEXT = { "Auto Attack/Auto Shot", "自動攻撃/自動射撃" },
+  COMBAT_TEXT_SHOW_AURA_FADE_TEXT = { "Fading Auras", "消えるオーラ" },
+  -- "Effects": the Sound page's volume slider (FX_VOLUME, audio.lua:530) and the Text on Target menu's owned entry
+  FX_VOLUME = { "Effects", "効果音" }, SHOW_TARGET_EFFECTS = { "Effects", "効果" },
   BINDING_NAME_MOVEFORWARD = { "Move Forward", "前進" }, BINDING_HEADER_MOVEMENT = { "Movement Keys", "移動キー" },
   -- in the dictionary, and never shown here: not one of this window's keys / a key name / a player's name
   RAID = { "Raid", "レイド" }, KEY_SPACE = { "Space", "スペース" }, PREVIEW = { "Preview", "プレビュー" },
   -- an option's tooltip, shown inside the "<label>: <tooltip>" line
   VIDEO_OPTIONS_SHADOW_QUALITY_LOW = { "Blob shadows.", "簡易的な影。" },
-  -- the muted-account paragraph (social.lua:21–29) and the recommended-value line (blizzard_settings.lua:468)
+  -- the muted-account paragraph (social.lua:21–29) and the recommended-value line (blizzard_settings.lua:472)
   OPTION_TOOLTIP_DISABLE_CHAT = { "Disables chat. You will not be able to send or receive messages.",
     "チャットを無効にします。メッセージの送受信ができなくなります。" },
   OPTION_TOOLTIP_DISABLE_CHAT_ACCOUNT_MUTE = { "To change this, first unmute your account.",
@@ -43,7 +51,7 @@ local UI = {
   CAA_SAY_PLAYER_RESOURCE_TOOLTIP = { "Says your %s when it crosses certain percentages. This setting is saved per "
     .. "talent specialization.", "%sが一定の割合を超えると読み上げます。この設定は専門化ごとに保存されます。" },
   GX_ADAPTER_EXTERNAL = { "%s (External)", "%s(外部)" },
-  -- new on 1.60.1.70009: the Gamepad page (gamepad.lua:214, 275–280), a binding (bindings_camelot.xml:1226)
+  -- new on 1.60.1.70009: the Gamepad page (gamepad.lua:214, 275–280), a binding (bindings_camelot.xml:1222)
   -- and the chat option's age-restriction paragraph (social.lua:24–27)
   TARGETING_HEADER = { "Targeting", "ターゲティング" },
   GAMEPAD_SWAP_TARGET_MODIFIERS = { "Swap Target Modifier Sides", "ターゲット修飾キーの左右を入れ替え" },
@@ -308,6 +316,24 @@ describe("the Options window on Forever", function()
         .. "and hostile targeting on the left side.", _G.SettingsTooltipTextLeft2:GetText())
       alt(false)
     end)
+
+  it("the Combat page's Text on Me / Text on Target dropdowns and the auto ranged checkbox translate; a dropped"
+    .. " option's word stays English", function()
+    local onMe = S.dropdownRow("", "Text on Me")
+    local onTarget = S.dropdownRow(" ", "Text on Target")
+    local ranged = S.checkboxRow("Auto Attack/Auto Shot")
+    local fading = S.checkboxRow("Fading Auras")
+    local volume = S.checkboxRow("Effects") -- the Sound page's slider label, not the combat menu's owned entry
+    for _, row in ipairs({ onMe, onTarget, ranged, fading, volume }) do list:initFrame(row, {}) end
+    assert.are.equal("効果音", volume.Text:GetText())
+    assert.are.equal("自分のテキスト", onMe.Control.Dropdown.Text:GetText())
+    assert.are.equal("対象のテキスト", onTarget.Control.Dropdown.Text:GetText())
+    assert.are.equal("自動攻撃/自動射撃", ranged.Text:GetText())
+    assert.are.equal("Fading Auras", fading.Text:GetText())
+    alt(true)
+    assert.are.equal("Text on Me", onMe.Control.Dropdown.Text:GetText())
+    alt(false)
+  end)
 
   it("the Voice page's service dropdown, its Discord settings checkbox and tooltip; Alt shows English", function()
     local service = S.dropdownRow("Preferred Voice Chat Service", "Legacy")

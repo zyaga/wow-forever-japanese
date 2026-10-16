@@ -227,7 +227,6 @@ WFJ.Data.add("gloss", {
   [128224] = "追い払う\tおいはらう\tdrive (them) out for me",
   [128225] = "追い払う\tおいはらう\tdrive back",
   [128226] = "追い払う\tおいはらう\tdrive off",
-  [128227] = "追い払う\tおいはらう\tdrive off (for me)",
   [128228] = "追い払う\tおいはらう\tdrive out",
   [128229] = "追い払う\tおいはらう\tdrives (out)",
   [128230] = "追い払う\tおいはらう\tdriving (away)",

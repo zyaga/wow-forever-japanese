@@ -769,7 +769,6 @@ WFJ.Data.add("gloss", {
   [97767] = "溶け合う\tとけあう\thad coalesced",
   [97768] = "溶け込む\tとけこむ\tblending into",
   [97769] = "溶け込む\tとけこむ\tfit into",
-  [97770] = "溶け込む\tとけこむ\tfused with (melted in)",
   [97771] = "溶剤\tようざい\tsolvent",
   [97772] = "溶岩\tようがん\tlava",
   [97773] = "溶岩\tようがん\tmolten (lava)",

@@ -424,7 +424,6 @@ WFJ.Data.add("gloss", {
   [86422] = "文字\tもじ\tletters (runes)",
   [86423] = "文字\tもじ\tletters (script)",
   [86424] = "文字\tもじ\tmarkings (letters)",
-  [86425] = "文字\tもじ\trune language (script)",
   [86426] = "文字\tもじ\tscript",
   [86427] = "文字\tもじ\tscript (letters)",
   [86428] = "文字\tもじ\ttext",

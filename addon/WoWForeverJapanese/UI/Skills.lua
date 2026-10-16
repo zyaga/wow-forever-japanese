@@ -2,24 +2,24 @@
 -- ADR-029). Camelot loads [Game]\SkillsFrame.lua|xml at login [verified: TOC blizzard_uipanels_game.toc:38–39,
 -- 71–72]; it has no LEARN_SKILL_TEMPLATE, collapse-all, cancel or unlearn button (camelot/skillsframe.lua|xml). The
 -- global SkillsFrame (skillsframe.xml:121) has a parentKey-only detail side pane, SkillsFrame.SkillDetailFrame (:169,
--- CharacterFrameSidePaneTemplate). Its Refresh is registered BY REFERENCE (skillsframe.lua:226), so it is not hooked;
+-- CharacterFrameSidePaneTemplate). Its Refresh is registered BY REFERENCE (skillsframe.lua:201), so it is not hooked;
 -- the two methods it calls by method lookup are, on the instance (CharacterFrameSidePaneMixin is shared with other
 -- panes):
--- - SetEmpty(SKILL_DETAIL_SELECT_PROMPT) writes EmptyText (skillsframe.lua:255; camelot/characterframe.lua:942–951).
--- - LayoutRows runs after the weapon-skill rows were added (skillsframe.lua:283–316): category rows
+-- - SetEmpty(SKILL_DETAIL_SELECT_PROMPT) writes EmptyText (skillsframe.lua:230; camelot/characterframe.lua:951–960).
+-- - LayoutRows runs after the weapon-skill rows were added (skillsframe.lua:250–254, 262–295): category rows
 --   WEAPON_SKILL_DETAIL_SAME_LEVEL_HEADER / _BOSS_HEADER and wrapped rows WEAPON_SKILL_DETAIL_SAME_LEVEL[_RANGED] /
---   _BOSS[_RANGED] (percent values verbatim). Rows come from detail.rowPools (characterframe.lua:841–845, 882–929);
+--   _BOSS[_RANGED] (percent values verbatim). Rows come from detail.rowPools (characterframe.lua:850–854, 888–932);
 --   the active pool objects are walked after each layout, each row's record keyed by the row widget itself (a pooled
 --   row has no id of its own; never by its position). A wrapped row was sized from the English
---   (characterframe.lua:901–907), so a longer Japanese grows it and lays the pane out again (grow only).
+--   (characterframe.lua:910–917), so a longer Japanese grows it and lays the pane out again (grow only).
 -- - The list's category headers: SkillsFrame.ScrollBox builds a SkillsHeaderTemplate row for each
 --   top-level header and SkillsHeaderMixin:Initialize writes its `.Name` with the header's name from
---   C_SkillInfo.GetSkillLineInfo (skillsframe.lua:127–141, 197–213, 321–325; skillsframe.xml:3–25). The name is
+--   C_SkillInfo.GetSkillLineInfo (skillsframe.lua:101–118, 174–191, 297–309; skillsframe.xml:3–25). The name is
 --   client data: two of them read exactly as a GlobalString ("Weapon Skills" (STAT_CATEGORY_WEAPON_SKILLS) and
 --   "Languages" (LANGUAGES_LABEL)), and every header is a SkillLineCategory name ("Armor Proficiencies", "Class
 --   Skills", "Professions", "Secondary Skills": the SkillCategory:* family, ADR-042); only those are shown.
 --   Followed with ScrollUtil.AddInitializedFrameCallback (after the element initializer), keyed by the row widget.
---   A skill's row and a sub-header (SkillsEntryTemplate: the name is `.Content.Name`, skillsframe.lua:372, 477–478)
+--   A skill's row and a sub-header (SkillsEntryTemplate: the name is `.Content.Name`, skillsframe.lua:348, 456–458)
 --   hold a skill name: that FontString is forbidden when the row is first seen.
 -- - The window title "Skills" is NOT this frame's: SkillsFrame is a child of CharacterFrame (skillsframe.xml:121) and
 --   CharacterFrameMixin:UpdateTitle writes CharacterFrame:SetTitle(characterFrameDisplayInfo[activeSubframe].title);
@@ -27,10 +27,10 @@
 --   characterframeconstants.lua:9–34). That one widget belongs to UI/Character, which renders the pane titles (SKILLS
 --   among them) and keeps the name title English.
 -- - The detail pane's description: SetDescription(description) writes the Description ScrollingFont
---   (skillsframe.lua:273; characterframe.lua:873–885) with the SkillLine table's text: the SkillLineDescription:*
+--   (skillsframe.lua:248; characterframe.lua:874–886) with the SkillLine table's text: the SkillLineDescription:*
 --   family only.
--- Untouched: the pane title (the skill name, skillsframe.lua:270) and subtitle, the list rows (skill names, :325,
--- :372). Release on SkillsFrame's OnHide.
+-- Untouched: the pane title (the skill name, skillsframe.lua:245) and subtitle, the list rows (skill names, :301,
+-- :348). Release on SkillsFrame's OnHide.
 local _, WFJ = ...
 local Skills = {}
 WFJ.Skills = Skills

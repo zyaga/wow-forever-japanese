@@ -6,7 +6,6 @@ WFJ.Data.add("gloss", {
   [117003] = "補給係\tほきゅうがかり\tsupplier",
   [117004] = "補給品\tほきゅうひん\tsupplies",
   [117005] = "補給品\tほきゅうひん\tsupply",
-  [117006] = "補給品\tほきゅうひん\tsupply shipment (supplies)",
   [117007] = "補給官\tほきゅうかん\tquartermasters",
   [117008] = "補給所\tほきゅうじょ\tsupply area",
   [117009] = "補給活動\tほきゅうかつどう\tsupply efforts",

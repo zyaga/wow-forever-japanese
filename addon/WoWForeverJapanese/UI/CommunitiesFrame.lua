@@ -3,34 +3,34 @@
 -- alerts, the calendar button, the chat frame's fixed words, the communities list's fixed entries and the two
 -- invitation panels. The guild view is UI/Communities; ClubFinder, the guild benefits and the dialogs have
 -- their own modules. Plumbing: UI/CommunitiesKit..
--- Every file:line below is the camelot extract 1.60.1.69913, interface/addons/blizzard_communities/.
+-- Every file:line below is the camelot extract 1.60.1.70425, interface/addons/blizzard_communities/.
 -- Static labels (XML text= or an OnLoad write; each restricted to its own key):
 --   the title (CommunitiesFrameMixin:OnLoad → SetTitle, communitiesframe.lua:103); CommunitiesControlFrame's
 --   GuildControlButton / GuildRecruitmentButton (communitiesframe.xml:258, 267); GuildLogButton (xml:604);
 --   InviteButton (CommunitiesInviteButtonTemplate, communitiesinvitationframe.xml:130); the chat's
 --   JumpToUnreadButton (a global name, communitieschatframe.xml:29); AddToChatButton.Label
---   (communitiesstreams.xml:291); GuildNameAlertFrame.ClickText (guildnamechange.xml:17); the four report frames'
+--   (communitiesstreams.xml:297); GuildNameAlertFrame.ClickText (guildnamechange.xml:17); the four report frames'
 --   Error / GMText / RenameText / Button (guildnamechange.xml:109-219, their OnLoad writes); both invitation panels'
 --   Accept / Decline buttons (communitiesinvitationframe.xml:6, 18).
 -- Writers (post-hooks on the frame's own method, the client calls `self:…()`):
---   CommunitiesControlFrame:Update → CommunitiesSettingsButton (communitiesframe.lua:1757);
+--   CommunitiesControlFrame:Update → CommunitiesSettingsButton (communitiesframe.lua:1790);
 --   CommunitiesFrame:SetClubFinderPostingExpirationText → PostingExpirationText's ExpirationTimeText /
---     DaysUntilExpire / ExpiredText (lua:790-848);
---   CommunitiesFrame:ShowGuildNameAlertFrame → GuildNameAlertFrame.Alert (lua:906-908);
---   CommunitiesFrame:DisplayReportedAlerts → GuildNameChangeFrame.GMText (lua:929-933);
+--     DaysUntilExpire / ExpiredText (lua:823-881);
+--   CommunitiesFrame:ShowGuildNameAlertFrame → GuildNameAlertFrame.Alert (lua:939-941);
+--   CommunitiesFrame:DisplayReportedAlerts → GuildNameChangeFrame.GMText (lua:962-966);
 --   InvitationFrame:DisplayInvitation / TicketFrame:DisplayTicket → InvitationText, Type, Leader, MemberCount
 --     (communitiesinvitationframe.lua:59-84, 150-163).
 -- Help tooltips (owner → the keys its writer shows): the side tabs (RightSideTabMixin:OnEnter, blizzard_sharedxml/
---   shared/tabs/rightsidetab.lua:12-20: tooltip + tooltip2, communitiesframe.lua:1025); the disabled
---   buttons' GameTooltip_ShowDisabledTooltip (communitiesframe.xml:246-249, 280-283, 587-590; lua:1491-1521,
---   1762, 1787-1795); PostingExpirationText.InfoButton (xml:139-144, lua:811-822); the calendar button
+--   shared/tabs/rightsidetab.lua:12-20: tooltip + tooltip2, communitiesframe.lua:1058); the disabled
+--   buttons' GameTooltip_ShowDisabledTooltip (communitiesframe.xml:246-249, 280-283, 587-590; lua:1524-1554,
+--   1795, 1820-1828); PostingExpirationText.InfoButton (xml:139-144, lua:844-855); the calendar button
 --   (communitiescalendar.lua:22-50: the event titles and the MOTD are the club's own text).
 -- The communities list (CommunitiesList.ScrollBox, CommunitiesListEntryMixin:Init, communitieslist.lua:402-667): the
 --   finder / join / invitation entries write Name (the same FontString holds club names: each entry is restricted to
 --   the one key its element data names: setGuildFinder / setFindCommunity / setJoinCommunity / an invitation); a
 --   disabled entry's tooltip (lua:549-557, 765-767).
 -- The chat tab's chat-disabled tooltip2: RESTRICT_CHAT_TOOLTIP_FORMAT ("%s\n%s") of the suppressed-message
---   sentence and the green-wrapped Shift-click instruction (communitiesframe.lua:1026–1028), both `entry` arguments;
+--   sentence and the green-wrapped Shift-click instruction (communitiesframe.lua:1059–1061), both `entry` arguments;
 --   the chat's MessageFrame (communitiesChat): its date / unread separators and the message-of-the-day line
 --   (communitieschatframe.lua:354–397) through UI/ChatSystem's key-restricted entry point (AddMessage and
 --   BackFillMessage); the club's broadcast inside the MOTD line is kept as written, members' messages never touched.

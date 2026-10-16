@@ -2,7 +2,7 @@
 -- Blizzard_GroupFinder_VanillaStyle is load-on-demand (its toc: LoadOnDemand 1, AllowLoadGameType classic, camelot);
 -- SetLookingForGroupUIAvailable loads it (blizzard_lfgutil/camelot/lfgutil.lua:1–7), and ToggleGroupFinderFrame
 -- (blizzard_game/shared/game.lua:73–88), its TOGGLEGROUPFINDER binding (bindings.xml:2–4), the who binding
--- (blizzard_framexml/bindings_camelot.xml:1256–1258) and the queue-status eye (blizzard_queuestatusframe/camelot/
+-- (blizzard_framexml/bindings_camelot.xml:1252–1254) and the queue-status eye (blizzard_queuestatusframe/camelot/
 -- queuestatusframeoverrides.lua:5–10) open it. LFGParentFrame holds three panels: LFGListingFrame (Create Listing),
 -- LFGBrowseFrame (Group Browser) and LFGWhoListFrame (Who List: UI/Friends.lua's, not touched here).
 -- LFGVANILLA_SETTING_MODERN_STYLE is true (mainline/lfgvanilla_constants.lua:6): the bottom tabs are hidden and the
@@ -11,8 +11,8 @@
 --   the two panels' TitleContainer.TitleText, written directly with SetText(LFG_TITLE), never SetTitle
 --     (blizzard_lfgvanilla_listing.lua:46, blizzard_lfgvanilla_browse.lua:131);
 --   LFGListingFrame: GroupRoleButtons.RolePollButton ROLE_POLL (mainline/blizzard_lfgvanilla_listing.xml:389),
---     LockedView.ActivityText LFG_LIST_MY_ACTIVITY_LIST_HEADER (xml:598), ActivityView.VoiceChatLabel VOICE_CHAT
---     (xml:554);
+--     LockedView.ActivityText LFG_LIST_MY_ACTIVITY_LIST_HEADER (xml:601), ActivityView.VoiceChatLabel VOICE_CHAT
+--     (xml:554), ActivityView.LevelRangesCheckbox.Text LFG_LIST_IGNORE_SUGGESTED_LEVEL (xml:564–590);
 --   LFGBrowseFrame: SearchingSpinner.Label SEARCHING (mainline/blizzard_lfgvanilla_browse.xml:509),
 --     SendMessageButton SEND_MESSAGE (xml:525);
 --   LFGBrowseSearchEntryTooltip: Delisted, NewPlayerFriendlyText, CompletedEncounterHeader (xml:326–360).
@@ -40,7 +40,7 @@
 --     VOICE_CHAT_MODE_NONE / _LEGACY / _DISCORD / _CUSTOM, listing.lua:48–69). The popup entries themselves are
 --     UI/Menus'.
 -- Help tooltips (GameTooltip:SetText / AddLine on the frame): the side tabs' tooltipText (SidePanelTabButtonMixin:
---   OnEnter, blizzard_sharedxml/mainline/shareduipaneltemplates.lua:406–414), the role buttons'
+--   OnEnter, blizzard_sharedxml/mainline/shareduipaneltemplates.lua:408–416), the role buttons'
 --   ROLE_DESCRIPTION_<role> + CLASS_ROLE_NOT_RECOMMENDED (listing.xml:22–31), the role-poll button, the role
 --   dropdown SELECT_YOUR_ROLE, the new-player-friendly button, the post button's error text, the refresh button
 --   LFG_LIST_SEARCH_AGAIN
@@ -90,6 +90,7 @@ local LABELS = {
   tipBosses = { TIP .. ".CompletedEncounterHeader", { "LFG_LIST_BOSSES_DEFEATED" } },
   tipMembers = { TIP .. ".MemberCount", { "LFG_LIST_TOOLTIP_MEMBERS", "LFG_LIST_TOOLTIP_MEMBERS_SIMPLE" } },
   voiceLabel = { LISTING .. ".ActivityView.VoiceChatLabel", { "VOICE_CHAT" } },
+  levelRanges = { LISTING .. ".ActivityView.LevelRangesCheckbox.Text", { "LFG_LIST_IGNORE_SUGGESTED_LEVEL" } },
   tipVoice = { TIP .. ".VoiceChat", { "VOICE_CHAT_MODE_FORMAT" } },
 }
 local ORDER = {}
@@ -102,7 +103,7 @@ local DROPDOWNS = {
   activity = { BROWSE .. ".ActivityDropdown", { "LFGBROWSE_ACTIVITY_HEADER_DEFAULT", "LFGBROWSE_ACTIVITY_HEADER" } },
   role = { LISTING .. ".GroupRoleButtons.RoleDropdown", { "TANK", "HEALER", "DAMAGER" } },
   -- the listing's playstyle: the chosen one, or the required prompt in a colour code while none is chosen
-  -- [verified: forever-ui-1.60.1.70170 blizzard_lfgvanilla_listing.lua:849–876]
+  -- [verified: forever-ui-1.60.1.70425 blizzard_lfgvanilla_listing.lua:921–949]
   playstyle = { LISTING .. ".ActivityView.PlayStyleDropdown", { "GROUP_FINDER_GENERAL_PLAYSTYLE1",
     "GROUP_FINDER_GENERAL_PLAYSTYLE2", "GROUP_FINDER_GENERAL_PLAYSTYLE3", "GROUP_FINDER_GENERAL_PLAYSTYLE4",
     "GROUP_FINDER_PLAYSTYLE_REQUIRED" } },
@@ -143,7 +144,7 @@ local ROW_ACTIVITY_KEYS = { "LFG_SELF_LISTING", "LFGBROWSE_ACTIVITY_COUNT", "LFG
 local ROW_ROLES = { only = { "LFG_TOOLTIP_ROLES" } }
 local ROW_CATEGORY = { only = { "LFG_LIST_CATEGORY_SOLO_PLAYERS", "LFG_LIST_CATEGORY_GROUPS" } }
 -- a result's playstyle line, GetGeneralPlaystyleString (blizzard_lfgutil/mainline/lfgutil.lua:315–326;
--- blizzard_lfgvanilla_browse.lua:465–466)
+-- blizzard_lfgvanilla_browse.lua:466–467)
 local ROW_PLAYSTYLE = { only = { "GROUP_FINDER_GENERAL_PLAYSTYLE1", "GROUP_FINDER_GENERAL_PLAYSTYLE2",
   "GROUP_FINDER_GENERAL_PLAYSTYLE3", "GROUP_FINDER_GENERAL_PLAYSTYLE4" } }
 local ROW_DELIST = { only = { "LFG_LIST_UNLIST" } }
@@ -258,7 +259,7 @@ function GroupFinder.onActivityView() return GroupFinder.show("instructions") en
 function GroupFinder.onResults() return GroupFinder.show("noResults") end
 function GroupFinder.onButtons() return GroupFinder.show("groupInvite", "sendMessage") end
 -- The client sizes the tooltip from the English voice line before this hook runs, and that line does not wrap
--- (blizzard_lfgvanilla_browse.lua:680, 813; browse.xml:406), so a wider Japanese line would be cut short.
+-- (blizzard_lfgvanilla_browse.lua:701, 834; browse.xml:406), so a wider Japanese line would be cut short.
 local function fitVoiceLine()
   local fs = get("label.tipVoice")
   if type(fs) ~= "table" or type(fs.GetParent) ~= "function" or type(fs.GetStringWidth) ~= "function" then return end

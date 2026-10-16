@@ -7,14 +7,14 @@
 -- SendMailCostMoneyFrame, and Prev / Next of the parentKey-only inbox page buttons InboxFrame.PrevPageButton /
 -- .NextPageButton (xml:394, 419): found by the client's exact English (Labels.region); the EditBox itself is never a
 -- widget here.
--- Titles: MailFrameTab_OnClick writes INBOX / SENDMAIL with MailFrame:SetTitle (camelot mailframe.lua:197–230);
---   OpenMailFrame's inline OnShow writes OPENMAIL (mailframe.xml:1337–1341); SetTitle → TitleContainer.TitleText
+-- Titles: MailFrameTab_OnClick writes INBOX / SENDMAIL with MailFrame:SetTitle (camelot mailframe.lua:189–222);
+--   OpenMailFrame's inline OnShow writes OPENMAIL (mailframe.xml:1340–1344); SetTitle → TitleContainer.TitleText
 --   (blizzard_sharedxml/portraitframe.lua:4–13). The client rewrites them on every tab click / letter, so they are
 --   shown after those writers. Inbox and Send share the one FontString. A global MailFrameTitleText is tried first
 --   (whether `$parent` resolves through the unnamed TitleContainer is an in-game check); the dotted path after.
 -- Text that changes, each widget restricted (`only`) to the keys its writer can put there. InboxMixin:Update
--- (mailframe.lua:316) and OpenMailMixin:Update (:747) are called as InboxFrame:Update() / OpenMailFrame:Update()
--- (lua:147–148, 462, 471, 529, 549, 566, 587), so the frames' own methods are hooked (the mixin was copied onto them
+-- (mailframe.lua:316) and OpenMailMixin:Update (:752) are called as InboxFrame:Update() / OpenMailFrame:Update()
+-- (lua:139–140, 463, 472, 530, 550, 567, 588), so the frames' own methods are hooked (the mixin was copied onto them
 -- at load):
 --   InboxFrame:Update → MailItem1..7ExpireTime, a Button: GREEN .. format(DAYS_ABBR, n) .. " " .. |r, or RED ..
 --     SecondsToTime(s) .. |r. SecondsToTime (Blizzard_SharedXML/TimeUtil.lua, maxCount 2, abbreviated) joins up to
@@ -25,7 +25,7 @@
 --     "12:22" verbatim). OpenMailInvoiceItemLabel / Purchaser are ITEM_SOLD_COLON / ITEM_PURCHASED_COLON /
 --     SOLD_BY_COLON / PURCHASED_BY_COLON .. " " .. <item or player name>: the `colonPrefix` form shows the Japanese
 --     label and keeps the name as written. When the client had no name it writes
---     AUCTION_HOUSE_MAIL_MULTIPLE_SELLERS / _BUYERS there (mailframe.lua:785–788), shown in Japanese too (the
+--     AUCTION_HOUSE_MAIL_MULTIPLE_SELLERS / _BUYERS there (mailframe.lua:790–793), shown in Japanese too (the
 --     `colonPrefixEntry` grant on those two keys, Core/UIStrings);
 --   SendMailRadioButton_OnClick → SendMailMoneyText (AMOUNT_TO_SEND / COD_AMOUNT);
 --   SendMailFrame OnShow → SendMailErrorText (MAIL_COD_ERROR[_COLORBLIND]); HookScript runs after the inline script;
@@ -34,8 +34,8 @@
 -- Records are never released on hide: every client rewrite of these widgets runs through a hooked writer, and one
 -- that does not is dropped as stale on the next refresh (UI/Render).
 -- The letter's body (ADR-042, the MailBody family: MailTemplate.Body_lang, the letters NPCs and events send):
---   OpenMailFrame:Update writes OpenMailBodyText:SetText(GetInboxText(id), true) (mailframe.lua:776–777), a
---   SimpleHTML (mailframe.xml:1007–1013) with no GetText [verified: blizzard_apidocumentationgenerated/
+--   OpenMailFrame:Update writes OpenMailBodyText:SetText(GetInboxText(id), true) (mailframe.lua:781–782), a
+--   SimpleHTML (mailframe.xml:1010–1016) with no GetText [verified: blizzard_apidocumentationgenerated/
 --   simplehtmlapidocumentation.lua: SetText(text, ignoreMarkup), per-text-type GetFont / SetFont]. A SetText
 --   post-hook on it sees every text the client writes; a small adapter (below) gives SurfaceState the FontString
 --   interface and writes back with the client's own call shape, SetText(text, true). The server sends the letter with
@@ -137,7 +137,7 @@ end
 local HELP = { InboxTooMuchMail = set({ "INBOX_TOO_MUCH_MAIL_TOOLTIP" }),
   OpenMailLetterButton = set({ "MAIL_LETTER_TOOLTIP" }) }
 local EXPIRY_TOOLTIP = set({ "TIME_UNTIL_DELETED", "TIME_UNTIL_RETURNED" })
--- A row with several items adds MAIL_MULTIPLE_ITEMS .. " (" .. n .. ")" (mailframe.lua:490–496; the count
+-- A row with several items adds MAIL_MULTIPLE_ITEMS .. " (" .. n .. ")" (mailframe.lua:491–497; the count
 -- kept by the `countLabel` form)
 local ROW_TOOLTIP = set({ "ENCLOSED_MONEY", "COD_AMOUNT", "MAIL_MULTIPLE_ITEMS" })
 local SLOT_TOOLTIP = set({ "ATTACHMENT_TEXT" })
@@ -196,7 +196,7 @@ end
 
 -- ── the letter's body ──────────────────────────────────────────────
 -- logical: what GetText reports, the client's text as written or the text SurfaceState asked us to show.
-local body = WFJ.HtmlText.new(true) -- the client writes the body with ignoreMarkup (mailframe.lua:776-777)
+local body = WFJ.HtmlText.new(true) -- the client writes the body with ignoreMarkup (mailframe.lua:781-782)
 Mail.body = body
 
 -- The player's name as the client spells it, or nil while it is not known.

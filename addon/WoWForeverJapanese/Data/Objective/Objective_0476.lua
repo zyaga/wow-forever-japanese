@@ -3,6 +3,7 @@ local _, WFJ = ...
 WFJ.Data.add("objective", {
   [476015] = { "香を作る", 0x67226552, "." },
   [476016] = { "香を撒く", 0x5dec5524, "." },
+  [476295] = { "Pouch of Tomb DustをStromgardeの裏手の海に投げ入れた", 0x9695dacd, "." },
   [476482] = { "Alchemyのスキルを20まで上げる", 0x4cb1c345, "." },
   [476484] = { "Blacksmithingのスキルを20まで上げる", 0x9886bcda, "." },
   [476486] = { "Enchantingのスキルを20まで上げる", 0x67d7fcad, "." },

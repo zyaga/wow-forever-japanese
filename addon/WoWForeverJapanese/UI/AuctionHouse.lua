@@ -27,12 +27,12 @@
 --     AUCTION_HOUSE_BROWSE_FAVORITES_TIP, browseresultsframe.lua:40; itemlist.lua:254–270), SetCustomError
 --     (itemlist.lua:130–134), UpdateTableBuilderLayout → the pooled column headers, walked with
 --     tableBuilder:EnumerateHeaders() (blizzard_sharedxml/tablebuilder.lua:278–280; header text:
---     tablebuilder.lua:884–885, 1022–1132, util.lua:448–462, camelot/blizzard_auctiondata.lua:15–191) and keyed by
---     widget, RefreshFrame:SetQuantity → TotalQuantity (AUCTION_HOUSE_QUANTITY_AVAILABLE_FORMAT,
---     sharedtemplates.lua:632–637), and the pooled rows' cells (row.cells[i].Text, tablebuilder.lua:323–341):
+--     tablebuilder.lua:891–892, 1029–1140, util.lua:463–477, camelot/blizzard_auctiondata.lua:19–195) and
+--     keyed by widget, RefreshFrame:SetQuantity → TotalQuantity (AUCTION_HOUSE_QUANTITY_AVAILABLE_FORMAT,
+--     sharedtemplates.lua:637–642), and the pooled rows' cells (row.cells[i].Text, tablebuilder.lua:323–341):
 --     AUCTION_HOUSE_NONE_AVAILABLE (:785) or its item-level form AUCTION_HOUSE_NONE_AVAILABLE_FORMAT (the sell list's
 --     virtual row, itemsellframe.lua:220), AUCTION_HOUSE_INCOMING_AMOUNT (:491), AUCTION_HOUSE_NUM_SELLERS
---     (util.lua:383). The same cells hold seller names, item levels and quantities, so they are restricted to
+--     (util.lua:398). The same cells hold seller names, item levels and quantities, so they are restricted to
 --     ROW_KEYS. Rows are walked after RefreshScrollFrame and from ScrollUtil's initialized-frame callback; the table
 --     builder fills a row from a callback on the same event (scrollutil.lua:1661–1665) and source does not fix the
 --     order of the two, so a row scrolled into view may stay English until the next refresh (in-game check);
@@ -40,9 +40,9 @@
 --     line is an item name (auctionsframe.lua:58–75), restricted to those two keys;
 --   AuctionHouseFilterButton_SetUp (global, called by name from the categories list's element initializer,
 --     categorieslist.lua:91–92; mainline/…categorieslist.lua:1–62) → the category button's text. Named categories are
---     GlobalStrings (camelot/blizzard_auctiondata.lua:14–215); generated sub categories are item sub-class names
+--     GlobalStrings (camelot/blizzard_auctiondata.lua:18–221); generated sub categories are item sub-class names
 --     (C_Item.GetItemSubClassInfo: the ItemSubClassName family, ADR-042: "Staves", "Potions") or an armour
---     slot (GetItemInventorySlotInfo: INVTYPE_*) (shared/blizzard_auctiondata.lua:81–95); the restricted set is
+--     slot (GetItemInventorySlotInfo: INVTYPE_*) (shared/blizzard_auctiondata.lua:85–99); the restricted set is
 --     CATEGORY's keys, the INVTYPE_* slot words and that family;
 --   BrowseWowTokenResults_Update (global, wowtokenframe.lua:129–157) and WoWTokenSellFrame:Refresh (:263–281) → the
 --     price fields' TOKEN_AUCTIONS_UNAVAILABLE / TOKEN_MARKET_PRICE_NOT_AVAILABLE (otherwise a price, untouched);
@@ -52,8 +52,8 @@
 --   (ButtonWithDisableMixin:OnEnter, blizzard_uipaneltemplates/shared/uipaneltemplatesshared.lua:330–343), the post
 --   buttons (sellframe.lua:211–218), the price inputs' PriceError (sellframe.lua:129–135), the buyout-mode checkbox
 --   (itemsellframe.lua:18–24), the favorites search button and every list's refresh button (UIButtonMixin tooltip
---   info, searchbar.lua:61, sharedtemplates.lua:654), the item displays' and the list cells' favorite buttons when
---   the favorites list is full (sharedtemplates.lua:744–754), a commodities row holding the player's own auction
+--   info, searchbar.lua:61, sharedtemplates.lua:659), the item displays' and the list cells' favorite buttons when
+--   the favorites list is full (sharedtemplates.lua:749–759), a commodities row holding the player's own auction
 --   (commoditieslist.lua:140–146), and the WoW Token panes: the buyout button's ERR_NOT_ENOUGH_GOLD
 --   (wowtokenframe.lua:162, 175–180), the two price frames (wowtokenframe.xml:223–235, 327–339) and the shop
 --   button's ERR_FEATURE_RESTRICTED_TRIAL (wowtokenframe.lua:377, 443–448).
@@ -61,11 +61,11 @@
 -- Owned words (UIStrings.OWN): three words whose English another dictionary key already has with a
 -- different sense ("Back" the equipment slot, "Available" the friends status, "Deposit" the bank button) take their
 -- own Japanese here, each asked for by key: the buy frames' BackButton (commoditiesbuyframe.xml:82,
--- itembuyframe.xml:7), the "Available" column header (util.lua:455) and the sell frames' Deposit label
+-- itembuyframe.xml:7), the "Available" column header (util.lua:470) and the sell frames' Deposit label
 -- (sellframe.xml:247–251).
 -- The lines the auction house appends (ADR-038) to an item tooltip: sellers and time left
 --   (AuctionHouseUtil.AddAuctionHouseTooltipInfo, shared/blizzard_auctionhouseutil.lua:301–306; called from
---   mainline/blizzard_auctionhouseutil.lua:99–101 after SetHyperlink / SetItemKey), post-hooked on AuctionHouseUtil
+--   mainline/blizzard_auctionhouseutil.lua:104–106 after SetHyperlink / SetItemKey), post-hooked on AuctionHouseUtil
 --   and shown by HelpTooltip.appended, restricted to APPENDED_KEYS (the item's own lines stay with UI/Tooltip); the
 --   cell tooltips: the owners cell and the time-left cell anchor to the row (tablebuilder.lua:380–386, 437–448), the
 --   bid / buyout cells to themselves (:555–603, BUYER / HIGH_BIDDER with the bidder's name kept); a WoW Token row's
@@ -209,7 +209,7 @@ local CATEGORY = { only = { "AUCTION_CATEGORY_WEAPONS", "AUCTION_CATEGORY_ARMOR"
   "AUCTION_SUBCATEGORY_MISCELLANEOUS", "AUCTION_SUBCATEGORY_OTHER", "AUCTION_SUBCATEGORY_RELIC",
   "AUCTION_SUBCATEGORY_CLOAK", "AUCTION_SUBCATEGORY_STANDARD_CONTAINER", "AUCTION_SUBCATEGORY_AMMO_CONTAINER",
   "AUCTION_SUBCATEGORY_REAGENT_CONTAINER", "AUCTION_SUBCATEGORY_ITEM_ENHANCEMENT",
-  -- the armour slots GetItemInventorySlotInfo names (camelot/blizzard_auctiondata.lua:68–106)
+  -- the armour slots GetItemInventorySlotInfo names (camelot/blizzard_auctiondata.lua:74–112)
   "INVTYPE_HEAD", "INVTYPE_NECK", "INVTYPE_SHOULDER", "INVTYPE_BODY", "INVTYPE_CHEST", "INVTYPE_ROBE",
   "INVTYPE_WAIST", "INVTYPE_LEGS", "INVTYPE_FEET", "INVTYPE_WRIST", "INVTYPE_HAND", "INVTYPE_FINGER",
   "INVTYPE_TRINKET", "INVTYPE_WEAPON", "INVTYPE_SHIELD", "INVTYPE_RANGED", "INVTYPE_CLOAK", "INVTYPE_2HWEAPON",
@@ -302,7 +302,7 @@ local cellHooked = setmetatable({}, { __mode = "k" })
 
 -- One row's cells (row.cells is the table builder's, tablebuilder.lua:335–339). The row owns the commodities list's
 -- "your auction" tooltip (commoditieslist.lua:140–146) and a favorite cell's button the favorites-full tooltip
--- (sharedtemplates.lua:744–754, tablebuilder.xml:72). → the number of dictionary words
+-- (sharedtemplates.lua:749–759, tablebuilder.xml:72). → the number of dictionary words
 local function showRow(row)
   local cells = type(row) == "table" and row.cells or nil
   if type(cells) ~= "table" then return 0 end

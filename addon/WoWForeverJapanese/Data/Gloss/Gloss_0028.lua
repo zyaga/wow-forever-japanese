@@ -475,7 +475,6 @@ WFJ.Data.add("gloss", {
   [28472] = "もの\tもの\tthing (the spell)",
   [28473] = "もの\tもの\tthing (these be)",
   [28474] = "もの\tもの\tthing (version)",
-  [28475] = "もの\tもの\tthing (what is done)",
   [28476] = "もの\tもの\tthing (what is mine)",
   [28477] = "もの\tもの\tthing (what)",
   [28478] = "もの\tもの\tthing (yours)",

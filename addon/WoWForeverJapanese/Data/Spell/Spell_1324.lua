@@ -18,7 +18,7 @@ WFJ.Data.add("spell", {
   [1324311] = { "Arcane Resistanceが$N1増加します。", nil, 0x0d52954c, nil, "um" },
   [1324312] = { "精神+$N1。", nil, 0xce2f9b3c, nil, "um" },
   [1324315] = { "詠唱中もマナ回復の$N1%が継続します。", "詠唱中もマナ回復の$N1%が継続します。", 0x86815c0c, 0x301e5adc, "uu" },
-  [1324318] = { "ダメージを与える呪文で一定の確率で、$D1の間、詠唱中もマナ回復の$N1%が継続します。StrongholdsとCitiesではマナ回復量が倍になります。", nil, 0x70e97c75, nil, "um" },
+  [1324318] = { "ダメージを与える呪文で一定の確率で、$D1の間、詠唱中もマナ回復の$N1%が継続します。StrongholdsとCitiesではこのMana Regenerationが倍になります。", nil, 0x06542bbb, nil, "um" },
   [1324322] = { "Arcane Elemenetalを召喚します。", nil, 0x7e274ea4, nil, "um" },
   [1324323] = { "ダメージを与える呪文で一定の確率で、戦闘を助けるArcaneのエレメンタルを召喚します。", nil, 0x288d1e97, nil, "um" },
   [1324401] = { nil, "沈黙状態。", nil, 0x20816e34, "mu" },
