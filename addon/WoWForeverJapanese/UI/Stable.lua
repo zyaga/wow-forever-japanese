@@ -48,42 +48,16 @@ local STATIC = {
 local REGIONS = { { "current", "CURRENT_PET" }, { "stabled1", "STABLED_PETS" } }
 local SLOT_TOOLTIP = { only = { "EMPTY_STABLE_SLOT" } }
 local TITLE = { only = { "STABLES" } }
-local LOYALTY_KEY = "PET_LOYALTY_TEMPLATE"
-Stable.KEYS = { title = TITLE.only, loyalty = { LOYALTY_KEY } }
+local LOYALTY = { only = { "PET_LOYALTY_TEMPLATE" } }
 
 local function get(key) return Compat.get(SURFACE, key) end
-
--- The loyalty line split at the client's own PET_LOYALTY_TEMPLATE ("%s (Loyalty: %d)"). → rank, level | nil
-local function splitLoyalty(text)
-  local template = Compat.resolve(LOYALTY_KEY)
-  if type(text) ~= "string" or type(template) ~= "string" then return nil end
-  local pre, mid, post = template:match("^(.-)%%s(.-)%%d(.*)$")
-  if not pre then return nil end
-  local function lit(x) return (x:gsub("%W", "%%%0")) end
-  return text:match("^" .. lit(pre) .. "(.-)" .. lit(mid) .. "(%d+)" .. lit(post) .. "$")
-end
-
--- The loyalty line: the template in Japanese around the PetLoyalty row its rank names (else the rank as written) and
--- the level number. → 1 when shown (or still ours), else 0
-local function showLoyalty()
-  local fs = get("loyaltyText")
-  local text = type(fs) == "table" and type(fs.GetText) == "function" and fs:GetText() or nil
-  local rank, level = splitLoyalty(text)
-  local index = WFJ.UIIndex
-  if not rank or not (index and index.rows[LOYALTY_KEY]) then
-    return WFJ.Labels.showArgs(SURFACE, "loyaltyText", fs, nil)
-  end
-  local row = WFJ.Labels.part(rank, WFJ.Labels.families("PetLoyalty").only)
-  -- the rank goes in already filled: the template declares no argument kinds, so a nested entry would stay unfilled
-  local name = row and index:fillArg({ entry = row.key }) or rank
-  return WFJ.Labels.showArgs(SURFACE, "loyaltyText", fs, LOYALTY_KEY, { key = LOYALTY_KEY, name, level })
-end
 
 -- HookScript("OnShow") / hooksecurefunc(PetStableFrame, "Update" / "SelectPet") target. → the number of dictionary
 -- words found.
 function Stable.onShow()
-  local n = WFJ.Labels.title(SURFACE, get("frame"), TITLE) + showLoyalty()
-  local list = {}
+  local n = WFJ.Labels.title(SURFACE, get("frame"), TITLE)
+  -- the loyalty line: the template in Japanese around the PetLoyalty row its rank names, the level kept
+  local list = { { "loyaltyText", get("loyaltyText"), LOYALTY } }
   for _, s in ipairs(STATIC) do list[#list + 1] = { s[1], get(s[1]), s[2] } end
   for _, r in ipairs(REGIONS) do
     list[#list + 1] = { "region." .. r[1], WFJ.Labels.region(get(r[1]), r[2]), { only = { r[2] } } }

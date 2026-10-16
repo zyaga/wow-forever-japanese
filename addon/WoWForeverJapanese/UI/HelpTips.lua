@@ -139,7 +139,6 @@ local function atlasMarkup(s)
     return ("|A:%s:%d:%d:0:0|a"):format(name, size, size)
   end))
 end
-HelpTips.atlasToken, HelpTips.atlasMarkup = atlasToken, atlasMarkup
 
 -- An arrow's FontString as Labels and the records see it: its text with the atlas markup read back as tokens, and
 -- tokens written as markup. One adapter per FontString (weak), so a record keeps its widget identity.

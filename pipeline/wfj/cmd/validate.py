@@ -180,12 +180,6 @@ def rule_referential(store: Store, english: Store) -> list[str]:
     return problems
 
 
-# The new player tutorial's FormatString tokens (blizzard_tutorialmanager/blizzard_tutorialhelper.lua:39–67):
-# client markup the pointer adapter draws (UI/HelpTips), allowed on a UI line only where its English carries
-# the same token.
-_TUTORIAL_TOKEN = re.compile(r"\{(?:Atlas\|[^{}\n]+|\$\d+|KB\|\d+)\}")
-
-
 def rule_placeholders(store: Store, english: Store | None = None) -> list[str]:
     problems = []
     ui_en = {ln["id"]: ln.get("en") or "" for ln in english.load("ui")} if english is not None else {}
@@ -195,8 +189,10 @@ def rule_placeholders(store: Store, english: Store | None = None) -> list[str]:
                 continue
             unknown = placeholders.unknown(ln.get("ja"))
             if type_ == "ui":
+                # a brace token the line's English carries verbatim is the client's own markup (the new player
+                # tutorial's {Atlas|…}, drawn by UI/HelpTips), never a mistyped player token
                 en = ui_en.get(ln["id"], "")
-                unknown = [t for t in unknown if not (_TUTORIAL_TOKEN.fullmatch(t) and t in en)]
+                unknown = [t for t in unknown if t not in en]
             bad = ", ".join(sorted(set(unknown)))
             if bad:
                 known = ", ".join("{" + w + "}" for w in placeholders.KNOWN)

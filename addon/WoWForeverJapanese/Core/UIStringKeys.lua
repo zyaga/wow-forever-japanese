@@ -165,6 +165,8 @@ UIStrings.ARGS = {
   RAF_RECRUIT_FRIEND = { [1] = "text" }, RAF_RECRUITER_FRIEND = { [1] = "text" },
   -- the friends list's privacy notice: the tab's name, a dictionary word (camelot friendsframe.lua:685)
   SOCIAL_TAB_UNAVAILABLE = { [1] = "word" },
+  -- the stable's loyalty line: a PetLoyalty rank, else the rank as written (camelot blizzard_stableui.lua:281)
+  PET_LOYALTY_TEMPLATE = { [1] = "petLoyalty" },
   -- the new player tutorial: a key name (NPE_UNBOUND_KEYBIND when the key is unbound) and a cyan spell name, both
   -- shown as the client wrote them (blizzard_newplayerexperience/blizzard_tutorialtutorials.lua; FormatString,
   -- blizzard_tutorialmanager/blizzard_tutorialhelper.lua:39–67)
@@ -870,7 +872,8 @@ UIStrings.OWN = {
 -- argument kind → the one fingerprint family it may be shown as
 UIStrings.FAMILY_KINDS = { creatureType = "CreatureType", holidayDescription = "HolidayDescription",
   customizationChoice = "CustomizationChoice", customizationSource = "CustomizationSource",
-  restState = "RestState", itemSubClassMask = "ItemSubClassMask" }
+  restState = "RestState", itemSubClassMask = "ItemSubClassMask",
+  petLoyalty = "PetLoyalty" }
 
 -- argument kind → the family each piece of a comma-separated list may be shown as ("Meat, Fish, Bread"); a piece
 -- that is not that family's row is kept as written, and the separators are kept

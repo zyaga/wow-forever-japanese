@@ -62,6 +62,7 @@ local TITLE_KEYS = { "FRIENDS_LIST", "IGNORE_LIST", "WHO_LIST", "RAID", "QUICK_J
 local CONTACTS_TITLE_KEYS = { "CONTACTS_LIST_TITLE", "CONTACTS_RECENT_ALLIES_TITLE", "RECRUIT_A_FRIEND" }
 local CONTACTS_TITLE = { only = CONTACTS_TITLE_KEYS }
 local IGNORE_TITLE = { only = { "IGNORE_LIST" } }
+local FRIENDS_DISABLED = { only = { "SOCIAL_TAB_UNAVAILABLE" } }
 local WHO_INSTRUCTION_KEYS = { "WHO_LIST_SEARCH_INSTRUCTIONS", "SEARCH" }
 -- The who row's invite button and the filter dropdown's entries (see the header)
 local WHO_INVITE_TIP = { only = { "WHO_PARTY_BUTTON_TOOLTIP" } }
@@ -80,7 +81,7 @@ local CANDIDATES = {
   tab1 = { "FriendsFrameTab1" }, tab3 = { "FriendsFrameTab3" }, tab4 = { "FriendsFrameTab4" },
   addFriend = { "FriendsFrameAddFriendButton" }, sendMessage = { "FriendsFrameSendMessageButton" },
   tooltipPlaying = { "FriendsTooltipOtherGameAccounts" }, statusDropdown = { "FriendsFrameStatusDropdown" },
-  listShow = { "FriendsListFrame_OnShow" }, list = { "FriendsListFrame" },
+  listShow = { "FriendsListFrame_OnShow" },
   whoEditBox = { "WhoFrameEditBox" }, whoTotals = { "LFGWhoListFrame.WhoFrameTotals" },
   whoFilter = { "LFGWhoListFrame.FilterDropdown" },
   contactsTitle = { "FriendsFrame.TitleContainer.TitleText" },
@@ -159,8 +160,7 @@ end
 
 -- hooksecurefunc target (FriendsListFrame_OnShow). → 1 | 0
 function Friends.onListShow(list)
-  return WFJ.Labels.show(SURFACE, "ui.friendsDisabled", field(list or get("list"), "FriendsDisabledText"), nil,
-    { only = { "SOCIAL_TAB_UNAVAILABLE" } })
+  return WFJ.Labels.show(SURFACE, "ui.friendsDisabled", field(list, "FriendsDisabledText"), nil, FRIENDS_DISABLED)
 end
 
 -- hooksecurefunc target (FriendsFrame_UpdateFriendInviteHeaderButton): the pooled header button. → 1 | 0

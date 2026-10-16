@@ -113,14 +113,21 @@ function NewPlayerTutorial.showWalk()
   return WFJ.Labels.show(SURFACE, "walk", get("walkText"), walkRefit, WALK)
 end
 
-local refits = setmetatable({}, { __mode = "k" }) -- frame → its text's refit (one function per frame)
-local function textRefit(frame)
+-- A screen prompt's refit (one function per frame): the text measured for what it shows, the single-key prompt's
+-- key box sized to its key text, then the layout marked dirty.
+local refits = setmetatable({}, { __mode = "k" })
+local function refitOf(frame)
   local fn = refits[frame]
   if not fn then
     fn = function()
       local container = frame.ContainerFrame
       if type(container) ~= "table" then return end
       fitText(container.Text)
+      local box = container.KeyBind
+      local key = type(box) == "table" and box.KeyBind or nil
+      if type(key) == "table" and type(key.GetStringWidth) == "function" and type(box.SetWidth) == "function" then
+        box:SetWidth(key:GetStringWidth() + KEY_BIND_PADDING)
+      end
       markDirty(container)
     end
     refits[frame] = fn
@@ -128,29 +135,10 @@ local function textRefit(frame)
   return fn
 end
 
-local keyRefits = setmetatable({}, { __mode = "k" })
-local function keyRefit(frame)
-  local fn = keyRefits[frame]
-  if not fn then
-    fn = function()
-      local container = frame.ContainerFrame
-      local box = type(container) == "table" and container.KeyBind or nil
-      local key = type(box) == "table" and box.KeyBind or nil
-      if type(key) ~= "table" or type(key.GetStringWidth) ~= "function" or type(box.SetWidth) ~= "function" then
-        return
-      end
-      box:SetWidth(key:GetStringWidth() + KEY_BIND_PADDING)
-      markDirty(container)
-    end
-    keyRefits[frame] = fn
-  end
-  return fn
-end
-
 -- The TutorialMainFrame_Frame:_SetContent post-hook. → 1 | 0
 function NewPlayerTutorial.onMain(frame)
   if type(frame) ~= "table" or type(frame.ContainerFrame) ~= "table" then return 0 end
-  return WFJ.Labels.show(SURFACE, "main", frame.ContainerFrame.Text, textRefit(frame), MAIN)
+  return WFJ.Labels.show(SURFACE, "main", frame.ContainerFrame.Text, refitOf(frame), MAIN)
 end
 
 -- The TutorialSingleKey_Frame:_SetContent post-hook. → the number of dictionary words found.
@@ -158,26 +146,21 @@ function NewPlayerTutorial.onSingleKey(frame)
   if type(frame) ~= "table" or type(frame.ContainerFrame) ~= "table" then return 0 end
   local container = frame.ContainerFrame
   local box = container.KeyBind
-  local n = WFJ.Labels.show(SURFACE, "single", container.Text, textRefit(frame), SINGLE)
-  if type(box) == "table" then n = n + WFJ.Labels.show(SURFACE, "single.key", box.KeyBind, keyRefit(frame), UNBOUND) end
+  local n = WFJ.Labels.show(SURFACE, "single", container.Text, refitOf(frame), SINGLE)
+  if type(box) == "table" then n = n + WFJ.Labels.show(SURFACE, "single.key", box.KeyBind, refitOf(frame), UNBOUND) end
   return n
 end
 
 local hooked = setmetatable({}, { __mode = "k" })
--- → true when `frame` carries `_SetContent` (hooked now or earlier)
 local function hookContent(frame, fn)
-  if type(frame) ~= "table" or type(frame._SetContent) ~= "function" then return false end
-  if not hooked[frame] then
-    hooked[frame] = true
-    hooksecurefunc(frame, "_SetContent", fn)
-  end
-  return true
+  if type(frame) ~= "table" or type(frame._SetContent) ~= "function" or hooked[frame] then return end
+  hooked[frame] = true
+  hooksecurefunc(frame, "_SetContent", fn)
 end
 
 local function hookManager()
-  local a = hookContent(get("main"), NewPlayerTutorial.onMain)
-  local b = hookContent(get("single"), NewPlayerTutorial.onSingleKey)
-  return a or b
+  hookContent(get("main"), NewPlayerTutorial.onMain)
+  hookContent(get("single"), NewPlayerTutorial.onSingleKey)
 end
 
 local shownHooked = setmetatable({}, { __mode = "k" })

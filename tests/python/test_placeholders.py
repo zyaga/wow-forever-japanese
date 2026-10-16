@@ -78,8 +78,8 @@ def test_validate_rule_fails_on_a_shipped_unknown_token_only(tmp_path):
 
 
 def test_a_ui_line_may_keep_a_tutorial_markup_token_its_english_carries(tmp_path):
-    # the new player tutorial's FormatString tokens (blizzard_tutorialhelper.lua:39–67) are client markup the pointer
-    # adapter draws (UI/HelpTips); a UI line may carry one only as its English does, never another type's line
+    # a brace token the English carries verbatim is client markup (the new player tutorial's FormatString tokens,
+    # blizzard_tutorialhelper.lua:39–67, drawn by UI/HelpTips); a UI line may keep it, never another type's line
     data, english = tmp_path / "data", tmp_path / "english"
     data.mkdir()
     english.mkdir()

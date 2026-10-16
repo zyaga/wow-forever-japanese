@@ -234,7 +234,7 @@ local KIND_CAPTURE = { word = "(%a+)", standing = "(%a+)", words = "(%a[%a ]-)",
   -- ADR-042: a client-table word of ONE family, shown in Japanese when it is that family's row, else as
   -- written (UIStrings.FAMILY_KINDS), never any other entry, so a class, spec or pet-family name stays English
   creatureType = "([^%.]-)", holidayDescription = "(.-)", customizationChoice = "(.-)",
-  customizationSource = "(.-)", restState = "([^%.]-)", itemSubClassMask = "([^%.]-)",
+  customizationSource = "(.-)", restState = "([^%.]-)", itemSubClassMask = "([^%.]-)", petLoyalty = "([^%(]-)",
   petFoodList = "([^%.]-)", questTitle = "(.-)" }
 -- a template with more `|4` groups is not indexed (counted `unsupported`). 4 for TIME_DAYHOURMINUTESECOND
 -- (the /played duration, the only listed key with 4): the chat line holds its raw form, which is always matched
@@ -484,7 +484,8 @@ end
 -- unless the enclosing key opts in (ENTRY_TEXT).
 local TEXT_KINDS = { text = true, words = true, skill = true, entry = true, entryOrText = true, entryList = true,
   verbatim = true, creatureType = true, holidayDescription = true, customizationChoice = true,
-  customizationSource = true, restState = true, itemSubClassMask = true, petFoodList = true, questTitle = true }
+  customizationSource = true, restState = true, itemSubClassMask = true, petLoyalty = true,
+  petFoodList = true, questTitle = true }
   -- a family argument is free text too
 -- The enclosing keys whose `entry` argument may itself be a template that carries text (none yet): every other
 -- `entry` is an exact entry or a template whose arguments are numbers, times, percentages or dictionary words, so
