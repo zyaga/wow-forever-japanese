@@ -78,6 +78,8 @@ WFJ.Data.add("reading", {
   ["ui:TEXT_MODE_A_STRING_RESULT_BLOCK"] = { text = "ブロック=ブロック=34721" },
   ["ui:TEXT_MODE_A_STRING_RESULT_OVERKILLING"] = { text = "オーバーキル=オーバーキル=32344" },
   ["ui:TEXT_MODE_A_STRING_RESULT_RESIST"] = { text = "抵抗=ていこう=80602" },
+  ["ui:TEXT_ON_TARGET_OFF_LABEL"] = { text = "オフ=オフ=32229" },
+  ["ui:TEXT_ON_TARGET_ON_LABEL"] = { text = "オン=オン=32286" },
   ["ui:TEXT_SCALE_PREVIEW_BODY"] = { text = "これ=これ=9127 テキスト=テキスト=33692 サイズ=サイズ=33022 プレビュー=プレビュー=34811 この=この=8884 設定=せってい=121867 ほとんど=ほとんど=26034 ダイアログ=ダイアログ=33536 一部=いちぶ=36822 ソーシャル=ソーシャル=33435 メニュー=メニュー=35194 テキスト=テキスト=33692 読み上げ=よみあげ=123886 オプション=オプション=32251 文字=もじ=86429 サイズ=サイズ=33022 変わります=かわります=61562" },
   ["ui:TEXT_SCALE_PREVIEW_TITLE"] = { text = "例=れい=44580" },
   ["ui:TEXT_TO_SPEECH"] = { text = "読み上げ=よみあげ=123886" },

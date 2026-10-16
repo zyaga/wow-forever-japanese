@@ -180,13 +180,24 @@ def rule_referential(store: Store, english: Store) -> list[str]:
     return problems
 
 
-def rule_placeholders(store: Store) -> list[str]:
+# The new player tutorial's FormatString tokens (blizzard_tutorialmanager/blizzard_tutorialhelper.lua:39–67):
+# client markup the pointer adapter draws (UI/HelpTips), allowed on a UI line only where its English carries
+# the same token.
+_TUTORIAL_TOKEN = re.compile(r"\{(?:Atlas\|[^{}\n]+|\$\d+|KB\|\d+)\}")
+
+
+def rule_placeholders(store: Store, english: Store | None = None) -> list[str]:
     problems = []
+    ui_en = {ln["id"]: ln.get("en") or "" for ln in english.load("ui")} if english is not None else {}
     for type_ in check.TYPES:
         for ln in store.load(type_):
             if ln["status"] not in SHIPPED_STATUS:
                 continue
-            bad = ", ".join(sorted(set(placeholders.unknown(ln.get("ja")))))
+            unknown = placeholders.unknown(ln.get("ja"))
+            if type_ == "ui":
+                en = ui_en.get(ln["id"], "")
+                unknown = [t for t in unknown if not (_TUTORIAL_TOKEN.fullmatch(t) and t in en)]
+            bad = ", ".join(sorted(set(unknown)))
             if bad:
                 known = ", ".join("{" + w + "}" for w in placeholders.KNOWN)
                 where = f"{type_} {ln['id']}/{ln['field']}"
@@ -521,7 +532,7 @@ def validate(
     problems += rule_regenerate(root, store, addon_dir, planned)
     if numbers is not None:
         problems += rule_numbers(store, numbers)
-    problems += rule_placeholders(store)
+    problems += rule_placeholders(store, english)
     problems += rule_ui(
         store, english, ui_arg_kinds(addon_dir), ui_chat_families(addon_dir), ui_own(addon_dir)
     )

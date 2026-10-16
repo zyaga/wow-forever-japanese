@@ -73,6 +73,8 @@ WFJ.Data.add("reading", {
   ["ui:FLIGHT_MAP_CLICK_TO_ZOOM_IN"] = { text = "クリック=クリック=32710 拡大=かくだい=80996" },
   ["ui:FLIGHT_MAP_CLICK_TO_ZOOM_OUT_HINT"] = { text = "右クリック=みぎクリック=56497 縮小=しゅくしょう=110606" },
   ["ui:FLIGHT_MAP_WORLD_QUESTS"] = { text = "ここ=ここ=7688 件=けん=41549 ワールドクエスト=ワールドクエスト=35688 発生中=はっせいちゅう=102757" },
+  ["ui:FLOATING_COMBAT_TEXT_ON_ME_DROPDOWN_LABEL"] = { text = "自分=じぶん=140425 テキスト=テキスト=33692" },
+  ["ui:FLOATING_COMBAT_TEXT_ON_TARGET_DROPDOWN_LABEL"] = { text = "ターゲット=ターゲット=33512 テキスト=テキスト=33692" },
   ["ui:FOCUS"] = { text = "フォーカス=フォーカス=34603" },
   ["ui:FOCUS_CAST_KEY_TEXT"] = { text = "フォーカス=フォーカス=34603 キャスト=キャスト=32527 キー=キー=32597" },
   ["ui:FOCUS_COST"] = { text = "フォーカス=フォーカス=34603" },

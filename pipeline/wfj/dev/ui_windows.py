@@ -1177,10 +1177,10 @@ for _surface, _files in _LEVEL1_WINDOWS.items():
 
 # The tutorials a Forever player can reach: the mainline tutorial popup (UI/Tutorial; loaded on
 # camelot by blizzard_framexml.toc:32–33, live ids in DISPLAY_DATA, tutorialframe.lua:119–182) and the
-# tutorial manager's pointer arrows with the Blizzard_Tutorials parts that are not retail-only (UI/HelpTips), and
-# camelot's new player experience (UI/NewPlayerTutorial: its keyboard and mouse window, walk prompt and screen
-# prompts; its pointer arrows go through UI/HelpTips). The boost tutorial, Remix, Dracthyr, skyriding and the
-# Trading Post are unreachable (pipeline/forever_addon_dispositions.txt).
+# tutorial manager's pointer arrows with the Blizzard_Tutorials parts that are not retail-only (UI/HelpTips),
+# and camelot's new player experience (UI/NewPlayerTutorial: its keyboard and mouse window, walk prompt and
+# screen prompts; its pointer arrows go through UI/HelpTips). The boost tutorial, Remix, Dracthyr, skyriding
+# and the Trading Post are unreachable (pipeline/forever_addon_dispositions.txt).
 _TUTORIAL_WINDOWS: dict[str, list[str]] = {
     "tutorial": [
         "Blizzard_FrameXML/Mainline/TutorialFrame.lua",
@@ -1379,7 +1379,8 @@ DYNAMIC: dict[str, list[str]] = {
         r"COMBATLOG_XPGAIN_[A-Z0-9_]+", r"COMBATLOG_(HONOR|DISHONOR|ARENAPOINTS)[A-Z0-9_]*",
         r"FACTION_STANDING_(IN|DE)CREASED[A-Z0-9_]*", r"SKILL_RANK_UP", r"TRADESKILL_LOG_[A-Z0-9_]+",
         r"OPEN_LOCK_[A-Z0-9_]+", r"(MARKED|CLEARED)_(AFK|DND)(_MESSAGE)?", r"TIME_PLAYED_(TOTAL|LEVEL)",
-        r"LEVEL_UP(_NO_LINK|_HEALTH|_HEALTH_MANA|_STAT|_SKILL_POINTS|_CHAR_POINTS)?", r"DURABILITYDAMAGE_DEATH",
+        r"LEVEL_UP(_NO_LINK|_HEALTH|_HEALTH_MANA|_STAT|_SKILL_POINTS|_CHAR_POINTS)?",
+        r"DURABILITYDAMAGE_DEATH",
         r"INSTANCE_RESET_[A-Z0-9_]+", r"RANDOM_ROLL_RESULT", r"ACHIEVEMENT_BROADCAST(_SELF)?",
     ],
 }
