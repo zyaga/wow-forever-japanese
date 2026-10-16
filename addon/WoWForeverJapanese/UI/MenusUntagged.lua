@@ -41,6 +41,10 @@ local DECLARE = "help.menus.untagged"
 -- entry's title is the leader's name; blizzard_lfgvanilla_browse.lua:1424–1440 for GROUP_INVITE). UI/Menus reads
 -- these specs like its own tags (Menus.showElement / onMenu).
 local SETTINGS_KEYS = WFJ.SettingsKeys or {}
+-- The Options window's dropdown entries: the window's keys plus the Text on Target menu's "Effects" (an owned key,
+-- combatoverrides.lua:213), which the window's own labels must not take: there "Effects" is the volume slider.
+local SETTINGS_MENU_KEYS = { "SHOW_TARGET_EFFECTS" }
+for _, key in ipairs(SETTINGS_KEYS.options or {}) do SETTINGS_MENU_KEYS[#SETTINGS_MENU_KEYS + 1] = key end
 -- The Combat page's "Text on Me" checkboxes: each one's hover is its label as the title and its tooltip as the line
 -- (Settings.CreateDropdownCheckbox's SetTooltip, blizzard_settings_shared/blizzard_settings.lua:508–513; the pairs
 -- at blizzard_settingsdefinitions_frame/mainline/combatoverrides.lua:75–87).
@@ -59,7 +63,7 @@ local TEXT_ON_ME_TOOLTIPS = {
   "COMBAT_TEXT_SHOW_HONOR_GAINED_TEXT", "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_HONOR_GAINED",
   "COMBAT_TEXT_SHOW_AURAS_TEXT", "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_AURAS" }
 WFJ.Menus.UNTAGGED = {
-  SETTINGS_DROPDOWN = { source = "blizzard_settings.lua:563", keys = SETTINGS_KEYS.options or {},
+  SETTINGS_DROPDOWN = { source = "blizzard_settings.lua:563", keys = SETTINGS_MENU_KEYS,
     tooltips = TEXT_ON_ME_TOOLTIPS },
   EDIT_MODE_DROPDOWN = { source = "editmodetemplates.lua:22", keys = SETTINGS_KEYS.editmode or {} },
   CONTEXT_LFG_SEARCH_ENTRY = { source = "blizzard_lfgvanilla_browse.lua:1008", titleIsName = true,

@@ -154,6 +154,9 @@ function Social.installCamelot()
       self.FriendsDisabledText.text = string.format(en("SOCIAL_TAB_UNAVAILABLE"), "Friends")
     end
   end
+  -- bound the way the XML does (<OnShow function="FriendsListFrame_OnShow"/>, friendsframe.xml:771): the frame
+  -- holds the function itself, so a hook on the global never runs
+  list:SetScript("OnShow", _G.FriendsListFrame_OnShow)
   _G.FriendsFrame_Update = function()
     local tab = _G.FriendsFrame.selectedTab or 1
     if tab == 1 then

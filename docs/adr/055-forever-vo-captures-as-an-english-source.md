@@ -34,10 +34,13 @@ held 577 submissions with about 27,000 quest lines from builds 69913 to 70205.
    (`run_forever_vo` in `pipeline/wfj/cmd/import_english.py`, reader `pipeline/wfj/io/forever_vo.py`). Lines carry
    `src: forever-vo@<commit>`.
 2. **Only English clients.** The captures name no client language, and some come from German clients. An entry
-   counts only when its submission is an English client's, told the same way as for greetings (point 5), and we
-   hold an English title for its quest id. Deciding per submission keeps a capture taken before Forever renamed
-   the quest (build 1.60.1.70425 respelled "Reading the Ley Lines" as "Reading the Leylines"); an earlier rule
-   compared each entry's own title and dropped such a line, which took a shipped translation's English away.
+   counts when its quest title equals the English title we hold for that quest id. An entry whose title differs
+   (a capture taken before Forever renamed the quest: build 1.60.1.70425 respelled "Reading the Ley Lines" as
+   "Reading the Leylines") still counts when its submission is an English client's, told the same way as for
+   greetings (point 5), with at least five known quests to tell by (`MIN_KNOWN_FOR_RENAME`): a submission with
+   only a few known quests, whose titles may be names in any language, cannot vouch for a title that differs.
+   Comparing only each entry's own title had dropped such a line, which took a shipped translation's English
+   away.
 3. **Two submissions must agree.** A text is taken only when at least two separate submissions sent it (compared
    normalized). When submissions disagree, the text sent by the most wins; a tie goes to the text that keeps a
    player token (`$N`, `$C`, `$R`), then to the newest build.

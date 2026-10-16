@@ -167,10 +167,10 @@ UIStrings.ARGS = {
   SOCIAL_TAB_UNAVAILABLE = { [1] = "word" },
   -- the stable's loyalty line: a PetLoyalty rank, else the rank as written (camelot blizzard_stableui.lua:281)
   PET_LOYALTY_TEMPLATE = { [1] = "petLoyalty" },
-  -- the new player tutorial: a key name (NPE_UNBOUND_KEYBIND when the key is unbound) and a cyan spell name, both
-  -- shown as the client wrote them (blizzard_newplayerexperience/blizzard_tutorialtutorials.lua; FormatString,
-  -- blizzard_tutorialmanager/blizzard_tutorialhelper.lua:39–67)
-  NPEV2_SHOW_BAGS = { [1] = "text" }, NPEV2_OPENCHARACTERSHEET = { [1] = "text" },
+  -- the new player tutorial: a key name, or NPE_UNBOUND_KEYBIND's "[Unbound]" (shown as its Japanese), and a cyan
+  -- spell name kept as the client wrote it (blizzard_newplayerexperience/blizzard_tutorialtutorials.lua; FormatString,
+  -- blizzard_tutorialmanager/blizzard_tutorialhelper.lua:39–67, 284–296)
+  NPEV2_SHOW_BAGS = { [1] = "entryOrText" }, NPEV2_OPENCHARACTERSHEET = { [1] = "entryOrText" },
   NPEV2_PRESS_KEY_TO_USE_ABILITY = { [1] = "text", [2] = "text" },
   NPEV2_PLACE_ABILITY_BACK_ON_ACTION_BAR = { [1] = "text" },
   COMMUNITY_MEMBER_CHARACTER_INFO_FORMAT = { [2] = "text", [3] = "text" },

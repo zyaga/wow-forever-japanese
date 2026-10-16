@@ -11,7 +11,7 @@
 --     writes RAID / QUICK_JOIN to FriendsFrameTitleText (lua:461–473) and the contacts titles with
 --     FriendsFrame:SetTitle (CONTACTS_LIST_TITLE / CONTACTS_RECENT_ALLIES_TITLE / RECRUIT_A_FRIEND, lua:447–459) →
 --     FriendsFrame.TitleContainer.TitleText;
---   FriendsListFrame_OnShow → FriendsListFrame.FriendsDisabledText, the notice an account with friends turned off by
+--   FriendsListFrame's OnShow → FriendsListFrame.FriendsDisabledText, the notice an account with friends turned off by
 --     its privacy settings sees: SOCIAL_TAB_UNAVAILABLE:format(SOCIAL_UI_FRIENDS_TAB_NAME) (camelot friendsframe.lua:
 --     680–692); the tab name has the same English as FRIENDS and comes back as that word's Japanese;
 --   FriendsFrame_UpdateFriendButton → button.info (Offline / "last online %s ago", or a Recruit-A-Friend friend's
@@ -81,7 +81,7 @@ local CANDIDATES = {
   tab1 = { "FriendsFrameTab1" }, tab3 = { "FriendsFrameTab3" }, tab4 = { "FriendsFrameTab4" },
   addFriend = { "FriendsFrameAddFriendButton" }, sendMessage = { "FriendsFrameSendMessageButton" },
   tooltipPlaying = { "FriendsTooltipOtherGameAccounts" }, statusDropdown = { "FriendsFrameStatusDropdown" },
-  listShow = { "FriendsListFrame_OnShow" },
+  list = { "FriendsListFrame" },
   whoEditBox = { "WhoFrameEditBox" }, whoTotals = { "LFGWhoListFrame.WhoFrameTotals" },
   whoFilter = { "LFGWhoListFrame.FilterDropdown" },
   contactsTitle = { "FriendsFrame.TitleContainer.TitleText" },
@@ -158,7 +158,8 @@ function Friends.onFriendButton(button)
   return WFJ.Labels.show(SURFACE, infoKey(button.info), button.info, nil, { only = CAMELOT_INFO_KEYS })
 end
 
--- hooksecurefunc target (FriendsListFrame_OnShow). → 1 | 0
+-- HookScript("OnShow") target on FriendsListFrame: the XML binds FriendsListFrame_OnShow by function
+-- (friendsframe.xml:771), so a hook on the global never runs. → 1 | 0
 function Friends.onListShow(list)
   return WFJ.Labels.show(SURFACE, "ui.friendsDisabled", field(list, "FriendsDisabledText"), nil, FRIENDS_DISABLED)
 end
@@ -284,10 +285,13 @@ function Friends.init()
   local writers = { { "update", "FriendsFrame_Update", Friends.onUpdate },
     { "updateButton", "FriendsFrame_UpdateFriendButton", Friends.onFriendButton },
     { "inviteHeaderUpdate", "FriendsFrame_UpdateFriendInviteHeaderButton", Friends.onInviteHeader },
-    { "inviteUpdate", "FriendsFrame_UpdateFriendInviteButton", Friends.onInvite },
-    { "listShow", "FriendsListFrame_OnShow", Friends.onListShow } }
+    { "inviteUpdate", "FriendsFrame_UpdateFriendInviteButton", Friends.onInvite } }
   for _, w in ipairs(writers) do
     if type(get(w[1])) == "function" then hooksecurefunc(w[2], w[3]) end
+  end
+  local list = get("list")
+  if type(list) == "table" and type(list.HookScript) == "function" then
+    list:HookScript("OnShow", Friends.onListShow)
   end
   Friends.showHeaderTabs()
   WFJ.LoadOnDemand.when(WHO_ADDON, Friends.setupWho)

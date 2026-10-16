@@ -59,6 +59,8 @@ local UI = {
   OPTION_TOOLTIP_COMBAT_TEXT_SHOW_DODGE_PARRY_MISS = { "Shows attacks against you that dodge, parry, or miss.",
     "自分への攻撃の回避、受け流し、ミスを表示します。" },
   SHOW_DAMAGE_TEXT = { "Damage", "ダメージ" },
+  -- the Text on Target menu's owned "Effects" (UIStrings.OWN); "Effects" elsewhere is the volume slider's 効果音
+  SHOW_TARGET_EFFECTS = { "Effects", "効果" }, FX_VOLUME = { "Effects", "効果音" },
 }
 
 local function element(text)
@@ -475,8 +477,11 @@ describe("UI/Menus: menu entries", function()
     settings.InitDropdown(onTarget)
     local target = element(nil)
     target:CreateButton(UI.SHOW_DAMAGE_TEXT[1])
+    target:CreateButton(UI.SHOW_TARGET_EFFECTS[1])
     onTarget:RegisterMenu(target)
-    assert.are.equal("ダメージ", open(target)[target.children[1]].fontString:GetText())
+    local shown = open(target)
+    assert.are.equal("ダメージ", shown[target.children[1]].fontString:GetText())
+    assert.are.equal("効果", shown[target.children[2]].fontString:GetText())
     _G.Settings = nil
   end)
 end)

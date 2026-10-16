@@ -119,7 +119,7 @@ describe("the social window on Forever's camelot FriendsFrame", function()
       .. " Friends word, and the reveal key shows the client's English", function()
       Social.friendsDisabled = true
       local text = _G.FriendsListFrame.FriendsDisabledText
-      _G.FriendsListFrame_OnShow(_G.FriendsListFrame)
+      _G.FriendsListFrame:Show()
       assert.are.equal("アカウントのプライバシー設定により、フレンドの機能は利用できません。", text:GetText())
       alt(true)
       assert.are.equal("The Friends feature is unavailable due to your account's privacy settings.", text:GetText())

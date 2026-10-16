@@ -234,7 +234,7 @@ local KIND_CAPTURE = { word = "(%a+)", standing = "(%a+)", words = "(%a[%a ]-)",
   -- ADR-042: a client-table word of ONE family, shown in Japanese when it is that family's row, else as
   -- written (UIStrings.FAMILY_KINDS), never any other entry, so a class, spec or pet-family name stays English
   creatureType = "([^%.]-)", holidayDescription = "(.-)", customizationChoice = "(.-)",
-  customizationSource = "(.-)", restState = "([^%.]-)", itemSubClassMask = "([^%.]-)", petLoyalty = "([^%(]-)",
+  customizationSource = "(.-)", restState = "([^%.]-)", itemSubClassMask = "([^%.]-)", petLoyalty = "(.-)",
   petFoodList = "([^%.]-)", questTitle = "(.-)" }
 -- a template with more `|4` groups is not indexed (counted `unsupported`). 4 for TIME_DAYHOURMINUTESECOND
 -- (the /played duration, the only listed key with 4): the chat line holds its raw form, which is always matched

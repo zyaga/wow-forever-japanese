@@ -362,7 +362,7 @@ column (`uiexpansiondisplayinfoicon.f0`, not shown in the game world); `make fam
 (the Leylines respelling), 7 developer and 22 gossip. The English Collector file held nothing newer than 70338 (97
 entries, none rejected, nothing added). The level 1 spell list went from 156 to 153. The build respelled one quest title
 ("Reading the Ley Lines" became "Reading the Leylines"), and the forever-vo import, which compared each capture's
-title with ours, dropped that quest's progress English; it now tells a capture's language per submission
+title with ours, dropped that quest's progress English; it now also takes a renamed quest's capture from an English submission
 ([ADR-055](../adr/055-forever-vo-captures-as-an-english-source.md)), which keeps the line and adds one turn-in line
 (quest 92516) now drafted. Item 9404 (Olaf's All Purpose Shield) got its first Forever tooltip
 on this build; its hand-written line wrote the duration and a cooldown the English does not have, so it was ruled
@@ -379,7 +379,7 @@ out (a baked number) and redrafted with the Japanese its two siblings with the s
 | book, area | 0 | 0 | none | none |
 
 Voice: 14 files remade, for the quest text that changed. Left out with a reason: the item descriptions still in
-Classic Era English (1,529, listed in [Coverage](coverage.md)), the 11 picture-only book pages, and 38 spell
+Classic Era English (1,532, listed in [Coverage](coverage.md)), the 11 picture-only book pages, and 38 spell
 descriptions and 10 auras whose template uses a code drafting cannot place yet (each with its reason in
 [Coverage](coverage.md)).
 

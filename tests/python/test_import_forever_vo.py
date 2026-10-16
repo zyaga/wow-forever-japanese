@@ -208,3 +208,14 @@ def test_a_capture_from_before_a_rename_is_still_read(tmp_path):
     got = {(c.id_, c.field): c.en for c in result.captures}
     assert got[(20, "progress")] == "Realizing our true potential."
     assert "Unser wahres Potenzial." not in got.values()
+
+
+def test_a_small_submission_cannot_vouch_for_a_renamed_title(tmp_path):
+    # a submission with too few known quests to tell its language (one neutral title) cannot pass a renamed quest's
+    # text in another language; the entries whose own title is ours still count
+    titles = {1: "Northshire", 20: "Reading the Leylines"}
+    small = [_entry(1, "complete", "Northshire", "Done."), _entry(20, "progress", "Reading the Ley Lines", "Fremd.")]
+    result = read_captures(_captures(tmp_path / "fvo", [small, small]), titles)
+    got = {(c.id_, c.field): c.en for c in result.captures}
+    assert (20, "progress") not in got
+    assert got[(1, "completion")] == "Done."

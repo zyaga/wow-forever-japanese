@@ -33,6 +33,8 @@ local UI = {
   FLOATING_COMBAT_TEXT_ON_TARGET_DROPDOWN_LABEL = { "Text on Target", "対象のテキスト" },
   AUTO_RANGED_COMBAT_TEXT = { "Auto Attack/Auto Shot", "自動攻撃/自動射撃" },
   COMBAT_TEXT_SHOW_AURA_FADE_TEXT = { "Fading Auras", "消えるオーラ" },
+  -- "Effects": the Sound page's volume slider (FX_VOLUME, audio.lua:530) and the Text on Target menu's owned entry
+  FX_VOLUME = { "Effects", "効果音" }, SHOW_TARGET_EFFECTS = { "Effects", "効果" },
   BINDING_NAME_MOVEFORWARD = { "Move Forward", "前進" }, BINDING_HEADER_MOVEMENT = { "Movement Keys", "移動キー" },
   -- in the dictionary, and never shown here: not one of this window's keys / a key name / a player's name
   RAID = { "Raid", "レイド" }, KEY_SPACE = { "Space", "スペース" }, PREVIEW = { "Preview", "プレビュー" },
@@ -321,7 +323,9 @@ describe("the Options window on Forever", function()
     local onTarget = S.dropdownRow(" ", "Text on Target")
     local ranged = S.checkboxRow("Auto Attack/Auto Shot")
     local fading = S.checkboxRow("Fading Auras")
-    for _, row in ipairs({ onMe, onTarget, ranged, fading }) do list:initFrame(row, {}) end
+    local volume = S.checkboxRow("Effects") -- the Sound page's slider label, not the combat menu's owned entry
+    for _, row in ipairs({ onMe, onTarget, ranged, fading, volume }) do list:initFrame(row, {}) end
+    assert.are.equal("効果音", volume.Text:GetText())
     assert.are.equal("自分のテキスト", onMe.Control.Dropdown.Text:GetText())
     assert.are.equal("対象のテキスト", onTarget.Control.Dropdown.Text:GetText())
     assert.are.equal("自動攻撃/自動射撃", ranged.Text:GetText())

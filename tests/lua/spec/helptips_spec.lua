@@ -249,6 +249,8 @@ describe("UI/HelpTips: the tutorial pointer arrows", function()
     NPEV2_SHOW_BAGS = { "You found a new piece of |cFF00FFFFgear|r!\n\nPress |cFF00FFFF%s|r to open your bag.",
       "新しい|cFF00FFFF装備|rを見つけました！\n\n|cFF00FFFF%s|rを押してバッグを開きましょう。" },
     NPEV2_PRESS_KEY_TO_USE_ABILITY = { "Press|cFF00FFFF %s|r to %s", "|cFF00FFFF%s|rを押して%sを使いましょう" },
+    -- the key text when the bag key is unbound (TutorialHelper:GetBagBinding, blizzard_tutorialhelper.lua:289–291)
+    NPE_UNBOUND_KEYBIND = { "[Unbound]", "[未設定]" },
   }
 
   -- TutorialHelper:FormatString (blizzard_tutorialmanager/blizzard_tutorialhelper.lua:39–67) with
@@ -421,6 +423,10 @@ describe("UI/HelpTips: the tutorial pointer arrows", function()
     local id = pointers:Show(bags, "DOWN", {}, 0, 0)
     assert.are.equal("新しい|cFF00FFFF装備|rを見つけました！\n\n|cFF00FFFFB|rを押してバッグを開きましょう。",
       pointers.InUseFrames[id].Content.Text:GetText())
+    local unbound = formatString(_G.NPEV2_SHOW_BAGS:format(_G.NPE_UNBOUND_KEYBIND))
+    local id3 = pointers:Show(unbound, "DOWN", {}, 0, 0)
+    assert.are.equal("新しい|cFF00FFFF装備|rを見つけました！\n\n|cFF00FFFF[未設定]|rを押してバッグを開きましょう。",
+      pointers.InUseFrames[id3].Content.Text:GetText())
     local ability = formatString(_G.NPEV2_PRESS_KEY_TO_USE_ABILITY:format("{KB|6603}", "{$6603}"))
     assert.are.equal("Press|cFF00FFFF 1|r to |cFF00FFFFAttack|r", ability)
     local id2 = pointers:Show(ability, "DOWN", {}, 0, 10, nil, "DOWN")
