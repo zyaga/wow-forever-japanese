@@ -12,9 +12,14 @@ an old setting stops working). A release moves those lines under its version num
 ### Added
 - The new player tutorial a new character sees on Forever is in Japanese: the keyboard and mouse window, the walk and camera prompts, the screen prompts and the pointer arrows. Keys, spell names and icons in them stay as the game shows them.
 - Japanese for the text Forever build 1.60.1.70425 adds or rewords, with word readings: new and reworded quests (read aloud in Japanese), items and spells, the pet's combat stats, the stable's title and loyalty line, the rebuilt Combat text options, new statistics and scoreboard columns, dialog and chat lines, and the notice shown when your privacy settings turn friends off.
+- The night elf opening cinematic's first subtitle lines are in Japanese.
+- Japanese for the tooltip of the item Forever build 1.60.1.70450 adds (Ankle Slicers).
 
 ### Changed
-- The game text is read from Forever build 1.60.1.70425.
+- The game text is read from Forever build 1.60.1.70450.
+
+### Fixed
+- The scoreboard's rank tooltip ("Rank 7 - Knight") is in Japanese; the rank title stays English.
 
 ### Removed
 - The instance difficulty banner's tooltip: the game no longer shows that banner.

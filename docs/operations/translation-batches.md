@@ -342,6 +342,38 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
 
+### 1.60.1.70425 → 1.60.1.70450 (2026-10-16)
+
+Quest cache: 3,030 records, 2,957 quests (the finished WFJScan scan: 4 passes, 8,903 ids asked, 3,030 answered),
+read with the 69913 payload layout, pinned again for 70450. 10 quests are answered that the 70425 cache lacked (785,
+5381, 6142, 6143, 8861, 81949, 98904, 98905, 98907, 98908; all of them had English from an earlier build), and no
+quest 70425 answered is missing now. Client tables: 62, with the build's own hotfixes (ItemSparse 15 replaced, 4,775
+added; SpellName and Spell 113 replaced, 2 added; GlobalStrings 9 replaced; QuestV2 88 replaced; BroadcastText 30
+added; PlayerCondition 3 added); no layout hash changed. Against 70425 only two tables differ. BroadcastText gained 3
+rows: 7588, an NPC line in Shadowglen the gossip surface already ships, and 329318 and 329319, the first two subtitle
+lines of the night elf opening cinematic (the client receives them as hotfixes only while the cinematic plays).
+ItemSparse gained 2 rows: 250952 (Disorienting Smog Potion, translated from an earlier build) and 284587 (Ankle
+Slicers, new). The wago.tools cross-check: no value differs; wago has rows ours lacks (26 ItemSparse, 23 SpellName and
+Spell, 17 ItemEffect, and QuestV2 90930 and 99470), all store cosmetics (pets, mounts, ensembles, the Gilded
+Blademaster set, the Adventurer's Tent) in sections the client cannot decrypt yet; QuestV2's highest id is 99,670. The
+UI extract: 4,486 files, none modified from 70425. Three were added only because the community listfile now names
+them: Forever's action button overrides (a cooldown alpha, no text), its PvP match table overrides and an API
+documentation file. The PvP match override was on 70425 too: it makes the scoreboard's honor level cell show the PvP
+rank and title (`PVP_RANK_NUMBER_AND_TITLE`, "Rank %d - %s") instead of "Honor Level %d", and the addon now translates
+that tooltip too (the rank title stays English). The served-text inventory: no column new or gone (row counts only);
+`make family-rows` found 3 new rows: 2 listed (BroadcastText 329318 and 329319) and 1 gossip (BroadcastText 7588). The
+English Collector file held nothing new (97 entries, none rejected, nothing added).
+
+| Type | Reworded (shipped line now stale) | New English lines (to draft) | Not served on this build (English kept) | Drafted |
+|---|---|---|---|---|
+| quest | 0 | 0 | none | none |
+| item | 0 | 1 (the description of item 284587) | not recorded | 1 |
+| ui | 0 | 2 (the night elf intro subtitle lines) | none | 2, with word lists |
+| objective, gossip, spell, book, area | 0 | 0 | none | none |
+
+Voice: no file remade (no voiced line changed). Left out with a reason: the same 1,532 item descriptions still in
+Classic Era English (listed in [Coverage](coverage.md)).
+
 ### 1.60.1.70338 → 1.60.1.70425 (2026-10-16)
 
 Quest cache: 3,020 records, 2,947 quests (the finished WFJScan scan: 4 passes, 8,921 ids asked, 3,020 answered);

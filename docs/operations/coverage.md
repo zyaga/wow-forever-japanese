@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-16 at commit `6aa9db30`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-16 at commit `91f0d350`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -14,10 +14,10 @@
 | Book / letter pages | 1,257 | 1,205 | 52 | 100.0% | 0 |
 | Quest objective lines | 430 | 392 | 38 | 100.0% | 0 |
 | Exploration / event objectives | 223 | 221 | 2 | 100.0% | 0 |
-| Item descriptions | 10,223 | 8,690 | 0 | 85.0% | 1,533 |
+| Item descriptions | 10,224 | 8,691 | 0 | 85.0% | 1,533 |
 | Spell tooltips + auras | 25,715 | 25,643 | 1 | 99.7% | 71 |
-| Interface strings | 16,354 | 16,354 | 0 | 100.0% | 0 |
-| **All** | **85,631** | | | **98.1%** | **1,604** |
+| Interface strings | 16,356 | 16,356 | 0 | 100.0% | 0 |
+| **All** | **85,634** | | | **98.1%** | **1,604** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
 professions, internal strings): quest 331, gossip 81, item 893, spell 301, ui 313.
@@ -74,18 +74,18 @@ never shows, or the key that already shows the same English.
 
 ## Served text inventory
 
-Every text column the client serves on 1.60.1.70425 (`pipeline/served_columns.txt`: its
+Every text column the client serves on 1.60.1.70450 (`pipeline/served_columns.txt`: its
 tables, hotfixes and server caches), with the disposition
 `pipeline/served_dispositions.txt` gives it.
 Lines are non-empty values; a server cache counts the records this install holds.
 
 | Disposition | Columns | Lines |
 |---|---|---|
-| Shipped through a surface above | 71 | 84,286 |
-| Names (stay English) | 55 | 69,534 |
+| Shipped through a surface above | 71 | 84,299 |
+| Names (stay English) | 55 | 69,541 |
 | Internal (never printed) | 96 | 370,914 |
 | No place in the Forever client | 30 | 1,909 |
-| Same text as another column | 6 | 11,223 |
+| Same text as another column | 6 | 11,224 |
 | Empty on this build | 3 | 0 |
 
 ### Every column
@@ -118,7 +118,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `battlepaycurrency.f1` | internal | 42 | price formats ($%s) |
 | `battlepaycurrency.f2` | internal | 42 | price formats |
 | `battlepaycurrency.f3` | no-display | 41 | blizzard_catalogshop.toc and blizzard_storeui.toc declare UseSecureEnvironment: 1 |
-| `broadcasttext.f0` | surface:ui:BroadcastText | 34 | Text_lang: the archive's rows (cinematic subtitles) |
+| `broadcasttext.f0` | surface:ui:BroadcastText | 37 | Text_lang: the archive's rows (cinematic subtitles) |
 | `cfg_categories.f0` | internal | 100 | realm list categories (glue screen) |
 | `cfg_datacenterlocality.f0` | internal | 9 | data center names |
 | `cfg_regions.f0` | internal | 245 | region codes |
@@ -207,13 +207,13 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `itemlimitcategory.f0` | names | 30 | item names (Signet Ring of the Bronze Dragonflight) |
 | `itemnamedescription.f0` | surface:ui:ItemNameDescription | 92 | Description_lang |
 | `itempetfood.f0` | surface:ui:PetFood | 8 | Name_lang: pet diet words |
-| `itemsearchname.f0` | covered-by:itemsparse.f0 | 11,091 | item names again, for the search index; the names in itemsparse.f4 stay English and this table carries nothing else |
+| `itemsearchname.f0` | covered-by:itemsparse.f0 | 11,092 | item names again, for the search index; the names in itemsparse.f4 stay English and this table carries nothing else |
 | `itemset.f0` | names | 536 | item set names (The Gladiator) |
 | `itemsparse.f0` | surface:item.description | 4,845 | Description_lang |
 | `itemsparse.f1` | empty | 0 | Display3_lang |
 | `itemsparse.f2` | empty | 0 | Display2_lang |
 | `itemsparse.f3` | empty | 0 | Display1_lang |
-| `itemsparse.f4` | names | 24,004 | Display_lang: item names |
+| `itemsparse.f4` | names | 24,006 | Display_lang: item names |
 | `itemsubclass.f0` | surface:ui:ItemSubClass | 100 | DisplayName_lang |
 | `itemsubclass.f1` | surface:ui:ItemSubClassName | 36 | VerboseName_lang |
 | `itemsubclassmask.f0` | surface:ui:ItemSubClassMask | 3 | Name_lang (Requires Melee Weapon) |
@@ -342,12 +342,12 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `virtualattachment.f0` | internal | 1 | a developer label |
 | `voiceoverpriority.f0` | internal | 19 | developer labels |
 | `wbaccesscontrollist.f0` | internal | 172 | URL patterns |
-| `wdb-creaturecache.*` | names | 13 | creature names and their titles (<Innkeeper>); UI/TooltipUnit.lua leaves line 1 and title lines as the client wrote them |
-| `wdb-gameobjectcache.*` | names | 11 | object names |
+| `wdb-creaturecache.*` | names | 17 | creature names and their titles (<Innkeeper>); UI/TooltipUnit.lua leaves line 1 and title lines as the client wrote them |
+| `wdb-gameobjectcache.*` | names | 12 | object names |
 | `wdb-npccache.*` | surface:gossip.text | 0 | NPC dialogue; gossip English comes from VMaNGOS and the in-game collector (docs/systems/collector.md) |
 | `wdb-pagetextcache.*` | surface:book.text | 0 | book and letter pages; English from VMaNGOS and the collector |
 | `wdb-petitioncache.*` | internal | 0 | player-written guild charter names and text, never game text |
-| `wdb-questcache.*` | surface:quest.* | 3,020 | quest text, objectives and area text, plus each conditional description and completion log line keyed like NPC dialogue; the whole server set is harvested by the quest scan |
+| `wdb-questcache.*` | surface:quest.* | 3,030 | quest text, objectives and area text, plus each conditional description and completion log line keyed like NPC dialogue; the whole server set is harvested by the quest scan |
 | `wmoareatable.f0` | names | 7,662 | area names inside buildings |
 | `worldstateexpression.f0` | internal | 3,977 | encoded expressions |
 | `zoneintromusictable.f0` | internal | 54 | music names |
@@ -360,7 +360,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 |---|---|---|---|---|---|---|
 | quest | 19,029 | 19,029 | 100.0% | 180 | 303,727 | 100.0% |
 | gossip | 10,834 | 10,834 | 100.0% | 0 | 103,796 | 100.0% |
-| ui | 15,536 | 15,536 | 100.0% | 0 | 47,645 | 100.0% |
+| ui | 15,538 | 15,538 | 100.0% | 0 | 47,664 | 100.0% |
 | book | 1,167 | 1,167 | 100.0% | 0 | 39,619 | 100.0% |
 
 Item, spell, objective and area text take no word cards; HTML book pages
