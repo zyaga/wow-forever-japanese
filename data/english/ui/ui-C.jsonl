@@ -721,6 +721,7 @@
 {"id": "COMBAT_TEXT_SHOW_FRIENDLY_NAMES_TEXT", "field": "text", "en": "Friendly Healer Names", "hash": "f029bc930776797c", "src": "db2@1.60.1.70425"}
 {"id": "COMBAT_TEXT_SHOW_HONOR_GAINED_TEXT", "field": "text", "en": "Honorable Kills", "hash": "0b78aa59ca38af14", "src": "db2@1.60.1.70425"}
 {"id": "COMBAT_TEXT_SHOW_LOW_HEALTH_MANA_TEXT", "field": "text", "en": "Low Mana & Health", "hash": "acab6fcfdddbf6a6", "src": "db2@1.60.1.70425"}
+{"id": "COMBAT_TEXT_SHOW_PERIODIC_ENERGIZE_TEXT", "field": "text", "en": "Periodic Energy Gains", "hash": "a47d80e1c62540eb", "src": "db2@1.60.1.70425"}
 {"id": "COMBAT_TEXT_SHOW_REACTIVES_TEXT", "field": "text", "en": "Spell Alerts", "hash": "8568990766e01ab0", "src": "db2@1.60.1.70425"}
 {"id": "COMBAT_TEXT_SHOW_REPUTATION_TEXT", "field": "text", "en": "Reputation Changes", "hash": "cd766958c432e551", "src": "db2@1.60.1.70425"}
 {"id": "COMBAT_TEXT_SHOW_RESISTANCES_TEXT", "field": "text", "en": "Damage Reduction", "hash": "250fa3b7e4bb55b6", "src": "db2@1.60.1.70425"}
@@ -848,6 +849,7 @@
 {"id": "COMMUNITIES_INVITE_MANAGER_LINK_INSTRUCTIONS", "field": "text", "en": "Invite links are an easy way to invite multiple characters to a community. Just post a link in chat or paste it on the web to give quick access to joining this community. Links have a timeout and a limited use count, which you can change in Link Options.", "hash": "70a8b5ed8c3c206f", "src": "db2@1.60.1.70425"}
 {"id": "COMMUNITIES_INVITE_MANAGER_LINK_TO_CHAT", "field": "text", "en": "Link to Chat", "hash": "230c3d6c7be1bd88", "src": "db2@1.60.1.70425"}
 {"id": "COMMUNITIES_INVITE_MANAGER_NUMBERUSES_LABEL", "field": "text", "en": "Number of Uses", "hash": "8b38e6f81e3ae807", "src": "db2@1.60.1.70425"}
+{"id": "COMMUNITIES_INVITE_MANAGER_REVOKE_INVITE", "field": "text", "en": "Revoke", "hash": "8d3634cdf739f447", "src": "db2@1.60.1.70425"}
 {"id": "COMMUNITIES_INVITE_MANAGER_USES", "field": "text", "en": "%d |4use:uses;", "hash": "171c00eed8f711eb", "src": "db2@1.60.1.70425"}
 {"id": "COMMUNITIES_INVITE_MANAGER_USES_LABEL", "field": "text", "en": "Remaining Uses:", "hash": "5ef0fa0b62e121df", "src": "db2@1.60.1.70425"}
 {"id": "COMMUNITIES_INVITE_MANAGER_USES_UNLIMITED", "field": "text", "en": "Unlimited", "hash": "913a05e615585f5d", "src": "db2@1.60.1.70425"}
@@ -972,8 +974,10 @@
 {"id": "CONFIRM_DELETE_MACRO", "field": "text", "en": "Do you want to delete this macro?", "hash": "750d3cba662c3e59", "src": "db2@1.60.1.70425"}
 {"id": "CONFIRM_DELETING_CHARACTER_SPECIFIC_BINDINGS", "field": "text", "en": "Really switch to general key bindings?  All key bindings specific to this character will be permanantly deleted.", "hash": "c5a10aa1c1582156", "src": "db2@1.60.1.70425"}
 {"id": "CONFIRM_DESTROY_CHARACTER_COMMUNITY", "field": "text", "en": "Are you sure you want to delete the community \"%s\"? This can't be undone.|n|nType \"DELETE\" into the field to confirm.", "hash": "3478e23900a4b6d1", "src": "db2@1.60.1.70425"}
+{"id": "CONFIRM_DESTROY_CHARACTER_COMMUNITY_UNPROMPTED", "field": "text", "en": "Are you sure you want to delete the community \"%s\"? This can't be undone.", "hash": "cf4f532dc2da74b4", "src": "db2@1.60.1.70425"}
 {"id": "CONFIRM_DESTROY_COMMUNITY", "field": "text", "en": "Are you sure you want to delete the group \"%s\"? This can't be undone.|n|nType \"DELETE\" into the field to confirm.", "hash": "623317c48186823d", "src": "db2@1.60.1.70425"}
 {"id": "CONFIRM_DESTROY_COMMUNITY_STREAM_LABEL", "field": "text", "en": "Are you sure you want to delete the channel %s?", "hash": "39436c98a3127fbf", "src": "db2@1.60.1.70425"}
+{"id": "CONFIRM_DESTROY_COMMUNITY_UNPROMPTED", "field": "text", "en": "Are you sure you want to delete the group \"%s\"? This can't be undone.", "hash": "d009b8e7dc50cb3f", "src": "db2@1.60.1.70425"}
 {"id": "CONFIRM_GARRISON_FOLLOWER_TEMPORARY_ABILITY", "field": "text", "en": "Are you sure you want to grant %s this temporary ability?", "hash": "f940ea5b1fe6bb96", "src": "db2@1.60.1.70425"}
 {"id": "CONFIRM_GLYPH_PLACEMENT_NO_COST", "field": "text", "en": "Are you sure you want to inscribe %s?  This will replace %s.", "hash": "4e0bf3297a4633a3", "src": "db2@1.60.1.70425"}
 {"id": "CONFIRM_GLYPH_REMOVAL", "field": "text", "en": "Are you sure you want to remove %s?", "hash": "e8828bac735c5c61", "src": "db2@1.60.1.70425"}
@@ -1250,10 +1254,13 @@
 {"id": "CR_HASTE_RANGED_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFRanged|r attack speed by %.2f%%", "hash": "1fd30e9ef472bd09", "src": "db2@1.60.1.70425"}
 {"id": "CR_HASTE_SPELL_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFSpell|r casting speed by %.2f%%", "hash": "05fee636235fa475", "src": "db2@1.60.1.70425"}
 {"id": "CR_HIT_MELEE_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee|r hit chance by %.2f%%", "hash": "1b46f315dbfefc1a", "src": "db2@1.60.1.70425"}
+{"id": "CR_HIT_OFFHAND_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFOff-Hand Melee|r hit chance by %.2f%%", "hash": "f604b2d4ec973d42", "src": "db2@1.60.1.70425"}
 {"id": "CR_HIT_RANGED_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFRanged|r hit chance by %.2f%%", "hash": "18413cbe128752c7", "src": "db2@1.60.1.70425"}
 {"id": "CR_HIT_SPELL_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFSpell|r hit chance by %.2f%%", "hash": "e8e7575304c93098", "src": "db2@1.60.1.70425"}
 {"id": "CR_HUNTER_HIT_CAP_TOOLTIP", "field": "text", "en": "\n|cffBCBCBCTo never miss|r |cFFFF5A5ARaid Bosses|r|cffBCBCBC:\n  8.00%% Melee/Ranged\n17.00%% Spells\n27.00%% Dual Wielding\n\nTo never miss|r |cFF52E31ELvl %d Targets/Players|r|cffBCBCBC:\n  5.00%% Melee/Ranged\n  4.00%% Spells\n24.00%% Dual Wielding|r", "hash": "ad9b9c176296a0e2", "src": "db2@1.60.1.70425"}
 {"id": "CR_PARRY_BASE_STAT_TOOLTIP", "field": "text", "en": "Increases chance to |cFFFFFFFFParry|r by %.2f%%\n\nIncreased by |cFFFFFFFFDefense|r\n\n|cFFBCBCBCParrying nullifies the attack and reduces the time until the defender's next Melee attack by 40%%|r\n\n|cFFBCBCBCOnly Melee attacks from the front may be Parried|r", "hash": "2e7171a55a47b389", "src": "db2@1.60.1.70425"}
+{"id": "CR_PET_DODGE_BASE_STAT_TOOLTIP", "field": "text", "en": "Increases chance to |cFFFFFFFFDodge|r by %.2f%%\n\n|cFFBCBCBCDodging nullifies the attack|r\n\n|cFFBCBCBCFor Players, only Melee attacks from the front may be Dodged\n\nFor Creatures, Melee attacks may be Dodged from any direction|r", "hash": "a8e8ff309bd87a2d", "src": "db2@1.60.1.70425"}
+{"id": "CR_PET_EXPERTISE_TOOLTIP", "field": "text", "en": "Increase the chance |cFFFFFFFFMelee|r attacks are not |cFFFFFFFFDodged|r or |cFFFFFFFFParried|r\n\nIncreased by 100% of |cFFFFFFFFMaster's Expertise|r\n\n|cFFFF5A5ARaid Boss|r|cffBCBCBC chance to:\n  6.50%% Dodge\n16.50%% Parry\n\n|r|cFF52E31EEqual-Level Creature|r|cffBCBCBC chance to:\n  5.00%% Dodge\n  5.00%% Parry|r", "hash": "89f6cfd1842d517e", "src": "db2@1.60.1.70425"}
 {"id": "CR_RANGED_EXPERTISE_TOOLTIP", "field": "text", "en": "Increases the chance |cFFFFFFFFMelee|r attacks are not |cFFFFFFFFDodged|r or |cFFFFFFFFParried|r by %s\n\n|cFFFF5A5ARaid Boss|r|cffBCBCBC chance to:\n  6.50%% Dodge\n14.00%% Parry\n\n|r|cFF52E31EEqual-Level Creature|r|cffBCBCBC chance to:\n  5.00%% Dodge\n  5.00%% Parry|r", "hash": "c4d432ee79b36408", "src": "db2@1.60.1.70425"}
 {"id": "CR_ROGUE_HIT_CAP_TOOLTIP", "field": "text", "en": "\n|cffBCBCBCTo never miss|r |cFFFF5A5ARaid Bosses|r|cffBCBCBC:\n  8.00%% Melee/Ranged\n17.00%% Spells\n27.00%% Dual Wielding\n\nTo never miss|r |cFF52E31ELvl %d Targets/Players|r|cffBCBCBC:\n  5.00%% Melee/Ranged\n  4.00%% Spells\n24.00%% Dual Wielding|r", "hash": "ad9b9c176296a0e2", "src": "db2@1.60.1.70425"}
 {"id": "CR_SPEED_TOOLTIP", "field": "text", "en": "|cFFBCBCBCBase Speeds (In Yards Per Second):\n7.0 yd/s Running\n4.7 yd/s Swimming\n4.5 yd/s Backpedaling\n2.5 yd/s Walking|r", "hash": "4f5f4315a3d5cdf7", "src": "db2@1.60.1.70425"}
@@ -1885,6 +1892,11 @@
 {"id": "CriteriaText:235860", "field": "text", "en": "Gain Aura", "hash": "4bc559a9d6c63f08", "src": "db2@1.60.1.70425"}
 {"id": "CriteriaText:236079", "field": "text", "en": "Played in Beta", "hash": "ed744797998e00ce", "src": "db2@1.60.1.70425"}
 {"id": "CriteriaText:236080", "field": "text", "en": "Played in the World of Warcraft: Forever Beta", "hash": "55132d50acae211e", "src": "db2@1.60.1.70425"}
+{"id": "CriteriaText:236482", "field": "text", "en": "Arathi Basin bases assaulted", "hash": "8ff60506e5b13088", "src": "db2@1.60.1.70425"}
+{"id": "CriteriaText:236484", "field": "text", "en": "Arathi Basin bases defended", "hash": "10ee7dc448310a12", "src": "db2@1.60.1.70425"}
+{"id": "CriteriaText:236486", "field": "text", "en": "Darkspear Islands bases assaulted", "hash": "b1d2d0fb9aa12296", "src": "db2@1.60.1.70425"}
+{"id": "CriteriaText:236488", "field": "text", "en": "Darkspear Islands bases defended", "hash": "bb3492da22faa4e2", "src": "db2@1.60.1.70425"}
+{"id": "CriteriaText:236490", "field": "text", "en": "Darkspear Islands flags captured", "hash": "ef4a51db68d741be", "src": "db2@1.60.1.70425"}
 {"id": "CriteriaText:276", "field": "text", "en": "Chief Ukorz Sandscalp kills (Zul'Farrak)", "hash": "352d649489037e50", "src": "db2@1.60.1.70425"}
 {"id": "CriteriaText:3820", "field": "text", "en": "Onyxia kills (Onyxia's Lair)", "hash": "8329a649352f634f", "src": "db2@1.60.1.70425"}
 {"id": "CriteriaText:6549", "field": "text", "en": "Lord Godfrey", "hash": "cb9fb48bc9859fe6", "src": "db2@1.60.1.70425"}

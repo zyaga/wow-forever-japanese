@@ -121,6 +121,7 @@
 {"id": "SHAKE_INTENSITY_REDUCED", "field": "text", "en": "Reduced", "hash": "0791ee56d2b6fac5", "src": "db2@1.60.1.70425"}
 {"id": "SHAMAN_STRENGTH_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFAttack Power|r by %d\nIncreases |cFFFFFFFFBlock Value|r by %d", "hash": "be95ff635ef2ba7a", "src": "db2@1.60.1.70425"}
 {"id": "SHARD_TRANSFER_ANYTIME", "field": "text", "en": "Refreshing your world at any time. Characters and creatures around you may change.", "hash": "bd1230542528d832", "src": "db2@1.60.1.70425"}
+{"id": "SHARD_TRANSFER_COMBAT", "field": "text", "en": "You can't refresh the world while in combat.", "hash": "9fd53145a3ce9f56", "src": "db2@1.60.1.70425"}
 {"id": "SHARD_TRANSFER_COUNTDOWN_MESSAGE", "field": "text", "en": "The world around you will refresh in %s %s. Make sure you are out of combat and in a safe area, or click here to refresh now.", "hash": "59cee98f9b5a3b38", "src": "db2@1.60.1.70425"}
 {"id": "SHARD_TRANSFER_COUNTDOWN_STATIC_POPUP_MESSAGE", "field": "text", "en": "The world around you will refresh in %s %s. Make sure you are out of combat and in a safe area, or select refresh now.", "hash": "8ec497b073da5d36", "src": "db2@1.60.1.70425"}
 {"id": "SHARD_TRANSFER_NOW", "field": "text", "en": "Refresh the world now.", "hash": "0d91fc7834a347d4", "src": "db2@1.60.1.70425"}
@@ -139,7 +140,11 @@
 {"id": "SHOW_BRACES", "field": "text", "en": "Show Braces", "hash": "48c4929d8be4bc42", "src": "db2@1.60.1.70425"}
 {"id": "SHOW_BRACES_COMBATLOG_TOOLTIP", "field": "text", "en": "Display braces around hyperlinks in combat log messages.", "hash": "f583cbf3266a6aae", "src": "db2@1.60.1.70425"}
 {"id": "SHOW_COLLECTION_TOASTS", "field": "text", "en": "Show Collection Toasts", "hash": "c90a1e7f40390719", "src": "db2@1.60.1.70425"}
+{"id": "SHOW_COMBAT_HEALING", "field": "text", "en": "Healing", "hash": "c2baab72fd40c9e9", "src": "db2@1.60.1.70425"}
+{"id": "SHOW_COMBAT_HEALING_ABSORB_SELF", "field": "text", "en": "Shields", "hash": "047394cec4ba0cf2", "src": "db2@1.60.1.70425"}
+{"id": "SHOW_COMBAT_HEALING_ABSORB_TARGET", "field": "text", "en": "Shields", "hash": "047394cec4ba0cf2", "src": "db2@1.60.1.70425"}
 {"id": "SHOW_COMBAT_TEXT_TEXT", "field": "text", "en": "Scrolling Combat Text for Self", "hash": "b4decf184be8fe8b", "src": "db2@1.60.1.70425"}
+{"id": "SHOW_DAMAGE_TEXT", "field": "text", "en": "Damage", "hash": "848ad1ccd5cce111", "src": "db2@1.60.1.70425"}
 {"id": "SHOW_FACTION_ON_MAINSCREEN", "field": "text", "en": "Show as Experience Bar", "hash": "11036c67db8617b9", "src": "db2@1.60.1.70425"}
 {"id": "SHOW_INSTANCE_ENTRANCES_ON_MAP_TEXT", "field": "text", "en": "Instance Entrances", "hash": "2dce9d99a254b402", "src": "db2@1.60.1.70425"}
 {"id": "SHOW_IN_GAME_NAVIGATION", "field": "text", "en": "In Game Navigation", "hash": "c95139892192a331", "src": "db2@1.60.1.70425"}
@@ -149,6 +154,7 @@
 {"id": "SHOW_NPC_NAMES", "field": "text", "en": "NPC Names", "hash": "edbdca31790cf89e", "src": "db2@1.60.1.70425"}
 {"id": "SHOW_OFFLINE_MEMBERS", "field": "text", "en": "Show Offline Members", "hash": "c7ff53d866334fa2", "src": "db2@1.60.1.69913"}
 {"id": "SHOW_ON_BACKPACK", "field": "text", "en": "Show on Backpack", "hash": "ba9c9328bbc615e9", "src": "db2@1.60.1.70425"}
+{"id": "SHOW_OTHER_TARGET_EFFECTS", "field": "text", "en": "Show for other players' targets", "hash": "36fdc46c8290c33a", "src": "db2@1.60.1.70425"}
 {"id": "SHOW_PINGS_IN_CHAT", "field": "text", "en": "Show Pings in Chat", "hash": "d79125175ecbcad1", "src": "db2@1.60.1.70425"}
 {"id": "SHOW_PINGS_ON_RAID_FRAMES", "field": "text", "en": "Show Pings on Raid Frames", "hash": "1d973789eb7268af", "src": "db2@1.60.1.70425"}
 {"id": "SHOW_PRIMARY_PROFESSION_ON_MAP_TEXT", "field": "text", "en": "Primary Profession World Quests", "hash": "ebd6595dbb2fe13a", "src": "db2@1.60.1.70425"}
@@ -158,6 +164,7 @@
 {"id": "SHOW_QUICK_BUTTON", "field": "text", "en": "Show Quick Button", "hash": "84d1b94318e87635", "src": "db2@1.60.1.70425"}
 {"id": "SHOW_SECONDARY_PROFESSION_ON_MAP_TEXT", "field": "text", "en": "Secondary Profession World Quests", "hash": "0dedbe456a4a43f0", "src": "db2@1.60.1.70425"}
 {"id": "SHOW_SILHOUETTE_OPTION", "field": "text", "en": "Show Silhouette when Obscured", "hash": "475367bda42386f3", "src": "db2@1.60.1.70425"}
+{"id": "SHOW_TARGET_EFFECTS", "field": "text", "en": "Effects", "hash": "f6f9bfd5b2f2ae71", "src": "db2@1.60.1.70425"}
 {"id": "SHOW_TARGET_OF_TARGET_TEXT", "field": "text", "en": "Target of Target", "hash": "e2a1ed065eebfcfd", "src": "db2@1.60.1.70425"}
 {"id": "SHOW_TIMESTAMP", "field": "text", "en": "Show Timestamp", "hash": "0a1a64c3d8fd3343", "src": "db2@1.60.1.70425"}
 {"id": "SHOW_TIPOFTHEDAY_TEXT", "field": "text", "en": "Loading Screen Tips", "hash": "4d0d762160952a3b", "src": "db2@1.60.1.70425"}
@@ -344,6 +351,7 @@
 {"id": "SOCIAL_QUEUE_QUEUED_FOR_STANDALONE", "field": "text", "en": "Queued for", "hash": "7e8f509ae83c0a26", "src": "db2@1.60.1.70425"}
 {"id": "SOCIAL_QUICK_JOIN_TAB_HELP_TIP", "field": "text", "en": "Quickly join your friends and guildmates when they enter a queue or premade group.", "hash": "ec0964c54a2f2251", "src": "db2@1.60.1.70425"}
 {"id": "SOCIAL_SHARE_TEXT", "field": "text", "en": "Share", "hash": "befb447839625661", "src": "db2@1.60.1.70425"}
+{"id": "SOCIAL_TAB_UNAVAILABLE", "field": "text", "en": "The %s feature is unavailable due to your account's privacy settings. Some social features are restricted.", "hash": "920ffe330a779177", "src": "db2@1.60.1.70425"}
 {"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAGS_LABEL", "field": "text", "en": "Add Tags", "hash": "665f7529dccdb758", "src": "db2@1.60.1.70425"}
 {"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_DELVE", "field": "text", "en": "Delves", "hash": "caa4dc3a176c3a1f", "src": "db2@1.60.1.70425"}
 {"id": "SOCIAL_UI_BATTLE_NET_FRIEND_TAG_LABEL_DPS", "field": "text", "en": "DPS", "hash": "0011f7a70dfbf5f8", "src": "db2@1.60.1.70425"}
@@ -1583,6 +1591,7 @@
 {"id": "SPLASH_START_QUEST_NOW", "field": "text", "en": "Start Quest Now", "hash": "4f11ee0e76bf4d0f", "src": "db2@1.60.1.70425"}
 {"id": "SSAO_LABEL", "field": "text", "en": "SSAO", "hash": "0b3506be223a2ecf", "src": "db2@1.60.1.70425"}
 {"id": "STABLED_PETS", "field": "text", "en": "Stabled Pets", "hash": "dafde865251b0be1", "src": "db2@1.60.1.70425"}
+{"id": "STABLES", "field": "text", "en": "Stables", "hash": "41d28573f7a24dc1", "src": "db2@1.60.1.70425"}
 {"id": "STABLE_SLOT_COST_TEXT", "field": "text", "en": "Stable Slot Cost:", "hash": "3aa755f560dea613", "src": "db2@1.60.1.70425"}
 {"id": "STABLE_SLOT_TEXT", "field": "text", "en": "Do you wish to purchase another stable slot?", "hash": "4cc49275ec4c4bae", "src": "db2@1.60.1.70425"}
 {"id": "STACKS", "field": "text", "en": "%d |4Stack:Stacks;", "hash": "29341dd6c0e4b7ec", "src": "db2@1.60.1.70425"}
@@ -1612,6 +1621,7 @@
 {"id": "STAT_BLOCK", "field": "text", "en": "Block", "hash": "951f0255d90185db", "src": "db2@1.60.1.70425"}
 {"id": "STAT_BLOCK_TARGET_TOOLTIP", "field": "text", "en": "(Against Current Target: %0.2f%%)", "hash": "6b5a7965fcbe1df5", "src": "db2@1.60.1.70425"}
 {"id": "STAT_BLOCK_VALUE_FLAT_TOOLTIP", "field": "text", "en": "Increases chance to |cFFFFFFFFBlock|r by %.2f%%\n\nIncreased by |cFFFFFFFFDefense|r\n\n|cFFFFFFFFBlock Value %d|r\nIncreased by |cFFFFFFFFStrength|r\n\n|cFFBCBCBCBlocking reduces the attack's damage by your Block Value|r\n\n|cFFBCBCBCOnly Melee and Ranged attacks from the front may be Blocked|r", "hash": "446ddf70af5762d6", "src": "db2@1.60.1.70425"}
+{"id": "STAT_CATEGORY_COMBAT", "field": "text", "en": "Combat", "hash": "7ec6bea5b90db427", "src": "db2@1.60.1.70425"}
 {"id": "STAT_CATEGORY_DEFENSE", "field": "text", "en": "Defense", "hash": "46c5a236377d389e", "src": "db2@1.60.1.70425"}
 {"id": "STAT_CATEGORY_GENERAL", "field": "text", "en": "General", "hash": "f14c70303f73c518", "src": "db2@1.60.1.70425"}
 {"id": "STAT_CATEGORY_MODIFIERS", "field": "text", "en": "Modifiers", "hash": "ef82c78241e3dd1f", "src": "db2@1.60.1.70425"}
@@ -1645,6 +1655,7 @@
 {"id": "STAT_MOVEMENT_SPEED", "field": "text", "en": "Movement Speed", "hash": "e3513fa4433b0060", "src": "db2@1.60.1.70425"}
 {"id": "STAT_MOVEMENT_SWIM_TOOLTIP", "field": "text", "en": "Swim Speed: %d%%", "hash": "a18abef60c7e5151", "src": "db2@1.60.1.70425"}
 {"id": "STAT_PARRY", "field": "text", "en": "Parry", "hash": "896675f50247aba9", "src": "db2@1.60.1.70425"}
+{"id": "STAT_PET_HIT_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee|r and |cFFFFFFFFSpell|r hit chance\n\nIncreased by 100% of |cFFFFFFFFMaster's Hit Chance|r\n\n|cffBCBCBCTo never miss|r |cFFFF5A5ARaid Bosses|r|cffBCBCBC:\n  8.00%% Melee\n17.00%% Spells\n\nTo never miss|r |cFF52E31EEqual-Level Targets|r|cffBCBCBC:\n  5.00%% Melee\n  4.00%% Spells|r", "hash": "adccb8b3338256c5", "src": "db2@1.60.1.70425"}
 {"id": "STAT_RAGE_TOOLTIP", "field": "text", "en": "Resource used to perform |cFFFFFFFFAbilities|r\n\nGenerated by |cFFFFFFFFTaking Damage|r and dealing |cFFFFFFFFMelee Swing Damage|r\n\n|cFFBCBCBCSlower weapons generate more Rage per swing\n\nWhile out of combat, 1.25 Rage is lost every 1 sec (75 Rage per 1 min)|r", "hash": "ed64871bc773dca3", "src": "db2@1.60.1.70425"}
 {"id": "STAT_ROGUE_CRIT_BONUS", "field": "text", "en": "Increased by |cFFFFFFFFAgility|r for Attacks|r\n\n|cFFBCBCBCMelee and Ranged critical strikes deal 100%% increased damage\n\nSpell and Healing critical strikes are 50%% more effective\n\nMost periodic effects can critically strike|r", "hash": "1ef4ccf5affdddc9", "src": "db2@1.60.1.70425"}
 {"id": "STAT_RUNIC_POWER_TOOLTIP", "field": "text", "en": "Maximum Runic Power.", "hash": "c68dab0233b0db00", "src": "db2@1.60.1.70425"}
@@ -1656,7 +1667,10 @@
 {"id": "STAT_SPELLPOWER_TOOLTIP", "field": "text", "en": "Increases the damage of your |cFFFFFFFFSpells|r by up to %d\n\nIncreased by |cFFFFFFFFSpell Damage|r and |cFFFFFFFFSpell Power|r\n\n|cffBCBCBCLonger cast times typically benefit more from Spell Damage\n\nSpell ranks far below your current level benefit less from Spell Damage and trigger class abilities less often|r", "hash": "5fb55e73f3181d94", "src": "db2@1.60.1.70425"}
 {"id": "STAT_SPELL_PENETRATION", "field": "text", "en": "Spell Piercing", "hash": "efffe8c890665048", "src": "db2@1.60.1.70425"}
 {"id": "STAT_TARGET_LEVEL", "field": "text", "en": "Target Level", "hash": "0e86108b9c4f8a01", "src": "db2@1.60.1.70425"}
+{"id": "STAT_WARLOCK_HEALTH_PET_TOOLTIP", "field": "text", "en": "The maximum amount of |cFFFFFFFFDamage|r this pet can endure before dying\n\nIncreased by |cFFFFFFFFMaster's Stamina|r\n\n|cFFBCBCBCEvery 1 Stamina adds 7.5 Health|r", "hash": "c9dc0576ce832cd0", "src": "db2@1.60.1.70425"}
 {"id": "STAT_WARLOCK_PET_CRIT_BONUS", "field": "text", "en": "Increased by 100%% of |cFFFFFFFFMaster's Spell Critical Strike Chance|r\n\n|cFFBCBCBCMelee critical strikes deal 100%% increased damage\n\nSpell and Healing critical strikes are 50%% more effective\n\nMost periodic effects can critically strike|r", "hash": "9e9e6a01adfb1786", "src": "db2@1.60.1.70425"}
+{"id": "STAT_WARLOCK_PET_MANA_REGEN_TOOLTIP", "field": "text", "en": "The amount of |cFFFFFFFFMana|r regenerated every 5 sec\n\nIncreased by %d%% of |cFFFFFFFFMaster's Intellect|r\n\n|cFFBCBCBCImps benefit more from their Master's Intellect than other demons|r", "hash": "da74a72331f28d66", "src": "db2@1.60.1.70425"}
+{"id": "STAT_WARLOCK_PET_MANA_TOOLTIP", "field": "text", "en": "Resource used to cast |cFFFFFFFFSpells|r and |cFFFFFFFFAbilities|r\n\n|cFFBCBCBCReplenishes automatically after not spending Mana for 5 sec|r", "hash": "1b992de6608c7afe", "src": "db2@1.60.1.70425"}
 {"id": "STAT_WARRIOR_CRIT_BONUS", "field": "text", "en": "Increased by |cFFFFFFFFAgility|r for Attacks\r\n\n|cFFBCBCBCMelee and Ranged critical strikes deal 100%% increased damage\n\nSpell and Healing critical strikes are 50%% more effective\n\nMost periodic effects can critically strike|r", "hash": "1ef4ccf5affdddc9", "src": "db2@1.60.1.70425"}
 {"id": "STOPWATCH_TITLE", "field": "text", "en": "Stopwatch", "hash": "cce41fc08931c180", "src": "db2@1.60.1.70425"}
 {"id": "STOP_SUPER_TRACK_QUEST", "field": "text", "en": "Remove Focus", "hash": "0b1d0b5044cf01f3", "src": "db2@1.60.1.70425"}

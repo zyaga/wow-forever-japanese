@@ -53,6 +53,7 @@
 {"id": "LEVEL", "field": "text", "en": "Level", "hash": "43b9d88dcc1cee65", "src": "db2@1.60.1.70425"}
 {"id": "LEVEL_GAINED", "field": "text", "en": "Level %d", "hash": "aa985ae04e775368", "src": "db2@1.60.1.70425"}
 {"id": "LEVEL_UP", "field": "text", "en": "Congratulations, you have reached |cffFF4E00|Hlevelup:%d:LEVEL_UP_TYPE_CHARACTER|h[Level %d]|h|r!", "hash": "ce93ec3032ed0b8b", "src": "db2@1.60.1.70425"}
+{"id": "LEVEL_UP_CHAR_POINTS", "field": "text", "en": "You have gained %d talent point.", "hash": "4e385ec1bc1b31c8", "src": "db2@1.60.1.70425"}
 {"id": "LEVEL_UP_FEATURE2", "field": "text", "en": "New feature unlocked:", "hash": "bb8f216404647000", "src": "db2@1.60.1.70425"}
 {"id": "LEVEL_UP_HEALTH", "field": "text", "en": "You have gained %d hit points.", "hash": "b4910fd1b46e0a74", "src": "db2@1.60.1.70425"}
 {"id": "LEVEL_UP_HEALTH_MANA", "field": "text", "en": "You have gained %d hit points and %d mana.", "hash": "d8ae9544f29e1162", "src": "db2@1.60.1.70425"}
@@ -130,6 +131,7 @@
 {"id": "LOC_OPTION_OFF", "field": "text", "en": "Off", "hash": "0014e45f39a99cac", "src": "db2@1.60.1.70425"}
 {"id": "LOGOUT", "field": "text", "en": "Logout", "hash": "55a307547a12e4fa", "src": "db2@1.60.1.69913"}
 {"id": "LOG_OUT", "field": "text", "en": "Log Out", "hash": "c7ccdb9f5a684b2f", "src": "db2@1.60.1.70425"}
+{"id": "LOG_PERIODIC_EFFECTS", "field": "text", "en": "Periodic Damage", "hash": "0ea737640821cb50", "src": "db2@1.60.1.70425"}
 {"id": "LOOKINGFORGUILD", "field": "text", "en": "Guild Finder", "hash": "174784f4465f8169", "src": "db2@1.60.1.70425"}
 {"id": "LOOKING_FOR_RAID", "field": "text", "en": "Other Raids", "hash": "e4c1d3c8029ff667", "src": "db2@1.60.1.70425"}
 {"id": "LOOTUPGRADEFRAME_TITLE", "field": "text", "en": "%s Upgrade!", "hash": "9482408f370dee5a", "src": "db2@1.60.1.70425"}

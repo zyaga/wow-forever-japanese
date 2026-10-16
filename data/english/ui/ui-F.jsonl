@@ -70,6 +70,8 @@
 {"id": "FLIGHT_MAP_CLICK_TO_ZOOM_IN", "field": "text", "en": "<Click to Zoom In>", "hash": "0976eefbcaddffe1", "src": "db2@1.60.1.70425"}
 {"id": "FLIGHT_MAP_CLICK_TO_ZOOM_OUT_HINT", "field": "text", "en": "Right-Click to Zoom Out", "hash": "e4a820539a3bc39b", "src": "db2@1.60.1.70425"}
 {"id": "FLIGHT_MAP_WORLD_QUESTS", "field": "text", "en": "%d World Quests active here.", "hash": "3cea66e95bd134f1", "src": "db2@1.60.1.70425"}
+{"id": "FLOATING_COMBAT_TEXT_ON_ME_DROPDOWN_LABEL", "field": "text", "en": "Text on Me", "hash": "6f5d0c3827c5b774", "src": "db2@1.60.1.70425"}
+{"id": "FLOATING_COMBAT_TEXT_ON_TARGET_DROPDOWN_LABEL", "field": "text", "en": "Text on Target", "hash": "a5efc27272fccacf", "src": "db2@1.60.1.70425"}
 {"id": "FOCUS", "field": "text", "en": "Focus", "hash": "dbb9a93ccd4270a3", "src": "db2@1.60.1.70425"}
 {"id": "FOCUS_CAST_KEY_TEXT", "field": "text", "en": "Focus Cast Key", "hash": "d2a4af627d0044d5", "src": "db2@1.60.1.70425"}
 {"id": "FOCUS_COST", "field": "text", "en": "%s Focus", "hash": "bbf158a4694a9035", "src": "db2@1.60.1.70425"}

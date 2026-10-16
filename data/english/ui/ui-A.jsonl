@@ -145,6 +145,7 @@
 {"id": "ADD_BINDING", "field": "text", "en": "Add Binding", "hash": "e24accf283ab146c", "src": "db2@1.60.1.70425"}
 {"id": "ADD_CHANNEL", "field": "text", "en": "Enter channel name", "hash": "addaad513ef68370", "src": "db2@1.60.1.70425"}
 {"id": "ADD_CHARACTER_FRIEND", "field": "text", "en": "Add Character Friend", "hash": "f3f65eb833e02cbc", "src": "db2@1.60.1.70425"}
+{"id": "ADD_CHAT_CHANNEL", "field": "text", "en": "Add a channel", "hash": "da8674b6b3b3fa4a", "src": "db2@1.60.1.70425"}
 {"id": "ADD_FAVORITE_STATUS", "field": "text", "en": "Add to Favorites", "hash": "d1695800202d0dcf", "src": "db2@1.60.1.70425"}
 {"id": "ADD_FILTER", "field": "text", "en": "Add Filter", "hash": "60e2ea757661c528", "src": "db2@1.60.1.70425"}
 {"id": "ADD_FRIEND", "field": "text", "en": "Add Friend", "hash": "fe73818368dd8ad7", "src": "db2@1.60.1.70425"}
@@ -398,6 +399,7 @@
 {"id": "AUTO_FOLLOW_SPEED", "field": "text", "en": "Auto Follow Speed", "hash": "8026ecf93f54fe54", "src": "db2@1.60.1.70425"}
 {"id": "AUTO_LOOT_DEFAULT_TEXT", "field": "text", "en": "Auto Loot", "hash": "a6c9d7e9877a8888", "src": "db2@1.60.1.70425"}
 {"id": "AUTO_LOOT_KEY_TEXT", "field": "text", "en": "Auto Loot Key", "hash": "e73e2a564b0d08d8", "src": "db2@1.60.1.70425"}
+{"id": "AUTO_RANGED_COMBAT_TEXT", "field": "text", "en": "Auto Attack/Auto Shot", "hash": "a18d55c96fb5e6e8", "src": "db2@1.60.1.70425"}
 {"id": "AUTO_RESET_DAMAGE_METER", "field": "text", "en": "Auto Reset Damage Meter", "hash": "da6496ab2066fd12", "src": "db2@1.60.1.70425"}
 {"id": "AUTO_RESET_DAMAGE_METER_TOOLTIP", "field": "text", "en": "Toggle on to have the damage meter reset all values every time you enter a new instance.", "hash": "4b037e70295934d9", "src": "db2@1.60.1.70425"}
 {"id": "AUTO_SELF_CAST_KEY_TEXT", "field": "text", "en": "Self Cast Key", "hash": "576fead86b1e1f9a", "src": "db2@1.60.1.70425"}
@@ -691,6 +693,11 @@
 {"id": "AchievementDescription:64185", "field": "text", "en": "Total deaths in 40-player raids", "hash": "829bce6244a97c40", "src": "db2@1.60.1.70425"}
 {"id": "AchievementDescription:64222", "field": "text", "en": "Times gathered around the campfire", "hash": "a643d3ee7b2cef59", "src": "db2@1.60.1.70425"}
 {"id": "AchievementDescription:64283", "field": "text", "en": "Granted for playing in the World of Warcraft: Forever Beta. Thanks for testing!", "hash": "5a5b06403e375324", "src": "db2@1.60.1.70425"}
+{"id": "AchievementDescription:64348", "field": "text", "en": "Arathi Basin bases assaulted", "hash": "8ff60506e5b13088", "src": "db2@1.60.1.70425"}
+{"id": "AchievementDescription:64349", "field": "text", "en": "Arathi Basin bases defended", "hash": "10ee7dc448310a12", "src": "db2@1.60.1.70425"}
+{"id": "AchievementDescription:64350", "field": "text", "en": "Darkspear Islands bases assaulted", "hash": "b1d2d0fb9aa12296", "src": "db2@1.60.1.70425"}
+{"id": "AchievementDescription:64351", "field": "text", "en": "Darkspear Islands bases defended", "hash": "bb3492da22faa4e2", "src": "db2@1.60.1.70425"}
+{"id": "AchievementDescription:64352", "field": "text", "en": "Darkspear Islands flags captured", "hash": "ef4a51db68d741be", "src": "db2@1.60.1.70425"}
 {"id": "AchievementDescription:6786", "field": "text", "en": "High Inquisitor Whitemane kills (Scarlet Monastery)", "hash": "9a3c39b52c1dd1c7", "src": "db2@1.60.1.70425"}
 {"id": "AchievementDescription:684", "field": "text", "en": "Defeat Onyxia.", "hash": "d7a9bca58dee6e8c", "src": "db2@1.60.1.70425"}
 {"id": "AchievementDescription:728", "field": "text", "en": "Explore Durotar, revealing the covered areas of the world map.", "hash": "8b8eedfb69ecd2ba", "src": "db2@1.60.1.70425"}
@@ -1008,6 +1015,11 @@
 {"id": "AchievementTitle:64185", "field": "text", "en": "Total deaths in 40-player raids", "hash": "829bce6244a97c40", "src": "db2@1.60.1.70425"}
 {"id": "AchievementTitle:64222", "field": "text", "en": "Times camped", "hash": "680b6fac20f47ce4", "src": "db2@1.60.1.70425"}
 {"id": "AchievementTitle:64283", "field": "text", "en": "Played in the WoW: Forever Beta", "hash": "f411c52014bafea3", "src": "db2@1.60.1.70425"}
+{"id": "AchievementTitle:64348", "field": "text", "en": "Arathi Basin bases assaulted", "hash": "8ff60506e5b13088", "src": "db2@1.60.1.70425"}
+{"id": "AchievementTitle:64349", "field": "text", "en": "Arathi Basin bases defended", "hash": "10ee7dc448310a12", "src": "db2@1.60.1.70425"}
+{"id": "AchievementTitle:64350", "field": "text", "en": "Darkspear Islands bases assaulted", "hash": "b1d2d0fb9aa12296", "src": "db2@1.60.1.70425"}
+{"id": "AchievementTitle:64351", "field": "text", "en": "Darkspear Islands bases defended", "hash": "bb3492da22faa4e2", "src": "db2@1.60.1.70425"}
+{"id": "AchievementTitle:64352", "field": "text", "en": "Darkspear Islands flags captured", "hash": "ef4a51db68d741be", "src": "db2@1.60.1.70425"}
 {"id": "AchievementTitle:6786", "field": "text", "en": "High Inquisitor Whitemane kills (Scarlet Monastery)", "hash": "9a3c39b52c1dd1c7", "src": "db2@1.60.1.70425"}
 {"id": "AchievementTitle:684", "field": "text", "en": "Conqueror of the Lair", "hash": "d3c321c9e2462dc6", "src": "db2@1.60.1.70425"}
 {"id": "AchievementTitle:728", "field": "text", "en": "Explore Durotar", "hash": "727bb675675ea3e7", "src": "db2@1.60.1.70425"}

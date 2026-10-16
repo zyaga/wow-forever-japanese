@@ -379,11 +379,11 @@ function WFJ.OnLoad()
     "ChatConfig", "TextToSpeech", "ChatTabs", "CombatLog", "AddonList", "ScriptErrors", "Splash", "EventTrace",
     "ChromieTime", "Alerts", "Errors", "ChatSystem", "ChatInput", "BossBanner", "Cinematic", "Subtitles",
     "CoinPickup", "CombatFeedback", "EquipmentFlyout",
-    "GhostFrame", "GuildInvite", "InstanceAbandon", "InstanceDifficulty", "LootHistory", "LossOfControl",
+    "GhostFrame", "GuildInvite", "InstanceAbandon", "LootHistory", "LossOfControl",
     "MajorFactionToast", "PartyPose", "PetHappiness", "PlayerChoice", "ReadyCheck", "StackSplit", "StreamingIcon",
     "ZoneText",
-    -- the tutorial popup
-    "Tutorial",
+    -- the tutorial popup and the new player experience's screen prompts
+    "Tutorial", "NewPlayerTutorial",
     -- the StaticPopup dialogs (ADR-037)
     "Popups"
   }

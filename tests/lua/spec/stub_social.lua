@@ -142,6 +142,18 @@ function Social.installCamelot()
   frame.IgnoreListWindow = CreateFrame("Frame")
   titled(frame.IgnoreListWindow)
   frame.IgnoreListWindow:SetTitle(en("IGNORE_LIST"))
+  -- the friends list's privacy-restricted state (FriendsListFrame_OnShow, camelot friendsframe.lua:680–692): with
+  -- C_SocialRestrictions.IsFriendsDisabled() the list hides and FriendsDisabledText shows
+  -- SOCIAL_TAB_UNAVAILABLE:format(SOCIAL_UI_FRIENDS_TAB_NAME). Social.friendsDisabled = true turns it on.
+  Social.friendsDisabled = false
+  local list = CreateFrame("Frame", "FriendsListFrame")
+  list.FriendsDisabledText = Stub.fontString("")
+  _G.FriendsListFrame_OnShow = function(self)
+    if Social.friendsDisabled then
+      -- "Friends" is SOCIAL_UI_FRIENDS_TAB_NAME
+      self.FriendsDisabledText.text = string.format(en("SOCIAL_TAB_UNAVAILABLE"), "Friends")
+    end
+  end
   _G.FriendsFrame_Update = function()
     local tab = _G.FriendsFrame.selectedTab or 1
     if tab == 1 then

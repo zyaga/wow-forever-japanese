@@ -77,6 +77,8 @@
 {"id": "TEXT_MODE_A_STRING_RESULT_OVERKILLING", "field": "text", "en": "(%s Overkill)", "hash": "6a9691ea5418266f", "src": "db2@1.60.1.70425"}
 {"id": "TEXT_MODE_A_STRING_RESULT_RESIST", "field": "text", "en": "(%s Resisted)", "hash": "7152ebbc0298710d", "src": "db2@1.60.1.70425"}
 {"id": "TEXT_MODE_A_STRING_VALUE_SCHOOL", "field": "text", "en": "%s %s", "hash": "98ecaae23ca42057", "src": "db2@1.60.1.70425"}
+{"id": "TEXT_ON_TARGET_OFF_LABEL", "field": "text", "en": "Off", "hash": "0014e45f39a99cac", "src": "db2@1.60.1.70425"}
+{"id": "TEXT_ON_TARGET_ON_LABEL", "field": "text", "en": "On", "hash": "000028db0009d6dd", "src": "db2@1.60.1.70425"}
 {"id": "TEXT_SCALE_PREVIEW_BODY", "field": "text", "en": "This is a preview of the text size. Adjust this setting to change text size in most dialogs, some social menus, and Text-to-Speech options.", "hash": "2c87e5a30a2aedb5", "src": "db2@1.60.1.70425"}
 {"id": "TEXT_SCALE_PREVIEW_TITLE", "field": "text", "en": "Example", "hash": "4f9851a7b2e6384c", "src": "db2@1.60.1.70425"}
 {"id": "TEXT_TO_SPEECH", "field": "text", "en": "Text To Speech", "hash": "e01c9f29dcae756b", "src": "db2@1.60.1.70425"}

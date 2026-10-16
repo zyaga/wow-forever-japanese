@@ -102,6 +102,8 @@
 {"id": "NPC_NAMES_DROPDOWN_NONE_TOOLTIP", "field": "text", "en": "Do not display names for any NPCs", "hash": "b23d5a4c62142db0", "src": "db2@1.60.1.70425"}
 {"id": "NPC_NAMES_DROPDOWN_TRACKED", "field": "text", "en": "Quest NPCs", "hash": "2e6a0447df2886ff", "src": "db2@1.60.1.70425"}
 {"id": "NPC_NAMES_DROPDOWN_TRACKED_TOOLTIP", "field": "text", "en": "Display names for NPCs involved with quests, as well as tracked NPCs using the minimap tracker.", "hash": "f9c9b36f8a3c9ead", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_BUY_ITEMS_FROM_VENDOR", "field": "text", "en": "|cFF00FFFFRight Click|r{Atlas|NPE_RightClick:16} an item to buy it", "hash": "d1c8a99add51cede", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_CHATFRAME3", "field": "text", "en": "Use |cFF00FFFFchat|r to ask questions. Find players to join you on quests, and get help from the community.", "hash": "a7391f8b4c5697b1", "src": "db2@1.60.1.70425"}
 {"id": "NPEV2_CHAT_AVAILABLE", "field": "text", "en": "Newcomer Chat is now available.", "hash": "4678a6a0cc7a1ffb", "src": "db2@1.60.1.70425"}
 {"id": "NPEV2_CHAT_HELP_HINT_DIFFERENT", "field": "text", "en": "Type %s to ask questions in Newcomer Chat", "hash": "11cfe5fac15def9d", "src": "db2@1.60.1.70425"}
 {"id": "NPEV2_CHAT_HELP_HINT_HERE", "field": "text", "en": "Type here to ask questions in Newcomer Chat", "hash": "4728bc7cc39dbb68", "src": "db2@1.60.1.70425"}
@@ -112,14 +114,42 @@
 {"id": "NPEV2_CHAT_WELCOME_TO_CHANNEL_NEWCOMER", "field": "text", "en": "Welcome to Newcomer Chat!", "hash": "b4ff450f87b2a25b", "src": "db2@1.60.1.70425"}
 {"id": "NPEV2_CHAT_WELCOME_TO_CHANNEL_NEWCOMER1", "field": "text", "en": "|A:newplayerchat-chaticon-guide:0:0:0:0|a|cff81b558Guides|r are here to help if you have any questions.", "hash": "43814f4848959e80", "src": "db2@1.60.1.70425"}
 {"id": "NPEV2_CHAT_WELCOME_TO_CHANNEL_NEWCOMER2", "field": "text", "en": "To chat, type |cff00ff00%s|r and your message.", "hash": "d5c0fed8197b18b9", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_DRAG_TO_EQUIP", "field": "text", "en": "Drag your new item to equip it", "hash": "fb21f3dc50290e05", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_FINDCORPSE", "field": "text", "en": "|cFFFFD200Open your map|r to find your corpse", "hash": "c34b1d1832aca35f", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_INTRO_CAMERA_LOOK", "field": "text", "en": "|cFFFFD200Look around|r", "hash": "b5b67ccbdd1462da", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_INTRO_MOVE_ALLIANCE", "field": "text", "en": "|cFFFFD200Walk around|r", "hash": "be8e0656f989d212", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_INTRO_QUESTGIVER_INTERACT_DWARF", "field": "text", "en": "|cFFFFD200Talk|r to Sten Stoutarm", "hash": "b1054d1b92938b13", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_INTRO_QUESTGIVER_INTERACT_HUMAN", "field": "text", "en": "|cFFFFD200Talk|r to Deputy Willem", "hash": "e07cb43a5f05da18", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_INTRO_QUESTGIVER_INTERACT_NIGHTELF", "field": "text", "en": "|cFFFFD200Talk|r to Conservator Ilthalaine", "hash": "f8ec55a98abead92", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_INTRO_QUESTGIVER_INTERACT_ORC", "field": "text", "en": "|cFFFFD200Talk|r to Kaltunk", "hash": "e3d0632e5bc6df7b", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_INTRO_QUESTGIVER_INTERACT_SCOURGE", "field": "text", "en": "|cFFFFD200Talk|r to Undertaker Mordo", "hash": "9c4a8bbd1b5db9c6", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_INTRO_QUESTGIVER_INTERACT_SKYBORNE", "field": "text", "en": "|cFFFFD200Talk|r to Ailee Farheart", "hash": "84d9cbca6b6ef82a", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_INTRO_QUESTGIVER_INTERACT_TAUREN", "field": "text", "en": "|cFFFFD200Talk|r to Grull Hawkwind", "hash": "923ab3078163d2ae", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_INTRO_TO_MOUSE_AND_KEYBOARD", "field": "text", "en": "Position your hands and click |cFFFFD200Okay|r", "hash": "6f62d42a4a3a8818", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_LOOT_CORPSE", "field": "text", "en": "|cFFFFD200Loot|r the corpse", "hash": "2eeb2e7a74c73480", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_OPENCHARACTERSHEET", "field": "text", "en": "To equip your new gear, press |cFF00FFFF%s|r to open your |cFF00FFFFcharacter pane|r", "hash": "ff477593aa388cc6", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_PLACE_ABILITY_BACK_ON_ACTION_BAR", "field": "text", "en": "Place %s back on your Action Bar to use it again.", "hash": "d776826dc4e2beff", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_PRESS_KEY_TO_USE_ABILITY", "field": "text", "en": "Press|cFF00FFFF %s|r to %s", "hash": "a64324d8b90ebf44", "src": "db2@1.60.1.70425"}
 {"id": "NPEV2_REGIONAL_CHAT_AVAILABLE", "field": "text", "en": "Regional Chat Service is now available.", "hash": "5edf22c9a4915d21", "src": "db2@1.60.1.70425"}
 {"id": "NPEV2_REGIONAL_CHAT_UNAVAILABLE", "field": "text", "en": "Regional Chat Service is temporarily unavailable.", "hash": "414c9f53f895fbc2", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_RELEASESPIRIT", "field": "text", "en": "You died.\n\nClick |cFF00FFFFRelease Spirit|r to continue.", "hash": "84a899f1dce1e99e", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_RETURN_TO_CORPSE", "field": "text", "en": "Follow your corpse back to where you died to resurrect.", "hash": "93645bc78721dd8c", "src": "db2@1.60.1.70425"}
 {"id": "NPEV2_SELECT_TALENTS_TAB", "field": "text", "en": "Select the |cFF00FFFFTalents|r Tab", "hash": "a183d3f96d233a10", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_SELL_GREY_ITEMS", "field": "text", "en": "|cFF00FFFFRight Click|r an item to sell it to the vendor", "hash": "379a684d8a8857a9", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_SHOW_BAGS", "field": "text", "en": "You found a new piece of |cFF00FFFFgear|r!\n\nPress |cFF00FFFF%s|r to open your bag.", "hash": "631ebae2ee7764f7", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_SKIP_TUTORIAL_BUTTON", "field": "text", "en": "Skip Tutorial", "hash": "bfb9b954ab2ec94a", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_SKIP_TUTORIAL_PROMPT", "field": "text", "en": "Played World of Warcraft before?", "hash": "269b41ccff44055e", "src": "db2@1.60.1.70425"}
 {"id": "NPEV2_SPEC_TUTORIAL_GOSSIP_CLOSED", "field": "text", "en": "View your |cFF00FFFFcombat specializations|r", "hash": "461e4352d6558384", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_START_ATTACKING", "field": "text", "en": "Right-click an enemy to |cFFFFD200target|r it.", "hash": "0bc1af94107af84c", "src": "db2@1.60.1.70425"}
+{"id": "NPEV2_SUCCESSFULLY_EQUIPPED", "field": "text", "en": "Your item has been equipped!", "hash": "b480bb65e5ef4a31", "src": "db2@1.60.1.70425"}
 {"id": "NPE_ABANDON_A_RETURN", "field": "text", "en": "Go Back", "hash": "6694c8e4eaaef5b2", "src": "db2@1.60.1.70425"}
 {"id": "NPE_ABANDON_A_WARNING", "field": "text", "en": "You've traveled too far away from Stormwind.|n|nIf you continue, you'll be removed from the tutorial.|n|nWould you like to go back to Stormwind?|n|n|n", "hash": "adbd8f7cbcc7091f", "src": "db2@1.60.1.70425"}
 {"id": "NPE_ABANDON_H_RETURN", "field": "text", "en": "Go Back", "hash": "6694c8e4eaaef5b2", "src": "db2@1.60.1.70425"}
 {"id": "NPE_ABANDON_H_WARNING", "field": "text", "en": "You've traveled too far away from Orgrimmar.|n|nIf you continue, you'll be removed from the tutorial.|n|nWould you like to go back to Orgrimmar?|n|n|n", "hash": "65b5e49ed6603d34", "src": "db2@1.60.1.70425"}
 {"id": "NPE_ABANDON_LEAVE_TUTORIAL", "field": "text", "en": "End Tutorial", "hash": "fb6c9f3f89523e6c", "src": "db2@1.60.1.70425"}
+{"id": "NPE_CLICKLOOT", "field": "text", "en": "Click on |cFF00FFFFloot|r to put it in your bag", "hash": "95957688b8242690", "src": "db2@1.60.1.70425"}
+{"id": "NPE_QUESTREWARDCHOCIEREDITEMS", "field": "text", "en": "You cannot use items shown in |cFFFF0000Red|r.\n\n", "hash": "55985d274f3d8ad4", "src": "db2@1.60.1.70425"}
+{"id": "NPE_QUESTREWARDCHOICE", "field": "text", "en": "|cFF00FFFFLeft-Click|r on the item you want to receive.", "hash": "15df6f1859e16359", "src": "db2@1.60.1.70425"}
+{"id": "NPE_UNBOUND_KEYBIND", "field": "text", "en": "[Unbound]", "hash": "4f24880ecb8acdec", "src": "db2@1.60.1.70425"}
 {"id": "NUM_FREE_SLOTS", "field": "text", "en": "%d Empty |4Slot:Slots; (Total)", "hash": "add4fc8ae4bdbc37", "src": "db2@1.60.1.70425"}
 {"id": "NUM_GUILDBANK_TABS_PURCHASED", "field": "text", "en": "(%d/%d tabs purchased)", "hash": "4c227a9c18eccf38", "src": "db2@1.60.1.70425"}

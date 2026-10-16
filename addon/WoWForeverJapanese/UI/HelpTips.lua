@@ -19,7 +19,14 @@
 -- Content from the text (width min(GetStringWidth(), overrideWidth or 200) + 40, height GetHeight() + 40), shows it,
 -- stores it in InUseFrames[NextID] and increments NextID [verified: blizzard_tutorialpointerframe.lua:47–138]. A
 -- post-hook on that table method finds the frame at InUseFrames[NextID - 1], rewrites the text and re-sizes the box
--- the same way.
+-- the same way. Camelot's new player experience (UI/NewPlayerTutorial for its screen prompts) points the same arrows
+-- with text it first passes through TutorialHelper:FormatString, which turns `{$id}` into the spell's name in cyan,
+-- `{KB|id}` into its key and `{Atlas|name:size}` into CreateAtlasMarkup(name, size, size), "|A:name:size:size:0:0|a"
+-- [verified: blizzard_tutorialmanager/blizzard_tutorialhelper.lua:39–67, blizzard_sharedxmlbase/textureutil.lua:
+-- 303–309]. So an arrow's text is read and written through an adapter that shows that atlas markup as the token the
+-- client's English holds: the line matches its global string, and the token in the Japanese is drawn as the atlas.
+-- The reward-choice arrow is two lines in one, the red-items line before the choice line
+-- (blizzard_newplayerexperience/blizzard_tutorialtutorials.lua:740–762): shown as the two entries in order.
 local _, WFJ = ...
 local HelpTips = {}
 WFJ.HelpTips = HelpTips
@@ -42,7 +49,9 @@ HelpTips.KEYS = { "ACCOUNT_WIDE_REPUTATION_TUTORIAL", "REPUTATION_EXALTED_PLUS_H
   "INTERACT_KEY_TUTORIAL", "INTERACT_KEY_TUTORIAL_NO_INTERACT_KEY_ASSIGNED", "TUTORIAL_SUPERTRACK_STEP_1",
   -- every other Forever window's HelpTip:Show callouts: Edit Mode (editmodemanager.lua:2959–2985), the auction
   -- house (…auctionhousesellframe.lua:509), the
-  -- world map's completed-quests filter (blizzard_worldmaptemplates.lua:377–397), currencies (camelot
+  -- world map's completed-quests filter (blizzard_worldmaptemplates.lua:404–425; camelot's
+  -- CanShowRefreshAccountCompletedQuestFilterTutorial returns false, blizzard_worldmap/camelot/
+  -- blizzard_worldmaptemplates.lua:10–12, so Forever never shows it), currencies (camelot
   -- blizzard_tokenui.lua:425–445), the assisted-combat button (actionbutton.lua:1981–2020), loot history
   -- (loothistory.lua:552–563), the chat language button (chatframemenubutton.lua:3), voice (channelframe.lua:235–245;
   -- voicechattranscriptionbutton.lua:210–220), the queue eye (queuestatusframe.lua:333–345)
@@ -99,13 +108,66 @@ HelpTips.PLATE_KEYS = { "MAIN_HELP_BUTTON_TOOLTIP", "SPELLBOOK_HELP_1", "PLAYER_
   "TRANSMOG_HELP_2", "TRANSMOG_HELP_3" }
 local PLATE_PAD = 30 -- the client's own padding (blizzard_helpplate.lua:215)
 
--- The pointer arrows' texts: the class tutorial's (blizzard_tutorials_classes.lua:88, 297, 310). Nothing
--- else is ever read off a pointer (the NPE, boost and Remix tutorials, which never run on Forever, use it too).
+-- The pointer arrows' texts: the class tutorial's (blizzard_tutorials_classes.lua:88, 297, 310) and the new player
+-- experience's, which runs below level 10 (blizzard_newplayerexperience/blizzard_tutorialtutorials.lua:1133, 1173,
+-- 1218, 1266, 2394, 2448, 3096, 3173, 3369, 3549, 3666; the vendor arrow on camelot,
+-- camelot/blizzard_tutoriallogicoverrides.lua:105). Nothing else is ever read off a pointer (the boost and Remix
+-- tutorials, which never run on Forever, use it too).
 HelpTips.POINTER_KEYS = { "NPEV2_SPEC_TUTORIAL_GOSSIP_CLOSED", "TALENT_MICRO_BUTTON_UNSPENT_TALENTS",
-  "NPEV2_SELECT_TALENTS_TAB" }
+  "NPEV2_SELECT_TALENTS_TAB", "NPEV2_RELEASESPIRIT", "NPEV2_RETURN_TO_CORPSE", "NPEV2_DRAG_TO_EQUIP",
+  "NPEV2_SUCCESSFULLY_EQUIPPED", "NPEV2_SELL_GREY_ITEMS", "NPE_CLICKLOOT", "NPEV2_CHATFRAME3", "NPE_QUESTREWARDCHOICE",
+  "NPEV2_SHOW_BAGS", "NPEV2_OPENCHARACTERSHEET", "NPEV2_PRESS_KEY_TO_USE_ABILITY", "NPEV2_BUY_ITEMS_FROM_VENDOR" }
+-- the reward-choice arrow's two lines, in the order the client joins them
+local REWARD_RED, REWARD_CHOICE = { "NPE_QUESTREWARDCHOCIEREDITEMS" }, { "NPE_QUESTREWARDCHOICE" }
 -- the client's default width and padding (blizzard_tutorialpointerframe.lua:100–108)
 local POINTER_WIDTH, POINTER_PAD = 200, 40
 local pointerKey = WFJ.Labels.keyer("pointer.") -- a pooled frame's record key, never a position
+
+-- The atlas markup FormatString writes, as the `{Atlas|name:size}` token it came from (size 0: `{Atlas|name}`); a
+-- markup of another shape is left as it is.
+local function atlasToken(s)
+  return (s:gsub("|A:([%w_%-]+):(%d+):(%d+):0:0|a", function(name, h, w)
+    if h ~= w then return nil end
+    if h == "0" then return "{Atlas|" .. name .. "}" end
+    return "{Atlas|" .. name .. ":" .. h .. "}"
+  end))
+end
+
+local function atlasMarkup(s)
+  return (s:gsub("{Atlas|([%w_%-]+):?(%d*)}", function(name, size)
+    size = tonumber(size) or 0
+    return ("|A:%s:%d:%d:0:0|a"):format(name, size, size)
+  end))
+end
+HelpTips.atlasToken, HelpTips.atlasMarkup = atlasToken, atlasMarkup
+
+-- An arrow's FontString as Labels and the records see it: its text with the atlas markup read back as tokens, and
+-- tokens written as markup. One adapter per FontString (weak), so a record keeps its widget identity.
+local adapters = setmetatable({}, { __mode = "k" })
+local function pointerText(fs)
+  local a = adapters[fs]
+  if a then return a end
+  a = {}
+  function a.GetText()
+    local t = fs:GetText()
+    return type(t) == "string" and atlasToken(t) or t
+  end
+  function a.SetText(_, t) fs:SetText(type(t) == "string" and atlasMarkup(t) or t) end
+  function a.GetFont() return fs:GetFont() end
+  function a.SetFont(_, path, size, flags) return fs:SetFont(path, size, flags) end
+  adapters[fs] = a
+  return a
+end
+
+-- The reward-choice arrow's two lines (as the adapter reads them) → the choice key and its `seq` args | nil
+local function rewardParts(text)
+  if type(text) ~= "string" then return nil end
+  local red, choice = text:match("^(.-\n\n)(.+)$")
+  local p1 = red and WFJ.Labels.part(red, REWARD_RED)
+  local p2 = p1 and WFJ.Labels.part(choice, REWARD_CHOICE)
+  if not p2 then return nil end
+  return p2.key, { form = "seq", parts = { p1, p2 } }
+end
 
 local tipKey = WFJ.Labels.keyer("tip.") -- a pooled frame's record key, never a position
 
@@ -147,7 +209,14 @@ function HelpTips.onPointer(pointers, content0, _direction, _anchor, _x, _y, _re
     content:SetHeight(text:GetHeight() + POINTER_PAD)
     content:SetWidth(width + POINTER_PAD)
   end
-  local n = WFJ.Labels.show(SURFACE, pointerKey(frame), text, refit, { only = HelpTips.POINTER_KEYS })
+  local shown = pointerText(text)
+  local key, args = rewardParts(shown:GetText())
+  local n
+  if key then
+    n = WFJ.Labels.showArgs(SURFACE, pointerKey(frame), shown, key, args, refit)
+  else
+    n = WFJ.Labels.show(SURFACE, pointerKey(frame), shown, refit, { only = HelpTips.POINTER_KEYS })
+  end
   if n > 0 then refit() end -- Alt held or released later re-renders through the record's refit
   return n
 end

@@ -86,6 +86,7 @@
 {"id": "PET_JOURNAL_CARD_NAME_DEFAULT", "field": "text", "en": "Select a pet from the list on the left.", "hash": "176e59a701186862", "src": "db2@1.60.1.70425"}
 {"id": "PET_JOURNAL_FILTER_USABLE_ONLY", "field": "text", "en": "Usable Only", "hash": "d16600eccbf37a07", "src": "db2@1.60.1.70425"}
 {"id": "PET_JOURNAL_SUMMON_RANDOM_FAVORITE_PET", "field": "text", "en": "Summon Random\nFavorite Pet", "hash": "4345f3441f6bdc6a", "src": "db2@1.60.1.70425"}
+{"id": "PET_LOYALTY_TEMPLATE", "field": "text", "en": "%s (Loyalty: %d)", "hash": "cf5b645136b1dcd0", "src": "db2@1.60.1.70425"}
 {"id": "PET_MODE_AGGRESSIVE", "field": "text", "en": "Aggressive", "hash": "2b3203a442eff4fa", "src": "db2@1.60.1.70425"}
 {"id": "PET_MODE_ASSIST", "field": "text", "en": "Assist", "hash": "cec4b0c0fde02e30", "src": "db2@1.60.1.70425"}
 {"id": "PET_MODE_DEFENSIVE", "field": "text", "en": "Defensive", "hash": "36687b796cd98c65", "src": "db2@1.60.1.70425"}
@@ -526,9 +527,21 @@
 {"id": "PvpColumn:1101", "field": "text", "en": "Flag Captures", "hash": "82057bc0e63ade13", "src": "db2@1.60.1.70425"}
 {"id": "PvpColumn:1102", "field": "text", "en": "Bases Assaulted", "hash": "eaa9c4d6a4509a2e", "src": "db2@1.60.1.70425"}
 {"id": "PvpColumn:1103", "field": "text", "en": "Bases Defended", "hash": "c95192c2f93a802c", "src": "db2@1.60.1.70425"}
+{"id": "PvpColumn:61", "field": "text", "en": "Graveyards Defended", "hash": "44a74dc4ca5ef652", "src": "db2@1.60.1.70425"}
+{"id": "PvpColumn:62", "field": "text", "en": "Flag Returns", "hash": "375b387a555f09c0", "src": "db2@1.60.1.70425"}
+{"id": "PvpColumn:63", "field": "text", "en": "Towers Assaulted", "hash": "f58deaec3e5b5320", "src": "db2@1.60.1.70425"}
+{"id": "PvpColumn:64", "field": "text", "en": "Secondary Objectives", "hash": "549d8f0c81779235", "src": "db2@1.60.1.70425"}
+{"id": "PvpColumn:67", "field": "text", "en": "Towers Defended", "hash": "dee5e137fb696df8", "src": "db2@1.60.1.70425"}
+{"id": "PvpColumn:71", "field": "text", "en": "Graveyards Assaulted", "hash": "0788758ddfaaa85e", "src": "db2@1.60.1.70425"}
 {"id": "PvpColumnTooltip:1101", "field": "text", "en": "Number of times you have captured the flag", "hash": "ea439d23b4148f9a", "src": "db2@1.60.1.70425"}
 {"id": "PvpColumnTooltip:1102", "field": "text", "en": "Number of times enemy base banners have been removed", "hash": "12b99a969cc6e9f4", "src": "db2@1.60.1.70425"}
 {"id": "PvpColumnTooltip:1103", "field": "text", "en": "Number of times a base capture has been prevented", "hash": "ff594ad98317c252", "src": "db2@1.60.1.70425"}
+{"id": "PvpColumnTooltip:61", "field": "text", "en": "Number of times a graveyard capture has been prevented", "hash": "dc0d6559f3ee0b3f", "src": "db2@1.60.1.70425"}
+{"id": "PvpColumnTooltip:62", "field": "text", "en": "Number of times you have returned your Flag to your base from the field", "hash": "8dc4fa1773a95341", "src": "db2@1.60.1.70425"}
+{"id": "PvpColumnTooltip:63", "field": "text", "en": "Number of times enemy tower banners have been removed", "hash": "1361e21abbe074fa", "src": "db2@1.60.1.70425"}
+{"id": "PvpColumnTooltip:64", "field": "text", "en": "Number of secondary units activated", "hash": "47423f432e7b0d01", "src": "db2@1.60.1.70425"}
+{"id": "PvpColumnTooltip:67", "field": "text", "en": "Number of times a tower capture has been prevented", "hash": "7968efa1d131e6c9", "src": "db2@1.60.1.70425"}
+{"id": "PvpColumnTooltip:71", "field": "text", "en": "Number of times enemy graveyard banners have been removed", "hash": "84c7af4ddd430852", "src": "db2@1.60.1.70425"}
 {"id": "PvpLongDescription:2997", "field": "text", "en": "- Capture and hold objectives\r\n- Capture the Darkspear Islands Flag\r\n- Earn 2000 resources", "hash": "1bc4198b967c165f", "src": "db2@1.60.1.70425"}
 {"id": "PvpStat:122", "field": "text", "en": "Bases Assaulted", "hash": "eaa9c4d6a4509a2e", "src": "db2@1.60.1.70425"}
 {"id": "PvpStat:123", "field": "text", "en": "Bases Defended", "hash": "c95192c2f93a802c", "src": "db2@1.60.1.70425"}

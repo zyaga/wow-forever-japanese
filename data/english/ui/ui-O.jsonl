@@ -81,6 +81,7 @@
 {"id": "OPTION_TOOLTIP_AUTO_LOOT_DEFAULT", "field": "text", "en": "Sets Auto Looting as the default action when clicking on lootable things. (Looting when this is checked, or Auto Looting when it is not, is performed by holding the Loot Key / Auto Loot Key.)", "hash": "9e2e221195244d8c", "src": "db2@1.60.1.70425"}
 {"id": "OPTION_TOOLTIP_AUTO_LOOT_NONE_KEY", "field": "text", "en": "Do not apply a key.", "hash": "01b84773e0a462fd", "src": "db2@1.60.1.70425"}
 {"id": "OPTION_TOOLTIP_AUTO_LOOT_SHIFT_KEY", "field": "text", "en": "Use the \"SHIFT\" key to Loot when \"Auto Loot\" is checked, and to Auto Loot when it is not.", "hash": "49d37c38554a4678", "src": "db2@1.60.1.70425"}
+{"id": "OPTION_TOOLTIP_AUTO_RANGED_COMBAT", "field": "text", "en": "If enabled, your character will automatically switch between auto attack and auto shot.", "hash": "88447e5f0b8ae64e", "src": "db2@1.60.1.70425"}
 {"id": "OPTION_TOOLTIP_AUTO_SELF_CAST", "field": "text", "en": "When this is enabled, friendly target spells that you cast while you have a non friendly target or no target will automatically be self cast.", "hash": "f836497693dcc9e0", "src": "db2@1.60.1.70425"}
 {"id": "OPTION_TOOLTIP_AUTO_SELF_CAST_ALT_KEY", "field": "text", "en": "Use the \"ALT\" key to cast friendly target spells on yourself even if an enemy is targeted, or there is no target.", "hash": "41d2f385d3815093", "src": "db2@1.60.1.70425"}
 {"id": "OPTION_TOOLTIP_AUTO_SELF_CAST_CTRL_KEY", "field": "text", "en": "Use the \"CTRL\" key to cast friendly target spells on yourself even if an enemy is targeted, or there is no target.", "hash": "7f3be5b2c90021a3", "src": "db2@1.60.1.70425"}
@@ -114,6 +115,7 @@
 {"id": "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_FRIENDLY_NAMES", "field": "text", "en": "Shows the name of a friendly caster when they cast a heal spell on you.", "hash": "2460ab2800fc9102", "src": "db2@1.60.1.70425"}
 {"id": "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_HONOR_GAINED", "field": "text", "en": "Shows the honor you gain from killing other players.", "hash": "ca8d5adbdc89b32b", "src": "db2@1.60.1.70425"}
 {"id": "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_LOW_HEALTH_MANA", "field": "text", "en": "Shows a message when you fall below 20% mana or health.", "hash": "0968212b65a1b2af", "src": "db2@1.60.1.70425"}
+{"id": "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_PERIODIC_ENERGIZE", "field": "text", "en": "Shows all periodic gains of mana, rage, and energy.", "hash": "2ed485f5d4a734d9", "src": "db2@1.60.1.70425"}
 {"id": "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_REACTIVES", "field": "text", "en": "Show alerts when certain important events occur.", "hash": "742c6a1752226b97", "src": "db2@1.60.1.70425"}
 {"id": "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_REPUTATION", "field": "text", "en": "Shows a message when the player gains or loses reputation with a faction.", "hash": "97580e9866b1e6fe", "src": "db2@1.60.1.70425"}
 {"id": "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_RESISTANCES", "field": "text", "en": "Shows when you resist taking damage from attacks or spells.", "hash": "1bd0318279571263", "src": "db2@1.60.1.70425"}
@@ -298,6 +300,7 @@
 {"id": "OPTION_TOOLTIP_SHADOW_QUALITY", "field": "text", "en": "Controls both the method and quality of shadows. Decreasing this may greatly improve performance.", "hash": "abac09947ba546b8", "src": "db2@1.60.1.70425"}
 {"id": "OPTION_TOOLTIP_SHARPNESS", "field": "text", "en": "Adjusts the strength of the FidelityFX Super Resolution sharpness effect. 0 is full strength.", "hash": "1706173d5bff412a", "src": "db2@1.60.1.70425"}
 {"id": "OPTION_TOOLTIP_SHOW_COLLECTION_TOASTS", "field": "text", "en": "Enabling this option will display toasts when collection items are unlocked.", "hash": "87f8d8821340e660", "src": "db2@1.60.1.70425"}
+{"id": "OPTION_TOOLTIP_SHOW_COMBAT_HEALING_ABSORB_SELF", "field": "text", "en": "Shows a message when you gain a shield.", "hash": "332c2c48f9161de4", "src": "db2@1.60.1.70425"}
 {"id": "OPTION_TOOLTIP_SHOW_COMBAT_TEXT", "field": "text", "en": "Checking this will enable additional combat messages to appear in the playfield.", "hash": "e7b4361172f4d9d0", "src": "db2@1.60.1.70425"}
 {"id": "OPTION_TOOLTIP_SHOW_IN_GAME_NAVIGATION", "field": "text", "en": "Display an in-world marker indicating the direction and distance of a tracked quest or waypoint.", "hash": "5ddb078221e60873", "src": "db2@1.60.1.70425"}
 {"id": "OPTION_TOOLTIP_SHOW_ITEM_TOASTS", "field": "text", "en": "Enabling this option will display toasts when some items are received.", "hash": "1d91ea1d439142df", "src": "db2@1.60.1.70425"}

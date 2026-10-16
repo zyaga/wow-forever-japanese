@@ -62,10 +62,11 @@ local TAIL = {
   "UI/BossBanner.lua",
   "UI/Cinematic.lua", "UI/Subtitles.lua",
   "UI/CoinPickup.lua", "UI/CombatFeedback.lua", "UI/EquipmentFlyout.lua", "UI/GhostFrame.lua",
-  "UI/GuildInvite.lua", "UI/InstanceAbandon.lua", "UI/InstanceDifficulty.lua", "UI/LootHistory.lua",
+  "UI/GuildInvite.lua", "UI/InstanceAbandon.lua", "UI/LootHistory.lua",
   "UI/LossOfControl.lua", "UI/MajorFactionToast.lua", "UI/PartyPose.lua", "UI/PetHappiness.lua",
   "UI/PlayerChoice.lua", "UI/ReadyCheck.lua", "UI/StackSplit.lua", "UI/StreamingIcon.lua", "UI/ZoneText.lua",
   "UI/Tutorial.lua", -- the tutorial popup
+  "UI/NewPlayerTutorial.lua",
   "UI/Popups.lua",
   "UI/Scan.lua",
   "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/FixWindow.lua",
@@ -97,7 +98,7 @@ local WINDOW_NAMESPACES = { "character", "reputation", "skills", "spellbook", "t
   "alerts", "errors", "chatsystem", "speech", "bossbanner", "cinematic", "coinpickup", "combatfeedback",
   "equipmentflyout",
   "ghostframe",
-  "guildinvite", "instanceabandon", "instancedifficulty", "loothistory", "lossofcontrol", "majorfactiontoast",
+  "guildinvite", "instanceabandon", "npe", "loothistory", "lossofcontrol", "majorfactiontoast",
   "partypose", "pethappiness", "playerchoice", "readycheck", "stacksplit", "streamingicon", "zonetext",
   "popups", "tutorial" }
 local function outsideWindows(list)

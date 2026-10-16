@@ -99,6 +99,8 @@
 {"id": "DEPTH_EFFECTS", "field": "text", "en": "Depth Effects", "hash": "061e7087874c0384", "src": "db2@1.60.1.70425"}
 {"id": "DESCRIPTION_OF_YOUR_GROUP", "field": "text", "en": "More details about your group (optional)", "hash": "6d487bec0295358a", "src": "db2@1.60.1.70425"}
 {"id": "DESCRIPTION_OF_YOUR_GROUP_MANDATORY", "field": "text", "en": "More details about your group", "hash": "b9813c47a28bd7e8", "src": "db2@1.60.1.70425"}
+{"id": "DIALOG_CONFIRMATION_PROMPT_GAMEPAD", "field": "text", "en": "Press the button sequence to confirm.", "hash": "88b36600937dedd4", "src": "db2@1.60.1.70425"}
+{"id": "DIALOG_CONFIRMATION_PROMPT_MKB", "field": "text", "en": "Type \"%s\" into the field to confirm.", "hash": "ec00ee8f48da2cbc", "src": "db2@1.60.1.70425"}
 {"id": "DIALOG_INSTRUCTION_REPLACE_MOUNT_EQUIPMENT", "field": "text", "en": "Are you sure you want to replace this Mount Equipment? The existing one will be destroyed.", "hash": "dbe1a05d5a6c4824", "src": "db2@1.60.1.70425"}
 {"id": "DIALOG_VOLUME", "field": "text", "en": "Dialog", "hash": "0f5fc69257ed54d3", "src": "db2@1.60.1.70425"}
 {"id": "DIFFICULTY_LOCKED_REASON_STORY_RAID", "field": "text", "en": "Unavailable in Story mode", "hash": "bba88cc5a7ba21ba", "src": "db2@1.60.1.70425"}

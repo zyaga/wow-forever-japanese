@@ -1917,7 +1917,6 @@ UI\EquipmentFlyout.lua
 UI\GhostFrame.lua
 UI\GuildInvite.lua
 UI\InstanceAbandon.lua
-UI\InstanceDifficulty.lua
 UI\LootHistory.lua
 UI\LossOfControl.lua
 UI\MajorFactionToast.lua
@@ -1929,6 +1928,7 @@ UI\StackSplit.lua
 UI\StreamingIcon.lua
 UI\ZoneText.lua
 UI\Tutorial.lua
+UI\NewPlayerTutorial.lua
 UI\Popups.lua
 UI\Scan.lua
 UI\OptionsText.lua
