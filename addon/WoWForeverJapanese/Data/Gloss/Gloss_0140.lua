@@ -430,4 +430,10 @@ WFJ.Data.add("gloss", {
   [140434] = "高レベル\tこうレベル\thigh-level",
   [140435] = "なかなか\tなかなか\tquite (rather well)",
   [140436] = "やる\tやる\tdo well (impressive)",
+  [140437] = "一万年\tいちまんねん\t10,000 years",
+  [140438] = "奥深い\tおくぶかい\tdeep within (the recesses of)",
+  [140439] = "木陰\tこかげ\tshade of the trees (shadowed)",
+  [140440] = "破滅的\tはめつてき\tcatastrophic",
+  [140441] = "育む\tはぐくむ\tcultivated (have raised)",
+  [140442] = "近年\tきんねん\trecently (in recent years)",
 })

@@ -33,7 +33,8 @@
 --     records are keyed by widget;
 --   tableBuilder:AddRow (tablebuilder.lua:323–342, called for every initialized row by ScrollUtil.RegisterTableBuilder,
 --     blizzard_sharedxml/shared/scroll/scrollutil.lua:1661–1665) → the honor-level cell's tooltip
---     (PVPCellHonorLevelMixin:OnEnter, pvpmatchtable.lua:139–146, HONOR_LEVEL_TOOLTIP). Icon cells are registered
+--     (PVPCellHonorLevelMixin:OnEnter, pvpmatchtable.lua:139–146, HONOR_LEVEL_TOOLTIP; on Forever
+--     PVP_RANK_NUMBER_AND_TITLE, camelot/pvpmatchtableoverrides.lua:24–31). Icon cells are registered
 --     once each (they are pooled) and restricted to that key, so the class cell's tooltip (a spec and a class name
 --     (:87–99)) never matches. No cell text is read: the cells hold names and live numbers.
 --   Tab1 of both windows is ALL, written in OnLoad (pvpmatchresults.lua:90, pvpmatchscoreboard.lua:24).
@@ -95,7 +96,9 @@ local HEADER_TOOLTIP = { only = { "KILLING_BLOW_TOOLTIP_TITLE", "KILLING_BLOW_TO
   "BATTLEGROUND_MATCHMAKING_VALUE_TOOLTIP_TITLE", "BATTLEGROUND_MATCHMAKING_VALUE_TOOLTIP",
   "BATTLEGROUND_RATING_TOOLTIP_TITLE", "BATTLEGROUND_NEW_RATING_TOOLTIP_TITLE", "BATTLEGROUND_NEW_RATING_TOOLTIP",
   "RATING_CHANGE_TOOLTIP_TITLE", "RATING_CHANGE_TOOLTIP" } }
-local HONOR_CELL_TOOLTIP = { only = { "HONOR_LEVEL_TOOLTIP" } }
+-- On Forever the cell shows the PvP rank and its title instead; the title stays English (ARGS)
+-- [verified: blizzard_pvpmatch/camelot/pvpmatchtableoverrides.lua:24–31]
+local HONOR_CELL_TOOLTIP = { only = { "HONOR_LEVEL_TOOLTIP", "PVP_RANK_NUMBER_AND_TITLE" } }
 
 local function get(key) return Compat.get(SURFACE, key) end
 
