@@ -2,7 +2,7 @@
 -- "texttospeech" and "texttospeech.static", area "ui", ADR-016). TextToSpeechFrame is a child of
 -- ChatConfigFrame (blizzard_chatframe/mainline/chatconfigframe.xml:536), built from TextToSpeechFrameTemplate
 -- (blizzard_chatframe/shared/texttospeechframe.xml:35–165); its window tab appears when the textToSpeech setting is
--- on (chatconfigframe.lua:2399–2403) or after /tts (texttospeechframe.lua:520–529). It is a module of its own
+-- on (chatconfigframe.lua:2408–2412) or after /tts (texttospeechframe.lua:520–529). It is a module of its own
 -- because it changes with the text-to-speech feature, not with the chat options.
 -- Static, parentKeys of TextToSpeechFrame.PanelContainer: VoiceOptionsLabel (xml:47); the check buttons' `text`,
 --   written in their OnLoad (texttospeechframe.lua:396, 533–560); PlaySampleButton / PlaySampleAlternateButton

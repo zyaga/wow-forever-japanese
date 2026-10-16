@@ -2,7 +2,7 @@
 -- (surface "quickjoin", area "ui", ADR-016). Blizzard_QuickJoin loads at login; QuickJoinFrame is a child of
 -- FriendsFrame (quickjoin.xml:68), shown by the Quick Join tab (blizzard_friendsframe/camelot/friendsframe.lua:472;
 -- the tab and the title are UI/Friends.lua's). QuickJoinToastButton is parented into the chat frame's button column
--- (blizzard_chatframebase/mainline/floatingchatframe.lua:474, 510).
+-- (blizzard_chatframebase/mainline/floatingchatframe.lua:379, 415).
 -- Dynamic: QuickJoinFrame:UpdateJoinButtonState (the frame's own method, quickjoin.lua:182–203) writes
 --   JoinQueueButton JOIN_QUEUE ("Request to Join") or SIGN_UP for a premade-group listing.
 -- Help tooltips: JoinQueueButton's disabled reason QUICK_JOIN_ALREADY_IN_PARTY (JoinQueueButtonMixin:OnEnter,

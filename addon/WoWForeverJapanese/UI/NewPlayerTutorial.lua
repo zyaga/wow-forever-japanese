@@ -31,7 +31,7 @@ NewPlayerTutorial.NEVER_TOUCH = {}
 
 local ADDON = "Blizzard_NewPlayerExperience"
 
--- the screen prompt's texts (blizzard_newplayerexperience/blizzard_tutorialtutorials.lua:126, 227, 3315, 3482, 3488;
+-- the screen prompt's texts (blizzard_newplayerexperience/blizzard_tutorialtutorials.lua:127, 227, 3315, 3482, 3488;
 -- the starting quest giver per race, camelot/blizzard_tutorialdata.lua:300–312)
 local MAIN = { only = { "NPEV2_INTRO_CAMERA_LOOK", "NPEV2_INTRO_QUESTGIVER_INTERACT_HUMAN",
   "NPEV2_INTRO_QUESTGIVER_INTERACT_DWARF", "NPEV2_INTRO_QUESTGIVER_INTERACT_NIGHTELF",

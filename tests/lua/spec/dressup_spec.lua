@@ -1,5 +1,5 @@
 -- UI/DressUp.lua over DressUpFrame / SideDressUpFrame replayed from
--- camelot blizzard_uipanels_game/mainline/dressupframes.xml (:100, :304, :383–387, :434, :444) and
+-- camelot blizzard_uipanels_game/mainline/dressupframes.xml (:100, :304, :384–388, :435, :445) and
 -- blizzard_sharedxmlgame/dressupmodelframemixin.lua:155–158 (SetTitle(DRESSUP_FRAME)).
 local Stub = require("tests.lua.spec.wow_stub")
 local G = require("tests.lua.spec.stub_gamepanels")
@@ -74,7 +74,7 @@ describe("the dressing room on Forever", function()
   it("the details panel's illusion row after Refresh: the illusion's name kept; an item row "
     .. "stays", function()
       local frame = install()
-      -- CustomSetDetailsPanel (dressupframes.xml:397): Refresh re-acquires the slot rows from slotPool (lua:570–640)
+      -- CustomSetDetailsPanel (dressupframes.xml:398): Refresh re-acquires the slot rows from slotPool (lua:570–640)
       local rows = {}
       local pool = { active = {} }
       function pool.EnumerateActive(p) return pairs(p.active) end

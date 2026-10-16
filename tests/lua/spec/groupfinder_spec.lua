@@ -1,6 +1,6 @@
 -- UI/GroupFinder.lua over LFGParentFrame replayed from camelot
 -- blizzard_groupfinder_vanillastyle (blizzard_lfgvanilla_parentframe.lua:87–92, blizzard_lfgvanilla_listing.lua:
--- 610–649 + 1089–1097 + 822–838, blizzard_lfgvanilla_browse.lua:73–79 + 189 + 305 + 410–419 + 648–653, the Menu
+-- 613–652 + 1089–1097 + 822–838, blizzard_lfgvanilla_browse.lua:73–79 + 189 + 305 + 410–419 + 648–653, the Menu
 -- dropdown's UpdateText). Leader names, activity and category names stay English; both load orders.
 local S = require("tests.lua.spec.stub_camelot_social")
 local Stub = require("tests.lua.spec.wow_stub")
@@ -51,7 +51,7 @@ local UI = {
   -- the listing's voice chat row and a result tooltip's voice line (listing.xml:554, 631; listing.lua:48–69;
   -- browse.lua:674–682)
   VOICE_CHAT = { "Voice Chat", "ボイスチャット" },
-  -- the level-range checkbox's label (mainline/blizzard_lfgvanilla_listing.xml:564–590)
+  -- the level-range checkbox's label (mainline/blizzard_lfgvanilla_listing.xml:564–589)
   LFG_LIST_IGNORE_SUGGESTED_LEVEL = { "Show All Level Ranges", "すべてのレベル帯を表示" },
   VOICE_CHAT_MODE_NONE = { "None", "なし" }, VOICE_CHAT_MODE_LEGACY = { "In-Game Voice (Legacy)", "ゲーム内ボイス(レガシー)" },
   VOICE_CHAT_MODE_FORMAT = { "Voice Chat: |cnHIGHLIGHT_FONT_COLOR:%s|r", "ボイスチャット: |cnHIGHLIGHT_FONT_COLOR:%s|r" },
@@ -123,7 +123,7 @@ local function loadGroupFinder(o)
     row.Name.text = d.leader
     row.ActivityName.text = d.own and en("LFG_SELF_LISTING")
       or (d.count and ("%d activities"):format(d.count) or d.activity)
-    if d.playstyle then row.PlaystyleLabel.text = en(d.playstyle) end -- blizzard_lfgvanilla_browse.lua:465–466
+    if d.playstyle then row.PlaystyleLabel.text = en(d.playstyle) end -- blizzard_lfgvanilla_browse.lua:466–467
   end
   function C.entry(row, data)
     if not row then

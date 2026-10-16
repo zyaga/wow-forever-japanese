@@ -6,8 +6,8 @@
 -- (remember / wanted by area).
 -- Writers [verified: Forever 1.60.1.69913]: ChatFrameMixin:MessageEventHandler adds a CHAT_MSG_SYSTEM (and SKILL,
 --   CURRENCY, …) line as self:AddMessage(arg1, info.r, info.g, info.b, info.id) (blizzard_chatframebase/mainline/
---   chatframeoverrides.lua:406–411), after the whisper-window routing that compares arg1 with the English of
---   ERR_CHAT_PLAYER_NOT_FOUND_S / ERR_FRIEND_ONLINE_SS / ERR_FRIEND_OFFLINE_S (:388–405) and after the message filters
+--   chatframeoverrides.lua:413–416), after the whisper-window routing that compares arg1 with the English of
+--   ERR_CHAT_PLAYER_NOT_FOUND_S / ERR_FRIEND_ONLINE_SS / ERR_FRIEND_OFFLINE_S (:393–410) and after the message filters
 --   (Blizzard's battleground roll-up matches English, battlegroundchatfilters.lua). Blizzard's Lua adds its own with
 --   ChatFrameUtil.AddSystemMessage / DisplaySystemMessage*: the same call with ChatTypeInfo.SYSTEM.id
 --   (chatframeutil.lua:297–315). Each chat frame's AddMessage is post-hooked on the instance, so all of that has
@@ -252,7 +252,7 @@ local function eachFrame(fn)
 end
 
 -- The prefix the chat frame puts before a player's (or an NPC's, UI/Speech) line: format(_G["CHAT_" .. type ..
--- "_GET"] .. message, pflag .. name, name) (chatframeutil.lua:352–355, chatframeoverrides.lua:640–644). The words of
+-- "_GET"] .. message, pflag .. name, name) (chatframeutil.lua:352–355, chatframeoverrides.lua:645–663). The words of
 -- the prefix are swapped in the finished line; the name, the link around it, the timestamp and the message are left
 -- exactly as the client wrote them. A prefix with a channel link ("[Party]") is not listed and stays English.
 ChatSystem.PREFIXED_TYPES = { "SAY", "YELL", "WHISPER", "WHISPER_INFORM", "BN_WHISPER", "BN_WHISPER_INFORM", "AFK",

@@ -9,7 +9,7 @@
 --   blizzard_sharedxmlbase/callbackregistry.lua:112–215,
 --   camelot/classtalents/blizzard_classtalentsframe.{lua,xml}, tabsystemtemplates.lua:167–207,
 --   blizzard_sharedtalentui/blizzard_talentdisplay.lua:100–125,
---   blizzard_uipanels_game/camelot/skillsframe.lua:218–316, camelot/characterframe.lua:832–951.
+--   blizzard_uipanels_game/camelot/skillsframe.lua:219–317, camelot/characterframe.lua:841–966.
 -- A client write is stored as `fs.text = …` (not counted in fs.calls), so a spec can tell the addon's writes apart.
 -- Requires wow_stub (Stub.install + Stub.installTooltipAPI first). Globals are set and read through _G.
 local Stub = require("tests.lua.spec.wow_stub")
@@ -388,8 +388,8 @@ local function installSkills()
   end
   detail.rowPools = pools
   PS.rowPools = pools
-  function detail.LayoutRows(self) self.Content:Layout() end -- characterframe.lua:939–941
-  function detail.SetEmpty(self, text) -- :942–951
+  function detail.LayoutRows(self) self.Content:Layout() end -- characterframe.lua:947–949
+  function detail.SetEmpty(self, text) -- :951–960
     self.rowPools:ReleaseAll()
     self:LayoutRows()
     self.Title.text = ""
@@ -402,7 +402,7 @@ local function installSkills()
     row.Label.text = text
     row:SetHeight(math.max(1, row.Label:GetStringHeight()))
   end
-  -- SkillDetailFrameMixin:Refresh (skillsframe.lua:255–316), registered by reference: only SetEmpty / LayoutRows are
+  -- SkillDetailFrameMixin:Refresh (skillsframe.lua:256–317), registered by reference: only SetEmpty / LayoutRows are
   -- reached by method lookup
   function detail.Refresh(self)
     local s = PS.skill

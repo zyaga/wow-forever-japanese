@@ -17,7 +17,7 @@
 -- ShardTransferImminentFrame (blizzard_socialtoast/socialtoast.xml:72): ShardTransferImminentMixin:OnUpdate rewrites
 --   Text every frame while shown with SHARD_TRANSFER_COUNTDOWN_MESSAGE, then SHARD_TRANSFER_REFRESH_MESSAGE, with the
 --   seconds or minutes left and the SECONDS / MINUTES unit word, and SHARD_TRANSFER_ANYTIME once the time is up
---   (socialtoast.lua:63-85). Its OnUpdate script is post-hooked like TimeAlertFrame's; the unit word is an entry, put
+--   (socialtoast.lua:67-91). Its OnUpdate script is post-hooked like TimeAlertFrame's; the unit word is an entry, put
 --   in as its Japanese. Its minimize button shows only an atlas.
 -- The toast's click-through tooltip (TooltipFrame, :84–85) repeats the broadcast message: player text, not touched.
 local _, WFJ = ...
@@ -57,7 +57,7 @@ function BNetToast.onAlert()
   return WFJ.Labels.show(SURFACE, "alert", get("alertText"), nil, ALERT)
 end
 
--- The client sizes the toast to its English each frame, before this hook writes the Japanese (socialtoast.lua:84):
+-- The client sizes the toast to its English each frame, before this hook writes the Japanese (socialtoast.lua:90):
 -- the same height rule, applied to the line now shown.
 local function refitShard()
   local shard, fs = get("shard"), get("shardText")

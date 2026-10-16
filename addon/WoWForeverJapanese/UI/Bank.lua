@@ -4,7 +4,7 @@
 -- and the AutoDepositFrame, is excluded for camelot, :140). The global BankFrame:
 --   static: "Item Slots" / "Bag Slots", unnamed FontString regions of BankFrame (Labels.region by the client's
 --     English); BankFrame.BagCost (COSTS_LABEL) and BankFrame.BagText (BAGSLOTTEXT_COLON) (camelot/bankframe.xml:
---     62–75); BankFrame.BankPanel.PurchaseButton (BANKSLOTPURCHASE, :108); the money frame's Withdraw / Deposit
+--     62–77); BankFrame.BankPanel.PurchaseButton (BANKSLOTPURCHASE, :109); the money frame's Withdraw / Deposit
 --     buttons (mainline/bankframetemplates.xml:205, 214; their Refresh never writes text, bankframetemplates.lua:
 --     1401–1435); the purchase prompt's TabCost / PurchaseButton (xml:541–556); the tab settings menu's three headers
 --     (xml:61–80). The prompt's title and body are server data, never shown.
@@ -17,8 +17,8 @@
 --   help tooltips: BankPanel.AutoSortButton (SetText(BAG_CLEANUP_BANK), lua:1831–1837); pooled buttons walked after
 --     their writer (never by index): BankFrame:RefreshBagButtons → itemButtonBagPool (tooltipText = BANK_BAG /
 --     BANK_BAG_PURCHASE, OnEnter SetText(self.tooltipText) unless SetBagItem shows the bag, camelot/bankframe.lua:
---     136–190, 330–343); BankFrame:RefreshPageTabs → bankPageTabPool (tooltipText = PAGE_NUMBER, SidePanelTabButton
---     OnEnter SetText, :104–134, 285–299; blizzard_sharedxml/mainline/shareduipaneltemplates.lua:406–420);
+--     136–191, 329–342); BankFrame:RefreshPageTabs → bankPageTabPool (tooltipText = PAGE_NUMBER, SidePanelTabButton
+--     OnEnter SetText, :104–134, 284–298; blizzard_sharedxml/mainline/shareduipaneltemplates.lua:408–422);
 --     BankPanel:RefreshBankTabs → bankTabPool (only when not C_Bank.ShouldUsePlayerBagsInBank(), lua:673–675, 964;
 --     line 1 is the player's tab name, so only BANK_TAB_TOOLTIP_CLICK_INSTRUCTION, :329–338). The tab's
 --     deposit settings lines between them (AddBankTabSettingsToTooltip, mainline/bankframetemplates.lua:311–326):

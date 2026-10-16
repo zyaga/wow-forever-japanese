@@ -1,7 +1,7 @@
 -- UI/CombatFeedback.lua: the combat words over the player and pet portraits on Forever (surface "combatfeedback",
 -- area "ui", ADR-016). Blizzard_FrameXML loads mainline/combatfeedback.lua on camelot; its one writer is the
 -- global CombatFeedback_OnCombatEvent(self, event, flags, amount, type) (combatfeedback.lua:26–95), called by name
--- from the unit frames' UNIT_COMBAT handlers (blizzard_unitframe/mainline/playerframe.lua:122, petframe.lua:109), so
+-- from the unit frames' UNIT_COMBAT handlers (blizzard_unitframe/mainline/playerframe.lua:122, petframe.lua:113), so
 -- a post-hook on the global sees every write. It sets `self.feedbackText` (CombatFeedback_Initialize, :21–24: the
 -- player's HitIndicator.HitText, the pet's PetHitIndicator) to a damage or heal number (BreakUpLargeNumbers, never a
 -- dictionary word), to COMBAT_TEXT_BLOCK_REDUCED "%s (Block)" around that number (:51), or to a CombatFeedbackText

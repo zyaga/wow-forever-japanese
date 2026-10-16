@@ -55,7 +55,7 @@ local UI = {
   XP_TEXT_BANKED_XP_HEADER = { "Banked XP", "蓄積経験値" },
   TRIAL_CAP_BANKED_XP_TOOLTIP = { "You have earned XP that exceeds your level cap.  Buy the game to apply your banked "
     .. "XP.", "レベル上限を超える経験値を獲得しました。ゲームを購入すると蓄積した経験値が反映されます。" },
-  -- the game menu (Forever blizzard_gamemenu/shared/gamemenuframe.lua:181, 192, 225, 268–271, 284–286)
+  -- the game menu (Forever blizzard_gamemenu/shared/gamemenuframe.lua:178, 189, 222, 265–268, 281–284)
   GAMEMENU_EXTERNALEVENT = { "Activities", "アクティビティ" },
   GAMEMENU_OPTIONS = { "Options", "オプション" },
   GAME_MENU_SHOW_REWARDS = { "Rewards", "報酬" },
@@ -180,11 +180,11 @@ describe("the Forever micro menu and game menu", function()
 
   it("every disabled reason is walked with its title, including a function reason", function()
     local ej, legacy = MM.buttons.EJMicroButton, MM.buttons.LegacyMicroButton
-    ej.enabled, ej.disabledTooltip = false, en("FEATURE_NOT_YET_AVAILABLE") -- lua:1753
+    ej.enabled, ej.disabledTooltip = false, en("FEATURE_NOT_YET_AVAILABLE") -- lua:1797
     MM.hover(ej)
     assert.are.equal(ja("FEATURE_NOT_YET_AVAILABLE"), left(2):GetText())
     MM.leave(ej)
-    legacy.enabled, legacy.disabledTooltip = false, en("LEGACY_MICRO_BUTTON_LOCKED_TOOLTIP") -- lua:1071
+    legacy.enabled, legacy.disabledTooltip = false, en("LEGACY_MICRO_BUTTON_LOCKED_TOOLTIP") -- lua:1097
     MM.hover(legacy)
     assert.are.equal(ja("LEGACY_MICRO_BUTTON_LOCKED_TOOLTIP"), left(2):GetText())
   end)

@@ -1,5 +1,5 @@
 -- UI/Gamepad.lua over the gamepad-mode HUD replayed from camelot's Blizzard_GamepadSharedUtility /
--- Blizzard_Gamepad (inputprompts.lua:34–42, inputlegendpromptgroup.lua:103–130,
+-- Blizzard_Gamepad (inputprompts.lua:34–42, inputlegendpromptgroup.lua:103–132,
 -- gamepadpersistentinputlegend.lua:133–168,
 -- gamepadradial.lua:883–925 / 1093–1109 / 1181–1209, consoletemplates.lua:135–147, framereformutility.lua:138–171) and
 -- UI/MenusUntagged's gamepad "More Actions" menu recognition (promptedbinding.lua:126–181).

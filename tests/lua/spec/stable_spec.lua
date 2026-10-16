@@ -1,5 +1,5 @@
 -- The pet stable on Forever: UI/Stable.lua over a PetStableFrame replayed from camelot
--- blizzard_stableui/camelot/blizzard_stableui.xml (:63–262) and .lua (OnShow :50–54, SelectPet :264–295, slot Update
+-- blizzard_stableui/camelot/blizzard_stableui.xml (:63–297) and .lua (OnShow :50–54, SelectPet :264–295, slot Update
 -- :348–373, slot OnEnter :312–319). Pet names and families stay English; the loyalty line is
 -- format(PET_LOYALTY_TEMPLATE, rank, level) (SelectPet, lua:281): the template and a PetLoyalty row's rank in Japanese,
 -- the level number kept.

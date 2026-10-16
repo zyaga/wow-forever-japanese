@@ -1,10 +1,10 @@
 -- The Forever (camelot) character window: CharacterFrame's icon mode tabs, the paperdoll level line,
 -- the stat-pane ScrollBoxes, an equipment slot, and ReputationFrame (its list ScrollBox and its detail side pane),
 -- replaying the writes of the extracted 1.60.1 source:
---   blizzard_uipanels_game/camelot/characterframe.lua:832–951 (CharacterFrameSidePaneMixin), 1049–1298 (stat pane),
+--   blizzard_uipanels_game/camelot/characterframe.lua:841–966 (CharacterFrameSidePaneMixin), 1049–1298 (stat pane),
 --   characterframe.xml:170–234, 574–603; camelot/paperdollframe.lua:497–558 (level lines), 2181–2221 (slot and stat
---   tooltips), 2428–2437 (PaperDollFrame_SetLabelAndText); blizzard_framexmlutil/itemutil.lua:395–414;
---   blizzard_sharedxml/mainline/shareduipaneltemplates.lua:406–420 (mode tab tooltip);
+--   tooltips), 2428–2437 (PaperDollFrame_SetLabelAndText); blizzard_framexmlutil/itemutil.lua:448–485;
+--   blizzard_sharedxml/mainline/shareduipaneltemplates.lua:408–422 (mode tab tooltip);
 --   camelot/reputationframe.lua:274–435, 509–531, 650–677, 735–819, 875–930, reputationframe.xml:3–367.
 -- A client write is stored as `fs.text = …` (not counted in fs.calls), so a spec can tell the addon's writes apart.
 -- Requires wow_stub (Stub.install + Stub.installTooltipAPI first). Globals are set and read through _G.
@@ -80,7 +80,7 @@ local function installPaperDoll()
     _G.PetCharacterLevelText.text = text
   end
   _G.PaperDollFrame_UpdateStats = function() end -- the ScrollBox path is driven by RC.setStats
-  -- an equipment slot: an empty slot's tooltip is SetText(<SLOT>SLOT) (itemutil.lua:395–414)
+  -- an equipment slot: an empty slot's tooltip is SetText(<SLOT>SLOT) (itemutil.lua:448–485)
   local slot = CreateFrame("Button", "CharacterHeadSlot")
   RC.headItem = nil
   slot:SetScript("OnEnter", function(self)
@@ -125,7 +125,7 @@ local function installEquipmentManager()
   RC.setRows = {}
   local popup = CreateFrame("Frame", "GearManagerPopupFrame")
   popup.BorderBox = {
-    EditBoxHeaderText = Stub.fontString(G("GEARSETS_POPUP_TEXT")), -- OnLoad (shareduipaneltemplates.lua:1844)
+    EditBoxHeaderText = Stub.fontString(G("GEARSETS_POPUP_TEXT")), -- OnLoad (shareduipaneltemplates.lua:1861)
     IconSelectorEditBox = Stub.fontString(""),
     SelectedIconArea = { SelectedIconText = { SelectedIconDescription = Stub.fontString("") } },
   }
@@ -133,7 +133,7 @@ local function installEquipmentManager()
   local function describe(text)
     popup.BorderBox.SelectedIconArea.SelectedIconText.SelectedIconDescription.text = text
   end
-  function popup.SetSelectedIconText() -- shareduipaneltemplates.lua:1967–1975
+  function popup.SetSelectedIconText() -- shareduipaneltemplates.lua:1984–1994
     describe(RC.iconInList and G("ICON_SELECTION_CLICK") or G("ICON_SELECTION_NOTINLIST"))
   end
   popup.IconSelector = { selectedCallback = function() describe(G("ICON_SELECTION_CLICK")) end }
@@ -153,7 +153,7 @@ local function installTitlePane()
 end
 
 -- Replays PaperDollTitlesPane_Update → SetDataProvider: the first row is PLAYER_TITLE_NONE, the rest are the
--- character's titles (paperdollframe.lua:3243–3305). → the rows
+-- character's titles (paperdollframe.lua:3280–3342). → the rows
 function RC.setTitles(names)
   local box = _G.PaperDollFrame.TitleManagerPane.ScrollBox
   local list = { G("PLAYER_TITLE_NONE"), unpack(names) }
@@ -259,7 +259,7 @@ local function installReputation()
   end
   detail.rowPools = pools
   RC.paneRows = pools
-  -- CharacterFrameSidePaneMixin (characterframe.lua:850–951), copied onto the instance
+  -- CharacterFrameSidePaneMixin (characterframe.lua:841–966), copied onto the instance
   function detail.SetPaneTitle(self, title, subtitle)
     self.Title.text = title or ""
     self.Subtitle.text = subtitle or ""

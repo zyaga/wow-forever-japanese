@@ -216,7 +216,7 @@ wdb-gameobjectcache.*  names  # object names
 wdb-petitioncache.*  internal  # player-written guild charter names and text, never game text
 
 # Shown nowhere in the Forever client (searched in the client's own UI source, 1.60.1.70170)
-itemclass.f0  no-display  # the camelot auction data (blizzard_auctionhouseui/camelot/blizzard_auctiondata.lua) uses GlobalStrings categories; the class-only branch (shared/blizzard_auctiondata.lua:89-90) is never reached
+itemclass.f0  no-display  # the camelot auction data (blizzard_auctionhouseui/camelot/blizzard_auctiondata.lua) uses GlobalStrings categories; the class-only branch (shared/blizzard_auctiondata.lua:93-94) is never reached
 itembagfamily.f0  no-display  # Lua reads only the family number (C_Container.GetContainerNumFreeSlots); no reader prints the name
 traitcost.f0  no-display  # talent costs print CurrencyTypes text (blizzard_sharedtalentui/blizzard_sharedtalentframe.lua:1837-1849), not TraitCost
 traitcurrencysource.f0  no-display  # only C_ProfSpecs.GetSourceTextForPath reads it (blizzard_professions/blizzard_professionsspecializationstemplates.lua:121); camelot's profession frame has no specialization page
@@ -225,7 +225,7 @@ gmsurveyquestions.f0  no-display  # no GM survey frame; surveys open on the web 
 gmsurveyanswers.f0  no-display  # no GM survey frame (blizzard_wowsurveyui/blizzard_wowsurveyui.lua:12)
 barbershopstyle.f0  no-display  # legacy table: the barber shop reads ChrCustomization only (C_BarberShop.GetAvailableCustomizations)
 chrcustomization.f0  no-display  # no reader; option labels come from ChrCustomizationOption
-gametips.f0  no-display  # loading screen tips are drawn by the client, not by a Lua frame an addon can reach (only the showLoadingScreenTips CVar, blizzard_settingsdefinitions_frame/camelot/interfaceoverrides.lua:63)
+gametips.f0  no-display  # loading screen tips are drawn by the client, not by a Lua frame an addon can reach (only the showLoadingScreenTips CVar, blizzard_settingsdefinitions_frame/camelot/interfaceoverrides.lua:67)
 battlemasterlist.f2  no-display  # PvP UI descriptions; blizzard_pvpui.toc excludes camelot
 battlemasterlist.f3  no-display  # PvP UI descriptions; blizzard_pvpui.toc excludes camelot
 map.f2  no-display  # battleground short descriptions read only by blizzard_pvpui, which camelot does not load

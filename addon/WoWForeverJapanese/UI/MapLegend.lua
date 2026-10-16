@@ -13,7 +13,7 @@
 -- - The panel's own heading: BorderFrame-level TitleText = MAP_LEGEND_FRAME_LABEL (maplegendframe.xml:41).
 -- - Tooltips: MapLegendButtonMixin:OnEnter builds the entry's name and MAP_LEGEND_<entry>_TOOLTIP on GameTooltip with
 --   the button as owner (maplegendframe.lua:37–44); the tab's tooltip is its tooltipText MAP_LEGEND_FRAME_LABEL
---   (SidePanelTabButtonMixin:OnEnter, blizzard_sharedxml/mainline/shareduipaneltemplates.lua:406–420). Each is a
+--   (SidePanelTabButtonMixin:OnEnter, blizzard_sharedxml/mainline/shareduipaneltemplates.lua:408–422). Each is a
 --   help-tooltip owner restricted to the legend's keys.
 -- No name appears on this panel; every widget is still restricted to the legend's own keys.
 local _, WFJ = ...

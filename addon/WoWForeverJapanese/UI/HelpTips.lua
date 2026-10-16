@@ -40,20 +40,20 @@ local Compat = WFJ.Compat
 HelpTips.KEYS = { "ACCOUNT_WIDE_REPUTATION_TUTORIAL", "REPUTATION_EXALTED_PLUS_HELP", "RAF_REWARD_TUTORIAL_TEXT",
   "TALENT_MICRO_BUTTON_TALENT_TUTORIAL", "TALENT_MICRO_BUTTON_UNSPENT_TALENTS", "TUTORIAL_HUD_REVAMP_BAG_CHANGES",
   "WORLD_MAP_TUTORIAL2", "WORLD_MAP_TUTORIAL5", "CLUB_FINDER_NEW_COMMUNITY_JOINED",
-  -- the Communities window's tutorials (blizzard_communities/communitiesframe.lua:1197–1297)
+  -- the Communities window's tutorials (blizzard_communities/communitiesframe.lua:1230–1330)
   "CLUB_FINDER_TUTORIAL_ROSTER", "CLUB_FINDER_TUTORIAL_APPLICANT_LIST", "CLUB_FINDER_TUTORIAL_POSTING",
   "CROSS_FACTION_COMMUNITIES_HELPTIP", "CLUB_FINDER_TUTORIAL_LANGUAGE_FILTER", "CLUB_FINDER_TUTORIAL_GUILD_LINK",
   -- the level-1 tutorials of Blizzard_Tutorials: the interact key (its binding and a count filled in,
   -- blizzard_tutorials_frame_tutorials.lua:32, 104) and super-tracking (blizzard_tutorialsupertrack.lua:57); shown only
   -- while the tutorials are on (in-game check)
   "INTERACT_KEY_TUTORIAL", "INTERACT_KEY_TUTORIAL_NO_INTERACT_KEY_ASSIGNED", "TUTORIAL_SUPERTRACK_STEP_1",
-  -- every other Forever window's HelpTip:Show callouts: Edit Mode (editmodemanager.lua:2959–2985), the auction
+  -- every other Forever window's HelpTip:Show callouts: Edit Mode (editmodemanager.lua:2961–2987), the auction
   -- house (…auctionhousesellframe.lua:509), the
   -- world map's completed-quests filter (blizzard_worldmaptemplates.lua:404–425; camelot's
   -- CanShowRefreshAccountCompletedQuestFilterTutorial returns false, blizzard_worldmap/camelot/
   -- blizzard_worldmaptemplates.lua:10–12, so Forever never shows it), currencies (camelot
-  -- blizzard_tokenui.lua:425–445), the assisted-combat button (actionbutton.lua:1981–2020), loot history
-  -- (loothistory.lua:552–563), the chat language button (chatframemenubutton.lua:3), voice (channelframe.lua:235–245;
+  -- blizzard_tokenui.lua:425–445), the assisted-combat button (actionbutton.lua:1986–2025), loot history
+  -- (loothistory.lua:552–563), the chat language button (chatframemenubutton.lua:3), voice (channelframe.lua:472–488;
   -- voicechattranscriptionbutton.lua:210–220), the queue eye (queuestatusframe.lua:333–345)
   "EDIT_MODE_HELPTIPS_LAYOUTS", "EDIT_MODE_HELPTIPS_SELECT_FRAMES", "EDIT_MODE_HELPTIPS_SHOW_HIDDEN_FRAMES",
   "EDIT_MODE_HELPTIPS_ADVANCED_OPTIONS", "AUCTION_HOUSE_UNDERCUT_TUTORIAL", "ACCOUNT_COMPLETED_QUESTS_FILTER_TUTORIAL",
@@ -61,10 +61,10 @@ HelpTips.KEYS = { "ACCOUNT_WIDE_REPUTATION_TUTORIAL", "REPUTATION_EXALTED_PLUS_H
   "LOOT_HISTORY_ROLL_TUTORIAL", "NEW_SPOKEN_LANGUAGE_HELPTIP", "TUTORIAL_VOICE", "SPEECH_TO_TEXT_TUTORIAL",
   "TUTORIAL_HUD_REVAMP_LFG_QUEUE_CHANGES",
   -- collections and the wardrobe (blizzard_toybox.lua:34, 183, 378; blizzard_heirloomcollection.lua:644;
-  -- blizzard_wardrobe.lua:575–584, 1148–1165, 1552)
+  -- blizzard_wardrobe.lua:575–590, 1150–1172, 1554)
   "TOYBOX_FAVORITE_HELP", "TOYBOX_MOUSEWHEEL_PAGING_HELP", "HEIRLOOMS_JOURNAL_TUTORIAL_UPGRADE",
   "TRANSMOG_SETS_TAB_TUTORIAL", "WARDROBE_TRACKING_TUTORIAL", "WARDROBE_SHORTCUTS_TUTORIAL_1",
-  -- the transmogrifier (blizzard_transmog.lua:377, 390, 798, 1435–1471)
+  -- the transmogrifier (blizzard_transmog.lua:556, 569, 1041, 1715–1751)
   "TRANSMOG_OUTFITS_HELPTIP", "TRANSMOG_SETS_HELPTIP", "TRANSMOG_CUSTOM_SETS_HELPTIP",
   "TRANSMOG_CUSTOM_SETS_MIGRATION_HELPTIP", "TRANSMOG_SITUATIONS_HELPTIP", "TRANSMOG_WEAPON_OPTIONS_HELPTIP",
   "TRANSMOG_TRIAL_OF_STYLE_HELPTIP",

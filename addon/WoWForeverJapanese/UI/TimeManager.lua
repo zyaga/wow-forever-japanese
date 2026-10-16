@@ -2,7 +2,7 @@
 -- "timemanager", area "ui", ADR-016). Blizzard_TimeManager is load-on-demand by its TOC, but `camelot` loads
 -- it at PLAYER_LOGIN (blizzard_game/shared/eventimplementation.lua:175–178 → TimeManager_LoadUI), so it is waited for
 -- through WFJ.LoadOnDemand.when. Entry points: a click on the minimap clock (TimeManagerClockButton_OnClick →
--- TimeManager_Toggle, blizzard_timemanager/mainline/blizzard_timemanager.lua:376–388), the /stopwatch command
+-- TimeManager_Toggle, blizzard_timemanager/mainline/blizzard_timemanager.lua:375–387), the /stopwatch command
 -- (blizzard_chatframebase/shared/slashcommands.lua:1255–1258) and the window's own "Show Stopwatch" check.
 -- TimeManagerFrame is a ButtonFrameTemplate but never calls SetTitle: its title is an unnamed FontString
 -- text="TIMEMANAGER_TITLE" (blizzard_timemanager.xml:25), found by Labels.region.
@@ -16,7 +16,7 @@
 --   TIMEMANAGER_AM / TIMEMANAGER_PM, lua:218–219) follows Labels.dropdown. The popup's entries are the menu system's.
 --   The hour and minute dropdowns hold digits only.
 -- Help tooltip, owner TimeManagerClockButton (TimeManagerClockButton_UpdateTooltip, lua:493–510, re-run by the
---   button's one-second ticker while hovered, lua:356–361, 396–399): TIMEMANAGER_ALARM_TOOLTIP_TURN_OFF, or
+--   button's one-second ticker while hovered, lua:355–360, 395–398): TIMEMANAGER_ALARM_TOOLTIP_TURN_OFF, or
 --   GameTime_UpdateTooltip's TIMEMANAGER_TOOLTIP_TITLE / _REALMTIME / _LOCALTIME (blizzard_framexmlutil/
 --   gametimeutil.lua:95–107) then GAMETIME_TOOLTIP_TOGGLE_CLOCK. The alarm message the player typed is the first
 --   line while the alarm fires: the owner is restricted to those keys, so it is never matched.

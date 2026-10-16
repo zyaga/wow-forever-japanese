@@ -19,7 +19,7 @@
 --     SHOW_FACTION_ON_MAINSCREEN, xml:266, 300, 328) and the View Renown button (VIEW_RENOWN_BUTTON_LABEL, xml:346)
 --     are static; the three checkboxes own help tooltips (lua:875–930). The description (ADR-042) is the
 --     Faction table's text: SetDescription(description) writes the Description ScrollingFont (lua:758, 771;
---     characterframe.lua:873–885), hooked on the instance and matched against FactionDescription:* only.
+--     characterframe.lua:874–886), hooked on the instance and matched against FactionDescription:* only.
 --   The filter dropdown is hidden on camelot (ShouldShowFilters returns false, lua:81–91).
 local _, WFJ = ...
 local Reputation = {}

@@ -38,7 +38,7 @@ local UI = {
   RAID = { "Raid", "レイド" }, KEY_SPACE = { "Space", "スペース" }, PREVIEW = { "Preview", "プレビュー" },
   -- an option's tooltip, shown inside the "<label>: <tooltip>" line
   VIDEO_OPTIONS_SHADOW_QUALITY_LOW = { "Blob shadows.", "簡易的な影。" },
-  -- the muted-account paragraph (social.lua:21–29) and the recommended-value line (blizzard_settings.lua:468)
+  -- the muted-account paragraph (social.lua:21–29) and the recommended-value line (blizzard_settings.lua:472)
   OPTION_TOOLTIP_DISABLE_CHAT = { "Disables chat. You will not be able to send or receive messages.",
     "チャットを無効にします。メッセージの送受信ができなくなります。" },
   OPTION_TOOLTIP_DISABLE_CHAT_ACCOUNT_MUTE = { "To change this, first unmute your account.",
@@ -49,7 +49,7 @@ local UI = {
   CAA_SAY_PLAYER_RESOURCE_TOOLTIP = { "Says your %s when it crosses certain percentages. This setting is saved per "
     .. "talent specialization.", "%sが一定の割合を超えると読み上げます。この設定は専門化ごとに保存されます。" },
   GX_ADAPTER_EXTERNAL = { "%s (External)", "%s(外部)" },
-  -- new on 1.60.1.70009: the Gamepad page (gamepad.lua:214, 275–280), a binding (bindings_camelot.xml:1226)
+  -- new on 1.60.1.70009: the Gamepad page (gamepad.lua:214, 275–280), a binding (bindings_camelot.xml:1222)
   -- and the chat option's age-restriction paragraph (social.lua:24–27)
   TARGETING_HEADER = { "Targeting", "ターゲティング" },
   GAMEPAD_SWAP_TARGET_MODIFIERS = { "Swap Target Modifier Sides", "ターゲット修飾キーの左右を入れ替え" },

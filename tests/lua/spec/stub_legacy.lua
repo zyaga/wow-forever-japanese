@@ -1,7 +1,7 @@
 -- A camelot-shaped Legacy window, replayed from blizzard_legacysystem: LegacySystemFrame
 -- (blizzard_legacysystem.xml:4–47, PortraitFrameTemplate), its three pages and their writers
--- (blizzard_legacyrewardtrack.lua:27–36, blizzard_legacychallenges.lua:31–37, 250–258, blizzard_legacytree.lua:
--- 24–26, 68–81, 210–223, 299–318), the challenge cards (blizzard_legacysystemtemplates.xml:157–283) and the tree's
+-- (blizzard_legacyrewardtrack.lua:24–29, blizzard_legacychallenges.lua:39–55, 359–367, blizzard_legacytree.lua:
+-- 24–26, 68–81, 210–223, 299–318), the challenge cards (blizzard_legacysystemtemplates.xml:158–287) and the tree's
 -- spell search (blizzard_spellsearch/blizzard_spellsearchtemplates.lua:94–183; blizzard_sharedtalentui/
 -- blizzard_sharedtalentbuttontemplates.lua:10–37). A client write is stored as `fs.text = …`.
 local Stub = require("tests.lua.spec.wow_stub")
@@ -225,7 +225,7 @@ function L.load(state)
     _G.GameTooltip:SetOwner(self)
     _G.GameTooltip:SetText(string.format(G("LEGACY_POINTS_SEASONAL_CAP"), _G.LegacySystem.GetCurrencyInfo().cap))
   end
-  -- 1.60.1.70170 (blizzard_legacysystemutil.lua:55-73): OnLoad registers the method itself, so a later hook on the
+  -- 1.60.1.70425 (blizzard_legacysystemutil.lua:62-80): OnLoad registers the method itself, so a later hook on the
   -- frame's RefreshText field never runs; UpdateCurrencyInfo fires every registered method
   local callbacks = {}
   L.currency = state

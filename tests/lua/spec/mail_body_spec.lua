@@ -1,5 +1,5 @@
 -- ADR-042: the open letter's body, UI/Mail.lua over Forever's Blizzard_MailFrame (stub_mail.lua, M.installCamelot).
--- OpenMailFrame:Update writes OpenMailBodyText:SetText(GetInboxText(id), true) (mailframe.lua:776–777), a SimpleHTML
+-- OpenMailFrame:Update writes OpenMailBodyText:SetText(GetInboxText(id), true) (mailframe.lua:781–782), a SimpleHTML
 -- with no GetText. A letter that is a MailBody row (MailTemplate.Body_lang) shows its Japanese; the server sent it with
 -- `$N` filled with the player's name and `$B` as line breaks, and the Japanese gets the name back. A letter a player
 -- wrote is never touched.
@@ -62,7 +62,7 @@ describe("the open letter's body on Forever", function()
     function b.GetFont(self, tag) local f = self.fonts[tag]; return f[1], f[2], f[3] end
     function b.SetFont(self, tag, path, size, flags) self.fonts[tag] = { path, size, flags } end
     local update = _G.OpenMailFrame.Update
-    function _G.OpenMailFrame.Update(self) -- mailframe.lua:776–777, after the stub's other writes
+    function _G.OpenMailFrame.Update(self) -- mailframe.lua:781–782, after the stub's other writes
       update(self)
       _G.OpenMailBodyText:SetText(MailStub.letter.body or "", true)
     end

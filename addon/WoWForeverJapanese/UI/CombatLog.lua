@@ -8,7 +8,7 @@
 -- CombatLogQuickButtonFrame_CustomAdditionalFilterButton.
 -- Never touched: the quick buttons (CombatLogQuickButtonFrameButton<N>): each shows a filter's name, which the
 -- player edits and the client saves (blizzard_combatlog.lua:1594; blizzard_chatframe/mainline/chatconfigframe.xml:
--- 1366–1390), and the bar is laid out from the width of that text (lua:1595–1598). Combat log lines are chat lines.
+-- 1366–1390), and the bar is laid out from the width of that text (lua:1604–1607). Combat log lines are chat lines.
 local _, WFJ = ...
 local CombatLog = {}
 WFJ.CombatLog = CombatLog

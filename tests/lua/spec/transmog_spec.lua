@@ -1,5 +1,5 @@
 -- The transmogrifier window on Forever: UI/Transmog.lua over a TransmogFrame replayed from
--- blizzard_transmog/blizzard_transmog.xml (:45–799) and .lua (:114, :1064–1065, :1239, :1765–1771, :2058–2059,
+-- blizzard_transmog/blizzard_transmog.xml (:45–802) and .lua (:114, :1064–1065, :1239, :1765–1771, :2058–2059,
 -- :2128–2158, :2232–2336), with the shared TabSystem's UpdateTabText (tabsystemtemplates.lua:192–196),
 -- load-on-demand in both load orders. Appearance and outfit names stay English.
 local Stub = require("tests.lua.spec.wow_stub")
@@ -58,7 +58,7 @@ local function build()
     ["OutfitCollection.PurchaseOutfitButton"] = { button = "" },
     ["OutfitCollection.ShowEquippedGearSpellFrame.Label"] = en("TRANSMOG_SHOW_EQUIPPED_GEAR"),
   })
-  -- the situations' pooled rows: Refresh writes each dropdown's default text, red-wrapped (lua:3104–3120)
+  -- the situations' pooled rows: Refresh writes each dropdown's default text, red-wrapped (lua:3417–3431)
   local situations = frame.WardrobeCollection.TabContent.SituationsFrame
   situations.SituationFramePool = C.pool(function()
     local row = CreateFrame("Frame")
@@ -79,7 +79,7 @@ local function build()
   end
   local items = frame.WardrobeCollection.TabContent.ItemsFrame
   items.slot = "HEADSLOT"
-  function items.RefreshActiveSlotTitle(self) -- _G[slot name], or the "$slot ($option)" composite (lua:1823–1846)
+  function items.RefreshActiveSlotTitle(self) -- _G[slot name], or the "$slot ($option)" composite (lua:2128–2158)
     self.ActiveSlotTitle.text = self.composite or en(self.slot)
   end
   function items.RefreshDisplayTypeButtons(self)
@@ -189,7 +189,7 @@ C.suite(getfenv(1), {
     end },
   },
   name = function(frame, WFJ)
-    -- an option set: "$slot ($option)" filled with an option name stays as written (lua:1842–1846)
+    -- an option set: "$slot ($option)" filled with an option name stays as written (lua:2153–2157)
     local items = frame.WardrobeCollection.TabContent.ItemsFrame
     items.composite = "Head (Sets)"
     items:RefreshActiveSlotTitle()

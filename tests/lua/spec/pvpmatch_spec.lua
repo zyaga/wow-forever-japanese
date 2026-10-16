@@ -1,7 +1,7 @@
 -- The battleground scoreboard and match results on Forever: UI/PvPMatch.lua over PVPMatchResults /
 -- PVPMatchScoreboard replayed from blizzard_pvpmatch/pvpmatchresults.lua (OnLoad :40–106, Init :108–186, OnUpdate
 -- :378–387, DisplayRewards :257–368, the rating tooltip :529–557), pvpmatchscoreboard.lua (OnLoad :9–38) and
--- pvpmatchtable.lua (ConstructPVPMatchTable :340–481, PVPHeaderMixin:OnEnter :44–58, the honor-level cell :115–122).
+-- pvpmatchtable.lua (ConstructPVPMatchTable :369–510, PVPHeaderMixin:OnEnter :44–58, the honor-level cell :139–146).
 -- Player, faction, spec and class names stay English. Client writes go to `fs.text`.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
@@ -158,7 +158,7 @@ local function installPvPMatch()
     tb:header(en("SCORE_KILLING_BLOWS"), en("KILLING_BLOW_TOOLTIP_TITLE"), en("KILLING_BLOW_TOOLTIP"))
     if P.deaths then tb:header(en("DEATHS")) end
     tb:header(en("SCORE_DAMAGE_DONE"))
-    if P.flag then -- a stat column (pvpmatchtable.lua:371–386): its name, title and tooltip text
+    if P.flag then -- a stat column (pvpmatchtable.lua:400–415): its name, title and tooltip text
       tb:header("Flag Captures", "Flag Captures", "Number of times you have captured the flag")
       tb:header("Flag Returns", "Flag Returns", "Number of times you have returned the flag") -- no row
       tb:header("Towers Assaulted") -- a PVPStat name

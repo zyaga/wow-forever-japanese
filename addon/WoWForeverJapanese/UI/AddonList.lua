@@ -1,6 +1,6 @@
 -- UI/AddonList.lua: the AddOn List window on Forever (surfaces "addonlist" and "addonlist.static", area "ui",
 -- ADR-016). Blizzard_AddonList is loaded at login; the window opens from the game menu's AddOns button
--- (blizzard_gamemenu/shared/gamemenuframe.lua:230) and from the performance warning
+-- (blizzard_gamemenu/shared/gamemenuframe.lua:227) and from the performance warning
 -- (blizzard_addonperformance/addonperformance.lua:21). UI/AddonListButton.lua only adds this addon's Settings button
 -- to a row; this module shows the window's own fixed words. Every widget is a parentKey of AddonList
 -- (blizzard_addonlist/addonlist.xml:120–235).

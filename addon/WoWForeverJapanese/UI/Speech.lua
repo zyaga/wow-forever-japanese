@@ -5,8 +5,8 @@
 -- Writers [verified: Forever 1.60.1.69913]:
 --   chat: ChatFrameMixin:MessageEventHandler formats CHAT_MSG_MONSTER_* / RAID_BOSS_* with a MessageFormatter
 --     closure: format(CHAT_<TYPE>_GET .. message, pflag .. speaker, speaker), the message's `%s` left for the speaker's
---     name (blizzard_chatframebase/mainline/chatframeoverrides.lua:543–633), then self:AddMessage(line, r, g, b,
---     typeId, accessID, typeID, event, eventArgs, MessageFormatter) (:665–672). The post-hook on each chat frame's
+--     name (blizzard_chatframebase/mainline/chatframeoverrides.lua:554–644), then self:AddMessage(line, r, g, b,
+--     typeId, accessID, typeID, event, eventArgs, MessageFormatter) (:676–683). The post-hook on each chat frame's
 --     AddMessage reads the server's English from eventArgs[1], and the line is rewritten in the history with
 --     TransformMessages to MessageFormatter(<the Japanese>), Blizzard's own pattern for a changed line
 --     (chatframeutil.lua:853–877). Alt / the switch: UI/ChatSystem's visible-line swap (the pair is remembered there).
@@ -239,7 +239,7 @@ local function handle(frame, line, typeId, event, eventArgs, formatter)
   -- line the NPC says to another player (eventArgs[5], the target) may hold that player's name, which would end
   -- up in public data: only lines to no one or to this player are recorded.
   -- A line in a language this character does not know (eventArgs[3], shown as "[Orcish] …") arrives scrambled,
-  -- so only lines in no language or a known one are recorded [verified: chatframeoverrides.lua:581, the language
+  -- so only lines in no language or a known one are recorded [verified: chatframeoverrides.lua:592, the language
   -- header; chatframemenubutton.lua:120, the known languages].
   local guid, target, language = eventArgs[12], eventArgs[5], eventArgs[3]
   local me = Compat.resolve("UnitName")

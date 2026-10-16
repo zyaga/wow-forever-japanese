@@ -19,7 +19,7 @@ end
 
 -- The TOC's AddonCompartmentFunc entries. Blizzard's addon dropdown on the minimap calls these globals by
 -- name with (addonName, buttonName) on a click and (addonName, frame) on hover [verified: Blizzard_Minimap/Mainline/
--- AddonCompartment.lua:77–117]. Left-click opens the fix window, right-click the minimap button's menu.
+-- AddonCompartment.lua:102–142]. Left-click opens the fix window, right-click the minimap button's menu.
 function WFJ_OnAddonCompartmentClick(_, buttonName)
   WFJ.MinimapButton.click(nil, buttonName)
 end

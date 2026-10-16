@@ -7,9 +7,9 @@
 --     DefaultsButton RESET_TO_DEFAULT, CancelButton CANCEL, OkayButton OKAY. Walked at init and on OnShow with
 --     UI/LabelTree.lua, restricted to this window's keys. UseCharacterBindingsButton.Text is the label wrapped in a
 --     colour by concatenation (:124) and matches nothing.
---   QuickKeybindFrame:SetOutputText (:226–228) → OutputText: KEY_BOUND, KEYBINDINGFRAME_MOUSEWHEEL_ERROR,
---     PRIMARY_KEY_UNBOUND_ERROR / KEY_UNBOUND_ERROR (:234–245). Post-hooked.
---   QuickKeybindTooltip (xml:18; QuickKeybindButtonSetTooltip, lua:51–72): the binding's name, the bound key (a key
+--   QuickKeybindFrame:SetOutputText (:228–230) → OutputText: KEY_BOUND, KEYBINDINGFRAME_MOUSEWHEEL_ERROR,
+--     PRIMARY_KEY_UNBOUND_ERROR / KEY_UNBOUND_ERROR (:236–247). Post-hooked.
+--   QuickKeybindTooltip (xml:18; QuickKeybindButtonSetTooltip, lua:52–73): the binding's name, the bound key (a key
 --     name: never in the key set), ESCAPE_TO_UNBIND, NOT_BOUND, PRESS_KEY_TO_BIND, followed by UI/TooltipLines.lua.
 local _, WFJ = ...
 local QuickKeybind = {}

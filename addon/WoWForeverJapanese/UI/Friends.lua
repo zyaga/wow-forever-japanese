@@ -21,21 +21,21 @@
 --     each global up at call time, so the name hook runs): FriendsFrame_UpdateFriendInviteHeaderButton → the header's
 --     FRIEND_REQUESTS (:1631–1637), FriendsFrame_UpdateFriendInviteButton → the pooled invite row's AcceptButton
 --     (text="ACCEPT", friendsframe.xml:98; the Decline button is an icon).
---   who: the camelot FriendsFrame has no who panel. ShowWhoPanel opens LFGParentFrame tab 3 (lua:1358); the list is
+--   who: the camelot FriendsFrame has no who panel. ShowWhoPanel opens LFGParentFrame tab 3 (lua:1359); the list is
 --     LFGWhoListFrame in the load-on-demand Blizzard_GroupFinder_VanillaStyle (its toc: LoadOnDemand 1), set up
 --     through WFJ.LoadOnDemand.when whichever way it loads.
 --     LFGWhoListMixin:UpdateWhoList writes .WhoFrameTotals = format(WHO_FRAME_TOTAL_TEMPLATE, n) .. "  " .. (shown
---     template or "") (mainline/wholist.lua:219–239; the frame's own method, called as self:UpdateWhoList() from
---     OnEvent, :172–175); the two-space join is the `joined` label form (both halves filled, Core/UIStrings);
---     WhoFrameEditBox's Instructions read WHO_LIST_SEARCH_INSTRUCTIONS (wholist.xml:96, SearchBoxTemplate). Rows are
---     pooled ScrollBox frames: each row's .Level (LFG_WHO_LEVEL, wholist.lua:66–67) is shown from the ScrollBox's
---     initialized-frame callback (ScrollUtil.AddInitializedFrameCallback, the raid-info pattern); Name / Race / Class
---     / Variable / GuildName are never touched (restricted to LFG_WHO_LEVEL on .Level only).
+--     template or "") (mainline/wholist.lua:257–276; the frame's own method, called as self:UpdateWhoList() from
+--     OnEvent, :210–213); the two-space join is the `joined` label form (both halves filled, Core/UIStrings);
+--     WhoFrameEditBox's Instructions read WHO_LIST_SEARCH_INSTRUCTIONS (wholist.xml:141–143, SearchBoxTemplate).
+--     Rows are pooled ScrollBox frames: each row's .Level (LFG_WHO_LEVEL, wholist.lua:71–72) is shown from the
+--     ScrollBox's initialized-frame callback (ScrollUtil.AddInitializedFrameCallback, the raid-info pattern); Name /
+--     Race / Class / Variable / GuildName are never touched (restricted to LFG_WHO_LEVEL on .Level only).
 --     Each row is also a help-tooltip owner restricted to WHO_LIST_LEVEL_TOOLTIP (LFGWhoListButtonMixin:OnEnter,
---     wholist.lua:24–32: line 1 the name, line 3 zone / guild / race, never matched).
+--     wholist.lua:31–39: line 1 the name, line 3 zone / guild / race, never matched).
 --     Since 1.60.1.70009 a row's InviteButton is a help-tooltip owner restricted to WHO_PARTY_BUTTON_TOOLTIP
---     (WhoInviteButtonMixin:ShowTooltip, wholist.lua:117–121). The filter dropdown (FilterDropdown, wholist.xml:182)
---     is an untagged DropdownButton (LFGWhoListFilterUtil.SetupFilterMenu, wholist.lua:278–321, 336–378, 460–526):
+--     (WhoInviteButtonMixin:ShowTooltip, wholist.lua:119–123). The filter dropdown (FilterDropdown, wholist.xml:184)
+--     is an untagged DropdownButton (LFGWhoListFilterUtil.SetupFilterMenu, wholist.lua:278–321, 336–387, 474–540):
 --     hooked through UI/MenusUntagged.hookDropdown as the WHO_FILTER spec, its entries restricted to the section
 --     words and the sort entries; the class, race and zone entries under them are names and never match.
 --   the contacts header's TabSystem tabs (FriendsTabHeaderMixin:GenerateHeaderTabs, camelot friendsframe.lua:
@@ -57,7 +57,7 @@ local STATIC = SURFACE .. ".static"
 local Compat = WFJ.Compat
 
 local WHO_ADDON = "Blizzard_GroupFinder_VanillaStyle"
--- RAID / QUICK_JOIN are what camelot writes here (lua:461–473)
+-- RAID / QUICK_JOIN are what camelot writes here (lua:475–487)
 local TITLE_KEYS = { "FRIENDS_LIST", "IGNORE_LIST", "WHO_LIST", "RAID", "QUICK_JOIN" }
 local CONTACTS_TITLE_KEYS = { "CONTACTS_LIST_TITLE", "CONTACTS_RECENT_ALLIES_TITLE", "RECRUIT_A_FRIEND" }
 local CONTACTS_TITLE = { only = CONTACTS_TITLE_KEYS }

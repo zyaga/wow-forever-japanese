@@ -122,7 +122,7 @@ UIStrings.ARGS = {
   BNET_LAST_ONLINE_TIME = { [1] = "time" }, FRIENDS_LIST_STATUS_TOOLTIP = { [1] = "word" },
   -- the talent tooltip's rank arrives colour-wrapped (blizzard_talentbuttonspend.lua:84–92); a
   -- replacing spell, a player and an item are names; the weapon-skill pane's values are FormatSignedPercent /
-  -- FormatPercent output ("+5.00%", "40%": camelot/skillsframe.lua:87–102, 298–316)
+  -- FormatPercent output ("+5.00%", "40%": camelot/skillsframe.lua:61–76, 274–290)
   TALENT_BUTTON_TOOLTIP_RANK_FORMAT = { [1] = "text" }, TALENT_BUTTON_TOOLTIP_RANK_NO_MAX_FORMAT = { [1] = "text" },
   TALENT_BUTTON_TOOLTIP_REPLACED_BY_FORMAT = { [1] = "text" }, TALENT_FRAME_INCREASED_RANKS_TEXT = { [2] = "text" },
   TALENTS_INSPECT_FORMAT = { [1] = "text" },
@@ -301,7 +301,7 @@ UIStrings.ARGS = {
   LEVEL_UP_STAT = { [1] = "words" }, MARKED_AFK_MESSAGE = { [1] = "verbatim" }, MARKED_DND = { [1] = "verbatim" },
   GUILD_MOTD_TEMPLATE = { [1] = "verbatim" }, TIME_PLAYED_TOTAL = { [1] = "entry" },
   TIME_PLAYED_LEVEL = { [1] = "entry" },
-  -- the voice service a group switched to: VOICE_CHAT_SERVICE_DISCORD / _LEGACY (channelframe.lua:580)
+  -- the voice service a group switched to: VOICE_CHAT_SERVICE_DISCORD / _LEGACY (channelframe.lua:580–581)
   VOICE_CHAT_SERVICE_SWITCHING = { [1] = "entryOrText" }, -- "Discord" is a name and stays as written
   -- a group finder listing's voice mode, VOICE_CHAT_MODE_NONE / _LEGACY / _DISCORD / _CUSTOM
   -- (blizzard_groupfinder_vanillastyle/blizzard_lfgvanilla_browse.lua:697–700)
@@ -894,7 +894,7 @@ UIStrings.FAMILY_LIST_KINDS = { petFoodList = "PetFood" }
 --   icon       "|T…|t <entry>" / "|A…|a <entry>" (a role radio's INLINE_TANK_ICON .. " " .. TANK, the friends
 --              status radios): the icon markup kept verbatim in front of the Japanese
 --   optionTip  "|cAARRGGBB<entry>|r: |cAARRGGBB<entry>|r" / "|cAARRGGBB<entry>|r:" (a Settings option's
---              "<label>: <tooltip>" line, blizzard_settings.lua:445–461): both halves in Japanese, each colour kept
+--              "<label>: <tooltip>" line, blizzard_settings.lua:443–461): both halves in Japanese, each colour kept
 -- `wrapped` also takes a `number`-form label inside the colour ("|cffffffffStrength 18|r", the paperdoll hovers), and
 -- `binding` also takes the pet bar's "|cffffd200 (Ctrl-1)|r" variant with the space inside the colour.
 UIStrings.LABELS = { SPEED = "number", RANK = "number",

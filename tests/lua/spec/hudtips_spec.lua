@@ -1,7 +1,7 @@
 -- UI/HudTips.lua over HUD buttons replayed from Forever blizzard_actionbar/shared/
 -- vehicleleavebutton.lua:12–23, blizzard_overrideactionbar/overrideactionbar.xml:171–206, 262–275,
 -- blizzard_durabilityframe/durabilityframe.lua:31–43 and blizzard_actionbar/shared/multicastactionbarframe.lua:
--- 527–537. A spell's tooltip on the same buttons is never walked.
+-- 536–546. A spell's tooltip on the same buttons is never walked.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 

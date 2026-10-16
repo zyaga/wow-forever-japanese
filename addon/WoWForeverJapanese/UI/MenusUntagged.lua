@@ -21,7 +21,7 @@
 -- the point a ModifyMenu callback runs at, so the menu is laid out with the Japanese. The hook also runs for every
 -- tagged menu and DropdownButton: it acts only on an untagged description one of two openers made:
 --   the Group Finder's search-entry menu (LFGBrowseMixin:CreateSearchEntryMenu, blizzard_groupfinder_vanillastyle/
---   blizzard_lfgvanilla_browse.lua:948–980): its owner is an undefined frame and its generator an anonymous closure,
+--   blizzard_lfgvanilla_browse.lua:969–1001): its owner is an undefined frame and its generator an anonymous closure,
 --   so it is recognised by an entry whose text is LFG_LIST_REPORT_GROUP_FOR or REPORT_GROUP_FINDER_ADVERTISEMENT
 --   (both have a space: never a character name); its first element, the leader's name, is the title (titleIsName);
 --   the crafting-orders recipe list's (…customerordersrecipelist.lua:96–97, 115–117): the owner is the list element
@@ -38,7 +38,7 @@ local DECLARE = "help.menus.untagged"
 -- Menus whose generator sets no tag, walked through the dropdown's own RegisterMenu; never registered
 -- with Menu.ModifyMenu. Each matches only its window's keys (UI/SettingsKeys).
 -- Two untagged context menus, walked from the Menu.PopulateDescription post-hook (the LFG search
--- entry's title is the leader's name; blizzard_lfgvanilla_browse.lua:1403–1419 for GROUP_INVITE). UI/Menus reads
+-- entry's title is the leader's name; blizzard_lfgvanilla_browse.lua:1424–1440 for GROUP_INVITE). UI/Menus reads
 -- these specs like its own tags (Menus.showElement / onMenu).
 local SETTINGS_KEYS = WFJ.SettingsKeys or {}
 -- The Combat page's "Text on Me" checkboxes: each one's hover is its label as the title and its tooltip as the line
@@ -62,7 +62,7 @@ WFJ.Menus.UNTAGGED = {
   SETTINGS_DROPDOWN = { source = "blizzard_settings.lua:563", keys = SETTINGS_KEYS.options or {},
     tooltips = TEXT_ON_ME_TOOLTIPS },
   EDIT_MODE_DROPDOWN = { source = "editmodetemplates.lua:22", keys = SETTINGS_KEYS.editmode or {} },
-  CONTEXT_LFG_SEARCH_ENTRY = { source = "blizzard_lfgvanilla_browse.lua:954", titleIsName = true,
+  CONTEXT_LFG_SEARCH_ENTRY = { source = "blizzard_lfgvanilla_browse.lua:1008", titleIsName = true,
     keys = { "SEND_MESSAGE", "GROUP_INVITE", "LFG_LIST_REPORT_GROUP_FOR", "REPORT_GROUP_FINDER_ADVERTISEMENT" } },
   CONTEXT_CUSTOMER_ORDER_RECIPE = { source = "blizzard_professionscustomerordersbrowseorders.lua:142",
     keys = { "BATTLE_PET_FAVORITE", "BATTLE_PET_UNFAVORITE" } },

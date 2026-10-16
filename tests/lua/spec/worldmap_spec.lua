@@ -1,6 +1,6 @@
 -- The world map chrome on Forever: UI/WorldMap.lua over a WorldMapFrame replayed from camelot
--- blizzard_worldmap (blizzard_worldmap.lua:318–356, 452–463; blizzard_worldmaptemplates.lua:357–361, 435–447,
--- 472–485, 553–610, 665–676). Map names stay English; the window title is UI/QuestMap's.
+-- blizzard_worldmap (blizzard_worldmap.lua:318–361, 455–467; blizzard_worldmaptemplates.lua:381–385, 467–479,
+-- 504–517, 604–652, 707–718). Map names stay English; the window title is UI/QuestMap's.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 local Maps = require("tests.lua.spec.stub_maps")

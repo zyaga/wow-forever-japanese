@@ -45,7 +45,7 @@ local UI = {
   -- a Recruit-A-Friend-linked friend's summon button (camelot friendsframe.lua:1010–1017)
   RAF_SUMMON_LINKED = { "Summon Linked Friend", "リンクしたフレンドを召喚" },
   COOLDOWN_REMAINING = { "Cooldown remaining:", "クールダウン残り:" },
-  -- the who row's invite button and the filter menu (wholist.lua:117–121, 316–526)
+  -- the who row's invite button and the filter menu (wholist.lua:119–123, 316–540)
   WHO_PARTY_BUTTON_TOOLTIP = { "Invite to Group", "グループに招待" }, RACE = { "Race", "種族" },
   CLASS = { "Class", "クラス" }, CHECK_ALL = { "Check All", "すべてチェック" },
   WHO_SORT_LABEL = { "Sort By", "並べ替え" }, NAME = { "Name", "名前" },

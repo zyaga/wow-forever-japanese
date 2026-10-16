@@ -1,6 +1,6 @@
 -- UI/Macro.lua over a MacroFrame replayed from blizzard_macroui/
 -- blizzard_macroui.xml:40–234, blizzard_macroui.lua:233–246 and the icon selector popup (blizzard_sharedxml/mainline/
--- shareduipaneltemplates.lua:1844, 1969–1972). The macro body, macro names and the popup's name box are never
+-- shareduipaneltemplates.lua:1861, 1986–1989). The macro body, macro names and the popup's name box are never
 -- touched; the surface waits for Blizzard_MacroUI in either load order.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")

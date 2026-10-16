@@ -100,7 +100,7 @@ describe("the wardrobe's variant dropdown on Forever", function()
 end)
 
 -- The search box's placeholder: SearchBox.Instructions, SearchBoxTemplate's instructionText SEARCH written once at
--- load (mainline/blizzard_wardrobe.lua:1698–1700; inputboxtemplates.lua:174–177). The EditBox itself is the player's.
+-- load (mainline/blizzard_wardrobe.lua:1700–1702; inputboxtemplates.lua:174–177). The EditBox itself is the player's.
 describe("the wardrobe's search box placeholder on Forever", function()
   local WFJ
 

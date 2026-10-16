@@ -38,14 +38,14 @@ local UI = {
   ICON_SELECTION_CLICK = { "Click to view in the list", "クリックで一覧に表示" },
   ICON_SELECTION_NOTINLIST = { "This icon is not in the list", "このアイコンは一覧にありません" },
   -- a Warrior's hit hover, `_G["CR_"..class.."_HIT_CAP_TOOLTIP"]` formatted (camelot
-  -- paperdollframestats.lua:449–451): the "%%" of the global string prints one "%"
+  -- paperdollframestats.lua:479–481): the "%%" of the global string prints one "%"
   CR_WARRIOR_HIT_CAP_TOOLTIP = { "\n|cffBCBCBCTo never miss|r |cFFFF5A5ARaid Bosses|r|cffBCBCBC:\n  8.00%% Melee"
     .. "\n\nTo never miss|r |cFF52E31ELvl %d Targets|r", "\n|cffBCBCBC必中には|r |cFFFF5A5Aレイドボス|r|cffBCBCBC："
     .. "\n  8.00%% 近接\n\n必中には|r |cFF52E31ELv%dの対象|r" },
-  -- the crit hover has no specifier at all, and is still printed through format() (:539–545)
+  -- the crit hover has no specifier at all, and is still printed through format() (:582–591)
   STAT_WARRIOR_CRIT_BONUS = { "Melee critical strikes deal 100%% increased damage", "近接クリティカルはダメージが100%%増加" },
   -- the pet damage row's hover title (CharacterDamageFrame_OnEnter, unit "pet", camelot paperdollframe.lua:
-  -- 2293–2294) and the row's label word
+  -- 2369–2370) and the row's label word
   INVTYPE_WEAPONMAINHAND_PET = { "Main Attack", "主攻撃" }, DAMAGE = { "Damage", "ダメージ" },
   -- a pet's loyalty rank, C_PetInfo.GetPetLoyalty() (client-table row: no global; ADR-042)
   ["PetLoyalty:3"] = { "Submissive", "従順" },

@@ -3,7 +3,7 @@
 -- WardrobeCollectionFrame children, replaying the writes of the extracted 1.60.1 source:
 --   blizzard_sharedxml/portraitframe.lua:4–14 (SetTitle → TitleContainer.TitleText),
 --   blizzard_collections/shared/blizzard_collections.lua:72–112, 150–156 (titles per tab),
---   camelot/blizzard_collectionstabs.xml:20–46, blizzard_sharedxml/mainline/shareduipaneltemplates.lua:406–416,
+--   camelot/blizzard_collectionstabs.xml:20–46, blizzard_sharedxml/mainline/shareduipaneltemplates.lua:408–418,
 --   shared/blizzard_collectiontemplates.lua:115–117, 144–148 (paging text, count label),
 --   mainline/blizzard_mountcollection.{xml,lua} (lua:161–171, 533–540, 749–757, 842–861),
 --   classic/blizzard_petcollection.{xml,lua} (lua:186–199, 570–609, 733–759),

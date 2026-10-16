@@ -16,14 +16,14 @@
 --     initializer's InitFrame: SettingsListElementMixin:Init writes self.Text (blizzard_settingcontrols.lua:339),
 --     SettingsListSectionHeaderMixin:Init the Title (:97), SettingsExpandableSectionMixin:Init Button.Text (:1855),
 --     KeyBindingFrameBindingTemplateMixin:Init the binding's Label (blizzard_keybindings.lua:394), the custom
---     templates their own labels (graphics.xml:5–280, audio.xml, nameplates.xml, pingsystem.xml, colorblind.xml).
+--     templates their own labels (graphics.xml:5–274, audio.xml, nameplates.xml, pingsystem.xml, colorblind.xml).
 --     ScrollUtil.AddInitializedFrameCallback runs after the initializer (blizzard_sharedxml/shared/scroll/
 --     scrollutil.lua:21–30, scrollboxlistview.lua:397–410), so each row is walked there with UI/LabelTree.lua,
 --     restricted to this window's keys (UI/SettingsKeys.lua). Dropdown buttons' selected values are followed;
 --   the category list: CategoryList.ScrollBox. SettingsCategoryListButtonMixin:Init writes Label from
 --     category:GetName() (blizzard_categorylist.lua:94–97), the group header its Label (:30–31);
 --   option tooltips: SettingsTooltip, built by Settings.InitTooltip / CreateOptionsInitTooltip
---     (blizzard_settings.lua:289–297, 416–491) and shown by DefaultTooltipMixin:OnEnter, followed by
+--     (blizzard_settings.lua:289–297, 416–496) and shown by DefaultTooltipMixin:OnEnter, followed by
 --     UI/TooltipLines.lua: the name line, the tooltip body, the restart / reload notices. The per-option
 --     "<label>: <tooltip>" lines are string.format composites (:454) and stay English.
 -- AddOns: a category of the AddOns tab (category:GetCategorySet() == Settings.CategorySet.AddOns,

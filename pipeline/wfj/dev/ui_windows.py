@@ -1290,8 +1290,8 @@ DYNAMIC: dict[str, list[str]] = {
         rf"({_CLASSES})_MELEE_ATTACK_POWER_TOOLTIP",
         r"DEFAULT_(STRENGTH|AGILITY|STAMINA|INTELLECT|SPIRIT)_TOOLTIP",
         # the hit and crit hovers are `_G["CR_"..class.."_HIT_CAP_TOOLTIP"]` and
-        # `_G["STAT_"..class.."_CRIT_BONUS"]` / `…_PET_CRIT_BONUS` (camelot paperdollframestats.lua:449,
-        # 539–541)
+        # `_G["STAT_"..class.."_CRIT_BONUS"]` / `…_PET_CRIT_BONUS` (camelot paperdollframestats.lua:476,
+        # 577–579)
         rf"CR_({_CLASSES})_HIT_CAP_TOOLTIP",
         rf"STAT_({_CLASSES})_(PET_)?CRIT_BONUS",
     ],
@@ -1301,7 +1301,7 @@ DYNAMIC: dict[str, list[str]] = {
     "friends": [r"LASTONLINE_[A-Z]+", r"GUILDCONTROL_OPTION\d+", r"GUILD_TOTAL", r"SEARCH"],
     "help": [r"PET_ACTION_[A-Z]+", r"PET_MODE_[A-Z]+"],
     # the edit box header is `_G["CHAT_"..type.."_SEND"]`
-    # (blizzard_chatframebase/shared/chatframeeditbox.lua:693)
+    # (blizzard_chatframebase/shared/chatframeeditbox.lua:697)
     "chattabs": [r"CHAT_[A-Z_]+_SEND"],
     # the unit mouseover lines the client composes (C_TooltipInfo; TooltipDataType.Unit): level,
     # creature type, skinning and corpse lines. The unit's name, guild and the server's lines are never among
@@ -1320,7 +1320,7 @@ DYNAMIC: dict[str, list[str]] = {
         r"QUEST_(ITEMS_NEEDED|OBJECTS_FOUND|MONSTERS_KILLED)(_NOPROGRESS)?",
     ],
     # the buff frame's durations are SecondsToTimeAbbrev's `*_ONELETTER_ABBR`
-    # (blizzard_sharedxml/timeutil.lua:463–480; blizzard_buffframe/buffframe.lua:427, 1203, 1306); the
+    # (blizzard_sharedxml/timeutil.lua:463–480; blizzard_buffframe/buffframe.lua:430, 1273, 1434); the
     # level-up toast's title and subtitle are client-supplied (toastInfo,
     # blizzard_framexml/eventtoastmanager.lua:491–492) [unverified: which global strings the client uses; the
     # in-game checklist]
@@ -1335,12 +1335,12 @@ DYNAMIC: dict[str, list[str]] = {
         r"ERR_[A-Z0-9_]+", r"SPELL_FAILED_[A-Z0-9_]+",
         # the strings Blizzard's Lua passes to the frame through a variable (the call-site
         # scan below finds the ones named on the call line): community / club errors
-        # (communitieserrors.lua:5–132, gamedialogdefs.lua:1365), guild rename
+        # (communitieserrors.lua:5–132, gamedialogdefs.lua:1355), guild rename
         # (blizzard_guildrename.lua:22–37, 289), report results
         # (blizzard_game/shared/eventimplementation.lua:1–38), pings (blizzard_pingmanager.lua:10–27 →
         # mainline/eventimplementation.lua:168, [unverified: the C string is one of these]), gamepad radial
-        # (gamepadradial.lua:67, 612), crafting orders (blizzard_professionscustomerordersform.lua:472), the
-        # profession-tool auto-equip lines (camelot paperdollframe.lua:82–96, 2073;
+        # (gamepadradial.lua:67, 626), crafting orders (blizzard_professionscustomerordersform.lua:472), the
+        # profession-tool auto-equip lines (camelot paperdollframe.lua:82–96, 2133–2136;
         # charactermodelframemixin.lua:31), the talent-config throttle (blizzard_sharedtalentframe.lua:1740),
         # the token lines (blizzard_wowtokenuiinsecure.lua:14)
         r"ERROR_CLUB_[A-Z0-9_]+", r"ERROR_COMMUNITIES_[A-Z0-9_]+",
@@ -1354,12 +1354,12 @@ DYNAMIC: dict[str, list[str]] = {
         r"CLUB_REMOVED_REASON_[A-Z0-9_]+",
     ],
     # the prefix the chat frame puts before an NPC's line (CHAT_MONSTER_*_GET,
-    # chatframeoverrides.lua:629–633)
+    # chatframeoverrides.lua:640–644)
     "speech": [r"CHAT_MONSTER_(SAY|YELL|WHISPER|EMOTE|PARTY)_GET", r"CHAT_RAID_BOSS_(EMOTE|WHISPER)_GET"],
     "chatsystem": [
         r"ERR_[A-Z0-9_]+", r"SPELL_FAILED_[A-Z0-9_]+",
         # the prefix before a player's line: "%s says: ", "To %s: " … (_G["CHAT_"..type.."_GET"],
-        # chatframeutil.lua:352–355, chatframeoverrides.lua:629–633)
+        # chatframeutil.lua:352–355, chatframeoverrides.lua:640–644)
         r"CHAT_(SAY|YELL|EMOTE|WHISPER|WHISPER_INFORM|PARTY|PARTY_LEADER|PARTY_GUIDE|RAID|RAID_LEADER|"
         r"RAID_WARNING|GUILD|OFFICER|INSTANCE_CHAT|INSTANCE_CHAT_LEADER|BN_WHISPER|BN_WHISPER_INFORM|AFK|DND|"
         r"CHANNEL|CHANNEL_JOIN|CHANNEL_LEAVE)_GET",
@@ -1368,7 +1368,7 @@ DYNAMIC: dict[str, list[str]] = {
         r"COUNTDOWN_(SET|CLEAR)", r"LEVEL_UP",
         # all system chat: the lines the game sends as SYSTEM / LOOT / MONEY /
         # CURRENCY / COMBAT_XP_GAIN / COMBAT_HONOR_GAIN / COMBAT_FACTION_CHANGE / SKILL / TRADESKILLS /
-        # OPENING chat, added plain by ChatFrameMixin:MessageEventHandler (chatframeoverrides.lua:397–408) or
+        # OPENING chat, added plain by ChatFrameMixin:MessageEventHandler (chatframeoverrides.lua:408–419) or
         # by the SystemEventHandler (TIME_PLAYED_MSG, PLAYER_LEVEL_CHANGED: chatframeutil.lua:251–263,
         # chatframeutiloverrides.lua:80–86). No Lua names them: the families follow GlobalStrings naming; the
         # one Lua consumer, battlegroundchatfilters.lua:10, matches LOOT_ITEM / CREATED_ITEM against

@@ -130,7 +130,7 @@ end)
 
 -- The list's category headers. SkillsHeaderMixin:Initialize writes the header's name (client data) into
 -- the row's `.Name`; "Weapon Skills" and "Languages" read exactly as STAT_CATEGORY_WEAPON_SKILLS / LANGUAGES_LABEL and
--- are shown, every other header and every skill's name stays English [camelot/skillsframe.lua:127–141, 321–325, 372].
+-- are shown, every other header and every skill's name stays English [camelot/skillsframe.lua:101–118, 297–301, 348].
 describe("skills on the Forever client: the list's category headers", function()
   local WFJ, SS, box
 
@@ -233,7 +233,7 @@ describe("skills on the Forever client: the list's category headers", function()
 end)
 
 -- ADR-042: the SkillLine table's description in the detail pane (SetDescription writes the Description
--- ScrollingFont, skillsframe.lua:273; characterframe.lua:873–885), the SkillLineDescription:* family only; and the
+-- ScrollingFont, skillsframe.lua:248; characterframe.lua:874–886), the SkillLineDescription:* family only; and the
 -- list's headers, which are SkillLineCategory names (the SkillCategory:* family) besides the two GlobalStrings.
 describe("skills on the Forever client: client-table text", function()
   local WFJ, box

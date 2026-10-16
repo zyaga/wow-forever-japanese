@@ -1,19 +1,19 @@
 -- UI/CommunitiesGuild.lua: the Communities window's guild benefits and preferred-play pages on Forever (surface
 -- "communities.benefits", area "ui", ADR-016): guild perks and rewards, the guild reputation bar, the
 -- achievement-point display and the preferred play settings. Plumbing: UI/CommunitiesKit.
--- Every file:line below is the camelot extract 1.60.1.69913, interface/addons/blizzard_communities/.
+-- Every file:line below is the camelot extract 1.60.1.70425, interface/addons/blizzard_communities/.
 -- Static labels: GuildBenefitsFrame.Perks.TitleText (guildperks.xml:123), .Rewards.TitleText (guildrewards.xml:222),
 --   .FactionFrame.Label (communitiesframe.xml:37); GuildPreferredPlaySettingsFrame's Title / LocaleLabel /
---   DatacenterLabel (its OnLoad writes, guildpreferredplaysettings.lua:50-52) and the two Apply buttons
+--   DatacenterLabel (its OnLoad writes, guildpreferredplaysettings.lua:29-31) and the two Apply buttons
 --   (guildpreferredplaysettings.xml:35, 51).
--- Writers: GuildPreferredPlaySettingsFrame:RefreshState → NotGuildMasterNotice (lua:104-106); a reward row's Init
+-- Writers: GuildPreferredPlaySettingsFrame:RefreshState → NotGuildMasterNotice (lua:78-80); a reward row's Init
 --   (CommunitiesGuildRewardsButtonMixin:Init, guildrewards.lua:7-56, the ScrollBox element initializer, lua:62-64) →
 --   SubText: REQUIRES_GUILD_FACTION with the standing word, or REQUIRES_LABEL + icon + the achievement's name (the
 --   name kept as written by the label's `list` form). The row's Name is the item's name: never touched.
 -- Help tooltips: FactionFrame.Bar (CommunitiesGuildFactionBarMixin:OnEnter, guildrewards.lua:180-199: the faction
 --   description line is the client's text, not matched); GuildAchievementPointDisplay (lua:266-270);
 --   GuildRewardsTutorialButton (guildrewards.xml:57-62); the two Apply buttons' lockout tooltip
---   (guildpreferredplaysettings.lua:12-14, 205-227).
+--   (guildpreferredplaysettings.lua:12-14, 183-205).
 -- A reward row's tooltip is an item tooltip (SetHyperlink, guildrewards.lua:102-129): the help-tooltip walker leaves
 --   item tooltips to the item surface, and the requirement lines are added after the item surface ran, so the row's
 --   OnEnter (bound in XML with function=, guildrewards.xml:202; HookScript, and the global the Update refresh and

@@ -23,7 +23,7 @@ end
 
 function M.line(i) return _G["GameTooltipTextLeft" .. i]:GetText() end
 
--- WorldMapFrame with the overlay frames WorldMapMixin:AddOverlayFrames creates (blizzard_worldmap.lua:318–356).
+-- WorldMapFrame with the overlay frames WorldMapMixin:AddOverlayFrames creates (blizzard_worldmap.lua:318–361).
 function M.worldMap(en)
   local frame = CreateFrame("Frame", "WorldMapFrame")
   frame.overlayFrames = {}
@@ -45,7 +45,7 @@ function M.worldMap(en)
     coords[key] = CreateFrame("Frame")
     coords[key].Label = Stub.fontString("")
   end
-  -- WorldMapCoordsPanelMixin:OnUpdate (blizzard_worldmaptemplates.lua:572–610)
+  -- WorldMapCoordsPanelMixin:OnUpdate (blizzard_worldmaptemplates.lua:604–652)
   coords:SetScript("OnUpdate", function(self)
     local s = M.state
     self.PlayerCoords.shown = s.player ~= nil
@@ -57,7 +57,7 @@ function M.worldMap(en)
           :format(s.player[1], s.player[2])
       end
     end
-    -- the mouse writes CursorCoords, the gamepad its own CrosshairCoords (blizzard_worldmaptemplates.lua:601–619)
+    -- the mouse writes CursorCoords, the gamepad its own CrosshairCoords (blizzard_worldmaptemplates.lua:633–651)
     local holder = s.crosshair and self.CrosshairCoords or self.CursorCoords
     self.CursorCoords.shown = s.cursor ~= nil and not s.crosshair
     self.CrosshairCoords.shown = s.cursor ~= nil and s.crosshair == true
@@ -70,7 +70,7 @@ function M.worldMap(en)
   frame.timer = timer
   timer.TimeLabel = Stub.fontString("")
   timer.TimeLabel.shown = false
-  timer:SetScript("OnUpdate", function(self) -- WorldMapZoneTimerMixin:OnUpdate (:665–676)
+  timer:SetScript("OnUpdate", function(self) -- WorldMapZoneTimerMixin:OnUpdate (blizzard_worldmaptemplates.lua:707–718)
     local t = M.state.battle
     self.TimeLabel.shown = t ~= nil
     -- NEXT_BATTLE is positional ("%1$02d:…"), which the client's format takes and plain Lua's does not

@@ -1,42 +1,42 @@
 -- UI/GuildControl.lua: the guild control window on Forever (surface "guildcontrol", area "ui", ADR-016).
 -- Load-on-demand Blizzard_GuildControlUI. Entry points in the camelot load set: the Communities window's
 -- GuildControlButton (blizzard_communities/communitiesframe.xml:258–264, shown to the guild leader and officers,
--- communitiesframe.lua:1772–1775) and the guild unit-popup's "Guild Control" entry (blizzard_unitpopup/mainline/
+-- communitiesframe.lua:1805–1808) and the guild unit-popup's "Guild Control" entry (blizzard_unitpopup/mainline/
 -- unitpopupbuttons.lua:237–239), both → GuildControlUI_Show → LoadAddOn + ShowUIPanel(GuildControlUI)
 -- (blizzard_guildcontrolui_bootstrap.lua:3–11). Set up through WFJ.LoadOnDemand.when.
 -- Static labels (blizzard_guildcontrolui.xml), each restricted to its own key:
---   GuildControlUITitle GUILDCONTROL (:414); orderFrame.newButton GUILD_NEW_RANK (:460), .dupButton GUILD_DUP_RANK
---   (:469); the rank-permission checkboxes GuildControlUIRankSettingsFrameCheckbox<id>Text, written once by
---   GuildControlUI_OnLoad from _G["GUILDCONTROL_OPTION" .. id] (lua:97–103; ids 2, 5–8, 15, 16, 18, 19, 21:
---   xml:679–774), and OfficerCheckbox.text GUILD_CONTROL_RANK_PERMISSION_HAS_OFFICER_PRIVLEGES (lua:514);
---   GuildControlUIRankSettingsFrameBankLabel GUILD_BANK (:649); the unnamed GUILDCONTROL_SELECTRANK labels in the two
---   rank dropdowns' layers (:499, :663) and DISCORD_SELECT_SERVER / DISCORD_SELECT_CHANNEL (:556, :591), found with
---   Labels.region; the Discord pane's noChannelsError (:574), channelButton (:600), and the two frames it creates on
---   demand (lua:325, :403): DiscordLinkFrame.linkedTitle (lua:330), .SeparateStream.Label (:345), .button (:354),
---   DiscordUnlinkFrame.unlinkedTitle (:378, lua:406), .button (:387).
---   Each bank tab row GuildControlBankTab<i> (created on demand, lua:175–178; BankTabPermissionTemplate xml:140–300):
+--   GuildControlUITitle GUILDCONTROL (:417); orderFrame.newButton GUILD_NEW_RANK (:463), .dupButton GUILD_DUP_RANK
+--   (:472); the rank-permission checkboxes GuildControlUIRankSettingsFrameCheckbox<id>Text, written once by
+--   GuildControlUI_OnLoad from _G["GUILDCONTROL_OPTION" .. id] (lua:100–106; ids 2, 5–8, 15, 16, 18, 19, 21:
+--   xml:682–777), and OfficerCheckbox.text GUILD_CONTROL_RANK_PERMISSION_HAS_OFFICER_PRIVLEGES (lua:517);
+--   GuildControlUIRankSettingsFrameBankLabel GUILD_BANK (:652); the unnamed GUILDCONTROL_SELECTRANK labels in the two
+--   rank dropdowns' layers (:502, :666) and DISCORD_SELECT_SERVER / DISCORD_SELECT_CHANNEL (:559, :594), found with
+--   Labels.region; the Discord pane's noChannelsError (:577), channelButton (:603), and the two frames it creates on
+--   demand (lua:328, :406): DiscordLinkFrame.linkedTitle (lua:333), .SeparateStream.Label (:345), .button (:354),
+--   DiscordUnlinkFrame.unlinkedTitle (:378, lua:409), .button (:387).
+--   Each bank tab row GuildControlBankTab<i> (created on demand, lua:178–181; BankTabPermissionTemplate xml:140–300):
 --   owned.viewCB.text GUILDCONTROL_VIEW_TAB (:182), owned.depositCB.text GUILDCONTROL_DEPOSIT_ITEMS (:195), the
 --   buy.button BANKSLOTPURCHASE (:287). A row's owned.tabName is the tab's name and is never touched.
--- The navigation dropdown's own text (GUILDCONTROL_GUILDRANKS / _RANK_PERMISSIONS / _BANK_PERMISSIONS, lua:61–73)
+-- The navigation dropdown's own text (GUILDCONTROL_GUILDRANKS / _RANK_PERMISSIONS / _BANK_PERMISSIONS, lua:64–76)
 --   goes through Labels.dropdown; its popup entries are UI/Menus'. The rank dropdowns show rank names: never touched.
 -- Writers: the pane updates are globals (GuildControlUI_RankOrder_Update, _RankPermissions_Update,
 --   _BankTabPermissions_Update, _Discord_Update) that the window stores in GuildControlUI.rankUpdate when a pane is
---   selected (lua:38–53) and calls from there (:131). A hook on the global is seen by every selection made after it
+--   selected (lua:41–56) and calls from there (:134). A hook on the global is seen by every selection made after it
 --   was installed; the pane selected before that is covered by the OnShow pass (in-game check: the first pane after
 --   a rank change without re-opening).
 -- Tooltips (XML OnEnter → GameTooltip:SetText, owner = the button): each rank row's delete / down / up buttons
 --   GUILDREMOVERANK_BUTTON_TOOLTIP, GUILD_LOWERRANK_BUTTON_TOOLTIP, GUILD_RAISERANK_BUTTON_TOOLTIP plus the reason
---   line ERR_GUILD_RANK_IN_USE / AUTHENTICATOR_GUILD_RANK_CHANGE (xml:43–106, lua:563–591); the authenticator
---   checkbox's tooltip frame GUILD_RANK_AUTHENTICATOR_TOOLTIP, AUTHENTICATOR_GUILD_RANK_LAST / _IN_USE (xml:790–810,
---   lua:457–461).
--- rankPermFrame.OfficerPermissions (xml:643) holds table.concat(GUILD_OFFICER_PERMISSION_STRINGS, "|n")
---   (lua:471–483, written by GuildControlRankSettings_OnLoad, :511–512); lineList: every "|n"-separated line must be
+--   line ERR_GUILD_RANK_IN_USE / AUTHENTICATOR_GUILD_RANK_CHANGE (xml:43–106, lua:566–594); the authenticator
+--   checkbox's tooltip frame GUILD_RANK_AUTHENTICATOR_TOOLTIP, AUTHENTICATOR_GUILD_RANK_LAST / _IN_USE (xml:793–813,
+--   lua:460–464).
+-- rankPermFrame.OfficerPermissions (xml:646) holds table.concat(GUILD_OFFICER_PERMISSION_STRINGS, "|n")
+--   (lua:474–486, written by GuildControlRankSettings_OnLoad, :514–515); lineList: every "|n"-separated line must be
 --   a GUILD_OFFICER_PERMISSION_* entry, else the whole text stays English; rejoined with "|n". The Discord pane's
---   DiscordLinkFrame.linkedServer / .linkedChannel (DISCORD_GUILD_LINKED_SERVER / _CHANNEL, lua:328–332) and
---   discordFrame.channelListTitle (DISCORD_VALID_SERVER_CHANNEL_LIST, lua:377–378): only their own key; the server
+--   DiscordLinkFrame.linkedServer / .linkedChannel (DISCORD_GUILD_LINKED_SERVER / _CHANNEL, lua:331–335) and
+--   discordFrame.channelListTitle (DISCORD_VALID_SERVER_CHANNEL_LIST, lua:380–381): only their own key; the server
 --   and channel names are `text` arguments, kept as written.
 -- Never touched: rank names (the rows' EditBoxes, the rank dropdowns), bank tab names, the gold / stack EditBoxes,
--- "Rank n:" (RANK .. " " .. i .. ":", lua:546, a run-time composite), Discord server and channel names.
+-- "Rank n:" (RANK .. " " .. i .. ":", lua:549, a run-time composite), Discord server and channel names.
 -- Release on GuildControlUI's OnHide.
 local _, WFJ = ...
 local GuildControl = {}

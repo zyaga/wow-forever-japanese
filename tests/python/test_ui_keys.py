@@ -268,7 +268,7 @@ def test_window_name_collision_keys_are_named_in_a_ui_module(root):
     # Reviewed exceptions: a whole-dictionary row walk that only ever shows Blizzard's own strings.
     #   COMBATLOG_FILTER_STRING_UNKNOWN_UNITS: the combat-log source check boxes, whose labels come from Blizzard's
     #   filter tables (`text = COMBATLOG_FILTER_STRING_UNKNOWN_UNITS`, blizzard_chatframe/mainline/
-    #   chatconfigframe.lua:374, 426, 758), never a unit's or a spell's name.
+    #   chatconfigframe.lua:383, 435, 767), never a unit's or a spell's name.
     #   CHANNEL, OPENING: the chat configuration's message-type rows, whose labels are `_G[type]` for the types in
     #   Blizzard's own tables (blizzard_chatframe/mainline/chatconfigframe.lua:229, 281).
     #   WHISPER: the same rows, and a text-to-speech box: UI/TextToSpeech builds its `only` set at run time from the

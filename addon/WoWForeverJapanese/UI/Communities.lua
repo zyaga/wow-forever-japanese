@@ -9,7 +9,7 @@
 -- streams, community settings, invitations and tickets are not touched.
 -- Static labels (XML text=; each restricted to its own key):
 --   CommunitiesFrame.GuildMemberDetailFrame: ZoneLabel / RankLabel / OnlineLabel / NoteLabel / OfficerNoteLabel,
---     RemoveButton, GroupInviteButton (guildroster.xml:19–98; the frame is parentKey GuildMemberDetailFrame,
+--     RemoveButton, GroupInviteButton (guildroster.xml:26–111; the frame is parentKey GuildMemberDetailFrame,
 --     communitiesframe.xml:613);
 --   CommunitiesFrame.GuildDetailsFrame.Info (communitiesframe.xml:161–176, 542): TitleText GUILD_INFO_TITLE,
 --     Header2Label GUILD_MOTD_LABEL, an unnamed GUILD_INFORMATION label, EditMOTDButton / EditDetailsButton
@@ -25,7 +25,7 @@
 --   MemberList.ColumnDisplay:LayoutColumns → the pooled column header buttons (ColumnDisplayMixin, blizzard_sharedxml/
 --     mainline/shareduipaneltemplates.lua; the titles are COMMUNITIES_ROSTER_COLUMN_TITLE_*, communitiesmemberlist
 --     .lua:41–161). Headers are walked from the pool after each layout, keyed by widget;
---   GuildMemberDetailFrame:DisplayMember (guildroster.lua:91–175) → Level (FRIENDS_LEVEL_TEMPLATE, the class kept
+--   GuildMemberDetailFrame:DisplayMember (guildroster.lua:117–207) → Level (FRIENDS_LEVEL_TEMPLATE, the class kept
 --     verbatim), OnlineText (GUILD_ONLINE_LABEL or TimeUtil.GetRecentTimeDate's LASTONLINE_*, timeutil.lua:24–44),
 --     the two note placeholders (GUILD_NOTE_EDITLABEL / GUILD_OFFICERNOTE_EDITLABEL; the same FontStrings hold the
 --     members' own notes, hence `only`);
@@ -34,10 +34,10 @@
 --   the roster's pooled entries (MemberList.ScrollBox; CommunitiesMemberListEntryMixin, walked from the
 --     ScrollBox's initialized-frame callback after its element initializer, communitiesmemberlist.lua:454–457):
 --     a pending-invite header row writes COMMUNITIES_MEMBER_LIST_PENDING_INVITE_HEADER into NameFrame.Name (SetHeader,
---     lua:1041–1044, 1109–1110); the same FontString holds member names, so it is restricted to that key;
---     the entry's tooltip (OnEnter, lua:1162–1212) shows COMMUNITY_MEMBER_CHARACTER_INFO_FORMAT ("Level %d %s %s",
+--     lua:1048–1051, 1116–1117); the same FontString holds member names, so it is restricted to that key;
+--     the entry's tooltip (OnEnter, lua:1169–1219) shows COMMUNITY_MEMBER_CHARACTER_INFO_FORMAT ("Level %d %s %s",
 --     race and class kept as written); every other line is a name, a rank, a zone or a note, never matched;
---     CancelInvitationButton's tooltip COMMUNITY_MEMBER_CANCEL_INVITATION_TOOLTIP (communitiesmemberlist.xml:64–68).
+--     CancelInvitationButton's tooltip COMMUNITY_MEMBER_CANCEL_INVITATION_TOOLTIP (communitiesmemberlist.xml:67–71).
 --   The extra guild column CLUB_FINDER_APPLICANTS is a roster header (EXTRA_GUILD_COLUMNS, lua:168–171).
 -- Never touched: member names, ranks, zones, notes, the MOTD and guild info text, guild names.
 local _, WFJ = ...
@@ -111,7 +111,7 @@ end
 local headerKey = WFJ.Labels.keyer("column.") -- a pooled header's record key
 
 local ENTRY_TOOLTIP = { only = { "COMMUNITY_MEMBER_CHARACTER_INFO_FORMAT",
-  -- a cross-faction member's lines (communitiesmemberlist.lua:1209, 1782–1783), the faction word kept
+  -- a cross-faction member's lines (communitiesmemberlist.lua:1216, 1789–1790), the faction word kept
   "COMMUNITY_MEMBER_LIST_CROSS_FACTION", "COMMUNITIES_CROSS_FACTION_BUTTON_TOOLTIP_TITLE",
   "CROSS_FACTION_INVITE_TOOLTIP" } }
 local CANCEL_TOOLTIP = { only = { "COMMUNITY_MEMBER_CANCEL_INVITATION_TOOLTIP" } }

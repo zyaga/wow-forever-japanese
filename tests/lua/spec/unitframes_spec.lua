@@ -1,8 +1,8 @@
 -- UI/UnitFrames.lua (hud) over unit frames replayed from Forever blizzard_unitframe: the target-style
--- frames' static DeadText / UnconsciousText (mainline/targetframe.xml:182–187, 455–460), the compact frames' status
--- text (shared/compactunitframe.lua:1085–1115), group titles (shared/compactraidgroup.lua:42–51,
+-- frames' static DeadText / UnconsciousText (mainline/targetframe.xml:182–187, 448–453), the compact frames' status
+-- text (shared/compactunitframe.lua:1084–1114), group titles (shared/compactraidgroup.lua:42–51,
 -- compactpartyframe.lua:1–32), the unit tooltip's instruction line (mainline/unitframe.lua:396–408) and the
--- "not present" icon tooltips (mainline/partyframetemplates.xml:356–360, compactunitframe.lua:2161–2167).
+-- "not present" icon tooltips (mainline/partyframetemplates.xml:356–360, compactunitframe.lua:2160–2166).
 -- Unit names, health numbers and secret values are never touched.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")

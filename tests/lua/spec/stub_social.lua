@@ -193,11 +193,11 @@ function Social.buildInvites()
   return header
 end
 
--- Blizzard_GroupFinder_VanillaStyle arriving (load-on-demand): LFGWhoListFrame (mainline/wholist.xml:65–156)
+-- Blizzard_GroupFinder_VanillaStyle arriving (load-on-demand): LFGWhoListFrame (mainline/wholist.xml:89–210)
 -- with its parentKey WhoFrameTotals, WhoFrameEditBox (SearchBoxTemplate; Instructions = WHO_LIST_SEARCH_INSTRUCTIONS),
--- a pooled ScrollBox and LFGWhoListMixin:UpdateWhoList (wholist.lua:219–239) copied onto the frame. Social.who =
+-- a pooled ScrollBox and LFGWhoListMixin:UpdateWhoList (wholist.lua:257–276) copied onto the frame. Social.who =
 -- { total, rows = { { name, level, race, class, zone, guild } } }; UpdateWhoList re-initializes one pooled row per
--- entry (LFGWhoListButtonMixin:InitButton, lua:50–88). The spec forwards ADDON_LOADED, as Main does.
+-- entry (LFGWhoListButtonMixin:InitButton, lua:49–97). The spec forwards ADDON_LOADED, as Main does.
 function Social.loadWhoList()
   local frame = CreateFrame("Frame", "LFGWhoListFrame")
   frame.WhoFrameTotals = Stub.fontString("")
@@ -208,7 +208,7 @@ function Social.loadWhoList()
   function edit.SetText(self, t) self.editText = t end
   edit.Instructions = Stub.fontString(en("WHO_LIST_SEARCH_INSTRUCTIONS"))
   frame.EditBox = edit
-  -- the filter DropdownButton (wholist.xml:182): OpenMenu regenerates, then RegisterMenu(root)
+  -- the filter DropdownButton (wholist.xml:184): OpenMenu regenerates, then RegisterMenu(root)
   local dropdown = CreateFrame("Button")
   function dropdown.RegisterMenu(self, root) self.root = root end
   frame.FilterDropdown = dropdown

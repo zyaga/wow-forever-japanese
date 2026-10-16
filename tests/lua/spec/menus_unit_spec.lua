@@ -32,7 +32,8 @@ local UI = {
   AGE_RESTRICTED_CHAT_MINOR_TOOLTIP = { "Chat and other social features are unavailable on accounts belonging to "
     .. "minors.", "未成年者のアカウントでは、チャットやその他のソーシャル機能を利用できません。" },
   TRADE = { "Trade", "取引" }, -- a level-1 entry the club menus never show
-  -- the Interact submenu's talent inspect (camelot unitpopupmenus.lua:46–56, unitpopupsharedbuttonmixins.lua:296–300)
+  -- the Interact submenu's talent inspect (camelot unitpopupmenus.lua:46–56,
+  -- unitpopupsharedbuttonmixins.lua:304, 325–327)
   INSPECT_TALENTS = { "View Talents", "タレントを表示" },
   VEHICLE_LEAVE = { "Leave", "降りる" }, REPORT_PVP_SCOREBOARD = { "Report Player", "プレイヤーを報告" },
   LOOT_SPECIALIZATION_DEFAULT = { "Current Specialization ( %s )", "現在の専門化 ( %s )" },

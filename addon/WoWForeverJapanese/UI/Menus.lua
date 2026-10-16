@@ -48,7 +48,7 @@ Menus.TAGS = {
     "BAG_FILTER_PROFESSION_GOODS", "BAG_FILTER_JUNK", "BAG_FILTER_QUEST_ITEMS", "BAG_FILTER_REAGENTS",
     "SELL_ALL_JUNK_ITEMS_EXCLUDE_FLAG", "BAG_COMMAND_CONVERT_TO_COMBINED", "BAG_COMMAND_CONVERT_TO_INDIVIDUAL" } },
   -- the bank's expansion filter (bankframetemplates.lua:1678, 1719–1720)
-  MENU_BANK_EXPANSION_FILTER = { source = "bankframetemplates.lua:1719", keys = { "BANK_TAB_EXPANSION_FILTER_ALL",
+  MENU_BANK_EXPANSION_FILTER = { source = "bankframetemplates.lua:1734", keys = { "BANK_TAB_EXPANSION_FILTER_ALL",
     "BANK_TAB_EXPANSION_FILTER_CURRENT", "BANK_TAB_EXPANSION_FILTER_LEGACY" } },
   -- talents: the search options and the reset button (camelot classtalents/blizzard_classtalentsframe.lua:270–278;
   -- classtalents/blizzard_classtalentsframe.lua:81–87)
@@ -102,8 +102,8 @@ Menus.TAGS = {
     keys = { "COMMUNITIES_INVITE_MANAGER_USES_UNLIMITED", "COMMUNITIES_INVITE_MANAGER_USES" } },
   MENU_COMMUNITIES_DIALOG_EXPIRES = { source = "communitiesticketmanagerdialog.lua:297",
     keys = { "COMMUNITIES_INVITE_MANAGER_EXPIRES_NEVER" } },
-  -- the character sheet's equipment set menu (camelot paperdollframe.lua:2579–2582)
-  MENU_PAPERDOLL_FRAME = { source = "camelot paperdollframe.lua:2579", keys = { "EQUIPMENT_SET_EDIT" } },
+  -- the character sheet's equipment set menu (camelot paperdollframe.lua:2618–2622)
+  MENU_PAPERDOLL_FRAME = { source = "camelot paperdollframe.lua:2619", keys = { "EQUIPMENT_SET_EDIT" } },
   -- quests: the tracker's block menu, the list's settings, a quest's and a header's context menus
   -- (blizzard_questobjectivetracker.lua:72–131; mainline/questmapframe.lua:501–504, 2370–2399, 2465–2473)
   -- the tracker menu's title is the quest's name (blizzard_questobjectivetracker.lua:77)
@@ -112,14 +112,14 @@ Menus.TAGS = {
       "OBJECTIVES_HIDE_VIEW_IN_QUESTLOG", "OBJECTIVES_SHOW_QUEST_MAP", "OBJECTIVES_STOP_TRACKING", "SHARE_QUEST",
       "SHARE_IN_CHAT", "ABANDON_QUEST_ABBREV" } },
   MENU_QUEST_MAP_FRAME_SETTINGS = { source = "questmapframe.lua:501", keys = { "QUEST_LOG_SHOW_OBJECTIVES" } },
-  MENU_QUEST_MAP_LOG_TITLE = { source = "questmapframe.lua:2370", keys = { "SHARE_IN_CHAT", "SUPER_TRACK_QUEST",
+  MENU_QUEST_MAP_LOG_TITLE = { source = "questmapframe.lua:2376", keys = { "SHARE_IN_CHAT", "SUPER_TRACK_QUEST",
     "STOP_SUPER_TRACK_QUEST", "UNTRACK_QUEST" } },
-  MENU_QUEST_MAP_FRAME = { source = "questmapframe.lua:2465",
+  MENU_QUEST_MAP_FRAME = { source = "questmapframe.lua:2473",
     keys = { "QUEST_LOG_TRACK_ALL", "QUEST_LOG_UNTRACK_ALL" } },
   -- the trainer's filter: colour-wrapped entries (the `wrapped` label form) (mainline/blizzard_trainerui.lua:249–255)
   -- AVAILABLE shares "Available" with the friends status: it owns its Japanese (UIStrings.OWN).
   -- The "Categorize" checkbox shows when the trainer uses categories; "Filters" is a submenu (lua:269, 274).
-  MENU_TRAINER_FILTER = { source = "blizzard_trainerui.lua:250", keys = { "AVAILABLE", "UNAVAILABLE", "USED",
+  MENU_TRAINER_FILTER = { source = "blizzard_trainerui.lua:266", keys = { "AVAILABLE", "UNAVAILABLE", "USED",
     "CATEGORIZE", "FILTERS" } },
   -- the dressing room's custom-set menu: its green "New Custom Set" entry and the gear's tooltip; a saved
   -- set's name is the player's own and matches no key (blizzard_framexml/wardrobecustomsets.lua:101–150)
@@ -134,7 +134,7 @@ Menus.TAGS = {
   CONTACTS_MENU = { source = "camelot friendsframe.lua:2485",
     keys = { "CONTACTS_MENU_BROADCAST_BUTTON_NAME", "CONTACTS_MENU_IGNORE_BUTTON_NAME" } },
   -- the world map's filter menu; each filter's hover is its text + a description, owned by the
-  -- element (blizzard_worldmap/blizzard_worldmaptemplates.lua:229–251, 358–368; camelot filters camelot/…:1–3).
+  -- element (blizzard_worldmap/blizzard_worldmaptemplates.lua:229–251, 360–368; camelot filters camelot/…:1–3).
   -- In gamepad UI mode the menu also carries the quest log's part: the map and quest log titles and the objectives
   -- checkbox (:234, 325–339; ShouldCombineMapAndQuestMenu, blizzard_worldmap.lua:1081–1083)
   MENU_WORLD_MAP_TRACKING = { source = "blizzard_worldmaptemplates.lua:229",
@@ -164,9 +164,9 @@ Menus.TAGS = {
   MENU_CHAT_FRAME_CHANNEL = { source = "shared/chatframeutil.lua:697", titleIsName = true,
     keys = { "CHAT_CHANNEL_DROP_DOWN_OPEN_COMMUNITIES_FRAME", "MOVE_TO_NEW_WINDOW" } },
   -- Edit Mode's layout menu: a layout's name (preset or the player's) is no key; the new-layout
-  -- entry carries an atlas in front; the copy / rename / delete hovers (editmodemanager.lua:1342–1457;
+  -- entry carries an atlas in front; the copy / rename / delete hovers (editmodemanager.lua:1337–1467;
   -- editmodelayoutmanagerutil.lua:3–33)
-  MENU_EDIT_MODE_MANAGER = { source = "editmodemanager.lua:1342", keys = { "HUD_EDIT_MODE_NEW_LAYOUT",
+  MENU_EDIT_MODE_MANAGER = { source = "editmodemanager.lua:1355", keys = { "HUD_EDIT_MODE_NEW_LAYOUT",
     "HUD_EDIT_MODE_NEW_LAYOUT_DISABLED", "HUD_EDIT_MODE_IMPORT_LAYOUT", "HUD_EDIT_MODE_SHARE_LAYOUT",
     "HUD_EDIT_MODE_COPY_TO_CLIPBOARD", "HUD_EDIT_MODE_COPY_LAYOUT", "HUD_EDIT_MODE_RENAME_LAYOUT" },
     tooltips = { "HUD_EDIT_MODE_COPY_LAYOUT", "HUD_EDIT_MODE_ERROR_COPY", "HUD_EDIT_MODE_ERROR_COPY_MAX_LAYOUTS",
@@ -180,18 +180,18 @@ Menus.TAGS = {
     "ADDON_LIST_RESET_ALL_TO_DEFAULT" } },
   -- the queue eye's menu: queue titles are dungeon / battleground / activity names and match nothing
   -- (blizzard_queuestatusframe/mainline/queuestatusframe.lua:224, 1276–1507)
-  MENU_QUEUE_STATUS_FRAME = { source = "queuestatusframe.lua:224", keys = { "CANCEL_SIGN_UP", "ENTER_LFG",
+  MENU_QUEUE_STATUS_FRAME = { source = "queuestatusframe.lua:35", keys = { "CANCEL_SIGN_UP", "ENTER_LFG",
     "LEAVE_ALL_QUEUES", "LEAVE_BATTLEGROUND", "LEAVE_LFD_BATTLEFIELD", "LFG_LIST_VIEW_GROUP",
     "TOGGLE_BATTLEFIELD_MAP", "TOGGLE_SCOREBOARD", "UNLIST_ME", "UNLIST_MY_GROUP" } },
   -- the Group Finder: the role radios, the options checkbox, the category filter (categories are client-table
-  -- names) (blizzard_groupfinder_vanillastyle/blizzard_lfgvanilla_listing.lua:516–526, 665–673;
-  -- blizzard_lfgvanilla_browse.lua:1020–1046, 1240–1248)
-  MENU_LFG_LISTING_ROLE = { source = "blizzard_lfgvanilla_listing.lua:516", keys = { "TANK", "HEALER", "DAMAGER" } },
-  MENU_LFG_LISTING_SETTINGS = { source = "blizzard_lfgvanilla_listing.lua:665",
+  -- names) (blizzard_groupfinder_vanillastyle/blizzard_lfgvanilla_listing.lua:579–595, 729–741;
+  -- blizzard_lfgvanilla_browse.lua:1050–1081, 1270–1282)
+  MENU_LFG_LISTING_ROLE = { source = "blizzard_lfgvanilla_listing.lua:582", keys = { "TANK", "HEALER", "DAMAGER" } },
+  MENU_LFG_LISTING_SETTINGS = { source = "blizzard_lfgvanilla_listing.lua:731",
     keys = { "LFG_LIST_IGNORE_SUGGESTED_LEVEL" } },
-  MENU_LFG_BROWSE_CATEGORY = { source = "blizzard_lfgvanilla_browse.lua:1020",
+  MENU_LFG_BROWSE_CATEGORY = { source = "blizzard_lfgvanilla_browse.lua:1052",
     keys = { "LFG_TYPE_NONE", "LFG_SELF_LISTING" } },
-  MENU_LFG_FRAME_GROUP_PLAYSTYLE = { source = "blizzard_lfgvanilla_listing.lua:882",
+  MENU_LFG_FRAME_GROUP_PLAYSTYLE = { source = "blizzard_lfgvanilla_listing.lua:943",
     keys = { "GROUP_FINDER_GENERAL_PLAYSTYLE1", "GROUP_FINDER_GENERAL_PLAYSTYLE2", "GROUP_FINDER_GENERAL_PLAYSTYLE3",
       "GROUP_FINDER_GENERAL_PLAYSTYLE4" } },
   -- the friends list's status: "|T<texture>|t Available" (the `icon` label form) (camelot friendsframe.lua:565–576)

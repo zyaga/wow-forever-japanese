@@ -116,7 +116,7 @@ describe("the mailbox on Forever's Blizzard_MailFrame", function()
       alt(false)
       local tt = _G.GameTooltip
       tt:SetOwner(_G.MailItem1Button)
-      tt:AddLine(_G.MAIL_MULTIPLE_ITEMS .. " (3)") -- mailframe.lua:494
+      tt:AddLine(_G.MAIL_MULTIPLE_ITEMS .. " (3)") -- mailframe.lua:495
       tt:Show()
       assert.are.equal("複数のアイテム (3)", _G.GameTooltipTextLeft1:GetText())
       tt:SetOwner(_G.MailItem1Button)

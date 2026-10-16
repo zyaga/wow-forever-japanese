@@ -10,25 +10,25 @@
 --   SearchBox.Instructions: SearchBoxTemplate's placeholder, instructionText COOLDOWN_VIEWER_SETTINGS_SEARCH_
 --     INSTRUCTIONS (xml:188–191). The EditBox itself is never touched;
 --   the three side tabs (SpellsTab, AurasTab, GroupBuffsTab, xml:154–187) own help tooltips: SidePanelTabButtonMixin:
---     OnEnter → SetOwner(self) → the setup function (GROUP_AURAS title + _DISABLED_TOOLTIP line, lua:900–908) or
+--     OnEnter → SetOwner(self) → the setup function (GROUP_AURAS title + _DISABLED_TOOLTIP line, lua:909–919) or
 --     SetText(self.tooltipText) → Show (blizzard_sharedxml/mainline/shareduipaneltemplates.lua,
 --     SidePanelTabButtonMixin:OnEnter). Registered with UI/HelpTooltip, restricted to their four keys;
 --   UndoButton (xml:262–272, UIButtonTemplate) owns a help tooltip: tooltipTitle / disabledTooltip
 --     COOLDOWN_VIEWER_SETTINGS_BUTTON_REVERT_CHANGES_TOOLTIP (blizzard_sharedxml/shared/button/uibuttontemplate.lua:
---     20–53, sharedtooltiptemplates.lua:133–140). Its own text is "Revert " .. an atlas markup (lua:1208–1210),
+--     20–53, sharedtooltiptemplates.lua:133–140). Its own text is "Revert " .. an atlas markup (lua:1217–1219),
 --     written by UIButtonMixin:RunCustomTextFormatter (uibuttontemplate.lua:120–126; also on OnEnable / OnDisable,
 --     :84–103): it is shown through the `iconAfter` label form (the atlas kept verbatim), re-shown after each run,
 --     and resizes the button as the client does (text width + 20);
---   category headers: CooldownViewerSettingsMixin:RefreshLayout (lua:1513–1529; from OnShow :1472–1476 and
---     SetCurrentCategories :1510) releases and re-acquires the pooled categories (categoryPool, lua:826–828), and each
---     Init writes Header:SetHeaderText(categoryObj:GetTitle()) (lua:676–680) into Header.Name
+--   category headers: CooldownViewerSettingsMixin:RefreshLayout (lua:1524–1540; from OnShow :1481–1485 and
+--     SetCurrentCategories :1521) releases and re-acquires the pooled categories (categoryPool, lua:826–828), and each
+--     Init writes Header:SetHeaderText(categoryObj:GetTitle()) (lua:693–697) into Header.Name
 --     (ListHeaderThreeSliceMixin:GetTitleRegion, blizzard_sharedxml/listtemplates.lua:167–169). RefreshLayout is
 --     post-hooked on the frame and the active categories are walked, keyed by widget, restricted to the seven
 --     COOLDOWN_VIEWER_SETTINGS_CATEGORY_* keys;
 --   the Group Buffs tab's two section headers: GroupBuffFilterMixin:OnLoad writes GROUP_BUFF_FILTER_SECTION_SHOWN /
 --     _HIDDEN once (groupbufffilter.lua:286–298, 235–239) into shownSection / hiddenSection .Header.Name;
 --   the item tooltips written in Lua: an empty slot's GameTooltip_SetTitle(COOLDOWN_VIEWER_SETTINGS_EMPTY_SLOT_
---     TOOLTIP) (lua:219–226), a potion category's title + description (cooldownvieweritemdata.lua:405–424, 986–992)
+--     TOOLTIP) (lua:219–227), a potion category's title + description (cooldownvieweritemdata.lua:405–424, 986–992)
 --     and a tracked trinket's COOLDOWN_VIEWER_TRINKET_[NO_]AURA_TOOLTIP_LABEL lines (:895–940). The tooltip's owner is
 --     the pooled item (GameTooltip_SetDefaultAnchor(tooltip, self), :828–836). Every other tooltip of an item is a
 --     spell, item or aura tooltip, so an item is never registered as a help owner: each active item's OnEnter is

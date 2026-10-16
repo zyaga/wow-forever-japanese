@@ -1,7 +1,7 @@
 -- UI/Inspect.lua: the inspect window on Forever (surface "inspect", area "ui", ADR-016 / ADR-029).
 -- Blizzard_InspectUI is load-on-demand (its TOC: `## LoadOnDemand: 1`); InspectUnit loads it
 -- (blizzard_inspectui/mainline/blizzard_inspectui_bootstrap.lua:3–15), called by the unit menu's Inspect entry
--- (blizzard_unitpopupshared/unitpopupsharedbuttonmixins.lua:289) and by /inspect
+-- (blizzard_unitpopupshared/unitpopupsharedbuttonmixins.lua:297) and by /inspect
 -- (blizzard_chatframebase/shared/slashcommands.lua:917). `camelot` loads [Game]\Blizzard_InspectUI.lua|xml,
 -- [Game]\InspectPaperDollFrame.xml, [Game]\InspectPVPFrame.lua|xml, [Game]\InspectGuildFrame.lua|xml and the
 -- mainline paper doll code (the TOC's AllowLoadGameType lines). Three sub-frames, INSPECTFRAME_SUBFRAMES
@@ -26,11 +26,11 @@
 --     camelot/inspectguildframe.lua:5–15, 17–34) → guildLevel INSPECT_GUILD_FACTION ("%s Guild", the faction's name
 --     kept) and guildNumMembers INSPECT_GUILD_NUM_MEMBERS.
 -- Help tooltips (GameTooltip, the owner registered with its own keys): an empty equipment slot's SetText(<SLOT>SLOT /
---   RELICSLOT) (mainline/inspectpaperdollframe.lua:223–233; the slot names are INSPECTPAPERDOLLFRAME_SLOTS,
+--   RELICSLOT) (mainline/inspectpaperdollframe.lua:227–237; the slot names are INSPECTPAPERDOLLFRAME_SLOTS,
 --   camelot/blizzard_inspectui.lua:13–33), and the three side mode tabs InspectFrameModeTab1–3, whose tooltipText is
 --   CHARACTER_INFO / PLAYER_V_PLAYER / GUILD (camelot/blizzard_inspectui.xml:60–74), shown by
 --   SidePanelTabButtonMixin:OnEnter → SetText(self.tooltipText) (blizzard_sharedxml/mainline/
---   shareduipaneltemplates.lua:406–420).
+--   shareduipaneltemplates.lua:408–422).
 -- Never touched: the window title, which is the inspected player's name (SetTitle(GetUnitName(…)), camelot/
 --   blizzard_inspectui.lua:112, 141), the guild's name, and the PvP badge's rank number (NextRewardLevel's
 --   LevelLabel, camelot/inspectpvpframe.lua:84).

@@ -305,7 +305,7 @@ describe("the Legacy window's client-table text", function()
 end)
 
 -- The challenge cards' criteria and the reward track. LegacyChallengeObjectives (blizzard_legacysystemtemplates.xml:
--- 155) is the one frame every card borrows: its Display acquires a pooled criterion per row and calls Init, which
+-- 156) is the one frame every card borrows: its Display acquires a pooled criterion per row and calls Init, which
 -- writes Name (blizzard_legacychallengebutton.lua:102-111, 158-175), the CriteriaText family only; a counted criterion
 -- shows a progress bar instead (showingProgress). The reward track's Init acquires the cards into Elements
 -- (rewardtracktemplates.lua:38-63); TryInit calls each card's SetRewardName (:367-386, 493-495), the
