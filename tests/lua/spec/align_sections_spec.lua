@@ -19,7 +19,7 @@ describe("sectioned lines (Camp Benefits)", function()
 
   it("ships as sections, with no English", function()
     assert.is_table(sec)
-    assert.are.equal("以下のキャンプの恩恵を得た：", sec.head)
+    assert.are.equal("以下のキャンプの恩恵を得ています：", sec.head)
     for _, s in ipairs(sec) do assert.is_nil(s.ja:find("Mana Well: Restores", 1, true)) end
   end)
 
@@ -27,11 +27,11 @@ describe("sectioned lines (Camp Benefits)", function()
     local ok, text = WFJ.Align.sections(sec, { live("Mana Well: Restores 25 Mana every 5 seconds.",
       "Sharpening Wheel: Strength increased by 3.", "Faction Banner: Spirit increased by 4.") })
     assert.is_true(ok)
-    assert.are.equal("以下のキャンプの恩恵を得た：\n\nMana Well：5秒ごとにマナを25回復する。\n\n"
-      .. "Sharpening Wheel：筋力が3上昇。\n\nFaction Banner：精神が4上昇。", text)
+    assert.are.equal("以下のキャンプの恩恵を得ています：\n\nMana Well：5秒ごとにマナを25回復します。\n\n"
+      .. "Sharpening Wheel：筋力が3増加します。\n\nFaction Banner：精神が4増加します。", text)
     ok, text = WFJ.Align.sections(sec, { live("Fish Bowl: All stats increased by 2%.") })
     assert.is_true(ok)
-    assert.are.equal("以下のキャンプの恩恵を得た：\n\nFish Bowl：全能力値が2%上昇。", text)
+    assert.are.equal("以下のキャンプの恩恵を得ています：\n\nFish Bowl：すべての能力値が2%増加します。", text)
   end)
 
   it("an unknown paragraph, a changed heading or a paragraph that does not fit leaves the English", function()

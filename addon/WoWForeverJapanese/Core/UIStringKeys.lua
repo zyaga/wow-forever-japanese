@@ -534,6 +534,8 @@ UIStrings.ARGS = {
   CLUB_FINDER_LINK_GUILD = { [1] = "text" },
   CLUB_INVITE_HYPERLINK_TEXT = { [1] = "text" },
   COMMUNITIES_ADD_DIALOG_CREATE_WOW_LABEL = { [1] = "text" },
+  -- the delete-community lines an earlier build showed (their Japanese still ships: English is additive)
+  CONFIRM_DESTROY_CHARACTER_COMMUNITY = { [1] = "text" }, CONFIRM_DESTROY_COMMUNITY = { [1] = "text" },
   CONFIRM_DESTROY_CHARACTER_COMMUNITY_UNPROMPTED = { [1] = "text" },
   CONFIRM_DESTROY_COMMUNITY_UNPROMPTED = { [1] = "text" },
   CONFIRM_GLYPH_PLACEMENT_NO_COST = { [1] = "text", [2] = "text" },
