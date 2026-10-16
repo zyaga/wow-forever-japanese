@@ -801,6 +801,7 @@ WFJ.Data.add("gloss", {
   [98799] = "無鉄砲\tむてっぽう\treckless",
   [98800] = "無関心\tむかんしん\taloof (indifferent)",
   [98801] = "無関心\tむかんしん\tindifference",
+  [98802] = "無関心\tむかんしん\tuncaring",
   [98803] = "無防備\tむぼうび\t(was) unprotected",
   [98804] = "無防備\tむぼうび\tdefenseless",
   [98805] = "無防備\tむぼうび\tunprotected",

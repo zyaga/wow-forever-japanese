@@ -356,11 +356,15 @@ cross-faction and any-realm, the character services ruleset). The UI extract: 4,
 or removed from 70338. Forever now loads the new player tutorial (the addon translates it, surface `npe`), no longer
 makes the minimap instance difficulty banner, and rebuilt the stable, the pet stats, the combat text options and the
 minimap; the addon was changed to follow them. Two files are missing from the extract because the community listfile
-does not name them yet (the classic action button and PvP match table overrides). The served-text inventory: one new
+does not name them yet (Forever's own action button and PvP match table overrides). The served-text inventory: one new
 column (`uiexpansiondisplayinfoicon.f0`, not shown in the game world); `make family-rows` found 59 new rows: 28 listed
 (5 statistics as title, description and criteria, 12 PvP scoreboard columns and tooltips, `MailBody:403`), 2 curated
 (the Leylines respelling), 7 developer and 22 gossip. The English Collector file held nothing newer than 70338 (97
-entries, none rejected, nothing added). The level 1 spell list went from 156 to 153.
+entries, none rejected, nothing added). The level 1 spell list went from 156 to 153. The build respelled one quest title
+("Reading the Ley Lines" became "Reading the Leylines"), and the forever-vo import, which compared each capture's
+title with ours, dropped that quest's progress English; it now tells a capture's language per submission
+([ADR-055](../adr/055-forever-vo-captures-as-an-english-source.md)), which keeps the line and adds one turn-in line
+(quest 92516) now drafted.
 
 | Type | Reworded (shipped line now stale) | New English lines (to draft) | Not served on this build (English kept) | Drafted |
 |---|---|---|---|---|

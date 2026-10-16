@@ -438,6 +438,7 @@ WFJ.Data.add("gloss", {
   [133436] = "開発者\tかいはつしゃ\tdeveloper",
   [133437] = "開発者\tかいはつしゃ\tdevelopers",
   [133438] = "開示する\tかいじする\tis disclosed",
+  [133439] = "開花させる\tかいかさせる\trealize (bring to bloom)",
   [133440] = "開錠\tかいじょう\tunlocking",
   [133441] = "開門\tかいもん\tgate open",
   [133442] = "開閉\tかいへい\ttoggle (open or close)",

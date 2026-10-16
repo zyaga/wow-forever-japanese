@@ -702,6 +702,7 @@ WFJ.Data.add("gloss", {
   [62702] = "大巫女\tだいみこ\tHigh Priestess",
   [62703] = "大差\tたいさ\t(little) better (great difference)",
   [62704] = "大差ない\tたいさない\tis little better than",
+  [62705] = "大差ない\tたいさない\tlittle better than (no different)",
   [62706] = "大幅\tおおはば\tsignificantly",
   [62707] = "大広間\tおおひろま\tgreat halls",
   [62708] = "大当たり\tおおあたり\tjackpot",

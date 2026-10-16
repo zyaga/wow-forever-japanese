@@ -6,8 +6,10 @@ Each `captures/*.json` is one player's submission: `origin` (the issue it came f
 entries `{questID, event, title, text, build, …}`. Only `progress` and `complete` events are read.
 
 A text is taken only when it can be trusted as Forever's English:
-- the entry's quest title equals the English title we hold for that quest id (`titles`). The files carry no
-  client language, and a German client's entry has a German title, so this keeps only English clients;
+- the submission is an English client's (`english_origins`: its quest titles are the English ones we hold)
+  and we hold an English title for the entry's quest id (`titles`). The files carry no client language, and a
+  German client's entries have German titles; deciding per submission keeps a capture from before Forever
+  renamed its quest;
 - at least `MIN_ORIGINS` separate submissions sent the same text (compared normalized), so one tampered or
   garbled submission never decides a line.
 When submissions disagree (another build's wording, one player's race or gender written out), the text sent by
@@ -73,6 +75,7 @@ def read_captures(folder: Path, titles: Mapping[int, str]) -> Result:
         raise ValueError(f"forever-vo: no captures/*.json under {folder}")
     by: dict[tuple[int, str], dict[str, Candidate]] = {}
     skipped = {"other_language": 0, "no_title": 0, "malformed": 0}
+    english = english_origins(folder, titles)
     for path in files:
         doc = json.loads(path.read_text(encoding="utf-8"))
         origin = str(doc.get("origin") or path.stem)
@@ -85,11 +88,10 @@ def read_captures(folder: Path, titles: Mapping[int, str]) -> Result:
             text = entry.get("text")
             if field_ is None or not isinstance(text, str) or not text.strip():
                 continue
-            title = titles.get(qid)
-            if title is None:
+            if qid not in titles:
                 skipped["no_title"] += 1
                 continue
-            if entry.get("title") != title:
+            if origin not in english:
                 skipped["other_language"] += 1
                 continue
             norm = normalize_v1(text)

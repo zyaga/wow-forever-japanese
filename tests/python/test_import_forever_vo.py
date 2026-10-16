@@ -193,3 +193,18 @@ def test_a_submission_with_a_few_renamed_titles_is_still_english(tmp_path):
     german = [_entry(i, "complete", f"Quest {i} (de)", "Fertig.") for i in range(1, 21)]
     folder = _captures(tmp_path / "fvo", [english, german])
     assert english_origins(folder, titles) == {"issue-0"}
+
+
+def test_a_capture_from_before_a_rename_is_still_read(tmp_path):
+    # the language is the submission's (english_origins), not each entry's title: a quest Forever renamed after the
+    # capture ("Reading the Ley Lines" → "Reading the Leylines") keeps the progress text English players sent
+    titles = {i: f"Quest {i}" for i in range(1, 20)} | {20: "Reading the Leylines"}
+    def sub():
+        return [_entry(i, "complete", f"Quest {i}", "Done.") for i in range(1, 20)] + [
+            _entry(20, "progress", "Reading the Ley Lines", "Realizing our true potential.")]
+    german = [_entry(i, "complete", f"Quest {i} (de)", "Fertig.") for i in range(1, 20)] + [
+        _entry(20, "progress", "Die Kraftlinien lesen", "Unser wahres Potenzial.")]
+    result = read_captures(_captures(tmp_path / "fvo", [sub(), sub(), german, german]), titles)
+    got = {(c.id_, c.field): c.en for c in result.captures}
+    assert got[(20, "progress")] == "Realizing our true potential."
+    assert "Unser wahres Potenzial." not in got.values()

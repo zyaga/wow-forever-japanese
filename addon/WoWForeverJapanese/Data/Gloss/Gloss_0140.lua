@@ -428,4 +428,6 @@ WFJ.Data.add("gloss", {
   [140432] = "阻止する\tそしする\tprevented",
   [140433] = "順番\tじゅんばん\tsequence (in order)",
   [140434] = "高レベル\tこうレベル\thigh-level",
+  [140435] = "なかなか\tなかなか\tquite (rather well)",
+  [140436] = "やる\tやる\tdo well (impressive)",
 })

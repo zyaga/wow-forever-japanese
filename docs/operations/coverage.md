@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-16 at commit `ba95a556`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-16 at commit `d544e765`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -9,7 +9,7 @@
 
 | Surface | English lines | Ship Japanese | Nothing to translate | Done | Not yet |
 |---|---|---|---|---|---|
-| Quest text | 20,465 | 20,352 | 113 | 100.0% | 0 |
+| Quest text | 20,467 | 20,354 | 113 | 100.0% | 0 |
 | NPC dialogue (gossip, speech) | 10,962 | 10,962 | 0 | 100.0% | 0 |
 | Book / letter pages | 1,257 | 1,205 | 52 | 100.0% | 0 |
 | Quest objective lines | 430 | 392 | 38 | 100.0% | 0 |
@@ -17,7 +17,7 @@
 | Item descriptions | 10,223 | 8,690 | 0 | 85.0% | 1,533 |
 | Spell tooltips + auras | 25,715 | 25,643 | 1 | 99.7% | 71 |
 | Interface strings | 16,354 | 16,354 | 0 | 100.0% | 0 |
-| **All** | **85,629** | | | **98.1%** | **1,604** |
+| **All** | **85,631** | | | **98.1%** | **1,604** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
 professions, internal strings): quest 331, gossip 81, item 893, spell 301, ui 313.
@@ -190,7 +190,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `friendshipreputation.f1` | surface:ui:FriendshipGain | 1 | StandingModified_lang: You gain %d Rank Points. |
 | `gamemode.f0` | internal | 5 | mode tokens (wfhc, standard) |
 | `gameobjects.f0` | names | 1,421 | object names (Old Coast Road) |
-| `gametips.f0` | no-display | 72 | loading screen tips are drawn by the client, not by a Lua frame an addon can reach (only the showLoadingScreenTips CVar, blizzard_settingsdefinitions_frame/camelot/interfaceoverrides.lua:63) |
+| `gametips.f0` | no-display | 72 | loading screen tips are drawn by the client, not by a Lua frame an addon can reach (only the showLoadingScreenTips CVar, blizzard_settingsdefinitions_frame/camelot/interfaceoverrides.lua:67) |
 | `globalcolor.f0` | internal | 336 | colour constant names |
 | `globalstrings.f0` | internal | 27,388 | BaseTag: the key, not shown |
 | `globalstrings.f1` | surface:ui:GlobalStrings | 27,346 | TagText_lang, inventoried key by key in pipeline/ui_inventory.txt (ui_keys.txt or ui_exclusions.txt) |
@@ -203,7 +203,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `holidaydescriptions.f0` | surface:ui:HolidayDescription | 17 | Description_lang |
 | `holidaynames.f0` | names | 16 | Name_lang: event names (Darkmoon Faire) |
 | `itembagfamily.f0` | no-display | 24 | Lua reads only the family number (C_Container.GetContainerNumFreeSlots); no reader prints the name |
-| `itemclass.f0` | no-display | 17 | the camelot auction data (blizzard_auctionhouseui/camelot/blizzard_auctiondata.lua) uses GlobalStrings categories; the class-only branch (shared/blizzard_auctiondata.lua:89-90) is never reached |
+| `itemclass.f0` | no-display | 17 | the camelot auction data (blizzard_auctionhouseui/camelot/blizzard_auctiondata.lua) uses GlobalStrings categories; the class-only branch (shared/blizzard_auctiondata.lua:93-94) is never reached |
 | `itemlimitcategory.f0` | names | 30 | item names (Signet Ring of the Bronze Dragonflight) |
 | `itemnamedescription.f0` | surface:ui:ItemNameDescription | 92 | Description_lang |
 | `itempetfood.f0` | surface:ui:PetFood | 8 | Name_lang: pet diet words |
@@ -358,7 +358,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 
 | Type | Lines that can carry a word list | With one | Done | Stale | Words | With a meaning |
 |---|---|---|---|---|---|---|
-| quest | 19,027 | 19,027 | 100.0% | 181 | 303,708 | 100.0% |
+| quest | 19,029 | 19,029 | 100.0% | 180 | 303,727 | 100.0% |
 | gossip | 10,834 | 10,834 | 100.0% | 0 | 103,796 | 100.0% |
 | ui | 15,536 | 15,536 | 100.0% | 0 | 47,645 | 100.0% |
 | book | 1,167 | 1,167 | 100.0% | 0 | 39,619 | 100.0% |
@@ -376,7 +376,7 @@ outnumber lines.
 | Kind | Lines | Files | In step | Stale | Not made | Read by the narrator |
 |---|---|---|---|---|---|---|
 | Quest offer | 4,307 | 4,376 | 4,376 | 0 | 0 | 888 |
-| Quest progress | 2,916 | 2,939 | 2,939 | 0 | 0 | 85 |
+| Quest progress | 2,917 | 2,940 | 2,940 | 0 | 0 | 85 |
 | Quest turn-in | 4,040 | 4,064 | 4,064 | 0 | 0 | 169 |
 | NPC talk (greetings, gossip, quest text keyed by its English) | 2,077 | 2,823 | 2,823 | 0 | 0 | 15 |
 | Book and letter pages | 1,102 | 1,102 | 1,102 | 0 | 0 | 1,039 |
@@ -394,4 +394,4 @@ Shipped Japanese the voice does not read, by reason.
 | HTML book page (keeps the client's layout) | 38 |
 | Collected in game with no known speaker | 18 |
 | A quest log line (the completion text the tracker shows) | 11 |
-| No speaker found for the quest | 7 |
+| No speaker found for the quest | 8 |
