@@ -20,6 +20,13 @@ local UI = {
   COMMUNITY_MEMBER_CHARACTER_INFO_FORMAT = { "Level %d %s %s", "レベル%d %s %s" },
   STAT_CATEGORY_GENERAL = { "General", "一般" },
   STAT_CATEGORY_PRIMARY_ATTRIBUTES = { "Primary Attributes", "基本能力値" },
+  -- the pet pane's second header (camelot paperdollframeconstants.lua:103)
+  STAT_CATEGORY_COMBAT = { "Combat", "戦闘" },
+  -- a Warlock pet's mana hover, set raw as tooltip2 (camelot paperdollframe.lua:645)
+  STAT_WARLOCK_PET_MANA_TOOLTIP = { "Resource used to cast |cFFFFFFFFSpells|r and |cFFFFFFFFAbilities|r\n\n"
+    .. "|cFFBCBCBCReplenishes automatically after not spending Mana for 5 sec|r", "|cFFFFFFFF呪文|rと"
+    .. "|cFFFFFFFFアビリティ|rに使う資源\n\n|cFFBCBCBCマナを5秒使わないと自動で回復|r" },
+  MANA = { "Mana", "マナ" },
   SPELL_STAT3_NAME = { "Stamina", "スタミナ" },
   DEFAULT_STAMINA_TOOLTIP = { "Increases health points.", "HPが上昇。" },
   HEADSLOT = { "Head", "頭" },
@@ -223,6 +230,17 @@ describe("the character window on the Forever client", function()
       "CharacterStatsPanePetScrollBox")
     assert.are.equal("一般", rows[1].Title:GetText())
     assert.are.equal("スタミナ:", rows[2].Label:GetText())
+  end)
+
+  it("the pet pane's Combat header and a Warlock pet's mana hover translate", function()
+    local rows = RC.setStats({ { header = "General" }, { label = "Mana", value = "300", tooltip = "Mana",
+      tooltip2 = UI.STAT_WARLOCK_PET_MANA_TOOLTIP[1] }, { header = "Combat" } }, "CharacterStatsPanePetScrollBox")
+    assert.are.equal("戦闘", rows[3].Title:GetText())
+    RC.hover(rows[2])
+    assert.are.equal(UI.STAT_WARLOCK_PET_MANA_TOOLTIP[2], left(2))
+    alt(true)
+    assert.are.equal("Combat", rows[3].Title:GetText())
+    alt(false)
   end)
 
   it("the pet damage row's hover title (INVTYPE_WEAPONMAINHAND_PET) translates; the numbers stay", function()

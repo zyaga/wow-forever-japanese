@@ -51,6 +51,8 @@ local UI = {
   -- the listing's voice chat row and a result tooltip's voice line (listing.xml:554, 631; listing.lua:48–69;
   -- browse.lua:674–682)
   VOICE_CHAT = { "Voice Chat", "ボイスチャット" },
+  -- the level-range checkbox's label (mainline/blizzard_lfgvanilla_listing.xml:564–590)
+  LFG_LIST_IGNORE_SUGGESTED_LEVEL = { "Show All Level Ranges", "すべてのレベル帯を表示" },
   VOICE_CHAT_MODE_NONE = { "None", "なし" }, VOICE_CHAT_MODE_LEGACY = { "In-Game Voice (Legacy)", "ゲーム内ボイス(レガシー)" },
   VOICE_CHAT_MODE_FORMAT = { "Voice Chat: |cnHIGHLIGHT_FONT_COLOR:%s|r", "ボイスチャット: |cnHIGHLIGHT_FONT_COLOR:%s|r" },
 }
@@ -82,6 +84,8 @@ local function loadGroupFinder(o)
   listing.ActivityView = S.frame(nil, "ActivityView")
   listing.ActivityView.PlayStyleDropdown = S.dropdown("PlayStyleDropdown")
   listing.ActivityView.VoiceChatLabel = S.fs(en("VOICE_CHAT"))
+  listing.ActivityView.LevelRangesCheckbox = S.frame()
+  listing.ActivityView.LevelRangesCheckbox.Text = S.fs(en("LFG_LIST_IGNORE_SUGGESTED_LEVEL"))
   listing.ActivityView.VoiceChatDropdown = S.dropdown("VoiceChatDropdown")
   local comment = S.frame("LFGListingComment")
   comment.EditBox = CreateFrame("EditBox")
@@ -270,6 +274,15 @@ describe("the group finder on Forever", function()
         assert.are.equal("メンバー: |cffffffff1|r", tip.MemberCount:GetText())
         assert.are.equal("Close", tip.Leader.Name:GetText())
         assert.is_true(S.unrecorded(WFJ, tip.Leader.Name))
+      end)
+
+      it("the level-range checkbox's label translates; Alt shows English", function()
+        local text = _G.LFGListingFrame.ActivityView.LevelRangesCheckbox.Text
+        assert.are.equal("すべてのレベル帯を表示", text:GetText())
+        Stub.keys.alt = true; WFJ.Modifier.refresh()
+        assert.are.equal("Show All Level Ranges", text:GetText())
+        Stub.keys.alt = false; WFJ.Modifier.refresh()
+        assert.are.equal("すべてのレベル帯を表示", text:GetText())
       end)
 
       it("the voice chat label, dropdown and tooltip line translate; Alt shows English; another mode stays", function()

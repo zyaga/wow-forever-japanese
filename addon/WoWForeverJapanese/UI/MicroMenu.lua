@@ -22,7 +22,10 @@
 --     statustrackingbar.lua:20–22), called as self:UpdateCurrentText() from Update and OnEnter (shared/expbar.lua:40,
 --     75), so it is post-hooked on each container's Experience bar instance (surface "help.xpbar", restricted to
 --     XP_STATUS_BAR_TEXT). The Experience bar is reached by reading
---     `container.bars[StatusTrackingBarInfo.BarsEnum.Experience]` of each status-bar container;
+--     `container.bars[StatusTrackingBarInfo.BarsEnum.Experience]` of each status-bar container. The pet XP bars
+--     (the character sheet's and the stable's PetStableFrame.expBar, both PetExpColoredProgressBarTemplate) write a
+--     literal "XP %s/%s" from their OnUpdate (camelot paperdollframe.lua:3692–3700; stable xml:183), no global
+--     string: nothing to ship it under, so neither is hooked;
 --   the exhaustion tick tooltip: ExhaustionTickMixin:ExhaustionToolTipText anchors it to UIParent
 --     (GameTooltip_SetDefaultAnchor(tooltip, UIParent)) and writes XP_TEXT (numbers only), EXHAUST_TOOLTIP1,
 --     EXHAUST_TOOLTIP2, and for a trial with banked XP XP_TEXT_BANKED_XP_HEADER + TRIAL_CAP_BANKED_*_TOOLTIP, then
@@ -153,19 +156,6 @@ local function registerExhaustionTicks()
   return n
 end
 
--- The stable's pet XP bar, the one camelot PetExpStatusBarTemplate instance (camelot
--- Blizzard_StableUI.xml:190, parentKey expBar of PetStableFrame; the TOC allows standard and camelot).
--- PetExpBarMixin:UpdateCurrentText writes SetBarText(XP_STATUS_BAR_TEXT:format(cur, max)) like the main bars
--- (blizzard_statustrackingbar/camelot/petexpbar.lua:24–26). The character sheet's pet bar writes a literal "XP %s/%s"
--- (camelot paperdollframe.lua:3634–3642), which is no global string: nothing to ship it under.
-function MicroMenu.hookPetStableBar()
-  Compat.declare(DECLARE, "petStableBar", { "PetStableFrame.expBar" })
-  local bar = Compat.get(DECLARE, "petStableBar")
-  if type(bar) ~= "table" then return false end
-  hookXPText(bar, "xp.petstable")
-  return true
-end
-
 local hooked = false
 local registered = 0
 
@@ -180,12 +170,6 @@ function MicroMenu.init()
     for _, name in ipairs(list) do n = n + register(Compat.get(DECLARE, name)) end
   end
   n = n + registerExhaustionTicks()
-  local LOD = WFJ.LoadOnDemand
-  if type(LOD) == "table" and type(LOD.when) == "function" then
-    LOD.when("Blizzard_StableUI", MicroMenu.hookPetStableBar)
-  else
-    MicroMenu.hookPetStableBar()
-  end
   for i = 1, NUM_PET_BUTTONS do n = n + register(Compat.get(DECLARE, petName(i)), { only = PET_KEYS }) end
   for i = 1, NUM_POSSESS_BUTTONS do
     n = n + register(Compat.get(DECLARE, possessName(i)), { only = POSSESS_KEYS })

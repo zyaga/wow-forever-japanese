@@ -6,13 +6,13 @@
 -- button" turns that setting off, and the settings page or `/wfj minimapButton on` brings it back. Blizzard's addon
 -- dropdown on the minimap gets the same two actions through the TOC's AddonCompartmentFunc (Main.lua's globals), so
 -- a hidden button never locks anyone out.
--- Forever (camelot) sources [verified: forever-ui-1.60.1.70009:
+-- Forever (camelot) sources [verified: forever-ui-1.60.1.70425:
 --   MiniMapButtonTemplate Blizzard_Minimap/Shared/MinimapButtonTemplate.xml (press offset on the `<name>Icon`
 --     texture, MinimapButtonTemplate.lua), listed for camelot in Blizzard_Minimap.toc;
---   the Minimap frame Blizzard_Minimap/Mainline/Minimap.xml:195 ([Family] loads for camelot);
+--   the Minimap frame Blizzard_Minimap/Mainline/Minimap.xml:56 ([Family] loads for camelot);
 --   TooltipBackdropTemplate Blizzard_SharedXML/SharedTooltipTemplates.xml, for the menu's frame;
 --   AddonCompartmentFunc / …FuncOnEnter / …FuncOnLeave, called (addonName, buttonName | frame)
---     Blizzard_Minimap/Mainline/AddonCompartment.lua:77–117].
+--     Blizzard_Minimap/Mainline/AddonCompartment.lua:102–150].
 -- The rim is placed for a round minimap [unverified: camelot's minimap shape; no GetMinimapShape in its FrameXML].
 -- Menu rows take the bundled font through OptionsWidgets.setText, like the settings page.
 local _, WFJ = ...
@@ -273,7 +273,7 @@ local function build()
   b:SetFrameStrata("MEDIUM")
   b:SetFrameLevel(map:GetFrameLevel() + 8)
   -- The classic gold ring around the 字 medallion. Forever's HUD minimap buttons (a ui-hud-minimap-button disc,
-  -- Blizzard_Minimap/Mainline/Minimap.xml:60–95) read in game as a dark square behind an art icon; the ring suits a
+  -- Blizzard_Minimap/Mainline/Minimap.xml:25–45) read in game as a dark square behind an art icon; the ring suits a
   -- round art icon.
   local icon = b:CreateTexture("WFJMinimapButtonIcon", "ARTWORK") -- the template's press offset moves `<name>Icon`
   icon:SetTexture(MinimapButton.ICON)

@@ -333,25 +333,23 @@ describe("the Forever micro menu and game menu", function()
     MM.leave(mm)
   end)
 
-  it("the stable's pet XP bar (PetStableFrame.expBar) translates like the main bars", function()
-    -- camelot Blizzard_StableUI.xml:190 (parentKey expBar), camelot/petexpbar.lua:24–26
-    local stable = CreateFrame("Frame", "PetStableFrame")
-    local bar = { OverlayFrame = { Text = Stub.fontString("") }, currXP = 300, maxBar = 1200 }
-    function bar:UpdateCurrentText()
-      self.OverlayFrame.Text.text = string.format(en("XP_STATUS_BAR_TEXT"), self.currXP, self.maxBar)
-    end
-    stable.expBar = bar
-    bar:UpdateCurrentText()
-    Stub.loadedAddons.Blizzard_StableUI = true
-    local W = H.loadChunks(FILES)
-    H.uiSetup(W, UI)
-    W.MicroMenu.init()
-    assert.are.equal("経験値: 300/1200", bar.OverlayFrame.Text:GetText())
-    bar.currXP = 450
-    bar:UpdateCurrentText()
-    assert.are.equal("経験値: 450/1200", bar.OverlayFrame.Text:GetText())
-    _G.PetStableFrame = nil
-  end)
+  it("the stable's pet XP bar (PetStableFrame.expBar) is left alone: its literal \"XP %s/%s\" is no global string",
+    function()
+      -- camelot Blizzard_StableUI.xml:183 (PetExpColoredProgressBarTemplate), paperdollframe.lua:3692–3700
+      local stable = CreateFrame("Frame", "PetStableFrame")
+      local bar = { text = "" }
+      function bar:SetText(t) self.text = t end
+      function bar:GetText() return self.text end
+      stable.expBar = bar
+      bar:SetText(string.format("XP %s/%s", 300, 1200))
+      Stub.loadedAddons.Blizzard_StableUI = true
+      local W = H.loadChunks(FILES)
+      H.uiSetup(W, UI)
+      W.MicroMenu.init()
+      assert.is_nil(W.MicroMenu.hookPetStableBar)
+      assert.are.equal("XP 300/1200", bar:GetText())
+      _G.PetStableFrame = nil
+    end)
 
   it("the latency label (three lines, both numbers kept) and its help line translate", function()
     local getCVar = _G.GetCVar

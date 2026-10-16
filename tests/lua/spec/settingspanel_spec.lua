@@ -27,6 +27,12 @@ local UI = {
     "この設定の変更にはクライアントの再起動が必要です" },
   -- the audio assist resource option around the player's power word (a dictionary word)
   CAA_SAY_PLAYER_RESOURCE_LABEL = { "Say Your %s", "自分の%sの読み上げ" }, MANA = { "Mana", "マナ" },
+  -- the Combat page (blizzard_settingsdefinitions_frame/mainline/combatoverrides.lua:136–139, 228; combat.lua:200–203);
+  -- "Fading Auras" left that page and the window's keys
+  FLOATING_COMBAT_TEXT_ON_ME_DROPDOWN_LABEL = { "Text on Me", "自分のテキスト" },
+  FLOATING_COMBAT_TEXT_ON_TARGET_DROPDOWN_LABEL = { "Text on Target", "対象のテキスト" },
+  AUTO_RANGED_COMBAT_TEXT = { "Auto Attack/Auto Shot", "自動攻撃/自動射撃" },
+  COMBAT_TEXT_SHOW_AURA_FADE_TEXT = { "Fading Auras", "消えるオーラ" },
   BINDING_NAME_MOVEFORWARD = { "Move Forward", "前進" }, BINDING_HEADER_MOVEMENT = { "Movement Keys", "移動キー" },
   -- in the dictionary, and never shown here: not one of this window's keys / a key name / a player's name
   RAID = { "Raid", "レイド" }, KEY_SPACE = { "Space", "スペース" }, PREVIEW = { "Preview", "プレビュー" },
@@ -308,6 +314,22 @@ describe("the Options window on Forever", function()
         .. "and hostile targeting on the left side.", _G.SettingsTooltipTextLeft2:GetText())
       alt(false)
     end)
+
+  it("the Combat page's Text on Me / Text on Target dropdowns and the auto ranged checkbox translate; a dropped"
+    .. " option's word stays English", function()
+    local onMe = S.dropdownRow("", "Text on Me")
+    local onTarget = S.dropdownRow(" ", "Text on Target")
+    local ranged = S.checkboxRow("Auto Attack/Auto Shot")
+    local fading = S.checkboxRow("Fading Auras")
+    for _, row in ipairs({ onMe, onTarget, ranged, fading }) do list:initFrame(row, {}) end
+    assert.are.equal("自分のテキスト", onMe.Control.Dropdown.Text:GetText())
+    assert.are.equal("対象のテキスト", onTarget.Control.Dropdown.Text:GetText())
+    assert.are.equal("自動攻撃/自動射撃", ranged.Text:GetText())
+    assert.are.equal("Fading Auras", fading.Text:GetText())
+    alt(true)
+    assert.are.equal("Text on Me", onMe.Control.Dropdown.Text:GetText())
+    alt(false)
+  end)
 
   it("the Voice page's service dropdown, its Discord settings checkbox and tooltip; Alt shows English", function()
     local service = S.dropdownRow("Preferred Voice Chat Service", "Legacy")

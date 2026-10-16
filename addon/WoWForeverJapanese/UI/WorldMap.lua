@@ -9,9 +9,10 @@
 --   other nav button is a map's name (NavBar_AddButton, navigationbar.lua:114) and is never looked at. A static
 --   label restricted to WORLD, shown at init and on every OnShow of the map.
 -- - WorldMapTrackingOptionsButton: its OnEnter builds GameTooltip with GameTooltip_SetTitle(MAP_FILTER)
---   (blizzard_worldmaptemplates.lua:357–361; camelot keeps that OnEnter, camelot/blizzard_worldmaptemplates.xml:42):
+--   (blizzard_worldmaptemplates.lua:357–361; camelot keeps that OnEnter, camelot/blizzard_worldmaptemplates.xml:48):
 --   a help-tooltip owner restricted to MAP_FILTER. Its menu (the "Show:" title, the filter check boxes and their
---   description tooltips, :228–323) is a menu popup, the menu system's.
+--   description tooltips, :228–323) is a menu popup, the menu system's; camelot offers no dungeon entrances filter
+--   there (CanShowDungeonEntrancesOnMapFilterOption is false, camelot/blizzard_worldmaptemplates.lua:14–16).
 -- - WorldMapTrackingPinButton: OnEnter builds MAP_PIN, then MAP_PIN_TOOLTIP + MAP_PIN_TOOLTIP_INSTRUCTIONS, or
 --   MAP_PIN_INVALID_MAP on a map that takes no pin (:435–447): a help-tooltip owner restricted to those four. The
 --   button is not created when the game rule WorldMapTrackingPinDisabled is on (blizzard_worldmap.lua:331–335).
@@ -27,9 +28,11 @@
 --   :617–621), and the timer shows only on an outdoor-PvP map (C_PvP.GetOutdoorPvPWaitTime, :666).
 -- Not here: the gamepad footer prompts (FRAME_ACTION_*, blizzard_worldmap.lua:1012–1098), the help plate
 -- (WORLD_MAP_TUTORIAL1 / 4, :1292–1293; never shown: camelot hides its MainHelpPlateButton,
--- helpplateoverrides.lua:1–3), the completed-quests HelpTip (UI/HelpTips), the N'Zoth threat eye (a name),
--- and the filter counter, which camelot's template does not have (camelot/blizzard_worldmaptemplates.xml:4–46;
--- RefreshFilterCounter is a no-op, camelot/blizzard_worldmaptemplates.lua:5–7).
+-- helpplateoverrides.lua:1–3), the completed-quests HelpTip (UI/HelpTips; never shown on camelot:
+-- CanShowRefreshAccountCompletedQuestFilterTutorial is false, camelot/blizzard_worldmaptemplates.lua:10–12), the
+-- N'Zoth threat eye (a name), and the filter counter, which camelot's template does not have
+-- (camelot/blizzard_worldmaptemplates.xml:4–52; RefreshFilterCounter is a no-op, camelot/
+-- blizzard_worldmaptemplates.lua:6–8).
 -- Release on the map's OnHide (the static home label stays: it is written once).
 local _, WFJ = ...
 local WorldMap = {}

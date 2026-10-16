@@ -1,5 +1,5 @@
 -- UI/MenusUntagged.lua: the dropdown menus whose generator sets no tag (ADR-033): the Options window's
--- dropdowns (Settings.InitDropdown, blizzard_settings_shared/blizzard_settings.lua:552–568) and Edit Mode's setting
+-- dropdowns (Settings.InitDropdown, blizzard_settings_shared/blizzard_settings.lua:563–581) and Edit Mode's setting
 -- dropdowns (EditModeSettingDropdownMixin:SetupSetting, blizzard_editmode/shared/editmodetemplates.lua:22–53).
 -- Menu.ModifyMenu only reaches a tagged description (SecureModifyMenu returns on no tag, blizzard_menu/menu.lua:
 -- 2708–2717), so these are reached through the dropdown button itself: OpenMenu always regenerates (GenerateMenu
@@ -10,7 +10,7 @@
 -- The other candidate, the "MenuProxy.OnShow" registry event (menu.lua:1802–1806), fires after the menu is laid out
 -- in English, which would need a second layout pass: not used.
 -- The dropdowns are found as the client sets them up: Settings.InitDropdown is called through the Settings table
--- (blizzard_settingcontrols.lua:873, 1589; blizzard_settingsdefinitions_shared/graphics.lua:319), so a post-hook on
+-- (blizzard_settingcontrols.lua:877, 1595; blizzard_settingsdefinitions_shared/graphics.lua:309), so a post-hook on
 -- it sees every one; Edit Mode's rows come from the settings dialog's pool after login, each copying the mixin's
 -- (hooked) SetupSetting when it is made. Each menu matches only its window's keys (Menus.UNTAGGED): a font, a
 -- locale or a layout name is no key and stays English (names stay in English).
@@ -41,8 +41,26 @@ local DECLARE = "help.menus.untagged"
 -- entry's title is the leader's name; blizzard_lfgvanilla_browse.lua:1403–1419 for GROUP_INVITE). UI/Menus reads
 -- these specs like its own tags (Menus.showElement / onMenu).
 local SETTINGS_KEYS = WFJ.SettingsKeys or {}
+-- The Combat page's "Text on Me" checkboxes: each one's hover is its label as the title and its tooltip as the line
+-- (Settings.CreateDropdownCheckbox's SetTooltip, blizzard_settings_shared/blizzard_settings.lua:508–513; the pairs
+-- at blizzard_settingsdefinitions_frame/mainline/combatoverrides.lua:75–87).
+local TEXT_ON_ME_TOOLTIPS = {
+  "COMBAT_TEXT_SHOW_DODGE_PARRY_MISS_TEXT", "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_DODGE_PARRY_MISS",
+  "COMBAT_TEXT_SHOW_RESISTANCES_TEXT", "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_RESISTANCES",
+  "COMBAT_TEXT_SHOW_REPUTATION_TEXT", "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_REPUTATION",
+  "COMBAT_TEXT_SHOW_REACTIVES_TEXT", "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_REACTIVES",
+  "COMBAT_TEXT_SHOW_FRIENDLY_NAMES_TEXT", "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_FRIENDLY_NAMES",
+  "COMBAT_TEXT_SHOW_COMBAT_STATE_TEXT", "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_COMBAT_STATE",
+  "SHOW_COMBAT_HEALING_ABSORB_SELF", "OPTION_TOOLTIP_SHOW_COMBAT_HEALING_ABSORB_SELF",
+  "COMBAT_TEXT_SHOW_COMBO_POINTS_TEXT", "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_COMBO_POINTS",
+  "COMBAT_TEXT_SHOW_LOW_HEALTH_MANA_TEXT", "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_LOW_HEALTH_MANA",
+  "COMBAT_TEXT_SHOW_ENERGIZE_TEXT", "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_ENERGIZE",
+  "COMBAT_TEXT_SHOW_PERIODIC_ENERGIZE_TEXT", "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_PERIODIC_ENERGIZE",
+  "COMBAT_TEXT_SHOW_HONOR_GAINED_TEXT", "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_HONOR_GAINED",
+  "COMBAT_TEXT_SHOW_AURAS_TEXT", "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_AURAS" }
 WFJ.Menus.UNTAGGED = {
-  SETTINGS_DROPDOWN = { source = "blizzard_settings.lua:552", keys = SETTINGS_KEYS.options or {} },
+  SETTINGS_DROPDOWN = { source = "blizzard_settings.lua:563", keys = SETTINGS_KEYS.options or {},
+    tooltips = TEXT_ON_ME_TOOLTIPS },
   EDIT_MODE_DROPDOWN = { source = "editmodetemplates.lua:22", keys = SETTINGS_KEYS.editmode or {} },
   CONTEXT_LFG_SEARCH_ENTRY = { source = "blizzard_lfgvanilla_browse.lua:954", titleIsName = true,
     keys = { "SEND_MESSAGE", "GROUP_INVITE", "LFG_LIST_REPORT_GROUP_FOR", "REPORT_GROUP_FINDER_ADVERTISEMENT" } },

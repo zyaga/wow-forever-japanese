@@ -12,7 +12,7 @@
 --     (blizzard_lfgvanilla_listing.lua:46, blizzard_lfgvanilla_browse.lua:131);
 --   LFGListingFrame: GroupRoleButtons.RolePollButton ROLE_POLL (mainline/blizzard_lfgvanilla_listing.xml:389),
 --     LockedView.ActivityText LFG_LIST_MY_ACTIVITY_LIST_HEADER (xml:598), ActivityView.VoiceChatLabel VOICE_CHAT
---     (xml:554);
+--     (xml:554), ActivityView.LevelRangesCheckbox.Text LFG_LIST_IGNORE_SUGGESTED_LEVEL (xml:564–590);
 --   LFGBrowseFrame: SearchingSpinner.Label SEARCHING (mainline/blizzard_lfgvanilla_browse.xml:509),
 --     SendMessageButton SEND_MESSAGE (xml:525);
 --   LFGBrowseSearchEntryTooltip: Delisted, NewPlayerFriendlyText, CompletedEncounterHeader (xml:326–360).
@@ -90,6 +90,7 @@ local LABELS = {
   tipBosses = { TIP .. ".CompletedEncounterHeader", { "LFG_LIST_BOSSES_DEFEATED" } },
   tipMembers = { TIP .. ".MemberCount", { "LFG_LIST_TOOLTIP_MEMBERS", "LFG_LIST_TOOLTIP_MEMBERS_SIMPLE" } },
   voiceLabel = { LISTING .. ".ActivityView.VoiceChatLabel", { "VOICE_CHAT" } },
+  levelRanges = { LISTING .. ".ActivityView.LevelRangesCheckbox.Text", { "LFG_LIST_IGNORE_SUGGESTED_LEVEL" } },
   tipVoice = { TIP .. ".VoiceChat", { "VOICE_CHAT_MODE_FORMAT" } },
 }
 local ORDER = {}

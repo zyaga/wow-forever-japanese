@@ -1,7 +1,8 @@
 -- UI/Minimap.lua over a minimap cluster replayed from Forever blizzard_minimap/mainline/minimap.lua
--- (zone button :84–103 + Minimap_SetTooltip :180–216, tracking button :826–831, mail :485–490 with
--- FormatUnreadMailTooltip, zoom buttons :288–293 / :312–317), mainline/gametime.lua:63–81 and
--- mainline/addoncompartment.lua:12–16. Zone, subzone, faction and sender names stay English.
+-- (zone button :85–108 + Minimap_SetTooltip :190–226, tracking button :923–930, mail :539–544 with
+-- FormatUnreadMailTooltip, zoom buttons :298–303 / :322–327), mainline/gametime.lua:99–116,
+-- mainline/addoncompartment.lua:60–66 and the external event button (mainline/minimap.xml:274,
+-- shared/externaleventurlminimapbutton.lua:93–97). Zone, subzone, faction and sender names stay English.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 
@@ -26,6 +27,7 @@ local UI = {
   ADDONS = { "AddOns", "アドオン" },
   ZOOM_IN = { "Zoom In", "ズームイン" },
   ZOOM_OUT = { "Zoom Out", "ズームアウト" },
+  GAMEMENU_EXTERNALEVENT = { "Activities", "アクティビティ" },
   -- a zone whose name is also a dictionary word: it must stay English on the zone button's tooltip
   RAID = { "Raid", "レイド" },
 }
@@ -94,6 +96,13 @@ local function installMinimap()
     tt:SetOwner(_G.UIParent)
     tt:SetText(en("ZOOM_OUT"))
   end)
+  local backdrop = CreateFrame("Frame", "MinimapBackdrop")
+  backdrop.ExternalEventURLButton = CreateFrame("Button")
+  backdrop.ExternalEventURLButton:SetScript("OnEnter", function(self)
+    tt:SetOwner(self)
+    tt:SetText(en("GAMEMENU_EXTERNALEVENT"))
+    tt:Show()
+  end)
   return cluster
 end
 
@@ -116,14 +125,14 @@ describe("the minimap cluster's help tooltips on Forever", function()
     WFJ = load()
     installMinimap()
     WFJ.Labels.forbidNames(WFJ.Minimap.NEVER_TOUCH)
-    assert.are.equal(7, WFJ.Minimap.init())
+    assert.are.equal(8, WFJ.Minimap.init())
   end)
 
   after_each(function()
     H.uiTeardown()
     Stub.keys.alt = false
     for _, n in ipairs({ "MinimapCluster", "Minimap", "GameTimeFrame", "AddonCompartmentFrame", "MinimapZoneText",
-      "UIParent" }) do _G[n] = nil end
+      "UIParent", "MinimapBackdrop" }) do _G[n] = nil end
   end)
 
   it("the zone button: the territory word and the map hint translate; zone and subzone names stay English", function()
@@ -158,6 +167,14 @@ describe("the minimap cluster's help tooltips on Forever", function()
     assert.are.equal(ja("GAMETIME_TOOLTIP_TOGGLE_CALENDAR"), tip(3))
     enter(_G.AddonCompartmentFrame)
     assert.are.equal(ja("ADDONS"), tip(1))
+  end)
+
+  it("the external event button's tooltip translates; Alt shows English", function()
+    enter(_G.MinimapBackdrop.ExternalEventURLButton)
+    assert.are.equal(ja("GAMEMENU_EXTERNALEVENT"), tip(1))
+    Stub.keys.alt = true
+    WFJ.Modifier.refresh()
+    assert.are.equal(en("GAMEMENU_EXTERNALEVENT"), tip(1))
   end)
 
   it("mail with senders: the header line in Japanese, the senders' names as written; Alt English",
@@ -201,6 +218,7 @@ describe("the minimap cluster's help tooltips on Forever", function()
     cluster.IndicatorFrame = "moved"
     _G.GameTimeFrame = true
     _G.AddonCompartmentFrame = "gone"
+    _G.MinimapBackdrop = 5
     _G.Minimap.ZoomIn = 3
     _G.Minimap.ZoomOut = { HookScript = "not a function" }
     assert.has_no.errors(function() assert.are.equal(1, ns.Minimap.init()) end)
@@ -209,7 +227,7 @@ describe("the minimap cluster's help tooltips on Forever", function()
   end)
 
   it("init runs once; a client without the cluster's zone button is skipped without error", function()
-    assert.are.equal(7, WFJ.Minimap.init())
+    assert.are.equal(8, WFJ.Minimap.init())
     H.uiTeardown()
     Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
     CreateFrame("Frame", "PVPRankFrame") -- the Forever marker (UI/Camelot)

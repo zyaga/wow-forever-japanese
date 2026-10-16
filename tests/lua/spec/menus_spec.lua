@@ -53,6 +53,12 @@ local UI = {
   TIMEMANAGER_AM = { "AM", "午前" }, ALL_SPECS = { "All Specs", "すべての専門" }, ALL = { "All", "すべて" },
   LFG_LIST_IGNORE_SUGGESTED_LEVEL = { "Ignore Suggested Level", "推奨レベルを無視" },
   ANTIALIASING_FXAA_LOW = { "FXAA Low", "FXAA 低" }, HIGH = { "High", "高" },
+  -- the Options window's combat text menus (blizzard_settingsdefinitions_frame/mainline/combatoverrides.lua:73–88,
+  -- 183–224): a "Text on Me" checkbox with its hover, and a "Text on Target" entry
+  COMBAT_TEXT_SHOW_DODGE_PARRY_MISS_TEXT = { "Dodge/Parry/Miss", "回避/受け流し/ミス" },
+  OPTION_TOOLTIP_COMBAT_TEXT_SHOW_DODGE_PARRY_MISS = { "Shows attacks against you that dodge, parry, or miss.",
+    "自分への攻撃の回避、受け流し、ミスを表示します。" },
+  SHOW_DAMAGE_TEXT = { "Damage", "ダメージ" },
 }
 
 local function element(text)
@@ -434,5 +440,43 @@ describe("UI/Menus: menu entries", function()
     -- hooked once per dropdown, however often the client sets it up
     assert.is_false(WFJ.MenusUntagged.hookDropdown(options, "SETTINGS_DROPDOWN"))
     _G.Settings, _G.EditModeSettingDropdownMixin = nil, nil
+  end)
+
+  it("the combat text dropdowns: a Text on Me checkbox and its hover (title = label, line = tooltip), a Text on"
+    .. " Target entry", function()
+    local settings = { InitDropdown = function() end }
+    _G.Settings = settings
+    WFJ.Compat.init(function(name) return _G[name] end)
+    WFJ.Menus.init()
+    WFJ.MenusUntagged.init()
+    local onMe = { RegisterMenu = function(self, r) self.menuDescription = r end }
+    settings.InitDropdown(onMe)
+    local root = element(nil)
+    root:CreateButton(UI.COMBAT_TEXT_SHOW_DODGE_PARRY_MISS_TEXT[1])
+    onMe:RegisterMenu(root)
+    local frames = open(root)
+    local box = frames[root.children[1]]
+    assert.are.equal("回避/受け流し/ミス", box.fontString:GetText())
+    -- Settings.CreateDropdownCheckbox's SetTooltip (blizzard_settings_shared/blizzard_settings.lua:508–513)
+    assert.is_true(WFJ.HelpTooltip.registered(box))
+    local tt = _G.GameTooltip
+    tt:SetOwner(box, "ANCHOR_RIGHT")
+    tt:SetText(UI.COMBAT_TEXT_SHOW_DODGE_PARRY_MISS_TEXT[1])
+    tt:AddLine(UI.OPTION_TOOLTIP_COMBAT_TEXT_SHOW_DODGE_PARRY_MISS[1])
+    tt:Show()
+    assert.are.equal("回避/受け流し/ミス", _G.GameTooltipTextLeft1:GetText())
+    assert.are.equal("自分への攻撃の回避、受け流し、ミスを表示します。", _G.GameTooltipTextLeft2:GetText())
+    -- an Options key that is no combat-text hover stays English on that hover
+    tt:SetOwner(box, "ANCHOR_RIGHT")
+    tt:SetText(UI.ANTIALIASING_FXAA_LOW[1])
+    tt:Show()
+    assert.are.equal("FXAA Low", _G.GameTooltipTextLeft1:GetText())
+    local onTarget = { RegisterMenu = function(self, r) self.menuDescription = r end }
+    settings.InitDropdown(onTarget)
+    local target = element(nil)
+    target:CreateButton(UI.SHOW_DAMAGE_TEXT[1])
+    onTarget:RegisterMenu(target)
+    assert.are.equal("ダメージ", open(target)[target.children[1]].fontString:GetText())
+    _G.Settings = nil
   end)
 end)

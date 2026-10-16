@@ -1,6 +1,6 @@
 -- The transmogrifier window on Forever: UI/Transmog.lua over a TransmogFrame replayed from
--- blizzard_transmog/blizzard_transmog.xml (:45–796) and .lua (:114, :821–822, :990, :1485–1491, :1747–1748,
--- :1817–1847, :1921–2025), with the shared TabSystem's UpdateTabText (tabsystemtemplates.lua:192–196),
+-- blizzard_transmog/blizzard_transmog.xml (:45–799) and .lua (:114, :1064–1065, :1239, :1765–1771, :2058–2059,
+-- :2128–2158, :2232–2336), with the shared TabSystem's UpdateTabText (tabsystemtemplates.lua:192–196),
 -- load-on-demand in both load orders. Appearance and outfit names stay English.
 local Stub = require("tests.lua.spec.wow_stub")
 local C = require("tests.lua.spec.stub_commerce")
@@ -12,6 +12,7 @@ local UI = {
   TRANSMOG_SITUATIONS_DEFAULTS = { "Defaults", "初期設定" },
   SEARCH_LOADING_TEXT = { "Loading...", "読み込み中..." },
   TRANSMOG_TAB_ITEMS = { "Items", "アイテム" }, TRANSMOG_TAB_SETS = { "Sets", "セット" },
+  TRANSMOG_TAB_CUSTOM_SETS = { "Custom Sets", "カスタムセット" },
   SOURCES = { "Sources", "入手元" }, HEADSLOT = { "Head", "頭" }, WEAPON_ENCHANTMENT = { "Weapon Enchantment", "武器エンチャント" },
   TRANSMOG_SLOT_DISPLAY_TYPE_UNASSIGNED = { "Unassigned", "未割り当て" },
   TRANSMOG_SLOT_DISPLAY_TYPE_UNASSIGNED_TOOLTIP = { "The appearance of this slot will not be changed.",
@@ -88,9 +89,10 @@ local function build()
   function items.InitFilterButton(self) self.FilterButton.Text.text = en("SOURCES") end
   items:InitFilterButton()
   local wardrobe = frame.WardrobeCollection
-  local tabs = { tabButton(en("TRANSMOG_TAB_ITEMS")), tabButton(en("TRANSMOG_TAB_SETS")) }
+  local tabs = { tabButton(en("TRANSMOG_TAB_ITEMS")), tabButton(en("TRANSMOG_TAB_SETS")),
+    tabButton(en("TRANSMOG_TAB_CUSTOM_SETS")) }
   wardrobe.TabHeaders = { GetTabButton = function(_, id) return tabs[id] end }
-  wardrobe.itemsTabID, wardrobe.setsTabID = 1, 2
+  wardrobe.itemsTabID, wardrobe.setsTabID, wardrobe.customSetsTabID = 1, 2, 3 -- lua:1768–1770
   local preview = frame.CharacterPreview
   preview.CharacterAppearanceSlotFramePool = C.pool(function() return CreateFrame("Button") end)
   preview.CharacterIllusionSlotFramePool = C.pool(function() return CreateFrame("Button") end)
@@ -125,6 +127,7 @@ C.suite(getfenv(1), {
         assert.are.equal("アイテム", tabText(frame, 1))
         frame.WardrobeCollection.TabHeaders:GetTabButton(2):UpdateTabText()
         assert.are.equal("セット", tabText(frame, 2))
+        assert.are.equal("カスタムセット", tabText(frame, 3))
         C.alt(WFJ, true)
         assert.are.equal("Transmogrify", frame.TitleContainer.TitleText:GetText())
         C.alt(WFJ, false)

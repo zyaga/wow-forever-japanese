@@ -1,36 +1,44 @@
 -- UI/Minimap.lua: the minimap cluster's help tooltips on Forever (records on surface "help", area "ui",
--- ADR-016). camelot runs the mainline minimap (blizzard_minimap.toc: mainline/minimap.lua|xml, mainline/gametime.*,
--- mainline/addoncompartment.*, camelot/minimapconstants.lua, camelot/skin.lua, camelot/diel.lua). Nothing on the
--- cluster is a label of its own: MinimapZoneText is the zone NAME (minimap.lua:160) and stays English; every other
--- text is a GameTooltip the client writes in Lua, so this module only registers the owners with UI/HelpTooltip, each
--- restricted (`only`) to the keys its writer shows: every one of these tooltips can also carry a name.
--- Owners and writers [verified: Forever 1.60.1.69913]:
+-- ADR-016). camelot loads the mainline minimap (blizzard_minimap.toc: mainline/minimap.lua|xml, mainline/gametime.*,
+-- mainline/addoncompartment.lua) with camelot's own files after it: camelot/minimapconstants.lua, camelot/minimap.lua
+-- (the frame and mask by the rotate setting, the header placement, the external event button's anchor: lua:31–93),
+-- camelot/minimapinstancedifficulty.lua (no instance difficulty frame), the ZoneTextButton, Tracking button, mail
+-- frame and indicator templates, GameTimeFrameTemplate, the AddonCompartmentFrame, and camelot/diel.lua. camelot's
+-- .lua files restyle those buttons (atlas, highlight) and write no text; the tooltip writers are mainline mixin
+-- methods. Nothing on the cluster is a label of its own: MinimapZoneText is the zone NAME (minimap.lua:170) and
+-- stays English; every other text is a GameTooltip the client writes in Lua, so this module only registers the
+-- owners with UI/HelpTooltip, each restricted (`only`) to the keys its writer shows: every one of these tooltips can
+-- also carry a name.
+-- Owners and writers [verified: Forever 1.60.1.70425]:
 --   MinimapCluster.ZoneTextButton: MinimapZoneTextButtonMixin:OnEnter → Minimap_SetTooltip: AddLine(zone name),
 --     AddLine(subzone name), AddLine(SANCTUARY_TERRITORY | FREE_FOR_ALL_TERRITORY | CONTESTED_TERRITORY |
 --     COMBAT_ZONE | format(FACTION_CONTROLLED_TERRITORY, factionName)), AddLine(self.tooltipText) where tooltipText
---     is MicroButtonTooltipText(WORLDMAP_BUTTON, "TOGGLEWORLDMAP"), then Show (minimap.lua:84–103, 180–216). Zone,
+--     is MicroButtonTooltipText(WORLDMAP_BUTTON, "TOGGLEWORLDMAP"), then Show (minimap.lua:85–108, 190–226). Zone,
 --     subzone and faction names stay English: the two name lines never match the `only` set, and the faction inside
 --     "(%s Territory)" is a verbatim `text` argument (Core/UIStrings ARGS);
 --   MinimapCluster.Tracking.Button: MiniMapTrackingButtonMixin:OnEnter: SetText(TRACKING), AddLine(
---     MINIMAP_TRACKING_TOOLTIP_NONE), Show (minimap.lua:826–831). The tracking MENU (UNCHECK_ALL, HUNTER_TRACKING_TEXT,
+--     MINIMAP_TRACKING_TOOLTIP_NONE), Show (minimap.lua:923–930). The tracking MENU (UNCHECK_ALL, HUNTER_TRACKING_TEXT,
 --     TOWNSFOLK_TRACKING_TEXT, filter and spell names) is a menu popup (UI/Menus);
 --   MinimapCluster.IndicatorFrame.MailFrame: MinimapMailFrameUpdate → FormatUnreadMailTooltip(GameTooltip, header,
---     senders): ONE SetText of header .. "\n" .. sender .. … (minimap.lua:485–490; blizzard_sharedxml/
+--     senders): ONE SetText of header .. "\n" .. sender .. … (minimap.lua:539–544; blizzard_sharedxml/
 --     formattingutil.lua:181–187). With no sender the line is exactly HAVE_MAIL; with senders it is HAVE_MAIL_FROM
 --     followed by "\n<name>" lines: the headerLines form, the first line in Japanese, the names as written;
---   GameTimeFrame: GameTimeFrame_OnUpdate rewrites the tooltip on EVERY frame while it owns it: ClearLines,
+--   GameTimeFrame: GameTimeFrameMixin:OnUpdate rewrites the tooltip on EVERY frame while it owns it: ClearLines,
 --     AddLine(GAMETIME_TOOLTIP_CALENDAR_INVITES | the game time | " " | GAMETIME_TOOLTIP_TOGGLE_CALENDAR), Show
---     (gametime.lua:63–81). The Show post-hook walks it each time (two `only` lookups); the time line never matches;
---   AddonCompartmentFrame: its OnLoad-set OnEnter: GameTooltip_SetTitle(ADDONS), Show (addoncompartment.lua:12–16).
---     The compartment's menu lists addon names: never touched;
+--     (gametime.lua:99–116). The Show post-hook walks it each time (two `only` lookups); the time line never matches;
+--   AddonCompartmentFrame: AddonCompartmentMixin:OnEnter: GameTooltip_SetTitle(ADDONS), Show
+--     (addoncompartment.lua:60–66). The compartment's menu lists addon names: never touched;
+--   MinimapBackdrop.ExternalEventURLButton (minimap.xml:274, ExternalEventURLMinimapButtonTemplate): shown only when
+--     C_ExternalEventURL.CanShow() and HasURL() (shared/externaleventurlminimapbutton.lua:76–83); its OnEnter:
+--     SetText(GAMEMENU_EXTERNALEVENT), Show (:93–97);
 --   Minimap.ZoomIn / Minimap.ZoomOut: with UberTooltips on, GameTooltip_SetDefaultAnchor(GameTooltip, UIParent) +
---     SetText(ZOOM_IN | ZOOM_OUT) (minimap.lua:288–293, 312–317). UIParent owns every default-anchored tooltip and is
+--     SetText(ZOOM_IN | ZOOM_OUT) (minimap.lua:298–303, 322–327). UIParent owns every default-anchored tooltip and is
 --     never registered: each button's OnEnter script is post-hooked (HookScript) and, when GameTooltip's owner is
 --     UIParent right then, walked once with HelpTooltip.walkAs restricted to that button's key (the exhaustion
 --     tick pattern, UI/MicroMenu.lua).
--- Not here: MinimapCluster.IndicatorFrame.CraftingOrderFrame (crafting orders: a profession name inside a |4 plural
---   composite), ExpansionLandingPageMinimapButton (garrison / class hall / covenant reports), the coordinates text
---   (numbers only), TimeManagerClockButton (blizzard_timemanager's surface).
+-- Not here: ExpansionLandingPageMinimapButton (garrison / class hall / covenant reports), the coordinates text
+--   (numbers only), TimeManagerClockButton (blizzard_timemanager's surface). camelot's indicator frame holds only the
+--   mail frame (camelot/minimapindicatorframetemplate.xml:11–17): no crafting order indicator.
 local _, WFJ = ...
 local Minimap = {}
 WFJ.Minimap = Minimap
@@ -46,7 +54,7 @@ Minimap.NEVER_TOUCH = { "MinimapZoneText" }
 local CANDIDATES = {
   zone = { "MinimapCluster.ZoneTextButton" }, tracking = { "MinimapCluster.Tracking.Button" },
   mail = { "MinimapCluster.IndicatorFrame.MailFrame" }, clock = { "GameTimeFrame" },
-  compartment = { "AddonCompartmentFrame" },
+  compartment = { "AddonCompartmentFrame" }, externalEvent = { "MinimapBackdrop.ExternalEventURLButton" },
   zoomIn = { "Minimap.ZoomIn" }, zoomOut = { "Minimap.ZoomOut" },
   tooltip = { "GameTooltip" }, uiParent = { "UIParent" },
 }
@@ -59,8 +67,9 @@ Minimap.OWNERS = {
   mail = { "HAVE_MAIL", "HAVE_MAIL_FROM" },
   clock = { "GAMETIME_TOOLTIP_CALENDAR_INVITES", "GAMETIME_TOOLTIP_TOGGLE_CALENDAR" },
   compartment = { "ADDONS" },
+  externalEvent = { "GAMEMENU_EXTERNALEVENT" },
 }
-local OWNER_ORDER = { "zone", "tracking", "mail", "clock", "compartment" }
+local OWNER_ORDER = { "zone", "tracking", "mail", "clock", "compartment", "externalEvent" }
 local ZOOM = { zoomIn = { "ZOOM_IN" }, zoomOut = { "ZOOM_OUT" } }
 
 local function get(key) return Compat.get(DECLARE, key) end

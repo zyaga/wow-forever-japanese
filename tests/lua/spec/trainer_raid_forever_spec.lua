@@ -1,6 +1,6 @@
 -- The trainer and the raid panel on the Forever client (camelot loads the mainline Blizzard_TrainerUI,
 -- Blizzard_RaidFrame and Blizzard_RaidUI files). The replays follow the Forever source: trainer rows are pooled
--- ScrollBox buttons written by ClassTrainerFrame_InitServiceButton (mainline/blizzard_trainerui.lua:520–683); the raid
+-- ScrollBox buttons written by ClassTrainerFrame_InitServiceButton (mainline/blizzard_trainerui.lua:618–748); the raid
 -- panel's description is a ScrollingFont, its info header a DialogHeader, its column labels Frames with .text, and a
 -- saved-instance row's reset is `reset` (mainline/raidframe.xml / .lua).
 local H = require("tests.lua.spec.helpers")
@@ -103,8 +103,9 @@ describe("trainer and raid on the Forever client", function()
         end
         button.nameSubText.text = data.sub and string.format(en("PARENS_TEMPLATE"), data.sub) or ""
         if data.tp then button.alternateCost.text = string.format(en("TRAINING_POINTS_ABBREV"), tostring(data.tp)) end
+        if button.UpdateNameWidth then button:UpdateNameWidth() end -- lua:748, before the addon's post-hook
       end
-      _G.ClassTrainerFrame_UpdateTrainingPoints = function() -- lua:505–518
+      _G.ClassTrainerFrame_UpdateTrainingPoints = function() -- lua:603–616
         frame.trainingPoints.text.text = string.format(en("TRAINING_POINTS"), 12)
         for _, b in ipairs(rows) do
           if b.data.tp then b.alternateCost.text = string.format(en("TRAINING_POINTS_ABBREV"), tostring(b.data.tp)) end
@@ -118,7 +119,12 @@ describe("trainer and raid on the Forever client", function()
     -- The ScrollBox acquiring (or re-initializing) a pooled service button.
     local function row(i, data)
       local b = rows[i] or { name = Stub.fontString(""), subText = Stub.fontString(""),
-        nameSubText = Stub.fontString(""), alternateCost = Stub.fontString("") }
+        nameSubText = Stub.fontString(""), alternateCost = Stub.fontString(""), fitted = {} }
+      -- camelot's ClassTrainerSkillButtonMixin:UpdateNameWidth (blizzard_trainerui_camelot.lua:13–36) sizes
+      -- nameSubText to the text it holds when called: record that text
+      function b.UpdateNameWidth(self)
+        self.fitted[#self.fitted + 1] = self.nameSubText:GetText() .. "|" .. self.alternateCost:GetText()
+      end
       rows[i], b.data = b, data
       _G.ClassTrainerFrame_InitServiceButton(b, data)
       return b
@@ -143,6 +149,21 @@ describe("trainer and raid on the Forever client", function()
       Stub.keys.alt = false; WFJ.Modifier.refresh()
       frame:Hide()
       assert.are.equal(en("ITEM_SPELL_KNOWN"), b2.subText:GetText()) -- released on hide
+    end)
+
+    it("camelot's UpdateNameWidth runs again after the Japanese subtext and cost are written, and after Alt"
+      .. " restores the English", function()
+      loadTrainerUI()
+      WFJ.Trainer.init()
+      local b = row(1, { name = "Tailoring", sub = en("APPRENTICE"), tp = 7 })
+      assert.are.equal("(見習い)|7 TP", b.fitted[#b.fitted])
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      assert.are.equal("(Apprentice)|7 TP", b.fitted[#b.fitted])
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      assert.are.equal("(見習い)|7 TP", b.fitted[#b.fitted])
+      local before = #b.fitted
+      row(1, { name = "First Aid", sub = "Journeyman" }) -- nothing of ours: only the client's own call
+      assert.are.equal(before + 1, #b.fitted)
     end)
 
     it("a requirement item is read as a list item even when a spell subtext row has the same English", function()

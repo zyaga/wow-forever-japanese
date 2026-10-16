@@ -281,7 +281,7 @@ function TooltipUnit.init()
   if type(tt) ~= "table" or type(tt.HookScript) ~= "function" then return false end
   processor.AddTooltipPostCall(types.Unit, TooltipUnit.onUnit)
   -- the other tooltips whose lines are a unit's or a quest's: the minimap mouseover (a quest's title and objectives,
-  -- GameTooltip:SetMinimapMouseover, blizzard_minimap/mainline/minimap.lua:271), a game object, a corpse
+  -- GameTooltip:SetMinimapMouseover, blizzard_minimap/mainline/minimap.lua:281), a game object, a corpse
   minimapType = types.MinimapMouseover
   for _, name in ipairs({ "MinimapMouseover", "Object", "Corpse" }) do
     if types[name] ~= nil then processor.AddTooltipPostCall(types[name], TooltipUnit.onUnit) end

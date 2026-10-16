@@ -9,41 +9,41 @@
 --   OutfitCollection.UsableDiscountText (:45), .PurchaseOutfitButton.Text (:140), .SaveOutfitButton (:153); the
 --   outfit popup's header OutfitPopup.BorderBox.EditBoxHeaderText (KeyValue editBoxHeaderText, :194, written by the
 --   icon selector's OnLoad); CharacterPreview.ToggleOptions.HideIgnoredToggle / SheatheWeaponToggle /
---   PreviewedWeaponToggle .Text (:378, 396, 414); under WardrobeCollection.TabContent: ItemsFrame.DisplayTypes
---   .DisplayTypeEquippedButton (:549), ItemsFrame.SecondaryAppearanceToggle.Text (:591), SetsFrame / CustomSetsFrame
---   .PagedContent.NoEntriesText (:644, 701), CustomSetsFrame.NewCustomSetButton (:677), SituationsFrame
---   .DescriptionText / .DefaultsButton / .EnabledToggle.Text / .ApplyButton (:735–784); each search box's
+--   PreviewedWeaponToggle .Text (:381, 399, 417); under WardrobeCollection.TabContent: ItemsFrame.DisplayTypes
+--   .DisplayTypeEquippedButton (:552), ItemsFrame.SecondaryAppearanceToggle.Text (:594), SetsFrame / CustomSetsFrame
+--   .PagedContent.NoEntriesText (:647, 704), CustomSetsFrame.NewCustomSetButton (:680), SituationsFrame
+--   .DescriptionText / .DefaultsButton / .EnabledToggle.Text / .ApplyButton (:738–787); each search box's
 --   ProgressFrame.LoadingFrame.Text and .ProgressFrame.ProgressBar.Text (TransmogSearchBoxTemplate,
---   blizzard_transmogtemplates.xml:643, 676; ItemsFrame.SearchBox and SetsFrame.SearchBox, blizzard_transmog.xml:526,
---   627).
+--   blizzard_transmogtemplates.xml:649, 682; ItemsFrame.SearchBox and SetsFrame.SearchBox, blizzard_transmog.xml:529,
+--   630).
 -- Writers, each the frame's own method called as `self:…()`, post-hooked on the instance:
---   ItemsFrame:RefreshActiveSlotTitle (lua:1817–1847) → ActiveSlotTitle: a slot word (_G[slot name], or
+--   ItemsFrame:RefreshActiveSlotTitle (lua:2128–2158) → ActiveSlotTitle: a slot word (_G[slot name], or
 --     WEAPON_ENCHANTMENT / LEFTSHOULDERSLOT / RIGHTSHOULDERSLOT); with an option set it is TRANSMOG_ACTIVE_SLOT_TITLE_
 --     FORMAT filled by gsub (a composite with an option name), which the restriction leaves alone;
---   ItemsFrame:RefreshDisplayTypeButtons (lua:1921–2025) → DisplayTypeUnassignedButton:SetText(
---     TRANSMOG_SLOT_DISPLAY_TYPE_UNASSIGNED | _ARTIFACT) (:2016–2019);
---   ItemsFrame:InitFilterButton → FilterButton:SetText(SOURCES) (lua:1747–1748), and the sets filter's own text,
+--   ItemsFrame:RefreshDisplayTypeButtons (lua:2232–2336) → DisplayTypeUnassignedButton:SetText(
+--     TRANSMOG_SLOT_DISPLAY_TYPE_UNASSIGNED | _ARTIFACT) (:2327–2330);
+--   ItemsFrame:InitFilterButton → FilterButton:SetText(SOURCES) (lua:2058–2059), and the sets filter's own text,
 --     through Labels.dropdown; the filter menus' entries are the menu system's;
 --   the four tabs WardrobeCollection:AddNamedTab(TRANSMOG_TAB_ITEMS / _SETS / _CUSTOM_SETS / _SITUATIONS)
---     (lua:1485–1491) → TabHeaders:GetTabButton(id).Text, rewritten by each tab's UpdateTabText
+--     (lua:1765–1771) → TabHeaders:GetTabButton(id).Text, rewritten by each tab's UpdateTabText
 --     (blizzard_sharedxml/shared/tabsystem/tabsystemtemplates.lua:167–196; a disabled tab's text is colour-wrapped
 --     and stays English).
--- Tooltips (help-tooltip owners, each restricted): CharacterPreview.ClearAllPendingButton (lua:892–895),
---   OutfitCollection.SaveOutfitButton (lua:320–327, 441–451), the two display-type buttons (lua:1636–1640,
---   2019–2024), CustomSetsFrame.NewCustomSetButton's disabled reasons (lua:2898–2910), SituationsFrame.ApplyButton's
---   (lua:3120–3129) and UndoButton's tooltipText (xml:796), and every outfit slot button, acquired from
---   CharacterPreview's two slot pools in :SetupSlots (lua:821–822, 990–1060): a slot word, TRANSMOGRIFY_TOOLTIP_HIDDEN,
---   TRANSMOGRIFY_ILLUSION_INVALID_ITEM (blizzard_transmogtemplates.lua:227–310, 370–381). Appearance names on the
---   same owners never match.
+-- Tooltips (help-tooltip owners, each restricted): CharacterPreview.ClearAllPendingButton (lua:1135–1138),
+--   OutfitCollection.SaveOutfitButton (lua:322–329, 634–644), the two display-type buttons (lua:1947–1951,
+--   2330–2335), CustomSetsFrame.NewCustomSetButton's disabled reasons (lua:3210–3224), SituationsFrame.ApplyButton's
+--   (lua:3436–3442) and UndoButton's tooltipText (xml:799), and every outfit slot button, acquired from
+--   CharacterPreview's two slot pools in :SetupSlots (lua:1064–1065, 1239–1309): a slot word,
+--   TRANSMOGRIFY_TOOLTIP_HIDDEN, TRANSMOGRIFY_ILLUSION_INVALID_ITEM (blizzard_transmogtemplates.lua:227–310,
+--   370–381). Appearance names on the same owners never match.
 -- The sheathe toggle's checkbox owns FormatBindingKeyIntoText(TRANSMOG_SHEATHE_WEAPON_TOOLTIP, "TOGGLESHEATH",
---   …): "<text> |cffffd200(<key>)|r", the `binding` form (lua:857–864, blizzard_sharedxml/bindingutil.lua:175–186);
+--   …): "<text> |cffffd200(<key>)|r", the `binding` form (lua:1100–1107, blizzard_sharedxml/bindingutil.lua:175–186);
 --   each situation's dropdown default text, red- or grey-wrapped TRANSMOG_SITUATIONS_NO_VALID_OPTIONS
---   (TransmogWardrobeSituationsMixin:Refresh, lua:3104–3120; the `wrapped` form), after Refresh and each UpdateText.
+--   (TransmogWardrobeSituationsMixin:Refresh, lua:3417–3430; the `wrapped` form), after Refresh and each UpdateText.
 -- Each situation group's title and hover, and the situation and slot option menus (UI/MenusTags), are client-table
 --   rows (TransmogSituationTrigger, TransmogSituation, TransmogOutfitSlotOption) matched in their own families.
 -- Never touched: outfit, set and custom-set names, appearance / item / illusion names, the
 --   search boxes, the outfit popup's name EditBox, money. The item models' NEW badge (NewVisual.NewString,
---   blizzard_transmogtemplates.xml:1029) needs no hook: NEW_CAPS ships as "NEW" (kept in English letters),
+--   blizzard_transmogtemplates.xml:1035) needs no hook: NEW_CAPS ships as "NEW" (kept in English letters),
 --   which is what the badge already shows.
 -- Release on TransmogFrame's OnHide.
 local _, WFJ = ...
@@ -64,7 +64,7 @@ local TOGGLES = F .. ".CharacterPreview.ToggleOptions"
 Transmog.NEVER_TOUCH = { ITEMS .. ".SearchBox", SETS .. ".SearchBox",
   F .. ".OutfitPopup.BorderBox.IconSelectorEditBox" }
 
--- the slot words a slot title / slot tooltip may be (TransmogUtil.GetSlotName → a *SLOT global; lua:1823–1838)
+-- the slot words a slot title / slot tooltip may be (TransmogUtil.GetSlotName → a *SLOT global; lua:2134–2149)
 local SLOT_WORDS = { "HEADSLOT", "SHOULDERSLOT", "BACKSLOT", "CHESTSLOT", "SHIRTSLOT", "TABARDSLOT", "WRISTSLOT",
   "HANDSSLOT", "WAISTSLOT", "LEGSSLOT", "FEETSLOT", "MAINHANDSLOT", "SECONDARYHANDSLOT", "RANGEDSLOT",
   "WEAPON_ENCHANTMENT", "LEFTSHOULDERSLOT", "RIGHTSHOULDERSLOT" }
@@ -103,8 +103,8 @@ for _, l in ipairs(LABELS) do LABEL_OPTS[l[1]] = { only = l[3] } end
 
 local FILTERS = { { "itemsFilter", ITEMS .. ".FilterButton" }, { "setsFilter", SETS .. ".FilterButton" } }
 local TABS = { itemsTabID = "TRANSMOG_TAB_ITEMS", setsTabID = "TRANSMOG_TAB_SETS",
-  custmSetsTabID = "TRANSMOG_TAB_CUSTOM_SETS", situationsTabID = "TRANSMOG_TAB_SITUATIONS" }
-local TAB_ORDER = { "itemsTabID", "setsTabID", "custmSetsTabID", "situationsTabID" }
+  customSetsTabID = "TRANSMOG_TAB_CUSTOM_SETS", situationsTabID = "TRANSMOG_TAB_SITUATIONS" }
+local TAB_ORDER = { "itemsTabID", "setsTabID", "customSetsTabID", "situationsTabID" }
 local TITLE = { only = { "TRANSMOGRIFY" } }
 
 local SLOT_TIP = { only = {} }
@@ -126,7 +126,7 @@ local TOOLTIPS = {
   { SITUATIONS .. ".ApplyButton", { "TRANSMOG_SITUATIONS_APPLY_DISABLED_TOOLTIP" } },
   { SITUATIONS .. ".UndoButton", { "TRANSMOG_SITUATIONS_UNDO" } },
   { TOGGLES .. ".SheatheWeaponToggle.Checkbox", { "TRANSMOG_SHEATHE_WEAPON_TOOLTIP" } },
-  -- the outfit cost's discount hover (lua:127–131) and the outfit slot button's disabled reason (lua:427–429)
+  -- the outfit cost's discount hover (lua:127–131) and the outfit slot button's disabled reason (lua:620–622)
   { F .. ".OutfitCollection.MoneyFrame.TooltipOverlay", { "TRANSMOG_COST_MODIFIER_TOOLTIP_AURA",
     "TRANSMOG_COST_MODIFIER_TOOLTIP_AURA_OUTFIT", "TRANSMOG_COST_MODIFIER_TOOLTIP_AURA_VOID_ELF",
     "TRANSMOG_COST_MODIFIER_TOOLTIP_FREE", "TRANSMOG_COST_MODIFIER_TOOLTIP_OUTFIT",
@@ -149,7 +149,7 @@ local function declare()
   for i, t in ipairs(TOOLTIPS) do Compat.declare(SURFACE, "tip" .. i, { t[1] }) end
 end
 
--- One tab button of the wardrobe's TabSystem, by the id field the wardrobe stores (lua:1488–1491). → the button | nil
+-- One tab button of the wardrobe's TabSystem, by the id field the wardrobe stores (lua:1768–1771). → the button | nil
 local function tab(field)
   local wardrobe = get("wardrobe")
   if type(wardrobe) ~= "table" then return nil end
