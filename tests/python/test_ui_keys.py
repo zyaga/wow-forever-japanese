@@ -56,6 +56,10 @@ KNOWN_NAME_COLLISIONS = {
     "Enrage", "Evade", "Flash", "Frozen", "Hex", "Hide", "Interrupt", "Interrupted", "Languages", "Light", "Misfire",
     "Mission Complete", "Obliterate", "Opening", "Pacified", "Pandemic", "Pause", "Possessed", "Quest",
     "Resourcefulness", "Rooted", "Silenced", "Slow", "Summon", "Tracking", "Unknown", "Whisper", "White",
+    # Words a later Forever build gave a spell's name too: the loss-of-control "Banished" (an `only` list), the
+    # invite manager's gamepad footer "Revoke" (UI/Gamepad's key list) and a barber shop choice "Savage"
+    # (CustomizationChoice, restricted). None is ever matched on an item or spell name line.
+    "Banished", "Revoke", "Savage",
     # The unit menus' "Duel" / "Duel to the Death" (DUEL, DUEL_TO_DEATH) and the spellbook
     # subtext "Shapeshift" (SpellSubtext:768). Each is shown only on a key-restricted widget: a MENU_UNIT_* entry
     # (UI/Menus `only`, the unit's name title never matched) or a spellbook item's SubName (SUBTEXT_KEYS). Spell
@@ -125,6 +129,7 @@ DRAFT_SOURCES = {"draft-ui",
                  "draft-ui-review-role",  # the "role" lines brought to the settled term
                  "draft-repull70170-ui-sg12",  # the keys new on 1.60.1.70170 and the lines it reworded
                  "draft-b70291-ui-sg12", "draft-b70291-ui-trial-sg12",  # a re-pull's new and reworded keys
+                 "draft-r70425-ui-sg12", "draft-r70425-uirv-sg12",  # a re-pull's new and reworded keys
                  "draft-ui-left", "draft-ui-left-tooltip",  # lines a Forever client file shows, links and set bonuses
                  # the last interface lines, the tooltip owner / socket / trade lines and the unit lines the
                  # tooltip line kinds surfaced
