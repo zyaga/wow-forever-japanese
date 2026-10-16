@@ -5,7 +5,7 @@
 # professions, ranks, developer and test rows; ADR-042, ADR-052), developer (a developer or tracking row the
 # client never shows), name (a name; names stay English), gossip (an NPC's own line, shipped by the gossip
 # surface), not-shown (a row no window shows, with the evidence after the hash).
-# build: 1.60.1.70338
+# build: 1.60.1.70425
 AchievementCategory:14777  curated  f637121589807471  # Eastern Kingdoms
 AchievementCategory:14778  curated  d39c33bd6a607c7c  # Kalimdor
 AchievementCategory:15577  curated  b909d5daff1892c3  # Druid
@@ -28,7 +28,7 @@ AchievementTitle:15578  curated  90de63ccf80d5aa9  # <Hidden> Adventure Awaits -
 AchievementTitle:19563  curated  83d486b25813d8ff  # UNUSED Bael'Gar Defeated (Daily)
 AchievementTitle:41008  curated  110d4f44d7150c26  # Rune Learned - Shared Acquisition - Illari Duskfeather (40)
 AchievementTitle:41009  curated  b42ec7637b4199ab  # Rune Learned - Shared Acquisition - Dark Riders (40)
-AchievementTitle:41010  curated  87810f7c4575694d  # Rune Learned - Shared Acquisition - Ley Lines (50)
+AchievementTitle:41010  curated  d1152a578e3756d3  # Rune Learned - Shared Acquisition - Leylines (50)
 AchievementTitle:61515  curated  1a4120ef2a9e14bb  # 1.60.0 - Lost Ones Tracking Achievement <HIDDEN>
 AchievementTitle:62041  curated  45ebbbfa0065f00f  # Rank 3
 AchievementTitle:62042  curated  45ebbbfe0065f013  # Rank 7
@@ -67,7 +67,28 @@ AreaPoiDescription:1699  curated  b3f774926f02484a  # Burning Steppes
 AreaPoiDescription:1701  curated  6b3fed213b5ef5f4  # Eastern Plaguelands
 AreaPoiDescription:1754  curated  fed8faa4c6a149e9  # Horde
 AreaPoiDescription:1755  curated  eb41bc3608906055  # Alliance
-BroadcastText:7589  gossip  6f84bab72a9159d8  # Ah, well aren't you a sturdy-looking one? Perhaps you can assist me with a thing or two. N...
+BroadcastText:7829  gossip  c5d27138026afba5  # Hmm... well, I can't help you quite yet! You have to learn the basics first. Why don't you...
+BroadcastText:7834  gossip  42b9563da3718ea6  # You can learn from me in time... but not yet! Why don't you start out by talking to Sprite...
+BroadcastText:292961  gossip  f9b15e4ac8aae775  # Professions are divided between two main categories: primary and secondary. You are limite...
+BroadcastText:299683  gossip  8e8ed44951a62a12  # Hail and well met, traveler.$B$BI wish my arrival was met with good tidings but the realm ...
+BroadcastText:301834  gossip  7beb1a769a799982  # There won't be an explosion. The detonator I gave you was designed to fail.
+BroadcastText:301836  gossip  14ed521f74b370b3  # SI:7 will take things from here. The forge and warship you liberated from the Defias have ...
+BroadcastText:301838  gossip  104323ee3adfb40a  # Thank you for your concern, elf, but this is now a Stormwind internal matter. Your help is...
+BroadcastText:309779  gossip  2e83309de6cb676a  # No fights goin' on today, pal. The Horde and the Alliance are too busy killin' each other ...
+BroadcastText:327783  gossip  3e671d2faf4c3670  # <The tag on the mechanostrider reads: H4z4rd Flashdasher 3X 4000. Now with new radiation s...
+BroadcastText:327796  gossip  763e3c65228cc90c  # <The raptor turns to fix you with two vibrant orange eyes.>
+BroadcastText:327804  gossip  7cad52ed57daedb3  # <Even through the visor on its helm, you can feel its gaze as it studies you.>
+BroadcastText:327805  gossip  eb97ae8a2b3a43f4  # <As you approach this wolf it shakes its great head; its armor glints gently against its a...
+BroadcastText:327806  gossip  da41ae4facc817ca  # <The wolf stands tall and strong, even with the added weight of the armor.>
+BroadcastText:327809  gossip  1dfa08aafc105a6b  # Oh aye, up in the back of the tavern there's a visitor from Aerie Peak who can probably he...
+BroadcastText:328220  gossip  f26b08ba87d9a2a0  # Ah, need a wee trim do ye? It's been a bit fer me as well. I might head that way after my ...
+BroadcastText:328221  gossip  78bcd985131fa403  # Not to worry, the barbershop just northwest from the entrance to Ironforge. They'll have y...
+BroadcastText:328240  gossip  bd3c22c3f8d84728  # Ah, are you looking perhaps to change your markings, or prepare for a hunt? There is no be...
+BroadcastText:328241  gossip  860ea098e7c32ef8  # One must take care of themselves before entering the temple. Do stop by the barber, you wi...
+BroadcastText:328287  gossip  1ac7ccb7c39117ef  # Horns need sharpening, hm? You will find a goblin who can aid you on the lowest section of...
+BroadcastText:328288  gossip  63a303363a2481a4  # Look on the lower rise opposite the auctioneers if you would like to get your mane trimmed...
+BroadcastText:328594  gossip  5b26b230903ffbc1  # <The haggard-looking man mutters to himself incoherently.>
+BroadcastText:329728  gossip  6b43e018cfb573fb  # <The Wild God lying motionless before you is transparent and incorporeal, as if he is simp...
 CriteriaText:248  curated  0704dadfa13d47e5  # Defeat Emperor Dagran Thaurissan.
 CriteriaText:251  curated  3376bfe55eddd6ae  # Emperor Dagran Thaurissan
 CriteriaText:253  curated  4e67a87d1f512d41  # Defeat Darkmaster Gandling
@@ -1875,7 +1896,7 @@ CriteriaText:210099  curated  708dfcbff27282e5  # Cast Holy Light on Injured Pla
 CriteriaText:215904  curated  dff3777fb3fb169f  # 1.60.0 - Hyjal - Survivors' Slopes - quest - Defeat summoned air & earth elementals (JLH)
 CriteriaText:216878  curated  8bf4745aa24b8ecc  # 1.60.0 - Hyjal - Survivor Village - Quest - Hnaz's Demons (JLH)
 CriteriaText:218074  curated  479e8212f9cb30dc  # 1.60.0 - Hyjal - Survivor Village to Summit of Eternity - Quest Completion (JLH)
-CriteriaText:218373  curated  0efcdaa38e2e1930  # Read Ley Line
+CriteriaText:218373  curated  568aa638f2f1fdb4  # Read Leyline
 CriteriaText:219228  curated  735c25a9c63081b0  # Level 25 Warrior (unused)
 CriteriaText:219372  curated  3ebeb46c7fa0384a  # Use Skysight
 CriteriaText:220018  curated  f23440927ac23f7b  # Read Dead Peacekeeper's Note
@@ -2075,6 +2096,13 @@ CriteriaText:235976  developer  2884f67cecb9e8e0  # Hidden: Flight Path Tracker 
 CriteriaText:236018  developer  8da0d2318ff8f5c5  # Hidden: Flight Path Tracker - K - Feralas (H)
 CriteriaText:236020  developer  b3a81ba44eada08b  # Hidden: Flight Path Tracker - K - Ashenvale (H)
 CriteriaText:236023  developer  2884fa11ecbac807  # Hidden: Flight Path Tracker - K - The Barrens (H)
+CriteriaText:236501  developer  d5293b92a0420e83  # 1.60.1 - Paying Back the Pact
+CriteriaText:236502  developer  ca665ab107259b0a  # 1.60.1 - Remove Blackthorne's Ward x10
+CriteriaText:236503  developer  cacc55b99fd348af  # 1.60.0 - Southern Peaks Complete
+CriteriaText:236505  developer  a48905c12478cd02  # 1.60.1 - Undergrove Complete
+CriteriaText:236507  developer  fa4cd8d46b434fc1  # 1.60.1 - Verdant Labyrinth Explored
+CriteriaText:236509  developer  ad7d728a282a898d  # 1.60.1 - Explore the Rootspire
+CriteriaText:236511  developer  ad2ff0c4cafc7765  # 1.60.1 - Wild King Defeated
 CustomizationCategory:6  curated  d74361bb63f15e0f  # Bear Form
 CustomizationCategory:7  curated  ed928dc95b5c5fa4  # Cat Form
 CustomizationCategory:9  curated  b41f2b6ace135a55  # Aquatic Form

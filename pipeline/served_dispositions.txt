@@ -236,6 +236,7 @@ availablesuperdistrict.f0  no-display  # ruleset names, realm list (blizzard_glu
 availablesuperdistrict.f1  no-display  # ruleset descriptions, realm list (blizzard_gluexml superdistrict.lua)
 chrraceracialability.f1  no-display  # character create racial ability text (blizzard_charactercreate, AllowLoad: Glue)
 chrraceracialability.f2  no-display  # character create racial ability text (blizzard_charactercreate, AllowLoad: Glue)
+uiexpansiondisplayinfoicon.f0  no-display  # expansion feature lines (GetExpansionDisplayInfo().features[i].text) on glue screens only: the promotion panel (blizzard_gluexml/promotionframe.lua:90-104) and character select (blizzard_gluexml/mainline/characterselect.lua:1133-1168); its in-game readers blizzard_classtrial and blizzard_expansiontrial are gated on camelot (pipeline/forever_addons.txt)
 chrclasses.f5  no-display  # character create class descriptions (blizzard_charactercreate, AllowLoad: Glue)
 chrraces.f10  no-display  # character create race descriptions (blizzard_charactercreate, AllowLoad: Glue)
 characterserviceinfo.f0  no-display  # character services, glue screens (blizzard_glueparent characterservices*.lua); blizzard_classtrial is standard-only
