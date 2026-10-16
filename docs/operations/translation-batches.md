@@ -342,6 +342,41 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
 
+### 1.60.1.70338 → 1.60.1.70425 (2026-10-16)
+
+Quest cache: 3,020 records, 2,947 quests (the finished WFJScan scan: 4 passes, 8,921 ids asked, 3,020 answered);
+57 quests are answered that the 70338 cache lacked (most of them answered by an earlier build), and 26 quests 70338
+answered are not answered on 70425 (they keep their English and Japanese, [ADR-050](../adr/050-english-is-additive.md)).
+Client tables: 62, with the build's own hotfixes (ItemSparse 15 replaced, 4,773 added; SpellName and Spell 113
+replaced, 2 added; GlobalStrings 9 replaced; QuestV2 88 replaced; BroadcastText 27 added; PlayerCondition 3 added);
+no layout hash changed. The wago.tools cross-check: nothing differs except the same five rows as on 70338 that wago
+has and ours lacks; QuestV2's highest id is 99,670. GlobalStrings: 17 keys new, 1 gone (`AADC_SOCIAL_TAB`), 9 values
+changed (the subscription level 20 is now 10, the upgrade bullets say 60 instead of 70, the communities lines lost
+cross-faction and any-realm, the character services ruleset). The UI extract: 4,483 files, 296 modified and 47 added
+or removed from 70338. Forever now loads the new player tutorial (the addon translates it, surface `npe`), no longer
+makes the minimap instance difficulty banner, and rebuilt the stable, the pet stats, the combat text options and the
+minimap; the addon was changed to follow them. Two files are missing from the extract because the community listfile
+does not name them yet (the classic action button and PvP match table overrides). The served-text inventory: one new
+column (`uiexpansiondisplayinfoicon.f0`, not shown in the game world); `make family-rows` found 59 new rows: 28 listed
+(5 statistics as title, description and criteria, 12 PvP scoreboard columns and tooltips, `MailBody:403`), 2 curated
+(the Leylines respelling), 7 developer and 22 gossip. The English Collector file held nothing newer than 70338 (97
+entries, none rejected, nothing added). The level 1 spell list went from 156 to 153.
+
+| Type | Reworded (shipped line now stale) | New English lines (to draft) | Not served on this build (English kept) | Drafted |
+|---|---|---|---|---|
+| quest | 28: 21 stale (13 descriptions, 7 objectives, 1 title) and 7 rejected because a number or a name moved | 23 | 26 not answered in the cache (above) | 28 redrafted and 23 new, all with word lists |
+| objective | 2 | 2 | not recorded | 4, with word lists |
+| gossip | 0 | 3 | not recorded | 3, with word lists |
+| item | 66 (65 machine-drafted, 1 hand-written) of 96 changed lines (60 descriptions, 36 names) | 73 new items (names); their descriptions as the client serves them | not recorded | 65 redrafted, 18 new; the hand-written line of item 8051 corrected (a condition added); 16 `accept` rulings moved onto the redrafts |
+| spell | 229 (184 descriptions, 45 auras; 228 machine-drafted, 1 correction) of 238 changed lines | 82 new spells (names, descriptions, auras) | not recorded | 228 redrafted descriptions and auras, 65 new; the correction of spell 20015 now uses the template's number instead of a fixed 70; 7 `accept` rulings moved onto the redrafts |
+| ui | 8 (5 reworded, 3 whose markup changed) | 94 keys (the new player tutorial, the stable, pet stats, combat text options, statistics, scoreboard columns, popups and chat) | `AADC_SOCIAL_TAB` gone | 94 new and 8 reworded keys, with word lists |
+| book, area | 0 | 0 | none | none |
+
+Voice: 14 files remade, for the quest text that changed. Left out with a reason: the item descriptions still in
+Classic Era English (1,529, listed in [Coverage](coverage.md)), the 11 picture-only book pages, and 38 spell
+descriptions and 10 auras whose template uses a code drafting cannot place yet (each with its reason in
+[Coverage](coverage.md)).
+
 ### 1.60.1.70291 → 1.60.1.70338 (2026-10-10)
 
 Quest cache: 2,986 records, 2,916 quests (the finished WFJScan scan: 4 passes, 8,957 ids asked, 2,986 answered);

@@ -118,7 +118,7 @@ _Avoid_: file id, fdid (in prose)
 → [ADR-021](adr/021-client-tables-from-the-local-archive.md)
 
 **Layout hash**:
-The fingerprint in a [[DB2 table]]'s header of its field layout. A table's column map is pinned **per build**, to each layout hash it has been verified on (Classic Era 1.15.9.69722 and every Forever build since 1.60.1.69913, 1.60.1.70124, 1.60.1.70170, 1.60.1.70245, 1.60.1.70291 and 1.60.1.70338 included), each pin carrying the citation that verified it; a hash nobody has verified stops that table, naming every layout that has been, so a moved field never becomes wrong English. Re-verifying is `wfj.dev.verify_columns` against a second installed client, not a hash bump.
+The fingerprint in a [[DB2 table]]'s header of its field layout. A table's column map is pinned **per build**, to each layout hash it has been verified on (Classic Era 1.15.9.69722 and every Forever build since 1.60.1.69913, 1.60.1.70124, 1.60.1.70170, 1.60.1.70245, 1.60.1.70291, 1.60.1.70338 and 1.60.1.70425 included), each pin carrying the citation that verified it; a hash nobody has verified stops that table, naming every layout that has been, so a moved field never becomes wrong English. Re-verifying is `wfj.dev.verify_columns` against a second installed client, not a hash bump.
 _Avoid_: schema version, table hash (a different header value, which names the table)
 → [ADR-021](adr/021-client-tables-from-the-local-archive.md) · [ADR-027](adr/027-column-maps-verified-per-build.md)
 
@@ -507,13 +507,18 @@ _Avoid_: help tip (ambiguous with help tooltip), tutorial popup (a [[Tutorial po
 
 **Tutorial popup**:
 The small parchment window Blizzard opens with a short tip the first time something happens (a whisper, a group invite, swimming, fatigue, a broken item), with a title, a body and Close / Prev / Next buttons (`TutorialFrame`). Forever draws only 8 of them (whispers, grouping, friends, fatigue, swimming, broken items, raids, companions); the addon shows each one's title and body in Japanese. Not a [[HelpTip callout]] or a [[Pointer arrow]]: those are arrow boxes beside the thing they explain.
-_Avoid_: tutorial (too broad: also the callouts and arrows), tutorial frame, tip window, new player experience (a retail tutorial Forever never runs)
+_Avoid_: tutorial (too broad: also the callouts and arrows), tutorial frame, tip window, new player experience (that is the [[New player tutorial]])
 → [Addon modules](architecture/addon-modules.md) · [ADR-016](adr/016-whole-window-interface-coverage.md)
 
 **Pointer arrow**:
-A box with an arrow that Blizzard's tutorial manager points at a button or tab (`TutorialPointerFrame`), sized to its text. On Forever only the class tutorial uses one, pointing at the talents button and the Talents tab when the character has an unspent talent point [unverified in game]. Same idea as a [[HelpTip callout]] but a different frame: the addon translates the text after the game draws it and re-sizes the box the way the game does.
+A box with an arrow that Blizzard's tutorial manager points at a button or tab (`TutorialPointerFrame`), sized to its text. On Forever the class tutorial uses one, pointing at the talents button and the Talents tab when the character has an unspent talent point [unverified in game], and the [[New player tutorial]] points at bags, the character sheet, a vendor, a quest reward and the like. Same idea as a [[HelpTip callout]] but a different frame: the addon translates the text after the game draws it and re-sizes the box the way the game does.
 _Avoid_: pointer, tutorial pointer, callout (that is the HelpTip one), arrow tip
 → [Addon modules](architecture/addon-modules.md) · [ADR-031](adr/031-objective-lines-menus-and-helptips.md)
+
+**New player tutorial**:
+Blizzard's guided tutorial for a new character below level 10 (`Blizzard_NewPlayerExperience`), which Forever runs since build 1.60.1.70425 while the tutorials setting is on: a keyboard and mouse window at the first login, a walk prompt, screen prompts across the middle of the screen ("Talk to the quest giver") and [[Pointer arrow]]s. The addon shows them in Japanese on surface `npe` (the arrows through the pointer hook); keys, spell names and icons in the text stay as the game writes them, and the prompts get no word cards.
+_Avoid_: NPE (Blizzard's code name), new player experience, Exile's Reach tutorial (the retail version, which Forever does not have), tutorial popup (a [[Tutorial popup]] is a different frame)
+→ [Addon modules](architecture/addon-modules.md) · [ADR-016](adr/016-whole-window-interface-coverage.md)
 
 **Gamepad HUD**:
 The interface the Forever client shows only in gamepad input mode (Options → Gamepad, or a connected controller): the button prompts along the bottom of every window, the persistent controller legend, the radial main menu, the "More Actions" context menus and the cinematic skip button. One [[Surface]], `gamepad`. Not the gamepad action bar editor, which is its own surface (`gamepadedit`).
