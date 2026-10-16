@@ -15,7 +15,7 @@ BUILD = "1.15.9.69722"
 # the assertion is that no line carries an unpinned or unknown source, not that there is only ever one.
 # One exception (ADR-050): a listed key whose row left the pinned Forever build keeps the English of the last
 # build that served it, the build `pipeline/served/ui.tsv` records for it.
-FOREVER_BUILD = "1.60.1.70338"
+FOREVER_BUILD = "1.60.1.70425"
 ENGLISH_SOURCES = {f"wago@{BUILD}", f"db2@{FOREVER_BUILD}"}
 # UI words that are also the exact name of some item or spell (e.g. an item called "Cloth", the spell "Shield").
 # They are allowed because the addon never walks the line that reads as the item / spell name and labels are matched
