@@ -364,7 +364,9 @@ entries, none rejected, nothing added). The level 1 spell list went from 156 to 
 ("Reading the Ley Lines" became "Reading the Leylines"), and the forever-vo import, which compared each capture's
 title with ours, dropped that quest's progress English; it now tells a capture's language per submission
 ([ADR-055](../adr/055-forever-vo-captures-as-an-english-source.md)), which keeps the line and adds one turn-in line
-(quest 92516) now drafted.
+(quest 92516) now drafted. Item 9404 (Olaf's All Purpose Shield) got its first Forever tooltip
+on this build; its hand-written line wrote the duration and a cooldown the English does not have, so it was ruled
+out (a baked number) and redrafted with the Japanese its two siblings with the same English ship.
 
 | Type | Reworded (shipped line now stale) | New English lines (to draft) | Not served on this build (English kept) | Drafted |
 |---|---|---|---|---|
