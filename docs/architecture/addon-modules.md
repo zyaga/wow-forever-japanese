@@ -409,6 +409,14 @@ Build 1.60.1.70425 changed 343 interface files (296 modified, 47 added or remove
 | `UI/Friends.lua` | the notice an account sees when its privacy settings turn friends off | `FriendsListFrame_OnShow` post-hook → `FriendsListFrame.FriendsDisabledText`, `only` `SOCIAL_TAB_UNAVAILABLE`; the tab name inside has `FRIENDS`' English and takes its Japanese |
 | `Core/UIStringKeys.lua` | own words for the combat text options | `OWN`: `SHOW_TARGET_EFFECTS` (効果, not the sound word 効果音), `SHOW_COMBAT_HEALING_ABSORB_SELF` / `_TARGET` (シールド, not the item word 盾) |
 
+### Changes for build 1.60.1.70450
+
+Build 1.60.1.70450 changed no interface file. Three files are new in the extract only because the community listfile now names them; one of them, Forever's PvP match table overrides, was on 1.60.1.70425 too.
+
+| File | What it shows | Hook / form |
+|---|---|---|
+| `UI/PvPMatch.lua` | the scoreboard's honor level cell tooltip, which on Forever shows the PvP rank and title ("Rank 7 - Knight-Lieutenant") instead of "Honor Level %d" | the cell's tooltip `only` also takes `PVP_RANK_NUMBER_AND_TITLE` beside `HONOR_LEVEL_TOOLTIP` (`camelot/pvpmatchtableoverrides.lua:25–32`); the rank title stays English |
+
 ### Client-table text (ADR-042)
 
 Text from the client's DB2 tables, shipped as the `ui` text families ([ADR-042](../adr/042-client-table-text-families.md), [research](../research/2026-09-26-client-table-text.md)). Every widget is restricted to its families (`Labels.families` / `familiesWith`), so a name next to it is never read.

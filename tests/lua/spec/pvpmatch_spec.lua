@@ -29,6 +29,7 @@ local UI = {
   KILLING_BLOW_TOOLTIP = { "Enemy players to whom you have personally delivered the killing blow",
     "自分でとどめを刺した敵プレイヤーの数" },
   HONOR_LEVEL_TOOLTIP = { "Honor Level %d", "名誉レベル %d" },
+  PVP_RANK_NUMBER_AND_TITLE = { "Rank %d - %s", "ランク %d - %s" },
   -- dictionary words that are names on this surface
   GUILD = { "Guild", "ギルド" }, PALADIN_WORD = { "Paladin", "パラディン" },
   -- A stat column's name and tooltip (C_PvP.GetMatchPVPStatColumns, client-table text)
@@ -82,7 +83,10 @@ local function tableBuilder()
     honor:SetScript("OnEnter", function(owner) -- PVPCellHonorLevelMixin:OnEnter
       _G.GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
       _G.GameTooltip:ClearLines()
-      _G.GameTooltip:AddLine(en("HONOR_LEVEL_TOOLTIP"):format(row.rowData.honorLevel))
+      -- camelot's override writes the PvP rank and its title instead (camelot/pvpmatchtableoverrides.lua:25–32)
+      local line = row.rowData.rankTitle and en("PVP_RANK_NUMBER_AND_TITLE"):format(row.rowData.honorLevel,
+        row.rowData.rankTitle) or en("HONOR_LEVEL_TOOLTIP"):format(row.rowData.honorLevel)
+      _G.GameTooltip:AddLine(line)
       _G.GameTooltip:Show()
     end)
     class:SetScript("OnEnter", function(owner) -- PVPCellClassMixin:OnEnter: a class name
@@ -297,6 +301,30 @@ describe("the PvP scoreboard and match results on Forever", function()
       assert.are.equal("Paladin", _G.GameTooltipTextLeft1:GetText()) -- a class name, though a dictionary word here
       assert.are.equal("Guild", name.text:GetText()) -- a player's name
       assert.is_true(unrecorded(name.text))
+    end)
+
+  it("the honor-level cell's Forever tooltip (the PvP rank and its title) is Japanese, the title kept English",
+    function()
+      local r = _G.PVPMatchResults
+      r:Init()
+      local row = { rowData = { name = "Guild", className = "Paladin", honorLevel = 7,
+        rankTitle = "Knight-Lieutenant" } }
+      r.tableBuilder:AddRow(row, 1)
+      r.tableBuilder:AddRow(row, 1) -- a pooled cell is registered once
+      local honor = row.cells[1]
+      honor.scripts.OnEnter(honor)
+      assert.are.equal("ランク 7 - Knight-Lieutenant", _G.GameTooltipTextLeft1:GetText())
+      alt(true)
+      assert.are.equal("Rank 7 - Knight-Lieutenant", _G.GameTooltipTextLeft1:GetText())
+      alt(false)
+      assert.are.equal("ランク 7 - Knight-Lieutenant", _G.GameTooltipTextLeft1:GetText())
+      row.rowData.rankTitle = "Paladin" -- a title that is also a dictionary word stays as the client wrote it
+      honor.scripts.OnEnter(honor)
+      assert.are.equal("ランク 7 - Paladin", _G.GameTooltipTextLeft1:GetText())
+      WFJ.State.setEnabled(false)
+      honor.scripts.OnEnter(honor)
+      assert.are.equal("Rank 7 - Paladin", _G.GameTooltipTextLeft1:GetText())
+      WFJ.State.setEnabled(true)
     end)
 
   it("a stat column's header (either table) and its tooltip are Japanese; a column with no row stays; Alt English",

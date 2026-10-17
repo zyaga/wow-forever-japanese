@@ -9,7 +9,8 @@
 -- AddSubtitle is post-hooked on the instance. Before matching, a line that took our Japanese from the line below it
 -- in the scroll gets that line's live English back, so Alt keeps showing English on every line. HideSubtitles
 -- (lua:72–79) empties the lines; the records are then forgotten, never restored over the emptied lines.
--- [unverified in game: no subtitle line shows on the Forever intro cinematics with subtitles on]
+-- The intro cinematics' rows reach the client tables as hotfixes only while a cinematic plays, so a pull lists
+-- them once someone has watched it. [unverified in game: the Japanese lines on the Forever intro cinematics]
 local _, WFJ = ...
 local Subtitles = {}
 WFJ.Subtitles = Subtitles

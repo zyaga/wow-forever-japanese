@@ -342,6 +342,59 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
 
+### 1.60.1.70425 → 1.60.1.70450 (2026-10-16, 2026-10-17)
+
+Two pulls of the same build. The second came after the maintainer watched every race's opening cinematic on a new
+character (the Skyborne one on both factions) and the WFJScan scan ran again, then Exit Game; its numbers replace
+the first pull's below.
+
+Quest cache: 3,078 records, 2,991 quests (two finished WFJScan scans: 4 passes each, 17,457 ids asked), read with the
+69913 payload layout, pinned again for 70450. 50 quests are answered that the 70425 cache lacked (four are new:
+79483, 79492 and 79495, Forever's copies of the Winter Veil quests 6963, 8762 and 8746 with the same English, and
+97420; two new titles, 98914 and 98915; the rest had English from an earlier build). 6 quests 70425 answered are not
+answered now (210, 616, 4737, 6963, 7042, 8150; they keep their English and Japanese,
+[ADR-050](../adr/050-english-is-additive.md)). 15 pfQuest stand-in lines of placeholder quests (`<UNUSED>`, `<NYI>`,
+`[PH]`: 548, 1460, 1461, 1659, 1660, 2971, 4323, 8458) were dropped because the server now answers those ids as
+placeholders (the cache owns an answered quest's fields, so pfQuest's stand-in goes; this is the quest-cache
+import's rule, not the served-text rule of [ADR-050](../adr/050-english-is-additive.md)); none had Japanese. Client tables: 62, with the build's own hotfixes; no layout hash changed. Against
+70425: BroadcastText gained 70 rows: 67 opening cinematic subtitle lines (gnome 10, dwarf 8, human 9, night elf
+10, orc 7, tauren 8, troll 6, undead 9; the client receives them as hotfixes only while a cinematic plays; 4 of the
+gnome lines were listed already) and three NPC lines given the `gossip` reason (7057 and 7588 ship Japanese through
+the gossip surface; 299703, a Dalaran line, has no gossip English yet); ItemSparse gained 3 rows (250952, translated from an
+earlier build; 284587 Ankle Slicers; 17007, a name); Spell and SpellName gained new spells (1326990 Mind Blast, an
+encounter aura) and 3 reworded descriptions. Watching the Skyborne intro on the second faction added no row, so both
+factions see the same 12 lines. The wago.tools cross-check (first pull): no value differs; wago has rows ours lacks (26
+ItemSparse, 23 SpellName and Spell, 17 ItemEffect, and QuestV2 90930 and 99470), all store cosmetics (pets, mounts,
+ensembles, the Gilded Blademaster set, the Adventurer's Tent) in sections the client cannot decrypt yet; QuestV2's
+highest id is 99,670. The UI extract: 4,486 files, none modified from 70425. Three were added only because the
+community listfile now names them: Forever's action button overrides (a cooldown alpha, no text), its PvP match table
+overrides and an API documentation file. The PvP match override was on 70425 too: it makes the scoreboard's honor
+level cell show the PvP rank and title (`PVP_RANK_NUMBER_AND_TITLE`, "Rank %d - %s") instead of "Honor Level %d", and
+the addon now translates that tooltip too (the rank title stays English). The served-text inventory: no column new or
+gone (row counts only). `make family-rows` found 66 new rows: 63 listed (the intro subtitles) and 3 given the `gossip` reason. The English
+Collector file held nothing new (97 entries, none rejected, nothing added).
+
+| Type | Reworded (shipped line now stale) | New English lines (to draft) | Not served on this build (English kept) | Drafted |
+|---|---|---|---|---|
+| quest | 0 (2 descriptions differ only in `$N` / `$n`, same hash) | 14 (4 quests: titles, descriptions, objectives; 2 titles) | 6 not answered in the cache (above) | 14: the 3 Winter Veil copies take their originals' Japanese and word lists ("Metzen the Reindeer" kept in English letters); 97420 new; the 2 care package titles are item names and stay English |
+| objective | 0 | 2 | none | 2 (the Japanese of their originals) |
+| item | 0 | 1 (the description of item 284587) | not recorded | 1 |
+| spell | 1 (1225435) | 4 descriptions (1326990, 16191, 18425, and 1324485 through `$@spelldesc18425`) | not recorded | 1 redrafted, 3 drafted (4 lines) |
+| ui | 0 | 63 (the intro subtitle lines) | none | 63, with word lists |
+| gossip, book, area | 0 | 0 | none | none |
+
+Voice: `make voice-speakers` then `make voice-generate`: 14 files made, for the new quests, for 8 quests and 1 gossip
+line the 1.60.1.70425 pull added without a speaker (92516, 92521, 92867, 92872, 93689, 95384, 95787, 95788;
+`g-3eb533b13f93cd8e`), and for one gossip line whose captured speaker is now a single NPC (`g-9a487814cd7816d6`, voiced
+again in that NPC's voice). One gossip line lost its speaker row (`g-e3e274734e188ac5`, the Dark Iron map text)
+and keeps its audio. The quest level bands were recomputed (`pipeline/voice_quest_levels.txt`, about 70 quests moved
+a few levels), which can move a quest's audio between level packs. The three Winter Veil copies are read by the
+narrator: the speaker source does not know their Forever ids, and giving a copy its original's speaker would be a new
+casting rule. On the maintainer's ruling, the hand-written titles and descriptions of the original Metzen
+quests (8762, 8746) now keep "Metzen the Reindeer" in English letters too (4 corrections; 2 voice files remade).
+Left out with a reason: the same 1,532 item descriptions still in Classic Era
+English (listed in [Coverage](coverage.md)).
+
 ### 1.60.1.70338 → 1.60.1.70425 (2026-10-16)
 
 Quest cache: 3,020 records, 2,947 quests (the finished WFJScan scan: 4 passes, 8,921 ids asked, 3,020 answered);

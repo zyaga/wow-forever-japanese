@@ -14,6 +14,10 @@ local UI = {
   ["BroadcastText:1002"] = { "For the Alliance!", "アライアンスのために！" },
   ["BroadcastText:1003"] = { "Close", "近い" }, -- a row whose English a speaker may be named
   CLOSE = { "Close", "閉じる" }, -- a dictionary word that is no BroadcastText row
+  -- a shipped intro row (the night elf opening cinematic, BroadcastText.csv 1.60.1.70450)
+  ["BroadcastText:329318"] = { "For 10,000 years, the immortal night elves cultivated a druidic society within the "
+    .. "shadowed recesses of Ashenvale forest.",
+    "一万年もの間、不死のナイトエルフはAshenvaleの森の奥深い木陰で、ドルイドの社会を育んできた。" },
 }
 local LINES = 3 -- Subtitle1 … (blizzard_subtitles.xml:12, parentArray "Subtitles")
 
@@ -91,6 +95,18 @@ describe("cinematic subtitles on Forever", function()
     assert.are.equal("Varian Wrynn: For the Alliance!", line(2))
     alt(false)
     assert.are.equal("Varian Wrynn: アライアンスのために！", line(2))
+  end)
+
+  it("an intro cinematic's line is Japanese; Alt and translation off show the client's English", function()
+    local en = UI["BroadcastText:329318"][1]
+    _G.SubtitlesFrame:OnEvent(en)
+    assert.are.equal(UI["BroadcastText:329318"][2], line(1))
+    alt(true)
+    assert.are.equal(en, line(1))
+    alt(false)
+    WFJ.State.setEnabled(false)
+    assert.are.equal(en, line(1))
+    WFJ.State.setEnabled(true)
   end)
 
   it("a line that is no BroadcastText row stays English, a dictionary word too; a speaker named like a row keeps"

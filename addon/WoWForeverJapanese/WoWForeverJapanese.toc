@@ -449,6 +449,7 @@ Data\Objective\Objective_0383.lua
 Data\Objective\Objective_0384.lua
 Data\Objective\Objective_0385.lua
 Data\Objective\Objective_0445.lua
+Data\Objective\Objective_0446.lua
 Data\Objective\Objective_0447.lua
 Data\Objective\Objective_0448.lua
 Data\Objective\Objective_0461.lua
