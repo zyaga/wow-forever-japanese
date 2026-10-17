@@ -356,7 +356,7 @@ answered now (210, 616, 4737, 6963, 7042, 8150; they keep their English and Japa
 [ADR-050](../adr/050-english-is-additive.md)). 15 pfQuest stand-in lines of placeholder quests (`<UNUSED>`, `<NYI>`,
 `[PH]`: 548, 1460, 1461, 1659, 1660, 2971, 4323, 8458) were dropped because the server now answers those ids as
 placeholders (the cache owns an answered quest's fields, so pfQuest's stand-in goes; this is the quest-cache
-import's rule, not the served step [ADR-050](../adr/050-english-is-additive.md) governs); none had Japanese. Client tables: 62, with the build's own hotfixes; no layout hash changed. Against
+import's rule, not the served-text rule of [ADR-050](../adr/050-english-is-additive.md)); none had Japanese. Client tables: 62, with the build's own hotfixes; no layout hash changed. Against
 70425: BroadcastText gained 70 rows: 67 opening cinematic subtitle lines (gnome 10, dwarf 8, human 9, night elf
 10, orc 7, tauren 8, troll 6, undead 9; the client receives them as hotfixes only while a cinematic plays; 4 of the
 gnome lines were listed already) and three NPC lines given the `gossip` reason (7057 and 7588 ship Japanese through
