@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-17 at commit `d22c745f`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-17 at commit `55dc9088`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -358,7 +358,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 
 | Type | Lines that can carry a word list | With one | Done | Stale | Words | With a meaning |
 |---|---|---|---|---|---|---|
-| quest | 19,039 | 19,039 | 100.0% | 182 | 303,975 | 100.0% |
+| quest | 19,037 | 19,037 | 100.0% | 184 | 303,971 | 100.0% |
 | gossip | 10,834 | 10,834 | 100.0% | 0 | 103,796 | 100.0% |
 | ui | 15,599 | 15,599 | 100.0% | 0 | 48,314 | 100.0% |
 | book | 1,167 | 1,167 | 100.0% | 0 | 39,619 | 100.0% |

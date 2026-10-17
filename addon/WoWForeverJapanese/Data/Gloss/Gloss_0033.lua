@@ -807,7 +807,6 @@ WFJ.Data.add("gloss", {
   [33804] = "トゲ付き\tトゲつき\tspiked",
   [33805] = "トゲ付き\tトゲつき\tspined",
   [33806] = "トッピング\tトッピング\ttopping",
-  [33807] = "トナカイ\tトナカイ\tReindeer",
   [33808] = "トナカイ\tトナカイ\tcoursers (reindeer)",
   [33809] = "トナカイ\tトナカイ\treindeer",
   [33810] = "トパーズ\tトパーズ\ttopaz",
