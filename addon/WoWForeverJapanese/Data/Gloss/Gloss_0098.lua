@@ -381,7 +381,6 @@ WFJ.Data.add("gloss", {
   [98379] = "災厄\tさいやく\tplague (calamity)",
   [98380] = "災厄\tさいやく\tscourge (calamity)",
   [98381] = "災厄\tさいやく\ttroubles; disaster",
-  [98382] = "災難\tさいなん\tbad (a disaster)",
   [98383] = "災難\tさいなん\tbad (misfortune)",
   [98384] = "災難\tさいなん\tdisaster",
   [98385] = "災難\tさいなん\tdisasters",
