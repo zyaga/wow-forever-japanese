@@ -684,7 +684,6 @@ WFJ.Data.add("gloss", {
   [80681] = "押し寄せる\tおしよせる\tsurged",
   [80682] = "押し寄せる\tおしよせる\tsurging (tide)",
   [80683] = "押し寄せる\tおしよせる\tsurging (to)",
-  [80684] = "押し寄せる\tおしよせる\tthere's been an influx (flocking in)",
   [80685] = "押し寄せる\tおしよせる\ttoward (surged)",
   [80686] = "押し寄せる\tおしよせる\twashes over",
   [80687] = "押し寄せる\tおしよせる\twashes over (surges)",

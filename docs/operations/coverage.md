@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-17 at commit `cda1a7ba`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-17 at commit `a6d6b2be`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -10,14 +10,14 @@
 | Surface | English lines | Ship Japanese | Nothing to translate | Done | Not yet |
 |---|---|---|---|---|---|
 | Quest text | 20,466 | 20,368 | 98 | 100.0% | 0 |
-| NPC dialogue (gossip, speech) | 10,962 | 10,962 | 0 | 100.0% | 0 |
+| NPC dialogue (gossip, speech) | 10,965 | 10,965 | 0 | 100.0% | 0 |
 | Book / letter pages | 1,257 | 1,205 | 52 | 100.0% | 0 |
 | Quest objective lines | 432 | 394 | 38 | 100.0% | 0 |
 | Exploration / event objectives | 223 | 221 | 2 | 100.0% | 0 |
 | Item descriptions | 10,224 | 8,691 | 0 | 85.0% | 1,533 |
 | Spell tooltips + auras | 25,718 | 25,647 | 1 | 99.7% | 70 |
 | Interface strings | 16,417 | 16,417 | 0 | 100.0% | 0 |
-| **All** | **85,699** | | | **98.1%** | **1,603** |
+| **All** | **85,702** | | | **98.1%** | **1,603** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
 professions, internal strings): quest 331, gossip 81, item 893, spell 301, ui 313.
@@ -358,8 +358,8 @@ Lines are non-empty values; a server cache counts the records this install holds
 
 | Type | Lines that can carry a word list | With one | Done | Stale | Words | With a meaning |
 |---|---|---|---|---|---|---|
-| quest | 19,037 | 19,037 | 100.0% | 184 | 303,971 | 100.0% |
-| gossip | 10,834 | 10,834 | 100.0% | 0 | 103,796 | 100.0% |
+| quest | 19,037 | 19,037 | 100.0% | 184 | 303,968 | 100.0% |
+| gossip | 10,837 | 10,837 | 100.0% | 0 | 103,831 | 100.0% |
 | ui | 15,599 | 15,599 | 100.0% | 0 | 48,314 | 100.0% |
 | book | 1,167 | 1,167 | 100.0% | 0 | 39,619 | 100.0% |
 
@@ -392,5 +392,5 @@ Shipped Japanese the voice does not read, by reason.
 |---|---|
 | NPC speech in chat, or other NPC text no voiced window shows (from VMaNGOS) | 8,855 |
 | HTML book page (keeps the client's layout) | 38 |
-| Collected in game with no known speaker | 18 |
+| Collected in game with no known speaker | 21 |
 | A quest log line (the completion text the tracker shows) | 11 |
