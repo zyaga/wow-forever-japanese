@@ -353,7 +353,7 @@ Every other window the Forever client loads ([ADR-030](../adr/030-every-window-t
 126. (U) A trait tree window, from a trait-system interaction or the Skyriding flyout (`blizzard_generictraitui`).
 127. The new player tutorial (`blizzard_newplayerexperience`) is no longer unreachable: Forever runs it since 1.60.1.70425. See the Tutorials checklist, steps 7 to 9.
 128. (U) The new-player guide window, from a guide NPC's gossip (`blizzard_newplayerexperienceguide`).
-129. **Scoreboard rank tooltip** (in a battleground; not level 1). Open the scoreboard and point at a player's rank icon in the honor level column: the tooltip reads 「ランク N - <rank title>」 with the rank title in English ("Rank 7 - Knight" in English). Alt → English.
+129. **Scoreboard rank tooltip** (in a battleground; not level 1). Open the scoreboard and point at a player's rank icon in the honor level column: the tooltip reads 「ランク N - <rank title>」 with the rank title in English ("Rank 7 - Knight-Lieutenant" in English). Alt → English.
 
 **Observations to record** (in game only; none blocks the build)
 - Record which retail-era NPC windows exist on Forever at all: black market, transmogrifier, item upgrade, item interaction, obliterum, scrapping machine, guild vault, barber, crafting orders (`CRAFTINGORDERS_SHOW_CUSTOMER`), Chromie (timewalking).

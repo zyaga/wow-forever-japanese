@@ -83,7 +83,7 @@ local function tableBuilder()
     honor:SetScript("OnEnter", function(owner) -- PVPCellHonorLevelMixin:OnEnter
       _G.GameTooltip:SetOwner(owner, "ANCHOR_RIGHT")
       _G.GameTooltip:ClearLines()
-      -- camelot's override writes the PvP rank and its title instead (camelot/pvpmatchtableoverrides.lua:24–31)
+      -- camelot's override writes the PvP rank and its title instead (camelot/pvpmatchtableoverrides.lua:25–32)
       local line = row.rowData.rankTitle and en("PVP_RANK_NUMBER_AND_TITLE"):format(row.rowData.honorLevel,
         row.rowData.rankTitle) or en("HONOR_LEVEL_TOOLTIP"):format(row.rowData.honorLevel)
       _G.GameTooltip:AddLine(line)
@@ -307,11 +307,24 @@ describe("the PvP scoreboard and match results on Forever", function()
     function()
       local r = _G.PVPMatchResults
       r:Init()
-      local row = { rowData = { name = "Guild", className = "Paladin", honorLevel = 7, rankTitle = "Knight" } }
+      local row = { rowData = { name = "Guild", className = "Paladin", honorLevel = 7,
+        rankTitle = "Knight-Lieutenant" } }
       r.tableBuilder:AddRow(row, 1)
+      r.tableBuilder:AddRow(row, 1) -- a pooled cell is registered once
       local honor = row.cells[1]
       honor.scripts.OnEnter(honor)
-      assert.are.equal("ランク 7 - Knight", _G.GameTooltipTextLeft1:GetText())
+      assert.are.equal("ランク 7 - Knight-Lieutenant", _G.GameTooltipTextLeft1:GetText())
+      alt(true)
+      assert.are.equal("Rank 7 - Knight-Lieutenant", _G.GameTooltipTextLeft1:GetText())
+      alt(false)
+      assert.are.equal("ランク 7 - Knight-Lieutenant", _G.GameTooltipTextLeft1:GetText())
+      row.rowData.rankTitle = "Paladin" -- a title that is also a dictionary word stays as the client wrote it
+      honor.scripts.OnEnter(honor)
+      assert.are.equal("ランク 7 - Paladin", _G.GameTooltipTextLeft1:GetText())
+      WFJ.State.setEnabled(false)
+      honor.scripts.OnEnter(honor)
+      assert.are.equal("Rank 7 - Paladin", _G.GameTooltipTextLeft1:GetText())
+      WFJ.State.setEnabled(true)
     end)
 
   it("a stat column's header (either table) and its tooltip are Japanese; a column with no row stays; Alt English",

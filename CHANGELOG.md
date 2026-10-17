@@ -19,7 +19,7 @@ an old setting stops working). A release moves those lines under its version num
 - The game text is read from Forever build 1.60.1.70450.
 
 ### Fixed
-- The scoreboard's rank tooltip ("Rank 7 - Knight") is in Japanese; the rank title stays English.
+- The scoreboard's rank tooltip ("Rank 7 - Knight-Lieutenant") is in Japanese; the rank title stays English.
 
 ### Removed
 - The instance difficulty banner's tooltip: the game no longer shows that banner.

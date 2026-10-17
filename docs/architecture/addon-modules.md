@@ -415,7 +415,7 @@ Build 1.60.1.70450 changed no interface file. Three files are new in the extract
 
 | File | What it shows | Hook / form |
 |---|---|---|
-| `UI/PvPMatch.lua` | the scoreboard's honor level cell tooltip, which on Forever shows the PvP rank and title ("Rank 7 - Knight") instead of "Honor Level %d" | the cell's tooltip `only` also takes `PVP_RANK_NUMBER_AND_TITLE` beside `HONOR_LEVEL_TOOLTIP` (`camelot/pvpmatchtableoverrides.lua:24–31`); the rank title stays English |
+| `UI/PvPMatch.lua` | the scoreboard's honor level cell tooltip, which on Forever shows the PvP rank and title ("Rank 7 - Knight-Lieutenant") instead of "Honor Level %d" | the cell's tooltip `only` also takes `PVP_RANK_NUMBER_AND_TITLE` beside `HONOR_LEVEL_TOOLTIP` (`camelot/pvpmatchtableoverrides.lua:25–32`); the rank title stays English |
 
 ### Client-table text (ADR-042)
 
