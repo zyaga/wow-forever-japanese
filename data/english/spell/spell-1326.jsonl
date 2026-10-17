@@ -68,3 +68,5 @@
 {"id": 1326550, "field": "name", "en": "Chains of Hogger", "hash": "02a2687e85ea480e", "src": "db2@1.60.1.70450"}
 {"id": 1326608, "field": "name", "en": "Wind Bridge", "hash": "8479648b04cba521", "src": "db2@1.60.1.70450"}
 {"id": 1326850, "field": "name", "en": "(DNT) Add Threat", "hash": "6d2175b76d4853f3", "src": "db2@1.60.1.70450"}
+{"id": 1326990, "field": "name", "en": "Mind Blast", "hash": "868279b14e0b7083", "src": "db2@1.60.1.70450"}
+{"id": 1326990, "field": "description", "en": "Inflicts Shadow damage to an enemy, but causes a high amount of threat.", "hash": "d60755718e5f125b", "src": "db2@1.60.1.70450"}

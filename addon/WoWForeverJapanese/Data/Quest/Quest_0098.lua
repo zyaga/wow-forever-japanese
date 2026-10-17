@@ -120,6 +120,8 @@ WFJ.Data.add("quest", {
   [98908] = { "Darkspear Islandsの戦い！", "Darkspear Islandsの戦場で勝利し、The Merchant CoastのNizook Boofのもとへ戻る。", "Darkspear Islandsの戦いは膠着状態になってるぜ、{class}。Allianceの愚か者どもに、どっちが上の力か見せてやれ。\n\nDarkspearのために胸を張って、戦いで勝利をつかめ。Loaはきっとお前に祝福を与えてくれるぜ、{class}！", nil, nil, 0x50c64cd8, 0x5ca5767a, 0x04e311d3, nil, nil, "...mm" },
   [98910] = { "Darkspear's Basic Care Package", nil, nil, nil, nil, 0xda91f7ff, nil, nil, nil, nil, ".mmmm" },
   [98913] = { "Theramore Basic Care Package", nil, nil, nil, nil, 0xc3a4cb1b, nil, nil, nil, nil, ".mmmm" },
+  [98914] = { "Theramore Standard Care Package", nil, nil, nil, nil, 0x2d442b6d, nil, nil, nil, nil, ".mmmm" },
+  [98915] = { "Theramore Advanced Care Package", nil, nil, nil, nil, 0x9089cd51, nil, nil, nil, nil, ".mmmm" },
   [98977] = { "Mossheart the Elder", nil, nil, nil, nil, 0x59a6f410, nil, nil, nil, nil, ".mmmm" },
   [98983] = { "Frostleaf the Elder", nil, nil, nil, nil, 0x6a68dc5d, nil, nil, nil, nil, ".mmmm" },
 })

@@ -224,6 +224,7 @@
 {"id": 16190, "field": "name", "en": "Mana Tide Totem", "hash": "ec604280ab05d439", "src": "db2@1.60.1.70450"}
 {"id": 16190, "field": "description", "en": "Summons a Mana Tide Totem with $s1 health at the feet of the caster for ${$d-1} sec that restores $16191s1 mana every $16191t1 seconds to group members within $16191a1 yards.", "hash": "e0bd6129cac36a9c", "src": "db2@1.60.1.70450"}
 {"id": 16191, "field": "name", "en": "Mana Tide", "hash": "ca970d3523f37dd6", "src": "db2@1.60.1.70450"}
+{"id": 16191, "field": "description", "en": "$@spelldesc16190", "hash": "d6be652954603cbb", "src": "db2@1.60.1.70450"}
 {"id": 16191, "field": "aura", "en": "Gain $s1 mana every $t1 seconds.", "hash": "e575a7eccea6897e", "src": "db2@1.60.1.70450"}
 {"id": 16194, "field": "name", "en": "Tidal Mastery", "hash": "344f693af80b5d44", "src": "db2@1.60.1.70450"}
 {"id": 16194, "field": "description", "en": "Increases the critical effect chance of your healing spells by $m1%.", "hash": "932ad58426001e24", "src": "db2@1.60.1.70450"}

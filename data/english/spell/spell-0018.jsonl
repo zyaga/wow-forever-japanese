@@ -585,6 +585,7 @@
 {"id": 18423, "field": "name", "en": "Runecloth Boots", "hash": "2632b23e17a76b25", "src": "db2@1.60.1.70450"}
 {"id": 18424, "field": "name", "en": "Frostweave Pants", "hash": "3e821ef35b55c371", "src": "db2@1.60.1.70450"}
 {"id": 18425, "field": "name", "en": "Silenced - Kick", "hash": "bb8657376600d5a5", "src": "db2@1.60.1.70450"}
+{"id": 18425, "field": "description", "en": "Gives your kick ability a $13754s1% chance to silence the target.", "hash": "115d428db6de3558", "src": "db2@1.60.1.70450"}
 {"id": 18425, "field": "aura", "en": "Silenced.", "hash": "20816e3405060606", "src": "db2@1.60.1.70450"}
 {"id": 18427, "field": "name", "en": "Aggression", "hash": "2b32001842ef15dc", "src": "db2@1.60.1.70450"}
 {"id": 18427, "field": "description", "en": "Increases the damage of your Sinister Strike, Backstab, and Eviscerate abilities by $s1%.", "hash": "99c436551635b099", "src": "db2@1.60.1.70450"}

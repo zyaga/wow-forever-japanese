@@ -12,8 +12,8 @@ an old setting stops working). A release moves those lines under its version num
 ### Added
 - The new player tutorial a new character sees on Forever is in Japanese: the keyboard and mouse window, the walk and camera prompts, the screen prompts and the pointer arrows. Keys, spell names and icons in them stay as the game shows them.
 - Japanese for the text Forever build 1.60.1.70425 adds or rewords, with word readings: new and reworded quests (read aloud in Japanese), items and spells, the pet's combat stats, the stable's title and loyalty line, the rebuilt Combat text options, new statistics and scoreboard columns, dialog and chat lines, and the notice shown when your privacy settings turn friends off.
-- The night elf opening cinematic's first subtitle lines are in Japanese.
-- Japanese for the tooltip of the item Forever build 1.60.1.70450 adds (Ankle Slicers).
+- The opening cinematic of every race shows its subtitles in Japanese: human, dwarf, gnome, night elf, orc, troll, tauren, undead and Skyborne.
+- Japanese for the text Forever build 1.60.1.70450 adds, with word readings: the Winter Veil quests Forever brings back, a new Stranglethorn Vale quest (read aloud in Japanese), an item and new spells.
 
 ### Changed
 - The game text is read from Forever build 1.60.1.70450.

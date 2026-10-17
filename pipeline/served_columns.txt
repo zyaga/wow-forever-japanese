@@ -29,7 +29,7 @@ battlepaycurrency.f0  rows=54  text=54  distinct=54
 battlepaycurrency.f1  rows=54  text=42  distinct=34
 battlepaycurrency.f2  rows=54  text=42  distinct=34
 battlepaycurrency.f3  rows=54  text=41  distinct=5
-broadcasttext.f0  rows=42  text=37  distinct=37
+broadcasttext.f0  rows=109  text=104  distinct=104
 cfg_categories.f0  rows=100  text=100  distinct=72
 cfg_datacenterlocality.f0  rows=9  text=9  distinct=9
 cfg_regions.f0  rows=245  text=245  distinct=14
@@ -118,13 +118,13 @@ itemclass.f0  rows=17  text=17  distinct=17
 itemlimitcategory.f0  rows=51  text=30  distinct=30
 itemnamedescription.f0  rows=92  text=92  distinct=86
 itempetfood.f0  rows=8  text=8  distinct=8
-itemsearchname.f0  rows=11092  text=11092  distinct=10539
+itemsearchname.f0  rows=11093  text=11093  distinct=10540
 itemset.f0  rows=536  text=536  distinct=413
-itemsparse.f0  rows=24006  text=4845  distinct=3381
-itemsparse.f1  rows=24006  text=0  distinct=0
-itemsparse.f2  rows=24006  text=0  distinct=0
-itemsparse.f3  rows=24006  text=0  distinct=0
-itemsparse.f4  rows=24006  text=24006  distinct=22834
+itemsparse.f0  rows=24007  text=4845  distinct=3381
+itemsparse.f1  rows=24007  text=0  distinct=0
+itemsparse.f2  rows=24007  text=0  distinct=0
+itemsparse.f3  rows=24007  text=0  distinct=0
+itemsparse.f4  rows=24007  text=24007  distinct=22835
 itemsubclass.f0  rows=100  text=100  distinct=86
 itemsubclass.f1  rows=100  text=36  distinct=36
 itemsubclassmask.f0  rows=3  text=3  distinct=3
@@ -157,7 +157,7 @@ namesreservedlocale.f0  rows=2  text=2  distinct=2
 pagetextmaterial.f0  rows=6  text=6  distinct=6
 paperdollitemframe.f0  rows=48  text=48  distinct=48
 petloyalty.f0  rows=8  text=8  distinct=8
-playercondition.f0  rows=1946  text=97  distinct=89
+playercondition.f0  rows=1949  text=97  distinct=89
 powerdisplay.f0  rows=5  text=5  distinct=3
 powertype.f0  rows=6  text=6  distinct=6
 powertype.f1  rows=6  text=6  distinct=6
@@ -192,9 +192,9 @@ soundmixgroup.f0  rows=210  text=210  distinct=209
 soundmixgroup.f1  rows=210  text=210  distinct=159
 soundproviderpreferences.f0  rows=41  text=41  distinct=40
 spammessages.f0  rows=137  text=137  distinct=137
-spell.f0  rows=31941  text=4764  distinct=80
-spell.f1  rows=31941  text=17759  distinct=10371
-spell.f2  rows=31941  text=7844  distinct=3546
+spell.f0  rows=31943  text=4764  distinct=80
+spell.f1  rows=31943  text=17762  distinct=10373
+spell.f2  rows=31943  text=7844  distinct=3546
 spellcategory.f0  rows=266  text=266  distinct=265
 spelldescriptionvariables.f0  rows=44  text=44  distinct=43
 spelldiminish.f0  rows=11  text=11  distinct=11
@@ -207,7 +207,7 @@ spellitemenchantment.f0  rows=2217  text=2216  distinct=2029
 spellkeyboundoverride.f0  rows=1  text=1  distinct=1
 spellmechanic.f0  rows=36  text=36  distinct=33
 spellmissilemotion.f0  rows=70  text=70  distinct=70
-spellname.f0  rows=31941  text=31928  distinct=17361
+spellname.f0  rows=31943  text=31930  distinct=17362
 spelloverridename.f0  rows=1  text=1  distinct=1
 spellrange.f0  rows=61  text=61  distinct=58
 spellrange.f1  rows=61  text=61  distinct=45
@@ -253,12 +253,12 @@ vignette.f0  rows=2  text=2  distinct=2
 virtualattachment.f0  rows=1  text=1  distinct=1
 voiceoverpriority.f0  rows=19  text=19  distinct=19
 wbaccesscontrollist.f0  rows=172  text=172  distinct=170
-wdb-creaturecache.*  records=17
-wdb-gameobjectcache.*  records=12
+wdb-creaturecache.*  records=146
+wdb-gameobjectcache.*  records=103
 wdb-npccache.*  records=0
 wdb-pagetextcache.*  records=0
 wdb-petitioncache.*  records=0
-wdb-questcache.*  records=3030
+wdb-questcache.*  records=3078
 wmoareatable.f0  rows=52643  text=7662  distinct=1445
 worldstateexpression.f0  rows=3977  text=3977  distinct=3886
 zoneintromusictable.f0  rows=54  text=54  distinct=54

@@ -48,7 +48,7 @@
 {"id": 1225429, "field": "name", "en": "Heart of Doom", "hash": "4bfbe5b0d6c22808", "src": "db2@1.60.1.70450"}
 {"id": 1225430, "field": "name", "en": "(DNT) Necrotic Aura Warning", "hash": "737df5598697543b", "src": "db2@1.60.1.70450"}
 {"id": 1225435, "field": "name", "en": "Bountiful Harvest", "hash": "3390499544e2f5ec", "src": "db2@1.60.1.70450"}
-{"id": 1225435, "field": "description", "en": "You discover $s1% more Scarce materials from Mining, Herbalism, and Skinning.", "hash": "93862f218c5fa36d", "src": "db2@1.60.1.70450"}
+{"id": 1225435, "field": "description", "en": "You are $s1% more likely to discover Scarce materials from Mining, Herbalism, and Skinning.", "hash": "39552ff7f495225b", "src": "db2@1.60.1.70450"}
 {"id": 1225438, "field": "name", "en": "Air Elemental Core", "hash": "7014f8ce4891b885", "src": "db2@1.60.1.70450"}
 {"id": 1225442, "field": "name", "en": "[DNT] Improved Resolve", "hash": "23cb5b0b222f2f22", "src": "db2@1.60.1.70450"}
 {"id": 1225451, "field": "name", "en": "Working Overtime", "hash": "24243b85d1d1f74f", "src": "db2@1.60.1.70450"}

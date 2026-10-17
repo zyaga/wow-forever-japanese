@@ -401,5 +401,7 @@
 {"id": 98908, "field": "description", "en": "The battle at the Darkspear Islands be locked in a stalemate, $c. Show those Alliance fools who the superior force is. \r\n\r\nCarry your head high in service of the Darkspear and claim victory in battle. The Loa will surely be givin' you their blessing, $c!", "hash": "04e311d3d6177d42", "src": "wdb@1.60.1.70450"}
 {"id": 98910, "field": "title", "en": "Darkspear's Basic Care Package", "hash": "da91f7ff97926dde", "src": "wdb@1.60.1.70450"}
 {"id": 98913, "field": "title", "en": "Theramore Basic Care Package", "hash": "c3a4cb1bf3ac59cf", "src": "wdb@1.60.1.70450"}
+{"id": 98914, "field": "title", "en": "Theramore Standard Care Package", "hash": "2d442b6dc14769e2", "src": "wdb@1.60.1.70450"}
+{"id": 98915, "field": "title", "en": "Theramore Advanced Care Package", "hash": "9089cd519c4f76f6", "src": "wdb@1.60.1.70450"}
 {"id": 98977, "field": "title", "en": "Mossheart the Elder", "hash": "59a6f41004fa7242", "src": "wdb@1.60.1.70450"}
 {"id": 98983, "field": "title", "en": "Frostleaf the Elder", "hash": "6a68dc5de6fb2dce", "src": "wdb@1.60.1.70450"}

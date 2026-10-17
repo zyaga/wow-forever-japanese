@@ -130,7 +130,7 @@ DRAFT_SOURCES = {"draft-ui",
                  "draft-repull70170-ui-sg12",  # the keys new on 1.60.1.70170 and the lines it reworded
                  "draft-b70291-ui-sg12", "draft-b70291-ui-trial-sg12",  # a re-pull's new and reworded keys
                  "draft-r70425-ui-sg12", "draft-r70425-uirv-sg12",  # a re-pull's new and reworded keys
-                 "draft-r70450-ui-sg12",  # a re-pull's new keys
+                 "draft-r70450-ui-sg12", "draft-r70450-intro-sg12",  # a re-pull's new keys and the race intro subtitles
                  "draft-ui-left", "draft-ui-left-tooltip",  # lines a Forever client file shows, links and set bonuses
                  # the last interface lines, the tooltip owner / socket / trade lines and the unit lines the
                  # tooltip line kinds surfaced
