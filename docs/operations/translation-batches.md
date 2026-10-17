@@ -390,7 +390,9 @@ again in that NPC's voice). One gossip line lost its speaker row (`g-e3e274734e1
 and keeps its audio. The quest level bands were recomputed (`pipeline/voice_quest_levels.txt`, about 70 quests moved
 a few levels), which can move a quest's audio between level packs. The three Winter Veil copies are read by the
 narrator: the speaker source does not know their Forever ids, and giving a copy its original's speaker would be a new
-casting rule. Left out with a reason: the same 1,532 item descriptions still in Classic Era
+casting rule. On the maintainer's ruling, the hand-written titles and descriptions of the original Metzen
+quests (8762, 8746) now keep "Metzen the Reindeer" in English letters too (4 corrections; 2 voice files remade).
+Left out with a reason: the same 1,532 item descriptions still in Classic Era
 English (listed in [Coverage](coverage.md)).
 
 ### 1.60.1.70338 → 1.60.1.70425 (2026-10-16)
