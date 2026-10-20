@@ -78,6 +78,39 @@ describe("HUD Edit Mode on Forever", function()
     assert.are.equal(UI.HUD_EDIT_MODE_EXPAND_OPTIONS[1], manager.AccountSettings.Expander.Label:GetText())
   end)
 
+  -- A new layout runs InitializeAccountSettings → SetExpandedState (editmodemanager.lua:1253, 1585, 202, 935): the
+  -- re-walk can meet a frame with more regions and children than one call can return, which raises "stack overflow"
+  -- in GetRegions. Such a frame is skipped; the frames after it are still walked.
+  it("a frame with thousands of regions or children is skipped, not walked into a stack overflow", function()
+    local drawing = S.node("Frame", nil, manager, "Grid")
+    function drawing.GetNumRegions() return 9000 end
+    function drawing.GetRegions() error("stack overflow") end
+    function drawing.GetNumChildren() return 9000 end
+    function drawing.GetChildren() error("stack overflow") end
+    local after = S.node("Frame", nil, manager)
+    local label = S.label(after, nil, _G.HUD_EDIT_MODE_SHOW_GRID)
+    manager.Title.text = _G.HUD_EDIT_MODE_TITLE -- the client rewrote the title
+    manager.AccountSettings:SetExpandedState(true)
+    assert.are.equal("HUD編集モード", manager.Title:GetText())
+    assert.are.equal("グリッドを表示", label:GetText())
+  end)
+
+  -- ScrollingFontMixin puts GetFontString on a plain Frame with no GetText (scrolltemplates.lua:337–340): it is not
+  -- a button: treated as one, ButtonText's GetText would call nil. Its text is the inner FontString's, which the
+  -- walk reaches as a region of the container.
+  it("a scrolling text frame is not taken for a button; the label inside it is still shown", function()
+    local scrolling = S.node("Frame", nil, manager, "Description")
+    scrolling.GetText, scrolling.SetText = nil, nil
+    local box = S.node("Frame", nil, scrolling, "ScrollBox")
+    local container = S.node("Frame", nil, box, "FontStringContainer")
+    local inner = S.label(container, "FontString", _G.HUD_EDIT_MODE_SHOW_GRID)
+    function scrolling:GetFontString() return self.ScrollBox.FontStringContainer.FontString end
+    local only = { only = { HUD_EDIT_MODE_SHOW_GRID = true } }
+    assert.are.equal(0, WFJ.Labels.show("editmode", "scrolling", scrolling, nil, only))
+    manager.AccountSettings:SetExpandedState(true)
+    assert.are.equal("グリッドを表示", inner:GetText())
+  end)
+
   it("the system settings dialog: title, pooled setting names and dropdown values, re-used for another system",
     function()
       dialog:AttachToSystemFrame("Minimap", { { "Header Underneath", "Left" } })

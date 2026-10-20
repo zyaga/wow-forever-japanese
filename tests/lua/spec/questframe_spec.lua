@@ -4,7 +4,7 @@ local Stub = require("tests.lua.spec.wow_stub")
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua",
   "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Normalize.lua", "Core/Hash.lua",
   "Core/Collector.lua", "Core/UIStringKeys.lua",
-  "Core/UIStrings.lua", "UI/Font.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua",
+  "Core/UIStrings.lua", "UI/Font.lua", "UI/Frames.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua",
   "UI/QuestFrame.lua" }
 
 -- The six widgets a quest surface may write. Everything else the stub creates is a decoy.
@@ -471,7 +471,8 @@ describe("UI/QuestFrame: player tokens in the quest window", function()
   -- the main block's files plus Core/Placeholders (the surfaces feed Core/Collector)
   local FILES_P = { "Core/Const.lua", "Core/Compat.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua",
     "Core/Placeholders.lua", "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Normalize.lua", "Core/Hash.lua",
-    "Core/Collector.lua", "UI/Font.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/QuestFrame.lua" }
+    "Core/Collector.lua", "UI/Font.lua", "UI/Frames.lua",
+    "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/QuestFrame.lua" }
   local TOKENS = {
     ["quest.title"] = { [7] = { ja = "{race}の{class}へ", status = "." } },
     ["quest.description"] = { [7] = { ja = "御機嫌よう、{name}。若き{class}よ、{race}の力を見せてくれ。", status = "." } },
@@ -526,7 +527,7 @@ describe("UI/QuestFrame: the greeting panel's NPC text is gossip", function()
   local WFJ, SS, QF, data, db
   local FILES_G = { "Core/Const.lua", "Core/Compat.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua",
     "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Normalize.lua", "Core/Hash.lua", "Core/Collector.lua",
-    "UI/Font.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/QuestFrame.lua" }
+    "UI/Font.lua", "UI/Frames.lua", "UI/Render.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/QuestFrame.lua" }
   local PLAYER = { name = "Reyn", class = "Hunter", race = "Night Elf" }
   local GREETING = "Hail, Reyn. I have work for a hunter like you."
 

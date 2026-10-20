@@ -342,21 +342,17 @@ local function walk(frame, depth)
   if type(frame) ~= "table" or depth > 8 or WFJ.Labels.forbidden(frame) then return 0 end
   if type(frame.GetObjectType) == "function" and frame:GetObjectType() == "EditBox" then return 0 end
   local n = 0
-  if type(frame.GetRegions) == "function" then
-    for _, region in ipairs({ frame:GetRegions() }) do
-      if type(region) == "table" and type(region.GetObjectType) == "function"
-          and region:GetObjectType() == "FontString" then
-        n = n + WFJ.Labels.show(SURFACE, widgetKey(region), region, nil, SPECIAL_ONLY)
-      end
+  for _, region in ipairs(WFJ.Frames.regions(frame)) do
+    if type(region) == "table" and type(region.GetObjectType) == "function"
+        and region:GetObjectType() == "FontString" then
+      n = n + WFJ.Labels.show(SURFACE, widgetKey(region), region, nil, SPECIAL_ONLY)
     end
   end
-  if type(frame.GetChildren) == "function" then
-    for _, child in ipairs({ frame:GetChildren() }) do
-      if type(child) == "table" and type(child.GetFontString) == "function" then
-        n = n + WFJ.Labels.show(SURFACE, widgetKey(child), child, nil, SPECIAL_ONLY)
-      end
-      n = n + walk(child, depth + 1)
+  for _, child in ipairs(WFJ.Frames.children(frame)) do
+    if WFJ.ButtonText.is(child) then
+      n = n + WFJ.Labels.show(SURFACE, widgetKey(child), child, nil, SPECIAL_ONLY)
     end
+    n = n + walk(child, depth + 1)
   end
   return n
 end

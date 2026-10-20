@@ -41,6 +41,9 @@ local UI = {
   CALENDAR_TOOLTIP_ONGOING = { "Ongoing", "開催中" },
   CALENDAR_EVENT_INVITEDBY_YOURSELF = { "This is your event", "あなたのイベントです" },
   CALENDAR_TOOLTIP_INVITE_RESPONDED = { "Responded on:", "返答日時:" },
+  CALENDAR_HOLIDAYFRAME_BEGINSENDS = { "%1$s|n|nBegins: %2$s %3$s|nEnds: %4$s %5$s",
+    "%1$s|n|n開始: %2$s %3$s|n終了: %4$s %5$s" },
+  CALENDAR_RAID_LOCKOUT_DESCRIPTION = { "Your %1$s instance unlocks at %2$s.", "%1$sのインスタンスは%2$sにロック解除されます。" },
 }
 
 local function en(key) return _G[key] end
@@ -79,6 +82,14 @@ local function loadCalendar(mainline)
   picker.Header = header("")
   local holiday = CreateFrame("Frame", "CalendarViewHolidayFrame")
   holiday.Header = header("Invite") -- a holiday name, never hooked (lua:2476)
+  -- the holiday and raid descriptions are ScrollingFontTemplate frames (xml:372, 412): SetText and GetFontString,
+  -- no GetText (scrolltemplates.lua:337–358)
+  holiday.ScrollingFont = Stub.scrollingFont("")
+  holiday.ScrollingFont.GetText = nil
+  local raid = CreateFrame("Frame", "CalendarViewRaidFrame")
+  raid.Header = header("")
+  raid.ScrollingFont = Stub.scrollingFont("")
+  raid.ScrollingFont.GetText = nil
   Stub.button("CalendarViewEventAcceptButton", en("ACCEPT"))
   Stub.button("CalendarViewEventTentativeButton", en("CALENDAR_VIEW_EVENT_TENTATIVE"))
   Stub.button("CalendarViewEventDeclineButton", en("DECLINE"))
@@ -132,6 +143,16 @@ local function loadCalendar(mainline)
   _G.CalendarTexturePickerTitleFrame_Update = function()
     picker.Header:Setup(en("CALENDAR_TEXTURE_PICKER_TITLE_RAID"))
   end
+  _G.CalendarViewHolidayFrame_Update = function()
+    holiday.ScrollingFont:SetText("Gifts under the tree.|n|nBegins: 12/15 10:00|nEnds: 1/2 06:00")
+  end
+  _G.CalendarViewRaidFrame_Update = function()
+    raid.ScrollingFont:SetText("Your Molten Core instance unlocks at 07:00.")
+  end
+  -- each event frame's OnLoad keeps its writer in `self.update` before any addon hooks the global (lua:2499, 2510,
+  -- 2730, 3358); CalendarFrame_ShowEventFrame calls that field when the frame is already shown (lua:996–997)
+  holiday.update, raid.update = _G.CalendarViewHolidayFrame_Update, _G.CalendarViewRaidFrame_Update
+  view.update, create.update = _G.CalendarViewEventFrame_Update, _G.CalendarCreateEventFrame_Update
   _G.CalendarFrame_Update()
   Stub.loadedAddons[ADDON] = true
   return frame
@@ -139,13 +160,14 @@ end
 
 local GLOBALS = { "CalendarFrame", "CalendarMonthName", "CalendarYearName", "CalendarViewEventTypeName",
   "CalendarViewEventTitle", "CalendarViewEventCreatorName", "CalendarViewEventFrame", "CalendarCreateEventFrame",
-  "CalendarTexturePickerFrame", "CalendarViewHolidayFrame", "CalendarViewEventAcceptButton",
+  "CalendarTexturePickerFrame", "CalendarViewHolidayFrame", "CalendarViewRaidFrame", "CalendarViewEventAcceptButton",
   "CalendarViewEventTentativeButton", "CalendarViewEventDeclineButton", "CalendarViewEventRemoveButton",
   "CalendarCreateEventInviteButton", "CalendarCreateEventMassInviteButton", "CalendarCreateEventCreateButton",
   "CalendarEventPickerCloseButton", "CalendarMassInviteFrame", "CalendarMassInviteLevelText",
   "CalendarCreateEventTitleEdit", "CalendarFrame_UpdateTitle", "CalendarFrame_Update",
   "CalendarViewEventFrame_Update", "CalendarViewEvent_SetEventButtons", "CalendarCreateEventCreateButton_SetText",
   "CalendarCreateEventFrame_Update", "CalendarTexturePickerTitleFrame_Update", "CalendarEventPickerFrame",
+  "CalendarViewHolidayFrame_Update", "CalendarViewRaidFrame_Update",
   "CalendarViewEventInviteListStatusSortButton", "CalendarViewEventInviteListClassSortButton",
   "CalendarViewEventInviteList" }
 for i = 1, 7 do GLOBALS[#GLOBALS + 1] = "CalendarWeekday" .. i .. "Name" end
@@ -234,6 +256,41 @@ describe("the calendar on Forever", function()
         assert.are.equal("更新", _G.CalendarCreateEventCreateButton:GetText())
         _G.CalendarTexturePickerTitleFrame_Update()
         assert.are.equal("レイドを選択", _G.CalendarTexturePickerFrame.Header.Text:GetText())
+      end)
+
+      -- CalendarViewHolidayFrame_Update / CalendarViewRaidFrame_Update write format(...) into the ScrollingFont
+      -- (lua:2482, 2524, 2528); the holiday's own description and the times stay as written
+      it("a holiday's and a raid lockout's descriptions are Japanese; Alt shows English", function()
+        local holiday = _G.CalendarViewHolidayFrame.ScrollingFont
+        holiday:SetText("Gifts under the tree.|n|nBegins: 12/15 10:00|nEnds: 1/2 06:00")
+        assert.are.equal(1, WFJ.Calendar.onHoliday())
+        assert.are.equal("Gifts under the tree.|n|n開始: 12/15 10:00|n終了: 1/2 06:00", holiday.fs:GetText())
+        local raid = _G.CalendarViewRaidFrame.ScrollingFont
+        raid:SetText("Your Molten Core instance unlocks at 07:00.")
+        assert.are.equal(1, WFJ.Calendar.onRaid())
+        assert.are.equal("Molten Coreのインスタンスは07:00にロック解除されます。", raid.fs:GetText())
+        alt(true)
+        assert.are.equal("Your Molten Core instance unlocks at 07:00.", raid.fs:GetText())
+        alt(false)
+      end)
+
+      -- a second click on an event while its frame is shown runs the frame's `update` field, the writer as it was at
+      -- load (lua:996–997): it is followed like the global
+      it("a frame refreshed through its update field (a second click) is Japanese again", function()
+        local holiday, raid = _G.CalendarViewHolidayFrame, _G.CalendarViewRaidFrame
+        _G.CalendarViewHolidayFrame_Update()
+        assert.are.equal("Gifts under the tree.|n|n開始: 12/15 10:00|n終了: 1/2 06:00", holiday.ScrollingFont.fs:GetText())
+        holiday.update()
+        assert.are.equal("Gifts under the tree.|n|n開始: 12/15 10:00|n終了: 1/2 06:00", holiday.ScrollingFont.fs:GetText())
+        raid.update()
+        assert.are.equal("Molten Coreのインスタンスは07:00にロック解除されます。", raid.ScrollingFont.fs:GetText())
+        local view = _G.CalendarViewEventFrame
+        view.raid = true
+        view.update()
+        assert.are.equal("レイド", _G.CalendarViewEventTypeName:GetText())
+        assert.are.equal("イベントを表示", view.Header.Text:GetText())
+        _G.CalendarCreateEventFrame.update()
+        assert.are.equal("イベントを作成", _G.CalendarCreateEventFrame.Header.Text:GetText())
       end)
 
       it("event titles, player and holiday names and the title box stay as written", function()

@@ -135,9 +135,7 @@ local function linesFor(frame, message, messageID)
   if type(messageID) == "number" and type(frame.GetFontStringByID) == "function" then
     add(frame:GetFontStringByID(messageID))
   end
-  if type(frame.GetRegions) == "function" then
-    for _, region in ipairs({ frame:GetRegions() }) do add(region) end
-  end
+  for _, region in ipairs(WFJ.Frames.regions(frame)) do add(region) end
   return out
 end
 

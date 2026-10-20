@@ -180,6 +180,11 @@ local WRITERS = { CalendarFrame_Update = "onWeekdays", CalendarFrame_UpdateTitle
   CalendarViewHolidayFrame_Update = "onHoliday", CalendarViewRaidFrame_Update = "onRaid",
   CalendarEventPickerFrame_InitButton = "onPickerButton", CalendarDayButton_OnEnter = "onDayTooltip",
   CalendarCreateEventTexture_Update = "onTextureName", CalendarTexturePicker_InitButton = "onTextureButton" }
+-- event frame → the hook target of its writer. Each frame's OnLoad keeps the writer in `self.update` before any hook
+-- (lua:2499, 2510, 2730, 3358), and CalendarFrame_ShowEventFrame calls that field instead of the global when the frame
+-- is already shown (lua:996–997, 1037–1038): a second click on an event. The field is hooked too.
+local UPDATE_FIELDS = { CalendarViewHolidayFrame = "onHoliday", CalendarViewRaidFrame = "onRaid",
+  CalendarViewEventFrame = "onViewEvent", CalendarCreateEventFrame = "onCreateEvent" }
 
 local SELECT_COMMUNITY = { only = { "CALENDER_INVITE_SELECT_COMMUNITY" } }
 local WEEKDAY = { only = { "WEEKDAY_SUNDAY", "WEEKDAY_MONDAY", "WEEKDAY_TUESDAY", "WEEKDAY_WEDNESDAY",
@@ -257,14 +262,15 @@ local function difficultyArgs(args)
   return out or args
 end
 
--- Labels.show with `opts`, the difficulty inside a dungeon title argument in Japanese. → 1 | 0
-local function showTitled(recKey, widget, opts)
+-- Labels.show with `opts`, the difficulty inside a dungeon title argument in Japanese. `refit` (optional): run after
+-- the write. → 1 | 0
+local function showTitled(recKey, widget, opts, refit)
   local fs = WFJ.Labels.widget(widget)
   local index = WFJ.UIIndex
   local text = fs and fs:GetText()
   local key, args
   if index and type(text) == "string" and text ~= "" then key, args = index:matchOnly(text, opts.only) end
-  return WFJ.Labels.showArgs(SURFACE, recKey, widget, key, difficultyArgs(args))
+  return WFJ.Labels.showArgs(SURFACE, recKey, widget, key, difficultyArgs(args), refit)
 end
 
 -- A dungeon title on its own: the difficulty in Japanese, the name and colour as written. → 1 | 0
@@ -410,9 +416,18 @@ function Calendar.onDayTooltip(dayButton)
   return n
 end
 
-function Calendar.onHoliday() return show("holiday", "holiday", HOLIDAY) end
+-- The holiday and raid descriptions are ScrollingFontTemplate frames (xml:372, 412): the text is their inner
+-- FontString, re-fitted after the write so a longer Japanese scrolls (Labels.scrolling). The frame itself has no
+-- GetText and is not a button.
+function Calendar.onHoliday()
+  local fs, refit = WFJ.Labels.scrolling(get("holiday"))
+  return WFJ.Labels.show(SURFACE, "holiday", fs, refit, HOLIDAY)
+end
 
-function Calendar.onRaid() return showTitled("raid", get("raid"), RAID) end
+function Calendar.onRaid()
+  local fs, refit = WFJ.Labels.scrolling(get("raid"))
+  return showTitled("raid", fs, RAID, refit)
+end
 
 -- CalendarCreateEventTexture_Update: the chosen dungeon's title. → 1 | 0
 function Calendar.onTextureName() return showDifficultyTitle("textureName", get("textureName")) end
@@ -475,6 +490,12 @@ function Calendar.setup()
   if type(frame.HookScript) == "function" then frame:HookScript("OnShow", Calendar.showStatic) end
   for writer, target in pairs(WRITERS) do
     if type(Compat.resolve(writer)) == "function" then hooksecurefunc(writer, Calendar[target]) end
+  end
+  for name, target in pairs(UPDATE_FIELDS) do
+    local eventFrame = Compat.resolve(name)
+    if type(eventFrame) == "table" and type(eventFrame.update) == "function" then
+      hooksecurefunc(eventFrame, "update", Calendar[target])
+    end
   end
   for name, keys in pairs(TOOLTIPS) do WFJ.HelpTooltip.register(get("tip." .. name), { only = keys }) end
   for i = 1, DAYS do WFJ.HelpTooltip.register(get("day" .. i), DAY_TOOLTIP) end

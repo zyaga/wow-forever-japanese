@@ -31,7 +31,7 @@ def test_real_toc_fields_and_load_order(root):
         "Core/Intro.lua",  # whether the first-install window is owed
         "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua",  # fix reports
         "Core/Diag.lua", "Core/BugReport.lua",  # the problem log, the bug report link
-        "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua",
+        "UI/Font.lua", "UI/Frames.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua",
         "UI/VoicePlayer.lua",  # voice playback, after Render that starts a line
         # the voice panel: its looks, head and text before the panel that uses them
         "UI/VoicePanelLooks.lua", "UI/VoicePanelHead.lua", "UI/VoicePanelText.lua", "UI/VoicePanel.lua",
