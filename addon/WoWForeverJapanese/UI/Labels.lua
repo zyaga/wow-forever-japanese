@@ -17,7 +17,7 @@ local Compat = WFJ.Compat
 -- A Button becomes its ButtonText adapter; a FontString is used as is.
 function Labels.widget(w)
   if type(w) ~= "table" then return nil end
-  local fs = type(w.GetFontString) == "function" and WFJ.ButtonText.of(w) or w
+  local fs = WFJ.ButtonText.of(w) or w
   -- A name can resolve to something that is not a text widget at all (a raid roster name does on Forever), and
   -- calling its GetText would raise and cost the whole surface. Nothing we can read is nothing we can write: treat it
   -- as no widget, which `show` already handles by dropping the record.

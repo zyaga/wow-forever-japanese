@@ -53,7 +53,7 @@ end
 -- The button's own text region, when it has one (a template button); nil for a button whose label is a layer
 -- FontString (SettingsExpandableSectionTemplate's Button.Text).
 local function buttonText(frame)
-  if type(frame.GetFontString) ~= "function" then return nil end
+  if not WFJ.ButtonText.of(frame) then return nil end
   local ok, fs = pcall(frame.GetFontString, frame)
   return ok and type(fs) == "table" and fs or nil
 end

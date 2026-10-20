@@ -9,15 +9,22 @@ local _, WFJ = ...
 local Frames = {}
 WFJ.Frames = Frames
 
-Frames.MAX_PARTS = 1000
+local MAX_PARTS = 1000
+Frames.MAX_PARTS = MAX_PARTS
 
-local function parts(frame, count, list)
-  if type(frame) ~= "table" or type(frame[list]) ~= "function" then return {} end
-  if type(frame[count]) == "function" then
-    local ok, n = pcall(frame[count], frame)
-    if not ok or (type(n) == "number" and n > Frames.MAX_PARTS) then return {} end
+-- Run under pcall: the count, then the list built inside the protected call so an overflow is caught too.
+local function list(frame, count, method)
+  local getCount = frame[count]
+  if type(getCount) == "function" then
+    local n = getCount(frame)
+    if type(n) == "number" and n > MAX_PARTS then return nil end
   end
-  local ok, out = pcall(function() return { frame[list](frame) } end)
+  return { frame[method](frame) }
+end
+
+local function parts(frame, count, method)
+  if type(frame) ~= "table" or type(frame[method]) ~= "function" then return {} end
+  local ok, out = pcall(list, frame, count, method)
   return ok and out or {}
 end
 

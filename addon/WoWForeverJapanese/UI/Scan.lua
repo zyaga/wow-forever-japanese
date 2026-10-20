@@ -31,12 +31,11 @@ function Scan.collect()
   if type(enumerate) ~= "function" then return {}, 0 end
   local applied, seen, out = ours(), {}, {}
   local index = WFJ.UIIndex
-  local regionsOf = WFJ.Frames.regions -- a forbidden or odd frame may refuse; the scan skips it
   local frame = enumerate()
   while frame do
     local forbidden = frame.IsForbidden and frame:IsForbidden() -- any other method on a forbidden frame raises
-    if not forbidden and frame.IsVisible and frame:IsVisible() and frame.GetRegions then
-      for _, region in ipairs(regionsOf(frame)) do
+    if not forbidden and frame.IsVisible and frame:IsVisible() then
+      for _, region in ipairs(WFJ.Frames.regions(frame)) do
         if region.GetObjectType and region:GetObjectType() == "FontString" and region:IsVisible()
             and not applied[region] then
           local text = region:GetText()

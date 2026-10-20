@@ -349,7 +349,7 @@ local function walk(frame, depth)
     end
   end
   for _, child in ipairs(WFJ.Frames.children(frame)) do
-    if type(child) == "table" and type(child.GetFontString) == "function" then
+    if WFJ.ButtonText.of(child) then
       n = n + WFJ.Labels.show(SURFACE, widgetKey(child), child, nil, SPECIAL_ONLY)
     end
     n = n + walk(child, depth + 1)

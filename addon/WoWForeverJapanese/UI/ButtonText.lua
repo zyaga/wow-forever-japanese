@@ -34,12 +34,13 @@ end
 -- a button: ScrollingFontMixin puts it on a plain Frame with no GetText / SetText (blizzard_sharedxml/shared/
 -- scroll/scrolltemplates.lua:337–340).
 function ButtonText.of(button)
-  if type(button) ~= "table" or type(button.GetFontString) ~= "function" or type(button.GetText) ~= "function"
+  if type(button) ~= "table" then return nil end
+  local a = adapters[button]
+  if a then return a end
+  if type(button.GetFontString) ~= "function" or type(button.GetText) ~= "function"
       or type(button.SetText) ~= "function" then
     return nil
   end
-  local a = adapters[button]
-  if a then return a end
   a = { button = button, font = nil }
   function a.GetText() return button:GetText() end
   function a.SetText(_, text) button:SetText(text) end
