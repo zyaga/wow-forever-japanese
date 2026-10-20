@@ -9,6 +9,8 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+## 0.4.1 - 2026-10-20
+
 ### Fixed
 - Making a new HUD layout in Edit Mode no longer raises a "stack overflow" Lua error.
 - Opening a holiday or a raid lockout in the Calendar no longer raises a Lua error, and its description is in Japanese. The holiday's own text and the times stay as written.
