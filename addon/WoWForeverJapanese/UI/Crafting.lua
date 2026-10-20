@@ -176,8 +176,7 @@ function Crafting.onFormInit() return showList(FORM_WRITTEN) + Crafting.showEnch
 -- hooksecurefunc target (OpenProfessionsItemFlyout(anchorTo, owner, behavior)): the flyout's two fixed words. → the
 -- number found.
 function Crafting.onFlyout(_, owner)
-  if type(owner) ~= "table" or type(owner.GetChildren) ~= "function" then return 0 end
-  for _, child in ipairs({ owner:GetChildren() }) do
+  for _, child in ipairs(WFJ.Frames.children(owner)) do
     local box = type(child) == "table" and child.HideUnownedCheckbox or nil
     if type(box) == "table" and type(child.Text) == "table" then
       return WFJ.Labels.showAll(SURFACE, { { "flyout.empty", child.Text, FLYOUT_EMPTY },

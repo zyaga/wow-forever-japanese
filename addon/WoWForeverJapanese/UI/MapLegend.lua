@@ -45,10 +45,7 @@ local entryKey = WFJ.Labels.keyer("entry.")
 
 local function get(key) return Compat.get(SURFACE, key) end
 
-local function children(frame)
-  if type(frame) ~= "table" or type(frame.GetChildren) ~= "function" then return {} end
-  return { frame:GetChildren() }
-end
+local function children(frame) return WFJ.Frames.children(frame) end
 
 -- Every category and entry under the scroll child. `each(kind, widget)`.
 local function walk(each)

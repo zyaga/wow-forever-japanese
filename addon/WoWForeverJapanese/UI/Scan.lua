@@ -31,10 +31,7 @@ function Scan.collect()
   if type(enumerate) ~= "function" then return {}, 0 end
   local applied, seen, out = ours(), {}, {}
   local index = WFJ.UIIndex
-  local function regionsOf(f) -- a forbidden or odd frame may refuse; the scan skips it
-    local ok, list = pcall(function() return { f:GetRegions() } end)
-    return ok and list or {}
-  end
+  local regionsOf = WFJ.Frames.regions -- a forbidden or odd frame may refuse; the scan skips it
   local frame = enumerate()
   while frame do
     local forbidden = frame.IsForbidden and frame:IsForbidden() -- any other method on a forbidden frame raises

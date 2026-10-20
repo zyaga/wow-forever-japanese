@@ -6,7 +6,7 @@ local Stub = require("tests.lua.spec.wow_stub")
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua",
   "Core/Translator.lua", "Core/UIStringKeys.lua",
   "Core/UIStrings.lua", "Core/SurfaceState.lua", "Core/Normalize.lua", "Core/Hash.lua",
-  "UI/Font.lua", "UI/Render.lua", "UI/Scan.lua" }
+  "UI/Font.lua", "UI/Frames.lua", "UI/Render.lua", "UI/Scan.lua" }
 
 local function region(text, shown)
   local fs = Stub.fontString(text)

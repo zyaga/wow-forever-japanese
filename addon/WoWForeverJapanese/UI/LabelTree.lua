@@ -13,7 +13,9 @@
 --   * a dropdown button is followed, not just shown: the Menu system rewrites `dropdown.Text` in UpdateText on every
 --     selection (blizzard_menu/menutemplates.lua:712), so the label is re-shown after each (hooksecurefunc on the
 --     instance, once). The popup's entries are UI/Menus'.
---   * depth is bounded, and every value is type-checked before use: a wrong-typed child ends that branch only.
+--   * depth is bounded, and every value is type-checked before use: a wrong-typed child ends that branch only;
+--   * a frame's regions and children come from UI/Frames, which lists a frame with thousands of parts as empty
+--     (Edit Mode re-walks on every new layout, and a frame holding that many would overflow the call).
 local _, WFJ = ...
 local LabelTree = {}
 WFJ.LabelTree = LabelTree
@@ -75,16 +77,12 @@ function LabelTree.show(surface, root, opts)
       own = buttonText(frame)
       if own then n = n + show(surface, keyOf(frame), frame, nil, labelOpts) end
     end
-    if type(frame.GetRegions) == "function" then
-      for _, region in ipairs({ frame:GetRegions() }) do
-        if region ~= own and objectType(region) == "FontString" then
-          n = n + show(surface, keyOf(region), region, nil, labelOpts)
-        end
+    for _, region in ipairs(WFJ.Frames.regions(frame)) do
+      if region ~= own and objectType(region) == "FontString" then
+        n = n + show(surface, keyOf(region), region, nil, labelOpts)
       end
     end
-    if type(frame.GetChildren) == "function" then
-      for _, child in ipairs({ frame:GetChildren() }) do visit(child, depth + 1) end
-    end
+    for _, child in ipairs(WFJ.Frames.children(frame)) do visit(child, depth + 1) end
   end
   visit(root, 1)
   WFJ.Render.updateBanner(surface)

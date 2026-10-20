@@ -34,15 +34,13 @@ local textKey = WFJ.Labels.keyer("text.") -- a pooled widget FontString's record
 local function fontStrings(frame, depth, out)
   out = out or {}
   if type(frame) ~= "table" then return out end
-  if type(frame.GetRegions) == "function" then
-    for _, r in ipairs({ frame:GetRegions() }) do
-      if type(r) == "table" and type(r.GetObjectType) == "function" and r:GetObjectType() == "FontString" then
-        out[#out + 1] = r
-      end
+  for _, r in ipairs(WFJ.Frames.regions(frame)) do
+    if type(r) == "table" and type(r.GetObjectType) == "function" and r:GetObjectType() == "FontString" then
+      out[#out + 1] = r
     end
   end
-  if depth > 0 and type(frame.GetChildren) == "function" then
-    for _, child in ipairs({ frame:GetChildren() }) do fontStrings(child, depth - 1, out) end
+  if depth > 0 then
+    for _, child in ipairs(WFJ.Frames.children(frame)) do fontStrings(child, depth - 1, out) end
   end
   return out
 end

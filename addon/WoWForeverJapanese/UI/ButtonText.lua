@@ -30,9 +30,14 @@ local function hook(a, scripts)
   end
 end
 
--- → the adapter for `button`, or nil when it is not a button with a text region.
+-- → the adapter for `button`, or nil when it is not a button with a text region. GetFontString alone does not make
+-- a button: ScrollingFontMixin puts it on a plain Frame with no GetText / SetText (blizzard_sharedxml/shared/
+-- scroll/scrolltemplates.lua:337–340).
 function ButtonText.of(button)
-  if type(button) ~= "table" or type(button.GetFontString) ~= "function" then return nil end
+  if type(button) ~= "table" or type(button.GetFontString) ~= "function" or type(button.GetText) ~= "function"
+      or type(button.SetText) ~= "function" then
+    return nil
+  end
   local a = adapters[button]
   if a then return a end
   a = { button = button, font = nil }

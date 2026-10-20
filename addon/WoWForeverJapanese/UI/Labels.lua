@@ -203,7 +203,7 @@ function Labels.region(frame, key)
   if cache and cache[key] then return cache[key] end
   local en = Compat.resolve(key)
   if type(en) ~= "string" or en == "" then return nil end
-  for _, region in ipairs({ frame:GetRegions() }) do
+  for _, region in ipairs(WFJ.Frames.regions(frame)) do
     if type(region) == "table" and region.GetObjectType and region:GetObjectType() == "FontString"
         and region:GetText() == en then
       cache = cache or {}

@@ -229,9 +229,7 @@ function Menus.showElement(tag, frame, name)
     WFJ.HelpTooltip.register(frame, opts)
     -- the utility buttons (gear, cancel, play-sample) the client's earlier initializers attached (parented to
     -- the element, compositor.lua:34–46) own their hovers (SetUtilityButtonTooltipText, menutemplates.lua:645–649)
-    if type(frame) == "table" and type(frame.GetChildren) == "function" then
-      for _, child in ipairs({ frame:GetChildren() }) do WFJ.HelpTooltip.register(child, opts) end
-    end
+    for _, child in ipairs(WFJ.Frames.children(frame)) do WFJ.HelpTooltip.register(child, opts) end
   end
   local fs = textOf(frame)
   local en = fs and fs:GetText() or nil

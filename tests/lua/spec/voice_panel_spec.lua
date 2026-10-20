@@ -6,7 +6,8 @@ local Stub = require("tests.lua.spec.wow_stub")
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Data.lua", "Core/State.lua", "Core/Settings.lua",
   "Core/Voice.lua", "Core/Modifier.lua", "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Normalize.lua",
   "Core/Hash.lua", "Core/Collector.lua", "Core/UIStringKeys.lua", "Core/UIStrings.lua", "Core/Readings.lua",
-  "Core/VoiceQueue.lua", "UI/Font.lua", "UI/Render.lua", "UI/VoicePlayer.lua", "UI/VoicePanelLooks.lua",
+  "Core/VoiceQueue.lua", "UI/Font.lua", "UI/Frames.lua",
+  "UI/Render.lua", "UI/VoicePlayer.lua", "UI/VoicePanelLooks.lua",
   "UI/VoicePanelHead.lua", "UI/VoicePanelText.lua", "UI/VoicePanel.lua", "UI/VoiceQuestLog.lua", "UI/ButtonText.lua",
   "UI/Labels.lua", "UI/QuestFrame.lua" }
 

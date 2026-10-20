@@ -116,7 +116,7 @@ function Speech.scanBubbles()
   local n = 0
   for _, bubble in ipairs(api.GetAllChatBubbles(false) or {}) do
     if type(bubble) == "table" and not (type(bubble.IsForbidden) == "function" and bubble:IsForbidden()) then
-      for _, child in ipairs({ type(bubble.GetChildren) == "function" and bubble:GetChildren() or nil }) do
+      for _, child in ipairs(WFJ.Frames.children(bubble)) do
         local fs = type(child) == "table" and child.String or nil
         local text = type(fs) == "table" and type(fs.GetText) == "function" and fs:GetText() or nil
         if type(text) == "string" and not secret(text) then
