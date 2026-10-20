@@ -1,10 +1,10 @@
 -- UI/Frames.lua: a frame's regions and children as lists, bounded. Every walk of a frame's parts goes through here.
 -- GetRegions / GetChildren return each part as a separate value, all pushed onto the Lua stack by one call; past the
 -- stack's limit (about 8,000 values) the client raises "stack overflow" inside the call, and the whole surface walking
--- it fails. A frame with more than MAX_PARTS of either is a drawing (grid lines, pooled textures), never a frame of
--- labels, so it lists as empty without the call [verified: GetNumRegions / GetNumChildren on Forever,
--- blizzard_apidocumentationgenerated/simpleframeapidocumentation.lua:509, 523]. The call itself is guarded too, for a
--- client or frame without the count.
+-- it fails. In the client's windows a frame with more than MAX_PARTS of either is a drawing (grid lines, pooled
+-- textures), not a frame of labels, so it lists as empty without the call [verified: GetNumRegions / GetNumChildren
+-- on Forever, blizzard_apidocumentationgenerated/simpleframeapidocumentation.lua:509, 523]. The call itself is
+-- guarded too, for a client or frame without the count.
 local _, WFJ = ...
 local Frames = {}
 WFJ.Frames = Frames

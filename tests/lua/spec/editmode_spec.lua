@@ -89,7 +89,9 @@ describe("HUD Edit Mode on Forever", function()
     function drawing.GetChildren() error("stack overflow") end
     local after = S.node("Frame", nil, manager)
     local label = S.label(after, nil, _G.HUD_EDIT_MODE_SHOW_GRID)
+    manager.Title.text = _G.HUD_EDIT_MODE_TITLE -- the client rewrote the title
     manager.AccountSettings:SetExpandedState(true)
+    assert.are.equal("HUD編集モード", manager.Title:GetText())
     assert.are.equal("グリッドを表示", label:GetText())
   end)
 

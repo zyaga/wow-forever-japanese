@@ -257,14 +257,15 @@ local function difficultyArgs(args)
   return out or args
 end
 
--- Labels.show with `opts`, the difficulty inside a dungeon title argument in Japanese. → 1 | 0
-local function showTitled(recKey, widget, opts)
+-- Labels.show with `opts`, the difficulty inside a dungeon title argument in Japanese. `refit` (optional): run after
+-- the write. → 1 | 0
+local function showTitled(recKey, widget, opts, refit)
   local fs = WFJ.Labels.widget(widget)
   local index = WFJ.UIIndex
   local text = fs and fs:GetText()
   local key, args
   if index and type(text) == "string" and text ~= "" then key, args = index:matchOnly(text, opts.only) end
-  return WFJ.Labels.showArgs(SURFACE, recKey, widget, key, difficultyArgs(args))
+  return WFJ.Labels.showArgs(SURFACE, recKey, widget, key, difficultyArgs(args), refit)
 end
 
 -- A dungeon title on its own: the difficulty in Japanese, the name and colour as written. → 1 | 0
@@ -410,9 +411,18 @@ function Calendar.onDayTooltip(dayButton)
   return n
 end
 
-function Calendar.onHoliday() return show("holiday", "holiday", HOLIDAY) end
+-- The holiday and raid descriptions are ScrollingFontTemplate frames (xml:372, 412): the text is their inner
+-- FontString, re-fitted after the write so a longer Japanese scrolls (Labels.scrolling). The frame itself has no
+-- GetText and is not a button.
+function Calendar.onHoliday()
+  local fs, refit = WFJ.Labels.scrolling(get("holiday"))
+  return WFJ.Labels.show(SURFACE, "holiday", fs, refit, HOLIDAY)
+end
 
-function Calendar.onRaid() return showTitled("raid", get("raid"), RAID) end
+function Calendar.onRaid()
+  local fs, refit = WFJ.Labels.scrolling(get("raid"))
+  return showTitled("raid", fs, RAID, refit)
+end
 
 -- CalendarCreateEventTexture_Update: the chosen dungeon's title. → 1 | 0
 function Calendar.onTextureName() return showDifficultyTitle("textureName", get("textureName")) end

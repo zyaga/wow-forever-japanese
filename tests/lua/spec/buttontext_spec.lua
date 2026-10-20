@@ -19,6 +19,7 @@ describe("ButtonText: what counts as a button", function()
     scrolling.GetText, scrolling.SetText = nil, nil
     local inner = Stub.fontString("Some text")
     function scrolling.GetFontString() return inner end
+    assert.is_false(WFJ.ButtonText.is(scrolling))
     assert.is_nil(WFJ.ButtonText.of(scrolling))
     assert.is_false(WFJ.ButtonText.known(scrolling))
     assert.is_nil(WFJ.Labels.widget(scrolling))
@@ -26,6 +27,8 @@ describe("ButtonText: what counts as a button", function()
 
   it("a button is one, with the same adapter on every call", function()
     local button = Stub.button(nil, "Okay")
+    assert.is_true(WFJ.ButtonText.is(button))
+    assert.is_false(WFJ.ButtonText.known(button)) -- asking the shape builds no adapter and installs no hook
     local a = WFJ.ButtonText.of(button)
     assert.is_table(a)
     assert.are.equal("Okay", a.GetText())

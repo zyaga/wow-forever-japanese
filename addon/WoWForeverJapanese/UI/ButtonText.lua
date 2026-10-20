@@ -30,17 +30,20 @@ local function hook(a, scripts)
   end
 end
 
--- → the adapter for `button`, or nil when it is not a button with a text region. GetFontString alone does not make
--- a button: ScrollingFontMixin puts it on a plain Frame with no GetText / SetText (blizzard_sharedxml/shared/
--- scroll/scrolltemplates.lua:337–340).
+-- true when `obj` is shaped like a button with a text region, without building an adapter. GetFontString alone does
+-- not make a button: ScrollingFontMixin puts it on a plain Frame with no GetText (blizzard_sharedxml/shared/scroll/
+-- scrolltemplates.lua:337–340).
+function ButtonText.is(obj)
+  return type(obj) == "table" and type(obj.GetFontString) == "function" and type(obj.GetText) == "function"
+    and type(obj.SetText) == "function"
+end
+
+-- → the adapter for `button`, or nil when it is not a button with a text region (ButtonText.is).
 function ButtonText.of(button)
   if type(button) ~= "table" then return nil end
   local a = adapters[button]
   if a then return a end
-  if type(button.GetFontString) ~= "function" or type(button.GetText) ~= "function"
-      or type(button.SetText) ~= "function" then
-    return nil
-  end
+  if not ButtonText.is(button) then return nil end
   a = { button = button, font = nil }
   function a.GetText() return button:GetText() end
   function a.SetText(_, text) button:SetText(text) end

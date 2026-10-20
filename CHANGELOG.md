@@ -11,7 +11,7 @@ an old setting stops working). A release moves those lines under its version num
 
 ### Fixed
 - Making a new HUD layout in Edit Mode no longer raises a "stack overflow" Lua error.
-- A Lua error that some windows with a scrolling text box (Character, Reputation, Calendar, Raid and others) could raise no longer happens.
+- Opening a holiday or a raid lockout in the Calendar no longer raises a Lua error, and its description is in Japanese. The holiday's own text and the times stay as written.
 
 ## 0.4.0 - 2026-10-17
 

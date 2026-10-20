@@ -56,7 +56,7 @@ local function walk(each)
     if type(category) == "table" and type(category.TitleText) == "table" then
       each("category", category)
       for _, button in ipairs(children(category)) do
-        if WFJ.ButtonText.of(button) then each("entry", button) end
+        if WFJ.ButtonText.is(button) then each("entry", button) end
       end
     end
   end

@@ -7,7 +7,8 @@ counts first and guards the call; any other direct call can overflow again.
 
 import re
 
-CALL = re.compile(r"[:.](GetRegions|GetChildren)\(")
+# any use of the method, so a pcall(f.GetRegions, f) or a local alias is caught too
+CALL = re.compile(r"\b(GetRegions|GetChildren)\b")
 
 
 def _code(line):

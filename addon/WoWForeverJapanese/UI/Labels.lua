@@ -198,7 +198,7 @@ end
 -- shown), cached per frame and key. → FontString | nil (bank "Item Slots", mail "To:", Prev / Next).
 local regionCache = setmetatable({}, { __mode = "k" })
 function Labels.region(frame, key)
-  if type(frame) ~= "table" or type(frame.GetRegions) ~= "function" then return nil end
+  if type(frame) ~= "table" then return nil end
   local cache = regionCache[frame]
   if cache and cache[key] then return cache[key] end
   local en = Compat.resolve(key)
