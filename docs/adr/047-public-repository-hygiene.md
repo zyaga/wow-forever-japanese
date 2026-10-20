@@ -46,7 +46,10 @@ A one-time clean-up does not stay clean. The rules need a check that runs on eve
    pull request's title, body, branch name and commit messages. It reads the title and body from the Actions
    event file and the branch from `GITHUB_HEAD_REF`, so no pull request text passes through the workflow's
    script text, and it requires a GitHub noreply address on every commit's author and committer. It runs as a
-   job of its own, on every edit of the text too; the code checks skip the edit event. CI has no rules file, so
+   job of its own, on every push to the pull request. (It first ran on every edit of the text as well, with the
+   code checks skipping that event. Those skipped checks stood in front of a failed run of the last push on the
+   pull request page, so a red build looked mergeable; an edit now runs nothing, and the text is checked again at
+   the next push.) CI has no rules file, so
    it runs the public rules; the private rules run where the rules file is, through `make lint`, before a push.
 
 ## Consequences

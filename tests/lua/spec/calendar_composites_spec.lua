@@ -53,10 +53,14 @@ local function loadCalendar()
   function frame.FilterButton.UpdateText() end
   for _, n in ipairs({ "CalendarViewEventTypeName", "CalendarViewEventCreatorName", "CalendarViewEventDateLabel",
     "CalendarCreateEventCreatorName", "CalendarCreateEventDateLabel" }) do Stub.namedFontString(n, "") end
+  -- the holiday and raid descriptions are ScrollingFontTemplate frames (blizzard_calendar.xml:372, 412): SetText and
+  -- GetFontString, no GetText (scrolltemplates.lua:337–358); their text is the inner FontString's
   local holiday = CreateFrame("Frame", "CalendarViewHolidayFrame")
-  holiday.ScrollingFont = fs("")
+  holiday.ScrollingFont = Stub.scrollingFont("")
+  holiday.ScrollingFont.GetText = nil
   local raid = CreateFrame("Frame", "CalendarViewRaidFrame")
-  raid.ScrollingFont = fs("")
+  raid.ScrollingFont = Stub.scrollingFont("")
+  raid.ScrollingFont.GetText = nil
   for i = 1, 42 do
     local b = CreateFrame("Button", "CalendarDayButton" .. i)
     b.day, b.monthOffset = i, 0
@@ -216,9 +220,9 @@ describe("the calendar's composites on Forever", function()
   it("the holiday and raid descriptions: the description, dates and times kept", function()
     _G.CalendarViewHolidayFrame_Update()
     assert.are.equal("The Faire is in town. Come!|n|n開始: 9/25 8:00 AM|n終了: 10/2 11:59 PM",
-      _G.CalendarViewHolidayFrame.ScrollingFont:GetText())
+      _G.CalendarViewHolidayFrame.ScrollingFont.fs:GetText())
     _G.CalendarViewRaidFrame_Update()
-    assert.are.equal("Molten Coreのインスタンスは8:00 AMに解除されます。", _G.CalendarViewRaidFrame.ScrollingFont:GetText())
+    assert.are.equal("Molten Coreのインスタンスは8:00 AMに解除されます。", _G.CalendarViewRaidFrame.ScrollingFont.fs:GetText())
   end)
 end)
 
@@ -250,18 +254,18 @@ describe("the calendar's holiday description", function()
   it("a HolidayDescription row's Japanese fills the template, the dates kept; Alt shows the English", function()
     local sf = _G.CalendarViewHolidayFrame.ScrollingFont
     _G.CalendarViewHolidayFrame_Update()
-    assert.are.equal("移動遊園地がやって来た。おいで！|n|n開始: 9/25 8:00 AM|n終了: 10/2 11:59 PM", sf:GetText())
+    assert.are.equal("移動遊園地がやって来た。おいで！|n|n開始: 9/25 8:00 AM|n終了: 10/2 11:59 PM", sf.fs:GetText())
     Stub.keys.alt = true; WFJ.Modifier.refresh()
-    assert.are.equal(TEXT, sf:GetText())
+    assert.are.equal(TEXT, sf.fs:GetText())
     Stub.keys.alt = false; WFJ.Modifier.refresh()
-    assert.are.equal("移動遊園地がやって来た。おいで！|n|n開始: 9/25 8:00 AM|n終了: 10/2 11:59 PM", sf:GetText())
+    assert.are.equal("移動遊園地がやって来た。おいで！|n|n開始: 9/25 8:00 AM|n終了: 10/2 11:59 PM", sf.fs:GetText())
   end)
 
   it("a description no row has is kept as written inside the Japanese template", function()
     local sf = _G.CalendarViewHolidayFrame.ScrollingFont
     sf:SetText("Children's Week is here.|n|nBegins: 9/25 8:00 AM|nEnds: 10/2 11:59 PM")
     WFJ.Calendar.onHoliday()
-    assert.are.equal("Children's Week is here.|n|n開始: 9/25 8:00 AM|n終了: 10/2 11:59 PM", sf:GetText())
+    assert.are.equal("Children's Week is here.|n|n開始: 9/25 8:00 AM|n終了: 10/2 11:59 PM", sf.fs:GetText())
   end)
 end)
 
@@ -378,7 +382,7 @@ describe("the calendar's difficulty names", function()
     assert.are.equal("レイド - |cffffd200Onyxia's Lair (ヒロイック)|r", _G.CalendarViewEventTypeName:GetText())
     _G.CalendarViewRaidFrame_Update()
     assert.are.equal("|cffffd200Molten Core (40人)|rのインスタンスは8:00 AMに解除されます。",
-      _G.CalendarViewRaidFrame.ScrollingFont:GetText())
+      _G.CalendarViewRaidFrame.ScrollingFont.fs:GetText())
     alt(true)
     assert.are.equal("Raid - |cffffd200Onyxia's Lair (Heroic)|r", _G.CalendarViewEventTypeName:GetText())
     alt(false)
