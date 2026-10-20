@@ -9,6 +9,10 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Fixed
+- Making a new HUD layout in Edit Mode no longer raises a "stack overflow" Lua error.
+- A Lua error that some windows with a scrolling text box (Character, Reputation, Calendar, Raid and others) could raise no longer happens.
+
 ## 0.4.0 - 2026-10-17
 
 ### Added

@@ -112,7 +112,7 @@ Hold the modifier for the live English; `/wfj area interface off` turns the whol
 - retail systems with no content on Forever (covenants, garrisons, azerite, archaeology, pet battles, the Great Vault and the like), Party Sync and SocialUI (both off on Forever), and the boost tutorial, which never runs there; the new player tutorial's steps that need content Forever does not have (the spellbook, mount and form tutorials, the group finder, the map callouts and the like), which Forever turns off.
 - **feature-id:** `interface-text`
 - **status:** shipped; the later windows, menus, dialogs, chat, table text, gamepad HUD and tutorials await their in-game checks
-- **regen-triggers:** `Core/UIStrings.lua`, `UI/*.lua` (the window modules in Main's list), `UI/{ButtonText,Labels,LabelTree,TooltipLines,SettingsKeys,HelpTooltip,LoadOnDemand}.lua`, `pipeline/wfj/core/numbered.py`, `pipeline/wfj/core/markup.py`, `pipeline/ui_keys.txt`, `pipeline/ui_exclusions.txt`, `pipeline/ui_inventory.txt`, `pipeline/ui_loadset.txt`, `pipeline/forever_addons.txt`, `pipeline/forever_addon_dispositions.txt`, `pipeline/forever_titles.txt`, `Data/UI/UI_*.lua`
+- **regen-triggers:** `Core/UIStrings.lua`, `UI/*.lua` (the window modules in Main's list), `UI/{ButtonText,Frames,Labels,LabelTree,TooltipLines,SettingsKeys,HelpTooltip,LoadOnDemand}.lua`, `pipeline/wfj/core/numbered.py`, `pipeline/wfj/core/markup.py`, `pipeline/ui_keys.txt`, `pipeline/ui_exclusions.txt`, `pipeline/ui_inventory.txt`, `pipeline/ui_loadset.txt`, `pipeline/forever_addons.txt`, `pipeline/forever_addon_dispositions.txt`, `pipeline/forever_titles.txt`, `Data/UI/UI_*.lua`
 
 ## Control
 
