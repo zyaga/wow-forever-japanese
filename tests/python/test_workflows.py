@@ -92,17 +92,19 @@ def test_every_job_that_runs_on_a_runner_has_a_time_limit(root):
 def test_pull_request_checks_keep_no_token_and_cancel_only_their_own_older_run(root):
     text = _workflows(root)["pr.yml"]
     assert text.count("persist-credentials: false") == 3  # validate, lua, text
-    # a push to main or a release has no pull request number: its group is its own run, never cancelled; an
-    # edit of the text and a push of code are two groups, so neither cancels the other
-    assert ("group: pr-${{ github.event.pull_request.number || github.run_id }}"
-            "-${{ github.event.action == 'edited' && 'text' || 'code' }}\n  cancel-in-progress: true") in text
+    # a push to main or a release has no pull request number: its group is its own run, never cancelled
+    assert "group: pr-${{ github.event.pull_request.number || github.run_id }}\n  cancel-in-progress: true" in text
 
 
-def test_an_edit_of_the_text_runs_the_text_job_alone(root):
+def test_an_edit_of_the_pull_request_text_runs_nothing(root):
+    """A run started by editing a title or body skipped the code checks, and on the pull request page those
+    skipped checks stood in front of the failed run of the last push. Only a push (or opening the pull
+    request) runs the checks, so the result shown is always the code's."""
     text = _workflows(root)["pr.yml"]
     validate, lua, job = _block(text, "validate", 2), _block(text, "lua", 2), _block(text, "text", 2)
-    assert "if: github.event.action != 'edited'" in validate
-    assert "if: github.event.action != 'edited'" in lua
+    assert "    types: [opened, synchronize, reopened]\n" in text
+    assert "edited" not in text
+    assert "github.event.action" not in validate + lua
     assert "if: github.event_name == 'pull_request'" in job
     assert "python -m wfj public-check pr" in job and "public-check pr" not in validate + lua
     assert "pip install" not in job and "pip install" not in lua

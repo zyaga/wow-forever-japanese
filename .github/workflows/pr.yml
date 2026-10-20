@@ -2,8 +2,9 @@ name: pr
 
 on:
   pull_request:
-    # `edited` re-runs the text job when the title or body changes; the code checks skip that event.
-    types: [opened, edited, synchronize, reopened]
+    # Never on an edit of the title or body: such a run would skip the code checks, and on the pull request page
+    # those skipped checks stand in front of the result of the last push. The text is checked on every push.
+    types: [opened, synchronize, reopened]
   push:
     branches: [main]
   workflow_dispatch:
@@ -13,18 +14,15 @@ on:
 permissions:
   contents: read
 
-# A newer push to a pull request replaces the run of the older one, and a newer edit of its text replaces the
-# older text run; the two never cancel each other. Every other run (a push to main, a release) is a group of its
-# own and is never cancelled.
+# A newer push to a pull request replaces the run of the older one. Every other run (a push to main, a release) is
+# a group of its own and is never cancelled.
 concurrency:
-  group: pr-${{ github.event.pull_request.number || github.run_id }}-${{ github.event.action == 'edited' && 'text' || 'code' }}
+  group: pr-${{ github.event.pull_request.number || github.run_id }}
   cancel-in-progress: true
 
 jobs:
   validate:
-    # The Python checks and the data gate. An edit of the pull request's title or body changes no code, so it
-    # runs the text job alone. Lint and validate need both toolchains (luacheck, luac).
-    if: github.event.action != 'edited'
+    # The Python checks and the data gate. Lint and validate need both toolchains (luacheck, luac).
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -78,8 +76,7 @@ jobs:
 
   lua:
     # The addon's tests under coverage (busted + luacov), in a job of their own so they run beside the Python
-    # suite instead of after it. Same skip of text edits as validate. Needs no Python.
-    if: github.event.action != 'edited'
+    # suite instead of after it. Needs no Python.
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -90,7 +87,7 @@ jobs:
       - run: make coverage-lua LUA=lua
 
   text:
-    # Pull requests only, on every edit of the text too. The title, body, branch name and commit messages are
+    # Pull requests only. The title, body, branch name and commit messages are
     # public: no path on someone's machine, no tracker id, a noreply address on every commit, and nothing the
     # private rules name when the checkout has them. The check reads the title and body from the event file and
     # the branch from GITHUB_HEAD_REF, so none of it passes through the script text.
