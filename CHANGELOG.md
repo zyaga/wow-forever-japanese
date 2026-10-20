@@ -12,6 +12,8 @@ an old setting stops working). A release moves those lines under its version num
 ### Fixed
 - Making a new HUD layout in Edit Mode no longer raises a "stack overflow" Lua error.
 - Opening a holiday or a raid lockout in the Calendar no longer raises a Lua error, and its description is in Japanese. The holiday's own text and the times stay as written.
+- Clicking a Calendar event, holiday or raid lockout again while its window is open keeps it in Japanese; it used to turn back to English.
+- Typing in the AddOn List's search box keeps its Okay button in Japanese.
 
 ## 0.4.0 - 2026-10-17
 

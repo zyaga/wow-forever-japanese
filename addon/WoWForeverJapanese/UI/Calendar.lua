@@ -180,6 +180,11 @@ local WRITERS = { CalendarFrame_Update = "onWeekdays", CalendarFrame_UpdateTitle
   CalendarViewHolidayFrame_Update = "onHoliday", CalendarViewRaidFrame_Update = "onRaid",
   CalendarEventPickerFrame_InitButton = "onPickerButton", CalendarDayButton_OnEnter = "onDayTooltip",
   CalendarCreateEventTexture_Update = "onTextureName", CalendarTexturePicker_InitButton = "onTextureButton" }
+-- event frame → the hook target of its writer. Each frame's OnLoad keeps the writer in `self.update` before any hook
+-- (lua:2499, 2510, 2730, 3358), and CalendarFrame_ShowEventFrame calls that field instead of the global when the frame
+-- is already shown (lua:996–997, 1037–1038): a second click on an event. The field is hooked too.
+local UPDATE_FIELDS = { CalendarViewHolidayFrame = "onHoliday", CalendarViewRaidFrame = "onRaid",
+  CalendarViewEventFrame = "onViewEvent", CalendarCreateEventFrame = "onCreateEvent" }
 
 local SELECT_COMMUNITY = { only = { "CALENDER_INVITE_SELECT_COMMUNITY" } }
 local WEEKDAY = { only = { "WEEKDAY_SUNDAY", "WEEKDAY_MONDAY", "WEEKDAY_TUESDAY", "WEEKDAY_WEDNESDAY",
@@ -485,6 +490,12 @@ function Calendar.setup()
   if type(frame.HookScript) == "function" then frame:HookScript("OnShow", Calendar.showStatic) end
   for writer, target in pairs(WRITERS) do
     if type(Compat.resolve(writer)) == "function" then hooksecurefunc(writer, Calendar[target]) end
+  end
+  for name, target in pairs(UPDATE_FIELDS) do
+    local eventFrame = Compat.resolve(name)
+    if type(eventFrame) == "table" and type(eventFrame.update) == "function" then
+      hooksecurefunc(eventFrame, "update", Calendar[target])
+    end
   end
   for name, keys in pairs(TOOLTIPS) do WFJ.HelpTooltip.register(get("tip." .. name), { only = keys }) end
   for i = 1, DAYS do WFJ.HelpTooltip.register(get("day" .. i), DAY_TOOLTIP) end

@@ -65,6 +65,8 @@ local function installAddonList()
     e.Status.text = data.reason and en("ADDON_" .. data.reason) or ""
   end
   _G.AddonList_Update = function() list.OkayButton:SetText(A.changed and en("RELOADUI") or en("OKAY")) end
+  -- OnLoad binds the search box to the writer as it is at load, before any hook (addonlist.lua:283)
+  list.SearchBox:HookScript("OnTextChanged", _G.AddonList_Update)
   return list
 end
 
@@ -141,6 +143,9 @@ describe("the AddOn List on Forever", function()
     A.changed = false
     _G.AddonList_Update()
     assert.are.equal("OK", list.OkayButton:GetText())
+    A.changed = true
+    list.SearchBox.scripts.OnTextChanged(list.SearchBox, true) -- typing in the search box
+    assert.are.equal("UIを再読み込み", list.OkayButton:GetText())
     list:UpdatePerformance()
     assert.are.equal("現在のCPU: 3%", list.Performance.Current:GetText())
     assert.are.equal("平均CPU: 0.5%", list.Performance.Average:GetText())

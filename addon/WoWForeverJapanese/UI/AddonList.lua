@@ -144,6 +144,12 @@ function AddonList.init()
   hooked = true
   if type(get("initAddon")) == "function" then hooksecurefunc("AddonList_InitAddon", AddonList.onRow) end
   if type(get("update")) == "function" then hooksecurefunc("AddonList_Update", AddonList.onUpdate) end
+  -- OnLoad bound the search box to AddonList_Update as it was at load (addonlist.lua:283), so typing there runs the
+  -- writer without the hook above
+  local search = frame.SearchBox
+  if type(search) == "table" and type(search.HookScript) == "function" then
+    search:HookScript("OnTextChanged", AddonList.onUpdate)
+  end
   if type(frame.UpdatePerformance) == "function" then
     hooksecurefunc(frame, "UpdatePerformance", AddonList.onPerformance)
   end
