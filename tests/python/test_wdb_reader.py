@@ -111,11 +111,16 @@ def test_malformed_files_are_errors(tmp_path, real):
     _expect_error(tmp_path, _build(header, [(q, bits), *recs[1:]]), "the bits after the string lengths")
 
 
+# the Forever builds pinned after 69913, written here rather than read from wdb.LAYOUTS so each pin is checked
+FOREVER_PINS = (70009, 70124, 70170, 70245, 70291, 70338, 70425, 70450, 70532)
+
+
 def test_an_unpinned_build_is_refused(tmp_path, real):
     """ADR-020: a build with no verified layout stops the import rather than guessing one."""
     path = tmp_path / "questcache.wdb"
     path.write_bytes(real[:4] + struct.pack("<I", 99999) + real[8:])
-    with pytest.raises(wdb.WdbError, match=r"build 99999 has no pinned payload layout \(pinned: 69722, 69913, 70009, 70124, 70170, 70245, 70291, 70338, 70425, 70450, 70532\)"):
+    pinned = ", ".join(map(str, (69722, 69913, *FOREVER_PINS)))
+    with pytest.raises(wdb.WdbError, match=rf"build 99999 has no pinned payload layout \(pinned: {pinned}\)"):
         wdb.read_quests(path)
     assert "wdb_layout" in str(pytest.raises(wdb.WdbError, wdb.read_quests, path).value)
     # the framing still reads, which is what a rescan list needs
@@ -160,9 +165,9 @@ def test_reads_the_forever_records():
     assert cache.layout.level_at == 8 and cache.layout.min_level_at == 16
 
 
-@pytest.mark.parametrize("build", [70009, 70124, 70170, 70245, 70291, 70338, 70425, 70450, 70532])
+@pytest.mark.parametrize("build", FOREVER_PINS)
 def test_the_later_forever_layouts_are_the_69913_offsets(tmp_path, build):
-    """Forever 1.60.1.70009, 70124, 70170, 70245, 70291, 70338, 70425, 70450 and 70532 kept 69913's payload layout (dev/wdb_layout over each build's full scan).
+    """Every Forever build pinned after 69913 kept its payload layout (dev/wdb_layout over each build's full scan).
     Each pin is its own entry with its own evidence, and the 69913 fixture, restamped, reads the same quests."""
     from dataclasses import replace
 

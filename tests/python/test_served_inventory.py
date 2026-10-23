@@ -3,10 +3,10 @@ build (pipeline/served_columns.txt, pipeline/served_dispositions.txt)."""
 
 from __future__ import annotations
 
-import re
 from pathlib import Path
 
 import pytest
+from makefile_pins import forever_build
 
 from wfj.dev import served_dispositions as sd
 from wfj.dev.served_columns import inventory_build, read_inventory
@@ -26,8 +26,7 @@ def test_every_served_column_has_a_stated_disposition(root: Path):
 
 
 def test_the_inventory_is_taken_on_the_pinned_build(root: Path):
-    makefile = (root / "Makefile").read_text(encoding="utf-8")
-    pinned = re.search(r"^forever_BUILD\s*:=\s*(\S+)", makefile, re.M).group(1)
+    pinned = forever_build(root)
     assert inventory_build(root / "pipeline" / "served_columns.txt") == pinned, (
         "run `make served-columns` on the pinned build and give each new column a disposition"
     )
