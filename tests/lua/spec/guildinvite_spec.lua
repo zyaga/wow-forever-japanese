@@ -1,5 +1,5 @@
 -- UI/GuildInvite.lua over a GuildInviteFrame replayed from camelot
--- blizzard_framexml/guildinviteframe.xml (:34–125) and .lua (:1–38). The inviter's and the guild's names stay English.
+-- blizzard_framexml/guildinviteframe.xml (:37–128) and .lua (:1–62). The inviter's and the guild's names stay English.
 local Stub = require("tests.lua.spec.wow_stub")
 local R = require("tests.lua.spec.stub_retail")
 

@@ -605,9 +605,9 @@ TABLES: dict[str, Table] = {
             7,
             (_c("ID", ID), _c("DisplayRaceID", 1), _c("DisplaySexID", 2)),
             # the record's fields: the inline id, the race, the sex, the class, the flags and two bake
-            # material ids. [unverified] for hotfix decoding: this build's hotfix cache holds no
-            # row of this table, so the sizes are WoWDBDefs' and none has been decoded.
-            record=("i32", "i8", "i8", "i8", "i8", "i32", "i32"),
+            # material ids. Fitted to 1.60.1.70532's hotfix of display 161568 (19 bytes), which decodes to
+            # the archive's row and wago.tools' row for it field for field; Flags is 4 bytes, not 1.
+            record=("i32", "i8", "i8", "i8", "i32", "i32", "i32"),
         ),
         # Race names for the ids above (ClientFileString: "NightElf", "Tauren"). Fields 0-14 are strings: the
         # client prefix, then the name forms and lore names, all unwritten.

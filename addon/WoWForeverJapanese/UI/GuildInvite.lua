@@ -1,15 +1,15 @@
 -- UI/GuildInvite.lua: the guild invitation window on Forever (surface "guildinvite", area "ui", ADR-016).
 -- Blizzard_FrameXML loads guildinviteframe.xml|lua at login on `camelot`. Entry point: the frame registers
--- GUILD_INVITE_REQUEST itself (guildinviteframe.xml:140); GuildInviteFrame_OnEvent writes the inviter and guild names
--- and the reputation warning, then StaticPopupSpecial_Show(GuildInviteFrame) (guildinviteframe.lua:1–38), so every
+-- GUILD_INVITE_REQUEST itself (GuildInviteFrame_OnLoad, guildinviteframe.lua:56–62); GuildInviteFrame_OnEvent writes the
+-- inviter and guild names and the reputation warning, then StaticPopupSpecial_Show(GuildInviteFrame) (lua:1–35), so every
 -- text is written before OnShow; one OnShow pass (HookScript) shows the window.
--- Static labels (XML text=): GuildInviteFrameInviteText GUILD_INVITATION (xml:40), Points.Title ACHIEVEMENTS (xml:87),
---   GuildInviteFrameJoinButton GUILD_INVITE_JOIN (xml:112), GuildInviteFrameDeclineButton GUILD_INVITE_DECLINE
---   (xml:125).
+-- Static labels (XML text=): GuildInviteFrameInviteText GUILD_INVITATION (xml:43), Points.Title ACHIEVEMENTS (xml:90),
+--   GuildInviteFrameJoinButton GUILD_INVITE_JOIN (xml:115), GuildInviteFrameDeclineButton GUILD_INVITE_DECLINE
+--   (xml:128).
 -- Written on each invite: GuildInviteFrameWarningText GUILD_REPUTATION_WARNING "… with %s" (the old guild's name stays
 --   English inside the Japanese) / GUILD_REPUTATION_WARNING_GENERIC / "" (lua:22–30).
 -- Never touched: the inviter's name, the guild's name (GuildInviteFrameInviterName / GuildNameName, lua:8–9), the
---   points number, and the inviter tooltip (a player name, lua:41–46).
+--   points number, and the inviter tooltip (a player name, lua:45–50).
 local _, WFJ = ...
 local GuildInvite = {}
 WFJ.GuildInvite = GuildInvite
