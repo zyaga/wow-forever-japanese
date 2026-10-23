@@ -251,6 +251,16 @@ def test_decode_fields_sizes_signs_strings_and_padding():
         dbcache.decode_fields(b"Ab\0\x07\0" + bytes(7), ("str", "u16"))
 
 
+def test_a_creature_display_extra_hotfix_decodes_to_its_archive_row():
+    """1.60.1.70532's DBCache.bin holds the first hotfix of CreatureDisplayInfoExtra: display 161568, 19 bytes.
+    Read with Flags as an i32 it is the archive's own row and wago.tools' row for that build, field for field;
+    with Flags as an i8 it is 3 bytes over its declared fields and the whole extract stops."""
+    record = bytes.fromhex("20770200 04 00 00 00000000 912d1000 3c481000")
+    table = client_tables.TABLES["CreatureDisplayInfoExtra"]
+    assert dbcache.decode_fields(record, table.record) == [161568, 4, 0, 0, 0, 1060241, 1067068]
+    assert client_tables._hotfix_row(table, 161568, record) == [161568, 4, 0]
+
+
 def test_against_excuses_a_hotfixed_row_only_where_wago_holds_the_archive_value(tmp_path: Path, capsys):
     wow = _install(tmp_path)
     fix = tmp_path / "DBCache.bin"

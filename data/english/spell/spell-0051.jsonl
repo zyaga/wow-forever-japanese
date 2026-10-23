@@ -1,0 +1,7 @@
+{"id": 51230, "field": "name", "en": "Retch!", "hash": "8cee735eacc67f45", "src": "db2@1.60.1.70532"}
+{"id": 51230, "field": "description", "en": "Retch on the ground!  Humanoids in it are slowed and infected.  Zombies in it are healed.", "hash": "deb2f7ac178858d8", "src": "db2@1.60.1.70532"}
+{"id": 51241, "field": "name", "en": "ZP - Retch! (Bunny Aura)", "hash": "60bdc46352f69f91", "src": "db2@1.60.1.70532"}
+{"id": 51242, "field": "name", "en": "ZP - Retch! (Bunny)", "hash": "e9134ed767ac725d", "src": "db2@1.60.1.70532"}
+{"id": 51244, "field": "name", "en": "Water Breathing", "hash": "90cec953998174b4", "src": "db2@1.60.1.70532"}
+{"id": 51244, "field": "description", "en": "Allows the target to breathe underwater for $d.", "hash": "eb480556e107f242", "src": "db2@1.60.1.70532"}
+{"id": 51244, "field": "aura", "en": "Waterbreathing.", "hash": "37a59b8c87987cac", "src": "db2@1.60.1.70532"}

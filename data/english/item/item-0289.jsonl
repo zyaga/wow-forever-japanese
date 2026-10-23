@@ -1,0 +1,34 @@
+{"id": 289081, "field": "name", "en": "Noggenfogger Elixir", "hash": "1f1d90225ec435e2", "src": "db2@1.60.1.70532"}
+{"id": 289081, "field": "description", "en": "Drink Me.", "hash": "fd1b36485d2c6f63", "src": "db2@1.60.1.70532"}
+{"id": 289082, "field": "name", "en": "Elixir of Endless Intellect", "hash": "22e84c2fb6a6a9fb", "src": "db2@1.60.1.70532"}
+{"id": 289082, "field": "description", "en": "Increases Intellect by $s1% for $d. This effect stacks up to $u times.", "hash": "97f46ba87be707cf", "src": "db2@1.60.1.70532"}
+{"id": 289083, "field": "name", "en": "Elixir of Endless Power", "hash": "14485c7a6e59a210", "src": "db2@1.60.1.70532"}
+{"id": 289083, "field": "description", "en": "Increases damage done by $s1% for $d. This effect stacks up to $u times.", "hash": "a5adedf72184731d", "src": "db2@1.60.1.70532"}
+{"id": 289084, "field": "name", "en": "Elixir of Endless Healing", "hash": "acbf0f91a9833923", "src": "db2@1.60.1.70532"}
+{"id": 289084, "field": "description", "en": "Increases healing done by $s1% for $d. This effect stacks up to $u times.", "hash": "b6f18022d2a808d5", "src": "db2@1.60.1.70532"}
+{"id": 289086, "field": "name", "en": "Elixir of Endless Rapidity", "hash": "c4d3c87b7373c2ff", "src": "db2@1.60.1.70532"}
+{"id": 289086, "field": "description", "en": "Increases Haste by $s1% for $d. This effect stacks up to $u times.", "hash": "489b2c8a569ef792", "src": "db2@1.60.1.70532"}
+{"id": 289087, "field": "name", "en": "Elixir of Endless Opportunity", "hash": "2da979f24134d6b9", "src": "db2@1.60.1.70532"}
+{"id": 289087, "field": "description", "en": "Improves your chance to get a Critical Strike by $s1% for $d. This effect stacks up to $u times.", "hash": "6b1b44eb9e098f10", "src": "db2@1.60.1.70532"}
+{"id": 289088, "field": "name", "en": "Scroll of Endless Fortitude", "hash": "ee81354fa3b2c567", "src": "db2@1.60.1.70532"}
+{"id": 289088, "field": "description", "en": "Increases Stamina of nearby allies by $s1% for $d.", "hash": "0249c11597839ec3", "src": "db2@1.60.1.70532"}
+{"id": 289292, "field": "name", "en": "Hammer of Bestial Fury", "hash": "99b1d4dcba69d816", "src": "db2@1.60.1.70532"}
+{"id": 289294, "field": "name", "en": "Thunderfury, Blessed Blade of the Windseeker", "hash": "5fa687579a5bdcfb", "src": "db2@1.60.1.70532"}
+{"id": 289294, "field": "description", "en": "Blasts your enemy with lightning, dealing $s2 Nature damage and then jumping to additional nearby enemies.  Each jump reduces that victim's Nature resistance by $s1. Affects $x1 targets. Your primary target is also consumed by a cyclone, slowing its attack speed by $27648s1% for $d.", "hash": "0cc6012e29cd4d05", "src": "db2@1.60.1.70532"}
+{"id": 289295, "field": "name", "en": "Sulfuras, Hand of Ragnaros", "hash": "9d9ada75fbdc8ccf", "src": "db2@1.60.1.70532"}
+{"id": 289295, "field": "description", "en": "Hurls a fiery ball that causes $s1 Fire damage and an additional $o2 damage over $d.\nDeals $s1 Fire damage to anyone who strikes you with a melee attack.", "hash": "41df2e852a75cd0b", "src": "db2@1.60.1.70532"}
+{"id": 289296, "field": "name", "en": "Benediction", "hash": "4779be8343480f33", "src": "db2@1.60.1.70532"}
+{"id": 289296, "field": "description", "en": "Calls forth Anathema.\nIncreases the critical effect chance of your Holy spells by $s1%.", "hash": "978fde24f0d58f84", "src": "db2@1.60.1.70532"}
+{"id": 289297, "field": "name", "en": "Anathema", "hash": "47fc808881053f45", "src": "db2@1.60.1.70532"}
+{"id": 289297, "field": "description", "en": "Calls forth Benediction.", "hash": "aba9d642e9274542", "src": "db2@1.60.1.70532"}
+{"id": 289302, "field": "name", "en": "Quel'Serrar", "hash": "d616da35deae4a26", "src": "db2@1.60.1.70532"}
+{"id": 289302, "field": "description", "en": "Grants the wielder $s1 Defense, $s2 Armor, $s3 Attack Power, and $s4 additional Attack Power against Dragonkin for $d.\nThe High Blade", "hash": "1f33fedd7656a7d0", "src": "db2@1.60.1.70532"}
+{"id": 289303, "field": "name", "en": "Rhok'delar, Longbow of the Ancient Keepers", "hash": "e2cf99aea3c42856", "src": "db2@1.60.1.70532"}
+{"id": 289321, "field": "name", "en": "Elixir of Endless Mana", "hash": "4bf3c2a9b57f64dd", "src": "db2@1.60.1.70532"}
+{"id": 289321, "field": "description", "en": "Increases mana regeneration by $s1% for $d.", "hash": "d0fad09f0b0a386c", "src": "db2@1.60.1.70532"}
+{"id": 289329, "field": "name", "en": "Elixir of Endless Growth", "hash": "bcfc182b728630ef", "src": "db2@1.60.1.70532"}
+{"id": 289329, "field": "description", "en": "Enlarges the imbiber by a significant amount for $d. This effect stacks up to $u times.", "hash": "c8b9dfd5de2fb7c7", "src": "db2@1.60.1.70532"}
+{"id": 289330, "field": "name", "en": "Scroll of Endless Speed", "hash": "800307e9c90644dd", "src": "db2@1.60.1.70532"}
+{"id": 289330, "field": "description", "en": "Increases run speed of nearby allies by $s1% for $d.", "hash": "002400e230735438", "src": "db2@1.60.1.70532"}
+{"id": 289334, "field": "name", "en": "Elixir of Endless Experience", "hash": "458ebe2c027d9551", "src": "db2@1.60.1.70532"}
+{"id": 289334, "field": "description", "en": "Increases experience gained by $s1% for $d.", "hash": "af4155856b80f7ad", "src": "db2@1.60.1.70532"}

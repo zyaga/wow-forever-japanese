@@ -2,4 +2,5 @@
 local _, WFJ = ...
 WFJ.Data.add("spell", {
   [48108] = { "Fireball、Fire Blast、Scorch、Living Bomb、Frostfire Boltで呪文のクリティカルを2回連続で出すたびに、一定の確率で、$D1以内に唱える次のPyroblastが即時発動になります。", "次のPyroblastの呪文が即時詠唱になります。", 0x200c4cec, 0xbf94c763, "uu" },
+  [48198] = { "聖なる炎でゾンビを打ちます。3回連続で命中させると、ゾンビは消滅します。", "ヒーラーに打たれました。3回打たれたらアウトです！", 0x765fc503, 0x4407d0d1, "uu" },
 })

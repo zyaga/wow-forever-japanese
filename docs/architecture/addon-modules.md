@@ -419,6 +419,15 @@ Build 1.60.1.70450 changed no interface file. Three files are new in the extract
 |---|---|---|
 | `UI/PvPMatch.lua` | the scoreboard's honor level cell tooltip, which on Forever shows the PvP rank and title ("Rank 7 - Knight-Lieutenant") instead of "Honor Level %d" | the cell's tooltip `only` also takes `PVP_RANK_NUMBER_AND_TITLE` beside `HONOR_LEVEL_TOOLTIP` (`camelot/pvpmatchtableoverrides.lua:25–32`); the rank title stays English |
 
+### Changes for build 1.60.1.70532
+
+Build 1.60.1.70532 modified 18 interface files and added or removed none. None writes new text: they remove the gamepad's toggle-tooltips prompts from several footers, add gamepad focus hints to the guild invitation window (its load, hide and update handlers moved from the XML into `GuildInviteFrame_OnLoad` / `_OnHide` / `_OnUpdate`), pick a quest's single reward choice by itself, change the swing timer's out-of-range art, give the raid graphics quality options a second set of values (0 to 4 beside 1 to 5), add a renown level highlight, and give the legacy talent buttons a rank count ("2/5", `GENERIC_FRACTION_STRING`, numbers only).
+
+| File | What it shows | Hook / form |
+|---|---|---|
+| `UI/GuildInvite.lua` | (nothing new) | the window still opens through `StaticPopupSpecial_Show` after its event handler writes every text (`guildinviteframe.lua:1–35`), so the `OnShow` hook is unchanged; its citations follow the moved lines |
+| `UI/Gamepad.lua` | (nothing new) | `PROMPT_TOGGLE_TOOLTIPS` removed from `Gamepad.KEYS`: no footer adds that prompt any more |
+
 ### Client-table text (ADR-042)
 
 Text from the client's DB2 tables, shipped as the `ui` text families ([ADR-042](../adr/042-client-table-text-families.md), [research](../research/2026-09-26-client-table-text.md)). Every widget is restricted to its families (`Labels.families` / `familiesWith`), so a name next to it is never read.

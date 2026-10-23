@@ -146,6 +146,7 @@ LAYOUTS = (
     replace(_FOREVER_69913, build=70338, evidence="Forever beta 1.60.1.70338, 2,986 of 2,986 records"),
     replace(_FOREVER_69913, build=70425, evidence="Forever beta 1.60.1.70425, 3,020 of 3,020 records"),
     replace(_FOREVER_69913, build=70450, evidence="Forever beta 1.60.1.70450, 3,078 of 3,078 records"),
+    replace(_FOREVER_69913, build=70532, evidence="Forever beta 1.60.1.70532, 3,081 of 3,081 records"),
 )
 
 

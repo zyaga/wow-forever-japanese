@@ -1,1 +1,84 @@
-{"id": 1327009, "field": "name", "en": "(DNT) Immol'thar Encounter Record Aura", "hash": "26a1b412aaf2e8ef", "src": "db2@1.60.1.70450"}
+{"id": 1327009, "field": "name", "en": "(DNT) Immol'thar Encounter Record Aura", "hash": "26a1b412aaf2e8ef", "src": "db2@1.60.1.70532"}
+{"id": 1327064, "field": "name", "en": "Hunger...", "hash": "28492a946965690b", "src": "db2@1.60.1.70532"}
+{"id": 1327064, "field": "aura", "en": "Seeking fresh meat...", "hash": "f39c426c545d60f2", "src": "db2@1.60.1.70532"}
+{"id": 1327078, "field": "name", "en": "Ravenous Claw", "hash": "2394eecfef7439d8", "src": "db2@1.60.1.70532"}
+{"id": 1327078, "field": "aura", "en": "Melee attacks have a chance to infect the target.", "hash": "98e4e5bc048a3387", "src": "db2@1.60.1.70532"}
+{"id": 1327079, "field": "name", "en": "Ravenous Claw", "hash": "2394eecfef7439d8", "src": "db2@1.60.1.70532"}
+{"id": 1327082, "field": "name", "en": "You're Infected!", "hash": "0000790758ecefa0", "src": "db2@1.60.1.70532"}
+{"id": 1327082, "field": "description", "en": "Infect a humanoid with the zombie plague.", "hash": "2e0efd44303b5b69", "src": "db2@1.60.1.70532"}
+{"id": 1327082, "field": "aura", "en": "A zombie has infected you.  Find a cure before it's too late!", "hash": "419a63b3f06faf02", "src": "db2@1.60.1.70532"}
+{"id": 1327211, "field": "name", "en": "Cosmetic Aura", "hash": "8dbf962fa5acbb72", "src": "db2@1.60.1.70532"}
+{"id": 1327241, "field": "name", "en": "Void Bolt", "hash": "d338ea5b301cfc69", "src": "db2@1.60.1.70532"}
+{"id": 1327241, "field": "aura", "en": "Movement speed reduced by $s2%.", "hash": "08fe79f089dfc8da", "src": "db2@1.60.1.70532"}
+{"id": 1327245, "field": "name", "en": "Warstomp", "hash": "02843956933210c0", "src": "db2@1.60.1.70532"}
+{"id": 1327245, "field": "description", "en": "Inflicts normal damage plus $s3 to nearby enemies and stunning them for $d.\r\n", "hash": "b1124942d19d6b7c", "src": "db2@1.60.1.70532"}
+{"id": 1327245, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70532"}
+{"id": 1327248, "field": "name", "en": "Cleave", "hash": "490af681ad18ef1f", "src": "db2@1.60.1.70532"}
+{"id": 1327248, "field": "description", "en": "Inflicts weapon damage plus $s1 to an enemy and its nearest allies, affecting up to $x1 targets.", "hash": "bd91ba0f19e05ae9", "src": "db2@1.60.1.70532"}
+{"id": 1327251, "field": "name", "en": "Shadow Bolt Volley", "hash": "62ed89ea2de9d24d", "src": "db2@1.60.1.70532"}
+{"id": 1327251, "field": "description", "en": "Hurls missiles of dark magic, inflicting Shadow damage to nearby enemies.", "hash": "ff49863129e1fd03", "src": "db2@1.60.1.70532"}
+{"id": 1327341, "field": "name", "en": "Dreamfall", "hash": "911a79659a7c5b95", "src": "db2@1.60.1.70532"}
+{"id": 1327341, "field": "description", "en": "$@spelldesc<1269045>", "hash": "6fb4b21c7d529289", "src": "db2@1.60.1.70532"}
+{"id": 1327341, "field": "aura", "en": "Inflicts $1269185S1 nature damage every $1269045t1 sec.", "hash": "487ca32fe4c517de", "src": "db2@1.60.1.70532"}
+{"id": 1327368, "field": "name", "en": "Fixate", "hash": "097a77e983ad4bc9", "src": "db2@1.60.1.70532"}
+{"id": 1327369, "field": "name", "en": "Fixate", "hash": "097a77e983ad4bc9", "src": "db2@1.60.1.70532"}
+{"id": 1327369, "field": "aura", "en": "Fixated.", "hash": "62b071f288f69619", "src": "db2@1.60.1.70532"}
+{"id": 1327505, "field": "name", "en": "Arcane Bolt", "hash": "8ce91867cb47c09b", "src": "db2@1.60.1.70532"}
+{"id": 1327505, "field": "description", "en": "Inflicts $1327506s1 Arcane damage to an enemy and increases their Arcane damage taken by $1327506s2%.", "hash": "cce2013d325cd108", "src": "db2@1.60.1.70532"}
+{"id": 1327506, "field": "name", "en": "Arcane Bolt", "hash": "8ce91867cb47c09b", "src": "db2@1.60.1.70532"}
+{"id": 1327506, "field": "description", "en": "$@spelldesc1327505", "hash": "7fea02c5cc35d8f1", "src": "db2@1.60.1.70532"}
+{"id": 1327506, "field": "aura", "en": "Arcane damage taken increased by $s2%.", "hash": "02486f741ec493a6", "src": "db2@1.60.1.70532"}
+{"id": 1327657, "field": "name", "en": "Frost Breath", "hash": "b3bb9f9f3387d03a", "src": "db2@1.60.1.70532"}
+{"id": 1327657, "field": "description", "en": "Inflicts Frost damage to enemies in a cone in front of the caster, stealing their mana and reducing their movement speed for $d.", "hash": "03102da342fe3684", "src": "db2@1.60.1.70532"}
+{"id": 1327657, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70532"}
+{"id": 1327713, "field": "name", "en": "Terrifying Roar", "hash": "20f9196a334ac764", "src": "db2@1.60.1.70532"}
+{"id": 1327713, "field": "description", "en": "Causes nearby enemies to flee in fear for $d.", "hash": "9265f43a1eb28ebb", "src": "db2@1.60.1.70532"}
+{"id": 1327713, "field": "aura", "en": "Fleeing in fear.\r\n$S2 Shadow damage inflicted every $t2 sec.", "hash": "db6290897a956d0a", "src": "db2@1.60.1.70532"}
+{"id": 1327716, "field": "name", "en": "Cleave", "hash": "490af681ad18ef1f", "src": "db2@1.60.1.70532"}
+{"id": 1327716, "field": "description", "en": "Inflicts weapon damage plus $s1 to an enemy and its nearest ally.", "hash": "2a09ac77a0ab5cf4", "src": "db2@1.60.1.70532"}
+{"id": 1327726, "field": "name", "en": "Rushing Charge", "hash": "d3aae38327aac301", "src": "db2@1.60.1.70532"}
+{"id": 1327726, "field": "description", "en": "Increases the caster's movement speed by $s1% for $d. and causes it to inflict an additional $s2 damage on its first attack.", "hash": "15d6825627e1ad31", "src": "db2@1.60.1.70532"}
+{"id": 1327726, "field": "aura", "en": "Movement speed increased by $s1%.\r\nInflicts an additional $s2 damage on first attack.", "hash": "f2c3cb38ef2baf03", "src": "db2@1.60.1.70532"}
+{"id": 1327736, "field": "name", "en": "Elixir of Endless Intellect", "hash": "22e84c2fb6a6a9fb", "src": "db2@1.60.1.70532"}
+{"id": 1327736, "field": "description", "en": "Increases Intellect by $s1% for $d. This effect stacks up to $u times.", "hash": "97f46ba87be707cf", "src": "db2@1.60.1.70532"}
+{"id": 1327736, "field": "aura", "en": "Intellect increased by $s1%.", "hash": "852004145422ae7a", "src": "db2@1.60.1.70532"}
+{"id": 1327737, "field": "name", "en": "Elixir of Endless Power", "hash": "14485c7a6e59a210", "src": "db2@1.60.1.70532"}
+{"id": 1327737, "field": "description", "en": "Increases damage done by $s1% for $d. This effect stacks up to $u times.", "hash": "a5adedf72184731d", "src": "db2@1.60.1.70532"}
+{"id": 1327737, "field": "aura", "en": "Increases damage dealt by $s1%.", "hash": "f22fcf4fbab875b8", "src": "db2@1.60.1.70532"}
+{"id": 1327738, "field": "name", "en": "Elixir of Endless Healing", "hash": "acbf0f91a9833923", "src": "db2@1.60.1.70532"}
+{"id": 1327738, "field": "description", "en": "Increases healing done by $s1% for $d. This effect stacks up to $u times.", "hash": "b6f18022d2a808d5", "src": "db2@1.60.1.70532"}
+{"id": 1327738, "field": "aura", "en": "Increases healing done by $s1%.", "hash": "84b2c36220b4cd6d", "src": "db2@1.60.1.70532"}
+{"id": 1327751, "field": "name", "en": "Elixir of Endless Rapidity", "hash": "c4d3c87b7373c2ff", "src": "db2@1.60.1.70532"}
+{"id": 1327751, "field": "description", "en": "Increases Haste by $s1% for $d. This effect stacks up to $u times.", "hash": "489b2c8a569ef792", "src": "db2@1.60.1.70532"}
+{"id": 1327751, "field": "aura", "en": "Haste increased by $s1%.", "hash": "269d2af7c7638c8d", "src": "db2@1.60.1.70532"}
+{"id": 1327753, "field": "name", "en": "Elixir of Endless Opportunity", "hash": "2da979f24134d6b9", "src": "db2@1.60.1.70532"}
+{"id": 1327753, "field": "description", "en": "Improves your chance to get a Critical Strike by $s1% for $d. This effect stacks up to $u times.", "hash": "6b1b44eb9e098f10", "src": "db2@1.60.1.70532"}
+{"id": 1327753, "field": "aura", "en": "Critical Strike chance increased by $s1%.", "hash": "44b04a5727142753", "src": "db2@1.60.1.70532"}
+{"id": 1327754, "field": "name", "en": "Scroll of Endless Fortitude", "hash": "ee81354fa3b2c567", "src": "db2@1.60.1.70532"}
+{"id": 1327754, "field": "description", "en": "Increases Stamina of nearby allies by $s1% for $d.", "hash": "0249c11597839ec3", "src": "db2@1.60.1.70532"}
+{"id": 1327754, "field": "aura", "en": "Stamina increased by $s1%.", "hash": "0852e08c4fc5aea7", "src": "db2@1.60.1.70532"}
+{"id": 1327926, "field": "name", "en": "Ultra Hogger", "hash": "31db9d8e1c84244d", "src": "db2@1.60.1.70532"}
+{"id": 1327926, "field": "description", "en": "Super Hogger has transformed into Ultra Hogger!", "hash": "953648c034269a8e", "src": "db2@1.60.1.70532"}
+{"id": 1327926, "field": "aura", "en": "Ultra power!\r\nPhysical damage increased by $s2%.", "hash": "412f51a6137d5e66", "src": "db2@1.60.1.70532"}
+{"id": 1327961, "field": "name", "en": "Giga Hogger", "hash": "b8fe1c654e482505", "src": "db2@1.60.1.70532"}
+{"id": 1327961, "field": "description", "en": "Super Hogger has transformed into Giga Hogger!", "hash": "bdb62168c2145529", "src": "db2@1.60.1.70532"}
+{"id": 1327961, "field": "aura", "en": "Giga power!\r\nPhysical damage increased by $s2%.", "hash": "a9defd32e243fb32", "src": "db2@1.60.1.70532"}
+{"id": 1327963, "field": "name", "en": "Cosmic Hogger", "hash": "7d73a9a30c8e9ee7", "src": "db2@1.60.1.70532"}
+{"id": 1327963, "field": "description", "en": "Super Hogger has transformed into Cosmic Hogger!", "hash": "5202055fa2fd1f1a", "src": "db2@1.60.1.70532"}
+{"id": 1327963, "field": "aura", "en": "COSMIC power!\r\nPhysical damage increased by $s2%.", "hash": "ee675a81752c21f7", "src": "db2@1.60.1.70532"}
+{"id": 1327978, "field": "name", "en": "Frenzy", "hash": "a4ed88dc0ed0da9b", "src": "db2@1.60.1.70532"}
+{"id": 1327978, "field": "aura", "en": "Frenzied!", "hash": "799855159a87a596", "src": "db2@1.60.1.70532"}
+{"id": 1327984, "field": "name", "en": "Manastorm", "hash": "7fd4765e2ecca7ea", "src": "db2@1.60.1.70532"}
+{"id": 1327984, "field": "description", "en": "Calls down a mana storm that lasts $d., inflicting $s1 Frost damage and draining $s2 mana every $t1 sec. to all enemies in a selected area.", "hash": "e9d8553814096d1a", "src": "db2@1.60.1.70532"}
+{"id": 1327987, "field": "name", "en": "Manastorm", "hash": "7fd4765e2ecca7ea", "src": "db2@1.60.1.70532"}
+{"id": 1327987, "field": "description", "en": "The caster calls down a Manastorm that lasts for $1327984d that inflicts $s1 Frost damage every $t1 sec to all enemies in the area and reduces their movement speed by $s2%.", "hash": "6e68c7f06795e913", "src": "db2@1.60.1.70532"}
+{"id": 1327987, "field": "aura", "en": "$s1 Frost damage inflicted every $t1 sec.\r\n$s2% reduced movement speed.", "hash": "fb71ca91e6893f8e", "src": "db2@1.60.1.70532"}
+{"id": 1327989, "field": "name", "en": "Chill", "hash": "a621f4a06a7bbd9c", "src": "db2@1.60.1.70532"}
+{"id": 1327989, "field": "description", "en": "Blasts nearby enemies with ice, dealing $s1 damage, increasing the time between their attacks by $s2%, and movement speed by $s3%.", "hash": "01056e5b93225057", "src": "db2@1.60.1.70532"}
+{"id": 1327989, "field": "aura", "en": "Time between attacks increased by $s2%.\r\nMovement speed reduced by $s3%.", "hash": "83ffb7cf5a00071a", "src": "db2@1.60.1.70532"}
+{"id": 1327990, "field": "name", "en": "Chill", "hash": "a621f4a06a7bbd9c", "src": "db2@1.60.1.70532"}
+{"id": 1327990, "field": "aura", "en": "Periodically releases a wave of cold slowing enemies and inflicting $1327989s1 Frost damage.", "hash": "d256ac0b9b9546b1", "src": "db2@1.60.1.70532"}
+{"id": 1327991, "field": "name", "en": "Call Anathema", "hash": "28cf3a1f1d2db992", "src": "db2@1.60.1.70532"}
+{"id": 1327991, "field": "description", "en": "Calls forth Anathema.", "hash": "9e56bf0020b0bd7d", "src": "db2@1.60.1.70532"}
+{"id": 1327993, "field": "name", "en": "Call Benediction", "hash": "6edba49d3021c0ef", "src": "db2@1.60.1.70532"}
+{"id": 1327993, "field": "description", "en": "Calls forth Benediction.", "hash": "aba9d642e9274542", "src": "db2@1.60.1.70532"}

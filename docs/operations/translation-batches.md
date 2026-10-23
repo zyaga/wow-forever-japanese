@@ -342,6 +342,52 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
 
+### 1.60.1.70450 → 1.60.1.70532 (2026-10-23)
+
+The first build scanned with the full sweep as the automatic scan: WFJScan asked all 71,149 ids (1 to 9999 and
+50000 to 105000, 4 passes) and ran its slow recheck. Quest cache: 3,081 records, 3,000 quests, read with the 69913
+payload layout, pinned again for 70532. 44 quests are answered that the 70450 cache lacked; 35 of them no earlier
+Forever build had answered (807, 820, 1005, 1006, 1423, 1714, 2953, 3567, 3644, 4603, 4604, 5421, 5691 to 5693, 6701,
+7901, 8353 to 8360, 8409, 8848, 8853, 79090, 79482, 79637, 92811, 92812, 98888, 98896), the earlier known-list scans
+never having asked their ids. 25 of the 35 already had hand-written Japanese, which now ships; 5 (807, 820, 5691 to
+5693) are placeholder records with nothing to translate. 41 quests 70450
+answered are not answered now; their 109 Japanese lines keep shipping unchanged
+([ADR-050](../adr/050-english-is-additive.md)). Quest 497 is answered as a placeholder now, so its pfQuest stand-in
+lines go; 1460, 1461, 1659, 1660, 4323 and 8458, placeholders on 70450 and not answered now, get theirs back. None of
+the seven has Japanese. Client tables: 62, with the build's own hotfixes; no layout hash changed. The hotfix cache
+held the first hotfix row of CreatureDisplayInfoExtra, which the reader refused until its `Flags` field was read as 4
+bytes. Against 70450: ItemSparse gained 141 rows, SpellName and Spell 102, ItemEffect and ItemXItemEffect 30 each,
+CreatureDisplayInfo 3; BroadcastText gained 3 NPC lines (given the `gossip` reason) and reworded one troll opening
+cinematic line ("viscious" became "vicious"; its Japanese still fits and was re-verified), and lost the 66 other intro
+rows because the patch emptied the hotfix cache (they keep their English and Japanese). The wago.tools cross-check: no
+value differs; the rows wago has and ours lacks are the same store items as on 70450; QuestV2's highest id is 99,670.
+The UI extract: 4,486 files, 18 modified, none with new text ([Addon modules](../architecture/addon-modules.md)). The
+served-text inventory: one hotfix-only table the listfile does not name, with no strings (`internal`), and row counts
+only otherwise. `make family-rows`: 5 new rows, 3 given `gossip` and 2 value placeholders (`%1777w`) given `curated`.
+The English Collector file held nothing new (97 entries, none rejected, nothing added).
+
+| Type | Reworded (shipped line now stale) | New English lines | Not served on this build (English kept) | Drafted |
+|---|---|---|---|---|
+| quest | 2 hand-written descriptions (8356, 8359: the baseline moved from Classic Era to Forever; kept) | 31 quests (the new ids above with English) | 41 not answered in the cache (above) | 14 lines (10 titles, 2 objectives, 2 descriptions), with word lists; 2 titles are item names and stay English; word lists for the 71 hand-written lines that started shipping |
+| objective | 0 | 8 | none | 6 (2 had Japanese already) |
+| item | 1 (249479) | 141 items (34 descriptions) | 31 ids | 34 new, 1 redrafted |
+| spell | 33 (18 descriptions, 15 auras) | 102 spells | 111 ids | 73 descriptions and 47 auras new; the 33 redrafted with `REVERIFY=1` (6 redrafts came out the same as the shipped Japanese, so 27 lines changed) |
+| ui | 1 (the troll intro line) | 0 | 253 ids | 1 re-verified unchanged |
+| gossip, book, area | 0 | 0 | none | none |
+
+Hand-written lines the new English brought in: quest 8358's description named the Gnomeregan Gumdrop where its
+English (Kali Remik, the Darkspear Gumdrop) has another name, so it was rejected; a correction swaps in the right name.
+Quest 4604's completion, shipping for the first time, would have taken a garbled wiki variant over Tammy's translation
+of the same text (the one 2953 and 4603 ship); a correction of Tammy's variant, with its paragraph break restored, wins.
+Quest 3644's completion, a machine line shipping for the first time, wrote "2金貨" for "two gold pieces"; it was
+redrafted to 金貨2枚. Item 1979's hand-written
+description wrote the template's numbers as 20 and 150 (`rule_baked_numbers`, both modes), so it was ruled `reject`
+and redrafted with placeholders. Spell 11426 (Ice Barrier, rewritten on this build) took its redraft with the
+`accept` ruling moved onto it. "Healer" in one zombie event aura is the healer role, listed on the not-names list for
+that row.
+
+Voice: `make voice-speakers` (speakers for the quests that now ship, and the conditional descriptions re-stamped at 70532 with the same speakers; the quest level table gained 7 quests), then `make voice-generate`: 52 files for 21 quests (1423, 1714, 2953, 3567, 3644, 4603, 4604, 5421, 6701, 7901, 79482, 8353 to 8360, 8848, 8853), audio commit c4af1d81ddae pinned. Left out with a reason: the same item descriptions still in Classic Era English (listed in [Coverage](coverage.md)).
+
 ### 1.60.1.70425 → 1.60.1.70450 (2026-10-16, 2026-10-17)
 
 Two pulls of the same build. The second came after the maintainer watched every race's opening cinematic on a new

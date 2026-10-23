@@ -257,8 +257,8 @@ def test_server_only_text_keeps_its_translation_floor(root):
 
 
 def test_gendered_quest_fields_ship_h1f_and_keyed_aliases_as_measured(root, plan_report):
-    """ADR-024: the shipped quest fields whose English has a `$G` code carry the female-variant h1: 145 rows,
-    154 fields across them; quest 8234's completion is one of them. 189 shipped gossip lines (NPC speech
+    """ADR-024: the shipped quest fields whose English has a `$G` code carry the female-variant h1: 147 rows,
+    156 fields across them; quest 8234's completion is one of them. 189 shipped gossip lines (NPC speech
     included) and 10 book pages get a gender alias; none is dropped or ambiguous. A data PR that moves these
     counts updates them knowingly."""
     from wfj.cmd import generate
@@ -270,8 +270,8 @@ def test_gendered_quest_fields_ship_h1f_and_keyed_aliases_as_measured(root, plan
     masked = generate.masked_fields(Store(data, english=True).load("quest"))  # as the real build does
     rows = lua_writer.rows("quest", _quest_lines(root), female, masked)
     gendered = [r for r in rows.values() if len(r) == 16]
-    assert len(gendered) == 145
-    assert sum(1 for r in gendered for v in r[11:] if v != "nil") == 154
+    assert len(gendered) == 147
+    assert sum(1 for r in gendered for v in r[11:] if v != "nil") == 156
     assert rows[8234][-1] == "0xf0af4ecb"  # completion h1f
     # 10 shipped book pages whose English has a `$G` code get an alias too
     assert report["aliases"] == {"gossip": 189, "book": 10}

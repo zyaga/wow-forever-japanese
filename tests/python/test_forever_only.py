@@ -3,17 +3,17 @@ English), but the addon carries no Era-only file, name or client gate, the build
 lists, and the docs describe one target."""
 
 import re
-import subprocess
 from pathlib import Path
 
 import pytest
+from local_inputs import forever_build, predecessors
 
 from wfj.emit import lua_writer, schema
 from wfj.io import wago, wdb
 from wfj.io.jsonl_store import Store
 
 ADDON = Path("addon/WoWForeverJapanese")
-FOREVER = "forever-1.60.1.70450"
+FOREVER = f"forever-{forever_build()}"
 
 # Globals only the Classic Era UI defines (the Era target survey in docs/research/). A name
 # preceded by a word character or a dot is another name or a Forever child key (`PlayerSpellsFrame.SpellBookFrame`,
@@ -76,12 +76,10 @@ def test_no_generated_folder_outlives_its_kind(root):
 
 def _forever_dir(root) -> Path | None:
     """The pinned Forever client folder under the main checkout's predecessors/ (gitignored; absent in CI)."""
-    try:
-        common = subprocess.run(["git", "rev-parse", "--path-format=absolute", "--git-common-dir"], cwd=root,
-                                capture_output=True, text=True, check=True).stdout.strip()
-    except (OSError, subprocess.CalledProcessError):
+    inputs = predecessors(root)
+    if inputs is None:
         return None
-    d = Path(common).parent / "predecessors" / "clients" / FOREVER
+    d = inputs / "clients" / FOREVER
     return d if (d / "QuestV2.csv").is_file() else None
 
 

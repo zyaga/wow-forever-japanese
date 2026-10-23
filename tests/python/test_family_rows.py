@@ -3,12 +3,11 @@ pipeline/family_rows.txt, taken on the pinned build (wfj.dev.family_rows)."""
 
 from __future__ import annotations
 
-import re
-import subprocess
 from collections import defaultdict
 from pathlib import Path
 
 import pytest
+from local_inputs import forever_build, predecessors
 
 from wfj.dev import family_rows as fr
 from wfj.io import wago
@@ -25,21 +24,16 @@ def test_every_left_out_row_has_a_reason(root: Path):
 
 
 def test_the_rows_are_taken_on_the_pinned_build(root: Path):
-    makefile = (root / "Makefile").read_text(encoding="utf-8")
-    pinned = re.search(r"^forever_BUILD\s*:=\s*(\S+)", makefile, re.MULTILINE).group(1)
+    pinned = forever_build(root)
     build, _ = fr.read(root / "pipeline" / "family_rows.txt")
     assert build == pinned, "run `make family-rows` on the pinned build"
 
 
 def test_the_file_matches_the_pinned_tables(root: Path):
-    makefile = (root / "Makefile").read_text(encoding="utf-8")
-    pinned = re.search(r"^forever_BUILD\s*:=\s*(\S+)", makefile, re.MULTILINE).group(1)
-    try:
-        common = subprocess.run(["git", "rev-parse", "--path-format=absolute", "--git-common-dir"], cwd=root,
-                                capture_output=True, text=True, check=True).stdout.strip()
-    except (OSError, subprocess.CalledProcessError):
+    inputs = predecessors(root)
+    if inputs is None:
         pytest.skip("not a git checkout")
-    folder = Path(common).parent / "predecessors" / "clients" / f"forever-{pinned}"
+    folder = inputs / "clients" / f"forever-{forever_build(root)}"
     if not (folder / "tables-source.txt").is_file():
         pytest.skip("no pinned Forever tables on this machine (predecessors/ is absent in CI)")
     keys = wago.read_keys(root / "pipeline" / "ui_keys.txt")
