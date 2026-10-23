@@ -9,6 +9,8 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+## 0.5.0 - 2026-10-23
+
 ### Added
 - Japanese for the text Forever build 1.60.1.70532 adds or rewords, with word readings: the quests Forever now serves that no earlier build answered (the Hallow's End candy quests and the Sparklematic 5200 and Winter Veil quests are read aloud in Japanese; the Darkspear Islands quests so far have only their titles), and new and reworded items and spells.
 
