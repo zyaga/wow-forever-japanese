@@ -205,6 +205,7 @@ worldstateexpression.f0  internal  # encoded expressions
 zoneintromusictable.f0  internal  # music names
 zonelight.f0  internal  # light names
 zonemusic.f0  internal  # music names
+hash-c842493a.*  empty  # a hotfix-only table the listfile does not name: its 3 rows are one 4-byte number each, no text
 
 # Server caches (Cache/WDB/enUS): the text the server sends. The client keeps only what it has been sent, so a
 # cache's record count says what this install has seen, not what the server holds.

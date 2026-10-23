@@ -1,0 +1,36 @@
+{"id": 1328013, "field": "name", "en": "Cleave", "hash": "490af681ad18ef1f", "src": "db2@1.60.1.70532"}
+{"id": 1328013, "field": "description", "en": "Inflicts normal damage plus $s1 to an enemy and its nearest allies, affecting up to $x1 targets.", "hash": "b36a844fa91760b7", "src": "db2@1.60.1.70532"}
+{"id": 1328019, "field": "name", "en": "Mortal Strike", "hash": "ea2d918fe2742fc5", "src": "db2@1.60.1.70532"}
+{"id": 1328019, "field": "description", "en": "Inflicts $s1% weapon damage and leaves the target wounded, reducing the effectiveness of any healing by $s2% for $d.", "hash": "9ac3230491b61200", "src": "db2@1.60.1.70532"}
+{"id": 1328019, "field": "aura", "en": "Healing effects reduced by $s2%.", "hash": "25749c0a8dddefc2", "src": "db2@1.60.1.70532"}
+{"id": 1328022, "field": "name", "en": "Ding!", "hash": "b7d344dfeaa6e42b", "src": "db2@1.60.1.70532"}
+{"id": 1328022, "field": "aura", "en": "Leveled up!\r\nPhysical damage increased by $s2%.", "hash": "53b2c5328cc904a7", "src": "db2@1.60.1.70532"}
+{"id": 1328028, "field": "name", "en": "Charge", "hash": "024f52bd3f49c2c8", "src": "db2@1.60.1.70532"}
+{"id": 1328028, "field": "description", "en": "Charges an enemy, inflicting normal damage plus $s3 and stuns the opponent for $d.", "hash": "af4293e676932a45", "src": "db2@1.60.1.70532"}
+{"id": 1328032, "field": "name", "en": "Elixir of Endless Mana", "hash": "4bf3c2a9b57f64dd", "src": "db2@1.60.1.70532"}
+{"id": 1328032, "field": "description", "en": "Increases mana regeneration by $s1% for $d.", "hash": "d0fad09f0b0a386c", "src": "db2@1.60.1.70532"}
+{"id": 1328032, "field": "aura", "en": "Mana regeneration increased by $s1%.", "hash": "f8a540d0866e7bfb", "src": "db2@1.60.1.70532"}
+{"id": 1328034, "field": "name", "en": "Chain Lightning", "hash": "a424aa7106c28efc", "src": "db2@1.60.1.70532"}
+{"id": 1328034, "field": "description", "en": "Directs a bolt of lightning at the enemy, dealing $s1  Nature damage and then jumping to additional nearby enemies. Each jump increases the damage. ", "hash": "32da96b426841c7b", "src": "db2@1.60.1.70532"}
+{"id": 1328040, "field": "name", "en": "Hurricane", "hash": "0e04feb83dba35cd", "src": "db2@1.60.1.70532"}
+{"id": 1328040, "field": "description", "en": "The caster calls down a hurricane that lasts for $1289129d that inflicts $s1 Nature damage every $t1 sec to all enemies in the area and reduces their movement speed by $s2%.", "hash": "ea44c04fa74ec793", "src": "db2@1.60.1.70532"}
+{"id": 1328040, "field": "aura", "en": "$s1 Nature damage inflicted every $t1 sec.\r\n$s2% reduced movement speed.", "hash": "6dc7210b9b7d4122", "src": "db2@1.60.1.70532"}
+{"id": 1328041, "field": "name", "en": "Hurricane", "hash": "0e04feb83dba35cd", "src": "db2@1.60.1.70532"}
+{"id": 1328041, "field": "description", "en": "$@spelldesc1289130", "hash": "edfb8da1bf1a645f", "src": "db2@1.60.1.70532"}
+{"id": 1328067, "field": "name", "en": "Summon Infernal", "hash": "37a1cd6adf9ea431", "src": "db2@1.60.1.70532"}
+{"id": 1328067, "field": "description", "en": "Summons an infernal at the casters location that inflicts $1328069s1 Fire damage and stuns targets for $1328069d. Infernals last for $1328068d.", "hash": "0bb7601a4d65b063", "src": "db2@1.60.1.70532"}
+{"id": 1328068, "field": "name", "en": "Summon Infernal", "hash": "37a1cd6adf9ea431", "src": "db2@1.60.1.70532"}
+{"id": 1328068, "field": "description", "en": "$@spelldesc1328067", "hash": "800b044745c53984", "src": "db2@1.60.1.70532"}
+{"id": 1328069, "field": "name", "en": "Summon Infernal", "hash": "37a1cd6adf9ea431", "src": "db2@1.60.1.70532"}
+{"id": 1328069, "field": "description", "en": "$@spelldesc1328067", "hash": "800b044745c53984", "src": "db2@1.60.1.70532"}
+{"id": 1328069, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70532"}
+{"id": 1328117, "field": "name", "en": "Summon Infernal", "hash": "37a1cd6adf9ea431", "src": "db2@1.60.1.70532"}
+{"id": 1328118, "field": "name", "en": "Elixir of Endless Growth", "hash": "bcfc182b728630ef", "src": "db2@1.60.1.70532"}
+{"id": 1328118, "field": "description", "en": "Enlarges the imbiber by a significant amount for $d. This effect stacks up to $u times.", "hash": "c8b9dfd5de2fb7c7", "src": "db2@1.60.1.70532"}
+{"id": 1328118, "field": "aura", "en": "Feeling much bigger now.", "hash": "cf0ddafadc0f720a", "src": "db2@1.60.1.70532"}
+{"id": 1328119, "field": "name", "en": "Scroll of Endless Speed", "hash": "800307e9c90644dd", "src": "db2@1.60.1.70532"}
+{"id": 1328119, "field": "description", "en": "Increases run speed of nearby allies by $s1% for $d.", "hash": "002400e230735438", "src": "db2@1.60.1.70532"}
+{"id": 1328119, "field": "aura", "en": "Increases run speed by $s1%", "hash": "3287a25aff1232f4", "src": "db2@1.60.1.70532"}
+{"id": 1328127, "field": "name", "en": "Elixir of Endless Experience", "hash": "458ebe2c027d9551", "src": "db2@1.60.1.70532"}
+{"id": 1328127, "field": "description", "en": "Increases experience gained by $s1% for $d.", "hash": "af4155856b80f7ad", "src": "db2@1.60.1.70532"}
+{"id": 1328127, "field": "aura", "en": "Experience gain increased by $s1%.", "hash": "802e6f4173c065d5", "src": "db2@1.60.1.70532"}

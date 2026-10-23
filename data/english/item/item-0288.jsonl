@@ -1,10 +1,129 @@
-{"id": 288336, "field": "name", "en": "Blue Firework", "hash": "0311d6519d3436ee", "src": "db2@1.60.1.70450"}
-{"id": 288336, "field": "description", "en": "Shoots a firework into the air that bursts into a thousand blue stars.", "hash": "c2e03bdcbd042473", "src": "db2@1.60.1.70450"}
-{"id": 288337, "field": "name", "en": "Green Firework", "hash": "c76f83d6f4e97b4a", "src": "db2@1.60.1.70450"}
-{"id": 288337, "field": "description", "en": "Shoots a firework into the air that bursts into a thousand green stars.", "hash": "07365ebfccef27d0", "src": "db2@1.60.1.70450"}
-{"id": 288338, "field": "name", "en": "Red Firework", "hash": "68938a9ee6cae261", "src": "db2@1.60.1.70450"}
-{"id": 288338, "field": "description", "en": "Shoots a firework into the air that bursts into a thousand red stars.", "hash": "b5141a1bc3b96ecb", "src": "db2@1.60.1.70450"}
-{"id": 288339, "field": "name", "en": "Red Streaks Firework", "hash": "bf0a118a75d2d48a", "src": "db2@1.60.1.70450"}
-{"id": 288339, "field": "description", "en": "Shoots a firework into the air that bursts into red streaks.", "hash": "d794951e66ceb5ed", "src": "db2@1.60.1.70450"}
-{"id": 288340, "field": "name", "en": "Yellow Rose Firework", "hash": "476ced45da5cae15", "src": "db2@1.60.1.70450"}
-{"id": 288340, "field": "description", "en": "Shoots a firework into the air that bursts in a yellow pattern.", "hash": "4f1a2ec244863853", "src": "db2@1.60.1.70450"}
+{"id": 288336, "field": "name", "en": "Blue Firework", "hash": "0311d6519d3436ee", "src": "db2@1.60.1.70532"}
+{"id": 288336, "field": "description", "en": "Shoots a firework into the air that bursts into a thousand blue stars.", "hash": "c2e03bdcbd042473", "src": "db2@1.60.1.70532"}
+{"id": 288337, "field": "name", "en": "Green Firework", "hash": "c76f83d6f4e97b4a", "src": "db2@1.60.1.70532"}
+{"id": 288337, "field": "description", "en": "Shoots a firework into the air that bursts into a thousand green stars.", "hash": "07365ebfccef27d0", "src": "db2@1.60.1.70532"}
+{"id": 288338, "field": "name", "en": "Red Firework", "hash": "68938a9ee6cae261", "src": "db2@1.60.1.70532"}
+{"id": 288338, "field": "description", "en": "Shoots a firework into the air that bursts into a thousand red stars.", "hash": "b5141a1bc3b96ecb", "src": "db2@1.60.1.70532"}
+{"id": 288339, "field": "name", "en": "Red Streaks Firework", "hash": "bf0a118a75d2d48a", "src": "db2@1.60.1.70532"}
+{"id": 288339, "field": "description", "en": "Shoots a firework into the air that bursts into red streaks.", "hash": "d794951e66ceb5ed", "src": "db2@1.60.1.70532"}
+{"id": 288340, "field": "name", "en": "Yellow Rose Firework", "hash": "476ced45da5cae15", "src": "db2@1.60.1.70532"}
+{"id": 288340, "field": "description", "en": "Shoots a firework into the air that bursts in a yellow pattern.", "hash": "4f1a2ec244863853", "src": "db2@1.60.1.70532"}
+{"id": 288358, "field": "name", "en": "Gnoll Greataxe", "hash": "cb98b3aa14aff13e", "src": "db2@1.60.1.70532"}
+{"id": 288358, "field": "description", "en": "Heavy is the hand that holds this axe.", "hash": "796842e5a29b7753", "src": "db2@1.60.1.70532"}
+{"id": 288823, "field": "name", "en": "Arcanist Crown", "hash": "bee4494817ee10e1", "src": "db2@1.60.1.70532"}
+{"id": 288824, "field": "name", "en": "Arcanist Leggings", "hash": "0ab12c73a72d2f7a", "src": "db2@1.60.1.70532"}
+{"id": 288825, "field": "name", "en": "Arcanist Mantle", "hash": "57704340a4c5765e", "src": "db2@1.60.1.70532"}
+{"id": 288826, "field": "name", "en": "Arcanist Robes", "hash": "c5c79e954bd5fe3b", "src": "db2@1.60.1.70532"}
+{"id": 288827, "field": "name", "en": "Arcanist Bindings", "hash": "df01ca9f057170bb", "src": "db2@1.60.1.70532"}
+{"id": 288828, "field": "name", "en": "Arcanist Boots", "hash": "acefa8a290cb55a9", "src": "db2@1.60.1.70532"}
+{"id": 288829, "field": "name", "en": "Arcanist Gloves", "hash": "33902326e4f69094", "src": "db2@1.60.1.70532"}
+{"id": 288830, "field": "name", "en": "Arcanist Belt", "hash": "18c29feeeeaf303f", "src": "db2@1.60.1.70532"}
+{"id": 288831, "field": "name", "en": "Felheart Slippers", "hash": "84caf4c4ff0c305d", "src": "db2@1.60.1.70532"}
+{"id": 288832, "field": "name", "en": "Felheart Bracers", "hash": "69a76188514a7460", "src": "db2@1.60.1.70532"}
+{"id": 288833, "field": "name", "en": "Felheart Gloves", "hash": "b1dd7cbaf4a31a4e", "src": "db2@1.60.1.70532"}
+{"id": 288834, "field": "name", "en": "Felheart Belt", "hash": "98f81058faffb83b", "src": "db2@1.60.1.70532"}
+{"id": 288835, "field": "name", "en": "Felheart Shoulder Pads", "hash": "0588d78c5c12e32f", "src": "db2@1.60.1.70532"}
+{"id": 288836, "field": "name", "en": "Felheart Horns", "hash": "b19b3c196971810c", "src": "db2@1.60.1.70532"}
+{"id": 288837, "field": "name", "en": "Felheart Robes", "hash": "6120261ddf1520bf", "src": "db2@1.60.1.70532"}
+{"id": 288838, "field": "name", "en": "Felheart Pants", "hash": "3c27a71a9535d49b", "src": "db2@1.60.1.70532"}
+{"id": 288839, "field": "name", "en": "Boots of Prophecy", "hash": "3824796b7408db30", "src": "db2@1.60.1.70532"}
+{"id": 288840, "field": "name", "en": "Gloves of Prophecy", "hash": "518f4bf5581e5a0c", "src": "db2@1.60.1.70532"}
+{"id": 288841, "field": "name", "en": "Circlet of Prophecy", "hash": "2dcf2b108b80a6d1", "src": "db2@1.60.1.70532"}
+{"id": 288842, "field": "name", "en": "Pants of Prophecy", "hash": "c140c9a8cbff3558", "src": "db2@1.60.1.70532"}
+{"id": 288843, "field": "name", "en": "Robes of Prophecy", "hash": "7963d060c8f9af4a", "src": "db2@1.60.1.70532"}
+{"id": 288844, "field": "name", "en": "Mantle of Prophecy", "hash": "c7639f0d927e9694", "src": "db2@1.60.1.70532"}
+{"id": 288845, "field": "name", "en": "Girdle of Prophecy", "hash": "5590a14d3558ca57", "src": "db2@1.60.1.70532"}
+{"id": 288846, "field": "name", "en": "Vambraces of Prophecy", "hash": "a3977d08ed4f6f22", "src": "db2@1.60.1.70532"}
+{"id": 288847, "field": "name", "en": "Nightslayer Chestpiece", "hash": "f0802c5b80aba4f5", "src": "db2@1.60.1.70532"}
+{"id": 288848, "field": "name", "en": "Nightslayer Cover", "hash": "09531a19222105ca", "src": "db2@1.60.1.70532"}
+{"id": 288849, "field": "name", "en": "Nightslayer Pants", "hash": "eba30d229899e695", "src": "db2@1.60.1.70532"}
+{"id": 288850, "field": "name", "en": "Nightslayer Shoulder Pads", "hash": "bfebc1b5943a9740", "src": "db2@1.60.1.70532"}
+{"id": 288851, "field": "name", "en": "Nightslayer Boots", "hash": "f7c39632276e8a38", "src": "db2@1.60.1.70532"}
+{"id": 288852, "field": "name", "en": "Nightslayer Bracelets", "hash": "bbbef4e4a9206d50", "src": "db2@1.60.1.70532"}
+{"id": 288853, "field": "name", "en": "Nightslayer Gloves", "hash": "7e02b4940dc43445", "src": "db2@1.60.1.70532"}
+{"id": 288854, "field": "name", "en": "Nightslayer Belt", "hash": "d8d7c8d04872daf1", "src": "db2@1.60.1.70532"}
+{"id": 288855, "field": "name", "en": "Cenarion Belt", "hash": "8b985cad10d565d9", "src": "db2@1.60.1.70532"}
+{"id": 288856, "field": "name", "en": "Cenarion Boots", "hash": "704f3f8634dc4263", "src": "db2@1.60.1.70532"}
+{"id": 288857, "field": "name", "en": "Cenarion Bracers", "hash": "aaec342b2ea29f33", "src": "db2@1.60.1.70532"}
+{"id": 288858, "field": "name", "en": "Cenarion Gloves", "hash": "2d7a59372480637c", "src": "db2@1.60.1.70532"}
+{"id": 288859, "field": "name", "en": "Cenarion Vestments", "hash": "23f0cbfcf92363af", "src": "db2@1.60.1.70532"}
+{"id": 288860, "field": "name", "en": "Cenarion Helm", "hash": "8c662e4861451dff", "src": "db2@1.60.1.70532"}
+{"id": 288861, "field": "name", "en": "Cenarion Leggings", "hash": "20137e14764b613f", "src": "db2@1.60.1.70532"}
+{"id": 288862, "field": "name", "en": "Cenarion Spaulders", "hash": "1dd107ea0678da0b", "src": "db2@1.60.1.70532"}
+{"id": 288863, "field": "name", "en": "Earthfury Boots", "hash": "bc4b87085d199b5b", "src": "db2@1.60.1.70532"}
+{"id": 288864, "field": "name", "en": "Earthfury Belt", "hash": "324836250dcbb662", "src": "db2@1.60.1.70532"}
+{"id": 288865, "field": "name", "en": "Earthfury Gauntlets", "hash": "f84b9b3bdf7ab24d", "src": "db2@1.60.1.70532"}
+{"id": 288866, "field": "name", "en": "Earthfury Bracers", "hash": "5d82213bb6073a3a", "src": "db2@1.60.1.70532"}
+{"id": 288867, "field": "name", "en": "Earthfury Vestments", "hash": "a840ec2ec80845e3", "src": "db2@1.60.1.70532"}
+{"id": 288868, "field": "name", "en": "Earthfury Helmet", "hash": "8fcdfcc35d5fe280", "src": "db2@1.60.1.70532"}
+{"id": 288869, "field": "name", "en": "Earthfury Legguards", "hash": "bf3319d9584c96c5", "src": "db2@1.60.1.70532"}
+{"id": 288870, "field": "name", "en": "Earthfury Epaulets", "hash": "1369af31e82fee07", "src": "db2@1.60.1.70532"}
+{"id": 288871, "field": "name", "en": "Giantstalker's Breastplate", "hash": "683953a892e25e62", "src": "db2@1.60.1.70532"}
+{"id": 288872, "field": "name", "en": "Giantstalker's Helmet", "hash": "b70e3ee950a4dded", "src": "db2@1.60.1.70532"}
+{"id": 288873, "field": "name", "en": "Giantstalker's Leggings", "hash": "b55e4535ee8a8b06", "src": "db2@1.60.1.70532"}
+{"id": 288874, "field": "name", "en": "Giantstalker's Epaulets", "hash": "45fc27ea323bdf1c", "src": "db2@1.60.1.70532"}
+{"id": 288875, "field": "name", "en": "Giantstalker's Boots", "hash": "a90d7bd07588e14d", "src": "db2@1.60.1.70532"}
+{"id": 288876, "field": "name", "en": "Giantstalker's Bracers", "hash": "7363fb11e01a4d11", "src": "db2@1.60.1.70532"}
+{"id": 288877, "field": "name", "en": "Giantstalker's Belt", "hash": "7a70c6aa1220ac2a", "src": "db2@1.60.1.70532"}
+{"id": 288878, "field": "name", "en": "Giantstalker's Gloves", "hash": "36d333a6e376ee03", "src": "db2@1.60.1.70532"}
+{"id": 288879, "field": "name", "en": "Lawbringer Chestguard", "hash": "7922679e3f997fcb", "src": "db2@1.60.1.70532"}
+{"id": 288880, "field": "name", "en": "Lawbringer Helm", "hash": "bf7a5e0dc47c5ca3", "src": "db2@1.60.1.70532"}
+{"id": 288881, "field": "name", "en": "Lawbringer Legplates", "hash": "0f4654f3721bdd0d", "src": "db2@1.60.1.70532"}
+{"id": 288882, "field": "name", "en": "Lawbringer Spaulders", "hash": "b8889cdadfa3dbb6", "src": "db2@1.60.1.70532"}
+{"id": 288883, "field": "name", "en": "Lawbringer Bracers", "hash": "02cf9a499ec4dcbd", "src": "db2@1.60.1.70532"}
+{"id": 288884, "field": "name", "en": "Lawbringer Belt", "hash": "beac8c72740ca47d", "src": "db2@1.60.1.70532"}
+{"id": 288885, "field": "name", "en": "Lawbringer Boots", "hash": "93a3b1d71900fe92", "src": "db2@1.60.1.70532"}
+{"id": 288886, "field": "name", "en": "Lawbringer Gauntlets", "hash": "0eb30ffee9c0d1d5", "src": "db2@1.60.1.70532"}
+{"id": 288887, "field": "name", "en": "Bracers of Might", "hash": "cdbb22b70988ee6e", "src": "db2@1.60.1.70532"}
+{"id": 288888, "field": "name", "en": "Sabatons of Might", "hash": "4d9f199614618f90", "src": "db2@1.60.1.70532"}
+{"id": 288889, "field": "name", "en": "Gauntlets of Might", "hash": "f90034f8a75ed781", "src": "db2@1.60.1.70532"}
+{"id": 288890, "field": "name", "en": "Belt of Might", "hash": "8911199be858bf39", "src": "db2@1.60.1.70532"}
+{"id": 288891, "field": "name", "en": "Breastplate of Might", "hash": "0488f0fb0c4284a1", "src": "db2@1.60.1.70532"}
+{"id": 288892, "field": "name", "en": "Helm of Might", "hash": "7f3b08f524155c86", "src": "db2@1.60.1.70532"}
+{"id": 288893, "field": "name", "en": "Legplates of Might", "hash": "5ed6a36dc40d187a", "src": "db2@1.60.1.70532"}
+{"id": 288894, "field": "name", "en": "Pauldrons of Might", "hash": "3cc0ee91cecaec7b", "src": "db2@1.60.1.70532"}
+{"id": 288896, "field": "name", "en": "Superior Healing Potion", "hash": "3a0ba897fefbbc64", "src": "db2@1.60.1.70532"}
+{"id": 288896, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70532"}
+{"id": 288897, "field": "name", "en": "Superior Mana Potion", "hash": "088b13c288d5e2b1", "src": "db2@1.60.1.70532"}
+{"id": 288897, "field": "description", "en": "Restores $s1 mana.", "hash": "09fdd6de4213d4dd", "src": "db2@1.60.1.70532"}
+{"id": 288898, "field": "name", "en": "Swiftness Potion", "hash": "a32c27ad41c2a98f", "src": "db2@1.60.1.70532"}
+{"id": 288898, "field": "description", "en": "Increases run speed by $s1% for $d1.", "hash": "61fe647b7084b69c", "src": "db2@1.60.1.70532"}
+{"id": 288900, "field": "name", "en": "Earthshaker", "hash": "990139fc0a9bd242", "src": "db2@1.60.1.70532"}
+{"id": 288900, "field": "description", "en": "Knocks down all nearby enemies for $d.", "hash": "2c47ce6ca40fb222", "src": "db2@1.60.1.70532"}
+{"id": 288901, "field": "name", "en": "Spinal Reaper", "hash": "aae219b9e7c05970", "src": "db2@1.60.1.70532"}
+{"id": 288901, "field": "description", "en": "Restores $21186s1 mana or 20 rage when you kill a target that gives experience; this effect cannot occur more than once every 10 seconds.", "hash": "33de8fd2ecda44c5", "src": "db2@1.60.1.70532"}
+{"id": 288902, "field": "name", "en": "Hyperthermically Insulated Lava Dredger", "hash": "00d904dde2b6af04", "src": "db2@1.60.1.70532"}
+{"id": 288902, "field": "description", "en": "Property of Pip Quickwit, Grandmaster Adventurer", "hash": "1b638a82eb85cc24", "src": "db2@1.60.1.70532"}
+{"id": 288903, "field": "name", "en": "Shadowstrike", "hash": "cb12c7cbf8292281", "src": "db2@1.60.1.70532"}
+{"id": 288903, "field": "description", "en": "Steals $s1 life from target enemy.\nTransforms Shadowstrike into Thunderstrike.", "hash": "477ef2c18ddef5ca", "src": "db2@1.60.1.70532"}
+{"id": 288904, "field": "name", "en": "Bonereaver's Edge", "hash": "96e5b6f6062fabc6", "src": "db2@1.60.1.70532"}
+{"id": 288904, "field": "description", "en": "Your attacks ignore $s1 of your enemies' armor for $d. This effect stacks up to 3 times.", "hash": "bdb8e363df245f06", "src": "db2@1.60.1.70532"}
+{"id": 288905, "field": "name", "en": "Obsidian Edged Blade", "hash": "383cdc196913bc96", "src": "db2@1.60.1.70532"}
+{"id": 288906, "field": "name", "en": "Staff of Dominance", "hash": "daffbee33b071017", "src": "db2@1.60.1.70532"}
+{"id": 288907, "field": "name", "en": "Gutgore Ripper", "hash": "efbe434f4d225d99", "src": "db2@1.60.1.70532"}
+{"id": 288907, "field": "description", "en": "Sends a shadowy bolt at the enemy causing $s1 Shadow damage and lowering all stats by $s2 for $d.", "hash": "17a1cf02e661f128", "src": "db2@1.60.1.70532"}
+{"id": 288908, "field": "name", "en": "Aurastone Hammer", "hash": "9e7592571ea33343", "src": "db2@1.60.1.70532"}
+{"id": 288909, "field": "name", "en": "Perdition's Blade", "hash": "d2fc7a5b765c7517", "src": "db2@1.60.1.70532"}
+{"id": 288909, "field": "description", "en": "Blasts a target for $s1 Fire damage.", "hash": "9d8bd0af55935a2e", "src": "db2@1.60.1.70532"}
+{"id": 288910, "field": "name", "en": "Sorcerous Dagger", "hash": "83ae325a55a3b9d7", "src": "db2@1.60.1.70532"}
+{"id": 288911, "field": "name", "en": "Striker's Mark", "hash": "0db57989f07e7103", "src": "db2@1.60.1.70532"}
+{"id": 288913, "field": "name", "en": "Blastershot Launcher", "hash": "f184d5dc22d2a0f3", "src": "db2@1.60.1.70532"}
+{"id": 288914, "field": "name", "en": "Crimson Shocker", "hash": "c5740462198f666b", "src": "db2@1.60.1.70532"}
+{"id": 288915, "field": "name", "en": "Azuresong Mageblade", "hash": "bf5989f3046db816", "src": "db2@1.60.1.70532"}
+{"id": 288916, "field": "name", "en": "Drillborer Disk", "hash": "a9e1e80a20feadf3", "src": "db2@1.60.1.70532"}
+{"id": 288916, "field": "description", "en": "When struck in combat inflicts $s1 Arcane damage to the attacker.", "hash": "bbc8c1bb54f2b22d", "src": "db2@1.60.1.70532"}
+{"id": 288917, "field": "name", "en": "Fire Runed Grimoire", "hash": "e80b5956372994a8", "src": "db2@1.60.1.70532"}
+{"id": 288918, "field": "name", "en": "Malistar's Defender", "hash": "776d433af33e70eb", "src": "db2@1.60.1.70532"}
+{"id": 288919, "field": "name", "en": "Band of Accuria", "hash": "07e6284668468a6d", "src": "db2@1.60.1.70532"}
+{"id": 288920, "field": "name", "en": "Medallion of Steadfast Might", "hash": "b99022f0d90d7d02", "src": "db2@1.60.1.70532"}
+{"id": 288921, "field": "name", "en": "Cloak of the Shrouded Mists", "hash": "f4947671c579a396", "src": "db2@1.60.1.70532"}
+{"id": 288922, "field": "name", "en": "Dragon's Blood Cape", "hash": "f7b3135ee7c6e712", "src": "db2@1.60.1.70532"}
+{"id": 288923, "field": "name", "en": "Choker of Enlightenment", "hash": "7698d699238dbd23", "src": "db2@1.60.1.70532"}
+{"id": 288924, "field": "name", "en": "Seal of the Archmagus", "hash": "651c9689aef7a102", "src": "db2@1.60.1.70532"}
+{"id": 288925, "field": "name", "en": "Fireproof Cloak", "hash": "3bf9e58abc9a29d0", "src": "db2@1.60.1.70532"}
+{"id": 288926, "field": "name", "en": "Choker of the Fire Lord", "hash": "fd6eceda911718ed", "src": "db2@1.60.1.70532"}
+{"id": 288927, "field": "name", "en": "Quick Strike Ring", "hash": "553e46f644f06ae6", "src": "db2@1.60.1.70532"}
+{"id": 288928, "field": "name", "en": "Heavy Dark Iron Ring", "hash": "edf160d6434ddb21", "src": "db2@1.60.1.70532"}
+{"id": 288929, "field": "name", "en": "Band of Sulfuras", "hash": "f6149edb10c8625a", "src": "db2@1.60.1.70532"}
+{"id": 288930, "field": "name", "en": "Cauterizing Band", "hash": "999d3326bf4d8032", "src": "db2@1.60.1.70532"}
+{"id": 288931, "field": "name", "en": "Ring of Spell Power", "hash": "e1312759896d463b", "src": "db2@1.60.1.70532"}
