@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-23 at commit `cbffd8fe`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-23 at commit `4526e477`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -200,7 +200,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `groupfinderactivity.f1` | covered-by:groupfinderactivity.f0 | 109 | ShortName_lang: the same dungeon names, shortened |
 | `groupfinderactivitygrp.f0` | surface:ui:LfgActivityGroup | 7 | Name_lang |
 | `groupfindercategory.f0` | surface:ui:LfgCategory | 5 | Name_lang |
-| `hash-c842493a.*` | internal | 0 | a hotfix-only table the listfile does not name; no strings: each of its 3 rows is one 4-byte number, its own id |
+| `hash-c842493a.*` | internal | 0 | a hotfix-only table the listfile does not name; no strings on 1.60.1.70532, where its 3 rows are one 4-byte number each, its own id (recheck when the row count moves) |
 | `holidaydescriptions.f0` | surface:ui:HolidayDescription | 17 | Description_lang |
 | `holidaynames.f0` | names | 16 | Name_lang: event names (Darkmoon Faire) |
 | `itembagfamily.f0` | no-display | 24 | Lua reads only the family number (C_Container.GetContainerNumFreeSlots); no reader prints the name |
@@ -359,7 +359,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 
 | Type | Lines that can carry a word list | With one | Done | Stale | Words | With a meaning |
 |---|---|---|---|---|---|---|
-| quest | 19,121 | 19,121 | 100.0% | 184 | 305,173 | 100.0% |
+| quest | 19,121 | 19,121 | 100.0% | 184 | 305,174 | 100.0% |
 | gossip | 10,837 | 10,837 | 100.0% | 0 | 103,831 | 100.0% |
 | ui | 15,599 | 15,599 | 100.0% | 0 | 48,314 | 100.0% |
 | book | 1,167 | 1,167 | 100.0% | 0 | 39,619 | 100.0% |

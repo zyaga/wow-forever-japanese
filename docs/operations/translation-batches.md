@@ -349,7 +349,8 @@ The first build scanned with the full sweep as the automatic scan: WFJScan asked
 payload layout, pinned again for 70532. 44 quests are answered that the 70450 cache lacked; 35 of them no earlier
 Forever build had answered (807, 820, 1005, 1006, 1423, 1714, 2953, 3567, 3644, 4603, 4604, 5421, 5691 to 5693, 6701,
 7901, 8353 to 8360, 8409, 8848, 8853, 79090, 79482, 79637, 92811, 92812, 98888, 98896), the earlier known-list scans
-never having asked their ids. 25 of the 35 already had hand-written Japanese, which now ships. 41 quests 70450
+never having asked their ids. 25 of the 35 already had hand-written Japanese, which now ships; 5 (807, 820, 5691 to
+5693) are placeholder records with nothing to translate. 41 quests 70450
 answered are not answered now; their 109 Japanese lines keep shipping unchanged
 ([ADR-050](../adr/050-english-is-additive.md)). Quest 497 is answered as a placeholder now, so its pfQuest stand-in
 lines go; 1460, 1461, 1659, 1660, 4323 and 8458, placeholders on 70450 and not answered now, get theirs back. None of
@@ -370,14 +371,16 @@ The English Collector file held nothing new (97 entries, none rejected, nothing 
 | quest | 2 hand-written descriptions (8356, 8359: the baseline moved from Classic Era to Forever; kept) | 31 quests (the new ids above with English) | 41 not answered in the cache (above) | 14 lines (10 titles, 2 objectives, 2 descriptions), with word lists; 2 titles are item names and stay English; word lists for the 71 hand-written lines that started shipping |
 | objective | 0 | 8 | none | 6 (2 had Japanese already) |
 | item | 1 (249479) | 141 items (34 descriptions) | 31 ids | 34 new, 1 redrafted |
-| spell | 33 (18 descriptions, 15 auras) | 102 spells | 111 ids | 73 descriptions and 47 auras new, the 33 redrafted with `REVERIFY=1` |
+| spell | 33 (18 descriptions, 15 auras) | 102 spells | 111 ids | 73 descriptions and 47 auras new; the 33 redrafted with `REVERIFY=1` (6 redrafts came out the same as the shipped Japanese, so 27 lines changed) |
 | ui | 1 (the troll intro line) | 0 | 253 ids | 1 re-verified unchanged |
 | gossip, book, area | 0 | 0 | none | none |
 
 Hand-written lines the new English brought in: quest 8358's description named the Gnomeregan Gumdrop where its
 English (Kali Remik, the Darkspear Gumdrop) has another name, so it was rejected; a correction swaps in the right name.
-Quest 4604's completion shipped a garbled wiki variant over Tammy's translation of the same text (the one 2953 and
-4603 ship); a correction of Tammy's variant, with its paragraph break restored, now wins. Item 1979's hand-written
+Quest 4604's completion, shipping for the first time, would have taken a garbled wiki variant over Tammy's translation
+of the same text (the one 2953 and 4603 ship); a correction of Tammy's variant, with its paragraph break restored, wins.
+Quest 3644's completion, a machine line shipping for the first time, wrote "2金貨" for "two gold pieces"; it was
+redrafted to 金貨2枚. Item 1979's hand-written
 description wrote the template's numbers as 20 and 150 (`rule_baked_numbers`, both modes), so it was ruled `reject`
 and redrafted with placeholders. Spell 11426 (Ice Barrier, rewritten on this build) took its redraft with the
 `accept` ruling moved onto it. "Healer" in one zombie event aura is the healer role, listed on the not-names list for

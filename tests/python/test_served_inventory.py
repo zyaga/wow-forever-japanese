@@ -6,7 +6,7 @@ from __future__ import annotations
 from pathlib import Path
 
 import pytest
-from makefile_pins import forever_build
+from local_inputs import forever_build
 
 from wfj.dev import served_dispositions as sd
 from wfj.dev.served_columns import inventory_build, read_inventory

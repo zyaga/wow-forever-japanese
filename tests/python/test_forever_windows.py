@@ -9,7 +9,7 @@ import re
 from pathlib import Path
 
 import pytest
-from makefile_pins import forever_build
+from local_inputs import forever_build, predecessors
 
 from wfj.dev import client_addons, ui_inventory
 
@@ -116,7 +116,8 @@ def test_title_dispositions_are_well_formed():
 
 
 def test_every_set_title_site_of_a_surface_addon_is_dispositioned():
-    default = ROOT / f"predecessors/forever-ui-{forever_build(ROOT)}/interface/addons"
+    inputs = predecessors(ROOT) or ROOT / "predecessors"
+    default = inputs / f"forever-ui-{forever_build(ROOT)}/interface/addons"
     addons = Path(os.environ["WFJ_FOREVER_UI"]) if "WFJ_FOREVER_UI" in os.environ else default
     if not addons.is_dir():
         pytest.skip("no Forever UI extract")

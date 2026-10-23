@@ -3,12 +3,11 @@ pipeline/family_rows.txt, taken on the pinned build (wfj.dev.family_rows)."""
 
 from __future__ import annotations
 
-import subprocess
 from collections import defaultdict
 from pathlib import Path
 
 import pytest
-from makefile_pins import forever_build
+from local_inputs import forever_build, predecessors
 
 from wfj.dev import family_rows as fr
 from wfj.io import wago
@@ -31,13 +30,10 @@ def test_the_rows_are_taken_on_the_pinned_build(root: Path):
 
 
 def test_the_file_matches_the_pinned_tables(root: Path):
-    pinned = forever_build(root)
-    try:
-        common = subprocess.run(["git", "rev-parse", "--path-format=absolute", "--git-common-dir"], cwd=root,
-                                capture_output=True, text=True, check=True).stdout.strip()
-    except (OSError, subprocess.CalledProcessError):
+    inputs = predecessors(root)
+    if inputs is None:
         pytest.skip("not a git checkout")
-    folder = Path(common).parent / "predecessors" / "clients" / f"forever-{pinned}"
+    folder = inputs / "clients" / f"forever-{forever_build(root)}"
     if not (folder / "tables-source.txt").is_file():
         pytest.skip("no pinned Forever tables on this machine (predecessors/ is absent in CI)")
     keys = wago.read_keys(root / "pipeline" / "ui_keys.txt")
