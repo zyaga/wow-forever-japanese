@@ -426,6 +426,7 @@ Build 1.60.1.70532 modified 18 interface files and added or removed none. None w
 | File | What it shows | Hook / form |
 |---|---|---|
 | `UI/GuildInvite.lua` | (nothing new) | the window still opens through `StaticPopupSpecial_Show` after its event handler writes every text (`guildinviteframe.lua:1–35`), so the `OnShow` hook is unchanged; its citations follow the moved lines |
+| `UI/Gamepad.lua` | (nothing new) | `PROMPT_TOGGLE_TOOLTIPS` removed from `Gamepad.KEYS`: no footer adds that prompt any more |
 
 ### Client-table text (ADR-042)
 

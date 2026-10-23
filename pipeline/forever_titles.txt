@@ -27,7 +27,7 @@ blizzard_iteminteractionui blizzard_iteminteractionui/blizzard_iteminteractionui
 blizzard_itemupgradeui blizzard_itemupgradeui/mainline/blizzard_itemupgradeui.lua:22 key ITEM_UPGRADE itemupgrade  # UI/ItemUpgrade Labels.title, itemupgrade_spec; ITEM_UPGRADE is un-excluded (unexclude.txt)
 blizzard_legacysystem blizzard_legacysystem/blizzard_legacychallenges.lua:54 key LEGACY_CHALLENGE_FRAME_TITLE legacy  # ChallengesPage OnShow; UI/Legacy.lua Labels.title
 blizzard_legacysystem blizzard_legacysystem/blizzard_legacyrewardtrack.lua:24 key LEGACY_TRACK_FRAME_TITLE legacy  # RewardTrackPage OnShow; UI/Legacy.lua Labels.title restricted to the three page titles
-blizzard_legacysystem blizzard_legacysystem/blizzard_legacytree.lua:25 key LEGACY_TREE_FRAME_TITLE legacy  # TreePage OnShow; UI/Legacy.lua Labels.title
+blizzard_legacysystem blizzard_legacysystem/blizzard_legacytree.lua:29 key LEGACY_TREE_FRAME_TITLE legacy  # TreePage OnShow; UI/Legacy.lua Labels.title
 blizzard_mailframe blizzard_mailframe/mailframe.lua:209 key INBOX mail  # rendered today by UI/Mail after MailFrameTab_OnClick (its own resolution, not Labels.title), mail_camelot_spec
 blizzard_mailframe blizzard_mailframe/mailframe.lua:217 key SENDMAIL mail  # rendered today by UI/Mail after MailFrameTab_OnClick, mail_camelot_spec
 blizzard_obliterumui blizzard_obliterumui/blizzard_obliterumui.lua:13 name  # OBLITERUM_FORGE_TITLE ("Obliterum Forge"): the forge's name (names stay in English), kept in UI/ObliterumForge's NEVER_TOUCH, obliterumforge_spec
@@ -63,6 +63,7 @@ blizzard_settingsdefinitions_frame blizzard_settingsdefinitions_frame/pingsystem
 blizzard_sharedxml blizzard_sharedxml/modelpreviewframe.lua:10 dynamic  # ModelPreviewFrame's PREVIEW title; the frame is shown only by blizzard_storeui (blizzard_shared_storeuiinsecure.lua:25–90): the store family's disposition, not a retail_lib window
 blizzard_sharedxml blizzard_sharedxml/portraitframe.lua:12 dynamic  # the SetTitle helper itself (PortraitFrameMixin:SetTitle writes TitleContainer.TitleText); each caller's site is dispositioned where it calls it; Labels.title hooks this per window
 blizzard_sharedxml blizzard_sharedxml/toolwindowownermixin.lua:11 dynamic  # the tool-window helper passing its caller's title through; dispositioned at each caller
+blizzard_stableui blizzard_stableui/camelot/blizzard_stableui.lua:53 key STABLES stable  # StableFrameMixin:OnShow calls self:SetTitle(STABLES); UI/Stable.lua Labels.title, only STABLES
 blizzard_tokenui blizzard_tokenui/blizzard_currencytransfer.lua:141 key CURRENCY_TRANSFER_MENU_TITLE currencytransfer  # the bare template written at OnLoad, replaced by :241 before the menu is shown; UI/CurrencyTransfer Labels.title, currencytransfer_spec
 blizzard_tokenui blizzard_tokenui/blizzard_currencytransfer.lua:241 key CURRENCY_TRANSFER_MENU_TITLE currencytransfer  # RefreshMenuTitle: the template with the currency name kept as written (needs the Core/UIStrings ARGS `text` entry); UI/CurrencyTransfer Labels.title, currencytransfer_spec
 blizzard_tokenui blizzard_tokenui/blizzard_currencytransfer.lua:684 key CURRENCY_TRANSFER_LOG_TITLE currencytransfer  # UI/CurrencyTransfer Labels.title on CurrencyTransferLog (record "logTitle"), currencytransfer_spec
