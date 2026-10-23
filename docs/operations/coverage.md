@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-23 at commit `c8d20618`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-10-23 at commit `cbffd8fe`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -9,15 +9,15 @@
 
 | Surface | English lines | Ship Japanese | Nothing to translate | Done | Not yet |
 |---|---|---|---|---|---|
-| Quest text | 20,557 | 20,437 | 105 | 99.9% | 15 |
+| Quest text | 20,557 | 20,452 | 105 | 100.0% | 0 |
 | NPC dialogue (gossip, speech) | 10,965 | 10,965 | 0 | 100.0% | 0 |
 | Book / letter pages | 1,257 | 1,205 | 52 | 100.0% | 0 |
-| Quest objective lines | 440 | 396 | 38 | 98.6% | 6 |
+| Quest objective lines | 440 | 402 | 38 | 100.0% | 0 |
 | Exploration / event objectives | 223 | 221 | 2 | 100.0% | 0 |
-| Item descriptions | 10,260 | 8,692 | 0 | 84.7% | 1,568 |
-| Spell tooltips + auras | 25,838 | 25,647 | 1 | 99.3% | 190 |
+| Item descriptions | 10,260 | 8,726 | 0 | 85.0% | 1,534 |
+| Spell tooltips + auras | 25,838 | 25,767 | 1 | 99.7% | 70 |
 | Interface strings | 16,417 | 16,417 | 0 | 100.0% | 0 |
-| **All** | **85,957** | | | **97.9%** | **1,779** |
+| **All** | **85,957** | | | **98.1%** | **1,604** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
 professions, internal strings): quest 331, gossip 81, item 893, spell 301, ui 313.
@@ -39,13 +39,8 @@ professions, internal strings): quest 331, gossip 81, item 893, spell 301, ui 31
 
 | Surface | Why | Lines |
 |---|---|---|
-| Quest text | no Japanese yet | 14 |
-| Quest text | rejected: alignment_failed:Gnomeregan | 1 |
-| Quest objective lines | no Japanese yet | 6 |
 | Item descriptions | no Japanese yet: no text from the Forever tables on this build yet (English still from Classic Era); rechecked at each re-pull | 1,533 |
-| Item descriptions | no Japanese yet | 34 |
 | Item descriptions | no Japanese yet: the template has too many optional parts for one translation | 1 |
-| Spell tooltips + auras | no Japanese yet | 120 |
 | Spell tooltips + auras | no Japanese yet: the template includes a spell the Forever tables do not hold | 34 |
 | Spell tooltips + auras | no Japanese yet: no text from the Forever tables on this build yet (English still from Classic Era); rechecked at each re-pull | 23 |
 | Spell tooltips + auras | no Japanese yet: the template has too many optional parts for one translation | 8 |
@@ -364,7 +359,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 
 | Type | Lines that can carry a word list | With one | Done | Stale | Words | With a meaning |
 |---|---|---|---|---|---|---|
-| quest | 19,108 | 19,037 | 99.6% | 184 | 303,968 | 100.0% |
+| quest | 19,121 | 19,121 | 100.0% | 184 | 305,173 | 100.0% |
 | gossip | 10,837 | 10,837 | 100.0% | 0 | 103,831 | 100.0% |
 | ui | 15,599 | 15,599 | 100.0% | 0 | 48,314 | 100.0% |
 | book | 1,167 | 1,167 | 100.0% | 0 | 39,619 | 100.0% |
@@ -381,9 +376,9 @@ outnumber lines.
 
 | Kind | Lines | Files | In step | Stale | Not made | Read by the narrator |
 |---|---|---|---|---|---|---|
-| Quest offer | 4,318 | 4,387 | 4,387 | 0 | 0 | 899 |
-| Quest progress | 2,917 | 2,940 | 2,940 | 0 | 0 | 85 |
-| Quest turn-in | 4,041 | 4,065 | 4,065 | 0 | 0 | 169 |
+| Quest offer | 4,329 | 4,398 | 4,398 | 0 | 0 | 901 |
+| Quest progress | 2,936 | 2,960 | 2,960 | 0 | 0 | 89 |
+| Quest turn-in | 4,061 | 4,086 | 4,086 | 0 | 0 | 173 |
 | NPC talk (greetings, gossip, quest text keyed by its English) | 2,077 | 2,822 | 2,822 | 0 | 0 | 15 |
 | Book and letter pages | 1,102 | 1,102 | 1,102 | 0 | 0 | 1,039 |
 | The character's error lines (one file per race and sex) | 50 | 900 | 900 | 0 | 0 | 0 |
@@ -397,7 +392,6 @@ Shipped Japanese the voice does not read, by reason.
 | Why | Lines |
 |---|---|
 | NPC speech in chat, or other NPC text no voiced window shows (from VMaNGOS) | 8,855 |
-| No speaker found for the quest | 47 |
 | HTML book page (keeps the client's layout) | 38 |
 | Collected in game with no known speaker | 21 |
 | A quest log line (the completion text the tracker shows) | 11 |

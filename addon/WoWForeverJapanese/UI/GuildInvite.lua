@@ -1,8 +1,8 @@
 -- UI/GuildInvite.lua: the guild invitation window on Forever (surface "guildinvite", area "ui", ADR-016).
 -- Blizzard_FrameXML loads guildinviteframe.xml|lua at login on `camelot`. Entry point: the frame registers
--- GUILD_INVITE_REQUEST itself (GuildInviteFrame_OnLoad, guildinviteframe.lua:56–62); GuildInviteFrame_OnEvent writes the
--- inviter and guild names and the reputation warning, then StaticPopupSpecial_Show(GuildInviteFrame) (lua:1–35), so every
--- text is written before OnShow; one OnShow pass (HookScript) shows the window.
+-- GUILD_INVITE_REQUEST itself (GuildInviteFrame_OnLoad, guildinviteframe.lua:56–62); GuildInviteFrame_OnEvent
+-- writes the inviter and guild names and the reputation warning, then StaticPopupSpecial_Show(GuildInviteFrame)
+-- (lua:1–35), so every text is written before OnShow; one OnShow pass (HookScript) shows the window.
 -- Static labels (XML text=): GuildInviteFrameInviteText GUILD_INVITATION (xml:43), Points.Title ACHIEVEMENTS (xml:90),
 --   GuildInviteFrameJoinButton GUILD_INVITE_JOIN (xml:115), GuildInviteFrameDeclineButton GUILD_INVITE_DECLINE
 --   (xml:128).

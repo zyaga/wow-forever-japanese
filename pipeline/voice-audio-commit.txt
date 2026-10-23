@@ -1,3 +1,3 @@
 # The voice audio repository's commit that goes with this repository's text, written by
 # `wfj voice store-sync` after a voice run. A release builds the voice packs from exactly this commit.
-d8e4c9a48e27655b3596790e2046bfae12c01180
+c4af1d81ddae4401c3ab396f39df5c0da1ee6932
