@@ -60,7 +60,7 @@ WFJ.Data.add("spell", {
   [16145] = { "敵のアーマーを削り、Sunder Armorごとに$N1下げます。最大5回まで重ねられます。効果時間は$D1です。", "アーマーが低下しています。", 0xb4e55d0c, 0xc3d1fc4c, "uu" },
   [16147] = { nil, "Broken Cadaverが死体から起き上がるのを防ぎます。", nil, 0xd48de0c4, "mu" },
   [16153] = { "Thorium Oreを製錬してThorium Barを作り出せます。製錬するには炉(forge)が必要です。", nil, 0x79cbfafd, nil, "um" },
-  [16164] = { "Fire、Frost、Natureのダメージ呪文を唱えた後、$N1%の確率でClearcasting状態になります。Clearcasting状態では、次のダメージ呪文のマナコストが$N2%軽減されます。", nil, 0xb505288c, nil, "sm" },
+  [16164] = { "Fire、Frost、Natureのダメージ呪文を唱えた後、$N1%の確率でClearcasting状態になります。Clearcasting状態では、次のダメージ呪文のマナコストが$N2%軽減されます。", nil, 0x5abf54b0, nil, "um" },
   [16166] = { "FireとLightningを極め、Lightning BoltとLava Burstの詠唱時間を$D1短縮し、Chain Lightningのクールダウンをなくします。効果時間は$D2です。", "Lightning BoltとLava Burstの詠唱時間が$D1短縮され、Chain Lightningのクールダウンがなくなります。", 0x3ba426df, 0x7e48dc81, "uu" },
   [16168] = { "敵にFireダメージを与え、$D1の間、その敵が受けるFireダメージを増加させます。", "受けるFireダメージが増加しています。", 0x2c2ea563, 0x377d1a5c, "uu" },
   [16169] = { "猛烈な弧を描いて打ち払い、術者の前方の円錐範囲にいる敵に通常のダメージに加えて$N1のダメージを与えます。", nil, 0x8773bd8a, nil, "um" },
