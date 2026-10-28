@@ -42,7 +42,7 @@ runs:
     - if: steps.lua-toolchain.outputs.cache-hit != 'true'
       id: lua
       continue-on-error: true
-      uses: leafo/gh-actions-lua@6919171ccf181b826f44b9bca76307b577217377 # v13.0.0
+      uses: leafo/gh-actions-lua@32909a2dea0a48c433aec79e7fcd31b4cd55800f # v13.1.0
       with:
         luaVersion: ${{ inputs.lua-version }}
         buildCache: false # skips its own cache restore (that cache service answers 400); the toolchain cache replaces it
@@ -50,7 +50,7 @@ runs:
       shell: bash
       run: rm -rf .lua "$RUNNER_TOOL_CACHE/lua" && sleep 15
     - if: steps.lua-toolchain.outputs.cache-hit != 'true' && steps.lua.outcome == 'failure'
-      uses: leafo/gh-actions-lua@6919171ccf181b826f44b9bca76307b577217377 # v13.0.0
+      uses: leafo/gh-actions-lua@32909a2dea0a48c433aec79e7fcd31b4cd55800f # v13.1.0
       with:
         luaVersion: ${{ inputs.lua-version }}
         buildCache: false # skips its own cache restore (that cache service answers 400); the toolchain cache replaces it
