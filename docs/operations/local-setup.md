@@ -111,7 +111,7 @@ These need the import inputs ([Import inputs](#import-inputs)) or an installed F
 | `make ui-inventory` / `make forever-addons` / `make forever-titles` | from a Forever UI extract: the UI strings each hooked surface can show (`pipeline/ui_inventory.txt`) and every other string a loaded file of a translated addon names (`pipeline/ui_loadset.txt`, the load-set sweep), every Blizzard addon and its load state (`pipeline/forever_addons.txt`), and every `SetTitle(` call site. Commit the generated files; tests read them |
 | `make forever-table-counts WOW_DIR=<client folder>` | row counts of the client tables behind windows with no content on Forever; re-run per build |
 
-`python -m wfj.dev.client_ui --wow "<World of Warcraft folder>" --product wow_classic_beta --out <dir> --listfile <id;path csv>` extracts the interface files (FrameXML, `Blizzard_*`) from a local install, read-only. The path list must include every addon's `.toc` for `make forever-addons` to resolve load sets. `python -m wfj.dev.client_surface` builds the list of client names the addon depends on and the probe file that checks them in game (loaded by the WFJScan dev addon).
+`python -m wfj.dev.client_ui --wow "<World of Warcraft folder>" --product wowf --out <dir> --listfile <id;path csv>` extracts the interface files (FrameXML, `Blizzard_*`) from a local install, read-only. The path list must include every addon's `.toc` for `make forever-addons` to resolve load sets. `python -m wfj.dev.client_surface` builds the list of client names the addon depends on and the probe file that checks them in game (loaded by the WFJScan dev addon).
 
 ### Release
 
@@ -181,7 +181,7 @@ make import-english                               # every client's English, labe
 make rebuild-check                                # prove a clean rebuild gives back HEAD's data/ and addon
 ```
 
-`<Forever client folder>` is the Forever folder inside `<World of Warcraft folder>` (`_classic_beta_` during the beta).
+`<Forever client folder>` is the Forever folder inside `<World of Warcraft folder>`: `_forever_` (launcher product `wowf`). During the beta it was `_classic_beta_` (product `wow_classic_beta`); from build 1.60.1.70685 the launcher installs Forever in its own folder.
 
 **Wiki-only translations.** Some quest descriptions exist complete only on the QuestJapanizer wiki. The wiki is not fetched: its terms leave reuse to its administrator ([ADR-011](../adr/011-provenance-layers-and-completeness.md)).
 
@@ -189,7 +189,7 @@ The source tags in `data/` (`cqjt@<sha>`, `ctjt@<sha>`, `qjp@<version>`, `cjq@<v
 
 ## Collector dumps
 
-Players send what their game recorded from the game itself, in a `collector-send` issue; take those with `make collector-intake ISSUE=N` ([Collector sends](collector-sends.md)), which ends in the same merge as below. This section is for a SavedVariables file at hand. In game, `/wfj collector path` prints where it is: `<World of Warcraft folder>/<client folder>/WTF/Account/<ACCOUNT>/SavedVariables/WoWForeverJapanese.lua` (`_classic_beta_` as the client folder on the beta). It is not committed.
+Players send what their game recorded from the game itself, in a `collector-send` issue; take those with `make collector-intake ISSUE=N` ([Collector sends](collector-sends.md)), which ends in the same merge as below. This section is for a SavedVariables file at hand. In game, `/wfj collector path` prints where it is: `<World of Warcraft folder>/_forever_/WTF/Account/<ACCOUNT>/SavedVariables/WoWForeverJapanese.lua`. It is not committed.
 
 ```sh
 make import-collector DUMP="<path to WoWForeverJapanese.lua>"
