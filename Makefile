@@ -98,9 +98,9 @@ classic-era_PRODUCT := wow_classic_era
 forever_BUILD       := 1.60.1.70685
 forever_SRC         := db2
 forever_PRODUCT     := wowf
-# The build whose quest cache data/ holds, when it is older than the tables: a quest cache needs the scan in game,
-# the tables only the install. The scan plan (scan-install) and the build alert read this pin, so the scan starts
-# by itself on every newer build; it moves to the tables' build when that build's cache is imported (wdb-copy).
+# Set only while the quest cache data/ holds is older than the tables: a quest cache needs the scan in game, the
+# tables only the install. The scan plan (scan-install) and the build alert read it (quest_build falls back to the
+# tables' build), so the scan starts by itself on every newer build. Delete the line before that build's wdb-copy.
 forever_QUEST_BUILD := 1.60.1.70532
 client_dir = $(INPUTS)/clients/$(1)-$($(1)_BUILD)
 quest_build = $(or $($(1)_QUEST_BUILD),$($(1)_BUILD))

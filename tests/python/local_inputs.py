@@ -8,18 +8,21 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def forever_build(root: Path = ROOT) -> str:
+def _pin(var: str, root: Path) -> str | None:
     makefile = (root / "Makefile").read_text(encoding="utf-8")
-    m = re.search(r"^forever_BUILD\s*:=\s*(\S+)", makefile, re.MULTILINE)
-    assert m, "no `forever_BUILD := <build>` line in the Makefile"
-    return m.group(1)
+    m = re.search(rf"^{var}\s*:=\s*(\S+)", makefile, re.MULTILINE)
+    return m.group(1) if m else None
+
+
+def forever_build(root: Path = ROOT) -> str:
+    build = _pin("forever_BUILD", root)
+    assert build, "no `forever_BUILD := <build>` line in the Makefile"
+    return build
 
 
 def forever_quest_build(root: Path = ROOT) -> str:
     """The build whose quest cache data/ holds: `forever_QUEST_BUILD` when the Makefile sets one, else the tables'."""
-    makefile = (root / "Makefile").read_text(encoding="utf-8")
-    m = re.search(r"^forever_QUEST_BUILD\s*:=\s*(\S+)", makefile, re.MULTILINE)
-    return m.group(1) if m else forever_build(root)
+    return _pin("forever_QUEST_BUILD", root) or forever_build(root)
 
 
 def predecessors(root: Path = ROOT) -> Path | None:

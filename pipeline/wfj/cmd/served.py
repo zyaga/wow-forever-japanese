@@ -189,12 +189,13 @@ def run_served(a: argparse.Namespace) -> int:
     # The tables can be pinned before the build's scan (`--cache-build`, the Makefile's quest pin): the cache
     # is then the last scanned build's, whose ids were recorded when it was pulled, so only QuestV2 is this
     # build's.
-    cache_build = a.cache_build or build
-    if cache_build.rsplit(".", 1)[-1] != str(cache.build):
-        raise ValueError(f"served: {cache_path.name} is build {cache.build}, the tables are {label}")
-    older_cache = cache_build != build
-    if older_cache and int(cache_build.rsplit(".", 1)[-1]) > int(build.rsplit(".", 1)[-1]):
+    pinned = a.cache_build or build
+    if pinned.rsplit(".", 1)[-1] != str(cache.build):
+        raise ValueError(f"served: {cache_path.name} is build {cache.build}, expected {pinned} ({label})")
+    tables_no = int(build.rsplit(".", 1)[-1])
+    if cache.build > tables_no:
         raise ValueError(f"served: {cache_path.name} (build {cache.build}) is newer than the tables, {label}")
+    older_cache = cache.build < tables_no
     others = [wdb.read_quests(Path(p)) for p in a.map_cache]
     questv2 = wago.read_ids(csvs[0])
     quests = questv2 if older_cache else questv2 | {q.id for q in cache.quests} | set(cache.placeholders)

@@ -428,6 +428,17 @@ Build 1.60.1.70532 modified 18 interface files and added or removed none. None w
 | `UI/GuildInvite.lua` | (nothing new) | the window still opens through `StaticPopupSpecial_Show` after its event handler writes every text (`guildinviteframe.lua:1–35`), so the `OnShow` hook is unchanged; its citations follow the moved lines |
 | `UI/Gamepad.lua` | (nothing new) | `PROMPT_TOGGLE_TOOLTIPS` removed from `Gamepad.KEYS`: no footer adds that prompt any more |
 
+### Changes for build 1.60.1.70685
+
+Build 1.60.1.70685 modified 90 interface files and added 6, removing none. Three changes write text the addon shows; the rest are gamepad, layout or login-screen code.
+
+| File | What it shows | Hook / form |
+|---|---|---|
+| `UI/SettingsKeys.lua` · `UI/SettingsPanel.lua` | the Options window's new Preset page (Classic / Enhanced) and its "Current setting" header | 11 Preset keys in `SettingsKeys.options`; the header the client rewrites on `SETTINGS_HEADER_TEXT_UPDATE` is walked again from that row's `OnEvent` |
+| `UI/PvPMatch.lua` · `Core/UIStringKeys.lua` | Forever's own PvP match results and scoreboard windows (`Blizzard_PVPMatch/Camelot`): the outcome line and the honor column | the camelot windows as described under `PvPMatch` above; `VICTORY_TEXT0` / `VICTORY_TEXT1` matched inside the winning team's colour |
+| `UI/SpellBook.lua` | the spellbook search box hint, now `COOLDOWN_VIEWER_SETTINGS_SEARCH_INSTRUCTIONS` | the placeholder's key follows; `SPELLBOOK_SEARCH_INSTRUCTIONS` is no longer listed |
+| `UI/Gamepad.lua` | (nothing new) | `ACTION_LABEL_ADJUST_BRIGHTNESS` and `ACTION_LABEL_ADJUST_COLOR` removed from `Gamepad.KEYS`: no Forever file uses them |
+
 ### Client-table text (ADR-042)
 
 Text from the client's DB2 tables, shipped as the `ui` text families ([ADR-042](../adr/042-client-table-text-families.md), [research](../research/2026-09-26-client-table-text.md)). Every widget is restricted to its families (`Labels.families` / `familiesWith`), so a name next to it is never read.

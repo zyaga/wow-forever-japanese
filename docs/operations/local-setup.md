@@ -146,17 +146,20 @@ Drift tests regenerate each pair in memory and fail if the result differs from t
 predecessors/
 ├── clients/
 │   ├── classic-era-1.15.9.69722/   wago tables (stamped wago@1.15.9.69722), questcache.wdb, missing.txt
-│   └── forever-1.60.1.70532/       db2 tables (stamped db2@1.60.1.70532), questcache.wdb, missing.txt
+│   ├── forever-1.60.1.70532/       db2 tables (stamped db2@1.60.1.70532), questcache.wdb, missing.txt
+│   └── forever-1.60.1.70685/       db2 tables (stamped db2@1.60.1.70685)
 ├── classic-wow-quest-japanese-translator/  classic-wow-tooltips-japanese-translator/  lineage/
-└── pfquest-quests.lua  vmangos/  forever-ui-1.60.1.70532/
+└── pfquest-quests.lua  vmangos/  forever-ui-1.60.1.70685/
 ```
+
+Forever's quest cache has its own pin, `forever_QUEST_BUILD` ([ADR-068](../adr/068-quest-cache-pinned-apart-from-the-tables.md)): while it names an older build than `forever_BUILD`, the quest cache is read from that build's folder (above, 1.60.1.70532), and the tables from `forever_BUILD`'s, where the cache import also writes `missing.txt`.
 
 Staging a client folder (the preflight refuses the import until every client's folder is complete):
 - **Tables:** `make tables-extract CLIENT=forever WOW_DIR=<client folder>` (a `db2` client) or `make wago-fetch CLIENT=classic-era` (a `wago` client). Use the one that matches the client's pinned source; the other refuses or writes a stamp the preflight refuses.
 - **Quest cache:** `make wdb-copy CLIENT=<client> WOW_DIR=<client folder>` after a scan. The cache cannot be downloaded: its content depends on scan history. The committed `data/english/quest` was built from the Classic Era cache (build 1.15.9.69722, sha256 `a10d1d9b50a6bc724383519338b8c109cdc3b59b14defee585b70495480ec763`) and the Forever cache (build 1.60.1.70009, sha256 `b3e110161e30d5a07c31df154002b445d8ef9f1430f51f77b4a8528f744e5885`); without those files nobody can rebuild `data/english/quest` byte for byte.
 - `missing.txt` is written by the cache import; nothing to stage.
 
-`CLIENT` (default `forever`) picks the client for the single-client targets (`wago-fetch`, `tables-extract`, `wdb-copy`). The per-client knobs (`WAGO_BUILD`, `WDB_BUILD`, `TABLES_SRC`, `WDB_QUEST`, `WAGO_QUESTV2`, `CLIENT_DIR`, `PRODUCT`, …) derive from `CLIENT`; pass them on the command line only to a single-client target. `make import`, `import-english`, `data` and `rebuild-check` refuse them, because a value would apply to every client. A new client build is a `Makefile` change (bump `<client>_BUILD`, stage the new folder), committed with the regenerated data.
+`CLIENT` (default `forever`) picks the client for the single-client targets (`wago-fetch`, `tables-extract`, `wdb-copy`). The per-client knobs (`WAGO_BUILD`, `WDB_BUILD`, `TABLES_SRC`, `WDB_QUEST`, `WAGO_QUESTV2`, `CLIENT_DIR`, `PRODUCT`, …) derive from `CLIENT`; pass them on the command line only to a single-client target. `make import`, `import-english`, `data` and `rebuild-check` refuse them, because a value would apply to every client. A new client build is a `Makefile` change (bump `<client>_BUILD`, stage the new folder; for Forever, while its tables ship ahead of the quest scan, `forever_QUEST_BUILD` names the last scanned build, and the line is deleted before the build's quest cache is copied), committed with the regenerated data.
 
 **Source stamp.** Each client folder's CSVs carry `tables-source.txt`, one `<table> <src>@<build>` line per table, written only by `make tables-extract` and `make wago-fetch`. The preflight stops the import when a CSV has no stamp or a stamp other than its client's pins. CSVs downloaded by hand need one too: `python -m wfj.dev.tables_stamp write --dir <client folder> --src wago --build <build> <Table> …`.
 
