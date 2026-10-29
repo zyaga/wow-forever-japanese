@@ -122,6 +122,9 @@ PER_CLIENT_VARS := CLIENT CLIENT_DIR WAGO_BUILD WDB_BUILD TABLES_SRC MERGE WDB_Q
 	WAGO_SPELL WAGO_GLOBALSTRINGS WAGO_ITEMSUBCLASS WAGO_ENCHANTMENTS CLIENT_SPELL CLIENT_ITEMEFFECT CLIENT_ITEMXITEMEFFECT
 per_client_overrides = $(strip $(foreach v,$(PER_CLIENT_VARS),$(if $(filter command line environment environment override,$(origin $(v))),$(v))))
 ONE_CLIENT_GUARD = $(if $(per_client_overrides),{ echo "$@: runs every client in CLIENTS; $(per_client_overrides) given on the command line or in the environment would apply to all of them (set the client's pins in the Makefile; or use a single-client target with CLIENT=)"; exit 2; },true)
+# While Forever's quest cache is pinned behind its tables (ADR-068), the tables come from a login's hotfix cache:
+# a full import would put Classic Era's English on the rows only a play session's hotfixes carry.
+QUEST_PIN_GUARD = $(if $(forever_QUEST_BUILD),{ echo "$@: forever_QUEST_BUILD is set: Forever's tables are ahead of its quest scan (ADR-068). Run only Forever's table steps; after the scan delete the line and pull the tables again"; exit 2; },true)
 WAGO_ITEM    ?= $(CLIENT_DIR)/ItemSparse.csv
 WAGO_SPELL   ?= $(CLIENT_DIR)/SpellName.csv
 WAGO_BUILD   ?= $($(CLIENT)_BUILD)
@@ -163,7 +166,7 @@ FOREVER_VO_SHA ?= 025070f
 # quest scan, copied in with `make wdb-copy`. WDB_BUILD must
 # be the build in the file's header (ADR-020). QuestV2 (the client's own table) is the scan plan and the coverage denominator.
 WDB_QUEST    ?= $(if $(OWN_DIR),$(call quest_dir,$(CLIENT)),$(CLIENT_DIR))/questcache.wdb
-WDB_BUILD    ?= $(call quest_build,$(CLIENT))
+WDB_BUILD    ?= $(if $(OWN_DIR),$(call quest_build,$(CLIENT)),$($(CLIENT)_BUILD))
 WAGO_QUESTV2 ?= $(CLIENT_DIR)/QuestV2.csv
 # The unanswered QuestV2 ids the wdb import writes: the input of a rescan.
 WDB_MISSING  ?= $(CLIENT_DIR)/missing.txt
@@ -194,7 +197,7 @@ HOTFIXES     ?= $(WOW_DIR)/Cache/ADB/enUS/DBCache.bin
 PRODUCT      ?= $($(CLIENT)_PRODUCT)
 
 import: ## data/ from the pinned inputs (one rebuild pass: every client preflighted; predecessor repos with the wiki tag relabelled + the lineage sources; then pfQuest, VMaNGOS incl. books; then per client in CLIENTS order the quest cache, client tables incl. tooltip text and UI strings; last, drop the English for ids Forever does not serve)
-	@$(ONE_CLIENT_GUARD)
+	@$(ONE_CLIENT_GUARD) && $(QUEST_PIN_GUARD)
 	@$(MAKE) -s wdb-preflight
 	cd pipeline && $(PY) -m wfj import predecessor --quest-repo $(PRED_QUEST) --tooltip-repo $(PRED_TOOLTIP) --date $(IMPORT_DATE) --relabel-translator $(RELABEL_TRANSLATOR) \
 		--questjapanizer $(QJP) --qjp-version $(QJP_VERSION) --craftjapanizer-quest $(CJQ) --cjq-version $(CJQ_VERSION)
@@ -203,7 +206,7 @@ import: ## data/ from the pinned inputs (one rebuild pass: every client prefligh
 	@$(MAKE) -s import-served
 
 import-english: ## refresh only data/english/ (keeps data/ lines, rulings and prior hashes → `make check` can derive stale); every client, in CLIENTS order, then the served step
-	@$(ONE_CLIENT_GUARD)
+	@$(ONE_CLIENT_GUARD) && $(QUEST_PIN_GUARD)
 	@$(MAKE) -s wdb-preflight
 	@$(MAKE) -s import-shared-english
 	@for c in $(CLIENTS); do $(MAKE) -s import-client CLIENT=$$c || exit 1; done
@@ -288,7 +291,7 @@ wdb-copy: ## copy the client's quest cache into WDB_QUEST, its client folder (re
 	@test -n "$(WOW_DIR)" || { echo "usage: make wdb-copy WOW_DIR=<client folder holding Cache/, e.g. .../World of Warcraft/_forever_> [CLIENT=forever]"; exit 2; }
 	@test -f "$(WOW_DIR)/Cache/WDB/enUS/questcache.wdb" || { echo "wdb-copy: no Cache/WDB/enUS/questcache.wdb under $(WOW_DIR) (did the client Exit Game?)"; exit 1; }
 	@# The folder is pinned to one build; a cache of another build (the client patched) is never copied over it
-	@W="$$(cd "$(WOW_DIR)" && pwd)/Cache/WDB/enUS/questcache.wdb" && cd pipeline && $(PY) -c 'import sys; from pathlib import Path; from wfj.io.wdb import read_ids; b = read_ids(Path(sys.argv[1]))[0]; sys.exit(None if str(b) == sys.argv[2].rsplit(".", 1)[-1] else "wdb-copy: the cache is build %s, CLIENT=%s is pinned to %s; nothing copied (a new build gets its own pin and folder)" % (b, sys.argv[3], sys.argv[2]))' "$$W" $(WDB_BUILD) $(CLIENT)
+	@W="$$(cd "$(WOW_DIR)" && pwd)/Cache/WDB/enUS/questcache.wdb" && cd pipeline && $(PY) -c 'import sys; from pathlib import Path; from wfj.io.wdb import read_ids; b = read_ids(Path(sys.argv[1]))[0]; sys.exit(None if str(b) == sys.argv[2].rsplit(".", 1)[-1] else "wdb-copy: the cache is build %s, CLIENT=%s is pinned to %s; nothing copied (a new build gets its own pin and folder: with forever_QUEST_BUILD set, delete that line first)" % (b, sys.argv[3], sys.argv[2]))' "$$W" $(WDB_BUILD) $(CLIENT)
 	@mkdir -p "$$(dirname "$(WDB_QUEST)")"
 	@if [ -f "$(WDB_QUEST)" ]; then cp "$(WDB_QUEST)" "$(WDB_QUEST).prev"; echo "wdb-copy: previous copy kept as $(WDB_QUEST).prev"; fi
 	cp "$(WOW_DIR)/Cache/WDB/enUS/questcache.wdb" "$(WDB_QUEST)"
@@ -455,7 +458,7 @@ data: import check generate ## import → check → generate. Rebuilds imported 
 # the committed data/ and the addon's generated files. Refuses a dirty data/ or addon (nothing is deleted then);
 # otherwise the tree is what HEAD has again after a pass, and any difference is printed and fails the target.
 rebuild-check: ## empty data/english (collector lines kept), run `make data` from the pinned inputs of every client, fail on any difference from HEAD (needs a clean data/ + addon)
-	@$(ONE_CLIENT_GUARD)
+	@$(ONE_CLIENT_GUARD) && $(QUEST_PIN_GUARD)
 	@test -z "$$(git status --porcelain -- data $(ADDON) pipeline Makefile)" || { echo "rebuild-check: data/, $(ADDON), pipeline/ or the Makefile has uncommitted changes; commit or restore them first"; git status --short -- data $(ADDON) pipeline Makefile | head; exit 1; }
 	@$(MAKE) -s wdb-preflight
 	@for f in "$(PRED_QUEST)" "$(PRED_TOOLTIP)" "$(QJP)" "$(CJQ)" "$(PFQUEST)" "$(VMANGOS_DB)" "$(FOREVER_VO)" "$(UI_KEYS)"; do test -e "$$f" || { echo "rebuild-check: shared input missing: $$f; nothing deleted"; exit 1; }; done

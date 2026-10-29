@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 def _pin(var: str, root: Path) -> str | None:
     makefile = (root / "Makefile").read_text(encoding="utf-8")
-    m = re.search(rf"^{var}\s*:=\s*(\S+)", makefile, re.MULTILINE)
+    m = re.search(rf"^{var}[ \t]*:=[ \t]*(\d[\d.]*)", makefile, re.MULTILINE)
     return m.group(1) if m else None
 
 

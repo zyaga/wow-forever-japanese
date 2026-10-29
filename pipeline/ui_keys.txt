@@ -2313,7 +2313,7 @@ GAMETIME_TOOLTIP_CALENDAR_INVITES
 GAMETIME_TOOLTIP_TOGGLE_CALENDAR
 ZOOM_IN
 ZOOM_OUT
-# ── PvP match results / scoreboard (Forever): header, buttons, rewards ──
+# ── PvP match results / scoreboard (Forever): the outcome line and buttons ──
 PVP_MATCH_DRAW
 PVP_MATCH_LEAVE_BUTTON
 PVP_LEAVE_BUTTON_TIME

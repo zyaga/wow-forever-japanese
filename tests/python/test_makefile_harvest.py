@@ -88,7 +88,7 @@ def test_preflight_dry_runs_the_cache_import(makefile, root):
     recipe = "\n".join(_recipe(makefile, "client-preflight"))
     assert 'test -f "$(WDB_QUEST)"' in recipe and 'test -f "$(WAGO_QUESTV2)"' in recipe
     assert "import english wdb" in recipe and "--dry-run" in recipe
-    r = subprocess.run(["make", "-s", "-C", str(root), "import-english", "INPUTS=/nonexistent-wfj"],
+    r = subprocess.run(["make", "-s", "-C", str(root), "import-english", "INPUTS=/nonexistent-wfj", "forever_QUEST_BUILD="],
                        capture_output=True, text=True, check=False)
     assert r.returncode != 0
     assert "import: classic-era: no quest cache at /nonexistent-wfj/clients/classic-era-1.15.9.69722/questcache.wdb" in r.stdout
@@ -337,3 +337,12 @@ def test_inputs_default_to_the_main_checkouts_folder(root):
     own = root / "predecessors"
     expected = own if own.exists() else root.__class__(common).parent / "predecessors"
     assert inputs == str(expected)
+
+
+@pytest.mark.parametrize("target", ["import", "import-english", "rebuild-check"])
+def test_a_quest_pin_behind_the_tables_refuses_the_full_imports(root, tmp_path, target):
+    """While the quest cache is pinned behind the tables (ADR-068), a full import would give the rows only a play
+    session's hotfixes carry Classic Era's English: it stops before anything runs."""
+    r = subprocess.run(["make", "-s", "-C", str(root), target, f"INPUTS={tmp_path}",
+                        f"forever_QUEST_BUILD={QUEST_BUILDS['forever']}"], capture_output=True, text=True, check=False)
+    assert r.returncode == 2 and "forever_QUEST_BUILD is set" in r.stdout, r.stdout + r.stderr
