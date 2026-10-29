@@ -17,7 +17,7 @@ def _recipe(makefile: str, target: str) -> list[str]:
     return m.group(1).splitlines()
 
 
-CLIENTS = {"classic-era": ("1.15.9.69722", "wago", "wow_classic_era"), "forever": ("1.60.1.70532", "db2", "wow_classic_beta")}
+CLIENTS = {"classic-era": ("1.15.9.69722", "wago", "wow_classic_era"), "forever": ("1.60.1.70532", "db2", "wowf")}
 FOREVER_BUILD = CLIENTS["forever"][0]
 
 

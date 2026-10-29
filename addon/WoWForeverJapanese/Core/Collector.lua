@@ -24,7 +24,7 @@
 --   Collector.markSent(list) · list = { { key = …, h = … }, … }: the player sent these (the `sent` map)
 --   Collector.buildName(b) → the build string an entry's `b` points at
 --   Collector.onDisk(key, h) → whether the saved file holds that entry (it was loaded with it) · isReadOnly()
---   Collector.path() → where the file is saved: PATH, with the beta's folder named on a beta client
+--   Collector.path() → where the file is saved: PATH, with the Forever client's folder named
 -- Privacy by construction: the stored text is normalize_v1 per paragraph, written in Blizzard's own tokens: the
 -- player's name as $N (and, for quests, class/race as $C/$R), paragraph breaks as $B$B, the pfQuest convention; no
 -- GUID, time, realm, zone, character or account field exists in the shape.
@@ -38,8 +38,8 @@ Collector.VERSION = 1
 Collector.CAP_BYTES = 4 * 1024 * 1024 -- estimate of the SavedVariables text (Collector.size); a constant, no setting
 Collector.ISSUE_URL = "https://github.com/zyaga/wow-forever-japanese/issues/new?template=collector-send.yml"
 Collector.PATH = "World of Warcraft\\<client folder>\\WTF\\Account\\<ACCOUNT>\\SavedVariables\\WoWForeverJapanese.lua"
--- the beta client's folder under World of Warcraft (the Forever beta install)
-Collector.BETA_FOLDER = "_classic_beta_"
+-- the Forever client's folder under World of Warcraft (its launcher product is wowf)
+Collector.FOLDER = "_forever_"
 
 -- kind → field set.
 Collector.KINDS = {
@@ -793,9 +793,7 @@ function Collector.isReadOnly()
 end
 
 function Collector.path()
-  local beta = deps and type(deps.beta) == "function" and deps.beta() == true
-  if not beta then return Collector.PATH end
-  return (Collector.PATH:gsub("<client folder>", Collector.BETA_FOLDER))
+  return (Collector.PATH:gsub("<client folder>", Collector.FOLDER))
 end
 
 -- The build string of a build index `b` (an entry's `b`), or nil.

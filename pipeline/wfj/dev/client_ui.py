@@ -1,6 +1,6 @@
 """Extract interface files (FrameXML, Blizzard_* addons) from a local install (ADR-021's read path).
 
-    python -m wfj.dev.client_ui --wow "<World of Warcraft>" --product wow_classic_beta --out <dir> \
+    python -m wfj.dev.client_ui --wow "<World of Warcraft>" --product wowf --out <dir> \
         [--files Interface/FrameXML/QuestFrame.lua …] [--list <file of paths>] [--listfile <id;path csv>]
 
 Reads `.build.info` and `Data/` of the install and writes only into `--out` (refused inside the install), the
@@ -125,7 +125,7 @@ def extract(
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="wfj.dev.client_ui", description=__doc__.split("\n\n")[0])
     ap.add_argument("--wow", required=True, type=Path, help="the folder holding .build.info")
-    ap.add_argument("--product", default="wow_classic_beta")
+    ap.add_argument("--product", default="wowf")
     ap.add_argument("--out", required=True, type=Path)
     ap.add_argument("--files", nargs="*", default=None)
     ap.add_argument("--list", type=Path, help="a file of interface paths, one per line")

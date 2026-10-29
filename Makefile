@@ -97,7 +97,7 @@ classic-era_SRC     := wago
 classic-era_PRODUCT := wow_classic_era
 forever_BUILD       := 1.60.1.70532
 forever_SRC         := db2
-forever_PRODUCT     := wow_classic_beta
+forever_PRODUCT     := wowf
 client_dir = $(INPUTS)/clients/$(1)-$($(1)_BUILD)
 # The client a single-client target acts on (wago-fetch, tables-extract, wdb-copy), and
 # the one each per-client step of `import` is re-invoked with. The per-client knobs below derive from it; pass
@@ -183,7 +183,7 @@ MERGE        ?= union
 WOW_DIR      ?=
 # The hotfix cache `tables-extract` applies (read only); HOTFIXES= extracts the archive rows only.
 HOTFIXES     ?= $(WOW_DIR)/Cache/ADB/enUS/DBCache.bin
-# The .build.info product of the client in WOW_DIR (Classic Era: wow_classic_era, Forever: wow_classic_beta; a
+# The .build.info product of the client in WOW_DIR (Classic Era: wow_classic_era, Forever: wowf; a
 # wrong one lists the products the install has). Follows CLIENT.
 PRODUCT      ?= $($(CLIENT)_PRODUCT)
 
@@ -265,7 +265,7 @@ wago-fetch: ## download the wago.tools CSVs the imports and the scan need, at th
 	@cd pipeline && $(PY) -m wfj.dev.tables_stamp write --dir "$(CLIENT_DIR)" --src wago --build $(WAGO_BUILD) $(WAGO_TABLES)
 
 tables-extract: ## read the client tables from the installed game into the client's folder (read-only, no network; all or nothing): WOW_DIR=<client folder> [CLIENT=forever] [HOTFIXES=]
-	@test -n "$(WOW_DIR)" || { echo "usage: make tables-extract WOW_DIR=<client folder, e.g. .../World of Warcraft/_classic_beta_> [CLIENT=forever]"; exit 2; }
+	@test -n "$(WOW_DIR)" || { echo "usage: make tables-extract WOW_DIR=<client folder, e.g. .../World of Warcraft/_forever_> [CLIENT=forever]"; exit 2; }
 	@test -d "$(WOW_DIR)" || { echo "tables-extract: no folder $(WOW_DIR)"; exit 1; }
 	@$(if $(and $(OWN_DIR),$(filter-out db2,$($(CLIENT)_SRC))),{ echo "tables-extract: CLIENT=$(CLIENT) is pinned to $($(CLIENT)_SRC) tables and not db2; its folder is not replaced (make wago-fetch CLIENT=$(CLIENT); or CLIENT_DIR=<elsewhere> for a cross-check)"; exit 2; },true)
 	@mkdir -p "$(CLIENT_DIR)"
@@ -273,13 +273,13 @@ tables-extract: ## read the client tables from the installed game into the clien
 		cd pipeline && $(PY) -m wfj.dev.client_tables --wow "$$W" --product "$(PRODUCT)" --out "$(CLIENT_DIR)" --expect-build $(WAGO_BUILD) $${H:+--hotfixes "$$H"}
 
 forever-table-counts: ## row counts of the no-content windows' client tables and TraitSubTree, from the installed client (read-only; re-run per build): WOW_DIR=<client folder> [HOTFIXES=]
-	@test -n "$(WOW_DIR)" || { echo "usage: make forever-table-counts WOW_DIR=<client folder, e.g. .../World of Warcraft/_classic_beta_>"; exit 2; }
+	@test -n "$(WOW_DIR)" || { echo "usage: make forever-table-counts WOW_DIR=<client folder, e.g. .../World of Warcraft/_forever_>"; exit 2; }
 	@test -d "$(WOW_DIR)" || { echo "forever-table-counts: no folder $(WOW_DIR)"; exit 1; }
 	W="$$(cd "$(WOW_DIR)/.." && pwd)" && H="$(HOTFIXES)" && case "$$H" in ""|/*) ;; *) H="$$PWD/$$H";; esac && \
 		cd pipeline && $(PY) -m wfj.dev.table_counts --wow "$$W" --product "$(forever_PRODUCT)" $${H:+--hotfixes "$$H"}
 
 wdb-copy: ## copy the client's quest cache into WDB_QUEST, its client folder (read-only on the game folder): WOW_DIR=<client folder> [CLIENT=forever]
-	@test -n "$(WOW_DIR)" || { echo "usage: make wdb-copy WOW_DIR=<client folder holding Cache/, e.g. .../World of Warcraft/_classic_beta_> [CLIENT=forever]"; exit 2; }
+	@test -n "$(WOW_DIR)" || { echo "usage: make wdb-copy WOW_DIR=<client folder holding Cache/, e.g. .../World of Warcraft/_forever_> [CLIENT=forever]"; exit 2; }
 	@test -f "$(WOW_DIR)/Cache/WDB/enUS/questcache.wdb" || { echo "wdb-copy: no Cache/WDB/enUS/questcache.wdb under $(WOW_DIR) (did the client Exit Game?)"; exit 1; }
 	@# The folder is pinned to one build; a cache of another build (the client patched) is never copied over it
 	@W="$$(cd "$(WOW_DIR)" && pwd)/Cache/WDB/enUS/questcache.wdb" && cd pipeline && $(PY) -c 'import sys; from pathlib import Path; from wfj.io.wdb import read_ids; b = read_ids(Path(sys.argv[1]))[0]; sys.exit(None if str(b) == sys.argv[2].rsplit(".", 1)[-1] else "wdb-copy: the cache is build %s, CLIENT=%s is pinned to %s; nothing copied (a new build gets its own pin and folder)" % (b, sys.argv[3], sys.argv[2]))' "$$W" $(WDB_BUILD) $(CLIENT)
@@ -287,8 +287,8 @@ wdb-copy: ## copy the client's quest cache into WDB_QUEST, its client folder (re
 	@if [ -f "$(WDB_QUEST)" ]; then cp "$(WDB_QUEST)" "$(WDB_QUEST).prev"; echo "wdb-copy: previous copy kept as $(WDB_QUEST).prev"; fi
 	cp "$(WOW_DIR)/Cache/WDB/enUS/questcache.wdb" "$(WDB_QUEST)"
 
-level1-spells: ## regenerate pipeline/level1_spells.txt (the spells a fresh level-1 character has) from the installed Forever client: WOW_DIR=<client folder> [PRODUCT=wow_classic_beta]
-	@test -n "$(WOW_DIR)" || { echo "usage: make level1-spells WOW_DIR=<client folder, e.g. .../World of Warcraft/_classic_beta_> [PRODUCT=wow_classic_beta]"; exit 2; }
+level1-spells: ## regenerate pipeline/level1_spells.txt (the spells a fresh level-1 character has) from the installed Forever client: WOW_DIR=<client folder> [PRODUCT=wowf]
+	@test -n "$(WOW_DIR)" || { echo "usage: make level1-spells WOW_DIR=<client folder, e.g. .../World of Warcraft/_forever_> [PRODUCT=wowf]"; exit 2; }
 	@test -d "$(WOW_DIR)" || { echo "level1-spells: no folder $(WOW_DIR)"; exit 1; }
 	@W="$$(cd "$(WOW_DIR)/.." && pwd)" && cd pipeline && \
 		$(PY) -m wfj.dev.level1_spells --wow "$$W" --product "$(PRODUCT)" > level1_spells.txt.part && \
@@ -303,7 +303,7 @@ level1-spells: ## regenerate pipeline/level1_spells.txt (the spells a fresh leve
 LISTFILE ?= $(INPUTS)/community-listfile.csv
 
 served-columns: ## regenerate pipeline/served_columns.txt from the installed client (commit the result; read-only, no network): WOW_DIR=<client folder> [LISTFILE=<community listfile>] [HOTFIXES=]
-	@test -n "$(WOW_DIR)" || { echo "usage: make served-columns WOW_DIR=<client folder, e.g. .../World of Warcraft/_classic_beta_> [LISTFILE=<csv>] [HOTFIXES=<DBCache.bin>]"; exit 2; }
+	@test -n "$(WOW_DIR)" || { echo "usage: make served-columns WOW_DIR=<client folder, e.g. .../World of Warcraft/_forever_> [LISTFILE=<csv>] [HOTFIXES=<DBCache.bin>]"; exit 2; }
 	@test -d "$(WOW_DIR)" || { echo "served-columns: no folder $(WOW_DIR)"; exit 1; }
 	@test -f "$(LISTFILE)" || { echo "served-columns: no listfile at $(LISTFILE) (LISTFILE=<community listfile>)"; exit 1; }
 	@W="$$(cd "$(WOW_DIR)/.." && pwd)" && H="$(HOTFIXES)" && case "$$H" in "") H="$$(cd "$(WOW_DIR)" && pwd)/Cache/ADB/enUS/DBCache.bin"; test -f "$$H" || H="";; /*) ;; *) H="$$PWD/$$H";; esac && \
@@ -314,7 +314,7 @@ served-columns: ## regenerate pipeline/served_columns.txt from the installed cli
 	@sed -n 3,5p pipeline/served_columns.txt
 
 # The Forever (camelot) inventory, the only one (Forever is the only target). FOREVER_UI is a UI extract of the Forever client (`python -m wfj.dev.client_ui
-# --product wow_classic_beta --out <dir>`, lowercased paths are fine) and FOREVER_GLOBALSTRINGS its GlobalStrings table
+# --product wowf --out <dir>`, lowercased paths are fine) and FOREVER_GLOBALSTRINGS its GlobalStrings table
 # (`make tables-extract` against the Forever install); both default under INPUTS.
 FOREVER_UI            ?= $(INPUTS)/forever-ui-$(forever_BUILD)/interface/addons
 FOREVER_GLOBALSTRINGS ?= $(call client_dir,forever)/GlobalStrings.csv

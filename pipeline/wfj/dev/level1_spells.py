@@ -1,6 +1,6 @@
 """The spells a fresh level-1 character already has, so a gap there is measured, not guessed.
 
-    python -m wfj.dev.level1_spells --wow "<World of Warcraft>" --product wow_classic_beta > level1_spells.txt
+    python -m wfj.dev.level1_spells --wow "<World of Warcraft>" --product wowf > level1_spells.txt
 
 A spell is in the set when a `SkillLineAbility` row learns it automatically (`AcquireMethod` 1 = on learning
 the skill line, 2 = on gaining a level that the line allows) at skill rank ≤ 1, on a skill line that is not a
@@ -69,7 +69,7 @@ def level1(archive: casc.LocalArchive) -> set[int]:
 def main(argv: Sequence[str] | None = None) -> int:
     p = argparse.ArgumentParser(prog="wfj.dev.level1_spells", description=__doc__.split("\n", 1)[0])
     p.add_argument("--wow", required=True, type=Path, help="the folder holding .build.info")
-    p.add_argument("--product", required=True, help="the client, e.g. wow_classic_beta")
+    p.add_argument("--product", required=True, help="the client, e.g. wowf")
     a = p.parse_args(argv)
     try:
         archive = casc.LocalArchive(a.wow, a.product)

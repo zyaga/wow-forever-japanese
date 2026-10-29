@@ -1,7 +1,7 @@
 """Prove a table's column map against a second client, instead of bumping its layout hash (ADR-027).
 
     python -m wfj.dev.verify_columns --wow "<World of Warcraft>" \
-        --product wow_classic_beta --against-product wow_classic_era [--tables ItemSparse …]
+        --product wowf --against-product wow_classic_era [--tables ItemSparse …]
 
 `io/client_tables.py` pins each table to the layout hash it was verified on, and refuses a build whose layout
 moved rather than guess which DB2 field is which column (a wrong column would key text to the wrong id).

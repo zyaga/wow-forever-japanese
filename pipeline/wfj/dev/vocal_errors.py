@@ -1,6 +1,6 @@
 """The character's spoken error lines: which kind of error each game voice id is, from a local install.
 
-    python -m wfj.dev.vocal_errors --wow "<World of Warcraft>" --product wow_classic_beta \\
+    python -m wfj.dev.vocal_errors --wow "<World of Warcraft>" --product wowf \\
         --listfile <community listfile> --out data/voice/error-kinds.jsonl
 
 The error frame plays `C_Sound.PlayVocalErrorSound(voiceID)` for an error the game voices
@@ -64,7 +64,7 @@ def kinds(archive: casc.LocalArchive, listfile: Path) -> tuple[dict[int, str], l
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="wfj.dev.vocal_errors", description=__doc__.split("\n\n")[0])
     ap.add_argument("--wow", required=True, type=Path)
-    ap.add_argument("--product", default="wow_classic_beta")
+    ap.add_argument("--product", default="wowf")
     ap.add_argument("--listfile", required=True, type=Path)
     ap.add_argument("--out", required=True, type=Path)
     a = ap.parse_args(argv)

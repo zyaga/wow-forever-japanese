@@ -249,9 +249,6 @@ function WFJ.OnLoad()
       return version .. "." .. tostring(build)
     end,
     print = print,
-    -- [verified: forever-ui Blizzard_APIDocumentationGenerated/BuildDocumentation.lua:48 IsBetaBuild; that it is
-    -- true on the Forever beta client is unverified: checklist 8 of docs/testing/strategy.md looks at the path shown]
-    beta = function() return type(IsBetaBuild) == "function" and IsBetaBuild() == true end,
     -- the tooltip gate the Translator's align deps run, so an item / spell line counts as covered only when its
     -- Japanese would show for it
     -- a line recorded with the client's tail on it (an older version kept it) is gated as the tooltip gates it
