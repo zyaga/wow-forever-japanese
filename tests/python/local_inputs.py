@@ -15,6 +15,13 @@ def forever_build(root: Path = ROOT) -> str:
     return m.group(1)
 
 
+def forever_quest_build(root: Path = ROOT) -> str:
+    """The build whose quest cache data/ holds: `forever_QUEST_BUILD` when the Makefile sets one, else the tables'."""
+    makefile = (root / "Makefile").read_text(encoding="utf-8")
+    m = re.search(r"^forever_QUEST_BUILD\s*:=\s*(\S+)", makefile, re.MULTILINE)
+    return m.group(1) if m else forever_build(root)
+
+
 def predecessors(root: Path = ROOT) -> Path | None:
     """The main checkout's predecessors/, found through the git common dir, or None outside a git checkout."""
     try:

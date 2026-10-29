@@ -247,3 +247,26 @@ def test_an_id_an_earlier_build_served_keeps_its_english_and_its_last_build(data
 def test_a_dry_run_writes_no_record(data, tmp_path):
     assert _run(_client(tmp_path), "--dry-run") == 0
     assert not (tmp_path / "pipeline" / "served").exists()
+
+
+def test_an_older_quest_cache_named_by_its_pin_is_accepted(data, tmp_path):
+    """The tables pinned before the build's scan: the cache of the last scanned build, named by its pin. Only
+    QuestV2 counts as served by the tables' build; an id only that older cache answered was recorded with it."""
+    d = _client(tmp_path, stamp="db2@1.60.1.70000")
+    assert _run(d, "--cache-build", "1.60.1.69913") == 0
+    quests = (tmp_path / "pipeline" / "served" / "quest.tsv").read_text()
+    assert "1000\t1.60.1.70000\t1.60.1.70000" in quests
+    assert "\n1665\t" not in quests  # cached only, never recorded as served by 70000
+    assert 1665 in _ids(data, "quest")  # Forever English: kept
+
+
+def test_a_cache_build_that_is_not_the_files_refuses(data, tmp_path, capsys):
+    d = _client(tmp_path, stamp="db2@1.60.1.70000")
+    assert _run(d, "--cache-build", "1.60.1.69900") == 1
+    assert "build 69913" in capsys.readouterr().err
+
+
+def test_a_quest_cache_newer_than_the_tables_refuses(data, tmp_path, capsys):
+    d = _client(tmp_path, stamp="db2@1.60.1.69000")
+    assert _run(d, "--cache-build", "1.60.1.69913") == 1
+    assert "newer than the tables" in capsys.readouterr().err

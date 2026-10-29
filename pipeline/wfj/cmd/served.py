@@ -114,6 +114,11 @@ def add_parser(esub: Any) -> None:
         metavar="WDB",
         help="another client's questcache.wdb, read only to map an objective id to its quest",
     )
+    sv.add_argument(
+        "--cache-build",
+        metavar="BUILD",
+        help="the quest cache's build when it is older than the tables (the quest pin); default: the tables' build",
+    )
     sv.add_argument("--dry-run", action="store_true", help="print the counts, write nothing")
     sv.set_defaults(fn=run_served)
 
@@ -181,11 +186,17 @@ def run_served(a: argparse.Namespace) -> int:
     label = _stamp(csvs)
     cache = wdb.read_quests(cache_path)
     build = label.split("@", 1)[1]
-    if build.rsplit(".", 1)[-1] != str(cache.build):
+    # The tables can be pinned before the build's scan (`--cache-build`, the Makefile's quest pin): the cache is
+    # then the last scanned build's, whose ids were recorded when it was pulled, so only QuestV2 is this build's.
+    cache_build = a.cache_build or build
+    if cache_build.rsplit(".", 1)[-1] != str(cache.build):
         raise ValueError(f"served: {cache_path.name} is build {cache.build}, the tables are {label}")
+    older_cache = cache_build != build
+    if older_cache and int(cache_build.rsplit(".", 1)[-1]) > int(build.rsplit(".", 1)[-1]):
+        raise ValueError(f"served: {cache_path.name} (build {cache.build}) is newer than the tables, {label}")
     others = [wdb.read_quests(Path(p)) for p in a.map_cache]
     questv2 = wago.read_ids(csvs[0])
-    quests = questv2 | {q.id for q in cache.quests} | set(cache.placeholders)
+    quests = questv2 if older_cache else questv2 | {q.id for q in cache.quests} | set(cache.placeholders)
     items, spells = wago.read_ids(csvs[1]), wago.read_ids(csvs[2])
     objective_quest, disagree = _objective_quests(cache, others)
     unmapped: set[int] = set()

@@ -98,7 +98,13 @@ classic-era_PRODUCT := wow_classic_era
 forever_BUILD       := 1.60.1.70685
 forever_SRC         := db2
 forever_PRODUCT     := wowf
+# The build whose quest cache data/ holds, when it is older than the tables: a quest cache needs the scan in game,
+# the tables only the install. The scan plan (scan-install) and the build alert read this pin, so the scan starts
+# by itself on every newer build; it moves to the tables' build when that build's cache is imported (wdb-copy).
+forever_QUEST_BUILD := 1.60.1.70532
 client_dir = $(INPUTS)/clients/$(1)-$($(1)_BUILD)
+quest_build = $(or $($(1)_QUEST_BUILD),$($(1)_BUILD))
+quest_dir = $(INPUTS)/clients/$(1)-$(call quest_build,$(1))
 # The client a single-client target acts on (wago-fetch, tables-extract, wdb-copy), and
 # the one each per-client step of `import` is re-invoked with. The per-client knobs below derive from it; pass
 # them on the command line only to a single-client target; on `import` they would apply to every client.
@@ -156,8 +162,8 @@ FOREVER_VO_SHA ?= 025070f
 # Blizzard's cached quest title / objectives / description: the client's questcache.wdb after a
 # quest scan, copied in with `make wdb-copy`. WDB_BUILD must
 # be the build in the file's header (ADR-020). QuestV2 (the client's own table) is the scan plan and the coverage denominator.
-WDB_QUEST    ?= $(CLIENT_DIR)/questcache.wdb
-WDB_BUILD    ?= $($(CLIENT)_BUILD)
+WDB_QUEST    ?= $(if $(OWN_DIR),$(call quest_dir,$(CLIENT)),$(CLIENT_DIR))/questcache.wdb
+WDB_BUILD    ?= $(call quest_build,$(CLIENT))
 WAGO_QUESTV2 ?= $(CLIENT_DIR)/QuestV2.csv
 # The unanswered QuestV2 ids the wdb import writes: the input of a rescan.
 WDB_MISSING  ?= $(CLIENT_DIR)/missing.txt
@@ -210,7 +216,7 @@ import-english: ## refresh only data/english/ (keeps data/ lines, rulings and pr
 # data/; `check` makes it no_english_id until a later harvest lists the id again.
 SERVED_DIR = $(call client_dir,forever)
 import-served: ## drop the English for ids the Forever tables do not list (ADR-033; run last by import / import-english)
-	cd pipeline && $(PY) -m wfj import english served "$(SERVED_DIR)/QuestV2.csv" "$(SERVED_DIR)/questcache.wdb" "$(SERVED_DIR)/ItemSparse.csv" "$(SERVED_DIR)/SpellName.csv" --keys "$(UI_KEYS)" $(foreach c,$(filter-out forever,$(CLIENTS)),--map-cache "$(call client_dir,$(c))/questcache.wdb")
+	cd pipeline && $(PY) -m wfj import english served "$(SERVED_DIR)/QuestV2.csv" "$(call quest_dir,forever)/questcache.wdb" --cache-build $(call quest_build,forever) "$(SERVED_DIR)/ItemSparse.csv" "$(SERVED_DIR)/SpellName.csv" --keys "$(UI_KEYS)" $(foreach c,$(filter-out forever,$(CLIENTS)),--map-cache "$(call client_dir,$(c))/questcache.wdb")
 
 # The English no client serves: pfQuest, then VMaNGOS. Before every client's quest cache, which outranks pfQuest.
 import-shared-english:
@@ -391,7 +397,7 @@ report-apply: ## batches/reports/issue-N/decisions.jsonl → data/ + readings + 
 # build/aivis/ (started and stopped by voice generate) and `lame`; the audio and the pack are build output under build/, never committed.
 voice-speakers: voice-levels ## data/voice/ speakers + voices for the voice scope, from the pinned VMaNGOS database and the collector's NPC ids
 	cd pipeline && $(PY) -m wfj voice speakers --vmangos $(VMANGOS_DB) --commit $(VMANGOS_SHA) \
-		--wdb "$(call client_dir,forever)/questcache.wdb" --forever-vo "$(FOREVER_VO)" --forever-vo-commit $(FOREVER_VO_SHA)
+		--wdb "$(call quest_dir,forever)/questcache.wdb" --forever-vo "$(FOREVER_VO)" --forever-vo-commit $(FOREVER_VO_SHA)
 
 voice-generate: ## the missing and changed voice files from the shipped Japanese, through the local engine, then voice-sync
 	cd pipeline && $(PY) -m wfj voice generate --scope all --players all --store "$(VOICE_STORE)" && $(PY) -m wfj voice store-sync --if-changed --store "$(VOICE_STORE)"
@@ -399,7 +405,7 @@ voice-generate: ## the missing and changed voice files from the shipped Japanese
 # The audio store: a checkout of the voice audio repository (zyaga/wow-forever-japanese-voice), inside the main checkout.
 VOICE_STORE ?= $(REPO_ROOT)/build/voice
 # Each quest's level, for the packs' level bands (pipeline/voice-packs.toml): Forever's pinned quest cache, then VMaNGOS.
-VOICE_LEVELS = --wdb "$(call client_dir,forever)/questcache.wdb" --vmangos "$(VMANGOS_DB)"
+VOICE_LEVELS = --wdb "$(call quest_dir,forever)/questcache.wdb" --vmangos "$(VMANGOS_DB)"
 
 voice-levels: ## pipeline/voice_quest_levels.txt: each quest's level for the voice packs (rerun after a re-pull, with voice-speakers)
 	cd pipeline && $(PY) -m wfj voice levels $(VOICE_LEVELS)
