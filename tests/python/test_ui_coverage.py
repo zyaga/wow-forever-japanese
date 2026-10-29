@@ -116,7 +116,7 @@ def test_the_hooked_windows_label_keys_are_inventoried(root):
         assert key in inventory, key
     # one label per surface, from that surface's own source (the Forever load set)
     samples = {
-        "character": "CHARACTER", "reputation": "AT_WAR", "spellbook": "SHOW_ALL_SPELL_RANKS", "trainer": "TRAIN",
+        "character": "CHARACTER_FRAME_TAB_CHARACTER", "reputation": "AT_WAR", "spellbook": "SHOW_ALL_SPELL_RANKS", "trainer": "TRAIN",
         "gossip": "GOODBYE", "bags": "EQUIP_CONTAINER", "mail": "SENDMAIL", "raid": "CONVERT_TO_RAID",
     }
     for surface, key in samples.items():

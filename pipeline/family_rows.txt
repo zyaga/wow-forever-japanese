@@ -5,7 +5,7 @@
 # professions, ranks, developer and test rows; ADR-042, ADR-052), developer (a developer or tracking row the
 # client never shows), name (a name; names stay English), gossip (an NPC's own line, shipped by the gossip
 # surface), not-shown (a row no window shows, with the evidence after the hash).
-# build: 1.60.1.70532
+# build: 1.60.1.70685
 AchievementCategory:14777  curated  f637121589807471  # Eastern Kingdoms
 AchievementCategory:14778  curated  d39c33bd6a607c7c  # Kalimdor
 AchievementCategory:15577  curated  b909d5daff1892c3  # Druid
@@ -67,34 +67,6 @@ AreaPoiDescription:1699  curated  b3f774926f02484a  # Burning Steppes
 AreaPoiDescription:1701  curated  6b3fed213b5ef5f4  # Eastern Plaguelands
 AreaPoiDescription:1754  curated  fed8faa4c6a149e9  # Horde
 AreaPoiDescription:1755  curated  eb41bc3608906055  # Alliance
-BroadcastText:7057  gossip  b695ffafa64ff0b3  # The skinners usually take all their hides into Ironforge to dry out. Why don't you head th...
-BroadcastText:7588  gossip  db152bcd2f85b3f0  # Ah, the beauty of Shadowglen never ceases to delight my senses!
-BroadcastText:7829  gossip  c5d27138026afba5  # Hmm... well, I can't help you quite yet! You have to learn the basics first. Why don't you...
-BroadcastText:7834  gossip  42b9563da3718ea6  # You can learn from me in time... but not yet! Why don't you start out by talking to Sprite...
-BroadcastText:26325  gossip  0ccb5c7f7e5dfc41  # Be wary, for the plagued tendrils of the Lich King lurk close.
-BroadcastText:26326  gossip  a4a41d15f6f170ad  # May the Light purge your infection, brave $n.
-BroadcastText:27360  gossip  b1c264487642ed6e  # Do not lose hope, my $gson:daughter;. With faith, we will march through this darkness and ...
-BroadcastText:292961  gossip  f9b15e4ac8aae775  # Professions are divided between two main categories: primary and secondary. You are limite...
-BroadcastText:299683  gossip  8e8ed44951a62a12  # Hail and well met, traveler.$B$BI wish my arrival was met with good tidings but the realm ...
-BroadcastText:299703  gossip  8e22418f0f45dc47  # Unfortunately, the rumor of our plight is true. Disruptions to our leylines have unveiled ...
-BroadcastText:301834  gossip  7beb1a769a799982  # There won't be an explosion. The detonator I gave you was designed to fail.
-BroadcastText:301836  gossip  14ed521f74b370b3  # SI:7 will take things from here. The forge and warship you liberated from the Defias have ...
-BroadcastText:301838  gossip  104323ee3adfb40a  # Thank you for your concern, elf, but this is now a Stormwind internal matter. Your help is...
-BroadcastText:309779  gossip  2e83309de6cb676a  # No fights goin' on today, pal. The Horde and the Alliance are too busy killin' each other ...
-BroadcastText:327783  gossip  3e671d2faf4c3670  # <The tag on the mechanostrider reads: H4z4rd Flashdasher 3X 4000. Now with new radiation s...
-BroadcastText:327796  gossip  763e3c65228cc90c  # <The raptor turns to fix you with two vibrant orange eyes.>
-BroadcastText:327804  gossip  7cad52ed57daedb3  # <Even through the visor on its helm, you can feel its gaze as it studies you.>
-BroadcastText:327805  gossip  eb97ae8a2b3a43f4  # <As you approach this wolf it shakes its great head; its armor glints gently against its a...
-BroadcastText:327806  gossip  da41ae4facc817ca  # <The wolf stands tall and strong, even with the added weight of the armor.>
-BroadcastText:327809  gossip  1dfa08aafc105a6b  # Oh aye, up in the back of the tavern there's a visitor from Aerie Peak who can probably he...
-BroadcastText:328220  gossip  f26b08ba87d9a2a0  # Ah, need a wee trim do ye? It's been a bit fer me as well. I might head that way after my ...
-BroadcastText:328221  gossip  78bcd985131fa403  # Not to worry, the barbershop just northwest from the entrance to Ironforge. They'll have y...
-BroadcastText:328240  gossip  bd3c22c3f8d84728  # Ah, are you looking perhaps to change your markings, or prepare for a hunt? There is no be...
-BroadcastText:328241  gossip  860ea098e7c32ef8  # One must take care of themselves before entering the temple. Do stop by the barber, you wi...
-BroadcastText:328287  gossip  1ac7ccb7c39117ef  # Horns need sharpening, hm? You will find a goblin who can aid you on the lowest section of...
-BroadcastText:328288  gossip  63a303363a2481a4  # Look on the lower rise opposite the auctioneers if you would like to get your mane trimmed...
-BroadcastText:328594  gossip  5b26b230903ffbc1  # <The haggard-looking man mutters to himself incoherently.>
-BroadcastText:329728  gossip  6b43e018cfb573fb  # <The Wild God lying motionless before you is transparent and incorporeal, as if he is simp...
 CriteriaText:248  curated  0704dadfa13d47e5  # Defeat Emperor Dagran Thaurissan.
 CriteriaText:251  curated  3376bfe55eddd6ae  # Emperor Dagran Thaurissan
 CriteriaText:253  curated  4e67a87d1f512d41  # Defeat Darkmaster Gandling
@@ -762,7 +734,6 @@ CriteriaText:122890  curated  1dc48181fe3921d3  # Exlated with the Netherwing
 CriteriaText:122891  curated  4f1eaefd09b6f4fb  # Exlated with the Keepers of Time
 CriteriaText:122892  curated  35a917836ccf24f2  # Exlated with the Scryers
 CriteriaText:122987  curated  b9f2d81ede067fdc  # Ring of Trials matches
-CriteriaText:123017  curated  1063fbdc1738c5d2  # Eye of the Storm victories
 CriteriaText:123057  curated  1bf2555378b7b29c  # Ring of Trials victories
 CriteriaText:123059  curated  00446676a2d5a83c  # 5v5 Arena Kills
 CriteriaText:123094  curated  438bccefb1676937  # Epoch Hunter
@@ -1039,7 +1010,6 @@ CriteriaText:124361  curated  1985c550e8d23228  # Dalaran 2v2 Matches
 CriteriaText:124362  curated  513af9c1afe64d06  # Ring of Valor 2v2 Matches
 CriteriaText:124363  curated  a737061de7f065fe  # Blade's Edge 2v2 Matches
 CriteriaText:124364  curated  0a1ebd9a08d1e143  # nagrand 2v2 Matches
-CriteriaText:124477  curated  ebd3ac8c7b7652ab  # Eye of the Storm battles
 CriteriaText:124717  curated  2b7429af770eb955  # Lady Vashj
 CriteriaText:124719  curated  8c16061883ecb8d8  # Kil'jaeden
 CriteriaText:124725  curated  c203c22fa0dccd9f  # 3v3 Deaths
@@ -1783,7 +1753,6 @@ CriteriaText:132496  curated  7c3a0004f362925d  # Marshal Jacob Alerius
 CriteriaText:132502  curated  eb87bed30c2dfcd7  # Wound XT Heart (10)
 CriteriaText:132506  curated  2064d8b6f51fcc33  # Defeat Lord Jaraxxus
 CriteriaText:132646  curated  a51daa4b15eca3b1  # Gruul the Dragonkiller
-CriteriaText:132779  curated  d005737109dcb2e6  # Isle of Conquest victories
 CriteriaText:132865  developer  6b396baac741b13c  # 1.60.1 Die in a 5-man heroic instance
 CriteriaText:132866  not-shown  9675284683efc8c8  # 5-man heroic instances (no achievement's criteria tree holds it)
 CriteriaText:133008  curated  95562f66f3b5e903  # Deaths in Ulduar

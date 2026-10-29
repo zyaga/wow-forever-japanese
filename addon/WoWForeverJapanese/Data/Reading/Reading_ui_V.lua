@@ -3,6 +3,8 @@ local _, WFJ = ...
 WFJ.Data.add("reading", {
   ["ui:VEHICLE_LEAVE"] = { text = "離脱=りだつ=135348" },
   ["ui:VERTICAL_SYNC"] = { text = "垂直=すいちょく=60361 同期=どうき=56989" },
+  ["ui:VICTORY_TEXT0"] = { text = "勝利=しょうり=140933" },
+  ["ui:VICTORY_TEXT1"] = { text = "勝利=しょうり=140933" },
   ["ui:VIDEO_OPTIONS_16XANISOTROPIC"] = { text = "異方性=いほうせい=102255" },
   ["ui:VIDEO_OPTIONS_2XANISOTROPIC"] = { text = "異方性=いほうせい=102255" },
   ["ui:VIDEO_OPTIONS_4XANISOTROPIC"] = { text = "異方性=いほうせい=102255" },

@@ -15,7 +15,7 @@ WFJ.Data.add("spell", {
   [11048] = { "術者を無期限にPriestess Tyrionaの姿に変装させます。", nil, 0x9b4442a3, nil, "um" },
   [11067] = { "術者を無期限にTyrionの姿に変装させます。", nil, 0x71d9d4f6, nil, "um" },
   [11068] = { "Frost呪文を唱えるためのマナコストが$N1減少します。", nil, 0xcef647d2, nil, "um" },
-  [11069] = { "FireballとFrostfire Boltの詠唱時間を$N1秒短縮します。", nil, 0xbb7c7766, nil, "um" },
+  [11069] = { "Fireball、Frostfire Bolt、Arcane Wrathの詠唱時間を$D1短縮します。", nil, 0xcd4959fe, nil, "um" },
   [11070] = { "FrostboltとFrost Blastの詠唱時間を$D1短縮します。", nil, 0x8f40af10, nil, "um" },
   [11071] = { "Chill効果に、$N1%の確率で対象を$D1の間Freezeさせる効果を付与します。", nil, 0xd300310c, nil, "um" },
   [11078] = { "Fire Blastのクールダウンを$D1短縮し、射程を$N2ヤード延長します。", nil, 0x06a298d7, nil, "um" },

@@ -191,6 +191,7 @@ WFJ.Data.add("ui", {
   ["PREFERRED_PLAY_SETTINGS_UNAVAILABLE_REASON"] = { "アカウント設定の読み込み後に利用できます。", 0x19252860, "." },
   ["PREMADE_GROUP_INSECURE_SEARCH"] = { "グループの募集が取り下げられました。|n%sを検索しますか？", 0x59acfe8f, "." },
   ["PREMADE_GROUP_SEARCH_DELIST_WARNING_TEXT"] = { "募集グループにすでにグループを登録しています。この検索を始めるため、募集を取り下げますか？", 0x460440ed, "." },
+  ["PRESET_LABEL"] = { "プリセット", 0x7819c185, "." },
   ["PRESS_AND_HOLD_CASTING_OPTION"] = { "長押しキャスト", 0xbf4208a0, "." },
   ["PRESS_AND_HOLD_CASTING_OPTION_TOOLTIP"] = { "有効にすると、キーボードのホットキーを押し続けることで、ボタンを繰り返し押さなくてもアクションバーの呪文を連続してキャストできます。対応しているのはキーボードのホットキーだけで、マウスで呪文をクリックした場合は1回だけキャストされます。", 0x0b982bcd, "." },
   ["PRESS_KEY_TO_BIND"] = { "キーを押すとこのアクションに割り当てます。", 0x6bd34edc, "." },

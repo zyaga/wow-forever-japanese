@@ -1,13 +1,13 @@
-{"id": 288336, "field": "name", "en": "Blue Firework", "hash": "0311d6519d3436ee", "src": "db2@1.60.1.70532"}
-{"id": 288336, "field": "description", "en": "Shoots a firework into the air that bursts into a thousand blue stars.", "hash": "c2e03bdcbd042473", "src": "db2@1.60.1.70532"}
-{"id": 288337, "field": "name", "en": "Green Firework", "hash": "c76f83d6f4e97b4a", "src": "db2@1.60.1.70532"}
-{"id": 288337, "field": "description", "en": "Shoots a firework into the air that bursts into a thousand green stars.", "hash": "07365ebfccef27d0", "src": "db2@1.60.1.70532"}
-{"id": 288338, "field": "name", "en": "Red Firework", "hash": "68938a9ee6cae261", "src": "db2@1.60.1.70532"}
-{"id": 288338, "field": "description", "en": "Shoots a firework into the air that bursts into a thousand red stars.", "hash": "b5141a1bc3b96ecb", "src": "db2@1.60.1.70532"}
-{"id": 288339, "field": "name", "en": "Red Streaks Firework", "hash": "bf0a118a75d2d48a", "src": "db2@1.60.1.70532"}
-{"id": 288339, "field": "description", "en": "Shoots a firework into the air that bursts into red streaks.", "hash": "d794951e66ceb5ed", "src": "db2@1.60.1.70532"}
-{"id": 288340, "field": "name", "en": "Yellow Rose Firework", "hash": "476ced45da5cae15", "src": "db2@1.60.1.70532"}
-{"id": 288340, "field": "description", "en": "Shoots a firework into the air that bursts in a yellow pattern.", "hash": "4f1a2ec244863853", "src": "db2@1.60.1.70532"}
+{"id": 288336, "field": "name", "en": "Blue Firework", "hash": "0311d6519d3436ee", "src": "db2@1.60.1.70685"}
+{"id": 288336, "field": "description", "en": "Shoots a firework into the air that bursts into a thousand blue stars.", "hash": "c2e03bdcbd042473", "src": "db2@1.60.1.70685"}
+{"id": 288337, "field": "name", "en": "Green Firework", "hash": "c76f83d6f4e97b4a", "src": "db2@1.60.1.70685"}
+{"id": 288337, "field": "description", "en": "Shoots a firework into the air that bursts into a thousand green stars.", "hash": "07365ebfccef27d0", "src": "db2@1.60.1.70685"}
+{"id": 288338, "field": "name", "en": "Red Firework", "hash": "68938a9ee6cae261", "src": "db2@1.60.1.70685"}
+{"id": 288338, "field": "description", "en": "Shoots a firework into the air that bursts into a thousand red stars.", "hash": "b5141a1bc3b96ecb", "src": "db2@1.60.1.70685"}
+{"id": 288339, "field": "name", "en": "Red Streaks Firework", "hash": "bf0a118a75d2d48a", "src": "db2@1.60.1.70685"}
+{"id": 288339, "field": "description", "en": "Shoots a firework into the air that bursts into red streaks.", "hash": "d794951e66ceb5ed", "src": "db2@1.60.1.70685"}
+{"id": 288340, "field": "name", "en": "Yellow Rose Firework", "hash": "476ced45da5cae15", "src": "db2@1.60.1.70685"}
+{"id": 288340, "field": "description", "en": "Shoots a firework into the air that bursts in a yellow pattern.", "hash": "4f1a2ec244863853", "src": "db2@1.60.1.70685"}
 {"id": 288358, "field": "name", "en": "Gnoll Greataxe", "hash": "cb98b3aa14aff13e", "src": "db2@1.60.1.70532"}
 {"id": 288358, "field": "description", "en": "Heavy is the hand that holds this axe.", "hash": "796842e5a29b7753", "src": "db2@1.60.1.70532"}
 {"id": 288823, "field": "name", "en": "Arcanist Crown", "hash": "bee4494817ee10e1", "src": "db2@1.60.1.70532"}
@@ -82,14 +82,14 @@
 {"id": 288892, "field": "name", "en": "Helm of Might", "hash": "7f3b08f524155c86", "src": "db2@1.60.1.70532"}
 {"id": 288893, "field": "name", "en": "Legplates of Might", "hash": "5ed6a36dc40d187a", "src": "db2@1.60.1.70532"}
 {"id": 288894, "field": "name", "en": "Pauldrons of Might", "hash": "3cc0ee91cecaec7b", "src": "db2@1.60.1.70532"}
-{"id": 288896, "field": "name", "en": "Superior Healing Potion", "hash": "3a0ba897fefbbc64", "src": "db2@1.60.1.70532"}
-{"id": 288896, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70532"}
-{"id": 288897, "field": "name", "en": "Superior Mana Potion", "hash": "088b13c288d5e2b1", "src": "db2@1.60.1.70532"}
-{"id": 288897, "field": "description", "en": "Restores $s1 mana.", "hash": "09fdd6de4213d4dd", "src": "db2@1.60.1.70532"}
-{"id": 288898, "field": "name", "en": "Swiftness Potion", "hash": "a32c27ad41c2a98f", "src": "db2@1.60.1.70532"}
-{"id": 288898, "field": "description", "en": "Increases run speed by $s1% for $d1.", "hash": "61fe647b7084b69c", "src": "db2@1.60.1.70532"}
-{"id": 288900, "field": "name", "en": "Earthshaker", "hash": "990139fc0a9bd242", "src": "db2@1.60.1.70532"}
-{"id": 288900, "field": "description", "en": "Knocks down all nearby enemies for $d.", "hash": "2c47ce6ca40fb222", "src": "db2@1.60.1.70532"}
+{"id": 288896, "field": "name", "en": "Superior Healing Potion", "hash": "3a0ba897fefbbc64", "src": "db2@1.60.1.70685"}
+{"id": 288896, "field": "description", "en": "Restores $s1 health.", "hash": "4d16029e51e0e10a", "src": "db2@1.60.1.70685"}
+{"id": 288897, "field": "name", "en": "Superior Mana Potion", "hash": "088b13c288d5e2b1", "src": "db2@1.60.1.70685"}
+{"id": 288897, "field": "description", "en": "Restores $s1 mana.", "hash": "09fdd6de4213d4dd", "src": "db2@1.60.1.70685"}
+{"id": 288898, "field": "name", "en": "Swiftness Potion", "hash": "a32c27ad41c2a98f", "src": "db2@1.60.1.70685"}
+{"id": 288898, "field": "description", "en": "Increases run speed by $s1% for $d1.", "hash": "61fe647b7084b69c", "src": "db2@1.60.1.70685"}
+{"id": 288900, "field": "name", "en": "Earthshaker", "hash": "990139fc0a9bd242", "src": "db2@1.60.1.70685"}
+{"id": 288900, "field": "description", "en": "Knocks down all nearby enemies for $d.", "hash": "2c47ce6ca40fb222", "src": "db2@1.60.1.70685"}
 {"id": 288901, "field": "name", "en": "Spinal Reaper", "hash": "aae219b9e7c05970", "src": "db2@1.60.1.70532"}
 {"id": 288901, "field": "description", "en": "Restores $21186s1 mana or 20 rage when you kill a target that gives experience; this effect cannot occur more than once every 10 seconds.", "hash": "33de8fd2ecda44c5", "src": "db2@1.60.1.70532"}
 {"id": 288902, "field": "name", "en": "Hyperthermically Insulated Lava Dredger", "hash": "00d904dde2b6af04", "src": "db2@1.60.1.70532"}
@@ -121,9 +121,9 @@
 {"id": 288923, "field": "name", "en": "Choker of Enlightenment", "hash": "7698d699238dbd23", "src": "db2@1.60.1.70532"}
 {"id": 288924, "field": "name", "en": "Seal of the Archmagus", "hash": "651c9689aef7a102", "src": "db2@1.60.1.70532"}
 {"id": 288925, "field": "name", "en": "Fireproof Cloak", "hash": "3bf9e58abc9a29d0", "src": "db2@1.60.1.70532"}
-{"id": 288926, "field": "name", "en": "Choker of the Fire Lord", "hash": "fd6eceda911718ed", "src": "db2@1.60.1.70532"}
-{"id": 288927, "field": "name", "en": "Quick Strike Ring", "hash": "553e46f644f06ae6", "src": "db2@1.60.1.70532"}
-{"id": 288928, "field": "name", "en": "Heavy Dark Iron Ring", "hash": "edf160d6434ddb21", "src": "db2@1.60.1.70532"}
-{"id": 288929, "field": "name", "en": "Band of Sulfuras", "hash": "f6149edb10c8625a", "src": "db2@1.60.1.70532"}
-{"id": 288930, "field": "name", "en": "Cauterizing Band", "hash": "999d3326bf4d8032", "src": "db2@1.60.1.70532"}
-{"id": 288931, "field": "name", "en": "Ring of Spell Power", "hash": "e1312759896d463b", "src": "db2@1.60.1.70532"}
+{"id": 288926, "field": "name", "en": "Choker of the Fire Lord", "hash": "fd6eceda911718ed", "src": "db2@1.60.1.70685"}
+{"id": 288927, "field": "name", "en": "Quick Strike Ring", "hash": "553e46f644f06ae6", "src": "db2@1.60.1.70685"}
+{"id": 288928, "field": "name", "en": "Heavy Dark Iron Ring", "hash": "edf160d6434ddb21", "src": "db2@1.60.1.70685"}
+{"id": 288929, "field": "name", "en": "Band of Sulfuras", "hash": "f6149edb10c8625a", "src": "db2@1.60.1.70685"}
+{"id": 288930, "field": "name", "en": "Cauterizing Band", "hash": "999d3326bf4d8032", "src": "db2@1.60.1.70685"}
+{"id": 288931, "field": "name", "en": "Ring of Spell Power", "hash": "e1312759896d463b", "src": "db2@1.60.1.70685"}

@@ -1,8 +1,8 @@
-{"id": 57346, "field": "name", "en": "Ride Vehicle", "hash": "615b1691886a3aac", "src": "db2@1.60.1.70532"}
-{"id": 57523, "field": "name", "en": "Wretched Zombie Healer", "hash": "f0425a1da6c4ef85", "src": "db2@1.60.1.70532"}
-{"id": 57523, "field": "description", "en": "Standing in a Wretched area heals zombies.", "hash": "e77b790fa6fb7477", "src": "db2@1.60.1.70532"}
-{"id": 57526, "field": "name", "en": "Lurch! Immunity Effect", "hash": "818b81cba2a5e6cd", "src": "db2@1.60.1.70532"}
-{"id": 57526, "field": "description", "en": "Removes all movement impairing effects and all effects which cause loss of control of your character.", "hash": "5922de690eb48ff3", "src": "db2@1.60.1.70532"}
-{"id": 57596, "field": "name", "en": "Mangle!", "hash": "3fae7d70fdd36c7c", "src": "db2@1.60.1.70532"}
-{"id": 57596, "field": "description", "en": "Increases your next attack by $s1 damage and reduces the target's armor by $s2%.", "hash": "70ab1dc613a0d6bb", "src": "db2@1.60.1.70532"}
-{"id": 57596, "field": "aura", "en": "Zombies have mangled you!  Your armor is reduced by $s2%..", "hash": "11613d103c9c28b5", "src": "db2@1.60.1.70532"}
+{"id": 57346, "field": "name", "en": "Ride Vehicle", "hash": "615b1691886a3aac", "src": "db2@1.60.1.70685"}
+{"id": 57523, "field": "name", "en": "Wretched Zombie Healer", "hash": "f0425a1da6c4ef85", "src": "db2@1.60.1.70685"}
+{"id": 57523, "field": "description", "en": "Standing in a Wretched area heals zombies.", "hash": "e77b790fa6fb7477", "src": "db2@1.60.1.70685"}
+{"id": 57526, "field": "name", "en": "Lurch! Immunity Effect", "hash": "818b81cba2a5e6cd", "src": "db2@1.60.1.70685"}
+{"id": 57526, "field": "description", "en": "Removes all movement impairing effects and all effects which cause loss of control of your character.", "hash": "5922de690eb48ff3", "src": "db2@1.60.1.70685"}
+{"id": 57596, "field": "name", "en": "Mangle!", "hash": "3fae7d70fdd36c7c", "src": "db2@1.60.1.70685"}
+{"id": 57596, "field": "description", "en": "Increases your next attack by $s1 damage and reduces the target's armor by $s2%.", "hash": "70ab1dc613a0d6bb", "src": "db2@1.60.1.70685"}
+{"id": 57596, "field": "aura", "en": "Zombies have mangled you!  Your armor is reduced by $s2%..", "hash": "11613d103c9c28b5", "src": "db2@1.60.1.70685"}

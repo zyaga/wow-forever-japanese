@@ -3,6 +3,8 @@ local _, WFJ = ...
 WFJ.Data.add("ui", {
   ["VEHICLE_LEAVE"] = { "離脱", 0x43b4617c, "." },
   ["VERTICAL_SYNC"] = { "垂直同期", 0xd7d287d1, "." },
+  ["VICTORY_TEXT0"] = { "Hordeの勝利", 0x08c4e31e, "." },
+  ["VICTORY_TEXT1"] = { "Allianceの勝利", 0x71f2ca98, "." },
   ["VIDEO_OPTIONS_16XANISOTROPIC"] = { "16x 異方性", 0x252792cc, "." },
   ["VIDEO_OPTIONS_2XANISOTROPIC"] = { "2x 異方性", 0x1f7b33ea, "." },
   ["VIDEO_OPTIONS_4XANISOTROPIC"] = { "4x 異方性", 0xb5582eb6, "." },

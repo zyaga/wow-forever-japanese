@@ -1,12 +1,12 @@
-{"id": 48050, "field": "name", "en": "You're a ...! (Effects3)", "hash": "6fc2b4027c032d2b", "src": "db2@1.60.1.70532"}
-{"id": 48108, "field": "name", "en": "Hot Streak", "hash": "0f000625e3864a46", "src": "db2@1.60.1.70532"}
-{"id": 48108, "field": "description", "en": "Any time you score 2 spell criticals in a row using using Fireball, Fire Blast, Scorch, Living Bomb, or Frostfire Bolt, you have a chance the next Pyroblast spell cast within $d will be instant cast.", "hash": "200c4cec9aba8a9f", "src": "db2@1.60.1.70532"}
-{"id": 48108, "field": "aura", "en": "Your next Pyroblast spell is instant cast.", "hash": "bf94c763ffb3a580", "src": "db2@1.60.1.70532"}
-{"id": 48198, "field": "name", "en": "Righteous Fire", "hash": "daedc194d761a5c7", "src": "db2@1.60.1.70532"}
-{"id": 48198, "field": "description", "en": "Strike a zombie with righteous fire.  After 3 consecutive strikes, it is destroyed.", "hash": "765fc503212e272b", "src": "db2@1.60.1.70532"}
-{"id": 48198, "field": "aura", "en": "A Healer has stricken you.  3 strikes and you're out!", "hash": "4407d0d163983f49", "src": "db2@1.60.1.70532"}
-{"id": 48199, "field": "name", "en": "Find Zombie", "hash": "d54a35d042aba625", "src": "db2@1.60.1.70532"}
-{"id": 48200, "field": "name", "en": "Healer Aura", "hash": "db4da443178e1bc2", "src": "db2@1.60.1.70532"}
-{"id": 48309, "field": "name", "en": "Cure Infection", "hash": "a5299c1523c51c18", "src": "db2@1.60.1.70532"}
-{"id": 48318, "field": "name", "en": "Retch!", "hash": "8cee735eacc67f45", "src": "db2@1.60.1.70532"}
+{"id": 48050, "field": "name", "en": "You're a ...! (Effects3)", "hash": "6fc2b4027c032d2b", "src": "db2@1.60.1.70685"}
+{"id": 48108, "field": "name", "en": "Hot Streak", "hash": "0f000625e3864a46", "src": "db2@1.60.1.70685"}
+{"id": 48108, "field": "description", "en": "Any time you score 2 spell criticals in a row using using Fireball, Fire Blast, Scorch, Living Bomb, or Frostfire Bolt, you have a chance the next Pyroblast spell cast within $d will be instant cast.", "hash": "200c4cec9aba8a9f", "src": "db2@1.60.1.70685"}
+{"id": 48108, "field": "aura", "en": "Your next Pyroblast spell is instant cast.", "hash": "bf94c763ffb3a580", "src": "db2@1.60.1.70685"}
+{"id": 48198, "field": "name", "en": "Righteous Fire", "hash": "daedc194d761a5c7", "src": "db2@1.60.1.70685"}
+{"id": 48198, "field": "description", "en": "Strike a zombie with righteous fire.  After 3 consecutive strikes, it is destroyed.", "hash": "765fc503212e272b", "src": "db2@1.60.1.70685"}
+{"id": 48198, "field": "aura", "en": "A Healer has stricken you.  3 strikes and you're out!", "hash": "4407d0d163983f49", "src": "db2@1.60.1.70685"}
+{"id": 48199, "field": "name", "en": "Find Zombie", "hash": "d54a35d042aba625", "src": "db2@1.60.1.70685"}
+{"id": 48200, "field": "name", "en": "Healer Aura", "hash": "db4da443178e1bc2", "src": "db2@1.60.1.70685"}
+{"id": 48309, "field": "name", "en": "Cure Infection", "hash": "a5299c1523c51c18", "src": "db2@1.60.1.70685"}
+{"id": 48318, "field": "name", "en": "Retch!", "hash": "8cee735eacc67f45", "src": "db2@1.60.1.70685"}
 {"id": 48953, "field": "name", "en": "Infect!", "hash": "a5e6e7d6959a534f", "src": "db2@1.60.1.70532"}

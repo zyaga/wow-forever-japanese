@@ -43,7 +43,7 @@ Gamepad.KEYS = {
   -- (blizzard_uipanels_game/mainline/containerframe.lua:3318, 3323), ADD_CHAT_CHANNEL the channels window's
   -- (blizzard_channels/mainline/channelframe.lua:169), COMMUNITIES_INVITE_MANAGER_REVOKE_INVITE the invite manager's
   -- (blizzard_communities/communitiesticketmanagerdialog.lua:255)
-  "ACTION_LABEL_ADJUST_BRIGHTNESS", "ACTION_LABEL_ADJUST_COLOR", "ACTION_LABEL_ROTATE", "ACTION_LABEL_SELECT",
+  "ACTION_LABEL_ROTATE", "ACTION_LABEL_SELECT",
   "ACTION_LABEL_CHAT_CHANNELS",
   "ACTION_LABEL_SEND", "ACTION_LABEL_TAB_SETTINGS", "ACTION_LABEL_RESET_VIEW", "ACTION_LABEL_ZOOM_SLASH_ROTATE",
   "CONTEXT_ACTION_LABEL_APPLY", "CONTEXT_ACTION_LABEL_BIND_TO_GAMEPAD_ACTION_BAR", "CONTEXT_ACTION_LABEL_BUY",
@@ -100,8 +100,7 @@ Gamepad.PROMPT_KEYS, Gamepad.RADIAL_KEYS = PROMPT.only, RADIAL.only
 -- entry, a radial handler's label, SKIP), never a name and never a formatted template. The writer's own set is
 -- tried first (an owned key is found only when asked for by key: "Back" is 戻る on a footer, 背中 as a slot); then a
 -- label that is exactly one dictionary English takes that key (the UI/Errors Lua-line rule): a footer also shows
--- OKAY, CANCEL, NEXT or the neighbouring window's jump-hint title (CHARACTER, WORLD_MAP, TALENTS), which no list here
--- could keep up with. Anything else stays as written.
+-- OKAY, CANCEL or NEXT, which no list here could keep up with. Anything else stays as written.
 local exactOnly = {} -- key → { only = { key } }, built once per key
 local function opts(fs, set)
   local index = WFJ.UIIndex

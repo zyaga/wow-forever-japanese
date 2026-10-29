@@ -1,12 +1,12 @@
-{"id": 56528, "field": "name", "en": "Zombie Explosion!", "hash": "39cdb44e94f80c8a", "src": "db2@1.60.1.70532"}
-{"id": 56528, "field": "description", "en": "Burst into pieces, destroying yourself but infecting those around you.", "hash": "a076a7a9f18f555e", "src": "db2@1.60.1.70532"}
-{"id": 56528, "field": "aura", "en": "Burst into pieces, destroying yourself but infecting those around you.", "hash": "a076a7a9f18f555e", "src": "db2@1.60.1.70532"}
-{"id": 56543, "field": "name", "en": "Wretched! IsIn Fog Checker", "hash": "cafb793e82c29a86", "src": "db2@1.60.1.70532"}
-{"id": 56543, "field": "aura", "en": "You have been slimed!  Movement speed slowed $s1%.", "hash": "5844135f40c120dd", "src": "db2@1.60.1.70532"}
-{"id": 56560, "field": "name", "en": "Beckoning Groan", "hash": "d442a18e21da891d", "src": "db2@1.60.1.70532"}
-{"id": 56560, "field": "description", "en": "Beckon up to four zombies to you.  They must not be in combat.", "hash": "9c43568056a6699e", "src": "db2@1.60.1.70532"}
-{"id": 56608, "field": "name", "en": "Beckoned", "hash": "bf255eabc288eeaa", "src": "db2@1.60.1.70532"}
-{"id": 56608, "field": "aura", "en": "Another zombie has beckoned you.  If not fighting, then you must follow.", "hash": "94d8d4b578c0bc87", "src": "db2@1.60.1.70532"}
-{"id": 56781, "field": "name", "en": "Wretched, Infect.", "hash": "692ae029f965d084", "src": "db2@1.60.1.70532"}
-{"id": 56781, "field": "description", "en": "Ifects target humanoid with the zombie plague.", "hash": "76e45839269073cf", "src": "db2@1.60.1.70532"}
-{"id": 56787, "field": "name", "en": "Zombie Spawn", "hash": "58088adc9374efd2", "src": "db2@1.60.1.70532"}
+{"id": 56528, "field": "name", "en": "Zombie Explosion!", "hash": "39cdb44e94f80c8a", "src": "db2@1.60.1.70685"}
+{"id": 56528, "field": "description", "en": "Burst into pieces, destroying yourself but infecting those around you.", "hash": "a076a7a9f18f555e", "src": "db2@1.60.1.70685"}
+{"id": 56528, "field": "aura", "en": "Burst into pieces, destroying yourself but infecting those around you.", "hash": "a076a7a9f18f555e", "src": "db2@1.60.1.70685"}
+{"id": 56543, "field": "name", "en": "Wretched! IsIn Fog Checker", "hash": "cafb793e82c29a86", "src": "db2@1.60.1.70685"}
+{"id": 56543, "field": "aura", "en": "You have been slimed!  Movement speed slowed $s1%.", "hash": "5844135f40c120dd", "src": "db2@1.60.1.70685"}
+{"id": 56560, "field": "name", "en": "Beckoning Groan", "hash": "d442a18e21da891d", "src": "db2@1.60.1.70685"}
+{"id": 56560, "field": "description", "en": "Beckon up to four zombies to you.  They must not be in combat.", "hash": "9c43568056a6699e", "src": "db2@1.60.1.70685"}
+{"id": 56608, "field": "name", "en": "Beckoned", "hash": "bf255eabc288eeaa", "src": "db2@1.60.1.70685"}
+{"id": 56608, "field": "aura", "en": "Another zombie has beckoned you.  If not fighting, then you must follow.", "hash": "94d8d4b578c0bc87", "src": "db2@1.60.1.70685"}
+{"id": 56781, "field": "name", "en": "Wretched, Infect.", "hash": "692ae029f965d084", "src": "db2@1.60.1.70685"}
+{"id": 56781, "field": "description", "en": "Ifects target humanoid with the zombie plague.", "hash": "76e45839269073cf", "src": "db2@1.60.1.70685"}
+{"id": 56787, "field": "name", "en": "Zombie Spawn", "hash": "58088adc9374efd2", "src": "db2@1.60.1.70685"}

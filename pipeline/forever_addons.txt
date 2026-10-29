@@ -3,7 +3,7 @@ blizzard_accessibilitytemplates login 8
 blizzard_accountsaveui glue 0
 blizzard_accountstore gated 0
 blizzard_achievementui lod 5
-blizzard_actionbar login 35
+blizzard_actionbar login 36
 blizzard_actionbarcontroller login 2
 blizzard_actionstatus login 2
 blizzard_addfriend login 2
@@ -14,7 +14,7 @@ blizzard_alliedracesui lod 4
 blizzard_animadiversionui lod 8
 blizzard_animatedshine login 2
 blizzard_apidocumentation lod 8
-blizzard_apidocumentationgenerated lod 641
+blizzard_apidocumentationgenerated lod 642
 blizzard_archaeologyui lod 4
 blizzard_ardenwealdgardening lod 3
 blizzard_arrowcalloutframe gated 0
@@ -250,7 +250,7 @@ blizzard_professionstemplates lod 32
 blizzard_projectconstants login 2
 blizzard_ptrfeedback login 7
 blizzard_ptrfeedbackglue glue 0
-blizzard_pvpmatch login 7
+blizzard_pvpmatch login 8
 blizzard_pvpui gated 0
 blizzard_questnavigation login 2
 blizzard_questtimer login 4
@@ -279,7 +279,7 @@ blizzard_selectorui lod 0
 blizzard_settings lod 1
 blizzard_settings_shared login 28
 blizzard_settingsdefinitions_frame login 34
-blizzard_settingsdefinitions_shared login 20
+blizzard_settingsdefinitions_shared login 21
 blizzard_shakeutil login 1
 blizzard_sharedmapdataproviders lod 79
 blizzard_sharedtalentui login 40

@@ -459,6 +459,7 @@ WFJ.Data.add("reading", {
   ["ui:CLAIM_REWARD"] = { text = "報酬=ほうしゅう=60817 受け取る=うけとる=55840" },
   ["ui:CLASS"] = { text = "クラス=クラス=32689" },
   ["ui:CLASSIC_STYLE"] = { text = "クラシック=クラシック=32688 スタイル=スタイル=33266" },
+  ["ui:CLASSIC_TURN_STRAFE_KEYBINDINGS_BUTTON_TEXT"] = { text = "クラシック=クラシック=140930 旋回=せんかい=140934 平行移動=へいこういどう=69409 キー=キー=32599" },
   ["ui:CLASS_ROLE_NOT_RECOMMENDED"] = { text = "この=この=8884 ロール=ロール=35644 現在=げんざい=100774 キャラクター=キャラクター=32539 クラス=クラス=32689 推奨されません=すいしょうされません=83804" },
   ["ui:CLASS_TALENT_SEARCH_OPTION_HIDE_PASSIVES"] = { text = "パッシブ=パッシブ=34383 隠す=かくす=134555" },
   ["ui:CLASS_TALENT_SEARCH_OPTION_SHOW_RANKS"] = { text = "ランク=ランク=35329 表示=ひょうじ=116521" },

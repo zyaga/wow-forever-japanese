@@ -41,7 +41,7 @@ WFJ.Data.add("reading", {
   ["ui:GAMEPAD_FACE_MOVEMENT_SWIMMING"] = { text = "水泳中=すいえいちゅう=94603 移動方向=いどうほうこう=106931 向く=むく=57529" },
   ["ui:GAMEPAD_FOLLOW_CAMERA"] = { text = "追従=ついじゅう=128438 カメラ=カメラ=32427" },
   ["ui:GAMEPAD_FOLLOW_CAMERA_PITCH_OFFSET"] = { text = "追従=ついじゅう=128438 カメラ=カメラ=32427 上下=じょうげ=37178 オフセット=オフセット=32238" },
-  ["ui:GAMEPAD_LABEL"] = { text = "ゲームパッド=ゲームパッド=32852 アルファ版=アルファばん=31867" },
+  ["ui:GAMEPAD_LABEL"] = { text = "ゲームパッド=ゲームパッド=32852 ベータ版=ベータばん=140932" },
   ["ui:GAMEPAD_MODIFIER_LABEL"] = { text = "修飾キー=しゅうしょくキー=45383" },
   ["ui:GAMEPAD_MODIFIER_TOGGLE"] = { text = "押して=おして=80760 切り替え=きりかえ=50291" },
   ["ui:GAMEPAD_MOVEMENT_FACE_ANGLE"] = { text = "移動時=いどうじ=106933 向き=むき=57512 角度=かくど=120097" },

@@ -42,7 +42,7 @@ WFJ.Data.add("ui", {
   ["GAMEPAD_FACE_MOVEMENT_SWIMMING"] = { "水泳中は移動方向を向く", 0xde29083e, "." },
   ["GAMEPAD_FOLLOW_CAMERA"] = { "追従カメラ", 0xa3c8355d, "." },
   ["GAMEPAD_FOLLOW_CAMERA_PITCH_OFFSET"] = { "追従カメラの上下オフセット", 0xc8aaccba, "." },
-  ["GAMEPAD_LABEL"] = { "ゲームパッド（アルファ版）", 0x559f645a, "." },
+  ["GAMEPAD_LABEL"] = { "ゲームパッド（ベータ版）", 0x3e384455, "." },
   ["GAMEPAD_MODIFIER_LABEL"] = { "HUD修飾キー", 0xaee35f54, "." },
   ["GAMEPAD_MODIFIER_TOGGLE"] = { "押して切り替え", 0x676409ee, "." },
   ["GAMEPAD_MOVEMENT_FACE_ANGLE"] = { "移動時の向きの角度", 0x91d8c6c6, "." },
