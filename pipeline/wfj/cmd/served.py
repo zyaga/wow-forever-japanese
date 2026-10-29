@@ -117,7 +117,7 @@ def add_parser(esub: Any) -> None:
     sv.add_argument(
         "--cache-build",
         metavar="BUILD",
-        help="the quest cache's build when it is older than the tables (the quest pin); default: the tables' build",
+        help="the quest cache's build when older than the tables (the quest pin); default: the tables' build",
     )
     sv.add_argument("--dry-run", action="store_true", help="print the counts, write nothing")
     sv.set_defaults(fn=run_served)
@@ -186,8 +186,9 @@ def run_served(a: argparse.Namespace) -> int:
     label = _stamp(csvs)
     cache = wdb.read_quests(cache_path)
     build = label.split("@", 1)[1]
-    # The tables can be pinned before the build's scan (`--cache-build`, the Makefile's quest pin): the cache is
-    # then the last scanned build's, whose ids were recorded when it was pulled, so only QuestV2 is this build's.
+    # The tables can be pinned before the build's scan (`--cache-build`, the Makefile's quest pin): the cache
+    # is then the last scanned build's, whose ids were recorded when it was pulled, so only QuestV2 is this
+    # build's.
     cache_build = a.cache_build or build
     if cache_build.rsplit(".", 1)[-1] != str(cache.build):
         raise ValueError(f"served: {cache_path.name} is build {cache.build}, the tables are {label}")
