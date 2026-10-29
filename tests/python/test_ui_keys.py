@@ -4,6 +4,8 @@ and the name-policy guard."""
 import json
 from pathlib import Path
 
+from local_inputs import forever_build
+
 from wfj.core import specifiers
 from wfj.io import wago
 from wfj.io.jsonl_store import Store
@@ -15,7 +17,7 @@ BUILD = "1.15.9.69722"
 # the assertion is that no line carries an unpinned or unknown source, not that there is only ever one.
 # One exception (ADR-050): a listed key whose row left the pinned Forever build keeps the English of the last
 # build that served it, the build `pipeline/served/ui.tsv` records for it.
-FOREVER_BUILD = "1.60.1.70425"
+FOREVER_BUILD = forever_build()
 ENGLISH_SOURCES = {f"wago@{BUILD}", f"db2@{FOREVER_BUILD}"}
 # UI words that are also the exact name of some item or spell (e.g. an item called "Cloth", the spell "Shield").
 # They are allowed because the addon never walks the line that reads as the item / spell name and labels are matched
@@ -102,7 +104,7 @@ def _keys(root: Path) -> list[str]:
 
 
 # The draft batches the dictionary is made of (each line's `provenance.source` names one).
-DRAFT_SOURCES = {"draft-ui",
+DRAFT_SOURCES = {"draft-ui", "draft-r70685-ui",
                  # the served-text round: every string the loaded Forever files name, in seven parts
                  *(f"draft-served-ui-{i}" for i in range(7)),
                  "draft-ui-compare", "draft-ui-appearance",  # the comparison tooltip and its appearance lines

@@ -3,8 +3,8 @@
 -- (blizzard_cooldownviewer.toc: `## AllowLoadGameType: standard, camelot`). The window is CooldownViewerSettings
 -- (cooldownviewersettings.xml:139, ButtonFrameTemplate, parent UIParent, hidden), opened by the /cdm and
 -- /cooldownmanager slash commands (slashcommandregistration.lua:1–3) and from edit mode
--- (blizzard_editmode/shared/editmodesystemtemplates.lua:1244, 3015). Without the frame init returns false and nothing
--- is touched.
+-- (blizzard_editmode/shared/editmodesystemtemplates.lua:1326, 3097, 3107). Without the frame init returns false and
+-- nothing is touched.
 -- Static text and its writers (every widget is parentKey-only, so every name is a dotted Compat candidate):
 --   title: self:SetTitle(COOLDOWN_VIEWER_SETTINGS_TITLE) in OnLoad (cooldownviewersettings.lua:824) → Labels.title;
 --   SearchBox.Instructions: SearchBoxTemplate's placeholder, instructionText COOLDOWN_VIEWER_SETTINGS_SEARCH_
@@ -50,7 +50,7 @@
 --   the four HUD viewers in edit mode: EssentialCooldownViewer, UtilityCooldownViewer, BuffIconCooldownViewer,
 --     BuffBarCooldownViewer (cooldownviewer.xml:298–338): their Selection child writes Label:SetText(the system name,
 --     HUD_EDIT_MODE_SYSTEM_*) in UpdateLabelVisibility and shows it as a tooltip it owns (blizzard_editmode/shared/
---     editmodesystemtemplates.lua:3316–3345). Only the Selection is read, restricted to those four keys.
+--     editmodesystemtemplates.lua:3398–3444). Only the Selection is read, restricted to those four keys.
 -- Never touched: the HUD viewers' items. On this client a cooldown number, a charge count, an aura stack and an aura
 --   instance can be secret values (blizzard_sharedxmlbase/securetypes.lua:6, blizzard_cooldownviewer/
 --   cooldownviewersecure.lua:4–6), so no text of a HUD item is ever read or matched here. The alert editors' Name (a

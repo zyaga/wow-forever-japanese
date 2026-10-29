@@ -19,7 +19,7 @@ local UI = {
   SPELLBOOK_AVAILABLE_AT = { "Level %d", "レベル%d" }, SPELLBOOK_TRAINABLE = { "See your trainer", "トレーナーで習得" },
   SHOW_ALL_SPELL_RANKS = { "Show all spell ranks", "すべての呪文ランクを表示" },
   SPELLBOOK_FILTER_PASSIVES = { "Hide Passives", "パッシブを隠す" }, CLOSE = { "Close", "閉じる" },
-  SPELLBOOK_SEARCH_INSTRUCTIONS = { "Search", "検索" },
+  COOLDOWN_VIEWER_SETTINGS_SEARCH_INSTRUCTIONS = { "Enter search text", "検索テキストを入力" },
   SPELLBOOK_SEARCH_HEADER_EXACT = { "Exact Match", "完全一致" }, SPELLBOOK_SEARCH_HEADER_NAME = { "Name Match", "名前一致" },
   SPELLBOOK_SEARCH_HIDE_PASSIVES_DISABLED = { "Unavailable while searching", "検索中は使えません" },
   GENERAL = { "General", "一般" }, -- a skill-line name that is also a dictionary word
@@ -269,14 +269,14 @@ describe("spellbook on the Forever client", function()
 
     it("the search box placeholder is Japanese from setup and never released; the EditBox is never written", function()
       local box = _G.PlayerSpellsFrame.SpellBookFrame.SearchBox
-      assert.are.equal("検索", box.Instructions:GetText())
+      assert.are.equal("検索テキストを入力", box.Instructions:GetText())
       assert.are.equal(WFJ.Font.PATH, (box.Instructions:GetFont()))
       PS.openSpellBook(); _G.PlayerSpellsFrame.SpellBookFrame:Hide()
       WFJ.TextWatch.tick() -- the watcher's next frame
-      assert.are.equal("検索", box.Instructions:GetText())
+      assert.are.equal("検索テキストを入力", box.Instructions:GetText())
       assert.is_nil(box.text)
       alt(true)
-      assert.are.equal("Search", box.Instructions:GetText())
+      assert.are.equal("Enter search text", box.Instructions:GetText())
       alt(false)
     end)
 

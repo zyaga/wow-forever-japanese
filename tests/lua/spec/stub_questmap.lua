@@ -95,7 +95,7 @@ function Q.install()
       b = CreateFrame("Button")
       b.Text = fs("")
       b.Text.width = 200
-      b.TagText = fs("") -- camelot's quest tag (camelot/questutilsoverrides.lua:20–35; questmapframe.lua:1833–1836)
+      b.TagText = fs("") -- camelot's quest tag (camelot/questutilsoverrides.lua:20–35; questmapframe.lua:1837–1840)
       function b.SetHeight(row, h) row.h = h end
       function b.GetHeight(row) return row.h end
       b.rowIndex = self.made

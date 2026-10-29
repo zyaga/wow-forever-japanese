@@ -21,19 +21,19 @@
 --   bars' highlight marks and layout (:509–566), and the bars are then blocked in combat
 --   (docs/architecture/client-limits.md).
 -- - Settings menu: the "show all spell ranks" checkbox is a Menu element under the tag "MENU_SPELL_BOOK_SETTINGS"
---   (spellbook/blizzard_spellbookframe.lua:191, 205–226; camelot/spellbook/blizzard_spellbookframe.lua:9–43; not for
+--   (spellbook/blizzard_spellbookframe.lua:191, 205–226; camelot/spellbook/blizzard_spellbookframe.lua:79–113; not for
 --   Rogue / Warrior). The checkbox initializer closes over the English (blizzard_menu/menutemplates.lua:341–354,
 --   mainline/menuvariants.lua:9–22), so rewriting the description's text would not show; Menu.ModifyMenu (menu.lua:
---   2724) adds an initializer of our own to each element, which runs after the client's and shows button.fontString
+--   2728) adds an initializer of our own to each element, which runs after the client's and shows button.fontString
 --   restricted to MENU_KEYS (surface "spellbook.menu"). Menu buttons are pooled and their compositor resets the
 --   fontString with SetFontObject on reuse (blizzard_menu/compositor.lua:66–74, 388), so a record must not outlive
 --   its button: a resetter of our own (menu.lua:455–457), which MenuMixin:DiscardChildFrames runs on every element
---   frame before the compositor detaches and the frame is released (menu.lua:1667–1697), drops that button's record.
+--   frame before the compositor detaches and the frame is released (menu.lua:1667–1702), drops that button's record.
 --   The surface is also forgotten when the book hides.
 -- - The search box's placeholder, SearchBox.Instructions, is written once by SearchBoxTemplate_OnLoad from the
---   KeyValue instructionText = SPELLBOOK_SEARCH_INSTRUCTIONS (spellbookframe.xml:103–107; blizzard_sharedxml/shared/
---   inputbox/inputboxtemplates.lua:175–178) and only shown / hidden after that (:131–133): a static label (never
---   the EditBox's own text).
+--   KeyValue instructionText = COOLDOWN_VIEWER_SETTINGS_SEARCH_INSTRUCTIONS ("Enter search text", the cooldown
+--   settings' own placeholder; spellbookframe.xml:103–107; blizzard_sharedxml/shared/inputbox/inputboxtemplates.lua:
+--   175–178) and only shown / hidden after that (:131–133): a static label (never the EditBox's own text).
 -- - The "Hide Passives" entry's tooltip while searching (SPELLBOOK_SEARCH_HIDE_PASSIVES_DISABLED,
 --   spellbookframe.lua:192–197) is built by MenuUtil.ShowTooltipEx on GameTooltip with the menu button as owner, then
 --   Show() (blizzard_menu/menuutil.lua:98–106, 293–298): each settings-menu button is a help-tooltip owner restricted
@@ -59,7 +59,7 @@ local MENU_TAG = "MENU_SPELL_BOOK_SETTINGS"
 -- names kept as written
 local HOST_TITLE_KEYS = { SPELLBOOK = true, TALENTS = true, SPECIALIZATION = true, TALENTS_INSPECT_FORMAT = true,
   TALENTS_LINK_FORMAT = true }
-local SEARCH_KEYS = { SPELLBOOK_SEARCH_INSTRUCTIONS = true }
+local SEARCH_KEYS = { COOLDOWN_VIEWER_SETTINGS_SEARCH_INSTRUCTIONS = true }
 local MENU_TOOLTIP_KEYS = { SPELLBOOK_SEARCH_HIDE_PASSIVES_DISABLED = true }
 local MENU_KEYS = { SHOW_ALL_SPELL_RANKS = true, SPELLBOOK_FILTER_PASSIVES = true, SPELLBOOK_USE_FLYOUTS = true,
   SPELLBOOK_COMPACT_VIEW = true }

@@ -1,6 +1,6 @@
 -- The trade window on Forever: UI/Trade.lua over a TradeFrame replayed from camelot
--- blizzard_uipanels_game/mainline/tradeframe.lua (TradeFrame_Update :72–87, _UpdatePlayerItem :100–122,
--- _UpdateTargetItem :149–170, _UpdateWarnings :89–97) and tradeframe.xml.
+-- blizzard_uipanels_game/mainline/tradeframe.lua (TradeFrame_Update :73–88, _UpdatePlayerItem :101–123,
+-- _UpdateTargetItem :150–171, _UpdateWarnings :90–98) and tradeframe.xml.
 local Stub = require("tests.lua.spec.wow_stub")
 local G = require("tests.lua.spec.stub_gamepanels")
 

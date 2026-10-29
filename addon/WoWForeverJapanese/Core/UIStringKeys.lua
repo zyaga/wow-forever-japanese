@@ -303,7 +303,7 @@ UIStrings.ARGS = {
   LEVEL_UP_STAT = { [1] = "words" }, MARKED_AFK_MESSAGE = { [1] = "verbatim" }, MARKED_DND = { [1] = "verbatim" },
   GUILD_MOTD_TEMPLATE = { [1] = "verbatim" }, TIME_PLAYED_TOTAL = { [1] = "entry" },
   TIME_PLAYED_LEVEL = { [1] = "entry" },
-  -- the voice service a group switched to: VOICE_CHAT_SERVICE_DISCORD / _LEGACY (channelframe.lua:580–581)
+  -- the voice service a group switched to: VOICE_CHAT_SERVICE_DISCORD / _LEGACY (channelframe.lua:568–569)
   VOICE_CHAT_SERVICE_SWITCHING = { [1] = "entryOrText" }, -- "Discord" is a name and stays as written
   -- a group finder listing's voice mode, VOICE_CHAT_MODE_NONE / _LEGACY / _DISCORD / _CUSTOM
   -- (blizzard_groupfinder_vanillastyle/blizzard_lfgvanilla_browse.lua:697–700)
@@ -652,7 +652,7 @@ UIStrings.CHAT_FAMILIES = { "^LOOT_ITEM$", "^LOOT_ITEM_", "^LOOT_ROLL_", "^CREAT
   -- the level-up lines, the [Level N] link and the talent point line, printed on PLAYER_LEVEL_UP
   -- (blizzard_chatframebase/camelot/chatframeutiloverrides.lua:1–44, called from camelot/chatframeoverrides.lua:5;
   -- LEVEL_UP_CHAR_POINTS through GetText at :18), the countdown timer's lines (timer.lua:165–167),
-  -- the newcomer chat's welcome (channelframe.lua:1033–1039), the censored-message prompts (chatframeutil.lua:869;
+  -- the newcomer chat's welcome (channelframe.lua:1021–1027), the censored-message prompts (chatframeutil.lua:869;
   -- itemrefhandlersshared.lua:204) and the trial restriction notices (chatframeoverrides.lua:447, 491)
   "^LEVEL_UP$", "^LEVEL_UP_CHAR_POINTS$", "^COUNTDOWN_SET$", "^COUNTDOWN_CLEAR$", "^NPEV2_CHAT_WELCOME_TO_CHANNEL_",
   "^CENSORED_MESSAGE_", "^CHAT_RESTRICTED_TRIAL$", "^CHAT_TRIAL_RESTRICTED_NOTICE_TRIAL$" }
@@ -961,6 +961,9 @@ UIStrings.LABELS = { SPEED = "number", RANK = "number",
   -- communitiesstreams.lua:90–91)
   CLUB_FINDER_REAPPLY = "wrapped", CLUB_FINDER_INVITE_APPLICANT_REDO = "wrapped",
   COMMUNITIES_CREATE_CHANNEL = "wrapped",
+  -- the PvP match results outcome line, wrapped in the winning team's colour
+  -- (blizzard_pvpmatch/camelot/pvpmatchresults.lua:60–62)
+  VICTORY_TEXT0 = "wrapped", VICTORY_TEXT1 = "wrapped",
   -- ADR-030
   TRADEFRAME_NOT_MODIFIED_TEXT = "wrapped", TRIAL_RESTRICTED = "wrapped",
   VIDEO_OPTIONS_COMBAT_CUES_DISABLED_WARNING = "wrapped", VOICE_TOOLTIP_DEAFEN = "binding",

@@ -1,6 +1,6 @@
 -- UI/QuestMap: the quest log's story header (QuestScrollFrame.Contents.StoryHeader, mainline/questmapframe.lua:
--- 2142, written by QuestLogQuests_Update) and the story tooltip (StoryHeaderMixin:ShowTooltip on that header,
--- :2710–2768): the progress words in Japanese, the story's name and the counts kept.
+-- 2146, written by QuestLogQuests_Update) and the story tooltip (StoryHeaderMixin:ShowTooltip on that header,
+-- :2714–2772): the progress words in Japanese, the story's name and the counts kept.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 local Q = require("tests.lua.spec.stub_questmap")

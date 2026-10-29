@@ -19,7 +19,8 @@ local UI = {
   TALENT_FRAME_SEARCH_TOOLTIP_MATCH = { "Search match", "検索に一致" },
   TALENT_FRAME_SEARCH_TOOLTIP_EXACT_MATCH = { "Exact search match", "検索に完全一致" },
   TALENT_FRAME_SEARCH_TOOLTIP_NOT_ON_ACTIONBAR = { "Not on action bar", "アクションバーにありません" },
-  SEARCH = { "Search", "検索" }, SPELLBOOK_SEARCH_INSTRUCTIONS = { "Search spells", "呪文を検索" },
+  SEARCH = { "Search", "検索" },
+  COOLDOWN_VIEWER_SETTINGS_SEARCH_INSTRUCTIONS = { "Enter search text", "検索テキストを入力" },
   CLOSE = { "Close", "閉じる" }, -- a word a spell's name may happen to be
   -- the Legacy stub's labels (English only matters here)
   LEGACY_REWARD_TRACK_TAB_TOOLTIP = { "Legacy Rewards", "" },
@@ -43,7 +44,7 @@ local function loadPlayerSpells()
   book.name = "SpellBookFrame"
   f.SpellBookFrame = book
   book.SearchBox = CreateFrame("EditBox")
-  book.SearchBox.Instructions = Stub.fontString(_G.SPELLBOOK_SEARCH_INSTRUCTIONS)
+  book.SearchBox.Instructions = Stub.fontString(_G.COOLDOWN_VIEWER_SETTINGS_SEARCH_INSTRUCTIONS)
   book.SearchPreviewContainer = L.previewContainer()
   Stub.loadedAddons[PLAYER_SPELLS] = true
   return f
@@ -148,7 +149,7 @@ describe("the shared spell search on Forever", function()
 
       it("the talent tree's placeholder is Japanese; the spellbook's is left to its own surface", function()
         assert.are.equal("検索", _G.PlayerSpellsFrame.TalentsFrame.SearchBox.Instructions:GetText())
-        assert.are.equal("Search spells", _G.PlayerSpellsFrame.SpellBookFrame.SearchBox.Instructions:GetText())
+        assert.are.equal("Enter search text", _G.PlayerSpellsFrame.SpellBookFrame.SearchBox.Instructions:GetText())
         assert.are.equal("Search", _G.LegacySystemFrame.TreePage.LegacyTreeTraitPanel.SearchBox.Instructions:GetText())
       end)
 

@@ -1,5 +1,5 @@
 -- UI/GroupFinder.lua over LFGParentFrame replayed from camelot
--- blizzard_groupfinder_vanillastyle (blizzard_lfgvanilla_parentframe.lua:87–92, blizzard_lfgvanilla_listing.lua:
+-- blizzard_groupfinder_vanillastyle (blizzard_lfgvanilla_parentframe.lua:73–78, blizzard_lfgvanilla_listing.lua:
 -- 613–652 + 1089–1097 + 822–838, blizzard_lfgvanilla_browse.lua:73–79 + 189 + 305 + 410–419 + 648–653, the Menu
 -- dropdown's UpdateText). Leader names, activity and category names stay English; both load orders.
 local S = require("tests.lua.spec.stub_camelot_social")

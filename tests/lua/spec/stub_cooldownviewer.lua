@@ -5,7 +5,7 @@
 --     slot tooltip :219–226;
 --   cooldownviewersettingsalerts.lua :1–6, :74–173 and cooldownviewereditalertbase.lua :38–45 (the alert editor);
 --   groupbufffilter.lua :178–208, :286–298 (the group-buff editor and the two sections);
---   blizzard_editmode/shared/editmodesystemtemplates.lua :3316–3345 (a viewer's Selection label and tooltip).
+--   blizzard_editmode/shared/editmodesystemtemplates.lua :3398–3444 (a viewer's Selection label and tooltip).
 -- Client writes go to `fs.text` / the stub tooltip's own writers, never through the addon.
 local Stub = require("tests.lua.spec.wow_stub")
 local CV = {}

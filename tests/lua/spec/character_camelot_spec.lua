@@ -330,7 +330,7 @@ end)
 -- the window title. CharacterFrameMixin:UpdateTitle →
 -- SetTitle(characterFrameDisplayInfo[activeSubframe].title):
 -- the player's name on the paperdoll, REPUTATION / CURRENCY / PVP / SKILLS / STATISTICS on the other panes
--- [camelot/characterframe.lua:254–258; camelot/characterframeconstants.lua:9–34].
+-- [camelot/characterframe.lua:242–246; camelot/characterframeconstants.lua:9–34].
 describe("the character window's title on the Forever client", function()
   local WFJ
 

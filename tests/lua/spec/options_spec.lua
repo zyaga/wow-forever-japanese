@@ -374,10 +374,10 @@ describe("Settings pages from the registry and PAGES", function()
     if s.errors > 0 then line = line .. " · " .. ja("collector.errors", s.errors) end
     assert.are.equal("状態: " .. line, O.collectorStatus:GetText())
     local box = O.copyBoxes["collector.path"]
-    assert.are.equal(WFJ.Collector.PATH, box:GetText())
+    assert.are.equal(WFJ.Collector.path(), box:GetText())
     box:SetText("edited")
     box.scripts.OnTextChanged(box, true)
-    assert.are.equal(WFJ.Collector.PATH, box:GetText())
+    assert.are.equal(WFJ.Collector.path(), box:GetText())
     local n = WFJ.Collector.status().entries
     local clears = 0
     local realClear = WFJ.Collector.clear

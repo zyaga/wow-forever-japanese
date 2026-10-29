@@ -1,5 +1,5 @@
 -- UI/HudLabels.lua over the HUD's small bars replayed from Forever blizzard_mirrortimer/mainline/
--- mirrortimer.lua:50–57, 146–158, blizzard_swingtimer/blizzard_swingtimer.lua:161–163, blizzard_statustrackingbar/
+-- mirrortimer.lua:50–57, 146–158, blizzard_swingtimer/blizzard_swingtimer.lua:265–267, blizzard_statustrackingbar/
 -- mainline/honorbar.lua:14–23 and blizzard_actionstatus/mainline/actionstatus.lua:50–55. A spell-named mirror timer
 -- stays English.
 local H = require("tests.lua.spec.helpers")

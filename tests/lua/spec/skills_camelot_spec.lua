@@ -233,7 +233,7 @@ describe("skills on the Forever client: the list's category headers", function()
 end)
 
 -- ADR-042: the SkillLine table's description in the detail pane (SetDescription writes the Description
--- ScrollingFont, skillsframe.lua:248; characterframe.lua:874–886), the SkillLineDescription:* family only; and the
+-- ScrollingFont, skillsframe.lua:248; characterframe.lua:860–872), the SkillLineDescription:* family only; and the
 -- list's headers, which are SkillLineCategory names (the SkillCategory:* family) besides the two GlobalStrings.
 describe("skills on the Forever client: client-table text", function()
   local WFJ, box

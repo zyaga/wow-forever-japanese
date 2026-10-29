@@ -1,7 +1,7 @@
 -- UI/LabelTree.lua: every label under one frame, found by walking it (area "ui", ADR-016 / ADR-029 §4).
 -- The Options window and Edit Mode are built from data: a list row, a settings dialog or a graphics section is a
 -- template whose labels are parentKeys or unnamed regions several frames deep, filled from a definitions table
--- (blizzard_settings_shared/blizzard_settingcontrols.lua:311–356, blizzard_settingsdefinitions_shared/graphics.xml:
+-- (blizzard_settings_shared/blizzard_settingcontrols.lua:330–378, blizzard_settingsdefinitions_shared/graphics.xml:
 -- 140–234, blizzard_editmode/shared/editmodetemplates.lua:24–140). Naming each widget would be per-option code, so a
 -- surface hands the frame the client just filled to LabelTree.show, which walks its regions and children and shows
 -- each FontString, Button and dropdown button through Labels.show. Records are keyed by the widget (Labels.keyer),

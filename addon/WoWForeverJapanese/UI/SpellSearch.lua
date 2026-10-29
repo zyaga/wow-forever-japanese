@@ -17,7 +17,7 @@
 --     on the instance; suggested buttons are walked from the pool (suggestedResultButtonsPool, :67), keyed by widget.
 --     A preview result row's Name is a spell / talent name (SpellSearchPreviewResultMixin:Init, :12): never matched;
 --   the talent tree's SearchBox.Instructions SEARCH (SearchBoxTemplate; the spellbook's own placeholder
---     SPELLBOOK_SEARCH_INSTRUCTIONS is UI/SpellBook's, the Legacy tree's is UI/Legacy's);
+--     COOLDOWN_VIEWER_SETTINGS_SEARCH_INSTRUCTIONS is UI/SpellBook's, the Legacy tree's is UI/Legacy's);
 --   the talent buttons' search icon tooltip: TalentButtonSearchIconMixin:OnEnter: GameTooltip:SetOwner(
 --     self.Mouseover), GameTooltip_AddNormalLine(self.tooltipText), Show (blizzard_sharedtalentui/
 --     blizzard_sharedtalentbuttontemplates.lua:28–37); tooltipText is one of TALENT_FRAME_SEARCH_TOOLTIP_*

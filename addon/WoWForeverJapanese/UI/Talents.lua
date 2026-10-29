@@ -8,10 +8,10 @@
 --   TALENT_SPEC_ACTIVATE (:111), ActiveSpec.ActiveLabel TALENT_SPEC_ACTIVE (:102), ClassCurrencyDisplay.UnspentLabel
 --   UNSPENT_POINTS (:13; the number is a separate FontString, classtalentsframe.lua:18–26). On "talents.static".
 -- - Dual-spec tabs: TabSystem named tabs DUAL_SPEC_PRIMARY / DUAL_SPEC_SECONDARY
---   (camelot/…/blizzard_classtalentsframe.lua:124–134); ClassTalentsFrameTabMixin:GetTabText appends a checkmark or
---   lock atlas markup (:18–19, :39–49) and a force-disabled tab is wrapped in DISABLED_FONT_COLOR
+--   (camelot/…/blizzard_classtalentsframe.lua:140–150); ClassTalentsFrameTabMixin:GetTabText appends a checkmark or
+--   lock atlas markup (:6–7, :27–37) and a force-disabled tab is wrapped in DISABLED_FONT_COLOR
 --   (blizzard_sharedxml/shared/tabsystem/tabsystemtemplates.lua:192–196). Every write goes through the tab's own
---   UpdateTabText (SetIsActive :23–26, SetTabEnabled tabsystemtemplates.lua:202–207), called as self:…, hooked on
+--   UpdateTabText (SetIsActive :11–14, SetTabEnabled tabsystemtemplates.lua:202–207), called as self:…, hooked on
 --   each tab instance. The composite is shown as the Japanese word with the markup and colour kept verbatim.
 --   On "talents.static" too: UpdateTabs does not run on every show, so a released tab could stay English.
 -- - Talent tooltips: TalentDisplayMixin:SetTooltipInternal builds GameTooltip (line 1 = the talent's name via
@@ -34,11 +34,11 @@
 -- - Button tooltips, both GameTooltip with the button as owner then Show(), so the buttons are
 --   help-tooltip owners restricted to their one key:
 --   - a force-disabled dual-spec tab adds its errorReason TALENT_SPEC_LOCKED (camelot/…/blizzard_classtalentsframe
---     .lua:151; TabSystemButtonMixin:OnEnter, tabsystemtemplates.lua:126–136);
+--     .lua:167; TabSystemButtonMixin:OnEnter, tabsystemtemplates.lua:126–136);
 --   - UndoButton's tooltipText TALENT_FRAME_DISCARD_CHANGES_BUTTON_TOOLTIP (camelot/…/blizzard_classtalentsframe.xml
 --     :514–520; UIButtonMixin:OnEnter, blizzard_sharedxml/shared/button/uibuttontemplate.lua:20–45).
 -- Not shown on camelot: PlayerSpellsFrame's own tab labels (TALENT_FRAME_TAB_LABEL_*). IsTabSystemAvailable is false
--- there (camelot/blizzard_playerspellsframe.lua:58–63) and UpdateTabs hides the TabSystem (blizzard_playerspellsframe
+-- there (camelot/blizzard_playerspellsframe.lua:57–62) and UpdateTabs hides the TabSystem (blizzard_playerspellsframe
 -- .lua:115–117).
 local _, WFJ = ...
 local Talents = {}

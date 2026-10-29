@@ -34,7 +34,7 @@
 --                                   areapoidataprovider.lua:3–4, 159–191; areapoieventdataprovider.lua:3–4, 57: a sub
 --                                   pin of AreaPOIPinMixin), an AreaPoiDescription or AreaPoiState row's English. The
 --                                   name (line 1) stays English. The world map and the battlefield map add both
---                                   providers (blizzard_worldmap.lua:231–232; blizzard_battlefieldmap/mainline/
+--                                   providers (blizzard_worldmap.lua:219–220; blizzard_battlefieldmap/mainline/
 --                                   blizzard_battlefieldmap.lua:212–213)
 -- Client-table families (ADR-042) are matched only on the templates that name them (LINE_FAMILIES), after the walk
 -- and from line 2 on: line 1 is a quest's title or a POI's name, which may read like a row and stays English. A

@@ -157,7 +157,7 @@ describe("the reputation frame on the Forever client", function()
 end)
 
 -- ADR-042: the detail pane's description is the Faction table's text. SetDescription writes the Description
--- ScrollingFont (reputationframe.lua:758, 771; characterframe.lua:874–886); only FactionDescription:* rows match it,
+-- ScrollingFont (reputationframe.lua:758, 771; characterframe.lua:860–872); only FactionDescription:* rows match it,
 -- and a FactionDescription text on any other widget (the faction name title) is never changed.
 describe("the reputation frame's faction description", function()
   local WFJ

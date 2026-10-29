@@ -1,5 +1,5 @@
 -- The Options window on Forever: UI/SettingsPanel.lua over a SettingsPanel replayed from
--- blizzard_settings_shared (blizzard_settingspanel.lua:48–78, 875–971, 979–1024; blizzard_settingcontrols.lua:311–356;
+-- blizzard_settings_shared (blizzard_settingspanel.lua:48–78, 875–971, 979–1024; blizzard_settingcontrols.lua:330–378;
 -- blizzard_keybindings.lua:385–394; blizzard_categorylist.lua:94–97). Rows are pooled ScrollBox frames walked after
 -- their initializer; addon pages, key names, unit names and the search box stay as the client wrote them.
 local H = require("tests.lua.spec.helpers")
@@ -70,6 +70,24 @@ local UI = {
   BINDING_NAME_TOGGLECOOLDOWNVIEWERSETTINGS = { "Toggle Cooldown Settings", "クールダウン設定の切り替え" },
   OPTION_TOOLTIP_DISABLE_CHAT_AGE_RESTRICTED_MINOR = { "Chat and other social features are unavailable on accounts "
     .. "belonging to minors", "未成年者のアカウントでは、チャットやその他のソーシャル機能を利用できません" },
+  -- the Preset page (blizzard_settingsdefinitions_shared/preset.lua:60–185): its category, the current-setting
+  -- header, the preset and turn / strafe buttons, the quest POI checkbox and the toast-types dropdown
+  PRESET_LABEL = { "Preset", "プリセット" },
+  CURRENT_SETTING_TEXT_CLASSIC_LABEL = { "|cnNORMAL_FONT_COLOR:Current setting:|r |cnHIGHLIGHT_FONT_COLOR:Classic|r",
+    "|cnNORMAL_FONT_COLOR:現在の設定:|r |cnHIGHLIGHT_FONT_COLOR:クラシック|r" },
+  CURRENT_SETTING_TEXT_ENHANCED_LABEL = { "|cnNORMAL_FONT_COLOR:Current setting:|r |cnHIGHLIGHT_FONT_COLOR:Enhanced|r",
+    "|cnNORMAL_FONT_COLOR:現在の設定:|r |cnHIGHLIGHT_FONT_COLOR:強化|r" },
+  SET_PRESET_OPTION_BUTTON_CLASSIC_LABEL = { "Set to Classic", "クラシックにする" },
+  SET_PRESET_OPTION_BUTTON_ENHANCED_LABEL = { "Set to Enhanced", "強化にする" },
+  CLASSIC_TURN_STRAFE_KEYBINDINGS_BUTTON_TEXT = { "Classic Turn/Strafe Keys", "クラシックの旋回/平行移動キー" },
+  ENHANCED_TURN_STRAFE_KEYBINDINGS_BUTTON_TEXT = { "Enhanced Turn/Strafe Keys", "強化の旋回/平行移動キー" },
+  OPTIONS_MENU_QUEST_POIS_TEXT = { "Show Quest POIs & Blobs", "クエストの目的地と範囲を表示" },
+  OPTIONS_MENU_QUEST_POIS_TOOLTIP = { "When checked quest objectives and blobs will display on the map and minimap",
+    "チェックすると、クエストの目的と範囲がマップとミニマップに表示されます" },
+  OPTIONS_MENU_INTERFACE_TOASTS_TEXT = { "Show Interface Toasts", "インターフェイスの通知を表示" },
+  OPTIONS_MENU_INTERFACE_TOASTS_TOOLTIP = { "Controls which interface toasts will appear",
+    "表示するインターフェイスの通知を設定します" },
+  SHOW_ITEM_TOASTS = { "Show Item Toasts", "アイテムの通知を表示" },
 }
 
 describe("the Options window on Forever", function()
@@ -209,6 +227,62 @@ describe("the Options window on Forever", function()
     assert.are.equal("Controls", addon.Label:GetText())
     assert.is_true(unrecorded(addon.Label))
   end)
+
+  it("the Preset page: its category, header, buttons, options, dropdown and tooltips translate", function()
+    local entry = S.categoryRow("Preset")
+    categories:initFrame(entry, { data = { category = S.category("Preset", S.GAME) } })
+    assert.are.equal("プリセット", entry.Label:GetText())
+    panel:DisplayCategory(S.category("Preset"))
+    assert.are.equal("プリセット", panel.Container.SettingsList.Header.Title:GetText())
+    local current = _G.CURRENT_SETTING_TEXT_CLASSIC_LABEL
+    local header = S.liveHeaderRow(function() return current end)
+    local classic, enhanced = S.buttonRow("Set to Classic"), S.buttonRow("Set to Enhanced")
+    local turn, turnEnhanced = S.buttonRow("Classic Turn/Strafe Keys"), S.buttonRow("Enhanced Turn/Strafe Keys")
+    local poi = S.checkboxRow("Show Quest POIs & Blobs")
+    local toasts = S.dropdownRow("Show Interface Toasts", "Show Item Toasts")
+    for _, row in ipairs({ header, classic, enhanced, turn, turnEnhanced, poi, toasts }) do list:initFrame(row, {}) end
+    assert.are.equal("|cnNORMAL_FONT_COLOR:現在の設定:|r |cnHIGHLIGHT_FONT_COLOR:クラシック|r", header.Title:GetText())
+    assert.are.equal("クラシックにする", classic.Button:GetText())
+    assert.are.equal("強化にする", enhanced.Button:GetText())
+    assert.are.equal("クラシックの旋回/平行移動キー", turn.Button:GetText())
+    assert.are.equal("強化の旋回/平行移動キー", turnEnhanced.Button:GetText())
+    assert.are.equal("クエストの目的地と範囲を表示", poi.Text:GetText())
+    assert.are.equal("インターフェイスの通知を表示", toasts.Text:GetText())
+    assert.are.equal("アイテムの通知を表示", toasts.Control.Dropdown.Text:GetText())
+    S.optionTooltip(poi.Tooltip, { "Show Quest POIs & Blobs",
+      "When checked quest objectives and blobs will display on the map and minimap" })
+    assert.are.equal("チェックすると、クエストの目的と範囲がマップとミニマップに表示されます",
+      _G.SettingsTooltipTextLeft2:GetText())
+    S.optionTooltip(toasts.Tooltip, { "Show Interface Toasts", "Controls which interface toasts will appear" })
+    assert.are.equal("表示するインターフェイスの通知を設定します", _G.SettingsTooltipTextLeft2:GetText())
+  end)
+
+  it("the Preset page's header follows SETTINGS_HEADER_TEXT_UPDATE, which rewrites it outside its initializer",
+    function()
+      local current = _G.CURRENT_SETTING_TEXT_CLASSIC_LABEL
+      local header = S.liveHeaderRow(function() return current end)
+      list:initFrame(header, {})
+      assert.are.equal("|cnNORMAL_FONT_COLOR:現在の設定:|r |cnHIGHLIGHT_FONT_COLOR:クラシック|r", header.Title:GetText())
+      current = _G.CURRENT_SETTING_TEXT_ENHANCED_LABEL -- the player picked the other preset
+      header:fire("SETTINGS_HEADER_TEXT_UPDATE")
+      assert.are.equal("|cnNORMAL_FONT_COLOR:現在の設定:|r |cnHIGHLIGHT_FONT_COLOR:強化|r", header.Title:GetText())
+      alt(true)
+      assert.are.equal(current, header.Title:GetText())
+      alt(false)
+      -- the follower is hooked once, however often the row is walked
+      list:initFrame(header, {})
+      local walks, onRow = 0, WFJ.SettingsPanel.onRow
+      WFJ.SettingsPanel.onRow = function(...) walks = walks + 1; return onRow(...) end
+      header:fire("SETTINGS_HEADER_TEXT_UPDATE")
+      WFJ.SettingsPanel.onRow = onRow
+      assert.are.equal(1, walks)
+      assert.are.equal("|cnNORMAL_FONT_COLOR:現在の設定:|r |cnHIGHLIGHT_FONT_COLOR:強化|r", header.Title:GetText())
+      -- an addon's page: the row is left as the client wrote it, after the event too
+      panel:DisplayCategory(S.category("MyAddon", S.ADDONS))
+      current = _G.CURRENT_SETTING_TEXT_CLASSIC_LABEL
+      header:fire("SETTINGS_HEADER_TEXT_UPDATE")
+      assert.are.equal(current, header.Title:GetText())
+    end)
 
   it("the list header follows DisplayLayout; an addon's page is left alone, header, rows and tooltip", function()
     panel:DisplayCategory(S.category("Graphics"))

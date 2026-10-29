@@ -1,6 +1,6 @@
 -- The trainer and the raid panel on the Forever client (camelot loads the mainline Blizzard_TrainerUI,
 -- Blizzard_RaidFrame and Blizzard_RaidUI files). The replays follow the Forever source: trainer rows are pooled
--- ScrollBox buttons written by ClassTrainerFrame_InitServiceButton (mainline/blizzard_trainerui.lua:618–748); the raid
+-- ScrollBox buttons written by ClassTrainerFrame_InitServiceButton (mainline/blizzard_trainerui.lua:602–732); the raid
 -- panel's description is a ScrollingFont, its info header a DialogHeader, its column labels Frames with .text, and a
 -- saved-instance row's reset is `reset` (mainline/raidframe.xml / .lua).
 local H = require("tests.lua.spec.helpers")
@@ -83,13 +83,13 @@ describe("trainer and raid on the Forever client", function()
       function dd.SetSelectionText(self, fn) self.selectionFunc = fn end
       function dd.UpdateToMenuSelections(self) self:SetText(self.selectionFunc and self.selectionFunc({})) end
       frame.FilterDropdown = dd
-      frame:SetScript("OnShow", function(self) -- ClassTrainerFrame_OnShow (lua:67–69): the filter's selection text
+      frame:SetScript("OnShow", function(self) -- ClassTrainerFrame_OnShow (lua:238–267): the filter's selection text
         self.FilterDropdown:SetSelectionText(function() return en("FILTER") end)
         self.FilterDropdown:UpdateToMenuSelections()
       end)
       Stub.button("ClassTrainerTrainButton", en("TRAIN"))
       rows = {}
-      -- lua:520–606: requirements, then name / subText / nameSubText; pet cost (lua:626–644)
+      -- lua:673–689: requirements, then name / subText / nameSubText; pet cost (lua:709–728)
       _G.ClassTrainerFrame_InitServiceButton = function(button, data)
         button.name.text = data.name
         if data.used then
@@ -103,9 +103,9 @@ describe("trainer and raid on the Forever client", function()
         end
         button.nameSubText.text = data.sub and string.format(en("PARENS_TEMPLATE"), data.sub) or ""
         if data.tp then button.alternateCost.text = string.format(en("TRAINING_POINTS_ABBREV"), tostring(data.tp)) end
-        if button.UpdateNameWidth then button:UpdateNameWidth() end -- lua:748, before the addon's post-hook
+        if button.UpdateNameWidth then button:UpdateNameWidth() end -- lua:732, before the addon's post-hook
       end
-      _G.ClassTrainerFrame_UpdateTrainingPoints = function() -- lua:603–616
+      _G.ClassTrainerFrame_UpdateTrainingPoints = function() -- lua:587–600
         frame.trainingPoints.text.text = string.format(en("TRAINING_POINTS"), 12)
         for _, b in ipairs(rows) do
           if b.data.tp then b.alternateCost.text = string.format(en("TRAINING_POINTS_ABBREV"), tostring(b.data.tp)) end
@@ -210,7 +210,7 @@ describe("trainer and raid on the Forever client", function()
       WFJ.Trainer.init()
       local tt = _G.GameTooltip
       local function left(i) return _G["GameTooltipTextLeft" .. i] end
-      tt:SetOwner(_G.ClassTrainerTrainButton, "ANCHOR_RIGHT") -- lua:295–302
+      tt:SetOwner(_G.ClassTrainerTrainButton, "ANCHOR_RIGHT") -- lua:307–312
       tt:SetText(en("TRAINER_CANNOT_EXCEED_MAX_PROFESSIONS"))
       tt:Show()
       assert.are.equal(ja("TRAINER_CANNOT_EXCEED_MAX_PROFESSIONS"), left(1):GetText())

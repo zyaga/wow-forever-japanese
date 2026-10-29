@@ -3,7 +3,7 @@
 -- camelot/maplegendframedata.lua; the panel is QuestMapFrame.MapLegend (questmapframe.xml:954), its side tab
 -- QuestMapFrame.MapLegendTab (:459–466).
 -- Reachability: camelot hides the tab (camelot/questmapframeoverrides.lua:6; questmapframe.lua:245–246), and
--- WorldMapMixin:UninitializeGamepad shows it again unconditionally (blizzard_worldmap/blizzard_worldmap.lua:1188), so
+-- WorldMapMixin:UninitializeGamepad shows it again unconditionally (blizzard_worldmap/blizzard_worldmap.lua:1272), so
 -- the legend opens after a gamepad-mode session. The camelot data file lists what it holds: three categories and
 -- seven entries (camelot/maplegendframedata.lua:1–16). Whether it shows in ordinary play is an in-game check.
 -- - MapLegendMixin:SetupCategories builds everything once, at the panel's OnLoad (maplegendframe.lua:3–33): a

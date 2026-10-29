@@ -32,7 +32,7 @@
 --   transcription: VOICE_CHAT_TRANSCRIPTION_ENABLE / _DISABLE (blizzard_chatframe/shared/
 --   voicechattranscriptionbutton.lua ShowTooltip, :165–174). Its speech-to-text HelpTip is UI/HelpTips'.
 -- Not here: the channel list's names and counts (channel names stay English), the right-click menus (UI/Menus), the
--- New Channel popup (CreateChannelPopup is shown with StaticPopupSpecial_Toggle, channelframe.lua:726, ADR-015 §5),
+-- New Channel popup (CreateChannelPopup is shown with StaticPopupSpecial_Toggle, channelframe.lua:714, ADR-015 §5),
 -- the voice HelpTip (UI/HelpTips), every chat-line announcement (ChatFrameUtil.DisplaySystemMessageInPrimary).
 -- The surface is set up only where ChannelFrame carries SetTitle (the mainline ButtonFrameTemplate's
 -- TitledPanelMixin, blizzard_sharedxml/portraitframe.lua:12; UI/Labels.title).
