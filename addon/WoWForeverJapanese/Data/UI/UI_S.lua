@@ -1673,7 +1673,7 @@ WFJ.Data.add("ui", {
   ["STAT_SPELLPOWER_TOOLTIP"] = { "|cFFFFFFFF呪文|rのダメージが最大%d増加\n\n|cFFFFFFFF呪文ダメージ|rと|cFFFFFFFF呪文威力|rで上昇\n\n|cffBCBCBC詠唱時間が長いほど呪文ダメージの恩恵を受けやすい\n\n現在のレベルより大幅に低いランクの呪文は呪文ダメージの恩恵が少なく、クラスアビリティの発動頻度も低くなる|r", 0x5fb55e73, "." },
   ["STAT_SPELL_PENETRATION"] = { "呪文貫通", 0xefffe8c8, "." },
   ["STAT_TARGET_LEVEL"] = { "目標のレベル", 0x0e86108b, "." },
-  ["STAT_WARLOCK_HEALTH_PET_TOOLTIP"] = { "このペットが倒れるまでに耐えられる|cFFFFFFFFダメージ|rの最大量\n\n|cFFFFFFFF主人のスタミナ|rで上昇\n\n|cFFBCBCBCスタミナ1ごとに体力が7.5増加|r", 0x19646af9, "." },
+  ["STAT_WARLOCK_HEALTH_PET_TOOLTIP"] = { "このペットが倒れるまでに耐えられる|cFFFFFFFFダメージ|rの最大量\n\n|cFFFFFFFF主人のスタミナ|rで上昇\n\n|cFFBCBCBCスタミナ1ごとに体力が2増加|r", 0x19646af9, "." },
   ["STAT_WARLOCK_PET_CRIT_BONUS"] = { "|cFFFFFFFF主人の呪文クリティカル率|rの100%%分上昇\n\n|cFFBCBCBC近接攻撃のクリティカルはダメージが100%%増加\n\n呪文と回復のクリティカルは効果が50%%上昇\n\nほとんどの周期効果もクリティカルが発生します|r", 0x9e9e6a01, "." },
   ["STAT_WARLOCK_PET_MANA_REGEN_TOOLTIP"] = { "5秒ごとに回復する|cFFFFFFFFマナ|rの量\n\n|cFFFFFFFF主人の知力|rの%d%%で上昇\n\n|cFFBCBCBCインプは他の悪魔よりも主人の知力の恩恵を大きく受けます|r", 0xda74a723, "." },
   ["STAT_WARLOCK_PET_MANA_TOOLTIP"] = { "|cFFFFFFFF呪文|rや|cFFFFFFFFアビリティ|rの使用に必要なリソース\n\n|cFFBCBCBCマナを5秒間消費しないと自動で回復|r", 0x1b992de6, "." },

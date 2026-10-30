@@ -66,7 +66,7 @@ FILE_PREFIX = {
 # Generated types in TOC load order: numeric-id shards, the keyed types, then the UI strings.
 # An English source that may legitimately hold SEVERAL versions at once, because more than one client
 # serves it and they serve different subsets. Only the client quest cache: Forever's server answers under a
-# third of the quest ids Classic Era's did (content the beta has not enabled), so a union import keeps both
+# third of the quest ids Classic Era's did (content Forever has not enabled), so a union import keeps both
 # builds' lines and `wdb` is pinned at two versions on purpose (ADR-020). Every other source is one thing at
 # one version (pfQuest is a repo at a commit, VMaNGOS a database snapshot), and two versions there means a
 # half-run import, which `generate` still refuses. `db2` joins it for the same reason: the next Forever

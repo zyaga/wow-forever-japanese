@@ -171,7 +171,7 @@ def _no_words(en: str | None) -> bool:
 CLASS_RANK = {decisions.CORRECTION: 0, "human": 1, decisions.MACHINE: 2}
 
 
-def _rank(c: dedupe.Candidate, field_name: str, scope: Scope) -> tuple[int, ...]:
+def variant_rank(c: dedupe.Candidate, field_name: str, scope: Scope) -> tuple[int, ...]:
     """Tie-break key (lower wins): hand-written before machine (a `correction` first, since a person fixed
     this text, ADR-012; then an imported `human` translation; then a `machine` draft, ADR-014), then the
     variant covering more English paragraphs, then (between machine drafts) the higher style guide version and
@@ -234,7 +234,7 @@ def decide(
         c.index: _evaluate(c.ja, field_name, scope, allowlist, c.provenance, _accepted(c)) for c in eligible
     }
     passes = lambda c: not results[c.index][0]  # noqa: E731
-    rank = lambda c: _rank(c, field_name, scope)  # noqa: E731
+    rank = lambda c: variant_rank(c, field_name, scope)  # noqa: E731
     if len(eligible) == 1 and _rejected(eligible[0]):
         # A reject ruling is permanent: the ruled text is never a candidate again, even when it
         # later passes the rules (new English, an allowlist entry, a rule change). The line ships nothing and

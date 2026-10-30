@@ -345,7 +345,7 @@ def test_the_wrong_build_for_the_forever_cache_is_refused(tmp_path, monkeypatch,
 
 
 def test_union_keeps_the_earlier_builds_quests_a_newer_cache_never_served(tmp_path, monkeypatch, capsys):
-    """Forever's server answers under a third of the quest ids Classic Era's did: content the beta
+    """Forever's server answers under a third of the quest ids Classic Era's did: content Forever
     has not enabled. A replace would drop those quests from Blizzard's own text back to pfQuest's; union
     keeps them at the build that served them."""
     data = _data(tmp_path, monkeypatch)

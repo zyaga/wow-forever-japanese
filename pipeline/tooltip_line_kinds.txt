@@ -8,7 +8,7 @@
 # tests/python/test_tooltip_line_kinds.py fails when an inventoried kind has no decision, a decision names a kind the
 # client does not have, a named key is not a shipped dictionary key, or a UI/TooltipUnit key is not in its key list.
 # Re-check every decision when a new kind appears on a client build.
-None  # translated: UI/Tooltip; data: the structural pass (any UI dictionary entry) on item, spell and aura tooltips; on a unit tooltip UI/TooltipUnit's keys only. A line another addon adds, and the beta bug-report line ("Press F6 to submit an issue", Blizzard_PTRFeedback, `## OnlyBetaAndPTR: 1`, gone at launch), stay as written
+None  # translated: UI/Tooltip; data: the structural pass (any UI dictionary entry) on item, spell and aura tooltips; on a unit tooltip UI/TooltipUnit's keys only. A line another addon adds stays as written
 Blank  # english: no text
 UnitName  # english: the unit's name (names stay English)
 GemSocket  # translated: UI/Tooltip; keys: EMPTY_SOCKET_RED EMPTY_SOCKET_BLUE EMPTY_SOCKET_YELLOW EMPTY_SOCKET_META EMPTY_SOCKET_PRISMATIC; the structural pass

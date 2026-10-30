@@ -1,6 +1,6 @@
 # WoW Forever Japanese: Roadmap
 
-> What is done, what is open, and what waits on a decision. How much of the game ships in Japanese right now: [Coverage](operations/coverage.md). The Forever beta opened on 2026-09-17; the game launches on 2026-11-04.
+> What is done, what is open, and what waits on a decision. How much of the game ships in Japanese right now: [Coverage](operations/coverage.md). Forever launches on 2026-11-04.
 
 ## Phase 1: Trusted data (done)
 - **Goal:** `data/` seeded from the predecessor addons with only human translations that pass the rules: ID-aligned against the English, complete (never a first-paragraph-only translation), duplicates resolved by a stated rule ([ADR-001](adr/001-id-keyed-data-with-per-field-provenance.md), [ADR-011](adr/011-provenance-layers-and-completeness.md)).
@@ -10,9 +10,9 @@
 - **Goal:** a clean rewrite with no dependencies: quest windows and log, gossip, books, item and spell tooltips, hold-a-key-for-English, the master switch and per-area toggles, settings pages, the bundled font, the English collector.
 - **Result:** every surface in [App capabilities](app-capabilities.md). The whole game interface is in scope except names ([ADR-015](adr/015-ui-text-surfaces.md), [ADR-016](adr/016-whole-window-interface-coverage.md)): every window the Forever client loads has a recorded disposition, and a test fails when a new client build adds one nobody has read ([ADR-030](adr/030-every-window-the-forever-client-loads.md)). Word readings and the word card ship on quest and NPC-talk prose, window labels and plain-text book pages ([Readings](systems/readings.md)). Players can report a line from the game ([Fix reports](systems/fix-reports.md)).
 
-## Phase 3: Beta (in progress)
+## Phase 3: The Forever client (in progress)
 - **Goal:** verify the addon on the Forever client, harvest its English, and measure what changed.
-- **Done:** the addon runs on the Forever beta and targets it alone ([ADR-034](adr/034-forever-is-the-only-target.md)). The client tables and the quest cache are read from the installed client ([ADR-020](adr/020-quest-cache-harvest.md), [ADR-021](adr/021-client-tables-from-the-local-archive.md)), currently at build 1.60.1.70425. The English the collector records in game replaces stand-in English for quest and gossip text and is checked like any source ([ADR-053](adr/053-forever-shown-english-is-the-english.md)).
+- **Done:** the addon runs on Forever and targets it alone ([ADR-034](adr/034-forever-is-the-only-target.md)). The client tables and the quest cache are read from the installed client ([ADR-020](adr/020-quest-cache-harvest.md), [ADR-021](adr/021-client-tables-from-the-local-archive.md)), currently the tables of build 1.60.1.70685 and the quest cache of 1.60.1.70532 ([ADR-068](adr/068-quest-cache-pinned-apart-from-the-tables.md)). The English the collector records in game replaces stand-in English for quest and gossip text and is checked like any source ([ADR-053](adr/053-forever-shown-english-is-the-english.md)).
 - **Open:** the in-game checks listed in [Testing strategy](testing/strategy.md). Most surfaces pass their stub-client tests and await a look in game on Forever.
 
 ## Phase 4: Translation (in progress)

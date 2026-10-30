@@ -5,7 +5,7 @@
 
 Reads `.build.info` and `Data/` of the install and writes only into `--out` (refused inside the install), the
 same read-only contract as `wfj.dev.client_tables`. Each requested path is resolved through the archive's root
-by name hash and, when the root carries no names (as on the Forever beta build), through the `--listfile`
+by name hash and, when the root carries no names (as on Forever's), through the `--listfile`
 id;path CSV instead (the community listfile). A path neither can resolve is reported `missing`, not raised;
 content the client has not downloaded reports `not downloaded`. Prints the build, then one line
 per file (path, FileDataID, bytes, or `missing`), and exits 1 when no file at all could be resolved; that

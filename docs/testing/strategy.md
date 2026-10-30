@@ -184,7 +184,7 @@ The Forever windows ([ADR-029](../adr/029-camelot-targets-the-mainline-family.md
 - Record whether the quest window and the map (or the popup) can be open together, and the order in which they re-parent the shared FontStrings.
 - Record which tracker module renders normal quests, `QuestObjectiveTracker` or `CampaignQuestObjectiveTracker`, and the defaults of the level-prefix and difficulty-colour CVars.
 - Record whether `MailFrameTitleText`, `PlayerSpellsFrameTitleText` and `BankFrameTitleText` exist as globals (`/dump MailFrameTitleText`). The dotted candidates are used either way.
-- Record whether PvP rank data is live on the beta (`/dump C_MajorFactions.GetMajorFactionProgressionInfo(2800)`). If nil, the panel shows the unavailable text.
+- Record whether PvP rank data is live on Forever (`/dump C_MajorFactions.GetMajorFactionProgressionInfo(2800)`). If nil, the panel shows the unavailable text.
 - Record whether `Blizzard_Communities`, `Blizzard_ObjectiveTracker` and `Blizzard_PlayerSpells` load at login or on demand (`/dump C_AddOns.IsAddOnLoaded("<name>")` right after login, and `C_AddOns.IsAddOnLoadOnDemand("<name>")`).
 - Record whether pooled-row hooks reach rows created after the hook: who rows, roster rows, trainer service rows, spell items (scroll a long list, page the spellbook, reopen each window).
 - Record what the talent frame shows at level 10 (the unlock level is not in the source).
@@ -467,7 +467,7 @@ The pop-up dialogs, the tooltip frames of their own, the dressing room's custom-
    はい / いいえ buttons are Japanese and fit inside the box. Hold Alt → English; release → Japanese.
 2. **The protected-action check.** Press はい: the dialog closes with no "blocked" message and no
    Lua error (a level-1 character has no instance to reset).
-3. **Countdown (not checkable at level 1).** `/camp` logs out at once on the Forever beta: the server sends no
+3. **Countdown (not checkable at level 1).** `/camp` logged out at once on Forever up to 1.60.1.70532: the server sent no
    `PLAYER_CAMPING`, so the countdown dialog (`blizzard_game/shared/eventimplementation.lua:155–157`) never shows.
    Check a countdown when one appears (Release Spirit after a death).
 4. **Dialog layout.** In steps 1–2 the Japanese text fits inside the dialog.

@@ -184,7 +184,7 @@ def test_every_enus_key_set_aside_stops_and_lists_them():
 
 
 # --- an archive entry whose header carries no encoded key ------------------------------------------
-# The Forever beta client (1.60.1.69893) leaves the 30-byte entry header zeroed and writes the BLTE
+# The Forever client (1.60.1.69893) leaves the 30-byte entry header zeroed and writes the BLTE
 # payload at +30 as normal. Reading that as a key mismatch made every DB2 and 3,049 of 4,044 interface
 # files look "not downloaded" when the data was on disk all along. A blank header is unwritten,
 # not wrong: trust the index, and check the decoded bytes against their content key instead.

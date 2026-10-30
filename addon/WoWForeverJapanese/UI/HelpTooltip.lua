@@ -23,7 +23,7 @@ local owners = setmetatable({}, { __mode = "k" }) -- frame â†’ opts ({ only = â€
 -- registered owner's until it hides or shows something else. { owner, opts } | nil
 local adopted = nil
 -- The last walkAs pass: its owner, opts and tooltip-data kind, kept while the same build is shown again (another
--- writer appends lines and calls Show, as the beta's bug-report addon does on quest tooltips). Ended by a new build
+-- writer, such as another addon on quest tooltips, appends lines and calls Show). Ended by a new build
 -- (any hooked method but Show and AppendText), another data kind, or hiding. { owner, opts, kind } | nil
 local held = nil
 local busy = false

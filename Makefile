@@ -15,7 +15,7 @@ VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
 
-.PHONY: voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
+.PHONY: voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
 
 help:
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | sed 's/:.*## /: /'
@@ -124,7 +124,7 @@ per_client_overrides = $(strip $(foreach v,$(PER_CLIENT_VARS),$(if $(filter comm
 ONE_CLIENT_GUARD = $(if $(per_client_overrides),{ echo "$@: runs every client in CLIENTS; $(per_client_overrides) given on the command line or in the environment would apply to all of them (set the client's pins in the Makefile; or use a single-client target with CLIENT=)"; exit 2; },true)
 # While Forever's quest cache is pinned behind its tables (ADR-068), the tables come from a login's hotfix cache:
 # a full import would put Classic Era's English on the rows only a play session's hotfixes carry.
-QUEST_PIN_GUARD = $(if $(forever_QUEST_BUILD),{ echo "$@: forever_QUEST_BUILD is set: Forever's tables are ahead of its quest scan (ADR-068). Run only Forever's table steps; after the scan delete the line and pull the tables again"; exit 2; },true)
+QUEST_PIN_GUARD = $(if $(forever_QUEST_BUILD),{ echo "$@: forever_QUEST_BUILD is set: Forever's tables are ahead of its quest scan (ADR-068). Run only Forever's table steps (make import-tables CLIENT=forever); after the scan delete the line and pull the tables again"; exit 2; },true)
 WAGO_ITEM    ?= $(CLIENT_DIR)/ItemSparse.csv
 WAGO_SPELL   ?= $(CLIENT_DIR)/SpellName.csv
 WAGO_BUILD   ?= $($(CLIENT)_BUILD)
@@ -229,9 +229,14 @@ import-shared-english:
 	cd pipeline && $(PY) -m wfj import english forever-vo $(FOREVER_VO) --commit $(FOREVER_VO_SHA) --skip forever_vo_skipped.txt
 
 # One client's English (CLIENT=<client>): its quest cache, then its tables (names, tooltip text, UI strings).
+# While Forever's quest cache is pinned behind its tables (ADR-068) only the table half may run, `import-tables`.
 import-client:
+	@$(if $(filter forever,$(CLIENT)),$(QUEST_PIN_GUARD),true)
 	@echo "import: $(CLIENT) $(WAGO_BUILD) ($(TABLES_SRC)) from $(CLIENT_DIR)"
 	cd pipeline && $(PY) -m wfj import english wdb "$(WDB_QUEST)" --build $(WDB_BUILD) --questv2 "$(WAGO_QUESTV2)" --missing "$(WDB_MISSING)" --merge $(MERGE)
+	@$(MAKE) -s import-tables CLIENT=$(CLIENT)
+
+import-tables: ## one client's table English (CLIENT=<client>): names, tooltip text, UI strings; the import that runs while forever_QUEST_BUILD is set
 	cd pipeline && $(PY) -m wfj import english wago-ids "$(WAGO_ITEM)" "$(WAGO_SPELL)" --build $(WAGO_BUILD) --src $(TABLES_SRC) --merge $(MERGE)
 	cd pipeline && $(PY) -m wfj import english client-text "$(WAGO_ITEM)" "$(CLIENT_SPELL)" "$(CLIENT_ITEMEFFECT)" $(CLIENT_TEXT_LINK) --build $(WAGO_BUILD) --src $(TABLES_SRC) --merge $(MERGE)
 	cd pipeline && $(PY) -m wfj import english wago-ui "$(WAGO_GLOBALSTRINGS)" "$(WAGO_ITEMSUBCLASS)" --enchantments "$(WAGO_ENCHANTMENTS)" --subtexts "$(CLIENT_SPELL)" $(FAMILY_ARGS) --keys $(UI_KEYS) --build $(WAGO_BUILD) --src $(TABLES_SRC) --merge $(MERGE)

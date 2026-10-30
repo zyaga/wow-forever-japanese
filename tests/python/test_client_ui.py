@@ -38,25 +38,25 @@ def archive(monkeypatch):
 
 def test_out_inside_the_install_is_refused(wow: Path):
     with pytest.raises(SystemExit, match="inside the install"):
-        client_ui.extract(wow, "wow_classic_beta", wow / "Interface" / "out", ["Interface/FrameXML/X.lua"])
+        client_ui.extract(wow, "wowf", wow / "Interface" / "out", ["Interface/FrameXML/X.lua"])
     with pytest.raises(SystemExit, match="inside the install"):
-        client_ui.extract(wow, "wow_classic_beta", wow, ["Interface/FrameXML/X.lua"])
+        client_ui.extract(wow, "wowf", wow, ["Interface/FrameXML/X.lua"])
 
 
 def test_a_path_the_root_does_not_name_is_reported_not_raised(wow: Path, tmp_path: Path):
-    rows = client_ui.extract(wow, "wow_classic_beta", tmp_path / "out", ["Interface/FrameXML/Nope.lua"])
+    rows = client_ui.extract(wow, "wowf", tmp_path / "out", ["Interface/FrameXML/Nope.lua"])
     assert rows == [("Interface/FrameXML/Nope.lua", None, None)]
 
 
 def test_content_that_is_not_downloaded_keeps_its_id_and_reports_no_bytes(wow: Path, tmp_path: Path):
-    rows = client_ui.extract(wow, "wow_classic_beta", tmp_path / "out", ["Interface/FrameXML/Gone.lua"])
+    rows = client_ui.extract(wow, "wowf", tmp_path / "out", ["Interface/FrameXML/Gone.lua"])
     assert rows == [("Interface/FrameXML/Gone.lua", 222, None)]
     assert not (tmp_path / "out" / "Gone.lua").exists()
 
 
 def test_a_readable_file_is_written_under_out(wow: Path, tmp_path: Path):
     out = tmp_path / "out"
-    rows = client_ui.extract(wow, "wow_classic_beta", out, ["Interface/FrameXML/QuestFrame.lua"])
+    rows = client_ui.extract(wow, "wowf", out, ["Interface/FrameXML/QuestFrame.lua"])
     assert rows[0][0] == "Interface/FrameXML/QuestFrame.lua" and rows[0][1] == 111 and rows[0][2] > 0
     written = out / "Interface" / "FrameXML" / "QuestFrame.lua"
     assert written.read_text(encoding="utf-8").startswith("QuestFrame")
@@ -67,7 +67,7 @@ def test_files_sharing_a_basename_do_not_overwrite_each_other(wow: Path, tmp_pat
     out = tmp_path / "out"
     listfile = {"interface/addons/x/vanilla/questframe.lua": 111,
                 "interface/addons/x/mainline/questframe.lua": 111}
-    client_ui.extract(wow, "wow_classic_beta", out,
+    client_ui.extract(wow, "wowf", out,
                       ["Interface/AddOns/X/Vanilla/QuestFrame.lua", "Interface/AddOns/X/Mainline/QuestFrame.lua"],
                       listfile)
     assert (out / "Interface/AddOns/X/Vanilla/QuestFrame.lua").is_file()
@@ -79,9 +79,9 @@ def test_a_listfile_resolves_a_path_the_root_does_not_name(wow: Path, tmp_path: 
     csv.write_text("111;interface/framexml/questframe.lua\nnot-a-row\n", encoding="utf-8")
     listfile = client_ui.read_listfile(csv)
     assert listfile == {"interface/framexml/questframe.lua": 111}
-    rows = client_ui.extract(wow, "wow_classic_beta", tmp_path / "o", ["Interface/FrameXML/Other.lua"], listfile)
+    rows = client_ui.extract(wow, "wowf", tmp_path / "o", ["Interface/FrameXML/Other.lua"], listfile)
     assert rows == [("Interface/FrameXML/Other.lua", None, None)]  # not in the listfile either
-    rows = client_ui.extract(wow, "wow_classic_beta", tmp_path / "o2", ["Interface/FrameXML/QuestFrame.lua"],
+    rows = client_ui.extract(wow, "wowf", tmp_path / "o2", ["Interface/FrameXML/QuestFrame.lua"],
                              {"interface/framexml/questframe.lua": 111})
     assert rows[0][1] == 111 and rows[0][2] > 0
 
@@ -125,9 +125,9 @@ def test_a_normal_client_path_is_kept_under_out(tmp_path: Path):
 
 def test_an_escaping_path_is_reported_and_writes_nothing(wow: Path, tmp_path: Path, capsys):
     out = tmp_path / "out"
-    rows = client_ui.extract(wow, "wow_classic_beta", out,
+    rows = client_ui.extract(wow, "wowf", out,
                              ["Interface/FrameXML/QuestFrame.lua"], {"../escape.lua": 111})
-    rows += client_ui.extract(wow, "wow_classic_beta", out, ["../escape.lua"], {"../escape.lua": 111})
+    rows += client_ui.extract(wow, "wowf", out, ["../escape.lua"], {"../escape.lua": 111})
     assert rows[-1] == ("../escape.lua", 111, None)
     assert "refused" in capsys.readouterr().err
     assert not (tmp_path / "escape.lua").exists()

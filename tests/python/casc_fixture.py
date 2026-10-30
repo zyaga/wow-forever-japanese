@@ -50,7 +50,7 @@ def build(
     """An install at `root` holding `files` ({client path: bytes}); `blobs` overrides a file's stored BLTE blob.
     FileDataIDs are 1000, 1001, … in path order. `build_info_rows`: (product, version, Active). `named=False`
     writes a root without name hashes. `blank_headers=True` zeroes each archive entry's 30-byte header, the
-    way the Forever beta client writes them: the payload still follows at +30. Returns root."""
+    way the Forever client writes them: the payload still follows at +30. Returns root."""
     blobs = blobs or {}
     data_dir = root / "Data" / "data"
     data_dir.mkdir(parents=True)

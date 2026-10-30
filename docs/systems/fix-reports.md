@@ -41,7 +41,7 @@ The button is built on the client's `MiniMapButtonTemplate`, placed on the minim
 
 ### The fix window
 
-`UI/FixWindow` (`WFJFixWindow`) is built on the client's own window frame, `ButtonFrameTemplate` with the portrait hidden and the title set by `SetTitle`: 600 × 580, movable, Esc closes it, strata `FULLSCREEN_DIALOG` with `SetToplevel`, so the beta's Issue Reporter button does not cover it. Three tabs from the client's `TabSystemTemplate` (`TabSystemTopButtonTemplate` buttons) sit in the strip above the inset: **翻訳** (Translations) · **送信待ち（n）** (Pending (n)) · **報告を送る** (Send report); a row opens the edit panel, which keeps its tab selected. Every widget is a Forever template, with no hand-drawn frames:
+`UI/FixWindow` (`WFJFixWindow`) is built on the client's own window frame, `ButtonFrameTemplate` with the portrait hidden and the title set by `SetTitle`: 600 × 580, movable, Esc closes it, strata `FULLSCREEN_DIALOG` with `SetToplevel`, above the client's own overlays. Three tabs from the client's `TabSystemTemplate` (`TabSystemTopButtonTemplate` buttons) sit in the strip above the inset: **翻訳** (Translations) · **送信待ち（n）** (Pending (n)) · **報告を送る** (Send report); a row opens the edit panel, which keeps its tab selected. Every widget is a Forever template, with no hand-drawn frames:
 
 | Widget | Template (`UI/OptionsWidgets` / `UI/FixWindow`) |
 |---|---|

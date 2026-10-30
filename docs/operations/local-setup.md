@@ -159,7 +159,7 @@ Staging a client folder (the preflight refuses the import until every client's f
 - **Quest cache:** `make wdb-copy CLIENT=<client> WOW_DIR=<client folder>` after a scan. The cache cannot be downloaded: its content depends on scan history. The committed `data/english/quest` was built from the Classic Era cache (build 1.15.9.69722, sha256 `a10d1d9b50a6bc724383519338b8c109cdc3b59b14defee585b70495480ec763`) and the Forever cache (build 1.60.1.70009, sha256 `b3e110161e30d5a07c31df154002b445d8ef9f1430f51f77b4a8528f744e5885`); without those files nobody can rebuild `data/english/quest` byte for byte.
 - `missing.txt` is written by the cache import; nothing to stage.
 
-`CLIENT` (default `forever`) picks the client for the single-client targets (`wago-fetch`, `tables-extract`, `wdb-copy`). The per-client knobs (`WAGO_BUILD`, `WDB_BUILD`, `TABLES_SRC`, `WDB_QUEST`, `WAGO_QUESTV2`, `CLIENT_DIR`, `PRODUCT`, …) derive from `CLIENT`; pass them on the command line only to a single-client target. `make import`, `import-english`, `data` and `rebuild-check` refuse them, because a value would apply to every client. A new client build is a `Makefile` change (bump `<client>_BUILD`, stage the new folder; for Forever, while its tables ship ahead of the quest scan, `forever_QUEST_BUILD` names the last scanned build, and the line is deleted before the build's quest cache is copied), committed with the regenerated data.
+`CLIENT` (default `forever`) picks the client for the single-client targets (`wago-fetch`, `tables-extract`, `wdb-copy`, `import-tables`). The per-client knobs (`WAGO_BUILD`, `WDB_BUILD`, `TABLES_SRC`, `WDB_QUEST`, `WAGO_QUESTV2`, `CLIENT_DIR`, `PRODUCT`, …) derive from `CLIENT`; pass them on the command line only to a single-client target. `make import`, `import-english`, `data` and `rebuild-check` refuse them, because a value would apply to every client. A new client build is a `Makefile` change (bump `<client>_BUILD`, stage the new folder; for Forever, while its tables ship ahead of the quest scan, `forever_QUEST_BUILD` names the last scanned build, and the line is deleted before the build's quest cache is copied), committed with the regenerated data.
 
 **Source stamp.** Each client folder's CSVs carry `tables-source.txt`, one `<table> <src>@<build>` line per table, written only by `make tables-extract` and `make wago-fetch`. The preflight stops the import when a CSV has no stamp or a stamp other than its client's pins. CSVs downloaded by hand need one too: `python -m wfj.dev.tables_stamp write --dir <client folder> --src wago --build <build> <Table> …`.
 
@@ -184,7 +184,7 @@ make import-english                               # every client's English, labe
 make rebuild-check                                # prove a clean rebuild gives back HEAD's data/ and addon
 ```
 
-`<Forever client folder>` is the Forever folder inside `<World of Warcraft folder>`: `_forever_` (launcher product `wowf`). During the beta it was `_classic_beta_` (product `wow_classic_beta`); from build 1.60.1.70685 the launcher installs Forever in its own folder.
+`<Forever client folder>` is the Forever folder inside `<World of Warcraft folder>`: `_forever_` (launcher product `wowf`).
 
 **Wiki-only translations.** Some quest descriptions exist complete only on the QuestJapanizer wiki. The wiki is not fetched: its terms leave reuse to its administrator ([ADR-011](../adr/011-provenance-layers-and-completeness.md)).
 

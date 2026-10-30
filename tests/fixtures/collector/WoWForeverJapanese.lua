@@ -11,7 +11,7 @@ WFJ_Collector = {
 	["builds"] = {
 		"1.15.9.69722", -- [1]
 	},
-	["bytes"] = 2596,
+	["bytes"] = 2595,
 	["capped"] = false,
 	["disclosed"] = true,
 	["entries"] = {
@@ -93,9 +93,9 @@ WFJ_Collector = {
 		},
 		["quest:9999:description"] = {
 			["b"] = 1,
-			["e"] = "New text from the beta.",
+			["e"] = "New text from Forever.",
 			["f"] = "description",
-			["h"] = "07d9a0685da6a175",
+			["h"] = "36d0be645870f8ee",
 			["i"] = 9999,
 			["t"] = "quest",
 		},

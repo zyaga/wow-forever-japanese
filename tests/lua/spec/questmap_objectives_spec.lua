@@ -258,7 +258,7 @@ describe("UI/QuestMap: objective lines", function()
       return tt, button
     end
 
-    -- the beta's bug-report addon on the same event (blizzard_ptrfeedback_frames.lua:1149–1153)
+    -- another addon appending to the tooltip on the same event
     local function appendAndShow(tt)
       tt:AddLine(" ")
       tt:AddLine(F6)

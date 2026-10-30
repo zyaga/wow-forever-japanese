@@ -328,6 +328,32 @@ def test_reverify_refuses_a_row_that_loses_to_a_variant_ruled_accept(data, tmp_p
     assert Store(data).load("quest") == before
 
 
+
+def _sg_ui_store(d: Path, ruling: dict | None = None) -> None:
+    # the line ships an older draft whose name carries a style version; the English has moved since
+    old = {**UI_MACHINE, "source": "draft-ui-first-sg12@2026-09-14"}
+    line = {**_line("A", "text", "体力が7.5増加", old), "status": "stale", "english": dict(UI_OLD)}
+    if ruling:
+        line["ruling"] = ruling
+    Store(d).save("ui", [line])
+    Store(d, english=True).save("ui", [{"id": "A", "field": "text", "en": "A", **UI_NOW}])
+
+
+def test_reverify_refuses_a_row_ranked_below_an_older_draft(data, tmp_path, capsys):
+    # a UI draft name needs no `-sg<N>`, so the older `-sg12` draft keeps winning the tiebreak: stamping
+    # the new English would ship the old number as checked against it; the import stops and writes nothing
+    _sg_ui_store(data)
+    before = Store(data).load("ui")
+    assert _run_ui(_draft(tmp_path, [{"id": "A", "field": "text", "ja": "体力が2増加"}]), reverify=True) == 1
+    assert "rank below another variant (A/text)" in capsys.readouterr().err
+    assert Store(data).load("ui") == before
+
+
+def test_reverify_stamps_a_redraft_once_the_older_draft_is_ruled_reject(data, tmp_path):
+    _sg_ui_store(data, {"ruling": "reject", "by": "maintainer", "date": "2026-10-30", "note": "old English"})
+    assert _run_ui(_draft(tmp_path, [{"id": "A", "field": "text", "ja": "体力が2増加"}]), reverify=True) == 0
+    assert _by(data, "ui")[("A", "text")]["english"] == UI_NOW
+
 SPELL_TEXT_OLD, SPELL_TEXT = "Heals the target for $s1.", "Heals a friendly target for $s1."
 
 

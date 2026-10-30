@@ -170,11 +170,17 @@ def _write_records(records: dict[str, dict], old: dict[str, dict]) -> None:
             write_record(kind, records[kind])
 
 
-def _print_not_served(not_now: dict[str, int], build: str) -> None:
+def _print_not_served(not_now: dict[str, int], build: str, older_cache: int | None) -> None:
     for kind in RECORDED:
-        if not_now[kind]:
-            print(f"served {kind}: {not_now[kind]} ids an earlier build served, not served on {build}: kept "
-                  f"(pipeline/served/{kind}.tsv keeps their last build)")
+        if not not_now[kind]:
+            continue
+        if kind == "quest" and older_cache:
+            # Only QuestV2 speaks for this build: a quest it lacks may still be answered by the build's scan
+            print(f"served quest: {not_now[kind]} ids an earlier build served are not in {build}'s "
+                  f"QuestV2 and wait for its quest scan (the cache is build {older_cache}'s): kept")
+            continue
+        print(f"served {kind}: {not_now[kind]} ids an earlier build served, not served on {build}: kept "
+              f"(pipeline/served/{kind}.tsv keeps their last build)")
 
 
 def run_served(a: argparse.Namespace) -> int:
@@ -252,12 +258,12 @@ def run_served(a: argparse.Namespace) -> int:
                 store.save(kind, result[kind])
         _write_records(records, old_records)
     tag = " [dry run: nothing written]" if a.dry_run else ""
-    print(
-        f"served{tag}: target {label} · {len(questv2)} QuestV2 ids + {len(quests) - len(questv2)} cached "
-        f"only · {len(items)} items · {len(spells)} spells"
-    )
+    cached = (f"the cache (build {cache.build}) waits for this build's scan" if older_cache
+              else f"{len(quests) - len(questv2)} cached only")
+    print(f"served{tag}: target {label} · {len(questv2)} QuestV2 ids + {cached} · {len(items)} items · "
+          f"{len(spells)} spells")
     print("\n".join(report))
-    _print_not_served(not_now, build)
+    _print_not_served(not_now, build, cache.build if older_cache else None)
     if unmapped:
         print(f"served objective: {len(unmapped)} ids no quest cache maps to a quest, kept")
     if disagree:

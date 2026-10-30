@@ -216,7 +216,8 @@ def test_tables_extract_needs_a_client_folder(root):
 
 def test_client_text_follows_the_names_under_one_label(makefile):
     """Names, then tooltip text, then UI strings, all with --src $(TABLES_SRC)."""
-    lines = _recipe(makefile, "import-client")
+    lines = _recipe(makefile, "import-tables")
+    assert "$(MAKE) -s import-tables CLIENT=$(CLIENT)" in _recipe(makefile, "import-client")[-1]
     at = {n: next(i for i, ln in enumerate(lines) if f"import english {n}" in ln) for n in ("wago-ids", "client-text", "wago-ui")}
     assert at["wago-ids"] < at["client-text"] < at["wago-ui"]
     for n in at:
@@ -339,10 +340,12 @@ def test_inputs_default_to_the_main_checkouts_folder(root):
     assert inputs == str(expected)
 
 
-@pytest.mark.parametrize("target", ["import", "import-english", "rebuild-check"])
+@pytest.mark.parametrize("target", ["import", "import-english", "rebuild-check", "import-client"])
 def test_a_quest_pin_behind_the_tables_refuses_the_full_imports(root, tmp_path, target):
     """While the quest cache is pinned behind the tables (ADR-068), a full import would give the rows only a play
-    session's hotfixes carry Classic Era's English: it stops before anything runs."""
-    r = subprocess.run(["make", "-s", "-C", str(root), target, f"INPUTS={tmp_path}",
+    session's hotfixes carry Classic Era's English, and Forever's own quest step would read the older cache against
+    the newer QuestV2: it stops before anything runs."""
+    one = ["CLIENT=forever"] if target == "import-client" else []
+    r = subprocess.run(["make", "-s", "-C", str(root), target, *one, f"INPUTS={tmp_path}",
                         f"forever_QUEST_BUILD={QUEST_BUILDS['forever']}"], capture_output=True, text=True, check=False)
     assert r.returncode == 2 and "forever_QUEST_BUILD is set" in r.stdout, r.stdout + r.stderr
