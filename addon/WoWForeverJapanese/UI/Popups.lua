@@ -107,8 +107,9 @@ local PASS_THROUGH = {
 -- The dialogs whose OnShow writes the SubText with another line than the definition's, so the key is one of a few.
 -- INVITE_COMMUNITY_MEMBER: the definition's subText is the BattleTag line; OnShow writes the Battle.net friend line
 -- for a Battle.net community, else the character line, or CHARACTER_FRIEND_LABEL where names are unique per region
--- [verified: blizzard_staticpopup_game/mainline/gamedialogdefs.lua:1362–1395]. INVITE_COMMUNITY_MEMBER_WITH_INVITE_LINK,
--- shown to a member who may create invite links, mixes the same definition in under an extra button (:1441–1446).
+-- [verified: blizzard_staticpopup_game/mainline/gamedialogdefs.lua:1362–1395].
+-- INVITE_COMMUNITY_MEMBER_WITH_INVITE_LINK, shown to a member who may create invite links, mixes the same
+-- definition in under an extra button (:1441–1446).
 local INVITE_SUB_TEXT = { "INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BTAG",
   "INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BNET_FRIEND",
   "INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_CHARACTER", "CHARACTER_FRIEND_LABEL" }

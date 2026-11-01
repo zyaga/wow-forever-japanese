@@ -180,7 +180,8 @@ describe("the StaticPopup dialogs on Forever", function()
         else d.SubText:SetText(_G.INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_CHARACTER) end
       end }
     -- the invite-link variant mixes the same definition in under an extra button (gamedialogdefs.lua:1441–1446)
-    D.INVITE_COMMUNITY_MEMBER_WITH_INVITE_LINK = setmetatable({ extraButton = _G.OKAY }, { __index = D.INVITE_COMMUNITY_MEMBER })
+    D.INVITE_COMMUNITY_MEMBER_WITH_INVITE_LINK = setmetatable({ extraButton = _G.OKAY },
+      { __index = D.INVITE_COMMUNITY_MEMBER })
     -- button1's OnEnter is set in OnShow: the combat tooltip (gamedialogdefs.lua:3470–3482)
     D.SHARD_TRANSFER_IMMEDIATE = { text = _G.SHARD_TRANSFER_NOW, button1 = _G.SHARD_TRANSFER_NOW_BUTTON,
       OnShow = function(d)
