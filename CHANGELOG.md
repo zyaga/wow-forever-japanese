@@ -9,6 +9,8 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+## 0.6.0 - 2026-11-01
+
 ### Added
 - Japanese for the text Forever build 1.60.1.70707 adds or rewords: 31 new spells and 39 new items (the Paladin's Holy Shield, Turn Evil, Oath of Light and Seal echoes, the Druid's Lacerate, Ferocious Bite and Bloom, the new recipe scrolls), and the reworded Seals, Vigils, Leyline and Skysight lines and the Season of Discovery runes.
 - Japanese for the text Forever build 1.60.1.70685 adds or rewords, with word readings: the Options window's new Classic / Enhanced preset page, the PvP match results' outcome line and honor column, and the reworded talents and spells.
