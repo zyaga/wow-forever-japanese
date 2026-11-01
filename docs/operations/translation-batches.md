@@ -342,9 +342,40 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
 
+### 1.60.1.70685 → 1.60.1.70707, tables (2026-11-01)
+
+A Forever build installed three days before launch. The client was not opened on it, so its hotfix cache was still the
+70685 login-screen cache; the tables were read from the local archive alone (`make tables-extract … HOTFIXES=`). The scan
+has not run, so this round again pins the tables only and the quest text stays on the 70532 cache (`forever_QUEST_BUILD`,
+[ADR-068](../adr/068-quest-cache-pinned-apart-from-the-tables.md)). Client tables: 62, read with the pinned column maps;
+no layout hash changed. Against the 70685 pull: GlobalStrings 4 changed and 1 removed (`UNDELETE_PVP_TEAMS_VIOLATION`
+is gone; two account lines say "Activate" instead of "Reactivate"; `EXPANSION_NAME11` and `EXPANSION_NAME_CAPS11` say
+"Midnight"), none of the five shipped by the addon; Spell 6 descriptions (Revenge, ids 6572, 6574, 7379, 11600, 11601,
+25288: `$s1 damage` became a damage range, `${$m1+($<APRatio>*$apm)} to ${$M1+($<APRatio>*$apm)} damage`); ItemSparse
+468 rows fewer (rows only the 70685 login hotfixes carried; their English is kept). Every other table equal row for row.
+The wago.tools cross-check (product `wowf`): no value differs; the rows wago has and ours lacks (ItemSparse 26, Spell
+and SpellName 23, ItemEffect 17, QuestV2 2) are the encrypted store sections, as on 70685. The UI extract: 4,493 files,
+30 modified and 1 added (the gamepad smart-navigation helper), none removed; nothing the addon hooks or reads moved or
+changed shape, and no new interface text; about 70 line citations were refreshed ([Addon
+modules](../architecture/addon-modules.md)). The served-text inventory, taken with no hotfix cache: no column new; one
+disposition line gone (a hotfix-only table the archive does not hold); row counts moved on four tables. `make
+served-columns` now reads an empty `HOTFIXES=` as no cache, as `tables-extract` already did, and both refuse a cache of
+another build. No English Collector file exists for `_forever_` (the client was never logged in there).
+
+| Type | Reworded (shipped line now stale) | New English lines | Not served on this build (English kept) | Drafted |
+|---|---|---|---|---|
+| item | 0 | 0 | 4,938 ids an earlier build served, the 468 login-hotfix rows among them, keep their English | none |
+| spell | 6 descriptions (Revenge: a damage range in place of one value) | 0 | 152 | 6 redrafted as one row with `REVERIFY=1`; the Japanese keeps `$N1のダメージ` (a range fills one value slot) and was re-verified against the new English |
+| ui | 0 | 0 | 275 | none |
+
+On 6572 the earlier machine line carried an `accept` ruling; it now carries `reject`, superseded by the redraft written
+against the new English, so the redraft ships there. No reading is owed. The quest half (the scan's cache, the full
+import, quest and objective drafts, and voice) follows in the scan's re-pull after launch; 191 quest ids wait for it.
+Items, spells and interface lines are not voiced.
+
 ### 1.60.1.70532 → 1.60.1.70685, tables (2026-10-29)
 
-Forever's launch build, installed before launch. The launcher moved Forever to its own folder, `_forever_`, under the
+A pre-launch Forever build, installed before launch. The launcher moved Forever to its own folder, `_forever_`, under the
 product `wowf`. The scan could not run before launch, so this round pins the tables
 only and the quest text stays on the 70532 cache (`forever_QUEST_BUILD`,
 [ADR-068](../adr/068-quest-cache-pinned-apart-from-the-tables.md)). Client tables: 62, with the hotfix cache the client

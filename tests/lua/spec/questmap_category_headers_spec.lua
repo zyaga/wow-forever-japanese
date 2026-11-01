@@ -1,5 +1,5 @@
 -- ADR-042: the quest list's category headers (QuestLogQuests_AddStandardHeaderButton → button:SetText(
--- info.title), mainline/questmapframe.lua:2048–2052; ListHeaderVisualTemplate's title region). A header is a zone name
+-- info.title), mainline/questmapframe.lua:2042–2046; ListHeaderVisualTemplate's title region). A header is a zone name
 -- or a QuestSort word ("Seasonal"); only the QuestSort family is matched, so a zone name is never changed, even one
 -- another dictionary row happens to share.
 local H = require("tests.lua.spec.helpers")

@@ -4,7 +4,7 @@ local M = require("tests.lua.spec.menu_stub")
 
 -- the untagged context menus, through a post-hook on Menu.PopulateDescription (the generator runs, then
 -- SecureModifyMenu returns on no tag, then MenuUtil.CreateContextMenu opens the menu; blizzard_menu/menuutil.lua:
--- 151–161; menu.lua:2712–2726): the Group Finder's search-entry menu (blizzard_lfgvanilla_browse.lua:969–1001) and
+-- 151–161; menu.lua:2714–2728): the Group Finder's search-entry menu (blizzard_lfgvanilla_browse.lua:969–1001) and
 -- the crafting-orders recipe list's (…customerordersrecipelist.lua:96–97; …browseorders.lua:139–155).
 local FILES = {}
 for _, f in ipairs(H.UI_FILES) do FILES[#FILES + 1] = f end

@@ -271,7 +271,7 @@ end
 -- CheckButton's text: tabs and list rows included) and not a protected frame (a cover of ours is never laid inside
 -- one). A Button's text reaches Labels as a ButtonText adapter and a menu entry as a Labels.menuText adapter: neither
 -- has CalculateScreenAreaFromCharacterSpan, so `eligible` refuses them before this runs. Tooltips are refused by
--- surface (NON_WINDOW). [verified: forever mainline blizzard_gamepadsmartnavigation/utility.lua:197
+-- surface (NON_WINDOW). [verified: forever mainline blizzard_gamepadsmartnavigation/utility.lua:264
 -- (frame:IsObjectType("Button")), blizzard_restrictedaddonenvironment/securehandlers.lua:268 (frame:IsProtected())]
 local function inWindow(fs)
   local ok, parent = pcall(fs.GetParent, fs)

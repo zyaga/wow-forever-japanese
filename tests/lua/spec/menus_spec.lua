@@ -3,7 +3,7 @@ local Stub = require("tests.lua.spec.wow_stub")
 
 -- Dropdown and context-menu entries through Menu.ModifyMenu initializers. A stub of the Menu system: ModifyMenu
 -- stores the callback per tag; a generated menu is a tree of element descriptions whose initializers run on pooled
--- frames holding .fontString [verified: blizzard_menu/menu.lua:418–455, 2712–2749; menuvariants.lua:9–22].
+-- frames holding .fontString [verified: blizzard_menu/menu.lua:418–455, 2714–2751; menuvariants.lua:9–22].
 local FILES = {}
 for _, f in ipairs(H.UI_FILES) do FILES[#FILES + 1] = f end
 FILES[#FILES + 1] = "UI/SettingsKeys.lua"

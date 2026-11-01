@@ -24,7 +24,7 @@ local UI = {
   SKIP = { "Skip", "スキップ" },
   TRAIN = { "Train", "訓練" }, -- the trainer's footer label
   RADIAL_LABEL_TRAIN = { "Train", "汽車" }, -- the radial's emote; owns its Japanese (UIStrings.OWN)
-  -- the combined bag's collapse prompt, its label from SetLabelFunction (containerframe.lua:3476–3482)
+  -- the combined bag's collapse prompt, its label from SetLabelFunction (containerframe.lua:3493–3499)
   CONTEXT_ACTION_LABEL_EXPAND = { "Expand", "展開" }, CONTEXT_ACTION_LABEL_COLLAPSE = { "Collapse", "折りたたむ" },
 }
 
@@ -116,7 +116,7 @@ describe("the gamepad-mode HUD on Forever", function()
 
   it("the bag search footer's Back (an owned key) and the new footer labels are in the prompt set", function()
     local frameBack = UI.FRAME_ACTION_BACK
-    UI.FRAME_ACTION_BACK, UI.BACK = nil, { "Back", "戻る" } -- containerframe.lua:3386: BACK, not FRAME_ACTION_BACK
+    UI.FRAME_ACTION_BACK, UI.BACK = nil, { "Back", "戻る" } -- containerframe.lua:3403: BACK, not FRAME_ACTION_BACK
     setup()
     UI.FRAME_ACTION_BACK, UI.BACK = frameBack, nil
     WFJ.Gamepad.init()
@@ -125,7 +125,7 @@ describe("the gamepad-mode HUD on Forever", function()
     assert.are.equal("戻る", prompt.ControlDescText.FontString:GetText())
     local set = {}
     for _, k in ipairs(WFJ.Gamepad.PROMPT_KEYS) do set[k] = true end
-    -- the bag search box (containerframe.lua:3386, 3391), the channels window (channelframe.lua:169) and the
+    -- the bag search box (containerframe.lua:3403, 3408), the channels window (channelframe.lua:169) and the
     -- invite manager (communitiesticketmanagerdialog.lua:255) footers
     for _, k in ipairs({ "BACK", "SEARCH", "ADD_CHAT_CHANNEL", "COMMUNITIES_INVITE_MANAGER_REVOKE_INVITE",
       "ACTION_LABEL_CHAT_CHANNELS" }) do
@@ -268,7 +268,7 @@ describe("the gamepad \"More Actions\" menu is the tagged MORE_CONTEXT_ACTIONS m
     local keys = {}
     for _, k in ipairs(WFJ.Menus.TAGS.MORE_CONTEXT_ACTIONS.keys) do keys[k] = true end
     for _, k in ipairs(WFJ.Gamepad.MENU_KEYS) do assert.is_true(keys[k], k) end
-    -- the equipment and bag item "More Actions" entries (camelot/paperdollframe.lua:1906, containerframe.lua:3511)
+    -- the equipment and bag item "More Actions" entries (camelot/paperdollframe.lua:1906, containerframe.lua:3529)
     assert.is_true(keys.SHARE_IN_CHAT)
     -- the gamepad chat channel menu is gone; the chat footer's label opens the channels window directly
     -- (mainline/floatingchatframe.lua:214, 233–243)

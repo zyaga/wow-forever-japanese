@@ -24,7 +24,7 @@
 --   (spellbook/blizzard_spellbookframe.lua:191, 205–226; camelot/spellbook/blizzard_spellbookframe.lua:79–113; not for
 --   Rogue / Warrior). The checkbox initializer closes over the English (blizzard_menu/menutemplates.lua:341–354,
 --   mainline/menuvariants.lua:9–22), so rewriting the description's text would not show; Menu.ModifyMenu (menu.lua:
---   2728) adds an initializer of our own to each element, which runs after the client's and shows button.fontString
+--   2730) adds an initializer of our own to each element, which runs after the client's and shows button.fontString
 --   restricted to MENU_KEYS (surface "spellbook.menu"). Menu buttons are pooled and their compositor resets the
 --   fontString with SetFontObject on reuse (blizzard_menu/compositor.lua:66–74, 388), so a record must not outlive
 --   its button: a resetter of our own (menu.lua:455–457), which MenuMixin:DiscardChildFrames runs on every element

@@ -89,7 +89,7 @@ local SPECIAL_ONLY = { only = {
 -- [verified: blizzard_game/mainline/eventimplementation.lua:757-779, the camelot family's file].
 -- VOICE_CHAT_JOIN_GROUP: text "", its OnShow writes VOICE_CHAT_JOIN_GROUP_TEXT, plus the Discord speech-features
 -- paragraph after "\n\n" when the group's voice runs on Discord and text-to-speech or speech-to-text is on
--- [verified: blizzard_staticpopup_game/mainline/gamedialogdefs.lua:1560–1571, shown from
+-- [verified: blizzard_staticpopup_game/mainline/gamedialogdefs.lua:1564–1575, shown from
 -- blizzard_channels/mainline/channelframe.lua:917–918].
 local PASS_THROUGH = {
   PARTY_INVITE = { line = { "INVITATION", "INVITATION_XREALM" }, after = { "ACCEPTING_INVITE_WILL_REMOVE_QUEUE" } },

@@ -3,7 +3,7 @@
 -- blizzard_gamepadactionbars.toc:5). GamepadActionBarEditFrame (actionbareditframe.xml:105) opens from the gamepad
 -- prompts "Edit Action Bar" / "Bind" of the spellbook, bags, paperdoll, macro window and quest tracker
 -- (GamepadActionBarEditFrame:BindItem / BindSpell / BindMacro …: blizzard_uipanels_game/mainline/
--- containerframe.lua:3308, camelot/paperdollframe.lua:1810, blizzard_macroui/blizzard_macroui.lua:48), so only with
+-- containerframe.lua:3322, camelot/paperdollframe.lua:1810, blizzard_macroui/blizzard_macroui.lua:48), so only with
 -- a gamepad in use. Without the frame init returns false.
 -- Static labels, written once at load and never again [verified: actionbareditframe.xml / .lua]:
 --   BindingInfoFrame.TitleBox.TitleText          GAMEPAD_EDIT_FRAME_BIND_INFO_FRAME_TITLE (xml:39; the title box's

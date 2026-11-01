@@ -5,7 +5,7 @@
 --   blizzard_sharedxml/portraitframe.lua:4–14 (SetTitle → TitleContainer.TitleText),
 --   blizzard_pagedcontent/blizzard_pagingcontrols.lua:110–127, blizzard_pagedcontentframe.lua:494–575,
 --   spellbook/blizzard_spellbookframe.lua:46, 91, 191–226, 608–614, spellbook/blizzard_spellbookitem.lua:27–109,
---   183–301, blizzard_menu/menu.lua:2704–2739, menutemplates.lua:341–354, mainline/menuvariants.lua:9–22,
+--   183–301, blizzard_menu/menu.lua:2702–2751, menutemplates.lua:341–354, mainline/menuvariants.lua:9–22,
 --   blizzard_sharedxmlbase/callbackregistry.lua:112–215,
 --   camelot/classtalents/blizzard_classtalentsframe.{lua,xml}, tabsystemtemplates.lua:167–207,
 --   blizzard_sharedtalentui/blizzard_talentdisplay.lua:100–125,

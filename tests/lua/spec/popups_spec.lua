@@ -29,7 +29,7 @@ local UI = {
   CONFIRM_TALENT_WIPE_1 = { "Do you want to unlearn all of your talents?", "すべてのタレントを忘れますか？" },
   CANCEL = { "Cancel", "キャンセル" },
   ACCEPT = { "Accept", "承諾" }, DECLINE = { "Decline", "辞退" },
-  -- the group voice-chat join (mainline/gamedialogdefs.lua:1560–1583): text "", its OnShow writes the line
+  -- the group voice-chat join (mainline/gamedialogdefs.lua:1564–1587): text "", its OnShow writes the line
   VOICE_CHAT_JOIN_GROUP_TEXT = { "This group is using voice chat for easier communication.",
     "このグループは連絡を取りやすくするためにボイスチャットを使っています。" },
   VOICE_CHAT_JOIN_GROUP_DISCORD_TEXT = { "Text-to-Speech and Speech-to-Text are not supported in this channel.",

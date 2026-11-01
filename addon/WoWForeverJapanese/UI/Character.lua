@@ -22,7 +22,7 @@
 --     name (paperdollframe.lua:732–744). CharacterStatsPane (the older category frames) is never shown.
 --   help tooltips: the six icon mode tabs (tooltipText CHARACTER_FRAME_TAB_*, SidePanelTabButtonMixin:OnEnter →
 --     SetText, shareduipaneltemplates.lua:408–422; characterframe.xml:574–603), the three paperdoll sidebar tabs
---     (paperdollframe.lua:3632–3640), the right-pane toggle (characterframe.lua:341–358), and the equipment slots:
+--     (paperdollframe.lua:3649–3657), the right-pane toggle (characterframe.lua:341–358), and the equipment slots:
 --     the same CharacterHeadSlot … CharacterAmmoSlot names; an empty slot's SetText(<SLOT>SLOT / RELICSLOT) comes from
 --     ItemUtil.DisplayEquipSlotTooltip (blizzard_framexmlutil/itemutil.lua:465–484).
 --   the equipment manager (sidebar 2, PaperDollFrame.EquipmentManagerPane, paperdollframe.xml:474–554): the Equip /

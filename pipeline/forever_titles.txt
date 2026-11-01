@@ -73,7 +73,7 @@ blizzard_uipanels_game blizzard_uipanels_game/camelot/characterframe.lua:245 key
 blizzard_uipanels_game blizzard_uipanels_game/mainline/bankframetemplates.lua:1190 dynamic  # the definition of BankPanelPromptMixin:SetTitle(title): it writes the prompt's own Title FontString, not a window title; its one caller passes client data (:1256)
 blizzard_uipanels_game blizzard_uipanels_game/mainline/bankframetemplates.lua:1256 dynamic  # tabData.purchasePromptTitle: C_Bank data (the bank-tab purchase prompt), not a GlobalString
 blizzard_uipanels_game blizzard_uipanels_game/mainline/bankframetemplates.lua:23 ruled  # BANK stays English by a recorded decision; the other value, ACCOUNT_BANK_PANEL_TITLE, is the account (warband) bank's
-blizzard_uipanels_game blizzard_uipanels_game/mainline/containerframe.lua:3010 key COMBINED_BAG_TITLE bags  # rendered today by UI/Bags after ContainerFrame_GenerateFrame (its own per-bag-id resolution, not Labels.title), bags_camelot_spec
+blizzard_uipanels_game blizzard_uipanels_game/mainline/containerframe.lua:3014 key COMBINED_BAG_TITLE bags  # rendered today by UI/Bags after ContainerFrame_GenerateFrame (its own per-bag-id resolution, not Labels.title), bags_camelot_spec
 blizzard_uipanels_game blizzard_uipanels_game/mainline/containerframe.lua:925 name  # C_Container.GetBagName: the bag's item name (names stay in English); UI/Bags drops it
 blizzard_uipanels_game blizzard_uipanels_game/mainline/itemtextframe.lua:35 name  # ItemTextGetItem(): the book / letter / plaque's name
 blizzard_uipanels_game blizzard_uipanels_game/mainline/merchantframe.lua:275 name  # UnitName("npc"): the merchant's name (names stay in English); Labels.title's `only` MERCHANT_BUYBACK drops it

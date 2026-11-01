@@ -103,7 +103,7 @@ _Avoid_: WDB (the folder holds other caches too), harvest file, quest DB
 → [ADR-020](adr/020-quest-cache-harvest.md)
 
 **Local archive**:
-The installed game's own data store under `World of Warcraft/Data/` (with `.build.info`), shared by every client flavour on the machine. Local tooling reads the [[DB2 table]]s out of it with `make tables-extract`, read-only and offline; the addon never reads it. The beta-day source of client-side English, so the harvest needs no external site.
+The installed game's own data store under `World of Warcraft/Data/` (with `.build.info`), shared by every client flavour on the machine. Local tooling reads the [[DB2 table]]s out of it with `make tables-extract`, read-only and offline; the addon never reads it. The source of client-side English on a new build, so the harvest needs no external site.
 _Avoid_: CASC (the format's name, not the thing), game files, MPQ (the old format)
 → [ADR-021](adr/021-client-tables-from-the-local-archive.md)
 
@@ -194,7 +194,7 @@ The maintainer's step that fills the [[Quest cache]] before an import; the impor
 → [Pipeline](systems/pipeline.md) · [ADR-020](adr/020-quest-cache-harvest.md)
 
 **English delta**:
-What `data/english/` gained, lost or changed since a git ref, per type: ids new, ids removed, lines changed per field (`wfj stats --delta REF`, which first prints the status shift: translation lines whose status moved). The review view after an English import such as the beta-day harvest.
+What `data/english/` gained, lost or changed since a git ref, per type: ids new, ids removed, lines changed per field (`wfj stats --delta REF`, which first prints the status shift: translation lines whose status moved). The review view after an English import such as a re-pull.
 _Avoid_: diff (that is git's), changelog
 → [Pipeline](systems/pipeline.md)
 

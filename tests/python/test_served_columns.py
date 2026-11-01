@@ -8,6 +8,7 @@ from pathlib import Path
 
 import pytest
 from db2_fixture import wdc5
+
 from wfj.dev import served_columns as sc
 from wfj.io import client_tables, db2, dbcache
 

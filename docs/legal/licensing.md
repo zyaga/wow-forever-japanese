@@ -41,7 +41,7 @@ ownership.
 | The addon's own collector | 30 | text the maintainer's client recorded in game | Blizzard game data |
 
 Sources whose terms forbid it are never used; nothing is scraped from Wowhead or similar sites. The Forever beta
-carries no confidentiality terms: Blizzard's license makes a beta test confidential only when Blizzard announces it
+carried no confidentiality terms: Blizzard's license made a beta test confidential only when Blizzard announced it
 as such, and this one was announced open to press and fan sites.
 
 ## How the English was read

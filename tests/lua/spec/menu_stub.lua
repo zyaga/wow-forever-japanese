@@ -1,6 +1,6 @@
 -- A stub of the Menu system for the menu specs (menus_tags_spec, menus_unit_spec, menus_untagged_spec): a
 -- generated menu is a tree of element descriptions whose initializers run on pooled frames holding .fontString
--- [verified: blizzard_menu/menu.lua:418–455, 2712–2749; menuvariants.lua:9–22]. The same shape as menus_spec.lua's
+-- [verified: blizzard_menu/menu.lua:418–455, 2714–2751; menuvariants.lua:9–22]. The same shape as menus_spec.lua's
 -- local helpers, shared by the three specs.
 local Stub = require("tests.lua.spec.wow_stub")
 

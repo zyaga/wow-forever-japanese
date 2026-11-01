@@ -10,7 +10,7 @@ A Forever re-pull has two halves with different needs. The client tables (ItemSp
 
 Until now one pin, `forever_BUILD`, named both. A build's folder under `predecessors/clients/` held its tables and its quest cache, and every step that read the cache read it from `forever_BUILD`'s folder. A build could not ship until its scan had run.
 
-Forever's launch build, 1.60.1.70685, could be installed before launch but not played. Its tables reword spells, items and interface lines players would see on the first day; holding them until the scan meant shipping that text after launch.
+A pre-launch Forever build, 1.60.1.70685, could be installed but not played. Its tables reword spells, items and interface lines players would see on the first day; holding them until the scan meant shipping that text after launch.
 
 ## Decision
 

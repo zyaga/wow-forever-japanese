@@ -5,7 +5,7 @@
 -- Every widget is a parentKey or a field WorldMapMixin:AddOverlayFrames writes (blizzard_worldmap.lua:306–349):
 -- - NavBar.home: the navigation bar's first button. WorldMapNavBarMixin:OnLoad passes name = WORLD ("World") and
 --   NavBar_Initialize writes it once with homeButton:SetText (blizzard_worldmaptemplates.lua:504–517;
---   blizzard_framexml/mainline/navigationbar.lua:5–18; the button is parentKey "home", navigationbar.xml:301). Every
+--   blizzard_framexml/mainline/navigationbar.lua:5–18; the button is parentKey "home", navigationbar.xml:297). Every
 --   other nav button is a map's name (NavBar_AddButton, navigationbar.lua:114) and is never looked at. A static
 --   label restricted to WORLD, shown at init and on every OnShow of the map.
 -- - WorldMapTrackingOptionsButton: its OnEnter builds GameTooltip with GameTooltip_SetTitle(MAP_FILTER)
