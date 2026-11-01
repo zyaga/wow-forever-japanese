@@ -104,6 +104,16 @@ local PASS_THROUGH = {
     "CONFIRM_DESTROY_CHARACTER_COMMUNITY_UNPROMPTED" }, after = {} },
 }
 
+-- The dialogs whose OnShow writes the SubText with another line than the definition's, so the key is one of a few.
+-- INVITE_COMMUNITY_MEMBER: the definition's subText is the BattleTag line; OnShow writes the Battle.net friend line
+-- for a Battle.net community, else the character line, or CHARACTER_FRIEND_LABEL where names are unique per region
+-- [verified: blizzard_staticpopup_game/mainline/gamedialogdefs.lua:1362–1395].
+local SUB_TEXT = {
+  INVITE_COMMUNITY_MEMBER = { "INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BTAG",
+    "INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BNET_FRIEND",
+    "INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_CHARACTER", "CHARACTER_FRIEND_LABEL" },
+}
+
 -- The typed confirmation under the text: SetupConfirmation writes ConfirmText with the gamepad prompt or the typed
 -- one around the word to type, else "" [verified: blizzard_staticpopup_game/gamedialog.lua:214–235, called from
 -- Init :424; ConfirmText gamedialog.xml:103]. The word (COMMUNITIES_DELETE_CONFIRM_STRING) is what the edit box
@@ -138,6 +148,13 @@ local function showWord(widget, english)
   local key = keyFor(english)
   if not key or type(widget) ~= "table" then return 0 end
   return WFJ.Labels.show(SURFACE, widgetKey(widget), widget, nil, { only = { key } })
+end
+
+-- The SubText: the definition's line, or one of the lines the dialog's OnShow writes (SUB_TEXT). → 1 | 0
+local function showSubText(dialog, info)
+  local keys = SUB_TEXT[dialog.which]
+  if not keys or type(dialog.SubText) ~= "table" then return showWord(dialog.SubText, info.subText) end
+  return WFJ.Labels.show(SURFACE, widgetKey(dialog.SubText), dialog.SubText, nil, { only = keys })
 end
 
 local UNITS = { "SECONDS", "MINUTES" } -- the countdown's unit words (GetDefaultExpirationText)
@@ -257,7 +274,7 @@ function Popups.onShow(dialog)
   if type(info) ~= "table" then return 0 end
   info = shownInfo(dialog, info)
   local n = showText(dialog, info)
-  n = n + showWord(dialog.SubText, info.subText)
+  n = n + showSubText(dialog, info)
   local confirm = dialog.ConfirmText
   if type(confirm) == "table" and type(confirm.GetText) == "function" then
     n = n + WFJ.Labels.show(SURFACE, widgetKey(confirm), confirm, nil, CONFIRM_ONLY)

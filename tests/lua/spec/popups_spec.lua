@@ -67,6 +67,12 @@ local UI = {
   WOW_FRIEND_DESCRIPTION = { "Add a WoW friend.", "WoWフレンドを追加します。" },
   ERR_REAL_ID_FRIEND_REQUESTS_DISABLED = { "Real ID friend requests are disabled.", "Real IDフレンドリクエストは無効です。" },
   ENTER_NAME_OR_BATTLETAG = { "Enter name or BattleTag", "名前またはバトルタグを入力" },
+  -- the community invite dialog (mainline/gamedialogdefs.lua:1362–1395): OnShow writes the SubText per community
+  INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BTAG = { "Enter a BattleTag.", "BattleTagを入力してください。" },
+  INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BNET_FRIEND = { "Enter a Battle.net friend", "Battle.netのフレンドを入力" },
+  INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_CHARACTER = { "Enter character name-server name.",
+    "キャラクター名-サーバー名を入力してください。" },
+  CHARACTER_FRIEND_LABEL = { "Enter character's name", "キャラクター名を入力" },
 }
 local NAMES = { "StaticPopup_Show", "StaticPopup_OnUpdate", "StaticPopupDialogs", "GameDialogDefsUtil",
   "StaticPopup1", "StaticPopup2", "StaticPopup3", "StaticPopup4", "StaticPopupSpecial_Show", "AddFriendFrame" }
@@ -133,7 +139,7 @@ end
 describe("the StaticPopup dialogs on Forever", function()
   local WFJ
   before_each(function()
-    C.discord, C.other, C.gamepad, C.combat = nil, nil, nil, nil
+    C.discord, C.other, C.gamepad, C.combat, C.regional = nil, nil, nil, nil, nil
     WFJ = X.load("UI/Popups.lua", UI, { before = install })
     local D = _G.StaticPopupDialogs
     D.DELETE_ITEM = { text = _G.DELETE_ITEM, button1 = _G.YES, button2 = _G.NO }
@@ -165,6 +171,13 @@ describe("the StaticPopup dialogs on Forever", function()
         local line = club.bnet and _G.CONFIRM_DESTROY_COMMUNITY_UNPROMPTED
           or _G.CONFIRM_DESTROY_CHARACTER_COMMUNITY_UNPROMPTED
         d.Text:SetText(line:format(club.name))
+      end }
+    D.INVITE_COMMUNITY_MEMBER = { text = "", subText = _G.INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BTAG,
+      button1 = _G.ACCEPT, button2 = _G.CANCEL,
+      OnShow = function(d, club)
+        if club.bnet then d.SubText:SetText(_G.INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BNET_FRIEND)
+        elseif C.regional then d.SubText:SetText(_G.CHARACTER_FRIEND_LABEL)
+        else d.SubText:SetText(_G.INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_CHARACTER) end
       end }
     -- button1's OnEnter is set in OnShow: the combat tooltip (gamedialogdefs.lua:3470–3482)
     D.SHARD_TRANSFER_IMMEDIATE = { text = _G.SHARD_TRANSFER_NOW, button1 = _G.SHARD_TRANSFER_NOW_BUTTON,
@@ -202,6 +215,22 @@ describe("the StaticPopup dialogs on Forever", function()
     local d = _G.StaticPopup_Show("DUEL_TO_THE_DEATH_REQUESTED", "Reyn", "Reyn")
     assert.are.equal("|Hplayer:Reyn|h[Reyn]|hから死闘の決闘を申し込まれました。", d.Text:GetText())
     assert.are.equal("承諾", d.ButtonContainer.Buttons[1]:GetText())
+  end)
+
+  it("the community invite dialog's sub-text follows the line its OnShow writes; Alt shows English", function()
+    local d = _G.StaticPopup_Show("INVITE_COMMUNITY_MEMBER", "", nil, { bnet = true })
+    assert.are.equal(UI.INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BNET_FRIEND[2], d.SubText:GetText())
+    X.alt(WFJ, true)
+    assert.are.equal(UI.INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BNET_FRIEND[1], d.SubText:GetText())
+    X.alt(WFJ, false)
+    _G.StaticPopup1.shown = false
+    C.regional = true
+    local e = _G.StaticPopup_Show("INVITE_COMMUNITY_MEMBER", "", nil, { bnet = false })
+    assert.are.equal(UI.CHARACTER_FRIEND_LABEL[2], e.SubText:GetText())
+    _G.StaticPopup1.shown = false
+    C.regional = false
+    local f = _G.StaticPopup_Show("INVITE_COMMUNITY_MEMBER", "", nil, { bnet = false })
+    assert.are.equal(UI.INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_CHARACTER[2], f.SubText:GetText())
   end)
 
   it("the typed confirmation line: the word to type stays as written; gamepad mode's line; none is blank", function()

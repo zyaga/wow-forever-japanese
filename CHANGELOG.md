@@ -19,6 +19,7 @@ an old setting stops working). A release moves those lines under its version num
 
 ### Fixed
 - The English Collector's "where is my file" path names the Forever client's folder, `_forever_`.
+- The community invite window's line under the text (which name to enter) shows in Japanese in each of its forms.
 
 ## 0.5.0 - 2026-10-23
 
