@@ -95,7 +95,11 @@ def main(argv: list[str] | None = None) -> int:
     args = ap.parse_args(argv)
     try:
         archive = casc.LocalArchive(args.wow, args.product)
-        cache = dbcache.read(args.hotfixes) if args.hotfixes and args.hotfixes.is_file() else None
+        cache = (
+            dbcache.read_for(args.hotfixes, archive.info.version)
+            if args.hotfixes and args.hotfixes.is_file()
+            else None
+        )
     except (casc.CascError, dbcache.DbcacheError) as e:
         print(f"table-counts: {e}", file=sys.stderr)
         return 1

@@ -120,13 +120,7 @@ def _hotfixes(path: Path | None, archive: casc.LocalArchive) -> dbcache.HotfixCa
         return None
     if not path.is_file():
         raise dbcache.DbcacheError(f"--hotfixes {path} is not a file")
-    cache = dbcache.read(path)
-    build = int(archive.info.version.rsplit(".", 1)[-1])
-    if cache.build != build:
-        raise dbcache.DbcacheError(
-            f"{path.name} is build {cache.build}, the archive is {archive.info.version}"
-        )
-    return cache
+    return dbcache.read_for(path, archive.info.version)
 
 
 def _compare(

@@ -199,16 +199,6 @@ def changes(previous: dict[str, str], current: dict[str, str]) -> list[str]:
     return out
 
 
-def check_build(cache: dbcache.HotfixCache, version: str, path: Path) -> dbcache.HotfixCache:
-    """The cache, when it is the archive build's own. A client folder keeps the last build's cache until the
-    client is opened on the new one; applying it would count rows of another build, so it is refused the way
-    `client_tables` refuses it."""
-    build = int(version.rsplit(".", 1)[-1])
-    if cache.build != build:
-        raise dbcache.DbcacheError(f"{path.name} is build {cache.build}, the archive is {version}")
-    return cache
-
-
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="wfj.dev.served_columns", description=__doc__.split("\n\n")[0])
     ap.add_argument(
@@ -224,11 +214,7 @@ def main(argv: list[str] | None = None) -> int:
     args = ap.parse_args(argv)
     try:
         archive = casc.LocalArchive(args.wow, args.product)
-        cache = (
-            check_build(dbcache.read(args.hotfixes), archive.info.version, args.hotfixes)
-            if args.hotfixes
-            else None
-        )
+        cache = dbcache.read_for(args.hotfixes, archive.info.version) if args.hotfixes else None
         tables = db2_files(args.listfile)
     except (casc.CascError, dbcache.DbcacheError, OSError) as e:
         print(f"served-columns: {e}", file=sys.stderr)

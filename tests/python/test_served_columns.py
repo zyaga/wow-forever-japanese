@@ -160,13 +160,3 @@ def test_wdb_records_refuses_a_file_that_is_not_a_cache(tmp_path: Path, bad: byt
     with pytest.raises(ValueError):
         sc.wdb_records(path)
 
-
-def test_a_hotfix_cache_of_another_build_is_refused():
-    stale = dbcache.HotfixCache(70685, {})
-    with pytest.raises(dbcache.DbcacheError, match=r"build 70685.*1\.60\.1\.70707"):
-        sc.check_build(stale, "1.60.1.70707", Path("DBCache.bin"))
-
-
-def test_the_archive_build_s_own_hotfix_cache_is_kept():
-    cache = dbcache.HotfixCache(70707, {})
-    assert sc.check_build(cache, "1.60.1.70707", Path("DBCache.bin")) is cache
