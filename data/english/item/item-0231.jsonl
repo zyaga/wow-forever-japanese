@@ -1,9 +1,9 @@
-{"id": 231298, "field": "name", "en": "Scroll of Lesser Spatial Mending", "hash": "91537be3bd1257a1", "src": "db2@1.60.1.70685"}
-{"id": 231298, "field": "description", "en": "Close a targeted small Fel portal. May draw unwanted attention from the other side.", "hash": "a89f2449f102cfff", "src": "db2@1.60.1.70685"}
-{"id": 231304, "field": "name", "en": "Scroll: SERELS PATALIS GNEMIND", "hash": "0ed326cb197ed6b4", "src": "db2@1.60.1.70685"}
-{"id": 231304, "field": "description", "en": "Decipher the scroll with a Comprehension Charm. Who knows what magic it contains?", "hash": "ce6c2da9150fd222", "src": "db2@1.60.1.70685"}
-{"id": 231386, "field": "name", "en": "Flawless Black Dragonscale", "hash": "1b65169c146c97e2", "src": "db2@1.60.1.70685"}
-{"id": 231386, "field": "description", "en": "This scale is immense and flawless. Only the most venerable dragons possess scales of this quality.", "hash": "dff698bc680a79c9", "src": "db2@1.60.1.70685"}
+{"id": 231298, "field": "name", "en": "Scroll of Lesser Spatial Mending", "hash": "91537be3bd1257a1", "src": "db2@1.60.1.70707"}
+{"id": 231298, "field": "description", "en": "Close a targeted small Fel portal. May draw unwanted attention from the other side.", "hash": "a89f2449f102cfff", "src": "db2@1.60.1.70707"}
+{"id": 231304, "field": "name", "en": "Scroll: SERELS PATALIS GNEMIND", "hash": "0ed326cb197ed6b4", "src": "db2@1.60.1.70707"}
+{"id": 231304, "field": "description", "en": "Decipher the scroll with a Comprehension Charm. Who knows what magic it contains?", "hash": "ce6c2da9150fd222", "src": "db2@1.60.1.70707"}
+{"id": 231386, "field": "name", "en": "Flawless Black Dragonscale", "hash": "1b65169c146c97e2", "src": "db2@1.60.1.70707"}
+{"id": 231386, "field": "description", "en": "This scale is immense and flawless. Only the most venerable dragons possess scales of this quality.", "hash": "dff698bc680a79c9", "src": "db2@1.60.1.70707"}
 {"id": 231530, "field": "name", "en": "Warlord's Plate Armor", "hash": "1ca8cfd4d63d5d9c", "src": "db2@1.60.1.70532"}
 {"id": 231530, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
 {"id": 231531, "field": "name", "en": "General's Plate Boots", "hash": "e98773abd870308c", "src": "db2@1.60.1.70532"}
@@ -206,12 +206,12 @@
 {"id": 231640, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.\nRestores $s1 mana per 5 sec.", "hash": "f76a6e485371a703", "src": "wago@1.15.9.69722"}
 {"id": 231641, "field": "name", "en": "Field Marshal's Lamellar Chestplate", "hash": "db99952f51674e27", "src": "db2@1.60.1.70532"}
 {"id": 231641, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.\nRestores $s1 mana per 5 sec.", "hash": "f76a6e485371a703", "src": "wago@1.15.9.69722"}
-{"id": 231642, "field": "name", "en": "Warden's Herb Bag", "hash": "6d815790fdbcd35e", "src": "db2@1.60.1.70685"}
-{"id": 231642, "field": "description", "en": "Free range wild herbs. No monoculture here.", "hash": "6f3b10c2b9a389bb", "src": "db2@1.60.1.70685"}
+{"id": 231642, "field": "name", "en": "Warden's Herb Bag", "hash": "6d815790fdbcd35e", "src": "db2@1.60.1.70707"}
+{"id": 231642, "field": "description", "en": "Free range wild herbs. No monoculture here.", "hash": "6f3b10c2b9a389bb", "src": "db2@1.60.1.70707"}
 {"id": 231643, "field": "name", "en": "Marshal's Lamellar Gloves", "hash": "13370009e01614c4", "src": "db2@1.60.1.70532"}
 {"id": 231643, "field": "description", "en": "Increases the critical strike chance of your Holy Shock by $s1%.", "hash": "80b211150e5254f8", "src": "db2@1.60.1.70532"}
-{"id": 231644, "field": "name", "en": "Warden's Enchanting Bag", "hash": "8b740df24616a06d", "src": "db2@1.60.1.70685"}
-{"id": 231644, "field": "description", "en": "Enchantment!", "hash": "cc68ab5d3dd08623", "src": "db2@1.60.1.70685"}
+{"id": 231644, "field": "name", "en": "Warden's Enchanting Bag", "hash": "8b740df24616a06d", "src": "db2@1.60.1.70707"}
+{"id": 231644, "field": "description", "en": "Enchantment!", "hash": "cc68ab5d3dd08623", "src": "db2@1.60.1.70707"}
 {"id": 231645, "field": "name", "en": "Field Marshal's Lamellar Pauldrons", "hash": "9fbdfa3897359465", "src": "db2@1.60.1.70532"}
 {"id": 231645, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
 {"id": 231646, "field": "name", "en": "Marshal's Lamellar Greaves", "hash": "07e9ba897df29598", "src": "db2@1.60.1.70532"}
@@ -336,48 +336,48 @@
 {"id": 231705, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
 {"id": 231706, "field": "name", "en": "Marshal's Dragonhide Gauntlets", "hash": "88a85cf8e398ddf5", "src": "db2@1.60.1.70532"}
 {"id": 231706, "field": "description", "en": "Increases the duration of your Barkskin by ${$m1/1000} sec.", "hash": "8598ff6f45f44932", "src": "db2@1.60.1.70532"}
-{"id": 231732, "field": "name", "en": "Suspicious Supplies", "hash": "8c50b3cdeacf76d9", "src": "db2@1.60.1.70685"}
-{"id": 231732, "field": "description", "en": "Place and open the strange supplies Xirath gave you.\nStrange energy emanates from the bag. Best to not look.", "hash": "a127c47acb8b1c04", "src": "db2@1.60.1.70685"}
-{"id": 231778, "field": "name", "en": "Mountain Spring Water", "hash": "71c3825d9b1c96c5", "src": "db2@1.60.1.70685"}
-{"id": 231778, "field": "description", "en": "Restores $o1 mana over $d.  Must remain seated while drinking.", "hash": "792a9d04713a780c", "src": "db2@1.60.1.70685"}
-{"id": 231789, "field": "name", "en": "Sigil of the Keeper", "hash": "ed97a029c88c9220", "src": "db2@1.60.1.70685"}
-{"id": 231792, "field": "name", "en": "Soul of Mischief", "hash": "8301aad1f87b3ac8", "src": "db2@1.60.1.70685"}
-{"id": 231792, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70685"}
-{"id": 231793, "field": "name", "en": "Depleted Scythe of Chaos (Mischief)", "hash": "574b1b0e0dc14782", "src": "db2@1.60.1.70685"}
-{"id": 231794, "field": "name", "en": "Depleted Scythe of Chaos (Void)", "hash": "d1ecbb1a3fffadce", "src": "db2@1.60.1.70685"}
-{"id": 231795, "field": "name", "en": "Depleted Scythe of Chaos (Enthralling)", "hash": "3f57b948cf253b6c", "src": "db2@1.60.1.70685"}
-{"id": 231796, "field": "name", "en": "Depleted Scythe of Chaos (Devouring)", "hash": "48230b340e5c0dc0", "src": "db2@1.60.1.70685"}
-{"id": 231797, "field": "name", "en": "Soul of the Void", "hash": "a4df28c1df80d17f", "src": "db2@1.60.1.70685"}
-{"id": 231797, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70685"}
-{"id": 231798, "field": "name", "en": "Soul of Enthralling", "hash": "909e8c6d6408a9f3", "src": "db2@1.60.1.70685"}
-{"id": 231798, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70685"}
-{"id": 231799, "field": "name", "en": "Soul of Devouring", "hash": "e202e0097739024c", "src": "db2@1.60.1.70685"}
-{"id": 231799, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70685"}
-{"id": 231800, "field": "name", "en": "Soul of Des'Altek", "hash": "752185381b559b9f", "src": "db2@1.60.1.70685"}
-{"id": 231800, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70685"}
-{"id": 231828, "field": "name", "en": "Rune of Meditation Specialization", "hash": "437da805b22fc4f0", "src": "db2@1.60.1.70685"}
-{"id": 231828, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70685"}
-{"id": 231829, "field": "name", "en": "Rune of Healing Specialization", "hash": "42f5ac5c3a700c49", "src": "db2@1.60.1.70685"}
-{"id": 231829, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70685"}
-{"id": 231836, "field": "name", "en": "Glowing Scroll of Spatial Mending", "hash": "4b8b544aef1474ce", "src": "db2@1.60.1.70685"}
-{"id": 231836, "field": "description", "en": "Close a targeted Fel portal. May draw unwanted attention from the other side.", "hash": "22b41ad4a72c577b", "src": "db2@1.60.1.70685"}
-{"id": 231837, "field": "name", "en": "Shadow Carving", "hash": "a99f8f60290f2e2a", "src": "db2@1.60.1.70685"}
-{"id": 231837, "field": "description", "en": "It appears to attract shadow energy.", "hash": "8f063f9b571e57e0", "src": "db2@1.60.1.70685"}
-{"id": 231841, "field": "name", "en": "Blood of the Lightbringer", "hash": "bc4d27a2caad1a39", "src": "db2@1.60.1.70685"}
-{"id": 231841, "field": "description", "en": "This small reliquary is filled with a small sample of blood. There is a partially torn parchment label on the underside that bears a single word: \"Uther\".", "hash": "b34a66e384506a1c", "src": "db2@1.60.1.70685"}
-{"id": 231843, "field": "name", "en": "First Sigil Fragment", "hash": "4a227a60177fc434", "src": "db2@1.60.1.70685"}
-{"id": 231843, "field": "description", "en": "Combine with two other pieces to form the Sigil of the Keeper.", "hash": "4e4b8f07bd8d020c", "src": "db2@1.60.1.70685"}
-{"id": 231844, "field": "name", "en": "Second Sigil Fragment", "hash": "a270fd96d6f31224", "src": "db2@1.60.1.70685"}
-{"id": 231844, "field": "description", "en": "Combine with two other pieces to form the Sigil of the Keeper.", "hash": "4e4b8f07bd8d020c", "src": "db2@1.60.1.70685"}
-{"id": 231845, "field": "name", "en": "Third Sigil Fragment", "hash": "bfa4088ad4dc10d5", "src": "db2@1.60.1.70685"}
-{"id": 231845, "field": "description", "en": "Combine with two other pieces to form the Sigil of the Keeper.", "hash": "4e4b8f07bd8d020c", "src": "db2@1.60.1.70685"}
-{"id": 231877, "field": "name", "en": "Tyler's Balanced Bobble", "hash": "1d8d4d719c4e7788", "src": "db2@1.60.1.70685"}
-{"id": 231887, "field": "name", "en": "Test Dagger", "hash": "474f1476f3dffdf3", "src": "db2@1.60.1.70685"}
-{"id": 231887, "field": "description", "en": "Wounds the target causing them to bleed for $o1 damage over $d.", "hash": "47f171f505d2c468", "src": "db2@1.60.1.70685"}
-{"id": 231901, "field": "name", "en": "Truthbearer", "hash": "e16a8326ada67c73", "src": "db2@1.60.1.70685"}
-{"id": 231903, "field": "name", "en": "Scrap of Torn Cloth", "hash": "629bda3031074969", "src": "db2@1.60.1.70685"}
-{"id": 231903, "field": "description", "en": "A small scrap of cloth from Uther the Lightbringer's tunic containing a few flecks of blood.", "hash": "b2029588a1734bbc", "src": "db2@1.60.1.70685"}
-{"id": 231904, "field": "name", "en": "Tarnished Horn", "hash": "3d4e495399bb9242", "src": "db2@1.60.1.70685"}
-{"id": 231904, "field": "description", "en": "Sound the horn to call Aeonas back to you should you get separated. This will also cancel any magical disguises you have active.", "hash": "da655baacb27a54b", "src": "db2@1.60.1.70685"}
-{"id": 231909, "field": "name", "en": "Crystallized Starlight", "hash": "aa13eff9d413f306", "src": "db2@1.60.1.70685"}
-{"id": 231909, "field": "description", "en": "Attune with the heavens, allowing you to replace your Moonkin form with a more celestial visage.", "hash": "7d88df025b23e3a9", "src": "db2@1.60.1.70685"}
+{"id": 231732, "field": "name", "en": "Suspicious Supplies", "hash": "8c50b3cdeacf76d9", "src": "db2@1.60.1.70707"}
+{"id": 231732, "field": "description", "en": "Place and open the strange supplies Xirath gave you.\nStrange energy emanates from the bag. Best to not look.", "hash": "a127c47acb8b1c04", "src": "db2@1.60.1.70707"}
+{"id": 231778, "field": "name", "en": "Mountain Spring Water", "hash": "71c3825d9b1c96c5", "src": "db2@1.60.1.70707"}
+{"id": 231778, "field": "description", "en": "Restores $o1 mana over $d.  Must remain seated while drinking.", "hash": "792a9d04713a780c", "src": "db2@1.60.1.70707"}
+{"id": 231789, "field": "name", "en": "Sigil of the Keeper", "hash": "ed97a029c88c9220", "src": "db2@1.60.1.70707"}
+{"id": 231792, "field": "name", "en": "Soul of Mischief", "hash": "8301aad1f87b3ac8", "src": "db2@1.60.1.70707"}
+{"id": 231792, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70707"}
+{"id": 231793, "field": "name", "en": "Depleted Scythe of Chaos (Mischief)", "hash": "574b1b0e0dc14782", "src": "db2@1.60.1.70707"}
+{"id": 231794, "field": "name", "en": "Depleted Scythe of Chaos (Void)", "hash": "d1ecbb1a3fffadce", "src": "db2@1.60.1.70707"}
+{"id": 231795, "field": "name", "en": "Depleted Scythe of Chaos (Enthralling)", "hash": "3f57b948cf253b6c", "src": "db2@1.60.1.70707"}
+{"id": 231796, "field": "name", "en": "Depleted Scythe of Chaos (Devouring)", "hash": "48230b340e5c0dc0", "src": "db2@1.60.1.70707"}
+{"id": 231797, "field": "name", "en": "Soul of the Void", "hash": "a4df28c1df80d17f", "src": "db2@1.60.1.70707"}
+{"id": 231797, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70707"}
+{"id": 231798, "field": "name", "en": "Soul of Enthralling", "hash": "909e8c6d6408a9f3", "src": "db2@1.60.1.70707"}
+{"id": 231798, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70707"}
+{"id": 231799, "field": "name", "en": "Soul of Devouring", "hash": "e202e0097739024c", "src": "db2@1.60.1.70707"}
+{"id": 231799, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70707"}
+{"id": 231800, "field": "name", "en": "Soul of Des'Altek", "hash": "752185381b559b9f", "src": "db2@1.60.1.70707"}
+{"id": 231800, "field": "description", "en": "Combine the soul shard with the Depleted Scythe of Chaos.", "hash": "fc3681cc42821875", "src": "db2@1.60.1.70707"}
+{"id": 231828, "field": "name", "en": "Rune of Meditation Specialization", "hash": "437da805b22fc4f0", "src": "db2@1.60.1.70707"}
+{"id": 231828, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70707"}
+{"id": 231829, "field": "name", "en": "Rune of Healing Specialization", "hash": "42f5ac5c3a700c49", "src": "db2@1.60.1.70707"}
+{"id": 231829, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70707"}
+{"id": 231836, "field": "name", "en": "Glowing Scroll of Spatial Mending", "hash": "4b8b544aef1474ce", "src": "db2@1.60.1.70707"}
+{"id": 231836, "field": "description", "en": "Close a targeted Fel portal. May draw unwanted attention from the other side.", "hash": "22b41ad4a72c577b", "src": "db2@1.60.1.70707"}
+{"id": 231837, "field": "name", "en": "Shadow Carving", "hash": "a99f8f60290f2e2a", "src": "db2@1.60.1.70707"}
+{"id": 231837, "field": "description", "en": "It appears to attract shadow energy.", "hash": "8f063f9b571e57e0", "src": "db2@1.60.1.70707"}
+{"id": 231841, "field": "name", "en": "Blood of the Lightbringer", "hash": "bc4d27a2caad1a39", "src": "db2@1.60.1.70707"}
+{"id": 231841, "field": "description", "en": "This small reliquary is filled with a small sample of blood. There is a partially torn parchment label on the underside that bears a single word: \"Uther\".", "hash": "b34a66e384506a1c", "src": "db2@1.60.1.70707"}
+{"id": 231843, "field": "name", "en": "First Sigil Fragment", "hash": "4a227a60177fc434", "src": "db2@1.60.1.70707"}
+{"id": 231843, "field": "description", "en": "Combine with two other pieces to form the Sigil of the Keeper.", "hash": "4e4b8f07bd8d020c", "src": "db2@1.60.1.70707"}
+{"id": 231844, "field": "name", "en": "Second Sigil Fragment", "hash": "a270fd96d6f31224", "src": "db2@1.60.1.70707"}
+{"id": 231844, "field": "description", "en": "Combine with two other pieces to form the Sigil of the Keeper.", "hash": "4e4b8f07bd8d020c", "src": "db2@1.60.1.70707"}
+{"id": 231845, "field": "name", "en": "Third Sigil Fragment", "hash": "bfa4088ad4dc10d5", "src": "db2@1.60.1.70707"}
+{"id": 231845, "field": "description", "en": "Combine with two other pieces to form the Sigil of the Keeper.", "hash": "4e4b8f07bd8d020c", "src": "db2@1.60.1.70707"}
+{"id": 231877, "field": "name", "en": "Tyler's Balanced Bobble", "hash": "1d8d4d719c4e7788", "src": "db2@1.60.1.70707"}
+{"id": 231887, "field": "name", "en": "Test Dagger", "hash": "474f1476f3dffdf3", "src": "db2@1.60.1.70707"}
+{"id": 231887, "field": "description", "en": "Wounds the target causing them to bleed for $o1 damage over $d.", "hash": "47f171f505d2c468", "src": "db2@1.60.1.70707"}
+{"id": 231901, "field": "name", "en": "Truthbearer", "hash": "e16a8326ada67c73", "src": "db2@1.60.1.70707"}
+{"id": 231903, "field": "name", "en": "Scrap of Torn Cloth", "hash": "629bda3031074969", "src": "db2@1.60.1.70707"}
+{"id": 231903, "field": "description", "en": "A small scrap of cloth from Uther the Lightbringer's tunic containing a few flecks of blood.", "hash": "b2029588a1734bbc", "src": "db2@1.60.1.70707"}
+{"id": 231904, "field": "name", "en": "Tarnished Horn", "hash": "3d4e495399bb9242", "src": "db2@1.60.1.70707"}
+{"id": 231904, "field": "description", "en": "Sound the horn to call Aeonas back to you should you get separated. This will also cancel any magical disguises you have active.", "hash": "da655baacb27a54b", "src": "db2@1.60.1.70707"}
+{"id": 231909, "field": "name", "en": "Crystallized Starlight", "hash": "aa13eff9d413f306", "src": "db2@1.60.1.70707"}
+{"id": 231909, "field": "description", "en": "Attune with the heavens, allowing you to replace your Moonkin form with a more celestial visage.", "hash": "7d88df025b23e3a9", "src": "db2@1.60.1.70707"}

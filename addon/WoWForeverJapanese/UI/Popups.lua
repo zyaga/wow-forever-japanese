@@ -89,7 +89,7 @@ local SPECIAL_ONLY = { only = {
 -- [verified: blizzard_game/mainline/eventimplementation.lua:757-779, the camelot family's file].
 -- VOICE_CHAT_JOIN_GROUP: text "", its OnShow writes VOICE_CHAT_JOIN_GROUP_TEXT, plus the Discord speech-features
 -- paragraph after "\n\n" when the group's voice runs on Discord and text-to-speech or speech-to-text is on
--- [verified: blizzard_staticpopup_game/mainline/gamedialogdefs.lua:1560–1571, shown from
+-- [verified: blizzard_staticpopup_game/mainline/gamedialogdefs.lua:1564–1575, shown from
 -- blizzard_channels/mainline/channelframe.lua:917–918].
 local PASS_THROUGH = {
   PARTY_INVITE = { line = { "INVITATION", "INVITATION_XREALM" }, after = { "ACCEPTING_INVITE_WILL_REMOVE_QUEUE" } },
@@ -102,6 +102,20 @@ local PASS_THROUGH = {
   -- [verified: blizzard_staticpopup_game/mainline/gamedialogdefs.lua:897–925]
   CONFIRM_DESTROY_COMMUNITY = { line = { "CONFIRM_DESTROY_COMMUNITY_UNPROMPTED",
     "CONFIRM_DESTROY_CHARACTER_COMMUNITY_UNPROMPTED" }, after = {} },
+}
+
+-- The dialogs whose OnShow writes the SubText with another line than the definition's, so the key is one of a few.
+-- INVITE_COMMUNITY_MEMBER: the definition's subText is the BattleTag line; OnShow writes the Battle.net friend line
+-- for a Battle.net community, else the character line, or CHARACTER_FRIEND_LABEL where names are unique per region
+-- [verified: blizzard_staticpopup_game/mainline/gamedialogdefs.lua:1362–1395].
+-- INVITE_COMMUNITY_MEMBER_WITH_INVITE_LINK, shown to a member who may create invite links, mixes the same
+-- definition in under an extra button (:1441–1446).
+local INVITE_SUB_TEXT = { "INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BTAG",
+  "INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BNET_FRIEND",
+  "INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_CHARACTER", "CHARACTER_FRIEND_LABEL" }
+local SUB_TEXT = {
+  INVITE_COMMUNITY_MEMBER = INVITE_SUB_TEXT,
+  INVITE_COMMUNITY_MEMBER_WITH_INVITE_LINK = INVITE_SUB_TEXT,
 }
 
 -- The typed confirmation under the text: SetupConfirmation writes ConfirmText with the gamepad prompt or the typed
@@ -138,6 +152,13 @@ local function showWord(widget, english)
   local key = keyFor(english)
   if not key or type(widget) ~= "table" then return 0 end
   return WFJ.Labels.show(SURFACE, widgetKey(widget), widget, nil, { only = { key } })
+end
+
+-- The SubText: the definition's line, or one of the lines the dialog's OnShow writes (SUB_TEXT). → 1 | 0
+local function showSubText(dialog, info)
+  local keys = SUB_TEXT[dialog.which]
+  if not keys or type(dialog.SubText) ~= "table" then return showWord(dialog.SubText, info.subText) end
+  return WFJ.Labels.show(SURFACE, widgetKey(dialog.SubText), dialog.SubText, nil, { only = keys })
 end
 
 local UNITS = { "SECONDS", "MINUTES" } -- the countdown's unit words (GetDefaultExpirationText)
@@ -257,7 +278,7 @@ function Popups.onShow(dialog)
   if type(info) ~= "table" then return 0 end
   info = shownInfo(dialog, info)
   local n = showText(dialog, info)
-  n = n + showWord(dialog.SubText, info.subText)
+  n = n + showSubText(dialog, info)
   local confirm = dialog.ConfirmText
   if type(confirm) == "table" and type(confirm.GetText) == "function" then
     n = n + WFJ.Labels.show(SURFACE, widgetKey(confirm), confirm, nil, CONFIRM_ONLY)

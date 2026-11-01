@@ -3,7 +3,7 @@ local _, WFJ = ...
 WFJ.Data.add("spell", {
   [17002] = { "Cat Formの間の移動速度を$N1%上昇させ、Dodge率を$N2%上昇させます。", nil, 0x104915e9, nil, "um" },
   [17003] = { "知力を$N1%増加させます。さらに、Bear FormまたはDire Bear Formの間はスタミナが$N2%、Cat Formの間は筋力が$N3%増加します。", nil, 0xb8e7a728, nil, "um" },
-  [17007] = { "Cat Form、Bear Form、Dire Bear Formの間、Leader of the Packにより$N1ヤード以内のすべてのパーティまたはレイドメンバーの近接と遠隔のCritical Strike率が$N2%上昇します。", nil, 0x057ab50b, nil, "um" },
+  [17007] = { "Cat Form、Bear Form、Dire Bear Formの間、Leader of the Packにより$N1ヤード以内のすべてのパーティまたはレイドメンバーのCritical Strike率が$N2%上昇します。", nil, 0x33f8cc1f, nil, "um" },
   [17008] = { "$D1かけて敵からマナを最大$N1吸い取り、術者に移します。", "$D1かけてマナを$N1吸い取られます。", 0x55b7bb58, 0x84856b70, "uu" },
   [17011] = { nil, "スタンしています。", nil, 0x27f95286, "mu" },
   [17012] = { "敵から魔法効果を$N1個取り除き、術者を$N2回復します。", nil, 0x81dc3258, nil, "um" },
@@ -24,7 +24,7 @@ WFJ.Data.add("spell", {
   [17055] = { "Mark of the WildとGift of the Wildの効果を$N1%増加させます。", nil, 0x0749612d, nil, "um" },
   [17056] = { "Bear FormまたはDire Bear Formに変身したとき、$N1%の確率で怒りを$N2得ます。Cat Formに変身すると、最後にCat Formだったときのエネルギーの$N3%に加えて、Bear FormまたはDire Bear Form以外で過ごした時間に応じて毎秒$N4のエネルギーを、最大$N5まで回復します。", nil, 0x36e838a2, nil, "um" },
   [17063] = { "ArcaneとNatureの呪文に、ダメージを受けたときに$N1%の確率で詠唱時間が失われない効果を与えます。", nil, 0x69343373, nil, "um" },
-  [17069] = { "Healing Touchの詠唱時間を$N1秒短縮し、与えるすべてのダメージを$N2%増加させます。", nil, 0xbdfe0626, nil, "um" },
+  [17069] = { "Healing TouchとWild Growthの詠唱時間を$D1短縮し、与えるすべてのダメージを$N2%増加させます。", nil, 0xb357f79e, nil, "um" },
   [17074] = { "Regrowthのクリティカル効果率を$N1%上昇させます。", nil, 0x4f3f1f26, nil, "um" },
   [17079] = { { "Enrageのアビリティが即座に追加で$N1の怒りを生み出します。", "Enrageのアビリティが即座に$N1の怒りを生み出すようになります。", shape = { "1/0", "1/0" }, key = { "7d412a481b13cf34", "56f6b32b8e3bbc26" } }, nil, 0xd8418074, nil, "um" },
   [17082] = { { "Enrageのアビリティが即座に追加で$N1の怒りを生み出します。", "Enrageのアビリティが即座に$N1の怒りを生み出すようになります。", shape = { "1/0", "1/0" }, key = { "7d412a481b13cf34", "56f6b32b8e3bbc26" } }, nil, 0xc63c52b4, nil, "um" },

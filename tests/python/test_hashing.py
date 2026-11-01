@@ -78,7 +78,7 @@ def test_the_committed_client_english_keeps_its_value_codes():
                     old.append((type_, row["id"], row["field"]))
                 if row["field"] in ("description", "aura") and "{race}" in row["en"]:
                     tokenised += 1
-    assert kept == 103, kept  # on build 70425 (108 on 70170, 105 on 70009), after the served step drops the ids Forever lacks
+    assert kept == 105, kept  # on build 70707 (103 on 70425, 108 on 70170, 105 on 70009), after the served step drops the ids Forever lacks
     assert old == [], old
     assert tokenised == 0
 

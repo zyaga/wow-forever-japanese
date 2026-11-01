@@ -2,30 +2,30 @@
 -- Camelot loads the mainline [Family]\ContainerFrame.lua|xml (+ [Game]\ContainerFrame.lua) and the Shared / [Game]
 -- MainMenuBarBagButtons at login [verified: blizzard_uipanels_game.toc:118–124; blizzard_mainmenubarbagbuttons.toc].
 --   titles: ContainerFrame_GenerateFrame is the global every open path calls (mainline/containerframe.lua:222,
---     292, 305–307, 1286); it calls frame:UpdateName() → SetTitle(C_Container.GetBagName(id)), or COMBINED_BAG_TITLE
---     on ContainerFrameCombinedBags (:924–926, 3009–3011) → TitleContainer.TitleText. Backpack id 0 →
+--     292, 305–307, 1295); it calls frame:UpdateName() → SetTitle(C_Container.GetBagName(id)), or COMBINED_BAG_TITLE
+--     on ContainerFrameCombinedBags (:924–926, 3013–3015) → TitleContainer.TitleText. Backpack id 0 →
 --     BACKPACK_TOOLTIP ("Backpack") or COMBINED_BAG_TITLE; the keyring → KEYRING; every other title is an item name
 --     and is never matched (its record, if any, is dropped).
---   ContainerFrame1..7 and ContainerFrameCombinedBags (xml:295–310), each with $parentPortraitButton (xml:245, 316):
+--   ContainerFrame1..7 and ContainerFrameCombinedBags (xml:298–313), each with $parentPortraitButton (xml:248, 319):
 --     ContainerFramePortraitButtonMixin:OnEnter SetText(BACKPACK_TOOLTIP / KEYRING / the bag's item name) [+ binding]
---     then AddLine(CLICK_BAG_SETTINGS) (lua:2070–2112); a bag's portrait also adds BAG_FILTER_ASSIGNED_TO with
---     the bag's filter list (lua:2095–2099, ContainerFrameUtil_ConvertFilterFlagsToList joins BAG_FILTER_LABELS with
---     LIST_DELIMITER, lua:2400–2417): the `entryList` argument kind shows every filter in Japanese.
---   the backpack's AddSlotsButton is created lazily by UpdateAddSlots (lua:2695–2701, unnamed): registered from the
+--     then AddLine(CLICK_BAG_SETTINGS) (lua:2066–2108); a bag's portrait also adds BAG_FILTER_ASSIGNED_TO with
+--     the bag's filter list (lua:2091–2095, ContainerFrameUtil_ConvertFilterFlagsToList joins BAG_FILTER_LABELS with
+--     LIST_DELIMITER, lua:2396–2413): the `entryList` argument kind shows every filter in Japanese.
+--   the backpack's AddSlotsButton is created lazily by UpdateAddSlots (lua:2694–2700, unnamed): registered from the
 --     GenerateFrame hook once it exists; inline OnEnter SetText(BACKPACK_AUTHENTICATOR_INCREASE_SIZE) (xml:43–47).
---   BagItemAutoSortButton (parent ContainerFrame1, shown on the backpack, lua:1113–1129): inline OnEnter
---     GameTooltip_SetTitle(BAG_CLEANUP_BAGS) + AddNormalLine(BAG_CLEANUP_BAGS_DESCRIPTION) + Show (xml:353–375).
---   the extended (padlocked) slots: UpdateExtended creates each one's extendedFrame lazily (lua:2028–2052); its
+--   BagItemAutoSortButton (parent ContainerFrame1, shown on the backpack, lua:1122–1138): inline OnEnter
+--     GameTooltip_SetTitle(BAG_CLEANUP_BAGS) + AddNormalLine(BAG_CLEANUP_BAGS_DESCRIPTION) + Show (xml:360–382).
+--   the extended (padlocked) slots: UpdateExtended creates each one's extendedFrame lazily (lua:2024–2048); its
 --     XML OnEnter is the global ContainerFrameExtendedItemButton_OnEnter → GameTooltip_SetTitle(
---     BACKPACK_AUTHENTICATOR_INCREASE_SIZE) + Show (xml:31, lua:1627–1632). A template script is bound when the frame
+--     BACKPACK_AUTHENTICATOR_INCREASE_SIZE) + Show (xml:31, lua:1636–1641). A template script is bound when the frame
 --     is created, so a post-hook on the global reaches every extended frame; it registers the frame and walks the
 --     tooltip it just showed.
 --   the bag search box's placeholder: BagItemSearchBox.Instructions, written once by SearchBoxTemplate_OnLoad
 --     (SEARCH, blizzard_sharedxml/shared/inputbox/inputboxtemplates.lua:177); a static label. The EditBox
 --     itself stays untouched.
 --   bag bar: MainMenuBarBackpackButton (SetTitle BACKPACK_TOOLTIP + binding + NUM_FREE_SLOTS "13 Empty Slots
---     (Total)", shared/mainmenubarbagbuttons.lua:302–316), KeyRingButton
---     (SetText(KEYRING), camelot/mainmenubarbagbuttons.lua:179–183), CharacterBag0..3Slot and CharacterReagentBag0Slot
+--     (Total)", shared/mainmenubarbagbuttons.lua:391–405), KeyRingButton
+--     (SetText(KEYRING), camelot/mainmenubarbagbuttons.lua:185–189), CharacterBag0..3Slot and CharacterReagentBag0Slot
 --     (empty: SetTitle EQUIP_CONTAINER / EQUIP_CONTAINER_REAGENT; a bag: SetInventoryItem, an item tooltip, never
 --     walked; shared/mainmenubarbagbuttons.lua:102–127; mainline/mainmenubarbagbuttontemplates.xml:85–117). A
 --     bag's item tooltip gets BAG_FILTER_ASSIGNED_TO appended (:112–118), after the slot's OnEnterInternal (called as
@@ -44,7 +44,7 @@ local Compat = WFJ.Compat
 -- Widgets this module must never record: the bag search EditBox.
 Bags.NEVER_TOUCH = { "BagItemSearchBox" }
 
-local MAX_FRAMES = 7 -- ContainerFrame1..7 [verified: mainline/containerframe.xml:295–301]
+local MAX_FRAMES = 7 -- ContainerFrame1..7 [verified: mainline/containerframe.xml:298–304]
 local BAG_SLOTS = 4 -- CharacterBag0Slot..CharacterBag3Slot
 local BACKPACK_ID = 0
 

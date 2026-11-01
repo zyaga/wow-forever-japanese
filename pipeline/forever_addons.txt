@@ -139,7 +139,7 @@ blizzard_gamepad login 15
 blizzard_gamepadactionbars login 33
 blizzard_gamepadsharedutility login 26
 blizzard_gamepadsharedutilitysecure login 2
-blizzard_gamepadsmartnavigation login 4
+blizzard_gamepadsmartnavigation login 5
 blizzard_gamepadsoftcursor login 2
 blizzard_gamepadtargeting login 5
 blizzard_gametooltip login 4

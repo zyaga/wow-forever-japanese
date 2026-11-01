@@ -56,7 +56,7 @@ WFJ.Data.add("ui", {
   ["TALENT_MICRO_BUTTON_UNSPENT_TALENTS"] = { "未使用のタレントポイントがあります。", 0x35db637e, "." },
   ["TALENT_SPEC_ACTIVATE"] = { "有効化", 0x6fe8ceb4, "." },
   ["TALENT_SPEC_ACTIVE"] = { "有効", 0xb60b9ac0, "." },
-  ["TALENT_SPEC_LOCKED"] = { "ロック中", 0x5518bc84, "." },
+  ["TALENT_SPEC_LOCKED"] = { "クラストレーナーで解除", 0xba0e2a53, "." },
   ["TALENT_SPEC_PRIMARY"] = { "メインタレント", 0x090b4b85, "." },
   ["TALENT_SPEC_SECONDARY"] = { "サブタレント", 0x6231633f, "." },
   ["TALL"] = { "高い", 0x0b5b14f5, "." },

@@ -541,7 +541,7 @@ function Index:entryArg(value, outer)
 end
 
 -- An `entryList` argument: LIST_DELIMITER-joined pieces ("Equipment, Consumables";
--- containerframe.lua:2400–2417), every piece an entry, each delimiter kept as written. → { list = { item | sep … } }
+-- containerframe.lua:2396–2413), every piece an entry, each delimiter kept as written. → { list = { item | sep … } }
 -- | nil when any piece is not an entry.
 function Index:entryList(value, outer)
   local items, pos = {}, 1

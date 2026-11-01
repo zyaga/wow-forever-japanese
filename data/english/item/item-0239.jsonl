@@ -1,43 +1,43 @@
-{"id": 239005, "field": "name", "en": "Distilled Demonic Essence", "hash": "00294a8c0ca97f38", "src": "db2@1.60.1.70685"}
-{"id": 239005, "field": "description", "en": "Allows the user to temporarily see demonic shades within Felwood.", "hash": "e41c07dc27c6146a", "src": "db2@1.60.1.70685"}
-{"id": 239006, "field": "name", "en": "Fel-Touched Flower", "hash": "18cfcbfaa5d6e67a", "src": "db2@1.60.1.70685"}
-{"id": 239006, "field": "description", "en": "Combine three Fel-Touched Flowers into a potion that will temporarily show demonic shades.\nPerverse energy emanates weakly from the once-beautiful flower.", "hash": "52c3ed625a1c74e0", "src": "db2@1.60.1.70685"}
-{"id": 239011, "field": "name", "en": "Shard of Crystallized Light", "hash": "8ad37b84f363dbee", "src": "db2@1.60.1.70685"}
-{"id": 239012, "field": "name", "en": "Splinter of Crystallized Light", "hash": "7cd12b528101d519", "src": "db2@1.60.1.70685"}
-{"id": 239013, "field": "name", "en": "Crystalline Axe", "hash": "bc24ce757e6e43aa", "src": "db2@1.60.1.70685"}
-{"id": 239013, "field": "description", "en": "Blades of Light, indeed.", "hash": "ba9ba9bcaafeaa08", "src": "db2@1.60.1.70685"}
-{"id": 239016, "field": "name", "en": "Holy Salts", "hash": "c4af4257b6d5a942", "src": "db2@1.60.1.70685"}
-{"id": 239016, "field": "description", "en": "Commonly used by crusaders to ward off bad luck. Conveniently, it also useful for cooking.", "hash": "43c4767757ec4926", "src": "db2@1.60.1.70685"}
-{"id": 239017, "field": "name", "en": "Exquisite Spices", "hash": "6abb3326f77f3983", "src": "db2@1.60.1.70685"}
-{"id": 239017, "field": "description", "en": "A highly regulated commodity; buying or selling directly would be unwise. Coveted by chefs when cooking feasts.", "hash": "7a8d8a6cb8045556", "src": "db2@1.60.1.70685"}
-{"id": 239021, "field": "name", "en": "Carrie's Cookbook", "hash": "e366b21b6b191223", "src": "db2@1.60.1.70685"}
-{"id": 239021, "field": "description", "en": "Teaches you how to cook Carrie Hearthfire's most desirable feast recipes.", "hash": "86b738e261df9fa5", "src": "db2@1.60.1.70685"}
-{"id": 239092, "field": "name", "en": "Preposterously Prosed Postage", "hash": "e80216023f62221a", "src": "db2@1.60.1.70685"}
-{"id": 239119, "field": "name", "en": "Holy Arrow", "hash": "8b0127968610de7c", "src": "db2@1.60.1.70685"}
-{"id": 239119, "field": "description", "en": "Blessed be the arrow that smites our enemies.", "hash": "8dbf8aa6fd9ff17a", "src": "db2@1.60.1.70685"}
-{"id": 239123, "field": "name", "en": "Monster - BOW_1H_STANDARD_C_01 - Red", "hash": "04d7ce74b7e0f210", "src": "db2@1.60.1.70685"}
-{"id": 239147, "field": "name", "en": "Crusader's Knapsack", "hash": "9520a610c105ebec", "src": "db2@1.60.1.70685"}
-{"id": 239148, "field": "name", "en": "Crimson Dawnwoven Bag", "hash": "2a6bcb61af20e12f", "src": "db2@1.60.1.70685"}
-{"id": 239149, "field": "name", "en": "Pattern: Crusader's Knapsack", "hash": "80ddb77eec49b45c", "src": "db2@1.60.1.70685"}
-{"id": 239149, "field": "description", "en": "Teaches you how to craft Crusader's Knapsack.", "hash": "771c656c1aa7d578", "src": "db2@1.60.1.70685"}
-{"id": 239150, "field": "name", "en": "Pattern: Crimson Dawnwoven Bag", "hash": "efa117b492981586", "src": "db2@1.60.1.70685"}
-{"id": 239150, "field": "description", "en": "Teaches you how to craft Crimson Dawnwoven Bag.", "hash": "286d32f690e92ed3", "src": "db2@1.60.1.70685"}
-{"id": 239218, "field": "name", "en": "Stoneshaper's Notes", "hash": "5af4319341e12339", "src": "db2@1.60.1.70685"}
-{"id": 239218, "field": "description", "en": "This document is written in a sloppy shorthand but what you are able to understand suggest that these plans and project notes are the product of a true genius of a craftman.", "hash": "2fc55fafca5e6456", "src": "db2@1.60.1.70685"}
-{"id": 239222, "field": "name", "en": "Schematic: Pop-Up Shrub", "hash": "6a66c74df6ed4be7", "src": "db2@1.60.1.70685"}
-{"id": 239222, "field": "description", "en": "Teaches you how to craft Pop-Up Shrub.", "hash": "901b460a6f9cd257", "src": "db2@1.60.1.70685"}
-{"id": 239223, "field": "name", "en": "House Prop", "hash": "04a4226a1b4c9413", "src": "db2@1.60.1.70685"}
-{"id": 239223, "field": "description", "en": "Incredibly convincing in the context of an opera or a play.", "hash": "52ee0f5c4cc837ef", "src": "db2@1.60.1.70685"}
-{"id": 239225, "field": "name", "en": "Classy Quill", "hash": "b150c5d1a80573de", "src": "db2@1.60.1.70685"}
-{"id": 239225, "field": "description", "en": "You can only imagine the satisfaction of writing your own signature with this.", "hash": "dc6f9e2e8868bd1c", "src": "db2@1.60.1.70685"}
-{"id": 239246, "field": "name", "en": "Fizzlefuse's Shopping List", "hash": "2d19845e7cc16850", "src": "db2@1.60.1.70685"}
-{"id": 239246, "field": "description", "en": "A list of items hastily scribbled down whenever it crossed the author's mind.", "hash": "773643e57a4f7d36", "src": "db2@1.60.1.70685"}
-{"id": 239292, "field": "name", "en": "Forgewright's Notes", "hash": "cac51fdc49f5bfa1", "src": "db2@1.60.1.70685"}
-{"id": 239292, "field": "description", "en": "Contains the collected thoughts and works of Franclorn Forgewright.", "hash": "1cd229fbaa9c300e", "src": "db2@1.60.1.70685"}
-{"id": 239302, "field": "name", "en": "Scarlet Uniform Belt", "hash": "ae86db562408f22f", "src": "db2@1.60.1.70685"}
-{"id": 239302, "field": "description", "en": "A dense leather strap with a heavy steel buckle. Truly a masterpiece of a belt, ready to be ruined by reckless tinkering.", "hash": "e9e2ed7fc61a7ff6", "src": "db2@1.60.1.70685"}
-{"id": 239316, "field": "name", "en": "Triangulation Samophlange", "hash": "ac3f481a97b00af4", "src": "db2@1.60.1.70685"}
-{"id": 239316, "field": "description", "en": "Use the device at a designated triangulation point to aid Fizzlefuse in his teleporter's calibration.", "hash": "3fe0358d1d402e5a", "src": "db2@1.60.1.70685"}
+{"id": 239005, "field": "name", "en": "Distilled Demonic Essence", "hash": "00294a8c0ca97f38", "src": "db2@1.60.1.70707"}
+{"id": 239005, "field": "description", "en": "Allows the user to temporarily see demonic shades within Felwood.", "hash": "e41c07dc27c6146a", "src": "db2@1.60.1.70707"}
+{"id": 239006, "field": "name", "en": "Fel-Touched Flower", "hash": "18cfcbfaa5d6e67a", "src": "db2@1.60.1.70707"}
+{"id": 239006, "field": "description", "en": "Combine three Fel-Touched Flowers into a potion that will temporarily show demonic shades.\nPerverse energy emanates weakly from the once-beautiful flower.", "hash": "52c3ed625a1c74e0", "src": "db2@1.60.1.70707"}
+{"id": 239011, "field": "name", "en": "Shard of Crystallized Light", "hash": "8ad37b84f363dbee", "src": "db2@1.60.1.70707"}
+{"id": 239012, "field": "name", "en": "Splinter of Crystallized Light", "hash": "7cd12b528101d519", "src": "db2@1.60.1.70707"}
+{"id": 239013, "field": "name", "en": "Crystalline Axe", "hash": "bc24ce757e6e43aa", "src": "db2@1.60.1.70707"}
+{"id": 239013, "field": "description", "en": "Blades of Light, indeed.", "hash": "ba9ba9bcaafeaa08", "src": "db2@1.60.1.70707"}
+{"id": 239016, "field": "name", "en": "Holy Salts", "hash": "c4af4257b6d5a942", "src": "db2@1.60.1.70707"}
+{"id": 239016, "field": "description", "en": "Commonly used by crusaders to ward off bad luck. Conveniently, it also useful for cooking.", "hash": "43c4767757ec4926", "src": "db2@1.60.1.70707"}
+{"id": 239017, "field": "name", "en": "Exquisite Spices", "hash": "6abb3326f77f3983", "src": "db2@1.60.1.70707"}
+{"id": 239017, "field": "description", "en": "A highly regulated commodity; buying or selling directly would be unwise. Coveted by chefs when cooking feasts.", "hash": "7a8d8a6cb8045556", "src": "db2@1.60.1.70707"}
+{"id": 239021, "field": "name", "en": "Carrie's Cookbook", "hash": "e366b21b6b191223", "src": "db2@1.60.1.70707"}
+{"id": 239021, "field": "description", "en": "Teaches you how to cook Carrie Hearthfire's most desirable feast recipes.", "hash": "86b738e261df9fa5", "src": "db2@1.60.1.70707"}
+{"id": 239092, "field": "name", "en": "Preposterously Prosed Postage", "hash": "e80216023f62221a", "src": "db2@1.60.1.70707"}
+{"id": 239119, "field": "name", "en": "Holy Arrow", "hash": "8b0127968610de7c", "src": "db2@1.60.1.70707"}
+{"id": 239119, "field": "description", "en": "Blessed be the arrow that smites our enemies.", "hash": "8dbf8aa6fd9ff17a", "src": "db2@1.60.1.70707"}
+{"id": 239123, "field": "name", "en": "Monster - BOW_1H_STANDARD_C_01 - Red", "hash": "04d7ce74b7e0f210", "src": "db2@1.60.1.70707"}
+{"id": 239147, "field": "name", "en": "Crusader's Knapsack", "hash": "9520a610c105ebec", "src": "db2@1.60.1.70707"}
+{"id": 239148, "field": "name", "en": "Crimson Dawnwoven Bag", "hash": "2a6bcb61af20e12f", "src": "db2@1.60.1.70707"}
+{"id": 239149, "field": "name", "en": "Pattern: Crusader's Knapsack", "hash": "80ddb77eec49b45c", "src": "db2@1.60.1.70707"}
+{"id": 239149, "field": "description", "en": "Teaches you how to craft Crusader's Knapsack.", "hash": "771c656c1aa7d578", "src": "db2@1.60.1.70707"}
+{"id": 239150, "field": "name", "en": "Pattern: Crimson Dawnwoven Bag", "hash": "efa117b492981586", "src": "db2@1.60.1.70707"}
+{"id": 239150, "field": "description", "en": "Teaches you how to craft Crimson Dawnwoven Bag.", "hash": "286d32f690e92ed3", "src": "db2@1.60.1.70707"}
+{"id": 239218, "field": "name", "en": "Stoneshaper's Notes", "hash": "5af4319341e12339", "src": "db2@1.60.1.70707"}
+{"id": 239218, "field": "description", "en": "This document is written in a sloppy shorthand but what you are able to understand suggest that these plans and project notes are the product of a true genius of a craftman.", "hash": "2fc55fafca5e6456", "src": "db2@1.60.1.70707"}
+{"id": 239222, "field": "name", "en": "Schematic: Pop-Up Shrub", "hash": "6a66c74df6ed4be7", "src": "db2@1.60.1.70707"}
+{"id": 239222, "field": "description", "en": "Teaches you how to craft Pop-Up Shrub.", "hash": "901b460a6f9cd257", "src": "db2@1.60.1.70707"}
+{"id": 239223, "field": "name", "en": "House Prop", "hash": "04a4226a1b4c9413", "src": "db2@1.60.1.70707"}
+{"id": 239223, "field": "description", "en": "Incredibly convincing in the context of an opera or a play.", "hash": "52ee0f5c4cc837ef", "src": "db2@1.60.1.70707"}
+{"id": 239225, "field": "name", "en": "Classy Quill", "hash": "b150c5d1a80573de", "src": "db2@1.60.1.70707"}
+{"id": 239225, "field": "description", "en": "You can only imagine the satisfaction of writing your own signature with this.", "hash": "dc6f9e2e8868bd1c", "src": "db2@1.60.1.70707"}
+{"id": 239246, "field": "name", "en": "Fizzlefuse's Shopping List", "hash": "2d19845e7cc16850", "src": "db2@1.60.1.70707"}
+{"id": 239246, "field": "description", "en": "A list of items hastily scribbled down whenever it crossed the author's mind.", "hash": "773643e57a4f7d36", "src": "db2@1.60.1.70707"}
+{"id": 239292, "field": "name", "en": "Forgewright's Notes", "hash": "cac51fdc49f5bfa1", "src": "db2@1.60.1.70707"}
+{"id": 239292, "field": "description", "en": "Contains the collected thoughts and works of Franclorn Forgewright.", "hash": "1cd229fbaa9c300e", "src": "db2@1.60.1.70707"}
+{"id": 239302, "field": "name", "en": "Scarlet Uniform Belt", "hash": "ae86db562408f22f", "src": "db2@1.60.1.70707"}
+{"id": 239302, "field": "description", "en": "A dense leather strap with a heavy steel buckle. Truly a masterpiece of a belt, ready to be ruined by reckless tinkering.", "hash": "e9e2ed7fc61a7ff6", "src": "db2@1.60.1.70707"}
+{"id": 239316, "field": "name", "en": "Triangulation Samophlange", "hash": "ac3f481a97b00af4", "src": "db2@1.60.1.70707"}
+{"id": 239316, "field": "description", "en": "Use the device at a designated triangulation point to aid Fizzlefuse in his teleporter's calibration.", "hash": "3fe0358d1d402e5a", "src": "db2@1.60.1.70707"}
 {"id": 239512, "field": "name", "en": "Lightbreaker Wrists", "hash": "d5645bfffdbb3ec2", "src": "db2@1.60.1.70532"}
 {"id": 239512, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "2a496c468cb2904f", "src": "wago@1.15.9.69722"}
 {"id": 239513, "field": "name", "en": "Lightbreaker Belt", "hash": "0d0ae6a370197b8e", "src": "db2@1.60.1.70532"}
@@ -102,8 +102,8 @@
 {"id": 239543, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 ranged Attack Power.", "hash": "1022fc16a5cc6aa8", "src": "wago@1.15.9.69722"}
 {"id": 239544, "field": "name", "en": "Dawnstalker Wristguards", "hash": "2be0597448e69e04", "src": "db2@1.60.1.70532"}
 {"id": 239544, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\n+$s1 ranged Attack Power.", "hash": "1022fc16a5cc6aa8", "src": "wago@1.15.9.69722"}
-{"id": 239545, "field": "name", "en": "Weathered Night Elf Artifact", "hash": "b5e0c37d829be8ac", "src": "db2@1.60.1.70685"}
-{"id": 239545, "field": "description", "en": "Pitted erosion shows where this stone icon has succumbed to years of weathering.", "hash": "fb2aab89d320101a", "src": "db2@1.60.1.70685"}
+{"id": 239545, "field": "name", "en": "Weathered Night Elf Artifact", "hash": "b5e0c37d829be8ac", "src": "db2@1.60.1.70707"}
+{"id": 239545, "field": "description", "en": "Pitted erosion shows where this stone icon has succumbed to years of weathering.", "hash": "fb2aab89d320101a", "src": "db2@1.60.1.70707"}
 {"id": 239547, "field": "name", "en": "Duskwraith Wristguards", "hash": "7bf1a8cd0fc06cd5", "src": "db2@1.60.1.70532"}
 {"id": 239547, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nIncreased Defense +$s1.", "hash": "666a1b06db11e847", "src": "wago@1.15.9.69722"}
 {"id": 239548, "field": "name", "en": "Duskwraith Chestguard", "hash": "396d18134086f66a", "src": "db2@1.60.1.70532"}
@@ -168,13 +168,13 @@
 {"id": 239590, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "af7f212f2f46e894", "src": "wago@1.15.9.69722"}
 {"id": 239591, "field": "name", "en": "Robe of Revelation", "hash": "b43573a7dc614aa2", "src": "db2@1.60.1.70532"}
 {"id": 239591, "field": "description", "en": "Increases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "77ff472e131bf1a2", "src": "wago@1.15.9.69722"}
-{"id": 239609, "field": "name", "en": "Saria's Knapsack", "hash": "d0e75bb02623bf73", "src": "db2@1.60.1.70685"}
-{"id": 239618, "field": "name", "en": "Monster - Sword 1H - Vanquisher's Sword (Alt)", "hash": "4c578fbb4c4e08aa", "src": "db2@1.60.1.70685"}
+{"id": 239609, "field": "name", "en": "Saria's Knapsack", "hash": "d0e75bb02623bf73", "src": "db2@1.60.1.70707"}
+{"id": 239618, "field": "name", "en": "Monster - Sword 1H - Vanquisher's Sword (Alt)", "hash": "4c578fbb4c4e08aa", "src": "db2@1.60.1.70707"}
 {"id": 239618, "field": "description", "en": "+$s1 Attack Power.", "hash": "ff5c97b29bc1954f", "src": "wago@1.15.9.69722"}
-{"id": 239688, "field": "name", "en": "Monster - Spear 2H - Scarlet Cavalry - Spear", "hash": "58d5ba5cb7587356", "src": "db2@1.60.1.70685"}
+{"id": 239688, "field": "name", "en": "Monster - Spear 2H - Scarlet Cavalry - Spear", "hash": "58d5ba5cb7587356", "src": "db2@1.60.1.70707"}
 {"id": 239688, "field": "description", "en": "+$s1 Attack Power.", "hash": "ff5c97b29bc1954f", "src": "wago@1.15.9.69722"}
-{"id": 239698, "field": "name", "en": "Dawnwoven Fabric", "hash": "461ba36f8d87eec1", "src": "db2@1.60.1.70685"}
-{"id": 239698, "field": "description", "en": "Small pieces of cloth and thread that were mysteriously drawn toward the Crusader's Loom. Apparently used when stitching holy vestments.", "hash": "203ef4f72997e01b", "src": "db2@1.60.1.70685"}
-{"id": 239704, "field": "name", "en": "Amulet of Gol'gere", "hash": "0578089f26f5d8f4", "src": "db2@1.60.1.70685"}
-{"id": 239764, "field": "name", "en": "Crimson Bladeleaf", "hash": "cce58b0abc9967e5", "src": "db2@1.60.1.70685"}
-{"id": 239764, "field": "description", "en": "A vibrant red dye extracted from everything except the petals of a freshly bloomed Bladeleaf.", "hash": "d1c34e4de3f0ad10", "src": "db2@1.60.1.70685"}
+{"id": 239698, "field": "name", "en": "Dawnwoven Fabric", "hash": "461ba36f8d87eec1", "src": "db2@1.60.1.70707"}
+{"id": 239698, "field": "description", "en": "Small pieces of cloth and thread that were mysteriously drawn toward the Crusader's Loom. Apparently used when stitching holy vestments.", "hash": "203ef4f72997e01b", "src": "db2@1.60.1.70707"}
+{"id": 239704, "field": "name", "en": "Amulet of Gol'gere", "hash": "0578089f26f5d8f4", "src": "db2@1.60.1.70707"}
+{"id": 239764, "field": "name", "en": "Crimson Bladeleaf", "hash": "cce58b0abc9967e5", "src": "db2@1.60.1.70707"}
+{"id": 239764, "field": "description", "en": "A vibrant red dye extracted from everything except the petals of a freshly bloomed Bladeleaf.", "hash": "d1c34e4de3f0ad10", "src": "db2@1.60.1.70707"}

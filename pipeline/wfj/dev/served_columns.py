@@ -214,7 +214,7 @@ def main(argv: list[str] | None = None) -> int:
     args = ap.parse_args(argv)
     try:
         archive = casc.LocalArchive(args.wow, args.product)
-        cache = dbcache.read(args.hotfixes) if args.hotfixes else None
+        cache = dbcache.read_for(args.hotfixes, archive.info.version) if args.hotfixes else None
         tables = db2_files(args.listfile)
     except (casc.CascError, dbcache.DbcacheError, OSError) as e:
         print(f"served-columns: {e}", file=sys.stderr)

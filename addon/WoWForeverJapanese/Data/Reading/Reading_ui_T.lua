@@ -56,7 +56,7 @@ WFJ.Data.add("reading", {
   ["ui:TALENT_MICRO_BUTTON_UNSPENT_TALENTS"] = { text = "未使用=みしよう=89289 タレント=タレント=33501 ポイント=ポイント=34990 あります=あります=2154" },
   ["ui:TALENT_SPEC_ACTIVATE"] = { text = "有効化=ゆうこうか=88923" },
   ["ui:TALENT_SPEC_ACTIVE"] = { text = "有効=ゆうこう=88878" },
-  ["ui:TALENT_SPEC_LOCKED"] = { text = "ロック=ロック=35598 中=ちゅう=38487" },
+  ["ui:TALENT_SPEC_LOCKED"] = { text = "クラストレーナー=クラストレーナー=140940 解除=かいじょ=140941" },
   ["ui:TALENT_SPEC_PRIMARY"] = { text = "メイン=メイン=35162 タレント=タレント=33502" },
   ["ui:TALENT_SPEC_SECONDARY"] = { text = "サブ=サブ=33054 タレント=タレント=33502" },
   ["ui:TALL"] = { text = "高い=たかい=138069" },

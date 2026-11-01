@@ -487,7 +487,6 @@ WFJ.Data.add("gloss", {
   [38484] = "中\tじゅう\tthroughout",
   [38485] = "中\tじゅう\twithin (throughout)",
   [38486] = "中\tちゅう\t(currently) in",
-  [38487] = "中\tちゅう\t(currently) in the state (locked)",
   [38488] = "中\tちゅう\t(in progress)",
   [38489] = "中\tちゅう\tcurrently (in use)",
   [38490] = "中\tちゅう\tduring",

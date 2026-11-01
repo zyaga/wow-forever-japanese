@@ -24,7 +24,7 @@
 --     XP_STATUS_BAR_TEXT). The Experience bar is reached by reading
 --     `container.bars[StatusTrackingBarInfo.BarsEnum.Experience]` of each status-bar container. The pet XP bars
 --     (the character sheet's and the stable's PetStableFrame.expBar, both PetExpColoredProgressBarTemplate) write a
---     literal "XP %s/%s" from their OnUpdate (camelot paperdollframe.lua:3692–3700; stable xml:183), no global
+--     literal "XP %s/%s" from their OnUpdate (camelot paperdollframe.lua:3709–3717; stable xml:183), no global
 --     string: nothing to ship it under, so neither is hooked;
 --   the exhaustion tick tooltip: ExhaustionTickMixin:ExhaustionToolTipText anchors it to UIParent
 --     (GameTooltip_SetDefaultAnchor(tooltip, UIParent)) and writes XP_TEXT (numbers only), EXHAUST_TOOLTIP1,

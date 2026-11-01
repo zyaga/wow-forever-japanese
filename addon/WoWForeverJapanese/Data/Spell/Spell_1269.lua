@@ -46,7 +46,7 @@ WFJ.Data.add("spell", {
   [1269582] = { "認定を受けていない書記からForgery Quillsを購入できるようになります。Forgery Quillsを使うと、どのCraftsman's WritもArtisanのスキルの新しいものに引き直せます。", nil, 0xb5f9d7c7, nil, "um" },
   [1269585] = { "Wild Kingが恐ろしい金切り声を放ち、$N1ヤード以内のすべてのプレイヤーを$D1の間恐怖で逃げ惑わせます。", "恐怖に陥っています。", 0xaf591da8, 0x5a2205f2, "uu" },
   [1269600] = { { "空のWaylaid Crateに偽造した配達受領書を貼り付け、Durotar Supply and Logisticsに返却して評判を+$N1得られるようにします。", "空のWaylaid Crateに偽造した配達受領書を貼り付け、Azeroth Commerce Authorityに返却して評判を+$N1得られるようにします。", shape = { "1/0", "1/0" } }, nil, 0xaae3ce9d, nil, "um" },
-  [1269603] = { nil, "出血により、$D1ごとに$N1のダメージを受けています。", nil, 0xb19a98cb, "mu" },
+  [1269603] = { "Wild Kingが爪で対象を引き裂き、$D1ごとに$N1の物理ダメージの出血を与え、受ける回復量を$N3%減少させます。", "出血により、$D1ごとに$N1のダメージを受けています。\n\n受ける回復量が$N3%減少しています。", 0xedc6a344, 0xa3a566cf, "uu" },
   [1269624] = { nil, "$D1ごとに$N1のNatureダメージを受けています。", nil, 0xac4e4574, "mu" },
   [1269670] = { "封筒を破って開け、令状を取り出します。出てくる注文はApprenticeの職人向けです。", nil, 0xfa77d3b2, nil, "um" },
   [1269671] = { "封筒を破って開け、令状を取り出します。出てくる注文はJourneymanの職人向けです。", nil, 0xa551b36f, nil, "um" },

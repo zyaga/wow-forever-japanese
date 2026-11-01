@@ -27,7 +27,7 @@ local UI = {
   CONTENT_TRACKING_LOCATION_UNAVAILABLE = { "|cffff0000Location unavailable|r", "|cffff0000場所が不明です|r" },
   CONTENT_TRACKING_ROUTE_UNAVAILABLE = { "|cffff0000Route unavailable|r", "|cffff0000経路が不明です|r" },
   OPTIONAL_QUEST_OBJECTIVE_DESCRIPTION = { "%s (Optional)", "%s(任意)" },
-  -- the gamepad lines in place of the click hint (questmapframe.lua:2296–2298)
+  -- the gamepad lines in place of the click hint (questmapframe.lua:2290–2292)
   MAP_PIN_TOGGLE_QUEST_FOCUS = { "Toggle Focus on Quest", "クエストへのフォーカスを切り替え" },
   CONTEXT_ACTION_LABEL_MORE_ACTIONS = { "More", "その他" },
 }
@@ -237,7 +237,7 @@ describe("UI/QuestMap: objective lines", function()
     local OBJ_JA = "書庫を焼き払え。"
     local F6 = "|c0042b1fePress F6 to submit an issue for this Quest"
 
-    -- QuestMapLogTitleButton_OnEnter (questmapframe.lua:2196–2311): SetOwner, SetText(title), a blank line, the
+    -- QuestMapLogTitleButton_OnEnter (questmapframe.lua:2190–2305): SetOwner, SetText(title), a blank line, the
     -- objectives (GetQuestLogQuestText for the row's log index) or the completion line, the QUEST_DASH lines, the
     -- hint, Show, then the EventRegistry event
     local function hover(description)

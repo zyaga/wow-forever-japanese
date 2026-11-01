@@ -397,7 +397,7 @@ WFJ.Data.add("spell", {
   [5918] = { "ステルス状態から攻撃した際、敵に通常ダメージに加えて$N1を与え、$D1スタンさせます。", "スタンしています。", 0x89fbb78e, 0x27f95286, "uu" },
   [5919] = { "Holy Magicスキルが$N1増加し、Shadow Resistanceが$N2低下します。", nil, 0x9634c6fc, nil, "um" },
   [5920] = { "Holy Magicスキルが$N1増加し、Shadow Resistanceが$N2低下します。", nil, 0x9634c6fc, nil, "um" },
-  [5923] = { "Holy ShockとHoly Strikeのクリティカル率を$N1%、その他すべての呪文のクリティカル率を$N2%増加させます。", nil, 0xb5b54bfe, nil, "um" },
+  [5923] = { "Holy呪文のクリティカル回復ボーナスを$N1%増加させます。", nil, 0xc73aceb7, nil, "um" },
   [5927] = { "Holy呪文を唱えるためのマナコストが$N1減少します。", nil, 0xd5ef80fa, nil, "um" },
   [5928] = { "Holy呪文を唱えるためのマナコストが$N1減少します。", nil, 0xd5ef80fa, nil, "um" },
   [5929] = { "Holy呪文を唱えるためのマナコストが$N1減少します。", nil, 0xd5ef80fa, nil, "um" },

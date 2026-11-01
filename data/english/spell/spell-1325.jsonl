@@ -1,67 +1,67 @@
-{"id": 1325081, "field": "name", "en": "Orc Mask", "hash": "d3e5fe98c7685b12", "src": "db2@1.60.1.70685"}
-{"id": 1325180, "field": "name", "en": "Sift Soil", "hash": "45c1e6453050abef", "src": "db2@1.60.1.70685"}
-{"id": 1325180, "field": "description", "en": "Sift through an Un'Goro Dirt Pile.", "hash": "645bcd54dde33089", "src": "db2@1.60.1.70685"}
-{"id": 1325228, "field": "name", "en": "The Green Tower", "hash": "9ce6b425326ce158", "src": "db2@1.60.1.70685"}
-{"id": 1325228, "field": "description", "en": "When struck in combat, inflicts $s1 Physical damage to the attacker.", "hash": "3ad296c3bf700166", "src": "db2@1.60.1.70685"}
-{"id": 1325229, "field": "name", "en": "Gloves of Holy Might", "hash": "52369f130ff1d320", "src": "db2@1.60.1.70685"}
-{"id": 1325229, "field": "description", "en": "Smite your target for $s1 Holy damage. Damage is tripled against Undead.", "hash": "98c8d89a4e129ea8", "src": "db2@1.60.1.70685"}
-{"id": 1325256, "field": "name", "en": "Mana Tide Totem", "hash": "ec604280ab05d439", "src": "db2@1.60.1.70685"}
-{"id": 1325256, "field": "description", "en": "Summons a Mana Tide Totem with $s1 health at the feet of the caster for ${$d-1} sec that restores $1325257s1 mana every $1325257t1 seconds to group members within $1325257a1 yards.", "hash": "af38377a6e499649", "src": "db2@1.60.1.70685"}
-{"id": 1325257, "field": "name", "en": "Mana Tide", "hash": "ca970d3523f37dd6", "src": "db2@1.60.1.70685"}
-{"id": 1325257, "field": "aura", "en": "Gain $s1 mana every $t1 seconds.", "hash": "e575a7eccea6897e", "src": "db2@1.60.1.70685"}
-{"id": 1325299, "field": "name", "en": "[DNT] Boosted Rest", "hash": "e40a7713f85958a1", "src": "db2@1.60.1.70685"}
-{"id": 1325499, "field": "name", "en": "Revoke", "hash": "8d3634cdf739f447", "src": "db2@1.60.1.70685"}
-{"id": 1325499, "field": "description", "en": "Remove target party or raid member's Salvation or Mass Salvation.", "hash": "69a8e34f5242cc5a", "src": "db2@1.60.1.70685"}
-{"id": 1325508, "field": "name", "en": "Perfected Form", "hash": "afa64866c5e599d4", "src": "db2@1.60.1.70685"}
-{"id": 1325508, "field": "description", "en": "Inflict $s1 Physical damage and increase all stats by $s2.", "hash": "af56e2c6b224d04e", "src": "db2@1.60.1.70685"}
-{"id": 1325508, "field": "aura", "en": "All stats increased by $s2.", "hash": "0a3cc84761fe9d94", "src": "db2@1.60.1.70685"}
-{"id": 1325509, "field": "name", "en": "Improving Form", "hash": "d3c825fae339224d", "src": "db2@1.60.1.70685"}
-{"id": 1325509, "field": "description", "en": "Each melee hit grants you a stack of Improving Form. At 30 stacks perfect your form, inflicting $1325508s1 Physical damage to your current target and increasing all your stats by $1325508s2 for $1325508d.", "hash": "50b174aab8495746", "src": "db2@1.60.1.70685"}
-{"id": 1325509, "field": "aura", "en": "With each strike, a lesson.", "hash": "0274d48cb9707385", "src": "db2@1.60.1.70685"}
-{"id": 1325535, "field": "name", "en": "Improving Form", "hash": "d3c825fae339224d", "src": "db2@1.60.1.70685"}
-{"id": 1325535, "field": "description", "en": "Each melee hit grants you a stack of Improving Form. At 30 stacks perfect your form, inflicting $1325508s1 Physical damage to your current target and increasing all your stats by $1325508s2 for $1325508d.", "hash": "50b174aab8495746", "src": "db2@1.60.1.70685"}
-{"id": 1325535, "field": "aura", "en": "With each strike, a lesson.", "hash": "0274d48cb9707385", "src": "db2@1.60.1.70685"}
-{"id": 1325543, "field": "name", "en": "Fungal Swarm", "hash": "1400231ac54ce74e", "src": "db2@1.60.1.70685"}
-{"id": 1325543, "field": "description", "en": "Summons $s1 $lCrypt Scarab:Crypt Scarabs; to aid the caster in battle for $d.", "hash": "25f2ef8052a0851e", "src": "db2@1.60.1.70685"}
-{"id": 1325556, "field": "name", "en": "Fungal Bloom", "hash": "e8215afb1bd648e6", "src": "db2@1.60.1.70685"}
-{"id": 1325571, "field": "name", "en": "Disease Cloud", "hash": "95273b4925a3f04a", "src": "db2@1.60.1.70685"}
-{"id": 1325571, "field": "aura", "en": "Damaging nearby enemies every $d.", "hash": "d98c6c65d0cbd883", "src": "db2@1.60.1.70685"}
-{"id": 1325573, "field": "name", "en": "Disease Cloud", "hash": "95273b4925a3f04a", "src": "db2@1.60.1.70685"}
-{"id": 1325714, "field": "name", "en": "Portal Effect: Stormwind", "hash": "f2ee35de624baa58", "src": "db2@1.60.1.70685"}
-{"id": 1325717, "field": "name", "en": "Portal Effect: Orgrimmar", "hash": "9a911a3634d05b3d", "src": "db2@1.60.1.70685"}
-{"id": 1325739, "field": "name", "en": "Cooldown Reduction", "hash": "c615883f5e801509", "src": "db2@1.60.1.70685"}
-{"id": 1325753, "field": "name", "en": "Call Guard", "hash": "8b6117d5ff9d72a0", "src": "db2@1.60.1.70685"}
-{"id": 1325754, "field": "name", "en": "Call Guard", "hash": "8b6117d5ff9d72a0", "src": "db2@1.60.1.70685"}
-{"id": 1325755, "field": "name", "en": "Banished", "hash": "98760acc4d122377", "src": "db2@1.60.1.70685"}
-{"id": 1325755, "field": "aura", "en": "Committed a transgression against the Kirin Tor.", "hash": "8ceea0980cddc3a5", "src": "db2@1.60.1.70685"}
-{"id": 1325756, "field": "name", "en": "Death Mark", "hash": "7ee64463c1ff344a", "src": "db2@1.60.1.70685"}
-{"id": 1325756, "field": "description", "en": "Finishing move that marks the target, storing a portion of the damage dealt by your attacks per Combo Point. After $d, the stored damage is dealt, up to a maximum increased by Attack Power:\r\n   1 point  : ${1*$<ratio>}% of damage stored, ${1*$<maxAP>}% Attack Power max.\r\n   2 points: ${2*$<ratio>}% of damage stored, ${2*$<maxAP>}% of Attack Power max.\r\n   3 points: ${3*$<ratio>}% of damage stored, ${3*$<maxAP>}% of Attack Power max.\r\n   4 points: ${4*$<ratio>}% of damage stored, ${4*$<maxAP>}% of Attack Power max.\r\n   5 points: ${5*$<ratio>}% of damage stored, ${5*$<maxAP>}% of Attack Power max.\r\n", "hash": "7678116ad995ba02", "src": "db2@1.60.1.70685"}
-{"id": 1325756, "field": "aura", "en": "Marked for Death. Taking $w1 damage after $d.", "hash": "094d228f96738ebb", "src": "db2@1.60.1.70685"}
-{"id": 1325757, "field": "name", "en": "Death Mark", "hash": "7ee64463c1ff344a", "src": "db2@1.60.1.70685"}
-{"id": 1325757, "field": "description", "en": "Finishing move that marks the target, storing a portion of the damage dealt by your attacks per Combo Point. After $d, the stored damage is dealt, up to a maximum increased by Attack Power:\r\n   1 point  : ${1*$<ratio>}% of damage stored, ${1*$<maxAP>}% Attack Power max.\r\n   2 points: ${2*$<ratio>}% of damage stored, ${2*$<maxAP>}% of Attack Power max.\r\n   3 points: ${3*$<ratio>}% of damage stored, ${3*$<maxAP>}% of Attack Power max.\r\n   4 points: ${4*$<ratio>}% of damage stored, ${4*$<maxAP>}% of Attack Power max.\r\n   5 points: ${5*$<ratio>}% of damage stored, ${5*$<maxAP>}% of Attack Power max.\r\n", "hash": "7678116ad995ba02", "src": "db2@1.60.1.70685"}
-{"id": 1325757, "field": "aura", "en": "Marked for Death. Taking $w1 damage after $d.", "hash": "094d228f96738ebb", "src": "db2@1.60.1.70685"}
-{"id": 1325758, "field": "name", "en": "Death Mark", "hash": "7ee64463c1ff344a", "src": "db2@1.60.1.70685"}
-{"id": 1325758, "field": "description", "en": "Finishing move that marks the target, storing a portion of the damage dealt by your attacks per Combo Point. After $d, the stored damage is dealt, up to a maximum increased by Attack Power and Critical Strike chance:\r\n   1 point  : ${1*$<ratio>}% stored, ${156+(1*245)+1*$<maxAP>*$<attackP>} damage cap.\r\n   2 points: ${2*$<ratio>}% stored, ${156+(2*245)+2*$<maxAP>*$<attackP>} damage cap.\r\n   3 points: ${3*$<ratio>}% stored, ${156+(3*245)+3*$<maxAP>*$<attackP>} damage cap.\r\n   4 points: ${4*$<ratio>}% stored, ${156+(4*245)+4*$<maxAP>*$<attackP>} damage cap.\r\n   5 points: ${5*$<ratio>}% stored, ${156+(5*245)+5*$<maxAP>*$<attackP>} damage cap.\r\n", "hash": "d9bc2ece9b00ea19", "src": "db2@1.60.1.70685"}
-{"id": 1325758, "field": "aura", "en": "Marked for Death. Taking $w1 damage after $d.", "hash": "094d228f96738ebb", "src": "db2@1.60.1.70685"}
-{"id": 1325762, "field": "name", "en": "Being Watched", "hash": "518d33acb347d897", "src": "db2@1.60.1.70685"}
-{"id": 1325762, "field": "aura", "en": "You are tolerated, but not welcome. Linger too long on the streets of the city and you will be expelled forcefully...", "hash": "823775ea788af611", "src": "db2@1.60.1.70685"}
-{"id": 1325764, "field": "name", "en": "Dismissal", "hash": "c5a1fc51f48c1286", "src": "db2@1.60.1.70685"}
-{"id": 1325764, "field": "description", "en": "You are not yet permitted into the city of Dalaran.", "hash": "312c457f6f95e079", "src": "db2@1.60.1.70685"}
-{"id": 1325799, "field": "name", "en": "L70 ETC Lightning Cloud", "hash": "0357c07929afe19c", "src": "db2@1.60.1.70685"}
-{"id": 1325800, "field": "name", "en": "L70 ETC Earthquake", "hash": "273abf58090a84d7", "src": "db2@1.60.1.70685"}
-{"id": 1325801, "field": "name", "en": "L70 ETC Rain of Fire", "hash": "29f1ae5d8a11d6ef", "src": "db2@1.60.1.70685"}
-{"id": 1325828, "field": "name", "en": "Tim's Test Stealth", "hash": "5d1a28536bb9ef54", "src": "db2@1.60.1.70685"}
-{"id": 1325859, "field": "name", "en": "Kill Credit", "hash": "10091a36d26ece2e", "src": "db2@1.60.1.70685"}
-{"id": 1325876, "field": "name", "en": "Hateful Strike", "hash": "be0b96605e059d91", "src": "db2@1.60.1.70685"}
-{"id": 1325877, "field": "name", "en": "Hateful Strike Primer", "hash": "77b3f555506ee7dd", "src": "db2@1.60.1.70685"}
-{"id": 1325893, "field": "name", "en": "Call Gnolls", "hash": "d9ade7f545ba80d7", "src": "db2@1.60.1.70685"}
-{"id": 1325968, "field": "name", "en": "Bloodlust", "hash": "b9545f229ef97d79", "src": "db2@1.60.1.70685"}
-{"id": 1325971, "field": "name", "en": "Samuro Spawn", "hash": "e53f6257bbaa010c", "src": "db2@1.60.1.70685"}
-{"id": 1325975, "field": "name", "en": "Meathook", "hash": "8708f78827592d97", "src": "db2@1.60.1.70685"}
-{"id": 1325975, "field": "description", "en": "Throw out a hooked chain to restrain the target and pull them toward you.", "hash": "752fe057c7f2fb5f", "src": "db2@1.60.1.70685"}
-{"id": 1325984, "field": "name", "en": "Ground Slam", "hash": "53f61a017e00144b", "src": "db2@1.60.1.70685"}
+{"id": 1325081, "field": "name", "en": "Orc Mask", "hash": "d3e5fe98c7685b12", "src": "db2@1.60.1.70707"}
+{"id": 1325180, "field": "name", "en": "Sift Soil", "hash": "45c1e6453050abef", "src": "db2@1.60.1.70707"}
+{"id": 1325180, "field": "description", "en": "Sift through an Un'Goro Dirt Pile.", "hash": "645bcd54dde33089", "src": "db2@1.60.1.70707"}
+{"id": 1325228, "field": "name", "en": "The Green Tower", "hash": "9ce6b425326ce158", "src": "db2@1.60.1.70707"}
+{"id": 1325228, "field": "description", "en": "When struck in combat, inflicts $s1 Physical damage to the attacker.", "hash": "3ad296c3bf700166", "src": "db2@1.60.1.70707"}
+{"id": 1325229, "field": "name", "en": "Gloves of Holy Might", "hash": "52369f130ff1d320", "src": "db2@1.60.1.70707"}
+{"id": 1325229, "field": "description", "en": "Smite your target for $s1 Holy damage. Damage is tripled against Undead.", "hash": "98c8d89a4e129ea8", "src": "db2@1.60.1.70707"}
+{"id": 1325256, "field": "name", "en": "Mana Tide Totem", "hash": "ec604280ab05d439", "src": "db2@1.60.1.70707"}
+{"id": 1325256, "field": "description", "en": "Summons a Mana Tide Totem with $s1 health at the feet of the caster for ${$d-1} sec that restores $1325257s1 mana every $1325257t1 seconds to group members within $1325257a1 yards.", "hash": "af38377a6e499649", "src": "db2@1.60.1.70707"}
+{"id": 1325257, "field": "name", "en": "Mana Tide", "hash": "ca970d3523f37dd6", "src": "db2@1.60.1.70707"}
+{"id": 1325257, "field": "aura", "en": "Gain $s1 mana every $t1 seconds.", "hash": "e575a7eccea6897e", "src": "db2@1.60.1.70707"}
+{"id": 1325299, "field": "name", "en": "[DNT] Boosted Rest", "hash": "e40a7713f85958a1", "src": "db2@1.60.1.70707"}
+{"id": 1325499, "field": "name", "en": "Revoke", "hash": "8d3634cdf739f447", "src": "db2@1.60.1.70707"}
+{"id": 1325499, "field": "description", "en": "Remove target party or raid member's Salvation or Mass Salvation.", "hash": "69a8e34f5242cc5a", "src": "db2@1.60.1.70707"}
+{"id": 1325508, "field": "name", "en": "Perfected Form", "hash": "afa64866c5e599d4", "src": "db2@1.60.1.70707"}
+{"id": 1325508, "field": "description", "en": "Inflict $s1 Physical damage and increase all stats by $s2.", "hash": "af56e2c6b224d04e", "src": "db2@1.60.1.70707"}
+{"id": 1325508, "field": "aura", "en": "All stats increased by $s2.", "hash": "0a3cc84761fe9d94", "src": "db2@1.60.1.70707"}
+{"id": 1325509, "field": "name", "en": "Improving Form", "hash": "d3c825fae339224d", "src": "db2@1.60.1.70707"}
+{"id": 1325509, "field": "description", "en": "Each melee hit grants you a stack of Improving Form. At 30 stacks perfect your form, inflicting $1325508s1 Physical damage to your current target and increasing all your stats by $1325508s2 for $1325508d.", "hash": "50b174aab8495746", "src": "db2@1.60.1.70707"}
+{"id": 1325509, "field": "aura", "en": "With each strike, a lesson.", "hash": "0274d48cb9707385", "src": "db2@1.60.1.70707"}
+{"id": 1325535, "field": "name", "en": "Improving Form", "hash": "d3c825fae339224d", "src": "db2@1.60.1.70707"}
+{"id": 1325535, "field": "description", "en": "Each melee hit grants you a stack of Improving Form. At 30 stacks perfect your form, inflicting $1325508s1 Physical damage to your current target and increasing all your stats by $1325508s2 for $1325508d.", "hash": "50b174aab8495746", "src": "db2@1.60.1.70707"}
+{"id": 1325535, "field": "aura", "en": "With each strike, a lesson.", "hash": "0274d48cb9707385", "src": "db2@1.60.1.70707"}
+{"id": 1325543, "field": "name", "en": "Fungal Swarm", "hash": "1400231ac54ce74e", "src": "db2@1.60.1.70707"}
+{"id": 1325543, "field": "description", "en": "Summons $s1 $lCrypt Scarab:Crypt Scarabs; to aid the caster in battle for $d.", "hash": "25f2ef8052a0851e", "src": "db2@1.60.1.70707"}
+{"id": 1325556, "field": "name", "en": "Fungal Bloom", "hash": "e8215afb1bd648e6", "src": "db2@1.60.1.70707"}
+{"id": 1325571, "field": "name", "en": "Disease Cloud", "hash": "95273b4925a3f04a", "src": "db2@1.60.1.70707"}
+{"id": 1325571, "field": "aura", "en": "Damaging nearby enemies every $d.", "hash": "d98c6c65d0cbd883", "src": "db2@1.60.1.70707"}
+{"id": 1325573, "field": "name", "en": "Disease Cloud", "hash": "95273b4925a3f04a", "src": "db2@1.60.1.70707"}
+{"id": 1325714, "field": "name", "en": "Portal Effect: Stormwind", "hash": "f2ee35de624baa58", "src": "db2@1.60.1.70707"}
+{"id": 1325717, "field": "name", "en": "Portal Effect: Orgrimmar", "hash": "9a911a3634d05b3d", "src": "db2@1.60.1.70707"}
+{"id": 1325739, "field": "name", "en": "Cooldown Reduction", "hash": "c615883f5e801509", "src": "db2@1.60.1.70707"}
+{"id": 1325753, "field": "name", "en": "Call Guard", "hash": "8b6117d5ff9d72a0", "src": "db2@1.60.1.70707"}
+{"id": 1325754, "field": "name", "en": "Call Guard", "hash": "8b6117d5ff9d72a0", "src": "db2@1.60.1.70707"}
+{"id": 1325755, "field": "name", "en": "Banished", "hash": "98760acc4d122377", "src": "db2@1.60.1.70707"}
+{"id": 1325755, "field": "aura", "en": "Committed a transgression against the Kirin Tor.", "hash": "8ceea0980cddc3a5", "src": "db2@1.60.1.70707"}
+{"id": 1325756, "field": "name", "en": "Death Mark", "hash": "7ee64463c1ff344a", "src": "db2@1.60.1.70707"}
+{"id": 1325756, "field": "description", "en": "Finishing move that marks the target, storing a portion of the damage dealt by your attacks per Combo Point. After $d, the stored damage is dealt, up to a maximum increased by Attack Power:\r\n   1 point  : ${1*$<ratio>}% of damage stored, ${1*$<maxAP>}% Attack Power max.\r\n   2 points: ${2*$<ratio>}% of damage stored, ${2*$<maxAP>}% of Attack Power max.\r\n   3 points: ${3*$<ratio>}% of damage stored, ${3*$<maxAP>}% of Attack Power max.\r\n   4 points: ${4*$<ratio>}% of damage stored, ${4*$<maxAP>}% of Attack Power max.\r\n   5 points: ${5*$<ratio>}% of damage stored, ${5*$<maxAP>}% of Attack Power max.\r\n", "hash": "7678116ad995ba02", "src": "db2@1.60.1.70707"}
+{"id": 1325756, "field": "aura", "en": "Marked for Death. Taking $w1 damage after $d.", "hash": "094d228f96738ebb", "src": "db2@1.60.1.70707"}
+{"id": 1325757, "field": "name", "en": "Death Mark", "hash": "7ee64463c1ff344a", "src": "db2@1.60.1.70707"}
+{"id": 1325757, "field": "description", "en": "Finishing move that marks the target, storing a portion of the damage dealt by your attacks per Combo Point. After $d, the stored damage is dealt, up to a maximum increased by Attack Power:\r\n   1 point  : ${1*$<ratio>}% of damage stored, ${1*$<maxAP>}% Attack Power max.\r\n   2 points: ${2*$<ratio>}% of damage stored, ${2*$<maxAP>}% of Attack Power max.\r\n   3 points: ${3*$<ratio>}% of damage stored, ${3*$<maxAP>}% of Attack Power max.\r\n   4 points: ${4*$<ratio>}% of damage stored, ${4*$<maxAP>}% of Attack Power max.\r\n   5 points: ${5*$<ratio>}% of damage stored, ${5*$<maxAP>}% of Attack Power max.\r\n", "hash": "7678116ad995ba02", "src": "db2@1.60.1.70707"}
+{"id": 1325757, "field": "aura", "en": "Marked for Death. Taking $w1 damage after $d.", "hash": "094d228f96738ebb", "src": "db2@1.60.1.70707"}
+{"id": 1325758, "field": "name", "en": "Death Mark", "hash": "7ee64463c1ff344a", "src": "db2@1.60.1.70707"}
+{"id": 1325758, "field": "description", "en": "Finishing move that marks the target, storing a portion of the damage dealt by your attacks per Combo Point. After $d, the stored damage is dealt, up to a maximum increased by Attack Power and Critical Strike chance:\r\n   1 point  : ${1*$<ratio>}% stored, ${156+(1*245)+1*$<maxAP>*$<attackP>} damage cap.\r\n   2 points: ${2*$<ratio>}% stored, ${156+(2*245)+2*$<maxAP>*$<attackP>} damage cap.\r\n   3 points: ${3*$<ratio>}% stored, ${156+(3*245)+3*$<maxAP>*$<attackP>} damage cap.\r\n   4 points: ${4*$<ratio>}% stored, ${156+(4*245)+4*$<maxAP>*$<attackP>} damage cap.\r\n   5 points: ${5*$<ratio>}% stored, ${156+(5*245)+5*$<maxAP>*$<attackP>} damage cap.\r\n", "hash": "d9bc2ece9b00ea19", "src": "db2@1.60.1.70707"}
+{"id": 1325758, "field": "aura", "en": "Marked for Death. Taking $w1 damage after $d.", "hash": "094d228f96738ebb", "src": "db2@1.60.1.70707"}
+{"id": 1325762, "field": "name", "en": "Being Watched", "hash": "518d33acb347d897", "src": "db2@1.60.1.70707"}
+{"id": 1325762, "field": "aura", "en": "You are tolerated, but not welcome. Linger too long on the streets of the city and you will be expelled forcefully...", "hash": "823775ea788af611", "src": "db2@1.60.1.70707"}
+{"id": 1325764, "field": "name", "en": "Dismissal", "hash": "c5a1fc51f48c1286", "src": "db2@1.60.1.70707"}
+{"id": 1325764, "field": "description", "en": "You are not yet permitted into the city of Dalaran.", "hash": "312c457f6f95e079", "src": "db2@1.60.1.70707"}
+{"id": 1325799, "field": "name", "en": "L70 ETC Lightning Cloud", "hash": "0357c07929afe19c", "src": "db2@1.60.1.70707"}
+{"id": 1325800, "field": "name", "en": "L70 ETC Earthquake", "hash": "273abf58090a84d7", "src": "db2@1.60.1.70707"}
+{"id": 1325801, "field": "name", "en": "L70 ETC Rain of Fire", "hash": "29f1ae5d8a11d6ef", "src": "db2@1.60.1.70707"}
+{"id": 1325828, "field": "name", "en": "Tim's Test Stealth", "hash": "5d1a28536bb9ef54", "src": "db2@1.60.1.70707"}
+{"id": 1325859, "field": "name", "en": "Kill Credit", "hash": "10091a36d26ece2e", "src": "db2@1.60.1.70707"}
+{"id": 1325876, "field": "name", "en": "Hateful Strike", "hash": "be0b96605e059d91", "src": "db2@1.60.1.70707"}
+{"id": 1325877, "field": "name", "en": "Hateful Strike Primer", "hash": "77b3f555506ee7dd", "src": "db2@1.60.1.70707"}
+{"id": 1325893, "field": "name", "en": "Call Gnolls", "hash": "d9ade7f545ba80d7", "src": "db2@1.60.1.70707"}
+{"id": 1325968, "field": "name", "en": "Bloodlust", "hash": "b9545f229ef97d79", "src": "db2@1.60.1.70707"}
+{"id": 1325971, "field": "name", "en": "Samuro Spawn", "hash": "e53f6257bbaa010c", "src": "db2@1.60.1.70707"}
+{"id": 1325975, "field": "name", "en": "Meathook", "hash": "8708f78827592d97", "src": "db2@1.60.1.70707"}
+{"id": 1325975, "field": "description", "en": "Throw out a hooked chain to restrain the target and pull them toward you.", "hash": "752fe057c7f2fb5f", "src": "db2@1.60.1.70707"}
+{"id": 1325984, "field": "name", "en": "Ground Slam", "hash": "53f61a017e00144b", "src": "db2@1.60.1.70707"}
 {"id": 1325984, "field": "description", "en": "Super Hogger slams the ground, inflicting $s2 Physical damage to enemies within $a2 yds and knocking them back a great distance.", "hash": "2d6562254a028299", "src": "db2@1.60.1.70532"}
-{"id": 1325994, "field": "name", "en": "[DNT] Teleport to Hall of Thanes", "hash": "e26ff9f68be5611e", "src": "db2@1.60.1.70685"}
-{"id": 1325995, "field": "name", "en": "[DNT] Teleport to Ruins of Lordaeron", "hash": "9a939e0ed2492fa2", "src": "db2@1.60.1.70685"}
-{"id": 1325996, "field": "name", "en": "[DNT] Teleport to Excavation Site", "hash": "73f018d23c5f2626", "src": "db2@1.60.1.70685"}
-{"id": 1325997, "field": "name", "en": "[DNT] Teleport to City of Dalaran", "hash": "018c83b1fb76ad02", "src": "db2@1.60.1.70685"}
+{"id": 1325994, "field": "name", "en": "[DNT] Teleport to Hall of Thanes", "hash": "e26ff9f68be5611e", "src": "db2@1.60.1.70707"}
+{"id": 1325995, "field": "name", "en": "[DNT] Teleport to Ruins of Lordaeron", "hash": "9a939e0ed2492fa2", "src": "db2@1.60.1.70707"}
+{"id": 1325996, "field": "name", "en": "[DNT] Teleport to Excavation Site", "hash": "73f018d23c5f2626", "src": "db2@1.60.1.70707"}
+{"id": 1325997, "field": "name", "en": "[DNT] Teleport to City of Dalaran", "hash": "018c83b1fb76ad02", "src": "db2@1.60.1.70707"}

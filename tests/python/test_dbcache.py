@@ -303,3 +303,23 @@ def test_every_table_can_take_its_hotfixes():
     assert {n for n, t in client_tables.TABLES.items() if t.record} == {
         "QuestV2", "ItemEffect", "ItemSubClass", "ItemXItemEffect", "CreatureDisplayInfo", "CreatureDisplayInfoExtra"
     }
+
+
+def test_read_for_refuses_a_cache_of_another_build(tmp_path: Path):
+    p = tmp_path / "DBCache.bin"
+    p.write_bytes(cache([], build_no=70685))
+    with pytest.raises(dbcache.DbcacheError, match=r"DBCache.bin is build 70685, the archive is 1\.60\.1\.70707"):
+        dbcache.read_for(p, "1.60.1.70707")
+
+
+def test_read_for_keeps_the_archive_build_s_own_cache(tmp_path: Path):
+    p = tmp_path / "DBCache.bin"
+    p.write_bytes(cache([], build_no=70707))
+    assert dbcache.read_for(p, "1.60.1.70707").build == 70707
+
+
+def test_read_for_refuses_an_archive_version_without_a_build_number(tmp_path: Path):
+    p = tmp_path / "DBCache.bin"
+    p.write_bytes(cache([], build_no=70707))
+    with pytest.raises(dbcache.DbcacheError, match="carries no build number"):
+        dbcache.read_for(p, "1.60.1.x")

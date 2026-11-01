@@ -205,7 +205,7 @@ worldstateexpression.f0  internal  # encoded expressions
 zoneintromusictable.f0  internal  # music names
 zonelight.f0  internal  # light names
 zonemusic.f0  internal  # music names
-hash-c842493a.*  internal  # a hotfix-only table the listfile does not name; no strings on 1.60.1.70532, where its 3 rows are one 4-byte number each, its own id (recheck when the row count moves)
+hash-c842493a.*  internal  # a hotfix-only table the listfile does not name; no strings on 1.60.1.70532 or 1.60.1.70707, where its rows are one 4-byte number each, its own id (3 rows, then 2; recheck when the row count moves)
 hotfixes.f0  internal  # Hotfixes.db2: the client's own hotfix record, each value a table name (NAMESPROFANITY, NAMESRESERVED, QUESTV2, SPELL, …: 184 distinct over 17,219 rows on 1.60.1.70685); first read as text on that build, never shown
 
 # Server caches (Cache/WDB/enUS): the text the server sends. The client keeps only what it has been sent, so a

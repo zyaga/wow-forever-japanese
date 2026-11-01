@@ -34,4 +34,65 @@
 {"id": 1328127, "field": "name", "en": "Elixir of Endless Experience", "hash": "458ebe2c027d9551", "src": "db2@1.60.1.70532"}
 {"id": 1328127, "field": "description", "en": "Increases experience gained by $s1% for $d.", "hash": "af4155856b80f7ad", "src": "db2@1.60.1.70532"}
 {"id": 1328127, "field": "aura", "en": "Experience gain increased by $s1%.", "hash": "802e6f4173c065d5", "src": "db2@1.60.1.70532"}
-{"id": 1328389, "field": "name", "en": "[DNT] Quest Cleanup", "hash": "44ddab6b3f21cdbd", "src": "db2@1.60.1.70685"}
+{"id": 1328198, "field": "name", "en": "Echo of Light", "hash": "954fa002471fadd2", "src": "db2@1.60.1.70707"}
+{"id": 1328198, "field": "aura", "en": "Empowers your next melee attack without Seal of Light active with $s3 instances of Seal of Light.", "hash": "98b2a73bcb68a68b", "src": "db2@1.60.1.70707"}
+{"id": 1328206, "field": "name", "en": "Echo of Wisdom", "hash": "3808b7606accdb43", "src": "db2@1.60.1.70707"}
+{"id": 1328206, "field": "aura", "en": "Empowers your next melee attack without Seal of Wisdom active with $s3 instances of Seal of Wisdom.", "hash": "2cb16303689a66d9", "src": "db2@1.60.1.70707"}
+{"id": 1328370, "field": "name", "en": "Turn Evil", "hash": "8f92233e143317be", "src": "db2@1.60.1.70707"}
+{"id": 1328370, "field": "description", "en": "Reduces the cast time of your Turn Undead spell by ${$s1/-1000}.1 sec, its cooldown by ${$s2/-1000} sec, and allows it to affect Demons.", "hash": "7753f89ccc9b64bd", "src": "db2@1.60.1.70707"}
+{"id": 1328372, "field": "name", "en": "Turn Evil", "hash": "8f92233e143317be", "src": "db2@1.60.1.70707"}
+{"id": 1328372, "field": "description", "en": "The targeted Undead or Demon enemy will be compelled to flee for up to $d.  Damage caused may interrupt the effect.  Only one target can be turned at a time.", "hash": "6bbfd10d098899b6", "src": "db2@1.60.1.70707"}
+{"id": 1328372, "field": "aura", "en": "Compelled to flee.", "hash": "7a42271d419b6462", "src": "db2@1.60.1.70707"}
+{"id": 1328373, "field": "name", "en": "Turn Evil", "hash": "8f92233e143317be", "src": "db2@1.60.1.70707"}
+{"id": 1328373, "field": "description", "en": "The targeted Undead or Demon enemy will be compelled to flee for up to $d.  Damage caused may interrupt the effect.  Only one target can be turned at a time.", "hash": "6bbfd10d098899b6", "src": "db2@1.60.1.70707"}
+{"id": 1328373, "field": "aura", "en": "Compelled to flee.", "hash": "7a42271d419b6462", "src": "db2@1.60.1.70707"}
+{"id": 1328374, "field": "name", "en": "Turn Evil", "hash": "8f92233e143317be", "src": "db2@1.60.1.70707"}
+{"id": 1328374, "field": "description", "en": "The targeted Undead or Demon enemy will be compelled to flee for up to $d.  Damage caused may interrupt the effect.  Only one target can be turned at a time.", "hash": "6bbfd10d098899b6", "src": "db2@1.60.1.70707"}
+{"id": 1328374, "field": "aura", "en": "Compelled to flee.", "hash": "7a42271d419b6462", "src": "db2@1.60.1.70707"}
+{"id": 1328389, "field": "name", "en": "[DNT] Quest Cleanup", "hash": "44ddab6b3f21cdbd", "src": "db2@1.60.1.70707"}
+{"id": 1328544, "field": "name", "en": "Shieldsworn", "hash": "49689a7446d5acae", "src": "db2@1.60.1.70707"}
+{"id": 1328544, "field": "description", "en": "Reduces the cooldown of your Holy Strike ability by ${$m1/-1000} sec. Additionally, Holy Strike now strikes with your shield, triggering your active Holy Shield and Shield Specialization talents without consuming their charges or triggering their cooldowns, and allowing you to Block spells for $1328551d.", "hash": "95161ba03385c27d", "src": "db2@1.60.1.70707"}
+{"id": 1328546, "field": "name", "en": "Stoicism", "hash": "e9a2bb93f23d0634", "src": "db2@1.60.1.70707"}
+{"id": 1328546, "field": "description", "en": "Reduces the duration of Stun and Charm effects on you by $s1%.", "hash": "b8ddd0b0da9965fd", "src": "db2@1.60.1.70707"}
+{"id": 1328548, "field": "name", "en": "Oath of Light", "hash": "fb552f51433f3789", "src": "db2@1.60.1.70707"}
+{"id": 1328548, "field": "description", "en": "Swear an Oath to protect target ally for $d, increasing the healing of your Holy Light on them by up to $s1, your Flash of Light by up to $s2, and your Holy Shock by up to $s3. Only one Oath of Light may be sworn by the Paladin at any one time.", "hash": "06c037e4e869eb91", "src": "db2@1.60.1.70707"}
+{"id": 1328548, "field": "aura", "en": "Receives increased healing from the caster's Holy Light by up to $s1, Flash of Light by up to $s2, and Holy Shock by up to $s3.", "hash": "4d99b40f5ffc29a2", "src": "db2@1.60.1.70707"}
+{"id": 1328550, "field": "name", "en": "Boundless Light", "hash": "79e26d98e23c7a30", "src": "db2@1.60.1.70707"}
+{"id": 1328550, "field": "description", "en": "Increases the critical strike chance of your Holy Shock spell by $s1% when cast on allies not affected by your Oath of Light.", "hash": "bbd28c643123f711", "src": "db2@1.60.1.70707"}
+{"id": 1328551, "field": "name", "en": "Shieldsworn", "hash": "49689a7446d5acae", "src": "db2@1.60.1.70707"}
+{"id": 1328551, "field": "description", "en": "Able to Block spells for $d.", "hash": "d44bf1458e10f0a4", "src": "db2@1.60.1.70707"}
+{"id": 1328551, "field": "aura", "en": "Able to Block spells.", "hash": "40dfddbb0661d9a8", "src": "db2@1.60.1.70707"}
+{"id": 1328569, "field": "name", "en": "Holy Binding", "hash": "c5bfc5bb4d81eb9f", "src": "db2@1.60.1.70707"}
+{"id": 1328569, "field": "description", "en": "Each time you heal a target other than yourself with Flash Heal, you are healed for $s1% as much. This healing generates no threat.", "hash": "c19d8b90bffb3fae", "src": "db2@1.60.1.70707"}
+{"id": 1328570, "field": "name", "en": "Holy Binding", "hash": "c5bfc5bb4d81eb9f", "src": "db2@1.60.1.70707"}
+{"id": 1328613, "field": "name", "en": "Predatory Discipline", "hash": "3f372299ce99c285", "src": "db2@1.60.1.70707"}
+{"id": 1328613, "field": "description", "en": "Your Ferocious Bite ability no longer converts extra Energy into damage, but still deals extra damage based on your excess Energy.", "hash": "71805175b7c9d409", "src": "db2@1.60.1.70707"}
+{"id": 1328616, "field": "name", "en": "Lacerate", "hash": "2ddaf20b3d682230", "src": "db2@1.60.1.70707"}
+{"id": 1328616, "field": "description", "en": "Lacerates the enemy target, making them bleed for $o1 damage over $d plus $s2% weapon damage per existing application of Lacerate on the target. Causes a high amount of threat. This effect stacks up to $u times on the same target.", "hash": "58e2b59589e53f8f", "src": "db2@1.60.1.70707"}
+{"id": 1328616, "field": "aura", "en": "$w1 damage every $t sec.", "hash": "8522e0deacb4440d", "src": "db2@1.60.1.70707"}
+{"id": 1328617, "field": "name", "en": "Lacerate", "hash": "2ddaf20b3d682230", "src": "db2@1.60.1.70707"}
+{"id": 1328617, "field": "description", "en": "Lacerates the enemy target, making them bleed for $o1 damage over $d plus $s2% weapon damage per existing application of Lacerate on the target. Causes a high amount of threat. This effect stacks up to $u times on the same target.", "hash": "58e2b59589e53f8f", "src": "db2@1.60.1.70707"}
+{"id": 1328617, "field": "aura", "en": "$w1 damage every $t sec.", "hash": "8522e0deacb4440d", "src": "db2@1.60.1.70707"}
+{"id": 1328618, "field": "name", "en": "Ferocious Bite", "hash": "d02e75969ae52d33", "src": "db2@1.60.1.70707"}
+{"id": 1328618, "field": "description", "en": "Finishing move that causes damage per combo point and converts each extra point of energy into ${$m2/100}.1 additional damage.  Damage is increased by your Attack Power.\r\n   1 point  : 33-43 damage\r\n   2 points: 57-67 damage\r\n   3 points: 81-91 damage\r\n   4 points: 105-115 damage\r\n   5 points: 129-139 damage\r\n", "hash": "50412098e06c6b17", "src": "db2@1.60.1.70707"}
+{"id": 1328621, "field": "name", "en": "Bloom", "hash": "951f087bd9030469", "src": "db2@1.60.1.70707"}
+{"id": 1328621, "field": "description", "en": "When your Rejuvenation or Regrowth spell expires due to its duration, the target is instantly healed for an amount equal to $s1% of your Spirit. If either spell expires due to being dispelled, the target is healed for $s2% of your Spirit instead.", "hash": "b02ad48c3f0e46c6", "src": "db2@1.60.1.70707"}
+{"id": 1328622, "field": "name", "en": "Bloom", "hash": "951f087bd9030469", "src": "db2@1.60.1.70707"}
+{"id": 1328891, "field": "name", "en": "Enrage", "hash": "64ece3953c46c879", "src": "db2@1.60.1.70707"}
+{"id": 1328891, "field": "description", "en": "Increases the damage dealt by $s1 and casting speed by $s3% for the caster.", "hash": "f21fab2fd99430a6", "src": "db2@1.60.1.70707"}
+{"id": 1328891, "field": "aura", "en": "Damage dealt is increased by $s1 and casting speed increased by $s3%.", "hash": "58b74450cc121ec3", "src": "db2@1.60.1.70707"}
+{"id": 1328904, "field": "name", "en": "Enrage", "hash": "64ece3953c46c879", "src": "db2@1.60.1.70707"}
+{"id": 1328904, "field": "description", "en": "Increases the damage dealt by $s1 and casting speed by $s3% for the caster.", "hash": "f21fab2fd99430a6", "src": "db2@1.60.1.70707"}
+{"id": 1328904, "field": "aura", "en": "Damage dealt is increased by $s1 and casting speed increased by $s3%.", "hash": "58b74450cc121ec3", "src": "db2@1.60.1.70707"}
+{"id": 1328906, "field": "name", "en": "Love Crazed", "hash": "4746fa2645d3943c", "src": "db2@1.60.1.70707"}
+{"id": 1328906, "field": "description", "en": "Increases your attack speed by $s2% and the Physical damage it deals by $s1 for $d.", "hash": "fee41b068e0b99c6", "src": "db2@1.60.1.70707"}
+{"id": 1328906, "field": "aura", "en": "Physical damage dealt is increased by $s1.\r\nAttack speed increased by $s2%.", "hash": "bc6c8e1d090dadea", "src": "db2@1.60.1.70707"}
+{"id": 1328911, "field": "name", "en": "Enrage", "hash": "64ece3953c46c879", "src": "db2@1.60.1.70707"}
+{"id": 1328911, "field": "description", "en": "Increases the damage dealt by $s1 and casting speed by $s3% for the caster.", "hash": "f21fab2fd99430a6", "src": "db2@1.60.1.70707"}
+{"id": 1328911, "field": "aura", "en": "Damage dealt is increased by $s1 and casting speed increased by $s3%.", "hash": "58b74450cc121ec3", "src": "db2@1.60.1.70707"}
+{"id": 1328913, "field": "name", "en": "Enrage", "hash": "64ece3953c46c879", "src": "db2@1.60.1.70707"}
+{"id": 1328913, "field": "description", "en": "Increases the damage dealt by $s1 and casting speed by $s3% for the caster.", "hash": "f21fab2fd99430a6", "src": "db2@1.60.1.70707"}
+{"id": 1328913, "field": "aura", "en": "Damage dealt is increased by $s1 and casting speed increased by $s3%.", "hash": "58b74450cc121ec3", "src": "db2@1.60.1.70707"}
+{"id": 1328947, "field": "name", "en": "Speed", "hash": "c00eb6ccb4816733", "src": "db2@1.60.1.70707"}
+{"id": 1328948, "field": "name", "en": "Enchant Boots - Speed", "hash": "c15fa10091327512", "src": "db2@1.60.1.70707"}
+{"id": 1328948, "field": "description", "en": "Permanently enchant boots to increase movement speed by $1328947s1%.", "hash": "4d280216f1e84e3c", "src": "db2@1.60.1.70707"}

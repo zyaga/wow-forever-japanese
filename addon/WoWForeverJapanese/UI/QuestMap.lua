@@ -4,11 +4,11 @@
 --   questmap             the map's details pane: QuestInfo_Display(QUEST_TEMPLATE_MAP_DETAILS, …DetailsFrame
 --                        .ScrollFrame.Contents) plus the pane's fixed words [verified: questmapframe.lua:1044–1114]
 --   questmap.popup       the tracker's popup: QuestInfo_Display(QUEST_TEMPLATE_LOG, QuestLogPopupDetailFrame
---                        .ScrollFrame.ScrollChild) [verified: questmapframe.lua:2701–2702]
---   questmap.list        the quest list's title rows, after QuestLogQuests_Update [verified: :2107, rows :1812–1840]
+--                        .ScrollFrame.ScrollChild) [verified: questmapframe.lua:2695–2696]
+--   questmap.list        the quest list's title rows, after QuestLogQuests_Update [verified: :2101, rows :1806–1834]
 --   questmap.listlabels  the list's fixed words (empty / no results / search / count)
 --   questmap.storytip    the story tooltip's progress label and chapter count, after StoryHeaderMixin:ShowTooltip
---                        [verified: questmapframe.lua:2714–2772]; its own surface, so a list update while it is open
+--                        [verified: questmapframe.lua:2708–2766]; its own surface, so a list update while it is open
 --                        never puts its words back
 --   questmap.tracker     the objective tracker's quest headers [verified: blizzard_questobjectivetracker.lua:289–307]
 --   questmap.trackerlabels  the tracker's two fixed headers (TRACKER_ALL_OBJECTIVES, TRACKER_HEADER_QUESTS)
@@ -87,10 +87,10 @@ local CANDIDATES = {
   trackerAllHeader = { "ObjectiveTrackerFrame.Header.Text" },
   questsHeader    = { "QuestObjectiveTracker.Header.Text" },
   -- QuestMapLogTitleButton_OnEnter fires "QuestMapLogTitleButton.OnEnter" after GameTooltip:Show
-  -- [verified: mainline/questmapframe.lua:2223–2311]
+  -- [verified: mainline/questmapframe.lua:2217–2305]
   eventRegistry   = { "EventRegistry" },
   storyHeader     = { "QuestScrollFrame.Contents.StoryHeader" },             -- .xml:552; lua:2146
-  storyTooltip    = { "QuestScrollFrame.StoryTooltip" },                     -- lua:1243, 2714–2772
+  storyTooltip    = { "QuestScrollFrame.StoryTooltip" },                     -- lua:1243, 2708–2766
   eventsTab       = { "QuestMapFrame.EventsTab", "QuestMapFrame.QuestsFrame.EventsTab" }, -- .xml:450
   -- readers
   selectedQuest   = { "C_QuestLog.GetSelectedQuest" },
@@ -320,7 +320,7 @@ end
 
 -- hooksecurefunc target on QuestMapFrame_UpdateQuestDetailsButtons: it rewrites both Track buttons
 -- (TRACK_QUEST_ABBREV / UNTRACK_QUEST_ABBREV) after every details show and on watch-list changes (:1151–1158,
--- 538, 588, 594, 1101, 2612). Only a pane that is live (holds records) is re-shown. → the number of words shown
+-- 538, 588, 594, 1101, 2606). Only a pane that is live (holds records) is re-shown. → the number of words shown
 function QuestMap.onButtons()
   local n = 0
   for _, pane in pairs(PANES) do
@@ -587,8 +587,8 @@ QuestMap.showTitle = showTitle
 
 -- A list objective row: keyed by the row frame (pooled, so never a position); its height follows a line that wraps
 -- differently in Japanese. The client sized the quest's title button to the sum of its English heights
--- (questmapframe.lua:1888, 1903–1929, 1963–1964), so the height change goes into the title button too and the list
--- is laid out again (Contents:Layout(), as QuestLogQuests_Update does at :2165): once per list update, or at once for
+-- (questmapframe.lua:1882, 1897–1923, 1957–1958), so the height change goes into the title button too and the list
+-- is laid out again (Contents:Layout(), as QuestLogQuests_Update does at :2159): once per list update, or at once for
 -- a later rewrite (the modifier).
 local listObjectiveKey = WFJ.Labels.keyer("objective.")
 local listTagKey = WFJ.Labels.keyer("tag.")
@@ -654,12 +654,12 @@ end
 
 -- camelot's quest tag: button.TagText holds QuestUtilsOverrides.GetQuestTagText, PARENS_TEMPLATE around ELITE,
 -- CALENDAR_TYPE_DUNGEON, CALENDAR_TYPE_PVP or RAID, in its own FontString (blizzard_framexmlutil/camelot/
--- questutilsoverrides.lua:20–35; mainline/questmapframe.lua:1837–1840). Only that template.
+-- questutilsoverrides.lua:20–35; mainline/questmapframe.lua:1831–1834). Only that template.
 local TAG_ONLY = { only = { "PARENS_TEMPLATE" } }
 
 -- hooksecurefunc target on QuestLogQuests_Update: the client released every row and wrote the active ones; our
 -- records from before are forgotten (their widgets are rewritten or hidden), then every active row is walked
--- [verified: mainline/questmapframe.lua:2108–2109, 1232; pools: blizzard_sharedxmlbase/pools.lua:166–168]. The list's
+-- [verified: mainline/questmapframe.lua:2102–2103, 1232; pools: blizzard_sharedxmlbase/pools.lua:166–168]. The list's
 -- fixed words follow. → the number of titles shown
 local STORY_PROGRESS = { only = { "QUEST_STORY_STATUS" } }
 local STORY_TIP_LABEL = { only = { "STORY_PROGRESS" } }
@@ -701,7 +701,7 @@ function QuestMap.onListUpdate()
       end
     end
     -- the category headers (ADR-042) (QuestLogQuests_AddStandardHeaderButton → button:SetText(info.title),
-    -- mainline/questmapframe.lua:2048–2052; ListHeaderVisualTemplate's title region). A header is a zone name or a
+    -- mainline/questmapframe.lua:2042–2046; ListHeaderVisualTemplate's title region). A header is a zone name or a
     -- QuestSort word ("Seasonal", "Epic"); only the QuestSort family is matched, so a zone name is never changed.
     local headers = type(scroll) == "table" and scroll.headerFramePool or nil
     if type(headers) == "table" and type(headers.EnumerateActive) == "function" then
@@ -718,7 +718,7 @@ function QuestMap.onListUpdate()
     end
     -- the rows' objective lines; a complete quest's row is its completion text (GetQuestLogCompletionText), which
     -- for a quest with no counted objectives is the quest's whole objective text, shown as the tracker shows it
-    -- [verified: blizzard_uipanels_game/mainline/questmapframe.lua:1895–1900, row.questID :1897]
+    -- [verified: blizzard_uipanels_game/mainline/questmapframe.lua:1889–1894, row.questID :1891]
     local objectives = type(scroll) == "table" and scroll.objectiveFramePool or nil
     if type(objectives) == "table" and type(objectives.EnumerateActive) == "function" then
       for row in objectives:EnumerateActive() do
@@ -1005,17 +1005,17 @@ end
 
 -- ── the list title's tooltip ────────────────────────────────────────────────────────────────────────────────────
 -- The title button's GameTooltip: the title, its objective lines (the client's templates), "<Click to view Quest
--- Details>" (CLICK_QUEST_DETAILS, a whole line of its own, questmapframe.lua:2294) and party lines. Walked once
+-- Details>" (CLICK_QUEST_DETAILS, a whole line of its own, questmapframe.lua:2288) and party lines. Walked once
 -- through UI/HelpTooltip with only these keys, so the quest title and the party members' names are never read.
 -- In gamepad mode the click line is "<input icon>Toggle Focus on Quest" and "<input icon>More" instead
--- (GameTooltip_AddLineWithInputIcon, questmapframe.lua:2296–2298; UIStrings `icon` form)
+-- (GameTooltip_AddLineWithInputIcon, questmapframe.lua:2290–2292; UIStrings `icon` form)
 QuestMap.TITLE_TOOLTIP_KEYS = { "CLICK_QUEST_DETAILS", "MAP_PIN_TOGGLE_QUEST_FOCUS",
   "CONTEXT_ACTION_LABEL_MORE_ACTIONS",
-  -- the gamepad line between them and the party line after them (questmapframe.lua:2297, 2303)
+  -- the gamepad line between them and the party line after them (questmapframe.lua:2291, 2297)
   "OBJECTIVES_VIEW_IN_QUESTLOG", "PARTY_QUEST_STATUS_ON" }
 for _, k in ipairs(QuestMap.OBJECTIVE_KEYS) do QuestMap.TITLE_TOOLTIP_KEYS[#QuestMap.TITLE_TOOLTIP_KEYS + 1] = k end
 
--- Each leaderboard line is written as QUEST_DASH .. text (questmapframe.lua:2273): the dash is kept and
+-- Each leaderboard line is written as QUEST_DASH .. text (questmapframe.lua:2267): the dash is kept and
 -- the rest goes through the objective lookup (showObjective: the objective's own text, then OBJECTIVE_KEYS), recorded
 -- on the help surface under the line's own key so the tooltip's refit and release are HelpTooltip's. The money line
 -- (:2284) matches nothing and stays.
@@ -1039,7 +1039,7 @@ end
 
 -- The EventRegistry callback (owner, button, questID). Line 1 is the quest's title (the list row's lookup); the
 -- description line under it is the quest's objectives (GetQuestLogQuestText) or, once finished, its completion line
--- (questmapframe.lua:2254–2262), each shown only when it is that quest's own English. → the number of lines shown
+-- (questmapframe.lua:2248–2256), each shown only when it is that quest's own English. → the number of lines shown
 function QuestMap.onTitleTooltip(_, button, questID)
   local help = WFJ.HelpTooltip
   local n = help.walkAs(nil, { only = QuestMap.TITLE_TOOLTIP_KEYS })

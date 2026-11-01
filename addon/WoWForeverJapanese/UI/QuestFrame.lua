@@ -23,7 +23,7 @@
 -- forgets it.
 -- Forever loads the mainline QuestInfo, whose QuestInfo_Display also writes the quest map's details
 -- pane (QUEST_TEMPLATE_MAP_DETAILS / _MAP_REWARDS) and the tracker's popup (QUEST_TEMPLATE_LOG), with the SAME global
--- FontStrings as this window [verified: forever mainline/questmapframe.lua:1050–1051, 2701–2702; mainline/
+-- FontStrings as this window [verified: forever mainline/questmapframe.lua:1050–1051, 2695–2696; mainline/
 -- questinfo.lua:28, 1134–1181]. This file keeps the one QuestInfo_Display hook and hands every `template.questLog`
 -- call to UI/QuestMap (surfaces "questmap", "questmap.popup"). A detail / reward show forgets those surfaces first, and
 -- they forget this window's panels, so a release never writes one surface's English over another's text (ADR-029).

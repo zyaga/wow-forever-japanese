@@ -1,6 +1,6 @@
 -- the bag and bank-tab filter lines. A bag's portrait tooltip and a bag slot's item
--- tooltip end with BAG_FILTER_ASSIGNED_TO (mainline/containerframe.lua:2095–2099; shared/mainmenubarbagbuttons.lua:
--- 112–118), the filters joined with LIST_DELIMITER (containerframe.lua:2400–2417); a bank tab's tooltip carries
+-- tooltip end with BAG_FILTER_ASSIGNED_TO (mainline/containerframe.lua:2091–2095; shared/mainmenubarbagbuttons.lua:
+-- 112–118), the filters joined with LIST_DELIMITER (containerframe.lua:2396–2413); a bank tab's tooltip carries
 -- BANK_TAB_EXPANSION_ASSIGNMENT / BANK_TAB_DEPOSIT_ASSIGNMENTS (mainline/bankframetemplates.lua:311–338). Every filter
 -- shows in Japanese with the delimiter kept; bag and tab names stay English; Alt shows the client's English.
 local H = require("tests.lua.spec.helpers")

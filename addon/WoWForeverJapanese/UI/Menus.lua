@@ -1,7 +1,7 @@
 -- UI/Menus.lua: dropdown and context-menu entries of the hooked windows (ADR-031).
 -- The Menu system builds a menu from a generator, then runs every callback registered with Menu.ModifyMenu for the
 -- description's tag (Menu.PopulateDescription → SecureModifyMenu; ModifyMenu also replays on a description already
--- generated) [verified: blizzard_menu/menu.lua:2712–2749]. The callback adds an initializer to each element
+-- generated) [verified: blizzard_menu/menu.lua:2714–2751]. The callback adds an initializer to each element
 -- description, recursively into submenus [menu.lua:418–423, 443]; the compositor runs it on the element's frame after
 -- the client's own initializers wrote the text into frame.fontString [menuvariants.lua:9–22; menuutil.lua:198–204 for
 -- a title], and before the menu is laid out, so the menu is measured with the Japanese. A resetter drops the record
@@ -35,14 +35,14 @@ local WORLD_MAP_FILTERS = { "SHOW_QUEST_OBJECTIVES_ON_MAP_TEXT", "SHOW_QUEST_LEV
 -- tag → { keys = entries it may show, tooltips = tooltip keys (optional), source = where the generator is,
 --         titleIsName = the menu's title is a name (optional) }
 Menus.TAGS = {
-  -- the bag portrait menus (blizzard_uipanels_game/mainline/containerframe.lua:643–730, 766–775, 2831–2851): the
+  -- the bag portrait menus (blizzard_uipanels_game/mainline/containerframe.lua:643–730, 766–775, 2830–2850): the
   -- bag submenus, filters and cleanup; BAG_NAME_BACKPACK shares its English with BACKPACK_TOOLTIP (excluded). In
   -- gamepad UI mode the combined bag's menu also lists the reagent bag, BAG_NAME_BAG_REAGENT (:35–43, 14–19)
   MENU_CONTAINER_FRAME = { source = "containerframe.lua:766", keys = { "BAG_FILTER_ASSIGN_TO", "BAG_FILTER_IGNORE",
     "BAG_FILTER_CLEANUP", "BAG_FILTER_EQUIPMENT", "BAG_FILTER_CONSUMABLES", "BAG_FILTER_PROFESSION_GOODS",
     "BAG_FILTER_JUNK", "BAG_FILTER_QUEST_ITEMS", "BAG_FILTER_REAGENTS", "SELL_ALL_JUNK_ITEMS_EXCLUDE_FLAG",
     "BAG_COMMAND_CONVERT_TO_COMBINED", "BAG_COMMAND_CONVERT_TO_INDIVIDUAL" } },
-  MENU_CONTAINER_FRAME_COMBINED = { source = "containerframe.lua:2831", keys = { "BAG_FILTER_TITLE_SORTING",
+  MENU_CONTAINER_FRAME_COMBINED = { source = "containerframe.lua:2830", keys = { "BAG_FILTER_TITLE_SORTING",
     "BAG_NAME_BAG_1", "BAG_NAME_BAG_2", "BAG_NAME_BAG_3", "BAG_NAME_BAG_4", "BAG_NAME_BAG_REAGENT",
     "BAG_FILTER_ASSIGN_TO", "BAG_FILTER_IGNORE", "BAG_FILTER_CLEANUP", "BAG_FILTER_EQUIPMENT", "BAG_FILTER_CONSUMABLES",
     "BAG_FILTER_PROFESSION_GOODS", "BAG_FILTER_JUNK", "BAG_FILTER_QUEST_ITEMS", "BAG_FILTER_REAGENTS",
@@ -105,16 +105,16 @@ Menus.TAGS = {
   -- the character sheet's equipment set menu (camelot paperdollframe.lua:2618–2622)
   MENU_PAPERDOLL_FRAME = { source = "camelot paperdollframe.lua:2619", keys = { "EQUIPMENT_SET_EDIT" } },
   -- quests: the tracker's block menu, the list's settings, a quest's and a header's context menus
-  -- (blizzard_questobjectivetracker.lua:72–131; mainline/questmapframe.lua:501–504, 2374–2403, 2469–2477)
+  -- (blizzard_questobjectivetracker.lua:72–131; mainline/questmapframe.lua:501–504, 2368–2397, 2463–2471)
   -- the tracker menu's title is the quest's name (blizzard_questobjectivetracker.lua:77)
   MENU_QUEST_OBJECTIVE_TRACKER = { source = "blizzard_questobjectivetracker.lua:72", titleIsName = true,
     keys = { "SUPER_TRACK_QUEST", "STOP_SUPER_TRACK_QUEST", "OBJECTIVES_VIEW_IN_QUESTLOG",
       "OBJECTIVES_HIDE_VIEW_IN_QUESTLOG", "OBJECTIVES_SHOW_QUEST_MAP", "OBJECTIVES_STOP_TRACKING", "SHARE_QUEST",
       "SHARE_IN_CHAT", "ABANDON_QUEST_ABBREV" } },
   MENU_QUEST_MAP_FRAME_SETTINGS = { source = "questmapframe.lua:501", keys = { "QUEST_LOG_SHOW_OBJECTIVES" } },
-  MENU_QUEST_MAP_LOG_TITLE = { source = "questmapframe.lua:2380", keys = { "SHARE_IN_CHAT", "SUPER_TRACK_QUEST",
+  MENU_QUEST_MAP_LOG_TITLE = { source = "questmapframe.lua:2374", keys = { "SHARE_IN_CHAT", "SUPER_TRACK_QUEST",
     "STOP_SUPER_TRACK_QUEST", "UNTRACK_QUEST" } },
-  MENU_QUEST_MAP_FRAME = { source = "questmapframe.lua:2477",
+  MENU_QUEST_MAP_FRAME = { source = "questmapframe.lua:2471",
     keys = { "QUEST_LOG_TRACK_ALL", "QUEST_LOG_UNTRACK_ALL" } },
   -- the trainer's filter: colour-wrapped entries (the `wrapped` label form) (mainline/blizzard_trainerui.lua:249–255)
   -- AVAILABLE shares "Available" with the friends status: it owns its Japanese (UIStrings.OWN).

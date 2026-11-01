@@ -96,6 +96,20 @@ def read(path: Path) -> HotfixCache:
     return cache
 
 
+def read_for(path: Path, version: str) -> HotfixCache:
+    """`read`, for the archive at `version` (`1.60.1.70707`): a cache of another build is refused. A client
+    folder keeps the last build's cache until the client is opened on the new build, and applying it would mix
+    that build's rows into this one's tables."""
+    try:
+        build = int(version.rsplit(".", 1)[-1])
+    except ValueError:
+        raise DbcacheError(f"archive version {version!r} carries no build number") from None
+    cache = read(path)
+    if cache.build != build:
+        raise DbcacheError(f"{path} is build {cache.build}, the archive is {version}")
+    return cache
+
+
 def leading_strings(data: bytes, count: int) -> list[str]:
     """The first `count` NUL-terminated UTF-8 strings of a record (ValueError when the data holds fewer)."""
     out, at = [], 0

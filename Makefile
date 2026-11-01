@@ -95,7 +95,7 @@ CLIENTS := classic-era forever
 classic-era_BUILD   := 1.15.9.69722
 classic-era_SRC     := wago
 classic-era_PRODUCT := wow_classic_era
-forever_BUILD       := 1.60.1.70685
+forever_BUILD       := 1.60.1.70707
 forever_SRC         := db2
 forever_PRODUCT     := wowf
 # Set only while the quest cache data/ holds is older than the tables: a quest cache needs the scan in game, the
@@ -320,11 +320,12 @@ served-columns: ## regenerate pipeline/served_columns.txt from the installed cli
 	@test -n "$(WOW_DIR)" || { echo "usage: make served-columns WOW_DIR=<client folder, e.g. .../World of Warcraft/_forever_> [LISTFILE=<csv>] [HOTFIXES=<DBCache.bin>]"; exit 2; }
 	@test -d "$(WOW_DIR)" || { echo "served-columns: no folder $(WOW_DIR)"; exit 1; }
 	@test -f "$(LISTFILE)" || { echo "served-columns: no listfile at $(LISTFILE) (LISTFILE=<community listfile>)"; exit 1; }
-	@W="$$(cd "$(WOW_DIR)/.." && pwd)" && H="$(HOTFIXES)" && case "$$H" in "") H="$$(cd "$(WOW_DIR)" && pwd)/Cache/ADB/enUS/DBCache.bin"; test -f "$$H" || H="";; /*) ;; *) H="$$PWD/$$H";; esac && \
+	@W="$$(cd "$(WOW_DIR)/.." && pwd)" && H="$(HOTFIXES)" && case "$$H" in ""|/*) ;; *) H="$$PWD/$$H";; esac && \
+		{ test -z "$$H" || test -f "$$H" || { echo "served-columns: no cache at $$H, reading the archive alone" >&2; H=""; }; } && \
 		L="$(LISTFILE)" && C="$$(cd "$(WOW_DIR)" && pwd)" && cd pipeline && \
 		$(PY) -m wfj.dev.served_columns --wow "$$W" --product "$(forever_PRODUCT)" --listfile "$$L" \
-			$${H:+--hotfixes "$$H"} --wdb "$$C/Cache/WDB/enUS" --previous served_columns.txt > served_columns.txt.part && \
-		mv served_columns.txt.part served_columns.txt
+			$${H:+--hotfixes "$$H"} --wdb "$$C/Cache/WDB/enUS" --previous served_columns.txt > served_columns.txt.part \
+		|| { rm -f served_columns.txt.part; exit 1; } && mv served_columns.txt.part served_columns.txt
 	@sed -n 3,5p pipeline/served_columns.txt
 
 # The Forever (camelot) inventory, the only one (Forever is the only target). FOREVER_UI is a UI extract of the Forever client (`python -m wfj.dev.client_ui

@@ -335,7 +335,7 @@ describe("the Forever micro menu and game menu", function()
 
   it("the stable's pet XP bar (PetStableFrame.expBar) is left alone: its literal \"XP %s/%s\" is no global string",
     function()
-      -- camelot Blizzard_StableUI.xml:183 (PetExpColoredProgressBarTemplate), paperdollframe.lua:3692–3700
+      -- camelot Blizzard_StableUI.xml:183 (PetExpColoredProgressBarTemplate), paperdollframe.lua:3709–3717
       local stable = CreateFrame("Frame", "PetStableFrame")
       local bar = { text = "" }
       function bar:SetText(t) self.text = t end

@@ -342,9 +342,48 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
 
+### 1.60.1.70685 → 1.60.1.70707, tables (2026-11-01)
+
+A Forever build installed three days before launch. The scan has not run, so this round again pins the tables only and
+the quest text stays on the 70532 cache (`forever_QUEST_BUILD`,
+[ADR-068](../adr/068-quest-cache-pinned-apart-from-the-tables.md)). The tables were read twice. First from the local
+archive alone (`make tables-extract … HOTFIXES=`), because the client had not been opened on the build and its hotfix
+cache was still 70685's: against the 70685 pull that gave GlobalStrings 4 changed and 1 removed, the six Revenge
+descriptions reworded (`$s1 damage` became a damage range), and 468 ItemSparse rows fewer. Then, once the client had
+been opened to the character screen, with the build's own hotfix cache, the pull that ships: ItemSparse 169 replaced and
+508 added; Spell and SpellName 692 replaced, 31 added, 9 removed; GlobalStrings 128 replaced, 1 added; QuestV2 457
+replaced; ItemEffect and ItemXItemEffect 16 and 12 replaced, 3 added each; CriteriaTree 22 replaced; SpellItemEnchantment
+1 and 1. Client tables: 62, read with the pinned column maps; no layout hash changed. The wago.tools cross-check (product
+`wowf`): no value differs; the rows wago has and ours lacks (ItemSparse 26, Spell and SpellName 23, ItemEffect 17,
+QuestV2 2) are the encrypted store sections, as on 70685. The UI extract: 4,493 files, 30 modified and 1 added (the
+gamepad smart-navigation helper), none removed; nothing the addon hooks or reads moved or changed shape, and no new
+interface text; about 70 line citations were refreshed ([Addon modules](../architecture/addon-modules.md)). The
+served-text inventory: no column new or gone; row counts moved. `make served-columns` now reads an empty `HOTFIXES=` as
+no cache, as `tables-extract` already did, and the table pull, the inventory and the table counts all refuse a cache of
+another build (`dbcache.read_for`). No English Collector file exists for `_forever_` (the client was never logged in
+there). Measured against `main` after the import: item 39 new, 2 changed; spell 31 new, 37 descriptions and 16 auras
+changed, 4 renamed; ui 1 changed; nothing removed.
+
+| Type | Reworded (shipped line now stale) | New English lines | Not served on this build (English kept) | Drafted |
+|---|---|---|---|---|
+| item | 2 descriptions (the chest and boots enchants print their values) | 39 items (38 recipe lines, the Enchant Boots - Speed scroll) | 4,469 ids an earlier build served keep their English | 38 new; 2 redrafted with `REVERIFY=1` (one unchanged) |
+| spell | 35 descriptions and 13 auras (Paladin Seals and Vigils, the Leyline and Skysight lines, Moonkin and Leader of the Pack, the SoD runes, Revenge) | 31 spells (Holy Shield, Turn Evil, Shieldsworn, Oath of Light, Boundless Light, Holy Binding, Predatory Discipline, Lacerate, Ferocious Bite, Bloom, Enrage, Love Crazed, the Seal echoes, Command, Enchant Boots - Speed; 25 descriptions and 18 auras drafted, the rest have no description) | 161 | 32 descriptions and 11 auras redrafted with `REVERIFY=1` (4 more re-verified unchanged); 25 descriptions and 18 auras new |
+| ui | 1 (`TALENT_SPEC_LOCKED`: "Locked" became "Unlock at your class trainer") | 0 | 275 | 1, with its word list |
+
+Two stale lines had hand-written winners: Swiftmend's correction still says what the new English says and was kept;
+the boots enchant's human line gained the value slot the English now prints (a correction, nothing else moved). Four
+machine lines carried an `accept` ruling from the round that replaced rejected hand-written text (Revenge 6572, Total
+Health 20550, Moonkin Form 24858, Righteous Fury 25780); each now carries `reject`, superseded by the redraft written
+against the new English, so the redraft ships. Command rank 1's hand-written line bakes the 5% its template now prints as a value, so it carries a `reject` ruling
+(the baked-numbers rule) and the machine draft covers all three ranks. 48 template rows with 70707 English are not drafted and stay on the
+coverage list (an included spell the tables do not carry, more variants than the addon takes, `$@auracaster` and
+`$@spellaura` codes). No reading is owed. The quest half (the scan's cache, the full import, quest and objective drafts,
+and voice) follows in the scan's re-pull after launch; 191 quest ids wait for it. Items, spells and interface lines are
+not voiced.
+
 ### 1.60.1.70532 → 1.60.1.70685, tables (2026-10-29)
 
-Forever's launch build, installed before launch. The launcher moved Forever to its own folder, `_forever_`, under the
+A pre-launch Forever build, installed before launch. The launcher moved Forever to its own folder, `_forever_`, under the
 product `wowf`. The scan could not run before launch, so this round pins the tables
 only and the quest text stays on the 70532 cache (`forever_QUEST_BUILD`,
 [ADR-068](../adr/068-quest-cache-pinned-apart-from-the-tables.md)). Client tables: 62, with the hotfix cache the client

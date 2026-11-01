@@ -292,7 +292,7 @@ local function installBags()
     _G.GameTooltip:Show()
   end)
 
-  local backpack = frame("ItemButton", "MainMenuBarBackpackButton") -- shared/mainmenubarbagbuttons.lua:302–316
+  local backpack = frame("ItemButton", "MainMenuBarBackpackButton") -- shared/mainmenubarbagbuttons.lua:391–405
   backpack:SetScript("OnEnter", function(self)
     local tt = _G.GameTooltip
     tt:SetOwner(self, "ANCHOR_LEFT")
@@ -302,7 +302,7 @@ local function installBags()
     tt:AddLine(string.format(G("NUM_FREE_SLOTS") or "%d free slots", CI.freeSlots or 12)) -- NUM_FREE_SLOTS
     tt:Show()
   end)
-  local keyring = frame("ItemButton", "KeyRingButton") -- camelot/mainmenubarbagbuttons.lua:179–183
+  local keyring = frame("ItemButton", "KeyRingButton") -- camelot/mainmenubarbagbuttons.lua:185–189
   keyring:SetScript("OnEnter", function(self)
     _G.GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
     _G.GameTooltip:SetText(G("KEYRING"), 1, 1, 1)

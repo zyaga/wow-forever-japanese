@@ -1,33 +1,33 @@
-{"id": 1327009, "field": "name", "en": "(DNT) Immol'thar Encounter Record Aura", "hash": "26a1b412aaf2e8ef", "src": "db2@1.60.1.70685"}
-{"id": 1327064, "field": "name", "en": "Hunger...", "hash": "28492a946965690b", "src": "db2@1.60.1.70685"}
-{"id": 1327064, "field": "aura", "en": "Seeking fresh meat...", "hash": "f39c426c545d60f2", "src": "db2@1.60.1.70685"}
-{"id": 1327078, "field": "name", "en": "Ravenous Claw", "hash": "2394eecfef7439d8", "src": "db2@1.60.1.70685"}
-{"id": 1327078, "field": "aura", "en": "Melee attacks have a chance to infect the target.", "hash": "98e4e5bc048a3387", "src": "db2@1.60.1.70685"}
-{"id": 1327079, "field": "name", "en": "Ravenous Claw", "hash": "2394eecfef7439d8", "src": "db2@1.60.1.70685"}
-{"id": 1327082, "field": "name", "en": "You're Infected!", "hash": "0000790758ecefa0", "src": "db2@1.60.1.70685"}
-{"id": 1327082, "field": "description", "en": "Infect a humanoid with the zombie plague.", "hash": "2e0efd44303b5b69", "src": "db2@1.60.1.70685"}
-{"id": 1327082, "field": "aura", "en": "A zombie has infected you.  Find a cure before it's too late!", "hash": "419a63b3f06faf02", "src": "db2@1.60.1.70685"}
-{"id": 1327211, "field": "name", "en": "Cosmetic Aura", "hash": "8dbf962fa5acbb72", "src": "db2@1.60.1.70685"}
-{"id": 1327241, "field": "name", "en": "Void Bolt", "hash": "d338ea5b301cfc69", "src": "db2@1.60.1.70685"}
-{"id": 1327241, "field": "aura", "en": "Movement speed reduced by $s2%.", "hash": "08fe79f089dfc8da", "src": "db2@1.60.1.70685"}
-{"id": 1327245, "field": "name", "en": "Thunderclap", "hash": "06dade44c501c94e", "src": "db2@1.60.1.70685"}
-{"id": 1327245, "field": "description", "en": "Inflicts $s1 Nature damage to nearby enemies, increasing the time between their attacks by $s3% and slowing their movement by $s2% for $d.", "hash": "df9831153173e81d", "src": "db2@1.60.1.70685"}
-{"id": 1327245, "field": "aura", "en": "Time between attacks increased by $s3%.\r\nMovement speed reduced by $s2%.", "hash": "51978cac935f9d1f", "src": "db2@1.60.1.70685"}
-{"id": 1327248, "field": "name", "en": "Cleave", "hash": "490af681ad18ef1f", "src": "db2@1.60.1.70685"}
-{"id": 1327248, "field": "description", "en": "Inflicts weapon damage plus $s1 to an enemy and its nearest allies, affecting up to $x1 targets.", "hash": "bd91ba0f19e05ae9", "src": "db2@1.60.1.70685"}
-{"id": 1327251, "field": "name", "en": "Shadow Bolt Volley", "hash": "62ed89ea2de9d24d", "src": "db2@1.60.1.70685"}
-{"id": 1327251, "field": "description", "en": "Hurls missiles of dark magic, inflicting Shadow damage to nearby enemies.", "hash": "ff49863129e1fd03", "src": "db2@1.60.1.70685"}
-{"id": 1327341, "field": "name", "en": "Dreamfall", "hash": "911a79659a7c5b95", "src": "db2@1.60.1.70685"}
-{"id": 1327341, "field": "description", "en": "$@spelldesc<1269045>", "hash": "6fb4b21c7d529289", "src": "db2@1.60.1.70685"}
-{"id": 1327341, "field": "aura", "en": "Inflicts $1269185S1 nature damage every $1269045t1 sec.", "hash": "487ca32fe4c517de", "src": "db2@1.60.1.70685"}
-{"id": 1327368, "field": "name", "en": "Fixate", "hash": "097a77e983ad4bc9", "src": "db2@1.60.1.70685"}
-{"id": 1327369, "field": "name", "en": "Fixate", "hash": "097a77e983ad4bc9", "src": "db2@1.60.1.70685"}
-{"id": 1327369, "field": "aura", "en": "Fixated.", "hash": "62b071f288f69619", "src": "db2@1.60.1.70685"}
-{"id": 1327505, "field": "name", "en": "Arcane Bolt", "hash": "8ce91867cb47c09b", "src": "db2@1.60.1.70685"}
-{"id": 1327505, "field": "description", "en": "Inflicts $1327506s1 Arcane damage to an enemy and increases their Arcane damage taken by $1327506s2%.", "hash": "cce2013d325cd108", "src": "db2@1.60.1.70685"}
-{"id": 1327506, "field": "name", "en": "Arcane Bolt", "hash": "8ce91867cb47c09b", "src": "db2@1.60.1.70685"}
-{"id": 1327506, "field": "description", "en": "$@spelldesc1327505", "hash": "7fea02c5cc35d8f1", "src": "db2@1.60.1.70685"}
-{"id": 1327506, "field": "aura", "en": "Arcane damage taken increased by $s2%.", "hash": "02486f741ec493a6", "src": "db2@1.60.1.70685"}
+{"id": 1327009, "field": "name", "en": "(DNT) Immol'thar Encounter Record Aura", "hash": "26a1b412aaf2e8ef", "src": "db2@1.60.1.70707"}
+{"id": 1327064, "field": "name", "en": "Hunger...", "hash": "28492a946965690b", "src": "db2@1.60.1.70707"}
+{"id": 1327064, "field": "aura", "en": "Seeking fresh meat...", "hash": "f39c426c545d60f2", "src": "db2@1.60.1.70707"}
+{"id": 1327078, "field": "name", "en": "Ravenous Claw", "hash": "2394eecfef7439d8", "src": "db2@1.60.1.70707"}
+{"id": 1327078, "field": "aura", "en": "Melee attacks have a chance to infect the target.", "hash": "98e4e5bc048a3387", "src": "db2@1.60.1.70707"}
+{"id": 1327079, "field": "name", "en": "Ravenous Claw", "hash": "2394eecfef7439d8", "src": "db2@1.60.1.70707"}
+{"id": 1327082, "field": "name", "en": "You're Infected!", "hash": "0000790758ecefa0", "src": "db2@1.60.1.70707"}
+{"id": 1327082, "field": "description", "en": "Infect a humanoid with the zombie plague.", "hash": "2e0efd44303b5b69", "src": "db2@1.60.1.70707"}
+{"id": 1327082, "field": "aura", "en": "A zombie has infected you.  Find a cure before it's too late!", "hash": "419a63b3f06faf02", "src": "db2@1.60.1.70707"}
+{"id": 1327211, "field": "name", "en": "Cosmetic Aura", "hash": "8dbf962fa5acbb72", "src": "db2@1.60.1.70707"}
+{"id": 1327241, "field": "name", "en": "Void Bolt", "hash": "d338ea5b301cfc69", "src": "db2@1.60.1.70707"}
+{"id": 1327241, "field": "aura", "en": "Movement speed reduced by $s2%.", "hash": "08fe79f089dfc8da", "src": "db2@1.60.1.70707"}
+{"id": 1327245, "field": "name", "en": "Thunderclap", "hash": "06dade44c501c94e", "src": "db2@1.60.1.70707"}
+{"id": 1327245, "field": "description", "en": "Inflicts $s1 Nature damage to nearby enemies, increasing the time between their attacks by $s3% and slowing their movement by $s2% for $d.", "hash": "df9831153173e81d", "src": "db2@1.60.1.70707"}
+{"id": 1327245, "field": "aura", "en": "Time between attacks increased by $s3%.\r\nMovement speed reduced by $s2%.", "hash": "51978cac935f9d1f", "src": "db2@1.60.1.70707"}
+{"id": 1327248, "field": "name", "en": "Cleave", "hash": "490af681ad18ef1f", "src": "db2@1.60.1.70707"}
+{"id": 1327248, "field": "description", "en": "Inflicts weapon damage plus $s1 to an enemy and its nearest allies, affecting up to $x1 targets.", "hash": "bd91ba0f19e05ae9", "src": "db2@1.60.1.70707"}
+{"id": 1327251, "field": "name", "en": "Shadow Bolt Volley", "hash": "62ed89ea2de9d24d", "src": "db2@1.60.1.70707"}
+{"id": 1327251, "field": "description", "en": "Hurls missiles of dark magic, inflicting Shadow damage to nearby enemies.", "hash": "ff49863129e1fd03", "src": "db2@1.60.1.70707"}
+{"id": 1327341, "field": "name", "en": "Dreamfall", "hash": "911a79659a7c5b95", "src": "db2@1.60.1.70707"}
+{"id": 1327341, "field": "description", "en": "$@spelldesc<1269045>", "hash": "6fb4b21c7d529289", "src": "db2@1.60.1.70707"}
+{"id": 1327341, "field": "aura", "en": "Inflicts $1269185S1 nature damage every $1269045t1 sec.", "hash": "487ca32fe4c517de", "src": "db2@1.60.1.70707"}
+{"id": 1327368, "field": "name", "en": "Fixate", "hash": "097a77e983ad4bc9", "src": "db2@1.60.1.70707"}
+{"id": 1327369, "field": "name", "en": "Fixate", "hash": "097a77e983ad4bc9", "src": "db2@1.60.1.70707"}
+{"id": 1327369, "field": "aura", "en": "Fixated.", "hash": "62b071f288f69619", "src": "db2@1.60.1.70707"}
+{"id": 1327505, "field": "name", "en": "Arcane Bolt", "hash": "8ce91867cb47c09b", "src": "db2@1.60.1.70707"}
+{"id": 1327505, "field": "description", "en": "Inflicts $1327506s1 Arcane damage to an enemy and increases their Arcane damage taken by $1327506s2%.", "hash": "cce2013d325cd108", "src": "db2@1.60.1.70707"}
+{"id": 1327506, "field": "name", "en": "Arcane Bolt", "hash": "8ce91867cb47c09b", "src": "db2@1.60.1.70707"}
+{"id": 1327506, "field": "description", "en": "$@spelldesc1327505", "hash": "7fea02c5cc35d8f1", "src": "db2@1.60.1.70707"}
+{"id": 1327506, "field": "aura", "en": "Arcane damage taken increased by $s2%.", "hash": "02486f741ec493a6", "src": "db2@1.60.1.70707"}
 {"id": 1327657, "field": "name", "en": "Frost Breath", "hash": "b3bb9f9f3387d03a", "src": "db2@1.60.1.70532"}
 {"id": 1327657, "field": "description", "en": "Inflicts Frost damage to enemies in a cone in front of the caster, stealing their mana and reducing their movement speed for $d.", "hash": "03102da342fe3684", "src": "db2@1.60.1.70532"}
 {"id": 1327657, "field": "aura", "en": "Reduced movement speed.", "hash": "eadcb05af3f29532", "src": "db2@1.60.1.70532"}

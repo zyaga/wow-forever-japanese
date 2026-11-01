@@ -40,7 +40,7 @@ Gamepad.NEVER_TOUCH = {}
 -- Every key the gamepad HUD writers show (pipeline/ui_keys.txt, the gamepad block).
 Gamepad.KEYS = {
   -- window footers (the prompted-binding legends); BACK and SEARCH are the bag search box's
-  -- (blizzard_uipanels_game/mainline/containerframe.lua:3386, 3391), ADD_CHAT_CHANNEL the channels window's
+  -- (blizzard_uipanels_game/mainline/containerframe.lua:3403, 3408), ADD_CHAT_CHANNEL the channels window's
   -- (blizzard_channels/mainline/channelframe.lua:169), COMMUNITIES_INVITE_MANAGER_REVOKE_INVITE the invite manager's
   -- (blizzard_communities/communitiesticketmanagerdialog.lua:255)
   "ACTION_LABEL_ROTATE", "ACTION_LABEL_SELECT",
@@ -118,8 +118,8 @@ local function opts(fs, set)
 end
 
 -- The "More Actions" context menu entries (PromptedBindingMixin:CreateMoreActionsMenu, promptedbinding.lua:126–181;
--- camelot/paperdollframe.lua:1904–1907, 2987–2993, mainline/containerframe.lua:3507–3512,
--- playerspellsframe.lua:841–842, mainmenubarbagbuttons.lua:233); the menu is tagged MORE_CONTEXT_ACTIONS
+-- camelot/paperdollframe.lua:1904–1907, 2987–2993, mainline/containerframe.lua:3525–3530,
+-- playerspellsframe.lua:841–842, mainmenubarbagbuttons.lua:315); the menu is tagged MORE_CONTEXT_ACTIONS
 -- (promptedbinding.lua:140), so UI/MenusTags appends these to that tag's list.
 Gamepad.MENU_KEYS = {
   "ACTION_LABEL_BIND_SET", "ACTION_LABEL_CHANGE_NAME_AND_ICON_FOR_SET",

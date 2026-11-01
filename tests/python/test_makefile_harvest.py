@@ -17,7 +17,7 @@ def _recipe(makefile: str, target: str) -> list[str]:
     return m.group(1).splitlines()
 
 
-CLIENTS = {"classic-era": ("1.15.9.69722", "wago", "wow_classic_era"), "forever": ("1.60.1.70685", "db2", "wowf")}
+CLIENTS = {"classic-era": ("1.15.9.69722", "wago", "wow_classic_era"), "forever": ("1.60.1.70707", "db2", "wowf")}
 # The build whose quest cache was imported, when it is not the tables' build: the scan moves it, never a table pull.
 QUEST_BUILDS = {"forever": "1.60.1.70532"}
 FOREVER_BUILD = CLIENTS["forever"][0]
