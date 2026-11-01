@@ -1,5 +1,5 @@
 -- ADR-042: the quest list's category headers (QuestLogQuests_AddStandardHeaderButton → button:SetText(
--- info.title), mainline/questmapframe.lua:2044–2048; ListHeaderVisualTemplate's title region). A header is a zone name
+-- info.title), mainline/questmapframe.lua:2048–2052; ListHeaderVisualTemplate's title region). A header is a zone name
 -- or a QuestSort word ("Seasonal"); only the QuestSort family is matched, so a zone name is never changed, even one
 -- another dictionary row happens to share.
 local H = require("tests.lua.spec.helpers")
@@ -27,7 +27,7 @@ describe("UI/QuestMap: the quest list's category headers", function()
     WFJ.Modifier.refresh()
   end
 
-  -- headerFramePool (questmapframe.lua:1229): pooled header buttons; the client wrote each one's title before
+  -- headerFramePool (questmapframe.lua:1238): pooled header buttons; the client wrote each one's title before
   -- QuestLogQuests_Update returns
   local function headerPool()
     local pool = { active = {} }

@@ -40,10 +40,10 @@ Gamepad.NEVER_TOUCH = {}
 -- Every key the gamepad HUD writers show (pipeline/ui_keys.txt, the gamepad block).
 Gamepad.KEYS = {
   -- window footers (the prompted-binding legends); BACK and SEARCH are the bag search box's
-  -- (blizzard_uipanels_game/mainline/containerframe.lua:3318, 3323), ADD_CHAT_CHANNEL the channels window's
+  -- (blizzard_uipanels_game/mainline/containerframe.lua:3386, 3391), ADD_CHAT_CHANNEL the channels window's
   -- (blizzard_channels/mainline/channelframe.lua:169), COMMUNITIES_INVITE_MANAGER_REVOKE_INVITE the invite manager's
   -- (blizzard_communities/communitiesticketmanagerdialog.lua:255)
-  "ACTION_LABEL_ADJUST_BRIGHTNESS", "ACTION_LABEL_ADJUST_COLOR", "ACTION_LABEL_ROTATE", "ACTION_LABEL_SELECT",
+  "ACTION_LABEL_ROTATE", "ACTION_LABEL_SELECT",
   "ACTION_LABEL_CHAT_CHANNELS",
   "ACTION_LABEL_SEND", "ACTION_LABEL_TAB_SETTINGS", "ACTION_LABEL_RESET_VIEW", "ACTION_LABEL_ZOOM_SLASH_ROTATE",
   "CONTEXT_ACTION_LABEL_APPLY", "CONTEXT_ACTION_LABEL_BIND_TO_GAMEPAD_ACTION_BAR", "CONTEXT_ACTION_LABEL_BUY",
@@ -100,8 +100,7 @@ Gamepad.PROMPT_KEYS, Gamepad.RADIAL_KEYS = PROMPT.only, RADIAL.only
 -- entry, a radial handler's label, SKIP), never a name and never a formatted template. The writer's own set is
 -- tried first (an owned key is found only when asked for by key: "Back" is 戻る on a footer, 背中 as a slot); then a
 -- label that is exactly one dictionary English takes that key (the UI/Errors Lua-line rule): a footer also shows
--- OKAY, CANCEL, NEXT or the neighbouring window's jump-hint title (CHARACTER, WORLD_MAP, TALENTS), which no list here
--- could keep up with. Anything else stays as written.
+-- OKAY, CANCEL or NEXT, which no list here could keep up with. Anything else stays as written.
 local exactOnly = {} -- key → { only = { key } }, built once per key
 local function opts(fs, set)
   local index = WFJ.UIIndex
@@ -119,7 +118,7 @@ local function opts(fs, set)
 end
 
 -- The "More Actions" context menu entries (PromptedBindingMixin:CreateMoreActionsMenu, promptedbinding.lua:126–181;
--- camelot/paperdollframe.lua:1904–1907, 2987–2993, mainline/containerframe.lua:3439–3444,
+-- camelot/paperdollframe.lua:1904–1907, 2987–2993, mainline/containerframe.lua:3507–3512,
 -- playerspellsframe.lua:841–842, mainmenubarbagbuttons.lua:233); the menu is tagged MORE_CONTEXT_ACTIONS
 -- (promptedbinding.lua:140), so UI/MenusTags appends these to that tag's list.
 Gamepad.MENU_KEYS = {

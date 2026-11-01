@@ -11,7 +11,7 @@ Read-only. Layout verified on Classic Era 1.15.9.69722 (`wow_classic_era`):
   entries size, u32 hash` and 18-byte entries: key (first 9 bytes of the encoded key), big-endian u40 (archive
   number << 30 | offset), little-endian u32 size.
 - `Data/data/data.<nnn>`: at the offset, a 30-byte header (the encoded key reversed, u32 size incl. header,
-  flags, checksums) then the BLTE blob. Some clients leave that header **zeroed** (the Forever beta
+  flags, checksums) then the BLTE blob. Some clients leave that header **zeroed** (Forever
   does), and
   the blob still follows at +30: a blank header is unwritten, not wrong, and `read_file` verifies the decoded
   bytes against their content key instead (ADR-026).
@@ -249,7 +249,7 @@ class LocalArchive:
         if len(buf) != size or size < LOCAL_HEADER:
             raise CascError(f"{path.name}@{offset}: entry of {size} bytes is cut short")
         # The 30-byte entry header repeats the encoded key. The client does not always write it: on the
-        # Forever beta (1.60.1.69893) the whole header is zeroed and the BLTE payload follows at +30 as
+        # Forever client (1.60.1.69893) the whole header is zeroed and the BLTE payload follows at +30 as
         # normal; the data is present and correct. Treating a blank header as a mismatch would read most
         # interface files and every DB2 as "not downloaded". A blank header is *unwritten*, not *wrong*:
         # trust the index, and verify the decoded bytes against their content key instead (read_file),

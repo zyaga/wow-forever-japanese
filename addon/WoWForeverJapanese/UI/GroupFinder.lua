@@ -6,7 +6,7 @@
 -- queuestatusframeoverrides.lua:5–10) open it. LFGParentFrame holds three panels: LFGListingFrame (Create Listing),
 -- LFGBrowseFrame (Group Browser) and LFGWhoListFrame (Who List: UI/Friends.lua's, not touched here).
 -- LFGVANILLA_SETTING_MODERN_STYLE is true (mainline/lfgvanilla_constants.lua:6): the bottom tabs are hidden and the
--- side tabs carry the tab names as tooltips (blizzard_lfgvanilla_parentframe.lua:77–85).
+-- side tabs carry the tab names as tooltips (blizzard_lfgvanilla_parentframe.lua:63–71).
 -- Static labels (XML text= or an OnLoad write; each restricted to its own keys):
 --   the two panels' TitleContainer.TitleText, written directly with SetText(LFG_TITLE), never SetTitle
 --     (blizzard_lfgvanilla_listing.lua:46, blizzard_lfgvanilla_browse.lua:131);
@@ -17,7 +17,7 @@
 --     SendMessageButton SEND_MESSAGE (xml:525);
 --   LFGBrowseSearchEntryTooltip: Delisted, NewPlayerFriendlyText, CompletedEncounterHeader (xml:326–360).
 -- Dynamic, each post-hooked (a frame's own method, or a global looked up by name at call time):
---   LFGParentFrame:UpdateTabs → Tab1 LFG_LIST_TAB_1 / LFG_LIST_EDIT (parentframe.lua:87–92);
+--   LFGParentFrame:UpdateTabs → Tab1 LFG_LIST_TAB_1 / LFG_LIST_EDIT (parentframe.lua:73–78);
 --   LFGListingPostButton_UpdateText → PostButton List Self / List Group / Update (listing.lua:610–618);
 --   LFGListingBackButton_UpdateText → BackButton LFG_LIST_UNLIST; its other text is BACK, whose English "Back" the
 --     dictionary gives to INVTYPE_CLOAK, so it stays English (listing.lua:643–649);

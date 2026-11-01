@@ -2,7 +2,7 @@
 -- "ui", ADR-016). Blizzard_SettingsDefinitions_Frame (a login addon on camelot) defines them; each opens from
 -- its category's tutorial button in the Options window (Settings.AssignTutorialToCategory):
 --   NamePlatesTutorial (blizzard_settingsdefinitions_frame/nameplates.xml:35; opened at nameplates.lua:338): title
---     NAMEPLATES_LABEL (SetTitle in OnLoad, nameplates.lua:878), four XML FontStrings UNIT_NAMEPLATES_TUTORIAL_*
+--     NAMEPLATES_LABEL (SetTitle in OnLoad, nameplates.lua:877), four XML FontStrings UNIT_NAMEPLATES_TUTORIAL_*
 --     (nameplates.xml:54–87);
 --   PingSystemTutorial (pingsystem.xml:6; opened at pingsystem.lua:9, 137): title PING_SYSTEM_TUTORIAL_LABEL
 --     (SetTitle in OnLoad, pingsystem.lua:157), the Tutorial1–4 headers and bodies PING_SYSTEM_TUTORIAL_*

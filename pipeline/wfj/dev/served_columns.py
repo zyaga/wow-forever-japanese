@@ -1,6 +1,6 @@
 """Every text column the client serves, from a local install: the inventory coverage is measured against.
 
-    python -m wfj.dev.served_columns --wow "<World of Warcraft>" --product wow_classic_beta \
+    python -m wfj.dev.served_columns --wow "<World of Warcraft>" --product wowf \
         --listfile <community listfile> [--hotfixes <Cache/ADB/enUS/DBCache.bin>] \
         [--previous pipeline/served_columns.txt] > served_columns.txt
 
@@ -205,7 +205,7 @@ def main(argv: list[str] | None = None) -> int:
         "--wow", required=True, type=Path, help="the World of Warcraft folder holding .build.info"
     )
     ap.add_argument(
-        "--product", default="wow_classic_beta", help=".build.info product (default wow_classic_beta)"
+        "--product", default="wowf", help=".build.info product (default wowf)"
     )
     ap.add_argument("--listfile", required=True, type=Path, help="the community listfile (<id>;<path> lines)")
     ap.add_argument("--hotfixes", type=Path, help="the client's Cache/ADB/<locale>/DBCache.bin (read only)")

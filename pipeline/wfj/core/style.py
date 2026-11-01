@@ -4,8 +4,8 @@ guide wrote it.
 The style guide (`docs/content/translation-style-guide.md`) carries `version: sg<N>`. A draft of server-only
 text (quest `progress` / `completion`, gossip `text`, book `text`) is imported under a
 name ending in `-sg<N>` for that version, so its `provenance.source` reads `draft-<kind>-sg<N>@<date>`.
-`status._rank` reads the version back from the source; `translate_batch` checks it when it writes an import
-file and `wfj import draft` when it imports one.
+`status.variant_rank` reads the version back from the source; `translate_batch` checks it when it writes an
+import file and `wfj import draft` when it imports one.
 """
 
 from __future__ import annotations

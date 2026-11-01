@@ -217,8 +217,8 @@ function W.copyBox(parent, x, y, width, text)
 end
 
 -- A tool window the player opens (the fix window, the collector send window, the report window): the client's
--- current window frame (title bar, inset panel), centred, above the client's own overlays (the beta's Issue Reporter
--- button sits over DIALOG), dragged by its body, closed by Esc like the client's own panels; built hidden with an
+-- current window frame (title bar, inset panel), centred, above the client's own overlays,
+-- dragged by its body, closed by Esc like the client's own panels; built hidden with an
 -- empty title (`f.title`). [verified: ButtonFrameTemplate Blizzard_SharedXML/Mainline/SharedUIPanelTemplates.xml:711
 -- (Inset TOPLEFT 4,-60 / BOTTOMRIGHT -6,26), ButtonFrameTemplate_HidePortrait SharedUIPanelTemplates.lua:111,
 -- SetTitle / GetTitleText PortraitFrame.lua:4–28; UISpecialFrames + CloseSpecialWindows,

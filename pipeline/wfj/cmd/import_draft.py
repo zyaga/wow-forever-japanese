@@ -12,9 +12,9 @@ from typing import Any
 
 from wfj.cmd.check import current_baseline, scopes_for
 from wfj.cmd.import_predecessor import ja_identity
-from wfj.core import decisions, style
+from wfj.core import decisions, dedupe, style
 from wfj.core.model import FIELDS, HASH_KEYED, entry, validate_line
-from wfj.core.status import Scope
+from wfj.core.status import Scope, variant_rank
 from wfj.io.jsonl_store import Store
 from wfj.paths import data_root
 
@@ -143,12 +143,34 @@ def reverify(
         raise ValueError(
             f"draft: --reverify: {len(outranked)} row(s) lose to a variant ruled accept ({shown})"
         )
+    # Nor where another variant ranks above the draft (check's tiebreak: an older draft under a higher
+    # `-sg<N>`, say): it keeps shipping, and the stamp would mark Japanese written for the old English as
+    # checked against the new. Rule the old variant reject, or redraft under its version, then re-verify.
+    below = [k for k in current if k in by and _ranked_below(by[k], drafted[k], scopes[k[0]], k[1])]
+    if below:
+        shown = ", ".join(f"{i}/{f}" for i, f in below[:10])
+        raise ValueError(
+            f"draft: --reverify: {len(below)} row(s) rank below another variant ({shown}): rule it reject "
+            "or redraft under its style version"
+        )
     n = 0
     for k, base in current.items():
         if by[k].get("english") != base:
             n += 1
         by[k]["english"] = dict(base)  # type: ignore[arg-type]  # None was refused above
     return n
+
+
+def _ranked_below(line: dict[str, Any], ja: str, scope: Scope, field_name: str) -> bool:
+    """Another variant not ruled reject ranks above the drafted text by `status.variant_rank`."""
+    live = [c for c in dedupe.variants(line)
+            if not (isinstance(c.ruling, dict) and c.ruling.get("ruling") == "reject")]
+    ident = ja_identity(ja)
+    mine = next((c for c in live if ja_identity(c.ja) == ident), None)
+    if mine is None:  # the drafted text is a variant ruled reject: it never ships
+        return True
+    best = variant_rank(mine, field_name, scope)
+    return any(variant_rank(c, field_name, scope) < best for c in live if c is not mine)
 
 
 def run_draft(a: argparse.Namespace) -> int:

@@ -238,7 +238,7 @@ An entry whose word is a `required` glossary term, listed exactly as the lower-c
 
 ## UI dictionary batches
 
-Interface strings (`ui` type) are not a `cut` kind. The keys come from the curated `pipeline/ui_keys.txt`, their English from `make import-english`, and the draft is `{id, field, ja}` rows imported with `make import-draft TYPE=ui` ([ADR-014](../adr/014-machine-drafted-text-and-ui-dictionary.md)). How the Japanese should read (meaning in context, length, register, consistency, format, names) is the style guide's [Interface text](../content/translation-style-guide.md#interface-text-ui-strings) section; give it to the drafting model. Rules for a UI draft:
+Interface strings (`ui` type) are not a `cut` kind. The keys come from the curated `pipeline/ui_keys.txt`, their English from `make import-english` (while `forever_QUEST_BUILD` is set it refuses, [ADR-068](../adr/068-quest-cache-pinned-apart-from-the-tables.md): run `make import-tables CLIENT=forever`), and the draft is `{id, field, ja}` rows imported with `make import-draft TYPE=ui` ([ADR-014](../adr/014-machine-drafted-text-and-ui-dictionary.md)). How the Japanese should read (meaning in context, length, register, consistency, format, names) is the style guide's [Interface text](../content/translation-style-guide.md#interface-text-ui-strings) section; give it to the drafting model. Rules for a UI draft:
 - one model per draft batch (a test lists each UI draft source and checks it);
 - keep every format specifier (`%s`, `%d`, positional `%1$s` when the word order moves), colour code, `|A` atlas, `|cn` named colour and line break;
 - one English, one Japanese: a key whose English another key already ships takes that Japanese, unless the key owns its Japanese on one screen (`UIStrings.OWN`, [ADR-037](../adr/037-staticpopup-dialogs-and-owned-keys.md));
@@ -341,6 +341,31 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
+
+### 1.60.1.70532 → 1.60.1.70685, tables (2026-10-29)
+
+Forever's launch build, installed before launch. The launcher moved Forever to its own folder, `_forever_`, under the
+product `wowf`. The scan could not run before launch, so this round pins the tables
+only and the quest text stays on the 70532 cache (`forever_QUEST_BUILD`,
+[ADR-068](../adr/068-quest-cache-pinned-apart-from-the-tables.md)). Client tables: 62, with the hotfix cache the client
+wrote at the login screen; no layout hash changed. Only Forever's table steps ran (`wago-ids`, `client-text`,
+`wago-ui`), measured against `main`: a full `make import-english` runs Classic Era's import first, and the login-screen
+hotfix cache lacks the rows only 70532's play-session hotfixes held, so Classic Era English replaced the Forever
+English of 185 item descriptions and 182 shipped lines went stale. That run was not kept. The wago.tools cross-check
+(product `wowf`): no value differs. The UI extract: 4,492 files, 90 modified and 6 added (the Options window's Preset
+page, Forever's own PvP match results and scoreboard, the spellbook search hint; [Addon
+modules](../architecture/addon-modules.md)). The served-text inventory: one new column, `hotfixes.f0` (table names,
+`internal`). The English Collector file held nothing new (0 added, 0 replaced, none rejected).
+
+| Type | Reworded (shipped line now stale) | New English lines | Not served on this build (English kept) | Drafted |
+|---|---|---|---|---|
+| item | 3 descriptions (punctuation; the Japanese already fit), plus 16 renamed signets, which are names | 0 | 4,439 rows only 70532's play-session hotfixes held keep their English | none needed (the 3 re-verified) |
+| spell | 4 descriptions and 1 aura (Accelerant, Precision, Meathook, Thunderclap) | 1 (Ancestral Spirit rank 5) | 41 | 5 redrafted with `REVERIFY=1`, 1 new |
+| ui | 3 (the gamepad's "Alpha" became "Beta"; the warlock pet's health per Stamina went from 7.5 to 2) | 14 (the Preset page, the PvP outcome lines, the honor column) | 22: the 20 keys taken off the curated list, which no Forever window shows now, and 2 these tables no longer give (`PROMPT_TOGGLE_TOOLTIPS`, one broadcast line) | 17, with word lists for 14 (3 hold colour codes) |
+
+The served record (`pipeline/served/`) was taken with these tables and the 70532 quest cache, so its quest column waits for the scan. Meathook's redraft came out the same as an older hand-written variant, so the newer variant, written for a damage
+clause this build dropped, was ruled `reject`. The quest half (the scan's cache, the full import, quest and objective
+drafts, and voice) follows in the scan's re-pull; items, spells and interface lines are not voiced.
 
 ### 1.60.1.70450 → 1.60.1.70532 (2026-10-23)
 

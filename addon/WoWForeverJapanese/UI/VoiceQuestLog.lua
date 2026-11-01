@@ -1,8 +1,8 @@
 -- UI/VoiceQuestLog.lua: the quest log's play / pause button and the remembered speaker (ADR-063).
 --   * The quest log (the world map's quest pane) shows a quest's text but plays nothing by itself (opening the log is
 --     browsing). A play / pause button at the right end of the details' top bar plays that quest's offer as the pane
---     shows it, through UI/VoicePlayer like any line a player asks for. [verified: forever 1.60.1.70245
---     mainline/questmapframe.xml 701–720 (DetailsFrame.BackFrame, 307 × 52, BackButton at its left);
+--     shows it, through UI/VoicePlayer like any line a player asks for. [verified: forever 1.60.1.70685
+--     mainline/questmapframe.xml 691–725 (DetailsFrame.BackFrame, 307 × 52, BackButton at its left);
 --     questmapframe.lua:1044–1056 (QuestMapFrame_ShowQuestDetails)]. Like the windows' buttons it shows only while the
 --     voice panel is not on screen, and only for a line with a file.
 --   * Who showed each quest line, remembered when the quest window shows it (State "questShown", fired by

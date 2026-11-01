@@ -50,7 +50,7 @@ local function hover(owner, text)
   end)
 end
 
--- One slot of the camelot book templates (xml:4–111, 113–186): the XML text and the inline OnLoad writes.
+-- One slot of the camelot book templates (xml:4–122, 124–219): the XML text and the inline OnLoad writes.
 local function slot(parent, primary, header, missing)
   local f = CreateFrame("Frame", nil, parent)
   f.isPrimary = primary
@@ -72,7 +72,7 @@ local function bookContent(host)
   c.SecondaryProfession1 = slot(c, false, "Cooking", en("PROFESSIONS_COOKING_MISSING"))
   c.SecondaryProfession2 = slot(c, false, "Fishing", en("PROFESSIONS_FISHING_MISSING"))
   c.SecondaryProfession3 = slot(c, false, "First Aid", en("PROFESSIONS_FIRST_AID_MISSING"))
-  -- ProfessionsBookFrameMixin:FormatProfession (camelot/blizzard_professionsbook.lua:45–143)
+  -- ProfessionsBookFrameMixin:FormatProfession (camelot/blizzard_professionsbook.lua:43–137)
   function host.FormatProfession(_, f, name) f.ProfessionName.text = name or "" end
 end
 
@@ -96,7 +96,7 @@ local function loadProfessions(known)
   frame.Professions1Tab = CreateFrame("Frame", nil, frame)
   frame.Professions1Tab.tooltipText = "Cooking" -- RefreshRightTab: the profession's name
   hover(frame.Professions1Tab, function(self) return self.tooltipText end)
-  function frame.SelectBookPage(self) -- camelot/blizzard_professionsframe.lua:91–99
+  function frame.SelectBookPage(self) -- camelot/blizzard_professionsframe.lua:110–118
     self.CraftingPage:Hide()
     self.BookPage:Show()
     self:SetTitleFormatted(en("TRADE_SKILL_TITLE") or "%s", en("TRADE_SKILLS"))
@@ -166,7 +166,7 @@ describe("the professions window on the Forever client", function()
 
       it("a guild's profession view title 'Guild <profession>' is Japanese, the name kept", function()
         open()
-        _G.ProfessionsFrame:SetTitleFormatted(_G.GUILD_TRADE_SKILL_TITLE, "Mining") -- blizzard_professionsframe.lua:253
+        _G.ProfessionsFrame:SetTitleFormatted(_G.GUILD_TRADE_SKILL_TITLE, "Mining") -- blizzard_professionsframe.lua:265
         assert.are.equal("ギルドのMining", title():GetText())
         alt(true)
         assert.are.equal("Guild Mining", title():GetText())

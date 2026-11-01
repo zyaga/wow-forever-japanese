@@ -1,11 +1,11 @@
 """Extract interface files (FrameXML, Blizzard_* addons) from a local install (ADR-021's read path).
 
-    python -m wfj.dev.client_ui --wow "<World of Warcraft>" --product wow_classic_beta --out <dir> \
+    python -m wfj.dev.client_ui --wow "<World of Warcraft>" --product wowf --out <dir> \
         [--files Interface/FrameXML/QuestFrame.lua …] [--list <file of paths>] [--listfile <id;path csv>]
 
 Reads `.build.info` and `Data/` of the install and writes only into `--out` (refused inside the install), the
 same read-only contract as `wfj.dev.client_tables`. Each requested path is resolved through the archive's root
-by name hash and, when the root carries no names (as on the Forever beta build), through the `--listfile`
+by name hash and, when the root carries no names (as on Forever's), through the `--listfile`
 id;path CSV instead (the community listfile). A path neither can resolve is reported `missing`, not raised;
 content the client has not downloaded reports `not downloaded`. Prints the build, then one line
 per file (path, FileDataID, bytes, or `missing`), and exits 1 when no file at all could be resolved; that
@@ -125,7 +125,7 @@ def extract(
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="wfj.dev.client_ui", description=__doc__.split("\n\n")[0])
     ap.add_argument("--wow", required=True, type=Path, help="the folder holding .build.info")
-    ap.add_argument("--product", default="wow_classic_beta")
+    ap.add_argument("--product", default="wowf")
     ap.add_argument("--out", required=True, type=Path)
     ap.add_argument("--files", nargs="*", default=None)
     ap.add_argument("--list", type=Path, help="a file of interface paths, one per line")

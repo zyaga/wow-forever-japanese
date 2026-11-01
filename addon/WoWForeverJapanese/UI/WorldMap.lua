@@ -1,8 +1,8 @@
 -- UI/WorldMap.lua: the world map's own chrome on Forever (surface "worldmap", area "ui", ADR-016): the
 -- words Blizzard_WorldMap (a login addon, blizzard_worldmap.toc) puts around the map canvas. The window title
--- (MAP_AND_QUEST_LOG / WORLD_MAP, blizzard_worldmap.lua:26, 35, 40) and the quest log side panel belong to
+-- (MAP_AND_QUEST_LOG / WORLD_MAP, blizzard_worldmap.lua:14, 23, 28) and the quest log side panel belong to
 -- UI/QuestMap.lua, and pin tooltips to UI/MapPins.lua; zone, continent and floor names are names and stay English.
--- Every widget is a parentKey or a field WorldMapMixin:AddOverlayFrames writes (blizzard_worldmap.lua:318–361):
+-- Every widget is a parentKey or a field WorldMapMixin:AddOverlayFrames writes (blizzard_worldmap.lua:306–349):
 -- - NavBar.home: the navigation bar's first button. WorldMapNavBarMixin:OnLoad passes name = WORLD ("World") and
 --   NavBar_Initialize writes it once with homeButton:SetText (blizzard_worldmaptemplates.lua:504–517;
 --   blizzard_framexml/mainline/navigationbar.lua:5–18; the button is parentKey "home", navigationbar.xml:301). Every
@@ -15,9 +15,9 @@
 --   there (CanShowDungeonEntrancesOnMapFilterOption is false, camelot/blizzard_worldmaptemplates.lua:14–16).
 -- - WorldMapTrackingPinButton: OnEnter builds MAP_PIN, then MAP_PIN_TOOLTIP + MAP_PIN_TOOLTIP_INSTRUCTIONS, or
 --   MAP_PIN_INVALID_MAP on a map that takes no pin (:467–479): a help-tooltip owner restricted to those four. The
---   button is not created when the game rule WorldMapTrackingPinDisabled is on (blizzard_worldmap.lua:331–335).
+--   button is not created when the game rule WorldMapTrackingPinDisabled is on (blizzard_worldmap.lua:319–323).
 -- - The coordinates panel and the zone timer are overlay frames with no field on the map: they are found in
---   WorldMapFrame.overlayFrames (AddOverlayFrame, blizzard_worldmap.lua:455–467) by their own parentKeys
+--   WorldMapFrame.overlayFrames (AddOverlayFrame, blizzard_worldmap.lua:443–455) by their own parentKeys
 --   (PlayerCoords + CursorCoords + CrosshairCoords; TimeLabel: blizzard_worldmaptemplates.xml:129–165, 240), never by
 --   position. Both rewrite their text from an OnUpdate script (SetFormattedText every frame:
 --   WORLD_MAP_PLAYER_COORDS[_INTEGER], WORLD_MAP_PLAYER_COORDS_MAP_NAME[_INTEGER] (whose %s is a map's name, kept as
@@ -26,8 +26,8 @@
 --   HookScript("OnUpdate") that runs after the client's and shows only a label whose holder is shown. The
 --   coordinates are off unless the player turns them on (CVars worldMapShowPlayerCoords / worldMapShowCursorCoords,
 --   :659–663), and the timer shows only on an outdoor-PvP map (C_PvP.GetOutdoorPvPWaitTime, :708).
--- Not here: the gamepad footer prompts (FRAME_ACTION_*, blizzard_worldmap.lua:1119–1234), the help plate
--- (WORLD_MAP_TUTORIAL1 / 4, :1325–1326; never shown: camelot hides its MainHelpPlateButton,
+-- Not here: the gamepad footer prompts (FRAME_ACTION_*, blizzard_worldmap.lua:1100–1214), the help plate
+-- (WORLD_MAP_TUTORIAL1 / 4, :1305–1306; never shown: camelot hides its MainHelpPlateButton,
 -- helpplateoverrides.lua:1–3), the completed-quests HelpTip (UI/HelpTips; never shown on camelot:
 -- CanShowRefreshAccountCompletedQuestFilterTutorial is false, camelot/blizzard_worldmaptemplates.lua:10–12), the
 -- N'Zoth threat eye (a name), and the filter counter, which camelot's template does not have

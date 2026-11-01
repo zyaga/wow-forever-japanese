@@ -1140,7 +1140,6 @@ blizzard_sharedxml D_DAYS
 blizzard_sharedxml D_HOURS
 blizzard_sharedxml D_MINUTES
 blizzard_sharedxml D_SECONDS
-blizzard_sharedxml FRAME_ACTION_CONFIRM
 blizzard_sharedxml FRAME_ACTION_EXIT
 blizzard_sharedxml GOLD_AMOUNT_TEXTURE_STRING
 blizzard_sharedxml HELP_TIP_BUTTON_GOT_IT

@@ -1,13 +1,12 @@
 -- UI/ColorPicker.lua: the colour picker on Forever (surface "colorpicker", area "ui", ADR-016).
 -- Blizzard_ColorPickerFrame is a login addon on camelot; ColorPickerFrame (mainline/colorpickerframe.xml:75) opens
 -- from every colour swatch (chat colours, the Options window's colour-blind and nameplate swatches, raid markers).
---   Static: Header.Text COLOR_PICKER (the DialogHeaderTemplate's textString, xml:82–86), Footer.CancelButton CANCEL
---     and Footer.OkayButton OKAY (xml:187–198), and OpacityFrame's OPACITY label (xml:20). Walked at init and on
+--   Static: Header.Text COLOR_PICKER (the DialogHeaderTemplate's textString, xml:86–90), Footer.CancelButton CANCEL
+--     and Footer.OkayButton OKAY (xml:191–202), and OpacityFrame's OPACITY label (xml:20). Walked at init and on
 --     each frame's OnShow with UI/LabelTree.lua, restricted to this window's keys.
---   Content.HexBox is an EditBox (the hex colour, read back on every edit, colorpickerframe.lua:129–163): never
---     entered. Its placeholder, HexBox.Instructions (COLOR_PICKER_HEX, lua:124), is a FontString of its own that the
+--   Content.HexBox is an EditBox (the hex colour, read back on every edit, colorpickerframe.lua:122–156): never
+--     entered. Its placeholder, HexBox.Instructions (COLOR_PICKER_HEX, lua:116), is a FontString of its own that the
 --     client only writes once; it is shown by itself.
--- The gamepad prompts (ACTION_LABEL_ADJUST_COLOR …, lua:242–245) are drawn by GamepadSharedUtility, not this window.
 local _, WFJ = ...
 local ColorPicker = {}
 WFJ.ColorPicker = ColorPicker

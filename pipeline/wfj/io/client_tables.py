@@ -795,7 +795,7 @@ def write_csv(ex: Extracted, path: Path) -> None:
     Path(path).write_text(buf.getvalue(), encoding="utf-8")
 
 
-# --- comparison (the proof against wago.tools, and the beta-day cross-check)
+# --- comparison (the proof against wago.tools, and the cross-check of a new build)
 # ---------------------------------
 
 

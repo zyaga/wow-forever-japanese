@@ -1,6 +1,6 @@
 -- UI/EditMode.lua over frames replayed from blizzard_editmode/shared
 -- (editmodemanager.xml:4–560, editmodemanager.lua:24–32, 2918–2920; editmodedialogs.lua:231–258, 537–660;
--- editmodesystemtemplates.lua:3331–3346). A layout's name stays as the player wrote it.
+-- editmodesystemtemplates.lua:3414–3444). A layout's name stays as the player wrote it.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 local S = require("tests.lua.spec.stub_settings")

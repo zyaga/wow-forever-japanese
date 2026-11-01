@@ -69,10 +69,10 @@ ChatSystem.PLAIN_TYPES = { "SYSTEM", "SKILL", "CURRENCY", "MONEY", "OPENING", "T
   "ACHIEVEMENT", "GUILD_ACHIEVEMENT" }
 -- System chat lines outside the UIStrings.CHAT_FAMILIES a SYSTEM line may be (Lua-built: chatframeutil.lua:251–263,
 -- the GMOTD, the community channel notices); key-only through UIStrings.ONLY.
--- The voice channel's announce line (channelframe.lua:828–840, DisplaySystemMessageInPrimary): the
+-- The voice channel's announce line (channelframe.lua:816–828, DisplaySystemMessageInPrimary): the
 -- voiceParts form: its three sentences each an entry, the atlas kept. The voice-service switch line,
 -- VOICE_CHAT_SERVICE_SWITCHING:format(the service's name, an entry), printed when the group's voice provider changes
--- while speech features are in use (channelframe.lua:574–583); its companion TTS/STT line is an exact English.
+-- while speech features are in use (channelframe.lua:562–571); its companion TTS/STT line is an exact English.
 ChatSystem.EXTRA_TEMPLATES = { "GUILD_MOTD_TEMPLATE", "TIME_PLAYED_TOTAL", "TIME_PLAYED_LEVEL",
   "COMMUNITIES_CHANNEL_ADDED_TO_CHAT_WINDOW", "COMMUNITIES_CHANNEL_REMOVED_FROM_CHAT_WINDOW",
   "VOICE_CHAT_CHANNEL_ANNOUNCE", "VOICE_CHAT_SERVICE_SWITCHING" }

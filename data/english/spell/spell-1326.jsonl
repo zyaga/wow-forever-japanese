@@ -1,75 +1,78 @@
-{"id": 1326019, "field": "name", "en": "Holy Smite", "hash": "c64a1c724bcc4e5c", "src": "db2@1.60.1.70532"}
-{"id": 1326019, "field": "description", "en": "Smite your target with the power of the holy spring, inflicting $s1 Holy damage.", "hash": "9b566f35a35c4398", "src": "db2@1.60.1.70532"}
-{"id": 1326042, "field": "name", "en": "Drain Soul", "hash": "3540acca5b1ac2a0", "src": "db2@1.60.1.70532"}
-{"id": 1326044, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70532"}
-{"id": 1326044, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70532"}
-{"id": 1326047, "field": "name", "en": "Lava Burst", "hash": "444a2bbd50295ec5", "src": "db2@1.60.1.70532"}
-{"id": 1326047, "field": "description", "en": "You hurl molten lava at the target, dealing $s1 Fire damage. If your Flame Shock is on the target, Lava Burst deals $s2% increased damage.", "hash": "c9c1c7830a12da5b", "src": "db2@1.60.1.70532"}
-{"id": 1326053, "field": "name", "en": "Frost Blast", "hash": "568c7eb9677c9fa2", "src": "db2@1.60.1.70532"}
-{"id": 1326053, "field": "description", "en": "Quickly launch a weak blast of frost at the enemy, causing $s2 Frost damage and slowing movement speed by $s1% for $d.", "hash": "a45793608cad9dbe", "src": "db2@1.60.1.70532"}
-{"id": 1326053, "field": "aura", "en": "Movement slowed by $w1%.", "hash": "be1d3d2480027757", "src": "db2@1.60.1.70532"}
-{"id": 1326054, "field": "name", "en": "Frost Blast", "hash": "568c7eb9677c9fa2", "src": "db2@1.60.1.70532"}
-{"id": 1326054, "field": "description", "en": "Quickly launch a weak blast of frost at the enemy, causing $s2 Frost damage and slowing movement speed by $s1% for $d.", "hash": "a45793608cad9dbe", "src": "db2@1.60.1.70532"}
-{"id": 1326054, "field": "aura", "en": "Movement slowed by $w1%.", "hash": "be1d3d2480027757", "src": "db2@1.60.1.70532"}
-{"id": 1326055, "field": "name", "en": "Frost Blast", "hash": "568c7eb9677c9fa2", "src": "db2@1.60.1.70532"}
-{"id": 1326055, "field": "description", "en": "Quickly launch a weak blast of frost at the enemy, causing $s2 Frost damage and slowing movement speed by $s1% for $d.", "hash": "a45793608cad9dbe", "src": "db2@1.60.1.70532"}
-{"id": 1326055, "field": "aura", "en": "Movement slowed by $w1%.", "hash": "be1d3d2480027757", "src": "db2@1.60.1.70532"}
-{"id": 1326056, "field": "name", "en": "Blackthorne's Ward", "hash": "0d532eef43e8784d", "src": "db2@1.60.1.70532"}
-{"id": 1326056, "field": "aura", "en": "Reduces damage taken.", "hash": "012fd74b3c5993f2", "src": "db2@1.60.1.70532"}
-{"id": 1326057, "field": "name", "en": "Healthstone", "hash": "5661287d45eb1042", "src": "db2@1.60.1.70532"}
-{"id": 1326057, "field": "description", "en": "Instantly restores life.", "hash": "04cc568cfddccb97", "src": "db2@1.60.1.70532"}
-{"id": 1326064, "field": "name", "en": "Vigilant", "hash": "b159d75af19735a5", "src": "db2@1.60.1.70532"}
-{"id": 1326064, "field": "aura", "en": "Ever-vigilant in the nighttime hours.", "hash": "9fb3b6e1fbe665ab", "src": "db2@1.60.1.70532"}
-{"id": 1326079, "field": "name", "en": "Arcane Wrath", "hash": "8c4b7a9d202e23ab", "src": "db2@1.60.1.70532"}
-{"id": 1326079, "field": "description", "en": "Launches a projectile of pure Arcane energy at the enemy target, causing $s1 Arcane damage. This spell gains additional Spell Damage equal to $s2% of your maximum Mana.", "hash": "e09bf258bae85a17", "src": "db2@1.60.1.70532"}
-{"id": 1326080, "field": "name", "en": "Arcane Wrath", "hash": "8c4b7a9d202e23ab", "src": "db2@1.60.1.70532"}
-{"id": 1326080, "field": "description", "en": "Launches a projectile of pure Arcane energy at the enemy target, causing $s1 Arcane damage. This spell gains additional Spell Damage equal to $s2% of your maximum Mana.", "hash": "e09bf258bae85a17", "src": "db2@1.60.1.70532"}
-{"id": 1326081, "field": "name", "en": "Arcane Wrath", "hash": "8c4b7a9d202e23ab", "src": "db2@1.60.1.70532"}
-{"id": 1326081, "field": "description", "en": "Launches a projectile of pure Arcane energy at the enemy target, causing $s1 Arcane damage. This spell gains additional Spell Damage equal to $s2% of your maximum Mana.", "hash": "e09bf258bae85a17", "src": "db2@1.60.1.70532"}
-{"id": 1326082, "field": "name", "en": "Arcane Wrath", "hash": "8c4b7a9d202e23ab", "src": "db2@1.60.1.70532"}
-{"id": 1326082, "field": "description", "en": "Launches a projectile of pure Arcane energy at the enemy target, causing $s1 Arcane damage. This spell gains additional Spell Damage equal to $s2% of your maximum Mana.", "hash": "e09bf258bae85a17", "src": "db2@1.60.1.70532"}
-{"id": 1326083, "field": "name", "en": "Missile Barrage", "hash": "6ec1255ed8c6a90d", "src": "db2@1.60.1.70532"}
-{"id": 1326083, "field": "description", "en": "Gives your Arcane Blast, Fireball, and Frostbolt spells a chance to reduce the channeled duration of the next Arcane Missiles spell by $400589s1%, reduce the mana cost by $s3%, and missiles fire every ${$400588m2/10}.1 sec.", "hash": "0c48d280eb38c303", "src": "db2@1.60.1.70532"}
-{"id": 1326083, "field": "aura", "en": "Reduces the channeled duration of your next Arcane Missiles spell by $s1%, reduces the mana cost by $s3%, and missiles fire every ${$400588w2/10}.1 sec.", "hash": "f8ba2f76fe5e0ea1", "src": "db2@1.60.1.70532"}
-{"id": 1326084, "field": "name", "en": "Reckoning", "hash": "c17f13f92f8e54f7", "src": "db2@1.60.1.70532"}
-{"id": 1326084, "field": "description", "en": "Grants extra attacks after blocking or being critically hit.", "hash": "6833bbf8d0f0b4d0", "src": "db2@1.60.1.70532"}
-{"id": 1326084, "field": "aura", "en": "$s1 additional attacks on next swing.", "hash": "5966acba96b1e602", "src": "db2@1.60.1.70532"}
-{"id": 1326099, "field": "name", "en": "Summon Arcane Elemental", "hash": "46674d85f06153ff", "src": "db2@1.60.1.70532"}
-{"id": 1326099, "field": "description", "en": "Chance on damaging spell to summon an Arcane elemental to aid you in combat.", "hash": "288d1e972f4e1384", "src": "db2@1.60.1.70532"}
-{"id": 1326114, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70532"}
-{"id": 1326114, "field": "description", "en": "Puts an enemy to sleep for up to $d. Any damage caused will awaken the target. Only one target can be asleep at a time.", "hash": "5d4e03d90e349a6b", "src": "db2@1.60.1.70532"}
-{"id": 1326114, "field": "aura", "en": "Asleep.", "hash": "5339954ec205013e", "src": "db2@1.60.1.70532"}
-{"id": 1326140, "field": "name", "en": "Ritual of Summoning", "hash": "1b1da07c2f6e68be", "src": "db2@1.60.1.70532"}
-{"id": 1326140, "field": "description", "en": "Begins a ritual that summons the targeted group member.  Requires the caster and 2 additional party members to complete the ritual.  In order to participate, all players must be out of combat and right-click the portal and not move until the ritual is complete.", "hash": "243b7c439ebf979e", "src": "db2@1.60.1.70532"}
-{"id": 1326144, "field": "name", "en": "Pool of Fire", "hash": "2612ffa6886bb9b5", "src": "db2@1.60.1.70532"}
-{"id": 1326144, "field": "aura", "en": "$w1 Fire damage and $w2 mana burned every $t1 sec.", "hash": "71d9c442654cdd8b", "src": "db2@1.60.1.70532"}
-{"id": 1326146, "field": "name", "en": "Pool of Fire", "hash": "2612ffa6886bb9b5", "src": "db2@1.60.1.70532"}
-{"id": 1326146, "field": "aura", "en": "$w1 Fire damage and $w2 mana burned every $t1 sec.", "hash": "71d9c442654cdd8b", "src": "db2@1.60.1.70532"}
-{"id": 1326154, "field": "name", "en": "Balnazzar Transform", "hash": "ea1362bfb4ec61f3", "src": "db2@1.60.1.70532"}
-{"id": 1326159, "field": "name", "en": "Dark Inspiration", "hash": "9dc0f786261093e9", "src": "db2@1.60.1.70532"}
-{"id": 1326159, "field": "description", "en": "Your Mind Blast and fully channeled Mind Flay causes Dark Inspiration, increasing yours and your party's Spirit by $m1% for $1326168d.", "hash": "5cca5eb5355e42d1", "src": "db2@1.60.1.70532"}
-{"id": 1326168, "field": "name", "en": "Dark Inspiration", "hash": "9dc0f786261093e9", "src": "db2@1.60.1.70532"}
-{"id": 1326168, "field": "description", "en": "Your Mind Blast and fully channeled Mind Flay causes Dark Inspiration, increasing yours and your party's Spirit by $1326159s1% for $d.\r\n", "hash": "f9e6ff89e42e1d64", "src": "db2@1.60.1.70532"}
-{"id": 1326168, "field": "aura", "en": "Spirit increased by $w1%.", "hash": "9348a814462d114d", "src": "db2@1.60.1.70532"}
-{"id": 1326175, "field": "name", "en": "Stealth", "hash": "87e718bee5e635c1", "src": "db2@1.60.1.70532"}
-{"id": 1326175, "field": "aura", "en": "Stealthed.", "hash": "150ed46572cb7a09", "src": "db2@1.60.1.70532"}
-{"id": 1326189, "field": "name", "en": "Blink", "hash": "951d75c0c1314e00", "src": "db2@1.60.1.70532"}
-{"id": 1326189, "field": "aura", "en": "Blinking...", "hash": "e8b15d2fefd96faf", "src": "db2@1.60.1.70532"}
-{"id": 1326203, "field": "name", "en": "Untrackable", "hash": "7a43f0122029a2f1", "src": "db2@1.60.1.70532"}
-{"id": 1326235, "field": "name", "en": "AI Cast", "hash": "d4e3b3fe5c222a53", "src": "db2@1.60.1.70532"}
-{"id": 1326363, "field": "name", "en": "Dummy", "hash": "b96ea884878ed073", "src": "db2@1.60.1.70532"}
-{"id": 1326368, "field": "name", "en": "Shadow Channel", "hash": "5ec363193ed8f13c", "src": "db2@1.60.1.70532"}
-{"id": 1326475, "field": "name", "en": "Flash Bundle", "hash": "a6eb912a337bbfba", "src": "db2@1.60.1.70532"}
-{"id": 1326475, "field": "description", "en": "Call down a pillar of fire, burning all enemies within the area for $s1 Fire damage and an additional $s2 Fire damage every $t2 for $d.", "hash": "2bff8df01a969479", "src": "db2@1.60.1.70532"}
-{"id": 1326475, "field": "aura", "en": "Suffering $w2 Fire damage every $t2.", "hash": "1f1095fdd095d00c", "src": "db2@1.60.1.70532"}
-{"id": 1326522, "field": "name", "en": "Shadow Channel", "hash": "5ec363193ed8f13c", "src": "db2@1.60.1.70532"}
-{"id": 1326548, "field": "name", "en": "Chains of Hogger", "hash": "02a2687e85ea480e", "src": "db2@1.60.1.70532"}
-{"id": 1326548, "field": "aura", "en": "Charmed.\r\nDamage increased by $s2%.\r\nHealing increased by $s3%.", "hash": "67380af4ba16e03c", "src": "db2@1.60.1.70532"}
-{"id": 1326550, "field": "name", "en": "Chains of Hogger", "hash": "02a2687e85ea480e", "src": "db2@1.60.1.70532"}
-{"id": 1326608, "field": "name", "en": "Wind Bridge", "hash": "8479648b04cba521", "src": "db2@1.60.1.70532"}
-{"id": 1326850, "field": "name", "en": "(DNT) Add Threat", "hash": "6d2175b76d4853f3", "src": "db2@1.60.1.70532"}
-{"id": 1326891, "field": "name", "en": "Frigid Power", "hash": "effeeb21bba9498e", "src": "db2@1.60.1.70532"}
-{"id": 1326891, "field": "description", "en": "Increases the damage done by your Frost spells by $s1%.", "hash": "b993a0ec3bc820d4", "src": "db2@1.60.1.70532"}
-{"id": 1326891, "field": "aura", "en": "Increases the damage done by your Frost spells by $w1%.", "hash": "ba1cd7587167f0f2", "src": "db2@1.60.1.70532"}
-{"id": 1326990, "field": "name", "en": "Mind Blast", "hash": "868279b14e0b7083", "src": "db2@1.60.1.70532"}
-{"id": 1326990, "field": "description", "en": "Inflicts Shadow damage to an enemy, but causes a high amount of threat.", "hash": "d60755718e5f125b", "src": "db2@1.60.1.70532"}
+{"id": 1326019, "field": "name", "en": "Holy Smite", "hash": "c64a1c724bcc4e5c", "src": "db2@1.60.1.70685"}
+{"id": 1326019, "field": "description", "en": "Smite your target with the power of the holy spring, inflicting $s1 Holy damage.", "hash": "9b566f35a35c4398", "src": "db2@1.60.1.70685"}
+{"id": 1326042, "field": "name", "en": "Drain Soul", "hash": "3540acca5b1ac2a0", "src": "db2@1.60.1.70685"}
+{"id": 1326044, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70685"}
+{"id": 1326044, "field": "description", "en": "Smites an enemy, inflicting Holy damage.", "hash": "20941603b5439484", "src": "db2@1.60.1.70685"}
+{"id": 1326047, "field": "name", "en": "Lava Burst", "hash": "444a2bbd50295ec5", "src": "db2@1.60.1.70685"}
+{"id": 1326047, "field": "description", "en": "You hurl molten lava at the target, dealing $s1 Fire damage. If your Flame Shock is on the target, Lava Burst deals $s2% increased damage.", "hash": "c9c1c7830a12da5b", "src": "db2@1.60.1.70685"}
+{"id": 1326053, "field": "name", "en": "Frost Blast", "hash": "568c7eb9677c9fa2", "src": "db2@1.60.1.70685"}
+{"id": 1326053, "field": "description", "en": "Quickly launch a weak blast of frost at the enemy, causing $s2 Frost damage and slowing movement speed by $s1% for $d.", "hash": "a45793608cad9dbe", "src": "db2@1.60.1.70685"}
+{"id": 1326053, "field": "aura", "en": "Movement slowed by $w1%.", "hash": "be1d3d2480027757", "src": "db2@1.60.1.70685"}
+{"id": 1326054, "field": "name", "en": "Frost Blast", "hash": "568c7eb9677c9fa2", "src": "db2@1.60.1.70685"}
+{"id": 1326054, "field": "description", "en": "Quickly launch a weak blast of frost at the enemy, causing $s2 Frost damage and slowing movement speed by $s1% for $d.", "hash": "a45793608cad9dbe", "src": "db2@1.60.1.70685"}
+{"id": 1326054, "field": "aura", "en": "Movement slowed by $w1%.", "hash": "be1d3d2480027757", "src": "db2@1.60.1.70685"}
+{"id": 1326055, "field": "name", "en": "Frost Blast", "hash": "568c7eb9677c9fa2", "src": "db2@1.60.1.70685"}
+{"id": 1326055, "field": "description", "en": "Quickly launch a weak blast of frost at the enemy, causing $s2 Frost damage and slowing movement speed by $s1% for $d.", "hash": "a45793608cad9dbe", "src": "db2@1.60.1.70685"}
+{"id": 1326055, "field": "aura", "en": "Movement slowed by $w1%.", "hash": "be1d3d2480027757", "src": "db2@1.60.1.70685"}
+{"id": 1326056, "field": "name", "en": "Blackthorne's Ward", "hash": "0d532eef43e8784d", "src": "db2@1.60.1.70685"}
+{"id": 1326056, "field": "aura", "en": "Reduces damage taken.", "hash": "012fd74b3c5993f2", "src": "db2@1.60.1.70685"}
+{"id": 1326057, "field": "name", "en": "Healthstone", "hash": "5661287d45eb1042", "src": "db2@1.60.1.70685"}
+{"id": 1326057, "field": "description", "en": "Instantly restores life.", "hash": "04cc568cfddccb97", "src": "db2@1.60.1.70685"}
+{"id": 1326064, "field": "name", "en": "Vigilant", "hash": "b159d75af19735a5", "src": "db2@1.60.1.70685"}
+{"id": 1326064, "field": "aura", "en": "Ever-vigilant in the nighttime hours.", "hash": "9fb3b6e1fbe665ab", "src": "db2@1.60.1.70685"}
+{"id": 1326079, "field": "name", "en": "Arcane Wrath", "hash": "8c4b7a9d202e23ab", "src": "db2@1.60.1.70685"}
+{"id": 1326079, "field": "description", "en": "Launches a projectile of pure Arcane energy at the enemy target, causing $s1 Arcane damage. This spell gains additional Spell Damage equal to $s2% of your maximum Mana.", "hash": "e09bf258bae85a17", "src": "db2@1.60.1.70685"}
+{"id": 1326080, "field": "name", "en": "Arcane Wrath", "hash": "8c4b7a9d202e23ab", "src": "db2@1.60.1.70685"}
+{"id": 1326080, "field": "description", "en": "Launches a projectile of pure Arcane energy at the enemy target, causing $s1 Arcane damage. This spell gains additional Spell Damage equal to $s2% of your maximum Mana.", "hash": "e09bf258bae85a17", "src": "db2@1.60.1.70685"}
+{"id": 1326081, "field": "name", "en": "Arcane Wrath", "hash": "8c4b7a9d202e23ab", "src": "db2@1.60.1.70685"}
+{"id": 1326081, "field": "description", "en": "Launches a projectile of pure Arcane energy at the enemy target, causing $s1 Arcane damage. This spell gains additional Spell Damage equal to $s2% of your maximum Mana.", "hash": "e09bf258bae85a17", "src": "db2@1.60.1.70685"}
+{"id": 1326082, "field": "name", "en": "Arcane Wrath", "hash": "8c4b7a9d202e23ab", "src": "db2@1.60.1.70685"}
+{"id": 1326082, "field": "description", "en": "Launches a projectile of pure Arcane energy at the enemy target, causing $s1 Arcane damage. This spell gains additional Spell Damage equal to $s2% of your maximum Mana.", "hash": "e09bf258bae85a17", "src": "db2@1.60.1.70685"}
+{"id": 1326083, "field": "name", "en": "Missile Barrage", "hash": "6ec1255ed8c6a90d", "src": "db2@1.60.1.70685"}
+{"id": 1326083, "field": "description", "en": "Gives your Arcane Blast, Fireball, and Frostbolt spells a chance to reduce the channeled duration of the next Arcane Missiles spell by $400589s1%, reduce the mana cost by $s3%, and missiles fire every ${$400588m2/10}.1 sec.", "hash": "0c48d280eb38c303", "src": "db2@1.60.1.70685"}
+{"id": 1326083, "field": "aura", "en": "Reduces the channeled duration of your next Arcane Missiles spell by $s1%, reduces the mana cost by $s3%, and missiles fire every ${$400588w2/10}.1 sec.", "hash": "f8ba2f76fe5e0ea1", "src": "db2@1.60.1.70685"}
+{"id": 1326084, "field": "name", "en": "Reckoning", "hash": "c17f13f92f8e54f7", "src": "db2@1.60.1.70685"}
+{"id": 1326084, "field": "description", "en": "Grants extra attacks after blocking or being critically hit.", "hash": "6833bbf8d0f0b4d0", "src": "db2@1.60.1.70685"}
+{"id": 1326084, "field": "aura", "en": "$s1 additional attacks on next swing.", "hash": "5966acba96b1e602", "src": "db2@1.60.1.70685"}
+{"id": 1326099, "field": "name", "en": "Summon Arcane Elemental", "hash": "46674d85f06153ff", "src": "db2@1.60.1.70685"}
+{"id": 1326099, "field": "description", "en": "Chance on damaging spell to summon an Arcane elemental to aid you in combat.", "hash": "288d1e972f4e1384", "src": "db2@1.60.1.70685"}
+{"id": 1326114, "field": "name", "en": "Sleep", "hash": "bf85806c7ee19721", "src": "db2@1.60.1.70685"}
+{"id": 1326114, "field": "description", "en": "Puts an enemy to sleep for up to $d. Any damage caused will awaken the target. Only one target can be asleep at a time.", "hash": "5d4e03d90e349a6b", "src": "db2@1.60.1.70685"}
+{"id": 1326114, "field": "aura", "en": "Asleep.", "hash": "5339954ec205013e", "src": "db2@1.60.1.70685"}
+{"id": 1326140, "field": "name", "en": "Ritual of Summoning", "hash": "1b1da07c2f6e68be", "src": "db2@1.60.1.70685"}
+{"id": 1326140, "field": "description", "en": "Begins a ritual that summons the targeted group member.  Requires the caster and 2 additional party members to complete the ritual.  In order to participate, all players must be out of combat and right-click the portal and not move until the ritual is complete.", "hash": "243b7c439ebf979e", "src": "db2@1.60.1.70685"}
+{"id": 1326144, "field": "name", "en": "Pool of Fire", "hash": "2612ffa6886bb9b5", "src": "db2@1.60.1.70685"}
+{"id": 1326144, "field": "aura", "en": "$w1 Fire damage and $w2 mana burned every $t1 sec.", "hash": "71d9c442654cdd8b", "src": "db2@1.60.1.70685"}
+{"id": 1326146, "field": "name", "en": "Pool of Fire", "hash": "2612ffa6886bb9b5", "src": "db2@1.60.1.70685"}
+{"id": 1326146, "field": "aura", "en": "$w1 Fire damage and $w2 mana burned every $t1 sec.", "hash": "71d9c442654cdd8b", "src": "db2@1.60.1.70685"}
+{"id": 1326154, "field": "name", "en": "Balnazzar Transform", "hash": "ea1362bfb4ec61f3", "src": "db2@1.60.1.70685"}
+{"id": 1326159, "field": "name", "en": "Dark Inspiration", "hash": "9dc0f786261093e9", "src": "db2@1.60.1.70685"}
+{"id": 1326159, "field": "description", "en": "Your Mind Blast and fully channeled Mind Flay causes Dark Inspiration, increasing yours and your party's Spirit by $m1% for $1326168d.", "hash": "5cca5eb5355e42d1", "src": "db2@1.60.1.70685"}
+{"id": 1326168, "field": "name", "en": "Dark Inspiration", "hash": "9dc0f786261093e9", "src": "db2@1.60.1.70685"}
+{"id": 1326168, "field": "description", "en": "Your Mind Blast and fully channeled Mind Flay causes Dark Inspiration, increasing yours and your party's Spirit by $1326159s1% for $d.\r\n", "hash": "f9e6ff89e42e1d64", "src": "db2@1.60.1.70685"}
+{"id": 1326168, "field": "aura", "en": "Spirit increased by $w1%.", "hash": "9348a814462d114d", "src": "db2@1.60.1.70685"}
+{"id": 1326175, "field": "name", "en": "Stealth", "hash": "87e718bee5e635c1", "src": "db2@1.60.1.70685"}
+{"id": 1326175, "field": "aura", "en": "Stealthed.", "hash": "150ed46572cb7a09", "src": "db2@1.60.1.70685"}
+{"id": 1326189, "field": "name", "en": "Blink", "hash": "951d75c0c1314e00", "src": "db2@1.60.1.70685"}
+{"id": 1326189, "field": "aura", "en": "Blinking...", "hash": "e8b15d2fefd96faf", "src": "db2@1.60.1.70685"}
+{"id": 1326203, "field": "name", "en": "Untrackable", "hash": "7a43f0122029a2f1", "src": "db2@1.60.1.70685"}
+{"id": 1326235, "field": "name", "en": "AI Cast", "hash": "d4e3b3fe5c222a53", "src": "db2@1.60.1.70685"}
+{"id": 1326363, "field": "name", "en": "Dummy", "hash": "b96ea884878ed073", "src": "db2@1.60.1.70685"}
+{"id": 1326368, "field": "name", "en": "Shadow Channel", "hash": "5ec363193ed8f13c", "src": "db2@1.60.1.70685"}
+{"id": 1326475, "field": "name", "en": "Flash Bundle", "hash": "a6eb912a337bbfba", "src": "db2@1.60.1.70685"}
+{"id": 1326475, "field": "description", "en": "Call down a pillar of fire, burning all enemies within the area for $s1 Fire damage and an additional $s2 Fire damage every $t2 for $d.", "hash": "2bff8df01a969479", "src": "db2@1.60.1.70685"}
+{"id": 1326475, "field": "aura", "en": "Suffering $w2 Fire damage every $t2.", "hash": "1f1095fdd095d00c", "src": "db2@1.60.1.70685"}
+{"id": 1326522, "field": "name", "en": "Shadow Channel", "hash": "5ec363193ed8f13c", "src": "db2@1.60.1.70685"}
+{"id": 1326548, "field": "name", "en": "Chains of Hogger", "hash": "02a2687e85ea480e", "src": "db2@1.60.1.70685"}
+{"id": 1326548, "field": "aura", "en": "Charmed.\r\nDamage increased by $s2%.\r\nHealing increased by $s3%.", "hash": "67380af4ba16e03c", "src": "db2@1.60.1.70685"}
+{"id": 1326550, "field": "name", "en": "Chains of Hogger", "hash": "02a2687e85ea480e", "src": "db2@1.60.1.70685"}
+{"id": 1326608, "field": "name", "en": "Wind Bridge", "hash": "8479648b04cba521", "src": "db2@1.60.1.70685"}
+{"id": 1326619, "field": "name", "en": "Ancestral Spirit", "hash": "4563434ae8f73f86", "src": "db2@1.60.1.70685"}
+{"id": 1326619, "field": "description", "en": "Returns the spirit to the body, restoring a dead target to life with $s1 health and $q1 mana.  Cannot be cast when in combat.", "hash": "6ede565d95af3079", "src": "db2@1.60.1.70685"}
+{"id": 1326850, "field": "name", "en": "(DNT) Add Threat", "hash": "6d2175b76d4853f3", "src": "db2@1.60.1.70685"}
+{"id": 1326891, "field": "name", "en": "Frigid Power", "hash": "effeeb21bba9498e", "src": "db2@1.60.1.70685"}
+{"id": 1326891, "field": "description", "en": "Increases the damage done by your Frost spells by $s1%.", "hash": "b993a0ec3bc820d4", "src": "db2@1.60.1.70685"}
+{"id": 1326891, "field": "aura", "en": "Increases the damage done by your Frost spells by $w1%.", "hash": "ba1cd7587167f0f2", "src": "db2@1.60.1.70685"}
+{"id": 1326896, "field": "name", "en": "Victory", "hash": "b6c10f60328a4fc8", "src": "db2@1.60.1.70685"}
+{"id": 1326990, "field": "name", "en": "Mind Blast", "hash": "868279b14e0b7083", "src": "db2@1.60.1.70685"}
+{"id": 1326990, "field": "description", "en": "Inflicts Shadow damage to an enemy, but causes a high amount of threat.", "hash": "d60755718e5f125b", "src": "db2@1.60.1.70685"}

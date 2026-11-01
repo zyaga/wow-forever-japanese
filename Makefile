@@ -15,7 +15,7 @@ VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
 
-.PHONY: voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
+.PHONY: voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
 
 help:
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | sed 's/:.*## /: /'
@@ -95,10 +95,16 @@ CLIENTS := classic-era forever
 classic-era_BUILD   := 1.15.9.69722
 classic-era_SRC     := wago
 classic-era_PRODUCT := wow_classic_era
-forever_BUILD       := 1.60.1.70532
+forever_BUILD       := 1.60.1.70685
 forever_SRC         := db2
-forever_PRODUCT     := wow_classic_beta
+forever_PRODUCT     := wowf
+# Set only while the quest cache data/ holds is older than the tables: a quest cache needs the scan in game, the
+# tables only the install. The scan plan (scan-install) and the build alert read it (quest_build falls back to the
+# tables' build), so the scan starts by itself on every newer build. Delete the line before that build's wdb-copy.
+forever_QUEST_BUILD := 1.60.1.70532
 client_dir = $(INPUTS)/clients/$(1)-$($(1)_BUILD)
+quest_build = $(or $($(1)_QUEST_BUILD),$($(1)_BUILD))
+quest_dir = $(INPUTS)/clients/$(1)-$(call quest_build,$(1))
 # The client a single-client target acts on (wago-fetch, tables-extract, wdb-copy), and
 # the one each per-client step of `import` is re-invoked with. The per-client knobs below derive from it; pass
 # them on the command line only to a single-client target; on `import` they would apply to every client.
@@ -116,6 +122,9 @@ PER_CLIENT_VARS := CLIENT CLIENT_DIR WAGO_BUILD WDB_BUILD TABLES_SRC MERGE WDB_Q
 	WAGO_SPELL WAGO_GLOBALSTRINGS WAGO_ITEMSUBCLASS WAGO_ENCHANTMENTS CLIENT_SPELL CLIENT_ITEMEFFECT CLIENT_ITEMXITEMEFFECT
 per_client_overrides = $(strip $(foreach v,$(PER_CLIENT_VARS),$(if $(filter command line environment environment override,$(origin $(v))),$(v))))
 ONE_CLIENT_GUARD = $(if $(per_client_overrides),{ echo "$@: runs every client in CLIENTS; $(per_client_overrides) given on the command line or in the environment would apply to all of them (set the client's pins in the Makefile; or use a single-client target with CLIENT=)"; exit 2; },true)
+# While Forever's quest cache is pinned behind its tables (ADR-068), the tables come from a login's hotfix cache:
+# a full import would put Classic Era's English on the rows only a play session's hotfixes carry.
+QUEST_PIN_GUARD = $(if $(forever_QUEST_BUILD),{ echo "$@: forever_QUEST_BUILD is set: Forever's tables are ahead of its quest scan (ADR-068). Run only Forever's table steps (make import-tables CLIENT=forever); after the scan delete the line and pull the tables again"; exit 2; },true)
 WAGO_ITEM    ?= $(CLIENT_DIR)/ItemSparse.csv
 WAGO_SPELL   ?= $(CLIENT_DIR)/SpellName.csv
 WAGO_BUILD   ?= $($(CLIENT)_BUILD)
@@ -156,8 +165,8 @@ FOREVER_VO_SHA ?= 025070f
 # Blizzard's cached quest title / objectives / description: the client's questcache.wdb after a
 # quest scan, copied in with `make wdb-copy`. WDB_BUILD must
 # be the build in the file's header (ADR-020). QuestV2 (the client's own table) is the scan plan and the coverage denominator.
-WDB_QUEST    ?= $(CLIENT_DIR)/questcache.wdb
-WDB_BUILD    ?= $($(CLIENT)_BUILD)
+WDB_QUEST    ?= $(if $(OWN_DIR),$(call quest_dir,$(CLIENT)),$(CLIENT_DIR))/questcache.wdb
+WDB_BUILD    ?= $(if $(OWN_DIR),$(call quest_build,$(CLIENT)),$($(CLIENT)_BUILD))
 WAGO_QUESTV2 ?= $(CLIENT_DIR)/QuestV2.csv
 # The unanswered QuestV2 ids the wdb import writes: the input of a rescan.
 WDB_MISSING  ?= $(CLIENT_DIR)/missing.txt
@@ -183,12 +192,12 @@ MERGE        ?= union
 WOW_DIR      ?=
 # The hotfix cache `tables-extract` applies (read only); HOTFIXES= extracts the archive rows only.
 HOTFIXES     ?= $(WOW_DIR)/Cache/ADB/enUS/DBCache.bin
-# The .build.info product of the client in WOW_DIR (Classic Era: wow_classic_era, Forever: wow_classic_beta; a
+# The .build.info product of the client in WOW_DIR (Classic Era: wow_classic_era, Forever: wowf; a
 # wrong one lists the products the install has). Follows CLIENT.
 PRODUCT      ?= $($(CLIENT)_PRODUCT)
 
 import: ## data/ from the pinned inputs (one rebuild pass: every client preflighted; predecessor repos with the wiki tag relabelled + the lineage sources; then pfQuest, VMaNGOS incl. books; then per client in CLIENTS order the quest cache, client tables incl. tooltip text and UI strings; last, drop the English for ids Forever does not serve)
-	@$(ONE_CLIENT_GUARD)
+	@$(ONE_CLIENT_GUARD) && $(QUEST_PIN_GUARD)
 	@$(MAKE) -s wdb-preflight
 	cd pipeline && $(PY) -m wfj import predecessor --quest-repo $(PRED_QUEST) --tooltip-repo $(PRED_TOOLTIP) --date $(IMPORT_DATE) --relabel-translator $(RELABEL_TRANSLATOR) \
 		--questjapanizer $(QJP) --qjp-version $(QJP_VERSION) --craftjapanizer-quest $(CJQ) --cjq-version $(CJQ_VERSION)
@@ -197,7 +206,7 @@ import: ## data/ from the pinned inputs (one rebuild pass: every client prefligh
 	@$(MAKE) -s import-served
 
 import-english: ## refresh only data/english/ (keeps data/ lines, rulings and prior hashes → `make check` can derive stale); every client, in CLIENTS order, then the served step
-	@$(ONE_CLIENT_GUARD)
+	@$(ONE_CLIENT_GUARD) && $(QUEST_PIN_GUARD)
 	@$(MAKE) -s wdb-preflight
 	@$(MAKE) -s import-shared-english
 	@for c in $(CLIENTS); do $(MAKE) -s import-client CLIENT=$$c || exit 1; done
@@ -210,7 +219,7 @@ import-english: ## refresh only data/english/ (keeps data/ lines, rulings and pr
 # data/; `check` makes it no_english_id until a later harvest lists the id again.
 SERVED_DIR = $(call client_dir,forever)
 import-served: ## drop the English for ids the Forever tables do not list (ADR-033; run last by import / import-english)
-	cd pipeline && $(PY) -m wfj import english served "$(SERVED_DIR)/QuestV2.csv" "$(SERVED_DIR)/questcache.wdb" "$(SERVED_DIR)/ItemSparse.csv" "$(SERVED_DIR)/SpellName.csv" --keys "$(UI_KEYS)" $(foreach c,$(filter-out forever,$(CLIENTS)),--map-cache "$(call client_dir,$(c))/questcache.wdb")
+	cd pipeline && $(PY) -m wfj import english served "$(SERVED_DIR)/QuestV2.csv" "$(call quest_dir,forever)/questcache.wdb" --cache-build $(call quest_build,forever) "$(SERVED_DIR)/ItemSparse.csv" "$(SERVED_DIR)/SpellName.csv" --keys "$(UI_KEYS)" $(foreach c,$(filter-out forever,$(CLIENTS)),--map-cache "$(call client_dir,$(c))/questcache.wdb")
 
 # The English no client serves: pfQuest, then VMaNGOS. Before every client's quest cache, which outranks pfQuest.
 import-shared-english:
@@ -220,9 +229,14 @@ import-shared-english:
 	cd pipeline && $(PY) -m wfj import english forever-vo $(FOREVER_VO) --commit $(FOREVER_VO_SHA) --skip forever_vo_skipped.txt
 
 # One client's English (CLIENT=<client>): its quest cache, then its tables (names, tooltip text, UI strings).
+# While Forever's quest cache is pinned behind its tables (ADR-068) only the table half may run, `import-tables`.
 import-client:
+	@$(if $(filter forever,$(CLIENT)),$(QUEST_PIN_GUARD),true)
 	@echo "import: $(CLIENT) $(WAGO_BUILD) ($(TABLES_SRC)) from $(CLIENT_DIR)"
 	cd pipeline && $(PY) -m wfj import english wdb "$(WDB_QUEST)" --build $(WDB_BUILD) --questv2 "$(WAGO_QUESTV2)" --missing "$(WDB_MISSING)" --merge $(MERGE)
+	@$(MAKE) -s import-tables CLIENT=$(CLIENT)
+
+import-tables: ## one client's table English (CLIENT=<client>): names, tooltip text, UI strings; the import that runs while forever_QUEST_BUILD is set
 	cd pipeline && $(PY) -m wfj import english wago-ids "$(WAGO_ITEM)" "$(WAGO_SPELL)" --build $(WAGO_BUILD) --src $(TABLES_SRC) --merge $(MERGE)
 	cd pipeline && $(PY) -m wfj import english client-text "$(WAGO_ITEM)" "$(CLIENT_SPELL)" "$(CLIENT_ITEMEFFECT)" $(CLIENT_TEXT_LINK) --build $(WAGO_BUILD) --src $(TABLES_SRC) --merge $(MERGE)
 	cd pipeline && $(PY) -m wfj import english wago-ui "$(WAGO_GLOBALSTRINGS)" "$(WAGO_ITEMSUBCLASS)" --enchantments "$(WAGO_ENCHANTMENTS)" --subtexts "$(CLIENT_SPELL)" $(FAMILY_ARGS) --keys $(UI_KEYS) --build $(WAGO_BUILD) --src $(TABLES_SRC) --merge $(MERGE)
@@ -265,7 +279,7 @@ wago-fetch: ## download the wago.tools CSVs the imports and the scan need, at th
 	@cd pipeline && $(PY) -m wfj.dev.tables_stamp write --dir "$(CLIENT_DIR)" --src wago --build $(WAGO_BUILD) $(WAGO_TABLES)
 
 tables-extract: ## read the client tables from the installed game into the client's folder (read-only, no network; all or nothing): WOW_DIR=<client folder> [CLIENT=forever] [HOTFIXES=]
-	@test -n "$(WOW_DIR)" || { echo "usage: make tables-extract WOW_DIR=<client folder, e.g. .../World of Warcraft/_classic_beta_> [CLIENT=forever]"; exit 2; }
+	@test -n "$(WOW_DIR)" || { echo "usage: make tables-extract WOW_DIR=<client folder, e.g. .../World of Warcraft/_forever_> [CLIENT=forever]"; exit 2; }
 	@test -d "$(WOW_DIR)" || { echo "tables-extract: no folder $(WOW_DIR)"; exit 1; }
 	@$(if $(and $(OWN_DIR),$(filter-out db2,$($(CLIENT)_SRC))),{ echo "tables-extract: CLIENT=$(CLIENT) is pinned to $($(CLIENT)_SRC) tables and not db2; its folder is not replaced (make wago-fetch CLIENT=$(CLIENT); or CLIENT_DIR=<elsewhere> for a cross-check)"; exit 2; },true)
 	@mkdir -p "$(CLIENT_DIR)"
@@ -273,22 +287,22 @@ tables-extract: ## read the client tables from the installed game into the clien
 		cd pipeline && $(PY) -m wfj.dev.client_tables --wow "$$W" --product "$(PRODUCT)" --out "$(CLIENT_DIR)" --expect-build $(WAGO_BUILD) $${H:+--hotfixes "$$H"}
 
 forever-table-counts: ## row counts of the no-content windows' client tables and TraitSubTree, from the installed client (read-only; re-run per build): WOW_DIR=<client folder> [HOTFIXES=]
-	@test -n "$(WOW_DIR)" || { echo "usage: make forever-table-counts WOW_DIR=<client folder, e.g. .../World of Warcraft/_classic_beta_>"; exit 2; }
+	@test -n "$(WOW_DIR)" || { echo "usage: make forever-table-counts WOW_DIR=<client folder, e.g. .../World of Warcraft/_forever_>"; exit 2; }
 	@test -d "$(WOW_DIR)" || { echo "forever-table-counts: no folder $(WOW_DIR)"; exit 1; }
 	W="$$(cd "$(WOW_DIR)/.." && pwd)" && H="$(HOTFIXES)" && case "$$H" in ""|/*) ;; *) H="$$PWD/$$H";; esac && \
 		cd pipeline && $(PY) -m wfj.dev.table_counts --wow "$$W" --product "$(forever_PRODUCT)" $${H:+--hotfixes "$$H"}
 
 wdb-copy: ## copy the client's quest cache into WDB_QUEST, its client folder (read-only on the game folder): WOW_DIR=<client folder> [CLIENT=forever]
-	@test -n "$(WOW_DIR)" || { echo "usage: make wdb-copy WOW_DIR=<client folder holding Cache/, e.g. .../World of Warcraft/_classic_beta_> [CLIENT=forever]"; exit 2; }
+	@test -n "$(WOW_DIR)" || { echo "usage: make wdb-copy WOW_DIR=<client folder holding Cache/, e.g. .../World of Warcraft/_forever_> [CLIENT=forever]"; exit 2; }
 	@test -f "$(WOW_DIR)/Cache/WDB/enUS/questcache.wdb" || { echo "wdb-copy: no Cache/WDB/enUS/questcache.wdb under $(WOW_DIR) (did the client Exit Game?)"; exit 1; }
 	@# The folder is pinned to one build; a cache of another build (the client patched) is never copied over it
-	@W="$$(cd "$(WOW_DIR)" && pwd)/Cache/WDB/enUS/questcache.wdb" && cd pipeline && $(PY) -c 'import sys; from pathlib import Path; from wfj.io.wdb import read_ids; b = read_ids(Path(sys.argv[1]))[0]; sys.exit(None if str(b) == sys.argv[2].rsplit(".", 1)[-1] else "wdb-copy: the cache is build %s, CLIENT=%s is pinned to %s; nothing copied (a new build gets its own pin and folder)" % (b, sys.argv[3], sys.argv[2]))' "$$W" $(WDB_BUILD) $(CLIENT)
+	@W="$$(cd "$(WOW_DIR)" && pwd)/Cache/WDB/enUS/questcache.wdb" && cd pipeline && $(PY) -c 'import sys; from pathlib import Path; from wfj.io.wdb import read_ids; b = read_ids(Path(sys.argv[1]))[0]; sys.exit(None if str(b) == sys.argv[2].rsplit(".", 1)[-1] else "wdb-copy: the cache is build %s, CLIENT=%s is pinned to %s; nothing copied (a new build gets its own pin and folder: with forever_QUEST_BUILD set, delete that line first)" % (b, sys.argv[3], sys.argv[2]))' "$$W" $(WDB_BUILD) $(CLIENT)
 	@mkdir -p "$$(dirname "$(WDB_QUEST)")"
 	@if [ -f "$(WDB_QUEST)" ]; then cp "$(WDB_QUEST)" "$(WDB_QUEST).prev"; echo "wdb-copy: previous copy kept as $(WDB_QUEST).prev"; fi
 	cp "$(WOW_DIR)/Cache/WDB/enUS/questcache.wdb" "$(WDB_QUEST)"
 
-level1-spells: ## regenerate pipeline/level1_spells.txt (the spells a fresh level-1 character has) from the installed Forever client: WOW_DIR=<client folder> [PRODUCT=wow_classic_beta]
-	@test -n "$(WOW_DIR)" || { echo "usage: make level1-spells WOW_DIR=<client folder, e.g. .../World of Warcraft/_classic_beta_> [PRODUCT=wow_classic_beta]"; exit 2; }
+level1-spells: ## regenerate pipeline/level1_spells.txt (the spells a fresh level-1 character has) from the installed Forever client: WOW_DIR=<client folder> [PRODUCT=wowf]
+	@test -n "$(WOW_DIR)" || { echo "usage: make level1-spells WOW_DIR=<client folder, e.g. .../World of Warcraft/_forever_> [PRODUCT=wowf]"; exit 2; }
 	@test -d "$(WOW_DIR)" || { echo "level1-spells: no folder $(WOW_DIR)"; exit 1; }
 	@W="$$(cd "$(WOW_DIR)/.." && pwd)" && cd pipeline && \
 		$(PY) -m wfj.dev.level1_spells --wow "$$W" --product "$(PRODUCT)" > level1_spells.txt.part && \
@@ -303,7 +317,7 @@ level1-spells: ## regenerate pipeline/level1_spells.txt (the spells a fresh leve
 LISTFILE ?= $(INPUTS)/community-listfile.csv
 
 served-columns: ## regenerate pipeline/served_columns.txt from the installed client (commit the result; read-only, no network): WOW_DIR=<client folder> [LISTFILE=<community listfile>] [HOTFIXES=]
-	@test -n "$(WOW_DIR)" || { echo "usage: make served-columns WOW_DIR=<client folder, e.g. .../World of Warcraft/_classic_beta_> [LISTFILE=<csv>] [HOTFIXES=<DBCache.bin>]"; exit 2; }
+	@test -n "$(WOW_DIR)" || { echo "usage: make served-columns WOW_DIR=<client folder, e.g. .../World of Warcraft/_forever_> [LISTFILE=<csv>] [HOTFIXES=<DBCache.bin>]"; exit 2; }
 	@test -d "$(WOW_DIR)" || { echo "served-columns: no folder $(WOW_DIR)"; exit 1; }
 	@test -f "$(LISTFILE)" || { echo "served-columns: no listfile at $(LISTFILE) (LISTFILE=<community listfile>)"; exit 1; }
 	@W="$$(cd "$(WOW_DIR)/.." && pwd)" && H="$(HOTFIXES)" && case "$$H" in "") H="$$(cd "$(WOW_DIR)" && pwd)/Cache/ADB/enUS/DBCache.bin"; test -f "$$H" || H="";; /*) ;; *) H="$$PWD/$$H";; esac && \
@@ -314,7 +328,7 @@ served-columns: ## regenerate pipeline/served_columns.txt from the installed cli
 	@sed -n 3,5p pipeline/served_columns.txt
 
 # The Forever (camelot) inventory, the only one (Forever is the only target). FOREVER_UI is a UI extract of the Forever client (`python -m wfj.dev.client_ui
-# --product wow_classic_beta --out <dir>`, lowercased paths are fine) and FOREVER_GLOBALSTRINGS its GlobalStrings table
+# --product wowf --out <dir>`, lowercased paths are fine) and FOREVER_GLOBALSTRINGS its GlobalStrings table
 # (`make tables-extract` against the Forever install); both default under INPUTS.
 FOREVER_UI            ?= $(INPUTS)/forever-ui-$(forever_BUILD)/interface/addons
 FOREVER_GLOBALSTRINGS ?= $(call client_dir,forever)/GlobalStrings.csv
@@ -391,7 +405,7 @@ report-apply: ## batches/reports/issue-N/decisions.jsonl → data/ + readings + 
 # build/aivis/ (started and stopped by voice generate) and `lame`; the audio and the pack are build output under build/, never committed.
 voice-speakers: voice-levels ## data/voice/ speakers + voices for the voice scope, from the pinned VMaNGOS database and the collector's NPC ids
 	cd pipeline && $(PY) -m wfj voice speakers --vmangos $(VMANGOS_DB) --commit $(VMANGOS_SHA) \
-		--wdb "$(call client_dir,forever)/questcache.wdb" --forever-vo "$(FOREVER_VO)" --forever-vo-commit $(FOREVER_VO_SHA)
+		--wdb "$(call quest_dir,forever)/questcache.wdb" --forever-vo "$(FOREVER_VO)" --forever-vo-commit $(FOREVER_VO_SHA)
 
 voice-generate: ## the missing and changed voice files from the shipped Japanese, through the local engine, then voice-sync
 	cd pipeline && $(PY) -m wfj voice generate --scope all --players all --store "$(VOICE_STORE)" && $(PY) -m wfj voice store-sync --if-changed --store "$(VOICE_STORE)"
@@ -399,7 +413,7 @@ voice-generate: ## the missing and changed voice files from the shipped Japanese
 # The audio store: a checkout of the voice audio repository (zyaga/wow-forever-japanese-voice), inside the main checkout.
 VOICE_STORE ?= $(REPO_ROOT)/build/voice
 # Each quest's level, for the packs' level bands (pipeline/voice-packs.toml): Forever's pinned quest cache, then VMaNGOS.
-VOICE_LEVELS = --wdb "$(call client_dir,forever)/questcache.wdb" --vmangos "$(VMANGOS_DB)"
+VOICE_LEVELS = --wdb "$(call quest_dir,forever)/questcache.wdb" --vmangos "$(VMANGOS_DB)"
 
 voice-levels: ## pipeline/voice_quest_levels.txt: each quest's level for the voice packs (rerun after a re-pull, with voice-speakers)
 	cd pipeline && $(PY) -m wfj voice levels $(VOICE_LEVELS)
@@ -449,7 +463,7 @@ data: import check generate ## import → check → generate. Rebuilds imported 
 # the committed data/ and the addon's generated files. Refuses a dirty data/ or addon (nothing is deleted then);
 # otherwise the tree is what HEAD has again after a pass, and any difference is printed and fails the target.
 rebuild-check: ## empty data/english (collector lines kept), run `make data` from the pinned inputs of every client, fail on any difference from HEAD (needs a clean data/ + addon)
-	@$(ONE_CLIENT_GUARD)
+	@$(ONE_CLIENT_GUARD) && $(QUEST_PIN_GUARD)
 	@test -z "$$(git status --porcelain -- data $(ADDON) pipeline Makefile)" || { echo "rebuild-check: data/, $(ADDON), pipeline/ or the Makefile has uncommitted changes; commit or restore them first"; git status --short -- data $(ADDON) pipeline Makefile | head; exit 1; }
 	@$(MAKE) -s wdb-preflight
 	@for f in "$(PRED_QUEST)" "$(PRED_TOOLTIP)" "$(QJP)" "$(CJQ)" "$(PFQUEST)" "$(VMANGOS_DB)" "$(FOREVER_VO)" "$(UI_KEYS)"; do test -e "$$f" || { echo "rebuild-check: shared input missing: $$f; nothing deleted"; exit 1; }; done

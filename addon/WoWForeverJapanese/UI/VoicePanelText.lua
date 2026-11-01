@@ -249,7 +249,7 @@ function Text.refreshWhole(item, L, english)
 end
 
 -- A quest line whose quest is in the player's log: the quest log opened at it (the world map's quest pane, which
--- shows it in Japanese). [verified: forever 1.60.1.70245 mainline/questmapframe.lua:1175–1179
+-- shows it in Japanese). [verified: forever 1.60.1.70685 mainline/questmapframe.lua:1179–1183
 -- (QuestMapFrame_OpenToQuestDetails); questlogdocumentation.lua:206 (GetLogIndexForQuestID)] → true when opened
 local function openQuest(item)
   if type(item.kind) ~= "string" or not item.kind:match("^quest%.") or type(item.id) ~= "number" then

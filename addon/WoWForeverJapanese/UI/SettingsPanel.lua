@@ -13,8 +13,8 @@
 --   SettingsPanel:SetOutputText (:979–981): the key-binding messages: SETTINGS_BIND_KEY_TO_COMMAND_OR_CANCEL,
 --     KEY_BOUND, KEYBINDINGFRAME_MOUSEWHEEL_ERROR, PRIMARY_KEY_UNBOUND_ERROR / KEY_UNBOUND_ERROR (:1009–1024);
 --   the settings list: Container.SettingsList.ScrollBox (blizzard_settingslist.lua:50–88). Every row is built by its
---     initializer's InitFrame: SettingsListElementMixin:Init writes self.Text (blizzard_settingcontrols.lua:339),
---     SettingsListSectionHeaderMixin:Init the Title (:97), SettingsExpandableSectionMixin:Init Button.Text (:1855),
+--     initializer's InitFrame: SettingsListElementMixin:Init writes self.Text (blizzard_settingcontrols.lua:358),
+--     SettingsListSectionHeaderMixin:Init the Title (:116), SettingsExpandableSectionMixin:Init Button.Text (:1885),
 --     KeyBindingFrameBindingTemplateMixin:Init the binding's Label (blizzard_keybindings.lua:394), the custom
 --     templates their own labels (graphics.xml:5–274, audio.xml, nameplates.xml, pingsystem.xml, colorblind.xml).
 --     ScrollUtil.AddInitializedFrameCallback runs after the initializer (blizzard_sharedxml/shared/scroll/
@@ -32,7 +32,7 @@
 -- Never touched: the search box (an EditBox; LabelTree never enters one), the key buttons of a binding row (key
 --   names: row.Buttons / CustomButton), slider value labels, the raid-frame and nameplate previews (unit names).
 -- The dropdown popups' entries are not handled here. Narration reads some of these labels back for text-to-speech
---   only (blizzard_settingcontrols.lua:86, 482; blizzard_categorylist.lua:139).
+--   only (blizzard_settingcontrols.lua:99, 504; blizzard_categorylist.lua:139).
 local _, WFJ = ...
 local SettingsPanel = {}
 WFJ.SettingsPanel = SettingsPanel
@@ -140,9 +140,31 @@ local function rowOf(a, b, c)
   return a, b
 end
 
+-- A section header whose initializer carries customNameUpdateFunc (the Preset page's current setting) writes its Title
+-- again on SETTINGS_HEADER_TEXT_UPDATE, outside Init (blizzard_settingcontrols.lua:81–92, 108–116), so no
+-- initialized-frame callback runs for it: the row is walked again after its own OnEvent (HookScript, once per pooled
+-- frame; a frame keeps the field once set, and the walk only ever matches this window's keys).
+local followedHeaders = setmetatable({}, { __mode = "k" })
+local function followHeader(row)
+  if followedHeaders[row] or type(row.customNameUpdateFunc) ~= "function" or type(row.HookScript) ~= "function" then
+    return
+  end
+  followedHeaders[row] = true
+  row:HookScript("OnEvent", function(self)
+    local elementData
+    if type(self.GetElementData) == "function" then
+      local ok, data = pcall(self.GetElementData, self)
+      if ok then elementData = data end
+    end
+    SettingsPanel.onRow(self, elementData)
+  end)
+end
+
 function SettingsPanel.onRow(a, b, c)
   local row, elementData = rowOf(a, b, c)
-  if type(row) ~= "table" or addOnPage() then return end
+  if type(row) ~= "table" then return end
+  followHeader(row)
+  if addOnPage() then return end
   if searching() then -- a result row: only under a Blizzard category's header, never an addon's
     local category = searchCategory(elementData)
     if category == nil or isAddOn(category) then return end

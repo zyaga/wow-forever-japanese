@@ -1,19 +1,19 @@
 -- UI/Trade.lua: the player trade window on Forever (surface "trade", area "ui", ADR-016 / ADR-029).
 -- camelot loads blizzard_uipanels_game/mainline/tradeframe.lua|xml (Blizzard_UIPanels_Game.toc, mainline family);
--- TradeFrame opens on the server's TRADE_SHOW (tradeframe.lua:7, 36–42).
+-- TradeFrame opens on the server's TRADE_SHOW (tradeframe.lua:7, 37–43).
 -- - Static (written once by the XML / an OnLoad, shown on the frame's OnShow):
 --     TradeFramePlayerEnchantText / TradeFrameRecipientEnchantText  TRADEFRAME_ENCHANT_SLOT_LABEL
 --                             (tradeframe.xml:205, 210)
---     TradeFrameTradeButton   TRADE, written to self.Text by TradeFrameTradeButtonMixin:OnLoad (tradeframe.lua:314–316)
+--     TradeFrameTradeButton   TRADE, written to self.Text by TradeFrameTradeButtonMixin:OnLoad (tradeframe.lua:315–317)
 --     TradeFrameCancelButton  CANCEL (tradeframe.xml:430)
--- - Writers: TradeFrame_UpdatePlayerItem(id) / TradeFrame_UpdateTargetItem(id) (tradeframe.lua:100–122, 149–170) write
+-- - Writers: TradeFrame_UpdatePlayerItem(id) / TradeFrame_UpdateTargetItem(id) (tradeframe.lua:101–123, 150–171) write
 --   the enchant slot's name text (id 7): the enchantment's name (left English), or
---   HIGHLIGHT_FONT_COLOR_CODE .. TRADEFRAME_NOT_MODIFIED_TEXT .. "|r" (:110, :158): the `wrapped` label form. Both are
---   globals called by name from TradeFrame_OnEvent / TradeFrame_Update (:37–56, :77–80): post-hooked by name. Slots
+--   HIGHLIGHT_FONT_COLOR_CODE .. TRADEFRAME_NOT_MODIFIED_TEXT .. "|r" (:111, :159): the `wrapped` label form. Both are
+--   globals called by name from TradeFrame_OnEvent / TradeFrame_Update (:38–57, :78–81): post-hooked by name. Slots
 --   1–6 carry item names and are never read.
 -- - Tooltip: TradeFrameTradeButtonMixin:OnEnter adds TRADE_WARNING_CHANGED_OFFER (with the other player's name) as an
---   error line (tradeframe.lua:89–97, 319–325): the button is a help-tooltip owner restricted to that key.
--- Never touched: TradeFramePlayerNameText / TradeFrameRecipientNameText (player names, :75–76), the item name
+--   error line (tradeframe.lua:90–98, 320–326): the button is a help-tooltip owner restricted to that key.
+-- Never touched: TradeFramePlayerNameText / TradeFrameRecipientNameText (player names, :76–77), the item name
 -- FontStrings of slots 1–6, the money EditBoxes.
 -- Release on TradeFrame's OnHide.
 local _, WFJ = ...

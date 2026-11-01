@@ -1,12 +1,12 @@
-{"id": 55720, "field": "name", "en": "You're a...! (NPC)", "hash": "266836ded234e101", "src": "db2@1.60.1.70532"}
-{"id": 55721, "field": "name", "en": "You're a...! (NPC)", "hash": "266836ded234e101", "src": "db2@1.60.1.70532"}
-{"id": 55722, "field": "name", "en": "You're a...! (NPC)", "hash": "266836ded234e101", "src": "db2@1.60.1.70532"}
-{"id": 55723, "field": "name", "en": "You're a...! (NPC)", "hash": "266836ded234e101", "src": "db2@1.60.1.70532"}
+{"id": 55720, "field": "name", "en": "You're a...! (NPC)", "hash": "266836ded234e101", "src": "db2@1.60.1.70685"}
+{"id": 55721, "field": "name", "en": "You're a...! (NPC)", "hash": "266836ded234e101", "src": "db2@1.60.1.70685"}
+{"id": 55722, "field": "name", "en": "You're a...! (NPC)", "hash": "266836ded234e101", "src": "db2@1.60.1.70685"}
+{"id": 55723, "field": "name", "en": "You're a...! (NPC)", "hash": "266836ded234e101", "src": "db2@1.60.1.70685"}
 {"id": 55724, "field": "name", "en": "You're a...! (NPC)", "hash": "266836ded234e101", "src": "db2@1.60.1.70532"}
 {"id": 55725, "field": "name", "en": "You're a...! (NPC)", "hash": "266836ded234e101", "src": "db2@1.60.1.70532"}
 {"id": 55726, "field": "name", "en": "You're a...! (NPC)", "hash": "266836ded234e101", "src": "db2@1.60.1.70532"}
 {"id": 55727, "field": "name", "en": "You're a...! (NPC)", "hash": "266836ded234e101", "src": "db2@1.60.1.70532"}
-{"id": 55743, "field": "name", "en": "Lurch!", "hash": "c06b777d9764925a", "src": "db2@1.60.1.70532"}
-{"id": 55743, "field": "description", "en": "Gain a temporary burst of speed, to help catch your food.", "hash": "9c14822c86cf77ce", "src": "db2@1.60.1.70532"}
-{"id": 55743, "field": "aura", "en": "Your hunger has given you speed.  Gain +$m% movement.", "hash": "7777c8367ead0bc9", "src": "db2@1.60.1.70532"}
-{"id": 55884, "field": "name", "en": "Learning", "hash": "ed4847072cb92a78", "src": "db2@1.60.1.70532"}
+{"id": 55743, "field": "name", "en": "Lurch!", "hash": "c06b777d9764925a", "src": "db2@1.60.1.70685"}
+{"id": 55743, "field": "description", "en": "Gain a temporary burst of speed, to help catch your food.", "hash": "9c14822c86cf77ce", "src": "db2@1.60.1.70685"}
+{"id": 55743, "field": "aura", "en": "Your hunger has given you speed.  Gain +$m% movement.", "hash": "7777c8367ead0bc9", "src": "db2@1.60.1.70685"}
+{"id": 55884, "field": "name", "en": "Learning", "hash": "ed4847072cb92a78", "src": "db2@1.60.1.70685"}

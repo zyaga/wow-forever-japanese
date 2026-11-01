@@ -1,7 +1,7 @@
 -- The Forever (camelot) character window: CharacterFrame's icon mode tabs, the paperdoll level line,
 -- the stat-pane ScrollBoxes, an equipment slot, and ReputationFrame (its list ScrollBox and its detail side pane),
 -- replaying the writes of the extracted 1.60.1 source:
---   blizzard_uipanels_game/camelot/characterframe.lua:841–966 (CharacterFrameSidePaneMixin), 1049–1298 (stat pane),
+--   blizzard_uipanels_game/camelot/characterframe.lua:827–952 (CharacterFrameSidePaneMixin), 1035–1284 (stat pane),
 --   characterframe.xml:170–234, 574–603; camelot/paperdollframe.lua:497–558 (level lines), 2181–2221 (slot and stat
 --   tooltips), 2428–2437 (PaperDollFrame_SetLabelAndText); blizzard_framexmlutil/itemutil.lua:448–485;
 --   blizzard_sharedxml/mainline/shareduipaneltemplates.lua:408–422 (mode tab tooltip);
@@ -259,7 +259,7 @@ local function installReputation()
   end
   detail.rowPools = pools
   RC.paneRows = pools
-  -- CharacterFrameSidePaneMixin (characterframe.lua:841–966), copied onto the instance
+  -- CharacterFrameSidePaneMixin (characterframe.lua:827–952), copied onto the instance
   function detail.SetPaneTitle(self, title, subtitle)
     self.Title.text = title or ""
     self.Subtitle.text = subtitle or ""

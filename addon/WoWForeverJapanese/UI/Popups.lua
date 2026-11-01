@@ -90,7 +90,7 @@ local SPECIAL_ONLY = { only = {
 -- VOICE_CHAT_JOIN_GROUP: text "", its OnShow writes VOICE_CHAT_JOIN_GROUP_TEXT, plus the Discord speech-features
 -- paragraph after "\n\n" when the group's voice runs on Discord and text-to-speech or speech-to-text is on
 -- [verified: blizzard_staticpopup_game/mainline/gamedialogdefs.lua:1560–1571, shown from
--- blizzard_channels/mainline/channelframe.lua:929–930].
+-- blizzard_channels/mainline/channelframe.lua:917–918].
 local PASS_THROUGH = {
   PARTY_INVITE = { line = { "INVITATION", "INVITATION_XREALM" }, after = { "ACCEPTING_INVITE_WILL_REMOVE_QUEUE" } },
   VOICE_CHAT_JOIN_GROUP = { line = { "VOICE_CHAT_JOIN_GROUP_TEXT" }, after = { "VOICE_CHAT_JOIN_GROUP_DISCORD_TEXT" } },

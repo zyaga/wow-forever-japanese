@@ -6,7 +6,7 @@
 -- self and party menus add the loot, role and group entries: the loot method's title is the chosen method's name,
 -- the threshold's the quality's (_G["ITEM_QUALITY"..n.."_DESC"],
 -- unitpopupbuttons.lua:609–616, 773–774), a role radio is INLINE_<ROLE>_ICON .. " " .. <ROLE> (the `icon` label form,
--- unitpopupsharedbuttonmixins.lua:3630–3670), the loot opt-out is "Pass on Loot: %s" around Yes / No (:3420).
+-- unitpopupsharedbuttonmixins.lua:3649–3689), the loot opt-out is "Pass on Loot: %s" around Yes / No (:3439).
 local _, WFJ = ...
 
 -- The raid target submenu and the focus entry every unit menu opens with, then `rest`. → list
@@ -116,7 +116,7 @@ WFJ.MenusUnit = {
       "COPY_CHARACTER_NAME" },
     DISCORD_USER_SELF = { "DISCORD_CHAT_MESSAGE_CLICK_DELETE" },
     -- the vehicle frame's menu and the PvP scoreboard's row menus (blizzard_unitpopupshared/unitpopupsharedmenus.lua:
-    -- 313–322, 436–452)
+    -- 313–322, 437–453)
     VEHICLE = raidTargetsThen({ "UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_OTHER", "VEHICLE_LEAVE", "HUD_EDIT_MODE_MENU" }),
     WORLD_STATE_SCORE = { "REPORT_PVP_SCOREBOARD" },
     PVP_SCOREBOARD = { "REPORT_PVP_SCOREBOARD" },

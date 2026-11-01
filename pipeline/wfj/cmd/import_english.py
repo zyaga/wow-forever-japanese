@@ -58,8 +58,8 @@ def merge_source(
 
     `union`: keep a line of source `name` that `new` does not provide, instead of dropping it. This is the
     same choice `_merge_fields` offers the client-table imports, for the same reason. The quest cache is the
-    case: Forever's server answers under a third of the quest ids Classic Era's did (content the beta has not
-    enabled yet), so a replace would drop ~2,900 quests from Blizzard's own text back to pfQuest's. Under
+    case: Forever's server answers under a third of the quest ids Classic Era's did (content Forever has not
+    enabled), so a replace would drop ~2,900 quests from Blizzard's own text back to pfQuest's. Under
     union each kept line keeps its existing `src`, so what the newer client has never served stays visible as
     the older build's stamp rather than silently becoming the new build's.
 
@@ -340,8 +340,8 @@ def _merge_fields(
 
     Under `union` an unprovided line keeps its existing `src`, which is what makes the loss recoverable
     later: a line still stamped `wago@<vanilla build>` after a Forever import is one Forever has never had,
-    and `wfj stats --unseen-since db2@<build>` counts them. When a build stops being merely a beta and the
-    set has stopped shrinking, those lines can be dropped on evidence rather than on a guess."""
+    and `wfj stats --unseen-since db2@<build>` counts them. Once the set has stopped shrinking across
+    builds, those lines can be dropped on evidence rather than on a guess."""
     mine = lambda ln: source_name(ln) in CLIENT_TABLE_SOURCES and ln["field"] in fields  # noqa: E731
     if not new and any(mine(ln) for ln in existing):
         raise ValueError(f"refusing to replace existing {type_} {'/'.join(fields)} lines with zero lines")

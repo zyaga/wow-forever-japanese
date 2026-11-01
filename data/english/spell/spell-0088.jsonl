@@ -1,2 +1,2 @@
-{"id": 88163, "field": "name", "en": "Attack", "hash": "e072942b4a6e859a", "src": "db2@1.60.1.70532"}
-{"id": 88163, "field": "description", "en": "Starts combat by attacking a target with a melee weapon.", "hash": "0bb44ea29208f9e8", "src": "db2@1.60.1.70532"}
+{"id": 88163, "field": "name", "en": "Attack", "hash": "e072942b4a6e859a", "src": "db2@1.60.1.70685"}
+{"id": 88163, "field": "description", "en": "Starts combat by attacking a target with a melee weapon.", "hash": "0bb44ea29208f9e8", "src": "db2@1.60.1.70685"}

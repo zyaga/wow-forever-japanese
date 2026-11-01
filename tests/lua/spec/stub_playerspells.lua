@@ -5,11 +5,11 @@
 --   blizzard_sharedxml/portraitframe.lua:4–14 (SetTitle → TitleContainer.TitleText),
 --   blizzard_pagedcontent/blizzard_pagingcontrols.lua:110–127, blizzard_pagedcontentframe.lua:494–575,
 --   spellbook/blizzard_spellbookframe.lua:46, 91, 191–226, 608–614, spellbook/blizzard_spellbookitem.lua:27–109,
---   183–301, blizzard_menu/menu.lua:2700–2735, menutemplates.lua:341–354, mainline/menuvariants.lua:9–22,
+--   183–301, blizzard_menu/menu.lua:2704–2739, menutemplates.lua:341–354, mainline/menuvariants.lua:9–22,
 --   blizzard_sharedxmlbase/callbackregistry.lua:112–215,
 --   camelot/classtalents/blizzard_classtalentsframe.{lua,xml}, tabsystemtemplates.lua:167–207,
 --   blizzard_sharedtalentui/blizzard_talentdisplay.lua:100–125,
---   blizzard_uipanels_game/camelot/skillsframe.lua:219–317, camelot/characterframe.lua:841–966.
+--   blizzard_uipanels_game/camelot/skillsframe.lua:219–317, camelot/characterframe.lua:827–952.
 -- A client write is stored as `fs.text = …` (not counted in fs.calls), so a spec can tell the addon's writes apart.
 -- Requires wow_stub (Stub.install + Stub.installTooltipAPI first). Globals are set and read through _G.
 local Stub = require("tests.lua.spec.wow_stub")
@@ -24,7 +24,7 @@ local ENGLISH = {
   SPELLBOOK_FILTER_PASSIVES = "Hide Passives", SPELLBOOK_USE_FLYOUTS = "Group Similar Spells on Flyouts",
   TALENT_FRAME_APPLY_BUTTON_TEXT = "Apply Changes", TALENT_SPEC_ACTIVATE = "Activate", TALENT_SPEC_ACTIVE = "Active",
   UNSPENT_POINTS = "Unspent Talents", DUAL_SPEC_PRIMARY = "Primary", DUAL_SPEC_SECONDARY = "Secondary",
-  TALENT_SPEC_LOCKED = "Locked", SPELLBOOK_SEARCH_INSTRUCTIONS = "Search",
+  TALENT_SPEC_LOCKED = "Locked", COOLDOWN_VIEWER_SETTINGS_SEARCH_INSTRUCTIONS = "Enter search text",
   SPELLBOOK_SEARCH_HEADER_EXACT = "Exact Match", SPELLBOOK_SEARCH_HEADER_NAME = "Name Match",
   SPELLBOOK_SEARCH_HIDE_PASSIVES_DISABLED = "Unavailable while searching",
   TALENT_FRAME_DISCARD_CHANGES_BUTTON_TOOLTIP = "Undo Pending Changes",
@@ -42,7 +42,7 @@ local ENGLISH = {
 local function G(key) return _G[key] or ENGLISH[key] end
 PS.G = G
 
--- CreateAtlasMarkup output (camelot/…/blizzard_classtalentsframe.lua:18–19)
+-- CreateAtlasMarkup output (camelot/…/blizzard_classtalentsframe.lua:6–7)
 PS.CHECKMARK = "|A:Talents-Checkmark-c60:15:20|a"
 PS.LOCK = "|A:Talents-lock-c60:14:10|a"
 
@@ -100,7 +100,7 @@ function PS.openMenu(tag, labels)
   return shown
 end
 
--- MenuMixin:DiscardChildFrames (menu.lua:1667–1697): every element frame's resetters, then the compositor detaches
+-- MenuMixin:DiscardChildFrames (menu.lua:1667–1702): every element frame's resetters, then the compositor detaches
 -- and the frame returns to the pool; on reuse the compositor resets the fontString with SetFontObject
 -- (compositor.lua:66–74, 388), modelled here as the menu font written straight into the widget.
 function PS.closeMenu()
@@ -199,7 +199,7 @@ local function installPlayerSpellsFrame()
   function book.PagedSpellsFrame.EnumerateFrames(self) return ipairs(self.frames) end
   -- SearchBoxTemplate_OnLoad wrote the placeholder (inputboxtemplates.lua:175–178)
   book.SearchBox = CreateFrame("EditBox", nil, book)
-  book.SearchBox.Instructions = Stub.fontString(G("SPELLBOOK_SEARCH_INSTRUCTIONS"))
+  book.SearchBox.Instructions = Stub.fontString(G("COOLDOWN_VIEWER_SETTINGS_SEARCH_INSTRUCTIONS"))
   book.pool, book.headerPool = {}, {}
   function book.ForEachDisplayedSpell(self, fn)
     for _, frame in ipairs(self.PagedSpellsFrame.frames) do
@@ -388,7 +388,7 @@ local function installSkills()
   end
   detail.rowPools = pools
   PS.rowPools = pools
-  function detail.LayoutRows(self) self.Content:Layout() end -- characterframe.lua:947–949
+  function detail.LayoutRows(self) self.Content:Layout() end -- characterframe.lua:933–935
   function detail.SetEmpty(self, text) -- :951–960
     self.rowPools:ReleaseAll()
     self:LayoutRows()

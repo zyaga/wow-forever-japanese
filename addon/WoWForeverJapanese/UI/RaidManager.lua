@@ -1,34 +1,34 @@
 -- UI/RaidManager.lua: the group manager panel at the left screen edge on Forever (surface "raidmanager", area "ui",
 -- ADR-016). `camelot` loads blizzard_compactraidframes/mainline/blizzard_compactraidframemanager.lua|xml
 -- (a login addon); CompactRaidFrameManager is shown whenever the player is in a group
--- (CompactRaidFrameManager_UpdateShown, lua:295–306). A manager without the widgets named here is not this panel:
+-- (CompactRaidFrameManager_UpdateShown, lua:298–311). A manager without the widgets named here is not this panel:
 -- every candidate misses and nothing is touched.
 -- Static labels (XML text=, never rewritten) [verified: mainline/blizzard_compactraidframemanager.xml]:
 --   displayFrame.raidMarkers.raidMarkerUnitTab / raidMarkerGroundTab   GROUPMANAGER_UNIT_MARKER / _GROUND_MARKER
---     (xml:337, 342);
---   displayFrame.RestrictPingsLabel   RAID_MANAGER_RESTRICT_PINGS_TO (xml:365);
---   CompactRaidFrameManagerLeavePartyButton   PARTY_LEAVE (xml:377).
+--     (xml:354, 359);
+--   displayFrame.RestrictPingsLabel   RAID_MANAGER_RESTRICT_PINGS_TO (xml:382);
+--   CompactRaidFrameManagerLeavePartyButton   PARTY_LEAVE (xml:394).
 -- Writers:
---   CompactRaidFrameManager_UpdateLabel (lua:308–314, called by global name from OnLoad :263 and OnEvent :272) →
+--   CompactRaidFrameManager_UpdateLabel (lua:313–319, called by global name from OnLoad :263 and OnEvent :273) →
 --     displayFrame.label RAID / PARTY: post-hooked (hooksecurefunc on the global);
 --   CompactRaidFrameManagerLeaveInstanceGroupButton: LeaveInstanceGroupButtonMixin:OnUpdate writes
---     INSTANCE_WALK_IN_LEAVE / INSTANCE_PARTY_LEAVE on every frame the button is visible (lua:1324–1333, xml:386–394):
+--     INSTANCE_WALK_IN_LEAVE / INSTANCE_PARTY_LEAVE on every frame the button is visible (lua:1506–1515, xml:403–413):
 --     followed with HookScript("OnUpdate"), restricted to those two keys. While the text is still ours Labels.show
 --     returns at its first comparison, so the per-frame cost is one GetText;
---   the two dropdown buttons' own selection text (displayFrame.ModeControlDropdown (RAID / PARTY, lua:200–209) and
+--   the two dropdown buttons' own selection text (displayFrame.ModeControlDropdown (RAID / PARTY, lua:200–208) and
 --     displayFrame.RestrictPingsDropdown (NONE / RAID_MANAGER_RESTRICT_PINGS_TO_LEAD / _ASSIST / _TANKS_HEALERS,
---     lua:174–184; built only when C_Ping.IsPingSystemEnabled())), through Labels.dropdown. The popup entries are
+--     lua:174–183; built only when C_Ping.IsPingSystemEnabled(), :163)), through Labels.dropdown. The popup entries are
 --     handled with the menus.
 -- Help tooltips: the toolbar buttons inherit CRFManagerTooltipTemplate: OnEnter → SetOwner(self),
 --   GameTooltip_SetTitle(self.tooltip or the red disabledTooltipText), Show (lua:36–49; GameTooltip_SetTitle is
 --   ClearLines + AddLine, blizzard_sharedxml/sharedtooltiptemplates.lua:128–131). Owners registered with
 --   UI/HelpTooltip, restricted to TOOLTIP_KEYS: editMode CRF_EDIT_MODE, settings CRF_SETTINGS, hiddenModeToggle
 --   CRF_HIDE_GROUPS, everyoneIsAssistButton CRF_ALL_ASSIST, difficulty CRF_DIFFICULTY, readyCheckButton
---   CRF_READY_CHECK, rolePollButton CRF_ROLE_POLL, countdownButton CRF_COUNTDOWN (xml:234–332).
+--   CRF_READY_CHECK, rolePollButton CRF_ROLE_POLL, countdownButton CRF_COUNTDOWN (xml:251–350).
 --   The disabled reason (ALL_ASSIST_NOT_LEADER_ERROR) arrives wrapped in RED_FONT_COLOR (lua:38–39): it renders once
 --   that key is granted the `wrapped` label form in Core/UIStrings; until then it stays English.
--- Never touched: displayFrame.memberCountLabel ("%d/%d", lua:561), the role filter buttons ("<icon> %d/%d",
--- lua:601) and the group filter buttons (a group number, lua:104): numbers only.
+-- Never touched: displayFrame.memberCountLabel ("%d/%d", lua:743), the role filter buttons ("<icon> %d/%d",
+-- lua:783) and the group filter buttons (a group number, lua:104): numbers only.
 local _, WFJ = ...
 local RaidManager = {}
 WFJ.RaidManager = RaidManager
@@ -60,7 +60,7 @@ for _, key in ipairs(TOOLTIP_OWNERS) do CANDIDATES[key] = { DISPLAY .. key } end
 
 local TOOLTIP_KEYS = { "CRF_EDIT_MODE", "CRF_SETTINGS", "CRF_HIDE_GROUPS", "CRF_ALL_ASSIST", "CRF_DIFFICULTY",
   "CRF_READY_CHECK", "CRF_ROLE_POLL", "CRF_COUNTDOWN", "ALL_ASSIST_NOT_LEADER_ERROR",
-  "DIFFICULTY_LOCKED_REASON_STORY_RAID" } -- the difficulty dropdown's disabled reason (lua:548)
+  "DIFFICULTY_LOCKED_REASON_STORY_RAID" } -- the difficulty dropdown's disabled reason (lua:547)
 local LABEL = { only = { "RAID", "PARTY" } }
 local LEAVE_INSTANCE = { only = { "INSTANCE_PARTY_LEAVE", "INSTANCE_WALK_IN_LEAVE" } }
 local STATIC = {

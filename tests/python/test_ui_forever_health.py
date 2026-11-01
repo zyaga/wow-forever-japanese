@@ -14,12 +14,14 @@ import re
 from collections import defaultdict
 from pathlib import Path
 
+from local_inputs import forever_build
+
 from wfj.core import specifiers
 from wfj.core.model import ui_family
 from wfj.emit.lua_writer import shipped
 from wfj.io.jsonl_store import Store
 
-FOREVER_SRC = "db2@1.60.1.70425"
+FOREVER_SRC = f"db2@{forever_build()}"
 FINGERPRINTED = ("ItemSubClass:", "SpellItemEnchantment:", "SpellSubtext:")  # no client string: matched by the live line's hash
 PLURAL = re.compile(r"\|4([^:;|]*):([^;|]*);")
 

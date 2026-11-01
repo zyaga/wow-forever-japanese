@@ -5,7 +5,7 @@
 -- measures the Japanese): the tabs, Add Friend / Send Message, the Battle.net unavailable label and broadcast frame,
 -- the Real ID request warning (unnamed regions), FriendsTooltipOtherGameAccounts (FriendsFrameTooltip_SetLine
 -- measures it at show time with no new text), and the ignore list window's SetTitle(IGNORE_LIST) at its setup
--- (lua:2461).
+-- (lua:2464).
 -- Dynamic writers, each post-hooked by name:
 --   tabs: Friends / Raid / Quick Join (FRIEND_TAB_COUNT = 3, camelot friendsframe.lua:30–33). FriendsFrame_Update
 --     writes RAID / QUICK_JOIN to FriendsFrameTitleText (lua:461–473) and the contacts titles with
@@ -43,7 +43,7 @@
 --     rewrites a tab's text on SetTabEnabled, tabsystemtemplates.lua:192–207, so each tab's own method is hooked; a
 --     disabled tab's colour-wrapped text stays English).
 -- Help tooltips (GameTooltip_AddNewbieTip / SetText on a frame owner): tabs, Add Friend, Send Message, the broadcast
--- button, the contacts menu button's title CONTACTS_MENU_NAME (ContactsMenuMixin:OnEnter, lua:2502–2506), the status
+-- button, the contacts menu button's title CONTACTS_MENU_NAME (ContactsMenuMixin:OnEnter, lua:2504–2508), the status
 -- dropdown ("Status: %s", the status word nested).
 -- Records are never released: the rows are rewritten through hooks that stay installed, and a label on a hidden frame
 -- costs nothing; modifier / area changes restore and re-apply every record (Render.refresh).
@@ -57,7 +57,7 @@ local STATIC = SURFACE .. ".static"
 local Compat = WFJ.Compat
 
 local WHO_ADDON = "Blizzard_GroupFinder_VanillaStyle"
--- RAID / QUICK_JOIN are what camelot writes here (lua:475–487)
+-- RAID / QUICK_JOIN are what camelot writes here (lua:465, 471)
 local TITLE_KEYS = { "FRIENDS_LIST", "IGNORE_LIST", "WHO_LIST", "RAID", "QUICK_JOIN" }
 local CONTACTS_TITLE_KEYS = { "CONTACTS_LIST_TITLE", "CONTACTS_RECENT_ALLIES_TITLE", "RECRUIT_A_FRIEND" }
 local CONTACTS_TITLE = { only = CONTACTS_TITLE_KEYS }
@@ -146,7 +146,7 @@ function Friends.onUpdate()
 end
 
 -- A Recruit-A-Friend-linked friend's summon button (SummonButtonMixin:OnEnter, camelot friendsframe.lua:
--- 1010–1017): RAF_SUMMON_LINKED, then COOLDOWN_REMAINING .. " " .. SecondsToTime(…): the colonPrefix form, the time
+-- 1011–1018): RAF_SUMMON_LINKED, then COOLDOWN_REMAINING .. " " .. SecondsToTime(…): the colonPrefix form, the time
 -- kept as written.
 local SUMMON_TIP = { only = { "RAF_SUMMON_LINKED", "COOLDOWN_REMAINING" } }
 

@@ -545,7 +545,7 @@ end)
 
 -- The quest map has no title of its own: the window is WorldMapFrame, whose BorderFrame is titled with
 -- SetTitle(MAP_AND_QUEST_LOG) from OnLoad and after every minimize, and SetTitle(WORLD_MAP) when maximized
--- [blizzard_worldmap/blizzard_worldmap.lua:26–27, 34–42].
+-- [blizzard_worldmap/blizzard_worldmap.lua:14–15, 22–30].
 describe("UI/QuestMap: the window title", function()
   local WFJ, SS, QM, border
 

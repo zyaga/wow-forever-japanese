@@ -9,9 +9,9 @@
 --     strings it sends, so the timer text is matched against BREATH_LABEL and EXHAUSTION_LABEL only (in-game check);
 --     a third timer's label can be a spell name ("Feign Death") and never matches;
 --   swing timers: SwingTimerMainHandFrame / SwingTimerOffHandFrame / SwingTimerRangedFrame (blizzard_swingtimer/
---     blizzard_swingtimer.xml:11–37): InitializeBarPresentation writes GetTypeLabel():SetText(self.typeText),
---     typeText = SWING_TIMER_MAIN_HAND / _OFF_HAND / _RANGED (lua:161–163, xml:56, 69, 82), once from OnLoad
---     (lua:50). Shown at init, after each InitializeBarPresentation and on the frame's OnShow;
+--     blizzard_swingtimer.xml:56–92): InitializeBarPresentation writes GetTypeLabel():SetText(self.typeText),
+--     typeText = SWING_TIMER_MAIN_HAND / _OFF_HAND / _RANGED (lua:265–267, xml:62, 75, 88), once from OnLoad
+--     (lua:131). Shown at init, after each InitializeBarPresentation and on the frame's OnShow;
 --   the honor bar's text: HonorBarMixin:UpdateOverlayFrameText: SetBarText(HONOR_BAR:format(current, max)) into
 --     bar.OverlayFrame.Text (blizzard_statustrackingbar/mainline/honorbar.lua:14–23, shared/statustrackingbar.lua:
 --     20–22), on each container's Honor bar (container.bars[StatusTrackingBarInfo.BarsEnum.Honor], mainline/

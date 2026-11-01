@@ -389,7 +389,7 @@ describe("/wfj collector", function()
     assert.is_truthy(text:find("log out or /reload", 1, true))
     assert.is_truthy(text:find("1 entry", 1, true))
     assert.is_truthy(text:find("/wfj collector send", 1, true))
-    assert.is_truthy(text:find("<client folder>", 1, true)) -- the stub client is no beta
+    assert.is_truthy(text:find("World of Warcraft\\_forever_\\WTF", 1, true))
   end)
 
   it("send opens the send window; send all packs every line again", function()

@@ -5,13 +5,13 @@
 -- CharacterFrameSidePaneTemplate). Its Refresh is registered BY REFERENCE (skillsframe.lua:201), so it is not hooked;
 -- the two methods it calls by method lookup are, on the instance (CharacterFrameSidePaneMixin is shared with other
 -- panes):
--- - SetEmpty(SKILL_DETAIL_SELECT_PROMPT) writes EmptyText (skillsframe.lua:230; camelot/characterframe.lua:951–960).
+-- - SetEmpty(SKILL_DETAIL_SELECT_PROMPT) writes EmptyText (skillsframe.lua:230; camelot/characterframe.lua:937–946).
 -- - LayoutRows runs after the weapon-skill rows were added (skillsframe.lua:250–254, 262–295): category rows
 --   WEAPON_SKILL_DETAIL_SAME_LEVEL_HEADER / _BOSS_HEADER and wrapped rows WEAPON_SKILL_DETAIL_SAME_LEVEL[_RANGED] /
---   _BOSS[_RANGED] (percent values verbatim). Rows come from detail.rowPools (characterframe.lua:850–854, 888–932);
+--   _BOSS[_RANGED] (percent values verbatim). Rows come from detail.rowPools (characterframe.lua:836–840, 874–918);
 --   the active pool objects are walked after each layout, each row's record keyed by the row widget itself (a pooled
 --   row has no id of its own; never by its position). A wrapped row was sized from the English
---   (characterframe.lua:910–917), so a longer Japanese grows it and lays the pane out again (grow only).
+--   (characterframe.lua:896–903), so a longer Japanese grows it and lays the pane out again (grow only).
 -- - The list's category headers: SkillsFrame.ScrollBox builds a SkillsHeaderTemplate row for each
 --   top-level header and SkillsHeaderMixin:Initialize writes its `.Name` with the header's name from
 --   C_SkillInfo.GetSkillLineInfo (skillsframe.lua:101–118, 174–191, 297–309; skillsframe.xml:3–25). The name is
@@ -23,11 +23,11 @@
 --   hold a skill name: that FontString is forbidden when the row is first seen.
 -- - The window title "Skills" is NOT this frame's: SkillsFrame is a child of CharacterFrame (skillsframe.xml:121) and
 --   CharacterFrameMixin:UpdateTitle writes CharacterFrame:SetTitle(characterFrameDisplayInfo[activeSubframe].title);
---   SKILLS, REPUTATION, CURRENCY, PVP, STATISTICS, or the player's name (characterframe.lua:254–258;
+--   SKILLS, REPUTATION, CURRENCY, PVP, STATISTICS, or the player's name (characterframe.lua:242–246;
 --   characterframeconstants.lua:9–34). That one widget belongs to UI/Character, which renders the pane titles (SKILLS
 --   among them) and keeps the name title English.
 -- - The detail pane's description: SetDescription(description) writes the Description ScrollingFont
---   (skillsframe.lua:248; characterframe.lua:874–886) with the SkillLine table's text: the SkillLineDescription:*
+--   (skillsframe.lua:248; characterframe.lua:860–872) with the SkillLine table's text: the SkillLineDescription:*
 --   family only.
 -- Untouched: the pane title (the skill name, skillsframe.lua:245) and subtitle, the list rows (skill names, :301,
 -- :348). Release on SkillsFrame's OnHide.

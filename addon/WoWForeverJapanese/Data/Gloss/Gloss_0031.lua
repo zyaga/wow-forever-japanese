@@ -866,8 +866,6 @@ WFJ.Data.add("gloss", {
   [31864] = "アルファテスト\tアルファテスト\talpha-test",
   [31865] = "アルファベット\tアルファベット\talphabet",
   [31866] = "アルファベット順\tアルファベットじゅん\talphabetical order",
-  [31867] = "アルファ版\tアルファばん\talpha (alpha version)",
-  [31868] = "アルファ版\tアルファばん\talpha (version)",
   [31869] = "アレイ\tアレイ\tarray",
   [31870] = "アレルギー\tアレルギー\tallergic (allergy)",
   [31871] = "アンカーパイロン\tアンカーパイロン\tanchor pylon",

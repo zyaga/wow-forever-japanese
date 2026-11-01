@@ -277,7 +277,7 @@ do
   --   countLabel      "<entry> (<n>)" (mailframe.lua:496)          durationSuffix "<entry> [01:23]" (damage meter)
   --   iconAfter       "<entry> |A…|a" (the undo button)             headerLines    "<entry>\n<name>\n…" (unread mail)
   --   voiceParts      "[|A…|a]<sentence>. <sentence>. <n sentence>.": each sentence an entry
-  --                   (channelframe.lua:831–837)
+  --                   (channelframe.lua:819–825)
   -- and `paragraphs` parts may be colour-wrapped (social.lua:21–29).
   local MORE_LABEL_FORMS = {
     binding = { "MAINTANK", "MAINASSIST", "PETS", "VOICE_TOOLTIP_PARENTAL_MUTE_MIC",
@@ -541,7 +541,7 @@ function Index:entryArg(value, outer)
 end
 
 -- An `entryList` argument: LIST_DELIMITER-joined pieces ("Equipment, Consumables";
--- containerframe.lua:2339–2356), every piece an entry, each delimiter kept as written. → { list = { item | sep … } }
+-- containerframe.lua:2400–2417), every piece an entry, each delimiter kept as written. → { list = { item | sep … } }
 -- | nil when any piece is not an entry.
 function Index:entryList(value, outer)
   local items, pos = {}, 1
@@ -574,7 +574,7 @@ function Index:fillArg(v)
 end
 
 -- voiceParts: the voice-channel announce line, "%1$s %2$s %3$s" with no literal of its own
--- (channelframe.lua:831–837): an optional leading atlas, then three sentences (the channel notification, the
+-- (channelframe.lua:819–825): an optional leading atlas, then three sentences (the channel notification, the
 -- communication mode, the member count), each an entry. → a `seq` args | nil
 function Index:voiceParts(text)
   local atlas, body = text:match("^(|A[^|]*|a)(.*)$")

@@ -1,6 +1,6 @@
 -- Honor → PvP rank on Forever: UI/PvPRank.lua over a PVPRankFrame replayed from camelot
 -- blizzard_uipanels_game/camelot/pvprankframe.lua (Update :90–122, UpdateSeasonCountdownTimer :78–88,
--- DetailFrame:Refresh :132–217 through CharacterFrameSidePaneMixin, characterframe.lua:841–966). Rank titles stay
+-- DetailFrame:Refresh :132–217 through CharacterFrameSidePaneMixin, characterframe.lua:827–952). Rank titles stay
 -- English. Client writes go to `fs.text`.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
@@ -43,7 +43,7 @@ local UI = {
   ["RenownRewardToast:1832"] = { "Faction Tabard Unlocked", "陣営タバード解放" },
 }
 
--- A CreateFramePoolCollection-like pool of side-pane rows (characterframe.lua:850–854).
+-- A CreateFramePoolCollection-like pool of side-pane rows (characterframe.lua:836–840).
 local function rowPool()
   local p = { active = {}, inactive = {} }
   function p.Acquire(self)
@@ -90,7 +90,7 @@ local function installPvPRank()
   function detail.Description.SetText(_, t) descText.text = t end
   detail.rowPools = rowPool()
   detail.layouts = 0
-  function detail.LayoutRows(self) self.layouts = self.layouts + 1 end -- Content:Layout (characterframe.lua:948)
+  function detail.LayoutRows(self) self.layouts = self.layouts + 1 end -- Content:Layout (characterframe.lua:934)
 
   local function row(text) detail.rowPools:Acquire().Label.text = text end
   function frame.UpdateSeasonCountdownTimer(self)
@@ -113,7 +113,7 @@ local function installPvPRank()
   end
   function detail.Refresh(self)
     local info = P.info
-    if not info then -- SetEmpty (characterframe.lua:951–960)
+    if not info then -- SetEmpty (characterframe.lua:937–946)
       self.rowPools:ReleaseAll()
       self.Title.text, self.Subtitle.text = "", ""
       self.EmptyText.text = en("PVP_RANK_DETAIL_UNAVAILABLE")

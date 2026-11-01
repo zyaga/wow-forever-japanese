@@ -1,5 +1,5 @@
 -- The Options window's "About …" windows on Forever: UI/SettingsTutorials.lua over NamePlatesTutorial and
--- PingSystemTutorial replayed from blizzard_settingsdefinitions_frame (nameplates.xml:35–87, nameplates.lua:873–878;
+-- PingSystemTutorial replayed from blizzard_settingsdefinitions_frame (nameplates.xml:35–87, nameplates.lua:872–877;
 -- pingsystem.xml:6–137, pingsystem.lua:148–157). The title is the ButtonFrameTemplate's TitleContainer.TitleText
 -- (blizzard_sharedxml/portraitframe.lua:11–13).
 local H = require("tests.lua.spec.helpers")

@@ -4,27 +4,27 @@
 -- WFJ.LoadOnDemand.when("Blizzard_TrainerUI", …).
 -- - Static (XML text=): ClassTrainerTrainButton TRAIN (xml:231). "trainer.static".
 -- - The services are ScrollBox rows (ClassTrainerSkillButtonTemplate, no global names), each written by the global
---   ClassTrainerFrame_InitServiceButton(button, elementData) (lua:618–785): called by global name from the view's
+--   ClassTrainerFrame_InitServiceButton(button, elementData) (lua:602–769): called by global name from the view's
 --   initializer, ClassTrainerFrame_Update (the step button) and ClassTrainer_SetSelection [verified:
---   mainline/blizzard_trainerui.lua:178, 528, 839, 854], so one post-hook sees every row:
---   button.nameSubText = PARENS_TEMPLATE:format(subtext) (lua:702), restricted to PARENS_TEMPLATE, whose argument must
+--   mainline/blizzard_trainerui.lua:165, 512, 823, 838], so one post-hook sees every row:
+--   button.nameSubText = PARENS_TEMPLATE:format(subtext) (lua:686), restricted to PARENS_TEMPLATE, whose argument must
 --     be a dictionary word (ARGS);
---   button.subText = REQUIRES_LABEL .. " " .. <requirements> or ITEM_SPELL_KNOWN (lua:690–700): the `list` label form
+--   button.subText = REQUIRES_LABEL .. " " .. <requirements> or ITEM_SPELL_KNOWN (lua:674–684): the `list` label form
 --     (Core/UIStrings) shows "必要:" and each item that is a requirement template in Japanese;
---   button.alternateCost = TRAINING_POINTS_ABBREV:format(cost) on a pet trainer (lua:733), re-written by
---     ClassTrainerFrame_UpdateTrainingPoints (lua:603–616), which also writes trainingPoints.text = TRAINING_POINTS
+--   button.alternateCost = TRAINING_POINTS_ABBREV:format(cost) on a pet trainer (lua:717), re-written by
+--     ClassTrainerFrame_UpdateTrainingPoints (lua:587–600), which also writes trainingPoints.text = TRAINING_POINTS
 --     (xml:244–253), post-hooked too.
---   The writer ends with button:UpdateNameWidth() (lua:748), before the post-hook runs. camelot's version
+--   The writer ends with button:UpdateNameWidth() (lua:732), before the post-hook runs. camelot's version
 --     (blizzard_trainerui_camelot.lua:13–36) sizes nameSubText to the width of the text it holds then, word wrap off,
 --     or hides it when it does not fit beside the name and the cost (the cost's width counts). So after the subtext
 --     or the cost changes language it is called again (the records' refit), on apply and on restore.
 -- - The filter dropdown's button text: SetSelectionText returns FILTER and the Menu system writes it into
 --   FilterDropdown.Text in UpdateText (xml:217; Blizzard_Menu/MenuTemplates.lua:530–540, 612–644):
---   WFJ.Labels.dropdown; on 1.60.1.70009 also FilterDropdown:SetText(SETTINGS or FILTERS) (lua:464).
+--   WFJ.Labels.dropdown; on 1.60.1.70009 also FilterDropdown:SetText(SETTINGS or FILTERS) (lua:451).
 --   The menu's Available / Unavailable / Already Known entries are popup entries (the menu system's).
 -- Help tooltips, walked by UI/HelpTooltip on registered owners:
 --   ClassTrainerTrainButton, disabled for a third primary profession: SetOwner(ClassTrainerTrainButton),
---     GameTooltip_AddNormalLine(TRAINER_CANNOT_EXCEED_MAX_PROFESSIONS), Show (lua:313–332), restricted to that key;
+--     GameTooltip_AddNormalLine(TRAINER_CANNOT_EXCEED_MAX_PROFESSIONS), Show (lua:300–318), restricted to that key;
 --   the pet trainer's points frame: SetOwner(self), SetText(TRAINING_POINTS_TUTORIAL), Show (xml:255–259): an
 --     ordinary tooltip, not a HelpTip callout, restricted to that key.
 -- Not translated: row names (button.name) are never candidates; the client-built service tooltip.
@@ -40,7 +40,7 @@ local Compat = WFJ.Compat
 local ADDON = "Blizzard_TrainerUI"
 
 local SUBTEXT_KEYS = { PARENS_TEMPLATE = true }
-local ROW_REQUIREMENT_KEYS = { REQUIRES_LABEL = true, ITEM_SPELL_KNOWN = true } -- (lua:690–693)
+local ROW_REQUIREMENT_KEYS = { REQUIRES_LABEL = true, ITEM_SPELL_KNOWN = true } -- (lua:674–677)
 local COST_KEYS = { TRAINING_POINTS_ABBREV = true }
 local POINTS_KEYS = { TRAINING_POINTS = true }
 local TRAIN_HELP_KEYS = { "TRAINER_CANNOT_EXCEED_MAX_PROFESSIONS" }
@@ -100,7 +100,7 @@ end
 
 -- The filter dropdown's button text (a record on its .Text, re-shown after each UpdateText). 1.60.1.70009
 -- also writes it directly, FilterDropdown:SetText(SETTINGS or FILTERS) on each update (mainline/blizzard_trainerui.lua:
--- 464), so SetText is post-hooked on the instance too (once). → 1 | 0
+-- 451), so SetText is post-hooked on the instance too (once). → 1 | 0
 local setTextHooked = setmetatable({}, { __mode = "k" })
 function Trainer.showFilter()
   local frame = Compat.get(SURFACE, "frame")

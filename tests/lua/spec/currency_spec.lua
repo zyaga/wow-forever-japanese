@@ -1,6 +1,6 @@
 -- UI/Currency.lua over a TokenFrame / TokenDetailFrame replayed from camelot
 -- blizzard_tokenui/camelot/blizzard_tokenui.xml (:65, :160, :230–264) and .lua (:167–207, :257–290, :524–570,
--- :602–640, :759–765), plus the detail pane's row pools (blizzard_uipanels_game/camelot/characterframe.lua:841–966).
+-- :602–640, :759–765), plus the detail pane's row pools (blizzard_uipanels_game/camelot/characterframe.lua:827–952).
 -- Loaded at login. A currency's name stays English.
 local Stub = require("tests.lua.spec.wow_stub")
 local C = require("tests.lua.spec.stub_commerce")
@@ -44,7 +44,7 @@ local function build()
     CurrencyTransferToggleButton = { button = en("CURRENCY_TRANSFER_TOGGLE_BUTTON_LABEL") }, EmptyText = "",
     Title = "Unused", Subtitle = "" }) -- a currency named like a dictionary word
   detail.Description = Stub.scrollingFont("") -- ScrollingFontTemplate (blizzard_tokenui.xml)
-  function detail.SetDescription(self, text) self.Description:SetText(text) end -- characterframe.lua:874–886
+  function detail.SetDescription(self, text) self.Description:SetText(text) end -- characterframe.lua:860–872
   detail.rowPools = C.pool(function() return { Label = Stub.fontString("") } end)
   detail.empty = true
   function detail.Refresh(self)

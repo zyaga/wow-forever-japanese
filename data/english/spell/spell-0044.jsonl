@@ -1,7 +1,7 @@
-{"id": 44305, "field": "name", "en": "You're a ...! (Effects2)", "hash": "6fc2b37f7c030d4a", "src": "db2@1.60.1.70532"}
-{"id": 44426, "field": "name", "en": "Zombie Explosion!", "hash": "39cdb44e94f80c8a", "src": "db2@1.60.1.70532"}
-{"id": 44426, "field": "description", "en": "Burst into pieces, destroying yourself but infecting those around you.", "hash": "a076a7a9f18f555e", "src": "db2@1.60.1.70532"}
-{"id": 44426, "field": "aura", "en": "Burst into pieces, destroying yourself but infecting those around you.", "hash": "a076a7a9f18f555e", "src": "db2@1.60.1.70532"}
-{"id": 44950, "field": "name", "en": "Green Winter Clothes", "hash": "8f3396e284d3c9ac", "src": "db2@1.60.1.70532"}
-{"id": 44953, "field": "name", "en": "Winter Boots", "hash": "931b3fc4415962ca", "src": "db2@1.60.1.70532"}
-{"id": 44958, "field": "name", "en": "Red Winter Clothes", "hash": "329bc3f081df5f14", "src": "db2@1.60.1.70532"}
+{"id": 44305, "field": "name", "en": "You're a ...! (Effects2)", "hash": "6fc2b37f7c030d4a", "src": "db2@1.60.1.70685"}
+{"id": 44426, "field": "name", "en": "Zombie Explosion!", "hash": "39cdb44e94f80c8a", "src": "db2@1.60.1.70685"}
+{"id": 44426, "field": "description", "en": "Burst into pieces, destroying yourself but infecting those around you.", "hash": "a076a7a9f18f555e", "src": "db2@1.60.1.70685"}
+{"id": 44426, "field": "aura", "en": "Burst into pieces, destroying yourself but infecting those around you.", "hash": "a076a7a9f18f555e", "src": "db2@1.60.1.70685"}
+{"id": 44950, "field": "name", "en": "Green Winter Clothes", "hash": "8f3396e284d3c9ac", "src": "db2@1.60.1.70685"}
+{"id": 44953, "field": "name", "en": "Winter Boots", "hash": "931b3fc4415962ca", "src": "db2@1.60.1.70685"}
+{"id": 44958, "field": "name", "en": "Red Winter Clothes", "hash": "329bc3f081df5f14", "src": "db2@1.60.1.70685"}

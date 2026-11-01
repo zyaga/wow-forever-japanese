@@ -336,6 +336,14 @@ WFJ.SettingsKeys = {
     "PREFERRED_DATACENTER_LOCALITY_LABEL", "PREFERRED_DATACENTER_LOCALITY_TOOLTIP", "PREFERRED_LOCALE_LABEL",
     "PREFERRED_LOCALE_TOOLTIP", "PREFERRED_PLAY_DATACENTER_LOCALITY_FALLBACK", "PREFERRED_PLAY_LOCALE_FALLBACK",
     "PREFERRED_PLAY_SETTINGS_LOCKED_REASON_FORMAT", "PREFERRED_PLAY_SETTINGS_UNAVAILABLE_REASON",
+    -- the Preset page (blizzard_settingsdefinitions_shared/preset.lua:60–185): its category, the current-setting
+    -- header (rewritten on SETTINGS_HEADER_TEXT_UPDATE, followed by UI/SettingsPanel), the preset and turn / strafe
+    -- buttons, the quest POI checkbox and the toast-types dropdown with their tooltips
+    "PRESET_LABEL", "CURRENT_SETTING_TEXT_CLASSIC_LABEL", "CURRENT_SETTING_TEXT_ENHANCED_LABEL",
+    "SET_PRESET_OPTION_BUTTON_CLASSIC_LABEL", "SET_PRESET_OPTION_BUTTON_ENHANCED_LABEL",
+    "CLASSIC_TURN_STRAFE_KEYBINDINGS_BUTTON_TEXT", "ENHANCED_TURN_STRAFE_KEYBINDINGS_BUTTON_TEXT",
+    "OPTIONS_MENU_QUEST_POIS_TEXT", "OPTIONS_MENU_QUEST_POIS_TOOLTIP", "OPTIONS_MENU_INTERFACE_TOASTS_TEXT",
+    "OPTIONS_MENU_INTERFACE_TOASTS_TOOLTIP",
     "PRESS_AND_HOLD_CASTING_OPTION", "PRESS_AND_HOLD_CASTING_OPTION_TOOLTIP", "PREVIEW", "PRIMARY_KEY_UNBOUND_ERROR",
     "PRIMARY_MONITOR", "PROFANITY_FILTER", "PROJECTED_TEXTURES", "PUSH_TO_TALK",
     "PVP_COMPACT_UNIT_FRAME_PROFILE_DISPLAYONLYHEALERPOWERBARS", "PVP_COMPACT_UNIT_FRAME_PROFILE_DISPLAYPETS",
@@ -543,7 +551,7 @@ WFJ.SettingsKeys = {
     "VOICE_CHAT_USE_DISCORD_SETTINGS", "OPTION_TOOLTIP_VOICE_CHAT_USE_DISCORD_SETTINGS",
     "VIDEO_OPTIONS_ADVANCEDLIGHT_ULTRA",
     -- the "NEW" tag on a row or category camelot marks new (camelot/newdefinitions.lua:1–11; NewFeatureLabelTemplate,
-    -- blizzard_sharedxml/newfeaturelabel.xml:6–31, under blizzard_settingcontrols.xml:24, 70, blizzard_categorylist
+    -- blizzard_sharedxml/newfeaturelabel.xml:6–31, under blizzard_settingcontrols.xml:24, 71, blizzard_categorylist
     -- .xml:80)
     "NEW_CAPS",
   },

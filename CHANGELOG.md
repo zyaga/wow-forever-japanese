@@ -9,6 +9,16 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Added
+- Japanese for the text Forever build 1.60.1.70685 adds or rewords, with word readings: the Options window's new Classic / Enhanced preset page, the PvP match results' outcome line and honor column, and the reworded talents and spells.
+
+### Changed
+- The game text is read from Forever build 1.60.1.70685 (quest text from 1.60.1.70532 until the new build's quests are read).
+- The spellbook's search box hint follows its new text.
+
+### Fixed
+- The English Collector's "where is my file" path names the Forever client's folder, `_forever_`.
+
 ## 0.5.0 - 2026-10-23
 
 ### Added

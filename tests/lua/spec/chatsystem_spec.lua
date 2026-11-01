@@ -32,7 +32,7 @@ local UI = {
   TIME_PLAYED_TOTAL = { "Total time played: %s", "総プレイ時間: %s" },
   TIME_DAYHOURMINUTESECOND = { "%d |4day:days;, %d |4hour:hours;, %d |4minute:minutes;, %d |4second:seconds;",
     "%d日、%d時間、%d分、%d秒" },
-  -- the voice channel's announce / management lines (channelframe.lua:828–853) and the Communities chat's
+  -- the voice channel's announce / management lines (channelframe.lua:816–841) and the Communities chat's
   -- client-written lines (communitieschatframe.lua:354–397)
   VOICE_CHAT_CHANNEL_ANNOUNCE = { "%1$s %2$s %3$s", "%1$s %2$s %3$s" },
   VOICE_CHAT_NOTIFICATION_CHANNEL_ACTIVATED_PARTY = { "Joined |c%sParty|r voice chat.",
@@ -47,7 +47,7 @@ local UI = {
   -- a friendship's rank points (FriendshipReputation, a client-table family the reputation line names)
   ["FriendshipGain:513"] = { "You gain %d Rank Points.", "ランクポイントを%d獲得した。" },
   ["ServerMessage:1"] = { "[SERVER] Shutdown in %s", "[サーバー] %s後にシャットダウン" },
-  -- the voice-service switch lines (channelframe.lua:574–583)
+  -- the voice-service switch lines (channelframe.lua:562–571)
   VOICE_CHAT_SERVICE_SWITCHING = { "Switching to voice chat service: %s", "ボイスチャットサービスを切り替えます: %s" },
   VOICE_CHAT_SERVICE_LEGACY = { "Legacy", "レガシー" },
   VOICE_CHAT_TTS_STT_ENABLED = { "Text-to-Speech and Speech-to-Text enabled", "読み上げと音声入力を有効にしました" },

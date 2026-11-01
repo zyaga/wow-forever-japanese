@@ -12,7 +12,7 @@
 --     system's name and calls UpdateDialog → UpdateSettings, which re-acquires the pooled dropdown / slider /
 --     checkbox setting frames and fills them (SetupSetting: Label, MinText / MaxText, the dropdown's selection;
 --     editmodedialogs.lua:537–660, editmodetemplates.lua:24–140), then the extra buttons
---     (editmodesystemtemplates.lua:542, 1219–1264). The title is written before UpdateDialog runs, so post-hooks
+--     (editmodesystemtemplates.lua:542, 1214–1234). The title is written before UpdateDialog runs, so post-hooks
 --     on UpdateSettings and UpdateExtraButtons see everything; pooled frames are keyed by widget.
 --   EditModeLayoutDialog / EditModeImportLayoutDialog / EditModeImportLayoutLinkDialog / EditModeUnsavedChangesDialog:
 --     each fills its title and buttons and then shows itself (SetupControlsForMode → StaticPopupSpecial_Show,
@@ -20,9 +20,9 @@
 --     name ("%s") keeps the name as written. Their EditBoxes are never entered.
 --   The selection overlay of every HUD system: Selection:UpdateLabelVisibility writes "Click to Edit" or the
 --     system's name into Label (or HorizontalLabel / VerticalLabel) on every hover and selection
---     (editmodesystemtemplates.lua:3400–3430). Each registered system's Selection is hooked once, when the manager
+--     (editmodesystemtemplates.lua:3414–3444). Each registered system's Selection is hooked once, when the manager
 --     is shown (EditModeManagerFrame.registeredSystemFrames, editmodemanager.lua:24, 221); its hover tooltip
---     (GetAppropriateTooltip():SetText(system name), editmodesystemtemplates.lua:3384–3393) goes through HelpTooltip.
+--     (GetAppropriateTooltip():SetText(system name), editmodesystemtemplates.lua:3398–3407) goes through HelpTooltip.
 -- Never touched: EditModeManagerFrame.LayoutDropdown: its text is a layout's name, the player's own or a preset's
 --   inside HUD_EDIT_MODE_PRESET_LAYOUT (editmodemanager.lua:1382). The dropdown's popup (copy / rename / import /
 --   share) is UI/Menus'. The "layout applied" and "copied to clipboard" lines are chat messages (:773, 1621).

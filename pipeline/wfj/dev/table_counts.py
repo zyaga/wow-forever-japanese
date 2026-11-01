@@ -1,6 +1,6 @@
 """Row counts of the client tables behind the `no-content` windows, from a local install.
 
-    python -m wfj.dev.table_counts --wow "<client folder>" [--product wow_classic_beta]
+    python -m wfj.dev.table_counts --wow "<client folder>" [--product wowf]
         [--hotfixes <Cache/ADB/enUS/DBCache.bin>] [--tables WeeklyRewardChestThreshold …]
 
 A `no-content` disposition (pipeline/forever_addon_dispositions.txt) rests on the window's own tables being
@@ -86,7 +86,7 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="wfj.dev.table_counts", description=__doc__.split("\n\n")[0])
     ap.add_argument("--wow", required=True, type=Path, help="the client folder holding .build.info")
     ap.add_argument(
-        "--product", default="wow_classic_beta", help=".build.info product (default wow_classic_beta)"
+        "--product", default="wowf", help=".build.info product (default wowf)"
     )
     ap.add_argument("--hotfixes", type=Path, help="the client's Cache/ADB/<locale>/DBCache.bin (read only)")
     ap.add_argument(

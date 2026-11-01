@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 
 import pytest
-from local_inputs import forever_build, predecessors
+from local_inputs import forever_build, forever_quest_build, predecessors
 
 from wfj.emit import lua_writer, schema
 from wfj.io import wago, wdb
@@ -14,6 +14,7 @@ from wfj.io.jsonl_store import Store
 
 ADDON = Path("addon/WoWForeverJapanese")
 FOREVER = f"forever-{forever_build()}"
+FOREVER_QUESTS = f"forever-{forever_quest_build()}"
 
 # Globals only the Classic Era UI defines (the Era target survey in docs/research/). A name
 # preceded by a word character or a dot is another name or a Forever child key (`PlayerSpellsFrame.SpellBookFrame`,
@@ -88,7 +89,7 @@ def test_shipped_ids_are_listed_by_forever(root):
     if d is None:
         pytest.skip("no Forever client folder (predecessors/clients) on this machine")
     served = {
-        "quest": wago.read_ids(d / "QuestV2.csv") | set(wdb.read_ids(d / "questcache.wdb")[1]),
+        "quest": wago.read_ids(d / "QuestV2.csv") | set(wdb.read_ids(d.parent / FOREVER_QUESTS / "questcache.wdb")[1]),
         "item": wago.read_ids(d / "ItemSparse.csv"),
         "spell": wago.read_ids(d / "SpellName.csv"),
     }

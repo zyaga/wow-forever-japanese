@@ -94,6 +94,28 @@ function S.headerRow(title)
   return row
 end
 
+-- A section header whose initializer carries customNameUpdateFunc: Init writes the Title from it, and the header
+-- writes it again on SETTINGS_HEADER_TEXT_UPDATE, outside Init (blizzard_settingcontrols.lua:81–92, 108–116).
+function S.liveHeaderRow(nameFunc)
+  local row = S.headerRow(nameFunc())
+  row.customNameUpdateFunc = nameFunc
+  row:RegisterEvent("SETTINGS_HEADER_TEXT_UPDATE")
+  row:SetScript("OnEvent", function(self, event)
+    if event == "SETTINGS_HEADER_TEXT_UPDATE" and self.customNameUpdateFunc then
+      self.Title.text = self.customNameUpdateFunc()
+    end
+  end)
+  return row
+end
+
+-- SettingButtonControlTemplate: Init writes the button's text (blizzard_settingcontrols.lua:978).
+function S.buttonRow(text)
+  local row = S.node("Frame")
+  S.button(row, "Button", text)
+  S.node("Frame", nil, row, "Tooltip")
+  return row
+end
+
 function S.sectionRow(name) -- SettingsExpandableSectionTemplate: Button.Text is a layer FontString
   local row = S.node("EventFrame")
   local b = S.node("Button", nil, row, "Button")
@@ -181,7 +203,7 @@ function S.removeSettingsPanel()
 end
 
 -- ── Edit Mode ─────────────────────────────────────────────────────────────────────────────────────────────────
--- A HUD system with its selection overlay (editmodesystemtemplates.lua:3331–3346).
+-- A HUD system with its selection overlay (editmodesystemtemplates.lua:3414–3444).
 function S.system(manager, name)
   local system = S.node("Frame")
   local selection = S.node("Frame", nil, system, "Selection")

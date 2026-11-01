@@ -23,7 +23,7 @@ end
 
 function M.line(i) return _G["GameTooltipTextLeft" .. i]:GetText() end
 
--- WorldMapFrame with the overlay frames WorldMapMixin:AddOverlayFrames creates (blizzard_worldmap.lua:318–361).
+-- WorldMapFrame with the overlay frames WorldMapMixin:AddOverlayFrames creates (blizzard_worldmap.lua:306–349).
 function M.worldMap(en)
   local frame = CreateFrame("Frame", "WorldMapFrame")
   frame.overlayFrames = {}

@@ -3,7 +3,7 @@
 -- [Game]\CharacterFrame.*, [Game]\PaperDollFrame.* and the Vanilla, Cata and [Game] PaperDollFrameStats.lua on camelot
 -- [verified: forever blizzard_uipanels_game.toc:44–60]. What is translated:
 --   the level lines, both writers called by name [verified: camelot/paperdollframe.lua:492–515, 522–543, 448, 460;
---     characterframe.lua:809, 833]: CharacterLevelText, the player's line from PaperDollFrame_SetLevel (PLAYER_LEVEL /
+--     characterframe.lua:795, 819]: CharacterLevelText, the player's line from PaperDollFrame_SetLevel (PLAYER_LEVEL /
 --     PLAYER_LEVEL_NO_SPEC: level, class colour, spec, class: `text` captures); and PetCharacterLevelText
 --     (paperdollframe.xml:599), the pet's line from PaperDollFrame_SetPetLevel: UNIT_TYPE_LEVEL_TEMPLATE (level, pet
 --     family), then, when the pet has a loyalty rank, " " .. HIGHLIGHT_FONT_COLOR:WrapTextInColorCode(
@@ -12,9 +12,9 @@
 --     around its PetLoyalty row, the colour kept. A rank that is no PetLoyalty row stays as written; a level part
 --     that is no UNIT_TYPE_LEVEL_TEMPLATE line leaves the whole line English.
 --   the stat pane: CharacterStatsPaneScrollBox / CharacterStatsPanePetScrollBox, a ScrollBox of pooled rows
---     (characterframe.lua:1056–1087, 1116–1239, 1245–1310; characterframe.xml:170–234, 463–484). A header row's Title
+--     (characterframe.lua:1042–1073, 1102–1225, 1231–1296; characterframe.xml:170–234, 463–484). A header row's Title
 --     is a PAPERDOLL_STATCATEGORIES categoryName or STAT_CATEGORY_RESISTANCE (paperdollframeconstants.lua:35–117,
---     characterframe.lua:1209); a stat row's Label is format(STAT_FORMAT "%s:", <stat word>) written by its Init or
+--     characterframe.lua:1195); a stat row's Label is format(STAT_FORMAT "%s:", <stat word>) written by its Init or
 --     by PaperDollFrame_SetLabelAndText from the stat's updateFunc (paperdollframe.lua:2504–2513). Followed with
 --     ScrollUtil.AddInitializedFrameCallback (after the element initializer), keyed by the row widget itself; a stat
 --     row is also a help-tooltip owner (PaperDollStatTooltip or its onEnterFunc, paperdollframe.lua:2282–2295).
@@ -22,7 +22,7 @@
 --     name (paperdollframe.lua:732–744). CharacterStatsPane (the older category frames) is never shown.
 --   help tooltips: the six icon mode tabs (tooltipText CHARACTER_FRAME_TAB_*, SidePanelTabButtonMixin:OnEnter →
 --     SetText, shareduipaneltemplates.lua:408–422; characterframe.xml:574–603), the three paperdoll sidebar tabs
---     (paperdollframe.lua:3632–3640), the right-pane toggle (characterframe.lua:353–370), and the equipment slots:
+--     (paperdollframe.lua:3632–3640), the right-pane toggle (characterframe.lua:341–358), and the equipment slots:
 --     the same CharacterHeadSlot … CharacterAmmoSlot names; an empty slot's SetText(<SLOT>SLOT / RELICSLOT) comes from
 --     ItemUtil.DisplayEquipSlotTooltip (blizzard_framexmlutil/itemutil.lua:465–484).
 --   the equipment manager (sidebar 2, PaperDollFrame.EquipmentManagerPane, paperdollframe.xml:474–554): the Equip /
@@ -39,7 +39,7 @@
 --     their instances. The name EditBox is forbidden.
 --   the window title: CharacterFrameMixin:UpdateTitle writes SetTitle(characterFrameDisplayInfo[
 --     activeSubframe].title): the player's name (UnitPVPName, the "Default" entry, shown on the paperdoll) or one of
---     REPUTATION / CURRENCY / PVP / SKILLS / STATISTICS for the other panes (characterframe.lua:254–258, the only
+--     REPUTATION / CURRENCY / PVP / SKILLS / STATISTICS for the other panes (characterframe.lua:242–246, the only
 --     SetTitle on this frame; characterframeconstants.lua:9–34). Shown through Labels.title with `only` those five
 --     pane keys, on its own surface "character.title"; and because a player may be named "Skills" or "Currency",
 --     UpdateTitle is post-hooked too: when the active pane is not one of the five, the title is the name and its

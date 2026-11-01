@@ -17,7 +17,7 @@ function Session.run()
   Stub.showReward()
   QuestFrame:Hide()
 
-  Stub.quest = { id = 9999, title = "A Forever Quest", description = "New text from the beta.",
+  Stub.quest = { id = 9999, title = "A Forever Quest", description = "New text from Forever.",
     objectives = "Speak with the |cffffd200Keeper|r.", progress = "", completion = "" }
   Stub.showDetail()
   QuestFrame:Hide()

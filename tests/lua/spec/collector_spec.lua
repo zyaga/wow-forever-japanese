@@ -446,14 +446,10 @@ describe("Core/Collector", function()
       assert.is_nil(saved.sent)
     end)
 
-    it("path names the beta's folder only on a beta client", function()
+    it("path names the Forever client's folder", function()
       C.load(nil, deps())
-      assert.are.equal(C.PATH, C.path())
-      local d = deps()
-      d.beta = function() return true end
-      C.load(nil, d)
       assert.are.equal(
-        "World of Warcraft\\_classic_beta_\\WTF\\Account\\<ACCOUNT>\\SavedVariables\\WoWForeverJapanese.lua", C.path())
+        "World of Warcraft\\_forever_\\WTF\\Account\\<ACCOUNT>\\SavedVariables\\WoWForeverJapanese.lua", C.path())
     end)
   end)
 

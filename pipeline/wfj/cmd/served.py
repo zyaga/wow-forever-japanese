@@ -114,6 +114,11 @@ def add_parser(esub: Any) -> None:
         metavar="WDB",
         help="another client's questcache.wdb, read only to map an objective id to its quest",
     )
+    sv.add_argument(
+        "--cache-build",
+        metavar="BUILD",
+        help="the quest cache's build when older than the tables (the quest pin); default: the tables' build",
+    )
     sv.add_argument("--dry-run", action="store_true", help="print the counts, write nothing")
     sv.set_defaults(fn=run_served)
 
@@ -165,11 +170,17 @@ def _write_records(records: dict[str, dict], old: dict[str, dict]) -> None:
             write_record(kind, records[kind])
 
 
-def _print_not_served(not_now: dict[str, int], build: str) -> None:
+def _print_not_served(not_now: dict[str, int], build: str, older_cache: int | None) -> None:
     for kind in RECORDED:
-        if not_now[kind]:
-            print(f"served {kind}: {not_now[kind]} ids an earlier build served, not served on {build}: kept "
-                  f"(pipeline/served/{kind}.tsv keeps their last build)")
+        if not not_now[kind]:
+            continue
+        if kind == "quest" and older_cache:
+            # Only QuestV2 speaks for this build: a quest it lacks may still be answered by the build's scan
+            print(f"served quest: {not_now[kind]} ids an earlier build served are not in {build}'s "
+                  f"QuestV2 and wait for its quest scan (the cache is build {older_cache}'s): kept")
+            continue
+        print(f"served {kind}: {not_now[kind]} ids an earlier build served, not served on {build}: kept "
+              f"(pipeline/served/{kind}.tsv keeps their last build)")
 
 
 def run_served(a: argparse.Namespace) -> int:
@@ -181,11 +192,19 @@ def run_served(a: argparse.Namespace) -> int:
     label = _stamp(csvs)
     cache = wdb.read_quests(cache_path)
     build = label.split("@", 1)[1]
-    if build.rsplit(".", 1)[-1] != str(cache.build):
-        raise ValueError(f"served: {cache_path.name} is build {cache.build}, the tables are {label}")
+    # The tables can be pinned before the build's scan (`--cache-build`, the Makefile's quest pin): the cache
+    # is then the last scanned build's, whose ids were recorded when it was pulled, so only QuestV2 is this
+    # build's.
+    pinned = a.cache_build or build
+    if pinned.rsplit(".", 1)[-1] != str(cache.build):
+        raise ValueError(f"served: {cache_path.name} is build {cache.build}, expected {pinned} ({label})")
+    tables_no = int(build.rsplit(".", 1)[-1])
+    if cache.build > tables_no:
+        raise ValueError(f"served: {cache_path.name} (build {cache.build}) is newer than the tables, {label}")
+    older_cache = cache.build < tables_no
     others = [wdb.read_quests(Path(p)) for p in a.map_cache]
     questv2 = wago.read_ids(csvs[0])
-    quests = questv2 | {q.id for q in cache.quests} | set(cache.placeholders)
+    quests = questv2 if older_cache else questv2 | {q.id for q in cache.quests} | set(cache.placeholders)
     items, spells = wago.read_ids(csvs[1]), wago.read_ids(csvs[2])
     objective_quest, disagree = _objective_quests(cache, others)
     unmapped: set[int] = set()
@@ -239,12 +258,12 @@ def run_served(a: argparse.Namespace) -> int:
                 store.save(kind, result[kind])
         _write_records(records, old_records)
     tag = " [dry run: nothing written]" if a.dry_run else ""
-    print(
-        f"served{tag}: target {label} · {len(questv2)} QuestV2 ids + {len(quests) - len(questv2)} cached "
-        f"only · {len(items)} items · {len(spells)} spells"
-    )
+    cached = (f"the cache (build {cache.build}) waits for this build's scan" if older_cache
+              else f"{len(quests) - len(questv2)} cached only")
+    print(f"served{tag}: target {label} · {len(questv2)} QuestV2 ids + {cached} · {len(items)} items · "
+          f"{len(spells)} spells")
     print("\n".join(report))
-    _print_not_served(not_now, build)
+    _print_not_served(not_now, build, cache.build if older_cache else None)
     if unmapped:
         print(f"served objective: {len(unmapped)} ids no quest cache maps to a quest, kept")
     if disagree:

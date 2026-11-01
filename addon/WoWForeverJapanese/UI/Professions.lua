@@ -7,28 +7,28 @@
 -- through to ShowProfessionsFrame() + ProfessionsFrame:SelectBookPage() (blizzard_professionsbook_bootstrap.lua:
 -- 7–20): the book is ProfessionsFrame.BookPage, a ProfessionsBookPageTemplate inheriting the camelot
 -- ProfessionsBookFrameTemplate (blizzard_professions/camelot/blizzard_professionsframe.xml:79;
--- blizzard_professionscrafting.xml:397; blizzard_professionsbook/camelot/blizzard_professionsbooktemplates.xml:189).
+-- blizzard_professionscrafting.xml:397; blizzard_professionsbook/camelot/blizzard_professionsbooktemplates.xml:221).
 -- Both addons are load-on-demand (Blizzard_Professions depends on Blizzard_ProfessionsBook): each is waited for
 -- through WFJ.LoadOnDemand.when, in either load order.
 -- Title: ProfessionsMixin:SelectBookPage writes ProfessionsFrame:SetTitleFormatted(TRADE_SKILL_TITLE "%s",
---   TRADE_SKILLS "Professions") (camelot/blizzard_professionsframe.lua:91–99). SetTitleFormatted writes
+--   TRADE_SKILLS "Professions") (camelot/blizzard_professionsframe.lua:110–118). SetTitleFormatted writes
 --   TitleContainer.TitleText directly; it does not go through SetTitle (blizzard_sharedxml/portraitframe.lua:11–17),
 --   so it is post-hooked on the frame beside Labels.title's SetTitle hook. The crafting page titles the same
---   frame with the profession's name (SetTitle(professionName), blizzard_professionscrafting.lua:1379–1387;
---   blizzard_professionsframe.lua:246, 278): a name, so the title takes TRADE_SKILLS only. The standalone book
---   (ProfessionsBookFrameStandaloneMixin:OnLoad → SetTitle(TRADE_SKILLS), blizzard_professionsbook.lua:216–228) is
+--   frame with the profession's name (SetTitle(professionName), blizzard_professionscrafting.lua:1369–1377;
+--   blizzard_professionsframe.lua:258–273, 290): a name, so the title takes TRADE_SKILLS only. The standalone book
+--   (ProfessionsBookFrameStandaloneMixin:OnLoad → SetTitle(TRADE_SKILLS), blizzard_professionsbook.lua:218–228) is
 --   handled the same way where a client builds it.
 -- Static labels (written once by the XML / its inline OnLoad, only shown and hidden afterwards by
---   ProfessionsBookFrameMixin:FormatProfession, camelot/blizzard_professionsbook.lua:45–143): each primary slot's
+--   ProfessionsBookFrameMixin:FormatProfession, camelot/blizzard_professionsbook.lua:43–137): each primary slot's
 --   missingHeader (PROFESSIONS_FIRST_PROFESSION / _SECOND_PROFESSION) and missingText
 --   (PROFESSIONS_MISSING_PROFESSION), each secondary slot's missingText (PROFESSIONS_COOKING_MISSING /
---   _FISHING_MISSING / _FIRST_AID_MISSING) (camelot templates xml:26, 32, 197–246). Shown on setup and on the
+--   _FISHING_MISSING / _FIRST_AID_MISSING) (camelot templates xml:26, 32, 227–276). Shown on setup and on the
 --   page's OnShow; released on its OnHide.
 -- Help tooltips: a slot's UnlearnButton (GameTooltip:SetText(UNLEARN_SKILL_TOOLTIP), camelot/
 --   blizzard_professionsbook.lua:3–8) and the overview side tab (tooltipText TRADE_SKILLS, SidePanelTabButtonMixin:
 --   OnEnter → SetText; camelot/blizzard_professionsframe.xml:13–17; shareduipaneltemplates.lua:408–422), each
 --   restricted to its one key. The profession side tabs' tooltipText is the profession's name (camelot/
---   blizzard_professionsframe.lua:64): never registered.
+--   blizzard_professionsframe.lua:50): never registered.
 -- Never touched: a slot's ProfessionName (GetProfessionInfo's name) and specialization, a secondary slot's
 --   missingHeader (PROFESSIONS_COOKING / _FISHING / _FIRST_AID are profession names; `only` keeps them English),
 --   the rank bar's text (TRADESKILL_NAME_RANK "%s %d/%d" joins the profession name, blizzard_professionsrankbar.lua:
@@ -63,7 +63,7 @@ for _, host in ipairs({ "ProfessionsFrame.BookPage", "ProfessionsBookFrame" }) d
 end
 
 -- A guild's profession view titles the frame SetTitleFormatted(GUILD_TRADE_SKILL_TITLE, skillLineName)
--- (blizzard_professionsframe.lua:246–253): "Guild <profession>", the name kept (`text`, a key-only template)
+-- (blizzard_professionsframe.lua:264–265): "Guild <profession>", the name kept (`text`, a key-only template)
 local TITLE = { only = { "TRADE_SKILLS", "GUILD_TRADE_SKILL_TITLE" } }
 local HEADER = { only = { "PROFESSIONS_FIRST_PROFESSION", "PROFESSIONS_SECOND_PROFESSION" } }
 local MISSING = { only = { "PROFESSIONS_MISSING_PROFESSION", "PROFESSIONS_COOKING_MISSING",

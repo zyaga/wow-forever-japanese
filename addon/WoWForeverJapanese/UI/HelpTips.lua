@@ -53,7 +53,7 @@ HelpTips.KEYS = { "ACCOUNT_WIDE_REPUTATION_TUTORIAL", "REPUTATION_EXALTED_PLUS_H
   -- CanShowRefreshAccountCompletedQuestFilterTutorial returns false, blizzard_worldmap/camelot/
   -- blizzard_worldmaptemplates.lua:10–12, so Forever never shows it), currencies (camelot
   -- blizzard_tokenui.lua:425–445), the assisted-combat button (actionbutton.lua:1986–2025), loot history
-  -- (loothistory.lua:552–563), the chat language button (chatframemenubutton.lua:3), voice (channelframe.lua:472–488;
+  -- (loothistory.lua:552–563), the chat language button (chatframemenubutton.lua:3), voice (channelframe.lua:460–476;
   -- voicechattranscriptionbutton.lua:210–220), the queue eye (queuestatusframe.lua:333–345)
   "EDIT_MODE_HELPTIPS_LAYOUTS", "EDIT_MODE_HELPTIPS_SELECT_FRAMES", "EDIT_MODE_HELPTIPS_SHOW_HIDDEN_FRAMES",
   "EDIT_MODE_HELPTIPS_ADVANCED_OPTIONS", "AUCTION_HOUSE_UNDERCUT_TUTORIAL", "ACCOUNT_COMPLETED_QUESTS_FILTER_TUTORIAL",
