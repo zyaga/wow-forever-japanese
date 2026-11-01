@@ -109,14 +109,14 @@
 {"id": 20101, "field": "name", "en": "Benediction", "hash": "4779be8343480f33", "src": "db2@1.60.1.70707"}
 {"id": 20101, "field": "description", "en": "Reduces the Mana cost of all instant cast spells and abilities by $m1%.", "hash": "e3cdca907b36354a", "src": "db2@1.60.1.70707"}
 {"id": 20111, "field": "name", "en": "Two-Handed Weapon Specialization", "hash": "e5fb2b796c57d253", "src": "db2@1.60.1.70707"}
-{"id": 20111, "field": "description", "en": "Increases the damage you deal with two-handed melee weapons by $s1%.", "hash": "d2cc2ad85387774f", "src": "db2@1.60.1.70707"}
+{"id": 20111, "field": "description", "en": "Increases the physical damage you deal by $s1%, and reduces all threat you generate by $m2% while a two-handed melee weapon is equipped.", "hash": "bb5017a67b8596e7", "src": "db2@1.60.1.70707"}
 {"id": 20114, "field": "name", "en": "BM Only OFF", "hash": "3e64060f2b84f04b", "src": "db2@1.60.1.70707"}
 {"id": 20115, "field": "name", "en": "BM Only ON", "hash": "73c6233ee4ef23cb", "src": "db2@1.60.1.70707"}
 {"id": 20116, "field": "name", "en": "Consecration", "hash": "90cd07b99ae7cf29", "src": "db2@1.60.1.70707"}
 {"id": 20116, "field": "description", "en": "Consecrates the land beneath the Paladin, doing ${$1280346m1*8} Holy damage over $d to enemies who enter the area. The first $s3 enemies who enter the area will take an additional ${$1280346m2*8} damage over $d.", "hash": "975a54866f264d55", "src": "db2@1.60.1.70707"}
 {"id": 20116, "field": "aura", "en": "$s1 damage every $t1 $lsecond:seconds;.", "hash": "6e1476427b33cc94", "src": "wago@1.15.9.69722"}
 {"id": 20117, "field": "name", "en": "Conviction", "hash": "e08b215d34ef5c17", "src": "db2@1.60.1.70707"}
-{"id": 20117, "field": "description", "en": "Improves your chance to get a critical strike with melee attacks by $s1%.", "hash": "1f5cd05b3a043ae6", "src": "db2@1.60.1.70707"}
+{"id": 20117, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $m1%.", "hash": "b44303595ac29903", "src": "db2@1.60.1.70707"}
 {"id": 20127, "field": "name", "en": "Redoubt", "hash": "06c8d1ddc9bba697", "src": "db2@1.60.1.70707"}
 {"id": 20127, "field": "description", "en": "Damaging melee attacks against you have a $h% chance to increase your chance to block by $m1%.  Lasts $20128d or $20128n blocks.", "hash": "79f79fde8f88080d", "src": "db2@1.60.1.70707"}
 {"id": 20128, "field": "name", "en": "Redoubt", "hash": "06c8d1ddc9bba697", "src": "db2@1.60.1.70707"}
@@ -307,7 +307,7 @@
 {"id": 20292, "field": "description", "en": "Fills the Paladin with holy spirit for $d, granting each melee attack an additional ${($20285s3/87+$<1h>)*$<mult>} to ${($20285s3/25+$<2h>)*$<mult>} Holy damage.  Slower weapons cause more Holy damage per swing.  Only one Seal can be active on the Paladin at any one time.\r\n\r\nUnleashing this Seal's energy will cause $20285s1 Holy damage to an enemy.", "hash": "56c66bc0e9df8669", "src": "db2@1.60.1.70707"}
 {"id": 20292, "field": "aura", "en": "Melee attacks cause an additional ${($20285s3/87+$<1h>)*$<mult>} to ${($20285s3/25+$<2h>)*$<mult>} Holy damage.", "hash": "3bf084803775dd6f", "src": "db2@1.60.1.70707"}
 {"id": 20293, "field": "name", "en": "Seal of Righteousness", "hash": "bb44ad2752f8f253", "src": "db2@1.60.1.70707"}
-{"id": 20293, "field": "description", "en": "Fills the Paladin with holy spirit for $d, granting each melee attack an additional ${($20286s3/87+$<1h>)*$<mult>} to ${($20286s3/25+$<2h>)*$<mult>} Holy damage.  Slower weapons cause more Holy damage per swing.  Only one Seal can be active on the Paladin at any one time.\r\n\r\nUnleashing this Seal's energy will cause $20286s1 Holy damage to an enemy.\r\n\r\n$20224s1", "hash": "4270e82a94a1fd6c", "src": "db2@1.60.1.70707"}
+{"id": 20293, "field": "description", "en": "Fills the Paladin with holy spirit for $d, granting each melee attack an additional ${($20286s3/87+$<1h>)*$<mult>} to ${($20286s3/25+$<2h>)*$<mult>} Holy damage.  Slower weapons cause more Holy damage per swing.  Only one Seal can be active on the Paladin at any one time.\r\n\r\nUnleashing this Seal's energy will cause $20286s1 Holy damage to an enemy.", "hash": "bd2ae60191c2fba0", "src": "db2@1.60.1.70707"}
 {"id": 20293, "field": "aura", "en": "Melee attacks cause an additional ${($20286s3/87+$<1h>)*$<mult>} to ${($20286s3/25+$<2h>)*$<mult>} Holy damage.", "hash": "fa8383388885b738", "src": "db2@1.60.1.70707"}
 {"id": 20294, "field": "name", "en": "Immolate", "hash": "c1cd0d857455f570", "src": "db2@1.60.1.70707"}
 {"id": 20294, "field": "description", "en": "Inflicts $s2 Fire damage to an enemy and scorches it for an additional $s1 damage every $t1 sec. for $d.", "hash": "b00eeec9bb18c797", "src": "db2@1.60.1.70707"}
@@ -670,7 +670,7 @@
 {"id": 20549, "field": "description", "en": "Stuns up to $i enemies within $a1 yds for $d.", "hash": "f5bcbebe5e22a1be", "src": "db2@1.60.1.70707"}
 {"id": 20549, "field": "aura", "en": "Stunned.", "hash": "27f9528639a00eee", "src": "db2@1.60.1.70707"}
 {"id": 20550, "field": "name", "en": "Endurance", "hash": "1b29fb5d8230a42a", "src": "db2@1.60.1.70707"}
-{"id": 20550, "field": "description", "en": "Total Health increased by $s1% and critical strike bonus to damage and healing increased by $s2%.", "hash": "96f8b533018ac82a", "src": "db2@1.60.1.70707"}
+{"id": 20550, "field": "description", "en": "Total Health increased by $s1%.", "hash": "6ae4e06f60becbce", "src": "db2@1.60.1.70707"}
 {"id": 20552, "field": "name", "en": "Cultivation", "hash": "8a2d4345ed1f59e4", "src": "db2@1.60.1.70707"}
 {"id": 20552, "field": "description", "en": "Cultivate a nearby herb, growing a duplicate you can harvest without requiring Herbalism skill. Each herb may only be cultivated once.", "hash": "41d32bbf358729c4", "src": "db2@1.60.1.70707"}
 {"id": 20553, "field": "name", "en": "Golemagg's Trust", "hash": "e0e49157fda50f6f", "src": "db2@1.60.1.70707"}
@@ -709,6 +709,10 @@
 {"id": 20573, "field": "description", "en": "Duration of Stun effects on you reduced by $s1%.", "hash": "a2eba2f302415971", "src": "db2@1.60.1.70707"}
 {"id": 20574, "field": "name", "en": "Savage", "hash": "427ffa9f95856c66", "src": "db2@1.60.1.70707"}
 {"id": 20574, "field": "description", "en": "Increases your critical strike chance with all spells and abilities by $s1%.", "hash": "2eecd4f5f0e22b65", "src": "db2@1.60.1.70707"}
+{"id": 20575, "field": "name", "en": "Command", "hash": "e12ce2aa6154547b", "src": "db2@1.60.1.70707"}
+{"id": 20575, "field": "description", "en": "Damage dealt by Hunter and Warlock pets increased by $s1%.", "hash": "063d29ad96e2463f", "src": "db2@1.60.1.70707"}
+{"id": 20576, "field": "name", "en": "Command", "hash": "e12ce2aa6154547b", "src": "db2@1.60.1.70707"}
+{"id": 20576, "field": "description", "en": "Damage dealt by Hunter and Warlock pets increased by $s1%.", "hash": "063d29ad96e2463f", "src": "db2@1.60.1.70707"}
 {"id": 20577, "field": "name", "en": "Cannibalize", "hash": "300bcadffe07e512", "src": "db2@1.60.1.70707"}
 {"id": 20577, "field": "description", "en": "When activated, regenerates $20578s1% of total Health and $20578s2% of total Mana every $20578t1 sec for $20578d. Only works on Humanoid or Undead corpses within $a1 yds. Any movement, action, or damage taken while Cannibalizing will cancel the effect.", "hash": "ee269eb1ef5fed81", "src": "db2@1.60.1.70707"}
 {"id": 20578, "field": "name", "en": "Cannibalize", "hash": "300bcadffe07e512", "src": "db2@1.60.1.70707"}

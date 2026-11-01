@@ -32,3 +32,7 @@
 {"id": 289330, "field": "description", "en": "Increases run speed of nearby allies by $s1% for $d.", "hash": "002400e230735438", "src": "db2@1.60.1.70532"}
 {"id": 289334, "field": "name", "en": "Elixir of Endless Experience", "hash": "458ebe2c027d9551", "src": "db2@1.60.1.70532"}
 {"id": 289334, "field": "description", "en": "Increases experience gained by $s1% for $d.", "hash": "af4155856b80f7ad", "src": "db2@1.60.1.70532"}
+{"id": 289559, "field": "name", "en": "Enchant Boots - Speed", "hash": "c15fa10091327512", "src": "db2@1.60.1.70707"}
+{"id": 289559, "field": "description", "en": "Permanently enchant boots to increase movement speed by $1328947s1%.", "hash": "4d280216f1e84e3c", "src": "db2@1.60.1.70707"}
+{"id": 289560, "field": "name", "en": "Formula: Enchant Boots - Speed", "hash": "e0e1ac241fb5431d", "src": "db2@1.60.1.70707"}
+{"id": 289560, "field": "description", "en": "Teaches you how to permanently enchant boots to increase movement speed by 8%.", "hash": "468e0e62ea21fc3c", "src": "db2@1.60.1.70707"}

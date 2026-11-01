@@ -3,10 +3,10 @@
 {"id": 211247, "field": "name", "en": "Pattern: Phoenix Bindings", "hash": "0403b53941c84c88", "src": "db2@1.60.1.70707"}
 {"id": 211247, "field": "description", "en": "Teaches you how to sew Phoenix Bindings.", "hash": "361e2d8cac8aa993", "src": "db2@1.60.1.70707"}
 {"id": 211269, "field": "name", "en": "Primitive Drawing", "hash": "8b7f32a53c051864", "src": "db2@1.60.1.70707"}
-{"id": 211272, "field": "name", "en": "Empty Bait Cage", "hash": "772c67dd81940742", "src": "db2@1.60.1.70685"}
-{"id": 211272, "field": "description", "en": "Catch a critter to be used as bait.", "hash": "72483e0745501edb", "src": "db2@1.60.1.70685"}
-{"id": 211273, "field": "name", "en": "Trapped Critter", "hash": "9bc7937ed9ceab7d", "src": "db2@1.60.1.70685"}
-{"id": 211273, "field": "description", "en": "Place critter as bait.", "hash": "9480a4dba0e35cd5", "src": "db2@1.60.1.70685"}
+{"id": 211272, "field": "name", "en": "Empty Bait Cage", "hash": "772c67dd81940742", "src": "db2@1.60.1.70707"}
+{"id": 211272, "field": "description", "en": "Catch a critter to be used as bait.", "hash": "72483e0745501edb", "src": "db2@1.60.1.70707"}
+{"id": 211273, "field": "name", "en": "Trapped Critter", "hash": "9bc7937ed9ceab7d", "src": "db2@1.60.1.70707"}
+{"id": 211273, "field": "description", "en": "Place critter as bait.", "hash": "9480a4dba0e35cd5", "src": "db2@1.60.1.70707"}
 {"id": 211293, "field": "name", "en": "Crimson Trophy Quill", "hash": "a4600b31c6ee1a37", "src": "db2@1.60.1.70532"}
 {"id": 211301, "field": "name", "en": "Rune of Expose Weakness", "hash": "7432252a6328000b", "src": "db2@1.60.1.70707"}
 {"id": 211301, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70707"}

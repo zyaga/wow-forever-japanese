@@ -222,8 +222,8 @@
 {"id": 6264, "field": "name", "en": "Greater Adept's Robe", "hash": "ef3a23055fa1668d", "src": "db2@1.60.1.70707"}
 {"id": 6265, "field": "name", "en": "Soul Shard", "hash": "c5db2a36e8bae034", "src": "db2@1.60.1.70707"}
 {"id": 6266, "field": "name", "en": "Disciple's Vest", "hash": "6f7986c4d1c77093", "src": "db2@1.60.1.70532"}
-{"id": 6267, "field": "name", "en": "Disciple's Pants", "hash": "a1532c5803f55b01", "src": "db2@1.60.1.70685"}
-{"id": 6268, "field": "name", "en": "Pioneer Tunic", "hash": "5c3e2ca3eee39de1", "src": "db2@1.60.1.70685"}
+{"id": 6267, "field": "name", "en": "Disciple's Pants", "hash": "a1532c5803f55b01", "src": "db2@1.60.1.70707"}
+{"id": 6268, "field": "name", "en": "Pioneer Tunic", "hash": "5c3e2ca3eee39de1", "src": "db2@1.60.1.70707"}
 {"id": 6269, "field": "name", "en": "Pioneer Trousers", "hash": "2d4620c3649c3c2a", "src": "db2@1.60.1.70532"}
 {"id": 6270, "field": "name", "en": "Pattern: Blue Linen Vest", "hash": "eb6026db7cb1199f", "src": "db2@1.60.1.70707"}
 {"id": 6270, "field": "description", "en": "Teaches you how to sew a Blue Linen Vest.", "hash": "c85e908909d05f0c", "src": "db2@1.60.1.70707"}
@@ -316,7 +316,7 @@
 {"id": 6334, "field": "name", "en": "Monster - Mace, Green", "hash": "ee08b23aa6d59fc3", "src": "db2@1.60.1.70707"}
 {"id": 6335, "field": "name", "en": "Grizzled Boots", "hash": "9e5ff07bd5693e4b", "src": "db2@1.60.1.70532"}
 {"id": 6336, "field": "name", "en": "Infantry Tunic", "hash": "7d1962c01d6a61b7", "src": "db2@1.60.1.70532"}
-{"id": 6337, "field": "name", "en": "Infantry Leggings", "hash": "75606e0a7f70b02c", "src": "db2@1.60.1.70685"}
+{"id": 6337, "field": "name", "en": "Infantry Leggings", "hash": "75606e0a7f70b02c", "src": "db2@1.60.1.70707"}
 {"id": 6338, "field": "name", "en": "Silver Rod", "hash": "c87ccb6ba17b03b4", "src": "db2@1.60.1.70707"}
 {"id": 6338, "field": "description", "en": "Needed by Enchanters.", "hash": "35d5b894c870bdd1", "src": "db2@1.60.1.70707"}
 {"id": 6339, "field": "name", "en": "Runed Silver Rod", "hash": "6c517e49dc42c265", "src": "db2@1.60.1.70707"}
@@ -379,11 +379,11 @@
 {"id": 6377, "field": "name", "en": "Formula: Enchant Boots - Minor Agility", "hash": "54eef84e341583f1", "src": "db2@1.60.1.70707"}
 {"id": 6377, "field": "description", "en": "Teaches you how to permanently enchant a pair of boots to grant +3 Agility.", "hash": "dae0169e876af34e", "src": "db2@1.60.1.70707"}
 {"id": 6378, "field": "name", "en": "Seer's Cape", "hash": "75dab3eb42d1b6cd", "src": "db2@1.60.1.70532"}
-{"id": 6379, "field": "name", "en": "Inscribed Leather Belt", "hash": "0718152fe0c0b3d8", "src": "db2@1.60.1.70685"}
-{"id": 6380, "field": "name", "en": "Inscribed Buckler", "hash": "06ddd4fe077995f5", "src": "db2@1.60.1.70685"}
+{"id": 6379, "field": "name", "en": "Inscribed Leather Belt", "hash": "0718152fe0c0b3d8", "src": "db2@1.60.1.70707"}
+{"id": 6380, "field": "name", "en": "Inscribed Buckler", "hash": "06ddd4fe077995f5", "src": "db2@1.60.1.70707"}
 {"id": 6381, "field": "name", "en": "Bright Cloak", "hash": "7b0b894ab4c41dd2", "src": "db2@1.60.1.70532"}
-{"id": 6382, "field": "name", "en": "Forest Leather Belt", "hash": "1e180bec6b948497", "src": "db2@1.60.1.70685"}
-{"id": 6383, "field": "name", "en": "Forest Buckler", "hash": "a1e9eb5ca9a7a4cf", "src": "db2@1.60.1.70685"}
+{"id": 6382, "field": "name", "en": "Forest Leather Belt", "hash": "1e180bec6b948497", "src": "db2@1.60.1.70707"}
+{"id": 6383, "field": "name", "en": "Forest Buckler", "hash": "a1e9eb5ca9a7a4cf", "src": "db2@1.60.1.70707"}
 {"id": 6384, "field": "name", "en": "Stylish Blue Shirt", "hash": "ca3fdc837ea37807", "src": "db2@1.60.1.70707"}
 {"id": 6385, "field": "name", "en": "Stylish Green Shirt", "hash": "a39173ccde59445b", "src": "db2@1.60.1.70707"}
 {"id": 6386, "field": "name", "en": "Glimmering Mail Legguards", "hash": "d9a2bd98ffe92b6e", "src": "db2@1.60.1.70532"}
@@ -397,10 +397,10 @@
 {"id": 6392, "field": "name", "en": "Belt of Arugal", "hash": "f967eb2cb0a91dc7", "src": "db2@1.60.1.70532"}
 {"id": 6393, "field": "name", "en": "Silver-thread Gloves", "hash": "3b86288bb8649283", "src": "db2@1.60.1.70532"}
 {"id": 6394, "field": "name", "en": "Silver-thread Boots", "hash": "4955336e933c4e8a", "src": "db2@1.60.1.70532"}
-{"id": 6395, "field": "name", "en": "Silver-thread Amice", "hash": "378146f081ae327b", "src": "db2@1.60.1.70685"}
+{"id": 6395, "field": "name", "en": "Silver-thread Amice", "hash": "378146f081ae327b", "src": "db2@1.60.1.70707"}
 {"id": 6396, "field": "name", "en": "Emblazoned Chestpiece", "hash": "7d4b5d8bb54f5ed8", "src": "db2@1.60.1.70532"}
 {"id": 6397, "field": "name", "en": "Emblazoned Gloves", "hash": "74430c60fcbb0394", "src": "db2@1.60.1.70532"}
-{"id": 6398, "field": "name", "en": "Emblazoned Belt", "hash": "bb14f33b01cb2cdf", "src": "db2@1.60.1.70685"}
+{"id": 6398, "field": "name", "en": "Emblazoned Belt", "hash": "bb14f33b01cb2cdf", "src": "db2@1.60.1.70707"}
 {"id": 6399, "field": "name", "en": "Emblazoned Shoulders", "hash": "4913f4e2a1e2a898", "src": "db2@1.60.1.70532"}
 {"id": 6400, "field": "name", "en": "Glimmering Shield", "hash": "e3513cef3cc771c1", "src": "db2@1.60.1.70532"}
 {"id": 6401, "field": "name", "en": "Pattern: Dark Silk Shirt", "hash": "579c711346ecd902", "src": "db2@1.60.1.70707"}
@@ -415,25 +415,25 @@
 {"id": 6409, "field": "name", "en": "Insignia Belt", "hash": "5e1fee33be902214", "src": "db2@1.60.1.70532"}
 {"id": 6410, "field": "name", "en": "Insignia Bracers", "hash": "3d74276a1669db02", "src": "db2@1.60.1.70532"}
 {"id": 6411, "field": "name", "en": "Chief Brigadier Armor", "hash": "4c366470aa8d5f31", "src": "db2@1.60.1.70532"}
-{"id": 6412, "field": "name", "en": "Chief Brigadier Boots", "hash": "5d5dba92e9312975", "src": "db2@1.60.1.70685"}
+{"id": 6412, "field": "name", "en": "Chief Brigadier Boots", "hash": "5d5dba92e9312975", "src": "db2@1.60.1.70707"}
 {"id": 6413, "field": "name", "en": "Chief Brigadier Bracers", "hash": "caa292c99a187564", "src": "db2@1.60.1.70532"}
 {"id": 6414, "field": "name", "en": "Seal of Sylvanas", "hash": "bbc609b5a17a2b7e", "src": "db2@1.60.1.70532"}
 {"id": 6415, "field": "name", "en": "Aurora Robe", "hash": "86e7ec979a1bda05", "src": "db2@1.60.1.70532"}
 {"id": 6416, "field": "name", "en": "Aurora Boots", "hash": "efd61d1916d7d787", "src": "db2@1.60.1.70532"}
 {"id": 6417, "field": "name", "en": "Aurora Cloak", "hash": "00fce0dd4d881d28", "src": "db2@1.60.1.70532"}
-{"id": 6418, "field": "name", "en": "Aurora Sash", "hash": "8706986aeff2376a", "src": "db2@1.60.1.70685"}
-{"id": 6419, "field": "name", "en": "Glyphed Mitts", "hash": "84963b520d816286", "src": "db2@1.60.1.70685"}
+{"id": 6418, "field": "name", "en": "Aurora Sash", "hash": "8706986aeff2376a", "src": "db2@1.60.1.70707"}
+{"id": 6419, "field": "name", "en": "Glyphed Mitts", "hash": "84963b520d816286", "src": "db2@1.60.1.70707"}
 {"id": 6420, "field": "name", "en": "Glyphed Boots", "hash": "c44be847b6044db6", "src": "db2@1.60.1.70532"}
 {"id": 6421, "field": "name", "en": "Glyphed Belt", "hash": "a98c9c7f6cca8489", "src": "db2@1.60.1.70532"}
 {"id": 6422, "field": "name", "en": "Glyphed Helm", "hash": "aa5a6e1abd3a3caf", "src": "db2@1.60.1.70532"}
-{"id": 6423, "field": "name", "en": "Blackforge Greaves", "hash": "517d4788b866b707", "src": "db2@1.60.1.70685"}
+{"id": 6423, "field": "name", "en": "Blackforge Greaves", "hash": "517d4788b866b707", "src": "db2@1.60.1.70707"}
 {"id": 6424, "field": "name", "en": "Blackforge Cape", "hash": "1d832ed9287e70c9", "src": "db2@1.60.1.70532"}
 {"id": 6425, "field": "name", "en": "Blackforge Girdle", "hash": "d9a308219b9c2727", "src": "db2@1.60.1.70532"}
 {"id": 6426, "field": "name", "en": "Blackforge Bracers", "hash": "84091e5f6820d606", "src": "db2@1.60.1.70532"}
 {"id": 6427, "field": "name", "en": "Mistscape Robe", "hash": "8792aa72c7f381b3", "src": "db2@1.60.1.70532"}
 {"id": 6428, "field": "name", "en": "Mistscape Gloves", "hash": "252ebb49c0cb44f4", "src": "db2@1.60.1.70532"}
 {"id": 6429, "field": "name", "en": "Mistscape Wizard Hat", "hash": "4203d8665fe23651", "src": "db2@1.60.1.70532"}
-{"id": 6430, "field": "name", "en": "Imperial Leather Breastplate", "hash": "2473e6020812d264", "src": "db2@1.60.1.70685"}
+{"id": 6430, "field": "name", "en": "Imperial Leather Breastplate", "hash": "2473e6020812d264", "src": "db2@1.60.1.70707"}
 {"id": 6431, "field": "name", "en": "Imperial Leather Boots", "hash": "e302d1a35cb17830", "src": "db2@1.60.1.70532"}
 {"id": 6432, "field": "name", "en": "Imperial Cloak", "hash": "bc9b94a97beeef43", "src": "db2@1.60.1.70532"}
 {"id": 6433, "field": "name", "en": "Imperial Leather Helm", "hash": "b2678d329bd71a11", "src": "db2@1.60.1.70532"}
@@ -554,42 +554,42 @@
 {"id": 6533, "field": "description", "en": "When applied to your fishing pole, increases Fishing by 100 for 5 minutes.", "hash": "086645080d53a7ce", "src": "db2@1.60.1.70707"}
 {"id": 6534, "field": "name", "en": "Forged Steel Bars", "hash": "307eaa05bbed4396", "src": "db2@1.60.1.70707"}
 {"id": 6535, "field": "name", "en": "Tablet of Verga", "hash": "bbfeb8dd57df3398", "src": "db2@1.60.1.70707"}
-{"id": 6536, "field": "name", "en": "Willow Vest", "hash": "3572a1184724a0b6", "src": "db2@1.60.1.70685"}
+{"id": 6536, "field": "name", "en": "Willow Vest", "hash": "3572a1184724a0b6", "src": "db2@1.60.1.70707"}
 {"id": 6537, "field": "name", "en": "Willow Boots", "hash": "fbec2dce028464e3", "src": "db2@1.60.1.70532"}
 {"id": 6538, "field": "name", "en": "Willow Robe", "hash": "34ec004439355822", "src": "db2@1.60.1.70532"}
 {"id": 6539, "field": "name", "en": "Willow Belt", "hash": "32c48d673b04b0e8", "src": "db2@1.60.1.70532"}
 {"id": 6540, "field": "name", "en": "Willow Pants", "hash": "efcba4be73afc140", "src": "db2@1.60.1.70532"}
 {"id": 6541, "field": "name", "en": "Willow Gloves", "hash": "9ec849724173cb67", "src": "db2@1.60.1.70532"}
 {"id": 6542, "field": "name", "en": "Willow Cape", "hash": "32e5d0dbb88c1558", "src": "db2@1.60.1.70532"}
-{"id": 6543, "field": "name", "en": "Willow Bracers", "hash": "a5ce237e1a26a709", "src": "db2@1.60.1.70685"}
+{"id": 6543, "field": "name", "en": "Willow Bracers", "hash": "a5ce237e1a26a709", "src": "db2@1.60.1.70707"}
 {"id": 6544, "field": "name", "en": "Voidwalker Summoning Scroll", "hash": "a918f7b138d0ba8a", "src": "db2@1.60.1.70707"}
 {"id": 6544, "field": "description", "en": "Learn Summon Voidwalker.", "hash": "4e5efdd77f8e7a7a", "src": "db2@1.60.1.70707"}
 {"id": 6545, "field": "name", "en": "Soldier's Armor", "hash": "08a33ffe96e98e07", "src": "db2@1.60.1.70532"}
 {"id": 6546, "field": "name", "en": "Soldier's Leggings", "hash": "570748151bc2ccc6", "src": "db2@1.60.1.70532"}
-{"id": 6547, "field": "name", "en": "Soldier's Gauntlets", "hash": "92bbda18f48feb1a", "src": "db2@1.60.1.70685"}
-{"id": 6548, "field": "name", "en": "Soldier's Girdle", "hash": "b350bbe795d189bb", "src": "db2@1.60.1.70685"}
+{"id": 6547, "field": "name", "en": "Soldier's Gauntlets", "hash": "92bbda18f48feb1a", "src": "db2@1.60.1.70707"}
+{"id": 6548, "field": "name", "en": "Soldier's Girdle", "hash": "b350bbe795d189bb", "src": "db2@1.60.1.70707"}
 {"id": 6549, "field": "name", "en": "Soldier's Cloak", "hash": "2af159df0c3d9dfd", "src": "db2@1.60.1.70707"}
 {"id": 6550, "field": "name", "en": "Soldier's Wristguards", "hash": "06edf35c241e7976", "src": "db2@1.60.1.70532"}
 {"id": 6551, "field": "name", "en": "Soldier's Boots", "hash": "19ca9620d58d584b", "src": "db2@1.60.1.70532"}
-{"id": 6552, "field": "name", "en": "Bard's Tunic", "hash": "5b546e371dbbe5b6", "src": "db2@1.60.1.70685"}
+{"id": 6552, "field": "name", "en": "Bard's Tunic", "hash": "5b546e371dbbe5b6", "src": "db2@1.60.1.70707"}
 {"id": 6553, "field": "name", "en": "Bard's Trousers", "hash": "0720bcc5e5e93cc9", "src": "db2@1.60.1.70532"}
 {"id": 6554, "field": "name", "en": "Bard's Gloves", "hash": "58a6dd9ba9bdb4c9", "src": "db2@1.60.1.70532"}
 {"id": 6555, "field": "name", "en": "Bard's Cloak", "hash": "2fb6d7575b791f22", "src": "db2@1.60.1.70707"}
-{"id": 6556, "field": "name", "en": "Bard's Bracers", "hash": "c2b3f3c5b66080e7", "src": "db2@1.60.1.70685"}
+{"id": 6556, "field": "name", "en": "Bard's Bracers", "hash": "c2b3f3c5b66080e7", "src": "db2@1.60.1.70707"}
 {"id": 6557, "field": "name", "en": "Bard's Boots", "hash": "1e90139824c8d981", "src": "db2@1.60.1.70532"}
 {"id": 6558, "field": "name", "en": "Bard's Belt", "hash": "d1528177c593fdd5", "src": "db2@1.60.1.70532"}
 {"id": 6559, "field": "name", "en": "Bard's Buckler", "hash": "d9707eb6efda5a27", "src": "db2@1.60.1.70532"}
 {"id": 6560, "field": "name", "en": "Soldier's Shield", "hash": "6ac219ab94abb288", "src": "db2@1.60.1.70532"}
-{"id": 6561, "field": "name", "en": "Seer's Padded Armor", "hash": "714d1e2e446e20c5", "src": "db2@1.60.1.70685"}
+{"id": 6561, "field": "name", "en": "Seer's Padded Armor", "hash": "714d1e2e446e20c5", "src": "db2@1.60.1.70707"}
 {"id": 6562, "field": "name", "en": "Shimmering Boots", "hash": "93a395e1d35e8181", "src": "db2@1.60.1.70532"}
 {"id": 6563, "field": "name", "en": "Shimmering Bracers", "hash": "fb7d3c9e6e323b8f", "src": "db2@1.60.1.70532"}
 {"id": 6564, "field": "name", "en": "Shimmering Cloak", "hash": "a4ca59a00a0ec733", "src": "db2@1.60.1.70532"}
 {"id": 6565, "field": "name", "en": "Shimmering Gloves", "hash": "41a28a223a9fce67", "src": "db2@1.60.1.70532"}
 {"id": 6566, "field": "name", "en": "Shimmering Amice", "hash": "81cfa963c1d06572", "src": "db2@1.60.1.70707"}
 {"id": 6567, "field": "name", "en": "Shimmering Armor", "hash": "827c3fbf94bab73d", "src": "db2@1.60.1.70532"}
-{"id": 6568, "field": "name", "en": "Shimmering Trousers", "hash": "16210461dad809a4", "src": "db2@1.60.1.70685"}
+{"id": 6568, "field": "name", "en": "Shimmering Trousers", "hash": "16210461dad809a4", "src": "db2@1.60.1.70707"}
 {"id": 6569, "field": "name", "en": "Shimmering Robe", "hash": "824b33dd17ab614e", "src": "db2@1.60.1.70532"}
-{"id": 6570, "field": "name", "en": "Shimmering Sash", "hash": "8269dfb06d81beb3", "src": "db2@1.60.1.70685"}
+{"id": 6570, "field": "name", "en": "Shimmering Sash", "hash": "8269dfb06d81beb3", "src": "db2@1.60.1.70707"}
 {"id": 6571, "field": "name", "en": "Scouting Buckler", "hash": "29805c207785ea45", "src": "db2@1.60.1.70532"}
 {"id": 6572, "field": "name", "en": "Defender Shield", "hash": "d17c6a46927c81b9", "src": "db2@1.60.1.70532"}
 {"id": 6573, "field": "name", "en": "Defender Boots", "hash": "2e1e15c3a99ab3c5", "src": "db2@1.60.1.70532"}
@@ -600,36 +600,36 @@
 {"id": 6578, "field": "name", "en": "Defender Leggings", "hash": "b6ad3506664d69f9", "src": "db2@1.60.1.70532"}
 {"id": 6579, "field": "name", "en": "Defender Spaulders", "hash": "2e79a7413750e9a7", "src": "db2@1.60.1.70707"}
 {"id": 6580, "field": "name", "en": "Defender Tunic", "hash": "6ae27062a28dbffa", "src": "db2@1.60.1.70532"}
-{"id": 6581, "field": "name", "en": "Scouting Belt", "hash": "4ec58eaae98a4920", "src": "db2@1.60.1.70685"}
-{"id": 6582, "field": "name", "en": "Scouting Boots", "hash": "506fd362935f6786", "src": "db2@1.60.1.70685"}
+{"id": 6581, "field": "name", "en": "Scouting Belt", "hash": "4ec58eaae98a4920", "src": "db2@1.60.1.70707"}
+{"id": 6582, "field": "name", "en": "Scouting Boots", "hash": "506fd362935f6786", "src": "db2@1.60.1.70707"}
 {"id": 6583, "field": "name", "en": "Scouting Bracers", "hash": "12c3d12f3e0c1105", "src": "db2@1.60.1.70532"}
-{"id": 6584, "field": "name", "en": "Scouting Tunic", "hash": "8d342e018c5273bb", "src": "db2@1.60.1.70685"}
+{"id": 6584, "field": "name", "en": "Scouting Tunic", "hash": "8d342e018c5273bb", "src": "db2@1.60.1.70707"}
 {"id": 6585, "field": "name", "en": "Scouting Cloak", "hash": "61969721ca0fad27", "src": "db2@1.60.1.70532"}
 {"id": 6586, "field": "name", "en": "Scouting Gloves", "hash": "de26027617440c54", "src": "db2@1.60.1.70532"}
-{"id": 6587, "field": "name", "en": "Scouting Trousers", "hash": "ff3f083cea258a6b", "src": "db2@1.60.1.70685"}
+{"id": 6587, "field": "name", "en": "Scouting Trousers", "hash": "ff3f083cea258a6b", "src": "db2@1.60.1.70707"}
 {"id": 6588, "field": "name", "en": "Scouting Spaulders", "hash": "327cd1d6fb41b6dc", "src": "db2@1.60.1.70707"}
 {"id": 6589, "field": "name", "en": "Viridian Band", "hash": "6786d2ca1bc8d9ce", "src": "db2@1.60.1.70707"}
-{"id": 6590, "field": "name", "en": "Battleforge Boots", "hash": "cfdba357891940f0", "src": "db2@1.60.1.70685"}
+{"id": 6590, "field": "name", "en": "Battleforge Boots", "hash": "cfdba357891940f0", "src": "db2@1.60.1.70707"}
 {"id": 6591, "field": "name", "en": "Battleforge Wristguards", "hash": "e4d760e785cd8782", "src": "db2@1.60.1.70532"}
 {"id": 6592, "field": "name", "en": "Battleforge Armor", "hash": "beb44d354a7576ac", "src": "db2@1.60.1.70532"}
 {"id": 6593, "field": "name", "en": "Battleforge Cloak", "hash": "e1026716bfc98691", "src": "db2@1.60.1.70532"}
 {"id": 6594, "field": "name", "en": "Battleforge Girdle", "hash": "de0a80dd54f45beb", "src": "db2@1.60.1.70532"}
-{"id": 6595, "field": "name", "en": "Battleforge Gauntlets", "hash": "7a3cb92a05fc1f0d", "src": "db2@1.60.1.70685"}
+{"id": 6595, "field": "name", "en": "Battleforge Gauntlets", "hash": "7a3cb92a05fc1f0d", "src": "db2@1.60.1.70707"}
 {"id": 6596, "field": "name", "en": "Battleforge Legguards", "hash": "412437c87ece0374", "src": "db2@1.60.1.70532"}
 {"id": 6597, "field": "name", "en": "Battleforge Shoulderguards", "hash": "862f23d15f2226d3", "src": "db2@1.60.1.70532"}
 {"id": 6598, "field": "name", "en": "Dervish Buckler", "hash": "fd4ad64515381d93", "src": "db2@1.60.1.70532"}
 {"id": 6599, "field": "name", "en": "Battleforge Shield", "hash": "957bdea153ce84b8", "src": "db2@1.60.1.70532"}
-{"id": 6600, "field": "name", "en": "Dervish Belt", "hash": "7cae617f92999f5e", "src": "db2@1.60.1.70685"}
-{"id": 6601, "field": "name", "en": "Dervish Boots", "hash": "ce93b6d4054afe01", "src": "db2@1.60.1.70685"}
+{"id": 6600, "field": "name", "en": "Dervish Belt", "hash": "7cae617f92999f5e", "src": "db2@1.60.1.70707"}
+{"id": 6601, "field": "name", "en": "Dervish Boots", "hash": "ce93b6d4054afe01", "src": "db2@1.60.1.70707"}
 {"id": 6602, "field": "name", "en": "Dervish Bracers", "hash": "e68e4b54dbbe4442", "src": "db2@1.60.1.70532"}
 {"id": 6603, "field": "name", "en": "Dervish Tunic", "hash": "0b581178fe3e0a25", "src": "db2@1.60.1.70532"}
 {"id": 6604, "field": "name", "en": "Dervish Cape", "hash": "7ccfa4f3102103df", "src": "db2@1.60.1.70532"}
-{"id": 6605, "field": "name", "en": "Dervish Gloves", "hash": "6a836711be8b069d", "src": "db2@1.60.1.70685"}
-{"id": 6607, "field": "name", "en": "Dervish Leggings", "hash": "a40558a5f495b2dc", "src": "db2@1.60.1.70685"}
+{"id": 6605, "field": "name", "en": "Dervish Gloves", "hash": "6a836711be8b069d", "src": "db2@1.60.1.70707"}
+{"id": 6607, "field": "name", "en": "Dervish Leggings", "hash": "a40558a5f495b2dc", "src": "db2@1.60.1.70707"}
 {"id": 6608, "field": "name", "en": "Bright Armor", "hash": "58bd6f693f700ded", "src": "db2@1.60.1.70532"}
 {"id": 6609, "field": "name", "en": "Sage's Cloth", "hash": "3dc430f3851fc3f7", "src": "db2@1.60.1.70532"}
 {"id": 6610, "field": "name", "en": "Sage's Robe", "hash": "047048fc2ddcb98f", "src": "db2@1.60.1.70532"}
-{"id": 6611, "field": "name", "en": "Sage's Sash", "hash": "048ef4cf83b316f4", "src": "db2@1.60.1.70685"}
+{"id": 6611, "field": "name", "en": "Sage's Sash", "hash": "048ef4cf83b316f4", "src": "db2@1.60.1.70707"}
 {"id": 6612, "field": "name", "en": "Sage's Boots", "hash": "2c9d637e4e6d20a6", "src": "db2@1.60.1.70532"}
 {"id": 6613, "field": "name", "en": "Sage's Bracers", "hash": "bd1507417fab11cc", "src": "db2@1.60.1.70532"}
 {"id": 6614, "field": "name", "en": "Sage's Cloak", "hash": "3dc4273d851d6647", "src": "db2@1.60.1.70532"}

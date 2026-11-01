@@ -590,10 +590,10 @@
 {"id": 1603, "field": "name", "en": "Tablet of Call Spirit II", "hash": "cfec5fef9853f8d6", "src": "db2@1.60.1.70707"}
 {"id": 1603, "field": "description", "en": "Teaches Call Spirit (Rank 2).", "hash": "57df3b6429254f8a", "src": "db2@1.60.1.70707"}
 {"id": 1607, "field": "name", "en": "Soulkeeper", "hash": "b13121e50bdf27b6", "src": "db2@1.60.1.70532"}
-{"id": 1608, "field": "name", "en": "Skullcrusher Mace", "hash": "ada2d71fd5ba2d83", "src": "db2@1.60.1.70685"}
+{"id": 1608, "field": "name", "en": "Skullcrusher Mace", "hash": "ada2d71fd5ba2d83", "src": "db2@1.60.1.70707"}
 {"id": 1612, "field": "name", "en": "Deprecated Skullsplitter Idol", "hash": "c93cbfe9f5f2f006", "src": "db2@1.60.1.70707"}
 {"id": 1612, "field": "description", "en": "Protects the caster, increasing armor by $s1, Shadow resistance by $s2 and increases health regeneration by $s3 health per 5 sec. for $d.", "hash": "6ab340ac6c1b5d93", "src": "db2@1.60.1.70707"}
-{"id": 1613, "field": "name", "en": "Spiritchaser Staff", "hash": "0c79970eee8803e9", "src": "db2@1.60.1.70685"}
+{"id": 1613, "field": "name", "en": "Spiritchaser Staff", "hash": "0c79970eee8803e9", "src": "db2@1.60.1.70707"}
 {"id": 1619, "field": "name", "en": "Tablet of Lightning Storm II", "hash": "8084e62818b0f7c0", "src": "db2@1.60.1.70707"}
 {"id": 1619, "field": "description", "en": "Teaches Lightning Storm (Rank 2).", "hash": "80d6d2da698f9a42", "src": "db2@1.60.1.70707"}
 {"id": 1622, "field": "name", "en": "Deprecated Foreman's Whip", "hash": "2200fb0882569210", "src": "db2@1.60.1.70707"}
@@ -603,8 +603,8 @@
 {"id": 1630, "field": "name", "en": "Broken Electro-lantern", "hash": "10d8ad9e0bba3a3c", "src": "db2@1.60.1.70707"}
 {"id": 1637, "field": "name", "en": "Letter to Ello", "hash": "d0468059c9999b7e", "src": "db2@1.60.1.70707"}
 {"id": 1638, "field": "name", "en": "Deprecated Thornstone Chunk", "hash": "47a7f0cbeadb4be5", "src": "db2@1.60.1.70707"}
-{"id": 1639, "field": "name", "en": "Grinning Axe", "hash": "2ab826562ba963a1", "src": "db2@1.60.1.70685"}
-{"id": 1640, "field": "name", "en": "Monstrous War Axe", "hash": "8da6826a16d8dac2", "src": "db2@1.60.1.70685"}
+{"id": 1639, "field": "name", "en": "Grinning Axe", "hash": "2ab826562ba963a1", "src": "db2@1.60.1.70707"}
+{"id": 1640, "field": "name", "en": "Monstrous War Axe", "hash": "8da6826a16d8dac2", "src": "db2@1.60.1.70707"}
 {"id": 1641, "field": "name", "en": "Codex of Shadow Word: Pain III", "hash": "cab5a8075820d5a5", "src": "db2@1.60.1.70707"}
 {"id": 1641, "field": "description", "en": "Teaches Shadow Word: Pain (Rank 3).", "hash": "6387a7f507255763", "src": "db2@1.60.1.70707"}
 {"id": 1645, "field": "name", "en": "Moonberry Juice", "hash": "29169a887750cbc4", "src": "db2@1.60.1.70707"}
@@ -886,8 +886,8 @@
 {"id": 1970, "field": "description", "en": "Heals the target for $o1 damage over $d.", "hash": "afe273787ea4b481", "src": "db2@1.60.1.70707"}
 {"id": 1971, "field": "name", "en": "Furlbrow's Deed", "hash": "fdbbe6bbaadc6531", "src": "db2@1.60.1.70707"}
 {"id": 1972, "field": "name", "en": "Westfall Deed", "hash": "ae55840061f0cbd7", "src": "db2@1.60.1.70707"}
-{"id": 1973, "field": "name", "en": "Orb of Deception", "hash": "d7d1ad88511ed1e7", "src": "db2@1.60.1.70685"}
-{"id": 1973, "field": "description", "en": "Transforms caster to look like a member of the opposing faction.", "hash": "a6916fac5c10b76c", "src": "db2@1.60.1.70685"}
+{"id": 1973, "field": "name", "en": "Orb of Deception", "hash": "d7d1ad88511ed1e7", "src": "db2@1.60.1.70707"}
+{"id": 1973, "field": "description", "en": "Transforms caster to look like a member of the opposing faction.", "hash": "a6916fac5c10b76c", "src": "db2@1.60.1.70707"}
 {"id": 1974, "field": "name", "en": "Mindthrust Bracers", "hash": "7072d080e2d068fc", "src": "db2@1.60.1.70532"}
 {"id": 1975, "field": "name", "en": "Pysan's Old Greatsword", "hash": "c57a0ff94db088cc", "src": "db2@1.60.1.70532"}
 {"id": 1976, "field": "name", "en": "Slaghammer", "hash": "3fe1997267b5bc8b", "src": "db2@1.60.1.70532"}

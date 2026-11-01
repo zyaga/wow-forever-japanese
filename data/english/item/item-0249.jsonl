@@ -120,6 +120,12 @@
 {"id": 249515, "field": "description", "en": "Teaches you how to craft a Lesser Eternal Wand.", "hash": "60f97dfa102127fb", "src": "db2@1.60.1.70707"}
 {"id": 249516, "field": "name", "en": "Formula: Enchant Gloves - Advanced Skinning", "hash": "59af46014a00da65", "src": "db2@1.60.1.70707"}
 {"id": 249516, "field": "description", "en": "Teaches you how to permanently enchant gloves to grant +10 Skinning Skill.", "hash": "98dfc05ff836c72f", "src": "db2@1.60.1.70707"}
+{"id": 249519, "field": "name", "en": "Formula: Frozen Heart of the Mountain", "hash": "c91c8c9f78493263", "src": "db2@1.60.1.70707"}
+{"id": 249519, "field": "description", "en": "Teaches you how to craft a Frozen Heart of the Mountain.", "hash": "60d948cb1221d52c", "src": "db2@1.60.1.70707"}
+{"id": 249520, "field": "name", "en": "Formula: Molten Heart of the Mountain", "hash": "4e09a03dc37e013d", "src": "db2@1.60.1.70707"}
+{"id": 249520, "field": "description", "en": "Teaches you how to craft a Molten Heart of the Mountain.", "hash": "662a516a9098a7f3", "src": "db2@1.60.1.70707"}
+{"id": 249521, "field": "name", "en": "Formula: Dormant Heart of the Mountain", "hash": "12439ae7b9b6744f", "src": "db2@1.60.1.70707"}
+{"id": 249521, "field": "description", "en": "Teaches you how to craft a Dormant Heart of the Mountain.", "hash": "5cf8d7f869fde204", "src": "db2@1.60.1.70707"}
 {"id": 249522, "field": "name", "en": "Formula: Greater Eternal Wand", "hash": "6748d90f740261bf", "src": "db2@1.60.1.70707"}
 {"id": 249522, "field": "description", "en": "Teaches you how to craft a Greater Eternal Wand.", "hash": "b70c4b7c921bf2b9", "src": "db2@1.60.1.70707"}
 {"id": 249523, "field": "name", "en": "Formula: Enchant 2H Weapon - Strength", "hash": "a9ec4eb4e752cbf2", "src": "db2@1.60.1.70707"}

@@ -8,7 +8,7 @@ WFJ.Data.add("spell", {
   [1224428] = { "Scourgeの軍勢が力を増しています。", "Scourgeの軍勢と交戦しています。\n\nSeal of the Dawnから得られる恩恵はRank $N1を超えません。", 0xc72f3794, 0xa8fb80a9, "uu" },
   [1224553] = { "Holy ShockとHoly Lightの呪文のクリティカル率を$N1%上昇させます。", nil, 0x0a423554, nil, "um" },
   [1224692] = { "呪文によるすべての回復量を$N1%、受けるすべての回復量を$N2%増加させます。", nil, 0x4065c70b, nil, "um" },
-  [1224697] = { "スタミナの合計を$N1%増加させ、Divine Shield、Divine Protection、Templar's Bulwarkの呪文のクールダウンを$N2秒短縮します。", nil, 0x6ff8c6b6, nil, "um" },
+  [1224697] = { "Divine Shield、Divine Protection、Templar's Bulwarkの呪文のクールダウンを$D1短縮し、Forbearanceの効果時間を$D2短縮します。", nil, 0xabb5a77c, nil, "um" },
   [1224716] = { "Backstabのクリティカル率を$N1%、Mutilateのクリティカル率を$N2%上昇させ、Backstabに$N3%の確率でCombo Pointを追加で一つ加える効果を与えます。", nil, 0xdad38dd6, nil, "um" },
   [1224782] = { "SapとBlindのアビリティのエネルギーコストを$N1%減少させます。", nil, 0x0a58f6d1, nil, "um" },
 })

@@ -124,7 +124,8 @@
 {"id": 1269600, "field": "name", "en": "Forge Delivery Receipt", "hash": "bdf1acc421e89626", "src": "db2@1.60.1.70707"}
 {"id": 1269600, "field": "description", "en": "Slap a forged delivery receipt onto an empty Waylaid Crate, allowing you to return it to the $?pc923[Durotar Supply and Logistics][Azeroth Commerce Authority] for +$s2 reputation.", "hash": "aae3ce9d0b3d9c19", "src": "db2@1.60.1.70707"}
 {"id": 1269603, "field": "name", "en": "Dire Laceration", "hash": "880c101f03ff4080", "src": "db2@1.60.1.70707"}
-{"id": 1269603, "field": "aura", "en": "Bleeding for $S1 damage every $T1 sec.", "hash": "b19a98cb8da85554", "src": "db2@1.60.1.70707"}
+{"id": 1269603, "field": "description", "en": "The Wild King tears at the target with his claws, causing them to bleed for $S1 physical damage every $T1 sec and reducing their healing received by $S3%.", "hash": "edc6a3446b521dc6", "src": "db2@1.60.1.70707"}
+{"id": 1269603, "field": "aura", "en": "Bleeding for $S1 damage every $T1 sec. \r\n\r\nHealing received reduced by $S3%.", "hash": "a3a566cf4e417a9e", "src": "db2@1.60.1.70707"}
 {"id": 1269624, "field": "name", "en": "Malignancy", "hash": "eb0403d4d4934f9d", "src": "db2@1.60.1.70707"}
 {"id": 1269624, "field": "aura", "en": "Suffering $S1 Nature damage every $T1 sec.", "hash": "ac4e457403eee153", "src": "db2@1.60.1.70707"}
 {"id": 1269632, "field": "name", "en": "Silken Tomb", "hash": "882eed249bb980aa", "src": "db2@1.60.1.70707"}

@@ -126,7 +126,7 @@
 {"id": 13095, "field": "description", "en": "+$s1 Attack Power.", "hash": "ff5c97b29bc1954f", "src": "wago@1.15.9.69722"}
 {"id": 13096, "field": "name", "en": "Band of the Hierophant", "hash": "43f8055120322ba2", "src": "db2@1.60.1.70532"}
 {"id": 13097, "field": "name", "en": "Thunderbrow Ring", "hash": "5b258afa8925be05", "src": "db2@1.60.1.70532"}
-{"id": 13099, "field": "name", "en": "Moccasins of the White Hare", "hash": "5d516dd53d635229", "src": "db2@1.60.1.70685"}
+{"id": 13099, "field": "name", "en": "Moccasins of the White Hare", "hash": "5d516dd53d635229", "src": "db2@1.60.1.70707"}
 {"id": 13100, "field": "name", "en": "Furen's Boots", "hash": "f736592cc7c3a612", "src": "db2@1.60.1.70532"}
 {"id": 13101, "field": "name", "en": "Wolfrunner Shoes", "hash": "e22ae7bd1404cb24", "src": "db2@1.60.1.70532"}
 {"id": 13101, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1.", "hash": "76cbff0ecf96af60", "src": "wago@1.15.9.69722"}
@@ -142,7 +142,7 @@
 {"id": 13110, "field": "name", "en": "Wolffear Harness", "hash": "527466cf4b27c6fa", "src": "db2@1.60.1.70532"}
 {"id": 13111, "field": "name", "en": "Sandals of the Insurgent", "hash": "512382910fd76515", "src": "db2@1.60.1.70532"}
 {"id": 13112, "field": "name", "en": "Winged Helm", "hash": "62ba09ecad5b1a9d", "src": "db2@1.60.1.70532"}
-{"id": 13113, "field": "name", "en": "Feathermoon Headdress", "hash": "9d29c9f90cd7bdf9", "src": "db2@1.60.1.70685"}
+{"id": 13113, "field": "name", "en": "Feathermoon Headdress", "hash": "9d29c9f90cd7bdf9", "src": "db2@1.60.1.70707"}
 {"id": 13114, "field": "name", "en": "Troll's Bane Leggings", "hash": "82fc6005cbb41641", "src": "db2@1.60.1.70532"}
 {"id": 13115, "field": "name", "en": "Sheepshear Mantle", "hash": "db8d921f8b1ceb2e", "src": "db2@1.60.1.70532"}
 {"id": 13116, "field": "name", "en": "Spaulders of the Unseen", "hash": "129f058736cef4c2", "src": "db2@1.60.1.70532"}
@@ -152,14 +152,14 @@
 {"id": 13120, "field": "name", "en": "Deepfury Bracers", "hash": "2c05737d4711ccec", "src": "db2@1.60.1.70532"}
 {"id": 13121, "field": "name", "en": "Wing of the Whelpling", "hash": "075df09db55cea2f", "src": "db2@1.60.1.70532"}
 {"id": 13122, "field": "name", "en": "Dark Phantom Cape", "hash": "a6ddadfe83adcb59", "src": "db2@1.60.1.70532"}
-{"id": 13123, "field": "name", "en": "Dreamwalker Armor", "hash": "c37c732eaf96e78a", "src": "db2@1.60.1.70685"}
+{"id": 13123, "field": "name", "en": "Dreamwalker Armor", "hash": "c37c732eaf96e78a", "src": "db2@1.60.1.70707"}
 {"id": 13124, "field": "name", "en": "Ravasaur Scale Boots", "hash": "4008af633ea9f1c3", "src": "db2@1.60.1.70532"}
 {"id": 13125, "field": "name", "en": "Elven Chain Boots", "hash": "fbb95c51bb6da06d", "src": "db2@1.60.1.70532"}
 {"id": 13126, "field": "name", "en": "Battlecaller Gauntlets", "hash": "2392c7e717d53cad", "src": "db2@1.60.1.70532"}
 {"id": 13127, "field": "name", "en": "Frostreaver Crown", "hash": "e9db4465468100ab", "src": "db2@1.60.1.70532"}
 {"id": 13128, "field": "name", "en": "High Bergg Helm", "hash": "6af27fa8eb299e11", "src": "db2@1.60.1.70532"}
 {"id": 13129, "field": "name", "en": "Firemane Leggings", "hash": "9e3577ddd0d9f665", "src": "db2@1.60.1.70532"}
-{"id": 13130, "field": "name", "en": "Windrunner Legguards", "hash": "a3fd5a72d0262b55", "src": "db2@1.60.1.70685"}
+{"id": 13130, "field": "name", "en": "Windrunner Legguards", "hash": "a3fd5a72d0262b55", "src": "db2@1.60.1.70707"}
 {"id": 13131, "field": "name", "en": "Sparkleshell Mantle", "hash": "8cf5ed32a4c9b261", "src": "db2@1.60.1.70532"}
 {"id": 13132, "field": "name", "en": "Skeletal Shoulders", "hash": "16a8025a6489a45a", "src": "db2@1.60.1.70532"}
 {"id": 13133, "field": "name", "en": "Drakesfire Epaulets", "hash": "d6f8530188b515cd", "src": "db2@1.60.1.70532"}

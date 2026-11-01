@@ -25,8 +25,36 @@
 {"id": 251338, "field": "description", "en": "Teaches you how to craft Sterling Silver Shoulders.", "hash": "335f37e2e16c60a5", "src": "db2@1.60.1.70707"}
 {"id": 251339, "field": "name", "en": "Plans: Sterling Silver Breastplate", "hash": "92e71ebddf0269ea", "src": "db2@1.60.1.70707"}
 {"id": 251339, "field": "description", "en": "Teaches you how to craft Sterling Silver Breastplate.", "hash": "8879d71f6e5e318c", "src": "db2@1.60.1.70707"}
+{"id": 251340, "field": "name", "en": "Plans: Veteran's Chain Shirt", "hash": "929e046baa7da293", "src": "db2@1.60.1.70707"}
+{"id": 251340, "field": "description", "en": "Teaches you how to craft Veteran's Chain Shirt.", "hash": "1dfa157a329897c9", "src": "db2@1.60.1.70707"}
 {"id": 251341, "field": "name", "en": "Plans: Guard's Chain Shirt", "hash": "acec13d662c18223", "src": "db2@1.60.1.70707"}
 {"id": 251341, "field": "description", "en": "Teaches you how to craft Guard's Chain Shirt.", "hash": "a05aebe974262efd", "src": "db2@1.60.1.70707"}
+{"id": 251342, "field": "name", "en": "Plans: Protector's Chain Shirt", "hash": "88ac26b46ef758a3", "src": "db2@1.60.1.70707"}
+{"id": 251342, "field": "description", "en": "Teaches you how to craft Protector's Chain Shirt.", "hash": "8ddc839d96c93631", "src": "db2@1.60.1.70707"}
+{"id": 251343, "field": "name", "en": "Plans: Acolyte's Chain Shirt", "hash": "d983efc7ee8bf662", "src": "db2@1.60.1.70707"}
+{"id": 251343, "field": "description", "en": "Teaches you how to craft Acolyte's Chain Shirt.", "hash": "65a18642bf56e1c1", "src": "db2@1.60.1.70707"}
+{"id": 251344, "field": "name", "en": "Plans: Crusader's Chain Shirt", "hash": "b6e97571167b93cc", "src": "db2@1.60.1.70707"}
+{"id": 251344, "field": "description", "en": "Teaches you how to craft Crusader's Chain Shirt.", "hash": "6db9184add5e63fe", "src": "db2@1.60.1.70707"}
+{"id": 251345, "field": "name", "en": "Plans: Veteran's Chain Leggings", "hash": "c7eaabc7e9077dfd", "src": "db2@1.60.1.70707"}
+{"id": 251345, "field": "description", "en": "Teaches you how to craft Veteran's Chain Leggings.", "hash": "08be00f553683160", "src": "db2@1.60.1.70707"}
+{"id": 251346, "field": "name", "en": "Plans: Guard's Chain Leggings", "hash": "3c18d048832d307d", "src": "db2@1.60.1.70707"}
+{"id": 251346, "field": "description", "en": "Teaches you how to craft Guard's Chain Leggings.", "hash": "94f49314e77370a8", "src": "db2@1.60.1.70707"}
+{"id": 251347, "field": "name", "en": "Plans: Protector's Chain Leggings", "hash": "9074b94b0791bd8f", "src": "db2@1.60.1.70707"}
+{"id": 251347, "field": "description", "en": "Teaches you how to craft Protector's Chain Leggings.", "hash": "82e82d17f6d98e48", "src": "db2@1.60.1.70707"}
+{"id": 251348, "field": "name", "en": "Plans: Acolyte's Chain Leggings", "hash": "1f5258a3873369cb", "src": "db2@1.60.1.70707"}
+{"id": 251348, "field": "description", "en": "Teaches you how to craft Acolyte's Chain Leggings.", "hash": "c2cb73d6a98f944f", "src": "db2@1.60.1.70707"}
+{"id": 251349, "field": "name", "en": "Plans: Crusader's Chain Leggings", "hash": "757b39878c0de3d6", "src": "db2@1.60.1.70707"}
+{"id": 251349, "field": "description", "en": "Teaches you how to craft Crusader's Chain Leggings.", "hash": "2512b29ccd30d083", "src": "db2@1.60.1.70707"}
+{"id": 251350, "field": "name", "en": "Plans: Veteran's Chain Helm", "hash": "05813ab88108d156", "src": "db2@1.60.1.70707"}
+{"id": 251350, "field": "description", "en": "Teaches you how to craft Veteran's Chain Helm.", "hash": "022917c28172b138", "src": "db2@1.60.1.70707"}
+{"id": 251351, "field": "name", "en": "Plans: Guard's Chain Helm", "hash": "f41e293baa4e8f02", "src": "db2@1.60.1.70707"}
+{"id": 251351, "field": "description", "en": "Teaches you how to craft Guard's Chain Helm.", "hash": "478d7f0209c0c954", "src": "db2@1.60.1.70707"}
+{"id": 251352, "field": "name", "en": "Plans: Protector's Chain Helm", "hash": "32601daa1dff03ab", "src": "db2@1.60.1.70707"}
+{"id": 251352, "field": "description", "en": "Teaches you how to craft Protector's Chain Helm.", "hash": "9b712c21626fc7ed", "src": "db2@1.60.1.70707"}
+{"id": 251353, "field": "name", "en": "Plans: Acolyte's Chain Helm", "hash": "199686c665f8ba34", "src": "db2@1.60.1.70707"}
+{"id": 251353, "field": "description", "en": "Teaches you how to craft Acolyte's Chain Helm.", "hash": "490f031ec5810507", "src": "db2@1.60.1.70707"}
+{"id": 251354, "field": "name", "en": "Plans: Crusader's Chain Helm", "hash": "73378bb2d6169697", "src": "db2@1.60.1.70707"}
+{"id": 251354, "field": "description", "en": "Teaches you how to craft Crusader's Chain Helm.", "hash": "0c8a4e7f0993e79b", "src": "db2@1.60.1.70707"}
 {"id": 251355, "field": "name", "en": "Plans: Veteran's Boots", "hash": "f0da28aeb5a3f9e6", "src": "db2@1.60.1.70707"}
 {"id": 251355, "field": "description", "en": "Teaches you how to craft Veteran's Boots.", "hash": "dcc4b5b748732004", "src": "db2@1.60.1.70707"}
 {"id": 251356, "field": "name", "en": "Plans: Guard's Boots", "hash": "887dfb2974853d09", "src": "db2@1.60.1.70707"}
@@ -107,6 +135,8 @@
 {"id": 251393, "field": "description", "en": "Teaches you how to craft Shining Mithril Pauldrons.", "hash": "9c557d057a2343af", "src": "db2@1.60.1.70707"}
 {"id": 251394, "field": "name", "en": "Plans: Shining Mithril Boots", "hash": "e0cf86e629a30e95", "src": "db2@1.60.1.70707"}
 {"id": 251394, "field": "description", "en": "Teaches you how to craft Shining Mithril Boots.", "hash": "214fdb337a8fb2bf", "src": "db2@1.60.1.70707"}
+{"id": 251395, "field": "name", "en": "Plans: Shining Mithril Helm", "hash": "7f941b49580bd4b7", "src": "db2@1.60.1.70707"}
+{"id": 251395, "field": "description", "en": "Teaches you how to craft Shining Mithril Helm.", "hash": "79d2032bd88111ae", "src": "db2@1.60.1.70707"}
 {"id": 251396, "field": "name", "en": "Plans: Shining Mithril Pants", "hash": "d4aefdd69ace6af2", "src": "db2@1.60.1.70707"}
 {"id": 251396, "field": "description", "en": "Teaches you how to craft Shining Mithril Pants.", "hash": "eca9b7e031dc1314", "src": "db2@1.60.1.70707"}
 {"id": 251397, "field": "name", "en": "Plans: Shining Mithril Gauntlet", "hash": "63d489593cee34d8", "src": "db2@1.60.1.70707"}

@@ -3,7 +3,7 @@
 {"id": 17003, "field": "name", "en": "Heart of the Wild", "hash": "d15aaaf550824e31", "src": "db2@1.60.1.70707"}
 {"id": 17003, "field": "description", "en": "Increases your Intellect by $s1%.  In addition, while in Bear Form or Dire Bear Form your Stamina is increased by $s2% and while in Cat Form your Strength is increased by $s3%.", "hash": "b8e7a7284da7a161", "src": "db2@1.60.1.70707"}
 {"id": 17007, "field": "name", "en": "Leader of the Pack", "hash": "f9658bb0d8295ca0", "src": "db2@1.60.1.70707"}
-{"id": 17007, "field": "description", "en": "While in Cat Form, Bear Form, or Dire Bear Form, the Leader of the Pack increases the melee and ranged Critical Strike chance of all party or raid members within $24932a1 yards by $24932s1%.", "hash": "057ab50b6fac170e", "src": "db2@1.60.1.70707"}
+{"id": 17007, "field": "description", "en": "While in Cat Form, Bear Form, or Dire Bear Form, the Leader of the Pack increases the Critical Strike chance of all party or raid members within $24932a1 yards by $24932s1%.", "hash": "33f8cc1f540d2af9", "src": "db2@1.60.1.70707"}
 {"id": 17008, "field": "name", "en": "Drain Mana", "hash": "346f2d0ad31676a2", "src": "db2@1.60.1.70707"}
 {"id": 17008, "field": "description", "en": "Drains up to $o1 mana from an enemy over $d. and transfers it to the caster.", "hash": "55b7bb58cb679656", "src": "db2@1.60.1.70707"}
 {"id": 17008, "field": "aura", "en": "$o1 mana leeched over $d.", "hash": "84856b709d9b464a", "src": "db2@1.60.1.70707"}
@@ -58,7 +58,7 @@
 {"id": 17063, "field": "description", "en": "Gives your Arcane and Nature spells a $m1% chance to not lose casting time when you take damage.", "hash": "693433737b4be4a1", "src": "db2@1.60.1.70707"}
 {"id": 17064, "field": "name", "en": "Summon Rotting Worms", "hash": "ff4edef82ec7af70", "src": "db2@1.60.1.70707"}
 {"id": 17069, "field": "name", "en": "Naturalist", "hash": "f31bba534de2079a", "src": "db2@1.60.1.70707"}
-{"id": 17069, "field": "description", "en": "Reduces the cast time of your Healing Touch spell by $/1000;S1 sec and increases all damage you deal by $m2%.", "hash": "bdfe06262bb4072e", "src": "db2@1.60.1.70707"}
+{"id": 17069, "field": "description", "en": "Reduces the cast time of your Healing Touch and Wild Growth spells by $/1000;S1 sec and increases all damage you deal by $m2%.", "hash": "b357f79e6a3c0add", "src": "db2@1.60.1.70707"}
 {"id": 17074, "field": "name", "en": "Improved Regrowth", "hash": "d34dcd7c06800bf9", "src": "db2@1.60.1.70707"}
 {"id": 17074, "field": "description", "en": "Increases the critical effect chance of your Regrowth spell by $s1%.", "hash": "4f3f1f263543a9b4", "src": "db2@1.60.1.70707"}
 {"id": 17079, "field": "name", "en": "Improved Enrage", "hash": "33baf62fabac5848", "src": "db2@1.60.1.70707"}

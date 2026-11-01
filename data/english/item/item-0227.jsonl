@@ -529,8 +529,8 @@
 {"id": 227809, "field": "description", "en": "+$s1 Weapon Damage.", "hash": "f887b76a4d870c20", "src": "wago@1.15.9.69722"}
 {"id": 227810, "field": "name", "en": "Dense Timbermaw Boots", "hash": "f448614d123ce299", "src": "db2@1.60.1.70532"}
 {"id": 227810, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreased Defense +$s1.", "hash": "ff2db7fc13d1e425", "src": "wago@1.15.9.69722"}
-{"id": 227813, "field": "name", "en": "Drinkable Stratholme Holy Water", "hash": "74900b43f385df5a", "src": "db2@1.60.1.70685"}
-{"id": 227813, "field": "description", "en": "Restores $o1 mana over $d.  Must remain seated while drinking.", "hash": "792a9d04713a780c", "src": "db2@1.60.1.70685"}
+{"id": 227813, "field": "name", "en": "Drinkable Stratholme Holy Water", "hash": "74900b43f385df5a", "src": "db2@1.60.1.70707"}
+{"id": 227813, "field": "description", "en": "Restores $o1 mana over $d.  Must remain seated while drinking.", "hash": "792a9d04713a780c", "src": "db2@1.60.1.70707"}
 {"id": 227814, "field": "name", "en": "Radiant Girdle of the Dawn", "hash": "116557299fe70cca", "src": "db2@1.60.1.70532"}
 {"id": 227814, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "b510d4fbab325130", "src": "wago@1.15.9.69722"}
 {"id": 227815, "field": "name", "en": "Fine Dawn Treaders", "hash": "4ce77181bfe3b407", "src": "db2@1.60.1.70532"}

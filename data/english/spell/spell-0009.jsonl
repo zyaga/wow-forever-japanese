@@ -392,7 +392,7 @@
 {"id": 9438, "field": "aura", "en": "Immune to all attacks and spells.\r\nCannot attack or use spells.", "hash": "469e671966d60ca6", "src": "db2@1.60.1.70707"}
 {"id": 9439, "field": "name", "en": "Bear Captured in Trap", "hash": "dbac641ce8a4255a", "src": "db2@1.60.1.70707"}
 {"id": 9452, "field": "name", "en": "Vindication", "hash": "7ad20d4285ef9e9e", "src": "db2@1.60.1.70707"}
-{"id": 9452, "field": "description", "en": "Gives your damaging melee attacks a chance to reduce the target's Attack Power by ${$m1/-3*$440667m1}, and increase your Attack Power by $m1% for $440667d.", "hash": "950797fdca82113e", "src": "db2@1.60.1.70707"}
+{"id": 9452, "field": "description", "en": "Gives your damaging melee attacks a chance to reduce the target's Attack Power by ${$m1/-3*$440667m1} for $440667d.", "hash": "44f517fdaf558df5", "src": "db2@1.60.1.70707"}
 {"id": 9453, "field": "name", "en": "Unyielding Faith", "hash": "cb74c12822fde23f", "src": "db2@1.60.1.70707"}
 {"id": 9453, "field": "description", "en": "Reduces the duration of Fear and Disorient effects on you by $s1%.", "hash": "f8a9be6ae9c02520", "src": "db2@1.60.1.70707"}
 {"id": 9454, "field": "name", "en": "Freeze", "hash": "a4eb2d77eb1678ad", "src": "db2@1.60.1.70707"}

@@ -63,8 +63,8 @@
 {"id": 274045, "field": "name", "en": "Twisted Earth Totem", "hash": "a5d765d8042def63", "src": "db2@1.60.1.70707"}
 {"id": 274046, "field": "name", "en": "Twisted Water Totem", "hash": "d68901e208387902", "src": "db2@1.60.1.70707"}
 {"id": 274047, "field": "name", "en": "Twisted Air Totem", "hash": "ff3221b457a58064", "src": "db2@1.60.1.70707"}
-{"id": 274048, "field": "name", "en": "9-60 Battery Pack", "hash": "f4f5a8e0aeeff50f", "src": "db2@1.60.1.70685"}
-{"id": 274048, "field": "description", "en": "Restore $s1 charges to a Manual Crowd Pummeler device in your possession.", "hash": "aac732e36c7464f8", "src": "db2@1.60.1.70685"}
+{"id": 274048, "field": "name", "en": "9-60 Battery Pack", "hash": "f4f5a8e0aeeff50f", "src": "db2@1.60.1.70707"}
+{"id": 274048, "field": "description", "en": "Restore $s1 charges to a Manual Crowd Pummeler device in your possession.", "hash": "aac732e36c7464f8", "src": "db2@1.60.1.70707"}
 {"id": 274049, "field": "name", "en": "Schematic: 9-60 Battery Pack", "hash": "811a5228d805877a", "src": "db2@1.60.1.70532"}
 {"id": 274049, "field": "description", "en": "Teaches you how to make a 9-60 Battery Pack.", "hash": "4360919ee65dfe1b", "src": "db2@1.60.1.70532"}
 {"id": 274068, "field": "name", "en": "Thermaplugg Medal of Honor", "hash": "a29224f3fe0288d5", "src": "db2@1.60.1.70532"}

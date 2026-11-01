@@ -200,90 +200,90 @@
 {"id": 15208, "field": "description", "en": "Apply near a Moonkin Stone to bring forth the stone's defender, Lunaclaw.", "hash": "a6b3a0f326de6269", "src": "db2@1.60.1.70707"}
 {"id": 15209, "field": "name", "en": "Relic Bundle", "hash": "7740f0eca1d53766", "src": "db2@1.60.1.70707"}
 {"id": 15209, "field": "description", "en": "Place in the Darrowshire Town Square.", "hash": "9a965a33ca027e2a", "src": "db2@1.60.1.70707"}
-{"id": 15210, "field": "name", "en": "Raider Shortsword", "hash": "69b237e6b4e880b2", "src": "db2@1.60.1.70685"}
+{"id": 15210, "field": "name", "en": "Raider Shortsword", "hash": "69b237e6b4e880b2", "src": "db2@1.60.1.70707"}
 {"id": 15211, "field": "name", "en": "Militant Shortsword", "hash": "9ccd9f3c2c74b59d", "src": "db2@1.60.1.70707"}
-{"id": 15212, "field": "name", "en": "Fighter Broadsword", "hash": "a13bd4274ab0db73", "src": "db2@1.60.1.70685"}
+{"id": 15212, "field": "name", "en": "Fighter Broadsword", "hash": "a13bd4274ab0db73", "src": "db2@1.60.1.70707"}
 {"id": 15213, "field": "name", "en": "Mercenary Blade", "hash": "1769278eeb2d42da", "src": "db2@1.60.1.70532"}
-{"id": 15214, "field": "name", "en": "Nobles Brand", "hash": "42355fa1a8d6fb5f", "src": "db2@1.60.1.70685"}
+{"id": 15214, "field": "name", "en": "Nobles Brand", "hash": "42355fa1a8d6fb5f", "src": "db2@1.60.1.70707"}
 {"id": 15215, "field": "name", "en": "Furious Falchion", "hash": "ce2d817feaab1d5e", "src": "db2@1.60.1.70532"}
 {"id": 15216, "field": "name", "en": "Rune Sword", "hash": "65312d30b63adce2", "src": "db2@1.60.1.70532"}
-{"id": 15217, "field": "name", "en": "Widow Blade", "hash": "267b9373084780aa", "src": "db2@1.60.1.70685"}
+{"id": 15217, "field": "name", "en": "Widow Blade", "hash": "267b9373084780aa", "src": "db2@1.60.1.70707"}
 {"id": 15218, "field": "name", "en": "Crystal Sword", "hash": "c6424875bf58628c", "src": "db2@1.60.1.70532"}
-{"id": 15219, "field": "name", "en": "Dimensional Blade", "hash": "0c6bbef29ff43931", "src": "db2@1.60.1.70685"}
+{"id": 15219, "field": "name", "en": "Dimensional Blade", "hash": "0c6bbef29ff43931", "src": "db2@1.60.1.70707"}
 {"id": 15220, "field": "name", "en": "Battlefell Sabre", "hash": "69448202df4aac5e", "src": "db2@1.60.1.70532"}
 {"id": 15221, "field": "name", "en": "Holy War Sword", "hash": "786f0451b3711218", "src": "db2@1.60.1.70532"}
-{"id": 15222, "field": "name", "en": "Barbed Club", "hash": "e91a8471775c07f2", "src": "db2@1.60.1.70685"}
+{"id": 15222, "field": "name", "en": "Barbed Club", "hash": "e91a8471775c07f2", "src": "db2@1.60.1.70707"}
 {"id": 15223, "field": "name", "en": "Jagged Star", "hash": "8865104ecfb5aeb1", "src": "db2@1.60.1.70532"}
 {"id": 15224, "field": "name", "en": "Battlesmasher", "hash": "8735d2259cf181b8", "src": "db2@1.60.1.70707"}
 {"id": 15225, "field": "name", "en": "Sequoia Hammer", "hash": "d232aae054f319c7", "src": "db2@1.60.1.70532"}
-{"id": 15226, "field": "name", "en": "Giant Club", "hash": "408fb3c4b1a29ac4", "src": "db2@1.60.1.70685"}
-{"id": 15227, "field": "name", "en": "Diamond-Tip Bludgeon", "hash": "3c2b36418a1dc200", "src": "db2@1.60.1.70685"}
-{"id": 15228, "field": "name", "en": "Smashing Star", "hash": "f186d533c0703a7f", "src": "db2@1.60.1.70685"}
+{"id": 15226, "field": "name", "en": "Giant Club", "hash": "408fb3c4b1a29ac4", "src": "db2@1.60.1.70707"}
+{"id": 15227, "field": "name", "en": "Diamond-Tip Bludgeon", "hash": "3c2b36418a1dc200", "src": "db2@1.60.1.70707"}
+{"id": 15228, "field": "name", "en": "Smashing Star", "hash": "f186d533c0703a7f", "src": "db2@1.60.1.70707"}
 {"id": 15229, "field": "name", "en": "Blesswind Hammer", "hash": "469e49485794f51a", "src": "db2@1.60.1.70532"}
 {"id": 15230, "field": "name", "en": "Ridge Cleaver", "hash": "78dbbd7b7f2663a6", "src": "db2@1.60.1.70532"}
 {"id": 15231, "field": "name", "en": "Splitting Hatchet", "hash": "0b64cf228fe229d5", "src": "db2@1.60.1.70532"}
-{"id": 15232, "field": "name", "en": "Hacking Cleaver", "hash": "6e19939343db6486", "src": "db2@1.60.1.70685"}
+{"id": 15232, "field": "name", "en": "Hacking Cleaver", "hash": "6e19939343db6486", "src": "db2@1.60.1.70707"}
 {"id": 15233, "field": "name", "en": "Savage Axe", "hash": "ba65da36f7b57425", "src": "db2@1.60.1.70532"}
-{"id": 15234, "field": "name", "en": "Greater Scythe", "hash": "b360b75ab7ccce4a", "src": "db2@1.60.1.70685"}
+{"id": 15234, "field": "name", "en": "Greater Scythe", "hash": "b360b75ab7ccce4a", "src": "db2@1.60.1.70707"}
 {"id": 15235, "field": "name", "en": "Crescent Edge", "hash": "73c7f2f1135af70b", "src": "db2@1.60.1.70532"}
-{"id": 15236, "field": "name", "en": "Moon Cleaver", "hash": "ee68398aa3d45c0e", "src": "db2@1.60.1.70685"}
-{"id": 15237, "field": "name", "en": "Corpse Harvester", "hash": "be0983d1efd5263f", "src": "db2@1.60.1.70685"}
+{"id": 15236, "field": "name", "en": "Moon Cleaver", "hash": "ee68398aa3d45c0e", "src": "db2@1.60.1.70707"}
+{"id": 15237, "field": "name", "en": "Corpse Harvester", "hash": "be0983d1efd5263f", "src": "db2@1.60.1.70707"}
 {"id": 15238, "field": "name", "en": "Warlord's Axe", "hash": "76fd3e9615de72a4", "src": "db2@1.60.1.70532"}
-{"id": 15239, "field": "name", "en": "Felstone Reaver", "hash": "75f463b2d909b470", "src": "db2@1.60.1.70685"}
+{"id": 15239, "field": "name", "en": "Felstone Reaver", "hash": "75f463b2d909b470", "src": "db2@1.60.1.70707"}
 {"id": 15240, "field": "name", "en": "Demon's Claw", "hash": "9903dc42323309b7", "src": "db2@1.60.1.70532"}
 {"id": 15241, "field": "name", "en": "Battle Knife", "hash": "ce04ff0115f3aa03", "src": "db2@1.60.1.70532"}
-{"id": 15242, "field": "name", "en": "Honed Stiletto", "hash": "eed7e700b787fc04", "src": "db2@1.60.1.70685"}
-{"id": 15243, "field": "name", "en": "Deadly Kris", "hash": "a3aa318e6b21faf2", "src": "db2@1.60.1.70685"}
+{"id": 15242, "field": "name", "en": "Honed Stiletto", "hash": "eed7e700b787fc04", "src": "db2@1.60.1.70707"}
+{"id": 15243, "field": "name", "en": "Deadly Kris", "hash": "a3aa318e6b21faf2", "src": "db2@1.60.1.70707"}
 {"id": 15244, "field": "name", "en": "Razor Blade", "hash": "e68459a8afc5e8ae", "src": "db2@1.60.1.70532"}
-{"id": 15245, "field": "name", "en": "Vorpal Dagger", "hash": "350de917465a0183", "src": "db2@1.60.1.70685"}
-{"id": 15246, "field": "name", "en": "Demon Blade", "hash": "8c3297b0475417a4", "src": "db2@1.60.1.70685"}
-{"id": 15247, "field": "name", "en": "Bloodstrike Dagger", "hash": "c61414f4cef4c7bf", "src": "db2@1.60.1.70685"}
-{"id": 15248, "field": "name", "en": "Gleaming Claymore", "hash": "914c541fff3e1b41", "src": "db2@1.60.1.70685"}
-{"id": 15249, "field": "name", "en": "Polished Zweihander", "hash": "258fd5f3e0085660", "src": "db2@1.60.1.70685"}
-{"id": 15250, "field": "name", "en": "Glimmering Flamberge", "hash": "fac74efca4c7118c", "src": "db2@1.60.1.70685"}
+{"id": 15245, "field": "name", "en": "Vorpal Dagger", "hash": "350de917465a0183", "src": "db2@1.60.1.70707"}
+{"id": 15246, "field": "name", "en": "Demon Blade", "hash": "8c3297b0475417a4", "src": "db2@1.60.1.70707"}
+{"id": 15247, "field": "name", "en": "Bloodstrike Dagger", "hash": "c61414f4cef4c7bf", "src": "db2@1.60.1.70707"}
+{"id": 15248, "field": "name", "en": "Gleaming Claymore", "hash": "914c541fff3e1b41", "src": "db2@1.60.1.70707"}
+{"id": 15249, "field": "name", "en": "Polished Zweihander", "hash": "258fd5f3e0085660", "src": "db2@1.60.1.70707"}
+{"id": 15250, "field": "name", "en": "Glimmering Flamberge", "hash": "fac74efca4c7118c", "src": "db2@1.60.1.70707"}
 {"id": 15251, "field": "name", "en": "Headstriker Sword", "hash": "77f2355356008bf3", "src": "db2@1.60.1.70532"}
-{"id": 15252, "field": "name", "en": "Tusker Sword", "hash": "119ee08c615b4c61", "src": "db2@1.60.1.70685"}
-{"id": 15253, "field": "name", "en": "Beheading Blade", "hash": "8190232d7e0b148c", "src": "db2@1.60.1.70685"}
+{"id": 15252, "field": "name", "en": "Tusker Sword", "hash": "119ee08c615b4c61", "src": "db2@1.60.1.70707"}
+{"id": 15253, "field": "name", "en": "Beheading Blade", "hash": "8190232d7e0b148c", "src": "db2@1.60.1.70707"}
 {"id": 15254, "field": "name", "en": "Dark Espadon", "hash": "9f73c531ebf4b71b", "src": "db2@1.60.1.70532"}
 {"id": 15255, "field": "name", "en": "Gallant Flamberge", "hash": "7de26fb24b7e501f", "src": "db2@1.60.1.70532"}
 {"id": 15256, "field": "name", "en": "Massacre Sword", "hash": "da39f3930105ed05", "src": "db2@1.60.1.70532"}
-{"id": 15257, "field": "name", "en": "Shin Blade", "hash": "927524261bd8f655", "src": "db2@1.60.1.70685"}
-{"id": 15258, "field": "name", "en": "Divine Warblade", "hash": "1179642eed7ce412", "src": "db2@1.60.1.70685"}
-{"id": 15259, "field": "name", "en": "Hefty Battlehammer", "hash": "3e8ce2e168ef9c0b", "src": "db2@1.60.1.70685"}
-{"id": 15260, "field": "name", "en": "Stone Hammer", "hash": "011eaabf29a59d05", "src": "db2@1.60.1.70685"}
+{"id": 15257, "field": "name", "en": "Shin Blade", "hash": "927524261bd8f655", "src": "db2@1.60.1.70707"}
+{"id": 15258, "field": "name", "en": "Divine Warblade", "hash": "1179642eed7ce412", "src": "db2@1.60.1.70707"}
+{"id": 15259, "field": "name", "en": "Hefty Battlehammer", "hash": "3e8ce2e168ef9c0b", "src": "db2@1.60.1.70707"}
+{"id": 15260, "field": "name", "en": "Stone Hammer", "hash": "011eaabf29a59d05", "src": "db2@1.60.1.70707"}
 {"id": 15261, "field": "name", "en": "Sequoia Branch", "hash": "15e69f409c6427f0", "src": "db2@1.60.1.70532"}
 {"id": 15262, "field": "name", "en": "Greater Maul", "hash": "057470d61c841b5f", "src": "db2@1.60.1.70532"}
-{"id": 15263, "field": "name", "en": "Royal Mallet", "hash": "30fea74c271f793e", "src": "db2@1.60.1.70685"}
+{"id": 15263, "field": "name", "en": "Royal Mallet", "hash": "30fea74c271f793e", "src": "db2@1.60.1.70707"}
 {"id": 15264, "field": "name", "en": "Backbreaker", "hash": "ac2a727208d60d57", "src": "db2@1.60.1.70532"}
-{"id": 15265, "field": "name", "en": "Painbringer", "hash": "a939193e2760bc19", "src": "db2@1.60.1.70685"}
-{"id": 15266, "field": "name", "en": "Fierce Mauler", "hash": "2e0e54dd9eb91ccb", "src": "db2@1.60.1.70685"}
+{"id": 15265, "field": "name", "en": "Painbringer", "hash": "a939193e2760bc19", "src": "db2@1.60.1.70707"}
+{"id": 15266, "field": "name", "en": "Fierce Mauler", "hash": "2e0e54dd9eb91ccb", "src": "db2@1.60.1.70707"}
 {"id": 15267, "field": "name", "en": "Brutehammer", "hash": "809e3407ec360c07", "src": "db2@1.60.1.70532"}
-{"id": 15268, "field": "name", "en": "Twin-bladed Axe", "hash": "1699f5da5ab0fe9f", "src": "db2@1.60.1.70685"}
+{"id": 15268, "field": "name", "en": "Twin-bladed Axe", "hash": "1699f5da5ab0fe9f", "src": "db2@1.60.1.70707"}
 {"id": 15269, "field": "name", "en": "Massive Battle Axe", "hash": "8e8367da15932c8c", "src": "db2@1.60.1.70532"}
 {"id": 15270, "field": "name", "en": "Gigantic War Axe", "hash": "616e7c1a19f596df", "src": "db2@1.60.1.70532"}
 {"id": 15271, "field": "name", "en": "Colossal Great Axe", "hash": "da1c5c541222c63b", "src": "db2@1.60.1.70532"}
 {"id": 15272, "field": "name", "en": "Razor Axe", "hash": "380351fc38e2188a", "src": "db2@1.60.1.70532"}
-{"id": 15273, "field": "name", "en": "Death Striker", "hash": "14519fba020b2cd1", "src": "db2@1.60.1.70685"}
+{"id": 15273, "field": "name", "en": "Death Striker", "hash": "14519fba020b2cd1", "src": "db2@1.60.1.70707"}
 {"id": 15274, "field": "name", "en": "Diviner Long Staff", "hash": "0f223f63d6667497", "src": "db2@1.60.1.70532"}
 {"id": 15275, "field": "name", "en": "Thaumaturgist Staff", "hash": "fd8fb9bf20e0ad5f", "src": "db2@1.60.1.70532"}
 {"id": 15276, "field": "name", "en": "Magus Long Staff", "hash": "2286e33b0462ea00", "src": "db2@1.60.1.70532"}
 {"id": 15277, "field": "name", "en": "Gray Kodo", "hash": "64be2076e5317d2d", "src": "db2@1.60.1.70707"}
 {"id": 15277, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70707"}
-{"id": 15278, "field": "name", "en": "Solstice Staff", "hash": "dd00bdc996832e6b", "src": "db2@1.60.1.70685"}
+{"id": 15278, "field": "name", "en": "Solstice Staff", "hash": "dd00bdc996832e6b", "src": "db2@1.60.1.70707"}
 {"id": 15279, "field": "name", "en": "Ivory Wand", "hash": "ec59833cf9e025e2", "src": "db2@1.60.1.70532"}
-{"id": 15280, "field": "name", "en": "Wizard's Hand", "hash": "a8da89138b1d8949", "src": "db2@1.60.1.70685"}
+{"id": 15280, "field": "name", "en": "Wizard's Hand", "hash": "a8da89138b1d8949", "src": "db2@1.60.1.70707"}
 {"id": 15281, "field": "name", "en": "Glowstar Rod", "hash": "d1a55b2e1f3c2c7c", "src": "db2@1.60.1.70532"}
-{"id": 15282, "field": "name", "en": "Dragon Finger", "hash": "3e49e8cd87555e34", "src": "db2@1.60.1.70685"}
-{"id": 15283, "field": "name", "en": "Lunar Wand", "hash": "2df8bc6086ad9857", "src": "db2@1.60.1.70685"}
+{"id": 15282, "field": "name", "en": "Dragon Finger", "hash": "3e49e8cd87555e34", "src": "db2@1.60.1.70707"}
+{"id": 15283, "field": "name", "en": "Lunar Wand", "hash": "2df8bc6086ad9857", "src": "db2@1.60.1.70707"}
 {"id": 15284, "field": "name", "en": "Long Battle Bow", "hash": "4f99ff904297e56b", "src": "db2@1.60.1.70532"}
 {"id": 15285, "field": "name", "en": "Archer's Longbow", "hash": "e76ac9c77c36ef1e", "src": "db2@1.60.1.70532"}
 {"id": 15286, "field": "name", "en": "Long Redwood Bow", "hash": "a3a419d74e1871d5", "src": "db2@1.60.1.70532"}
 {"id": 15287, "field": "name", "en": "Crusader Bow", "hash": "95cd8e8453b80f8c", "src": "db2@1.60.1.70532"}
-{"id": 15288, "field": "name", "en": "Blasthorn Bow", "hash": "0a1b12700cf6e6fc", "src": "db2@1.60.1.70685"}
-{"id": 15289, "field": "name", "en": "Archstrike Bow", "hash": "26723ffddd95c048", "src": "db2@1.60.1.70685"}
+{"id": 15288, "field": "name", "en": "Blasthorn Bow", "hash": "0a1b12700cf6e6fc", "src": "db2@1.60.1.70707"}
+{"id": 15289, "field": "name", "en": "Archstrike Bow", "hash": "26723ffddd95c048", "src": "db2@1.60.1.70707"}
 {"id": 15290, "field": "name", "en": "Brown Kodo", "hash": "cdbcc13ed1286579", "src": "db2@1.60.1.70707"}
 {"id": 15290, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70707"}
-{"id": 15291, "field": "name", "en": "Harpy Needler", "hash": "3b4ecb4aae839666", "src": "db2@1.60.1.70685"}
+{"id": 15291, "field": "name", "en": "Harpy Needler", "hash": "3b4ecb4aae839666", "src": "db2@1.60.1.70707"}
 {"id": 15292, "field": "name", "en": "Green Kodo", "hash": "f7cc0d3e44236f3f", "src": "db2@1.60.1.70707"}
 {"id": 15292, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70707"}
 {"id": 15293, "field": "name", "en": "Teal Kodo", "hash": "225f79a5a034bb39", "src": "db2@1.60.1.70707"}
@@ -312,7 +312,7 @@
 {"id": 15322, "field": "name", "en": "Smoothbore Gun", "hash": "b81574f71c1f266f", "src": "db2@1.60.1.70532"}
 {"id": 15323, "field": "name", "en": "Percussion Shotgun", "hash": "72c5b4080c32b217", "src": "db2@1.60.1.70532"}
 {"id": 15324, "field": "name", "en": "Burnside Rifle", "hash": "a275ca2ab7693554", "src": "db2@1.60.1.70707"}
-{"id": 15325, "field": "name", "en": "Sharpshooter Harquebus", "hash": "f25f353faf265d55", "src": "db2@1.60.1.70685"}
+{"id": 15325, "field": "name", "en": "Sharpshooter Harquebus", "hash": "f25f353faf265d55", "src": "db2@1.60.1.70707"}
 {"id": 15326, "field": "name", "en": "Gleaming Throwing Axe", "hash": "499783ab76e606af", "src": "db2@1.60.1.70707"}
 {"id": 15327, "field": "name", "en": "Wicked Throwing Dagger", "hash": "6452c93ddcf11f1a", "src": "db2@1.60.1.70707"}
 {"id": 15328, "field": "name", "en": "Joseph's Key", "hash": "0011d0e77b623809", "src": "db2@1.60.1.70707"}
@@ -911,7 +911,7 @@
 {"id": 15892, "field": "name", "en": "Slayer's Shield", "hash": "6a1553089a4d6340", "src": "db2@1.60.1.70532"}
 {"id": 15893, "field": "name", "en": "Prospector's Buckler", "hash": "f46bce7b0ec07c51", "src": "db2@1.60.1.70532"}
 {"id": 15894, "field": "name", "en": "Bristlebark Buckler", "hash": "44f1d9134b88d792", "src": "db2@1.60.1.70532"}
-{"id": 15895, "field": "name", "en": "Burnt Buckler", "hash": "91e17a61b13ec8c4", "src": "db2@1.60.1.70685"}
+{"id": 15895, "field": "name", "en": "Burnt Buckler", "hash": "91e17a61b13ec8c4", "src": "db2@1.60.1.70707"}
 {"id": 15902, "field": "name", "en": "A Crazy Grab Bag", "hash": "c988e88d7a1be7a9", "src": "db2@1.60.1.70707"}
 {"id": 15903, "field": "name", "en": "Right-Handed Claw", "hash": "5b8ee33ff0225474", "src": "db2@1.60.1.70707"}
 {"id": 15904, "field": "name", "en": "Right-Handed Blades", "hash": "a1f6e0ebd4bfaed9", "src": "db2@1.60.1.70707"}

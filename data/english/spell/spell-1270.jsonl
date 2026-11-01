@@ -94,9 +94,9 @@
 {"id": 1270830, "field": "name", "en": "Lunar Expulsion", "hash": "f843a380eee28b4d", "src": "db2@1.60.1.70707"}
 {"id": 1270830, "field": "description", "en": "Inflicts $s1 Arcane damage to enemies within $a1 yds.", "hash": "e74172a12e003595", "src": "db2@1.60.1.70707"}
 {"id": 1270842, "field": "name", "en": "Energized", "hash": "1d4e881ce9f9cdfa", "src": "db2@1.60.1.70707"}
-{"id": 1270842, "field": "aura", "en": "Mana and health regeneration rate increased by $s1%.", "hash": "df5d4faceedb3787", "src": "db2@1.60.1.70707"}
-{"id": 1270893, "field": "name", "en": "Elemental Blessing", "hash": "3cdd12de343534e1", "src": "db2@1.60.1.70707"}
-{"id": 1270893, "field": "aura", "en": "Movement speed and mounted movement speed increased by $s1%.", "hash": "c7a5c1df13671e14", "src": "db2@1.60.1.70707"}
+{"id": 1270842, "field": "aura", "en": "Mana and health regeneration rate increased by $w1%.", "hash": "dfe68618247b07b6", "src": "db2@1.60.1.70707"}
+{"id": 1270893, "field": "name", "en": "Charged", "hash": "2e9757208e6af01d", "src": "db2@1.60.1.70707"}
+{"id": 1270893, "field": "aura", "en": "Charged by an elemental convergence, increasing the benefit of your Skysight ability by $s1%.", "hash": "e9454d06efc329ce", "src": "db2@1.60.1.70707"}
 {"id": 1270940, "field": "name", "en": "Ultrasafe Rechargeable Battery", "hash": "e778a8545deff705", "src": "db2@1.60.1.70707"}
 {"id": 1270940, "field": "description", "en": "Restores $s1 charges to a SAF-T or EZ-Thro brand device in your possession that does not involve explosions. It would be completely Unsafe with explosives.", "hash": "848cf013b5cb9f61", "src": "db2@1.60.1.70707"}
 {"id": 1270941, "field": "name", "en": "Poultryizer", "hash": "af1929fb312fadf7", "src": "db2@1.60.1.70707"}

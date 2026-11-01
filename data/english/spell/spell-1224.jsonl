@@ -60,7 +60,7 @@
 {"id": 1224692, "field": "name", "en": "Divinity", "hash": "0865cab9b1d88702", "src": "db2@1.60.1.70707"}
 {"id": 1224692, "field": "description", "en": "Increases all healing your spells do by $s1% and all healing you receive by $s2%.", "hash": "4065c70b733a87b8", "src": "db2@1.60.1.70707"}
 {"id": 1224697, "field": "name", "en": "Sacred Duty", "hash": "9d848730cfa32744", "src": "db2@1.60.1.70707"}
-{"id": 1224697, "field": "description", "en": "Increases your total Stamina by $s1% and reduces the cooldown of your Divine Shield, Divine Protection, and Templar's Bulwark spells by ${$m2/-1000} sec.", "hash": "6ff8c6b6bc64e161", "src": "db2@1.60.1.70707"}
+{"id": 1224697, "field": "description", "en": "Reduces the cooldown of your Divine Shield, Divine Protection, and Templar's Bulwark spells by ${$m2/-1000} sec, and reduces the duration of Forbearance by ${$m1/-1000} sec.", "hash": "abb5a77cacfb7749", "src": "db2@1.60.1.70707"}
 {"id": 1224702, "field": "name", "en": "Combat Pulse", "hash": "ff93f6f60c23ad71", "src": "db2@1.60.1.70707"}
 {"id": 1224716, "field": "name", "en": "Puncturing Wounds", "hash": "cd87a07e2fc19ab2", "src": "db2@1.60.1.70707"}
 {"id": 1224716, "field": "description", "en": "Increases the critical strike chance of your Backstab by $m1% and your Mutilate by $m3%, and gives Backstab a $m2% chance to add an additional Combo Point.", "hash": "dad38dd62790d3cc", "src": "db2@1.60.1.70707"}

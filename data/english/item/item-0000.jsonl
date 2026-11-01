@@ -191,7 +191,7 @@
 {"id": 787, "field": "description", "en": "$@spelldesc434 If you spend at least 10 sec eating, you will become well fed and gain $s2 Attack Power for $1249519d. $@spelldesc1243969", "hash": "5272b34282101ab8", "src": "db2@1.60.1.70707"}
 {"id": 788, "field": "name", "en": "Test Fire Sword", "hash": "a2d6cada6aaa73a4", "src": "db2@1.60.1.70707"}
 {"id": 789, "field": "name", "en": "Stout Battlehammer", "hash": "28eea2424e2b2074", "src": "db2@1.60.1.70532"}
-{"id": 790, "field": "name", "en": "Forester's Axe", "hash": "2178167059c2dadf", "src": "db2@1.60.1.70685"}
+{"id": 790, "field": "name", "en": "Forester's Axe", "hash": "2178167059c2dadf", "src": "db2@1.60.1.70707"}
 {"id": 791, "field": "name", "en": "Gnarled Ash Staff", "hash": "c54b99b7f0ec2f51", "src": "db2@1.60.1.70532"}
 {"id": 792, "field": "name", "en": "Knitted Sandals", "hash": "61e10a9ba475cf99", "src": "db2@1.60.1.70707"}
 {"id": 793, "field": "name", "en": "Knitted Gloves", "hash": "0f3ce2f43f253f77", "src": "db2@1.60.1.70707"}
@@ -253,7 +253,7 @@
 {"id": 860, "field": "name", "en": "Cavalier's Boots", "hash": "21ba374a0ed0358d", "src": "db2@1.60.1.70707"}
 {"id": 863, "field": "name", "en": "Gloom Reaper", "hash": "29752f5146aa468f", "src": "db2@1.60.1.70532"}
 {"id": 864, "field": "name", "en": "Knightly Longsword", "hash": "2388b12bd22546d0", "src": "db2@1.60.1.70707"}
-{"id": 865, "field": "name", "en": "Leaden Mace", "hash": "82354ae684c2d503", "src": "db2@1.60.1.70685"}
+{"id": 865, "field": "name", "en": "Leaden Mace", "hash": "82354ae684c2d503", "src": "db2@1.60.1.70707"}
 {"id": 866, "field": "name", "en": "Monk's Staff", "hash": "e9d565d1d88446be", "src": "db2@1.60.1.70532"}
 {"id": 867, "field": "name", "en": "Gloves of Holy Might", "hash": "52369f130ff1d320", "src": "db2@1.60.1.70532"}
 {"id": 867, "field": "description", "en": "Smite your target for $s1 Holy damage. Damage is tripled against Undead.", "hash": "98c8d89a4e129ea8", "src": "db2@1.60.1.70532"}

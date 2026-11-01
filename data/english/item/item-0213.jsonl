@@ -105,10 +105,10 @@
 {"id": 213426, "field": "description", "en": "Plant into Soft Soil.", "hash": "80726cbb40c0063a", "src": "db2@1.60.1.70707"}
 {"id": 213427, "field": "name", "en": "Grime-Encrusted Salvage", "hash": "69333d1c234b8c35", "src": "db2@1.60.1.70707"}
 {"id": 213443, "field": "name", "en": "DEPRECATED ITEM", "hash": "eacdc418b023f226", "src": "db2@1.60.1.70707"}
-{"id": 213444, "field": "name", "en": "Tarnished Prayer Bead I", "hash": "540ed04c3d421587", "src": "db2@1.60.1.70685"}
-{"id": 213444, "field": "description", "en": "May those who stand against us know our might.", "hash": "a2b7359d06cae3e9", "src": "db2@1.60.1.70685"}
-{"id": 213445, "field": "name", "en": "Tarnished Prayer Bead II", "hash": "03949804d7b0c690", "src": "db2@1.60.1.70685"}
-{"id": 213445, "field": "description", "en": "May the Light shield us when we are wounded.", "hash": "ca4e6eaf36b6419f", "src": "db2@1.60.1.70685"}
+{"id": 213444, "field": "name", "en": "Tarnished Prayer Bead I", "hash": "540ed04c3d421587", "src": "db2@1.60.1.70707"}
+{"id": 213444, "field": "description", "en": "May those who stand against us know our might.", "hash": "a2b7359d06cae3e9", "src": "db2@1.60.1.70707"}
+{"id": 213445, "field": "name", "en": "Tarnished Prayer Bead II", "hash": "03949804d7b0c690", "src": "db2@1.60.1.70707"}
+{"id": 213445, "field": "description", "en": "May the Light shield us when we are wounded.", "hash": "ca4e6eaf36b6419f", "src": "db2@1.60.1.70707"}
 {"id": 213446, "field": "name", "en": "Tarnished Prayer Bead III", "hash": "d509ca5afa6bbd64", "src": "db2@1.60.1.70532"}
 {"id": 213446, "field": "description", "en": "May the wicked and cowardly be brought to justice", "hash": "a07b2e5d86ea972a", "src": "db2@1.60.1.70532"}
 {"id": 213452, "field": "name", "en": "Dormant Holy Rune", "hash": "f5a6f84dba1941a0", "src": "db2@1.60.1.70707"}

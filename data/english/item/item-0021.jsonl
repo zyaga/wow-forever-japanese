@@ -624,7 +624,7 @@
 {"id": 21523, "field": "name", "en": "Fang of Korialstrasz", "hash": "3d45bc2cb1168c40", "src": "db2@1.60.1.70707"}
 {"id": 21523, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
 {"id": 21524, "field": "name", "en": "Red Winter Hat", "hash": "e919838160c09aed", "src": "db2@1.60.1.70532"}
-{"id": 21525, "field": "name", "en": "Green Winter Hat", "hash": "d10f6aace847bd71", "src": "db2@1.60.1.70685"}
+{"id": 21525, "field": "name", "en": "Green Winter Hat", "hash": "d10f6aace847bd71", "src": "db2@1.60.1.70707"}
 {"id": 21526, "field": "name", "en": "Band of Icy Depths", "hash": "6c0ad9dbe3a078ee", "src": "db2@1.60.1.70707"}
 {"id": 21526, "field": "description", "en": "Underwater Breath lasts $s1% longer than normal.", "hash": "7c55adccab10ed74", "src": "db2@1.60.1.70707"}
 {"id": 21527, "field": "name", "en": "Darkwater Robes", "hash": "1a247414b2c6500b", "src": "db2@1.60.1.70707"}

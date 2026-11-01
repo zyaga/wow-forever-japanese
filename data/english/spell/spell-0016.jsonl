@@ -838,7 +838,7 @@
 {"id": 16756, "field": "name", "en": "Unsheathe Rifle", "hash": "9869da0c894d2537", "src": "db2@1.60.1.70707"}
 {"id": 16756, "field": "description", "en": "Pulls out, but does not fire, a rifle.", "hash": "1a73ac42cdca5612", "src": "db2@1.60.1.70707"}
 {"id": 16757, "field": "name", "en": "Arctic Reach", "hash": "c2cc47b9ec93d0a5", "src": "db2@1.60.1.70707"}
-{"id": 16757, "field": "description", "en": "Increases the range of your Frostbolt, Frost Blast, and Blizzard spells and the radius of your Frost Nova and Cone of Cold spells by $s1%.", "hash": "e207f65fb9022719", "src": "db2@1.60.1.70707"}
+{"id": 16757, "field": "description", "en": "Increases the range of your Frostbolt, Frost Blast, Ice Lance, and Blizzard spells and the radius of your Frost Nova and Cone of Cold spells by $s1%.", "hash": "3f457c9863d6f0e7", "src": "db2@1.60.1.70707"}
 {"id": 16767, "field": "name", "en": "Shoot", "hash": "befeed7c70f5ab5b", "src": "db2@1.60.1.70707"}
 {"id": 16767, "field": "description", "en": "Fire at an X, Y, Z location with a ranged weapon.  Each location needs a separate copy of this spell.", "hash": "6e0c11697cf005c8", "src": "db2@1.60.1.70707"}
 {"id": 16768, "field": "name", "en": "Shoot", "hash": "befeed7c70f5ab5b", "src": "db2@1.60.1.70707"}

@@ -6,7 +6,7 @@
 {"id": 12005, "field": "name", "en": "Granite Ring", "hash": "a8461a46379ef0d7", "src": "db2@1.60.1.70532"}
 {"id": 12006, "field": "name", "en": "Meadow Ring", "hash": "3d4034d76091b69b", "src": "db2@1.60.1.70532"}
 {"id": 12007, "field": "name", "en": "Prairie Ring", "hash": "9d50773273fc448b", "src": "db2@1.60.1.70532"}
-{"id": 12008, "field": "name", "en": "Savannah Ring", "hash": "aded6c69558fbd07", "src": "db2@1.60.1.70685"}
+{"id": 12008, "field": "name", "en": "Savannah Ring", "hash": "aded6c69558fbd07", "src": "db2@1.60.1.70707"}
 {"id": 12009, "field": "name", "en": "Tundra Ring", "hash": "9f9b38c3513b9bd2", "src": "db2@1.60.1.70532"}
 {"id": 12010, "field": "name", "en": "Fen Ring", "hash": "43322a9fb1c52404", "src": "db2@1.60.1.70532"}
 {"id": 12011, "field": "name", "en": "Forest Hoop", "hash": "ec0b221b0736b663", "src": "db2@1.60.1.70532"}
@@ -23,7 +23,7 @@
 {"id": 12022, "field": "name", "en": "Iridium Chain", "hash": "d7bebd65f2e97696", "src": "db2@1.60.1.70532"}
 {"id": 12023, "field": "name", "en": "Tellurium Necklace", "hash": "a026c1f3999e04b7", "src": "db2@1.60.1.70532"}
 {"id": 12024, "field": "name", "en": "Vanadium Talisman", "hash": "99b36afbb9aca93f", "src": "db2@1.60.1.70532"}
-{"id": 12025, "field": "name", "en": "Selenium Chain", "hash": "43d43af719849d3a", "src": "db2@1.60.1.70685"}
+{"id": 12025, "field": "name", "en": "Selenium Chain", "hash": "43d43af719849d3a", "src": "db2@1.60.1.70707"}
 {"id": 12026, "field": "name", "en": "Quicksilver Pendant", "hash": "2bd16a9091faf710", "src": "db2@1.60.1.70532"}
 {"id": 12027, "field": "name", "en": "Vermilion Necklace", "hash": "cd5e97ded368392c", "src": "db2@1.60.1.70532"}
 {"id": 12028, "field": "name", "en": "Basalt Necklace", "hash": "0eb8c1c0ba8cf327", "src": "db2@1.60.1.70532"}
@@ -42,7 +42,7 @@
 {"id": 12042, "field": "name", "en": "Marsh Chain", "hash": "aafa7414be28565e", "src": "db2@1.60.1.70532"}
 {"id": 12043, "field": "name", "en": "Desert Choker", "hash": "f1c8c0af27f06b4b", "src": "db2@1.60.1.70532"}
 {"id": 12044, "field": "name", "en": "Arctic Pendant", "hash": "cae27d1b70a85467", "src": "db2@1.60.1.70532"}
-{"id": 12045, "field": "name", "en": "Swamp Pendant", "hash": "1b354d8b476d6319", "src": "db2@1.60.1.70685"}
+{"id": 12045, "field": "name", "en": "Swamp Pendant", "hash": "1b354d8b476d6319", "src": "db2@1.60.1.70707"}
 {"id": 12046, "field": "name", "en": "Jungle Necklace", "hash": "623a921f082e5b21", "src": "db2@1.60.1.70532"}
 {"id": 12047, "field": "name", "en": "Spectral Necklace", "hash": "6b0483f852fa34d7", "src": "db2@1.60.1.70532"}
 {"id": 12048, "field": "name", "en": "Prismatic Pendant", "hash": "8b4b26fbbfca5c24", "src": "db2@1.60.1.70532"}
@@ -54,7 +54,7 @@
 {"id": 12055, "field": "name", "en": "Stardust Band", "hash": "e05377b90f4cc920", "src": "db2@1.60.1.70532"}
 {"id": 12056, "field": "name", "en": "Ring of the Heavens", "hash": "01d88f364d1c969c", "src": "db2@1.60.1.70532"}
 {"id": 12057, "field": "name", "en": "Dragonscale Band", "hash": "ceb5d50f5c925bb3", "src": "db2@1.60.1.70532"}
-{"id": 12058, "field": "name", "en": "Demonic Bone Ring", "hash": "b7d1e26c8a3c83b9", "src": "db2@1.60.1.70685"}
+{"id": 12058, "field": "name", "en": "Demonic Bone Ring", "hash": "b7d1e26c8a3c83b9", "src": "db2@1.60.1.70707"}
 {"id": 12060, "field": "name", "en": "Shindrell's Note", "hash": "69e0d760bc993bd1", "src": "db2@1.60.1.70707"}
 {"id": 12063, "field": "name", "en": "Monster - Trident, Wicked", "hash": "2111d6af7f0572a4", "src": "db2@1.60.1.70707"}
 {"id": 12064, "field": "name", "en": "Gamemaster Hood", "hash": "d56ebb1528272dba", "src": "db2@1.60.1.70707"}
@@ -397,8 +397,8 @@
 {"id": 12625, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.", "hash": "28fa36972f4a7b20", "src": "wago@1.15.9.69722"}
 {"id": 12627, "field": "name", "en": "Temporal Displacer", "hash": "e983b50c70184f8e", "src": "db2@1.60.1.70707"}
 {"id": 12627, "field": "description", "en": "Reveal temporal parasites near grain silos in Andorhal.", "hash": "d28984fcb47292ec", "src": "db2@1.60.1.70707"}
-{"id": 12628, "field": "name", "en": "Demon Forged Breastplate", "hash": "f4115c02db319514", "src": "db2@1.60.1.70685"}
-{"id": 12628, "field": "description", "en": "When struck has a $h% chance of stealing $16608o1 life from the attacker over $16608d.\r\n", "hash": "927fd27415fc33d5", "src": "db2@1.60.1.70685"}
+{"id": 12628, "field": "name", "en": "Demon Forged Breastplate", "hash": "f4115c02db319514", "src": "db2@1.60.1.70707"}
+{"id": 12628, "field": "description", "en": "When struck has a $h% chance of stealing $16608o1 life from the attacker over $16608d.\r\n", "hash": "927fd27415fc33d5", "src": "db2@1.60.1.70707"}
 {"id": 12629, "field": "name", "en": "Monster - Axe, Horde Hatchet 01", "hash": "bc38a6f392c0549c", "src": "db2@1.60.1.70707"}
 {"id": 12630, "field": "name", "en": "Head of Rend Blackhand", "hash": "6789e0f839deb758", "src": "db2@1.60.1.70707"}
 {"id": 12630, "field": "description", "en": "Sickening, bloody, foulness.", "hash": "c3bad4017fded9c1", "src": "db2@1.60.1.70707"}
@@ -768,7 +768,7 @@
 {"id": 12982, "field": "name", "en": "Silver-linked Footguards", "hash": "a201b4855998cfb2", "src": "db2@1.60.1.70532"}
 {"id": 12983, "field": "name", "en": "Rakzur Club", "hash": "8a46e9261da3f69e", "src": "db2@1.60.1.70532"}
 {"id": 12984, "field": "name", "en": "Skycaller", "hash": "62733f9867f3666a", "src": "db2@1.60.1.70532"}
-{"id": 12985, "field": "name", "en": "Ring of Defense", "hash": "32ae19eae30912b8", "src": "db2@1.60.1.70685"}
+{"id": 12985, "field": "name", "en": "Ring of Defense", "hash": "32ae19eae30912b8", "src": "db2@1.60.1.70707"}
 {"id": 12985, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "wago@1.15.9.69722"}
 {"id": 12986, "field": "name", "en": "Monster - Spear, Broad Notched", "hash": "cc27d906ce277e50", "src": "db2@1.60.1.70707"}
 {"id": 12987, "field": "name", "en": "Darkweave Breeches", "hash": "abb2eb40311d8161", "src": "db2@1.60.1.70532"}

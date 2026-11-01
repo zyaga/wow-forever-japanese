@@ -15,14 +15,14 @@
 {"id": 1311083, "field": "name", "en": "Crusade", "hash": "60f5449c9db3c7db", "src": "db2@1.60.1.70707"}
 {"id": 1311083, "field": "description", "en": "Increases all damage dealt by $m1%. Increased by an additional $m2% against Demon and Undead targets.", "hash": "ed031047f28734e3", "src": "db2@1.60.1.70707"}
 {"id": 1311084, "field": "name", "en": "Champion of the Light", "hash": "1082df238665fe55", "src": "db2@1.60.1.70707"}
-{"id": 1311084, "field": "description", "en": "Increases your spell damage by up to $m1% of your Intellect.", "hash": "11207d1037f75002", "src": "db2@1.60.1.70707"}
+{"id": 1311084, "field": "description", "en": "Increases your spell damage by up to $m1% of your Intellect, and reduces the cast time of your Hammer of Wrath by ${$m2/-1000}.1 sec.", "hash": "0ea9bea7f7c6475e", "src": "db2@1.60.1.70707"}
 {"id": 1311085, "field": "name", "en": "Instrument of Law", "hash": "f3d1fdfaad3f5aa9", "src": "db2@1.60.1.70707"}
 {"id": 1311085, "field": "description", "en": "Reduces the cast time of your Hammer of Wrath by ${$m1/-1000}.1 sec, and reduces all threat you generate by $m2% while Righteous Fury is not active.", "hash": "89a8b73cd1a3fa15", "src": "db2@1.60.1.70707"}
 {"id": 1311087, "field": "name", "en": "Sacred Arbiter", "hash": "e20ec03ee417fc30", "src": "db2@1.60.1.70707"}
 {"id": 1311087, "field": "description", "en": "Increases the damage of your Holy Strike ability by $m1% and causes it to refresh all Judgement effects on the target.", "hash": "01026fd3da5ceb3d", "src": "db2@1.60.1.70707"}
 {"id": 1311523, "field": "name", "en": "Apply Poultice", "hash": "d6964cfc77784332", "src": "db2@1.60.1.70707"}
 {"id": 1311590, "field": "name", "en": "Light's Vigil", "hash": "d2feaaf1b7dfb27b", "src": "db2@1.60.1.70707"}
-{"id": 1311590, "field": "description", "en": "Applies Light's Vigil to the target for $1311593d. Your next Holy Shock cast on them triggers no cooldown and causes enemy targets to suffer $1311592s1 Holy damage and refund $s2% of Light's Vigil's Mana cost, or allied targets to heal their party for $1311591s1. You may only have one Light's Vigil active per party.", "hash": "2f89cc8e95e3ca54", "src": "db2@1.60.1.70707"}
+{"id": 1311590, "field": "description", "en": "Applies Light's Vigil to a friendly target for $1311593d. The caster's next Holy Shock on the target incurs no cooldown and heals the target and their party for $1311591s1. Only one Vigil per Paladin may be active in each party.", "hash": "90833b3fecefd9c7", "src": "db2@1.60.1.70707"}
 {"id": 1311591, "field": "name", "en": "Light's Vigil", "hash": "d2feaaf1b7dfb27b", "src": "db2@1.60.1.70707"}
 {"id": 1311591, "field": "description", "en": "Activated by Holy Shock. Heals the target and their party for $s1. Party members must be within $a1 yds of target.", "hash": "1eea785cbcedfc9f", "src": "db2@1.60.1.70707"}
 {"id": 1311592, "field": "name", "en": "Light's Vigil", "hash": "d2feaaf1b7dfb27b", "src": "db2@1.60.1.70707"}
@@ -34,7 +34,7 @@
 {"id": 1311594, "field": "description", "en": "Detonates for $1311592s1 Holy damage when struck by the caster's Holy Shock.", "hash": "fbe056a2662fbe58", "src": "db2@1.60.1.70707"}
 {"id": 1311594, "field": "aura", "en": "Detonates for $1311592s1 Holy damage when struck by the caster's Holy Shock.", "hash": "fbe056a2662fbe58", "src": "db2@1.60.1.70707"}
 {"id": 1311595, "field": "name", "en": "Light's Vigil", "hash": "d2feaaf1b7dfb27b", "src": "db2@1.60.1.70707"}
-{"id": 1311595, "field": "description", "en": "Applies Light's Vigil to the target for $1311597d. Your next Holy Shock cast on them triggers no cooldown and causes enemy targets to suffer $1311598s1 Holy damage and refund $s2% of Light's Vigil's Mana cost, or allied targets to heal their party for $1311596s1. You may only have one Light's Vigil active per party.", "hash": "a1b180c044cae3f4", "src": "db2@1.60.1.70707"}
+{"id": 1311595, "field": "description", "en": "Applies Light's Vigil to a friendly target for $1311597d. The caster's next Holy Shock on the target incurs no cooldown and heals the target and their party for $1311596s1. Only one Vigil per Paladin may be active in each party.", "hash": "21bdce28637968ec", "src": "db2@1.60.1.70707"}
 {"id": 1311596, "field": "name", "en": "Light's Vigil", "hash": "d2feaaf1b7dfb27b", "src": "db2@1.60.1.70707"}
 {"id": 1311596, "field": "description", "en": "Activated by Holy Shock. Heals the target and their party for $s1. Party members must be within $a1 yds of target.", "hash": "1eea785cbcedfc9f", "src": "db2@1.60.1.70707"}
 {"id": 1311597, "field": "name", "en": "Light's Vigil", "hash": "d2feaaf1b7dfb27b", "src": "db2@1.60.1.70707"}
@@ -76,13 +76,13 @@
 {"id": 1311680, "field": "description", "en": "Curses the target for $d, reducing Magic resistances by $s1 and increasing Magic damage taken by $s2%. Only one Curse per Warlock can be active on any one target.", "hash": "87983246417bf984", "src": "db2@1.60.1.70707"}
 {"id": 1311680, "field": "aura", "en": "Reduces Magic resistances by $s1. Increases Magic damage taken by $s2%.", "hash": "96faf3fecaa5172a", "src": "db2@1.60.1.70707"}
 {"id": 1311701, "field": "name", "en": "Echo of Fury", "hash": "69dff7fc4683206c", "src": "db2@1.60.1.70707"}
-{"id": 1311701, "field": "aura", "en": "Empowers your next melee attack with Seal of Fury.", "hash": "1e6b45d1eb171f82", "src": "db2@1.60.1.70707"}
+{"id": 1311701, "field": "aura", "en": "Empowers your next melee attack without Seal of Fury active with $s3 instances of Seal of Fury.", "hash": "e1fe03e1a58b3019", "src": "db2@1.60.1.70707"}
 {"id": 1311703, "field": "name", "en": "Echo of Command", "hash": "0b786ec86da60d58", "src": "db2@1.60.1.70707"}
-{"id": 1311703, "field": "aura", "en": "Empowers your next melee attack with a chance to activate Seal of Command.", "hash": "620f2e8c451c7511", "src": "db2@1.60.1.70707"}
+{"id": 1311703, "field": "aura", "en": "Empowers your next melee attack without Seal of Command active with $s3 instances of Seal of Command.", "hash": "553672889f2a8b79", "src": "db2@1.60.1.70707"}
 {"id": 1311704, "field": "name", "en": "Echo of Righteousness", "hash": "5fba983a99ae0c17", "src": "db2@1.60.1.70707"}
-{"id": 1311704, "field": "aura", "en": "Empowers your next melee attack with Seal of Righteousness.", "hash": "d70baca49a93f34a", "src": "db2@1.60.1.70707"}
+{"id": 1311704, "field": "aura", "en": "Empowers your next melee attack without Seal of Righteousness active with $s3 instances of Seal of Righteousness.", "hash": "7982fd6fdae7b2ff", "src": "db2@1.60.1.70707"}
 {"id": 1311705, "field": "name", "en": "Echo of Justice", "hash": "4bb99023e5158645", "src": "db2@1.60.1.70707"}
-{"id": 1311705, "field": "aura", "en": "Empowers your next melee attack with Seal of Justice.", "hash": "7e514e00f26a7170", "src": "db2@1.60.1.70707"}
+{"id": 1311705, "field": "aura", "en": "Empowers your next melee attack without Seal of Justice active with $s3 instances of Seal of Justice.", "hash": "a76005c3a9c60bec", "src": "db2@1.60.1.70707"}
 {"id": 1311806, "field": "name", "en": "Light's Vigil", "hash": "d2feaaf1b7dfb27b", "src": "db2@1.60.1.70707"}
 {"id": 1311812, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70707"}
 {"id": 1311815, "field": "name", "en": "Timer", "hash": "d0ae6636d5565887", "src": "db2@1.60.1.70707"}

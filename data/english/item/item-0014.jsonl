@@ -114,13 +114,13 @@
 {"id": 14165, "field": "name", "en": "Pagan Britches", "hash": "14bbe9e7c74bc665", "src": "db2@1.60.1.70532"}
 {"id": 14166, "field": "name", "en": "Buccaneer's Bracers", "hash": "82a479a27d101d2f", "src": "db2@1.60.1.70532"}
 {"id": 14167, "field": "name", "en": "Buccaneer's Cape", "hash": "c5e444422d6b8941", "src": "db2@1.60.1.70532"}
-{"id": 14168, "field": "name", "en": "Buccaneer's Gloves", "hash": "61ef0d87b94afb21", "src": "db2@1.60.1.70685"}
+{"id": 14168, "field": "name", "en": "Buccaneer's Gloves", "hash": "61ef0d87b94afb21", "src": "db2@1.60.1.70707"}
 {"id": 14169, "field": "name", "en": "Aboriginal Shoulder Pads", "hash": "31948d335349255c", "src": "db2@1.60.1.70707"}
 {"id": 14170, "field": "name", "en": "Buccaneer's Mantle", "hash": "85cf2da17919e0eb", "src": "db2@1.60.1.70707"}
 {"id": 14171, "field": "name", "en": "Buccaneer's Pants", "hash": "2800b3ef3b1cb186", "src": "db2@1.60.1.70532"}
-{"id": 14172, "field": "name", "en": "Buccaneer's Robes", "hash": "4cf932f284fbfdaa", "src": "db2@1.60.1.70685"}
+{"id": 14172, "field": "name", "en": "Buccaneer's Robes", "hash": "4cf932f284fbfdaa", "src": "db2@1.60.1.70707"}
 {"id": 14173, "field": "name", "en": "Buccaneer's Cord", "hash": "c5e7efc564ff7d90", "src": "db2@1.60.1.70532"}
-{"id": 14174, "field": "name", "en": "Buccaneer's Boots", "hash": "34213cffc9f15518", "src": "db2@1.60.1.70685"}
+{"id": 14174, "field": "name", "en": "Buccaneer's Boots", "hash": "34213cffc9f15518", "src": "db2@1.60.1.70707"}
 {"id": 14175, "field": "name", "en": "Buccaneer's Vest", "hash": "c871147fbc04148e", "src": "db2@1.60.1.70532"}
 {"id": 14176, "field": "name", "en": "Watcher's Boots", "hash": "9e5a12cc64c19598", "src": "db2@1.60.1.70532"}
 {"id": 14177, "field": "name", "en": "Watcher's Cuffs", "hash": "b0b33844705fad29", "src": "db2@1.60.1.70532"}
@@ -239,7 +239,7 @@
 {"id": 14290, "field": "name", "en": "Arachnidian Footpads", "hash": "706bd8dbd5b3aeac", "src": "db2@1.60.1.70532"}
 {"id": 14291, "field": "name", "en": "Arachnidian Bracelets", "hash": "1c00d4a5bc319ddb", "src": "db2@1.60.1.70532"}
 {"id": 14292, "field": "name", "en": "Arachnidian Cape", "hash": "df7fb600bdd8aced", "src": "db2@1.60.1.70532"}
-{"id": 14293, "field": "name", "en": "Arachnidian Circlet", "hash": "e7bc99e9b6241ce7", "src": "db2@1.60.1.70685"}
+{"id": 14293, "field": "name", "en": "Arachnidian Circlet", "hash": "e7bc99e9b6241ce7", "src": "db2@1.60.1.70707"}
 {"id": 14294, "field": "name", "en": "Arachnidian Gloves", "hash": "f72ae8b9e49bb11c", "src": "db2@1.60.1.70532"}
 {"id": 14295, "field": "name", "en": "Arachnidian Legguards", "hash": "83bf18503696b0af", "src": "db2@1.60.1.70532"}
 {"id": 14296, "field": "name", "en": "Arachnidian Pauldrons", "hash": "c5893aaad566c8db", "src": "db2@1.60.1.70532"}

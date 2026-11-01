@@ -1,24 +1,24 @@
-{"id": 240020, "field": "name", "en": "Inquisition Legguards", "hash": "1f1bddd01a9248ba", "src": "db2@1.60.1.70685"}
+{"id": 240020, "field": "name", "en": "Inquisition Legguards", "hash": "1f1bddd01a9248ba", "src": "db2@1.60.1.70707"}
 {"id": 240020, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "34a50421e460fa30", "src": "wago@1.15.9.69722"}
-{"id": 240021, "field": "name", "en": "Inquisition Spaulders", "hash": "0209ec1397a36e23", "src": "db2@1.60.1.70685"}
+{"id": 240021, "field": "name", "en": "Inquisition Spaulders", "hash": "0209ec1397a36e23", "src": "db2@1.60.1.70707"}
 {"id": 240021, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "34a50421e460fa30", "src": "wago@1.15.9.69722"}
-{"id": 240022, "field": "name", "en": "Inquisition Boots", "hash": "44153d6dd3e456dd", "src": "db2@1.60.1.70685"}
+{"id": 240022, "field": "name", "en": "Inquisition Boots", "hash": "44153d6dd3e456dd", "src": "db2@1.60.1.70707"}
 {"id": 240022, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "34a50421e460fa30", "src": "wago@1.15.9.69722"}
-{"id": 240023, "field": "name", "en": "Inquisition Vambraces", "hash": "961e92fef0bc5196", "src": "db2@1.60.1.70685"}
+{"id": 240023, "field": "name", "en": "Inquisition Vambraces", "hash": "961e92fef0bc5196", "src": "db2@1.60.1.70707"}
 {"id": 240023, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.", "hash": "279f5c853a7d5d51", "src": "wago@1.15.9.69722"}
-{"id": 240024, "field": "name", "en": "Inquisition Belt", "hash": "d58460907bb9eb74", "src": "db2@1.60.1.70685"}
+{"id": 240024, "field": "name", "en": "Inquisition Belt", "hash": "d58460907bb9eb74", "src": "db2@1.60.1.70707"}
 {"id": 240024, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nReduces the chance for your attacks to be dodged or parried by $s1%.", "hash": "b5076406ec660751", "src": "wago@1.15.9.69722"}
-{"id": 240025, "field": "name", "en": "Inquisition Shoulderplates", "hash": "7f61e8262b9b7219", "src": "db2@1.60.1.70685"}
+{"id": 240025, "field": "name", "en": "Inquisition Shoulderplates", "hash": "7f61e8262b9b7219", "src": "db2@1.60.1.70707"}
 {"id": 240025, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "d4e6c356e3b10b99", "src": "wago@1.15.9.69722"}
-{"id": 240026, "field": "name", "en": "Inquisition Leggings", "hash": "9ee31260cf360de5", "src": "db2@1.60.1.70685"}
+{"id": 240026, "field": "name", "en": "Inquisition Leggings", "hash": "9ee31260cf360de5", "src": "db2@1.60.1.70707"}
 {"id": 240026, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "d50216388a114100", "src": "wago@1.15.9.69722"}
-{"id": 240027, "field": "name", "en": "Inquisition Helmet", "hash": "0c0651415244693d", "src": "db2@1.60.1.70685"}
+{"id": 240027, "field": "name", "en": "Inquisition Helmet", "hash": "0c0651415244693d", "src": "db2@1.60.1.70707"}
 {"id": 240027, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "d4dcbd0ed7146a0a", "src": "wago@1.15.9.69722"}
-{"id": 240028, "field": "name", "en": "Inquisition Gloves", "hash": "8bcb45f9e5167953", "src": "db2@1.60.1.70685"}
+{"id": 240028, "field": "name", "en": "Inquisition Gloves", "hash": "8bcb45f9e5167953", "src": "db2@1.60.1.70707"}
 {"id": 240028, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nReduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.", "hash": "6e7b75d96ee64b17", "src": "wago@1.15.9.69722"}
-{"id": 240029, "field": "name", "en": "Inquisition Greaves", "hash": "bbc9858aef7852d6", "src": "db2@1.60.1.70685"}
+{"id": 240029, "field": "name", "en": "Inquisition Greaves", "hash": "bbc9858aef7852d6", "src": "db2@1.60.1.70707"}
 {"id": 240029, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.", "hash": "1bd1913616bf5b94", "src": "wago@1.15.9.69722"}
-{"id": 240030, "field": "name", "en": "Inquisition Breastplate", "hash": "fcfe6bcb7f7a094c", "src": "db2@1.60.1.70685"}
+{"id": 240030, "field": "name", "en": "Inquisition Breastplate", "hash": "fcfe6bcb7f7a094c", "src": "db2@1.60.1.70707"}
 {"id": 240030, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "d4dcbd0ed7146a0a", "src": "wago@1.15.9.69722"}
 {"id": 240031, "field": "name", "en": "Inquisition Bracers", "hash": "ee555c619f3271d5", "src": "db2@1.60.1.70532"}
 {"id": 240031, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nImproves your chance to hit with all spells and attacks by $s1%.\nIncreases the block value of your shield by $s1.\nIncreased Defense +$s1.", "hash": "dd113eba1aac18bf", "src": "wago@1.15.9.69722"}
@@ -36,15 +36,15 @@
 {"id": 240037, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your chance to block attacks with a shield by $s1%.\nIncreases the block value of your shield by $s1.\nIncreased Defense +$s1.", "hash": "d532333a6e269335", "src": "wago@1.15.9.69722"}
 {"id": 240038, "field": "name", "en": "Inquisition Chestguard", "hash": "164deff8e9f3cc20", "src": "db2@1.60.1.70532"}
 {"id": 240038, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.\nIncreases the block value of your shield by $s1.\nIncreased Defense +$s1.", "hash": "bc850d83ada9c7c0", "src": "wago@1.15.9.69722"}
-{"id": 240039, "field": "name", "en": "Inquisition Tunic", "hash": "80d9980cccd76312", "src": "db2@1.60.1.70685"}
+{"id": 240039, "field": "name", "en": "Inquisition Tunic", "hash": "80d9980cccd76312", "src": "db2@1.60.1.70707"}
 {"id": 240039, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "34a50421e460fa30", "src": "wago@1.15.9.69722"}
-{"id": 240040, "field": "name", "en": "Inquisition Headpiece", "hash": "1d519b765d62d953", "src": "db2@1.60.1.70685"}
+{"id": 240040, "field": "name", "en": "Inquisition Headpiece", "hash": "1d519b765d62d953", "src": "db2@1.60.1.70707"}
 {"id": 240040, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "34a50421e460fa30", "src": "wago@1.15.9.69722"}
-{"id": 240041, "field": "name", "en": "Inquisition Handguards", "hash": "8fa727fdf980a557", "src": "db2@1.60.1.70685"}
+{"id": 240041, "field": "name", "en": "Inquisition Handguards", "hash": "8fa727fdf980a557", "src": "db2@1.60.1.70707"}
 {"id": 240041, "field": "description", "en": "Increases your casting speed by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "43b4846da4b75f78", "src": "wago@1.15.9.69722"}
-{"id": 240042, "field": "name", "en": "Inquisition Wristguards", "hash": "830022a2264ab274", "src": "db2@1.60.1.70685"}
+{"id": 240042, "field": "name", "en": "Inquisition Wristguards", "hash": "830022a2264ab274", "src": "db2@1.60.1.70707"}
 {"id": 240042, "field": "description", "en": "Increases your casting speed by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "43b4846da4b75f78", "src": "wago@1.15.9.69722"}
-{"id": 240043, "field": "name", "en": "Inquisition Girdle", "hash": "578458bca91af288", "src": "db2@1.60.1.70685"}
+{"id": 240043, "field": "name", "en": "Inquisition Girdle", "hash": "578458bca91af288", "src": "db2@1.60.1.70707"}
 {"id": 240043, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases healing done by up to $s1 and damage done by up to $s2 for all magical spells and effects.", "hash": "34a50421e460fa30", "src": "wago@1.15.9.69722"}
 {"id": 240044, "field": "name", "en": "Fireleaf Wristwraps", "hash": "f23828c4887d9d35", "src": "db2@1.60.1.70532"}
 {"id": 240044, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your casting speed by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "7df1a2e79d144ae3", "src": "wago@1.15.9.69722"}
@@ -247,5 +247,5 @@
 {"id": 240846, "field": "description", "en": "One person's trash is another person's treasure, whether they like it or not!", "hash": "4843a396449c522d", "src": "db2@1.60.1.70707"}
 {"id": 240945, "field": "name", "en": "Slice of Carrie's Apple Pie", "hash": "c313f7a20a527e61", "src": "db2@1.60.1.70707"}
 {"id": 240945, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.\nDespite the pie having been cut into three pieces of equal size, you somehow managed to get the smallest slice.", "hash": "fd1ba045f3cf2101", "src": "db2@1.60.1.70707"}
-{"id": 240993, "field": "name", "en": "Tim's Test Ranged Weapon", "hash": "ebfa88838df6cbd2", "src": "db2@1.60.1.70685"}
+{"id": 240993, "field": "name", "en": "Tim's Test Ranged Weapon", "hash": "ebfa88838df6cbd2", "src": "db2@1.60.1.70707"}
 {"id": 240994, "field": "name", "en": "Tim's Test Ranged Weapon 2", "hash": "dd8a5b1fad483d5f", "src": "db2@1.60.1.70707"}

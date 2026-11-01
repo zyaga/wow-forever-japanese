@@ -234,6 +234,18 @@
 {"id": 252769, "field": "description", "en": "Teaches you how to craft Stormrider's Leather Belt.", "hash": "5f5df17b01b8ad1d", "src": "db2@1.60.1.70707"}
 {"id": 252770, "field": "name", "en": "Pattern: Wisdom's Leather Belt", "hash": "0968e42a6cf8cf7b", "src": "db2@1.60.1.70707"}
 {"id": 252770, "field": "description", "en": "Teaches you how to craft Wisdom's Leather Belt.", "hash": "59aad10a3670fa89", "src": "db2@1.60.1.70707"}
+{"id": 252771, "field": "name", "en": "Pattern: Brawler's Leather Armor", "hash": "0684536190bcabbe", "src": "db2@1.60.1.70707"}
+{"id": 252771, "field": "description", "en": "Teaches you how to craft Brawler's Leather Armor.", "hash": "a4a4f6a86149669f", "src": "db2@1.60.1.70707"}
+{"id": 252772, "field": "name", "en": "Pattern: Trapper's Leather Armor", "hash": "c6650f80c1718c64", "src": "db2@1.60.1.70707"}
+{"id": 252772, "field": "description", "en": "Teaches you how to craft Trapper's Leather Armor.", "hash": "d4a53c6f177759a6", "src": "db2@1.60.1.70707"}
+{"id": 252773, "field": "name", "en": "Pattern: Defender's Leather Armor", "hash": "80c38fe6d1bf05b2", "src": "db2@1.60.1.70707"}
+{"id": 252773, "field": "description", "en": "Teaches you how to craft Defender's Leather Armor.", "hash": "48036c4aa019d906", "src": "db2@1.60.1.70707"}
+{"id": 252774, "field": "name", "en": "Pattern: Totemic Leather Armor", "hash": "692bfba94d0f72a5", "src": "db2@1.60.1.70707"}
+{"id": 252774, "field": "description", "en": "Teaches you how to craft Totemic Leather Armor.", "hash": "5a7fd7fce81834d9", "src": "db2@1.60.1.70707"}
+{"id": 252775, "field": "name", "en": "Pattern: Stormrider's Leather Armor", "hash": "2b5803686e4e06d8", "src": "db2@1.60.1.70707"}
+{"id": 252775, "field": "description", "en": "Teaches you how to craft Stormrider's Leather Armor.", "hash": "b5e1aacb5a3c9561", "src": "db2@1.60.1.70707"}
+{"id": 252776, "field": "name", "en": "Pattern: Wisdom's Leather Armor", "hash": "c0dd3d0c3b23b08a", "src": "db2@1.60.1.70707"}
+{"id": 252776, "field": "description", "en": "Teaches you how to craft Wisdom's Leather Armor.", "hash": "cb3810e9019924ee", "src": "db2@1.60.1.70707"}
 {"id": 252777, "field": "name", "en": "Pattern: Brawler's Leather Gloves", "hash": "d1c494c8f4f34a48", "src": "db2@1.60.1.70707"}
 {"id": 252777, "field": "description", "en": "Teaches you how to craft Brawler's Leather Gloves.", "hash": "bb88ecbde558955e", "src": "db2@1.60.1.70707"}
 {"id": 252778, "field": "name", "en": "Pattern: Trapper's Leather Gloves", "hash": "01c4da94ab213d4f", "src": "db2@1.60.1.70707"}
@@ -262,6 +274,18 @@
 {"id": 252790, "field": "description", "en": "Teaches you how to craft Stormrider's Leather Boots.", "hash": "7d02be5e3db01bc2", "src": "db2@1.60.1.70707"}
 {"id": 252791, "field": "name", "en": "Pattern: Wisdom's Leather Boots", "hash": "d204932e79c77ace", "src": "db2@1.60.1.70707"}
 {"id": 252791, "field": "description", "en": "Teaches you how to craft Wisdom's Leather Boots.", "hash": "9259247ce50cab3e", "src": "db2@1.60.1.70707"}
+{"id": 252792, "field": "name", "en": "Pattern: Brawler's Leather Pants", "hash": "0b8b2073408bd270", "src": "db2@1.60.1.70707"}
+{"id": 252792, "field": "description", "en": "Teaches you how to craft Brawler's Leather Pants.", "hash": "371fe6edfc094d44", "src": "db2@1.60.1.70707"}
+{"id": 252793, "field": "name", "en": "Pattern: Trapper's Leather Pants", "hash": "cb6bdc927140b316", "src": "db2@1.60.1.70707"}
+{"id": 252793, "field": "description", "en": "Teaches you how to craft Trapper's Leather Pants.", "hash": "67202cb4b237404b", "src": "db2@1.60.1.70707"}
+{"id": 252794, "field": "name", "en": "Pattern: Defender's Leather Pants", "hash": "85ca5cf8818e2c64", "src": "db2@1.60.1.70707"}
+{"id": 252794, "field": "description", "en": "Teaches you how to craft Defender's Leather Pants.", "hash": "da7e5c8a3ad9bfbc", "src": "db2@1.60.1.70707"}
+{"id": 252795, "field": "name", "en": "Pattern: Totemic Leather Pants", "hash": "6e32c8bbfcde9946", "src": "db2@1.60.1.70707"}
+{"id": 252795, "field": "description", "en": "Teaches you how to craft Totemic Leather Pants.", "hash": "ecfac83c82d81b8f", "src": "db2@1.60.1.70707"}
+{"id": 252796, "field": "name", "en": "Pattern: Stormrider's Leather Pants", "hash": "305ed07a1e1d2d8a", "src": "db2@1.60.1.70707"}
+{"id": 252796, "field": "description", "en": "Teaches you how to craft Stormrider's Leather Pants.", "hash": "485c9b10f4fc7c06", "src": "db2@1.60.1.70707"}
+{"id": 252797, "field": "name", "en": "Pattern: Wisdom's Leather Pants", "hash": "c5e40a1eeaf2d72b", "src": "db2@1.60.1.70707"}
+{"id": 252797, "field": "description", "en": "Teaches you how to craft Wisdom's Leather Pants.", "hash": "5db3012e9c590b93", "src": "db2@1.60.1.70707"}
 {"id": 252798, "field": "name", "en": "Pattern: Brawler's Leather Hood", "hash": "1486d2dc0da57f3e", "src": "db2@1.60.1.70707"}
 {"id": 252798, "field": "description", "en": "Teaches you how to craft Brawler's Leather Hood.", "hash": "9affb8a1bdb73cc7", "src": "db2@1.60.1.70707"}
 {"id": 252799, "field": "name", "en": "Pattern: Trapper's Leather Hood", "hash": "77b388132b7bec9d", "src": "db2@1.60.1.70707"}
@@ -292,6 +316,18 @@
 {"id": 252811, "field": "description", "en": "Teaches you how to craft Mystic Heavy Armor Kit.", "hash": "e1616451cda7a211", "src": "db2@1.60.1.70707"}
 {"id": 252812, "field": "name", "en": "Pattern: Forceful Heavy Armor Kit", "hash": "37fd8f23f920034c", "src": "db2@1.60.1.70707"}
 {"id": 252812, "field": "description", "en": "Teaches you how to craft Forceful Heavy Armor Kit.", "hash": "0ab107c8fb0eb6b7", "src": "db2@1.60.1.70707"}
+{"id": 252814, "field": "name", "en": "Pattern: Brawler's Leather Helm", "hash": "14843302e5f27a09", "src": "db2@1.60.1.70707"}
+{"id": 252814, "field": "description", "en": "Teaches you how to craft Brawler's Leather Helm.", "hash": "99a7ec132bc00822", "src": "db2@1.60.1.70707"}
+{"id": 252815, "field": "name", "en": "Pattern: Trapper's Leather Helm", "hash": "77b0e83903c8e779", "src": "db2@1.60.1.70707"}
+{"id": 252815, "field": "description", "en": "Teaches you how to craft Trapper's Leather Helm.", "hash": "5988a8375c74e8c8", "src": "db2@1.60.1.70707"}
+{"id": 252816, "field": "name", "en": "Pattern: Defender's Leather Helm", "hash": "0da1feb50a17860e", "src": "db2@1.60.1.70707"}
+{"id": 252816, "field": "description", "en": "Teaches you how to craft Defender's Leather Helm.", "hash": "48d3a2b80a91d9eb", "src": "db2@1.60.1.70707"}
+{"id": 252817, "field": "name", "en": "Pattern: Totemic Leather Helm", "hash": "24e73062a85cb38b", "src": "db2@1.60.1.70707"}
+{"id": 252817, "field": "description", "en": "Teaches you how to craft Totemic Leather Helm.", "hash": "47037c757a6069f2", "src": "db2@1.60.1.70707"}
+{"id": 252818, "field": "name", "en": "Pattern: Stormrider's Leather Helm", "hash": "bed0131e16807028", "src": "db2@1.60.1.70707"}
+{"id": 252818, "field": "description", "en": "Teaches you how to craft Stormrider's Leather Helm.", "hash": "c8b033cc3b36cac7", "src": "db2@1.60.1.70707"}
+{"id": 252819, "field": "name", "en": "Pattern: Wisdom's Leather Helm", "hash": "0a36b5c5bd6887a1", "src": "db2@1.60.1.70707"}
+{"id": 252819, "field": "description", "en": "Teaches you how to craft Wisdom's Leather Helm.", "hash": "c2fd135b6fef1833", "src": "db2@1.60.1.70707"}
 {"id": 252820, "field": "name", "en": "Pattern: Brawler's Leather Legguards", "hash": "f16fb9bf1a660cb3", "src": "db2@1.60.1.70707"}
 {"id": 252820, "field": "description", "en": "Teaches you how to craft Brawler's Leather Legguards.", "hash": "0fa9d015599a5ab5", "src": "db2@1.60.1.70707"}
 {"id": 252821, "field": "name", "en": "Pattern: Trapper's Leather Legguards", "hash": "5b24fd2f1d7a6a35", "src": "db2@1.60.1.70707"}
@@ -536,5 +572,5 @@
 {"id": 252941, "field": "description", "en": "Teaches you how to craft Mystic Rugged Armor Kit.", "hash": "6d1759c58051c661", "src": "db2@1.60.1.70707"}
 {"id": 252942, "field": "name", "en": "Pattern: Forceful Rugged Armor Kit", "hash": "2018af0d689535e7", "src": "db2@1.60.1.70707"}
 {"id": 252942, "field": "description", "en": "Teaches you how to craft Forceful Rugged Armor Kit.", "hash": "90d7fd84e36b665e", "src": "db2@1.60.1.70707"}
-{"id": 252948, "field": "name", "en": "Cleansed Felbloom", "hash": "1757a4ace66e8e56", "src": "db2@1.60.1.70685"}
-{"id": 252948, "field": "description", "en": "It needs to be prepared before it can be consumed.", "hash": "47a526d3a7d6f750", "src": "db2@1.60.1.70685"}
+{"id": 252948, "field": "name", "en": "Cleansed Felbloom", "hash": "1757a4ace66e8e56", "src": "db2@1.60.1.70707"}
+{"id": 252948, "field": "description", "en": "It needs to be prepared before it can be consumed.", "hash": "47a526d3a7d6f750", "src": "db2@1.60.1.70707"}

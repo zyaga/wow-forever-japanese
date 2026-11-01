@@ -928,4 +928,6 @@ WFJ.Data.add("gloss", {
   [140937] = "表示する\tひょうじする\tto show (appear)",
   [140938] = "設定\tせってい\tset (choose a setting)",
   [140939] = "選ぶ\tえらぶ\tchoose (controls which)",
+  [140940] = "クラストレーナー\tクラストレーナー\tclass trainer",
+  [140941] = "解除\tかいじょ\tunlock",
 })

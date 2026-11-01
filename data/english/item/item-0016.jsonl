@@ -748,78 +748,78 @@
 {"id": 16664, "field": "name", "en": "Ornate Bracers", "hash": "384fa8ddce46e640", "src": "db2@1.60.1.70707"}
 {"id": 16665, "field": "name", "en": "Tome of Tranquilizing Shot", "hash": "0fd066c95658b693", "src": "db2@1.60.1.70707"}
 {"id": 16665, "field": "description", "en": "Teaches Tranquilizing Shot.", "hash": "c625e40e6ac2e5ce", "src": "db2@1.60.1.70707"}
-{"id": 16666, "field": "name", "en": "Vest of Elements", "hash": "5f019903f7621ad9", "src": "db2@1.60.1.70685"}
-{"id": 16667, "field": "name", "en": "Coif of Elements", "hash": "2d5a1dd04d141cfe", "src": "db2@1.60.1.70685"}
-{"id": 16668, "field": "name", "en": "Kilt of Elements", "hash": "21637f59a58ae751", "src": "db2@1.60.1.70685"}
-{"id": 16669, "field": "name", "en": "Pauldrons of Elements", "hash": "415f3b608d8dd8e3", "src": "db2@1.60.1.70685"}
-{"id": 16670, "field": "name", "en": "Boots of Elements", "hash": "d1db0e1816629b58", "src": "db2@1.60.1.70685"}
-{"id": 16671, "field": "name", "en": "Bindings of Elements", "hash": "740fff28a09b5ee2", "src": "db2@1.60.1.70685"}
-{"id": 16672, "field": "name", "en": "Gauntlets of Elements", "hash": "9e07f6151c36825f", "src": "db2@1.60.1.70685"}
-{"id": 16673, "field": "name", "en": "Cord of Elements", "hash": "b530171752ae04fc", "src": "db2@1.60.1.70685"}
-{"id": 16674, "field": "name", "en": "Beaststalker's Tunic", "hash": "997437f66db4cf07", "src": "db2@1.60.1.70685"}
-{"id": 16675, "field": "name", "en": "Beaststalker's Boots", "hash": "5cafdd5774c1c2d2", "src": "db2@1.60.1.70685"}
-{"id": 16676, "field": "name", "en": "Beaststalker's Gloves", "hash": "22eb1af817c43d50", "src": "db2@1.60.1.70685"}
-{"id": 16677, "field": "name", "en": "Beaststalker's Cap", "hash": "0e1a781b174d10d8", "src": "db2@1.60.1.70685"}
-{"id": 16678, "field": "name", "en": "Beaststalker's Pants", "hash": "508f5447e5ed1f2f", "src": "db2@1.60.1.70685"}
-{"id": 16679, "field": "name", "en": "Beaststalker's Mantle", "hash": "46cb3b12d7932309", "src": "db2@1.60.1.70685"}
-{"id": 16680, "field": "name", "en": "Beaststalker's Belt", "hash": "376a32e5523ec313", "src": "db2@1.60.1.70685"}
-{"id": 16681, "field": "name", "en": "Beaststalker's Bindings", "hash": "1810613a7abde7cd", "src": "db2@1.60.1.70685"}
-{"id": 16682, "field": "name", "en": "Magister's Boots", "hash": "342e98aa2e2145c8", "src": "db2@1.60.1.70685"}
-{"id": 16683, "field": "name", "en": "Magister's Bindings", "hash": "910ea03c61f69dd3", "src": "db2@1.60.1.70685"}
-{"id": 16684, "field": "name", "en": "Magister's Gloves", "hash": "68c4f60895918bfa", "src": "db2@1.60.1.70685"}
-{"id": 16685, "field": "name", "en": "Magister's Belt", "hash": "c1da8e3584eda779", "src": "db2@1.60.1.70685"}
-{"id": 16686, "field": "name", "en": "Magister's Crown", "hash": "46233950b54400ef", "src": "db2@1.60.1.70685"}
-{"id": 16687, "field": "name", "en": "Magister's Leggings", "hash": "bcbe020b03b25ca3", "src": "db2@1.60.1.70685"}
-{"id": 16688, "field": "name", "en": "Magister's Robes", "hash": "4d068e9de92bee49", "src": "db2@1.60.1.70685"}
-{"id": 16689, "field": "name", "en": "Magister's Mantle", "hash": "8ca51622556071c4", "src": "db2@1.60.1.70685"}
-{"id": 16690, "field": "name", "en": "Devout Robe", "hash": "c3f90d47d0b96135", "src": "db2@1.60.1.70685"}
-{"id": 16691, "field": "name", "en": "Devout Sandals", "hash": "1acd1dd51bfd2dce", "src": "db2@1.60.1.70685"}
-{"id": 16692, "field": "name", "en": "Devout Gloves", "hash": "10a642db35b7d9b8", "src": "db2@1.60.1.70685"}
-{"id": 16693, "field": "name", "en": "Devout Crown", "hash": "418e786fb1cda77b", "src": "db2@1.60.1.70685"}
-{"id": 16694, "field": "name", "en": "Devout Skirt", "hash": "59782988aacbbce7", "src": "db2@1.60.1.70685"}
-{"id": 16695, "field": "name", "en": "Devout Mantle", "hash": "348662f5f586bf71", "src": "db2@1.60.1.70685"}
-{"id": 16696, "field": "name", "en": "Devout Belt", "hash": "c1d19a6ad288b9fb", "src": "db2@1.60.1.70685"}
-{"id": 16697, "field": "name", "en": "Devout Bracers", "hash": "ea64c2cc07b2f264", "src": "db2@1.60.1.70685"}
-{"id": 16698, "field": "name", "en": "Dreadmist Mask", "hash": "78e084c89471c4ee", "src": "db2@1.60.1.70685"}
-{"id": 16699, "field": "name", "en": "Dreadmist Leggings", "hash": "ca270b7c29f6ca98", "src": "db2@1.60.1.70685"}
-{"id": 16700, "field": "name", "en": "Dreadmist Robe", "hash": "798faa948f0b1fb3", "src": "db2@1.60.1.70685"}
-{"id": 16701, "field": "name", "en": "Dreadmist Mantle", "hash": "01fcb03ec8c1ca19", "src": "db2@1.60.1.70685"}
-{"id": 16702, "field": "name", "en": "Dreadmist Belt", "hash": "776837b790da7879", "src": "db2@1.60.1.70685"}
-{"id": 16703, "field": "name", "en": "Dreadmist Bracers", "hash": "0dee4eaad4e14938", "src": "db2@1.60.1.70685"}
-{"id": 16704, "field": "name", "en": "Dreadmist Sandals", "hash": "3e56a9aee92b84a2", "src": "db2@1.60.1.70685"}
-{"id": 16705, "field": "name", "en": "Dreadmist Wraps", "hash": "8caf866310742cf5", "src": "db2@1.60.1.70685"}
-{"id": 16706, "field": "name", "en": "Wildheart Vest", "hash": "348e62ab0e2a0ef8", "src": "db2@1.60.1.70685"}
-{"id": 16707, "field": "name", "en": "Shadowcraft Cap", "hash": "e616f945ea51924e", "src": "db2@1.60.1.70685"}
-{"id": 16708, "field": "name", "en": "Shadowcraft Spaulders", "hash": "97668541e0fb5e5e", "src": "db2@1.60.1.70685"}
-{"id": 16709, "field": "name", "en": "Shadowcraft Pants", "hash": "fe3ef7872e2568a1", "src": "db2@1.60.1.70685"}
-{"id": 16710, "field": "name", "en": "Shadowcraft Bracers", "hash": "5686ba7cae4b3332", "src": "db2@1.60.1.70685"}
-{"id": 16711, "field": "name", "en": "Shadowcraft Boots", "hash": "0a5f809cbcfa0c33", "src": "db2@1.60.1.70685"}
-{"id": 16712, "field": "name", "en": "Shadowcraft Gloves", "hash": "03cba6756220136f", "src": "db2@1.60.1.70685"}
-{"id": 16713, "field": "name", "en": "Shadowcraft Belt", "hash": "bda04d8954e39480", "src": "db2@1.60.1.70685"}
-{"id": 16714, "field": "name", "en": "Wildheart Bracers", "hash": "2a5af5961fbaa4f0", "src": "db2@1.60.1.70685"}
-{"id": 16715, "field": "name", "en": "Wildheart Boots", "hash": "87203c0796a3d23c", "src": "db2@1.60.1.70685"}
-{"id": 16716, "field": "name", "en": "Wildheart Belt", "hash": "31e04efa020a1f2a", "src": "db2@1.60.1.70685"}
-{"id": 16717, "field": "name", "en": "Wildheart Gloves", "hash": "da6b8f713f51e732", "src": "db2@1.60.1.70685"}
-{"id": 16718, "field": "name", "en": "Wildheart Spaulders", "hash": "95542d56d53fae2c", "src": "db2@1.60.1.70685"}
-{"id": 16719, "field": "name", "en": "Wildheart Kilt", "hash": "331615910a92c27a", "src": "db2@1.60.1.70685"}
-{"id": 16720, "field": "name", "en": "Wildheart Cowl", "hash": "32054088b7261756", "src": "db2@1.60.1.70685"}
-{"id": 16721, "field": "name", "en": "Shadowcraft Tunic", "hash": "4723db3bb5ed1868", "src": "db2@1.60.1.70685"}
-{"id": 16722, "field": "name", "en": "Lightforge Bracers", "hash": "eb11a3e0d3fcb2da", "src": "db2@1.60.1.70685"}
-{"id": 16723, "field": "name", "en": "Lightforge Belt", "hash": "2b506d1e13d12c5d", "src": "db2@1.60.1.70685"}
-{"id": 16724, "field": "name", "en": "Lightforge Gauntlets", "hash": "81891b6277025362", "src": "db2@1.60.1.70685"}
-{"id": 16725, "field": "name", "en": "Lightforge Boots", "hash": "2b7fa864512fbeb6", "src": "db2@1.60.1.70685"}
-{"id": 16726, "field": "name", "en": "Lightforge Breastplate", "hash": "9e39cf9a83802899", "src": "db2@1.60.1.70685"}
-{"id": 16727, "field": "name", "en": "Lightforge Helm", "hash": "2c1e3eb96440e483", "src": "db2@1.60.1.70685"}
-{"id": 16728, "field": "name", "en": "Lightforge Legplates", "hash": "821c6057ff5d5e89", "src": "db2@1.60.1.70685"}
-{"id": 16729, "field": "name", "en": "Lightforge Spaulders", "hash": "2b5ea8436ce55d43", "src": "db2@1.60.1.70685"}
-{"id": 16730, "field": "name", "en": "Breastplate of Valor", "hash": "a1733fbc8b1b9180", "src": "db2@1.60.1.70685"}
-{"id": 16731, "field": "name", "en": "Helm of Valor", "hash": "1c2557bba2ee6965", "src": "db2@1.60.1.70685"}
-{"id": 16732, "field": "name", "en": "Legplates of Valor", "hash": "fbc0f22e42e6256a", "src": "db2@1.60.1.70685"}
-{"id": 16733, "field": "name", "en": "Spaulders of Valor", "hash": "529d757a66491401", "src": "db2@1.60.1.70685"}
-{"id": 16734, "field": "name", "en": "Boots of Valor", "hash": "7ca2de89c2c700e7", "src": "db2@1.60.1.70685"}
-{"id": 16735, "field": "name", "en": "Bracers of Valor", "hash": "6aa5717d8861fb4d", "src": "db2@1.60.1.70685"}
-{"id": 16736, "field": "name", "en": "Belt of Valor", "hash": "25fb68616731cc29", "src": "db2@1.60.1.70685"}
-{"id": 16737, "field": "name", "en": "Gauntlets of Valor", "hash": "95ea83be2637e471", "src": "db2@1.60.1.70685"}
+{"id": 16666, "field": "name", "en": "Vest of Elements", "hash": "5f019903f7621ad9", "src": "db2@1.60.1.70707"}
+{"id": 16667, "field": "name", "en": "Coif of Elements", "hash": "2d5a1dd04d141cfe", "src": "db2@1.60.1.70707"}
+{"id": 16668, "field": "name", "en": "Kilt of Elements", "hash": "21637f59a58ae751", "src": "db2@1.60.1.70707"}
+{"id": 16669, "field": "name", "en": "Pauldrons of Elements", "hash": "415f3b608d8dd8e3", "src": "db2@1.60.1.70707"}
+{"id": 16670, "field": "name", "en": "Boots of Elements", "hash": "d1db0e1816629b58", "src": "db2@1.60.1.70707"}
+{"id": 16671, "field": "name", "en": "Bindings of Elements", "hash": "740fff28a09b5ee2", "src": "db2@1.60.1.70707"}
+{"id": 16672, "field": "name", "en": "Gauntlets of Elements", "hash": "9e07f6151c36825f", "src": "db2@1.60.1.70707"}
+{"id": 16673, "field": "name", "en": "Cord of Elements", "hash": "b530171752ae04fc", "src": "db2@1.60.1.70707"}
+{"id": 16674, "field": "name", "en": "Beaststalker's Tunic", "hash": "997437f66db4cf07", "src": "db2@1.60.1.70707"}
+{"id": 16675, "field": "name", "en": "Beaststalker's Boots", "hash": "5cafdd5774c1c2d2", "src": "db2@1.60.1.70707"}
+{"id": 16676, "field": "name", "en": "Beaststalker's Gloves", "hash": "22eb1af817c43d50", "src": "db2@1.60.1.70707"}
+{"id": 16677, "field": "name", "en": "Beaststalker's Cap", "hash": "0e1a781b174d10d8", "src": "db2@1.60.1.70707"}
+{"id": 16678, "field": "name", "en": "Beaststalker's Pants", "hash": "508f5447e5ed1f2f", "src": "db2@1.60.1.70707"}
+{"id": 16679, "field": "name", "en": "Beaststalker's Mantle", "hash": "46cb3b12d7932309", "src": "db2@1.60.1.70707"}
+{"id": 16680, "field": "name", "en": "Beaststalker's Belt", "hash": "376a32e5523ec313", "src": "db2@1.60.1.70707"}
+{"id": 16681, "field": "name", "en": "Beaststalker's Bindings", "hash": "1810613a7abde7cd", "src": "db2@1.60.1.70707"}
+{"id": 16682, "field": "name", "en": "Magister's Boots", "hash": "342e98aa2e2145c8", "src": "db2@1.60.1.70707"}
+{"id": 16683, "field": "name", "en": "Magister's Bindings", "hash": "910ea03c61f69dd3", "src": "db2@1.60.1.70707"}
+{"id": 16684, "field": "name", "en": "Magister's Gloves", "hash": "68c4f60895918bfa", "src": "db2@1.60.1.70707"}
+{"id": 16685, "field": "name", "en": "Magister's Belt", "hash": "c1da8e3584eda779", "src": "db2@1.60.1.70707"}
+{"id": 16686, "field": "name", "en": "Magister's Crown", "hash": "46233950b54400ef", "src": "db2@1.60.1.70707"}
+{"id": 16687, "field": "name", "en": "Magister's Leggings", "hash": "bcbe020b03b25ca3", "src": "db2@1.60.1.70707"}
+{"id": 16688, "field": "name", "en": "Magister's Robes", "hash": "4d068e9de92bee49", "src": "db2@1.60.1.70707"}
+{"id": 16689, "field": "name", "en": "Magister's Mantle", "hash": "8ca51622556071c4", "src": "db2@1.60.1.70707"}
+{"id": 16690, "field": "name", "en": "Devout Robe", "hash": "c3f90d47d0b96135", "src": "db2@1.60.1.70707"}
+{"id": 16691, "field": "name", "en": "Devout Sandals", "hash": "1acd1dd51bfd2dce", "src": "db2@1.60.1.70707"}
+{"id": 16692, "field": "name", "en": "Devout Gloves", "hash": "10a642db35b7d9b8", "src": "db2@1.60.1.70707"}
+{"id": 16693, "field": "name", "en": "Devout Crown", "hash": "418e786fb1cda77b", "src": "db2@1.60.1.70707"}
+{"id": 16694, "field": "name", "en": "Devout Skirt", "hash": "59782988aacbbce7", "src": "db2@1.60.1.70707"}
+{"id": 16695, "field": "name", "en": "Devout Mantle", "hash": "348662f5f586bf71", "src": "db2@1.60.1.70707"}
+{"id": 16696, "field": "name", "en": "Devout Belt", "hash": "c1d19a6ad288b9fb", "src": "db2@1.60.1.70707"}
+{"id": 16697, "field": "name", "en": "Devout Bracers", "hash": "ea64c2cc07b2f264", "src": "db2@1.60.1.70707"}
+{"id": 16698, "field": "name", "en": "Dreadmist Mask", "hash": "78e084c89471c4ee", "src": "db2@1.60.1.70707"}
+{"id": 16699, "field": "name", "en": "Dreadmist Leggings", "hash": "ca270b7c29f6ca98", "src": "db2@1.60.1.70707"}
+{"id": 16700, "field": "name", "en": "Dreadmist Robe", "hash": "798faa948f0b1fb3", "src": "db2@1.60.1.70707"}
+{"id": 16701, "field": "name", "en": "Dreadmist Mantle", "hash": "01fcb03ec8c1ca19", "src": "db2@1.60.1.70707"}
+{"id": 16702, "field": "name", "en": "Dreadmist Belt", "hash": "776837b790da7879", "src": "db2@1.60.1.70707"}
+{"id": 16703, "field": "name", "en": "Dreadmist Bracers", "hash": "0dee4eaad4e14938", "src": "db2@1.60.1.70707"}
+{"id": 16704, "field": "name", "en": "Dreadmist Sandals", "hash": "3e56a9aee92b84a2", "src": "db2@1.60.1.70707"}
+{"id": 16705, "field": "name", "en": "Dreadmist Wraps", "hash": "8caf866310742cf5", "src": "db2@1.60.1.70707"}
+{"id": 16706, "field": "name", "en": "Wildheart Vest", "hash": "348e62ab0e2a0ef8", "src": "db2@1.60.1.70707"}
+{"id": 16707, "field": "name", "en": "Shadowcraft Cap", "hash": "e616f945ea51924e", "src": "db2@1.60.1.70707"}
+{"id": 16708, "field": "name", "en": "Shadowcraft Spaulders", "hash": "97668541e0fb5e5e", "src": "db2@1.60.1.70707"}
+{"id": 16709, "field": "name", "en": "Shadowcraft Pants", "hash": "fe3ef7872e2568a1", "src": "db2@1.60.1.70707"}
+{"id": 16710, "field": "name", "en": "Shadowcraft Bracers", "hash": "5686ba7cae4b3332", "src": "db2@1.60.1.70707"}
+{"id": 16711, "field": "name", "en": "Shadowcraft Boots", "hash": "0a5f809cbcfa0c33", "src": "db2@1.60.1.70707"}
+{"id": 16712, "field": "name", "en": "Shadowcraft Gloves", "hash": "03cba6756220136f", "src": "db2@1.60.1.70707"}
+{"id": 16713, "field": "name", "en": "Shadowcraft Belt", "hash": "bda04d8954e39480", "src": "db2@1.60.1.70707"}
+{"id": 16714, "field": "name", "en": "Wildheart Bracers", "hash": "2a5af5961fbaa4f0", "src": "db2@1.60.1.70707"}
+{"id": 16715, "field": "name", "en": "Wildheart Boots", "hash": "87203c0796a3d23c", "src": "db2@1.60.1.70707"}
+{"id": 16716, "field": "name", "en": "Wildheart Belt", "hash": "31e04efa020a1f2a", "src": "db2@1.60.1.70707"}
+{"id": 16717, "field": "name", "en": "Wildheart Gloves", "hash": "da6b8f713f51e732", "src": "db2@1.60.1.70707"}
+{"id": 16718, "field": "name", "en": "Wildheart Spaulders", "hash": "95542d56d53fae2c", "src": "db2@1.60.1.70707"}
+{"id": 16719, "field": "name", "en": "Wildheart Kilt", "hash": "331615910a92c27a", "src": "db2@1.60.1.70707"}
+{"id": 16720, "field": "name", "en": "Wildheart Cowl", "hash": "32054088b7261756", "src": "db2@1.60.1.70707"}
+{"id": 16721, "field": "name", "en": "Shadowcraft Tunic", "hash": "4723db3bb5ed1868", "src": "db2@1.60.1.70707"}
+{"id": 16722, "field": "name", "en": "Lightforge Bracers", "hash": "eb11a3e0d3fcb2da", "src": "db2@1.60.1.70707"}
+{"id": 16723, "field": "name", "en": "Lightforge Belt", "hash": "2b506d1e13d12c5d", "src": "db2@1.60.1.70707"}
+{"id": 16724, "field": "name", "en": "Lightforge Gauntlets", "hash": "81891b6277025362", "src": "db2@1.60.1.70707"}
+{"id": 16725, "field": "name", "en": "Lightforge Boots", "hash": "2b7fa864512fbeb6", "src": "db2@1.60.1.70707"}
+{"id": 16726, "field": "name", "en": "Lightforge Breastplate", "hash": "9e39cf9a83802899", "src": "db2@1.60.1.70707"}
+{"id": 16727, "field": "name", "en": "Lightforge Helm", "hash": "2c1e3eb96440e483", "src": "db2@1.60.1.70707"}
+{"id": 16728, "field": "name", "en": "Lightforge Legplates", "hash": "821c6057ff5d5e89", "src": "db2@1.60.1.70707"}
+{"id": 16729, "field": "name", "en": "Lightforge Spaulders", "hash": "2b5ea8436ce55d43", "src": "db2@1.60.1.70707"}
+{"id": 16730, "field": "name", "en": "Breastplate of Valor", "hash": "a1733fbc8b1b9180", "src": "db2@1.60.1.70707"}
+{"id": 16731, "field": "name", "en": "Helm of Valor", "hash": "1c2557bba2ee6965", "src": "db2@1.60.1.70707"}
+{"id": 16732, "field": "name", "en": "Legplates of Valor", "hash": "fbc0f22e42e6256a", "src": "db2@1.60.1.70707"}
+{"id": 16733, "field": "name", "en": "Spaulders of Valor", "hash": "529d757a66491401", "src": "db2@1.60.1.70707"}
+{"id": 16734, "field": "name", "en": "Boots of Valor", "hash": "7ca2de89c2c700e7", "src": "db2@1.60.1.70707"}
+{"id": 16735, "field": "name", "en": "Bracers of Valor", "hash": "6aa5717d8861fb4d", "src": "db2@1.60.1.70707"}
+{"id": 16736, "field": "name", "en": "Belt of Valor", "hash": "25fb68616731cc29", "src": "db2@1.60.1.70707"}
+{"id": 16737, "field": "name", "en": "Gauntlets of Valor", "hash": "95ea83be2637e471", "src": "db2@1.60.1.70707"}
 {"id": 16738, "field": "name", "en": "Witherseed Gloves", "hash": "77dedd9e4398dc66", "src": "db2@1.60.1.70707"}
 {"id": 16739, "field": "name", "en": "Rugwood Mantle", "hash": "93841b16a6021a3d", "src": "db2@1.60.1.70707"}
 {"id": 16740, "field": "name", "en": "Shredder Operating Gloves", "hash": "703d03b74ed584dc", "src": "db2@1.60.1.70707"}

@@ -661,6 +661,8 @@
 {"id": 21562, "field": "name", "en": "Prayer of Fortitude", "hash": "ccdd02746d933383", "src": "db2@1.60.1.70707"}
 {"id": 21562, "field": "description", "en": "Power infuses all party and raid members, increasing their Stamina by $s1 for $d.", "hash": "2832da99db351696", "src": "db2@1.60.1.70707"}
 {"id": 21562, "field": "aura", "en": "Increases Stamina by $s1.", "hash": "543f3a70e6f526d1", "src": "db2@1.60.1.70707"}
+{"id": 21563, "field": "name", "en": "Command", "hash": "e12ce2aa6154547b", "src": "db2@1.60.1.70707"}
+{"id": 21563, "field": "description", "en": "Damage dealt by Hunter and Warlock pets increased by $s1%.", "hash": "063d29ad96e2463f", "src": "db2@1.60.1.70707"}
 {"id": 21564, "field": "name", "en": "Prayer of Fortitude", "hash": "ccdd02746d933383", "src": "db2@1.60.1.70707"}
 {"id": 21564, "field": "description", "en": "Power infuses all party and raid members, increasing their Stamina by $s1 for $d.", "hash": "2832da99db351696", "src": "db2@1.60.1.70707"}
 {"id": 21564, "field": "aura", "en": "Increases Stamina by $s1.", "hash": "543f3a70e6f526d1", "src": "db2@1.60.1.70707"}

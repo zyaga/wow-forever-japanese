@@ -200,8 +200,10 @@
 {"id": 2456, "field": "name", "en": "Reckless Assault V", "hash": "754997ca63743851", "src": "db2@1.60.1.70707"}
 {"id": 2457, "field": "name", "en": "Battle Stance", "hash": "b0f2cd45470d83e1", "src": "db2@1.60.1.70707"}
 {"id": 2457, "field": "description", "en": "A balanced combat stance.", "hash": "7fa0c93b0c93a581", "src": "db2@1.60.1.70707"}
+{"id": 2457, "field": "aura", "en": "A balanced combat stance.", "hash": "7fa0c93b0c93a581", "src": "db2@1.60.1.70707"}
 {"id": 2458, "field": "name", "en": "Berserker Stance", "hash": "06ffccd38d6515d9", "src": "db2@1.60.1.70707"}
 {"id": 2458, "field": "description", "en": "An aggressive stance. Critical strike chance increased by $7381s1% and all damage taken is increased by $7381s2%.", "hash": "6957c3504983cd1e", "src": "db2@1.60.1.70707"}
+{"id": 2458, "field": "aura", "en": "An aggressive stance. Critical strike chance increased by $7381s1% and all damage taken is increased by $7381s2%.", "hash": "6957c3504983cd1e", "src": "db2@1.60.1.70707"}
 {"id": 2469, "field": "name", "en": "Offensive Stance", "hash": "f1d774443132f58e", "src": "db2@1.60.1.70707"}
 {"id": 2470, "field": "name", "en": "Offensive Stance", "hash": "f1d774443132f58e", "src": "db2@1.60.1.70707"}
 {"id": 2473, "field": "name", "en": "Power Stance II", "hash": "b0c66cb73bdd6599", "src": "db2@1.60.1.70707"}
@@ -209,7 +211,7 @@
 {"id": 2479, "field": "aura", "en": "You are currently worth no honor points to the enemy.", "hash": "fe38e5f211661f75", "src": "db2@1.60.1.70707"}
 {"id": 2480, "field": "name", "en": "Shoot Bow", "hash": "faa1ca316c1b9e5f", "src": "db2@1.60.1.70707"}
 {"id": 2481, "field": "name", "en": "Find Treasure", "hash": "50ccd38e3f070c90", "src": "db2@1.60.1.70707"}
-{"id": 2481, "field": "description", "en": "Allows the dwarf to sense nearby treasure, making it appear on the minimap.  Lasts $d.", "hash": "4320bd9df086cda8", "src": "db2@1.60.1.70707"}
+{"id": 2481, "field": "description", "en": "Allows the dwarf to sense nearby treasure, making it appear on the minimap and sometimes increase treasure found. Lasts $d.", "hash": "7c30fe2e3dc4b6a8", "src": "db2@1.60.1.70707"}
 {"id": 2481, "field": "aura", "en": "Finding treasure.", "hash": "bfb387ca61ca2b53", "src": "db2@1.60.1.70707"}
 {"id": 2484, "field": "name", "en": "Earthbind Totem", "hash": "31f53633e4c9f03d", "src": "db2@1.60.1.70707"}
 {"id": 2484, "field": "description", "en": "Summons an Earthbind Totem with $s1 health at the feet of the caster for $d that slows the movement speed of enemies within $3600a1 yards.", "hash": "79bc23aeea45abb8", "src": "db2@1.60.1.70707"}
@@ -327,7 +329,7 @@
 {"id": 2650, "field": "name", "en": "Tame Pet (TEST)", "hash": "a7a986a1e7c78f09", "src": "db2@1.60.1.70707"}
 {"id": 2651, "field": "name", "en": "Elune's Grace", "hash": "2e4562779402b0df", "src": "db2@1.60.1.70707"}
 {"id": 2651, "field": "description", "en": "Reduces the chance you'll be hit by melee and ranged attacks by $s1% for $d or until you are missed $n times.", "hash": "fb7e1fb4b4b1911c", "src": "db2@1.60.1.70707"}
-{"id": 2651, "field": "aura", "en": "Chance to be hit by melee and ranged attacks reduced by $s1% until you are missed $N times.", "hash": "7f777ddace18658e", "src": "db2@1.60.1.70707"}
+{"id": 2651, "field": "aura", "en": "Chance to be hit by melee and ranged attacks reduced by $s~1% until you are missed $N times.", "hash": "90c1de979eacf4d9", "src": "db2@1.60.1.70707"}
 {"id": 2652, "field": "name", "en": "Touch of Weakness", "hash": "dccff77220b4ed50", "src": "db2@1.60.1.70707"}
 {"id": 2652, "field": "description", "en": "The next melee attack against the caster will cause $2943s1 Shadow damage and reduce the attacker's melee attack power by $2943s2 for $2943d.", "hash": "e519e19afef7f27c", "src": "db2@1.60.1.70707"}
 {"id": 2652, "field": "aura", "en": "The next damaging melee attack against you will damage and weaken the target.", "hash": "3bd556f72337eaef", "src": "db2@1.60.1.70707"}

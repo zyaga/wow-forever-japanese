@@ -73,7 +73,7 @@
 {"id": 2074, "field": "name", "en": "Solid Shortblade", "hash": "2b10a66d6078ee92", "src": "db2@1.60.1.70532"}
 {"id": 2075, "field": "name", "en": "Priest's Mace", "hash": "15538af59af2c7b4", "src": "db2@1.60.1.70532"}
 {"id": 2077, "field": "name", "en": "Magician Staff", "hash": "5ef41aadf269ce7b", "src": "db2@1.60.1.70532"}
-{"id": 2078, "field": "name", "en": "Northern Shortsword", "hash": "702829935ad9f70b", "src": "db2@1.60.1.70685"}
+{"id": 2078, "field": "name", "en": "Northern Shortsword", "hash": "702829935ad9f70b", "src": "db2@1.60.1.70707"}
 {"id": 2079, "field": "name", "en": "Sergeant's Warhammer", "hash": "74d5246462967c79", "src": "db2@1.60.1.70532"}
 {"id": 2080, "field": "name", "en": "Hillborne Axe", "hash": "b4e3235943f7f896", "src": "db2@1.60.1.70532"}
 {"id": 2081, "field": "name", "en": "Monster - Torch, Offhand", "hash": "c6b9cd67a2256333", "src": "db2@1.60.1.70707"}
@@ -125,7 +125,7 @@
 {"id": 2137, "field": "name", "en": "Whittling Knife", "hash": "f69ae0db8a9c0296", "src": "db2@1.60.1.70707"}
 {"id": 2138, "field": "name", "en": "Sharpened Letter Opener", "hash": "abdcf4b4c904ff34", "src": "db2@1.60.1.70707"}
 {"id": 2139, "field": "name", "en": "Dirk", "hash": "0938569e307ecf19", "src": "db2@1.60.1.70707"}
-{"id": 2140, "field": "name", "en": "Carving Knife", "hash": "7128f94e844f6396", "src": "db2@1.60.1.70685"}
+{"id": 2140, "field": "name", "en": "Carving Knife", "hash": "7128f94e844f6396", "src": "db2@1.60.1.70707"}
 {"id": 2141, "field": "name", "en": "Cuirboulli Vest", "hash": "d7a91496556ec176", "src": "db2@1.60.1.70707"}
 {"id": 2142, "field": "name", "en": "Cuirboulli Belt", "hash": "d4fb00e5494ed1a8", "src": "db2@1.60.1.70707"}
 {"id": 2143, "field": "name", "en": "Cuirboulli Boots", "hash": "fdc948e78ba28bda", "src": "db2@1.60.1.70707"}
@@ -579,7 +579,7 @@
 {"id": 2625, "field": "name", "en": "Menethil Statuette", "hash": "4c2daf8dd28028c1", "src": "db2@1.60.1.70707"}
 {"id": 2628, "field": "name", "en": "Senir's Report", "hash": "0f1aae396e91869c", "src": "db2@1.60.1.70707"}
 {"id": 2629, "field": "name", "en": "Intrepid Strongbox Key", "hash": "2d4a0f0bf2d2f012", "src": "db2@1.60.1.70707"}
-{"id": 2632, "field": "name", "en": "Curved Dagger", "hash": "01032c2b5c1e6c49", "src": "db2@1.60.1.70685"}
+{"id": 2632, "field": "name", "en": "Curved Dagger", "hash": "01032c2b5c1e6c49", "src": "db2@1.60.1.70707"}
 {"id": 2633, "field": "name", "en": "Jungle Remedy", "hash": "4d1e5e7ff6a3b356", "src": "db2@1.60.1.70707"}
 {"id": 2633, "field": "description", "en": "Cures diseases and neutralizes poisons up to level 35.", "hash": "80b429e824316bff", "src": "db2@1.60.1.70707"}
 {"id": 2634, "field": "name", "en": "Venom Fern Extract", "hash": "5fffd53854cd7087", "src": "db2@1.60.1.70707"}
@@ -764,7 +764,7 @@
 {"id": 2816, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nIncreases damage done by Shadow spells and effects by up to $s1.", "hash": "94b55be082d1e282", "src": "wago@1.15.9.69722"}
 {"id": 2817, "field": "name", "en": "Soft Leather Tunic", "hash": "41c9c546d7af654e", "src": "db2@1.60.1.70707"}
 {"id": 2818, "field": "name", "en": "Stretched Leather Trousers", "hash": "a87b91519f517307", "src": "db2@1.60.1.70707"}
-{"id": 2819, "field": "name", "en": "Cross Dagger", "hash": "fe226930a97d63ad", "src": "db2@1.60.1.70685"}
+{"id": 2819, "field": "name", "en": "Cross Dagger", "hash": "fe226930a97d63ad", "src": "db2@1.60.1.70707"}
 {"id": 2820, "field": "name", "en": "Nifty Stopwatch", "hash": "1643051f88c57661", "src": "db2@1.60.1.70707"}
 {"id": 2820, "field": "description", "en": "Increases run speed by $s1% for $d1.", "hash": "61fe647b7084b69c", "src": "db2@1.60.1.70707"}
 {"id": 2821, "field": "name", "en": "Mo'grosh Masher", "hash": "b84e6c5c8fb65088", "src": "db2@1.60.1.70532"}
@@ -922,15 +922,15 @@
 {"id": 2955, "field": "name", "en": "First Mate Hat", "hash": "99a5e5126c734aa3", "src": "db2@1.60.1.70532"}
 {"id": 2956, "field": "name", "en": "Report on the Defias Brotherhood", "hash": "3220285048a65a04", "src": "db2@1.60.1.70707"}
 {"id": 2957, "field": "name", "en": "Journeyman's Vest", "hash": "fee828415c000fbf", "src": "db2@1.60.1.70532"}
-{"id": 2958, "field": "name", "en": "Journeyman's Pants", "hash": "06efd0c15afe9b52", "src": "db2@1.60.1.70685"}
+{"id": 2958, "field": "name", "en": "Journeyman's Pants", "hash": "06efd0c15afe9b52", "src": "db2@1.60.1.70707"}
 {"id": 2959, "field": "name", "en": "Journeyman's Boots", "hash": "131059d1e9d33ee4", "src": "db2@1.60.1.70707"}
 {"id": 2960, "field": "name", "en": "Journeyman's Gloves", "hash": "764acca81a296ef6", "src": "db2@1.60.1.70707"}
-{"id": 2961, "field": "name", "en": "Burnt Leather Vest", "hash": "49615f531ce1320f", "src": "db2@1.60.1.70685"}
+{"id": 2961, "field": "name", "en": "Burnt Leather Vest", "hash": "49615f531ce1320f", "src": "db2@1.60.1.70707"}
 {"id": 2962, "field": "name", "en": "Burnt Leather Breeches", "hash": "ab7e19430f939404", "src": "db2@1.60.1.70532"}
 {"id": 2963, "field": "name", "en": "Burnt Leather Boots", "hash": "2f178636b2d99198", "src": "db2@1.60.1.70707"}
 {"id": 2964, "field": "name", "en": "Burnt Leather Gloves", "hash": "cdf6849d8cbb76c1", "src": "db2@1.60.1.70707"}
 {"id": 2965, "field": "name", "en": "Warrior's Tunic", "hash": "ddae40a94b6f4491", "src": "db2@1.60.1.70532"}
-{"id": 2966, "field": "name", "en": "Warrior's Pants", "hash": "94c95cfac3a794b9", "src": "db2@1.60.1.70685"}
+{"id": 2966, "field": "name", "en": "Warrior's Pants", "hash": "94c95cfac3a794b9", "src": "db2@1.60.1.70707"}
 {"id": 2967, "field": "name", "en": "Warrior's Boots", "hash": "a0e9e60a527c385c", "src": "db2@1.60.1.70707"}
 {"id": 2968, "field": "name", "en": "Warrior's Gloves", "hash": "0c9d8f408ce0f905", "src": "db2@1.60.1.70707"}
 {"id": 2969, "field": "name", "en": "Spellbinder Vest", "hash": "5ca08526b13f82d6", "src": "db2@1.60.1.70532"}
@@ -942,17 +942,17 @@
 {"id": 2975, "field": "name", "en": "Hunting Boots", "hash": "6aae80c2643d4dde", "src": "db2@1.60.1.70707"}
 {"id": 2976, "field": "name", "en": "Hunting Gloves", "hash": "4c38badc892fc3dd", "src": "db2@1.60.1.70532"}
 {"id": 2977, "field": "name", "en": "Veteran Armor", "hash": "d6346d0e6329a310", "src": "db2@1.60.1.70532"}
-{"id": 2978, "field": "name", "en": "Veteran Leggings", "hash": "75251ac2e93d1456", "src": "db2@1.60.1.70685"}
+{"id": 2978, "field": "name", "en": "Veteran Leggings", "hash": "75251ac2e93d1456", "src": "db2@1.60.1.70707"}
 {"id": 2979, "field": "name", "en": "Veteran Boots", "hash": "e75bc330a1cd6d54", "src": "db2@1.60.1.70707"}
 {"id": 2980, "field": "name", "en": "Veteran Gloves", "hash": "18e1ba6618ab36ee", "src": "db2@1.60.1.70532"}
 {"id": 2981, "field": "name", "en": "Seer's Robe", "hash": "77e0e354c37af986", "src": "db2@1.60.1.70532"}
 {"id": 2982, "field": "name", "en": "Seer's Pants", "hash": "331bd69d696edadc", "src": "db2@1.60.1.70532"}
 {"id": 2983, "field": "name", "en": "Seer's Boots", "hash": "3f3c5fadf8437e6e", "src": "db2@1.60.1.70532"}
-{"id": 2984, "field": "name", "en": "Seer's Gloves", "hash": "10d1ccaf62831bcc", "src": "db2@1.60.1.70685"}
-{"id": 2985, "field": "name", "en": "Inscribed Leather Breastplate", "hash": "bd8a950e5750383f", "src": "db2@1.60.1.70685"}
+{"id": 2984, "field": "name", "en": "Seer's Gloves", "hash": "10d1ccaf62831bcc", "src": "db2@1.60.1.70707"}
+{"id": 2985, "field": "name", "en": "Inscribed Leather Breastplate", "hash": "bd8a950e5750383f", "src": "db2@1.60.1.70707"}
 {"id": 2986, "field": "name", "en": "Inscribed Leather Pants", "hash": "968a1fa8e24ac503", "src": "db2@1.60.1.70532"}
 {"id": 2987, "field": "name", "en": "Inscribed Leather Boots", "hash": "a2aaa8b8711f68a6", "src": "db2@1.60.1.70532"}
-{"id": 2988, "field": "name", "en": "Inscribed Leather Gloves", "hash": "f2412e4a3d27a0f0", "src": "db2@1.60.1.70685"}
+{"id": 2988, "field": "name", "en": "Inscribed Leather Gloves", "hash": "f2412e4a3d27a0f0", "src": "db2@1.60.1.70707"}
 {"id": 2989, "field": "name", "en": "Burnished Tunic", "hash": "dc6b8a4ae65ca4f3", "src": "db2@1.60.1.70532"}
 {"id": 2990, "field": "name", "en": "Burnished Leggings", "hash": "2296bda316a725ef", "src": "db2@1.60.1.70532"}
 {"id": 2991, "field": "name", "en": "Burnished Boots", "hash": "9fa72fabed6998be", "src": "db2@1.60.1.70532"}

@@ -1254,7 +1254,7 @@
 {"id": 24857, "field": "name", "en": "Arcane Blast", "hash": "1addb3da8681d6b4", "src": "db2@1.60.1.70707"}
 {"id": 24857, "field": "description", "en": "Blasts an enemy with Arcane magic, inflicting normal damage plus $s2 and knocking the enemy back.", "hash": "26533b34e330cf0d", "src": "db2@1.60.1.70707"}
 {"id": 24858, "field": "name", "en": "Moonkin Form", "hash": "f766891746133e10", "src": "db2@1.60.1.70707"}
-{"id": 24858, "field": "description", "en": "Shapeshift into Moonkin Form, increasing Omen of Clarity's chance to trigger by $s5%, Armor contribution from items by $24905s1%, and all party or raid members within $24907a1 yards have their spell Critical Strike chance increased by $24907s1%.  Also protects the caster from Polymorph effects and prevents the use of healing spells.\r\n\r\nThe act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.", "hash": "69b397496bbcdfa6", "src": "db2@1.60.1.70707"}
+{"id": 24858, "field": "description", "en": "Shapeshift into Moonkin Form, increasing Omen of Clarity's chance to trigger by $s5%, Armor contribution from items by $24905s1%, and all party or raid members within $24907a1 yards have their Critical Strike chance increased by $24907s1%. Also protects the caster from Polymorph effects and prevents the use of healing spells.\r\n\r\nThe act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.", "hash": "cb6c6b49465687b2", "src": "db2@1.60.1.70707"}
 {"id": 24858, "field": "aura", "en": "Immune to Polymorph effects. Omen of Clarity trigger chance increased. Armor contribution from items is increased by $24905s1%.", "hash": "0a5e2d8b5de55e5b", "src": "db2@1.60.1.70707"}
 {"id": 24863, "field": "name", "en": "Create BlizzCon Prize", "hash": "3452589035ce28d3", "src": "db2@1.60.1.70707"}
 {"id": 24865, "field": "name", "en": "Sanctified Orb", "hash": "bc630e871632896b", "src": "db2@1.60.1.70707"}
@@ -1314,8 +1314,8 @@
 {"id": 24905, "field": "name", "en": "Moonkin Form (Passive)", "hash": "8c0eeaece1f15c8e", "src": "db2@1.60.1.70707"}
 {"id": 24906, "field": "name", "en": "Emeriss Aura", "hash": "fb08e297ffc57a8c", "src": "db2@1.60.1.70707"}
 {"id": 24907, "field": "name", "en": "Moonkin Aura", "hash": "f6bc973a9add105c", "src": "db2@1.60.1.70707"}
-{"id": 24907, "field": "description", "en": "Increases spell Critical Strike chance by $s1%.", "hash": "d0e5eae333c9346a", "src": "db2@1.60.1.70707"}
-{"id": 24907, "field": "aura", "en": "Increases spell Critical Strike chance by $s1%.", "hash": "d0e5eae333c9346a", "src": "db2@1.60.1.70707"}
+{"id": 24907, "field": "description", "en": "Increases Critical Strike chance by $s1%.", "hash": "7fa8354c4e8edb63", "src": "db2@1.60.1.70707"}
+{"id": 24907, "field": "aura", "en": "Increases Critical Strike chance by $s1%.", "hash": "7fa8354c4e8edb63", "src": "db2@1.60.1.70707"}
 {"id": 24910, "field": "name", "en": "Corruption of the Earth", "hash": "2a49ad23356f2731", "src": "db2@1.60.1.70707"}
 {"id": 24910, "field": "aura", "en": "Deals $s1% health damage every $t1 sec.", "hash": "687bbc280550f671", "src": "db2@1.60.1.70707"}
 {"id": 24912, "field": "name", "en": "Darkrune Gauntlets", "hash": "19ec1fab6eadc7e9", "src": "db2@1.60.1.70707"}
@@ -1345,7 +1345,7 @@
 {"id": 24930, "field": "description", "en": "Enjoy a tasty Hallow's End treat!  Better eat it quick before they go bad...", "hash": "03b5d850abef85eb", "src": "db2@1.60.1.70707"}
 {"id": 24931, "field": "name", "en": "100 Health", "hash": "f95440c9768c9d66", "src": "db2@1.60.1.70707"}
 {"id": 24932, "field": "name", "en": "Leader of the Pack", "hash": "f9658bb0d8295ca0", "src": "db2@1.60.1.70707"}
-{"id": 24932, "field": "aura", "en": "Increases melee and ranged Critical Strike chance by $s1%.", "hash": "568694598bc5f617", "src": "db2@1.60.1.70707"}
+{"id": 24932, "field": "aura", "en": "Increases Critical Strike chance by $s1%.", "hash": "7fa8354c4e8edb63", "src": "db2@1.60.1.70707"}
 {"id": 24933, "field": "name", "en": "Cannon", "hash": "892c3f5d45479af3", "src": "db2@1.60.1.70707"}
 {"id": 24933, "field": "description", "en": "Fires a cannon round at the nearest tonk in front of you within $a1 yards. Deals $s1 damage.", "hash": "581acb4e56823167", "src": "db2@1.60.1.70707"}
 {"id": 24934, "field": "name", "en": "Summon RC Tank", "hash": "d53c1463b3ff76ae", "src": "db2@1.60.1.70707"}

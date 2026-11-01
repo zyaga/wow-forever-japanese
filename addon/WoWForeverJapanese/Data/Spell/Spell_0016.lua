@@ -303,7 +303,7 @@ WFJ.Data.add("spell", {
   [16741] = { "60％削減期間を解除。", nil, 0xa1a04de2, nil, "um" },
   [16746] = { "戦闘中に襲ったとき3秒メレーダメージにあなたが不死身にするため、5％の確率を持っています。この効果は一度だけ30秒ごとに発生する可能性があります。", nil, 0xc615727b, nil, "um" },
   [16756] = { "ライフルを取り出しますが、撃ちはしません。", nil, 0x1a73ac42, nil, "um" },
-  [16757] = { "Frostbolt、Frost Blast、Blizzardの射程と、Frost NovaとCone of Coldの効果範囲を$N1%増加させます。", nil, 0xe207f65f, nil, "um" },
+  [16757] = { "Frostbolt、Frost Blast、Ice Lance、Blizzardの射程と、Frost NovaとCone of Coldの効果範囲を$N1%増加させます。", nil, 0x3f457c98, nil, "um" },
   [16767] = { "遠隔武器でX、Y、Zの位置を撃ちます。位置ごとにこの呪文の個別のコピーが必要です。", nil, 0x6e0c1169, nil, "um" },
   [16768] = { "遠隔武器でX、Y、Zの位置を撃ちます。位置ごとにこの呪文の個別のコピーが必要です。", nil, 0x6e0c1169, nil, "um" },
   [16772] = { "遠隔武器でX、Y、Zの位置を撃ちます。位置ごとにこの呪文の個別のコピーが必要です。", nil, 0x6e0c1169, nil, "um" },

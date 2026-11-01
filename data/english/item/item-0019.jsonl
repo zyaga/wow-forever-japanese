@@ -511,7 +511,7 @@
 {"id": 19383, "field": "description", "en": "Increased Defense +$s1.", "hash": "c1caea0e17279a40", "src": "wago@1.15.9.69722"}
 {"id": 19384, "field": "name", "en": "Master Dragonslayer's Ring", "hash": "1f5ea2dc6869dfe1", "src": "db2@1.60.1.70707"}
 {"id": 19384, "field": "description", "en": "+$s1 Attack Power.\nImproves your chance to hit by $s1%.", "hash": "5224bef412cbb20e", "src": "wago@1.15.9.69722"}
-{"id": 19392, "field": "name", "en": "Girdle of the Fallen Crusader", "hash": "ed085468c57c170f", "src": "db2@1.60.1.70685"}
+{"id": 19392, "field": "name", "en": "Girdle of the Fallen Crusader", "hash": "ed085468c57c170f", "src": "db2@1.60.1.70707"}
 {"id": 19395, "field": "name", "en": "Rejuvenating Gem", "hash": "124926f6f2819937", "src": "db2@1.60.1.70707"}
 {"id": 19395, "field": "description", "en": "Increases healing done by spells and effects by up to $s1.\nRestores $s1 mana per 5 sec.", "hash": "51ce0e2d89e2cc37", "src": "wago@1.15.9.69722"}
 {"id": 19397, "field": "name", "en": "Ring of Blackrock", "hash": "ab877676223c3f6c", "src": "db2@1.60.1.70707"}

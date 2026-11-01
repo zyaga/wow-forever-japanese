@@ -62,7 +62,7 @@
 {"id": 403501, "field": "aura", "en": "Damage taken from Shadow damage over time effects from the caster increased by $s2%.", "hash": "e0d6f2ae7da23097", "src": "db2@1.60.1.70707"}
 {"id": 403506, "field": "name", "en": "Haunt", "hash": "fcf98a7216dbfb9c", "src": "db2@1.60.1.70707"}
 {"id": 403511, "field": "name", "en": "Improved Drains", "hash": "7c28787391a874cc", "src": "db2@1.60.1.70707"}
-{"id": 403511, "field": "description", "en": "Increases health drained or damage done by your Drain Life, Drain Soul, and Wrack spells by $m1%.", "hash": "2d5a7a50da302802", "src": "db2@1.60.1.70707"}
+{"id": 403511, "field": "description", "en": "Increases Health drained, damage done, or Mana drained by your Drain Life, Drain Soul, and Drain Mana spells by $m1%.", "hash": "415fefceb0396870", "src": "db2@1.60.1.70707"}
 {"id": 403619, "field": "name", "en": "Fel Armor", "hash": "d011cae999934a7c", "src": "db2@1.60.1.70707"}
 {"id": 403619, "field": "description", "en": "Surrounds the caster with fel energy, increasing spell damage and healing by $s3 plus additional spell damage and healing equal to $s1% of your Spirit. In addition, you regain $s2% of your maximum health every 5 sec. Only one type of Armor spell can be active on the Warlock at any time.  Lasts $d.\r\n", "hash": "5b3e8f7c219031a8", "src": "db2@1.60.1.70707"}
 {"id": 403619, "field": "aura", "en": "Increases spell damage and healing by ${$w1*$SPI/100+$w3}. Also regenerate $s2% of maximum health every 5 sec.", "hash": "d6ad9fb328e16966", "src": "db2@1.60.1.70707"}

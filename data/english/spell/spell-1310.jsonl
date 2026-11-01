@@ -173,8 +173,8 @@
 {"id": 1310726, "field": "aura", "en": "Mongoose Bite activated.", "hash": "a50c647a58050c65", "src": "db2@1.60.1.70707"}
 {"id": 1310728, "field": "name", "en": "Quietus", "hash": "60c8273d5d4ec185", "src": "db2@1.60.1.70707"}
 {"id": 1310728, "field": "description", "en": "Your Sinister Strike, Ghostly Strike, and Hemorrhage abilities cause $m1% more damage against targets below $m2% health.", "hash": "578b2d2a0662e21e", "src": "db2@1.60.1.70707"}
-{"id": 1310735, "field": "name", "en": "Twist of Light", "hash": "7b814c8c13e52a87", "src": "db2@1.60.1.70707"}
-{"id": 1310735, "field": "description", "en": "Reduces the Mana cost of your Seal spells by $s1%, and when you replace your Seal of Command, Seal of Righteousness, Seal of Fury, or Seal of Justice with a different Seal, you gain an Echo of that Seal. Your next melee attack applies the replaced Seal's effects, consuming the Echo.", "hash": "001668383036a52e", "src": "db2@1.60.1.70707"}
+{"id": 1310735, "field": "name", "en": "Unsealed Wrath", "hash": "61d24d2f3c481b09", "src": "db2@1.60.1.70707"}
+{"id": 1310735, "field": "description", "en": "Your melee attacks store a copy of your active Seal for $1311701d, stacking up to $1311701u times. Landing an attack with a different Seal consumes all stacks, giving the stored Seal its normal chance to activate once per stack.", "hash": "2254d2eaa1dd4c0d", "src": "db2@1.60.1.70707"}
 {"id": 1310785, "field": "name", "en": "Sniper Shot", "hash": "f720c75ad65396f8", "src": "db2@1.60.1.70707"}
 {"id": 1310785, "field": "description", "en": "A long-range shot that deals ranged damage plus $s1 and increases the range of your next $n Shots by $s2 yards for $d.", "hash": "21accfdef7e77b8b", "src": "db2@1.60.1.70707"}
 {"id": 1310785, "field": "aura", "en": "Shot range increased by $s2.", "hash": "b6f07a04acaed762", "src": "db2@1.60.1.70707"}
@@ -195,7 +195,7 @@
 {"id": 1310902, "field": "name", "en": "Improved Holy Strike", "hash": "2df3ea1ebbaa6583", "src": "db2@1.60.1.70707"}
 {"id": 1310902, "field": "description", "en": "Reduces the cooldown of your Holy Strike ability by ${$m1/-1000} sec.", "hash": "7a13ec1990dab535", "src": "db2@1.60.1.70707"}
 {"id": 1310904, "field": "name", "en": "Divine Precision", "hash": "a2417184a87de927", "src": "db2@1.60.1.70707"}
-{"id": 1310904, "field": "description", "en": "Improves your chance to hit with Holy spells by $s1%.", "hash": "9e735c140a566e65", "src": "db2@1.60.1.70707"}
+{"id": 1310904, "field": "description", "en": "Improves your chance to hit with Holy spells by $s1%, and reduces the duration of Silence effects on you by $s2%.", "hash": "6937dbb30fafa847", "src": "db2@1.60.1.70707"}
 {"id": 1310905, "field": "name", "en": "Consecrated Ground", "hash": "2d8e0e86c768d3b7", "src": "db2@1.60.1.70707"}
 {"id": 1310905, "field": "description", "en": "Gives your Holy spells $m1% increased damage against the first $20924s3 enemies that enter your Consecration.", "hash": "ba649f16faabad55", "src": "db2@1.60.1.70707"}
 {"id": 1310908, "field": "name", "en": "Illumination", "hash": "a31f4f528a964df4", "src": "db2@1.60.1.70707"}
@@ -206,7 +206,7 @@
 {"id": 1310910, "field": "description", "en": "Detonates for $1310914s1 Holy damage when struck by the caster's Holy Shock.", "hash": "ab78671e6511bc0d", "src": "db2@1.60.1.70707"}
 {"id": 1310910, "field": "aura", "en": "Detonates for $1310914s1 Holy damage when struck by the caster's Holy Shock.", "hash": "ab78671e6511bc0d", "src": "db2@1.60.1.70707"}
 {"id": 1310911, "field": "name", "en": "Light's Vigil", "hash": "d2feaaf1b7dfb27b", "src": "db2@1.60.1.70707"}
-{"id": 1310911, "field": "description", "en": "Applies Light's Vigil to the target for $1310909d. Your next Holy Shock cast on them triggers no cooldown and causes enemy targets to suffer $1310914s1 Holy damage and refund $s2% of Light's Vigil's Mana cost, or allied targets to heal their party for $1310912s1. You may only have one Light's Vigil active per party.", "hash": "e997402704bc6828", "src": "db2@1.60.1.70707"}
+{"id": 1310911, "field": "description", "en": "Applies Light's Vigil to a friendly target for $1310909d. The caster's next Holy Shock on the target incurs no cooldown and heals the target and their party for $1310912s1. Only one Vigil per Paladin may be active in each party.", "hash": "a6975da6ae698c15", "src": "db2@1.60.1.70707"}
 {"id": 1310912, "field": "name", "en": "Light's Vigil", "hash": "d2feaaf1b7dfb27b", "src": "db2@1.60.1.70707"}
 {"id": 1310912, "field": "description", "en": "Activated by Holy Shock. Heals the target and their party for $s1. Party members must be within $a1 yds of the target.", "hash": "331d62798687553a", "src": "db2@1.60.1.70707"}
 {"id": 1310914, "field": "name", "en": "Light's Vigil", "hash": "d2feaaf1b7dfb27b", "src": "db2@1.60.1.70707"}
@@ -224,5 +224,5 @@
 {"id": 1310993, "field": "name", "en": "Corrupted Healing", "hash": "efef7492e9d471f8", "src": "db2@1.60.1.70707"}
 {"id": 1310993, "field": "aura", "en": "Direct healing spells cause the target to take damage over time.", "hash": "3eb766d7ef0501b4", "src": "db2@1.60.1.70707"}
 {"id": 1310994, "field": "name", "en": "Swift Judgement", "hash": "1863dfbd2a86a905", "src": "db2@1.60.1.70707"}
-{"id": 1310994, "field": "description", "en": "Finishes the remaining cooldown on your Judgement ability and reduces the Mana cost of your next Judgement by $s1%.", "hash": "4a717facedb0f614", "src": "db2@1.60.1.70707"}
+{"id": 1310994, "field": "description", "en": "Unleash the energy of a Seal spell upon an enemy. Does not consume the Seal. Refer to individual Seals for Judgement effect. Does not share a cooldown with your Judgement ability.", "hash": "66d62fff9f36d52c", "src": "db2@1.60.1.70707"}
 {"id": 1310994, "field": "aura", "en": "Mana cost of Judgement reduced by $s1%.", "hash": "551000ddf6fa1d4e", "src": "db2@1.60.1.70707"}

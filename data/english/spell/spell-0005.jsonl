@@ -942,7 +942,7 @@
 {"id": 5920, "field": "name", "en": "Holy Affinity", "hash": "17e503fde2037372", "src": "db2@1.60.1.70707"}
 {"id": 5920, "field": "description", "en": "Increases your Holy Magic skill by $s1 and reduces your Shadow Resistance by $s2.", "hash": "9634c6fc62b5a9a7", "src": "db2@1.60.1.70707"}
 {"id": 5923, "field": "name", "en": "Holy Power", "hash": "91e93793016e8e77", "src": "db2@1.60.1.70707"}
-{"id": 5923, "field": "description", "en": "Increases the critical strike chance of your Holy Shock and Holy Strike spells by $m2%, and all other spells by $m1%.", "hash": "b5b54bfe2a8b19ed", "src": "db2@1.60.1.70707"}
+{"id": 5923, "field": "description", "en": "Increases the critical strike healing bonus of your Holy spells by $s1%.", "hash": "c73aceb7bb36f0ec", "src": "db2@1.60.1.70707"}
 {"id": 5927, "field": "name", "en": "Holy Focus", "hash": "e25ae3e1fce246a6", "src": "db2@1.60.1.70707"}
 {"id": 5927, "field": "description", "en": "Decreases your mana cost to cast Holy spells by $s1.", "hash": "d5ef80fac6ae657c", "src": "db2@1.60.1.70707"}
 {"id": 5928, "field": "name", "en": "Holy Focus", "hash": "e25ae3e1fce246a6", "src": "db2@1.60.1.70707"}

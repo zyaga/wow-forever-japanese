@@ -460,8 +460,8 @@
 {"id": 11763, "field": "name", "en": "Monster - Axe, Hatchet Red", "hash": "7952bc0e6663a1f5", "src": "db2@1.60.1.70707"}
 {"id": 11804, "field": "name", "en": "Spraggle's Canteen", "hash": "4a08634b575a11a6", "src": "db2@1.60.1.70707"}
 {"id": 11804, "field": "description", "en": "Revive Ringo with water.", "hash": "7c352ab9b0876e6f", "src": "db2@1.60.1.70707"}
-{"id": 11811, "field": "name", "en": "Smoking Heart of the Mountain", "hash": "d8ee2978b65b1d53", "src": "db2@1.60.1.70685"}
-{"id": 11811, "field": "description", "en": "Increases armor by $s1 for $d.", "hash": "92291afa4ecdce72", "src": "db2@1.60.1.70685"}
+{"id": 11811, "field": "name", "en": "Smoking Heart of the Mountain", "hash": "d8ee2978b65b1d53", "src": "db2@1.60.1.70707"}
+{"id": 11811, "field": "description", "en": "Increases armor by $s1 for $d.", "hash": "92291afa4ecdce72", "src": "db2@1.60.1.70707"}
 {"id": 11813, "field": "name", "en": "Formula: Smoking Heart of the Mountain", "hash": "57025d60f79f36c4", "src": "db2@1.60.1.70707"}
 {"id": 11813, "field": "description", "en": "Teaches you how to make a smoking heart of the mountain.", "hash": "5c4ce1472137cbe2", "src": "db2@1.60.1.70707"}
 {"id": 11818, "field": "name", "en": "Grimesilt Outhouse Key", "hash": "62213d765c8bf96a", "src": "db2@1.60.1.70707"}
@@ -584,7 +584,7 @@
 {"id": 11967, "field": "name", "en": "Zircon Band", "hash": "5dd59f98eca3ef79", "src": "db2@1.60.1.70532"}
 {"id": 11968, "field": "name", "en": "Amber Hoop", "hash": "726f170b4ab61378", "src": "db2@1.60.1.70532"}
 {"id": 11969, "field": "name", "en": "Jacinth Circle", "hash": "85040b0c6207364b", "src": "db2@1.60.1.70532"}
-{"id": 11970, "field": "name", "en": "Spinel Ring", "hash": "f36e5529b182d8e6", "src": "db2@1.60.1.70685"}
+{"id": 11970, "field": "name", "en": "Spinel Ring", "hash": "f36e5529b182d8e6", "src": "db2@1.60.1.70707"}
 {"id": 11971, "field": "name", "en": "Amethyst Band", "hash": "fbbd10695ae2f2c9", "src": "db2@1.60.1.70532"}
 {"id": 11972, "field": "name", "en": "Carnelian Loop", "hash": "4160af1b887f0eae", "src": "db2@1.60.1.70532"}
 {"id": 11973, "field": "name", "en": "Hematite Link", "hash": "69968c90c55d8136", "src": "db2@1.60.1.70532"}
@@ -600,11 +600,11 @@
 {"id": 11983, "field": "name", "en": "Chrome Ring", "hash": "ca30cbb5b2bef9b6", "src": "db2@1.60.1.70532"}
 {"id": 11984, "field": "name", "en": "Cobalt Ring", "hash": "b22630766e67d34c", "src": "db2@1.60.1.70532"}
 {"id": 11985, "field": "name", "en": "Cerulean Ring", "hash": "86d97181410840d6", "src": "db2@1.60.1.70532"}
-{"id": 11986, "field": "name", "en": "Thallium Hoop", "hash": "b91524f2f2524f6f", "src": "db2@1.60.1.70685"}
+{"id": 11986, "field": "name", "en": "Thallium Hoop", "hash": "b91524f2f2524f6f", "src": "db2@1.60.1.70707"}
 {"id": 11987, "field": "name", "en": "Iridium Circle", "hash": "7a6e379aef8f4425", "src": "db2@1.60.1.70532"}
 {"id": 11988, "field": "name", "en": "Tellurium Band", "hash": "11bb81ff6aa5da73", "src": "db2@1.60.1.70532"}
 {"id": 11989, "field": "name", "en": "Vanadium Loop", "hash": "328f87aaa5c974ed", "src": "db2@1.60.1.70532"}
-{"id": 11990, "field": "name", "en": "Selenium Loop", "hash": "1f0b434dbac5185e", "src": "db2@1.60.1.70685"}
+{"id": 11990, "field": "name", "en": "Selenium Loop", "hash": "1f0b434dbac5185e", "src": "db2@1.60.1.70707"}
 {"id": 11991, "field": "name", "en": "Quicksilver Ring", "hash": "0c64fd3eaeca1ca3", "src": "db2@1.60.1.70532"}
 {"id": 11992, "field": "name", "en": "Vermilion Band", "hash": "b3b516537ceb2268", "src": "db2@1.60.1.70532"}
 {"id": 11993, "field": "name", "en": "Clay Ring", "hash": "1cabfe5246a8299a", "src": "db2@1.60.1.70532"}

@@ -683,7 +683,7 @@
 {"id": 18561, "field": "name", "en": "Shoot", "hash": "befeed7c70f5ab5b", "src": "db2@1.60.1.70707"}
 {"id": 18561, "field": "description", "en": "Shoots at an enemy, inflicting Physical damage.", "hash": "75634826c9339361", "src": "db2@1.60.1.70707"}
 {"id": 18562, "field": "name", "en": "Swiftmend", "hash": "f0cc1b2f811a0805", "src": "db2@1.60.1.70707"}
-{"id": 18562, "field": "description", "en": "Instantly heals a target with an active Rejuvenation or Regrowth effect for an amount equal to the full duration of the periodic effect of one of those spells.", "hash": "c56a33a41c1ca54b", "src": "db2@1.60.1.70707"}
+{"id": 18562, "field": "description", "en": "Instantly heals a target with your active Rejuvenation or Regrowth effect for an amount equal to the full duration of the periodic effect of the consumed spell.", "hash": "3037f7aefe53854e", "src": "db2@1.60.1.70707"}
 {"id": 18564, "field": "name", "en": "Breath", "hash": "b6d8efc4950e0225", "src": "db2@1.60.1.70707"}
 {"id": 18565, "field": "name", "en": "Breath", "hash": "b6d8efc4950e0225", "src": "db2@1.60.1.70707"}
 {"id": 18566, "field": "name", "en": "Breath", "hash": "b6d8efc4950e0225", "src": "db2@1.60.1.70707"}

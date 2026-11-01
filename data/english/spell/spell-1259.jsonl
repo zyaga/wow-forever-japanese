@@ -61,21 +61,21 @@
 {"id": 1259652, "field": "name", "en": "Shock", "hash": "befee74f70f42cc6", "src": "db2@1.60.1.70707"}
 {"id": 1259652, "field": "description", "en": "Instantly throws a bolt of lightning at an enemy, inflicting Nature damage.", "hash": "40d9deb75ef49ffa", "src": "db2@1.60.1.70707"}
 {"id": 1259686, "field": "name", "en": "Skysight", "hash": "12dbcb811cf93946", "src": "db2@1.60.1.70707"}
-{"id": 1259686, "field": "description", "en": "Attempt to draw power from a convergence of elements and receive its blessing, increasing your movement and mounted movement speeds by $1259688s1%. Lasts $1259688d if no elemental convergence is nearby, and $1270893d if one is found.\r\n", "hash": "3ff56f83f39b1d70", "src": "db2@1.60.1.70707"}
+{"id": 1259686, "field": "description", "en": "Attempt to draw power from a convergence of elements and receive its blessing, increasing your movement and mounted movement speeds by $1259688s1% for $1259688d. If an elemental convergence is nearby, you will become Charged for the next $1270893d and the effect of this ability will be increased by $1270893s1%.", "hash": "ccce80c7c0b0f297", "src": "db2@1.60.1.70707"}
 {"id": 1259688, "field": "name", "en": "Elemental Blessing", "hash": "3cdd12de343534e1", "src": "db2@1.60.1.70707"}
-{"id": 1259688, "field": "aura", "en": "Movement speed and mounted movement speed increased by $s1%.", "hash": "c7a5c1df13671e14", "src": "db2@1.60.1.70707"}
-{"id": 1259691, "field": "name", "en": "Energized", "hash": "1d4e881ce9f9cdfa", "src": "db2@1.60.1.70707"}
-{"id": 1259691, "field": "aura", "en": "Mana and health regeneration rate increased by $s1%.", "hash": "df5d4faceedb3787", "src": "db2@1.60.1.70707"}
+{"id": 1259688, "field": "aura", "en": "Movement speed and mounted movement speed increased by $w1%.", "hash": "c82ef84b4906ee32", "src": "db2@1.60.1.70707"}
+{"id": 1259691, "field": "name", "en": "Attuned", "hash": "dd52c30c051aeaff", "src": "db2@1.60.1.70707"}
+{"id": 1259691, "field": "aura", "en": "Attuned to nearby leylines, increasing the benefit of your Read Leyline ability by $s1%.", "hash": "99510854f80a5404", "src": "db2@1.60.1.70707"}
 {"id": 1259705, "field": "name", "en": "Read Leyline", "hash": "568aa638f2f1fdb4", "src": "db2@1.60.1.70707"}
-{"id": 1259705, "field": "description", "en": "Attempt to tap into the power of a nearby leyline, increasing your Health and Mana regeneration by $1259691s1%. Lasts $1270842d if no leyline is nearby, and $1259691d if one is found.", "hash": "055a3f559cd2c78e", "src": "db2@1.60.1.70707"}
+{"id": 1259705, "field": "description", "en": "Attempt to tap into the power of a nearby leyline, increasing your Health and Mana regeneration by $1270842s1% for $1270842d. If a leyline is nearby, you will become Attuned for the next $1259691d and the effect of this ability will be increased by $1259691s1%.", "hash": "ecc428944430f016", "src": "db2@1.60.1.70707"}
 {"id": 1259707, "field": "name", "en": "Elemental Insight", "hash": "f62fc999f809cfb8", "src": "db2@1.60.1.70707"}
 {"id": 1259707, "field": "description", "en": "Damage dealt versus Elementals increased by $s1%.", "hash": "2f8ae69a5845e940", "src": "db2@1.60.1.70707"}
 {"id": 1259710, "field": "name", "en": "Wind Blessed", "hash": "a0d38651f3d1aabd", "src": "db2@1.60.1.70707"}
 {"id": 1259710, "field": "description", "en": "Increases your spellcasting, melee, and ranged Haste by $s1%.", "hash": "85cf8100d8429301", "src": "db2@1.60.1.70707"}
 {"id": 1259718, "field": "name", "en": "Will to Survive", "hash": "51e683ed33a4506c", "src": "db2@1.60.1.70707"}
 {"id": 1259718, "field": "description", "en": "Instantly removes all Stun effects.", "hash": "36e53d9fe2a379ab", "src": "db2@1.60.1.70707"}
-{"id": 1259719, "field": "name", "en": "Earth Fury", "hash": "d8639f1cf7c14128", "src": "db2@1.60.1.70707"}
-{"id": 1259719, "field": "description", "en": "Increases your critical strike bonus to damage and healing by $s1%.\r\n", "hash": "dc90fac0f45b522a", "src": "db2@1.60.1.70707"}
+{"id": 1259719, "field": "name", "en": "Artisan's Precision", "hash": "8d1240903fc17bc7", "src": "db2@1.60.1.70707"}
+{"id": 1259719, "field": "description", "en": "Increases your chance to hit with all spells and attacks by $s1%.\r\n", "hash": "f33927f3f261caa8", "src": "db2@1.60.1.70707"}
 {"id": 1259721, "field": "name", "en": "Big Game Hunter", "hash": "e01b3baa7007be8b", "src": "db2@1.60.1.70707"}
 {"id": 1259721, "field": "description", "en": "Damage dealt versus Beasts increased by $s1%.", "hash": "6cc360383ee2d797", "src": "db2@1.60.1.70707"}
 {"id": 1259799, "field": "name", "en": "Elune's Light", "hash": "84d6cc6d0dc1cff4", "src": "db2@1.60.1.70707"}
@@ -107,4 +107,4 @@
 {"id": 1259907, "field": "description", "en": "Your drumbeat inspires allies, increasing the movement speed and mounted movement speed of all party members within $a1 yds by $s1% for $d.", "hash": "62554af96eb3cfc2", "src": "db2@1.60.1.70707"}
 {"id": 1259907, "field": "aura", "en": "$s1% increased movement speed and mounted movement speed.", "hash": "f10f757a67ca80bc", "src": "db2@1.60.1.70707"}
 {"id": 1259918, "field": "name", "en": "Plainsrunning", "hash": "345427fdb1b2447e", "src": "db2@1.60.1.70707"}
-{"id": 1259918, "field": "description", "en": "Gain $s1% increased movement speed every $s2 sec spent moving, up to a maximum of $s3% increase. Taking damage or standing still will reduce this effect. In addition, you move $s4% faster while mounted.", "hash": "69aa758834dfd34d", "src": "db2@1.60.1.70707"}
+{"id": 1259918, "field": "description", "en": "Gain $s1% increased movement speed every $s2 sec spent moving, up to a maximum of $s3% increase. Taking damage or standing still will reduce this effect.", "hash": "b4cd132ed2a5d405", "src": "db2@1.60.1.70707"}

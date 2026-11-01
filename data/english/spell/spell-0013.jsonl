@@ -491,7 +491,7 @@
 {"id": 13624, "field": "name", "en": "Minor Stats", "hash": "bc00606d0e80be30", "src": "db2@1.60.1.70707"}
 {"id": 13625, "field": "name", "en": "Lesser Stats", "hash": "0605d68ff312d12a", "src": "db2@1.60.1.70707"}
 {"id": 13626, "field": "name", "en": "Enchant Chest - Minor Stats", "hash": "266c8fcf9a65a21c", "src": "db2@1.60.1.70707"}
-{"id": 13626, "field": "description", "en": "Permanently enchant a piece of chest armor to grant +2 to all stats.", "hash": "2a8cc0a7e4bfdf74", "src": "db2@1.60.1.70707"}
+{"id": 13626, "field": "description", "en": "Permanently enchant a piece of chest armor to grant +$13624s1 to all stats.", "hash": "df2324efe78160f6", "src": "db2@1.60.1.70707"}
 {"id": 13628, "field": "name", "en": "Runed Golden Rod", "hash": "49832e787e276fa6", "src": "db2@1.60.1.70707"}
 {"id": 13630, "field": "name", "en": "Scraping", "hash": "51a1fa186ecce5f9", "src": "db2@1.60.1.70707"}
 {"id": 13630, "field": "description", "en": "Scrape a sample of the hive wall from an area near a Gorishi hatchery.", "hash": "9ab255cc99a24c35", "src": "db2@1.60.1.70707"}
@@ -743,7 +743,7 @@
 {"id": 13887, "field": "description", "en": "Permanently enchant gloves to grant +7 Strength.", "hash": "d90bea85a57720a0", "src": "db2@1.60.1.70707"}
 {"id": 13889, "field": "name", "en": "Minor Speed", "hash": "bb782e69e8c01ec7", "src": "db2@1.60.1.70707"}
 {"id": 13890, "field": "name", "en": "Enchant Boots - Minor Speed", "hash": "7e2c9a248504207b", "src": "db2@1.60.1.70707"}
-{"id": 13890, "field": "description", "en": "Permanently enchant boots to give a slight movement speed increase.", "hash": "0feb33843f547bc2", "src": "db2@1.60.1.70707"}
+{"id": 13890, "field": "description", "en": "Permanently enchant boots to increase movement speed by $13889s1%.", "hash": "cfa8c8a5f3f48303", "src": "db2@1.60.1.70707"}
 {"id": 13895, "field": "name", "en": "Summon Spawn of Bael'Gar", "hash": "6129c60d800a84bd", "src": "db2@1.60.1.70707"}
 {"id": 13895, "field": "description", "en": "Summons $s3 $lSpawn of Bael'Gar:lSpawns of Bael'Gar; in a selected area to aid the caster in battle for $d. The violent summoning also inflicts $s1 Fire damage to enemies in the selected area.", "hash": "a4c6455863db43b5", "src": "db2@1.60.1.70707"}
 {"id": 13896, "field": "name", "en": "Feedback", "hash": "1752ab67c0f3c952", "src": "db2@1.60.1.70707"}

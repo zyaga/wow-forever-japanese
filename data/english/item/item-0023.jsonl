@@ -355,9 +355,9 @@
 {"id": 23699, "field": "name", "en": "[PH] Light Consumable [DEP]", "hash": "53d3e9d52b6b9b84", "src": "db2@1.60.1.70707"}
 {"id": 23700, "field": "name", "en": "[PH] Glorious Standard of the Alliance [DEP]", "hash": "cfba859db4bdb69f", "src": "db2@1.60.1.70707"}
 {"id": 23701, "field": "name", "en": "[PH] Victorious Standard of the Horde [DEP]", "hash": "06fc1a524442cb50", "src": "db2@1.60.1.70707"}
-{"id": 23705, "field": "name", "en": "Tabard of Flame", "hash": "0e0245576a4015a5", "src": "db2@1.60.1.70685"}
-{"id": 23709, "field": "name", "en": "Tabard of Frost", "hash": "0ed3c498f24441b5", "src": "db2@1.60.1.70685"}
-{"id": 23710, "field": "name", "en": "Upperdeck Tabard #3", "hash": "ab6cf0b63909b303", "src": "db2@1.60.1.70685"}
+{"id": 23705, "field": "name", "en": "Tabard of Flame", "hash": "0e0245576a4015a5", "src": "db2@1.60.1.70707"}
+{"id": 23709, "field": "name", "en": "Tabard of Frost", "hash": "0ed3c498f24441b5", "src": "db2@1.60.1.70707"}
+{"id": 23710, "field": "name", "en": "Upperdeck Tabard #3", "hash": "ab6cf0b63909b303", "src": "db2@1.60.1.70707"}
 {"id": 23712, "field": "name", "en": "White Tiger Cub", "hash": "294361888a8b22dd", "src": "db2@1.60.1.70707"}
 {"id": 23712, "field": "description", "en": "Right Click to summon and dismiss your tiger cub.", "hash": "f9a3ddc75bc83cc6", "src": "wago@1.15.9.69722"}
 {"id": 23713, "field": "name", "en": "Hippogryph Hatchling", "hash": "d3c992b9763571fc", "src": "db2@1.60.1.70707"}

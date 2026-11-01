@@ -1,24 +1,24 @@
 {"id": 279020, "field": "name", "en": "Unstable Potion", "hash": "720ec7a27b39a5a3", "src": "db2@1.60.1.70707"}
 {"id": 279023, "field": "name", "en": "Inert Potion", "hash": "cd3e2c598060dec4", "src": "db2@1.60.1.70707"}
 {"id": 279023, "field": "description", "en": "This potion has become inert and is no longer useful for experimentation.", "hash": "443027d7ffeca27f", "src": "db2@1.60.1.70707"}
-{"id": 279024, "field": "name", "en": "Corrupted Chestguard of the Warden", "hash": "43cb62e0d4466c0c", "src": "db2@1.60.1.70685"}
-{"id": 279025, "field": "name", "en": "Corrupted Chestguard of the Sentinel", "hash": "bd5fd409ddd833d2", "src": "db2@1.60.1.70685"}
-{"id": 279026, "field": "name", "en": "Corrupted Chestguard of the Harbinger", "hash": "d7d07238f2fcd383", "src": "db2@1.60.1.70685"}
-{"id": 279028, "field": "name", "en": "Corrupted Pauldrons of the Warden", "hash": "f3e9740b133fd7ca", "src": "db2@1.60.1.70685"}
-{"id": 279029, "field": "name", "en": "Corrupted Pauldrons of the Sentinel", "hash": "cced962206428fbe", "src": "db2@1.60.1.70685"}
-{"id": 279030, "field": "name", "en": "Corrupted Pauldrons of the Harbinger", "hash": "cd5ac52b59976997", "src": "db2@1.60.1.70685"}
-{"id": 279031, "field": "name", "en": "Corrupted Helm of the Warden", "hash": "a1e73bf548eb8e37", "src": "db2@1.60.1.70685"}
-{"id": 279032, "field": "name", "en": "Corrupted Helm of the Sentinel", "hash": "562b6fff7c33a99b", "src": "db2@1.60.1.70685"}
-{"id": 279033, "field": "name", "en": "Corrupted Helm of the Harbinger", "hash": "0801401634a1e184", "src": "db2@1.60.1.70685"}
-{"id": 279034, "field": "name", "en": "Corrupted Gloves of the Warden", "hash": "fc8b2ac8c9b604a8", "src": "db2@1.60.1.70685"}
-{"id": 279035, "field": "name", "en": "Corrupted Gloves of the Sentinel", "hash": "6d708516c4422728", "src": "db2@1.60.1.70685"}
-{"id": 279036, "field": "name", "en": "Corrupted Gloves of the Harbinger", "hash": "f05b0b124a92e5fa", "src": "db2@1.60.1.70685"}
-{"id": 279037, "field": "name", "en": "Corrupted Leggings of the Warden", "hash": "729df6b5dcebb929", "src": "db2@1.60.1.70685"}
-{"id": 279038, "field": "name", "en": "Corrupted Leggings of the Sentinel", "hash": "7f7802d5b3056543", "src": "db2@1.60.1.70685"}
-{"id": 279039, "field": "name", "en": "Corrupted Leggings of the Harbinger", "hash": "2a306401c8b19c2f", "src": "db2@1.60.1.70685"}
-{"id": 279040, "field": "name", "en": "Corrupted Boots of the Warden", "hash": "5349b19699fbe22d", "src": "db2@1.60.1.70685"}
-{"id": 279041, "field": "name", "en": "Corrupted Boots of the Sentinel", "hash": "576a4eba2d2b0a73", "src": "db2@1.60.1.70685"}
-{"id": 279042, "field": "name", "en": "Corrupted Boots of the Harbinger", "hash": "ab2d39c7b2c78004", "src": "db2@1.60.1.70685"}
+{"id": 279024, "field": "name", "en": "Corrupted Chestguard of the Warden", "hash": "43cb62e0d4466c0c", "src": "db2@1.60.1.70707"}
+{"id": 279025, "field": "name", "en": "Corrupted Chestguard of the Sentinel", "hash": "bd5fd409ddd833d2", "src": "db2@1.60.1.70707"}
+{"id": 279026, "field": "name", "en": "Corrupted Chestguard of the Harbinger", "hash": "d7d07238f2fcd383", "src": "db2@1.60.1.70707"}
+{"id": 279028, "field": "name", "en": "Corrupted Pauldrons of the Warden", "hash": "f3e9740b133fd7ca", "src": "db2@1.60.1.70707"}
+{"id": 279029, "field": "name", "en": "Corrupted Pauldrons of the Sentinel", "hash": "cced962206428fbe", "src": "db2@1.60.1.70707"}
+{"id": 279030, "field": "name", "en": "Corrupted Pauldrons of the Harbinger", "hash": "cd5ac52b59976997", "src": "db2@1.60.1.70707"}
+{"id": 279031, "field": "name", "en": "Corrupted Helm of the Warden", "hash": "a1e73bf548eb8e37", "src": "db2@1.60.1.70707"}
+{"id": 279032, "field": "name", "en": "Corrupted Helm of the Sentinel", "hash": "562b6fff7c33a99b", "src": "db2@1.60.1.70707"}
+{"id": 279033, "field": "name", "en": "Corrupted Helm of the Harbinger", "hash": "0801401634a1e184", "src": "db2@1.60.1.70707"}
+{"id": 279034, "field": "name", "en": "Corrupted Gloves of the Warden", "hash": "fc8b2ac8c9b604a8", "src": "db2@1.60.1.70707"}
+{"id": 279035, "field": "name", "en": "Corrupted Gloves of the Sentinel", "hash": "6d708516c4422728", "src": "db2@1.60.1.70707"}
+{"id": 279036, "field": "name", "en": "Corrupted Gloves of the Harbinger", "hash": "f05b0b124a92e5fa", "src": "db2@1.60.1.70707"}
+{"id": 279037, "field": "name", "en": "Corrupted Leggings of the Warden", "hash": "729df6b5dcebb929", "src": "db2@1.60.1.70707"}
+{"id": 279038, "field": "name", "en": "Corrupted Leggings of the Sentinel", "hash": "7f7802d5b3056543", "src": "db2@1.60.1.70707"}
+{"id": 279039, "field": "name", "en": "Corrupted Leggings of the Harbinger", "hash": "2a306401c8b19c2f", "src": "db2@1.60.1.70707"}
+{"id": 279040, "field": "name", "en": "Corrupted Boots of the Warden", "hash": "5349b19699fbe22d", "src": "db2@1.60.1.70707"}
+{"id": 279041, "field": "name", "en": "Corrupted Boots of the Sentinel", "hash": "576a4eba2d2b0a73", "src": "db2@1.60.1.70707"}
+{"id": 279042, "field": "name", "en": "Corrupted Boots of the Harbinger", "hash": "ab2d39c7b2c78004", "src": "db2@1.60.1.70707"}
 {"id": 279045, "field": "name", "en": "Thundris' Letter", "hash": "c15da509f5b162b8", "src": "db2@1.60.1.70707"}
 {"id": 279046, "field": "name", "en": "Cracked Crab Pincer", "hash": "e99a4d3b7f2ef7da", "src": "db2@1.60.1.70707"}
 {"id": 279048, "field": "name", "en": "Alexston's Reply", "hash": "bcb3d94f45e0f662", "src": "db2@1.60.1.70707"}

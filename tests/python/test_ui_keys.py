@@ -104,7 +104,7 @@ def _keys(root: Path) -> list[str]:
 
 
 # The draft batches the dictionary is made of (each line's `provenance.source` names one).
-DRAFT_SOURCES = {"draft-ui", "draft-r70685-ui",
+DRAFT_SOURCES = {"draft-ui", "draft-r70685-ui", "draft-r70707-ui",
                  # the served-text round: every string the loaded Forever files name, in seven parts
                  *(f"draft-served-ui-{i}" for i in range(7)),
                  "draft-ui-compare", "draft-ui-appearance",  # the comparison tooltip and its appearance lines
