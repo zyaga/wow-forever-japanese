@@ -34,4 +34,4 @@
 {"id": 1328127, "field": "name", "en": "Elixir of Endless Experience", "hash": "458ebe2c027d9551", "src": "db2@1.60.1.70532"}
 {"id": 1328127, "field": "description", "en": "Increases experience gained by $s1% for $d.", "hash": "af4155856b80f7ad", "src": "db2@1.60.1.70532"}
 {"id": 1328127, "field": "aura", "en": "Experience gain increased by $s1%.", "hash": "802e6f4173c065d5", "src": "db2@1.60.1.70532"}
-{"id": 1328389, "field": "name", "en": "[DNT] Quest Cleanup", "hash": "44ddab6b3f21cdbd", "src": "db2@1.60.1.70685"}
+{"id": 1328389, "field": "name", "en": "[DNT] Quest Cleanup", "hash": "44ddab6b3f21cdbd", "src": "db2@1.60.1.70707"}

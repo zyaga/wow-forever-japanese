@@ -5,7 +5,7 @@
 # professions, ranks, developer and test rows; ADR-042, ADR-052), developer (a developer or tracking row the
 # client never shows), name (a name; names stay English), gossip (an NPC's own line, shipped by the gossip
 # surface), not-shown (a row no window shows, with the evidence after the hash).
-# build: 1.60.1.70685
+# build: 1.60.1.70707
 AchievementCategory:14777  curated  f637121589807471  # Eastern Kingdoms
 AchievementCategory:14778  curated  d39c33bd6a607c7c  # Kalimdor
 AchievementCategory:15577  curated  b909d5daff1892c3  # Druid

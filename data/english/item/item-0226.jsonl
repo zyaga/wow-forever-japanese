@@ -1,79 +1,79 @@
-{"id": 226201, "field": "name", "en": "Squire Cuthbert's Blade", "hash": "825371ed1d7e2547", "src": "db2@1.60.1.70685"}
-{"id": 226201, "field": "description", "en": "The sword is dented and chipped, but it feels well-balanced in your hand.", "hash": "f7c57abea5b22adf", "src": "db2@1.60.1.70685"}
-{"id": 226207, "field": "name", "en": "Echo of Anastari", "hash": "dcb21522ec5017e3", "src": "db2@1.60.1.70685"}
-{"id": 226207, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70685"}
-{"id": 226208, "field": "name", "en": "Echo of Barthilas", "hash": "27418ea138f566c9", "src": "db2@1.60.1.70685"}
-{"id": 226208, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70685"}
-{"id": 226209, "field": "name", "en": "Echo of Dathrohan", "hash": "b4f51f4cd9737e50", "src": "db2@1.60.1.70685"}
-{"id": 226209, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70685"}
-{"id": 226210, "field": "name", "en": "Echo of Maleki", "hash": "d780324f6a3852cd", "src": "db2@1.60.1.70685"}
-{"id": 226210, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70685"}
-{"id": 226211, "field": "name", "en": "Echo of Nerub'enkan", "hash": "0148a83d2508a5eb", "src": "db2@1.60.1.70685"}
-{"id": 226211, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70685"}
-{"id": 226212, "field": "name", "en": "Echo of Ramstein", "hash": "685d423d41f7d2ef", "src": "db2@1.60.1.70685"}
-{"id": 226212, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70685"}
-{"id": 226213, "field": "name", "en": "Echo of Rivendare", "hash": "52da79ab4ebf72c3", "src": "db2@1.60.1.70685"}
-{"id": 226213, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70685"}
-{"id": 226214, "field": "name", "en": "Echo of Willey", "hash": "371aab59acb60e50", "src": "db2@1.60.1.70685"}
-{"id": 226214, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70685"}
-{"id": 226252, "field": "name", "en": "Rune of the Guerrilla", "hash": "c6a2d0699e84441b", "src": "db2@1.60.1.70685"}
-{"id": 226252, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70685"}
-{"id": 226374, "field": "name", "en": "Occult Poison I", "hash": "acdf0860690afab2", "src": "db2@1.60.1.70685"}
-{"id": 226374, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes. Each strike has a $h% chance of poisoning the enemy for $458820o1 Nature damage over $458820d and causing the enemy to take $458820s2% increased Arcane, Fire, Frost, Nature, and Shadow damage.  Stacks up to $458820u times on a single target.\r\n\r\nOccult Poison counts as Deadly Poison and benefits from all talents and effects that trigger from or modify Deadly Poison.\r\n", "hash": "ac6b5ded306f2c8f", "src": "db2@1.60.1.70685"}
-{"id": 226404, "field": "name", "en": "Tarnished Undermine Real", "hash": "9b9e26e133643f36", "src": "db2@1.60.1.70685"}
-{"id": 226404, "field": "description", "en": "This currency is slowly being phased out of circulation, but it still enjoys a very favorable exchange rate throughout the Eastern Kingdoms and Kalimdor.", "hash": "20a8567e9c353ecb", "src": "db2@1.60.1.70685"}
-{"id": 226405, "field": "name", "en": "Damaged Undermine Supply Crate", "hash": "07f156371d2c4ab0", "src": "db2@1.60.1.70685"}
-{"id": 226405, "field": "description", "en": "This dented and damaged crate looks like it quite literally fell off the back of a zeppelin", "hash": "68f7e7f87fe82eaf", "src": "db2@1.60.1.70685"}
-{"id": 226406, "field": "name", "en": "Rune of Sword Specialization", "hash": "d15699c8b0e1315b", "src": "db2@1.60.1.70685"}
-{"id": 226406, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70685"}
-{"id": 226407, "field": "name", "en": "Rune of Axe Specialization", "hash": "6b3d31d66c584ac0", "src": "db2@1.60.1.70685"}
-{"id": 226407, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70685"}
-{"id": 226408, "field": "name", "en": "Rune of Mace Specialization", "hash": "c653fbf7ad57bcd3", "src": "db2@1.60.1.70685"}
-{"id": 226408, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70685"}
-{"id": 226409, "field": "name", "en": "Rune of Dagger Specialization", "hash": "d72d04e336984254", "src": "db2@1.60.1.70685"}
-{"id": 226409, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70685"}
-{"id": 226410, "field": "name", "en": "Rune of Ranged Weapon Specialization", "hash": "c85ca0ecee34a92a", "src": "db2@1.60.1.70685"}
-{"id": 226410, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70685"}
-{"id": 226411, "field": "name", "en": "Rune of Fist Weapon Specialization", "hash": "b9c2a55a37b62280", "src": "db2@1.60.1.70685"}
-{"id": 226411, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70685"}
-{"id": 226412, "field": "name", "en": "Rune of Pole Weapon Specialization", "hash": "381a8b3c54100037", "src": "db2@1.60.1.70685"}
-{"id": 226412, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70685"}
-{"id": 226413, "field": "name", "en": "Rune of Arcane Specialization", "hash": "0a5223bd847ad996", "src": "db2@1.60.1.70685"}
-{"id": 226413, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70685"}
-{"id": 226414, "field": "name", "en": "Rune of Fire Specialization", "hash": "57423965552a10e0", "src": "db2@1.60.1.70685"}
-{"id": 226414, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70685"}
-{"id": 226415, "field": "name", "en": "Rune of Frost Specialization", "hash": "6ed3d6c168f418c2", "src": "db2@1.60.1.70685"}
-{"id": 226415, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70685"}
-{"id": 226416, "field": "name", "en": "Rune of Nature Specialization", "hash": "ea936e6e8b4687f4", "src": "db2@1.60.1.70685"}
-{"id": 226416, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70685"}
-{"id": 226417, "field": "name", "en": "Rune of Shadow Specialization", "hash": "8bf34d84dfd573a0", "src": "db2@1.60.1.70685"}
-{"id": 226417, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70685"}
-{"id": 226418, "field": "name", "en": "Rune of Holy Specialization", "hash": "b8bcf0256c4d8596", "src": "db2@1.60.1.70685"}
-{"id": 226418, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70685"}
-{"id": 226419, "field": "name", "en": "Rune of Feral Combat Specialization", "hash": "4567f34026daf5a6", "src": "db2@1.60.1.70685"}
-{"id": 226419, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70685"}
-{"id": 226420, "field": "name", "en": "Finely Crafted Bust", "hash": "b47026cb8ea77bfc", "src": "db2@1.60.1.70685"}
-{"id": 226420, "field": "description", "en": "A finely crafted work of art. This item would not look out of place in a private collection or museum.", "hash": "1890778aca18abef", "src": "db2@1.60.1.70685"}
-{"id": 226421, "field": "name", "en": "PLACEHOLDER_ASHBRINGER_QUESTITEM_01", "hash": "d3210890bd73fd97", "src": "db2@1.60.1.70685"}
-{"id": 226421, "field": "description", "en": "PH - Totally real, not-fake quest starter item for Ashbringer quest. Super duper real. Totally not a joke.", "hash": "2427c14cbbcd1fb8", "src": "db2@1.60.1.70685"}
-{"id": 226472, "field": "name", "en": "Stratholme Shadow Jar", "hash": "10f4a78928f7350f", "src": "db2@1.60.1.70685"}
-{"id": 226472, "field": "description", "en": "Capture the echo of a powerful denizen of Stratholme. Only usable on corpses.", "hash": "1cb2d8f8a185feb4", "src": "db2@1.60.1.70685"}
-{"id": 226526, "field": "name", "en": "Busted Gizmo", "hash": "30cc5e0f34cc6d0a", "src": "db2@1.60.1.70685"}
-{"id": 226526, "field": "description", "en": "Might be salvagable...?", "hash": "57952c8807ff29c5", "src": "db2@1.60.1.70685"}
-{"id": 226546, "field": "name", "en": "Desert Sonar", "hash": "04306e8ba4c4bd69", "src": "db2@1.60.1.70685"}
-{"id": 226546, "field": "description", "en": "Detect large objects beneath the sand.\nEmit a high-pitched sonar frequency.", "hash": "8f691110a3e7d0cf", "src": "db2@1.60.1.70685"}
-{"id": 226587, "field": "name", "en": "Rune of Shelling", "hash": "91d821155dd214d2", "src": "db2@1.60.1.70685"}
-{"id": 226587, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70685"}
-{"id": 226678, "field": "name", "en": "Premonition and Combat Foresight", "hash": "408dc12992af714f", "src": "db2@1.60.1.70685"}
+{"id": 226201, "field": "name", "en": "Squire Cuthbert's Blade", "hash": "825371ed1d7e2547", "src": "db2@1.60.1.70707"}
+{"id": 226201, "field": "description", "en": "The sword is dented and chipped, but it feels well-balanced in your hand.", "hash": "f7c57abea5b22adf", "src": "db2@1.60.1.70707"}
+{"id": 226207, "field": "name", "en": "Echo of Anastari", "hash": "dcb21522ec5017e3", "src": "db2@1.60.1.70707"}
+{"id": 226207, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70707"}
+{"id": 226208, "field": "name", "en": "Echo of Barthilas", "hash": "27418ea138f566c9", "src": "db2@1.60.1.70707"}
+{"id": 226208, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70707"}
+{"id": 226209, "field": "name", "en": "Echo of Dathrohan", "hash": "b4f51f4cd9737e50", "src": "db2@1.60.1.70707"}
+{"id": 226209, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70707"}
+{"id": 226210, "field": "name", "en": "Echo of Maleki", "hash": "d780324f6a3852cd", "src": "db2@1.60.1.70707"}
+{"id": 226210, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70707"}
+{"id": 226211, "field": "name", "en": "Echo of Nerub'enkan", "hash": "0148a83d2508a5eb", "src": "db2@1.60.1.70707"}
+{"id": 226211, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70707"}
+{"id": 226212, "field": "name", "en": "Echo of Ramstein", "hash": "685d423d41f7d2ef", "src": "db2@1.60.1.70707"}
+{"id": 226212, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70707"}
+{"id": 226213, "field": "name", "en": "Echo of Rivendare", "hash": "52da79ab4ebf72c3", "src": "db2@1.60.1.70707"}
+{"id": 226213, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70707"}
+{"id": 226214, "field": "name", "en": "Echo of Willey", "hash": "371aab59acb60e50", "src": "db2@1.60.1.70707"}
+{"id": 226214, "field": "description", "en": "Offer the echo.", "hash": "10968b43fb8f843a", "src": "db2@1.60.1.70707"}
+{"id": 226252, "field": "name", "en": "Rune of the Guerrilla", "hash": "c6a2d0699e84441b", "src": "db2@1.60.1.70707"}
+{"id": 226252, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70707"}
+{"id": 226374, "field": "name", "en": "Occult Poison I", "hash": "acdf0860690afab2", "src": "db2@1.60.1.70707"}
+{"id": 226374, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes. Each strike has a $h% chance of poisoning the enemy for $458820o1 Nature damage over $458820d and causing the enemy to take $458820s2% increased Arcane, Fire, Frost, Nature, and Shadow damage.  Stacks up to $458820u times on a single target.\r\n\r\nOccult Poison counts as Deadly Poison and benefits from all talents and effects that trigger from or modify Deadly Poison.\r\n", "hash": "ac6b5ded306f2c8f", "src": "db2@1.60.1.70707"}
+{"id": 226404, "field": "name", "en": "Tarnished Undermine Real", "hash": "9b9e26e133643f36", "src": "db2@1.60.1.70707"}
+{"id": 226404, "field": "description", "en": "This currency is slowly being phased out of circulation, but it still enjoys a very favorable exchange rate throughout the Eastern Kingdoms and Kalimdor.", "hash": "20a8567e9c353ecb", "src": "db2@1.60.1.70707"}
+{"id": 226405, "field": "name", "en": "Damaged Undermine Supply Crate", "hash": "07f156371d2c4ab0", "src": "db2@1.60.1.70707"}
+{"id": 226405, "field": "description", "en": "This dented and damaged crate looks like it quite literally fell off the back of a zeppelin", "hash": "68f7e7f87fe82eaf", "src": "db2@1.60.1.70707"}
+{"id": 226406, "field": "name", "en": "Rune of Sword Specialization", "hash": "d15699c8b0e1315b", "src": "db2@1.60.1.70707"}
+{"id": 226406, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70707"}
+{"id": 226407, "field": "name", "en": "Rune of Axe Specialization", "hash": "6b3d31d66c584ac0", "src": "db2@1.60.1.70707"}
+{"id": 226407, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70707"}
+{"id": 226408, "field": "name", "en": "Rune of Mace Specialization", "hash": "c653fbf7ad57bcd3", "src": "db2@1.60.1.70707"}
+{"id": 226408, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70707"}
+{"id": 226409, "field": "name", "en": "Rune of Dagger Specialization", "hash": "d72d04e336984254", "src": "db2@1.60.1.70707"}
+{"id": 226409, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70707"}
+{"id": 226410, "field": "name", "en": "Rune of Ranged Weapon Specialization", "hash": "c85ca0ecee34a92a", "src": "db2@1.60.1.70707"}
+{"id": 226410, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70707"}
+{"id": 226411, "field": "name", "en": "Rune of Fist Weapon Specialization", "hash": "b9c2a55a37b62280", "src": "db2@1.60.1.70707"}
+{"id": 226411, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70707"}
+{"id": 226412, "field": "name", "en": "Rune of Pole Weapon Specialization", "hash": "381a8b3c54100037", "src": "db2@1.60.1.70707"}
+{"id": 226412, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70707"}
+{"id": 226413, "field": "name", "en": "Rune of Arcane Specialization", "hash": "0a5223bd847ad996", "src": "db2@1.60.1.70707"}
+{"id": 226413, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70707"}
+{"id": 226414, "field": "name", "en": "Rune of Fire Specialization", "hash": "57423965552a10e0", "src": "db2@1.60.1.70707"}
+{"id": 226414, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70707"}
+{"id": 226415, "field": "name", "en": "Rune of Frost Specialization", "hash": "6ed3d6c168f418c2", "src": "db2@1.60.1.70707"}
+{"id": 226415, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70707"}
+{"id": 226416, "field": "name", "en": "Rune of Nature Specialization", "hash": "ea936e6e8b4687f4", "src": "db2@1.60.1.70707"}
+{"id": 226416, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70707"}
+{"id": 226417, "field": "name", "en": "Rune of Shadow Specialization", "hash": "8bf34d84dfd573a0", "src": "db2@1.60.1.70707"}
+{"id": 226417, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70707"}
+{"id": 226418, "field": "name", "en": "Rune of Holy Specialization", "hash": "b8bcf0256c4d8596", "src": "db2@1.60.1.70707"}
+{"id": 226418, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70707"}
+{"id": 226419, "field": "name", "en": "Rune of Feral Combat Specialization", "hash": "4567f34026daf5a6", "src": "db2@1.60.1.70707"}
+{"id": 226419, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70707"}
+{"id": 226420, "field": "name", "en": "Finely Crafted Bust", "hash": "b47026cb8ea77bfc", "src": "db2@1.60.1.70707"}
+{"id": 226420, "field": "description", "en": "A finely crafted work of art. This item would not look out of place in a private collection or museum.", "hash": "1890778aca18abef", "src": "db2@1.60.1.70707"}
+{"id": 226421, "field": "name", "en": "PLACEHOLDER_ASHBRINGER_QUESTITEM_01", "hash": "d3210890bd73fd97", "src": "db2@1.60.1.70707"}
+{"id": 226421, "field": "description", "en": "PH - Totally real, not-fake quest starter item for Ashbringer quest. Super duper real. Totally not a joke.", "hash": "2427c14cbbcd1fb8", "src": "db2@1.60.1.70707"}
+{"id": 226472, "field": "name", "en": "Stratholme Shadow Jar", "hash": "10f4a78928f7350f", "src": "db2@1.60.1.70707"}
+{"id": 226472, "field": "description", "en": "Capture the echo of a powerful denizen of Stratholme. Only usable on corpses.", "hash": "1cb2d8f8a185feb4", "src": "db2@1.60.1.70707"}
+{"id": 226526, "field": "name", "en": "Busted Gizmo", "hash": "30cc5e0f34cc6d0a", "src": "db2@1.60.1.70707"}
+{"id": 226526, "field": "description", "en": "Might be salvagable...?", "hash": "57952c8807ff29c5", "src": "db2@1.60.1.70707"}
+{"id": 226546, "field": "name", "en": "Desert Sonar", "hash": "04306e8ba4c4bd69", "src": "db2@1.60.1.70707"}
+{"id": 226546, "field": "description", "en": "Detect large objects beneath the sand.\nEmit a high-pitched sonar frequency.", "hash": "8f691110a3e7d0cf", "src": "db2@1.60.1.70707"}
+{"id": 226587, "field": "name", "en": "Rune of Shelling", "hash": "91d821155dd214d2", "src": "db2@1.60.1.70707"}
+{"id": 226587, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70707"}
+{"id": 226678, "field": "name", "en": "Premonition and Combat Foresight", "hash": "408dc12992af714f", "src": "db2@1.60.1.70707"}
 {"id": 226678, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "wago@1.15.9.69722"}
-{"id": 226679, "field": "name", "en": "Timeless Wanderer's Insights", "hash": "f293ea8d3a303ece", "src": "db2@1.60.1.70685"}
-{"id": 226679, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70685"}
-{"id": 226680, "field": "name", "en": "Rune of the First Warrior", "hash": "57205cfa2118cb25", "src": "db2@1.60.1.70685"}
-{"id": 226680, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70685"}
-{"id": 226694, "field": "name", "en": "Rune of Defense Specialization", "hash": "d1e8efc566f2e294", "src": "db2@1.60.1.70685"}
-{"id": 226694, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70685"}
-{"id": 226698, "field": "name", "en": "Vertically Composited Patch Hampler", "hash": "17e443b0c35fc64c", "src": "db2@1.60.1.70685"}
-{"id": 226699, "field": "name", "en": "Brass-fitted Flam-Tamp Flange", "hash": "6ca1754eaf6a287e", "src": "db2@1.60.1.70685"}
+{"id": 226679, "field": "name", "en": "Timeless Wanderer's Insights", "hash": "f293ea8d3a303ece", "src": "db2@1.60.1.70707"}
+{"id": 226679, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70707"}
+{"id": 226680, "field": "name", "en": "Rune of the First Warrior", "hash": "57205cfa2118cb25", "src": "db2@1.60.1.70707"}
+{"id": 226680, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70707"}
+{"id": 226694, "field": "name", "en": "Rune of Defense Specialization", "hash": "d1e8efc566f2e294", "src": "db2@1.60.1.70707"}
+{"id": 226694, "field": "description", "en": "Teaches you a new Engraving ability.", "hash": "bc8956a26df01e42", "src": "db2@1.60.1.70707"}
+{"id": 226698, "field": "name", "en": "Vertically Composited Patch Hampler", "hash": "17e443b0c35fc64c", "src": "db2@1.60.1.70707"}
+{"id": 226699, "field": "name", "en": "Brass-fitted Flam-Tamp Flange", "hash": "6ca1754eaf6a287e", "src": "db2@1.60.1.70707"}
 {"id": 226699, "field": "description", "en": "Includes bracket caps and half-seized sprats", "hash": "6fc726318610ba8d", "src": "wago@1.15.9.69722"}
 {"id": 226772, "field": "name", "en": "Feralheart Sash", "hash": "221d779361497bf4", "src": "db2@1.60.1.70532"}
 {"id": 226772, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "163b90314dcc0284", "src": "wago@1.15.9.69722"}
@@ -151,8 +151,8 @@
 {"id": 226831, "field": "name", "en": "Darkmantle Footpads", "hash": "80e8997e2867e95d", "src": "db2@1.60.1.70532"}
 {"id": 226831, "field": "description", "en": "Increases your effective stealth level by ${$s1/5}.", "hash": "01a7b84cec031551", "src": "db2@1.60.1.70532"}
 {"id": 226832, "field": "name", "en": "Darkmantle Belt", "hash": "34b706d21c43e0ca", "src": "db2@1.60.1.70532"}
-{"id": 226856, "field": "name", "en": "Guided Buoyancy Accelerant", "hash": "3fb33fe17443352c", "src": "db2@1.60.1.70685"}
-{"id": 226856, "field": "description", "en": "Increases swim speed by $s1% for $d1.\nProperty of D.E.L.T.A  Deepsea Exploration and Liquefaction Technologies Alliance", "hash": "a6734b083a4ea772", "src": "db2@1.60.1.70685"}
+{"id": 226856, "field": "name", "en": "Guided Buoyancy Accelerant", "hash": "3fb33fe17443352c", "src": "db2@1.60.1.70707"}
+{"id": 226856, "field": "description", "en": "Increases swim speed by $s1% for $d1.\nProperty of D.E.L.T.A  Deepsea Exploration and Liquefaction Technologies Alliance", "hash": "a6734b083a4ea772", "src": "db2@1.60.1.70707"}
 {"id": 226857, "field": "name", "en": "Battleboots of Heroism", "hash": "98d8cccbf6f5f53c", "src": "db2@1.60.1.70532"}
 {"id": 226857, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.", "hash": "3dde388aef1f734b", "src": "wago@1.15.9.69722"}
 {"id": 226858, "field": "name", "en": "Spaulders of Heroism", "hash": "92e4082f6a00a405", "src": "db2@1.60.1.70532"}

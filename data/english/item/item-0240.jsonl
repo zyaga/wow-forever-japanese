@@ -198,7 +198,7 @@
 {"id": 240130, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "ffd58529f1cacae8", "src": "wago@1.15.9.69722"}
 {"id": 240131, "field": "name", "en": "Soulcrusher Helmet", "hash": "b57591fed7d3a058", "src": "db2@1.60.1.70532"}
 {"id": 240131, "field": "description", "en": "Reduces the chance for your attacks to be dodged or parried by $s1%.\nIncreases your attack speed by $s1%.", "hash": "eb0cfee942df6878", "src": "wago@1.15.9.69722"}
-{"id": 240132, "field": "name", "en": "Test Staff", "hash": "2f847144cd8eb1b3", "src": "db2@1.60.1.70685"}
+{"id": 240132, "field": "name", "en": "Test Staff", "hash": "2f847144cd8eb1b3", "src": "db2@1.60.1.70707"}
 {"id": 240134, "field": "name", "en": "Soulcrusher Leggings", "hash": "b1beaddbd1f819bc", "src": "db2@1.60.1.70532"}
 {"id": 240134, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases your attack speed by $s1%.", "hash": "ffd58529f1cacae8", "src": "wago@1.15.9.69722"}
 {"id": 240135, "field": "name", "en": "Soulcrusher Epaulets", "hash": "425c909015a96dd2", "src": "db2@1.60.1.70532"}
@@ -239,13 +239,13 @@
 {"id": 240152, "field": "description", "en": "Improves your chance to hit with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.\nIncreased Defense +$s1.", "hash": "a6a43c024c3a2cea", "src": "wago@1.15.9.69722"}
 {"id": 240153, "field": "name", "en": "Heretic Boots", "hash": "bc17aa62663cb540", "src": "db2@1.60.1.70532"}
 {"id": 240153, "field": "description", "en": "Improves your chance to get a critical strike with all spells and attacks by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.\nIncreased Defense +$s1.", "hash": "9a8d36f7d393e971", "src": "wago@1.15.9.69722"}
-{"id": 240742, "field": "name", "en": "Monster - 1H, Shortsword, Red", "hash": "d7e768cadbcb6fa0", "src": "db2@1.60.1.70685"}
-{"id": 240836, "field": "name", "en": "Thisalee's Whistle", "hash": "60dd90587c61afa8", "src": "db2@1.60.1.70685"}
-{"id": 240845, "field": "name", "en": "Prototype Magnet", "hash": "ccd4f1d23ff98e1b", "src": "db2@1.60.1.70685"}
-{"id": 240845, "field": "description", "en": "Briefly reveal and supercharge your prototype magnet in attempt to catch stray metallic objects.", "hash": "2133869e06031add", "src": "db2@1.60.1.70685"}
-{"id": 240846, "field": "name", "en": "Magnetic Scrap", "hash": "9d976127dc386440", "src": "db2@1.60.1.70685"}
-{"id": 240846, "field": "description", "en": "One person's trash is another person's treasure, whether they like it or not!", "hash": "4843a396449c522d", "src": "db2@1.60.1.70685"}
-{"id": 240945, "field": "name", "en": "Slice of Carrie's Apple Pie", "hash": "c313f7a20a527e61", "src": "db2@1.60.1.70685"}
-{"id": 240945, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.\nDespite the pie having been cut into three pieces of equal size, you somehow managed to get the smallest slice.", "hash": "fd1ba045f3cf2101", "src": "db2@1.60.1.70685"}
+{"id": 240742, "field": "name", "en": "Monster - 1H, Shortsword, Red", "hash": "d7e768cadbcb6fa0", "src": "db2@1.60.1.70707"}
+{"id": 240836, "field": "name", "en": "Thisalee's Whistle", "hash": "60dd90587c61afa8", "src": "db2@1.60.1.70707"}
+{"id": 240845, "field": "name", "en": "Prototype Magnet", "hash": "ccd4f1d23ff98e1b", "src": "db2@1.60.1.70707"}
+{"id": 240845, "field": "description", "en": "Briefly reveal and supercharge your prototype magnet in attempt to catch stray metallic objects.", "hash": "2133869e06031add", "src": "db2@1.60.1.70707"}
+{"id": 240846, "field": "name", "en": "Magnetic Scrap", "hash": "9d976127dc386440", "src": "db2@1.60.1.70707"}
+{"id": 240846, "field": "description", "en": "One person's trash is another person's treasure, whether they like it or not!", "hash": "4843a396449c522d", "src": "db2@1.60.1.70707"}
+{"id": 240945, "field": "name", "en": "Slice of Carrie's Apple Pie", "hash": "c313f7a20a527e61", "src": "db2@1.60.1.70707"}
+{"id": 240945, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.\nDespite the pie having been cut into three pieces of equal size, you somehow managed to get the smallest slice.", "hash": "fd1ba045f3cf2101", "src": "db2@1.60.1.70707"}
 {"id": 240993, "field": "name", "en": "Tim's Test Ranged Weapon", "hash": "ebfa88838df6cbd2", "src": "db2@1.60.1.70685"}
-{"id": 240994, "field": "name", "en": "Tim's Test Ranged Weapon 2", "hash": "dd8a5b1fad483d5f", "src": "db2@1.60.1.70685"}
+{"id": 240994, "field": "name", "en": "Tim's Test Ranged Weapon 2", "hash": "dd8a5b1fad483d5f", "src": "db2@1.60.1.70707"}

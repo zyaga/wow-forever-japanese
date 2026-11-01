@@ -1,4 +1,4 @@
-{"id": 234012, "field": "name", "en": "Hive Thistle", "hash": "d70ed9da6dce364e", "src": "db2@1.60.1.70685"}
+{"id": 234012, "field": "name", "en": "Hive Thistle", "hash": "d70ed9da6dce364e", "src": "db2@1.60.1.70707"}
 {"id": 234016, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70532"}
 {"id": 234016, "field": "description", "en": "Increases the casting speed of your spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Invoker", "hash": "2b5d2b7652a91f40", "src": "db2@1.60.1.70532"}
 {"id": 234017, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70532"}
@@ -63,9 +63,9 @@
 {"id": 234439, "field": "description", "en": "Increases the damage dealt by all of your damage over time spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Subjugator", "hash": "0ea2a19b85e07fe7", "src": "db2@1.60.1.70532"}
 {"id": 234440, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70532"}
 {"id": 234440, "field": "description", "en": "Increases the damage dealt by all of your damage over time spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Subjugator", "hash": "0ea2a19b85e07fe7", "src": "db2@1.60.1.70532"}
-{"id": 234444, "field": "name", "en": "Occult Poison II", "hash": "76214b21a702c30f", "src": "db2@1.60.1.70685"}
-{"id": 234444, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes. Each strike has a $h% chance of poisoning the enemy for $1214170o1 Nature damage over $1214170d and causing the enemy to take $1214170s2% increased Arcane, Fire, Frost, Nature, and Shadow damage.  Stacks up to $1214170u times on a single target.\r\n\r\nOccult Poison counts as Deadly Poison and benefits from all talents and effects that trigger from or modify Deadly Poison.\r\n", "hash": "db56e99728cc6694", "src": "db2@1.60.1.70685"}
-{"id": 234465, "field": "name", "en": "Reins of the Swift Spectral Tiger", "hash": "ff77be2acf248468", "src": "db2@1.60.1.70685"}
+{"id": 234444, "field": "name", "en": "Occult Poison II", "hash": "76214b21a702c30f", "src": "db2@1.60.1.70707"}
+{"id": 234444, "field": "description", "en": "Coats a weapon with poison that lasts for 30 minutes. Each strike has a $h% chance of poisoning the enemy for $1214170o1 Nature damage over $1214170d and causing the enemy to take $1214170s2% increased Arcane, Fire, Frost, Nature, and Shadow damage.  Stacks up to $1214170u times on a single target.\r\n\r\nOccult Poison counts as Deadly Poison and benefits from all talents and effects that trigger from or modify Deadly Poison.\r\n", "hash": "db56e99728cc6694", "src": "db2@1.60.1.70707"}
+{"id": 234465, "field": "name", "en": "Reins of the Swift Spectral Tiger", "hash": "ff77be2acf248468", "src": "db2@1.60.1.70707"}
 {"id": 234465, "field": "description", "en": "Summons and dismisses a Swift Spectral Tiger.   This is a very fast mount.", "hash": "7d7bae98295e5de2", "src": "wago@1.15.9.69722"}
 {"id": 234542, "field": "name", "en": "High Warlord's Greatsword", "hash": "94dccf2e75b7f6cd", "src": "db2@1.60.1.70532"}
 {"id": 234542, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70532"}
@@ -155,15 +155,15 @@
 {"id": 234589, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70532"}
 {"id": 234590, "field": "name", "en": "Grand Marshal's Tome of Restoration", "hash": "e599a258d6acf1a1", "src": "db2@1.60.1.70532"}
 {"id": 234590, "field": "description", "en": "Reduces all damage taken from players and their pets by $s2%. This effect cannot be combined from multiple sources.", "hash": "115db1dc58512268", "src": "db2@1.60.1.70532"}
-{"id": 234728, "field": "name", "en": "Hakkari Summoning Token", "hash": "451ef5785580e794", "src": "db2@1.60.1.70685"}
-{"id": 234728, "field": "description", "en": "A fetish used in summoning the god Hakkar to receive a bodily sacrifice.", "hash": "d2d150c47c2590a0", "src": "db2@1.60.1.70685"}
-{"id": 234817, "field": "name", "en": "Roots Within Stone", "hash": "4152d90015639f45", "src": "db2@1.60.1.70685"}
-{"id": 234817, "field": "description", "en": "An ancient text that details properties of long-lost rituals of the druids.", "hash": "d3f5be2938ddfbd2", "src": "db2@1.60.1.70685"}
-{"id": 234818, "field": "name", "en": "Essence Bottle", "hash": "35f21b3024a923bd", "src": "db2@1.60.1.70685"}
-{"id": 234818, "field": "description", "en": "Collect the essence of a Hederine demon from Darkwhisper Gorge.\nA strange fel energy emanates from the bottle.", "hash": "a07ab1249389ccb1", "src": "db2@1.60.1.70685"}
-{"id": 234819, "field": "name", "en": "Demonic Gauntlet", "hash": "54b6d40699d79a79", "src": "db2@1.60.1.70685"}
-{"id": 234820, "field": "name", "en": "Acidic Goo", "hash": "86055337d33c0773", "src": "db2@1.60.1.70685"}
-{"id": 234820, "field": "description", "en": "Combine the Demonic Gauntlet with the Acidic Goo.", "hash": "4274156dafc1e00f", "src": "db2@1.60.1.70685"}
+{"id": 234728, "field": "name", "en": "Hakkari Summoning Token", "hash": "451ef5785580e794", "src": "db2@1.60.1.70707"}
+{"id": 234728, "field": "description", "en": "A fetish used in summoning the god Hakkar to receive a bodily sacrifice.", "hash": "d2d150c47c2590a0", "src": "db2@1.60.1.70707"}
+{"id": 234817, "field": "name", "en": "Roots Within Stone", "hash": "4152d90015639f45", "src": "db2@1.60.1.70707"}
+{"id": 234817, "field": "description", "en": "An ancient text that details properties of long-lost rituals of the druids.", "hash": "d3f5be2938ddfbd2", "src": "db2@1.60.1.70707"}
+{"id": 234818, "field": "name", "en": "Essence Bottle", "hash": "35f21b3024a923bd", "src": "db2@1.60.1.70707"}
+{"id": 234818, "field": "description", "en": "Collect the essence of a Hederine demon from Darkwhisper Gorge.\nA strange fel energy emanates from the bottle.", "hash": "a07ab1249389ccb1", "src": "db2@1.60.1.70707"}
+{"id": 234819, "field": "name", "en": "Demonic Gauntlet", "hash": "54b6d40699d79a79", "src": "db2@1.60.1.70707"}
+{"id": 234820, "field": "name", "en": "Acidic Goo", "hash": "86055337d33c0773", "src": "db2@1.60.1.70707"}
+{"id": 234820, "field": "description", "en": "Combine the Demonic Gauntlet with the Acidic Goo.", "hash": "4274156dafc1e00f", "src": "db2@1.60.1.70707"}
 {"id": 234964, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70532"}
 {"id": 234964, "field": "description", "en": "While Metamorphosis or Way of Earth is active, increases the effectiveness of your Fire damage spells by $s1% per piece of Timeworn armor equipped.\nThe Path of the Flamekeeper", "hash": "8624e35c89cfebff", "src": "db2@1.60.1.70532"}
 {"id": 234965, "field": "name", "en": "Signet Ring of the Bronze Dragonflight", "hash": "9a0424e8c93e30b5", "src": "db2@1.60.1.70532"}
