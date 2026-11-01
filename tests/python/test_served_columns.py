@@ -159,4 +159,3 @@ def test_wdb_records_refuses_a_file_that_is_not_a_cache(tmp_path: Path, bad: byt
     path.write_bytes(bad)
     with pytest.raises(ValueError):
         sc.wdb_records(path)
-

@@ -316,3 +316,10 @@ def test_read_for_keeps_the_archive_build_s_own_cache(tmp_path: Path):
     p = tmp_path / "DBCache.bin"
     p.write_bytes(cache([], build_no=70707))
     assert dbcache.read_for(p, "1.60.1.70707").build == 70707
+
+
+def test_read_for_refuses_an_archive_version_without_a_build_number(tmp_path: Path):
+    p = tmp_path / "DBCache.bin"
+    p.write_bytes(cache([], build_no=70707))
+    with pytest.raises(dbcache.DbcacheError, match="carries no build number"):
+        dbcache.read_for(p, "1.60.1.x")

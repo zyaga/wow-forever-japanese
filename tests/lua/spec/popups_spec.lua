@@ -179,6 +179,8 @@ describe("the StaticPopup dialogs on Forever", function()
         elseif C.regional then d.SubText:SetText(_G.CHARACTER_FRIEND_LABEL)
         else d.SubText:SetText(_G.INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_CHARACTER) end
       end }
+    -- the invite-link variant mixes the same definition in under an extra button (gamedialogdefs.lua:1441–1446)
+    D.INVITE_COMMUNITY_MEMBER_WITH_INVITE_LINK = setmetatable({ extraButton = _G.OKAY }, { __index = D.INVITE_COMMUNITY_MEMBER })
     -- button1's OnEnter is set in OnShow: the combat tooltip (gamedialogdefs.lua:3470–3482)
     D.SHARD_TRANSFER_IMMEDIATE = { text = _G.SHARD_TRANSFER_NOW, button1 = _G.SHARD_TRANSFER_NOW_BUTTON,
       OnShow = function(d)
@@ -231,6 +233,9 @@ describe("the StaticPopup dialogs on Forever", function()
     C.regional = false
     local f = _G.StaticPopup_Show("INVITE_COMMUNITY_MEMBER", "", nil, { bnet = false })
     assert.are.equal(UI.INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_CHARACTER[2], f.SubText:GetText())
+    _G.StaticPopup1.shown = false
+    local g = _G.StaticPopup_Show("INVITE_COMMUNITY_MEMBER_WITH_INVITE_LINK", "", nil, { bnet = true })
+    assert.are.equal(UI.INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BNET_FRIEND[2], g.SubText:GetText())
   end)
 
   it("the typed confirmation line: the word to type stays as written; gamepad mode's line; none is blank", function()
