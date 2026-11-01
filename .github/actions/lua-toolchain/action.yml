@@ -57,14 +57,14 @@ runs:
     - if: steps.lua-toolchain.outputs.cache-hit != 'true'
       id: luarocks
       continue-on-error: true
-      uses: leafo/gh-actions-luarocks@35d062def313a7699a0d513e996bcf4352f05389 # v6.1.0
+      uses: leafo/gh-actions-luarocks@1c4a92caecc8f6850f673cbadfd57b3e555417ce # v6.1.1
       with:
         luaRocksVersion: ${{ inputs.luarocks-version }}
     - if: steps.lua-toolchain.outputs.cache-hit != 'true' && steps.luarocks.outcome == 'failure'
       shell: bash
       run: rm -rf .luarocks && sleep 15
     - if: steps.lua-toolchain.outputs.cache-hit != 'true' && steps.luarocks.outcome == 'failure'
-      uses: leafo/gh-actions-luarocks@35d062def313a7699a0d513e996bcf4352f05389 # v6.1.0
+      uses: leafo/gh-actions-luarocks@1c4a92caecc8f6850f673cbadfd57b3e555417ce # v6.1.1
       with:
         luaRocksVersion: ${{ inputs.luarocks-version }}
     - if: steps.lua-toolchain.outputs.cache-hit != 'true'
