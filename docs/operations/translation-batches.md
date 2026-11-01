@@ -374,7 +374,8 @@ Two stale lines had hand-written winners: Swiftmend's correction still says what
 the boots enchant's human line gained the value slot the English now prints (a correction, nothing else moved). Four
 machine lines carried an `accept` ruling from the round that replaced rejected hand-written text (Revenge 6572, Total
 Health 20550, Moonkin Form 24858, Righteous Fury 25780); each now carries `reject`, superseded by the redraft written
-against the new English, so the redraft ships. 48 template rows with 70707 English are not drafted and stay on the
+against the new English, so the redraft ships. Command rank 1's hand-written line bakes the 5% its template now prints as a value, so it carries a `reject` ruling
+(the baked-numbers rule) and the machine draft covers all three ranks. 48 template rows with 70707 English are not drafted and stay on the
 coverage list (an included spell the tables do not carry, more variants than the addon takes, `$@auracaster` and
 `$@spellaura` codes). No reading is owed. The quest half (the scan's cache, the full import, quest and objective drafts,
 and voice) follows in the scan's re-pull after launch; 191 quest ids wait for it. Items, spells and interface lines are
