@@ -16,8 +16,8 @@
 --            a frame made before the mixin hook still holds the method the mixin had then (the HudLabels rule).
 --            After a label changes, the prompt is re-sized exactly as the writer does and its legend re-laid out.
 --   radial   GamepadRadial (gamepadradial.xml:119, made at load): ActivateRadial writes HeaderText and, through
---            FillSegmentData → GamepadRadialSegmentMixin:SetHandler, each segment's IconLabel (lua:883–925,
---            1093–1109); the context selector's SetMenuOptions writes each D-pad indicator's Label (lua:1181–1209,
+--            FillSegmentData → GamepadRadialSegmentMixin:SetHandler, each segment's IconLabel (lua:889–931,
+--            1099–1115); the context selector's SetMenuOptions writes each D-pad indicator's Label (lua:1187–1215,
 --            BasicContextOptionHandler:Attach :352–360). Both are post-hooked on the instances.
 --   skip     GamepadMode.CreateHoldButtonWithTextFromTemplate (framereformutility.lua:138–171) makes the cinematic /
 --            movie skip button (cinematicmovie.lua:21–28); its OnUpdate rewrites the text every frame, SKIP or

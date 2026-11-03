@@ -14,13 +14,13 @@ local UI = {
   DEATH_RELEASE_TIMER = { "%d %s until release", "解放まで%d%s" },
   SECONDS = { "|4Second:Seconds;", "秒" }, MINUTES = { "|4Minute:Minutes;", "分" },
   YES = { "Yes", "はい" }, NO = { "No", "いいえ" }, DEATH_RELEASE = { "Release Spirit", "霊体になる" },
-  -- The age-verification dialogs (blizzard_staticpopup_game/gamedialogdefs.lua:3312–3327)
+  -- The age-verification dialogs (blizzard_staticpopup_game/gamedialogdefs.lua:3315–3330)
   SOCIAL_FEATURES_UNAVAILABLE = { "Social Features Unavailable", "ソーシャル機能は利用できません" },
   SOCIAL_FEATURES_UNAVAILABLE_DESCRIPTION = { "World of Warcraft includes social features that allow players to "
     .. "communicate and interact with one another.|n|nThis account belongs to a minor.",
     "World of Warcraftには、プレイヤー同士が交流し、やり取りできるソーシャル機能があります。|n|nこのアカウントは未成年者のものです。" },
   OKAY = { "Okay", "OK" },
-  -- the party invite (gamedialogdefs.lua:1306-1331, eventimplementation.lua:61-72)
+  -- the party invite (gamedialogdefs.lua:1309–1334, eventimplementation.lua:61-72)
   INVITATION = { "%s invites you to a group.", "%sがあなたをグループに招待しています。" },
   ACCEPTING_INVITE_WILL_REMOVE_QUEUE = { "Accepting this invite will remove you from all queues.",
     "このグループに参加すると、現在のキューからすべて外れます。" },
@@ -29,7 +29,7 @@ local UI = {
   CONFIRM_TALENT_WIPE_1 = { "Do you want to unlearn all of your talents?", "すべてのタレントを忘れますか？" },
   CANCEL = { "Cancel", "キャンセル" },
   ACCEPT = { "Accept", "承諾" }, DECLINE = { "Decline", "辞退" },
-  -- the group voice-chat join (mainline/gamedialogdefs.lua:1564–1587): text "", its OnShow writes the line
+  -- the group voice-chat join (mainline/gamedialogdefs.lua:1567–1590): text "", its OnShow writes the line
   VOICE_CHAT_JOIN_GROUP_TEXT = { "This group is using voice chat for easier communication.",
     "このグループは連絡を取りやすくするためにボイスチャットを使っています。" },
   VOICE_CHAT_JOIN_GROUP_DISCORD_TEXT = { "Text-to-Speech and Speech-to-Text are not supported in this channel.",
@@ -44,7 +44,7 @@ local UI = {
     "%sをバトルタグフレンドから外しますか？" },
   REMOVE_FRIEND_CONFIRMATION = { "Are you sure you want to remove %s as a Real ID friend?",
     "%sをReal IDフレンドから外しますか？" },
-  -- the Hardcore duel request: a dialog line with a player link (gamedialogdefs.lua:3578–3579)
+  -- the Hardcore duel request: a dialog line with a player link (gamedialogdefs.lua:3581–3582)
   DUEL_TO_THE_DEATH_REQUESTED = { "|Hplayer:%s|h[%s]|h has challenged you to a duel to the death.",
     "|Hplayer:%s|h[%s]|hから死闘の決闘を申し込まれました。" },
   -- the typed confirmation under a dialog's text (gamedialog.lua:214–235); the word to type stays as written
@@ -57,7 +57,7 @@ local UI = {
   CONFIRM_DESTROY_CHARACTER_COMMUNITY_UNPROMPTED = {
     "Are you sure you want to delete the community \"%s\"? This can't be undone.",
     "コミュニティ「%s」を削除しますか？元に戻すことはできません。" },
-  -- the shard-transfer button's combat tooltip (gamedialogdefs.lua:3434–3445, 3470–3482)
+  -- the shard-transfer button's combat tooltip (gamedialogdefs.lua:3437–3448, 3473–3485)
   SHARD_TRANSFER_COMBAT = { "You can't refresh the world while in combat.", "戦闘中はワールドを更新できません。" },
   SHARD_TRANSFER_NOW = { "Your world is ready to refresh.", "ワールドを更新する準備ができました。" },
   SHARD_TRANSFER_NOW_BUTTON = { "Refresh Now", "今すぐ更新" },
@@ -67,7 +67,7 @@ local UI = {
   WOW_FRIEND_DESCRIPTION = { "Add a WoW friend.", "WoWフレンドを追加します。" },
   ERR_REAL_ID_FRIEND_REQUESTS_DISABLED = { "Real ID friend requests are disabled.", "Real IDフレンドリクエストは無効です。" },
   ENTER_NAME_OR_BATTLETAG = { "Enter name or BattleTag", "名前またはバトルタグを入力" },
-  -- the community invite dialog (mainline/gamedialogdefs.lua:1362–1395): OnShow writes the SubText per community
+  -- the community invite dialog (mainline/gamedialogdefs.lua:1365–1398): OnShow writes the SubText per community
   INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BTAG = { "Enter a BattleTag.", "BattleTagを入力してください。" },
   INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BNET_FRIEND = { "Enter a Battle.net friend", "Battle.netのフレンドを入力" },
   INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_CHARACTER = { "Enter character name-server name.",
@@ -150,7 +150,7 @@ describe("the StaticPopup dialogs on Forever", function()
     D.SERVER = { text = "", button1 = _G.YES }
     D.GENERIC_CONFIRMATION = { text = "" } -- its OnShow writes the caller's text and buttons
     D.PARTY_INVITE = { text = "%s", button1 = _G.ACCEPT, button2 = _G.DECLINE }
-    -- the decline lock writes its countdown label in OnShow (gamedialogdefs.lua:19-34, 1311-1314)
+    -- the decline lock writes its countdown label in OnShow (gamedialogdefs.lua:19-34, 1314–1317)
     D.PARTY_INVITE_LOCKED = { text = "%s", button1 = _G.ACCEPT, button2 = _G.DECLINE,
       OnShow = function(d) d.ButtonContainer.Buttons[2]:SetText(_G.DECLINE .. " (1s)") end }
     D.CONFIRM_TALENT_WIPE = { text = "%s", button1 = _G.ACCEPT, button2 = _G.CANCEL }
@@ -179,10 +179,10 @@ describe("the StaticPopup dialogs on Forever", function()
         elseif C.regional then d.SubText:SetText(_G.CHARACTER_FRIEND_LABEL)
         else d.SubText:SetText(_G.INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_CHARACTER) end
       end }
-    -- the invite-link variant mixes the same definition in under an extra button (gamedialogdefs.lua:1441–1446)
+    -- the invite-link variant mixes the same definition in under an extra button (gamedialogdefs.lua:1444–1449)
     D.INVITE_COMMUNITY_MEMBER_WITH_INVITE_LINK = setmetatable({ extraButton = _G.OKAY },
       { __index = D.INVITE_COMMUNITY_MEMBER })
-    -- button1's OnEnter is set in OnShow: the combat tooltip (gamedialogdefs.lua:3470–3482)
+    -- button1's OnEnter is set in OnShow: the combat tooltip (gamedialogdefs.lua:3473–3485)
     D.SHARD_TRANSFER_IMMEDIATE = { text = _G.SHARD_TRANSFER_NOW, button1 = _G.SHARD_TRANSFER_NOW_BUTTON,
       OnShow = function(d)
         local b1 = d.ButtonContainer.Buttons[1]

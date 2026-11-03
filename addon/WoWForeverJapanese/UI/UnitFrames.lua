@@ -4,7 +4,7 @@
 -- aura) or a NUMBER (health, power, level) and is never touched; the fixed words are:
 --   the target-style frames' "Dead" / "Unconscious": static XML FontStrings, text="DEAD" / text="UNCONSCIOUS"
 --     (mainline/targetframe.xml:182, 187 in TargetFrameContent.TargetFrameContentMain.HealthBarsContainer; :448, :453
---     in the target-of-target HealthBar), shown and hidden by TargetFrameMixin:CheckDead (targetframe.lua:475–490).
+--     in the target-of-target HealthBar), shown and hidden by TargetFrameMixin:CheckDead (targetframe.lua:478–493).
 --     Shown once at init for TargetFrame, FocusFrame, Boss1..5TargetFrame and their totFrame;
 --   a compact unit frame's status text: CompactUnitFrame_UpdateStatusText (a global function, shared/
 --     compactunitframe.lua:1084–1114) writes PLAYER_OFFLINE, DEAD, a health number, LOST_HEALTH or a percentage into
@@ -27,7 +27,7 @@
 --     keys (a phased reason is client-built text and never matches): the party frames from PartyFrame's pool at init,
 --     a compact frame's icon from the post-hook of CompactUnitFrame_UpdateCenterStatusIcon (registering is a table
 --     write, repeated harmlessly).
--- Not here (stay English): a TextStatusBar's zero text (SetBarTextZeroText(DEAD), targetframe.lua:744,
+-- Not here (stay English): a TextStatusBar's zero text (SetBarTextZeroText(DEAD), targetframe.lua:747,
 --   partymemberframe.lua:359, 809), written inside the health text update on every health event, beside values that
 --   can be secret; unit popup menu titles (RAID_TARGET_ICON, SET_FOCUS: the menu system's); HelpTips; edit-mode
 --   system names.

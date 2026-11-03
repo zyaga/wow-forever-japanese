@@ -16,7 +16,7 @@
 -- one of them drops our record (never restored over the client's text).
 -- The height calculator measures hidden spare buttons with the English (GossipFrameShared.lua:124–140, 244–249); the
 -- Japanese suffix is shorter, so the row does not re-layout.
--- Untouched: the title, which is the NPC name (SetGossipTitle(UnitName("npc")), GossipFrameShared.lua:286,
+-- Untouched: the title, which is the NPC name (SetGossipTitle(UnitName("npc")), GossipFrameShared.lua:287,
 -- Classic/GossipFrame.lua:66–68). Release on GossipFrame's OnHide (a mixin method binding; HookScript runs after it).
 local _, WFJ = ...
 local GossipChrome = {}

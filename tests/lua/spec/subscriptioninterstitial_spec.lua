@@ -1,6 +1,6 @@
 -- The trial account's subscribe panel on Forever: UI/SubscriptionInterstitial.lua over a
 -- SubscriptionInterstitialFrame replayed from blizzard_subscriptioninterstitialui/blizzard_subscriptioninterstitialui
--- .xml (:72–166) and .lua (:71–84, the bullet point pool), load-on-demand in both load orders. A widget shows only
+-- .xml (:64–158) and .lua (:65–78, the bullet point pool), load-on-demand in both load orders. A widget shows only
 -- its own key.
 local Stub = require("tests.lua.spec.wow_stub")
 local C = require("tests.lua.spec.stub_commerce")

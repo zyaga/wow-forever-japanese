@@ -3,19 +3,19 @@
 -- (its TOC: LoadOnDemand 1); `camelot` loads it for trial and veteran-trial accounts when the player enters the
 -- world (blizzard_game/mainline/eventimplementation.lua:838–840 → SubscriptionInterstitial_LoadUI,
 -- blizzard_subscriptioninterstitialui_bootstrap.lua:1–3), and the frame shows itself on the
--- SHOW_SUBSCRIPTION_INTERSTITIAL event (blizzard_subscriptioninterstitialui.lua:104, 130–136). Set up through
+-- SHOW_SUBSCRIPTION_INTERSTITIAL event (blizzard_subscriptioninterstitialui.lua:91, 151–156). Set up through
 -- WFJ.LoadOnDemand.when.
 -- camelot also loads its own camelot/blizzard_subscriptioninterstitialui.lua after the shared file (toc: [Game]): it
--- hides ClosePanelButton (:18), sets UpgradeButton.ButtonText to GameFontNormalHuge at a 270 width (:41–43), and
+-- hides ClosePanelButton (:28), sets UpgradeButton.ButtonText to GameFontNormalHuge at a 270 width (:51–53), and
 -- releases the bullet pool and builds the bullets again from the same SUBSCRIPTION_INTERSTITIAL_UPGRADE_BULLET<n>
--- strings, each one placed below the last by its English height (:44–79).
+-- strings, each one placed below the last by its English height (:54–89).
 -- Every text is written once, by the XML or by an OnLoad (every widget is a parentKey):
---   SubscribeButton.FirstLine / SecondLine / ThirdLine / ButtonText (xml:70–101; three words stacked as one banner),
---   UpgradeButton.TitleLine / TitleSubText / ButtonText (xml:121–141), ClosePanelButton CLOSE (xml:164),
+--   SubscribeButton.FirstLine / SecondLine / ThirdLine / ButtonText (xml:62–93; three words stacked as one banner),
+--   UpgradeButton.TitleLine / TitleSubText / ButtonText (xml:113–133), ClosePanelButton CLOSE (xml:153),
 --   UpgradeButton's pooled bullet points: bulletPoint.Text = _G["SUBSCRIPTION_INTERSTITIAL_UPGRADE_BULLET" .. n]
---     (lua:72–91; bulletPointPool :70), walked from the pool and keyed by widget.
+--     (lua:67–85; bulletPointPool :65), walked from the pool and keyed by widget.
 -- The labels are shown when the addon loads and again on the frame's OnShow. Their fonts are scaled to fit the
--- English once at load (ScaleTextToFit, lua:14, 49–58, 67–68): whether the Japanese fits is an in-game check.
+-- English once at load (ScaleTextToFit, lua:35, 44–53, 62–63): whether the Japanese fits is an in-game check.
 local _, WFJ = ...
 local SubscriptionInterstitial = {}
 WFJ.SubscriptionInterstitial = SubscriptionInterstitial

@@ -3,7 +3,7 @@
 -- SharedReportFrameTemplate;
 -- both load at login. It is an ordinary frame shown with self:Show() (reportframeshared.lua:130), not a StaticPopup,
 -- opened by the unit menus' Report entries, the mail frame (blizzard_mailframe/mailframe.lua:1142), the calendar
--- and the group finder (blizzard_groupfinder_vanillastyle/blizzard_lfgvanilla_browse.lua:1463–1477).
+-- and the group finder (blizzard_groupfinder_vanillastyle/blizzard_lfgvanilla_browse.lua:1469–1483).
 -- Static labels (XML text=; each restricted to its own key): TitleText, ThankYouText (the "thank you" page is part of
 --   the window, whatever its ERR_ name says), ReportingMajorCategoryDropdown.Label, ReportButton,
 --   MinorReportDescription (reportframeshared.xml:69–191); the comment box's Instructions FontString, filled from the

@@ -1,5 +1,5 @@
 -- The client's side of the NPC talk window, replayed from classic_era 1.15.9.69722:
---   Blizzard_UIPanels_Game/Shared/GossipFrameShared.lua:7–168, 241–294 (mixins, UpdateScrollBox, Update),
+--   Blizzard_UIPanels_Game/Shared/GossipFrameShared.lua:7–168, 241–295 (mixins, UpdateScrollBox, Update),
 --   Blizzard_UIPanels_Game/Classic/GossipFrame.lua:13–24 (GOSSIP_SHOW → HandleShow + Update),
 --   Blizzard_SharedXML/Shared/Scroll/ScrollBox*.lua + ScrollUtil.lua:14–53 (a list view: data provider → release
 --   every row → extents from the calculator → acquire rows from per-template pools (LIFO), each sized to its extent →

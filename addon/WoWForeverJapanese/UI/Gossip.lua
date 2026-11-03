@@ -18,7 +18,7 @@
 --     text the policy will show (Render.preview), and the session's first window is laid out again once.
 --   * [unverified; in-game check in docs/testing/strategy.md] both row initializers call
 --     self:RegisterFontString(<row text>) before Setup and Update ends with self:UpdateTheme()
---     (GossipFrameShared.lua:143, 148, 293) on a UIThemeContainerFrame, a native type with no FrameXML source: if the
+--     (GossipFrameShared.lua:143, 148, 294) on a UIThemeContainerFrame, a native type with no FrameXML source: if the
 --     theme re-applies a font object after our write, Japanese rows would lose their glyphs.
 --     The fallback is to re-apply the bundled font from the Update post-hook, which runs after UpdateTheme.
 --   * English from the API (C_GossipInfo.GetText, the GetOptions entry the row was written from); a row that does not
@@ -34,7 +34,7 @@
 --     (TOPLEFT 73, −41, 230×14, hidden unless the NPC has a friendship reputation, GossipFrame.xml:73–77,
 --     Classic/FriendshipStatusBar.lua:10–25); while it is shown the markers fall back to inline.
 -- Every greeting and option English goes to the Collector first, with the NPC's GUID (UnitGUID("npc") [likely: the
--- window reads UnitName("npc"), GossipFrameShared.lua:286]).
+-- window reads UnitName("npc"), GossipFrameShared.lua:287]).
 local _, WFJ = ...
 local Gossip = {}
 WFJ.Gossip = Gossip

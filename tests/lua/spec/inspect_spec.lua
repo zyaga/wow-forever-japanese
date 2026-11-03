@@ -1,6 +1,6 @@
 -- UI/Inspect.lua over an InspectFrame replayed from camelot blizzard_inspectui (build 1.60.1.70291:
 -- camelot/blizzard_inspectui.xml:54–76, camelot/inspectpaperdollframe.xml:56–76 (no Talents button),
--- mainline/inspectpaperdollframe.lua:28–55 + 223–233, camelot/inspectpvpframe.lua:105–133,
+-- mainline/inspectpaperdollframe.lua:29–61 + 229–239, camelot/inspectpvpframe.lua:105–133,
 -- camelot/inspectguildframe.lua:17–34). The title is the inspected player's name, the guild's name is a name and the
 -- PvP rank title is a name: all stay as written. Either load order.
 local H = require("tests.lua.spec.helpers")
@@ -48,7 +48,7 @@ local function loadInspect(shape)
   if shape ~= "bare" then
     local doll = CreateFrame("Frame", "InspectPaperDollFrame")
     doll.name = "InspectPaperDollFrame"
-    function doll.SetLevel(_) -- mainline/inspectpaperdollframe.lua:50–54
+    function doll.SetLevel(_) -- mainline/inspectpaperdollframe.lua:56–60
       if type(_G.InspectLevelText) ~= "table" then return end -- (a test binds the name to a number)
       _G.InspectLevelText.text = C.spec
         and string.format(en("PLAYER_LEVEL"), C.level, "ffc79c6e", C.spec, C.class)

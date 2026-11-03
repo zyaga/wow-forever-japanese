@@ -37,7 +37,7 @@ local function ensure()
   -- 160–161; the calendar's description field uses it]
   frame = CreateFrame("Frame", nil, Compat.resolve("UIParent"), "TooltipBackdropTemplate")
   frame:SetFrameStrata("TOOLTIP")
-  -- verified on Forever: blizzard_menu/menu.lua:1530 calls SetClampedToScreen(true) on a frame
+  -- verified on Forever: blizzard_menu/menu.lua:1567 calls SetClampedToScreen(true) on a frame
   frame:SetClampedToScreen(true)
   wordFs = text(frame, 16, 1, 1, 1)
   readingFs = text(frame, 13, 1, 0.82, 0)

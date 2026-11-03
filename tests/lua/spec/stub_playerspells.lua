@@ -5,7 +5,7 @@
 --   blizzard_sharedxml/portraitframe.lua:4–14 (SetTitle → TitleContainer.TitleText),
 --   blizzard_pagedcontent/blizzard_pagingcontrols.lua:110–127, blizzard_pagedcontentframe.lua:494–575,
 --   spellbook/blizzard_spellbookframe.lua:46, 91, 191–226, 608–614, spellbook/blizzard_spellbookitem.lua:27–109,
---   183–301, blizzard_menu/menu.lua:2702–2751, menutemplates.lua:341–354, mainline/menuvariants.lua:9–22,
+--   183–301, blizzard_menu/menu.lua:2739–2788, menutemplates.lua:341–354, mainline/menuvariants.lua:9–22,
 --   blizzard_sharedxmlbase/callbackregistry.lua:112–215,
 --   camelot/classtalents/blizzard_classtalentsframe.{lua,xml}, tabsystemtemplates.lua:167–207,
 --   blizzard_sharedtalentui/blizzard_talentdisplay.lua:100–125,
@@ -100,7 +100,7 @@ function PS.openMenu(tag, labels)
   return shown
 end
 
--- MenuMixin:DiscardChildFrames (menu.lua:1667–1702): every element frame's resetters, then the compositor detaches
+-- MenuMixin:DiscardChildFrames (menu.lua:1704–1739): every element frame's resetters, then the compositor detaches
 -- and the frame returns to the pool; on reuse the compositor resets the fontString with SetFontObject
 -- (compositor.lua:66–74, 388), modelled here as the menu font written straight into the widget.
 function PS.closeMenu()

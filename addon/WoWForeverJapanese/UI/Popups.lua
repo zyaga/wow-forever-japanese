@@ -89,7 +89,7 @@ local SPECIAL_ONLY = { only = {
 -- [verified: blizzard_game/mainline/eventimplementation.lua:757-779, the camelot family's file].
 -- VOICE_CHAT_JOIN_GROUP: text "", its OnShow writes VOICE_CHAT_JOIN_GROUP_TEXT, plus the Discord speech-features
 -- paragraph after "\n\n" when the group's voice runs on Discord and text-to-speech or speech-to-text is on
--- [verified: blizzard_staticpopup_game/mainline/gamedialogdefs.lua:1564–1575, shown from
+-- [verified: blizzard_staticpopup_game/mainline/gamedialogdefs.lua:1567–1578, shown from
 -- blizzard_channels/mainline/channelframe.lua:917–918].
 local PASS_THROUGH = {
   PARTY_INVITE = { line = { "INVITATION", "INVITATION_XREALM" }, after = { "ACCEPTING_INVITE_WILL_REMOVE_QUEUE" } },
@@ -107,7 +107,7 @@ local PASS_THROUGH = {
 -- The dialogs whose OnShow writes the SubText with another line than the definition's, so the key is one of a few.
 -- INVITE_COMMUNITY_MEMBER: the definition's subText is the BattleTag line; OnShow writes the Battle.net friend line
 -- for a Battle.net community, else the character line, or CHARACTER_FRIEND_LABEL where names are unique per region
--- [verified: blizzard_staticpopup_game/mainline/gamedialogdefs.lua:1362–1395].
+-- [verified: blizzard_staticpopup_game/mainline/gamedialogdefs.lua:1365–1398].
 -- INVITE_COMMUNITY_MEMBER_WITH_INVITE_LINK, shown to a member who may create invite links, mixes the same
 -- definition in under an extra button (:1441–1446).
 local INVITE_SUB_TEXT = { "INVITE_COMMUNITY_MEMBER_POPUP_INVITE_SUB_TEXT_BTAG",
@@ -126,7 +126,7 @@ local CONFIRM_ONLY = { only = { "DIALOG_CONFIRMATION_PROMPT_MKB", "DIALOG_CONFIR
 
 -- The shard-transfer dialogs give button1 a new OnEnter with SetScript on every show, and clear it on hide: in
 -- combat it shows SHARD_TRANSFER_COMBAT on GameTooltip with the button as owner [verified:
--- blizzard_staticpopup_game/gamedialogdefs.lua:3434–3445, 3470–3482]. The tooltip is caught by its owner, not by
+-- blizzard_staticpopup_game/gamedialogdefs.lua:3437–3448, 3473–3485]. The tooltip is caught by its owner, not by
 -- the handler: button1 of each pooled dialog is a UI/HelpTooltip owner restricted to that one key, so any other
 -- tooltip a dialog's button shows is left alone.
 local BUTTON1_TIP = { only = { "SHARD_TRANSFER_COMBAT" } }
@@ -262,7 +262,7 @@ end
 
 -- GENERIC_CONFIRMATION's definition is empty: its OnShow writes the caller's text and arguments, and its buttons
 -- are the caller's accept / cancel text or YES / NO [verified: blizzard_staticpopup/shareddialogdefs.lua:1-8,
--- blizzard_staticpopup_game/gamedialogdefs.lua:168-175]. → the strings the dialog shows, as a definition
+-- blizzard_staticpopup_game/gamedialogdefs.lua:171–178]. → the strings the dialog shows, as a definition
 local function shownInfo(dialog, info)
   local data = dialog.data
   if dialog.which ~= "GENERIC_CONFIRMATION" or type(data) ~= "table" then return info end

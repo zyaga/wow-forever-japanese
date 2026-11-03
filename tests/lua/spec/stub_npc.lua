@@ -62,7 +62,7 @@ local function installAppendText()
 end
 
 -- ---------------------------------------------------------------------------------------------------------------
--- Gossip [verified: Classic/GossipFrame.xml:34–86; Shared/GossipFrameShared.lua:1–168, 241–294]
+-- Gossip [verified: Classic/GossipFrame.xml:34–86; Shared/GossipFrameShared.lua:1–168, 241–295]
 local function installGossip()
   global("GOSSIP_BUTTON_TYPE_TITLE", 1)
   global("GOSSIP_BUTTON_TYPE_DIVIDER", 2)

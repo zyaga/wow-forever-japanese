@@ -1,7 +1,7 @@
 -- UI/Menus.lua: dropdown and context-menu entries of the hooked windows (ADR-031).
 -- The Menu system builds a menu from a generator, then runs every callback registered with Menu.ModifyMenu for the
 -- description's tag (Menu.PopulateDescription → SecureModifyMenu; ModifyMenu also replays on a description already
--- generated) [verified: blizzard_menu/menu.lua:2714–2751]. The callback adds an initializer to each element
+-- generated) [verified: blizzard_menu/menu.lua:2751–2788]. The callback adds an initializer to each element
 -- description, recursively into submenus [menu.lua:418–423, 443]; the compositor runs it on the element's frame after
 -- the client's own initializers wrote the text into frame.fontString [menuvariants.lua:9–22; menuutil.lua:198–204 for
 -- a title], and before the menu is laid out, so the menu is measured with the Japanese. A resetter drops the record
@@ -185,11 +185,11 @@ Menus.TAGS = {
     "TOGGLE_BATTLEFIELD_MAP", "TOGGLE_SCOREBOARD", "UNLIST_ME", "UNLIST_MY_GROUP" } },
   -- the Group Finder: the role radios, the options checkbox, the category filter (categories are client-table
   -- names) (blizzard_groupfinder_vanillastyle/blizzard_lfgvanilla_listing.lua:579–595, 729–741;
-  -- blizzard_lfgvanilla_browse.lua:1050–1081, 1270–1282)
+  -- blizzard_lfgvanilla_browse.lua:1056–1087, 1276–1288)
   MENU_LFG_LISTING_ROLE = { source = "blizzard_lfgvanilla_listing.lua:582", keys = { "TANK", "HEALER", "DAMAGER" } },
   MENU_LFG_LISTING_SETTINGS = { source = "blizzard_lfgvanilla_listing.lua:731",
     keys = { "LFG_LIST_IGNORE_SUGGESTED_LEVEL" } },
-  MENU_LFG_BROWSE_CATEGORY = { source = "blizzard_lfgvanilla_browse.lua:1052",
+  MENU_LFG_BROWSE_CATEGORY = { source = "blizzard_lfgvanilla_browse.lua:1058",
     keys = { "LFG_TYPE_NONE", "LFG_SELF_LISTING" } },
   MENU_LFG_FRAME_GROUP_PLAYSTYLE = { source = "blizzard_lfgvanilla_listing.lua:943",
     keys = { "GROUP_FINDER_GENERAL_PLAYSTYLE1", "GROUP_FINDER_GENERAL_PLAYSTYLE2", "GROUP_FINDER_GENERAL_PLAYSTYLE3",

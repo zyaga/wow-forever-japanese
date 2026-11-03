@@ -202,7 +202,7 @@ end
 
 -- The shape of a line's target (eventArgs[5]) against this character's name, for the trace: never the names
 -- themselves. Forever characters carry a surname, which UnitName returns as a second value and full names join
--- with a separator [verified: blizzard_framexmlutil/camelot/nameutil.lua:4-12, 35-43]. → table of flags
+-- with a separator [verified: blizzard_framexmlutil/camelot/nameutil.lua:4-12, 35-45]. → table of flags
 function Speech.targetShape(target, me)
   local shape = { target = "none" }
   if secret(target) then

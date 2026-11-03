@@ -1,6 +1,6 @@
 -- UI/GroupFinder.lua over LFGParentFrame replayed from camelot
 -- blizzard_groupfinder_vanillastyle (blizzard_lfgvanilla_parentframe.lua:73–78, blizzard_lfgvanilla_listing.lua:
--- 613–652 + 1089–1097 + 822–838, blizzard_lfgvanilla_browse.lua:73–79 + 189 + 305 + 410–419 + 648–653, the Menu
+-- 613–652 + 1089–1097 + 822–838, blizzard_lfgvanilla_browse.lua:73–79 + 189 + 305 + 410–419 + 654–659, the Menu
 -- dropdown's UpdateText). Leader names, activity and category names stay English; both load orders.
 local S = require("tests.lua.spec.stub_camelot_social")
 local Stub = require("tests.lua.spec.wow_stub")
@@ -123,7 +123,7 @@ local function loadGroupFinder(o)
     row.Name.text = d.leader
     row.ActivityName.text = d.own and en("LFG_SELF_LISTING")
       or (d.count and ("%d activities"):format(d.count) or d.activity)
-    if d.playstyle then row.PlaystyleLabel.text = en(d.playstyle) end -- blizzard_lfgvanilla_browse.lua:466–467
+    if d.playstyle then row.PlaystyleLabel.text = en(d.playstyle) end -- blizzard_lfgvanilla_browse.lua:477–478
   end
   function C.entry(row, data)
     if not row then

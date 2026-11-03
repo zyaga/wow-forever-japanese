@@ -111,7 +111,7 @@ local PLATE_PAD = 30 -- the client's own padding (blizzard_helpplate.lua:215)
 -- The pointer arrows' texts: the class tutorial's (blizzard_tutorials_classes.lua:88, 297, 310) and the new player
 -- experience's, which runs below level 10 (blizzard_newplayerexperience/blizzard_tutorialtutorials.lua:1133, 1173,
 -- 1218, 1266, 2394, 2448, 3096, 3173, 3369, 3549, 3666; the vendor arrow on camelot,
--- camelot/blizzard_tutoriallogicoverrides.lua:105). Nothing else is ever read off a pointer (the boost and Remix
+-- camelot/blizzard_tutoriallogicoverrides.lua:110). Nothing else is ever read off a pointer (the boost and Remix
 -- tutorials, which never run on Forever, use it too).
 HelpTips.POINTER_KEYS = { "NPEV2_SPEC_TUTORIAL_GOSSIP_CLOSED", "TALENT_MICRO_BUTTON_UNSPENT_TALENTS",
   "NPEV2_SELECT_TALENTS_TAB", "NPEV2_RELEASESPIRIT", "NPEV2_RETURN_TO_CORPSE", "NPEV2_DRAG_TO_EQUIP",

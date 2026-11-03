@@ -2,12 +2,12 @@
 -- dropdowns (Settings.InitDropdown, blizzard_settings_shared/blizzard_settings.lua:563–581) and Edit Mode's setting
 -- dropdowns (EditModeSettingDropdownMixin:SetupSetting, blizzard_editmode/shared/editmodetemplates.lua:22–53).
 -- Menu.ModifyMenu only reaches a tagged description (SecureModifyMenu returns on no tag, blizzard_menu/menu.lua:
--- 2714–2723), so these are reached through the dropdown button itself: OpenMenu always regenerates (GenerateMenu
+-- 2751–2760), so these are reached through the dropdown button itself: OpenMenu always regenerates (GenerateMenu
 -- populates a new root description, then RegisterMenu(rootDescription) stores it), and only then asks the manager to
 -- open it (blizzard_menu/dropdownbutton.lua:108–131, 178–207, 255–264). A post-hook on that dropdown's RegisterMenu
 -- therefore holds the populated description at the point a ModifyMenu callback would, before any element frame
 -- exists, and UI/Menus' walk adds the same initializers (so the menu is laid out with the Japanese).
--- The other candidate, the "MenuProxy.OnShow" registry event (menu.lua:1808–1812), fires after the menu is laid out
+-- The other candidate, the "MenuProxy.OnShow" registry event (menu.lua:1845–1849), fires after the menu is laid out
 -- in English, which would need a second layout pass: not used.
 -- The dropdowns are found as the client sets them up: Settings.InitDropdown is called through the Settings table
 -- (blizzard_settingcontrols.lua:903, 1621; blizzard_settingsdefinitions_shared/graphics.lua:315), so a post-hook on
@@ -16,12 +16,12 @@
 -- locale or a layout name is no key and stays English (names stay in English).
 -- Untagged *context* menus: MenuUtil.CreateContextMenu builds the root description, calls
 -- Menu.PopulateDescription (the generator, then SecureModifyMenu, which returns at once on no tag) and only then
--- opens the menu (blizzard_menu/menuutil.lua:151–161; menu.lua:2714–2728); it looks the field up at call time, so a
+-- opens the menu (blizzard_menu/menuutil.lua:151–161; menu.lua:2751–2765); it looks the field up at call time, so a
 -- post-hook on Menu.PopulateDescription holds the populated, untagged description before any element frame exists:
 -- the point a ModifyMenu callback runs at, so the menu is laid out with the Japanese. The hook also runs for every
 -- tagged menu and DropdownButton: it acts only on an untagged description one of two openers made:
 --   the Group Finder's search-entry menu (LFGBrowseMixin:CreateSearchEntryMenu, blizzard_groupfinder_vanillastyle/
---   blizzard_lfgvanilla_browse.lua:969–1001): its owner is an undefined frame and its generator an anonymous closure,
+--   blizzard_lfgvanilla_browse.lua:975–1007): its owner is an undefined frame and its generator an anonymous closure,
 --   so it is recognised by an entry whose text is LFG_LIST_REPORT_GROUP_FOR or REPORT_GROUP_FINDER_ADVERTISEMENT
 --   (both have a space: never a character name); its first element, the leader's name, is the title (titleIsName);
 --   the crafting-orders recipe list's (…customerordersrecipelist.lua:96–97, 115–117): the owner is the list element
@@ -38,7 +38,7 @@ local DECLARE = "help.menus.untagged"
 -- Menus whose generator sets no tag, walked through the dropdown's own RegisterMenu; never registered
 -- with Menu.ModifyMenu. Each matches only its window's keys (UI/SettingsKeys).
 -- Two untagged context menus, walked from the Menu.PopulateDescription post-hook (the LFG search
--- entry's title is the leader's name; blizzard_lfgvanilla_browse.lua:1424–1440 for GROUP_INVITE). UI/Menus reads
+-- entry's title is the leader's name; blizzard_lfgvanilla_browse.lua:1430–1446 for GROUP_INVITE). UI/Menus reads
 -- these specs like its own tags (Menus.showElement / onMenu).
 local SETTINGS_KEYS = WFJ.SettingsKeys or {}
 -- The Options window's dropdown entries: the window's keys plus the Text on Target menu's "Effects" (an owned key,
@@ -66,7 +66,7 @@ WFJ.Menus.UNTAGGED = {
   SETTINGS_DROPDOWN = { source = "blizzard_settings.lua:563", keys = SETTINGS_MENU_KEYS,
     tooltips = TEXT_ON_ME_TOOLTIPS },
   EDIT_MODE_DROPDOWN = { source = "editmodetemplates.lua:22", keys = SETTINGS_KEYS.editmode or {} },
-  CONTEXT_LFG_SEARCH_ENTRY = { source = "blizzard_lfgvanilla_browse.lua:1008", titleIsName = true,
+  CONTEXT_LFG_SEARCH_ENTRY = { source = "blizzard_lfgvanilla_browse.lua:1014", titleIsName = true,
     keys = { "SEND_MESSAGE", "GROUP_INVITE", "LFG_LIST_REPORT_GROUP_FOR", "REPORT_GROUP_FINDER_ADVERTISEMENT" } },
   CONTEXT_CUSTOMER_ORDER_RECIPE = { source = "blizzard_professionscustomerordersbrowseorders.lua:142",
     keys = { "BATTLE_PET_FAVORITE", "BATTLE_PET_UNFAVORITE" } },

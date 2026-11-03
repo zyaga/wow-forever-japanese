@@ -9,7 +9,7 @@
 -- side mode tabs (InspectSwitchTabs, :154–162). The bottom tabs InspectFrameTab1–3 are hidden="true"
 -- (camelot/blizzard_inspectui.xml:15, 28, 41).
 -- Writers:
---   InspectPaperDollFrame:SetLevel (the frame's own mixin method, mainline/inspectpaperdollframe.lua:28–55) →
+--   InspectPaperDollFrame:SetLevel (the frame's own mixin method, mainline/inspectpaperdollframe.lua:29–61) →
 --     InspectLevelText, SetFormattedText(PLAYER_LEVEL | PLAYER_LEVEL_NO_SPEC, level, colour, [spec,] class): spec and
 --     class are kept as written (the same keys UI/Character.lua shows on the player's own level line);
 --   InspectPVPFrame:Update (the frame's own mixin method; OnShow and INSPECT_HONOR_UPDATE call it,
@@ -26,7 +26,7 @@
 --     camelot/inspectguildframe.lua:5–15, 17–34) → guildLevel INSPECT_GUILD_FACTION ("%s Guild", the faction's name
 --     kept) and guildNumMembers INSPECT_GUILD_NUM_MEMBERS.
 -- Help tooltips (GameTooltip, the owner registered with its own keys): an empty equipment slot's SetText(<SLOT>SLOT /
---   RELICSLOT) (mainline/inspectpaperdollframe.lua:227–237; the slot names are INSPECTPAPERDOLLFRAME_SLOTS,
+--   RELICSLOT) (mainline/inspectpaperdollframe.lua:233–243; the slot names are INSPECTPAPERDOLLFRAME_SLOTS,
 --   camelot/blizzard_inspectui.lua:13–33), and the three side mode tabs InspectFrameModeTab1–3, whose tooltipText is
 --   CHARACTER_INFO / PLAYER_V_PLAYER / GUILD (camelot/blizzard_inspectui.xml:60–74), shown by
 --   SidePanelTabButtonMixin:OnEnter → SetText(self.tooltipText) (blizzard_sharedxml/mainline/
