@@ -237,7 +237,7 @@ WFJ.Data.add("spell", {
   [18400] = { "周囲のプレイヤーを踊らせます。", "音楽に合わせて踊っています。", 0xb479ded0, 0x50ddc47c, "uu" },
   [18422] = { "近くの敵に5秒毎に25のFireダメージを与える\n15秒間有効", nil, 0x09e35d0e, nil, "um" },
   [18425] = { "Kickに、$N1%の確率で対象を沈黙させる効果を与えます。", "沈黙させられています。", 0x115d428d, 0x20816e34, "uu" },
-  [18427] = { "Sinister Strike、Backstab、Eviscerateのダメージを$N1%増加させます。", nil, 0x99c43655, nil, "um" },
+  [18427] = { "Sinister StrikeとEviscerateのダメージを$N1%増加させます。", nil, 0x11247b04, nil, "um" },
   [18432] = { "近くの敵に$N1のFireダメージを与えます。", nil, 0xcdc05fe4, nil, "um" },
   [18435] = { "術者の前方の円錐範囲にいる敵に$N1のFireダメージを与えます。", nil, 0xad2ec576, nil, "um" },
   [18456] = { "Fadeのクールダウンを2秒減らす", nil, 0x94d99c93, nil, "um" },

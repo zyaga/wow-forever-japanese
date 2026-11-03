@@ -9,6 +9,14 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Added
+- Japanese for the text Forever build 1.60.1.70755 adds: the Violet Flames campfire spells and the Pouch of Violet Dust from the launch celebration, Camping, Emerald Stasis, Poised and Shank, and the new spell auras.
+
+### Changed
+- The game text is read from Forever build 1.60.1.70755 (quest text from 1.60.1.70532 until the new build's quests are read).
+- The renamed and reworded talents and abilities follow their new text in Japanese: the Rogue's Efficient Strikes, Coup de Grace, Quick Getaway, Sap, Ghostly Strike and Death Mark, the Shaman's Lightning Mastery, Totemic Call and Riptide, the Warrior's Improved Whirlwind and Slam, and the Mage's Missile Barrage.
+- The Edit Mode labels for buffs on top or on the right, the spell damage and spell healing tooltips on the character sheet, and the subscription window's second bullet follow their new text.
+
 ## 0.6.0 - 2026-11-01
 
 ### Added

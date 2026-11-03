@@ -63,7 +63,7 @@ WFJ.Data.add("spell", {
   [409951] = { "Spirit of the Alphaのアビリティを得ます：\n\n$I1\n対象にアルファウルフの魂を宿らせ、$D1の間、対象が発生させるすべての脅威を$N1%増加させます。対象は1体までです。自分以外の対象にかけた場合、シャーマンもLoyal Betaを得て、$D2の間、与えるPhysicalダメージが$N4%増加し、発生させるすべての脅威が$N5%減少します。一つの対象がSpirit of the AlphaとLoyal Betaを同時に持つことはできません。", nil, 0x95679687, nil, "um" },
   [409952] = { "Lava Burstのアビリティを得ます：\n\n$I1\n対象に溶岩を投げつけ、$N1のFireダメージを与えます。対象にFlame Shockがかかっている場合、Lava Burstのダメージが$N2%増加します。", nil, 0x93940084, nil, "um" },
   [409953] = { "Lava Lashのアビリティを得ます：\n\n$I1\nオフハンド武器に溶岩をまとわせ、即座にオフハンドのWeaponダメージの$N1%を与えます。オフハンド武器にFlametongueのエンチャントがかかっている場合、ダメージが$N2%増加します。", nil, 0xb4d0dacb, nil, "um" },
-  [409954] = { "Riptideのアビリティを得ます：\n\n$I1\n味方の対象の体力を$N1回復し、さらに$D1かけて$N2回復し、その対象に直接詠唱するChain Healの効果を$N4%高めます。", nil, 0x16fbb037, nil, "um" },
+  [409954] = { "Riptideのアビリティを得ます：\n\n$I1\n味方の対象を$D1かけて$N1回復し、その対象に直接詠唱するChain Healの効果を$N3%高めます。", nil, 0x16fbb037, nil, "um" },
   [409955] = { "Way of Earthのアビリティを得ます：\n\n$I1\nメインハンド武器にRockbiter Weaponが有効で盾を装備している間、発生する脅威が$N1%増加し、体力が$N2%増加し、受けるダメージが$N3%減少し、近接攻撃でクリティカルヒットを受ける確率が$N4%減少します。またEarth Shockが対象をTauntして自分を攻撃させるようになり、他のShock呪文とは別のクールダウンになりますが、射程は近接距離に短縮されます。ただし、Lightning Bolt、Chain Lightning、Chain Heal、Healing Wave、Lava Burstの呪文の射程が$N5ヤード短くなります。", nil, 0x4f96cd74, nil, "um" },
   [409957] = { "Steady Shotのアビリティを得ます：\n\n$I1\n狙いを定めた射撃で、遠隔武器ダメージの$N1%を与えます。", nil, 0x2697bd4f, nil, "um" },
   [409958] = { "Master Marksmanのアビリティを得ます：\n\n$I1\nクリティカル率が$N1%上昇し、すべてのShotのアビリティのマナコストが$N2%減少します。", nil, 0xdadd56b2, nil, "um" },

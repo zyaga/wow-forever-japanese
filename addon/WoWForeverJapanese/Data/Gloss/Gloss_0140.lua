@@ -930,4 +930,5 @@ WFJ.Data.add("gloss", {
   [140939] = "選ぶ\tえらぶ\tchoose (controls which)",
   [140940] = "クラストレーナー\tクラストレーナー\tclass trainer",
   [140941] = "解除\tかいじょ\tunlock",
+  [140942] = "乗り出す\tのりだす\tto embark on",
 })

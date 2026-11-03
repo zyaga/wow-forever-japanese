@@ -450,6 +450,7 @@ Data\Spell\Spell_1325.lua
 Data\Spell\Spell_1326.lua
 Data\Spell\Spell_1327.lua
 Data\Spell\Spell_1328.lua
+Data\Spell\Spell_1329.lua
 Data\Objective\Objective_0380.lua
 Data\Objective\Objective_0381.lua
 Data\Objective\Objective_0382.lua

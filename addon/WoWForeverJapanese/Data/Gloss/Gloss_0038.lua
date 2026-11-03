@@ -966,7 +966,6 @@ WFJ.Data.add("gloss", {
   [38967] = "乗り出す\tのりだす\tare about to embark",
   [38968] = "乗り出す\tのりだす\tare about to embark (on)",
   [38969] = "乗り出す\tのりだす\tintervened (stepped in)",
-  [38970] = "乗り出す\tのりだす\tlet's embark",
   [38971] = "乗り出す\tのりだす\tset out",
   [38972] = "乗り出す\tのりだす\tset out on",
   [38973] = "乗り切る\tのりきる\tmake it through",

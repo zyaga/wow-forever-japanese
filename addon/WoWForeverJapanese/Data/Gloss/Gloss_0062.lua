@@ -863,7 +863,6 @@ WFJ.Data.add("gloss", {
   [62863] = "大胆\tだいたん\tbrazen (bold)",
   [62864] = "大胆\tだいたん\tbrazenly; boldly",
   [62865] = "大胆\tだいたん\tdaring",
-  [62866] = "大胆\tだいたん\tdaring (bold)",
   [62867] = "大胆さ\tだいたんさ\tboldness",
   [62868] = "大胆になる\tだいたんになる\tare growing bold",
   [62869] = "大胆にも\tだいたんにも\tdared (boldly)",

@@ -291,7 +291,6 @@ WFJ.Data.add("gloss", {
   [14290] = "その先\tそのさき\tbeyond",
   [14291] = "その先\tそのさき\tbeyond (further on)",
   [14292] = "その先\tそのさき\tbeyond (that point)",
-  [14293] = "その先\tそのさき\tbeyond (what lies ahead)",
   [14294] = "その先\tそのさき\tfurther on (beyond that)",
   [14295] = "その先\tそのさき\tthe rest (beyond that)",
   [14296] = "その分\tそのぶん\tin return (to that extent)",

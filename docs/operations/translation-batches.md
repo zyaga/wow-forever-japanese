@@ -342,6 +342,40 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
 
+### 1.60.1.70707 → 1.60.1.70755, tables (2026-11-03)
+
+A Forever build installed the day before launch, two days after 0.6.0 shipped the 70707 tables. The scan has not run,
+so this round pins the tables only and the quest text stays on the 70532 cache (`forever_QUEST_BUILD`,
+[ADR-068](../adr/068-quest-cache-pinned-apart-from-the-tables.md)). The client was opened to the character screen
+before the pull, so the tables were read once, with the build's own login hotfix cache (457 Spell, 19 SpellName and
+15 ItemSparse rows replaced; `dbcache.read_for` accepted it). Client tables: 62, read with the pinned column maps; no
+layout hash changed. Against the 70707 pull: ItemSparse 3 added; Spell and SpellName 37 added, 4 removed (three Mutilate
+ranks and a Coup de Grace rank), 38 descriptions, 5 auras, 9 subtexts and 7 names changed; GlobalStrings 8 changed;
+ItemEffect and ItemXItemEffect 2 added each; QuestV2 equal. The wago.tools cross-check (product `wowf`): no value
+differs; the rows wago has and ours lacks (ItemSparse 26, Spell and SpellName 24, ItemEffect 17, QuestV2 2) are the
+encrypted store sections, as on 70707; QuestV2's highest id 99,670. The UI extract: 4,494 files, 62 modified and 1 added
+(the action bar's camelot overrides), none removed; nothing the addon hooks or reads moved or changed shape, and no new
+interface text (the contacts menu's Broadcast entry and the Social settings' broadcast checkbox are gone from their
+windows; their keys stay listed); about 80 line citations were refreshed. The served-text inventory: no column new or
+gone; row counts moved. No English Collector file exists for `_forever_`. Measured against `main` after the import: item
+1 new; spell 37 new, 38 descriptions and 5 auras changed, 7 renamed; ui 5 changed; nothing removed.
+
+| Type | Reworded (shipped line now stale) | New English lines | Not served on this build (English kept) | Drafted |
+|---|---|---|---|---|
+| item | 0 | 1 (Pouch of Violet Dust) | 4,467 ids an earlier build served keep their English | 1 new |
+| spell | 45 descriptions and 4 auras (Sap, Rupture, Ghostly Strike, Death Mark, the renamed Rogue and Shaman talents, Riptide and its rune, Missile Barrage and its rune, Slam, Boiling Scream) | 37 spells (Camping, Throw Violet Dust, Violet Flames, Emerald Stasis, Poised, Shank, Boiling Water, Boiling Scream; 24 descriptions and 29 auras drafted, the rest have no description) | 165 | 44 descriptions and 4 auras redrafted with `REVERIFY=1` (6 of them re-verified unchanged); 24 descriptions and 29 auras new |
+| ui | 5 (two Edit Mode labels lose their `[PH]` prefix, the spell damage and spell healing tooltips drop a clause, the subscription bullet is shorter) | 0 | 279 | 5 re-verified, the three labels with word lists (tooltips take none) |
+
+One stale line had a hand-written winner: Rupture rank 1's correction reads every number as a value slot, fifteen in
+both the old and the new English, and was kept. Four machine lines carried an `accept` ruling from the round that
+replaced rejected hand-written text (Sap 6770, Lightning Mastery 16166, Hemorrhage 16511, Stormstrike 17364); each now
+carries `reject`, superseded by the redraft written against the new English, so the redraft ships. The two Edit Mode
+labels share their English with the keys the window already had, so they ship the same Japanese. Two Shank rows
+needed not-name entries (Combo Points, Chance, Miss). 48 template rows with 70755 English are not drafted and stay on
+the coverage list (as on 70707). No reading is owed. The quest half (the scan's cache, the full import, quest and
+objective drafts, and voice) follows in the scan's re-pull after launch; 191 quest ids wait for it. Items, spells and
+interface lines are not voiced.
+
 ### 1.60.1.70685 → 1.60.1.70707, tables (2026-11-01)
 
 A Forever build installed three days before launch. The scan has not run, so this round again pins the tables only and

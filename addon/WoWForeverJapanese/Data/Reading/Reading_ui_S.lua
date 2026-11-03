@@ -1653,7 +1653,7 @@ WFJ.Data.add("reading", {
   ["ui:SUBSCRIPTION_INTERSTITIAL_SUBSCRIBE_SECOND_LINE"] = { text = "冒険=ぼうけん=48478" },
   ["ui:SUBSCRIPTION_INTERSTITIAL_SUBSCRIBE_THIRD_LINE"] = { text = "続けよう=つづけよう=110274" },
   ["ui:SUBSCRIPTION_INTERSTITIAL_UPGRADE_BULLET1"] = { text = "レベル=レベル=35510 プレイ=プレイ=34786" },
-  ["ui:SUBSCRIPTION_INTERSTITIAL_UPGRADE_BULLET2"] = { text = "その先=そのさき=14293 大胆な=だいたんな=62866 冒険=ぼうけん=48479 乗り出そう=のりだそう=38970" },
+  ["ui:SUBSCRIPTION_INTERSTITIAL_UPGRADE_BULLET2"] = { text = "大胆=だいたん=62865 冒険=ぼうけん=48478 乗り出そう=のりだそう=140942" },
   ["ui:SUBSCRIPTION_INTERSTITIAL_UPGRADE_BULLET3"] = { text = "含む=ふくむ=57765 アクセス=アクセス=31776" },
   ["ui:SUBSCRIPTION_INTERSTITIAL_UPGRADE_BULLET4"] = { text = "ほか=ほか=25924 盛りだくさん=もりだくさん=103190" },
   ["ui:SUBSCRIPTION_INTERSTITIAL_UPGRADE_BUTTON"] = { text = "今すぐ=いますぐ=40302 登録=とうろく=102884" },

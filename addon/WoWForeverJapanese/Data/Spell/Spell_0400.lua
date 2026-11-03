@@ -30,7 +30,7 @@ WFJ.Data.add("spell", {
   [400573] = { "対象にエネルギーを叩きつけ、Arcaneダメージを与えます。Arcane Blastを詠唱するたびに、知力の$N1%をSpell Damageとして得て、Arcane Blastのマナコストが$N2%増加します。効果は最大$N3回までスタックし、$D1持続します。", "呪文ダメージが知力の$N1%分増加し、Arcane Blastのマナコストが$N2%増加します。", 0xc3693545, 0xdaf14ecf, "uu" },
   [400574] = { "対象にエネルギーを叩きつけ、$N1のArcaneダメージを与えます。Arcane Blastを詠唱するたびに、知力の$N2%をSpell Damageとして得て、Arcane Blastのマナコストが$N3%増加します。効果は最大$N4回までスタックし、最初の付与から$D1持続します。", nil, 0x217b645e, nil, "um" },
   [400586] = { "対象にエネルギーを叩きつけ、Arcaneダメージを与えます。Arcane Blastを詠唱するたびに、他のすべてのArcane呪文のダメージが$N1%増加し、Arcane Blastのマナコストが$N2%増加します。効果は最大$N3回までスタックし、$D1持続します。", "Arcane Blast以外のArcane呪文のダメージが$N1%増加し、Arcane Blastのマナコストが$N2%増加します。", 0x9e46472c, 0x1647cf8e, "uu" },
-  [400588] = { "Arcane Blastの呪文に$N1%、Arcane Wrath、Fireball、Frostbolt、Frost Blast、Frostfire Boltの呪文に$N2%の確率を与え、次のArcane Missilesのチャネリング時間を$N3%短縮し、マナコストを$N4%減少させ、ミサイルが$D1ごとに発射されるようにします。", nil, 0x2f6c6d02, nil, "um" },
+  [400588] = { "Arcane Blastの呪文に$N1%、Arcane Wrath、Fireball、Frostbolt、Frostfire Boltの呪文に$N2%の確率を与え、次のArcane Missilesのチャネリング時間を$N3%短縮し、マナコストを$N4%減少させ、ミサイルが$D1ごとに発射されるようにします。", nil, 0x4e3daf0e, nil, "um" },
   [400589] = { "次のArcane Missilesのチャネリング時間を$N1%短縮し、マナコストを$N2%減少させ、ミサイルが$D1ごとに発射されるようにします。", "次のArcane Missilesの呪文の詠唱持続時間が$N1%短縮され、マナコストが$N2%減少し、ミサイルが$D1ごとに発射されます。", 0xf8ba2f76, 0xf8ba2f76, "uu" },
   [400610] = { "対象の敵に複数のミサイルを放ち、$N1のArcaneダメージを与えます。この呪文は$N2%の確率でMissile Barrageを発動させます。", nil, 0x5529aca1, nil, "um" },
   [400613] = { "対象はLiving Bombとなり、$D1かけて$N1のFireダメージを受けます。$D2経過するか呪文が解除されると対象は爆発し、$N5ヤード以内のすべての敵に$N4のFireダメージを与えます。\n\nLiving BombはScorchで発動する、またはScorchを変化させるすべてのタレントと効果の恩恵を受けます。", "$N2秒ごとに$N1のFireダメージを受けています。$D2が経過するか呪文が解除されると、対象は爆発し、$N5ヤード以内のすべての敵に$N4のFireダメージを与えます。", 0xc69cd4f9, 0x756c2ee6, "uu" },
