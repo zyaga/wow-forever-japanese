@@ -3,7 +3,7 @@ blizzard_accessibilitytemplates login 8
 blizzard_accountsaveui glue 0
 blizzard_accountstore gated 0
 blizzard_achievementui lod 5
-blizzard_actionbar login 36
+blizzard_actionbar login 37
 blizzard_actionbarcontroller login 2
 blizzard_actionstatus login 2
 blizzard_addfriend login 2
