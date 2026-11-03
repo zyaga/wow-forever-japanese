@@ -823,3 +823,5 @@ fcacdc454d	Chance	$1329286s1% Chance to award 1 Combo Point. (a branch of the Sh
 fcacdc454d	Combo	$1329286s1% Chance to award 1 Combo Point. (combo points, a resource)
 fcacdc454d	Point	$1329286s1% Chance to award 1 Combo Point. (combo points, a resource)
 fcacdc454d	Miss	Shank cannot Miss. (a verb)
+1c64971a51	Sapped	Increases the maximum number of targets you may have Sapped by $s1 (the spell Sap as a verb; the Japanese names Sap)
+1c64971a51	Sapping	increases your movement speed by $s2% for $1329282d after Sapping a target. (the spell Sap as a verb; the Japanese names Sap)

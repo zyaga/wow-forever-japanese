@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-03 at commit `4127f0e8`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-03 at commit `214e9c23`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -15,9 +15,9 @@
 | Quest objective lines | 440 | 402 | 38 | 100.0% | 0 |
 | Exploration / event objectives | 223 | 221 | 2 | 100.0% | 0 |
 | Item descriptions | 10,299 | 8,765 | 0 | 85.1% | 1,534 |
-| Spell tooltips + auras | 25,913 | 25,865 | 1 | 99.8% | 47 |
+| Spell tooltips + auras | 25,913 | 25,842 | 1 | 99.7% | 70 |
 | Interface strings | 16,431 | 16,431 | 0 | 100.0% | 0 |
-| **All** | **86,085** | | | **98.2%** | **1,581** |
+| **All** | **86,085** | | | **98.1%** | **1,604** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
 professions, internal strings): quest 331, gossip 81, item 893, spell 293, ui 313.
@@ -42,6 +42,7 @@ professions, internal strings): quest 331, gossip 81, item 893, spell 293, ui 31
 | Item descriptions | no Japanese yet: no text from the Forever tables on this build yet (English still from Classic Era); rechecked at each re-pull | 1,533 |
 | Item descriptions | no Japanese yet: the template has too many optional parts for one translation | 1 |
 | Spell tooltips + auras | no Japanese yet: the template includes a spell the Forever tables do not hold | 34 |
+| Spell tooltips + auras | no Japanese yet: no text from the Forever tables on this build yet (English still from Classic Era); rechecked at each re-pull | 23 |
 | Spell tooltips + auras | no Japanese yet: the template has too many optional parts for one translation | 8 |
 | Spell tooltips + auras | no Japanese yet: the template names the aura's caster, which only the game knows | 2 |
 | Spell tooltips + auras | no Japanese yet: the template includes an aura without saying which spell's | 2 |

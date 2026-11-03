@@ -190,7 +190,7 @@ WFJ.Data.add("spell", {
   [12717] = { "マイニング5。", nil, 0x0c5021e9, nil, "um" },
   [12718] = { "300から500火ダメージを吸収します。 1分間継続します。", nil, 0xc5fb60e9, nil, "um" },
   [12723] = { "次の$N1回の近接武器攻撃は、近くにいる別の敵にも命中します。", "Sweeping Strikesの効果中です。", 0x015e6822, 0xc3bc26d8, "uu" },
-  [12731] = { "大地と岩を引き裂き、$N1のPhysicalダメージを与えます。Earth Elemental、Golem、Titan-forgedには$N2倍のダメージを与えます。", "近接ダメージが増加しています。", 0x745a0a2b, 0x3d7407ee, "uu" },
+  [12731] = { "大地と岩を引き裂き、$N1のPhysicalダメージを与えます。Earth Elemental、Golem、Titan-forgedには$N2倍のダメージを与えます。", nil, 0x745a0a2b, nil, "um" },
   [12732] = { "通常時の体力とマナの回復量を5増加させます。", nil, 0x5f6bbb96, nil, "um" },
   [12733] = { "すべてのResistanceを$N1上げ、$D1の間FearへのImmunityを与えます。", "耐性が$N1上昇し、Fearに対してImmuneになります。", 0xc48b0a3e, 0x58b23102, "uu" },
   [12734] = { "近くの敵にPhysicalダメージを与え、$D1の間スタンさせます。", "スタンしています。", 0xffe13323, 0x27f95286, "uu" },

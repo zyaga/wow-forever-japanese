@@ -363,15 +363,19 @@ gone; row counts moved. No English Collector file exists for `_forever_`. Measur
 | Type | Reworded (shipped line now stale) | New English lines | Not served on this build (English kept) | Drafted |
 |---|---|---|---|---|
 | item | 0 | 1 (Pouch of Violet Dust) | 4,467 ids an earlier build served keep their English | 1 new |
-| spell | 45 descriptions and 4 auras (Sap, Rupture, Ghostly Strike, Death Mark, the renamed Rogue and Shaman talents, Riptide and its rune, Missile Barrage and its rune, Slam, Boiling Scream) | 37 spells (Camping, Throw Violet Dust, Violet Flames, Emerald Stasis, Poised, Shank, Boiling Water, Boiling Scream; 24 descriptions and 29 auras drafted, the rest have no description) | 165 | 44 descriptions and 4 auras redrafted with `REVERIFY=1` (6 of them re-verified unchanged); 24 descriptions and 29 auras new |
+| spell | 45 descriptions and 4 auras (Sap, Rupture, Hemorrhage, Ghostly Strike, Death Mark, Venom, the renamed Rogue and Shaman talents, Stormstrike, Riptide and its rune, Missile Barrage and its rune, Slam, Boiling Scream, among others) | 37 spells (Camping, Throw Violet Dust, Violet Flames, Emerald Stasis, Poised, Shank, Boiling Water, Boiling Scream; 19 descriptions and 11 auras drafted, the rest have no text) | 165 | 44 descriptions and 4 auras redrafted with `REVERIFY=1` (6 of them re-verified unchanged); 19 descriptions and 11 auras new |
 | ui | 5 (two Edit Mode labels lose their `[PH]` prefix, the spell damage and spell healing tooltips drop a clause, the subscription bullet is shorter) | 0 | 279 | 5 re-verified, the three labels with word lists (tooltips take none) |
 
 One stale line had a hand-written winner: Rupture rank 1's correction reads every number as a value slot, fifteen in
 both the old and the new English, and was kept. Four machine lines carried an `accept` ruling from the round that
 replaced rejected hand-written text (Sap 6770, Lightning Mastery 16166, Hemorrhage 16511, Stormstrike 17364); each now
-carries `reject`, superseded by the redraft written against the new English, so the redraft ships. The two Edit Mode
-labels share their English with the keys the window already had, so they ship the same Japanese. Two Shank rows
-needed not-name entries (Combo Points, Chance, Miss). 48 template rows with 70755 English are not drafted and stay on
+carries `reject`, superseded by the redraft written against the new English, so the redraft ships. The Edit Mode "Buffs On Top"
+label shares its English with a key the window already had, so it ships that key's Japanese, and the "Buffs On Right"
+label was written to match. Two Shank rows
+needed not-name entries (Combo Points, Chance, Miss), and Sap's talent line two more for the spell name's verb forms; the
+Sap lines say 行動不能 for "sapped", never the name as a Japanese verb. The new-line cut first took 23 spell lines Forever
+carries no text for (their English is still Classic Era's); those drafts were dropped before the PR, and the lines stay
+on the coverage list as before. 48 template rows with 70755 English are not drafted and stay on
 the coverage list (as on 70707). No reading is owed. The quest half (the scan's cache, the full import, quest and
 objective drafts, and voice) follows in the scan's re-pull after launch; 191 quest ids wait for it. Items, spells and
 interface lines are not voiced.

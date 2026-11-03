@@ -1435,7 +1435,7 @@ function Tooltip.init()
       end
     end
   end
-  -- Auras, on GameTooltip only (every aura caller in the client's UI uses it: nameplates and the
+  -- Auras, on GameTooltip only (every aura caller in the client's UI uses it: the
   -- cooldown viewer through GetAppropriateTooltip(), which is GameTooltip in game): the UnitAura post-call, which
   -- also sees every rebuild.
   auraHooks = 0
