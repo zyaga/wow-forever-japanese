@@ -80,7 +80,7 @@ blizzard_uipanels_game blizzard_uipanels_game/mainline/merchantframe.lua:275 nam
 blizzard_uipanels_game blizzard_uipanels_game/mainline/merchantframe.lua:533 key MERCHANT_BUYBACK merchant  # Labels.title, merchant_camelot_spec
 blizzard_uipanels_game blizzard_uipanels_game/mainline/questframe.lua:117 name  # UnitName("questnpc"): the quest giver's name
 blizzard_uipanels_game blizzard_uipanels_game/mainline/scrollingflatpanel.lua:6 key ITEMS loot  # ScrollingFlatPanelMixin:OnLoad SetTitle(self.panelTitle); LootFrame's panelTitle is ITEMS (mainline/lootframe.xml:119), the other panel of that template, the crafting output log, is Blizzard_Professions' (gaps_a's crafting surface, blizzard_professionscraftingoutputlog.xml). UI/Loot: Labels.title, only ITEMS
-blizzard_uipanels_game blizzard_uipanels_game/shared/gossipframeshared.lua:297 name  # SetGossipTitle(UnitName("npc")) (gossipframeshared.lua:285): the NPC's name
+blizzard_uipanels_game blizzard_uipanels_game/shared/gossipframeshared.lua:297 name  # SetGossipTitle(UnitName("npc")) (gossipframeshared.lua:286): the NPC's name
 blizzard_worldmap blizzard_worldmap/blizzard_worldmap.lua:14 key MAP_AND_QUEST_LOG questmap  # the world map window title; owned by UI/QuestMap (gaps_a), not UI/WorldMap
 blizzard_worldmap blizzard_worldmap/blizzard_worldmap.lua:23 key WORLD_MAP questmap  # the world map window title (quest log hidden); owned by UI/QuestMap (gaps_a)
 blizzard_worldmap blizzard_worldmap/blizzard_worldmap.lua:28 key MAP_AND_QUEST_LOG questmap  # the world map window title; owned by UI/QuestMap (gaps_a)
