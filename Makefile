@@ -95,7 +95,7 @@ CLIENTS := classic-era forever
 classic-era_BUILD   := 1.15.9.69722
 classic-era_SRC     := wago
 classic-era_PRODUCT := wow_classic_era
-forever_BUILD       := 1.60.1.70755
+forever_BUILD       := 1.60.1.70790
 forever_SRC         := db2
 forever_PRODUCT     := wowf
 # Set only while the quest cache data/ holds is older than the tables: a quest cache needs the scan in game, the
