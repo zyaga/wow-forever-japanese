@@ -5,7 +5,7 @@
 -- submenu adds View Talents, :46–56); the title is the unit's name (unitpopupshared.lua:110–116). In a group the
 -- self and party menus add the loot, role and group entries: the loot method's title is the chosen method's name,
 -- the threshold's the quality's (_G["ITEM_QUALITY"..n.."_DESC"],
--- unitpopupbuttons.lua:603–610, 767–768), a role radio is INLINE_<ROLE>_ICON .. " " .. <ROLE> (the `icon` label form,
+-- unitpopupbuttons.lua:626–634, 790–791), a role radio is INLINE_<ROLE>_ICON .. " " .. <ROLE> (the `icon` label form,
 -- unitpopupsharedbuttonmixins.lua:3649–3689), the loot opt-out is "Pass on Loot: %s" around Yes / No (:3439).
 local _, WFJ = ...
 
