@@ -9,6 +9,10 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Changed
+- The game text is read from Forever build 1.60.1.70790 (quest text from 1.60.1.70532 until the new build's quests are read).
+- The Mage's Improved Frostbolt, Winter's Chill and Arctic Reach, the Druid's Ferocious Bite and the Rogue's Poised follow their new text in Japanese.
+
 ## 0.7.0 - 2026-11-03
 
 ### Added

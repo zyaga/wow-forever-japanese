@@ -380,6 +380,36 @@ the coverage list (as on 70707). No reading is owed. The quest half (the scan's 
 objective drafts, and voice) follows in the scan's re-pull after launch; 191 quest ids wait for it. Items, spells and
 interface lines are not voiced.
 
+### 1.60.1.70755 → 1.60.1.70790, tables (2026-11-04)
+
+A Forever build installed on launch day, before the servers opened, the day after 0.7.0 shipped the 70755 tables. The
+scan has not run, so this round pins the tables only and the quest text stays on the 70532 cache (`forever_QUEST_BUILD`,
+[ADR-068](../adr/068-quest-cache-pinned-apart-from-the-tables.md)). The client had not been opened on the build, so its
+hotfix cache was still 70755's (the pull refuses it); the tables were read from the local archive alone
+(`make tables-extract … HOTFIXES=`), as 70707's first pull was. Client tables: 62, read with the pinned column maps; no
+layout hash changed. Against the 70755 pull: Spell and SpellName 1 added (a developer test row with no text), 9
+descriptions and 2 auras changed, no name changed; ItemSparse 471 rows absent, the rows only a login's hotfixes carry
+(their English stays, [ADR-050](../adr/050-english-is-additive.md)); GlobalStrings and QuestV2 equal. The wago.tools
+cross-check (product `wowf`): no value differs; the rows wago has and ours lacks (ItemSparse 26, Spell and SpellName 24,
+ItemEffect 17, QuestV2 2) are the encrypted store sections, as on 70755; QuestV2's highest id 99,670. The UI extract:
+4,494 files, 4 modified (Battle.net title-friend whisper routing in the chat edit box, the chat utilities, the unit popup
+buttons and the generated Battle.net API documentation), none added or removed; nothing the addon hooks or reads moved
+or changed shape, and no new interface text; the line citations under the three shifted files were refreshed. The
+served-text inventory: one hotfix-only table's column is absent without a cache (its disposition goes with it until the
+scan's pull); row counts moved. No English Collector file exists for `_forever_`. Measured against `main` after the
+import: spell 1 new (no text), 9 descriptions and 2 auras changed; nothing else.
+
+| Type | Reworded (shipped line now stale) | New English lines | Not served on this build (English kept) | Drafted |
+|---|---|---|---|---|
+| item | 0 | 0 | 4,938 ids an earlier build served keep their English (471 of them the hotfix-only rows) | 0 |
+| spell | 9 descriptions and 2 auras (Improved Frostbolt, Winter's Chill and Arctic Reach no longer name Frost Blast; the six Ferocious Bite ranks carry new damage tables; the two Poised auras are reworded) | 1 (a developer test row, no text) | 165 | 8 descriptions and 2 auras redrafted with `REVERIFY=1` (the five Ferocious Bite machine lines re-verified unchanged: every number is a value slot) |
+| ui | 0 | 0 | 279 | 0 |
+
+One stale line had a hand-written winner: Ferocious Bite rank 1's correction reads every number as a value slot, sixteen
+in both the old and the new English, and was kept. The baked-numbers rule had nothing to rule in either mode. No reading
+is owed. The quest half (the scan's cache, the full import, quest and objective drafts, and voice) follows in the scan's
+re-pull after the first login; 191 quest ids wait for it. Items, spells and interface lines are not voiced.
+
 ### 1.60.1.70685 → 1.60.1.70707, tables (2026-11-01)
 
 A Forever build installed three days before launch. The scan has not run, so this round again pins the tables only and

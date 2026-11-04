@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-03 at commit `214e9c23`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-04 at commit `161264dd`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -74,18 +74,18 @@ never shows, or the key that already shows the same English.
 
 ## Served text inventory
 
-Every text column the client serves on 1.60.1.70755 (`pipeline/served_columns.txt`: its
+Every text column the client serves on 1.60.1.70790 (`pipeline/served_columns.txt`: its
 tables, hotfixes and server caches), with the disposition
 `pipeline/served_dispositions.txt` gives it.
 Lines are non-empty values; a server cache counts the records this install holds.
 
 | Disposition | Columns | Lines |
 |---|---|---|
-| Shipped through a surface above | 71 | 81,341 |
-| Names (stay English) | 55 | 65,485 |
-| Internal (never printed) | 98 | 404,499 |
+| Shipped through a surface above | 71 | 81,337 |
+| Names (stay English) | 55 | 65,017 |
+| Internal (never printed) | 97 | 410,766 |
 | No place in the Forever client | 30 | 1,912 |
-| Same text as another column | 6 | 7,188 |
+| Same text as another column | 6 | 6,758 |
 | Empty on this build | 3 | 0 |
 
 ### Every column
@@ -128,8 +128,8 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `characterserviceinfo.f2` | no-display | 5 | character services, glue screens |
 | `chartitles.f0` | names | 41 | player titles (Bloodsail Admiral %s), names |
 | `chartitles.f1` | names | 41 | player titles, female form |
-| `chatchannels.f0` | names | 19 | channel names (General - %s); UI/Channels.lua keeps channel names English |
-| `chatchannels.f1` | names | 19 | channel names (Trade) |
+| `chatchannels.f0` | names | 20 | channel names (General - %s); UI/Channels.lua keeps channel names English |
+| `chatchannels.f1` | names | 20 | channel names (Trade) |
 | `chatprofanity.f0` | internal | 3,748 | profanity filter list |
 | `chrclasses.f0` | names | 9 | class names |
 | `chrclasses.f1` | internal | 9 | class tokens (WARRIOR) |
@@ -200,22 +200,21 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `groupfinderactivity.f1` | covered-by:groupfinderactivity.f0 | 109 | ShortName_lang: the same dungeon names, shortened |
 | `groupfinderactivitygrp.f0` | surface:ui:LfgActivityGroup | 7 | Name_lang |
 | `groupfindercategory.f0` | surface:ui:LfgCategory | 5 | Name_lang |
-| `hash-c842493a.*` | internal | 0 | a hotfix-only table the listfile does not name; no strings on 1.60.1.70532 or 1.60.1.70707, where its rows are one 4-byte number each, its own id (3 rows, then 2; recheck when the row count moves) |
 | `holidaydescriptions.f0` | surface:ui:HolidayDescription | 17 | Description_lang |
 | `holidaynames.f0` | names | 16 | Name_lang: event names (Darkmoon Faire) |
-| `hotfixes.f0` | internal | 41,724 | Hotfixes.db2: the client's own hotfix record, each value a table name (NAMESPROFANITY, NAMESRESERVED, QUESTV2, SPELL, …: 184 distinct over 17,219 rows on 1.60.1.70685); first read as text on that build, never shown |
+| `hotfixes.f0` | internal | 47,991 | Hotfixes.db2: the client's own hotfix record, each value a table name (NAMESPROFANITY, NAMESRESERVED, QUESTV2, SPELL, …: 184 distinct over 17,219 rows on 1.60.1.70685); first read as text on that build, never shown |
 | `itembagfamily.f0` | no-display | 24 | Lua reads only the family number (C_Container.GetContainerNumFreeSlots); no reader prints the name |
 | `itemclass.f0` | no-display | 17 | the camelot auction data (blizzard_auctionhouseui/camelot/blizzard_auctiondata.lua) uses GlobalStrings categories; the class-only branch (shared/blizzard_auctiondata.lua:93-94) is never reached |
 | `itemlimitcategory.f0` | names | 30 | item names (Signet Ring of the Bronze Dragonflight) |
 | `itemnamedescription.f0` | surface:ui:ItemNameDescription | 92 | Description_lang |
 | `itempetfood.f0` | surface:ui:PetFood | 8 | Name_lang: pet diet words |
-| `itemsearchname.f0` | covered-by:itemsparse.f0 | 7,056 | item names again, for the search index; the names in itemsparse.f4 stay English and this table carries nothing else |
+| `itemsearchname.f0` | covered-by:itemsparse.f0 | 6,626 | item names again, for the search index; the names in itemsparse.f4 stay English and this table carries nothing else |
 | `itemset.f0` | names | 545 | item set names (The Gladiator) |
-| `itemsparse.f0` | surface:item.description | 4,807 | Description_lang |
+| `itemsparse.f0` | surface:item.description | 4,803 | Description_lang |
 | `itemsparse.f1` | empty | 0 | Display3_lang |
 | `itemsparse.f2` | empty | 0 | Display2_lang |
 | `itemsparse.f3` | empty | 0 | Display1_lang |
-| `itemsparse.f4` | names | 19,752 | Display_lang: item names |
+| `itemsparse.f4` | names | 19,281 | Display_lang: item names |
 | `itemsubclass.f0` | surface:ui:ItemSubClass | 100 | DisplayName_lang |
 | `itemsubclass.f1` | surface:ui:ItemSubClassName | 36 | VerboseName_lang |
 | `itemsubclassmask.f0` | surface:ui:ItemSubClassMask | 3 | Name_lang (Requires Melee Weapon) |
@@ -298,7 +297,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 | `spellkeyboundoverride.f0` | internal | 1 | a key token (JUMP) |
 | `spellmechanic.f0` | internal | 36 | lower-case mechanic names (charmed, dazed); no Forever display site (docs/research/2026-09-26-client-table-text.md) |
 | `spellmissilemotion.f0` | internal | 70 | missile motion names |
-| `spellname.f0` | names | 32,049 | Name_lang: spell names |
+| `spellname.f0` | names | 32,050 | Name_lang: spell names |
 | `spelloverridename.f0` | names | 1 | one spell name |
 | `spellrange.f0` | no-display | 61 | in game on 1.60.1.70170, Wrath (SpellRange 4 "Medium Range", 30 yards) shows SPELL_RANGE "30 yd range", already Japanese; melee spells use MELEE_RANGE |
 | `spellrange.f1` | no-display | 61 | the short range names (Medium); not printed, as spellrange.f0 |
