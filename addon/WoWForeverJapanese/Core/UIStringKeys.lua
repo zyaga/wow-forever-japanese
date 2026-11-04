@@ -652,7 +652,7 @@ UIStrings.CHAT_FAMILIES = { "^LOOT_ITEM$", "^LOOT_ITEM_", "^LOOT_ROLL_", "^CREAT
   -- the level-up lines, the [Level N] link and the talent point line, printed on PLAYER_LEVEL_UP
   -- (blizzard_chatframebase/camelot/chatframeutiloverrides.lua:1–44, called from camelot/chatframeoverrides.lua:5;
   -- LEVEL_UP_CHAR_POINTS through GetText at :18), the countdown timer's lines (timer.lua:165–167),
-  -- the newcomer chat's welcome (channelframe.lua:1021–1027), the censored-message prompts (chatframeutil.lua:869;
+  -- the newcomer chat's welcome (channelframe.lua:1021–1027), the censored-message prompts (chatframeutil.lua:884;
   -- itemrefhandlersshared.lua:204) and the trial restriction notices (chatframeoverrides.lua:447, 491)
   "^LEVEL_UP$", "^LEVEL_UP_CHAR_POINTS$", "^COUNTDOWN_SET$", "^COUNTDOWN_CLEAR$", "^NPEV2_CHAT_WELCOME_TO_CHANNEL_",
   "^CENSORED_MESSAGE_", "^CHAT_RESTRICTED_TRIAL$", "^CHAT_TRIAL_RESTRICTED_NOTICE_TRIAL$" }

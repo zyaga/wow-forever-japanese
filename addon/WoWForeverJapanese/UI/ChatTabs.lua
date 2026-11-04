@@ -15,7 +15,7 @@
 --   the edit box header ("Say:", "Tell <name>:"). ChatFrameEditBoxMixin:UpdateHeader writes it:
 --     header:SetText(_G["CHAT_"..type.."_SEND"]) or SetFormattedText(CHAT_WHISPER_SEND, target), then sizes it
 --     (width 0, capped at half the box with the ": " suffix shown) and insets the typed text by its width
---     (blizzard_chatframebase/shared/chatframeeditbox.lua:617–715; mainline/chatframeeditboxoverrides.lua:5–18 for the
+--     (blizzard_chatframebase/shared/chatframeeditbox.lua:626–728; mainline/chatframeeditboxoverrides.lua:5–18 for the
 --     language header). A post-hook on each edit box's UpdateHeader shows the header in Japanese and sizes it again
 --     the client's way, so the typed text starts after the Japanese; Alt re-sizes it for the English. A whisper
 --     target's name is kept (a `text` argument). ChatFrame<N>EditBox; temporary whisper windows add more.
@@ -56,7 +56,7 @@ function ChatTabs.onNewcomerHint(box)
   if type(name) ~= "string" then return 0 end -- records are keyed by the box's name; an unnamed box has none
   return WFJ.Labels.show(SURFACE, "hint." .. name, box.NewcomerHint, nil, HINT)
 end
-local HEADER_PAD, HEADER_RIGHT = 15, 13 -- the client's insets (chatframeeditbox.lua:714)
+local HEADER_PAD, HEADER_RIGHT = 15, 13 -- the client's insets (chatframeeditbox.lua:727)
 
 local function get(key) return Compat.get(SURFACE, key) end
 
@@ -74,7 +74,7 @@ function ChatTabs.registerTabs()
 end
 
 -- The typed text's start, moved by the header's change in width only: the client has just laid the English header
--- out and set the inset (chatframeeditbox.lua:644, 700–714), so `bases` keeps that inset and the English's width,
+-- out and set the inset (chatframeeditbox.lua:653, 713–727), so `bases` keeps that inset and the English's width,
 -- and our Japanese moves it by the difference, which keeps whatever else the client added to the inset. A capped
 -- header (the suffix shown) keeps the client's inset: its width is fixed at half the box. English back on the
 -- header gives the client's inset.

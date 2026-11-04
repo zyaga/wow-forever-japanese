@@ -230,7 +230,7 @@ the screen. NPC speech is server text (VMaNGOS `broadcast_text`), keyed like gos
       post-hook reads the server's English from `eventArgs[1]`, runs the event's own `MessageFormatter` over the
       Japanese (every `%` but the speaker's `%s` escaped), swaps the prefix's words (§9), and rewrites the entry once
       in the history by its line id with `TransformMessages`, Blizzard's own pattern for a changed line
-      (`chatframeutil.lua:853–877`). A line with no Japanese of its own still gets the Japanese prefix. The pair is
+      (`chatframeutil.lua:868–892`). A line with no Japanese of its own still gets the Japanese prefix. The pair is
       remembered in `UI/ChatSystem` with area `gossip`, so Alt and the switch use §7's visible-line swap.
     - **Bubbles.** After a say, yell or party line with Japanese and no `%s`, `C_ChatBubbles.GetAllChatBubbles(false)`
       (`chatbubblesdocumentation.lua:11–24`) is scanned up to 8 times, 0.1 s apart, for a bubble whose `.String`

@@ -155,13 +155,13 @@ Menus.TAGS = {
   -- chat: a tab's context menu (window names are on the tab, never in it; Font Size's radios are "%d pt"), the chat
   -- menu button's shortcuts, and a channel's context menu (its title is the channel name)
   -- (blizzard_chatframebase/mainline/floatingchatframe.lua:546–689; mainline/chatframemenubutton.lua:56–126;
-  -- shared/chatframeutil.lua:697–722)
+  -- shared/chatframeutil.lua:712–737)
   MENU_FCF_TAB = { source = "mainline/floatingchatframe.lua:546", keys = { "HUD_EDIT_MODE_MENU", "UNLOCK_WINDOW",
     "LOCK_WINDOW", "UNDOCK_WINDOW", "MAKE_INTERACTABLE", "MAKE_UNINTERACTABLE", "RENAME_CHAT_WINDOW",
     "NEW_CHAT_WINDOW", "CLOSE_CHAT_WINDOW", "CLOSE_CHAT_WHISPER_WINDOW", "DISPLAY", "FONT_SIZE", "FONT_SIZE_TEMPLATE",
     "BACKGROUND", "FILTERS", "CHAT_CONFIGURATION" } },
   MENU_CHAT_SHORTCUTS = { source = "mainline/chatframemenubutton.lua:56", keys = CHAT_SHORTCUT_KEYS },
-  MENU_CHAT_FRAME_CHANNEL = { source = "shared/chatframeutil.lua:697", titleIsName = true,
+  MENU_CHAT_FRAME_CHANNEL = { source = "shared/chatframeutil.lua:712", titleIsName = true,
     keys = { "CHAT_CHANNEL_DROP_DOWN_OPEN_COMMUNITIES_FRAME", "MOVE_TO_NEW_WINDOW" } },
   -- Edit Mode's layout menu: a layout's name (preset or the player's) is no key; the new-layout
   -- entry carries an atlas in front; the copy / rename / delete hovers (editmodemanager.lua:1337–1467;

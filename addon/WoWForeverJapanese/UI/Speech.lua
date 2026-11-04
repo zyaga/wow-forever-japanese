@@ -9,7 +9,7 @@
 --     typeId, accessID, typeID, event, eventArgs, MessageFormatter) (:676–683). The post-hook on each chat frame's
 --     AddMessage reads the server's English from eventArgs[1], and the line is rewritten in the history with
 --     TransformMessages to MessageFormatter(<the Japanese>), Blizzard's own pattern for a changed line
---     (chatframeutil.lua:853–877). Alt / the switch: UI/ChatSystem's visible-line swap (the pair is remembered there).
+--     (chatframeutil.lua:868–892). Alt / the switch: UI/ChatSystem's visible-line swap (the pair is remembered there).
 --   bubbles: C_ChatBubbles.GetAllChatBubbles(false) (chatbubblesdocumentation.lua:11–24): a bubble's `.String`
 --     (blizzard_chatbubble/chatbubbletemplates.xml:3–24) is looked for over the next frames after a say / yell and
 --     rewritten with the bundled face. [unverified: bubble timing and wrap width; forbidden (instance) bubbles are
