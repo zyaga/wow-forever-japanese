@@ -9,6 +9,20 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Added
+- Japanese for the quests, NPC lines and spells Forever build 1.60.1.70790 adds on Zephras Isle and elsewhere, with word readings and voice: the Camping 101 quests, The Ancient Hilt, the shen'dorei starting area's conversations, and the new spells and their auras.
+
+### Changed
+- Quest text is read from Forever build 1.60.1.70790, the launch build.
+- The unit right-click menus (on a portrait, a party or raid frame, a name in chat) and the Edit Mode window stay in English: Japanese there made the game block actions in combat.
+- Seven Darkmoon Faire quest titles show their item name in English (Carnival Boots, Coarse Weightstone, Copper Modulator and others), as names do everywhere.
+- The quest log's list keeps its rows at the game's own height; Japanese text that wraps differently is no longer resized.
+
+### Fixed
+- Right-clicking a party member in combat no longer fails to open the menu ("Interface action failed because of an AddOn").
+- Leaving Edit Mode no longer shows an "AddOn action forbidden" error.
+- Clicking a tracked quest's title in combat opens the quest log and map instead of being blocked.
+
 ## 0.7.1 - 2026-11-04
 
 ### Changed

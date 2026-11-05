@@ -31,7 +31,8 @@ recorded the tainted fields and writers around them.
    by measuring that text (`SetExpandedState` → `LayoutSettings` / `EditModeManagerFrame:Layout`,
    `editmodemanager.lua:2931–2945`; the system dialog's `UpdateDialog` → `Layout`). This is the ADR-058 pattern: text
    the addon wrote, measured by Blizzard on a path that ends in a protected call.
-3. **A tracked quest title clicked in combat.** Clicking a quest title in the objective tracker in combat logged
+3. **A tracked quest title clicked in combat.** Clicking a quest title in the objective tracker in combat (the second
+   click: the first one, out of combat, logged nothing) logged
    `ADDON_ACTION_BLOCKED Button:SetPassThroughButtons()` twice. The stack: `ObjectiveTrackerBlock.lua:388`
    `OnHeaderClick` → `QuestMapFrame_OpenToQuestDetails` → `ShowUIPanel(WorldMapFrame)` → the quest pins'
    `AcquirePin` → `MapCanvas_DataProviderBase.lua:290/300`. Before it, `ObjectiveTrackerFrame.topModulePadding` turned
@@ -50,9 +51,16 @@ recorded the tainted fields and writers around them.
    the manager window, its account settings, the system settings dialog, the layout dialogs, the HUD selection
    overlays (the cooldown viewers' "Essential Cooldowns" style labels included), the layout menu
    (`MENU_EDIT_MODE_MANAGER`) and Edit Mode's setting dropdowns. `UI/EditMode` is gone.
-3. **The tracker is traced before it is changed.** The taint watch logs a `write` entry,
-   `ObjectiveTrackerFrame.dirty`, with the caller's stack whenever `MarkDirty` leaves the `dirty` flag tainted. The
-   fix follows the caller that entry names. The decision for the tracker is pending until then.
+3. **The quest log's list is never resized or laid out again by this addon.** The trace, in four in-game sessions,
+   cleared the tracker and found the quest log: the `ObjectiveTrackerFrame.dirty` probe stayed clean, the clicked
+   block's keys and its module's were clean, and `QuestCache` was clean, but `QuestMapFrame.DetailsFrame.questID` was
+   written tainted on the first click, out of combat, and `QuestScrollFrame.Contents.poiSelectedButton`, which only
+   `QuestLogQuests_Update` writes, read as tainted. `UI/QuestMap` resized the list's title buttons and objective rows
+   to fit Japanese that wraps differently and called `Contents:Layout()` itself. The next list update measured those
+   rows and ran tainted, stored the quest id tainted, and the click after it read that id, focused the map and had its
+   quest pins refused in combat (`SetPassThroughButtons`). The list keeps its Japanese text; it is no longer resized
+   or laid out by the addon. With that change alone, the same two-click test in combat logged no block, no tainted
+   write and no tainted field.
 4. **A static test keeps both out.** `tests/python/test_protected_paths.py` fails when any shipped Lua outside
    `UI/TaintWatch` names a unit menu tag, `WFJ.MenusUnit` or an Edit Mode frame (comments aside), or when
    `UI/EditMode.lua` or `UI/MenusUnit.lua` exists again. `UI/TaintWatch` only reads, so its scan roots may name Edit
@@ -75,5 +83,8 @@ recorded the tainted fields and writers around them.
 - Getting either back would mean drawing the addon's own text over Blizzard's instead of writing into it or running
   inside its pass. That needs its own in-game proof with the taint watch before it ships. Nothing is deferred: no
   ticket plans it.
-- The tracker block is not fixed by this record. Its cause is being traced with the new `write` entry; the fix and
-  its reason are added here once the trace names the caller.
+- The quest list is laid out on the English heights. A Japanese title or objective that wraps to more lines than
+  its English could overlap the row below; in game, the wrapped Zephras Isle rows fitted.
+- The taint watch keeps the probes that found it: the `MarkDirty` write entry, a writer check on the quest log's
+  stored quest id, a check of a clicked tracker block's keys, and a block-time scan that reaches the tracker's blocks,
+  the quest log and its list, the map and the quest cache.

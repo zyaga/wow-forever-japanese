@@ -585,72 +585,12 @@ local function showTitle(surface, questID, fs, refit, given, row)
 end
 QuestMap.showTitle = showTitle
 
--- A list objective row: keyed by the row frame (pooled, so never a position); its height follows a line that wraps
--- differently in Japanese. The client sized the quest's title button to the sum of its English heights
--- (questmapframe.lua:1882, 1897–1923, 1957–1958), so the height change goes into the title button too and the list
--- is laid out again (Contents:Layout(), as QuestLogQuests_Update does at :2159): once per list update, or at once for
--- a later rewrite (the modifier).
+-- A list objective row: keyed by the row frame (pooled, so never a position). The list's rows are never resized and
+-- the list is never laid out again here, even where a Japanese line wraps differently: the next QuestLogQuests_Update
+-- measures them and, in the same pass, focuses the map's quest pins, which are protected in combat (ADR-069).
 local listObjectiveKey = WFJ.Labels.keyer("objective.")
 local listTagKey = WFJ.Labels.keyer("tag.")
 local listHeaderKey = WFJ.Labels.keyer("header.")
-local listRefits = setmetatable({}, { __mode = "k" })
-local titleButtons = {} -- questID → the list's title button, rebuilt on every list update
-local listBatch -- true while onListUpdate walks the rows: one Layout at its end
-local listMoved = false
-
-local function relayoutList()
-  if listBatch then listMoved = true; return end
-  local scroll = get("listScroll")
-  local contents = type(scroll) == "table" and scroll.Contents or nil
-  if type(contents) == "table" and type(contents.Layout) == "function" then contents:Layout() end
-end
-
--- Moves the title button of `questID` by `delta` (a row or its title changed height).
-local function growTitle(questID, delta)
-  local button = titleButtons[questID]
-  if delta == 0 or type(button) ~= "table" or type(button.GetHeight) ~= "function"
-      or type(button.SetHeight) ~= "function" then return end
-  local h = button:GetHeight()
-  if type(h) ~= "number" then return end
-  button:SetHeight(h + delta)
-  relayoutList()
-end
-
-local function listObjectiveRefit(row)
-  local fn = listRefits[row]
-  if fn then return fn end
-  fn = function()
-    local fs = row.Text
-    if type(fs) ~= "table" or type(fs.GetStringHeight) ~= "function" then return end
-    if type(row.SetHeight) ~= "function" then return end
-    local h = fs:GetStringHeight()
-    if type(h) == "number" and h > 0 then
-      local old = type(row.GetHeight) == "function" and row:GetHeight() or nil
-      row:SetHeight(h)
-      if type(old) == "number" then growTitle(row.questID, h - old) end
-    end
-  end
-  listRefits[row] = fn
-  return fn
-end
-
--- A title's own wrap: the button grows by the title's height change.
-local titleHeights = setmetatable({}, { __mode = "k" }) -- title FontString → the height the button was sized on
-local titleRefits = setmetatable({}, { __mode = "k" })
-local function listTitleRefit(button)
-  local fn = titleRefits[button]
-  if fn then return fn end
-  fn = function()
-    local fs = button.Text
-    if type(fs) ~= "table" or type(fs.GetHeight) ~= "function" then return end
-    local h, old = fs:GetHeight(), titleHeights[fs]
-    if type(h) ~= "number" then return end
-    titleHeights[fs] = h
-    if type(old) == "number" and titleButtons[button.questID] == button then growTitle(button.questID, h - old) end
-  end
-  titleRefits[button] = fn
-  return fn
-end
 
 -- camelot's quest tag: button.TagText holds QuestUtilsOverrides.GetQuestTagText, PARENS_TEMPLATE around ELITE,
 -- CALENDAR_TYPE_DUNGEON, CALENDAR_TYPE_PVP or RAID, in its own FontString (blizzard_framexmlutil/camelot/
@@ -677,8 +617,6 @@ end
 
 function QuestMap.onListUpdate()
   WFJ.Render.forget(LIST)
-  titleButtons = {}
-  listBatch, listMoved = true, false
   local n = 0
   local story = get("storyHeader") -- the story header's progress line; its Text is the story's name
   if type(story) == "table" then
@@ -690,10 +628,7 @@ function QuestMap.onListUpdate()
     if type(pool) == "table" and type(pool.EnumerateActive) == "function" then
       for button in pool:EnumerateActive() do
         if type(button) == "table" then
-          if type(button.questID) == "number" then titleButtons[button.questID] = button end
-          local fs = button.Text
-          if type(fs) == "table" and type(fs.GetHeight) == "function" then titleHeights[fs] = fs:GetHeight() end
-          n = n + showTitle(LIST, button.questID, fs, listTitleRefit(button))
+          n = n + showTitle(LIST, button.questID, button.Text)
           if type(button.TagText) == "table" then
             WFJ.Labels.show(LIST, listTagKey(button.TagText), button.TagText, nil, TAG_ONLY)
           end
@@ -723,16 +658,14 @@ function QuestMap.onListUpdate()
     if type(objectives) == "table" and type(objectives.EnumerateActive) == "function" then
       for row in objectives:EnumerateActive() do
         if type(row) == "table" then
-          local key, refit = listObjectiveKey(row), listObjectiveRefit(row)
-          if QuestMap.showObjective(LIST, key, row.Text, refit) == 0 then
-            QuestMap.showQuestText(LIST, key, row.Text, row.questID, refit)
+          local key = listObjectiveKey(row)
+          if QuestMap.showObjective(LIST, key, row.Text) == 0 then
+            QuestMap.showQuestText(LIST, key, row.Text, row.questID)
           end
         end
       end
     end
   end)
-  listBatch = false
-  if listMoved then relayoutList() end
   if not ok then error(err, 0) end
   WFJ.Render.updateBanner(LIST)
   QuestMap.showListLabels()

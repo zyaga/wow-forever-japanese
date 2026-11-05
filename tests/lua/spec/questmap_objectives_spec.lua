@@ -396,32 +396,26 @@ describe("UI/QuestMap: objective lines", function()
       Stub.keys.alt = false; WFJ.Modifier.refresh()
     end)
 
-    it("the title button grows with a wrapped Japanese objective, and the list is laid out again",
-      function()
-        local contents = _G.QuestScrollFrame.Contents
-        local function expected(b)
-          local total = 8 + b.Text:GetHeight()
-          for row in _G.QuestScrollFrame.objectiveFramePool:EnumerateActive() do
-            if row.questID == 9 then total = total + row:GetHeight() + 3 end
-          end
-          return total + 6
-        end
-        local before = contents.layouts
-        Q.updateList()
-        local b = Q.rows()[9]
-        local english = 8 + b.Text:GetHeight() + 6
-        for _, line in ipairs(Q.quests[9].leaderboard) do
-          english = english + Stub.textHeight(line.text, { path = "Fonts\\FRIZQT__.TTF", size = 13 }, 200) + 3
-        end
-        assert.are_not.equal(english, b:GetHeight()) -- the Japanese rows are taller
-        assert.are.equal(expected(b), b:GetHeight())
-        assert.are.equal(before + 1, contents.layouts) -- once for the whole update
-        Stub.keys.alt = true; WFJ.Modifier.refresh()
-        assert.are.equal(english, b:GetHeight())
-        assert.are.equal(expected(b), b:GetHeight())
-        Stub.keys.alt = false; WFJ.Modifier.refresh()
-        assert.are.equal(expected(b), b:GetHeight())
-      end)
+    it("the list's rows show Japanese but are never resized or laid out again by the addon (ADR-069)", function()
+      -- the next QuestLogQuests_Update measures them, and in the same pass focuses the map's quest pins, which are
+      -- protected in combat
+      local contents = _G.QuestScrollFrame.Contents
+      local before = contents.layouts
+      Q.updateList()
+      local b = Q.rows()[9]
+      local height = b:GetHeight()
+      assert.are.equal(before, contents.layouts)
+      local japanese = false
+      for row in _G.QuestScrollFrame.objectiveFramePool:EnumerateActive() do
+        if row.questID == 9 and row.Text:GetText():find("[\227-\233]") then japanese = true end
+      end
+      assert.is_true(japanese)
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      assert.are.equal(height, b:GetHeight())
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      assert.are.equal(height, b:GetHeight())
+      assert.are.equal(before, contents.layouts)
+    end)
 
     it("a count with thousands separators is split and kept", function()
       local ns = {}
