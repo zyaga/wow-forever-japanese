@@ -148,6 +148,27 @@ describe("UI/TaintWatch", function()
     _G.QuestMapFrame_ShowQuestDetails, _G.QuestMapFrame = nil, nil
   end)
 
+  it("a clicked quest block logs which of its own keys and its module's read as tainted", function()
+    local hooked = {}
+    _G.hooksecurefunc = function(t, m, fn)
+      if type(t) == "table" then hooked[(t.name or "?") .. ":" .. m] = fn end
+    end
+    _G.C_Timer = { NewTicker = function() end }
+    _G.ObjectiveTrackerFrame = { name = "ObjectiveTrackerFrame", UpdateTopPadding = function() end,
+      MarkDirty = function() end }
+    _G.QuestObjectiveTracker = { name = "QuestObjectiveTracker", OnBlockHeaderClick = function() end }
+    TW.init()
+    local click = hooked["QuestObjectiveTracker:OnBlockHeaderClick"]
+    assert.is_function(click)
+    local block = { id = 93949, OnHeaderClick = function() end, parentModule = _G.QuestObjectiveTracker }
+    click(_G.QuestObjectiveTracker, block)
+    assert.are.equal(0, #entriesOf("write"))
+    taint.OnHeaderClick = { t = block, by = "WoWForeverJapanese" }
+    click(_G.QuestObjectiveTracker, block)
+    assert.is_truthy(entriesOf("write")[1].msg:find("^QuestObjectiveTracker block%.OnHeaderClick"))
+    _G.ObjectiveTrackerFrame, _G.QuestObjectiveTracker = nil, nil
+  end)
+
   it("a block in combat queues its scan until combat is over", function()
     local fighting = true
     _G.InCombatLockdown = function() return fighting end

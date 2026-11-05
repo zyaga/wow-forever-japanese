@@ -325,6 +325,21 @@ local function hookWriters()
     hook(tracker, "MarkDirty", function(self)
       TaintWatch.wrote("ObjectiveTrackerFrame.dirty", self, "dirty")
     end)
+    -- a title click runs block:OnHeaderClick → module:OnBlockHeaderClick (blizzard_objectivetrackerblock.lua:284-286,
+    -- 386-389; blizzard_questobjectivetracker.lua:53-68): a key of the block or its module written by tainted code
+    -- (a block built or refilled while tainted) would taint the whole click
+    for _, name in ipairs({ "QuestObjectiveTracker", "CampaignQuestObjectiveTracker" }) do
+      hook(C.resolve(name), "OnBlockHeaderClick", function(module, block)
+        for _, key in ipairs({ "OnBlockHeaderClick", "OnHeaderClick", "id", "parentModule" }) do
+          if type(block) == "table" and block[key] ~= nil then
+            TaintWatch.wrote(name .. " block." .. key, block, key)
+          end
+          if type(module) == "table" and module[key] ~= nil then
+            TaintWatch.wrote(name .. "." .. key, module, key)
+          end
+        end
+      end)
+    end
   end
   -- the quest log reads DetailsFrame.questID on its next refresh, on the way to the map's quest pins
   -- (questmapframe.lua:915-919, 1044-1049); a tainted id there would carry into the pins' protected call
