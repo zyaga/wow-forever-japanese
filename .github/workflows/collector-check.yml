@@ -13,14 +13,14 @@ on:
 permissions:
   contents: read
 
-# one run per issue at a time; a newer edit cancels an older run, so the label always follows the latest body
-concurrency:
-  group: collector-check-${{ github.event.issue.number }}
-  cancel-in-progress: true
-
 jobs:
   check:
     if: contains(github.event.issue.labels.*.name, 'collector-send') && (github.event.action != 'labeled' || github.event.label.name == 'collector-send')
+    # one check per issue at a time; a newer edit cancels an older run, so the label always follows the latest
+    # body. Set on the job, not the workflow: a run whose job is skipped (another label added) cancels nothing
+    concurrency:
+      group: collector-check-${{ github.event.issue.number }}
+      cancel-in-progress: true
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:

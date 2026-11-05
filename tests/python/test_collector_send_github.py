@@ -33,7 +33,9 @@ def test_workflow_never_puts_the_issue_text_in_a_script(root):
 
 def test_workflow_runs_one_at_a_time_briefly_and_keeps_no_token(root):
     wf = _wf(root)
-    assert "concurrency:\n  group: collector-check-${{ github.event.issue.number }}\n  cancel-in-progress: true" in wf
+    # on the job: a run whose job is skipped (another label added) must not cancel a check in progress
+    assert "    concurrency:\n      group: collector-check-${{ github.event.issue.number }}\n      cancel-in-progress: true" in wf
+    assert re.search(r"(?m)^concurrency:", wf) is None
     assert "timeout-minutes: 5" in wf
     assert "persist-credentials: false" in wf
     assert 'elif [ "$code" -eq 1 ]; then echo "ok=false" >> "$GITHUB_OUTPUT"; else exit "$code"; fi' in wf

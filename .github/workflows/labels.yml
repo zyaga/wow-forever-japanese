@@ -35,7 +35,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
         run: |
-          while IFS=$'\t' read -r name color description; do
+          while IFS=$'\t' read -r name color description || [ -n "$name" ]; do # a last line with no newline too
             [ "$name" = name ] && continue # the header line
             gh label create "$name" --color "$color" --description "$description" --force
           done < .github/labels.tsv

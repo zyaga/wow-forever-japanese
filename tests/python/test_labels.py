@@ -12,7 +12,9 @@ LIST = ".github/labels.tsv"
 
 
 def _labels(root: Path) -> dict[str, tuple[str, str]]:
-    lines = (root / LIST).read_text(encoding="utf-8").splitlines()
+    text = (root / LIST).read_bytes().decode("utf-8")
+    assert "\r" not in text and text.endswith("\n")
+    lines = text.splitlines()
     assert lines[0] == "name\tcolor\tdescription"
     labels: dict[str, tuple[str, str]] = {}
     for line in lines[1:]:
@@ -33,10 +35,12 @@ def test_the_list_is_well_formed(root):
 
 def test_every_form_label_is_listed(root):
     labels = _labels(root)
-    forms = sorted((root / ".github/ISSUE_TEMPLATE").glob("*.yml"))
+    forms = sorted((root / ".github/ISSUE_TEMPLATE").glob("*.y*ml"))
     named = set()
     for form in forms:
-        m = re.search(r"(?m)^labels: \[(.*)\]$", form.read_text(encoding="utf-8"))
+        text = form.read_text(encoding="utf-8")
+        m = re.search(r"(?m)^labels: \[(.*)\]$", text)
+        assert m or not re.search(r"(?m)^labels:", text), f"{form.name}: write labels as [..] on one line"
         if m:
             named |= {n.strip().strip('"') for n in m.group(1).split(",") if n.strip()}
     assert {"collector-send", "translation-report", "bug", "enhancement"} <= named
@@ -51,6 +55,7 @@ def test_every_label_a_workflow_needs_is_listed_as_the_workflow_writes_it(root):
         needed |= set(re.findall(r"labels\.\*\.name, '([\w-]+)'", text))
         needed |= set(re.findall(r"github\.event\.label\.name == '([\w-]+)'", text))
         needed |= set(re.findall(r"\b(?:add|drop)=([\w-]+)", text))
+        needed |= set(re.findall(r"--(?:add-|remove-)?label[= ]\"?([a-z][\w-]*)", text))
         for name, color, description in re.findall(
             r'gh label create ([\w-]+) --color (\w+) --description "([^"]+)" --force', text
         ):
