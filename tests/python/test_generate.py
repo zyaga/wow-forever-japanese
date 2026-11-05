@@ -221,7 +221,11 @@ def test_the_committed_area_english_is_the_former_quest_area(root):
     area = english.load("area")
     assert len(area) == 223 and len({ln["hash"] for ln in area}) == 208
     assert {ln["field"] for ln in area} == {"text"}
-    assert {ln["src"] for ln in area} == {"wdb@1.15.9.69722", f"wdb@{forever_quest_build()}"}
+    # a quest the latest scan did not answer keeps the English of the Forever build that last served it (English is
+    # additive, ADR-050), so older Forever quest builds may stay next to the current one
+    srcs = {ln["src"] for ln in area}
+    assert {"wdb@1.15.9.69722", f"wdb@{forever_quest_build()}"} <= srcs
+    assert all(s == "wdb@1.15.9.69722" or s.startswith("wdb@1.60.1.") for s in srcs), srcs
     assert all(ln["hash"] == key(normalize_v1(ln["en"])) for ln in area)
     assert not [ln for ln in english.load("quest") if ln["field"] == "area"]
     titles = {ln["id"] for ln in english.load("quest") if ln["field"] == "title"}

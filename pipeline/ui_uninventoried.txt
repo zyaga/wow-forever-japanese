@@ -55,6 +55,8 @@ COMBAT_FACTION_CHANGE  # asked for by UI/ChatSystem.lua: the client passes the s
 COMBAT_HONOR_GAIN  # asked for by UI/ChatSystem.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 COMBAT_MISC_INFO  # asked for by UI/ChatSystem.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 COMBAT_XP_GAIN  # asked for by UI/ChatSystem.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
+CONTACTS_MENU_BROADCAST_BUTTON_NAME  # Forever 1.60.1.70790 no longer names it in any file it loads (the friends list's broadcast button, the broadcast toast setting, the subscription window's fourth bullet); kept with its Japanese because English is additive (ADR-050)
+DEATH_RECAP_TEXT  # asked for by UI/ChatSystem.lua: the label of DEATH_RECAP_LINK, the death recap link the C client posts in chat itself, so no scanned file names it
 ENCOUNTER_EVENT  # a chat type's name, _G[chatType], on the chat settings' message-type rows (UI/ChatConfig; blizzard_chatframe/mainline/chatconfigframe.lua builds it from the type): no scanned file names the global
 ERRORS  # a chat type's name, _G[chatType], on the chat settings' message-type rows (UI/ChatConfig; blizzard_chatframe/mainline/chatconfigframe.lua builds it from the type): no scanned file names the global
 EXHAUSTION_LABEL  # asked for by UI/HudLabels.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
@@ -87,6 +89,7 @@ MONSTER_SAY  # asked for by UI/Speech.lua: the client passes the string by refer
 NEWBIE_TOOLTIP_CHATMENU  # asked for by UI/Friends.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 NEWBIE_TOOLTIP_XPBAR  # asked for by Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 OPENING  # asked for by UI/ChatSystem.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
+OPTION_TOOLTIP_SHOW_TOAST_BROADCAST  # Forever 1.60.1.70790 no longer names it in any file it loads (the friends list's broadcast button, the broadcast toast setting, the subscription window's fourth bullet); kept with its Japanese because English is additive (ADR-050)
 PARTY_LEADER  # asked for by UI/ChatConfig.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 PET_BATTLE_INFO  # a chat type's name, _G[chatType], on the chat settings' message-type rows (UI/ChatConfig; blizzard_chatframe/mainline/chatconfigframe.lua builds it from the type): no scanned file names the global
 PET_INFO  # asked for by UI/ChatSystem.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
@@ -97,6 +100,7 @@ QUEST_LOG  # asked for by UI/QuestMap.lua: the client passes the string by refer
 QUEST_PLAYERS_KILLED  # asked for by UI/QuestMap.lua, Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 QUEST_PLAYERS_KILLED_NOPROGRESS  # asked for by UI/QuestMap.lua, Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 RED_GEM  # asked for by UI/ItemSocketing.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
+SHOW_TOAST_BROADCAST_TEXT  # Forever 1.60.1.70790 no longer names it in any file it loads (the friends list's broadcast button, the broadcast toast setting, the subscription window's fourth bullet); kept with its Japanese because English is additive (ADR-050)
 SPELL_DURATION_DAYS  # asked for by Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 SPELL_DURATION_HOURS  # asked for by Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 SPELL_DURATION_MIN  # asked for by Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
@@ -105,11 +109,11 @@ SPELL_TIME_REMAINING_DAYS  # a line the C client writes into an aura tooltip ("5
 SPELL_TIME_REMAINING_HOURS  # a line the C client writes into an aura tooltip ("5 min remaining"): no Lua names it; UI/Tooltip matches it
 SPELL_TIME_REMAINING_MIN  # a line the C client writes into an aura tooltip ("5 min remaining"): no Lua names it; UI/Tooltip matches it
 SPELL_TIME_REMAINING_SEC  # a line the C client writes into an aura tooltip ("5 min remaining"): no Lua names it; UI/Tooltip matches it
+SUBSCRIPTION_INTERSTITIAL_UPGRADE_BULLET4  # Forever 1.60.1.70790 no longer names it in any file it loads (the friends list's broadcast button, the broadcast toast setting, the subscription window's fourth bullet); kept with its Japanese because English is additive (ADR-050)
 TARGETICONS  # asked for by UI/ChatSystem.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 TRADESKILLS  # asked for by UI/ChatSystem.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
+TRANSMOGRIFY_TOOLTIP_ITEM_UNKNOWN_APPEARANCE_KNOWN  # asked for by UI/Tooltip.lua's structural pass: the C client writes this item tooltip line itself, so no scanned file names it
+TRANSMOGRIFY_TOOLTIP_REVERT  # asked for by UI/Tooltip.lua's structural pass: the C client writes this item tooltip line itself, so no scanned file names it
 UNSPENT_TALENT_POINTS  # asked for by Core/UIStringKeys.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 WHO_LIST  # asked for by UI/Friends.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
 YELLOW_GEM  # asked for by UI/ItemSocketing.lua: the client passes the string by reference or builds its name at run time, so no scanned file names it
-TRANSMOGRIFY_TOOLTIP_ITEM_UNKNOWN_APPEARANCE_KNOWN  # asked for by UI/Tooltip.lua's structural pass: the C client writes this item tooltip line itself, so no scanned file names it
-TRANSMOGRIFY_TOOLTIP_REVERT  # asked for by UI/Tooltip.lua's structural pass: the C client writes this item tooltip line itself, so no scanned file names it
-DEATH_RECAP_TEXT  # asked for by UI/ChatSystem.lua: the label of DEATH_RECAP_LINK, the death recap link the C client posts in chat itself, so no scanned file names it
