@@ -21,11 +21,6 @@ local show = W.setShown
 
 local function date() return WFJ.Compat.resolve("date") end
 
-local function copyCall()
-  local f = WFJ.Compat.resolve("CopyToClipboard")
-  return type(f) == "function" and f or nil
-end
-
 local function say(key, ...)
   local f = WordsWindow.frame
   if key then W.setPair(f.message, Text.get(key, ...)) else W.setPair(f.message, "", "") end
@@ -39,17 +34,9 @@ local function fill()
   local images = f.images:GetChecked() and true or false
   f.text:setText(WFJ.Words.export({ images = images }, date()))
   for _, w in ipairs(f.imageRows) do show(w, images) end
-  show(f.copy, copyCall() ~= nil)
   -- new text drops the selection; the box keeps its focus, so select it again for Cmd+C
   local box = f.text.box
   if box.HasFocus and box:HasFocus() then box:HighlightText() end
-end
-
-local function copy()
-  local fn = copyCall()
-  if not fn then return end
-  local n = fn(WordsWindow.frame.text.value, false)
-  if type(n) == "number" and n > 0 then say("words.copied") else say(nil) end
 end
 
 local function removeLast()
@@ -92,15 +79,14 @@ local function build()
   f.text = W.scrollText(p, LEFT, -40, INNER, 220)
   f.copyHint = W.label(p, "", "", LEFT, -270, INNER)
   W.setPair(f.copyHint, Text.get("words.copyHint"))
-  local en, ja = Text.get("words.copy")
-  f.copy = W.button(p, en, ja, 120, copy)
-  f.copy:SetPoint("TOPLEFT", LEFT, -312)
-  en, ja = Text.get("words.removeLast")
+  -- no Copy button: the client blocks CopyToClipboard for addons (ADDON_ACTION_FORBIDDEN), so the selected text and
+  -- Cmd+C / Ctrl+C are the way to copy
+  local en, ja = Text.get("words.removeLast")
   f.removeLast = W.button(p, en, ja, 140, removeLast)
-  f.removeLast:SetPoint("TOPLEFT", LEFT + 140, -312)
+  f.removeLast:SetPoint("TOPLEFT", LEFT, -312)
   en, ja = Text.get("words.clear")
   f.clear = W.button(p, en, ja, 140, function(self) clear(self) end)
-  f.clear:SetPoint("TOPLEFT", LEFT + 300, -312)
+  f.clear:SetPoint("TOPLEFT", LEFT + 160, -312)
   en, ja = Text.get("words.images")
   f.images = W.checkbox(p, en, ja, LEFT, -346, INNER, function() fill() end)
   f.shotsLabel = W.label(p, "", "", LEFT, -378, INNER)

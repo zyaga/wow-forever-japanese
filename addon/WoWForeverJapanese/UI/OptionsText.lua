@@ -39,8 +39,6 @@ Text.T = {
       .. "In Anki, make Key the first field of the note type.",
     ja = "テキストは選択済みです。Cmd+C（Mac）またはCtrl+C（Windows）でコピーします。\nAnkiではKeyをノートタイプの最初のフィールドにしてください。",
   },
-  ["words.copy"] = { en = "Copy", ja = "コピー" },
-  ["words.copied"] = { en = "Copied.", ja = "コピーしました。" },
   ["words.removeLast"] = { en = "Remove last", ja = "最後を削除" },
   ["words.removed"] = { en = "Removed %s.", ja = "%sを削除しました。" },
   ["words.clear"] = { en = "Clear all", ja = "すべて削除" },

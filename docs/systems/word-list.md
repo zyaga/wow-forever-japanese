@@ -100,7 +100,7 @@ quest.description:456:少し	少し	すこし	少し	すこし	a little	…<b>�
 - One line per entry, in saved order. The sentence wraps the word in `<b>…</b>` by its byte offsets, never by searching for the word, so the right one of two equal words is bold. The date is local time, `%Y-%m-%d %H:%M`.
 - **Include images** adds an `Image` column: an HTML image tag whose source is the entry's screenshot file name, or empty, and shows two copy boxes: the Screenshots folder of the Forever client, and Anki's media folder (`collection.media` of Anki's first profile, on a Mac and on Windows). The player copies the images there for Anki to find them.
 - The window says to press Cmd+C (Mac) or Ctrl+C (Windows), and to make Key the first field of the Anki note type: Anki matches duplicates on the first field, so importing the list again updates those notes instead of adding them twice.
-- **Copy** calls `CopyToClipboard(text, false)` and shows "Copied." when the call returns a number above 0. It shows only when the client has the call; whether the client lets an addon use it is settled in game.
+- There is no Copy button: the Forever client blocks `CopyToClipboard` for addons (an addon's call raises `ADDON_ACTION_FORBIDDEN`, seen in game), so the selected text and Cmd+C / Ctrl+C are the way to copy. The game's font has no symbol for a tab, so the tabs between columns show as small boxes; the copied text holds real tabs.
 - **Remove last** removes the newest entry. **Clear all** clears only on a second click within 5 seconds (as the collector's Clear does). Both are refused for a list from a newer version.
 - With no words, the window says how to save one. A word saved while the window is open shows in the text at once.
 
