@@ -309,8 +309,15 @@ local function hookWriters()
   end
   -- the tracker is load-on-demand: hooked when Blizzard_ObjectiveTracker has loaded (now, or later)
   local function hookTracker()
-    hook(C.resolve("ObjectiveTrackerFrame"), "UpdateTopPadding", function(self)
+    local tracker = C.resolve("ObjectiveTrackerFrame")
+    hook(tracker, "UpdateTopPadding", function(self)
       TaintWatch.wrote("ObjectiveTrackerFrame.topModulePadding", self, "topModulePadding")
+    end)
+    -- MarkDirty always sets `dirty` and queues the update with RunNextFrame, which runs it with the caller's taint;
+    -- a module's MarkDirty goes through the container's (mixinutil.lua:346-352,
+    -- blizzard_objectivetrackermodule.lua:86-90), so a tainted `dirty` names the caller that tainted the update
+    hook(tracker, "MarkDirty", function(self)
+      TaintWatch.wrote("ObjectiveTrackerFrame.dirty", self, "dirty")
     end)
   end
   local LOD = WFJ.LoadOnDemand

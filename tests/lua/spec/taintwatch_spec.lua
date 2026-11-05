@@ -141,4 +141,29 @@ describe("UI/TaintWatch", function()
     assert.is_false(TW.init()) -- once
     _G.ClearOnBarHighlightMarks = nil
   end)
+
+  it("a tracker MarkDirty called by tainted code logs its caller's stack; a clean one logs nothing", function()
+    local hooks = {}
+    _G.hooksecurefunc = function(t, m, fn)
+      if type(t) == "table" then
+        local orig = t[m]
+        t[m] = function(...) orig(...); fn(...) end
+        hooks[#hooks + 1] = (t.name or "?") .. ":" .. m
+      end
+    end
+    _G.C_Timer = { NewTicker = function() end }
+    _G.ObjectiveTrackerFrame = { name = "ObjectiveTrackerFrame", UpdateTopPadding = function() end,
+      MarkDirty = function(self) self.dirty = true end }
+    TW.init()
+    assert.is_truthy(table.concat(hooks, " "):find("ObjectiveTrackerFrame:MarkDirty", 1, true))
+    _G.ObjectiveTrackerFrame:MarkDirty()
+    assert.are.equal(0, #entriesOf("write"))
+    taint.dirty = { t = _G.ObjectiveTrackerFrame, by = "WoWForeverJapanese" }
+    _G.ObjectiveTrackerFrame:MarkDirty()
+    local w = entriesOf("write")
+    assert.are.equal(1, #w)
+    assert.is_truthy(w[1].msg:find("^ObjectiveTrackerFrame%.dirty"))
+    assert.is_truthy(w[1].stack:find("Blizzard_X", 1, true))
+    _G.ObjectiveTrackerFrame = nil
+  end)
 end)
