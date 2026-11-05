@@ -10,7 +10,7 @@ end
 -- date() as the client has it (os.date), fixed to UTC so the expected text does not depend on the machine.
 local function fmt(pattern, t) return os.date("!" .. pattern, t) end
 
-local T = 1790000000 -- 2026-09-21 16:53:20 UTC
+local T = 1790000000 -- a fixed moment, printed in UTC by fmt
 
 local function input(o)
   local text = o.text or "少しの生き物たちを狩り、数を減らしてほしい。私は元気だ。"
