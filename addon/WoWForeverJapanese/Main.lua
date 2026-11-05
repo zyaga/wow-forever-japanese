@@ -261,6 +261,8 @@ function WFJ.OnLoad()
     end,
     statLine = function(text) return WFJ.UIIndex ~= nil and WFJ.UIIndex:statLine(text) ~= nil end,
   }) end) or WFJ_Collector
+  -- the player's saved words: the same `or` guard, so a failed load never hands the client an empty list to write
+  WFJ_Words = step("words", function() return WFJ.Words.load(WFJ_Words) end) or WFJ_Words
   -- the client's own encoder [verified: forever-ui Blizzard_APIDocumentationGenerated/EncodingUtilDocumentation.lua
   -- (Environment "All"; CompressionMethod.Zlib, Base64Variant.StandardUrlSafe), used the same way by
   -- Blizzard_CooldownViewer/CooldownViewerSettingsDataStoreSerialization.lua:277–281]. A client without it leaves

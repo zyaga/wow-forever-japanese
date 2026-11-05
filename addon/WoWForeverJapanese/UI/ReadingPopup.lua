@@ -19,7 +19,7 @@ Popup.WIDTH = 280 -- the card's width; the meaning wraps inside it. A head line 
 local PAD = 10 -- inside the tooltip border
 local GAP = 3
 
-local frame, wordFs, readingFs, lemmaFs, meaningFs
+local frame, wordFs, readingFs, lemmaFs, meaningFs, hintFs
 
 local function text(parent, size, r, g, b)
   -- a template font first, so SetText never meets a FontString without one if the bundled font is refused
@@ -43,6 +43,7 @@ local function ensure()
   readingFs = text(frame, 13, 1, 0.82, 0)
   lemmaFs = text(frame, 12, 0.72, 0.72, 0.72)
   meaningFs = text(frame, 12, 0.92, 0.92, 0.92)
+  hintFs = text(frame, 11, 0.6, 0.6, 0.6)
   frame:Hide()
   return frame
 end
@@ -61,8 +62,9 @@ function Popup.lines(word, gloss)
   return word.word, word.reading ~= word.word and word.reading or "", lemma, gloss.meaning
 end
 
--- Shows the card for `word` above the point (x, y) of `anchor` (the cover frame, its BOTTOMLEFT origin).
-function Popup.show(anchor, x, y, word, gloss, size)
+-- Shows the card for `word` above the point (x, y) of `anchor` (the cover frame, its BOTTOMLEFT origin). `hint`: an
+-- optional grey line at the bottom (how to save the word, until the player has saved one).
+function Popup.show(anchor, x, y, word, gloss, size, hint)
   local f = ensure()
   local head, reading, lemma, meaning = Popup.lines(word, gloss)
   local headSize = math.max((size or 12) + 2, 14)
@@ -93,6 +95,17 @@ function Popup.show(anchor, x, y, word, gloss, size)
   meaningFs:ClearAllPoints()
   meaningFs:SetPoint("TOPLEFT", below, "BOTTOMLEFT", 0, -GAP - 2)
   height = height + GAP + 2 + meaningFs:GetStringHeight() + PAD
+  if hint then
+    hintFs:SetWidth(width - 2 * PAD)
+    hintFs:SetText(hint)
+    hintFs:ClearAllPoints()
+    hintFs:SetPoint("TOPLEFT", meaningFs, "BOTTOMLEFT", 0, -GAP - 2)
+    hintFs:Show()
+    height = height + GAP + 2 + hintFs:GetStringHeight()
+  else
+    hintFs:SetText("")
+    hintFs:Hide()
+  end
   f:SetSize(width, height)
   f:ClearAllPoints()
   f:SetPoint("BOTTOM", anchor, "BOTTOMLEFT", x, y)

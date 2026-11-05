@@ -1,13 +1,15 @@
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 
-local CORE = { "Core/Const.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua" }
+local CORE = { "Core/Const.lua", "Core/Compat.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua",
+  "Core/Words.lua" }
 local IDS = { "enabled", "modifier", "area.quests", "area.gossip", "area.itemTooltips", "area.spellTooltips",
   "area.interface", "area.books", "marker.stale", "marker.missing", "readings.enabled", "readings.glosses",
   "minimapButton", "voice.enabled", "voice.offer", "voice.progress", "voice.turnin", "voice.greeting", "voice.books",
   "voice.errors",
   "voice.muteDialog", "voice.button", "voice.panel.size", "voice.panel.style", "voice.panel.keep", "voice.panel.head",
-  "voice.panel.hoverButtons", "voice.panel.fade", "voice.panel.combatDim", "voice.panel.questLog", "voice.panel.lock" }
+  "voice.panel.hoverButtons", "voice.panel.fade", "voice.panel.combatDim", "voice.panel.questLog", "voice.panel.lock",
+  "words.saveClick", "words.screenshot" }
 local DEFAULTS = { enabled = true, modifier = "alt", ["area.quests"] = true, ["area.gossip"] = true,
   ["area.itemTooltips"] = true, ["area.spellTooltips"] = true, ["area.interface"] = true, ["area.books"] = true,
   ["marker.stale"] = true,
@@ -21,7 +23,8 @@ local DEFAULTS = { enabled = true, modifier = "alt", ["area.quests"] = true, ["a
   -- the voice panel: Full, Parchment, keep reading, head, controls on mouse-over, fade, dim in combat, quest log on
   ["voice.panel.size"] = "full", ["voice.panel.style"] = "parchment", ["voice.panel.keep"] = true,
   ["voice.panel.head"] = true, ["voice.panel.hoverButtons"] = true, ["voice.panel.fade"] = true,
-  ["voice.panel.combatDim"] = true, ["voice.panel.questLog"] = true, ["voice.panel.lock"] = false }
+  ["voice.panel.combatDim"] = true, ["voice.panel.questLog"] = true, ["voice.panel.lock"] = false,
+  ["words.saveClick"] = "ctrl", ["words.screenshot"] = false } -- the word list: Ctrl+click, no screenshot
 
 describe("Settings registry", function()
   local WFJ, S
@@ -157,5 +160,56 @@ describe("Settings kind \"key\" and the modifier's toggle check", function()
     for _, d in ipairs(S.list()) do
       if not d.hidden then assert.is_true(type(d.ja) == "string" and #d.ja > 0, d.id) end
     end
+  end)
+end)
+
+describe("Settings: the word list's save click", function()
+  local WFJ, S, moved
+  before_each(function()
+    Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
+    _G.IsMacClient = function() return false end
+    WFJ = H.loadChunks(CORE)
+    WFJ.Compat.init(function(name) return _G[name] end)
+    S = WFJ.Settings
+    moved = {}
+    WFJ.State.on("saveClickMoved", function(v) moved[#moved + 1] = v end)
+  end)
+  after_each(function() _G.IsMacClient = nil end)
+
+  it("never takes the reveal key's own modifier, and Cmd only on a Mac", function()
+    S.load(nil, 1, {})
+    assert.is_true(S.set("modifier", "lctrl"))
+    local ok, why = S.set("words.saveClick", "ctrl")
+    assert.is_false(ok); assert.is_string(why)
+    assert.is_false((S.set("words.saveClick", "meta")))
+    _G.IsMacClient = function() return true end
+    assert.is_true(S.set("words.saveClick", "meta"))
+    assert.is_true(S.set("words.saveClick", "click"))
+    assert.is_true(S.set("words.saveClick", "off"))
+  end)
+
+  it("moves to the next free choice when the reveal key takes its modifier, and says so", function()
+    S.load(nil, 1, {})
+    assert.are.equal("ctrl", S.get("words.saveClick"))
+    assert.is_true(S.set("modifier", "rctrl"))
+    assert.are.equal("shift", S.get("words.saveClick"))
+    assert.are.same({ "shift" }, moved)
+    assert.is_true(S.set("modifier", "alt"))
+    assert.are.equal("shift", S.get("words.saveClick"))
+    assert.are.equal(1, #moved)
+  end)
+
+  it("a stored clash or a stored Cmd off a Mac is moved at load, silently", function()
+    S.load({ schema = 1, settings = { modifier = "lctrl", ["words.saveClick"] = "ctrl" } }, 1, {})
+    assert.are.equal("shift", S.get("words.saveClick"))
+    S.load({ schema = 1, settings = { ["words.saveClick"] = "meta" } }, 1, {})
+    assert.are.equal("ctrl", S.get("words.saveClick"))
+    assert.are.same({}, moved)
+  end)
+
+  it("other choice settings are unaffected by the hook", function()
+    S.load(nil, 1, {})
+    assert.is_true(S.set("voice.panel.size", "strip"))
+    assert.is_nil(S.list()[1].choiceHidden)
   end)
 end)

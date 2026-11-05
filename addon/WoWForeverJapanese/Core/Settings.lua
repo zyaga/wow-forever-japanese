@@ -88,6 +88,8 @@ function Settings.set(id, v)
   if not d then return false, "unknown setting " .. tostring(id) end
   local ok, val = coerce(d, v)
   if not ok then return false, val end
+  -- a choice the player is not offered right now (the word list's save click: never the reveal key's modifier)
+  if d.choiceHidden and d.choiceHidden(val) then return false, val .. " is not offered with the current keys" end
   if d.check then
     local fine, why = d.check(val)
     if not fine then return false, why end
@@ -140,10 +142,12 @@ function Settings.load(saved, schema, migrations)
 
   d.build = { addon = WFJ.VERSION }
   db = d
+  Settings.loading = true
   for _, id in ipairs(order) do
     local def = defs[id]
     if def.apply then def.apply(Settings.get(id)) end
   end
+  Settings.loading = false
   return d
 end
 
@@ -175,9 +179,28 @@ end
 -- `ja`: the settings page shows it under the English `label` (addon interface copy, not game text).
 Settings.define{ id = "enabled", kind = "boolean", default = true, label = "Enable translation",
   ja = "翻訳を有効にする", apply = function(v) WFJ.State.setEnabled(v) end }
+-- The word list's save click may not be the reveal key's modifier (holding it shows English, so no word is
+-- highlighted), and Cmd exists only on a Mac. The reveal key moving onto it moves the save click on; at load this
+-- also fixes a stored clash. Read through Compat so Core stays frame-free.
+local function isMac()
+  local f = WFJ.Compat and WFJ.Compat.resolve("IsMacClient")
+  return type(f) == "function" and f() == true
+end
+local function moveSaveClick(revealKey)
+  if not WFJ.Words or not db or not defs["words.saveClick"] then return end
+  local cur = Settings.get("words.saveClick")
+  local nxt = WFJ.Words.nextFree(cur, revealKey, isMac())
+  if nxt == cur then return end
+  db.settings["words.saveClick"] = nxt
+  if not Settings.loading then WFJ.State.fire("saveClickMoved", nxt) end
+end
+
 Settings.define{ id = "modifier", kind = "key", default = "alt", label = "Hold to show English",
   ja = "押している間は英語で表示", normalize = function(v) return WFJ.Modifier.normalize(v) end,
-  check = notToggleKey, apply = function(v) WFJ.Modifier.setKey(v) end } -- ADR-018
+  check = notToggleKey, apply = function(v)
+    WFJ.Modifier.setKey(v)
+    moveSaveClick(WFJ.Modifier.key())
+  end } -- ADR-018
 Settings.define{ id = "area.quests", kind = "boolean", default = true, group = "areas",
   label = "Quest windows & log", ja = "クエストウィンドウとログ", apply = area("quests") }
 Settings.define{ id = "area.gossip", kind = "boolean", default = true, group = "areas",
@@ -262,3 +285,15 @@ panelSetting("voice.panel.combatDim", true, "Dim the panel in combat", "戦闘�
 panelSetting("voice.panel.questLog", true, "The book button opens the quest in the quest log",
   "本のボタンでクエストログを開く")
 panelSetting("voice.panel.lock", false, "Lock the panel where it is", "パネルの位置を固定")
+
+-- The word list (Core/Words, ADR-069). The save click is read when the mouse button is released over a highlighted
+-- word (UI/Readings); the dropdown's choices are English (its font has no Japanese glyphs).
+Settings.define{ id = "words.saveClick", kind = "choice", choices = { "ctrl", "shift", "meta", "click", "off" },
+  default = "ctrl", label = "Save a word with", ja = "単語を保存する操作",
+  choiceText = { ctrl = "Ctrl+click", shift = "Shift+click", meta = "Cmd+click", click = "Click", off = "Off" },
+  choiceHidden = function(c)
+    return WFJ.Words ~= nil and WFJ.Words.hidden(c, WFJ.Modifier and WFJ.Modifier.key() or "alt", isMac())
+  end,
+  apply = function(v) WFJ.State.fire("saveClick", v) end }
+Settings.define{ id = "words.screenshot", kind = "boolean", default = false,
+  label = "Take a screenshot when saving a word", ja = "単語を保存するときにスクリーンショットを撮る" }

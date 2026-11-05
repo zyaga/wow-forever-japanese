@@ -17,6 +17,14 @@ Text.T = {
     ja = "クエスト・NPC・ツールチップを日本語で。キーを押している間は英語で表示します。",
   },
 
+  -- the word list (Core/Words): chat lines, the word card's hint
+  ["words.hint"] = { en = "%s: save word", ja = "%sで単語を保存" },
+  ["words.saved"] = { en = "Saved %s (%s words)", ja = "%sを保存しました（%s語）" },
+  ["words.exists"] = { en = "Already saved: %s", ja = "保存済み：%s" },
+  ["words.refused"] = { en = "This word list was saved by a newer version of the addon and cannot be changed here.",
+    ja = "この単語帳は新しいバージョンのアドオンで保存されたため、ここでは変更できません。" },
+  ["words.moved"] = { en = "Saving a word now uses %s.", ja = "単語の保存は%sになりました。" },
+
   ["section.translation"] = { en = "Translation", ja = "翻訳" },
   ["section.areas"] = { en = "What to translate", ja = "翻訳する範囲" },
   ["section.markers"] = { en = "Markers", ja = "マーカー" },

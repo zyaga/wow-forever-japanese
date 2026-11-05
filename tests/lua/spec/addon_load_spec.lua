@@ -11,6 +11,7 @@ local TAIL = {
   "Core/Placeholders.lua", "Core/Translator.lua", "Core/UIStringKeys.lua",
   "Core/UIStrings.lua", "Core/Objectives.lua", "Core/SurfaceState.lua",
   "Core/Collector.lua", "Core/CollectorSend.lua", "Core/CollectorRemind.lua", "Core/Intro.lua",
+  "Core/Words.lua",
   "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua", "Core/Diag.lua", -- the fix reports, the log
   "Core/BugReport.lua",
   "UI/Font.lua", "UI/Frames.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua",
@@ -302,6 +303,28 @@ describe("addon loads in TOC order and answers /wfj version", function()
     _G.date = nil
     local e = WFJ_Log.errors[1]
     assert.are.same({ "2026-10-04 07:00:00", "2026-10-04 07:00:00" }, { e.first, e.last })
+  end)
+
+  it("creates WFJ_Words on load, keeps a saved list, and never replaces a newer version's list", function()
+    local function boot(saved)
+      Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
+      Stub.installQuestAPI(); Stub.installTooltipAPI(); Stub.installGossipAPI(); Stub.installItemTextAPI()
+      _G.WFJ_Words = saved
+      local W = Loader.load("WoWForeverJapanese")
+      Stub.fireAll("ADDON_LOADED", "WoWForeverJapanese")
+      return W
+    end
+    boot(nil)
+    assert.are.same({ schema = 1, entries = {} }, WFJ_Words)
+    boot("garbled")
+    assert.are.same({ schema = 1, entries = {} }, WFJ_Words)
+    local W = boot({ schema = 1, entries = { { key = "gossip:g1:数", word = "数" } }, everSaved = true })
+    assert.are.equal(1, W.Words.count())
+    assert.are.equal("数", WFJ_Words.entries[1].word)
+    local newer = { schema = 99, entries = { { key = "k", word = "w" } } }
+    W = boot(newer)
+    assert.are.equal(newer, WFJ_Words)
+    assert.is_true(W.Words.readonly())
   end)
 
   it("creates WFJ_Collector on load and discloses once, on the first PLAYER_ENTERING_WORLD", function()
