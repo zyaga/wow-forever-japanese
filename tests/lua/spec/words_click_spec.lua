@@ -5,7 +5,8 @@ local Stub = require("tests.lua.spec.wow_stub")
 
 local FILES = { "Core/Const.lua", "Core/Data.lua", "Core/Readings.lua", "Core/Glosses.lua", "Core/State.lua",
   "Core/Settings.lua", "Core/Modifier.lua", "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Compat.lua",
-  "Core/Words.lua", "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/Render.lua", "UI/OptionsText.lua" }
+  "Core/Words.lua", "UI/Font.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/WordSave.lua",
+  "UI/Render.lua", "UI/OptionsText.lua" }
 
 local JA = "少しの生き物たちを狩り、数を減らしてほしい。"
 local PACKED = "少し=すこし 生き物=いきもの=7 狩り=かり=8 数=かず"

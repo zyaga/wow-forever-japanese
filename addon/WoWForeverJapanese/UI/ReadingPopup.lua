@@ -103,7 +103,6 @@ function Popup.show(anchor, x, y, word, gloss, size, hint)
     hintFs:Show()
     height = height + GAP + 2 + hintFs:GetStringHeight()
   else
-    hintFs:SetText("")
     hintFs:Hide()
   end
   f:SetSize(width, height)

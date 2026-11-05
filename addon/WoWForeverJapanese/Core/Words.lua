@@ -59,6 +59,10 @@ function Words.key(kind, id, lemma, word)
   return tostring(kind) .. ":" .. tostring(id) .. ":" .. tostring(head)
 end
 
+function Words.isQuestKind(kind)
+  return type(kind) == "string" and kind:find("^quest%.") ~= nil
+end
+
 -- Where the line was shown, from the surface: a quest-window line keyed by its English (a conditional description,
 -- a repeated quest's text) is still quest text. The voice panel shows lines of every kind.
 function Words.source(surface, kind)
@@ -66,7 +70,7 @@ function Words.source(surface, kind)
   if surface == "gossip" then return "gossip" end
   if surface == "itemtext" then return "book" end
   if surface == "voicepanel" then
-    if type(kind) == "string" and kind:find("^quest%.") then return "quest" end
+    if Words.isQuestKind(kind) then return "quest" end
     if kind == "book" then return "book" end
     return "gossip"
   end
@@ -124,7 +128,7 @@ function Words.add(input, now)
   local key = Words.key(input.kind, input.id, input.lemma, input.word)
   if index[key] then return "exists", index[key] end
   local sentence, wf, wl = Words.sentence(input.text, input.first, input.last)
-  local isQuest = type(input.kind) == "string" and input.kind:find("^quest%.") ~= nil
+  local isQuest = Words.isQuestKind(input.kind)
   local e = {
     key = clean(key), word = clean(input.word), reading = clean(input.reading), lemma = clean(input.lemma),
     lemmaReading = clean(input.lemmaReading), meaning = clean(input.meaning), sentence = clean(sentence),
@@ -197,7 +201,6 @@ end
 
 -- ── The save click ──────────────────────────────────────────────────────────
 
-Words.CHOICES = { "ctrl", "shift", "meta", "click", "off" }
 local MOVE = { "ctrl", "shift", "meta", "click" }
 local FAMILY = { ctrl = "ctrl", lctrl = "ctrl", rctrl = "ctrl", shift = "shift", lshift = "shift", rshift = "shift" }
 
@@ -222,5 +225,5 @@ function Words.nextFree(choice, revealKey, isMac)
   for _, c in ipairs(MOVE) do
     if not Words.hidden(c, revealKey, isMac) then return c end
   end
-  return "click"
+  return "click" -- not reached: a plain click is never hidden
 end

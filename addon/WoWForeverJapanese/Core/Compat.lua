@@ -49,6 +49,13 @@ function Compat.resolve(name)
   return value or nil
 end
 
+-- Calls a client function by name through the env (Compat.resolve); nil when the client lacks it.
+function Compat.call(name, ...)
+  local f = Compat.resolve(name)
+  if type(f) == "function" then return f(...) end
+  return nil
+end
+
 -- First candidate `env` resolves to something truthy, else nil (a `false` global counts as unresolved).
 function Compat.get(surface, key)
   local bucket = resolved[surface]

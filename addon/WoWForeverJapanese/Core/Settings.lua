@@ -52,6 +52,11 @@ function Settings.list()
   return out
 end
 
+-- The definition of a setting (its labels, choices and choice texts), or nil.
+function Settings.definition(id)
+  return defs[id]
+end
+
 function Settings.get(id)
   local d = defs[id]
   assert(d, "Settings.get: unknown setting " .. tostring(id))
@@ -88,8 +93,6 @@ function Settings.set(id, v)
   if not d then return false, "unknown setting " .. tostring(id) end
   local ok, val = coerce(d, v)
   if not ok then return false, val end
-  -- a choice the player is not offered right now (the word list's save click: never the reveal key's modifier)
-  if d.choiceHidden and d.choiceHidden(val) then return false, val .. " is not offered with the current keys" end
   if d.check then
     local fine, why = d.check(val)
     if not fine then return false, why end
@@ -183,24 +186,24 @@ Settings.define{ id = "enabled", kind = "boolean", default = true, label = "Enab
 -- highlighted), and Cmd exists only on a Mac. The reveal key moving onto it moves the save click on; at load this
 -- also fixes a stored clash. Read through Compat so Core stays frame-free.
 local function isMac()
-  local f = WFJ.Compat and WFJ.Compat.resolve("IsMacClient")
-  return type(f) == "function" and f() == true
+  return WFJ.Compat ~= nil and WFJ.Compat.call("IsMacClient") == true
 end
-local function moveSaveClick(revealKey)
+local function saveHidden(c)
+  return WFJ.Words ~= nil and WFJ.Words.hidden(c, WFJ.Modifier and WFJ.Modifier.key() or "alt", isMac())
+end
+WFJ.State.on("revealKey", function(revealKey)
   if not WFJ.Words or not db or not defs["words.saveClick"] then return end
   local cur = Settings.get("words.saveClick")
   local nxt = WFJ.Words.nextFree(cur, revealKey, isMac())
   if nxt == cur then return end
   db.settings["words.saveClick"] = nxt
+  WFJ.State.fire("saveClick", nxt)
   if not Settings.loading then WFJ.State.fire("saveClickMoved", nxt) end
-end
+end)
 
 Settings.define{ id = "modifier", kind = "key", default = "alt", label = "Hold to show English",
   ja = "押している間は英語で表示", normalize = function(v) return WFJ.Modifier.normalize(v) end,
-  check = notToggleKey, apply = function(v)
-    WFJ.Modifier.setKey(v)
-    moveSaveClick(WFJ.Modifier.key())
-  end } -- ADR-018
+  check = notToggleKey, apply = function(v) WFJ.Modifier.setKey(v) end } -- ADR-018
 Settings.define{ id = "area.quests", kind = "boolean", default = true, group = "areas",
   label = "Quest windows & log", ja = "クエストウィンドウとログ", apply = area("quests") }
 Settings.define{ id = "area.gossip", kind = "boolean", default = true, group = "areas",
@@ -291,8 +294,11 @@ panelSetting("voice.panel.lock", false, "Lock the panel where it is", "パネル
 Settings.define{ id = "words.saveClick", kind = "choice", choices = { "ctrl", "shift", "meta", "click", "off" },
   default = "ctrl", label = "Save a word with", ja = "単語を保存する操作",
   choiceText = { ctrl = "Ctrl+click", shift = "Shift+click", meta = "Cmd+click", click = "Click", off = "Off" },
-  choiceHidden = function(c)
-    return WFJ.Words ~= nil and WFJ.Words.hidden(c, WFJ.Modifier and WFJ.Modifier.key() or "alt", isMac())
+  -- the dropdown leaves out a hidden choice (UI/Options) and setting one is refused
+  choiceHidden = saveHidden,
+  check = function(c)
+    if saveHidden(c) then return false, c .. " is not offered with the current keys" end
+    return true
   end,
   apply = function(v) WFJ.State.fire("saveClick", v) end }
 Settings.define{ id = "words.screenshot", kind = "boolean", default = false,

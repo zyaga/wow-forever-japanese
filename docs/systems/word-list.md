@@ -1,6 +1,6 @@
 # Word list
 
-> The player's saved words: the save click on a highlighted word keeps it, with its reading, meaning and sentence, in an account-wide list that an export window turns into tab-separated text for a text file, a spreadsheet or Anki. Code: `Core/Words.lua`, `UI/Readings.lua` (the save click), `UI/ReadingPopup.lua` (the card's hint), `UI/WordsWindow.lua`, the Words page in `UI/Options.lua`, `UI/OptionsText.lua`, `UI/MinimapButton.lua`, `UI/Slash.lua`, the `words.saveClick` and `words.screenshot` settings in `Core/Settings.lua`, the `words` load step in `Main.lua`. Decision: [ADR-069](../adr/069-saved-word-list.md).
+> The player's saved words: the save click on a highlighted word keeps it, with its reading, meaning and sentence, in an account-wide list that an export window turns into tab-separated text for a text file, a spreadsheet or Anki. Code: `Core/Words.lua`, `UI/Readings.lua` (reads the save click), `UI/WordSave.lua` (saves), `UI/ReadingPopup.lua` (the card's hint), `UI/WordsWindow.lua`, the Words page in `UI/Options.lua`, `UI/OptionsText.lua`, `UI/MinimapButton.lua`, `UI/Slash.lua`, the `words.saveClick` and `words.screenshot` settings in `Core/Settings.lua`, the `words` load step in `Main.lua`. Decision: [ADR-069](../adr/069-saved-word-list.md).
 
 ## Purpose
 A learner who meets a word worth keeping can save it without leaving the game, and later study it elsewhere. The list holds what the [word card](readings.md) already shows (the word, its reading, its dictionary form and meaning) plus the sentence it came from, so a card made from it has context. The addon only keeps the list and shows it as text: it never writes a file of its own and never talks to another program.
@@ -10,21 +10,25 @@ A learner who meets a word worth keeping can save it without leaving the game, a
 sequenceDiagram
   participant U as Player
   participant V as UI/Readings (cover)
+  participant SV as UI/WordSave
   participant W as Core/Words
   participant S as WFJ_Words
   participant X as UI/WordsWindow
   U->>V: point at a word (tint, card)
   U->>V: Ctrl+click (press and release on the same word)
-  V->>W: add({ kind, id, surface, text, first, last, word, reading, lemma, lemmaReading, meaning, questTitle }, time())
+  V->>SV: release(cover, word)
+  SV->>SV: modifiers match words.saveClick?
+  SV->>W: add({ kind, id, surface, text, first, last, word, reading, lemma, lemmaReading, meaning, questTitle }, time())
   W->>S: new entry (or "exists" / "refused")
-  V->>U: tint flash, chat line (after the screenshot when one is taken)
+  SV->>V: flash (hideCard / reshow around a screenshot)
+  SV->>U: chat line (after the screenshot when one is taken)
   U->>X: /wfj words, the Words page, the minimap menu
   X->>W: export({ images }, date)
   X->>U: tab-separated text, selected for Cmd+C / Ctrl+C
 ```
 
 ### Saving
-The save click is read by `UI/Readings` while the mouse is over a covered word; the cover never takes the click ([Readings → Saving a word](readings.md#saving-a-word)). The setting `words.saveClick` picks it: `ctrl` (default), `shift`, `meta` (Cmd, Mac client only), `click` (no modifier) or `off`. It is never the reveal key's own modifier; changing the reveal key onto it moves it to the next free choice ([Settings → The save click and the reveal key](settings.md#the-save-click-and-the-reveal-key)).
+The save click is read by `UI/Readings` while the mouse is over a covered word and handed to `UI/WordSave`, which checks the modifiers and saves; the cover never takes the click ([Readings → Saving a word](readings.md#saving-a-word)). The setting `words.saveClick` picks it: `ctrl` (default), `shift`, `meta` (Cmd, Mac client only), `click` (no modifier) or `off`. It is never the reveal key's own modifier; changing the reveal key onto it moves it to the next free choice ([Settings → The save click and the reveal key](settings.md#the-save-click-and-the-reveal-key)).
 
 `Words.add(input, now)` returns:
 - `added`: a new entry. The tint flashes and chat prints `Saved <word> (N words)`, in English and Japanese on one line.
@@ -111,12 +115,13 @@ The export holds the addon's own Japanese, readings and meanings, and the player
 
 ## Key files
 - `addon/WoWForeverJapanese/Core/Words.lua`: load, key, source, sentence cut, add, remove last, clear, export, screenshot name, the save-click choices (`matches`, `hidden`, `nextFree`) (pure: no frames, no globals)
-- `addon/WoWForeverJapanese/UI/Readings.lua`: the poll, the save, the flash, the screenshot sequence, the hint text
+- `addon/WoWForeverJapanese/UI/Readings.lua`: the poll, and the flash / hide card / reshow hooks
+- `addon/WoWForeverJapanese/UI/WordSave.lua`: the save: the modifiers, the entry, the screenshot sequence, the chat lines, the hint text
 - `addon/WoWForeverJapanese/UI/ReadingPopup.lua`: the hint line on the card
 - `addon/WoWForeverJapanese/UI/WordsWindow.lua`: the export window
 - `addon/WoWForeverJapanese/UI/Options.lua`, `UI/OptionsText.lua`: the Words page and every string, in English and Japanese
 - `addon/WoWForeverJapanese/UI/MinimapButton.lua`, `UI/Slash.lua`, `UI/IntroWindow.lua`: the other ways in
-- `addon/WoWForeverJapanese/Core/Settings.lua`: `words.saveClick`, `words.screenshot`, `choiceHidden`, the move on a reveal key change
+- `addon/WoWForeverJapanese/Core/Settings.lua`: `words.saveClick` (its `choiceHidden` and `check`), `words.screenshot`, the move on a reveal key change (a `revealKey` listener)
 - `addon/WoWForeverJapanese/Main.lua`: the `words` load step; `WoWForeverJapanese.toc`: `WFJ_Words` in `## SavedVariables`
 - `tests/lua/spec/words_spec.lua`, `tests/lua/spec/words_window_spec.lua`, `tests/lua/spec/readings_spec.lua`, `tests/lua/spec/settings_spec.lua`
 

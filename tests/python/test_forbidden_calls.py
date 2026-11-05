@@ -19,6 +19,8 @@ FRAME_OWNERS = {"Main.lua", "UI/Options.lua", "UI/OptionsWidgets.lua", "UI/KeyCa
                 # cinematic watcher)
                 "UI/FixWindow.lua", "UI/CollectorSendWindow.lua", "UI/ReportWindow.lua", "UI/MinimapButton.lua",
                 "UI/IntroWindow.lua", "UI/WordsWindow.lua",
+                # saving a word: its screenshot event frame
+                "UI/WordSave.lua",
                 # the tooltip trace window (/wfj debug tooltip)
                 "UI/Slash.lua",
                 # the text watch and the taint watch script only their own frame (an OnUpdate, an all-events ring)

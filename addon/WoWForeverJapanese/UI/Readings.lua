@@ -363,50 +363,39 @@ function View.attach(rec)
   return true
 end
 
--- ── Saving the highlighted word (Core/Words, ADR-069) ─────────────────────
+-- ── The save click (UI/WordSave, ADR-069) ────────────────────────────────
 -- The cover never takes clicks (a click-enabled frame would stand between the player and the window under the text),
 -- so the save click is read by polling the left button in the OnUpdate that already runs while the mouse is over the
--- cover: a press that starts on a word and is released on the same word, with the chosen modifier set held at the
--- release. A press that started before the mouse arrived (the end of a drag) is not a click.
+-- cover: a press that starts on a word and is released on the same word. A press that started before the mouse
+-- arrived (the end of a drag) is not a click. UI/WordSave decides whether the modifiers match and saves.
 
-local function call(name, ...)
-  local f = Compat.resolve(name)
-  if type(f) == "function" then return f(...) end
-  return nil
+local isDown -- IsMouseButtonDown, resolved once: it is read every frame while the mouse is over a cover
+function View.buttonDown()
+  isDown = isDown or Compat.resolve("IsMouseButtonDown")
+  return type(isDown) == "function" and isDown("LeftButton") == true
 end
 
-function View.buttonDown() return call("IsMouseButtonDown", "LeftButton") == true end
-
-local function saveClick() return WFJ.Settings.get("words.saveClick") end
-
-local function choiceLabel(c)
-  for _, d in ipairs(WFJ.Settings.list()) do
-    if d.id == "words.saveClick" then return d.choiceText and d.choiceText[c] or c end
+function View.poll(cover)
+  local save = WFJ.WordSave
+  if not save or save.choice() == "off" then return end
+  local down = View.buttonDown()
+  if down and not cover.wasDown then
+    cover.pressWord = cover.hovered
+  elseif not down and cover.wasDown then
+    local w = cover.pressWord
+    cover.pressWord = nil
+    if w and w == cover.hovered then save.release(cover, w) end
   end
-  return c
+  cover.wasDown = down
 end
 
--- Both languages on one line: the player has not necessarily learned to read the Japanese yet.
-local function both(key, ...)
-  local T = WFJ.OptionsText
-  if not T then return nil end
-  local en, ja = T.get(key, ...)
-  return en .. " ・ " .. ja
-end
-
--- The card's hint until the player has saved a word once; nothing while saving is off.
+-- The card's hint line (how to save a word), until the player has saved one.
 function View.hint()
-  local c = saveClick()
-  if c == "off" or not WFJ.Words or WFJ.Words.everSaved() then return nil end
-  return both("words.hint", choiceLabel(c))
+  return WFJ.WordSave and WFJ.WordSave.hint() or nil
 end
 
-local function say(key, ...)
-  local line = both(key, ...)
-  if line then print("WFJ: " .. line) end
-end
-
-local function flash(cover)
+-- A saved word's tint flashes once, then settles back.
+function View.flash(cover)
   for _, t in ipairs(cover.tints) do
     if t.shown then t:SetColorTexture(TINT[1], TINT[2], TINT[3], 0.55) end
   end
@@ -417,10 +406,14 @@ local function flash(cover)
   end)
 end
 
-local pending -- the save waiting for its screenshot: { entry, cover }
-local shotEvents
+-- Hides the reading box or the card over a cover; the tint stays (UI/WordSave's screenshot shows the word).
+function View.hideCard(cover)
+  if box and box.owner == cover then box:Hide() end
+  if WFJ.ReadingPopup then WFJ.ReadingPopup.hide(cover) end
+end
 
-local function reshow(cover)
+-- Shows the hovered word's box or card again.
+function View.reshow(cover)
   local w = cover.hovered
   if w and cover.words then
     for _, t in ipairs(cover.tints) do t:Hide() end
@@ -428,84 +421,6 @@ local function reshow(cover)
     showHover(cover, w)
   end
 end
-
-local function onShot(_, event)
-  local p = pending
-  if not p then return end -- the player's own screenshot
-  pending = nil
-  if event == "SCREENSHOT_SUCCEEDED" then
-    local date = Compat.resolve("date")
-    local name = WFJ.Words.shotName(call("time"), call("GetCVar", "screenshotFormat"), date)
-    WFJ.Words.setShot(p.entry, name)
-  end
-  say("words.saved", p.entry.word, WFJ.Words.count())
-  reshow(p.cover)
-end
-
--- Only the card hides: the gold tint stays, so the screenshot shows which word was saved. The chat line waits for
--- the client's answer so it is not in the image.
-local function screenshot(cover, entry)
-  if not shotEvents then
-    shotEvents = CreateFrame("Frame")
-    shotEvents:RegisterEvent("SCREENSHOT_SUCCEEDED")
-    shotEvents:RegisterEvent("SCREENSHOT_FAILED")
-    shotEvents:SetScript("OnEvent", onShot)
-  end
-  if box and box.owner == cover then box:Hide() end
-  if WFJ.ReadingPopup then WFJ.ReadingPopup.hide(cover) end
-  pending = { entry = entry, cover = cover }
-  call("Screenshot")
-end
-
-function View.save(cover, word)
-  local Words = WFJ.Words
-  if not Words then return nil end
-  local g = WFJ.Glosses and WFJ.Glosses.get(word.gloss) or word.card
-  local title
-  if type(cover.kind) == "string" and cover.kind:find("^quest%.") and WFJ.Lookup then
-    local t = WFJ.Lookup.get("quest.title", cover.id)
-    title = t and type(t.ja) == "string" and t.ja or nil
-  end
-  local status, entry = Words.add({
-    kind = cover.kind, id = cover.id, surface = cover.surface, text = cover.text, first = word.first,
-    last = word.last, word = word.word, reading = word.reading, lemma = g and g.lemma,
-    lemmaReading = g and g.lemmaReading, meaning = g and g.meaning, questTitle = title,
-  }, call("time"))
-  if status == "added" then
-    flash(cover)
-    if WFJ.WordsWindow then WFJ.WordsWindow.refresh() end
-    if WFJ.Settings.get("words.screenshot") then
-      screenshot(cover, entry)
-    else
-      say("words.saved", entry.word, Words.count())
-    end
-  elseif status == "exists" then
-    say("words.exists", entry.word)
-  else
-    say("words.refused")
-  end
-  return status
-end
-
-function View.poll(cover)
-  local choice = saveClick()
-  if choice == "off" then return end
-  local down = View.buttonDown()
-  if down and not cover.wasDown then
-    cover.pressWord = cover.hovered
-  elseif not down and cover.wasDown then
-    local w = cover.pressWord
-    cover.pressWord = nil
-    if w and w == cover.hovered and WFJ.Words and WFJ.Words.matches(choice, call("IsControlKeyDown") == true,
-        call("IsShiftKeyDown") == true, call("IsMetaKeyDown") == true) then
-      View.save(cover, w)
-    end
-  end
-  cover.wasDown = down
-end
-
--- The reveal key moved onto the save click's modifier, so the save click moved on (Core/Settings).
-WFJ.State.on("saveClickMoved", function(c) say("words.moved", choiceLabel(c)) end)
 
 -- The setting (State event "readings"): off hides every cover at once; on shows the attached ones again.
 function View.setEnabled(v)

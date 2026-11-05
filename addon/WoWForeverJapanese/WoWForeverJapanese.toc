@@ -1776,6 +1776,7 @@ UI\Font.lua
 UI\Frames.lua
 UI\ReadingPopup.lua
 UI\Readings.lua
+UI\WordSave.lua
 UI\Render.lua
 UI\VoicePlayer.lua
 UI\VoicePanelLooks.lua

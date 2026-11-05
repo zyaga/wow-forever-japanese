@@ -38,8 +38,7 @@ local function fill()
   else W.setPair(f.summary, Text.get("words.summary", n)) end
   local images = f.images:GetChecked() and true or false
   f.text:setText(WFJ.Words.export({ images = images }, date()))
-  show(f.shotsLabel.en, images); show(f.shotsLabel.ja, images); show(f.shotsPath, images)
-  show(f.ankiLabel.en, images); show(f.ankiLabel.ja, images); show(f.ankiMac, images); show(f.ankiWin, images)
+  for _, w in ipairs(f.imageRows) do show(w, images) end
   show(f.copy, copyCall() ~= nil)
 end
 
@@ -60,7 +59,7 @@ end
 local armedAt
 local function clear(button)
   if WFJ.Words.readonly() then return say("words.refused") end
-  local now = WFJ.Compat.resolve("GetTime")()
+  local now = WFJ.Compat.call("GetTime") or 0
   if armedAt and now - armedAt <= ARM_SECONDS then
     armedAt = nil
     local n = WFJ.Words.clear() or 0
@@ -101,6 +100,8 @@ local function build()
   W.setPair(f.ankiLabel, Text.get("words.ankiPath"))
   f.ankiMac = W.copyBox(p, LEFT, -438, INNER - 12, WordsWindow.ANKI_MAC)
   f.ankiWin = W.copyBox(p, LEFT, -460, INNER - 12, WordsWindow.ANKI_WIN)
+  -- shown only with Include images ticked
+  f.imageRows = { f.shotsLabel.en, f.shotsLabel.ja, f.shotsPath, f.ankiLabel.en, f.ankiLabel.ja, f.ankiMac, f.ankiWin }
   f.message = W.label(p, "", "", LEFT + 460, -316, INNER - 460)
   f.message.en:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3])
   WordsWindow.frame = f
