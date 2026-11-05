@@ -413,6 +413,7 @@ function A.aboutReadings(page, x, y, width)
   local function fill() W.setPair(l, Text.withSaveClick("about.readings")) end
   fill()
   Options.refreshers[#Options.refreshers + 1] = fill
+  Options.aboutReadings = l
   return W.labelHeight(l, 24)
 end
 

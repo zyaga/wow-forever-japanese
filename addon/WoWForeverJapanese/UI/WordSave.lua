@@ -51,7 +51,8 @@ local function onShot(_, event)
   if not p then return end -- the player's own screenshot
   pending = nil
   if event == "SCREENSHOT_SUCCEEDED" then
-    -- named after the time of the capture, not of this event (the file can take longer than a second to write)
+    -- named after the time of the capture: the client names the file then, and this event can come in a later second
+    -- [unverified: the screenshot step of the word list checklist, docs/testing/strategy.md]
     local name = WFJ.Words.shotName(p.at, Compat.call("GetCVar", "screenshotFormat"), Compat.resolve("date"))
     WFJ.Words.setShot(p.entry, name)
   end
@@ -72,8 +73,14 @@ local function screenshot(cover, entry)
     shotEvents:SetScript("OnEvent", onShot)
   end
   WFJ.ReadingView.hideCard(cover)
-  pending = { entry = entry, cover = cover, at = Compat.call("time") }
+  local p = { entry = entry, cover = cover, at = Compat.call("time") }
+  pending = p
   Compat.call("Screenshot")
+  -- a client that never answers must not hold the card hidden and block every later screenshot
+  local after = Compat.resolve("C_Timer.After")
+  if type(after) == "function" then
+    after(5, function() if pending == p then onShot(nil, "SCREENSHOT_FAILED") end end)
+  end
   return true
 end
 

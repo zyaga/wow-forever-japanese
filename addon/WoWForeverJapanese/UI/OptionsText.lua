@@ -235,9 +235,9 @@ Text.T = {
   },
   ["about.readings"] = {
     en = "Point at a Japanese word in a quest or NPC window to see its reading. "
-      .. "Save it to your word list with %s (/wfj words).",
+      .. "Save it to your word list with %s; /wfj words shows the list.",
     ja = "クエストやNPCの画面で日本語の単語にカーソルを合わせると、読み方が表示されます。"
-      .. "%sで単語帳に保存できます（/wfj words）。",
+      .. "%sで単語帳に保存でき、/wfj words で一覧を表示します。",
   },
   -- the About page's voice line (UI/Options aboutVoice); %s: the packs that loaded, in the line's language
   ["about.voice.none"] = {

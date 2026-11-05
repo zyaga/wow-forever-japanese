@@ -106,6 +106,11 @@ describe("Settings pages from the registry and PAGES", function()
     WFJ.WordsWindow.open = function() opened = opened + 1 end
     O.wordsExport.scripts.OnClick(O.wordsExport, "LeftButton")
     assert.are.equal(1, opened)
+    -- the About page's readings line names the save click as it is set now
+    S.set("modifier", "alt")
+    S.set("words.saveClick", "shift")
+    O.refresh()
+    assert.is_truthy(O.aboutReadings.en:GetText():find("Shift+click", 1, true))
   end)
 
   it("the voice panel page: Panel size and Panel style as dropdowns, then its switches", function()

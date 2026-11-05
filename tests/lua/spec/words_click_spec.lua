@@ -312,6 +312,17 @@ describe("Saving a word", function()
       assert.is_true(WFJ.ReadingPopup.frame():IsShown())
     end)
 
+    it("no answer from the client within 5 seconds ends the wait: the card comes back and the line prints", function()
+      S.set("words.screenshot", true)
+      click("生き物", { ctrl = true })
+      assert.are.equal(0, #Stub.prints)
+      timers[#timers]() -- the wait's timer (the flash's came first)
+      assert.are.equal(1, #Stub.prints)
+      assert.is_true(WFJ.ReadingPopup.frame():IsShown())
+      click("狩り", { ctrl = true })
+      assert.are.equal(2, shots) -- the next save takes its screenshot again
+    end)
+
     it("a failed screenshot leaves no name and still prints the line", function()
       S.set("words.screenshot", true)
       click("生き物", { ctrl = true })
