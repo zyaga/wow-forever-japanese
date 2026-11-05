@@ -23,6 +23,16 @@ Turn a player's fix report (a GitHub issue labelled `translation-report`) into d
 
 Take only issues labelled `report-ok`. The workflow never judges a translation; that is the drafting step.
 
+## Reports posted on Discord
+
+Players without a GitHub account can post on the project's Discord server (https://foreverjapanese.com/discord): a translation problem in `#translation-fixes`, a bug in the `#bug-reports` forum. Nothing on Discord is tracked. When a post needs a fix, the maintainer opens the GitHub issue for it:
+
+- A pasted fix report goes into a new `translation-report` issue, unchanged, with the credit name the player asked for. The steps below then run as for any report.
+- A screenshot or a described line is turned into a translation report by hand, or fixed in the next translation round.
+- A bug goes into a bug report issue with the player's addon version and Lua errors.
+
+Then reply in the Discord post with the issue link, and tag a forum post `On GitHub`.
+
 ## Steps
 
 1. **Intake.** `make report-intake ISSUE=N`

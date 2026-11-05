@@ -20,6 +20,8 @@ prefers it as text only.
 
 **Website:** https://foreverjapanese.com (screenshots and a short guide to how it works).
 
+**Discord:** https://foreverjapanese.com/discord (help, bug reports, translation fixes and chat, in English or Japanese).
+
 ### <span style="color:#E8C77E;">What it translates</span>
 
 - **Quests:** the quest window, the quest log and the objective lines in the tracker.
@@ -64,6 +66,8 @@ Install it with the CurseForge app (make sure your **Forever** install is select
 
 Click the <span style="color:#E0605A;">**字**</span> minimap button (or type **/wfj fix**), pick the line you just read, choose what is wrong, and paste the report into the form on GitHub: https://github.com/zyaga/wow-forever-japanese/issues
 
+No GitHub account? Post the line in **#translation-fixes** on the Discord: https://foreverjapanese.com/discord. Found a bug? Type **/wfj bug** for a filled-in GitHub report, or post it in **#bug-reports** on the Discord with your BugSack errors.
+
 ### <span style="color:#E8C77E;">FAQ</span>
 
 **Why is a buff's tooltip sometimes in English?** There are two cases.
@@ -100,6 +104,8 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 <span style="color:#E8C77E;">**新機能：日本語音声。**</span>無料の音声を追加すると、日本語を読み上げることもできます。クエスト、NPC の会話、本のページなど 14,000 行以上を、NPC ごとに合わせて選んだ声で読み上げます。
 
 **ウェブサイト:** https://foreverjapanese.com （スクリーンショットと使い方の紹介）
+
+**Discord:** https://foreverjapanese.com/discord （質問、不具合の報告、翻訳の修正、雑談。英語でも日本語でも）
 
 ### <span style="color:#E8C77E;">翻訳される内容</span>
 
@@ -144,6 +150,8 @@ CurseForge アプリでインストールしてください（**Forever** のイ
 ### <span style="color:#E8C77E;">翻訳の問題を報告する</span>
 
 ミニマップの <span style="color:#E0605A;">**字**</span> ボタン（または **/wfj fix**）を押し、直前に読んだ行を選んで何が問題かを選び、表示された報告文を GitHub のフォームに貼り付けてください: https://github.com/zyaga/wow-forever-japanese/issues
+
+GitHub アカウントがなければ、Discord の **#translation-fixes** にその行を投稿してください: https://foreverjapanese.com/discord 。不具合は **/wfj bug** で入力済みの GitHub の報告を作るか、Discord の **#bug-reports** に BugSack のエラーと一緒に投稿してください。
 
 ### <span style="color:#E8C77E;">よくある質問</span>
 

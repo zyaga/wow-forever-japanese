@@ -14,6 +14,9 @@ It is made for **World of Warcraft: Forever** only. It is not for WoW Classic or
 
 Website: [foreverjapanese.com](https://foreverjapanese.com)
 
+Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord) (help, bug reports, translation fixes and chat, in English
+or Japanese)
+
 **日本語の説明は[下にあります](#日本語)。**
 
 ![The quest window in Japanese: a quest from Shadowglen, with names such as Conservator Ilthalaine left in English](docs/images/hero.jpg)
@@ -157,6 +160,8 @@ menu also has **Send collected English**, with the count.
 
    ![The translation report form on GitHub](docs/images/report-issue.jpg)
 
+No GitHub account? Post the line, or a screenshot of it, in **#translation-fixes** on the [Discord](https://foreverjapanese.com/discord).
+
 ## Reporting a bug or an idea
 
 Type `/wfj bug` (or right-click the **字** button and choose **Report a bug or idea**, or use the button on the
@@ -167,6 +172,9 @@ only new errors. If the window shows a second box, copy that text into the form'
 **Idea** at the top of the window for a link to the idea form instead. You need a GitHub account, and the issue is
 public. If you use BugSack or a similar addon, it catches Lua errors first: the window says so, and you can paste
 this addon's errors from it.
+
+No GitHub account? Post the bug in **#bug-reports** on the [Discord](https://foreverjapanese.com/discord): what happened, the addon version (type
+`/wfj version`) and the Lua errors from BugSack if you have them.
 
 ## FAQ
 
@@ -224,6 +232,8 @@ World of Warcraft: Forever を日本語で遊べるようにするアドオン�
 対応しているのは **World of Warcraft: Forever** のみです。WoW Classic や現行の World of Warcraft 用ではありません。
 
 ウェブサイト: [foreverjapanese.com](https://foreverjapanese.com)
+
+Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（質問、不具合の報告、翻訳の修正、雑談。英語でも日本語でも）
 
 ![日本語のクエストウィンドウ。Shadowglen のクエストで、Conservator Ilthalaine などの名前は英語のまま](docs/images/hero.jpg)
 
@@ -317,9 +327,13 @@ World of Warcraft: Forever を日本語で遊べるようにするアドオン�
 
    ![GitHub の翻訳の報告フォーム](docs/images/report-issue.jpg)
 
+GitHub アカウントがなければ、[Discord](https://foreverjapanese.com/discord) の **#translation-fixes** にその行かスクリーンショットを投稿してください。
+
 ### 不具合や提案を送る
 
 `/wfj bug` と入力します（**字** ボタンを右クリックして **不具合・提案を報告** を選ぶか、設定の About ページのボタンでも開けます）。リンクが入ったウィンドウが開きます。リンクをコピーして（クリックして Ctrl+C）ブラウザで開くと、ゲームのビルド、アドオンのバージョン、アドオン自身のファイルで起きた Lua エラーが入力済みの不具合報告フォームが開きます。起きたことを書いて Issue を送信したら、ゲーム内で **送信しました** をクリックします。次回は新しいエラーだけを送ります。ウィンドウに 2 つ目の欄があるときは、その文字列をフォームの Lua エラー欄に貼り付けてください。ウィンドウ上部で **提案** を選ぶと、提案フォームへのリンクになります。GitHub アカウントが必要で、Issue は公開されます。BugSack などのアドオンを使っている場合は、そちらが先に Lua エラーを取得します。ウィンドウにその旨が表示されるので、そこからこのアドオンのエラーを貼り付けてください。
+
+GitHub アカウントがなければ、[Discord](https://foreverjapanese.com/discord) の **#bug-reports** に投稿してください。起きたこと、アドオンのバージョン（`/wfj version` で表示）、BugSack の Lua エラーがあればそれも書いてください。
 
 ### よくある質問
 
