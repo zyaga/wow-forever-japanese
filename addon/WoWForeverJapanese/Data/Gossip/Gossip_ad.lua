@@ -43,6 +43,7 @@ WFJ.Data.add("gossip", {
   ["adb35c010871a4ba"] = { "Vanndar StormpikeはAlteracにおけるAlliance軍の将軍で、Dun Baldarから自軍を指揮している。\n\n彼が倒されれば、AllianceはきっとAlteracの戦いに敗れるだろう。\n\nVanndarは現在Alterac Valleyにいない。", "." },
   ["adb781452801659a"] = { "Stormpike GraveyardはDun Baldarの東、橋を渡った先の山を切り開いた場所にある。\n\n現在はHordeが支配している。", "." },
   ["adb7d7d82343f5cc"] = { "あなたの勇気のおかげでYsidaは生きている、{name}。深く恩に着る。私の力の及ぶ限りあなたを助けよう。", "." },
+  ["adc143944a3d178e"] = { "私は……失敗……した……", "." },
   ["adc334ce030b1853"] = { "おや、プリーストかい？それなら、ちょいと訓練が必要なときは、あの気のいいMaxanがThunderbrew Distilleryで一杯やっているのを見つけられるはずだ。", "." },
   ["add5101a48e83ba3"] = { "俺の頼みを果たせ。Magramの味方だと証明しろ！", "." },
   ["addc214cf7e9734d"] = { "世界はあなたとあなたの仲間たちに恩がある、{name}。", "." },

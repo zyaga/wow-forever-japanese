@@ -221,7 +221,6 @@ WFJ.Data.add("gloss", {
   [20218] = "とっくに\tとっくに\tlong (ago)",
   [20219] = "とっくに\tとっくに\tlong (since)",
   [20220] = "とっくに\tとっくに\tlong ago",
-  [20221] = "とっくに\tとっくに\tlong ago (long overdue)",
   [20222] = "とっくに\tとっくに\tlong since",
   [20223] = "とっくに\tとっくに\tlong since (already)",
   [20224] = "とっくに\tとっくに\tpast (long since)",

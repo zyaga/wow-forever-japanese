@@ -952,7 +952,6 @@ WFJ.Data.add("gloss", {
   [131951] = "酒場中\tさかばじゅう\twhole tavern",
   [131952] = "酒好き\tさけずき\tfondness for liquor",
   [131953] = "酒樽\tさかだる\tbrew keg",
-  [131954] = "酒瓶\tさかびん\tbottles (of liquor)",
   [131955] = "酒瓶\tさかびん\tjug (liquor bottle)",
   [131956] = "酒盛りする\tさかもりする\twas splicin' the mainbrace (drinking)",
   [131957] = "酒造り\tさけづくり\tbrew (brewing)",

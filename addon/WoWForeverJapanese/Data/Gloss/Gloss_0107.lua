@@ -330,7 +330,6 @@ WFJ.Data.add("gloss", {
   [107327] = "空っぽ\tからっぽ\temptied out",
   [107328] = "空っぽ\tからっぽ\tempty",
   [107329] = "空っぽ\tからっぽ\tempty (mindless)",
-  [107330] = "空っぽ\tからっぽ\tempty (running dry)",
   [107331] = "空になる\tからになる\tempty",
   [107332] = "空中\tくうちゅう\tair",
   [107333] = "空中\tくうちゅう\tairborne (in the air)",

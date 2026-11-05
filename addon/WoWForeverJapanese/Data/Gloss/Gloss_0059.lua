@@ -834,7 +834,6 @@ WFJ.Data.add("gloss", {
   [59833] = "困る\tこまる\tof need (troubled)",
   [59834] = "困る\tこまる\tpredicament (troubled)",
   [59835] = "困る\tこまる\tproblem (troubled)",
-  [59837] = "困る\tこまる\ttroublesome (in a pinch)",
   [59838] = "困る\tこまる\twas troubled (miss)",
   [59839] = "困る\tこまる\twere troubled (missed)",
   [59840] = "困る\tこまる\twhat stinks (troubling)",

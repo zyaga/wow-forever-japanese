@@ -880,7 +880,6 @@ WFJ.Data.add("gloss", {
   [35878] = "一人目\tひとりめ\tfirst",
   [35879] = "一人目\tひとりめ\tthe first",
   [35880] = "一人称視点\tいちにんしょうしてん\tfirst-person perspective",
-  [35881] = "一仕事\tひとしごと\ta job (piece of work)",
   [35882] = "一仕事\tひとしごと\ta task",
   [35883] = "一仕事\tひとしごと\tsomething (a job)",
   [35884] = "一件\tいっけん\tincident",

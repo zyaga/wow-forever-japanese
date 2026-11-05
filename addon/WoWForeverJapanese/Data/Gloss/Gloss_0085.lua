@@ -842,7 +842,6 @@ WFJ.Data.add("gloss", {
   [85841] = "教養ある\tきょうようある\tlearned (cultured)",
   [85842] = "敢行する\tかんこうする\tlaunched (carried out boldly)",
   [85843] = "散々\tさんざん\tseverely",
-  [85844] = "散々\tさんざん\tterrible (has been hell)",
   [85845] = "散らかす\tちらかす\tscatter (litter)",
   [85846] = "散らかりやすい\tちらかりやすい\ttends to be messy",
   [85847] = "散らかりよう\tちらかりよう\tmess",

@@ -83,6 +83,7 @@ WFJ.Data.add("spell", {
   [1309950] = { "Devouring Plagueのマナコストを$N1%減少させます。\n\nDevouring Plagueが有効な間に死亡した対象はそれを拡散させ、残りの効果時間のあいだ、$N3ヤード以内の近くの敵$N2体に跳び移らせます。", nil, 0x8a7e198e, nil, "um" },
   [1309957] = { "Holy呪文の命中率を$N1%上昇させます。", nil, 0x9e735c14, nil, "um" },
   [1309965] = { "未翻訳の巻物を解読します。", nil, 0x2551fb8b, nil, "um" },
+  [1309967] = { "対象の顔を殴りつけ、$D2の間、$D1ごとに$N1のPhysicalダメージを与えます。", "出血しており、$D1ごとに$N1のPhysicalダメージを受けています。", 0xbb437f8f, 0xfc9a6989, "uu" },
   [1309969] = { "SmiteとPenanceの呪文が、自分のHoly FireまたはShadow Word: Painを受けている対象に与えるダメージが$N1%増加します。", nil, 0x5016940f, nil, "um" },
   [1309973] = { "未翻訳の巻物を解読します。", nil, 0x2551fb8b, nil, "um" },
 })

@@ -106,7 +106,6 @@ WFJ.Data.add("gloss", {
   [23103] = "なる\tなる\thave ended up being",
   [23104] = "なる\tなる\thave fallen (become)",
   [23105] = "なる\tなる\thave gotten into (and)",
-  [23106] = "なる\tなる\thave gotten into (become)",
   [23107] = "なる\tなる\thave grown",
   [23108] = "なる\tなる\thave reached (become)",
   [23109] = "なる\tなる\thave to be",

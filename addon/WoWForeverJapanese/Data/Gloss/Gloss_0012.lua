@@ -744,7 +744,6 @@ WFJ.Data.add("gloss", {
   [12742] = "する\tする\twon't let (be)",
   [12743] = "する\tする\twon't stay (can't keep)",
   [12744] = "する\tする\twon't you (do)",
-  [12745] = "する\tする\twon't you do (for me)",
   [12746] = "する\tする\twork out of (make)",
   [12747] = "する\tする\twork with (are doing)",
   [12748] = "する\tする\tworking on",
