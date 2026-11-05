@@ -130,6 +130,20 @@ describe("UI/TaintWatch", function()
     _G.ObjectiveTrackerFrame, _G.QuestMapFrame = nil, nil
   end)
 
+  it("the scan reaches the quest list's pooled rows, also when the map reached the list first", function()
+    local row = { questID = 93949 }
+    local pool = { EnumerateActive = function() return pairs({ [row] = true }) end } -- the pools' proxy: methods only
+    _G.QuestScrollFrame = { Contents = {}, titleFramePool = pool }
+    _G.QuestMapFrame = { QuestsFrame = { ScrollFrame = _G.QuestScrollFrame } }
+    taint.layoutIndex = { t = row, by = "WoWForeverJapanese" }
+    row.layoutIndex = 1
+    local fields = TW.scan("slash")
+    assert.are.equal(1, fields)
+    local scan = entriesOf("taint")[1].fields
+    assert.is_truthy(scan:find("QuestScrollFrame.titleFramePool[93949].layoutIndex", 1, true))
+    _G.QuestScrollFrame, _G.QuestMapFrame = nil, nil
+  end)
+
   it("a quest shown in the quest log logs who wrote its id when that came out tainted", function()
     local hooks = {}
     _G.hooksecurefunc = function(t, fn) -- the global form: (name, hook)

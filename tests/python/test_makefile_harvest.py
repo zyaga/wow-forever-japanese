@@ -38,8 +38,9 @@ def test_clients_are_pinned_oldest_first(makefile):
         assert re.search(rf"^{client}_BUILD\s*:=\s*{re.escape(build)}$", makefile, re.M), client
         assert re.search(rf"^{client}_SRC\s*:=\s*{src}$", makefile, re.M), client
         assert re.search(rf"^{client}_PRODUCT\s*:=\s*{product}$", makefile, re.M), client
-    for client, build in QUEST_BUILDS.items():
-        assert re.search(rf"^{client}_QUEST_BUILD\s*:=\s*{re.escape(build)}$", makefile, re.M), client
+    for client in CLIENTS:
+        pinned = re.search(rf"^{client}_QUEST_BUILD\s*:=\s*(\S+)$", makefile, re.M)
+        assert (pinned and pinned.group(1)) == QUEST_BUILDS.get(client), client  # no pin left behind either
 
 
 @pytest.mark.parametrize("target", ["import", "import-english"])

@@ -9,8 +9,9 @@
 --   bars     every CHECK_EVERY * SWEEP_EVERY seconds out of combat, any field on the action bars that newly reads
 --            as tainted, for fields not on the list;
 --   events   the last RING game events, saved with each entry above and with each block;
---   scan     at the first block of a session, and on /wfj taint: every field under the bar and Edit Mode frames
---            that reads as tainted, and the globals this addon tainted.
+--   scan     at the first block of a session, and on /wfj taint: every field that reads as tainted under the bar,
+--            Edit Mode, tracker, tooltip, spellbook, quest log, quest list and map frames, and the globals this
+--            addon tainted.
 -- Its own post-hooks run after the hooked function returns and only read, so they add no taint of their own.
 local _, WFJ = ...
 local TaintWatch = {}
@@ -36,8 +37,12 @@ TaintWatch.SCAN_ROOTS = { "StanceBar", "PetActionBar", "MainActionBar", "MultiBa
   "QuestScrollFrame" }
 -- roots walked deeper than SCAN_DEPTH: a tracker quest block is ObjectiveTrackerFrame.modules[i].usedBlocks[t][id], and
 -- clicking its title opens the quest log through the block's fields (blizzard_questobjectivetracker.lua:60-68); the
--- quest list's rows and layout live under QuestScrollFrame.Contents (questmapframe.lua:2159)
+-- quest list's layout lives under QuestScrollFrame.Contents (questmapframe.lua:2159)
 TaintWatch.SCAN_DEEP = { ObjectiveTrackerFrame = 5, QuestMapFrame = 3, QuestCache = 3, QuestScrollFrame = 3 }
+-- pools whose rows the scan walks: a pool is a proxy that only has methods (CreateFramePool = CreateSecureFramePool,
+-- blizzard_sharedxmlbase/pools.lua:736, 857), so its rows are reached through EnumerateActive, which only reads
+TaintWatch.SCAN_POOLS = { QuestScrollFrame = { "titleFramePool", "objectiveFramePool" } }
+TaintWatch.SCAN_HITS = 200 -- tainted fields a scan entry lists; the count is always whole
 -- events too frequent to say anything about a taint
 TaintWatch.NOISY = {}
 for _, e in ipairs({ "COMBAT_LOG_EVENT_UNFILTERED", "UNIT_POWER_FREQUENT", "UNIT_POWER_UPDATE", "UNIT_HEALTH",
@@ -191,21 +196,24 @@ end
 
 -- Each field `fn(label, key)` of table `t` that reads as tainted, `depth` levels down. A forbidden frame or a table
 -- the client refuses to an addon (its iteration raises) is skipped. → the number of keys checked
+-- `seen` holds the depth each table was walked at, so a table first reached near the end of one root's walk is walked
+-- again, deeper, from a root that names it.
 local function walk(t, label, depth, seen, fn)
-  if type(t) ~= "table" or seen[t] or forbidden(t) then return 0 end
-  seen[t] = true
+  if type(t) ~= "table" or (seen[t] or -1) >= depth or forbidden(t) then return 0 end
+  local again = seen[t] ~= nil
+  seen[t] = depth
   local n = 0
   local ok = pcall(function()
     for k, v in pairs(t) do
       -- pools and module lists are arrays: their entries are walked, only named fields are checked
-      local sub = type(k) == "string" and label .. "." .. k or label .. "[" .. tostring(k) .. "]"
-      if type(k) == "string" then
+      local named = type(k) == "string"
+      if named and not again then
         n = n + 1
         local tainted, by = check(t, k)
-        if tainted then fn(sub, by) end
+        if tainted then fn(label .. "." .. k, by) end
       end
       if depth > 0 and type(v) == "table" and k ~= "parent" then
-        n = n + walk(v, sub, depth - 1, seen, fn)
+        n = n + walk(v, named and label .. "." .. k or label .. "[" .. tostring(k) .. "]", depth - 1, seen, fn)
       end
     end
   end)
@@ -235,13 +243,28 @@ end
 -- Every tainted field under SCAN_ROOTS and every global this addon tainted, logged as "taint" entries.
 -- → fields found, globals found
 function TaintWatch.scan(reason)
-  local hits, seen, checked = {}, {}, 0
-  for _, name in ipairs(TaintWatch.SCAN_ROOTS) do
-    local depth = TaintWatch.SCAN_DEEP[name] or TaintWatch.SCAN_DEPTH
-    checked = checked + walk(C.resolve(name), name, depth, seen, function(label, by)
-      hits[#hits + 1] = label .. " (" .. tostring(by) .. ")"
-    end)
+  local hits, seen, checked, found = {}, {}, 0, 0
+  local function hit(label, by)
+    found = found + 1
+    if found <= TaintWatch.SCAN_HITS then hits[#hits + 1] = label .. " (" .. tostring(by) .. ")" end
   end
+  for _, name in ipairs(TaintWatch.SCAN_ROOTS) do
+    local root = C.resolve(name)
+    checked = checked + walk(root, name, TaintWatch.SCAN_DEEP[name] or TaintWatch.SCAN_DEPTH, seen, hit)
+    for _, key in ipairs(TaintWatch.SCAN_POOLS[name] or {}) do
+      local pool = type(root) == "table" and root[key]
+      local ok, rows = pcall(function()
+        local list = {}
+        for row in pool:EnumerateActive() do list[#list + 1] = row end
+        return list
+      end)
+      for _, row in ipairs(ok and rows or {}) do
+        local id = type(row) == "table" and (row.questID or row.layoutIndex) or "?"
+        checked = checked + walk(row, name .. "." .. key .. "[" .. tostring(id) .. "]", 1, seen, hit)
+      end
+    end
+  end
+  if found > #hits then hits[#hits + 1] = "… " .. (found - #hits) .. " more" end
   local globals = {}
   for name in pairs(_G) do
     if type(name) == "string" then
@@ -252,7 +275,7 @@ function TaintWatch.scan(reason)
   table.sort(globals)
   WFJ.Diag.log("taint", "scan " .. clock(), { reason = tostring(reason or "slash"), checked = checked,
     fields = table.concat(hits, " | "), globals = table.concat(globals, " | ") })
-  return #hits, #globals
+  return found, #globals
 end
 
 local scannedOnBlock = false

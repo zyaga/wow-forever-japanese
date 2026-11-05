@@ -63,7 +63,8 @@ recorded the tainted fields and writers around them.
    write and no tainted field.
 4. **A static test keeps both out.** `tests/python/test_protected_paths.py` fails when any shipped Lua outside
    `UI/TaintWatch` names a unit menu tag, `WFJ.MenusUnit` or an Edit Mode frame (comments aside), or when
-   `UI/EditMode.lua` or `UI/MenusUnit.lua` exists again. `UI/TaintWatch` only reads, so its scan roots may name Edit
+   `UI/EditMode.lua` or `UI/MenusUnit.lua` exists again. Edit Mode's callout keys (`EDIT_MODE_HELPTIPS_*`) count as
+  Edit Mode. `UI/TaintWatch` only reads, so its scan roots may name Edit
    Mode.
 5. **A disposition of their own.** `blizzard_editmode`, `blizzard_unitpopup` and `blizzard_unitpopupshared` are
    `protected` in `pipeline/forever_addon_dispositions.txt`: their files are no surface's, and the load-set sweep still
@@ -78,8 +79,9 @@ recorded the tainted fields and writers around them.
   nothing there.
 - Edit Mode is English: the manager window and its checkboxes, a HUD element's "Click to edit" label and system
   name, a system's settings and their dropdowns, the layout menu and the New Layout, Rename and Import dialogs, and
-  the four cooldown viewers' selection labels. Its first-open callouts stay Japanese: they are HelpTip frames that
-  `UI/HelpTips` writes, not Edit Mode frames.
+  the four cooldown viewers' selection labels, and its first-open callouts: they are HelpTip frames, but Edit Mode
+  shows and lays them out inside its own show pass (`editmodemanager.lua:2995-3025`), so `UI/HelpTips` leaves them
+  out.
 - Getting either back would mean drawing the addon's own text over Blizzard's instead of writing into it or running
   inside its pass. That needs its own in-game proof with the taint watch before it ships. Nothing is deferred: no
   ticket plans it.
@@ -87,4 +89,6 @@ recorded the tainted fields and writers around them.
   its English could overlap the row below; in game, the wrapped Zephras Isle rows fitted.
 - The taint watch keeps the probes that found it: the `MarkDirty` write entry, a writer check on the quest log's
   stored quest id, a check of a clicked tracker block's keys, and a block-time scan that reaches the tracker's blocks,
-  the quest log and its list, the map and the quest cache.
+  the quest log and its list (its pooled rows too, through the pools' `EnumerateActive`), the map and the quest cache.
+- The Edit Mode keys are excluded in `pipeline/ui_exclusions.txt` with this ADR as the reason, and their English and
+  Japanese rows are gone from `data/`, so the shipped interface count no longer counts them.

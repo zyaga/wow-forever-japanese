@@ -62,10 +62,10 @@ KNOWN_NAME_COLLISIONS = {
     # invite manager's gamepad footer "Revoke" (UI/Gamepad's key list) and a barber shop choice "Savage"
     # (CustomizationChoice, restricted). None is ever matched on an item or spell name line.
     "Banished", "Revoke", "Savage",
-    # The unit menus' "Duel" / "Duel to the Death" (DUEL, DUEL_TO_DEATH) and the spellbook
-    # subtext "Shapeshift" (SpellSubtext:768). Each is shown only on a key-restricted widget: a MENU_UNIT_* entry
-    # (UI/Menus `only`, the unit's name title never matched) or a spellbook item's SubName (SUBTEXT_KEYS). Spell
-    # names are never hooked, so the spells "Duel" and "Shapeshift" stay English.
+    # "Duel" / "Duel to the Death" (DUEL, DUEL_TO_DEATH, kept for the surfaces outside the unit menus, which stay
+    # English, ADR-069) and the spellbook subtext "Shapeshift" (SpellSubtext:768). Each is shown only on a
+    # key-restricted widget, never on an item or spell name line. Spell names are never hooked, so the spells "Duel"
+    # and "Shapeshift" stay English.
     "Duel", "Duel to the Death", "Shapeshift",
     # Gamepad labels: the radial's emotes "Angry", "Chicken", "Dance" and the "More Actions"
     # entries "Bind", "Destroy", "Split", named in UI/Gamepad's KEYS / MENU_KEYS and shown only by the gamepad
