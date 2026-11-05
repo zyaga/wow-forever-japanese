@@ -38,6 +38,10 @@ Names of people, places, creatures, items and spells stay in <span style="color:
 
 Point at a Japanese word in quest text, NPC dialogue, a book page or a window label, and a small popup shows its reading, its dictionary form and a short English meaning of the word as that sentence uses it. Nothing is drawn until the pointer is on a word.
 
+### <span style="color:#E8C77E;">Word list</span>
+
+While the popup shows a word, **Ctrl+click** it to save it with its reading, meaning and the sentence it came from. The list stays from one session to the next and is shared by your characters. Type `/wfj words` to copy the whole list as text for Anki, a spreadsheet or a text file: the word and its sentence come with furigana for your cards, and a screenshot taken when you saved the word can come along. Choose the click on the **Words** settings page.
+
 ### <span style="color:#E8C77E;">Japanese voice</span>
 
 With **WoW Forever Japanese Voice** installed (a free, separate download), quest offers, progress and turn-ins, NPC greetings and talk, and book and letter pages are read aloud in Japanese: over 14,000 lines. Each NPC speaks in a voice cast for their race or kind of creature, gender and age, and your character says its own error lines, such as being out of range, in Japanese too.
@@ -122,6 +126,10 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 ### <span style="color:#E8C77E;">ポップアップ辞書</span>
 
 クエスト本文、NPC の会話、本のページ、ウィンドウのラベルで日本語の単語にマウスを合わせると、読み方・辞書形・その文脈での短い英語の意味が小さなポップアップに表示されます。マウスを合わせるまでは何も表示されません。
+
+### <span style="color:#E8C77E;">単語帳</span>
+
+ポップアップが出ている単語を **Ctrl+クリック** すると、読み方・意味・その文と一緒に保存されます。単語帳は次回以降も残り、すべてのキャラクターで共通です。`/wfj words` で単語帳全体を Anki・表計算ソフト・テキストファイル用のテキストとしてコピーできます。単語と文にはカード用のふりがなが付き、保存したときのスクリーンショットも添えられます。保存の操作は設定の **単語帳** ページで選べます。
 
 ### <span style="color:#E8C77E;">日本語音声</span>
 
