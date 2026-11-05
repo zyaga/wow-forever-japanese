@@ -53,7 +53,7 @@ def test_real_toc_fields_and_load_order(root):
         "UI/CommunitiesKit.lua", "UI/CommunitiesFrame.lua", "UI/CommunitiesGuild.lua", "UI/ClubFinder.lua",
         "UI/ClubFinderApplicants.lua", "UI/CommunitiesDialogs.lua", "UI/Raid.lua",
         "UI/MicroMenu.lua",
-        "UI/MenusUnit.lua", "UI/Gamepad.lua", "UI/Menus.lua", "UI/MenusTags.lua", "UI/MenusUntagged.lua",  # menu entries; Gamepad loads before MenusUntagged
+        "UI/Gamepad.lua", "UI/Menus.lua", "UI/MenusTags.lua", "UI/MenusUntagged.lua",  # menu entries; Gamepad loads before MenusUntagged
         "UI/HelpTips.lua",  # HelpTip callouts
         "UI/QuestFrame.lua", "UI/QuestMap.lua",
         "UI/TimeLine.lua",  # the cooldown countdown, before the tooltips that write it
@@ -77,7 +77,7 @@ def test_real_toc_fields_and_load_order(root):
         "UI/PvPMatch.lua", "UI/QueueStatus.lua", "UI/RaidManager.lua", "UI/UnitFrames.lua", "UI/GroupFinder.lua",
         "UI/Channels.lua", "UI/QuickJoin.lua", "UI/RecentAllies.lua", "UI/RecruitAFriend.lua",
         "UI/ReportFrame.lua", "UI/HelpFrame.lua", "UI/StatusNotices.lua", "UI/BNetToast.lua",
-        "UI/SettingsPanel.lua", "UI/SettingsTutorials.lua", "UI/EditMode.lua", "UI/QuickKeybind.lua",
+        "UI/SettingsPanel.lua", "UI/SettingsTutorials.lua", "UI/QuickKeybind.lua",
         "UI/ColorPicker.lua", "UI/ChatConfig.lua", "UI/TextToSpeech.lua", "UI/ChatTabs.lua", "UI/CombatLog.lua",
         "UI/AddonList.lua", "UI/ScriptErrors.lua", "UI/Splash.lua", "UI/EventTrace.lua", "UI/ChromieTime.lua",
         "UI/Alerts.lua", "UI/Errors.lua", "UI/ChatSystem.lua", "UI/ChatInput.lua", "UI/Speech.lua", "UI/BossBanner.lua", "UI/Cinematic.lua",

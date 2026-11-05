@@ -271,15 +271,11 @@ describe("the Cooldown Settings window on Forever", function()
     assert.is_true(unrecorded(g.Name))
   end)
 
-  it("edit mode: a HUD viewer's selection label and tooltip render its system name and nothing else", function()
+  it("edit mode: a HUD viewer's selection label stays as the client writes it (ADR-069)", function()
     local selection = _G.EssentialCooldownViewer.Selection
-    selection:UpdateLabelVisibility()
-    assert.are.equal("Click to Edit", selection.Label:GetText()) -- edit mode's own word: not this surface's
     selection.isSelected = true
     selection:UpdateLabelVisibility()
-    assert.are.equal(ja("HUD_EDIT_MODE_SYSTEM_ESSENTIAL_COOLDOWNS"), selection.Label:GetText())
-    _G.BuffIconCooldownViewer.Selection:CheckShowInstructionalTooltip()
-    assert.are.equal(ja("HUD_EDIT_MODE_SYSTEM_TRACKED_BUFFS"), tipLine(1))
+    assert.are.equal(en("HUD_EDIT_MODE_SYSTEM_ESSENTIAL_COOLDOWNS"), selection.Label:GetText())
   end)
 
   it("client names bound to the wrong type degrade to untouched English with no error", function()

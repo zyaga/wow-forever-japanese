@@ -47,12 +47,9 @@
 --     restricted: the type (Sound / Visual), the event (COOLDOWN_VIEWER_SETTINGS_ALERT_WHEN_*), and for the payload
 --     only Text to Speech and the ten visual alert labels (CDMVIS_*, blizzard_visualalerts/visualalerttemplates.lua:
 --     77–86); a sound's label is its name ("RotaryPhoneDial") and stays English.
---   the four HUD viewers in edit mode: EssentialCooldownViewer, UtilityCooldownViewer, BuffIconCooldownViewer,
---     BuffBarCooldownViewer (cooldownviewer.xml:298–338): their Selection child writes Label:SetText(the system name,
---     HUD_EDIT_MODE_SYSTEM_*) in UpdateLabelVisibility and shows it as a tooltip it owns (blizzard_editmode/shared/
---     editmodesystemtemplates.lua:3398–3444). Only the Selection is read, restricted to those four keys.
--- Never touched: the HUD viewers' items. On this client a cooldown number, a charge count, an aura stack and an aura
---   instance can be secret values (blizzard_sharedxmlbase/securetypes.lua:6, blizzard_cooldownviewer/
+-- Never touched: the four HUD viewers' Edit Mode selections (their "Essential Cooldowns" labels): Edit Mode stays as
+--   the client writes it (ADR-069). The HUD viewers' items: on this client a cooldown number, a charge count, an aura
+--   stack and an aura instance can be secret values (blizzard_sharedxmlbase/securetypes.lua:6, blizzard_cooldownviewer/
 --   cooldownviewersecure.lua:4–6), so no text of a HUD item is ever read or matched here. The alert editors' Name (a
 --   spell name), a bar item's Name, the search box, the layout dropdown (a layout's name is the player's).
 -- Not here: menu / dropdown popup entries (UI/Menus), the layout dialogs (shown with StaticPopupSpecial_Show,
@@ -66,8 +63,6 @@ CooldownViewer.SURFACE = SURFACE
 local Compat = WFJ.Compat
 
 local ALERT, GROUP_ALERT = "CooldownViewerSettingsEditAlert", "GroupBuffFilterEditVisualAlert"
-local VIEWERS = { "EssentialCooldownViewer", "UtilityCooldownViewer", "BuffIconCooldownViewer",
-  "BuffBarCooldownViewer" }
 
 CooldownViewer.NEVER_TOUCH = { ALERT .. ".Name", GROUP_ALERT .. ".Name", "CooldownViewerSettings.SearchBox",
   "CooldownViewerSettings.LayoutDropdown.Text" }
@@ -81,7 +76,6 @@ local CANDIDATES = {
   alert = { ALERT }, groupAlert = { GROUP_ALERT },
   tooltip = { "GameTooltip" }, isSecret = { "issecretvalue" }, categoryEnum = { "Enum.CooldownViewerCategory" },
 }
-for _, name in ipairs(VIEWERS) do CANDIDATES["viewer." .. name] = { name } end
 
 local TITLE = { only = { "COOLDOWN_VIEWER_SETTINGS_TITLE" } }
 local SEARCH = { only = { "COOLDOWN_VIEWER_SETTINGS_SEARCH_INSTRUCTIONS" } }
@@ -100,8 +94,6 @@ local POTION_TOOLTIP = { only = { "COOLDOWN_VIEWER_TOOLTIP_POTION_COMBAT_TITLE",
   "COOLDOWN_VIEWER_TOOLTIP_POTION_HEALTH_DESCRIPTION" } }
 local TRINKET_TOOLTIP = { only = { "COOLDOWN_VIEWER_TRINKET_AURA_TOOLTIP_LABEL",
   "COOLDOWN_VIEWER_TRINKET_NO_AURA_TOOLTIP_LABEL" } }
-local SYSTEM = { only = { "HUD_EDIT_MODE_SYSTEM_ESSENTIAL_COOLDOWNS", "HUD_EDIT_MODE_SYSTEM_UTILITY_COOLDOWNS",
-  "HUD_EDIT_MODE_SYSTEM_TRACKED_BUFFS", "HUD_EDIT_MODE_SYSTEM_TRACKED_BUFF_BARS" } }
 
 -- The alert editors' labels: widget field → the keys it can show.
 local ALERT_LABELS = {
@@ -258,19 +250,6 @@ local function hookAlert(which)
   pass()
 end
 
--- One HUD viewer's edit-mode selection: its label and the tooltip it owns. Nothing else of a viewer is read.
-local function hookViewer(name)
-  local viewer = get("viewer." .. name)
-  local selection = type(viewer) == "table" and viewer.Selection or nil
-  if type(selection) ~= "table" then return end
-  local function pass() WFJ.Labels.show(SURFACE, "system." .. name, selection.Label, nil, SYSTEM) end
-  if type(selection.UpdateLabelVisibility) == "function" then
-    hooksecurefunc(selection, "UpdateLabelVisibility", pass)
-  end
-  WFJ.HelpTooltip.register(selection, SYSTEM)
-  pass()
-end
-
 local hooked = false
 
 -- Called by Main after Compat.init, HelpTooltip.init and ButtonText.init.
@@ -297,7 +276,6 @@ function CooldownViewer.init()
   end
   hookAlert("alert")
   hookAlert("groupAlert")
-  for _, name in ipairs(VIEWERS) do hookViewer(name) end
   CooldownViewer.showStatic()
   return true
 end

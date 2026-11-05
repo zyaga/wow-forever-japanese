@@ -238,8 +238,6 @@ end
 
 -- Keys added to tags UI/Menus already declares (appended below)
 local EXTRA = {
-  -- the character-layouts header, class-coloured around the character's name (editmodemanager.lua:8)
-  MENU_EDIT_MODE_MANAGER = { keys = { "HUD_EDIT_MODE_CHARACTER_LAYOUTS_HEADER" } },
   -- queues the camelot client may show (queuestatusframe.lua:1276–1507) [in game: runtime-gated]
   MENU_QUEUE_STATUS_FRAME = { keys = { "ENTER_PET_BATTLE", "LEAVE_ARENA", "SURRENDER_ARENA", "WOW_LABS_LEAVE_QUEUE",
     "LEAVE_ZONE" } },

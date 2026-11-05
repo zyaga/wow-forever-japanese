@@ -372,7 +372,7 @@ function WFJ.OnLoad()
     "Macro", "SpellSearch", "TimeManager", "CombatText", "CooldownViewer", "DamageMeter", "DeathRecap",
     "GamepadEdit", "Gamepad", "HudLabels", "HudTips", "Minimap", "PvPMatch", "QueueStatus", "RaidManager", "UnitFrames",
     "GroupFinder", "Channels", "QuickJoin", "RecentAllies", "RecruitAFriend", "ReportFrame", "HelpFrame",
-    "StatusNotices", "BNetToast", "SettingsPanel", "SettingsTutorials", "EditMode", "QuickKeybind", "ColorPicker",
+    "StatusNotices", "BNetToast", "SettingsPanel", "SettingsTutorials", "QuickKeybind", "ColorPicker",
     "ChatConfig", "TextToSpeech", "ChatTabs", "CombatLog", "AddonList", "ScriptErrors", "Splash", "EventTrace",
     "ChromieTime", "Alerts", "Errors", "ChatSystem", "ChatInput", "BossBanner", "Cinematic", "Subtitles",
     "CoinPickup", "CombatFeedback", "EquipmentFlyout",

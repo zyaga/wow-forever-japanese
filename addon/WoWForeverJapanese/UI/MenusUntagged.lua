@@ -1,6 +1,6 @@
 -- UI/MenusUntagged.lua: the dropdown menus whose generator sets no tag (ADR-033): the Options window's
--- dropdowns (Settings.InitDropdown, blizzard_settings_shared/blizzard_settings.lua:563–581) and Edit Mode's setting
--- dropdowns (EditModeSettingDropdownMixin:SetupSetting, blizzard_editmode/shared/editmodetemplates.lua:22–53).
+-- dropdowns (Settings.InitDropdown, blizzard_settings_shared/blizzard_settings.lua:563–581). Edit Mode's setting
+-- dropdowns are never reached: Edit Mode stays as the client writes it (ADR-069).
 -- Menu.ModifyMenu only reaches a tagged description (SecureModifyMenu returns on no tag, blizzard_menu/menu.lua:
 -- 2751–2760), so these are reached through the dropdown button itself: OpenMenu always regenerates (GenerateMenu
 -- populates a new root description, then RegisterMenu(rootDescription) stores it), and only then asks the manager to
@@ -11,9 +11,8 @@
 -- in English, which would need a second layout pass: not used.
 -- The dropdowns are found as the client sets them up: Settings.InitDropdown is called through the Settings table
 -- (blizzard_settingcontrols.lua:903, 1621; blizzard_settingsdefinitions_shared/graphics.lua:315), so a post-hook on
--- it sees every one; Edit Mode's rows come from the settings dialog's pool after login, each copying the mixin's
--- (hooked) SetupSetting when it is made. Each menu matches only its window's keys (Menus.UNTAGGED): a font, a
--- locale or a layout name is no key and stays English (names stay in English).
+-- it sees every one. Each menu matches only its window's keys (Menus.UNTAGGED): a font or a locale name is no key and
+-- stays English (names stay in English).
 -- Untagged *context* menus: MenuUtil.CreateContextMenu builds the root description, calls
 -- Menu.PopulateDescription (the generator, then SecureModifyMenu, which returns at once on no tag) and only then
 -- opens the menu (blizzard_menu/menuutil.lua:151–161; menu.lua:2751–2765); it looks the field up at call time, so a
@@ -65,7 +64,6 @@ local TEXT_ON_ME_TOOLTIPS = {
 WFJ.Menus.UNTAGGED = {
   SETTINGS_DROPDOWN = { source = "blizzard_settings.lua:563", keys = SETTINGS_MENU_KEYS,
     tooltips = TEXT_ON_ME_TOOLTIPS },
-  EDIT_MODE_DROPDOWN = { source = "editmodetemplates.lua:22", keys = SETTINGS_KEYS.editmode or {} },
   CONTEXT_LFG_SEARCH_ENTRY = { source = "blizzard_lfgvanilla_browse.lua:1014", titleIsName = true,
     keys = { "SEND_MESSAGE", "GROUP_INVITE", "LFG_LIST_REPORT_GROUP_FOR", "REPORT_GROUP_FINDER_ADVERTISEMENT" } },
   CONTEXT_CUSTOMER_ORDER_RECIPE = { source = "blizzard_professionscustomerordersbrowseorders.lua:142",
@@ -126,10 +124,9 @@ end
 
 local hooked = false
 
--- Called by Main after Menus.init. → the number of setup functions hooked (0–3)
+-- Called by Main after Menus.init. → the number of setup functions hooked (0–2)
 function MenusUntagged.init()
   Compat.declare(DECLARE, "settings", { "Settings" })
-  Compat.declare(DECLARE, "editMode", { "EditModeSettingDropdownMixin" })
   Compat.declare(DECLARE, "menu", { "Menu" })
   Compat.declare(DECLARE, "menuUtil", { "MenuUtil" })
   Compat.declare(DECLARE, "reportGroup", { "LFG_LIST_REPORT_GROUP_FOR" })
@@ -146,13 +143,6 @@ function MenusUntagged.init()
   if type(settings) == "table" and type(settings.InitDropdown) == "function" then
     hooksecurefunc(settings, "InitDropdown", function(dropdown)
       MenusUntagged.hookDropdown(dropdown, "SETTINGS_DROPDOWN")
-    end)
-    n = n + 1
-  end
-  local editMode = Compat.get(DECLARE, "editMode")
-  if type(editMode) == "table" and type(editMode.SetupSetting) == "function" then
-    hooksecurefunc(editMode, "SetupSetting", function(row)
-      MenusUntagged.hookDropdown(type(row) == "table" and row.Dropdown or nil, "EDIT_MODE_DROPDOWN")
     end)
     n = n + 1
   end

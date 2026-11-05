@@ -1,4 +1,4 @@
--- UI/VoiceQuestLog.lua: the quest log's play / pause button and the remembered speaker (ADR-063).
+-- UI/VoiceQuestLog.lua: the quest log's play / pause button and the remembered speaker (ADR-069).
 --   * The quest log (the world map's quest pane) shows a quest's text but plays nothing by itself (opening the log is
 --     browsing). A play / pause button at the right end of the details' top bar plays that quest's offer as the pane
 --     shows it, through UI/VoicePlayer like any line a player asks for. [verified: forever 1.60.1.70685

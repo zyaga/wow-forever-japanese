@@ -1,5 +1,5 @@
 """Surfaces the addon leaves as the client writes them because its text or initializer would land on a path that ends
-in a protected call (ADR-058, ADR-063). Edit Mode lays out its windows by measuring their text and then moves the
+in a protected call (ADR-058, ADR-069). Edit Mode lays out its windows by measuring their text and then moves the
 action bars; a unit right-click menu checks each entry's IsEnabled (CheckInteractDistance, protected in combat) in the
 same pass as the element initializers. No addon source may reach either. UI/TaintWatch only reads (issecurevariable),
 so its scan roots may name Edit Mode."""

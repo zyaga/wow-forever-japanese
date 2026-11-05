@@ -8,7 +8,7 @@ local M = require("tests.lua.spec.menu_stub")
 -- the crafting-orders recipe list's (…customerordersrecipelist.lua:96–97; …browseorders.lua:139–155).
 local FILES = {}
 for _, f in ipairs(H.UI_FILES) do FILES[#FILES + 1] = f end
-for _, f in ipairs({ "UI/SettingsKeys.lua", "UI/MenusUnit.lua", "UI/Menus.lua", "UI/MenusTags.lua",
+for _, f in ipairs({ "UI/SettingsKeys.lua", "UI/Menus.lua", "UI/MenusTags.lua",
   "UI/MenusUntagged.lua" }) do FILES[#FILES + 1] = f end
 
 local UI = {
@@ -49,7 +49,7 @@ describe("UI/MenusUntagged: untagged context menus", function()
     WFJ = H.loadChunks(FILES)
     H.uiSetup(WFJ, UI)
     WFJ.Menus.init()
-    assert.are.equal(1, WFJ.MenusUntagged.init()) -- the PopulateDescription hook (no Settings / Edit Mode here)
+    assert.are.equal(1, WFJ.MenusUntagged.init()) -- the PopulateDescription hook (no Settings here)
   end)
 
   after_each(function() H.uiTeardown(); _G.Menu, _G.MenuUtil = nil, nil end)

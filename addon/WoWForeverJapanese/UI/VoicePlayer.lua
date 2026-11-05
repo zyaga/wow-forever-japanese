@@ -1,5 +1,5 @@
 -- UI/VoicePlayer.lua: plays the voice pack's line for a line the quest, gossip or book window just showed in
--- Japanese (ADR-061, ADR-062, ADR-063). Core/Voice decides which file; this file owns every sound and client-setting
+-- Japanese (ADR-061, ADR-062, ADR-069). Core/Voice decides which file; this file owns every sound and client-setting
 -- call; Core/VoiceQueue holds the order; UI/VoicePanel draws what `state()` reports (State "voiceQueue" on change).
 --   * Start: State "lineShown" (fired by UI/Render after a client write, never on a refresh). With the voice panel on,
 --     a line that starts while one plays waits its turn (never twice for one key) and plays when that one ends; with

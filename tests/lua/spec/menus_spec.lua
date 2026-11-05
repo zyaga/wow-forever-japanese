@@ -245,13 +245,12 @@ describe("UI/Menus: menu entries", function()
       assert.is_nil(callbacks["MENU_UNIT_" .. which], which)
     end
     for tag in pairs(WFJ.Menus.TAGS) do assert.is_nil(tag:find("^MENU_UNIT_"), tag) end
-    local root, frames = generate("MENU_UNIT_PLAYER", function(r)
-      r:CreateButton("Duel")
-      r:CreateButton(UI.DUEL[1])
-      r:CreateButton(UI.SET_FOCUS[1])
-    end, { name = "Duel" })
-    assert.are.equal(UI.DUEL[1], frames[root.children[2]].fontString:GetText())
-    assert.are.equal(UI.SET_FOCUS[1], frames[root.children[3]].fontString:GetText())
+    local root = element(nil)
+    root:CreateButton(UI.DUEL[1])
+    root:CreateButton(UI.SET_FOCUS[1])
+    local frames = open(root) -- built with no callback of ours, as the client does for a unit menu
+    assert.are.equal(UI.DUEL[1], frames[root.children[1]].fontString:GetText())
+    assert.are.equal(UI.SET_FOCUS[1], frames[root.children[2]].fontString:GetText())
     assert.is_function(callbacks["MENU_CHAT_FRAME_CHANNEL"]) -- the other menus keep theirs
   end)
 
@@ -362,7 +361,7 @@ describe("UI/Menus: menu entries", function()
       assert.are.equal("初期設定に戻す", frames[root.children[2]].fontString:GetText())
     end)
 
-  it("the untagged Options and Edit Mode dropdowns, through their RegisterMenu", function()
+  it("the untagged Options dropdowns through their RegisterMenu; Edit Mode's dropdowns are never reached", function()
     local function dropdown()
       local d = {}
       function d:RegisterMenu(root) self.menuDescription = root end
@@ -374,7 +373,7 @@ describe("UI/Menus: menu entries", function()
     _G.EditModeSettingDropdownMixin = { SetupSetting = function() end }
     WFJ.Compat.init(function(name) return _G[name] end)
     WFJ.Menus.init()
-    assert.are.equal(2, WFJ.MenusUntagged.init())
+    assert.are.equal(1, WFJ.MenusUntagged.init())
     local options = dropdown()
     settings.InitDropdown(options)
     _G.EditModeSettingDropdownMixin.SetupSetting(editRow)
@@ -390,7 +389,7 @@ describe("UI/Menus: menu entries", function()
     local edit = element(nil)
     edit:CreateButton(UI.HIGH[1])
     editRow.Dropdown:RegisterMenu(edit)
-    assert.are.equal("高", open(edit)[edit.children[1]].fontString:GetText())
+    assert.are.equal(UI.HIGH[1], open(edit)[edit.children[1]].fontString:GetText()) -- ADR-069
     -- hooked once per dropdown, however often the client sets it up
     assert.is_false(WFJ.MenusUntagged.hookDropdown(options, "SETTINGS_DROPDOWN"))
     _G.Settings, _G.EditModeSettingDropdownMixin = nil, nil

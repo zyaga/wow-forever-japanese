@@ -22,8 +22,6 @@ Menus.SURFACE = SURFACE
 
 local Compat = WFJ.Compat
 
--- the unit right-click menus' keys are data in UI/MenusUnit.lua, so this file stays one mechanism
-local UNIT = WFJ.MenusUnit
 -- the chat shortcut entries (the slash command beside each is its own FontString, untouched; emote and language
 -- submenu entries are slash commands and language names, never listed)
 local CHAT_SHORTCUT_KEYS = { "SAY_MESSAGE", "PARTY_MESSAGE", "RAID_MESSAGE", "INSTANCE_CHAT_MESSAGE",
@@ -163,14 +161,6 @@ Menus.TAGS = {
   MENU_CHAT_SHORTCUTS = { source = "mainline/chatframemenubutton.lua:56", keys = CHAT_SHORTCUT_KEYS },
   MENU_CHAT_FRAME_CHANNEL = { source = "shared/chatframeutil.lua:712", titleIsName = true,
     keys = { "CHAT_CHANNEL_DROP_DOWN_OPEN_COMMUNITIES_FRAME", "MOVE_TO_NEW_WINDOW" } },
-  -- Edit Mode's layout menu: a layout's name (preset or the player's) is no key; the new-layout
-  -- entry carries an atlas in front; the copy / rename / delete hovers (editmodemanager.lua:1337–1467;
-  -- editmodelayoutmanagerutil.lua:3–33)
-  MENU_EDIT_MODE_MANAGER = { source = "editmodemanager.lua:1355", keys = { "HUD_EDIT_MODE_NEW_LAYOUT",
-    "HUD_EDIT_MODE_NEW_LAYOUT_DISABLED", "HUD_EDIT_MODE_IMPORT_LAYOUT", "HUD_EDIT_MODE_SHARE_LAYOUT",
-    "HUD_EDIT_MODE_COPY_TO_CLIPBOARD", "HUD_EDIT_MODE_COPY_LAYOUT", "HUD_EDIT_MODE_RENAME_LAYOUT" },
-    tooltips = { "HUD_EDIT_MODE_COPY_LAYOUT", "HUD_EDIT_MODE_ERROR_COPY", "HUD_EDIT_MODE_ERROR_COPY_MAX_LAYOUTS",
-      "HUD_EDIT_MODE_RENAME_OR_COPY_LAYOUT", "HUD_EDIT_MODE_DELETE_LAYOUT" } },
   -- the AddOn list: the character filter, and an entry's context menu whose title is the addon's title
   -- (blizzard_addonlist/addonlist.lua:643–660, 938–965)
   MENU_ADDON_LIST = { source = "addonlist.lua:643", keys = { "ALL" } },
@@ -206,8 +196,6 @@ Menus.TAGS = {
 -- The untagged menus are UI/MenusUntagged's: Menus.UNTAGGED is set there (loaded next).
 Menus.UNTAGGED = {}
 local function specOf(tag) return Menus.TAGS[tag] or Menus.UNTAGGED[tag] end
--- the unit right-click menus, one tag per `which` (UI/MenusUnit; the other windows' tags: UI/MenusTags, loaded next)
-for tag, spec in pairs(UNIT.tags()) do Menus.TAGS[tag] = spec end
 
 -- The element frame's text widget: frame.fontString for a button, checkbox, radio or title.
 -- (through Labels.menuText: the compositor forbids SetFont on it)

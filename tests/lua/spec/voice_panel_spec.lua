@@ -1,4 +1,4 @@
--- The voice panel (ADR-063): the queue and the player with the panel on, the panel itself, its text, the remembered
+-- The voice panel (ADR-069): the queue and the player with the panel on, the panel itself, its text, the remembered
 -- speaker and the quest log's button. The player with the panel Off is voice_spec.lua.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")

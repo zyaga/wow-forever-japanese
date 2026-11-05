@@ -51,7 +51,7 @@ local ORDER = {
   { "groupfinder", "GroupFinder" }, { "channels", "Channels" }, { "quickjoin", "QuickJoin" }, { "recentallies",
   "RecentAllies" }, { "recruitafriend", "RecruitAFriend" }, { "reportframe", "ReportFrame" }, { "helpframe",
   "HelpFrame" }, { "statusnotices", "StatusNotices" }, { "bnettoast", "BNetToast" }, { "settingspanel",
-  "SettingsPanel" }, { "settingstutorials", "SettingsTutorials" }, { "editmode", "EditMode" }, { "quickkeybind",
+  "SettingsPanel" }, { "settingstutorials", "SettingsTutorials" }, { "quickkeybind",
   "QuickKeybind" }, { "colorpicker", "ColorPicker" }, { "chatconfig", "ChatConfig" }, { "texttospeech",
   "TextToSpeech" }, { "chattabs", "ChatTabs" }, { "combatlog", "CombatLog" }, { "addonlist", "AddonList" },
   { "scripterrors", "ScriptErrors" }, { "splash", "Splash" }, { "eventtrace", "EventTrace" }, { "chromietime",

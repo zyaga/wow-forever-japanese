@@ -14,7 +14,7 @@ local ADDON = "Blizzard_GroupFinder_VanillaStyle"
 -- the who filter dropdown goes through UI/Menus + UI/MenusUntagged (loaded in their own describe)
 local MENU_FILES = {}
 for i, f in ipairs(FILES) do MENU_FILES[i] = f end
-for _, f in ipairs({ "UI/SettingsKeys.lua", "UI/MenusUnit.lua", "UI/Menus.lua", "UI/MenusTags.lua",
+for _, f in ipairs({ "UI/SettingsKeys.lua", "UI/Menus.lua", "UI/MenusTags.lua",
   "UI/MenusUntagged.lua" }) do MENU_FILES[#MENU_FILES + 1] = f end
 
 local UI = {

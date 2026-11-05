@@ -28,21 +28,16 @@ def _block(text: str, start: str, end: str) -> str:
 
 def _menu_keys(root: Path) -> set[str]:
     """Every key UI/Menus.lua names: each tag's `keys = { … }` / `tooltips = { … }` and the key lists
-    declared before TAGS and shared by several tags (CHAT_SHORTCUT_KEYS, WORLD_MAP_FILTERS), and the unit menus'
-    lists in UI/MenusUnit.lua (KEYS, TOOLTIPS); the tag data in UI/MenusTags.lua and the per-`which` lists in
-    MenusUnit.WHICH (plain `{ … }` lists inside WHICH); the untagged menus' specs in UI/MenusUntagged.lua."""
+    declared before TAGS and shared by several tags (CHAT_SHORTCUT_KEYS, WORLD_MAP_FILTERS); the tag data in
+    UI/MenusTags.lua; the untagged menus' specs in UI/MenusUntagged.lua. The unit right-click menus get no entries
+    (ADR-069)."""
     text = (root / ADDON / "UI/Menus.lua").read_text(encoding="utf-8")
     body = "local CHAT_SHORTCUT_KEYS = {" + _block(text, "local CHAT_SHORTCUT_KEYS = {", "\n}\n")
-    unit = (root / ADDON / "UI/MenusUnit.lua").read_text(encoding="utf-8")
-    body += unit + (root / ADDON / "UI/MenusTags.lua").read_text(encoding="utf-8")
+    body += (root / ADDON / "UI/MenusTags.lua").read_text(encoding="utf-8")
     body += (root / ADDON / "UI/MenusUntagged.lua").read_text(encoding="utf-8")  # the untagged menus' specs
     keys: set[str] = set()
-    if "WHICH" in unit:
-        which = unit[unit.index("WHICH"):].split("function WFJ.MenusUnit.tags", 1)[0]  # the lists, not the builder
-        keys |= set(re.findall(r'"([A-Z][A-Z0-9_]*)"', which))
-    # a list may open with the unit menus' shared raid target run (raidTargetsThen), whose own list is `out = {…}`
-    for m in re.finditer(r"\b(?:keys|tooltips|KEYS|TOOLTIPS|CHAT_SHORTCUT_KEYS|WORLD_MAP_FILTERS|out)\s*=\s*"
-                         r"(?:raidTargetsThen\()?\{([^}]*)\}", body):
+    for m in re.finditer(r"\b(?:keys|tooltips|KEYS|TOOLTIPS|CHAT_SHORTCUT_KEYS|WORLD_MAP_FILTERS)\s*=\s*\{([^}]*)\}",
+                         body):
         keys |= set(re.findall(r'"([A-Z][A-Z0-9_]*)"', m.group(1)))
     return keys
 

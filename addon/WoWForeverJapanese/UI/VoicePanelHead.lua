@@ -1,4 +1,4 @@
--- UI/VoicePanelHead.lua: the voice panel's head (ADR-063): the speaking NPC's 3D model, its portrait ring or frame,
+-- UI/VoicePanelHead.lua: the voice panel's head (ADR-069): the speaking NPC's 3D model, its portrait ring or frame,
 -- loading it, and its talk animation. UI/VoicePanel owns the panel and calls these with the head it built.
 --   Head.build(parent) → head · Head.applyLook(head, look, parent) · Head.load(head, item, wanted, onShown)
 --   Head.setShown(head, shown) · Head.setTalking(head, talking) · Head.reset(head)

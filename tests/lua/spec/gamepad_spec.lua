@@ -261,7 +261,7 @@ describe("the gamepad \"More Actions\" menu is the tagged MORE_CONTEXT_ACTIONS m
     Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
     local files = {}
     for i, f in ipairs(H.UI_FILES) do files[i] = f end
-    for _, f in ipairs({ "UI/MenusUnit.lua", "UI/Gamepad.lua", "UI/Menus.lua", "UI/MenusTags.lua" }) do
+    for _, f in ipairs({ "UI/Gamepad.lua", "UI/Menus.lua", "UI/MenusTags.lua" }) do
       files[#files + 1] = f
     end
     local WFJ = H.loadChunks(files)

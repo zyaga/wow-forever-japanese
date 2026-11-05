@@ -31,7 +31,7 @@ local TAIL = {
   -- the rest of the Communities window
   "UI/CommunitiesKit.lua", "UI/CommunitiesFrame.lua", "UI/CommunitiesGuild.lua", "UI/ClubFinder.lua",
   "UI/ClubFinderApplicants.lua", "UI/CommunitiesDialogs.lua",
-  "UI/Raid.lua", "UI/MicroMenu.lua", "UI/MenusUnit.lua", "UI/Gamepad.lua", "UI/Menus.lua",
+  "UI/Raid.lua", "UI/MicroMenu.lua", "UI/Gamepad.lua", "UI/Menus.lua",
   "UI/MenusTags.lua", "UI/MenusUntagged.lua", "UI/HelpTips.lua",
   -- Gamepad loads before MenusUntagged, which reads its menu keys at load
   "UI/QuestFrame.lua", "UI/QuestMap.lua", "UI/TimeLine.lua", "UI/Tooltip.lua",
@@ -54,7 +54,7 @@ local TAIL = {
   "UI/PvPMatch.lua", "UI/QueueStatus.lua", "UI/RaidManager.lua", "UI/UnitFrames.lua", "UI/GroupFinder.lua",
   "UI/Channels.lua", "UI/QuickJoin.lua", "UI/RecentAllies.lua", "UI/RecruitAFriend.lua", "UI/ReportFrame.lua",
   "UI/HelpFrame.lua", "UI/StatusNotices.lua", "UI/BNetToast.lua", "UI/SettingsPanel.lua",
-  "UI/SettingsTutorials.lua", "UI/EditMode.lua", "UI/QuickKeybind.lua", "UI/ColorPicker.lua", "UI/ChatConfig.lua",
+  "UI/SettingsTutorials.lua", "UI/QuickKeybind.lua", "UI/ColorPicker.lua", "UI/ChatConfig.lua",
   "UI/TextToSpeech.lua", "UI/ChatTabs.lua", "UI/CombatLog.lua", "UI/AddonList.lua", "UI/ScriptErrors.lua",
   "UI/Splash.lua", "UI/EventTrace.lua", "UI/ChromieTime.lua", "UI/Alerts.lua", "UI/Errors.lua", "UI/ChatSystem.lua",
   "UI/ChatInput.lua",
@@ -93,7 +93,7 @@ local WINDOW_NAMESPACES = { "character", "reputation", "skills", "spellbook", "t
   "gamepad", "hudlabels", "help",
   "help.hudtips", "help.minimap", "pvpmatch", "queuestatus", "raidmanager", "unitframes", "groupfinder",
   "channels", "quickjoin", "recentallies", "recruitafriend", "reportframe", "helpframe", "statusnotices",
-  "bnettoast", "settingspanel", "settingstutorials", "editmode", "quickkeybind", "colorpicker", "chatconfig",
+  "bnettoast", "settingspanel", "settingstutorials", "quickkeybind", "colorpicker", "chatconfig",
   "texttospeech", "chattabs", "combatlog", "addonlist", "scripterrors", "splash", "eventtrace", "chromietime",
   "alerts", "errors", "chatsystem", "speech", "bossbanner", "cinematic", "coinpickup", "combatfeedback",
   "equipmentflyout",

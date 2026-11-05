@@ -6,7 +6,7 @@ local M = require("tests.lua.spec.menu_stub")
 -- the element utility-button hovers, and the damage meter's session entries ("Combat 3 [01:23]").
 local FILES = {}
 for _, f in ipairs(H.UI_FILES) do FILES[#FILES + 1] = f end
-for _, f in ipairs({ "UI/SettingsKeys.lua", "UI/MenusUnit.lua", "UI/Menus.lua", "UI/MenusTags.lua",
+for _, f in ipairs({ "UI/SettingsKeys.lua", "UI/Menus.lua", "UI/MenusTags.lua",
   "UI/MenusUntagged.lua", "UI/DamageMeter.lua" }) do FILES[#FILES + 1] = f end
 
 local FAV, USABLE = "お気に入りに設定", "使用可能のみ"
@@ -156,7 +156,7 @@ describe("UI/MenusTags: every other Forever window's menus", function()
       assert.is_function(callbacks[tag], tag)
       n = n + 1
     end
-    assert.is_true(n >= 49 + 34) -- the Menus / MenusUnit tags (34 incl. the 8 level-1 unit menus) and MenusTags'
+    assert.is_true(n >= 48) -- the Menus tags and MenusTags' (no unit menu: ADR-069)
   end)
 
   it("one entry per new tag renders Japanese; a name and an unlisted word beside it stay byte-identical", function()
@@ -225,17 +225,16 @@ describe("UI/MenusTags: every other Forever window's menus", function()
 
   -- MenuTemplates.SetUtilityButtonTooltipText hooks the button's OnEnter to GameTooltip_SetTitle with the button
   -- as owner (menutemplates.lua:645–649; menuutil.lua:114–130)
-  it("an element's utility buttons show the tag's tooltip keys (Edit Mode's shipped keys, a cooldown layout)",
+  it("an element's utility buttons show the tag's tooltip keys (a cooldown layout, an alert entry)",
     function()
       local gear, cancel
       local attach = function(frame)
         gear, cancel = frame:AttachButton(), frame:AttachButton()
       end
-      local root, frames = generate("MENU_EDIT_MODE_MANAGER", function(r) r:CreateButton("Modern", attach) end)
-      assert.are.equal("Modern", frames[root.children[1]].fontString:GetText())
-      assert.are.equal("レイアウトを削除", M.hover(cancel, UI.HUD_EDIT_MODE_DELETE_LAYOUT[1]))
-      assert.are.equal("レイアウトの名前変更／コピー", M.hover(gear, UI.HUD_EDIT_MODE_RENAME_OR_COPY_LAYOUT[1]))
-      generate("MENU_COOLDOWN_SETTINGS_LAYOUTS", function(r) r:CreateButton("My Layout", attach) end)
+      local root, frames = generate("MENU_COOLDOWN_SETTINGS_LAYOUTS", function(r)
+        r:CreateButton("My Layout", attach)
+      end)
+      assert.are.equal("My Layout", frames[root.children[1]].fontString:GetText())
       assert.are.equal("レイアウトを削除", M.hover(cancel, UI.COOLDOWN_VIEWER_SETTINGS_DELETE_LAYOUT[1]))
       -- an alert entry's play-sample button (cooldownviewersettingsalerts.lua:193–205)
       generate("MENU_COOLDOWN_SETTINGS_ITEM", function(r) r:CreateButton("Bloodlust", attach) end)
@@ -273,8 +272,7 @@ describe("UI/MenusTags: every other Forever window's menus", function()
     local tags = WFJ.Menus.TAGS
     assert.is_true(has(tags.MENU_QUEUE_STATUS_FRAME.keys, "LEAVE_ARENA"))
     assert.is_true(has(tags.MENU_QUEUE_STATUS_FRAME.keys, "UNLIST_ME"))
-    assert.is_true(has(tags.MENU_EDIT_MODE_MANAGER.keys, "HUD_EDIT_MODE_CHARACTER_LAYOUTS_HEADER"))
-    assert.is_true(has(tags.MENU_EDIT_MODE_MANAGER.tooltips, "HUD_EDIT_MODE_DELETE_LAYOUT"))
+    assert.is_nil(tags.MENU_EDIT_MODE_MANAGER) -- Edit Mode stays as the client writes it (ADR-069)
     assert.is_true(has(tags.MENU_WORLD_MAP_TRACKING.tooltips, "WORLD_QUESTS_FILTER_DESCRIPTION"))
     assert.is_true(has(tags.MENU_WORLD_MAP_TRACKING.keys, "SHOW_QUEST_LEVELS"))
   end)

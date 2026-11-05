@@ -1,4 +1,4 @@
--- UI/VoicePanel.lua: the voice panel (ADR-063). While a voiced line plays it shows the speaker's head
+-- UI/VoicePanel.lua: the voice panel (ADR-069). While a voiced line plays it shows the speaker's head
 -- (UI/VoicePanelHead), the NPC's name and title as the client showed them, and the line's Japanese a sentence at a
 -- time in step with the audio, with word cards (UI/VoicePanelText); the lines waiting their turn, each one clickable;
 -- and pause / resume, play again, whole text and close.

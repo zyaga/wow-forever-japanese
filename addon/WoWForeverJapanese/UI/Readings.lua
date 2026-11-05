@@ -47,7 +47,7 @@ View.NON_WINDOW = {
   alerts = true, ["auctionhouse.token"] = true, bnettoast = true, bossbanner = true, castingbar = true,
   ["cinematic.subtitles"] = true, -- subtitle lines over a cinematic
   chattabs = true, combatfeedback = true, combattext = true, ["communities.benefits.rewardtip"] = true,
-  cooldownviewer = true, damagemeter = true, ["deathrecap.tip"] = true, ["editmode.selection"] = true,
+  cooldownviewer = true, damagemeter = true, ["deathrecap.tip"] = true,
   errors = true, gamepad = true,
   ghostframe = true, help = true, hudlabels = true, lossofcontrol = true, majorfactiontoast = true,
   npe = true, -- the new player tutorial's on-screen prompts

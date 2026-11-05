@@ -708,7 +708,7 @@ def test_every_non_window_surface_is_one_the_addon_registers(root):
 WINDOW_SURFACES = frozenset({
     # surfaces named through LabelTree.show, Kit.new and the `show` alias
     "communities.applicants", "communities.benefits", "communities.clubfinder", "communities.dialogs",
-    "communities.frame", "editmode", "editmode.dialog", "scripterrors", "splash",
+    "communities.frame", "scripterrors", "splash",
     "achievement", "addonlist", "addonlist.static", "auctionhouse", "bags", "bank", "bank.static",
     "barbershop", "battlefieldmap", "blackmarket", "blackmarket.static", "calendar", "channels", "character",
     "character.static", "character.title", "chatconfig", "chatconfig.static", "chromietime", "cinematic",
@@ -843,7 +843,7 @@ def test_tooltip_line_surfaces_are_never_windows(root):
     found, followed = _registered_surfaces(root)
     non_window = _non_window_rule(_non_window(root), followed)
     for s in ("quickjoin.tip", "deathrecap.tip", "communities.benefits.rewardtip", "auctionhouse.token", "gamepad",
-              "recruitafriend.activity", "editmode.selection"):
+              "recruitafriend.activity"):
         assert s in found and non_window(s), s
     assert non_window("questmap.trackerlabels")  # the tracker headers (a table-driven call, not resolvable here)
 
