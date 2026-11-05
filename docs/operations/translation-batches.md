@@ -342,6 +342,24 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
 
+### 1.60.1.70790, a player's collector send (2026-11-05)
+
+Not a re-pull: one player's collector send, issue #56, read with `make collector-intake ISSUE=56`. The send held 298
+entries from build 1.60.1.70790, addon 0.7.1, with the Permission box ticked. It was never checked on the issue: the
+repository had lost its `collector-send` label, so the form's label was dropped and `collector-check` never ran
+([ADR-070](../adr/070-issue-labels-come-from-a-list-in-the-repo.md)). A second intake run printed every line as
+unchanged. Item (7) and spell (1) lines that differ from the client's files kept the client's English. Nothing was
+rejected.
+
+| Type | Added | Replaced | Unchanged | Drafted |
+|---|---|---|---|---|
+| gossip | 196 (the shen'dorei starting area on Zephras Isle: the Windshapers and the High Order) | 0 | 9 | 193, with word lists. 3 still show the client's text with the missing marker: two are spoken in an elven language, one is a name alone. |
+| quest | 1 (93172 progress) | 13 progress and completion texts: forever-vo's wording replaced by the game's (93165, 93317, 93735, 93736, 94484, 94487, 94489, 94490, 94491, 95350, 97244, 97245, 97485) | 2 | 14, with word lists, redrafted with `REVERIFY=1`: 9 re-verified unchanged, 3 corrected, 2 new |
+| unit (NPC names) | 46 | 0 | 22 | none (names stay English) |
+
+Voice: `make voice-speakers` (70 new speaker rows; the 7 new speaking NPCs cast), then `make voice-generate`: 76
+files.
+
 ### 1.60.1.70532 → 1.60.1.70790, quests (2026-11-05)
 
 The quest half of the launch build, the day after launch. The tables half shipped first, read from the archive alone;

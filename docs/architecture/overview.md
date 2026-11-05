@@ -30,7 +30,7 @@ wow-forever-japanese/
 │                   english/  the same layout, English prose, never shipped
 ├── vectors/        hash, align and report vectors: canonical JSONL + a generated Lua twin each (`make vectors`)
 ├── tests/          python/  lua/spec/ (helpers, loader, wow_stub, *_spec)  fixtures/
-├── docs/  ·  .github/ (workflows pr, release, report-check; issue forms)
+├── docs/  ·  .github/ (workflows pr, release, report-check, collector-check, labels; issue forms; labels.tsv)
 ├── .pkgmeta  .luacheckrc  Makefile  README.md  LICENSE  ATTRIBUTION.md  CHANGELOG.md
 ```
 Main commands: `make data` (import → check → generate) · `make test` · `make validate` (the CI gate: schema, provenance, collisions, referential integrity, regenerate-and-diff, then luac) · `make coverage` · `make package` · `make release`. The full list is `make help`; the verbs are in [Pipeline](../systems/pipeline.md).

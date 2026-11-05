@@ -21,6 +21,8 @@ Turn a player's fix report (a GitHub issue labelled `translation-report`) into d
 | `report-ok` | `report-check` | the paste reads; the comment lists each fix as ready or skipped |
 | `report-broken` | `report-check` | the paste does not read (cut, edited, no report); the comment says why and asks for a fresh copy. The check runs again when the player edits the issue. |
 
+The labels are listed in `.github/labels.tsv`. The `labels` workflow creates any that are missing on every push to `main` and on demand, and never deletes one ([ADR-070](../adr/070-issue-labels-come-from-a-list-in-the-repo.md)). GitHub drops the form's label when the repository has no label of that name, and the check then never runs: run the labels workflow (**Actions → labels → Run workflow**), add `translation-report` to the issue, then edit the issue to start the check.
+
 Take only issues labelled `report-ok`. The workflow never judges a translation; that is the drafting step.
 
 ## Reports posted on Discord
@@ -77,4 +79,4 @@ Then reply in the Discord post with the issue link, and tag a forum post `On Git
 | Stop the workflow | Disable `report-check` from the Actions tab; no release needed. |
 
 ## Related
-- [Fix reports (system)](../systems/fix-reports.md) · [ADR-045](../adr/045-player-fix-reports.md) · [Translation batches](translation-batches.md) · [Coverage](coverage.md) · [Release](release.md)
+- [Fix reports (system)](../systems/fix-reports.md) · [ADR-045](../adr/045-player-fix-reports.md) · [ADR-070](../adr/070-issue-labels-come-from-a-list-in-the-repo.md) · [Translation batches](translation-batches.md) · [Coverage](coverage.md) · [Release](release.md)

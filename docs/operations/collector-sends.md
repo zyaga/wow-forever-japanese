@@ -15,9 +15,11 @@ Turn a player's collector send (a GitHub issue labelled `collector-send`) into E
 
 | Label | Set by | Meaning |
 |---|---|---|
-| `collector-send` | the issue form | a player's collector send; the `collector-check` workflow runs on it |
+| `collector-send` | the issue form, or the maintainer | a player's collector send; the `collector-check` workflow runs on it when the issue is opened or edited, and when the label is added to it |
 | `collector-ok` | `collector-check` | the send reads; the comment counts its entries by kind, its builds, the addon version, how it was sent and the entries left out by reason |
 | `collector-broken` | `collector-check` | the send does not read (cut, edited, nothing found, a format the pipeline does not read, or no line that can be imported); the comment says why and asks the player to copy it again with `/wfj collector send all`. The check runs again when the player edits the issue. |
+
+The labels are listed in `.github/labels.tsv`. The `labels` workflow creates any that are missing on every push to `main` and on demand, and never deletes one ([ADR-070](../adr/070-issue-labels-come-from-a-list-in-the-repo.md)). GitHub drops the form's label when the repository has no label of that name, and the check then never runs.
 
 Take only issues labelled `collector-ok`. The comment never shows the English: read it in the diff after the import.
 
@@ -42,7 +44,8 @@ Take only issues labelled `collector-ok`. The comment never shows the English: r
 
 | Problem | Fix |
 |---|---|
-| `collector-check` failed with no comment | An internal error (exit 3), not a broken send: read the run's log. Re-run the workflow, or edit the issue to trigger it. |
+| `collector-check` failed with no comment | An internal error (exit 3), not a broken send: read the run's log. Re-run the workflow, edit the issue, or remove the `collector-send` label and add it again. |
+| An issue from the form has no `collector-send` label, or the check never ran | The label was missing from the repository when the issue opened. Run the labels workflow (**Actions → labels → Run workflow**), then add `collector-send` to the issue: that runs the check. |
 | `collector intake: issue #N: the Permission box is not ticked; nothing imported` | Ask the player to tick it (editing the issue is enough). |
 | `collector intake: could not read issue #N` | `gh` failed (not signed in, no network, no such issue); the message says which. |
 | `collector intake: issue #N: the text is not complete …` | The string was cut or edited; the workflow will have labelled `collector-broken`. Wait for the player to edit the issue. |
@@ -52,4 +55,4 @@ Take only issues labelled `collector-ok`. The comment never shows the English: r
 | Stop the workflow | Disable `collector-check` from the Actions tab; no release needed. |
 
 ## Related
-- [Collector (system)](../systems/collector.md) · [ADR-056](../adr/056-collector-send-string.md) · [ADR-013](../adr/013-collector-english.md) · [Local setup → Collector dumps](local-setup.md#collector-dumps) · [Fix reports](fix-reports.md) · [Coverage](coverage.md)
+- [Collector (system)](../systems/collector.md) · [ADR-056](../adr/056-collector-send-string.md) · [ADR-070](../adr/070-issue-labels-come-from-a-list-in-the-repo.md) · [ADR-013](../adr/013-collector-english.md) · [Local setup → Collector dumps](local-setup.md#collector-dumps) · [Fix reports](fix-reports.md) · [Coverage](coverage.md)
