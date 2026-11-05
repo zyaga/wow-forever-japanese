@@ -32,10 +32,12 @@ TaintWatch.SNAPPED = { "MainActionBar", "StanceBar", "PetActionBar", "MainStatus
 TaintWatch.SCAN_ROOTS = { "StanceBar", "PetActionBar", "MainActionBar", "MultiBarBottomLeft", "MultiBarBottomRight",
   "MultiBarLeft", "MultiBarRight", "MultiBar5", "MultiBar6", "MultiBar7", "EditModeManagerFrame",
   "MainStatusTrackingBarContainer", "SecondaryStatusTrackingBarContainer", "MicroButtonAndBagsBar",
-  "ObjectiveTrackerFrame", "GameTooltip", "PlayerSpellsFrame", "QuestMapFrame", "WorldMapFrame", "QuestCache" }
+  "ObjectiveTrackerFrame", "GameTooltip", "PlayerSpellsFrame", "QuestMapFrame", "WorldMapFrame", "QuestCache",
+  "QuestScrollFrame" }
 -- roots walked deeper than SCAN_DEPTH: a tracker quest block is ObjectiveTrackerFrame.modules[i].usedBlocks[t][id], and
--- clicking its title opens the quest log through the block's fields (blizzard_questobjectivetracker.lua:60-68)
-TaintWatch.SCAN_DEEP = { ObjectiveTrackerFrame = 5, QuestMapFrame = 3, QuestCache = 3 }
+-- clicking its title opens the quest log through the block's fields (blizzard_questobjectivetracker.lua:60-68); the
+-- quest list's rows and layout live under QuestScrollFrame.Contents (questmapframe.lua:2159)
+TaintWatch.SCAN_DEEP = { ObjectiveTrackerFrame = 5, QuestMapFrame = 3, QuestCache = 3, QuestScrollFrame = 3 }
 -- events too frequent to say anything about a taint
 TaintWatch.NOISY = {}
 for _, e in ipairs({ "COMBAT_LOG_EVENT_UNFILTERED", "UNIT_POWER_FREQUENT", "UNIT_POWER_UPDATE", "UNIT_HEALTH",
