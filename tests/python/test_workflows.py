@@ -64,6 +64,10 @@ def test_every_workflow_defaults_to_a_read_only_token(root):
         assert "write-all" not in text and "read-all" not in text, name
 
 
+# workflow → its one job that may write issues
+ISSUE_WRITERS = {"report-check.yml": "check", "collector-check.yml": "check", "labels.yml": "sync"}
+
+
 def test_only_the_release_job_can_write(root):
     for name, text in _workflows(root).items():
         writes = re.findall(r"(?m)^ +[\w-]+: write\b.*$", text)
@@ -72,17 +76,12 @@ def test_only_the_release_job_can_write(root):
             jobs = [_block(text, "release", 2), _block(text, "voice", 2)]
             assert writes == [w for job in jobs for w in re.findall(r"(?m)^ +[\w-]+: write\b.*$", job)], name
             assert [w.split("#")[0].strip() for w in writes] == ["contents: write", "contents: write"]
-        elif name in ("report-check.yml", "collector-check.yml"):
-            # the fix-report check (ADR-045) and the collector-send check (ADR-056) comment on and label the
-            # issue they read; their one job may write issues, and nothing else
-            check_job = _block(text, "check", 2)
-            assert writes == [w for w in re.findall(r"(?m)^ +[\w-]+: write\b.*$", check_job)], name
-            assert [w.split("#")[0].strip() for w in writes] == ["issues: write"]
-        elif name == "labels.yml":
-            # the labels sync creates the labels in .github/labels.tsv; its one job may write issues (labels
-            # belong to issues), nothing else
-            sync_job = _block(text, "sync", 2)
-            assert writes == [w for w in re.findall(r"(?m)^ +[\w-]+: write\b.*$", sync_job)], name
+        elif name in ISSUE_WRITERS:
+            # the fix-report check (ADR-045) and the collector-send check (ADR-056) comment on and label the issue
+            # they read; the labels sync (ADR-070) creates the listed labels. Their one job may write issues, and
+            # nothing else
+            job = _block(text, ISSUE_WRITERS[name], 2)
+            assert writes == [w for w in re.findall(r"(?m)^ +[\w-]+: write\b.*$", job)], name
             assert [w.split("#")[0].strip() for w in writes] == ["issues: write"]
         else:
             assert writes == [], name

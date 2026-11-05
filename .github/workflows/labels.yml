@@ -27,6 +27,8 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false # gh uses GH_TOKEN; no token is left in .git/config
+          sparse-checkout: .github/labels.tsv # the one file the job reads
+          sparse-checkout-cone-mode: false
 
       - name: Create or update each listed label
         env:
