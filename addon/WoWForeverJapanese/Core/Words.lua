@@ -52,7 +52,9 @@ end
 
 function Words.everSaved() return list ~= nil and list.everSaved == true end
 
-function Words.entries() return list and list.entries or {} end
+function Words.entries()
+  return list and type(list.entries) == "table" and list.entries or {}
+end
 
 function Words.key(kind, id, lemma, word)
   local head = (lemma ~= nil and lemma ~= "") and lemma or word
@@ -168,7 +170,7 @@ local COLUMNS = { "Key", "Word", "Reading", "Dictionary form", "Its reading", "M
   "Quest ID", "Quest", "Saved" }
 
 local function bold(e)
-  local s = e.sentence or ""
+  local s = type(e.sentence) == "string" and e.sentence or ""
   local wf, wl = e.wf, e.wl
   if type(wf) ~= "number" or type(wl) ~= "number" or wf < 1 or wl > #s or wl < wf then return s end
   return s:sub(1, wf - 1) .. "<b>" .. s:sub(wf, wl) .. "</b>" .. s:sub(wl + 1)

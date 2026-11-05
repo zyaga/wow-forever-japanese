@@ -43,7 +43,7 @@ end
 
 -- ── Screenshot ──────────────────────────────────────────────────────────────
 
-local pending -- the save waiting for its screenshot: { entry, cover }
+local pending -- the save waiting for its screenshot: { entry, cover, at }
 local shotEvents
 
 local function onShot(_, event)
@@ -51,8 +51,8 @@ local function onShot(_, event)
   if not p then return end -- the player's own screenshot
   pending = nil
   if event == "SCREENSHOT_SUCCEEDED" then
-    local name = WFJ.Words.shotName(Compat.call("time"), Compat.call("GetCVar", "screenshotFormat"),
-      Compat.resolve("date"))
+    -- named after the time of the capture, not of this event (the file can take longer than a second to write)
+    local name = WFJ.Words.shotName(p.at, Compat.call("GetCVar", "screenshotFormat"), Compat.resolve("date"))
     WFJ.Words.setShot(p.entry, name)
   end
   say("words.saved", p.entry.word, WFJ.Words.count())
@@ -61,7 +61,10 @@ end
 
 -- Only the card hides: the gold tint stays, so the screenshot shows which word was saved. The chat line waits for
 -- the client's answer so it is not in the image.
+-- → true when a screenshot was asked for. Not while one is still pending (one name per answer from the client), and
+-- not on a client without the call.
 local function screenshot(cover, entry)
+  if pending or type(Compat.resolve("Screenshot")) ~= "function" then return false end
   if not shotEvents then
     shotEvents = CreateFrame("Frame")
     shotEvents:RegisterEvent("SCREENSHOT_SUCCEEDED")
@@ -69,8 +72,9 @@ local function screenshot(cover, entry)
     shotEvents:SetScript("OnEvent", onShot)
   end
   WFJ.ReadingView.hideCard(cover)
-  pending = { entry = entry, cover = cover }
+  pending = { entry = entry, cover = cover, at = Compat.call("time") }
   Compat.call("Screenshot")
+  return true
 end
 
 -- ── Save ────────────────────────────────────────────────────────────────────
@@ -92,9 +96,8 @@ function WordSave.save(cover, word)
   if status == "added" then
     WFJ.ReadingView.flash(cover)
     if WFJ.WordsWindow then WFJ.WordsWindow.refresh() end
-    if WFJ.Settings.get("words.screenshot") then
-      screenshot(cover, entry)
-    else
+    if WFJ.Options and WFJ.Options.refresh then pcall(WFJ.Options.refresh) end -- the Words page's count
+    if not (WFJ.Settings.get("words.screenshot") and screenshot(cover, entry)) then
       say("words.saved", entry.word, Words.count())
     end
   elseif status == "exists" then

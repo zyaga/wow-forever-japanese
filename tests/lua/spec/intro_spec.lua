@@ -151,12 +151,15 @@ describe("UI/IntroWindow, the window", function()
       { f.lead, T["intro.lead"].ja, T["intro.lead"].en }, -- the opening line has no bullet
       { f.hold, "・" .. T["intro.hold"].ja:format(key), "• " .. T["intro.hold"].en:format(key) },
       { f.readings, "・" .. T["intro.readings"].ja, "• " .. T["intro.readings"].en },
-      { f.words, "・" .. T["intro.words"].ja, "• " .. T["intro.words"].en },
+      { f.words, "・" .. T["intro.words"].ja:format("Ctrl+click"),
+        "• " .. T["intro.words"].en:format("Ctrl+click") },
       { f.minimap, "・" .. T["intro.minimap"].ja, "• " .. T["intro.minimap"].en },
     }
   end
   local function assertBoth(f)
     for _, row in ipairs(texts(f)) do
+      assert.is_table(row[1].ja.point, row[2]) -- placed by the layout, so it is drawn
+      assert.is_table(row[1].en.point, row[3])
       assert.are.equal(row[2], row[1].ja:GetText())
       assert.are.equal(row[3], row[1].en:GetText())
       assert.is_true(row[1].ja:IsShown())

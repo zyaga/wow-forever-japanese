@@ -80,7 +80,6 @@ local function build()
   fill(f.lead, en, ja, true)
   for _, fs in ipairs({ f.lead.ja, f.lead.en }) do fs:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3]) end
   fill(f.readings, Text.get("intro.readings"))
-  fill(f.words, Text.get("intro.words"))
   fill(f.minimap, Text.get("intro.minimap"))
   en, ja = Text.get("intro.voice")
   W.put(f.voice.ja, ja, 12)
@@ -113,7 +112,7 @@ end
 -- rule and the voice section (its title, one sentence in each language, the address to copy); then the button.
 -- Each line hangs from the one above it, so the gaps never depend on a measured height; only the window's does.
 local function layout(f, voice)
-  local rows = { f.lead, f.hold, f.readings, f.minimap }
+  local rows = f.lines
   local prev, used
   local function chain(region, gap, x)
     region:ClearAllPoints()
@@ -142,7 +141,7 @@ local function layout(f, voice)
 end
 
 local function refused(f)
-  for _, r in ipairs({ f.lead, f.hold, f.readings, f.minimap, f.voice }) do
+  for _, r in ipairs({ f.lead, f.hold, f.readings, f.words, f.minimap, f.voice }) do
     if WFJ.Font.isPending(r.ja) or WFJ.Font.isPending(r.en) then return true end
   end
   return false
@@ -170,6 +169,7 @@ end
 function IntroWindow.open(noVoice)
   local f = IntroWindow.frame or build()
   fill(f.hold, Text.get("intro.hold", KEY:format(WFJ.Options.keyName())))
+  fill(f.words, Text.withSaveClick("intro.words"))
   local voice = noVoice == true or not (WFJ.Voice and WFJ.Voice.hasPack())
   for _, region in ipairs({ f.voiceRule, f.voiceTitle, f.voice.ja, f.voice.en, f.box }) do W.setShown(region, voice) end
   layout(f, voice)

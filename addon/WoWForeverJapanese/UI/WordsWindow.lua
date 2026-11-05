@@ -34,12 +34,15 @@ end
 local function fill()
   local f = WordsWindow.frame
   local n = WFJ.Words.count()
-  if n == 0 then W.setPair(f.summary, Text.get("words.empty"))
+  if n == 0 then W.setPair(f.summary, Text.withSaveClick("words.empty"))
   else W.setPair(f.summary, Text.get("words.summary", n)) end
   local images = f.images:GetChecked() and true or false
   f.text:setText(WFJ.Words.export({ images = images }, date()))
   for _, w in ipairs(f.imageRows) do show(w, images) end
   show(f.copy, copyCall() ~= nil)
+  -- new text drops the selection; the box keeps its focus, so select it again for Cmd+C
+  local box = f.text.box
+  if box.HasFocus and box:HasFocus() then box:HighlightText() end
 end
 
 local function copy()
@@ -69,6 +72,13 @@ local function clear(button)
   else
     armedAt = now
     button:setLabel(Text.get("words.clearArm"))
+    -- the armed label goes back when the second click did not come in time
+    local after = WFJ.Compat.resolve("C_Timer.After")
+    if type(after) == "function" then
+      after(ARM_SECONDS, function()
+        if armedAt == now then armedAt = nil; button:setLabel(Text.get("words.clear")) end
+      end)
+    end
   end
 end
 

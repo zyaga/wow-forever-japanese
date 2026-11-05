@@ -381,10 +381,15 @@ function View.poll(cover)
   local down = View.buttonDown()
   if down and not cover.wasDown then
     cover.pressWord = cover.hovered
+    -- where the cover was at the press: a frame dragged by its text (the voice panel) moves the cover with it, and a
+    -- drag is not a click
+    cover.pressLeft, cover.pressBottom = cover:GetLeft(), cover:GetBottom()
   elseif not down and cover.wasDown then
     local w = cover.pressWord
     cover.pressWord = nil
-    if w and w == cover.hovered then save.release(cover, w) end
+    if w and w == cover.hovered and cover:GetLeft() == cover.pressLeft and cover:GetBottom() == cover.pressBottom then
+      save.release(cover, w)
+    end
   end
   cover.wasDown = down
 end
@@ -397,7 +402,7 @@ end
 -- A saved word's tint flashes once, then settles back.
 function View.flash(cover)
   for _, t in ipairs(cover.tints) do
-    if t.shown then t:SetColorTexture(TINT[1], TINT[2], TINT[3], 0.55) end
+    if t:IsShown() then t:SetColorTexture(TINT[1], TINT[2], TINT[3], 0.55) end
   end
   local after = Compat.resolve("C_Timer.After")
   if type(after) ~= "function" then return end

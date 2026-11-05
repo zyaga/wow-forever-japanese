@@ -405,7 +405,16 @@ local function helpRow(key)
     return W.labelHeight(W.label(page, Text.T[key].en, Text.T[key].ja, x, y, width), 24)
   end
 end
-A.aboutOpen, A.aboutReadings = helpRow("about.open"), helpRow("about.readings")
+A.aboutOpen = helpRow("about.open")
+
+-- Names the save click as it is set now, so it follows a change on the Words page.
+function A.aboutReadings(page, x, y, width)
+  local l = W.label(page, "", "", x, y, width)
+  local function fill() W.setPair(l, Text.withSaveClick("about.readings")) end
+  fill()
+  Options.refreshers[#Options.refreshers + 1] = fill
+  return W.labelHeight(l, 24)
+end
 
 function A.wordsExplain(page, x, y, width)
   local en, ja = Text.get("words.explain")

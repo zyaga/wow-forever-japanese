@@ -46,8 +46,8 @@ local function extendFrames(mouseCalls)
     function f.SetClampedToScreen() end
     function f:ClearAllPoints() self.point = nil end
     function f:SetShown(v) if v then self:Show() else self:Hide() end end
-    function f.GetLeft() return 100 end
-    function f.GetBottom() return 200 end
+    function f.GetLeft(x) return x.left or 100 end
+    function f.GetBottom(x) return x.bottom or 200 end
     function f.GetEffectiveScale() return 1 end
     local createTexture = f.CreateTexture
     function f:CreateTexture(...)
@@ -205,6 +205,18 @@ describe("Saving a word", function()
     assert.are.equal(1, WFJ.Words.count())
   end)
 
+  it("a press that ends after the cover moved (a frame dragged by its text) saves nothing", function()
+    Stub.keys.ctrl = true
+    pointAt("生き物"); frame()
+    Stub.mouse.LeftButton = true; frame()
+    cover.left = 140 -- the voice panel dragged; the word stays under the cursor
+    Stub.cursor = { Stub.cursor[1] + 40, Stub.cursor[2] }
+    frame()
+    Stub.mouse.LeftButton = false; frame()
+    Stub.keys.ctrl = false
+    assert.are.equal(0, WFJ.Words.count())
+  end)
+
   it("a second save of the same word says so and adds nothing", function()
     click("生き物", { ctrl = true })
     click("生き物", { ctrl = true })
@@ -266,6 +278,38 @@ describe("Saving a word", function()
         WFJ.Words.entries()[1].shot)
       assert.are.equal(1, #Stub.prints)
       assert.is_true(card:IsShown())
+    end)
+
+    it("the shot is named after the capture's time, not the event's", function()
+      S.set("words.screenshot", true)
+      local now = 1790000000
+      _G.time = function() return now end
+      click("生き物", { ctrl = true })
+      now = now + 2
+      Stub.fireAll("SCREENSHOT_SUCCEEDED")
+      assert.are.equal("WoWScrnShot_" .. os.date("!%m%d%y_%H%M%S", 1790000000) .. ".png",
+        WFJ.Words.entries()[1].shot)
+    end)
+
+    it("a save while a screenshot is pending takes none and prints at once; the first keeps its shot", function()
+      S.set("words.screenshot", true)
+      click("生き物", { ctrl = true })
+      click("狩り", { ctrl = true })
+      assert.are.equal(1, shots)
+      assert.are.equal(1, #Stub.prints)
+      Stub.fireAll("SCREENSHOT_SUCCEEDED")
+      local e = WFJ.Words.entries()
+      assert.is_string(e[1].shot)
+      assert.is_nil(e[2].shot)
+      assert.are.equal(2, #Stub.prints)
+    end)
+
+    it("a client without Screenshot saves and prints at once", function()
+      S.set("words.screenshot", true)
+      _G.Screenshot = nil
+      click("生き物", { ctrl = true })
+      assert.are.equal(1, #Stub.prints)
+      assert.is_true(WFJ.ReadingPopup.frame():IsShown())
     end)
 
     it("a failed screenshot leaves no name and still prints the line", function()

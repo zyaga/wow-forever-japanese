@@ -207,6 +207,17 @@ describe("Settings: the word list's save click", function()
     assert.are.same({}, moved)
   end)
 
+  it("an apply that fails during load still ends the load state, so a later move says so", function()
+    local real = WFJ.Modifier.setKey
+    WFJ.Modifier.setKey = function() error("boom") end
+    assert.has_error(function() S.load(nil, 1, {}) end)
+    WFJ.Modifier.setKey = real
+    assert.is_false(S.loading)
+    S.load(nil, 1, {})
+    S.set("modifier", "ctrl")
+    assert.are.same({ "shift" }, moved)
+  end)
+
   it("other choice settings are unaffected by the hook", function()
     S.load(nil, 1, {})
     assert.is_true(S.set("voice.panel.size", "strip"))

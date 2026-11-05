@@ -39,6 +39,7 @@ describe("the word list window", function()
   end)
 
   local function ja(key, ...) return select(2, WFJ.OptionsText.get(key, ...)) end
+  local function jaClick(key) return select(2, WFJ.OptionsText.withSaveClick(key)) end
   local function shown(w) return (w.frame or w):IsShown() end
 
   it("opens with the whole list as the export text, selected, and the copy instructions", function()
@@ -48,6 +49,7 @@ describe("the word list window", function()
     assert.is_true(f:IsShown())
     assert.are.equal(ja("words.title"), f.title:GetText())
     assert.are.equal(ja("words.summary", 2), f.summary.en:GetText())
+    assert.is_truthy(jaClick("words.empty"):find("Ctrl+click", 1, true))
     assert.are.equal(WFJ.Words.export({}, _G.date), f.text.value)
     assert.is_true(f.text.box.focused)
     assert.are.equal(ja("words.copyHint"), f.copyHint.en:GetText())
@@ -105,7 +107,7 @@ describe("the word list window", function()
     f.clear.scripts.OnClick(f.clear, "LeftButton")
     assert.are.equal(0, WFJ.Words.count())
     assert.are.equal(ja("words.cleared", 1), f.message.en:GetText())
-    assert.are.equal(ja("words.empty"), f.summary.en:GetText())
+    assert.are.equal(jaClick("words.empty"), f.summary.en:GetText())
   end)
 
   it("Clear all disarms after 5 seconds", function()
@@ -121,7 +123,7 @@ describe("the word list window", function()
 
   it("with no words it says how to save one", function()
     local f = WW.open()
-    assert.are.equal(ja("words.empty"), f.summary.en:GetText())
+    assert.are.equal(jaClick("words.empty"), f.summary.en:GetText())
   end)
 
   it("a list from a newer version can be copied but not changed", function()

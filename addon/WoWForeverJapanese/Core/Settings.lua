@@ -146,11 +146,14 @@ function Settings.load(saved, schema, migrations)
   d.build = { addon = WFJ.VERSION }
   db = d
   Settings.loading = true
-  for _, id in ipairs(order) do
-    local def = defs[id]
-    if def.apply then def.apply(Settings.get(id)) end
-  end
-  Settings.loading = false
+  local ok, err = pcall(function()
+    for _, id in ipairs(order) do
+      local def = defs[id]
+      if def.apply then def.apply(Settings.get(id)) end
+    end
+  end)
+  Settings.loading = false -- also after an apply that failed: a later move of the save click must still say so
+  if not ok then error(err, 0) end
   return d
 end
 

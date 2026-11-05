@@ -31,7 +31,7 @@ sequenceDiagram
 The save click is read by `UI/Readings` while the mouse is over a covered word and handed to `UI/WordSave`, which checks the modifiers and saves; the cover never takes the click ([Readings → Saving a word](readings.md#saving-a-word)). The setting `words.saveClick` picks it: `ctrl` (default), `shift`, `meta` (Cmd, Mac client only), `click` (no modifier) or `off`. It is never the reveal key's own modifier; changing the reveal key onto it moves it to the next free choice ([Settings → The save click and the reveal key](settings.md#the-save-click-and-the-reveal-key)).
 
 `Words.add(input, now)` returns:
-- `added`: a new entry. The tint flashes and chat prints `Saved <word> (N words)`, in English and Japanese on one line.
+- `added`: a new entry. The tint flashes and chat prints `Saved: <word> (N words)`, in English and Japanese on one line.
 - `exists`: an entry with the same key is already in the list; nothing changes. Chat prints `Already saved: <word>`.
 - `refused`: the list was saved by a newer addon version (below), or the input is incomplete. Chat prints that the list cannot be changed here.
 
@@ -108,7 +108,7 @@ The export holds the addon's own Japanese, readings and meanings, and the player
 
 ### Where to find it
 - **The word card** shows a grey hint, `Ctrl+click: save word ・ Ctrl+clickで単語を保存` (naming the chosen click), until the first save ever; nothing while the save click is `off`.
-- **The intro window** has a line: Ctrl+click a highlighted word to save it to your word list.
+- **The intro window** has a line: save a highlighted word to your word list with the save click (it names the click as set, as do the About page line and the word list window's empty state).
 - **The About page**'s readings line and `/wfj help` name the save click and `/wfj words`.
 - **The Words settings page** (単語帳): what the list is, the save click, the screenshot setting, how many words are saved, and the export button ([Settings → Settings pages](settings.md#settings-pages)).
 - **The minimap button**'s right-click menu: **Export words (N)**.
@@ -123,12 +123,13 @@ The export holds the addon's own Japanese, readings and meanings, and the player
 - `addon/WoWForeverJapanese/UI/MinimapButton.lua`, `UI/Slash.lua`, `UI/IntroWindow.lua`: the other ways in
 - `addon/WoWForeverJapanese/Core/Settings.lua`: `words.saveClick` (its `choiceHidden` and `check`), `words.screenshot`, the move on a reveal key change (a `revealKey` listener)
 - `addon/WoWForeverJapanese/Main.lua`: the `words` load step; `WoWForeverJapanese.toc`: `WFJ_Words` in `## SavedVariables`
-- `tests/lua/spec/words_spec.lua`, `tests/lua/spec/words_window_spec.lua`, `tests/lua/spec/readings_spec.lua`, `tests/lua/spec/settings_spec.lua`
+- `tests/lua/spec/words_spec.lua`, `tests/lua/spec/words_window_spec.lua`, `tests/lua/spec/words_click_spec.lua`, `tests/lua/spec/settings_spec.lua`
 
 ## Invariants
 - No English game text is stored or shown: the list holds the shipped Japanese, readings, meanings (a class or race card's English name is the meaning its card already shows), Japanese quest titles and source keys (a gossip or book key is a hash, not text). [Principle 3](../architecture/principles.md#3-japanese-by-default-english-one-key-away).
 - Entries are keyed by source and dictionary form, never by position. [Principle 5](../architecture/principles.md#5-every-translation-is-keyed-by-the-game).
-- The cover never takes clicks: the save click is read by polling, so every click, drag and wheel scroll reaches the frame it reached before.
+- The cover never takes clicks: the save click is read by polling, so every click, drag and wheel scroll reaches the frame it reached before. A press that ends after the cover moved (a window dragged by its text, the voice panel) is a drag, not a save.
+- One screenshot at a time: a save while one is still waiting for the client's answer takes none and prints at once. The file is named after the time of the capture, not of the answer.
 - A failed load never replaces the saved list, and a list from a newer version is never written.
 - The addon never reads the Screenshots folder and never writes a file of its own; the player moves the text and the images.
 
