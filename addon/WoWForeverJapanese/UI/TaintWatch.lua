@@ -32,7 +32,10 @@ TaintWatch.SNAPPED = { "MainActionBar", "StanceBar", "PetActionBar", "MainStatus
 TaintWatch.SCAN_ROOTS = { "StanceBar", "PetActionBar", "MainActionBar", "MultiBarBottomLeft", "MultiBarBottomRight",
   "MultiBarLeft", "MultiBarRight", "MultiBar5", "MultiBar6", "MultiBar7", "EditModeManagerFrame",
   "MainStatusTrackingBarContainer", "SecondaryStatusTrackingBarContainer", "MicroButtonAndBagsBar",
-  "ObjectiveTrackerFrame", "GameTooltip", "PlayerSpellsFrame" }
+  "ObjectiveTrackerFrame", "GameTooltip", "PlayerSpellsFrame", "QuestMapFrame", "WorldMapFrame", "QuestCache" }
+-- roots walked deeper than SCAN_DEPTH: a tracker quest block is ObjectiveTrackerFrame.modules[i].usedBlocks[t][id], and
+-- clicking its title opens the quest log through the block's fields (blizzard_questobjectivetracker.lua:60-68)
+TaintWatch.SCAN_DEEP = { ObjectiveTrackerFrame = 5, QuestMapFrame = 3, QuestCache = 3 }
 -- events too frequent to say anything about a taint
 TaintWatch.NOISY = {}
 for _, e in ipairs({ "COMBAT_LOG_EVENT_UNFILTERED", "UNIT_POWER_FREQUENT", "UNIT_POWER_UPDATE", "UNIT_HEALTH",
@@ -192,13 +195,15 @@ local function walk(t, label, depth, seen, fn)
   local n = 0
   local ok = pcall(function()
     for k, v in pairs(t) do
+      -- pools and module lists are arrays: their entries are walked, only named fields are checked
+      local sub = type(k) == "string" and label .. "." .. k or label .. "[" .. tostring(k) .. "]"
       if type(k) == "string" then
         n = n + 1
         local tainted, by = check(t, k)
-        if tainted then fn(label .. "." .. k, by) end
-        if depth > 0 and type(v) == "table" and k ~= "parent" then
-          n = n + walk(v, label .. "." .. k, depth - 1, seen, fn)
-        end
+        if tainted then fn(sub, by) end
+      end
+      if depth > 0 and type(v) == "table" and k ~= "parent" then
+        n = n + walk(v, sub, depth - 1, seen, fn)
       end
     end
   end)
@@ -230,7 +235,8 @@ end
 function TaintWatch.scan(reason)
   local hits, seen, checked = {}, {}, 0
   for _, name in ipairs(TaintWatch.SCAN_ROOTS) do
-    checked = checked + walk(C.resolve(name), name, TaintWatch.SCAN_DEPTH, seen, function(label, by)
+    local depth = TaintWatch.SCAN_DEEP[name] or TaintWatch.SCAN_DEPTH
+    checked = checked + walk(C.resolve(name), name, depth, seen, function(label, by)
       hits[#hits + 1] = label .. " (" .. tostring(by) .. ")"
     end)
   end
@@ -319,6 +325,16 @@ local function hookWriters()
     hook(tracker, "MarkDirty", function(self)
       TaintWatch.wrote("ObjectiveTrackerFrame.dirty", self, "dirty")
     end)
+  end
+  -- the quest log reads DetailsFrame.questID on its next refresh, on the way to the map's quest pins
+  -- (questmapframe.lua:915-919, 1044-1049); a tainted id there would carry into the pins' protected call
+  if hook(nil, "QuestMapFrame_ShowQuestDetails", function()
+    local q = C.resolve("QuestMapFrame")
+    if type(q) == "table" and type(q.DetailsFrame) == "table" then
+      TaintWatch.wrote("QuestMapFrame.DetailsFrame.questID", q.DetailsFrame, "questID")
+    end
+  end) then
+    n = n + 1
   end
   local LOD = WFJ.LoadOnDemand
   if type(LOD) == "table" and type(LOD.when) == "function" then

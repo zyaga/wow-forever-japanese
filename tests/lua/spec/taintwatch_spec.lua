@@ -116,6 +116,38 @@ describe("UI/TaintWatch", function()
     _G.WFJ_DB = nil
   end)
 
+  it("the scan reaches a tracker block, the quest log and the map, deeper than the bars", function()
+    local block = { name = "block", id = 1 }
+    _G.ObjectiveTrackerFrame = { modules = { { usedBlocks = { QuestBlock = { [1] = block } } } } }
+    _G.QuestMapFrame = { DetailsFrame = { questID = 93949 } }
+    taint.id = { t = block, by = "WoWForeverJapanese" }
+    taint.questID = { t = _G.QuestMapFrame.DetailsFrame, by = "WoWForeverJapanese" }
+    local fields = TW.scan("slash")
+    assert.are.equal(2, fields)
+    local scan = entriesOf("taint")[1].fields
+    assert.is_truthy(scan:find("QuestMapFrame.DetailsFrame.questID", 1, true))
+    assert.is_truthy(scan:find("%.id %(WoWForeverJapanese%)"))
+    _G.ObjectiveTrackerFrame, _G.QuestMapFrame = nil, nil
+  end)
+
+  it("a quest shown in the quest log logs who wrote its id when that came out tainted", function()
+    local hooks = {}
+    _G.hooksecurefunc = function(t, fn) -- the global form: (name, hook)
+      if type(t) == "string" then hooks[t] = fn end
+    end
+    _G.C_Timer = { NewTicker = function() end }
+    _G.QuestMapFrame_ShowQuestDetails = function() end
+    _G.QuestMapFrame = { DetailsFrame = { questID = 5 } }
+    TW.init()
+    assert.is_function(hooks.QuestMapFrame_ShowQuestDetails)
+    hooks.QuestMapFrame_ShowQuestDetails(5)
+    assert.are.equal(0, #entriesOf("write"))
+    taint.questID = { t = _G.QuestMapFrame.DetailsFrame, by = "WoWForeverJapanese" }
+    hooks.QuestMapFrame_ShowQuestDetails(5)
+    assert.is_truthy(entriesOf("write")[1].msg:find("^QuestMapFrame%.DetailsFrame%.questID"))
+    _G.QuestMapFrame_ShowQuestDetails, _G.QuestMapFrame = nil, nil
+  end)
+
   it("a block in combat queues its scan until combat is over", function()
     local fighting = true
     _G.InCombatLockdown = function() return fighting end
