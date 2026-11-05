@@ -367,4 +367,4 @@ def test_labels_sync_applies_the_list_on_every_push_to_main_and_on_demand(root):
     script = "\n".join(_run_scripts(job))
     assert "done < .github/labels.tsv" in script
     assert 'gh label create "$name" --color "$color" --description "$description" --force' in script
-    assert "delete" not in text and "--name" not in script
+    assert "gh label delete" not in text and "gh label edit" not in text and "--name" not in script

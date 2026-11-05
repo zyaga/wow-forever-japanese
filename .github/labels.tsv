@@ -1,0 +1,9 @@
+name	color	description
+bug	d73a4a	Something isn't working
+enhancement	a2eeef	New feature or request
+translation-report	1d76db	A wrong or awkward translation, reported from the game
+report-ok	0e8a16	The fix report reads
+report-broken	d93f0b	The fix report could not be read
+collector-send	5319e7	A player's collector send: English the addon has no Japanese for
+collector-ok	0e8a16	The collector send reads
+collector-broken	d93f0b	The collector send could not be read

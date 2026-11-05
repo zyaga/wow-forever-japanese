@@ -1,0 +1,39 @@
+name: labels
+
+# Creates every label in .github/labels.tsv, and puts back its colour and description, on each push to main and on
+# demand. An issue form's label is dropped when the repository has no label of that name, and the check workflows
+# run only on issues that carry theirs, so a missing label stops a check without a trace. Never deletes a label.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# read-only by default (the repository's workflow policy, ADR-046); only the sync job may write, to labels
+permissions:
+  contents: read
+
+concurrency:
+  group: labels
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false # gh uses GH_TOKEN; no token is left in .git/config
+
+      - name: Create or update each listed label
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          while IFS=$'\t' read -r name color description; do
+            [ "$name" = name ] && continue # the header line
+            gh label create "$name" --color "$color" --description "$description" --force
+          done < .github/labels.tsv

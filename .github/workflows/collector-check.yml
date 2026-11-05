@@ -1,12 +1,12 @@
 name: collector-check
 
-# Reads a player's collector send when the issue is opened or edited and comments whether it could be read:
+# Reads a player's collector send when the issue is opened, edited or labelled and comments whether it could be read:
 # the text from the game decodes (or the attached file reads) and holds lines that can be imported. It
 # counts entries and never echoes the English. It never writes data. The issue body reaches the reader
 # through an env var and a file, never through the script text (ADR-056).
 on:
   issues:
-    types: [opened, edited] # an issue opened from the form carries its label already; the bot's own edits trigger nothing
+    types: [opened, edited, labeled] # the form's issue is labelled already; labelling an issue checks it
 
 # read-only by default (the repository's workflow policy, ADR-046); only the check job may write, to the issue it
 # comments on and labels, nothing else
@@ -20,7 +20,7 @@ concurrency:
 
 jobs:
   check:
-    if: contains(github.event.issue.labels.*.name, 'collector-send')
+    if: contains(github.event.issue.labels.*.name, 'collector-send') && (github.event.action != 'labeled' || github.event.label.name == 'collector-send')
     runs-on: ubuntu-latest
     timeout-minutes: 5
     permissions:
