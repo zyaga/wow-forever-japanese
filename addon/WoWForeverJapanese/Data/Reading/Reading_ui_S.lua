@@ -134,7 +134,6 @@ WFJ.Data.add("reading", {
   ["ui:SHIELD_BLOCK_TEMPLATE"] = { text = "ブロック=ブロック=34720" },
   ["ui:SHIFT_KEY"] = { text = "キー=キー=32597" },
   ["ui:SHIRTSLOT"] = { text = "シャツ=シャツ=33124" },
-  ["ui:SHORT"] = { text = "短い=みじかい=105201" },
   ["ui:SHOULDERSLOT"] = { text = "肩=かた=112767" },
   ["ui:SHOW_ALL_SPELL_RANKS"] = { text = "すべて=すべて=11416 呪文=じゅもん=58102 ランク=ランク=35329 表示=ひょうじ=116521" },
   ["ui:SHOW_BATTLEFIELDMINIMAP_PLAYERS"] = { text = "チームメイト=チームメイト=33660 表示=ひょうじ=116521" },

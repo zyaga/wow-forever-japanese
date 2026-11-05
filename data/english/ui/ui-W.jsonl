@@ -64,7 +64,6 @@
 {"id": "WHO_SORT_ASCENDING_LABEL", "field": "text", "en": "Ascending", "hash": "41413e97d3a7f15e", "src": "db2@1.60.1.70790"}
 {"id": "WHO_SORT_DESCENDING_LABEL", "field": "text", "en": "Descending", "hash": "4ebb4eed1f501b91", "src": "db2@1.60.1.70790"}
 {"id": "WHO_SORT_LABEL", "field": "text", "en": "Sort By", "hash": "84fba310f11b21ea", "src": "db2@1.60.1.70790"}
-{"id": "WIDE", "field": "text", "en": "Wide", "hash": "0bc411efaf342d5c", "src": "db2@1.60.1.70790"}
 {"id": "WINDOW_SIZE", "field": "text", "en": "Resolution", "hash": "d7b55619d8b955aa", "src": "db2@1.60.1.70790"}
 {"id": "WITHDRAW", "field": "text", "en": "Withdraw", "hash": "dbe77b05844ea031", "src": "db2@1.60.1.70790"}
 {"id": "WORLD", "field": "text", "en": "World", "hash": "0626ad84d65fc103", "src": "db2@1.60.1.70790"}

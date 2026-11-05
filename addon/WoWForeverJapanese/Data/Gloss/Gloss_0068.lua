@@ -818,7 +818,6 @@ WFJ.Data.add("gloss", {
   [68816] = "左右\tさゆう\tsides (left and right)",
   [68817] = "左右する\tさゆうする\tdetermines (and)",
   [68818] = "左右する\tさゆうする\tdictates (sways)",
-  [68819] = "左右反転\tさゆうはんてん\tflip left-right",
   [68820] = "左手\tひだりて\t(on your) left",
   [68821] = "左手\tひだりて\tleft",
   [68822] = "左手\tひだりて\tleft (hand side)",

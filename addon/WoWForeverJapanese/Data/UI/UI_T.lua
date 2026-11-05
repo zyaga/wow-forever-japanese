@@ -59,7 +59,6 @@ WFJ.Data.add("ui", {
   ["TALENT_SPEC_LOCKED"] = { "クラストレーナーで解除", 0xba0e2a53, "." },
   ["TALENT_SPEC_PRIMARY"] = { "メインタレント", 0x090b4b85, "." },
   ["TALENT_SPEC_SECONDARY"] = { "サブタレント", 0x6231633f, "." },
-  ["TALL"] = { "高い", 0x0b5b14f5, "." },
   ["TANK"] = { "タンク", 0x0b5b15fa, "." },
   ["TARGET"] = { "ターゲット", 0x3d7ca112, "." },
   ["TARGETFPS"] = { "目標FPS", 0x114c8470, "." },

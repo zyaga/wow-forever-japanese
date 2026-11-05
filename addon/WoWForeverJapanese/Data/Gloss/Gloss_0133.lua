@@ -991,7 +991,6 @@ WFJ.Data.add("gloss", {
   [133990] = "防御\tぼうぎょ\tprotection",
   [133991] = "防御\tぼうぎょ\tprotection (defense)",
   [133992] = "防御する\tぼうぎょする\tdefend",
-  [133993] = "防御スキル\tぼうぎょスキル\tdefensives (defensive skills)",
   [133994] = "防御塔\tぼうぎょとう\tguard tower",
   [133995] = "防御層\tぼうぎょそう\tdefensive layers",
   [133996] = "防御用\tぼうぎょよう\tprotective",

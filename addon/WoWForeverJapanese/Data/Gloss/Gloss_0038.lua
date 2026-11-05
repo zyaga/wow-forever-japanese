@@ -447,7 +447,6 @@ WFJ.Data.add("gloss", {
   [38444] = "並べる\tならべる\twill place (line up)",
   [38445] = "並べる\tならべる\twill put out (line up)",
   [38446] = "並べる\tならべる\twithout arranging",
-  [38447] = "並べ替え\tならべかえ\tsort",
   [38448] = "並べ替え\tならべかえ\tsort (by)",
   [38449] = "並べ替え\tならべかえ\tsort (sorting)",
   [38450] = "並べ替え\tならべかえ\tsorting",

@@ -271,7 +271,6 @@ WFJ.Data.add("gloss", {
   [64268] = "始める\tはじめる\tfirst started",
   [64269] = "始める\tはじめる\tget started",
   [64270] = "始める\tはじめる\tget started (begin)",
-  [64271] = "始める\tはじめる\tget started (let's begin)",
   [64272] = "始める\tはじめる\tget things started (begin)",
   [64273] = "始める\tはじめる\tgonna have to start",
   [64274] = "始める\tはじめる\tgotta get started",

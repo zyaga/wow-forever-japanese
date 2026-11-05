@@ -4,7 +4,6 @@
 {"id": "NAMES_LABEL", "field": "text", "en": "Names", "hash": "6649b3793097bb7b", "src": "db2@1.60.1.70790"}
 {"id": "NAME_CHAT_WINDOW", "field": "text", "en": "Enter chat window name", "hash": "bd4d2bbe38737396", "src": "db2@1.60.1.70790"}
 {"id": "NARRATION_OBJECT_CLEAR_BUTTON", "field": "text", "en": "Clear", "hash": "a6aa194d90392011", "src": "db2@1.60.1.70790"}
-{"id": "NARROW", "field": "text", "en": "Narrow", "hash": "5865c1d60bb2c8e6", "src": "db2@1.60.1.70790"}
 {"id": "NAVIGATION_DESTINATION_REACHED_MESSAGE", "field": "text", "en": "Reached destination", "hash": "f4720e586c0227fa", "src": "db2@1.60.1.70790"}
 {"id": "NECKSLOT", "field": "text", "en": "Neck", "hash": "0a8e4adba6ab6a31", "src": "db2@1.60.1.70790"}
 {"id": "NEED", "field": "text", "en": "Need", "hash": "0a8e4bdaa6aba9ec", "src": "db2@1.60.1.70790"}

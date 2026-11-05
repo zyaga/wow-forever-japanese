@@ -7,7 +7,6 @@ WFJ.Data.add("reading", {
   ["ui:NAMES_LABEL"] = { text = "名前=なまえ=57207" },
   ["ui:NAME_CHAT_WINDOW"] = { text = "チャットウィンドウ名=チャットウィンドウめい=33619 入力=にゅうりょく=47705" },
   ["ui:NARRATION_OBJECT_CLEAR_BUTTON"] = { text = "クリア=クリア=32706" },
-  ["ui:NARROW"] = { text = "狭い=せまい=100304" },
   ["ui:NAVIGATION_DESTINATION_REACHED_MESSAGE"] = { text = "目的地=もくてきち=103641 到着しました=とうちゃくしました=50782" },
   ["ui:NECKSLOT"] = { text = "首=くび=137473" },
   ["ui:NEED"] = { text = "ニード=ニード=34063" },

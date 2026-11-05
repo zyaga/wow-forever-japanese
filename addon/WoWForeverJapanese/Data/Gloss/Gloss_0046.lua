@@ -820,7 +820,6 @@ WFJ.Data.add("gloss", {
   [46817] = "元に戻す\tもとにもどす\treverse (can undo)",
   [46818] = "元に戻す\tもとにもどす\treverse (restore)",
   [46819] = "元に戻す\tもとにもどす\trevert (restore)",
-  [46820] = "元に戻す\tもとにもどす\trevert (undo)",
   [46821] = "元に戻す\tもとにもどす\tundo (put back)",
   [46822] = "元に戻す\tもとにもどす\tundo (restore)",
   [46823] = "元に戻る\tもとにもどる\tbe restored",

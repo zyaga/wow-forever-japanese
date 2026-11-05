@@ -59,7 +59,6 @@ WFJ.Data.add("reading", {
   ["ui:TALENT_SPEC_LOCKED"] = { text = "クラストレーナー=クラストレーナー=140940 解除=かいじょ=140941" },
   ["ui:TALENT_SPEC_PRIMARY"] = { text = "メイン=メイン=35162 タレント=タレント=33502" },
   ["ui:TALENT_SPEC_SECONDARY"] = { text = "サブ=サブ=33054 タレント=タレント=33502" },
-  ["ui:TALL"] = { text = "高い=たかい=138069" },
   ["ui:TANK"] = { text = "タンク=タンク=33506" },
   ["ui:TARGET"] = { text = "ターゲット=ターゲット=33512" },
   ["ui:TARGETFPS"] = { text = "目標=もくひょう=103598" },

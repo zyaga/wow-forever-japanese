@@ -185,7 +185,6 @@ WFJ.Data.add("gloss", {
   [41182] = "代引き\tだいびき\tC.O.D.",
   [41183] = "代引き\tだいびき\tC.O.D. (cash on delivery)",
   [41184] = "代引き\tだいびき\tcash on delivery",
-  [41185] = "代替\tだいたい\talternate",
   [41186] = "代物\tしろもの\tmaterial (stuff)",
   [41187] = "代物\tしろもの\tone (thing)",
   [41188] = "代物\tしろもの\tpiece of work (item)",

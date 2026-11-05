@@ -233,7 +233,6 @@ WFJ.Data.add("gloss", {
   [54230] = "参加する\tさんかする\tunable to join",
   [54231] = "参加する\tさんかする\twas unable to join",
   [54232] = "参加する\tさんかする\twelcome you to join",
-  [54233] = "参加中\tさんかちゅう\ttaking part in (in)",
   [54234] = "参加希望\tさんかきぼう\twilling to take part",
   [54235] = "参加数\tさんかすう\tplayed (number joined)",
   [54236] = "参加数\tさんかすう\tplayed (number of entries)",

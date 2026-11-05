@@ -47,7 +47,8 @@ HelpTips.KEYS = { "ACCOUNT_WIDE_REPUTATION_TUTORIAL", "REPUTATION_EXALTED_PLUS_H
   -- blizzard_tutorials_frame_tutorials.lua:32, 104) and super-tracking (blizzard_tutorialsupertrack.lua:57); shown only
   -- while the tutorials are on (in-game check)
   "INTERACT_KEY_TUTORIAL", "INTERACT_KEY_TUTORIAL_NO_INTERACT_KEY_ASSIGNED", "TUTORIAL_SUPERTRACK_STEP_1",
-  -- every other Forever window's HelpTip:Show callouts: Edit Mode (editmodemanager.lua:2961–2987), the auction
+  -- every other Forever window's HelpTip:Show callouts (Edit Mode's stay English with Edit Mode, ADR-069: they are
+  -- shown and laid out inside its show pass, editmodemanager.lua:2995-3025): the auction
   -- house (…auctionhousesellframe.lua:509), the
   -- world map's completed-quests filter (blizzard_worldmaptemplates.lua:404–425; camelot's
   -- CanShowRefreshAccountCompletedQuestFilterTutorial returns false, blizzard_worldmap/camelot/
@@ -55,8 +56,7 @@ HelpTips.KEYS = { "ACCOUNT_WIDE_REPUTATION_TUTORIAL", "REPUTATION_EXALTED_PLUS_H
   -- blizzard_tokenui.lua:425–445), the assisted-combat button (actionbutton.lua:1986–2025), loot history
   -- (loothistory.lua:552–563), the chat language button (chatframemenubutton.lua:3), voice (channelframe.lua:460–476;
   -- voicechattranscriptionbutton.lua:210–220), the queue eye (queuestatusframe.lua:333–345)
-  "EDIT_MODE_HELPTIPS_LAYOUTS", "EDIT_MODE_HELPTIPS_SELECT_FRAMES", "EDIT_MODE_HELPTIPS_SHOW_HIDDEN_FRAMES",
-  "EDIT_MODE_HELPTIPS_ADVANCED_OPTIONS", "AUCTION_HOUSE_UNDERCUT_TUTORIAL", "ACCOUNT_COMPLETED_QUESTS_FILTER_TUTORIAL",
+  "AUCTION_HOUSE_UNDERCUT_TUTORIAL", "ACCOUNT_COMPLETED_QUESTS_FILTER_TUTORIAL",
   "ACCOUNT_TRANSFERABLE_CURRENCIES_TUTORIAL", "ASSISTED_COMBAT_ROTATION_ACTION_BUTTON_HELPTIP",
   "LOOT_HISTORY_ROLL_TUTORIAL", "NEW_SPOKEN_LANGUAGE_HELPTIP", "TUTORIAL_VOICE", "SPEECH_TO_TEXT_TUTORIAL",
   "TUTORIAL_HUD_REVAMP_LFG_QUEUE_CHANGES",

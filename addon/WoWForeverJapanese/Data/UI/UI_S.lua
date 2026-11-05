@@ -139,7 +139,6 @@ WFJ.Data.add("ui", {
   ["SHIELD_BLOCK_TEMPLATE"] = { "ブロック %s", 0x7556b1bd, "." },
   ["SHIFT_KEY"] = { "SHIFTキー", 0xc00eb709, "." },
   ["SHIRTSLOT"] = { "シャツ", 0xbefd5ccf, "." },
-  ["SHORT"] = { "短い", 0xbefeef05, "." },
   ["SHOULDERSLOT"] = { "肩", 0x5c73a655, "." },
   ["SHOW_ALL_SPELL_RANKS"] = { "すべての呪文ランクを表示", 0xec43abff, "." },
   ["SHOW_BATTLEFIELDMINIMAP_PLAYERS"] = { "チームメイトを表示", 0x243d41f3, "." },

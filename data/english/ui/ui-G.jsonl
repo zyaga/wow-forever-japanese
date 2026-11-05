@@ -5,9 +5,6 @@
 {"id": "GAMEMENU_NEW_BUTTON", "field": "text", "en": "What's New", "hash": "e67bfb5282cb2d40", "src": "db2@1.60.1.70790"}
 {"id": "GAMEMENU_OPTIONS", "field": "text", "en": "Options", "hash": "cf6c009bd04a5d3a", "src": "db2@1.60.1.70790"}
 {"id": "GAMEMENU_SUPPORT", "field": "text", "en": "Support", "hash": "46858e142083321c", "src": "db2@1.60.1.70790"}
-{"id": "GAMEPAD_ACTION_BAR_HIGHLIGHT_TOGGLE", "field": "text", "en": "Show Action Bar Highlight", "hash": "66df7c8c6eeaffd7", "src": "db2@1.60.1.70790"}
-{"id": "GAMEPAD_ACTION_BAR_INPUT_PROMPT_TOGGLE", "field": "text", "en": "Show Input Prompts", "hash": "ea3b9cf2258ed57d", "src": "db2@1.60.1.70790"}
-{"id": "GAMEPAD_ACTION_BAR_SCALING_TOGGLE", "field": "text", "en": "Enable Action Bar Scaling", "hash": "e470ac551560de6b", "src": "db2@1.60.1.70790"}
 {"id": "GAMEPAD_BACK_PEDAL_THRESHOLD", "field": "text", "en": "Backpedal Stick Threshold", "hash": "fa7134367695fde3", "src": "db2@1.60.1.70790"}
 {"id": "GAMEPAD_BAR_PAGE1_BOTTOM", "field": "text", "en": "Page 1 Bottom Bar", "hash": "a0c7e8d0f60968e9", "src": "db2@1.60.1.70790"}
 {"id": "GAMEPAD_BAR_PAGE1_LEFT", "field": "text", "en": "Page 1 Left Bar", "hash": "9998eb4f598e6d88", "src": "db2@1.60.1.70790"}
@@ -55,7 +52,6 @@
 {"id": "GAMEPAD_POSSESS_BAR_OVERRIDE", "field": "text", "en": "Possess Bar Override", "hash": "7eaaba361b385c5f", "src": "db2@1.60.1.70790"}
 {"id": "GAMEPAD_POSSESS_BAR_SPECIAL_PAGE", "field": "text", "en": "Special Page", "hash": "ef0004053821d462", "src": "db2@1.60.1.70790"}
 {"id": "GAMEPAD_RUN_THRESHOLD", "field": "text", "en": "Stick Run Threshold", "hash": "e374359aec9dcc8d", "src": "db2@1.60.1.70790"}
-{"id": "GAMEPAD_SHOW_EMPTY_ACTIONBARS", "field": "text", "en": "Show Empty Action Bars", "hash": "2d84c3b9b40027f3", "src": "db2@1.60.1.70790"}
 {"id": "GAMEPAD_SHOW_LEGEND", "field": "text", "en": "Show Input Legend", "hash": "671dbe22c03c3fd7", "src": "db2@1.60.1.70790"}
 {"id": "GAMEPAD_STANCE_BAR_NONE", "field": "text", "en": "None", "hash": "0a90eed0ce5f6e60", "src": "db2@1.60.1.70790"}
 {"id": "GAMEPAD_STANCE_BAR_OVERRIDE", "field": "text", "en": "Stance Bar Override", "hash": "ed1234af2babbbeb", "src": "db2@1.60.1.70790"}
@@ -68,7 +64,6 @@
 {"id": "GAMEPAD_TALENT_ADD_POINT", "field": "text", "en": "Add Point", "hash": "1e82de2c41f8e2e6", "src": "db2@1.60.1.70790"}
 {"id": "GAMEPAD_TALENT_APPLY", "field": "text", "en": "Hold To Apply", "hash": "bf1d27a1de65e509", "src": "db2@1.60.1.70790"}
 {"id": "GAMEPAD_TALENT_REMOVE_POINT", "field": "text", "en": "Remove Point", "hash": "baa7b91c11c8b410", "src": "db2@1.60.1.70790"}
-{"id": "GAMEPAD_TOGGLE_COMPACT_ACTION_BAR", "field": "text", "en": "Use Compact Action Bar", "hash": "93c5fe208805c51b", "src": "db2@1.60.1.70790"}
 {"id": "GAMEPAD_TOGGLE_COMPACT_ACTION_BAR_TOOLTIP", "field": "text", "en": "Enables a more compact action bar layout that only displays the currently active bar.", "hash": "fdfa1da710853bf8", "src": "db2@1.60.1.70245"}
 {"id": "GAMEPAD_TURN_WITH_CAMERA", "field": "text", "en": "Turn Player with Camera", "hash": "7e8f64b49f39058d", "src": "db2@1.60.1.70790"}
 {"id": "GAMEPAD_TURN_WITH_CAMERA_OPTION_ALWAYS", "field": "text", "en": "Player always turns with camera", "hash": "dfdf6c49218844bd", "src": "db2@1.60.1.70790"}

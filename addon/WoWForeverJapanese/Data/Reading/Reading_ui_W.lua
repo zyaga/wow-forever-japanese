@@ -47,7 +47,6 @@ WFJ.Data.add("reading", {
   ["ui:WHO_SORT_ASCENDING_LABEL"] = { text = "昇順=しょうじゅん=87349" },
   ["ui:WHO_SORT_DESCENDING_LABEL"] = { text = "降順=こうじゅん=134160" },
   ["ui:WHO_SORT_LABEL"] = { text = "並べ替え=ならべかえ=38448" },
-  ["ui:WIDE"] = { text = "広い=ひろい=69679" },
   ["ui:WINDOW_SIZE"] = { text = "解像度=かいぞうど=120280" },
   ["ui:WITHDRAW"] = { text = "引き出し=ひきだし=70169" },
   ["ui:WORLD"] = { text = "ワールド=ワールド=35685" },

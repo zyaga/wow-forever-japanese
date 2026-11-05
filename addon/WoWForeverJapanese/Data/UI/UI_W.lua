@@ -67,7 +67,6 @@ WFJ.Data.add("ui", {
   ["WHO_SORT_ASCENDING_LABEL"] = { "昇順", 0x41413e97, "." },
   ["WHO_SORT_DESCENDING_LABEL"] = { "降順", 0x4ebb4eed, "." },
   ["WHO_SORT_LABEL"] = { "並べ替え", 0x84fba310, "." },
-  ["WIDE"] = { "広い", 0x0bc411ef, "." },
   ["WINDOW_SIZE"] = { "解像度", 0xd7b55619, "." },
   ["WITHDRAW"] = { "引き出し", 0xdbe77b05, "." },
   ["WORLD"] = { "ワールド", 0x0626ad84, "." },

@@ -564,7 +564,6 @@ WFJ.Data.add("gloss", {
   [110562] = "縞\tしま\tstripe",
   [110563] = "縞\tしま\tstripes",
   [110564] = "縞模様\tしまもよう\tstriped (stripes)",
-  [110565] = "縦\tたて\tvertical",
   [110566] = "縦\tたて\tvertically",
   [110567] = "縦ヒレ\tたてヒレ\tvertical fin",
   [110568] = "縦型\tたてがた\tvertical",

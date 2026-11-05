@@ -136,7 +136,6 @@
 {"id": "SHIELD_BLOCK_TEMPLATE", "field": "text", "en": "%s Block", "hash": "7556b1bd7509a56d", "src": "db2@1.60.1.70790"}
 {"id": "SHIFT_KEY", "field": "text", "en": "SHIFT key", "hash": "c00eb709c1062b3e", "src": "db2@1.60.1.70790"}
 {"id": "SHIRTSLOT", "field": "text", "en": "Shirt", "hash": "befd5ccf59247478", "src": "db2@1.60.1.70790"}
-{"id": "SHORT", "field": "text", "en": "Short", "hash": "befeef0570f60afe", "src": "db2@1.60.1.70790"}
 {"id": "SHOULDERSLOT", "field": "text", "en": "Shoulders", "hash": "5c73a65578901446", "src": "db2@1.60.1.70790"}
 {"id": "SHOW_ALL_SPELL_RANKS", "field": "text", "en": "Show All Spell Ranks", "hash": "ec43abff8971dea8", "src": "db2@1.60.1.70790"}
 {"id": "SHOW_BATTLEFIELDMINIMAP_PLAYERS", "field": "text", "en": "Show Teammates", "hash": "243d41f31fcd5d06", "src": "db2@1.60.1.70790"}

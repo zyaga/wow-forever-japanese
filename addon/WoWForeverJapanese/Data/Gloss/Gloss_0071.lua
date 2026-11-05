@@ -213,7 +213,6 @@ WFJ.Data.add("gloss", {
   [71211] = "形勢を逆転する\tけいせいをぎゃくてんする\tturn the tables",
   [71212] = "形式\tけいしき\tformat",
   [71213] = "形式\tけいしき\tformat (mode)",
-  [71214] = "形式\tけいしき\tstyle (format)",
   [71215] = "形態\tけいたい\tform",
   [71216] = "形成\tけいせい\tformation",
   [71217] = "形成する\tけいせいする\tshaping; forming",

@@ -511,7 +511,6 @@ WFJ.Data.add("gloss", {
   [57510] = "向き\tむき\tbetter suited to",
   [57511] = "向き\tむき\tdirection",
   [57512] = "向き\tむき\tfacing (direction)",
-  [57513] = "向き\tむき\torientation",
   [57514] = "向きを変える\tむきをかえる\tturned",
   [57515] = "向きを変える\tむきをかえる\tturned (and)",
   [57516] = "向き合う\tむきあう\tcan deal with (face)",

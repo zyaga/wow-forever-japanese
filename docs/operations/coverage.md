@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-05 at commit `47a19810`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-05 at commit `103cd3e3`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -16,8 +16,8 @@
 | Exploration / event objectives | 223 | 221 | 2 | 100.0% | 0 |
 | Item descriptions | 10,301 | 8,767 | 0 | 85.1% | 1,534 |
 | Spell tooltips + auras | 25,926 | 25,855 | 1 | 99.7% | 70 |
-| Interface strings | 16,431 | 16,431 | 0 | 100.0% | 0 |
-| **All** | **86,143** | | | **98.1%** | **1,604** |
+| Interface strings | 16,115 | 16,115 | 0 | 100.0% | 0 |
+| **All** | **85,827** | | | **98.1%** | **1,604** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
 professions, internal strings): quest 331, gossip 81, item 893, spell 293, ui 313.
@@ -67,11 +67,11 @@ never shows, or the key that already shows the same English.
 | No Forever file writes it (a C-side line of other content) | 9 |
 | A chat, error or system line another surface owns | 20 |
 | Regex noise: a string no screen shows | 43 |
+| Left as the client writes it: the addon's text there would block a protected action | 316 |
 | A composite line no form renders | 14 |
-| Left as the client writes it: the addon's text there would block a protected action | 312 |
 | A glossary decision: the English word is the Japanese one | 1 |
 | Decided per key: the reason names the client file | 67 |
-| **All** | **2,472** |
+| **All** | **2,476** |
 
 ## Served text inventory
 
@@ -361,9 +361,9 @@ Lines are non-empty values; a server cache counts the records this install holds
 
 | Type | Lines that can carry a word list | With one | Done | Stale | Words | With a meaning |
 |---|---|---|---|---|---|---|
-| quest | 19,126 | 19,126 | 100.0% | 191 | 305,307 | 100.0% |
+| quest | 19,124 | 19,124 | 100.0% | 193 | 305,296 | 100.0% |
 | gossip | 10,870 | 10,870 | 100.0% | 0 | 104,311 | 100.0% |
-| ui | 15,611 | 15,611 | 100.0% | 0 | 48,351 | 100.0% |
+| ui | 15,298 | 15,298 | 100.0% | 0 | 47,665 | 100.0% |
 | book | 1,167 | 1,167 | 100.0% | 0 | 39,619 | 100.0% |
 
 Item, spell, objective and area text take no word cards; HTML book pages
@@ -380,7 +380,7 @@ outnumber lines.
 |---|---|---|---|---|---|---|
 | Quest offer | 4,330 | 4,399 | 4,399 | 0 | 0 | 902 |
 | Quest progress | 2,938 | 2,962 | 2,962 | 0 | 0 | 91 |
-| Quest turn-in | 4,065 | 4,090 | 4,090 | 0 | 0 | 173 |
+| Quest turn-in | 4,063 | 4,088 | 4,088 | 0 | 0 | 173 |
 | NPC talk (greetings, gossip, quest text keyed by its English) | 2,080 | 2,825 | 2,825 | 0 | 0 | 9 |
 | Book and letter pages | 1,102 | 1,102 | 1,102 | 0 | 0 | 1,039 |
 | The character's error lines (one file per race and sex) | 50 | 900 | 900 | 0 | 0 | 0 |

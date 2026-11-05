@@ -520,7 +520,6 @@ WFJ.Data.add("gloss", {
   [128518] = "追跡する\tついせきする\ttracks",
   [128519] = "追跡中\tついせきちゅう\tbeing tracked",
   [128520] = "追跡中\tついせきちゅう\tcurrently tracked",
-  [128521] = "追跡中\tついせきちゅう\ttracked",
   [128522] = "追跡中\tついせきちゅう\ttracked (being tracked)",
   [128523] = "追跡数\tついせきすう\tnumber tracked",
   [128524] = "追跡者\tついせきしゃ\tstalkers",

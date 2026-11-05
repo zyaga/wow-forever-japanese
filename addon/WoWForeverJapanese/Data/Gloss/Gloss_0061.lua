@@ -790,7 +790,6 @@ WFJ.Data.add("gloss", {
   [61788] = "外す\tはずす\tmiss",
   [61789] = "外す\tはずす\tmissed",
   [61790] = "外す\tはずす\tmisses (missed)",
-  [61791] = "外す\tはずす\tplease remove (uncheck)",
   [61792] = "外す\tはずす\tplease remove (untick the box)",
   [61793] = "外す\tはずす\tplease unequip (take off)",
   [61794] = "外す\tはずす\tpull away (remove)",

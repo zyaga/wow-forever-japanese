@@ -600,7 +600,6 @@ WFJ.Data.add("gloss", {
   [98599] = "無効\tむこう\tinactive",
   [98600] = "無効\tむこう\tinactive (disabled)",
   [98601] = "無効\tむこう\tinvalid",
-  [98602] = "無効\tむこう\tis disabled",
   [98603] = "無効\tむこう\tis invalid",
   [98604] = "無効\tむこう\twas invalid",
   [98605] = "無効\tむこう\twas not valid (invalid)",

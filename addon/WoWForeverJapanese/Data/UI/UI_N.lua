@@ -7,7 +7,6 @@ WFJ.Data.add("ui", {
   ["NAMES_LABEL"] = { "名前", 0x6649b379, "." },
   ["NAME_CHAT_WINDOW"] = { "チャットウィンドウ名を入力", 0xbd4d2bbe, "." },
   ["NARRATION_OBJECT_CLEAR_BUTTON"] = { "クリア", 0xa6aa194d, "." },
-  ["NARROW"] = { "狭い", 0x5865c1d6, "." },
   ["NAVIGATION_DESTINATION_REACHED_MESSAGE"] = { "目的地に到着しました", 0xf4720e58, "." },
   ["NECKSLOT"] = { "首", 0x0a8e4adb, "." },
   ["NEED"] = { "ニード", 0x0a8e4bda, "." },

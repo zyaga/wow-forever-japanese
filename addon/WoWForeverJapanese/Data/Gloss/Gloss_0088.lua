@@ -903,7 +903,6 @@ WFJ.Data.add("gloss", {
   [88902] = "有効にする\tゆうこうにする\tactivated",
   [88903] = "有効にする\tゆうこうにする\tactivates (enables)",
   [88904] = "有効にする\tゆうこうにする\tcan enable",
-  [88905] = "有効にする\tゆうこうにする\tcan enable (it)",
   [88906] = "有効にする\tゆうこうにする\tcan have active (only)",
   [88907] = "有効にする\tゆうこうにする\tcannot activate (cannot enable)",
   [88908] = "有効にする\tゆうこうにする\tenable",

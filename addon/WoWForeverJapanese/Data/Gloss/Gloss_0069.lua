@@ -957,7 +957,6 @@ WFJ.Data.add("gloss", {
   [69955] = "座る\tすわる\twhile sitting",
   [69956] = "座る\tすわる\twill sit",
   [69957] = "座席\tざせき\tseat",
-  [69958] = "座席\tざせき\tseats",
   [69959] = "座標\tざひょう\tcoordinates",
   [69960] = "庭\tにわ\tgarden",
   [69961] = "庭\tにわ\tgardens",

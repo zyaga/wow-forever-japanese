@@ -471,7 +471,6 @@ WFJ.Data.add("gloss", {
   [45468] = "個\tこ\tpieces (counter for things)",
   [45469] = "個\tこ\tpieces (counter)",
   [45470] = "個\tこ\ttwenty-five (items)",
-  [45471] = "個\tこ\tup to (items)",
   [45472] = "個々\tここ\tdifferent (individual)",
   [45473] = "個人\tこじん\tfor one (personally)",
   [45474] = "個人\tこじん\tindividuals",

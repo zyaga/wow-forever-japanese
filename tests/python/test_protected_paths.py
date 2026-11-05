@@ -12,7 +12,7 @@ from test_forever_only import _addon_lua
 READ_ONLY = {"UI/TaintWatch.lua"}
 EDIT_MODE = re.compile(
     r"EditModeManagerFrame|EditModeSystemSettingsDialog|EditModeSettingDropdownMixin|EditModeLayoutDialog"
-    r"|EditModeImportLayout|EditModeUnsavedChangesDialog|MENU_EDIT_MODE_|\.Selection\b"
+    r"|EditModeImportLayout|EditModeUnsavedChangesDialog|MENU_EDIT_MODE_|EDIT_MODE_HELPTIPS_|\.Selection\b"
 )
 UNIT_MENU = re.compile(r"MENU_UNIT_|WFJ\.MenusUnit")
 

@@ -642,7 +642,6 @@ WFJ.Data.add("gloss", {
   [47641] = "入れる\tいれる\tplease place (put)",
   [47642] = "入れる\tいれる\tplease put (a check)",
   [47643] = "入れる\tいれる\tplease put in",
-  [47644] = "入れる\tいれる\tplease put in (check the box)",
   [47645] = "入れる\tいれる\tplease put in (have)",
   [47646] = "入れる\tいれる\tplease put in (tick the box)",
   [47647] = "入れる\tいれる\tplease put in (手に入れる: collect)",

@@ -56,7 +56,6 @@
 {"id": "TALENT_SPEC_LOCKED", "field": "text", "en": "Unlock at your class trainer", "hash": "ba0e2a53eda7446a", "src": "db2@1.60.1.70790"}
 {"id": "TALENT_SPEC_PRIMARY", "field": "text", "en": "Primary Talents", "hash": "090b4b85ebb32b9b", "src": "db2@1.60.1.69913"}
 {"id": "TALENT_SPEC_SECONDARY", "field": "text", "en": "Secondary Talents", "hash": "6231633f04fc9c31", "src": "db2@1.60.1.69913"}
-{"id": "TALL", "field": "text", "en": "Tall", "hash": "0b5b14f5e73b3244", "src": "db2@1.60.1.70790"}
 {"id": "TANK", "field": "text", "en": "Tank", "hash": "0b5b15fae73b7205", "src": "db2@1.60.1.70790"}
 {"id": "TARGET", "field": "text", "en": "Target", "hash": "3d7ca112c9409d27", "src": "db2@1.60.1.70790"}
 {"id": "TARGETFPS", "field": "text", "en": "Target FPS", "hash": "114c8470406ce40f", "src": "db2@1.60.1.70790"}

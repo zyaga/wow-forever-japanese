@@ -381,7 +381,6 @@ WFJ.Data.add("gloss", {
   [37378] = "下\tした\tunder",
   [37379] = "下\tした\tunder (below)",
   [37380] = "下\tした\tunderneath",
-  [37381] = "下\tした\tunderneath (below)",
   [37382] = "下\tもと\tamong (under)",
   [37383] = "下\tもと\tbeneath",
   [37384] = "下\tもと\tbeneath (under)",

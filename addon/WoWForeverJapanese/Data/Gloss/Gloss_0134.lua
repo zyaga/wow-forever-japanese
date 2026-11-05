@@ -158,7 +158,6 @@ WFJ.Data.add("gloss", {
   [134155] = "降格する\tこうかくする\tdemoted",
   [134156] = "降格する\tこうかくする\thas been demoted",
   [134157] = "降格する\tこうかくする\thas demoted",
-  [134158] = "降車\tこうしゃ\texit (getting off)",
   [134159] = "降霊術\tこうれいじゅつ\tNecromancy",
   [134160] = "降順\tこうじゅん\tdescending",
   [134161] = "限り\tかぎり\t(as far as)",

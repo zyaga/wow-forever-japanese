@@ -1,8 +1,3 @@
-{"id": "EDIT_MODE_HELPTIPS_ADVANCED_OPTIONS", "field": "text", "en": "Use the advanced options to see more UI elements", "hash": "cc93948b57154cc5", "src": "db2@1.60.1.70790"}
-{"id": "EDIT_MODE_HELPTIPS_LAYOUTS", "field": "text", "en": "Select from a preset or create a custom layout using this dropdown.", "hash": "c2ffbaf6ae2df2f8", "src": "db2@1.60.1.70790"}
-{"id": "EDIT_MODE_HELPTIPS_SELECT_FRAMES", "field": "text", "en": "Click on any highlighted UI element on the HUD to get started.", "hash": "2f8f52f91f56775b", "src": "db2@1.60.1.70790"}
-{"id": "EDIT_MODE_HELPTIPS_SHOW_HIDDEN_FRAMES", "field": "text", "en": "Use the checkboxes to customize UI elements that are not normally visible.", "hash": "032cb4388447ab47", "src": "db2@1.60.1.70790"}
-{"id": "EDIT_MODE_HELPTIP_BUTTON_TOOLTIP", "field": "text", "en": "Click on this to toggle on/off the help system for Edit Mode.", "hash": "e809b2fe5abd4f76", "src": "db2@1.60.1.70790"}
 {"id": "EJECT_PASSENGER", "field": "text", "en": "Eject Passenger", "hash": "0006f9c3cfc721d6", "src": "db2@1.60.1.70790"}
 {"id": "ELITE", "field": "text", "en": "Elite", "hash": "c9c69bbf5df18bb1", "src": "db2@1.60.1.70790"}
 {"id": "EMBLEM_BACKGROUND", "field": "text", "en": "Background", "hash": "6f309c25fa86c239", "src": "db2@1.60.1.70790"}
