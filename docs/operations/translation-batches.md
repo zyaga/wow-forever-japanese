@@ -342,6 +342,42 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
 
+### 1.60.1.70532 → 1.60.1.70790, quests (2026-11-05)
+
+The quest half of the launch build, the day after launch. The tables half shipped first, read from the archive alone;
+this round reads the quest cache of the first play sessions and pulls the tables again with that session's hotfix
+cache, so one pin, `forever_BUILD`, covers both again (the `forever_QUEST_BUILD` line is gone). The scan was stopped
+early by the maintainer's call: the fast sweep finished, but the slow recheck started over at every login (the scan
+now keeps its pass and place across logins), so the cache holds 2,142 records against 70532's 3,081. A quest an
+earlier build answered that this cache lacks is unconfirmed, not gone, and keeps its English and Japanese
+([ADR-050](../adr/050-english-is-additive.md)). Quest cache: read with the 69913 payload layout, pinned again for
+70790. Client tables: 62, with the play-session hotfix cache; against the archive-only pull, ItemSparse, ItemEffect,
+ItemXItemEffect, Spell, SpellName, BroadcastText and CreatureDisplayInfo changed. The wago.tools cross-check (product
+`wowf`): no value differs; the rows wago has and ours lacks are the encrypted store items, as on 70755 (ItemSparse 26,
+Spell and SpellName 24, ItemEffect 17, QuestV2 90930 and 99470); QuestV2's highest id 99,670. The served-text
+inventory: the hotfix-only table is back (9 rows, each its own id, no strings, `internal`). `make family-rows`: 63 new
+BroadcastText rows, all NPC lines, given `gossip`. The UI extract is the tables half's; regenerated from it, the
+interface inventory drops 4 keys the build no longer names.
+
+The English came from Forever's own import only (`make import-client CLIENT=forever`, then `make import-served`), not
+the full `make import-english`: the full import put Classic Era's English back on 178 item descriptions and 5 spell
+lines whose Forever text an earlier build's hotfix cache carried and this session's cache does not. Each import step
+merges under `union`, so a Forever-only import keeps those lines as the earlier Forever build wrote them. The English
+Collector file: 33 gossip lines, 3 quest lines (2 of them replacing forever-vo's wording of the same completion) and 6
+NPC names added; nothing rejected.
+
+| Type | Reworded (shipped line now stale) | New English lines | Not served on this build (English kept) | Drafted |
+|---|---|---|---|---|
+| quest | 1 description (116: the Thunderbrew pickup moved to the Dagger Hills), 2 completions (93926, 93927: punctuation and paragraph breaks from the collector); 3 hand-written Darkmoon Faire turn-ins (7889, 7894, 7899) whose English the cache does not carry stay stale | 7 quests: 93161, the two Camping 101 quests (97964, 97970; their other lines already had Japanese) and four Darkmoon Faire turn-ins (7881, 7889, 7894, 7899; titles only) | 47 ids | 1 title (an item name, kept in English), 1 objectives, 1 description, 2 progress, 1 completion; 116 redrafted, 93926 and 93927 re-verified unchanged; word lists for all, and for the 7 hand-written Darkmoon Faire lines that started shipping |
+| gossip | 0 | 33 (the shen'dorei starting area on Zephras Isle, from the collector) | none | 33, with word lists |
+| item | 0 | 5 items (2 descriptions) | 2,062 ids | 2 |
+| spell | 2 (1325975 and 1327245: their English went back to the 70532 wording; the 70532 variants ship again, the 70685 ones ruled `reject`) | 18 spells | 124 ids | 6 descriptions and 5 auras new; the 2 lines re-verified |
+| ui | 0 | 0 | 275 ids | none |
+| objective, area, book | 0 | 0 | none | none |
+
+Voice: `make voice-speakers` (speakers for the new quest lines and the Darkmoon Faire turn-ins), then
+`make voice-generate`: 17 files.
+
 ### 1.60.1.70707 → 1.60.1.70755, tables (2026-11-03)
 
 A Forever build installed the day before launch, two days after 0.6.0 shipped the 70707 tables. The scan has not run,
