@@ -45,6 +45,7 @@ Take only issues labelled `collector-ok`. The comment never shows the English: r
 | Problem | Fix |
 |---|---|
 | `collector-check` failed with no comment | An internal error (exit 3), not a broken send: read the run's log. Re-run the workflow, edit the issue, or remove the `collector-send` label and add it again. |
+| A `collector-check` run shows as cancelled | A newer run for the same issue replaced it (the form's issue can start one run when it opens and one when its label is set). The newer run comments and labels; nothing to do. |
 | An issue from the form has no `collector-send` label, or the check never ran | The label was missing from the repository when the issue opened. Run the labels workflow (**Actions → labels → Run workflow**), then add `collector-send` to the issue: that runs the check. |
 | `collector intake: issue #N: the Permission box is not ticked; nothing imported` | Ask the player to tick it (editing the issue is enough). |
 | `collector intake: could not read issue #N` | `gh` failed (not signed in, no network, no such issue); the message says which. |

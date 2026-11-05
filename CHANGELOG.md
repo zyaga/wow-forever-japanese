@@ -11,7 +11,7 @@ an old setting stops working). A release moves those lines under its version num
 
 ### Added
 - Japanese for the quests, NPC lines and spells Forever build 1.60.1.70790 adds on Zephras Isle and elsewhere, with word readings and voice: the Camping 101 quests, The Ancient Hilt, the shen'dorei starting area's conversations, and the new spells and their auras.
-- Japanese for about 190 more NPC lines on Zephras Isle (the Windshapers, the High Order and the shen'dorei start), with word cards and voice.
+- Japanese for about 190 more NPC lines on Zephras Isle (the Windshapers, the High Order and the shen'dorei start), with word cards, and voice where the speaker is known.
 
 ### Changed
 - Quest text is read from Forever build 1.60.1.70790, the launch build.

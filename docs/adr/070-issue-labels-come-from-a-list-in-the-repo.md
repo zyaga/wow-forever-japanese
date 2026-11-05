@@ -13,8 +13,8 @@ that carry it (`collector-check`, `report-check`). The check workflows then add 
 
 GitHub drops a form's label when the repository has no label of that name. Nothing reports it: the issue opens with
 no label, the check is skipped, and the player sees no comment. Labels were never part of the repository's files.
-When the public repository was recreated, the `collector-send` label was lost; an older, unused `collector-dump`
-label remained. From then on every player collector send opened without its label and was never checked.
+When the form's label was renamed from `collector-dump` to `collector-send`, the new label was never created in
+the repository; the old one remained. From then on every player collector send opened without its label and was never checked.
 
 The check could not be re-run by hand either: `collector-check` ran only when an issue was opened or edited, so
 adding the label to a waiting issue started nothing.

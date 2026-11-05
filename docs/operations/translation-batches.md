@@ -354,7 +354,7 @@ rejected.
 | Type | Added | Replaced | Unchanged | Drafted |
 |---|---|---|---|---|
 | gossip | 196 (the shen'dorei starting area on Zephras Isle: the Windshapers and the High Order) | 0 | 9 | 193, with word lists. 3 ship as the English they are, ruled `accept` by the maintainer with no missing marker: two are spoken in an elven language, one is a name alone. They are not voiced. |
-| quest | 1 (93172 progress) | 13 progress and completion texts: forever-vo's wording replaced by the game's (93165, 93317, 93735, 93736, 94484, 94487, 94489, 94490, 94491, 95350, 97244, 97245, 97485) | 2 | 14, with word lists, redrafted with `REVERIFY=1`: 9 re-verified unchanged, 3 corrected, 2 new |
+| quest | 1 (93172 progress) | 13 progress and completion texts: forever-vo's wording replaced by the game's (93165, 93317, 93735, 93736, 94484, 94487, 94489, 94490, 94491, 95350, 97244, 97245, 97485) | 2 | 14, with word lists, redrafted with `REVERIFY=1`: 9 re-verified unchanged, 4 rewritten (one replacing a rejected earlier draft), 1 new |
 | unit (NPC names) | 46 | 0 | 22 | none (names stay English) |
 
 Voice: `make voice-speakers` (70 new speaker rows; the 7 new speaking NPCs cast), then `make voice-generate`: 76
