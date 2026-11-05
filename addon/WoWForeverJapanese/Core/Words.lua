@@ -249,11 +249,11 @@ function Words.sentenceFurigana(e)
   local s = type(e.sentence) == "string" and e.sentence or ""
   local spans = {}
   local R = WFJ.Readings
-  local list = R and e.kind ~= nil and e.id ~= nil and R.words(e.kind, e.id)
+  local lineWords = R and e.kind ~= nil and e.id ~= nil and R.words(e.kind, e.id)
   local wf, wl = e.wf, e.wl
   local own = type(wf) == "number" and type(wl) == "number" and wf >= 1 and wl <= #s and wl >= wf
-  if list then
-    for _, sp in ipairs(R.locate(list, s)) do
+  if lineWords then
+    for _, sp in ipairs(R.locate(lineWords, s)) do
       if not (own and sp.first <= wl and sp.last >= wf) then spans[#spans + 1] = sp end
     end
   end
