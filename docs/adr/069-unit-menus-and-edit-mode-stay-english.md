@@ -54,8 +54,13 @@ recorded the tainted fields and writers around them.
    `ObjectiveTrackerFrame.dirty`, with the caller's stack whenever `MarkDirty` leaves the `dirty` flag tainted. The
    fix follows the caller that entry names. The decision for the tracker is pending until then.
 4. **A static test keeps both out.** `tests/python/test_protected_paths.py` fails when any shipped Lua outside
-   `UI/TaintWatch` names a unit menu tag, `WFJ.MenusUnit` or an Edit Mode frame (comments aside), or when the TOC
-   loads `UI/EditMode.lua` or `UI/MenusUnit.lua`. `UI/TaintWatch` only reads, so its scan roots may name Edit Mode.
+   `UI/TaintWatch` names a unit menu tag, `WFJ.MenusUnit` or an Edit Mode frame (comments aside), or when
+   `UI/EditMode.lua` or `UI/MenusUnit.lua` exists again. `UI/TaintWatch` only reads, so its scan roots may name Edit
+   Mode.
+5. **A disposition of their own.** `blizzard_editmode`, `blizzard_unitpopup` and `blizzard_unitpopupshared` are
+   `protected` in `pipeline/forever_addon_dispositions.txt`: their files are no surface's, and the load-set sweep still
+   reads them, so every key they name is either excluded with this reason or listed for another surface that shows
+   it.
 
 ## Consequences
 

@@ -415,7 +415,7 @@ function WFJ.OnLoad()
   step("speech", function() WFJ.Speech.init({ key = gossipKey, expand = expand }) end) -- NPC speech
   -- menu entries (Menu.ModifyMenu per tag) and HelpTip callouts, for every window above
   step("menus", WFJ.Menus.init)
-  step("menus.untagged", WFJ.MenusUntagged.init) -- the Options and Edit Mode dropdowns (no tag)
+  step("menus.untagged", WFJ.MenusUntagged.init) -- the Options dropdowns and untagged context menus
   step("helptips", WFJ.HelpTips.init)
   step("scan", WFJ.Scan.init) -- /wfj debug ui scan
   step("slash", WFJ.Slash.register)

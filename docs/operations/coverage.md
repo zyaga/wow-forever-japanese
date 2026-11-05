@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-05 at commit `29c3af31`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-05 at commit `46ebaca4`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -68,10 +68,10 @@ never shows, or the key that already shows the same English.
 | A chat, error or system line another surface owns | 20 |
 | Regex noise: a string no screen shows | 43 |
 | A composite line no form renders | 14 |
-| Left as the client writes it: the addon's text there would block a protected action | 305 |
+| Left as the client writes it: the addon's text there would block a protected action | 312 |
 | A glossary decision: the English word is the Japanese one | 1 |
 | Decided per key: the reason names the client file | 67 |
-| **All** | **2,465** |
+| **All** | **2,472** |
 
 ## Served text inventory
 

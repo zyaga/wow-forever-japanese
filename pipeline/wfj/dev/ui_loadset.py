@@ -5,8 +5,8 @@ translates, so no string can sit in a loaded window file without a decision.
 
 The window inventory (pipeline/ui_inventory.txt) scans the files each hooked window names. This sweep reads
 every file of every addon camelot loads in game (`wfj.dev.client_addons.sweep`) whose disposition in
-pipeline/forever_addon_dispositions.txt is `surface`, `planned` or `library`, collects each name the
-inventory's pattern finds there that GlobalStrings defines, and leaves out the names the window inventory
+pipeline/forever_addon_dispositions.txt is `surface`, `planned`, `library` or `protected`, collects each name
+the inventory's pattern finds there that GlobalStrings defines, and leaves out the names the window inventory
 already has. An addon marked `unreachable`, `no-content`, `not-a-window` or `no-text` is covered by that
 reason as a whole. The output is `<addon> <KEY>` per line, sorted. tests/python/test_ui_coverage.py asserts
 every key is in pipeline/ui_keys.txt or pipeline/ui_exclusions.txt with a reason. `make ui-inventory` writes
@@ -22,7 +22,7 @@ from wfj.dev import client_addons, ui_inventory
 from wfj.io import wago
 
 DISPOSITIONS = Path(__file__).resolve().parents[2] / "forever_addon_dispositions.txt"
-SWEPT = ("surface", "planned", "library")
+SWEPT = ("surface", "planned", "library", "protected")
 
 
 def swept_addons(path: Path = DISPOSITIONS) -> set[str]:

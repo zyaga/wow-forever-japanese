@@ -10,9 +10,10 @@
 -- Each tag lists the keys its entries may show: a widget only ever takes one of them (`only`), so a rank name, a bag
 -- the player named or a quest title in a menu is never read as a dictionary word (names stay in English). Tooltip
 -- keys are shown through UI/HelpTooltip on the element's own owner (a disabled radio's reason, GUILD_RANK_UNAVAILABLE).
--- A tag whose menu title is a name (a unit's, a channel's) sets `titleIsName`: its first root element (the title the
--- generator creates first) never gets our initializer, and no element whose text is the menu's name
--- (contextData.name) is ever matched, so a player named "Duel" stays "Duel".
+-- A tag whose menu title is a name (a channel's, a tracked block's) sets `titleIsName`: its first root element (the
+-- title the generator creates first) never gets our initializer, and no element whose text is the menu's name
+-- (contextData.name) is ever matched, so a channel named "Trade" stays "Trade". The unit right-click menus get no
+-- callback at all (ADR-069).
 local _, WFJ = ...
 local Menus = {}
 WFJ.Menus = Menus
@@ -262,12 +263,8 @@ function Menus.onMenu(tag, root, contextData)
   local spec = specOf(tag)
   local titleIsName = spec and spec.titleIsName or false
   local name
-  if titleIsName and type(contextData) == "table" then
-    name = type(contextData.name) == "string" and contextData.name or nil
-    -- a target / focus / pet menu carries only the unit: its title is UnitName (unitpopupshared.lua:112–116)
-    if not name and contextData.unit ~= nil and type(_G.UnitName) == "function" then
-      name = _G.UnitName(contextData.unit)
-    end
+  if titleIsName and type(contextData) == "table" and type(contextData.name) == "string" then
+    name = contextData.name
   end
   return walk(tag, root, 0, name, titleIsName)
 end

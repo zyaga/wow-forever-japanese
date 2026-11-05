@@ -240,17 +240,7 @@ describe("UI/Menus: menu entries", function()
     -- element initializers (menutemplates.lua:105-112, unitpopupsharedutils.lua:195-205), so an addon initializer
     -- there taints the check
     WFJ.Menus.init()
-    for _, which in ipairs({ "SELF", "TARGET", "PLAYER", "ENEMY_PLAYER", "PARTY", "PET", "FOCUS", "FRIEND", "RAID",
-      "BN_FRIEND", "CHAT_ROSTER", "VEHICLE" }) do
-      assert.is_nil(callbacks["MENU_UNIT_" .. which], which)
-    end
-    for tag in pairs(WFJ.Menus.TAGS) do assert.is_nil(tag:find("^MENU_UNIT_"), tag) end
-    local root = element(nil)
-    root:CreateButton(UI.DUEL[1])
-    root:CreateButton(UI.SET_FOCUS[1])
-    local frames = open(root) -- built with no callback of ours, as the client does for a unit menu
-    assert.are.equal(UI.DUEL[1], frames[root.children[1]].fontString:GetText())
-    assert.are.equal(UI.SET_FOCUS[1], frames[root.children[2]].fontString:GetText())
+    for tag in pairs(callbacks) do assert.is_nil(tag:find("^MENU_UNIT_"), tag) end
     assert.is_function(callbacks["MENU_CHAT_FRAME_CHANNEL"]) -- the other menus keep theirs
   end)
 

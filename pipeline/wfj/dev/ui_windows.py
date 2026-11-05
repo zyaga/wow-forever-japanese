@@ -573,27 +573,6 @@ _OTHER_WINDOWS: dict[str, list[str]] = {
         "Blizzard_FrameXML/WardrobeCustomSets.lua",
         "Blizzard_FrameXML/WardrobeCustomSets.xml",
     ],
-    "editmode": [
-        "Blizzard_EditMode/Shared/EditModeLayoutManagerUtil.lua",
-        "Blizzard_EditMode/Shared/EditModePresetLayoutSystemUtils.lua",
-        "Blizzard_EditMode/Camelot/EditModePresetLayoutConstants.lua",
-        "Blizzard_EditMode/Mainline/EditModePresetLayouts.lua",
-        "Blizzard_EditMode/Shared/EditModePresetLayoutsManager.lua",
-        "Blizzard_EditMode/Shared/EditModeSettingDisplayInfo.lua",
-        "Blizzard_EditMode/Camelot/EditModeUtil.lua",
-        "Blizzard_EditMode/Shared/EditModeUtil.lua",
-        "Blizzard_EditMode/Shared/EditModeTemplates.lua",
-        "Blizzard_EditMode/Shared/EditModeTemplates.xml",
-        "Blizzard_EditMode/Shared/EditModeSystemTemplates.lua",
-        "Blizzard_EditMode/Shared/EditModeSystemTemplates.xml",
-        "Blizzard_EditMode/Shared/EditModeDialogs.lua",
-        "Blizzard_EditMode/Shared/EditModeDialogs.xml",
-        "Blizzard_EditMode/Shared/EditModeManager.lua",
-        "Blizzard_EditMode/Shared/EditModeManagerOverrides.lua",
-        "Blizzard_EditMode/Mainline/EditModeManagerOverrides.lua",
-        "Blizzard_EditMode/Camelot/EditModeManagerOverrides.lua",
-        "Blizzard_EditMode/Shared/EditModeManager.xml",
-    ],
     "equipmentflyout": [
         "Blizzard_FrameXML/Camelot/EquipmentFlyout.lua",
         "Blizzard_FrameXML/Camelot/EquipmentFlyout.xml",
@@ -1144,8 +1123,8 @@ for _surface, _files in _OTHER_WINDOWS.items():
     FOREVER_WINDOWS.setdefault(_surface, []).extend(_files)
 
 # The files a fresh level-1 character reaches whose text no surface listed: the chat tab,
-# shortcut and channel menus and the edit box header (UI/Menus, UI/ChatTabs), the unit right-click menus
-# (UI/Menus), the help-plate tooltip and the level-1 HelpTips (UI/HelpTips), the spellbook's help plate, and
+# shortcut and channel menus and the edit box header (UI/Menus, UI/ChatTabs), the help-plate tooltip and the
+# level-1 HelpTips (UI/HelpTips), the spellbook's help plate, and
 # the event toasts (UI/Alerts). Evidence: the level-1 English gaps research note in docs/research/.
 _LEVEL1_WINDOWS: dict[str, list[str]] = {
     "chattabs": [
@@ -1157,13 +1136,6 @@ _LEVEL1_WINDOWS: dict[str, list[str]] = {
         "Blizzard_ChatFrameBase/Mainline/ChatFrameEditBox.xml",
     ],
     "help": [
-        "Blizzard_UnitPopup/UnitPopupCustomControls.lua",
-        "Blizzard_UnitPopup/Mainline/UnitPopupUtils.lua",
-        "Blizzard_UnitPopup/Mainline/UnitPopupButtons.lua",
-        "Blizzard_UnitPopup/Shared/UnitPopupButtonsHardcore.lua",
-        "Blizzard_UnitPopupShared/UnitPopupSharedButtonMixins.lua",
-        "Blizzard_UnitPopupShared/Mainline/UnitPopupSharedButtonMixins.lua",
-        "Blizzard_UnitPopupShared/UnitPopupShared.lua",
         "Blizzard_HelpPlate/Blizzard_HelpPlate.lua",
         "Blizzard_HelpPlate/Blizzard_HelpPlate.xml",
         # the level-1 HelpTips of Blizzard_Tutorials (the interact key, super-tracking); the addon's other

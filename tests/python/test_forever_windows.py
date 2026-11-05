@@ -16,7 +16,11 @@ from wfj.dev import client_addons, ui_inventory
 ROOT = Path(__file__).resolve().parents[2]
 # `no-content`: the window has an entry point on camelot, but the Forever client's own tables carry
 # none of the content it opens on (a covenant window with no covenant spell, item or quest).
-DISPOSITIONS = ("surface", "library", "no-text", "unreachable", "no-content", "planned", "not-a-window")
+DISPOSITIONS = (
+    "surface", "library", "no-text", "unreachable", "no-content", "planned", "not-a-window", "protected",
+)
+# `protected`: left as the client writes it, because the addon's text or code there lands on a path that ends in a
+# protected call (ADR-058, ADR-069); its keys are still swept, so each is excluded with that reason.
 # `planned`: the text is not handled yet and is left as the client shows it.
 TITLE_KINDS = ("key", "name", "ruled", "dynamic")
 _LINE = re.compile(r"^(\S+)\s+(\S+)(?:\s+([^#]*?))?\s+#\s+(\S.*)$")

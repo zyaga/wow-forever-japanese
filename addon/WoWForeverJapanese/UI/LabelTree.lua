@@ -1,8 +1,8 @@
 -- UI/LabelTree.lua: every label under one frame, found by walking it (area "ui", ADR-016 / ADR-029 §4).
--- The Options window and Edit Mode are built from data: a list row, a settings dialog or a graphics section is a
--- template whose labels are parentKeys or unnamed regions several frames deep, filled from a definitions table
+-- Windows like the Options window are built from data: a list row or a graphics section is a template whose labels
+-- are parentKeys or unnamed regions several frames deep, filled from a definitions table
 -- (blizzard_settings_shared/blizzard_settingcontrols.lua:330–378, blizzard_settingsdefinitions_shared/graphics.xml:
--- 140–234, blizzard_editmode/shared/editmodetemplates.lua:24–140). Naming each widget would be per-option code, so a
+-- 140–234). Naming each widget would be per-option code, so a
 -- surface hands the frame the client just filled to LabelTree.show, which walks its regions and children and shows
 -- each FontString, Button and dropdown button through Labels.show. Records are keyed by the widget (Labels.keyer),
 -- never by position: a pooled row keeps its keys and its records follow the new text.
@@ -15,7 +15,7 @@
 --     instance, once). The popup's entries are UI/Menus'.
 --   * depth is bounded, and every value is type-checked before use: a wrong-typed child ends that branch only;
 --   * a frame's regions and children come from UI/Frames, which lists a frame with thousands of parts as empty
---     (Edit Mode re-walks on every new layout, and a frame holding that many would overflow the call).
+--     (a frame holding that many would overflow the call).
 local _, WFJ = ...
 local LabelTree = {}
 WFJ.LabelTree = LabelTree

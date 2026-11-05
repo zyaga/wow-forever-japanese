@@ -2252,11 +2252,6 @@ CDMVIS_FLASH_CYAN
 CDMVIS_FLASH_RED
 CDMVIS_FLASH_GREEN
 CDMVIS_FLASH_BLUE
-# ── Cooldown viewers (Forever): edit-mode system names on their Selection ──
-HUD_EDIT_MODE_SYSTEM_ESSENTIAL_COOLDOWNS
-HUD_EDIT_MODE_SYSTEM_UTILITY_COOLDOWNS
-HUD_EDIT_MODE_SYSTEM_TRACKED_BUFFS
-HUD_EDIT_MODE_SYSTEM_TRACKED_BUFF_BARS
 # ── Damage meter (Forever): the tracked-type label and the empty-window notice ──
 DAMAGE_METER_TYPE_DAMAGE_DONE
 DAMAGE_METER_TYPE_HEALING_DONE
@@ -2398,9 +2393,6 @@ PARTY_IN_PUBLIC_GROUP_MESSAGE
 INCOMING_SUMMON_TOOLTIP_SUMMON_PENDING
 INCOMING_SUMMON_TOOLTIP_SUMMON_ACCEPTED
 INCOMING_SUMMON_TOOLTIP_SUMMON_DECLINED
-# ── Edit Mode selection names of this family's HUD systems (rendered by UI/EditMode's selection pass) ──
-HUD_EDIT_MODE_TARGET_FRAME_LABEL
-HUD_EDIT_MODE_FOCUS_FRAME_LABEL
 
 # ── Group Finder: tabs, titles and buttons ──
 LFG_TITLE
@@ -2616,7 +2608,6 @@ BN_TOAST_PENDING_INVITES
 BN_TOAST_NEW_CLUB_INVITATION
 BN_TOAST_OFFLINE
 TIME_PLAYED_ALERT
-# ── Communities window title ──
 
 # ── Options window: Accessibility: labels ──
 ALTERNATE_SCREEN_EFFECTS
@@ -4114,16 +4105,8 @@ BINDING_NAME_PINGONMYWAY
 BINDING_NAME_PINGASSIST
 BINDING_NAME_TOGGLEPINGTARGET
 BINDING_NAME_TOGGLEGROUPFINDER
-# ── Edit Mode: Editmodedialogs: labels ──
-# ── Edit Mode: Editmodedialogs: tooltips ──
 # ── Edit Mode: Editmodelayoutmanagerutil: labels ──
 HUD_EDIT_MODE_UNSAVED_CHANGES
-# ── Edit Mode: Editmodemanager: labels ──
-HUD_EDIT_MODE_RENAME_LAYOUT_DIALOG_TITLE
-# ── Edit Mode: Editmodemanager: tooltips ──
-HUD_EDIT_MODE_DELETE_LAYOUT_DIALOG_TITLE
-# ── Edit Mode: Editmodesettingdisplayinfo: labels ──
-# ── Edit Mode: Editmodesettingdisplayinfo: tooltips ──
 # ── Edit Mode: Editmodesystemtemplates: labels ──
 COMBAT_WARNINGS_LABEL
 COMBAT_WARNINGS_SETTINGS
@@ -4131,8 +4114,6 @@ HUD_EDIT_MODE_COOLDOWN_VIEWER_SETTINGS
 PVP_FRAMES_LABEL
 QUICK_KEYBIND_MODE
 RAID_FRAMES_LABEL
-# ── Edit Mode: Editmodesystemtemplates: tooltips ──
-# ── Edit Mode: Editmodetemplates: tooltips ──
 # ── Quick keybind: Quickkeybind: labels ──
 CHARACTER_SPECIFIC_KEYBINDINGS
 KEY_BOUND
@@ -4548,7 +4529,6 @@ PET_HAPPINESS3
 PET_DAMAGE_PERCENTAGE
 GAINING_LOYALTY
 LOSING_LOYALTY
-# ── Instance difficulty: minimap banner tooltip ──
 # ── Boss banner: title and loot ──
 BOSS_YOU_DEFEATED
 BOSS_KILL_SUBTITLE

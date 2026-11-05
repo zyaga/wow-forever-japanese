@@ -126,7 +126,7 @@ UIStrings.ARGS = {
   TALENT_BUTTON_TOOLTIP_RANK_FORMAT = { [1] = "text" }, TALENT_BUTTON_TOOLTIP_RANK_NO_MAX_FORMAT = { [1] = "text" },
   TALENT_BUTTON_TOOLTIP_REPLACED_BY_FORMAT = { [1] = "text" }, TALENT_FRAME_INCREASED_RANKS_TEXT = { [2] = "text" },
   TALENTS_INSPECT_FORMAT = { [1] = "text" },
-  -- the chat header's whisper target, a corpse's name, the Edit Mode "new layout" atlas, the
+  -- the chat header's whisper target, a corpse's name, the "new layout" atlas, the
   -- interact key's binding, a unit tooltip's level ("??" too) / race / class / creature type: all kept as shown;
   -- the loot opt-out's Yes / No and a settings category's names are dictionary words
   CHAT_WHISPER_SEND = { [1] = "text" }, CHAT_BN_WHISPER_SEND = { [1] = "text" }, CORPSE_TOOLTIP = { [1] = "text" },

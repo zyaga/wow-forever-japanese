@@ -81,8 +81,6 @@ def test_every_exclusion_names_a_key_the_forever_ui_can_reach(root):
 
 # Modules that declare a Compat namespace but are not a translated surface.
 NOT_SURFACES = {"scan", "readings"}  # the word-reading box rides the quest / gossip surfaces, no window
-# Windows the inventory keeps (the client shows them) that no module hooks: their keys are excluded with the reason.
-UNHOOKED = {"editmode"}  # Edit Mode stays as the client writes it (ADR-069)
 _SURFACE_CONST = re.compile(r'^local (?:SURFACE|DECLARE) = "([a-z.]+)"', re.M)
 
 
@@ -99,8 +97,7 @@ def _module_surfaces(root: Path) -> dict[str, str]:
 def test_every_inventoried_surface_has_a_module_and_every_module_is_inventoried(root):
     # a surface with no hook, or a hook with no inventory, fails. Forever surfaces only (no Classic Era `questlog` /
     # `honor` modules).
-    assert set(_module_surfaces(root)) == set(ui_inventory.FOREVER_WINDOWS) - UNHOOKED
-    assert set(ui_inventory.FOREVER_WINDOWS) >= UNHOOKED
+    assert set(_module_surfaces(root)) == set(ui_inventory.FOREVER_WINDOWS)
 
 
 def test_first_ui_pass_keys_are_resolved(root):
