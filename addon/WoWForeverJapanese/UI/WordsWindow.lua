@@ -8,6 +8,7 @@ WFJ.WordsWindow = WordsWindow
 
 local W, Text = WFJ.OptionsWidgets, WFJ.OptionsText
 local WIDTH, HEIGHT, LEFT = 620, 520, 16
+local HEIGHT_IMAGES = 570 -- with Include images ticked: room for the two folder paths below the checkbox
 local INNER = WIDTH - 2 * LEFT
 local ARM_SECONDS = 5 -- Clear all needs a second click within this long, as the collector's Clear does
 
@@ -34,6 +35,7 @@ local function fill()
   local images = f.images:GetChecked() and true or false
   f.text:setText(WFJ.Words.export({ images = images }, date()))
   for _, w in ipairs(f.imageRows) do show(w, images) end
+  f:SetHeight(images and HEIGHT_IMAGES or HEIGHT)
   -- new text drops the selection; the box keeps its focus, so select it again for Cmd+C
   local box = f.text.box
   if box.HasFocus and box:HasFocus() then box:HighlightText() end
