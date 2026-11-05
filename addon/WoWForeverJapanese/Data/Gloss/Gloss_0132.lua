@@ -529,7 +529,6 @@ WFJ.Data.add("gloss", {
   [132527] = "鉄槌\tてっつい\tlesson (hammer blow)",
   [132528] = "鉄灰色\tてつはいいろ\tgrey iron (iron grey)",
   [132529] = "鉄球付き\tてっきゅうつき\tball (with an iron ball)",
-  [132530] = "鉄製\tてつせい\tiron (made of iron)",
   [132531] = "鉄鉱石\tてっこうせき\tiron ore",
   [132532] = "鉛\tなまり\tlead",
   [132533] = "鉢\tはち\tbowl",
