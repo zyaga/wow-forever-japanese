@@ -35,6 +35,7 @@
 {"id": "99dc096e1ffa2fbb", "field": "text", "en": "I shall get started right away, $n.", "hash": "99dc096e1ffa2fbb", "src": "vmangos@13b49dc"}
 {"id": "99e51b0049a9a4c1", "field": "text", "en": "Uni-brow", "hash": "99e51b0049a9a4c1", "src": "vmangos@13b49dc"}
 {"id": "99f1ba99d4a1b91a", "field": "text", "en": "We don't have a bank here in Brill, you'll have to go to the Undercity for that.  At the back of the Ruins of Lordaeron to the south are elevators that will take you down into the Undercity.  Once there ask one of the Undercity Guardians for more precise directions.", "hash": "99f1ba99d4a1b91a", "src": "vmangos@13b49dc"}
+{"id": "99f1ca606b16235d", "field": "text", "en": "You now bear the eternal flame. Quickly, take it to the Brazier of Eternal Flame in Valanaar and complete the ritual.", "hash": "99f1ca606b16235d", "src": "collector@1.60.1.70790"}
 {"id": "99f98345d038c141", "field": "text", "en": "Barnil, I seem to have misplaced Chapter II.", "hash": "99f98345d038c141", "src": "vmangos@13b49dc"}
 {"id": "99f989ecd03a5fae", "field": "text", "en": "Barnil, I seem to have misplaced Chapter IV.", "hash": "99f989ecd03a5fae", "src": "vmangos@13b49dc"}
 {"id": "99faba03f89906d9", "field": "text", "en": "You must be hard up to be wandering these Badlands, $c.  Hard up like me.$B$BOr maybe you're here because you're crazy.  Crazy, like me.", "hash": "99faba03f89906d9", "src": "vmangos@13b49dc"}

@@ -37,7 +37,9 @@
 {"id": "deb73f3d66079a83", "field": "text", "en": "Now where was that book on Night Elf customs I was looking for...", "hash": "deb73f3d66079a83", "src": "vmangos@13b49dc"}
 {"id": "deb805650f20433a", "field": "text", "en": "Do not consume the entire corpse just yet, children! Save room for dessert!", "hash": "deb805650f20433a", "src": "vmangos@13b49dc"}
 {"id": "deb81371181fe4bf", "field": "text", "en": "All done!", "hash": "deb81371181fe4bf", "src": "vmangos@13b49dc"}
+{"id": "deb97894ad58c43b", "field": "text", "en": "If you want to try and find the components we need, I won't stop you, but it might require more than a little bit of scavenging.", "hash": "deb97894ad58c43b", "src": "collector@1.60.1.70790"}
 {"id": "deb98a8b22c1a5b3", "field": "text", "en": "%s growls in your direction before taking time to sniff you.", "hash": "deb98a8b22c1a5b3", "src": "vmangos@13b49dc"}
+{"id": "debb37b49673adf3", "field": "text", "en": "Show me what I've earned the right to purchase, Vayn.", "hash": "debb37b49673adf3", "src": "collector@1.60.1.70790", "npcs": [254151]}
 {"id": "debcc7bd3ee55d80", "field": "text", "en": "%s shimmers, flashes...and is no more!", "hash": "debcc7bd3ee55d80", "src": "vmangos@13b49dc"}
 {"id": "debf5af8ce033fbb", "field": "text", "en": "Good bye, Goldshire. I'll be back soon enough-- perhaps a week's time.", "hash": "debf5af8ce033fbb", "src": "vmangos@13b49dc"}
 {"id": "dec6051dc96179c8", "field": "text", "en": "%s jumps into the moonwell, and goes underwater...", "hash": "dec6051dc96179c8", "src": "vmangos@13b49dc"}

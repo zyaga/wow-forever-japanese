@@ -1,3 +1,4 @@
+{"id": "8c050c7dc1bd80b9", "field": "text", "en": "Lorthuna! Stop this madness. You don't know what bringing down the wards protecting Zephras will do. You could doom us all!", "hash": "8c050c7dc1bd80b9", "src": "collector@1.60.1.70790"}
 {"id": "8c0547c72cead45a", "field": "text", "en": "I'll be a guard someday!", "hash": "8c0547c72cead45a", "src": "vmangos@13b49dc"}
 {"id": "8c208f546b2d7ad3", "field": "text", "en": "What are you doing over there?", "hash": "8c208f546b2d7ad3", "src": "vmangos@13b49dc"}
 {"id": "8c239ff3cde7fcba", "field": "text", "en": "If you desire to form a fellowship then it is the guild master, Lysheana, that you must see.  You will find her in the Craftsmen's Terrace in the northeastern section of Darnassus.", "hash": "8c239ff3cde7fcba", "src": "vmangos@13b49dc"}
@@ -7,6 +8,7 @@
 {"id": "8c433ba9d25c2b03", "field": "text", "en": "Use this Staff of Command on Raze when you are near Shadowsilk Poachers and he will make them rue the day they decided to poach in these lands.", "hash": "8c433ba9d25c2b03", "src": "vmangos@13b49dc"}
 {"id": "8c4d1af8978117ed", "field": "text", "en": "Your skull gonna decorate our ritual altars!", "hash": "8c4d1af8978117ed", "src": "vmangos@13b49dc"}
 {"id": "8c5ac8cc8755e531", "field": "text", "en": "I am absolutely certain that I want to learn tribal leatherworking.", "hash": "8c5ac8cc8755e531", "src": "vmangos@13b49dc"}
+{"id": "8c5cd5132919ae58", "field": "text", "en": "I wish to unlearn my class or legacy talents.", "hash": "8c5cd5132919ae58", "src": "collector@1.60.1.70790", "npcs": [262558]}
 {"id": "8c6358aa2b427784", "field": "text", "en": "Where is Elder Moonstrike?", "hash": "8c6358aa2b427784", "src": "vmangos@13b49dc"}
 {"id": "8c6681bf373fae0b", "field": "text", "en": "You big boss now!  You king!  All hail King $n, King of Gordok!$B$BNow that you da boss, all henchmen will give you tribute!  You left some alive, yeah boss?", "hash": "8c6681bf373fae0b", "src": "vmangos@13b49dc"}
 {"id": "8c6d1fcfa8f9cb06", "field": "text", "en": "The Stonehearth Bunker was destroyed by the Horde!", "hash": "8c6d1fcfa8f9cb06", "src": "vmangos@13b49dc"}

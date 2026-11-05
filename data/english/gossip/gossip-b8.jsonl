@@ -8,10 +8,13 @@
 {"id": "b827703d22c0a3e9", "field": "text", "en": "Hello there, young $C. I am Rathiril Sunlance and I am an elder Magister of the High Order here on Zephras Isle. It's always good to see bright-eyed young shen'dorei, ready to do their duty in service to their homeland.$B$BDon't let this dusty old mage hold you up, however. No doubt you've got many adventures to see to. Feel free to stop by later if you'd like to speak more.", "hash": "b827703d22c0a3e9", "src": "collector@1.60.1.70790", "npcs": [251903]}
 {"id": "b83109cf91ed24d5", "field": "text", "en": "Must be very careful with this one... Very delicate.", "hash": "b83109cf91ed24d5", "src": "vmangos@13b49dc"}
 {"id": "b841c06693faf531", "field": "text", "en": "I made a lot of the things you see in the store. What do you think? Answer carefully, your life may depend on it.", "hash": "b841c06693faf531", "src": "vmangos@13b49dc"}
+{"id": "b843e1e3bdc7048b", "field": "text", "en": "Prepare yourself.", "hash": "b843e1e3bdc7048b", "src": "collector@1.60.1.70790"}
 {"id": "b85337a2dea3e796", "field": "text", "en": "Hey Jangdor - can you teach me how to make Wild Leather Shoulders again?", "hash": "b85337a2dea3e796", "src": "vmangos@13b49dc"}
 {"id": "b85da36d6a4716e9", "field": "text", "en": "Hey, follow me!", "hash": "b85da36d6a4716e9", "src": "vmangos@13b49dc"}
+{"id": "b86073e4fa484a6b", "field": "text", "en": "<Valennia is severely wounded and is barely holding on to consciousness.>", "hash": "b86073e4fa484a6b", "src": "collector@1.60.1.70790", "npcs": [253590]}
 {"id": "b862a4399d850f67", "field": "text", "en": "All right, watch my back while I get you some of this ore.", "hash": "b862a4399d850f67", "src": "vmangos@13b49dc"}
 {"id": "b867f07b9e83d9fb", "field": "text", "en": "Yes I checked, I'm missing the left piece!", "hash": "b867f07b9e83d9fb", "src": "vmangos@13b49dc"}
+{"id": "b8738549b5df7762", "field": "text", "en": "I tell you lot, that forest is haunted! I SAW *hic* WHAT I SAW!", "hash": "b8738549b5df7762", "src": "collector@1.60.1.70790"}
 {"id": "b879e7f0d2980ace", "field": "text", "en": "Burninate's the name, smithin's my game... and, erm... I sell a little food and water on the side. Care for some meat?", "hash": "b879e7f0d2980ace", "src": "vmangos@13b49dc"}
 {"id": "b87de1da15d58d06", "field": "text", "en": "Where can I send you today $c?", "hash": "b87de1da15d58d06", "src": "vmangos@13b49dc"}
 {"id": "b884e7533e94c54a", "field": "text", "en": "Harroc, get a box of tools for, $n.", "hash": "b884e7533e94c54a", "src": "vmangos@13b49dc"}
@@ -30,6 +33,7 @@
 {"id": "b8d3bf1a82465ebe", "field": "text", "en": "It'll definitely not be anywhere in the Eastern Kingdoms, that's for sure.$B$BIt'll have to be somwhere on Kalimdor, but still far enough away from the Horde and other races. Someplace unaffected by the Sundering--that means no where near the Night elves' civilization either.$B$BI would guess it'd be someplace protected also... like a valley, or a crater. I don't know. I'm just guessing now. I'm sorry I couldn't help you more.", "hash": "b8d3bf1a82465ebe", "src": "vmangos@13b49dc"}
 {"id": "b8dd03ddf5a84caa", "field": "text", "en": "I'm sad!  It's Hallow's End, and I'm sick.  I'm going to miss out on trick-or-treating because I can't go out!", "hash": "b8dd03ddf5a84caa", "src": "vmangos@13b49dc"}
 {"id": "b8e04228229255c0", "field": "text", "en": "And that's how Lothar killed thirty six orcs with his bare hands!", "hash": "b8e04228229255c0", "src": "vmangos@13b49dc"}
+{"id": "b8e287f3409dd7e8", "field": "text", "en": "What are you?", "hash": "b8e287f3409dd7e8", "src": "collector@1.60.1.70790", "npcs": [251684]}
 {"id": "b8e50c0081dca17e", "field": "text", "en": "Here's a singing telegram for $n: Roses are red, violets are blue, I will kill any $R I see, including you!", "hash": "b8e50c0081dca17e", "src": "vmangos@13b49dc"}
 {"id": "b8e880d8bb009fbd", "field": "text", "en": "Sarok, why don't we talk business?", "hash": "b8e880d8bb009fbd", "src": "vmangos@13b49dc"}
 {"id": "b8f2326ead66d18f", "field": "text", "en": "The Sunken Temple can be found in the center of a great lake in eastern Swamp of Sorrows.", "hash": "b8f2326ead66d18f", "src": "vmangos@13b49dc"}

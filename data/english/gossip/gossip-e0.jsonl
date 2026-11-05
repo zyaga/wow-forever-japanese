@@ -13,6 +13,7 @@
 {"id": "e05c22a9a651037e", "field": "text", "en": "You've destroyed too much of my work!  Prepare to join them in the Nether!", "hash": "e05c22a9a651037e", "src": "vmangos@13b49dc"}
 {"id": "e05c393349c92afe", "field": "text", "en": "I wanna see the dragon skeleton in the great library.", "hash": "e05c393349c92afe", "src": "vmangos@13b49dc"}
 {"id": "e064da900d0b2e4a", "field": "text", "en": "The felhunter approaches! Be on your guard!", "hash": "e064da900d0b2e4a", "src": "vmangos@13b49dc"}
+{"id": "e065d7eccb2a6ad7", "field": "text", "en": "It's always great to see you, $N.", "hash": "e065d7eccb2a6ad7", "src": "collector@1.60.1.70790", "npcs": [252448]}
 {"id": "e06b3d0ee087f3c8", "field": "text", "en": "Hi this is my text.", "hash": "e06b3d0ee087f3c8", "src": "vmangos@13b49dc"}
 {"id": "e070ed89e92a320c", "field": "text", "en": "Lok'tar, $c, I have important information! There's a war coming at Ahn'Qiraj and we need to get ready for it. I'm here collecting all of the thick leather that I can get my hands on. Right now we have $2070w, but the Warchief has tasked me with the gathering of $2071w. As you can see, I'm a little short.", "hash": "e070ed89e92a320c", "src": "vmangos@13b49dc"}
 {"id": "e07144641c1285e3", "field": "text", "en": "Ah, a fellow warlock who has proven $ghis:her; worth to some degree.$B$BI am pleased to meet your acquaintance. My name is Menara Voidrender... and not without just cause.$B$BYou seem powerful and well-learned enough that other tools... more powerful tools... would be welcome and not foolishly imparted. If this is true, then speak to me further. If not, well then, you know your way  back to the docks and off into the ocean.", "hash": "e07144641c1285e3", "src": "vmangos@13b49dc"}
@@ -27,10 +28,13 @@
 {"id": "e0969b6edf3f5d9e", "field": "text", "en": "Surrender an' we'll let ye live, heathens! Jus' put down yer arms an' march!", "hash": "e0969b6edf3f5d9e", "src": "vmangos@13b49dc"}
 {"id": "e09f39de91aa7bb1", "field": "text", "en": "I've got plenty of great recipes for you to take a look at, and at discounted prices, too!", "hash": "e09f39de91aa7bb1", "src": "vmangos@13b49dc"}
 {"id": "e0a141a60a08d799", "field": "text", "en": "So you have come to Niby to learn the secrets of calling down an infernal servant from the Nether.$B$BSilence! Niby knows all!$B$BNiby is not so quick to part with such knowledge. First, you must assist Niby with a very important task.", "hash": "e0a141a60a08d799", "src": "vmangos@13b49dc"}
+{"id": "e0a1a76d5772c855", "field": "text", "en": "Storms curse these Al'Aketh fanatics!", "hash": "e0a1a76d5772c855", "src": "collector@1.60.1.70790", "npcs": [252378]}
 {"id": "e0a3390cbe52a438", "field": "text", "en": "The weapon master", "hash": "e0a3390cbe52a438", "src": "vmangos@13b49dc"}
 {"id": "e0a432e952d1b785", "field": "text", "en": "*sigh* It's about time to check on the cemetery again-- I'll be back in a few minutes.", "hash": "e0a432e952d1b785", "src": "vmangos@13b49dc"}
 {"id": "e0a7303cc7bab5d9", "field": "text", "en": "Ah, good ol' Brandur Ironhammer.  There's no doubt he'll provide ye with the guidance ye seek, $glad : lass;.  Ye'll find him in the Hall of Mysteries north of the gates of Ironforge.", "hash": "e0a7303cc7bab5d9", "src": "vmangos@13b49dc"}
+{"id": "e0b1bd53532c6082", "field": "text", "en": "Elder Shadowsong asked me to report to you for next steps.", "hash": "e0b1bd53532c6082", "src": "collector@1.60.1.70790", "npcs": [252383]}
 {"id": "e0c00f9b8ed128c4", "field": "text", "en": "Captain Galvangar is the trusted aid to Drek'Thar.  He leads the Horde forces from the Iceblood Garrison, in the southern section of the the Field of Strife.$B$BCaptain Galvangar is currently in the Iceblood Garrison.", "hash": "e0c00f9b8ed128c4", "src": "vmangos@13b49dc"}
+{"id": "e0c6d07c8cec4315", "field": "text", "en": "I'd like to see your wares.", "hash": "e0c6d07c8cec4315", "src": "collector@1.60.1.70790", "npcs": [271465]}
 {"id": "e0c8c93db2793f92", "field": "text", "en": "Curse you, mortal.", "hash": "e0c8c93db2793f92", "src": "vmangos@13b49dc"}
 {"id": "e0c93b079c13fd4d", "field": "text", "en": "I'll get that beacon to the crater safely, Guse. You can count on me!", "hash": "e0c93b079c13fd4d", "src": "vmangos@13b49dc"}
 {"id": "e0cfad60591d42e1", "field": "text", "en": "Attack!!", "hash": "e0cfad60591d42e1", "src": "vmangos@13b49dc"}

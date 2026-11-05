@@ -38,6 +38,7 @@
 {"id": "23bc2cde1276cd2d", "field": "text", "en": "Your message did reach us, Commander, but by no means is our involvement here sanctioned by the Grand Crusader.", "hash": "23bc2cde1276cd2d", "src": "vmangos@13b49dc"}
 {"id": "23c5d74f4791cf02", "field": "text", "en": "Hail, adventurer. I am Rin'wosho, trader of Zuldazar. I come from the South Seas and bring many exotic goods and items from my homeland.$B$BPerhaps if you prove your worth to my tribe, I shall barter.  If you have any of my tribe's Honor Tokens, then perhaps we shall barter even more.", "hash": "23c5d74f4791cf02", "src": "vmangos@13b49dc"}
 {"id": "23c954791197d66d", "field": "text", "en": "Tell me about the cannon.", "hash": "23c954791197d66d", "src": "vmangos@13b49dc"}
+{"id": "23cb3bed02e59707", "field": "text", "en": "Hah! This is genuinely entertaining. I wonder, little elves... how long do you think you can hold out? The armies of Al'Akir are endless in this place!", "hash": "23cb3bed02e59707", "src": "collector@1.60.1.70790"}
 {"id": "23d2426fd29ed2bf", "field": "text", "en": "I have lost my Ring of Unspoken Names. Are you able to replace it for me?", "hash": "23d2426fd29ed2bf", "src": "vmangos@13b49dc"}
 {"id": "23d66db8ec97e731", "field": "text", "en": "GOSSIP_OPTION_SPIRITGUIDE", "hash": "23d66db8ec97e731", "src": "vmangos@13b49dc"}
 {"id": "23d7f2890671e1e4", "field": "text", "en": "Your blood shall be the catalyst for the Old Gods' return!", "hash": "23d7f2890671e1e4", "src": "vmangos@13b49dc"}

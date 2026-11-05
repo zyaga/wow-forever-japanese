@@ -10,6 +10,7 @@
 {"id": "ff2d4d26f84284d8", "field": "text", "en": "Many think the staff an inferior weapon. I challenge any who think so to prove their strength against my staff. ", "hash": "ff2d4d26f84284d8", "src": "vmangos@13b49dc"}
 {"id": "ff36d45a60800ef1", "field": "text", "en": "Interesting... continue, John.", "hash": "ff36d45a60800ef1", "src": "vmangos@13b49dc"}
 {"id": "ff4bccc32175dabd", "field": "text", "en": "%s begins the ritual.", "hash": "ff4bccc32175dabd", "src": "vmangos@13b49dc"}
+{"id": "ff546c4ca22b4983", "field": "text", "en": "<Before you lies the corpse of Jorel Windsinger.$B$BDeep lacerations are cut into his legs, and lightning burns scorch his fur.$B$BIt is clear he put up a fight before succumbing to his wounds.>", "hash": "ff546c4ca22b4983", "src": "collector@1.60.1.70790", "npcs": [258130]}
 {"id": "ff54dc6a6bdc970f", "field": "text", "en": "Hey, Rocknot!", "hash": "ff54dc6a6bdc970f", "src": "vmangos@13b49dc"}
 {"id": "ff597f7b055e1b8b", "field": "text", "en": "Take that you mangy Harpy! Hyaa!", "hash": "ff597f7b055e1b8b", "src": "vmangos@13b49dc"}
 {"id": "ff5e508221e424c3", "field": "text", "en": "This orchard is now as barren and lifeless as my rotting shell. Once these trees bloomed with fruit but now there is only rot.", "hash": "ff5e508221e424c3", "src": "vmangos@13b49dc"}
@@ -40,6 +41,7 @@
 {"id": "ffd022f8fce0edb0", "field": "text", "en": "Fleeing will do you no good, mortals!", "hash": "ffd022f8fce0edb0", "src": "vmangos@13b49dc"}
 {"id": "ffd17a976d8c15ff", "field": "text", "en": "Rin'ji is being attacked!", "hash": "ffd17a976d8c15ff", "src": "vmangos@13b49dc"}
 {"id": "ffd919d7efae2fa3", "field": "text", "en": "Grrrr! Idiots!", "hash": "ffd919d7efae2fa3", "src": "vmangos@13b49dc"}
+{"id": "ffd94a320bd43785", "field": "text", "en": "...and the Windshapers. We are ready to support an assault on the Shrine, Valennia.", "hash": "ffd94a320bd43785", "src": "collector@1.60.1.70790"}
 {"id": "ffe7673d7424501f", "field": "text", "en": "Hi there, $c! With the Ahn'Qiraj War drawing near, our preparations here are in full swing. I'm in charge of thick leather collections. It's a fine day for gathering thick leather, don't ya think? I got my stacks here and it looks like we've got $2069w right now. Our magic number is $2071w. Want to help out?", "hash": "ffe7673d7424501f", "src": "vmangos@13b49dc"}
 {"id": "fff5cf1ef18a2025", "field": "text", "en": "You outsiders will pay for encroaching on our land!", "hash": "fff5cf1ef18a2025", "src": "vmangos@13b49dc"}
 {"id": "fffc5c1d0259c895", "field": "text", "en": "I'd like to train.", "hash": "fffc5c1d0259c895", "src": "vmangos@13b49dc"}

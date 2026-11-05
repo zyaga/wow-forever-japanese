@@ -1,6 +1,7 @@
 {"id": "8b0008a3a55b8c96", "field": "text", "en": "I see right through your disguise, $r. Number Two! Number Two kill!", "hash": "8b0008a3a55b8c96", "src": "vmangos@13b49dc"}
 {"id": "8b08facbd5b421b4", "field": "text", "en": "The time has come for me to once again make my wares available to all who travel near Sentinel Hill! Come one, come all!", "hash": "8b08facbd5b421b4", "src": "vmangos@13b49dc"}
 {"id": "8b0f0d5ba83cd210", "field": "text", "en": "I have lost my Ring of the Gathering Storm. Are you able to replace it for me?", "hash": "8b0f0d5ba83cd210", "src": "vmangos@13b49dc"}
+{"id": "8b13bc4aaedfd395", "field": "text", "en": "...do not delay. Muster our forces to march immediately. The pylons are key and...the wards...come down. This is...", "hash": "8b13bc4aaedfd395", "src": "collector@1.60.1.70790"}
 {"id": "8b20f109b420eb0e", "field": "text", "en": "Bethekk, your priestess calls upon your might!", "hash": "8b20f109b420eb0e", "src": "vmangos@13b49dc"}
 {"id": "8b24ae18e68ebd33", "field": "text", "en": "Welcome to Valanaar, $c.", "hash": "8b24ae18e68ebd33", "src": "forever-vo@025070f", "npcs": [252476]}
 {"id": "8b24c8fec5658257", "field": "text", "en": "%s is resurrected by a nearby ally!", "hash": "8b24c8fec5658257", "src": "vmangos@13b49dc"}
@@ -32,6 +33,7 @@
 {"id": "8bbb25ff825e4a77", "field": "text", "en": "Inner ring of War Quarter where James Van Brunt work.  Him make us good chain.", "hash": "8bbb25ff825e4a77", "src": "vmangos@13b49dc"}
 {"id": "8bbe20644ee7ea4b", "field": "text", "en": "If Hydraxis recruits more in his war, then it might shift the balance of power...", "hash": "8bbe20644ee7ea4b", "src": "vmangos@13b49dc"}
 {"id": "8bc4c2df69ba8d9b", "field": "text", "en": "Help help!  I'm being repressed!", "hash": "8bc4c2df69ba8d9b", "src": "vmangos@13b49dc"}
+{"id": "8bc637a19b4a8146", "field": "text", "en": "H-Hello. You'll have to excuse me, I'm used to your kind running from me.", "hash": "8bc637a19b4a8146", "src": "collector@1.60.1.70790", "npcs": [251684]}
 {"id": "8bd1ac2684de6f31", "field": "text", "en": "Your victory shall be short lived. The days of both the Alliance and Horde are coming to an end! The next time we meet shall be the last.", "hash": "8bd1ac2684de6f31", "src": "vmangos@13b49dc"}
 {"id": "8bd3e0ddaa413561", "field": "text", "en": "Lyria's the one you should talk to if you need some training.  She can usually be found out behind the smithy waiting for some armor or weapon to be finished.", "hash": "8bd3e0ddaa413561", "src": "vmangos@13b49dc"}
 {"id": "8bd3ef5fb87dbb0d", "field": "text", "en": "Well, that should do it.  Come now, back to the shop to finish our business!", "hash": "8bd3ef5fb87dbb0d", "src": "vmangos@13b49dc"}

@@ -17,6 +17,7 @@
 {"id": "7f587dd056e918fc", "field": "text", "en": "%s begins to cast a spell over the hearts and tongues.", "hash": "7f587dd056e918fc", "src": "vmangos@13b49dc"}
 {"id": "7f5fbdbc075cb2d7", "field": "text", "en": "What can I do for you, $n?  Make it quick, I don't have all day!", "hash": "7f5fbdbc075cb2d7", "src": "vmangos@13b49dc"}
 {"id": "7f6f6f60529b8ec8", "field": "text", "en": "The Week of the Wardens is not yet over... may I have another Orphan Whistle?", "hash": "7f6f6f60529b8ec8", "src": "vmangos@13b49dc"}
+{"id": "7f73896387af91ab", "field": "text", "en": "I've heard that the Shal'nan vanished along with the wind spirits. Can you tell me more about him?", "hash": "7f73896387af91ab", "src": "collector@1.60.1.70790", "npcs": [252383]}
 {"id": "7f825e1a0ff0c3ef", "field": "text", "en": "Me smash! You die!", "hash": "7f825e1a0ff0c3ef", "src": "vmangos@13b49dc"}
 {"id": "7f832510cc2b39d9", "field": "text", "en": "Ah a visitor! Must be an adventurer, we don't get many tourists down this way. Grab a chair and a drink, make yourself comfortable. Say, you look like you have some meat on your bones. You thinkin about competing in the cage matches?", "hash": "7f832510cc2b39d9", "src": "vmangos@13b49dc"}
 {"id": "7f8ab926dd2433de", "field": "text", "en": "Alrighty then! So I was down at the lava pits of the Molten Span, testing out my lava suit. Everything was going great. I was even able to swim around in that stuff without suffering a single injury!$B$BSo there I am, minding my own business, doing a few backstrokes, when out of nowhere this thing swallows me up whole! Had it not been for my lava suit and built in food pellet dispenser, I would have been done for!", "hash": "7f8ab926dd2433de", "src": "vmangos@13b49dc"}
@@ -24,6 +25,7 @@
 {"id": "7f95b3b54601b6f9", "field": "text", "en": "You are kind to seek me out, but your skills are beyond my own. Have a word with Sylvanna Forestmoon, just over there. She's been looking for another student.", "hash": "7f95b3b54601b6f9", "src": "vmangos@13b49dc"}
 {"id": "7f9a6b0aa95ca0d5", "field": "text", "en": "My Zandalar Predator's Belt has gone missing. Can you help, Falthir?", "hash": "7f9a6b0aa95ca0d5", "src": "vmangos@13b49dc"}
 {"id": "7f9f6455b0c0e7ac", "field": "text", "en": "At your side, milady!", "hash": "7f9f6455b0c0e7ac", "src": "vmangos@13b49dc"}
+{"id": "7fa0773f5adcead8", "field": "text", "en": "Nor is this how I envisioned our first meeting, Muln.", "hash": "7fa0773f5adcead8", "src": "collector@1.60.1.70790"}
 {"id": "7fa3ff24ce9f749a", "field": "text", "en": "I sell only the finest arcane gear, made by the crafters and mages here in the city of Stormwind.", "hash": "7fa3ff24ce9f749a", "src": "vmangos@13b49dc"}
 {"id": "7fa5108ff5305910", "field": "text", "en": "|cffffff00The Plaguewood Tower has been taken by the Horde!|r", "hash": "7fa5108ff5305910", "src": "vmangos@13b49dc"}
 {"id": "7fac6b2d0492dbf5", "field": "text", "en": "All will be well children.  The Light shall see to that!", "hash": "7fac6b2d0492dbf5", "src": "vmangos@13b49dc"}

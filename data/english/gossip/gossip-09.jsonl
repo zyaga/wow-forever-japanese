@@ -33,6 +33,7 @@
 {"id": "099573ea33ea20af", "field": "text", "en": "I can teach you the finer points of Wolf Riding, provided you have enough gold to cover the lesson!", "hash": "099573ea33ea20af", "src": "vmangos@13b49dc"}
 {"id": "09a9fd5d45f9cf6a", "field": "text", "en": "Paval Reethe! Found you at last. And consorting with ogres now? No fear, even deserters and traitors are afforded some mercy.", "hash": "09a9fd5d45f9cf6a", "src": "vmangos@13b49dc"}
 {"id": "09ac3b2ccd14b9dc", "field": "text", "en": "Now's not a good time, $n.$B$BAre you insane?!", "hash": "09ac3b2ccd14b9dc", "src": "vmangos@13b49dc"}
+{"id": "09cf060e8eba3622", "field": "text", "en": "<Elaadrin eyes you with barely-contained hatred.>$B$BYou would dare step foot into our sanctum after spilling High Order blood? You are very brave, or very stupid. The High Order does not forgive, nor do we forget.$B$BSomeday, you will pay for your crimes in blood.", "hash": "09cf060e8eba3622", "src": "collector@1.60.1.70790", "npcs": [252475]}
 {"id": "09d50c398109bc27", "field": "text", "en": "Thank you for rescuing me! Word of your deed will not go unnoticed.", "hash": "09d50c398109bc27", "src": "vmangos@13b49dc"}
 {"id": "09dba50c81659f47", "field": "text", "en": "Balance has been restored!", "hash": "09dba50c81659f47", "src": "vmangos@13b49dc"}
 {"id": "09e5cfbc3192caa8", "field": "text", "en": "Scourge inside Trade Quarter!  Destroy!", "hash": "09e5cfbc3192caa8", "src": "vmangos@13b49dc"}

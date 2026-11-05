@@ -2,6 +2,7 @@
 {"id": "f90d8864497d3bd2", "field": "text", "en": "By your command!", "hash": "f90d8864497d3bd2", "src": "vmangos@13b49dc"}
 {"id": "f90f34dd10fe5438", "field": "text", "en": "Good day, $c. What would you like?", "hash": "f90f34dd10fe5438", "src": "vmangos@13b49dc"}
 {"id": "f912b74482bab818", "field": "text", "en": "No, $c, that is not all. The elite fighting forces of the opposition are commanded by the four Commanders of the base. Should you be able to strike a fatal and rapid blow to their Commanders, the elite line will falter. Their numbers dwindling to nothing!$B$BBut be warned, soldier; Commanders and Lieutenants are not to be trifled with or taken lightly. They earned those ranks...", "hash": "f912b74482bab818", "src": "vmangos@13b49dc"}
+{"id": "f91c878ad48cf614", "field": "text", "en": "Very well, mortals. For now enjoy your respite. I simply cannot wait to tell the Windlord about all that has transpired here. You will be seeing me again... very soon.", "hash": "f91c878ad48cf614", "src": "collector@1.60.1.70790"}
 {"id": "f92b72b3ff55d142", "field": "text", "en": "Gryphons, eh? Never really cared for the beasts but to each their own.\n\nYou can find Dungar Longdrink on the rampart in the Trade District.", "hash": "f92b72b3ff55d142", "src": "vmangos@13b49dc"}
 {"id": "f931475cf86a9005", "field": "text", "en": "Look at that!  Someone is fighting Mushgog!", "hash": "f931475cf86a9005", "src": "vmangos@13b49dc"}
 {"id": "f939040ac50ea81d", "field": "text", "en": "Time to relax, the Alliance be way behind us mon. We all done with our collectin' here, and the final polishes be goin' on things as we speak. When they get done over in their Ironforge, then we be thinkin' 'bout movin' all this stuff to Silithus. 'Til then, sit tight and maybe do some fishin'.", "hash": "f939040ac50ea81d", "src": "vmangos@13b49dc"}
@@ -12,6 +13,7 @@
 {"id": "f954053dee41e01b", "field": "text", "en": "We have all the copper bars that we need. Thank you for your assistance, $c. You might wanna help out with the other materials being collected here.", "hash": "f954053dee41e01b", "src": "vmangos@13b49dc"}
 {"id": "f958144a90778e7c", "field": "text", "en": "I cause you no trouble, boss.", "hash": "f958144a90778e7c", "src": "vmangos@13b49dc"}
 {"id": "f95bd285e3187408", "field": "text", "en": "Children of Madness - I release you upon this world!", "hash": "f95bd285e3187408", "src": "vmangos@13b49dc"}
+{"id": "f96334db0714b283", "field": "text", "en": "I am Vol'jin, of the Darkspear. Do you be friend, or enemy?", "hash": "f96334db0714b283", "src": "collector@1.60.1.70790", "npcs": [10540]}
 {"id": "f96595a6d6c9038d", "field": "text", "en": "Elune be with you, $c.", "hash": "f96595a6d6c9038d", "src": "vmangos@13b49dc"}
 {"id": "f96ac5f7d53fae38", "field": "text", "en": "$n, I am in need of your help once again.", "hash": "f96ac5f7d53fae38", "src": "vmangos@13b49dc"}
 {"id": "f96c7527f82d8e85", "field": "text", "en": "Hmm, it would seem Keever needs a new subject. If that fool Abernathy keeps taking Keever's subjects, Keever may have to have a word with him.", "hash": "f96c7527f82d8e85", "src": "vmangos@13b49dc"}

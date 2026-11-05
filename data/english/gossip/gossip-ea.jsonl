@@ -25,6 +25,8 @@
 {"id": "ea64223e28dea867", "field": "text", "en": "That trainer can be found in a house near the High Order dock, on the southeastern edge of town.", "hash": "ea64223e28dea867", "src": "forever-vo@025070f", "npcs": [252477]}
 {"id": "ea65dafd236b4eca", "field": "text", "en": "This cultist is in a deep trance...", "hash": "ea65dafd236b4eca", "src": "vmangos@13b49dc"}
 {"id": "ea6809cd554445a1", "field": "text", "en": "Be on the alert! The Blackwood furbolgs are numerous in this area...", "hash": "ea6809cd554445a1", "src": "vmangos@13b49dc"}
+{"id": "ea6f3c131e96e1cf", "field": "text", "en": "You dare to command me, mortal? No, I think not. Begone, insignificant elf!", "hash": "ea6f3c131e96e1cf", "src": "collector@1.60.1.70790"}
+{"id": "ea7b8e4c8960f808", "field": "text", "en": "Sure, why not? (Train Engineering, whatever that is?)", "hash": "ea7b8e4c8960f808", "src": "collector@1.60.1.70790", "npcs": [251684]}
 {"id": "ea8b6f1f7d62b8e3", "field": "text", "en": "Welcome to my shop, it's good to see another Tailor here in Stormwind. Are you here for a lesson perhaps?", "hash": "ea8b6f1f7d62b8e3", "src": "vmangos@13b49dc"}
 {"id": "ea8c62887c49ced3", "field": "text", "en": "Return the amulet! Return to me what was stolen!!", "hash": "ea8c62887c49ced3", "src": "vmangos@13b49dc"}
 {"id": "ea8e8790634a0f7c", "field": "text", "en": "Good day, $glad:lass;! Perhaps you could help me with some things that need to be taken care of.", "hash": "ea8e8790634a0f7c", "src": "vmangos@13b49dc"}

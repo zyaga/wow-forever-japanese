@@ -14,6 +14,7 @@
 {"id": "2150c35b525dfa50", "field": "text", "en": "Please return to Zoram'gar and report our success to the Warsong Runner.", "hash": "2150c35b525dfa50", "src": "vmangos@13b49dc"}
 {"id": "2151d7002b73f734", "field": "text", "en": "Please teach me how to become a hammersmith, Lilith.", "hash": "2151d7002b73f734", "src": "vmangos@13b49dc"}
 {"id": "2152119dba8a239d", "field": "text", "en": "By the Light!  This cursed spy was a good one!  I'm glad he's dead.", "hash": "2152119dba8a239d", "src": "vmangos@13b49dc"}
+{"id": "2153d6e4dff0dadd", "field": "text", "en": "...a recall crystal! Used to record an important moment, no doubt.", "hash": "2153d6e4dff0dadd", "src": "collector@1.60.1.70790"}
 {"id": "2154b4000ca68f04", "field": "text", "en": "I have lost my Ring of Eternal Justice. Are you able to replace it for me?", "hash": "2154b4000ca68f04", "src": "vmangos@13b49dc"}
 {"id": "2155755f2f2da197", "field": "text", "en": "Oh wait, that's Hollee's tent... and it's empty.", "hash": "2155755f2f2da197", "src": "vmangos@13b49dc"}
 {"id": "2156a14b75fd8e61", "field": "text", "en": "<Valenna looks away briefly before looking hesitantly back in your direction.>\r\n\r\nThe Shal'nan was the very best of us. It was he who stood up for our people against madness and oppression in Eldre'Thalas nearly ten thousand years ago. It was the Shal'nan who led us across the uncharted sea to escape the murderous vengeance of our ancient enemies.\r\n\r\nIt was the Shal'nan who brokered the pact of friendship with the wind spirits that allowed us to ascend to Skywall... and survive.\r\n\r\nHe was ever the servant leader to his people, even after he abdicated his position of power and retired.", "hash": "2156a14b75fd8e61", "src": "forever-vo@025070f", "npcs": [252383]}
@@ -24,6 +25,7 @@
 {"id": "216f6c41d032c23d", "field": "text", "en": "The Pool of Tears in the Swamp of Sorrows holds ancient locked boxes that were lost in another age.", "hash": "216f6c41d032c23d", "src": "vmangos@13b49dc"}
 {"id": "216facfc6e36df1a", "field": "text", "en": "$n, no hurt A-Me. A-Me, good.", "hash": "216facfc6e36df1a", "src": "vmangos@13b49dc"}
 {"id": "2172e9438f1943f2", "field": "text", "en": "%s is angered and attacks!", "hash": "2172e9438f1943f2", "src": "vmangos@13b49dc"}
+{"id": "217332f85416554d", "field": "text", "en": "Oh, and a word of warning before you head up to Shadowgale Forest. It's incredibly dangerous up there. Some even say it's haunted. Make sure you are prepared and well-equipped if you plan to make the trek.", "hash": "217332f85416554d", "src": "collector@1.60.1.70790"}
 {"id": "2176ab80e02c751d", "field": "text", "en": "To the safe hall, your majesty.", "hash": "2176ab80e02c751d", "src": "vmangos@13b49dc"}
 {"id": "217f2de08078e018", "field": "text", "en": "Are you going to let an injured dwarf do all the work for you?", "hash": "217f2de08078e018", "src": "vmangos@13b49dc"}
 {"id": "219a7e8bf92536d4", "field": "text", "en": "Athrikus points at you as he bellows forth words that scrape apart the inside of your ears. They are the last thing you hear.", "hash": "219a7e8bf92536d4", "src": "vmangos@13b49dc"}

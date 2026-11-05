@@ -16,6 +16,7 @@
 {"id": "495b338f744b4f32", "field": "text", "en": "I need another set of tools.", "hash": "495b338f744b4f32", "src": "vmangos@13b49dc"}
 {"id": "495f67ce207dbe2a", "field": "text", "en": "%s siphons the energy from the totem and redirects it in the form of an anti-magic pulse.", "hash": "495f67ce207dbe2a", "src": "vmangos@13b49dc"}
 {"id": "496072da3e359a49", "field": "text", "en": "BY FIRE BE PURGED!", "hash": "496072da3e359a49", "src": "vmangos@13b49dc"}
+{"id": "4969c2e40a0680a1", "field": "text", "en": "<The Brazier of Eternal Flame awaits your offering.>", "hash": "4969c2e40a0680a1", "src": "collector@1.60.1.70790", "npcs": [268679]}
 {"id": "4971c2da59ea5f91", "field": "text", "en": "|cffffff00Eastwall Tower has been taken by the Horde!|r", "hash": "4971c2da59ea5f91", "src": "vmangos@13b49dc"}
 {"id": "49725f272722d8bd", "field": "text", "en": "Scream your dying breath!", "hash": "49725f272722d8bd", "src": "vmangos@13b49dc"}
 {"id": "4979177b05e43363", "field": "text", "en": "Not bad, for a beginner! I guess it couldn't hurt for me to show you a few things...", "hash": "4979177b05e43363", "src": "vmangos@13b49dc"}

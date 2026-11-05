@@ -14,6 +14,7 @@
 {"id": "e95dd430fede5438", "field": "text", "en": "KILL!!!", "hash": "e95dd430fede5438", "src": "vmangos@13b49dc"}
 {"id": "e96c2914a093f591", "field": "text", "en": "Jubjub?  Where are you, Jubjub?  Oh no!  Where did you go this time!", "hash": "e96c2914a093f591", "src": "vmangos@13b49dc"}
 {"id": "e9709ba79dbf89f9", "field": "text", "en": "Welcome to Caer Darrow, stranger.", "hash": "e9709ba79dbf89f9", "src": "vmangos@13b49dc"}
+{"id": "e973e1a4be4b1c43", "field": "text", "en": "Mind yourself in the presence of the Warchief, $C. The Kor'kron will suffer no insolence or insult here.", "hash": "e973e1a4be4b1c43", "src": "collector@1.60.1.70790", "npcs": [3230]}
 {"id": "e97ae1d9e9ff75fb", "field": "text", "en": "I'm as sane as the next guy, $g fella:lady;. Believe what you will, but I AM capable of fashioning this armor. If you're interested, maybe we can make a deal. The sooner I can get out of the assassination business, the better.", "hash": "e97ae1d9e9ff75fb", "src": "vmangos@13b49dc"}
 {"id": "e9963b6518819362", "field": "text", "en": "Good people of Goldshire, come take advantage of my incredible prices on rare goods. I shall not return for some time!", "hash": "e9963b6518819362", "src": "vmangos@13b49dc"}
 {"id": "e99751536d055949", "field": "text", "en": "%s begins to combine different colored crystals together.", "hash": "e99751536d055949", "src": "vmangos@13b49dc"}

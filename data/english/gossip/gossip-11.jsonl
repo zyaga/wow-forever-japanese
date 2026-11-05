@@ -2,6 +2,7 @@
 {"id": "110f1054b8426e4c", "field": "text", "en": "At last, it ends....", "hash": "110f1054b8426e4c", "src": "vmangos@13b49dc"}
 {"id": "11122d4a8048ba48", "field": "text", "en": "Come on Dadanga!  March girl, march!", "hash": "11122d4a8048ba48", "src": "vmangos@13b49dc"}
 {"id": "1117e0c58c3c6538", "field": "text", "en": "Access secret goblin engineering schemata!", "hash": "1117e0c58c3c6538", "src": "vmangos@13b49dc"}
+{"id": "1118530534cd5e9b", "field": "text", "en": "Retrieve the heirloom.", "hash": "1118530534cd5e9b", "src": "collector@1.60.1.70790", "npcs": [259013]}
 {"id": "111af97ca580592a", "field": "text", "en": "Very interesting!", "hash": "111af97ca580592a", "src": "vmangos@13b49dc"}
 {"id": "111b0c477c9bf5c0", "field": "text", "en": "All right.  It's made!", "hash": "111b0c477c9bf5c0", "src": "vmangos@13b49dc"}
 {"id": "111e9a3233efea71", "field": "text", "en": "I am ready to rock, Vipore! Give me a beacon.", "hash": "111e9a3233efea71", "src": "vmangos@13b49dc"}

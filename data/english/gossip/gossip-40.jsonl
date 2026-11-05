@@ -2,6 +2,7 @@
 {"id": "400288a265bea20b", "field": "text", "en": "While my brother, Drazial, focuses his analysis on the more physical nature of the beasts of the blasted lands, I tend to focus on the more cerebral and spiritual aspects of the wildlife.$B$BIt is true that the beasts exhibit extremely unusual strength, agility, and stamina, but some of them also possess great intelligence and regenerative abilities, untied to their physical being.$B$BPerhaps you would be interested in helping advance my research, $r?\n", "hash": "400288a265bea20b", "src": "vmangos@13b49dc"}
 {"id": "40053c3efe322626", "field": "text", "en": "If you want her back you're gonna have to beg!", "hash": "40053c3efe322626", "src": "vmangos@13b49dc"}
 {"id": "4005921e513166be", "field": "text", "en": "May da spirits protect you mon.", "hash": "4005921e513166be", "src": "vmangos@13b49dc"}
+{"id": "40098308165b05a8", "field": "text", "en": "High Elder, what about this crystal?", "hash": "40098308165b05a8", "src": "collector@1.60.1.70790", "npcs": [252476]}
 {"id": "401694ac603ac8e4", "field": "text", "en": "Meet me down by the orchard--I just need to put my gun away.", "hash": "401694ac603ac8e4", "src": "vmangos@13b49dc"}
 {"id": "40174fc61ea69b1c", "field": "text", "en": "If you need to house your pet while you're training another, then you should talk to Jenova Stoneshield over in the Dwarven District.", "hash": "40174fc61ea69b1c", "src": "vmangos@13b49dc"}
 {"id": "401894ac4206848d", "field": "text", "en": "You must be looking for Smith Argus.  He's usually overseeing the forge in Goldshire if you need some training.", "hash": "401894ac4206848d", "src": "vmangos@13b49dc"}
@@ -48,6 +49,7 @@
 {"id": "40e9d8dbf46811fa", "field": "text", "en": "How long will the invasion last?", "hash": "40e9d8dbf46811fa", "src": "vmangos@13b49dc"}
 {"id": "40eac4cdc92d6e4c", "field": "text", "en": "I heard something over there.", "hash": "40eac4cdc92d6e4c", "src": "vmangos@13b49dc"}
 {"id": "40eca9a8dae8a7b5", "field": "text", "en": "You may not pass.  You are not our kin, nor have you issued the challenge.", "hash": "40eca9a8dae8a7b5", "src": "vmangos@13b49dc"}
+{"id": "40ee42d8e2b58f8a", "field": "text", "en": "I'll make this easy for you, witch. Stop what you are doing now and I will make your death swift. This is the last and best offer you will get from the High Order.", "hash": "40ee42d8e2b58f8a", "src": "collector@1.60.1.70790"}
 {"id": "40f72df5d0c1ece5", "field": "text", "en": "*Whirr* *CLANK*\n\nI have been instructed to accept high quality rare fish and return valuable Nat Pagle fishing accessories.   Fish Requested.\n\n*THUMP* *Buzz*\n", "hash": "40f72df5d0c1ece5", "src": "vmangos@13b49dc"}
 {"id": "40f999522d76ae93", "field": "text", "en": "To come this far has not been easy, I know. But how boring life would be without challenges, don't you think? Good, because I have a challenge for you...", "hash": "40f999522d76ae93", "src": "vmangos@13b49dc"}
 {"id": "40fa4edd1145e1aa", "field": "text", "en": "Zando'zan of the Shattered Hand. How can Zando'zan help you? He can't! He won't!\n", "hash": "40fa4edd1145e1aa", "src": "vmangos@13b49dc"}

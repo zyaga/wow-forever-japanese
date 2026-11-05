@@ -1,9 +1,13 @@
 {"id": "470624840a954cc6", "field": "text", "en": "%s acknowledges your obeisance and then waves dismissively at you.", "hash": "470624840a954cc6", "src": "vmangos@13b49dc"}
 {"id": "4707eb0798b00d9c", "field": "text", "en": "Think I'm starting to wear a rut in the paving stones.", "hash": "4707eb0798b00d9c", "src": "vmangos@13b49dc"}
 {"id": "47081091b9bbca8f", "field": "text", "en": "Seek out Shandrina in Silverwind Refuge.  She can sell you the \"Expert Cookbook\".", "hash": "47081091b9bbca8f", "src": "vmangos@13b49dc"}
+{"id": "4709b09eab330024", "field": "text", "en": "Belathaan! The Windshapers demand to know what cause you had to remove parts from our construct in Valanaar!", "hash": "4709b09eab330024", "src": "collector@1.60.1.70790", "npcs": [256247]}
+{"id": "472236855f342a1d", "field": "text", "en": "I'm ready when you are!", "hash": "472236855f342a1d", "src": "collector@1.60.1.70790", "npcs": [253849]}
 {"id": "47268f41da4b947f", "field": "text", "en": "Lets get back to your base!", "hash": "47268f41da4b947f", "src": "vmangos@13b49dc"}
+{"id": "472798c63b722eec", "field": "text", "en": "However, this journey will be dangerous. We need strong, able-bodied young shen'dorei to join us as we explore this massive new world. Those just like you, in fact.", "hash": "472798c63b722eec", "src": "collector@1.60.1.70790"}
 {"id": "472ea07c749970af", "field": "text", "en": "Your strength is of the mountain.  Your grace is of the winds!", "hash": "472ea07c749970af", "src": "vmangos@13b49dc"}
 {"id": "4738b1c8938d0492", "field": "text", "en": "Shhh! You're scaring the fish away.", "hash": "4738b1c8938d0492", "src": "vmangos@13b49dc"}
+{"id": "473c05adeb892bf5", "field": "text", "en": "We understand. As it happens Elaadrin and I spoke. We made arrangements to send for... outside aid. It's unclear if they will be able to arrive in time to help, or if they will even arrive at all...", "hash": "473c05adeb892bf5", "src": "collector@1.60.1.70790"}
 {"id": "473ec40fbc34e630", "field": "text", "en": "Brain encaved... mortar... bas... hed... leaking... dyin... g...", "hash": "473ec40fbc34e630", "src": "vmangos@13b49dc"}
 {"id": "47433483bd0d8bf3", "field": "text", "en": "It is my duty and honor to die for the Abyssal Council!", "hash": "47433483bd0d8bf3", "src": "vmangos@13b49dc"}
 {"id": "4748987b3ac38977", "field": "text", "en": "You want my help? You got it. What do you need?", "hash": "4748987b3ac38977", "src": "vmangos@13b49dc"}
@@ -18,6 +22,7 @@
 {"id": "4771c2f623d487df", "field": "text", "en": "You have truly grown more cunning, $n.", "hash": "4771c2f623d487df", "src": "vmangos@13b49dc"}
 {"id": "4772a8d0dfd86173", "field": "text", "en": "The collar is indeed infused with demonic power, $n.  This bodes ill for our people.", "hash": "4772a8d0dfd86173", "src": "vmangos@13b49dc"}
 {"id": "47733f5831ce46ea", "field": "text", "en": "The doctor is in!", "hash": "47733f5831ce46ea", "src": "vmangos@13b49dc"}
+{"id": "4777cab0f4b94a53", "field": "text", "en": "Shamans, much like myself, but orders of magnitude more powerful. This power and their knowledge of the elemental planes is the key to our survival.", "hash": "4777cab0f4b94a53", "src": "collector@1.60.1.70790"}
 {"id": "477a91cae8aca68e", "field": "text", "en": "Who goes there?", "hash": "477a91cae8aca68e", "src": "vmangos@13b49dc"}
 {"id": "4781d4e0e5d2bc8c", "field": "text", "en": "What am I paying you for? The kodos are nearly dead!", "hash": "4781d4e0e5d2bc8c", "src": "vmangos@13b49dc"}
 {"id": "478fe4851f87445d", "field": "text", "en": "Anything else?", "hash": "478fe4851f87445d", "src": "vmangos@13b49dc"}

@@ -4,6 +4,7 @@
 {"id": "fc0b9e03154e3f94", "field": "text", "en": "The stars speak to me.  They whisper of the horrors waiting in the night.", "hash": "fc0b9e03154e3f94", "src": "vmangos@13b49dc"}
 {"id": "fc12fca17e1b19e2", "field": "text", "en": "All you $R want is my weed.", "hash": "fc12fca17e1b19e2", "src": "vmangos@13b49dc"}
 {"id": "fc161c5e11c25dab", "field": "text", "en": "Whoa, whoa there, my friend. One moment...", "hash": "fc161c5e11c25dab", "src": "vmangos@13b49dc"}
+{"id": "fc174ec3c811a525", "field": "text", "en": "I wonder if my lord will enslave your people... or merely consume them for sport? I.... wait, what is this?", "hash": "fc174ec3c811a525", "src": "collector@1.60.1.70790"}
 {"id": "fc1eab167c5d60f9", "field": "text", "en": "If ye're looking to learn the profession of leatherworking, ye're gonna need to travel to Ironforge.  I hear there's a nice shop near the Great Forge where ye can learn the profession.", "hash": "fc1eab167c5d60f9", "src": "vmangos@13b49dc"}
 {"id": "fc3548dc2524d9dc", "field": "text", "en": "SMOTTS, I HAVE YOUR LITTLE BELT...COME GET IT.", "hash": "fc3548dc2524d9dc", "src": "vmangos@13b49dc"}
 {"id": "fc35dbd2eba05a2c", "field": "text", "en": "The Hall of Spirits is where our shamans call home.  You can find it on the Spirit Rise.  May your ancestors watch over you.", "hash": "fc35dbd2eba05a2c", "src": "vmangos@13b49dc"}
@@ -32,5 +33,6 @@
 {"id": "fcc10b39451bc6f6", "field": "text", "en": "Wildkin are inherently magical; this power was bestowed upon them by the goddess.", "hash": "fcc10b39451bc6f6", "src": "vmangos@13b49dc"}
 {"id": "fce10d345babce67", "field": "text", "en": "Welcome to Bandarion Keep, $c.", "hash": "fce10d345babce67", "src": "forever-vo@025070f", "npcs": [246378]}
 {"id": "fce1f623120a24a8", "field": "text", "en": "Greetings, $c. Please be brief in how the Kirin Tor may be of service to you.", "hash": "fce1f623120a24a8", "src": "vmangos@13b49dc"}
+{"id": "fceb61ac71b8aa71", "field": "text", "en": "No, thank you.", "hash": "fceb61ac71b8aa71", "src": "collector@1.60.1.70790", "npcs": [251684]}
 {"id": "fcf731edf32258c2", "field": "text", "en": "Halt.", "hash": "fcf731edf32258c2", "src": "vmangos@13b49dc"}
 {"id": "fcf849726aa15802", "field": "text", "en": "Mau'ari know why you seek her out...$B$BBring me da E'ko you find in the world, an' I can transform it for you.", "hash": "fcf849726aa15802", "src": "vmangos@13b49dc"}

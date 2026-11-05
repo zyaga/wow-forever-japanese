@@ -10,6 +10,7 @@
 {"id": "8a31fdd93c455294", "field": "text", "en": "Let's give this a try...", "hash": "8a31fdd93c455294", "src": "vmangos@13b49dc"}
 {"id": "8a3471168129dda3", "field": "text", "en": "It was the will of Ragnaros that Obsidion be built. Obsidion will destroy the Blackrock orcs of Blackrock Spire, uniting us with our bretheren in the fiery depths.", "hash": "8a3471168129dda3", "src": "vmangos@13b49dc"}
 {"id": "8a3e32f8fb3420ef", "field": "text", "en": "All is completed, young $c. Even as we speak, both the Horde and the Alliance are in the process of transporting all final goods for the war into Silithus near Cenarion Hold, which should be complete in less than a day. After that, the gong near the gates of Ahn'Qiraj can be rung, and the war will begin.", "hash": "8a3e32f8fb3420ef", "src": "vmangos@13b49dc"}
+{"id": "8a3f7752fcbf5d7a", "field": "text", "en": "What is it that you had to say about the forest?", "hash": "8a3f7752fcbf5d7a", "src": "collector@1.60.1.70790", "npcs": [254149]}
 {"id": "8a41ae5e26fcf17f", "field": "text", "en": "The stars will be in perfect form tonight!", "hash": "8a41ae5e26fcf17f", "src": "vmangos@13b49dc"}
 {"id": "8a425b00da99a2db", "field": "text", "en": "%s's eyes glow red as he lights his dynamite and begins to cackle madly!", "hash": "8a425b00da99a2db", "src": "vmangos@13b49dc"}
 {"id": "8a456242cdfebe94", "field": "text", "en": "You'll find the Wind Rider Master in Orgrimmar.  Go north up the road to get there and ask an Orgrimmar Grunt for further directions.", "hash": "8a456242cdfebe94", "src": "vmangos@13b49dc"}

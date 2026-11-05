@@ -18,6 +18,7 @@
 {"id": "6055c68797e6d8c0", "field": "text", "en": "I regret to inform you that you have failed your examination, doctor.", "hash": "6055c68797e6d8c0", "src": "vmangos@13b49dc"}
 {"id": "6058ef90ea0ce880", "field": "text", "en": "%s cuts and shapes the logs into smooth wooden planks.", "hash": "6058ef90ea0ce880", "src": "vmangos@13b49dc"}
 {"id": "605a441b854c0c1c", "field": "text", "en": "As you fall in battle, we continue to grow in strength. There is only one inevitable outcome. Prepare for your end!", "hash": "605a441b854c0c1c", "src": "vmangos@13b49dc"}
+{"id": "605b257c31f5fa9b", "field": "text", "en": "Who dares call the Lord of the East Wind?", "hash": "605b257c31f5fa9b", "src": "collector@1.60.1.70790"}
 {"id": "606232a0a9e04e3c", "field": "text", "en": "Ah, Private Hendel. A pleasure to meet one of the men who would betray his kingdom for pride.", "hash": "606232a0a9e04e3c", "src": "vmangos@13b49dc"}
 {"id": "60623d1b2831038a", "field": "text", "en": "I'm ready!", "hash": "60623d1b2831038a", "src": "vmangos@13b49dc"}
 {"id": "606496bc4809f0b0", "field": "text", "en": "John, honey, where are you?", "hash": "606496bc4809f0b0", "src": "vmangos@13b49dc"}
@@ -40,6 +41,7 @@
 {"id": "60c341a2a290288e", "field": "text", "en": "Hey there, friend.  My name's Remy.  I'm from Redridge to the east, and came here looking for business, looking for business.  You got any...got any??", "hash": "60c341a2a290288e", "src": "vmangos@13b49dc"}
 {"id": "60da97c780585802", "field": "text", "en": "Stay calm, people.  We don't want to give away our position.", "hash": "60da97c780585802", "src": "vmangos@13b49dc"}
 {"id": "60def8a7b388810a", "field": "text", "en": "Where are we battling the Scourge?", "hash": "60def8a7b388810a", "src": "vmangos@13b49dc"}
+{"id": "60e3c3a074c13777", "field": "text", "en": "When the time is right, you must thrust the torch into the eternal flame and capture it.", "hash": "60e3c3a074c13777", "src": "collector@1.60.1.70790"}
 {"id": "60e561fd559ff10c", "field": "text", "en": "I am an undead cloth vendor, and this is my greeting text.", "hash": "60e561fd559ff10c", "src": "vmangos@13b49dc"}
 {"id": "60f391e4e9bed353", "field": "text", "en": "You seek the scepter shard charged to the protection of the Blue Flight?$B$B<Azuregos appears to be smiling.>", "hash": "60f391e4e9bed353", "src": "vmangos@13b49dc"}
 {"id": "60fc9fc176c8299a", "field": "text", "en": "Hmm, your work is allright but it's nowhere near the quality I look for in a student. Go talk with Smith Argus in Goldshire, I'm sure he can teach you some basics. Then when you're done, come on back to me and I'll give you a little test to make sure you are ready.", "hash": "60fc9fc176c8299a", "src": "vmangos@13b49dc"}

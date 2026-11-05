@@ -1,9 +1,11 @@
+{"id": "060072dc53ec3fc2", "field": "text", "en": "The anchor pylons keep us suspended in this realm, but they also act as wards! The Shal'nan once spoke of this. They keep us shielded from...", "hash": "060072dc53ec3fc2", "src": "collector@1.60.1.70790"}
 {"id": "060237f54f44a291", "field": "text", "en": "The Wind Rider Roost is atop the totem stairway in the center of town.", "hash": "060237f54f44a291", "src": "vmangos@13b49dc"}
 {"id": "060496c12b8e2643", "field": "text", "en": "I'll cut you!", "hash": "060496c12b8e2643", "src": "vmangos@13b49dc"}
 {"id": "06062700b6bc58dd", "field": "text", "en": "Southshore shall pay in blood!", "hash": "06062700b6bc58dd", "src": "vmangos@13b49dc"}
 {"id": "061d199e3d71ef22", "field": "text", "en": "The stars of this time are bent on new paths, beacons of hope and strength for the coming ages.", "hash": "061d199e3d71ef22", "src": "vmangos@13b49dc"}
 {"id": "062595a0d7e4edfa", "field": "text", "en": "Begone foul creatures!  Your kind has no place in this world.", "hash": "062595a0d7e4edfa", "src": "vmangos@13b49dc"}
 {"id": "062c28ce672a9f57", "field": "text", "en": "First Westfall, next, all of Stormwind!", "hash": "062c28ce672a9f57", "src": "vmangos@13b49dc"}
+{"id": "062d16b0d7bff65e", "field": "text", "en": "Greetings, I am Ayessa Dawnsinger, the current Grand Skyseer of the Windshapers. What may I do for you?", "hash": "062d16b0d7bff65e", "src": "collector@1.60.1.70790", "npcs": [251968]}
 {"id": "062e8f5f698b1547", "field": "text", "en": "Uh... I sorry I attack you boss.  You no kill me, please OK!?  You da king now, and I help make your tribute better!", "hash": "062e8f5f698b1547", "src": "vmangos@13b49dc"}
 {"id": "063898e0e86dc8c2", "field": "text", "en": "We live and die, and the land remains, eternal, unmoved by our passage. Thus, land cannot belong to us, $n. Instead, we belong to it. Therefore we protect the land, for without it we cannot hope to survive.", "hash": "063898e0e86dc8c2", "src": "vmangos@13b49dc"}
 {"id": "063b9a5d77eb043d", "field": "text", "en": "She retains knowledge and speech, and even the self sufficiency to perform tasks for you. Precisely what did you do?", "hash": "063b9a5d77eb043d", "src": "vmangos@13b49dc"}

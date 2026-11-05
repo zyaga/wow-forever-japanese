@@ -5,6 +5,8 @@
 {"id": "d31022aaaaefe073", "field": "text", "en": "Bow to the might of the Highlord!", "hash": "d31022aaaaefe073", "src": "vmangos@13b49dc"}
 {"id": "d31e499099cf57f4", "field": "text", "en": "Primary interaction complete.  Image dissipation in ten minutes.", "hash": "d31e499099cf57f4", "src": "vmangos@13b49dc"}
 {"id": "d31fdf6cf985da23", "field": "text", "en": "Hail $n!  New Champion of The Affray!", "hash": "d31fdf6cf985da23", "src": "vmangos@13b49dc"}
+{"id": "d32321bce940099d", "field": "text", "en": "The offering is accepted. Hold the torch to the flame now, $N!", "hash": "d32321bce940099d", "src": "collector@1.60.1.70790"}
+{"id": "d32f32f73fa53716", "field": "text", "en": "Question for you, Alvarion. In your experience, what is flutterfly dust used for?", "hash": "d32f32f73fa53716", "src": "collector@1.60.1.70790", "npcs": [252448]}
 {"id": "d32ffbd8bf834cea", "field": "text", "en": "Who dares disturb our master?", "hash": "d32ffbd8bf834cea", "src": "vmangos@13b49dc"}
 {"id": "d331b7b60a211340", "field": "text", "en": "Relara is saved, $n.  Thank you.", "hash": "d331b7b60a211340", "src": "vmangos@13b49dc"}
 {"id": "d33403e0703c0946", "field": "text", "en": "What brings you to the Tower?", "hash": "d33403e0703c0946", "src": "vmangos@13b49dc"}
@@ -23,11 +25,14 @@
 {"id": "d39b3444257cac7c", "field": "text", "en": "It is good that you serve me so faithfully. Soon all will serve the Lich King... and in the end, you shall be rewarded - so long as you do not falter.", "hash": "d39b3444257cac7c", "src": "vmangos@13b49dc"}
 {"id": "d39d305923a0a17e", "field": "text", "en": "I am truly impressed, Gerard. I thought you were all talk, but I see I have been proven wrong.", "hash": "d39d305923a0a17e", "src": "vmangos@13b49dc"}
 {"id": "d39d858c244c05af", "field": "text", "en": "My apologies, $n, but I do not offer instruction to novices. Instead, talk to Milla Fairancora in the Craftsmen's Terrace of Darnassus. She can help you make up for lost time.", "hash": "d39d858c244c05af", "src": "vmangos@13b49dc"}
+{"id": "d39f52098caa9125", "field": "text", "en": "Watch yourself. The High Order will not tolerate hostility in our lodge.", "hash": "d39f52098caa9125", "src": "collector@1.60.1.70790"}
 {"id": "d3b33523e87491e8", "field": "text", "en": "We come destroy puny ones!", "hash": "d3b33523e87491e8", "src": "vmangos@13b49dc"}
 {"id": "d3ba96cec1ae21f5", "field": "text", "en": "Where are your Gods now? WHERE, SERVITOR?", "hash": "d3ba96cec1ae21f5", "src": "vmangos@13b49dc"}
+{"id": "d3babf2bd232ed51", "field": "text", "en": "Have you found what we need yet?", "hash": "d3babf2bd232ed51", "src": "collector@1.60.1.70790", "npcs": [256083]}
 {"id": "d3cbf7702babc5c8", "field": "text", "en": "%s spits on the corpse of the fallen zealot.", "hash": "d3cbf7702babc5c8", "src": "vmangos@13b49dc"}
 {"id": "d3cccba5dd162ef7", "field": "text", "en": "I'm finished.  The parchment is made.  Now, return to Gorzeeki...", "hash": "d3cccba5dd162ef7", "src": "vmangos@13b49dc"}
 {"id": "d3cf21e9bb9205c1", "field": "text", "en": "Cherry pie is my favoritist food in all of Azeroth.", "hash": "d3cf21e9bb9205c1", "src": "vmangos@13b49dc"}
+{"id": "d3d36a257e3d841d", "field": "text", "en": "Shrieklings tend to hoard shiny things in their lairs, so it's possible some construct parts may have ended up in the shriekling cave just west of Valanaar.", "hash": "d3d36a257e3d841d", "src": "collector@1.60.1.70790"}
 {"id": "d3d6202ada6b18df", "field": "text", "en": "The Wind Spirits have left us.$B$BNow, only mindless echoes remain. Be wary, however. These winds are neither kind, nor gentle.", "hash": "d3d6202ada6b18df", "src": "collector@1.60.1.70205", "npcs": [249363]}
 {"id": "d3dcfef744adb4db", "field": "text", "en": "This forest can be confusing! Be careful out there.", "hash": "d3dcfef744adb4db", "src": "vmangos@13b49dc"}
 {"id": "d3eeda5f3a0b2862", "field": "text", "en": "WHO DARES?! You shall be destroyed!", "hash": "d3eeda5f3a0b2862", "src": "vmangos@13b49dc"}

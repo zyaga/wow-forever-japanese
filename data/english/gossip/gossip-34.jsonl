@@ -12,6 +12,7 @@
 {"id": "34211904b49c1e32", "field": "text", "en": "Step right up!  Get your red hot wings right here!", "hash": "34211904b49c1e32", "src": "vmangos@13b49dc"}
 {"id": "34211e322dab4d53", "field": "text", "en": "You will be ok, Awbee. Your assailants have been terminated.", "hash": "34211e322dab4d53", "src": "vmangos@13b49dc"}
 {"id": "3425da563fcb33b7", "field": "text", "en": "%s's laughter trails off...", "hash": "3425da563fcb33b7", "src": "vmangos@13b49dc"}
+{"id": "342f677df94e4d3b", "field": "text", "en": "<A faint whirring sound can be heard coming from underneath the construct's metal armor plates. The wind powering this machine is present but is listless and only faintly churning. You don't need to know much about air constructs to know that this unit is clearly not in good repair.>", "hash": "342f677df94e4d3b", "src": "collector@1.60.1.70790", "npcs": [256076]}
 {"id": "34309a001085cfe3", "field": "text", "en": "I will read the words carved into the stone, and you must find a way to light it.", "hash": "34309a001085cfe3", "src": "vmangos@13b49dc"}
 {"id": "3434132e025ab68f", "field": "text", "en": "Who dares interfere with the Sons of Arugal?", "hash": "3434132e025ab68f", "src": "vmangos@13b49dc"}
 {"id": "34392e088a20b537", "field": "text", "en": "Eat this, my daughter.  It will help you feel better.", "hash": "34392e088a20b537", "src": "vmangos@13b49dc"}
@@ -43,6 +44,7 @@
 {"id": "34c43ab65c5391b9", "field": "text", "en": "All is gathered, $c. All is being transported for final preparation to Silithus and should arrive within a day. All of our combined forces await the $g hero : heroine; that will complete the reunification of the Scepter of the Shifting Sands, ring the gong and begin the Ahn'Qiraj War.", "hash": "34c43ab65c5391b9", "src": "vmangos@13b49dc"}
 {"id": "34c60ac7e6f31b82", "field": "text", "en": "I do hope they stay alive long enough for me to... introduce myself.", "hash": "34c60ac7e6f31b82", "src": "vmangos@13b49dc"}
 {"id": "34c81a80380e08aa", "field": "text", "en": "Tiny $C!  You are no match for the Blackrock Clan!", "hash": "34c81a80380e08aa", "src": "vmangos@13b49dc"}
+{"id": "34ca4577c3dd88a9", "field": "text", "en": "POWER RESTORED. READY TO RESUME FUNCTION.", "hash": "34ca4577c3dd88a9", "src": "collector@1.60.1.70790"}
 {"id": "34cb5dbb2a9dced0", "field": "text", "en": "Heeeeeeeeeeeeellllllllllllllllllllllllp!!!", "hash": "34cb5dbb2a9dced0", "src": "vmangos@13b49dc"}
 {"id": "34d3726877f49085", "field": "text", "en": "SMOTTS!  HEY, SMOTTS!!  COME OUT AND PLAY!", "hash": "34d3726877f49085", "src": "vmangos@13b49dc"}
 {"id": "34e6098a931984f4", "field": "text", "en": "Thank you again, $n.  This rare earth will be very helpful in my experiments.", "hash": "34e6098a931984f4", "src": "vmangos@13b49dc"}

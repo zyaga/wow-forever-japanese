@@ -2,6 +2,7 @@
 {"id": "650bcd87333d3c6f", "field": "text", "en": "$n has assaulted the lumber mill!", "hash": "650bcd87333d3c6f", "src": "vmangos@13b49dc"}
 {"id": "6511dd061fc4c28d", "field": "text", "en": "Where would you like to fly to?", "hash": "6511dd061fc4c28d", "src": "vmangos@13b49dc"}
 {"id": "6515c9041fba6d63", "field": "text", "en": "Would you like something more to eat sir?", "hash": "6515c9041fba6d63", "src": "vmangos@13b49dc"}
+{"id": "651855f945bae1a7", "field": "text", "en": "What are all of these contraptions?", "hash": "651855f945bae1a7", "src": "collector@1.60.1.70790", "npcs": [251684]}
 {"id": "651be20f5c5c07b7", "field": "text", "en": "Do not continue! Turn back, turn back while there's still time!", "hash": "651be20f5c5c07b7", "src": "vmangos@13b49dc"}
 {"id": "651ef3d12d09470c", "field": "text", "en": "Another Tracker, hmm. I doubt your skill is as great as my own so perhaps I can train you in a few proper techniques.", "hash": "651ef3d12d09470c", "src": "vmangos@13b49dc"}
 {"id": "65242f6efac27b67", "field": "text", "en": "I am Kilram, master of the axe.", "hash": "65242f6efac27b67", "src": "vmangos@13b49dc"}

@@ -43,6 +43,7 @@
 {"id": "9de15a0dc0c25009", "field": "text", "en": "The needle is small, but the thread is strong, and the stitches are fine. Our pact with Thrall and the others will hold. The Horde will not be driven from these lands.", "hash": "9de15a0dc0c25009", "src": "vmangos@13b49dc"}
 {"id": "9de4bd3675a744f7", "field": "text", "en": "Overflowin' with rats! Help a pirate out, matey!", "hash": "9de4bd3675a744f7", "src": "vmangos@13b49dc"}
 {"id": "9dea9bd83cdb549e", "field": "text", "en": "Hmm, it could be that meddler Shaw. I will see what I can discover. Be off with you. I'll contact you again soon.", "hash": "9dea9bd83cdb549e", "src": "vmangos@13b49dc"}
+{"id": "9def862e009a91e7", "field": "text", "en": "<This cultist is dead. Upon close inspection, you notice that he seems to be clutching something to his chest, almost as if he was protecting it.>", "hash": "9def862e009a91e7", "src": "collector@1.60.1.70790", "npcs": [253372]}
 {"id": "9df7db8732faa182", "field": "text", "en": "Ok soldiers, take a break!", "hash": "9df7db8732faa182", "src": "vmangos@13b49dc"}
 {"id": "9dfbde901c6b4144", "field": "text", "en": "%s turns to face you.", "hash": "9dfbde901c6b4144", "src": "vmangos@13b49dc"}
 {"id": "9dfd60a6ba8d79b2", "field": "text", "en": "DARKSHIRE...I HUNGER!!", "hash": "9dfd60a6ba8d79b2", "src": "vmangos@13b49dc"}

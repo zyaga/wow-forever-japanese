@@ -12,6 +12,7 @@
 {"id": "104839d3e43131f2", "field": "text", "en": "FOR KALIMDOR!", "hash": "104839d3e43131f2", "src": "vmangos@13b49dc"}
 {"id": "1048c6c662c1f059", "field": "text", "en": "You want to learn how to make a campfire?  Well then you had best see Malygen in the Cenarion Enclave before you set fire to Teldrassil itself.  ", "hash": "1048c6c662c1f059", "src": "vmangos@13b49dc"}
 {"id": "10495944ccaac0e9", "field": "text", "en": "Tower Point is under attack!  If left unchecked, the Horde will destroy it!", "hash": "10495944ccaac0e9", "src": "vmangos@13b49dc"}
+{"id": "1050d168a60f9033", "field": "text", "en": "Constructs used to help us trawl Windsong Lake and when the pylons started to fail, many fell into the depths. There may be usable parts on the lakebed if you are up for a swim.", "hash": "1050d168a60f9033", "src": "collector@1.60.1.70790"}
 {"id": "105395306e4ab601", "field": "text", "en": "Hail, $r! I am Lieutenant Haggerdin, officer in charge of recruitment for the Stormpike Guard.$B$BAs you gain prestige and notoriety among the Stormpike, return to me and I shall see about upgrading your insignia. Also, should you ever lose your insignia, I am able to supply a replacement.", "hash": "105395306e4ab601", "src": "vmangos@13b49dc"}
 {"id": "105d550e2012702f", "field": "text", "en": "Left Combat", "hash": "105d550e2012702f", "src": "vmangos@13b49dc"}
 {"id": "105f3b2889222d71", "field": "text", "en": "to arms laddies!", "hash": "105f3b2889222d71", "src": "vmangos@13b49dc"}
@@ -28,6 +29,7 @@
 {"id": "109ded22d9d2a5db", "field": "text", "en": "Next time, bring more friends!", "hash": "109ded22d9d2a5db", "src": "vmangos@13b49dc"}
 {"id": "10a3d085bc51a7a8", "field": "text", "en": "Filthy Frostwolf cowards! If you want a fight, you'll have to come to me!", "hash": "10a3d085bc51a7a8", "src": "vmangos@13b49dc"}
 {"id": "10af33a9afbe5ed0", "field": "text", "en": "I doubt you will be so lucky the next time you encounter my bretheren.", "hash": "10af33a9afbe5ed0", "src": "vmangos@13b49dc"}
+{"id": "10b3e9f1e3b53e1f", "field": "text", "en": "Kuramaa makes an excited clicking sound as it appears. It wants to play!", "hash": "10b3e9f1e3b53e1f", "src": "collector@1.60.1.70790"}
 {"id": "10c017e5a06b5f85", "field": "text", "en": "Ah, empty again!", "hash": "10c017e5a06b5f85", "src": "vmangos@13b49dc"}
 {"id": "10c243e35fcd5b02", "field": "text", "en": "You land lubbers are tougher than I thought! I'll have to improvise! ", "hash": "10c243e35fcd5b02", "src": "vmangos@13b49dc"}
 {"id": "10c60fb71e341493", "field": "text", "en": "The Bank of Orgrimmar is in the Valley of Strength. Look for it north of the main entrance to the city.", "hash": "10c60fb71e341493", "src": "vmangos@13b49dc"}

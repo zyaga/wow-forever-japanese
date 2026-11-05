@@ -10,6 +10,7 @@
 {"id": "9b2c7d029a53ec03", "field": "text", "en": "I am ready.", "hash": "9b2c7d029a53ec03", "src": "forever-vo@025070f", "npcs": [10721]}
 {"id": "9b2eb221b266e8f8", "field": "text", "en": "Master, save me!!", "hash": "9b2eb221b266e8f8", "src": "vmangos@13b49dc"}
 {"id": "9b36804a0807cff0", "field": "text", "en": "I can teach you the finer points of Kodo Riding, provided you have enough gold to cover the lesson!", "hash": "9b36804a0807cff0", "src": "vmangos@13b49dc"}
+{"id": "9b37430726b68206", "field": "text", "en": "We came as soon as we were told what was happening. The High Order is here to serve Zephras.", "hash": "9b37430726b68206", "src": "collector@1.60.1.70790"}
 {"id": "9b39bc50d9e2d5a6", "field": "text", "en": "The gathering and knowledge of herbs is a specialty of Firodren Mooncaller.  Seek him out in the Temple Gardens in the southwestern area of Darnassus.", "hash": "9b39bc50d9e2d5a6", "src": "vmangos@13b49dc"}
 {"id": "9b4c6ceab2822863", "field": "text", "en": "We made it through the pass!  Now we have the swamp...", "hash": "9b4c6ceab2822863", "src": "vmangos@13b49dc"}
 {"id": "9b54ab7ae098f61c", "field": "text", "en": "My pleasure, sugar drop.  I'll be back soon...", "hash": "9b54ab7ae098f61c", "src": "vmangos@13b49dc"}
@@ -19,6 +20,7 @@
 {"id": "9b868dd05d5fa6a6", "field": "text", "en": "What kin I do for ya, mon?", "hash": "9b868dd05d5fa6a6", "src": "vmangos@13b49dc"}
 {"id": "9b8721dbe9ea2238", "field": "text", "en": "Zarrin seems to have a good knowledge of the cooking trade.  Why don't you go see if he will show you some recipes?  He is usually cooking over by the Inn in Dolanaar.", "hash": "9b8721dbe9ea2238", "src": "vmangos@13b49dc"}
 {"id": "9b8a5153e177fe8f", "field": "text", "en": "My work here is done. I'll be sure to let Mar'alith and the others at Cenarion Hold know that you helped me out a little. Be careful in here, you don't have me holdin' your hand past this point.", "hash": "9b8a5153e177fe8f", "src": "vmangos@13b49dc"}
+{"id": "9b9667adfaa888fc", "field": "text", "en": "Be careful, $C. There are cultists nearby.", "hash": "9b9667adfaa888fc", "src": "collector@1.60.1.70790", "npcs": [267009]}
 {"id": "9b96ba0692515cfe", "field": "text", "en": "You risk destroying us all, $r! You must be terminated!", "hash": "9b96ba0692515cfe", "src": "vmangos@13b49dc"}
 {"id": "9b97d7b32e2b67fb", "field": "text", "en": "Do you know of the Highborne? The Shen'dralar?", "hash": "9b97d7b32e2b67fb", "src": "vmangos@13b49dc"}
 {"id": "9b9df0f975903585", "field": "text", "en": "Wailing Caverns", "hash": "9b9df0f975903585", "src": "vmangos@13b49dc"}

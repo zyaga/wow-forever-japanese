@@ -46,3 +46,4 @@
 {"id": "d1f22b44c6272598", "field": "text", "en": "%s assembles the runecloth, herbs, and holy water to the barding.", "hash": "d1f22b44c6272598", "src": "vmangos@13b49dc"}
 {"id": "d1f7105421251d0d", "field": "text", "en": "Happy Hallow's End!  How do you like my mask?  Very scary!", "hash": "d1f7105421251d0d", "src": "vmangos@13b49dc"}
 {"id": "d1f9311cc19fda0e", "field": "text", "en": "%s seems oblivious to the nearby commentary.", "hash": "d1f9311cc19fda0e", "src": "vmangos@13b49dc"}
+{"id": "d1fd0cc3611d11ed", "field": "text", "en": "The Al'Aketh cult continues to escalate their violence, and the High Order's magical meddling could hasten our doom if left unchecked.", "hash": "d1fd0cc3611d11ed", "src": "collector@1.60.1.70790"}

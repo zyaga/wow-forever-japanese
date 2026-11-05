@@ -1,4 +1,5 @@
 {"id": "94003884c4f97bda", "field": "text", "en": "Train me.", "hash": "94003884c4f97bda", "src": "vmangos@13b49dc"}
+{"id": "940cde134403d431", "field": "text", "en": "Whatever the cause, we need to find a solution quickly before we tear ourselves apart. Tell me, what do you know of Kalimdor?", "hash": "940cde134403d431", "src": "collector@1.60.1.70790"}
 {"id": "94166c57c2f0306b", "field": "text", "en": "What message?", "hash": "94166c57c2f0306b", "src": "vmangos@13b49dc"}
 {"id": "941a0a7614778640", "field": "text", "en": "%s escapes into the void!", "hash": "941a0a7614778640", "src": "vmangos@13b49dc"}
 {"id": "941d236fc51dcf4b", "field": "text", "en": "When I stumbled upon the Suntara stones at the Grimesilt Digsite, the power of Ragnaros surged through my being. It was Ragnaros that gave me a purpose.", "hash": "941d236fc51dcf4b", "src": "vmangos@13b49dc"}
@@ -39,5 +40,6 @@
 {"id": "94e3112d2c85f4d6", "field": "text", "en": "Frogs and leather balls for sale!", "hash": "94e3112d2c85f4d6", "src": "vmangos@13b49dc"}
 {"id": "94e5c305af97064e", "field": "text", "en": "I am interested in alchemy training.", "hash": "94e5c305af97064e", "src": "vmangos@13b49dc"}
 {"id": "94ea497a80936448", "field": "text", "en": "Grurk open soon. Then we split treasure.", "hash": "94ea497a80936448", "src": "vmangos@13b49dc"}
+{"id": "94ebfb2ad43b03ed", "field": "text", "en": "You have my thanks. Being truthful, however, this is going to be a dangerous gambit and we may not succeed. It's important you understand that this might be a one-way ride.", "hash": "94ebfb2ad43b03ed", "src": "collector@1.60.1.70790"}
 {"id": "94ecbd1964b2872b", "field": "text", "en": "Yes. I do.", "hash": "94ecbd1964b2872b", "src": "vmangos@13b49dc"}
 {"id": "94fd8cfb6c1d3f65", "field": "text", "en": "<The corpse lying before you is covered in scorches and burn marks. He seems to be clutching something in his hand.>", "hash": "94fd8cfb6c1d3f65", "src": "forever-vo@025070f", "npcs": [252155]}

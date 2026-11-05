@@ -39,6 +39,7 @@
 {"id": "2fc8261d9c5d1f74", "field": "text", "en": "Thank you, Tirion. What of your identity?", "hash": "2fc8261d9c5d1f74", "src": "vmangos@13b49dc"}
 {"id": "2fce80bb970d0bde", "field": "text", "en": "Just sit tight while I get this prepared for you!", "hash": "2fce80bb970d0bde", "src": "vmangos@13b49dc"}
 {"id": "2fd7b4b0f9ffa335", "field": "text", "en": "So what's this new plague all about?", "hash": "2fd7b4b0f9ffa335", "src": "vmangos@13b49dc"}
+{"id": "2fdaef1af3235983", "field": "text", "en": "Thrall instructed me to speak with you.", "hash": "2fdaef1af3235983", "src": "collector@1.60.1.70790", "npcs": [3230]}
 {"id": "2fdde45f9b73019a", "field": "text", "en": "Greetings.  I'm a female mage trainer, and you're a mage.", "hash": "2fdde45f9b73019a", "src": "vmangos@13b49dc"}
 {"id": "2fe22e083f9b20d1", "field": "text", "en": "Ah yes, Skinning.  There is no one finer in wielding a skinning knife than Yonn Deepcut.  You can find him in the great tent at the northwest corner of the village.", "hash": "2fe22e083f9b20d1", "src": "vmangos@13b49dc"}
 {"id": "2ffaa63d361ca82c", "field": "text", "en": "Something needs to be done about the Blackwood tribe.", "hash": "2ffaa63d361ca82c", "src": "vmangos@13b49dc"}

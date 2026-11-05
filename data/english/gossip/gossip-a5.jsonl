@@ -27,6 +27,7 @@
 {"id": "a5b4e45761cacafe", "field": "text", "en": "Please let me know if you need anything else!", "hash": "a5b4e45761cacafe", "src": "vmangos@13b49dc"}
 {"id": "a5b8c28b928ca565", "field": "text", "en": "This monument is dedicated to all those who have fallen in the protection of Stormwind. Our people have weathered unbelievable hardships to retain their freedoms and to control their own destinies. It is here we remember every sacrifice our citizens have made during the first war that riddled our people.", "hash": "a5b8c28b928ca565", "src": "vmangos@13b49dc"}
 {"id": "a5bbbc8e6a610213", "field": "text", "en": "Yummy. I love roasted Plainstrider.", "hash": "a5bbbc8e6a610213", "src": "vmangos@13b49dc"}
+{"id": "a5bd3b3ca7e9874e", "field": "text", "en": "Zephras Isle is in need of the High Order!$B$B<Explain Valennia's plan to Elaadrin.>", "hash": "a5bd3b3ca7e9874e", "src": "collector@1.60.1.70790", "npcs": [252475]}
 {"id": "a5c504868cfbb018", "field": "text", "en": "Tell me more, Trenton.", "hash": "a5c504868cfbb018", "src": "vmangos@13b49dc"}
 {"id": "a5ddc5a77460efa7", "field": "text", "en": "All you need to start a camp of your own is a basic campfire. Cooks can generally teach you how to make one of those.", "hash": "a5ddc5a77460efa7", "src": "collector@1.60.1.70205"}
 {"id": "a5e099c15c95fd73", "field": "text", "en": "We are having difficulty determining the status of the plague within the area; check back shortly and we may have a better idea.", "hash": "a5e099c15c95fd73", "src": "vmangos@13b49dc"}
