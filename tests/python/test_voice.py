@@ -200,6 +200,16 @@ def test_other_markup_fails_with_the_key(ja):
         voice.speech_text(ja, "3522-completion")
 
 
+def test_a_line_kept_in_english_letters_has_no_speaker():
+    # a gossip line shipped as the English it is (a made-up language, a name alone) is not Japanese the engine
+    # can read, so it is never voiced
+    lines = voice_make.shipped_lines(ROOT / "data")
+    rows = cmd.read_rows(ROOT / "data" / "voice" / "speakers.jsonl")
+    assert [r["key"] for r in rows if r["key"] in lines and voice.kept_in_english(lines[r["key"]])] == []
+    assert voice.kept_in_english("...BELATHAAN BRIGHTWISH") and not voice.kept_in_english("……")
+    assert not voice.kept_in_english("Windshapersは来ない")
+
+
 def test_every_line_with_a_speaker_reads():
     # the whole game: a line the engine would refuse stops the full run, so it fails here first
     lines = voice_make.shipped_lines(ROOT / "data")

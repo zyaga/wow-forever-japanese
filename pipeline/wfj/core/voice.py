@@ -14,6 +14,7 @@ from dataclasses import dataclass
 from typing import Any
 
 from wfj.core.hashing import key as hash_key
+from wfj.core.language import KANA, KANJI
 from wfj.core.normalize import normalize_v1
 from wfj.emit.lua_writer import shipped
 
@@ -180,6 +181,12 @@ def captured_speaker(names: list[int | None]) -> int | str | None:
         counts[n] = counts.get(n, 0) + 1
     best = max(counts.items(), key=lambda kv: (kv[1], kv[0] is not None, -(kv[0] or 0)))[0]
     return NARRATOR if best is None else best
+
+
+def kept_in_english(text: str) -> bool:
+    """A line that ships as the English it is (a made-up language, a name alone): Latin letters and no kana or
+    kanji. The engine reads Japanese, so such a line is never voiced."""
+    return bool(re.search(r"[A-Za-z]", text)) and not (KANA.search(text) or KANJI.search(text))
 
 
 def gossip_speakers(

@@ -107,7 +107,9 @@ def build_tables(
     creatures = {c for q in quests for c in (*starters.get(q, ()), *enders.get(q, ()))}
     creatures |= {s for s in q_speakers.values() if isinstance(s, int)}
     creatures |= vmangos.read_gossip_creatures(db) if whole else set(cfg["creatures"])
-    gossip_shipped = {ln["id"] for ln in store.load("gossip") if shipped(ln)}
+    gossip_shipped = {
+        ln["id"] for ln in store.load("gossip") if shipped(ln) and not voice.kept_in_english(ln["ja"])
+    }
     english_gossip = english_store.load("gossip")
     collector = {ln["id"]: ln["npcs"] for ln in english_gossip if ln.get("npcs")}
     collector_src = {ln["id"]: ln["src"] for ln in english_gossip if ln.get("npcs")}
