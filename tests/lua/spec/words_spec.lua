@@ -187,7 +187,8 @@ describe("Words", function()
       local row = {}
       for c in (lines[4] .. "\t"):gmatch("([^\t]*)\t") do row[#row + 1] = c end
       assert.are.same({ "quest.description:456:生き物", "生き物", "いきもの", "生き物", "いきもの", "living thing",
-        "生き物と<b>生き物</b>。", "quest", "456", "生き物を減らせ", fmt("%Y-%m-%d %H:%M", T) }, row)
+        "生き物と<b>生き物</b>。", "quest", "456", "生き物を減らせ", fmt("%Y-%m-%d %H:%M", T), "生[い]き 物[もの]",
+        "生き物と<b>生[い]き 物[もの]</b>。" }, row)
       assert.is_truthy(lines[5]:find("^gossip:g1:数\t数\tかず"))
       assert.is_truthy(lines[5]:find("\tgossip\t\t\t", 1, true))
       assert.are.equal(5, #lines)
@@ -217,6 +218,53 @@ describe("Words", function()
       assert.are.equal("WoWScrnShot_" .. fmt("%m%d%y_%H%M%S", T) .. ".png", W.shotName(T, "png", fmt))
       assert.are.equal("WoWScrnShot_" .. fmt("%m%d%y_%H%M%S", T) .. ".tga", W.shotName(T, "tga", fmt))
       assert.are.equal("WoWScrnShot_" .. fmt("%m%d%y_%H%M%S", T) .. ".jpg", W.shotName(T, nil, fmt))
+    end)
+  end)
+
+  describe("furigana in Anki's format", function()
+    it("brackets each kanji run with its part of the reading; kana stays outside", function()
+      assert.are.equal("用心[ようじん]しろ", W.furigana("用心しろ", "ようじんしろ"))
+      assert.are.equal("引[ひ]き 出[だ]し", W.furigana("引き出し", "ひきだし"))
+      assert.are.equal("少[すこ]し", W.furigana("少し", "すこし"))
+      assert.are.equal("装置[そうち]", W.furigana("装置", "そうち"))
+      assert.are.equal("お 茶[ちゃ]", W.furigana("お茶", "おちゃ"))
+    end)
+
+    it("kana-only words have no brackets", function()
+      assert.are.equal("ただし", W.furigana("ただし", "ただし"))
+      assert.are.equal("ドラゴン", W.furigana("ドラゴン", "ドラゴン"))
+    end)
+
+    it("one bracket over the whole word when the kana cannot be placed, or could go two ways", function()
+      assert.are.equal("ドラゴン族[どらごんぞく]", W.furigana("ドラゴン族", "どらごんぞく"))
+      assert.are.equal("時々[ときどき]", W.furigana("時々", "ときどき"))
+      assert.are.equal("下し下[したしした]", W.furigana("下し下", "したしした")) -- し fits in two places
+      assert.are.equal("", W.furigana("", ""))
+    end)
+
+    it("the sentence gets readings on every word the line's reading list holds, the saved word in bold", function()
+      local ns = { Data = { reading = { ["quest:456"] = {
+        description = "少し=すこし 生き物=いきもの=7 狩り=かり 数=かず 減らして=へらして" } } } }
+      H.loadPure("Core/Readings.lua", nil, ns)
+      H.loadPure("Core/Words.lua", nil, ns)
+      local Wd = ns.Words
+      Wd.load(nil)
+      local text = "少しの生き物たちを狩り、数を減らしてほしい。"
+      local f = text:find("生き物", 1, true)
+      local _, e = Wd.add({ kind = "quest.description", id = 456, surface = "questframe.detail", text = text,
+        first = f, last = f + #"生き物" - 1, word = "生き物", reading = "いきもの", lemma = "生き物" }, T)
+      assert.are.equal("少[すこ]しの<b>生[い]き 物[もの]</b>たちを 狩[か]り、 数[かず]を 減[へ]らしてほしい。",
+        Wd.sentenceFurigana(e))
+      local out = Wd.export({}, fmt)
+      assert.is_truthy(out:find("\tWord (furigana)\tSentence (furigana)", 1, true))
+      assert.is_truthy(out:find("\t生[い]き 物[もの]\t少[すこ]しの<b>", 1, true))
+    end)
+
+    it("without the line's reading list the sentence still gets the saved word's own reading", function()
+      W.load(nil)
+      local _, e = W.add(input({ kind = "gossip", id = "gone", surface = "gossip", text = "装置を持って。",
+        first = 1, word = "装置", reading = "そうち", lemma = "装置" }), T)
+      assert.are.equal("<b>装置[そうち]</b>を持って。", W.sentenceFurigana(e))
     end)
   end)
 

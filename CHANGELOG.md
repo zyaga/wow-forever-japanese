@@ -10,7 +10,7 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Added
-- Save words to a word list: while the popup dictionary shows a word, Ctrl+click it to keep it with its reading, meaning and the sentence it came from. The list stays from one session to the next and is shared by your characters. `/wfj words`, the new Words settings page or the minimap button's menu shows the list as text to copy into a text file, a spreadsheet or Anki. The click can be changed, and each save can also take a screenshot. Copy your words out before going back to an older version: it does not keep the list.
+- Save words to a word list: while the popup dictionary shows a word, Ctrl+click it to keep it with its reading, meaning and the sentence it came from. The list stays from one session to the next and is shared by your characters. `/wfj words`, the new Words settings page or the minimap button's menu shows the list as text to copy into a text file, a spreadsheet or Anki, with the word and its sentence also written with furigana for Anki cards. The click can be changed, and each save can also take a screenshot. Copy your words out before going back to an older version: it does not keep the list.
 - Japanese for the quests, NPC lines and spells Forever build 1.60.1.70790 adds on Zephras Isle and elsewhere, with word readings and voice: the Camping 101 quests, The Ancient Hilt, the shen'dorei starting area's conversations, and the new spells and their auras.
 - Japanese for about 190 more NPC lines on Zephras Isle (the Windshapers, the High Order and the shen'dorei start), with word cards, and voice where the speaker is known.
 

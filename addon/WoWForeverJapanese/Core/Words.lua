@@ -167,7 +167,114 @@ end
 -- ── Export ──────────────────────────────────────────────────────────────────
 
 local COLUMNS = { "Key", "Word", "Reading", "Dictionary form", "Its reading", "Meaning", "Sentence", "Source",
-  "Quest ID", "Quest", "Saved" }
+  "Quest ID", "Quest", "Saved", "Word (furigana)", "Sentence (furigana)" }
+
+-- ── Furigana in Anki's format ───────────────────────────────────────────────
+-- Anki draws a reading over the text between the last space (or tag) and `[`: `用心[ようじん]しろ`, and a space
+-- before a kanji run that follows other text, which Anki's furigana filter hides. A word's reading is whole, so it is
+-- split around the kana the word itself is written with: those appear unchanged in the reading.
+
+-- a hiragana or katakana character (U+3040 to U+30FF: UTF-8 E3 81..83 xx)
+local function isKana(text, i)
+  local b1, b2 = text:byte(i, i + 1)
+  return b1 == 0xE3 and b2 ~= nil and b2 >= 0x81 and b2 <= 0x83
+end
+
+-- the word as runs { text, kana = bool }
+local function runs(word)
+  local out, i = {}, 1
+  while i <= #word do
+    local j = charEnd(word, i)
+    local kana = isKana(word, i)
+    local last = out[#out]
+    if last and last.kana == kana then last.text = last.text .. word:sub(i, j)
+    else out[#out + 1] = { text = word:sub(i, j), kana = kana } end
+    i = j + 1
+  end
+  return out
+end
+
+-- Every way the runs fit the reading, up to two (two means it could go more than one way). A kana run must appear
+-- as written; a kanji run takes one character or more.
+local function fit(rs, reading, r, pos, taken, found)
+  if #found >= 2 then return end
+  if r > #rs then
+    if pos == #reading + 1 then
+      local copy = {} -- `taken` has holes at the kana runs, so it is copied by key
+      for k, v in pairs(taken) do copy[k] = v end
+      found[#found + 1] = copy
+    end
+    return
+  end
+  local run = rs[r]
+  if run.kana then
+    if reading:sub(pos, pos + #run.text - 1) == run.text then fit(rs, reading, r + 1, pos + #run.text, taken, found) end
+    return
+  end
+  local e = pos
+  while e <= #reading do
+    e = charEnd(reading, e)
+    taken[r] = reading:sub(pos, e)
+    fit(rs, reading, r + 1, e + 1, taken, found)
+    taken[r] = nil
+    e = e + 1
+  end
+end
+
+-- `word` with its reading in Anki's furigana format; kana stays outside the brackets. One bracket over the whole
+-- word when the kana cannot be placed, or could be placed two ways.
+function Words.furigana(word, reading)
+  if type(word) ~= "string" or word == "" then return "" end
+  local rs = runs(word)
+  local anyKanji = false
+  for _, run in ipairs(rs) do if not run.kana then anyKanji = true end end
+  if not anyKanji or type(reading) ~= "string" or reading == "" or reading == word then return word end
+  local found = {}
+  fit(rs, reading, 1, 1, {}, found)
+  if #found ~= 1 then return word .. "[" .. reading .. "]" end
+  local out = ""
+  for r, run in ipairs(rs) do
+    if run.kana then
+      out = out .. run.text
+    else
+      out = out .. (out ~= "" and " " or "") .. run.text .. "[" .. found[1][r] .. "]"
+    end
+  end
+  return out
+end
+
+-- The entry's sentence with a reading on every word the line's reading list holds (looked up again by the entry's
+-- source, so a word saved before this column existed gets it too), and the saved word in bold.
+function Words.sentenceFurigana(e)
+  local s = type(e.sentence) == "string" and e.sentence or ""
+  local spans = {}
+  local R = WFJ.Readings
+  local list = R and e.kind ~= nil and e.id ~= nil and R.words(e.kind, e.id)
+  local wf, wl = e.wf, e.wl
+  local own = type(wf) == "number" and type(wl) == "number" and wf >= 1 and wl <= #s and wl >= wf
+  if list then
+    for _, sp in ipairs(R.locate(list, s)) do
+      if not (own and sp.first <= wl and sp.last >= wf) then spans[#spans + 1] = sp end
+    end
+  end
+  if own then spans[#spans + 1] = { first = wf, last = wl, word = s:sub(wf, wl), reading = e.reading, own = true } end
+  table.sort(spans, function(a, b) return a.first < b.first end)
+  local out, pos = "", 1
+  for _, sp in ipairs(spans) do
+    if sp.first >= pos then
+      out = out .. s:sub(pos, sp.first - 1)
+      local f = Words.furigana(sp.word, sp.reading)
+      if sp.own then
+        f = "<b>" .. f .. "</b>" -- the tag ends the text before it, as a space would
+      elseif f:find("[", 1, true) and out ~= "" and not out:find("[ >]$") then
+        f = " " .. f
+      end
+      out = out .. f
+      pos = sp.last + 1
+    end
+  end
+  return out .. s:sub(pos)
+end
 
 local function bold(e)
   local s = type(e.sentence) == "string" and e.sentence or ""
@@ -186,7 +293,8 @@ function Words.export(opts, fmt)
     -- every field through clean(): a list a newer version wrote may lack any of them
     local row = { clean(e.key), clean(e.word), clean(e.reading), clean(e.lemma), clean(e.lemmaReading),
       clean(e.meaning), clean(bold(e)), clean(e.source), clean(e.questId), clean(e.questTitle),
-      type(e.saved) == "number" and fmt("%Y-%m-%d %H:%M", e.saved) or "" }
+      type(e.saved) == "number" and fmt("%Y-%m-%d %H:%M", e.saved) or "",
+      clean(Words.furigana(e.word, e.reading)), clean(Words.sentenceFurigana(e)) }
     if opts.images then row[#row + 1] = type(e.shot) == "string" and clean('<img src="' .. e.shot .. '">') or "" end
     out[#out + 1] = table.concat(row, "\t")
   end

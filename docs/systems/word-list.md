@@ -92,11 +92,12 @@ The file name pattern and the CVar name are not verified yet; the [in-game check
 ```
 #separator:Tab
 #html:true
-#columns:Key	Word	Reading	Dictionary form	Its reading	Meaning	Sentence	Source	Quest ID	Quest	Saved
-quest.description:456:少し	少し	すこし	少し	すこし	a little	…<b>少し</b>…	quest	456	<Japanese quest title>	YYYY-MM-DD HH:MM
+#columns:Key	Word	Reading	Dictionary form	Its reading	Meaning	Sentence	Source	Quest ID	Quest	Saved	Word (furigana)	Sentence (furigana)
+quest.description:456:少し	少し	すこし	少し	すこし	a little	…<b>少し</b>…	quest	456	<Japanese quest title>	YYYY-MM-DD HH:MM	少[すこ]し	…<b>少[すこ]し</b>…
 ```
 
 - The three header lines are Anki's text import headers (Anki 2.1.54 or later): tab separator, fields hold HTML, and the column names. A spreadsheet shows them as three extra rows.
+- **Word (furigana)** and **Sentence (furigana)** are in Anki's furigana format, for a card that shows them with `{{furigana:Field}}`: `用心[ようじん]しろ`, a space before a kanji run that follows other text. A word's reading is split around the kana the word is written with (they appear unchanged in the reading), so kana stays outside the brackets: `引[ひ]き 出[だ]し`. When the kana cannot be placed, or could be placed two ways, the whole word takes one bracket. The sentence gets a reading on every word the line's reading list holds, looked up again by the entry's source when the list is exported (so words saved earlier get it too), with the saved word in bold; a line no longer shipped gets only the saved word's reading.
 - One line per entry, in saved order. The sentence wraps the word in `<b>…</b>` by its byte offsets, never by searching for the word, so the right one of two equal words is bold. The date is local time, `%Y-%m-%d %H:%M`.
 - **Include images** adds an `Image` column: an HTML image tag whose source is the entry's screenshot file name, or empty, and shows two copy boxes: the Screenshots folder of the Forever client, and Anki's media folder (`collection.media` of Anki's first profile, on a Mac and on Windows). The player copies the images there for Anki to find them.
 - The window says to press Cmd+C (Mac) or Ctrl+C (Windows), and to make Key the first field of the Anki note type: Anki matches duplicates on the first field, so importing the list again updates those notes instead of adding them twice.
