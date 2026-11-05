@@ -9,8 +9,12 @@ def _wf(root):
 
 def test_workflow_runs_only_on_sends_with_least_permissions(root):
     wf = _wf(root)
-    assert re.search(r"^on:\n  issues:\n    types: \[opened, edited\]", wf, re.M)
-    assert "if: contains(github.event.issue.labels.*.name, 'collector-send')" in wf
+    assert re.search(r"^on:\n  issues:\n    types: \[opened, edited, labeled\]", wf, re.M)
+    # labelling an issue checks it; adding any other label (the check's own ok / broken) runs nothing
+    assert (
+        "if: contains(github.event.issue.labels.*.name, 'collector-send') && "
+        "(github.event.action != 'labeled' || github.event.label.name == 'collector-send')"
+    ) in wf
     perms = re.search(r"^permissions:\n((?:  .*\n)+)", wf, re.M).group(1)
     assert [ln.strip() for ln in perms.splitlines()] == ["contents: read"]
     job = re.search(r"^    permissions:\n((?:      .*\n)+)", wf, re.M).group(1)

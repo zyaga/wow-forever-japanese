@@ -78,6 +78,12 @@ def test_only_the_release_job_can_write(root):
             check_job = _block(text, "check", 2)
             assert writes == [w for w in re.findall(r"(?m)^ +[\w-]+: write\b.*$", check_job)], name
             assert [w.split("#")[0].strip() for w in writes] == ["issues: write"]
+        elif name == "labels.yml":
+            # the labels sync creates the labels in .github/labels.tsv; its one job may write issues (labels
+            # belong to issues), nothing else
+            sync_job = _block(text, "sync", 2)
+            assert writes == [w for w in re.findall(r"(?m)^ +[\w-]+: write\b.*$", sync_job)], name
+            assert [w.split("#")[0].strip() for w in writes] == ["issues: write"]
         else:
             assert writes == [], name
 
@@ -343,3 +349,22 @@ def test_dependabot_watches_every_composite_action(root):
     assert "/" in watched
     for folder in sorted(p.parent for p in (root / ".github/actions").glob("*/action.yml")):
         assert f"/{folder.relative_to(root)}" in watched, folder
+
+
+# ── labels ────────────────────────────────────────────────────────────────────
+
+
+def test_labels_sync_applies_the_list_on_every_push_to_main_and_on_demand(root):
+    """A label the repository lacks silently stops a check: GitHub drops it from the form's issue. The sync puts
+    every label in .github/labels.tsv back on each merge, and never deletes one."""
+    text = _workflows(root)["labels.yml"]
+    on = _block(text, "on")
+    assert _keys(on, 2) == ["push", "workflow_dispatch"]
+    assert "    branches: [main]\n" in on and "paths" not in on
+    job = _block(text, "sync", 2)
+    assert "group: labels\n  cancel-in-progress: false" in text
+    assert "persist-credentials: false" in job
+    script = "\n".join(_run_scripts(job))
+    assert "done < .github/labels.tsv" in script
+    assert 'gh label create "$name" --color "$color" --description "$description" --force' in script
+    assert "delete" not in text and "--name" not in script
