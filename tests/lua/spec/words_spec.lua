@@ -181,7 +181,7 @@ describe("Words", function()
       local out = W.export({}, fmt)
       local lines = {}
       for l in (out .. "\n"):gmatch("([^\n]*)\n") do lines[#lines + 1] = l end
-      assert.are.equal("#separator:tab", lines[1])
+      assert.are.equal("#separator:Tab", lines[1])
       assert.are.equal("#html:true", lines[2])
       assert.is_truthy(lines[3]:find("^#columns:Key\tWord\tReading"))
       local row = {}

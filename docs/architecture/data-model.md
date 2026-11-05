@@ -133,6 +133,9 @@ The voice over keeps a few things in the addon's account-wide saved variables ([
 
 Settings and `voicePanel` keys from earlier panel builds (`voice.panel`, `voice.panel.strip`, `voice.panel.parchment`, `voice.panel.queueBox`, `voice.panel.ruby`, and tuning values such as `zoom` or `idleDelay`) are carried into Panel size and Panel style once by `VoiceQueue.init` and dropped. `WFJ_DB` stays schema 1. The English a queued line shows while the reveal key is held is kept in memory with that line only, never saved.
 
+### Word list saved variables (`WFJ_Words`, the player's machine, never shipped)
+The player's saved words live in their own account-wide SavedVariables table, `WFJ_Words = { schema = 1, entries = { … }, everSaved = true | nil }` ([Word list](../systems/word-list.md), [ADR-069](../adr/069-saved-word-list.md)). An entry is keyed `<kind>:<id>:<dictionary form>` (the reading row's kind and id, never a position) and holds the word, its reading, dictionary form and meaning, the Japanese sentence around it, where it was shown and when; no English game text. None of it is in `data/` or the addon's files. A list with a higher `schema` (a newer addon version) is kept unchanged and never written.
+
 ### Generated `addon/WoWForeverJapanese/Data/<Type>/<Type>_NNNN.lua`: id-range shards, 1,000 ids per file (ADR-008)
 Written by `wfj generate`, never by hand; `wfj validate` regenerates and diffs on every PR. `NNNN = id // 1000`, zero-padded to 4: the **same boundaries as the JSONL shards** (`Quest_0007.lua` ↔ `quest-0007.jsonl`, ids 7000–7999), so a data PR touches the same shard in both trees. Ranges with no shipped id get no file; a shard whose range empties on regeneration is deleted. Keyed types shard differently: `Data/UI/UI_<C>.lua` by the key's first character, `Data/Gossip/Gossip_NN.lua` and `Data/Book/Book_NN.lua` by the key's first two hex chars.
 ```lua

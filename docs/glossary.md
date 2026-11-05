@@ -617,6 +617,16 @@ Player-facing text (the README, the listing) calls it the popup dictionary.
 _Avoid_: gloss box, dictionary popup, tooltip (it is not a GameTooltip)
 → [Readings](systems/readings.md) · [ADR-039](adr/039-word-meanings-written-in-context.md)
 
+**Word list**:
+The player's own list of saved [[Word]]s, kept account-wide in the SavedVariables table `WFJ_Words` across sessions. Each entry holds the word, its [[Reading]], its [[Dictionary form]] and that form's reading, its [[Meaning]], the Japanese sentence it was shown in, where it was shown and when it was saved; one entry per source text and dictionary form. Filled by the [[Save click]], exported from the word list window as tab-separated text for a text file, a spreadsheet or Anki. In Japanese: 単語帳.
+_Avoid_: flashcards (Anki makes those from the export), vocab list, vocabulary, bookmarks, favourites, deck (Anki's term)
+→ [Word list](systems/word-list.md) · [ADR-069](adr/069-saved-word-list.md)
+
+**Save click**:
+The mouse click that adds the highlighted [[Word]] (gold tint, [[Word card]] or [[Word-reading box]] showing) to the [[Word list]]: Ctrl+click by default, or Shift+click, Cmd+click (Mac only) or a plain click, set by `words.saveClick` (`off` turns it off). Never the [[Modifier]]'s own key. The addon reads the mouse button while the mouse is over the word; it does not take the click, so the window under the text gets it as before.
+_Avoid_: bookmark, save key (it is a click), Ctrl+click on its own (the click is a setting), save button
+→ [Readings → Saving a word](systems/readings.md#saving-a-word) · [ADR-069](adr/069-saved-word-list.md)
+
 **Window label**:
 A plain-text label in a window: a FontString showing one [[UI string]] (the quest window's 報酬 and 以下の報酬から1つ選択できます, the character sheet's section labels, mail's 宛先:) whose parent is not a Button or a protected frame, on a [[Surface]] that is a window: not a button, tab, menu, dropdown or tooltip, and not the HUD (tracker, alerts, error and combat text, unit frames, zone text; `View.NON_WINDOW`). The only interface text that takes a [[Word card]]. Narrower than [[Label]], which also covers buttons.
 _Avoid_: UI label (too wide: buttons are labels too), window text, header, static text

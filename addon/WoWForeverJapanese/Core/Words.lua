@@ -175,7 +175,7 @@ function Words.export(opts, fmt)
   opts = opts or {}
   local cols = { unpack(COLUMNS) }
   if opts.images then cols[#cols + 1] = "Image" end
-  local out = { "#separator:tab", "#html:true", "#columns:" .. table.concat(cols, "\t") }
+  local out = { "#separator:Tab", "#html:true", "#columns:" .. table.concat(cols, "\t") }
   for _, e in ipairs(Words.entries()) do
     -- every field through clean(): a list a newer version wrote may lack any of them
     local row = { clean(e.key), clean(e.word), clean(e.reading), clean(e.lemma), clean(e.lemmaReading),

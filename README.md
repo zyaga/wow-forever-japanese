@@ -91,6 +91,13 @@ small popup shows how to read it, its dictionary form, and a short English meani
 
 ![The popup dictionary above a word in a quest text, showing its reading and meaning](docs/images/word-card.jpg)
 
+**Save words.** While the popup dictionary shows a word, Ctrl+click it to save it to your word list, with its
+reading, meaning and the sentence it came from. The list stays from one session to the next and is shared by all your
+characters. Type `/wfj words`, or use the **Words** settings page or the minimap button's menu, to see the whole list
+as text you can copy into a text file, a spreadsheet or Anki. The click can be Shift+click, Cmd+click on a Mac or a
+plain click instead, and each save can also take a screenshot. Going back to an older version of the addon loses the
+list, so copy it out first.
+
 **Japanese voice.** With the voice installed ([see below](#add-the-japanese-voice)), quest offers, progress and
 turn-ins, NPC greetings and talk, and book and letter pages are read aloud in Japanese: over 14,000 lines. Each NPC
 speaks in a voice cast for their race or kind of creature, gender and age. Your character says its own error lines,
@@ -292,6 +299,8 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 **ポップアップ辞書。** クエスト本文、NPC の会話、本のページ、ウィンドウのラベルで日本語の単語にマウスを合わせると、読み方・辞書形・その文脈での短い英語の意味が表示されます。
 
 ![クエスト本文の単語の上に読み方と意味が表示されたポップアップ辞書](docs/images/word-card.jpg)
+
+**単語の保存。** ポップアップ辞書が出ている単語を Ctrl+クリックすると、読み方・意味・その文と一緒に単語帳に保存されます。単語帳は次回以降も残り、すべてのキャラクターで共通です。`/wfj words` と入力するか、設定の **単語帳** ページかミニマップボタンのメニューから開くと、単語帳全体がテキストで表示され、テキストファイル、表計算ソフト、Anki にコピーできます。保存の操作は Shift+クリック、Mac の Cmd+クリック、普通のクリックにも変えられ、保存のたびにスクリーンショットを撮ることもできます。古いバージョンのアドオンに戻すと単語帳は消えるので、先にコピーしておいてください。
 
 **日本語音声。** 音声を入れると（[下記](#日本語音声を追加する)）、クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページを日本語で読み上げます。合わせて 14,000 行以上です。NPC はそれぞれ、種族やモンスターの種類・性別・年齢に合わせて選んだ声で話します。自分のキャラクターも、射程外などのエラーの一言を、種族と性別に合わせた声で日本語で話します。
 

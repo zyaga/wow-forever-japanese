@@ -7,6 +7,8 @@ A learner can read a kanji word without anything being added to the text until t
 
 A word can also carry its dictionary form and a short English meaning of the whole word as the sentence uses it (食べている → 食べる, "is eating"). Such a word shows the **word card** instead of the reading-only box. The meaning is written by the model with the sentence in front of it, so it is the sense that sentence uses, not a dictionary list.
 
+A highlighted word can be kept: the **save click** (Ctrl+click by default) adds it to the player's word list. How the click is read is below ([Saving a word](#saving-a-word)); the list itself is [Word list](word-list.md).
+
 ## How it works
 ```mermaid
 sequenceDiagram
@@ -87,7 +89,7 @@ Verbs in full: [Pipeline](pipeline.md).
   倒す　たおす                  the dictionary form and its reading (pale blue / muted gold), only when it differs
   defeat (and then)            the meaning in this sentence, wrapped inside the card
   ```
-  280 px wide (`Popup.WIDTH`), clamped to the screen; drawn on `TooltipBackdropTemplate`, the game's tooltip frame and border, with 10 px padding inside it. It owns no data and no hit testing; `UI/Readings` shows and hides it. A kanji word with no meaning, or any kanji word while `readings.glosses` is off, shows the reading-only box. A kana word is listed for the card only: without a meaning, or with meanings off, it is not a hover target (`measure` skips it).
+  280 px wide (`Popup.WIDTH`), clamped to the screen; drawn on `TooltipBackdropTemplate`, the game's tooltip frame and border, with 10 px padding inside it. It owns no data and no hit testing; `UI/Readings` shows and hides it. `Popup.show`'s optional last argument is a **hint**: one grey line (11 pt) under the meaning. `UI/Readings` passes `View.hint()`, which names the save click in both languages, `Ctrl+click: save word ・ Ctrl+clickで単語を保存`, until the player has saved a word once (`WFJ_Words.everSaved`, kept through Clear all), and nothing while the save click is `off`. The reading-only box takes no hint. A kanji word with no meaning, or any kanji word while `readings.glosses` is off, shows the reading-only box. A kana word is listed for the card only: without a meaning, or with meanings off, it is not a hover target (`measure` skips it).
 
 | surface (`SURFACES`) | where |
 |---|---|
@@ -99,6 +101,17 @@ Verbs in full: [Pipeline](pipeline.md).
 | `voicepanel` (record keys `text` and `full`) | the voice panel's sentence and its whole-text window ([Voice over](voice.md#the-voice-panel-uivoicepanellua)); the panel's English view (reveal key held) takes none |
 
 Forever has no trainer greeting window; a trainer's greeting is a gossip greeting.
+
+### Saving a word
+A highlighted word is saved to the [word list](word-list.md) with the save click (`words.saveClick`: Ctrl+click by default; [ADR-069](../adr/069-saved-word-list.md)). The cover does not take the click. A click-enabled cover would stand between the player and the window under the text, so the click is read by **polling** instead, in the `OnUpdate` that already runs while the mouse is over the cover (`View.poll`):
+
+- each frame it reads `IsMouseButtonDown("LeftButton")`; a press remembers the hovered word (`cover.pressWord`), and a release on the **same** word saves it when the modifiers held at the release match the setting (`Words.matches`: Ctrl only, Shift only, Cmd only, or none of the three for a plain click; read from `IsControlKeyDown`, `IsShiftKeyDown`, `IsMetaKeyDown`);
+- `OnEnter` records whether the button was already down, so the end of a drag that started elsewhere is not a click; a press off every word, a release on another word or off the cover, or other modifiers save nothing; one press saves at most once;
+- with the setting `off` the poll returns at once.
+
+`measure` keeps each word's byte span (`first`, `last`) in the applied text, and `attach` keeps the record's `kind`, `id` and `surface` on the cover; `View.save` hands those, the word, its reading and its meaning (`Glosses.get`, or a class / race word's own card, whether or not meanings are shown) and, for quest text, the shipped Japanese quest title to `Words.add`. A new entry flashes the tint brighter for a quarter second and prints `Saved <word> (N words)`; a word already saved prints `Already saved: <word>`; a list a newer addon version wrote prints that it cannot be changed. Each chat line holds both languages. With `words.screenshot` on, the card (or box) hides, the tint stays, `Screenshot()` runs, and the chat line and the card come back on `SCREENSHOT_SUCCEEDED` or `SCREENSHOT_FAILED` ([Word list → Screenshots](word-list.md#screenshots)). Nothing in the save path is a protected call, so it works in combat.
+
+Because the cover still takes mouse motion only, every click, drag and wheel scroll over covered text reaches the same frame as before, whatever the setting. On the voice panel the click also reaches the panel itself, as any click there does. A press and release inside one frame is missed (the poll sees no press).
 
 **Book pages ([ADR-044](../adr/044-area-text-and-book-word-cards.md)).** The client draws a page in a SimpleHTML (`ItemTextPageText`), which has no span call [verified: Forever 1.60.1.70009 `SimpleHTMLAPIDocumentation`: `GetTextData` gives `{ text, type, align }` only]. So `UI/ItemText` draws a plain-text page showing Japanese in a FontString of its own, laid where the SimpleHTML's text starts, as wide as it, in the `P` text type's font and colour, and gives the SimpleHTML `""` while it shows (details: [Addon modules → ItemText](../architecture/addon-modules.md)). The page record's `fs` is the ItemText page adapter; `page:spanRegion()` returns the adapter's FontString, and `UI/Readings` (`region(rec)`) covers it only while it holds exactly the text the record applied; a page drawn by the SimpleHTML (English, an HTML page) takes no cover. A page turn or a new item hides the FontString; the cover's text check on enter then hides the cover too.
 
@@ -141,7 +154,8 @@ A span that splits a UTF-8 character is **not a Lua error**: the client exits, a
 - `pipeline/wfj/cmd/validate.py` (`rule_readings`, `rule_numbers`), `pipeline/wfj/cmd/generate.py` (`load_numbers`, `write_numbers`), `pipeline/wfj/emit/lua_writer.py` (`reading_text`, `gloss_text`), `pipeline/wfj/emit/schema.py` (`reading_relpath`, `gloss_relpath`, `TOC_ORDER`)
 - `addon/WoWForeverJapanese/Core/Readings.lua`: parse + locate + class / race words (pure)
 - `addon/WoWForeverJapanese/Core/Glosses.lua`: meaning lookup (pure); `UI/ReadingPopup.lua`: the word card
-- `addon/WoWForeverJapanese/UI/Readings.lua`: cover frame, box, the guard, the window-label rule (`NON_WINDOW`, `nonWindow`, `inWindow`)
+- `addon/WoWForeverJapanese/UI/Readings.lua`: cover frame, box, the guard, the window-label rule (`NON_WINDOW`, `nonWindow`, `inWindow`), the save click (`poll`, `save`, `hint`)
+- `addon/WoWForeverJapanese/Core/Words.lua`: the word list the save click writes ([Word list](word-list.md))
 - `addon/WoWForeverJapanese/UI/TooltipLines.lua`: `follow` marks its surface non-window
 - `addon/WoWForeverJapanese/UI/Render.lua`: attach / detach calls
 - `addon/WoWForeverJapanese/UI/VoicePanelText.lua`: the voice panel's attach / detach calls and each page's `rec.spans`
@@ -155,7 +169,7 @@ A span that splits a UTF-8 character is **not a Lua error**: the client exits, a
 - The box and the card never show while English shows: every path that puts English back detaches first, and the cover re-checks the text on enter.
 - Readings never edit the Japanese, never carry a name (a word holds no ASCII, and needs a kanji unless it is a kana word with a meaning; a class / race card gives the English name), and ship only while their `ja_hash` matches (ID-keyed, provenance on every record, machine never replaces correction: [principles 5 and 6](../architecture/principles.md#5-every-translation-is-keyed-by-the-game)).
 - A word a line uses more than once has a card at every place: the reading import fills a repeat the batch left out (`readings.fill_repeats`), and `validate` fails on a shipped reading that still misses one, so CI stops such a build.
-- The cover takes mouse motion only: clicks and scrolling go to the frames underneath.
+- The cover takes mouse motion only: clicks and scrolling go to the frames underneath. The save click is read by polling the button, never by a click handler on the cover; no cover calls `SetMouseClickEnabled`, `SetPropagateMouseClicks` or `EnableMouse`.
 - Nothing runs per frame unless the mouse is over a covered FontString.
 
 ## Edge cases
@@ -170,4 +184,4 @@ A span that splits a UTF-8 character is **not a Lua error**: the client exits, a
 - **Book pages.** A plain-text page carries 5-item word lists with meanings; an HTML page carries none and is owed none.
 
 ## Related
-- [ADR-036](../adr/036-readings-hover-word-lists.md) · [ADR-039](../adr/039-word-meanings-written-in-context.md) · [ADR-041](../adr/041-word-cards-on-window-labels.md) · [ADR-044](../adr/044-area-text-and-book-word-cards.md) · [ADR-060](../adr/060-stable-meaning-numbers.md) · [Testing → word card checklist](../testing/strategy.md#word-card-checklist) · [Pipeline](pipeline.md) · [Settings](settings.md) · [Addon modules](../architecture/addon-modules.md) · [Data model](../architecture/data-model.md) · [Translation batches](../operations/translation-batches.md) · [Testing → readings checklist](../testing/strategy.md#readings-checklist) · [Glossary](../glossary.md)
+- [Word list](word-list.md) · [ADR-069](../adr/069-saved-word-list.md) · [ADR-036](../adr/036-readings-hover-word-lists.md) · [ADR-039](../adr/039-word-meanings-written-in-context.md) · [ADR-041](../adr/041-word-cards-on-window-labels.md) · [ADR-044](../adr/044-area-text-and-book-word-cards.md) · [ADR-060](../adr/060-stable-meaning-numbers.md) · [Testing → word card checklist](../testing/strategy.md#word-card-checklist) · [Pipeline](pipeline.md) · [Settings](settings.md) · [Addon modules](../architecture/addon-modules.md) · [Data model](../architecture/data-model.md) · [Translation batches](../operations/translation-batches.md) · [Testing → readings checklist](../testing/strategy.md#readings-checklist) · [Glossary](../glossary.md)
