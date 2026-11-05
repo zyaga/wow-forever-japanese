@@ -7,6 +7,7 @@ import os
 from contextlib import redirect_stdout
 from pathlib import Path
 
+import local_inputs
 import pytest
 
 from wfj.dev import ui_inventory
@@ -88,8 +89,10 @@ def _source(env: str, default: Path) -> Path | None:
 
 def test_forever_output_matches_the_committed_inventory(root):
     # Needs a Forever UI extract + its GlobalStrings: WFJ_FOREVER_UI=<extract>/interface/addons, WFJ_FOREVER_GLOBALSTRINGS
-    addons = _source("WFJ_FOREVER_UI", root / "predecessors/forever-ui-1.60.1.70170/interface/addons")
-    gs = _source("WFJ_FOREVER_GLOBALSTRINGS", root / "predecessors/clients/forever-1.60.1.70170/GlobalStrings.csv")
+    # the pinned build's extract and GlobalStrings, from the main checkout's predecessors/ (a worktree has none)
+    build, inputs = local_inputs.forever_build(root), local_inputs.predecessors(root) or root / "predecessors"
+    addons = _source("WFJ_FOREVER_UI", inputs / f"forever-ui-{build}/interface/addons")
+    gs = _source("WFJ_FOREVER_GLOBALSTRINGS", inputs / f"clients/forever-{build}/GlobalStrings.csv")
     if addons is None or gs is None:
         pytest.skip("no Forever UI extract")
     code, out = _run([str(addons), str(gs)])
