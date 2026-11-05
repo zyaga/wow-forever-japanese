@@ -473,7 +473,12 @@ function View.save(cover, word)
   }, call("time"))
   if status == "added" then
     flash(cover)
-    if WFJ.Settings.get("words.screenshot") then screenshot(cover, entry) else say("words.saved", entry.word, Words.count()) end
+    if WFJ.WordsWindow then WFJ.WordsWindow.refresh() end
+    if WFJ.Settings.get("words.screenshot") then
+      screenshot(cover, entry)
+    else
+      say("words.saved", entry.word, Words.count())
+    end
   elseif status == "exists" then
     say("words.exists", entry.word)
   else

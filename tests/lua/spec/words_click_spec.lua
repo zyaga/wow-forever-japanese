@@ -42,7 +42,7 @@ local function extendFrames(mouseCalls)
     function f:SetPropagateMouseClicks(...) mouseCalls[#mouseCalls + 1] = { self, "SetPropagateMouseClicks", ... } end
     function f:EnableMouse(...) mouseCalls[#mouseCalls + 1] = { self, "EnableMouse", ... } end
     function f:SetFrameStrata(s) self.strata = s end
-    function f:SetClampedToScreen() end
+    function f.SetClampedToScreen() end
     function f:ClearAllPoints() self.point = nil end
     function f:SetShown(v) if v then self:Show() else self:Hide() end end
     function f.GetLeft() return 100 end
@@ -118,7 +118,8 @@ describe("Saving a word", function()
     R, S = WFJ.Render, WFJ.Settings
     S.load(nil, 1, {})
     WFJ.Words.load(nil)
-    local DATA = { ["quest.description"] = { [456] = { ja = JA, status = "." } }, gossip = { g1 = { ja = JA, status = "." } } }
+    local DATA = { ["quest.description"] = { [456] = { ja = JA, status = "." } },
+      gossip = { g1 = { ja = JA, status = "." } } }
     R.init(WFJ.Translator.new({
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,

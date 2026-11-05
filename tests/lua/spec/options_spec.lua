@@ -3,8 +3,8 @@ local Stub = require("tests.lua.spec.wow_stub")
 local Loader = require("tests.lua.spec.loader")
 
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Data.lua", "Data/Meta.lua", "Core/State.lua",
-  "Core/Settings.lua", "Core/Modifier.lua", "Core/Collector.lua", "UI/Font.lua", "UI/OptionsText.lua",
-  "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/RevealBinding.lua", "UI/Options.lua" }
+  "Core/Settings.lua", "Core/Modifier.lua", "Core/Collector.lua", "Core/Words.lua", "UI/Font.lua", "UI/OptionsText.lua",
+  "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/RevealBinding.lua", "UI/Options.lua", "UI/WordsWindow.lua" }
 
 -- Every widget the stub created, per page frame (FontStrings and textures live in `children`; frames in Stub.frames).
 local function pageFrames(page)
@@ -43,13 +43,15 @@ describe("Settings pages from the registry and PAGES", function()
     for _, c in ipairs(O.controls) do if c.id == id then return c end end
   end
 
-  it("registers main, collector, about as one category and two subcategories; opens a page by id", function()
-    assert.are.same({ "main", "collector", "about" }, { list[1].id, list[2].id, list[3].id })
+  it("registers main, collector, words, about as one category and three subcategories; opens a page by id",
+  function()
+    assert.are.same({ "main", "collector", "words", "about" }, { list[1].id, list[2].id, list[3].id, list[4].id })
     assert.are.equal(42, WFJ.Compat.registerOptions(list))
     local names = {}
     for _, c in ipairs(Stub.settingsCalls) do names[#names + 1] = c[1] end
     assert.are.same({ "RegisterCanvasLayoutCategory", "RegisterCanvasLayoutSubcategory",
-      "RegisterCanvasLayoutSubcategory", "RegisterAddOnCategory" }, names) -- the AddOns category last (the guide)
+      "RegisterCanvasLayoutSubcategory", "RegisterCanvasLayoutSubcategory", "RegisterAddOnCategory" }, names)
+    -- the AddOns category last (the guide)
     assert.are.equal(O.pages.main, Stub.settingsCalls[1][2])
     assert.are.equal("WoW Forever Japanese", Stub.settingsCalls[1][3])
     assert.are.equal(O.pages.collector, Stub.settingsCalls[2][3])
@@ -79,8 +81,31 @@ describe("Settings pages from the registry and PAGES", function()
     assert.is_true(O.addPage("voicepanel"))
     assert.are.equal("Voice panel", Stub.settingsCalls[#Stub.settingsCalls][4])
     local again = O.build() -- a pack present at build time: the pages are built with the others, after About
-    assert.are.same({ "main", "collector", "about", "voice", "voicepanel" },
-      { again[1].id, again[2].id, again[3].id, again[4].id, again[5].id })
+    assert.are.same({ "main", "collector", "words", "about", "voice", "voicepanel" },
+      { again[1].id, again[2].id, again[3].id, again[4].id, again[5].id, again[6].id })
+  end)
+
+  it("the words page: the save click as a dropdown without the reveal key's modifier, the count, Export", function()
+    local rows
+    for _, page in ipairs(O.PAGES) do if page.id == "words" then rows = page.sections[1].rows end end
+    assert.are.same({ "wordsExplain", "words.saveClick", "words.screenshot", "wordsStatus", "wordsExport" }, rows)
+    _G.IsMacClient = function() return false end
+    local function texts()
+      local out = {}
+      for i, it in ipairs(control("words.saveClick").dropdown:menuItems()) do out[i] = it.text end
+      return out
+    end
+    assert.are.same({ "Ctrl+click", "Shift+click", "Click", "Off" }, texts())
+    S.set("modifier", "lctrl")
+    assert.are.same({ "Shift+click", "Click", "Off" }, texts())
+    _G.IsMacClient = function() return true end
+    assert.are.same({ "Shift+click", "Cmd+click", "Click", "Off" }, texts())
+    _G.IsMacClient = nil
+    assert.are.equal(select(2, WFJ.OptionsText.get("words.status", 0)), O.wordsStatus.en:GetText())
+    local opened = 0
+    WFJ.WordsWindow.open = function() opened = opened + 1 end
+    O.wordsExport.scripts.OnClick(O.wordsExport, "LeftButton")
+    assert.are.equal(1, opened)
   end)
 
   it("the voice panel page: Panel size and Panel style as dropdowns, then its switches", function()

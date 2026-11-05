@@ -471,6 +471,11 @@ function Slash.handle(msg)
     end
     return
   end
+  if lower == "words" and words[2] == nil then -- the word list window; "words <setting> <value>" is a setting
+    local ok = WFJ.WordsWindow and pcall(WFJ.WordsWindow.open)
+    if not ok then say("the word list window is not available on this client") end
+    return
+  end
   if lower == "fix" then -- the fix window (report a line)
     local ok = WFJ.FixWindow and pcall(WFJ.FixWindow.open)
     if not ok then say("the fix window is not available on this client") end

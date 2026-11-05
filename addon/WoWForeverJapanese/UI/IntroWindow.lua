@@ -72,14 +72,15 @@ local function build()
   p:SetPoint("TOPRIGHT", 0, -TOP)
   p:SetHeight(1)
   f.page = p
-  f.lead, f.hold, f.readings, f.minimap, f.voice = line(p), line(p), line(p), line(p), line(p)
-  f.lines = { f.lead, f.hold, f.readings, f.minimap } -- always shown; the voice line is not
+  f.lead, f.hold, f.readings, f.words, f.minimap, f.voice = line(p), line(p), line(p), line(p), line(p), line(p)
+  f.lines = { f.lead, f.hold, f.readings, f.words, f.minimap } -- always shown; the voice line is not
   f.box = W.copyBox(p, LEFT, 0, TEXT_WIDTH - 12, WFJ.Options.VOICE_URL)
   W.put(f.title, WFJ.Options.TITLE, 13)
   local en, ja = Text.get("intro.lead")
   fill(f.lead, en, ja, true)
   for _, fs in ipairs({ f.lead.ja, f.lead.en }) do fs:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3]) end
   fill(f.readings, Text.get("intro.readings"))
+  fill(f.words, Text.get("intro.words"))
   fill(f.minimap, Text.get("intro.minimap"))
   en, ja = Text.get("intro.voice")
   W.put(f.voice.ja, ja, 12)

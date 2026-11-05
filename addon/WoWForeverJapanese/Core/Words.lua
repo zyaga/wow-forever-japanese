@@ -177,11 +177,11 @@ function Words.export(opts, fmt)
   if opts.images then cols[#cols + 1] = "Image" end
   local out = { "#separator:tab", "#html:true", "#columns:" .. table.concat(cols, "\t") }
   for _, e in ipairs(Words.entries()) do
-    local row = { e.key, e.word, e.reading, e.lemma, e.lemmaReading, e.meaning, bold(e), e.source or "",
-      e.questId and tostring(e.questId) or "", e.questTitle or "",
+    -- every field through clean(): a list a newer version wrote may lack any of them
+    local row = { clean(e.key), clean(e.word), clean(e.reading), clean(e.lemma), clean(e.lemmaReading),
+      clean(e.meaning), clean(bold(e)), clean(e.source), clean(e.questId), clean(e.questTitle),
       type(e.saved) == "number" and fmt("%Y-%m-%d %H:%M", e.saved) or "" }
-    if opts.images then row[#row + 1] = e.shot and ('<img src="' .. e.shot .. '">') or "" end
-    for i, v in ipairs(row) do row[i] = clean(v) end
+    if opts.images then row[#row + 1] = type(e.shot) == "string" and clean('<img src="' .. e.shot .. '">') or "" end
     out[#out + 1] = table.concat(row, "\t")
   end
   return table.concat(out, "\n")

@@ -151,6 +151,7 @@ describe("UI/IntroWindow, the window", function()
       { f.lead, T["intro.lead"].ja, T["intro.lead"].en }, -- the opening line has no bullet
       { f.hold, "・" .. T["intro.hold"].ja:format(key), "• " .. T["intro.hold"].en:format(key) },
       { f.readings, "・" .. T["intro.readings"].ja, "• " .. T["intro.readings"].en },
+      { f.words, "・" .. T["intro.words"].ja, "• " .. T["intro.words"].en },
       { f.minimap, "・" .. T["intro.minimap"].ja, "• " .. T["intro.minimap"].en },
     }
   end
@@ -374,7 +375,7 @@ describe("UI/OptionsText, the intro window's copy", function()
   setup(function() T = H.loadChunks({ "UI/OptionsText.lua" }).OptionsText.T end)
 
   it("every line is the addon's own copy in both languages, with no em dash", function()
-    for _, k in ipairs({ "intro.lead", "intro.hold", "intro.readings", "intro.minimap",
+    for _, k in ipairs({ "intro.lead", "intro.hold", "intro.readings", "intro.words", "intro.minimap",
         "intro.voiceTitle", "intro.voice", "intro.close" }) do
       assert.is_string(T[k].en)
       assert.is_string(T[k].ja)

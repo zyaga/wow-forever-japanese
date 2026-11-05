@@ -37,6 +37,12 @@ Options.PAGES = {
       rows = { "collectorExplain", "collector.enabled", "collector.remind", "collectorStatus", "collectorClear" } },
     { title = "section.files", rows = { "collectorSteps", "collectorSend", "collectorPath" } },
   } },
+  -- the saved word list (Core/Words): how to save, the count and the export window. Remove last and Clear all live in
+  -- that window only.
+  { id = "words", title = "page.words", sections = {
+    { title = "section.words", rows = { "wordsExplain", "words.saveClick", "words.screenshot", "wordsStatus",
+      "wordsExport" } },
+  } },
   { id = "about", title = "page.about", header = true, sections = {
     { title = "section.help", rows = { "aboutHold", "aboutReadings", "aboutMarkers", "aboutOpen", "aboutVoice" } },
     { title = "section.slash", rows = { "slashHelp" } },
@@ -148,11 +154,14 @@ local function choiceRow(page, d, x, y)
   local ctl = { id = d.id, kind = "choice" }
   ctl.dropdown = W.dropdown(page, x + 310, y, 170, function(_, root)
     for _, c in ipairs(d.choices) do
-      local text = d.choiceText and d.choiceText[c] or c
-      root:CreateRadio(text, function() return S.get(d.id) == c end, function()
-        S.set(d.id, c)
-        Options.refresh()
-      end, c)
+      -- a choice the player is not offered right now (asked each time the menu opens, so it follows the reveal key)
+      if not (d.choiceHidden and d.choiceHidden(c)) then
+        local text = d.choiceText and d.choiceText[c] or c
+        root:CreateRadio(text, function() return S.get(d.id) == c end, function()
+          S.set(d.id, c)
+          Options.refresh()
+        end, c)
+      end
     end
   end)
   Options.controls[#Options.controls + 1] = ctl
@@ -397,6 +406,29 @@ local function helpRow(key)
   end
 end
 A.aboutOpen, A.aboutReadings = helpRow("about.open"), helpRow("about.readings")
+
+function A.wordsExplain(page, x, y, width)
+  local en, ja = Text.get("words.explain")
+  return W.labelHeight(W.label(page, en, ja, x, y, width), 48)
+end
+
+function A.wordsStatus(page, x, y, width)
+  local l = W.label(page, "", "", x, y, width)
+  local function fill() W.setPair(l, Text.get("words.status", WFJ.Words.count())) end
+  fill()
+  Options.refreshers[#Options.refreshers + 1] = fill
+  Options.wordsStatus = l
+  return 24
+end
+
+-- Opens the word list window (UI/WordsWindow).
+function A.wordsExport(page, x, y)
+  local en, ja = Text.get("words.export")
+  local b = W.button(page, en, ja, 160, function() WFJ.WordsWindow.open() end)
+  b:SetPoint("TOPLEFT", x, y)
+  Options.wordsExport = b
+  return 30
+end
 
 function A.aboutMarkers(page, x, y, width)
   local l = W.label(page, "", "", x, y, width)

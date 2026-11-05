@@ -286,3 +286,21 @@ describe("the addon dropdown entry", function()
     end
   end)
 end)
+
+describe("the minimap menu's word list entry", function()
+  it("shows the saved count and opens the word list window", function()
+    local WFJ = load(nil)
+    H.loadChunks({ "Core/Words.lua", "UI/WordsWindow.lua" }, WFJ)
+    WFJ.Words.load({ schema = 1, entries = { { key = "a", word = "a" }, { key = "b", word = "b" } } })
+    local entry
+    for _, it in ipairs(WFJ.MinimapButton.items()) do
+      if it.text == "Export words (2)" or it.text == "単語帳を書き出す（2）" then entry = it end
+    end
+    assert.is_table(entry)
+    local opened = 0
+    WFJ.WordsWindow.open = function() opened = opened + 1 end
+    entry.action()
+    assert.are.equal(1, opened)
+    F.clear()
+  end)
+end)

@@ -61,8 +61,8 @@ describe("/wfj covers every setting", function()
       end
     end
     -- the original eight + collector.enabled + area.interface + area.books + readings.enabled + readings.glosses
-    -- + minimapButton + collector.remind
-    assert.are.equal(15, n)
+    -- + minimapButton + collector.remind + the word list's save click and screenshot
+    assert.are.equal(17, n)
   end)
 
   it("/wfj bug opens the report window on Bug; /wfj log ends with the Lua error count", function()
@@ -226,14 +226,29 @@ describe("/wfj covers every setting", function()
     assert.is_truthy(table.concat(Stub.prints, "\n"):find("ui: shipped " .. n, 1, true))
   end)
 
+  it("/wfj words opens the word list window; /wfj words screenshot on is the setting", function()
+    local opened, real = 0, WFJ.WordsWindow.open
+    WFJ.WordsWindow.open = function() opened = opened + 1 end
+    wfj("words")
+    assert.are.equal(1, opened)
+    wfj("words screenshot on")
+    assert.are.equal(1, opened)
+    assert.is_true(S.get("words.screenshot"))
+    WFJ.WordsWindow.open = real
+    local help = table.concat(WFJ.OptionsText.SLASH, "\n")
+    assert.is_truthy(help:find("/wfj words", 1, true))
+  end)
+
   it("config opens the panel through Compat; debug prints without error", function()
     wfj("config")
     assert.are.same({ "OpenToCategory", 42 }, Stub.settingsCalls[#Stub.settingsCalls])
     -- the subpages by name; an unknown page opens the main one
     wfj("config collector")
     assert.are.same({ "OpenToCategory", 43 }, Stub.settingsCalls[#Stub.settingsCalls])
-    wfj("config ABOUT")
+    wfj("config words")
     assert.are.same({ "OpenToCategory", 44 }, Stub.settingsCalls[#Stub.settingsCalls])
+    wfj("config ABOUT")
+    assert.are.same({ "OpenToCategory", 45 }, Stub.settingsCalls[#Stub.settingsCalls])
     wfj("config nope")
     assert.are.same({ "OpenToCategory", 42 }, Stub.settingsCalls[#Stub.settingsCalls])
     Stub.prints = {}

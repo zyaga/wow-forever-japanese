@@ -38,7 +38,7 @@ read_globals = {
 
 -- Globals the addon defines (SavedVariables, slash registrations, bindings).
 globals = {
-  "SlashCmdList", "WFJ_DB", "WFJ_Collector", "WFJ_Log", "SLASH_WFJ1", "SLASH_WFJ2", "BINDING_HEADER_WFJ", "BINDING_NAME_WFJ_TOGGLE",
+  "SlashCmdList", "WFJ_DB", "WFJ_Collector", "WFJ_Log", "WFJ_Words", "SLASH_WFJ1", "SLASH_WFJ2", "BINDING_HEADER_WFJ", "BINDING_NAME_WFJ_TOGGLE",
   "WFJ_ToggleTranslation", "WFJ_RevealKey", "BINDING_NAME_WFJ_REVEAL",
   -- the voice panel's key bindings
   "WFJ_VoicePause", "WFJ_VoiceReplay", "BINDING_NAME_WFJ_VOICE_PAUSE", "BINDING_NAME_WFJ_VOICE_REPLAY",
