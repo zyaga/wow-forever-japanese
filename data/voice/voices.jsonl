@@ -1562,6 +1562,7 @@
 {"creature": 10475, "voice": "v258599616", "row": "young, male", "female": "v345585728", "female_row": "young, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 10537, "voice": "v1310138979", "row": "tauren, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 10539, "voice": "v1310138976", "row": "tauren, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 10540, "voice": "v5306848", "row": "troll, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-05"}}
 {"creature": 10578, "voice": "v258599616", "row": "young, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 10583, "voice": "v1310138979", "row": "dwarf, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 10616, "voice": "v2110072448", "row": "human, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
@@ -2366,6 +2367,7 @@
 {"creature": 252383, "voice": "v1717361472older", "row": "elder, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 252388, "voice": "v808373280", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 252389, "voice": "v2031733024", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 252392, "voice": "v376644064", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-05"}}
 {"creature": 252448, "voice": "v1141110496", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 252475, "voice": "v258599616", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 252476, "voice": "v1141110496", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
@@ -2400,7 +2402,9 @@
 {"creature": 254345, "voice": "v1138003200", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 254411, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 255940, "voice": "v376644064", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 256076, "voice": "v893625024", "row": "mechanical", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-05"}}
 {"creature": 256083, "voice": "v1325133120", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 256247, "voice": "v1141110496", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-05"}}
 {"creature": 256386, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 256390, "voice": "v1038680256", "row": "female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 256391, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
@@ -2425,6 +2429,7 @@
 {"creature": 257021, "voice": "v1141110496", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 257022, "voice": "v1138003200", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 257024, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 257036, "voice": "v376644064", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-05"}}
 {"creature": 257065, "voice": "v606865152", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 257446, "voice": "v391794336", "row": "elder, dwarf", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 257551, "voice": "v1717361472", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
@@ -2438,8 +2443,10 @@
 {"creature": 258043, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 258098, "voice": "v5306848", "row": "dwarf, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 258113, "voice": "v391794336", "row": "elder, dwarf", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
+{"creature": 258130, "voice": "v258599616", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-05"}}
 {"creature": 258930, "voice": "v1310138977", "row": "male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 259012, "voice": "v376644064", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
+{"creature": 259013, "voice": "v1141110496", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-05"}}
 {"creature": 259084, "voice": "v1138003200", "row": "skyborne, female", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
 {"creature": 259118, "voice": "v1310138976", "row": "tauren, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-06"}}
 {"creature": 259119, "voice": "v606865152", "row": "skyborne, male", "provenance": {"source": "cast@voice.toml", "imported": "2026-10-07"}}
