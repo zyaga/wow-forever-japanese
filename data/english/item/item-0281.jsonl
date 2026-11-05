@@ -1,4 +1,4 @@
-{"id": 281014, "field": "name", "en": "Vine-Wrapped Scroll", "hash": "d69733895e026ae4", "src": "db2@1.60.1.70532"}
+{"id": 281014, "field": "name", "en": "Vine-Wrapped Scroll", "hash": "d69733895e026ae4", "src": "db2@1.60.1.70790"}
 {"id": 281015, "field": "name", "en": "Scroll: DOST OREM", "hash": "45dd3d87548af6ae", "src": "db2@1.60.1.70790"}
 {"id": 281015, "field": "description", "en": "A Mage can decipher this with their Comprehension skill.", "hash": "147f07df6728311b", "src": "db2@1.60.1.70790"}
 {"id": 281016, "field": "name", "en": "Scroll: FORGOT HOOF THUD", "hash": "db336607c20fc8bf", "src": "db2@1.60.1.70790"}
@@ -39,7 +39,7 @@
 {"id": 281142, "field": "name", "en": "Merrick's Bow", "hash": "fe4f08e4113295be", "src": "db2@1.60.1.70790"}
 {"id": 281143, "field": "name", "en": "Ira's Dagger", "hash": "26c52f95285b9fb0", "src": "db2@1.60.1.70790"}
 {"id": 281145, "field": "name", "en": "Silvia's Sword", "hash": "f920a62267d9e48f", "src": "db2@1.60.1.70790"}
-{"id": 281146, "field": "name", "en": "Grant's Mace", "hash": "30f56f771793611e", "src": "db2@1.60.1.70532"}
+{"id": 281146, "field": "name", "en": "Grant's Mace", "hash": "30f56f771793611e", "src": "db2@1.60.1.70790"}
 {"id": 281147, "field": "name", "en": "Grant's Shield", "hash": "55951b8a1feebf68", "src": "db2@1.60.1.70790"}
 {"id": 281149, "field": "name", "en": "Memories of Valor", "hash": "d36f6c5b3991bde8", "src": "db2@1.60.1.70790"}
 {"id": 281166, "field": "name", "en": "Panda Collar", "hash": "4e54d05c09dc1851", "src": "db2@1.60.1.70790"}
@@ -57,7 +57,7 @@
 {"id": 281241, "field": "name", "en": "Chillwind Chimaera Fur", "hash": "092d1a614cf22bb5", "src": "db2@1.60.1.70790"}
 {"id": 281242, "field": "name", "en": "Winterspring Owl Feather", "hash": "8f947d7199e4e4d9", "src": "db2@1.60.1.70790"}
 {"id": 281243, "field": "name", "en": "Hollee's Note", "hash": "c20f5a8f311d333f", "src": "db2@1.60.1.70790"}
-{"id": 281246, "field": "name", "en": "Toxic Skullcap", "hash": "c3c177a7fb1efb1d", "src": "db2@1.60.1.70532"}
+{"id": 281246, "field": "name", "en": "Toxic Skullcap", "hash": "c3c177a7fb1efb1d", "src": "db2@1.60.1.70790"}
 {"id": 281250, "field": "name", "en": "Forest Oracle's Cloak", "hash": "d3ffe408b96ea3bc", "src": "db2@1.60.1.70790"}
 {"id": 281251, "field": "name", "en": "Courier's Wristguards", "hash": "86f887863316d3bc", "src": "db2@1.60.1.70790"}
 {"id": 281252, "field": "name", "en": "Harpy Claw Ring", "hash": "428a2e8d2dd4492d", "src": "db2@1.60.1.70790"}
@@ -109,7 +109,7 @@
 {"id": 281297, "field": "name", "en": "Royal Dagger", "hash": "58ab2b76726767aa", "src": "db2@1.60.1.70790"}
 {"id": 281298, "field": "name", "en": "Ti'ik's Tattered Trousers", "hash": "5b8f27fb17e203c6", "src": "db2@1.60.1.70790"}
 {"id": 281299, "field": "name", "en": "Profane Ritual Robes", "hash": "851071bb5a1a513a", "src": "db2@1.60.1.70790"}
-{"id": 281300, "field": "name", "en": "Blisterweed", "hash": "f28a3c2e2391ca1f", "src": "db2@1.60.1.70755"}
+{"id": 281300, "field": "name", "en": "Blisterweed", "hash": "f28a3c2e2391ca1f", "src": "db2@1.60.1.70790"}
 {"id": 281301, "field": "name", "en": "Sacrificial Shackles", "hash": "77d7c54f2853a8aa", "src": "db2@1.60.1.70790"}
 {"id": 281302, "field": "name", "en": "Whelpscale Necklace", "hash": "866681c9c7d1a9a9", "src": "db2@1.60.1.70790"}
 {"id": 281303, "field": "name", "en": "Bleached Scale Vest", "hash": "94a56290570c661f", "src": "db2@1.60.1.70790"}
@@ -134,8 +134,8 @@
 {"id": 281322, "field": "name", "en": "Frosthowl's Footwarmers", "hash": "ba02f09b8dc7943a", "src": "db2@1.60.1.70790"}
 {"id": 281323, "field": "name", "en": "Spirit-buckle Belt", "hash": "5734f6abbd503c51", "src": "db2@1.60.1.70790"}
 {"id": 281324, "field": "name", "en": "Sailing Tunic", "hash": "60c29c4e58cf977c", "src": "db2@1.60.1.70790"}
-{"id": 281327, "field": "name", "en": "Hissing Serum", "hash": "a20005b578c2266f", "src": "db2@1.60.1.70532"}
-{"id": 281327, "field": "description", "en": "Inject Hissing Serum into the system above Othmar's body.", "hash": "6327c0eb14563891", "src": "db2@1.60.1.70532"}
+{"id": 281327, "field": "name", "en": "Hissing Serum", "hash": "a20005b578c2266f", "src": "db2@1.60.1.70790"}
+{"id": 281327, "field": "description", "en": "Inject Hissing Serum into the system above Othmar's body.", "hash": "6327c0eb14563891", "src": "db2@1.60.1.70790"}
 {"id": 281328, "field": "name", "en": "Valory Family Crest", "hash": "e1d937591e65fda9", "src": "db2@1.60.1.70790"}
 {"id": 281330, "field": "name", "en": "Message from the Supreme Magister", "hash": "2f3f4740ed4f3026", "src": "db2@1.60.1.70790"}
 {"id": 281331, "field": "name", "en": "Windshaper Ritual Dagger", "hash": "5a064761e12710c1", "src": "db2@1.60.1.70790"}
@@ -227,7 +227,7 @@
 {"id": 281750, "field": "name", "en": "Murloc Oracle's Dagger", "hash": "7ad09c328d527beb", "src": "db2@1.60.1.70532"}
 {"id": 281891, "field": "name", "en": "Fishscale Hauberk", "hash": "e2882f2e5f71df36", "src": "db2@1.60.1.70532"}
 {"id": 281896, "field": "name", "en": "Surveyor's Gloves", "hash": "db2559d0ed6f51a0", "src": "db2@1.60.1.70532"}
-{"id": 281925, "field": "name", "en": "Whelpfire Wand", "hash": "35ba876527d42dff", "src": "db2@1.60.1.70532"}
-{"id": 281926, "field": "name", "en": "Bound Bracers", "hash": "eede9f1bf7b78d31", "src": "db2@1.60.1.70532"}
+{"id": 281925, "field": "name", "en": "Whelpfire Wand", "hash": "35ba876527d42dff", "src": "db2@1.60.1.70790"}
+{"id": 281926, "field": "name", "en": "Bound Bracers", "hash": "eede9f1bf7b78d31", "src": "db2@1.60.1.70790"}
 {"id": 281927, "field": "name", "en": "Boulderheart Band", "hash": "ab47b6666e2e14c1", "src": "db2@1.60.1.70790"}
-{"id": 281993, "field": "name", "en": "Gnoll Hide Boots", "hash": "a26b5f32d3dfadbc", "src": "db2@1.60.1.70532"}
+{"id": 281993, "field": "name", "en": "Gnoll Hide Boots", "hash": "a26b5f32d3dfadbc", "src": "db2@1.60.1.70790"}

@@ -168,6 +168,8 @@ UI_REASON_CATEGORIES: list[tuple[str, str]] = [
      r"regex noise|not read by any|never read|a search tag|a search term|never displayed|only compared"
      r"|developer|debug|not player-facing|not display text|fallback for"),
     ("A composite line no form renders", r"^(permanent|follow-up): "),
+    ("Left as the client writes it: the addon's text there would block a protected action",
+     r"taints that path|\(ADR-069\)"),
     ("A glossary decision: the English word is the Japanese one", r"glossary"),
     ("Decided per key: the reason names the client file", r"\.(lua|xml|toc):\d+"),
 ]

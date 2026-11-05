@@ -54,30 +54,30 @@
 {"id": 277053, "field": "name", "en": "Azure Windraveled Drapes", "hash": "eaedfe21058c2a15", "src": "db2@1.60.1.70790"}
 {"id": 277054, "field": "name", "en": "Azure Stormsewn Cowl", "hash": "a37029dabad8bfb9", "src": "db2@1.60.1.70790"}
 {"id": 277055, "field": "name", "en": "Azure Stormsewn Epaulets", "hash": "e61ee2f0ad89bdaf", "src": "db2@1.60.1.70790"}
-{"id": 277056, "field": "name", "en": "Al'Aketh Chainmail", "hash": "8b4d0e399e748c6a", "src": "db2@1.60.1.70532"}
-{"id": 277057, "field": "name", "en": "Al'Aketh Wristguards", "hash": "056c394fcfd04744", "src": "db2@1.60.1.70532"}
-{"id": 277058, "field": "name", "en": "Al'Aketh Gauntlets", "hash": "34469b7f101d573a", "src": "db2@1.60.1.70532"}
-{"id": 277059, "field": "name", "en": "Al'Aketh Chain", "hash": "e37c1c0828f45512", "src": "db2@1.60.1.70532"}
-{"id": 277060, "field": "name", "en": "Al'Aketh Legguards", "hash": "fb2e1a1888ef3ba1", "src": "db2@1.60.1.70532"}
-{"id": 277061, "field": "name", "en": "Al'Aketh Greaves", "hash": "65d0b68632a7bed2", "src": "db2@1.60.1.70532"}
-{"id": 277062, "field": "name", "en": "Al'Aketh Harness", "hash": "4ca62a4e5acf24d8", "src": "db2@1.60.1.70532"}
-{"id": 277063, "field": "name", "en": "Al'Aketh Bracers", "hash": "985c8d5de261ddc0", "src": "db2@1.60.1.70532"}
-{"id": 277064, "field": "name", "en": "Al'Aketh Gloves", "hash": "9eae03e746269a79", "src": "db2@1.60.1.70532"}
-{"id": 277065, "field": "name", "en": "Al'Aketh Belt", "hash": "0b5edba1575b0c20", "src": "db2@1.60.1.70532"}
-{"id": 277066, "field": "name", "en": "Al'Aketh Trousers", "hash": "5c67551fbd5a7bad", "src": "db2@1.60.1.70532"}
-{"id": 277067, "field": "name", "en": "Al'Aketh Boots", "hash": "d2e235185f769512", "src": "db2@1.60.1.70532"}
-{"id": 277068, "field": "name", "en": "Al'Aketh Jerkin", "hash": "16bef4059ee78ea4", "src": "db2@1.60.1.70532"}
-{"id": 277069, "field": "name", "en": "Al'Aketh Armguards", "hash": "f230eca47d831bdd", "src": "db2@1.60.1.70532"}
-{"id": 277070, "field": "name", "en": "Al'Aketh Mitts", "hash": "932c8823b6f3a9d1", "src": "db2@1.60.1.70532"}
-{"id": 277071, "field": "name", "en": "Al'Aketh Strap", "hash": "fdf793e4fbf73dc5", "src": "db2@1.60.1.70532"}
-{"id": 277072, "field": "name", "en": "Al'Aketh Pants", "hash": "c6c1ac08d0a1f16f", "src": "db2@1.60.1.70532"}
-{"id": 277073, "field": "name", "en": "Al'Aketh Footwraps", "hash": "7bc5544c57d52eec", "src": "db2@1.60.1.70532"}
-{"id": 277074, "field": "name", "en": "Al'Aketh Vestments", "hash": "e43bec6df8aaeabf", "src": "db2@1.60.1.70532"}
-{"id": 277075, "field": "name", "en": "Al'Aketh Cuffs", "hash": "e53b5a906b14aca3", "src": "db2@1.60.1.70532"}
-{"id": 277076, "field": "name", "en": "Al'Aketh Handwraps", "hash": "c4c492c24ff2e797", "src": "db2@1.60.1.70532"}
-{"id": 277077, "field": "name", "en": "Al'Aketh Cord", "hash": "0b83ca980c7664f0", "src": "db2@1.60.1.70532"}
-{"id": 277078, "field": "name", "en": "Al'Aketh Leggings", "hash": "a091227899f5eaae", "src": "db2@1.60.1.70532"}
-{"id": 277079, "field": "name", "en": "Al'Aketh Shoes", "hash": "fc5b29944f2f81af", "src": "db2@1.60.1.70532"}
+{"id": 277056, "field": "name", "en": "Al'Aketh Chainmail", "hash": "8b4d0e399e748c6a", "src": "db2@1.60.1.70790"}
+{"id": 277057, "field": "name", "en": "Al'Aketh Wristguards", "hash": "056c394fcfd04744", "src": "db2@1.60.1.70790"}
+{"id": 277058, "field": "name", "en": "Al'Aketh Gauntlets", "hash": "34469b7f101d573a", "src": "db2@1.60.1.70790"}
+{"id": 277059, "field": "name", "en": "Al'Aketh Chain", "hash": "e37c1c0828f45512", "src": "db2@1.60.1.70790"}
+{"id": 277060, "field": "name", "en": "Al'Aketh Legguards", "hash": "fb2e1a1888ef3ba1", "src": "db2@1.60.1.70790"}
+{"id": 277061, "field": "name", "en": "Al'Aketh Greaves", "hash": "65d0b68632a7bed2", "src": "db2@1.60.1.70790"}
+{"id": 277062, "field": "name", "en": "Al'Aketh Harness", "hash": "4ca62a4e5acf24d8", "src": "db2@1.60.1.70790"}
+{"id": 277063, "field": "name", "en": "Al'Aketh Bracers", "hash": "985c8d5de261ddc0", "src": "db2@1.60.1.70790"}
+{"id": 277064, "field": "name", "en": "Al'Aketh Gloves", "hash": "9eae03e746269a79", "src": "db2@1.60.1.70790"}
+{"id": 277065, "field": "name", "en": "Al'Aketh Belt", "hash": "0b5edba1575b0c20", "src": "db2@1.60.1.70790"}
+{"id": 277066, "field": "name", "en": "Al'Aketh Trousers", "hash": "5c67551fbd5a7bad", "src": "db2@1.60.1.70790"}
+{"id": 277067, "field": "name", "en": "Al'Aketh Boots", "hash": "d2e235185f769512", "src": "db2@1.60.1.70790"}
+{"id": 277068, "field": "name", "en": "Al'Aketh Jerkin", "hash": "16bef4059ee78ea4", "src": "db2@1.60.1.70790"}
+{"id": 277069, "field": "name", "en": "Al'Aketh Armguards", "hash": "f230eca47d831bdd", "src": "db2@1.60.1.70790"}
+{"id": 277070, "field": "name", "en": "Al'Aketh Mitts", "hash": "932c8823b6f3a9d1", "src": "db2@1.60.1.70790"}
+{"id": 277071, "field": "name", "en": "Al'Aketh Strap", "hash": "fdf793e4fbf73dc5", "src": "db2@1.60.1.70790"}
+{"id": 277072, "field": "name", "en": "Al'Aketh Pants", "hash": "c6c1ac08d0a1f16f", "src": "db2@1.60.1.70790"}
+{"id": 277073, "field": "name", "en": "Al'Aketh Footwraps", "hash": "7bc5544c57d52eec", "src": "db2@1.60.1.70790"}
+{"id": 277074, "field": "name", "en": "Al'Aketh Vestments", "hash": "e43bec6df8aaeabf", "src": "db2@1.60.1.70790"}
+{"id": 277075, "field": "name", "en": "Al'Aketh Cuffs", "hash": "e53b5a906b14aca3", "src": "db2@1.60.1.70790"}
+{"id": 277076, "field": "name", "en": "Al'Aketh Handwraps", "hash": "c4c492c24ff2e797", "src": "db2@1.60.1.70790"}
+{"id": 277077, "field": "name", "en": "Al'Aketh Cord", "hash": "0b83ca980c7664f0", "src": "db2@1.60.1.70790"}
+{"id": 277078, "field": "name", "en": "Al'Aketh Leggings", "hash": "a091227899f5eaae", "src": "db2@1.60.1.70790"}
+{"id": 277079, "field": "name", "en": "Al'Aketh Shoes", "hash": "fc5b29944f2f81af", "src": "db2@1.60.1.70790"}
 {"id": 277080, "field": "name", "en": "Zephrali Chainmail", "hash": "55d0ae7f4b52ede6", "src": "db2@1.60.1.70790"}
 {"id": 277081, "field": "name", "en": "Zephrali Wristguards", "hash": "96fee7bb2530ff83", "src": "db2@1.60.1.70790"}
 {"id": 277082, "field": "name", "en": "Zephrali Gauntlets", "hash": "feca3bc0bcfbb8a5", "src": "db2@1.60.1.70790"}
@@ -153,7 +153,7 @@
 {"id": 277210, "field": "name", "en": "Pyrewood Signet Ring", "hash": "a62880b9db18f04d", "src": "db2@1.60.1.70790"}
 {"id": 277211, "field": "name", "en": "Dudd's Thinkin' Cap", "hash": "19ffad9d57dad686", "src": "db2@1.60.1.70790"}
 {"id": 277212, "field": "name", "en": "Soulwoven Epaulets", "hash": "df0c3fb07551d258", "src": "db2@1.60.1.70790"}
-{"id": 277213, "field": "name", "en": "Dro'zem's Tunic", "hash": "f48da86855702fb0", "src": "db2@1.60.1.70532"}
+{"id": 277213, "field": "name", "en": "Dro'zem's Tunic", "hash": "f48da86855702fb0", "src": "db2@1.60.1.70790"}
 {"id": 277214, "field": "name", "en": "Crusty Cuffs", "hash": "4da34061ab21ee0c", "src": "db2@1.60.1.70790"}
 {"id": 277215, "field": "name", "en": "Plain Handwraps", "hash": "4881190caa81826e", "src": "db2@1.60.1.70790"}
 {"id": 277216, "field": "name", "en": "Cross-Stitched Cord", "hash": "234bb4eb362eabd3", "src": "db2@1.60.1.70790"}

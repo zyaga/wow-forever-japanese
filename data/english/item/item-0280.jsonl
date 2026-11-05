@@ -2,8 +2,8 @@
 {"id": 280087, "field": "name", "en": "Soft Nightsaber Pelt", "hash": "2954183bf7b7a428", "src": "db2@1.60.1.70790"}
 {"id": 280088, "field": "name", "en": "Soft Saber Sack", "hash": "72d41404a4b08c1d", "src": "db2@1.60.1.70790"}
 {"id": 280092, "field": "name", "en": "Wyrmtail", "hash": "89ef0aca283cdba9", "src": "db2@1.60.1.70790"}
-{"id": 280095, "field": "name", "en": "Cryptwalker Bracers", "hash": "4da880b831b0fe24", "src": "db2@1.60.1.70532"}
-{"id": 280096, "field": "name", "en": "Tomb Robber's Gloves", "hash": "04ff57c190ddd270", "src": "db2@1.60.1.70532"}
+{"id": 280095, "field": "name", "en": "Cryptwalker Bracers", "hash": "4da880b831b0fe24", "src": "db2@1.60.1.70790"}
+{"id": 280096, "field": "name", "en": "Tomb Robber's Gloves", "hash": "04ff57c190ddd270", "src": "db2@1.60.1.70790"}
 {"id": 280099, "field": "name", "en": "Crimson Crate", "hash": "d23cfb83254b9735", "src": "db2@1.60.1.70790"}
 {"id": 280103, "field": "name", "en": "Razormaw Incisor", "hash": "28575ae1a7fe967e", "src": "db2@1.60.1.70790"}
 {"id": 280132, "field": "name", "en": "Perfect Razormaw Egg", "hash": "91b39fd731fd6932", "src": "db2@1.60.1.70790"}
@@ -11,7 +11,7 @@
 {"id": 280180, "field": "name", "en": "Shipping Label", "hash": "e6d6b8f11fa6869a", "src": "db2@1.60.1.70790"}
 {"id": 280181, "field": "name", "en": "Redstone Basilisk Scale", "hash": "01373ae6287a0678", "src": "db2@1.60.1.70790"}
 {"id": 280203, "field": "name", "en": "Jameson's Training Sword", "hash": "4afdf669afc9a373", "src": "db2@1.60.1.70790"}
-{"id": 280304, "field": "name", "en": "Invisible Dagger", "hash": "24e1060e2b7cae8c", "src": "db2@1.60.1.70755"}
+{"id": 280304, "field": "name", "en": "Invisible Dagger", "hash": "24e1060e2b7cae8c", "src": "db2@1.60.1.70790"}
 {"id": 280306, "field": "name", "en": "Whimsical Waistwrap", "hash": "d4e6cc45e2656be1", "src": "db2@1.60.1.70790"}
 {"id": 280307, "field": "name", "en": "Gizmo Girdle", "hash": "d31940a6fc403fd3", "src": "db2@1.60.1.70790"}
 {"id": 280308, "field": "name", "en": "Clanking Cord", "hash": "962b88b8c9b80034", "src": "db2@1.60.1.70790"}
@@ -46,7 +46,7 @@
 {"id": 280331, "field": "description", "en": "Offer the flesh to Carnage, the Razormaw alpha.", "hash": "08e356eff9c138bc", "src": "db2@1.60.1.70790"}
 {"id": 280347, "field": "name", "en": "Shadowgale Squirrel", "hash": "1969d0478c4b19e8", "src": "db2@1.60.1.70790"}
 {"id": 280347, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70790"}
-{"id": 280363, "field": "name", "en": "Nightclaw Mantle", "hash": "1ad5ff9d716c25df", "src": "db2@1.60.1.70532"}
+{"id": 280363, "field": "name", "en": "Nightclaw Mantle", "hash": "1ad5ff9d716c25df", "src": "db2@1.60.1.70790"}
 {"id": 280369, "field": "name", "en": "Dragonmaw Armaments", "hash": "920dbe7a12cb6e69", "src": "db2@1.60.1.70790"}
 {"id": 280375, "field": "name", "en": "Worgen Bits", "hash": "22b50d20ea49e8d6", "src": "db2@1.60.1.70790"}
 {"id": 280390, "field": "name", "en": "Carved Stone Trinket", "hash": "248fc16828012787", "src": "db2@1.60.1.70790"}
@@ -87,8 +87,8 @@
 {"id": 280610, "field": "name", "en": "Lord Sarthiss' Head", "hash": "c1869e47ad4fbb3d", "src": "db2@1.60.1.70790"}
 {"id": 280611, "field": "name", "en": "Veteran Adventurer's Loyal Companion", "hash": "96faf7d3e097194a", "src": "db2@1.60.1.70790"}
 {"id": 280611, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70790"}
-{"id": 280612, "field": "name", "en": "Night Watchman's Torch", "hash": "3644c6cf78affe53", "src": "db2@1.60.1.70532"}
-{"id": 280612, "field": "description", "en": "Light the Night Watchman's Torch.", "hash": "49e8f9faaf833460", "src": "db2@1.60.1.70532"}
+{"id": 280612, "field": "name", "en": "Night Watchman's Torch", "hash": "3644c6cf78affe53", "src": "db2@1.60.1.70790"}
+{"id": 280612, "field": "description", "en": "Light the Night Watchman's Torch.", "hash": "49e8f9faaf833460", "src": "db2@1.60.1.70790"}
 {"id": 280614, "field": "name", "en": "Pachimari", "hash": "4989aa7cac976d5d", "src": "db2@1.60.1.70790"}
 {"id": 280614, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70790"}
 {"id": 280615, "field": "name", "en": "Galestrider Chick", "hash": "a029eb16e9f6fef7", "src": "db2@1.60.1.70790"}
@@ -119,8 +119,8 @@
 {"id": 280801, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70790"}
 {"id": 280803, "field": "name", "en": "Eagle Owl", "hash": "63e7bd18fa6cf59b", "src": "db2@1.60.1.70790"}
 {"id": 280803, "field": "description", "en": "Teaches you how to summon this companion.", "hash": "42caee1b08507b00", "src": "db2@1.60.1.70790"}
-{"id": 280805, "field": "name", "en": "Serrated Raptor Claw", "hash": "02eb0e0f15eaf18b", "src": "db2@1.60.1.70532"}
-{"id": 280805, "field": "description", "en": "Some claws are better for killing than cooking.", "hash": "cd1f6d297330053f", "src": "db2@1.60.1.70532"}
+{"id": 280805, "field": "name", "en": "Serrated Raptor Claw", "hash": "02eb0e0f15eaf18b", "src": "db2@1.60.1.70790"}
+{"id": 280805, "field": "description", "en": "Some claws are better for killing than cooking.", "hash": "cd1f6d297330053f", "src": "db2@1.60.1.70790"}
 {"id": 280806, "field": "name", "en": "Stolen Explosives", "hash": "b847acece8b765b7", "src": "db2@1.60.1.70790"}
 {"id": 280831, "field": "name", "en": "Hatescreech's Amulet", "hash": "be23910a66f181b1", "src": "db2@1.60.1.70790"}
 {"id": 280832, "field": "name", "en": "Windmistress Gaedress' Amulet", "hash": "d89601379d63c2b4", "src": "db2@1.60.1.70790"}

@@ -1,9 +1,9 @@
-{"id": 263005, "field": "name", "en": "Thendal Watcher's Vest", "hash": "336c40d215269a16", "src": "db2@1.60.1.70532"}
-{"id": 263006, "field": "name", "en": "Scout Ranger's Tunic", "hash": "27f67a25a8807e19", "src": "db2@1.60.1.70532"}
-{"id": 263007, "field": "name", "en": "Skyseer's Vest", "hash": "5aa19a0b9a995102", "src": "db2@1.60.1.70532"}
-{"id": 263015, "field": "name", "en": "Skyseer's Pants", "hash": "f6d50976ee9898b0", "src": "db2@1.60.1.70532"}
-{"id": 263016, "field": "name", "en": "Scout Ranger's Leggings", "hash": "8477eef786e425b7", "src": "db2@1.60.1.70532"}
-{"id": 263017, "field": "name", "en": "Thendal Watcher's Leggings", "hash": "a7fb029b07878293", "src": "db2@1.60.1.70532"}
+{"id": 263005, "field": "name", "en": "Thendal Watcher's Vest", "hash": "336c40d215269a16", "src": "db2@1.60.1.70790"}
+{"id": 263006, "field": "name", "en": "Scout Ranger's Tunic", "hash": "27f67a25a8807e19", "src": "db2@1.60.1.70790"}
+{"id": 263007, "field": "name", "en": "Skyseer's Vest", "hash": "5aa19a0b9a995102", "src": "db2@1.60.1.70790"}
+{"id": 263015, "field": "name", "en": "Skyseer's Pants", "hash": "f6d50976ee9898b0", "src": "db2@1.60.1.70790"}
+{"id": 263016, "field": "name", "en": "Scout Ranger's Leggings", "hash": "8477eef786e425b7", "src": "db2@1.60.1.70790"}
+{"id": 263017, "field": "name", "en": "Thendal Watcher's Leggings", "hash": "a7fb029b07878293", "src": "db2@1.60.1.70790"}
 {"id": 263028, "field": "name", "en": "Enchanted Harpy Amulet", "hash": "2599ecd460fd504e", "src": "db2@1.60.1.70790"}
 {"id": 263029, "field": "name", "en": "Empty Waterskin", "hash": "b0bb56b997d42b99", "src": "db2@1.60.1.70790"}
 {"id": 263029, "field": "description", "en": "Fill with water from the snowmelt pond in front of Deadwood Den.", "hash": "10266eb8f382ef82", "src": "db2@1.60.1.70790"}
@@ -79,9 +79,9 @@
 {"id": 263513, "field": "description", "en": "Teaches you how to cook Pincer Bites.", "hash": "b206640d60d9ee35", "src": "db2@1.60.1.70790"}
 {"id": 263930, "field": "name", "en": "Farholde Scouting Report", "hash": "d11ff6244200e96f", "src": "db2@1.60.1.70790"}
 {"id": 263931, "field": "name", "en": "Crudely Fashioned Report", "hash": "189af6bb7b688f7e", "src": "db2@1.60.1.70790"}
-{"id": 263935, "field": "name", "en": "Elunar Longstaff", "hash": "7fa927bcce9c11ad", "src": "db2@1.60.1.70532"}
-{"id": 263936, "field": "name", "en": "Windforged Shortblade", "hash": "45b35ddf7aad8cd0", "src": "db2@1.60.1.70532"}
-{"id": 263937, "field": "name", "en": "Skyseeker's Greatstaff", "hash": "caf8dd8f6b4ad0e7", "src": "db2@1.60.1.70532"}
+{"id": 263935, "field": "name", "en": "Elunar Longstaff", "hash": "7fa927bcce9c11ad", "src": "db2@1.60.1.70790"}
+{"id": 263936, "field": "name", "en": "Windforged Shortblade", "hash": "45b35ddf7aad8cd0", "src": "db2@1.60.1.70790"}
+{"id": 263937, "field": "name", "en": "Skyseeker's Greatstaff", "hash": "caf8dd8f6b4ad0e7", "src": "db2@1.60.1.70790"}
 {"id": 263972, "field": "name", "en": "Woodworker's Axe", "hash": "bb546aa5aec3aaf5", "src": "db2@1.60.1.70790"}
 {"id": 263973, "field": "name", "en": "Beguiler's Blade", "hash": "89ec6325d272be74", "src": "db2@1.60.1.70790"}
 {"id": 263992, "field": "name", "en": "Overseer's Keyring", "hash": "42ca64ab32d3f115", "src": "db2@1.60.1.70790"}

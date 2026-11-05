@@ -7,6 +7,7 @@
 {"id": "662461e3c0b16b41", "field": "text", "en": "Ah, as the title states I am an assassin for the Scarlet Crusade. I spend my days exterminating high priority targets and nights at the Gadgetzan discotheque. Dancing is my true calling. Assassination just pays the bills.", "hash": "662461e3c0b16b41", "src": "vmangos@13b49dc"}
 {"id": "6627ff465d91cdbf", "field": "text", "en": "Him name is Grizzle Halfmane. He in Royal Quarter with Banshee Queen and Dread Lord.", "hash": "6627ff465d91cdbf", "src": "vmangos@13b49dc"}
 {"id": "66306e06def4f901", "field": "text", "en": "What is happening? Look!", "hash": "66306e06def4f901", "src": "vmangos@13b49dc"}
+{"id": "66677624f2ce9454", "field": "text", "en": "<Hide behind the wardrobe and try to listen in on the cultists' conversation.>", "hash": "66677624f2ce9454", "src": "collector@1.60.1.70790", "npcs": [254128]}
 {"id": "6669a1858bab991c", "field": "text", "en": "Slay them, my brethren! For the Scourge!", "hash": "6669a1858bab991c", "src": "vmangos@13b49dc"}
 {"id": "666a6c781bb8fae4", "field": "text", "en": "I guess you were hungry! Trok was supposed to have fed you earlier... What has he been doing all this time?", "hash": "666a6c781bb8fae4", "src": "vmangos@13b49dc"}
 {"id": "666c588f8507c742", "field": "text", "en": "Good luck to you, $n. And don't forget... get that script before finding Gazin.", "hash": "666c588f8507c742", "src": "vmangos@13b49dc"}

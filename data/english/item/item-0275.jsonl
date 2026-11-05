@@ -29,7 +29,7 @@
 {"id": 275243, "field": "description", "en": "Used by high-ranking veterans to upgrade Foot armor.", "hash": "5da39624b998c3d1", "src": "db2@1.60.1.70790"}
 {"id": 275244, "field": "name", "en": "Premier Emboldened Belt Seal", "hash": "7766600a1a559e77", "src": "db2@1.60.1.70790"}
 {"id": 275244, "field": "description", "en": "Used by high-ranking veterans to upgrade Waist armor.", "hash": "a2f92b0ceb2141ae", "src": "db2@1.60.1.70790"}
-{"id": 275290, "field": "name", "en": "Stormforged Protector", "hash": "f8fff4d456a5ca08", "src": "db2@1.60.1.70532"}
+{"id": 275290, "field": "name", "en": "Stormforged Protector", "hash": "f8fff4d456a5ca08", "src": "db2@1.60.1.70790"}
 {"id": 275291, "field": "name", "en": "Staff of the Deeproar", "hash": "f0509bbf5c84519a", "src": "db2@1.60.1.70790"}
 {"id": 275293, "field": "name", "en": "Barkskin Scepter", "hash": "0853d823f17cce5d", "src": "db2@1.60.1.70790"}
 {"id": 275296, "field": "name", "en": "Deadwood Boomstick", "hash": "297caa075384f911", "src": "db2@1.60.1.70790"}

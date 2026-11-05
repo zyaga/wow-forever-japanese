@@ -209,6 +209,9 @@
 {"id": 1309957, "field": "description", "en": "Improves your chance to hit with Holy spells by $s1%.", "hash": "9e735c140a566e65", "src": "db2@1.60.1.70790"}
 {"id": 1309965, "field": "name", "en": "Comprehend Scroll", "hash": "63c3d078da437095", "src": "db2@1.60.1.70790"}
 {"id": 1309965, "field": "description", "en": "Decipher an untranslated scroll.", "hash": "2551fb8b19248831", "src": "db2@1.60.1.70790"}
+{"id": 1309967, "field": "name", "en": "Rock to the Face", "hash": "10090e1c8730ce77", "src": "db2@1.60.1.70790"}
+{"id": 1309967, "field": "description", "en": "Bash the target in the face, causing $m1 Physical damage every $t1 sec for 20 sec.", "hash": "bb437f8f6cb2a203", "src": "db2@1.60.1.70790"}
+{"id": 1309967, "field": "aura", "en": "Bleeding for $w1 Physical damage every $t1 sec.", "hash": "fc9a6989bdcde6da", "src": "db2@1.60.1.70790"}
 {"id": 1309969, "field": "name", "en": "Power in Light", "hash": "38110945d2e7750b", "src": "db2@1.60.1.70790"}
 {"id": 1309969, "field": "description", "en": "Your Smite and Penance spells deal $m1% increased damage to targets afflicted with your Holy Fire or Shadow Word: Pain.", "hash": "5016940fe156d07c", "src": "db2@1.60.1.70790"}
 {"id": 1309973, "field": "name", "en": "Comprehend Scroll", "hash": "63c3d078da437095", "src": "db2@1.60.1.70790"}

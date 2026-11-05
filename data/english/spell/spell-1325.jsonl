@@ -58,9 +58,9 @@
 {"id": 1325968, "field": "name", "en": "Bloodlust", "hash": "b9545f229ef97d79", "src": "db2@1.60.1.70790"}
 {"id": 1325971, "field": "name", "en": "Samuro Spawn", "hash": "e53f6257bbaa010c", "src": "db2@1.60.1.70790"}
 {"id": 1325975, "field": "name", "en": "Meathook", "hash": "8708f78827592d97", "src": "db2@1.60.1.70790"}
-{"id": 1325975, "field": "description", "en": "Throw out a hooked chain to restrain the target and pull them toward you.", "hash": "752fe057c7f2fb5f", "src": "db2@1.60.1.70790"}
+{"id": 1325975, "field": "description", "en": "Throw out a hooked chain to restrain the target and pull them toward you, inflicting $s2 Physical damage.", "hash": "46f64a2d34be3d36", "src": "db2@1.60.1.70790"}
 {"id": 1325984, "field": "name", "en": "Ground Slam", "hash": "53f61a017e00144b", "src": "db2@1.60.1.70790"}
-{"id": 1325984, "field": "description", "en": "Super Hogger slams the ground, inflicting $s2 Physical damage to enemies within $a2 yds and knocking them back a great distance.", "hash": "2d6562254a028299", "src": "db2@1.60.1.70532"}
+{"id": 1325984, "field": "description", "en": "Super Hogger slams the ground, inflicting $s2 Physical damage to enemies within $a2 yds and knocking them back a great distance.", "hash": "2d6562254a028299", "src": "db2@1.60.1.70790"}
 {"id": 1325994, "field": "name", "en": "[DNT] Teleport to Hall of Thanes", "hash": "e26ff9f68be5611e", "src": "db2@1.60.1.70790"}
 {"id": 1325995, "field": "name", "en": "[DNT] Teleport to Ruins of Lordaeron", "hash": "9a939e0ed2492fa2", "src": "db2@1.60.1.70790"}
 {"id": 1325996, "field": "name", "en": "[DNT] Teleport to Excavation Site", "hash": "73f018d23c5f2626", "src": "db2@1.60.1.70790"}

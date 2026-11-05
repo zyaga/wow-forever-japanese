@@ -1,4 +1,4 @@
--- Core/VoiceQueue.lua: the order voice lines play in while the voice panel is on, and the panel's choices (ADR-069).
+-- Core/VoiceQueue.lua: the order voice lines play in while the voice panel is on, and the panel's choices (ADR-063).
 -- Pure tables: no frames, no sound calls. UI/VoicePlayer plays the head; UI/VoicePanel draws it.
 --   * The head (items[1]) is the line playing, or paused; the rest wait their turn.
 --   * A line already queued (same pack key) is not added again.

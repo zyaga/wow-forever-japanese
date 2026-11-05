@@ -15,6 +15,7 @@
 {"id": "4641f6a1582cfcfd", "field": "text", "en": "Good day, Elling!  Hullo Elaine!  Let me have a wheel of bleu cheese, eh?", "hash": "4641f6a1582cfcfd", "src": "vmangos@13b49dc"}
 {"id": "4642f9e280d27436", "field": "text", "en": "Hip hip, hoorah!", "hash": "4642f9e280d27436", "src": "vmangos@13b49dc"}
 {"id": "464728cfea218e38", "field": "text", "en": "Quite the riveting tale.  Now I know why there was so much dust on that book.", "hash": "464728cfea218e38", "src": "vmangos@13b49dc"}
+{"id": "4649a19e52adfd9d", "field": "text", "en": "Yes, High Priestess!", "hash": "4649a19e52adfd9d", "src": "collector@1.60.1.70790"}
 {"id": "464e73002c357179", "field": "text", "en": "Greetings, $c.\r\n\r\nI can show you how to weave magic about yourself to change the appearance of your equipment, if you so desire. Do you wish to utilize my services?", "hash": "464e73002c357179", "src": "forever-vo@025070f", "npcs": [270513, 270581, 270582]}
 {"id": "4653241155467559", "field": "text", "en": "%s holds the limp body of Taelan Fordring and softly sobs.", "hash": "4653241155467559", "src": "vmangos@13b49dc"}
 {"id": "465ad121b64fa674", "field": "text", "en": "Tell me of Drek'Thar.", "hash": "465ad121b64fa674", "src": "vmangos@13b49dc"}

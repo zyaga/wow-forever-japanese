@@ -17,6 +17,9 @@
 {"id": 1321343, "field": "name", "en": "DNT", "hash": "0011f6a20dfbb637", "src": "db2@1.60.1.70790"}
 {"id": 1321343, "field": "description", "en": "Teleports you to Orgrimmar.", "hash": "f10f50289271e353", "src": "db2@1.60.1.70790"}
 {"id": 1321449, "field": "name", "en": "Create Area Trigger", "hash": "4645f4f8de3fbfb9", "src": "db2@1.60.1.70790"}
+{"id": 1321504, "field": "name", "en": "Shen'dorei Spirit", "hash": "c79ee49b21284310", "src": "db2@1.60.1.70790"}
+{"id": 1321504, "field": "description", "en": "Invoke the will of the Shen'dorei, increasing Spirit by $s1 and allowing $s2% of total Health regeneration to work during combat for $d.", "hash": "3bbc3ce126dc0f24", "src": "db2@1.60.1.70790"}
+{"id": 1321504, "field": "aura", "en": "Spirit increased by $s1 and $s2% of total Health regeneration active.", "hash": "560f21d46549f2f8", "src": "db2@1.60.1.70790"}
 {"id": 1321558, "field": "name", "en": "Siphon the Grave", "hash": "7024072f5a3e8df7", "src": "db2@1.60.1.70790"}
 {"id": 1321558, "field": "description", "en": "Restore $s1 Mana every $t sec.", "hash": "b5b20e12e57dbe05", "src": "db2@1.60.1.70790"}
 {"id": 1321558, "field": "aura", "en": "Restoring $w1 Mana every $t1 sec.", "hash": "75584d7190084ebd", "src": "db2@1.60.1.70790"}

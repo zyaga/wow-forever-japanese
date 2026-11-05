@@ -19,6 +19,7 @@
 {"id": "42a354f3ad27d654", "field": "text", "en": "%s goes into a berserker rage!", "hash": "42a354f3ad27d654", "src": "vmangos@13b49dc"}
 {"id": "42a41b5d749d499a", "field": "text", "en": "Do you have any spiders or beetles, $c?  They scurry fast, but if you're faster then you'll find them quite a treat!", "hash": "42a41b5d749d499a", "src": "vmangos@13b49dc"}
 {"id": "42a709aa5e9109ab", "field": "text", "en": "<You cannot comprehend any of the technical mumbo jumbo on this scroll.>", "hash": "42a709aa5e9109ab", "src": "vmangos@13b49dc"}
+{"id": "42ad46c2c0a625e9", "field": "text", "en": "Your recklessness will doom us all!", "hash": "42ad46c2c0a625e9", "src": "collector@1.60.1.70790"}
 {"id": "42b1665f791a6fa9", "field": "text", "en": "If I wasn't stuck here day in and day out, I would have attained the mastery required to train the likes of you! Unfortunately that's not the case. Go talk to Hgarth at the Sun Rock Retreat in the Stonetalon Mountains.", "hash": "42b1665f791a6fa9", "src": "vmangos@13b49dc"}
 {"id": "42b230311a77cf8f", "field": "text", "en": "Unleash the fury and let it be done!", "hash": "42b230311a77cf8f", "src": "vmangos@13b49dc"}
 {"id": "42b6bf68ac695212", "field": "text", "en": "Broke both me legs that night. How could I forget?", "hash": "42b6bf68ac695212", "src": "vmangos@13b49dc"}

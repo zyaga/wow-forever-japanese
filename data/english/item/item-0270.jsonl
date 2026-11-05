@@ -1,35 +1,35 @@
 {"id": 270000, "field": "name", "en": "Apprentice Wizard's Gown", "hash": "36eeadada885c0d9", "src": "db2@1.60.1.70790"}
-{"id": 270001, "field": "name", "en": "Rusty Cutlass", "hash": "25ee9321361d2a00", "src": "db2@1.60.1.70532"}
-{"id": 270002, "field": "name", "en": "Midshipman's Worn Boots", "hash": "5ab0dee6c5a6abe7", "src": "db2@1.60.1.70532"}
-{"id": 270003, "field": "name", "en": "Garrison Cuffs", "hash": "f9c46d89c290ab50", "src": "db2@1.60.1.70532"}
+{"id": 270001, "field": "name", "en": "Rusty Cutlass", "hash": "25ee9321361d2a00", "src": "db2@1.60.1.70790"}
+{"id": 270002, "field": "name", "en": "Midshipman's Worn Boots", "hash": "5ab0dee6c5a6abe7", "src": "db2@1.60.1.70790"}
+{"id": 270003, "field": "name", "en": "Garrison Cuffs", "hash": "f9c46d89c290ab50", "src": "db2@1.60.1.70790"}
 {"id": 270004, "field": "name", "en": "Murloc-hide Gloves", "hash": "360083d42536a965", "src": "db2@1.60.1.70790"}
-{"id": 270005, "field": "name", "en": "Monastic Hammer", "hash": "b7032c8dc6241d3f", "src": "db2@1.60.1.70532"}
+{"id": 270005, "field": "name", "en": "Monastic Hammer", "hash": "b7032c8dc6241d3f", "src": "db2@1.60.1.70790"}
 {"id": 270006, "field": "name", "en": "Boots of the People's Militia", "hash": "676ec3131592fb52", "src": "db2@1.60.1.70790"}
 {"id": 270007, "field": "name", "en": "Worn Miner's Waistcord", "hash": "b8dd2d7b15eb9784", "src": "db2@1.60.1.70790"}
-{"id": 270008, "field": "name", "en": "Heat Resistant Mitts", "hash": "5599c502462acbab", "src": "db2@1.60.1.70532"}
-{"id": 270009, "field": "name", "en": "Safety Boots", "hash": "6dbbb6850435dc6f", "src": "db2@1.60.1.70532"}
+{"id": 270008, "field": "name", "en": "Heat Resistant Mitts", "hash": "5599c502462acbab", "src": "db2@1.60.1.70790"}
+{"id": 270009, "field": "name", "en": "Safety Boots", "hash": "6dbbb6850435dc6f", "src": "db2@1.60.1.70790"}
 {"id": 270010, "field": "name", "en": "Raptorcrest Bracers", "hash": "68874414e8f9ba58", "src": "db2@1.60.1.70790"}
 {"id": 270011, "field": "name", "en": "Embroidered Leggings", "hash": "22fa8a7ce0305869", "src": "db2@1.60.1.70790"}
 {"id": 270012, "field": "name", "en": "Miner's Workgloves", "hash": "852a5032b73a2091", "src": "db2@1.60.1.70790"}
 {"id": 270013, "field": "name", "en": "Miner's Workboots", "hash": "74e3280191fb0e00", "src": "db2@1.60.1.70790"}
 {"id": 270014, "field": "name", "en": "Deerhide Pants", "hash": "0f242b5166635c84", "src": "db2@1.60.1.70790"}
-{"id": 270015, "field": "name", "en": "Bravo's Armbands", "hash": "d479ed8c0e14d4f3", "src": "db2@1.60.1.70532"}
-{"id": 270016, "field": "name", "en": "Dreamer's Leggings", "hash": "5f951b766d36d9b6", "src": "db2@1.60.1.70532"}
+{"id": 270015, "field": "name", "en": "Bravo's Armbands", "hash": "d479ed8c0e14d4f3", "src": "db2@1.60.1.70790"}
+{"id": 270016, "field": "name", "en": "Dreamer's Leggings", "hash": "5f951b766d36d9b6", "src": "db2@1.60.1.70790"}
 {"id": 270017, "field": "name", "en": "Hunting Satchel", "hash": "fff250dcc59d27e2", "src": "db2@1.60.1.70790"}
-{"id": 270018, "field": "name", "en": "Hammerbone", "hash": "fb822f9efca3283c", "src": "db2@1.60.1.70532"}
+{"id": 270018, "field": "name", "en": "Hammerbone", "hash": "fb822f9efca3283c", "src": "db2@1.60.1.70790"}
 {"id": 270019, "field": "name", "en": "Loch Walkers", "hash": "c3cf490eaf40d129", "src": "db2@1.60.1.70790"}
 {"id": 270020, "field": "name", "en": "Gnollhide Pants", "hash": "c28e650bc76d9c75", "src": "db2@1.60.1.70790"}
-{"id": 270021, "field": "name", "en": "Staghide Armguards", "hash": "f7eb7e880889dd30", "src": "db2@1.60.1.70532"}
+{"id": 270021, "field": "name", "en": "Staghide Armguards", "hash": "f7eb7e880889dd30", "src": "db2@1.60.1.70790"}
 {"id": 270022, "field": "name", "en": "Archaeologist's Gown", "hash": "b97005e76da6c897", "src": "db2@1.60.1.70790"}
-{"id": 270023, "field": "name", "en": "Tanned Shoulderpads", "hash": "d02db5a5918d8796", "src": "db2@1.60.1.70532"}
-{"id": 270024, "field": "name", "en": "Bronzed Shoulderguards", "hash": "92dd92acb99fc460", "src": "db2@1.60.1.70532"}
-{"id": 270025, "field": "name", "en": "Silvered Gauntlets", "hash": "3b5e85f64318a472", "src": "db2@1.60.1.70532"}
-{"id": 270027, "field": "name", "en": "Ursine Hammer", "hash": "6bf81e42ed9642e7", "src": "db2@1.60.1.70532"}
+{"id": 270023, "field": "name", "en": "Tanned Shoulderpads", "hash": "d02db5a5918d8796", "src": "db2@1.60.1.70790"}
+{"id": 270024, "field": "name", "en": "Bronzed Shoulderguards", "hash": "92dd92acb99fc460", "src": "db2@1.60.1.70790"}
+{"id": 270025, "field": "name", "en": "Silvered Gauntlets", "hash": "3b5e85f64318a472", "src": "db2@1.60.1.70790"}
+{"id": 270027, "field": "name", "en": "Ursine Hammer", "hash": "6bf81e42ed9642e7", "src": "db2@1.60.1.70790"}
 {"id": 270028, "field": "name", "en": "Harpy Bangles", "hash": "733f8c81e3c4478e", "src": "db2@1.60.1.70790"}
-{"id": 270029, "field": "name", "en": "Town Clerk's Mittens", "hash": "7417aa888bcee3cc", "src": "db2@1.60.1.70532"}
-{"id": 270030, "field": "name", "en": "Tattered Mittens", "hash": "484578810b8e6b8f", "src": "db2@1.60.1.70532"}
-{"id": 270031, "field": "name", "en": "Dark Ritual Leggings", "hash": "bdedadda60173cb7", "src": "db2@1.60.1.70532"}
-{"id": 270032, "field": "name", "en": "Cultist's Armguards", "hash": "0f2c97d0e8cc656b", "src": "db2@1.60.1.70532"}
+{"id": 270029, "field": "name", "en": "Town Clerk's Mittens", "hash": "7417aa888bcee3cc", "src": "db2@1.60.1.70790"}
+{"id": 270030, "field": "name", "en": "Tattered Mittens", "hash": "484578810b8e6b8f", "src": "db2@1.60.1.70790"}
+{"id": 270031, "field": "name", "en": "Dark Ritual Leggings", "hash": "bdedadda60173cb7", "src": "db2@1.60.1.70790"}
+{"id": 270032, "field": "name", "en": "Cultist's Armguards", "hash": "0f2c97d0e8cc656b", "src": "db2@1.60.1.70790"}
 {"id": 270033, "field": "name", "en": "Demonhide Bracers", "hash": "95d2934beca28723", "src": "db2@1.60.1.70790"}
 {"id": 270034, "field": "name", "en": "Shadow Gauntlets", "hash": "384257b3b8fc2ce3", "src": "db2@1.60.1.70790"}
 {"id": 270035, "field": "name", "en": "Reclaimer's Robes", "hash": "1a979b806e674772", "src": "db2@1.60.1.70790"}
@@ -40,7 +40,7 @@
 {"id": 270042, "field": "name", "en": "Technician's Bracers", "hash": "75611ef9c8b6149e", "src": "db2@1.60.1.70532"}
 {"id": 270043, "field": "name", "en": "Dreamer's Chestguard", "hash": "74f0b0da0987b48b", "src": "db2@1.60.1.70532"}
 {"id": 270044, "field": "name", "en": "Darkshire Shoulderguards", "hash": "c4e1ea9b24656865", "src": "db2@1.60.1.70790"}
-{"id": 270045, "field": "name", "en": "Operator's Gloves", "hash": "fb42671710c6c8ff", "src": "db2@1.60.1.70532"}
+{"id": 270045, "field": "name", "en": "Operator's Gloves", "hash": "fb42671710c6c8ff", "src": "db2@1.60.1.70790"}
 {"id": 270046, "field": "name", "en": "Ethereal Mantle", "hash": "36e61856c68abbe9", "src": "db2@1.60.1.70790"}
 {"id": 270047, "field": "name", "en": "Sentinel's Boots", "hash": "d7064d28922238a1", "src": "db2@1.60.1.70532"}
 {"id": 270048, "field": "name", "en": "Uthil's Cudgel", "hash": "bf32496a46cfda57", "src": "db2@1.60.1.70790"}
@@ -110,15 +110,15 @@
 {"id": 270225, "field": "description", "en": "Increases damage and healing done by magical spells and effects by up to $s1. This effect is tripled in Forest and Grassland areas.", "hash": "c854c672fc2bd1b6", "src": "db2@1.60.1.70790"}
 {"id": 270226, "field": "name", "en": "Golden Banana", "hash": "8a211deb4b46342b", "src": "db2@1.60.1.70790"}
 {"id": 270226, "field": "description", "en": "Increases all attributes by $s1 for $d. Effect and duration are doubled in Forest and Grassland areas.", "hash": "11ac73fe9caa705b", "src": "db2@1.60.1.70790"}
-{"id": 270227, "field": "name", "en": "Ephemeral Choker", "hash": "def25623759588e4", "src": "db2@1.60.1.70532"}
-{"id": 270228, "field": "name", "en": "Golemheart Stave", "hash": "c1bbd8284db9c05d", "src": "db2@1.60.1.70532"}
-{"id": 270229, "field": "name", "en": "Treads of the Protector Golem", "hash": "b95ef9f6761c7991", "src": "db2@1.60.1.70532"}
-{"id": 270230, "field": "name", "en": "Kindlegem Girdle", "hash": "9aab50f9697fac27", "src": "db2@1.60.1.70532"}
-{"id": 270231, "field": "name", "en": "Flamefist Grips", "hash": "d3b05beff9f483c4", "src": "db2@1.60.1.70532"}
-{"id": 270256, "field": "name", "en": "Durgen's Crescent Axe", "hash": "21fd9a88fd14acd9", "src": "db2@1.60.1.70532"}
+{"id": 270227, "field": "name", "en": "Ephemeral Choker", "hash": "def25623759588e4", "src": "db2@1.60.1.70790"}
+{"id": 270228, "field": "name", "en": "Golemheart Stave", "hash": "c1bbd8284db9c05d", "src": "db2@1.60.1.70790"}
+{"id": 270229, "field": "name", "en": "Treads of the Protector Golem", "hash": "b95ef9f6761c7991", "src": "db2@1.60.1.70790"}
+{"id": 270230, "field": "name", "en": "Kindlegem Girdle", "hash": "9aab50f9697fac27", "src": "db2@1.60.1.70790"}
+{"id": 270231, "field": "name", "en": "Flamefist Grips", "hash": "d3b05beff9f483c4", "src": "db2@1.60.1.70790"}
+{"id": 270256, "field": "name", "en": "Durgen's Crescent Axe", "hash": "21fd9a88fd14acd9", "src": "db2@1.60.1.70790"}
 {"id": 270257, "field": "name", "en": "Captain Sander's Locker", "hash": "87c4bcdca0fa9fde", "src": "db2@1.60.1.70790"}
-{"id": 270260, "field": "name", "en": "Direhammer Leggings", "hash": "15f78659999e15ee", "src": "db2@1.60.1.70532"}
-{"id": 270261, "field": "name", "en": "Robes of the Disgraced Thane", "hash": "3d201bde9e74f53e", "src": "db2@1.60.1.70532"}
+{"id": 270260, "field": "name", "en": "Direhammer Leggings", "hash": "15f78659999e15ee", "src": "db2@1.60.1.70790"}
+{"id": 270261, "field": "name", "en": "Robes of the Disgraced Thane", "hash": "3d201bde9e74f53e", "src": "db2@1.60.1.70790"}
 {"id": 270270, "field": "name", "en": "Scale of the Tidebender", "hash": "da1cb5ee299bd864", "src": "db2@1.60.1.70790"}
 {"id": 270275, "field": "name", "en": "Cleansed Vilebranch Medallion", "hash": "53ebb82c58cb3111", "src": "db2@1.60.1.70790"}
 {"id": 270275, "field": "description", "en": "+$s1 Attack Power. This effect is tripled in Forest and Grassland areas.", "hash": "81659b5b870c0845", "src": "db2@1.60.1.70790"}

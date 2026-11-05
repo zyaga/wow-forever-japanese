@@ -5,6 +5,7 @@
 {"id": "b80c1bf4960c4e54", "field": "text", "en": "Perhaps we can attempt this later. Please speak to me again if you wish to do so.", "hash": "b80c1bf4960c4e54", "src": "vmangos@13b49dc"}
 {"id": "b81c9e7ab6a5cd34", "field": "text", "en": "I have risen!", "hash": "b81c9e7ab6a5cd34", "src": "vmangos@13b49dc"}
 {"id": "b82617deedf17b47", "field": "text", "en": "More prisoners! ", "hash": "b82617deedf17b47", "src": "vmangos@13b49dc"}
+{"id": "b827703d22c0a3e9", "field": "text", "en": "Hello there, young $C. I am Rathiril Sunlance and I am an elder Magister of the High Order here on Zephras Isle. It's always good to see bright-eyed young shen'dorei, ready to do their duty in service to their homeland.$B$BDon't let this dusty old mage hold you up, however. No doubt you've got many adventures to see to. Feel free to stop by later if you'd like to speak more.", "hash": "b827703d22c0a3e9", "src": "collector@1.60.1.70790", "npcs": [251903]}
 {"id": "b83109cf91ed24d5", "field": "text", "en": "Must be very careful with this one... Very delicate.", "hash": "b83109cf91ed24d5", "src": "vmangos@13b49dc"}
 {"id": "b841c06693faf531", "field": "text", "en": "I made a lot of the things you see in the store. What do you think? Answer carefully, your life may depend on it.", "hash": "b841c06693faf531", "src": "vmangos@13b49dc"}
 {"id": "b85337a2dea3e796", "field": "text", "en": "Hey Jangdor - can you teach me how to make Wild Leather Shoulders again?", "hash": "b85337a2dea3e796", "src": "vmangos@13b49dc"}

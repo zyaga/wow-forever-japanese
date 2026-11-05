@@ -5,6 +5,7 @@
   `Core/UIStrings.lua` and `Core/UIStringKeys.lua` (`icon`, `optionTip`, `verbatim`, the `%%` rule), `UI/Menus.lua` (`Menus.UNTAGGED`),
   `UI/MenusUntagged.lua`, `Main.lua`. The in-game checks are pending (the
   level-1 checklist in [Testing strategy](../testing/strategy.md)).
+- **Superseded in part by:** [ADR-069](069-unit-menus-and-edit-mode-stay-english.md): Edit Mode's setting dropdowns are no longer reached; they stay as the client writes them.
 - **Date:** 2026-09-22
 
 ## Context

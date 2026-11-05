@@ -6,6 +6,7 @@
   (`TYPES["ui"]`, the UI key check), `pipeline/wfj/cmd/readings.py`, `pipeline/wfj/cmd/generate.py` (`ui:<KEY>` rows),
   `data/reading/ui/`. Until a `ui` line has a word list, its label shows no card. The in-game checks are in the word
   card checklist in [Testing strategy](../testing/strategy.md).
+- **Superseded in part by:** [ADR-069](069-unit-menus-and-edit-mode-stay-english.md): Edit Mode's surfaces, `editmode.selection` included, are gone; Edit Mode stays as the client writes it.
 - **Date:** 2026-09-25
 
 ## Context

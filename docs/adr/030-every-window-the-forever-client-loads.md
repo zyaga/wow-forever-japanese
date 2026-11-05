@@ -7,6 +7,7 @@
   (`UI/LabelTree.lua`, `UI/TooltipLines.lua`, `UI/SettingsKeys.lua`); `Labels.title` in `UI/Labels.lua`; `Main.lua`,
   the TOC; `Core/UIStringKeys.lua` (ARGS, LABELS) and `Core/UIStrings.lua` (the `signed` capture). Not yet verified
   in game on Forever (the Forever window checklist in [Testing strategy](../testing/strategy.md)).
+- **Superseded in part by:** [ADR-069](069-unit-menus-and-edit-mode-stay-english.md): Edit Mode is no longer walked; it stays as the client writes it.
 - **Date:** 2026-09-19
 
 > Superseded in part by [ADR-034](034-forever-is-the-only-target.md): Classic Era is not a target; the camelot marker (`UI/Camelot.lua`, decision 5) and every gate on it are removed, and those surfaces take their Forever path unconditionally.

@@ -1,4 +1,4 @@
--- UI/VoicePanelLooks.lua: the voice panel's four looks (ADR-069), chosen by the Panel size (Full / Compact strip) and
+-- UI/VoicePanelLooks.lua: the voice panel's four looks (ADR-063), chosen by the Panel size (Full / Compact strip) and
 -- Panel style (Dark / Parchment) settings (Core/VoiceQueue maps them: 1 Full Dark, 4 Full Parchment, 3 Strip Dark,
 -- 5 Strip Parchment). Data only: UI/VoicePanel lays the panel out from the chosen entry; all art is the client's.
 --   1  the client's own talking-head art: dark translucent text backdrop, the square portrait ring, gold name,

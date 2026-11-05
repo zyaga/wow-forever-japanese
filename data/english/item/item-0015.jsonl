@@ -6,16 +6,16 @@
 {"id": 15006, "field": "name", "en": "Primal Buckler", "hash": "6743c3ccb6a3d6da", "src": "db2@1.60.1.70790"}
 {"id": 15007, "field": "name", "en": "Primal Cape", "hash": "fc66debc6bb0f679", "src": "db2@1.60.1.70790"}
 {"id": 15008, "field": "name", "en": "Primal Mitts", "hash": "d9409cff44adb3f1", "src": "db2@1.60.1.70790"}
-{"id": 15009, "field": "name", "en": "Primal Leggings", "hash": "de66e339dfb478fd", "src": "db2@1.60.1.70532"}
-{"id": 15010, "field": "name", "en": "Primal Wraps", "hash": "89f97aeaa710bc12", "src": "db2@1.60.1.70532"}
-{"id": 15011, "field": "name", "en": "Lupine Cord", "hash": "ae66eb35128684eb", "src": "db2@1.60.1.70532"}
-{"id": 15012, "field": "name", "en": "Lupine Slippers", "hash": "09de94411c1c853b", "src": "db2@1.60.1.70532"}
+{"id": 15009, "field": "name", "en": "Primal Leggings", "hash": "de66e339dfb478fd", "src": "db2@1.60.1.70790"}
+{"id": 15010, "field": "name", "en": "Primal Wraps", "hash": "89f97aeaa710bc12", "src": "db2@1.60.1.70790"}
+{"id": 15011, "field": "name", "en": "Lupine Cord", "hash": "ae66eb35128684eb", "src": "db2@1.60.1.70790"}
+{"id": 15012, "field": "name", "en": "Lupine Slippers", "hash": "09de94411c1c853b", "src": "db2@1.60.1.70790"}
 {"id": 15013, "field": "name", "en": "Lupine Cuffs", "hash": "3f750c8bb3203a0f", "src": "db2@1.60.1.70790"}
-{"id": 15014, "field": "name", "en": "Lupine Buckler", "hash": "f4b43214ca32a907", "src": "db2@1.60.1.70532"}
+{"id": 15014, "field": "name", "en": "Lupine Buckler", "hash": "f4b43214ca32a907", "src": "db2@1.60.1.70790"}
 {"id": 15015, "field": "name", "en": "Lupine Cloak", "hash": "3e42aad2de32681f", "src": "db2@1.60.1.70790"}
-{"id": 15016, "field": "name", "en": "Lupine Handwraps", "hash": "cef7a7daf7183e81", "src": "db2@1.60.1.70532"}
-{"id": 15017, "field": "name", "en": "Lupine Leggings", "hash": "3eef537e5baecefa", "src": "db2@1.60.1.70532"}
-{"id": 15018, "field": "name", "en": "Lupine Vest", "hash": "b0f00fef698b1be9", "src": "db2@1.60.1.70532"}
+{"id": 15016, "field": "name", "en": "Lupine Handwraps", "hash": "cef7a7daf7183e81", "src": "db2@1.60.1.70790"}
+{"id": 15017, "field": "name", "en": "Lupine Leggings", "hash": "3eef537e5baecefa", "src": "db2@1.60.1.70790"}
+{"id": 15018, "field": "name", "en": "Lupine Vest", "hash": "b0f00fef698b1be9", "src": "db2@1.60.1.70790"}
 {"id": 15019, "field": "name", "en": "Lupine Mantle", "hash": "ee1435c9be3d78a7", "src": "db2@1.60.1.70790"}
 {"id": 15042, "field": "name", "en": "Empty Termite Jar", "hash": "0f67e222628a5801", "src": "db2@1.60.1.70790"}
 {"id": 15042, "field": "description", "en": "Helps gather termites from a termite mound in Eastern Plaguelands.", "hash": "6f70ca0989efe3cf", "src": "db2@1.60.1.70790"}
@@ -97,33 +97,33 @@
 {"id": 15108, "field": "description", "en": "Restores $s1 health every $t1 sec for $d.", "hash": "e8cdadbe92b9a1f5", "src": "db2@1.60.1.70790"}
 {"id": 15109, "field": "name", "en": "Staff of Soran'ruk", "hash": "50df064a08641cc0", "src": "db2@1.60.1.70790"}
 {"id": 15109, "field": "description", "en": "Increases damage done by Shadow spells and effects by up to $s1.\nIncreases damage done by Fire spells and effects by up to $s1.", "hash": "886a099142561ff5", "src": "wago@1.15.9.69722"}
-{"id": 15110, "field": "name", "en": "Rigid Belt", "hash": "c7a68bdabc0757cb", "src": "db2@1.60.1.70532"}
-{"id": 15111, "field": "name", "en": "Rigid Moccasins", "hash": "04825a75abc45ce9", "src": "db2@1.60.1.70532"}
-{"id": 15112, "field": "name", "en": "Rigid Bracelets", "hash": "f0c62bc1eb7b5a48", "src": "db2@1.60.1.70532"}
-{"id": 15113, "field": "name", "en": "Rigid Buckler", "hash": "a69214ce41739dcd", "src": "db2@1.60.1.70532"}
-{"id": 15114, "field": "name", "en": "Rigid Cape", "hash": "c7c7cf4e398ebc4c", "src": "db2@1.60.1.70532"}
-{"id": 15115, "field": "name", "en": "Rigid Gloves", "hash": "0053176ead0b74e5", "src": "db2@1.60.1.70532"}
-{"id": 15116, "field": "name", "en": "Rigid Shoulders", "hash": "61ac2f48e5e58b28", "src": "db2@1.60.1.70532"}
-{"id": 15117, "field": "name", "en": "Rigid Leggings", "hash": "437a57e40968c989", "src": "db2@1.60.1.70532"}
-{"id": 15118, "field": "name", "en": "Rigid Tunic", "hash": "6855bec7b102acab", "src": "db2@1.60.1.70532"}
-{"id": 15119, "field": "name", "en": "Highborne Pants", "hash": "ac07e57735ae93b8", "src": "db2@1.60.1.70532"}
-{"id": 15120, "field": "name", "en": "Robust Girdle", "hash": "b8d370211f3657da", "src": "db2@1.60.1.70532"}
+{"id": 15110, "field": "name", "en": "Rigid Belt", "hash": "c7a68bdabc0757cb", "src": "db2@1.60.1.70790"}
+{"id": 15111, "field": "name", "en": "Rigid Moccasins", "hash": "04825a75abc45ce9", "src": "db2@1.60.1.70790"}
+{"id": 15112, "field": "name", "en": "Rigid Bracelets", "hash": "f0c62bc1eb7b5a48", "src": "db2@1.60.1.70790"}
+{"id": 15113, "field": "name", "en": "Rigid Buckler", "hash": "a69214ce41739dcd", "src": "db2@1.60.1.70790"}
+{"id": 15114, "field": "name", "en": "Rigid Cape", "hash": "c7c7cf4e398ebc4c", "src": "db2@1.60.1.70790"}
+{"id": 15115, "field": "name", "en": "Rigid Gloves", "hash": "0053176ead0b74e5", "src": "db2@1.60.1.70790"}
+{"id": 15116, "field": "name", "en": "Rigid Shoulders", "hash": "61ac2f48e5e58b28", "src": "db2@1.60.1.70790"}
+{"id": 15117, "field": "name", "en": "Rigid Leggings", "hash": "437a57e40968c989", "src": "db2@1.60.1.70790"}
+{"id": 15118, "field": "name", "en": "Rigid Tunic", "hash": "6855bec7b102acab", "src": "db2@1.60.1.70790"}
+{"id": 15119, "field": "name", "en": "Highborne Pants", "hash": "ac07e57735ae93b8", "src": "db2@1.60.1.70790"}
+{"id": 15120, "field": "name", "en": "Robust Girdle", "hash": "b8d370211f3657da", "src": "db2@1.60.1.70790"}
 {"id": 15121, "field": "name", "en": "Robust Boots", "hash": "fa90f549fbc6aaf7", "src": "db2@1.60.1.70532"}
-{"id": 15122, "field": "name", "en": "Robust Bracers", "hash": "b9ce560abe8a48fb", "src": "db2@1.60.1.70532"}
+{"id": 15122, "field": "name", "en": "Robust Bracers", "hash": "b9ce560abe8a48fb", "src": "db2@1.60.1.70790"}
 {"id": 15123, "field": "name", "en": "Robust Buckler", "hash": "d08ae0fbf804223b", "src": "db2@1.60.1.70532"}
-{"id": 15124, "field": "name", "en": "Robust Cloak", "hash": "0bb7b90d3276f0a9", "src": "db2@1.60.1.70532"}
-{"id": 15125, "field": "name", "en": "Robust Gloves", "hash": "ed1a5d5e5b31dea5", "src": "db2@1.60.1.70532"}
-{"id": 15126, "field": "name", "en": "Robust Leggings", "hash": "bdcad354fe7802a2", "src": "db2@1.60.1.70532"}
-{"id": 15127, "field": "name", "en": "Robust Shoulders", "hash": "f8db5ace2032c7f6", "src": "db2@1.60.1.70532"}
-{"id": 15128, "field": "name", "en": "Robust Tunic", "hash": "37554fedf4b9b72c", "src": "db2@1.60.1.70532"}
+{"id": 15124, "field": "name", "en": "Robust Cloak", "hash": "0bb7b90d3276f0a9", "src": "db2@1.60.1.70790"}
+{"id": 15125, "field": "name", "en": "Robust Gloves", "hash": "ed1a5d5e5b31dea5", "src": "db2@1.60.1.70790"}
+{"id": 15126, "field": "name", "en": "Robust Leggings", "hash": "bdcad354fe7802a2", "src": "db2@1.60.1.70790"}
+{"id": 15127, "field": "name", "en": "Robust Shoulders", "hash": "f8db5ace2032c7f6", "src": "db2@1.60.1.70790"}
+{"id": 15128, "field": "name", "en": "Robust Tunic", "hash": "37554fedf4b9b72c", "src": "db2@1.60.1.70790"}
 {"id": 15129, "field": "name", "en": "Robust Helm", "hash": "5e8dc431cd2bdcd4", "src": "db2@1.60.1.70532"}
 {"id": 15130, "field": "name", "en": "Cutthroat's Vest", "hash": "73dc96f770710729", "src": "db2@1.60.1.70532"}
-{"id": 15131, "field": "name", "en": "Cutthroat's Boots", "hash": "ec24ff8b8f12b45a", "src": "db2@1.60.1.70532"}
-{"id": 15132, "field": "name", "en": "Cutthroat's Armguards", "hash": "9940d5247041bfd7", "src": "db2@1.60.1.70532"}
+{"id": 15131, "field": "name", "en": "Cutthroat's Boots", "hash": "ec24ff8b8f12b45a", "src": "db2@1.60.1.70790"}
+{"id": 15132, "field": "name", "en": "Cutthroat's Armguards", "hash": "9940d5247041bfd7", "src": "db2@1.60.1.70790"}
 {"id": 15133, "field": "name", "en": "Cutthroat's Buckler", "hash": "0d6e706f0f0c27ef", "src": "db2@1.60.1.70532"}
-{"id": 15134, "field": "name", "en": "Cutthroat's Hat", "hash": "e582e5350f03b29a", "src": "db2@1.60.1.70532"}
+{"id": 15134, "field": "name", "en": "Cutthroat's Hat", "hash": "e582e5350f03b29a", "src": "db2@1.60.1.70790"}
 {"id": 15135, "field": "name", "en": "Cutthroat's Cape", "hash": "714fc6bae1d87bcb", "src": "db2@1.60.1.70532"}
-{"id": 15136, "field": "name", "en": "Cutthroat's Belt", "hash": "712e83466451175b", "src": "db2@1.60.1.70532"}
+{"id": 15136, "field": "name", "en": "Cutthroat's Belt", "hash": "712e83466451175b", "src": "db2@1.60.1.70790"}
 {"id": 15137, "field": "name", "en": "Cutthroat's Mitts", "hash": "ac6f5296e68fc919", "src": "db2@1.60.1.70532"}
 {"id": 15138, "field": "name", "en": "Onyxia Scale Cloak", "hash": "1596c190d9f418b8", "src": "db2@1.60.1.70790"}
 {"id": 15138, "field": "description", "en": "Protects the wearer from being fully engulfed by Shadow Flame.", "hash": "1b66d22c24dbc8d0", "src": "db2@1.60.1.70790"}
@@ -131,60 +131,60 @@
 {"id": 15140, "field": "name", "en": "Cutthroat's Mantle", "hash": "afbbbd1bc5f71b48", "src": "db2@1.60.1.70532"}
 {"id": 15141, "field": "name", "en": "Onyxia Scale Breastplate", "hash": "55c3ef0664717ee7", "src": "db2@1.60.1.70790"}
 {"id": 15141, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.", "hash": "fca599d547b872a2", "src": "wago@1.15.9.69722"}
-{"id": 15142, "field": "name", "en": "Ghostwalker Boots", "hash": "284064f655c80224", "src": "db2@1.60.1.70532"}
-{"id": 15143, "field": "name", "en": "Ghostwalker Bindings", "hash": "d4582ffb0f317b28", "src": "db2@1.60.1.70532"}
-{"id": 15144, "field": "name", "en": "Ghostwalker Rags", "hash": "b2508f84a8a6a95c", "src": "db2@1.60.1.70532"}
+{"id": 15142, "field": "name", "en": "Ghostwalker Boots", "hash": "284064f655c80224", "src": "db2@1.60.1.70790"}
+{"id": 15143, "field": "name", "en": "Ghostwalker Bindings", "hash": "d4582ffb0f317b28", "src": "db2@1.60.1.70790"}
+{"id": 15144, "field": "name", "en": "Ghostwalker Rags", "hash": "b2508f84a8a6a95c", "src": "db2@1.60.1.70790"}
 {"id": 15145, "field": "name", "en": "Ghostwalker Buckler", "hash": "55ef01b6fbad41bb", "src": "db2@1.60.1.70532"}
-{"id": 15146, "field": "name", "en": "Ghostwalker Crown", "hash": "3a35059cdceabd4b", "src": "db2@1.60.1.70532"}
-{"id": 15147, "field": "name", "en": "Ghostwalker Cloak", "hash": "396728b58c7847c5", "src": "db2@1.60.1.70532"}
-{"id": 15148, "field": "name", "en": "Ghostwalker Belt", "hash": "b02cc488e209173d", "src": "db2@1.60.1.70532"}
-{"id": 15149, "field": "name", "en": "Ghostwalker Gloves", "hash": "4de080ce9fec90c6", "src": "db2@1.60.1.70532"}
+{"id": 15146, "field": "name", "en": "Ghostwalker Crown", "hash": "3a35059cdceabd4b", "src": "db2@1.60.1.70790"}
+{"id": 15147, "field": "name", "en": "Ghostwalker Cloak", "hash": "396728b58c7847c5", "src": "db2@1.60.1.70790"}
+{"id": 15148, "field": "name", "en": "Ghostwalker Belt", "hash": "b02cc488e209173d", "src": "db2@1.60.1.70790"}
+{"id": 15149, "field": "name", "en": "Ghostwalker Gloves", "hash": "4de080ce9fec90c6", "src": "db2@1.60.1.70790"}
 {"id": 15150, "field": "name", "en": "Ghostwalker Pads", "hash": "b20bf2c58dd661aa", "src": "db2@1.60.1.70532"}
-{"id": 15151, "field": "name", "en": "Ghostwalker Legguards", "hash": "d4c91203aae3f456", "src": "db2@1.60.1.70532"}
-{"id": 15152, "field": "name", "en": "Nocturnal Shoes", "hash": "7de91e784ef7b4de", "src": "db2@1.60.1.70532"}
+{"id": 15151, "field": "name", "en": "Ghostwalker Legguards", "hash": "d4c91203aae3f456", "src": "db2@1.60.1.70790"}
+{"id": 15152, "field": "name", "en": "Nocturnal Shoes", "hash": "7de91e784ef7b4de", "src": "db2@1.60.1.70790"}
 {"id": 15153, "field": "name", "en": "Nocturnal Cloak", "hash": "6596edbb95ef0de2", "src": "db2@1.60.1.70532"}
-{"id": 15154, "field": "name", "en": "Nocturnal Sash", "hash": "8f9c4a58b0f777bc", "src": "db2@1.60.1.70532"}
-{"id": 15155, "field": "name", "en": "Nocturnal Gloves", "hash": "ea52534e534e4751", "src": "db2@1.60.1.70532"}
+{"id": 15154, "field": "name", "en": "Nocturnal Sash", "hash": "8f9c4a58b0f777bc", "src": "db2@1.60.1.70790"}
+{"id": 15155, "field": "name", "en": "Nocturnal Gloves", "hash": "ea52534e534e4751", "src": "db2@1.60.1.70790"}
 {"id": 15156, "field": "name", "en": "Nocturnal Cap", "hash": "820e974f56527399", "src": "db2@1.60.1.70532"}
-{"id": 15157, "field": "name", "en": "Nocturnal Leggings", "hash": "4a204522e3d38987", "src": "db2@1.60.1.70532"}
+{"id": 15157, "field": "name", "en": "Nocturnal Leggings", "hash": "4a204522e3d38987", "src": "db2@1.60.1.70790"}
 {"id": 15158, "field": "name", "en": "Nocturnal Shoulder Pads", "hash": "80b4d0bb86741078", "src": "db2@1.60.1.70532"}
-{"id": 15159, "field": "name", "en": "Nocturnal Tunic", "hash": "9134849b5831d476", "src": "db2@1.60.1.70532"}
-{"id": 15160, "field": "name", "en": "Nocturnal Wristbands", "hash": "fe2adec94fe434dc", "src": "db2@1.60.1.70532"}
-{"id": 15161, "field": "name", "en": "Imposing Belt", "hash": "87946122a0ddae1a", "src": "db2@1.60.1.70532"}
+{"id": 15159, "field": "name", "en": "Nocturnal Tunic", "hash": "9134849b5831d476", "src": "db2@1.60.1.70790"}
+{"id": 15160, "field": "name", "en": "Nocturnal Wristbands", "hash": "fe2adec94fe434dc", "src": "db2@1.60.1.70790"}
+{"id": 15161, "field": "name", "en": "Imposing Belt", "hash": "87946122a0ddae1a", "src": "db2@1.60.1.70790"}
 {"id": 15162, "field": "name", "en": "Imposing Boots", "hash": "6245875bcce4d363", "src": "db2@1.60.1.70532"}
-{"id": 15163, "field": "name", "en": "Imposing Bracers", "hash": "a1616747ab1f1e2f", "src": "db2@1.60.1.70532"}
-{"id": 15164, "field": "name", "en": "Imposing Vest", "hash": "8a4274d3acfd9de8", "src": "db2@1.60.1.70532"}
-{"id": 15165, "field": "name", "en": "Imposing Cape", "hash": "87b5a4961e65129b", "src": "db2@1.60.1.70532"}
-{"id": 15166, "field": "name", "en": "Imposing Gloves", "hash": "fe811b0ecd98164a", "src": "db2@1.60.1.70532"}
+{"id": 15163, "field": "name", "en": "Imposing Bracers", "hash": "a1616747ab1f1e2f", "src": "db2@1.60.1.70790"}
+{"id": 15164, "field": "name", "en": "Imposing Vest", "hash": "8a4274d3acfd9de8", "src": "db2@1.60.1.70790"}
+{"id": 15165, "field": "name", "en": "Imposing Cape", "hash": "87b5a4961e65129b", "src": "db2@1.60.1.70790"}
+{"id": 15166, "field": "name", "en": "Imposing Gloves", "hash": "fe811b0ecd98164a", "src": "db2@1.60.1.70790"}
 {"id": 15167, "field": "name", "en": "Imposing Bandana", "hash": "d1ebe3221069b1a1", "src": "db2@1.60.1.70532"}
-{"id": 15168, "field": "name", "en": "Imposing Pants", "hash": "5624fe4b3e102fd1", "src": "db2@1.60.1.70532"}
-{"id": 15169, "field": "name", "en": "Imposing Shoulders", "hash": "9a89ccfa9175a254", "src": "db2@1.60.1.70532"}
-{"id": 15170, "field": "name", "en": "Potent Armor", "hash": "449a24bc772e5c95", "src": "db2@1.60.1.70532"}
-{"id": 15171, "field": "name", "en": "Potent Boots", "hash": "55c17adeb5d226d9", "src": "db2@1.60.1.70532"}
-{"id": 15172, "field": "name", "en": "Potent Bands", "hash": "53e0f12bf6288c8e", "src": "db2@1.60.1.70532"}
-{"id": 15173, "field": "name", "en": "Potent Cape", "hash": "e75ea670d3a3eedf", "src": "db2@1.60.1.70532"}
-{"id": 15174, "field": "name", "en": "Potent Gloves", "hash": "96eeb6f943498a31", "src": "db2@1.60.1.70532"}
-{"id": 15175, "field": "name", "en": "Potent Helmet", "hash": "1729c241b0777a0a", "src": "db2@1.60.1.70532"}
-{"id": 15176, "field": "name", "en": "Potent Pants", "hash": "49a0f1ce26fd8347", "src": "db2@1.60.1.70532"}
-{"id": 15177, "field": "name", "en": "Potent Shoulders", "hash": "91bd7f1008712422", "src": "db2@1.60.1.70532"}
-{"id": 15178, "field": "name", "en": "Potent Belt", "hash": "e73d62fc561c8a6f", "src": "db2@1.60.1.70532"}
-{"id": 15179, "field": "name", "en": "Praetorian Padded Armor", "hash": "b78de5af9fed577b", "src": "db2@1.60.1.70532"}
+{"id": 15168, "field": "name", "en": "Imposing Pants", "hash": "5624fe4b3e102fd1", "src": "db2@1.60.1.70790"}
+{"id": 15169, "field": "name", "en": "Imposing Shoulders", "hash": "9a89ccfa9175a254", "src": "db2@1.60.1.70790"}
+{"id": 15170, "field": "name", "en": "Potent Armor", "hash": "449a24bc772e5c95", "src": "db2@1.60.1.70790"}
+{"id": 15171, "field": "name", "en": "Potent Boots", "hash": "55c17adeb5d226d9", "src": "db2@1.60.1.70790"}
+{"id": 15172, "field": "name", "en": "Potent Bands", "hash": "53e0f12bf6288c8e", "src": "db2@1.60.1.70790"}
+{"id": 15173, "field": "name", "en": "Potent Cape", "hash": "e75ea670d3a3eedf", "src": "db2@1.60.1.70790"}
+{"id": 15174, "field": "name", "en": "Potent Gloves", "hash": "96eeb6f943498a31", "src": "db2@1.60.1.70790"}
+{"id": 15175, "field": "name", "en": "Potent Helmet", "hash": "1729c241b0777a0a", "src": "db2@1.60.1.70790"}
+{"id": 15176, "field": "name", "en": "Potent Pants", "hash": "49a0f1ce26fd8347", "src": "db2@1.60.1.70790"}
+{"id": 15177, "field": "name", "en": "Potent Shoulders", "hash": "91bd7f1008712422", "src": "db2@1.60.1.70790"}
+{"id": 15178, "field": "name", "en": "Potent Belt", "hash": "e73d62fc561c8a6f", "src": "db2@1.60.1.70790"}
+{"id": 15179, "field": "name", "en": "Praetorian Padded Armor", "hash": "b78de5af9fed577b", "src": "db2@1.60.1.70790"}
 {"id": 15180, "field": "name", "en": "Praetorian Girdle", "hash": "3b257b7dcdc29181", "src": "db2@1.60.1.70790"}
-{"id": 15181, "field": "name", "en": "Praetorian Boots", "hash": "af58e9a7f6971944", "src": "db2@1.60.1.70532"}
-{"id": 15182, "field": "name", "en": "Praetorian Wristbands", "hash": "74ffee498ee89a70", "src": "db2@1.60.1.70532"}
-{"id": 15183, "field": "name", "en": "Praetorian Cloak", "hash": "c07fad662d475ef6", "src": "db2@1.60.1.70532"}
-{"id": 15184, "field": "name", "en": "Praetorian Gloves", "hash": "6f6c68ba09be185d", "src": "db2@1.60.1.70532"}
-{"id": 15185, "field": "name", "en": "Praetorian Coif", "hash": "c2f0291297689abe", "src": "db2@1.60.1.70532"}
-{"id": 15186, "field": "name", "en": "Praetorian Leggings", "hash": "cba5a9034611c4c1", "src": "db2@1.60.1.70532"}
-{"id": 15187, "field": "name", "en": "Praetorian Pauldrons", "hash": "48791606cba199ee", "src": "db2@1.60.1.70532"}
-{"id": 15188, "field": "name", "en": "Grand Armguards", "hash": "96eab2074c49befa", "src": "db2@1.60.1.70532"}
-{"id": 15189, "field": "name", "en": "Grand Boots", "hash": "d71d3d7da7bfe30a", "src": "db2@1.60.1.70532"}
-{"id": 15190, "field": "name", "en": "Grand Cloak", "hash": "e844013cde7028ab", "src": "db2@1.60.1.70532"}
-{"id": 15191, "field": "name", "en": "Grand Belt", "hash": "9fec02c42110b66b", "src": "db2@1.60.1.70532"}
-{"id": 15192, "field": "name", "en": "Grand Gauntlets", "hash": "d90060dddee3fa46", "src": "db2@1.60.1.70532"}
-{"id": 15193, "field": "name", "en": "Grand Crown", "hash": "e911de232ee29e42", "src": "db2@1.60.1.70532"}
-{"id": 15194, "field": "name", "en": "Grand Legguards", "hash": "9fe7df7b57b5debe", "src": "db2@1.60.1.70532"}
-{"id": 15195, "field": "name", "en": "Grand Breastplate", "hash": "e89ae470578f3a5a", "src": "db2@1.60.1.70532"}
+{"id": 15181, "field": "name", "en": "Praetorian Boots", "hash": "af58e9a7f6971944", "src": "db2@1.60.1.70790"}
+{"id": 15182, "field": "name", "en": "Praetorian Wristbands", "hash": "74ffee498ee89a70", "src": "db2@1.60.1.70790"}
+{"id": 15183, "field": "name", "en": "Praetorian Cloak", "hash": "c07fad662d475ef6", "src": "db2@1.60.1.70790"}
+{"id": 15184, "field": "name", "en": "Praetorian Gloves", "hash": "6f6c68ba09be185d", "src": "db2@1.60.1.70790"}
+{"id": 15185, "field": "name", "en": "Praetorian Coif", "hash": "c2f0291297689abe", "src": "db2@1.60.1.70790"}
+{"id": 15186, "field": "name", "en": "Praetorian Leggings", "hash": "cba5a9034611c4c1", "src": "db2@1.60.1.70790"}
+{"id": 15187, "field": "name", "en": "Praetorian Pauldrons", "hash": "48791606cba199ee", "src": "db2@1.60.1.70790"}
+{"id": 15188, "field": "name", "en": "Grand Armguards", "hash": "96eab2074c49befa", "src": "db2@1.60.1.70790"}
+{"id": 15189, "field": "name", "en": "Grand Boots", "hash": "d71d3d7da7bfe30a", "src": "db2@1.60.1.70790"}
+{"id": 15190, "field": "name", "en": "Grand Cloak", "hash": "e844013cde7028ab", "src": "db2@1.60.1.70790"}
+{"id": 15191, "field": "name", "en": "Grand Belt", "hash": "9fec02c42110b66b", "src": "db2@1.60.1.70790"}
+{"id": 15192, "field": "name", "en": "Grand Gauntlets", "hash": "d90060dddee3fa46", "src": "db2@1.60.1.70790"}
+{"id": 15193, "field": "name", "en": "Grand Crown", "hash": "e911de232ee29e42", "src": "db2@1.60.1.70790"}
+{"id": 15194, "field": "name", "en": "Grand Legguards", "hash": "9fe7df7b57b5debe", "src": "db2@1.60.1.70790"}
+{"id": 15195, "field": "name", "en": "Grand Breastplate", "hash": "e89ae470578f3a5a", "src": "db2@1.60.1.70790"}
 {"id": 15196, "field": "name", "en": "Private's Tabard", "hash": "ae3535013c929881", "src": "db2@1.60.1.70790"}
 {"id": 15197, "field": "name", "en": "Scout's Tabard", "hash": "b9b88e943674410d", "src": "db2@1.60.1.70790"}
 {"id": 15198, "field": "name", "en": "Knight's Colors", "hash": "7626c5c7efc47f2c", "src": "db2@1.60.1.70790"}
@@ -200,188 +200,188 @@
 {"id": 15208, "field": "description", "en": "Apply near a Moonkin Stone to bring forth the stone's defender, Lunaclaw.", "hash": "a6b3a0f326de6269", "src": "db2@1.60.1.70790"}
 {"id": 15209, "field": "name", "en": "Relic Bundle", "hash": "7740f0eca1d53766", "src": "db2@1.60.1.70790"}
 {"id": 15209, "field": "description", "en": "Place in the Darrowshire Town Square.", "hash": "9a965a33ca027e2a", "src": "db2@1.60.1.70790"}
-{"id": 15210, "field": "name", "en": "Raider Shortsword", "hash": "69b237e6b4e880b2", "src": "db2@1.60.1.70755"}
+{"id": 15210, "field": "name", "en": "Raider Shortsword", "hash": "69b237e6b4e880b2", "src": "db2@1.60.1.70790"}
 {"id": 15211, "field": "name", "en": "Militant Shortsword", "hash": "9ccd9f3c2c74b59d", "src": "db2@1.60.1.70790"}
-{"id": 15212, "field": "name", "en": "Fighter Broadsword", "hash": "a13bd4274ab0db73", "src": "db2@1.60.1.70755"}
-{"id": 15213, "field": "name", "en": "Mercenary Blade", "hash": "1769278eeb2d42da", "src": "db2@1.60.1.70532"}
-{"id": 15214, "field": "name", "en": "Nobles Brand", "hash": "42355fa1a8d6fb5f", "src": "db2@1.60.1.70755"}
-{"id": 15215, "field": "name", "en": "Furious Falchion", "hash": "ce2d817feaab1d5e", "src": "db2@1.60.1.70532"}
-{"id": 15216, "field": "name", "en": "Rune Sword", "hash": "65312d30b63adce2", "src": "db2@1.60.1.70532"}
-{"id": 15217, "field": "name", "en": "Widow Blade", "hash": "267b9373084780aa", "src": "db2@1.60.1.70755"}
-{"id": 15218, "field": "name", "en": "Crystal Sword", "hash": "c6424875bf58628c", "src": "db2@1.60.1.70532"}
-{"id": 15219, "field": "name", "en": "Dimensional Blade", "hash": "0c6bbef29ff43931", "src": "db2@1.60.1.70755"}
-{"id": 15220, "field": "name", "en": "Battlefell Sabre", "hash": "69448202df4aac5e", "src": "db2@1.60.1.70532"}
-{"id": 15221, "field": "name", "en": "Holy War Sword", "hash": "786f0451b3711218", "src": "db2@1.60.1.70532"}
-{"id": 15222, "field": "name", "en": "Barbed Club", "hash": "e91a8471775c07f2", "src": "db2@1.60.1.70755"}
-{"id": 15223, "field": "name", "en": "Jagged Star", "hash": "8865104ecfb5aeb1", "src": "db2@1.60.1.70532"}
+{"id": 15212, "field": "name", "en": "Fighter Broadsword", "hash": "a13bd4274ab0db73", "src": "db2@1.60.1.70790"}
+{"id": 15213, "field": "name", "en": "Mercenary Blade", "hash": "1769278eeb2d42da", "src": "db2@1.60.1.70790"}
+{"id": 15214, "field": "name", "en": "Nobles Brand", "hash": "42355fa1a8d6fb5f", "src": "db2@1.60.1.70790"}
+{"id": 15215, "field": "name", "en": "Furious Falchion", "hash": "ce2d817feaab1d5e", "src": "db2@1.60.1.70790"}
+{"id": 15216, "field": "name", "en": "Rune Sword", "hash": "65312d30b63adce2", "src": "db2@1.60.1.70790"}
+{"id": 15217, "field": "name", "en": "Widow Blade", "hash": "267b9373084780aa", "src": "db2@1.60.1.70790"}
+{"id": 15218, "field": "name", "en": "Crystal Sword", "hash": "c6424875bf58628c", "src": "db2@1.60.1.70790"}
+{"id": 15219, "field": "name", "en": "Dimensional Blade", "hash": "0c6bbef29ff43931", "src": "db2@1.60.1.70790"}
+{"id": 15220, "field": "name", "en": "Battlefell Sabre", "hash": "69448202df4aac5e", "src": "db2@1.60.1.70790"}
+{"id": 15221, "field": "name", "en": "Holy War Sword", "hash": "786f0451b3711218", "src": "db2@1.60.1.70790"}
+{"id": 15222, "field": "name", "en": "Barbed Club", "hash": "e91a8471775c07f2", "src": "db2@1.60.1.70790"}
+{"id": 15223, "field": "name", "en": "Jagged Star", "hash": "8865104ecfb5aeb1", "src": "db2@1.60.1.70790"}
 {"id": 15224, "field": "name", "en": "Battlesmasher", "hash": "8735d2259cf181b8", "src": "db2@1.60.1.70790"}
-{"id": 15225, "field": "name", "en": "Sequoia Hammer", "hash": "d232aae054f319c7", "src": "db2@1.60.1.70532"}
-{"id": 15226, "field": "name", "en": "Giant Club", "hash": "408fb3c4b1a29ac4", "src": "db2@1.60.1.70755"}
-{"id": 15227, "field": "name", "en": "Diamond-Tip Bludgeon", "hash": "3c2b36418a1dc200", "src": "db2@1.60.1.70755"}
-{"id": 15228, "field": "name", "en": "Smashing Star", "hash": "f186d533c0703a7f", "src": "db2@1.60.1.70755"}
-{"id": 15229, "field": "name", "en": "Blesswind Hammer", "hash": "469e49485794f51a", "src": "db2@1.60.1.70532"}
-{"id": 15230, "field": "name", "en": "Ridge Cleaver", "hash": "78dbbd7b7f2663a6", "src": "db2@1.60.1.70532"}
-{"id": 15231, "field": "name", "en": "Splitting Hatchet", "hash": "0b64cf228fe229d5", "src": "db2@1.60.1.70532"}
-{"id": 15232, "field": "name", "en": "Hacking Cleaver", "hash": "6e19939343db6486", "src": "db2@1.60.1.70755"}
-{"id": 15233, "field": "name", "en": "Savage Axe", "hash": "ba65da36f7b57425", "src": "db2@1.60.1.70532"}
-{"id": 15234, "field": "name", "en": "Greater Scythe", "hash": "b360b75ab7ccce4a", "src": "db2@1.60.1.70755"}
-{"id": 15235, "field": "name", "en": "Crescent Edge", "hash": "73c7f2f1135af70b", "src": "db2@1.60.1.70532"}
-{"id": 15236, "field": "name", "en": "Moon Cleaver", "hash": "ee68398aa3d45c0e", "src": "db2@1.60.1.70755"}
-{"id": 15237, "field": "name", "en": "Corpse Harvester", "hash": "be0983d1efd5263f", "src": "db2@1.60.1.70755"}
-{"id": 15238, "field": "name", "en": "Warlord's Axe", "hash": "76fd3e9615de72a4", "src": "db2@1.60.1.70532"}
-{"id": 15239, "field": "name", "en": "Felstone Reaver", "hash": "75f463b2d909b470", "src": "db2@1.60.1.70755"}
-{"id": 15240, "field": "name", "en": "Demon's Claw", "hash": "9903dc42323309b7", "src": "db2@1.60.1.70532"}
-{"id": 15241, "field": "name", "en": "Battle Knife", "hash": "ce04ff0115f3aa03", "src": "db2@1.60.1.70532"}
-{"id": 15242, "field": "name", "en": "Honed Stiletto", "hash": "eed7e700b787fc04", "src": "db2@1.60.1.70755"}
-{"id": 15243, "field": "name", "en": "Deadly Kris", "hash": "a3aa318e6b21faf2", "src": "db2@1.60.1.70755"}
-{"id": 15244, "field": "name", "en": "Razor Blade", "hash": "e68459a8afc5e8ae", "src": "db2@1.60.1.70532"}
-{"id": 15245, "field": "name", "en": "Vorpal Dagger", "hash": "350de917465a0183", "src": "db2@1.60.1.70755"}
-{"id": 15246, "field": "name", "en": "Demon Blade", "hash": "8c3297b0475417a4", "src": "db2@1.60.1.70755"}
-{"id": 15247, "field": "name", "en": "Bloodstrike Dagger", "hash": "c61414f4cef4c7bf", "src": "db2@1.60.1.70755"}
-{"id": 15248, "field": "name", "en": "Gleaming Claymore", "hash": "914c541fff3e1b41", "src": "db2@1.60.1.70755"}
-{"id": 15249, "field": "name", "en": "Polished Zweihander", "hash": "258fd5f3e0085660", "src": "db2@1.60.1.70755"}
-{"id": 15250, "field": "name", "en": "Glimmering Flamberge", "hash": "fac74efca4c7118c", "src": "db2@1.60.1.70755"}
-{"id": 15251, "field": "name", "en": "Headstriker Sword", "hash": "77f2355356008bf3", "src": "db2@1.60.1.70532"}
-{"id": 15252, "field": "name", "en": "Tusker Sword", "hash": "119ee08c615b4c61", "src": "db2@1.60.1.70755"}
-{"id": 15253, "field": "name", "en": "Beheading Blade", "hash": "8190232d7e0b148c", "src": "db2@1.60.1.70755"}
-{"id": 15254, "field": "name", "en": "Dark Espadon", "hash": "9f73c531ebf4b71b", "src": "db2@1.60.1.70532"}
-{"id": 15255, "field": "name", "en": "Gallant Flamberge", "hash": "7de26fb24b7e501f", "src": "db2@1.60.1.70532"}
-{"id": 15256, "field": "name", "en": "Massacre Sword", "hash": "da39f3930105ed05", "src": "db2@1.60.1.70532"}
-{"id": 15257, "field": "name", "en": "Shin Blade", "hash": "927524261bd8f655", "src": "db2@1.60.1.70755"}
-{"id": 15258, "field": "name", "en": "Divine Warblade", "hash": "1179642eed7ce412", "src": "db2@1.60.1.70755"}
-{"id": 15259, "field": "name", "en": "Hefty Battlehammer", "hash": "3e8ce2e168ef9c0b", "src": "db2@1.60.1.70755"}
-{"id": 15260, "field": "name", "en": "Stone Hammer", "hash": "011eaabf29a59d05", "src": "db2@1.60.1.70755"}
-{"id": 15261, "field": "name", "en": "Sequoia Branch", "hash": "15e69f409c6427f0", "src": "db2@1.60.1.70532"}
-{"id": 15262, "field": "name", "en": "Greater Maul", "hash": "057470d61c841b5f", "src": "db2@1.60.1.70532"}
-{"id": 15263, "field": "name", "en": "Royal Mallet", "hash": "30fea74c271f793e", "src": "db2@1.60.1.70755"}
-{"id": 15264, "field": "name", "en": "Backbreaker", "hash": "ac2a727208d60d57", "src": "db2@1.60.1.70532"}
-{"id": 15265, "field": "name", "en": "Painbringer", "hash": "a939193e2760bc19", "src": "db2@1.60.1.70755"}
-{"id": 15266, "field": "name", "en": "Fierce Mauler", "hash": "2e0e54dd9eb91ccb", "src": "db2@1.60.1.70755"}
-{"id": 15267, "field": "name", "en": "Brutehammer", "hash": "809e3407ec360c07", "src": "db2@1.60.1.70532"}
-{"id": 15268, "field": "name", "en": "Twin-bladed Axe", "hash": "1699f5da5ab0fe9f", "src": "db2@1.60.1.70755"}
-{"id": 15269, "field": "name", "en": "Massive Battle Axe", "hash": "8e8367da15932c8c", "src": "db2@1.60.1.70532"}
-{"id": 15270, "field": "name", "en": "Gigantic War Axe", "hash": "616e7c1a19f596df", "src": "db2@1.60.1.70532"}
-{"id": 15271, "field": "name", "en": "Colossal Great Axe", "hash": "da1c5c541222c63b", "src": "db2@1.60.1.70532"}
-{"id": 15272, "field": "name", "en": "Razor Axe", "hash": "380351fc38e2188a", "src": "db2@1.60.1.70532"}
-{"id": 15273, "field": "name", "en": "Death Striker", "hash": "14519fba020b2cd1", "src": "db2@1.60.1.70755"}
-{"id": 15274, "field": "name", "en": "Diviner Long Staff", "hash": "0f223f63d6667497", "src": "db2@1.60.1.70532"}
-{"id": 15275, "field": "name", "en": "Thaumaturgist Staff", "hash": "fd8fb9bf20e0ad5f", "src": "db2@1.60.1.70532"}
-{"id": 15276, "field": "name", "en": "Magus Long Staff", "hash": "2286e33b0462ea00", "src": "db2@1.60.1.70532"}
+{"id": 15225, "field": "name", "en": "Sequoia Hammer", "hash": "d232aae054f319c7", "src": "db2@1.60.1.70790"}
+{"id": 15226, "field": "name", "en": "Giant Club", "hash": "408fb3c4b1a29ac4", "src": "db2@1.60.1.70790"}
+{"id": 15227, "field": "name", "en": "Diamond-Tip Bludgeon", "hash": "3c2b36418a1dc200", "src": "db2@1.60.1.70790"}
+{"id": 15228, "field": "name", "en": "Smashing Star", "hash": "f186d533c0703a7f", "src": "db2@1.60.1.70790"}
+{"id": 15229, "field": "name", "en": "Blesswind Hammer", "hash": "469e49485794f51a", "src": "db2@1.60.1.70790"}
+{"id": 15230, "field": "name", "en": "Ridge Cleaver", "hash": "78dbbd7b7f2663a6", "src": "db2@1.60.1.70790"}
+{"id": 15231, "field": "name", "en": "Splitting Hatchet", "hash": "0b64cf228fe229d5", "src": "db2@1.60.1.70790"}
+{"id": 15232, "field": "name", "en": "Hacking Cleaver", "hash": "6e19939343db6486", "src": "db2@1.60.1.70790"}
+{"id": 15233, "field": "name", "en": "Savage Axe", "hash": "ba65da36f7b57425", "src": "db2@1.60.1.70790"}
+{"id": 15234, "field": "name", "en": "Greater Scythe", "hash": "b360b75ab7ccce4a", "src": "db2@1.60.1.70790"}
+{"id": 15235, "field": "name", "en": "Crescent Edge", "hash": "73c7f2f1135af70b", "src": "db2@1.60.1.70790"}
+{"id": 15236, "field": "name", "en": "Moon Cleaver", "hash": "ee68398aa3d45c0e", "src": "db2@1.60.1.70790"}
+{"id": 15237, "field": "name", "en": "Corpse Harvester", "hash": "be0983d1efd5263f", "src": "db2@1.60.1.70790"}
+{"id": 15238, "field": "name", "en": "Warlord's Axe", "hash": "76fd3e9615de72a4", "src": "db2@1.60.1.70790"}
+{"id": 15239, "field": "name", "en": "Felstone Reaver", "hash": "75f463b2d909b470", "src": "db2@1.60.1.70790"}
+{"id": 15240, "field": "name", "en": "Demon's Claw", "hash": "9903dc42323309b7", "src": "db2@1.60.1.70790"}
+{"id": 15241, "field": "name", "en": "Battle Knife", "hash": "ce04ff0115f3aa03", "src": "db2@1.60.1.70790"}
+{"id": 15242, "field": "name", "en": "Honed Stiletto", "hash": "eed7e700b787fc04", "src": "db2@1.60.1.70790"}
+{"id": 15243, "field": "name", "en": "Deadly Kris", "hash": "a3aa318e6b21faf2", "src": "db2@1.60.1.70790"}
+{"id": 15244, "field": "name", "en": "Razor Blade", "hash": "e68459a8afc5e8ae", "src": "db2@1.60.1.70790"}
+{"id": 15245, "field": "name", "en": "Vorpal Dagger", "hash": "350de917465a0183", "src": "db2@1.60.1.70790"}
+{"id": 15246, "field": "name", "en": "Demon Blade", "hash": "8c3297b0475417a4", "src": "db2@1.60.1.70790"}
+{"id": 15247, "field": "name", "en": "Bloodstrike Dagger", "hash": "c61414f4cef4c7bf", "src": "db2@1.60.1.70790"}
+{"id": 15248, "field": "name", "en": "Gleaming Claymore", "hash": "914c541fff3e1b41", "src": "db2@1.60.1.70790"}
+{"id": 15249, "field": "name", "en": "Polished Zweihander", "hash": "258fd5f3e0085660", "src": "db2@1.60.1.70790"}
+{"id": 15250, "field": "name", "en": "Glimmering Flamberge", "hash": "fac74efca4c7118c", "src": "db2@1.60.1.70790"}
+{"id": 15251, "field": "name", "en": "Headstriker Sword", "hash": "77f2355356008bf3", "src": "db2@1.60.1.70790"}
+{"id": 15252, "field": "name", "en": "Tusker Sword", "hash": "119ee08c615b4c61", "src": "db2@1.60.1.70790"}
+{"id": 15253, "field": "name", "en": "Beheading Blade", "hash": "8190232d7e0b148c", "src": "db2@1.60.1.70790"}
+{"id": 15254, "field": "name", "en": "Dark Espadon", "hash": "9f73c531ebf4b71b", "src": "db2@1.60.1.70790"}
+{"id": 15255, "field": "name", "en": "Gallant Flamberge", "hash": "7de26fb24b7e501f", "src": "db2@1.60.1.70790"}
+{"id": 15256, "field": "name", "en": "Massacre Sword", "hash": "da39f3930105ed05", "src": "db2@1.60.1.70790"}
+{"id": 15257, "field": "name", "en": "Shin Blade", "hash": "927524261bd8f655", "src": "db2@1.60.1.70790"}
+{"id": 15258, "field": "name", "en": "Divine Warblade", "hash": "1179642eed7ce412", "src": "db2@1.60.1.70790"}
+{"id": 15259, "field": "name", "en": "Hefty Battlehammer", "hash": "3e8ce2e168ef9c0b", "src": "db2@1.60.1.70790"}
+{"id": 15260, "field": "name", "en": "Stone Hammer", "hash": "011eaabf29a59d05", "src": "db2@1.60.1.70790"}
+{"id": 15261, "field": "name", "en": "Sequoia Branch", "hash": "15e69f409c6427f0", "src": "db2@1.60.1.70790"}
+{"id": 15262, "field": "name", "en": "Greater Maul", "hash": "057470d61c841b5f", "src": "db2@1.60.1.70790"}
+{"id": 15263, "field": "name", "en": "Royal Mallet", "hash": "30fea74c271f793e", "src": "db2@1.60.1.70790"}
+{"id": 15264, "field": "name", "en": "Backbreaker", "hash": "ac2a727208d60d57", "src": "db2@1.60.1.70790"}
+{"id": 15265, "field": "name", "en": "Painbringer", "hash": "a939193e2760bc19", "src": "db2@1.60.1.70790"}
+{"id": 15266, "field": "name", "en": "Fierce Mauler", "hash": "2e0e54dd9eb91ccb", "src": "db2@1.60.1.70790"}
+{"id": 15267, "field": "name", "en": "Brutehammer", "hash": "809e3407ec360c07", "src": "db2@1.60.1.70790"}
+{"id": 15268, "field": "name", "en": "Twin-bladed Axe", "hash": "1699f5da5ab0fe9f", "src": "db2@1.60.1.70790"}
+{"id": 15269, "field": "name", "en": "Massive Battle Axe", "hash": "8e8367da15932c8c", "src": "db2@1.60.1.70790"}
+{"id": 15270, "field": "name", "en": "Gigantic War Axe", "hash": "616e7c1a19f596df", "src": "db2@1.60.1.70790"}
+{"id": 15271, "field": "name", "en": "Colossal Great Axe", "hash": "da1c5c541222c63b", "src": "db2@1.60.1.70790"}
+{"id": 15272, "field": "name", "en": "Razor Axe", "hash": "380351fc38e2188a", "src": "db2@1.60.1.70790"}
+{"id": 15273, "field": "name", "en": "Death Striker", "hash": "14519fba020b2cd1", "src": "db2@1.60.1.70790"}
+{"id": 15274, "field": "name", "en": "Diviner Long Staff", "hash": "0f223f63d6667497", "src": "db2@1.60.1.70790"}
+{"id": 15275, "field": "name", "en": "Thaumaturgist Staff", "hash": "fd8fb9bf20e0ad5f", "src": "db2@1.60.1.70790"}
+{"id": 15276, "field": "name", "en": "Magus Long Staff", "hash": "2286e33b0462ea00", "src": "db2@1.60.1.70790"}
 {"id": 15277, "field": "name", "en": "Gray Kodo", "hash": "64be2076e5317d2d", "src": "db2@1.60.1.70790"}
 {"id": 15277, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70790"}
-{"id": 15278, "field": "name", "en": "Solstice Staff", "hash": "dd00bdc996832e6b", "src": "db2@1.60.1.70755"}
-{"id": 15279, "field": "name", "en": "Ivory Wand", "hash": "ec59833cf9e025e2", "src": "db2@1.60.1.70532"}
-{"id": 15280, "field": "name", "en": "Wizard's Hand", "hash": "a8da89138b1d8949", "src": "db2@1.60.1.70755"}
-{"id": 15281, "field": "name", "en": "Glowstar Rod", "hash": "d1a55b2e1f3c2c7c", "src": "db2@1.60.1.70532"}
-{"id": 15282, "field": "name", "en": "Dragon Finger", "hash": "3e49e8cd87555e34", "src": "db2@1.60.1.70755"}
-{"id": 15283, "field": "name", "en": "Lunar Wand", "hash": "2df8bc6086ad9857", "src": "db2@1.60.1.70755"}
-{"id": 15284, "field": "name", "en": "Long Battle Bow", "hash": "4f99ff904297e56b", "src": "db2@1.60.1.70532"}
-{"id": 15285, "field": "name", "en": "Archer's Longbow", "hash": "e76ac9c77c36ef1e", "src": "db2@1.60.1.70532"}
-{"id": 15286, "field": "name", "en": "Long Redwood Bow", "hash": "a3a419d74e1871d5", "src": "db2@1.60.1.70532"}
-{"id": 15287, "field": "name", "en": "Crusader Bow", "hash": "95cd8e8453b80f8c", "src": "db2@1.60.1.70532"}
-{"id": 15288, "field": "name", "en": "Blasthorn Bow", "hash": "0a1b12700cf6e6fc", "src": "db2@1.60.1.70755"}
-{"id": 15289, "field": "name", "en": "Archstrike Bow", "hash": "26723ffddd95c048", "src": "db2@1.60.1.70755"}
+{"id": 15278, "field": "name", "en": "Solstice Staff", "hash": "dd00bdc996832e6b", "src": "db2@1.60.1.70790"}
+{"id": 15279, "field": "name", "en": "Ivory Wand", "hash": "ec59833cf9e025e2", "src": "db2@1.60.1.70790"}
+{"id": 15280, "field": "name", "en": "Wizard's Hand", "hash": "a8da89138b1d8949", "src": "db2@1.60.1.70790"}
+{"id": 15281, "field": "name", "en": "Glowstar Rod", "hash": "d1a55b2e1f3c2c7c", "src": "db2@1.60.1.70790"}
+{"id": 15282, "field": "name", "en": "Dragon Finger", "hash": "3e49e8cd87555e34", "src": "db2@1.60.1.70790"}
+{"id": 15283, "field": "name", "en": "Lunar Wand", "hash": "2df8bc6086ad9857", "src": "db2@1.60.1.70790"}
+{"id": 15284, "field": "name", "en": "Long Battle Bow", "hash": "4f99ff904297e56b", "src": "db2@1.60.1.70790"}
+{"id": 15285, "field": "name", "en": "Archer's Longbow", "hash": "e76ac9c77c36ef1e", "src": "db2@1.60.1.70790"}
+{"id": 15286, "field": "name", "en": "Long Redwood Bow", "hash": "a3a419d74e1871d5", "src": "db2@1.60.1.70790"}
+{"id": 15287, "field": "name", "en": "Crusader Bow", "hash": "95cd8e8453b80f8c", "src": "db2@1.60.1.70790"}
+{"id": 15288, "field": "name", "en": "Blasthorn Bow", "hash": "0a1b12700cf6e6fc", "src": "db2@1.60.1.70790"}
+{"id": 15289, "field": "name", "en": "Archstrike Bow", "hash": "26723ffddd95c048", "src": "db2@1.60.1.70790"}
 {"id": 15290, "field": "name", "en": "Brown Kodo", "hash": "cdbcc13ed1286579", "src": "db2@1.60.1.70790"}
 {"id": 15290, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70790"}
-{"id": 15291, "field": "name", "en": "Harpy Needler", "hash": "3b4ecb4aae839666", "src": "db2@1.60.1.70755"}
+{"id": 15291, "field": "name", "en": "Harpy Needler", "hash": "3b4ecb4aae839666", "src": "db2@1.60.1.70790"}
 {"id": 15292, "field": "name", "en": "Green Kodo", "hash": "f7cc0d3e44236f3f", "src": "db2@1.60.1.70790"}
 {"id": 15292, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70790"}
 {"id": 15293, "field": "name", "en": "Teal Kodo", "hash": "225f79a5a034bb39", "src": "db2@1.60.1.70790"}
 {"id": 15293, "field": "description", "en": "Teaches you how to summon this mount.", "hash": "720161a49ee51ea5", "src": "db2@1.60.1.70790"}
-{"id": 15294, "field": "name", "en": "Siege Bow", "hash": "7fa844e4ed980813", "src": "db2@1.60.1.70532"}
-{"id": 15295, "field": "name", "en": "Quillfire Bow", "hash": "f504287df19fec66", "src": "db2@1.60.1.70532"}
-{"id": 15296, "field": "name", "en": "Hawkeye Bow", "hash": "063c35b4827c66ec", "src": "db2@1.60.1.70532"}
+{"id": 15294, "field": "name", "en": "Siege Bow", "hash": "7fa844e4ed980813", "src": "db2@1.60.1.70790"}
+{"id": 15295, "field": "name", "en": "Quillfire Bow", "hash": "f504287df19fec66", "src": "db2@1.60.1.70790"}
+{"id": 15296, "field": "name", "en": "Hawkeye Bow", "hash": "063c35b4827c66ec", "src": "db2@1.60.1.70790"}
 {"id": 15297, "field": "name", "en": "Grizzly Bracers", "hash": "efd1ecb3ef3ccbf9", "src": "db2@1.60.1.70790"}
-{"id": 15298, "field": "name", "en": "Grizzly Buckler", "hash": "068e77a928b6a54a", "src": "db2@1.60.1.70532"}
+{"id": 15298, "field": "name", "en": "Grizzly Buckler", "hash": "068e77a928b6a54a", "src": "db2@1.60.1.70790"}
 {"id": 15299, "field": "name", "en": "Grizzly Cape", "hash": "4c43f39b1bc7c228", "src": "db2@1.60.1.70790"}
 {"id": 15300, "field": "name", "en": "Grizzly Gloves", "hash": "262fe36b5fd7e50f", "src": "db2@1.60.1.70790"}
 {"id": 15301, "field": "name", "en": "Grizzly Slippers", "hash": "2c902d1e29a80342", "src": "db2@1.60.1.70790"}
 {"id": 15302, "field": "name", "en": "Grizzly Belt", "hash": "4c22b0279e405da7", "src": "db2@1.60.1.70790"}
-{"id": 15303, "field": "name", "en": "Grizzly Pants", "hash": "eaf76d3fe50e882a", "src": "db2@1.60.1.70532"}
-{"id": 15304, "field": "name", "en": "Grizzly Jerkin", "hash": "9e40d384b898d93a", "src": "db2@1.60.1.70532"}
-{"id": 15305, "field": "name", "en": "Feral Shoes", "hash": "07606e4c13a5dff0", "src": "db2@1.60.1.70532"}
-{"id": 15306, "field": "name", "en": "Feral Bindings", "hash": "d689923c8fae12f6", "src": "db2@1.60.1.70532"}
-{"id": 15307, "field": "name", "en": "Feral Buckler", "hash": "73436a083609cf56", "src": "db2@1.60.1.70532"}
-{"id": 15308, "field": "name", "en": "Feral Cord", "hash": "c156e28e64217656", "src": "db2@1.60.1.70532"}
-{"id": 15309, "field": "name", "en": "Feral Cloak", "hash": "ef0e3d8a5a9d38f4", "src": "db2@1.60.1.70532"}
-{"id": 15310, "field": "name", "en": "Feral Gloves", "hash": "42602b9e4798d290", "src": "db2@1.60.1.70532"}
-{"id": 15311, "field": "name", "en": "Feral Harness", "hash": "10d07c0874fd3d1d", "src": "db2@1.60.1.70532"}
-{"id": 15312, "field": "name", "en": "Feral Leggings", "hash": "0238f4103169d1c6", "src": "db2@1.60.1.70532"}
+{"id": 15303, "field": "name", "en": "Grizzly Pants", "hash": "eaf76d3fe50e882a", "src": "db2@1.60.1.70790"}
+{"id": 15304, "field": "name", "en": "Grizzly Jerkin", "hash": "9e40d384b898d93a", "src": "db2@1.60.1.70790"}
+{"id": 15305, "field": "name", "en": "Feral Shoes", "hash": "07606e4c13a5dff0", "src": "db2@1.60.1.70790"}
+{"id": 15306, "field": "name", "en": "Feral Bindings", "hash": "d689923c8fae12f6", "src": "db2@1.60.1.70790"}
+{"id": 15307, "field": "name", "en": "Feral Buckler", "hash": "73436a083609cf56", "src": "db2@1.60.1.70790"}
+{"id": 15308, "field": "name", "en": "Feral Cord", "hash": "c156e28e64217656", "src": "db2@1.60.1.70790"}
+{"id": 15309, "field": "name", "en": "Feral Cloak", "hash": "ef0e3d8a5a9d38f4", "src": "db2@1.60.1.70790"}
+{"id": 15310, "field": "name", "en": "Feral Gloves", "hash": "42602b9e4798d290", "src": "db2@1.60.1.70790"}
+{"id": 15311, "field": "name", "en": "Feral Harness", "hash": "10d07c0874fd3d1d", "src": "db2@1.60.1.70790"}
+{"id": 15312, "field": "name", "en": "Feral Leggings", "hash": "0238f4103169d1c6", "src": "db2@1.60.1.70790"}
 {"id": 15313, "field": "name", "en": "Feral Shoulder Pads", "hash": "5e65abd5c826a14e", "src": "db2@1.60.1.70790"}
 {"id": 15314, "field": "name", "en": "Bundle of Relics", "hash": "57b17e9fdbd881d2", "src": "db2@1.60.1.70790"}
-{"id": 15322, "field": "name", "en": "Smoothbore Gun", "hash": "b81574f71c1f266f", "src": "db2@1.60.1.70532"}
-{"id": 15323, "field": "name", "en": "Percussion Shotgun", "hash": "72c5b4080c32b217", "src": "db2@1.60.1.70532"}
+{"id": 15322, "field": "name", "en": "Smoothbore Gun", "hash": "b81574f71c1f266f", "src": "db2@1.60.1.70790"}
+{"id": 15323, "field": "name", "en": "Percussion Shotgun", "hash": "72c5b4080c32b217", "src": "db2@1.60.1.70790"}
 {"id": 15324, "field": "name", "en": "Burnside Rifle", "hash": "a275ca2ab7693554", "src": "db2@1.60.1.70790"}
-{"id": 15325, "field": "name", "en": "Sharpshooter Harquebus", "hash": "f25f353faf265d55", "src": "db2@1.60.1.70755"}
+{"id": 15325, "field": "name", "en": "Sharpshooter Harquebus", "hash": "f25f353faf265d55", "src": "db2@1.60.1.70790"}
 {"id": 15326, "field": "name", "en": "Gleaming Throwing Axe", "hash": "499783ab76e606af", "src": "db2@1.60.1.70790"}
 {"id": 15327, "field": "name", "en": "Wicked Throwing Dagger", "hash": "6452c93ddcf11f1a", "src": "db2@1.60.1.70790"}
 {"id": 15328, "field": "name", "en": "Joseph's Key", "hash": "0011d0e77b623809", "src": "db2@1.60.1.70790"}
-{"id": 15329, "field": "name", "en": "Wrangler's Belt", "hash": "6b0a4eb89e062e13", "src": "db2@1.60.1.70532"}
-{"id": 15330, "field": "name", "en": "Wrangler's Boots", "hash": "c79e1ad234fc6e42", "src": "db2@1.60.1.70532"}
-{"id": 15331, "field": "name", "en": "Wrangler's Wristbands", "hash": "66b2369887bc6de9", "src": "db2@1.60.1.70532"}
-{"id": 15332, "field": "name", "en": "Wrangler's Buckler", "hash": "76d3cb1908e963b9", "src": "db2@1.60.1.70532"}
-{"id": 15333, "field": "name", "en": "Wrangler's Cloak", "hash": "d8c4de916bacb3e3", "src": "db2@1.60.1.70532"}
-{"id": 15334, "field": "name", "en": "Wrangler's Gloves", "hash": "dad491f72616f3bf", "src": "db2@1.60.1.70532"}
+{"id": 15329, "field": "name", "en": "Wrangler's Belt", "hash": "6b0a4eb89e062e13", "src": "db2@1.60.1.70790"}
+{"id": 15330, "field": "name", "en": "Wrangler's Boots", "hash": "c79e1ad234fc6e42", "src": "db2@1.60.1.70790"}
+{"id": 15331, "field": "name", "en": "Wrangler's Wristbands", "hash": "66b2369887bc6de9", "src": "db2@1.60.1.70790"}
+{"id": 15332, "field": "name", "en": "Wrangler's Buckler", "hash": "76d3cb1908e963b9", "src": "db2@1.60.1.70790"}
+{"id": 15333, "field": "name", "en": "Wrangler's Cloak", "hash": "d8c4de916bacb3e3", "src": "db2@1.60.1.70790"}
+{"id": 15334, "field": "name", "en": "Wrangler's Gloves", "hash": "dad491f72616f3bf", "src": "db2@1.60.1.70790"}
 {"id": 15335, "field": "name", "en": "Briarsteel Shortsword", "hash": "119bc8652c1450f5", "src": "db2@1.60.1.70790"}
-{"id": 15336, "field": "name", "en": "Wrangler's Leggings", "hash": "d51a9fc89ae2da3a", "src": "db2@1.60.1.70532"}
-{"id": 15337, "field": "name", "en": "Wrangler's Wraps", "hash": "38a14bc8eedc8b22", "src": "db2@1.60.1.70532"}
-{"id": 15338, "field": "name", "en": "Wrangler's Mantle", "hash": "feb4b211e5e5d978", "src": "db2@1.60.1.70532"}
-{"id": 15339, "field": "name", "en": "Pathfinder Hat", "hash": "8b326555d06ea084", "src": "db2@1.60.1.70532"}
-{"id": 15340, "field": "name", "en": "Pathfinder Cloak", "hash": "beff2e2cff51a206", "src": "db2@1.60.1.70532"}
-{"id": 15341, "field": "name", "en": "Pathfinder Footpads", "hash": "5a726e71db941ce3", "src": "db2@1.60.1.70532"}
+{"id": 15336, "field": "name", "en": "Wrangler's Leggings", "hash": "d51a9fc89ae2da3a", "src": "db2@1.60.1.70790"}
+{"id": 15337, "field": "name", "en": "Wrangler's Wraps", "hash": "38a14bc8eedc8b22", "src": "db2@1.60.1.70790"}
+{"id": 15338, "field": "name", "en": "Wrangler's Mantle", "hash": "feb4b211e5e5d978", "src": "db2@1.60.1.70790"}
+{"id": 15339, "field": "name", "en": "Pathfinder Hat", "hash": "8b326555d06ea084", "src": "db2@1.60.1.70790"}
+{"id": 15340, "field": "name", "en": "Pathfinder Cloak", "hash": "beff2e2cff51a206", "src": "db2@1.60.1.70790"}
+{"id": 15341, "field": "name", "en": "Pathfinder Footpads", "hash": "5a726e71db941ce3", "src": "db2@1.60.1.70790"}
 {"id": 15342, "field": "name", "en": "Pathfinder Guard", "hash": "066720163c119d9a", "src": "db2@1.60.1.70532"}
-{"id": 15343, "field": "name", "en": "Pathfinder Gloves", "hash": "aaab4e07e2e3b604", "src": "db2@1.60.1.70532"}
-{"id": 15344, "field": "name", "en": "Pathfinder Pants", "hash": "a1b7e15d39ccb8d3", "src": "db2@1.60.1.70532"}
-{"id": 15345, "field": "name", "en": "Pathfinder Shoulder Pads", "hash": "48948352d5b29481", "src": "db2@1.60.1.70532"}
-{"id": 15346, "field": "name", "en": "Pathfinder Vest", "hash": "3cab2671623d1149", "src": "db2@1.60.1.70532"}
-{"id": 15347, "field": "name", "en": "Pathfinder Belt", "hash": "39fd12c0561d217b", "src": "db2@1.60.1.70532"}
-{"id": 15348, "field": "name", "en": "Pathfinder Bracers", "hash": "baf97bdb8aee33c0", "src": "db2@1.60.1.70532"}
+{"id": 15343, "field": "name", "en": "Pathfinder Gloves", "hash": "aaab4e07e2e3b604", "src": "db2@1.60.1.70790"}
+{"id": 15344, "field": "name", "en": "Pathfinder Pants", "hash": "a1b7e15d39ccb8d3", "src": "db2@1.60.1.70790"}
+{"id": 15345, "field": "name", "en": "Pathfinder Shoulder Pads", "hash": "48948352d5b29481", "src": "db2@1.60.1.70790"}
+{"id": 15346, "field": "name", "en": "Pathfinder Vest", "hash": "3cab2671623d1149", "src": "db2@1.60.1.70790"}
+{"id": 15347, "field": "name", "en": "Pathfinder Belt", "hash": "39fd12c0561d217b", "src": "db2@1.60.1.70790"}
+{"id": 15348, "field": "name", "en": "Pathfinder Bracers", "hash": "baf97bdb8aee33c0", "src": "db2@1.60.1.70790"}
 {"id": 15349, "field": "name", "en": "Headhunter's Belt", "hash": "d5ca27a5f6b63d56", "src": "db2@1.60.1.70532"}
 {"id": 15350, "field": "name", "en": "Headhunter's Slippers", "hash": "27182b0599dfaebc", "src": "db2@1.60.1.70532"}
 {"id": 15351, "field": "name", "en": "Headhunter's Bands", "hash": "65e99379b9ea1695", "src": "db2@1.60.1.70532"}
-{"id": 15352, "field": "name", "en": "Headhunter's Buckler", "hash": "9cfcf0cbca86e8be", "src": "db2@1.60.1.70532"}
-{"id": 15353, "field": "name", "en": "Headhunter's Headdress", "hash": "269f4a52231fdf97", "src": "db2@1.60.1.70532"}
-{"id": 15354, "field": "name", "en": "Headhunter's Cloak", "hash": "78f0e0ebb043f681", "src": "db2@1.60.1.70532"}
+{"id": 15352, "field": "name", "en": "Headhunter's Buckler", "hash": "9cfcf0cbca86e8be", "src": "db2@1.60.1.70790"}
+{"id": 15353, "field": "name", "en": "Headhunter's Headdress", "hash": "269f4a52231fdf97", "src": "db2@1.60.1.70790"}
+{"id": 15354, "field": "name", "en": "Headhunter's Cloak", "hash": "78f0e0ebb043f681", "src": "db2@1.60.1.70790"}
 {"id": 15355, "field": "name", "en": "Headhunter's Mitts", "hash": "28147037d110c59f", "src": "db2@1.60.1.70532"}
-{"id": 15356, "field": "name", "en": "Headhunter's Armor", "hash": "56a2c70a3aefe69c", "src": "db2@1.60.1.70532"}
-{"id": 15357, "field": "name", "en": "Headhunter's Spaulders", "hash": "dcc7640ad7b4db9f", "src": "db2@1.60.1.70532"}
-{"id": 15358, "field": "name", "en": "Headhunter's Woolies", "hash": "5d51e6cddb244b1a", "src": "db2@1.60.1.70532"}
-{"id": 15359, "field": "name", "en": "Trickster's Vest", "hash": "a79dd6121fc81659", "src": "db2@1.60.1.70532"}
+{"id": 15356, "field": "name", "en": "Headhunter's Armor", "hash": "56a2c70a3aefe69c", "src": "db2@1.60.1.70790"}
+{"id": 15357, "field": "name", "en": "Headhunter's Spaulders", "hash": "dcc7640ad7b4db9f", "src": "db2@1.60.1.70790"}
+{"id": 15358, "field": "name", "en": "Headhunter's Woolies", "hash": "5d51e6cddb244b1a", "src": "db2@1.60.1.70790"}
+{"id": 15359, "field": "name", "en": "Trickster's Vest", "hash": "a79dd6121fc81659", "src": "db2@1.60.1.70790"}
 {"id": 15360, "field": "name", "en": "Trickster's Bindings", "hash": "1c2d6ae935eaa5ba", "src": "db2@1.60.1.70532"}
-{"id": 15361, "field": "name", "en": "Trickster's Sash", "hash": "a735e11167af2b2a", "src": "db2@1.60.1.70532"}
+{"id": 15361, "field": "name", "en": "Trickster's Sash", "hash": "a735e11167af2b2a", "src": "db2@1.60.1.70790"}
 {"id": 15362, "field": "name", "en": "Trickster's Boots", "hash": "68084ae3356d32cf", "src": "db2@1.60.1.70532"}
 {"id": 15363, "field": "name", "en": "Trickster's Headdress", "hash": "c3ac2c7de84687fb", "src": "db2@1.60.1.70532"}
-{"id": 15364, "field": "name", "en": "Trickster's Cloak", "hash": "792f0ea26c1d7870", "src": "db2@1.60.1.70532"}
+{"id": 15364, "field": "name", "en": "Trickster's Cloak", "hash": "792f0ea26c1d7870", "src": "db2@1.60.1.70790"}
 {"id": 15365, "field": "name", "en": "Trickster's Handwraps", "hash": "607cb0a1e6ce0a90", "src": "db2@1.60.1.70532"}
 {"id": 15366, "field": "name", "en": "Trickster's Leggings", "hash": "47dcccb8d7a66479", "src": "db2@1.60.1.70532"}
-{"id": 15367, "field": "name", "en": "Trickster's Protector", "hash": "76b8af19bf06532f", "src": "db2@1.60.1.70532"}
-{"id": 15368, "field": "name", "en": "Trickster's Pauldrons", "hash": "d8b05a51be9a76d7", "src": "db2@1.60.1.70532"}
-{"id": 15369, "field": "name", "en": "Wolf Rider's Belt", "hash": "869c79f2fae5980b", "src": "db2@1.60.1.70532"}
-{"id": 15370, "field": "name", "en": "Wolf Rider's Boots", "hash": "e36a39c6e32e5dca", "src": "db2@1.60.1.70532"}
-{"id": 15371, "field": "name", "en": "Wolf Rider's Cloak", "hash": "f490fd8519dea37c", "src": "db2@1.60.1.70532"}
-{"id": 15372, "field": "name", "en": "Wolf Rider's Gloves", "hash": "1448691e4bfd6308", "src": "db2@1.60.1.70532"}
+{"id": 15367, "field": "name", "en": "Trickster's Protector", "hash": "76b8af19bf06532f", "src": "db2@1.60.1.70790"}
+{"id": 15368, "field": "name", "en": "Trickster's Pauldrons", "hash": "d8b05a51be9a76d7", "src": "db2@1.60.1.70790"}
+{"id": 15369, "field": "name", "en": "Wolf Rider's Belt", "hash": "869c79f2fae5980b", "src": "db2@1.60.1.70790"}
+{"id": 15370, "field": "name", "en": "Wolf Rider's Boots", "hash": "e36a39c6e32e5dca", "src": "db2@1.60.1.70790"}
+{"id": 15371, "field": "name", "en": "Wolf Rider's Cloak", "hash": "f490fd8519dea37c", "src": "db2@1.60.1.70790"}
+{"id": 15372, "field": "name", "en": "Wolf Rider's Gloves", "hash": "1448691e4bfd6308", "src": "db2@1.60.1.70790"}
 {"id": 15373, "field": "name", "en": "Wolf Rider's Headgear", "hash": "33ab73e39649fd2d", "src": "db2@1.60.1.70532"}
-{"id": 15374, "field": "name", "en": "Wolf Rider's Leggings", "hash": "2b7b6136307298f5", "src": "db2@1.60.1.70532"}
+{"id": 15374, "field": "name", "en": "Wolf Rider's Leggings", "hash": "2b7b6136307298f5", "src": "db2@1.60.1.70790"}
 {"id": 15375, "field": "name", "en": "Wolf Rider's Shoulder Pads", "hash": "23df252002c190e7", "src": "db2@1.60.1.70532"}
-{"id": 15376, "field": "name", "en": "Wolf Rider's Padded Armor", "hash": "9b4f173784c1c6f6", "src": "db2@1.60.1.70532"}
-{"id": 15377, "field": "name", "en": "Wolf Rider's Wristbands", "hash": "c2b7ef5fc21f0545", "src": "db2@1.60.1.70532"}
-{"id": 15378, "field": "name", "en": "Rageclaw Belt", "hash": "cf47eeef07c077e2", "src": "db2@1.60.1.70532"}
-{"id": 15379, "field": "name", "en": "Rageclaw Boots", "hash": "132717fbb0a6200a", "src": "db2@1.60.1.70532"}
-{"id": 15380, "field": "name", "en": "Rageclaw Bracers", "hash": "e228f54f263f77b5", "src": "db2@1.60.1.70532"}
-{"id": 15381, "field": "name", "en": "Rageclaw Chestguard", "hash": "abfef61f19e2485f", "src": "db2@1.60.1.70532"}
-{"id": 15382, "field": "name", "en": "Rageclaw Cloak", "hash": "244ddbbae75665ab", "src": "db2@1.60.1.70532"}
-{"id": 15383, "field": "name", "en": "Rageclaw Gloves", "hash": "81ee1c2662c4724d", "src": "db2@1.60.1.70532"}
+{"id": 15376, "field": "name", "en": "Wolf Rider's Padded Armor", "hash": "9b4f173784c1c6f6", "src": "db2@1.60.1.70790"}
+{"id": 15377, "field": "name", "en": "Wolf Rider's Wristbands", "hash": "c2b7ef5fc21f0545", "src": "db2@1.60.1.70790"}
+{"id": 15378, "field": "name", "en": "Rageclaw Belt", "hash": "cf47eeef07c077e2", "src": "db2@1.60.1.70790"}
+{"id": 15379, "field": "name", "en": "Rageclaw Boots", "hash": "132717fbb0a6200a", "src": "db2@1.60.1.70790"}
+{"id": 15380, "field": "name", "en": "Rageclaw Bracers", "hash": "e228f54f263f77b5", "src": "db2@1.60.1.70790"}
+{"id": 15381, "field": "name", "en": "Rageclaw Chestguard", "hash": "abfef61f19e2485f", "src": "db2@1.60.1.70790"}
+{"id": 15382, "field": "name", "en": "Rageclaw Cloak", "hash": "244ddbbae75665ab", "src": "db2@1.60.1.70790"}
+{"id": 15383, "field": "name", "en": "Rageclaw Gloves", "hash": "81ee1c2662c4724d", "src": "db2@1.60.1.70790"}
 {"id": 15384, "field": "name", "en": "Rageclaw Helm", "hash": "d015c08a58303008", "src": "db2@1.60.1.70532"}
-{"id": 15385, "field": "name", "en": "Rageclaw Leggings", "hash": "642a540c155d57c6", "src": "db2@1.60.1.70532"}
-{"id": 15386, "field": "name", "en": "Rageclaw Shoulder Pads", "hash": "d5bcfde94cad62d5", "src": "db2@1.60.1.70532"}
-{"id": 15387, "field": "name", "en": "Jadefire Bracelets", "hash": "26737271579300d4", "src": "db2@1.60.1.70532"}
+{"id": 15385, "field": "name", "en": "Rageclaw Leggings", "hash": "642a540c155d57c6", "src": "db2@1.60.1.70790"}
+{"id": 15386, "field": "name", "en": "Rageclaw Shoulder Pads", "hash": "d5bcfde94cad62d5", "src": "db2@1.60.1.70790"}
+{"id": 15387, "field": "name", "en": "Jadefire Bracelets", "hash": "26737271579300d4", "src": "db2@1.60.1.70790"}
 {"id": 15388, "field": "name", "en": "Jadefire Belt", "hash": "316109bf094621f0", "src": "db2@1.60.1.70790"}
-{"id": 15389, "field": "name", "en": "Jadefire Sabatons", "hash": "c57a9ed5d72d0d80", "src": "db2@1.60.1.70532"}
-{"id": 15390, "field": "name", "en": "Jadefire Chestguard", "hash": "ee7b9ff46dfd5fa4", "src": "db2@1.60.1.70532"}
+{"id": 15389, "field": "name", "en": "Jadefire Sabatons", "hash": "c57a9ed5d72d0d80", "src": "db2@1.60.1.70790"}
+{"id": 15390, "field": "name", "en": "Jadefire Chestguard", "hash": "ee7b9ff46dfd5fa4", "src": "db2@1.60.1.70790"}
 {"id": 15391, "field": "name", "en": "Jadefire Cap", "hash": "94e5a2c6f6830549", "src": "db2@1.60.1.70532"}
-{"id": 15392, "field": "name", "en": "Jadefire Cloak", "hash": "572692956d68913a", "src": "db2@1.60.1.70532"}
-{"id": 15393, "field": "name", "en": "Jadefire Gloves", "hash": "86d3aeb96c0209dd", "src": "db2@1.60.1.70532"}
-{"id": 15394, "field": "name", "en": "Jadefire Pants", "hash": "39df45c6a7e3a7f6", "src": "db2@1.60.1.70532"}
+{"id": 15392, "field": "name", "en": "Jadefire Cloak", "hash": "572692956d68913a", "src": "db2@1.60.1.70790"}
+{"id": 15393, "field": "name", "en": "Jadefire Gloves", "hash": "86d3aeb96c0209dd", "src": "db2@1.60.1.70790"}
+{"id": 15394, "field": "name", "en": "Jadefire Pants", "hash": "39df45c6a7e3a7f6", "src": "db2@1.60.1.70790"}
 {"id": 15395, "field": "name", "en": "Jadefire Epaulets", "hash": "3636dd54f5183c6e", "src": "db2@1.60.1.70532"}
 {"id": 15396, "field": "name", "en": "Curvewood Dagger", "hash": "a559a12c32ffff30", "src": "db2@1.60.1.70790"}
 {"id": 15397, "field": "name", "en": "Oakthrush Staff", "hash": "d4f4a24f696e861c", "src": "db2@1.60.1.70790"}
@@ -407,36 +407,36 @@
 {"id": 15420, "field": "name", "en": "Ironfeather", "hash": "86a7c364379bd3bf", "src": "db2@1.60.1.70790"}
 {"id": 15422, "field": "name", "en": "Frostsaber Leather", "hash": "dad2f2dfe52e1739", "src": "db2@1.60.1.70790"}
 {"id": 15423, "field": "name", "en": "Chimera Leather", "hash": "917c94a5787836ea", "src": "db2@1.60.1.70790"}
-{"id": 15424, "field": "name", "en": "Axe of Orgrimmar", "hash": "93638dc3ed4f2641", "src": "db2@1.60.1.70532"}
-{"id": 15425, "field": "name", "en": "Peerless Bracers", "hash": "ed1af12e8c0b74be", "src": "db2@1.60.1.70532"}
-{"id": 15426, "field": "name", "en": "Peerless Boots", "hash": "a4602ad7af909d7b", "src": "db2@1.60.1.70532"}
-{"id": 15427, "field": "name", "en": "Peerless Cloak", "hash": "b586ee96e640e31c", "src": "db2@1.60.1.70532"}
-{"id": 15428, "field": "name", "en": "Peerless Belt", "hash": "d6408d5e7ba0b065", "src": "db2@1.60.1.70532"}
-{"id": 15429, "field": "name", "en": "Peerless Gloves", "hash": "d222c42cd40d5f4b", "src": "db2@1.60.1.70532"}
-{"id": 15430, "field": "name", "en": "Peerless Headband", "hash": "0581c062d43bda91", "src": "db2@1.60.1.70532"}
-{"id": 15431, "field": "name", "en": "Peerless Leggings", "hash": "fdfe3742414bab2c", "src": "db2@1.60.1.70532"}
+{"id": 15424, "field": "name", "en": "Axe of Orgrimmar", "hash": "93638dc3ed4f2641", "src": "db2@1.60.1.70790"}
+{"id": 15425, "field": "name", "en": "Peerless Bracers", "hash": "ed1af12e8c0b74be", "src": "db2@1.60.1.70790"}
+{"id": 15426, "field": "name", "en": "Peerless Boots", "hash": "a4602ad7af909d7b", "src": "db2@1.60.1.70790"}
+{"id": 15427, "field": "name", "en": "Peerless Cloak", "hash": "b586ee96e640e31c", "src": "db2@1.60.1.70790"}
+{"id": 15428, "field": "name", "en": "Peerless Belt", "hash": "d6408d5e7ba0b065", "src": "db2@1.60.1.70790"}
+{"id": 15429, "field": "name", "en": "Peerless Gloves", "hash": "d222c42cd40d5f4b", "src": "db2@1.60.1.70790"}
+{"id": 15430, "field": "name", "en": "Peerless Headband", "hash": "0581c062d43bda91", "src": "db2@1.60.1.70790"}
+{"id": 15431, "field": "name", "en": "Peerless Leggings", "hash": "fdfe3742414bab2c", "src": "db2@1.60.1.70790"}
 {"id": 15432, "field": "name", "en": "Peerless Shoulders", "hash": "d3277e3d7da10ec1", "src": "db2@1.60.1.70532"}
-{"id": 15433, "field": "name", "en": "Peerless Armor", "hash": "9338d4b570ecd337", "src": "db2@1.60.1.70532"}
-{"id": 15434, "field": "name", "en": "Supreme Sash", "hash": "98aa34fa02890d06", "src": "db2@1.60.1.70532"}
-{"id": 15435, "field": "name", "en": "Supreme Shoes", "hash": "20082f77a0fe6f9f", "src": "db2@1.60.1.70532"}
-{"id": 15436, "field": "name", "en": "Supreme Bracers", "hash": "21fb0ae31dba0118", "src": "db2@1.60.1.70532"}
-{"id": 15437, "field": "name", "en": "Supreme Cape", "hash": "968559be2c096cd7", "src": "db2@1.60.1.70532"}
-{"id": 15438, "field": "name", "en": "Supreme Gloves", "hash": "e03804db3bd67799", "src": "db2@1.60.1.70532"}
-{"id": 15439, "field": "name", "en": "Supreme Crown", "hash": "0883dba138683e3a", "src": "db2@1.60.1.70532"}
-{"id": 15440, "field": "name", "en": "Supreme Leggings", "hash": "0cab5cde6eb302b9", "src": "db2@1.60.1.70532"}
+{"id": 15433, "field": "name", "en": "Peerless Armor", "hash": "9338d4b570ecd337", "src": "db2@1.60.1.70790"}
+{"id": 15434, "field": "name", "en": "Supreme Sash", "hash": "98aa34fa02890d06", "src": "db2@1.60.1.70790"}
+{"id": 15435, "field": "name", "en": "Supreme Shoes", "hash": "20082f77a0fe6f9f", "src": "db2@1.60.1.70790"}
+{"id": 15436, "field": "name", "en": "Supreme Bracers", "hash": "21fb0ae31dba0118", "src": "db2@1.60.1.70790"}
+{"id": 15437, "field": "name", "en": "Supreme Cape", "hash": "968559be2c096cd7", "src": "db2@1.60.1.70790"}
+{"id": 15438, "field": "name", "en": "Supreme Gloves", "hash": "e03804db3bd67799", "src": "db2@1.60.1.70790"}
+{"id": 15439, "field": "name", "en": "Supreme Crown", "hash": "0883dba138683e3a", "src": "db2@1.60.1.70790"}
+{"id": 15440, "field": "name", "en": "Supreme Leggings", "hash": "0cab5cde6eb302b9", "src": "db2@1.60.1.70790"}
 {"id": 15441, "field": "name", "en": "Supreme Shoulders", "hash": "55c1baaae90f74c5", "src": "db2@1.60.1.70532"}
-{"id": 15442, "field": "name", "en": "Supreme Breastplate", "hash": "98057578b45de887", "src": "db2@1.60.1.70532"}
-{"id": 15443, "field": "name", "en": "Kris of Orgrimmar", "hash": "d6474325f74a6ea3", "src": "db2@1.60.1.70532"}
-{"id": 15444, "field": "name", "en": "Staff of Orgrimmar", "hash": "dc9290b7bd2cf92f", "src": "db2@1.60.1.70532"}
-{"id": 15445, "field": "name", "en": "Hammer of Orgrimmar", "hash": "dd623ce2e132f3ec", "src": "db2@1.60.1.70532"}
+{"id": 15442, "field": "name", "en": "Supreme Breastplate", "hash": "98057578b45de887", "src": "db2@1.60.1.70790"}
+{"id": 15443, "field": "name", "en": "Kris of Orgrimmar", "hash": "d6474325f74a6ea3", "src": "db2@1.60.1.70790"}
+{"id": 15444, "field": "name", "en": "Staff of Orgrimmar", "hash": "dc9290b7bd2cf92f", "src": "db2@1.60.1.70790"}
+{"id": 15445, "field": "name", "en": "Hammer of Orgrimmar", "hash": "dd623ce2e132f3ec", "src": "db2@1.60.1.70790"}
 {"id": 15446, "field": "name", "en": "Stormwind Deputy Kit", "hash": "f65e8791039fe1d1", "src": "db2@1.60.1.70790"}
 {"id": 15447, "field": "name", "en": "Living Rot", "hash": "02ed46afe25c5013", "src": "db2@1.60.1.70790"}
 {"id": 15448, "field": "name", "en": "Coagulated Rot", "hash": "44f5deb0c9b3aadd", "src": "db2@1.60.1.70790"}
-{"id": 15449, "field": "name", "en": "Ghastly Trousers", "hash": "62974bfef6e2f6f8", "src": "db2@1.60.1.70532"}
-{"id": 15450, "field": "name", "en": "Dredgemire Leggings", "hash": "654f443f1ff35ad3", "src": "db2@1.60.1.70532"}
-{"id": 15451, "field": "name", "en": "Gargoyle Leggings", "hash": "57ca2f81441c9633", "src": "db2@1.60.1.70532"}
-{"id": 15452, "field": "name", "en": "Featherbead Bracers", "hash": "f7eac55296695b7e", "src": "db2@1.60.1.70532"}
-{"id": 15453, "field": "name", "en": "Savannah Bracers", "hash": "c69d6ff944c3bd44", "src": "db2@1.60.1.70532"}
+{"id": 15449, "field": "name", "en": "Ghastly Trousers", "hash": "62974bfef6e2f6f8", "src": "db2@1.60.1.70790"}
+{"id": 15450, "field": "name", "en": "Dredgemire Leggings", "hash": "654f443f1ff35ad3", "src": "db2@1.60.1.70790"}
+{"id": 15451, "field": "name", "en": "Gargoyle Leggings", "hash": "57ca2f81441c9633", "src": "db2@1.60.1.70790"}
+{"id": 15452, "field": "name", "en": "Featherbead Bracers", "hash": "f7eac55296695b7e", "src": "db2@1.60.1.70790"}
+{"id": 15453, "field": "name", "en": "Savannah Bracers", "hash": "c69d6ff944c3bd44", "src": "db2@1.60.1.70790"}
 {"id": 15454, "field": "name", "en": "Mortar and Pestle", "hash": "00ea4ab135286ecd", "src": "db2@1.60.1.70790"}
 {"id": 15454, "field": "description", "en": "Combine 7 pieces of Living Rot inside the mortar and grind away with the pestle. Leave standing to allow coagulation.", "hash": "3a09cd5aee1ac46c", "src": "db2@1.60.1.70790"}
 {"id": 15455, "field": "name", "en": "Dustfall Robes", "hash": "7188f2369970862e", "src": "db2@1.60.1.70790"}
@@ -462,227 +462,227 @@
 {"id": 15474, "field": "name", "en": "Charger's Bindings", "hash": "5018e7efc6a386b3", "src": "db2@1.60.1.70790"}
 {"id": 15475, "field": "name", "en": "Charger's Cloak", "hash": "c28bbb20e168bdb7", "src": "db2@1.60.1.70790"}
 {"id": 15476, "field": "name", "en": "Charger's Handwraps", "hash": "f1fdab357c8b1ecf", "src": "db2@1.60.1.70790"}
-{"id": 15477, "field": "name", "en": "Charger's Pants", "hash": "a5446e511be3d484", "src": "db2@1.60.1.70532"}
+{"id": 15477, "field": "name", "en": "Charger's Pants", "hash": "a5446e511be3d484", "src": "db2@1.60.1.70790"}
 {"id": 15478, "field": "name", "en": "Charger's Shield", "hash": "fec1df6f286bde4e", "src": "db2@1.60.1.70790"}
-{"id": 15479, "field": "name", "en": "Charger's Armor", "hash": "a03da13f6c14add2", "src": "db2@1.60.1.70532"}
+{"id": 15479, "field": "name", "en": "Charger's Armor", "hash": "a03da13f6c14add2", "src": "db2@1.60.1.70790"}
 {"id": 15480, "field": "name", "en": "War Torn Girdle", "hash": "47c6ac5f3f31d4a3", "src": "db2@1.60.1.70790"}
 {"id": 15481, "field": "name", "en": "War Torn Greaves", "hash": "adba51cb9ef57161", "src": "db2@1.60.1.70790"}
 {"id": 15482, "field": "name", "en": "War Torn Bands", "hash": "9fe321cbcf64bdff", "src": "db2@1.60.1.70790"}
 {"id": 15483, "field": "name", "en": "War Torn Cape", "hash": "d07fe364922b4be7", "src": "db2@1.60.1.70790"}
 {"id": 15484, "field": "name", "en": "War Torn Handgrips", "hash": "56c5288b41711a57", "src": "db2@1.60.1.70790"}
-{"id": 15485, "field": "name", "en": "War Torn Pants", "hash": "95a3226e0039b4b8", "src": "db2@1.60.1.70532"}
-{"id": 15486, "field": "name", "en": "War Torn Shield", "hash": "ff380a1e3e0bfd70", "src": "db2@1.60.1.70532"}
-{"id": 15487, "field": "name", "en": "War Torn Tunic", "hash": "de88061d8801647f", "src": "db2@1.60.1.70532"}
-{"id": 15488, "field": "name", "en": "Bloodspattered Surcoat", "hash": "bd52acc4239798b7", "src": "db2@1.60.1.70532"}
-{"id": 15489, "field": "name", "en": "Bloodspattered Sabatons", "hash": "e8a776d618231fe1", "src": "db2@1.60.1.70532"}
+{"id": 15485, "field": "name", "en": "War Torn Pants", "hash": "95a3226e0039b4b8", "src": "db2@1.60.1.70790"}
+{"id": 15486, "field": "name", "en": "War Torn Shield", "hash": "ff380a1e3e0bfd70", "src": "db2@1.60.1.70790"}
+{"id": 15487, "field": "name", "en": "War Torn Tunic", "hash": "de88061d8801647f", "src": "db2@1.60.1.70790"}
+{"id": 15488, "field": "name", "en": "Bloodspattered Surcoat", "hash": "bd52acc4239798b7", "src": "db2@1.60.1.70790"}
+{"id": 15489, "field": "name", "en": "Bloodspattered Sabatons", "hash": "e8a776d618231fe1", "src": "db2@1.60.1.70790"}
 {"id": 15490, "field": "name", "en": "Bloodspattered Cloak", "hash": "2fa70e1fe5f0f3c7", "src": "db2@1.60.1.70790"}
-{"id": 15491, "field": "name", "en": "Bloodspattered Gloves", "hash": "5092e5f3dfd0b9ec", "src": "db2@1.60.1.70532"}
-{"id": 15492, "field": "name", "en": "Bloodspattered Sash", "hash": "1fcf39031c82262e", "src": "db2@1.60.1.70532"}
-{"id": 15493, "field": "name", "en": "Bloodspattered Loincloth", "hash": "4818948b8d952a57", "src": "db2@1.60.1.70532"}
-{"id": 15494, "field": "name", "en": "Bloodspattered Shield", "hash": "d3bd5675a2af5bee", "src": "db2@1.60.1.70532"}
-{"id": 15495, "field": "name", "en": "Bloodspattered Wristbands", "hash": "c60578098067ac00", "src": "db2@1.60.1.70532"}
+{"id": 15491, "field": "name", "en": "Bloodspattered Gloves", "hash": "5092e5f3dfd0b9ec", "src": "db2@1.60.1.70790"}
+{"id": 15492, "field": "name", "en": "Bloodspattered Sash", "hash": "1fcf39031c82262e", "src": "db2@1.60.1.70790"}
+{"id": 15493, "field": "name", "en": "Bloodspattered Loincloth", "hash": "4818948b8d952a57", "src": "db2@1.60.1.70790"}
+{"id": 15494, "field": "name", "en": "Bloodspattered Shield", "hash": "d3bd5675a2af5bee", "src": "db2@1.60.1.70790"}
+{"id": 15495, "field": "name", "en": "Bloodspattered Wristbands", "hash": "c60578098067ac00", "src": "db2@1.60.1.70790"}
 {"id": 15496, "field": "name", "en": "Bloodspattered Shoulder Pads", "hash": "9c823c8a2e88c147", "src": "db2@1.60.1.70790"}
-{"id": 15497, "field": "name", "en": "Outrunner's Cord", "hash": "d0c68208690f3322", "src": "db2@1.60.1.70532"}
-{"id": 15498, "field": "name", "en": "Outrunner's Slippers", "hash": "00572fbdb05e6daa", "src": "db2@1.60.1.70532"}
-{"id": 15499, "field": "name", "en": "Outrunner's Cuffs", "hash": "d65f3ad94e5ab89d", "src": "db2@1.60.1.70532"}
-{"id": 15500, "field": "name", "en": "Outrunner's Chestguard", "hash": "26b575473d8be9cf", "src": "db2@1.60.1.70532"}
-{"id": 15501, "field": "name", "en": "Outrunner's Cloak", "hash": "d52cd920796ce6ad", "src": "db2@1.60.1.70532"}
-{"id": 15502, "field": "name", "en": "Outrunner's Gloves", "hash": "0409c91f822a2a5f", "src": "db2@1.60.1.70532"}
-{"id": 15503, "field": "name", "en": "Outrunner's Legguards", "hash": "2518bf9079288701", "src": "db2@1.60.1.70532"}
-{"id": 15504, "field": "name", "en": "Outrunner's Shield", "hash": "873439a14508cc61", "src": "db2@1.60.1.70532"}
+{"id": 15497, "field": "name", "en": "Outrunner's Cord", "hash": "d0c68208690f3322", "src": "db2@1.60.1.70790"}
+{"id": 15498, "field": "name", "en": "Outrunner's Slippers", "hash": "00572fbdb05e6daa", "src": "db2@1.60.1.70790"}
+{"id": 15499, "field": "name", "en": "Outrunner's Cuffs", "hash": "d65f3ad94e5ab89d", "src": "db2@1.60.1.70790"}
+{"id": 15500, "field": "name", "en": "Outrunner's Chestguard", "hash": "26b575473d8be9cf", "src": "db2@1.60.1.70790"}
+{"id": 15501, "field": "name", "en": "Outrunner's Cloak", "hash": "d52cd920796ce6ad", "src": "db2@1.60.1.70790"}
+{"id": 15502, "field": "name", "en": "Outrunner's Gloves", "hash": "0409c91f822a2a5f", "src": "db2@1.60.1.70790"}
+{"id": 15503, "field": "name", "en": "Outrunner's Legguards", "hash": "2518bf9079288701", "src": "db2@1.60.1.70790"}
+{"id": 15504, "field": "name", "en": "Outrunner's Shield", "hash": "873439a14508cc61", "src": "db2@1.60.1.70790"}
 {"id": 15505, "field": "name", "en": "Outrunner's Pauldrons", "hash": "66e2e1ea17f89f3e", "src": "db2@1.60.1.70790"}
-{"id": 15506, "field": "name", "en": "Grunt's AnkleWraps", "hash": "213ea7d84dd666ef", "src": "db2@1.60.1.70532"}
-{"id": 15507, "field": "name", "en": "Grunt's Bracers", "hash": "1b626ab753646979", "src": "db2@1.60.1.70532"}
-{"id": 15508, "field": "name", "en": "Grunt's Cape", "hash": "53da580ec8347f7f", "src": "db2@1.60.1.70532"}
-{"id": 15509, "field": "name", "en": "Grunt's Handwraps", "hash": "e8e7454a8df5c972", "src": "db2@1.60.1.70532"}
-{"id": 15510, "field": "name", "en": "Grunt's Belt", "hash": "53b9149a4aad1b0f", "src": "db2@1.60.1.70532"}
-{"id": 15511, "field": "name", "en": "Grunt's Legguards", "hash": "1f50cca5c6f21d7c", "src": "db2@1.60.1.70532"}
-{"id": 15512, "field": "name", "en": "Grunt's Shield", "hash": "49edfee934fb5afa", "src": "db2@1.60.1.70532"}
-{"id": 15513, "field": "name", "en": "Grunt's Pauldrons", "hash": "611aeeff65c235b9", "src": "db2@1.60.1.70532"}
-{"id": 15514, "field": "name", "en": "Grunt's Chestpiece", "hash": "cdc4f1044a30f147", "src": "db2@1.60.1.70532"}
+{"id": 15506, "field": "name", "en": "Grunt's AnkleWraps", "hash": "213ea7d84dd666ef", "src": "db2@1.60.1.70790"}
+{"id": 15507, "field": "name", "en": "Grunt's Bracers", "hash": "1b626ab753646979", "src": "db2@1.60.1.70790"}
+{"id": 15508, "field": "name", "en": "Grunt's Cape", "hash": "53da580ec8347f7f", "src": "db2@1.60.1.70790"}
+{"id": 15509, "field": "name", "en": "Grunt's Handwraps", "hash": "e8e7454a8df5c972", "src": "db2@1.60.1.70790"}
+{"id": 15510, "field": "name", "en": "Grunt's Belt", "hash": "53b9149a4aad1b0f", "src": "db2@1.60.1.70790"}
+{"id": 15511, "field": "name", "en": "Grunt's Legguards", "hash": "1f50cca5c6f21d7c", "src": "db2@1.60.1.70790"}
+{"id": 15512, "field": "name", "en": "Grunt's Shield", "hash": "49edfee934fb5afa", "src": "db2@1.60.1.70790"}
+{"id": 15513, "field": "name", "en": "Grunt's Pauldrons", "hash": "611aeeff65c235b9", "src": "db2@1.60.1.70790"}
+{"id": 15514, "field": "name", "en": "Grunt's Chestpiece", "hash": "cdc4f1044a30f147", "src": "db2@1.60.1.70790"}
 {"id": 15515, "field": "name", "en": "Spiked Chain Belt", "hash": "1cdf63dbe86ace6d", "src": "db2@1.60.1.70532"}
-{"id": 15516, "field": "name", "en": "Spiked Chain Slippers", "hash": "3df6d81b00098513", "src": "db2@1.60.1.70532"}
-{"id": 15517, "field": "name", "en": "Spiked Chain Wristbands", "hash": "f8d11a3dc260a083", "src": "db2@1.60.1.70532"}
-{"id": 15518, "field": "name", "en": "Spiked Chain Breastplate", "hash": "13ec23beeeda9c9e", "src": "db2@1.60.1.70532"}
-{"id": 15519, "field": "name", "en": "Spiked Chain Cloak", "hash": "d8ceaeb2fd892670", "src": "db2@1.60.1.70532"}
-{"id": 15520, "field": "name", "en": "Spiked Chain Gauntlets", "hash": "e6e469a7bd8a778d", "src": "db2@1.60.1.70532"}
+{"id": 15516, "field": "name", "en": "Spiked Chain Slippers", "hash": "3df6d81b00098513", "src": "db2@1.60.1.70790"}
+{"id": 15517, "field": "name", "en": "Spiked Chain Wristbands", "hash": "f8d11a3dc260a083", "src": "db2@1.60.1.70790"}
+{"id": 15518, "field": "name", "en": "Spiked Chain Breastplate", "hash": "13ec23beeeda9c9e", "src": "db2@1.60.1.70790"}
+{"id": 15519, "field": "name", "en": "Spiked Chain Cloak", "hash": "d8ceaeb2fd892670", "src": "db2@1.60.1.70790"}
+{"id": 15520, "field": "name", "en": "Spiked Chain Gauntlets", "hash": "e6e469a7bd8a778d", "src": "db2@1.60.1.70790"}
 {"id": 15521, "field": "name", "en": "Spiked Chain Leggings", "hash": "730797583f9bced2", "src": "db2@1.60.1.70532"}
-{"id": 15522, "field": "name", "en": "Spiked Chain Shield", "hash": "63048361cd968b67", "src": "db2@1.60.1.70532"}
-{"id": 15523, "field": "name", "en": "Spiked Chain Shoulder Pads", "hash": "28a11e4028d11d1e", "src": "db2@1.60.1.70532"}
-{"id": 15524, "field": "name", "en": "Sentry's Surcoat", "hash": "9f2a3baa242ee67c", "src": "db2@1.60.1.70532"}
-{"id": 15525, "field": "name", "en": "Sentry's Slippers", "hash": "250332ca8a30e762", "src": "db2@1.60.1.70532"}
-{"id": 15526, "field": "name", "en": "Sentry's Cape", "hash": "2a8e2d430a264835", "src": "db2@1.60.1.70532"}
-{"id": 15527, "field": "name", "en": "Sentry's Gloves", "hash": "63e2b62fd12285e5", "src": "db2@1.60.1.70532"}
+{"id": 15522, "field": "name", "en": "Spiked Chain Shield", "hash": "63048361cd968b67", "src": "db2@1.60.1.70790"}
+{"id": 15523, "field": "name", "en": "Spiked Chain Shoulder Pads", "hash": "28a11e4028d11d1e", "src": "db2@1.60.1.70790"}
+{"id": 15524, "field": "name", "en": "Sentry's Surcoat", "hash": "9f2a3baa242ee67c", "src": "db2@1.60.1.70790"}
+{"id": 15525, "field": "name", "en": "Sentry's Slippers", "hash": "250332ca8a30e762", "src": "db2@1.60.1.70790"}
+{"id": 15526, "field": "name", "en": "Sentry's Cape", "hash": "2a8e2d430a264835", "src": "db2@1.60.1.70790"}
+{"id": 15527, "field": "name", "en": "Sentry's Gloves", "hash": "63e2b62fd12285e5", "src": "db2@1.60.1.70790"}
 {"id": 15528, "field": "name", "en": "Sentry's Sash", "hash": "2cb3087fe0a5e853", "src": "db2@1.60.1.70532"}
 {"id": 15529, "field": "name", "en": "Sentry's Leggings", "hash": "5a13f207c9c33121", "src": "db2@1.60.1.70532"}
 {"id": 15530, "field": "name", "en": "Sentry's Shield", "hash": "e70d26b1940127e7", "src": "db2@1.60.1.70532"}
-{"id": 15531, "field": "name", "en": "Sentry's Shoulderguards", "hash": "0f648102f5103445", "src": "db2@1.60.1.70532"}
-{"id": 15532, "field": "name", "en": "Sentry's Armsplints", "hash": "ffa41942c74dcfab", "src": "db2@1.60.1.70532"}
-{"id": 15533, "field": "name", "en": "Sentry's Headdress", "hash": "15e4441c305ea249", "src": "db2@1.60.1.70532"}
-{"id": 15534, "field": "name", "en": "Wicked Chain Boots", "hash": "f95571e526c0b050", "src": "db2@1.60.1.70532"}
+{"id": 15531, "field": "name", "en": "Sentry's Shoulderguards", "hash": "0f648102f5103445", "src": "db2@1.60.1.70790"}
+{"id": 15532, "field": "name", "en": "Sentry's Armsplints", "hash": "ffa41942c74dcfab", "src": "db2@1.60.1.70790"}
+{"id": 15533, "field": "name", "en": "Sentry's Headdress", "hash": "15e4441c305ea249", "src": "db2@1.60.1.70790"}
+{"id": 15534, "field": "name", "en": "Wicked Chain Boots", "hash": "f95571e526c0b050", "src": "db2@1.60.1.70790"}
 {"id": 15535, "field": "name", "en": "Wicked Chain Bracers", "hash": "1b5389ec957e7238", "src": "db2@1.60.1.70532"}
-{"id": 15536, "field": "name", "en": "Wicked Chain Chestpiece", "hash": "702fbd25fcfc07a5", "src": "db2@1.60.1.70532"}
-{"id": 15537, "field": "name", "en": "Wicked Chain Cloak", "hash": "0a7c35a95d70f5f1", "src": "db2@1.60.1.70532"}
+{"id": 15536, "field": "name", "en": "Wicked Chain Chestpiece", "hash": "702fbd25fcfc07a5", "src": "db2@1.60.1.70790"}
+{"id": 15537, "field": "name", "en": "Wicked Chain Cloak", "hash": "0a7c35a95d70f5f1", "src": "db2@1.60.1.70790"}
 {"id": 15538, "field": "name", "en": "Wicked Chain Gauntlets", "hash": "730e45d0bb7fc3f5", "src": "db2@1.60.1.70532"}
-{"id": 15539, "field": "name", "en": "Wicked Chain Waistband", "hash": "d449d58e4a99d345", "src": "db2@1.60.1.70532"}
-{"id": 15540, "field": "name", "en": "Wicked Chain Helmet", "hash": "cbe12c75d4c285c0", "src": "db2@1.60.1.70532"}
-{"id": 15541, "field": "name", "en": "Wicked Chain Legguards", "hash": "39f5c46e3451a86d", "src": "db2@1.60.1.70532"}
+{"id": 15539, "field": "name", "en": "Wicked Chain Waistband", "hash": "d449d58e4a99d345", "src": "db2@1.60.1.70790"}
+{"id": 15540, "field": "name", "en": "Wicked Chain Helmet", "hash": "cbe12c75d4c285c0", "src": "db2@1.60.1.70790"}
+{"id": 15541, "field": "name", "en": "Wicked Chain Legguards", "hash": "39f5c46e3451a86d", "src": "db2@1.60.1.70790"}
 {"id": 15542, "field": "name", "en": "Wicked Chain Shoulder Pads", "hash": "1843361fea20c8f3", "src": "db2@1.60.1.70532"}
-{"id": 15543, "field": "name", "en": "Wicked Chain Shield", "hash": "ced091b42a7337e9", "src": "db2@1.60.1.70532"}
-{"id": 15544, "field": "name", "en": "Thick Scale Sabatons", "hash": "20346da86a5f698f", "src": "db2@1.60.1.70532"}
+{"id": 15543, "field": "name", "en": "Wicked Chain Shield", "hash": "ced091b42a7337e9", "src": "db2@1.60.1.70790"}
+{"id": 15544, "field": "name", "en": "Thick Scale Sabatons", "hash": "20346da86a5f698f", "src": "db2@1.60.1.70790"}
 {"id": 15545, "field": "name", "en": "Thick Scale Bracelets", "hash": "938846c1cffad4a6", "src": "db2@1.60.1.70532"}
 {"id": 15546, "field": "name", "en": "Thick Scale Breastplate", "hash": "e5ac718a70a50811", "src": "db2@1.60.1.70532"}
-{"id": 15547, "field": "name", "en": "Thick Scale Cloak", "hash": "3c72e22913c1e98f", "src": "db2@1.60.1.70532"}
-{"id": 15548, "field": "name", "en": "Thick Scale Gauntlets", "hash": "345f0bd3d18e0302", "src": "db2@1.60.1.70532"}
-{"id": 15549, "field": "name", "en": "Thick Scale Belt", "hash": "65f046ee3e167e91", "src": "db2@1.60.1.70532"}
-{"id": 15550, "field": "name", "en": "Thick Scale Crown", "hash": "3d40bf1064345f15", "src": "db2@1.60.1.70532"}
-{"id": 15551, "field": "name", "en": "Thick Scale Legguards", "hash": "fb468a6c4a5fe77a", "src": "db2@1.60.1.70532"}
-{"id": 15552, "field": "name", "en": "Thick Scale Shield", "hash": "600ad7b63518dbca", "src": "db2@1.60.1.70532"}
-{"id": 15553, "field": "name", "en": "Thick Scale Shoulder Pads", "hash": "dcc151084badd0f4", "src": "db2@1.60.1.70532"}
+{"id": 15547, "field": "name", "en": "Thick Scale Cloak", "hash": "3c72e22913c1e98f", "src": "db2@1.60.1.70790"}
+{"id": 15548, "field": "name", "en": "Thick Scale Gauntlets", "hash": "345f0bd3d18e0302", "src": "db2@1.60.1.70790"}
+{"id": 15549, "field": "name", "en": "Thick Scale Belt", "hash": "65f046ee3e167e91", "src": "db2@1.60.1.70790"}
+{"id": 15550, "field": "name", "en": "Thick Scale Crown", "hash": "3d40bf1064345f15", "src": "db2@1.60.1.70790"}
+{"id": 15551, "field": "name", "en": "Thick Scale Legguards", "hash": "fb468a6c4a5fe77a", "src": "db2@1.60.1.70790"}
+{"id": 15552, "field": "name", "en": "Thick Scale Shield", "hash": "600ad7b63518dbca", "src": "db2@1.60.1.70790"}
+{"id": 15553, "field": "name", "en": "Thick Scale Shoulder Pads", "hash": "dcc151084badd0f4", "src": "db2@1.60.1.70790"}
 {"id": 15554, "field": "name", "en": "Pillager's Girdle", "hash": "0889fd40544acca4", "src": "db2@1.60.1.70532"}
-{"id": 15555, "field": "name", "en": "Pillager's Boots", "hash": "37c140a387d80471", "src": "db2@1.60.1.70532"}
-{"id": 15556, "field": "name", "en": "Pillager's Bracers", "hash": "84388b25dfa9d4e1", "src": "db2@1.60.1.70532"}
-{"id": 15557, "field": "name", "en": "Pillager's Chestguard", "hash": "61ad1ca94712b8cf", "src": "db2@1.60.1.70532"}
+{"id": 15555, "field": "name", "en": "Pillager's Boots", "hash": "37c140a387d80471", "src": "db2@1.60.1.70790"}
+{"id": 15556, "field": "name", "en": "Pillager's Bracers", "hash": "84388b25dfa9d4e1", "src": "db2@1.60.1.70790"}
+{"id": 15557, "field": "name", "en": "Pillager's Chestguard", "hash": "61ad1ca94712b8cf", "src": "db2@1.60.1.70790"}
 {"id": 15558, "field": "name", "en": "Pillager's Crown", "hash": "49b5e1490efabfa9", "src": "db2@1.60.1.70532"}
 {"id": 15559, "field": "name", "en": "Pillager's Cloak", "hash": "48e80462be884a12", "src": "db2@1.60.1.70532"}
-{"id": 15560, "field": "name", "en": "Pillager's Gloves", "hash": "3cd0ea7d9046536f", "src": "db2@1.60.1.70532"}
-{"id": 15561, "field": "name", "en": "Pillager's Leggings", "hash": "5223ff9eed2317e8", "src": "db2@1.60.1.70532"}
+{"id": 15560, "field": "name", "en": "Pillager's Gloves", "hash": "3cd0ea7d9046536f", "src": "db2@1.60.1.70790"}
+{"id": 15561, "field": "name", "en": "Pillager's Leggings", "hash": "5223ff9eed2317e8", "src": "db2@1.60.1.70790"}
 {"id": 15562, "field": "name", "en": "Pillager's Pauldrons", "hash": "1b1f6621baeec9e3", "src": "db2@1.60.1.70532"}
 {"id": 15563, "field": "name", "en": "Pillager's Shield", "hash": "bffb5aff5324f571", "src": "db2@1.60.1.70532"}
 {"id": 15564, "field": "name", "en": "Rugged Armor Kit", "hash": "3885c4d03e14efe8", "src": "db2@1.60.1.70790"}
 {"id": 15564, "field": "description", "en": "Permanently increase the Stamina value by $ec2 and armor value by $ec1 of an item worn on the chest, legs, hands or feet. Only usable on items level $ecim and above.", "hash": "4484080b299c79b8", "src": "db2@1.60.1.70790"}
-{"id": 15565, "field": "name", "en": "Marauder's Boots", "hash": "788af12c751ab5ee", "src": "db2@1.60.1.70532"}
+{"id": 15565, "field": "name", "en": "Marauder's Boots", "hash": "788af12c751ab5ee", "src": "db2@1.60.1.70790"}
 {"id": 15566, "field": "name", "en": "Marauder's Bracers", "hash": "9483efc9968cb289", "src": "db2@1.60.1.70532"}
-{"id": 15567, "field": "name", "en": "Marauder's Tunic", "hash": "b54f4bcb6e0dc223", "src": "db2@1.60.1.70532"}
-{"id": 15568, "field": "name", "en": "Marauder's Cloak", "hash": "89b1b4ebabcafb8f", "src": "db2@1.60.1.70532"}
-{"id": 15569, "field": "name", "en": "Marauder's Crest", "hash": "8a7cf172d48a4c0d", "src": "db2@1.60.1.70532"}
+{"id": 15567, "field": "name", "en": "Marauder's Tunic", "hash": "b54f4bcb6e0dc223", "src": "db2@1.60.1.70790"}
+{"id": 15568, "field": "name", "en": "Marauder's Cloak", "hash": "89b1b4ebabcafb8f", "src": "db2@1.60.1.70790"}
+{"id": 15569, "field": "name", "en": "Marauder's Crest", "hash": "8a7cf172d48a4c0d", "src": "db2@1.60.1.70790"}
 {"id": 15570, "field": "name", "en": "Marauder's Gauntlets", "hash": "606b504183d2b24d", "src": "db2@1.60.1.70532"}
-{"id": 15571, "field": "name", "en": "Marauder's Belt", "hash": "2fcf890867f3cd3b", "src": "db2@1.60.1.70532"}
+{"id": 15571, "field": "name", "en": "Marauder's Belt", "hash": "2fcf890867f3cd3b", "src": "db2@1.60.1.70790"}
 {"id": 15572, "field": "name", "en": "Marauder's Circlet", "hash": "9bfae3fef7a6fff1", "src": "db2@1.60.1.70532"}
-{"id": 15573, "field": "name", "en": "Marauder's Leggings", "hash": "a8b87fb2235ea5d6", "src": "db2@1.60.1.70532"}
-{"id": 15574, "field": "name", "en": "Marauder's Shoulder Pads", "hash": "92f92932f4f8b878", "src": "db2@1.60.1.70532"}
-{"id": 15575, "field": "name", "en": "Sparkleshell Belt", "hash": "216e32ff471273ea", "src": "db2@1.60.1.70532"}
-{"id": 15576, "field": "name", "en": "Sparkleshell Sabatons", "hash": "07c0663f17c279a4", "src": "db2@1.60.1.70532"}
-{"id": 15577, "field": "name", "en": "Sparkleshell Bracers", "hash": "2b7880e92cf4dc66", "src": "db2@1.60.1.70532"}
+{"id": 15573, "field": "name", "en": "Marauder's Leggings", "hash": "a8b87fb2235ea5d6", "src": "db2@1.60.1.70790"}
+{"id": 15574, "field": "name", "en": "Marauder's Shoulder Pads", "hash": "92f92932f4f8b878", "src": "db2@1.60.1.70790"}
+{"id": 15575, "field": "name", "en": "Sparkleshell Belt", "hash": "216e32ff471273ea", "src": "db2@1.60.1.70790"}
+{"id": 15576, "field": "name", "en": "Sparkleshell Sabatons", "hash": "07c0663f17c279a4", "src": "db2@1.60.1.70790"}
+{"id": 15577, "field": "name", "en": "Sparkleshell Bracers", "hash": "2b7880e92cf4dc66", "src": "db2@1.60.1.70790"}
 {"id": 15578, "field": "name", "en": "Sparkleshell Breastplate", "hash": "352efddd30473f63", "src": "db2@1.60.1.70532"}
-{"id": 15579, "field": "name", "en": "Sparkleshell Cloak", "hash": "2de2ae2d7bea66c6", "src": "db2@1.60.1.70532"}
+{"id": 15579, "field": "name", "en": "Sparkleshell Cloak", "hash": "2de2ae2d7bea66c6", "src": "db2@1.60.1.70790"}
 {"id": 15580, "field": "name", "en": "Sparkleshell Headwrap", "hash": "f23715d461ee6a19", "src": "db2@1.60.1.70532"}
-{"id": 15581, "field": "name", "en": "Sparkleshell Gauntlets", "hash": "b0ff40d73491019e", "src": "db2@1.60.1.70532"}
+{"id": 15581, "field": "name", "en": "Sparkleshell Gauntlets", "hash": "b0ff40d73491019e", "src": "db2@1.60.1.70790"}
 {"id": 15582, "field": "name", "en": "Sparkleshell Legguards", "hash": "77e6bf75ad62e605", "src": "db2@1.60.1.70532"}
-{"id": 15583, "field": "name", "en": "Sparkleshell Shoulder Pads", "hash": "d31111e0b5ec22a8", "src": "db2@1.60.1.70532"}
-{"id": 15584, "field": "name", "en": "Sparkleshell Shield", "hash": "ec403d9aa7d96e99", "src": "db2@1.60.1.70532"}
+{"id": 15583, "field": "name", "en": "Sparkleshell Shoulder Pads", "hash": "d31111e0b5ec22a8", "src": "db2@1.60.1.70790"}
+{"id": 15584, "field": "name", "en": "Sparkleshell Shield", "hash": "ec403d9aa7d96e99", "src": "db2@1.60.1.70790"}
 {"id": 15585, "field": "name", "en": "Pardoc Grips", "hash": "a1b9c995976c49ef", "src": "db2@1.60.1.70790"}
 {"id": 15586, "field": "name", "en": "Fast-growing Flower", "hash": "a0aaa30d266f208e", "src": "db2@1.60.1.70790"}
 {"id": 15587, "field": "name", "en": "Ringtail Girdle", "hash": "1fffd9990d2e89cf", "src": "db2@1.60.1.70790"}
 {"id": 15587, "field": "description", "en": "+$s1 Attack Power.", "hash": "ff5c97b29bc1954f", "src": "wago@1.15.9.69722"}
 {"id": 15588, "field": "name", "en": "Bracesteel Belt", "hash": "b5362942dccd5316", "src": "db2@1.60.1.70790"}
-{"id": 15589, "field": "name", "en": "Steadfast Stompers", "hash": "cdf6b0e58ec66dc2", "src": "db2@1.60.1.70532"}
-{"id": 15590, "field": "name", "en": "Steadfast Bracelets", "hash": "f0ca313f57fb79dc", "src": "db2@1.60.1.70532"}
-{"id": 15591, "field": "name", "en": "Steadfast Breastplate", "hash": "6d5d2414b30c8764", "src": "db2@1.60.1.70532"}
+{"id": 15589, "field": "name", "en": "Steadfast Stompers", "hash": "cdf6b0e58ec66dc2", "src": "db2@1.60.1.70790"}
+{"id": 15590, "field": "name", "en": "Steadfast Bracelets", "hash": "f0ca313f57fb79dc", "src": "db2@1.60.1.70790"}
+{"id": 15591, "field": "name", "en": "Steadfast Breastplate", "hash": "6d5d2414b30c8764", "src": "db2@1.60.1.70790"}
 {"id": 15592, "field": "name", "en": "Steadfast Buckler", "hash": "8df8baa9d08c9c00", "src": "db2@1.60.1.70532"}
-{"id": 15593, "field": "name", "en": "Steadfast Coronet", "hash": "656913038a37047f", "src": "db2@1.60.1.70532"}
-{"id": 15594, "field": "name", "en": "Steadfast Cloak", "hash": "991e010017500534", "src": "db2@1.60.1.70532"}
+{"id": 15593, "field": "name", "en": "Steadfast Coronet", "hash": "656913038a37047f", "src": "db2@1.60.1.70790"}
+{"id": 15594, "field": "name", "en": "Steadfast Cloak", "hash": "991e010017500534", "src": "db2@1.60.1.70790"}
 {"id": 15595, "field": "name", "en": "Steadfast Gloves", "hash": "48713024c779884e", "src": "db2@1.60.1.70532"}
-{"id": 15596, "field": "name", "en": "Steadfast Legplates", "hash": "92343b46e1e9b35f", "src": "db2@1.60.1.70532"}
+{"id": 15596, "field": "name", "en": "Steadfast Legplates", "hash": "92343b46e1e9b35f", "src": "db2@1.60.1.70790"}
 {"id": 15597, "field": "name", "en": "Steadfast Shoulders", "hash": "61b034c65265aabc", "src": "db2@1.60.1.70532"}
 {"id": 15598, "field": "name", "en": "Steadfast Girdle", "hash": "142a42e78b7e0183", "src": "db2@1.60.1.70532"}
 {"id": 15599, "field": "name", "en": "Ancient Greaves", "hash": "1ef8b39ce2504b77", "src": "db2@1.60.1.70532"}
-{"id": 15600, "field": "name", "en": "Ancient Vambraces", "hash": "6bd51a504721061f", "src": "db2@1.60.1.70532"}
-{"id": 15601, "field": "name", "en": "Ancient Chestpiece", "hash": "0f15f8924f8fe438", "src": "db2@1.60.1.70532"}
-{"id": 15602, "field": "name", "en": "Ancient Crown", "hash": "cdefc787d3d68314", "src": "db2@1.60.1.70532"}
+{"id": 15600, "field": "name", "en": "Ancient Vambraces", "hash": "6bd51a504721061f", "src": "db2@1.60.1.70790"}
+{"id": 15601, "field": "name", "en": "Ancient Chestpiece", "hash": "0f15f8924f8fe438", "src": "db2@1.60.1.70790"}
+{"id": 15602, "field": "name", "en": "Ancient Crown", "hash": "cdefc787d3d68314", "src": "db2@1.60.1.70790"}
 {"id": 15603, "field": "name", "en": "Ancient Cloak", "hash": "cd21eaa083640d8e", "src": "db2@1.60.1.70532"}
-{"id": 15604, "field": "name", "en": "Ancient Defender", "hash": "8684ba5e46d0fcd6", "src": "db2@1.60.1.70532"}
+{"id": 15604, "field": "name", "en": "Ancient Defender", "hash": "8684ba5e46d0fcd6", "src": "db2@1.60.1.70790"}
 {"id": 15605, "field": "name", "en": "Ancient Gauntlets", "hash": "2deae684f82518ba", "src": "db2@1.60.1.70532"}
 {"id": 15606, "field": "name", "en": "Ancient Belt", "hash": "18e00683a5fea480", "src": "db2@1.60.1.70532"}
-{"id": 15607, "field": "name", "en": "Ancient Legguards", "hash": "f4d2651d70f6fd32", "src": "db2@1.60.1.70532"}
-{"id": 15608, "field": "name", "en": "Ancient Pauldrons", "hash": "369c877c0fc7156f", "src": "db2@1.60.1.70532"}
+{"id": 15607, "field": "name", "en": "Ancient Legguards", "hash": "f4d2651d70f6fd32", "src": "db2@1.60.1.70790"}
+{"id": 15608, "field": "name", "en": "Ancient Pauldrons", "hash": "369c877c0fc7156f", "src": "db2@1.60.1.70790"}
 {"id": 15609, "field": "name", "en": "Bonelink Armor", "hash": "e1175d261edc04b9", "src": "db2@1.60.1.70532"}
-{"id": 15610, "field": "name", "en": "Bonelink Bracers", "hash": "e7a3b61bada27e94", "src": "db2@1.60.1.70532"}
+{"id": 15610, "field": "name", "en": "Bonelink Bracers", "hash": "e7a3b61bada27e94", "src": "db2@1.60.1.70790"}
 {"id": 15611, "field": "name", "en": "Bonelink Cape", "hash": "b7b5973d09855ebe", "src": "db2@1.60.1.70532"}
-{"id": 15612, "field": "name", "en": "Bonelink Gauntlets", "hash": "9d712bf771665616", "src": "db2@1.60.1.70532"}
-{"id": 15613, "field": "name", "en": "Bonelink Belt", "hash": "b79453c98bfdfa3d", "src": "db2@1.60.1.70532"}
-{"id": 15614, "field": "name", "en": "Bonelink Sabatons", "hash": "51dca0b53702a678", "src": "db2@1.60.1.70532"}
-{"id": 15615, "field": "name", "en": "Bonelink Helmet", "hash": "2b3da20f1773e2bf", "src": "db2@1.60.1.70532"}
+{"id": 15612, "field": "name", "en": "Bonelink Gauntlets", "hash": "9d712bf771665616", "src": "db2@1.60.1.70790"}
+{"id": 15613, "field": "name", "en": "Bonelink Belt", "hash": "b79453c98bfdfa3d", "src": "db2@1.60.1.70790"}
+{"id": 15614, "field": "name", "en": "Bonelink Sabatons", "hash": "51dca0b53702a678", "src": "db2@1.60.1.70790"}
+{"id": 15615, "field": "name", "en": "Bonelink Helmet", "hash": "2b3da20f1773e2bf", "src": "db2@1.60.1.70790"}
 {"id": 15616, "field": "name", "en": "Bonelink Legplates", "hash": "9e0470ecf9c1613d", "src": "db2@1.60.1.70532"}
-{"id": 15617, "field": "name", "en": "Bonelink Epaulets", "hash": "c298df2f54edd566", "src": "db2@1.60.1.70532"}
-{"id": 15618, "field": "name", "en": "Bonelink Wall Shield", "hash": "b52d44156a6a3d56", "src": "db2@1.60.1.70532"}
+{"id": 15617, "field": "name", "en": "Bonelink Epaulets", "hash": "c298df2f54edd566", "src": "db2@1.60.1.70790"}
+{"id": 15618, "field": "name", "en": "Bonelink Wall Shield", "hash": "b52d44156a6a3d56", "src": "db2@1.60.1.70790"}
 {"id": 15619, "field": "name", "en": "Gryphon Mail Belt", "hash": "18b416b024a76d88", "src": "db2@1.60.1.70532"}
 {"id": 15620, "field": "name", "en": "Gryphon Mail Bracelets", "hash": "089345795cee20f1", "src": "db2@1.60.1.70532"}
-{"id": 15621, "field": "name", "en": "Gryphon Mail Buckler", "hash": "3c7e4c34b824a175", "src": "db2@1.60.1.70532"}
+{"id": 15621, "field": "name", "en": "Gryphon Mail Buckler", "hash": "3c7e4c34b824a175", "src": "db2@1.60.1.70790"}
 {"id": 15622, "field": "name", "en": "Gryphon Mail Breastplate", "hash": "e3b8d8130c5ce700", "src": "db2@1.60.1.70532"}
-{"id": 15623, "field": "name", "en": "Gryphon Mail Crown", "hash": "b7740e8e96861951", "src": "db2@1.60.1.70532"}
-{"id": 15624, "field": "name", "en": "Gryphon Cloak", "hash": "a4f76e7e14346abe", "src": "db2@1.60.1.70532"}
+{"id": 15623, "field": "name", "en": "Gryphon Mail Crown", "hash": "b7740e8e96861951", "src": "db2@1.60.1.70790"}
+{"id": 15624, "field": "name", "en": "Gryphon Cloak", "hash": "a4f76e7e14346abe", "src": "db2@1.60.1.70790"}
 {"id": 15625, "field": "name", "en": "Gryphon Mail Gauntlets", "hash": "a96a0a865e814f4d", "src": "db2@1.60.1.70532"}
-{"id": 15626, "field": "name", "en": "Gryphon Mail Greaves", "hash": "f335ea67cef0a936", "src": "db2@1.60.1.70532"}
+{"id": 15626, "field": "name", "en": "Gryphon Mail Greaves", "hash": "f335ea67cef0a936", "src": "db2@1.60.1.70790"}
 {"id": 15627, "field": "name", "en": "Gryphon Mail Legguards", "hash": "70518924d75333b4", "src": "db2@1.60.1.70532"}
-{"id": 15628, "field": "name", "en": "Gryphon Mail Pauldrons", "hash": "b21bab7e76234bf1", "src": "db2@1.60.1.70532"}
-{"id": 15629, "field": "name", "en": "Formidable Bracers", "hash": "a716ca4216c212bb", "src": "db2@1.60.1.70532"}
+{"id": 15628, "field": "name", "en": "Gryphon Mail Pauldrons", "hash": "b21bab7e76234bf1", "src": "db2@1.60.1.70790"}
+{"id": 15629, "field": "name", "en": "Formidable Bracers", "hash": "a716ca4216c212bb", "src": "db2@1.60.1.70790"}
 {"id": 15630, "field": "name", "en": "Formidable Sabatons", "hash": "49bff0056eb35655", "src": "db2@1.60.1.70532"}
-{"id": 15631, "field": "name", "en": "Formidable Chestpiece", "hash": "558b32b8065598e1", "src": "db2@1.60.1.70532"}
+{"id": 15631, "field": "name", "en": "Formidable Chestpiece", "hash": "558b32b8065598e1", "src": "db2@1.60.1.70790"}
 {"id": 15632, "field": "name", "en": "Formidable Cape", "hash": "1f9c65ae196b4fc3", "src": "db2@1.60.1.70532"}
-{"id": 15633, "field": "name", "en": "Formidable Crest", "hash": "2f4c55e08e37f72c", "src": "db2@1.60.1.70532"}
+{"id": 15633, "field": "name", "en": "Formidable Crest", "hash": "2f4c55e08e37f72c", "src": "db2@1.60.1.70790"}
 {"id": 15634, "field": "name", "en": "Formidable Circlet", "hash": "ae8dbe7777dc6023", "src": "db2@1.60.1.70532"}
-{"id": 15635, "field": "name", "en": "Formidable Gauntlets", "hash": "76c2c1d3c8fd2032", "src": "db2@1.60.1.70532"}
+{"id": 15635, "field": "name", "en": "Formidable Gauntlets", "hash": "76c2c1d3c8fd2032", "src": "db2@1.60.1.70790"}
 {"id": 15636, "field": "name", "en": "Formidable Belt", "hash": "1f7b223a9be3eb42", "src": "db2@1.60.1.70532"}
-{"id": 15637, "field": "name", "en": "Formidable Legguards", "hash": "3daa407141cf04aa", "src": "db2@1.60.1.70532"}
-{"id": 15638, "field": "name", "en": "Formidable Shoulder Pads", "hash": "1674c37aae3d6330", "src": "db2@1.60.1.70532"}
-{"id": 15639, "field": "name", "en": "Ironhide Bracers", "hash": "5de4e39ca4739a9b", "src": "db2@1.60.1.70532"}
+{"id": 15637, "field": "name", "en": "Formidable Legguards", "hash": "3daa407141cf04aa", "src": "db2@1.60.1.70790"}
+{"id": 15638, "field": "name", "en": "Formidable Shoulder Pads", "hash": "1674c37aae3d6330", "src": "db2@1.60.1.70790"}
+{"id": 15639, "field": "name", "en": "Ironhide Bracers", "hash": "5de4e39ca4739a9b", "src": "db2@1.60.1.70790"}
 {"id": 15640, "field": "name", "en": "Ironhide Breastplate", "hash": "8886074d46738f61", "src": "db2@1.60.1.70532"}
 {"id": 15641, "field": "name", "en": "Ironhide Belt", "hash": "2cc42f03c842617d", "src": "db2@1.60.1.70532"}
-{"id": 15642, "field": "name", "en": "Ironhide Greaves", "hash": "2b590cc5f4b97b9c", "src": "db2@1.60.1.70532"}
-{"id": 15643, "field": "name", "en": "Ironhide Cloak", "hash": "fae2a452d4d0136f", "src": "db2@1.60.1.70532"}
-{"id": 15644, "field": "name", "en": "Ironhide Gauntlets", "hash": "d4a3d42678be8f66", "src": "db2@1.60.1.70532"}
-{"id": 15645, "field": "name", "en": "Ironhide Helmet", "hash": "d04bcf5743eeb03c", "src": "db2@1.60.1.70532"}
-{"id": 15646, "field": "name", "en": "Ironhide Legguards", "hash": "9b8b52c4f19073cd", "src": "db2@1.60.1.70532"}
-{"id": 15647, "field": "name", "en": "Ironhide Pauldrons", "hash": "dd55751e90608c0a", "src": "db2@1.60.1.70532"}
+{"id": 15642, "field": "name", "en": "Ironhide Greaves", "hash": "2b590cc5f4b97b9c", "src": "db2@1.60.1.70790"}
+{"id": 15643, "field": "name", "en": "Ironhide Cloak", "hash": "fae2a452d4d0136f", "src": "db2@1.60.1.70790"}
+{"id": 15644, "field": "name", "en": "Ironhide Gauntlets", "hash": "d4a3d42678be8f66", "src": "db2@1.60.1.70790"}
+{"id": 15645, "field": "name", "en": "Ironhide Helmet", "hash": "d04bcf5743eeb03c", "src": "db2@1.60.1.70790"}
+{"id": 15646, "field": "name", "en": "Ironhide Legguards", "hash": "9b8b52c4f19073cd", "src": "db2@1.60.1.70790"}
+{"id": 15647, "field": "name", "en": "Ironhide Pauldrons", "hash": "dd55751e90608c0a", "src": "db2@1.60.1.70790"}
 {"id": 15648, "field": "name", "en": "Ironhide Shield", "hash": "d33b3496999f6254", "src": "db2@1.60.1.70532"}
-{"id": 15649, "field": "name", "en": "Merciless Bracers", "hash": "3cb5a381dce8063f", "src": "db2@1.60.1.70532"}
-{"id": 15650, "field": "name", "en": "Merciless Surcoat", "hash": "598c178c75c7ead0", "src": "db2@1.60.1.70532"}
-{"id": 15651, "field": "name", "en": "Merciless Crown", "hash": "5fe381523e99c7d4", "src": "db2@1.60.1.70532"}
+{"id": 15649, "field": "name", "en": "Merciless Bracers", "hash": "3cb5a381dce8063f", "src": "db2@1.60.1.70790"}
+{"id": 15650, "field": "name", "en": "Merciless Surcoat", "hash": "598c178c75c7ead0", "src": "db2@1.60.1.70790"}
+{"id": 15651, "field": "name", "en": "Merciless Crown", "hash": "5fe381523e99c7d4", "src": "db2@1.60.1.70790"}
 {"id": 15652, "field": "name", "en": "Merciless Cloak", "hash": "5f15a46bee27523d", "src": "db2@1.60.1.70532"}
-{"id": 15653, "field": "name", "en": "Merciless Gauntlets", "hash": "4c3356c3c2718ec6", "src": "db2@1.60.1.70532"}
+{"id": 15653, "field": "name", "en": "Merciless Gauntlets", "hash": "4c3356c3c2718ec6", "src": "db2@1.60.1.70790"}
 {"id": 15654, "field": "name", "en": "Merciless Belt", "hash": "aa99949f7dfb374b", "src": "db2@1.60.1.70532"}
-{"id": 15655, "field": "name", "en": "Merciless Legguards", "hash": "131ad5613b43733e", "src": "db2@1.60.1.70532"}
-{"id": 15656, "field": "name", "en": "Merciless Epaulets", "hash": "4ac558ae4c782bc4", "src": "db2@1.60.1.70532"}
-{"id": 15657, "field": "name", "en": "Merciless Shield", "hash": "19543fd66fe8bd0a", "src": "db2@1.60.1.70532"}
+{"id": 15655, "field": "name", "en": "Merciless Legguards", "hash": "131ad5613b43733e", "src": "db2@1.60.1.70790"}
+{"id": 15656, "field": "name", "en": "Merciless Epaulets", "hash": "4ac558ae4c782bc4", "src": "db2@1.60.1.70790"}
+{"id": 15657, "field": "name", "en": "Merciless Shield", "hash": "19543fd66fe8bd0a", "src": "db2@1.60.1.70790"}
 {"id": 15658, "field": "name", "en": "Impenetrable Sabatons", "hash": "a1024dd51018a7e0", "src": "db2@1.60.1.70532"}
 {"id": 15659, "field": "name", "en": "Impenetrable Bindings", "hash": "557147d04896c3f9", "src": "db2@1.60.1.70532"}
-{"id": 15660, "field": "name", "en": "Impenetrable Breastplate", "hash": "951101bdba30494c", "src": "db2@1.60.1.70532"}
-{"id": 15661, "field": "name", "en": "Impenetrable Cloak", "hash": "f2d990ae0efb4499", "src": "db2@1.60.1.70532"}
-{"id": 15662, "field": "name", "en": "Impenetrable Gauntlets", "hash": "1db8c424e7e8d815", "src": "db2@1.60.1.70532"}
-{"id": 15663, "field": "name", "en": "Impenetrable Belt", "hash": "59a6cd26d1d57955", "src": "db2@1.60.1.70532"}
-{"id": 15664, "field": "name", "en": "Impenetrable Helmet", "hash": "b3a6c2579ed75953", "src": "db2@1.60.1.70532"}
-{"id": 15665, "field": "name", "en": "Impenetrable Legguards", "hash": "e4a042bd60babc8d", "src": "db2@1.60.1.70532"}
+{"id": 15660, "field": "name", "en": "Impenetrable Breastplate", "hash": "951101bdba30494c", "src": "db2@1.60.1.70790"}
+{"id": 15661, "field": "name", "en": "Impenetrable Cloak", "hash": "f2d990ae0efb4499", "src": "db2@1.60.1.70790"}
+{"id": 15662, "field": "name", "en": "Impenetrable Gauntlets", "hash": "1db8c424e7e8d815", "src": "db2@1.60.1.70790"}
+{"id": 15663, "field": "name", "en": "Impenetrable Belt", "hash": "59a6cd26d1d57955", "src": "db2@1.60.1.70790"}
+{"id": 15664, "field": "name", "en": "Impenetrable Helmet", "hash": "b3a6c2579ed75953", "src": "db2@1.60.1.70790"}
+{"id": 15665, "field": "name", "en": "Impenetrable Legguards", "hash": "e4a042bd60babc8d", "src": "db2@1.60.1.70790"}
 {"id": 15666, "field": "name", "en": "Impenetrable Pauldrons", "hash": "266a651cff8ad4b9", "src": "db2@1.60.1.70532"}
-{"id": 15667, "field": "name", "en": "Impenetrable Wall", "hash": "5c761eb15b7b6f00", "src": "db2@1.60.1.70532"}
-{"id": 15668, "field": "name", "en": "Magnificent Bracers", "hash": "8d58eae252be13b3", "src": "db2@1.60.1.70532"}
-{"id": 15669, "field": "name", "en": "Magnificent Breastplate", "hash": "c13af65e29c21e17", "src": "db2@1.60.1.70532"}
-{"id": 15670, "field": "name", "en": "Magnificent Helmet", "hash": "e62790dc887e8dea", "src": "db2@1.60.1.70532"}
+{"id": 15667, "field": "name", "en": "Impenetrable Wall", "hash": "5c761eb15b7b6f00", "src": "db2@1.60.1.70790"}
+{"id": 15668, "field": "name", "en": "Magnificent Bracers", "hash": "8d58eae252be13b3", "src": "db2@1.60.1.70790"}
+{"id": 15669, "field": "name", "en": "Magnificent Breastplate", "hash": "c13af65e29c21e17", "src": "db2@1.60.1.70790"}
+{"id": 15670, "field": "name", "en": "Magnificent Helmet", "hash": "e62790dc887e8dea", "src": "db2@1.60.1.70790"}
 {"id": 15671, "field": "name", "en": "Magnificent Cloak", "hash": "8ba9b188d8358231", "src": "db2@1.60.1.70532"}
-{"id": 15672, "field": "name", "en": "Magnificent Gauntlets", "hash": "dd9fa5bdde4ae36e", "src": "db2@1.60.1.70532"}
-{"id": 15673, "field": "name", "en": "Magnificent Belt", "hash": "493af47c67bcfb74", "src": "db2@1.60.1.70532"}
-{"id": 15674, "field": "name", "en": "Magnificent Greaves", "hash": "5acd140ba303f4b4", "src": "db2@1.60.1.70532"}
+{"id": 15672, "field": "name", "en": "Magnificent Gauntlets", "hash": "dd9fa5bdde4ae36e", "src": "db2@1.60.1.70790"}
+{"id": 15673, "field": "name", "en": "Magnificent Belt", "hash": "493af47c67bcfb74", "src": "db2@1.60.1.70790"}
+{"id": 15674, "field": "name", "en": "Magnificent Greaves", "hash": "5acd140ba303f4b4", "src": "db2@1.60.1.70790"}
 {"id": 15675, "field": "name", "en": "Magnificent Guard", "hash": "d311a36d14f57dc5", "src": "db2@1.60.1.70532"}
-{"id": 15676, "field": "name", "en": "Magnificent Leggings", "hash": "fdb4fd698588922e", "src": "db2@1.60.1.70532"}
-{"id": 15677, "field": "name", "en": "Magnificent Shoulders", "hash": "adaee432d721e5f2", "src": "db2@1.60.1.70532"}
-{"id": 15678, "field": "name", "en": "Triumphant Sabatons", "hash": "f48de578892348f2", "src": "db2@1.60.1.70532"}
-{"id": 15679, "field": "name", "en": "Triumphant Bracers", "hash": "0ff72415e9a73425", "src": "db2@1.60.1.70532"}
-{"id": 15680, "field": "name", "en": "Triumphant Chestpiece", "hash": "3e06cc65274ac028", "src": "db2@1.60.1.70532"}
-{"id": 15681, "field": "name", "en": "Triumphant Cloak", "hash": "c7ec253b0e399ba4", "src": "db2@1.60.1.70532"}
-{"id": 15682, "field": "name", "en": "Triumphant Gauntlets", "hash": "de275d5f93c2972a", "src": "db2@1.60.1.70532"}
+{"id": 15676, "field": "name", "en": "Magnificent Leggings", "hash": "fdb4fd698588922e", "src": "db2@1.60.1.70790"}
+{"id": 15677, "field": "name", "en": "Magnificent Shoulders", "hash": "adaee432d721e5f2", "src": "db2@1.60.1.70790"}
+{"id": 15678, "field": "name", "en": "Triumphant Sabatons", "hash": "f48de578892348f2", "src": "db2@1.60.1.70790"}
+{"id": 15679, "field": "name", "en": "Triumphant Bracers", "hash": "0ff72415e9a73425", "src": "db2@1.60.1.70790"}
+{"id": 15680, "field": "name", "en": "Triumphant Chestpiece", "hash": "3e06cc65274ac028", "src": "db2@1.60.1.70790"}
+{"id": 15681, "field": "name", "en": "Triumphant Cloak", "hash": "c7ec253b0e399ba4", "src": "db2@1.60.1.70790"}
+{"id": 15682, "field": "name", "en": "Triumphant Gauntlets", "hash": "de275d5f93c2972a", "src": "db2@1.60.1.70790"}
 {"id": 15683, "field": "name", "en": "Triumphant Girdle", "hash": "07a6cd90d802b6b1", "src": "db2@1.60.1.70532"}
-{"id": 15684, "field": "name", "en": "Triumphant Skullcap", "hash": "6e5bbc37e76bca3c", "src": "db2@1.60.1.70532"}
-{"id": 15685, "field": "name", "en": "Triumphant Legplates", "hash": "debaa2541c1da262", "src": "db2@1.60.1.70532"}
-{"id": 15686, "field": "name", "en": "Triumphant Shoulder Pads", "hash": "6f6e16a654c3db99", "src": "db2@1.60.1.70532"}
-{"id": 15687, "field": "name", "en": "Triumphant Shield", "hash": "bf182b4fd6dcdf7e", "src": "db2@1.60.1.70532"}
+{"id": 15684, "field": "name", "en": "Triumphant Skullcap", "hash": "6e5bbc37e76bca3c", "src": "db2@1.60.1.70790"}
+{"id": 15685, "field": "name", "en": "Triumphant Legplates", "hash": "debaa2541c1da262", "src": "db2@1.60.1.70790"}
+{"id": 15686, "field": "name", "en": "Triumphant Shoulder Pads", "hash": "6f6e16a654c3db99", "src": "db2@1.60.1.70790"}
+{"id": 15687, "field": "name", "en": "Triumphant Shield", "hash": "bf182b4fd6dcdf7e", "src": "db2@1.60.1.70790"}
 {"id": 15688, "field": "name", "en": "Magic Beans", "hash": "11283b94f1b288de", "src": "db2@1.60.1.70790"}
 {"id": 15688, "field": "description", "en": "Plant in bright beams of light.", "hash": "782aab330b5e383f", "src": "db2@1.60.1.70790"}
 {"id": 15689, "field": "name", "en": "Trader's Ring", "hash": "22f0fe681f455d4f", "src": "db2@1.60.1.70790"}
 {"id": 15690, "field": "name", "en": "Kodobone Necklace", "hash": "e723f03edbded228", "src": "db2@1.60.1.70790"}
 {"id": 15691, "field": "name", "en": "Sidegunner Shottie", "hash": "dd2d62c69fa0f72b", "src": "db2@1.60.1.70790"}
 {"id": 15692, "field": "name", "en": "Kodo Brander", "hash": "4d0a8bbc6b78b33a", "src": "db2@1.60.1.70790"}
-{"id": 15693, "field": "name", "en": "Grand Shoulders", "hash": "a90f9f52d7bafcca", "src": "db2@1.60.1.70532"}
-{"id": 15694, "field": "name", "en": "Merciless Greaves", "hash": "0a29ccaa2d2de751", "src": "db2@1.60.1.70532"}
+{"id": 15693, "field": "name", "en": "Grand Shoulders", "hash": "a90f9f52d7bafcca", "src": "db2@1.60.1.70790"}
+{"id": 15694, "field": "name", "en": "Merciless Greaves", "hash": "0a29ccaa2d2de751", "src": "db2@1.60.1.70790"}
 {"id": 15695, "field": "name", "en": "Studded Ring Shield", "hash": "9fa1f933a7bfef42", "src": "db2@1.60.1.70790"}
 {"id": 15696, "field": "name", "en": "Ruined Tome", "hash": "cce57c80a237d6a5", "src": "db2@1.60.1.70790"}
 {"id": 15696, "field": "description", "en": "An old, worthless tome.", "hash": "29a1d6f2732e87ae", "src": "db2@1.60.1.70790"}
@@ -903,15 +903,15 @@
 {"id": 15884, "field": "name", "en": "Augustus' Receipt Book", "hash": "feff3f2711c30874", "src": "db2@1.60.1.70790"}
 {"id": 15885, "field": "name", "en": "Pendant of the Sea Lion", "hash": "33e7a7cf355f889a", "src": "db2@1.60.1.70790"}
 {"id": 15886, "field": "name", "en": "Timolain's Phylactery", "hash": "a4effd27b17ae96b", "src": "db2@1.60.1.70790"}
-{"id": 15887, "field": "name", "en": "Heroic Guard", "hash": "b2318aeccddb4f06", "src": "db2@1.60.1.70532"}
+{"id": 15887, "field": "name", "en": "Heroic Guard", "hash": "b2318aeccddb4f06", "src": "db2@1.60.1.70790"}
 {"id": 15888, "field": "name", "en": "Deprecated Glorious Shield", "hash": "1e701b57587e5377", "src": "db2@1.60.1.70790"}
 {"id": 15889, "field": "name", "en": "Deprecated Jademir Scale Shield", "hash": "88deb4b91acfbb8f", "src": "db2@1.60.1.70790"}
 {"id": 15890, "field": "name", "en": "Vanguard Shield", "hash": "101ab951081ec3e9", "src": "db2@1.60.1.70532"}
-{"id": 15891, "field": "name", "en": "Hulking Shield", "hash": "abc18c3b05ebbc99", "src": "db2@1.60.1.70532"}
+{"id": 15891, "field": "name", "en": "Hulking Shield", "hash": "abc18c3b05ebbc99", "src": "db2@1.60.1.70790"}
 {"id": 15892, "field": "name", "en": "Slayer's Shield", "hash": "6a1553089a4d6340", "src": "db2@1.60.1.70532"}
-{"id": 15893, "field": "name", "en": "Prospector's Buckler", "hash": "f46bce7b0ec07c51", "src": "db2@1.60.1.70532"}
-{"id": 15894, "field": "name", "en": "Bristlebark Buckler", "hash": "44f1d9134b88d792", "src": "db2@1.60.1.70532"}
-{"id": 15895, "field": "name", "en": "Burnt Buckler", "hash": "91e17a61b13ec8c4", "src": "db2@1.60.1.70755"}
+{"id": 15893, "field": "name", "en": "Prospector's Buckler", "hash": "f46bce7b0ec07c51", "src": "db2@1.60.1.70790"}
+{"id": 15894, "field": "name", "en": "Bristlebark Buckler", "hash": "44f1d9134b88d792", "src": "db2@1.60.1.70790"}
+{"id": 15895, "field": "name", "en": "Burnt Buckler", "hash": "91e17a61b13ec8c4", "src": "db2@1.60.1.70790"}
 {"id": 15902, "field": "name", "en": "A Crazy Grab Bag", "hash": "c988e88d7a1be7a9", "src": "db2@1.60.1.70790"}
 {"id": 15903, "field": "name", "en": "Right-Handed Claw", "hash": "5b8ee33ff0225474", "src": "db2@1.60.1.70790"}
 {"id": 15904, "field": "name", "en": "Right-Handed Blades", "hash": "a1f6e0ebd4bfaed9", "src": "db2@1.60.1.70790"}
@@ -973,7 +973,7 @@
 {"id": 15962, "field": "name", "en": "Satyr's Rod", "hash": "dcb6a7b542423092", "src": "db2@1.60.1.70790"}
 {"id": 15963, "field": "name", "en": "Stonecloth Branch", "hash": "49b80d14e298a87b", "src": "db2@1.60.1.70790"}
 {"id": 15964, "field": "name", "en": "Silksand Star", "hash": "0cab886bd45c150c", "src": "db2@1.60.1.70790"}
-{"id": 15965, "field": "name", "en": "Windchaser Orb", "hash": "4ade8ef7ee727961", "src": "db2@1.60.1.70532"}
+{"id": 15965, "field": "name", "en": "Windchaser Orb", "hash": "4ade8ef7ee727961", "src": "db2@1.60.1.70790"}
 {"id": 15966, "field": "name", "en": "Venomshroud Orb", "hash": "e5f7383816a7f5d9", "src": "db2@1.60.1.70790"}
 {"id": 15967, "field": "name", "en": "Highborne Star", "hash": "869eba63130b5f4f", "src": "db2@1.60.1.70790"}
 {"id": 15968, "field": "name", "en": "Elunarian Sphere", "hash": "e16bf0a36ac46a8d", "src": "db2@1.60.1.70790"}
@@ -998,8 +998,8 @@
 {"id": 15987, "field": "name", "en": "Astral Orb", "hash": "3ce56db187192afc", "src": "db2@1.60.1.70790"}
 {"id": 15988, "field": "name", "en": "Resplendent Orb", "hash": "7610568f31c38074", "src": "db2@1.60.1.70790"}
 {"id": 15989, "field": "name", "en": "Eternal Rod", "hash": "1c6496195bae458e", "src": "db2@1.60.1.70790"}
-{"id": 15990, "field": "name", "en": "Enduring Shield", "hash": "0f85c4aa5904ccb0", "src": "db2@1.60.1.70532"}
-{"id": 15991, "field": "name", "en": "Warleader's Shield", "hash": "7d932aa054b02fd1", "src": "db2@1.60.1.70532"}
+{"id": 15990, "field": "name", "en": "Enduring Shield", "hash": "0f85c4aa5904ccb0", "src": "db2@1.60.1.70790"}
+{"id": 15991, "field": "name", "en": "Warleader's Shield", "hash": "7d932aa054b02fd1", "src": "db2@1.60.1.70790"}
 {"id": 15992, "field": "name", "en": "Dense Blasting Powder", "hash": "ef3f70e3de23617a", "src": "db2@1.60.1.70790"}
 {"id": 15993, "field": "name", "en": "Thorium Grenade", "hash": "771e9f24d769b93c", "src": "db2@1.60.1.70790"}
 {"id": 15993, "field": "description", "en": "Inflicts $s1 Fire damage and stuns targets for $d in a 3 yard radius. Any damage will break the effect.", "hash": "4fab66fcf48d8e74", "src": "db2@1.60.1.70790"}

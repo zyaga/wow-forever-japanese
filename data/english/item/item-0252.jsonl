@@ -572,5 +572,5 @@
 {"id": 252941, "field": "description", "en": "Teaches you how to craft Mystic Rugged Armor Kit.", "hash": "6d1759c58051c661", "src": "db2@1.60.1.70790"}
 {"id": 252942, "field": "name", "en": "Pattern: Forceful Rugged Armor Kit", "hash": "2018af0d689535e7", "src": "db2@1.60.1.70790"}
 {"id": 252942, "field": "description", "en": "Teaches you how to craft Forceful Rugged Armor Kit.", "hash": "90d7fd84e36b665e", "src": "db2@1.60.1.70790"}
-{"id": 252948, "field": "name", "en": "Cleansed Felbloom", "hash": "1757a4ace66e8e56", "src": "db2@1.60.1.70755"}
-{"id": 252948, "field": "description", "en": "It needs to be prepared before it can be consumed.", "hash": "47a526d3a7d6f750", "src": "db2@1.60.1.70755"}
+{"id": 252948, "field": "name", "en": "Cleansed Felbloom", "hash": "1757a4ace66e8e56", "src": "db2@1.60.1.70790"}
+{"id": 252948, "field": "description", "en": "It needs to be prepared before it can be consumed.", "hash": "47a526d3a7d6f750", "src": "db2@1.60.1.70790"}

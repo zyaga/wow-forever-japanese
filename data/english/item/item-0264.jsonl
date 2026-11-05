@@ -383,6 +383,8 @@
 {"id": 264356, "field": "name", "en": "Iceclaw Bear Pendant", "hash": "00bc8013f623684d", "src": "db2@1.60.1.70790"}
 {"id": 264360, "field": "name", "en": "Diemetradon Meat", "hash": "e51e8e915bec9362", "src": "db2@1.60.1.70790"}
 {"id": 264361, "field": "name", "en": "Pterrordax Meat", "hash": "eaf04f910bcbcada", "src": "db2@1.60.1.70790"}
+{"id": 264501, "field": "name", "en": "Ancient Skyborne Blade", "hash": "1ec61036db24daa6", "src": "db2@1.60.1.70790"}
+{"id": 264501, "field": "description", "en": "An ornate 'L' is etched into the base of the blade.", "hash": "b2f65ea05bd7d8c3", "src": "db2@1.60.1.70790"}
 {"id": 264671, "field": "name", "en": "(DNT) Sylvestris' Bow", "hash": "73e7f3967557bfb9", "src": "db2@1.60.1.70790"}
 {"id": 264693, "field": "name", "en": "Scarlet Crusade Attack Plans", "hash": "c8a9e2c36201ceac", "src": "db2@1.60.1.70790"}
 {"id": 264908, "field": "name", "en": "Ancient Heirloom", "hash": "3ac835ac73d6cbf7", "src": "db2@1.60.1.70790"}

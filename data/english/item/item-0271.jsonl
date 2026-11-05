@@ -1,27 +1,27 @@
-{"id": 271095, "field": "name", "en": "Fang of Magmatus", "hash": "76b731d2113c258f", "src": "db2@1.60.1.70532"}
-{"id": 271096, "field": "name", "en": "Aetherwisp Bracers", "hash": "235da778d1db3077", "src": "db2@1.60.1.70532"}
-{"id": 271097, "field": "name", "en": "Spiritwraith Drape", "hash": "f86527ebe8f7f1d9", "src": "db2@1.60.1.70532"}
-{"id": 271098, "field": "name", "en": "Golemguard Chest", "hash": "0bc22bbb76b7b644", "src": "db2@1.60.1.70532"}
+{"id": 271095, "field": "name", "en": "Fang of Magmatus", "hash": "76b731d2113c258f", "src": "db2@1.60.1.70790"}
+{"id": 271096, "field": "name", "en": "Aetherwisp Bracers", "hash": "235da778d1db3077", "src": "db2@1.60.1.70790"}
+{"id": 271097, "field": "name", "en": "Spiritwraith Drape", "hash": "f86527ebe8f7f1d9", "src": "db2@1.60.1.70790"}
+{"id": 271098, "field": "name", "en": "Golemguard Chest", "hash": "0bc22bbb76b7b644", "src": "db2@1.60.1.70790"}
 {"id": 271100, "field": "name", "en": "Thicket Raptor Meat", "hash": "f8a934c425031843", "src": "db2@1.60.1.70790"}
-{"id": 271201, "field": "name", "en": "Atrophic Girdle", "hash": "545df878dd57dc70", "src": "db2@1.60.1.70532"}
-{"id": 271202, "field": "name", "en": "Witherbite Bracers", "hash": "dc41cc3fa0b3f694", "src": "db2@1.60.1.70532"}
-{"id": 271203, "field": "name", "en": "Segmented Spider Leg", "hash": "a024e068fdca08aa", "src": "db2@1.60.1.70532"}
-{"id": 271204, "field": "name", "en": "Meathook Slicer", "hash": "9ba0b4557b8e873c", "src": "db2@1.60.1.70532"}
-{"id": 271205, "field": "name", "en": "Abomination Bones", "hash": "3445104292b3484b", "src": "db2@1.60.1.70532"}
-{"id": 271206, "field": "name", "en": "Leftover Abomination Skin", "hash": "7d9e5fb58564081a", "src": "db2@1.60.1.70532"}
-{"id": 271207, "field": "name", "en": "Rotmender's Leggings", "hash": "705e8202eae95a7a", "src": "db2@1.60.1.70532"}
-{"id": 271208, "field": "name", "en": "Grip of Fear", "hash": "8b2f4b44663c8cfe", "src": "db2@1.60.1.70532"}
-{"id": 271209, "field": "name", "en": "Bonerust Leggings", "hash": "fa6791fc55cf9f23", "src": "db2@1.60.1.70532"}
-{"id": 271210, "field": "name", "en": "Tuskwrap Belt", "hash": "95ff44dc29387c82", "src": "db2@1.60.1.70532"}
-{"id": 271211, "field": "name", "en": "Vilewalkers", "hash": "5eb5fefcbfff6cfb", "src": "db2@1.60.1.70532"}
-{"id": 271212, "field": "name", "en": "Bloodied Chestwraps", "hash": "216f1ddc134aebb6", "src": "db2@1.60.1.70532"}
-{"id": 271213, "field": "name", "en": "Mirror of Rath'mael", "hash": "ee2593bc8cbd7ea9", "src": "db2@1.60.1.70532"}
-{"id": 271214, "field": "name", "en": "Rotmender's Treads", "hash": "5fb9b543e33e5b17", "src": "db2@1.60.1.70532"}
-{"id": 271215, "field": "name", "en": "Coldspire Staff", "hash": "0897a123482ad11e", "src": "db2@1.60.1.70532"}
-{"id": 271216, "field": "name", "en": "Scepter of the Abandoned", "hash": "754cdb59d3d63183", "src": "db2@1.60.1.70532"}
-{"id": 271217, "field": "name", "en": "Corpse Chopper", "hash": "ca31c697068ca438", "src": "db2@1.60.1.70532"}
-{"id": 271217, "field": "description", "en": "Chop nearby Humanoid or Undead corpse in two, restoring $1322305s1 Health, $1322305s2 Mana, and ${$1322305s3/10} Rage.", "hash": "52063f378dd4c05f", "src": "db2@1.60.1.70532"}
-{"id": 271218, "field": "name", "en": "Vileblood Scimitar", "hash": "b05e3926dc5d44e6", "src": "db2@1.60.1.70532"}
+{"id": 271201, "field": "name", "en": "Atrophic Girdle", "hash": "545df878dd57dc70", "src": "db2@1.60.1.70790"}
+{"id": 271202, "field": "name", "en": "Witherbite Bracers", "hash": "dc41cc3fa0b3f694", "src": "db2@1.60.1.70790"}
+{"id": 271203, "field": "name", "en": "Segmented Spider Leg", "hash": "a024e068fdca08aa", "src": "db2@1.60.1.70790"}
+{"id": 271204, "field": "name", "en": "Meathook Slicer", "hash": "9ba0b4557b8e873c", "src": "db2@1.60.1.70790"}
+{"id": 271205, "field": "name", "en": "Abomination Bones", "hash": "3445104292b3484b", "src": "db2@1.60.1.70790"}
+{"id": 271206, "field": "name", "en": "Leftover Abomination Skin", "hash": "7d9e5fb58564081a", "src": "db2@1.60.1.70790"}
+{"id": 271207, "field": "name", "en": "Rotmender's Leggings", "hash": "705e8202eae95a7a", "src": "db2@1.60.1.70790"}
+{"id": 271208, "field": "name", "en": "Grip of Fear", "hash": "8b2f4b44663c8cfe", "src": "db2@1.60.1.70790"}
+{"id": 271209, "field": "name", "en": "Bonerust Leggings", "hash": "fa6791fc55cf9f23", "src": "db2@1.60.1.70790"}
+{"id": 271210, "field": "name", "en": "Tuskwrap Belt", "hash": "95ff44dc29387c82", "src": "db2@1.60.1.70790"}
+{"id": 271211, "field": "name", "en": "Vilewalkers", "hash": "5eb5fefcbfff6cfb", "src": "db2@1.60.1.70790"}
+{"id": 271212, "field": "name", "en": "Bloodied Chestwraps", "hash": "216f1ddc134aebb6", "src": "db2@1.60.1.70790"}
+{"id": 271213, "field": "name", "en": "Mirror of Rath'mael", "hash": "ee2593bc8cbd7ea9", "src": "db2@1.60.1.70790"}
+{"id": 271214, "field": "name", "en": "Rotmender's Treads", "hash": "5fb9b543e33e5b17", "src": "db2@1.60.1.70790"}
+{"id": 271215, "field": "name", "en": "Coldspire Staff", "hash": "0897a123482ad11e", "src": "db2@1.60.1.70790"}
+{"id": 271216, "field": "name", "en": "Scepter of the Abandoned", "hash": "754cdb59d3d63183", "src": "db2@1.60.1.70790"}
+{"id": 271217, "field": "name", "en": "Corpse Chopper", "hash": "ca31c697068ca438", "src": "db2@1.60.1.70790"}
+{"id": 271217, "field": "description", "en": "Chop nearby Humanoid or Undead corpse in two, restoring $1322305s1 Health, $1322305s2 Mana, and ${$1322305s3/10} Rage.", "hash": "52063f378dd4c05f", "src": "db2@1.60.1.70790"}
+{"id": 271218, "field": "name", "en": "Vileblood Scimitar", "hash": "b05e3926dc5d44e6", "src": "db2@1.60.1.70790"}
 {"id": 271220, "field": "name", "en": "Ephemeral Essence", "hash": "93821755ef0c2803", "src": "db2@1.60.1.70790"}
 {"id": 271343, "field": "name", "en": "Note Scrap", "hash": "d3d0b0108efaa1dc", "src": "db2@1.60.1.70790"}
 {"id": 271350, "field": "name", "en": "Tortured Soul", "hash": "a2c5f242e8dfeb3e", "src": "db2@1.60.1.70790"}
@@ -134,7 +134,7 @@
 {"id": 271765, "field": "description", "en": "Collect the appearances of this armor set.", "hash": "3bcf52b26d5663c8", "src": "db2@1.60.1.70790"}
 {"id": 271766, "field": "name", "en": "Heavehammer", "hash": "2d704e0245ec4544", "src": "db2@1.60.1.70790"}
 {"id": 271767, "field": "name", "en": "Healer's Staff", "hash": "e27437df1927e1ee", "src": "db2@1.60.1.70790"}
-{"id": 271768, "field": "name", "en": "Songblade Stabilizer", "hash": "35efa311236f503a", "src": "db2@1.60.1.70532"}
+{"id": 271768, "field": "name", "en": "Songblade Stabilizer", "hash": "35efa311236f503a", "src": "db2@1.60.1.70790"}
 {"id": 271769, "field": "name", "en": "Daewyn's Girdle", "hash": "beabeec265f3e0b4", "src": "db2@1.60.1.70790"}
 {"id": 271770, "field": "name", "en": "Explorers' League Cartographer's Kit", "hash": "ac776c419de93d56", "src": "db2@1.60.1.70790"}
 {"id": 271770, "field": "description", "en": "Use to sketch a location on the Shapers Terrace map.\nA standard-issue kit with all the tools necessary for exploring and categorizing newly explored areas.", "hash": "38e0b2b638423298", "src": "db2@1.60.1.70790"}
@@ -196,7 +196,7 @@
 {"id": 271905, "field": "description", "en": "Restores $s1 Mana per 5 sec. Restores an additional $1316054s1 Mana per 5 sec in Forest and Grassland areas.", "hash": "cc097fdd7f6b88b0", "src": "db2@1.60.1.70790"}
 {"id": 271906, "field": "name", "en": "Volunteer's Lucky Seal", "hash": "ff2764ffed3445f6", "src": "db2@1.60.1.70790"}
 {"id": 271906, "field": "description", "en": "Increases all Resistances by $s1. Gain an additional $1318103s1 to all Resistances in Forest and Grassland areas.", "hash": "fc42b0533dace83f", "src": "db2@1.60.1.70790"}
-{"id": 271907, "field": "name", "en": "Expeditionary's Cape", "hash": "f9c3d361d0501bb0", "src": "db2@1.60.1.70532"}
+{"id": 271907, "field": "name", "en": "Expeditionary's Cape", "hash": "f9c3d361d0501bb0", "src": "db2@1.60.1.70790"}
 {"id": 271908, "field": "name", "en": "Theramore Signet", "hash": "7e997eb12da341ca", "src": "db2@1.60.1.70790"}
 {"id": 271909, "field": "name", "en": "Theramore Signet", "hash": "7e997eb12da341ca", "src": "db2@1.60.1.70790"}
 {"id": 271910, "field": "name", "en": "Theramore Signet", "hash": "7e997eb12da341ca", "src": "db2@1.60.1.70790"}
@@ -211,39 +211,39 @@
 {"id": 271918, "field": "name", "en": "Seal of the Expedition", "hash": "c22aa72cb95575d8", "src": "db2@1.60.1.70790"}
 {"id": 271919, "field": "name", "en": "Seal of the Expedition", "hash": "c22aa72cb95575d8", "src": "db2@1.60.1.70790"}
 {"id": 271920, "field": "name", "en": "Seal of the Expedition", "hash": "c22aa72cb95575d8", "src": "db2@1.60.1.70790"}
-{"id": 271921, "field": "name", "en": "Expeditionary's Cape", "hash": "f9c3d361d0501bb0", "src": "db2@1.60.1.70532"}
-{"id": 271922, "field": "name", "en": "Expeditionary's Cape", "hash": "f9c3d361d0501bb0", "src": "db2@1.60.1.70532"}
+{"id": 271921, "field": "name", "en": "Expeditionary's Cape", "hash": "f9c3d361d0501bb0", "src": "db2@1.60.1.70790"}
+{"id": 271922, "field": "name", "en": "Expeditionary's Cape", "hash": "f9c3d361d0501bb0", "src": "db2@1.60.1.70790"}
 {"id": 271923, "field": "name", "en": "Expeditionary's Cape", "hash": "f9c3d361d0501bb0", "src": "db2@1.60.1.70532"}
-{"id": 271924, "field": "name", "en": "Rebels' Rugged Reaper", "hash": "286bf1242d983ceb", "src": "db2@1.60.1.70532"}
-{"id": 271925, "field": "name", "en": "Rebels' Rugged Reaper", "hash": "286bf1242d983ceb", "src": "db2@1.60.1.70532"}
-{"id": 271926, "field": "name", "en": "Rebels' Rugged Reaper", "hash": "286bf1242d983ceb", "src": "db2@1.60.1.70532"}
+{"id": 271924, "field": "name", "en": "Rebels' Rugged Reaper", "hash": "286bf1242d983ceb", "src": "db2@1.60.1.70790"}
+{"id": 271925, "field": "name", "en": "Rebels' Rugged Reaper", "hash": "286bf1242d983ceb", "src": "db2@1.60.1.70790"}
+{"id": 271926, "field": "name", "en": "Rebels' Rugged Reaper", "hash": "286bf1242d983ceb", "src": "db2@1.60.1.70790"}
 {"id": 271927, "field": "name", "en": "Rebels' Rugged Reaper", "hash": "286bf1242d983ceb", "src": "db2@1.60.1.70532"}
-{"id": 271928, "field": "name", "en": "Clever Expeditionary's Spellblade", "hash": "d9bf169f4b4f30e1", "src": "db2@1.60.1.70532"}
-{"id": 271929, "field": "name", "en": "Clever Expeditionary's Spellblade", "hash": "d9bf169f4b4f30e1", "src": "db2@1.60.1.70532"}
-{"id": 271930, "field": "name", "en": "Clever Expeditionary's Spellblade", "hash": "d9bf169f4b4f30e1", "src": "db2@1.60.1.70532"}
+{"id": 271928, "field": "name", "en": "Clever Expeditionary's Spellblade", "hash": "d9bf169f4b4f30e1", "src": "db2@1.60.1.70790"}
+{"id": 271929, "field": "name", "en": "Clever Expeditionary's Spellblade", "hash": "d9bf169f4b4f30e1", "src": "db2@1.60.1.70790"}
+{"id": 271930, "field": "name", "en": "Clever Expeditionary's Spellblade", "hash": "d9bf169f4b4f30e1", "src": "db2@1.60.1.70790"}
 {"id": 271931, "field": "name", "en": "Clever Expeditionary's Spellblade", "hash": "d9bf169f4b4f30e1", "src": "db2@1.60.1.70532"}
-{"id": 271932, "field": "name", "en": "Insurgent's Manifesto", "hash": "2d2d93fe2af60cc8", "src": "db2@1.60.1.70532"}
-{"id": 271933, "field": "name", "en": "Insurgent's Manifesto", "hash": "2d2d93fe2af60cc8", "src": "db2@1.60.1.70532"}
-{"id": 271934, "field": "name", "en": "Insurgent's Manifesto", "hash": "2d2d93fe2af60cc8", "src": "db2@1.60.1.70532"}
+{"id": 271932, "field": "name", "en": "Insurgent's Manifesto", "hash": "2d2d93fe2af60cc8", "src": "db2@1.60.1.70790"}
+{"id": 271933, "field": "name", "en": "Insurgent's Manifesto", "hash": "2d2d93fe2af60cc8", "src": "db2@1.60.1.70790"}
+{"id": 271934, "field": "name", "en": "Insurgent's Manifesto", "hash": "2d2d93fe2af60cc8", "src": "db2@1.60.1.70790"}
 {"id": 271935, "field": "name", "en": "Insurgent's Manifesto", "hash": "2d2d93fe2af60cc8", "src": "db2@1.60.1.70532"}
-{"id": 271936, "field": "name", "en": "Guerrilla's Jagged Mace", "hash": "ffc3724d1402f2c5", "src": "db2@1.60.1.70532"}
-{"id": 271937, "field": "name", "en": "Guerrilla's Jagged Mace", "hash": "ffc3724d1402f2c5", "src": "db2@1.60.1.70532"}
-{"id": 271938, "field": "name", "en": "Guerrilla's Jagged Mace", "hash": "ffc3724d1402f2c5", "src": "db2@1.60.1.70532"}
+{"id": 271936, "field": "name", "en": "Guerrilla's Jagged Mace", "hash": "ffc3724d1402f2c5", "src": "db2@1.60.1.70790"}
+{"id": 271937, "field": "name", "en": "Guerrilla's Jagged Mace", "hash": "ffc3724d1402f2c5", "src": "db2@1.60.1.70790"}
+{"id": 271938, "field": "name", "en": "Guerrilla's Jagged Mace", "hash": "ffc3724d1402f2c5", "src": "db2@1.60.1.70790"}
 {"id": 271939, "field": "name", "en": "Guerrilla's Jagged Mace", "hash": "ffc3724d1402f2c5", "src": "db2@1.60.1.70532"}
 {"id": 271940, "field": "name", "en": "Theramore Gauntlets", "hash": "5d6a7aa920076163", "src": "db2@1.60.1.70790"}
 {"id": 271941, "field": "name", "en": "Theramore Gauntlets", "hash": "5d6a7aa920076163", "src": "db2@1.60.1.70790"}
 {"id": 271945, "field": "name", "en": "Theramore Handwraps", "hash": "ede871ec5fdcf1c0", "src": "db2@1.60.1.70790"}
 {"id": 271946, "field": "name", "en": "Theramore Handwraps", "hash": "ede871ec5fdcf1c0", "src": "db2@1.60.1.70790"}
-{"id": 271948, "field": "name", "en": "Theramore Gloves", "hash": "ea239b4382f085aa", "src": "db2@1.60.1.70532"}
-{"id": 271949, "field": "name", "en": "Theramore Gloves", "hash": "ea239b4382f085aa", "src": "db2@1.60.1.70532"}
-{"id": 271950, "field": "name", "en": "Theramore Handguards", "hash": "3a5735f18e8b0bc1", "src": "db2@1.60.1.70532"}
-{"id": 271951, "field": "name", "en": "Theramore Handguards", "hash": "3a5735f18e8b0bc1", "src": "db2@1.60.1.70532"}
-{"id": 271953, "field": "name", "en": "Theramore Shoulderpads", "hash": "bb2e44200db70619", "src": "db2@1.60.1.70532"}
-{"id": 271954, "field": "name", "en": "Theramore Shoulders", "hash": "2d79b91e18de63e7", "src": "db2@1.60.1.70532"}
+{"id": 271948, "field": "name", "en": "Theramore Gloves", "hash": "ea239b4382f085aa", "src": "db2@1.60.1.70790"}
+{"id": 271949, "field": "name", "en": "Theramore Gloves", "hash": "ea239b4382f085aa", "src": "db2@1.60.1.70790"}
+{"id": 271950, "field": "name", "en": "Theramore Handguards", "hash": "3a5735f18e8b0bc1", "src": "db2@1.60.1.70790"}
+{"id": 271951, "field": "name", "en": "Theramore Handguards", "hash": "3a5735f18e8b0bc1", "src": "db2@1.60.1.70790"}
+{"id": 271953, "field": "name", "en": "Theramore Shoulderpads", "hash": "bb2e44200db70619", "src": "db2@1.60.1.70790"}
+{"id": 271954, "field": "name", "en": "Theramore Shoulders", "hash": "2d79b91e18de63e7", "src": "db2@1.60.1.70790"}
 {"id": 271955, "field": "name", "en": "Theramore Pauldrons", "hash": "661c1ba137a95e07", "src": "db2@1.60.1.70790"}
-{"id": 271956, "field": "name", "en": "Theramore Epaulets", "hash": "9eeece3304edca69", "src": "db2@1.60.1.70532"}
-{"id": 271957, "field": "name", "en": "Theramore Mantle", "hash": "0e03bb6242bf6b74", "src": "db2@1.60.1.70532"}
-{"id": 271959, "field": "name", "en": "Theramore Spaulders", "hash": "0740078a15ea6b44", "src": "db2@1.60.1.70532"}
+{"id": 271956, "field": "name", "en": "Theramore Epaulets", "hash": "9eeece3304edca69", "src": "db2@1.60.1.70790"}
+{"id": 271957, "field": "name", "en": "Theramore Mantle", "hash": "0e03bb6242bf6b74", "src": "db2@1.60.1.70790"}
+{"id": 271959, "field": "name", "en": "Theramore Spaulders", "hash": "0740078a15ea6b44", "src": "db2@1.60.1.70790"}
 {"id": 271965, "field": "name", "en": "Jewelcrafting Chisel", "hash": "fd00a3d98311b61f", "src": "db2@1.60.1.70790"}
 {"id": 271972, "field": "name", "en": "Partially Digested Journal Page", "hash": "8854c6f295f20ddb", "src": "db2@1.60.1.70790"}
 {"id": 271972, "field": "description", "en": "This page is still soggy and stinks badly.", "hash": "c2ed8c1c25e7a8f3", "src": "db2@1.60.1.70790"}

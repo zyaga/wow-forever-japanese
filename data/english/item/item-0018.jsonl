@@ -364,9 +364,9 @@
 {"id": 18608, "field": "description", "en": "Calls forth Anathema.\nIncreases the critical effect chance of your Holy spells by $s1%.", "hash": "978fde24f0d58f84", "src": "db2@1.60.1.70790"}
 {"id": 18609, "field": "name", "en": "Anathema", "hash": "47fc808881053f45", "src": "db2@1.60.1.70790"}
 {"id": 18609, "field": "description", "en": "Calls forth Benediction.", "hash": "aba9d642e9274542", "src": "db2@1.60.1.70790"}
-{"id": 18610, "field": "name", "en": "Keen Machete", "hash": "0309056a328eec8d", "src": "db2@1.60.1.70532"}
-{"id": 18611, "field": "name", "en": "Gnarlpine Leggings", "hash": "42728fea6405e9bb", "src": "db2@1.60.1.70532"}
-{"id": 18612, "field": "name", "en": "Bloody Chain Boots", "hash": "5049312299469c75", "src": "db2@1.60.1.70532"}
+{"id": 18610, "field": "name", "en": "Keen Machete", "hash": "0309056a328eec8d", "src": "db2@1.60.1.70790"}
+{"id": 18611, "field": "name", "en": "Gnarlpine Leggings", "hash": "42728fea6405e9bb", "src": "db2@1.60.1.70790"}
+{"id": 18612, "field": "name", "en": "Bloody Chain Boots", "hash": "5049312299469c75", "src": "db2@1.60.1.70790"}
 {"id": 18622, "field": "name", "en": "Flawless Fel Essence (Jaedenar)", "hash": "b063fdf491ba49f6", "src": "db2@1.60.1.70790"}
 {"id": 18623, "field": "name", "en": "Flawless Fel Essence (Dark Portal)", "hash": "95e3ddac62531000", "src": "db2@1.60.1.70790"}
 {"id": 18624, "field": "name", "en": "Flawless Fel Essence (Azshara)", "hash": "5f5d8a410dd19384", "src": "db2@1.60.1.70790"}
@@ -471,12 +471,12 @@
 {"id": 18707, "field": "name", "en": "Ancient Rune Etched Stave", "hash": "86543f5f8f50bbc7", "src": "db2@1.60.1.70790"}
 {"id": 18707, "field": "description", "en": "Forms Rhok'delar, Longbow of the Ancient Keepers, when combined with Enchanted Black Dragon Sinew.\nA Gift from the Ancients.", "hash": "673b1dc2e3e3dda4", "src": "db2@1.60.1.70790"}
 {"id": 18708, "field": "name", "en": "Petrified Bark", "hash": "2a27d4b7099c0cb1", "src": "db2@1.60.1.70790"}
-{"id": 18709, "field": "name", "en": "Arena Wristguards", "hash": "9bcbcbcab4c2af58", "src": "db2@1.60.1.70532"}
+{"id": 18709, "field": "name", "en": "Arena Wristguards", "hash": "9bcbcbcab4c2af58", "src": "db2@1.60.1.70790"}
 {"id": 18709, "field": "description", "en": "Improves your chance to get a critical strike with spells by $s1%.", "hash": "0b08362e3ef02cd7", "src": "wago@1.15.9.69722"}
-{"id": 18710, "field": "name", "en": "Arena Bracers", "hash": "d3a9d0dfe45fd1b1", "src": "db2@1.60.1.70532"}
-{"id": 18711, "field": "name", "en": "Arena Bands", "hash": "3d166ca3f7ac1ea0", "src": "db2@1.60.1.70532"}
+{"id": 18710, "field": "name", "en": "Arena Bracers", "hash": "d3a9d0dfe45fd1b1", "src": "db2@1.60.1.70790"}
+{"id": 18711, "field": "name", "en": "Arena Bands", "hash": "3d166ca3f7ac1ea0", "src": "db2@1.60.1.70790"}
 {"id": 18711, "field": "description", "en": "+$s1 Attack Power.", "hash": "ff5c97b29bc1954f", "src": "wago@1.15.9.69722"}
-{"id": 18712, "field": "name", "en": "Arena Vambraces", "hash": "c09382807b64af16", "src": "db2@1.60.1.70532"}
+{"id": 18712, "field": "name", "en": "Arena Vambraces", "hash": "c09382807b64af16", "src": "db2@1.60.1.70790"}
 {"id": 18713, "field": "name", "en": "Rhok'delar, Longbow of the Ancient Keepers", "hash": "e2cf99aea3c42856", "src": "db2@1.60.1.70790"}
 {"id": 18713, "field": "description", "en": "Improves your chance to get a critical strike by $s1%.\n+$s1 ranged Attack Power.", "hash": "39115aaab92d432f", "src": "wago@1.15.9.69722"}
 {"id": 18714, "field": "name", "en": "Ancient Sinew Wrapped Lamina", "hash": "f7d950a85ec344d9", "src": "db2@1.60.1.70790"}

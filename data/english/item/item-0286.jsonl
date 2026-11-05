@@ -153,13 +153,13 @@
 {"id": 286425, "field": "name", "en": "Monster - Sword, Scimitar Basic", "hash": "c6431ce7051228e6", "src": "db2@1.60.1.70790"}
 {"id": 286426, "field": "name", "en": "Honorbound Cloak", "hash": "ed34a0059d8e8628", "src": "db2@1.60.1.70790"}
 {"id": 286427, "field": "name", "en": "Cloak of the Honored Guest", "hash": "9ac651eabd941c0b", "src": "db2@1.60.1.70790"}
-{"id": 286533, "field": "name", "en": "Cheetah Hide Grips", "hash": "a96089df6a6a86ff", "src": "db2@1.60.1.70532"}
-{"id": 286534, "field": "name", "en": "Silithid Piercer", "hash": "3b3663cdcd9daf00", "src": "db2@1.60.1.70532"}
-{"id": 286535, "field": "name", "en": "Sludge-Stained Band", "hash": "667b2f6b37799f0c", "src": "db2@1.60.1.70532"}
-{"id": 286536, "field": "name", "en": "Heckler's Hide", "hash": "e61a2db9053e21ee", "src": "db2@1.60.1.70532"}
-{"id": 286537, "field": "name", "en": "Thunderstomp's Horn", "hash": "b94943653f02dda6", "src": "db2@1.60.1.70532"}
-{"id": 286537, "field": "description", "en": "Thunderstomp nearby enemies, inflicting $s1 Nature damage.", "hash": "96e923c538f5df6b", "src": "db2@1.60.1.70532"}
-{"id": 286540, "field": "name", "en": "The Skyblade", "hash": "a2a67a0229fbda5d", "src": "db2@1.60.1.70532"}
+{"id": 286533, "field": "name", "en": "Cheetah Hide Grips", "hash": "a96089df6a6a86ff", "src": "db2@1.60.1.70790"}
+{"id": 286534, "field": "name", "en": "Silithid Piercer", "hash": "3b3663cdcd9daf00", "src": "db2@1.60.1.70790"}
+{"id": 286535, "field": "name", "en": "Sludge-Stained Band", "hash": "667b2f6b37799f0c", "src": "db2@1.60.1.70790"}
+{"id": 286536, "field": "name", "en": "Heckler's Hide", "hash": "e61a2db9053e21ee", "src": "db2@1.60.1.70790"}
+{"id": 286537, "field": "name", "en": "Thunderstomp's Horn", "hash": "b94943653f02dda6", "src": "db2@1.60.1.70790"}
+{"id": 286537, "field": "description", "en": "Thunderstomp nearby enemies, inflicting $s1 Nature damage.", "hash": "96e923c538f5df6b", "src": "db2@1.60.1.70790"}
+{"id": 286540, "field": "name", "en": "The Skyblade", "hash": "a2a67a0229fbda5d", "src": "db2@1.60.1.70790"}
 {"id": 286541, "field": "name", "en": "Bael'dun Tankard", "hash": "cd89dc358062070a", "src": "db2@1.60.1.70532"}
 {"id": 286541, "field": "description", "en": "Restores ${($s1/5)*$d} mana over $d.  Must remain seated while drinking.", "hash": "f502561a4ad8f81d", "src": "db2@1.60.1.70532"}
 {"id": 286554, "field": "name", "en": "Warleader's Signet", "hash": "8ede9d873c8449ef", "src": "db2@1.60.1.70532"}
@@ -167,44 +167,44 @@
 {"id": 286556, "field": "description", "en": "Slows nearby enemies by $s1% for $d, increased to $s2% in Desert areas.", "hash": "124abd593924b8c7", "src": "db2@1.60.1.70532"}
 {"id": 286568, "field": "name", "en": "Blisterpaw Bones", "hash": "e6150596d9b19974", "src": "db2@1.60.1.70532"}
 {"id": 286568, "field": "description", "en": "Taken from a hyena that consumed anything, or anyone.", "hash": "2a7b9883a8ed7975", "src": "db2@1.60.1.70532"}
-{"id": 286569, "field": "name", "en": "Firebird Leggings", "hash": "bb0cfbc11fe65f09", "src": "db2@1.60.1.70532"}
+{"id": 286569, "field": "name", "en": "Firebird Leggings", "hash": "bb0cfbc11fe65f09", "src": "db2@1.60.1.70790"}
 {"id": 286572, "field": "name", "en": "Ogre Casting Cloak", "hash": "c54d717dcbcf8ee8", "src": "db2@1.60.1.70532"}
 {"id": 286639, "field": "name", "en": "Ambassador's Bloodrobes", "hash": "87a9785ef26941a4", "src": "db2@1.60.1.70532"}
 {"id": 286640, "field": "name", "en": "High Priestess's Kilt", "hash": "781b2e4f6e2c0cd3", "src": "db2@1.60.1.70532"}
 {"id": 286647, "field": "name", "en": "Depleted Crystal Heart", "hash": "f6ffc4ab25dc4f61", "src": "db2@1.60.1.70790"}
 {"id": 286648, "field": "name", "en": "Depleted Crystal Heart", "hash": "f6ffc4ab25dc4f61", "src": "db2@1.60.1.70790"}
 {"id": 286648, "field": "description", "en": "Throw into an Unstable Mana Rift.", "hash": "ee05b862c92525ca", "src": "db2@1.60.1.70790"}
-{"id": 286728, "field": "name", "en": "Kolkar Hammer", "hash": "5f1e5aa34ffd0bdc", "src": "db2@1.60.1.70532"}
-{"id": 286729, "field": "name", "en": "Kolkar Bow", "hash": "8f8ba21901d31390", "src": "db2@1.60.1.70532"}
-{"id": 286730, "field": "name", "en": "Pristine Orcish Dagger", "hash": "8abb0d74a14a8601", "src": "db2@1.60.1.70532"}
-{"id": 286731, "field": "name", "en": "Aggor's Refitted Belt", "hash": "03d24a1a855a92cd", "src": "db2@1.60.1.70532"}
-{"id": 286732, "field": "name", "en": "Shiny Silver Coin", "hash": "02d4af2386a5f09c", "src": "db2@1.60.1.70532"}
-{"id": 286732, "field": "description", "en": "$@spelldesc1321323", "hash": "7f1bac1573d5d902", "src": "db2@1.60.1.70532"}
-{"id": 286733, "field": "name", "en": "Fightin' Fish", "hash": "ef291fc7b6f703a6", "src": "db2@1.60.1.70532"}
-{"id": 286734, "field": "name", "en": "Ban'ethil Quiver", "hash": "44618870be9a6705", "src": "db2@1.60.1.70532"}
-{"id": 286734, "field": "description", "en": "Increases ranged attack speed by $s1%.", "hash": "3009bf393dc16067", "src": "db2@1.60.1.70532"}
-{"id": 286735, "field": "name", "en": "Sentinel's Slasher", "hash": "4cd751dbd6a68276", "src": "db2@1.60.1.70532"}
+{"id": 286728, "field": "name", "en": "Kolkar Hammer", "hash": "5f1e5aa34ffd0bdc", "src": "db2@1.60.1.70790"}
+{"id": 286729, "field": "name", "en": "Kolkar Bow", "hash": "8f8ba21901d31390", "src": "db2@1.60.1.70790"}
+{"id": 286730, "field": "name", "en": "Pristine Orcish Dagger", "hash": "8abb0d74a14a8601", "src": "db2@1.60.1.70790"}
+{"id": 286731, "field": "name", "en": "Aggor's Refitted Belt", "hash": "03d24a1a855a92cd", "src": "db2@1.60.1.70790"}
+{"id": 286732, "field": "name", "en": "Shiny Silver Coin", "hash": "02d4af2386a5f09c", "src": "db2@1.60.1.70790"}
+{"id": 286732, "field": "description", "en": "$@spelldesc1321323", "hash": "7f1bac1573d5d902", "src": "db2@1.60.1.70790"}
+{"id": 286733, "field": "name", "en": "Fightin' Fish", "hash": "ef291fc7b6f703a6", "src": "db2@1.60.1.70790"}
+{"id": 286734, "field": "name", "en": "Ban'ethil Quiver", "hash": "44618870be9a6705", "src": "db2@1.60.1.70790"}
+{"id": 286734, "field": "description", "en": "Increases ranged attack speed by $s1%.", "hash": "3009bf393dc16067", "src": "db2@1.60.1.70790"}
+{"id": 286735, "field": "name", "en": "Sentinel's Slasher", "hash": "4cd751dbd6a68276", "src": "db2@1.60.1.70790"}
 {"id": 286737, "field": "name", "en": "Avala's Binding", "hash": "d11bf2822c04af8a", "src": "db2@1.60.1.70790"}
-{"id": 286740, "field": "name", "en": "Proud Brave's Guard", "hash": "8bdc981f8b2a445b", "src": "db2@1.60.1.70532"}
-{"id": 286741, "field": "name", "en": "Centaur Skull Basher", "hash": "28e649507f7a03dd", "src": "db2@1.60.1.70532"}
-{"id": 286742, "field": "name", "en": "Riptear's Cleaver", "hash": "624ada013e4b28e5", "src": "db2@1.60.1.70532"}
-{"id": 286743, "field": "name", "en": "Riptear's Spare Arm", "hash": "881ea1cfcc6bd7ff", "src": "db2@1.60.1.70532"}
-{"id": 286744, "field": "name", "en": "Thrice-Stitched Flesh", "hash": "f4d894fa4ec9e45b", "src": "db2@1.60.1.70532"}
-{"id": 286745, "field": "name", "en": "Furlfeather Ring", "hash": "f26d6ba0f22399f6", "src": "db2@1.60.1.70532"}
-{"id": 286746, "field": "name", "en": "Shal'ma's Shawl", "hash": "87b6b3ba8530c275", "src": "db2@1.60.1.70532"}
-{"id": 286748, "field": "name", "en": "Bristlebark Bow", "hash": "b7d0f100d5dcb58a", "src": "db2@1.60.1.70532"}
-{"id": 286749, "field": "name", "en": "Wrathroot", "hash": "619c54641ab6a25c", "src": "db2@1.60.1.70532"}
-{"id": 286750, "field": "name", "en": "Wisesight Wand", "hash": "abe44001011b768c", "src": "db2@1.60.1.70532"}
-{"id": 286751, "field": "name", "en": "Ghostfang's Steps", "hash": "85509e66411c1b3c", "src": "db2@1.60.1.70532"}
-{"id": 286752, "field": "name", "en": "Igleggings", "hash": "b8165859d5e13023", "src": "db2@1.60.1.70532"}
-{"id": 286753, "field": "name", "en": "Snarlsnout Shooter", "hash": "e81a45ad57e40b38", "src": "db2@1.60.1.70532"}
-{"id": 286754, "field": "name", "en": "Ukta's Conduit", "hash": "b479f5302ca9cd34", "src": "db2@1.60.1.70532"}
-{"id": 286755, "field": "name", "en": "Helm Splitter", "hash": "160ed81182118572", "src": "db2@1.60.1.70532"}
-{"id": 286977, "field": "name", "en": "Sword of the Fallen", "hash": "54d6b35ad8fa1a74", "src": "db2@1.60.1.70532"}
-{"id": 286978, "field": "name", "en": "Rotmender's Garb", "hash": "83e854b44252c2e0", "src": "db2@1.60.1.70532"}
-{"id": 286979, "field": "name", "en": "Rotmender's Gloves", "hash": "320c208b5f2ef278", "src": "db2@1.60.1.70532"}
-{"id": 286980, "field": "name", "en": "Rotmender's Sash", "hash": "8583f881e3325321", "src": "db2@1.60.1.70532"}
-{"id": 286981, "field": "name", "en": "Death Bindings", "hash": "6d755b3e14fbdf05", "src": "db2@1.60.1.70532"}
+{"id": 286740, "field": "name", "en": "Proud Brave's Guard", "hash": "8bdc981f8b2a445b", "src": "db2@1.60.1.70790"}
+{"id": 286741, "field": "name", "en": "Centaur Skull Basher", "hash": "28e649507f7a03dd", "src": "db2@1.60.1.70790"}
+{"id": 286742, "field": "name", "en": "Riptear's Cleaver", "hash": "624ada013e4b28e5", "src": "db2@1.60.1.70790"}
+{"id": 286743, "field": "name", "en": "Riptear's Spare Arm", "hash": "881ea1cfcc6bd7ff", "src": "db2@1.60.1.70790"}
+{"id": 286744, "field": "name", "en": "Thrice-Stitched Flesh", "hash": "f4d894fa4ec9e45b", "src": "db2@1.60.1.70790"}
+{"id": 286745, "field": "name", "en": "Furlfeather Ring", "hash": "f26d6ba0f22399f6", "src": "db2@1.60.1.70790"}
+{"id": 286746, "field": "name", "en": "Shal'ma's Shawl", "hash": "87b6b3ba8530c275", "src": "db2@1.60.1.70790"}
+{"id": 286748, "field": "name", "en": "Bristlebark Bow", "hash": "b7d0f100d5dcb58a", "src": "db2@1.60.1.70790"}
+{"id": 286749, "field": "name", "en": "Wrathroot", "hash": "619c54641ab6a25c", "src": "db2@1.60.1.70790"}
+{"id": 286750, "field": "name", "en": "Wisesight Wand", "hash": "abe44001011b768c", "src": "db2@1.60.1.70790"}
+{"id": 286751, "field": "name", "en": "Ghostfang's Steps", "hash": "85509e66411c1b3c", "src": "db2@1.60.1.70790"}
+{"id": 286752, "field": "name", "en": "Igleggings", "hash": "b8165859d5e13023", "src": "db2@1.60.1.70790"}
+{"id": 286753, "field": "name", "en": "Snarlsnout Shooter", "hash": "e81a45ad57e40b38", "src": "db2@1.60.1.70790"}
+{"id": 286754, "field": "name", "en": "Ukta's Conduit", "hash": "b479f5302ca9cd34", "src": "db2@1.60.1.70790"}
+{"id": 286755, "field": "name", "en": "Helm Splitter", "hash": "160ed81182118572", "src": "db2@1.60.1.70790"}
+{"id": 286977, "field": "name", "en": "Sword of the Fallen", "hash": "54d6b35ad8fa1a74", "src": "db2@1.60.1.70790"}
+{"id": 286978, "field": "name", "en": "Rotmender's Garb", "hash": "83e854b44252c2e0", "src": "db2@1.60.1.70790"}
+{"id": 286979, "field": "name", "en": "Rotmender's Gloves", "hash": "320c208b5f2ef278", "src": "db2@1.60.1.70790"}
+{"id": 286980, "field": "name", "en": "Rotmender's Sash", "hash": "8583f881e3325321", "src": "db2@1.60.1.70790"}
+{"id": 286981, "field": "name", "en": "Death Bindings", "hash": "6d755b3e14fbdf05", "src": "db2@1.60.1.70790"}
 {"id": 286982, "field": "name", "en": "Unearthed Barrier", "hash": "e23df5aff47778c5", "src": "db2@1.60.1.70532"}
 {"id": 286982, "field": "description", "en": "Deals $17496s1 Nature damage every time you block. Damage is doubled in swamps.", "hash": "565638e98d4c7df3", "src": "db2@1.60.1.70532"}
 {"id": 286983, "field": "name", "en": "Ancient Cleaver", "hash": "67142288a2bbfa6f", "src": "db2@1.60.1.70532"}

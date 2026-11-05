@@ -1,3 +1,6 @@
+{"id": 1282082, "field": "name", "en": "Command: Kill!", "hash": "7fa8b08062d17985", "src": "db2@1.60.1.70790"}
+{"id": 1282082, "field": "description", "en": "Commands Snarlfang and Terrorhowl to attack a random enemy for $d.", "hash": "56cc0cd4583ecd76", "src": "db2@1.60.1.70790"}
+{"id": 1282082, "field": "aura", "en": "A wolf is directing its attacks at you!", "hash": "589669886b30f9c9", "src": "db2@1.60.1.70790"}
 {"id": 1282185, "field": "name", "en": "DNT Kill Credit", "hash": "c2ff79355f5256a4", "src": "db2@1.60.1.70790"}
 {"id": 1282189, "field": "name", "en": "Renalard's Tuft", "hash": "c2bd79b19b3ff68e", "src": "db2@1.60.1.70790"}
 {"id": 1282189, "field": "description", "en": "Take a tuft of fur from Renalard's tail.", "hash": "7f610cd980ee4a2e", "src": "db2@1.60.1.70790"}
@@ -8,7 +11,18 @@
 {"id": 1282383, "field": "name", "en": "Rain of Fire", "hash": "10bf9d846ae16c50", "src": "db2@1.60.1.70790"}
 {"id": 1282384, "field": "name", "en": "Rain of Fire", "hash": "10bf9d846ae16c50", "src": "db2@1.60.1.70790"}
 {"id": 1282385, "field": "name", "en": "Rain of Fire", "hash": "10bf9d846ae16c50", "src": "db2@1.60.1.70790"}
+{"id": 1282386, "field": "name", "en": "Mugg's Fury", "hash": "1f8f5d4c32910309", "src": "db2@1.60.1.70790"}
+{"id": 1282386, "field": "description", "en": "Successful melee attacks increase Mugg's attack speed by $s1% until Mugg swaps to a new weapon.", "hash": "5128a4f7c1488628", "src": "db2@1.60.1.70790"}
+{"id": 1282387, "field": "name", "en": "Mugg's Fury", "hash": "1f8f5d4c32910309", "src": "db2@1.60.1.70790"}
+{"id": 1282387, "field": "description", "en": "$@spelldesc1282386", "hash": "ed0bf70be933df0f", "src": "db2@1.60.1.70790"}
+{"id": 1282387, "field": "aura", "en": "Melee attack speed increased by $w1%.\r\n\r\nThis effect is reset when Mugg swaps to a new weapon.", "hash": "4d2d83a2f3f5b699", "src": "db2@1.60.1.70790"}
 {"id": 1282389, "field": "name", "en": "Plant Seeds", "hash": "4bab6698549797ec", "src": "db2@1.60.1.70790"}
+{"id": 1282393, "field": "name", "en": "Set of Maces", "hash": "0f71cf40d2ca5a8e", "src": "db2@1.60.1.70790"}
+{"id": 1282393, "field": "description", "en": "Mugg equips a set of two 1-handed maces, increasing his melee damage done by $s1%.", "hash": "51673a680aadbbe9", "src": "db2@1.60.1.70790"}
+{"id": 1282393, "field": "aura", "en": "Melee attack damage increased by $s1%.", "hash": "62bcb889e6366083", "src": "db2@1.60.1.70790"}
+{"id": 1282394, "field": "name", "en": "Set of Mauls", "hash": "0f7689771a3ffd58", "src": "db2@1.60.1.70790"}
+{"id": 1282394, "field": "description", "en": "Mugg equips a set of two 2-handed mauls, increasing his melee damage done by $s1%.", "hash": "e62e14433209b0e0", "src": "db2@1.60.1.70790"}
+{"id": 1282394, "field": "aura", "en": "Melee attack damage increased by $s1%.", "hash": "62bcb889e6366083", "src": "db2@1.60.1.70790"}
 {"id": 1282398, "field": "name", "en": "Plant Seeds", "hash": "4bab6698549797ec", "src": "db2@1.60.1.70790"}
 {"id": 1282398, "field": "description", "en": "Plant the seed in a Greenhouse to grow it over time.", "hash": "30332618603fa496", "src": "db2@1.60.1.70790"}
 {"id": 1282422, "field": "name", "en": "Set Health to 50%", "hash": "28f848621b289f4c", "src": "db2@1.60.1.70790"}

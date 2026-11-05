@@ -376,8 +376,8 @@
 {"id": 17692, "field": "name", "en": "Horn Ring", "hash": "4f9cb37c6219f9df", "src": "db2@1.60.1.70790"}
 {"id": 17693, "field": "name", "en": "Coated Cerulean Vial", "hash": "11ddf57499de42ed", "src": "db2@1.60.1.70790"}
 {"id": 17693, "field": "description", "en": "Fill at the orange crystal pool in Maraudon.", "hash": "6382af8a30a3830f", "src": "db2@1.60.1.70790"}
-{"id": 17694, "field": "name", "en": "Band of the Fist", "hash": "7af6e7d291fc2088", "src": "db2@1.60.1.70532"}
-{"id": 17695, "field": "name", "en": "Chestnut Mantle", "hash": "34b0c30cf00b1797", "src": "db2@1.60.1.70532"}
+{"id": 17694, "field": "name", "en": "Band of the Fist", "hash": "7af6e7d291fc2088", "src": "db2@1.60.1.70790"}
+{"id": 17695, "field": "name", "en": "Chestnut Mantle", "hash": "34b0c30cf00b1797", "src": "db2@1.60.1.70790"}
 {"id": 17696, "field": "name", "en": "Filled Cerulean Vial", "hash": "fe20551a1e988719", "src": "db2@1.60.1.70790"}
 {"id": 17696, "field": "description", "en": "Pour on Vylestem Vines to purge them of corruption.", "hash": "63687e6a144eff71", "src": "db2@1.60.1.70790"}
 {"id": 17702, "field": "name", "en": "Celebrian Rod", "hash": "194b26bc3e8fbdc9", "src": "db2@1.60.1.70790"}
@@ -502,7 +502,7 @@
 {"id": 17908, "field": "description", "en": "Returns you to the sanctuary of Frostwolf Keep.", "hash": "4c7c77ce95a88c76", "src": "db2@1.60.1.70790"}
 {"id": 17909, "field": "name", "en": "Frostwolf Insignia Rank 6", "hash": "0539eff6df70b0d5", "src": "db2@1.60.1.70790"}
 {"id": 17909, "field": "description", "en": "Returns you to the sanctuary of Frostwolf Keep.\nThe Eye of Command", "hash": "623806a1b564dd6e", "src": "db2@1.60.1.70790"}
-{"id": 17922, "field": "name", "en": "Lionfur Armor", "hash": "6f67b231f581767c", "src": "db2@1.60.1.70532"}
+{"id": 17922, "field": "name", "en": "Lionfur Armor", "hash": "6f67b231f581767c", "src": "db2@1.60.1.70790"}
 {"id": 17942, "field": "name", "en": "Monster - Mace2H, War Maul", "hash": "8899d81b6e9ff74d", "src": "db2@1.60.1.70790"}
 {"id": 17962, "field": "name", "en": "Blue Sack of Gems", "hash": "9db2d11eca9556b1", "src": "db2@1.60.1.70790"}
 {"id": 17963, "field": "name", "en": "Green Sack of Gems", "hash": "0346e20b5efd5bbe", "src": "db2@1.60.1.70790"}

@@ -1,4 +1,4 @@
--- UI/VoicePanelText.lua: the voice panel's text (ADR-069): the line paged a sentence at a time, each page's words for
+-- UI/VoicePanelText.lua: the voice panel's text (ADR-063): the line paged a sentence at a time, each page's words for
 -- the word cards, the English shown while the reveal key is held, and the whole-text window.
 --   Text.paginate(ja, budget) → pages, starts, segs (pure: starts are shares of the line; segs map each page's pieces
 --                                 back to their bytes in `ja`)

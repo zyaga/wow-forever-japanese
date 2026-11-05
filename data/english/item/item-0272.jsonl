@@ -55,7 +55,7 @@
 {"id": 272061, "field": "description", "en": "Restores $s1 Mana per 5 sec. Restores an additional $1318125s1 Mana per 5 sec in Forest and Grassland areas.", "hash": "922e24ed4d04a37f", "src": "db2@1.60.1.70790"}
 {"id": 272062, "field": "name", "en": "Relentless Raider's Seal", "hash": "20b491c16257da24", "src": "db2@1.60.1.70790"}
 {"id": 272062, "field": "description", "en": "Increases all Resistances by $s1. Gain an additional $1316052s1 to all Resistances in Forest and Grassland areas.", "hash": "f0b47016864934c3", "src": "db2@1.60.1.70790"}
-{"id": 272063, "field": "name", "en": "Darkspear Raider's Cloak", "hash": "2740ee1adf2b2d5b", "src": "db2@1.60.1.70532"}
+{"id": 272063, "field": "name", "en": "Darkspear Raider's Cloak", "hash": "2740ee1adf2b2d5b", "src": "db2@1.60.1.70790"}
 {"id": 272064, "field": "name", "en": "Insurgent's Band", "hash": "7d9439fad397769a", "src": "db2@1.60.1.70790"}
 {"id": 272065, "field": "name", "en": "Insurgent's Band", "hash": "7d9439fad397769a", "src": "db2@1.60.1.70790"}
 {"id": 272066, "field": "name", "en": "Insurgent's Band", "hash": "7d9439fad397769a", "src": "db2@1.60.1.70790"}
@@ -68,39 +68,39 @@
 {"id": 272073, "field": "name", "en": "Darkspear Warding Pendant", "hash": "ea5cef5d278b0913", "src": "db2@1.60.1.70790"}
 {"id": 272074, "field": "name", "en": "Darkspear Warding Pendant", "hash": "ea5cef5d278b0913", "src": "db2@1.60.1.70790"}
 {"id": 272075, "field": "name", "en": "Darkspear Warding Pendant", "hash": "ea5cef5d278b0913", "src": "db2@1.60.1.70790"}
-{"id": 272076, "field": "name", "en": "Darkspear Raider's Cloak", "hash": "2740ee1adf2b2d5b", "src": "db2@1.60.1.70532"}
-{"id": 272077, "field": "name", "en": "Darkspear Raider's Cloak", "hash": "2740ee1adf2b2d5b", "src": "db2@1.60.1.70532"}
+{"id": 272076, "field": "name", "en": "Darkspear Raider's Cloak", "hash": "2740ee1adf2b2d5b", "src": "db2@1.60.1.70790"}
+{"id": 272077, "field": "name", "en": "Darkspear Raider's Cloak", "hash": "2740ee1adf2b2d5b", "src": "db2@1.60.1.70790"}
 {"id": 272078, "field": "name", "en": "Darkspear Raider's Cloak", "hash": "2740ee1adf2b2d5b", "src": "db2@1.60.1.70532"}
-{"id": 272079, "field": "name", "en": "Darkspear Raider's Reaper", "hash": "563df6438df61623", "src": "db2@1.60.1.70532"}
-{"id": 272080, "field": "name", "en": "Darkspear Raider's Reaper", "hash": "563df6438df61623", "src": "db2@1.60.1.70532"}
-{"id": 272081, "field": "name", "en": "Darkspear Raider's Reaper", "hash": "563df6438df61623", "src": "db2@1.60.1.70532"}
+{"id": 272079, "field": "name", "en": "Darkspear Raider's Reaper", "hash": "563df6438df61623", "src": "db2@1.60.1.70790"}
+{"id": 272080, "field": "name", "en": "Darkspear Raider's Reaper", "hash": "563df6438df61623", "src": "db2@1.60.1.70790"}
+{"id": 272081, "field": "name", "en": "Darkspear Raider's Reaper", "hash": "563df6438df61623", "src": "db2@1.60.1.70790"}
 {"id": 272082, "field": "name", "en": "Darkspear Raider's Reaper", "hash": "563df6438df61623", "src": "db2@1.60.1.70532"}
-{"id": 272083, "field": "name", "en": "Darkspear Insurgent's Spellblade", "hash": "07fcae9ecf1c0800", "src": "db2@1.60.1.70532"}
-{"id": 272084, "field": "name", "en": "Darkspear Insurgent's Spellblade", "hash": "07fcae9ecf1c0800", "src": "db2@1.60.1.70532"}
-{"id": 272085, "field": "name", "en": "Darkspear Insurgent's Spellblade", "hash": "07fcae9ecf1c0800", "src": "db2@1.60.1.70532"}
+{"id": 272083, "field": "name", "en": "Darkspear Insurgent's Spellblade", "hash": "07fcae9ecf1c0800", "src": "db2@1.60.1.70790"}
+{"id": 272084, "field": "name", "en": "Darkspear Insurgent's Spellblade", "hash": "07fcae9ecf1c0800", "src": "db2@1.60.1.70790"}
+{"id": 272085, "field": "name", "en": "Darkspear Insurgent's Spellblade", "hash": "07fcae9ecf1c0800", "src": "db2@1.60.1.70790"}
 {"id": 272086, "field": "name", "en": "Darkspear Insurgent's Spellblade", "hash": "07fcae9ecf1c0800", "src": "db2@1.60.1.70532"}
-{"id": 272087, "field": "name", "en": "Tome of the Darkspear Prophecy", "hash": "aa546a2b0640a7e6", "src": "db2@1.60.1.70532"}
-{"id": 272088, "field": "name", "en": "Tome of the Darkspear Prophecy", "hash": "aa546a2b0640a7e6", "src": "db2@1.60.1.70532"}
-{"id": 272089, "field": "name", "en": "Tome of the Darkspear Prophecy", "hash": "aa546a2b0640a7e6", "src": "db2@1.60.1.70532"}
+{"id": 272087, "field": "name", "en": "Tome of the Darkspear Prophecy", "hash": "aa546a2b0640a7e6", "src": "db2@1.60.1.70790"}
+{"id": 272088, "field": "name", "en": "Tome of the Darkspear Prophecy", "hash": "aa546a2b0640a7e6", "src": "db2@1.60.1.70790"}
+{"id": 272089, "field": "name", "en": "Tome of the Darkspear Prophecy", "hash": "aa546a2b0640a7e6", "src": "db2@1.60.1.70790"}
 {"id": 272090, "field": "name", "en": "Tome of the Darkspear Prophecy", "hash": "aa546a2b0640a7e6", "src": "db2@1.60.1.70532"}
-{"id": 272091, "field": "name", "en": "Darkspear Skirmisher's Bludgeon", "hash": "117392d0b6ec6157", "src": "db2@1.60.1.70532"}
-{"id": 272092, "field": "name", "en": "Darkspear Skirmisher's Bludgeon", "hash": "117392d0b6ec6157", "src": "db2@1.60.1.70532"}
-{"id": 272093, "field": "name", "en": "Darkspear Skirmisher's Bludgeon", "hash": "117392d0b6ec6157", "src": "db2@1.60.1.70532"}
+{"id": 272091, "field": "name", "en": "Darkspear Skirmisher's Bludgeon", "hash": "117392d0b6ec6157", "src": "db2@1.60.1.70790"}
+{"id": 272092, "field": "name", "en": "Darkspear Skirmisher's Bludgeon", "hash": "117392d0b6ec6157", "src": "db2@1.60.1.70790"}
+{"id": 272093, "field": "name", "en": "Darkspear Skirmisher's Bludgeon", "hash": "117392d0b6ec6157", "src": "db2@1.60.1.70790"}
 {"id": 272094, "field": "name", "en": "Darkspear Skirmisher's Bludgeon", "hash": "117392d0b6ec6157", "src": "db2@1.60.1.70532"}
 {"id": 272095, "field": "name", "en": "Raider Gauntlets", "hash": "7d63f19b2963c848", "src": "db2@1.60.1.70790"}
 {"id": 272096, "field": "name", "en": "Raider Gauntlets", "hash": "7d63f19b2963c848", "src": "db2@1.60.1.70790"}
 {"id": 272097, "field": "name", "en": "Raider Handwraps", "hash": "0de1e8e3693958a5", "src": "db2@1.60.1.70790"}
 {"id": 272098, "field": "name", "en": "Raider Handwraps", "hash": "0de1e8e3693958a5", "src": "db2@1.60.1.70790"}
-{"id": 272099, "field": "name", "en": "Raider Gloves", "hash": "cb4e83d3cbd790ed", "src": "db2@1.60.1.70532"}
-{"id": 272100, "field": "name", "en": "Raider Gloves", "hash": "cb4e83d3cbd790ed", "src": "db2@1.60.1.70532"}
-{"id": 272101, "field": "name", "en": "Raider Handguards", "hash": "96ff1417f93749d0", "src": "db2@1.60.1.70532"}
-{"id": 272102, "field": "name", "en": "Raider Handguards", "hash": "96ff1417f93749d0", "src": "db2@1.60.1.70532"}
-{"id": 272103, "field": "name", "en": "Darkspear Shoulderpads", "hash": "e9cd68b2ddfdb4a9", "src": "db2@1.60.1.70532"}
-{"id": 272104, "field": "name", "en": "Darkspear Shoulders", "hash": "279f2d87f983afc7", "src": "db2@1.60.1.70532"}
+{"id": 272099, "field": "name", "en": "Raider Gloves", "hash": "cb4e83d3cbd790ed", "src": "db2@1.60.1.70790"}
+{"id": 272100, "field": "name", "en": "Raider Gloves", "hash": "cb4e83d3cbd790ed", "src": "db2@1.60.1.70790"}
+{"id": 272101, "field": "name", "en": "Raider Handguards", "hash": "96ff1417f93749d0", "src": "db2@1.60.1.70790"}
+{"id": 272102, "field": "name", "en": "Raider Handguards", "hash": "96ff1417f93749d0", "src": "db2@1.60.1.70790"}
+{"id": 272103, "field": "name", "en": "Darkspear Shoulderpads", "hash": "e9cd68b2ddfdb4a9", "src": "db2@1.60.1.70790"}
+{"id": 272104, "field": "name", "en": "Darkspear Shoulders", "hash": "279f2d87f983afc7", "src": "db2@1.60.1.70790"}
 {"id": 272105, "field": "name", "en": "Darkspear Pauldrons", "hash": "6041900a184ea9f8", "src": "db2@1.60.1.70790"}
-{"id": 272106, "field": "name", "en": "Darkspear Epaulets", "hash": "8b589e3cdc355cdb", "src": "db2@1.60.1.70532"}
-{"id": 272107, "field": "name", "en": "Darkspear Mantle", "hash": "6f59b53a0b286d8d", "src": "db2@1.60.1.70532"}
-{"id": 272108, "field": "name", "en": "Darkspear Spaulders", "hash": "01657bf3f68fb724", "src": "db2@1.60.1.70532"}
+{"id": 272106, "field": "name", "en": "Darkspear Epaulets", "hash": "8b589e3cdc355cdb", "src": "db2@1.60.1.70790"}
+{"id": 272107, "field": "name", "en": "Darkspear Mantle", "hash": "6f59b53a0b286d8d", "src": "db2@1.60.1.70790"}
+{"id": 272108, "field": "name", "en": "Darkspear Spaulders", "hash": "01657bf3f68fb724", "src": "db2@1.60.1.70790"}
 {"id": 272124, "field": "name", "en": "Translated Tale of I'lalai", "hash": "1c6c17eccef6262e", "src": "db2@1.60.1.70790"}
 {"id": 272124, "field": "description", "en": "A compilation of the translated workings by Loremaster Dibbs, recounting the tale of the lost troll city, I'lalai the Drowned City.", "hash": "62e50a0a6c867455", "src": "db2@1.60.1.70790"}
 {"id": 272126, "field": "name", "en": "Makeshift Bandages", "hash": "77fca7463b385c9c", "src": "db2@1.60.1.70790"}
@@ -138,7 +138,7 @@
 {"id": 272314, "field": "name", "en": "Neutralizing Concoction", "hash": "80e135eb5e243e1a", "src": "db2@1.60.1.70790"}
 {"id": 272314, "field": "description", "en": "The liquid inside the vial seems to churn violently, and sticks to the glass in a way that suggests a certain amount of elasticity.", "hash": "64ddc24c10048f6f", "src": "db2@1.60.1.70790"}
 {"id": 272319, "field": "name", "en": "Tattered Note", "hash": "79f4ec28407ac764", "src": "db2@1.60.1.70790"}
-{"id": 272393, "field": "name", "en": "Magician's Cord", "hash": "31d37644d3f02aa1", "src": "db2@1.60.1.70532"}
+{"id": 272393, "field": "name", "en": "Magician's Cord", "hash": "31d37644d3f02aa1", "src": "db2@1.60.1.70790"}
 {"id": 272394, "field": "name", "en": "Penitent's Cinch", "hash": "32533dc81adfc135", "src": "db2@1.60.1.70790"}
 {"id": 272395, "field": "name", "en": "Assassin's Waistguard", "hash": "aafb459e2f2ca80e", "src": "db2@1.60.1.70790"}
 {"id": 272396, "field": "name", "en": "Shifter's Belt", "hash": "fa7f6aa5c79c23f1", "src": "db2@1.60.1.70790"}
@@ -155,10 +155,10 @@
 {"id": 272408, "field": "name", "en": "Cutthroat's Signet", "hash": "2051806fb0daf19e", "src": "db2@1.60.1.70790"}
 {"id": 272409, "field": "name", "en": "Ring of Awareness", "hash": "013487c274fa6257", "src": "db2@1.60.1.70790"}
 {"id": 272410, "field": "name", "en": "Windseeker's Belt", "hash": "c53e3be98dfdf67a", "src": "db2@1.60.1.70790"}
-{"id": 272411, "field": "name", "en": "Arcanoweave Cloak", "hash": "18859818e8ca2548", "src": "db2@1.60.1.70532"}
+{"id": 272411, "field": "name", "en": "Arcanoweave Cloak", "hash": "18859818e8ca2548", "src": "db2@1.60.1.70790"}
 {"id": 272413, "field": "name", "en": "Drape of Recovery", "hash": "154919afd96c4b8f", "src": "db2@1.60.1.70790"}
-{"id": 272414, "field": "name", "en": "Howler's Furs", "hash": "ead22482383b42ae", "src": "db2@1.60.1.70532"}
-{"id": 272415, "field": "name", "en": "Stalwart Cloak", "hash": "3e35c3e611dc961b", "src": "db2@1.60.1.70532"}
+{"id": 272414, "field": "name", "en": "Howler's Furs", "hash": "ead22482383b42ae", "src": "db2@1.60.1.70790"}
+{"id": 272415, "field": "name", "en": "Stalwart Cloak", "hash": "3e35c3e611dc961b", "src": "db2@1.60.1.70790"}
 {"id": 272427, "field": "name", "en": "Howling Idol", "hash": "f6367c57d457093f", "src": "db2@1.60.1.70790"}
 {"id": 272427, "field": "description", "en": "Reduces the cooldown of your Shifting Power ability by ${$m1/-1000}.1 sec.", "hash": "2db774ba15ea366e", "src": "db2@1.60.1.70790"}
 {"id": 272428, "field": "name", "en": "Enraged Idol", "hash": "fcb5555c019b5bff", "src": "db2@1.60.1.70790"}
@@ -563,14 +563,14 @@
 {"id": 272932, "field": "name", "en": "Parcel of Supplies", "hash": "0eda422893cdcc6f", "src": "db2@1.60.1.70790"}
 {"id": 272936, "field": "name", "en": "Deadwood Key", "hash": "1ca2663325df4254", "src": "db2@1.60.1.70790"}
 {"id": 272941, "field": "name", "en": "Thick Logs", "hash": "0da790e1dd7b9305", "src": "db2@1.60.1.70790"}
-{"id": 272957, "field": "name", "en": "Theramore Shoulderguards", "hash": "377a57b254c1053c", "src": "db2@1.60.1.70532"}
-{"id": 272958, "field": "name", "en": "Darkspear Shoulderguards", "hash": "81a513dddc2219b0", "src": "db2@1.60.1.70532"}
+{"id": 272957, "field": "name", "en": "Theramore Shoulderguards", "hash": "377a57b254c1053c", "src": "db2@1.60.1.70790"}
+{"id": 272958, "field": "name", "en": "Darkspear Shoulderguards", "hash": "81a513dddc2219b0", "src": "db2@1.60.1.70790"}
 {"id": 272973, "field": "name", "en": "Drop of Stolen Life", "hash": "557dbf872bab12bc", "src": "db2@1.60.1.70790"}
 {"id": 272974, "field": "name", "en": "The Jewel of the Horizon", "hash": "169e65219474884d", "src": "db2@1.60.1.70790"}
 {"id": 272976, "field": "name", "en": "Bent Wire", "hash": "fda4a2d2abbfe33d", "src": "db2@1.60.1.70790"}
 {"id": 272977, "field": "name", "en": "Spare Part", "hash": "1478d676f6b91a2f", "src": "db2@1.60.1.70790"}
 {"id": 272977, "field": "description", "en": "Unusually well-preserved, this odd piece must have been forged from an alloy resistant to corrosion.", "hash": "15dfe8003faebb25", "src": "db2@1.60.1.70790"}
-{"id": 272996, "field": "name", "en": "Trogg Scepter", "hash": "81528b05491aa34e", "src": "db2@1.60.1.70532"}
-{"id": 272998, "field": "name", "en": "Bone Knuckles", "hash": "ee87c54fe3e68644", "src": "db2@1.60.1.70532"}
-{"id": 272999, "field": "name", "en": "Barbaric Crossbow", "hash": "4d718a466553df2a", "src": "db2@1.60.1.70532"}
-{"id": 272999, "field": "description", "en": "Wounds the target for $s1 Physical damage.", "hash": "4c07068542af90b8", "src": "db2@1.60.1.70532"}
+{"id": 272996, "field": "name", "en": "Trogg Scepter", "hash": "81528b05491aa34e", "src": "db2@1.60.1.70790"}
+{"id": 272998, "field": "name", "en": "Bone Knuckles", "hash": "ee87c54fe3e68644", "src": "db2@1.60.1.70790"}
+{"id": 272999, "field": "name", "en": "Barbaric Crossbow", "hash": "4d718a466553df2a", "src": "db2@1.60.1.70790"}
+{"id": 272999, "field": "description", "en": "Wounds the target for $s1 Physical damage.", "hash": "4c07068542af90b8", "src": "db2@1.60.1.70790"}

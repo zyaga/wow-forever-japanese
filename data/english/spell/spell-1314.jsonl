@@ -55,3 +55,4 @@
 {"id": 1314888, "field": "name", "en": "Poison Sting", "hash": "74f46cb1a92b5124", "src": "db2@1.60.1.70790"}
 {"id": 1314888, "field": "description", "en": "Strike your target with a Poisonous Sting, inflicting $s1 damage every 3 sec for $d1.", "hash": "eb8de5e300486dc5", "src": "db2@1.60.1.70790"}
 {"id": 1314888, "field": "aura", "en": "$w1 Nature damage inflicted every 3 sec.", "hash": "1d04837891215654", "src": "db2@1.60.1.70790"}
+{"id": 1314917, "field": "name", "en": "Wield Eluvi'tor", "hash": "2fd606a406fde65d", "src": "db2@1.60.1.70790"}

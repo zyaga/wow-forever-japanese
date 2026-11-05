@@ -11,6 +11,7 @@
   `objective_names.txt`), `pipeline/wfj/dev/ui_windows.py` (`CommunitiesUtil.lua`), `ui_keys.txt`,
   `ui_exclusions.txt`, `ui_inventory.txt`. The in-game checks are pending (the
   level-1 checklist in [Testing strategy](../testing/strategy.md)).
+- **Superseded in part by:** [ADR-069](069-unit-menus-and-edit-mode-stay-english.md): the unit menus outside level 1, Edit Mode's layout menu and its utility-button hovers stay as the client writes them.
 - **Date:** 2026-09-25
 
 ## Context

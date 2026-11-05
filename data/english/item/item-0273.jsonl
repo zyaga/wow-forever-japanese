@@ -1,10 +1,10 @@
 {"id": 273001, "field": "name", "en": "Gloomrise Toxin Sample", "hash": "3478804c3f1ac3be", "src": "db2@1.60.1.70790"}
 {"id": 273002, "field": "name", "en": "Slime Ward - Fel Ash Experimentation Notes", "hash": "dbacf68ca20b08a0", "src": "db2@1.60.1.70790"}
 {"id": 273002, "field": "description", "en": "Both runes and script dance across the surface of the page like spiders. Something about this book feels sinister and unnatural.", "hash": "22a5ea3f59d1ccf6", "src": "db2@1.60.1.70790"}
-{"id": 273003, "field": "name", "en": "Searing Dagger", "hash": "cea983a1bc368f0d", "src": "db2@1.60.1.70532"}
-{"id": 273003, "field": "description", "en": "Harmful spell casts sear the target for $1291570s1 Fire damage.", "hash": "61a883a26f84ee32", "src": "db2@1.60.1.70532"}
-{"id": 273005, "field": "name", "en": "Satyrskin Cloak", "hash": "5831e2ea8f3a8146", "src": "db2@1.60.1.70532"}
-{"id": 273007, "field": "name", "en": "Chasm Walkers", "hash": "043a101fe1e3bd57", "src": "db2@1.60.1.70532"}
+{"id": 273003, "field": "name", "en": "Searing Dagger", "hash": "cea983a1bc368f0d", "src": "db2@1.60.1.70790"}
+{"id": 273003, "field": "description", "en": "Harmful spell casts sear the target for $1291570s1 Fire damage.", "hash": "61a883a26f84ee32", "src": "db2@1.60.1.70790"}
+{"id": 273005, "field": "name", "en": "Satyrskin Cloak", "hash": "5831e2ea8f3a8146", "src": "db2@1.60.1.70790"}
+{"id": 273007, "field": "name", "en": "Chasm Walkers", "hash": "043a101fe1e3bd57", "src": "db2@1.60.1.70790"}
 {"id": 273008, "field": "name", "en": "Fel-Slime Ooze", "hash": "cbd715fe6139cfd5", "src": "db2@1.60.1.70790"}
 {"id": 273008, "field": "description", "en": "This ooze wriggles in your hands, and leaves burn marks on exposed skin. It seems to have a mind of its own.", "hash": "7af90954a6e4798a", "src": "db2@1.60.1.70790"}
 {"id": 273015, "field": "name", "en": "Toxin Extractor", "hash": "11f65bf15dd1a994", "src": "db2@1.60.1.70790"}
@@ -16,7 +16,7 @@
 {"id": 273026, "field": "name", "en": "Garb of Florid Feathers", "hash": "b9d89606fba3b65a", "src": "db2@1.60.1.70532"}
 {"id": 273027, "field": "name", "en": "Raptor's Gaze", "hash": "3fda621ac40ed55a", "src": "db2@1.60.1.70532"}
 {"id": 273028, "field": "name", "en": "Reliquary Mantle", "hash": "d0956572a5abe3a4", "src": "db2@1.60.1.70532"}
-{"id": 273029, "field": "name", "en": "Golemsight Long Gun", "hash": "aa56429e151f3511", "src": "db2@1.60.1.70532"}
+{"id": 273029, "field": "name", "en": "Golemsight Long Gun", "hash": "aa56429e151f3511", "src": "db2@1.60.1.70790"}
 {"id": 273030, "field": "name", "en": "Ring of Power Regulation", "hash": "db9b8e8fee58d3d3", "src": "db2@1.60.1.70532"}
 {"id": 273031, "field": "name", "en": "Runemender's Seal", "hash": "b016b895d7ee0952", "src": "db2@1.60.1.70532"}
 {"id": 273032, "field": "name", "en": "Bonebinder's Signet", "hash": "1b51e273c51e063c", "src": "db2@1.60.1.70532"}
@@ -48,17 +48,17 @@
 {"id": 273053, "field": "name", "en": "Tendonscraper Dagger", "hash": "874c5fd67baa525f", "src": "db2@1.60.1.70532"}
 {"id": 273054, "field": "name", "en": "Cartilage Shapers", "hash": "b8e92bc2dc7331f5", "src": "db2@1.60.1.70532"}
 {"id": 273055, "field": "name", "en": "Bonepile Gaze", "hash": "e6174b184ed9cb4d", "src": "db2@1.60.1.70532"}
-{"id": 273084, "field": "name", "en": "Cloak of Hermitic Bliss", "hash": "2803e029f0fec4d8", "src": "db2@1.60.1.70532"}
-{"id": 273084, "field": "description", "en": "Movement speed reduced by ${-1*$s1}%.\nSwim speed increased by $s1%.", "hash": "bfc564ea74352632", "src": "db2@1.60.1.70532"}
+{"id": 273084, "field": "name", "en": "Cloak of Hermitic Bliss", "hash": "2803e029f0fec4d8", "src": "db2@1.60.1.70790"}
+{"id": 273084, "field": "description", "en": "Movement speed reduced by ${-1*$s1}%.\nSwim speed increased by $s1%.", "hash": "bfc564ea74352632", "src": "db2@1.60.1.70790"}
 {"id": 273085, "field": "name", "en": "Blueprint: Fermenter", "hash": "2f2ee2a617a21f17", "src": "db2@1.60.1.70790"}
 {"id": 273085, "field": "description", "en": "Teaches you how to place a Fermenter at a campsite.", "hash": "287629f5d8ca0ec8", "src": "db2@1.60.1.70790"}
 {"id": 273086, "field": "name", "en": "Blueprint: Anvil", "hash": "60f7f51e80a7eb0c", "src": "db2@1.60.1.70790"}
 {"id": 273086, "field": "description", "en": "Teaches you how to place an Anvil at a campsite.", "hash": "485dbe5262293d0b", "src": "db2@1.60.1.70790"}
 {"id": 273087, "field": "name", "en": "Blueprint: Journeyman Campfire", "hash": "765876da702d58d4", "src": "db2@1.60.1.70790"}
 {"id": 273087, "field": "description", "en": "Teaches you how to place a Journeyman Campfire at a campsite.", "hash": "e0dc06b3f5d8c3e3", "src": "db2@1.60.1.70790"}
-{"id": 273088, "field": "name", "en": "Snake Eye Kaleidoscope", "hash": "b69dbc8183f3ab50", "src": "db2@1.60.1.70532"}
-{"id": 273089, "field": "name", "en": "Slither Cord", "hash": "90178590e9366bb7", "src": "db2@1.60.1.70532"}
-{"id": 273089, "field": "description", "en": "Escape all immobilizing effects.", "hash": "129b8fbf0bbc50eb", "src": "db2@1.60.1.70532"}
+{"id": 273088, "field": "name", "en": "Snake Eye Kaleidoscope", "hash": "b69dbc8183f3ab50", "src": "db2@1.60.1.70790"}
+{"id": 273089, "field": "name", "en": "Slither Cord", "hash": "90178590e9366bb7", "src": "db2@1.60.1.70790"}
+{"id": 273089, "field": "description", "en": "Escape all immobilizing effects.", "hash": "129b8fbf0bbc50eb", "src": "db2@1.60.1.70790"}
 {"id": 273092, "field": "name", "en": "Blueprint: Repair Bot", "hash": "c94252b99e25d3cc", "src": "db2@1.60.1.70790"}
 {"id": 273092, "field": "description", "en": "Teaches you how to place a Repair Bot at a campsite.", "hash": "ba3b0203abd4bcd7", "src": "db2@1.60.1.70790"}
 {"id": 273096, "field": "name", "en": "Blueprint: Tanning Rack", "hash": "2bf388452fcc7d59", "src": "db2@1.60.1.70790"}
@@ -115,8 +115,8 @@
 {"id": 273130, "field": "description", "en": "Harnessed undead spirits used to power Vectus's Sewing Machine.", "hash": "9e52c5463ace4fb2", "src": "db2@1.60.1.70790"}
 {"id": 273131, "field": "name", "en": "Bottled Screams", "hash": "45fd070a22e6d90d", "src": "db2@1.60.1.70790"}
 {"id": 273131, "field": "description", "en": "The bottled screams of a chorus of banshees, sufficient to power the Baroness's mysterious Loom.", "hash": "d21b86992a91dcd9", "src": "db2@1.60.1.70790"}
-{"id": 273137, "field": "name", "en": "Skum's Bucket", "hash": "8c5f17f2350c1946", "src": "db2@1.60.1.70532"}
-{"id": 273137, "field": "description", "en": "Restores ${($s1/5)*$d} mana over $d. Must remain seated while drinking.", "hash": "f502561a4ad8f81d", "src": "db2@1.60.1.70532"}
+{"id": 273137, "field": "name", "en": "Skum's Bucket", "hash": "8c5f17f2350c1946", "src": "db2@1.60.1.70790"}
+{"id": 273137, "field": "description", "en": "Restores ${($s1/5)*$d} mana over $d. Must remain seated while drinking.", "hash": "f502561a4ad8f81d", "src": "db2@1.60.1.70790"}
 {"id": 273141, "field": "name", "en": "Blueprint: Fishing Rack", "hash": "ba1decf1061e3998", "src": "db2@1.60.1.70790"}
 {"id": 273141, "field": "description", "en": "Teaches you how to place a Fishing Rack at a campsite.", "hash": "4aa69d407d2cb732", "src": "db2@1.60.1.70790"}
 {"id": 273164, "field": "name", "en": "Tarnished Highfeather Bangle", "hash": "735a0f04a62ce727", "src": "db2@1.60.1.70790"}
@@ -126,21 +126,21 @@
 {"id": 273168, "field": "description", "en": "It's more of a pamphlet than a proper book.", "hash": "9a860c9eb66a8d1d", "src": "db2@1.60.1.70790"}
 {"id": 273169, "field": "name", "en": "The Lost Magic of the Runemasters", "hash": "fc46c1607756929f", "src": "db2@1.60.1.70790"}
 {"id": 273181, "field": "name", "en": "Crystalline Silk", "hash": "493b331e2ee029e3", "src": "db2@1.60.1.70790"}
-{"id": 273289, "field": "name", "en": "Ogre Loincloth", "hash": "37e1980fb850a458", "src": "db2@1.60.1.70532"}
+{"id": 273289, "field": "name", "en": "Ogre Loincloth", "hash": "37e1980fb850a458", "src": "db2@1.60.1.70790"}
 {"id": 273290, "field": "name", "en": "Bones of Frezzlie Popwhiz", "hash": "89d9af5b3319c2e1", "src": "db2@1.60.1.70790"}
 {"id": 273291, "field": "name", "en": "Bones of Tyaeha Darkoath", "hash": "f3943d5125ecfdb3", "src": "db2@1.60.1.70790"}
 {"id": 273292, "field": "name", "en": "Bones of Dazka Shadowsleep", "hash": "1cc029d65613d8e4", "src": "db2@1.60.1.70790"}
-{"id": 273293, "field": "name", "en": "Bandsaw Wristbands", "hash": "7d0a21e888cfb98b", "src": "db2@1.60.1.70532"}
-{"id": 273293, "field": "description", "en": "Deals $s1 Physical damage every time you block.", "hash": "2cbf03aa59105126", "src": "db2@1.60.1.70532"}
+{"id": 273293, "field": "name", "en": "Bandsaw Wristbands", "hash": "7d0a21e888cfb98b", "src": "db2@1.60.1.70790"}
+{"id": 273293, "field": "description", "en": "Deals $s1 Physical damage every time you block.", "hash": "2cbf03aa59105126", "src": "db2@1.60.1.70790"}
 {"id": 273294, "field": "name", "en": "Sutara's Lasso", "hash": "ae409807586d4f68", "src": "db2@1.60.1.70790"}
 {"id": 273294, "field": "description", "en": "Steal an apple from a safe distance.", "hash": "ceded9ff46edd375", "src": "db2@1.60.1.70790"}
 {"id": 273295, "field": "name", "en": "Seasonal Fish Steaks", "hash": "e86fb2a154cd35c8", "src": "db2@1.60.1.70790"}
 {"id": 273295, "field": "description", "en": "A refreshing preparation of seasonal fish ready to be used in recipes.", "hash": "142218a1bda81522", "src": "db2@1.60.1.70790"}
 {"id": 273296, "field": "name", "en": "Bag of Ashen Warlock Bones", "hash": "37160af309372d6f", "src": "db2@1.60.1.70790"}
 {"id": 273296, "field": "description", "en": "Throw the bloodied bones of the Ashen Reign leaders into the slime altar.", "hash": "9b77f571013ef0dc", "src": "db2@1.60.1.70790"}
-{"id": 273297, "field": "name", "en": "Goblin Hammer", "hash": "e7d08bcbbc94ffce", "src": "db2@1.60.1.70532"}
-{"id": 273298, "field": "name", "en": "Lookie's Spyglass", "hash": "126e300a577204fe", "src": "db2@1.60.1.70532"}
-{"id": 273298, "field": "description", "en": "Allows you to look far into the distance.\nMmmrrgglumg Cookie grgl mrg mllgrgrm. -Lookie, Former Ship Lookout", "hash": "831b59729ccc6e6f", "src": "db2@1.60.1.70532"}
+{"id": 273297, "field": "name", "en": "Goblin Hammer", "hash": "e7d08bcbbc94ffce", "src": "db2@1.60.1.70790"}
+{"id": 273298, "field": "name", "en": "Lookie's Spyglass", "hash": "126e300a577204fe", "src": "db2@1.60.1.70790"}
+{"id": 273298, "field": "description", "en": "Allows you to look far into the distance.\nMmmrrgglumg Cookie grgl mrg mllgrgrm. -Lookie, Former Ship Lookout", "hash": "831b59729ccc6e6f", "src": "db2@1.60.1.70790"}
 {"id": 273304, "field": "name", "en": "Prickly Pinecone", "hash": "5d2d938c20e5167e", "src": "db2@1.60.1.70790"}
 {"id": 273308, "field": "name", "en": "Disease Ward - Fel Ash Experimentation Notes", "hash": "ee03e9682d877db1", "src": "db2@1.60.1.70790"}
 {"id": 273308, "field": "description", "en": "Both runes and script dance across the surface of the page like spiders. Something about this book feels sinister and unnatural.", "hash": "22a5ea3f59d1ccf6", "src": "db2@1.60.1.70790"}
@@ -291,9 +291,9 @@
 {"id": 273449, "field": "name", "en": "Premier Mooncloth Cord", "hash": "fe71c786893f95ee", "src": "db2@1.60.1.70790"}
 {"id": 273450, "field": "name", "en": "Premier Silken Cuffs", "hash": "0fd077b68adef7f2", "src": "db2@1.60.1.70790"}
 {"id": 273455, "field": "name", "en": "Template Vellum [DNT]", "hash": "a241f6fdd7821f32", "src": "db2@1.60.1.70790"}
-{"id": 273456, "field": "name", "en": "Cell Keeper's Claws", "hash": "0447dac27055626c", "src": "db2@1.60.1.70532"}
-{"id": 273457, "field": "name", "en": "Sorcerer Collar", "hash": "d909988df810e9b7", "src": "db2@1.60.1.70532"}
-{"id": 273457, "field": "description", "en": "Reduces the hit chance of Silence effects against you by $s1%.", "hash": "3b7aed97c6f00bbf", "src": "db2@1.60.1.70532"}
+{"id": 273456, "field": "name", "en": "Cell Keeper's Claws", "hash": "0447dac27055626c", "src": "db2@1.60.1.70790"}
+{"id": 273457, "field": "name", "en": "Sorcerer Collar", "hash": "d909988df810e9b7", "src": "db2@1.60.1.70790"}
+{"id": 273457, "field": "description", "en": "Reduces the hit chance of Silence effects against you by $s1%.", "hash": "3b7aed97c6f00bbf", "src": "db2@1.60.1.70790"}
 {"id": 273458, "field": "name", "en": "Enchant Bracer - Inferior Stamina", "hash": "91f3d8972c1eaf26", "src": "db2@1.60.1.70790"}
 {"id": 273458, "field": "description", "en": "Permanently enchant bracers to increase the Stamina of the wearer by $7419s1.", "hash": "2af998b01c003995", "src": "db2@1.60.1.70790"}
 {"id": 273459, "field": "name", "en": "Enchant Chest - Inferior Stamina", "hash": "2bde1112921f4936", "src": "db2@1.60.1.70790"}
@@ -650,15 +650,15 @@
 {"id": 273635, "field": "description", "en": "Enchant a piece of chest armor so it has a 25% chance per hit of giving you 50 points of damage absorption. Cannot occur more often than once every 5 sec.", "hash": "c4c33c6e3177ae72", "src": "db2@1.60.1.70790"}
 {"id": 273636, "field": "name", "en": "Chef's Knife", "hash": "52f8c33842cd851b", "src": "db2@1.60.1.70790"}
 {"id": 273636, "field": "description", "en": "Use on unique fish to prepare them in a special way.", "hash": "38f4e9dcc53e7228", "src": "db2@1.60.1.70790"}
-{"id": 273637, "field": "name", "en": "Blade of Silverlaine", "hash": "6b5b0d324beb54bc", "src": "db2@1.60.1.70532"}
+{"id": 273637, "field": "name", "en": "Blade of Silverlaine", "hash": "6b5b0d324beb54bc", "src": "db2@1.60.1.70790"}
 {"id": 273642, "field": "name", "en": "Ring of the Fallen Soldier", "hash": "d121ab51421d589b", "src": "db2@1.60.1.70790"}
 {"id": 273642, "field": "description", "en": "Engraved inside the band is a name. Though difficult to read, the initial T and Belle are legible.", "hash": "f99f93bbe5aea05c", "src": "db2@1.60.1.70790"}
-{"id": 273643, "field": "name", "en": "Worgenbane Talisman", "hash": "0f5a7b04a0b4ec17", "src": "db2@1.60.1.70532"}
-{"id": 273643, "field": "description", "en": "Stuns target Worgen for $d.", "hash": "308da16106fbb8de", "src": "db2@1.60.1.70532"}
-{"id": 273645, "field": "name", "en": "Blindwatcher's Sight", "hash": "9ca6153d822be611", "src": "db2@1.60.1.70532"}
-{"id": 273645, "field": "description", "en": "Reduces the hit chance of Disorient effects against you by $s1%.", "hash": "496951a7a2fc0bf5", "src": "db2@1.60.1.70532"}
+{"id": 273643, "field": "name", "en": "Worgenbane Talisman", "hash": "0f5a7b04a0b4ec17", "src": "db2@1.60.1.70790"}
+{"id": 273643, "field": "description", "en": "Stuns target Worgen for $d.", "hash": "308da16106fbb8de", "src": "db2@1.60.1.70790"}
+{"id": 273645, "field": "name", "en": "Blindwatcher's Sight", "hash": "9ca6153d822be611", "src": "db2@1.60.1.70790"}
+{"id": 273645, "field": "description", "en": "Reduces the hit chance of Disorient effects against you by $s1%.", "hash": "496951a7a2fc0bf5", "src": "db2@1.60.1.70790"}
 {"id": 273646, "field": "name", "en": "Half-Eaten Boots", "hash": "8da71f63541539a2", "src": "db2@1.60.1.70532"}
-{"id": 273647, "field": "name", "en": "Worgpelt Leggings", "hash": "6280304c65a2de33", "src": "db2@1.60.1.70532"}
+{"id": 273647, "field": "name", "en": "Worgpelt Leggings", "hash": "6280304c65a2de33", "src": "db2@1.60.1.70790"}
 {"id": 273654, "field": "name", "en": "Crystal Thread Cloak", "hash": "1da336a1d59c6210", "src": "db2@1.60.1.70790"}
 {"id": 273658, "field": "name", "en": "Bloody Parchment", "hash": "0fbff939d41b54f7", "src": "db2@1.60.1.70790"}
 {"id": 273658, "field": "description", "en": "There's a note tucked into the folds of the Broodmother's robes.", "hash": "c320dab06bd36a45", "src": "db2@1.60.1.70790"}
@@ -675,14 +675,14 @@
 {"id": 273800, "field": "name", "en": "Thomas's Ring", "hash": "6209199413270b17", "src": "db2@1.60.1.70790"}
 {"id": 273801, "field": "name", "en": "Marn's Warding Incense", "hash": "1f7fd1f7b2ebd278", "src": "db2@1.60.1.70790"}
 {"id": 273801, "field": "description", "en": "Burn the crushed herbs, creating a cleansing smoke to ward against terror and haunting memories.", "hash": "ecd474f2fe4009c3", "src": "db2@1.60.1.70790"}
-{"id": 273804, "field": "name", "en": "Executioner Mantle", "hash": "c2ed452c74bd12e3", "src": "db2@1.60.1.70532"}
+{"id": 273804, "field": "name", "en": "Executioner Mantle", "hash": "c2ed452c74bd12e3", "src": "db2@1.60.1.70790"}
 {"id": 273805, "field": "name", "en": "Blackrock Harness", "hash": "1a38ec0c3086bda0", "src": "db2@1.60.1.70532"}
-{"id": 273806, "field": "name", "en": "Dark Horde Band", "hash": "629857c55c06e22d", "src": "db2@1.60.1.70532"}
+{"id": 273806, "field": "name", "en": "Dark Horde Band", "hash": "629857c55c06e22d", "src": "db2@1.60.1.70790"}
 {"id": 273807, "field": "name", "en": "Demolition Girdle", "hash": "6156068e9ea9cd5c", "src": "db2@1.60.1.70532"}
 {"id": 273808, "field": "name", "en": "Bridgebreaker Bindings", "hash": "c3b055b5650682a8", "src": "db2@1.60.1.70532"}
 {"id": 273809, "field": "name", "en": "Hamhock's Cleaver", "hash": "476a178a39d05c62", "src": "db2@1.60.1.70532"}
 {"id": 273810, "field": "name", "en": "Ogre Grips", "hash": "03d041daaaa9e9a3", "src": "db2@1.60.1.70532"}
-{"id": 273811, "field": "name", "en": "Repurposed Rack", "hash": "0bd784799d06fbec", "src": "db2@1.60.1.70532"}
+{"id": 273811, "field": "name", "en": "Repurposed Rack", "hash": "0bd784799d06fbec", "src": "db2@1.60.1.70790"}
 {"id": 273812, "field": "name", "en": "Airy Magister's Shirt", "hash": "12acc50ec98d1cbf", "src": "db2@1.60.1.70790"}
 {"id": 273813, "field": "name", "en": "Airy Peacekeeper's Shirt", "hash": "78fa8d036c66b58f", "src": "db2@1.60.1.70790"}
 {"id": 273814, "field": "name", "en": "Airy Skyseer's Shirt", "hash": "a8ec0e8b18694771", "src": "db2@1.60.1.70790"}
@@ -692,26 +692,26 @@
 {"id": 273817, "field": "description", "en": "+$s1 Attack Power, doubled against Undead targets.\nDig up a grave. Usable at Raven Hill Cemetery and Scarlet Monastery Graveyard.", "hash": "ddbe18889fa6524e", "src": "db2@1.60.1.70532"}
 {"id": 273819, "field": "name", "en": "Boneslicer", "hash": "68227f4bc3eeb566", "src": "db2@1.60.1.70532"}
 {"id": 273819, "field": "description", "en": "Wounds the target for $s1 Physical damage.", "hash": "4c07068542af90b8", "src": "db2@1.60.1.70532"}
-{"id": 273820, "field": "name", "en": "Nightskulker Ring", "hash": "8b66a74993a7b321", "src": "db2@1.60.1.70532"}
-{"id": 273820, "field": "description", "en": "Reduces the hit chance of Fear effects against you by $s1%.\nIncreases movement speed by $s1% in Duskwood.", "hash": "9a31a258ce2c90ad", "src": "db2@1.60.1.70532"}
+{"id": 273820, "field": "name", "en": "Nightskulker Ring", "hash": "8b66a74993a7b321", "src": "db2@1.60.1.70790"}
+{"id": 273820, "field": "description", "en": "Reduces the hit chance of Fear effects against you by $s1%.\nIncreases movement speed by $s1% in Duskwood.", "hash": "9a31a258ce2c90ad", "src": "db2@1.60.1.70790"}
 {"id": 273822, "field": "name", "en": "Vengeance", "hash": "622d71d56b622ec3", "src": "db2@1.60.1.70790"}
 {"id": 273824, "field": "name", "en": "Defias Jailbreakers", "hash": "6bba90d75b94b159", "src": "db2@1.60.1.70532"}
 {"id": 273824, "field": "description", "en": "Lockpicking +$s1.", "hash": "1553bd05b6cd9b53", "src": "db2@1.60.1.70532"}
 {"id": 273825, "field": "name", "en": "Red Wool Cloak", "hash": "7c054a894e234535", "src": "db2@1.60.1.70532"}
-{"id": 273827, "field": "name", "en": "Debt Collector", "hash": "edff86a75488a301", "src": "db2@1.60.1.70532"}
-{"id": 273827, "field": "description", "en": "Grants $1292598s1 health and $1292598s2 mana every 5 sec for $1292598d when one of your spells is resisted.", "hash": "52b23aff753d229d", "src": "db2@1.60.1.70532"}
+{"id": 273827, "field": "name", "en": "Debt Collector", "hash": "edff86a75488a301", "src": "db2@1.60.1.70790"}
+{"id": 273827, "field": "description", "en": "Grants $1292598s1 health and $1292598s2 mana every 5 sec for $1292598d when one of your spells is resisted.", "hash": "52b23aff753d229d", "src": "db2@1.60.1.70790"}
 {"id": 273828, "field": "name", "en": "Recoiling Gnarlybark Staff", "hash": "daa2004afccdfc54", "src": "db2@1.60.1.70532"}
 {"id": 273829, "field": "name", "en": "Concealed Hand Crossbow", "hash": "ca6519c4ae07a49c", "src": "db2@1.60.1.70532"}
 {"id": 273830, "field": "name", "en": "Blackthorne Maul", "hash": "d566327fd9a76f20", "src": "db2@1.60.1.70532"}
-{"id": 273839, "field": "name", "en": "Spiked Shell Band", "hash": "a5170686d13755b4", "src": "db2@1.60.1.70532"}
-{"id": 273839, "field": "description", "en": "When struck in combat, inflicts $s1 Nature damage to the attacker.", "hash": "a5e493101d6270ee", "src": "db2@1.60.1.70532"}
+{"id": 273839, "field": "name", "en": "Spiked Shell Band", "hash": "a5170686d13755b4", "src": "db2@1.60.1.70790"}
+{"id": 273839, "field": "description", "en": "When struck in combat, inflicts $s1 Nature damage to the attacker.", "hash": "a5e493101d6270ee", "src": "db2@1.60.1.70790"}
 {"id": 273840, "field": "name", "en": "Cursed Murloc Eye", "hash": "f2d948f94ad569cd", "src": "db2@1.60.1.70532"}
 {"id": 273840, "field": "description", "en": "Spells and attacks deal $1292675s1 Shadow damage. Deals $s1 times as much damage to Murlocs.", "hash": "5f387d0c56a871b4", "src": "db2@1.60.1.70532"}
 {"id": 273841, "field": "name", "en": "Twilight Maul", "hash": "f64300de641f4b43", "src": "db2@1.60.1.70532"}
 {"id": 273841, "field": "description", "en": "Blasts a target for $s1 Nature damage.", "hash": "37bddcc4fb608d30", "src": "db2@1.60.1.70532"}
 {"id": 273842, "field": "name", "en": "Treacherous Treads", "hash": "19c923e08d0d7a2c", "src": "db2@1.60.1.70532"}
 {"id": 273842, "field": "description", "en": "Increases all threat generated by $s1%.", "hash": "78253b7d48d26af3", "src": "db2@1.60.1.70532"}
-{"id": 273843, "field": "name", "en": "Fallenroot Longbow", "hash": "f4b774f8e947fa0f", "src": "db2@1.60.1.70532"}
+{"id": 273843, "field": "name", "en": "Fallenroot Longbow", "hash": "f4b774f8e947fa0f", "src": "db2@1.60.1.70790"}
 {"id": 273845, "field": "name", "en": "Faintly Glowing Staff", "hash": "caf11899573a9513", "src": "db2@1.60.1.70790"}
 {"id": 273845, "field": "description", "en": "This vial has been meticulously carved from one of the fel ash crystals nearby giving it a pale greenish hue. As the light catches it, it seems to have ash trapped in the crystalline walls that glimmer faintly with fel energy.", "hash": "368ac42ab861e6dc", "src": "db2@1.60.1.70338"}
 {"id": 273846, "field": "name", "en": "Twilight Lord Girdle", "hash": "f5e16e63b5d7519e", "src": "db2@1.60.1.70532"}
@@ -724,74 +724,74 @@
 {"id": 273878, "field": "name", "en": "[DNT] Crafted Tier Piece Placeholder", "hash": "beb6ce80b9d83380", "src": "db2@1.60.1.70790"}
 {"id": 273879, "field": "name", "en": "Refined Shortbow", "hash": "36020ed925daa29e", "src": "db2@1.60.1.70790"}
 {"id": 273883, "field": "name", "en": "Ca'zass's Head", "hash": "f59bcaec3b4266b7", "src": "db2@1.60.1.70790"}
-{"id": 273884, "field": "name", "en": "Grovekeeper Trousers", "hash": "950c4df6ff191118", "src": "db2@1.60.1.70755"}
-{"id": 273885, "field": "name", "en": "Grovekeeper Grips", "hash": "02d0c22233a6b171", "src": "db2@1.60.1.70755"}
-{"id": 273886, "field": "name", "en": "Grovekeeper Shoulderpads", "hash": "02991834bb121975", "src": "db2@1.60.1.70755"}
-{"id": 273887, "field": "name", "en": "Grovekeeper Stompers", "hash": "fa2b958095515d9e", "src": "db2@1.60.1.70755"}
-{"id": 273888, "field": "name", "en": "Grovekeeper Kilt", "hash": "c20391e8acd5835f", "src": "db2@1.60.1.70755"}
-{"id": 273889, "field": "name", "en": "Grovekeeper Mitts", "hash": "6af13104a02982c5", "src": "db2@1.60.1.70755"}
-{"id": 273890, "field": "name", "en": "Grovekeeper Mantle", "hash": "2c308ec0838e8a70", "src": "db2@1.60.1.70755"}
-{"id": 273891, "field": "name", "en": "Grovekeeper Sandals", "hash": "d6e1869de26a879b", "src": "db2@1.60.1.70755"}
-{"id": 273892, "field": "name", "en": "Grovekeeper Legguards", "hash": "f79970ae65890edc", "src": "db2@1.60.1.70755"}
-{"id": 273893, "field": "name", "en": "Grovekeeper Handguards", "hash": "57e951c2be6385ef", "src": "db2@1.60.1.70755"}
-{"id": 273894, "field": "name", "en": "Grovekeeper Pauldrons", "hash": "3963930d04592719", "src": "db2@1.60.1.70755"}
-{"id": 273895, "field": "name", "en": "Grovekeeper Boots", "hash": "aaa6ddf948ac6e06", "src": "db2@1.60.1.70755"}
-{"id": 273896, "field": "name", "en": "Grovekeeper Leggings", "hash": "d9361b4fdbb48019", "src": "db2@1.60.1.70755"}
-{"id": 273897, "field": "name", "en": "Grovekeeper Gauntlets", "hash": "30b1f215ecb72a64", "src": "db2@1.60.1.70755"}
-{"id": 273898, "field": "name", "en": "Grovekeeper Spaulders", "hash": "da877ef1e29a3445", "src": "db2@1.60.1.70755"}
-{"id": 273899, "field": "name", "en": "Grovekeeper Treads", "hash": "35fe035e47cf0d56", "src": "db2@1.60.1.70755"}
-{"id": 273900, "field": "name", "en": "Wildstalker's Legguards", "hash": "707aac67a935d099", "src": "db2@1.60.1.70755"}
-{"id": 273901, "field": "name", "en": "Wildstalker's Gauntlets", "hash": "a9932dc93063ec32", "src": "db2@1.60.1.70755"}
-{"id": 273902, "field": "name", "en": "Wildstalker's Spaulders", "hash": "5368baaa2646f613", "src": "db2@1.60.1.70755"}
-{"id": 273903, "field": "name", "en": "Wildstalker's Greaves", "hash": "3bbd5e91cab19836", "src": "db2@1.60.1.70755"}
-{"id": 273904, "field": "name", "en": "Manaflare Pants", "hash": "de30c8708de0dc88", "src": "db2@1.60.1.70755"}
-{"id": 273905, "field": "name", "en": "Manaflare Gloves", "hash": "9c898d5b38eab522", "src": "db2@1.60.1.70755"}
-{"id": 273906, "field": "name", "en": "Manaflare Mantle", "hash": "c069ad75f8b99adb", "src": "db2@1.60.1.70755"}
-{"id": 273907, "field": "name", "en": "Manaflare Boots", "hash": "ea5151801cb5802b", "src": "db2@1.60.1.70755"}
-{"id": 273908, "field": "name", "en": "Justice Leggings", "hash": "afe84a9743f5c05d", "src": "db2@1.60.1.70755"}
-{"id": 273909, "field": "name", "en": "Justice Gauntlets", "hash": "0de0238474d7a0f3", "src": "db2@1.60.1.70755"}
-{"id": 273910, "field": "name", "en": "Justice Spaulders", "hash": "b7b5b0606abaaad4", "src": "db2@1.60.1.70755"}
-{"id": 273911, "field": "name", "en": "Justice Greaves", "hash": "6dbfca5f6a630c40", "src": "db2@1.60.1.70755"}
-{"id": 273912, "field": "name", "en": "Justice Legplates", "hash": "0e736879fd32ac1a", "src": "db2@1.60.1.70755"}
-{"id": 273913, "field": "name", "en": "Justice Gloves", "hash": "5a57e6bfaff6da0a", "src": "db2@1.60.1.70755"}
-{"id": 273914, "field": "name", "en": "Justice Epaulets", "hash": "40862d4c87a71462", "src": "db2@1.60.1.70755"}
-{"id": 273915, "field": "name", "en": "Justice Treads", "hash": "88057b77340642ba", "src": "db2@1.60.1.70755"}
-{"id": 273916, "field": "name", "en": "Justice Legguards", "hash": "d4c7a21deda9855a", "src": "db2@1.60.1.70755"}
-{"id": 273917, "field": "name", "en": "Justice Handguards", "hash": "868c9d3551460ce1", "src": "db2@1.60.1.70755"}
-{"id": 273918, "field": "name", "en": "Justice Pauldrons", "hash": "1691c47c8c799d97", "src": "db2@1.60.1.70755"}
-{"id": 273919, "field": "name", "en": "Justice Sabatons", "hash": "cfc9eecd69bbe574", "src": "db2@1.60.1.70755"}
-{"id": 273920, "field": "name", "en": "Pants of Conviction", "hash": "377783021a3c2047", "src": "db2@1.60.1.70755"}
-{"id": 273921, "field": "name", "en": "Gloves of Conviction", "hash": "d653ac777025b3c9", "src": "db2@1.60.1.70755"}
-{"id": 273922, "field": "name", "en": "Mantle of Conviction", "hash": "8c8a7a96edae81e4", "src": "db2@1.60.1.70755"}
-{"id": 273923, "field": "name", "en": "Treads of Conviction", "hash": "2ec56bb20b2780a0", "src": "db2@1.60.1.70755"}
-{"id": 273924, "field": "name", "en": "Leggings of Conviction", "hash": "3a78ca0773634cff", "src": "db2@1.60.1.70755"}
-{"id": 273925, "field": "name", "en": "Handguards of Conviction", "hash": "ae9175fde25f8522", "src": "db2@1.60.1.70755"}
-{"id": 273926, "field": "name", "en": "Pauldrons of Conviction", "hash": "7ff6b8b4f1c07b92", "src": "db2@1.60.1.70755"}
-{"id": 273927, "field": "name", "en": "Boots of Conviction", "hash": "fc78065569f96f41", "src": "db2@1.60.1.70755"}
-{"id": 273928, "field": "name", "en": "Grimstitch Pants", "hash": "966778717fd69fe5", "src": "db2@1.60.1.70755"}
-{"id": 273929, "field": "name", "en": "Grimstitch Gloves", "hash": "e0859d25a4938f1f", "src": "db2@1.60.1.70755"}
-{"id": 273930, "field": "name", "en": "Grimstitch Spaulders", "hash": "ef25b3ddd439a88d", "src": "db2@1.60.1.70755"}
-{"id": 273931, "field": "name", "en": "Grimstitch Boots", "hash": "a28801810eab4388", "src": "db2@1.60.1.70755"}
-{"id": 273932, "field": "name", "en": "Spiritcaller Leggings", "hash": "e2ea3b7e279168b4", "src": "db2@1.60.1.70755"}
-{"id": 273933, "field": "name", "en": "Spiritcaller Grips", "hash": "902be09381f06746", "src": "db2@1.60.1.70755"}
-{"id": 273934, "field": "name", "en": "Spiritcaller Spaulders", "hash": "d1b3f7174febec32", "src": "db2@1.60.1.70755"}
-{"id": 273935, "field": "name", "en": "Spiritcaller Treads", "hash": "8b9e9899039d4e4b", "src": "db2@1.60.1.70755"}
-{"id": 273936, "field": "name", "en": "Spiritcaller Pants", "hash": "2be1735f08218049", "src": "db2@1.60.1.70755"}
-{"id": 273937, "field": "name", "en": "Spiritcaller Gauntlets", "hash": "27de6a3b5a08e251", "src": "db2@1.60.1.70755"}
-{"id": 273938, "field": "name", "en": "Spiritcaller Epaulets", "hash": "73881e336b42bcb9", "src": "db2@1.60.1.70755"}
-{"id": 273939, "field": "name", "en": "Spiritcaller Greaves", "hash": "4519b2cf288a5f3a", "src": "db2@1.60.1.70755"}
-{"id": 273940, "field": "name", "en": "Demonheart Leggings", "hash": "1a1d50a387541b7c", "src": "db2@1.60.1.70755"}
-{"id": 273941, "field": "name", "en": "Demonheart Gloves", "hash": "d75f9de5ce91230e", "src": "db2@1.60.1.70755"}
-{"id": 273942, "field": "name", "en": "Demonheart Spaulders", "hash": "10d7c7080db210b7", "src": "db2@1.60.1.70755"}
-{"id": 273943, "field": "name", "en": "Demonheart Boots", "hash": "2758d0aa3297602e", "src": "db2@1.60.1.70755"}
-{"id": 273944, "field": "name", "en": "Legplates of Glory", "hash": "f5ed63be5289549f", "src": "db2@1.60.1.70755"}
-{"id": 273945, "field": "name", "en": "Gauntlets of Glory", "hash": "9016f54e35db13a6", "src": "db2@1.60.1.70755"}
-{"id": 273946, "field": "name", "en": "Shoulders of Glory", "hash": "f6ca43125b87e963", "src": "db2@1.60.1.70755"}
-{"id": 273947, "field": "name", "en": "Greaves of Glory", "hash": "e0ca1ef7c3ec36c7", "src": "db2@1.60.1.70755"}
-{"id": 273948, "field": "name", "en": "Legguards of Glory", "hash": "fa2fba478e0cb496", "src": "db2@1.60.1.70755"}
-{"id": 273949, "field": "name", "en": "Handguards of Glory", "hash": "8fe0bc0bc7a92536", "src": "db2@1.60.1.70755"}
-{"id": 273950, "field": "name", "en": "Pauldrons of Glory", "hash": "d3d7aee25d4728a0", "src": "db2@1.60.1.70755"}
-{"id": 273951, "field": "name", "en": "Sabatons of Glory", "hash": "e4b5d9e7a2ddcba4", "src": "db2@1.60.1.70755"}
+{"id": 273884, "field": "name", "en": "Grovekeeper Trousers", "hash": "950c4df6ff191118", "src": "db2@1.60.1.70790"}
+{"id": 273885, "field": "name", "en": "Grovekeeper Grips", "hash": "02d0c22233a6b171", "src": "db2@1.60.1.70790"}
+{"id": 273886, "field": "name", "en": "Grovekeeper Shoulderpads", "hash": "02991834bb121975", "src": "db2@1.60.1.70790"}
+{"id": 273887, "field": "name", "en": "Grovekeeper Stompers", "hash": "fa2b958095515d9e", "src": "db2@1.60.1.70790"}
+{"id": 273888, "field": "name", "en": "Grovekeeper Kilt", "hash": "c20391e8acd5835f", "src": "db2@1.60.1.70790"}
+{"id": 273889, "field": "name", "en": "Grovekeeper Mitts", "hash": "6af13104a02982c5", "src": "db2@1.60.1.70790"}
+{"id": 273890, "field": "name", "en": "Grovekeeper Mantle", "hash": "2c308ec0838e8a70", "src": "db2@1.60.1.70790"}
+{"id": 273891, "field": "name", "en": "Grovekeeper Sandals", "hash": "d6e1869de26a879b", "src": "db2@1.60.1.70790"}
+{"id": 273892, "field": "name", "en": "Grovekeeper Legguards", "hash": "f79970ae65890edc", "src": "db2@1.60.1.70790"}
+{"id": 273893, "field": "name", "en": "Grovekeeper Handguards", "hash": "57e951c2be6385ef", "src": "db2@1.60.1.70790"}
+{"id": 273894, "field": "name", "en": "Grovekeeper Pauldrons", "hash": "3963930d04592719", "src": "db2@1.60.1.70790"}
+{"id": 273895, "field": "name", "en": "Grovekeeper Boots", "hash": "aaa6ddf948ac6e06", "src": "db2@1.60.1.70790"}
+{"id": 273896, "field": "name", "en": "Grovekeeper Leggings", "hash": "d9361b4fdbb48019", "src": "db2@1.60.1.70790"}
+{"id": 273897, "field": "name", "en": "Grovekeeper Gauntlets", "hash": "30b1f215ecb72a64", "src": "db2@1.60.1.70790"}
+{"id": 273898, "field": "name", "en": "Grovekeeper Spaulders", "hash": "da877ef1e29a3445", "src": "db2@1.60.1.70790"}
+{"id": 273899, "field": "name", "en": "Grovekeeper Treads", "hash": "35fe035e47cf0d56", "src": "db2@1.60.1.70790"}
+{"id": 273900, "field": "name", "en": "Wildstalker's Legguards", "hash": "707aac67a935d099", "src": "db2@1.60.1.70790"}
+{"id": 273901, "field": "name", "en": "Wildstalker's Gauntlets", "hash": "a9932dc93063ec32", "src": "db2@1.60.1.70790"}
+{"id": 273902, "field": "name", "en": "Wildstalker's Spaulders", "hash": "5368baaa2646f613", "src": "db2@1.60.1.70790"}
+{"id": 273903, "field": "name", "en": "Wildstalker's Greaves", "hash": "3bbd5e91cab19836", "src": "db2@1.60.1.70790"}
+{"id": 273904, "field": "name", "en": "Manaflare Pants", "hash": "de30c8708de0dc88", "src": "db2@1.60.1.70790"}
+{"id": 273905, "field": "name", "en": "Manaflare Gloves", "hash": "9c898d5b38eab522", "src": "db2@1.60.1.70790"}
+{"id": 273906, "field": "name", "en": "Manaflare Mantle", "hash": "c069ad75f8b99adb", "src": "db2@1.60.1.70790"}
+{"id": 273907, "field": "name", "en": "Manaflare Boots", "hash": "ea5151801cb5802b", "src": "db2@1.60.1.70790"}
+{"id": 273908, "field": "name", "en": "Justice Leggings", "hash": "afe84a9743f5c05d", "src": "db2@1.60.1.70790"}
+{"id": 273909, "field": "name", "en": "Justice Gauntlets", "hash": "0de0238474d7a0f3", "src": "db2@1.60.1.70790"}
+{"id": 273910, "field": "name", "en": "Justice Spaulders", "hash": "b7b5b0606abaaad4", "src": "db2@1.60.1.70790"}
+{"id": 273911, "field": "name", "en": "Justice Greaves", "hash": "6dbfca5f6a630c40", "src": "db2@1.60.1.70790"}
+{"id": 273912, "field": "name", "en": "Justice Legplates", "hash": "0e736879fd32ac1a", "src": "db2@1.60.1.70790"}
+{"id": 273913, "field": "name", "en": "Justice Gloves", "hash": "5a57e6bfaff6da0a", "src": "db2@1.60.1.70790"}
+{"id": 273914, "field": "name", "en": "Justice Epaulets", "hash": "40862d4c87a71462", "src": "db2@1.60.1.70790"}
+{"id": 273915, "field": "name", "en": "Justice Treads", "hash": "88057b77340642ba", "src": "db2@1.60.1.70790"}
+{"id": 273916, "field": "name", "en": "Justice Legguards", "hash": "d4c7a21deda9855a", "src": "db2@1.60.1.70790"}
+{"id": 273917, "field": "name", "en": "Justice Handguards", "hash": "868c9d3551460ce1", "src": "db2@1.60.1.70790"}
+{"id": 273918, "field": "name", "en": "Justice Pauldrons", "hash": "1691c47c8c799d97", "src": "db2@1.60.1.70790"}
+{"id": 273919, "field": "name", "en": "Justice Sabatons", "hash": "cfc9eecd69bbe574", "src": "db2@1.60.1.70790"}
+{"id": 273920, "field": "name", "en": "Pants of Conviction", "hash": "377783021a3c2047", "src": "db2@1.60.1.70790"}
+{"id": 273921, "field": "name", "en": "Gloves of Conviction", "hash": "d653ac777025b3c9", "src": "db2@1.60.1.70790"}
+{"id": 273922, "field": "name", "en": "Mantle of Conviction", "hash": "8c8a7a96edae81e4", "src": "db2@1.60.1.70790"}
+{"id": 273923, "field": "name", "en": "Treads of Conviction", "hash": "2ec56bb20b2780a0", "src": "db2@1.60.1.70790"}
+{"id": 273924, "field": "name", "en": "Leggings of Conviction", "hash": "3a78ca0773634cff", "src": "db2@1.60.1.70790"}
+{"id": 273925, "field": "name", "en": "Handguards of Conviction", "hash": "ae9175fde25f8522", "src": "db2@1.60.1.70790"}
+{"id": 273926, "field": "name", "en": "Pauldrons of Conviction", "hash": "7ff6b8b4f1c07b92", "src": "db2@1.60.1.70790"}
+{"id": 273927, "field": "name", "en": "Boots of Conviction", "hash": "fc78065569f96f41", "src": "db2@1.60.1.70790"}
+{"id": 273928, "field": "name", "en": "Grimstitch Pants", "hash": "966778717fd69fe5", "src": "db2@1.60.1.70790"}
+{"id": 273929, "field": "name", "en": "Grimstitch Gloves", "hash": "e0859d25a4938f1f", "src": "db2@1.60.1.70790"}
+{"id": 273930, "field": "name", "en": "Grimstitch Spaulders", "hash": "ef25b3ddd439a88d", "src": "db2@1.60.1.70790"}
+{"id": 273931, "field": "name", "en": "Grimstitch Boots", "hash": "a28801810eab4388", "src": "db2@1.60.1.70790"}
+{"id": 273932, "field": "name", "en": "Spiritcaller Leggings", "hash": "e2ea3b7e279168b4", "src": "db2@1.60.1.70790"}
+{"id": 273933, "field": "name", "en": "Spiritcaller Grips", "hash": "902be09381f06746", "src": "db2@1.60.1.70790"}
+{"id": 273934, "field": "name", "en": "Spiritcaller Spaulders", "hash": "d1b3f7174febec32", "src": "db2@1.60.1.70790"}
+{"id": 273935, "field": "name", "en": "Spiritcaller Treads", "hash": "8b9e9899039d4e4b", "src": "db2@1.60.1.70790"}
+{"id": 273936, "field": "name", "en": "Spiritcaller Pants", "hash": "2be1735f08218049", "src": "db2@1.60.1.70790"}
+{"id": 273937, "field": "name", "en": "Spiritcaller Gauntlets", "hash": "27de6a3b5a08e251", "src": "db2@1.60.1.70790"}
+{"id": 273938, "field": "name", "en": "Spiritcaller Epaulets", "hash": "73881e336b42bcb9", "src": "db2@1.60.1.70790"}
+{"id": 273939, "field": "name", "en": "Spiritcaller Greaves", "hash": "4519b2cf288a5f3a", "src": "db2@1.60.1.70790"}
+{"id": 273940, "field": "name", "en": "Demonheart Leggings", "hash": "1a1d50a387541b7c", "src": "db2@1.60.1.70790"}
+{"id": 273941, "field": "name", "en": "Demonheart Gloves", "hash": "d75f9de5ce91230e", "src": "db2@1.60.1.70790"}
+{"id": 273942, "field": "name", "en": "Demonheart Spaulders", "hash": "10d7c7080db210b7", "src": "db2@1.60.1.70790"}
+{"id": 273943, "field": "name", "en": "Demonheart Boots", "hash": "2758d0aa3297602e", "src": "db2@1.60.1.70790"}
+{"id": 273944, "field": "name", "en": "Legplates of Glory", "hash": "f5ed63be5289549f", "src": "db2@1.60.1.70790"}
+{"id": 273945, "field": "name", "en": "Gauntlets of Glory", "hash": "9016f54e35db13a6", "src": "db2@1.60.1.70790"}
+{"id": 273946, "field": "name", "en": "Shoulders of Glory", "hash": "f6ca43125b87e963", "src": "db2@1.60.1.70790"}
+{"id": 273947, "field": "name", "en": "Greaves of Glory", "hash": "e0ca1ef7c3ec36c7", "src": "db2@1.60.1.70790"}
+{"id": 273948, "field": "name", "en": "Legguards of Glory", "hash": "fa2fba478e0cb496", "src": "db2@1.60.1.70790"}
+{"id": 273949, "field": "name", "en": "Handguards of Glory", "hash": "8fe0bc0bc7a92536", "src": "db2@1.60.1.70790"}
+{"id": 273950, "field": "name", "en": "Pauldrons of Glory", "hash": "d3d7aee25d4728a0", "src": "db2@1.60.1.70790"}
+{"id": 273951, "field": "name", "en": "Sabatons of Glory", "hash": "e4b5d9e7a2ddcba4", "src": "db2@1.60.1.70790"}
 {"id": 273952, "field": "name", "en": "Pattern: Grovekeeper Trousers", "hash": "36cc390e3af2272c", "src": "db2@1.60.1.70790"}
 {"id": 273952, "field": "description", "en": "Teaches you how to craft Grovekeeper Trousers.", "hash": "6f36eca668baa1d3", "src": "db2@1.60.1.70790"}
 {"id": 273953, "field": "name", "en": "Pattern: Grovekeeper Grips", "hash": "bcd60902439bf7b9", "src": "db2@1.60.1.70790"}

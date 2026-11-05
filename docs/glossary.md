@@ -481,12 +481,12 @@ _Avoid_: hash key, hash lookup (as a keying scheme), fuzzy match
 → [Addon modules](architecture/addon-modules.md) · [ADR-031](adr/031-objective-lines-menus-and-helptips.md)
 
 **Menu tag**:
-The name Blizzard's Menu system gives one generated dropdown or context menu (`MENU_CONTAINER_FRAME`, `MENU_QUEST_MAP_LOG_TITLE`). The addon translates a menu's entries by tag, each tag with its own list of [[UI key]]s its entries may show (a [[Key-restricted match]]), so a rank, bag, channel or player name in the same menu stays English. Submenus belong to their menu's tag. A tag whose menu is titled by a name (a unit's right-click menu, a chat channel's menu) is marked `titleIsName`: its title and any entry equal to that name are never matched, so a player named "Duel" stays "Duel".
+The name Blizzard's Menu system gives one generated dropdown or context menu (`MENU_CONTAINER_FRAME`, `MENU_QUEST_MAP_LOG_TITLE`). The addon translates a menu's entries by tag, each tag with its own list of [[UI key]]s its entries may show (a [[Key-restricted match]]), so a rank, bag, channel or player name in the same menu stays English. Submenus belong to their menu's tag. A tag whose menu is titled by a name (a chat channel's menu, an addon's menu in the AddOn list) is marked `titleIsName`: its title and any entry equal to that name are never matched. The unit right-click menus' tags (`MENU_UNIT_*`) are left alone, so those menus stay English, and so is Edit Mode's layout menu ([ADR-069](adr/069-unit-menus-and-edit-mode-stay-english.md)).
 _Avoid_: dropdown id, menu name, context menu (the thing, not its tag)
 → [Addon modules](architecture/addon-modules.md) · [ADR-031](adr/031-objective-lines-menus-and-helptips.md) · [ADR-032](adr/032-level-1-gaps-subtexts-and-name-titles.md)
 
 **Untagged menu**:
-A dropdown menu whose generator sets no [[Menu tag]] (the Options window's dropdowns and Edit Mode's setting dropdowns), so Blizzard's menu-modify hook never reaches it. The addon reaches each one through its own dropdown button when the menu is built, under a pseudo-tag (`SETTINGS_DROPDOWN`, `EDIT_MODE_DROPDOWN`) whose [[Key-restricted match]] is its window's keys: a font, locale or layout name stays English.
+A dropdown menu whose generator sets no [[Menu tag]] (the Options window's dropdowns, the who list's filter), so Blizzard's menu-modify hook never reaches it. The addon reaches each one through its own dropdown button when the menu is built, under a pseudo-tag (`SETTINGS_DROPDOWN`, `WHO_FILTER`) whose [[Key-restricted match]] is its window's keys: a font or locale name stays English. Edit Mode's setting dropdowns are untagged too but never reached ([ADR-069](adr/069-unit-menus-and-edit-mode-stay-english.md)).
 _Avoid_: untagged dropdown (fine), settings menu (a tagged menu may be one too), pseudo-tag (the addon's name for it, not the thing)
 → [Addon modules](architecture/addon-modules.md) · [ADR-033](adr/033-level-1-gaps-name-list-tails-and-untagged-menus.md)
 
@@ -496,7 +496,7 @@ _Avoid_: context menu (any right-click menu, tagged or not), popup menu, unnamed
 → [Addon modules](architecture/addon-modules.md) · [ADR-038](adr/038-menus-callouts-and-composite-forms.md)
 
 **Utility-button tooltip**:
-The hover of a small icon button attached to a menu entry: the gear, cancel (X) or play-sample button (Edit Mode's delete / rename-or-copy layout, Cooldown Settings' alert buttons). The button owns its own tooltip, so the addon registers each of the entry's child buttons as a [[Help tooltip]] owner with the tag's tooltip keys, besides the entry itself.
+The hover of a small icon button attached to a menu entry: the gear, cancel (X) or play-sample button (Cooldown Settings' alert buttons). The button owns its own tooltip, so the addon registers each of the entry's child buttons as a [[Help tooltip]] owner with the tag's tooltip keys, besides the entry itself.
 _Avoid_: gear tooltip, menu tooltip (a disabled entry's reason is the entry's own tooltip), icon hover
 → [Addon modules](architecture/addon-modules.md) · [ADR-038](adr/038-menus-callouts-and-composite-forms.md)
 

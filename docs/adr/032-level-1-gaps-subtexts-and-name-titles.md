@@ -7,6 +7,7 @@
   `UI/SpellBook.lua`, `UI/Menus.lua` (`titleIsName`). Partly checked in game on Forever: the spellbook subtexts show
   Japanese, and `C_Minimap.GetTrackingInfo(1).name` = "Auctioneer", the `MINIMAP_TRACKING_AUCTIONEER` English; the
   rest of the level-1 checklist in [Testing strategy](../testing/strategy.md) is pending.
+- **Superseded in part by:** [ADR-069](069-unit-menus-and-edit-mode-stay-english.md): the unit right-click menus and Edit Mode's setting dropdowns stay as the client writes them.
 - **Date:** 2026-09-19
 
 ## Context

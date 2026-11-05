@@ -1,6 +1,7 @@
 # ADR-067: Interface lines with links, colour-wrapped names and plural groups; a line stays English only on a proven reason
 
 - **Status:** Accepted
+- **Superseded in part by:** [ADR-069](069-unit-menus-and-edit-mode-stay-english.md): the unit menu keys (`UI/MenusUnit`) are no longer shown; the unit menus stay as the client writes them.
 - **Date:** 2026-10-12
 - **Amends:** [ADR-002](002-live-english-only.md) (a link's label is the one piece of a game line shipped in English, inside the Japanese), [ADR-016](016-whole-window-interface-coverage.md) §10 (links barred from the dictionary), [ADR-031](031-objective-lines-menus-and-helptips.md) §4 (the curation test forbids `|H`), [ADR-035](035-ui-errors-frame-surface.md) (a chat line whose English carries a link stays English).
 - **Related:** [ADR-014](014-machine-drafted-text-and-ui-dictionary.md) (the UI dictionary) · [ADR-015](015-ui-text-surfaces.md) (one dictionary, targeted hooks) · [ADR-037](037-staticpopup-dialogs-and-owned-keys.md) (dialogs whose caller formats the line) · [ADR-066](066-recipe-and-set-bonus-lines-from-the-tooltip-data.md) (the set bonus lines) · [ADR-052](052-coverage-by-served-data.md) (coverage from served data) · [Addon modules](../architecture/addon-modules.md) · [Coverage](../operations/coverage.md)

@@ -1,26 +1,26 @@
 {"id": 79007, "field": "title", "en": "... and that note you found", "hash": "5aedabd1a780b71d", "src": "wdb@1.60.1.70532"}
 {"id": 79007, "field": "objectives", "en": "Charred remains of the note serve as your only guide.", "hash": "b4126cf23f31e234", "src": "wdb@1.60.1.70532"}
 {"id": 79007, "field": "description", "en": "<The faint radiance of the embers darkening, you stumble across the remnants of a recent fire.\r\n\r\nAmidst the scattered provisions, you discover a blistered note.>\r\n\r\n\"Not all that burns is lost. Find the twin land, find the place.\"", "hash": "9304bba37fe463f0", "src": "wdb@1.60.1.70532"}
-{"id": 79008, "field": "title", "en": "... and that note you found", "hash": "5aedabd1a780b71d", "src": "wdb@1.60.1.70532"}
-{"id": 79008, "field": "objectives", "en": "Charred remains of the note serve as your only guide.", "hash": "b4126cf23f31e234", "src": "wdb@1.60.1.70532"}
-{"id": 79008, "field": "description", "en": "<The faint radiance of the embers darkening, you stumble across the remnants of a recent fire.\r\n\r\nAmidst the scattered provisions, you discover a blistered note.>\r\n\r\n\"Not all that burns is lost. Find the twin land, find the place.\"", "hash": "9304bba37fe463f0", "src": "wdb@1.60.1.70532"}
+{"id": 79008, "field": "title", "en": "... and that note you found", "hash": "5aedabd1a780b71d", "src": "wdb@1.60.1.70790"}
+{"id": 79008, "field": "objectives", "en": "Charred remains of the note serve as your only guide.", "hash": "b4126cf23f31e234", "src": "wdb@1.60.1.70790"}
+{"id": 79008, "field": "description", "en": "<The faint radiance of the embers darkening, you stumble across the remnants of a recent fire.\r\n\r\nAmidst the scattered provisions, you discover a blistered note.>\r\n\r\n\"Not all that burns is lost. Find the twin land, find the place.\"", "hash": "9304bba37fe463f0", "src": "wdb@1.60.1.70790"}
 {"id": 79008, "field": "completion", "en": "As you stumble upon the remnants of yet another charred corpse, your gaze falls upon a message secured to a wooden plank.", "hash": "f149b5be3434fea1", "src": "forever-vo@025070f"}
 {"id": 79090, "field": "title", "en": "Repelling Invaders", "hash": "d7957bbec8dbad13", "src": "wdb@1.60.1.70532"}
 {"id": 79090, "field": "objectives", "en": "Bring the Warsong Outrider Mark to Felore Moonray, Priestess of the Moon, at the Moonwell base in Ashenvale.", "hash": "def0139e06633b58", "src": "wdb@1.60.1.70532"}
 {"id": 79090, "field": "description", "en": "Some of the Warsong Outriders lie defeated, but the battle still rages...", "hash": "793d0d2956ed6bcb", "src": "wdb@1.60.1.70532"}
-{"id": 79091, "field": "title", "en": "Archmage Antonidas: The Unabridged Autobiography", "hash": "009cff456dea6ccb", "src": "wdb@1.60.1.70532"}
+{"id": 79091, "field": "title", "en": "Archmage Antonidas: The Unabridged Autobiography", "hash": "009cff456dea6ccb", "src": "wdb@1.60.1.70790"}
 {"id": 79091, "field": "progress", "en": "Have you brought something to add to our collection?", "hash": "1400fbf0acd9ea67", "src": "forever-vo@025070f"}
 {"id": 79091, "field": "completion", "en": "Thank you, $N. You say this is from the Ironforge library? ...I'm sure they won't miss it.\r\n\r\nIf you discover more magical works that might benefit the library, please bring them to me.", "hash": "ba293cb0318751fc", "src": "forever-vo@025070f"}
-{"id": 79092, "field": "title", "en": "Archmage Theocritus' Research Journal", "hash": "276fbac6493e581b", "src": "wdb@1.60.1.70532"}
+{"id": 79092, "field": "title", "en": "Archmage Theocritus' Research Journal", "hash": "276fbac6493e581b", "src": "wdb@1.60.1.70790"}
 {"id": 79092, "field": "progress", "en": "Have you brought something to add to our collection?", "hash": "1400fbf0acd9ea67", "src": "forever-vo@025070f"}
 {"id": 79092, "field": "completion", "en": "Thank you, $N. Our knowledge expands through your efforts.\r\n\r\nIf you discover more magical works that might benefit the library, please bring them to me.", "hash": "e184a784ef602550", "src": "forever-vo@025070f"}
-{"id": 79093, "field": "title", "en": "Rumi of Gnomeregan: The Collected Works", "hash": "24c4502579224e04", "src": "wdb@1.60.1.70532"}
+{"id": 79093, "field": "title", "en": "Rumi of Gnomeregan: The Collected Works", "hash": "24c4502579224e04", "src": "wdb@1.60.1.70790"}
 {"id": 79093, "field": "progress", "en": "Have you brought something to add to our collection?", "hash": "1400fbf0acd9ea67", "src": "forever-vo@025070f"}
 {"id": 79093, "field": "completion", "en": "Thank you, $N. Our knowledge expands through your efforts.\r\n\r\nIf you discover more magical works that might benefit the library, please bring them to me.", "hash": "e184a784ef602550", "src": "forever-vo@025070f"}
-{"id": 79094, "field": "title", "en": "The Lessons of Ta'zo", "hash": "faffd00328675678", "src": "wdb@1.60.1.70532"}
-{"id": 79095, "field": "title", "en": "The Apothecary's Metaphysical Primer", "hash": "cbb1ebc85383600c", "src": "wdb@1.60.1.70532"}
-{"id": 79096, "field": "title", "en": "Ataeric: On Arcane Curiosities", "hash": "673b8f253657daf3", "src": "wdb@1.60.1.70532"}
-{"id": 79097, "field": "title", "en": "Baxtan: On Destructive Magics", "hash": "3e745b06d2352a80", "src": "wdb@1.60.1.70532"}
+{"id": 79094, "field": "title", "en": "The Lessons of Ta'zo", "hash": "faffd00328675678", "src": "wdb@1.60.1.70790"}
+{"id": 79095, "field": "title", "en": "The Apothecary's Metaphysical Primer", "hash": "cbb1ebc85383600c", "src": "wdb@1.60.1.70790"}
+{"id": 79096, "field": "title", "en": "Ataeric: On Arcane Curiosities", "hash": "673b8f253657daf3", "src": "wdb@1.60.1.70790"}
+{"id": 79097, "field": "title", "en": "Baxtan: On Destructive Magics", "hash": "3e745b06d2352a80", "src": "wdb@1.60.1.70790"}
 {"id": 79097, "field": "progress", "en": "Have you brought something to add to our collection?", "hash": "1400fbf0acd9ea67", "src": "forever-vo@025070f"}
 {"id": 79097, "field": "completion", "en": "Thank you, $N. Our knowledge expands through your efforts.\r\n\r\nIf you discover more magical works that might benefit the library, please bring them to me.", "hash": "e184a784ef602550", "src": "forever-vo@025070f"}
 {"id": 79098, "field": "title", "en": "Clear the Forest!", "hash": "47bae5fc72da88cc", "src": "wdb@1.15.9.69722"}

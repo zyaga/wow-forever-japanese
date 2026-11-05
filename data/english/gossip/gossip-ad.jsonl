@@ -38,6 +38,7 @@
 {"id": "adb35c010871a4ba", "field": "text", "en": "Vanndar Stormpike is the general of the Alliance military in Alterac, and directs his forces from Dun Baldar.$B$BIf he is defeated then the Alliance will surely lose the battle for Alterac.$B$BVanndar is not currently in Alterac Valley.", "hash": "adb35c010871a4ba", "src": "vmangos@13b49dc"}
 {"id": "adb781452801659a", "field": "text", "en": "The Stormpike Graveyard is cut into the mountains, across the bridge east of Dun Baldar.$B$BThe Horde currently controls it.", "hash": "adb781452801659a", "src": "vmangos@13b49dc"}
 {"id": "adb7d7d82343f5cc", "field": "text", "en": "Ysida lives thanks to your courage, $n.  I am deeply in your debt and shall assist you as much as it is in my power.", "hash": "adb7d7d82343f5cc", "src": "vmangos@13b49dc"}
+{"id": "adc143944a3d178e", "field": "text", "en": "I have... failed...", "hash": "adc143944a3d178e", "src": "collector@1.60.1.70790"}
 {"id": "adc334ce030b1853", "field": "text", "en": "Oh, a priest is it?  Well good ol' Maxan is sure to be found having a drink in the Thunderbrew Distillery if ye need a bit of training.", "hash": "adc334ce030b1853", "src": "vmangos@13b49dc"}
 {"id": "addc214cf7e9734d", "field": "text", "en": "The world is indebted to you and your allies, $n.", "hash": "addc214cf7e9734d", "src": "vmangos@13b49dc"}
 {"id": "addf19af9e685dd9", "field": "text", "en": "My $g Lord:Lady;, please allow me to live long enough to see you purge this world of the infidels.", "hash": "addf19af9e685dd9", "src": "vmangos@13b49dc"}
