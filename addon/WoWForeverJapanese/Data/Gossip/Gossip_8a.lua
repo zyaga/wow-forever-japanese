@@ -13,6 +13,7 @@ WFJ.Data.add("gossip", {
   ["8a31fdd93c455294"] = { "試してみるか……", "." },
   ["8a3471168129dda3"] = { "Obsidionが造られたのはRagnarosの意志であった。ObsidionはBlackrock SpireのBlackrockのオークを滅ぼし、我らを灼熱の深淵に住む同胞と結びつけるであろう。", "." },
   ["8a3e32f8fb3420ef"] = { "すべて完了した、若き{class}よ。今この時も、HordeとAllianceの両方が、戦争のための最後の物資をCenarion Hold近くのSilithusへ運んでいるところで、一日もかからずに終わるだろう。その後、Ahn'Qirajの門の近くにある銅鑼を鳴らすことができ、戦争が始まるのだ。", "." },
+  ["8a3f7752fcbf5d7a"] = { "森について、何を言おうとしていたんだ？", "." },
   ["8a41ae5e26fcf17f"] = { "今夜は星が完璧に並ぶぞ！", "." },
   ["8a425b00da99a2db"] = { "%sはダイナマイトに火をつけると目を赤く光らせ、狂ったように高笑いし始めた！", "." },
   ["8a456242cdfebe94"] = { "Wind Rider MasterならOrgrimmarにいる。道を北へ進めば着く。そこでOrgrimmar Gruntに詳しい道を尋ねるといい。", "." },

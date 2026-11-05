@@ -14,6 +14,7 @@ WFJ.Data.add("gossip", {
   ["0d3cb3e88c1ccf20"] = { "もう誰もノックしないのかよ？？？！", "." },
   ["0d4687ec00ed66e0"] = { "背中は任せろ、Ichman。行け行け行け！", "." },
   ["0d4697ff4df794cf"] = { "どけどけ、この薄汚い犬め！ Revilgazは俺を絞首台から救ってくれたが、この罰もそれとほとんど変わらんくらいひどいかもしれん。", "." },
+  ["0d56ef327c407f26"] = { "Zephras IsleにはWindshapersの力が必要です！\n\n<Valenniaの計画をAyessaに説明する。>", "." },
   ["0d5de14c895f42f5"] = { "Elementium？ 定命の者の口からその言葉が発せられるのを聞くのは、何十年ぶりであろうか。", "." },
   ["0d6694e17b0422f2"] = { "Red Canyon Miningの北東、Valley of HonorにあるNogg's Machine Shopを探すといい。", "." },
   ["0d7118886b942e58"] = { "Tepaは布細工で名高いんだ。中段の台地にあるThunder Bluff Armorersにいるよ。", "." },

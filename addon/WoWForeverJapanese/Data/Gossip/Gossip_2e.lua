@@ -47,6 +47,7 @@ WFJ.Data.add("gossip", {
   ["2ee833636e6dc77c"] = { "Anthion、あなたが作ってくれた旗をどこかに置き忘れてしまったようなんだ。", "." },
   ["2ee997176af6525d"] = { "どうか、女司祭の皆さま、立ち入ったことをお許しください。ここで害をなすつもりはありません。", "." },
   ["2eed5f771553d4b2"] = { "先生、この子がずっとつついてくるんです！", "." },
+  ["2ef1f2376353567b"] = { "Earthen RingのMuln Earthfury殿。Windshapersは喜んであなたを客人としてお迎えいたします。", "." },
   ["2efc0d129c420732"] = { "あなたが持ってきてくれた毒素のサンプルからすると、必要なのは次のものだと思います。arcane quickenerが一つ、somatic intensifiersが5つ、そしてrunecloth 4枚です。vitreous focuserを携えて、ここPlaguelandsのzombieやghoulのアンデッドからintensifiersを手に入れてください！\n\nこれらが揃えば、あの大釜に対抗薬を入れられるはずです。", "." },
   ["2efc2c08c9c7460b"] = { "最近、本が消えている。伝承の守り手とその助手たちは大騒ぎだ。彼らはEldre'Thalasの内部での不正を疑っている。", "." },
 })

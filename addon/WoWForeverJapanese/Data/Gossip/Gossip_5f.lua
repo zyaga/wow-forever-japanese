@@ -14,6 +14,7 @@ WFJ.Data.add("gossip", {
   ["5f2387c0ec711c1d"] = { "Captain Brightsun、ここにいる{name}が私を解放してくれました！{name}、隊長はきっとあなたの勇気に報いてくださいますよ。", "." },
   ["5f2aa8a646530c7c"] = { "ありがとう、Omarion。今日はチームのために致命的な一撃を受けてくれたな。", "." },
   ["5f34f50e182aec7a"] = { "闇はお前を受け入れておらぬ、{class}。無駄口を叩くのをやめ、我が目の前から消え失せよ! 去れ!", "." },
+  ["5f442547ed4da2f1"] = { "Windshapersとそっくりな、先見の明を持つ者たちの結社が丸ごと一つあるのです。その名はEarthen Ring。その指導者の一人で、Muln Earthfuryという{class}が、私に多くを教えてくれました。", "." },
   ["5f4b9c724127e243"] = { "荷物をまとめな、{name}! Searing GorgeのNilith Lokravから、UndermarketがCauldronの中心で商売を始めたって知らせが届いたところだ。Searing GorgeのNilith Lokravを見つけて、詳しい話を聞いてきな!", "." },
   ["5f53f720f190263d"] = { "この愚か者め！Dewey Decimal Systemも覚えておらんのか？お前が我々のもとで働き始めてから3,000年になるのだぞ！無能な道化め。", "." },
   ["5f55ba5ff8c6ccfd"] = { "彼らは最も暗き翼で飛ぶ。最期を迎える覚悟をせよ！", "." },

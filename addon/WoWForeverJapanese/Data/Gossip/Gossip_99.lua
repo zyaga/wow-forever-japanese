@@ -39,6 +39,7 @@ WFJ.Data.add("gossip", {
   ["99dc096e1ffa2fbb"] = { "すぐに取りかかろう、{name}。", "." },
   ["99e51b0049a9a4c1"] = { "Uni-brow", "." },
   ["99f1ba99d4a1b91a"] = { "ここBrillに銀行はないよ。銀行ならUndercityへ行かないとね。南にあるRuins of Lordaeronの奥に、Undercityへ降りるエレベーターがある。着いたら、Undercity Guardiansの誰かにもっと詳しい道を尋ねるといい。", "." },
+  ["99f1ca606b16235d"] = { "あなたは今、永遠の炎を宿しています。急いで、それをValanaarのBrazier of Eternal Flameへ運び、儀式を完了させてください。", "." },
   ["99f98345d038c141"] = { "Barnil、Chapter IIをどこかに置き忘れてしまったようだ。", "." },
   ["99f989ecd03a5fae"] = { "Barnil、Chapter IVをどこかに置き忘れてしまったようだ。", "." },
   ["99faba03f89906d9"] = { "こんなBadlandsをうろつくなんて、よほど困ってるんだろうな、{class}。俺みたいに困ってるんだ。\n\nそれとも、頭がおかしいからここにいるのかもな。俺みたいに、おかしいからさ。", "." },
