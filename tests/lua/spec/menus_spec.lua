@@ -7,7 +7,6 @@ local Stub = require("tests.lua.spec.wow_stub")
 local FILES = {}
 for _, f in ipairs(H.UI_FILES) do FILES[#FILES + 1] = f end
 FILES[#FILES + 1] = "UI/SettingsKeys.lua"
-FILES[#FILES + 1] = "UI/MenusUnit.lua"
 FILES[#FILES + 1] = "UI/Menus.lua"
 FILES[#FILES + 1] = "UI/MenusUntagged.lua"
 
@@ -236,44 +235,24 @@ describe("UI/Menus: menu entries", function()
   end)
 
   -- the level-1 menus
-  it("a unit menu: entries and the raid-target submenu in Japanese; the title (the unit's name) never matched",
-    function()
+  it("no unit right-click menu gets a callback: its entries stay as the client wrote them", function()
+    -- a unit popup checks each entry's IsEnabled (CheckInteractDistance, protected in combat) in the same pass as the
+    -- element initializers (menutemplates.lua:105-112, unitpopupsharedutils.lua:195-205), so an addon initializer
+    -- there taints the check
     WFJ.Menus.init()
-    local markers
-    local root, frames = generate("MENU_UNIT_PLAYER", function(r)
-      r:CreateButton("Duel") -- the title: a player named Duel (unitpopupshared.lua:112–116)
-      r:CreateButton(UI.DUEL[1])
-      r:CreateButton(UI.TRADE[1])
-      r:CreateButton(UI.SET_FOCUS[1])
-      markers = r:CreateButton(UI.RAID_TARGET_ICON[1])
-      markers:CreateButton(UI.RAID_TARGET_1[1])
-      r:CreateButton(UI.UNIT_FRAME_DROPDOWN_SUBSECTION_TITLE_OTHER[1])
-    end, { name = "Trade" })
-    local e = root.children
-    assert.are.equal("Duel", frames[e[1]].fontString:GetText())
-    assert.are.equal("決闘", frames[e[2]].fontString:GetText())
-    assert.are.equal("Trade", frames[e[3]].fontString:GetText()) -- contextData.name: never matched
-    assert.are.equal("フォーカスに設定", frames[e[4]].fontString:GetText())
-    assert.are.equal("ターゲットマーカー", frames[e[5]].fontString:GetText())
-    assert.are.equal("スター", frames[markers.children[1]].fontString:GetText())
-    assert.are.equal("その他のオプション", frames[e[6]].fontString:GetText())
-    for _, which in ipairs({ "SELF", "TARGET", "PLAYER", "ENEMY_PLAYER", "PARTY", "PET", "FOCUS", "FRIEND" }) do
-      assert.is_function(callbacks["MENU_UNIT_" .. which], which)
+    for _, which in ipairs({ "SELF", "TARGET", "PLAYER", "ENEMY_PLAYER", "PARTY", "PET", "FOCUS", "FRIEND", "RAID",
+      "BN_FRIEND", "CHAT_ROSTER", "VEHICLE" }) do
+      assert.is_nil(callbacks["MENU_UNIT_" .. which], which)
     end
-  end)
-
-  it("a target menu with only a unit: an entry equal to UnitName(unit) is never matched", function()
-    WFJ.Menus.init()
-    _G.UnitName = function(unit) return unit == "target" and "Trade" or nil end
-    local root, frames = generate("MENU_UNIT_TARGET", function(r)
-      r:CreateButton("Trade") -- the title
+    for tag in pairs(WFJ.Menus.TAGS) do assert.is_nil(tag:find("^MENU_UNIT_"), tag) end
+    local root, frames = generate("MENU_UNIT_PLAYER", function(r)
+      r:CreateButton("Duel")
+      r:CreateButton(UI.DUEL[1])
       r:CreateButton(UI.SET_FOCUS[1])
-      r:CreateButton(UI.TRADE[1]) -- the same English as the unit's name: left alone
-    end, { unit = "target" })
-    assert.are.equal("Trade", frames[root.children[1]].fontString:GetText())
-    assert.are.equal("フォーカスに設定", frames[root.children[2]].fontString:GetText())
-    assert.are.equal("Trade", frames[root.children[3]].fontString:GetText())
-    _G.UnitName = nil
+    end, { name = "Duel" })
+    assert.are.equal(UI.DUEL[1], frames[root.children[2]].fontString:GetText())
+    assert.are.equal(UI.SET_FOCUS[1], frames[root.children[3]].fontString:GetText())
+    assert.is_function(callbacks["MENU_CHAT_FRAME_CHANNEL"]) -- the other menus keep theirs
   end)
 
   it("a channel menu keeps its title (the channel's name) even when it is a dictionary word", function()
@@ -354,36 +333,9 @@ describe("UI/Menus: menu entries", function()
     Stub.keys.alt = false; WFJ.Modifier.refresh()
   end)
 
-  it("a role radio keeps its icon; the loot opt-out shows Yes / No in Japanese; hovers are registered",
-    function()
-      WFJ.Menus.init()
-      local icon = "|A:groupfinder-icon-role-micro-tank:16:16:0:0|a"
-      local role
-      local root, frames = generate("MENU_UNIT_SELF", function(r)
-        r:CreateButton("Me") -- the title: the player's name
-        r:CreateButton(UI.LOOT_GROUP_LOOT[1])
-        r:CreateButton(string.format(UI.OPT_OUT_LOOT_TITLE[1], UI.NO[1]))
-        role = r:CreateButton(UI.SET_ROLE[1])
-        role:CreateButton(icon .. " " .. UI.TANK[1])
-        role:CreateButton(UI.NO_ROLE[1])
-      end, { name = "Me" })
-      local e = root.children
-      assert.are.equal("Me", frames[e[1]].fontString:GetText())
-      assert.are.equal("戦利品：グループ", frames[e[2]].fontString:GetText())
-      assert.are.equal("戦利品をパス：いいえ", frames[e[3]].fontString:GetText())
-      assert.are.equal("役割を設定", frames[e[4]].fontString:GetText())
-      assert.are.equal(icon .. " タンク", frames[role.children[1]].fontString:GetText())
-      assert.are.equal("役割なし", frames[role.children[2]].fontString:GetText())
-      assert.is_true(WFJ.HelpTooltip.registered(frames[e[2]]))
-      Stub.keys.alt = true; WFJ.Modifier.refresh()
-      assert.are.equal(icon .. " Tank", frames[role.children[1]].fontString:GetText())
-      Stub.keys.alt = false; WFJ.Modifier.refresh()
-    end)
-
   it("one entry per sweep tag in Japanese; names beside them stay as written", function()
     WFJ.Menus.init()
     local cases = {
-      { "MENU_EDIT_MODE_MANAGER", { "Modern", UI.HUD_EDIT_MODE_IMPORT_LAYOUT[1] }, { "Modern", "インポート" } },
       { "MENU_QUEUE_STATUS_FRAME", { "Deadmines", UI.UNLIST_ME[1] }, { "Deadmines", "登録を取り消す" } },
       { "MENU_LFG_LISTING_ROLE", { UI.TANK[1] }, { "タンク" } },
       { "MENU_LFG_LISTING_SETTINGS", { UI.LFG_LIST_IGNORE_SUGGESTED_LEVEL[1] }, { "推奨レベルを無視" } },
