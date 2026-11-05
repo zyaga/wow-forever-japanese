@@ -112,7 +112,7 @@ def test_malformed_files_are_errors(tmp_path, real):
 
 
 # the Forever builds pinned after 69913, written here rather than read from wdb.LAYOUTS so each pin is checked
-FOREVER_PINS = (70009, 70124, 70170, 70245, 70291, 70338, 70425, 70450, 70532)
+FOREVER_PINS = (70009, 70124, 70170, 70245, 70291, 70338, 70425, 70450, 70532, 70790)
 
 
 def test_an_unpinned_build_is_refused(tmp_path, real):
