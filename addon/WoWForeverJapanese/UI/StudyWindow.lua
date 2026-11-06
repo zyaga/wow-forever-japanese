@@ -26,15 +26,19 @@ local last = {} -- the last scan shown: the tab's and footer's texts are re-put 
 local pendingAttach = false -- the card shows a word whose readings and mark wait for the card to be on screen
 local rec = { surface = "study", key = "sentence" } -- the sentence's record for UI/Readings
 
--- The header's icon buttons: the client's own minus box for Collapse, its voice chat speaker (an atlas, with a
--- glyph when the client has none) for the sound; Good plays the client's ready check chime, one short ding
--- [verified: SOUNDKIT.READY_CHECK = 8960, SharedXML/SoundKitConstants.lua].
+-- The header's buttons: the client's own close box (RedButton-Exit, 24 px) and, for Collapse, its hide button
+-- of the same family (RedButton-MiniCondense, the minus) [verified: UIPanelCloseButtonNoScripts and
+-- UIPanelHideButtonNoScripts, SharedXML/SharedUIPanelTemplates.xml:134-147]; the voice chat speaker (an atlas,
+-- with a glyph when the client has none) for the sound; Show answer plays the options checkbox click, Good the loot
+-- window's coin jingle and Again the quest log's abandon sound [verified: SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON
+-- = 856, LOOT_WINDOW_COIN_SOUND = 120, IG_QUEST_LOG_ABANDON_QUEST = 846, SharedXML/SoundKitConstants.lua].
 local ICON = {
-  collapse = "Interface\\Buttons\\UI-MinusButton-Up", hilight = "Interface\\Buttons\\UI-Common-MouseHilight",
+  hilight = "Interface\\Buttons\\UI-Common-MouseHilight",
   speaker = "voicechat-icon-speaker", muted = "voicechat-icon-speaker-mute",
 }
-local GOOD_SOUND = 8960
-local FLASH = 0.2 -- seconds the whole card glows gold after Good, like a saved word's tint
+local BUTTON = 24 -- the close button's own size
+local REVEAL_SOUND, GOOD_SOUND, AGAIN_SOUND = 856, 120, 846
+local FLASH = 0.2 -- seconds the whole card glows after a grade, like a saved word's tint
 
 local S = function() return WFJ.Settings end
 local function now() return Compat.call("time") or 0 end
@@ -97,27 +101,31 @@ local function closeButton(parent, size)
   return b
 end
 
+local tipFrame -- the card's own tooltip, so its line can take the bundled face (the game's has no Japanese glyphs)
 local function tip(owner, text)
-  local tt = Compat.resolve("GameTooltip")
-  if type(tt) ~= "table" or type(tt.SetOwner) ~= "function" then return end
-  tt:SetOwner(owner, "ANCHOR_TOP")
-  tt:SetText(text)
-  tt:Show()
+  tipFrame = tipFrame or CreateFrame("GameTooltip", "WFJStudyTip", Compat.resolve("UIParent"), "GameTooltipTemplate")
+  tipFrame:SetOwner(owner, "ANCHOR_TOP")
+  tipFrame:SetText(text, 1, 1, 1)
+  local line = Compat.resolve("WFJStudyTipTextLeft1")
+  if type(line) == "table" then WFJ.Font.set(line, WFJ.Font.PATH, 13, "") end
+  tipFrame:Show()
 end
 
 local function hideTip()
-  local tt = Compat.resolve("GameTooltip")
-  if type(tt) == "table" and type(tt.Hide) == "function" then tt:Hide() end
+  if tipFrame then tipFrame:Hide() end
 end
 
--- A square icon button the size of the close button, with the client's mouse-over glow and a one-line tooltip
--- that follows the language.
-local function iconButton(parent, size, textKey, onClick)
-  local b = CreateFrame("Button", nil, parent)
-  b:SetSize(size, size)
-  b.icon = b:CreateTexture(nil, "ARTWORK")
-  b.icon:SetAllPoints(b)
-  b:SetHighlightTexture(ICON.hilight, "ADD")
+-- A button the close button's size with a one-line tooltip that follows the language: from a client template
+-- (its own art), or plain with an icon texture drawn at `art` pixels, centred, under the client's mouse-over glow.
+local function iconButton(parent, template, art, textKey, onClick)
+  local b = CreateFrame("Button", nil, parent, template)
+  b:SetSize(BUTTON, BUTTON)
+  if not template then
+    b.icon = b:CreateTexture(nil, "ARTWORK")
+    b.icon:SetSize(art, art)
+    b.icon:SetPoint("CENTER", b, "CENTER", 0, 0)
+    b:SetHighlightTexture(ICON.hilight, "ADD")
+  end
   b:SetScript("OnClick", onClick)
   b:SetScript("OnEnter", function(self) tip(self, W.pick(Text.get(textKey))) end)
   b:SetScript("OnLeave", hideTip)
@@ -145,10 +153,18 @@ local function setSpeaker(f)
   end
 end
 
--- Good: the ding (unless muted) and a blink of gold over the whole card while the next one comes.
-local function reward()
-  if S().get("study.sound") == true then Compat.call("PlaySound", GOOD_SOUND) end
+-- The card's sounds, all off with the setting (the speaker button).
+local function sound(id)
+  if S().get("study.sound") == true then Compat.call("PlaySound", id) end
+end
+
+-- A grade's sound and a blink over the whole card while the next one comes: green for Good, red for Again, the
+-- grade buttons' own colours.
+local function reward(rating)
+  local good = rating == WFJ.Study.GOOD
+  sound(good and GOOD_SOUND or AGAIN_SOUND)
   local f = card
+  if good then f.glow:SetColorTexture(0.1, 0.8, 0.2, 0.25) else f.glow:SetColorTexture(0.9, 0.1, 0.1, 0.25) end
   f.glow:Show()
   Compat.call("C_Timer.After", FLASH, function() f.glow:Hide() end)
 end
@@ -300,6 +316,7 @@ function StudyWindow.showAnswer()
   local e = current
   if not e then return end
   answered = true
+  sound(REVEAL_SOUND)
   local en, ja = {}, {}
   local function both(a, b) en[#en + 1] = a; ja[#ja + 1] = b end
   if e.reading ~= nil and e.reading ~= "" and e.reading ~= e.word then both(e.reading, e.reading) end
@@ -391,7 +408,7 @@ end
 function StudyWindow.grade(rating)
   if not current then return end
   WFJ.Study.answer(current.key, rating, now(), today()) -- a frozen table asks nothing, so it never gets here
-  if rating == WFJ.Study.GOOD then reward() end
+  reward(rating)
   local r = scan()
   nextCard(r)
   apply(r)
@@ -435,12 +452,11 @@ local function buildCard()
   if f.word.SetNonSpaceWrap then f.word:SetNonSpaceWrap(true) end
   if f.word.SetMaxLines then f.word:SetMaxLines(1) end
 
-  f.close = closeButton(f, 26)
+  f.close = closeButton(f, BUTTON)
   f.close:SetPoint("TOPRIGHT", f, "TOPRIGHT", -4, -4)
-  f.collapse = iconButton(f, 26, "study.collapse", function() StudyWindow.collapse() end)
-  f.collapse.icon:SetTexture(ICON.collapse)
+  f.collapse = iconButton(f, "UIPanelHideButtonNoScripts", nil, "study.collapse", function() StudyWindow.collapse() end)
   f.collapse:SetPoint("RIGHT", f.close, "LEFT", -2, 0)
-  f.mute = iconButton(f, 26, "study.sound", function() S().set("study.sound", S().get("study.sound") ~= true) end)
+  f.mute = iconButton(f, nil, 20, "study.sound", function() S().set("study.sound", S().get("study.sound") ~= true) end)
   f.mute:SetPoint("RIGHT", f.collapse, "LEFT", -2, 0)
   f.mute.glyph = f.mute:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
   f.mute.glyph:SetPoint("CENTER", f.mute, "CENTER", 0, 0)
@@ -448,7 +464,6 @@ local function buildCard()
   setSpeaker(f)
 
   f.glow = f:CreateTexture(nil, "BACKGROUND", nil, 7) -- over the backdrop, under every text and mark
-  f.glow:SetColorTexture(W.GOLD[1], W.GOLD[2], W.GOLD[3], 0.25)
   f.glow:SetAllPoints(f)
   f.glow:Hide()
 

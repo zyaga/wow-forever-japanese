@@ -64,7 +64,7 @@ describe("the study window", function()
   before_each(function()
     Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
     extendFrames()
-    _G.WFJStudyTab, _G.WFJStudyCard = nil, nil -- the stub keeps named frames from an earlier test
+    _G.WFJStudyTab, _G.WFJStudyCard, _G.WFJStudyTip = nil, nil, nil -- the stub keeps named frames from an earlier test
     _G.UIParent = CreateFrame("Frame", "UIParent")
     clock = NOW
     _G.time = function() return clock end
@@ -159,25 +159,34 @@ describe("the study window", function()
     assert.is_true(f.height > 244)
   end)
 
-  it("Good plays the tick and blinks the title; Again does neither; the speaker button mutes the tick", function()
+  it("Show answer and each grade have a sound, the grades a blink (green Good, red Again); the speaker mutes all",
+    function()
     save("生き物")
     save("数")
     SW.open()
     local f = card()
     assert.is_true(f.mute.on)
+    f.show.scripts.OnClick(f.show, "LeftButton")
+    assert.are.same({ 856 }, sounds)
     SW.grade(WFJ.Study.AGAIN)
-    assert.are.same({}, sounds)
+    assert.are.same({ 856, 846 }, sounds)
+    assert.is_true(f.glow:IsShown())
+    assert.are.equal(0.9, f.glow.color[1]) -- red
+    runTimers()
     assert.is_false(f.glow:IsShown())
     SW.grade(WFJ.Study.GOOD)
-    assert.are.same({ 8960 }, sounds)
+    assert.are.same({ 856, 846, 120 }, sounds)
     assert.is_true(f.glow:IsShown())
+    assert.are.equal(0.8, f.glow.color[2]) -- green
     runTimers()
     assert.is_false(f.glow:IsShown())
     f.mute.scripts.OnClick(f.mute, "LeftButton") -- the setting flips, the card follows it
     assert.is_false(S.get("study.sound"))
     assert.is_false(f.mute.on)
+    f.show.scripts.OnClick(f.show, "LeftButton")
     SW.grade(WFJ.Study.GOOD)
-    assert.are.same({ 8960 }, sounds)
+    SW.grade(WFJ.Study.AGAIN)
+    assert.are.same({ 856, 846, 120 }, sounds)
   end)
 
   it("clicking the tab opens the card: the word, its sentence with the word marked, the other words hoverable",
