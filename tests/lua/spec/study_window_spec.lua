@@ -48,8 +48,8 @@ describe("the study window", function()
     text = text or JA
     local first = text:find(word, 1, true)
     local _, e = WFJ.Words.add({ kind = kind or "quest.description", id = id or 456,
-      surface = surface or "questframe.detail", text = text, first = first, last = first + #word - 1, word = word, reading = "いきもの", lemma = word,
-      lemmaReading = "いきもの", meaning = "living thing", questTitle = "題" }, NOW)
+      surface = surface or "questframe.detail", text = text, first = first, last = first + #word - 1, word = word,
+      reading = "いきもの", lemma = word, lemmaReading = "いきもの", meaning = "living thing", questTitle = "題" }, NOW)
     return e
   end
   local function loadStudy() WFJ.Study.load(nil, WFJ.Words.keys()) end
