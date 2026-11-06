@@ -26,9 +26,17 @@ local list -- the saved table
 local frozen = false -- saved by a newer version: kept as it is, never written
 local known = {} -- the word list's keys as last given
 
+-- a finite number: the formulas assume one, and a NaN written back would spoil the whole saved file
+local function finite(n)
+  return type(n) == "number" and n == n and n ~= math.huge and n ~= -math.huge
+end
+
 local function isCard(c)
-  return type(c) == "table" and type(c.s) == "number" and type(c.d) == "number" and type(c.due) == "number"
-    and type(c.last) == "number"
+  return type(c) == "table" and finite(c.s) and c.s > 0 and finite(c.d) and finite(c.due) and finite(c.last)
+end
+
+local function count(n)
+  return finite(n) and n >= 0 and math.floor(n) == n and n or nil
 end
 
 local function keysOf(entries)
@@ -39,12 +47,14 @@ local function keysOf(entries)
   return set
 end
 
--- `entries`: the word list's entries; a card whose word is gone from the list is dropped.
-function Study.load(saved, entries)
+-- `entries`: the word list's entries; a card whose word is gone from the list is dropped. `listFrozen`: the word
+-- list itself was saved by a newer version, so its entries cannot be trusted to name the cards: the study table is
+-- kept as it is, read-only, like the list.
+function Study.load(saved, entries, listFrozen)
   frozen = false
   known = keysOf(entries)
-  if type(saved) == "table" and type(saved.schema) == "number" and saved.schema > Study.SCHEMA then
-    list, frozen = saved, true
+  if listFrozen or (type(saved) == "table" and type(saved.schema) == "number" and saved.schema > Study.SCHEMA) then
+    list, frozen = type(saved) == "table" and saved or nil, true
     return saved
   end
   local t = { schema = Study.SCHEMA, cards = {}, days = {} }
@@ -52,14 +62,14 @@ function Study.load(saved, entries)
     if type(saved.cards) == "table" then
       for k, c in pairs(saved.cards) do
         if type(k) == "string" and known[k] and isCard(c) then
-          t.cards[k] = { s = c.s, d = c.d, due = c.due, last = c.last,
-            reps = type(c.reps) == "number" and c.reps or 0, lapses = type(c.lapses) == "number" and c.lapses or 0 }
+          t.cards[k] = { s = c.s, d = math.min(math.max(c.d, 1), 10), due = c.due, last = c.last,
+            reps = count(c.reps) or 0, lapses = count(c.lapses) or 0 }
         end
       end
     end
     if type(saved.days) == "table" then
       for day, n in pairs(saved.days) do
-        if type(day) == "string" and day:find("^%d%d%d%d%-%d%d%-%d%d$") and type(n) == "number" then t.days[day] = n end
+        if type(day) == "string" and day:find("^%d%d%d%d%-%d%d%-%d%d$") and count(n) then t.days[day] = n end
       end
     end
   end

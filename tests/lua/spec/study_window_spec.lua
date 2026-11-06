@@ -143,6 +143,7 @@ describe("the study window", function()
       assert.are.equal(f.sentence, r.fs)
       assert.are.equal(e.sentence, r.applied)
       assert.are.same({ kind = "quest.description", id = 456 }, r.meta)
+      assert.are.same({ first = e.wf, last = e.wl }, r.exclude) -- a class / race word under test takes no card either
       local words = {}
       for i, sp in ipairs(r.spans) do words[i] = sp.word end
       assert.are.same({ "少し", "狩り", "数" }, words) -- never the tested word
@@ -312,7 +313,7 @@ describe("the study window", function()
     assert.is_true(tab():IsShown())
   end)
 
-  it("a study table saved by a newer version asks nothing and refuses a grade with the word list's line", function()
+  it("a study table saved by a newer version asks nothing, so there is nothing to grade and no chat line", function()
     save("生き物")
     WFJ.Study.load({ schema = 99, cards = {} }, WFJ.Words.entries())
     SW.open()
@@ -320,6 +321,34 @@ describe("the study window", function()
     assert.is_truthy(f.message.en:IsShown()) -- nothing is asked from a table it may not write
     assert.is_nil(SW.grade(WFJ.Study.GOOD))
     assert.are.same({}, Stub.prints)
+  end)
+
+  it("a card opened while hidden in combat gets its cover and its mark when it shows again", function()
+    local e = save("生き物")
+    SW.setCombat(true)
+    SW.open()
+    local f = card()
+    assert.is_false(f:IsShown())
+    attached = {} -- whatever a hidden attach did does not count: the client refuses a cover in combat
+    SW.setCombat(false)
+    assert.is_true(f:IsShown())
+    assert.are.equal(1, #attached)
+    assert.are.equal(e.sentence, attached[1].applied)
+    assert.is_true(f.marks[1].shown)
+  end)
+
+  it("a grade tells the settings page (State \"study\"), and a junk saved spot falls back to the edge", function()
+    save("生き物")
+    local fired = 0
+    WFJ.State.on("study", function() fired = fired + 1 end)
+    SW.open()
+    SW.showAnswer(); SW.grade(WFJ.Study.GOOD)
+    assert.are.equal(1, fired)
+    db.study.point = { "BOTTOM", 7, "x", "y" }
+    SW.resetPosition(function() end) -- clears it; then a junk spot written by hand
+    db.study.point = { 1, 2, 3, 4 }
+    SW.collapse(); SW.open()
+    assert.are.equal("RIGHT", card().point[1])
   end)
 
   it("the language flip only re-labels what is on screen", function()

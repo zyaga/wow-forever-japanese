@@ -33,7 +33,6 @@ local function say(key, ...)
   local line = both(key, ...)
   if line then print("WFJ: " .. line) end
 end
-WordSave.say = say -- the study card's refused grade prints the same line
 
 -- The card's hint until the player has saved a word once; nothing while saving is off.
 function WordSave.hint()

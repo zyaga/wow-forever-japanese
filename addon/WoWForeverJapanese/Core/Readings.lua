@@ -142,8 +142,9 @@ function Readings.tokenSpans(text)
   return out
 end
 
--- `spans` plus a span for every class / race word standing alone in `text`, in text order.
-function Readings.withTokenWords(spans, text)
+-- `spans` plus a span for every class / race word standing alone in `text`, in text order. `exclude`: a span
+-- { first, last } that takes no word (the study card's tested word, whose card would give the answer away).
+function Readings.withTokenWords(spans, text, exclude)
   local out = {}
   for i, sp in ipairs(spans or {}) do out[i] = sp end
   if type(text) ~= "string" then return out end
@@ -154,7 +155,9 @@ function Readings.withTokenWords(spans, text)
     while true do
       local s, e = text:find(word, from, true)
       if not s then break end
-      if not overlaps(out, s, e) and not katakanaEndingAt(text, s - 1) and not katakanaStartingAt(text, e + 1) then
+      local kept = exclude and s <= exclude.last and e >= exclude.first
+      if not kept and not overlaps(out, s, e) and not katakanaEndingAt(text, s - 1)
+          and not katakanaStartingAt(text, e + 1) then
         out[#out + 1] = { first = s, last = e, word = word, reading = word,
           card = { lemma = word, lemmaReading = word, meaning = meaning } }
         added = true

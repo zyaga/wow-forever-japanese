@@ -37,12 +37,39 @@ describe("Study", function()
       }, days = { ["2026-09-20"] = 3, junk = "x" } }
       t = S.load(saved, E)
       assert.are.equal(2, t.cards.a.s)
+      assert.is_true(t.cards.a.d == 5)
       assert.is_nil(t.cards.gone)
       assert.is_nil(t.cards.bad)
       assert.is_nil(t.cards.b)
       assert.are.equal(3, t.days["2026-09-20"])
       assert.is_nil(t.days.junk)
       assert.is_false(S.readonly())
+    end)
+
+    it("drops a card with a non-finite or non-positive number and clamps the difficulty into its bounds", function()
+      local card = { s = 2, d = 50, due = NOW, last = NOW - DAY, reps = 1.5, lapses = -1 }
+      local saved = { schema = 1, cards = {
+        a = card,
+        b = { s = 0, d = 5, due = NOW, last = NOW, reps = 1, lapses = 0 },
+        c = { s = 0 / 0, d = 5, due = math.huge, last = NOW, reps = 1, lapses = 0 },
+      }, days = { ["2026-09-20"] = 0 / 0, ["2026-09-19"] = -3, ["2026-09-18"] = 2 } }
+      local t = S.load(saved, E)
+      assert.are.equal(10, t.cards.a.d)
+      assert.are.equal(0, t.cards.a.reps)
+      assert.are.equal(0, t.cards.a.lapses)
+      assert.is_nil(t.cards.b)
+      assert.is_nil(t.cards.c)
+      assert.are.same({ ["2026-09-18"] = 2 }, t.days)
+    end)
+
+    it("keeps the table untouched and read-only while the word list itself was saved by a newer version", function()
+      local saved = { schema = 1, cards = {}, days = {} }
+      assert.are.equal(saved, S.load(saved, {}, true))
+      assert.is_true(S.readonly())
+      assert.is_nil(S.answer("a", S.GOOD, NOW, TODAY))
+      assert.is_nil(S.load(nil, {}, true))
+      assert.is_true(S.readonly())
+      assert.are.same({ due = 0, newLeft = 0, fresh = 0 }, S.counts(E, NOW, TODAY, 20))
     end)
 
     it("keeps a table saved by a newer version untouched and refuses to grade", function()

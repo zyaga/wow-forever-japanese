@@ -15,7 +15,7 @@ local Compat = WFJ.Compat
 local W, Text = WFJ.OptionsWidgets, WFJ.OptionsText
 
 StudyWindow.TICK = 15 -- seconds between count refreshes while the tab or the card is on screen
-local WIDTH, HEIGHT, PAD = 320, 214, 12
+local WIDTH, HEIGHT, PAD = 320, 230, 12
 local TAB_WIDTH, TAB_HEIGHT = 84, 24
 
 local db -- WFJ_DB (init): db.study = { point = { p, rp, x, y } }
@@ -23,6 +23,7 @@ local card, tab, ticker
 local current, answered -- the entry on the card (nil: the done state) and whether its back shows
 local cardOpen, closed, inCombat = false, false, false
 local last = {} -- the last scan shown: the tab's and footer's texts are re-put only when they change
+local pendingAttach = false -- the card shows a word whose readings and mark wait for the card to be on screen
 local rec = { surface = "study", key = "sentence" } -- the sentence's record for UI/Readings
 
 local S = function() return WFJ.Settings end
@@ -36,6 +37,7 @@ local function scan() return WFJ.Study.scan(WFJ.Words.entries(), now(), today(),
 function StudyWindow.counts() return scan() end
 
 local function opt()
+  db = db or {} -- opened before (or without) init: the spot is then kept for the session only
   db.study = db.study or {}
   return db.study
 end
@@ -48,7 +50,8 @@ local function place(f)
   f:ClearAllPoints()
   local p = opt().point
   local parent = Compat.resolve("UIParent")
-  if type(p) == "table" and p[1] then
+  if type(p) == "table" and type(p[1]) == "string" and type(p[2]) == "string" and type(p[3]) == "number"
+      and type(p[4]) == "number" then
     f:SetPoint(p[1], parent, p[2], p[3], p[4])
   else
     f:SetPoint("RIGHT", parent, "RIGHT", -4, 0)
@@ -122,6 +125,7 @@ local function attach(e)
   local f = card
   local others, own = WFJ.Words.lineSpans(e)
   rec.fs, rec.applied, rec.meta, rec.spans = f.sentence, e.sentence, { kind = e.kind, id = e.id }, others
+  rec.exclude = own -- a saved class / race word would otherwise get its card back from the token-word pass
   local v = view()
   if v and others[1] then pcall(v.attach, rec) end
   f.mark = own
@@ -141,12 +145,14 @@ local function showState()
   W.setShown(f.message.en, not asking)
 end
 
+-- The readings and the mark are attached once the card is on screen (apply): a hidden FontString has no layout to
+-- measure, and the client refuses a cover in combat.
 local function front(e)
   current, answered = e, false
   detach()
   W.put(card.word, e.word or "", 20)
   W.put(card.sentence, e.sentence or "", 14)
-  attach(e)
+  pendingAttach = true
   showState()
 end
 
@@ -164,7 +170,7 @@ local function nextLine(r)
 end
 
 local function done(r)
-  current, answered = nil, false
+  current, answered, pendingAttach = nil, false, false
   detach()
   W.put(card.word, W.pick(Text.get("study.title")), 20)
   local en1, ja1 = Text.get("study.done")
@@ -239,6 +245,10 @@ local function apply(r)
       W.relabelIfStale()
     end
     card:SetShown(showCard)
+    if showCard and pendingAttach and current then
+      pendingAttach = false
+      attach(current)
+    end
   end
   -- the clock matters only while something is on screen: the tab's count, the card's done line
   if showCard or showTab then startTicker() else stopTicker() end
@@ -262,12 +272,15 @@ local function relabel()
   end
 end
 
+-- A grade changes what waits: the Words page's counts follow State "study" (this window's own listener only
+-- re-reads what it just drew).
 function StudyWindow.grade(rating)
   if not current then return end
-  if not WFJ.Study.answer(current.key, rating, now(), today()) then return WFJ.WordSave.say("words.refused") end
+  WFJ.Study.answer(current.key, rating, now(), today()) -- a frozen table asks nothing, so it never gets here
   local r = scan()
   nextCard(r)
   apply(r)
+  WFJ.State.fire("study")
 end
 
 -- ── Build ────────────────────────────────────────────────────────────────
@@ -300,7 +313,9 @@ local function buildCard()
 
   f.word = f:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
   f.word:SetPoint("TOPLEFT", f, "TOPLEFT", PAD, -PAD)
+  f.word:SetWidth(inner - 100) -- the collapse and close buttons sit to its right
   f.word:SetJustifyH("LEFT")
+  if f.word.SetMaxLines then f.word:SetMaxLines(1) end
 
   f.close = closeButton(f, 26)
   f.close:SetPoint("TOPRIGHT", f, "TOPRIGHT", -4, -4)
@@ -318,6 +333,8 @@ local function buildCard()
   if f.sentence.SetNonSpaceWrap then f.sentence:SetNonSpaceWrap(true) end
 
   f.answer = W.label(f, "", "", PAD, -116, inner)
+  f.answer.en:ClearAllPoints()
+  f.answer.en:SetPoint("TOPLEFT", f.sentence, "BOTTOMLEFT", 0, -8) -- under the sentence, however many lines it wraps to
   f.message = W.label(f, "", "", PAD, -50, inner)
 
   en, ja = Text.get("study.show")
@@ -354,14 +371,14 @@ function StudyWindow.open()
 end
 
 function StudyWindow.collapse()
-  cardOpen = false
+  cardOpen, pendingAttach = false, false
   detach()
   apply(scan())
 end
 
 -- Hides the tab and the card until something opens the card again (the next login shows the tab as before).
 function StudyWindow.close()
-  closed, cardOpen = true, false
+  closed, cardOpen, pendingAttach = true, false, false
   current = nil
   detach()
   apply(scan())

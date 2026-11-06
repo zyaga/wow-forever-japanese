@@ -264,7 +264,9 @@ function WFJ.OnLoad()
   -- the player's saved words: the same `or` guard, so a failed load never hands the client an empty list to write
   WFJ_Words = step("words", function() return WFJ.Words.load(WFJ_Words) end) or WFJ_Words
   -- the study cards of those words: the same guard; a word gone from the list loses its card here
-  WFJ_Study = step("study", function() return WFJ.Study.load(WFJ_Study, WFJ.Words.entries()) end) or WFJ_Study
+  WFJ_Study = step("study", function()
+    return WFJ.Study.load(WFJ_Study, WFJ.Words.entries(), WFJ.Words.readonly())
+  end) or WFJ_Study
   -- the client's own encoder [verified: forever-ui Blizzard_APIDocumentationGenerated/EncodingUtilDocumentation.lua
   -- (Environment "All"; CompressionMethod.Zlib, Base64Variant.StandardUrlSafe), used the same way by
   -- Blizzard_CooldownViewer/CooldownViewerSettingsDataStoreSerialization.lua:277–281]. A client without it leaves

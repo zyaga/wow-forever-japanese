@@ -53,7 +53,7 @@ Settings.define{ id="words.screenshot",    kind="boolean", default=false, label=
 -- Studying the word list (ADR-071): each apply fires State event "study" (UI/StudyWindow redraws the tab and the card)
 Settings.define{ id="study.tab",           kind="boolean", default=true,  label="Show the study tab when words are due", ja="復習する単語があるとき学習タブを表示", apply=studyChanged }
 Settings.define{ id="study.newPerDay",     kind="choice",  default="20",  choices={ "5", "10", "20", "50" }, label="New words per day", ja="1日に始める新しい単語の数",
-                 choiceText={ ["5"]="5", ["10"]="10", ["20"]="20", ["50"]="50" }, apply=studyChanged }  -- a choice: the registry has no number kind
+                 apply=studyChanged }  -- a choice: the registry has no number kind; the choices read as themselves
 Settings.define{ id="study.combatHide",    kind="boolean", default=true,  label="Hide the study window in combat", ja="戦闘中は学習ウィンドウを隠す", apply=studyChanged }
 -- Defined by Core/Collector.lua, not by Core/Settings.lua; no `apply`; the collector reads it at record time:
 Settings.define{ id="collector.enabled",   kind="boolean", default=true,  label="Record English for future translations", ja="今後の翻訳のために英語テキストを記録する" }

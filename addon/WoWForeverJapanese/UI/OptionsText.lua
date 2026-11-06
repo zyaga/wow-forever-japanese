@@ -386,8 +386,8 @@ Text.T = {
   ["intro.hold"] = { en = "Hold %s to see the game's English.", ja = "%sを押している間は、ゲームの英語を表示します。" },
   ["intro.readings"] = { en = "Point at a Japanese word to see its reading.",
     ja = "日本語の単語にカーソルを合わせると、読み方が出ます。" },
-  ["intro.words"] = { en = "Save a highlighted word to your word list with %s.",
-    ja = "ハイライトした単語は%sで単語帳に保存できます。" },
+  ["intro.words"] = { en = "Save a highlighted word to your word list with %s; /wfj study quizzes you on it.",
+    ja = "ハイライトした単語は%sで単語帳に保存でき、/wfj study で学習できます。" },
   ["intro.minimap"] = { en = "Minimap button: left-click to report a line, right-click for the menu.",
     ja = "ミニマップのボタン：左クリックで翻訳の報告、右クリックでメニュー。" },
   -- the voice section under both blocks, shown only while no voice pack has loaded

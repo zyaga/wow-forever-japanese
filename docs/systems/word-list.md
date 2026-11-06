@@ -112,7 +112,7 @@ The list can also be studied in game, one card at a time, on an FSRS-6 schedule 
 
 ### Where to find it
 - **The word card** shows a grey hint, `Ctrl+click: save word ・ Ctrl+clickで単語を保存` (naming the chosen click), until the first save ever; nothing while the save click is `off`.
-- **The intro window** has a line: save a highlighted word to your word list with the save click (it names the click as set, as do the About page line and the word list window's empty state).
+- **The intro window** has a line: save a highlighted word to your word list with the save click, and `/wfj study` quizzes you on it (it names the click as set, as do the About page line and the word list window's empty state).
 - **The About page**'s readings line and `/wfj help` name the save click and `/wfj words`.
 - **The Words settings page** (単語帳): what the list is, the save click, the screenshot setting, how many words are saved, and the export button ([Settings → Settings pages](settings.md#settings-pages)).
 - **The minimap button**'s right-click menu: **Export words (N)**.

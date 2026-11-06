@@ -336,7 +336,7 @@ function View.attach(rec)
     View.detach(rec)
     return false
   end
-  local spans = rec.meta.kind == "ui" and listed or WFJ.Readings.withTokenWords(listed or {}, rec.applied)
+  local spans = rec.meta.kind == "ui" and listed or WFJ.Readings.withTokenWords(listed or {}, rec.applied, rec.exclude)
   if not spans or not spans[1] then
     View.detach(rec)
     return false
