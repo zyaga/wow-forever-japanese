@@ -46,6 +46,7 @@ local ICON_HIGHLIGHT = "Interface\\Buttons\\UI-Common-MouseHilight"
 local WINDOWS = { "QuestFrame", "GossipFrame", "ItemTextFrame" }
 -- the NPC whose window shows the line: its creature id picks the voice of a line several creatures say
 local SPEAKER_UNIT = { QuestFrame = "questnpc", GossipFrame = "npc" }
+local WINDOW_OF = {} -- surface → window, for windows another addon draws (VoicePlayer.addWindow)
 
 VoicePlayer.counts = { played = 0, refused = 0 }
 
@@ -96,6 +97,7 @@ local function setCVar(name, value)
 end
 
 local function windowOf(surface)
+  if WINDOW_OF[surface] then return WINDOW_OF[surface] end
   if surface == "gossip" then return "GossipFrame" end
   if surface == "itemtext" then return "ItemTextFrame" end
   return "QuestFrame"
@@ -151,6 +153,9 @@ local function describe(window, surface, recKey, who)
   end
   return ja, name, title, en
 end
+
+-- → the window name a surface's lines belong to (for /wfj debug and the specs)
+function VoicePlayer.windowOf(surface) return windowOf(surface) end
 
 -- Puts the dialog channel back if this addon turned it off. → true when it did
 function VoicePlayer.restoreDialog()
@@ -498,9 +503,30 @@ local function stopUnless(on)
   if not on then VoicePlayer.stop() end
 end
 
+local ready = false -- init ran: the queue and the settings it reads are there
+
+-- A window another addon draws in place of the client's (UI/DialogueUI): its lines (`surfaces`) belong to it, `unit`
+-- names its NPC (nil for a book), and it gets the replay control. Its close is heard through a child frame of ours,
+-- because that addon sets its window's own OnHide script again after load, which drops a hook made with HookScript.
+-- → true when added
+function VoicePlayer.addWindow(window, surfaces, unit)
+  local frame = Compat.resolve(window)
+  local createFrame = Compat.resolve("CreateFrame")
+  if buttons[window] or type(frame) ~= "table" or type(createFrame) ~= "function" then return false end
+  WINDOWS[#WINDOWS + 1] = window
+  SPEAKER_UNIT[window] = unit
+  for _, s in ipairs(surfaces) do WINDOW_OF[s] = window end
+  buttons[window] = createButton(window)
+  local watcher = createFrame("Frame", nil, frame)
+  watcher:SetScript("OnHide", function() if ready then closed(window) end end)
+  watcher:Show()
+  return true
+end
+
 -- Called by Main after Settings and Voice are loaded. `savedDb` is WFJ_DB. Safe without a pack: nothing ever plays.
 function VoicePlayer.init(savedDb)
   db = savedDb
+  ready = true
   VoicePlayer.restoreDialog() -- a reload or crash during a line left the dialog channel off
   WFJ.State.on("lineShown", VoicePlayer.onShown)
   -- With the voice panel the reveal key only switches the panel's text to English: the Japanese voice goes on, so a
@@ -539,7 +565,7 @@ function VoicePlayer.init(savedDb)
   end
   for _, window in ipairs(WINDOWS) do
     local f = Compat.resolve(window)
-    if type(f) == "table" and type(f.HookScript) == "function" then
+    if not buttons[window] and type(f) == "table" and type(f.HookScript) == "function" then -- not an added window
       buttons[window] = createButton(window)
       f:HookScript("OnHide", function() closed(window) end)
     end

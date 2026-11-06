@@ -33,7 +33,38 @@ View.SURFACES = {
   itemtext = true,
   voicepanel = true, -- the voice panel's text and its whole-text window (UI/VoicePanelText)
   study = true, -- the study card's sentence (UI/StudyWindow passes the words, minus the one being tested)
+  -- Dialogue UI's windows (UI/DialogueUI, UI/DialogueUIBook pass each paragraph's share of the line's words)
+  ["dialogueui.detail"] = true, ["dialogueui.progress"] = true, ["dialogueui.reward"] = true,
+  ["dialogueui.greeting"] = true, ["dialogueui.gossip"] = true, ["dialogueui.book"] = true,
+  ["dialogueui.title"] = true, -- the quest title in its page header, as the client's quest window's title
 }
+
+-- The frame a box over `anchor` belongs under: UIParent, unless the text sits in a window outside it (Dialogue UI
+-- draws its windows with no parent and fades UIParent out while they show, which would hide a box under UIParent
+-- with it). → that window's top frame, or UIParent
+function View.host(anchor)
+  local ui = Compat.resolve("UIParent")
+  if not ui then return nil end
+  local top, f = nil, anchor
+  for _ = 1, 64 do
+    if type(f.GetParent) ~= "function" then break end
+    local ok, parent = pcall(f.GetParent, f)
+    if not ok or type(parent) ~= "table" then break end
+    if parent == ui then return ui end
+    top, f = parent, parent
+  end
+  return top or ui
+end
+
+-- `frame` under the host of `anchor`, at the tooltip level whichever parent it has.
+function View.reparent(frame, anchor)
+  if type(frame.GetParent) ~= "function" or type(frame.SetParent) ~= "function" then return end
+  local host = View.host(anchor)
+  if host and frame:GetParent() ~= host then
+    frame:SetParent(host)
+    frame:SetFrameStrata("TOOLTIP")
+  end
+end
 
 -- A label (a `ui` record, UI/Labels) takes readings on every surface EXCEPT these: HUD text, toasts, banners, the
 -- tracker, error / combat text and tooltips are not windows (ADR-041). A name matches itself and every surface under
@@ -171,6 +202,7 @@ local function showHover(cover, word)
   boxText:SetTextColor(1, 1, 1)
   boxText:SetText(word.reading)
   b:SetSize(boxText:GetStringWidth() + 18, boxText:GetStringHeight() + 12) -- room for the tooltip border
+  View.reparent(b, cover)
   b:ClearAllPoints()
   b:SetPoint("BOTTOM", cover, "BOTTOMLEFT", r.left + r.width / 2, r.bottom + r.height + 2)
   b.owner = cover

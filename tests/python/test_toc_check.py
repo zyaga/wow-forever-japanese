@@ -63,6 +63,7 @@ def test_real_toc_fields_and_load_order(root):
         "UI/TooltipUnit.lua",  # the unit mouseover lines
         "UI/GameMenu.lua", "UI/Gossip.lua",
         "UI/ItemText.lua",  # the book window
+        "UI/DialogueUI.lua", "UI/DialogueUIFrames.lua", "UI/DialogueUIBook.lua",  # Dialogue UI's windows, when it is installed
         # ADR-030: every other Forever window
         "UI/Professions.lua", "UI/Crafting.lua", "UI/CustomerOrders.lua", "UI/QuestTimer.lua", "UI/Trade.lua",
         "UI/Loot.lua", "UI/GroupLoot.lua", "UI/Taxi.lua", "UI/Tabard.lua", "UI/Petition.lua",

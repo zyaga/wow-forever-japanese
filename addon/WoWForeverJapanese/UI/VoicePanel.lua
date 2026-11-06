@@ -38,6 +38,9 @@ local WORDS = {
   ["questframe.detail"] = { "Quest", "クエスト" }, ["questframe.progress"] = { "Progress", "途中経過" },
   ["questframe.reward"] = { "Turn-in", "完了" }, ["questframe.greeting"] = { "Greeting", "あいさつ" },
   gossip = { "Greeting", "あいさつ" }, itemtext = { "Book", "本" },
+  ["dialogueui.detail"] = { "Quest", "クエスト" }, ["dialogueui.progress"] = { "Progress", "途中経過" },
+  ["dialogueui.reward"] = { "Turn-in", "完了" }, ["dialogueui.greeting"] = { "Greeting", "あいさつ" },
+  ["dialogueui.gossip"] = { "Greeting", "あいさつ" }, ["dialogueui.book"] = { "Book", "本" },
 }
 local ICON = {
   pause = "Interface\\TimeManager\\PauseButton",
@@ -210,8 +213,10 @@ end
 
 local tipFrame -- the panel's own tooltip, so its line can take the bundled face (the game's has no Japanese glyphs)
 local function tip(owner, text)
-  tipFrame = tipFrame or CreateFrame("GameTooltip", "WFJVoicePanelTip", Compat.resolve("UIParent"),
-    "GameTooltipTemplate")
+  if not tipFrame then
+    tipFrame = CreateFrame("GameTooltip", "WFJVoicePanelTip", Compat.resolve("UIParent"), "GameTooltipTemplate")
+    Panel.relift() -- made while the panel is lifted: lifted with it
+  end
   tipFrame:SetOwner(owner, "ANCHOR_TOP")
   tipFrame:SetText(text, 1, 1, 1)
   local line = Compat.resolve("WFJVoicePanelTipTextLeft1")
@@ -338,9 +343,43 @@ local function onTick(self, elapsed)
   self:SetAlpha(alpha)
 end
 
--- → whether the panel is on screen (UI/VoicePlayer shows the window's own button only while it is not)
+-- Another addon's window that fades the whole interface (UIParent) out while it is open (Dialogue UI) has the panel
+-- taken out from under UIParent for that time, at UIParent's scale, so it shows whole: under the faded UIParent only
+-- its 3D head would still draw (a model ignores its parent's alpha). Its tooltip goes with it.
+local lifted = false
+local function placeLifted()
+  local ui = Compat.resolve("UIParent")
+  for _, frame in ipairs({ f, tipFrame }) do
+    if frame then
+      if lifted then
+        frame:SetParent(nil)
+        frame:SetScale(ui and ui.GetScale and ui:GetScale() or 1)
+      else
+        frame:SetParent(ui)
+        frame:SetScale(1)
+      end
+    end
+  end
+  if f then f:SetFrameStrata("HIGH") end
+  if tipFrame then tipFrame:SetFrameStrata("TOOLTIP") end
+end
+
+-- the panel and its tooltip placed again for the lift as it stands (a tooltip made while lifted)
+function Panel.relift()
+  if lifted then placeLifted() end
+end
+
+function Panel.lift(on)
+  on = on and true or false
+  if on == lifted then return end
+  lifted = on
+  placeLifted()
+end
+
+-- → whether the panel is on screen (UI/VoicePlayer shows the window's own button only while it is not): on screen,
+-- not only shown, as another addon may hide the whole interface (UIParent) while its own window is open
 function Panel.visible()
-  return f ~= nil and f:IsShown()
+  return f ~= nil and f:IsVisible()
 end
 
 function Panel.update()
@@ -406,6 +445,7 @@ end
 local function build()
   f = CreateFrame("Button", "WFJVoicePanel", Compat.resolve("UIParent"))
   f:SetFrameStrata("HIGH")
+  if lifted then placeLifted() end
   f:SetClampedToScreen(true)
   f:SetMovable(true)
   f:EnableMouse(true)

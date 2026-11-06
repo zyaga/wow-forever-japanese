@@ -22,6 +22,14 @@ Voice.KINDS = {
   ["questframe.greeting"] = { greeting = "voice.greeting" },
   gossip = { greeting = "voice.greeting" },
   itemtext = { page = "voice.books" },
+  -- the same lines in Dialogue UI's windows (UI/DialogueUI, UI/DialogueUIBook); its book shows every page at once,
+  -- so each page is its own record ("page1", "page2", …: a record key's trailing number is its page)
+  ["dialogueui.detail"] = { description = "voice.offer" },
+  ["dialogueui.progress"] = { progress = "voice.progress" },
+  ["dialogueui.reward"] = { completion = "voice.turnin" },
+  ["dialogueui.greeting"] = { greeting = "voice.greeting" },
+  ["dialogueui.gossip"] = { greeting = "voice.greeting" },
+  ["dialogueui.book"] = { page = "voice.books" },
 }
 
 -- pack key → { file, jaHash, seconds, folder, v = { [voice] = { file, seconds } } }; nil until a pack registers
@@ -182,7 +190,7 @@ end
 -- "stale" · "notext"). `peek`: only asking (the replay button), so /wfj debug's counts are left as they are.
 function Voice.decide(surface, recKey, kind, id, who, peek)
   local byKey = Voice.KINDS[surface]
-  local kindSetting = byKey and byKey[recKey]
+  local kindSetting = byKey and (byKey[recKey] or (type(recKey) == "string" and byKey[(recKey:gsub("%d+$", ""))]))
   if not kindSetting then return nil, "kind" end
   if not setting("voice.enabled") or not setting(kindSetting) then return nil, "off" end
   if (type(deps.enabled) == "function" and not deps.enabled())

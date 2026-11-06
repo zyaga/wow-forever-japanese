@@ -713,7 +713,7 @@ WINDOW_SURFACES = frozenset({
     "barbershop", "battlefieldmap", "blackmarket", "blackmarket.static", "calendar", "channels", "character",
     "character.static", "character.title", "chatconfig", "chatconfig.static", "chromietime", "cinematic",
     "clickbinding", "coinpickup", "collections", "colorpicker", "communities", "communities.benefits.log",
-    "communities.static", "crafting", "currency", "currencytransfer", "customerorders", "deathrecap",
+    "communities.static", "crafting", "currency", "dialogueui.book", "currencytransfer", "customerorders", "deathrecap",
     "dressup", "dressup.side", "dressup.slots", "equipmentflyout", "eventtrace", "eventtrace.rows",
     "eventtrace.static", "flightmap", "flightmap.static", "friends", "friends.static", "gamemenu",
     "gamepadedit", "gossip.chrome", "gossip.chrome.static", "groupfinder", "grouploot", "guildbank",
@@ -813,6 +813,8 @@ REVIEWED_VARIABLE_SURFACES = frozenset({
     "Collections.lua:surface",
     "CommunitiesKit.lua:surface",
     "DamageMeter.lua:surface",
+    "DialogueUI.lua:S.title",  # Dialogue UI's quest title: its quest window's surfaces, read from its S table
+    "DialogueUI.lua:el.surface",
     "Gossip.lua:SURFACE",
     "ItemText.lua:SURFACE",
     "LabelTree.lua:f.surface",
