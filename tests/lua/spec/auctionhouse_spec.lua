@@ -45,7 +45,7 @@ local UI = {
 
 local function en(key) return _G[key] end
 
-local function makeList()
+local function makeList(opts)
   local list = CreateFrame("Frame")
   C.tree(list, { ["LoadingSpinner.SearchingText"] = en("SEARCHING"), ResultsText = "",
     ["RefreshFrame.TotalQuantity"] = "" })
@@ -53,7 +53,7 @@ local function makeList()
   function list.RefreshFrame.SetQuantity(self, n)
     self.TotalQuantity.text = n ~= 0 and string.format(en("AUCTION_HOUSE_QUANTITY_AVAILABLE_FORMAT"), n) or ""
   end
-  list.ScrollBox = Stub.scrollBox()
+  list.ScrollBox = Stub.scrollBox(opts)
   local headers = C.pool(function() return Stub.button(nil, "") end)
   list.tableBuilder = { EnumerateHeaders = function() return headers:EnumerateActive() end }
   function list.UpdateTableBuilderLayout(_, titles) -- the layout function re-acquires every header (tablebuilder.lua)
@@ -76,7 +76,12 @@ local function makeList()
   return list
 end
 
-local function loadAuctionHouse()
+-- opts.lists: UI/AuctionHouse's LISTS, so every list exists (the older cases make the two they use);
+-- opts.noView: a set of list paths whose ScrollBox has no view yet
+local function loadAuctionHouse(opts)
+  opts = opts or {}
+  local noView = opts.noView or {}
+  local function list(path) return makeList({ noView = noView[path] }) end
   local frame = C.window("AuctionHouseFrame")
   C.tree(frame, {
     BuyTab = { button = en("AUCTION_HOUSE_BUY_TAB") }, SellTab = { button = en("AUCTION_HOUSE_SELL_TAB") },
@@ -106,8 +111,12 @@ local function loadAuctionHouse()
   function price.SetSubtext(self, text) self.Subtext.text = text or "" end
   function frame.BuyDialog.SetState(self, text) self.Notification.Text.text = text end
   function frame.ItemSellFrame.Duration.Dropdown.UpdateText() end
-  frame.BrowseResultsFrame = { ItemList = makeList() }
-  frame.ItemSellList = makeList()
+  frame.BrowseResultsFrame = { ItemList = list("BrowseResultsFrame.ItemList") }
+  frame.ItemSellList = list("ItemSellList")
+  for _, l in ipairs(opts.lists or {}) do
+    if not C.at(frame, l[2]) then C.set(frame, l[2], list(l[2])) end
+  end
+  _G.BrowseWowTokenResults_Update = function() end
   frame.AuctionsFrame.SummaryList.ScrollBox = Stub.scrollBox()
   function frame.SetDisplayMode(self, mode)
     self:SetTitle(en(mode == "sell" and "AUCTION_HOUSE_FRAME_TITLE_SELL" or "AUCTION_HOUSE_FRAME_TITLE_BUY"))
@@ -127,18 +136,19 @@ describe("the auction house on Forever", function()
 
   local function load() WFJ = C.fresh({ "UI/AuctionHouse.lua" }, UI) end
 
-  local function setup(loadedFirst)
+  local function setup(loadedFirst, opts)
     load()
     if loadedFirst then
-      loadAuctionHouse()
+      loadAuctionHouse(opts)
       WFJ.Labels.forbidNames(WFJ.AuctionHouse.NEVER_TOUCH)
       assert.is_true(WFJ.AuctionHouse.init())
     else
       assert.is_false(WFJ.AuctionHouse.init()) -- waits for the addon
-      loadAuctionHouse()
+      loadAuctionHouse(opts)
       WFJ.Labels.forbidNames(WFJ.AuctionHouse.NEVER_TOUCH)
       assert.are.equal(1, WFJ.LoadOnDemand.loaded(ADDON))
     end
+    return _G.AuctionHouseFrame
   end
 
   after_each(function() C.teardown(GLOBALS) end)
@@ -300,6 +310,82 @@ describe("the auction house on Forever", function()
       end)
     end)
   end
+
+  -- An item list's ScrollBox has no view until the client shows the list (AuctionHouseItemListMixin:Init from
+  -- OnShow, itemlist.lua:136–195, :233–236); ForEachFrame on it raises (scrollbox.lua:594–596).
+  describe("lists the client has not shown yet", function()
+    -- every list of UI/AuctionHouse's LISTS exists, and all but `except` have no view yet. LISTS is read from a
+    -- first load; setup loads the addon again over the finished frame.
+    local function setupWith(loadedFirst, except)
+      load()
+      local lists, noView = WFJ.AuctionHouse.LISTS, {}
+      for _, l in ipairs(lists) do if l[2] ~= except then noView[l[2]] = true end end
+      return setup(loadedFirst, { lists = lists, noView = noView })
+    end
+
+    for _, order in ipairs({ { true, "loaded before the addon" }, { false, "loaded on demand" } }) do
+      it("setup completes when no list has a view yet, " .. order[2], function()
+        local frame
+        assert.has_no.errors(function() frame = setupWith(order[1]) end)
+        -- hooks after the first list were installed: the ninth list, the summary list; the trailing showAll ran
+        frame:Show()
+        frame.AuctionsFrame.CommoditiesList:SetState("none")
+        assert.are.equal("アイテムが見つかりません", frame.AuctionsFrame.CommoditiesList.ResultsText:GetText())
+        local all = { Text = Stub.fontString("") }
+        frame.AuctionsFrame.SummaryList.ScrollBox:initFrame(all, {},
+          function(line) line.Text.text = en("AUCTION_HOUSE_ALL_AUCTIONS") end)
+        assert.are.equal("すべてのオークション", all.Text:GetText())
+        assert.are.equal("購入", frame.BuyTab:GetText())
+      end)
+    end
+
+    it("a shown list translates while the other eight have no view; every whole-window pass runs clean", function()
+      local frame = setupWith(true, "BrowseResultsFrame.ItemList")
+      local list = frame.BrowseResultsFrame.ItemList
+      assert.has_no.errors(function()
+        frame:Show()
+        frame:SetDisplayMode("buy")
+        frame.ItemSellFrame.PriceInput:SetLabel(en("AUCTION_HOUSE_BUYOUT_LABEL"))
+        frame.BuyDialog:SetState(en("AUCTION_HOUSE_DIALOG_PRICE_UPDATED"))
+        _G.BrowseWowTokenResults_Update(frame.WoWTokenResults)
+        list:SetState("none")
+        list:UpdateTableBuilderLayout({ en("AUCTION_HOUSE_BROWSE_HEADER_NAME") })
+      end)
+      assert.are.equal("アイテムが見つかりません", list.ResultsText:GetText())
+      for h in list.tableBuilder.EnumerateHeaders() do assert.are.equal("名前", h:GetText()) end
+      local row = list:addRow({ en("AUCTION_HOUSE_NONE_AVAILABLE") })
+      assert.are.equal("出品なし", row.cells[1].Text:GetText())
+      assert.are.equal("即決価格", frame.ItemSellFrame.PriceInput.Label:GetText())
+    end)
+
+    it("a box with no HasView function is walked as before", function()
+      local frame = setup(true)
+      local list = frame.ItemSellList
+      list.ScrollBox.HasView = nil
+      frame:Show()
+      local row = list:addRow({ en("AUCTION_HOUSE_NONE_AVAILABLE") })
+      row.cells[1].Text.text = en("AUCTION_HOUSE_NONE_AVAILABLE") -- the client rewrites the cell; the rows pass follows
+      list:RefreshScrollFrame()
+      assert.are.equal("出品なし", row.cells[1].Text:GetText())
+    end)
+
+    it("a list that gains its view later shows Japanese headers, results text and rows", function()
+      local frame = setup(true, { noView = { ItemSellList = true } })
+      local list = frame.ItemSellList
+      frame:Show()
+      assert.is_false(list.ScrollBox:HasView())
+      assert.has_no.errors(function()
+        list.ScrollBox:setView() -- the client's OnShow: Init, then the two refreshes it hooks
+        list:UpdateTableBuilderLayout({ en("AUCTION_HOUSE_BROWSE_HEADER_PRICE") })
+        list:RefreshScrollFrame()
+        list:SetState("none")
+      end)
+      for h in list.tableBuilder.EnumerateHeaders() do assert.are.equal("価格", h:GetText()) end
+      assert.are.equal("アイテムが見つかりません", list.ResultsText:GetText())
+      local row = list:addRow({ string.format(en("AUCTION_HOUSE_NUM_SELLERS"), 2) })
+      assert.are.equal("出品者2人", row.cells[1].Text:GetText())
+    end)
+  end)
 
   it("the item display's name is never recorded, whatever it holds", function()
     setup(true)

@@ -476,15 +476,23 @@ function Stub.installScrollUtil()
   }
 end
 
-function Stub.scrollBox()
-  local box = { frames = {}, initCallbacks = {} }
+-- `opts.noView`: the box has no view yet (a list the client has not shown: AuctionHouseItemListMixin:Init runs from
+-- OnShow). HasView() is false and ForEachFrame raises as ScrollBoxListMixin:ForEachFrame does without a view
+-- (scrollbox.lua:594–596 indexes GetView() with no nil check); box:setView() is the client's Init.
+function Stub.scrollBox(opts)
+  local box = { frames = {}, initCallbacks = {}, hasView = not (opts and opts.noView) }
+  function box:HasView() return self.hasView end
+  function box:setView() self.hasView = true end
   function box:initFrame(frame, elementData, initializer)
     frame.elementData = elementData
     if initializer then initializer(frame, elementData) end
     if not _G.tContains(self.frames, frame) then self.frames[#self.frames + 1] = frame end
     for _, c in ipairs(self.initCallbacks) do c.cb(c.owner, frame, elementData) end
   end
-  function box:ForEachFrame(fn) for _, f in ipairs(self.frames) do fn(f, f.elementData) end end
+  function box:ForEachFrame(fn)
+    if not self.hasView then error("ScrollBox.lua:595: attempt to index a nil value", 2) end
+    for _, f in ipairs(self.frames) do fn(f, f.elementData) end
+  end
   return box
 end
 
