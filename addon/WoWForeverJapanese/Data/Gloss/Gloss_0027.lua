@@ -684,7 +684,6 @@ WFJ.Data.add("gloss", {
   [27682] = "もこもこ\tもこもこ\twooly (fluffy)",
   [27683] = "もし\tもし\tEven if (if)",
   [27684] = "もし\tもし\tIf ever",
-  [27685] = "もし\tもし\tever (if)",
   [27686] = "もし\tもし\thad (if)",
   [27687] = "もし\tもし\tif",
   [27688] = "もし\tもし\tif (ever)",

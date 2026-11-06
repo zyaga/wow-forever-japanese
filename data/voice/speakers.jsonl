@@ -9670,6 +9670,7 @@
 {"key": "92464-description", "speaker": 251361, "provenance": {"source": "forever-vo@025070f", "imported": "2026-10-06"}}
 {"key": "92465-completion", "speaker": 249363, "provenance": {"source": "forever-vo@025070f", "imported": "2026-10-06"}}
 {"key": "92465-description", "speaker": 249363, "provenance": {"source": "forever-vo@025070f", "imported": "2026-10-06"}}
+{"key": "92465-progress", "speaker": 249363, "provenance": {"source": "forever-vo@025070f", "imported": "2026-11-06"}}
 {"key": "92466-completion", "speaker": 251374, "provenance": {"source": "forever-vo@025070f", "imported": "2026-10-06"}}
 {"key": "92466-description", "speaker": 251374, "provenance": {"source": "forever-vo@025070f", "imported": "2026-10-06"}}
 {"key": "92466-progress", "speaker": 251374, "provenance": {"source": "forever-vo@025070f", "imported": "2026-10-06"}}
@@ -10694,6 +10695,7 @@
 {"key": "96604-description", "speaker": 265809, "provenance": {"source": "forever-vo@025070f", "imported": "2026-10-06"}}
 {"key": "96605-completion", "speaker": 265810, "provenance": {"source": "forever-vo@025070f", "imported": "2026-10-06"}}
 {"key": "96605-description", "speaker": 265810, "provenance": {"source": "forever-vo@025070f", "imported": "2026-10-06"}}
+{"key": "96605-progress", "speaker": "narrator", "provenance": {"source": "vmangos@13b49dc", "imported": "2026-11-06"}}
 {"key": "96606-completion", "speaker": 265811, "provenance": {"source": "forever-vo@025070f", "imported": "2026-10-06"}}
 {"key": "96606-description", "speaker": 265811, "provenance": {"source": "forever-vo@025070f", "imported": "2026-10-06"}}
 {"key": "96606-progress", "speaker": 265811, "provenance": {"source": "forever-vo@025070f", "imported": "2026-10-06"}}
@@ -12549,9 +12551,11 @@
 {"key": "g-0cc9a0c74ac8dddb", "speaker": 10475, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-0ce5be55cf6513ab", "speaker": 4556, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-0cf87b604bb00f19", "speaker": 11046, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
+{"key": "g-0cff03d7217afbb7", "speaker": 251379, "others": [254086], "provenance": {"source": "collector@1.60.1.70790", "imported": "2026-11-06"}}
 {"key": "g-0d1ef41ca27a4de3", "speaker": 7900, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-0d4697ff4df794cf", "speaker": 16399, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-0d56ef327c407f26", "speaker": 251968, "provenance": {"source": "collector@1.60.1.70790", "imported": "2026-11-05"}}
+{"key": "g-0d6b86909f8267e7", "speaker": 251903, "provenance": {"source": "collector@1.60.1.70790", "imported": "2026-11-06"}}
 {"key": "g-0d72d913d43299cc", "speaker": 295, "others": [2352, 6272, 6727, 6740, 6790, 8931], "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-0d8a66bccee2cefb", "speaker": 13085, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-0da2ca4136fe84ee", "speaker": 248197, "provenance": {"source": "forever-vo@025070f", "imported": "2026-10-06"}}
@@ -13203,6 +13207,7 @@
 {"key": "g-5ccbf8eb8febf8e2", "speaker": 15917, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-5d4c2d887ac1692e", "speaker": 6301, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-5d5f09a1c43c3dc1", "speaker": 7777, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
+{"key": "g-5d68bdcb671cfec5", "speaker": 1496, "others": [10666, 251001], "provenance": {"source": "collector@1.60.1.70790", "imported": "2026-11-06"}}
 {"key": "g-5d7df209f61631ff", "speaker": 13697, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-5d9db59af06782b7", "speaker": 14374, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-5da3f6dfacfae3b3", "speaker": 415, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
@@ -13278,6 +13283,7 @@
 {"key": "g-6616e74c187a7166", "speaker": 7230, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-6625f1634a9da634", "speaker": 252359, "provenance": {"source": "collector@1.60.1.70790", "imported": "2026-11-05"}}
 {"key": "g-6641e5b5db2a4c78", "speaker": 258130, "provenance": {"source": "collector@1.60.1.70790", "imported": "2026-11-05"}}
+{"key": "g-665b05720ec29e2e", "speaker": 254100, "provenance": {"source": "collector@1.60.1.70790", "imported": "2026-11-06"}}
 {"key": "g-66677624f2ce9454", "speaker": 254128, "provenance": {"source": "collector@1.60.1.70790", "imported": "2026-11-05"}}
 {"key": "g-66b5785f8ba0b825", "speaker": 5130, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-66e4713bbf324396", "speaker": 375, "others": [376, 377, 5484, 5489], "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
@@ -13690,6 +13696,7 @@
 {"key": "g-9781bdf54cc60cfc", "speaker": 9554, "others": [10043], "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-97b6aead5f9aefbf", "speaker": 15077, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-97f376be7e4f6c23", "speaker": 1346, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
+{"key": "g-97f56c94031e52fb", "speaker": 3685, "provenance": {"source": "collector@1.60.1.70790", "imported": "2026-11-06"}}
 {"key": "g-97f8aa037e28192d", "speaker": 14387, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-9804acdb7d0a1b15", "speaker": 1261, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-980cb689406c9bd8", "speaker": 13322, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
@@ -13948,6 +13955,7 @@
 {"key": "g-b560f5a632c115dd", "speaker": 251905, "provenance": {"source": "forever-vo@025070f", "imported": "2026-10-06"}}
 {"key": "g-b56dffb1eeee67b3", "speaker": 2425, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-b580b68328f12661", "speaker": 12384, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
+{"key": "g-b5cf805bfdedd91a", "speaker": 5624, "provenance": {"source": "collector@1.60.1.70790", "imported": "2026-11-06"}}
 {"key": "g-b5eee42752841aac", "speaker": 10304, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-b64468e0338e8027", "speaker": 8736, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-b661f8dcf78b8e63", "speaker": 12866, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
@@ -14481,6 +14489,7 @@
 {"key": "g-f420a2c502f9252e", "speaker": 2941, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-f4262ee41c73def7", "speaker": 341, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-f4359724886020d5", "speaker": 4193, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
+{"key": "g-f4372b394bc98022", "speaker": 254100, "provenance": {"source": "collector@1.60.1.70790", "imported": "2026-11-06"}}
 {"key": "g-f4737aefecc45612", "speaker": 15350, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-f47a067c99f103e2", "speaker": 3345, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-f4e0a50c9161178b", "speaker": 10721, "provenance": {"source": "forever-vo@025070f", "imported": "2026-10-06"}}

@@ -551,7 +551,6 @@ WFJ.Data.add("gloss", {
   [37549] = "下ろす\tおろす\tput down",
   [37550] = "下ろす\tおろす\tsat down (腰を下ろす)",
   [37551] = "下ろす\tおろす\tsets down",
-  [37552] = "下ろす\tおろす\ttaking (root)",
   [37553] = "下ろす\tおろす\tunload",
   [37554] = "下ろす\tおろす\twould wish to be rid of",
   [37555] = "下位\tかい\tlesser",

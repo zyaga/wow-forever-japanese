@@ -17,6 +17,7 @@ WFJ.Data.add("gossip", {
   ["0d56ef327c407f26"] = { "Zephras IsleにはWindshapersの力が必要です！\n\n<Valenniaの計画をAyessaに説明する。>", "." },
   ["0d5de14c895f42f5"] = { "Elementium？ 定命の者の口からその言葉が発せられるのを聞くのは、何十年ぶりであろうか。", "." },
   ["0d6694e17b0422f2"] = { "Red Canyon Miningの北東、Valley of HonorにあるNogg's Machine Shopを探すといい。", "." },
+  ["0d6b86909f8267e7"] = { "やあ、若き{class}よ。私はRathiril Sunlance、ここZephras IsleのHigh Orderの長老Magisterだ。祖国のために務めを果たそうとする、目の輝いた若いshen'doreiを見るのは、いつも嬉しいものだ。\n\nだが、この埃をかぶった老いぼれ{class}に引き止められることはない。きっと君には、片付けるべき冒険がたくさんあるだろう。もっと話したければ、後でいつでも立ち寄ってくれ。", "." },
   ["0d7118886b942e58"] = { "Tepaは布細工で名高いんだ。中段の台地にあるThunder Bluff Armorersにいるよ。", "." },
   ["0d72d913d43299cc"] = { "私の宿屋へようこそ、お疲れの旅人さん。何にしましょう?", "." },
   ["0d76b6599d12646d"] = { "Earthmotherよ、この流血を覆す力を我に与えたまえ！", "." },

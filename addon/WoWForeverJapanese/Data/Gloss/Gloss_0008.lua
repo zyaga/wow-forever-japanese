@@ -11,7 +11,6 @@ WFJ.Data.add("gloss", {
   [8008] = "こと\tこと\t(all your) efforts",
   [8009] = "こと\tこと\t(all)",
   [8010] = "こと\tこと\t(an event)",
-  [8011] = "こと\tこと\t(an occasion)",
   [8012] = "こと\tこと\t(an) occasion",
   [8013] = "こと\tこと\t(any chance)",
   [8014] = "こと\tこと\t(are required to)",
