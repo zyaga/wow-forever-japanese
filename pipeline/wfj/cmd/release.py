@@ -350,7 +350,7 @@ def run(argv: Sequence[str]) -> int:
     cl.add_argument("--version", required=True)
     cl.add_argument("--date", required=True)
     cl.add_argument("--notes", required=True, type=Path)
-    cl.add_argument("--media", type=Path, help="rename DIR/next to DIR/<version>: the release's Discord media")
+    cl.add_argument("--media", type=Path, help="rename DIR/next to DIR/<version>, the release's media")
     nt = sub.add_parser("notes", help="write a released version's notes")
     nt.add_argument("--version", required=True)
     nt.add_argument("--notes", required=True, type=Path)

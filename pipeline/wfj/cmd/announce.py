@@ -64,7 +64,8 @@ def media_files(folder: Path | None) -> list[Media]:
         ext = path.suffix.lower().lstrip(".")
         if ext not in ALLOWED:
             allowed = ", ".join(sorted(ALLOWED))
-            raise AnnounceError(f"{path.name}: Discord does not show .{ext or '?'} inline (allowed: {allowed})")
+            kind = ext or "?"
+            raise AnnounceError(f"{path.name}: Discord does not show .{kind} inline (allowed: {allowed})")
         size = path.stat().st_size
         if size > MAX_FILE_BYTES:
             raise AnnounceError(f"{path.name} is {size} bytes, over Discord's 20 MiB")
