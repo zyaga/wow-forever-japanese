@@ -32,6 +32,7 @@ View.SURFACES = {
   ["questframe.greeting"] = true, ["questmap.info"] = true, ["questmap.popup.info"] = true, gossip = true,
   itemtext = true,
   voicepanel = true, -- the voice panel's text and its whole-text window (UI/VoicePanelText)
+  study = true, -- the study card's sentence (UI/StudyWindow passes the words, minus the one being tested)
 }
 
 -- A label (a `ui` record, UI/Labels) takes readings on every surface EXCEPT these: HUD text, toasts, banners, the
@@ -335,7 +336,7 @@ function View.attach(rec)
     View.detach(rec)
     return false
   end
-  local spans = rec.meta.kind == "ui" and listed or WFJ.Readings.withTokenWords(listed or {}, rec.applied)
+  local spans = rec.meta.kind == "ui" and listed or WFJ.Readings.withTokenWords(listed or {}, rec.applied, rec.exclude)
   if not spans or not spans[1] then
     View.detach(rec)
     return false

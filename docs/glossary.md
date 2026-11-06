@@ -618,14 +618,24 @@ _Avoid_: gloss box, dictionary popup, tooltip (it is not a GameTooltip)
 → [Readings](systems/readings.md) · [ADR-039](adr/039-word-meanings-written-in-context.md)
 
 **Word list**:
-The player's own list of saved [[Word]]s, kept account-wide in the SavedVariables table `WFJ_Words` across sessions. Each entry holds the word, its [[Reading]], its [[Dictionary form]] and that form's reading, its [[Meaning]], the Japanese sentence it was shown in, where it was shown and when it was saved; one entry per source text and dictionary form. Filled by the [[Save click]], exported from the word list window as tab-separated text for a text file, a spreadsheet or Anki. In Japanese: 単語帳.
-_Avoid_: flashcards (Anki makes those from the export), vocab list, vocabulary, bookmarks, favourites, deck (Anki's term)
-→ [Word list](systems/word-list.md) · [ADR-069](adr/069-saved-word-list.md)
+The player's own list of saved [[Word]]s, kept account-wide in the SavedVariables table `WFJ_Words` across sessions. Each entry holds the word, its [[Reading]], its [[Dictionary form]] and that form's reading, its [[Meaning]], the Japanese sentence it was shown in, where it was shown and when it was saved; one entry per source text and dictionary form. Filled by the [[Save click]], studied in game on the [[Study card]], and exported from the word list window as tab-separated text for a text file, a spreadsheet or Anki. In Japanese: 単語帳.
+_Avoid_: flashcards as a name for the list (the study card and Anki make cards from it; the list is the list), vocab list, vocabulary, bookmarks, favourites, deck (Anki's term)
+→ [Word list](systems/word-list.md) · [ADR-069](adr/069-saved-word-list.md) · [ADR-071](adr/071-study-the-word-list-in-game.md)
 
 **Save click**:
 The mouse click that adds the highlighted [[Word]] (gold tint, [[Word card]] or [[Word-reading box]] showing) to the [[Word list]]: Ctrl+click by default, or Shift+click, Cmd+click (Mac only) or a plain click, set by `words.saveClick` (`off` turns it off). Never the [[Modifier]]'s own key. The addon reads the mouse button while the mouse is over the word; it does not take the click, so the window under the text gets it as before.
 _Avoid_: bookmark, save key (it is a click), Ctrl+click on its own (the click is a setting), save button
 → [Readings → Saving a word](systems/readings.md#saving-a-word) · [ADR-069](adr/069-saved-word-list.md)
+
+**Study card**:
+The one-word flashcard the addon shows in game for the [[Word list]] (`UI/StudyWindow`): the saved [[Word]], large, over the Japanese sentence it was saved from with the word marked gold; **Show answer** reveals its [[Reading]], its [[Dictionary form]] when it differs and its [[Meaning]], then **Again** or **Good** grades it and FSRS-6 sets when it is next [[Due]]. The sentence is a [[Surface]] for [[Word card]]s (`study`), minus the tested word, whose reading is the answer. It collapses to the **study tab**, a small tab at the screen edge with the count of words that wait, shown only while some do; the tab, `/wfj study`, the minimap button's menu, the **Study words** key binding and the Words settings page open the card. The two frames together are the study window (the combat setting's word). In Japanese: 学習カード; the tab: 学習タブ.
+_Avoid_: flashcard on its own (say study card), quiz, review window, Anki card (Anki makes those from the export), deck
+→ [Study](systems/study.md) · [ADR-071](adr/071-study-the-word-list-in-game.md)
+
+**Due**:
+A graded [[Word]] whose scheduled time has passed: the [[Study card]] asks it before any new word, the earliest first. The grade sets the time: **Good** puts it at now plus the word's stability in whole days, at least one (the FSRS-6 interval at 90% retention); **Again** at now plus one 10-minute relearn step. A word never graded is **new**, not due: new words come in saved order while the day's count is under `study.newPerDay` (20 by default; the day rolls at the client's local midnight). The tab's count is the due words plus the new words still allowed today. In Japanese: 復習 (the card's footer and the settings page; the tab shows N語).
+_Avoid_: overdue, pending, expired, scheduled (a word with a future time is scheduled, not due), due for a word never graded (it is new)
+→ [Study → The queue](systems/study.md#the-queue) · [ADR-071](adr/071-study-the-word-list-in-game.md)
 
 **Window label**:
 A plain-text label in a window: a FontString showing one [[UI string]] (the quest window's 報酬 and 以下の報酬から1つ選択できます, the character sheet's section labels, mail's 宛先:) whose parent is not a Button or a protected frame, on a [[Surface]] that is a window: not a button, tab, menu, dropdown or tooltip, and not the HUD (tracker, alerts, error and combat text, unit frames, zone text; `View.NON_WINDOW`). The only interface text that takes a [[Word card]]. Narrower than [[Label]], which also covers buttons.

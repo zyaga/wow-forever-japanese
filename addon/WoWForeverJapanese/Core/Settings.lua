@@ -306,3 +306,15 @@ Settings.define{ id = "words.saveClick", kind = "choice", choices = { "ctrl", "s
   apply = function(v) WFJ.State.fire("saveClick", v) end }
 Settings.define{ id = "words.screenshot", kind = "boolean", default = false,
   label = "Take a screenshot when saving a word", ja = "単語を保存するときにスクリーンショットを撮る" }
+
+-- Studying the word list (Core/Study, UI/StudyWindow, ADR-071). A change redraws the window (State "study"); the
+-- daily cap is a choice because the registry has no number kind, and four steps are enough to pick from.
+local function studyChanged() WFJ.State.fire("study") end
+Settings.define{ id = "study.tab", kind = "boolean", default = true, apply = studyChanged,
+  label = "Show the study tab when words are due", ja = "復習する単語があるとき学習タブを表示" }
+Settings.define{ id = "study.newPerDay", kind = "choice", choices = { "5", "10", "20", "50" }, default = "20",
+  label = "New words per day", ja = "1日に始める新しい単語の数", apply = studyChanged }
+Settings.define{ id = "study.combatHide", kind = "boolean", default = true, apply = studyChanged,
+  label = "Hide the study window in combat", ja = "戦闘中は学習ウィンドウを隠す" }
+Settings.define{ id = "study.sound", kind = "boolean", default = true, apply = studyChanged,
+  label = "Play a sound on Good", ja = "正解のとき音を鳴らす" }

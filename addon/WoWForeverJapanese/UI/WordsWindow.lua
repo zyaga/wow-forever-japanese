@@ -133,3 +133,4 @@ end
 function WordsWindow.refresh()
   if WordsWindow.frame and WordsWindow.frame:IsShown() then fill() end
 end
+WFJ.State.on("words", function() WordsWindow.refresh() end)

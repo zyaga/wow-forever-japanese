@@ -3,8 +3,9 @@ local Stub = require("tests.lua.spec.wow_stub")
 local Loader = require("tests.lua.spec.loader")
 
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Data.lua", "Data/Meta.lua", "Core/State.lua",
-  "Core/Settings.lua", "Core/Modifier.lua", "Core/Collector.lua", "Core/Words.lua", "UI/Font.lua", "UI/OptionsText.lua",
-  "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/RevealBinding.lua", "UI/Options.lua", "UI/WordsWindow.lua" }
+  "Core/Settings.lua", "Core/Modifier.lua", "Core/Collector.lua", "Core/Words.lua", "Core/Fsrs.lua", "Core/Study.lua",
+  "UI/Font.lua", "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/RevealBinding.lua",
+  "UI/Options.lua", "UI/WordsWindow.lua", "UI/StudyWindow.lua" }
 
 -- Every widget the stub created, per page frame (FontStrings and textures live in `children`; frames in Stub.frames).
 local function pageFrames(page)
@@ -111,6 +112,28 @@ describe("Settings pages from the registry and PAGES", function()
     S.set("words.saveClick", "shift")
     O.refresh()
     assert.is_truthy(O.aboutReadings.en:GetText():find("Shift+click", 1, true))
+  end)
+
+  it("the words page's Study section: the tab, new words per day, combat, the counts and Open", function()
+    local sections
+    for _, page in ipairs(O.PAGES) do if page.id == "words" then sections = page.sections end end
+    assert.are.equal("section.study", sections[2].title)
+    assert.are.same({ "studyExplain", "study.tab", "study.newPerDay", "study.combatHide", "study.sound", "studyStatus",
+      "studyOpen" },
+      sections[2].rows)
+    local out = {}
+    for i, it in ipairs(control("study.newPerDay").dropdown:menuItems()) do out[i] = it.text end
+    assert.are.same({ "5", "10", "20", "50" }, out)
+    WFJ.Words.load({ schema = 1, entries = { { key = "a", word = "a" }, { key = "b", word = "b" } } })
+    WFJ.Study.load(nil, WFJ.Words.entries())
+    O.refresh()
+    assert.are.equal(select(2, WFJ.OptionsText.get("study.status", 0, 2)), O.studyStatus.en:GetText())
+    local opened = 0
+    WFJ.StudyWindow.open = function() opened = opened + 1 end
+    O.studyOpen.scripts.OnClick(O.studyOpen, "LeftButton")
+    assert.are.equal(1, opened)
+    -- the About page names /wfj study
+    assert.is_truthy(O.aboutReadings.en:GetText():find("/wfj study", 1, true))
   end)
 
   it("the voice panel page: Panel size and Panel style as dropdowns, then its switches", function()

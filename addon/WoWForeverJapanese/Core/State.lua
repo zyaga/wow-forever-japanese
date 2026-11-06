@@ -3,7 +3,9 @@
 -- "readings"(bool), fired by the `readings.enabled` setting's apply (UI/Readings shows / hides its covers);
 -- and "revealKey"(key), fired by Modifier.setKey on every apply so UI/RevealBinding re-applies.
 -- "lineShown"(surface, recordKey, kind, id), fired by UI/Render's show when the client wrote a line and it now shows in
--- Japanese (UI/VoicePlayer); "voice"(), fired by the voice settings' apply.
+-- Japanese (UI/VoicePlayer); "voice"(), fired by the voice settings' apply. "words"(), fired by Core/Words when
+-- the word list changes (a save, Remove last, Clear all): Core/Study, UI/WordsWindow, UI/StudyWindow and UI/Options
+-- follow it.
 local _, WFJ = ...
 local State = { enabled = true, modifierHeld = false, areas = {} }
 WFJ.State = State

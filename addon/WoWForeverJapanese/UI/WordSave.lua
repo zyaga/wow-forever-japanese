@@ -101,9 +101,7 @@ function WordSave.save(cover, word)
     lemmaReading = g and g.lemmaReading, meaning = g and g.meaning, questTitle = title,
   }, Compat.call("time"))
   if status == "added" then
-    WFJ.ReadingView.flash(cover)
-    if WFJ.WordsWindow then WFJ.WordsWindow.refresh() end
-    if WFJ.Options and WFJ.Options.refresh then pcall(WFJ.Options.refresh) end -- the Words page's count
+    WFJ.ReadingView.flash(cover) -- the windows and the study queue follow the list's own change event
     if not (WFJ.Settings.get("words.screenshot") and screenshot(cover, entry)) then
       say("words.saved", entry.word, Words.count())
     end

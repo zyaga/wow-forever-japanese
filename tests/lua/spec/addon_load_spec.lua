@@ -11,7 +11,7 @@ local TAIL = {
   "Core/Placeholders.lua", "Core/Translator.lua", "Core/UIStringKeys.lua",
   "Core/UIStrings.lua", "Core/Objectives.lua", "Core/SurfaceState.lua",
   "Core/Collector.lua", "Core/CollectorSend.lua", "Core/CollectorRemind.lua", "Core/Intro.lua",
-  "Core/Words.lua",
+  "Core/Words.lua", "Core/Fsrs.lua", "Core/Study.lua",
   "Core/RecentLines.lua", "Core/Reports.lua", "Core/ReportText.lua", "Core/Diag.lua", -- the fix reports, the log
   "Core/BugReport.lua",
   "UI/Font.lua", "UI/Frames.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/WordSave.lua", "UI/Render.lua",
@@ -71,7 +71,8 @@ local TAIL = {
   "UI/Popups.lua",
   "UI/Scan.lua",
   "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/KeyCapture.lua", "UI/FixWindow.lua",
-  "UI/CollectorSendWindow.lua", "UI/WordsWindow.lua", "UI/CollectorReminder.lua", "UI/IntroWindow.lua",
+  "UI/CollectorSendWindow.lua", "UI/WordsWindow.lua", "UI/StudyWindow.lua", "UI/CollectorReminder.lua",
+  "UI/IntroWindow.lua",
   "UI/ReportWindow.lua",
   "UI/MinimapButton.lua",
   "UI/RevealBinding.lua",
@@ -326,6 +327,31 @@ describe("addon loads in TOC order and answers /wfj version", function()
     W = boot(newer)
     assert.are.equal(newer, WFJ_Words)
     assert.is_true(W.Words.readonly())
+  end)
+
+  it("creates WFJ_Study after the words, drops cards of words no longer listed, keeps a newer version's", function()
+    local function boot(words, study)
+      Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
+      Stub.installQuestAPI(); Stub.installTooltipAPI(); Stub.installGossipAPI(); Stub.installItemTextAPI()
+      _G.WFJ_Words, _G.WFJ_Study = words, study
+      local W = Loader.load("WoWForeverJapanese")
+      Stub.fireAll("ADDON_LOADED", "WoWForeverJapanese")
+      return W
+    end
+    boot(nil, nil)
+    assert.are.same({ schema = 1, cards = {}, days = {} }, WFJ_Study)
+    local card = { s = 2, d = 5, due = 1, last = 0, reps = 1, lapses = 0 }
+    local W = boot({ schema = 1, entries = { { key = "gossip:g1:数", word = "数" } } },
+      { schema = 1, cards = { ["gossip:g1:数"] = card, ["gossip:g2:gone"] = card }, days = {} })
+    assert.is_truthy(W.Study.card("gossip:g1:数"))
+    assert.is_nil(WFJ_Study.cards["gossip:g2:gone"])
+    local newer = { schema = 99, cards = {} }
+    W = boot(nil, newer)
+    assert.are.equal(newer, WFJ_Study)
+    assert.is_true(W.Study.readonly())
+    -- listed in the TOC, so the client saves it
+    local toc = H.readFile("addon/WoWForeverJapanese/WoWForeverJapanese.toc")
+    assert.is_truthy(toc:find("## SavedVariables:[^\n]*WFJ_Study", 1))
   end)
 
   it("creates WFJ_Collector on load and discloses once, on the first PLAYER_ENTERING_WORLD", function()

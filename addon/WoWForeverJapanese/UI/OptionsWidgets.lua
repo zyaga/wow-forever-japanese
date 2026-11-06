@@ -104,8 +104,9 @@ function W.fontString(parent, template, text, x, y, width, size)
 end
 
 -- A label in the current language (W.pick), bundled font, wrapping at `width`. `l.en` is the line shown; `l.ja` stays
--- (empty) for callers that measure both. W.setPair changes the texts later. → { en = fs, ja = fs }
-function W.label(parent, en, ja, x, y, width)
+-- (empty) for callers that measure both. W.setPair changes the texts later; `size` is the line's font size (12).
+-- → { en = fs, ja = fs }
+function W.label(parent, en, ja, x, y, width, size)
   local l = {}
   l.en = W.fontString(parent, "GameFontHighlight", "", x, y, width)
   l.ja = parent:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
@@ -113,7 +114,7 @@ function W.label(parent, en, ja, x, y, width)
   if width then l.ja:SetWidth(width) end
   l.ja:SetJustifyH("LEFT")
   l.ja:SetText("")
-  function l.show() W.put(l.en, W.pick(l.pair[1], l.pair[2]), 12) end
+  function l.show() W.put(l.en, W.pick(l.pair[1], l.pair[2]), size or 12) end
   W.setPair(l, en, ja)
   register(parent, l.show)
   return l
