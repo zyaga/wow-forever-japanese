@@ -4,7 +4,8 @@ local Stub = require("tests.lua.spec.wow_stub")
 local F = require("tests.lua.spec.stub_fixwindow")
 
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua",
-  "Core/Words.lua", "Core/Fsrs.lua", "Core/Study.lua", "UI/Font.lua", "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/WordsWindow.lua" }
+  "Core/Words.lua", "Core/Fsrs.lua", "Core/Study.lua", "UI/Font.lua", "UI/OptionsText.lua", "UI/OptionsWidgets.lua",
+  "UI/WordsWindow.lua" }
 
 local function add(W, word, shot)
   local text = word .. "がある。"
