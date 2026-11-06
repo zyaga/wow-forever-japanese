@@ -11,10 +11,11 @@ local patched = setmetatable({}, { __mode = "k" }) -- frames whose writers are w
 local function guarded(...) return WFJ.DialogueUI.guarded(...) end
 
 -- ── Dialogue UI's tooltip ──────────────────────────────────────────────────
--- Dialogue UI draws item and reward tooltips in a frame of its own, made at its load with no name; it is found once
--- by its shape (its line writer and its line grid) [read: Dialogue UI 1.0.7 b, Code/Tooltip/Tooltip_Base.lua]. A line
--- after the first (the first is the item's name, which stays English) that is exactly one of the client's interface
--- strings ("Quest Item", "Unique") gets that string's Japanese in the bundled face.
+-- Dialogue UI draws item and reward tooltips in a frame of its own, made at its load with no name; a scan finds it by
+-- its members (its two line writers and its update) [read: Dialogue UI 1.0.7 b, Code/Tooltip/Tooltip_Base.lua]. A
+-- line after the first (the first is the item's name, which stays English) that is one of the client's interface
+-- strings ("Quest Item", "Item Level 14", "+3 Item Level") gets its Japanese in the bundled face. An item's effect
+-- lines (Use:, Equip:) stay English here.
 -- Dialogue UI's own tooltip words (its comparison toggle and the line naming the item a reward would replace), in the
 -- addon's own Japanese, as UI/DialogueUI gives the headings Dialogue UI writes itself.
 local OWN_TIP_WORDS = { ["Show Comparison"] = "比較を表示", ["Hide Comparison"] = "比較を隠す" }
@@ -88,7 +89,11 @@ local function wrapAdd(tip, method, translate)
   end
 end
 
+local tips = setmetatable({}, { __mode = "k" }) -- Dialogue UI's tooltips found
+local popupTitle = setmetatable({}, { __mode = "k" }) -- popup → the English name it was last given
+
 local function wrapTooltip(tip)
+  tips[tip] = true
   wrapAdd(tip, "AddLeftLine", tooltipLine)
   wrapAdd(tip, "AddRightLine", function(_, text) return tipText(text) end) -- "Cloth", "Mail"
 end
@@ -137,6 +142,7 @@ end
 local function wrapPopup(popup)
   local setTitle = popup.SetTitle
   popup.SetTitle = function(self, title, ...)
+    if type(title) == "string" then popupTitle[self] = title end
     local ja
     if WFJ.DialogueUI.active() and type(title) == "string" and type(self.questID) == "number" then
       local ok, t = guarded(WFJ.DialogueUI.questTitle, { questID = self.questID, title = title })
@@ -212,6 +218,20 @@ local function events()
 end
 
 
+-- The reveal key or a switch changed: a tooltip on screen is built again by its own update (each line through the
+-- wrappers, as the switch now says), and a popup on screen is given its English name again through the wrapper.
+local function refresh()
+  if not WFJ.DialogueUI.healthy() then return end
+  for tip in pairs(tips) do
+    if type(tip.IsShown) == "function" and tip:IsShown() and type(tip.tooltipInfo) == "table" then
+      guarded(tip.ProcessInfo, tip, tip.tooltipInfo)
+    end
+  end
+  for popup, en in pairs(popupTitle) do
+    if type(popup.IsShown) == "function" and popup:IsShown() then guarded(popup.SetTitle, popup, en) end
+  end
+end
+
 -- Called by UI/DialogueUI once Dialogue UI's window is set up: the frames made so far, and a scan after the events
 -- Dialogue UI makes a popup on and whenever its window opens.
 function Frames.install(window)
@@ -219,5 +239,8 @@ function Frames.install(window)
   guarded(events)
   if type(window) == "table" and type(window.HookScript) == "function" then
     window:HookScript("OnShow", function() guarded(scanSoon) end)
+  end
+  for _, event in ipairs({ "modifier", "enabled", "area" }) do
+    WFJ.State.on(event, function() guarded(refresh) end)
   end
 end

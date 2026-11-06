@@ -504,6 +504,36 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
         "アイテムレベル |cff20ff20+3|r", "比較を隠す", "Something else" }, tip:texts())
     end)
 
+    it("an open tooltip is built again by its own update when the key is held, and a popup is retitled", function()
+      load({ loaded = false })
+      ship(QUEST_JA)
+      game(WORDS)
+      local tip = DUI.installTooltip()
+      tip.tooltipInfo = {}
+      function tip:ProcessInfo() -- Dialogue UI's update: its lines again from the item's data
+        self.numLines, self.grid = 0, {}
+        self:AddLeftLine("Belt")
+        self:AddLeftLine("Quest Item")
+        self:AddRightLine("Mail")
+      end
+      DUI.questNames[2] = "Sharptalon's Claw"
+      local popup = DUI.makePopup()
+      Stub.loadedAddons.DialogueUI = true
+      WFJ.LoadOnDemand.loaded("DialogueUI")
+      tip:Show()
+      tip:ProcessInfo()
+      popup:SetQuestDataByID(2)
+      assert.are.equal("クエストアイテム", tip:texts()[2])
+      assert.are.equal("Sharptalonの鉤爪", popup.Title:GetText())
+      Stub.keys.alt = true
+      WFJ.Modifier.refresh()
+      assert.are.equal("Quest Item", tip:texts()[2])
+      assert.are.equal("Sharptalon's Claw", popup.Title:GetText())
+      Stub.keys.alt = false
+      WFJ.Modifier.refresh()
+      assert.are.equal("クエストアイテム", tip:texts()[2])
+    end)
+
     it("the chat panel shows an NPC's line in the chat window's Japanese, English while the key is held", function()
       load({ loaded = false })
       local panel = DUI.installChatPanel()

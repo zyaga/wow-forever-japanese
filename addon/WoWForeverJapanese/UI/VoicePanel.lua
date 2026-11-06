@@ -343,7 +343,6 @@ local function onTick(self, elapsed)
   self:SetAlpha(alpha)
 end
 
--- → whether the panel is on screen (UI/VoicePlayer shows the window's own button only while it is not)
 -- Another addon's window that fades the whole interface (UIParent) out while it is open (Dialogue UI) has the panel
 -- taken out from under UIParent for that time, at UIParent's scale, so it shows whole: under the faded UIParent only
 -- its 3D head would still draw (a model ignores its parent's alpha). Its tooltip goes with it.
@@ -377,8 +376,8 @@ function Panel.lift(on)
   placeLifted()
 end
 
--- on screen, not only shown: another addon may hide the whole interface (UIParent) while its own window is open, and
--- then the window's own replay control has to stand in
+-- → whether the panel is on screen (UI/VoicePlayer shows the window's own button only while it is not): on screen,
+-- not only shown, as another addon may hide the whole interface (UIParent) while its own window is open
 function Panel.visible()
   return f ~= nil and f:IsVisible()
 end

@@ -397,7 +397,6 @@ local function questRow(questInfo)
   return rowJapanese(questInfo.title, "quests", "quest.title", questInfo.questID, questInfo.title)
 end
 
--- for UI/DialogueUIFrames: the same lookups and faces for Dialogue UI's other frames
 -- for UI/DialogueUIFrames: lookups for frames that are not the page (they never mark the page for a redraw)
 local function apart(fn)
   return function(...)

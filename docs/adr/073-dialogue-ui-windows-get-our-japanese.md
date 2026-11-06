@@ -46,6 +46,7 @@ This narrows ADR-004: an optional adapter that runs only when the player already
 - Dialogue UI fades the game interface out while its window shows, so the word card and reading box move under the Dialogue UI window while they point at its text. The voice panel is lifted out from under the faded interface for that time and goes back after; under it, only its 3D head would draw (a model ignores its parent's alpha).
 - Lines already in Dialogue UI's chat panel keep what they showed when they arrived (the panel keeps its own list), so the reveal key and the switches change only lines arriving while they are set.
 - The tooltip, chat panel and popups are found by their shape, not a name; a Dialogue UI update that changes that shape leaves them in English.
+- An item's effect lines (Use:, Equip:) stay English in Dialogue UI's tooltip; the game's own tooltip translates them by item id across the whole run, which its tooltip does not let the addon see in one place.
 - Dialogue UI measures a book's text and its chat panel's lines through its own font objects before any line is drawn, so the modules set the bundled face on those objects (Dialogue UI's, never the client's): the book's while a book shows Japanese (given back when it closes or shows English), the chat panel's when the panel is found, before it holds a line. The rest of the addon still never changes a font object.
 
 ## Alternatives considered
