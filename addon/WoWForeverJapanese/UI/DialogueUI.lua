@@ -691,8 +691,8 @@ headerTags = function(self)
   local front = type(self.FrontFrame) == "table" and self.FrontFrame or nil
   local header = front and type(front.Header) == "table" and front.Header or nil
   for _, parent in ipairs({ header, front }) do
-    if type(parent) == "table" and type(parent.GetChildren) == "function" then
-      for _, child in ipairs({ parent:GetChildren() }) do
+    if type(parent) == "table" then
+      for _, child in ipairs(WFJ.Frames.children(parent)) do
         local fs = type(child) == "table" and child.ButtonText or nil
         if type(fs) == "table" and type(fs.GetText) == "function" and type(child.SetText) == "function" then
           local ja = gameWord(fs:GetText())
