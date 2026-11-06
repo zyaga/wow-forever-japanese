@@ -245,6 +245,21 @@ describe("Core/Collector", function()
       assert.are.equal("Hunter|Night Elf", again.entries["quest:9:description"].p)
     end)
 
+    it("the player's name printed in capitals is the name too: $N in the text and in the key", function()
+      -- some greetings print $N in capitals ("The earth calls to you, REYN."); exact-case replacement misses it
+      local e = C.text("The earth calls to you, REYN. Go to it, and know that your brethren are proud.", PLAYER)
+      assert.are.equal("The earth calls to you, $N. Go to it, and know that your brethren are proud.", e)
+      local keys = C.keys("The earth calls to you, REYN.", PLAYER)
+      assert.are.equal(WFJ.Hash.key(WFJ.Normalize.v1("The earth calls to you, $N.")), keys[1])
+      -- whole word and capitals only: another casing or a longer word is left as written
+      assert.are.equal("Reynold and REYNA and reyn walk in.", C.text("Reynold and REYNA and reyn walk in.", PLAYER))
+      -- item / spell / NPC text gets no player substitution, in capitals either
+      assert.are.equal("REYN OF THE WILD", C.text("REYN OF THE WILD", nil))
+      local db = C.load(nil, deps())
+      assert.are.equal("recorded", C.record("spell", 3, "description", "Summons REYN."))
+      assert.are.equal("Summons REYN.", db.entries["spell:3:description"].e)
+    end)
+
     it("a break inside a link label never splits the link", function()
       assert.are.equal("Take [Linen$B$BCloth] home.", C.text("Take |Hitem:2589|h[Linen|nCloth]|h home.", nil))
     end)

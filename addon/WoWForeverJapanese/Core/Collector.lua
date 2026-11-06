@@ -135,6 +135,17 @@ local function replaceLower(text, player)
   return text
 end
 
+-- Some greetings print the player's name in capitals ("The earth calls to you, REYN."), which normalize_v1's
+-- exact-case replacement leaves in place: the stored text and its key would then carry the name and match no other
+-- player's screen. The capitals form is replaced as a whole word too; other casings are left as written.
+local function replaceUpperName(text, player)
+  local name = player.name
+  if type(name) ~= "string" or name == "" then return text end
+  local upper = name:upper()
+  if upper == name then return text end
+  return Normalize.replaceWord(text, upper, "{name}")
+end
+
 -- Whole-word, exact-case replacement of a name of any length: the boundaries of Normalize.replaceWord, without its
 -- 3-code-point floor. Only the short-name candidates use it; normalize_v1 itself is unchanged.
 local function replaceShortName(text, name)
@@ -154,7 +165,10 @@ local function paragraphs(raw, player)
   local s = raw:gsub("|n", "\1")
   s = s:gsub("%$[Bb]", "\1"):gsub("\n", "\1")
   local normalized = Normalize.v1(s, player)
-  if player then normalized = replaceLower(normalized, player) end
+  if player then
+    normalized = replaceLower(normalized, player)
+    normalized = replaceUpperName(normalized, player)
+  end
   -- a short-name candidate: on the markup-free text, so a colour code can never be hit
   if player and player.short and type(player.name) == "string" and player.name ~= "" then
     normalized = replaceShortName(normalized, player.name)
