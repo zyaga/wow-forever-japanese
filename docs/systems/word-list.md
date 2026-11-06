@@ -122,7 +122,7 @@ The list can also be studied in game, one card at a time, on an FSRS-6 schedule 
 - `addon/WoWForeverJapanese/UI/Readings.lua`: the poll, and the flash / hide card / reshow hooks
 - `addon/WoWForeverJapanese/UI/WordSave.lua`: the save: the modifiers, the entry, the screenshot sequence, the chat lines, the hint text
 - `addon/WoWForeverJapanese/UI/ReadingPopup.lua`: the hint line on the card
-- `addon/WoWForeverJapanese/UI/WordsWindow.lua`: the export window; `prune()` after Remove last and Clear all
+- `addon/WoWForeverJapanese/UI/WordsWindow.lua`: the export window (it follows the `words` event, as the study queue does)
 - `addon/WoWForeverJapanese/Core/Study.lua`, `Core/Fsrs.lua`, `UI/StudyWindow.lua`: studying the list ([Study](study.md))
 - `addon/WoWForeverJapanese/UI/Options.lua`, `UI/OptionsText.lua`: the Words page and every string, in English and Japanese
 - `addon/WoWForeverJapanese/UI/MinimapButton.lua`, `UI/Slash.lua`, `UI/IntroWindow.lua`: the other ways in
