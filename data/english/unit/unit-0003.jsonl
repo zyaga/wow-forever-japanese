@@ -1,9 +1,17 @@
 {"id": 3050, "field": "name", "en": "Veren Tallstrider", "hash": "e9a1c0d586ddd12e", "src": "collector@1.60.1.70790"}
+{"id": 3054, "field": "name", "en": "Zarlman Two-Moons", "hash": "7b975a661c91148e", "src": "collector@1.60.1.70790"}
+{"id": 3055, "field": "name", "en": "Maur Raincaller", "hash": "50648dcc132ad44f", "src": "collector@1.60.1.70790"}
 {"id": 3062, "field": "name", "en": "Meela Dawnstrider", "hash": "8971b1f52b4f00b5", "src": "collector@1.60.1.70235"}
+{"id": 3063, "field": "name", "en": "Krang Stonehoof", "hash": "c2cb1ef39e001065", "src": "collector@1.60.1.70790"}
+{"id": 3065, "field": "name", "en": "Yaw Sharpmane", "hash": "1aa3081537e9263d", "src": "collector@1.60.1.70790"}
+{"id": 3067, "field": "name", "en": "Pyall Silentstride", "hash": "44833ed8f8c207b8", "src": "collector@1.60.1.70790"}
 {"id": 3143, "field": "name", "en": "Gornek", "hash": "6d86979bf1dfcd1d", "src": "collector@1.60.1.70009"}
 {"id": 3145, "field": "name", "en": "Zureetha Fargaze", "hash": "ac4a12dffb1cd848", "src": "collector@1.60.1.70205"}
 {"id": 3153, "field": "name", "en": "Frang", "hash": "dc20085a6d88e60d", "src": "collector@1.60.1.70205"}
 {"id": 3159, "field": "name", "en": "Kzan Thornslash", "hash": "d8292a56763d6748", "src": "collector@1.60.1.70205"}
+{"id": 3209, "field": "name", "en": "Brave Windfeather", "hash": "c6935c84354eaff0", "src": "collector@1.60.1.70790"}
+{"id": 3216, "field": "name", "en": "Neeru Fireblade", "hash": "868b3608d150a7d7", "src": "collector@1.60.1.70790"}
+{"id": 3222, "field": "name", "en": "Brave Wildrunner", "hash": "6ea11a0a61d267b3", "src": "collector@1.60.1.70790"}
 {"id": 3287, "field": "name", "en": "Hana'zua", "hash": "ce871d9362ce9a86", "src": "collector@1.60.1.70205"}
 {"id": 3514, "field": "name", "en": "Tenaron Stormgrip", "hash": "a35ac59a1a98ec8d", "src": "collector@1.60.1.70205"}
 {"id": 3515, "field": "name", "en": "Corithras Moonrage", "hash": "ddfdcf5422a58b3b", "src": "collector@1.60.1.70205"}

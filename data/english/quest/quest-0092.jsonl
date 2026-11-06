@@ -71,6 +71,7 @@
 {"id": 92465, "field": "title", "en": "Agitators", "hash": "bed3e8bbb7bcfd73", "src": "wdb@1.60.1.70790"}
 {"id": 92465, "field": "objectives", "en": "Slay $2oa Roiling Winds and $1oa Al'Aketh Converts in Thendal Grove.", "hash": "331650799c1cc43b", "src": "wdb@1.60.1.70790"}
 {"id": 92465, "field": "description", "en": "The Al'Aketh cult is a blight upon this island. These cultists are surely the ones responsible for agitating the simple wind sprites that reside here and turning them violent.\r\n\r\nRegrettably, we'll need to disperse these roiling winds here before they harm someone. We also need to send a clear message to the cult that they are not welcome in the grove.\r\n\r\nWill you lend me your aid, $c?", "hash": "1f47f35dedae0ec9", "src": "wdb@1.60.1.70790"}
+{"id": 92465, "field": "progress", "en": "Is it done?", "hash": "cd001c8945832ec7", "src": "collector@1.60.1.70790"}
 {"id": 92465, "field": "completion", "en": "It pains me to shed shen'dorei blood here in the grove, but we do what we must.", "hash": "04fad8580041b993", "src": "forever-vo@025070f"}
 {"id": 92466, "field": "title", "en": "Call of Earth", "hash": "e316c17f3e1b3015", "src": "wdb@1.60.1.70790"}
 {"id": 92466, "field": "objectives", "en": "Bring a Signet of Akir to Windshaper Boro.", "hash": "56d019a132840a38", "src": "wdb@1.60.1.70790"}
