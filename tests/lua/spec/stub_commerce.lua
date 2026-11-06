@@ -57,6 +57,12 @@ function C.tree(root, spec)
   return root
 end
 
+-- Puts `value` at a dotted path under `root`, creating the frames on the way.
+function C.set(root, path, value)
+  local parent, field = parentOf(root, path)
+  parent[field] = value
+end
+
 -- → the widget at a dotted path under `root` (nil when a step is missing).
 function C.at(root, path)
   local node = root
