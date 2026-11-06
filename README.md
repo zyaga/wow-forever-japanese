@@ -8,7 +8,7 @@ is only the default: any key can be chosen. Names of people, places, creatures, 
 everywhere.
 
 With the free voice download it also reads its Japanese aloud: over 14,000 quest texts, NPC lines and book pages,
-each NPC in a voice cast for who they are, with a panel that shows who is speaking and what they say.
+each NPC in a voice modelled on its own voice in the game, with a panel that shows who is speaking and what they say.
 
 It is made for **World of Warcraft: Forever** only. It is not for WoW Classic or for the modern game.
 
@@ -74,8 +74,8 @@ addon: installing it from the CurseForge app brings the addon too, and the game 
 
 The addon's **About & Help** page says whether the voice is installed and which packs loaded. One setting on its
 **Voice** page turns the voice off; removing the voice folders removes it, and the addon keeps working. The voices
-were made on the maintainer's own computer with the AivisSpeech Engine and the voice models listed in
-[`ATTRIBUTION.md`](ATTRIBUTION.md).
+were made with Qwen3-TTS, each modelled on one of the game's own NPC voices; which NPC has which voice follows the
+Spoken addon. Credits are in [`ATTRIBUTION.md`](ATTRIBUTION.md).
 
 ## Using it
 
@@ -110,8 +110,9 @@ button's menu or from the **Words** settings page, where you also choose how man
 
 **Japanese voice.** With the voice installed ([see below](#add-the-japanese-voice)), quest offers, progress and
 turn-ins, NPC greetings and talk, and book and letter pages are read aloud in Japanese: over 14,000 lines. Each NPC
-speaks in a voice cast for their race or kind of creature, gender and age. Your character says its own error lines,
-such as being out of range, in Japanese too, in a voice for its race and sex.
+speaks in a voice modelled on its own voice in the game, so it sounds like the NPC you know. Your character says its
+own error lines, such as being out of range, in Japanese too, in a voice modelled on its race's own error lines. A
+narrator reads the rest, and every line plays at the same loudness.
 
 **Voice panel.** While a line plays, a panel at the bottom of the screen shows who is speaking: their face, their
 name and title, and the Japanese a sentence at a time, with the popup dictionary on every word. Close the window and
@@ -250,7 +251,7 @@ and why: [docs](docs/overview.md). What changed in each release: [`CHANGELOG.md`
 
 World of Warcraft: Forever を日本語で遊べるようにするアドオンです。クエスト、NPC の会話、本、アイテムと呪文のツールチップ、ゲームのインターフェースを日本語で表示します。**Alt** キーを押している間はゲーム本来の英語が表示され、離すと日本語に戻ります。Alt は初期設定のキーで、好きなキーに変更できます。人物・地名・モンスター・アイテム・呪文の名前はすべて英語のままです。
 
-無料の音声を追加すると、日本語を読み上げることもできます。クエスト、NPC の会話、本のページなど 14,000 行以上を、NPC ごとに合わせて選んだ声で読み上げ、誰が何を話しているかをパネルに表示します。
+無料の音声を追加すると、日本語を読み上げることもできます。クエスト、NPC の会話、本のページなど 14,000 行以上を、NPC ごとにゲームでのその NPC 自身の声をもとにした声で読み上げ、誰が何を話しているかをパネルに表示します。
 
 対応しているのは **World of Warcraft: Forever** のみです。WoW Classic や現行の World of Warcraft 用ではありません。
 
@@ -302,7 +303,7 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 - **CurseForge アプリで:** 先にアドオンを入れてから、**WoW Forever Japanese Voice** を検索して **Install** を押します。すべての音声パックが一緒に入り、更新もアプリが行います。ゲーム内の AddOns 一覧では、アドオンの下に音声パックの行が並びます。チェックは入れたままにしてください。
 - **手動で:** [リリースページ](https://github.com/zyaga/wow-forever-japanese/releases)で名前が **Voice** で始まる最新のリリースを開き、名前が `-all-` と日付で終わる zip をダウンロードして、同じ `AddOns` フォルダに展開します。中身は `WoWForeverJapanese_Voice` と音声パックごとのフォルダです。
 
-アドオンの **情報とヘルプ** ページに、音声が入っているか、どのパックが読み込まれたかが表示されます。**音声** ページの設定ひとつで音声をオフにできます。音声のフォルダを削除すれば音声はなくなり、アドオンはそのまま動きます。音声は、メンテナーのコンピューター上で AivisSpeech Engine と [`ATTRIBUTION.md`](ATTRIBUTION.md) に記載した音声モデルを使って作りました。
+アドオンの **情報とヘルプ** ページに、音声が入っているか、どのパックが読み込まれたかが表示されます。**音声** ページの設定ひとつで音声をオフにできます。音声のフォルダを削除すれば音声はなくなり、アドオンはそのまま動きます。音声は Qwen3-TTS で作り、それぞれゲームの NPC の声をもとにしています。どの NPC がどの声かは Spoken アドオンに合わせています。クレジットは [`ATTRIBUTION.md`](ATTRIBUTION.md) にあります。
 
 ### 使い方
 
@@ -324,7 +325,7 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 
 **ゲーム内で学習。** 画面右端の小さなタブに、復習する単語の数が表示されます。クリックすると単語が1枚ずつカードで出ます。保存したときの文の中に単語が示され、答えを見ると読み方と意味が表示されるので、「もう一度」か「正解」で答えます。次に出る時期は Anki と同じ FSRS の方式で決まり、復習する単語がなくなればその日はおしまいです。カードはタブにたたんだり好きな場所に動かしたりでき、戦闘中は隠れます。`/wfj study`、ミニマップボタンのメニュー、設定の **単語帳** ページからいつでも開き直せ、1日に始める新しい単語の数もそこで決められます。
 
-**日本語音声。** 音声を入れると（[下記](#日本語音声を追加する)）、クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページを日本語で読み上げます。合わせて 14,000 行以上です。NPC はそれぞれ、種族やモンスターの種類・性別・年齢に合わせて選んだ声で話します。自分のキャラクターも、射程外などのエラーの一言を、種族と性別に合わせた声で日本語で話します。
+**日本語音声。** 音声を入れると（[下記](#日本語音声を追加する)）、クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページを日本語で読み上げます。合わせて 14,000 行以上です。NPC はそれぞれ、ゲームでのその NPC 自身の声をもとにした声で話すので、英語で聞き慣れた NPC と同じように聞こえます。自分のキャラクターも、射程外などのエラーの一言を、その種族のエラーの声をもとにした声で日本語で話します。それ以外はナレーターが読み、どの行も同じ音量で再生されます。
 
 **音声パネル。** 読み上げ中は、画面下のパネルに話している NPC の顔、名前と肩書き、読み上げ中の日本語が 1 文ずつ表示されます。どの単語にもポップアップ辞書が使えます。ウィンドウを閉じても読み上げは続くので、NPC の話を聞きながら先へ進めます。その間に始まった行はパネルの上の一覧で順番を待ち、クリックするとすぐに再生できます。Alt を押している間は、声はそのままでパネルにその行の英語が表示されます。パネルにマウスを合わせると、一時停止・もう一度再生・全文表示・閉じるのボタンが出ます。クエストログにも再生ボタンがあり、受けたあとのクエストの文も聞けます。パネルは移動でき、小さな帯の表示、暗い背景、オフに切り替えられます。
 
