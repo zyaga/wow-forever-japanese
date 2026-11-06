@@ -15,7 +15,7 @@ local PLAYER = { name = "Reyn", class = "Hunter", race = "Night Elf" }
 local NPC = "Innkeeper Allison"
 
 describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
-  local WFJ, data, frame, logs, shown, caught
+  local WFJ, data, frame, logs, shown, caught, collected
 
   local function key(en) return WFJ.Collector.key(en, PLAYER) end
 
@@ -45,7 +45,7 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
     WFJ = H.loadChunks(FILES)
     WFJ.Compat.init(function(name) return _G[name] end)
     WFJ.Settings.load(nil, 1, {})
-    WFJ.Collector.load(nil, H.collectorDeps())
+    collected = WFJ.Collector.load(nil, H.collectorDeps())
     data = {}
     WFJ.Render.init(WFJ.Translator.new({
       enabled = function() return WFJ.State.enabled end,
@@ -242,6 +242,24 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       assert.are.equal("[4] 狼退治", frame.buttons[3].Name:GetText())
     end)
 
+    it("a Japanese option keeps the icon Dialogue UI picks by its English name", function()
+      ship({ gossip = { ["Hello."] = "こんにちは。", ["Inn"] = "宿屋" } })
+      open("GOSSIP_SHOW", { gossip = "Hello.", options = { "Inn" } })
+      assert.are.equal("1. 宿屋", frame.buttons[1].Name:GetText())
+      assert.are.equal("Inn", frame.buttons[1].iconFor)
+    end)
+
+    it("the English Collector hears Dialogue UI's lines as it hears the client's windows", function()
+      ship({})
+      open("GOSSIP_SHOW", { gossip = "Untranslated words.", options = { "Tell me more." } })
+      assert.is_table(collected.entries["gossip:" .. key("Untranslated words.") .. ":text"])
+      assert.is_table(collected.entries["gossip:" .. key("Tell me more.") .. ":text"])
+      open("QUEST_DETAIL", QUEST)
+      local found = false
+      for k in pairs(collected.entries) do if k:find("^quest:2:") then found = true end end
+      assert.is_true(found)
+    end)
+
     it("a pooled row that showed Japanese gets Dialogue UI's font back for English", function()
       ship({ gossip = { ["Hello."] = "こんにちは。", ["Train me."] = "訓練してくれ。" } })
       open("GOSSIP_SHOW", { gossip = "Hello.", options = { "Train me." } })
@@ -302,6 +320,31 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       WFJ.State.setArea("gossip", false)
       DUI.flush()
       assert.are.same({ "Hello." }, DUI.paragraphs())
+    end)
+
+    it("keeps the reader's place when it redraws the page for the key", function()
+      open("GOSSIP_SHOW", { gossip = "Hello.", options = { "Train me." } })
+      frame.ScrollFrame.value = 120
+      alt(true)
+      assert.are.equal(120, frame.ScrollFrame.value)
+      alt(false)
+      assert.are.equal(120, frame.ScrollFrame.value)
+      open("GOSSIP_SHOW", { gossip = "Hello." }) -- a page Dialogue UI draws itself starts at the top
+      assert.are.equal(0, frame.ScrollFrame.value)
+    end)
+
+    it("a page of another kind in the same window shows its lines anew, as a new client window would", function()
+      ship(QUEST_JA)
+      ship({ gossip = { ["Hello."] = "こんにちは。" } })
+      open("GOSSIP_SHOW", { gossip = "Hello." })
+      local first = shown
+      open("QUEST_DETAIL", QUEST)
+      open("GOSSIP_SHOW", { gossip = "Hello." })
+      assert.is_true(shown > first + 0)
+      local again = shown
+      frame:OnSettingsChanged() -- the same page drawn again: nothing shown anew
+      DUI.flush()
+      assert.are.equal(again, shown)
     end)
 
     it("a new page shows a line anew; closing the window lets the same line show anew next time", function()

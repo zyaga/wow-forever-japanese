@@ -342,8 +342,10 @@ local function onTick(self, elapsed)
 end
 
 -- → whether the panel is on screen (UI/VoicePlayer shows the window's own button only while it is not)
+-- on screen, not only shown: another addon may hide the whole interface (UIParent) while its own window is open, and
+-- then the window's own replay control has to stand in
 function Panel.visible()
-  return f ~= nil and f:IsShown()
+  return f ~= nil and f:IsVisible()
 end
 
 function Panel.update()

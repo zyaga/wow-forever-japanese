@@ -6,7 +6,8 @@ WFJ.Font = Font
 
 Font.PATH = "Interface\\AddOns\\" .. WFJ.ADDON .. "\\Fonts\\ipagui.ttf"
 Font.DEFAULT_SIZE = 12
-Font.CLIENT = "Fonts\\FRIZQT__.TTF" -- the client's standard UI face, used only under the font-load probe
+-- the client's standard UI face: under the font-load probe, and Dialogue UI's fallback face
+Font.CLIENT = "Fonts\\FRIZQT__.TTF"
 
 -- Font changes the client refused: on a fresh launch the bundled font file is not loaded yet when the
 -- addon builds its own widgets at load, and SetFont returns false. fs → { path, size, flags } (weak keys).

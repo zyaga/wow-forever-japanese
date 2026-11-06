@@ -79,6 +79,7 @@ local function button(frame)
     self.measuredFont = { self.Name:GetFont() }
   end
   function b:SetGossip(data, hotkey)
+    self.iconFor = data.name -- some option icons are picked by the option's English name
     local name = data.name
     if hotkey then name = hotkey .. ". " .. name end
     self:SetButtonText(name)
@@ -115,6 +116,9 @@ function DUI.installQuestFrame(opts)
   f.buttons = {}
   f.redraws = 0
   f.FrontFrame = { Header = { Title = Stub.fontString("") } }
+  -- the page scroll: ReleaseAllObjects puts it back at the top
+  f.ScrollFrame = { value = 0 }
+  function f.ScrollFrame:SnapTo(v) self.value = v end
   f.FrontFrame.Header.Title:SetFontObject(_G.DUIFont_Quest_Title_18)
 
   function f:Hide()
@@ -141,6 +145,7 @@ function DUI.installQuestFrame(opts)
     return b
   end
   function f:ReleaseAllObjects()
+    self.ScrollFrame.value = 0
     self.fontStringPool.release()
     for _, b in ipairs(self.buttons) do b.inUse = false end
   end
@@ -288,11 +293,13 @@ DUI.book = { pages = {} }
 local TAG_FONTS = { p = "DUIFont_Book_Paragraph", h1 = "DUIFont_Book_H1" }
 
 -- The content entries of one raw page: plain text → one "p" entry per paragraph; HTML → one entry per <P>/<H1>.
-local function format(raw, store)
+-- A page that stores nothing leaves its start mark for the next page's first entry, as Dialogue UI's cache does.
+-- → whether the start mark is still pending
+local function format(raw, store, pending)
   local first = true
   local function put(tag, text)
-    store[#store + 1] = { text = text, fontTag = tag, isPageStart = first or nil }
-    first = false
+    store[#store + 1] = { text = text, fontTag = tag, isPageStart = (first or pending) or nil }
+    first, pending = false, false
   end
   if raw:find("<HTML>", 1, true) then
     for tag, body in raw:gmatch("<(%a+%d?)>([^<]*)</%a+%d?>") do
@@ -302,6 +309,7 @@ local function format(raw, store)
   else
     for _, piece in ipairs(split(raw)) do put("p", piece) end
   end
+  return first
 end
 
 function DUI.installBookFrame(opts)
@@ -336,7 +344,8 @@ function DUI.installBookFrame(opts)
   function f:cache()
     self:Init()
     local content = {}
-    for _, raw in ipairs(DUI.book.pages) do format(raw, content) end
+    local pending = false
+    for _, raw in ipairs(DUI.book.pages) do pending = format(raw, content, pending) end
     self.cached = content
     self:measure()
   end

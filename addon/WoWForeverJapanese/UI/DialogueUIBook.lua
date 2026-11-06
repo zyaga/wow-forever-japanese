@@ -33,7 +33,6 @@ local creator -- the name of the player who wrote the book (a letter): left as i
 local book
 local saved = {} -- font object name → { path, size, flags } it had before the bundled face
 local cards = {} -- word-card records on the visible blocks
-local changed = false -- a write changed a block or the faces
 
 function Book.installed() return installed end
 
@@ -83,11 +82,9 @@ end
 
 -- ── Writing the pages ──────────────────────────────────────────────────────
 
+-- Writes go to `book.target` (entry → text) first; write() compares them with what each entry holds.
 local function setText(e, t)
-  if e.text ~= t then
-    e.text = t
-    changed = true
-  end
+  book.target[e] = t
 end
 
 -- The page's Japanese paragraphs into its blocks, in order: blocks left over are emptied, paragraphs left over are
@@ -117,7 +114,7 @@ local function placeHtml(pg, ja, content)
   if #en ~= #jb then return false end
   local plan, k = {}, 1
   for _, idx in ipairs(pg.entries) do
-    local t = squash(content[idx].text)
+    local t = squash(book.original[idx])
     while k <= #en and en[k] ~= t do k = k + 1 end
     if k > #en then return false end
     plan[idx] = jb[k]
@@ -136,14 +133,17 @@ local function place(n, pg, content)
     local placed
     if pg.html then placed = placeHtml(pg, body, content) else placed = placePlain(n, pg, body, content) end
     if not placed then
-      if WFJ.Diag then pcall(WFJ.Diag.log, "dialogueui", "a book page's Japanese does not fit Dialogue UI's blocks") end
+      if WFJ.Diag and not pg.logged then
+        pcall(WFJ.Diag.log, "dialogueui", "a book page's Japanese does not fit Dialogue UI's blocks")
+      end
+      pg.logged = true
       return false
     end
     pg.ja = body
   end
   if marker then
     local first = content[pg.entries[1]]
-    setText(first, marker .. "\n" .. first.text)
+    setText(first, marker .. "\n" .. (book.target[first] or book.original[pg.entries[1]]))
   end
   return true
 end
@@ -161,7 +161,8 @@ local function fonts(bundled)
         local s = saved[name]
         if s then obj:SetFont(WFJ.Font.PATH, s[2], s[3]) end
       elseif saved[name] then
-        obj:SetFont(saved[name][1], saved[name][2], saved[name][3])
+        -- only while it still wears ours: Dialogue UI sets its own face again when the player changes its font size
+        if obj:GetFont() == WFJ.Font.PATH then obj:SetFont(saved[name][1], saved[name][2], saved[name][3]) end
         saved[name] = nil
       end
     end
@@ -172,15 +173,20 @@ end
 -- table again when anything changed.
 local function write()
   local content = book.content
-  changed = false
-  book.placed = {}
-  for i, t in pairs(book.original) do setText(content[i], t) end
+  book.placed, book.target = {}, {}
   local any = false
   for n, pg in ipairs(book.pages) do
     pg.ja = nil
     if place(n, pg, content) then any = true end
   end
-  if any ~= book.bundled then changed = true end
+  local changed = any ~= book.bundled
+  for i, t in pairs(book.original) do
+    local want = book.target[content[i]] or t
+    if content[i].text ~= want then
+      content[i].text = want
+      changed = true
+    end
+  end
   book.bundled = any
   if not changed then return end
   cards = WFJ.DialogueUI.detachCards(cards)
@@ -216,9 +222,22 @@ local function opened(content)
       end
     end
   end
-  book = { content = content, pages = pages, original = original, placed = {}, bundled = false }
+  book = { content = content, pages = pages, original = original, placed = {}, target = {}, bundled = false }
+  -- Dialogue UI stores nothing for a blank page (or an HTML page holding only the book's title) and marks the next
+  -- page's first block as the start instead, so its pages and the client's can be out of step: a plain page is
+  -- matched to the client's page with the same text; an HTML page is taken at its own number and checked block by
+  -- block when placed.
+  local plainAt = {}
+  for n, en in pairs(raw) do
+    if type(en) == "string" and not WFJ.ItemText.isHtml(en) then plainAt[squash(table.concat(split(en), " "))] = n end
+  end
+  local queue = WFJ.VoicePlayer and type(WFJ.VoicePlayer.queueOn) == "function" and WFJ.VoicePlayer.queueOn()
   for n, p in ipairs(pages) do
-    local en = raw[n]
+    local texts = {}
+    for i, idx in ipairs(p.entries) do texts[i] = original[idx] end
+    local at = plainAt[squash(table.concat(texts, " "))]
+    if not at and type(raw[n]) == "string" and WFJ.ItemText.isHtml(raw[n]) then at = n end
+    local en = at and raw[at]
     if type(en) == "string" and en ~= "" and p.entries[1] and type(deps.key) == "function" then
       p.en, p.html = en, WFJ.ItemText.isHtml(en)
       if p.html then
@@ -228,7 +247,10 @@ local function opened(content)
       p.key = deps.key(en)
       if p.key then
         p.holder = WFJ.DialogueUI.newHolder(en)
-        WFJ.Render.show(SURFACE, "page" .. n, p.holder, en, "books", "book", p.key)
+        -- each page is a voice line ("page1", "page2", …): with the voice queue they play in order; without it a
+        -- line stops the one before, so only the first page is voiced, as the client's window voices the page shown
+        local recKey = (n == 1 or queue) and ("page" .. n) or ("text" .. n)
+        WFJ.Render.show(SURFACE, recKey, p.holder, en, "books", "book", p.key)
       end
     end
   end
@@ -267,7 +289,16 @@ local function afterShow(self)
   local content = type(sf) == "table" and sf.content or nil
   if type(content) ~= "table" then return end
   hookScroll(self)
-  if book and book.content == content then return end -- measured again after our write, or shown again
+  if book and book.content == content then -- measured again after our write, or shown again
+    -- Dialogue UI sets its own face on its font objects when the player changes its font size: ours again, and
+    -- measured again with it
+    local obj = Compat.resolve(FONTS[1])
+    if book.bundled and type(obj) == "table" and type(obj.GetFont) == "function" and obj:GetFont() ~= WFJ.Font.PATH then
+      fonts(true)
+      frame:OnSettingsChanged()
+    end
+    return
+  end
   opened(content)
 end
 

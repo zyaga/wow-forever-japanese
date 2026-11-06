@@ -41,7 +41,7 @@ sequenceDiagram
 | Book window, a page | `page` | `b-<page key>` | `voice.books` |
 | Dialogue UI's quest window, offer / progress / turn-in | `description` / `progress` / `completion` | as the quest window | as the quest window |
 | Dialogue UI's quest window, greeting or NPC talk | `greeting` | `g-<gossip key>` | `voice.greeting` |
-| Dialogue UI's book window, a page | `page<N>` (the book shows every page at once) | `b-<page key>` | `voice.books` |
+| Dialogue UI's book window, a page | `page<N>` (the book shows every page at once; with the voice panel off only the first page is a voice line, as a line stops the one before it) | `b-<page key>` | `voice.books` |
 
 `Voice.KINDS` holds this table. Dialogue UI's windows ([ADR-073](../adr/073-dialogue-ui-windows-get-our-japanese.md)) use their own surfaces (`dialogueui.detail`, `.progress`, `.reward`, `.greeting`, `.gossip`, `.book`) with the same pack keys, so a line plays the same file whichever window shows it. Objectives, titles, option rows and every other surface are never voiced. The character's error lines are not a window's line: `UI/VoiceErrors` follows the game's own vocal error call (below). Forever's trainer window has no greeting text (the UI extract's `blizzard_trainerui` holds no greeting string), so there is nothing to voice there.
 

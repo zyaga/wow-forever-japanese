@@ -49,6 +49,8 @@ local patched = setmetatable({}, { __mode = "k" }) -- option buttons whose write
 -- English → gossip key: the key hashes the text for several player-name forms, and a page draws its gossip text and
 -- every option again on each redraw. Emptied when it grows past KEY_CACHE_MAX.
 local keyCache, keyCount, KEY_CACHE_MAX = {}, 0, 500
+local lastHandler -- the page handler Dialogue UI ran last: another page's lines are shown anew, as a new window's
+local scrollTo -- where the reader was when this module asked for a redraw (the redraw scrolls to the top)
 
 local function call(key, ...)
   local fn = Compat.get(SURFACE, key)
@@ -156,12 +158,14 @@ function DialogueUI.onClose(f, fn)
 end
 
 -- The bundled face on a FontString for Japanese, else the owner's face back (re-applying its font object leaves a
--- face set since in place).
+-- face set since in place, so a string given its face back follows the object's size when the player changes it).
 local function face(fs, obj, japanese)
   if japanese then
     WFJ.Font.bundle(fs, obj)
   elseif WFJ.Font.dressed(fs) then
     WFJ.Font.restore(fs, obj)
+  else
+    WFJ.Font.follow(fs, obj)
   end
 end
 
@@ -242,6 +246,19 @@ local function render(el)
   -- the record already holds what to show, and showing it anew would start its voice line again
   if h.shown and rec and rec.fs == h and rec.en == el.en and rec.meta and rec.meta.id == el.id then return h end
   h.text, h.font, h.shown = el.en, paragraphFont(), nil
+  -- the English Collector hears these lines as it does on the client's windows
+  local C = WFJ.Collector
+  local guid = Compat.resolve("UnitGUID")
+  guid = type(guid) == "function" and guid("npc") or nil
+  if not (C and type(C.record) == "function" and type(C.recordGossip) == "function") then
+    C = nil
+  end
+  if C and el.kind == "gossip" and el.area == "gossip" then
+    C.recordGossip(el.en, guid)
+  elseif C and el.questID and not (el.kind == "gossip" and el.key == "description") then
+    -- a description that is another wording of the quest for this character is not the quest's own
+    C.record("quest", el.questID, el.key, el.en)
+  end
   WFJ.Render.show(el.surface, el.key, h, el.en, el.area, el.kind, el.id, { live = el.live })
   h.shown = true -- a show that failed half way is shown anew next time
   -- UI/VoicePlayer remembers who showed a quest line, for replays from the quest log
@@ -267,10 +284,25 @@ local function attachCards(el)
   end
 end
 
+local function forgetLines()
+  for _, h in pairs(holders) do h.shown = nil end
+  for _, s in pairs(S) do WFJ.Render.release(s) end
+end
+
 -- the page is about to be laid out again, or its window closed
 local function resetPage()
   cards = DialogueUI.detachCards(cards)
   touched = false
+end
+
+-- ReleaseAllObjects starts every page: a page of another kind (gossip, then a quest offer) forgets the lines of the
+-- last one, as the client's windows do when one closes and another opens; the same page drawn again keeps them.
+local function newPage(self)
+  resetPage()
+  if self.handler ~= lastHandler then
+    forgetLines()
+    lastHandler = self.handler
+  end
 end
 
 -- ── Fonts ───────────────────────────────────────────────────────────────────
@@ -303,6 +335,11 @@ local function rowJapanese(en, area, kind, id, live)
 end
 
 local function gossipRow(name)
+  local C = WFJ.Collector
+  local guid = Compat.resolve("UnitGUID")
+  if C and type(C.recordGossip) == "function" then
+    C.recordGossip(name, type(guid) == "function" and guid("npc") or nil)
+  end
   local id = gossipKey(name)
   return id and rowJapanese(name, "gossip", "gossip", id) or nil
 end
@@ -311,13 +348,28 @@ local function questRow(questInfo)
   return rowJapanese(questInfo.title, "quests", "quest.title", questInfo.questID, questInfo.title)
 end
 
--- The writers of one option button: a gossip option gets a copy of its data with the Japanese name, a quest row its
--- Japanese title for the call (Dialogue UI writes the label again from the same questInfo when the quest loads).
+-- A gossip option's label with the Japanese in place of its English name, laid out again by the button. Dialogue UI
+-- picks some options' icons by their English name, so the option is first set as it is and only its label changes.
+local function relabel(b, name, ja)
+  local label = b.Name:GetText()
+  if type(label) ~= "string" then return end
+  local s, e = label:find(name, 1, true)
+  if s then b:SetButtonText(label:sub(1, s - 1) .. ja .. label:sub(e + 1), false) end
+end
+
+local function relabelAfter(b, data, ja, ...)
+  if ja then guarded(relabel, b, data.name, ja) end
+  return ...
+end
+
+-- The writers of one option button: a gossip option's label gets the Japanese name after Dialogue UI set it, a quest
+-- row its Japanese title for the call (Dialogue UI writes the label again from the same questInfo when the quest
+-- loads); the answer hint is Dialogue UI's own text in its own face.
 local function patch(button)
   if patched[button] then return end
   patched[button] = true
-  local setGossip, setQuestName = button.SetGossip, button.SetQuestName
-  if type(setGossip) == "function" then
+  local setGossip, setQuestName, setHint = button.SetGossip, button.SetQuestName, button.SetGossipHint
+  if type(setGossip) == "function" and type(button.SetButtonText) == "function" then
     button.SetGossip = function(b, data, ...)
       local ja
       if DialogueUI.active() and type(data) == "table" and type(data.name) == "string" then
@@ -325,11 +377,13 @@ local function patch(button)
         ja = ok and text or nil
       end
       guarded(dressRow, b, ja ~= nil)
-      if not ja then return setGossip(b, data, ...) end
-      local copy = {}
-      for k, v in pairs(data) do copy[k] = v end
-      copy.name = ja
-      return setGossip(b, copy, ...)
+      return relabelAfter(b, data, ja, setGossip(b, data, ...))
+    end
+  end
+  if type(setHint) == "function" then
+    button.SetGossipHint = function(b, ...)
+      guarded(dressRow, b, false)
+      return setHint(b, ...)
     end
   end
   if type(setQuestName) == "function" then
@@ -443,13 +497,23 @@ end
 local function redraw()
   if not (DialogueUI.active() and touched and frame) then return end
   if type(frame.IsVisible) == "function" and not frame:IsVisible() then return end
+  local sf = frame.ScrollFrame
+  scrollTo = type(sf) == "table" and (sf.scrollTarget or sf.value) or nil
   frame:OnSettingsChanged()
+end
+
+-- after a page handler ran for the redraw this module asked for: back to where the reader was
+local function restoreScroll(self)
+  local v = scrollTo
+  scrollTo = nil
+  local sf = self.ScrollFrame
+  if type(v) == "number" and v > 0 and type(sf) == "table" and type(sf.SnapTo) == "function" then sf:SnapTo(v) end
 end
 
 local function release()
   resetPage()
-  for _, h in pairs(holders) do h.shown = nil end
-  for _, s in pairs(S) do WFJ.Render.release(s) end
+  forgetLines()
+  lastHandler, scrollTo = nil, nil
 end
 
 -- Installs the wrappers on DUIQuestFrame when every member is there. → true when installed now
@@ -468,7 +532,11 @@ function DialogueUI.install()
   local hook = Compat.resolve("hooksecurefunc")
   hook(f, "UpdateQuestTitle", function(self) guarded(showTitle, self) end)
   -- every page handler starts here: the page's paragraphs are about to be released and laid out again
-  hook(f, "ReleaseAllObjects", resetPage)
+  hook(f, "ReleaseAllObjects", function(self) guarded(newPage, self) end)
+  for _, handler in ipairs({ "HandleGossip", "HandleQuestDetail", "HandleQuestProgress", "HandleQuestComplete",
+    "HandleQuestGreeting" }) do
+    hook(f, handler, function(self) guarded(restoreScroll, self) end)
+  end
   DialogueUI.onClose(f, release)
   for _, event in ipairs({ "modifier", "enabled", "area", "markers" }) do
     WFJ.State.on(event, function() guarded(redraw) end)
