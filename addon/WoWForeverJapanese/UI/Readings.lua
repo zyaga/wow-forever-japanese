@@ -32,6 +32,7 @@ View.SURFACES = {
   ["questframe.greeting"] = true, ["questmap.info"] = true, ["questmap.popup.info"] = true, gossip = true,
   itemtext = true,
   voicepanel = true, -- the voice panel's text and its whole-text window (UI/VoicePanelText)
+  study = true, -- the study card's sentence (UI/StudyWindow)
 }
 
 -- A label (a `ui` record, UI/Labels) takes readings on every surface EXCEPT these: HUD text, toasts, banners, the

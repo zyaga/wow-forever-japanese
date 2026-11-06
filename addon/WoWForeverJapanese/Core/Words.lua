@@ -56,6 +56,13 @@ function Words.entries()
   return list and type(list.entries) == "table" and list.entries or {}
 end
 
+-- every saved key in order (Core/Study keeps only cards for these)
+function Words.keys()
+  local out = {}
+  for i, e in ipairs(Words.entries()) do out[i] = e.key end
+  return out
+end
+
 function Words.key(kind, id, lemma, word)
   local head = (lemma ~= nil and lemma ~= "") and lemma or word
   return tostring(kind) .. ":" .. tostring(id) .. ":" .. tostring(head)
@@ -66,12 +73,12 @@ function Words.isQuestKind(kind)
 end
 
 -- Where the line was shown, from the surface: a quest-window line keyed by its English (a conditional description,
--- a repeated quest's text) is still quest text. The voice panel shows lines of every kind.
+-- a repeated quest's text) is still quest text. The voice panel and the study card show lines of every kind.
 function Words.source(surface, kind)
   if type(surface) == "string" and (surface:find("^questframe") or surface:find("^questmap")) then return "quest" end
   if surface == "gossip" then return "gossip" end
   if surface == "itemtext" then return "book" end
-  if surface == "voicepanel" then
+  if surface == "voicepanel" or surface == "study" then
     if Words.isQuestKind(kind) then return "quest" end
     if kind == "book" then return "book" end
     return "gossip"

@@ -41,9 +41,16 @@ local function fill()
   if box.HasFocus and box:HasFocus() then box:HighlightText() end
 end
 
+-- the removed words' study cards go with them, so a word saved again starts as new
+local function prune()
+  if WFJ.Study then WFJ.Study.prune(WFJ.Words.keys()) end
+  if WFJ.StudyWindow then WFJ.StudyWindow.refresh() end
+end
+
 local function removeLast()
   if WFJ.Words.readonly() then return say("words.refused") end
   local e = WFJ.Words.removeLast()
+  prune()
   fill()
   if e then say("words.removed", e.word) else say(nil) end
 end
@@ -55,6 +62,7 @@ local function clear(button)
   if armedAt and now - armedAt <= ARM_SECONDS then
     armedAt = nil
     local n = WFJ.Words.clear() or 0
+    prune()
     button:setLabel(Text.get("words.clear"))
     fill()
     say("words.cleared", n)

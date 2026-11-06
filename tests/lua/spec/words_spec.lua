@@ -51,6 +51,18 @@ describe("Words", function()
       assert.are.equal("quest", W.source("voicepanel", "quest.progress"))
       assert.are.equal("gossip", W.source("voicepanel", "gossip"))
       assert.are.equal("book", W.source("voicepanel", "book"))
+      -- the study card's sentence: the source is the entry's kind, as on the voice panel
+      assert.are.equal("quest", W.source("study", "quest.description"))
+      assert.are.equal("book", W.source("study", "book"))
+      assert.are.equal("gossip", W.source("study", "gossip"))
+    end)
+  end)
+
+  describe("keys", function()
+    it("lists every saved key in order (the study queue prunes by it)", function()
+      W.add(input({}), T)
+      W.add(input({ word = "数", reading = "かず", lemma = "数" }), T)
+      assert.are.same({ "quest.description:456:生き物", "quest.description:456:数" }, W.keys())
     end)
   end)
 
