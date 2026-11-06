@@ -514,7 +514,6 @@ WFJ.Data.add("gloss", {
   [102511] = "痛い目に遭わせる\tいたいめにあわせる\tknocking heads together (teach a lesson)",
   [102512] = "痛い目を見る\tいたいめをみる\tgonna get it good (get hurt)",
   [102513] = "痛くなる\tいたくなる\tstarted to hurt",
-  [102514] = "痛ましい\tいたましい\tdevastating",
   [102515] = "痛ましい\tいたましい\tgrim (painful)",
   [102516] = "痛ましい\tいたましい\tpainful",
   [102517] = "痛ましい\tいたましい\ttragic",

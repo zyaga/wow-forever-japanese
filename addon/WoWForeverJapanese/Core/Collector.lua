@@ -101,6 +101,13 @@ function Collector.containsWord(text, token)
   end
 end
 
+-- The player's name as a whole word, as written or printed in capitals (the two forms the client shows).
+local function containsName(text, name)
+  if Collector.containsWord(text, name) then return true end
+  local upper = name:upper()
+  return upper ~= name and Collector.containsWord(text, upper)
+end
+
 -- Text we may have written ourselves: any CJK character (U+3000..U+9FFF: ideographic punctuation, kana, kanji:
 -- UTF-8 lead bytes E3..E9) or a marker message anywhere in it. English game text has neither.
 local function isOwnText(raw)
@@ -135,6 +142,15 @@ local function replaceLower(text, player)
   return text
 end
 
+-- Some greetings print the player's name in capitals ("The earth calls to you, REYN."), which normalize_v1's
+-- exact-case replacement leaves in place: the stored text and its key would then carry the name and match no other
+-- player's screen. The capitals form is replaced as a whole word too; other casings are left as written.
+local function replaceUpperName(text, player)
+  local name = player.name
+  if type(name) ~= "string" or name == "" then return text end
+  return Normalize.replaceWord(text, name:upper(), "{name}")
+end
+
 -- Whole-word, exact-case replacement of a name of any length: the boundaries of Normalize.replaceWord, without its
 -- 3-code-point floor. Only the short-name candidates use it; normalize_v1 itself is unchanged.
 local function replaceShortName(text, name)
@@ -154,10 +170,15 @@ local function paragraphs(raw, player)
   local s = raw:gsub("|n", "\1")
   s = s:gsub("%$[Bb]", "\1"):gsub("\n", "\1")
   local normalized = Normalize.v1(s, player)
-  if player then normalized = replaceLower(normalized, player) end
+  if player then
+    normalized = replaceLower(normalized, player)
+    normalized = replaceUpperName(normalized, player)
+  end
   -- a short-name candidate: on the markup-free text, so a colour code can never be hit
   if player and player.short and type(player.name) == "string" and player.name ~= "" then
     normalized = replaceShortName(normalized, player.name)
+    local upper = player.name:upper()
+    if upper ~= player.name then normalized = replaceShortName(normalized, upper) end
   end
   local out = {}
   for seg in (normalized .. "\1"):gmatch("([^\1]*)\1") do
@@ -432,7 +453,7 @@ local function evaluate(kind, id, field, raw, key, npc)
     -- Blizzard never writes the player's name into item, spell or NPC text: an occurrence is a coincidence
     -- ("Guard", "Light") and a placeholder there would point at the name. Refuse instead.
     if Collector.containsWord(plain, name) then return "refused", "own_name" end
-  elseif codePoints(name) < 3 and Collector.containsWord(plain, name) then
+  elseif codePoints(name) < 3 and containsName(plain, name) then
     return "refused", "short_name" -- normalize_v1 never replaces a name this short
   end
   -- Only quest and gossip text carry $N/$C/$R, so only they trade the class and race for tokens. That is right for
@@ -627,7 +648,7 @@ function Collector.fingerprints(raw, player, masked)
   local hit = fpMemo[mkey]
   if hit then return hit.out, hit.inconclusive end
   local inconclusive = codePoints(player.name) < 3
-    and Collector.containsWord(table.concat(paragraphs(raw, nil), "\n"), player.name) or nil -- true | nil
+    and containsName(table.concat(paragraphs(raw, nil), "\n"), player.name) or nil -- true | nil
   for _, p in ipairs(candidates(player)) do
     local e = Collector.text(raw, p or nil)
     if e ~= "" then

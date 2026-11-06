@@ -314,3 +314,25 @@ def test_an_older_client_never_replaces_what_forever_recorded():
     forever = english_line(5, "description", "Cache words.", key(normalize_v1("Cache words.")), "wdb@1.60.1.70170")
     assert _without_recorded([rec], [era]) == []  # Classic Era's cache is a stand-in
     assert _without_recorded([rec], [forever]) == [forever]  # the same client's own cache keeps its place
+
+
+def test_a_line_carrying_the_player_name_in_capitals_is_left_out(tmp_path: Path, monkeypatch, capsys):
+    """An addon before 0.9.0 left the player's name in a line the client printed in capitals. When the `$N`
+    line exists, the intake leaves the named copy out; a word in capitals that names no `$N` line is text."""
+    data = _data_dir(tmp_path, monkeypatch)
+    first = _write(tmp_path, dump(gossip("The earth calls to you, $N. Go to it.", n=[5888])))
+    assert run(["english", "collector", first]) == 0
+    named = "The earth calls to you, REYN. Go to it."
+    second = _write(
+        tmp_path, dump(gossip(named, n=[5888]), gossip("RUN! The bridge is falling.", n=[5888])), name="second.lua"
+    )
+    capsys.readouterr()
+    assert run(["english", "collector", second]) == 0
+    out = capsys.readouterr().out
+    assert "left out (a player's name printed in capitals; the $N line exists):" in out
+    assert f"  gossip {key(normalize_v1(named))}" in out
+    assert "gossip      1" in out  # the RUN! line is added
+    assert {ln["en"] for ln in Store(data, english=True).load("gossip")} == {
+        "The earth calls to you, $N. Go to it.",
+        "RUN! The bridge is falling.",
+    }

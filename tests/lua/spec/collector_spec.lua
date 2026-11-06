@@ -96,6 +96,14 @@ describe("Core/Collector", function()
       assert.is_nil(long)
     end)
 
+    it("a short name printed in capitals is inconclusive too, and its $N candidate matches", function()
+      local bo = { name = "Bo", class = "Hunter", race = "Night Elf" }
+      local fps, inconclusive = C.fingerprints("The earth calls to you, BO.", bo)
+      assert.is_true(inconclusive)
+      assert.are.equal(h1Of("The earth calls to you, $N."), fps[#fps])
+      assert.are.equal(h1Of("The earth calls to you, BO."), fps[1])
+    end)
+
     it("memoizes per player and text, and drops the memo at MEMO_MAX", function()
       local a = C.fingerprints("Hello there, Reyn.", PLAYER)
       assert.are.equal(a, C.fingerprints("Hello there, Reyn.", PLAYER)) -- same table: no second hash pass
@@ -243,6 +251,21 @@ describe("Core/Collector", function()
       -- the file reloads with it, and the byte count includes it
       local again = C.load(db, deps())
       assert.are.equal("Hunter|Night Elf", again.entries["quest:9:description"].p)
+    end)
+
+    it("the player's name printed in capitals is the name too: $N in the text and in the key", function()
+      -- some greetings print $N in capitals ("The earth calls to you, REYN."); exact-case replacement misses it
+      local e = C.text("The earth calls to you, REYN. Go to it, and know that your brethren are proud.", PLAYER)
+      assert.are.equal("The earth calls to you, $N. Go to it, and know that your brethren are proud.", e)
+      local keys = C.keys("The earth calls to you, REYN.", PLAYER)
+      assert.are.equal(WFJ.Hash.key(WFJ.Normalize.v1("The earth calls to you, $N.")), keys[1])
+      -- whole word and capitals only: another casing or a longer word is left as written
+      assert.are.equal("Reynold and REYNA and reyn walk in.", C.text("Reynold and REYNA and reyn walk in.", PLAYER))
+      -- item / spell / NPC text gets no player substitution, in capitals either
+      assert.are.equal("REYN OF THE WILD", C.text("REYN OF THE WILD", nil))
+      local db = C.load(nil, deps())
+      assert.are.equal("recorded", C.record("spell", 3, "description", "Summons REYN."))
+      assert.are.equal("Summons REYN.", db.entries["spell:3:description"].e)
     end)
 
     it("a break inside a link label never splits the link", function()
@@ -584,6 +607,14 @@ describe("Core/Collector gossip kind", function()
       p = "Hunter|High Elf" }, db.entries["gossip:" .. key .. ":text"])
     assert.are.equal("seen", C.recordGossip(raw, GUARD))
     assert.are.same({ 1423, 6740 }, db.entries["gossip:" .. key .. ":text"].n)
+  end)
+
+  it("refuses a short name printed in capitals, as it refuses the name as written", function()
+    C.load(nil, deps())
+    player = { name = "Bo", class = "Hunter", race = "Night Elf" }
+    assert.are.same({ "refused", "short_name" }, { C.recordGossip("The earth calls to you, BO.", INN) })
+    assert.are.same({ "refused", "short_name" }, { C.recordGossip("The earth calls to you, Bo.", INN) })
+    assert.are.equal("recorded", C.recordGossip("The earth calls to you, Bob.", INN))
   end)
 
   it("a shipped row for the key makes the line known", function()

@@ -29,6 +29,7 @@ Take only issues labelled `collector-ok`. The comment never shows the English: r
    - Reads the issue with `gh issue view`, refuses it unless the form's **Permission** box is ticked, reads the send (the `WFJC1:` string, or the attached zip or `.lua`), and merges it into `data/english/` with the same rules as `make import-collector` ([Local setup → Collector dumps](local-setup.md#collector-dumps)).
    - Offline, from a saved issue body: `make collector-intake ISSUE=N BODY=<file>`.
    - It prints `english collector: issue #N · <entries> entries · builds …`, the per-type table (added, unchanged, replaced, differs), the rejected counts, then a `replaced:` list (`  <type> <id> <field> (was <src>)`) and the `differs` list.
+   - A new gossip line that is an existing `$N` line with one word in capitals where the `$N` goes is left out (`left out (a player's name printed in capitals): gossip <key>`): an addon before 0.9.0 recorded the player's name when the client printed it in capitals, and such a line can match no other player's screen.
 2. **Review, then check.** Read the `replaced:` list first: each line there is English the send put in place of another source's, and it is what the data diff should be checked against. Then `make check`. Collector quest and gossip English is consulted, so the import can move a quest line's hash and make it `stale`. Review the delta (`git diff data/`) before going on.
 3. **Generate and validate.** `make generate validate VALIDATE_FLAGS="--base origin/main"`.
 4. **Coverage.** `make coverage`, committed in the same branch.

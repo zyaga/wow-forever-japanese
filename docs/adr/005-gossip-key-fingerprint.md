@@ -18,7 +18,7 @@ Gossip text (the NPC talk window) exposes no ID to addons; source hashes must de
 - Same English ⇒ same Japanese everywhere; short generic options ("Continue") collide across NPCs on purpose; `wfj stats` lists the highest-occurrence keys so they are reviewed first.
 - Player-name substitution happens only where a player name exists (the client); the pipeline sees placeholders.
 - 64-bit keys as Lua string table keys cost ~0.5 MB at 12 k lines; accepted for one key type across both languages.
-- **In the addon**, the gossip key is `Collector.key`: the collector's normalization in Blizzard's tokens, which also replaces the lowercase class and race, so the render key and the stored hash are one value. NPC ids are stored as `n` in the collector dump and as `npcs` on `data/english/gossip` lines, and the `wfj stats` blast radius lists collected keys by NPC count (top 20). See [ADR-017](017-gossip-surface.md). Gender alias rows and short-name candidates: [ADR-024](024-gender-variants-and-short-name-candidates.md).
+- **In the addon**, the gossip key is `Collector.key`: the collector's normalization in Blizzard's tokens, which also replaces the lowercase class and race and the player's name printed in capitals, so the render key and the stored hash are one value. NPC ids are stored as `n` in the collector dump and as `npcs` on `data/english/gossip` lines, and the `wfj stats` blast radius lists collected keys by NPC count (top 20). See [ADR-017](017-gossip-surface.md). Gender alias rows and short-name candidates: [ADR-024](024-gender-variants-and-short-name-candidates.md).
 
 ## Alternatives considered
 - **FNV-1a-32**: collision risk and double-precision divergence (above).

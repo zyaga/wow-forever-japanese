@@ -108,7 +108,6 @@ WFJ.Data.add("gloss", {
   [124105] = "誰であれ\tだれであれ\tanyone (whoever)",
   [124106] = "誰であれ\tだれであれ\tanyone at all",
   [124107] = "誰であれ\tだれであれ\twhoever",
-  [124108] = "誰でも\tだれでも\tall",
   [124109] = "誰でも\tだれでも\tall (anyone)",
   [124110] = "誰でも\tだれでも\tany",
   [124111] = "誰でも\tだれでも\tany (anyone)",

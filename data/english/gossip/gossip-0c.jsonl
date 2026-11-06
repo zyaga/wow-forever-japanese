@@ -47,3 +47,4 @@
 {"id": "0cf52af1ece19c39", "field": "text", "en": "%s begins to work...", "hash": "0cf52af1ece19c39", "src": "vmangos@13b49dc"}
 {"id": "0cf86ac06770419e", "field": "text", "en": "Don't let them catch you!", "hash": "0cf86ac06770419e", "src": "vmangos@13b49dc"}
 {"id": "0cf87b604bb00f19", "field": "text", "en": "Can't help you. You know more about potions than I do. Besides, I have pots to watch. Talk to Yelmak over there. He knows a lot about potions.", "hash": "0cf87b604bb00f19", "src": "vmangos@13b49dc"}
+{"id": "0cff03d7217afbb7", "field": "text", "en": "The followers of the old Highborne ways have never been more hungry to gain knowledge and reclaim what we've lost. If you would seek to wield the power of the arcane and have the aptitude, I can help you take your next steps.", "hash": "0cff03d7217afbb7", "src": "collector@1.60.1.70790", "npcs": [251379, 254086]}
