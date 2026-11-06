@@ -1,0 +1,47 @@
+name: Discord preview
+
+# What the next release's Discord post will look like, sent to the test webhook (a private channel) instead of
+# the announcements channel (docs/operations/release.md): the version by the release rule, the lines under
+# `## Unreleased`, the media in docs/releases/next. Start it with "Run workflow" on the Actions tab. Nothing is
+# released, committed or changed.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash # -eo pipefail
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      TEST_SET: ${{ secrets.DISCORD_TEST_WEBHOOK_URL != '' }} # true / false only
+    steps:
+      - name: Previews come from main
+        if: github.ref != 'refs/heads/main'
+        run: |
+          echo "::error::Run the Discord preview on the main branch."
+          exit 1
+      - name: Test webhook present
+        if: env.TEST_SET != 'true'
+        run: |
+          echo "::error::The DISCORD_TEST_WEBHOOK_URL repository secret is not set (docs/operations/release.md, one-time setup)."
+          exit 1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0 # the tags decide the next version
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.14"
+          cache: pip
+          cache-dependency-path: pipeline/pyproject.toml
+      - run: pip install -e pipeline
+      - name: Post the preview
+        run: wfj announce --preview --media docs/releases
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_TEST_WEBHOOK_URL }}

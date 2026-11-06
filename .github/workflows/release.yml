@@ -32,10 +32,12 @@ jobs:
     timeout-minutes: 10
     env:
       CF_TOKEN_SET: ${{ secrets.CF_API_KEY != '' }} # true / false only; the token itself reaches the publish step alone
+      DISCORD_SET: ${{ secrets.DISCORD_WEBHOOK_URL != '' }} # true / false only; the URL reaches the announce step alone
     outputs:
       version: ${{ steps.next.outputs.version }}
       resume: ${{ steps.next.outputs.resume }}
       addon: ${{ steps.next.outputs.addon }}
+      discord: ${{ env.DISCORD_SET }}
     steps:
       - name: Releases come from main
         if: github.ref != 'refs/heads/main'
@@ -103,14 +105,16 @@ jobs:
           cache-dependency-path: pipeline/pyproject.toml
       - run: pip install -e pipeline
 
-      # On the runner only: nothing is pushed until the zip has been checked.
+      # On the runner only: nothing is pushed until the zip has been checked. The release's media
+      # (docs/releases/next, for the Discord post) takes the version's name in the same commit.
       - name: Changelog, commit and tag
         if: env.RESUME != 'true'
         run: |
-          wfj release changelog --version "$VERSION" --date "$(date -u +%F)" --notes .release-notes.md
+          wfj release changelog --version "$VERSION" --date "$(date -u +%F)" --notes .release-notes.md --media docs/releases
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit --quiet -m "Release $VERSION" -- CHANGELOG.md
+          git add -A -- docs/releases
+          git commit --quiet -m "Release $VERSION" -- CHANGELOG.md docs/releases
           git tag -a "v$VERSION" -m "Release $VERSION"
       # A re-run of a release whose publish step failed: the commit and tag are already on main.
       - name: Notes of the release being resumed
@@ -148,6 +152,16 @@ jobs:
         env:
           CF_API_KEY: ${{ secrets.CF_API_KEY }}
           GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
+      # The zip is live: a Discord problem is a warning, never a failed release. The only step that sees the URL.
+      - name: Announce in Discord
+        if: needs.plan.outputs.discord == 'true'
+        continue-on-error: true
+        run: wfj announce --version "$VERSION" --notes .release-notes.md --media "docs/releases/$VERSION"
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      - name: No Discord webhook
+        if: needs.plan.outputs.discord != 'true'
+        run: echo "::notice::DISCORD_WEBHOOK_URL is not set, so this release is not announced in Discord (docs/operations/release.md)."
       - name: Summary
         run: |
           shopt -s nullglob

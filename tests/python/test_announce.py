@@ -2,6 +2,7 @@
 (docs/operations/release.md, ADR-072)."""
 
 import io
+import itertools
 import json
 import re
 import subprocess
@@ -22,8 +23,11 @@ NOTES = (
 VERSION = "0.9.0"
 
 
+_folders = itertools.count()
+
+
 def media(tmp_path: Path, names: dict[str, int]) -> Path:
-    folder = tmp_path / "media"
+    folder = tmp_path / f"media{next(_folders)}"
     folder.mkdir()
     for name, size in names.items():
         (folder / name).write_bytes(b"x" * size)
@@ -132,7 +136,9 @@ def test_multipart_body_and_post():
     assert request.full_url == "https://discord.example/api/webhooks/1/secret?wait=true"
     assert request.get_method() == "POST"
     assert request.get_header("Content-type").startswith("multipart/form-data; boundary=")
-    assert request.data == body
+    boundary = request.get_header("Content-type").split("boundary=")[1]
+    assert request.data.startswith(f"--{boundary}\r\n".encode()) and request.data.endswith(f"--{boundary}--\r\n".encode())
+    assert b'name="files[1]"; filename="b.mp4"' in request.data and b"\r\n\r\nMP4!\r\n" in request.data
 
 
 def test_post_errors_name_the_status_and_body_never_the_url():

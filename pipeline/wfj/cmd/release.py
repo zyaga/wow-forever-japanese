@@ -7,9 +7,10 @@
       Without --version the version follows the rule in docs/operations/release.md; with it, that
       version is checked and used.
       resume=true when HEAD is already tagged v<version>: a release whose publish step failed is re-run.
-  wfj release changelog --version X.Y.Z --date YYYY-MM-DD --notes PATH
+  wfj release changelog --version X.Y.Z --date YYYY-MM-DD --notes PATH [--media DIR]
       Move `## Unreleased` under `## X.Y.Z - date`, leave an empty `## Unreleased` above it, and write that
-      version's notes to PATH (the packager's changelog).
+      version's notes to PATH (the packager's changelog). With --media, rename DIR/next (the release's
+      pictures and clip, waiting for the Discord post) to DIR/X.Y.Z; nothing when there is no DIR/next.
   wfj release notes --version X.Y.Z --notes PATH
       Write an already-released version's notes to PATH (for a resumed release).
   wfj release changelog-gate --base REF
@@ -236,6 +237,19 @@ def cut(log: Changelog, version: str, date: str) -> Changelog:
     return Changelog(log.preamble, sections)
 
 
+def move_media(folder: Path, version: str) -> Path | None:
+    """Rename `folder/next` to `folder/<version>`: the media of the release being cut takes its version's
+    name in the release commit. None when nothing waits; refused when the version's folder exists."""
+    waiting = folder / "next"
+    if not waiting.is_dir():
+        return None
+    target = folder / version
+    if target.exists():
+        raise ReleaseError(f"{target} already exists: the media of {version} is already in place")
+    waiting.rename(target)
+    return target
+
+
 def notes(log: Changelog, version: str) -> str:
     section = log.find(version)
     if section is None:
@@ -309,6 +323,23 @@ def _read(root: Path) -> Changelog:
     return parse(path.read_text(encoding="utf-8"))
 
 
+def _changelog(root: Path, version: str, date: str, notes_path: Path, media: Path | None) -> None:
+    """The `changelog` action: cut the changelog, write the notes, and give the waiting media its version."""
+    version_key(version)
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", date):
+        raise ReleaseError(f"'{date}' is not a YYYY-MM-DD date")
+    folder = root / media if media else None
+    if folder and (folder / "next").is_dir() and (folder / version).exists():
+        raise ReleaseError(f"{folder / version} already exists: the media of {version} is in place")
+    log = cut(_read(root), version, date)
+    (root / CHANGELOG).write_text(render(log), encoding="utf-8")
+    notes_path.write_text(notes(log, version), encoding="utf-8")
+    print(f"release: {CHANGELOG} cut for {version}")
+    moved = move_media(folder, version) if folder else None
+    if moved:
+        print(f"release: media moved to {moved.relative_to(root)}")
+
+
 def run(argv: Sequence[str]) -> int:
     p = argparse.ArgumentParser(prog="wfj release")
     sub = p.add_subparsers(dest="action", required=True)
@@ -319,6 +350,7 @@ def run(argv: Sequence[str]) -> int:
     cl.add_argument("--version", required=True)
     cl.add_argument("--date", required=True)
     cl.add_argument("--notes", required=True, type=Path)
+    cl.add_argument("--media", type=Path, help="rename DIR/next to DIR/<version>: the release's Discord media")
     nt = sub.add_parser("notes", help="write a released version's notes")
     nt.add_argument("--version", required=True)
     nt.add_argument("--notes", required=True, type=Path)
@@ -353,13 +385,7 @@ def run(argv: Sequence[str]) -> int:
             version = next_version(log, tags, a.version)
             print(f"version={version}\nresume=false\naddon=true")
         elif a.action == "changelog":
-            version_key(a.version)
-            if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", a.date):
-                raise ReleaseError(f"'{a.date}' is not a YYYY-MM-DD date")
-            log = cut(_read(root), a.version, a.date)
-            (root / CHANGELOG).write_text(render(log), encoding="utf-8")
-            a.notes.write_text(notes(log, a.version), encoding="utf-8")
-            print(f"release: {CHANGELOG} cut for {a.version}")
+            _changelog(root, a.version, a.date, a.notes, a.media)
         elif a.action == "notes":
             a.notes.write_text(notes(_read(root), a.version), encoding="utf-8")
         else:
