@@ -27,14 +27,14 @@ local pendingAttach = false -- the card shows a word whose readings and mark wai
 local rec = { surface = "study", key = "sentence" } -- the sentence's record for UI/Readings
 
 -- The header's icon buttons: the client's own minus box for Collapse, its voice chat speaker (an atlas, with a
--- glyph when the client has none) for the sound; Good plays the quest log's own "complete" tick
--- [verified: SOUNDKIT.IG_QUEST_LIST_COMPLETE = 878, SharedXML/SoundKitConstants.lua].
+-- glyph when the client has none) for the sound; Good plays the client's ready check chime, one short ding
+-- [verified: SOUNDKIT.READY_CHECK = 8960, SharedXML/SoundKitConstants.lua].
 local ICON = {
   collapse = "Interface\\Buttons\\UI-MinusButton-Up", hilight = "Interface\\Buttons\\UI-Common-MouseHilight",
   speaker = "voicechat-icon-speaker", muted = "voicechat-icon-speaker-mute",
 }
-local GOOD_SOUND = 878
-local FLASH = 0.25 -- seconds the title glows after Good, like a saved word's tint
+local GOOD_SOUND = 8960
+local FLASH = 0.2 -- seconds the whole card glows gold after Good, like a saved word's tint
 
 local S = function() return WFJ.Settings end
 local function now() return Compat.call("time") or 0 end
@@ -145,7 +145,7 @@ local function setSpeaker(f)
   end
 end
 
--- Good: the tick (unless muted) and a blink of gold behind the title while the next card comes.
+-- Good: the ding (unless muted) and a blink of gold over the whole card while the next one comes.
 local function reward()
   if S().get("study.sound") == true then Compat.call("PlaySound", GOOD_SOUND) end
   local f = card
@@ -447,10 +447,9 @@ local function buildCard()
   f.mute.glyph:SetText("♪")
   setSpeaker(f)
 
-  f.glow = f:CreateTexture(nil, "BACKGROUND")
-  f.glow:SetColorTexture(W.GOLD[1], W.GOLD[2], W.GOLD[3], 0.35)
-  f.glow:SetPoint("TOPLEFT", f.word, "TOPLEFT", -4, 4)
-  f.glow:SetPoint("BOTTOMRIGHT", f.word, "BOTTOMRIGHT", 4, -4)
+  f.glow = f:CreateTexture(nil, "BACKGROUND", nil, 7) -- over the backdrop, under every text and mark
+  f.glow:SetColorTexture(W.GOLD[1], W.GOLD[2], W.GOLD[3], 0.25)
+  f.glow:SetAllPoints(f)
   f.glow:Hide()
 
   -- the sentence: a template font first, then the bundled face; Japanese has no spaces to wrap at
