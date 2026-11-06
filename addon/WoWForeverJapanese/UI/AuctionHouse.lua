@@ -329,12 +329,12 @@ local function showRow(row)
 end
 
 -- The client builds an item list's scroll view the first time that list is shown (AuctionHouseItemListMixin:Init,
--- called from its OnShow: itemlist.lua:136–195, :232–234), and ScrollBoxListMixin:ForEachFrame indexes the view
+-- called from its OnShow: itemlist.lua:136–195, :233–236), and ScrollBoxListMixin:ForEachFrame indexes the view
 -- with no nil check (scrollbox.lua:594–596). A box without a view has no rows to walk, so it is skipped until
 -- the list's own refresh hooks run after the view exists. A box with no HasView (another client shape) is walked.
 local function hasView(box)
   return type(box) == "table" and type(box.ForEachFrame) == "function"
-    and (type(box.HasView) ~= "function" or box:HasView() == true)
+    and (type(box.HasView) ~= "function" or box:HasView())
 end
 
 -- ScrollUtil callback: (owner, frame, elementData) on initialization, (frame, elementData) on the existing-frames

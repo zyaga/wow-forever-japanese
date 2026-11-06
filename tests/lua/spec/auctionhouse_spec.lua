@@ -312,7 +312,7 @@ describe("the auction house on Forever", function()
   end
 
   -- An item list's ScrollBox has no view until the client shows the list (AuctionHouseItemListMixin:Init from
-  -- OnShow, itemlist.lua:136–195, :232–234); ForEachFrame on it raises (scrollbox.lua:594–596).
+  -- OnShow, itemlist.lua:136–195, :233–236); ForEachFrame on it raises (scrollbox.lua:594–596).
   describe("lists the client has not shown yet", function()
     -- every list of UI/AuctionHouse's LISTS exists, and all but `except` have no view yet. LISTS is read from a
     -- first load; setup loads the addon again over the finished frame.
@@ -356,6 +356,17 @@ describe("the auction house on Forever", function()
       local row = list:addRow({ en("AUCTION_HOUSE_NONE_AVAILABLE") })
       assert.are.equal("出品なし", row.cells[1].Text:GetText())
       assert.are.equal("即決価格", frame.ItemSellFrame.PriceInput.Label:GetText())
+    end)
+
+    it("a box with no HasView function is walked as before", function()
+      local frame = setup(true)
+      local list = frame.ItemSellList
+      list.ScrollBox.HasView = nil
+      frame:Show()
+      local row = list:addRow({ en("AUCTION_HOUSE_NONE_AVAILABLE") })
+      row.cells[1].Text.text = en("AUCTION_HOUSE_NONE_AVAILABLE") -- the client rewrites the cell; the rows pass follows
+      list:RefreshScrollFrame()
+      assert.are.equal("出品なし", row.cells[1].Text:GetText())
     end)
 
     it("a list that gains its view later shows Japanese headers, results text and rows", function()
