@@ -124,7 +124,7 @@ describe("Settings pages from the registry and PAGES", function()
     for i, it in ipairs(control("study.newPerDay").dropdown:menuItems()) do out[i] = it.text end
     assert.are.same({ "5", "10", "20", "50" }, out)
     WFJ.Words.load({ schema = 1, entries = { { key = "a", word = "a" }, { key = "b", word = "b" } } })
-    WFJ.Study.load(nil, WFJ.Words.keys())
+    WFJ.Study.load(nil, WFJ.Words.entries())
     O.refresh()
     assert.are.equal(select(2, WFJ.OptionsText.get("study.status", 0, 2)), O.studyStatus.en:GetText())
     local opened = 0

@@ -33,6 +33,7 @@ local function say(key, ...)
   local line = both(key, ...)
   if line then print("WFJ: " .. line) end
 end
+WordSave.say = say -- the study card's refused grade prints the same line
 
 -- The card's hint until the player has saved a word once; nothing while saving is off.
 function WordSave.hint()
@@ -101,9 +102,7 @@ function WordSave.save(cover, word)
     lemmaReading = g and g.lemmaReading, meaning = g and g.meaning, questTitle = title,
   }, Compat.call("time"))
   if status == "added" then
-    WFJ.ReadingView.flash(cover)
-    if WFJ.WordsWindow then WFJ.WordsWindow.refresh() end
-    if WFJ.Options and WFJ.Options.refresh then pcall(WFJ.Options.refresh) end -- the Words page's count
+    WFJ.ReadingView.flash(cover) -- the windows and the study queue follow the list's own change event
     if not (WFJ.Settings.get("words.screenshot") and screenshot(cover, entry)) then
       say("words.saved", entry.word, Words.count())
     end

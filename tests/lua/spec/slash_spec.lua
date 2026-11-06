@@ -241,9 +241,9 @@ describe("/wfj covers every setting", function()
 
   it("/wfj study opens the study card; /wfj study reset puts it back; the setting words still route", function()
     local opened, commands = 0, {}
-    local real, realCmd = WFJ.StudyWindow.open, WFJ.StudyWindow.command
+    local real, realReset = WFJ.StudyWindow.open, WFJ.StudyWindow.resetPosition
     WFJ.StudyWindow.open = function() opened = opened + 1 end
-    WFJ.StudyWindow.command = function(words) commands[#commands + 1] = words[1] end
+    WFJ.StudyWindow.resetPosition = function() commands[#commands + 1] = "reset" end
     wfj("study")
     assert.are.equal(1, opened)
     wfj("study reset")
@@ -251,7 +251,7 @@ describe("/wfj covers every setting", function()
     wfj("study newperday 10")
     assert.are.equal(1, opened)
     assert.are.equal("10", S.get("study.newPerDay"))
-    WFJ.StudyWindow.open, WFJ.StudyWindow.command = real, realCmd
+    WFJ.StudyWindow.open, WFJ.StudyWindow.resetPosition = real, realReset
     assert.is_truthy(table.concat(WFJ.OptionsText.SLASH, "\n"):find("/wfj study", 1, true))
   end)
 

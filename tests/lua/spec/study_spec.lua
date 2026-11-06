@@ -16,32 +16,26 @@ local TODAY = "2026-09-21"
 local function entries()
   return { { key = "a", word = "数" }, { key = "b", word = "生き物" }, { key = "c", word = "狩り" } }
 end
-local function keys(es)
-  local out = {}
-  for i, e in ipairs(es) do out[i] = e.key end
-  return out
-end
-
 describe("Study", function()
   local S, E
   before_each(function()
     S = load()
     E = entries()
-    S.load(nil, keys(E))
+    S.load(nil, E)
   end)
 
   describe("load and prune", function()
     it("starts empty from nothing or garbage, and keeps only cards whose word is still in the list", function()
-      local t = S.load(nil, keys(E))
+      local t = S.load(nil, E)
       assert.are.same({ schema = 1, cards = {}, days = {} }, t)
-      t = S.load("junk", keys(E))
+      t = S.load("junk", E)
       assert.are.same({ schema = 1, cards = {}, days = {} }, t)
       local saved = { schema = 1, cards = {
         a = { s = 2, d = 5, due = NOW, last = NOW - DAY, reps = 1, lapses = 0 },
         gone = { s = 2, d = 5, due = NOW, last = NOW - DAY, reps = 1, lapses = 0 },
         bad = "x", b = { s = "no" },
       }, days = { ["2026-09-20"] = 3, junk = "x" } }
-      t = S.load(saved, keys(E))
+      t = S.load(saved, E)
       assert.are.equal(2, t.cards.a.s)
       assert.is_nil(t.cards.gone)
       assert.is_nil(t.cards.bad)
@@ -53,7 +47,7 @@ describe("Study", function()
 
     it("keeps a table saved by a newer version untouched and refuses to grade", function()
       local newer = { schema = 2, cards = { a = { future = true } } }
-      local t = S.load(newer, keys(E))
+      local t = S.load(newer, E)
       assert.are.equal(newer, t)
       assert.is_true(S.readonly())
       assert.is_nil(S.answer("a", S.GOOD, NOW, TODAY))
@@ -63,7 +57,7 @@ describe("Study", function()
     it("prune drops the cards of removed words, so a word saved again starts as new", function()
       S.answer("a", S.GOOD, NOW, TODAY)
       S.answer("b", S.GOOD, NOW, TODAY)
-      assert.are.equal(1, S.prune({ "a", "c" }))
+      assert.are.equal(1, S.prune({ E[1], E[3] }))
       assert.is_nil(S.card("b"))
       assert.is_truthy(S.card("a"))
     end)
@@ -130,7 +124,7 @@ describe("Study", function()
       assert.are.equal(NOW, st.last)
       assert.are.equal(1, st.reps)
       assert.are.equal(0, st.lapses)
-      assert.are.equal(1, S.load(S.table(), keys(E)).days[TODAY])
+      assert.are.equal(1, S.load(S.table(), E).days[TODAY])
     end)
 
     it("Again puts the card back in ten minutes and counts a lapse; a later Good gives at least one day", function()
@@ -153,6 +147,12 @@ describe("Study", function()
       S.answer("a", S.GOOD, NOW, TODAY)
       S.answer("a", S.AGAIN, NOW + 100, TODAY)
       assert.are.equal(1, S.table().days[TODAY])
+    end)
+
+    it("a new day's first new card replaces the old day's count (only today's is ever read)", function()
+      S.answer("a", S.GOOD, NOW, TODAY)
+      S.answer("b", S.GOOD, NOW + DAY, "2026-09-22")
+      assert.are.same({ ["2026-09-22"] = 1 }, S.table().days)
     end)
   end)
 end)

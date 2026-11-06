@@ -56,11 +56,11 @@ function Words.entries()
   return list and type(list.entries) == "table" and list.entries or {}
 end
 
--- every saved key in order (Core/Study keeps only cards for these)
-function Words.keys()
-  local out = {}
-  for i, e in ipairs(Words.entries()) do out[i] = e.key end
-  return out
+function Words.has(key) return index[key] ~= nil end
+
+-- The list changed (a save, Remove last, Clear all): the windows and the study queue follow State "words".
+local function changed()
+  if WFJ.State then WFJ.State.fire("words") end
 end
 
 function Words.key(kind, id, lemma, word)
@@ -72,18 +72,14 @@ function Words.isQuestKind(kind)
   return type(kind) == "string" and kind:find("^quest%.") ~= nil
 end
 
--- Where the line was shown, from the surface: a quest-window line keyed by its English (a conditional description,
--- a repeated quest's text) is still quest text. The voice panel and the study card show lines of every kind.
+-- Where the line came from, by its kind; the quest window overrides it, because a line it shows keyed by its
+-- English (a conditional description, a repeated quest's text) is still quest text.
 function Words.source(surface, kind)
   if type(surface) == "string" and (surface:find("^questframe") or surface:find("^questmap")) then return "quest" end
-  if surface == "gossip" then return "gossip" end
-  if surface == "itemtext" then return "book" end
-  if surface == "voicepanel" or surface == "study" then
-    if Words.isQuestKind(kind) then return "quest" end
-    if kind == "book" then return "book" end
-    return "gossip"
-  end
-  return "window"
+  if Words.isQuestKind(kind) then return "quest" end
+  if kind == "book" then return "book" end
+  if kind == "ui" then return "window" end
+  return "gossip"
 end
 
 local function lead(text, i) -- i is a character's first byte
@@ -148,6 +144,7 @@ function Words.add(input, now)
   list.entries[#list.entries + 1] = e
   list.everSaved = true
   index[key] = e
+  changed()
   return "added", e
 end
 
@@ -160,6 +157,7 @@ function Words.removeLast()
   if frozen or not list or #list.entries == 0 then return nil end
   local e = table.remove(list.entries)
   index[e.key] = nil
+  changed()
   return e
 end
 
@@ -168,6 +166,7 @@ function Words.clear()
   if frozen or not list then return nil end
   local n = #list.entries
   list.entries, index = {}, {}
+  changed()
   return n
 end
 
@@ -250,21 +249,33 @@ function Words.furigana(word, reading)
   return out
 end
 
--- The entry's sentence with a reading on every word the line's reading list holds (looked up again by the entry's
--- source, so a word saved before this column existed gets it too), and the saved word in bold.
-function Words.sentenceFurigana(e)
+-- The entry's sentence as the line's reading list places its words (looked up again by the entry's source, so a
+-- word saved before a column or a window existed gets them too): the other words' spans, never one over the saved
+-- word, and the saved word's own place. → others, own | nil
+function Words.lineSpans(e)
   local s = type(e.sentence) == "string" and e.sentence or ""
-  local spans = {}
-  local R = WFJ.Readings
-  local lineWords = R and e.kind ~= nil and e.id ~= nil and R.words(e.kind, e.id)
   local wf, wl = e.wf, e.wl
   local own = type(wf) == "number" and type(wl) == "number" and wf >= 1 and wl <= #s and wl >= wf
+    and { first = wf, last = wl } or nil
+  local others = {}
+  local R = WFJ.Readings
+  local lineWords = R and e.kind ~= nil and e.id ~= nil and s ~= "" and R.words(e.kind, e.id)
   if lineWords then
     for _, sp in ipairs(R.locate(lineWords, s)) do
-      if not (own and sp.first <= wl and sp.last >= wf) then spans[#spans + 1] = sp end
+      if not (own and sp.first <= own.last and sp.last >= own.first) then others[#others + 1] = sp end
     end
   end
-  if own then spans[#spans + 1] = { first = wf, last = wl, word = s:sub(wf, wl), reading = e.reading, own = true } end
+  return others, own
+end
+
+-- The entry's sentence with a reading on every word the line's reading list holds, and the saved word in bold.
+function Words.sentenceFurigana(e)
+  local s = type(e.sentence) == "string" and e.sentence or ""
+  local spans, own = Words.lineSpans(e)
+  if own then
+    spans[#spans + 1] = { first = own.first, last = own.last, word = s:sub(own.first, own.last), reading = e.reading,
+      own = true }
+  end
   table.sort(spans, function(a, b) return a.first < b.first end)
   local out, pos = "", 1
   for _, sp in ipairs(spans) do

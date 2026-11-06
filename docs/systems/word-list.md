@@ -107,6 +107,9 @@ quest.description:456:少し	少し	すこし	少し	すこし	a little	…<b>�
 
 The export holds the addon's own Japanese, readings and meanings, and the player's own data (sentences, dates, file names). It holds no English game text.
 
+### Studying it
+The list can also be studied in game, one card at a time, on an FSRS-6 schedule ([Study](study.md), [ADR-071](../adr/071-study-the-word-list-in-game.md)). The study state lives beside the list in its own SavedVariables table, `WFJ_Study`, keyed by the same key and holding numbers only; it is pruned to the list at load and after **Remove last** and **Clear all**, so a word removed and saved again starts as new. The export is unchanged by it: no study column, no change to any line. Studying in game and importing into Anki keep separate schedules; the addon never reads or writes Anki's.
+
 ### Where to find it
 - **The word card** shows a grey hint, `Ctrl+click: save word ・ Ctrl+clickで単語を保存` (naming the chosen click), until the first save ever; nothing while the save click is `off`.
 - **The intro window** has a line: save a highlighted word to your word list with the save click (it names the click as set, as do the About page line and the word list window's empty state).
@@ -119,7 +122,8 @@ The export holds the addon's own Japanese, readings and meanings, and the player
 - `addon/WoWForeverJapanese/UI/Readings.lua`: the poll, and the flash / hide card / reshow hooks
 - `addon/WoWForeverJapanese/UI/WordSave.lua`: the save: the modifiers, the entry, the screenshot sequence, the chat lines, the hint text
 - `addon/WoWForeverJapanese/UI/ReadingPopup.lua`: the hint line on the card
-- `addon/WoWForeverJapanese/UI/WordsWindow.lua`: the export window
+- `addon/WoWForeverJapanese/UI/WordsWindow.lua`: the export window; `prune()` after Remove last and Clear all
+- `addon/WoWForeverJapanese/Core/Study.lua`, `Core/Fsrs.lua`, `UI/StudyWindow.lua`: studying the list ([Study](study.md))
 - `addon/WoWForeverJapanese/UI/Options.lua`, `UI/OptionsText.lua`: the Words page and every string, in English and Japanese
 - `addon/WoWForeverJapanese/UI/MinimapButton.lua`, `UI/Slash.lua`, `UI/IntroWindow.lua`: the other ways in
 - `addon/WoWForeverJapanese/Core/Settings.lua`: `words.saveClick` (its `choiceHidden` and `check`), `words.screenshot`, the move on a reveal key change (a `revealKey` listener)
@@ -144,4 +148,4 @@ The export holds the addon's own Japanese, readings and meanings, and the player
 - **The reveal key moved onto the save click.** The save click moves to the next free choice with a chat line; at load the move is silent.
 
 ## Related
-- [Readings](readings.md) · [Settings](settings.md) · [ADR-069](../adr/069-saved-word-list.md) · [ADR-039](../adr/039-word-meanings-written-in-context.md) · [Testing → Word list checklist](../testing/strategy.md#word-list-checklist) · [App capabilities → Word list](../app-capabilities.md#word-list) · [Glossary](../glossary.md)
+- [Readings](readings.md) · [Study](study.md) · [Settings](settings.md) · [ADR-069](../adr/069-saved-word-list.md) · [ADR-071](../adr/071-study-the-word-list-in-game.md) · [ADR-039](../adr/039-word-meanings-written-in-context.md) · [Testing → Word list checklist](../testing/strategy.md#word-list-checklist) · [App capabilities → Word list](../app-capabilities.md#word-list) · [Glossary](../glossary.md)

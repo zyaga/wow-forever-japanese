@@ -1,10 +1,11 @@
--- UI/StudyWindow: the tab, the card's front and back, the grades, collapse / close / reopen, the saved spot, combat.
+-- UI/StudyWindow: the tab, the card's front and back, the mark, the grades, collapse / close / reopen, the saved
+-- spot, combat, the ticker.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Data.lua", "Core/Readings.lua", "Core/Glosses.lua",
   "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua", "Core/Words.lua", "Core/Fsrs.lua", "Core/Study.lua",
-  "UI/Font.lua", "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/StudyWindow.lua" }
+  "UI/Font.lua", "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/WordSave.lua", "UI/StudyWindow.lua" }
 
 local JA = "少しの生き物たちを狩り、数を減らしてほしい。"
 local PACKED = "少し=すこし 生き物=いきもの=7 狩り=かり=8 数=かず"
@@ -42,7 +43,7 @@ local function extendFrames()
 end
 
 describe("the study window", function()
-  local WFJ, SW, S, db, attached, detached, timers, clock
+  local WFJ, SW, S, db, attached, timers, tickers, clock
 
   local function save(word, text, kind, id, surface)
     text = text or JA
@@ -52,14 +53,10 @@ describe("the study window", function()
       reading = "いきもの", lemma = word, lemmaReading = "いきもの", meaning = "living thing", questTitle = "題" }, NOW)
     return e
   end
-  local function loadStudy() WFJ.Study.load(nil, WFJ.Words.keys()) end
   local function runTimers()
     local due = timers
     timers = {}
     for _, t in ipairs(due) do t.fn() end
-  end
-  local function events()
-    for _, f in ipairs(Stub.frames) do if f.events["PLAYER_REGEN_DISABLED"] then return f end end
   end
   local function ja(key, ...) return select(2, WFJ.OptionsText.get(key, ...)) end
 
@@ -72,16 +69,24 @@ describe("the study window", function()
     _G.time = function() return clock end
     _G.date = function(p, t) return os.date("!" .. p, t or clock) end
     _G.InCombatLockdown = function() return false end
-    timers = {}
-    _G.C_Timer = { After = function(s, fn) timers[#timers + 1] = { s = s, fn = fn } end }
-    attached, detached = {}, 0
+    timers, tickers = {}, {}
+    _G.C_Timer = {
+      After = function(s, fn) timers[#timers + 1] = { s = s, fn = fn } end,
+      NewTicker = function(s, fn)
+        local t = { s = s, fn = fn }
+        function t.Cancel() tickers.active = nil end
+        tickers.active = t
+        return t
+      end,
+    }
+    attached = {}
     WFJ = H.loadChunks(FILES)
     WFJ.Compat.init(function(name) return _G[name] end)
     WFJ.Data.add("reading", { ["quest:456"] = { description = PACKED } })
     WFJ.Data.add("gloss", { [7] = "生き物\tいきもの\tliving thing", [8] = "狩る\tかる\tto hunt" })
     db = WFJ.Settings.load(nil, 1, {})
     WFJ.Words.load(nil)
-    loadStudy()
+    WFJ.Study.load(nil, WFJ.Words.entries())
     WFJ.ReadingView = {
       attach = function(r)
         local copy = {}
@@ -89,7 +94,12 @@ describe("the study window", function()
         attached[#attached + 1] = copy
         return true
       end,
-      detach = function() detached = detached + 1 end,
+      detach = function() end,
+      -- one area per byte span, in the FontString's own coordinates (as UI/Readings' guarded call answers)
+      spanAreas = function(_, _, first, last)
+        return { { left = first, bottom = 0, width = last + 1 - first, height = 14 } }
+      end,
+      flash = function() end,
     }
     S, SW = WFJ.Settings, WFJ.StudyWindow
     SW.init(db)
@@ -103,10 +113,8 @@ describe("the study window", function()
 
   it("the tab shows how many words wait, and nothing when none do or the setting is off", function()
     assert.is_false(tab():IsShown())
-    save("生き物")
+    save("生き物") -- the list's change event refreshes the tab
     save("数")
-    loadStudy()
-    SW.refresh()
     assert.is_true(tab():IsShown())
     assert.are.equal(ja("study.tab", 2), tab().text.text)
     S.set("study.tab", false)
@@ -122,8 +130,6 @@ describe("the study window", function()
   it("clicking the tab opens the card: the word, its sentence with the word marked, the other words hoverable",
     function()
       local e = save("生き物")
-      loadStudy()
-      SW.refresh()
       tab().scripts.OnClick(tab())
       local f = card()
       assert.is_true(f:IsShown())
@@ -137,16 +143,32 @@ describe("the study window", function()
       assert.are.equal(f.sentence, r.fs)
       assert.are.equal(e.sentence, r.applied)
       assert.are.same({ kind = "quest.description", id = 456 }, r.meta)
-      assert.are.same({ first = e.wf, last = e.wl }, r.mark)
       local words = {}
       for i, sp in ipairs(r.spans) do words[i] = sp.word end
       assert.are.same({ "少し", "狩り", "数" }, words) -- never the tested word
+      -- the tested word's mark: a gold tint over its span, measured now and again a frame later
+      local m = f.marks[1]
+      assert.is_true(m.shown)
+      assert.are.equal(e.wf, m.point[4])
+      assert.are.equal(e.wl + 1 - e.wf, m.size[1])
+      assert.are.equal(0, timers[1].s)
+      runTimers()
+      assert.is_true(f.marks[1].shown)
+      assert.is_nil(f.marks[2])
     end)
+
+  it("a sentence with no other listed word takes no cover but still gets its mark", function()
+    local e = save("単語", "単語。", "gossip", "g9")
+    SW.open()
+    local f = card()
+    assert.are.same({}, attached)
+    assert.is_true(f.marks[1].shown)
+    assert.are.equal(e.wf, f.marks[1].point[4])
+  end)
 
   it("Show answer reveals the reading, the dictionary form and the meaning, then Again and Good", function()
     local e = save("生き物たち")
     e.lemma, e.lemmaReading = "生き物", "いきもの"
-    loadStudy()
     SW.open()
     local f = card()
     f.show.scripts.OnClick(f.show, "LeftButton")
@@ -158,12 +180,12 @@ describe("the study window", function()
     assert.is_truthy(text:find(ja("study.lemma", "生き物"), 1, true))
     assert.is_truthy(text:find("living thing", 1, true))
     assert.are.equal(1, #attached) -- the sentence's readings stay attached on the back
+    assert.is_true(f.marks[1].shown)
   end)
 
   it("Good schedules the word and shows the next; Again brings it back after ten minutes", function()
     save("生き物")
     save("数")
-    loadStudy()
     SW.open()
     local f = card()
     assert.are.equal("生き物", f.word.text)
@@ -174,9 +196,10 @@ describe("the study window", function()
     SW.showAnswer()
     f.again.scripts.OnClick(f.again, "LeftButton")
     assert.are.equal(clock + 600, WFJ.Study.card("quest.description:456:数").due)
-    -- nothing due now: the done state says when the next word comes
+    -- nothing due now: the done state says when the next word comes, and the mark is gone
     assert.is_true(f.message.en:IsShown())
     assert.is_false(f.sentence:IsShown())
+    assert.is_false(f.marks[1].shown)
     assert.is_truthy(f.message.en.text:find(ja("study.nextIn", 10), 1, true))
     clock = clock + 600
     SW.refresh()
@@ -190,9 +213,7 @@ describe("the study window", function()
       local f = card()
       assert.is_truthy(f.message.en.text:find(ja("study.empty"), 1, true))
       for _, w in ipairs({ "少し", "生き物", "狩り", "数", "減らして", "ほしい" }) do save(w) end
-      loadStudy()
       S.set("study.newPerDay", "5")
-      SW.refresh()
       for _ = 1, 5 do SW.showAnswer(); SW.grade(WFJ.Study.GOOD) end
       assert.is_truthy(f.message.en.text:find(ja("study.tomorrow"), 1, true))
       assert.is_false(tab():IsShown())
@@ -205,7 +226,6 @@ describe("the study window", function()
 
   it("a word coming back later today, more than an hour away, is named by its time", function()
     save("生き物")
-    loadStudy()
     SW.open()
     local f = card()
     SW.showAnswer(); SW.grade(WFJ.Study.AGAIN)
@@ -219,16 +239,15 @@ describe("the study window", function()
     assert.is_truthy(f.message.en.text:find(ja("study.nextAt", os.date("!%H:%M", due)), 1, true))
   end)
 
-  it("collapse goes back to the tab; close hides both for the session; open and toggle bring the card back",
+  it("collapse goes back to the tab; either close hides both for the session; open and toggle bring the card back",
     function()
       save("生き物")
-      loadStudy()
       SW.open()
       local f = card()
       f.collapse.scripts.OnClick(f.collapse, "LeftButton")
       assert.is_false(f:IsShown())
       assert.is_true(tab():IsShown())
-      f.close.scripts.OnClick(f.close)
+      tab().close.scripts.OnClick(tab().close)
       assert.is_false(f:IsShown())
       assert.is_false(tab():IsShown())
       SW.refresh()
@@ -236,10 +255,12 @@ describe("the study window", function()
       S.set("study.tab", false)
       SW.open()
       assert.is_true(f:IsShown()) -- the setting never blocks an explicit open
-      _G.WFJ_StudyToggle()
+      f.close.scripts.OnClick(f.close)
       assert.is_false(f:IsShown())
       _G.WFJ_StudyToggle()
       assert.is_true(f:IsShown())
+      _G.WFJ_StudyToggle()
+      assert.is_false(f:IsShown())
       SW.close()
       SW.toggle()
       assert.is_true(f:IsShown())
@@ -247,47 +268,53 @@ describe("the study window", function()
 
   it("the card and the tab share the spot they were dragged to; /wfj study reset puts them back", function()
     save("生き物")
-    loadStudy()
     SW.open()
     local f = card()
     assert.are.equal("RIGHT", f.point[1])
     f.scripts.OnDragStop(f)
     assert.are.same({ "BOTTOM", "BOTTOM", 10, 20 }, db.study.point)
+    assert.are.equal("BOTTOM", tab().point[1]) -- the tab followed at once
     SW.collapse()
     assert.are.equal("BOTTOM", tab().point[1])
     local said = {}
-    SW.command({ "reset" }, function(line) said[#said + 1] = line end)
+    SW.resetPosition(function(line) said[#said + 1] = line end)
     assert.is_nil(db.study.point)
     assert.are.equal("RIGHT", tab().point[1])
+    assert.are.equal("RIGHT", f.point[1])
     assert.are.equal(1, #said)
-    SW.command({ "elsewhere" }, function(line) said[#said + 1] = line end)
-    assert.is_truthy(said[2]:find("/wfj study reset", 1, true))
   end)
 
   it("combat hides the tab and the card and brings back what was showing, unless the setting is off", function()
     save("生き物")
-    loadStudy()
     SW.open()
-    local f, ev = card(), events()
-    ev:fire("PLAYER_REGEN_DISABLED")
+    local f = card()
+    SW.setCombat(true)
     assert.is_false(f:IsShown())
     assert.is_false(tab():IsShown())
-    ev:fire("PLAYER_REGEN_ENABLED")
+    SW.setCombat(false)
     assert.is_true(f:IsShown())
     SW.collapse()
-    ev:fire("PLAYER_REGEN_DISABLED")
+    SW.setCombat(true)
     assert.is_false(tab():IsShown())
-    ev:fire("PLAYER_REGEN_ENABLED")
+    SW.setCombat(false)
     assert.is_true(tab():IsShown())
     S.set("study.combatHide", false)
-    ev:fire("PLAYER_REGEN_DISABLED")
+    SW.setCombat(true)
     assert.is_true(tab():IsShown())
-    ev:fire("PLAYER_REGEN_ENABLED")
+    SW.setCombat(false)
+    -- toggling while hidden in combat still collapses the open card rather than re-opening it
+    S.set("study.combatHide", true)
+    SW.open()
+    SW.setCombat(true)
+    SW.toggle()
+    SW.setCombat(false)
+    assert.is_false(f:IsShown())
+    assert.is_true(tab():IsShown())
   end)
 
-  it("a study table saved by a newer version refuses the grade with the word list's line", function()
+  it("a study table saved by a newer version asks nothing and refuses a grade with the word list's line", function()
     save("生き物")
-    WFJ.Study.load({ schema = 99, cards = {} }, WFJ.Words.keys())
+    WFJ.Study.load({ schema = 99, cards = {} }, WFJ.Words.entries())
     SW.open()
     local f = card()
     assert.is_truthy(f.message.en:IsShown()) -- nothing is asked from a table it may not write
@@ -295,32 +322,42 @@ describe("the study window", function()
     assert.are.same({}, Stub.prints)
   end)
 
-  it("ticks every 15 seconds while in use, refreshing the tab, and stops once closed", function()
-    assert.are.equal(1, #timers)
-    assert.are.equal(SW.TICK, timers[1].s)
+  it("the language flip only re-labels what is on screen", function()
     save("生き物")
-    loadStudy()
-    runTimers()
+    local calls = 0
+    local real = WFJ.Study.scan
+    WFJ.Study.scan = function(...) calls = calls + 1; return real(...) end
+    WFJ.State.fire("modifier", true)
+    WFJ.State.fire("modifier", false)
+    assert.are.equal(0, calls)
     assert.is_true(tab():IsShown())
-    assert.are.equal(1, #timers)
-    SW.close()
-    runTimers()
-    assert.are.equal(0, #timers)
-    SW.open()
-    assert.are.equal(1, #timers)
+    WFJ.Study.scan = real
   end)
 
-  it("a word removed from the list leaves the card on the next refresh", function()
+  it("runs a ticker only while the tab or the card is on screen", function()
+    assert.is_nil(tickers.active) -- no words: nothing shown, nothing ticking
+    save("生き物")
+    assert.is_truthy(tickers.active)
+    assert.are.equal(SW.TICK, tickers.active.s)
+    tickers.active.fn()
+    assert.is_true(tab():IsShown())
+    SW.close()
+    assert.is_nil(tickers.active)
+    SW.open()
+    assert.is_truthy(tickers.active)
+    SW.setCombat(true)
+    assert.is_nil(tickers.active)
+  end)
+
+  it("a word removed from the list leaves the card", function()
     save("生き物")
     save("数")
-    loadStudy()
     SW.open()
     local f = card()
     assert.are.equal("生き物", f.word.text)
     WFJ.Words.removeLast() -- 数
-    WFJ.Words.removeLast() -- 生き物
-    WFJ.Study.prune(WFJ.Words.keys())
-    SW.refresh()
+    WFJ.Words.removeLast() -- 生き物: the list's change event moves the card on
     assert.is_true(f.message.en:IsShown())
+    assert.is_nil(WFJ.Study.card("quest.description:456:生き物"))
   end)
 end)

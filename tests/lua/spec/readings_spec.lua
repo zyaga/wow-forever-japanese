@@ -433,26 +433,6 @@ describe("Readings", function()
       assert.are.equal("私", cover.spans[1].word)
     end)
 
-    it("a caller's mark (the study card's word) is a tint kept over that span until detach", function()
-      local page = "私は元気だ。"
-      local fs = spanFontString(page)
-      fs.parentFrame = CreateFrame("Frame")
-      local s, e = page:find("元気", 1, true)
-      local rec = { surface = "study", key = "sentence", fs = fs, applied = page,
-        meta = { kind = "gossip", id = "g1" }, spans = {}, mark = { first = s, last = e } }
-      assert.is_true(V.attach(rec))
-      local cover = coverOf(fs)
-      assert.are.equal(1, #cover.marks)
-      assert.is_true(cover.marks[1].shown)
-      assert.are.equal(s, cover.marks[1].point[4]) -- the span's left, in the cover's own coordinates
-      assert.are.equal(e + 1 - s, cover.marks[1].size[1])
-      V.detach(rec)
-      assert.is_false(cover.marks[1].shown)
-      rec.mark = nil
-      assert.is_false(V.attach(rec)) -- no words and no mark: nothing to cover
-      assert.is_false(cover.marks[1].shown)
-    end)
-
     it("a cover on a widget the client rewrote behind Render does nothing on enter, and hides", function()
       local fs = questFs()
       R.show("questframe.detail", "description", fs, fs:GetText(), "quests", "quest.description", 456)

@@ -32,7 +32,7 @@ View.SURFACES = {
   ["questframe.greeting"] = true, ["questmap.info"] = true, ["questmap.popup.info"] = true, gossip = true,
   itemtext = true,
   voicepanel = true, -- the voice panel's text and its whole-text window (UI/VoicePanelText)
-  study = true, -- the study card's sentence (UI/StudyWindow)
+  study = true, -- the study card's sentence (UI/StudyWindow passes the words, minus the one being tested)
 }
 
 -- A label (a `ui` record, UI/Labels) takes readings on every surface EXCEPT these: HUD text, toasts, banners, the
@@ -314,44 +314,10 @@ local function eligible(rec)
   return rec.surface ~= "gossip" or rec.key == "greeting" -- gossip option rows are buttons
 end
 
--- A caller's MARK (rec.mark = { first, last }): a gold tint kept over that span while the cover is attached, so the
--- study card's word stands out in its sentence (a FontString cannot bold part of a line). Drawn at attach and once
--- more a frame later, when a just-shown FontString has its layout.
-local function drawMark(cover)
-  for _, t in ipairs(cover.marks) do t:Hide() end
-  local m = cover.mark
-  if not m or not cover.text then return end
-  local areas = View.spanAreas(cover.fs, cover.text, m.first, m.last, cover.where)
-  for i, a in ipairs(areas or {}) do
-    local t = cover.marks[i]
-    if not t then
-      t = cover:CreateTexture(nil, "BACKGROUND")
-      t:SetColorTexture(TINT[1], TINT[2], TINT[3], 0.4)
-      cover.marks[i] = t
-    end
-    t:ClearAllPoints()
-    t:SetPoint("BOTTOMLEFT", cover, "BOTTOMLEFT", a.left, a.bottom)
-    t:SetSize(math.max(a.width, 1), math.max(a.height, 1))
-    t:Show()
-  end
-end
-
-local function setMark(cover, mark)
-  cover.marks = cover.marks or {}
-  cover.mark = mark
-  drawMark(cover)
-  if not mark then return end
-  local after = Compat.resolve("C_Timer.After")
-  if type(after) == "function" then
-    after(0, function() if cover.mark == mark then drawMark(cover) end end)
-  end
-end
-
 function View.detach(rec)
   local cover = coverOf(rec)
   if not cover then return end
   cover.spans, cover.text = nil, nil
-  if cover.marks then setMark(cover, nil) end
   onLeave(cover)
   cover:Hide()
 end
@@ -371,11 +337,10 @@ function View.attach(rec)
     return false
   end
   local spans = rec.meta.kind == "ui" and listed or WFJ.Readings.withTokenWords(listed or {}, rec.applied)
-  if not (spans and spans[1]) and not rec.mark then -- a marked line keeps its cover for the mark alone
+  if not spans or not spans[1] then
     View.detach(rec)
     return false
   end
-  spans = spans or {}
   local fs = region(rec)
   local cover = coverFor(fs)
   if not cover then return false end
@@ -392,7 +357,6 @@ function View.attach(rec)
   cover.text, cover.spans = rec.applied, spans
   cover.where = tostring(rec.meta.kind) .. " " .. tostring(rec.meta.id)
   cover.kind, cover.id, cover.surface = rec.meta.kind, rec.meta.id, rec.surface
-  if rec.mark or cover.marks then setMark(cover, rec.mark) end
   cover:SetShown(View.enabled)
   View.attached = View.attached + 1
   -- a re-attach under a resting mouse (the pane redisplayed on QUEST_LOG_UPDATE) gets no new OnEnter: start again

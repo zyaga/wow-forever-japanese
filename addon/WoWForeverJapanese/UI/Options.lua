@@ -656,6 +656,8 @@ local function refreshIfVisible()
   end
 end
 
+WFJ.State.on("words", refreshIfVisible) -- the Words page's counts follow the list
+
 -- PLAYER_REGEN_DISABLED / ENABLED (Main): combat stops any capture; the key controls follow when a page is on screen.
 function Options.setCombat(flag)
   Options.inCombat = flag and true or false

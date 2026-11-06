@@ -1,15 +1,18 @@
 -- Core/Study.lua: studying the saved word list in game (ADR-071, docs/systems/study.md). Pure: no globals, no
 -- frames. The card states live in their own SavedVariables table, keyed like the word list (Core/Words):
 --   WFJ_Study = { schema = 1, cards = { [key] = { s, d, due, last, reps, lapses } }, days = { [YYYY-MM-DD] = n } }
--- `days` counts the new cards first graded on each day, for the daily cap. Time is epoch seconds (the client's
--- time()); `today` is the client's date("%Y-%m-%d"); both are passed in, never read here.
---   Study.load(saved, keys) → the table to keep in WFJ_Study    Study.prune(keys) → how many cards were dropped
---   Study.next(entries, now, today, newPerDay) → entry, "due" | "new"; nil when nothing is to ask
---   Study.counts(entries, now, today, newPerDay) → { due, newLeft, fresh, nextDue }  (fresh: never graded)
+-- `days` holds how many new cards were first graded today, for the daily cap (only today's count is ever read, so
+-- a new day replaces it). Time is epoch seconds (the client's time()); `today` is the client's date("%Y-%m-%d");
+-- both are passed in, never read here.
+--   Study.load(saved, entries) → the table to keep in WFJ_Study    Study.prune(entries) → cards dropped
+--   Study.scan(entries, now, today, newPerDay) → { entry, kind, due, newLeft, fresh, nextDue }: one walk
+--   Study.next(...) → entry, "due" | "new"        Study.counts(...) → the same table (no entry needed)
 --   Study.answer(key, rating, now, today) → the card's state, or nil when refused
 -- Due order is Anki's: a graded card is due once its date has passed (the earliest first), then new cards in the
 -- order they were saved while today's new count is under the cap. A card graded Again comes back after one
--- relearn step; Good waits the FSRS interval in whole days, at least one. UI/StudyWindow shows the cards.
+-- relearn step; Good waits the FSRS interval in whole days, at least one. Only a key the word list holds is
+-- graded: the list's keys come with load and prune, and the list's own change event keeps them current.
+-- UI/StudyWindow shows the cards.
 local _, WFJ = ...
 local Study = {}
 WFJ.Study = Study
@@ -17,37 +20,38 @@ WFJ.Study = Study
 Study.SCHEMA = 1
 Study.RELEARN = 600 -- seconds: Anki's default relearning step
 Study.DAY = 86400
-Study.AGAIN, Study.GOOD = 1, 3
+Study.AGAIN, Study.GOOD = WFJ.Fsrs.AGAIN, WFJ.Fsrs.GOOD
 
 local list -- the saved table
 local frozen = false -- saved by a newer version: kept as it is, never written
-local known = {} -- the word list's keys as last seen (load, prune, next): a key not in the list is never graded
+local known = {} -- the word list's keys as last given
 
 local function isCard(c)
   return type(c) == "table" and type(c.s) == "number" and type(c.d) == "number" and type(c.due) == "number"
     and type(c.last) == "number"
 end
 
-local function keySet(keys)
+local function keysOf(entries)
   local set = {}
-  for _, k in ipairs(keys or {}) do set[k] = true end
+  for _, e in ipairs(entries or {}) do
+    if type(e) == "table" and e.key ~= nil then set[e.key] = true end
+  end
   return set
 end
 
--- `keys`: the word list's keys; a card whose word is gone from the list is dropped, and only a listed key is graded.
-function Study.load(saved, keys)
+-- `entries`: the word list's entries; a card whose word is gone from the list is dropped.
+function Study.load(saved, entries)
   frozen = false
+  known = keysOf(entries)
   if type(saved) == "table" and type(saved.schema) == "number" and saved.schema > Study.SCHEMA then
     list, frozen = saved, true
     return saved
   end
   local t = { schema = Study.SCHEMA, cards = {}, days = {} }
-  known = keySet(keys)
   if type(saved) == "table" then
-    local keep = known
     if type(saved.cards) == "table" then
       for k, c in pairs(saved.cards) do
-        if type(k) == "string" and keep[k] and isCard(c) then
+        if type(k) == "string" and known[k] and isCard(c) then
           t.cards[k] = { s = c.s, d = c.d, due = c.due, last = c.last,
             reps = type(c.reps) == "number" and c.reps or 0, lapses = type(c.lapses) == "number" and c.lapses or 0 }
         end
@@ -68,9 +72,9 @@ function Study.table() return list end
 function Study.card(key) return list and not frozen and list.cards[key] or nil end
 
 -- → the number of cards dropped because their word left the list
-function Study.prune(keys)
+function Study.prune(entries)
   if frozen or not list then return 0 end
-  known = keySet(keys)
+  known = keysOf(entries)
   local n = 0
   for k in pairs(list.cards) do
     if not known[k] then list.cards[k] = nil; n = n + 1 end
@@ -78,46 +82,47 @@ function Study.prune(keys)
   return n
 end
 
+-- the word list says when it changed (State "words"): a saved word becomes gradable, a removed one loses its card
+if WFJ.State then
+  WFJ.State.on("words", function() if WFJ.Words then Study.prune(WFJ.Words.entries()) end end)
+end
+
 local function newToday(today)
   return list.days[today] or 0
 end
 
-function Study.next(entries, now, today, newPerDay)
-  if frozen or not list then return nil end
-  local due, first
-  known = {}
-  for _, e in ipairs(entries) do
-    known[e.key] = true
-    local c = list.cards[e.key]
-    if c then
-      if c.due <= now and (not due or c.due < due.due) then due = c end
-      if due == c then first = e end
-    end
-  end
-  if first then return first, "due" end
-  if newToday(today) < newPerDay then
-    for _, e in ipairs(entries) do
-      if not list.cards[e.key] then return e, "new" end
-    end
-  end
-  return nil
-end
-
-function Study.counts(entries, now, today, newPerDay)
-  local out = { due = 0, newLeft = 0, fresh = 0, nextDue = nil }
+function Study.scan(entries, now, today, newPerDay)
+  local out = { due = 0, newLeft = 0, fresh = 0 }
   if frozen or not list then return out end
+  local first, best, firstNew
   for _, e in ipairs(entries) do
     local c = list.cards[e.key]
     if not c then
       out.fresh = out.fresh + 1
+      firstNew = firstNew or e
     elseif c.due <= now then
       out.due = out.due + 1
+      if not best or c.due < best then first, best = e, c.due end
     elseif not out.nextDue or c.due < out.nextDue then
       out.nextDue = c.due
     end
   end
   out.newLeft = math.max(0, math.min(out.fresh, newPerDay - newToday(today)))
+  if first then
+    out.entry, out.kind = first, "due"
+  elseif firstNew and out.newLeft > 0 then
+    out.entry, out.kind = firstNew, "new"
+  end
   return out
+end
+
+function Study.next(entries, now, today, newPerDay)
+  local r = Study.scan(entries, now, today, newPerDay)
+  return r.entry, r.kind
+end
+
+function Study.counts(entries, now, today, newPerDay)
+  return Study.scan(entries, now, today, newPerDay)
 end
 
 function Study.answer(key, rating, now, today)
@@ -129,7 +134,7 @@ function Study.answer(key, rating, now, today)
     s, d = WFJ.Fsrs.review(c.s, c.d, (now - c.last) / Study.DAY, rating)
   else
     s, d = WFJ.Fsrs.review(-1, 0, 0, rating)
-    list.days[today] = newToday(today) + 1
+    list.days = { [today] = newToday(today) + 1 }
     c = { reps = 0, lapses = 0 }
     list.cards[key] = c
   end

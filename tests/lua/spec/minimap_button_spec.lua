@@ -303,7 +303,7 @@ describe("the minimap menu's word list entry", function()
     assert.are.equal(1, opened)
     -- the study entry follows it, with the due count
     H.loadChunks({ "Core/Fsrs.lua", "Core/Study.lua", "UI/StudyWindow.lua" }, WFJ)
-    WFJ.Study.load(nil, WFJ.Words.keys())
+    WFJ.Study.load(nil, WFJ.Words.entries())
     WFJ.Study.answer("a", WFJ.Study.GOOD, 0, "2026-09-21") -- due long ago
     local study, wordsAt, studyAt
     for i, it in ipairs(WFJ.MinimapButton.items()) do

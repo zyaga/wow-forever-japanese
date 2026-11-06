@@ -479,7 +479,7 @@ function Slash.handle(msg)
   if lower == "study" and (words[2] == nil or words[2]:lower() == "reset") then -- the study card; else a setting
     local SW = WFJ.StudyWindow
     if not SW then return say("the study window is not available on this client") end
-    if words[2] then return SW.command({ words[2]:lower() }, say) end
+    if words[2] then return SW.resetPosition(say) end
     if not pcall(SW.open) then say("the study window is not available on this client") end
     return
   end
