@@ -219,6 +219,8 @@ Both can be turned off in the settings.
 the Japanese, with the same key to see the English, word cards and voice. Its buttons, headings and item tooltips
 use the game's Japanese words; a few words of its own stay English. Dialogue UI is not needed and not included.
 
+![A Dialogue UI quest window in Japanese, with the quest's names such as Defias Pillager left in English](docs/images/dialogue-ui.jpg)
+
 ## Credits
 
 The hand-written translations are the work of the Japanese translators of **WoWJapanizer**, **QuestJapanizer** and
@@ -382,6 +384,8 @@ GitHub アカウントがなければ、[Discord](https://foreverjapanese.com/di
 **どのゲームで使える？** World of Warcraft: Forever 専用です。
 
 **Dialogue UI と一緒に使える？** 使えます。Dialogue UI を入れている場合、そのクエスト、NPCとの会話、本のウィンドウにも日本語が表示され、英語を見るキー、単語カード、音声もそのまま使えます。ボタン、見出し、アイテムのツールチップにはゲームの日本語が使われます。Dialogue UI 独自の言葉の一部は英語のままです。Dialogue UI は必須ではなく、このアドオンには含まれていません。
+
+![日本語で表示された Dialogue UI のクエストウィンドウ。Defias Pillager などの名前は英語のまま](docs/images/dialogue-ui.jpg)
 
 ### クレジット
 
