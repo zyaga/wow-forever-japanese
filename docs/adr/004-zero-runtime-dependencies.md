@@ -3,6 +3,8 @@
 - **Status:** Proposed
 - **Date:** 2026-09-13
 
+> Narrowed by [ADR-073](073-dialogue-ui-windows-get-our-japanese.md): an optional adapter that runs only when the player already has Dialogue UI installed is allowed. Nothing of it is shipped, embedded or required; dependency fields and embedded libraries stay forbidden.
+
 ## Context
 The predecessor tooltip addon required Plater for nameplates and injected a Plater script; WoWJapanizer embedded Ace3. Each dependency is a moving target across client patches and a second thing to break on Forever's launch day. The addon's needs (a settings panel, a slash command, an event bus, SavedVariables, a hash function) are all small.
 
