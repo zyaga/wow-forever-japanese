@@ -327,6 +327,15 @@ local function showRow(row)
   return n
 end
 
+-- The client builds an item list's scroll view the first time that list is shown (AuctionHouseItemListMixin:Init,
+-- called from its OnShow: itemlist.lua:136–195, :232–234), and ScrollBoxListMixin:ForEachFrame indexes the view
+-- with no nil check (scrollbox.lua:594–596). A box without a view has no rows to walk, so it is skipped until
+-- the list's own refresh hooks run after the view exists. A box with no HasView (another client shape) is walked.
+local function hasView(box)
+  return type(box) == "table" and type(box.ForEachFrame) == "function"
+    and (type(box.HasView) ~= "function" or box:HasView() == true)
+end
+
 -- ScrollUtil callback: (owner, frame, elementData) on initialization, (frame, elementData) on the existing-frames
 -- pass. Returns nothing (ForEachFrame stops at the first truthy return).
 function AuctionHouse.onRow(a, b)
@@ -350,9 +359,7 @@ function AuctionHouse.showList(prefix, list)
     end
   end
   local box = list.ScrollBox
-  if type(box) == "table" and type(box.ForEachFrame) == "function" then
-    box:ForEachFrame(function(row) n = n + showRow(row) end)
-  end
+  if hasView(box) then box:ForEachFrame(function(row) n = n + showRow(row) end) end
   WFJ.Render.updateBanner(SURFACE)
   return n
 end
@@ -416,7 +423,8 @@ local function hookList(prefix, list, util)
   end
   if type(util) == "table" and type(util.AddInitializedFrameCallback) == "function"
       and type(list.ScrollBox) == "table" then
-    util.AddInitializedFrameCallback(list.ScrollBox, AuctionHouse.onRow, AuctionHouse, true)
+    -- the existing-frames pass walks the box at once; the callback itself needs no view (the box owns the registry)
+    util.AddInitializedFrameCallback(list.ScrollBox, AuctionHouse.onRow, AuctionHouse, hasView(list.ScrollBox))
   end
 end
 
