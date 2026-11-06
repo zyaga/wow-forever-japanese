@@ -110,6 +110,7 @@ describe("Study", function()
       local c = S.counts(E, NOW, TODAY, 20)
       assert.are.equal(1, c.due)
       assert.are.equal(1, c.newLeft) -- a alone is new; b and c count toward today's 20, 18 left but 1 word
+      assert.are.equal(1, c.fresh)
       assert.are.equal(S.card("c").due, c.nextDue)
       c = S.counts(E, NOW, TODAY, 2)
       assert.are.equal(0, c.newLeft)

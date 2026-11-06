@@ -5,7 +5,7 @@
 -- time()); `today` is the client's date("%Y-%m-%d"); both are passed in, never read here.
 --   Study.load(saved, keys) → the table to keep in WFJ_Study    Study.prune(keys) → how many cards were dropped
 --   Study.next(entries, now, today, newPerDay) → entry, "due" | "new"; nil when nothing is to ask
---   Study.counts(entries, now, today, newPerDay) → { due, newLeft, nextDue }
+--   Study.counts(entries, now, today, newPerDay) → { due, newLeft, fresh, nextDue }  (fresh: never graded)
 --   Study.answer(key, rating, now, today) → the card's state, or nil when refused
 -- Due order is Anki's: a graded card is due once its date has passed (the earliest first), then new cards in the
 -- order they were saved while today's new count is under the cap. A card graded Again comes back after one
@@ -104,20 +104,19 @@ function Study.next(entries, now, today, newPerDay)
 end
 
 function Study.counts(entries, now, today, newPerDay)
-  local out = { due = 0, newLeft = 0, nextDue = nil }
+  local out = { due = 0, newLeft = 0, fresh = 0, nextDue = nil }
   if frozen or not list then return out end
-  local fresh = 0
   for _, e in ipairs(entries) do
     local c = list.cards[e.key]
     if not c then
-      fresh = fresh + 1
+      out.fresh = out.fresh + 1
     elseif c.due <= now then
       out.due = out.due + 1
     elseif not out.nextDue or c.due < out.nextDue then
       out.nextDue = c.due
     end
   end
-  out.newLeft = math.max(0, math.min(fresh, newPerDay - newToday(today)))
+  out.newLeft = math.max(0, math.min(out.fresh, newPerDay - newToday(today)))
   return out
 end
 

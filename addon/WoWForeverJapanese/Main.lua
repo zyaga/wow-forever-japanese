@@ -299,6 +299,7 @@ function WFJ.OnLoad()
   step("voicequeue", function() WFJ.VoiceQueue.init(WFJ_DB) end)
   step("voiceplayer", function() WFJ.VoicePlayer.init(WFJ_DB) end)
   step("voicepanel", function() WFJ.VoicePanel.init() end)
+  step("studywindow", function() WFJ.StudyWindow.init(WFJ_DB) end) -- the tab and card for the saved words
   step("voicequestlog", function() WFJ.VoiceQuestLog.init(WFJ_DB) end)
   step("voiceerrors", function() WFJ.VoiceErrors.init(WFJ_DB) end)
   step("render", function() WFJ.Render.init(WFJ.Translator.new({
