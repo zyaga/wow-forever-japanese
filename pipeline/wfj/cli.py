@@ -9,6 +9,7 @@ import sys
 from collections.abc import Callable, Sequence
 
 from wfj.cmd import (
+    announce,
     check,
     collector,
     fix_report,
@@ -38,6 +39,7 @@ VERBS: dict[str, tuple[str, Callable[[Sequence[str]], int]]] = {
     "collector": ("a player's collector send: check / intake", collector.run),
     "release": ("changelog + version for a release; the pull-request changelog gate", release.run),
     "package-check": ("the release zip holds exactly the shipped files", package_check.run),
+    "announce": ("a release's Discord post from its notes and media; --preview, --dry-run", announce.run),
     "public-check": ("keep private material out of the public repository", public_check.run),
     "voice": ("voice over: speakers / generate / pack, from the local engine", voice.run),
 }

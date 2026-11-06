@@ -1,4 +1,5 @@
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -68,3 +69,39 @@ def make_vmangos_db(
 @pytest.fixture
 def vmangos_db(tmp_path: Path):
     return lambda name="mangos.sqlite", **kw: make_vmangos_db(tmp_path / name, **kw)
+
+
+# ── a git repo for the commands that read one ─────────────────────────────────
+
+
+def git(repo: Path, *args: str) -> str:
+    """Run git in `repo` with a fixed identity and return its output."""
+    return subprocess.run(
+        ["git", "-c", "user.name=t", "-c", "user.email=t@t", *args], cwd=repo, check=True, capture_output=True, text=True
+    ).stdout
+
+
+@pytest.fixture(name="git")
+def git_fixture():
+    return git
+
+
+@pytest.fixture
+def git_repo(tmp_path, monkeypatch):
+    """A fresh repo on `main` in tmp_path, the given files committed, the given tags set, and the cwd there.
+    Returns a maker: `git_repo({"CHANGELOG.md": text}, tags=["v0.8.0"])`."""
+
+    def make(files: dict[str, str], tags=()) -> Path:
+        git(tmp_path, "init", "-q", "-b", "main")
+        for name, text in files.items():
+            path = tmp_path / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(text, encoding="utf-8")
+        git(tmp_path, "add", ".")
+        git(tmp_path, "commit", "-qm", "init")
+        for tag in tags:
+            git(tmp_path, "tag", tag)
+        monkeypatch.chdir(tmp_path)
+        return tmp_path
+
+    return make

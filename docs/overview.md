@@ -17,6 +17,7 @@
 - [Research](research/): client surveys and mechanisms behind the decisions
 - [Testing](testing/strategy.md)
 - [Operations](operations/): [local setup](operations/local-setup.md), [translation batches](operations/translation-batches.md), [release](operations/release.md), [taking a fix report](operations/fix-reports.md), [coverage](operations/coverage.md), [voice over](operations/voice.md)
+- [Release media](releases/README.md): the pictures and clip each release's Discord post carries, one folder per version
 - [Lessons](lessons/)
 - [Legal](legal/licensing.md): licensing (GPL-2.0-or-later, corpus provenance, font, game text)
 - [CurseForge description](curseforge.md): the listing text

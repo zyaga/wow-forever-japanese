@@ -103,14 +103,16 @@ jobs:
           cache-dependency-path: pipeline/pyproject.toml
       - run: pip install -e pipeline
 
-      # On the runner only: nothing is pushed until the zip has been checked.
+      # On the runner only: nothing is pushed until the zip has been checked. The release's media
+      # (docs/releases/next, for the Discord post) takes the version's name in the same commit.
       - name: Changelog, commit and tag
         if: env.RESUME != 'true'
         run: |
-          wfj release changelog --version "$VERSION" --date "$(date -u +%F)" --notes .release-notes.md
+          wfj release changelog --version "$VERSION" --date "$(date -u +%F)" --notes .release-notes.md --media docs/releases
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit --quiet -m "Release $VERSION" -- CHANGELOG.md
+          git add -A -- CHANGELOG.md docs/releases
+          git commit --quiet -m "Release $VERSION"
           git tag -a "v$VERSION" -m "Release $VERSION"
       # A re-run of a release whose publish step failed: the commit and tag are already on main.
       - name: Notes of the release being resumed
@@ -148,6 +150,18 @@ jobs:
         env:
           CF_API_KEY: ${{ secrets.CF_API_KEY }}
           GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
+      # The zip is live: a Discord problem is a warning, never a failed release. The only step that sees the URL;
+      # without the secret it says so and posts nothing.
+      - name: Announce in Discord
+        continue-on-error: true
+        run: |
+          if [ -z "$DISCORD_WEBHOOK_URL" ]; then
+            echo "::notice::DISCORD_WEBHOOK_URL is not set, so this release is not announced in Discord (docs/operations/release.md)."
+          else
+            wfj announce --version "$VERSION" --notes .release-notes.md --media "docs/releases/$VERSION"
+          fi
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
       - name: Summary
         run: |
           shopt -s nullglob
