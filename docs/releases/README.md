@@ -6,4 +6,4 @@ Put the files for the next release in `next/`: the feature cards made for the Cu
 
 The release run renames `next/` to the version it cuts, in the same commit as the changelog, so the folder for each release stays here under its number. The "Discord preview" workflow posts what the next release would look like, with the files in `next/`, to the test channel.
 
-Only this file lives here between releases; nothing in this folder ships in the addon.
+Between releases this folder holds this file, `next/` while media waits, and one folder per released version. Nothing in this folder ships in the addon.

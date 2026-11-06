@@ -84,6 +84,8 @@ def test_limits_refuse_bad_files(tmp_path):
         announce.media_files(media(tmp_path, {"big.png": 20 * 1024 * 1024 + 1}))
     with pytest.raises(AnnounceError, match=r"11 files"):
         announce.media_files(media(tmp_path, {f"{i:02}.png": 1 for i in range(11)}))
+    with pytest.raises(AnnounceError, match=r"25 MiB for one post"):
+        announce.media_files(media(tmp_path, {"a.png": 13 * 1024 * 1024, "b.png": 13 * 1024 * 1024}))
     assert announce.media_files(None) == []
     assert announce.media_files(tmp_path / "absent") == []
     folder = media(tmp_path, {"card.webp": 1})
@@ -148,6 +150,16 @@ def test_post_errors_name_the_status_and_body_never_the_url(monkeypatch):
         discord.post("https://discord.example/api/webhooks/1/secret", {"content": "x"}, [])
     assert "400" in str(e.value) and '{"message": "no"}' in str(e.value)
     assert "secret" not in str(e.value) and "discord.example" not in str(e.value)
+    with pytest.raises(DiscordError) as bad:  # a malformed secret is refused without being repeated
+        discord.post("hooks/1/not-a-url", {"content": "x"}, [])
+    assert "not-a-url" not in str(bad.value) and "https" in str(bad.value)
+
+
+def test_post_keeps_an_existing_query(monkeypatch):
+    seen = []
+    monkeypatch.setattr(discord.urllib.request, "urlopen", lambda request, timeout=None: seen.append(request) or FakeResponse(b"{}"))
+    discord.post("https://discord.example/api/webhooks/1/t?thread_id=5", {"content": "x"}, [])
+    assert seen[0].full_url == "https://discord.example/api/webhooks/1/t?thread_id=5&wait=true"
 
 
 def test_content_types():

@@ -35,6 +35,7 @@ RELEASE_URL = "https://github.com/zyaga/wow-forever-japanese/releases/tag/v{vers
 GOLD = 0xE8C77E  # the gold of the CurseForge text and the gallery cards
 MAX_FILES = 10
 MAX_FILE_BYTES = 20 * 1024 * 1024
+MAX_TOTAL_BYTES = 25 * 1024 * 1024  # Discord's limit on one request
 MAX_DESCRIPTION = 4096
 
 
@@ -61,6 +62,9 @@ def media_files(folder: Path | None) -> list[Path]:
         out.append(path)
     if len(out) > MAX_FILES:
         raise AnnounceError(f"{len(out)} files in {folder.name}: Discord takes at most {MAX_FILES}")
+    total = sum(p.stat().st_size for p in out)
+    if total > MAX_TOTAL_BYTES:
+        raise AnnounceError(f"{total} bytes of media in {folder.name}, over Discord's 25 MiB for one post")
     return out
 
 

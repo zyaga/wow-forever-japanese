@@ -21,7 +21,7 @@ Release media lives in the public repo, in `docs/releases/next/` while a release
 - `next/` means nobody has to know the version number the release rule will pick; the rename rides in the commit the release already makes, so the history shows which media went with which release.
 - Attachments give Discord's own grid and inline player, the compact form; an embed image is one large picture. The preview run, to a private channel, is where the look is judged before anyone sees a real post.
 - The post is built from `.release-notes.md`, the same notes as the GitHub release and the CurseForge file, so the three never disagree.
-- The webhook URL is a secret: the command reads it from the environment only, never from an argument, and never prints it. The run learns only whether the secret is set, as it does for the CurseForge token.
+- The webhook URL is a secret: the command reads it from the environment only, never from an argument, and never prints it. Only the announce step sees it, and it checks for itself whether it is set.
 
 ## Consequences
 

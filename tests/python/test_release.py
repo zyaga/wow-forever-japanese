@@ -362,7 +362,10 @@ def test_changelog_action_moves_media(repo, capsys):
     assert (repo / "docs" / "releases" / "0.1.0-alpha.1" / "clip.mp4").exists()
     assert not (repo / "docs" / "releases" / "next").exists()
     assert "docs/releases/0.1.0-alpha.1" in capsys.readouterr().out
-    # without --media the changelog action touches no folder
-    (repo / "docs" / "releases" / "next").mkdir()
-    assert release.run(["notes", "--version", "0.1.0-alpha.1", "--notes", "notes.md"]) == 0
+
+
+def test_changelog_action_without_media_touches_no_folder(repo):
+    (repo / "docs" / "releases" / "next").mkdir(parents=True)
+    assert release.run(["changelog", "--version", "0.1.0-alpha.1", "--date", "2026-10-01", "--notes", "notes.md"]) == 0
     assert (repo / "docs" / "releases" / "next").exists()
+    assert not (repo / "docs" / "releases" / "0.1.0-alpha.1").exists()

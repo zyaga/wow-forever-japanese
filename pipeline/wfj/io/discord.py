@@ -68,9 +68,11 @@ def multipart(payload: Mapping[str, Any], files: Sequence[tuple[str, bytes]]) ->
 
 def post(url: str, payload: Mapping[str, Any], files: Sequence[tuple[str, bytes]]) -> dict[str, Any]:
     """Send the message and return Discord's answer (the created message, with `?wait=true`)."""
+    if not url.startswith("https://"):
+        raise DiscordError("the webhook URL is not an https URL")  # the value itself is never said
     body, boundary = multipart(payload, files)
     request = urllib.request.Request(
-        url + "?wait=true",
+        url + ("&" if "?" in url else "?") + "wait=true",
         data=body,
         method="POST",
         headers={"Content-Type": f"multipart/form-data; boundary={boundary}", "User-Agent": USER_AGENT},
