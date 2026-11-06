@@ -37,6 +37,7 @@
 {"id": "cabe4634ab543a45", "field": "text", "en": "%s arrives!", "hash": "cabe4634ab543a45", "src": "vmangos@13b49dc"}
 {"id": "cabf7d5cea318e1a", "field": "text", "en": "By Orgrim!  This indurium can withstand massive heat!", "hash": "cabf7d5cea318e1a", "src": "vmangos@13b49dc"}
 {"id": "cac0ba34d8e16695", "field": "text", "en": "You are ready for greater things! See Franklin Lloyd, to my right. He will guide you from now on.", "hash": "cac0ba34d8e16695", "src": "vmangos@13b49dc"}
+{"id": "cac5092afe6d9bca", "field": "text", "en": "I'd like to disable transmogrification.", "hash": "cac5092afe6d9bca", "src": "collector@1.60.1.70790", "npcs": [270582]}
 {"id": "cac9143ba7d1e81d", "field": "text", "en": "Welcome to Revantusk Village, stranger. I am Primal Torntusk, leader of the Revantusk trolls.", "hash": "cac9143ba7d1e81d", "src": "vmangos@13b49dc"}
 {"id": "cacae57f231b9068", "field": "text", "en": "Then, all you need to do is have a seat near the fire and soak it all in. After a few minutes of resting, you'll gain various boons that will help you in your travels.", "hash": "cacae57f231b9068", "src": "collector@1.60.1.70374"}
 {"id": "cacdba3723384300", "field": "text", "en": "Come back Fluffy!", "hash": "cacdba3723384300", "src": "vmangos@13b49dc"}

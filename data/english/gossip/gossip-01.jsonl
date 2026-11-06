@@ -39,6 +39,7 @@
 {"id": "01ae96a622324e21", "field": "text", "en": "This place is safe for the Defias to take over! Get the others.", "hash": "01ae96a622324e21", "src": "vmangos@13b49dc"}
 {"id": "01bb3777069c1701", "field": "text", "en": "If you need help surviving in the woods, you had best not stray far from the city walls.  However if you do plan to stray, then you had better have a talk with Malygen in the Cenarion Enclave so that you might learn to set a proper campfire.", "hash": "01bb3777069c1701", "src": "vmangos@13b49dc"}
 {"id": "01ce973af48d2c8e", "field": "text", "en": "$n! THIS AREA IS OFF LIMITS!", "hash": "01ce973af48d2c8e", "src": "vmangos@13b49dc"}
+{"id": "01cf902a6854347d", "field": "text", "en": "Ehh? You look a little too new to be doing business with me.$B$BCome back once you're a bit more familiar with how they do things around here. Trust me.", "hash": "01cf902a6854347d", "src": "collector@1.60.1.70790", "npcs": [256672]}
 {"id": "01d161a9b59a4f04", "field": "text", "en": "How could you love me, Annalise? Look at me. I am not the man you once knew.", "hash": "01d161a9b59a4f04", "src": "vmangos@13b49dc"}
 {"id": "01d182790517060e", "field": "text", "en": "No, Longears isn't my real name.  And I'm not going to tell you what it is, so don't ask.", "hash": "01d182790517060e", "src": "vmangos@13b49dc"}
 {"id": "01d2b0e56616e6f8", "field": "text", "en": "Hehehe! Things go boom!", "hash": "01d2b0e56616e6f8", "src": "vmangos@13b49dc"}

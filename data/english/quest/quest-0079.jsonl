@@ -19,7 +19,11 @@
 {"id": 79093, "field": "completion", "en": "Thank you, $N. Our knowledge expands through your efforts.\r\n\r\nIf you discover more magical works that might benefit the library, please bring them to me.", "hash": "e184a784ef602550", "src": "forever-vo@025070f"}
 {"id": 79094, "field": "title", "en": "The Lessons of Ta'zo", "hash": "faffd00328675678", "src": "wdb@1.60.1.70790"}
 {"id": 79095, "field": "title", "en": "The Apothecary's Metaphysical Primer", "hash": "cbb1ebc85383600c", "src": "wdb@1.60.1.70790"}
+{"id": 79095, "field": "progress", "en": "Have you brought something to add to our collection?", "hash": "1400fbf0acd9ea67", "src": "collector@1.60.1.70790"}
+{"id": 79095, "field": "completion", "en": "Thank you, $N. Our knowledge expands through your efforts.$B$BIf you discover more magical works that might benefit the library, please bring them to me.", "hash": "e184a784ef602550", "src": "collector@1.60.1.70790"}
 {"id": 79096, "field": "title", "en": "Ataeric: On Arcane Curiosities", "hash": "673b8f253657daf3", "src": "wdb@1.60.1.70790"}
+{"id": 79096, "field": "progress", "en": "Have you brought something to add to our collection?", "hash": "1400fbf0acd9ea67", "src": "collector@1.60.1.70790"}
+{"id": 79096, "field": "completion", "en": "Thank you, $N. Our knowledge expands through your efforts.$B$BIf you discover more magical works that might benefit the library, please bring them to me.", "hash": "e184a784ef602550", "src": "collector@1.60.1.70790"}
 {"id": 79097, "field": "title", "en": "Baxtan: On Destructive Magics", "hash": "3e745b06d2352a80", "src": "wdb@1.60.1.70790"}
 {"id": 79097, "field": "progress", "en": "Have you brought something to add to our collection?", "hash": "1400fbf0acd9ea67", "src": "forever-vo@025070f"}
 {"id": 79097, "field": "completion", "en": "Thank you, $N. Our knowledge expands through your efforts.\r\n\r\nIf you discover more magical works that might benefit the library, please bring them to me.", "hash": "e184a784ef602550", "src": "forever-vo@025070f"}

@@ -4,6 +4,7 @@
 {"id": "34059b9403754895", "field": "text", "en": "Ha! You ain't got what it takes... yet! Come back to me after you've learned a few things!", "hash": "34059b9403754895", "src": "vmangos@13b49dc"}
 {"id": "34063272f2f755bf", "field": "text", "en": "You will talk eventually.  You might as well spill it now.", "hash": "34063272f2f755bf", "src": "vmangos@13b49dc"}
 {"id": "340bc2bd88f1f7fc", "field": "text", "en": "Interesting... Now this is more than I expected. Delicious...", "hash": "340bc2bd88f1f7fc", "src": "vmangos@13b49dc"}
+{"id": "340d6d808b488d80", "field": "text", "en": "Please do not touch the vials unless you intend to purchase one.$B$BFingerprints ruin the value, you see.", "hash": "340d6d808b488d80", "src": "collector@1.60.1.70790", "npcs": [248196]}
 {"id": "340db6000240ec6d", "field": "text", "en": "Warlocks, eh.  Well, you didn't hear it from me, but I've heard rumors that those types gather at a bar called the Slaughtered Lamb in the Mage Quarter.  ", "hash": "340db6000240ec6d", "src": "vmangos@13b49dc"}
 {"id": "3414fac82d57fdc9", "field": "text", "en": "I've made no mistakes.", "hash": "3414fac82d57fdc9", "src": "vmangos@13b49dc"}
 {"id": "341bcd322cb1c2ae", "field": "text", "en": "Thank you for freeing me, my brother, and all of you! We can finally rest in peace now.", "hash": "341bcd322cb1c2ae", "src": "vmangos@13b49dc"}
@@ -17,6 +18,7 @@
 {"id": "3434132e025ab68f", "field": "text", "en": "Who dares interfere with the Sons of Arugal?", "hash": "3434132e025ab68f", "src": "vmangos@13b49dc"}
 {"id": "34392e088a20b537", "field": "text", "en": "Eat this, my daughter.  It will help you feel better.", "hash": "34392e088a20b537", "src": "vmangos@13b49dc"}
 {"id": "34480b3ff3fce9bb", "field": "text", "en": "The Dun Baldar North Bunker protects the eastern entrance to Dun Baldar.$B$BIt is controlled by neither side.", "hash": "34480b3ff3fce9bb", "src": "vmangos@13b49dc"}
+{"id": "3448e1f183f53032", "field": "text", "en": "Greetings and well met, $N! Your arrival is timely, and we here at the Durotar Supply and Logistics company are always in need of new contractors.$B$BIf you are someone with a knack for gathering useful materials or the skills to craft something from scratch, you have a place here.$B$BPlease let me know if you have any questions.", "hash": "3448e1f183f53032", "src": "collector@1.60.1.70790", "npcs": [256388]}
 {"id": "344c960bb713b210", "field": "text", "en": "I wanna see the Mage Tower.", "hash": "344c960bb713b210", "src": "vmangos@13b49dc"}
 {"id": "344dd3614d79d586", "field": "text", "en": "Isillien!", "hash": "344dd3614d79d586", "src": "vmangos@13b49dc"}
 {"id": "344f58a29e31d1ea", "field": "text", "en": "Remember when Danath gathered all the mercenaries of Stormwind together and we marched to fight at Nethergarde?", "hash": "344f58a29e31d1ea", "src": "vmangos@13b49dc"}

@@ -41,6 +41,7 @@
 {"id": 274020, "field": "name", "en": "Seal of Armorcrafting", "hash": "31f41d5e30ff67f3", "src": "db2@1.60.1.70790"}
 {"id": 274020, "field": "description", "en": "Redeem with Aisarra Nightmeadow for an armorcrafting recipe of your choice from her current selection.", "hash": "6ae32dc557a8531a", "src": "db2@1.60.1.70790"}
 {"id": 274021, "field": "name", "en": "Barrens Headband", "hash": "6f768a95117945a3", "src": "db2@1.60.1.70790"}
+{"id": 274021, "field": "description", "en": "Use: Add this appearance to your Account collection.", "hash": "e0037bc6426a5db2", "src": "collector@1.60.1.70790"}
 {"id": 274022, "field": "name", "en": "Tough Guy's Eyepatch", "hash": "95fcc7502ff90db0", "src": "db2@1.60.1.70790"}
 {"id": 274023, "field": "name", "en": "Stolen Wastewander Cowl", "hash": "cbdd81e4864978b1", "src": "db2@1.60.1.70790"}
 {"id": 274024, "field": "name", "en": "Fizzbolt's Fashionable Fedora", "hash": "8ac7d21a998fc275", "src": "db2@1.60.1.70790"}

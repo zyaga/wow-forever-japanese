@@ -13,6 +13,7 @@
 {"id": "36462069c74e9166", "field": "text", "en": "Troggs?!  Are the troggs you mention the same as the ones in the world today?", "hash": "36462069c74e9166", "src": "vmangos@13b49dc"}
 {"id": "364778ea4e65ca8c", "field": "text", "en": "I bet Josetta would be more than happy to teach you some new spells.  She is probably up in her room at the Lion's Pride Inn.", "hash": "364778ea4e65ca8c", "src": "vmangos@13b49dc"}
 {"id": "36488dc4ef214598", "field": "text", "en": "Hey Pratt - can you teach me how to make a Wild Leather Vest again?", "hash": "36488dc4ef214598", "src": "vmangos@13b49dc"}
+{"id": "3650e8fdbff02d4d", "field": "text", "en": "Greetings, friend! I have an ample supply of leather and hides, and I know a few techniques I might be willing to share. Interested in doing business?", "hash": "3650e8fdbff02d4d", "src": "collector@1.60.1.70790", "npcs": [248201]}
 {"id": "365810df5b683e41", "field": "text", "en": "What goods have I earned the right to purchase from the Defilers?", "hash": "365810df5b683e41", "src": "vmangos@13b49dc"}
 {"id": "366207c702ac32ad", "field": "text", "en": "All of Nature's might is at my disposal, puny mortals. Let us see which of my many forms it will be that ends your suffering!", "hash": "366207c702ac32ad", "src": "vmangos@13b49dc"}
 {"id": "366450201d61ff57", "field": "text", "en": "%s casually points at the orc target...", "hash": "366450201d61ff57", "src": "vmangos@13b49dc"}

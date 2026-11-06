@@ -372,7 +372,7 @@
 {"id": 20220, "field": "name", "en": "Ironbark Staff", "hash": "6f3db1ce7234103f", "src": "db2@1.60.1.70790"}
 {"id": 20220, "field": "description", "en": "Improves your chance to get a critical strike with spells by $s1%.\nIncreases damage and healing done by magical spells and effects by up to $s1.", "hash": "e90f8d5758c9972a", "src": "wago@1.15.9.69722"}
 {"id": 20221, "field": "name", "en": "Fabled Steed", "hash": "7a052a3c4d29ff20", "src": "db2@1.60.1.70790"}
-{"id": 20221, "field": "description", "en": "Summons and dismisses a rideable Chromatic Drake.  This is a very fast mount. You wish!", "hash": "6fccd20b6d1bbd0a", "src": "wago@1.15.9.69722"}
+{"id": 20221, "field": "description", "en": "Use:", "hash": "0b82156bbc170a8d", "src": "collector@1.60.1.70790"}
 {"id": 20222, "field": "name", "en": "Defiler's Enriched Ration", "hash": "7966cd00fd500b40", "src": "db2@1.60.1.70790"}
 {"id": 20222, "field": "description", "en": "Restores $25695o1 health and $25696o2 mana over $25695d.  Must remain seated while eating.  Usable only inside Arathi Basin.", "hash": "5bb07893d88ff20c", "src": "db2@1.60.1.70790"}
 {"id": 20223, "field": "name", "en": "Defiler's Field Ration", "hash": "a1177a942e5225fd", "src": "db2@1.60.1.70790"}

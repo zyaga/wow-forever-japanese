@@ -29,4 +29,5 @@
 {"id": "e9d5b17b46115db1", "field": "text", "en": "Good luck, $n!", "hash": "e9d5b17b46115db1", "src": "vmangos@13b49dc"}
 {"id": "e9e4e48936e4868d", "field": "text", "en": "You need to start learning things that are beyond my expertise! Talk to Lilliam Sparkspindle in front of the tent there. He'll set you on the right course!", "hash": "e9e4e48936e4868d", "src": "vmangos@13b49dc"}
 {"id": "e9ee99c1aa6ed833", "field": "text", "en": "Captain Balinda Stonehearth leads the front line Alliance forces.  She is based in the Stonehearth Outpost, in the northern section of the Field of Strife.$B$BBalinda has not yet reentered the battle.", "hash": "e9ee99c1aa6ed833", "src": "vmangos@13b49dc"}
+{"id": "e9f77d97819fd933", "field": "text", "en": "I would like to talk about something else.", "hash": "e9f77d97819fd933", "src": "collector@1.60.1.70790", "npcs": [256388]}
 {"id": "e9fdf2289c62ef04", "field": "text", "en": "Oh c'mon, that's not true.", "hash": "e9fdf2289c62ef04", "src": "vmangos@13b49dc"}
