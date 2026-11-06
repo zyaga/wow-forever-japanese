@@ -83,7 +83,6 @@ WFJ.Data.add("gloss", {
   [4081] = "いる\tいる\twas (should have been)",
   [4082] = "いる\tいる\twas (there was)",
   [4083] = "いる\tいる\twas (there)",
-  [4084] = "いる\tいる\twas able to go",
   [4085] = "いる\tいる\twas around",
   [4086] = "いる\tいる\twas empty (was not there)",
   [4087] = "いる\tいる\twas in",
