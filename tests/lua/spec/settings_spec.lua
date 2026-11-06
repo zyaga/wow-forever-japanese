@@ -9,7 +9,7 @@ local IDS = { "enabled", "modifier", "area.quests", "area.gossip", "area.itemToo
   "voice.errors",
   "voice.muteDialog", "voice.button", "voice.panel.size", "voice.panel.style", "voice.panel.keep", "voice.panel.head",
   "voice.panel.hoverButtons", "voice.panel.fade", "voice.panel.combatDim", "voice.panel.questLog", "voice.panel.lock",
-  "words.saveClick", "words.screenshot" }
+  "words.saveClick", "words.screenshot", "study.tab", "study.newPerDay", "study.combatHide" }
 local DEFAULTS = { enabled = true, modifier = "alt", ["area.quests"] = true, ["area.gossip"] = true,
   ["area.itemTooltips"] = true, ["area.spellTooltips"] = true, ["area.interface"] = true, ["area.books"] = true,
   ["marker.stale"] = true,
@@ -24,7 +24,8 @@ local DEFAULTS = { enabled = true, modifier = "alt", ["area.quests"] = true, ["a
   ["voice.panel.size"] = "full", ["voice.panel.style"] = "parchment", ["voice.panel.keep"] = true,
   ["voice.panel.head"] = true, ["voice.panel.hoverButtons"] = true, ["voice.panel.fade"] = true,
   ["voice.panel.combatDim"] = true, ["voice.panel.questLog"] = true, ["voice.panel.lock"] = false,
-  ["words.saveClick"] = "ctrl", ["words.screenshot"] = false } -- the word list: Ctrl+click, no screenshot
+  ["words.saveClick"] = "ctrl", ["words.screenshot"] = false, -- the word list: Ctrl+click, no screenshot
+  ["study.tab"] = true, ["study.newPerDay"] = "20", ["study.combatHide"] = true } -- studying it
 
 describe("Settings registry", function()
   local WFJ, S

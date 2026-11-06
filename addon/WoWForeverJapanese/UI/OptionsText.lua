@@ -67,6 +67,29 @@ Text.T = {
   },
   ["words.status"] = { en = "%s words saved", ja = "保存した単語：%s語" },
   ["words.export"] = { en = "Export the word list", ja = "単語帳を書き出す" },
+  -- studying the word list (UI/StudyWindow): the settings section, the tab, the card
+  ["section.study"] = { en = "Study", ja = "学習" },
+  ["study.explain"] = {
+    en = "Study your saved words in game, one card at a time: the word and its sentence, then the answer.\n"
+      .. "Again or Good decides when the word comes back; when nothing is due, you are done for now.",
+    ja = "保存した単語をゲーム内で1枚ずつ学習します。単語と文を見てから答えを確認します。\n"
+      .. "「もう一度」か「正解」で次に出る時期が決まり、復習する単語がなくなれば今日はおしまいです。",
+  },
+  ["study.status"] = { en = "%s due, %s new words left today", ja = "復習：%s語、今日の新しい単語：あと%s語" },
+  ["study.open"] = { en = "Open the study card", ja = "学習カードを開く" },
+  ["study.title"] = { en = "Study", ja = "学習" },
+  ["study.tab"] = { en = "%s due", ja = "%s語" },
+  ["study.show"] = { en = "Show answer", ja = "答えを見る" },
+  ["study.again"] = { en = "Again", ja = "もう一度" },
+  ["study.good"] = { en = "Good", ja = "正解" },
+  ["study.lemma"] = { en = "Dictionary form: %s", ja = "辞書形：%s" },
+  ["study.done"] = { en = "Nothing due.", ja = "復習する単語はありません。" },
+  ["study.nextIn"] = { en = "The next word comes in %s min.", ja = "次の単語まで%s分。" },
+  ["study.nextAt"] = { en = "The next word comes at %s.", ja = "次の単語は%sに出ます。" },
+  ["study.tomorrow"] = { en = "Today's new words are done. Come back tomorrow.",
+    ja = "今日の新しい単語は終わりました。また明日。" },
+  ["study.empty"] = { en = "Save more words to study them here.", ja = "単語を保存すると、ここで学習できます。" },
+  ["minimap.study"] = { en = "Study words (%s due)", ja = "単語を学習（%s）" },
   ["section.slash"] = { en = "Slash commands", ja = "スラッシュコマンド" },
 
   ["toggleKey"] = { en = "Turn translation on / off", ja = "翻訳のオン・オフ切り替え" },
@@ -233,9 +256,9 @@ Text.T = {
   },
   ["about.readings"] = {
     en = "Point at a Japanese word in a quest or NPC window to see its reading. "
-      .. "Save it to your word list with %s; /wfj words shows the list.",
+      .. "Save it to your word list with %s; /wfj words shows the list and /wfj study quizzes you on it.",
     ja = "クエストやNPCの画面で日本語の単語にカーソルを合わせると、読み方が表示されます。"
-      .. "%sで単語帳に保存でき、/wfj words で一覧を表示します。",
+      .. "%sで単語帳に保存でき、/wfj words で一覧を表示、/wfj study で学習します。",
   },
   -- the About page's voice line (UI/Options aboutVoice); %s: the packs that loaded, in the line's language
   ["about.voice.none"] = {
@@ -386,6 +409,7 @@ Text.SLASH = {
   "/wfj readings [on | off]  ·  /wfj glosses [on | off]",
   "/wfj config [collector | about]  ·  /wfj fix  (report a line)",
   "/wfj bug  (report a bug or an idea)  ·  /wfj words  (the saved word list)",
+  "/wfj study [reset]  (study your saved words; reset puts the card back)",
   "/wfj collector [on | off | status | path | clear | send [all]]",
   "/wfj log [<n>]  (the problem log)  ·  /wfj taint  (action-bar taint scan)",
   "/wfj debug [hash | quest <id> | item <id> | spell <id>]",

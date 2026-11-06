@@ -476,6 +476,13 @@ function Slash.handle(msg)
     if not ok then say("the word list window is not available on this client") end
     return
   end
+  if lower == "study" and (words[2] == nil or words[2]:lower() == "reset") then -- the study card; else a setting
+    local SW = WFJ.StudyWindow
+    if not SW then return say("the study window is not available on this client") end
+    if words[2] then return SW.command({ words[2]:lower() }, say) end
+    if not pcall(SW.open) then say("the study window is not available on this client") end
+    return
+  end
   if lower == "fix" then -- the fix window (report a line)
     local ok = WFJ.FixWindow and pcall(WFJ.FixWindow.open)
     if not ok then say("the fix window is not available on this client") end

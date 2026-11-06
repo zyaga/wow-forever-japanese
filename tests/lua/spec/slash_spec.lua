@@ -61,8 +61,8 @@ describe("/wfj covers every setting", function()
       end
     end
     -- the original eight + collector.enabled + area.interface + area.books + readings.enabled + readings.glosses
-    -- + minimapButton + collector.remind + the word list's save click and screenshot
-    assert.are.equal(17, n)
+    -- + minimapButton + collector.remind + the word list's save click and screenshot + the study tab, cap, combat
+    assert.are.equal(20, n)
   end)
 
   it("/wfj bug opens the report window on Bug; /wfj log ends with the Lua error count", function()
@@ -237,6 +237,22 @@ describe("/wfj covers every setting", function()
     WFJ.WordsWindow.open = real
     local help = table.concat(WFJ.OptionsText.SLASH, "\n")
     assert.is_truthy(help:find("/wfj words", 1, true))
+  end)
+
+  it("/wfj study opens the study card; /wfj study reset puts it back; the setting words still route", function()
+    local opened, commands = 0, {}
+    local real, realCmd = WFJ.StudyWindow.open, WFJ.StudyWindow.command
+    WFJ.StudyWindow.open = function() opened = opened + 1 end
+    WFJ.StudyWindow.command = function(words) commands[#commands + 1] = words[1] end
+    wfj("study")
+    assert.are.equal(1, opened)
+    wfj("study reset")
+    assert.are.same({ "reset" }, commands)
+    wfj("study newperday 10")
+    assert.are.equal(1, opened)
+    assert.are.equal("10", S.get("study.newPerDay"))
+    WFJ.StudyWindow.open, WFJ.StudyWindow.command = real, realCmd
+    assert.is_truthy(table.concat(WFJ.OptionsText.SLASH, "\n"):find("/wfj study", 1, true))
   end)
 
   it("config opens the panel through Compat; debug prints without error", function()

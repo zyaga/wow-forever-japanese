@@ -8,7 +8,8 @@ describe("Bindings.xml and its globals", function()
 
   it("declares WFJ_TOGGLE under header WFJ, the hidden runOnUp WFJ_REVEAL and the voice panel's two", function()
     local _, count = xml:gsub("<Binding%s", "")
-    assert.are.equal(4, count)
+    assert.are.equal(5, count)
+    assert.is_truthy(xml:find('<Binding name="WFJ_STUDY">WFJ_StudyToggle()</Binding>', 1, true))
     assert.is_truthy(xml:find('<Binding name="WFJ_VOICE_PAUSE">WFJ_VoicePause()</Binding>', 1, true))
     assert.is_truthy(xml:find('<Binding name="WFJ_VOICE_REPLAY">WFJ_VoiceReplay()</Binding>', 1, true))
     assert.is_nil(xml:find("SKIP", 1, true)) -- no next-line control

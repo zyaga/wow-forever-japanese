@@ -42,6 +42,9 @@ Options.PAGES = {
   { id = "words", title = "page.words", sections = {
     { title = "section.words", rows = { "wordsExplain", "words.saveClick", "words.screenshot", "wordsStatus",
       "wordsExport" } },
+    -- studying it (Core/Study, UI/StudyWindow): the tab, the daily cap, combat, the counts and the card
+    { title = "section.study", rows = { "studyExplain", "study.tab", "study.newPerDay", "study.combatHide",
+      "studyStatus", "studyOpen" } },
   } },
   { id = "about", title = "page.about", header = true, sections = {
     { title = "section.help", rows = { "aboutHold", "aboutReadings", "aboutMarkers", "aboutOpen", "aboutVoice" } },
@@ -437,6 +440,32 @@ function A.wordsExport(page, x, y)
   local b = W.button(page, en, ja, 160, function() WFJ.WordsWindow.open() end)
   b:SetPoint("TOPLEFT", x, y)
   Options.wordsExport = b
+  return 30
+end
+
+function A.studyExplain(page, x, y, width)
+  local en, ja = Text.get("study.explain")
+  return W.labelHeight(W.label(page, en, ja, x, y, width), 48)
+end
+
+function A.studyStatus(page, x, y, width)
+  local l = W.label(page, "", "", x, y, width)
+  local function fill()
+    local c = WFJ.StudyWindow.counts()
+    W.setPair(l, Text.get("study.status", c.due, c.newLeft))
+  end
+  fill()
+  Options.refreshers[#Options.refreshers + 1] = fill
+  Options.studyStatus = l
+  return 24
+end
+
+-- Opens the study card (UI/StudyWindow), whatever the tab setting says.
+function A.studyOpen(page, x, y)
+  local en, ja = Text.get("study.open")
+  local b = W.button(page, en, ja, 160, function() WFJ.StudyWindow.open() end)
+  b:SetPoint("TOPLEFT", x, y)
+  Options.studyOpen = b
   return 30
 end
 
