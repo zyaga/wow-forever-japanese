@@ -367,3 +367,38 @@ def test_labels_sync_applies_the_list_on_every_push_to_main_and_on_demand(root):
     assert "done < .github/labels.tsv" in script
     assert 'gh label create "$name" --color "$color" --description "$description" --force' in script
     assert "gh label delete" not in text and "gh label edit" not in text and "--name" not in script
+
+
+# ── the Discord post ──────────────────────────────────────────────────────────
+
+
+def test_release_posts_to_discord_after_publish(root, release):
+    job = _block(release, "release", 2)
+    order = [_step_named(job, n)[0] for n in ("Publish to CurseForge and GitHub", "Announce in Discord", "Summary")]
+    assert order == sorted(order)
+    _, announce = _step_named(job, "Announce in Discord")
+    assert "continue-on-error: true" in announce  # the zip is live by then: Discord never fails a release
+    assert "DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}" in announce
+    assert 'wfj announce --version "$VERSION" --notes .release-notes.md --media "docs/releases/$VERSION"' in announce
+    assert "if: needs.plan.outputs.discord == 'true'" in announce
+    _, changelog = _step_named(job, "Changelog, commit and tag")
+    assert "--media docs/releases" in changelog and "-- CHANGELOG.md docs/releases" in changelog
+    plan = _block(release, "plan", 2)
+    assert "DISCORD_SET: ${{ secrets.DISCORD_WEBHOOK_URL != '' }}" in plan
+    assert "discord: ${{ env.DISCORD_SET }}" in _block(plan, "outputs", 4)
+    for name, text in _workflows(root).items():
+        if name not in ("release.yml", "discord-preview.yml"):
+            assert "DISCORD" not in text, name
+
+
+def test_preview_workflow_posts_the_next_release_to_the_test_webhook(root):
+    text = _workflows(root)["discord-preview.yml"]
+    assert _keys(_block(text, "on"), 2) == ["workflow_dispatch"]
+    assert "permissions:\n  contents: read\n" in text
+    jobs = _block(text, "jobs")
+    assert _keys(jobs, 2) == ["preview"]
+    (step,) = [s for s in _steps(_block(text, "preview", 2)) if "wfj announce" in s]
+    assert "wfj announce --preview --media docs/releases" in step
+    assert "DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_TEST_WEBHOOK_URL }}" in step
+    assert "secrets.DISCORD_WEBHOOK_URL" not in text  # the live channel never gets a preview
+    assert "if: github.ref != 'refs/heads/main'" in text

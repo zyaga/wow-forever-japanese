@@ -346,3 +346,36 @@ def test_cli_gate_counts_a_file_moved_out_of_addon(repo, capsys):
     capsys.readouterr()
     assert release.run(["changelog-gate", "--base", "main"]) == 1
     assert "add a line for players" in capsys.readouterr().err
+
+
+# ── the release media folder ──────────────────────────────────────────────────
+
+
+def test_move_media_renames_next_under_the_version(tmp_path):
+    releases = tmp_path / "releases"
+    assert release.move_media(releases, "0.9.0") is None  # no folder at all
+    (releases / "next").mkdir(parents=True)
+    (releases / "next" / "card.jpg").write_bytes(b"jpg")
+    moved = release.move_media(releases, "0.9.0")
+    assert moved == releases / "0.9.0"
+    assert (moved / "card.jpg").read_bytes() == b"jpg" and not (releases / "next").exists()
+    assert release.move_media(releases, "0.9.1") is None  # nothing waiting now
+    (releases / "next").mkdir()
+    with pytest.raises(ReleaseError, match=r"0\.9\.0"):
+        release.move_media(releases, "0.9.0")  # the version's folder exists: refused, nothing touched
+    assert (releases / "next").exists()
+
+
+def test_changelog_action_moves_media(repo, capsys):
+    (repo / "docs" / "releases" / "next").mkdir(parents=True)
+    (repo / "docs" / "releases" / "next" / "clip.mp4").write_bytes(b"mp4")
+    rc = release.run(["changelog", "--version", "0.1.0-alpha.1", "--date", "2026-10-01", "--notes", "notes.md",
+                      "--media", "docs/releases"])
+    assert rc == 0
+    assert (repo / "docs" / "releases" / "0.1.0-alpha.1" / "clip.mp4").exists()
+    assert not (repo / "docs" / "releases" / "next").exists()
+    assert "docs/releases/0.1.0-alpha.1" in capsys.readouterr().out
+    # without --media the changelog action touches no folder
+    (repo / "docs" / "releases" / "next").mkdir()
+    assert release.run(["notes", "--version", "0.1.0-alpha.1", "--notes", "notes.md"]) == 0
+    assert (repo / "docs" / "releases" / "next").exists()
