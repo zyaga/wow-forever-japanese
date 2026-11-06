@@ -29,13 +29,14 @@ local function extendFrames()
     function f:ClearAllPoints() self.point = nil end
     function f.GetPoint() return "BOTTOM", nil, "BOTTOM", 10, 20 end
     function f:SetFrameStrata(s) self.strata = s end
+    function f:SetHeight(h) self.height = h end
     local createTexture = f.CreateTexture
     function f:CreateTexture(...) return relax(createTexture(self, ...)) end
     local createFontString = f.CreateFontString
     function f:CreateFontString(...)
       local fs = createFontString(self, ...)
       function fs.GetStringWidth(x) return #(x.text or "") * 6 end
-      function fs.GetStringHeight() return 14 end
+      function fs.GetStringHeight(x) return x:GetHeight() end -- the stub's line model: text, font and width
       return relax(fs)
     end
     return relax(f)
@@ -43,7 +44,7 @@ local function extendFrames()
 end
 
 describe("the study window", function()
-  local WFJ, SW, S, db, attached, timers, tickers, clock
+  local WFJ, SW, S, db, attached, timers, tickers, clock, sounds
 
   local function save(word, text, kind, id, surface)
     text = text or JA
@@ -69,7 +70,8 @@ describe("the study window", function()
     _G.time = function() return clock end
     _G.date = function(p, t) return os.date("!" .. p, t or clock) end
     _G.InCombatLockdown = function() return false end
-    timers, tickers = {}, {}
+    _G.PlaySound = function(id) sounds[#sounds + 1] = id end
+    timers, tickers, sounds = {}, {}, {}
     _G.C_Timer = {
       After = function(s, fn) timers[#timers + 1] = { s = s, fn = fn } end,
       NewTicker = function(s, fn)
@@ -127,6 +129,57 @@ describe("the study window", function()
     assert.is_false(tab():IsShown())
   end)
 
+  it("a long word drops the title to the sentence's size on two lines; a short one keeps the big single line",
+    function()
+      save("生き物")
+      save("持って帰らなくちゃいけなくなったんだけど", "それを持って帰らなくちゃいけなくなったんだけど、怖い。")
+      SW.open()
+      local f = card()
+      assert.are.equal(20, select(2, f.word:GetFont()))
+      SW.grade(WFJ.Study.GOOD)
+      assert.are.equal("持って帰らなくちゃいけなくなったんだけど", f.word.text)
+      assert.are.equal(14, select(2, f.word:GetFont()))
+      assert.are.equal("BOTTOMLEFT", f.sentence.point[3]) -- the sentence hangs under the title
+    end)
+
+  it("the card keeps its height for a short card and grows for a tall stack of text", function()
+    save("生き物")
+    SW.open()
+    local f = card()
+    f.show.scripts.OnClick(f.show, "LeftButton")
+    assert.are.equal(244, f.height)
+    local long = "それをRazor Hillに持って帰らなくちゃいけなくなったんだけど、道中の獣どもが怖いのよ、本当に怖いのよ、" ..
+      "おいらの代わりに持っていってくれない、助けて…"
+    local e = save("持って帰らなくちゃいけなくなったんだけど", long)
+    e.meaning = "now I have to take it back, but the beasts on the road frighten me, truly, so please help me " ..
+      "and carry it for me, you are a hero and fear nothing, while I am only a peon with a load of food"
+    SW.grade(WFJ.Study.GOOD)
+    assert.are.equal(e.word, f.word.text)
+    f.show.scripts.OnClick(f.show, "LeftButton")
+    assert.is_true(f.height > 244)
+  end)
+
+  it("Good plays the tick and blinks the title; Again does neither; the speaker button mutes the tick", function()
+    save("生き物")
+    save("数")
+    SW.open()
+    local f = card()
+    assert.is_true(f.mute.on)
+    SW.grade(WFJ.Study.AGAIN)
+    assert.are.same({}, sounds)
+    assert.is_false(f.glow:IsShown())
+    SW.grade(WFJ.Study.GOOD)
+    assert.are.same({ 878 }, sounds)
+    assert.is_true(f.glow:IsShown())
+    runTimers()
+    assert.is_false(f.glow:IsShown())
+    f.mute.scripts.OnClick(f.mute, "LeftButton") -- the setting flips, the card follows it
+    assert.is_false(S.get("study.sound"))
+    assert.is_false(f.mute.on)
+    SW.grade(WFJ.Study.GOOD)
+    assert.are.same({ 878 }, sounds)
+  end)
+
   it("clicking the tab opens the card: the word, its sentence with the word marked, the other words hoverable",
     function()
       local e = save("生き物")
@@ -179,7 +232,9 @@ describe("the study window", function()
     local text = f.answer.en.text
     assert.is_truthy(text:find("いきもの", 1, true))
     assert.is_truthy(text:find(ja("study.lemma", "生き物"), 1, true))
-    assert.is_truthy(text:find("living thing", 1, true))
+    assert.is_nil(text:find("living thing", 1, true))
+    assert.are.equal("living thing", f.meaning.text) -- the English on its own line under the Japanese
+    assert.is_true(f.meaning:IsShown())
     assert.are.equal(1, #attached) -- the sentence's readings stay attached on the back
     assert.is_true(f.marks[1].shown)
   end)

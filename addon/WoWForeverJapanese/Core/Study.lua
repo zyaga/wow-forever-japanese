@@ -102,7 +102,7 @@ local function newToday(today)
 end
 
 function Study.scan(entries, now, today, newPerDay)
-  local out = { due = 0, newLeft = 0, fresh = 0 }
+  local out = { due = 0, newLeft = 0, fresh = 0, waiting = 0 }
   if frozen or not list then return out end
   local first, best, firstNew
   for _, e in ipairs(entries) do
@@ -118,6 +118,7 @@ function Study.scan(entries, now, today, newPerDay)
     end
   end
   out.newLeft = math.max(0, math.min(out.fresh, newPerDay - newToday(today)))
+  out.waiting = out.due + out.newLeft -- what the player can study now: every count shown outside the card uses it
   if first then
     out.entry, out.kind = first, "due"
   elseif firstNew and out.newLeft > 0 then

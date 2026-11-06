@@ -80,6 +80,7 @@ Text.T = {
   ["study.title"] = { en = "Study", ja = "学習" },
   ["study.tab"] = { en = "%s due", ja = "%s語" },
   ["study.collapse"] = { en = "Collapse", ja = "たたむ" },
+  ["study.sound"] = { en = "Sound on Good: on / off", ja = "正解の音：オン／オフ" },
   ["study.footer"] = { en = "%s due, %s new", ja = "復習%s・新規%s" },
   ["study.show"] = { en = "Show answer", ja = "答えを見る" },
   ["study.again"] = { en = "Again", ja = "もう一度" },

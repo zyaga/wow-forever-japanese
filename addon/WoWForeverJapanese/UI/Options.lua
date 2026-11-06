@@ -44,7 +44,7 @@ Options.PAGES = {
       "wordsExport" } },
     -- studying it (Core/Study, UI/StudyWindow): the tab, the daily cap, combat, the counts and the card
     { title = "section.study", rows = { "studyExplain", "study.tab", "study.newPerDay", "study.combatHide",
-      "studyStatus", "studyOpen" } },
+      "study.sound", "studyStatus", "studyOpen" } },
   } },
   { id = "about", title = "page.about", header = true, sections = {
     { title = "section.help", rows = { "aboutHold", "aboutReadings", "aboutMarkers", "aboutOpen", "aboutVoice" } },

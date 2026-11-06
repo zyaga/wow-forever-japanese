@@ -61,8 +61,9 @@ describe("/wfj covers every setting", function()
       end
     end
     -- the original eight + collector.enabled + area.interface + area.books + readings.enabled + readings.glosses
-    -- + minimapButton + collector.remind + the word list's save click and screenshot + the study tab, cap, combat
-    assert.are.equal(20, n)
+    -- + minimapButton + collector.remind + the word list's save click and screenshot + the study tab, cap, combat,
+    -- sound
+    assert.are.equal(21, n)
   end)
 
   it("/wfj bug opens the report window on Bug; /wfj log ends with the Lua error count", function()

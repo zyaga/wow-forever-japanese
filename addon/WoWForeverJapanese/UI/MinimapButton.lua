@@ -130,7 +130,7 @@ function MinimapButton.items()
       action = function() WFJ.WordsWindow.open() end }
   end
   if WFJ.StudyWindow and WFJ.Study then
-    items[#items + 1] = { kind = "button", text = tx("minimap.study"):format(WFJ.StudyWindow.counts().due),
+    items[#items + 1] = { kind = "button", text = tx("minimap.study"):format(WFJ.StudyWindow.counts().waiting),
       action = function() WFJ.StudyWindow.open() end }
   end
   items[#items + 1] = { kind = "button", text = tx("button.settings"), action = function() C.openOptions() end }

@@ -316,3 +316,5 @@ Settings.define{ id = "study.newPerDay", kind = "choice", choices = { "5", "10",
   label = "New words per day", ja = "1日に始める新しい単語の数", apply = studyChanged }
 Settings.define{ id = "study.combatHide", kind = "boolean", default = true, apply = studyChanged,
   label = "Hide the study window in combat", ja = "戦闘中は学習ウィンドウを隠す" }
+Settings.define{ id = "study.sound", kind = "boolean", default = true, apply = studyChanged,
+  label = "Play a sound on Good", ja = "正解のとき音を鳴らす" }

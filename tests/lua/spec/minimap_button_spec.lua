@@ -304,11 +304,11 @@ describe("the minimap menu's word list entry", function()
     -- the study entry follows it, with the due count
     H.loadChunks({ "Core/Fsrs.lua", "Core/Study.lua", "UI/StudyWindow.lua" }, WFJ)
     WFJ.Study.load(nil, WFJ.Words.entries())
-    WFJ.Study.answer("a", WFJ.Study.GOOD, 0, "2026-09-21") -- due long ago
+    WFJ.Study.answer("a", WFJ.Study.GOOD, 0, "2026-09-21") -- due long ago; b is new and can start today
     local study, wordsAt, studyAt
     for i, it in ipairs(WFJ.MinimapButton.items()) do
       if it.text == "Export words (2)" or it.text == "単語帳を書き出す（2）" then wordsAt = i end
-      if it.text == "Study words (1 due)" or it.text == "単語を学習（1）" then study, studyAt = it, i end
+      if it.text == "Study words (2 due)" or it.text == "単語を学習（2）" then study, studyAt = it, i end
     end
     assert.is_table(study)
     assert.are.equal(wordsAt + 1, studyAt)

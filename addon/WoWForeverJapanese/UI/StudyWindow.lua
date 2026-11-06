@@ -15,8 +15,8 @@ local Compat = WFJ.Compat
 local W, Text = WFJ.OptionsWidgets, WFJ.OptionsText
 
 StudyWindow.TICK = 15 -- seconds between count refreshes while the tab or the card is on screen
-local WIDTH, HEIGHT, PAD = 320, 230, 12
-local TAB_WIDTH, TAB_HEIGHT = 84, 24
+local WIDTH, HEIGHT, PAD = 320, 244, 12
+local TAB_WIDTH, TAB_HEIGHT = 116, 36 -- read at a glance from across the screen, like a minimap icon
 
 local db -- WFJ_DB (init): db.study = { point = { p, rp, x, y } }
 local card, tab, ticker
@@ -25,6 +25,16 @@ local cardOpen, closed, inCombat = false, false, false
 local last = {} -- the last scan shown: the tab's and footer's texts are re-put only when they change
 local pendingAttach = false -- the card shows a word whose readings and mark wait for the card to be on screen
 local rec = { surface = "study", key = "sentence" } -- the sentence's record for UI/Readings
+
+-- The header's icon buttons: the client's own minus box for Collapse, its voice chat speaker (an atlas, with a
+-- glyph when the client has none) for the sound; Good plays the quest log's own "complete" tick
+-- [verified: SOUNDKIT.IG_QUEST_LIST_COMPLETE = 878, SharedXML/SoundKitConstants.lua].
+local ICON = {
+  collapse = "Interface\\Buttons\\UI-MinusButton-Up", hilight = "Interface\\Buttons\\UI-Common-MouseHilight",
+  speaker = "voicechat-icon-speaker", muted = "voicechat-icon-speaker-mute",
+}
+local GOOD_SOUND = 878
+local FLASH = 0.25 -- seconds the title glows after Good, like a saved word's tint
 
 local S = function() return WFJ.Settings end
 local function now() return Compat.call("time") or 0 end
@@ -87,6 +97,62 @@ local function closeButton(parent, size)
   return b
 end
 
+local function tip(owner, text)
+  local tt = Compat.resolve("GameTooltip")
+  if type(tt) ~= "table" or type(tt.SetOwner) ~= "function" then return end
+  tt:SetOwner(owner, "ANCHOR_TOP")
+  tt:SetText(text)
+  tt:Show()
+end
+
+local function hideTip()
+  local tt = Compat.resolve("GameTooltip")
+  if type(tt) == "table" and type(tt.Hide) == "function" then tt:Hide() end
+end
+
+-- A square icon button the size of the close button, with the client's mouse-over glow and a one-line tooltip
+-- that follows the language.
+local function iconButton(parent, size, textKey, onClick)
+  local b = CreateFrame("Button", nil, parent)
+  b:SetSize(size, size)
+  b.icon = b:CreateTexture(nil, "ARTWORK")
+  b.icon:SetAllPoints(b)
+  b:SetHighlightTexture(ICON.hilight, "ADD")
+  b:SetScript("OnClick", onClick)
+  b:SetScript("OnEnter", function(self) tip(self, W.pick(Text.get(textKey))) end)
+  b:SetScript("OnLeave", hideTip)
+  return b
+end
+
+local function atlasExists(name)
+  local T = Compat.resolve("C_Texture")
+  return type(T) == "table" and type(T.GetAtlasExists) == "function" and T.GetAtlasExists(name) == true
+end
+
+-- The speaker shows the sound setting: lit while a Good plays the tick, muted while it does not.
+local function setSpeaker(f)
+  local b = f.mute
+  local on = S().get("study.sound") == true
+  b.on = on
+  local atlas = on and ICON.speaker or ICON.muted
+  if atlasExists(atlas) and type(b.icon.SetAtlas) == "function" then
+    b.icon:SetAtlas(atlas)
+    b.glyph:Hide()
+  else
+    b.icon:SetTexture(nil)
+    b.glyph:Show()
+    if on then b.glyph:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3]) else b.glyph:SetTextColor(0.5, 0.5, 0.5) end
+  end
+end
+
+-- Good: the tick (unless muted) and a blink of gold behind the title while the next card comes.
+local function reward()
+  if S().get("study.sound") == true then Compat.call("PlaySound", GOOD_SOUND) end
+  local f = card
+  f.glow:Show()
+  Compat.call("C_Timer.After", FLASH, function() f.glow:Hide() end)
+end
+
 -- ── The sentence: its readings and the mark ──────────────────────────────
 
 -- The saved word under a gold tint (a FontString cannot bold part of a line): its screen areas come from
@@ -121,6 +187,8 @@ local function detach()
   end
 end
 
+local fit -- the card's height follows its text; defined with the card's states
+
 local function attach(e)
   local f = card
   local others, own = WFJ.Words.lineSpans(e)
@@ -130,10 +198,37 @@ local function attach(e)
   if v and others[1] then pcall(v.attach, rec) end
   f.mark = own
   drawMark()
-  if own then Compat.call("C_Timer.After", 0, function() if card.mark == own then drawMark() end end) end
+  if own then
+    Compat.call("C_Timer.After", 0, function()
+      if card.mark == own then drawMark(); fit() end
+    end)
+  end
 end
 
 -- ── The card's states ────────────────────────────────────────────────────
+
+-- The card grows to its text: a two-line title, a four-line sentence and a long answer would otherwise run under
+-- the grades. GetStringHeight is the laid-out height [likely: FontString API with a set width]; the card measures
+-- again a frame later (the deferred redraw) once the client has laid the text out.
+local GAPS = { title = 12, rule = 9 + 1 + 9, meaning = 8, buttons = 12 + 22 }
+local function textHeight(fs)
+  if not fs:IsShown() or type(fs.GetStringHeight) ~= "function" then return 0 end
+  return math.ceil(fs:GetStringHeight())
+end
+
+function fit()
+  local f = card
+  local h = PAD + textHeight(f.word) + GAPS.title
+  if current then
+    h = h + textHeight(f.sentence)
+    if answered then
+      h = h + GAPS.rule + textHeight(f.answer.en) + GAPS.meaning + textHeight(f.meaning)
+    end
+  else
+    h = h + textHeight(f.message.en) + textHeight(f.message.ja)
+  end
+  f:SetHeight(math.max(HEIGHT, h + GAPS.buttons + PAD))
+end
 
 local function showState()
   local f, asking = card, current ~= nil
@@ -142,15 +237,33 @@ local function showState()
   W.setShown(f.again, asking and answered)
   W.setShown(f.good, asking and answered)
   W.setShown(f.answer.en, asking and answered)
+  W.setShown(f.meaning, asking and answered)
+  W.setShown(f.rule, asking and answered)
   W.setShown(f.message.en, not asking)
+  fit()
 end
 
 -- The readings and the mark are attached once the card is on screen (apply): a hidden FontString has no layout to
 -- measure, and the client refuses a cover in combat.
+-- The title holds about nine characters on one line at its full size; a longer word (a saved phrase) drops to the
+-- sentence's size and may take two lines. The sentence hangs under the title, so it moves with it.
+local TITLE_CHARS = 9
+local function titleSize(word)
+  local chars = select(2, word:gsub("[^\128-\191]", "")) -- UTF-8 characters: every byte that starts one
+  if chars > TITLE_CHARS then return 14, 2 end
+  return 20, 1
+end
+
+local function setTitle(word)
+  local size, lines = titleSize(word)
+  if card.word.SetMaxLines then card.word:SetMaxLines(lines) end
+  W.put(card.word, word, size)
+end
+
 local function front(e)
   current, answered = e, false
   detach()
-  W.put(card.word, e.word or "", 20)
+  setTitle(e.word or "")
   W.put(card.sentence, e.sentence or "", 14)
   pendingAttach = true
   showState()
@@ -172,7 +285,7 @@ end
 local function done(r)
   current, answered, pendingAttach = nil, false, false
   detach()
-  W.put(card.word, W.pick(Text.get("study.title")), 20)
+  setTitle(W.pick(Text.get("study.title")))
   local en1, ja1 = Text.get("study.done")
   local en2, ja2 = nextLine(r)
   W.setPair(card.message, en1 .. "\n" .. en2, ja1 .. "\n" .. ja2)
@@ -198,8 +311,8 @@ function StudyWindow.showAnswer()
     end
     both(Text.get("study.lemma", shown))
   end
-  if e.meaning ~= nil and e.meaning ~= "" then both(e.meaning, e.meaning) end
   W.setPair(card.answer, table.concat(en, "\n"), table.concat(ja, "\n"))
+  W.put(card.meaning, e.meaning or "", 14) -- the English, a half line under the Japanese
   showState()
 end
 
@@ -230,18 +343,19 @@ end
 
 -- The tab is built on first need, never at load: a player with nothing to study pays nothing for it.
 local function apply(r)
-  local waiting = r.due + r.newLeft
+  local waiting = r.waiting
   local showCard = cardOpen and not hidden()
   local showTab = not cardOpen and not hidden() and S().get("study.tab") == true and waiting > 0
   last.waiting, last.due, last.newLeft = waiting, r.due, r.newLeft
   if showTab then
     if not tab then buildTab() end
-    putIfChanged(tab.text, "tab", W.pick(Text.get("study.tab", waiting)), 12)
+    putIfChanged(tab.text, "tab", W.pick(Text.get("study.tab", waiting)), 16)
   end
   if tab then tab:SetShown(showTab) end
   if card then
     if showCard then
       putIfChanged(card.footer, "footer", W.pick(Text.get("study.footer", r.due, r.newLeft)), 11)
+      setSpeaker(card)
       W.relabelIfStale()
     end
     card:SetShown(showCard)
@@ -264,10 +378,10 @@ end
 
 -- The reveal key's press and release only flip the language: nothing waiting can have changed.
 local function relabel()
-  if tab and tab:IsShown() then putIfChanged(tab.text, "tab", W.pick(Text.get("study.tab", last.waiting)), 12) end
+  if tab and tab:IsShown() then putIfChanged(tab.text, "tab", W.pick(Text.get("study.tab", last.waiting)), 16) end
   if card and card:IsShown() then
     putIfChanged(card.footer, "footer", W.pick(Text.get("study.footer", last.due, last.newLeft)), 11)
-    if current == nil then W.put(card.word, W.pick(Text.get("study.title")), 20) end
+    if current == nil then setTitle(W.pick(Text.get("study.title"))) end
     W.relabelIfStale()
   end
 end
@@ -277,6 +391,7 @@ end
 function StudyWindow.grade(rating)
   if not current then return end
   WFJ.Study.answer(current.key, rating, now(), today()) -- a frozen table asks nothing, so it never gets here
+  if rating == WFJ.Study.GOOD then reward() end
   local r = scan()
   nextCard(r)
   apply(r)
@@ -290,10 +405,10 @@ function buildTab()
   tab:SetSize(TAB_WIDTH, TAB_HEIGHT)
   tab:SetFrameStrata("HIGH")
   backdrop(tab)
-  tab.close = closeButton(tab, 18)
-  tab.close:SetPoint("RIGHT", tab, "RIGHT", -2, 0)
-  tab.text = tab:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
-  tab.text:SetPoint("LEFT", tab, "LEFT", 8, 0)
+  tab.close = closeButton(tab, 24)
+  tab.close:SetPoint("RIGHT", tab, "RIGHT", -4, 0)
+  tab.text = tab:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+  tab.text:SetPoint("LEFT", tab, "LEFT", 12, 0)
   tab.text:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3])
   movable(tab)
   place(tab)
@@ -315,29 +430,55 @@ local function buildCard()
   f.word:SetPoint("TOPLEFT", f, "TOPLEFT", PAD, -PAD)
   f.word:SetWidth(inner - 100) -- the collapse and close buttons sit to its right
   f.word:SetJustifyH("LEFT")
+  f.word:SetJustifyV("TOP")
+  f.word:SetWordWrap(true)
+  if f.word.SetNonSpaceWrap then f.word:SetNonSpaceWrap(true) end
   if f.word.SetMaxLines then f.word:SetMaxLines(1) end
 
   f.close = closeButton(f, 26)
   f.close:SetPoint("TOPRIGHT", f, "TOPRIGHT", -4, -4)
-  local en, ja = Text.get("study.collapse")
-  f.collapse = W.button(f, en, ja, 60, function() StudyWindow.collapse() end)
+  f.collapse = iconButton(f, 26, "study.collapse", function() StudyWindow.collapse() end)
+  f.collapse.icon:SetTexture(ICON.collapse)
   f.collapse:SetPoint("RIGHT", f.close, "LEFT", -2, 0)
+  f.mute = iconButton(f, 26, "study.sound", function() S().set("study.sound", S().get("study.sound") ~= true) end)
+  f.mute:SetPoint("RIGHT", f.collapse, "LEFT", -2, 0)
+  f.mute.glyph = f.mute:CreateFontString(nil, "OVERLAY", "GameFontNormalLarge")
+  f.mute.glyph:SetPoint("CENTER", f.mute, "CENTER", 0, 0)
+  f.mute.glyph:SetText("♪")
+  setSpeaker(f)
+
+  f.glow = f:CreateTexture(nil, "BACKGROUND")
+  f.glow:SetColorTexture(W.GOLD[1], W.GOLD[2], W.GOLD[3], 0.35)
+  f.glow:SetPoint("TOPLEFT", f.word, "TOPLEFT", -4, 4)
+  f.glow:SetPoint("BOTTOMRIGHT", f.word, "BOTTOMRIGHT", 4, -4)
+  f.glow:Hide()
 
   -- the sentence: a template font first, then the bundled face; Japanese has no spaces to wrap at
   f.sentence = f:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
-  f.sentence:SetPoint("TOPLEFT", f, "TOPLEFT", PAD, -46)
+  f.sentence:SetPoint("TOPLEFT", f.word, "BOTTOMLEFT", 0, -12)
   f.sentence:SetWidth(inner)
   f.sentence:SetJustifyH("LEFT")
   f.sentence:SetJustifyV("TOP")
   f.sentence:SetWordWrap(true)
   if f.sentence.SetNonSpaceWrap then f.sentence:SetNonSpaceWrap(true) end
 
-  f.answer = W.label(f, "", "", PAD, -116, inner)
+  -- a faint gold rule parts the question from the answer, like a settings section's rule
+  f.rule = f:CreateTexture(nil, "ARTWORK")
+  f.rule:SetColorTexture(W.GOLD[1], W.GOLD[2], W.GOLD[3], 0.45)
+  f.rule:SetPoint("TOPLEFT", f.sentence, "BOTTOMLEFT", 0, -9) -- under the sentence, however many lines
+  f.rule:SetSize(inner, 1)
+
+  f.answer = W.label(f, "", "", PAD, -116, inner, 14) -- the sentence's size: it is read as closely
   f.answer.en:ClearAllPoints()
-  f.answer.en:SetPoint("TOPLEFT", f.sentence, "BOTTOMLEFT", 0, -8) -- under the sentence, however many lines it wraps to
+  f.answer.en:SetPoint("TOPLEFT", f.rule, "BOTTOMLEFT", 0, -9)
+  f.meaning = f:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
+  f.meaning:SetPoint("TOPLEFT", f.answer.en, "BOTTOMLEFT", 0, -8)
+  f.meaning:SetWidth(inner)
+  f.meaning:SetJustifyH("LEFT")
+  f.meaning:SetWordWrap(true)
   f.message = W.label(f, "", "", PAD, -50, inner)
 
-  en, ja = Text.get("study.show")
+  local en, ja = Text.get("study.show")
   f.show = W.button(f, en, ja, 120, function() StudyWindow.showAnswer() end)
   f.show:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", PAD, PAD)
   en, ja = Text.get("study.again")

@@ -118,7 +118,8 @@ describe("Settings pages from the registry and PAGES", function()
     local sections
     for _, page in ipairs(O.PAGES) do if page.id == "words" then sections = page.sections end end
     assert.are.equal("section.study", sections[2].title)
-    assert.are.same({ "studyExplain", "study.tab", "study.newPerDay", "study.combatHide", "studyStatus", "studyOpen" },
+    assert.are.same({ "studyExplain", "study.tab", "study.newPerDay", "study.combatHide", "study.sound", "studyStatus",
+      "studyOpen" },
       sections[2].rows)
     local out = {}
     for i, it in ipairs(control("study.newPerDay").dropdown:menuItems()) do out[i] = it.text end

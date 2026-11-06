@@ -10,7 +10,7 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Added
-- Study your saved words in game: a small tab at the right edge of the screen says how many words are due, and clicking it shows one card at a time, the word in the sentence it came from, then its reading and meaning; Again or Good decides when it comes back, on the same FSRS schedule Anki uses. The card collapses to the tab, moves anywhere, hides in combat, and comes back from `/wfj study`, the minimap button's menu, a key binding or the Words settings page, where you also set how many new words to start per day. Studying in the game and in Anki keep separate schedules.
+- Study your saved words in game: a small tab at the right edge of the screen says how many words are due, and clicking it shows one card at a time, the word in the sentence it came from, then its reading and meaning; Again or Good decides when it comes back, on the same FSRS schedule Anki uses, and Good plays a short tick (a speaker button on the card mutes it). The card collapses to the tab, moves anywhere, hides in combat, and comes back from `/wfj study`, the minimap button's menu, a key binding or the Words settings page, where you also set how many new words to start per day. Studying in the game and in Anki keep separate schedules.
 
 ## 0.8.0 - 2026-11-05
 
