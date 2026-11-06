@@ -11,6 +11,7 @@ an old setting stops working). A release moves those lines under its version num
 
 ### Added
 - Japanese for about twenty more NPC lines, four on Zephras Isle and sixteen in the Forsaken and Tauren starting lands, with word cards, and voice where the speaker is known, from two players' English Collector sends. Two quest progress texts that had no Japanese now have it.
+- Study your saved words in game: a small tab at the right edge of the screen says how many words are due, and clicking it shows one card at a time, the word in the sentence it came from, then its reading and meaning; Again or Good decides when it comes back, on the same FSRS schedule Anki uses, with a short sound for each step and a green or red blink for the grade (a speaker button on the card mutes the sounds). The card collapses to the tab, moves anywhere, hides in combat, and comes back from `/wfj study`, the minimap button's menu, a key binding or the Words settings page, where you also set how many new words to start per day. Studying in the game and in Anki keep separate schedules.
 
 ### Changed
 - Six quest progress and turn-in texts follow the game's current wording in Japanese and no longer show the stale marker.

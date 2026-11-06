@@ -263,6 +263,10 @@ function WFJ.OnLoad()
   }) end) or WFJ_Collector
   -- the player's saved words: the same `or` guard, so a failed load never hands the client an empty list to write
   WFJ_Words = step("words", function() return WFJ.Words.load(WFJ_Words) end) or WFJ_Words
+  -- the study cards of those words: the same guard; a word gone from the list loses its card here
+  WFJ_Study = step("study", function()
+    return WFJ.Study.load(WFJ_Study, WFJ.Words.entries(), WFJ.Words.readonly())
+  end) or WFJ_Study
   -- the client's own encoder [verified: forever-ui Blizzard_APIDocumentationGenerated/EncodingUtilDocumentation.lua
   -- (Environment "All"; CompressionMethod.Zlib, Base64Variant.StandardUrlSafe), used the same way by
   -- Blizzard_CooldownViewer/CooldownViewerSettingsDataStoreSerialization.lua:277–281]. A client without it leaves
@@ -297,6 +301,7 @@ function WFJ.OnLoad()
   step("voicequeue", function() WFJ.VoiceQueue.init(WFJ_DB) end)
   step("voiceplayer", function() WFJ.VoicePlayer.init(WFJ_DB) end)
   step("voicepanel", function() WFJ.VoicePanel.init() end)
+  step("studywindow", function() WFJ.StudyWindow.init(WFJ_DB) end) -- the tab and card for the saved words
   step("voicequestlog", function() WFJ.VoiceQuestLog.init(WFJ_DB) end)
   step("voiceerrors", function() WFJ.VoiceErrors.init(WFJ_DB) end)
   step("render", function() WFJ.Render.init(WFJ.Translator.new({
@@ -476,9 +481,11 @@ frame:SetScript("OnEvent", function(self, event, name, ...)
     if WFJ.Diag.onBlocked(event, name, ..., ADDON) then WFJ.TaintWatch.onBlocked() end
   elseif event == "PLAYER_REGEN_DISABLED" then
     WFJ.Options.setCombat(true)
+    WFJ.StudyWindow.setCombat(true)
   elseif event == "PLAYER_REGEN_ENABLED" then
     WFJ.RevealBinding.flush() -- a modifier change made in combat
     WFJ.Options.setCombat(false)
+    WFJ.StudyWindow.setCombat(false)
   elseif event == "PLAYER_LOGOUT" then
     WFJ.VoicePlayer.stop() -- the dialog channel is saved with the logout: put it back first
     WFJ.VoiceErrors.restore() -- and the error speech

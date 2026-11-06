@@ -102,6 +102,12 @@ for Anki cards. Going back to an older version of the addon loses the list, so c
 |---|---|
 | ![The word list window, with the saved words as text to copy](docs/images/word-list.jpg) | ![An Anki card made from a saved word: the word and sentence with furigana, the meaning and the in-game screenshot](docs/images/anki-card.jpg) |
 
+**Study them in game.** A small tab at the right edge of the screen says how many saved words are due. Click it for one
+card at a time: the word in the sentence it came from, then its reading and meaning, and **Again** or **Good** to say
+how it went; the same FSRS schedule Anki uses decides when the word comes back, and when nothing is due you are done.
+The card collapses to the tab, moves anywhere, hides in combat, and comes back with `/wfj study`, from the minimap
+button's menu or from the **Words** settings page, where you also choose how many new words to start per day.
+
 **Japanese voice.** With the voice installed ([see below](#add-the-japanese-voice)), quest offers, progress and
 turn-ins, NPC greetings and talk, and book and letter pages are read aloud in Japanese: over 14,000 lines. Each NPC
 speaks in a voice cast for their race or kind of creature, gender and age. Your character says its own error lines,
@@ -309,6 +315,8 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 | ゲーム内 | Anki で |
 |---|---|
 | ![コピー用のテキストで保存した単語が表示された単語帳ウィンドウ](docs/images/word-list.jpg) | ![保存した単語から作った Anki のカード。ふりがな付きの単語と文、意味、ゲーム内のスクリーンショット](docs/images/anki-card.jpg) |
+
+**ゲーム内で学習。** 画面右端の小さなタブに、復習する単語の数が表示されます。クリックすると単語が1枚ずつカードで出ます。保存したときの文の中に単語が示され、答えを見ると読み方と意味が表示されるので、「もう一度」か「正解」で答えます。次に出る時期は Anki と同じ FSRS の方式で決まり、復習する単語がなくなればその日はおしまいです。カードはタブにたたんだり好きな場所に動かしたりでき、戦闘中は隠れます。`/wfj study`、ミニマップボタンのメニュー、設定の **単語帳** ページからいつでも開き直せ、1日に始める新しい単語の数もそこで決められます。
 
 **日本語音声。** 音声を入れると（[下記](#日本語音声を追加する)）、クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページを日本語で読み上げます。合わせて 14,000 行以上です。NPC はそれぞれ、種族やモンスターの種類・性別・年齢に合わせて選んだ声で話します。自分のキャラクターも、射程外などのエラーの一言を、種族と性別に合わせた声で日本語で話します。
 

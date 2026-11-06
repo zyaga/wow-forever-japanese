@@ -4,7 +4,8 @@ local Stub = require("tests.lua.spec.wow_stub")
 local F = require("tests.lua.spec.stub_fixwindow")
 
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua",
-  "Core/Words.lua", "UI/Font.lua", "UI/OptionsText.lua", "UI/OptionsWidgets.lua", "UI/WordsWindow.lua" }
+  "Core/Words.lua", "Core/Fsrs.lua", "Core/Study.lua", "UI/Font.lua", "UI/OptionsText.lua", "UI/OptionsWidgets.lua",
+  "UI/WordsWindow.lua" }
 
 local function add(W, word, shot)
   local text = word .. "がある。"
@@ -31,6 +32,7 @@ describe("the word list window", function()
     WFJ.Compat.init(function(name) return _G[name] end)
     WFJ.Settings.load(nil, 1, {})
     WFJ.Words.load(nil)
+    WFJ.Study.load(nil, {})
     WW = WFJ.WordsWindow
   end)
   after_each(function()
@@ -99,6 +101,21 @@ describe("the word list window", function()
     assert.are.equal(0, WFJ.Words.count())
     assert.are.equal(ja("words.cleared", 1), f.message.en:GetText())
     assert.are.equal(jaClick("words.empty"), f.summary.en:GetText())
+  end)
+
+  it("Remove last and Clear all drop the removed words' study cards too", function()
+    local a = add(WFJ.Words, "生き物")
+    local b = add(WFJ.Words, "数")
+    WFJ.Study.load(nil, WFJ.Words.entries())
+    WFJ.Study.answer(a.key, WFJ.Study.GOOD, 1790000000, "2026-09-21")
+    WFJ.Study.answer(b.key, WFJ.Study.GOOD, 1790000000, "2026-09-21")
+    local f = WW.open()
+    f.removeLast.scripts.OnClick(f.removeLast, "LeftButton")
+    assert.is_nil(WFJ.Study.card(b.key))
+    assert.is_truthy(WFJ.Study.card(a.key))
+    f.clear.scripts.OnClick(f.clear, "LeftButton")
+    f.clear.scripts.OnClick(f.clear, "LeftButton")
+    assert.is_nil(WFJ.Study.card(a.key))
   end)
 
   it("Clear all disarms after 5 seconds", function()

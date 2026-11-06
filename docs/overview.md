@@ -1,6 +1,6 @@
 # WoW Forever Japanese: Overview
 
-**What it is:** A World of Warcraft: Forever addon that shows quest text, NPC dialogue, books, letters and plaques, item and spell tooltips and the game's interface in Japanese, with the original English one key-hold away (Alt by default). Pointing at a Japanese word shows its reading and a short meaning, and a click saves it to a word list the player can export to Anki. The Python pipeline that builds its translation data ships in the same repository. The hand-written translations reached it through earlier addons for WoW Classic, credited in [`ATTRIBUTION.md`](../ATTRIBUTION.md).
+**What it is:** A World of Warcraft: Forever addon that shows quest text, NPC dialogue, books, letters and plaques, item and spell tooltips and the game's interface in Japanese, with the original English one key-hold away (Alt by default). Pointing at a Japanese word shows its reading and a short meaning, and a click saves it to a word list the player can study in game or export to Anki. The Python pipeline that builds its translation data ships in the same repository. The hand-written translations reached it through earlier addons for WoW Classic, credited in [`ATTRIBUTION.md`](../ATTRIBUTION.md).
 **Status:** Quest text, NPC dialogue, book pages and the interface ship in Japanese almost in full; item and spell tooltips are mostly done, and the rest waits for the Forever client's own English ([Coverage](operations/coverage.md) has the current numbers). Japanese voice over is built for the whole game (quests, NPC talk, book and letter pages, the character's error lines) as separate voice addons, not published yet ([Voice over](systems/voice.md)). The addon targets the Forever client only. The Forever beta ran from 2026-09-17; the game launches on 2026-11-04.
 **Stack:** Lua (WoW addon, Blizzard API only, no dependencies) · Python 3 pipeline · ID-keyed JSON data with provenance on every line · human translations from the Japanizer projects, plus machine-drafted text with recorded provenance.
 **License:** GPL-2.0-or-later; the font IPA UI Gothic under the IPA Font License.
@@ -12,7 +12,7 @@
 - [Glossary](glossary.md): the project's vocabulary
 - [Roadmap](roadmap.md): what is done and what is next
 - [Decisions](adr/): why things are the way they are
-- [Architecture](architecture/) · [Systems](systems/): how it works ([Readings](systems/readings.md): the word card; [Word list](systems/word-list.md): saving words and exporting them; [Fix reports](systems/fix-reports.md): reporting a line from the game; [Diagnostics](systems/diagnostics.md): the addon's problem log; [Voice over](systems/voice.md): Japanese audio from a separate pack)
+- [Architecture](architecture/) · [Systems](systems/): how it works ([Readings](systems/readings.md): the word card; [Word list](systems/word-list.md): saving words and exporting them; [Study](systems/study.md): studying the saved words in game; [Fix reports](systems/fix-reports.md): reporting a line from the game; [Diagnostics](systems/diagnostics.md): the addon's problem log; [Voice over](systems/voice.md): Japanese audio from a separate pack)
 - [Content](content/translation-style-guide.md): the translation style guide
 - [Research](research/): client surveys and mechanisms behind the decisions
 - [Testing](testing/strategy.md)

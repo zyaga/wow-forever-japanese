@@ -19,6 +19,8 @@ FRAME_OWNERS = {"Main.lua", "UI/Options.lua", "UI/OptionsWidgets.lua", "UI/KeyCa
                 # cinematic watcher)
                 "UI/FixWindow.lua", "UI/CollectorSendWindow.lua", "UI/ReportWindow.lua", "UI/MinimapButton.lua",
                 "UI/IntroWindow.lua", "UI/WordsWindow.lua",
+                # the study tab and card script only themselves (drag, click, their close buttons)
+                "UI/StudyWindow.lua",
                 # saving a word: its screenshot event frame
                 "UI/WordSave.lua",
                 # the tooltip trace window (/wfj debug tooltip)

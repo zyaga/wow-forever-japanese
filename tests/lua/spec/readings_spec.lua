@@ -369,6 +369,9 @@ describe("Readings", function()
     it("a label holding only a class word, with no word list of its own, gets no cover", function()
       WFJ.Placeholders = { CLASS = { DRUID = "ドルイド" }, RACE = {} }
       assert.are.equal(1, #WFJ.Readings.withTokenWords({}, "ドルイドの道")) -- prose would get the class card
+      -- the study card's tested word takes none, even a class word: its card is the answer
+      assert.are.equal(0, #WFJ.Readings.withTokenWords({}, "ドルイドの道", { first = 1, last = 9 }))
+      assert.are.equal(1, #WFJ.Readings.withTokenWords({}, "ドルイドの道", { first = 13, last = 18 }))
       local fs = spanFontString("Path of the Druid")
       fs.parentFrame = CreateFrame("Frame")
       R.show("character", "ui.class", fs, "Path of the Druid", "ui", "ui", "CLASS_LABEL")
