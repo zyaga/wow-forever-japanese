@@ -88,6 +88,14 @@ def test_limits_refuse_bad_files(tmp_path):
         announce.media_files(media(tmp_path, {"a.png": 13 * 1024 * 1024, "b.png": 13 * 1024 * 1024}))
     assert announce.media_files(None) == []
     assert announce.media_files(tmp_path / "absent") == []
+    with pytest.raises(AnnounceError, match=r"empty"):
+        announce.media_files(media(tmp_path, {"blank.png": 0}))
+    with pytest.raises(AnnounceError, match=r"letters, digits"):
+        announce.media_files(media(tmp_path, {'q"uote.png': 1}))
+    with pytest.raises(AnnounceError, match=r"not folders"):
+        folder = media(tmp_path, {"card.png": 1})
+        (folder / "cards").mkdir()
+        announce.media_files(folder)
     folder = media(tmp_path, {"card.webp": 1})
     (folder / ".DS_Store").write_bytes(b"\0")  # a dotfile is not media
     assert [f.name for f in announce.media_files(folder)] == ["card.webp"]
@@ -150,9 +158,18 @@ def test_post_errors_name_the_status_and_body_never_the_url(monkeypatch):
         discord.post("https://discord.example/api/webhooks/1/secret", {"content": "x"}, [])
     assert "400" in str(e.value) and '{"message": "no"}' in str(e.value)
     assert "secret" not in str(e.value) and "discord.example" not in str(e.value)
-    with pytest.raises(DiscordError) as bad:  # a malformed secret is refused without being repeated
-        discord.post("hooks/1/not-a-url", {"content": "x"}, [])
-    assert "not-a-url" not in str(bad.value) and "https" in str(bad.value)
+    for url in ("hooks/1/not-a-url", "https://discord.example/api/webhooks/1/not-a-url\n", "https://x/ not-a-url"):
+        with pytest.raises(DiscordError) as bad:  # a malformed secret is refused without being repeated
+            discord.post(url, {"content": "x"}, [])
+        assert "not-a-url" not in str(bad.value) and "https" in str(bad.value)
+
+    def broken(request, timeout=None):
+        raise ValueError("unknown url type: 'secret-token'")
+
+    monkeypatch.setattr(discord.urllib.request, "urlopen", broken)
+    with pytest.raises(DiscordError) as e2:
+        discord.post("https://discord.example/api/webhooks/1/secret", {"content": "x"}, [])
+    assert "ValueError" in str(e2.value) and "secret" not in str(e2.value)
 
 
 def test_post_keeps_an_existing_query(monkeypatch):
@@ -195,6 +212,8 @@ def test_command_dry_run_prints_and_sends_nothing(repo, capsys, monkeypatch):
     assert rc == 0 and sent == []
     out = capsys.readouterr().out
     assert "card.jpg" in out and "4 bytes" in out
+    assert announce.run(["--version", VERSION, "--notes", "notes.md", "--media", "absent", "--dry-run"]) == 0
+    assert "no media folder at absent" in capsys.readouterr().out
     payload = json.loads(out[out.index("{") : out.rindex("}") + 1])
     assert payload["embeds"][0]["title"] == "WoW Forever Japanese 0.9.0"
 

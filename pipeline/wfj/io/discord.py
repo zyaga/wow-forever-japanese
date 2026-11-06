@@ -7,6 +7,7 @@ Discord's status and the start of its answer only.
 
 from __future__ import annotations
 
+import http.client
 import json
 import secrets
 import urllib.error
@@ -68,8 +69,10 @@ def multipart(payload: Mapping[str, Any], files: Sequence[tuple[str, bytes]]) ->
 
 def post(url: str, payload: Mapping[str, Any], files: Sequence[tuple[str, bytes]]) -> dict[str, Any]:
     """Send the message and return Discord's answer (the created message, with `?wait=true`)."""
-    if not url.startswith("https://"):
-        raise DiscordError("the webhook URL is not an https URL")  # the value itself is never said
+    # Refused without being repeated: a secret pasted with a stray space or line break would otherwise
+    # surface in the request error, token and all.
+    if not url.startswith("https://") or any(c.isspace() or ord(c) < 32 for c in url):
+        raise DiscordError("the webhook URL is not a plain https URL")
     body, boundary = multipart(payload, files)
     request = urllib.request.Request(
         url + ("&" if "?" in url else "?") + "wait=true",
@@ -85,6 +88,8 @@ def post(url: str, payload: Mapping[str, Any], files: Sequence[tuple[str, bytes]
         raise DiscordError(f"Discord answered {e.code}: {text}") from None
     except urllib.error.URLError as e:
         raise DiscordError(f"Discord could not be reached: {e.reason}") from None
+    except (ValueError, http.client.HTTPException) as e:
+        raise DiscordError(f"the request to Discord failed: {type(e).__name__}") from None
     try:
         data = json.loads(answer)
     except ValueError:

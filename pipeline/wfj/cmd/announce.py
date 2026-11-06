@@ -21,6 +21,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 from collections.abc import Sequence
 from pathlib import Path
@@ -37,6 +38,7 @@ MAX_FILES = 10
 MAX_FILE_BYTES = 20 * 1024 * 1024
 MAX_TOTAL_BYTES = 25 * 1024 * 1024  # Discord's limit on one request
 MAX_DESCRIPTION = 4096
+FILE_NAME = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*$")  # a name that goes into a multipart header as is
 
 
 class AnnounceError(RuntimeError):
@@ -45,18 +47,25 @@ class AnnounceError(RuntimeError):
 
 def media_files(folder: Path | None) -> list[Path]:
     """The files of the media folder in name order, checked against Discord's limits: a missing folder is no
-    media; dotfiles are not media; anything else must be an image or video type Discord shows inline, at
-    most 20 MiB, at most 10 in all."""
+    media; dotfiles are not media; anything else must be a file (no subfolders) with a plain name, an
+    image or video type Discord shows inline, not empty, at most 20 MiB, at most 10 in all, under 25 MiB
+    together."""
     if folder is None or not folder.is_dir():
         return []
     out: list[Path] = []
     for path in sorted(folder.iterdir(), key=lambda p: p.name):
-        if path.name.startswith(".") or not path.is_file():
+        if path.name.startswith("."):
             continue
+        if not path.is_file():
+            raise AnnounceError(f"{path.name}: only files go in the media folder, not folders")
+        if not FILE_NAME.match(path.name):
+            raise AnnounceError(f"{path.name!r}: a media file name uses letters, digits, dots, dashes, underscores")
         if discord.content_type(path.name) is None:
             allowed = ", ".join(sorted(discord.CONTENT_TYPES))
             raise AnnounceError(f"{path.name}: Discord does not show this type inline (allowed: {allowed})")
         size = path.stat().st_size
+        if size == 0:
+            raise AnnounceError(f"{path.name} is empty")
         if size > MAX_FILE_BYTES:
             raise AnnounceError(f"{path.name} is {size} bytes, over Discord's 20 MiB")
         out.append(path)
@@ -150,6 +159,8 @@ def run(argv: Sequence[str]) -> int:
             if not a.version or not a.notes:
                 raise AnnounceError("--version and --notes are needed (or --preview)")
             version, section = a.version, notes_section(a.notes.read_text(encoding="utf-8"))
+        if a.media and not a.media.is_dir():
+            print(f"no media folder at {a.media}: the text alone")
         files = media_files(a.media)
         payload = build(version, section, files, preview=a.preview)
         for f in files:
