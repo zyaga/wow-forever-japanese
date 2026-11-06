@@ -76,18 +76,12 @@ local function makeList(opts)
   return list
 end
 
--- The nine item lists of UI/AuctionHouse's LISTS, after the two the older cases use
-local MORE_LISTS = { "ItemBuyFrame.ItemList", "CommoditiesBuyFrame.ItemList", "CommoditiesSellList",
-  "AuctionsFrame.AllAuctionsList", "AuctionsFrame.BidsList", "AuctionsFrame.ItemList",
-  "AuctionsFrame.CommoditiesList" }
-
--- opts.allLists: every list of LISTS exists; opts.noView: "all", or a set of list paths, whose ScrollBox has no view
+-- opts.lists: UI/AuctionHouse's LISTS, so every list exists (the older cases make the two they use);
+-- opts.noView: a set of list paths whose ScrollBox has no view yet
 local function loadAuctionHouse(opts)
   opts = opts or {}
-  local function viewless(path)
-    return opts.noView == "all" or (type(opts.noView) == "table" and opts.noView[path]) or nil
-  end
-  local function list(path) return makeList({ noView = viewless(path) }) end
+  local noView = opts.noView or {}
+  local function list(path) return makeList({ noView = noView[path] }) end
   local frame = C.window("AuctionHouseFrame")
   C.tree(frame, {
     BuyTab = { button = en("AUCTION_HOUSE_BUY_TAB") }, SellTab = { button = en("AUCTION_HOUSE_SELL_TAB") },
@@ -119,14 +113,10 @@ local function loadAuctionHouse(opts)
   function frame.ItemSellFrame.Duration.Dropdown.UpdateText() end
   frame.BrowseResultsFrame = { ItemList = list("BrowseResultsFrame.ItemList") }
   frame.ItemSellList = list("ItemSellList")
-  if opts.allLists then
-    for _, path in ipairs(MORE_LISTS) do
-      local parentPath, key = path:match("^(.*)%.([^.]+)$")
-      if parentPath and not C.at(frame, parentPath) then C.tree(frame, { [parentPath] = { frame = true } }) end
-      local parent = parentPath and C.at(frame, parentPath) or frame
-      parent[key or path] = list(path)
-    end
+  for _, l in ipairs(opts.lists or {}) do
+    if not C.at(frame, l[2]) then C.set(frame, l[2], list(l[2])) end
   end
+  _G.BrowseWowTokenResults_Update = function() end
   frame.AuctionsFrame.SummaryList.ScrollBox = Stub.scrollBox()
   function frame.SetDisplayMode(self, mode)
     self:SetTitle(en(mode == "sell" and "AUCTION_HOUSE_FRAME_TITLE_SELL" or "AUCTION_HOUSE_FRAME_TITLE_BUY"))
@@ -146,18 +136,19 @@ describe("the auction house on Forever", function()
 
   local function load() WFJ = C.fresh({ "UI/AuctionHouse.lua" }, UI) end
 
-  local function setup(loadedFirst)
+  local function setup(loadedFirst, opts)
     load()
     if loadedFirst then
-      loadAuctionHouse()
+      loadAuctionHouse(opts)
       WFJ.Labels.forbidNames(WFJ.AuctionHouse.NEVER_TOUCH)
       assert.is_true(WFJ.AuctionHouse.init())
     else
       assert.is_false(WFJ.AuctionHouse.init()) -- waits for the addon
-      loadAuctionHouse()
+      loadAuctionHouse(opts)
       WFJ.Labels.forbidNames(WFJ.AuctionHouse.NEVER_TOUCH)
       assert.are.equal(1, WFJ.LoadOnDemand.loaded(ADDON))
     end
+    return _G.AuctionHouseFrame
   end
 
   after_each(function() C.teardown(GLOBALS) end)
@@ -323,26 +314,19 @@ describe("the auction house on Forever", function()
   -- An item list's ScrollBox has no view until the client shows the list (AuctionHouseItemListMixin:Init from
   -- OnShow, itemlist.lua:136–195, :232–234); ForEachFrame on it raises (scrollbox.lua:594–596).
   describe("lists the client has not shown yet", function()
-    local function setupWith(loadedFirst, opts)
+    -- every list of UI/AuctionHouse's LISTS exists, and all but `except` have no view yet. LISTS is read from a
+    -- first load; setup loads the addon again over the finished frame.
+    local function setupWith(loadedFirst, except)
       load()
-      _G.BrowseWowTokenResults_Update = function() end
-      if loadedFirst then
-        loadAuctionHouse(opts)
-        WFJ.Labels.forbidNames(WFJ.AuctionHouse.NEVER_TOUCH)
-        assert.is_true(WFJ.AuctionHouse.init())
-      else
-        assert.is_false(WFJ.AuctionHouse.init())
-        loadAuctionHouse(opts)
-        WFJ.Labels.forbidNames(WFJ.AuctionHouse.NEVER_TOUCH)
-        assert.are.equal(1, WFJ.LoadOnDemand.loaded(ADDON))
-      end
-      return _G.AuctionHouseFrame
+      local lists, noView = WFJ.AuctionHouse.LISTS, {}
+      for _, l in ipairs(lists) do if l[2] ~= except then noView[l[2]] = true end end
+      return setup(loadedFirst, { lists = lists, noView = noView })
     end
 
     for _, order in ipairs({ { true, "loaded before the addon" }, { false, "loaded on demand" } }) do
       it("setup completes when no list has a view yet, " .. order[2], function()
         local frame
-        assert.has_no.errors(function() frame = setupWith(order[1], { allLists = true, noView = "all" }) end)
+        assert.has_no.errors(function() frame = setupWith(order[1]) end)
         -- hooks after the first list were installed: the ninth list, the summary list; the trailing showAll ran
         frame:Show()
         frame.AuctionsFrame.CommoditiesList:SetState("none")
@@ -356,10 +340,7 @@ describe("the auction house on Forever", function()
     end
 
     it("a shown list translates while the other eight have no view; every whole-window pass runs clean", function()
-      local noView = {}
-      for _, path in ipairs(MORE_LISTS) do noView[path] = true end
-      noView["ItemSellList"] = true
-      local frame = setupWith(true, { allLists = true, noView = noView })
+      local frame = setupWith(true, "BrowseResultsFrame.ItemList")
       local list = frame.BrowseResultsFrame.ItemList
       assert.has_no.errors(function()
         frame:Show()
@@ -378,7 +359,7 @@ describe("the auction house on Forever", function()
     end)
 
     it("a list that gains its view later shows Japanese headers, results text and rows", function()
-      local frame = setupWith(true, { noView = { ItemSellList = true } })
+      local frame = setup(true, { noView = { ItemSellList = true } })
       local list = frame.ItemSellList
       frame:Show()
       assert.is_false(list.ScrollBox:HasView())

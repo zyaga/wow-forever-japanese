@@ -162,7 +162,7 @@ for _, sell in ipairs({ { "isell", "ItemSellFrame" }, { "csell", "CommoditiesSel
   add("post", "PostButton", { "AUCTION_HOUSE_POST_BUTTON" })
 end
 
--- The nine lists: record prefix → path under AuctionHouseFrame.
+-- The nine lists: record prefix → path under AuctionHouseFrame (exported for the spec).
 local LISTS = {
   { "browse", "BrowseResultsFrame.ItemList" }, { "ibuy.list", "ItemBuyFrame.ItemList" },
   { "cbuy.list", "CommoditiesBuyFrame.ItemList" }, { "isell.list", "ItemSellList" },
@@ -170,6 +170,7 @@ local LISTS = {
   { "auctions.bids", "AuctionsFrame.BidsList" }, { "auctions.items", "AuctionsFrame.ItemList" },
   { "auctions.commodities", "AuctionsFrame.CommoditiesList" },
 }
+AuctionHouse.LISTS = LISTS
 local DURATIONS = { { "isell.durationValue", "ItemSellFrame.Duration.Dropdown" },
   { "csell.durationValue", "CommoditiesSellFrame.Duration.Dropdown" } }
 
