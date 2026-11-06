@@ -16,7 +16,7 @@ an old setting stops working). A release moves those lines under its version num
 - Six quest progress and turn-in texts follow the game's current wording in Japanese and no longer show the stale marker.
 
 ### Fixed
-- The English Collector recognises the player's name when the game prints it in capitals, so such a line is recorded without the name and matches on every player's screen.
+- The English Collector recognises the player's name when the game prints it in capitals, so such a line matches its translation on every player's screen instead of being recorded with the name.
 
 ## 0.8.0 - 2026-11-05
 

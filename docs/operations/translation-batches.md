@@ -352,8 +352,9 @@ lines that differ from the client's files kept the client's English.
 One gossip line from #64 was left out of `data/english/` after the intake: the client had printed the player's own
 character name in capitals inside it ("The earth calls to you, …"), the collector's exact-case replacement did not
 recognise it, so the stored text and its key carried the name and could match no other player's screen. The addon
-now records that form as `$N` too ([the collector](../systems/collector.md), step 8), so a later send records the
-line without the name. It is not counted below.
+now treats that form as the name too ([the collector](../systems/collector.md), step 8): the greeting's `$N` form
+already ships with Japanese, so a player who sees it gets that Japanese and nothing is recorded. Should an older
+addon still send such a line, the intake leaves it out (`left out … player_name`). It is not counted below.
 
 | Type | Added | Replaced | Unchanged | Drafted |
 |---|---|---|---|---|

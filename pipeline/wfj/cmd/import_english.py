@@ -454,6 +454,72 @@ def run_collector(a: argparse.Namespace) -> int:
     return import_dump(read_dump(path.read_text(encoding="utf-8-sig")), path.name)
 
 
+_CAPITALS = re.compile(r"(?<![A-Za-z])[A-Z][A-Z']{2,}(?![A-Za-z])")
+
+
+def names_a_shipped_line(en: str, keys: set[str]) -> bool:
+    """Whether a new gossip line is an existing `$N` line with the player's name printed in capitals where the
+    `$N` goes: an addon before 0.9.0 left such a name in the text, so the line could match no other player's
+    screen. Each word in capitals is tried in turn as the name."""
+    for word in {m.group(0) for m in _CAPITALS.finditer(en)}:
+        candidate = re.sub(rf"(?<![A-Za-z]){re.escape(word)}(?![A-Za-z])", "$N", en)
+        if hash_key(normalize_v1(candidate)) in keys:
+            return True
+    return False
+
+
+def _merge_entry(
+    type_: str,
+    en: Any,
+    lines: list[dict[str, Any]],
+    index: dict[tuple[Any, str], int],
+    keys: set[str],
+    c: Counter,
+    notes: dict[str, list[str]],
+) -> None:
+    """Merge one collector entry into the loaded lines of its type (run_collector's rules), counting what
+    happened in `c` and naming the lines a review should look at in `notes`."""
+    line = english_line(en.id_, en.field, en.en, en.hash_, f"collector@{en.build}", npcs=en.npcs)
+    k = (en.id_, en.field)
+    if k not in index:
+        if type_ == "gossip" and names_a_shipped_line(en.en, keys):
+            c["named"] += 1
+            notes["named"].append(f"  gossip {en.id_}")
+            return
+        index[k] = len(lines)
+        lines.append(line)
+        c["added"] += 1
+        return
+    cur = lines[index[k]]
+    if cur["hash"] == en.hash_ and not set(en.npcs) <= set(cur.get("npcs", [])):
+        cur["npcs"] = sorted(set(cur.get("npcs", [])) | set(en.npcs))
+        c["npcs"] += 1
+    elif cur["hash"] == en.hash_:
+        c["unchanged"] += 1
+    elif type_ in ("item", "spell") and "$" in cur["en"]:
+        # an older client's template ("$o1 damage over $d"): the live line has one player's numbers in
+        # it, so it would cost the drafts their codes and ship that player's numbers as the English
+        c["differs"] += 1
+        notes["differs"].append(f"  {type_} {en.id_} {en.field} (kept the template from {cur['src']})")
+    elif source_name(cur) == "collector" or not _same_client(cur["src"], en.build):
+        text = _restore_literals(en.en, cur["en"], en.player)
+        # an earlier dump's line may hold a literal word put back from a stand-in: kept as it is
+        earlier = _earlier_literals(en.en, cur["en"]) if source_name(cur) == "collector" else set()
+        if hash_key(normalize_v1(text)) == cur["hash"] or any(
+            hash_key(normalize_v1(t)) == cur["hash"] for t in earlier
+        ):
+            c["unchanged"] += 1
+            return
+        src = f"collector@{en.build}"
+        h = hash_key(normalize_v1(text))
+        notes["replaced"].append(f"  {type_} {en.id_} {en.field} (was {cur['src']})")
+        lines[index[k]] = english_line(en.id_, en.field, text, h, src, npcs=en.npcs)
+        c["replaced"] += 1
+    else:
+        c["differs"] += 1
+        notes["differs"].append(f"  {type_} {en.id_} {en.field} (kept {cur['src']})")
+
+
 def import_dump(dump: Dump, label: str) -> int:
     """Merge a read dump into `data/english/` (run_collector's rules) and print its table. `label` names
     where it came from (a file name, or an issue) on the summary line. → 0"""
@@ -462,48 +528,14 @@ def import_dump(dump: Dump, label: str) -> int:
     for en in dump.entries:
         by_type.setdefault(en.type_, []).append(en)
     counts: dict[str, Counter] = {}
-    differs: list[str] = []
-    replaced: list[str] = []
+    notes: dict[str, list[str]] = {"differs": [], "replaced": [], "named": []}
     for type_ in sorted(by_type):
         lines = store.load(type_)
         index = {(ln["id"], ln["field"]): i for i, ln in enumerate(lines)}
+        keys = {str(ln["id"]) for ln in lines} if type_ == "gossip" else set()
         c: Counter = Counter()
         for en in by_type[type_]:
-            line = english_line(en.id_, en.field, en.en, en.hash_, f"collector@{en.build}", npcs=en.npcs)
-            k = (en.id_, en.field)
-            if k not in index:
-                index[k] = len(lines)
-                lines.append(line)
-                c["added"] += 1
-                continue
-            cur = lines[index[k]]
-            if cur["hash"] == en.hash_ and not set(en.npcs) <= set(cur.get("npcs", [])):
-                cur["npcs"] = sorted(set(cur.get("npcs", [])) | set(en.npcs))
-                c["npcs"] += 1
-            elif cur["hash"] == en.hash_:
-                c["unchanged"] += 1
-            elif type_ in ("item", "spell") and "$" in cur["en"]:
-                # an older client's template ("$o1 damage over $d"): the live line has one player's numbers in
-                # it, so it would cost the drafts their codes and ship that player's numbers as the English
-                c["differs"] += 1
-                differs.append(f"  {type_} {en.id_} {en.field} (kept the template from {cur['src']})")
-            elif source_name(cur) == "collector" or not _same_client(cur["src"], en.build):
-                text = _restore_literals(en.en, cur["en"], en.player)
-                # an earlier dump's line may hold a literal word put back from a stand-in: kept as it is
-                earlier = _earlier_literals(en.en, cur["en"]) if source_name(cur) == "collector" else set()
-                if hash_key(normalize_v1(text)) == cur["hash"] or any(
-                    hash_key(normalize_v1(t)) == cur["hash"] for t in earlier
-                ):
-                    c["unchanged"] += 1
-                    continue
-                src = f"collector@{en.build}"
-                h = hash_key(normalize_v1(text))
-                replaced.append(f"  {type_} {en.id_} {en.field} (was {cur['src']})")
-                lines[index[k]] = english_line(en.id_, en.field, text, h, src, npcs=en.npcs)
-                c["replaced"] += 1
-            else:
-                c["differs"] += 1
-                differs.append(f"  {type_} {en.id_} {en.field} (kept {cur['src']})")
+            _merge_entry(type_, en, lines, index, keys, c, notes)
         if c["added"] or c["replaced"] or c["npcs"]:
             store.save(type_, lines)
         counts[type_] = c
@@ -516,12 +548,15 @@ def import_dump(dump: Dump, label: str) -> int:
         print(f"gossip lines that gained an NPC: {counts['gossip']['npcs']}")
     rejected = ", ".join(f"{r} {n}" for r, n in sorted(dump.rejected.items())) or "none"
     print(f"rejected: {rejected}")
-    if replaced:  # what a review of the data diff should look at first
+    if notes["replaced"]:  # what a review of the data diff should look at first
         print("replaced:")
-        print("\n".join(replaced))
-    if differs:
+        print("\n".join(notes["replaced"]))
+    if notes["differs"]:
         print("differs from the client's own files (kept):")
-        print("\n".join(differs))
+        print("\n".join(notes["differs"]))
+    if notes["named"]:
+        print("left out (a player's name printed in capitals; the $N line exists):")
+        print("\n".join(notes["named"]))
     return 0
 
 
