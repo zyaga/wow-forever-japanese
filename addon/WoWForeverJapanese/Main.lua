@@ -355,6 +355,9 @@ function WFJ.OnLoad()
     WFJ.ItemText.init({ key = keyOf("book"), -- the book / letter / plaque window
       keys = function(text) return WFJ.Collector.keys(text, collectorPlayer()) end })
   end)
+  -- Dialogue UI's own quest, gossip and book windows, when the player has that addon (ADR-073): nothing without it
+  step("dialogueui", function() WFJ.DialogueUI.init({ key = gossipKey }) end)
+  step("dialogueui.book", function() WFJ.DialogueUIBook.init({ key = keyOf("book") }) end)
   -- The always-visible windows (ADR-016). Each shows its load-time labels now (before the window's first
   -- show, so a tab measures its Japanese), hooks its writers, and registers its help-tooltip owners; the talent
   -- frame, trainer and raid roster set up when their Blizzard addon loads. The never-touch widgets are registered

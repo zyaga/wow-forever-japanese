@@ -169,6 +169,7 @@ describe("UI/DialogueUIBook: Dialogue UI's book window", function()
     DUI.openBook({ PLAIN, "Page two." })
     DUI.flush()
     assert.are.same({ "dialogueui.book page1", "dialogueui.book page2" }, shown)
+    assert.are.equal("DUIBookFrame", WFJ.VoicePlayer.windowOf("dialogueui.book"))
   end)
 
   it("the book fonts get Dialogue UI's own face back when the book closes", function()

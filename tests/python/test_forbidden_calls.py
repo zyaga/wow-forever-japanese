@@ -32,7 +32,9 @@ FRAME_OWNERS = {"Main.lua", "UI/Options.lua", "UI/OptionsWidgets.lua", "UI/KeyCa
                 # the voice panel, its head and its whole-text window script only their own frames
                 "UI/VoicePanel.lua", "UI/VoicePanelHead.lua", "UI/VoicePanelText.lua",
                 # the quest log's play / pause button
-                "UI/VoiceQuestLog.lua"}
+                "UI/VoiceQuestLog.lua",
+                # Dialogue UI's windows: a child frame of ours that hears each window close, and the book's page events
+                "UI/DialogueUI.lua", "UI/DialogueUIBook.lua"}
 
 PATTERNS = {
     "PanelTemplates_SetTab": re.compile(r"\bPanelTemplates_SetTab\s*\("),

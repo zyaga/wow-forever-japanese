@@ -14,10 +14,6 @@ end
 local PLAYER = { name = "Reyn", class = "Hunter", race = "Night Elf" }
 local NPC = "Innkeeper Allison"
 
-local function isJapanese(text)
-  return type(text) == "string" and text:find("[\227-\233]") ~= nil
-end
-
 describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
   local WFJ, data, frame, logs, shown, caught
 
@@ -258,8 +254,9 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
     it("a paragraph FontString that showed Japanese gets Dialogue UI's font back for English", function()
       ship({ gossip = { ["Hello."] = "こんにちは。" } })
       open("GOSSIP_SHOW", { gossip = "Hello." })
+      WFJ.Settings.set("marker.missing", false) -- the marker line itself is Japanese, in the bundled face
       open("GOSSIP_SHOW", { gossip = "Untranslated words." })
-      local fs = frame.fontStringPool.active[2]
+      local fs = frame.fontStringPool.active[1]
       assert.are.equal("Untranslated words.", fs.text)
       assert.are_not.equal(WFJ.Font.PATH, fs.measuredFont[1])
     end)
@@ -326,7 +323,7 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
         attach = function(rec) attached[#attached + 1] = rec; return true end,
         detach = function() detached = detached + 1 end,
       }
-      WFJ.Readings = { lookup = function(kind, id, text)
+      WFJ.Readings = { lookup = function(kind, _, text)
         if kind ~= "gossip" then return nil end
         local at = text:find("精霊", 1, true)
         return at and { { first = at, last = at + 5, word = "精霊", reading = "せいれい" } } or nil
@@ -343,6 +340,22 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       assert.are.equal("精霊が目覚める。", rec.applied)
       assert.are.equal("dialogueui.gossip", rec.surface)
       assert.are.same({ { first = 1, last = 6, word = "精霊", reading = "せいれい" } }, rec.spans)
+    end)
+
+    it("the reading box and card go under Dialogue UI's window, which sits outside UIParent", function()
+      local ui = CreateFrame("Frame", "UIParent")
+      local function parented(f, p)
+        f.parent = p
+        function f:GetParent() return self.parent end
+        return f
+      end
+      parented(frame, nil)
+      local inDui = parented(CreateFrame("Frame"), frame)
+      local inUi = parented(CreateFrame("Frame"), parented(CreateFrame("Frame"), ui))
+      H.loadChunk("UI/Readings.lua", nil, WFJ)
+      local View = WFJ.ReadingView
+      assert.are.equal(frame, View.host(inDui))
+      assert.are.equal(ui, View.host(inUi))
     end)
 
     it("no cards while English shows", function()
@@ -365,7 +378,7 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
 
     it("after repeated errors it stops changing text for the session", function()
       local fail = true
-      load({ lookup = function(kind, id)
+      load({ lookup = function(kind)
         if fail then error("boom") end
         return kind == "gossip" and { ja = "こんにちは。", status = "." } or nil
       end })
@@ -427,7 +440,6 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       WFJ.VoicePlayer.init({})
       assert.are.equal("DUIQuestFrame", WFJ.VoicePlayer.windowOf("dialogueui.detail"))
       assert.are.equal("DUIQuestFrame", WFJ.VoicePlayer.windowOf("dialogueui.gossip"))
-      assert.are.equal("DUIBookFrame", WFJ.VoicePlayer.windowOf("dialogueui.book"))
       assert.are.equal("QuestFrame", WFJ.VoicePlayer.windowOf("questframe.detail"))
       assert.are.equal(6740, WFJ.VoicePlayer.speaker("DUIQuestFrame").creature)
     end)

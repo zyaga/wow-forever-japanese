@@ -38,7 +38,7 @@ local TAIL = {
   "UI/QuestFrame.lua", "UI/QuestMap.lua", "UI/TimeLine.lua", "UI/Tooltip.lua",
   "UI/TooltipUnit.lua", "UI/GameMenu.lua",
   "UI/Gossip.lua",
-  "UI/ItemText.lua", -- every other Forever window (ADR-030)
+  "UI/ItemText.lua", "UI/DialogueUI.lua", "UI/DialogueUIBook.lua", -- every other Forever window (ADR-030)
   "UI/Professions.lua", "UI/Crafting.lua", "UI/CustomerOrders.lua", "UI/QuestTimer.lua", "UI/Trade.lua",
   "UI/Loot.lua", "UI/GroupLoot.lua", "UI/Taxi.lua", "UI/Tabard.lua", "UI/Petition.lua", "UI/GuildRegistrar.lua",
   "UI/DressUp.lua", "UI/CastingBar.lua", "UI/MapLegend.lua", "UI/WorldMap.lua", "UI/MapPins.lua",

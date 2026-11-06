@@ -38,6 +38,9 @@ local WORDS = {
   ["questframe.detail"] = { "Quest", "クエスト" }, ["questframe.progress"] = { "Progress", "途中経過" },
   ["questframe.reward"] = { "Turn-in", "完了" }, ["questframe.greeting"] = { "Greeting", "あいさつ" },
   gossip = { "Greeting", "あいさつ" }, itemtext = { "Book", "本" },
+  ["dialogueui.detail"] = { "Quest", "クエスト" }, ["dialogueui.progress"] = { "Progress", "途中経過" },
+  ["dialogueui.reward"] = { "Turn-in", "完了" }, ["dialogueui.greeting"] = { "Greeting", "あいさつ" },
+  ["dialogueui.gossip"] = { "Greeting", "あいさつ" }, ["dialogueui.book"] = { "Book", "本" },
 }
 local ICON = {
   pause = "Interface\\TimeManager\\PauseButton",

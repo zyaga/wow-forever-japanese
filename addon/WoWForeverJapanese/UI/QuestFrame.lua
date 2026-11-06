@@ -204,6 +204,18 @@ local function showLabels(surface, list, refit)
   return WFJ.Labels.showAll(surface, items, refit)
 end
 
+-- The kind and id a quest field's Japanese is looked up by: the quest's own field, or the text keyed by its English
+-- when the line is not the quest's own (ADR-054): a conditional description (another wording of the quest for this
+-- character), or the progress / turn-in text of a quest Forever repeats under another id with the same text.
+-- → kind, id
+function QuestFrame.fieldSource(id, field, en)
+  local variant = KEYED_FIELDS[field] and type(WFJ.ShippedGossipKey) == "function"
+    and not (type(WFJ.IsQuestFieldEnglish) == "function" and WFJ.IsQuestFieldEnglish(id, field, en))
+    and WFJ.ShippedGossipKey(en)
+  if variant then return "gossip", variant end
+  return "quest." .. field, id
+end
+
 -- Hands every field of one panel to Render. The other panels' records are forgotten first (their widgets are
 -- hidden and may be rewritten by the client before we see them again). Returns the number of records shown.
 function QuestFrame.showPanel(panelName)
@@ -222,12 +234,8 @@ function QuestFrame.showPanel(panelName)
     local field, widgetKey, getter = spec[1], spec[2], spec[3]
     local fs = Compat.get(DECLARE, widgetKey)
     local en = getter()
-    -- text keyed by its English, used only when the line is not the quest's own (ADR-054): a conditional
-    -- description (another wording of the quest for this character), or the progress / turn-in text of a quest
-    -- Forever repeats under another id with the same text
-    local variant = KEYED_FIELDS[field] and type(WFJ.ShippedGossipKey) == "function"
-      and not (type(WFJ.IsQuestFieldEnglish) == "function" and WFJ.IsQuestFieldEnglish(id, field, en))
-      and WFJ.ShippedGossipKey(en)
+    local kind, keyId = QuestFrame.fieldSource(id, field, en)
+    local variant = kind == "gossip" and keyId
     -- The API English is the truth even when the widget is decorated: record before the equality guard. A
     -- conditional description is never recorded as the quest's description: other characters see the quest's own
     -- wording. A repeated quest's progress / turn-in text is this quest's own, and is recorded.

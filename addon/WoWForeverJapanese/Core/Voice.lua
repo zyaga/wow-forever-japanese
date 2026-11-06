@@ -22,6 +22,17 @@ Voice.KINDS = {
   ["questframe.greeting"] = { greeting = "voice.greeting" },
   gossip = { greeting = "voice.greeting" },
   itemtext = { page = "voice.books" },
+  -- the same lines in Dialogue UI's windows (UI/DialogueUI, UI/DialogueUIBook); its book shows every page at once,
+  -- so each page is its own record ("page1", "page2", …)
+  ["dialogueui.detail"] = { description = "voice.offer" },
+  ["dialogueui.progress"] = { progress = "voice.progress" },
+  ["dialogueui.reward"] = { completion = "voice.turnin" },
+  ["dialogueui.greeting"] = { greeting = "voice.greeting" },
+  ["dialogueui.gossip"] = { greeting = "voice.greeting" },
+  ["dialogueui.book"] = setmetatable({}, { __index = function(_, recKey)
+    if type(recKey) == "string" and recKey:match("^page%d+$") then return "voice.books" end
+    return nil
+  end }),
 }
 
 -- pack key → { file, jaHash, seconds, folder, v = { [voice] = { file, seconds } } }; nil until a pack registers

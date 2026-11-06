@@ -1834,6 +1834,8 @@ UI\TooltipUnit.lua
 UI\GameMenu.lua
 UI\Gossip.lua
 UI\ItemText.lua
+UI\DialogueUI.lua
+UI\DialogueUIBook.lua
 UI\Professions.lua
 UI\Crafting.lua
 UI\CustomerOrders.lua

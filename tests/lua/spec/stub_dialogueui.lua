@@ -41,6 +41,9 @@ local function fontObject(name, path, size)
   return obj
 end
 
+-- where a span of characters sits: one fixed rectangle is enough for these specs
+local function AREA() return { { left = 0, bottom = 0, width = 10, height = 10 } } end
+
 -- Every FontString a frame's pool hands out, with what it held and the font it wore when the frame measured it.
 local function pool(frame)
   local p = { all = {}, active = {} }
@@ -52,8 +55,8 @@ local function pool(frame)
     if not fs then
       fs = Stub.fontString("")
       fs.parent = frame
-      function fs:GetParent() return self.parent end
-      function fs:CalculateScreenAreaFromCharacterSpan() return { { left = 0, bottom = 0, width = 10, height = 10 } } end
+      fs.GetParent = function(x) return x.parent end
+      fs.CalculateScreenAreaFromCharacterSpan = AREA
       p.all[#p.all + 1] = fs
     end
     fs.inUse = true
@@ -292,7 +295,7 @@ local function format(raw, store)
     first = false
   end
   if raw:find("<HTML>", 1, true) then
-    for tag, body in raw:gmatch("<(%a%d?)[^>]*>(.-)</%a%d?>") do
+    for tag, body in raw:gmatch("<(%a+%d?)>([^<]*)</%a+%d?>") do
       tag = tag:lower()
       if tag == "p" or tag == "h1" then put(tag, body) end
     end
@@ -316,16 +319,16 @@ function DUI.installBookFrame(opts)
     if self.ScrollFrame then return end
     local sf = { objects = {} }
     self.ScrollFrame = sf
-    function sf:SetContent(content) self.content = content end
-    function sf:SetObjectData(obj, data, contentIndex)
+    sf.SetContent = function(x, content) x.content = content end
+    sf.SetObjectData = function(x, obj, data, contentIndex)
       obj = obj or Stub.fontString("")
       obj.parent = f
-      function obj:GetParent() return self.parent end
-      function obj:CalculateScreenAreaFromCharacterSpan() return { { left = 0, bottom = 0, width = 10, height = 10 } } end
+      obj.GetParent = function(o) return o.parent end
+      obj.CalculateScreenAreaFromCharacterSpan = AREA
       obj:SetFontObject(_G[TAG_FONTS[data.fontTag] or TAG_FONTS.p])
       obj:SetText(data.text)
       obj.contentIndex = contentIndex
-      self.objects[contentIndex] = obj
+      x.objects[contentIndex] = obj
       return obj
     end
   end

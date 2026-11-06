@@ -106,6 +106,7 @@ function Popup.show(anchor, x, y, word, gloss, size, hint)
     hintFs:Hide()
   end
   f:SetSize(width, height)
+  if WFJ.ReadingView and WFJ.ReadingView.reparent then WFJ.ReadingView.reparent(f, anchor) end
   f:ClearAllPoints()
   f:SetPoint("BOTTOM", anchor, "BOTTOMLEFT", x, y)
   f.owner = anchor
