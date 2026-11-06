@@ -342,6 +342,23 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
 
+### 1.60.1.70790, a player's collector send (2026-11-06)
+
+Not a re-pull: one player's collector send, issue #70 (97 entries from build 1.60.1.70790, addon 0.9.0), with the
+Permission box ticked and checked `collector-ok` by the `collector-check` workflow, read with
+`make collector-intake ISSUE=70`. Nothing was rejected. A second intake run printed every line as unchanged. Item (8)
+and spell (1) lines that differ from the client's files kept the client's English.
+
+| Type | Added | Replaced | Unchanged | Drafted |
+|---|---|---|---|---|
+| gossip | 18 (the Durotar Supply and Logistics quartermaster on contracts, lost orders, Waylaid Supply Crates and Craftsman's Writs, 7 lines, 4 of them the player's choices; Cairne Bloodhoof welcoming the Windshapers to Mulgore, 2 lines, one the player's greeting; the transmogrifier's two choices; three Orgrimmar shopkeepers; a trainer; a short line with no NPC id) | 0 | 0 | 18, with word lists |
+| quest | 9 (79095 and 79096 progress and completion, with the same English as their sister library quests, so they take that Japanese; 97242 and 97275 progress and completion; 97907 completion) | 2 completion texts: forever-vo's wording replaced by the game's (96604, 97249) | 0 | 9 new, with word lists; the 2 machine lines redrafted and re-verified with `REVERIFY=1`: 97249 kept unchanged (only line breaks and a hyphen moved), 96604 rewritten ("why don't you go and learn" became "go learn") |
+| item | 1 (274021, a "Use:" line for an appearance) | 1 (20221: Classic Era's English replaced by the game's, which shows "Use:" alone) | 0 | 2, in the `使用：` form. The row for 274021 is on the not-names list for "Account" (the account collection, an interface word, not a name): `pipeline/translation_not_names.tsv` |
+| unit (NPC names) | 41 | 0 | 16 | none (names stay English) |
+
+Voice: not made yet in this round; the maintainer holds audio until he asks for it. The speakers report and the voice
+files follow in the same pull request.
+
 ### 1.60.1.70790, two players' collector sends (2026-11-06)
 
 Not a re-pull: two players' collector sends, issues #63 (46 entries, addon 0.7.1) and #64 (87 entries, addon 0.8.0),

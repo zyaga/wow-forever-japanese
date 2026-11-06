@@ -9,6 +9,12 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Added
+- Japanese for eighteen more NPC lines, from the Durotar Supply and Logistics quartermaster in Orgrimmar, Cairne Bloodhoof welcoming the Windshapers to Thunder Bluff, the transmogrifier, three Orgrimmar shopkeepers and a trainer, and for nine quest progress and turn-in texts (two library book turn-ins, two Orgrimmar herb quests and a camping quest), with word cards, from a player's English Collector send. Two item tooltips have Japanese too.
+
+### Changed
+- Two quest turn-in texts follow the game's current wording in Japanese and no longer show the stale marker.
+
 ## 0.11.0 - 2026-11-08
 
 ### Fixed
