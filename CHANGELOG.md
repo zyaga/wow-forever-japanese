@@ -18,7 +18,6 @@ an old setting stops working). A release moves those lines under its version num
 
 ### Fixed
 - The English Collector recognises the player's name when the game prints it in capitals, so such a line matches its translation on every player's screen instead of being recorded with the name.
-### Fixed
 - The auction house no longer throws a Lua error when you open it or switch to a list you have not opened yet, and its Japanese labels, column headers and rows now show on every tab, including a list's first opening.
 
 ## 0.8.0 - 2026-11-05
