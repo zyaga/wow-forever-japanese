@@ -250,11 +250,16 @@ def move_media(folder: Path, version: str) -> Path | None:
     return target
 
 
+def section_text(section: Section) -> str:
+    """One section as changelog text, its heading first: a version's release notes."""
+    return render(Changelog([], [section])).lstrip("\n")
+
+
 def notes(log: Changelog, version: str) -> str:
     section = log.find(version)
     if section is None:
         raise ReleaseError(f"{CHANGELOG} has no section for {version}")
-    return render(Changelog([], [section])).lstrip("\n")
+    return section_text(section)
 
 
 # ── the pull-request gate ─────────────────────────────────────────────────────
@@ -312,30 +317,62 @@ def _show(root: Path, ref: str, path: str) -> str | None:
     return r.stdout if r.returncode == 0 else None
 
 
-def _root() -> Path:
+def repo_root() -> Path:
     return Path(_git(Path.cwd(), "rev-parse", "--show-toplevel").strip())
 
 
-def _read(root: Path) -> Changelog:
+def read_changelog(root: Path) -> Changelog:
     path = root / CHANGELOG
     if not path.is_file():
         raise ReleaseError(f"{CHANGELOG} is missing")
     return parse(path.read_text(encoding="utf-8"))
 
 
+def tags(root: Path) -> list[str]:
+    """The release tags, `v*`."""
+    return _git(root, "tag", "--list", "v*").split()
+
+
+def plan_release(
+    root: Path, override: str | None = None, allow_empty: bool = False
+) -> tuple[str, bool, bool]:
+    """The release a run would make, the rule of `wfj release next-version`: (version, resume, addon).
+    resume: HEAD already carries the version's tag, so a release whose publish failed is being re-run.
+    addon False (with allow_empty only): nothing under Unreleased, no addon release, and the version is ""."""
+    log = read_changelog(root)
+    on_head = [t for t in _git(root, "tag", "--points-at", "HEAD").split() if t.startswith("v")]
+    if override and f"v{override}" in on_head:
+        if log.find(override) is None:
+            raise ReleaseError(f"v{override} is on HEAD but {CHANGELOG} has no section for it")
+        return override, True, True
+    if allow_empty and not override and not lint(log) and not log.unreleased.entries():
+        return "", False, False
+    if on_head and not override:
+        raise ReleaseError(
+            f"HEAD is already released as {on_head[0]}: to finish that release, run again with "
+            f"version {on_head[0][1:]}; otherwise merge a change first"
+        )
+    released = tags(root)
+    last = latest(released)
+    if last is not None:
+        at_tag = _show(root, f"v{last}", CHANGELOG)
+        problems = released_drift(log, parse(at_tag), f"v{last}") if at_tag is not None else []
+        if problems:
+            raise ReleaseError("; ".join(problems))
+    return next_version(log, released, override), False, True
+
+
 def _changelog(root: Path, version: str, date: str, notes_path: Path, media: Path | None) -> None:
-    """The `changelog` action: cut the changelog, write the notes, and give the waiting media its version."""
+    """The `changelog` action: cut the changelog, give the waiting media its version, then write. Every
+    refusal (a version already in the changelog, a media folder already in place) comes before a write."""
     version_key(version)
     if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", date):
         raise ReleaseError(f"'{date}' is not a YYYY-MM-DD date")
-    folder = root / media if media else None
-    if folder and (folder / "next").is_dir() and (folder / version).exists():
-        raise ReleaseError(f"{folder / version} already exists: the media of {version} is in place")
-    log = cut(_read(root), version, date)
+    log = cut(read_changelog(root), version, date)
+    moved = move_media(root / media, version) if media else None
     (root / CHANGELOG).write_text(render(log), encoding="utf-8")
     notes_path.write_text(notes(log, version), encoding="utf-8")
     print(f"release: {CHANGELOG} cut for {version}")
-    moved = move_media(folder, version) if folder else None
     if moved:
         print(f"release: media moved to {moved.relative_to(root)}")
 
@@ -357,37 +394,15 @@ def run(argv: Sequence[str]) -> int:
     gt = sub.add_parser("changelog-gate", help="the pull-request changelog check")
     gt.add_argument("--base", required=True, help="the base ref, e.g. origin/main")
     a = p.parse_args(argv)
-    root = _root()
+    root = repo_root()
     try:
         if a.action == "next-version":
-            log = _read(root)
-            on_head = [t for t in _git(root, "tag", "--points-at", "HEAD").split() if t.startswith("v")]
-            if a.version and f"v{a.version}" in on_head:
-                if log.find(a.version) is None:
-                    raise ReleaseError(f"v{a.version} is on HEAD but {CHANGELOG} has no section for it")
-                print(f"version={a.version}\nresume=true\naddon=true")
-                return 0
-            if a.allow_empty and not a.version and not lint(log) and not log.unreleased.entries():
-                print("version=\nresume=false\naddon=false")
-                return 0
-            if on_head and not a.version:
-                raise ReleaseError(
-                    f"HEAD is already released as {on_head[0]}: to finish that release, run again with "
-                    f"version {on_head[0][1:]}; otherwise merge a change first"
-                )
-            tags = _git(root, "tag", "--list", "v*").split()
-            last = latest(tags)
-            if last is not None:
-                at_tag = _show(root, f"v{last}", CHANGELOG)
-                problems = released_drift(log, parse(at_tag), f"v{last}") if at_tag is not None else []
-                if problems:
-                    raise ReleaseError("; ".join(problems))
-            version = next_version(log, tags, a.version)
-            print(f"version={version}\nresume=false\naddon=true")
+            version, resume, addon = plan_release(root, a.version, a.allow_empty)
+            print(f"version={version}\nresume={str(resume).lower()}\naddon={str(addon).lower()}")
         elif a.action == "changelog":
             _changelog(root, a.version, a.date, a.notes, a.media)
         elif a.action == "notes":
-            a.notes.write_text(notes(_read(root), a.version), encoding="utf-8")
+            a.notes.write_text(notes(read_changelog(root), a.version), encoding="utf-8")
         else:
             # --no-renames: moving a file out of addon/ or data/ is a change to what ships. The base text is
             # read at the merge-base, the same point the file list is diffed from.

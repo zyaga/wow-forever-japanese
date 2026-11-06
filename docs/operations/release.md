@@ -101,7 +101,7 @@ Every addon release posts itself to the project's Discord server, from the run t
 
 **The preview.** Before the first real post, and whenever the media or the wording is in doubt: **Actions → Discord preview → Run workflow**, branch `main`. It posts what the next release would look like (the version by the [version rule](#versioning), the lines under `## Unreleased`, the files in `next/`), with "Preview of the next release post." in front of the content line, to the private channel behind `DISCORD_TEST_WEBHOOK_URL`. Nothing is released, committed or changed. With `## Unreleased` empty the preview is headed `next` and has no notes.
 
-**A local look.** `wfj announce --version X.Y.Z --notes PATH --media DIR --dry-run` prints the files it would attach and the payload as JSON, and sends nothing; `wfj announce --preview --media docs/releases --dry-run` does the same for the next release. The webhook URL is read from the `DISCORD_WEBHOOK_URL` environment variable and nowhere else: never an argument, never printed, never part of an error. An error carries Discord's status code and the start of its answer only.
+**A local look.** `wfj announce --version X.Y.Z --notes PATH --media DIR --dry-run` prints the files it would attach and the payload as JSON, and sends nothing; `wfj announce --preview --media docs/releases/next --dry-run` does the same for the next release. The webhook URL is read from the `DISCORD_WEBHOOK_URL` environment variable and nowhere else: never an argument, never printed, never part of an error. An error carries Discord's status code and the start of its answer only.
 
 ## Every pull request
 

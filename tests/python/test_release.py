@@ -1,8 +1,6 @@
 """wfj release: the version rule, the changelog cut, notes, and the pull-request changelog gate
 (docs/operations/release.md)."""
 
-import subprocess
-from pathlib import Path
 
 import pytest
 
@@ -226,29 +224,18 @@ def test_gate_first_changelog_and_missing_changelog():
 # ── the CLI over a real git repo ──────────────────────────────────────────────
 
 
-def _git(repo: Path, *args: str) -> str:
-    return subprocess.run(
-        ["git", "-c", "user.name=t", "-c", "user.email=t@t", *args], cwd=repo, check=True, capture_output=True, text=True
-    ).stdout
-
-
 @pytest.fixture
-def repo(tmp_path, monkeypatch):
-    _git(tmp_path, "init", "-q", "-b", "main")
-    (tmp_path / "CHANGELOG.md").write_text(HEAD + "## Unreleased\n\n" + FIXED, encoding="utf-8")
-    _git(tmp_path, "add", ".")
-    _git(tmp_path, "commit", "-qm", "init")
-    monkeypatch.chdir(tmp_path)
-    return tmp_path
+def repo(git_repo):
+    return git_repo({"CHANGELOG.md": HEAD + "## Unreleased\n\n" + FIXED})
 
 
-def test_cli_next_version_changelog_and_resume(repo, capsys):
+def test_cli_next_version_changelog_and_resume(repo, git, capsys):
     assert release.run(["next-version"]) == 0
     assert capsys.readouterr().out == "version=0.1.0-alpha.1\nresume=false\naddon=true\n"
     assert release.run(["changelog", "--version", "0.1.0-alpha.1", "--date", "2026-10-01", "--notes", "notes.md"]) == 0
     assert (repo / "notes.md").read_text(encoding="utf-8").startswith("## 0.1.0-alpha.1 - 2026-10-01\n")
-    _git(repo, "commit", "-qam", "Release 0.1.0-alpha.1")
-    _git(repo, "tag", "-a", "v0.1.0-alpha.1", "-m", "Release 0.1.0-alpha.1")
+    git(repo, "commit", "-qam", "Release 0.1.0-alpha.1")
+    git(repo, "tag", "-a", "v0.1.0-alpha.1", "-m", "Release 0.1.0-alpha.1")
     capsys.readouterr()
     # a re-run of that release (its publish failed): HEAD carries the tag → resume, even with Unreleased empty
     assert release.run(["next-version", "--version", "0.1.0-alpha.1"]) == 0
@@ -260,41 +247,41 @@ def test_cli_next_version_changelog_and_resume(repo, capsys):
     assert "HEAD is already released as v0.1.0-alpha.1" in capsys.readouterr().err
 
 
-def test_cli_allow_empty_means_no_addon_release(repo, capsys):
+def test_cli_allow_empty_means_no_addon_release(repo, git, capsys):
     """The Release workflow passes --allow-empty: with nothing under Unreleased it releases only the voice packs
     that changed, even on a HEAD that is already released."""
     release.run(["changelog", "--version", "0.1.0-alpha.1", "--date", "2026-10-01", "--notes", "n.md"])
-    _git(repo, "commit", "-qam", "Release 0.1.0-alpha.1")
-    _git(repo, "tag", "-a", "v0.1.0-alpha.1", "-m", "r")
+    git(repo, "commit", "-qam", "Release 0.1.0-alpha.1")
+    git(repo, "tag", "-a", "v0.1.0-alpha.1", "-m", "r")
     capsys.readouterr()
     assert release.run(["next-version", "--allow-empty"]) == 0
     assert capsys.readouterr().out == "version=\nresume=false\naddon=false\n"
     # a line under Unreleased: an addon release as before
     text = (repo / "CHANGELOG.md").read_text(encoding="utf-8")
     (repo / "CHANGELOG.md").write_text(text.replace("## Unreleased\n", "## Unreleased\n\n### Fixed\n- A fix.\n", 1))
-    _git(repo, "commit", "-qam", "fix")
+    git(repo, "commit", "-qam", "fix")
     assert release.run(["next-version", "--allow-empty"]) == 0
     assert capsys.readouterr().out == "version=0.1.0-alpha.2\nresume=false\naddon=true\n"
 
 
-def test_cli_empty_version_on_a_released_head_points_at_resume(repo, capsys):
+def test_cli_empty_version_on_a_released_head_points_at_resume(repo, git, capsys):
     release.run(["changelog", "--version", "0.1.0-alpha.1", "--date", "2026-10-01", "--notes", "n.md"])
-    _git(repo, "commit", "-qam", "Release 0.1.0-alpha.1")
-    _git(repo, "tag", "-a", "v0.1.0-alpha.1", "-m", "r")
+    git(repo, "commit", "-qam", "Release 0.1.0-alpha.1")
+    git(repo, "tag", "-a", "v0.1.0-alpha.1", "-m", "r")
     capsys.readouterr()
     assert release.run(["next-version"]) == 1
     assert "HEAD is already released as v0.1.0-alpha.1: to finish that release, run again with version 0.1.0-alpha.1" \
         in capsys.readouterr().err
 
 
-def test_cli_refuses_lines_merged_into_a_released_section(repo, capsys):
+def test_cli_refuses_lines_merged_into_a_released_section(repo, git, capsys):
     release.run(["changelog", "--version", "0.1.0-alpha.1", "--date", "2026-10-01", "--notes", "n.md"])
-    _git(repo, "commit", "-qam", "Release 0.1.0-alpha.1")
-    _git(repo, "tag", "-a", "v0.1.0-alpha.1", "-m", "r")
+    git(repo, "commit", "-qam", "Release 0.1.0-alpha.1")
+    git(repo, "tag", "-a", "v0.1.0-alpha.1", "-m", "r")
     # a pull request that branched before the release merges cleanly into the released section
     text = (repo / "CHANGELOG.md").read_text(encoding="utf-8") + "- A line from a late merge.\n"
     (repo / "CHANGELOG.md").write_text(text, encoding="utf-8")
-    _git(repo, "commit", "-qam", "late merge")
+    git(repo, "commit", "-qam", "late merge")
     capsys.readouterr()
     assert release.run(["next-version"]) == 1
     assert "released sections of CHANGELOG.md differ from v0.1.0-alpha.1" in capsys.readouterr().err
@@ -305,44 +292,44 @@ def test_cli_changelog_refuses_a_bad_date(repo, capsys):
     assert "not a YYYY-MM-DD date" in capsys.readouterr().err
 
 
-def test_cli_changelog_gate(repo, capsys):
-    _git(repo, "checkout", "-qb", "change")
+def test_cli_changelog_gate(repo, git, capsys):
+    git(repo, "checkout", "-qb", "change")
     (repo / "addon").mkdir()
     (repo / "addon" / "x.lua").write_text("-- x\n", encoding="utf-8")
-    _git(repo, "add", ".")
-    _git(repo, "commit", "-qm", "addon change")
+    git(repo, "add", ".")
+    git(repo, "commit", "-qm", "addon change")
     assert release.run(["changelog-gate", "--base", "main"]) == 1
     assert "add a line for players" in capsys.readouterr().err
     text = (repo / "CHANGELOG.md").read_text(encoding="utf-8") + "- The x window in Japanese.\n"
     (repo / "CHANGELOG.md").write_text(text, encoding="utf-8")
-    _git(repo, "commit", "-qam", "changelog line")
+    git(repo, "commit", "-qam", "changelog line")
     assert release.run(["changelog-gate", "--base", "main"]) == 0
     assert "changelog-gate: ok" in capsys.readouterr().out
 
 
-def test_cli_gate_reads_the_base_at_the_merge_base(repo, capsys):
+def test_cli_gate_reads_the_base_at_the_merge_base(repo, git, capsys):
     """A release lands on main after a pull request branched: the PR edited no released section."""
-    _git(repo, "checkout", "-qb", "change")
+    git(repo, "checkout", "-qb", "change")
     (repo / "docs.md").write_text("docs\n", encoding="utf-8")
-    _git(repo, "add", ".")
-    _git(repo, "commit", "-qm", "docs change")
-    _git(repo, "checkout", "-q", "main")
+    git(repo, "add", ".")
+    git(repo, "commit", "-qm", "docs change")
+    git(repo, "checkout", "-q", "main")
     release.run(["changelog", "--version", "0.1.0-alpha.1", "--date", "2026-10-01", "--notes", "n.md"])
-    _git(repo, "commit", "-qam", "Release 0.1.0-alpha.1")
-    _git(repo, "checkout", "-q", "change")
+    git(repo, "commit", "-qam", "Release 0.1.0-alpha.1")
+    git(repo, "checkout", "-q", "change")
     capsys.readouterr()
     assert release.run(["changelog-gate", "--base", "main"]) == 0, capsys.readouterr().err
 
 
-def test_cli_gate_counts_a_file_moved_out_of_addon(repo, capsys):
+def test_cli_gate_counts_a_file_moved_out_of_addon(repo, git, capsys):
     (repo / "addon").mkdir()
     (repo / "addon" / "x.lua").write_text("-- a file long enough to be seen as a rename\n" * 5, encoding="utf-8")
-    _git(repo, "add", ".")
-    _git(repo, "commit", "-qm", "addon file")
-    _git(repo, "checkout", "-qb", "move")
+    git(repo, "add", ".")
+    git(repo, "commit", "-qm", "addon file")
+    git(repo, "checkout", "-qb", "move")
     (repo / "docs").mkdir()
-    _git(repo, "mv", "addon/x.lua", "docs/x.lua")
-    _git(repo, "commit", "-qm", "move out of addon")
+    git(repo, "mv", "addon/x.lua", "docs/x.lua")
+    git(repo, "commit", "-qm", "move out of addon")
     capsys.readouterr()
     assert release.run(["changelog-gate", "--base", "main"]) == 1
     assert "add a line for players" in capsys.readouterr().err

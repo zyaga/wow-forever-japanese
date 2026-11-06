@@ -42,6 +42,6 @@ jobs:
           cache-dependency-path: pipeline/pyproject.toml
       - run: pip install -e pipeline
       - name: Post the preview
-        run: wfj announce --preview --media docs/releases
+        run: wfj announce --preview --media docs/releases/next
         env:
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_TEST_WEBHOOK_URL }}

@@ -380,12 +380,10 @@ def test_release_posts_to_discord_after_publish(root, release):
     assert "continue-on-error: true" in announce  # the zip is live by then: Discord never fails a release
     assert "DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}" in announce
     assert 'wfj announce --version "$VERSION" --notes .release-notes.md --media "docs/releases/$VERSION"' in announce
-    assert "if: needs.plan.outputs.discord == 'true'" in announce
+    assert '[ -z "$DISCORD_WEBHOOK_URL" ]' in announce and "::notice::" in announce  # no secret: a notice, no post
     _, changelog = _step_named(job, "Changelog, commit and tag")
     assert "--media docs/releases" in changelog and "-- CHANGELOG.md docs/releases" in changelog
-    plan = _block(release, "plan", 2)
-    assert "DISCORD_SET: ${{ secrets.DISCORD_WEBHOOK_URL != '' }}" in plan
-    assert "discord: ${{ env.DISCORD_SET }}" in _block(plan, "outputs", 4)
+    assert "DISCORD" not in _block(release, "plan", 2)
     for name, text in _workflows(root).items():
         if name not in ("release.yml", "discord-preview.yml"):
             assert "DISCORD" not in text, name
@@ -398,7 +396,7 @@ def test_preview_workflow_posts_the_next_release_to_the_test_webhook(root):
     jobs = _block(text, "jobs")
     assert _keys(jobs, 2) == ["preview"]
     (step,) = [s for s in _steps(_block(text, "preview", 2)) if "wfj announce" in s]
-    assert "wfj announce --preview --media docs/releases" in step
+    assert "wfj announce --preview --media docs/releases/next" in step
     assert "DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_TEST_WEBHOOK_URL }}" in step
     assert "secrets.DISCORD_WEBHOOK_URL" not in text  # the live channel never gets a preview
     assert "if: github.ref != 'refs/heads/main'" in text
