@@ -59,7 +59,8 @@ def media_files(folder: Path | None) -> list[Path]:
         if not path.is_file():
             raise AnnounceError(f"{path.name}: only files go in the media folder, not folders")
         if not FILE_NAME.match(path.name):
-            raise AnnounceError(f"{path.name!r}: a media file name uses letters, digits, dots, dashes, underscores")
+            plain = "letters, digits, dots, dashes and underscores"
+            raise AnnounceError(f"{path.name!r}: a media file name uses {plain} only")
         if discord.content_type(path.name) is None:
             allowed = ", ".join(sorted(discord.CONTENT_TYPES))
             raise AnnounceError(f"{path.name}: Discord does not show this type inline (allowed: {allowed})")
