@@ -9,6 +9,9 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Changed
+- Every voice line is new: NPCs speak in Japanese voices modelled on their own voices in the game (each NPC has the voice the game gives it, so a male NPC is never heard in a woman's voice), the narrator and book pages in one storyteller voice, and your character's error lines in voices modelled on your race's own. All lines play at one loudness.
+
 ## 0.10.0 - 2026-11-06
 
 ### Added

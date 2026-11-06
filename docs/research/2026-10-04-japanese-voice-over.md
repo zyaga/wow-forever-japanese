@@ -1,6 +1,8 @@
 # Research: Japanese voice over from the shipped text
 
 > A bounded spike, 2026-10-04 to 2026-10-06. Can the addon read its Japanese aloud for quests and gossip, the way the forever-vo addon does for English? Samples were made locally with three engines and judged by ear by the maintainer. Nothing here ships; the build is its own decision.
+>
+> **Superseded in part (2026-11-06):** the stance below that the project will not copy the game's recordings is replaced by [ADR-074](../adr/074-voices-cloned-from-the-games-npc-voice-sets.md): NPC voices are now cloned from the game's own NPC voice sets.
 
 - **Date:** 2026-10-06
 - **Question:** Can quest and gossip text be voiced in Japanese from the text the addon already ships, at a quality worth hearing, in a time and size the project can carry, and played back on the Forever client?

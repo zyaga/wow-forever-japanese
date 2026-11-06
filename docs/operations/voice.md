@@ -2,14 +2,15 @@
 
 ## Goal
 
-Make the Japanese voice from the Japanese the addon ships, copy it into the Forever client for a test, and release it. The voice ships as the **Voice entry**, `WoWForeverJapanese_Voice` (no audio; on CurseForge it requires every pack, so the app installs them all from one click), and seven **packs** named for what they hold: `WoWForeverJapanese_VoiceLevels1to10` through `…Levels51to60`, and `…Other`. How it works: [Voice over](../systems/voice.md); decisions: [ADR-061](../adr/061-voice-over-from-a-separate-pack.md), ADR-062. The audio lives in its own repository, `zyaga/wow-forever-japanese-voice` (private for now), whose checkout is the audio store, `build/voice/` in the main checkout: every recording, with every older one in its history. This repository commits the audio record, `data/voice/audio.jsonl`, and the audio commit that goes with its text, `pipeline/voice-audio-commit.txt`. The packs are build output under `build/voice-pack/`.
+Make the Japanese voice from the Japanese the addon ships, copy it into the Forever client for a test, and release it. The voice ships as the **Voice entry**, `WoWForeverJapanese_Voice` (no audio; on CurseForge it requires every pack, so the app installs them all from one click), and seven **packs** named for what they hold: `WoWForeverJapanese_VoiceLevels1to10` through `…Levels51to60`, and `…Other`. How it works: [Voice over](../systems/voice.md); decisions: [ADR-061](../adr/061-voice-over-from-a-separate-pack.md), ADR-062, [ADR-074](../adr/074-voices-cloned-from-the-games-npc-voice-sets.md) (voices cloned from the game's NPC voice sets). The audio lives in its own repository, `zyaga/wow-forever-japanese-voice` (private for now), whose checkout is the audio store, `build/voice/` in the main checkout: every recording, with every older one in its history. This repository commits the audio record, `data/voice/audio.jsonl`, and the audio commit that goes with its text, `pipeline/voice-audio-commit.txt`. The packs are build output under `build/voice-pack/`.
 
 ## Prerequisites
 
-- **AivisSpeech Engine 1.2.0** (the Apple Silicon build), unpacked once into `build/aivis/` (gitignored) of the main checkout, with the two voice models installed in it: 阿井田 茂 (male and narrator, style *Calm*) and morioki (female). Both are under the Aivis Common Model License 1.0. `wfj voice generate` starts and stops it (below).
+- **No AivisSpeech.** Every voice line is a cloned game voice (ADR-074); the AivisSpeech Engine in `build/aivis/` is no longer started by any voice run. The Modal client (`make voice-modal-setup`, then one `modal token new`) and, for local runs, the Qwen3-TTS environment (`make voice-qwen-setup`) are what a run needs.
 - **`lame`** on the `PATH` (WAV to MP3).
 - The pinned VMaNGOS database (`VMANGOS_DB`, commit `VMANGOS_SHA` in the Makefile), as for `make import-english`.
 - The repo venv (`.venv`); `make` uses it when it exists, or pass `PY=<repo>/.venv/bin/python`.
+- For the cloned voices of a switched pack, the Qwen3-TTS environment and the set clips ([Cloned game voice sets](#cloned-game-voice-sets)).
 
 ## Steps
 
@@ -27,9 +28,87 @@ There is no engine to start by hand. When `wfj voice generate` (behind `make voi
 
 ## Configuration
 
-`pipeline/voice.toml`: the engine's address (`http://127.0.0.1:10101`), the pace (`speed_scale = 0.9`), the `narrator` and `book_narrator` voices, the **roster** (one table per usable voice: its model on AivisHub, the engine's style id from `GET /speakers`, its licence, what it fits, and optional pitch, intonation and speed) and the **cast rows** (which roster voices read each kind of speaker: race or creature family, gender, age, archetype), plus the credits written into the packs' READMEs. `data/voice/overrides.jsonl` pins a voice for a single creature. The pace is fixed when a file is made: the client has no playback rate, so changing it means making every file again. Recasting one cast row remakes only the lines of the creatures it casts.
+`pipeline/voice.toml`: the engine's address (`http://127.0.0.1:10101`), the pace (`speed_scale = 0.9`), the `narrator` and `book_narrator` voices, the **roster** (one table per usable voice: its model on AivisHub, the engine's style id from `GET /speakers`, its licence, what it fits, and optional pitch, intonation and speed) and the **cast rows** (which roster voices read each kind of speaker: race or creature family, gender, age, archetype), plus the credits written into the packs' READMEs (`engine` for AivisSpeech, `clone_engine` for Qwen3-TTS). For the cloned voices it also holds `qwen` (the Qwen3-TTS environment's Python, relative to the main checkout), `cloned_packs` (the pack folders whose NPCs speak in their game voice set) and one `[sets.<set>]` table per game voice set with `pick` (`voice`, `full` or `keep`) and `decided`. `data/voice/overrides.jsonl` pins a voice for a single creature. The pace is fixed when a file is made: the client has no playback rate, so changing it means making every file again. Recasting one cast row remakes only the lines of the creatures it casts.
 
 The audio format is fixed in `wfj voice generate`: MP3, mono, 22.05 kHz, 32 kbps constant bitrate, with no Xing / Info header (`lame -t`).
+
+## Cloned game voice sets
+
+NPCs of a switched pack speak in a voice cloned with Qwen3-TTS from their own voice set in the game ([Voice over → Cloned game voice sets](../systems/voice.md#cloned-game-voice-sets)). Levels 1-10 is the first pack switched. All of this runs on the maintainer's computer, and the game's audio never leaves it.
+
+### One-time setup
+
+Run these from the main checkout. Each writes under `build/` (gitignored) except the two data files, which are committed.
+
+| # | Command | What it does |
+|---|---|---|
+| 1 | `make voice-qwen-setup` | Makes `build/qwen/venv` (Python 3.12, with `uv`) and installs `qwen-tts` 0.1.1 and PyTorch into it. The model downloads on its first run. The pipeline's own venv gains nothing. |
+| 2 | `make voice-sets` | Fetches Spoken's line corpus at the pinned commit into `build/spoken/` (`make voice-spoken-fetch`, skipped when the file is there), then writes `data/voice/creature-sets.jsonl`: the set each speaking NPC speaks with, as Spoken assigns it. Rerun after `make voice-speakers`. To follow a newer Spoken, change `SPOKEN_COMMIT` in the Makefile and rerun. |
+| 3 | `make voice-sets-clips WOW_DIR=<the World of Warcraft folder>` | Cuts every set's greeting, farewell and vendor barks from the Forever install's local archive (read only) into `build/voice-sets/` as 24 kHz WAV, with `manifest.json`. Needs `ffmpeg` and the community listfile at `$(INPUTS)/community-listfile.csv` (`LISTFILE_VOICE=` for another). A clip already cut is skipped. |
+| 4 | `make voice-sets-catalogue BUILD=<client build>` | Writes `data/voice/sets.jsonl`: each set's gender and clips, with an English transcript of each new clip from the local `whisper` command (model small; `WHISPER=<path>` for another) and whether the clip may join a full-copy reference. Read the transcripts and fix a misheard lore word by hand in the file; fixes are kept on the next run, and a fixed transcript remakes that set's full-copy lines. |
+
+Commit `data/voice/creature-sets.jsonl` and `data/voice/sets.jsonl` with the ticket after `make validate` passes.
+
+### The listening page
+
+```bash
+make voice-sets-page
+```
+
+It makes, for each set, the voice-only take and the full take of one fixed line (a male or a female wording by the set's gender), joins the set's game barks into one clip, and copies today's AivisSpeech take of one of its NPCs' lines. Only missing takes are made, in one low-priority Qwen3-TTS run. Then it serves the page at http://127.0.0.1:8767/ (Ctrl-C stops it). Each row has the game clips, the voice-only take, the full take, today's take, the pick (`voice`, `full`, `keep`) and a decided tick; each change is saved at once to `build/voice-sets/page/picks.json`. Everything on the page stays in `build/voice-sets/page/`: it carries game audio.
+
+To ship the picks:
+
+```bash
+make voice-sets-apply                     # the saved picks into pipeline/voice.toml [sets]
+cd pipeline && ../.venv/bin/python -m wfj voice cast
+cd .. && make voice-generate              # remakes only the changed sets' lines
+```
+
+Commit `pipeline/voice.toml`, `data/voice/voices.jsonl`, `data/voice/audio.jsonl` and the audio pin together.
+
+### Switching the next pack
+
+1. Add the pack's folder to `cloned_packs` in `pipeline/voice.toml` (for example `"WoWForeverJapanese_VoiceLevels11to20"`).
+2. `wfj voice cast` (as above): every NPC whose home pack is that one, and whose set is picked `voice` or `full`, moves to its set's voice. An NPC's home pack is the lowest band of the quests it starts or ends, so all its lines, in any pack, follow it.
+3. `wfj voice plan` shows what will be made; `make voice-generate` makes it, in the background. The run commits and pushes the audio and writes the pin as usual.
+4. `make voice-pack` for the size table, `make validate`, then a pull request with `voice.toml`, `voices.jsonl`, `audio.jsonl` and the pin. The release sends only the packs whose audio changed.
+
+### Timing and load
+
+Qwen3-TTS is slower than real time: about 2 to 3 times slower per engine on the maintainer's M1 Pro, against AivisSpeech's 2.85 times faster. A pack is a run of a day or more; Levels 1-10 was projected at 1.5 to 2 days at the slow speed.
+
+A run's speed can be changed while it goes, without stopping it:
+
+| Command | Speed |
+|---|---|
+| `make voice-speed SPEED=slow` | One engine in macOS's background tier (efficiency cores, throttled disk). The default, for while the machine is in use |
+| `make voice-speed SPEED=fast` | Three engines side by side at normal priority, for while the machine is free (overnight, away) |
+| `make voice-speed` | Prints the speed set now |
+
+The setting is a file, `build/voice-speed` in the main checkout. The run reads it before each line: going fast starts the extra engines (each holds the model, about 5 GB of memory), going slow stops them once their line is done and moves the remaining one into the background tier. Only one run may use the engines: a second `make voice-generate` or `make voice-sets-page` that needs them stops with "another voice run is making cloned voices; one runs at a time". A run with only AivisSpeech files to make never starts them. The engines write their own output to `build/voice/qwen.log` (generation) or `build/voice-sets/page/qwen.log` (the page, which always runs one engine under `nice`). A run stopped partway resumes where it left off, like any `voice-generate`.
+
+### Reading the cloned voices on Modal (the default)
+
+`make voice-generate` reads the cloned voices on rented GPUs (Modal) and only the AivisSpeech lines on this machine. One command does the whole round:
+
+1. `wfj voice export` writes the cloned lines still to make to `build/voice-remote/<time>/`: `jobs.jsonl` (one line per file: its key, text, reference and mode), `refs/` (the joined set references) and `refs.json` (their transcripts).
+2. `pipeline/wfj/io/qwen_modal.py` reads them on Modal with the same model, the same pinned `qwen-tts` and the same worker code (`qwen_worker.load` and `speak_many`) as the local engine, on one card per 60 lines (at most 10), 24 paragraphs per model call. The WAVs come back to the run's `wav/` folder; a line that failed is read again once.
+3. The run's WAVs, jobs and manifest are copied to `VOICE_WAV_ARCHIVE` (set in `local.mk`) and checked against a `SHA256SUMS` written there. These are the uncompressed masters: they are never deleted, here or there. The game's clips are not copied.
+4. `voice generate --prepared` encodes and records them like any other take.
+
+Setup, once: `make voice-modal-setup`, then log in with `build/modal/venv/bin/modal token new` (the login stays in `~/.modal.toml`). `VOICE_LOCAL=1 make voice-generate` reads the cloned voices on this machine instead (see "Timing and load").
+
+Each model call holds at most 24 paragraphs and at most 3,000 padded characters (count times the longest), longest lines first, 15 lines per card call; a call that runs out of GPU memory is split in half until it fits. Every reading is capped at twice its text's expected length plus 3 s: a line the model does not end by itself is cut there and reported as "ran on" instead of holding its whole call (without the cap a call can reach Modal's 3,600 s limit). A run that returns with lines still missing is imported as far as it got; the missing lines stay to make and the next run reads only them.
+
+**Estimating time and money.** Characters C come from `wfj voice export` ("N lines to read (C characters)"); the picked voices speak 5.88 characters a second. A card (L40S, $1.95 an hour) reads R characters per card-second: 48.5 on clean batches (measured on 60 lines), 11.4 on the first full run (Levels 1-10, 404,046 characters, $19.25 including tests, about 72 minutes, held back by out-of-memory batches, an idle tail and one call that hit the time limit). Card time = C / R + cards x start-up (2 to 4 minutes each); cost = card time x $1.95 an hour; wall time is about card time / cards. Update R in this paragraph after each run. A collector send or fix report of 20 to 100 lines costs a few cents, mostly the card's start-up.
+
+### If the publisher asks for a takedown
+
+The cloned voices are modelled on the publisher's recordings, shipped non-commercially and credited, with no actor named ([ADR-074](../adr/074-voices-cloned-from-the-games-npc-voice-sets.md)). If asked to take them down, go back to the AivisSpeech audio:
+
+1. Set `pipeline/voice-audio-commit.txt` back to the audio pin before the first switched pack, and revert `pipeline/voice.toml`, `data/voice/voices.jsonl` and `data/voice/audio.jsonl` to the same commit (or set `cloned_packs = []`, run `wfj voice cast` and `make voice-generate` to remake them).
+2. Release. The old files are in the audio repository's history, so nothing needs making again when the pin goes back.
 
 ## Which pack holds a line
 
@@ -157,4 +236,4 @@ Sizes of the seven packs, projected on 2026-10-07 from the files made so far plu
 
 ## Related
 
-- [Voice over](../systems/voice.md) · [ADR-061](../adr/061-voice-over-from-a-separate-pack.md) · [Local setup](local-setup.md) · [Testing strategy](../testing/strategy.md#voice-over-checklist) · [Research](../research/2026-10-04-japanese-voice-over.md)
+- [Voice over](../systems/voice.md) · [ADR-061](../adr/061-voice-over-from-a-separate-pack.md) · [ADR-074](../adr/074-voices-cloned-from-the-games-npc-voice-sets.md) · [Local setup](local-setup.md) · [Testing strategy](../testing/strategy.md#voice-over-checklist) · [Research](../research/2026-10-04-japanese-voice-over.md)

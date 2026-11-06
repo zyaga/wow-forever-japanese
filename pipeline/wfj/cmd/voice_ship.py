@@ -154,10 +154,19 @@ def size_table(table: Table, packs: Sequence[Pack]) -> tuple[list[str], list[str
 
 
 def _credits(cfg: Mapping[str, Any], audio: Mapping[str, Any], files: Sequence[str]) -> dict[str, str]:
+    """The pack's credits: each engine its files were made with, the AivisSpeech models used, and their
+    licences. A cloned voice is credited to its engine, not a model (it is made from the game's own NPC voice
+    set)."""
     used = sorted({audio[f.removesuffix(".mp3")]["voice"] for f in files})
+    cloned = [v for v in used if cfg["roster"][v].get("engine") == "qwen"]
+    stock = [v for v in used if v not in cloned]
+    engines = ([cfg["credits"]["engine"]] if stock or not cloned else []) + (
+        [cfg["credits"]["clone_engine"]] if cloned else [])
+    models = sorted({cfg["roster"][v]["model"] for v in stock}) + (
+        ["voices modelled on the game's own NPC voice sets"] if cloned else [])
     return {
-        "engine": cfg["credits"]["engine"],
-        "models": ", ".join(sorted({cfg["roster"][v]["model"] for v in used})) or "none yet",
+        "engine": "; ".join(engines),
+        "models": ", ".join(models) or "none yet",
         "licence": " / ".join(sorted({cfg["roster"][v]["licence"] for v in used})) or "none yet",
     }
 

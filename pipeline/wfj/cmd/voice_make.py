@@ -20,26 +20,34 @@ The pack tables (`pack_tables`, `error_table`) are read by `voice_ship`, which w
 from __future__ import annotations
 
 import argparse
+import collections
+import contextlib
 import datetime
 import hashlib
 import json
 import os
+import shutil
 import subprocess
 import sys
+import tempfile
 import time
 import tomllib
 import wave
 from collections import Counter
-from collections.abc import Sequence
+from collections.abc import Callable, Sequence
+from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from io import BytesIO
 from pathlib import Path
 from typing import Any
 
+from wfj.cmd import voice_sets as voice_sets_cmd
 from wfj.cmd.generate import female_index, quest_text_aliases
-from wfj.core import casting, readings, voice
+from wfj.core import casting, readings, voice, voice_sets
+from wfj.core import voice_packs as vp
 from wfj.emit.lua_writer import shipped
 from wfj.io.aivis import Engine, EngineDown, EngineError, running
 from wfj.io.jsonl_store import Store, dumps
+from wfj.io.qwen import LOCK, VERSION, NotRead, Prepared, Qwen, QwenBusy, QwenError, line_key
 from wfj.paths import data_root
 
 ENGINE_HINT = (
@@ -79,12 +87,37 @@ def load_config(path: Path) -> dict[str, Any]:
         v.setdefault("pitch", 0.0)
         v.setdefault("intonation", 1.0)
     cfg["roster"], cfg["cast"] = roster, cfg.get("cast", [])
+    roster.update(set_voices(cfg.get("sets", {}), voice_sets_cmd.catalogue(data_root())))
+    cfg["cloned_packs"] = list(cfg.get("cloned_packs", []))
+    cfg["set_cast"] = list(cfg.get("set_cast", []))
+    # the narrator and the book reader speak with a game voice set once one is named and picked
+    for key in ("narrator", "book_narrator"):
+        named = cfg.get(f"{key}_set")
+        if named and voice_sets.voice_id(named) in roster:
+            cfg[key] = voice_sets.voice_id(named)
     problems = casting.roster_problems(
         roster, cfg["cast"], cfg.get("narrator", ""), cfg.get("book_narrator", "")
     )
     if problems:
         raise ValueError(f"{path.name}: " + "; ".join(problems))
     return cfg
+
+
+def set_voices(sets: dict[str, Any], catalogue: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    """Roster entries for the game voice sets picked as a voice-only or a full copy (voice.toml [sets]); a set
+    kept on its AivisSpeech cast has none. `ref` is the hash of the set's reference, so new clips or fixed
+    transcripts make its files again."""
+    out: dict[str, dict[str, Any]] = {}
+    for s, entry in sorted(sets.items()):
+        mode = entry.get("pick")
+        if mode not in ("voice", "full"):
+            continue
+        row = catalogue.get(s)
+        out[voice_sets.voice_id(s)] = {
+            "engine": "qwen", "set": s, "mode": mode, "licence": "Apache-2.0",
+            "fits": f"the game's {s} voice set", "ref": voice_sets_cmd.ref_hash(row, mode) if row else "",
+        }
+    return out
 
 
 def shipped_lines(root: Path) -> dict[str, str]:
@@ -123,6 +156,8 @@ def line_values(root: Path, lines: dict[str, str]) -> dict[str, list[str]]:
 # character's own spoken error lines are made per race and sex.
 PLAYER_RACES = ("human", "orc", "dwarf", "nightelf", "scourge", "tauren", "gnome", "troll", "skyborne")
 PLAYER_SEXES = {"m": "male", "f": "female"}
+# Skyborne characters have no error recordings of their own: they speak with the Skyborne NPC sets
+PLAYER_SETS = {("skyborne", "m"): "skybourneelfmale3776npc", ("skyborne", "f"): "skybourneelffemale3773npc"}
 
 
 def error_lines(root: Path) -> dict[str, str]:
@@ -139,8 +174,15 @@ def error_lines(root: Path) -> dict[str, str]:
 
 
 def player_voice(cfg: dict[str, Any], race: str, sex: str) -> str:
-    """The voice a player character of a race and sex speaks in: cast like an adult NPC of that race."""
+    """The voice a player character of a race and sex speaks in: the race's own error recordings cloned (a
+    `<race><sex>playernpc` set picked in voice.toml; the Skyborne use their NPC sets), else cast like an adult
+    NPC of that race."""
     from wfj.core import casting
+
+    named = "undead" if race == "scourge" else race
+    own = PLAYER_SETS.get((race, sex)) or f"{named}{PLAYER_SEXES[sex]}playernpc"
+    if voice_sets.voice_id(own) in cfg["roster"]:
+        return voice_sets.voice_id(own)
 
     profile = {
         "creature": 0,
@@ -202,6 +244,11 @@ def file_jobs(
     return jobs + error_jobs(root, cfg, list(players))
 
 
+REFS_DIR = "refs"  # joined set references, beside the cut clips: game audio stays on this machine
+QWEN_PYTHON = "build/qwen/venv/bin/python"
+MAX_WORKERS = 4  # each engine holds the model in memory (about 5 GB)
+FAST_WORKERS = 3
+SPEED_FILE = "build/voice-speed"  # slow (default) or fast, from the main checkout: `wfj voice speed`
 AUDIO_DIR = "audio"  # the store keeps its MP3s here, so its README and license open the repository page
 
 
@@ -246,6 +293,29 @@ def cast_rows(root: Path, cfg: dict[str, Any], today: str) -> list[dict[str, Any
     are unchanged keeps its old date."""
     overrides = {int(r["creature"]): r["voice"] for r in _rows(root / "voice" / "overrides.jsonl")}
     result = casting.cast(_rows(root / "voice" / "profiles.jsonl"), cfg["cast"], cfg["narrator"], overrides)
+    if cfg.get("cloned_packs"):
+        from wfj.cmd import voice_store  # it imports this module
+
+        table = vp.load(Path(__file__).resolve().parents[2] / "voice-packs.toml")
+        levels = voice_store.read_levels(Path(__file__).resolve().parents[2] / voice_store.LEVELS)
+        sets = voice_sets_cmd.creature_sets(root)
+        profiles = {int(r["creature"]): r for r in _rows(root / "voice" / "profiles.jsonl")}
+        for c, row in result.items():  # a creature, or a gender of one, Spoken gives no set: its kind's rule
+            got = voice_sets.rule_sets(profiles.get(c, {"creature": c}), cfg["set_cast"])
+            mine = dict(sets.get(c, {}))
+            if not mine:
+                mine = got
+            elif row.get("female"):  # shown as both genders, Spoken voices one: the other from the rules
+                for g in ("male", "female"):
+                    if g not in mine:
+                        one = {**profiles.get(c, {}), "gender": g}
+                        mine.update(voice_sets.rule_sets(one, cfg["set_cast"]))
+            if mine:
+                sets[c] = mine
+        homes = voice_sets_cmd.home_packs(root, table, levels)
+        for c in result:  # a creature with no line yet still gets a home, so it is never left uncloned
+            homes.setdefault(c, table.packs[0].folder)
+        result = voice_sets.clone_cast(result, sets, homes, cfg["cloned_packs"], cfg["roster"], overrides)
     old = read_cast(root)
     rows = []
     for c, v in sorted(result.items()):
@@ -318,6 +388,34 @@ def run_plan(cfg: dict[str, Any], root: Path, scope: str, players: Sequence[tupl
 # ---- generate --------------------------------------------------------------------------------------------
 
 
+LOUDNESS = "I=-20:TP=-2:LRA=11"  # every line levelled to the same loudness (EBU R128), so no NPC is louder
+
+
+def levelled(wav: bytes) -> bytes:
+    """The WAV brought to the target loudness with one linear gain (two-pass loudnorm): the voice and its
+    timing are unchanged, only how loud it is."""
+    with tempfile.TemporaryDirectory() as tmp:
+        src, dst = Path(tmp) / "in.wav", Path(tmp) / "out.wav"
+        src.write_bytes(wav)
+        probe = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(src), "-af",
+                                f"loudnorm={LOUDNESS}:print_format=json", "-f", "null", "-"],
+                               capture_output=True, text=True, check=True).stderr
+        m = json.loads(probe[probe.rindex("{"):probe.rindex("}") + 1])
+        with wave.open(str(src)) as w:
+            rate = w.getframerate()
+        apply = (f"loudnorm={LOUDNESS}:measured_I={m['input_i']}:measured_TP={m['input_tp']}"
+                 f":measured_LRA={m['input_lra']}:measured_thresh={m['input_thresh']}"
+                 f":offset={m['target_offset']}:linear=true")
+        subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", str(src), "-af", apply,
+                        "-ar", str(rate), "-ac", "1", str(dst)], check=True)
+        return dst.read_bytes()
+
+
+def to_levelled_mp3(wav: bytes, out: Path) -> None:
+    """A take levelled to the common loudness, then encoded like every take."""
+    to_mp3(levelled(wav), out)
+
+
 def wav_seconds(wav: bytes) -> float:
     with wave.open(BytesIO(wav)) as w:
         return w.getnframes() / w.getframerate()
@@ -342,21 +440,88 @@ def _status(path: Path, **fields: Any) -> None:
     tmp.replace(path)
 
 
-def generate(  # noqa: PLR0913 - the engine, encoder and log are injected for the tests
+def _synth(text: str, settings: dict[str, Any], engine: Engine, version: str, q: Any,
+           sets: dict[str, dict[str, Any]], clips: Path) -> tuple[bytes, str]:
+    """One line's WAV from the engine its roster voice names, and the provenance source of the take."""
+    if settings.get("engine") == "qwen":
+        ref_wav, ref_text = voice_sets_cmd.reference(sets[settings["set"]], settings["mode"], clips,
+                                                     clips / REFS_DIR)
+        return q.synthesize(text, ref_wav, ref_text, settings["mode"]), f"qwen3-tts@{q.version}"
+    wav = engine.synthesize(text, int(settings["style"]), float(settings["speed"]), float(settings["pitch"]),
+                            float(settings["intonation"]))
+    return wav, f"aivis@{version}"
+
+
+def _cloned_lines(todo: collections.deque, qwen: Callable[[], Any], make: Callable, record: Callable,
+                  speed: Callable[[], tuple[int, bool]], log: Callable[[str], None]) -> None:
+    """Reads the cloned lines with as many engines as `speed` asks for now, starting or stopping engines and
+    moving them in or out of the background tier between lines. The first engine holds the run's lock and is
+    never stopped before the end."""
+    engines: list[Any] = []
+    idle: list[Any] = []
+    running: dict[Any, Any] = {}
+    mode: tuple[int, bool] | None = None
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
+        try:
+            while todo or running:
+                want, background = speed()
+                want = max(1, min(want, MAX_WORKERS))
+                while len(engines) < want:
+                    q = qwen()
+                    q.__enter__()
+                    engines.append(q)
+                    idle.append(q)
+                    mode = None
+                while len(engines) > want and any(q is not engines[0] for q in idle):
+                    q = next(q for q in idle if q is not engines[0])
+                    idle.remove(q)
+                    engines.remove(q)
+                    q.__exit__(None, None, None)
+                if mode != (want, background):
+                    for q in engines:
+                        q.background(background)
+                    if mode is not None:
+                        pace = "in the background" if background else "at full speed"
+                        log(f"voice generate: now {want} engine(s) {pace}")
+                    mode = (want, background)
+                while todo and idle and len(running) < want:
+                    q = idle.pop()
+                    running[pool.submit(make, todo.popleft(), q)] = q
+                done, _ = wait(running, timeout=5, return_when=FIRST_COMPLETED)
+                for f in done:
+                    idle.append(running.pop(f))
+                    if (got := f.result()) is not None:
+                        record(*got)
+        finally:
+            for f in running:
+                f.cancel()
+            for q in engines:
+                q.__exit__(None, None, None)
+
+
+def generate(  # noqa: PLR0913, PLR0915 - engine, encoder and log injected for the tests; one run's state
     root: Path,
     scope: str,
     cfg: dict[str, Any],
     store: Path,
     engine: Engine,
-    encode=to_mp3,
+    encode=to_levelled_mp3,
     log=print,
     players: Sequence[tuple[str, str]] = (),
     checkout: bool = False,
     engine_run: Path | None = None,
+    qwen: Callable[[], Any] | None = None,
+    clips: Path | None = None,
+    workers: int = 1,
+    speed: Callable[[], tuple[int, bool]] | None = None,
 ) -> dict[str, Any]:
     """Makes every missing or changed file; resumable. `checkout`: the store must be a checkout of the voice
     audio repository before anything is made (the command; tests use a plain folder). `engine_run`: the
-    engine to start when none answers, stopped again when the run ends. → the run's numbers."""
+    engine to start when none answers, stopped again when the run ends. `qwen`: opens the cloned-voice
+    engine (`io/qwen.Qwen`), started only when a cloned voice has files to make; `clips`: the cut set clips
+    its references are joined from; `workers`: how many cloned-voice engines read lines side by side (each
+    a call of `qwen`); `speed`: read before each cloned line, → (workers, background), so a run can be slowed
+    down or sped up while it goes. → the run's numbers."""
     lines = shipped_lines(root)
     jobs = file_jobs(root, cfg, scope, lines, players)
     audio = audio_record(root)
@@ -375,8 +540,17 @@ def generate(  # noqa: PLR0913 - the engine, encoder and log are injected for th
             f"{len(work)} file(s) to make, but {store} is not a checkout of the voice audio repository: "
             f"git clone https://github.com/zyaga/wow-forever-japanese-voice.git {store}"
         )
+    cloned = {j.voice for j in work if cfg["roster"][j.voice].get("engine") == "qwen"}
+    if cloned and qwen is None:
+        raise ValueError(f"{len(cloned)} cloned voice(s) to make but no Qwen3-TTS engine was given")
+    sets = voice_sets_cmd.catalogue(root) if cloned else {}
+    clip_root = (clips or voice_sets_cmd.clip_dir()) if cloned else Path()
     try:
-        with running(engine, engine_run, log=lambda m: log(f"voice generate: {m}")) as version:
+        with contextlib.ExitStack() as stack:
+            version = ""
+            if any(j.voice not in cloned for j in work):
+                say = lambda m: log(f"voice generate: {m}")  # noqa: E731
+                version = stack.enter_context(running(engine, engine_run, log=say))
             store.mkdir(parents=True, exist_ok=True)
             status = store / "status.json"
             today = datetime.date.today().isoformat()
@@ -404,21 +578,9 @@ def generate(  # noqa: PLR0913 - the engine, encoder and log are injected for th
                     finished=done,
                 )
 
-            save()
-            for n, j in enumerate(work, 1):
-                settings = cfg["roster"][j.voice]
+            def record(j: voice.Job, text: str, wav: bytes, source: str, file: Path) -> None:
+                nonlocal made, chars_made, seconds_made
                 ja = lines[j.key]
-                text = voice.speech_text(ja, j.key, values.get(j.key, ()))
-                wav = engine.synthesize(
-                    text,
-                    int(settings["style"]),
-                    float(settings["speed"]),
-                    float(settings["pitch"]),
-                    float(settings["intonation"]),
-                )
-                file = audio_file(store, j.stem)
-                file.parent.mkdir(parents=True, exist_ok=True)
-                encode(wav, file)
                 secs = wav_seconds(wav)
                 audio[j.stem] = {
                     "file": j.stem,
@@ -426,20 +588,39 @@ def generate(  # noqa: PLR0913 - the engine, encoder and log are injected for th
                     "voice": j.voice,
                     "ja_hash": voice.ja_hash(ja),
                     "fingerprint": voice.fingerprint(
-                        voice.text_hash(ja, values.get(j.key, ())), j.voice, settings
+                        voice.text_hash(ja, values.get(j.key, ())), j.voice, cfg["roster"][j.voice]
                     ),
                     "seconds": round(secs, 2),
                     "bytes": file.stat().st_size,
                     "sha256": file_sha(file),
                     "chars": len(text),
-                    "provenance": {"source": f"aivis@{version}", "imported": today},
+                    "provenance": {"source": source, "imported": today},
                 }
                 made += 1
                 chars_made += len(text)
                 seconds_made += secs
-                if n % RECORD_EVERY == 0:
+                if made % RECORD_EVERY == 0:
                     save()
-                    log(f"voice generate: {n}/{len(work)}")
+                    log(f"voice generate: {made}/{len(work)}")
+
+            def make(j: voice.Job, q: Any) -> tuple[voice.Job, str, bytes, str, Path] | None:
+                text = voice.speech_text(lines[j.key], j.key, values.get(j.key, ()))
+                try:
+                    wav, source = _synth(text, cfg["roster"][j.voice], engine, version, q, sets, clip_root)
+                except NotRead:
+                    return None  # a remote run's line still to read: it stays to make
+                file = audio_file(store, j.stem)
+                file.parent.mkdir(parents=True, exist_ok=True)
+                encode(wav, file)
+                return j, text, wav, source, file
+
+            save()
+            for j in [j for j in work if j.voice not in cloned]:
+                record(*make(j, None))  # type: ignore[misc] - an AivisSpeech line is always made
+            todo = collections.deque(j for j in work if j.voice in cloned)
+            if todo:
+                assert qwen is not None
+                _cloned_lines(todo, qwen, make, record, speed or (lambda: (workers, False)), log)
             save(done=True)
             return {
                 "made": made,
@@ -449,6 +630,8 @@ def generate(  # noqa: PLR0913 - the engine, encoder and log are injected for th
                 "elapsed": time.time() - started,
                 "audio": audio,
             }
+    except (QwenBusy, QwenError) as e:
+        raise ValueError(str(e)) from e
     except EngineDown as e:
         msg = f"{len(work)} file(s) to make, but the engine does not answer ({e}): {ENGINE_HINT}"
         raise EngineDown(msg) from e
@@ -461,10 +644,25 @@ def run_generate(
     store: Path,
     players: Sequence[tuple[str, str]] = (),
     engine_run: Path | None = None,
+    prepared: Path | None = None,
 ) -> int:
+    started: list[Qwen] = []
+    if prepared is not None and (missing := prepared_missing(prepared)):
+        print(f"voice generate: {missing} line(s) of {prepared} have no WAV yet; they stay to make",
+              file=sys.stderr)
+
+    def qwen() -> Any:  # the first engine holds the run's lock; found only when a cloned voice has files
+        if prepared is not None:
+            return Prepared(prepared)
+        q = Qwen(_main_checkout() / cfg.get("qwen", QWEN_PYTHON), log=store / "qwen.log",
+                 lock=None if started else LOCK, nice=False)
+        started.append(q)
+        return q
+
     try:
         engine = Engine(cfg["engine"])
-        r = generate(root, scope, cfg, store, engine, players=players, checkout=True, engine_run=engine_run)
+        r = generate(root, scope, cfg, store, engine, players=players, checkout=True, engine_run=engine_run,
+                     qwen=qwen, speed=lambda: speed_of(read_speed()))
     except (EngineError, voice.VoiceError, subprocess.CalledProcessError, ValueError) as e:
         print(f"voice generate: {e}", file=sys.stderr)
         return 1
@@ -473,6 +671,155 @@ def run_generate(
         f"voice generate: made {r['made']} of {r['files']} files in {r['elapsed']:.0f} s"
         f" ({rate:.1f} characters a second, {r['seconds_made']:.0f} s of audio) → {store}"
     )
+    return 0
+
+
+def export_remote(root: Path, cfg: dict[str, Any], scope: str, store: Path, out: Path) -> int:
+    """The cloned-voice files a run would make, written for a remote run (`qwen_modal.py`): jobs.jsonl (key,
+    text, reference, mode), refs/ (the joined set references) and refs.json (their transcripts)."""
+    lines = shipped_lines(root)
+    jobs = file_jobs(root, cfg, scope, lines)
+    audio = audio_record(root)
+    values = line_values(root, lines)
+    state = voice.in_step(jobs, lines, cfg["roster"], audio, values)
+    todo = set(state["missing"]) | set(state["stale"])
+    have_store = store.is_dir()
+    work = [j for j in jobs if cfg["roster"][j.voice].get("engine") == "qwen"
+            and (j.stem in todo or (have_store and not audio_file(store, j.stem).is_file()))]
+    sets, clips = voice_sets_cmd.catalogue(root), voice_sets_cmd.clip_dir()
+    (out / "refs").mkdir(parents=True, exist_ok=True)
+    rows: dict[str, dict[str, str]] = {}
+    texts: dict[str, str | None] = {}
+    for j in work:
+        settings = cfg["roster"][j.voice]
+        text = voice.speech_text(lines[j.key], j.key, values.get(j.key, ()))
+        ref, ref_text = voice_sets_cmd.reference(sets[settings["set"]], settings["mode"], clips,
+                                                 clips / REFS_DIR)
+        if not (out / "refs" / ref.name).is_file():
+            shutil.copyfile(ref, out / "refs" / ref.name)
+        texts[ref.name] = ref_text
+        key = line_key(text, ref, settings["mode"])
+        rows[key] = {"key": key, "text": text, "ref": ref.name, "mode": settings["mode"]}
+    (out / "jobs.jsonl").write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows.values()),
+                                    encoding="utf-8")
+    (out / "refs.json").write_text(json.dumps(texts, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    (out / "manifest.json").write_text(json.dumps({"version": VERSION}) + "\n", encoding="utf-8")
+    chars = sum(len(r["text"]) for r in rows.values())
+    print(f"voice export: {len(work)} files, {len(rows)} lines to read ({chars:,} characters) → {out}")
+    return len(rows)
+
+
+MODAL_PYTHON = "build/modal/venv/bin/python"
+REMOTE_DIR = "build/voice-remote"
+LINES_PER_CARD = 60  # how many cards a run asks for; each call to a card carries BATCH_LINES of them
+BATCH_LINES = 15
+
+
+def remote_round(root: Path, cfg: dict[str, Any], scope: str, store: Path,
+                 archive: Path | None) -> Path | None:
+    """The cloned lines a run needs, read on Modal: exported to build/voice-remote/<time>, read with
+    `qwen_modal.py` on as many cards as the lines fill (up to 10), and the WAVs copied to `archive` and
+    checked. → the folder for `--prepared`, or None when no cloned line needs making."""
+    main = _main_checkout()
+    run = main / REMOTE_DIR / datetime.datetime.now().strftime("%Y-%m-%d-%H%M%S")
+    lines = export_remote(root, cfg, scope, store, run)
+    if not lines:
+        shutil.rmtree(run, ignore_errors=True)
+        return None
+    python = main / cfg.get("modal", MODAL_PYTHON)
+    if not python.is_file() or not (Path.home() / ".modal.toml").is_file():
+        raise ValueError(f"no Modal client or login ({python}, ~/.modal.toml): make voice-modal-setup, "
+                         "or VOICE_LOCAL=1 to read the lines on this machine")
+    cards = max(1, min(10, -(-lines // LINES_PER_CARD)))
+    env = {**os.environ, "WFJ_MODAL_CONTAINERS": str(cards), "WFJ_MODAL_BATCH": str(BATCH_LINES)}
+    for attempt in (1, 2):  # a line that failed on a card is read again once
+        script = Path(__file__).resolve().parents[1] / "io" / "qwen_modal.py"
+        subprocess.run([str(python), str(script), str(run)], env=env, check=attempt == 2)
+        if not prepared_missing(run):
+            break
+    if archive is not None:
+        archive_run(run, archive)
+    return run
+
+
+def archive_run(run: Path, archive: Path) -> Path:
+    """Copies a remote run (its WAVs, jobs, references' transcripts and manifest) to `archive/<run name>` and
+    checks every WAV against the copy; writes SHA256SUMS there. The local run is kept."""
+    dest = archive / run.name
+    shutil.copytree(run, dest, dirs_exist_ok=True, ignore=shutil.ignore_patterns("refs"))
+    sums = []
+    for w in sorted((run / "wav").glob("*.wav")):
+        a, b = file_sha(w), file_sha(dest / "wav" / w.name)
+        if a != b:
+            raise ValueError(f"{dest / 'wav' / w.name}: the archived copy differs from {w}")
+        sums.append(f"{a}  wav/{w.name}\n")
+    (dest / "SHA256SUMS").write_text("".join(sums), encoding="utf-8")
+    print(f"voice archive: {len(sums)} WAVs copied and checked → {dest}")
+    return dest
+
+
+def relevel(root: Path, cfg: dict[str, Any], store: Path, runs: Sequence[Path]) -> int:
+    """Re-encodes the recorded cloned-voice files that the given remote runs made, from their kept WAVs,
+    at the common loudness; the record's bytes and hashes follow. → how many files were re-encoded."""
+    lines, audio = shipped_lines(root), audio_record(root)
+    values = line_values(root, lines)
+    sets, clips = voice_sets_cmd.catalogue(root), voice_sets_cmd.clip_dir()
+    done = 0
+    for stem, rec in sorted(audio.items()):
+        settings = cfg["roster"].get(rec["voice"], {})
+        if settings.get("engine") != "qwen" or rec["key"] not in lines:
+            continue
+        text = voice.speech_text(lines[rec["key"]], rec["key"], values.get(rec["key"], ()))
+        ref, _ = voice_sets_cmd.reference(sets[settings["set"]], settings["mode"], clips, clips / REFS_DIR)
+        key = line_key(text, ref, settings["mode"])
+        wav = next((r / sub / f"{key}.wav" for r in runs for sub in ("wav", "local")
+                    if (r / sub / f"{key}.wav").is_file()), None)
+        if wav is None:
+            continue
+        file = audio_file(store, stem)
+        to_levelled_mp3(wav.read_bytes(), file)
+        rec.update(bytes=file.stat().st_size, sha256=file_sha(file))
+        done += 1
+        if done % 200 == 0:
+            print(f"voice relevel: {done}", flush=True)
+    _write(root / "voice" / AUDIO, [audio[k] for k in sorted(audio)])
+    return done
+
+
+def prepared_missing(run: Path) -> int:
+    """How many lines of a remote run have no WAV yet."""
+    jobs = [json.loads(x) for x in (run / "jobs.jsonl").read_text(encoding="utf-8").splitlines() if x]
+    return sum(not (run / "wav" / f"{j['key']}.wav").is_file() for j in jobs)
+
+
+SPEEDS = ("slow", "fast")
+
+
+def read_speed(path: Path | None = None) -> str:
+    """The speed asked for now: slow (the default, while the machine is in use) or fast."""
+    p = path or _main_checkout() / SPEED_FILE
+    got = p.read_text(encoding="utf-8").strip() if p.is_file() else "slow"
+    return got if got in SPEEDS else "slow"
+
+
+def speed_of(name: str) -> tuple[int, bool]:
+    """(cloned-voice engines, background tier) for a speed: slow is one engine in the background, fast is
+    several at full speed."""
+    return (FAST_WORKERS, False) if name == "fast" else (1, True)
+
+
+def run_speed(argv: Sequence[str]) -> int:
+    p = argparse.ArgumentParser(prog="wfj voice speed", description="Speed up or slow down a voice run, "
+                                "including one already going (it reads this before each line).")
+    p.add_argument("speed", choices=SPEEDS, nargs="?")
+    a = p.parse_args(list(argv))
+    path = _main_checkout() / SPEED_FILE
+    if a.speed:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(a.speed + "\n", encoding="utf-8")
+    n, background = speed_of(read_speed(path))
+    tier = "background" if background else "full"
+    print(f"voice speed: {read_speed(path)} ({n} engine(s), {tier} priority)")
     return 0
 
 
@@ -607,7 +954,7 @@ def record_hashes(root: Path, store: Path) -> tuple[int, list[str]]:
 def run(argv: Sequence[str]) -> int:
     p = argparse.ArgumentParser(prog="wfj voice")
     sub = p.add_subparsers(dest="cmd", required=True)
-    for name in ("cast", "plan", "generate", "status", "record-hashes"):
+    for name in ("cast", "plan", "generate", "status", "record-hashes", "export", "relevel"):
         sp = sub.add_parser(name)
         sp.add_argument("--config", default="voice.toml")
         sp.add_argument("--scope", default="all", choices=sorted(voice.SCOPES))
@@ -617,6 +964,13 @@ def run(argv: Sequence[str]) -> int:
         )
         if name == "generate":
             sp.add_argument("--engine-run", help="the engine to start when none answers")
+            sp.add_argument("--prepared", help="a remote run's folder: its WAVs stand in for cloned voices")
+            sp.add_argument("--remote", action="store_true", help="read the cloned voices on Modal first")
+            sp.add_argument("--archive", help="where the remote run's WAVs are kept (copied and checked)")
+        if name == "export":
+            sp.add_argument("--out", required=True, help="the remote run's folder")
+        if name == "relevel":
+            sp.add_argument("runs", nargs="+", help="remote run folders whose WAVs the files were made from")
     a = p.parse_args(list(argv))
     root = data_root()
     store = store_dir(a.store)
@@ -637,7 +991,16 @@ def run(argv: Sequence[str]) -> int:
         players = players_of(a.players)
         if a.cmd == "plan":
             return run_plan(cfg, root, a.scope, players)
-        return run_generate(cfg, root, a.scope, store, players, engine_run_path(a.engine_run))
+        if a.cmd == "export":
+            export_remote(root, cfg, a.scope, store, Path(a.out))
+            return 0
+        if a.cmd == "relevel":
+            print(f"voice relevel: {relevel(root, cfg, store, [Path(r) for r in a.runs])} files re-encoded")
+            return 0
+        prepared = Path(a.prepared) if a.prepared else None
+        if a.remote and prepared is None:
+            prepared = remote_round(root, cfg, a.scope, store, Path(a.archive) if a.archive else None)
+        return run_generate(cfg, root, a.scope, store, players, engine_run_path(a.engine_run), prepared)
     except (ValueError, KeyError, FileNotFoundError) as e:
         print(f"voice {a.cmd}: {e}", file=sys.stderr)
         return 1

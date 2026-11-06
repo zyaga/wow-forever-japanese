@@ -238,26 +238,19 @@ def in_scope(rows: list[dict[str, Any]], scope: str) -> list[dict[str, Any]]:
 
 def run(argv: Sequence[str]) -> int:
     verb = list(argv[:1])
-    if verb == ["profiles"]:
-        from wfj.cmd import voice_cast  # the casting verbs and the file verbs live in their own modules
+    # the other verbs live in their own modules, each with its own `run`; some take the verb, some not
+    own = {"profiles": ("voice_cast", "run_profiles", 1), "sets-page": ("voice_sets_page", "run", 1),
+           "sets": ("voice_sets", "run", 1), "audition": ("voice_audition", "run", 1),
+           **{v: ("voice_make", "run", 0)
+              for v in ("cast", "plan", "generate", "status", "record-hashes", "export", "relevel")},
+           "speed": ("voice_make", "run_speed", 1),
+           **{v: ("voice_store", "run", 0) for v in ("levels", "store-sync")},
+           **{v: ("voice_ship", "run", 0) for v in ("pack", "release", "inputs")}}
+    if verb and verb[0] in own:
+        import importlib
 
-        return voice_cast.run_profiles(argv[1:])
-    if verb == ["audition"]:
-        from wfj.cmd import voice_audition
-
-        return voice_audition.run(argv[1:])
-    if verb and verb[0] in ("cast", "plan", "generate", "status", "record-hashes"):
-        from wfj.cmd import voice_make
-
-        return voice_make.run(argv)
-    if verb and verb[0] in ("levels", "store-sync"):
-        from wfj.cmd import voice_store
-
-        return voice_store.run(argv)
-    if verb and verb[0] in ("pack", "release", "inputs"):
-        from wfj.cmd import voice_ship
-
-        return voice_ship.run(argv)
+        module, fn, skip = own[verb[0]]
+        return getattr(importlib.import_module(f"wfj.cmd.{module}"), fn)(argv[skip:])
     p = argparse.ArgumentParser(prog="wfj voice")
     sub = p.add_subparsers(dest="cmd", required=True)
     sp = sub.add_parser("speakers")

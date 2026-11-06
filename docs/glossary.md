@@ -747,6 +747,16 @@ Choosing each [[Speaker]]'s voice: the casting table (`[[cast]]` rows in `pipeli
 _Avoid_: voice assignment, mapping
 → [Voice over](systems/voice.md) · [ADR-062](adr/062-voice-cast-per-speaker-in-step-with-the-text.md)
 
+**Voice set**:
+One of the game's own sets of NPC barks for a race, gender and flavour, recorded by one actor (`humanmalestandardnpc`, `nightelffemalepriestessnpc`): 52 with a folder in the client archive, plus four Forever adds for the Skyborne elves, named after their NPCSounds row (`skybourneelfmale3776npc`). Which set each NPC speaks with is the Spoken voice addon's assignment (`data/voice/creature-sets.jsonl`); each set's clips and transcripts are in `data/voice/sets.jsonl`. Not a [[Roster]] voice: a set becomes one when it is picked for a [[Cloned voice]].
+_Avoid_: voice pack (the shipped addon), voice type, sound kit (one of the client tables a set's files come from), voice actor
+→ [Voice over](systems/voice.md#cloned-game-voice-sets) · [ADR-074](adr/074-voices-cloned-from-the-games-npc-voice-sets.md)
+
+**Cloned voice**:
+A [[Roster]] voice made with Qwen3-TTS from a [[Voice set]]'s barks: voice id `q<set without "npc">`, engine `qwen`, a mode of `voice` (the voice alone) or `full` (the voice and the way it speaks). An NPC whose home pack is listed in `cloned_packs` is cast to its set's cloned voice. The game's audio it is made from never leaves the maintainer's computer.
+_Avoid_: game voice (that is the English original), AI voice, copied voice
+→ [Voice over](systems/voice.md#cloned-game-voice-sets) · [Voice over runbook](operations/voice.md#cloned-game-voice-sets)
+
 **Voice variant**:
 A second file for a line that differently cast creatures say: `<pack key>_<voice id>.mp3`, same key and [[Japanese hash]]. The addon plays the file of the creature on screen, else the line's main voice.
 _Avoid_: alternate take, duplicate

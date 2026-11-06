@@ -41,7 +41,18 @@ from typing import Any
 
 from wfj.cmd import check, generate, voice_make
 from wfj.cmd.voice import read_rows, voice_dir
-from wfj.core import casting, decisions, glosses, markup, numbered, placeholders, readings, specifiers, voice
+from wfj.core import (
+    casting,
+    decisions,
+    glosses,
+    markup,
+    numbered,
+    placeholders,
+    readings,
+    specifiers,
+    voice,
+    voice_sets,
+)
 from wfj.core.model import ENGLISH_FIELDS, FIELDS, SCHEMA, ui_family, validate_line
 from wfj.core.normalize import normalize_for, normalize_v1
 from wfj.core.report import SHIPPED
@@ -561,6 +572,14 @@ def rule_voice(root: Path, config: Path | None = None) -> list[str]:
                         f"(e.g. {moved[:5]}); run make voice-cast")
     lines = voice_make.shipped_lines(root)
     cast = {r["creature"]: r for r in voices}
+    profiles = {r["creature"]: r for r in read_rows(d / "profiles.jsonl")}
+    from wfj.cmd import voice_audition  # the voice catalogue's genders
+
+    catalogue = voice_audition.voice_genders()
+    models = {str(v["model"]): voice_audition.lookup(catalogue, str(v["model"])) or ""
+              for v in cfg["roster"].values() if v.get("model")}
+    genders = voice_sets.voice_genders(cfg["roster"], models)
+    problems += voice_sets.gender_problems(cast, profiles, genders)
     jobs = voice.jobs(speakers, cast, cfg["narrator"], cfg["book_narrator"], lines)
     values = voice_make.line_values(root, lines)
     state = voice.in_step(jobs, lines, cfg["roster"], voice_make.audio_record(root), values)
