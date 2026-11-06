@@ -23,6 +23,7 @@ WFJ.Data.add("gossip", {
   ["b2513485456e30dd"] = { "Grimtotemsがさらにこっちへ来るぞ！", "." },
   ["b25becdacf7f221d"] = { "精鋭部隊が戦闘に加わった！", "." },
   ["b2616af3e0df71f3"] = { "オークだと？Badlandsだと？俺は無敵だ！", "." },
+  ["b262f2c1fa397ad8"] = { "Waylaid Supply Cratesとは何ですか？", "." },
   ["b264f7c0d259f69b"] = { "Frostmane Holdを汚すとは、{race}め。死ぬ覚悟をしろ！", "." },
   ["b265b6ae9e9dadff"] = { "{name}！戻ったんだな！ちょうどいいところだ！", "." },
   ["b26678fe3a7a13c3"] = { "Skinningだって？お前が皮を剥げそうなのは自分の膝くらいのものだ！ハッ！Balthus Stoneflayerに会いに行くといい。動物の皮の正しい剥ぎ方を教えてくれる。奴はThe Great Forgeの北側にあるFinespindle's Leather Goodsにいる。", "." },

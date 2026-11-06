@@ -35,5 +35,6 @@ WFJ.Data.add("gossip", {
   ["e9d5b17b46115db1"] = { "幸運を、{name}！", "." },
   ["e9e4e48936e4868d"] = { "そろそろ私の専門を超えたことを学び始める必要があるな! そこのテントの前にいるLilliam Sparkspindleに話すといい。彼が正しい道へ導いてくれるはずだ!", "." },
   ["e9ee99c1aa6ed833"] = { "Captain Balinda StonehearthはAllianceの最前線部隊を率いている。彼女はField of Strifeの北部にあるStonehearth Outpostを拠点にしている。\n\nBalindaはまだ戦闘に復帰していない。", "." },
+  ["e9f77d97819fd933"] = { "ほかの話をしたい。", "." },
   ["e9fdf2289c62ef04"] = { "おいおい、そんなの嘘だろ。", "." },
 })
