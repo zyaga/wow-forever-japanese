@@ -7,7 +7,7 @@ local DUI = require("tests.lua.spec.stub_dialogueui")
 local FILES = {}
 for _, f in ipairs(H.UI_FILES) do FILES[#FILES + 1] = f end
 for _, f in ipairs({ "Core/Voice.lua", "Core/VoiceQueue.lua", "UI/VoicePlayer.lua", "UI/QuestFrame.lua",
-  "UI/QuestMap.lua", "UI/ItemText.lua", "UI/DialogueUI.lua", "UI/DialogueUIBook.lua" }) do
+  "UI/QuestMap.lua", "UI/ItemText.lua", "UI/DialogueUI.lua", "UI/DialogueUIFrames.lua", "UI/DialogueUIBook.lua" }) do
   FILES[#FILES + 1] = f
 end
 

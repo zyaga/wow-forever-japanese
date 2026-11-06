@@ -64,8 +64,13 @@ local function pool(frame)
     return fs
   end
   function p.release()
-    for _, f in ipairs(p.active) do f.inUse = false; f.text = "" end
+    for _, f in ipairs(p.active) do f.inUse = false; f.text = ""; f.ttsFlag = nil end
     p.active = {}
+  end
+  function p.EnumerateActive()
+    local copy = {}
+    for i, f in ipairs(p.active) do copy[i] = f end
+    return ipairs(copy)
   end
   return p
 end
@@ -111,11 +116,19 @@ function DUI.installQuestFrame(opts)
   fontObject("DUIFont_Quest_Paragraph", "Interface\\AddOns\\DialogueUI\\Fonts\\frizqt__.ttf", 14)
   fontObject("DUIFont_Quest_Gossip", "Interface\\AddOns\\DialogueUI\\Fonts\\frizqt__.ttf", 13)
   fontObject("DUIFont_Quest_Title_18", "Interface\\AddOns\\DialogueUI\\Fonts\\frizqt__.ttf", 18)
+  fontObject("DUIFont_Quest_SubHeader", "Interface\\AddOns\\DialogueUI\\Fonts\\frizqt__.ttf", 14)
   local f = CreateFrame("Frame", "DUIQuestFrame")
   f.fontStringPool = pool(f)
   f.buttons = {}
   f.redraws = 0
   f.FrontFrame = { Header = { Title = Stub.fontString("") } }
+  -- the tag over the title ("Dungeon"): a button with its own SetText
+  local tag = { ButtonText = Stub.fontString("") }
+  function tag:SetText(t) self.ButtonText:SetText(t) end
+  f.tag = tag
+  f.FrontFrame.Header.GetChildren = function() return tag end
+  f.headings = {}
+  f.ExitButton = button(f)
   -- the page scroll: ReleaseAllObjects puts it back at the top
   f.ScrollFrame = { value = 0 }
   function f.ScrollFrame:SnapTo(v) self.value = v end
@@ -127,10 +140,35 @@ function DUI.installQuestFrame(opts)
     hideChildren(self)
   end
 
+  function f:AcquireFontString()
+    return self.fontStringPool.acquire()
+  end
   function f:AcquireLeftFontString(obj)
-    local fs = self.fontStringPool.acquire()
+    local fs = self:AcquireFontString()
     fs:SetFontObject(obj or _G.DUIFont_Quest_Paragraph)
     return fs
+  end
+  -- a section heading on a band sized from the heading's width as measured now
+  function f:AcquireAndSetSubHeader(text)
+    local fs = self:AcquireFontString()
+    fs:SetFontObject(_G.DUIFont_Quest_SubHeader)
+    fs:SetText(text)
+    local bg = { fs = fs, height = 20, measuredFont = { fs:GetFont() } }
+    bg.SetSize = function(b, w, h) b.width, b.height = w, h end
+    bg.GetHeight = function(b) return b.height end
+    fs.GetWrappedWidth = function(x) return #x.text * (x.font.path:find("ipagui", 1, true) and 4 or 6) end
+    bg:SetSize(fs:GetWrappedWidth() + 16, 20)
+    self.headings[#self.headings + 1] = bg
+    return bg
+  end
+  function f:AcquireExitButton() return self.ExitButton end
+  -- the reward list: its heading set straight on a FontString
+  function f:FormatRewards(offsetY)
+    if DUI.page.rewardsHeader then
+      local fs = self:AcquireLeftFontString()
+      fs:SetText(DUI.page.rewardsHeader)
+    end
+    return offsetY
   end
   function f:AcquireOptionButton()
     local b
@@ -180,6 +218,7 @@ function DUI.installQuestFrame(opts)
   function f:UpdateQuestTitle()
     self.FrontFrame.Header.Title:SetFontObject(_G.DUIFont_Quest_Title_18)
     self.FrontFrame.Header.Title:SetText(GetTitleText())
+    self.tag:SetText(DUI.page.tag or "")
     return 6
   end
   function f:HandleGossip()
@@ -193,6 +232,7 @@ function DUI.installQuestFrame(opts)
     for _, q in ipairs(DUI.page.quests or {}) do
       self:AcquireOptionButton():SetQuest({ questID = q.id, title = q.title, level = q.level })
     end
+    self:AcquireExitButton():SetButtonText(_G.GOODBYE or "Goodbye", true)
   end
   function f:HandleQuestGreeting()
     self:ReleaseAllObjects()
@@ -208,6 +248,9 @@ function DUI.installQuestFrame(opts)
     local y = self:FormatQuestText(0, "Detail")
     local objectives = GetObjectiveText()
     if objectives and objectives ~= "" then self:FormatParagraph(y, objectives, 3) end
+    for _, h in ipairs(DUI.page.headings or {}) do self:AcquireAndSetSubHeader(h) end
+    if DUI.page.rewardLine then self:InsertText(y, DUI.page.rewardLine) end
+    self:FormatRewards(y)
   end
   function f:HandleQuestProgress()
     self:ReleaseAllObjects()
@@ -242,6 +285,56 @@ function DUI.installQuestFrame(opts)
   for _, name in ipairs(opts.without or {}) do f[name] = nil end
   return f
 end
+
+-- Dialogue UI's chat panel: an unnamed frame that keeps the lines it was given.
+function DUI.installChatPanel()
+  fontObject("DUIFont_ChatFont", "Interface\\AddOns\\DialogueUI\\Fonts\\frizqt__.ttf", 10)
+  local c = CreateFrame("Frame")
+  c.lines = {}
+  function c:AddMessage(text, name, event) self.lines[#self.lines + 1] = { text, name, event } end
+  c.SendContentToClipboard = function() end
+  c.UpdateVisibility = function() end
+  return c
+end
+
+-- Dialogue UI's item tooltip: an unnamed frame with a line grid.
+function DUI.installTooltip()
+  local t = CreateFrame("Frame")
+  t.numLines, t.rights = 0, {} -- its grid is made on first use, as Dialogue UI's is
+  t.ProcessInfo = function() end
+  function t:AddLeftLine(text)
+    self.grid = self.grid or {}
+    self.numLines = self.numLines + 1
+    local fs = Stub.fontString(text)
+    self.grid[self.numLines] = { fs }
+    return fs
+  end
+  function t:AddRightLine(text)
+    local fs = Stub.fontString(text)
+    self.rights[self.numLines] = fs
+    return fs
+  end
+  function t:texts()
+    local out = {}
+    for i = 1, self.numLines do out[i] = self.grid[i][1]:GetText() end
+    return out
+  end
+  return t
+end
+
+-- A quest popup, made when one is first needed (after this addon installed).
+function DUI.makePopup()
+  local p = CreateFrame("Frame")
+  p.Title = Stub.fontString("")
+  function p:SetTitle(title) self.Title:SetText(title) end
+  function p:SetQuestDataByID(questID)
+    self.questID = questID
+    self:SetTitle(DUI.questNames[questID])
+    self:Show()
+  end
+  return p
+end
+DUI.questNames = {}
 
 -- The game API the quest window reads, over DUI.page.
 function DUI.installGameAPI()

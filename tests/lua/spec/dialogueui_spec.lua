@@ -7,7 +7,7 @@ local DUI = require("tests.lua.spec.stub_dialogueui")
 local FILES = {}
 for _, f in ipairs(H.UI_FILES) do FILES[#FILES + 1] = f end
 for _, f in ipairs({ "Core/Voice.lua", "Core/VoiceQueue.lua", "UI/VoicePlayer.lua", "UI/QuestFrame.lua",
-  "UI/QuestMap.lua", "UI/ItemText.lua", "UI/DialogueUI.lua", "UI/DialogueUIBook.lua" }) do
+  "UI/QuestMap.lua", "UI/ItemText.lua", "UI/DialogueUI.lua", "UI/DialogueUIFrames.lua", "UI/DialogueUIBook.lua" }) do
   FILES[#FILES + 1] = f
 end
 
@@ -158,6 +158,14 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
         assert.are.equal(WFJ.Font.PATH, fs.measuredFont[1])
         assert.are.equal(14, fs.measuredFont[2])
       end
+    end)
+
+    it("a second quest on the same kind of page is laid out in the bundled font too", function()
+      ship({ ["quest.progress"] = { [2] = "手に入れたか？", [3] = "二つ目のクエストの途中経過。" } })
+      open("QUEST_PROGRESS", QUEST)
+      open("QUEST_PROGRESS", { questID = 3, title = "Another", progress = "Second progress." })
+      assert.are.same({ "二つ目のクエストの途中経過。" }, DUI.paragraphs())
+      assert.are.equal(WFJ.Font.PATH, frame.fontStringPool.active[1].measuredFont[1])
     end)
 
     it("progress and turn-in pages show their text in Japanese", function()
@@ -408,6 +416,172 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       alt(true)
       assert.are.equal(n, #attached)
       assert.is_true(detached > 0)
+    end)
+  end)
+
+  describe("the game's own words around the page", function()
+    -- the client's interface strings this page shows, as the interface index the addon builds from them
+    local function game(words)
+      local function h1(text) return (WFJ.Hash.h32x2(WFJ.Normalize.v1(text))) end
+      local rows = {}
+      data.ui = data.ui or {}
+      for k, pair in pairs(words) do
+        _G[k] = pair[1]
+        rows[k] = { pair[2], h1(pair[1]), "." }
+        data.ui[k] = { ja = pair[2], status = "." }
+      end
+      WFJ.UIIndex = WFJ.UIStrings.build({ rows = rows, hash = h1, english = function(k) return _G[k] end })
+    end
+    local WORDS = { GOODBYE = { "Goodbye", "さようなら" }, TRACKER_HEADER_OBJECTIVE = { "Objectives", "目標" },
+      REWARD_CHOICES = { "You will be able to choose one of these rewards:", "以下の報酬から1つ選択できます:" },
+      REWARD_ITEMS = { "You will also receive:", "さらに以下を受け取ります:" },
+      LFG_TYPE_DUNGEON = { "Dungeon", "ダンジョン" }, ITEM_BIND_QUEST = { "Quest Item", "クエストアイテム" },
+      STAT_AVERAGE_ITEM_LEVEL = { "Item Level", "アイテムレベル" }, SELL_PRICE = { "Sell Price", "売値" } }
+
+    before_each(function()
+      load()
+      ship(QUEST_JA)
+      game(WORDS)
+    end)
+    after_each(function()
+      for k in pairs(WORDS) do _G[k] = nil end
+    end)
+
+    it("a button whose label is a game word shows its Japanese, and the English while the key is held", function()
+      ship({ gossip = { ["Hello."] = "こんにちは。" } })
+      game(WORDS)
+      open("GOSSIP_SHOW", { gossip = "Hello." })
+      assert.are.equal("さようなら", frame.ExitButton.Name:GetText())
+      assert.are.equal(WFJ.Font.PATH, frame.ExitButton.measuredFont[1])
+      alt(true)
+      assert.are.equal("Goodbye", frame.ExitButton.Name:GetText())
+    end)
+
+    it("headings: a game word in Japanese, Requirements in the addon's own word, each band sized again", function()
+      open("QUEST_DETAIL", { questID = 2, title = QUEST.title, description = QUEST.description, objectives = "",
+        headings = { "Objectives", "Requirements", "Costs" } })
+      local h = frame.headings
+      assert.are.equal("目標", h[1].fs:GetText())
+      assert.are.equal(WFJ.Font.PATH, (h[1].fs:GetFont()))
+      assert.are.equal(#"目標" * 4 + 16, h[1].width)
+      assert.are.equal("必要なもの", h[2].fs:GetText())
+      assert.are.equal("Costs", h[3].fs:GetText()) -- not a game word here: Dialogue UI's own, left as it is
+    end)
+
+    it("the reward lines and the reward list's heading show their Japanese", function()
+      open("QUEST_DETAIL", { questID = 2, title = QUEST.title, description = QUEST.description, objectives = "",
+        rewardLine = "You will be able to choose one of these rewards:", rewardsHeader = "You will also receive:" })
+      local texts = DUI.paragraphs()
+      assert.are.equal("以下の報酬から1つ選択できます:", texts[2])
+      assert.are.equal("さらに以下を受け取ります:", texts[3])
+      assert.are.equal(WFJ.Font.PATH, frame.fontStringPool.active[3].font.path)
+    end)
+
+    it("the tag over the title shows its Japanese", function()
+      open("QUEST_DETAIL", { questID = 2, title = QUEST.title, description = QUEST.description, objectives = "",
+        tag = "Dungeon" })
+      assert.are.equal("ダンジョン", frame.tag.ButtonText:GetText())
+    end)
+
+    it("tooltip lines: game strings and Dialogue UI's own words in Japanese; the item's name never", function()
+      load({ loaded = false })
+      ship(QUEST_JA)
+      game(WORDS)
+      local tip = DUI.installTooltip() -- made at Dialogue UI's load, before this addon installs
+      Stub.loadedAddons.DialogueUI = true
+      WFJ.LoadOnDemand.loaded("DialogueUI")
+      tip:AddLeftLine("Quest Item") -- an item named like a game string stays as it is: the first line is the name
+      tip:AddLeftLine("Quest Item")
+      tip:AddLeftLine("Sell Price  72c")
+      tip:AddLeftLine("|cffffd100Replace|r |cff1eff00|Hitem:1|h[Cilice of Regret]|h|r")
+      tip:AddLeftLine("Replace this belt when you find a better one.") -- a description, left alone
+      tip:AddLeftLine("|cff20ff20+3|r Item Level")
+      tip:AddLeftLine("Hide Comparison")
+      tip:AddLeftLine("Something else")
+      assert.are.same({ "Quest Item", "クエストアイテム", "売値  72c",
+        "|cffffd100交換:|r |cff1eff00|Hitem:1|h[Cilice of Regret]|h|r",
+        "Replace this belt when you find a better one.",
+        "アイテムレベル |cff20ff20+3|r", "比較を隠す", "Something else" }, tip:texts())
+    end)
+
+    it("the chat panel shows an NPC's line in the chat window's Japanese, English while the key is held", function()
+      load({ loaded = false })
+      local panel = DUI.installChatPanel()
+      Stub.loadedAddons.DialogueUI = true
+      WFJ.LoadOnDemand.loaded("DialogueUI")
+      WFJ.Speech = { translate = function(en) return en == "Stay alert!" and "油断するな！" or nil end }
+      panel:AddMessage("Stay alert!", "Guard", "CHAT_MSG_MONSTER_SAY")
+      assert.are.equal("油断するな！", panel.lines[1][1])
+      assert.are.equal(WFJ.Font.PATH, (_G.DUIFont_ChatFont:GetFont()))
+      Stub.keys.alt = true
+      WFJ.Modifier.refresh()
+      panel:AddMessage("Stay alert!", "Guard", "CHAT_MSG_MONSTER_SAY")
+      assert.are.equal("Stay alert!", panel.lines[2][1])
+      panel:AddMessage("Unknown words.", "Guard", "CHAT_MSG_MONSTER_SAY")
+      assert.are.equal("Unknown words.", panel.lines[3][1])
+    end)
+
+    it("a quest popup made after install is found after a quest event and shows the Japanese title", function()
+      DUI.questNames[2] = "Sharptalon's Claw"
+      local popup = DUI.makePopup()
+      Stub.fireAll("QUEST_ACCEPTED", 2)
+      DUI.flush()
+      popup:SetQuestDataByID(2)
+      assert.are.equal("Sharptalonの鉤爪", popup.Title:GetText())
+    end)
+
+    it("the voice panel is lifted out of the faded interface while a Dialogue UI window is open", function()
+      local lifts = {}
+      WFJ.VoicePanel = { lift = function(on) lifts[#lifts + 1] = on end }
+      open("GOSSIP_SHOW", { gossip = "Hello." })
+      frame:Hide()
+      assert.are.same({ true, false }, { lifts[#lifts - 1], lifts[#lifts] })
+    end)
+
+    it("an option named like a game string keeps its own Japanese; Goodbye's face comes off for English", function()
+      ship({ gossip = { ["Hello."] = "こんにちは。", ["Goodbye"] = "また会おう" } })
+      game(WORDS)
+      open("GOSSIP_SHOW", { gossip = "Hello.", options = { "Goodbye" } })
+      assert.are.equal("1. また会おう", frame.buttons[1].Name:GetText())
+      assert.are.equal("さようなら", frame.ExitButton.Name:GetText())
+      alt(true)
+      assert.are_not.equal(WFJ.Font.PATH, frame.ExitButton.measuredFont[1])
+    end)
+
+    it("an NPC emote whose Japanese holds another % stays English (Dialogue UI formats it)", function()
+      load({ loaded = false })
+      local panel = DUI.installChatPanel()
+      Stub.loadedAddons.DialogueUI = true
+      WFJ.LoadOnDemand.loaded("DialogueUI")
+      WFJ.Speech = { translate = function() return "%sが50%の力で叫ぶ。" end }
+      panel:AddMessage("%s shouts at half strength.", "Ogre", "CHAT_MSG_MONSTER_EMOTE")
+      assert.are.equal("%s shouts at half strength.", panel.lines[1][1])
+    end)
+
+    it("a scan that fails on a frame starts again from the first frame next time", function()
+      local calls = 0
+      local real = _G.EnumerateFrames
+      _G.EnumerateFrames = function(prev)
+        calls = calls + 1
+        if calls == 2 then error("forbidden") end
+        return real(prev)
+      end
+      assert.has_no.errors(function()
+        frame:Hide()
+        frame:Show()
+        DUI.flush()
+      end)
+      assert.is_true(WFJ.DialogueUI.active())
+      _G.EnumerateFrames = real
+    end)
+
+    it("an install that fails half way leaves Dialogue UI's English and raises nothing", function()
+      load({ loaded = false })
+      _G.hooksecurefunc = function() error("boom") end
+      Stub.loadedAddons.DialogueUI = true
+      assert.has_no.errors(function() WFJ.LoadOnDemand.loaded("DialogueUI") end)
+      assert.is_false(WFJ.DialogueUI.installed())
+      assert.is_true(#caught >= 1)
     end)
   end)
 

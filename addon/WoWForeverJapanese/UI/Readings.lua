@@ -36,6 +36,7 @@ View.SURFACES = {
   -- Dialogue UI's windows (UI/DialogueUI, UI/DialogueUIBook pass each paragraph's share of the line's words)
   ["dialogueui.detail"] = true, ["dialogueui.progress"] = true, ["dialogueui.reward"] = true,
   ["dialogueui.greeting"] = true, ["dialogueui.gossip"] = true, ["dialogueui.book"] = true,
+  ["dialogueui.title"] = true, -- the quest title in its page header, as the client's quest window's title
 }
 
 -- The frame a box over `anchor` belongs under: UIParent, unless the text sits in a window outside it (Dialogue UI

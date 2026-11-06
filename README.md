@@ -216,8 +216,8 @@ Both can be turned off in the settings.
 **Which game does it work with?** World of Warcraft: Forever only.
 
 **Does it work with Dialogue UI?** Yes. When you have Dialogue UI installed, its quest, NPC talk and book windows show
-the Japanese, with the same key to see the English, word cards and voice. Its own buttons and headings stay as
-Dialogue UI writes them. Dialogue UI is not needed and not included.
+the Japanese, with the same key to see the English, word cards and voice. Its buttons, headings and item tooltips
+use the game's Japanese words; a few words of its own stay English. Dialogue UI is not needed and not included.
 
 ## Credits
 
@@ -381,7 +381,7 @@ GitHub アカウントがなければ、[Discord](https://foreverjapanese.com/di
 
 **どのゲームで使える？** World of Warcraft: Forever 専用です。
 
-**Dialogue UI と一緒に使える？** 使えます。Dialogue UI を入れている場合、そのクエスト、NPCとの会話、本のウィンドウにも日本語が表示され、英語を見るキー、単語カード、音声もそのまま使えます。Dialogue UI 自身のボタンや見出しは Dialogue UI の表示のままです。Dialogue UI は必須ではなく、このアドオンには含まれていません。
+**Dialogue UI と一緒に使える？** 使えます。Dialogue UI を入れている場合、そのクエスト、NPCとの会話、本のウィンドウにも日本語が表示され、英語を見るキー、単語カード、音声もそのまま使えます。ボタン、見出し、アイテムのツールチップにはゲームの日本語が使われます。Dialogue UI 独自の言葉の一部は英語のままです。Dialogue UI は必須ではなく、このアドオンには含まれていません。
 
 ### クレジット
 

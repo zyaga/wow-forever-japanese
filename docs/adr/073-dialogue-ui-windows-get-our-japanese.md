@@ -15,6 +15,14 @@ When Dialogue UI is loaded, two window modules (`UI/DialogueUI.lua`, `UI/Dialogu
 
 The addon ships, embeds and requires nothing of Dialogue UI: no dependency field in the TOC, no copied code, and without Dialogue UI the modules do nothing. Each module checks every Dialogue UI member it uses when it installs; if one is missing, it installs nothing, writes one line to the problem log, and Dialogue UI shows its English. Repeated errors in the wrappers switch both modules off for the session, again leaving Dialogue UI's English.
 
+Dialogue UI's buttons, section headings, reward headings and the tags over a quest page title are mostly the game's own strings (its locale reads them from the client). A label that is exactly one of the client's interface strings gets that string's Japanese, as on the client's windows; a heading's band is sized again for the Japanese. A third module, `UI/DialogueUIFrames.lua`, works on Dialogue UI's frames that have no name, told apart by their own members: its item tooltip (every line after the item name gets the game's Japanese through the same matchers as the client's tooltips), its chat panel (an NPC line arriving gets the chat window's Japanese) and its quest popups (the quest's Japanese title). A scan finds those frames when the window is set up, after the quest events Dialogue UI makes a popup on, and when its window opens, going on from the last frame it saw.
+
+A few words are Dialogue UI's own with no client string behind them: the "Requirements" heading (Forever has no such string), and in its tooltip "Replace", "Show Comparison" and "Hide Comparison". These show the addon's own Japanese (必要なもの, 交換:, 比較を表示, 比較を隠す), as the voice panel's words do, under the same switches as the game's words. Its other own words stay English. Its quest-complete flyout stays English: it is off by default and measures its text inside code the addon cannot reach, so a swap could break its layout.
+
+While a Dialogue UI window is open, the voice panel is taken out from under the game interface (no parent, at the interface's scale) so it shows whole while Dialogue UI fades that interface out, and is put back when the window closes.
+
+Each module's install runs under one guard: an error on the way is recorded and Dialogue UI keeps its English, with nothing raised. Every frame check and wrapper is guarded, and an event the client does not have is passed over.
+
 Dialogue UI's public translator API (`SetTranslator`) is not used: it shows both languages by default, which the toggle contract forbids, and it covers quests only.
 
 This narrows ADR-004: an optional adapter that runs only when the player already has the other addon is allowed. Dependencies, `## OptionalDeps` and embedded libraries stay forbidden.
@@ -29,14 +37,16 @@ This narrows ADR-004: an optional adapter that runs only when the player already
 ## Consequences
 
 ### Positive
-- Dialogue UI users get the same Japanese, reveal key, markers, word cards and voice as on Blizzard's windows, plus Japanese quest titles, NPC talk options and quest rows in its lists.
+- Dialogue UI users get the same Japanese, reveal key, markers, word cards and voice as on Blizzard's windows, plus Japanese quest titles, NPC talk options and quest rows in its lists, its game-word buttons and headings, its item tooltip lines, its chat panel lines and its quest popup titles.
 - Players without Dialogue UI see no change.
 
 ### Negative
 - The modules follow Dialogue UI's internals, which can change in its updates. The member check and the error limit bound the damage to English text.
 - Holding the reveal key uses Dialogue UI's own redraw, which clears its gossip history and a reward the player had chosen on the turn-in page. The module puts the page's scroll position back after the redraw.
-- Dialogue UI fades the game interface out while its window shows, so the word card and reading box move under the Dialogue UI window while they point at its text. The voice panel stays under the game interface and shows again when Dialogue UI brings the interface back.
-- Dialogue UI measures a book's text through its own book font objects before any line is drawn, so while a book shows Japanese the book module sets the bundled face on those objects (Dialogue UI's, never the client's) and gives their faces back when the book closes or shows English. The rest of the addon still never changes a font object.
+- Dialogue UI fades the game interface out while its window shows, so the word card and reading box move under the Dialogue UI window while they point at its text. The voice panel is lifted out from under the faded interface for that time and goes back after; under it, only its 3D head would draw (a model ignores its parent's alpha).
+- Lines already in Dialogue UI's chat panel keep what they showed when they arrived (the panel keeps its own list), so the reveal key and the switches change only lines arriving while they are set.
+- The tooltip, chat panel and popups are found by their shape, not a name; a Dialogue UI update that changes that shape leaves them in English.
+- Dialogue UI measures a book's text and its chat panel's lines through its own font objects before any line is drawn, so the modules set the bundled face on those objects (Dialogue UI's, never the client's): the book's while a book shows Japanese (given back when it closes or shows English), the chat panel's when the panel is found, before it holds a line. The rest of the addon still never changes a font object.
 
 ## Alternatives considered
 

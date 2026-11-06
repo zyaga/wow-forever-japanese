@@ -10,7 +10,7 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Added
-- Works with Dialogue UI: when you have it installed, its quest, NPC talk and book windows show the Japanese, with the same key for the English, markers, word cards and voice. Quest titles, NPC talk options and the objective lines on its progress page are Japanese too. Dialogue UI's own buttons and headings stay as it writes them, and Dialogue UI is not needed.
+- Works with Dialogue UI: when you have it installed, its quest, NPC talk and book windows show the Japanese, with the same key for the English, markers, word cards and voice. Quest titles, NPC talk options and the objective lines on its progress page are Japanese too. Its buttons, headings and item tooltips use the game's Japanese words (a few words of its own stay English), and Dialogue UI is not needed.
 
 ## 0.9.0 - 2026-11-06
 
