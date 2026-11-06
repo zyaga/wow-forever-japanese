@@ -848,7 +848,6 @@ WFJ.Data.add("gloss", {
   [141858] = "秘術\tひじゅつ\tthe arcane (arcane arts)",
   [141859] = "空\tそら\tthe sky",
   [141860] = "終える\tおえる\thave finished (trained)",
-  [141861] = "終わる\tおわる\tis it done (finished)",
   [141862] = "老いぼれ\tおいぼれ\told (dotard)",
   [141863] = "考える\tかんがえる\thave (you) considered",
   [141864] = "者\tもの\tfollowers (people)",
@@ -865,4 +864,5 @@ WFJ.Data.add("gloss", {
   [141875] = "長老\tちょうろう\tthe elders",
   [141876] = "飛ぶ\tとぶ\tsailing (flying)",
   [141877] = "飢える\tうえる\tare hungry (for)",
+  [141878] = "終わる\tおわる\tfinished (over and done)",
 })
