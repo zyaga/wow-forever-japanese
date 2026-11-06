@@ -20,14 +20,17 @@ NOTES = (
     "- A second line\n  that continues.\n\n### Fixed\n- The auction house search.\n"
 )
 VERSION = "0.9.0"
+JA = "**追加**\n- ゲーム内で単語を学習できます。\n\n**修正**\n- 競売場の検索。"
 _folders = itertools.count()
 
 
-def media(tmp_path: Path, names: dict[str, int]) -> Path:
+def media(tmp_path: Path, names: dict[str, int], ja: str | None = None) -> Path:
     folder = tmp_path / f"media{next(_folders)}"
     folder.mkdir()
     for name, size in names.items():
         (folder / name).write_bytes(b"x" * size)
+    if ja is not None:
+        (folder / "ja.md").write_text(ja, encoding="utf-8")
     return folder
 
 
@@ -49,27 +52,32 @@ def test_markdown_renders_groups_and_entries():
         section("just a line\n")
 
 
-def test_build_shapes_the_post(tmp_path):
-    folder = media(tmp_path, {"b-clip.mp4": 10, "a-card.jpg": 5})
+def test_messages_shape_the_post(tmp_path):
+    folder = media(tmp_path, {"b-clip.mp4": 10, "a-card.jpg": 5, "c-card.png": 3}, ja=JA)
     files = announce.media_files(folder)
-    payload = announce.build(VERSION, section(), files)
-    assert payload["content"] == "WoW Forever Japanese 0.9.0 is out."
-    (embed,) = payload["embeds"]
-    assert embed["title"] == "WoW Forever Japanese 0.9.0"
-    assert embed["url"] == "https://www.curseforge.com/wow/addons/wow-forever-japanese/files"
-    assert embed["color"] == 0xE8C77E == 15255422
-    assert embed["description"] == announce.markdown(section())
-    assert "image" not in embed and "thumbnail" not in embed  # attachments, not one page-filling picture
-    assert payload["attachments"] == [
-        {"id": 0, "filename": "a-card.jpg"},
-        {"id": 1, "filename": "b-clip.mp4"},
-    ]
-    assert [f.name for f in files] == ["a-card.jpg", "b-clip.mp4"]  # name order
-    assert "attachments" not in announce.build(VERSION, section(), [])
+    assert [f.name for f in files] == ["a-card.jpg", "b-clip.mp4", "c-card.png"]  # name order, ja.md is not media
+    posts = announce.messages(VERSION, section(), files, announce.japanese(folder))
+    (first, pictures), (second, clips) = posts
+    assert first["content"] == "WoW Forever Japanese 0.9.0 is out."
+    english, extra, japanese = first["embeds"]
+    assert english["title"] == "WoW Forever Japanese 0.9.0"
+    assert english["url"] == "https://www.curseforge.com/wow/addons/wow-forever-japanese/files"
+    assert english["color"] == 0xE8C77E == 15255422
+    assert english["description"] == announce.markdown(section())
+    assert english["image"] == {"url": "attachment://a-card.jpg"}  # the first picture in full, under the text
+    assert extra == {"url": english["url"], "image": {"url": "attachment://c-card.png"}}  # the gallery
+    assert japanese == {"title": "WoW Forever Japanese 0.9.0（日本語）", "color": 0xE8C77E, "description": JA}
+    assert first["attachments"] == [{"id": 0, "filename": "a-card.jpg"}, {"id": 1, "filename": "c-card.png"}]
+    assert [p.name for p in pictures] == ["a-card.jpg", "c-card.png"]
+    assert second == {"attachments": [{"id": 0, "filename": "b-clip.mp4"}]}  # the clip alone, under the cards
+    assert [c.name for c in clips] == ["b-clip.mp4"]
+    # nothing but the notes: one message, one card
+    ((only, none),) = announce.messages(VERSION, section(), [], None)
+    assert "attachments" not in only and len(only["embeds"]) == 1 and "image" not in only["embeds"][0] and none == []
 
 
 def test_preview_prefix():
-    payload = announce.build("next", section(), [], preview=True)
+    ((payload, _),) = announce.messages("next", section(), [], None, preview=True)
     assert payload["content"].startswith("Preview of the next release post.")
     assert payload["embeds"][0]["title"] == "WoW Forever Japanese next"
 
@@ -99,6 +107,19 @@ def test_limits_refuse_bad_files(tmp_path):
     folder = media(tmp_path, {"card.webp": 1})
     (folder / ".DS_Store").write_bytes(b"\0")  # a dotfile is not media
     assert [f.name for f in announce.media_files(folder)] == ["card.webp"]
+    five = [tmp_path / f"{i}.png" for i in range(5)]
+    with pytest.raises(AnnounceError, match=r"5 pictures"):
+        announce.messages(VERSION, section(), five, None)
+
+
+def test_japanese_card_text(tmp_path):
+    assert announce.japanese(None) is None
+    assert announce.japanese(media(tmp_path, {})) is None
+    assert announce.japanese(media(tmp_path, {}, ja=" " + JA + "\n")) == JA
+    with pytest.raises(AnnounceError, match=r"ja\.md is empty"):
+        announce.japanese(media(tmp_path, {}, ja="\n"))
+    with pytest.raises(AnnounceError, match=r"over a card's 4096"):
+        announce.japanese(media(tmp_path, {}, ja="あ" * 4097))
 
 
 def test_long_notes_are_cut_with_a_link():
@@ -174,7 +195,9 @@ def test_post_errors_name_the_status_and_body_never_the_url(monkeypatch):
 
 def test_post_keeps_an_existing_query(monkeypatch):
     seen = []
-    monkeypatch.setattr(discord.urllib.request, "urlopen", lambda request, timeout=None: seen.append(request) or FakeResponse(b"{}"))
+    monkeypatch.setattr(
+        discord.urllib.request, "urlopen", lambda request, timeout=None: seen.append(request) or FakeResponse(b"{}")
+    )
     discord.post("https://discord.example/api/webhooks/1/t?thread_id=5", {"content": "x"}, [])
     assert seen[0].full_url == "https://discord.example/api/webhooks/1/t?thread_id=5&wait=true"
 
@@ -211,11 +234,11 @@ def test_command_dry_run_prints_and_sends_nothing(repo, capsys, monkeypatch):
     rc = announce.run(["--version", VERSION, "--notes", "notes.md", "--media", str(folder), "--dry-run"])
     assert rc == 0 and sent == []
     out = capsys.readouterr().out
-    assert "card.jpg" in out and "4 bytes" in out
+    assert "card.jpg" in out and "4 bytes" in out and "no ja.md in" in out
+    posts = json.loads(out[out.index("[") : out.rindex("]") + 1])
+    assert len(posts) == 1 and posts[0]["embeds"][0]["title"] == "WoW Forever Japanese 0.9.0"
     assert announce.run(["--version", VERSION, "--notes", "notes.md", "--media", "absent", "--dry-run"]) == 0
     assert "no media folder at absent" in capsys.readouterr().out
-    payload = json.loads(out[out.index("{") : out.rindex("}") + 1])
-    assert payload["embeds"][0]["title"] == "WoW Forever Japanese 0.9.0"
 
 
 def test_command_needs_the_url(repo, capsys):
@@ -225,23 +248,23 @@ def test_command_needs_the_url(repo, capsys):
 
 
 def test_command_posts_with_the_url_from_the_environment(repo, monkeypatch, capsys):
-    folder = media(repo, {"card.jpg": 4, "clip.mp4": 6})
+    folder = media(repo, {"card.jpg": 4, "clip.mp4": 6}, ja=JA)
     monkeypatch.setenv("DISCORD_WEBHOOK_URL", "https://discord.example/api/webhooks/1/secret")
     sent = []
 
     def fake_post(url, payload, files):
         sent.append((url, payload, files))
-        return {"id": "9"}
+        return {"id": str(len(sent))}
 
     monkeypatch.setattr(discord, "post", fake_post)
     assert announce.run(["--version", VERSION, "--notes", "notes.md", "--media", str(folder)]) == 0
-    ((url, payload, files),) = sent
+    (url, first, pictures), (_, second, clips) = sent
     assert url == "https://discord.example/api/webhooks/1/secret"
-    assert [name for name, _ in files] == ["card.jpg", "clip.mp4"]
-    assert files[0][1] == b"xxxx"
-    assert payload["attachments"][1] == {"id": 1, "filename": "clip.mp4"}
+    assert pictures == [("card.jpg", b"xxxx")] and clips == [("clip.mp4", b"xxxxxx")]
+    assert first["embeds"][1]["description"] == JA  # one picture: no gallery embed between the cards
+    assert second == {"attachments": [{"id": 0, "filename": "clip.mp4"}]}
     out = capsys.readouterr().out
-    assert "secret" not in out and "card.jpg" in out
+    assert "secret" not in out and "card.jpg" in out and "2 message(s)" in out
 
 
 def test_preview_reads_unreleased_and_the_media_folder(repo, monkeypatch, capsys):

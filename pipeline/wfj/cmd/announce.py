@@ -1,19 +1,21 @@
 """wfj announce: a release's Discord post (docs/operations/release.md, ADR-072).
 
   wfj announce --version X.Y.Z --notes PATH [--media DIR] [--dry-run]
-      Post version X.Y.Z: one line of content, one embed in the addon's gold with the version, the notes at
-      PATH (the version's changelog section, as `wfj release changelog` writes it) as Discord markdown and
-      the CurseForge link, and the image and video files of DIR attached in name order. No DIR, or an empty
-      one: the text alone.
+      Post version X.Y.Z: a first message with one line of content and the cards (the English card in the
+      addon's gold with the version, the notes at PATH as Discord markdown, the CurseForge link and the
+      folder's pictures shown in full under the text; then, when DIR holds `ja.md`, a Japanese card with
+      that text), and a second message with the folder's clips, so each gets Discord's own player under
+      the cards. No DIR, or an empty one: the English card alone.
   wfj announce --preview [--media DIR] [--dry-run]
       The post the next release would make: the version by the release rule (`next` while `## Unreleased`
-      is empty), the notes from `## Unreleased`, the media from DIR; its content starts with a line saying
-      it is a preview.
+      is empty), the notes from `## Unreleased`, the media and `ja.md` from DIR; its content starts with a
+      line saying it is a preview.
 
 The webhook URL is read from DISCORD_WEBHOOK_URL and nowhere else; it is never printed. --dry-run prints
-the payload and the file list and sends nothing. Limits are Discord's: at most 10 files of 20 MiB, each a
-type Discord shows inline, a description of at most 4096 characters (longer notes are cut at an entry and
-end with a link to the full notes).
+the messages and the file list and sends nothing. Limits are Discord's: at most 4 pictures (one gallery),
+at most 10 files of 20 MiB and 25 MiB together, each a type Discord shows inline, a card of at most 4096
+characters (longer notes are cut at an entry and end with a link to the full notes; a longer `ja.md` is
+refused).
 """
 
 from __future__ import annotations
@@ -34,6 +36,8 @@ NAME = "WoW Forever Japanese"
 CURSEFORGE_FILES = "https://www.curseforge.com/wow/addons/wow-forever-japanese/files"
 RELEASE_URL = "https://github.com/zyaga/wow-forever-japanese/releases/tag/v{version}"
 GOLD = 0xE8C77E  # the gold of the CurseForge text and the gallery cards
+JA_FILE = "ja.md"  # the Japanese card's text, beside the media
+MAX_IMAGES = 4  # one embed gallery
 MAX_FILES = 10
 MAX_FILE_BYTES = 20 * 1024 * 1024
 MAX_TOTAL_BYTES = 25 * 1024 * 1024  # Discord's limit on one request
@@ -47,14 +51,14 @@ class AnnounceError(RuntimeError):
 
 def media_files(folder: Path | None) -> list[Path]:
     """The files of the media folder in name order, checked against Discord's limits: a missing folder is no
-    media; dotfiles are not media; anything else must be a file (no subfolders) with a plain name, an
-    image or video type Discord shows inline, not empty, at most 20 MiB, at most 10 in all, under 25 MiB
-    together."""
+    media; dotfiles and `ja.md` are not media; anything else must be a file (no subfolders) with a plain
+    name, an image or video type Discord shows inline, not empty, at most 20 MiB, at most 10 in all, under
+    25 MiB together."""
     if folder is None or not folder.is_dir():
         return []
     out: list[Path] = []
     for path in sorted(folder.iterdir(), key=lambda p: p.name):
-        if path.name.startswith("."):
+        if path.name.startswith(".") or path.name == JA_FILE:
             continue
         if not path.is_file():
             raise AnnounceError(f"{path.name}: only files go in the media folder, not folders")
@@ -76,6 +80,19 @@ def media_files(folder: Path | None) -> list[Path]:
     if total > MAX_TOTAL_BYTES:
         raise AnnounceError(f"{total} bytes of media in {folder.name}, over Discord's 25 MiB for one post")
     return out
+
+
+def japanese(folder: Path | None) -> str | None:
+    """The Japanese card's text, `ja.md` in the media folder: Discord markdown as written, within the card's
+    limit. None when the folder or the file is absent."""
+    if folder is None or not (folder / JA_FILE).is_file():
+        return None
+    text = (folder / JA_FILE).read_text(encoding="utf-8").strip()
+    if not text:
+        raise AnnounceError(f"{JA_FILE} is empty")
+    if len(text) > MAX_DESCRIPTION:
+        raise AnnounceError(f"{JA_FILE} is {len(text)} characters, over a card's {MAX_DESCRIPTION}")
+    return text
 
 
 def notes_section(text: str) -> Section:
@@ -104,8 +121,8 @@ def markdown(section: Section) -> str:
 
 
 def description(version: str, section: Section) -> str:
-    """The embed's text, within Discord's limit: long notes stop at an entry and end with a link to the full
-    notes on GitHub."""
+    """The English card's text, within Discord's limit: long notes stop at an entry and end with a link to
+    the full notes on GitHub."""
     text = markdown(section)
     if len(text) <= MAX_DESCRIPTION:
         return text
@@ -122,18 +139,40 @@ def description(version: str, section: Section) -> str:
     return "\n".join([*kept, link])
 
 
-def build(version: str, section: Section, files: Sequence[Path], preview: bool = False) -> dict:
-    """The webhook payload: the content line, the embed and, with files, the attachment list."""
+def _is_image(path: Path) -> bool:
+    return (discord.content_type(path.name) or "").startswith("image/")
+
+
+def messages(
+    version: str, section: Section, files: Sequence[Path], ja: str | None = None, preview: bool = False
+) -> list[tuple[dict, list[Path]]]:
+    """The webhook messages in order, each with the files it carries: first the content line and the cards
+    (the English card showing the first picture in full, more pictures as its gallery, then the Japanese
+    card), then the clips alone, so Discord gives each its player under the cards."""
+    pictures = [f for f in files if _is_image(f)]
+    clips = [f for f in files if not _is_image(f)]
+    if len(pictures) > MAX_IMAGES:
+        raise AnnounceError(f"{len(pictures)} pictures: a card shows at most {MAX_IMAGES}")
     title = f"{NAME} {version}"
     content = f"{title} is out."
     if preview:
         content = "Preview of the next release post. " + content
     text = description(version, section)
-    embed = {"title": title, "url": CURSEFORGE_FILES, "color": GOLD, "description": text}
-    payload: dict = {"content": content, "embeds": [embed]}
-    if files:
-        payload["attachments"] = [{"id": i, "filename": f.name} for i, f in enumerate(files)]
-    return payload
+    english: dict = {"title": title, "url": CURSEFORGE_FILES, "color": GOLD, "description": text}
+    embeds = [english]
+    if pictures:
+        english["image"] = {"url": f"attachment://{pictures[0].name}"}
+        for extra in pictures[1:]:
+            embeds.append({"url": CURSEFORGE_FILES, "image": {"url": f"attachment://{extra.name}"}})
+    if ja:
+        embeds.append({"title": f"{title}（日本語）", "color": GOLD, "description": ja})
+    first: dict = {"content": content, "embeds": embeds}
+    if pictures:
+        first["attachments"] = [{"id": i, "filename": p.name} for i, p in enumerate(pictures)]
+    out = [(first, pictures)]
+    if clips:
+        out.append(({"attachments": [{"id": i, "filename": c.name} for i, c in enumerate(clips)]}, clips))
+    return out
 
 
 def _preview(root: Path) -> tuple[str, Section]:
@@ -147,9 +186,9 @@ def run(argv: Sequence[str]) -> int:
     p = argparse.ArgumentParser(prog="wfj announce")
     p.add_argument("--version", help="the released version")
     p.add_argument("--notes", type=Path, help="the version's notes, as wfj release changelog writes them")
-    p.add_argument("--media", type=Path, help="the folder of images and clips to attach")
+    p.add_argument("--media", type=Path, help="the folder of pictures, clips and ja.md")
     p.add_argument("--preview", action="store_true", help="the next release's post, from Unreleased")
-    p.add_argument("--dry-run", action="store_true", help="print the payload and the files; send nothing")
+    p.add_argument("--dry-run", action="store_true", help="print the messages and the files; send nothing")
     a = p.parse_args(argv)
     try:
         if a.preview:
@@ -161,21 +200,25 @@ def run(argv: Sequence[str]) -> int:
                 raise AnnounceError("--version and --notes are needed (or --preview)")
             version, section = a.version, notes_section(a.notes.read_text(encoding="utf-8"))
         if a.media and not a.media.is_dir():
-            print(f"no media folder at {a.media}: the text alone")
+            print(f"no media folder at {a.media}: the English card alone")
         files = media_files(a.media)
-        payload = build(version, section, files, preview=a.preview)
+        ja = japanese(a.media)
+        if a.media and a.media.is_dir() and ja is None:
+            print(f"no {JA_FILE} in {a.media}: the English card alone")
+        posts = messages(version, section, files, ja, preview=a.preview)
         for f in files:
             print(f"file: {f.name} ({f.stat().st_size} bytes)")
         if a.dry_run:
-            print(json.dumps(payload, indent=2, ensure_ascii=False))
+            print(json.dumps([payload for payload, _ in posts], indent=2, ensure_ascii=False))
             print("dry run: nothing sent")
             return 0
         url = os.environ.get("DISCORD_WEBHOOK_URL")
         if not url:
             print("DISCORD_WEBHOOK_URL is not set", file=sys.stderr)
             return 1
-        answer = discord.post(url, payload, [(f.name, f.read_bytes()) for f in files])
-        print(f"posted {version} to Discord: {len(files)} file(s), message {answer.get('id', '?')}")
+        for payload, parts in posts:
+            discord.post(url, payload, [(f.name, f.read_bytes()) for f in parts])
+        print(f"posted {version} to Discord: {len(posts)} message(s), {len(files)} file(s)")
         return 0
     except (AnnounceError, discord.DiscordError, release.ReleaseError, OSError) as e:
         print(f"announce: {e}", file=sys.stderr)
