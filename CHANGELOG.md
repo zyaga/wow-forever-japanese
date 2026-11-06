@@ -9,6 +9,15 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Added
+- Japanese for about twenty more NPC lines, four on Zephras Isle and sixteen in the Forsaken and Tauren starting lands, with word cards, and voice where the speaker is known, from two players' English Collector sends. Two quest progress texts that had no Japanese now have it.
+
+### Changed
+- Six quest progress and turn-in texts follow the game's current wording in Japanese and no longer show the stale marker.
+
+### Fixed
+- The English Collector recognises the player's name when the game prints it in capitals, so such a line is recorded without the name and matches on every player's screen.
+
 ## 0.8.0 - 2026-11-05
 
 ### Added

@@ -342,6 +342,30 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
 
+### 1.60.1.70790, two players' collector sends (2026-11-06)
+
+Not a re-pull: two players' collector sends, issues #63 (46 entries, addon 0.7.1) and #64 (87 entries, addon 0.8.0),
+both from build 1.60.1.70790, both with the Permission box ticked and checked `collector-ok` by the `collector-check`
+workflow, read with `make collector-intake ISSUE=63` then `ISSUE=64`. Nothing was rejected. Item (7) and spell (6)
+lines that differ from the client's files kept the client's English.
+
+One gossip line from #64 was left out of `data/english/` after the intake: the client had printed the player's own
+character name in capitals inside it ("The earth calls to you, …"), the collector's exact-case replacement did not
+recognise it, so the stored text and its key carried the name and could match no other player's screen. The addon
+now records that form as `$N` too ([the collector](../systems/collector.md), step 8), so a later send records the
+line without the name. It is not counted below.
+
+| Type | Added | Replaced | Unchanged | Drafted |
+|---|---|---|---|---|
+| gossip | 20 (4 from #63: the arcane trainer, an elder Magister of the High Order, and two townsfolk on Zephras Isle; 16 from #64: the talk between Leonid Barthalomew and Danitha at Bandarion Keep, a Deathguard's report line, the kodo seller, the barbershop sign and four short NPC calls) | 0 | 17 | 20, with word lists; two reuse the Japanese of lines already shipped with almost the same English |
+| quest | 2 (92465 progress, 96605 progress) | 6 progress and completion texts: forever-vo's or VMaNGOS's wording replaced by the game's (94414 progress; 367, 96898, 96899, 99144, 99152 completion) | 0 | 2 new, with word lists; the 5 machine lines re-verified with `REVERIFY=1`: 3 kept unchanged (94414, 96898, 96899), 2 rewritten for the new English (99144 no longer addresses the player by name, 99152 lost its first paragraph and now addresses the player's class); 367 completion is a hand-written line and was ruled `keep` with `apply_review --scope stale` (the game only moved a comma) |
+| unit (NPC names) | 43 | 0 | 31 | none (names stay English) |
+
+Voice: `make voice-speakers` (9 new speaker rows; every speaking creature already had a profile and a cast voice, so
+no casting draft), then `make voice-generate`: 14 files (2 for the rewritten quest texts, 12 for the new lines whose
+speaker is known). The nine dialogue lines between two NPCs and the four short calls that no NPC id was recorded for
+have no speaker and are not voiced.
+
 ### 1.60.1.70790, a player's collector send (2026-11-05)
 
 Not a re-pull: one player's collector send, issue #56, read with `make collector-intake ISSUE=56`. The send held 298

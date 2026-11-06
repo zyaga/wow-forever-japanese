@@ -141,9 +141,7 @@ end
 local function replaceUpperName(text, player)
   local name = player.name
   if type(name) ~= "string" or name == "" then return text end
-  local upper = name:upper()
-  if upper == name then return text end
-  return Normalize.replaceWord(text, upper, "{name}")
+  return Normalize.replaceWord(text, name:upper(), "{name}")
 end
 
 -- Whole-word, exact-case replacement of a name of any length: the boundaries of Normalize.replaceWord, without its
