@@ -75,6 +75,7 @@ end
 local function htmlPage(text)
   return text:find("<[Hh][Tt][Mm][Ll]") ~= nil
 end
+ItemText.isHtml = htmlPage -- UI/DialogueUIBook tells pages apart the same way
 
 -- Our FontString, on the scroll child beside the SimpleHTML (created once; nil when the client gives no
 -- CreateFontString).

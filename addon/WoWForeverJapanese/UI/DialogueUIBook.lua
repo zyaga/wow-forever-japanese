@@ -19,19 +19,32 @@ Book.MEMBERS = { "ShowUI", "OnSettingsChanged", "Init" }
 -- the book's font objects, by block tag; the title (the book's name) keeps Dialogue UI's face
 local FONTS = { "DUIFont_Book_Paragraph", "DUIFont_Book_H1", "DUIFont_Book_H2", "DUIFont_Book_H3", "DUIFont_Book_10" }
 
+Compat.declare(SURFACE, "getPage", { "ItemTextGetPage" })
+Compat.declare(SURFACE, "getText", { "ItemTextGetText" })
+Compat.declare(SURFACE, "getCreator", { "ItemTextGetCreator" })
+
 local deps = {} -- { key(text) → book key } from Main
 local frame -- DUIBookFrame, once installed
 local installed = false
 local raw = {} -- page number → the page's English as the client gave it while Dialogue UI turned through the book
 local creator -- the name of the player who wrote the book (a letter): left as it is
-local book -- the book showing: { content, pages = { { entries, en, html, key, holder } }, original = { [i] = text } }
+-- the book showing: { content, pages = { { entries, en, html, key, holder, enBlocks } }, original = { [i] = text },
+-- placed = { [entry index] = { text, at, page } }, bundled }
+local book
 local saved = {} -- font object name → { path, size, flags } it had before the bundled face
 local cards = {} -- word-card records on the visible blocks
+local changed = false -- a write changed a block or the faces
 
 function Book.installed() return installed end
 
 local function active() return installed and WFJ.DialogueUI.healthy() end
 local function guarded(...) return WFJ.DialogueUI.guarded(...) end
+
+local function call(key, ...)
+  local fn = Compat.get(SURFACE, key)
+  if type(fn) ~= "function" then return nil end
+  return fn(...)
+end
 
 -- Text pieces as Dialogue UI splits a plain page: on control characters, a lone space dropped.
 local function split(text)
@@ -44,82 +57,100 @@ end
 
 local function squash(s) return (s:gsub("%s+", " "):gsub("^ ", ""):gsub(" $", "")) end
 
--- An HTML page's text blocks in order: what lies between its tags, a line break kept inside its block.
+-- An HTML page's text blocks in order (what lies between its tags, a line break kept inside its block) → blocks,
+-- the same blocks squashed for comparing
 local function blocks(html)
-  local out = {}
+  local out, cmp = {}, {}
   local text = html:gsub("<[Bb][Rr]%s*/?>", "\n"):gsub("<[^>]*>", "\1")
   for piece in (text .. "\1"):gmatch("(.-)\1") do
     local s = squash(piece)
-    if s ~= "" then out[#out + 1] = piece:gsub("^%s+", ""):gsub("%s+$", "") end
-  end
-  return out
-end
-
--- An inline marker line Render put before a page's text → marker, the rest | nil, text
-local function splitMarker(text)
-  local marker, rest = text:match("^(|c%x%x%x%x%x%x%x%x.-|r)\n(.*)$")
-  if marker then
-    for _, m in pairs(WFJ.MARKER) do
-      if marker:find(m, 1, true) then return marker, rest end
+    if s ~= "" then
+      out[#out + 1] = piece:gsub("^%s+", ""):gsub("%s+$", "")
+      cmp[#cmp + 1] = s
     end
   end
-  return nil, text
+  return out, cmp
+end
+
+-- An inline marker line Render put before a page's text (MARKER_INLINE_COLOR … "|r\n") → marker, the rest | nil, text
+local function splitMarker(text)
+  local mark = WFJ.MARKER_INLINE_COLOR
+  if text:sub(1, #mark) ~= mark then return nil, text end
+  local stop = text:find("|r\n", #mark + 1, true)
+  if not stop then return nil, text end
+  return text:sub(1, stop + 1), text:sub(stop + 3)
 end
 
 -- ── Writing the pages ──────────────────────────────────────────────────────
 
+local function setText(e, t)
+  if e.text ~= t then
+    e.text = t
+    changed = true
+  end
+end
+
 -- The page's Japanese paragraphs into its blocks, in order: blocks left over are emptied, paragraphs left over are
--- joined into the last block. → { [entry index] = { text, at } } (where each block's text starts in `ja`)
-local function placePlain(pg, ja, content)
+-- joined into the last block. Each block found as it is in the page's Japanese is noted for word cards.
+local function placePlain(n, pg, ja, content)
   local paras = split(ja)
-  if #paras == 0 then return nil end
-  local placed, n, from = {}, #pg.entries, 1
+  if #paras == 0 then return false end
+  local count, from = #pg.entries, 1
   for i, idx in ipairs(pg.entries) do
-    local t = i < n and (paras[i] or "") or (paras[i] and table.concat(paras, "\n\n", i) or "")
-    content[idx].text = t
-    -- a block that is one paragraph is found in the page as it is; a joined last block may not be (no cards there)
+    local t = i < count and (paras[i] or "") or (paras[i] and table.concat(paras, "\n\n", i) or "")
+    setText(content[idx], t)
+    -- a joined last block may not be in the page as it is: it gets no cards
     local at = t ~= "" and ja:find(t, from, true) or nil
-    placed[idx] = { text = t, at = at }
-    if at then from = at + #t end
-  end
-  return placed
-end
-
--- An HTML page: each block Dialogue UI made is one of the English page's blocks, in order; it gets the Japanese
--- page's block at the same place. → placed | nil when the blocks do not line up
-local function placeHtml(pg, ja, content)
-  local en, jb = blocks(pg.en), blocks(ja)
-  if #en ~= #jb then return nil end
-  local plan, k = {}, 1
-  for _, idx in ipairs(pg.entries) do
-    local t = squash(content[idx].text)
-    while k <= #en and squash(en[k]) ~= t do k = k + 1 end
-    if k > #en then return nil end
-    plan[idx] = jb[k]
-    k = k + 1
-  end
-  for idx, t in pairs(plan) do content[idx].text = t end
-  return {}
-end
-
--- One page's text as its record holds it now. → whether the page shows text in the bundled face
-local function place(pg, content)
-  local text = pg.holder and pg.holder.text
-  if type(text) ~= "string" or text == pg.en then return false end
-  local marker, body = splitMarker(text)
-  local placed = body ~= pg.en and (pg.html and placeHtml or placePlain)(pg, body, content) or nil
-  if body ~= pg.en and not placed then
-    if WFJ.Diag then pcall(WFJ.Diag.log, "dialogueui", "a book page's Japanese does not fit Dialogue UI's blocks") end
-    return false
-  end
-  pg.placed, pg.ja = placed, placed and body or nil
-  if marker then
-    local first = content[pg.entries[1]]
-    first.text = marker .. "\n" .. first.text
+    if at then
+      book.placed[idx] = { text = t, at = at, page = n }
+      from = at + #t
+    end
   end
   return true
 end
 
+-- An HTML page: each block Dialogue UI made is one of the English page's blocks, in order; it gets the Japanese
+-- page's block at the same place. → false when the blocks do not line up
+local function placeHtml(pg, ja, content)
+  if pg.jaFor ~= ja then pg.jaFor, pg.jaBlocks = ja, blocks(ja) end
+  local en, jb = pg.enBlocks, pg.jaBlocks
+  if #en ~= #jb then return false end
+  local plan, k = {}, 1
+  for _, idx in ipairs(pg.entries) do
+    local t = squash(content[idx].text)
+    while k <= #en and en[k] ~= t do k = k + 1 end
+    if k > #en then return false end
+    plan[idx] = jb[k]
+    k = k + 1
+  end
+  for idx, t in pairs(plan) do setText(content[idx], t) end
+  return true
+end
+
+-- One page's text as its record holds it now. → whether the page shows text in the bundled face
+local function place(n, pg, content)
+  local text = pg.holder and pg.holder.text
+  if type(text) ~= "string" or text == pg.en then return false end
+  local marker, body = splitMarker(text)
+  if body ~= pg.en then
+    local placed
+    if pg.html then placed = placeHtml(pg, body, content) else placed = placePlain(n, pg, body, content) end
+    if not placed then
+      if WFJ.Diag then pcall(WFJ.Diag.log, "dialogueui", "a book page's Japanese does not fit Dialogue UI's blocks") end
+      return false
+    end
+    pg.ja = body
+  end
+  if marker then
+    local first = content[pg.entries[1]]
+    setText(first, marker .. "\n" .. first.text)
+  end
+  return true
+end
+
+-- Dialogue UI measures a block's height through these font objects before any FontString shows it, so the bundled
+-- face has to be on the objects themselves while Japanese shows (on Dialogue UI's own objects only, given back when
+-- the book closes or shows English); a face set per FontString afterwards would leave the heights measured without it.
 local function fonts(bundled)
   for _, name in ipairs(FONTS) do
     local obj = Compat.resolve(name)
@@ -137,39 +168,28 @@ local function fonts(bundled)
   end
 end
 
-local function detachCards()
-  local V = WFJ.ReadingView
-  for _, card in ipairs(cards) do
-    if V and type(V.detach) == "function" then pcall(V.detach, card) end
-  end
-  cards = {}
-end
-
 -- Writes every page as its record says (Japanese, or English with a marker), and has Dialogue UI measure the
 -- table again when anything changed.
 local function write()
   local content = book.content
-  local before = {}
-  for i, e in ipairs(content) do before[i] = e.text end
-  for i, t in pairs(book.original) do content[i].text = t end
+  changed = false
+  book.placed = {}
+  for i, t in pairs(book.original) do setText(content[i], t) end
   local any = false
-  for _, pg in ipairs(book.pages) do
-    pg.placed, pg.ja = nil, nil
-    if place(pg, content) then any = true end
+  for n, pg in ipairs(book.pages) do
+    pg.ja = nil
+    if place(n, pg, content) then any = true end
   end
-  local changed = any ~= book.bundled
-  for i, e in ipairs(content) do
-    if e.text ~= before[i] then changed = true end
-  end
+  if any ~= book.bundled then changed = true end
   book.bundled = any
   if not changed then return end
-  detachCards()
+  cards = WFJ.DialogueUI.detachCards(cards)
   fonts(any)
   frame:OnSettingsChanged()
 end
 
 local function forget()
-  detachCards()
+  cards = WFJ.DialogueUI.detachCards(cards)
   if book then
     for i, t in pairs(book.original) do book.content[i].text = t end -- Dialogue UI may show its cached book again
   end
@@ -196,21 +216,18 @@ local function opened(content)
       end
     end
   end
-  book = { content = content, pages = pages, original = original, bundled = false }
+  book = { content = content, pages = pages, original = original, placed = {}, bundled = false }
   for n, p in ipairs(pages) do
     local en = raw[n]
     if type(en) == "string" and en ~= "" and p.entries[1] and type(deps.key) == "function" then
-      p.en, p.html = en, en:find("<HTML>", 1, true) ~= nil
+      p.en, p.html = en, WFJ.ItemText.isHtml(en)
+      if p.html then
+        local _, cmp = blocks(en)
+        p.enBlocks = cmp
+      end
       p.key = deps.key(en)
       if p.key then
-        p.holder = { text = en, font = { flags = "" } }
-        function p.holder:GetText() return self.text end
-        function p.holder:SetText(t) self.text = t end
-        function p.holder:GetFont() return self.font.path, self.font.size, self.font.flags end
-        function p.holder:SetFont(path, size, flags)
-          self.font = { path = path, size = size, flags = flags or "" }
-          return true
-        end
+        p.holder = WFJ.DialogueUI.newHolder(en)
         WFJ.Render.show(SURFACE, "page" .. n, p.holder, en, "books", "book", p.key)
       end
     end
@@ -221,29 +238,15 @@ end
 -- A block Dialogue UI laid out in a FontString: a word card for a plain page's Japanese, with its share of the
 -- page's words (an HTML page keeps the client's layout and takes none).
 local function card(obj, data, index)
-  local V, R = WFJ.ReadingView, WFJ.Readings
-  if not (book and V and type(V.attach) == "function" and type(obj) == "table" and type(data) == "table") then
-    return
+  local placed = book and book.placed[index]
+  if not (placed and type(obj) == "table" and type(data) == "table" and data.text == placed.text) then return end
+  local pg = book.pages[placed.page]
+  if pg.listed == nil then
+    local R = WFJ.Readings
+    pg.listed = R and type(R.lookup) == "function" and R.lookup("book", pg.key, pg.ja) or false
   end
-  for n, pg in ipairs(book.pages) do
-    local placed = pg.placed and pg.placed[index]
-    if placed and placed.at and not pg.html and data.text == placed.text and placed.text ~= "" then
-      local listed = R and type(R.lookup) == "function" and R.lookup("book", pg.key, pg.ja) or nil
-      local at, len = placed.at, #placed.text
-      local spans = {}
-      for _, sp in ipairs(listed or {}) do
-        if sp.first >= at and sp.last <= at + len - 1 then
-          spans[#spans + 1] = { first = sp.first - at + 1, last = sp.last - at + 1, word = sp.word,
-            reading = sp.reading, gloss = sp.gloss, card = sp.card }
-        end
-      end
-      local rec = { surface = SURFACE, key = "page" .. n .. "." .. index, fs = obj, applied = data.text,
-        meta = { kind = "book", id = pg.key }, spans = spans }
-      cards[#cards + 1] = rec
-      pcall(V.attach, rec)
-      return
-    end
-  end
+  WFJ.DialogueUI.attachCard(cards, SURFACE, "page" .. placed.page .. "." .. index, obj, placed.text, "book", pg.key,
+    pg.listed or nil, placed.at, 0)
 end
 
 local hooked = setmetatable({}, { __mode = "k" }) -- scroll frames whose block writer is wrapped
@@ -272,11 +275,9 @@ local function onEvent(_, event)
   if event == "ITEM_TEXT_BEGIN" then
     raw, creator = {}, nil
   elseif event == "ITEM_TEXT_READY" then
-    local page, text = Compat.resolve("ItemTextGetPage"), Compat.resolve("ItemTextGetText")
-    local who = Compat.resolve("ItemTextGetCreator")
-    local n = type(page) == "function" and page() or nil
-    if type(n) == "number" and type(text) == "function" then raw[n] = text() end
-    if type(who) == "function" then creator = who() end
+    local n = call("getPage")
+    if type(n) == "number" then raw[n] = call("getText") end
+    creator = call("getCreator")
   end
 end
 
@@ -292,27 +293,17 @@ function Book.install()
     end
   end
   frame = f
-  local showUI, init = f.ShowUI, f.Init
-  f.ShowUI = function(self, ...)
-    local res = WFJ.DialogueUI.pack(showUI(self, ...))
-    if active() then guarded(afterShow, self) end
-    return unpack(res, 1, res.n)
-  end
-  f.Init = function(self, ...)
-    local res = WFJ.DialogueUI.pack(init(self, ...))
-    guarded(hookScroll, self)
-    return unpack(res, 1, res.n)
-  end
+  local hook = Compat.resolve("hooksecurefunc")
+  hook(f, "ShowUI", function(self) if active() then guarded(afterShow, self) end end)
+  hook(f, "Init", function(self) guarded(hookScroll, self) end)
   local createFrame = Compat.resolve("CreateFrame")
   if type(createFrame) == "function" then
     local ev = createFrame("Frame")
     ev:RegisterEvent("ITEM_TEXT_BEGIN")
     ev:RegisterEvent("ITEM_TEXT_READY")
     ev:SetScript("OnEvent", onEvent)
-    local watcher = createFrame("Frame", nil, f) -- hears the window close (see UI/DialogueUI)
-    watcher:SetScript("OnHide", function() guarded(forget) end)
-    watcher:Show()
   end
+  WFJ.DialogueUI.onClose(f, forget)
   for _, event in ipairs({ "modifier", "enabled", "area", "markers" }) do
     WFJ.State.on(event, function()
       if book and active() then guarded(write) end

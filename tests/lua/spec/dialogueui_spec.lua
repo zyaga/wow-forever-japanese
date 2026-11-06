@@ -7,7 +7,7 @@ local DUI = require("tests.lua.spec.stub_dialogueui")
 local FILES = {}
 for _, f in ipairs(H.UI_FILES) do FILES[#FILES + 1] = f end
 for _, f in ipairs({ "Core/Voice.lua", "Core/VoiceQueue.lua", "UI/VoicePlayer.lua", "UI/QuestFrame.lua",
-  "UI/QuestMap.lua", "UI/DialogueUI.lua", "UI/DialogueUIBook.lua" }) do
+  "UI/QuestMap.lua", "UI/ItemText.lua", "UI/DialogueUI.lua", "UI/DialogueUIBook.lua" }) do
   FILES[#FILES + 1] = f
 end
 
@@ -408,7 +408,9 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       assert.are.equal("voice.turnin", K["dialogueui.reward"].completion)
       assert.are.equal("voice.greeting", K["dialogueui.greeting"].greeting)
       assert.are.equal("voice.greeting", K["dialogueui.gossip"].greeting)
-      assert.are.equal("voice.books", K["dialogueui.book"].page3)
+      assert.are.equal("voice.books", K["dialogueui.book"].page) -- each page's record: "page1", "page2", …
+      assert.are_not.equal("kind", select(2, WFJ.Voice.decide("dialogueui.book", "page2", "book", "0123456789abcdef")))
+      assert.are.equal("kind", select(2, WFJ.Voice.decide("gossip", "option.1", "gossip", "0123456789abcdef")))
       assert.is_nil(K["dialogueui.detail"].objectives)
       assert.is_nil(K["dialogueui.title"])
     end)

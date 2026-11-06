@@ -46,7 +46,8 @@ function View.host(anchor)
   if not ui then return nil end
   local top, f = nil, anchor
   for _ = 1, 64 do
-    local ok, parent = pcall(function() return f:GetParent() end)
+    if type(f.GetParent) ~= "function" then break end
+    local ok, parent = pcall(f.GetParent, f)
     if not ok or type(parent) ~= "table" then break end
     if parent == ui then return ui end
     top, f = parent, parent

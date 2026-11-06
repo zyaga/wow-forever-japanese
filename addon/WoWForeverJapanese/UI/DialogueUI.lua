@@ -4,6 +4,7 @@
 -- Dialogue UI lays the text out, and always call the original. Nothing of Dialogue UI is shipped or required:
 -- without it, or with a version whose frame lacks a member listed below, nothing is installed and its window shows
 -- its English. The lines, keys, markers, fonts, word cards and voice are the ones the client's windows get.
+-- UI/DialogueUIBook does the same for its book window and shares the helpers exported here.
 local _, WFJ = ...
 local DialogueUI = {}
 WFJ.DialogueUI = DialogueUI
@@ -15,7 +16,6 @@ local S = {
   greeting = "dialogueui.greeting", gossip = "dialogueui.gossip", title = "dialogueui.title",
   rows = "dialogueui.rows",
 }
-DialogueUI.SURFACES = S
 
 -- The members of DUIQuestFrame the wrappers replace or call [read: Dialogue UI 1.0.7 b,
 -- Code/Dialogue/DialogueUI.lua: every page handler starts with self:ReleaseAllObjects(), quest prose goes through
@@ -46,6 +46,9 @@ local touched = false -- the page shows a line this module looked up: a reveal k
 local holders = {} -- surface .. key → text holder
 local cards = {} -- word-card records on the page's paragraphs
 local patched = setmetatable({}, { __mode = "k" }) -- option buttons whose writers are wrapped
+-- English → gossip key: the key hashes the text for several player-name forms, and a page draws its gossip text and
+-- every option again on each redraw. Emptied when it grows past KEY_CACHE_MAX.
+local keyCache, keyCount, KEY_CACHE_MAX = {}, 0, 500
 
 local function call(key, ...)
   local fn = Compat.get(SURFACE, key)
@@ -53,66 +56,138 @@ local function call(key, ...)
   return fn(...)
 end
 
-local function pack(...) return { n = select("#", ...), ... } end
-DialogueUI.pack = pack
+local function gossipKey(en)
+  local k = keyCache[en]
+  if k == nil and type(deps.key) == "function" then
+    k = deps.key(en)
+    if keyCount >= KEY_CACHE_MAX then keyCache, keyCount = {}, 0 end
+    keyCache[en], keyCount = k or false, keyCount + 1
+  end
+  return k or nil
+end
 
 function DialogueUI.installed() return installed end
 -- false once repeated errors switched both Dialogue UI modules off for the session
 function DialogueUI.healthy() return errors < MAX_ERRORS end
 function DialogueUI.active() return installed and errors < MAX_ERRORS end
 
--- Runs `fn` guarded: an error is recorded and counted, and after MAX_ERRORS both Dialogue UI modules stop changing
--- text for the session; every wrapper then passes Dialogue UI's own text through. → true, results | false
-function DialogueUI.guarded(fn, ...)
-  local res = pack(pcall(fn, ...))
-  if res[1] then return unpack(res, 1, res.n) end
+local function settle(ok, ...)
+  if ok then return true, ... end
   errors = errors + 1
   local E = WFJ.ErrorLog
-  if E and type(E.recordCaught) == "function" then pcall(E.recordCaught, tostring(res[2])) end
+  if E and type(E.recordCaught) == "function" then pcall(E.recordCaught, tostring((...))) end
   if errors == MAX_ERRORS and WFJ.Diag then
     pcall(WFJ.Diag.log, "dialogueui", "errors in Dialogue UI's windows: left in English for this session")
   end
   return false
 end
+
+-- Runs `fn` guarded: an error is recorded and counted, and after MAX_ERRORS both Dialogue UI modules stop changing
+-- text for the session; every wrapper then passes Dialogue UI's own text through. → true, results | false
+function DialogueUI.guarded(fn, ...)
+  return settle(pcall(fn, ...))
+end
 local guarded = DialogueUI.guarded
 
--- Calls `orig` with the module state `set` holds for its duration, put back even when `orig` errors (the error is
--- Dialogue UI's own and is raised again).
-local function during(set, unset, orig, ...)
-  set()
-  local res = pack(pcall(orig, ...))
-  unset()
-  if not res[1] then error(res[2], 0) end
-  return unpack(res, 2, res.n)
+-- The ends of a wrapped call that set a module state for its duration: the state is put back even when the
+-- original errors (the error is Dialogue UI's own and is raised again).
+local function raise(ok, ...)
+  if not ok then error((...), 0) end
+  return ...
+end
+local function endText(ok, ...) current = nil; return raise(ok, ...) end
+local function endRows(ok, ...) japaneseRows = false; return raise(ok, ...) end
+local function endQuestText(prev, ok, ...) questText = prev; return raise(ok, ...) end
+local function endTitle(info, title, ok, ...) info.title = title; return raise(ok, ...) end
+
+-- ── Shared with UI/DialogueUIBook ──────────────────────────────────────────
+
+-- A stand-in widget for one text (the gossip, a quest field, a book page): Render writes our Japanese and its font
+-- here, and the module hands that text to Dialogue UI, which lays it out itself.
+local Holder = {}
+Holder.__index = Holder
+function Holder:GetText() return self.text end
+function Holder:SetText(t) self.text = t end
+function Holder:GetFont() return self.font.path, self.font.size, self.font.flags end
+function Holder:SetFont(path, size, flags)
+  self.font = { path = path, size = size, flags = flags or "" }
+  return true
+end
+function DialogueUI.newHolder(text, font)
+  return setmetatable({ text = text or "", font = font or { flags = "" } }, Holder)
+end
+
+-- A word-card record on `fs`, which shows `text`, the part of a line that starts at byte `at` of the line as the
+-- word list counts it (`listed`, from Readings.lookup) once `shift` bytes Dialogue UI put before the line are added.
+-- Appended to `list` and attached.
+function DialogueUI.attachCard(list, surface, key, fs, text, kind, id, listed, at, shift)
+  local V = WFJ.ReadingView
+  if not (V and type(V.attach) == "function") then return end
+  local spans, last = {}, at + #text - 1
+  for _, sp in ipairs(listed or {}) do
+    local first, stop = sp.first + shift, sp.last + shift
+    if first >= at and stop <= last then
+      spans[#spans + 1] = { first = first - at + 1, last = stop - at + 1, word = sp.word, reading = sp.reading,
+        gloss = sp.gloss, card = sp.card }
+    end
+  end
+  local rec = { surface = surface, key = key, fs = fs, applied = text, meta = { kind = kind, id = id }, spans = spans }
+  list[#list + 1] = rec
+  pcall(V.attach, rec)
+end
+
+-- Takes the cards in `list` down. → a new, empty list
+function DialogueUI.detachCards(list)
+  local V = WFJ.ReadingView
+  if V and type(V.detach) == "function" then
+    for _, rec in ipairs(list) do pcall(V.detach, rec) end
+  end
+  return {}
+end
+
+-- `fn` runs when Dialogue UI's window `f` closes. Dialogue UI sets its window's OnHide script again after load (a
+-- HookScript on it would be dropped), so a child frame of ours hears it instead.
+function DialogueUI.onClose(f, fn)
+  local createFrame = Compat.resolve("CreateFrame")
+  if type(createFrame) ~= "function" then return end
+  local watcher = createFrame("Frame", nil, f)
+  watcher:SetScript("OnHide", function() guarded(fn) end)
+  watcher:Show()
+end
+
+-- The bundled face on a FontString for Japanese, else the owner's face back (re-applying its font object leaves a
+-- face set since in place).
+local function face(fs, obj, japanese)
+  if japanese then
+    WFJ.Font.bundle(fs, obj)
+  elseif WFJ.Font.dressed(fs) then
+    WFJ.Font.restore(fs, obj)
+  end
 end
 
 -- ── One text of the page ───────────────────────────────────────────────────
 
--- A stand-in widget for one text of the page (the gossip, a quest field): Render writes our Japanese and its font
--- here, and the wrapper hands that text to Dialogue UI, which splits it into paragraphs and lays them out.
 local function holder(surface, key)
   local id = surface .. "\0" .. key
   local h = holders[id]
-  if h then return h end
-  h = { text = "", font = { flags = "" } }
-  function h:GetText() return self.text end
-  function h:SetText(t) self.text = t end
-  function h:GetFont() return self.font.path, self.font.size, self.font.flags end
-  function h:SetFont(path, size, flags)
-    self.font = { path = path, size = size, flags = flags or "" }
-    return true
+  if not h then
+    h = DialogueUI.newHolder()
+    holders[id] = h
   end
-  holders[id] = h
   return h
 end
 
+local function paragraphFontObject()
+  return Compat.resolve("DUIFont_Quest_Paragraph") -- Dialogue UI's own name: not declared, absent without it
+end
+
 local function paragraphFont()
-  local obj = Compat.resolve("DUIFont_Quest_Paragraph") -- Dialogue UI's own name: not declared, absent without it
+  local obj = paragraphFontObject()
   if type(obj) == "table" and type(obj.GetFont) == "function" then
     local path, size, flags = obj:GetFont()
     if path then return { path = path, size = size, flags = flags or "" } end
   end
-  return { path = "Fonts\\FRIZQT__.TTF", size = 13, flags = "" }
+  return { path = WFJ.Font.CLIENT, size = 13, flags = "" }
 end
 
 local QUEST_PAGES = {
@@ -133,9 +208,9 @@ local function identify(self, text)
   local el
   if handler == "HandleGossip" or handler == "HandleQuestGreeting" then
     local en = handler == "HandleGossip" and call("getGossip") or call("getGreeting")
-    if type(en) ~= "string" or en == "" or type(deps.key) ~= "function" then return nil end
+    if type(en) ~= "string" or en == "" then return nil end
     el = { surface = handler == "HandleGossip" and S.gossip or S.greeting, key = "greeting", en = en,
-      area = "gossip", kind = "gossip", id = deps.key(en) }
+      area = "gossip", kind = "gossip", id = gossipKey(en) }
   else
     local page = QUEST_PAGES[handler]
     local field = page and (questText and FIELD_OF[questText] or (handler == "HandleQuestDetail" and "objectives"))
@@ -176,71 +251,46 @@ end
 
 -- Word cards on the paragraphs Dialogue UI just made of our Japanese, each with its share of the line's words.
 local function attachCards(el)
-  local V, R = WFJ.ReadingView, WFJ.Readings
-  if not (V and type(V.attach) == "function") then return end
   local rec = WFJ.SurfaceState.get(el.surface, el.key)
   local text = el.holder.text
   if not (rec and rec.applied ~= nil and rec.applied == text) then return end -- English showing: no cards
+  local R = WFJ.Readings
   local listed = R and type(R.lookup) == "function" and R.lookup(el.kind, el.id, text) or nil
-  local full, shift, from = el.prefix .. text, #el.prefix, 1
+  local full, from = el.prefix .. text, 1
   for i, fs in ipairs(el.fontStrings) do
     local t = fs:GetText()
     local at = type(t) == "string" and t ~= "" and full:find(t, from, true) or nil
     if at then
       from = at + #t
-      local spans = {}
-      for _, sp in ipairs(listed or {}) do
-        local first, last = sp.first + shift, sp.last + shift
-        if first >= at and last <= at + #t - 1 then
-          spans[#spans + 1] = { first = first - at + 1, last = last - at + 1, word = sp.word, reading = sp.reading,
-            gloss = sp.gloss, card = sp.card }
-        end
-      end
-      local card = { surface = el.surface, key = el.key .. "." .. i, fs = fs, applied = t,
-        meta = { kind = el.kind, id = el.id }, spans = spans }
-      cards[#cards + 1] = card
-      pcall(V.attach, card)
+      DialogueUI.attachCard(cards, el.surface, el.key .. "." .. i, fs, t, el.kind, el.id, listed, at, #el.prefix)
     end
   end
 end
 
-local function detachCards()
-  local V = WFJ.ReadingView
-  for _, card in ipairs(cards) do
-    if V and type(V.detach) == "function" then pcall(V.detach, card) end
-  end
-  cards = {}
+-- the page is about to be laid out again, or its window closed
+local function resetPage()
+  cards = DialogueUI.detachCards(cards)
+  touched = false
 end
 
 -- ── Fonts ───────────────────────────────────────────────────────────────────
 
 local function fontObject(obj)
   if type(obj) == "string" then obj = Compat.resolve(obj) end
-  if type(obj) ~= "table" then obj = Compat.resolve("DUIFont_Quest_Paragraph") end
+  if type(obj) ~= "table" then obj = paragraphFontObject() end
   return type(obj) == "table" and obj or nil
 end
 
--- A pooled FontString Dialogue UI just acquired: the bundled face for our Japanese before Dialogue UI measures it,
--- else Dialogue UI's own face back (re-applying its font object leaves a face set since in place).
+-- A pooled FontString Dialogue UI just acquired: the bundled face for our Japanese before Dialogue UI measures it.
 local function dress(fs, obj)
-  local japanese = japaneseRows or (current and current.holder.font.path == WFJ.Font.PATH)
-  if japanese then
-    WFJ.Font.bundle(fs, fontObject(obj))
-  elseif WFJ.Font.dressed(fs) then
-    WFJ.Font.restore(fs, fontObject(obj))
-  end
+  face(fs, fontObject(obj), japaneseRows or (current ~= nil and current.holder.font.path == WFJ.Font.PATH))
   if current then current.fontStrings[#current.fontStrings + 1] = fs end
 end
 
 local function dressRow(button, japanese)
   local fs = button.Name
   if type(fs) ~= "table" or type(fs.GetFont) ~= "function" then return end
-  local obj = type(fs.GetFontObject) == "function" and fs:GetFontObject() or nil
-  if japanese then
-    WFJ.Font.bundle(fs, obj)
-  elseif WFJ.Font.dressed(fs) then
-    WFJ.Font.restore(fs, obj)
-  end
+  face(fs, type(fs.GetFontObject) == "function" and fs:GetFontObject() or nil, japanese)
 end
 
 -- ── Rows: titles, options, objective lines (no records, no markers) ────────
@@ -253,7 +303,7 @@ local function rowJapanese(en, area, kind, id, live)
 end
 
 local function gossipRow(name)
-  local id = type(deps.key) == "function" and deps.key(name) or nil
+  local id = gossipKey(name)
   return id and rowJapanese(name, "gossip", "gossip", id) or nil
 end
 
@@ -293,8 +343,8 @@ local function patch(button)
       guarded(dressRow, b, ja ~= nil)
       if not ja then return setQuestName(b, questInfo, ...) end
       local title = questInfo.title
-      return during(function() questInfo.title = ja end, function() questInfo.title = title end,
-        setQuestName, b, questInfo, ...)
+      questInfo.title = ja
+      return endTitle(questInfo, title, pcall(setQuestName, b, questInfo, ...))
     end
   end
 end
@@ -335,6 +385,11 @@ end
 
 local WRAP = {}
 
+local function formatted(el, ...)
+  guarded(attachCards, el)
+  return ...
+end
+
 function WRAP.FormatParagraph(orig)
   return function(self, offsetY, text, ...)
     if not DialogueUI.active() then return orig(self, offsetY, text, ...) end
@@ -344,17 +399,16 @@ function WRAP.FormatParagraph(orig)
     local shown, h = guarded(render, el)
     if not shown then return orig(self, offsetY, text, ...) end
     el.holder, el.fontStrings = h, {}
-    local res = pack(during(function() current = el end, function() current = nil end,
-      orig, self, offsetY, el.prefix .. h.text, ...))
-    guarded(attachCards, el)
-    return unpack(res, 1, res.n)
+    current = el
+    return formatted(el, endText(pcall(orig, self, offsetY, el.prefix .. h.text, ...)))
   end
 end
 
 function WRAP.FormatQuestText(orig)
   return function(self, offsetY, method, ...)
     local prev = questText
-    return during(function() questText = method end, function() questText = prev end, orig, self, offsetY, method, ...)
+    questText = method
+    return endQuestText(prev, pcall(orig, self, offsetY, method, ...))
   end
 end
 
@@ -371,8 +425,8 @@ function WRAP.InsertText(orig)
     if not DialogueUI.active() then return orig(self, offsetY, text, obj, ...) end
     local ok, ja = guarded(objectiveLines, self, text)
     if not ok or not ja then return orig(self, offsetY, text, obj, ...) end
-    return during(function() japaneseRows = true end, function() japaneseRows = false end,
-      orig, self, offsetY, ja, obj, ...)
+    japaneseRows = true
+    return endRows(pcall(orig, self, offsetY, ja, obj, ...))
   end
 end
 
@@ -393,8 +447,7 @@ local function redraw()
 end
 
 local function release()
-  detachCards()
-  touched = false
+  resetPage()
   for _, h in pairs(holders) do h.shown = nil end
   for _, s in pairs(S) do WFJ.Render.release(s) end
 end
@@ -415,18 +468,8 @@ function DialogueUI.install()
   local hook = Compat.resolve("hooksecurefunc")
   hook(f, "UpdateQuestTitle", function(self) guarded(showTitle, self) end)
   -- every page handler starts here: the page's paragraphs are about to be released and laid out again
-  hook(f, "ReleaseAllObjects", function()
-    detachCards()
-    touched = false
-  end)
-  local createFrame = Compat.resolve("CreateFrame")
-  if type(createFrame) == "function" then
-    -- Dialogue UI sets its window's OnHide script again after load (a HookScript on it would be dropped): a child
-    -- frame of ours hears the window close
-    local watcher = createFrame("Frame", nil, f)
-    watcher:SetScript("OnHide", function() guarded(release) end)
-    watcher:Show()
-  end
+  hook(f, "ReleaseAllObjects", resetPage)
+  DialogueUI.onClose(f, release)
   for _, event in ipairs({ "modifier", "enabled", "area", "markers" }) do
     WFJ.State.on(event, function() guarded(redraw) end)
   end

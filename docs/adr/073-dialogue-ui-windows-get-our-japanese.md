@@ -36,6 +36,7 @@ This narrows ADR-004: an optional adapter that runs only when the player already
 - The modules follow Dialogue UI's internals, which can change in its updates. The member check and the error limit bound the damage to English text.
 - Holding the reveal key uses Dialogue UI's own redraw, which scrolls the page back to the top, clears its gossip history and clears a reward the player had chosen on the turn-in page.
 - Dialogue UI fades the game interface out while its window shows, so the word card and reading box move under the Dialogue UI window while they point at its text. The voice panel stays under the game interface and shows again when Dialogue UI brings the interface back.
+- Dialogue UI measures a book's text through its own book font objects before any line is drawn, so while a book shows Japanese the book module sets the bundled face on those objects (Dialogue UI's, never the client's) and gives their faces back when the book closes or shows English. The rest of the addon still never changes a font object.
 
 ## Alternatives considered
 
