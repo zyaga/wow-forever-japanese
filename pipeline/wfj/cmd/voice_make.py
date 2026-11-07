@@ -23,6 +23,7 @@ import argparse
 import collections
 import contextlib
 import datetime
+import fcntl
 import hashlib
 import json
 import os
@@ -34,7 +35,7 @@ import time
 import tomllib
 import wave
 from collections import Counter
-from collections.abc import Callable, Sequence
+from collections.abc import Callable, Iterator, Sequence
 from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from io import BytesIO
 from pathlib import Path
@@ -273,6 +274,25 @@ def engine_run_path(arg: str | None) -> Path:
     if arg:
         return Path(arg)
     return _main_checkout() / "build" / "aivis" / "macOS-arm64" / "run"
+
+
+RUN_LOCK = "build/voice-run.lock"
+
+
+@contextlib.contextmanager
+def run_lock() -> Iterator[None]:
+    """One voice run at a time (generate, export, relevel), whichever engine reads its lines: each run
+    rewrites the whole audio record, so two at once would drop each other's rows. The lock lives in the main
+    checkout, so every worktree and shell shares it."""
+    path = _main_checkout() / RUN_LOCK
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a") as f:
+        try:
+            fcntl.flock(f, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError as e:
+            raise ValueError("another voice run (generate, export or relevel) is going; "
+                             "one runs at a time") from e
+        yield
 
 
 def _main_checkout() -> Path:
@@ -1053,19 +1073,21 @@ def run(argv: Sequence[str]) -> int:
         players = players_of(a.players)
         if a.cmd == "plan":
             return run_plan(cfg, root, a.scope, players)
-        if a.cmd == "export":
-            export_remote(root, cfg, a.scope, store, Path(a.out), players)
-            return 0
-        if a.cmd == "relevel":
-            print(f"voice relevel: {relevel(root, cfg, store, [Path(r) for r in a.runs])} files re-encoded")
-            return 0
-        prepared = Path(a.prepared) if a.prepared else None
-        if prepared is not None and a.archive:
-            archive_run(prepared, Path(a.archive))
-        if a.remote and prepared is None:
-            archive = Path(a.archive) if a.archive else None
-            prepared = remote_round(root, cfg, a.scope, store, archive, players)
-        return run_generate(cfg, root, a.scope, store, players, engine_run_path(a.engine_run), prepared)
+        with run_lock():
+            if a.cmd == "export":
+                export_remote(root, cfg, a.scope, store, Path(a.out), players)
+                return 0
+            if a.cmd == "relevel":
+                made = relevel(root, cfg, store, [Path(r) for r in a.runs])
+                print(f"voice relevel: {made} files re-encoded")
+                return 0
+            prepared = Path(a.prepared) if a.prepared else None
+            if prepared is not None and a.archive:
+                archive_run(prepared, Path(a.archive))
+            if a.remote and prepared is None:
+                archive = Path(a.archive) if a.archive else None
+                prepared = remote_round(root, cfg, a.scope, store, archive, players)
+            return run_generate(cfg, root, a.scope, store, players, engine_run_path(a.engine_run), prepared)
     except (ValueError, KeyError, OSError, subprocess.CalledProcessError) as e:
         print(f"voice {a.cmd}: {e}", file=sys.stderr)
         return 1

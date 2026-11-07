@@ -349,6 +349,14 @@ def test_a_line_the_engine_cannot_read_is_left_to_make_and_the_run_goes_on(tmp_p
     assert any("left to make next run" in m for m in said)
 
 
+def test_a_second_voice_run_refuses_while_one_holds_the_record(tmp_path, monkeypatch):
+    monkeypatch.setattr(voice_make, "_main_checkout", lambda: tmp_path)
+    with voice_make.run_lock(), pytest.raises(ValueError, match="one runs at a time"), voice_make.run_lock():
+        pass
+    with voice_make.run_lock():  # let go when the first run ends
+        pass
+
+
 def test_a_whole_game_run_drops_records_of_files_no_line_uses():
     jobs = [voice.Job(stem="1-description", key="1-description", voice="m")]
     audio = {"1-description": {}, "1-description_old": {}}
