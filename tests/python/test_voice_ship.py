@@ -403,9 +403,12 @@ def test_every_voice_model_is_credited():
     import tomllib
 
     roster = tomllib.loads((ROOT / "pipeline" / "voice.toml").read_text(encoding="utf-8"))["roster"]
+    rows = (ROOT / "data" / "voice" / "audio.jsonl").read_text(encoding="utf-8").splitlines()
+    shipped = {json.loads(r)["voice"] for r in rows if r.strip()}
+    models = {v["model"] for vid, v in roster.items() if vid in shipped}  # the voices a shipped file uses
     for doc in ("ATTRIBUTION.md", "docs/curseforge-voice.md"):
         text = (ROOT / doc).read_text(encoding="utf-8")
-        missing = sorted({v["model"] for v in roster.values() if v["model"] not in text})
+        missing = sorted(m for m in models if m not in text)
         assert not missing, f"{doc} lacks {missing}"
 
 

@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import fcntl
 import json
+import shutil
 import subprocess
 import tempfile
 from pathlib import Path
@@ -73,7 +74,7 @@ class Qwen:
     def background(self, on: bool) -> None:
         """Moves the worker into macOS's background tier (efficiency cores, throttled I/O) or out of it, while
         it runs: how a run slows down while the machine is in use and speeds up when it is not."""
-        if self._proc and self._proc.poll() is None:
+        if self._proc and self._proc.poll() is None and shutil.which("taskpolicy"):  # macOS only
             subprocess.run(["taskpolicy", "-b" if on else "-B", "-p", str(self._proc.pid)], check=False,
                            capture_output=True)
 

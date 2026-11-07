@@ -224,8 +224,12 @@ def _fake_lame(monkeypatch):
             f.write(b"MP3")
         return subprocess.CompletedProcess(args, 0)
 
+    def level_and_encode(wav, out):
+        out.write_bytes(b"MP3")
+
     fake = SimpleNamespace(run=run, CalledProcessError=subprocess.CalledProcessError)
     monkeypatch.setattr(voice_make, "subprocess", fake)
+    monkeypatch.setattr(voice_make, "to_levelled_mp3", level_and_encode)
     monkeypatch.setattr(voice_make, "Engine", FakeEngine)
 
 

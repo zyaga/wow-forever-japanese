@@ -550,7 +550,8 @@ def test_a_remote_round_exports_reads_on_modal_and_archives(tmp_path, monkeypatc
     (tmp_path / "build" / "modal" / "venv" / "bin").mkdir(parents=True)
     (tmp_path / "build" / "modal" / "venv" / "bin" / "python").write_text("")
 
-    def export(root, cfg, scope, store, out):
+    def export(root, cfg, scope, store, out, players):
+        assert players == [("human", "m")]  # the character's error lines go to the remote run too
         made = _run_with_wavs(tmp_path, 3)
         made.rename(out)
         return 3
@@ -560,7 +561,7 @@ def test_a_remote_round_exports_reads_on_modal_and_archives(tmp_path, monkeypatc
 
     monkeypatch.setattr(voice_make, "export_remote", export)
     monkeypatch.setattr(voice_make.subprocess, "run", fake_run)
-    run = voice_make.remote_round(tmp_path, {}, "all", tmp_path / "store", tmp_path / "archive")
+    run = voice_make.remote_round(tmp_path, {}, "all", tmp_path / "store", tmp_path / "archive", [("human", "m")])
     assert run is not None and calls == [(str(run), "1")]
     assert (tmp_path / "archive" / run.name / "SHA256SUMS").is_file()
 

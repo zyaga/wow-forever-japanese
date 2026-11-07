@@ -26,10 +26,10 @@ import datetime
 import hashlib
 import json
 import os
+import re
 import shutil
 import subprocess
 import sys
-import tempfile
 import time
 import tomllib
 import wave
@@ -388,32 +388,68 @@ def run_plan(cfg: dict[str, Any], root: Path, scope: str, players: Sequence[tupl
 # ---- generate --------------------------------------------------------------------------------------------
 
 
-LOUDNESS = "I=-20:TP=-2:LRA=11"  # every line levelled to the same loudness (EBU R128), so no NPC is louder
+TARGET_LUFS = -20.0  # every line levelled to the same loudness (EBU R128), so no NPC is louder
+TRUE_PEAK = -2.0  # dBFS a levelled line's peaks are limited to
+
+
+def level_gain(wav: bytes) -> float:
+    """The one gain (dB) that brings a take to the target loudness; the limiter after it keeps its peaks under
+    the ceiling.
+    Measured with ffmpeg's ebur128 filter at the take's own rate, several times lighter than the 192 kHz
+    analysis of loudnorm."""
+    out = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", "pipe:0", "-af",
+                          "ebur128=framelog=quiet", "-f", "null", "-"],
+                         input=wav, capture_output=True, check=True).stderr.decode()
+    summary = out[out.rindex("Summary:"):]
+    loudness = float(re.search(r"I:\s+(-?[\d.]+|-inf) LUFS", summary).group(1))
+    if loudness == float("-inf"):
+        return 0.0  # silence: nothing to level
+    return TARGET_LUFS - loudness
 
 
 def levelled(wav: bytes) -> bytes:
-    """The WAV brought to the target loudness with one linear gain (two-pass loudnorm): the voice and its
-    timing are unchanged, only how loud it is."""
-    with tempfile.TemporaryDirectory() as tmp:
-        src, dst = Path(tmp) / "in.wav", Path(tmp) / "out.wav"
-        src.write_bytes(wav)
-        probe = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(src), "-af",
-                                f"loudnorm={LOUDNESS}:print_format=json", "-f", "null", "-"],
-                               capture_output=True, text=True, check=True).stderr
-        m = json.loads(probe[probe.rindex("{"):probe.rindex("}") + 1])
-        with wave.open(str(src)) as w:
-            rate = w.getframerate()
-        apply = (f"loudnorm={LOUDNESS}:measured_I={m['input_i']}:measured_TP={m['input_tp']}"
-                 f":measured_LRA={m['input_lra']}:measured_thresh={m['input_thresh']}"
-                 f":offset={m['target_offset']}:linear=true")
-        subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", str(src), "-af", apply,
-                        "-ar", str(rate), "-ac", "1", str(dst)], check=True)
-        return dst.read_bytes()
+    """The WAV at the target loudness: one linear gain, so the voice and its timing are unchanged."""
+    rate = _rate(wav)
+    pcm = subprocess.run(_gain_cmd(wav), input=wav, capture_output=True, check=True).stdout
+    buf = BytesIO()
+    with wave.open(buf, "wb") as w:
+        w.setnchannels(1)
+        w.setsampwidth(2)
+        w.setframerate(rate)
+        w.writeframes(pcm)
+    return buf.getvalue()
+
+
+def _rate(wav: bytes) -> int:
+    with wave.open(BytesIO(wav)) as w:
+        return w.getframerate()
+
+
+def _gain_cmd(wav: bytes) -> list[str]:
+    """ffmpeg reading a WAV on stdin and writing it levelled to stdout as raw 16-bit mono samples at its own
+    rate (a piped WAV header carries no length)."""
+    return ["ffmpeg", "-hide_banner", "-loglevel", "error", "-i", "pipe:0", "-af",
+            f"volume={level_gain(wav):.2f}dB,alimiter=limit={10 ** (TRUE_PEAK / 20):.3f}:level=disabled",
+            "-ac", "1", "-f", "s16le", "-c:a", "pcm_s16le", "pipe:1"]
 
 
 def to_levelled_mp3(wav: bytes, out: Path) -> None:
-    """A take levelled to the common loudness, then encoded like every take."""
-    to_mp3(levelled(wav), out)
+    """A take levelled to the common loudness, then encoded like every take: the gain is piped straight into
+    LAME, so a take is measured once and written once."""
+    part = out.with_name(out.name + ".part")
+    raw = ["-r", "-s", f"{_rate(wav) / 1000:g}", "--bitwidth", "16", "--signed", "--little-endian"]
+    try:
+        gain = subprocess.Popen(_gain_cmd(wav), stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+        lame = subprocess.Popen([*LAME, *raw, "-", str(part)], stdin=gain.stdout)
+        assert gain.stdin is not None and gain.stdout is not None
+        gain.stdout.close()  # LAME holds the read end now
+        gain.stdin.write(wav)
+        gain.stdin.close()
+        if gain.wait() or lame.wait():
+            raise subprocess.CalledProcessError(gain.returncode or lame.returncode, "level and encode")
+        part.replace(out)
+    finally:
+        part.unlink(missing_ok=True)
 
 
 def wav_seconds(wav: bytes) -> float:
@@ -505,7 +541,7 @@ def generate(  # noqa: PLR0913, PLR0915 - engine, encoder and log injected for t
     cfg: dict[str, Any],
     store: Path,
     engine: Engine,
-    encode=to_levelled_mp3,
+    encode: Callable[[bytes, Path], None] | None = None,
     log=print,
     players: Sequence[tuple[str, str]] = (),
     checkout: bool = False,
@@ -611,7 +647,7 @@ def generate(  # noqa: PLR0913, PLR0915 - engine, encoder and log injected for t
                     return None  # a remote run's line still to read: it stays to make
                 file = audio_file(store, j.stem)
                 file.parent.mkdir(parents=True, exist_ok=True)
-                encode(wav, file)
+                (encode or to_levelled_mp3)(wav, file)
                 return j, text, wav, source, file
 
             save()
@@ -674,11 +710,12 @@ def run_generate(
     return 0
 
 
-def export_remote(root: Path, cfg: dict[str, Any], scope: str, store: Path, out: Path) -> int:
+def export_remote(root: Path, cfg: dict[str, Any], scope: str, store: Path, out: Path,
+                  players: Sequence[tuple[str, str]] = ()) -> int:
     """The cloned-voice files a run would make, written for a remote run (`qwen_modal.py`): jobs.jsonl (key,
     text, reference, mode), refs/ (the joined set references) and refs.json (their transcripts)."""
     lines = shipped_lines(root)
-    jobs = file_jobs(root, cfg, scope, lines)
+    jobs = file_jobs(root, cfg, scope, lines, players)
     audio = audio_record(root)
     values = line_values(root, lines)
     state = voice.in_step(jobs, lines, cfg["roster"], audio, values)
@@ -716,13 +753,13 @@ BATCH_LINES = 15
 
 
 def remote_round(root: Path, cfg: dict[str, Any], scope: str, store: Path,
-                 archive: Path | None) -> Path | None:
+                 archive: Path | None, players: Sequence[tuple[str, str]] = ()) -> Path | None:
     """The cloned lines a run needs, read on Modal: exported to build/voice-remote/<time>, read with
     `qwen_modal.py` on as many cards as the lines fill (up to 10), and the WAVs copied to `archive` and
     checked. → the folder for `--prepared`, or None when no cloned line needs making."""
     main = _main_checkout()
     run = main / REMOTE_DIR / datetime.datetime.now().strftime("%Y-%m-%d-%H%M%S")
-    lines = export_remote(root, cfg, scope, store, run)
+    lines = export_remote(root, cfg, scope, store, run, players)
     if not lines:
         shutil.rmtree(run, ignore_errors=True)
         return None
@@ -992,14 +1029,15 @@ def run(argv: Sequence[str]) -> int:
         if a.cmd == "plan":
             return run_plan(cfg, root, a.scope, players)
         if a.cmd == "export":
-            export_remote(root, cfg, a.scope, store, Path(a.out))
+            export_remote(root, cfg, a.scope, store, Path(a.out), players)
             return 0
         if a.cmd == "relevel":
             print(f"voice relevel: {relevel(root, cfg, store, [Path(r) for r in a.runs])} files re-encoded")
             return 0
         prepared = Path(a.prepared) if a.prepared else None
         if a.remote and prepared is None:
-            prepared = remote_round(root, cfg, a.scope, store, Path(a.archive) if a.archive else None)
+            archive = Path(a.archive) if a.archive else None
+            prepared = remote_round(root, cfg, a.scope, store, archive, players)
         return run_generate(cfg, root, a.scope, store, players, engine_run_path(a.engine_run), prepared)
     except (ValueError, KeyError, FileNotFoundError) as e:
         print(f"voice {a.cmd}: {e}", file=sys.stderr)
