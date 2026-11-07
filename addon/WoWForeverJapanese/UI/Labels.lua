@@ -158,14 +158,9 @@ local function show(surface, recKey, widget, refit, opts)
   return 1
 end
 
--- The public entry: `show`, timed under its surface (Core/Perf), with its arguments and result passed through.
+-- The public entry: `show`, timed under its surface (Core/Perf).
 function Labels.show(surface, recKey, widget, refit, opts)
-  local P = WFJ.Perf
-  if not P then return show(surface, recKey, widget, refit, opts) end
-  local t0, k0 = P.start(surface)
-  local n = show(surface, recKey, widget, refit, opts)
-  P.stop(surface, t0, k0)
-  return n
+  return WFJ.Perf.call(surface, show, surface, recKey, widget, refit, opts)
 end
 
 -- ADR-038: a composite line a surface split itself: a log line with a time suffix, a combat-text trailer, a

@@ -331,14 +331,9 @@ local function show(surface, key, fs, en, area, kind, id, ctx)
   return changed
 end
 
--- The public entry: `show`, timed under its surface (Core/Perf), with its arguments and result passed through.
+-- The public entry: `show`, timed under its surface (Core/Perf).
 function Render.show(surface, key, fs, en, area, kind, id, ctx)
-  local P = WFJ.Perf
-  if not P then return show(surface, key, fs, en, area, kind, id, ctx) end
-  local t0, k0 = P.start(surface)
-  local changed = show(surface, key, fs, en, area, kind, id, ctx)
-  P.stop(surface, t0, k0)
-  return changed
+  return WFJ.Perf.call(surface, show, surface, key, fs, en, area, kind, id, ctx)
 end
 
 -- Re-resolves every live record (one surface, or all). Returns the number of writes.
@@ -376,7 +371,7 @@ function Render.retryFonts()
   return n
 end
 
-function Render.refresh(surface)
+local function refresh(surface)
   if not translator then return 0 end
   local n = 0
   local function walk(s)
@@ -405,6 +400,10 @@ function Render.refresh(surface)
     for _, s in ipairs(names) do walk(s) end
   end
   return n
+end
+-- Every open record again (the reveal key, a setting, the master switch), timed as "refresh" (Core/Perf).
+function Render.refresh(surface)
+  return WFJ.Perf.call("refresh", refresh, surface)
 end
 
 local function detachAll(surface)

@@ -145,12 +145,7 @@ local function walkImpl(tt)
   return n
 end
 function HelpTooltip.walk(tt)
-  local P = WFJ.Perf
-  if not P then return walkImpl(tt) end
-  local t0, k0 = P.start("help")
-  local n = walkImpl(tt)
-  P.stop("help", t0, k0)
-  return n
+  return WFJ.Perf.call("help", walkImpl, tt)
 end
 
 -- One walk of `tt` as if its current owner were registered with `opts`: for a tooltip whose owner cannot be
@@ -176,12 +171,7 @@ local function walkAsImpl(tt, opts)
   return n
 end
 function HelpTooltip.walkAs(tt, opts)
-  local P = WFJ.Perf
-  if not P then return walkAsImpl(tt, opts) end
-  local t0, k0 = P.start("help")
-  local n = walkAsImpl(tt, opts)
-  P.stop("help", t0, k0)
-  return n
+  return WFJ.Perf.call("help", walkAsImpl, tt, opts)
 end
 
 -- itemAppended (ADR-038): lines a writer appends to a tooltip that shows an item: the auction house's seller
@@ -226,12 +216,7 @@ local function appendedImpl(tt, opts)
   return n
 end
 function HelpTooltip.appended(tt, opts)
-  local P = WFJ.Perf
-  if not P then return appendedImpl(tt, opts) end
-  local t0, k0 = P.start("help")
-  local n = appendedImpl(tt, opts)
-  P.stop("help", t0, k0)
-  return n
+  return WFJ.Perf.call("help", appendedImpl, tt, opts)
 end
 
 -- The kind of tooltip data `tt` was built from (Enum.TooltipDataType), or nil for lines written in Lua.

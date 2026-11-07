@@ -124,8 +124,10 @@ function TaintWatch.trail(label)
   trailLabel = label
 end
 
--- The kept events, oldest first, one per line.
+-- The kept events, oldest first, one per line. The frame being timed goes to the trail first (Core/Perf), so the
+-- addon's passes just before the moment asked about are in it.
 function TaintWatch.events()
+  if WFJ.Perf then WFJ.Perf.flush() end
   local out = {}
   for i = 1, TaintWatch.RING do
     local pos = (ringPos + i - 1) % TaintWatch.RING + 1
@@ -305,7 +307,7 @@ function TaintWatch.scan(reason)
       end
     end
   end
-  for _, entry in ipairs(WFJ.Compat.tables and WFJ.Compat.tables() or {}) do
+  for _, entry in ipairs(C.tables()) do
     checked = checked + walk(entry[2], entry[1], TaintWatch.COMPAT_DEPTH, seen, hit)
   end
   if found > #hits then hits[#hits + 1] = "… " .. (found - #hits) .. " more" end
@@ -323,6 +325,7 @@ function TaintWatch.scan(reason)
 end
 
 local scannedBlocks = {} -- a block's message → true once its scan was queued this session
+local contextLogged = false
 
 -- Main, after Diag logged a block naming this addon (`entry`, its log entry): the recent events, and a scan for each
 -- different block, once per session and out of combat (it walks _G, too heavy for a fight; the tainted values it
@@ -330,8 +333,11 @@ local scannedBlocks = {} -- a block's message → true once its scan was queued 
 -- → true when this block queued the scan
 TaintWatch.scanPending = false
 function TaintWatch.onBlocked(entry)
-  -- one entry for every block: repeats only count, so a long fight never pushes the first block's entries out
-  WFJ.Diag.log("context", "events before the first block", { events = TaintWatch.events() })
+  -- one entry for every block: repeats only count, so a long fight never pushes the first block's entries out; the
+  -- ring is read only for the first, the one entry that keeps it
+  local fields = not contextLogged and { events = TaintWatch.events() } or nil
+  WFJ.Diag.log("context", "events before the first block", fields)
+  contextLogged = true
   local key = type(entry) == "table" and tostring(entry.msg) or "?"
   if scannedBlocks[key] then return false end
   scannedBlocks[key] = true

@@ -54,10 +54,6 @@ WFJ.Tooltip = Tooltip
 
 local Compat = WFJ.Compat
 local DECLARE = "tooltip"
--- a tooltip pass timed under `label` (Core/Perf); without Perf (a test that does not load it) the pass as it is
-local function timed(label, fn)
-  return WFJ.Perf and WFJ.Perf.wrap(label, fn) or fn
-end
 
 Tooltip.FRAMES = { "GameTooltip", "ItemRefTooltip", "ShoppingTooltip1", "ShoppingTooltip2",
   "ItemRefShoppingTooltip1", "ItemRefShoppingTooltip2" }
@@ -1412,31 +1408,31 @@ function Tooltip.init()
   local processor, types = Tooltip.modern()
   Tooltip.path = processor and "dataprocessor" or "none"
   if processor then
-    processor.AddTooltipPostCall(types.Item, timed("tooltip.item", function(tt)
+    processor.AddTooltipPostCall(types.Item, function(tt)
       -- a comparison tooltip has no GetItem (ShoppingTooltipTemplate is TooltipDataHandlerMixin only,
       -- blizzard_gametooltip/mainline/gametooltip.xml:109); it carries its tooltip data, which Tooltip.itemOf reads
       local frame = dataFrame(tt, types.Item, type(tt) == "table" and tt.GetItem == nil and "GetPrimaryTooltipData"
         or "GetItem")
-      if frame then Tooltip.onItem(frame) end
-    end))
-    processor.AddTooltipPostCall(types.Spell, timed("tooltip.spell", function(tt)
+      if frame then WFJ.Perf.call("tooltip.item", Tooltip.onItem, frame) end
+    end)
+    processor.AddTooltipPostCall(types.Spell, function(tt)
       local frame = dataFrame(tt, types.Spell, "GetSpell")
-      if frame then Tooltip.onSpell(frame) end
-    end))
+      if frame then WFJ.Perf.call("tooltip.spell", Tooltip.onSpell, frame) end
+    end)
   end
+  -- the comparison pass, timed only when it runs (a SetShown(false) is no pass)
+  local function compare(f) return WFJ.Perf.call("tooltip.compare", Tooltip.onCompareShow, f) end
   for _, name in ipairs(Tooltip.FRAMES) do
     local frame = Compat.get(DECLARE, name)
     if frame and frame.HookScript then
       resolvedFrames = resolvedFrames + 1
       frame:HookScript("OnHide", function(self) Tooltip.release(self) end)
       if HEADED[name] and type(frame.Show) == "function" then -- the comparison's appended lines
-        hooksecurefunc(frame, "Show", timed("tooltip.compare", Tooltip.onCompareShow))
+        hooksecurefunc(frame, "Show", compare)
         -- Forever's comparison manager shows its frames with SetShown, never Show
         -- [verified: blizzard_sharedxmlgame/tooltip/tooltipcomparisonmanager.lua:53-54]
         if type(frame.SetShown) == "function" then
-          hooksecurefunc(frame, "SetShown", timed("tooltip.compare", function(f, shown)
-            if shown then Tooltip.onCompareShow(f) end
-          end))
+          hooksecurefunc(frame, "SetShown", function(f, shown) if shown then compare(f) end end)
         end
       end
     end
@@ -1446,7 +1442,7 @@ function Tooltip.init()
   -- also sees every rebuild.
   auraHooks = 0
   if processor and types.UnitAura ~= nil then
-    processor.AddTooltipPostCall(types.UnitAura, timed("tooltip.aura", function(tt)
+    processor.AddTooltipPostCall(types.UnitAura, function(tt)
       local frame = dataFrame(tt, types.UnitAura, "GetPrimaryTooltipInfo")
       if not frame then
         pcall(traceNote, ("aura post-call on %s: not one of ours"):format(
@@ -1454,9 +1450,9 @@ function Tooltip.init()
         return
       end
       local method, unit, key, filter, count = Tooltip.auraCall(frame)
-      if method then Tooltip.onAura(frame, method, unit, key, filter, count)
+      if method then WFJ.Perf.call("tooltip.aura", Tooltip.onAura, frame, method, unit, key, filter, count)
       else pcall(traceFrame, frame, "aura", nil, Tooltip.lines(frame), "-> left, getter not known") end
-    end))
+    end)
     auraHooks = #Tooltip.AURA_ORDER
     -- the trace only: which GameTooltip call opened a buff tooltip, so a buff the post-call never sees still shows
     local tooltip = Compat.get(DECLARE, "GameTooltip")

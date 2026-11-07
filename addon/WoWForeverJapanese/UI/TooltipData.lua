@@ -41,9 +41,7 @@ local function walkFlyout(tt)
 end
 TooltipData.walkFlyout = walkFlyout
 
-local function timed(label, fn) -- a post-call timed under `label` (Core/Perf)
-  return WFJ.Perf and WFJ.Perf.wrap(label, fn) or fn
-end
+local function timed(label, fn) return WFJ.Perf.wrap(label, fn) end -- a post-call timed under `label` (Core/Perf)
 
 -- → true when the post-calls were registered
 function TooltipData.init()

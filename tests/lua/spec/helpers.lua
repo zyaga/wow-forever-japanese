@@ -22,9 +22,14 @@ function H.loadChunk(relpath, addonName, ns)
   return run(relpath, chunk, addonName, ns)
 end
 
--- Loads several chunks in order into one namespace.
+-- Loads several chunks in order into one namespace. Core/Perf comes first when the list does not name it: the write
+-- paths call it unguarded, as they can in game, where it loads before every surface (without its clock it does
+-- nothing).
 function H.loadChunks(relpaths, ns, addonName)
   ns = ns or {}
+  local hasPerf = false
+  for _, rel in ipairs(relpaths) do if rel == "Core/Perf.lua" then hasPerf = true end end
+  if not hasPerf and not ns.Perf then H.loadChunk("Core/Perf.lua", addonName, ns) end
   for _, rel in ipairs(relpaths) do H.loadChunk(rel, addonName, ns) end
   return ns
 end

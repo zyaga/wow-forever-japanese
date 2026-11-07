@@ -205,8 +205,8 @@ function WFJ.OnLoad()
   step("compat", function() WFJ.Compat.init(function(name) return _G[name] end) end)
   -- the write paths' timing and the trail of our own passes in the taint watch's ring (Core/Perf)
   step("perf", function()
-    WFJ.Perf.setDeps({ clock = debugprofilestop, mem = function() return collectgarbage("count") end, frame = GetTime,
-      trail = function(label) if WFJ.TaintWatch then WFJ.TaintWatch.trail(label) end end })
+    WFJ.Perf.setDeps({ clock = debugprofilestop, mem = collectgarbage, frame = GetTime,
+      trail = WFJ.TaintWatch and WFJ.TaintWatch.trail })
   end)
   -- the addon's own Lua errors (Core/ErrorLog wrapped the error handler when its file loaded), kept in WFJ_Log;
   -- after compat, which its clock reads `date` through

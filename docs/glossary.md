@@ -643,7 +643,7 @@ _Avoid_: UI label (too wide: buttons are labels too), window text, header, stati
 → [Readings](systems/readings.md) · [ADR-041](adr/041-word-cards-on-window-labels.md)
 
 **Cover frame**:
-The invisible frame of the addon's own laid over one prose FontString that has [[Reading]]s (`UI/Readings`): it takes mouse motion only (clicks and scrolling go through), and on mouse enter checks that the FontString still shows the text it was attached for before measuring any word. Attached after an apply, detached on every restore, release and forget.
+The invisible frame of the addon's own laid over one prose FontString that has [[Reading]]s (`UI/Readings`): it takes mouse motion only (its own clicks are off and passed on, so clicks and scrolling go through), and on mouse enter checks that the FontString still shows the text it was attached for before measuring any word. Attached after an apply, detached on every restore, release and forget.
 _Avoid_: overlay, hit frame, hover frame, mask
 → [Readings](systems/readings.md)
 

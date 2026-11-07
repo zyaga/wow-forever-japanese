@@ -9,7 +9,7 @@ local function fresh()
     clock = function() return "2026-11-07 17:00:00" end, print = function() end })
   local db = ns.Diag.load(nil)
   local w = { ms = 0, kb = 100, frame = 1, trail = {} }
-  ns.Perf.setDeps({ clock = function() return w.ms end, mem = function() return w.kb end,
+  ns.Perf.setDeps({ clock = function() return w.ms end, mem = function(what) return what == "count" and w.kb end,
     frame = function() return w.frame end, trail = function(label) w.trail[#w.trail + 1] = label end })
   return ns.Perf, db, w
 end
@@ -85,11 +85,20 @@ describe("Core/Perf", function()
     assert.are.same({}, P.report(10))
   end)
 
-  it("hands every outermost pass to the trail", function()
+  it("hands each finished frame's labels to the trail as one line, in the order they ran", function()
     local P, _, w = fresh()
     call(P, w, "items", 1)
     call(P, w, "quest", 1)
-    assert.are.same({ "items", "quest" }, w.trail)
+    call(P, w, "items", 1)
+    assert.are.same({}, w.trail) -- the frame is still running
+    w.frame = 2
+    call(P, w, "items", 1)
+    w.frame = 3
+    call(P, w, "items", 1)
+    P.flush() -- the taint watch reads the ring: the frame so far goes in too
+    assert.are.same({ "items quest", "items", "items" }, w.trail)
+    P.flush()
+    assert.are.equal(3, #w.trail) -- nothing timed since
   end)
 
   it("does nothing without its clock, and a stop with no start is ignored", function()
