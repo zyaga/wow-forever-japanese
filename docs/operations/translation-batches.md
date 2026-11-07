@@ -342,6 +342,38 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
 
+### 1.60.1.70790 and 1.60.1.70862, the maintainer's collector file and three players' sends (2026-11-07)
+
+Not a re-pull: the maintainer's own collector file and three players' collector sends, issues #73, #75 and #76, the
+sends read with `make collector-intake ISSUE=N`. The English comes from builds 1.60.1.70790 and
+1.60.1.70862. Issue #74 could not be read: its send string is incomplete, and the player is sending it again.
+
+| Source | gossip added | quest added | quest replaced | unit (NPC names) added |
+|---|---|---|---|---|
+| the maintainer's file | 54 | 12 | 11 | 12 |
+| #73 | 10 | 1 | 2 (5622, 937) | 16 |
+| #75 | 9 | 1 | 2 (311, 98326) | 17 |
+| #76 | 5 | 2 | 1 (91904) | 4 |
+
+Drafted:
+
+| What | Result |
+|---|---|
+| gossip | 76 lines, with word lists; 1 line in a made-up language kept as written (ruled accept) |
+| quest progress and turn-in | 16 new texts, with word lists |
+| machine quest lines whose English the game replaced | 12 redrafted from the game's wording and re-verified: 9 kept as they were, 3 changed |
+| quest 937 turn-in | redrafted: the game's text is about the harpy belts the quest collects; the old accepted Japanese followed another quest's English and was ruled reject, the redraft ruled accept |
+| hand-written 5622 and 311 | kept; only wording details in the game's English changed |
+| unit (NPC names) | none (names stay English) |
+
+Race word: a Skyborne character's collector had stored four lines with "skyborne" written out where the game printed
+`$R` (the client names the race "High Order Skyborne" but prints "Skyborne"; the collector now treats that word as the
+race, see [Collector](../systems/collector.md)). They were put back to the token: the turn-ins of quests 153 and
+94947 now carry `$R`; "Greetings, $R." and "You're just the $R I'm looking for!" already shipped, so their literal
+copies were dropped; "I am an orc of medicine, $R." already existed too.
+
+Voice: held by the maintainer for this round, not made yet.
+
 ### 1.60.1.70790, a player's collector send (2026-11-06)
 
 Not a re-pull: one player's collector send, issue #70 (97 entries from build 1.60.1.70790, addon 0.9.0), with the
