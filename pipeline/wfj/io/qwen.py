@@ -64,11 +64,16 @@ class Qwen:
                 self._lock = None
                 raise QwenBusy("another voice run is making cloned voices; one runs at a time") from e
         self._err = self.log.open("a", encoding="utf-8") if self.log else None
-        self._proc = subprocess.Popen(
-            [*(NICE if self.nice else ()), str(self.python), "-I", str(self.worker)],
-            stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=self._err or subprocess.DEVNULL, text=True,
-        )
-        hello = self._read()
+        try:
+            self._proc = subprocess.Popen(
+                [*(NICE if self.nice else ()), str(self.python), "-I", str(self.worker)],
+                stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=self._err or subprocess.DEVNULL,
+                text=True,
+            )
+            hello = self._read()
+        except BaseException:
+            self.__exit__(None, None, None)  # the lock and the log are let go when the worker never starts
+            raise
         if not hello.get("ready"):
             self.__exit__(None, None, None)
             raise QwenError(f"the Qwen3-TTS worker did not start: {hello}")

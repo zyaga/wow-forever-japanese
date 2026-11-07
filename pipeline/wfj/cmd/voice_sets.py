@@ -21,10 +21,12 @@ import datetime
 import gzip
 import hashlib
 import json
+import os
 import re
 import subprocess
 import sys
 import tempfile
+import threading
 import wave
 from collections.abc import Sequence
 from pathlib import Path
@@ -341,9 +343,11 @@ def reference(row: dict[str, Any], mode: str, clips: Path, out: Path) -> tuple[P
                 frames.append(w.readframes(w.getnframes()))
                 frames.append(b"\0" * int(w.getframerate() * GAP) * w.getsampwidth() * w.getnchannels())
         assert params
-        with wave.open(str(dest), "wb") as w:
+        part = dest.with_name(f"{dest.name}.{os.getpid()}.{threading.get_ident()}.part")
+        with wave.open(str(part), "wb") as w:  # written aside and renamed: a reader never sees half a file
             w.setparams(params)
             w.writeframes(b"".join(frames))
+        part.replace(dest)
     return dest, (" ".join(c["en"] for c in use) if mode == "full" else None)
 
 
