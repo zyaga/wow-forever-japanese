@@ -368,6 +368,12 @@ def roster_problems(
     for vid, v in roster.items():
         if not _VOICE_ID.fullmatch(vid):
             out.append(f"roster {vid!r}: an id is lowercase letters and digits")
+        if v.get("engine") == "qwen":
+            if v.get("mode") not in ("voice", "full") or not isinstance(v.get("set"), str):
+                out.append(f"roster {vid}: a cloned voice needs a set and a mode (voice or full)")
+            if v.get("licence") != "Apache-2.0":
+                out.append(f"roster {vid}: a cloned voice's engine licence is Apache-2.0")
+            continue
         if not isinstance(v.get("style"), int):
             out.append(f"roster {vid}: style must be an engine style id")
         if v.get("licence") not in ("ACML 1.0", "CC0"):

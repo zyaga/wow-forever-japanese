@@ -154,11 +154,25 @@ def size_table(table: Table, packs: Sequence[Pack]) -> tuple[list[str], list[str
 
 
 def _credits(cfg: Mapping[str, Any], audio: Mapping[str, Any], files: Sequence[str]) -> dict[str, str]:
+    """The pack's credits: each engine its files were made with, the AivisSpeech models used, and the
+    licences. A cloned voice is credited to its engine, not a model (it is made from the game's own NPC voice
+    set), and the engine's licence is not the recordings': those stay the game's."""
     used = sorted({audio[f.removesuffix(".mp3")]["voice"] for f in files})
+    cloned = [v for v in used if cfg["roster"][v].get("engine") == "qwen"]
+    stock = [v for v in used if v not in cloned]
+    engines = ([cfg["credits"]["engine"]] if stock or not cloned else []) + (
+        [cfg["credits"]["clone_engine"]] if cloned else [])
+    models = sorted({cfg["roster"][v]["model"] for v in stock}) + (
+        ["voices modelled on the game's own NPC voice sets"] if cloned else [])
+    licences = ([f"voice models {' / '.join(sorted({cfg['roster'][v]['licence'] for v in stock}))}"]
+                if stock else []) + (
+        [f"speech engine {' / '.join(sorted({cfg['roster'][v]['licence'] for v in cloned}))}; "
+         "the game's NPC recordings the voices are modelled on belong to Blizzard Entertainment"]
+        if cloned else [])
     return {
-        "engine": cfg["credits"]["engine"],
-        "models": ", ".join(sorted({cfg["roster"][v]["model"] for v in used})) or "none yet",
-        "licence": " / ".join(sorted({cfg["roster"][v]["licence"] for v in used})) or "none yet",
+        "engine": "; ".join(engines),
+        "models": ", ".join(models) or "none yet",
+        "licence": "; ".join(licences) or "none yet",
     }
 
 

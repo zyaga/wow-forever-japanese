@@ -13,6 +13,18 @@ speed_scale = 0.9
 narrator = "v1628969216"
 book_narrator = "v1628969216"
 
+# Cloned game voice sets (ADR-074; the [sets] tables at the end): the Qwen3-TTS environment, from the main
+# checkout, and the packs whose NPCs speak with their game voice set.
+qwen = "build/qwen/venv/bin/python"
+cloned_packs = [
+  "WoWForeverJapanese_VoiceLevels1to10", "WoWForeverJapanese_VoiceLevels11to20",
+  "WoWForeverJapanese_VoiceLevels21to30", "WoWForeverJapanese_VoiceLevels31to40",
+  "WoWForeverJapanese_VoiceLevels41to50", "WoWForeverJapanese_VoiceLevels51to60", "WoWForeverJapanese_VoiceOther",
+]
+# the narrator (quests an item or object starts) and the book reader speak with a game voice set too
+narrator_set = "taurenmaleeldernpc"
+book_narrator_set = "taurenmaleeldernpc"
+
 # One table per voice: model (its name on AivisHub), style (the engine's style id), licence (ACML 1.0 or
 # CC0 only), fits (what it reads), and optionally pitch (default 0.0), intonation (default 1.0) and speed
 # (default speed_scale).
@@ -305,6 +317,11 @@ when = { archetype = "dragon" }
 voices = ["v391794336"]
 
 [[cast]]
+name = "demon, female"
+when = { archetype = "demon", gender = "female" }
+voices = ["v1431611904"]
+
+[[cast]]
 name = "demon"
 when = { archetype = "demon" }
 voices = ["v2029042368"]
@@ -484,5 +501,484 @@ name = "male"
 when = { gender = ["male", "none"] }
 voices = ["v1310138977"]
 
+# ---- cloned game voice sets (ADR-074) --------------------------------------------------------------------
+# NPCs whose home pack is listed in `cloned_packs` (every pack) speak with their game voice set, cloned by
+# Qwen3-TTS from the set's own barks; speakers Spoken gives no set take one from the [[set_cast]] rules below,
+# so the AivisSpeech cast above is never what a line ends on. A new pack's folder goes in `cloned_packs`,
+# then `make voice-cast` and `make voice-generate`. Picks are made on the listening page
+# (`make voice-sets-page`): voice = the voice alone (speaker embedding), full = the voice and the way the set
+# speaks, keep = the set's NPCs stay on the AivisSpeech cast, which a test forbids for any committed speaker,
+# so no set uses it. `decided` marks a pick made by ear on that page; the rest follow the default (male sets
+# voice, female sets full).
+
+[sets.dwarffemaleguardnpc]
+pick = "full"
+decided = true
+
+[sets.dwarffemalematernalnpc]
+pick = "full"
+decided = true
+
+[sets.dwarffemaleyoungnpc]
+pick = "full"
+decided = true
+
+[sets.dwarfmalegrimnpc]
+pick = "voice"
+decided = true
+
+[sets.dwarfmaleguardnpc]
+pick = "voice"
+decided = true
+
+[sets.dwarfmalestandardnpc]
+pick = "voice"
+decided = true
+
+[sets.gnomefemalehappynpc]
+pick = "full"
+decided = true
+
+[sets.gnomefemalenerdynpc]
+pick = "full"
+decided = true
+
+[sets.gnomefemalestandardnpc]
+pick = "full"
+decided = true
+
+[sets.gnomemalestandardnpc]
+pick = "full"
+decided = true
+
+[sets.gnomemaleyoungnpc]
+pick = "voice"
+decided = true
+
+[sets.gnomemalezanynpc]
+pick = "full"
+decided = true
+
+[sets.goblinfemalezanynpc]
+pick = "full"
+decided = true
+
+[sets.goblinmalegruffnpc]
+pick = "voice"
+decided = true
+
+[sets.goblinmaleguardnpc]
+pick = "full"
+decided = true
+
+[sets.goblinmalezanynpc]
+pick = "full"
+decided = true
+
+[sets.humanfemaleofficialnpc]
+pick = "voice"
+decided = true
+
+[sets.humanfemalestandardnpc]
+pick = "voice"
+decided = true
+
+[sets.humanfemalewarriornpc]
+pick = "voice"
+decided = true
+
+[sets.humanmaleofficialnpc]
+pick = "voice"
+decided = true
+
+[sets.humanmalestandardnpc]
+pick = "voice"
+decided = true
+
+[sets.humanmalewarriornpc]
+pick = "voice"
+decided = true
+
+[sets.nightelffemalepriestessnpc]
+pick = "full"
+decided = true
+
+[sets.nightelffemalesentinelnpc]
+pick = "voice"
+decided = true
+
+[sets.nightelffemalestandardnpc]
+pick = "voice"
+decided = true
+
+[sets.nightelfmaleofficialnpc]
+pick = "full"
+decided = true
+
+[sets.nightelfmalestandardnpc]
+pick = "voice"
+decided = true
+
+[sets.nightelfmalewarriornpc]
+pick = "voice"
+decided = true
+
+[sets.orcfemaleshamannpc]
+pick = "voice"
+decided = true
+
+[sets.orcfemalestandardnpc]
+pick = "full"
+decided = true
+
+[sets.orcfemalewarriornpc]
+pick = "full"
+decided = true
+
+[sets.orcmaleguardnpc]
+pick = "voice"
+decided = true
+
+[sets.orcmaleshadynpc]
+pick = "full"
+decided = true
+
+[sets.orcmalestandardnpc]
+pick = "voice"
+decided = true
+
+[sets.taurenfemaleofficialnpc]
+pick = "voice"
+decided = true
+
+[sets.taurenfemaleshamannpc]
+pick = "full"
+decided = true
+
+[sets.taurenfemalestandardnpc]
+pick = "full"
+decided = true
+
+[sets.taurenmaleeldernpc]
+pick = "voice"
+decided = true
+
+[sets.taurenmaleshamannpc]
+pick = "full"
+decided = true
+
+[sets.taurenmalewarriornpc]
+pick = "voice"
+decided = true
+
+[sets.trollfemalelaidbacknpc]
+pick = "full"
+decided = true
+
+[sets.trollfemaleoldnpc]
+pick = "voice"
+decided = true
+
+[sets.trollfemalestandardnpc]
+pick = "voice"
+decided = true
+
+[sets.trollmaledarknpc]
+pick = "voice"
+decided = true
+
+[sets.trollmaleshamannpc]
+pick = "voice"
+decided = true
+
+[sets.trollmalestandardnpc]
+pick = "voice"
+decided = true
+
+[sets.undeadfemalemagicnpc]
+pick = "full"
+decided = true
+
+[sets.undeadfemalestandardnpc]
+pick = "voice"
+decided = true
+
+[sets.undeadfemalewarriornpc]
+pick = "voice"
+decided = true
+
+[sets.undeadmaledarknpc]
+pick = "voice"
+decided = true
+
+[sets.undeadmalestandardnpc]
+pick = "voice"
+decided = true
+
+[sets.undeadmalewarriornpc]
+pick = "voice"
+decided = true
+
+[sets.skybourneelffemale3773npc]
+pick = "full"
+decided = false
+
+[sets.skybourneelffemale3774npc]
+pick = "full"
+decided = false
+
+[sets.skybourneelfmale3775npc]
+pick = "voice"
+decided = false
+
+[sets.skybourneelfmale3776npc]
+pick = "voice"
+decided = false
+
+# ---- voice sets for speakers Spoken gives none (ADR-074) -------------------------------------------------------
+# First match wins, on the speaker's profile (race, gender, archetype); a creature shown as both genders is
+# matched once as each. Every speaker ends with a game voice set: no line is read in any other voice.
+
+[[set_cast]]
+when = { race = "skyborne", gender = "female" }
+set = "skybourneelffemale3773npc"
+
+[[set_cast]]
+when = { race = "skyborne" }
+set = "skybourneelfmale3776npc"
+
+[[set_cast]]
+when = { archetype = "mechanical" }
+set = "gnomemalezanynpc"
+
+[[set_cast]]
+when = { archetype = ["undead", "ghost"], gender = "female" }
+set = "undeadfemalestandardnpc"
+
+[[set_cast]]
+when = { archetype = ["undead", "ghost"] }
+set = "undeadmaledarknpc"
+
+[[set_cast]]
+when = { archetype = "demon", gender = "female" }
+set = "undeadfemalemagicnpc"
+
+[[set_cast]]
+when = { archetype = "demon" }
+set = "trollmaledarknpc"
+
+[[set_cast]]
+when = { archetype = "dragon", gender = "female" }
+set = "nightelffemalepriestessnpc"
+
+[[set_cast]]
+when = { archetype = "dragon" }
+set = "taurenmaleeldernpc"
+
+[[set_cast]]
+when = { archetype = "elemental" }
+set = "taurenmaleeldernpc"
+
+[[set_cast]]
+when = { archetype = "giant" }
+set = "taurenmalewarriornpc"
+
+[[set_cast]]
+when = { race = "dryad" }
+set = "nightelffemalepriestessnpc"
+
+[[set_cast]]
+when = { race = "satyr" }
+set = "trollmaledarknpc"
+
+[[set_cast]]
+when = { race = "furbolg" }
+set = "taurenmaleshamannpc"
+
+[[set_cast]]
+when = { race = "centaur", gender = "female" }
+set = "taurenfemalestandardnpc"
+
+[[set_cast]]
+when = { race = "centaur" }
+set = "taurenmalewarriornpc"
+
+[[set_cast]]
+when = { race = "draenei" }
+set = "taurenmaleshamannpc"
+
+[[set_cast]]
+when = { race = "ogre" }
+set = "orcmaleguardnpc"
+
+[[set_cast]]
+when = { race = "quilboar" }
+set = "orcmaleshadynpc"
+
+[[set_cast]]
+when = { race = "bloodelf", gender = "female" }
+set = "nightelffemalestandardnpc"
+
+[[set_cast]]
+when = { race = "bloodelf" }
+set = "nightelfmaleofficialnpc"
+
+[[set_cast]]
+when = { race = "human", gender = "female" }
+set = "humanfemalestandardnpc"
+
+[[set_cast]]
+when = { race = "human" }
+set = "humanmalestandardnpc"
+
+[[set_cast]]
+when = { race = "orc", gender = "female" }
+set = "orcfemalestandardnpc"
+
+[[set_cast]]
+when = { race = "orc" }
+set = "orcmalestandardnpc"
+
+[[set_cast]]
+when = { race = "dwarf", gender = "female" }
+set = "dwarffemaleguardnpc"
+
+[[set_cast]]
+when = { race = "dwarf" }
+set = "dwarfmalestandardnpc"
+
+[[set_cast]]
+when = { race = "nightelf", gender = "female" }
+set = "nightelffemalestandardnpc"
+
+[[set_cast]]
+when = { race = "nightelf" }
+set = "nightelfmalestandardnpc"
+
+[[set_cast]]
+when = { race = "gnome", gender = "female" }
+set = "gnomefemalestandardnpc"
+
+[[set_cast]]
+when = { race = "gnome" }
+set = "gnomemalestandardnpc"
+
+[[set_cast]]
+when = { race = "troll", gender = "female" }
+set = "trollfemalestandardnpc"
+
+[[set_cast]]
+when = { race = "troll" }
+set = "trollmalestandardnpc"
+
+[[set_cast]]
+when = { race = "tauren", gender = "female" }
+set = "taurenfemalestandardnpc"
+
+[[set_cast]]
+when = { race = "tauren" }
+set = "taurenmalewarriornpc"
+
+[[set_cast]]
+when = { race = "goblin", gender = "female" }
+set = "goblinfemalezanynpc"
+
+[[set_cast]]
+when = { race = "goblin" }
+set = "goblinmalegruffnpc"
+
+[[set_cast]]
+when = { race = "scourge", gender = "female" }
+set = "undeadfemalestandardnpc"
+
+[[set_cast]]
+when = { race = "scourge" }
+set = "undeadmalestandardnpc"
+
+[[set_cast]]
+when = { archetype = "beast-kin", gender = "female" }
+set = "nightelffemalepriestessnpc"
+
+[[set_cast]]
+when = { archetype = "beast-kin" }
+set = "taurenmaleshamannpc"
+
+[[set_cast]]
+when = { race = "critter" }
+set = "gnomemaleyoungnpc"
+
+[[set_cast]]
+when = { gender = "female" }
+set = "humanfemalestandardnpc"
+
+[[set_cast]]
+when = {  }
+set = "humanmalestandardnpc"
+
+[sets.dwarfmaleplayernpc]
+pick = "voice"
+decided = false
+
+[sets.dwarffemaleplayernpc]
+pick = "voice"
+decided = false
+
+[sets.gnomemaleplayernpc]
+pick = "voice"
+decided = false
+
+[sets.gnomefemaleplayernpc]
+pick = "voice"
+decided = false
+
+[sets.humanmaleplayernpc]
+pick = "voice"
+decided = false
+
+[sets.humanfemaleplayernpc]
+pick = "voice"
+decided = false
+
+[sets.nightelfmaleplayernpc]
+pick = "voice"
+decided = false
+
+[sets.nightelffemaleplayernpc]
+pick = "voice"
+decided = false
+
+[sets.orcmaleplayernpc]
+pick = "voice"
+decided = false
+
+[sets.orcfemaleplayernpc]
+pick = "voice"
+decided = false
+
+[sets.undeadmaleplayernpc]
+pick = "voice"
+decided = false
+
+[sets.undeadfemaleplayernpc]
+pick = "voice"
+decided = false
+
+[sets.taurenmaleplayernpc]
+pick = "voice"
+decided = false
+
+[sets.taurenfemaleplayernpc]
+pick = "voice"
+decided = false
+
+[sets.trollmaleplayernpc]
+pick = "voice"
+decided = false
+
+[sets.trollfemaleplayernpc]
+pick = "voice"
+decided = false
+
 [credits]
 engine = "AivisSpeech Engine (https://aivis-project.com)"
+clone_engine = "Qwen3-TTS (https://github.com/QwenLM/Qwen3-TTS)"

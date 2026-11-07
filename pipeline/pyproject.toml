@@ -54,6 +54,8 @@ max-statements = 60
 
 [tool.coverage.run]
 source = ["wfj"]
+# run only under their own interpreters (the PyTorch venv, the Modal client), never the pipeline's
+omit = ["wfj/io/qwen_worker.py", "wfj/io/qwen_modal.py"]
 
 [tool.coverage.report]
 skip_empty = true

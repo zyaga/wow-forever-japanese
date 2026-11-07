@@ -15,7 +15,7 @@ VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
 
-.PHONY: voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
+.PHONY: voice-qwen-setup voice-modal-setup voice-cast voice-speed voice-spoken-fetch voice-sets-page voice-sets-apply voice-sets voice-sets-clips voice-sets-catalogue voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
 
 help:
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | sed 's/:.*## /: /'
@@ -407,8 +407,8 @@ voice-speakers: voice-levels ## data/voice/ speakers + voices for the voice scop
 	cd pipeline && $(PY) -m wfj voice speakers --vmangos $(VMANGOS_DB) --commit $(VMANGOS_SHA) \
 		--wdb "$(call quest_dir,forever)/questcache.wdb" --forever-vo "$(FOREVER_VO)" --forever-vo-commit $(FOREVER_VO_SHA)
 
-voice-generate: ## the missing and changed voice files from the shipped Japanese, through the local engine, then voice-sync
-	cd pipeline && $(PY) -m wfj voice generate --scope all --players all --store "$(VOICE_STORE)" && $(PY) -m wfj voice store-sync --if-changed --store "$(VOICE_STORE)"
+voice-generate: ## the missing and changed voice files from the shipped Japanese (cloned voices on Modal; VOICE_LOCAL=1 on this machine), then voice-sync
+	cd pipeline && $(PY) -m wfj voice generate --scope all --players all --store "$(VOICE_STORE)" $(if $(VOICE_LOCAL),,--remote $(if $(VOICE_WAV_ARCHIVE),--archive "$(VOICE_WAV_ARCHIVE)")) && $(PY) -m wfj voice store-sync --if-changed --store "$(VOICE_STORE)"
 
 # The audio store: a checkout of the voice audio repository (zyaga/wow-forever-japanese-voice), inside the main checkout.
 VOICE_STORE ?= $(REPO_ROOT)/build/voice
@@ -417,6 +417,51 @@ VOICE_LEVELS = --wdb "$(call quest_dir,forever)/questcache.wdb" --vmangos "$(VMA
 
 voice-levels: ## pipeline/voice_quest_levels.txt: each quest's level for the voice packs (rerun after a re-pull, with voice-speakers)
 	cd pipeline && $(PY) -m wfj voice levels $(VOICE_LEVELS)
+
+# Cloned game voice sets (ADR-074). The Qwen3-TTS environment lives in the main checkout's build/qwen, outside the
+# pipeline's own environment; the set clips are cut from the local archive into build/voice-sets and never leave it.
+QWEN_TTS_VERSION = 0.1.1
+QWEN_VENV ?= $(REPO_ROOT)/build/qwen/venv
+LISTFILE_VOICE ?= $(INPUTS)/community-listfile.csv
+
+voice-qwen-setup: ## build/qwen/venv: the Qwen3-TTS environment the cloned voices are made with (installs qwen-tts and PyTorch there)
+	uv venv --python 3.12 "$(QWEN_VENV)" && VIRTUAL_ENV="$(QWEN_VENV)" uv pip install "qwen-tts==$(QWEN_TTS_VERSION)"
+
+# Which game voice set each NPC speaks with is the Spoken voice addon's own assignment (its line corpus, pinned).
+SPOKEN_COMMIT = 3219d17badfe8ab1a0c57973dd32cdaad9ae7c90
+SPOKEN_CORPUS ?= $(REPO_ROOT)/build/spoken/corpus-$(SPOKEN_COMMIT).json.gz
+
+voice-spoken-fetch: ## build/spoken: the Spoken addon's line corpus at the pinned commit (which voice set each NPC speaks with)
+	@mkdir -p "$(dir $(SPOKEN_CORPUS))" && test -f "$(SPOKEN_CORPUS)" || curl -sfL -o "$(SPOKEN_CORPUS)" "https://raw.githubusercontent.com/rusty-key/spoken-wow/$(SPOKEN_COMMIT)/pipelines/quests/corpus/corpus.json.gz"
+
+voice-sets: voice-spoken-fetch ## data/voice/creature-sets.jsonl: each speaking NPC's game voice set, as Spoken assigns it (rerun after voice-speakers)
+	cd pipeline && $(PY) -m wfj voice sets creatures --spoken "$(SPOKEN_CORPUS)" --spoken-commit $(SPOKEN_COMMIT)
+
+voice-sets-clips: ## build/voice-sets/: every set's barks cut from the installed client, the cloning references: WOW_DIR=<install root>
+	@test -n "$(WOW_DIR)" || { echo "usage: make voice-sets-clips WOW_DIR=<the World of Warcraft folder>"; exit 2; }
+	cd pipeline && $(PY) -m wfj voice sets clips --wow "$(WOW_DIR)" --product "$(forever_PRODUCT)" --listfile "$(LISTFILE_VOICE)"
+
+voice-sets-catalogue: ## data/voice/sets.jsonl: each set's clips with a transcript (local speech-to-text for new clips): BUILD=<client build>
+	cd pipeline && $(PY) -m wfj voice sets catalogue --build "$(BUILD)" $(if $(WHISPER),--whisper "$(WHISPER)")
+
+voice-sets-page: ## build/voice-sets/page: the listening page (game clips, both copies, today's voice per set), then serve it on localhost:8767
+	cd pipeline && $(PY) -m wfj voice sets-page build && $(PY) -m wfj voice sets-page serve
+
+voice-sets-apply: ## the picks saved on the listening page → pipeline/voice.toml [sets]; then make voice-cast and make voice-generate
+	cd pipeline && $(PY) -m wfj voice sets-page apply
+
+# Where each remote run's uncompressed WAVs are kept (set in local.mk; empty: not archived).
+VOICE_WAV_ARCHIVE ?=
+
+voice-modal-setup: ## build/modal/venv: the Modal client the cloned voices are read with on rented GPUs; then log in once (modal token new)
+	uv venv --python 3.12 "$(REPO_ROOT)/build/modal/venv" && VIRTUAL_ENV="$(REPO_ROOT)/build/modal/venv" uv pip install "modal==1.6.3"
+	@echo "now log in once: $(REPO_ROOT)/build/modal/venv/bin/modal token new"
+
+voice-speed: ## slow (1 cloned-voice engine in the background, the default) or fast (several at full speed): SPEED=slow|fast; a run already going follows it
+	cd pipeline && $(PY) -m wfj voice speed $(SPEED)
+
+voice-cast: ## data/voice/voices.jsonl: each speaking creature's voice from the profiles, the cast rows, the set picks and cloned_packs
+	cd pipeline && $(PY) -m wfj voice cast
 
 voice-sync: ## commit and push the audio store's new files, and pin that audio commit in pipeline/voice-audio-commit.txt
 	cd pipeline && $(PY) -m wfj voice store-sync --store "$(VOICE_STORE)"

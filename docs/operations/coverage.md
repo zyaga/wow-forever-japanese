@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-06 at commit `a7f1af08`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-06 at commit `a107089a`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -378,10 +378,10 @@ outnumber lines.
 
 | Kind | Lines | Files | In step | Stale | Not made | Read by the narrator |
 |---|---|---|---|---|---|---|
-| Quest offer | 4,330 | 4,399 | 4,399 | 0 | 0 | 902 |
+| Quest offer | 4,330 | 4,404 | 4,404 | 0 | 0 | 902 |
 | Quest progress | 2,941 | 2,965 | 2,965 | 0 | 0 | 93 |
-| Quest turn-in | 4,063 | 4,088 | 4,088 | 0 | 0 | 173 |
-| NPC talk (greetings, gossip, quest text keyed by its English) | 2,155 | 2,905 | 2,905 | 0 | 0 | 9 |
+| Quest turn-in | 4,063 | 4,089 | 4,089 | 0 | 0 | 173 |
+| NPC talk (greetings, gossip, quest text keyed by its English) | 2,155 | 2,720 | 2,720 | 0 | 0 | 9 |
 | Book and letter pages | 1,102 | 1,102 | 1,102 | 0 | 0 | 1,039 |
 | The character's error lines (one file per race and sex) | 50 | 900 | 900 | 0 | 0 | 0 |
 

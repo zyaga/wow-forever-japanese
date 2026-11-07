@@ -179,6 +179,41 @@ cache, the Classic Era quest cache, wago.tools DB2 exports (`ItemSparse`, `Spell
 > AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
 > OR OTHER DEALINGS IN THE SOFTWARE.
 
+## Spoken license
+
+> MIT License
+>
+> Copyright (c) 2026 Rusty Key
+>
+> Permission is hereby granted, free of charge, to any person obtaining a copy
+> of this software and associated documentation files (the "Software"), to deal
+> in the Software without restriction, including without limitation the rights
+> to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+> copies of the Software, and to permit persons to whom the Software is
+> furnished to do so, subject to the following conditions:
+>
+> The above copyright notice and this permission notice shall be included in all
+> copies or substantial portions of the Software.
+>
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+> FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+> AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+> LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+> OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+> SOFTWARE.
+>
+> ---
+>
+> The MIT grant above covers the code in this repository that this project wrote.
+> It does not, and cannot, cover the third-party libraries vendored under
+> `addons/*/Libs/`, nor the game text, lore and artwork the pipelines read and the
+> sound packs are generated from. THIRD_PARTY.md says what each of those is, who
+> owns it, and under what terms it is here.
+
+The paths and files this addendum names (`addons/*/Libs/`, THIRD_PARTY.md) are in Spoken's own repository, not
+this one.
+
 ## forever-vo license
 
 > MIT License
@@ -202,12 +237,15 @@ cache, the Classic Era quest cache, wago.tools DB2 exports (`ItemSparse`, `Spell
 
 ## Voice
 
-The Japanese voice (the separate `WoWForeverJapanese_Voice` addons) was made on the maintainer's own computer with
-the AivisSpeech Engine (https://aivis-project.com) and these voice models, used under their licences. The audio
-files are not part of this repository.
+The Japanese voice (the separate `WoWForeverJapanese_Voice` addons) was made with Qwen3-TTS
+(https://github.com/QwenLM/Qwen3-TTS, the 1.7B Base model, Apache-2.0). Each voice is modelled on one of the game's
+own NPC voice sets, or for your character's error lines on the game's own player error lines for that race and sex;
+those recordings are Blizzard Entertainment's, are read from the local game client only, and are never part of this
+repository or the voice addons. No voice actor is named. The audio files are not part of this repository.
 
-- Aivis Common Model License 1.0: Lux, MarkN, TANAKA, fumifumi, hinakoyuhara, kokuren_3rd, kokuren_voice, morioki, かりん(現実20代女子AIボイチェン@リアボVC公式モデル), さつき(現実20代女子AIボイチェン@リアボVC公式モデル), すみれ(現実20代女子AIボイチェン@リアボVC公式モデル), にせ, はきみて れく(瞭魅推 れく), ほのか(~現実20代女子AIボイチェン~リアボVC公式モデル), まい, まお, みちのくあいり, もえ(現実20代女子AIボイチェン@リアボVC公式モデル), らせつん, るな, れな(現実20代女子AIボイチェン@リアボVC公式モデル), ろてじん（匿名インタビュー風）, ろてじん（長老ボイス）, わかな(現実20代女子AIボイチェン@リアボVC公式モデル), コハク, 中2, 凛音エル, 桜音, 澤原 玄二郎, 猩々博士 (雑談ボイス), 立神ケイ, 花音, 観測症, 阿井田 茂
-- CC0 1.0: すきやき馬太郎
+- Spoken (https://github.com/rusty-key/spoken-wow), under the MIT License (below): which voice set each NPC speaks
+  with (`data/voice/creature-sets.jsonl`, provenance `spoken@<commit>`) follows Spoken's assignment, taken from its
+  committed line corpus at a pinned commit. No code of Spoken was copied.
 
 ## This project
 

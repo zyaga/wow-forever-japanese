@@ -223,7 +223,10 @@ def gossip_speakers(
 def fingerprint(ja_h: str, voice: str, settings: Mapping[str, Any]) -> str:
     """What a file was made from: the Japanese hash, the roster voice and that voice's engine settings. A
     file is made again when any of them changes, so recasting one kind of speaker remakes only its lines.
-    The engine version is recorded beside it, not in it: an engine upgrade does not remake the game."""
+    The engine version is recorded beside it, not in it: an engine upgrade does not remake the game. A cloned
+    game voice set (`engine = "qwen"`) is made from its set, its copy mode and its reference instead."""
+    if settings.get("engine") == "qwen":
+        return f"{ja_h}|{voice}|qwen|{settings['set']}|{settings['mode']}|{settings.get('ref', '')}"
     return (
         f"{ja_h}|{voice}|{int(settings['style'])}|{float(settings['speed']):g}"
         f"|{float(settings.get('pitch', 0.0)):g}|{float(settings.get('intonation', 1.0)):g}"

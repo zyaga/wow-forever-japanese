@@ -218,14 +218,20 @@ def test_the_plan_command_refuses_unknown_players(world, capsys):
 
 def _fake_lame(monkeypatch):
     """The encoder writes its output file; the real lame is not run."""
-    def run(args, check):
-        assert args[: len(voice_make.LAME)] == list(voice_make.LAME) and check
+    def run(args, check=False, **kw):
+        if args[: len(voice_make.LAME)] != list(voice_make.LAME):
+            return subprocess.run(args, check=check, **kw)  # git, for the run lock's main checkout
+        assert check
         with open(args[-1], "wb") as f:
             f.write(b"MP3")
         return subprocess.CompletedProcess(args, 0)
 
+    def level_and_encode(wav, out):
+        out.write_bytes(b"MP3")
+
     fake = SimpleNamespace(run=run, CalledProcessError=subprocess.CalledProcessError)
     monkeypatch.setattr(voice_make, "subprocess", fake)
+    monkeypatch.setattr(voice_make, "to_levelled_mp3", level_and_encode)
     monkeypatch.setattr(voice_make, "Engine", FakeEngine)
 
 
