@@ -529,6 +529,8 @@ def test_audio_in_step():
     assert not missing, f"{len(missing)} voiced line(s) have no audio, e.g. {missing[:5]}: run make voice-generate"
     assert not stale, (f"{len(stale)} audio file(s) were made from other Japanese or another voice, "
                        f"e.g. {stale[:5]}: run make voice-generate")
+    unused = sorted(set(voice_make.audio_record(data)) - {j.stem for j in jobs})
+    assert not unused, f"{len(unused)} recorded file(s) no line uses, e.g. {unused[:5]}: run make voice-generate"
 
 
 def test_a_round_with_nothing_to_voice_needs_no_engine_and_work_without_one_refuses(tmp_path, engine):

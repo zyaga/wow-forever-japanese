@@ -47,7 +47,7 @@ from wfj.core import voice_packs as vp
 from wfj.emit.lua_writer import shipped
 from wfj.io.aivis import Engine, EngineDown, EngineError, running
 from wfj.io.jsonl_store import Store, dumps
-from wfj.io.qwen import LOCK, VERSION, NotRead, Prepared, Qwen, QwenBusy, QwenError, line_key
+from wfj.io.qwen import LOCK, VERSION, LineFailed, NotRead, Prepared, Qwen, QwenBusy, QwenError, line_key
 from wfj.paths import data_root
 
 ENGINE_HINT = (
@@ -390,6 +390,7 @@ def run_plan(cfg: dict[str, Any], root: Path, scope: str, players: Sequence[tupl
 
 TARGET_LUFS = -20.0  # every line levelled to the same loudness (EBU R128), so no NPC is louder
 TRUE_PEAK = -2.0  # dBFS a levelled line's peaks are limited to
+SILENT_LUFS = -69.9  # ebur128 prints -70.0 for silence and for any take too short to gate
 
 
 def level_gain(wav: bytes) -> float:
@@ -400,10 +401,12 @@ def level_gain(wav: bytes) -> float:
     out = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", "pipe:0", "-af",
                           "ebur128=framelog=quiet", "-f", "null", "-"],
                          input=wav, capture_output=True, check=True).stderr.decode()
-    summary = out[out.rindex("Summary:"):]
-    loudness = float(re.search(r"I:\s+(-?[\d.]+|-inf) LUFS", summary).group(1))
-    if loudness == float("-inf"):
-        return 0.0  # silence: nothing to level
+    found = re.search(r"Summary:.*?I:\s+(-?[\d.]+|-inf) LUFS", out, re.S)
+    if not found:
+        raise ValueError(f"ffmpeg ebur128 printed no integrated loudness: {out[-200:]}")
+    loudness = float(found.group(1))
+    if loudness <= SILENT_LUFS:
+        return 0.0  # silence, or a take shorter than one 400 ms gating block: nothing to measure
     return TARGET_LUFS - loudness
 
 
@@ -535,7 +538,17 @@ def _cloned_lines(todo: collections.deque, qwen: Callable[[], Any], make: Callab
                 q.__exit__(None, None, None)
 
 
-def generate(  # noqa: PLR0913, PLR0915 - engine, encoder and log injected for the tests; one run's state
+def _drop_unused(audio: dict[str, Any], jobs: Sequence[voice.Job], scope: str,
+                 players: Sequence[tuple[str, str]]) -> None:
+    """After a run over the whole game, rows for files no line uses any more (a recast, a removed line) leave
+    the record, so it lists exactly the files the packs carry."""
+    if scope == "all" and set(players) >= set(players_of("all")):
+        ship = {j.stem for j in jobs}
+        for stem in [k for k in audio if k not in ship]:
+            del audio[stem]
+
+
+def generate(  # noqa: C901, PLR0913, PLR0915 - engine, encoder and log injected for the tests; one run's state
     root: Path,
     scope: str,
     cfg: dict[str, Any],
@@ -645,18 +658,26 @@ def generate(  # noqa: PLR0913, PLR0915 - engine, encoder and log injected for t
                     wav, source = _synth(text, cfg["roster"][j.voice], engine, version, q, sets, clip_root)
                 except NotRead:
                     return None  # a remote run's line still to read: it stays to make
+                except LineFailed as e:
+                    log(f"voice generate: {j.stem}: {e}; left to make next run")
+                    return None
                 file = audio_file(store, j.stem)
                 file.parent.mkdir(parents=True, exist_ok=True)
                 (encode or to_levelled_mp3)(wav, file)
                 return j, text, wav, source, file
 
             save()
-            for j in [j for j in work if j.voice not in cloned]:
-                record(*make(j, None))  # type: ignore[misc] - an AivisSpeech line is always made
-            todo = collections.deque(j for j in work if j.voice in cloned)
-            if todo:
-                assert qwen is not None
-                _cloned_lines(todo, qwen, make, record, speed or (lambda: (workers, False)), log)
+            try:
+                for j in [j for j in work if j.voice not in cloned]:
+                    if (got := make(j, None)) is not None:
+                        record(*got)
+                todo = collections.deque(j for j in work if j.voice in cloned)
+                if todo:
+                    assert qwen is not None
+                    _cloned_lines(todo, qwen, make, record, speed or (lambda: (workers, False)), log)
+            finally:
+                save()  # the files already made keep their records when a run stops early
+            _drop_unused(audio, jobs, scope, players)
             save(done=True)
             return {
                 "made": made,
@@ -769,13 +790,17 @@ def remote_round(root: Path, cfg: dict[str, Any], scope: str, store: Path,
                          "or VOICE_LOCAL=1 to read the lines on this machine")
     cards = max(1, min(10, -(-lines // LINES_PER_CARD)))
     env = {**os.environ, "WFJ_MODAL_CONTAINERS": str(cards), "WFJ_MODAL_BATCH": str(BATCH_LINES)}
-    for attempt in (1, 2):  # a line that failed on a card is read again once
+    for _ in (1, 2):  # a line that failed on a card is read again once
         script = Path(__file__).resolve().parents[1] / "io" / "qwen_modal.py"
-        subprocess.run([str(python), str(script), str(run)], env=env, check=attempt == 2)
+        subprocess.run([str(python), str(script), str(run)], env=env, check=False)
         if not prepared_missing(run):
             break
     if archive is not None:
-        archive_run(run, archive)
+        try:
+            archive_run(run, archive)
+        except OSError as e:  # the WAVs stay in the run folder; what was read is still imported
+            print(f"voice archive: not archived ({e}); later: wfj voice generate --prepared {run}"
+                  f" --archive {archive}", file=sys.stderr)
     return run
 
 
@@ -1035,10 +1060,12 @@ def run(argv: Sequence[str]) -> int:
             print(f"voice relevel: {relevel(root, cfg, store, [Path(r) for r in a.runs])} files re-encoded")
             return 0
         prepared = Path(a.prepared) if a.prepared else None
+        if prepared is not None and a.archive:
+            archive_run(prepared, Path(a.archive))
         if a.remote and prepared is None:
             archive = Path(a.archive) if a.archive else None
             prepared = remote_round(root, cfg, a.scope, store, archive, players)
         return run_generate(cfg, root, a.scope, store, players, engine_run_path(a.engine_run), prepared)
-    except (ValueError, KeyError, FileNotFoundError) as e:
+    except (ValueError, KeyError, OSError, subprocess.CalledProcessError) as e:
         print(f"voice {a.cmd}: {e}", file=sys.stderr)
         return 1

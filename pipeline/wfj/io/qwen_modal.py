@@ -110,7 +110,12 @@ def main() -> int:
     (a.run / "wav").mkdir(exist_ok=True)
     started, done, failed = time.time(), 0, 0
     with modal.enable_output(), app.run():
-        for result in Reader().read.starmap(work, order_outputs=False):
+        # one batch that fails as a whole (the call limit, a crash) is counted and the others still come back
+        for result in Reader().read.starmap(work, order_outputs=False, return_exceptions=True):
+            if isinstance(result, BaseException):
+                failed += 1
+                print(f"qwen_modal: a batch failed: {result}", file=sys.stderr, flush=True)
+                continue
             for key, data, error in result:
                 if data is None:
                     failed += 1

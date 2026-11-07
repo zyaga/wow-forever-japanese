@@ -16,7 +16,7 @@ from test_voice import CFG, SRC, _fake_encode, _store, _wav
 from wfj.cmd import voice_make, voice_sets_page
 from wfj.cmd import voice_sets as vs
 from wfj.core import casting, voice, voice_sets
-from wfj.io.qwen import Qwen, QwenBusy, QwenError
+from wfj.io.qwen import LineFailed, Qwen, QwenBusy, QwenError
 
 ROOT = Path(__file__).resolve().parents[2]
 FAKE_WORKER = Path(__file__).with_name("fake_qwen.py")
@@ -265,7 +265,7 @@ def test_the_qwen_client_reads_a_line_and_reports_a_worker_error(tmp_path, monke
         assert q.version == "0.0.test"
         wav = q.synthesize("こんにちは。", tmp_path / "ref.wav", None, "voice")
         assert wav[:4] == b"RIFF"
-        with pytest.raises(QwenError, match="asked to fail"):
+        with pytest.raises(LineFailed, match="asked to fail"):  # one line failed; the worker goes on
             q.synthesize("FAIL", tmp_path / "ref.wav", "Hi.", "full")
     req = json.loads(log.read_text().splitlines()[0])
     assert (req["text"], req["mode"], req["ref_text"]) == ("こんにちは。", "voice", None)
@@ -321,6 +321,43 @@ def test_generate_makes_cloned_voices_through_qwen_without_starting_aivisspeech(
     assert json.loads(log.read_text())["mode"] == "voice"
     assert (clips / voice_make.REFS_DIR).is_dir()  # references stay beside the clips, never in the store
     assert not (tmp_path / "store" / voice_make.REFS_DIR).exists()
+
+
+def test_a_line_the_engine_cannot_read_is_left_to_make_and_the_run_goes_on(tmp_path, monkeypatch):
+    data = _store(tmp_path)
+    voice_make._write(data / "voice" / "audio.jsonl", [])
+    real = voice_make._synth
+
+    def synth(text, settings, *rest):
+        if settings is CFG["roster"]["f"]:
+            raise LineFailed("Qwen3-TTS: ValueError: the reading ran on")
+        return real(text, settings, *rest)
+
+    class Engine:
+        url = "http://127.0.0.1:9"
+
+        def synthesize(self, *a):
+            return _wav()
+
+    monkeypatch.setattr(voice_make, "_synth", synth)
+    monkeypatch.setattr(voice_make, "running", lambda *a, **k: _Ctx("9.9"))
+    said = []
+    r = voice_make.generate(data, "all", {**CFG},
+                            tmp_path / "store", Engine(), _fake_encode, log=said.append)
+    rec = voice_make.audio_record(data)
+    assert r["made"] == len(rec) and r["made"] < r["files"]  # the others were made and recorded
+    assert any("left to make next run" in m for m in said)
+
+
+def test_a_whole_game_run_drops_records_of_files_no_line_uses():
+    jobs = [voice.Job(stem="1-description", key="1-description", voice="m")]
+    audio = {"1-description": {}, "1-description_old": {}}
+    voice_make._drop_unused(audio, jobs, "shadowglen", voice_make.players_of("all"))
+    assert set(audio) == {"1-description", "1-description_old"}  # a narrower run never drops anything
+    voice_make._drop_unused(audio, jobs, "all", [("human", "m")])
+    assert set(audio) == {"1-description", "1-description_old"}
+    voice_make._drop_unused(audio, jobs, "all", voice_make.players_of("all"))
+    assert set(audio) == {"1-description"}
 
 
 class _Ctx:
@@ -632,6 +669,7 @@ def test_levelling_brings_every_take_to_one_loudness_without_changing_its_length
         samples = struct.unpack(f"<{len(frames) // 2}h", frames)
         return 20 * math.log10(math.sqrt(sum(x * x for x in samples) / len(samples)) / 32768)
 
+    assert voice_make.level_gain(tone(0.0)) == 0.0  # silence is not lifted by +50 dB
     loud, quiet = voice_make.levelled(tone(1.0)), voice_make.levelled(tone(0.1))
     assert abs(mean_db(loud) - mean_db(quiet)) < 1.0
     with wave.open(__import__("io").BytesIO(quiet)) as w:

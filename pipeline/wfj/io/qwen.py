@@ -30,6 +30,10 @@ class QwenBusy(QwenError):
     pass
 
 
+class LineFailed(QwenError):
+    """The worker could not read one line (it ran on, or ran out of memory); the worker itself goes on."""
+
+
 class NotRead(QwenError):
     """A line a remote run has no WAV for yet: left for the next run, not an error of this one."""
 
@@ -95,7 +99,7 @@ class Qwen:
             self._proc.stdin.flush()
             reply = self._read()
             if not reply.get("ok"):
-                raise QwenError(f"Qwen3-TTS: {reply.get('error')}")
+                raise LineFailed(f"Qwen3-TTS: {reply.get('error')}")
             return out.read_bytes()
 
     def __exit__(self, *_exc: object) -> None:
