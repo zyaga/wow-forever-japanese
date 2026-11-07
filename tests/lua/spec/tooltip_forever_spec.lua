@@ -13,7 +13,7 @@ local Stub = require("tests.lua.spec.wow_stub")
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Align.lua", "Core/State.lua", "Core/Settings.lua",
   "Core/Modifier.lua", "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Normalize.lua", "Core/Hash.lua",
   "Core/Collector.lua", "UI/Font.lua", "UI/Render.lua",
-  "UI/TimeLine.lua", "UI/Tooltip.lua", "UI/TooltipUnit.lua" }
+  "UI/TimeLine.lua", "UI/Tooltip.lua", "UI/TooltipUnit.lua", "Core/Perf.lua" }
 
 local DATA = {
   -- keyed by the kind the surface asks for; field-qualified because spell has two fields
@@ -74,6 +74,19 @@ describe("UI/Tooltip hooks the client's data processor", function()
     assert.are.equal(DATA["item.description"][117].ja, fs("GameTooltip", 2):GetText())
     assert.are.equal("Tough Jerky", fs("GameTooltip", 1):GetText())
     assert.are.equal("Sell Price: 5c", fs("GameTooltip", 3):GetText())
+  end)
+
+  it("times the item post-call as tooltip.item, the surface's writes inside it under their own label", function()
+    local WFJ, tt = setup()
+    local ms = 0
+    WFJ.Perf.setDeps({ clock = function() ms = ms + 1; return ms end, frame = function() return 1 end })
+    WFJ.Tooltip.init()
+    Stub.setItemTooltip(tt, JERKY, JERKY_LINES)
+    assert.are.equal(DATA["item.description"][117].ja, fs("GameTooltip", 2):GetText())
+    local labels = {}
+    for _, row in ipairs(WFJ.Perf.report(10)) do labels[row.label] = row.calls end
+    assert.are.equal(1, labels["tooltip.item"])
+    assert.is_truthy(labels["tooltip.GameTooltip"])
   end)
 
   it("renders the spell tooltip through the Spell post-call, reading the description the client offers",

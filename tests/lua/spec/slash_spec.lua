@@ -78,6 +78,23 @@ describe("/wfj covers every setting", function()
     assert.are.equal("WFJ: errors: 0 recorded, 0 not sent (/wfj bug)", Stub.prints[#Stub.prints])
   end)
 
+  it("perf prints the slowest labels with their calls, total and longest, and perf reset empties them", function()
+    local ms = 0
+    WFJ.Perf.setDeps({ clock = function() return ms end, frame = function() return 1 end })
+    local function pass(label, took)
+      local t0 = WFJ.Perf.start(label); ms = ms + took; WFJ.Perf.stop(label, t0, 0)
+    end
+    pass("quest", 1); pass("tooltip.GameTooltip", 4); pass("tooltip.GameTooltip", 2)
+    wfj("perf")
+    assert.are.same({ "WFJ: perf: the addon's slowest passes this session (calls, total ms, longest ms)",
+      "WFJ:   tooltip.GameTooltip  2  6.0  4.0", "WFJ:   quest  1  1.0  1.0" },
+      { Stub.prints[#Stub.prints - 2], Stub.prints[#Stub.prints - 1], Stub.prints[#Stub.prints] })
+    wfj("perf reset")
+    assert.are.equal("WFJ: perf: totals cleared", Stub.prints[#Stub.prints])
+    wfj("perf")
+    assert.are.equal("WFJ: perf: nothing timed yet", Stub.prints[#Stub.prints])
+  end)
+
   it("panel reset puts the voice panel back without saving anything new; other panel words get the help", function()
     wfj("panel reset")
     assert.are.equal("WFJ: voice panel: back at the bottom centre", Stub.prints[#Stub.prints])

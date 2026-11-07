@@ -45,6 +45,8 @@ local function extendFrames()
     function f:IsMouseOver() return self.mouseOver == true end
     function f:SetMouseMotionEnabled(v) self.motion = v end
     function f:SetPropagateMouseMotion(v) self.propagate = v end
+    function f:SetMouseClickEnabled(v) self.clicks = v end
+    function f:SetPropagateMouseClicks(v) self.propagateClicks = v end
     function f:SetFrameStrata(s) self.strata = s end
     function f:ClearAllPoints() self.point = nil end
     function f:SetShown(v) if v then self:Show() else self:Hide() end end
@@ -200,6 +202,8 @@ describe("Readings", function()
       assert.is_table(cover)
       assert.is_true(cover:IsShown())
       assert.is_true(cover.motion)
+      -- a click goes to whatever is under the text (a search box behind its placeholder, a clickable row)
+      assert.are.same({ false, true }, { cover.clicks, cover.propagateClicks })
       -- the mouse over 少し: cover origin (100, 200); areas are x = first byte .. right, y = 0..14
       local text = fs:GetText()
       local s, e = text:find("少し", 1, true)

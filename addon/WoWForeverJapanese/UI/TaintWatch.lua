@@ -1,4 +1,4 @@
--- UI/TaintWatch.lua: finds where this addon's taint reaches the action bars, so a blocked action in combat can be
+-- UI/TaintWatch.lua: finds where this addon's taint reaches the action bars and the bags, so a blocked action can be
 -- traced to the line that caused it instead of guessed at (docs/systems/diagnostics.md, ADR-058).
 -- A bar layout in combat is blocked when Blizzard's code reads a value this addon's taint reached earlier, out of
 -- combat; the block itself only shows the reader. This module records the writer. Everything here only reads:
@@ -8,10 +8,12 @@
 --            stack when the value comes out tainted (the stack names the path that carried the taint);
 --   bars     every CHECK_EVERY * SWEEP_EVERY seconds out of combat, any field on the action bars that newly reads
 --            as tainted, for fields not on the list;
---   events   the last RING game events, saved with each entry above and with each block;
---   scan     at the first block of a session, and on /wfj taint: every field that reads as tainted under the bar,
---            Edit Mode, tracker, tooltip, spellbook, quest log, quest list and map frames, and the globals this
---            addon tainted.
+--   events   the last RING game events, and the addon's own timed passes (Core/Perf) as "wfj <label>" lines, saved
+--            with each entry above and with each block;
+--   scan     at each different block of a session, and on /wfj taint: every field that reads as tainted under the
+--            bar, Edit Mode, tracker, tooltip, spellbook, quest log, quest list, map and bag frames, under every frame
+--            the addon's declarations resolved to, and the globals this addon tainted;
+--   bags     what a bag item's click reads before it uses the item, checked with the fields above.
 -- Its own post-hooks run after the hooked function returns and only read, so they add no taint of their own.
 local _, WFJ = ...
 local TaintWatch = {}
@@ -21,7 +23,7 @@ local C = WFJ.Compat
 
 TaintWatch.CHECK_EVERY = 2 -- seconds between field checks
 TaintWatch.SWEEP_EVERY = 5 -- field checks between bar sweeps
-TaintWatch.RING = 60 -- game events kept
+TaintWatch.RING = 200 -- game events and the addon's own passes kept
 TaintWatch.SCAN_DEPTH = 2
 
 TaintWatch.BARS = { "MainActionBar", "MultiBarBottomLeft", "MultiBarBottomRight", "MultiBarLeft", "MultiBarRight",
@@ -34,7 +36,12 @@ TaintWatch.SCAN_ROOTS = { "StanceBar", "PetActionBar", "MainActionBar", "MultiBa
   "MultiBarLeft", "MultiBarRight", "MultiBar5", "MultiBar6", "MultiBar7", "EditModeManagerFrame",
   "MainStatusTrackingBarContainer", "SecondaryStatusTrackingBarContainer", "MicroButtonAndBagsBar",
   "ObjectiveTrackerFrame", "GameTooltip", "PlayerSpellsFrame", "QuestMapFrame", "WorldMapFrame", "QuestCache",
-  "QuestScrollFrame" }
+  "QuestScrollFrame", "ContainerFrameCombinedBags", "MerchantFrame", "BankFrame", "StackSplitFrame" }
+-- the bags: a bag item's click reads its button's fields (ContainerFrame<n>.Items[i].bagID,
+-- mainline/containerframe.lua:1845-1847) before it uses the item, so a tainted button field makes the use a forbidden
+-- call
+for i = 1, 13 do TaintWatch.SCAN_ROOTS[#TaintWatch.SCAN_ROOTS + 1] = "ContainerFrame" .. i end
+TaintWatch.COMPAT_DEPTH = 1 -- the frames the addon's declarations resolved to: their own fields and one level down
 -- roots walked deeper than SCAN_DEPTH: a tracker quest block is ObjectiveTrackerFrame.modules[i].usedBlocks[t][id], and
 -- clicking its title opens the quest log through the block's fields (blizzard_questobjectivetracker.lua:60-68); the
 -- quest list's layout lives under QuestScrollFrame.Contents (questmapframe.lua:2159)
@@ -61,7 +68,18 @@ for _, e in ipairs({ "COMBAT_LOG_EVENT_UNFILTERED", "UNIT_POWER_FREQUENT", "UNIT
   TaintWatch.NOISY[e] = true
 end
 
--- the fields the bar layout reads: { label, global table name (nil for a global variable), key }
+-- What a bag item's right-click reads before C_Container.UseContainerItem (ContainerFrameItemButton_OnClick,
+-- mainline/containerframe.lua:1532-1611): one of them tainted makes the use a forbidden call out of combat.
+TaintWatch.BAG_CLICK_GLOBALS = { "ContainerFrameItemButton_OnClick", "MerchantFrame_ResetRefundItem", "MerchantFrame",
+  "StackSplitFrame", "BankFrame", "GuildBankFrame", "MailFrame", "AuctionFrame", "AuctionHouseFrame", "TradeFrame",
+  "ItemUpgradeFrame", "ObliterumForgeFrame", "ChallengesKeystoneFrame", "AzeriteRespecFrame", "RuneforgeFrame",
+  "ItemLocation", "ItemButtonUtil", "BankUtil_IsAccountBankDepositRefundable", "ContainerFrame_GetExtendedPriceString",
+  "ContainerFrame_IsAccountBankTab", "C_Container", "C_Cursor", "C_Item", "C_AuctionHouse", "C_ItemSocketInfo",
+  "C_ArtifactUI", "C_MountJournal", "GetCursorInfo", "SpellCanTargetItem", "SpellCanTargetItemID", "CursorHasItem",
+  "IsModifiedClick" }
+TaintWatch.BAG_CLICK_MERCHANT = { "selectedTab", "refundItem", "refundItemEquipped", "extendedCost", "highPrice" }
+
+-- the fields the bar layout and the bag click read: { label, global table name (nil for a global variable), key }
 local function fieldList()
   local list = {}
   for _, n in ipairs(TaintWatch.BARS) do list[#list + 1] = { n .. ".showAllButtons", n, "showAllButtons" } end
@@ -71,6 +89,10 @@ local function fieldList()
   list[#list + 1] = { "ObjectiveTrackerFrame.topModulePadding", "ObjectiveTrackerFrame", "topModulePadding" }
   list[#list + 1] = { "ON_BAR_HIGHLIGHT_MARKS", nil, "ON_BAR_HIGHLIGHT_MARKS" }
   list[#list + 1] = { "PET_ACTION_HIGHLIGHT_MARKS", nil, "PET_ACTION_HIGHLIGHT_MARKS" }
+  for _, name in ipairs(TaintWatch.BAG_CLICK_GLOBALS) do list[#list + 1] = { name, nil, name } end
+  for _, key in ipairs(TaintWatch.BAG_CLICK_MERCHANT) do
+    list[#list + 1] = { "MerchantFrame." .. key, "MerchantFrame", key }
+  end
   return list
 end
 TaintWatch.fieldList = fieldList
@@ -82,17 +104,36 @@ local function clock()
   return type(d) == "function" and d("%H:%M:%S") or ""
 end
 
+local counts = {} -- ring slot → how often the addon's pass on that line ran in a row (only when more than once)
+local trailLabel -- the label of the newest line when that line is one of the addon's own passes
+
 function TaintWatch.push(text)
   ringPos = ringPos % TaintWatch.RING + 1
   ring[ringPos] = clock() .. " " .. tostring(text)
+  counts[ringPos], trailLabel = nil, nil
+end
+
+-- One of the addon's own timed passes (Core/Perf), so a block or a taint shows which of our surfaces ran just before
+-- it. A run of the same pass with nothing between is one line with its count: no string is built for a repeat.
+function TaintWatch.trail(label)
+  if label == trailLabel then
+    counts[ringPos] = (counts[ringPos] or 1) + 1
+    return
+  end
+  TaintWatch.push("wfj " .. tostring(label))
+  trailLabel = label
 end
 
 -- The kept events, oldest first, one per line.
 function TaintWatch.events()
   local out = {}
   for i = 1, TaintWatch.RING do
-    local e = ring[(ringPos + i - 1) % TaintWatch.RING + 1]
-    if e then out[#out + 1] = e end
+    local pos = (ringPos + i - 1) % TaintWatch.RING + 1
+    local e = ring[pos]
+    if e then
+      if counts[pos] then e = e .. " ×" .. counts[pos] end
+      out[#out + 1] = e
+    end
   end
   return table.concat(out, "\n")
 end
@@ -264,6 +305,9 @@ function TaintWatch.scan(reason)
       end
     end
   end
+  for _, entry in ipairs(WFJ.Compat.tables and WFJ.Compat.tables() or {}) do
+    checked = checked + walk(entry[2], entry[1], TaintWatch.COMPAT_DEPTH, seen, hit)
+  end
   if found > #hits then hits[#hits + 1] = "… " .. (found - #hits) .. " more" end
   local globals = {}
   for name in pairs(_G) do
@@ -278,17 +322,19 @@ function TaintWatch.scan(reason)
   return found, #globals
 end
 
-local scannedOnBlock = false
+local scannedBlocks = {} -- a block's message → true once its scan was queued this session
 
--- Main, after Diag logged a block naming this addon: the recent events, and the scan once per session.
--- A block: its events now, the scan once per session and out of combat (it walks _G, too heavy for a fight; the
--- tainted values it looks for stay tainted until rewritten). → true when this block queued the scan
+-- Main, after Diag logged a block naming this addon (`entry`, its log entry): the recent events, and a scan for each
+-- different block, once per session and out of combat (it walks _G, too heavy for a fight; the tainted values it
+-- looks for stay tainted until rewritten). Different blocks can have different writers, so each gets its own scan.
+-- → true when this block queued the scan
 TaintWatch.scanPending = false
-function TaintWatch.onBlocked()
+function TaintWatch.onBlocked(entry)
   -- one entry for every block: repeats only count, so a long fight never pushes the first block's entries out
   WFJ.Diag.log("context", "events before the first block", { events = TaintWatch.events() })
-  if scannedOnBlock then return false end
-  scannedOnBlock = true
+  local key = type(entry) == "table" and tostring(entry.msg) or "?"
+  if scannedBlocks[key] then return false end
+  scannedBlocks[key] = true
   TaintWatch.scanPending = true
   TaintWatch.scanWhenSafe()
   return true
@@ -298,7 +344,7 @@ end
 function TaintWatch.scanWhenSafe()
   if not TaintWatch.scanPending or inCombat() then return false end
   TaintWatch.scanPending = false
-  TaintWatch.scan("first block")
+  TaintWatch.scan("block")
   return true
 end
 

@@ -203,6 +203,11 @@ function WFJ.OnLoad()
     return WFJ.Diag.load(WFJ_Log)
   end) or WFJ_Log
   step("compat", function() WFJ.Compat.init(function(name) return _G[name] end) end)
+  -- the write paths' timing and the trail of our own passes in the taint watch's ring (Core/Perf)
+  step("perf", function()
+    WFJ.Perf.setDeps({ clock = debugprofilestop, mem = function() return collectgarbage("count") end, frame = GetTime,
+      trail = function(label) if WFJ.TaintWatch then WFJ.TaintWatch.trail(label) end end })
+  end)
   -- the addon's own Lua errors (Core/ErrorLog wrapped the error handler when its file loaded), kept in WFJ_Log;
   -- after compat, which its clock reads `date` through
   step("errorlog", function()
@@ -481,7 +486,8 @@ frame:SetScript("OnEvent", function(self, event, name, ...)
       end
     end
   elseif event == "ADDON_ACTION_BLOCKED" or event == "ADDON_ACTION_FORBIDDEN" then
-    if WFJ.Diag.onBlocked(event, name, ..., ADDON) then WFJ.TaintWatch.onBlocked() end
+    local entry = WFJ.Diag.onBlocked(event, name, ..., ADDON)
+    if entry then WFJ.TaintWatch.onBlocked(entry) end
   elseif event == "PLAYER_REGEN_DISABLED" then
     WFJ.Options.setCombat(true)
     WFJ.StudyWindow.setCombat(true)

@@ -415,10 +415,15 @@ describe("the voice player with the voice panel on", function()
     local opened
     _G.C_QuestLog = { GetLogIndexForQuestID = function(id) return id == 2 and 1 or nil end }
     _G.QuestMapFrame_OpenToQuestDetails = function(id) opened = id end
+    local trail = {}
+    WFJ.TaintWatch = { trail = function(label) trail[#trail + 1] = { label, opened } end }
     Stub.showDetail()
     local f = panel()
     f.textButton.scripts.OnClick(f.textButton)
     assert.are.equal(2, opened)
+    -- the quest log is opened by Blizzard's own function from our code: the taint log's ring says so first
+    assert.are.same({ { "voice.openQuestLog", nil } }, trail)
+    WFJ.TaintWatch = nil
     assert.is_nil(_G.WFJVoicePanelText)
     S.set("voice.panel.questLog", false)
     f.textButton.scripts.OnClick(f.textButton)

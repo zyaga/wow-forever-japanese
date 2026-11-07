@@ -123,7 +123,7 @@ end
 -- that is a dictionary line (a locked calendar event's title around the title the player typed).
 -- → 1 when the widget holds a dictionary word (shown or already ours), else 0; and a record from an earlier text on
 -- that key is dropped, never restored over the client's text.
-function Labels.show(surface, recKey, widget, refit, opts)
+local function show(surface, recKey, widget, refit, opts)
   local fs = Labels.widget(widget)
   local index = WFJ.UIIndex
   local allowForbidden = opts and opts.evenForbidden and opts.only
@@ -156,6 +156,16 @@ function Labels.show(surface, recKey, widget, refit, opts)
   local ctx = (refit or args) and { refit = refit, args = args } or nil
   WFJ.Render.show(surface, recKey, fs, en, "ui", "ui", key, ctx)
   return 1
+end
+
+-- The public entry: `show`, timed under its surface (Core/Perf), with its arguments and result passed through.
+function Labels.show(surface, recKey, widget, refit, opts)
+  local P = WFJ.Perf
+  if not P then return show(surface, recKey, widget, refit, opts) end
+  local t0, k0 = P.start(surface)
+  local n = show(surface, recKey, widget, refit, opts)
+  P.stop(surface, t0, k0)
+  return n
 end
 
 -- ADR-038: a composite line a surface split itself: a log line with a time suffix, a combat-text trailer, a

@@ -261,6 +261,9 @@ local function openQuest(item)
     return false
   end
   if not QL.GetLogIndexForQuestID(item.id) then return false end -- an offer not taken yet is not in the log
+  -- Blizzard's quest log code runs from ours here, so what it writes can carry this addon's taint: the taint log's
+  -- ring notes it, so a later block shows whether this ran before it
+  if WFJ.TaintWatch then WFJ.TaintWatch.trail("voice.openQuestLog") end
   return pcall(open, item.id) and true or false
 end
 

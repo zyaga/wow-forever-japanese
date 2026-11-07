@@ -22,7 +22,8 @@
 --   /wfj version              the addon, normalization and Lua versions
 --   /wfj bug                  the report window (a bug, with the addon's own Lua errors, or an idea)
 --   /wfj log [<n>]            the problem log's last n entries, then how many Lua errors it holds
---   /wfj taint                the action-bar taint scan into the problem log (UI/TaintWatch)
+--   /wfj taint                the taint scan into the problem log (UI/TaintWatch)
+--   /wfj perf [reset]         the slowest timed passes this session (Core/Perf), or clear them
 --   /wfj collector [on|off|status|path|clear|send [all]]   the English collector; other words fall through to
 --                             settings; clear asks for the same command again within 5 s (like the page's two
 --                             clicks); send opens the send window (all: every line again)
@@ -518,6 +519,17 @@ function Slash.handle(msg)
     for _, line in ipairs(WFJ.Diag.lines(words[2])) do say("%s", line) end
     local errors = WFJ.ErrorLog.status()
     return say("errors: %d recorded, %d not sent (/wfj bug)", errors.count, errors.unsent)
+  end
+  if lower == "perf" then -- the write paths' timing (Core/Perf): the slowest labels this session, or reset
+    if words[2] and words[2]:lower() == "reset" then
+      WFJ.Perf.reset()
+      return say("perf: totals cleared")
+    end
+    local rows = WFJ.Perf.report(10)
+    if #rows == 0 then return say("perf: nothing timed yet") end
+    say("perf: the addon's slowest passes this session (calls, total ms, longest ms)")
+    for _, r in ipairs(rows) do say("  %s  %d  %.1f  %.1f", r.label, r.calls, r.ms, r.max) end
+    return
   end
   if lower == "taint" then -- the taint scan (UI/TaintWatch): fields and globals this addon's taint reached, to the log
     local fields, globals = WFJ.TaintWatch.scan("slash")

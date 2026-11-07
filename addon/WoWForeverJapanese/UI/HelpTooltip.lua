@@ -71,8 +71,9 @@ local function ownerLabel(owner)
   return nil
 end
 
--- → the number of dictionary lines on the tooltip (0 when it is not ours to walk).
-function HelpTooltip.walk(tt)
+-- → the number of dictionary lines on the tooltip (0 when it is not ours to walk). The public walks are timed as
+-- "help" (Core/Perf); a walk inside a walk counts once.
+local function walkImpl(tt)
   tt = tt or tooltip()
   if busy or type(tt) ~= "table" or not tt.GetOwner then return 0 end
   local opts = owners[tt:GetOwner()]
@@ -143,6 +144,14 @@ function HelpTooltip.walk(tt)
   if changed then refit() end -- a line got longer or shorter: one refit
   return n
 end
+function HelpTooltip.walk(tt)
+  local P = WFJ.Perf
+  if not P then return walkImpl(tt) end
+  local t0, k0 = P.start("help")
+  local n = walkImpl(tt)
+  P.stop("help", t0, k0)
+  return n
+end
 
 -- One walk of `tt` as if its current owner were registered with `opts`: for a tooltip whose owner cannot be
 -- registered because it owns unrelated tooltips too: Forever's exhaustion tick anchors its tooltip to UIParent
@@ -152,7 +161,7 @@ end
 -- changes (SetText or another hooked setter, another data kind, or hiding) the owner's tooltips are foreign again.
 -- Records live on this surface like every walk's: re-rendered on a modifier change, released on OnHide.
 -- → the number of dictionary lines (0 when there is no tooltip or owner, or a walk is running).
-function HelpTooltip.walkAs(tt, opts)
+local function walkAsImpl(tt, opts)
   tt = tt or tooltip()
   if busy or type(tt) ~= "table" or type(tt.GetOwner) ~= "function" then return 0 end
   local owner = tt:GetOwner()
@@ -166,6 +175,14 @@ function HelpTooltip.walkAs(tt, opts)
   held = { owner = owner, opts = pass, kind = HelpTooltip.dataKind(tt) }
   return n
 end
+function HelpTooltip.walkAs(tt, opts)
+  local P = WFJ.Perf
+  if not P then return walkAsImpl(tt, opts) end
+  local t0, k0 = P.start("help")
+  local n = walkAsImpl(tt, opts)
+  P.stop("help", t0, k0)
+  return n
+end
 
 -- itemAppended (ADR-038): lines a writer appends to a tooltip that shows an item: the auction house's seller
 -- and time-left lines (AuctionHouseUtil.AddAuctionHouseTooltipInfo, blizzard_auctionhouseutil.lua:301–306), the
@@ -176,7 +193,7 @@ end
 local APPENDED = SURFACE .. ".appended"
 HelpTooltip.APPENDED = APPENDED
 local appendedHooked = setmetatable({}, { __mode = "k" })
-function HelpTooltip.appended(tt, opts)
+local function appendedImpl(tt, opts)
   tt = tt or tooltip()
   if busy or type(tt) ~= "table" or type(opts) ~= "table" or type(opts.only) ~= "table"
       or type(tt.GetName) ~= "function" or type(tt.NumLines) ~= "function" then return 0 end
@@ -206,6 +223,14 @@ function HelpTooltip.appended(tt, opts)
   end)
   busy = false
   if not ok then error(err, 0) end
+  return n
+end
+function HelpTooltip.appended(tt, opts)
+  local P = WFJ.Perf
+  if not P then return appendedImpl(tt, opts) end
+  local t0, k0 = P.start("help")
+  local n = appendedImpl(tt, opts)
+  P.stop("help", t0, k0)
   return n
 end
 

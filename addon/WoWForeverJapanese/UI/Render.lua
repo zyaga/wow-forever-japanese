@@ -311,7 +311,7 @@ end
 -- ctx: { lines = {...} (tooltip align gate), nameScope = <the name line>, refit = function() tooltip:Show() end,
 --        follow = <primary key>, live = <the API English> (quest surfaces: the live check),
 --        args, compact = true for a row or fixed-size widget that never carries the missing marker } (all optional)
-function Render.show(surface, key, fs, en, area, kind, id, ctx)
+local function show(surface, key, fs, en, area, kind, id, ctx)
   -- Main guards each init step, so surfaces install their hooks even when Render.init failed. Asserting here would
   -- turn one load failure into an error on every hover and window open; nothing to render against renders nothing.
   if not translator then return false end
@@ -328,6 +328,16 @@ function Render.show(surface, key, fs, en, area, kind, id, ctx)
     local m = rec.meta or {}
     pcall(WFJ.State.fire, "lineShown", surface, key, m.kind, m.id)
   end
+  return changed
+end
+
+-- The public entry: `show`, timed under its surface (Core/Perf), with its arguments and result passed through.
+function Render.show(surface, key, fs, en, area, kind, id, ctx)
+  local P = WFJ.Perf
+  if not P then return show(surface, key, fs, en, area, kind, id, ctx) end
+  local t0, k0 = P.start(surface)
+  local changed = show(surface, key, fs, en, area, kind, id, ctx)
+  P.stop(surface, t0, k0)
   return changed
 end
 

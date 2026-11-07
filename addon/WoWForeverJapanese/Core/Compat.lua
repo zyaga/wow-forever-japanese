@@ -85,6 +85,19 @@ function Compat.unresolved()
   return out
 end
 
+-- Every table a declared name has resolved to so far, labelled "surface.key": the Blizzard frames this addon touches,
+-- for the taint scan (UI/TaintWatch). → { { label, table }, … }, sorted by label
+function Compat.tables()
+  local out = {}
+  for surface, keys in pairs(resolved) do
+    for key, value in pairs(keys) do
+      if type(value) == "table" then out[#out + 1] = { surface .. "." .. key, value } end
+    end
+  end
+  table.sort(out, function(a, b) return a[1] < b[1] end)
+  return out
+end
+
 -- Settings pages via the Settings API [verified: classic_era FrameXML]. `pages` = ordered { { id, frame, name } }: the
 -- first is the AddOns category, the rest its canvas subcategories, registered before `RegisterAddOnCategory`, "the
 -- last step" [verified: Blizzard_ImplementationReadme.lua:42–43]; the list shows them collapsed under the category

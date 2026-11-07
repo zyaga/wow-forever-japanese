@@ -6,7 +6,7 @@ codes = true
 
 -- Blizzard API surface the addon uses. Every new API call is a reviewable diff here.
 read_globals = {
-  "C_AddOns", "CreateFrame", "GetTime", "print", "strsplit", "tostring", "tonumber",
+  "C_AddOns", "CreateFrame", "GetTime", "debugprofilestop", "print", "strsplit", "tostring", "tonumber",
   "UnitName", "UnitClass", "UnitRace", "UnitGUID", "GetBuildInfo", "UnitSex", "UNKNOWNOBJECT",
   "IsAltKeyDown", "IsControlKeyDown", "IsShiftKeyDown",
   -- Quest surfaces: the hook primitive + the quest / quest-log getters. Frame and writer names are

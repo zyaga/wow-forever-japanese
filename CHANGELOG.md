@@ -9,6 +9,12 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Fixed
+- Clicking a search box (the auction house, your bags, the quest log, the spellbook and the other windows with one) works while its placeholder shows in Japanese. Before, the word card's hover area over the placeholder caught the click, and you had to hold the English key to click into the box.
+
+### Added
+- The addon's problem log now records how long its own work takes in each window and which of its parts ran just before the game blocked an action, and checks the bag windows for anything it touched by mistake. `/wfj perf` shows the slowest parts. Nothing changes on screen; this is so lag and blocked-action reports can be traced to their cause.
+
 ## 0.10.1 - 2026-11-07
 
 ### Changed

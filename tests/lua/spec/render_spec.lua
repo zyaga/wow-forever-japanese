@@ -29,6 +29,19 @@ describe("Render: refresh on state, per-FontString font", function()
     return R.show("quest", "description", fs, fs:GetText(), "quests", "quest", id or 1)
   end
 
+  it("times each show under its surface and returns what it returned before", function()
+    local ns = {}
+    H.loadPure("Core/Perf.lua", "WoWForeverJapanese", ns)
+    WFJ.Perf = ns.Perf
+    local ms = 0
+    WFJ.Perf.setDeps({ clock = function() ms = ms + 2; return ms end, frame = function() return 1 end })
+    local q = Stub.fontString("Quest text", "F.ttf", 14, "OUTLINE")
+    assert.is_true(showQuest(q))
+    assert.is_false(showQuest(q)) -- already shown: nothing changed
+    local r = WFJ.Perf.report(10)
+    assert.are.same({ label = "quest", calls = 2, ms = 4, max = 2 }, r[1])
+  end)
+
   it("modifier, master, and area changes restore / reapply the open records", function()
     local q = Stub.fontString("Quest text", "F.ttf", 14, "OUTLINE")
     local g = Stub.fontString("Hello", "F.ttf", 12, "")
