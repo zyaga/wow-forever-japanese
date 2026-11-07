@@ -7,6 +7,15 @@ local SurfaceState = {}
 WFJ.SurfaceState = SurfaceState
 
 local records = {} -- [surface] = { [key] = rec }
+-- widget → the record that last captured it. A widget belongs to at most one record (capture below), so this finds the
+-- record to take over without walking every surface's records on every write (in game that walk was the largest part
+-- of a tooltip line's write). Checked on use: a record dropped or released since no longer counts.
+local owners = setmetatable({}, { __mode = "k" })
+
+local function live(rec)
+  local b = rec and records[rec.surface]
+  return b ~= nil and b[rec.key] == rec
+end
 
 local function bucket(surface, create)
   local b = records[surface]
@@ -42,14 +51,11 @@ function SurfaceState.capture(surface, key, fs, en, meta)
       rec.fs:SetFont(rec.font.path, rec.font.size, rec.font.flags)
     end
   end
-  for _, sb in pairs(records) do
-    for k, r in pairs(sb) do
-      if r ~= rec and r.fs == fs then
-        origFont = origFont or r.font
-        carriedFont = carriedFont or r.appliedFont
-        sb[k] = nil
-      end
-    end
+  local other = owners[fs]
+  if other ~= nil and other ~= rec and live(other) then -- pool reuse, even across surfaces
+    origFont = origFont or other.font
+    carriedFont = carriedFont or other.appliedFont
+    records[other.surface][other.key] = nil
   end
 
   -- a carried font counts only while the widget still has it: a menu refresh sets every line back to its default
@@ -67,6 +73,7 @@ function SurfaceState.capture(surface, key, fs, en, meta)
     meta = meta,
   }
   b[key] = rec
+  owners[fs] = rec
   return rec
 end
 

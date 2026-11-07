@@ -248,13 +248,25 @@ Render.recentErrors = 0
 -- Only a write the client asked for (Render.show) records the line; a refresh (the reveal key released, a setting
 -- switched) re-writes every applied record in no particular order and would reorder the list and bring back lines
 -- of windows closed long ago. A refresh records a record only the first time it applies it.
+-- The same line written again with the same text within a second (a comparison tooltip the client rebuilds a few times
+-- each refresh) is noted once: the note walks the fix window's list, and in game it was a fifth of a tooltip's time.
+local NOTE_AGAIN = 1 -- seconds
+local notedText, notedAt = {}, {} -- surface → { key → the text last noted, and when }
 local function noteRecent(rec, text, fromShow)
   local R = WFJ.RecentLines
   if not R then return end
   if not fromShow and rec.recentNoted then return end
   rec.recentNoted = true
+  local now = type(GetTime) == "function" and GetTime() or nil
+  local texts, ats = notedText[rec.surface], notedAt[rec.surface]
+  if not texts then
+    texts, ats = {}, {}
+    notedText[rec.surface], notedAt[rec.surface] = texts, ats
+  end
+  if now ~= nil and texts[rec.key] == text and ats[rec.key] and now - ats[rec.key] < NOTE_AGAIN then return end
+  texts[rec.key], ats[rec.key] = text, now
   local m = rec.meta or {}
-  local ok = pcall(R.note, m.kind, m.id, rec.surface, text, type(GetTime) == "function" and GetTime() or nil)
+  local ok = pcall(R.note, m.kind, m.id, rec.surface, text, now)
   if not ok then Render.recentErrors = Render.recentErrors + 1 end
 end
 
@@ -443,6 +455,7 @@ end
 
 function Render.release(surface)
   detachAll(surface)
+  notedText[surface], notedAt[surface] = nil, nil -- the window closed: its lines are noted afresh next time
   local n = SS.release(surface)
   updateBanner(surface)
   return n

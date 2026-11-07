@@ -29,6 +29,24 @@ describe("Render: refresh on state, per-FontString font", function()
     return R.show("quest", "description", fs, fs:GetText(), "quests", "quest", id or 1)
   end
 
+  it("a line rewritten again within a second is noted for the fix window once; later it is noted again", function()
+    local noted, now = 0, 100
+    WFJ.RecentLines = { note = function() noted = noted + 1 end }
+    _G.GetTime = function() return now end
+    local q = Stub.fontString("Quest text", "F.ttf", 14, "OUTLINE")
+    for _ = 1, 4 do -- the client rewrites the English and we show the Japanese, four times in one second
+      q:SetText("Quest text")
+      assert.is_true(showQuest(q))
+      now = now + 0.2
+    end
+    assert.are.equal(1, noted)
+    now = now + 1
+    q:SetText("Quest text")
+    showQuest(q)
+    assert.are.equal(2, noted)
+    WFJ.RecentLines = nil
+  end)
+
   it("times each show under its surface and returns what it returned before", function()
     local ns = {}
     H.loadPure("Core/Perf.lua", "WoWForeverJapanese", ns)
