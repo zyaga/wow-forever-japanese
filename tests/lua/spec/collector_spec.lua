@@ -268,6 +268,30 @@ describe("Core/Collector", function()
       assert.are.equal("Summons REYN.", db.entries["spell:3:description"].e)
     end)
 
+    it("a race whose name is longer than the word $r prints: that word is the race too", function()
+      -- Forever's Skyborne: UnitRace says "High Order Skyborne", the client prints $r as "skyborne"
+      local SKY = { name = "Reyn", class = "Warrior", race = "High Order Skyborne", raceWord = "Skyborne" }
+      assert.are.equal("Nice work, $R. Please accept one of these.", C.text("Nice work, skyborne. Please accept one of these.", SKY))
+      assert.are.equal("Greetings, $R.", C.text("Greetings, Skyborne.", SKY))
+      assert.are.equal("I am a $R of the High Order.", C.text("I am a High Order Skyborne of the High Order.", SKY))
+      local keys = C.keys("Nice work, skyborne.", SKY)
+      assert.are.equal(WFJ.Hash.key(WFJ.Normalize.v1("Nice work, $R.")), keys[1])
+      -- the race-only candidate carries the word too
+      assert.is_true(#keys >= 2)
+      -- whole word only, and only for that player
+      assert.are.equal("The Skybornes fly.", C.text("The Skybornes fly.", SKY))
+      assert.are.equal("Nice work, skyborne.", C.text("Nice work, skyborne.", PLAYER))
+    end)
+
+    it("raceWord: the race file's word when the race name ends with it, else nil", function()
+      assert.are.equal("Skyborne", C.raceWord("High Order Skyborne", "Skyborne"))
+      assert.is_nil(C.raceWord("Night Elf", "NightElf"))
+      assert.is_nil(C.raceWord("Undead", "Scourge"))
+      assert.is_nil(C.raceWord("Human", "Human"))
+      assert.is_nil(C.raceWord(nil, "Skyborne"))
+      assert.is_nil(C.raceWord("High Order Skyborne", nil))
+    end)
+
     it("a break inside a link label never splits the link", function()
       assert.are.equal("Take [Linen$B$BCloth] home.", C.text("Take |Hitem:2589|h[Linen|nCloth]|h home.", nil))
     end)

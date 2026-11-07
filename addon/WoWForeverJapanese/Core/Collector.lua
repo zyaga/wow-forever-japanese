@@ -129,7 +129,11 @@ end
 -- turns it into the token plus "s", as normalize_v1 writes "$cs": recorded text keeps a literal plural as written,
 -- since the import could not put the word back into a stand-in line.
 local function replaceLower(text, player)
-  for _, pair in ipairs({ { player.class, "{class}" }, { player.race, "{race}" } }) do
+  -- a race the client names longer than the word it prints for $R / $r ("High Order Skyborne", printed "Skyborne")
+  -- has that word replaced in both casings; normalize_v1 already took the long name
+  local word = player.raceWord
+  if type(word) == "string" and word ~= "" then text = Normalize.replaceWord(text, word, "{race}") end
+  for _, pair in ipairs({ { player.class, "{class}" }, { player.race, "{race}" }, { word, "{race}" } }) do
     local word = pair[1]
     if type(word) == "string" and word ~= "" then
       if player.plural then text = Normalize.replaceWord(text, word .. "s", pair[2] .. "s") end
@@ -567,6 +571,17 @@ function Collector.recordGossip(raw, guid)
   return "error", lastError
 end
 
+-- The word the client prints for $R / $r when it is shorter than the race's name: the race file's name, when the
+-- localized race name ends with it as a word ("High Order Skyborne" / "Skyborne"). Every other race prints its
+-- name, so → nil, and nothing more is replaced for it.
+function Collector.raceWord(raceName, raceFile)
+  if type(raceName) ~= "string" or type(raceFile) ~= "string" or raceFile == "" or raceName == raceFile then
+    return nil
+  end
+  if raceName:sub(-(#raceFile + 1)) == " " .. raceFile then return raceFile end
+  return nil
+end
+
 -- The gossip key of `raw` exactly as recordGossip stores it: normalize_v1 over the text in Blizzard's tokens, with
 -- the player's name, class and race (capitalized or lowercase) replaced: the one key the surfaces look translations
 -- up by (ADR-005, ADR-017). player = { name, class, race } (localized) or nil. → 16 hex | nil for empty text.
@@ -586,18 +601,18 @@ local function candidates(player)
   local name = type(player) == "table" and player.name or nil
   local list = { player, false, false, name and { name = name } or false, false }
   if name then
-    list[2] = { name = name, race = player.race }
+    list[2] = { name = name, race = player.race, raceWord = player.raceWord }
     list[3] = { name = name, class = player.class }
   end
   if type(name) == "string" and name ~= "" and codePoints(name) < 3 then
-    list[6] = { name = name, class = player.class, race = player.race, short = true }
+    list[6] = { name = name, class = player.class, race = player.race, raceWord = player.raceWord, short = true }
     list[7] = { name = name, short = true }
   end
   -- last: the class or race plural as the token ("druids" → "{class}s"); a line stored with the literal plural
   -- is found first by the candidates without them
   if name then
-    list[#list + 1] = { name = name, class = player.class, race = player.race, short = list[6] and true or nil,
-      plural = true }
+    list[#list + 1] = { name = name, class = player.class, race = player.race, raceWord = player.raceWord,
+      short = list[6] and true or nil, plural = true }
   end
   return list
 end

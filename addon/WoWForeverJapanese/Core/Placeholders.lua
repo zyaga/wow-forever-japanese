@@ -59,7 +59,7 @@ function Placeholders.expand(text, player)
   local values = {
     name = nonEmpty(player.name),
     class = Placeholders.CLASS[player.classFile] or nonEmpty(player.className),
-    race = Placeholders.RACE[player.raceFile] or nonEmpty(player.raceName),
+    race = Placeholders.RACE[player.raceFile] or nonEmpty(player.raceWord) or nonEmpty(player.raceName),
   }
   local unknown = 0
   local out = text:gsub("{([A-Za-z]+)}", function(word)
