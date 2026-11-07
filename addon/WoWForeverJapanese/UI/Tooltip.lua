@@ -933,6 +933,9 @@ end
 -- fits any line), so a line whose spell the client does not name stays English whole.
 -- → { [row] = { key, args with the Japanese in place } | false }, the English lines' { text }, the bonus spells no
 -- line took | nil when the tooltip has no set line
+-- one list for every call: the index caches its answers per list, so a list made per call matched every line of
+-- every item from scratch (in game, most of an item tooltip's time)
+local SET_GRAY = { "ITEM_SET_BONUS_GRAY" }
 local function setBonuses(id, lines, taken)
   local index, gate = WFJ.UIIndex, WFJ.GateText
   local lookup = WFJ.Lookup and WFJ.Lookup.get
@@ -944,7 +947,7 @@ local function setBonuses(id, lines, taken)
   for i = 2, #lines do
     local text = lines[i].text
     if not taken(i) and text ~= "" then
-      local key, args = index:matchOnly(text, { "ITEM_SET_BONUS_GRAY" })
+      local key, args = index:matchOnly(text, SET_GRAY)
       if not key and prefix and prefix ~= "" and text:sub(1, #prefix) == prefix and #text > #prefix then
         key, args = "ITEM_SET_BONUS", { text:sub(#prefix + 1) }
       end

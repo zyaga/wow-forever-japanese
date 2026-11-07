@@ -34,6 +34,8 @@ local QuestMap = {}
 WFJ.QuestMap = QuestMap
 
 local SURFACE = "questmap" -- the details pane, and the Compat namespace of every name below
+-- one list for every call: the index caches its answers per list, so a list made per call is matched from scratch
+local PARENS = { "PARENS_TEMPLATE" }
 local POPUP = "questmap.popup"
 -- Records on the shared QuestInfo widgets live on their own sub-surfaces, so the cross-surface forget drops only
 -- them: a pane's own buttons (widgets no other surface writes) keep their Japanese while the quest window shows.
@@ -347,7 +349,7 @@ local function completeTag(en)
   local ui = WFJ.UIIndex
   local paren = en:match(" (%(.-%))$")
   if not paren or not ui then return en, "" end
-  local key, args = ui:matchOnly(paren, { "PARENS_TEMPLATE" })
+  local key, args = ui:matchOnly(paren, PARENS)
   local ja = key and ui:fill(ui.rows[key][1], args)
   if not ja then return en, "" end
   return en:sub(1, #en - #paren - 1), " " .. ja
@@ -489,7 +491,7 @@ local function questTag(body, en)
     if type(word) == "string" and word ~= "" and parens:format(word) == tail then
       local ui = WFJ.UIIndex
       local key, args
-      if ui then key, args = ui:matchOnly(tail, { "PARENS_TEMPLATE" }) end
+      if ui then key, args = ui:matchOnly(tail, PARENS) end
       local ja = key and ui:fill(ui.rows[key][1], args)
       return " " .. tail, ja and (" " .. ja) or nil
     end

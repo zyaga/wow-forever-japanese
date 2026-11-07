@@ -10,6 +10,7 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Fixed
+- Hovering items no longer stalls the game, most of all with comparison tooltips open: an item's tooltip took up to a tenth of a second each time it refreshed. Many windows' text is matched faster for the same reason.
 - Menus that redraw when you click in them (the auction house filter menu, for one) keep their Japanese readable. Before, a checkbox click could turn a heading into empty boxes.
 - No more "attempt to compare a secret value" Lua warnings from the addon's chat and tooltip text, which could repeat hundreds of times in a session.
 - Clicking a search box (the auction house, your bags, the quest log, the spellbook and the other windows with one) works while its placeholder shows in Japanese. Before, the word card's hover area over the placeholder caught the click, and you had to hold the English key to click into the box.

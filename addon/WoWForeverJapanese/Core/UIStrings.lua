@@ -771,15 +771,30 @@ local setNames = setmetatable({}, { __mode = "k" }) -- a key set → does it nam
 -- kept on the index (a rebuilt index starts empty) and dropped whole when it grows past MISS_LIMIT.
 local MISS_LIMIT = 512
 
--- `keys` as a set: a set as given, a list through onlySets. → set
+-- One set per distinct list of keys, found by its contents: many callers build their `only` list inside the function
+-- they run per hover or per frame, and the answers below are cached per set, so a set per list table matched every
+-- such line from scratch (in game, most of an item tooltip's time). Bounded by the distinct key lists in the code.
+local setsByContent = {}
+
+-- `keys` (a list, or a set { KEY = true }) as the one set with its contents. → set
 local function asSet(keys)
-  if keys[1] == nil then return keys end
   local set = onlySets[keys]
+  if set then return set end
+  local names = {}
+  if keys[1] == nil then
+    for k in pairs(keys) do names[#names + 1] = tostring(k) end
+  else
+    for _, k in ipairs(keys) do names[#names + 1] = tostring(k) end
+  end
+  table.sort(names)
+  local id = table.concat(names, "\0")
+  set = setsByContent[id]
   if not set then
     set = {}
-    for _, k in ipairs(keys) do set[k] = true end
-    onlySets[keys] = set
+    for _, k in ipairs(names) do set[k] = true end
+    setsByContent[id] = set
   end
+  onlySets[keys] = set
   return set
 end
 

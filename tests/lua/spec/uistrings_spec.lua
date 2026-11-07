@@ -56,6 +56,19 @@ describe("Core/UIStrings", function()
     assert.is_function(ns().UIStrings.build)
   end)
 
+  it("two key lists with the same keys share one cache, so a list built per call is not matched from scratch",
+    function()
+      local t = ns()
+      local index = build(t)
+      -- a line no listed key takes: each lookup leaves a miss in the cache of the list's set
+      assert.is_nil(index:matchOnly("Fist of the People's Militia", { "ITEM_MIN_LEVEL" }))
+      assert.is_nil(index:matchOnly("Fist of the People's Militia", { "ITEM_MIN_LEVEL" }))
+      assert.is_nil(index:matchOnly("Fist of the People's Militia", { ITEM_MIN_LEVEL = true }))
+      local sets = 0
+      for _ in pairs(index.onlyMisses) do sets = sets + 1 end
+      assert.are.equal(1, sets)
+    end)
+
   it("indexes a row only when the live English hash equals the shipped h1", function()
     local t = ns()
     local live = {}

@@ -25,7 +25,7 @@ local function sameFont(a, b)
 end
 
 -- Returns the record, or nil when the capture is our own write echoing back (re-entrancy guard).
--- A widget belongs to at most one record, on any surface. The client rewrites TEXT but never fonts, so:
+-- A widget belongs to at most one record, on any surface. The client usually rewrites TEXT but not fonts, so:
 --   same key, same widget   → keep the original font on record and carry the font we currently have applied;
 --   same key, other widget  → the old widget keeps our font: put its original back (its text is the client's);
 --   any other record on this widget (pool reuse, even across surfaces) → drop it silently, carry its fonts.
@@ -52,9 +52,17 @@ function SurfaceState.capture(surface, key, fs, en, meta)
     end
   end
 
+  -- a carried font counts only while the widget still has it: a menu refresh sets every line back to its default
+  -- font object before writing the English again (blizzard_menu/compositor.lua:66-74, menutemplates.lua:294-300),
+  -- and a record trusting the old font would write Japanese into a face without its letters
+  local now = readFont(fs)
+  if carriedFont and now.path ~= carriedFont.path then -- the face only: a fit may have changed the size
+    carriedFont = nil
+    origFont = now or origFont
+  end
   rec = {
     surface = surface, key = key, fs = fs, en = en,
-    font = origFont or readFont(fs),
+    font = origFont or now,
     applied = nil, appliedFont = carriedFont, last = nil,
     meta = meta,
   }
