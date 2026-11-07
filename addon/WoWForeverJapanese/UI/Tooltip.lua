@@ -176,6 +176,9 @@ local function refitFor(frame)
   end
   fn = function()
     if inRefit[frame] then return end
+    -- /wfj perf norefit: the comparison tooltips go without our redraw, to measure whether it makes the client
+    -- rebuild them again (a measurement switch, off by default and never saved)
+    if Tooltip.noCompareRefit and tostring(frame:GetName()):find("ShoppingTooltip", 1, true) then return end
     inRefit[frame] = true
     -- timed apart: a Show runs the client's own tooltip code (its post-calls, the comparison tooltips) again
     local ok, err = pcall(WFJ.Perf.call, "tooltip.refit", run)

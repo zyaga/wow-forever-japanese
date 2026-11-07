@@ -521,6 +521,10 @@ function Slash.handle(msg)
     return say("errors: %d recorded, %d not sent (/wfj bug)", errors.count, errors.unsent)
   end
   if lower == "perf" then -- the write paths' timing (Core/Perf): the slowest labels this session, or reset
+    if words[2] and words[2]:lower() == "norefit" then
+      WFJ.Tooltip.noCompareRefit = not WFJ.Tooltip.noCompareRefit
+      return say("perf: comparison tooltip redraw %s", WFJ.Tooltip.noCompareRefit and "OFF" or "on")
+    end
     if words[2] and words[2]:lower() == "reset" then
       WFJ.Perf.reset()
       return say("perf: totals cleared")
