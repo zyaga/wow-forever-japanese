@@ -685,24 +685,34 @@ local function release()
 end
 
 -- The tags over a quest page's title ("Daily", "Dungeon") are buttons Dialogue UI makes as needed; one holding a game
--- string gets its Japanese through its own SetText and is laid out again. A tag added after the page drew (its quest
--- data came late) keeps its English.
+-- string gets its Japanese through its own SetText and is laid out again. A tag Dialogue UI fills in after the page
+-- drew (its quest data came late) is written by the button's own SetQuestTagNameAndIcon [read: Dialogue UI 1.0.7 b,
+-- QuestHeaderWidget.lua]: each tag button found is followed there too, once.
+local tagFollowed = setmetatable({}, { __mode = "k" })
+local function tagJapanese(child)
+  local fs = type(child) == "table" and child.ButtonText or nil
+  if type(fs) ~= "table" or type(fs.GetText) ~= "function" or type(child.SetText) ~= "function" then return end
+  local ja = gameWord(fs:GetText())
+  face(fs, nil, ja ~= nil)
+  if ja then
+    child:SetText(ja)
+    -- its own Layout sizes the tag to its text [read: Dialogue UI 1.0.7 b, QuestHeaderWidget.lua]
+    if type(child.Layout) == "function" then child:Layout() end
+  end
+end
 headerTags = function(self)
   local front = type(self.FrontFrame) == "table" and self.FrontFrame or nil
   local header = front and type(front.Header) == "table" and front.Header or nil
   for _, parent in ipairs({ header, front }) do
     if type(parent) == "table" then
       for _, child in ipairs(WFJ.Frames.children(parent)) do
-        local fs = type(child) == "table" and child.ButtonText or nil
-        if type(fs) == "table" and type(fs.GetText) == "function" and type(child.SetText) == "function" then
-          local ja = gameWord(fs:GetText())
-          face(fs, nil, ja ~= nil)
-          if ja then
-            child:SetText(ja)
-            -- its own Layout sizes the tag to its text [read: Dialogue UI 1.0.7 b, QuestHeaderWidget.lua]
-            if type(child.Layout) == "function" then child:Layout() end
-          end
+        if type(child) == "table" and not tagFollowed[child] and type(child.SetQuestTagNameAndIcon) == "function" then
+          tagFollowed[child] = true
+          hooksecurefunc(child, "SetQuestTagNameAndIcon", function(b)
+            if DialogueUI.active() then DialogueUI.guarded(tagJapanese, b) end
+          end)
         end
+        tagJapanese(child)
       end
     end
   end

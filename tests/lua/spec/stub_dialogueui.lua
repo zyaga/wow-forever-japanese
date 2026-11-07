@@ -125,6 +125,8 @@ function DUI.installQuestFrame(opts)
   -- the tag over the title ("Dungeon"): a button with its own SetText
   local tag = { ButtonText = Stub.fontString("") }
   function tag:SetText(t) self.ButtonText:SetText(t) end
+  -- QuestHeaderWidget.lua ButtonMixin: a tag Dialogue UI fills in later, when its quest data comes
+  function tag:SetQuestTagNameAndIcon(name) self:SetText(name) end
   f.tag = tag
   f.FrontFrame.Header.GetChildren = function() return tag end
   f.headings = {}
@@ -320,6 +322,36 @@ function DUI.installTooltip()
     return out
   end
   return t
+end
+
+-- The quest-complete flyout, made when first needed: SetQuestText writes the title and lays each paragraph out from a
+-- pool of texts as it writes them (QuestFlyout.lua, QuestFlyoutFrameMixin:SetQuestText).
+function DUI.makeFlyout()
+  local f = CreateFrame("Frame")
+  f.Title = Stub.fontString("")
+  f.texts = {}
+  f.fontStringPool = { Acquire = function()
+    local fs = Stub.fontString("")
+    f.texts[#f.texts + 1] = fs
+    return fs
+  end }
+  function f:SetQuestText(title, paragraphs)
+    self.texts = {}
+    self.Title:SetText(title)
+    self.measuredIn = {}
+    for _, text in ipairs(paragraphs) do
+      local fs = self.fontStringPool:Acquire()
+      fs:SetText(text)
+      self.measuredIn[#self.measuredIn + 1] = fs.font and fs.font.path or "client" -- the face it is measured in
+    end
+  end
+  function f:SetQuestRewards() end
+  function f:paragraphs()
+    local out = {}
+    for i, fs in ipairs(self.texts) do out[i] = fs:GetText() end
+    return out
+  end
+  return f
 end
 
 -- A quest popup, made when one is first needed (after this addon installed).
