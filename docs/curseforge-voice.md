@@ -19,7 +19,7 @@ Part of the Japanese voice for the **WoW Forever Japanese** addon: the spoken Ja
 
 Do not install this pack by itself. Install [WoW Forever Japanese Voice](https://www.curseforge.com/wow/addons/wow-forever-japanese-voice), which brings every voice pack, after the addon [WoW Forever Japanese](https://www.curseforge.com/wow/addons/wow-forever-japanese).
 
-The voices were made with the AivisSpeech Engine (https://aivis-project.com) and voice models under the Aivis Common Model License 1.0 and CC0; the full list is on the WoW Forever Japanese Voice page.
+The voices were made with Qwen3-TTS (Apache-2.0), each modelled on one of the game's own NPC voices; the credits are on the WoW Forever Japanese Voice page.
 
 ## Description
 
@@ -27,7 +27,7 @@ The voices were made with the AivisSpeech Engine (https://aivis-project.com) and
 
 This is only its Japanese voice and needs the addon to work. The CurseForge app installs the addon with it if you do not have it yet, and the voice never loads in the game without the addon.
 
-Japanese voice over for the **WoW Forever Japanese** addon. The addon reads its Japanese aloud: quest offers, progress and turn-ins, NPC greetings and talk, book and letter pages, and your character's own spoken error lines.
+Japanese voice over for the **WoW Forever Japanese** addon. The addon reads its Japanese aloud: quest offers, progress and turn-ins, NPC greetings and talk, book and letter pages, and your character's own spoken error lines. Each NPC speaks in a voice modelled on its own voice in the game, and every line plays at the same loudness.
 
 **Website:** https://foreverjapanese.com (screenshots and a short guide to how the addon works).
 
@@ -43,10 +43,7 @@ One setting on the addon's **Voice** page turns the voice off. Removing the voic
 
 ### Credits
 
-The voices were made on the maintainer's own computer with the **AivisSpeech Engine** (https://aivis-project.com) and these voice models, under their licences:
-
-- Aivis Common Model License 1.0: Lux, MarkN, TANAKA, fumifumi, hinakoyuhara, kokuren_3rd, kokuren_voice, morioki, かりん(現実20代女子AIボイチェン@リアボVC公式モデル), さつき(現実20代女子AIボイチェン@リアボVC公式モデル), すみれ(現実20代女子AIボイチェン@リアボVC公式モデル), にせ, はきみて れく(瞭魅推 れく), ほのか(~現実20代女子AIボイチェン~リアボVC公式モデル), まい, まお, みちのくあいり, もえ(現実20代女子AIボイチェン@リアボVC公式モデル), らせつん, るな, れな(現実20代女子AIボイチェン@リアボVC公式モデル), ろてじん（匿名インタビュー風）, ろてじん（長老ボイス）, わかな(現実20代女子AIボイチェン@リアボVC公式モデル), コハク, 中2, 凛音エル, 桜音, 澤原 玄二郎, 猩々博士 (雑談ボイス), 立神ケイ, 花音, 観測症, 阿井田 茂
-- CC0 1.0: すきやき馬太郎
+Every voice was made with **Qwen3-TTS** (https://github.com/QwenLM/Qwen3-TTS, Apache-2.0) and is modelled on one of the game's own NPC voices, so each NPC sounds like the one you know in English; your character's error lines are modelled on that race's own error lines. Which NPC has which voice follows the **Spoken** addon (https://github.com/rusty-key/spoken-wow, MIT). No voice actor is named, and no recording from the game is included. Non-commercial, free.
 
 ## 日本語
 
@@ -54,7 +51,7 @@ The voices were made on the maintainer's own computer with the **AivisSpeech Eng
 
 これは本体用の日本語音声だけで、本体がないと動きません。本体がまだなければ、CurseForge アプリが一緒にインストールします。ゲーム内でも、本体なしで音声が読み込まれることはありません。
 
-**WoW Forever Japanese** アドオン用の日本語音声です。クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページ、自分のキャラクターが話すエラーの一言を、アドオンの日本語で読み上げます。
+**WoW Forever Japanese** アドオン用の日本語音声です。クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページ、自分のキャラクターが話すエラーの一言を、アドオンの日本語で読み上げます。NPC はそれぞれ、ゲームでのその NPC 自身の声をもとにした声で話し、どの行も同じ音量で再生されます。
 
 **ウェブサイト:** https://foreverjapanese.com （スクリーンショットと、アドオンのしくみの簡単な説明）
 
@@ -70,7 +67,4 @@ Voice 自体は音声を持たず、すべての音声パック（合計約 1.1 
 
 ### クレジット
 
-音声は、メンテナーのコンピューター上で **AivisSpeech Engine**（https://aivis-project.com）と次の音声モデルを使い、各ライセンスに従って作りました。
-
-- Aivis Common Model License 1.0：Lux、MarkN、TANAKA、fumifumi、hinakoyuhara、kokuren_3rd、kokuren_voice、morioki、かりん(現実20代女子AIボイチェン@リアボVC公式モデル)、さつき(現実20代女子AIボイチェン@リアボVC公式モデル)、すみれ(現実20代女子AIボイチェン@リアボVC公式モデル)、にせ、はきみて れく(瞭魅推 れく)、ほのか(~現実20代女子AIボイチェン~リアボVC公式モデル)、まい、まお、みちのくあいり、もえ(現実20代女子AIボイチェン@リアボVC公式モデル)、らせつん、るな、れな(現実20代女子AIボイチェン@リアボVC公式モデル)、ろてじん（匿名インタビュー風）、ろてじん（長老ボイス）、わかな(現実20代女子AIボイチェン@リアボVC公式モデル)、コハク、中2、凛音エル、桜音、澤原 玄二郎、猩々博士 (雑談ボイス)、立神ケイ、花音、観測症、阿井田 茂
-- CC0 1.0：すきやき馬太郎
+音声はすべて **Qwen3-TTS**（https://github.com/QwenLM/Qwen3-TTS、Apache-2.0）で作り、それぞれゲームの NPC の声をもとにしています。そのため、どの NPC も英語で聞き慣れた NPC と同じように聞こえます。自分のキャラクターのエラーの一言は、その種族のエラーの声をもとにしています。どの NPC がどの声かは **Spoken** アドオン（https://github.com/rusty-key/spoken-wow、MIT）に合わせています。声優の名前は記載せず、ゲームの録音そのものは含まれていません。非営利・無料です。

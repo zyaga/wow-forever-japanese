@@ -411,8 +411,8 @@ def test_every_voice_model_is_credited():
     for doc in ("ATTRIBUTION.md", "docs/curseforge-voice.md"):
         text = (ROOT / doc).read_text(encoding="utf-8")
         missing = sorted(m for m in models if m not in text)
-        if doc == "ATTRIBUTION.md":  # the cloned voices: their engine and where each NPC's voice set comes from
-            missing += [w for w in ("Qwen3-TTS", "Spoken") if w not in text]
+        # the cloned voices: their engine and where each NPC's voice set comes from
+        missing += [w for w in ("Qwen3-TTS", "Spoken") if w not in text]
         assert not missing, f"{doc} lacks {missing}"
 
 
