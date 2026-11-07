@@ -64,7 +64,7 @@ When 10 or more lines are waiting, a small window at login or reload says how ma
 
 Install it with the CurseForge app (make sure your **Forever** install is selected), or unzip the download into your Forever client's `Interface/AddOns` folder. World of Warcraft: Forever only; no other addons or libraries needed.
 
-**Japanese voice:** a separate download of about 1.1 GB. After the addon, install **WoW Forever Japanese Voice** with the CurseForge app; it brings every voice pack. The addon's About & Help page says whether the voice is installed.
+**Japanese voice:** a separate download of about 1.2 GB. After the addon, install **WoW Forever Japanese Voice** with the CurseForge app; it brings every voice pack. The addon's About & Help page says whether the voice is installed.
 
 ### <span style="color:#E8C77E;">Report a translation problem</span>
 
@@ -155,7 +155,7 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 
 CurseForge アプリでインストールしてください（**Forever** のインストール先が選ばれていることを確認）。手動の場合は、ダウンロードした zip を Forever クライアントの `Interface/AddOns` フォルダに展開します。World of Warcraft: Forever 専用です。ほかのアドオンやライブラリは不要です。
 
-**日本語音声:** 約 1.1 GB の別ダウンロードです。アドオンのあとに、CurseForge アプリで **WoW Forever Japanese Voice** をインストールしてください。すべての音声パックが一緒に入ります。音声が入っているかどうかは、アドオンの「情報とヘルプ」ページに表示されます。
+**日本語音声:** 約 1.2 GB の別ダウンロードです。アドオンのあとに、CurseForge アプリで **WoW Forever Japanese Voice** をインストールしてください。すべての音声パックが一緒に入ります。音声が入っているかどうかは、アドオンの「情報とヘルプ」ページに表示されます。
 
 ### <span style="color:#E8C77E;">翻訳の問題を報告する</span>
 
