@@ -981,4 +981,10 @@ WFJ.Data.add("gloss", {
   [141992] = "願う\tねがう\tit is my hope",
   [141993] = "飛びつく\tとびつく\tskipping to (jump at)",
   [141994] = "養う\tやしなう\tnourished",
+  [141995] = "ああ\tああ\tohh",
+  [141996] = "あの方\tあのかた\the (that person, honorific)",
+  [141997] = "あの方\tあのかた\thim (that person, honorific)",
+  [141998] = "あらゆる\tあらゆる\tof all kinds",
+  [141999] = "ある\tある\tmay (it) be with you",
+  [142000] = "ある\tある\tthere are (even)",
 })

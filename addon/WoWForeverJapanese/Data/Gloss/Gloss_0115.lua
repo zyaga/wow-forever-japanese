@@ -124,7 +124,6 @@ WFJ.Data.add("gloss", {
   [115121] = "落とす\tおとす\tperish (命を落とす: die)",
   [115122] = "落とす\tおとす\tperish (命を落とす: lose one's life)",
   [115123] = "落とす\tおとす\tplease drop",
-  [115124] = "落とす\tおとす\tshed",
   [115125] = "落とす\tおとす\tshed (dropped)",
   [115126] = "落とす\tおとす\tshould (have to) slow down",
   [115127] = "落とす\tおとす\tslow (drop) down",

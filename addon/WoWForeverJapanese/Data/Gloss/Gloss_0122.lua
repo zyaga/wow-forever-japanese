@@ -846,7 +846,6 @@ WFJ.Data.add("gloss", {
   [122844] = "話しかける\tはなしかける\twould speak to",
   [122845] = "話しかける\tはなしかける\twould talk to me (be spoken to)",
   [122846] = "話しかける\tはなしかける\tyou should speak to",
-  [122847] = "話しかける\tはなしかける\tyou should speak with (it)",
   [122848] = "話したがる\tはなしたがる\twants to talk",
   [122849] = "話してくる\tはなしてくる\ttalk to",
   [122850] = "話して聞かせる\tはなしてきかせる\tplease speak and enlighten (me)",

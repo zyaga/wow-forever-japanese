@@ -689,7 +689,7 @@
 {"id": 153, "field": "objectives", "en": "Bring 15 Red Leather Bandanas to Scout Galiaan at Sentinel Hill.", "hash": "15be8c76ba96aba0", "src": "wdb@1.60.1.70790"}
 {"id": 153, "field": "description", "en": "The Defias Front is constantly shifting.  I've been following their movements for quite some time now.  On a side note, I've ascertained that many members of the gang can be tracked by the Red Leather Bandanas they wear.$b$bBring me 15 of these Bandanas and I'll see to it you are rewarded.", "hash": "dc4ad0dedf97d2d1", "src": "wdb@1.60.1.70790"}
 {"id": 153, "field": "progress", "en": "Bring me 15 red leather bandanas and I'll pay you well.", "hash": "ca1a09c50e1a5570", "src": "vmangos@13b49dc"}
-{"id": 153, "field": "completion", "en": "Nice work, skyborne. Please accept one of these items as payment for all your hard work.", "hash": "e68e7a75a1b746ba", "src": "collector@1.60.1.70790"}
+{"id": 153, "field": "completion", "en": "Nice work, $r. Please accept one of these items as payment for all your hard work.", "hash": "9ab692796e99d31a", "src": "collector@1.60.1.70790"}
 {"id": 154, "field": "title", "en": "Return the Comb", "hash": "67d027b232e69277", "src": "wdb@1.60.1.70790"}
 {"id": 154, "field": "objectives", "en": "Return the Ghost Hair Comb to Madame Eva in Darkshire.", "hash": "183f2e90a5a5b588", "src": "wdb@1.60.1.70790"}
 {"id": 154, "field": "description", "en": "NO!!!!!$B$BTake it, take this comb away from me!$B$BI'm a monster, and no one will ever think me lovely again!", "hash": "78e5d1328d8f6670", "src": "wdb@1.60.1.70790"}

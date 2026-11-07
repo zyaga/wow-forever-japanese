@@ -407,7 +407,6 @@ WFJ.Data.add("gloss", {
   [136405] = "頼む\tたのむ\tcan't ask",
   [136406] = "頼む\tたのむ\tcome on (please)",
   [136407] = "頼む\tたのむ\tcommissioned (asked)",
-  [136408] = "頼む\tたのむ\tcould ask",
   [136409] = "頼む\tたのむ\tcould do (can ask)",
   [136410] = "頼む\tたのむ\tcouldn't ask",
   [136411] = "頼む\tたのむ\tdo us a favor (please)",

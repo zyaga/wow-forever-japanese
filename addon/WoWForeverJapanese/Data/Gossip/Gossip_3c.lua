@@ -48,6 +48,7 @@ WFJ.Data.add("gossip", {
   ["3cc58c0c09937daf"] = { "%sは人差し指で首を切る仕草をした。", "." },
   ["3cc8c2472923b812"] = { "どうか、勇者よ、我らの民を守ってください。", "." },
   ["3cce84146ecb4658"] = { "よし、さあここから出よう！", "." },
+  ["3cd1d0c6cb45eb6a"] = { "Aman melar ul buras Enkilzar ul karkun, arakal. Ruk daz tiros ruk rikk kiel ul buras ul revos xi ruk tiriosh revola? Amanalar kazile...", "." },
   ["3cd1e2f8a996e2b8"] = { "やあJangdor、Wild Leather Bootsの作り方をもう一度教えてくれないか？", "." },
   ["3cd32fa019140f89"] = { "Scarlet Crusadeは使命を果たさずに終わることはない！", "." },
   ["3cd4cad92e74e21c"] = { "君は革細工職人だろう？そのなめし革のかすかな匂い、どこにいても分かるさ。\n\n父はよく、何世紀も前にSouthwind Villageに住んでいた有名な職人の話をしていた。あの場所が今では廃墟になっているのは残念だ。", "." },
@@ -57,5 +58,6 @@ WFJ.Data.add("gossip", {
   ["3cde6c4ddf81e71c"] = { "Frazierがダウン！Frazierがダウン！ダウンしたのは……え？Frazierじゃなかった？", "." },
   ["3cee35cfee2d5757"] = { "<黙っている>", "." },
   ["3cf1722af894056d"] = { "Eastern Plaguelandsは今、攻撃を受けているか？", "." },
+  ["3cfbfae599c85f1c"] = { "我らをここへ連れてきた精霊たちは去った。彼らが我らの住まいを保つために使っていた業は、どれもhighborneの魔法で再現できる。だが、Skywallでは我らの力は弱まってしまった。", "." },
   ["3cfefadfd72ed5a5"] = { "逃げたければ逃げろ、愚か者ども！どのみちお前たちの運命は決まっている！", "." },
 })

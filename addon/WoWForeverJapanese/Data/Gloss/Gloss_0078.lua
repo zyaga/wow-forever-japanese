@@ -938,7 +938,6 @@ WFJ.Data.add("gloss", {
   [78936] = "手伝いをする\tてつだいをする\tI would help",
   [78937] = "手伝いをする\tてつだいをする\twe'll help",
   [78938] = "手伝う\tてつだう\t(things) you can do to help",
-  [78939] = "手伝う\tてつだう\t(to) assist me",
   [78940] = "手伝う\tてつだう\t(you should) help out",
   [78941] = "手伝う\tてつだう\t(you) help us (if so)",
   [78942] = "手伝う\tてつだう\t(your) help",

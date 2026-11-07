@@ -866,7 +866,6 @@ WFJ.Data.add("gloss", {
   [71866] = "待つ\tまつ\tlie (await)",
   [71867] = "待つ\tまつ\tlie (wait)",
   [71868] = "待つ\tまつ\tlie ahead (are waiting)",
-  [71869] = "待つ\tまつ\tlie ahead (await)",
   [71870] = "待つ\tまつ\tlies (awaits)",
   [71871] = "待つ\tまつ\tlies (waits)",
   [71872] = "待つ\tまつ\tmoment (wait)",

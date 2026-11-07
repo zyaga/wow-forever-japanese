@@ -442,7 +442,6 @@ WFJ.Data.add("gloss", {
   [133440] = "開錠\tかいじょう\tunlocking",
   [133441] = "開門\tかいもん\tgate open",
   [133442] = "開閉\tかいへい\ttoggle (open or close)",
-  [133443] = "間\tあいだ\t(a) time",
   [133444] = "間\tあいだ\t(between you)",
   [133445] = "間\tあいだ\t(during)",
   [133446] = "間\tあいだ\t(for a) while",
