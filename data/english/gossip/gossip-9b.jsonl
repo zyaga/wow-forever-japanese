@@ -17,6 +17,7 @@
 {"id": "9b5f74b6d19420c4", "field": "text", "en": "%s begins a rite of creation...", "hash": "9b5f74b6d19420c4", "src": "vmangos@13b49dc"}
 {"id": "9b638fcc2fbf421f", "field": "text", "en": "We have all been witness to terrible tragedies, but we must not let them drag us to despair.$B$BInstead, hold those memories close so that one day, we might find a reckoning.", "hash": "9b638fcc2fbf421f", "src": "vmangos@13b49dc"}
 {"id": "9b71f8162f391658", "field": "text", "en": "I know you as Artorius the Doombringer. Show yourself, demon! Face me!", "hash": "9b71f8162f391658", "src": "vmangos@13b49dc"}
+{"id": "9b85adf017f285af", "field": "text", "en": "Greetings, skyborne.", "hash": "9b85adf017f285af", "src": "collector@1.60.1.70862", "npcs": [11146]}
 {"id": "9b868dd05d5fa6a6", "field": "text", "en": "What kin I do for ya, mon?", "hash": "9b868dd05d5fa6a6", "src": "vmangos@13b49dc"}
 {"id": "9b8721dbe9ea2238", "field": "text", "en": "Zarrin seems to have a good knowledge of the cooking trade.  Why don't you go see if he will show you some recipes?  He is usually cooking over by the Inn in Dolanaar.", "hash": "9b8721dbe9ea2238", "src": "vmangos@13b49dc"}
 {"id": "9b8a5153e177fe8f", "field": "text", "en": "My work here is done. I'll be sure to let Mar'alith and the others at Cenarion Hold know that you helped me out a little. Be careful in here, you don't have me holdin' your hand past this point.", "hash": "9b8a5153e177fe8f", "src": "vmangos@13b49dc"}

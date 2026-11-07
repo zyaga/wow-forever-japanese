@@ -23,6 +23,7 @@
 {"id": "e9a77b7501f46f51", "field": "text", "en": "I wish to become an armorsmith.", "hash": "e9a77b7501f46f51", "src": "vmangos@13b49dc"}
 {"id": "e9aa0d184306099a", "field": "text", "en": "I submit myself for further training my master.", "hash": "e9aa0d184306099a", "src": "vmangos@13b49dc"}
 {"id": "e9b37c1fba48f211", "field": "text", "en": "%s is released and now bound to you, $n.", "hash": "e9b37c1fba48f211", "src": "vmangos@13b49dc"}
+{"id": "e9b74b32a38c53de", "field": "text", "en": "You are too late. The ritual is complete!", "hash": "e9b74b32a38c53de", "src": "collector@1.60.1.70790"}
 {"id": "e9bc0728d0385b5f", "field": "text", "en": "Oh well....", "hash": "e9bc0728d0385b5f", "src": "vmangos@13b49dc"}
 {"id": "e9c60d06728844a6", "field": "text", "en": "What want from Raze??", "hash": "e9c60d06728844a6", "src": "vmangos@13b49dc"}
 {"id": "e9c83d6931141639", "field": "text", "en": "Can you imagine?", "hash": "e9c83d6931141639", "src": "vmangos@13b49dc"}

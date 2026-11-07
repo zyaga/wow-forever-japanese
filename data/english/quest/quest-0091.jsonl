@@ -142,7 +142,7 @@
 {"id": 91901, "field": "title", "en": "A Sealed Crate", "hash": "fc2b137e12afc223", "src": "wdb@1.60.1.70532"}
 {"id": 91904, "field": "title", "en": "A Sealed Crate", "hash": "fc2b137e12afc223", "src": "wdb@1.60.1.70532"}
 {"id": 91904, "field": "progress", "en": "Another delivery! Fantastic. Set it over by the pile and we can discuss your compensation.", "hash": "5e066350a1f5e9ff", "src": "forever-vo@025070f"}
-{"id": 91904, "field": "completion", "en": "Thank you for your hard work, $N. There has been an uprising in bandits and thieves intercepting trade routes as of late. If you find other crates laying around, please bring them here and we'll handle the rest.\r\n\r\nHere is your payment.", "hash": "3a3beeaff3d5a48a", "src": "forever-vo@025070f"}
+{"id": 91904, "field": "completion", "en": "Thank you for your hard work, $N. There has been an uprising in bandits and thieves intercepting trade routes as of late. If you find other crates lying around, please bring them here and we'll handle the rest.$B$BHere is your payment.", "hash": "8ac6a9d3f236ddb9", "src": "collector@1.60.1.70862"}
 {"id": 91905, "field": "title", "en": "A Sealed Crate", "hash": "fc2b137e12afc223", "src": "wdb@1.60.1.70532"}
 {"id": 91906, "field": "title", "en": "A Sealed Crate", "hash": "fc2b137e12afc223", "src": "wdb@1.60.1.70532"}
 {"id": 91920, "field": "title", "en": "Wild Eyes", "hash": "44275ed7295adbc9", "src": "wdb@1.60.1.70790"}

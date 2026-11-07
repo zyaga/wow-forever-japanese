@@ -1,3 +1,5 @@
+{"id": 6031, "field": "name", "en": "Tormus Deepforge", "hash": "9d447a97ef89128b", "src": "collector@1.60.1.70862"}
+{"id": 6094, "field": "name", "en": "Byancie", "hash": "2d2369675d78467e", "src": "collector@1.60.1.70790"}
 {"id": 6286, "field": "name", "en": "Zarrin", "hash": "22994a3bde26025a", "src": "collector@1.60.1.70205"}
 {"id": 6467, "field": "name", "en": "Mennet Carkad", "hash": "e1e85fb2d4112e4e", "src": "collector@1.60.1.70790"}
 {"id": 6522, "field": "name", "en": "Andron Gant", "hash": "86b11dc9cdd37115", "src": "collector@1.60.1.70790"}
@@ -6,5 +8,6 @@
 {"id": 6774, "field": "name", "en": "Falkhaan Isenstrider", "hash": "3bd144167735b8c6", "src": "collector@1.60.1.70205"}
 {"id": 6775, "field": "name", "en": "Antur Fallow", "hash": "44a9b29818167f26", "src": "collector@1.60.1.70790"}
 {"id": 6780, "field": "name", "en": "Porthannius", "hash": "20ca60c89faa7961", "src": "collector@1.60.1.70205"}
+{"id": 6782, "field": "name", "en": "Hands Springsprocket", "hash": "2b1be246f64b749b", "src": "collector@1.60.1.70790"}
 {"id": 6786, "field": "name", "en": "Ukor", "hash": "0b8002799c562b87", "src": "collector@1.60.1.70790"}
 {"id": 6928, "field": "name", "en": "Innkeeper Grosk", "hash": "ebfdfeb7de4f8c2f", "src": "collector@1.60.1.70790"}

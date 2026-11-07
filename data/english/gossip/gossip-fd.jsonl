@@ -23,6 +23,7 @@
 {"id": "fd751c2bf9554986", "field": "text", "en": "The deed is done! The Magistrate is dead-- to the shadows, my brethren.", "hash": "fd751c2bf9554986", "src": "vmangos@13b49dc"}
 {"id": "fd774fb02234081d", "field": "text", "en": "Based on the sample of the toxin you provided for us, we think you will need the following: an arcane quickener, six osseous agitators, and four pieces of runecloth.  With the vitreous focuser in tow, acquire the agitators from skeletal undead here in the Plaguelands!$B$BOnce you have these items, you should be able to load the counter agent into that cauldron.", "hash": "fd774fb02234081d", "src": "vmangos@13b49dc"}
 {"id": "fd80664028c1a960", "field": "text", "en": "Help!", "hash": "fd80664028c1a960", "src": "vmangos@13b49dc"}
+{"id": "fd83256241d3b392", "field": "text", "en": "Recently we discovered a way to use our magic to carve a \"keyhole\" of sorts to peer through the planes to learn much of Azeroth.", "hash": "fd83256241d3b392", "src": "collector@1.60.1.70790"}
 {"id": "fd8dc59ff1b5bb73", "field": "text", "en": "And to which battleground do you wish to journey?", "hash": "fd8dc59ff1b5bb73", "src": "vmangos@13b49dc"}
 {"id": "fd9302c9d50f70d0", "field": "text", "en": "I have suffered, but now I can feel it slowly fading from me. I feel... free.", "hash": "fd9302c9d50f70d0", "src": "vmangos@13b49dc"}
 {"id": "fd95af2efdfcaacd", "field": "text", "en": "10 seconds to blast! Stand back!!!", "hash": "fd95af2efdfcaacd", "src": "vmangos@13b49dc"}

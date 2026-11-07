@@ -22,6 +22,7 @@
 {"id": 3347, "field": "name", "en": "Yelmak", "hash": "6c7cb2f5a3fc4c2c", "src": "collector@1.60.1.70790"}
 {"id": 3348, "field": "name", "en": "Kor'geld", "hash": "13252ff73ce9efda", "src": "collector@1.60.1.70790"}
 {"id": 3368, "field": "name", "en": "Borstan", "hash": "8511841e022d5ddc", "src": "collector@1.60.1.70790"}
+{"id": 3389, "field": "name", "en": "Regthar Deathgate", "hash": "1e8becbf71c91343", "src": "collector@1.60.1.70862"}
 {"id": 3390, "field": "name", "en": "Apothecary Helbrim", "hash": "df47147ec061a198", "src": "collector@1.60.1.70790"}
 {"id": 3391, "field": "name", "en": "Gazlowe", "hash": "d6cf2ede3e3cb4c2", "src": "collector@1.60.1.70790"}
 {"id": 3419, "field": "name", "en": "Apothecary Zamah", "hash": "e9931e98c780b807", "src": "collector@1.60.1.70790"}
@@ -35,10 +36,14 @@
 {"id": 3464, "field": "name", "en": "Gazrog", "hash": "78da1d3e3c2ec29c", "src": "collector@1.60.1.70790"}
 {"id": 3514, "field": "name", "en": "Tenaron Stormgrip", "hash": "a35ac59a1a98ec8d", "src": "collector@1.60.1.70205"}
 {"id": 3515, "field": "name", "en": "Corithras Moonrage", "hash": "ddfdcf5422a58b3b", "src": "collector@1.60.1.70205"}
+{"id": 3516, "field": "name", "en": "Arch Druid Fandral Staghelm", "hash": "7d197ecf761190f6", "src": "collector@1.60.1.70790"}
+{"id": 3517, "field": "name", "en": "Rellian Greenspyre", "hash": "57fb1b20a464ead1", "src": "collector@1.60.1.70790"}
+{"id": 3519, "field": "name", "en": "Sentinel Arynia Cloudsbreak", "hash": "f82d76b7af85b64a", "src": "collector@1.60.1.70790"}
 {"id": 3549, "field": "name", "en": "Shelene Rhobart", "hash": "8192a76fd4c72b1d", "src": "collector@1.60.1.70790"}
 {"id": 3567, "field": "name", "en": "Tallonkai Swiftroot", "hash": "a3f3a242aed72140", "src": "collector@1.60.1.70205"}
 {"id": 3595, "field": "name", "en": "Shanda", "hash": "ba92ff074802f532", "src": "collector@1.60.1.70170"}
 {"id": 3597, "field": "name", "en": "Mardant Strongoak", "hash": "db4a20c0457c8efd", "src": "collector@1.60.1.70170"}
 {"id": 3600, "field": "name", "en": "Laurna Morninglight", "hash": "9373f76138765e61", "src": "collector@1.60.1.70205"}
+{"id": 3604, "field": "name", "en": "Malorne Bladeleaf", "hash": "c5176fed365c82b7", "src": "collector@1.60.1.70790"}
 {"id": 3608, "field": "name", "en": "Aldia", "hash": "838e6da9ce6cdc51", "src": "collector@1.60.1.70205"}
 {"id": 3665, "field": "name", "en": "Crane Operator Bigglefuzz", "hash": "53ead96fdd7e0284", "src": "collector@1.60.1.70790"}

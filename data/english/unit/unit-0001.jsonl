@@ -1,3 +1,10 @@
+{"id": 1266, "field": "name", "en": "Tundra MacGrann", "hash": "5bc3e40b94db7427", "src": "collector@1.60.1.70862"}
+{"id": 1267, "field": "name", "en": "Ragnar Thunderbrew", "hash": "8b04a24fd679958b", "src": "collector@1.60.1.70862"}
+{"id": 1274, "field": "name", "en": "Senator Barin Redstone", "hash": "56f543e35f83ea69", "src": "collector@1.60.1.70862"}
+{"id": 1374, "field": "name", "en": "Rejold Barleybrew", "hash": "bc2ee86ea3c63707", "src": "collector@1.60.1.70862"}
+{"id": 1375, "field": "name", "en": "Marleth Barleybrew", "hash": "d0af05bf6ea5a09d", "src": "collector@1.60.1.70862"}
+{"id": 1377, "field": "name", "en": "Pilot Stonegear", "hash": "0406bd09f31c92f8", "src": "collector@1.60.1.70862"}
+{"id": 1378, "field": "name", "en": "Pilot Bellowfiz", "hash": "90792c23844ef198", "src": "collector@1.60.1.70862"}
 {"id": 1430, "field": "name", "en": "Tomas", "hash": "d17c35cd25c59142", "src": "collector@1.60.1.70374"}
 {"id": 1495, "field": "name", "en": "Deathguard Linnea", "hash": "fe4e37f75733b042", "src": "collector@1.60.1.70790"}
 {"id": 1496, "field": "name", "en": "Deathguard Dillinger", "hash": "de9c4176109ddad5", "src": "collector@1.60.1.70790"}
@@ -10,10 +17,13 @@
 {"id": 1521, "field": "name", "en": "Gretchen Dedmar", "hash": "09a3783a6cd861a7", "src": "collector@1.60.1.70790"}
 {"id": 1651, "field": "name", "en": "Lee Brown", "hash": "ab409d299f7902f1", "src": "collector@1.60.1.70374"}
 {"id": 1652, "field": "name", "en": "Deathguard Burgess", "hash": "2285f8d2ff2d55b3", "src": "collector@1.60.1.70790"}
+{"id": 1700, "field": "name", "en": "Paxton Ganter", "hash": "33ff29369d13cecb", "src": "collector@1.60.1.70862"}
 {"id": 1738, "field": "name", "en": "Deathguard Terrence", "hash": "8673d6a22c6c5dca", "src": "collector@1.60.1.70790"}
+{"id": 1748, "field": "name", "en": "Highlord Bolvar Fordragon", "hash": "1f48517511c16bdd", "src": "collector@1.60.1.70790"}
 {"id": 1931, "field": "name", "en": "Captured Scarlet Zealot", "hash": "842198be2dfa7356", "src": "collector@1.60.1.70790"}
 {"id": 1937, "field": "name", "en": "Apothecary Renferrel", "hash": "1f337fd7e317d7db", "src": "collector@1.60.1.70790"}
 {"id": 1938, "field": "name", "en": "Dalar Dawnweaver", "hash": "a23899570b0307ef", "src": "collector@1.60.1.70790"}
 {"id": 1950, "field": "name", "en": "Rane Yorick", "hash": "fcfed72c8a315585", "src": "collector@1.60.1.70790"}
 {"id": 1952, "field": "name", "en": "High Executor Hadrec", "hash": "b397cb11452ea0f8", "src": "collector@1.60.1.70790"}
+{"id": 1965, "field": "name", "en": "Mountaineer Thalos", "hash": "beb6e438f6860210", "src": "collector@1.60.1.70790"}
 {"id": 1992, "field": "name", "en": "Tarindrella", "hash": "0ea1887499b35bf8", "src": "collector@1.60.1.70170"}

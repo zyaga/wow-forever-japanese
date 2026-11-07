@@ -45,6 +45,7 @@
 {"id": "3cc58c0c09937daf", "field": "text", "en": "%s uses his index finger to make a cutting motion across his neck.", "hash": "3cc58c0c09937daf", "src": "vmangos@13b49dc"}
 {"id": "3cc8c2472923b812", "field": "text", "en": "Please, champion, protect our people.", "hash": "3cc8c2472923b812", "src": "vmangos@13b49dc"}
 {"id": "3cce84146ecb4658", "field": "text", "en": "Ok, now let's get out of here!", "hash": "3cce84146ecb4658", "src": "vmangos@13b49dc"}
+{"id": "3cd1d0c6cb45eb6a", "field": "text", "en": "Aman melar ul buras Enkilzar ul karkun, arakal. Ruk daz tiros ruk rikk kiel ul buras ul revos xi ruk tiriosh revola? Amanalar kazile...", "hash": "3cd1d0c6cb45eb6a", "src": "collector@1.60.1.70862"}
 {"id": "3cd1e2f8a996e2b8", "field": "text", "en": "Hey Jangdor - can you teach me again how to make Wild Leather Boots again?", "hash": "3cd1e2f8a996e2b8", "src": "vmangos@13b49dc"}
 {"id": "3cd32fa019140f89", "field": "text", "en": "The Scarlet Crusade shall not fail in its mission!", "hash": "3cd32fa019140f89", "src": "vmangos@13b49dc"}
 {"id": "3cd4cad92e74e21c", "field": "text", "en": "You're a leatherworker by trade, aren't you?  It's that faint smell of cured hides, I'd recognize it anywhere.$B$BMy father used to talk about a famous artisan who lived in Southwind Village centuries ago.  It's a shame the place is in ruins now.", "hash": "3cd4cad92e74e21c", "src": "vmangos@13b49dc"}
@@ -54,4 +55,5 @@
 {"id": "3cde6c4ddf81e71c", "field": "text", "en": "Down goes Frazier!  Down goes Frazier! Down goes...huh?  That Wasn't Frazier?", "hash": "3cde6c4ddf81e71c", "src": "vmangos@13b49dc"}
 {"id": "3cee35cfee2d5757", "field": "text", "en": "<Remain Silent>", "hash": "3cee35cfee2d5757", "src": "collector@1.60.1.70205", "npcs": [251902]}
 {"id": "3cf1722af894056d", "field": "text", "en": "Are the Eastern Plaguelands currently under attack?", "hash": "3cf1722af894056d", "src": "vmangos@13b49dc"}
+{"id": "3cfbfae599c85f1c", "field": "text", "en": "The elementals who brought us here are gone. Any feats they used to maintain our homes can be replicated with highborne magic, but our powers have grown weak in Skywall.", "hash": "3cfbfae599c85f1c", "src": "collector@1.60.1.70790"}
 {"id": "3cfefadfd72ed5a5", "field": "text", "en": "Run if you like fools!  Your fate is sealed anyways!", "hash": "3cfefadfd72ed5a5", "src": "vmangos@13b49dc"}

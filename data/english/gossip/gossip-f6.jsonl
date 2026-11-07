@@ -6,6 +6,7 @@
 {"id": "f61d2089c28bf25e", "field": "text", "en": "We must eliminate the elves and their cowardly Alliance from Warsong Gulch. Go to the Hall of the Brave in the Valley of Honor and speak with Brakgul Deathbringer if you have what it takes to aid the Horde.", "hash": "f61d2089c28bf25e", "src": "vmangos@13b49dc"}
 {"id": "f620831b08c56ce5", "field": "text", "en": "I will do my best, Vaelan.", "hash": "f620831b08c56ce5", "src": "vmangos@13b49dc"}
 {"id": "f62182ccd203035b", "field": "text", "en": "Look here, if you don't tell me about the fire--", "hash": "f62182ccd203035b", "src": "vmangos@13b49dc"}
+{"id": "f623a1b0be197d23", "field": "text", "en": "It sounds like you were very fond of him. Did you know him personally?", "hash": "f623a1b0be197d23", "src": "collector@1.60.1.70790", "npcs": [252383]}
 {"id": "f625eff5b518454d", "field": "text", "en": "May the spirit of Isha Awak give you strength, $n.", "hash": "f625eff5b518454d", "src": "vmangos@13b49dc"}
 {"id": "f63889c70ebd3c4b", "field": "text", "en": "The Coldtooth Mine lies in Horde territory, in the mountains north of the Frostwolf Graveyard.$B$BIt is controlled by the Alliance.", "hash": "f63889c70ebd3c4b", "src": "vmangos@13b49dc"}
 {"id": "f639dacbbbd773cf", "field": "text", "en": "%s reads from the tablets. Unknown, unheard sounds flow through your consciousness.", "hash": "f639dacbbbd773cf", "src": "vmangos@13b49dc"}

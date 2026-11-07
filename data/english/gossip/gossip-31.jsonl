@@ -32,6 +32,7 @@
 {"id": "31aee07548fe3b2d", "field": "text", "en": "Why do we always go the same way?", "hash": "31aee07548fe3b2d", "src": "vmangos@13b49dc"}
 {"id": "31b4bbdbd67539ca", "field": "text", "en": "Through my studies, I see that defeating the god Hakkar's avatar has weakened him.  But the bulk of his strength remains, lurking at the far end of the Nether.$B$BYou have defeated his avatar once, $n.  Perhaps if you defeat it again you can further weaken the god so that, one day, we might face his true self.$B$BI have prepared a spell that you may use to again summon an avatar of Hakkar within the Sanctum of the Fallen God.  Do you want to confront it once again?", "hash": "31b4bbdbd67539ca", "src": "vmangos@13b49dc"}
 {"id": "31bc8330a126fa08", "field": "text", "en": "Hah!  This tauren wants a kiss!", "hash": "31bc8330a126fa08", "src": "vmangos@13b49dc"}
+{"id": "31cb83d830427e67", "field": "text", "en": "THREAT DETECTED. ADMINISTERING VIOLENCE.", "hash": "31cb83d830427e67", "src": "collector@1.60.1.70790"}
 {"id": "31d631be500f693a", "field": "text", "en": "%s recasts the cleansing spell.", "hash": "31d631be500f693a", "src": "vmangos@13b49dc"}
 {"id": "31d6e0afc9f3143d", "field": "text", "en": "Who controls the Irondeep Mine?", "hash": "31d6e0afc9f3143d", "src": "vmangos@13b49dc"}
 {"id": "31de26f4eb104705", "field": "text", "en": "Little food'll feel pretty good right about now.", "hash": "31de26f4eb104705", "src": "vmangos@13b49dc"}

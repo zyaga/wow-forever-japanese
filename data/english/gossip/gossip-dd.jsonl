@@ -14,6 +14,7 @@
 {"id": "dd7c3475d0199a50", "field": "text", "en": "Remulos, I am being drawn back... Tyrande... send her my love... Tell her I am safe. Tell her... Tell her I will return... Farewell...", "hash": "dd7c3475d0199a50", "src": "vmangos@13b49dc"}
 {"id": "dd7dd9b8d09c072a", "field": "text", "en": "I never thought the day would come that I'd leave my homeland of Westfall. . . .", "hash": "dd7dd9b8d09c072a", "src": "vmangos@13b49dc"}
 {"id": "dd7e1209e1088ad5", "field": "text", "en": "Denizens of the firelands will be summoned. Take care not to make any sudden movements when they appear.", "hash": "dd7e1209e1088ad5", "src": "collector@1.60.1.70790"}
+{"id": "dd7f3a9af05a79db", "field": "text", "en": "Lord Fordragon instructed me to speak with you.", "hash": "dd7f3a9af05a79db", "src": "collector@1.60.1.70790", "npcs": [275491]}
 {"id": "dd82a5794440a9f9", "field": "text", "en": "These great beasts know paths that ye can't find on foot, they'll get ye there fast and maybe show ye something new at the same time.", "hash": "dd82a5794440a9f9", "src": "vmangos@13b49dc"}
 {"id": "dd888c77707234cb", "field": "text", "en": "First Aid?  Well ye don't look hurt to me.  If yer really interested in learning First Aid, then Nissa Firestone is the one to learn from.  Go see her over by The Great Forge in her shop, The Ironforge Physician.", "hash": "dd888c77707234cb", "src": "vmangos@13b49dc"}
 {"id": "dd9a167b318efb4a", "field": "text", "en": "Watch my rear! I'll see what I can find in all this junk...", "hash": "dd9a167b318efb4a", "src": "vmangos@13b49dc"}

@@ -35,6 +35,7 @@
 {"id": "f49e00c28e9b0e51", "field": "text", "en": "%s stands before the Might of Kalimdor.", "hash": "f49e00c28e9b0e51", "src": "vmangos@13b49dc"}
 {"id": "f4aea43239c595e5", "field": "text", "en": "Athrikus came to us. He told us that he could save us from harm. He cast a spell upon us to protect us from harm.", "hash": "f4aea43239c595e5", "src": "vmangos@13b49dc"}
 {"id": "f4b60bc2251fc324", "field": "text", "en": "Those days are over, Eris.", "hash": "f4b60bc2251fc324", "src": "vmangos@13b49dc"}
+{"id": "f4bd742dc779eb1d", "field": "text", "en": "Supreme Magister, the Grand Skyseer would hear nothing of our grievance and in fact, reiterated her threat to us.", "hash": "f4bd742dc779eb1d", "src": "collector@1.60.1.70790"}
 {"id": "f4c773fa3bf82d19", "field": "text", "en": "I can teach you both the finesse of a short blade and the bone shattering cleaving power of a two handed behemoth. Or we can get crazy and I can teach you both, could come in handy for when the situation changes on ya.", "hash": "f4c773fa3bf82d19", "src": "vmangos@13b49dc"}
 {"id": "f4e0a50c9161178b", "field": "text", "en": "Are you here to prove yourself as well?", "hash": "f4e0a50c9161178b", "src": "forever-vo@025070f", "npcs": [10721]}
 {"id": "f4eb71c5b6bb2692", "field": "text", "en": "I know very little of the Highborne and nothing of the Shen'dralar.", "hash": "f4eb71c5b6bb2692", "src": "vmangos@13b49dc"}

@@ -6,6 +6,7 @@
 {"id": "252bab12ebc08acf", "field": "text", "en": "I am released through you! Avenge me!", "hash": "252bab12ebc08acf", "src": "vmangos@13b49dc"}
 {"id": "252d8fe49887df17", "field": "text", "en": "Kagoro, I require your presence!", "hash": "252d8fe49887df17", "src": "vmangos@13b49dc"}
 {"id": "252da15dac565383", "field": "text", "en": "Intruder!", "hash": "252da15dac565383", "src": "vmangos@13b49dc"}
+{"id": "252f4ab885856045", "field": "text", "en": "$N, ensure any allies with you are prepared and speak with me when you are ready to confront Lorthuna.", "hash": "252f4ab885856045", "src": "collector@1.60.1.70790"}
 {"id": "252fb72a10ebf4cd", "field": "text", "en": "The warrior's role is one of protection.  Just as we protect our compatriots in battle, we must also protect the interests of the Forsaken.", "hash": "252fb72a10ebf4cd", "src": "vmangos@13b49dc"}
 {"id": "25467d934e600ad7", "field": "text", "en": "The Water of the Seers is ready for your consumption, $n.", "hash": "25467d934e600ad7", "src": "vmangos@13b49dc"}
 {"id": "2548f1e62e53fa77", "field": "text", "en": "Got anything interesting for sale, Zorbin?", "hash": "2548f1e62e53fa77", "src": "vmangos@13b49dc"}
@@ -21,6 +22,7 @@
 {"id": "25a615207903c655", "field": "text", "en": "Muahahahaha! What is this pathetic spectacle I see before me? Well, what are you waiting for? I hunger, and you look as if you may make for a passable appetizer!", "hash": "25a615207903c655", "src": "vmangos@13b49dc"}
 {"id": "25a901f44a6d8495", "field": "text", "en": "%s takes the indurium flakes to his forge.", "hash": "25a901f44a6d8495", "src": "vmangos@13b49dc"}
 {"id": "25ade7c640c11d5c", "field": "text", "en": "You are certainly a long way from home, $r.", "hash": "25ade7c640c11d5c", "src": "vmangos@13b49dc"}
+{"id": "25b02dc2f31b369d", "field": "text", "en": "No one? I thought not. You go tell Elaadrin that the only thing keeping me from marching my shamans over and tossing you petty charlatans off the side of this island is the current crisis.", "hash": "25b02dc2f31b369d", "src": "collector@1.60.1.70790"}
 {"id": "25bef0361211c41e", "field": "text", "en": "Hello there $glad:lass;... the name's Oglethorpe and I may be responsible for one of the amazing gnomish devices you might possess!  If it blew up, then it wasn't me; if it made you rich though, we can discuss royalties!$B$BOh, and if you're from Gnomeregan, you can just take two ninety degree angles, smash them together, and start marching.  I have nothing to say to you.", "hash": "25bef0361211c41e", "src": "vmangos@13b49dc"}
 {"id": "25c5fd0dcb51cf79", "field": "text", "en": "You hear that? I think they're getting closer...", "hash": "25c5fd0dcb51cf79", "src": "vmangos@13b49dc"}
 {"id": "25c6074721dc9f82", "field": "text", "en": "Long-lasting, well-crafted items for sale near the Hill! Come one, come all! Time is short, so make haste.", "hash": "25c6074721dc9f82", "src": "vmangos@13b49dc"}

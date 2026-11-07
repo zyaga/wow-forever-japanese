@@ -1,5 +1,6 @@
 {"id": "8004836af7028ed9", "field": "text", "en": "Our units are not upgraded, and I don't have enough supplies to upgrade them.", "hash": "8004836af7028ed9", "src": "vmangos@13b49dc"}
 {"id": "800a0e611446178b", "field": "text", "en": "From way downtown!", "hash": "800a0e611446178b", "src": "vmangos@13b49dc"}
+{"id": "800b0ac73a57ce42", "field": "text", "en": "<Pick him up and carry him.>", "hash": "800b0ac73a57ce42", "src": "collector@1.60.1.70790", "npcs": [253002]}
 {"id": "80135bc0cc1c6dbf", "field": "text", "en": "Yes, come. My master and I shall be waiting.", "hash": "80135bc0cc1c6dbf", "src": "vmangos@13b49dc"}
 {"id": "80176c121afced13", "field": "text", "en": "Yes, that is true. Paladins and priests alike train their skills and research great truths behind the walls of the Cathedral.", "hash": "80176c121afced13", "src": "vmangos@13b49dc"}
 {"id": "8019d546ce4a4816", "field": "text", "en": "GOSSIP_OPTION_AUCTIONEER", "hash": "8019d546ce4a4816", "src": "vmangos@13b49dc"}
