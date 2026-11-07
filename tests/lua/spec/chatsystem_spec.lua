@@ -357,6 +357,25 @@ describe("SYSTEM chat lines", function()
       assert.are.equal(0, WFJ.Font.retryPending()) -- nothing was left pending for a pooled line
     end)
 
+  it("a line laid out while its height may not be read (a secret value) keeps its size and raises nothing",
+    function()
+      -- a secret number in a tainted context raises on any comparison ("attempt to compare ... a secret number value")
+      local hidden = setmetatable({}, { __le = function() error("attempt to compare a secret number value") end,
+        __lt = function() error("attempt to compare a secret number value") end })
+      secrets[hidden] = true
+      local line = Stub.fontString("")
+      line.font = { path = "Fonts\\ARIALN.TTF", size = 14, flags = "" }
+      function line.GetHeight() return hidden end
+      function line.GetStringHeight() return 28 end
+      assert.are.equal(14, WFJ.ChatSystem.fit(line))
+      local other = Stub.fontString("")
+      other.font = { path = "Fonts\\ARIALN.TTF", size = 14, flags = "" }
+      function other.GetHeight() return 14 end
+      function other.GetStringHeight() return hidden end
+      assert.are.equal(14, WFJ.ChatSystem.fit(other))
+      secrets[hidden] = nil
+    end)
+
   it("a one-line Japanese line a couple of pixels taller than its slot keeps its size", function()
     local line = Stub.fontString("")
     line.font = { path = "Fonts\\ARIALN.TTF", size = 14, flags = "" }

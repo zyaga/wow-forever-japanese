@@ -331,6 +331,18 @@ local function show(surface, key, fs, en, area, kind, id, ctx)
   return changed
 end
 
+-- A record still showing our text whose font the client put back: a menu refresh sets each FontString to its default
+-- font object and runs the initializers again with the text left as it was (blizzard_menu/menu.lua ReinitializeFrame,
+-- compositor.lua:66-74), so the Japanese would sit in a face without its letters. → true when our face went back on
+function Render.keepFont(surface, key)
+  local rec = SS.get(surface, key)
+  if not rec or rec.applied == nil or not rec.appliedFont or type(rec.fs.GetFont) ~= "function" then return false end
+  local path = rec.fs:GetFont()
+  if path == nil or SS.secret(path) or path == rec.appliedFont.path then return false end
+  rec.appliedFont = nil
+  return (sync(rec)) == true
+end
+
 -- The public entry: `show`, timed under its surface (Core/Perf).
 function Render.show(surface, key, fs, en, area, kind, id, ctx)
   return WFJ.Perf.call(surface, show, surface, key, fs, en, area, kind, id, ctx)

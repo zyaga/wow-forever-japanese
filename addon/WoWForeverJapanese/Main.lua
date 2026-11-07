@@ -498,6 +498,7 @@ frame:SetScript("OnEvent", function(self, event, name, ...)
   elseif event == "PLAYER_LOGOUT" then
     WFJ.VoicePlayer.stop() -- the dialog channel is saved with the logout: put it back first
     WFJ.VoiceErrors.restore() -- and the error speech
+    pcall(WFJ.Perf.flush) -- the last frame's timing into the log before it is saved
   elseif event == "MODIFIER_STATE_CHANGED" then
     WFJ.Modifier.refresh()
   elseif event == "PLAYER_ENTERING_WORLD" then

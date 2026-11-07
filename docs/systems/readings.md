@@ -176,7 +176,7 @@ A span that splits a UTF-8 character is **not a Lua error**: the client exits, a
 - The box and the card never show while English shows: every path that puts English back detaches first, and the cover re-checks the text on enter.
 - Readings never edit the Japanese, never carry a name (a word holds no ASCII, and needs a kanji unless it is a kana word with a meaning; a class / race card gives the English name), and ship only while their `ja_hash` matches (ID-keyed, provenance on every record, machine never replaces correction: [principles 5 and 6](../architecture/principles.md#5-every-translation-is-keyed-by-the-game)).
 - A word a line uses more than once has a card at every place: the reading import fills a repeat the batch left out (`readings.fill_repeats`), and `validate` fails on a shipped reading that still misses one, so CI stops such a build.
-- The cover takes mouse motion only: its own clicks are off (`SetMouseClickEnabled(false)`) and passed on (`SetPropagateMouseClicks(true)`), so clicks and scrolling go to the frames underneath, a search box behind a translated placeholder included. The save click is read by polling the button, never by a click handler on the cover; no cover calls `EnableMouse` or turns its clicks on.
+- The cover takes mouse motion only: its own clicks are off (`SetMouseClickEnabled(false)`) and passed on (`SetPropagateMouseClicks(true)`), so clicks and scrolling go to its parent, the frame the text sits in, a search box behind a translated placeholder included. The save click is read by polling the button, never by a click handler on the cover; no cover calls `EnableMouse` or turns its clicks on.
 - Nothing runs per frame unless the mouse is over a covered FontString.
 
 ## Edge cases

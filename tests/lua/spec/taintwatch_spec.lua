@@ -111,8 +111,8 @@ describe("UI/TaintWatch", function()
     assert.are.equal("WFJ_DB", scan.globals)
     assert.is_true(TW.onBlocked())
     assert.is_false(TW.onBlocked())
-    assert.are.equal(2, entriesOf("taint")[1].n) -- the slash scan and the first block's (one clock second)
-    assert.are.equal(2, entriesOf("context")[1].n) -- every block counts on the first block's entry
+    assert.are.equal(2, #entriesOf("taint")) -- the slash scan and the block's, each its own entry
+    assert.are.equal(1, #entriesOf("context")) -- a repeat of the same block reads the ring no more
     _G.WFJ_DB = nil
   end)
 
@@ -255,7 +255,36 @@ describe("UI/TaintWatch", function()
     assert.is_true(TW.onBlocked(first))
     assert.is_false(TW.onBlocked(first))
     assert.is_true(TW.onBlocked(other))
-    assert.are.equal(2, entriesOf("taint")[1].n) -- two scans in one clock second count on one entry
+    -- one scan runs for the blocks queued before it, each different block keeps its own events
+    local contexts = entriesOf("context")
+    assert.are.equal(2, #contexts)
+    assert.are.equal("events before " .. first.msg, contexts[1].msg)
+    assert.are.equal("events before " .. other.msg, contexts[2].msg)
+    assert.is_string(contexts[2].events)
+  end)
+
+  it("a frame of the addon's passes goes in before the events that came after it", function()
+    local now = 1
+    WFJ.Perf.setDeps({ clock = function() return 0 end, frame = function() return now end, trail = TW.trail })
+    local t0 = WFJ.Perf.start("bags")
+    WFJ.Perf.stop("bags", t0, 0)
+    now = 2 -- the frame is over; the next thing in the ring is a game event
+    TW.onEvent("BAG_UPDATE", 0)
+    local lines = {}
+    for line in TW.events():gmatch("[^\n]+") do lines[#lines + 1] = line end
+    assert.are.same({ "10:00:00 wfj bags", "10:00:00 BAG_UPDATE 0" }, lines)
+    WFJ.Perf.setDeps({})
+  end)
+
+  it("a tainted writer that runs again is only counted: its stack and events are kept from the first time", function()
+    taint.showAllButtons = { t = _G.MultiBarLeft, by = "WoWForeverJapanese" }
+    local reads = 0
+    local events = TW.events
+    TW.events = function() reads = reads + 1; return events() end
+    for _ = 1, 5 do TW.wrote("MultiBarLeft.showAllButtons", _G.MultiBarLeft, "showAllButtons") end
+    TW.events = events
+    local w = entriesOf("write")
+    assert.are.same({ 1, 5, 1 }, { #w, w[1].n, reads })
   end)
 
   it("the scan walks the bag frames and every table the addon's declarations resolved to", function()

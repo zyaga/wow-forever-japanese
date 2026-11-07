@@ -30,6 +30,15 @@ describe("Core/Diag", function()
     assert.are.equal(tostring(6), db.entries[1].msg)
   end)
 
+  it("timing samples are dropped before blocks when the log is full", function()
+    local D = fresh()
+    local db = D.load(nil)
+    D.log("blocked", "UseContainerItem()")
+    for i = 1, D.MAX_ENTRIES do D.log("slow", "surface" .. i) end
+    assert.are.equal("blocked", db.entries[1].kind)
+    assert.are.equal(D.MAX_ENTRIES, #db.entries)
+  end)
+
   it("a repeat in the session counts on its entry; sessions are kept when the oldest are dropped", function()
     local D = fresh()
     local db = D.load(nil)

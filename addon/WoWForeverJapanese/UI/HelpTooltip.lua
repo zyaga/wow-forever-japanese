@@ -103,7 +103,8 @@ local function walkImpl(tt)
         local recKey = side:sub(1, 1) .. i
         if i < (labelOpts and labelOpts.from or 1) then
           WFJ.SurfaceState.drop(SURFACE, recKey) -- a line the opts leave out (a name on line 1)
-        elseif fs and fs.GetText and (fs:GetText() or "") ~= "" then
+        elseif fs and fs.GetText and not WFJ.SurfaceState.secret(fs:GetText()) and (fs:GetText() or "") ~= "" then
+          -- (a secret line, which may not even be compared, is the client's: dropped below like an empty one)
           -- The client appended to a line we already translated (GameTooltip:AppendText adds the key binding after
           -- SetText, whose hook has run): put its English back in front of the addition, so the whole line is
           -- matched again (the `binding` form) and the record carries its font instead of dropping it.

@@ -170,12 +170,17 @@ end
 local function refitFor(frame)
   local fn = refits[frame]
   if fn then return fn end
+  local function run()
+    frame:Show()
+    frame:Show()
+  end
   fn = function()
     if inRefit[frame] then return end
     inRefit[frame] = true
-    frame:Show()
-    frame:Show()
+    -- timed apart: a Show runs the client's own tooltip code (its post-calls, the comparison tooltips) again
+    local ok, err = pcall(WFJ.Perf.call, "tooltip.refit", run)
     inRefit[frame] = false
+    if not ok then error(err, 0) end
   end
   refits[frame] = fn
   return fn
@@ -537,7 +542,8 @@ local function show(frame, area, kind, id, lines, first, last, name, runArgs, le
     if learn then
       written = written + showRun(surface, area, kind, learn.id, lines, learn.row, learn.row, refit, nil, "learn")
     end
-    return written + showStructural(surface, frame, lines, first, last, refit, name, learn and learn.row, sets)
+    return written + WFJ.Perf.call("tooltip.item.structural", showStructural, surface, frame, lines, first, last,
+      refit, name, learn and learn.row, sets)
   end)
   inRefit[frame] = false
   if not ok then error(n, 0) end
@@ -1008,8 +1014,10 @@ end
 -- The Item post-call's target.
 function Tooltip.onItem(frame)
   if inRefit[frame] then return 0 end -- our own refit re-runs the post-call; nothing new to read
+  local t0, k0 = WFJ.Perf.start("tooltip.item.read")
   local itemName, link = Tooltip.itemOf(frame)
   local lines = Tooltip.lines(frame)
+  WFJ.Perf.stop("tooltip.item.read", t0, k0)
   local texts = {}
   for i, l in ipairs(lines) do texts[i] = l.text end
   -- hidden rows: nothing is read, matched or dropped (dropping a record reads its widget); the link is checked
@@ -1035,11 +1043,16 @@ function Tooltip.onItem(frame)
   local learn = learnRow and texts[learnRow] ~= "" and { row = learnRow, id = recipe } or nil
   local runArgs = first and peelTrailer(texts, first, last) or nil
   -- The run is read before we write (the client rewrote every line); the Collector refuses our own text anyway.
+  local P = WFJ.Perf
+  t0, k0 = P.start("tooltip.item.collector")
   if first then WFJ.Collector.record("item", id, "description", table.concat(texts, "\n", first, last)) end
   if learn then WFJ.Collector.record("item", recipe, "description", texts[learnRow]) end
+  P.stop("tooltip.item.collector", t0, k0)
+  t0, k0 = P.start("tooltip.item.sets")
   local sets, setEnglish, setFree = setBonuses(id, lines, function(i)
     return (first ~= nil and i >= first and i <= last) or (learn ~= nil and i == learn.row)
   end)
+  P.stop("tooltip.item.sets", t0, k0)
   -- a set line no bonus spell's Japanese fits is that spell's English: known only when one line and one spell are left
   if setEnglish and #setEnglish == 1 and #setFree == 1 and type(setEnglish[1].text) == "string" then
     WFJ.Collector.record("spell", setFree[1], "description", setEnglish[1].text)

@@ -139,7 +139,10 @@ local function show(surface, recKey, widget, refit, opts)
     return 0
   end
   local rec = WFJ.SurfaceState.get(surface, recKey)
-  if rec and rec.fs == fs and rec.applied ~= nil and en == rec.applied then return 1 end -- still our Japanese
+  if rec and rec.fs == fs and rec.applied ~= nil and en == rec.applied then -- still our Japanese
+    WFJ.Render.keepFont(surface, recKey) -- unless the client put its own font back under it
+    return 1
+  end
   local key, args
   if type(en) == "string" and en ~= "" then
     if opts and opts.only then key, args = index:matchOnly(en, opts.only) else key, args = index:match(en) end

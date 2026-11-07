@@ -43,22 +43,34 @@ end
 
 -- Looks at the frame counted so far: a label that took SLOW_MS or more in it is logged, the frame's labels go to the
 -- trail, and the rows are zeroed for the next frame.
+local function logSlow(label, row)
+  local ms, kb = math.floor(row.ms * 10 + 0.5) / 10, math.floor(row.kb + 0.5)
+  local e = WFJ.Diag.log("slow", label, { ms = ms, kb = kb, calls = row.calls })
+  if e and (e.n or 1) > 1 and ms > (e.ms or 0) then e.ms, e.kb, e.calls = ms, kb, row.calls end
+end
+
 function Perf.flush()
   if #ran == 0 then return end
   for _, label in ipairs(ran) do
     local row = frame[label]
-    if row.ms >= Perf.SLOW_MS and WFJ.Diag then
-      local ms, kb = math.floor(row.ms * 10 + 0.5) / 10, math.floor(row.kb + 0.5)
-      local e = WFJ.Diag.log("slow", label, { ms = ms, kb = kb, calls = row.calls })
-      if e and (e.n or 1) > 1 and ms > (e.ms or 0) then e.ms, e.kb, e.calls = ms, kb, row.calls end
-    end
+    -- the log and the trail are diagnostics: a failure there must never reach the write that was timed
+    if row.ms >= Perf.SLOW_MS and WFJ.Diag then pcall(logSlow, label, row) end
   end
-  if deps.trail then deps.trail(trailLine()) end
+  local line = trailLine()
+  -- the rows are cleared before the trail runs: the trail writes the ring, which settles this frame again
   for i = #ran, 1, -1 do
     local row = frame[ran[i]]
     row.ms, row.kb, row.calls = 0, 0, 0
     ran[i] = nil
   end
+  if deps.trail then pcall(deps.trail, line) end
+end
+
+-- A frame that has ended goes to the trail now, before anything else is written to the ring after it (the taint
+-- watch calls this on every line it adds), so the ring keeps the order things ran in.
+function Perf.settle()
+  if #ran == 0 or not deps.frame then return end
+  if deps.frame() ~= current then Perf.flush() end
 end
 
 -- Opens a timed call of `label`. → the clock and memory at the start (nil when there is no clock)

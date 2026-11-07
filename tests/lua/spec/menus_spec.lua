@@ -141,6 +141,23 @@ describe("UI/Menus: menu entries", function()
     assert.are.equal(0, WFJ.SurfaceState.count(WFJ.Menus.SURFACE))
   end)
 
+  it("a menu refresh that puts the client's font back keeps the Japanese in the bundled face", function()
+    WFJ.Menus.init()
+    local root, frames = generate("MENU_CONTAINER_FRAME_COMBINED", function(r)
+      r:CreateButton(UI.BAG_NAME_BAG_1[1])
+    end)
+    local e = root.children[1]
+    local fs = frames[e].fontString
+    assert.are.equal("バッグ1", fs:GetText())
+    -- a checkbox click refreshes the menu: the compositor sets each FontString to its default font object and runs
+    -- the initializers again, the text still ours (blizzard_menu/menu.lua ReinitializeFrame, compositor.lua:66-74)
+    fs.font = { path = "Fonts\\FRIZQT__.TTF", size = 12, flags = "" }
+    for _, fn in ipairs(e.inits) do fn(frames[e], e) end
+    assert.are.equal("バッグ1", fs:GetText())
+    assert.are.equal(WFJ.Font.PATH, fs.font.path)
+    release(frames)
+  end)
+
   it("gamepad UI mode's reagent bag entry in the combined bag menu; Alt shows English", function()
     WFJ.Menus.init()
     local root, frames = generate("MENU_CONTAINER_FRAME_COMBINED", function(r)

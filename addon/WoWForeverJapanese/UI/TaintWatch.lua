@@ -69,15 +69,17 @@ for _, e in ipairs({ "COMBAT_LOG_EVENT_UNFILTERED", "UNIT_POWER_FREQUENT", "UNIT
 end
 
 -- What a bag item's right-click reads before C_Container.UseContainerItem (ContainerFrameItemButton_OnClick,
--- mainline/containerframe.lua:1532-1611): one of them tainted makes the use a forbidden call out of combat.
+-- mainline/containerframe.lua:1503-1611): one of them tainted makes the use a forbidden call out of combat.
 TaintWatch.BAG_CLICK_GLOBALS = { "ContainerFrameItemButton_OnClick", "MerchantFrame_ResetRefundItem", "MerchantFrame",
   "StackSplitFrame", "BankFrame", "GuildBankFrame", "MailFrame", "AuctionFrame", "AuctionHouseFrame", "TradeFrame",
   "ItemUpgradeFrame", "ObliterumForgeFrame", "ChallengesKeystoneFrame", "AzeriteRespecFrame", "RuneforgeFrame",
   "ItemLocation", "ItemButtonUtil", "BankUtil_IsAccountBankDepositRefundable", "ContainerFrame_GetExtendedPriceString",
   "ContainerFrame_IsAccountBankTab", "C_Container", "C_Cursor", "C_Item", "C_AuctionHouse", "C_ItemSocketInfo",
   "C_ArtifactUI", "C_MountJournal", "GetCursorInfo", "SpellCanTargetItem", "SpellCanTargetItemID", "CursorHasItem",
-  "IsModifiedClick" }
-TaintWatch.BAG_CLICK_MERCHANT = { "selectedTab", "refundItem", "refundItemEquipped", "extendedCost", "highPrice" }
+  "MerchantFrame_ConfirmExtendedItemCost", "MerchantFrame_ConfirmHighCostItem", "MerchantFrame_SetRefundItem",
+  "StaticPopup_Show" }
+-- refundItem is cleared by the click's own first call (MerchantFrame_ResetRefundItem), so it is not on the list
+TaintWatch.BAG_CLICK_MERCHANT = { "selectedTab", "extendedCost", "highPrice" }
 
 -- the fields the bar layout and the bag click read: { label, global table name (nil for a global variable), key }
 local function fieldList()
@@ -108,13 +110,15 @@ local counts = {} -- ring slot → how often the addon's pass on that line ran i
 local trailLabel -- the label of the newest line when that line is one of the addon's own passes
 
 function TaintWatch.push(text)
+  if WFJ.Perf then WFJ.Perf.settle() end -- an ended frame's passes go in before what came after them
   ringPos = ringPos % TaintWatch.RING + 1
   ring[ringPos] = clock() .. " " .. tostring(text)
   counts[ringPos], trailLabel = nil, nil
 end
 
--- One of the addon's own timed passes (Core/Perf), so a block or a taint shows which of our surfaces ran just before
--- it. A run of the same pass with nothing between is one line with its count: no string is built for a repeat.
+-- One frame's line of the addon's own timed passes (Core/Perf: its labels in the order they ran), so a block or a
+-- taint shows which of our surfaces ran just before it. The same line again with nothing between (a hovered item
+-- refreshing) is counted on that line: no string is built for a repeat.
 function TaintWatch.trail(label)
   if label == trailLabel then
     counts[ringPos] = (counts[ringPos] or 1) + 1
@@ -201,13 +205,20 @@ end
 
 -- The writer of field `label` (on `t`, or a global when `t` is nil) just ran: logged when the value is tainted.
 -- → the entry, or nil
+local wroteBefore = {} -- a write entry's message → true once its stack and events were kept
+
 function TaintWatch.wrote(label, t, key)
   local tainted, by = check(t, key)
   if not tainted then return nil end
   local s = stack()
   local site = WFJ.Diag.blockedSite(s) -- the first line outside this addon: the Blizzard writer
-  return WFJ.Diag.log("write", label .. " <" .. site .. ">", { by = tostring(by), stack = s,
-    combat = inCombat(), events = TaintWatch.events() })
+  local msg = label .. " <" .. site .. ">"
+  -- a tainted writer runs again and again (the tracker redraws on every quest update): a repeat is only counted,
+  -- the ring is read for the first one
+  if wroteBefore[msg] then return WFJ.Diag.log("write", msg) end
+  wroteBefore[msg] = true
+  return WFJ.Diag.log("write", msg, { by = tostring(by), stack = s, combat = inCombat(),
+    events = TaintWatch.events() })
 end
 
 local was = {}
@@ -307,8 +318,11 @@ function TaintWatch.scan(reason)
       end
     end
   end
+  -- under the frames the addon's declarations resolved to, only this addon's taint is listed: those frames hold other
+  -- addons' and the player's keys too (a roster, a channel list), which the log never keeps
+  local function ours(label, by) if by == WFJ.ADDON or by == "unreadable" then hit(label, by) end end
   for _, entry in ipairs(C.tables()) do
-    checked = checked + walk(entry[2], entry[1], TaintWatch.COMPAT_DEPTH, seen, hit)
+    checked = checked + walk(entry[2], entry[1], TaintWatch.COMPAT_DEPTH, seen, ours)
   end
   if found > #hits then hits[#hits + 1] = "… " .. (found - #hits) .. " more" end
   local globals = {}
@@ -319,13 +333,13 @@ function TaintWatch.scan(reason)
     end
   end
   table.sort(globals)
-  WFJ.Diag.log("taint", "scan " .. clock(), { reason = tostring(reason or "slash"), checked = checked,
+  local why = tostring(reason or "slash")
+  WFJ.Diag.log("taint", "scan " .. clock() .. " " .. why, { reason = why, checked = checked,
     fields = table.concat(hits, " | "), globals = table.concat(globals, " | ") })
   return found, #globals
 end
 
 local scannedBlocks = {} -- a block's message → true once its scan was queued this session
-local contextLogged = false
 
 -- Main, after Diag logged a block naming this addon (`entry`, its log entry): the recent events, and a scan for each
 -- different block, once per session and out of combat (it walks _G, too heavy for a fight; the tainted values it
@@ -333,14 +347,13 @@ local contextLogged = false
 -- → true when this block queued the scan
 TaintWatch.scanPending = false
 function TaintWatch.onBlocked(entry)
-  -- one entry for every block: repeats only count, so a long fight never pushes the first block's entries out; the
-  -- ring is read only for the first, the one entry that keeps it
-  local fields = not contextLogged and { events = TaintWatch.events() } or nil
-  WFJ.Diag.log("context", "events before the first block", fields)
-  contextLogged = true
+  -- each different block keeps the events and passes before its first time; a repeat is counted on the block's own
+  -- entry, and the ring is not read again for it
   local key = type(entry) == "table" and tostring(entry.msg) or "?"
   if scannedBlocks[key] then return false end
   scannedBlocks[key] = true
+  TaintWatch.scanFor = key
+  WFJ.Diag.log("context", "events before " .. key, { events = TaintWatch.events() })
   TaintWatch.scanPending = true
   TaintWatch.scanWhenSafe()
   return true
@@ -350,7 +363,7 @@ end
 function TaintWatch.scanWhenSafe()
   if not TaintWatch.scanPending or inCombat() then return false end
   TaintWatch.scanPending = false
-  TaintWatch.scan("block")
+  TaintWatch.scan("block " .. tostring(TaintWatch.scanFor))
   return true
 end
 
