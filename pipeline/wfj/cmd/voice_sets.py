@@ -7,7 +7,8 @@ runbook docs/operations/voice.md).
   sets clips --wow DIR [--product wowf] --listfile FILE [--out DIR]
       Cuts every set's greeting, farewell and vendor barks out of the local archive into build/voice-sets/
       (24 kHz mono WAV), and a set Forever adds (named after its NPCSounds row) from that row's kits. They
-      are the cloning references; they stay on this machine and are never committed.
+      are the cloning references. They stay on this machine and are never committed or packed; a remote
+      run sends the references joined from them to its rented GPUs for that run only.
   sets catalogue --build VERSION [--whisper PATH]
       Writes data/voice/sets.jsonl: each set's gender and its clips, with an English transcript per clip (a
       local speech-to-text model for new clips; transcripts already in the file are kept) and whether the clip

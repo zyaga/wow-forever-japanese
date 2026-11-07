@@ -3,7 +3,7 @@
     WFJ_MODAL_GPU=L40S WFJ_MODAL_CONTAINERS=10 \\
         build/modal/venv/bin/python pipeline/wfj/io/qwen_modal.py RUN_DIR [--limit N]
 
-RUN_DIR is written by `wfj voice remote export`: jobs.jsonl (one line per file: key, text, reference, mode),
+RUN_DIR is written by `wfj voice export`: jobs.jsonl (one line per file: key, text, reference, mode),
 refs/ (the joined set references) and refs.json (their transcripts). Each GPU container loads Qwen3-TTS once
 with `qwen_worker.load` and reads its lines with `qwen_worker.speak`, exactly as the local engine does; the
 WAVs come back to RUN_DIR/wav/<key>.wav, where `wfj voice generate --prepared RUN_DIR` encodes and records

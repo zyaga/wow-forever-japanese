@@ -211,6 +211,9 @@ cache, the Classic Era quest cache, wago.tools DB2 exports (`ItemSparse`, `Spell
 > sound packs are generated from. THIRD_PARTY.md says what each of those is, who
 > owns it, and under what terms it is here.
 
+The paths and files this addendum names (`addons/*/Libs/`, THIRD_PARTY.md) are in Spoken's own repository, not
+this one.
+
 ## forever-vo license
 
 > MIT License

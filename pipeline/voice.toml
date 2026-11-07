@@ -502,11 +502,13 @@ when = { gender = ["male", "none"] }
 voices = ["v1310138977"]
 
 # ---- cloned game voice sets (ADR-074) --------------------------------------------------------------------
-# NPCs whose home pack is listed here speak with their game voice set, cloned by Qwen3-TTS from the set's own
-# barks; every other line keeps the AivisSpeech cast above. Add the next pack's folder to switch it, then
-# `make voice-cast` and `make voice-generate`. Picks are made on the listening page (`make voice-sets-page`):
-# voice = the voice alone (speaker embedding), full = the voice and the way the set speaks, keep = the
-# AivisSpeech cast. `decided` marks a pick made by ear on that page; the rest follow the default (male sets
+# NPCs whose home pack is listed in `cloned_packs` (every pack) speak with their game voice set, cloned by
+# Qwen3-TTS from the set's own barks; speakers Spoken gives no set take one from the [[set_cast]] rules below,
+# so the AivisSpeech cast above is never what a line ends on. A new pack's folder goes in `cloned_packs`,
+# then `make voice-cast` and `make voice-generate`. Picks are made on the listening page
+# (`make voice-sets-page`): voice = the voice alone (speaker embedding), full = the voice and the way the set
+# speaks, keep = the set's NPCs stay on the AivisSpeech cast, which a test forbids for any committed speaker,
+# so no set uses it. `decided` marks a pick made by ear on that page; the rest follow the default (male sets
 # voice, female sets full).
 
 [sets.dwarffemaleguardnpc]

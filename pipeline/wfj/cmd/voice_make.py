@@ -244,7 +244,7 @@ def file_jobs(
     return jobs + error_jobs(root, cfg, list(players))
 
 
-REFS_DIR = "refs"  # joined set references, beside the cut clips: game audio stays on this machine
+REFS_DIR = "refs"  # joined set references, beside the cut clips; a remote run sends them to its GPUs only
 QWEN_PYTHON = "build/qwen/venv/bin/python"
 MAX_WORKERS = 4  # each engine holds the model in memory (about 5 GB)
 FAST_WORKERS = 3
