@@ -579,7 +579,9 @@ def rule_voice(root: Path, config: Path | None = None) -> list[str]:
     models = {str(v["model"]): voice_audition.lookup(catalogue, str(v["model"])) or ""
               for v in cfg["roster"].values() if v.get("model")}
     genders = voice_sets.voice_genders(cfg["roster"], models)
-    problems += voice_sets.gender_problems(cast, profiles, genders)
+    spoken = {int(r["creature"]): {g: r[g] for g in ("male", "female") if r.get(g)}
+              for r in read_rows(d / "creature-sets.jsonl")}
+    problems += voice_sets.gender_problems(cast, profiles, genders, cfg["roster"], spoken)
     jobs = voice.jobs(speakers, cast, cfg["narrator"], cfg["book_narrator"], lines)
     values = voice_make.line_values(root, lines)
     state = voice.in_step(jobs, lines, cfg["roster"], voice_make.audio_record(root), values)

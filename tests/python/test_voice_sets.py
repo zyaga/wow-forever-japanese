@@ -238,14 +238,21 @@ def test_home_pack_is_the_lowest_band_of_an_npcs_quests(tmp_path):
 
 def test_a_speaker_cast_to_a_voice_of_the_other_gender_is_reported_unless_spoken_set_it():
     roster = {"m": {"model": "M"}, "f": {"model": "F"}, "n": {"model": "N"},
-              "qhumanfemalestandard": {"engine": "qwen", "set": "humanfemalestandardnpc"}}
+              "qhumanfemalestandard": {"engine": "qwen", "set": "humanfemalestandardnpc"},
+              "qgnomemalezany": {"engine": "qwen", "set": "gnomemalezanynpc"}}
     genders = voice_sets.voice_genders(roster, {"M": "male", "F": "female", "N": "other"})
-    assert genders == {"m": "male", "f": "female", "qhumanfemalestandard": "female"}
-    profiles = {1: {"gender": "female"}, 2: {"gender": "male"}, 3: {"gender": "male"}, 4: {"gender": "mixed"}}
+    assert genders == {"m": "male", "f": "female", "qhumanfemalestandard": "female", "qgnomemalezany": "male"}
+    profiles = {1: {"gender": "female"}, 2: {"gender": "male"}, 3: {"gender": "male"}, 4: {"gender": "mixed"},
+                5: {"gender": "female"}, 6: {"gender": "mixed"}}
+    spoken = {3: {"female": "humanfemalestandardnpc"}}
     cast = {1: {"voice": "m", "row": "x"}, 2: {"voice": "n", "row": "x"},
-            3: {"voice": "qhumanfemalestandard", "row": "set humanfemalestandardnpc"}, 4: {"voice": "f", "row": "x"}}
-    assert voice_sets.gender_problems(cast, profiles, genders) == [
-        "voice voices 1: a female speaker cast to m, a male voice"]
+            3: {"voice": "qhumanfemalestandard", "row": "set humanfemalestandardnpc"}, 4: {"voice": "f", "row": "x"},
+            5: {"voice": "qgnomemalezany", "row": "set gnomemalezanynpc"},  # a cast rule, not Spoken: checked
+            6: {"voice": "m", "row": "x", "female": "qgnomemalezany"}}
+    assert voice_sets.gender_problems(cast, profiles, genders, roster, spoken) == [
+        "voice voices 1: a female speaker cast to m, a male voice",
+        "voice voices 5: a female speaker cast to qgnomemalezany, a male voice",
+        "voice voices 6: its female variant qgnomemalezany is a male voice"]
 
 
 # ---- the engine ------------------------------------------------------------------------------------------
@@ -393,7 +400,8 @@ def test_a_pack_credits_the_clone_engine_for_its_cloned_files_and_aivisspeech_fo
     both = voice_ship._credits(cfg, audio, ["a.mp3", "b.mp3"])
     assert both == {"engine": "AivisSpeech; Qwen3-TTS",
                     "models": "M, voices modelled on the game's own NPC voice sets",
-                    "licence": "ACML 1.0 / Apache-2.0"}
+                    "licence": "voice models ACML 1.0; speech engine Apache-2.0; the game's NPC recordings the"
+                               " voices are modelled on belong to Blizzard Entertainment"}
     assert voice_ship._credits(cfg, audio, ["b.mp3"])["engine"] == "Qwen3-TTS"
     assert voice_ship._credits(cfg, audio, ["a.mp3"])["engine"] == "AivisSpeech"
 

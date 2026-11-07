@@ -226,6 +226,8 @@ def test_pack_writes_the_entry_and_every_pack(tmp_path, engine, monkeypatch):  #
     assert main_icon + "\n" in atoc
     notes = next(ln for ln in atoc.splitlines() if ln.startswith("## Notes:"))
     assert notes.isascii() and "README.txt" in notes  # the AddOn List tooltip shows no Japanese glyphs
+    packed = {f.suffix for d in out.iterdir() for f in d.rglob("*") if f.is_file()}
+    assert packed <= {".mp3", ".lua", ".toc", ".txt"}, packed  # no game audio (.ogg, .wav) is ever packed
     assert "## Version: 2026." in atoc or "## Version: 20" in atoc
     assert "X-Curse-Project-ID" not in (out / "WoWForeverJapanese_VoiceB" / "WoWForeverJapanese_VoiceB.toc").read_text()
     assert not list((out / "WoWForeverJapanese_VoiceB" / "Sound").iterdir())
@@ -409,6 +411,8 @@ def test_every_voice_model_is_credited():
     for doc in ("ATTRIBUTION.md", "docs/curseforge-voice.md"):
         text = (ROOT / doc).read_text(encoding="utf-8")
         missing = sorted(m for m in models if m not in text)
+        if doc == "ATTRIBUTION.md":  # the cloned voices: their engine and where each NPC's voice set comes from
+            missing += [w for w in ("Qwen3-TTS", "Spoken") if w not in text]
         assert not missing, f"{doc} lacks {missing}"
 
 
