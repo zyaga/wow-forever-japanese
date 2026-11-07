@@ -95,6 +95,10 @@ def voice_genders(roster: Mapping[str, Mapping[str, Any]],
     return out
 
 
+def _set_of(roster: Mapping[str, Mapping[str, Any]], voice: str) -> str | None:
+    return (roster.get(voice) or {}).get("set")
+
+
 def gender_problems(cast: Mapping[int, Mapping[str, str]], profiles: Mapping[int, Mapping[str, Any]],
                     genders: Mapping[str, str], roster: Mapping[str, Mapping[str, Any]],
                     spoken: Mapping[int, Mapping[str, str]]) -> list[str]:
@@ -105,15 +109,11 @@ def gender_problems(cast: Mapping[int, Mapping[str, str]], profiles: Mapping[int
     out = []
     for c, row in sorted(cast.items()):
         theirs = set((spoken.get(c) or {}).values())
-
-        def judged(v: str) -> bool:
-            return (roster.get(v) or {}).get("set") not in theirs
-
         g = (profiles.get(c) or {}).get("gender")
         v = row.get("voice", "")
-        if g in GENDERS and judged(v) and genders.get(v) not in (None, g):
+        if g in GENDERS and _set_of(roster, v) not in theirs and genders.get(v) not in (None, g):
             out.append(f"voice voices {c}: a {g} speaker cast to {v}, a {genders[v]} voice")
         f = row.get("female", "")
-        if f and judged(f) and genders.get(f) == "male":
+        if f and _set_of(roster, f) not in theirs and genders.get(f) == "male":
             out.append(f"voice voices {c}: its female variant {f} is a male voice")
     return out
