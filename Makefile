@@ -445,7 +445,7 @@ voice-sets-catalogue: ## data/voice/sets.jsonl: each set's clips with a transcri
 	cd pipeline && $(PY) -m wfj voice sets catalogue --build "$(BUILD)" $(if $(WHISPER),--whisper "$(WHISPER)")
 
 voice-sets-page: ## build/voice-sets/page: the listening page (game clips, both copies, today's voice per set), then serve it on localhost:8767
-	cd pipeline && $(PY) -m wfj voice sets-page build --store "$(VOICE_STORE)" && $(PY) -m wfj voice sets-page serve
+	cd pipeline && $(PY) -m wfj voice sets-page build && $(PY) -m wfj voice sets-page serve
 
 voice-sets-apply: ## the picks saved on the listening page → pipeline/voice.toml [sets]; then make voice-cast and make voice-generate
 	cd pipeline && $(PY) -m wfj voice sets-page apply

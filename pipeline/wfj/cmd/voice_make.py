@@ -504,7 +504,7 @@ def _cloned_lines(todo: collections.deque, qwen: Callable[[], Any], make: Callab
         try:
             while todo or running:
                 want, background = speed()
-                want = max(1, min(want, MAX_WORKERS))
+                want = max(1, min(want, MAX_WORKERS, len(todo) + len(running)))  # no engine for a last line
                 while len(engines) < want:
                     q = qwen()
                     q.__enter__()

@@ -378,7 +378,8 @@ def test_the_page_saves_only_known_picks_and_apply_writes_them_into_voice_toml(t
     saved = tmp_path / "picks.json"
     voice_sets_page.save_pick(saved, json.dumps({"set": "orcfemalestandardnpc", "pick": "voice",
                                                  "decided": True}).encode())
-    for bad in ({"set": "nope", "pick": "voice"}, {"set": "orcmaleguardnpc", "pick": "loud"}):
+    for bad in ({"set": "nope", "pick": "voice"}, {"set": "orcmaleguardnpc", "pick": "loud"},
+                {"set": "orcmaleguardnpc", "pick": "keep"}):
         with pytest.raises(ValueError):
             voice_sets_page.save_pick(saved, json.dumps(bad).encode())
     assert json.loads(saved.read_text()) == {"orcfemalestandardnpc": {"pick": "voice", "decided": True}}
@@ -392,12 +393,14 @@ def test_the_page_saves_only_known_picks_and_apply_writes_them_into_voice_toml(t
 
 def test_the_page_has_a_row_with_every_take_and_the_pick_controls_per_set():
     rows = [{"set": "orcfemalestandardnpc", "race": "orc", "gender": "female", "flavour": "standard", "npcs": 3}]
-    files = {"orcfemalestandardnpc": {"game": "g.mp3", "voice": "v.mp3", "full": "f.mp3", "today": "t.mp3"}}
-    html_text = voice_sets_page.page(rows, {"orcfemalestandardnpc": {"pick": "full", "decided": True}}, files,
-                                     {"orcfemalestandardnpc": "ようこそ"})
-    for want in ('src="g.mp3"', 'src="v.mp3"', 'src="f.mp3"', 'src="t.mp3"', 'value="full" checked',
-                 'data-set="orcfemalestandardnpc" checked', "ようこそ"):
+    files = {"orcfemalestandardnpc": {"game": "g.mp3", "voice": "v.mp3", "full": "f.mp3"}}
+    html_text = voice_sets_page.page(rows, {"orcfemalestandardnpc": {"pick": "voice", "decided": True}}, files)
+    for want in ('src="g.mp3"', 'src="v.mp3"', 'src="f.mp3"', 'value="voice" checked',
+                 'data-set="orcfemalestandardnpc" checked'):
         assert want in html_text
+    assert 'value="keep"' not in html_text  # every set is cloned: there is no other voice to keep
+    undecided = voice_sets_page.page(rows, {}, files)
+    assert 'value="full" checked' in undecided  # an undecided female set follows the default rule
 
 
 # ---- the committed data and config -------------------------------------------------------------------------

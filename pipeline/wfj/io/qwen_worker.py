@@ -161,8 +161,13 @@ def free(device: str) -> None:
 
 
 def main() -> int:
-    answer = sys.stdout
-    sys.stdout = sys.stderr  # the libraries print while loading; only answers go to the real stdout
+    import os
+
+    # the libraries print while loading, some from native code straight to fd 1: answers get a copy of the
+    # real stdout, and fd 1 and Python's stdout both point at stderr
+    answer = os.fdopen(os.dup(1), "w", encoding="utf-8")
+    os.dup2(2, 1)
+    sys.stdout = sys.stderr
     import importlib.metadata
 
     import soundfile as sf

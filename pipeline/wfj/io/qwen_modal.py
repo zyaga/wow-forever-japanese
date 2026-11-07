@@ -24,6 +24,7 @@ import modal
 
 HERE = Path(__file__).resolve().parent
 QWEN_TTS = "0.1.1"  # the version `make voice-qwen-setup` pins
+MODEL_REVISION = "fd4b254389122332181a7c3db7f27e918eec64e3"  # the weights local runs read: both sound alike
 GPU = os.environ.get("WFJ_MODAL_GPU", "L40S")
 BATCH = int(os.environ.get("WFJ_MODAL_BATCH", "15"))  # lines per call: small, so every card stays busy
 PARAGRAPHS = int(os.environ.get("WFJ_MODAL_PARAGRAPHS", "24"))  # paragraphs the GPU reads in one model call
@@ -33,7 +34,7 @@ image = (
     .pip_install(f"qwen-tts=={QWEN_TTS}", "soundfile", "numpy", "huggingface_hub")
     .run_commands(
         "python -c \"from huggingface_hub import snapshot_download; "
-        "snapshot_download('Qwen/Qwen3-TTS-12Hz-1.7B-Base')\""
+        f"snapshot_download('Qwen/Qwen3-TTS-12Hz-1.7B-Base', revision='{MODEL_REVISION}')\""
     )
     .add_local_file(HERE / "qwen_worker.py", "/root/qwen_worker.py")
 )
