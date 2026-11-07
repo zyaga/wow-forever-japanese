@@ -114,6 +114,13 @@ function Perf.stop(label, t0, k0)
   if ms > s.max then s.max = ms end
 end
 
+-- One event or pass counted under `label`, with no time of its own: how often something happens, beside how long the
+-- timed passes take (the tooltip comparison event).
+function Perf.count(label)
+  local t0, k0 = Perf.start(label)
+  Perf.stop(label, t0, k0)
+end
+
 -- `fn(...)` timed under `label`. → fn's first result (every timed path returns at most one value)
 function Perf.call(label, fn, ...)
   local t0, k0 = Perf.start(label)

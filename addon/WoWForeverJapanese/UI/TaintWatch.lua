@@ -172,6 +172,9 @@ function TaintWatch.isUnitToken(s)
 end
 
 function TaintWatch.onEvent(event, a1)
+  -- the client asks for the comparison tooltips through this event, and each one rebuilds them: counted, so /wfj perf
+  -- shows how often it comes beside the passes it causes
+  if event == "TOOLTIP_SHOW_ITEM_COMPARISON" and WFJ.Perf then WFJ.Perf.count("event.compare") end
   if TaintWatch.NOISY[event] or event:find("^CHAT_MSG_") then return end
   local arg = ""
   local t = type(a1)

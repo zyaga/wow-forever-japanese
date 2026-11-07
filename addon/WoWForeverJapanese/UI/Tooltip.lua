@@ -179,6 +179,7 @@ local function refitFor(frame)
     inRefit[frame] = true
     -- timed apart: a Show runs the client's own tooltip code (its post-calls, the comparison tooltips) again
     local ok, err = pcall(WFJ.Perf.call, "tooltip.refit", run)
+    WFJ.Perf.count("tooltip.refit." .. frame:GetName()) -- which tooltip: a redraw of one can rebuild another
     inRefit[frame] = false
     if not ok then error(err, 0) end
   end
@@ -1429,7 +1430,10 @@ function Tooltip.init()
       -- blizzard_gametooltip/mainline/gametooltip.xml:109); it carries its tooltip data, which Tooltip.itemOf reads
       local frame = dataFrame(tt, types.Item, type(tt) == "table" and tt.GetItem == nil and "GetPrimaryTooltipData"
         or "GetItem")
-      if frame then WFJ.Perf.call("tooltip.item", Tooltip.onItem, frame) end
+      if frame then
+        WFJ.Perf.count("tooltip.item." .. frame:GetName()) -- which tooltip the pass was for
+        WFJ.Perf.call("tooltip.item", Tooltip.onItem, frame)
+      end
     end)
     processor.AddTooltipPostCall(types.Spell, function(tt)
       local frame = dataFrame(tt, types.Spell, "GetSpell")
