@@ -81,9 +81,13 @@ function SurfaceState.apply(surface, key, text, font)
   local rec = SurfaceState.get(surface, key)
   if not rec then return false end
   local fontOk
+  local P = WFJ.Perf -- the client's own font and text writes timed apart ("write.setfont", "write.settext")
   if font then
     if not sameFont(rec.appliedFont, font) then
+      local t0, k0
+      if P then t0, k0 = P.start("write.setfont") end
       fontOk = rec.fs:SetFont(font.path, font.size, font.flags)
+      if P then P.stop("write.setfont", t0, k0) end
       -- A refused SetFont changed nothing: record no font, so the next apply tries again and a restore has no font
       -- to put back. (On a fresh client launch the bundled font file is not loaded yet when the load-time labels
       -- are shown, and hundreds are refused; Render.retryFonts retries them.)
@@ -93,7 +97,10 @@ function SurfaceState.apply(surface, key, text, font)
     rec.fs:SetFont(rec.font.path, rec.font.size, rec.font.flags)
     rec.appliedFont = nil
   end
+  local t0, k0
+  if P then t0, k0 = P.start("write.settext") end
   rec.fs:SetText(text)
+  if P then P.stop("write.settext", t0, k0) end
   rec.applied = text
   rec.last = { text = text, font = font }
   return true, fontOk

@@ -167,6 +167,8 @@ end
 -- line came out the other way on every refresh and flickered. A second Show here makes the count even, so every
 -- refresh ends on the same line breaks. [likely: the tooltip trace in game, Forever 1.60.1.70205; in-game check in
 -- docs/testing/strategy.md]
+local lastPassAt = setmetatable({}, { __mode = "k" }) -- a comparison tooltip → the frame stamp of its last pass
+
 local function refitFor(frame)
   local fn = refits[frame]
   if fn then return fn end
@@ -1441,6 +1443,11 @@ function Tooltip.init()
         local main = Compat.get(DECLARE, "GameTooltip")
         if frame ~= main then
           WFJ.Perf.count(inRefit[main] and "tooltip.item.inMainRedraw" or "tooltip.item.onItsOwn")
+          -- a rebuild in the same frame as this tooltip's last one: only the frame's last pass is ever seen
+          local now = Compat.resolve("GetTime")
+          now = type(now) == "function" and now() or nil
+          if now ~= nil and lastPassAt[frame] == now then WFJ.Perf.count("tooltip.item.sameFrame") end
+          lastPassAt[frame] = now
         end
         WFJ.Perf.call("tooltip.item", Tooltip.onItem, frame)
       end

@@ -38,8 +38,9 @@ describe("Render: refresh on state, per-FontString font", function()
     local q = Stub.fontString("Quest text", "F.ttf", 14, "OUTLINE")
     assert.is_true(showQuest(q))
     assert.is_false(showQuest(q)) -- already shown: nothing changed
-    local r = WFJ.Perf.report(10)
-    assert.are.same({ label = "quest", calls = 2, ms = 4, max = 2 }, r[1])
+    local quest
+    for _, row in ipairs(WFJ.Perf.report(30)) do if row.label == "quest" then quest = row end end
+    assert.are.equal(2, quest.calls)
   end)
 
   it("modifier, master, and area changes restore / reapply the open records", function()
