@@ -1191,6 +1191,8 @@ end
 local COMPARE_HEADER_KEYS = { "EQUIPPED", "IF_EQUIPPED_TOGETHER" }
 Tooltip.COMPARE_HEADER_KEYS = COMPARE_HEADER_KEYS
 function Tooltip.onCompareShow(frame)
+  local main = Compat.get(DECLARE, "GameTooltip")
+  WFJ.Perf.count(inRefit[main] and "tooltip.compare.inMainRedraw" or "tooltip.compare.onItsOwn")
   local index = WFJ.UIIndex
   if inRefit[frame] or not index or not Tooltip.itemOf(frame) then return 0 end
   local surface, refit, n = surfaceOf(frame), refitFor(frame), 0
@@ -1432,6 +1434,11 @@ function Tooltip.init()
         or "GetItem")
       if frame then
         WFJ.Perf.count("tooltip.item." .. frame:GetName()) -- which tooltip the pass was for
+        -- and whether it ran inside our redraw of the main tooltip (its Show) or on the client's own
+        local main = Compat.get(DECLARE, "GameTooltip")
+        if frame ~= main then
+          WFJ.Perf.count(inRefit[main] and "tooltip.item.inMainRedraw" or "tooltip.item.onItsOwn")
+        end
         WFJ.Perf.call("tooltip.item", Tooltip.onItem, frame)
       end
     end)
