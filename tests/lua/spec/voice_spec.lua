@@ -130,6 +130,8 @@ describe("Core/Voice: the pack registry and the decision", function()
 
     it("a greeting plays the first time, is remembered by key and Japanese hash, and stays quiet after", function()
       assert.is_string((V.decide("gossip", "greeting", "gossip", G)))
+      assert.are.same({}, heard) -- deciding records nothing: the player marks a line once it has started
+      V.markHeard("gossip", "greeting", "gossip", G)
       assert.are.same({ ["g-" .. G] = WFJ.Hash.key(DATA.gossip[G].ja) }, heard)
       assert.are.same({ nil, "heard" }, { V.decide("gossip", "greeting", "gossip", G) })
       assert.are.same({ nil, "heard" }, { V.decide("dialogueui.gossip", "greeting", "gossip", G) })
@@ -145,31 +147,50 @@ describe("Core/Voice: the pack registry and the decision", function()
     it("a greeting whose Japanese changed plays once more and the record takes the new hash", function()
       heard["g-" .. G] = WFJ.Hash.key("an older Japanese")
       assert.is_string((V.decide("gossip", "greeting", "gossip", G)))
+      V.markHeard("gossip", "greeting", "gossip", G)
       assert.are.equal(WFJ.Hash.key(DATA.gossip[G].ja), heard["g-" .. G])
     end)
 
     it("off: a greeting plays every time; quest lines play every time unless their own setting is on", function()
       settings["voice.greetingOnce"] = false
-      assert.is_string((V.decide("gossip", "greeting", "gossip", G)))
-      assert.is_string((V.decide("gossip", "greeting", "gossip", G)))
+      for _ = 1, 2 do
+        assert.is_string((V.decide("gossip", "greeting", "gossip", G)))
+        V.markHeard("gossip", "greeting", "gossip", G)
+      end
       assert.are.same({}, heard)
-      assert.is_string((V.decide("questframe.detail", "description", "quest.description", 2)))
-      assert.is_string((V.decide("questframe.detail", "description", "quest.description", 2)))
+      for _ = 1, 2 do
+        assert.is_string((V.decide("questframe.detail", "description", "quest.description", 2)))
+        V.markHeard("questframe.detail", "description", "quest.description", 2)
+      end
       settings["voice.questOnce"] = true
       assert.is_string((V.decide("questframe.detail", "description", "quest.description", 2)))
+      V.markHeard("questframe.detail", "description", "quest.description", 2)
       assert.are.same({ nil, "heard" }, { V.decide("dialogueui.detail", "description", "quest.description", 2) })
     end)
 
-    it("books and the greeting's own off switch are not changed by it", function()
+    it("the greeting's own off switch is not changed by it", function()
       settings["voice.greeting"] = false
       assert.are.same({ nil, "off" }, { V.decide("gossip", "greeting", "gossip", G) })
       assert.are.same({}, heard)
     end)
 
+    it("books play every time and are never recorded, whatever the first time only settings say", function()
+      local B = "1122334455667788"
+      DATA.book = { [B] = { ja = "古い本の一頁。", status = "." } }
+      settings["voice.books"], settings["voice.questOnce"] = true, true
+      V.register(pack({ ["b-" .. B] = entry("b-" .. B .. ".mp3", DATA.book[B].ja, 3) }))
+      for _ = 1, 2 do
+        assert.is_string((V.decide("itemtext", "page", "book", B)))
+        V.markHeard("itemtext", "page", "book", B)
+      end
+      assert.are.same({}, heard)
+      DATA.book = nil
+    end)
+
     it("the record holds only pack keys and 16-hex hashes", function()
-      V.decide("gossip", "greeting", "gossip", G)
+      V.markHeard("gossip", "greeting", "gossip", G)
       settings["voice.questOnce"] = true
-      V.decide("questframe.detail", "description", "quest.description", 2)
+      V.markHeard("questframe.detail", "description", "quest.description", 2)
       for k, v in pairs(heard) do
         assert.is_truthy(k:match("^g%-%x+$") or k:match("^%d+%-%a+$"), k)
         assert.is_truthy(type(v) == "string" and #v == 16 and v:match("^%x+$"), k)
@@ -531,7 +552,7 @@ describe("UI/VoicePlayer: playing the pack's line in the quest window (voice pan
   end)
 
   describe("the English voice muted as the window opens", function()
-    it("a window whose line will be read turns the English voice off at the event, before its text is written", function()
+    it("a window whose line will be read turns the English voice off at the event, before its text", function()
       Stub.fireAll("QUEST_DETAIL")
       assert.are.equal("0", cvars.Sound_EnableDialog) -- the NPC's greeting starts as the window opens
       assert.are.equal(0, #sounds)
@@ -582,6 +603,82 @@ describe("UI/VoicePlayer: playing the pack's line in the quest window (voice pan
       S.set("voice.muteDialog", false)
       Stub.fireAll("QUEST_DETAIL")
       assert.are.equal("1", cvars.Sound_EnableDialog)
+    end)
+
+    it("another translated line (a tooltip, the window's title) does not give the mute back", function()
+      Stub.fireAll("QUEST_DETAIL")
+      WFJ.State.fire("lineShown", "tooltip", "1", "ui", "ITEM_LEVEL") -- a line no voice kind covers
+      WFJ.State.fire("lineShown", "questframe.detail", "title", "quest.title", 2)
+      assert.are.equal("0", cvars.Sound_EnableDialog)
+      Stub.showDetail()
+      assert.are.equal(1, #sounds)
+    end)
+
+    describe("NPC greetings", function()
+      local G = "0a044ece3562b58d"
+      local text
+      before_each(function()
+        text = "Greetings, traveller."
+        DATA.gossip = { [G] = { ja = "ようこそ、旅の方。", status = "." } }
+        _G.C_GossipInfo = { GetText = function() return text end }
+        WFJ.ShippedGossipKey = function(t) return t == "Greetings, traveller." and G or nil end
+        local lines = packLines()
+        lines["g-" .. G] = { "g-" .. G .. ".mp3", WFJ.Hash.key(DATA.gossip[G].ja), 2 }
+        WFJ.Voice.register({ format = 1, folder = "WoWForeverJapanese_Voice", lines = lines })
+      end)
+      after_each(function()
+        DATA.gossip, _G.C_GossipInfo, WFJ.ShippedGossipKey = nil, nil, nil
+      end)
+
+      it("the gossip window and the quest greeting window mute the English as they open", function()
+        Stub.fireAll("GOSSIP_SHOW")
+        assert.are.equal("0", cvars.Sound_EnableDialog)
+        runTimers()
+        assert.are.equal("1", cvars.Sound_EnableDialog)
+        Stub.greeting = "Greetings, traveller."
+        Stub.fireAll("QUEST_GREETING")
+        assert.are.equal("0", cvars.Sound_EnableDialog)
+      end)
+
+      it("a greeting heard before, or one with no Japanese or no text yet, keeps the NPC's English", function()
+        db.voiceHeard = { ["g-" .. G] = WFJ.Hash.key(DATA.gossip[G].ja) } -- greetings once is on by default
+        Stub.fireAll("GOSSIP_SHOW")
+        assert.are.equal("1", cvars.Sound_EnableDialog)
+        db.voiceHeard = {}
+        text = "Some other greeting."
+        Stub.fireAll("GOSSIP_SHOW")
+        assert.are.equal("1", cvars.Sound_EnableDialog)
+        text = ""
+        Stub.fireAll("GOSSIP_SHOW")
+        assert.are.equal("1", cvars.Sound_EnableDialog)
+      end)
+    end)
+
+    it("a line counts as heard only once it has started: a refused file stays new", function()
+      S.set("voice.questOnce", true)
+      willPlay = false
+      Stub.showDetail()
+      assert.is_nil(db.voiceHeard and db.voiceHeard["2-description"])
+      willPlay = true
+      Stub.showDetail()
+      assert.is_string(db.voiceHeard["2-description"])
+    end)
+
+    it("a window whose text is not translated (its area switched off) keeps the NPC's English", function()
+      WFJ.State.setArea("quests", false)
+      Stub.fireAll("QUEST_DETAIL")
+      assert.are.equal("1", cvars.Sound_EnableDialog)
+      WFJ.State.setArea("quests", true)
+    end)
+
+    it("a line laid out again while it plays is not stopped by having been heard", function()
+      S.set("voice.questOnce", true)
+      Stub.showDetail()
+      assert.are.equal("2-description", WFJ.VoicePlayer.current())
+      -- the client lays it out again
+      WFJ.VoicePlayer.onShown("questframe.detail", "description", "quest.description", 2)
+      assert.are.equal("2-description", WFJ.VoicePlayer.current())
+      assert.are.equal(1, #sounds)
     end)
 
     it("never mutes ahead while English is showing", function()

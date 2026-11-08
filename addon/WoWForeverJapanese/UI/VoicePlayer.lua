@@ -164,6 +164,10 @@ end
 -- → the window name a surface's lines belong to (for /wfj debug and the specs)
 function VoicePlayer.windowOf(surface) return windowOf(surface) end
 
+local ahead -- the token of a mute taken as a window opened, while its line has not started
+local aheadTokens = 0
+local aheadWindow -- the window that mute was taken for: only its own line not playing gives it back
+
 -- Puts the dialog channel back if this addon turned it off. → true when it did
 function VoicePlayer.restoreDialog()
   ahead = nil
@@ -183,13 +187,10 @@ local function muteDialog()
   return true
 end
 
-local ahead -- the token of a mute taken as a window opened, while its line has not started
-local aheadTokens = 0
-
 -- The mute taken ahead goes back, unless a line is playing (that line holds it until it ends).
 local function giveBack()
   if not ahead then return end
-  ahead = nil
+  ahead, aheadWindow = nil, nil
   if not playing then VoicePlayer.restoreDialog() end
 end
 
@@ -311,6 +312,7 @@ startHead = function()
   Q.paused = false
   local started = play(item.path, item.seconds, item.key, item.window, true)
   if started and last[item.window] then last[item.window].shown = item.shown end
+  if started and item.shown then WFJ.Voice.markHeard(unpack(item.shown)) end
   if not started then -- the client refused the file: drop it and go on
     Q.pop()
     if Q.current() then return startHead() end
@@ -334,13 +336,18 @@ function VoicePlayer.onShown(surface, recKey, kind, id)
   local window = windowOf(surface)
   local path, detail = WFJ.Voice.decide(surface, recKey, kind, id, speaker(window)) -- detail: length, or why not
   if not path and detail == "heard" then
-    -- heard before (first time only): it stays quiet, and the window's button reads this line on a click
+    -- heard before (first time only): it stays quiet, and the window's button reads this line on a click. The same
+    -- line laid out again while it plays (the gossip window lays its first window out twice) goes on.
+    local key = WFJ.Voice.packKey(kind, id)
+    if playing and playing.key == key then return false end
+    if ahead and window == aheadWindow then giveBack() end
     if not queueOn() and playing and playing.window == window then VoicePlayer.stop() end
-    last[window] = { key = WFJ.Voice.packKey(kind, id), shown = { surface, recKey, kind, id } }
+    last[window] = { key = key, shown = { surface, recKey, kind, id } }
     showButton(window, false)
     return false
   end
-  if not path and ahead then giveBack() end -- the window's line will not play
+  -- the window's voiced line will not play; another translated line (a tooltip, the window's title) changes nothing
+  if not path and ahead and detail ~= "kind" and window == aheadWindow then giveBack() end
   if not path then
     -- a new voiced line of this window that will not play (no file, its kind switched off, English showing): the
     -- button must not replay the previous line over it. An unvoiced line of the window ("kind": a title) leaves it.
@@ -371,7 +378,10 @@ function VoicePlayer.onShown(surface, recKey, kind, id)
     return false
   end
   local started = play(path, detail, key, window)
-  if started then last[window].shown = { surface, recKey, kind, id } end -- re-asked before a replay
+  if started then
+    last[window].shown = { surface, recKey, kind, id } -- re-asked before a replay
+    WFJ.Voice.markHeard(surface, recKey, kind, id)
+  end
   return started
 end
 
@@ -565,7 +575,7 @@ local function readable(v)
   return type(v) == "string" and v ~= "" and not (type(isSecret) == "function" and isSecret(v))
 end
 
--- The line the window an event opens will show → surface, record key, kind, id; or nil when it has none
+-- The line the window an event opens will show → surface, record key, kind, id and its area; or nil when it has none
 local function opening(event)
   if event == "GOSSIP_SHOW" or event == "QUEST_GREETING" then
     local text
@@ -578,7 +588,7 @@ local function opening(event)
     end
     local key = readable(text) and type(WFJ.ShippedGossipKey) == "function" and WFJ.ShippedGossipKey(text) or nil
     if not key then return nil end
-    return event == "GOSSIP_SHOW" and "gossip" or "questframe.greeting", "greeting", "gossip", key
+    return event == "GOSSIP_SHOW" and "gossip" or "questframe.greeting", "greeting", "gossip", key, "gossip"
   end
   local q = QUEST_EVENTS[event]
   if not q then return nil end
@@ -590,7 +600,7 @@ local function opening(event)
   if readable(en) and WFJ.QuestFrame and type(WFJ.QuestFrame.fieldSource) == "function" then
     kind, keyId = WFJ.QuestFrame.fieldSource(id, q[2], en)
   end
-  return q[1], q[2], kind, keyId
+  return q[1], q[2], kind, keyId, "quests"
 end
 
 -- An NPC window is opening: the English greeting has just started. When the window's line will be read aloud, the
@@ -598,13 +608,13 @@ end
 -- AHEAD_SECONDS when no line started.
 function VoicePlayer.onWindowEvent(event)
   if not ready or playing then return false end
-  local surface, recKey, kind, id = opening(event)
-  if not surface then return false end
+  local surface, recKey, kind, id, area = opening(event)
+  if not surface or not WFJ.State.areaEnabled(area) then return false end -- an area off renders no Japanese
   if not WFJ.Voice.decide(surface, recKey, kind, id, speaker(windowOf(surface)), "ahead") then return false end
   if not muteDialog() then return false end
   aheadTokens = aheadTokens + 1
   local token = aheadTokens
-  ahead = token
+  ahead, aheadWindow = token, windowOf(surface)
   trace("ahead", { key = WFJ.Voice.packKey(kind, id), token = token }, { event = event })
   local timer = Compat.resolve("C_Timer")
   if type(timer) == "table" and type(timer.After) == "function" then

@@ -198,9 +198,21 @@ end
 -- → the file's path and its length in seconds, or nil and why ("kind" · "off" · "english" · "nopack" · "missing" ·
 -- "stale" · "notext" · "heard"). `peek`: only asking (the replay button), so /wfj debug's counts are left as they are;
 -- "ahead": only asking whether the line will play when its window opens (a line heard before will not).
-function Voice.decide(surface, recKey, kind, id, who, peek)
+-- → the setting that turns a surface's record key off (a record key's trailing page number is its kind's), or nil
+local function kindSettingOf(surface, recKey)
   local byKey = Voice.KINDS[surface]
-  local kindSetting = byKey and (byKey[recKey] or (type(recKey) == "string" and byKey[(recKey:gsub("%d+$", ""))]))
+  return byKey and (byKey[recKey] or (type(recKey) == "string" and byKey[(recKey:gsub("%d+$", ""))])) or nil
+end
+
+-- → the account's record of lines heard, when the kind is kept to its first hearing, else nil
+local function heardRecord(kindSetting)
+  local once = Voice.ONCE[kindSetting]
+  local seen = once and setting(once) and type(deps.heard) == "function" and deps.heard() or nil
+  return type(seen) == "table" and seen or nil
+end
+
+function Voice.decide(surface, recKey, kind, id, who, peek)
+  local kindSetting = kindSettingOf(surface, recKey)
   if not kindSetting then return nil, "kind" end
   if not setting("voice.enabled") or not setting(kindSetting) then return nil, "off" end
   if (type(deps.enabled) == "function" and not deps.enabled())
@@ -220,17 +232,25 @@ function Voice.decide(surface, recKey, kind, id, who, peek)
     if not peek then Voice.counts.stale = Voice.counts.stale + 1 end
     return nil, "stale"
   end
-  -- first time only: a line heard with this Japanese stays quiet; one rewritten since counts as new. Only asking (the
-  -- play button, the queue's re-check) is never stopped and never records.
-  local once = Voice.ONCE[kindSetting]
-  local seen = once and setting(once) and type(deps.heard) == "function" and deps.heard() or nil
-  if type(seen) == "table" and peek ~= true then
-    if seen[key] == entry.jaHash then return nil, "heard" end
-    if not peek then seen[key] = entry.jaHash end
-  end
+  -- first time only: a line heard with this Japanese stays quiet; one rewritten since counts as new. The play button
+  -- and the queue's re-check (peek true) are never stopped by it. The record is written by markHeard, once the line
+  -- has started: a line decided but never played (refused, cleared from the queue) stays new.
+  local seen = peek ~= true and heardRecord(kindSetting) or nil
+  if seen and seen[key] == entry.jaHash then return nil, "heard" end
   if not peek then Voice.counts.matched = Voice.counts.matched + 1 end
   local file, seconds = fileFor(entry, who)
   return "Interface\\AddOns\\" .. entry.folder .. "\\Sound\\" .. file, seconds
+end
+
+-- A line has started playing: when its kind is kept to its first hearing, it is recorded as heard with the hash of
+-- the Japanese it was made from. → true when recorded
+function Voice.markHeard(surface, recKey, kind, id)
+  local seen = heardRecord(kindSettingOf(surface, recKey))
+  local key = seen and Voice.packKey(kind, id)
+  local entry = key and lines and lines[key]
+  if not entry then return false end
+  seen[key] = entry.jaHash
+  return true
 end
 
 -- → whether a pack carries the character's error lines for this race and sex ("tauren", 3 = female)

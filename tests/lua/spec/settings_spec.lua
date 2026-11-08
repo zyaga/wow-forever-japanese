@@ -21,7 +21,7 @@ local DEFAULTS = { enabled = true, modifier = "alt", ["area.quests"] = true, ["a
   ["voice.greeting"] = true, ["voice.books"] = true, ["voice.errors"] = true, ["voice.muteDialog"] = true,
   ["voice.questOnce"] = false, ["voice.greetingOnce"] = true, -- quest lines every time, a greeting the first time
   ["voice.button"] = true, -- on, but listed only while a voice pack is installed
-  -- the voice panel: Full, Parchment, keep reading, head, controls on mouse-over, fade, dim in combat, quest log on
+  -- the voice panel: Full, Parchment, keep reading, head, controls on mouse-over, fade, dim in combat
   ["voice.panel.size"] = "full", ["voice.panel.style"] = "parchment", ["voice.panel.keep"] = true,
   ["voice.panel.head"] = true, ["voice.panel.hoverButtons"] = true, ["voice.panel.fade"] = true,
   ["voice.panel.combatDim"] = true, ["voice.panel.lock"] = false,

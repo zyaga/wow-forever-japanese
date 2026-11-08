@@ -412,7 +412,7 @@ describe("the voice player with the voice panel on", function()
 
   it("the whole-text button opens the addon's own window, never Blizzard's quest log, and prints nothing", function()
     -- the quest log opened from addon code taints the map's quest fields and the tracker until a reload, and the next
-    -- world map open in combat is blocked (in game: the book press at 22:07:02, the blocked quest pins at 22:14:34)
+    -- world map open in combat is blocked
     local opened
     _G.C_QuestLog = { GetLogIndexForQuestID = function(id) return id == 2 and 1 or nil end } -- the quest is in the log
     _G.QuestMapFrame_OpenToQuestDetails = function(id) opened = id end
