@@ -202,6 +202,39 @@ describe("UI/TaintWatch", function()
     _G.ObjectiveTrackerFrame, _G.QuestObjectiveTracker = nil, nil
   end)
 
+  it("a clicked quest block also logs a tainted title button, quest cache entry or global the click reads", function()
+    local hooked = {}
+    _G.hooksecurefunc = function(t, m, fn)
+      if type(t) == "table" then hooked[(t.name or "?") .. ":" .. m] = fn end
+    end
+    _G.C_Timer = { NewTicker = function() end }
+    _G.ObjectiveTrackerFrame = { name = "ObjectiveTrackerFrame", UpdateTopPadding = function() end,
+      MarkDirty = function() end }
+    _G.QuestObjectiveTracker = { name = "QuestObjectiveTracker", OnBlockHeaderClick = function() end }
+    local quest = { isAutoComplete = false, CheckRefresh = function() end, IsComplete = function() end }
+    _G.QuestCache = { objects = { [93949] = quest }, Get = function() return quest end }
+    _G.QuestMapFrame_OpenToQuestDetails = function() end
+    TW.init()
+    local click = hooked["QuestObjectiveTracker:OnBlockHeaderClick"]
+    local button = { OnClick = function() end }
+    local block = { id = 93949, OnHeaderClick = function() end, parentModule = _G.QuestObjectiveTracker,
+      HeaderButton = button }
+    click(_G.QuestObjectiveTracker, block)
+    assert.are.equal(0, #entriesOf("write"))
+    taint.OnClick = { t = button, by = "WoWForeverJapanese" }
+    taint.isAutoComplete = { t = quest, by = "WoWForeverJapanese" }
+    taint.QuestMapFrame_OpenToQuestDetails = { t = _G, by = "WoWForeverJapanese" }
+    click(_G.QuestObjectiveTracker, block)
+    local msgs = {}
+    for _, e in ipairs(entriesOf("write")) do msgs[#msgs + 1] = e.msg end
+    local all = table.concat(msgs, "\n")
+    assert.is_truthy(all:find("QuestObjectiveTracker block.HeaderButton.OnClick", 1, true))
+    assert.is_truthy(all:find("QuestCache.objects[93949].isAutoComplete", 1, true))
+    assert.is_truthy(all:find("QuestMapFrame_OpenToQuestDetails", 1, true))
+    _G.ObjectiveTrackerFrame, _G.QuestObjectiveTracker, _G.QuestCache = nil, nil, nil
+    _G.QuestMapFrame_OpenToQuestDetails = nil
+  end)
+
   it("a block in combat queues its scan until combat is over", function()
     local fighting = true
     _G.InCombatLockdown = function() return fighting end
