@@ -342,6 +342,34 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
 
+### 1.60.1.70790 → 1.60.1.70862 (2026-11-08)
+
+The build the WFJScan sweep and its slow recheck ran on, read from the caches the client saved at its last exit
+(2026-11-07). One pin, `forever_BUILD`, covers the tables and the quest cache. Quest cache: 3,527 records, read with
+the 69913 payload layout, pinned again for 70862; 1,395 quest ids it holds that 70790's cache did not, and 10 that
+70790's held and this one does not answer (not answered on this build, their English and Japanese kept,
+[ADR-050](../adr/050-english-is-additive.md)). Client tables: 62, with the hotfix cache of that exit. The wago.tools
+cross-check (product `wowf`): no value differs; the rows wago has and ours lacks are in sections the client cannot
+decrypt yet (ItemSparse 26, Spell and SpellName 359, ItemEffect 24, QuestV2 12, GlobalStrings 1, SpellItemEnchantment
+1); QuestV2's highest id 99,670. The UI extract (fresh community listfile, every `interface/addons` path): 4,494 files,
+8 changed from 70790 (gamepad navigation and login-screen handling in the barber shop, the subscription panel, the
+social toast and the character select screen), none renamed a frame the addon uses; two modules' source line
+citations follow the moved lines. The served-text inventory: no column added or gone, row counts only. `make
+family-rows`: 58 new BroadcastText rows, all NPC lines, given `gossip`.
+
+The English came from Forever's own import (`make import-client CLIENT=forever`, then `make import-served`): the full
+`make import-english` put Classic Era's English back on 1,130 lines whose Forever text an earlier hotfix cache
+carried. The English Collector file: 11 gossip lines, quest 92753's progress and the game's newer wording of quest
+141's turn-in; its three lines recorded with "skyborne" written out before the race-word fix were dropped again.
+
+| Type | Reworded (shipped line now stale) | English the build no longer serves (stays stale, listed) | Drafted |
+|---|---|---|---|
+| quest | 4 machine lines (1425 title; 17, 2202, 6134 descriptions) redrafted; 6134's old accepted variant ruled `reject` (the game now speaks of centaur ghosts); 141 turn-in (hand-written) kept | 18: the turn-ins and progress texts of quests Forever now serves under these ids whose turn-in the cache has not seen (8384, 8386, 8389, 8390, 8431, 8432, 1191, 1878, 841, 2882, and the Darkmoon Faire turn-ins 7882, 7890, 7895, 7899, 7900) | 240 quests' descriptions, 240 objectives, 226 titles, 1 progress; word lists for all, and for 25 lines of those quests that started shipping |
+| gossip | 0 | none | 24, with word lists; 2 place names kept as written (ruled accept) |
+| item | 4 machine items redrafted; 15 hand-written items reviewed (`apply_review`): 1 kept, 14 corrected (four describe a different effect now: 13213, 13966, 1490, 13243) | 8 hand-written items | 287 descriptions |
+| spell | 14 machine lines redrafted; 7 re-verified unchanged (only a number placeholder changed: 467, 782, 1075, 5487, 8914, 9756, 9910) | none | 6 descriptions, 14 auras |
+| objective, area, book | 1 objective redrafted | none | 40 objectives (20 mount names listed in `pipeline/objective_names.txt`), 10 areas; the 11 book pages are images or a name and dates, nothing to translate |
+
 ### 1.60.1.70790 to 1.60.1.70862, six players' sends (2026-11-08)
 
 Not a re-pull: six players' collector sends, issues #78, #80, #81, #82, #83 and #84, all checked `collector-ok` and
