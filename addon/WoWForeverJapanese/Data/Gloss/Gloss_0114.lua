@@ -939,6 +939,7 @@ WFJ.Data.add("gloss", {
   [114936] = "荷車\tにぐるま\tcart (wagon)",
   [114937] = "荷車\tにぐるま\tcarts",
   [114938] = "荷車\tにぐるま\twagons",
+  [114939] = "荷造りする\tにづくりする\thave packed",
   [114940] = "荷造りする\tにづくりする\tpacked",
   [114941] = "荷運び\tにはこび\tporters (carrying loads)",
   [114942] = "荷降ろし\tにおろし\tunloading",

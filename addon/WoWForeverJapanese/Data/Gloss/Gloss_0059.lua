@@ -482,6 +482,7 @@ WFJ.Data.add("gloss", {
   [59480] = "噴き出す\tふきだす\tspews forth",
   [59481] = "噴き出す\tふきだす\tsprays",
   [59482] = "噴き出す\tふきだす\tspurted (let)",
+  [59483] = "噴く\tふく\tspit (spout)",
   [59484] = "噴く\tふく\tspouting (bubbly)",
   [59485] = "噴く\tふく\twent off (火を噴く: spew fire)",
   [59486] = "噴出\tふんしゅつ\toutbreak",

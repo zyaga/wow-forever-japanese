@@ -446,6 +446,7 @@ WFJ.Data.add("gloss", {
   [56444] = "台地\tだいち\tmesa",
   [56445] = "台地\tだいち\tmesa (plateau)",
   [56446] = "台地\tだいち\tplateau",
+  [56447] = "台地\tだいち\tplateaus",
   [56448] = "台地\tだいち\trise (plateau)",
   [56449] = "台地\tだいち\trise; plateau",
   [56450] = "台帳\tだいちょう\tledger",

@@ -73,6 +73,7 @@ WFJ.Data.add("gloss", {
   [126071] = "起こす\tおこす\tcascade into (cause)",
   [126072] = "起こす\tおこす\tcause",
   [126073] = "起こす\tおこす\tcaused",
+  [126074] = "起こす\tおこす\tcausin'",
   [126075] = "起こす\tおこす\tcausing",
   [126076] = "起こす\tおこす\tcock",
   [126077] = "起こす\tおこす\tdo (cause)",

@@ -208,6 +208,7 @@ WFJ.Data.add("gloss", {
   [65205] = "守り抜く\tまもりぬく\tmust ensure the survival (defend to the end)",
   [65206] = "守り抜く\tまもりぬく\tprotect (to the end)",
   [65207] = "守り抜く\tまもりぬく\tprotect to the end",
+  [65208] = "守り抜く\tまもりぬく\tsaved (defended to the end)",
   [65209] = "守り抜く\tまもりぬく\tyou just need to protect (to the end)",
   [65210] = "守り立つ\tまもりたつ\tstand guard over",
   [65211] = "守り続ける\tまもりつづける\tare protecting",

@@ -487,6 +487,7 @@ WFJ.Data.add("gloss", {
   [5485] = "お借りする\tおかりする\tborrow",
   [5486] = "お偉方\tおえらがた\tbigwigs",
   [5487] = "お偉方\tおえらがた\tofficials (bigwigs)",
+  [5488] = "お偉方\tおえらがた\tthe powers that be",
   [5489] = "お側\tおそば\tat your side",
   [5490] = "お元気\tおげんき\thow are you (well)",
   [5491] = "お元気\tおげんき\twell",

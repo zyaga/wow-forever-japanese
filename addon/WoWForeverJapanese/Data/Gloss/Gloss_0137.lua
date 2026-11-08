@@ -794,6 +794,7 @@ WFJ.Data.add("gloss", {
   [137792] = "騒ぎ\tさわぎ\tfoolishness (commotion)",
   [137793] = "騒ぎ\tさわぎ\tmess (commotion)",
   [137794] = "騒ぎ\tさわぎ\tnoise (commotion)",
+  [137795] = "騒ぎ\tさわぎ\truckus",
   [137796] = "騒ぎ\tさわぎ\tstrife (commotion)",
   [137797] = "騒ぎ\tさわぎ\tthings (commotion)",
   [137798] = "騒ぎ\tさわぎ\ttrouble",

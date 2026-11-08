@@ -549,6 +549,7 @@ WFJ.Data.add("gloss", {
   [111549] = "考える\tかんがえる\twould think",
   [111550] = "考え中\tかんがえちゅう\tthinking",
   [111551] = "考え事\tかんがえごと\treflection (thinking)",
+  [111552] = "考え事\tかんがえごと\tthink (thinking)",
   [111553] = "考え事\tかんがえごと\tthinking",
   [111554] = "考え事\tかんがえごと\tthought",
   [111555] = "考え出す\tかんがえだす\tcan devise",

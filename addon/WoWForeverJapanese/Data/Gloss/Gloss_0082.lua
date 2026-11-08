@@ -465,6 +465,7 @@ WFJ.Data.add("gloss", {
   [82463] = "振り返る\tふりかえる\tlooking back",
   [82464] = "振り返る\tふりかえる\treflect",
   [82465] = "振り返る\tふりかえる\treflect on",
+  [82466] = "振り返る\tふりかえる\treflect upon",
   [82467] = "振り返る\tふりかえる\tturn away (look back)",
   [82468] = "振り返る\tふりかえる\tturns",
   [82469] = "振る\tふる\t(I've been) spurned",

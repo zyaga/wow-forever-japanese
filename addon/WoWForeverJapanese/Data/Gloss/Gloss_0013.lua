@@ -274,6 +274,7 @@ WFJ.Data.add("gloss", {
   [13271] = "そういう\tそういう\tthat (kind)",
   [13272] = "そういう\tそういう\tthat (such)",
   [13273] = "そういう\tそういう\tthat kind of",
+  [13274] = "そういう\tそういう\tthat sort",
   [13275] = "そういう\tそういう\tthat sort of",
   [13276] = "そういう\tそういう\tthat type of",
   [13277] = "そういう\tそういう\tthat's how",

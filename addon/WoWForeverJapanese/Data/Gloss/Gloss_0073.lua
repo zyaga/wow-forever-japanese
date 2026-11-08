@@ -837,6 +837,7 @@ WFJ.Data.add("gloss", {
   [73838] = "怖い\tこわい\twas scary",
   [73839] = "怖いもの\tこわいもの\tthings to fear",
   [73840] = "怖がらせる\tこわがらせる\talarm (frighten)",
+  [73841] = "怖がらせる\tこわがらせる\tscare",
   [73842] = "怖がらせる\tこわがらせる\tscaring",
   [73843] = "怖がらせる\tこわがらせる\tto scare",
   [73844] = "怖がる\tこわがる\t(are) scared",

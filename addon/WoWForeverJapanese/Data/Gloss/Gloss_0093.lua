@@ -507,6 +507,7 @@ WFJ.Data.add("gloss", {
   [93504] = "殺す\tころす\tmust cut down (must kill)",
   [93505] = "殺す\tころす\tmust kill",
   [93506] = "殺す\tころす\tmust slay",
+  [93507] = "殺す\tころす\tneed to die (must kill)",
   [93508] = "殺す\tころす\tneed to kill",
   [93509] = "殺す\tころす\tno kill (don't kill)",
   [93510] = "殺す\tころす\tplease destroy (kill)",

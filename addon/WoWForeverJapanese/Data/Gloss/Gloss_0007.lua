@@ -342,6 +342,7 @@ WFJ.Data.add("gloss", {
   [7339] = "くるくる\tくるくる\tcurly (curling)",
   [7340] = "くるくる\tくるくる\tround and round",
   [7341] = "くるぶし叩き\tくるぶしたたき\tankle-bashers",
+  [7342] = "くれぐれも\tくれぐれも\t(be sure)",
   [7343] = "くれぐれも\tくれぐれも\tplease (be sure to)",
   [7344] = "くれてやる\tくれてやる\tI shall give",
   [7345] = "くれてやる\tくれてやる\tI will give",

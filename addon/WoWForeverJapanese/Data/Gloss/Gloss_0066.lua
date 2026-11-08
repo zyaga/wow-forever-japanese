@@ -545,6 +545,7 @@ WFJ.Data.add("gloss", {
   [66544] = "寂しい\tさびしい\twill miss (be lonely)",
   [66545] = "寂しい\tさびしい\twill miss (feel lonely)",
   [66546] = "寂しい\tさびしい\twill miss (will be lonely)",
+  [66547] = "寄こす\tよこす\tgive (send)",
   [66548] = "寄こす\tよこす\thas sent",
   [66549] = "寄こす\tよこす\thave sent",
   [66550] = "寄こす\tよこす\tsend",
