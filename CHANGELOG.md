@@ -10,15 +10,17 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Added
-- More NPC lines and quest texts in Japanese, with word cards, from players' English Collector sends: eighteen NPC lines from the Durotar Supply and Logistics quartermaster in Orgrimmar, Cairne Bloodhoof welcoming the Windshapers to Thunder Bluff, the transmogrifier, three Orgrimmar shopkeepers and a trainer, and nine quest progress and turn-in texts (two library book turn-ins, two Orgrimmar herb quests and a camping quest); then about 75 more NPC lines, many on Zephras Isle and in the High Order's story, and 16 more quest progress and turn-in texts. Two item tooltips have Japanese too.
+- More NPC lines and quest texts in Japanese, with word cards, from players' English Collector sends: eighteen NPC lines from the Durotar Supply and Logistics quartermaster in Orgrimmar, Cairne Bloodhoof welcoming the Windshapers to Thunder Bluff, the transmogrifier, three Orgrimmar shopkeepers and a trainer, and nine quest progress and turn-in texts (two library book turn-ins, two Orgrimmar herb quests and a camping quest); then about 75 more NPC lines, many on Zephras Isle and in the High Order's story, and 16 more quest progress and turn-in texts; then 42 more NPC lines and 9 more quest progress and turn-in texts from six more sends. Two item tooltips have Japanese too.
 
 ### Changed
-- Two quest turn-in texts follow the game's current wording in Japanese and no longer show the stale marker.
+- Twelve quest progress and turn-in texts follow the game's current wording in Japanese and no longer show the stale marker.
 - The profession window's recipe description and its Filter button are in Japanese. Profession, recipe and item names stay English.
 - With Dialogue UI installed, an item's Use: and Equip: lines in its item tooltip, a quest tag that appears a moment after the page, and its quest-complete flyout are in Japanese.
 
 ### Fixed
 - Skyborne characters now see the Japanese of lines that name their race (they showed English before), and the race shows as "Skyborne".
+- Voice lines no longer stop abruptly: every line ends with a short pause, and the lines whose last sound was cut short are made again.
+- About 75 voice lines that ran on into nonsense partway through (the Deviate Eradication quest's offer among them) are made again.
 
 ## 0.11.0 - 2026-11-08
 
