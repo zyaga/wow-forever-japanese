@@ -13851,6 +13851,7 @@
 {"key": "g-80e880a103255e38", "speaker": 11615, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-8112d9b1d6e4385d", "speaker": 14305, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-81583f70f34b8885", "speaker": 10305, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
+{"key": "g-816f8556ee4fcfc9", "speaker": 68, "others": [267007], "provenance": {"source": "collector@1.60.1.70790", "imported": "2026-11-08"}}
 {"key": "g-816f8b0e4261e1bc", "speaker": 11037, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-81abfaca788c5358", "speaker": 14845, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}
 {"key": "g-81b973d7766921e2", "speaker": 10305, "provenance": {"source": "vmangos@13b49dc", "imported": "2026-10-06"}}

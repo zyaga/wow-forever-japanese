@@ -26,10 +26,10 @@ or Japanese)
 | | In Japanese |
 |---|---|
 | Quests | 5,068 |
-| NPC dialogue lines | 11,380 |
+| NPC dialogue lines | 11,382 |
 | Book pages | 923 |
 | Letter pages | 209 |
-| Item tooltips | 10,915 |
+| Item tooltips | 10,916 |
 | Spell tooltips | 20,346 |
 | UI | 16,115 |
 
@@ -266,10 +266,10 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 | | 日本語化済み |
 |---|---|
 | クエスト | 5,068 |
-| NPC の会話 | 11,380 行 |
+| NPC の会話 | 11,382 行 |
 | 本 | 923 ページ |
 | 手紙 | 209 ページ |
-| アイテムのツールチップ | 10,915 |
+| アイテムのツールチップ | 10,916 |
 | 呪文のツールチップ | 20,346 |
 | UI | 16,115 |
 

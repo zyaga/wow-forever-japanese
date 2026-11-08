@@ -600,4 +600,5 @@ WFJ.Data.add("gloss", {
   [145597] = "込める\tこめる\tload",
   [145598] = "長弓\tちょうきゅう\tlongbow",
   [145599] = "顔つき\tかおつき\tlook (on one's face)",
+  [145600] = "トランスモグリファイア\tトランスモグリファイア\ttransmogrifier (the appearance-changing service)",
 })
