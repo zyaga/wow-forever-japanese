@@ -1,0 +1,185 @@
+-- Core/Perf.lua: how long the addon's write paths take, added up per label per frame, so a lag report comes with the
+-- surface that caused it (docs/systems/diagnostics.md). A label is a surface name or a tooltip pass, never game text.
+-- Pure: the clock (milliseconds), collectgarbage (called with "count", KB), the frame stamp (constant within one frame)
+-- and the trail are injected by Main; without a clock every call is a no-op. Nothing allocates per call, and nothing
+-- runs on its own: a frame's totals are looked at when the first timed call of a later frame stops, or when the taint
+-- watch asks for the trail (Perf.flush).
+local _, WFJ = ...
+local Perf = {}
+WFJ.Perf = Perf
+
+Perf.SLOW_MS = 8 -- half of a 60 fps frame: one label taking this long in one frame is felt as a hitch
+
+local deps = {}
+local session = {} -- label → { calls, ms, max, kb }
+local frame = {} -- label → { ms, kb, calls } for the frame being counted (rows are reused, zeroed on flush)
+local ran = {} -- the labels with a row in use this frame, in the order they first ran
+local last = {} -- the previous flushed frame's labels, to tell a repeat of the same frame from a new one
+local lastLine
+local depth = {} -- label → open calls; only the outermost one counts, so a pass that calls itself counts once
+local opened = {} -- label → the frame its outermost call opened in
+local current
+
+local saved -- the deps while timing is switched off (/wfj perf off): every call is a no-op until it is back on
+
+function Perf.setDeps(d)
+  deps = d or {}
+  saved = nil
+end
+
+-- Timing on or off for this session (/wfj perf off measures the addon with no timing at all). → true when on
+function Perf.setEnabled(on)
+  if on and saved then
+    deps, saved = saved, nil
+  elseif not on and not saved then
+    saved, deps = deps, {}
+  end
+  return saved == nil
+end
+
+local function mem()
+  return deps.mem and deps.mem("count") or 0
+end
+
+-- The frame's line for the trail: its labels in order, the same string again for a frame that ran the same labels
+-- (a hovered item refreshing), so the taint watch counts it in place instead of filling its ring. The idle.*
+-- labels (the work that runs with no window: every event, every frame) stay out of it: they would put a line after
+-- nearly every event and halve the ring's history. They stay in the totals and the slow log. → line | nil
+local shown = {}
+local function trailLine()
+  local n = 0
+  for i = 1, #ran do
+    if ran[i]:sub(1, 5) ~= "idle." then
+      n = n + 1
+      shown[n] = ran[i]
+    end
+  end
+  for i = #shown, n + 1, -1 do shown[i] = nil end
+  if n == 0 then return nil end
+  local same = n == #last
+  for i = 1, n do
+    if shown[i] ~= last[i] then same = false end
+    last[i] = shown[i]
+  end
+  for i = #last, n + 1, -1 do last[i] = nil end
+  if not same or not lastLine then lastLine = table.concat(shown, " ") end
+  return lastLine
+end
+
+-- Looks at the frame counted so far: a label that took SLOW_MS or more in it is logged, the frame's labels go to the
+-- trail, and the rows are zeroed for the next frame.
+local function logSlow(label, row)
+  local ms, kb = math.floor(row.ms * 10 + 0.5) / 10, math.floor(row.kb + 0.5)
+  local e = WFJ.Diag.log("slow", label, { ms = ms, kb = kb, calls = row.calls })
+  if e and (e.n or 1) > 1 and ms > (e.ms or 0) then e.ms, e.kb, e.calls = ms, kb, row.calls end
+end
+
+function Perf.flush()
+  if #ran == 0 then return end
+  for _, label in ipairs(ran) do
+    local row = frame[label]
+    -- the log and the trail are diagnostics: a failure there must never reach the write that was timed
+    if row.ms >= Perf.SLOW_MS and WFJ.Diag then pcall(logSlow, label, row) end
+  end
+  local line = trailLine()
+  -- the rows are cleared before the trail runs: the trail writes the ring, which settles this frame again
+  for i = #ran, 1, -1 do
+    local row = frame[ran[i]]
+    row.ms, row.kb, row.calls = 0, 0, 0
+    ran[i] = nil
+  end
+  if line and deps.trail then pcall(deps.trail, line) end
+end
+
+-- A frame that has ended goes to the trail now, before anything else is written to the ring after it (the taint
+-- watch calls this on every line it adds), so the ring keeps the order things ran in.
+function Perf.settle()
+  if #ran == 0 or not deps.frame then return end
+  if deps.frame() ~= current then Perf.flush() end
+end
+
+-- Opens a timed call of `label`. → the clock and memory at the start (nil when there is no clock)
+function Perf.start(label)
+  if not deps.clock then return nil end
+  local stamp = deps.frame and deps.frame()
+  local d = depth[label] or 0
+  if d > 0 and opened[label] ~= stamp then d = 0 end -- a call that raised in an earlier frame never closed
+  if d == 0 then opened[label] = stamp end
+  depth[label] = d + 1
+  return deps.clock(), mem()
+end
+
+-- Closes the call `start` opened; the outermost one adds its time and allocation to the label.
+function Perf.stop(label, t0, k0)
+  if t0 == nil or not deps.clock then return end
+  local d = (depth[label] or 1) - 1
+  depth[label] = d > 0 and d or 0
+  if d > 0 then return end
+  local ms = deps.clock() - t0
+  local kb = mem() - (k0 or 0)
+  if kb < 0 then kb = 0 end -- the collector ran during the call
+  local stamp = opened[label] -- the outermost call opened in this frame
+  if stamp ~= current then
+    Perf.flush()
+    current = stamp
+  end
+  local row = frame[label]
+  if not row then
+    row = { ms = 0, kb = 0, calls = 0 }
+    frame[label] = row
+  end
+  if row.calls == 0 then ran[#ran + 1] = label end
+  row.ms, row.kb, row.calls = row.ms + ms, row.kb + kb, row.calls + 1
+  local s = session[label]
+  if not s then
+    s = { calls = 0, ms = 0, max = 0, kb = 0 }
+    session[label] = s
+  end
+  s.calls, s.ms, s.kb = s.calls + 1, s.ms + ms, s.kb + kb
+  if ms > s.max then s.max = ms end
+end
+
+-- One event or pass counted under `label`, with no time of its own: how often something happens, beside how long the
+-- timed passes take (the tooltip comparison event).
+function Perf.count(label)
+  local t0, k0 = Perf.start(label)
+  Perf.stop(label, t0, k0)
+end
+
+-- `fn(...)` timed under `label`. → fn's first result (every timed path returns at most one value)
+function Perf.call(label, fn, ...)
+  local t0, k0 = Perf.start(label)
+  local r = fn(...)
+  Perf.stop(label, t0, k0)
+  return r
+end
+
+-- `fn` timed under `label`, for a callback whose result nobody reads (a tooltip post-call). → the timed function
+function Perf.wrap(label, fn)
+  return function(...) Perf.call(label, fn, ...) end
+end
+
+-- The session's labels by total time, at most `n`. → { { label, calls, ms, max, kb }, … }
+function Perf.report(n)
+  local out = {}
+  for label, s in pairs(session) do
+    out[#out + 1] = { label = label, calls = s.calls, ms = s.ms, max = s.max, kb = s.kb }
+  end
+  table.sort(out, function(a, b) return a.ms > b.ms end)
+  for i = #out, (n or 10) + 1, -1 do out[i] = nil end
+  return out
+end
+
+-- The session's top `n` labels as one line each ("label calls ms max kb"), joined by " | ": the log keeps it at logout,
+-- so the timing of a whole session is there after a /reload with nothing typed.
+function Perf.summary(n)
+  local parts = {}
+  for _, r in ipairs(Perf.report(n)) do
+    parts[#parts + 1] = ("%s %d %.1f %.1f %d"):format(r.label, r.calls, r.ms, r.max, math.floor(r.kb + 0.5))
+  end
+  return table.concat(parts, " | ")
+end
+
+function Perf.reset()
+  session = {}
+end

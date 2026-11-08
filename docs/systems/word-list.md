@@ -133,7 +133,7 @@ The list can also be studied in game, one card at a time, on an FSRS-6 schedule 
 ## Invariants
 - No English game text is stored or shown: the list holds the shipped Japanese, readings, meanings (a class or race card's English name is the meaning its card already shows), Japanese quest titles and source keys (a gossip or book key is a hash, not text). [Principle 3](../architecture/principles.md#3-japanese-by-default-english-one-key-away).
 - Entries are keyed by source and dictionary form, never by position. [Principle 5](../architecture/principles.md#5-every-translation-is-keyed-by-the-game).
-- The cover never takes clicks: the save click is read by polling, so every click, drag and wheel scroll reaches the frame it reached before. A press that ends after the cover moved (a window dragged by its text, the voice panel) is a drag, not a save.
+- The cover never takes clicks (its clicks are off and passed on to its parent, the frame the text sits in): the save click is read by polling, so every click, drag and wheel scroll reaches the frame it reached before. A press that ends after the cover moved (a window dragged by its text, the voice panel) is a drag, not a save.
 - One screenshot at a time: a save while one is still waiting for the client's answer takes none and prints at once. The file is named after the time of the capture, not of the answer. A wait the client never answers ends after 5 seconds: the card comes back, the line prints, and the next save can take a screenshot again.
 - A failed load never replaces the saved list, and a list from a newer version is never written.
 - The addon never reads the Screenshots folder and never writes a file of its own; the player moves the text and the images.

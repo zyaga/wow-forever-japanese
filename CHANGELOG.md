@@ -9,6 +9,15 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Fixed
+- Hovering items no longer stalls the game, most of all with comparison tooltips open: an item's tooltip took up to a tenth of a second each time it refreshed. Many windows' text is matched faster for the same reason.
+- Menus that redraw when you click in them (the auction house filter menu, for one) keep their Japanese readable. Before, a checkbox click could turn a heading into empty boxes.
+- No more "attempt to compare a secret value" Lua warnings from the addon's chat and tooltip text, which could repeat hundreds of times in a session.
+- Clicking a search box (the auction house, your bags, the quest log, the spellbook and the other windows with one) works while its placeholder shows in Japanese. Before, the word card's hover area over the placeholder caught the click, and you had to hold the English key to click into the box.
+
+### Added
+- The addon's problem log now records how long its own work takes in each window and which of its parts ran just before the game blocked an action, and checks the bag windows for anything it touched by mistake. `/wfj perf` shows the slowest parts. Nothing changes on screen; this is so lag and blocked-action reports can be traced to their cause.
+
 ## 0.10.1 - 2026-11-07
 
 ### Changed

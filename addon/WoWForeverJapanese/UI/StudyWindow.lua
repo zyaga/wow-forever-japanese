@@ -345,7 +345,7 @@ local function startTicker()
   if ticker then return end
   local timer = Compat.resolve("C_Timer")
   if type(timer) ~= "table" or type(timer.NewTicker) ~= "function" then return end
-  ticker = timer.NewTicker(StudyWindow.TICK, function() StudyWindow.refresh() end)
+  ticker = timer.NewTicker(StudyWindow.TICK, WFJ.Perf.wrap("idle.study.tick", function() StudyWindow.refresh() end))
 end
 
 local function stopTicker()

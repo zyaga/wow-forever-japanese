@@ -248,13 +248,27 @@ Render.recentErrors = 0
 -- Only a write the client asked for (Render.show) records the line; a refresh (the reveal key released, a setting
 -- switched) re-writes every applied record in no particular order and would reorder the list and bring back lines
 -- of windows closed long ago. A refresh records a record only the first time it applies it.
+-- The same line written again with the same text within a second (a comparison tooltip the client rebuilds a few times
+-- each refresh) is noted once: the note walks the fix window's list, and in game it was a fifth of a tooltip's time.
+local NOTE_AGAIN = 1 -- seconds
+local notedText, notedAt = {}, {} -- surface → { key → the text last noted, and when }
 local function noteRecent(rec, text, fromShow)
   local R = WFJ.RecentLines
   if not R then return end
   if not fromShow and rec.recentNoted then return end
   rec.recentNoted = true
+  local now = type(GetTime) == "function" and GetTime() or nil
+  local texts, ats = notedText[rec.surface], notedAt[rec.surface]
+  if not texts then
+    texts, ats = {}, {}
+    notedText[rec.surface], notedAt[rec.surface] = texts, ats
+  end
   local m = rec.meta or {}
-  local ok = pcall(R.note, m.kind, m.id, rec.surface, text, type(GetTime) == "function" and GetTime() or nil)
+  -- the same line of the same entry: an equal Japanese of another item on the same row is a line of its own
+  local noted = tostring(m.id) .. "\0" .. text
+  if now ~= nil and texts[rec.key] == noted and ats[rec.key] and now - ats[rec.key] < NOTE_AGAIN then return end
+  texts[rec.key], ats[rec.key] = noted, now
+  local ok = pcall(R.note, m.kind, m.id, rec.surface, text, now)
   if not ok then Render.recentErrors = Render.recentErrors + 1 end
 end
 
@@ -311,7 +325,7 @@ end
 -- ctx: { lines = {...} (tooltip align gate), nameScope = <the name line>, refit = function() tooltip:Show() end,
 --        follow = <primary key>, live = <the API English> (quest surfaces: the live check),
 --        args, compact = true for a row or fixed-size widget that never carries the missing marker } (all optional)
-function Render.show(surface, key, fs, en, area, kind, id, ctx)
+local function show(surface, key, fs, en, area, kind, id, ctx)
   -- Main guards each init step, so surfaces install their hooks even when Render.init failed. Asserting here would
   -- turn one load failure into an error on every hover and window open; nothing to render against renders nothing.
   if not translator then return false end
@@ -329,6 +343,23 @@ function Render.show(surface, key, fs, en, area, kind, id, ctx)
     pcall(WFJ.State.fire, "lineShown", surface, key, m.kind, m.id)
   end
   return changed
+end
+
+-- A record still showing our text whose font the client put back: a menu refresh sets each FontString to its default
+-- font object and runs the initializers again with the text left as it was (blizzard_menu/menu.lua ReinitializeFrame,
+-- compositor.lua:66-74), so the Japanese would sit in a face without its letters. → true when our face went back on
+function Render.keepFont(surface, key)
+  local rec = SS.get(surface, key)
+  if not rec or rec.applied == nil or not rec.appliedFont or type(rec.fs.GetFont) ~= "function" then return false end
+  local path = rec.fs:GetFont()
+  if path == nil or SS.secret(path) or path == rec.appliedFont.path then return false end
+  rec.appliedFont = nil
+  return (sync(rec)) == true
+end
+
+-- The public entry: `show`, timed under its surface (Core/Perf).
+function Render.show(surface, key, fs, en, area, kind, id, ctx)
+  return WFJ.Perf.call(surface, show, surface, key, fs, en, area, kind, id, ctx)
 end
 
 -- Re-resolves every live record (one surface, or all). Returns the number of writes.
@@ -366,7 +397,7 @@ function Render.retryFonts()
   return n
 end
 
-function Render.refresh(surface)
+local function refresh(surface)
   if not translator then return 0 end
   local n = 0
   local function walk(s)
@@ -396,13 +427,29 @@ function Render.refresh(surface)
   end
   return n
 end
+-- Every open record again (the reveal key, a setting, the master switch), timed as "refresh" (Core/Perf).
+function Render.refresh(surface)
+  return WFJ.Perf.call("refresh", refresh, surface)
+end
 
 local function detachAll(surface)
   for _, rec in pairs(SS.records(surface)) do readings("detach", rec) end
 end
 
+-- A surface the client rebuilt with the same English it had before (a comparison tooltip is rebuilt a few times per
+-- refresh): each record whose widget shows its English again gets its Japanese back, with no lookup and no match.
+-- → lines written
+function Render.reapply(surface)
+  local n = 0
+  for _, rec in pairs(SS.records(surface)) do
+    if SS.rewrite(rec) then n = n + 1 end
+  end
+  return n
+end
+
 function Render.release(surface)
   detachAll(surface)
+  notedText[surface], notedAt[surface] = nil, nil -- the window closed: its lines are noted afresh next time
   local n = SS.release(surface)
   updateBanner(surface)
   return n

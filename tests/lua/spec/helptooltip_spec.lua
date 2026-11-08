@@ -43,6 +43,20 @@ describe("UI/HelpTooltip", function()
     assert.are.equal(WFJ.Font.PATH, (left(1):GetFont()))
   end)
 
+  it("times each walk as help, counting a walk inside a walk once", function()
+    local ms = 0
+    WFJ.Perf.setDeps({ clock = function() ms = ms + 1; return ms end, frame = function() return 1 end })
+    hover(owner, "Character Info |cffffd200(C)|r", "Information about your character.")
+    local help
+    for _, row in ipairs(WFJ.Perf.report(10)) do if row.label == "help" then help = row end end
+    assert.is_truthy(help and help.calls >= 1)
+    local before = help.calls
+    assert.is_true(WFJ.HelpTooltip.walkAs(tt, { only = { "CHARACTER_BUTTON" } }) >= 0)
+    for _, row in ipairs(WFJ.Perf.report(10)) do if row.label == "help" then help = row end end
+    assert.are.equal(before + 1, help.calls) -- walkAs runs walk inside it: one pass
+    WFJ.Perf.setDeps({})
+  end)
+
   it("refits with one Show() only when a pass changed a line", function()
     hover(owner, "Character Info", "Information about your character.")
     local before = tt.calls.Show

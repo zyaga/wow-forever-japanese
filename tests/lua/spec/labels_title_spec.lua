@@ -49,6 +49,16 @@ describe("Labels.title", function()
       assert.are.equal("メール送信", text())
     end)
 
+  it("times each label show under its surface", function()
+    local ms = 0
+    WFJ.Perf.setDeps({ clock = function() ms = ms + 3; return ms end, frame = function() return 1 end })
+    frame:SetTitle("Inbox")
+    assert.are.equal(1, WFJ.Labels.title("t", frame))
+    local row = WFJ.Perf.report(10)[1]
+    assert.are.same({ "t", 1 }, { row.label, row.calls }) -- Render.show inside it is the same surface: one pass
+    WFJ.Perf.setDeps({})
+  end)
+
   it("hooks a frame once, however often it is asked, and returns the current title's 1 | 0", function()
     assert.are.equal(0, WFJ.Labels.title("t", frame)) -- an empty title
     frame:SetTitle("Inbox")

@@ -123,7 +123,7 @@ end
 -- that is a dictionary line (a locked calendar event's title around the title the player typed).
 -- → 1 when the widget holds a dictionary word (shown or already ours), else 0; and a record from an earlier text on
 -- that key is dropped, never restored over the client's text.
-function Labels.show(surface, recKey, widget, refit, opts)
+local function show(surface, recKey, widget, refit, opts)
   local fs = Labels.widget(widget)
   local index = WFJ.UIIndex
   local allowForbidden = opts and opts.evenForbidden and opts.only
@@ -139,7 +139,10 @@ function Labels.show(surface, recKey, widget, refit, opts)
     return 0
   end
   local rec = WFJ.SurfaceState.get(surface, recKey)
-  if rec and rec.fs == fs and rec.applied ~= nil and en == rec.applied then return 1 end -- still our Japanese
+  if rec and rec.fs == fs and rec.applied ~= nil and en == rec.applied then -- still our Japanese
+    WFJ.Render.keepFont(surface, recKey) -- unless the client put its own font back under it
+    return 1
+  end
   local key, args
   if type(en) == "string" and en ~= "" then
     if opts and opts.only then key, args = index:matchOnly(en, opts.only) else key, args = index:match(en) end
@@ -156,6 +159,11 @@ function Labels.show(surface, recKey, widget, refit, opts)
   local ctx = (refit or args) and { refit = refit, args = args } or nil
   WFJ.Render.show(surface, recKey, fs, en, "ui", "ui", key, ctx)
   return 1
+end
+
+-- The public entry: `show`, timed under its surface (Core/Perf).
+function Labels.show(surface, recKey, widget, refit, opts)
+  return WFJ.Perf.call(surface, show, surface, recKey, widget, refit, opts)
 end
 
 -- ADR-038: a composite line a surface split itself: a log line with a time suffix, a combat-text trailer, a

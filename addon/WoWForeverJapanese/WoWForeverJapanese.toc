@@ -1773,6 +1773,7 @@ Core\RecentLines.lua
 Core\Reports.lua
 Core\ReportText.lua
 Core\Diag.lua
+Core\Perf.lua
 Core\BugReport.lua
 UI\Font.lua
 UI\Frames.lua

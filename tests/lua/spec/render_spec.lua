@@ -29,6 +29,38 @@ describe("Render: refresh on state, per-FontString font", function()
     return R.show("quest", "description", fs, fs:GetText(), "quests", "quest", id or 1)
   end
 
+  it("a line rewritten again within a second is noted for the fix window once; later it is noted again", function()
+    local noted, now = 0, 100
+    WFJ.RecentLines = { note = function() noted = noted + 1 end }
+    _G.GetTime = function() return now end
+    local q = Stub.fontString("Quest text", "F.ttf", 14, "OUTLINE")
+    for _ = 1, 4 do -- the client rewrites the English and we show the Japanese, four times in one second
+      q:SetText("Quest text")
+      assert.is_true(showQuest(q))
+      now = now + 0.2
+    end
+    assert.are.equal(1, noted)
+    now = now + 1
+    q:SetText("Quest text")
+    showQuest(q)
+    assert.are.equal(2, noted)
+    WFJ.RecentLines = nil
+  end)
+
+  it("times each show under its surface and returns what it returned before", function()
+    local ns = {}
+    H.loadPure("Core/Perf.lua", "WoWForeverJapanese", ns)
+    WFJ.Perf = ns.Perf
+    local ms = 0
+    WFJ.Perf.setDeps({ clock = function() ms = ms + 2; return ms end, frame = function() return 1 end })
+    local q = Stub.fontString("Quest text", "F.ttf", 14, "OUTLINE")
+    assert.is_true(showQuest(q))
+    assert.is_false(showQuest(q)) -- already shown: nothing changed
+    local quest
+    for _, row in ipairs(WFJ.Perf.report(30)) do if row.label == "quest" then quest = row end end
+    assert.are.same({ 2, 4, 2 }, { quest.calls, quest.ms, quest.max }) -- two shows, the clock 2 ms on per read
+  end)
+
   it("modifier, master, and area changes restore / reapply the open records", function()
     local q = Stub.fontString("Quest text", "F.ttf", 14, "OUTLINE")
     local g = Stub.fontString("Hello", "F.ttf", 12, "")

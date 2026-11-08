@@ -240,7 +240,12 @@ describe("Saving a word", function()
       S.set("words.saveClick", v)
       click("生き物", { ctrl = true })
     end
-    assert.are.same({}, mouseCalls)
+    -- the only mouse calls a cover makes turn its clicks off and pass them to what is under it
+    for _, c in ipairs(mouseCalls) do
+      local ok = (c[2] == "SetMouseClickEnabled" and c[3] == false)
+        or (c[2] == "SetPropagateMouseClicks" and c[3] == true)
+      assert.is_true(ok, c[2] .. "(" .. tostring(c[3]) .. ")")
+    end
   end)
 
   it("a quest-window line keyed by its English is a quest source with no quest id", function()

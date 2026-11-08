@@ -111,8 +111,8 @@ describe("UI/TaintWatch", function()
     assert.are.equal("WFJ_DB", scan.globals)
     assert.is_true(TW.onBlocked())
     assert.is_false(TW.onBlocked())
-    assert.are.equal(2, entriesOf("taint")[1].n) -- the slash scan and the first block's (one clock second)
-    assert.are.equal(2, entriesOf("context")[1].n) -- every block counts on the first block's entry
+    assert.are.equal(2, #entriesOf("taint")) -- the slash scan and the block's, each its own entry
+    assert.are.equal(1, #entriesOf("context")) -- a repeat of the same block reads the ring no more
     _G.WFJ_DB = nil
   end)
 
@@ -232,5 +232,88 @@ describe("UI/TaintWatch", function()
     assert.is_truthy(w[1].msg:find("^ObjectiveTrackerFrame%.dirty"))
     assert.is_truthy(w[1].stack:find("Blizzard_X", 1, true))
     _G.ObjectiveTrackerFrame = nil
+  end)
+  it("keeps 200 lines; the addon's own passes go in as \"wfj <label>\", a run of the same one as one ×n line",
+    function()
+      assert.are.equal(200, TW.RING)
+      TW.onEvent("BAG_UPDATE", 0)
+      TW.trail("items")
+      TW.trail("items")
+      TW.trail("items")
+      TW.trail("bags")
+      TW.onEvent("ITEM_LOCK_CHANGED")
+      TW.trail("bags")
+      local lines = {}
+      for line in TW.events():gmatch("[^\n]+") do lines[#lines + 1] = line end
+      assert.are.same({ "10:00:00 BAG_UPDATE 0", "10:00:00 wfj items ×3", "10:00:00 wfj bags",
+        "10:00:00 ITEM_LOCK_CHANGED", "10:00:00 wfj bags" }, lines)
+    end)
+
+  it("scans once for each different block, and a repeat of the same block scans no more", function()
+    local first = { msg = "UseContainerItem() <ContainerFrame.lua:1611>" }
+    local other = { msg = "Button:SetPassThroughButtons() <MapCanvas_DataProviderBase.lua:290>" }
+    assert.is_true(TW.onBlocked(first))
+    assert.is_false(TW.onBlocked(first))
+    assert.is_true(TW.onBlocked(other))
+    -- one scan runs for the blocks queued before it, each different block keeps its own events
+    local contexts = entriesOf("context")
+    assert.are.equal(2, #contexts)
+    assert.are.equal("events before " .. first.msg, contexts[1].msg)
+    assert.are.equal("events before " .. other.msg, contexts[2].msg)
+    assert.is_string(contexts[2].events)
+  end)
+
+  it("a frame of the addon's passes goes in before the events that came after it", function()
+    local now = 1
+    WFJ.Perf.setDeps({ clock = function() return 0 end, frame = function() return now end, trail = TW.trail })
+    local t0 = WFJ.Perf.start("bags")
+    WFJ.Perf.stop("bags", t0, 0)
+    now = 2 -- the frame is over; the next thing in the ring is a game event
+    TW.onEvent("BAG_UPDATE", 0)
+    local lines = {}
+    for line in TW.events():gmatch("[^\n]+") do lines[#lines + 1] = line end
+    assert.are.same({ "10:00:00 wfj bags", "10:00:00 BAG_UPDATE 0" }, lines)
+    WFJ.Perf.setDeps({})
+  end)
+
+  it("a tainted writer that runs again is only counted: its stack and events are kept from the first time", function()
+    taint.showAllButtons = { t = _G.MultiBarLeft, by = "WoWForeverJapanese" }
+    local reads = 0
+    local events = TW.events
+    TW.events = function() reads = reads + 1; return events() end
+    for _ = 1, 5 do TW.wrote("MultiBarLeft.showAllButtons", _G.MultiBarLeft, "showAllButtons") end
+    TW.events = events
+    local w = entriesOf("write")
+    assert.are.same({ 1, 5, 1 }, { #w, w[1].n, reads })
+  end)
+
+  it("the scan walks the bag frames and every table the addon's declarations resolved to", function()
+    local button = { bagID = 0 }
+    _G.ContainerFrame1 = { Items = { button } }
+    local declared = { name = "SomeWindow", note = 1 }
+    _G.SomeWindow = declared
+    WFJ.Compat.declare("demo", "window", { "SomeWindow" })
+    assert.are.equal(declared, WFJ.Compat.get("demo", "window"))
+    taint.bagID = { t = button, by = "WoWForeverJapanese" }
+    taint.note = { t = declared, by = "WoWForeverJapanese" }
+    assert.are.equal(2, TW.scan("slash"))
+    local scan = entriesOf("taint")[1].fields
+    assert.is_truthy(scan:find("ContainerFrame1.Items[1].bagID (WoWForeverJapanese)", 1, true))
+    assert.is_truthy(scan:find("demo.window.note (WoWForeverJapanese)", 1, true))
+    _G.ContainerFrame1, _G.SomeWindow = nil, nil
+  end)
+
+  it("a value the bag item click reads that turns tainted is logged with the events before it", function()
+    _G.MerchantFrame = { selectedTab = 1 }
+    TW.fields = nil
+    assert.are.equal(0, TW.checkFields("load"))
+    taint.MerchantFrame = { by = "WoWForeverJapanese" }
+    taint.selectedTab = { t = _G.MerchantFrame, by = "WoWForeverJapanese" }
+    assert.are.equal(2, TW.checkFields("timer"))
+    local msgs = {}
+    for _, e in ipairs(entriesOf("turned")) do msgs[#msgs + 1] = e.msg end
+    table.sort(msgs)
+    assert.are.same({ "MerchantFrame", "MerchantFrame.selectedTab" }, msgs)
+    _G.MerchantFrame = nil
   end)
 end)

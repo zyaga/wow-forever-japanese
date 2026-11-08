@@ -291,8 +291,14 @@ local function coverFor(fs)
   -- a cover inside a Blizzard ResizeLayout frame must never count toward its size
   -- [verified: forever mainline blizzard_sharedxml/layoutframe.lua:28, :37 (region.ignoreInLayout)]
   cover.ignoreInLayout = true
-  -- the text under the cover keeps its own mouse motion, and the cover never takes clicks
+  -- the text under the cover keeps its own mouse motion, and the cover never takes clicks: its clicks are off and
+  -- passed on to its parent, the frame the text sits in, so a search box behind its placeholder ("Search") still
+  -- takes the click. Both calls are protected in combat, like the motion one, and a cover is only made out of combat
+  -- [verified: forever blizzard_apidocumentationgenerated/simplescriptregionapidocumentation.lua:631, :677]. The save
+  -- click is read by polling the button (View.poll), never from a click event, so it keeps working.
   if cover.SetPropagateMouseMotion then cover:SetPropagateMouseMotion(true) end
+  if cover.SetMouseClickEnabled then cover:SetMouseClickEnabled(false) end
+  if cover.SetPropagateMouseClicks then cover:SetPropagateMouseClicks(true) end
   cover.fs, cover.tints = fs, {}
   cover:SetScript("OnEnter", onEnter)
   cover:SetScript("OnLeave", onLeave)

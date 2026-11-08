@@ -438,10 +438,11 @@ function Index:keyOnlyWord(key)
   return true
 end
 
-function Index:core(text, allow)
+-- `list` (optional): the templates to try, in the index's order (matchOnly passes only its keys' templates).
+function Index:core(text, allow, list)
   local key = self:exactKey(text)
   if key and (allow and allow(key) or (not allow and not self:keyOnlyWord(key))) then return key, nil end
-  for _, t in ipairs(self.templates) do
+  for _, t in ipairs(list or self.templates) do
     if (allow and allow(t.key) or (not allow and not t.only))
         and (t.word == "" or text:find(t.word, 1, true)) then
       local caps = { text:match(t.pattern) }
@@ -761,9 +762,9 @@ function Index.formatArgs(_, key, en, ...) -- called as index:formatArgs; the in
   return args
 end
 
--- A list-shaped `only` as a set, built once per list table: the lists are module constants (filled at file load,
--- never changed after their first use), and matchOnly runs per tooltip line, every frame on the clock and the unit
--- frames.
+-- A key list's set, kept per list table as a shortcut to the one set with its contents (below): matchOnly runs per
+-- tooltip line, every frame on the clock and the unit frames. A list is read once, at its first use, so a caller
+-- never changes it after.
 local onlySets = setmetatable({}, { __mode = "k" })
 local setNames = setmetatable({}, { __mode = "k" }) -- a key set → does it name a restricted / numbered key
 -- Lines matchOnly found no key for, per `only` set: the per-frame tooltips repeat the same unmatched lines (a time,
@@ -771,15 +772,30 @@ local setNames = setmetatable({}, { __mode = "k" }) -- a key set → does it nam
 -- kept on the index (a rebuilt index starts empty) and dropped whole when it grows past MISS_LIMIT.
 local MISS_LIMIT = 512
 
--- `keys` as a set: a set as given, a list through onlySets. → set
+-- One set per distinct list of keys, found by its contents: many callers build their `only` list inside the function
+-- they run per hover or per frame, and the answers below are cached per set, so a set per list table matched every
+-- such line from scratch (in game, most of an item tooltip's time). Bounded by the distinct key lists in the code.
+local setsByContent = {}
+
+-- `keys` (a list, or a set { KEY = true }) as the one set with its contents. → set
 local function asSet(keys)
-  if keys[1] == nil then return keys end
   local set = onlySets[keys]
+  if set then return set end
+  local names = {}
+  if keys[1] == nil then
+    for k in pairs(keys) do names[#names + 1] = tostring(k) end
+  else
+    for _, k in ipairs(keys) do names[#names + 1] = tostring(k) end
+  end
+  table.sort(names)
+  local id = table.concat(names, "\0")
+  set = setsByContent[id]
   if not set then
     set = {}
-    for _, k in ipairs(keys) do set[k] = true end
-    onlySets[keys] = set
+    for _, k in ipairs(names) do set[k] = true end
+    setsByContent[id] = set
   end
+  onlySets[keys] = set
   return set
 end
 
@@ -1060,13 +1076,22 @@ function Index:matchOnly(text, keys)
   -- the first template to match can be a longer one outside the set ("Level 60 Wind Serpent" is
   -- COMMUNITY_MEMBER_CHARACTER_INFO_FORMAT "Level %d %s %s" before UNIT_TYPE_LEVEL_TEMPLATE "Level %d %s"), which
   -- would shadow the allowed key. Retry the templates of the allowed keys only.
-  key, args = self:core(text, allowed)
+  -- only the templates of the set's keys, in the index's order: the same answer, without asking each of the
+  -- index's templates whether it is allowed (in game a line no cache had seen cost about 0.3 ms that way)
+  local mine = self.onlyTemplates and self.onlyTemplates[set]
+  if not mine then
+    mine = {}
+    for _, t in ipairs(self.templates) do if allowed(t.key) then mine[#mine + 1] = t end end
+    self.onlyTemplates = self.onlyTemplates or setmetatable({}, { __mode = "k" })
+    self.onlyTemplates[set] = mine
+  end
+  key, args = self:core(text, allowed, mine)
   if key and allowed(key) then return key, args end
   -- a key-only template granted `wrapped` ("|cff808080Macros (Macro)|r", clickbindings.lua
   -- :199–211; "%s Specific" in the layout menus); the unrestricted match above never sees it
   open, inner, close = text:match("^(|c%x%x%x%x%x%x%x%x)(.-)(%s*|r%s*)$")
   if open then
-    key, args = self:core(inner, allowed)
+    key, args = self:core(inner, allowed, mine)
     if key and allowed(key) and self:has(key, "wrapped") then
       return key, { form = "wrapped", open = open, close = close, inner = args }
     end

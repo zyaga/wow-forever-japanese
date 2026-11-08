@@ -384,7 +384,8 @@ end
 local function knownNames(eventArgs)
   local names, seen = {}, {}
   local function add(n)
-    if type(n) == "string" and n ~= "" and not secret(n) and not seen[n] then seen[n] = true; names[#names + 1] = n end
+    -- secret first: a secret value can be neither compared nor used as a key
+    if type(n) == "string" and not secret(n) and n ~= "" and not seen[n] then seen[n] = true; names[#names + 1] = n end
   end
   local sender = type(eventArgs) == "table" and eventArgs[2] or nil
   add(sender)
@@ -448,11 +449,14 @@ function ChatSystem.fit(line, fontObject)
   if size == nil then return nil end
   local _, _, flags = line:GetFont()
   flags = flags or ""
-  if type(line.GetStringHeight) ~= "function" or room <= 0 then return size end
+  -- a line the client lays out while it may not be read (its height a secret value) keeps the size as it is
+  if type(line.GetStringHeight) ~= "function" or secret(room) or room <= 0 then return size end
   -- shrink only when the Japanese takes an extra line (its string height passes the room by more than half a line):
   -- the bundled face's line is a few pixels taller than the chat font's, and shrinking for that alone made
   -- one-line Japanese smaller than the English around it (seen in game)
-  while size > MIN_SIZE and line:GetStringHeight() > room + size * 0.5 do
+  while size > MIN_SIZE do
+    local h = line:GetStringHeight()
+    if secret(h) or h <= room + size * 0.5 then break end
     size = size - 1
     line:SetFont(WFJ.Font.PATH, size, flags)
   end

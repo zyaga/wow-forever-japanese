@@ -41,6 +41,8 @@ local function walkFlyout(tt)
 end
 TooltipData.walkFlyout = walkFlyout
 
+local function timed(label, fn) return WFJ.Perf.wrap(label, fn) end -- a post-call timed under `label` (Core/Perf)
+
 -- → true when the post-calls were registered
 function TooltipData.init()
   local processor = Compat.resolve("TooltipDataProcessor")
@@ -49,15 +51,19 @@ function TooltipData.init()
   if type(processor) ~= "table" or type(processor.AddTooltipPostCall) ~= "function" or type(types) ~= "table" then
     return false
   end
-  if types.Currency ~= nil then processor.AddTooltipPostCall(types.Currency, walk) end
-  if types.Mount ~= nil then processor.AddTooltipPostCall(types.Mount, walk) end
-  if types.CompanionPet ~= nil then processor.AddTooltipPostCall(types.CompanionPet, walk) end
-  if types.EquipmentSet ~= nil then processor.AddTooltipPostCall(types.EquipmentSet, walkWith(SET_OPTS)) end
-  if types.InstanceLock ~= nil then processor.AddTooltipPostCall(types.InstanceLock, walkWith(LOCK_OPTS)) end
-  if types.Totem ~= nil then processor.AddTooltipPostCall(types.Totem, walk) end
-  if types.QuestPartyProgress ~= nil then
-    processor.AddTooltipPostCall(types.QuestPartyProgress, walkWith(partyOpts))
+  if types.Currency ~= nil then processor.AddTooltipPostCall(types.Currency, timed("tooltip.currency", walk)) end
+  if types.Mount ~= nil then processor.AddTooltipPostCall(types.Mount, timed("tooltip.mount", walk)) end
+  if types.CompanionPet ~= nil then processor.AddTooltipPostCall(types.CompanionPet, timed("tooltip.pet", walk)) end
+  if types.EquipmentSet ~= nil then
+    processor.AddTooltipPostCall(types.EquipmentSet, timed("tooltip.set", walkWith(SET_OPTS)))
   end
-  if types.Flyout ~= nil then processor.AddTooltipPostCall(types.Flyout, walkFlyout) end
+  if types.InstanceLock ~= nil then
+    processor.AddTooltipPostCall(types.InstanceLock, timed("tooltip.lock", walkWith(LOCK_OPTS)))
+  end
+  if types.Totem ~= nil then processor.AddTooltipPostCall(types.Totem, timed("tooltip.totem", walk)) end
+  if types.QuestPartyProgress ~= nil then
+    processor.AddTooltipPostCall(types.QuestPartyProgress, timed("tooltip.party", walkWith(partyOpts)))
+  end
+  if types.Flyout ~= nil then processor.AddTooltipPostCall(types.Flyout, timed("tooltip.flyout", walkFlyout)) end
   return true
 end

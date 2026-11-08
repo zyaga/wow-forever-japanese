@@ -559,9 +559,9 @@ function VoicePlayer.init(savedDb)
     ev:RegisterEvent("PLAYER_ENTERING_WORLD")
     -- like the panel's close: the line, the queue and the panel's last line all go
     -- with the panel only: with it off a line goes on through a loading screen, as it always did
-    ev:SetScript("OnEvent", function()
+    ev:SetScript("OnEvent", WFJ.Perf.wrap("idle.voiceplayer.event", function()
       if queueOn() and (Q.size() > 0 or playing or lastItem) then VoicePlayer.clear() end
-    end)
+    end))
   end
   for _, window in ipairs(WINDOWS) do
     local f = Compat.resolve(window)

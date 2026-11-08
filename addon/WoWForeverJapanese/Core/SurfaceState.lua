@@ -7,6 +7,15 @@ local SurfaceState = {}
 WFJ.SurfaceState = SurfaceState
 
 local records = {} -- [surface] = { [key] = rec }
+-- widget → the record that last captured it. A widget belongs to at most one record (capture below), so this finds the
+-- record to take over without walking every surface's records on every write (in game that walk was the largest part
+-- of a tooltip line's write). Checked on use: a record dropped or released since no longer counts.
+local owners = setmetatable({}, { __mode = "kv" }) -- weak both ways: `records` holds the live ones
+
+local function live(rec)
+  local b = rec and records[rec.surface]
+  return b ~= nil and b[rec.key] == rec
+end
 
 local function bucket(surface, create)
   local b = records[surface]
@@ -25,7 +34,7 @@ local function sameFont(a, b)
 end
 
 -- Returns the record, or nil when the capture is our own write echoing back (re-entrancy guard).
--- A widget belongs to at most one record, on any surface. The client rewrites TEXT but never fonts, so:
+-- A widget belongs to at most one record, on any surface. The client usually rewrites TEXT but not fonts, so:
 --   same key, same widget   → keep the original font on record and carry the font we currently have applied;
 --   same key, other widget  → the old widget keeps our font: put its original back (its text is the client's);
 --   any other record on this widget (pool reuse, even across surfaces) → drop it silently, carry its fonts.
@@ -42,23 +51,29 @@ function SurfaceState.capture(surface, key, fs, en, meta)
       rec.fs:SetFont(rec.font.path, rec.font.size, rec.font.flags)
     end
   end
-  for _, sb in pairs(records) do
-    for k, r in pairs(sb) do
-      if r ~= rec and r.fs == fs then
-        origFont = origFont or r.font
-        carriedFont = carriedFont or r.appliedFont
-        sb[k] = nil
-      end
-    end
+  local other = owners[fs]
+  if other ~= nil and other ~= rec and live(other) then -- pool reuse, even across surfaces
+    origFont = origFont or other.font
+    carriedFont = carriedFont or other.appliedFont
+    records[other.surface][other.key] = nil
   end
 
+  -- a carried font counts only while the widget still has it: a menu refresh sets every line back to its default
+  -- font object before writing the English again (blizzard_menu/compositor.lua:66-74, menutemplates.lua:294-300),
+  -- and a record trusting the old font would write Japanese into a face without its letters
+  local now = readFont(fs)
+  if carriedFont and now.path ~= carriedFont.path then -- the face only: a fit may have changed the size
+    carriedFont = nil
+    if now.path ~= nil then origFont = now end -- a widget with no face yet keeps the one on record
+  end
   rec = {
     surface = surface, key = key, fs = fs, en = en,
-    font = origFont or readFont(fs),
+    font = origFont or now,
     applied = nil, appliedFont = carriedFont, last = nil,
     meta = meta,
   }
   b[key] = rec
+  owners[fs] = rec
   return rec
 end
 
@@ -129,6 +144,18 @@ function SurfaceState.reapply(surface, key)
   local rec = SurfaceState.get(surface, key)
   if not rec or rec.applied ~= nil or rec.last == nil then return false end
   return (SurfaceState.apply(surface, key, rec.last.text, rec.last.font))
+end
+
+-- The client wrote the English again on a widget that showed our Japanese (a tooltip rebuilt with the same lines): the
+-- Japanese goes back as written last time, the font too when the client put its own back. → true when written
+function SurfaceState.rewrite(rec)
+  if not rec or rec.applied == nil then return false end
+  local current = rec.fs:GetText()
+  if SurfaceState.secret(current) or current ~= rec.en then return false end
+  local font = rec.appliedFont
+  if font and rec.fs:GetFont() ~= font.path then rec.fs:SetFont(font.path, font.size, font.flags) end
+  rec.fs:SetText(rec.applied)
+  return true
 end
 
 -- Restores every record of the surface that has text or a carried font applied, then drops them all.

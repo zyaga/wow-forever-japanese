@@ -50,3 +50,7 @@ Four limits shape any answer:
 - **CSV.** Meanings and sentences hold commas; tab-separated text with Anki's headers serves all three uses with no quoting.
 - **Keying by the word alone.** One word means different things in different sentences, and each meaning is written for its sentence. Keying by word would keep only the first sense and the first sentence.
 - **A list per character.** The learner, not the character, is studying; a per-character list would split the words across alts.
+
+## Update: covers pass clicks on
+
+A cover that takes mouse motion only still caught clicks, seen in game: a translated search box placeholder ("Search" in the auction house, the bags and the other search boxes) had its cover in front of the box, so the box never got the click while Japanese showed. Each cover now also turns its own clicks off (`SetMouseClickEnabled(false)`) and passes them on to its parent, the frame the text sits in (`SetPropagateMouseClicks(true)`), set once when the cover is made, out of combat like the motion flag. The decision above stands: the save click is still read by polling, never from a click event, and the cover never takes a click itself. The maintainer confirmed in game that the auction house search box takes the click with Japanese showing.
