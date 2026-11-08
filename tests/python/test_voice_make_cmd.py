@@ -161,6 +161,20 @@ def test_generate_saves_its_record_as_it_goes(world, monkeypatch):
     assert len(engine.calls) == 3
 
 
+def test_every_made_file_is_on_the_record_before_the_next_one_is_made(world):
+    # a run stopped at any moment keeps every file it finished: the record is written after each one, not every
+    # RECORD_EVERY files, so nothing finished is read again
+    seen = []
+
+    def encode(wav, out):
+        seen.append(set(voice_make.audio_record(world.data)))
+        _fake_encode(wav, out)
+
+    voice_make.generate(world.data, "all", CFG, world.store, FakeEngine(), encode, log=lambda *_: None)
+    assert voice_make.RECORD_EVERY > 1
+    assert [len(s) for s in seen] == [0, 1, 2]
+
+
 def test_a_file_gone_from_the_store_is_made_again(world):
     voice_make.generate(world.data, "all", CFG, world.store, FakeEngine(), _fake_encode, log=lambda *_: None)
     voice_make.audio_file(world.store, "456-completion").unlink()

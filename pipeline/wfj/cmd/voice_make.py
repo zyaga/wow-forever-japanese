@@ -55,7 +55,7 @@ ENGINE_HINT = (
     "start the AivisSpeech Engine, or unpack it into build/aivis/ (docs/operations/voice.md), and run again"
 )
 LAME = ("lame", "-m", "m", "--resample", "22.05", "-b", "32", "--cbr", "-t", "--quiet")
-RECORD_EVERY = 20  # files between two writes of the audio record and the status file
+RECORD_EVERY = 20  # files between two progress lines in the log
 AUDIO = "audio.jsonl"
 
 
@@ -685,8 +685,8 @@ def generate(  # noqa: C901, PLR0913, PLR0915 - engine, encoder and log injected
                 made += 1
                 chars_made += len(text)
                 seconds_made += secs
+                save()  # after every file: a run stopped at any moment keeps every file it finished
                 if made % RECORD_EVERY == 0:
-                    save()
                     log(f"voice generate: {made}/{len(work)}")
 
             def make(j: voice.Job, q: Any) -> tuple[voice.Job, str, bytes, str, Path] | None:
