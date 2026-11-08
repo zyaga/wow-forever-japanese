@@ -214,7 +214,8 @@ local function events()
   for _, e in ipairs({ "QUEST_ACCEPTED", "QUEST_AUTOCOMPLETE", "QUEST_TURNED_IN", "QUEST_DETAIL" }) do
     pcall(ev.RegisterEvent, ev, e) -- an event this client does not have is passed over
   end
-  ev:SetScript("OnEvent", function() if WFJ.DialogueUI.active() then guarded(scanSoon) end end)
+  ev:SetScript("OnEvent", WFJ.Perf.wrap("idle.dialogueui.event",
+    function() if WFJ.DialogueUI.active() then guarded(scanSoon) end end))
 end
 
 

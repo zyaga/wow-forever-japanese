@@ -86,8 +86,8 @@ describe("/wfj covers every setting", function()
     end
     pass("quest", 1); pass("tooltip.GameTooltip", 4); pass("tooltip.GameTooltip", 2)
     wfj("perf")
-    assert.are.same({ "WFJ: perf: the addon's slowest passes this session (calls, total ms, longest ms)",
-      "WFJ:   tooltip.GameTooltip  2  6.0  4.0", "WFJ:   quest  1  1.0  1.0" },
+    assert.are.same({ "WFJ: perf: the addon's slowest passes this session (calls, total ms, longest ms, KB made)",
+      "WFJ:   tooltip.GameTooltip  2  6.0  4.0  0", "WFJ:   quest  1  1.0  1.0  0" },
       { Stub.prints[#Stub.prints - 2], Stub.prints[#Stub.prints - 1], Stub.prints[#Stub.prints] })
     wfj("perf reset")
     assert.are.equal("WFJ: perf: totals cleared", Stub.prints[#Stub.prints])

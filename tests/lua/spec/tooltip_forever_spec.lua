@@ -67,6 +67,35 @@ describe("UI/Tooltip hooks the client's data processor", function()
     end
   end)
 
+  it("a rebuild with the same lines gets its Japanese back without a full pass; any change runs one", function()
+    local WFJ, tt = setup()
+    WFJ.Tooltip.init()
+    local full = 0
+    local itemRun = WFJ.Tooltip.itemRun
+    WFJ.Tooltip.itemRun = function(...) full = full + 1; return itemRun(...) end
+    Stub.setItemTooltip(tt, JERKY, JERKY_LINES)
+    -- the client rebuilds the same tooltip (a comparison is rebuilt a few times per refresh): the English again
+    Stub.setItemTooltip(tt, JERKY, JERKY_LINES)
+    Stub.setItemTooltip(tt, JERKY, JERKY_LINES)
+    assert.are.equal(1, full)
+    assert.are.equal(DATA["item.description"][117].ja, fs("GameTooltip", 2):GetText())
+    assert.are.equal(WFJ.Font.PATH, fs("GameTooltip", 2).font.path)
+    -- a line that changed (another durability, another item) runs the whole pass again
+    local changed = { JERKY_LINES[1], JERKY_LINES[2], "Sell Price: 6c" }
+    Stub.setItemTooltip(tt, JERKY, changed)
+    assert.are.equal(2, full)
+    -- holding the reveal key shows the English, and a rebuild then stays English
+    Stub.keys.alt = true; WFJ.Modifier.refresh()
+    Stub.setItemTooltip(tt, JERKY, changed)
+    assert.are.equal(JERKY_LINES[2], fs("GameTooltip", 2):GetText())
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
+    -- the tooltip hidden: the next show is a full pass
+    tt.scripts.OnHide(tt)
+    Stub.setItemTooltip(tt, JERKY, changed)
+    assert.are.equal(4, full) -- the rebuild under the reveal key was a full pass too
+    WFJ.Tooltip.itemRun = itemRun
+  end)
+
   it("renders the item tooltip through the Item post-call", function()
     local WFJ, tt = setup()
     WFJ.Tooltip.init()

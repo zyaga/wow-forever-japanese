@@ -22,7 +22,9 @@ WFJ.TaintWatch = TaintWatch
 local C = WFJ.Compat
 
 TaintWatch.CHECK_EVERY = 2 -- seconds between field checks
-TaintWatch.SWEEP_EVERY = 5 -- field checks between bar sweeps
+-- field checks between bar sweeps: once a minute. A sweep walks every action bar (about 6 ms in game, a felt hitch
+-- every 10 s when it ran every fifth check), and the taint it looks for builds up and stays.
+TaintWatch.SWEEP_EVERY = 30
 TaintWatch.RING = 200 -- game events and the addon's own passes kept
 TaintWatch.SCAN_DEPTH = 2
 
@@ -172,9 +174,6 @@ function TaintWatch.isUnitToken(s)
 end
 
 function TaintWatch.onEvent(event, a1)
-  -- the client asks for the comparison tooltips through this event, and each one rebuilds them: counted, so /wfj perf
-  -- shows how often it comes beside the passes it causes
-  if event == "TOOLTIP_SHOW_ITEM_COMPARISON" and WFJ.Perf then WFJ.Perf.count("event.compare") end
   if TaintWatch.NOISY[event] or event:find("^CHAT_MSG_") then return end
   local arg = ""
   local t = type(a1)
@@ -478,7 +477,8 @@ function TaintWatch.init()
     local f = create("Frame")
     if type(f.RegisterAllEvents) == "function" then
       f:RegisterAllEvents()
-      f:SetScript("OnEvent", function(_, event, a1) TaintWatch.onEvent(event, a1) end)
+      f:SetScript("OnEvent",
+        WFJ.Perf.wrap("idle.watch.event", function(_, event, a1) TaintWatch.onEvent(event, a1) end))
     end
   end
   for _, fn in ipairs({ "ShowUIPanel", "HideUIPanel" }) do
@@ -491,12 +491,12 @@ function TaintWatch.init()
   local timer = C.resolve("C_Timer")
   if type(timer) == "table" and type(timer.NewTicker) == "function" then
     local ticks = 0
-    timer.NewTicker(TaintWatch.CHECK_EVERY, function()
+    timer.NewTicker(TaintWatch.CHECK_EVERY, WFJ.Perf.wrap("idle.watch.tick", function()
       ticks = ticks + 1
       TaintWatch.checkFields("timer")
       TaintWatch.scanWhenSafe()
       if ticks % TaintWatch.SWEEP_EVERY == 0 then TaintWatch.sweepBars() end
-    end)
+    end))
   end
   return n
 end

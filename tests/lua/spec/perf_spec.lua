@@ -62,7 +62,7 @@ describe("Core/Perf", function()
     w.ms = w.ms + 1
     P.stop("help", t0, k0)
     local r = P.report(10)
-    assert.are.same({ label = "help", calls = 1, ms = 6, max = 6 }, r[1])
+    assert.are.same({ label = "help", calls = 1, ms = 6, max = 6, kb = 0 }, r[1])
   end)
 
   it("a label left open by an error in an earlier frame counts again from the next frame", function()
@@ -80,7 +80,8 @@ describe("Core/Perf", function()
     call(P, w, "b", 2)
     call(P, w, "c", 3)
     local r = P.report(2)
-    assert.are.same({ { label = "b", calls = 2, ms = 7, max = 5 }, { label = "c", calls = 1, ms = 3, max = 3 } }, r)
+    assert.are.same({ { label = "b", calls = 2, ms = 7, max = 5, kb = 0 },
+      { label = "c", calls = 1, ms = 3, max = 3, kb = 0 } }, r)
     P.reset()
     assert.are.same({}, P.report(10))
   end)
@@ -99,6 +100,13 @@ describe("Core/Perf", function()
     assert.are.same({ "items quest", "items", "items" }, w.trail)
     P.flush()
     assert.are.equal(3, #w.trail) -- nothing timed since
+  end)
+
+  it("the session's totals as one line for the log: label calls ms longest kb", function()
+    local P, _, w = fresh()
+    call(P, w, "b", 5, 30)
+    call(P, w, "a", 1)
+    assert.are.equal("b 1 5.0 5.0 30 | a 1 1.0 1.0 0", P.summary(10))
   end)
 
   it("does nothing without its clock, and a stop with no start is ignored", function()

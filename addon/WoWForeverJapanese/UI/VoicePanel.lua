@@ -517,10 +517,10 @@ local function build()
   local ev = CreateFrame("Frame", nil, f)
   ev:RegisterEvent("PLAYER_REGEN_DISABLED")
   ev:RegisterEvent("PLAYER_REGEN_ENABLED")
-  ev:SetScript("OnEvent", function(_, event)
+  ev:SetScript("OnEvent", WFJ.Perf.wrap("idle.voicepanel.event", function(_, event)
     inCombat = event == "PLAYER_REGEN_DISABLED"
     if f:IsShown() and not fadeFrom then f:SetAlpha(baseAlpha()) end
-  end)
+  end))
 
   applyLook()
   applyLock()

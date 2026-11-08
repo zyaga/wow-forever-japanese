@@ -88,13 +88,9 @@ function SurfaceState.apply(surface, key, text, font)
   local rec = SurfaceState.get(surface, key)
   if not rec then return false end
   local fontOk
-  local P = WFJ.Perf -- the client's own font and text writes timed apart ("write.setfont", "write.settext")
   if font then
     if not sameFont(rec.appliedFont, font) then
-      local t0, k0
-      if P then t0, k0 = P.start("write.setfont") end
       fontOk = rec.fs:SetFont(font.path, font.size, font.flags)
-      if P then P.stop("write.setfont", t0, k0) end
       -- A refused SetFont changed nothing: record no font, so the next apply tries again and a restore has no font
       -- to put back. (On a fresh client launch the bundled font file is not loaded yet when the load-time labels
       -- are shown, and hundreds are refused; Render.retryFonts retries them.)
@@ -104,10 +100,7 @@ function SurfaceState.apply(surface, key, text, font)
     rec.fs:SetFont(rec.font.path, rec.font.size, rec.font.flags)
     rec.appliedFont = nil
   end
-  local t0, k0
-  if P then t0, k0 = P.start("write.settext") end
   rec.fs:SetText(text)
-  if P then P.stop("write.settext", t0, k0) end
   rec.applied = text
   rec.last = { text = text, font = font }
   return true, fontOk
@@ -154,6 +147,18 @@ function SurfaceState.reapply(surface, key)
 end
 
 -- Restores every record of the surface that has text or a carried font applied, then drops them all.
+-- The client wrote the English again on a widget that showed our Japanese (a tooltip rebuilt with the same lines): the
+-- Japanese goes back as written last time, the font too when the client put its own back. → true when written
+function SurfaceState.rewrite(rec)
+  if not rec or rec.applied == nil then return false end
+  local current = rec.fs:GetText()
+  if SurfaceState.secret(current) or current ~= rec.en then return false end
+  local font = rec.appliedFont
+  if font and rec.fs:GetFont() ~= font.path then rec.fs:SetFont(font.path, font.size, font.flags) end
+  rec.fs:SetText(rec.applied)
+  return true
+end
+
 -- Returns the number of records that needed a write.
 function SurfaceState.release(surface)
   local b = bucket(surface)

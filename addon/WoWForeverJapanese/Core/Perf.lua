@@ -11,7 +11,7 @@ WFJ.Perf = Perf
 Perf.SLOW_MS = 8 -- half of a 60 fps frame: one label taking this long in one frame is felt as a hitch
 
 local deps = {}
-local session = {} -- label → { calls, ms, max }
+local session = {} -- label → { calls, ms, max, kb }
 local frame = {} -- label → { ms, kb, calls } for the frame being counted (rows are reused, zeroed on flush)
 local ran = {} -- the labels with a row in use this frame, in the order they first ran
 local last = {} -- the previous flushed frame's labels, to tell a repeat of the same frame from a new one
@@ -20,8 +20,21 @@ local depth = {} -- label → open calls; only the outermost one counts, so a pa
 local opened = {} -- label → the frame its outermost call opened in
 local current
 
+local saved -- the deps while timing is switched off (/wfj perf off): every call is a no-op until it is back on
+
 function Perf.setDeps(d)
   deps = d or {}
+  saved = nil
+end
+
+-- Timing on or off for this session (/wfj perf off measures the addon with no timing at all). → true when on
+function Perf.setEnabled(on)
+  if on and saved then
+    deps, saved = saved, nil
+  elseif not on and not saved then
+    saved, deps = deps, {}
+  end
+  return saved == nil
 end
 
 local function mem()
@@ -107,10 +120,10 @@ function Perf.stop(label, t0, k0)
   row.ms, row.kb, row.calls = row.ms + ms, row.kb + kb, row.calls + 1
   local s = session[label]
   if not s then
-    s = { calls = 0, ms = 0, max = 0 }
+    s = { calls = 0, ms = 0, max = 0, kb = 0 }
     session[label] = s
   end
-  s.calls, s.ms = s.calls + 1, s.ms + ms
+  s.calls, s.ms, s.kb = s.calls + 1, s.ms + ms, s.kb + kb
   if ms > s.max then s.max = ms end
 end
 
@@ -134,13 +147,25 @@ function Perf.wrap(label, fn)
   return function(...) Perf.call(label, fn, ...) end
 end
 
--- The session's labels by total time, at most `n`. → { { label, calls, ms, max }, … }
+-- The session's labels by total time, at most `n`. → { { label, calls, ms, max, kb }, … }
 function Perf.report(n)
   local out = {}
-  for label, s in pairs(session) do out[#out + 1] = { label = label, calls = s.calls, ms = s.ms, max = s.max } end
+  for label, s in pairs(session) do
+    out[#out + 1] = { label = label, calls = s.calls, ms = s.ms, max = s.max, kb = s.kb }
+  end
   table.sort(out, function(a, b) return a.ms > b.ms end)
   for i = #out, (n or 10) + 1, -1 do out[i] = nil end
   return out
+end
+
+-- The session's top `n` labels as one line each ("label calls ms max kb"), joined by " | ": the log keeps it at logout,
+-- so the timing of a whole session is there after a /reload with nothing typed.
+function Perf.summary(n)
+  local parts = {}
+  for _, r in ipairs(Perf.report(n)) do
+    parts[#parts + 1] = ("%s %d %.1f %.1f %d"):format(r.label, r.calls, r.ms, r.max, math.floor(r.kb + 0.5))
+  end
+  return table.concat(parts, " | ")
 end
 
 function Perf.reset()

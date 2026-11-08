@@ -272,10 +272,7 @@ end
 
 -- Brings one record in line with the policy. → whether a write happened, and the record's action when it did
 local function sync(rec, fromShow)
-  local P = WFJ.Perf
-  local t0, k0 = P.start("write.resolve")
   local text, font, action = desired(rec)
-  P.stop("write.resolve", t0, k0)
   if text == nil then
     pendingFonts[rec] = nil
     readings("detach", rec)
@@ -285,16 +282,10 @@ local function sync(rec, fromShow)
     pendingFonts[rec] = nil
     return false
   end
-  t0, k0 = P.start("write.apply")
   local _, fontOk = SS.apply(rec.surface, rec.key, text, font)
-  P.stop("write.apply", t0, k0)
-  t0, k0 = P.start("write.recent")
   if action == "apply" then noteRecent(rec, text, fromShow) end
-  P.stop("write.recent", t0, k0)
   -- a refused font lays the text out in another face: word rectangles wait for the font (retryFonts attaches)
-  t0, k0 = P.start("write.readings")
   if fontOk ~= false then readings("attach", rec) end
-  P.stop("write.readings", t0, k0)
   if fontOk == false then
     pendingFonts[rec] = font
   else
@@ -336,21 +327,11 @@ local function show(surface, key, fs, en, area, kind, id, ctx)
   -- Main guards each init step, so surfaces install their hooks even when Render.init failed. Asserting here would
   -- turn one load failure into an error on every hover and window open; nothing to render against renders nothing.
   if not translator then return false end
-  -- the steps of one write timed apart (Core/Perf, labels "write.*"): which of them costs the time in game
-  local P = WFJ.Perf
-  local t0, k0 = P.start("write.capture")
   local rec = SS.capture(surface, key, fs, en, { area = area, kind = kind, id = id, ctx = ctx })
-  P.stop("write.capture", t0, k0)
   if not rec then return false end
-  t0, k0 = P.start("write.sync")
   local changed, action = sync(rec, true)
-  P.stop("write.sync", t0, k0)
-  t0, k0 = P.start("write.refit")
   if changed then refit(rec) end
-  P.stop("write.refit", t0, k0)
-  t0, k0 = P.start("write.banner")
   updateBanner(surface)
-  P.stop("write.banner", t0, k0)
   -- Only a line the client just wrote and we now show in Japanese: a refresh (the reveal key released, a setting
   -- switched) goes through Render.refresh and never reaches here, so a listener such as UI/VoicePlayer never
   -- restarts a line the player already heard. Fired after the write and the banner, so a failing listener cannot
@@ -451,6 +432,17 @@ end
 
 local function detachAll(surface)
   for _, rec in pairs(SS.records(surface)) do readings("detach", rec) end
+end
+
+-- A surface the client rebuilt with the same English it had before (a comparison tooltip is rebuilt a few times per
+-- refresh): each record whose widget shows its English again gets its Japanese back, with no lookup and no match.
+-- → lines written
+function Render.reapply(surface)
+  local n = 0
+  for _, rec in pairs(SS.records(surface)) do
+    if SS.rewrite(rec) then n = n + 1 end
+  end
+  return n
 end
 
 function Render.release(surface)

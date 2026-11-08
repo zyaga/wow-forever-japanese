@@ -105,6 +105,140 @@ describe("UI/Tooltip comparison lines and the max-usable-level trailer", functio
     assert.are.equal("|cff20ff20+17|r Armor", _G.ShoppingTooltip1TextLeft7:GetText())
   end)
 
+  describe("a comparison rebuilt by the client", function()
+    -- the client rebuilds a comparison tooltip a few times per refresh: every line again in English, then SetShown
+    local GREEN, RED = "|cff20ff20", "|cffff2020"
+    local LINK = "|Hitem:2:0:0:0|h[Axe]|h"
+    local function lines(over)
+      local l = { "Currently Equipped", "Axe", { "Main Hand", "Two-Hand" }, " ", _G.ITEM_DELTA_DESCRIPTION,
+        GREEN .. "+7.5|r damage per second", RED .. "-311|r Armor", "-3 damage per second" }
+      for i, v in pairs(over or {}) do l[i] = v end
+      return l
+    end
+    local full, tt
+    -- as the client does it (tooltipcomparisonmanager.lua SetItemTooltip): ProcessInfo writes the item's lines and runs
+    -- the post-call, then the delta header and the stat changes are added, then the frame is shown
+    -- shown twice per rebuild, as measured in game (8 lines, then 14): once with the item's lines, once with all
+    local function build(l, link)
+      local item = {}
+      for i = 1, 3 do item[i] = l[i] end
+      Stub.setItemTooltip(tt, link or LINK, item)
+      tt:SetShown(true)
+      for i = 4, #l do tt:AddLine(type(l[i]) == "table" and l[i][1] or l[i]) end
+      tt:SetShown(true)
+    end
+    local function rebuild(over, link)
+      local l = lines(over)
+      local packed = {}
+      for i = 1, 9 do if l[i] then packed[#packed + 1] = l[i] end end
+      build(packed, link)
+    end
+    local function left(i) return _G["ShoppingTooltip1TextLeft" .. i]:GetText() end
+    before_each(function()
+      tt = _G.ShoppingTooltip1
+      full = 0
+      local itemRun = WFJ.Tooltip.itemRun
+      WFJ.Tooltip.itemRun = function(...) full = full + 1; return itemRun(...) end
+    end)
+
+    it("the same lines again: no full pass, and every line is Japanese again, its colours kept", function()
+      rebuild()
+      rebuild()
+      rebuild()
+      assert.are.equal(1, full)
+      assert.are.equal("メインハンド", left(3))
+      assert.are.equal("このアイテムを置き換えると、次の能力値の変化が起こります:", left(5))
+      assert.are.equal("秒間ダメージ " .. GREEN .. "+7.5|r", left(6))
+      assert.are.equal("アーマー " .. RED .. "-311|r", left(7))
+      assert.are.equal("秒間ダメージ -3", left(8))
+    end)
+
+    -- each change: a full pass, and the new value shown
+    -- { what changed, the lines changed, the row to read, what it must show, full item passes after the change }:
+    -- a stat line is the comparison pass's own, so only a change in the item's lines takes a second full item pass
+    local CHANGES = {
+      { "a stat change's sign flips", { [8] = "+3 damage per second" }, 8, "秒間ダメージ +3", 1 },
+      { "a stat change's number", { [6] = GREEN .. "+8.0|r damage per second" }, 6, "秒間ダメージ " .. GREEN .. "+8.0|r",
+        1 },
+      { "a stat change's colour (a gain turned loss)", { [6] = RED .. "+7.5|r damage per second" }, 6,
+        "秒間ダメージ " .. RED .. "+7.5|r", 1 },
+      { "a plain stat change gains a colour", { [8] = RED .. "-3|r damage per second" }, 8,
+        "秒間ダメージ " .. RED .. "-3|r", 1 },
+      { "the right-hand text", { [3] = { "Main Hand", "One-Hand" } }, 3, "メインハンド", 2 },
+      { "a stat change removed", { [8] = false }, 7, "アーマー " .. RED .. "-311|r", 1 },
+    }
+    for _, c in ipairs(CHANGES) do
+      it(c[1] .. ": the new value shown", function()
+        rebuild()
+        local over = {}
+        for k, v in pairs(c[2]) do over[k] = v end
+        if over[8] == false then
+          local l = lines()
+          l[8] = nil
+          build(l)
+        else
+          rebuild(over)
+        end
+        assert.are.equal(c[5], full)
+        assert.are.equal(c[4], left(c[3]))
+      end)
+    end
+
+    it("a line's own colour changed with the same text: a full pass", function()
+      rebuild()
+      local l = lines()
+      l[2] = { "Axe", color = { 0, 1, 0 } }
+      build(l)
+      assert.are.equal(2, full)
+    end)
+
+    it("each of the two shows per rebuild keeps its own state, so neither undoes the other", function()
+      local compareFull = 0
+      local onCompare = WFJ.Tooltip.matchStatChange
+      WFJ.Tooltip.matchStatChange = function(...) compareFull = compareFull + 1; return onCompare(...) end
+      rebuild()
+      local first = compareFull
+      for _ = 1, 4 do rebuild() end
+      assert.are.equal(first, compareFull) -- no stat line matched again on the four identical rebuilds
+      assert.are.equal("秒間ダメージ -3", left(8))
+      WFJ.Tooltip.matchStatChange = onCompare
+    end)
+
+    it("a line added: the added stat change Japanese", function()
+      rebuild()
+      local l = lines()
+      l[9] = "+2 damage per second"
+      build(l)
+      assert.are.equal(1, full) -- the item's own lines are the same: only the comparison pass sees the new line
+      assert.are.equal("秒間ダメージ +2", left(9))
+    end)
+
+    it("another item with the same lines: a full pass", function()
+      rebuild()
+      rebuild(nil, "|Hitem:3:0:0:0|h[Axe]|h")
+      assert.are.equal(2, full)
+    end)
+
+    it("the reveal key held through a rebuild shows the English; let go, the Japanese", function()
+      rebuild()
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      rebuild()
+      assert.are.equal(GREEN .. "+7.5|r damage per second", left(6))
+      assert.are.equal("Main Hand", left(3))
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      assert.are.equal("秒間ダメージ " .. GREEN .. "+7.5|r", left(6))
+      assert.are.equal("メインハンド", left(3))
+    end)
+
+    it("hidden in between: the next show is a full pass", function()
+      rebuild()
+      tt.scripts.OnHide(tt)
+      rebuild()
+      assert.are.equal(2, full)
+      assert.are.equal("秒間ダメージ " .. GREEN .. "+7.5|r", left(6))
+    end)
+  end)
+
   it("a stat change with only a short stat name shows the Japanese name, the number as the client wrote it",
   function()
     local tt = _G.ShoppingTooltip1

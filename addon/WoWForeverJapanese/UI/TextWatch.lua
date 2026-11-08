@@ -61,7 +61,7 @@ function TextWatch.add(fs, fn)
     local create = WFJ.Compat.resolve("CreateFrame")
     if type(create) == "function" then
       driver = create("Frame")
-      driver:SetScript("OnUpdate", TextWatch.tick)
+      driver:SetScript("OnUpdate", WFJ.Perf.wrap("idle.textwatch", TextWatch.tick))
     end
   end
   return true

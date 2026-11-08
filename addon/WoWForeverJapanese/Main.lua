@@ -436,7 +436,9 @@ function WFJ.OnLoad()
   step("slash", WFJ.Slash.register)
   step("minimapbutton", function() WFJ.MinimapButton.init(WFJ_DB) end) -- the fix-report minimap button
   step("diag.timer", function()
-    if type(C_Timer) == "table" then C_Timer.NewTicker(WFJ.Diag.CHECK_INTERVAL, WFJ.Diag.tick) end
+    if type(C_Timer) == "table" then
+      C_Timer.NewTicker(WFJ.Diag.CHECK_INTERVAL, WFJ.Perf.wrap("idle.diag.tick", WFJ.Diag.tick))
+    end
   end)
   step("taintwatch", WFJ.TaintWatch.init) -- the action-bar taint watch (UI/TaintWatch)
 
@@ -462,7 +464,7 @@ end
 
 local frame = CreateFrame("Frame")
 frame:RegisterEvent("ADDON_LOADED")
-frame:SetScript("OnEvent", function(self, event, name, ...)
+local function onEvent(self, event, name, ...)
   if event == "ADDON_LOADED" then
     if name == ADDON then
       if WFJ.loaded then return end -- ADDON_LOADED stays registered for the load-on-demand addons
@@ -499,6 +501,11 @@ frame:SetScript("OnEvent", function(self, event, name, ...)
     WFJ.VoicePlayer.stop() -- the dialog channel is saved with the logout: put it back first
     WFJ.VoiceErrors.restore() -- and the error speech
     pcall(WFJ.Perf.flush) -- the last frame's timing into the log before it is saved
+    -- and the session's totals (label calls ms max kb), so a /reload is all it takes to read them
+    pcall(function()
+      local rows = WFJ.Perf.summary(200) -- every label: the counters take no time and sort last
+      if rows ~= "" then WFJ.Diag.log("perf", "session totals", { rows = rows }) end
+    end)
   elseif event == "MODIFIER_STATE_CHANGED" then
     WFJ.Modifier.refresh()
   elseif event == "PLAYER_ENTERING_WORLD" then
@@ -539,4 +546,5 @@ frame:SetScript("OnEvent", function(self, event, name, ...)
       end)
     end
   end
-end)
+end
+frame:SetScript("OnEvent", WFJ.Perf.wrap("idle.main.event", onEvent))

@@ -521,9 +521,10 @@ function Slash.handle(msg)
     return say("errors: %d recorded, %d not sent (/wfj bug)", errors.count, errors.unsent)
   end
   if lower == "perf" then -- the write paths' timing (Core/Perf): the slowest labels this session, or reset
-    if words[2] and words[2]:lower() == "norefit" then
-      WFJ.Tooltip.noCompareRefit = not WFJ.Tooltip.noCompareRefit
-      return say("perf: comparison tooltip redraw %s", WFJ.Tooltip.noCompareRefit and "OFF" or "on")
+    if words[2] and (words[2]:lower() == "off" or words[2]:lower() == "on") then
+      local on = words[2]:lower() == "on"
+      WFJ.Perf.setEnabled(on)
+      return say("perf: timing %s", on and "on" or "OFF (nothing is timed or logged until /wfj perf on)")
     end
     if words[2] and words[2]:lower() == "reset" then
       WFJ.Perf.reset()
@@ -531,8 +532,8 @@ function Slash.handle(msg)
     end
     local rows = WFJ.Perf.report(tonumber(words[2]) or 10)
     if #rows == 0 then return say("perf: nothing timed yet") end
-    say("perf: the addon's slowest passes this session (calls, total ms, longest ms)")
-    for _, r in ipairs(rows) do say("  %s  %d  %.1f  %.1f", r.label, r.calls, r.ms, r.max) end
+    say("perf: the addon's slowest passes this session (calls, total ms, longest ms, KB made)")
+    for _, r in ipairs(rows) do say("  %s  %d  %.1f  %.1f  %d", r.label, r.calls, r.ms, r.max, r.kb or 0) end
     return
   end
   if lower == "taint" then -- the taint scan (UI/TaintWatch): fields and globals this addon's taint reached, to the log

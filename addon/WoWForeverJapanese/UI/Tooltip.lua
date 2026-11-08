@@ -167,8 +167,6 @@ end
 -- line came out the other way on every refresh and flickered. A second Show here makes the count even, so every
 -- refresh ends on the same line breaks. [likely: the tooltip trace in game, Forever 1.60.1.70205; in-game check in
 -- docs/testing/strategy.md]
-local lastPassAt = setmetatable({}, { __mode = "k" }) -- a comparison tooltip → the frame stamp of its last pass
-
 local function refitFor(frame)
   local fn = refits[frame]
   if fn then return fn end
@@ -178,13 +176,9 @@ local function refitFor(frame)
   end
   fn = function()
     if inRefit[frame] then return end
-    -- /wfj perf norefit: the comparison tooltips go without our redraw, to measure whether it makes the client
-    -- rebuild them again (a measurement switch, off by default and never saved)
-    if Tooltip.noCompareRefit and tostring(frame:GetName()):find("ShoppingTooltip", 1, true) then return end
     inRefit[frame] = true
     -- timed apart: a Show runs the client's own tooltip code (its post-calls, the comparison tooltips) again
     local ok, err = pcall(WFJ.Perf.call, "tooltip.refit", run)
-    WFJ.Perf.count("tooltip.refit." .. frame:GetName()) -- which tooltip: a redraw of one can rebuild another
     inRefit[frame] = false
     if not ok then error(err, 0) end
   end
@@ -1020,15 +1014,77 @@ function Tooltip.recipeOf(frame, lineCount)
   return crafted, recipe, row
 end
 
+-- The lines and link of each tooltip's last full pass, as the client wrote them. The client rebuilds a comparison
+-- tooltip a few times per refresh with the same lines (measured in game: about 3.5 times, whether or not we
+-- redraw), and a full pass each time was most of a hover's cost: a rebuild with the same item and the same lines
+-- only gets its Japanese back (Render.reapply). Forgotten when the tooltip hides.
+-- A line's colour is part of what the pass writes (a flavour line keeps its own colour), so it is compared too.
+local lastLines, lastLink = setmetatable({}, { __mode = "k" }), setmetatable({}, { __mode = "k" })
+local reapplied = setmetatable({}, { __mode = "k" }) -- tooltip → its last item pass was a reapply (onCompareShow too)
+
+local function colourOf(fs)
+  if type(fs.GetTextColor) ~= "function" then return -1 end
+  local r, g, b = fs:GetTextColor()
+  if anySecretOf(r, g, b) or type(r) ~= "number" then return -1 end
+  return math.floor(r * 255 + 0.5) * 65536 + math.floor(g * 255 + 0.5) * 256 + math.floor(b * 255 + 0.5)
+end
+
+-- The left lines' widget, text and colour and the right lines' widget and text, as the client wrote them. Checked
+-- by reading each kept widget in place: the check runs on every rebuild and builds nothing (in game, the line tables
+-- a check built each time were most of the memory a hover churned).
+local function textOf(fs)
+  local t = fs:GetText() or ""
+  if anySecretOf(t) then return nil end
+  return t
+end
+
+local function sameAsLast(frame, link)
+  -- while the reveal key is held a rebuild takes the full pass, as before: the English is what shows
+  if WFJ.Modifier and WFJ.Modifier.isDown() then return false end
+  local seen = lastLines[frame]
+  if not seen or lastLink[frame] ~= link or type(frame.NumLines) ~= "function" or frame:NumLines() ~= seen.n then
+    return false
+  end
+  for i = 1, seen.n do
+    local fs = seen.leftFs[i]
+    if textOf(fs) ~= seen.left[i] or colourOf(fs) ~= seen.colour[i] then return false end
+    local r = seen.rightFs[i]
+    if r and textOf(r) ~= seen.right[i] then return false end
+  end
+  return true
+end
+
+local function remember(frame, link, lines, right)
+  local seen = { n = #lines, leftFs = {}, left = {}, colour = {}, rightFs = {}, right = {} }
+  for i = 1, #lines do
+    seen.leftFs[i], seen.left[i], seen.colour[i] = lines[i].fs, lines[i].text, colourOf(lines[i].fs)
+  end
+  for i = 1, #right do seen.rightFs[i], seen.right[i] = right[i].fs, right[i].text end
+  lastLines[frame], lastLink[frame] = seen, link
+end
+
 -- The Item post-call's target.
 function Tooltip.onItem(frame)
   if inRefit[frame] then return 0 end -- our own refit re-runs the post-call; nothing new to read
-  local t0, k0 = WFJ.Perf.start("tooltip.item.read")
   local itemName, link = Tooltip.itemOf(frame)
+  reapplied[frame] = nil
+  if not anySecretOf(link) and sameAsLast(frame, link) then
+    WFJ.Perf.count("tooltip.item.reused")
+    local n = WFJ.Render.reapply(surfaceOf(frame))
+    if n > 0 then refitFor(frame)() end
+    reapplied[frame] = true
+    return n
+  end
+  WFJ.Perf.count("tooltip.item.full")
+  local t0, k0 = WFJ.Perf.start("tooltip.item.read")
   local lines = Tooltip.lines(frame)
   WFJ.Perf.stop("tooltip.item.read", t0, k0)
   local texts = {}
   for i, l in ipairs(lines) do texts[i] = l.text end
+  local right = Tooltip.lines(frame, "Right")
+  lastLines[frame] = nil -- a pass that raises leaves no lines to match a rebuild against
+  local readLines = {} -- as read: the pass below rewrites the texts in place (peelTrailer)
+  for i, l in ipairs(lines) do readLines[i] = { fs = l.fs, text = l.text } end
   -- hidden rows: nothing is read, matched or dropped (dropping a record reads its widget); the link is checked
   -- after the texts, since the client may hide it too, and then the owner's action slot names the item
   if anySecret(texts) or anySecretOf(link) then
@@ -1073,6 +1129,7 @@ function Tooltip.onItem(frame)
   end
   -- No run still has structural lines.
   local n = show(frame, "items", "item.description", id, lines, first, last, itemName, runArgs, learn, texts, sets)
+  remember(frame, link, readLines, right)
   traceFrame(frame, "readable item", id, lines, ("-> rendered %d"):format(n))
   -- the same tooltip one frame later, as the client drew it: a wrap that moves after this pass shows there
   local after = Tooltip.trace and Compat.resolve("C_Timer.After")
@@ -1195,9 +1252,51 @@ end
 
 local COMPARE_HEADER_KEYS = { "EQUIPPED", "IF_EQUIPPED_TOGETHER" }
 Tooltip.COMPARE_HEADER_KEYS = COMPARE_HEADER_KEYS
+-- A comparison tooltip's lines as the last comparison pass left them: the client shows these frames again and again
+-- (Show, SetShown) with nothing new on them, and a full pass each time was most of what a hover still cost in game.
+-- Kept as the line widgets and their texts, so the check reads each line once and builds nothing (it runs on every
+-- show of a comparison tooltip). One per line count: the client shows a comparison tooltip twice per rebuild, once
+-- with the item's own lines and again after it adds the stat changes (measured in game: 8 lines, then 14), and one
+-- kept state made each show undo the other's.
+local afterCompare = setmetatable({}, { __mode = "k" }) -- tooltip → { [line count] = { fs = { … }, text = { … } } }
+
+local function snapshot(frame)
+  local seen = { fs = {}, text = {} }
+  for i, l in ipairs(Tooltip.lines(frame)) do seen.fs[i], seen.text[i] = l.fs, l.text end
+  local byCount = afterCompare[frame] or {}
+  byCount[#seen.fs] = seen
+  afterCompare[frame] = byCount
+end
+
+local function unchanged(frame)
+  local byCount = afterCompare[frame]
+  local seen = byCount and type(frame.NumLines) == "function" and byCount[frame:NumLines()]
+  if not seen then return false end
+  for i = 1, #seen.fs do
+    local text = seen.fs[i]:GetText() or ""
+    if anySecretOf(text) or text ~= seen.text[i] then return false end
+  end
+  return true
+end
+
 function Tooltip.onCompareShow(frame)
-  local main = Compat.get(DECLARE, "GameTooltip")
-  WFJ.Perf.count(inRefit[main] and "tooltip.compare.inMainRedraw" or "tooltip.compare.onItsOwn")
+  if inRefit[frame] then return 0 end
+  if not (WFJ.Modifier and WFJ.Modifier.isDown()) then
+    if reapplied[frame] or not unchanged(frame) then
+      -- the client wrote the same English back: the Japanese goes back as written, then the lines are as we left them
+      local n = WFJ.Render.reapply(surfaceOf(frame))
+      if n > 0 then refitFor(frame)() end
+      reapplied[frame] = nil
+      if unchanged(frame) then
+        WFJ.Perf.count("tooltip.compare.reused")
+        return n
+      end
+    else
+      WFJ.Perf.count("tooltip.compare.unchanged")
+      return 0 -- shown again with nothing new on it
+    end
+  end
+  WFJ.Perf.count("tooltip.compare.full")
   local index = WFJ.UIIndex
   if inRefit[frame] or not index or not Tooltip.itemOf(frame) then return 0 end
   local surface, refit, n = surfaceOf(frame), refitFor(frame), 0
@@ -1210,31 +1309,38 @@ function Tooltip.onCompareShow(frame)
       local key = index:matchOnly(htext, COMPARE_HEADER_KEYS)
       if key and WFJ.Render.show(surface, "ui.header", header, htext, "ui", "ui", key, {}) then n = n + 1 end
     end
-    -- after the delta header, each line is a stat change the client formats ("-11 Armor"): a stat template
+    -- after the delta header, each line is a stat change the client formats ("-11 Armor"): a stat template.
+    -- A line still showing our Japanese (put back before this pass, when only some lines changed) is matched on the
+    -- English it was written over, so the header is still found and every line after it is read.
     local deltas = false
     for i, l in ipairs(Tooltip.lines(frame)) do
       local key, args, runs
-      if l.text ~= "" then
-        key, args = index:matchOnly(l.text, COMPARE_KEYS)
+      local en = l.text
+      local rec = WFJ.SurfaceState.get(surface, "ui.L" .. i)
+      if rec and rec.fs == l.fs and rec.applied ~= nil and rec.applied == en then en = rec.en end
+      if en ~= "" then
+        key, args = index:matchOnly(en, COMPARE_KEYS)
         if key == "ITEM_DELTA_DESCRIPTION" or key == "ITEM_DELTA_MULTIPLE_COMPARISON_DESCRIPTION" then
           deltas = true
-        elseif not key and deltas and not anySecret({ l.text }) then
-          key, args, runs = Tooltip.matchColoured(index, l.text)
-          if not key then key, args = Tooltip.matchStatChange(index, l.text) end
+        elseif not key and deltas and not anySecret({ en }) then
+          key, args, runs = Tooltip.matchColoured(index, en)
+          if not key then key, args = Tooltip.matchStatChange(index, en) end
         end
       end
       local ctx = { args = args, refit = refit, runColours = runs }
-      if key and WFJ.Render.show(surface, "ui.L" .. i, l.fs, l.text, "ui", "ui", key, ctx) then n = n + 1 end
+      if key and WFJ.Render.show(surface, "ui.L" .. i, l.fs, en, "ui", "ui", key, ctx) then n = n + 1 end
     end
   end)
   inRefit[frame] = false
   if not ok then error(err, 0) end
   if n > 0 then refit() end
+  snapshot(frame)
   traceFrame(frame, "comparison lines", nil, Tooltip.lines(frame), ("-> rendered %d"):format(n))
   return n
 end
 
 function Tooltip.release(frame)
+  lastLines[frame], lastLink[frame], reapplied[frame], afterCompare[frame] = nil, nil, nil, nil
   undressHidden(frame)
   return WFJ.Render.release(surfaceOf(frame))
 end
@@ -1437,20 +1543,7 @@ function Tooltip.init()
       -- blizzard_gametooltip/mainline/gametooltip.xml:109); it carries its tooltip data, which Tooltip.itemOf reads
       local frame = dataFrame(tt, types.Item, type(tt) == "table" and tt.GetItem == nil and "GetPrimaryTooltipData"
         or "GetItem")
-      if frame then
-        WFJ.Perf.count("tooltip.item." .. frame:GetName()) -- which tooltip the pass was for
-        -- and whether it ran inside our redraw of the main tooltip (its Show) or on the client's own
-        local main = Compat.get(DECLARE, "GameTooltip")
-        if frame ~= main then
-          WFJ.Perf.count(inRefit[main] and "tooltip.item.inMainRedraw" or "tooltip.item.onItsOwn")
-          -- a rebuild in the same frame as this tooltip's last one: only the frame's last pass is ever seen
-          local now = Compat.resolve("GetTime")
-          now = type(now) == "function" and now() or nil
-          if now ~= nil and lastPassAt[frame] == now then WFJ.Perf.count("tooltip.item.sameFrame") end
-          lastPassAt[frame] = now
-        end
-        WFJ.Perf.call("tooltip.item", Tooltip.onItem, frame)
-      end
+      if frame then WFJ.Perf.call("tooltip.item", Tooltip.onItem, frame) end
     end)
     processor.AddTooltipPostCall(types.Spell, function(tt)
       local frame = dataFrame(tt, types.Spell, "GetSpell")
@@ -1463,7 +1556,7 @@ function Tooltip.init()
     local frame = Compat.get(DECLARE, name)
     if frame and frame.HookScript then
       resolvedFrames = resolvedFrames + 1
-      frame:HookScript("OnHide", function(self) Tooltip.release(self) end)
+      frame:HookScript("OnHide", WFJ.Perf.wrap("tooltip.release", function(self) Tooltip.release(self) end))
       if HEADED[name] and type(frame.Show) == "function" then -- the comparison's appended lines
         hooksecurefunc(frame, "Show", compare)
         -- Forever's comparison manager shows its frames with SetShown, never Show
