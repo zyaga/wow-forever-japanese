@@ -19,7 +19,7 @@ an old setting stops working). A release moves those lines under its version num
 - The setting *The book button opens the quest in the quest log*. The voice panel's book button now always opens the small window with the line's whole Japanese.
 
 ### Fixed
-- Opening the world map in combat is no longer blocked with this addon blamed after you used the voice panel's book button on a quest line.
+- Opening the world map in combat is no longer blocked with this addon blamed. The quest list beside the map shows the game's English while you are in combat and its Japanese again when the fight ends, and the voice panel's book button no longer opens the quest log.
 - No more "bad argument #2 to 'SetFont' ... Secret values" Lua errors in a busy trade channel: a line whose font size the game keeps secret now stays in English.
 - The AddOns list's tooltip shows the Japanese in this addon's name and the voice pack's name instead of empty boxes.
 

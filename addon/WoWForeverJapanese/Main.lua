@@ -500,6 +500,7 @@ local function onEvent(self, event, name, ...)
     WFJ.StudyWindow.setCombat(true)
   elseif event == "PLAYER_REGEN_ENABLED" then
     WFJ.RevealBinding.flush() -- a modifier change made in combat
+    WFJ.QuestMap.onCombatEnded() -- the map's quest list keeps the client's English in combat
     WFJ.Options.setCombat(false)
     WFJ.StudyWindow.setCombat(false)
   elseif event == "PLAYER_LOGOUT" then

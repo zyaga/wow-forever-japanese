@@ -76,3 +76,18 @@ it. Flipped live, five times, with and without the addon: 1 errors, 0 does not. 
   the field it went through. The fix is the same: stop writing into that FontString.
 - A block is now traced, not guessed: the problem log holds the block's stack, the first field that turned
   tainted, its writer's stack and the events before it ([Diagnostics → Tracing a blocked action](../systems/diagnostics.md#tracing-a-blocked-action)).
+
+## Update: the quest list beside the world map
+
+The same trap was found in the quest list beside the world map (Forever 1.60.1.70862). Every map update, opening the
+map with its key included, runs `QuestLogQuests_Update`, which measures the list's rows, and in the same pass places
+the map's quest pins (`AcquirePin` → `SetPassThroughButtons`, protected in combat). With the list's titles in
+Japanese, opening the map in combat was blocked under this addon's name every time. The maintainer narrowed it in
+game by leaving one surface at a time untouched in combat: with only the list (`questmap.list`, `questmap.listlabels`)
+left alone, the map opened in combat with no block every time, tracker title clicks before the fight included.
+
+The list now writes nothing while the player is in combat: `QuestMap.onListUpdate` forgets the list's records and
+returns, so the rows keep the client's English and font. When combat ends (`PLAYER_REGEN_ENABLED`) and the map is
+still open, `QuestMap.onCombatEnded` runs the list pass again and the Japanese comes back. Out of combat the list is
+Japanese as before; the protected call is only refused in combat. The details pane, the window title, the legend, the
+map pins' tooltips and the tracker were left translated in combat during that narrowing and caused no block.

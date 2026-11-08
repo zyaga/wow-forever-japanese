@@ -57,6 +57,7 @@ describe("UI/QuestMap: the quest list's category headers", function()
     _G.EventRegistry = { RegisterCallback = function() end }
     headers = headerPool()
     _G.QuestScrollFrame.headerFramePool = headers
+    _G.WorldMapFrame = _G.WorldMapFrame or CreateFrame("Frame")
     WFJ = H.loadChunks(FILES)
     H.uiSetup(WFJ, UI)
     assert.is_true(WFJ.QuestFrame.init())
@@ -67,6 +68,22 @@ describe("UI/QuestMap: the quest list's category headers", function()
     H.uiTeardown()
     Stub.keys.alt = false
     _G.EventRegistry = nil
+  end)
+
+  it("in combat the list keeps the client's English; combat ending with the map open brings the Japanese", function()
+    local seasonal, combat = header("Seasonal"), true
+    _G.InCombatLockdown = function() return combat end
+    Q.updateList()
+    assert.are.equal("Seasonal", text(seasonal))
+    assert.are.equal(0, WFJ.SurfaceState.count("questmap.list"))
+    combat = false
+    _G.WorldMapFrame:Hide()
+    assert.are.equal(0, WFJ.QuestMap.onCombatEnded()) -- the map closed: nothing to show
+    assert.are.equal("Seasonal", text(seasonal))
+    _G.WorldMapFrame:Show()
+    WFJ.QuestMap.onCombatEnded()
+    assert.are.equal("季節", text(seasonal))
+    _G.InCombatLockdown = nil
   end)
 
   it("a QuestSort header is Japanese after the list update; Alt shows English", function()
