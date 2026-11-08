@@ -13,7 +13,7 @@ an old setting stops working). A release moves those lines under its version num
 - Read NPC greetings aloud only the first time: a vendor or trainer greets you the same way at every visit, so a greeting you have heard stays quiet when its window opens. This is on by default (*NPC greetings: only the first time* on the Voice page). *Quest lines: only the first time* does the same for quest offers, progress and turn-ins, and is off by default. The window's play button still reads the line, and a line whose Japanese changed counts as new.
 
 ### Changed
-- The NPC's English greeting no longer starts before the Japanese line: when the window's line will be read aloud, the game's English voice is silenced as the window opens, not when the Japanese starts. It comes back as soon as the line turns out not to play, or after a second and a half.
+- When a window's line will be read aloud, the game's English voice is now silenced as the window opens, not when the Japanese starts. It comes back as soon as the line turns out not to play, or after a second and a half. An NPC that speaks the moment it turns to you can still be heard for a split second: the game starts that greeting before it opens the window.
 
 ### Removed
 - The setting *The book button opens the quest in the quest log*. The voice panel's book button now always opens the small window with the line's whole Japanese.

@@ -27,10 +27,10 @@ Three other voice-over addons were read ([research](../research/2026-11-08-voice
 
 ## Consequences
 
-- The greeting of an NPC whose line is read aloud is not heard at all, not cut.
+- The greeting of an NPC whose line is read aloud is silenced from the moment its window opens. A greeting the client starts before the window's event (an NPC that speaks the moment it turns to the player, not on every talk) is still heard for a split second; checked in game, see below.
 - If the line worked out in the event differs from the one the window then shows (a quest text the client changes after the event, a greeting whose text is not there yet), the mute is given back when that line does not play, or after 1.5 s. A greeting with no text yet in the event takes no mute, so it plays as before.
 - The addon now changes a client setting the player owns before its own sound starts, for at most 1.5 s when no line follows. The rule that every change to `Sound_EnableDialog` is recorded and undone still holds.
-- Not verified on Forever: that the greeting starts at the window's event and that a mute taken there silences it from its start. This is taken from Spoken's code and listed in the voice-over checklist.
+- Checked on Forever: the mute taken in the event silences the greeting from that moment, but the client can start the greeting before the event, so its first split second is heard. In every window logged, the Japanese line had already started in the same moment as the event, so muting at the event cannot come earlier than muting at the line's start did. Silencing it fully would need the mute before the window opens (for example when the player targets a friendly NPC, at the cost of the English greeting of NPCs with no Japanese line); that is not built.
 
 ## Alternatives considered
 - **Keep muting when the line starts** (forever-vo, VoiceOver, this addon before). Rejected: it is what cut the greeting.
