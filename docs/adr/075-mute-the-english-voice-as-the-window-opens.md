@@ -17,7 +17,7 @@ Three other voice-over addons were read ([research](../research/2026-11-08-voice
 - In the event it works out the line the window will show from the client's English (the gossip key of the greeting text, or the quest id and field) and asks `Voice.decide` whether that line will play (`peek = "ahead"`: nothing is counted or recorded).
 - When it will, the dialog channel goes off at once, under the existing rules: only with `voice.muteDialog` on, only when the player had the channel on, recorded in `WFJ_DB.voiceDialogMuted` so a reload or crash is undone at the next load.
 - The mute is given back as soon as the window's line turns out not to play, and after 1.5 s when no line started. A line that starts holds it until it ends, as before.
-- Nothing is muted ahead for a line with no file, a kind switched off, a line heard before (the first time only settings), while English shows, or while another line plays.
+- Nothing is muted ahead for a line with no file, a kind switched off, a line heard before (the first time only settings), the window's area (quests or gossip) switched off, while English shows, or while another line plays.
 
 ## Rationale
 

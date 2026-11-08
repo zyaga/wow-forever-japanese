@@ -194,10 +194,6 @@ local function fileFor(entry, who)
   return entry.file, entry.seconds
 end
 
--- A line just shown in Japanese on `surface` under record key `recKey`, rendered as (kind, id), said by `who`.
--- → the file's path and its length in seconds, or nil and why ("kind" · "off" · "english" · "nopack" · "missing" ·
--- "stale" · "notext" · "heard"). `peek`: only asking (the replay button), so /wfj debug's counts are left as they are;
--- "ahead": only asking whether the line will play when its window opens (a line heard before will not).
 -- → the setting that turns a surface's record key off (a record key's trailing page number is its kind's), or nil
 local function kindSettingOf(surface, recKey)
   local byKey = Voice.KINDS[surface]
@@ -211,6 +207,10 @@ local function heardRecord(kindSetting)
   return type(seen) == "table" and seen or nil
 end
 
+-- A line just shown in Japanese on `surface` under record key `recKey`, rendered as (kind, id), said by `who`.
+-- → the file's path and its length in seconds, or nil and why ("kind" · "off" · "english" · "nopack" · "missing" ·
+-- "stale" · "notext" · "heard"). `peek`: only asking (the replay button), so /wfj debug's counts are left as they are;
+-- "ahead": only asking whether the line will play when its window opens (a line heard before will not).
 function Voice.decide(surface, recKey, kind, id, who, peek)
   local kindSetting = kindSettingOf(surface, recKey)
   if not kindSetting then return nil, "kind" end
