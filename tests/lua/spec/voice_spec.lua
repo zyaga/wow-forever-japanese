@@ -640,6 +640,20 @@ describe("UI/VoicePlayer: playing the pack's line in the quest window (voice pan
         assert.are.equal("0", cvars.Sound_EnableDialog)
       end)
 
+      it("each window event logs what the mute decided and why", function()
+        local logged = {}
+        WFJ.Diag = { log = function(kind, msg, fields) logged[#logged + 1] = { kind, msg, fields } end }
+        text = "" -- a first talk: the window's text has not arrived yet
+        Stub.fireAll("GOSSIP_SHOW")
+        text = "Greetings, traveller."
+        Stub.fireAll("GOSSIP_SHOW")
+        WFJ.Diag = nil
+        assert.are.equal("voicetime", logged[1][1])
+        assert.are.equal("window - #0", logged[1][2])
+        assert.are.same({ "GOSSIP_SHOW", "no text yet" }, { logged[1][3].event, logged[1][3].why })
+        assert.are.equal("ahead g-" .. G .. " #1", logged[2][2])
+      end)
+
       it("a greeting heard before, or one with no Japanese or no text yet, keeps the NPC's English", function()
         db.voiceHeard = { ["g-" .. G] = WFJ.Hash.key(DATA.gossip[G].ja) } -- greetings once is on by default
         Stub.fireAll("GOSSIP_SHOW")

@@ -575,7 +575,7 @@ local function readable(v)
   return type(v) == "string" and v ~= "" and not (type(isSecret) == "function" and isSecret(v))
 end
 
--- The line the window an event opens will show → surface, record key, kind, id and its area; or nil when it has none
+-- The line the window an event opens will show → surface, record key, kind, id and its area; or nil and why not
 local function opening(event)
   if event == "GOSSIP_SHOW" or event == "QUEST_GREETING" then
     local text
@@ -586,15 +586,16 @@ local function opening(event)
       local get = Compat.resolve("GetGreetingText")
       text = type(get) == "function" and get() or nil
     end
-    local key = readable(text) and type(WFJ.ShippedGossipKey) == "function" and WFJ.ShippedGossipKey(text) or nil
-    if not key then return nil end
+    if not readable(text) then return nil, "no text yet" end -- a first talk: the text may arrive after the event
+    local key = type(WFJ.ShippedGossipKey) == "function" and WFJ.ShippedGossipKey(text) or nil
+    if not key then return nil, "no Japanese" end
     return event == "GOSSIP_SHOW" and "gossip" or "questframe.greeting", "greeting", "gossip", key, "gossip"
   end
   local q = QUEST_EVENTS[event]
-  if not q then return nil end
+  if not q then return nil, "not a window" end
   local getID, getText = Compat.resolve("GetQuestID"), Compat.resolve(q[3])
   local id = type(getID) == "function" and getID() or nil
-  if type(id) ~= "number" or id == 0 then return nil end
+  if type(id) ~= "number" or id == 0 then return nil, "no quest" end
   local en = type(getText) == "function" and getText() or nil
   local kind, keyId = "quest." .. q[2], id
   if readable(en) and WFJ.QuestFrame and type(WFJ.QuestFrame.fieldSource) == "function" then
@@ -606,12 +607,23 @@ end
 -- An NPC window is opening: the English greeting has just started. When the window's line will be read aloud, the
 -- dialog channel goes off now and comes back when the line ends, when it turns out not to play, or after
 -- AHEAD_SECONDS when no line started.
+-- Each window event leaves one "window" line in the log saying what the mute decided and why, so a greeting heard in
+-- English can be traced to its cause (a first talk whose text came after the event, a line with no file, …).
+local function noteWindow(event, why, key)
+  trace("window", { key = key or "-", token = 0 }, { event = event, why = why })
+  return false
+end
+
 function VoicePlayer.onWindowEvent(event)
-  if not ready or playing then return false end
+  if not ready then return false end
+  if playing then return noteWindow(event, "a line is playing", playing.key) end
   local surface, recKey, kind, id, area = opening(event)
-  if not surface or not WFJ.State.areaEnabled(area) then return false end -- an area off renders no Japanese
-  if not WFJ.Voice.decide(surface, recKey, kind, id, speaker(windowOf(surface)), "ahead") then return false end
-  if not muteDialog() then return false end
+  if not surface then return noteWindow(event, recKey) end
+  local key = WFJ.Voice.packKey(kind, id)
+  if not WFJ.State.areaEnabled(area) then return noteWindow(event, "area off", key) end -- renders no Japanese
+  local path, detail = WFJ.Voice.decide(surface, recKey, kind, id, speaker(windowOf(surface)), "ahead")
+  if not path then return noteWindow(event, detail, key) end
+  if not muteDialog() then return noteWindow(event, "dialog left as it is", key) end
   aheadTokens = aheadTokens + 1
   local token = aheadTokens
   ahead, aheadWindow = token, windowOf(surface)

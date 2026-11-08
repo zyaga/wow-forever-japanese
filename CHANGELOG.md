@@ -21,6 +21,7 @@ an old setting stops working). A release moves those lines under its version num
 ### Fixed
 - Opening the world map in combat is no longer blocked with this addon blamed after you used the voice panel's book button on a quest line.
 - No more "bad argument #2 to 'SetFont' ... Secret values" Lua errors in a busy trade channel: a line whose font size the game keeps secret now stays in English.
+- The AddOns list's tooltip shows the Japanese in this addon's name and the voice pack's name instead of empty boxes.
 
 ## 0.11.0 - 2026-11-08
 
