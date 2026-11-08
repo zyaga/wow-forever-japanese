@@ -410,28 +410,27 @@ describe("the voice player with the voice panel on", function()
     assert.is_false(panel().head.shown)
   end)
 
-  it("the whole-text button opens the quest in the log when it is there, else a window, and prints nothing",
-    function()
+  it("the whole-text button opens the addon's own window, never Blizzard's quest log, and prints nothing", function()
+    -- the quest log opened from addon code taints the map's quest fields and the tracker until a reload, and the next
+    -- world map open in combat is blocked (in game: the book press at 22:07:02, the blocked quest pins at 22:14:34)
     local opened
-    _G.C_QuestLog = { GetLogIndexForQuestID = function(id) return id == 2 and 1 or nil end }
+    _G.C_QuestLog = { GetLogIndexForQuestID = function(id) return id == 2 and 1 or nil end } -- the quest is in the log
     _G.QuestMapFrame_OpenToQuestDetails = function(id) opened = id end
-    local trail = {}
-    WFJ.TaintWatch = { trail = function(label) trail[#trail + 1] = { label, opened } end }
     Stub.showDetail()
     local f = panel()
     f.textButton.scripts.OnClick(f.textButton)
-    assert.are.equal(2, opened)
-    -- the quest log is opened by Blizzard's own function from our code: the taint log's ring says so first
-    assert.are.same({ { "voice.openQuestLog", nil } }, trail)
-    WFJ.TaintWatch = nil
-    assert.is_nil(_G.WFJVoicePanelText)
-    S.set("voice.panel.questLog", false)
-    f.textButton.scripts.OnClick(f.textButton)
+    assert.is_nil(opened)
     assert.is_true(_G.WFJVoicePanelText:IsShown())
     assert.are.equal("御機嫌よう、Reyn。Silverwind Refugeへ行け。", _G.WFJVoicePanelText.text:GetText())
     f.textButton.scripts.OnClick(f.textButton) -- a second press closes it
     assert.is_false(_G.WFJVoicePanelText:IsShown())
     assert.are.same({}, Stub.prints)
+  end)
+
+  it("a saved value of the old quest log setting is dropped at load", function()
+    db.settings["voice.panel.questLog"] = true
+    WFJ.VoiceQueue.init(db)
+    assert.is_nil(db.settings["voice.panel.questLog"])
   end)
 
   it("a waiting line does not start while the reveal key is held; letting go starts it", function()
@@ -451,7 +450,6 @@ describe("the voice player with the voice panel on", function()
   it("the whole-text window shows the line's English while the reveal key is held, with no word cards", function()
     Stub.showDetail()
     local f = panel()
-    S.set("voice.panel.questLog", false)
     f.textButton.scripts.OnClick(f.textButton)
     Stub.keys.alt = true
     WFJ.Modifier.refresh()

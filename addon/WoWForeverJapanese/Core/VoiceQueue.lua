@@ -27,7 +27,6 @@ Q.MAPPED = {
   locked = flag("voice.panel.lock"),
   buttons = word("voice.panel.hoverButtons", "hover", "always"),
   idle = word("voice.panel.fade", "fade", "stay"),
-  textOpens = word("voice.panel.questLog", "quest", "window"),
   -- 1 Full Dark, 3 Strip Dark, 4 Full Parchment, 5 Strip Parchment (UI/VoicePanelLooks)
   look = function()
     local strip, parchment = S().get("voice.panel.size") == "strip", S().get("voice.panel.style") == "parchment"
@@ -50,9 +49,10 @@ Q.opt = setmetatable({}, {
 })
 
 -- The earlier panel builds' choices, carried into the settings once and then dropped: their switches for on / off,
--- strip and parchment became the two dropdowns; the waiting-list and readings switches and the tuning values are gone.
+-- strip and parchment became the two dropdowns; the waiting-list and readings switches, the book button's quest log
+-- switch (the quest log opened from addon code blocked the world map in combat) and the tuning values are gone.
 local RETIRED_SETTINGS = { "voice.panel", "voice.panel.strip", "voice.panel.parchment", "voice.panel.queueBox",
-  "voice.panel.ruby" }
+  "voice.panel.ruby", "voice.panel.questLog" }
 local RETIRED_SAVED = { "on", "keepPlaying", "look", "buttons", "queue", "idle", "idleDelay", "combat", "combatAlpha",
   "head", "zoom", "cam", "page", "textOpens", "scale", "locked", "textSize", "rubyInline", "lastSize" }
 

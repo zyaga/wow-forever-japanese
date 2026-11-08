@@ -295,8 +295,6 @@ panelSetting("voice.panel.hoverButtons", true, "Show the controls only while the
   "マウスを乗せたときだけ操作ボタンを表示")
 panelSetting("voice.panel.fade", true, "Fade out after the last line", "最後の文のあと消える")
 panelSetting("voice.panel.combatDim", true, "Dim the panel in combat", "戦闘中はパネルを薄くする")
-panelSetting("voice.panel.questLog", true, "The book button opens the quest in the quest log",
-  "本のボタンでクエストログを開く")
 panelSetting("voice.panel.lock", false, "Lock the panel where it is", "パネルの位置を固定")
 
 -- The word list (Core/Words, ADR-069). The save click is read when the mouse button is released over a highlighted

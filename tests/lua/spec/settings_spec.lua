@@ -8,7 +8,7 @@ local IDS = { "enabled", "modifier", "area.quests", "area.gossip", "area.itemToo
   "minimapButton", "voice.enabled", "voice.offer", "voice.progress", "voice.turnin", "voice.greeting", "voice.books",
   "voice.errors", "voice.questOnce", "voice.greetingOnce",
   "voice.muteDialog", "voice.button", "voice.panel.size", "voice.panel.style", "voice.panel.keep", "voice.panel.head",
-  "voice.panel.hoverButtons", "voice.panel.fade", "voice.panel.combatDim", "voice.panel.questLog", "voice.panel.lock",
+  "voice.panel.hoverButtons", "voice.panel.fade", "voice.panel.combatDim", "voice.panel.lock",
   "words.saveClick", "words.screenshot", "study.tab", "study.newPerDay", "study.combatHide", "study.sound" }
 local DEFAULTS = { enabled = true, modifier = "alt", ["area.quests"] = true, ["area.gossip"] = true,
   ["area.itemTooltips"] = true, ["area.spellTooltips"] = true, ["area.interface"] = true, ["area.books"] = true,
@@ -24,7 +24,7 @@ local DEFAULTS = { enabled = true, modifier = "alt", ["area.quests"] = true, ["a
   -- the voice panel: Full, Parchment, keep reading, head, controls on mouse-over, fade, dim in combat, quest log on
   ["voice.panel.size"] = "full", ["voice.panel.style"] = "parchment", ["voice.panel.keep"] = true,
   ["voice.panel.head"] = true, ["voice.panel.hoverButtons"] = true, ["voice.panel.fade"] = true,
-  ["voice.panel.combatDim"] = true, ["voice.panel.questLog"] = true, ["voice.panel.lock"] = false,
+  ["voice.panel.combatDim"] = true, ["voice.panel.lock"] = false,
   ["words.saveClick"] = "ctrl", ["words.screenshot"] = false, -- the word list: Ctrl+click, no screenshot
   ["study.tab"] = true, ["study.newPerDay"] = "20", ["study.combatHide"] = true, ["study.sound"] = true } -- studying it
 

@@ -443,11 +443,20 @@ local function hookWriters()
   end) then
     n = n + 1
   end
+  -- the map's quest pins compare the shown map id before their protected call (blizzard_mapcanvas.lua:60-65); set
+  -- by tainted code (the quest log opened from an addon), it blocks the pins on the next world map open in combat
+  local function hookMap()
+    hook(C.resolve("WorldMapFrame"), "SetMapID", function(self)
+      TaintWatch.wrote("WorldMapFrame.mapID", self, "mapID")
+    end)
+  end
   local LOD = WFJ.LoadOnDemand
   if type(LOD) == "table" and type(LOD.when) == "function" then
     LOD.when("Blizzard_ObjectiveTracker", hookTracker)
+    LOD.when("Blizzard_WorldMap", hookMap)
   else
     hookTracker()
+    hookMap()
   end
   for _, fn in ipairs({ "ClearOnBarHighlightMarks", "UpdateOnBarHighlightMarksBySpell",
     "UpdateOnBarHighlightMarksByFlyout", "UpdateOnBarHighlightMarksByPetAction" }) do

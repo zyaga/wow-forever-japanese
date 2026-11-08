@@ -162,6 +162,25 @@ describe("UI/TaintWatch", function()
     _G.QuestMapFrame_ShowQuestDetails, _G.QuestMapFrame = nil, nil
   end)
 
+  it("the world map logs who set the zone it shows when that came out tainted", function()
+    -- the map's quest pins compare the shown map id before their protected call (blizzard_mapcanvas.lua:60-65); a
+    -- tainted id there blocks them in combat
+    local hooked = {}
+    _G.hooksecurefunc = function(t, m, fn)
+      if type(t) == "table" then hooked[m] = fn end
+    end
+    _G.C_Timer = { NewTicker = function() end }
+    _G.WorldMapFrame = { mapID = 1429, SetMapID = function() end }
+    TW.init()
+    assert.is_function(hooked.SetMapID)
+    hooked.SetMapID(_G.WorldMapFrame, 1429)
+    assert.are.equal(0, #entriesOf("write"))
+    taint.mapID = { t = _G.WorldMapFrame, by = "WoWForeverJapanese" }
+    hooked.SetMapID(_G.WorldMapFrame, 1429)
+    assert.is_truthy(entriesOf("write")[1].msg:find("^WorldMapFrame%.mapID"))
+    _G.WorldMapFrame = nil
+  end)
+
   it("a clicked quest block logs which of its own keys and its module's read as tainted", function()
     local hooked = {}
     _G.hooksecurefunc = function(t, m, fn)
