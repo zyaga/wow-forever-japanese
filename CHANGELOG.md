@@ -9,6 +9,19 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Added
+- Read NPC greetings aloud only the first time: a vendor or trainer greets you the same way at every visit, so a greeting you have heard stays quiet when its window opens. This is on by default (*NPC greetings: only the first time* on the Voice page). *Quest lines: only the first time* does the same for quest offers, progress and turn-ins, and is off by default. The window's play button still reads the line, and a line whose Japanese changed counts as new.
+
+### Changed
+- The NPC's English greeting no longer starts before the Japanese line: when the window's line will be read aloud, the game's English voice is silenced as the window opens, not when the Japanese starts. It comes back as soon as the line turns out not to play, or after a second and a half.
+
+### Removed
+- The setting *The book button opens the quest in the quest log*. The voice panel's book button now always opens the small window with the line's whole Japanese.
+
+### Fixed
+- Opening the world map in combat is no longer blocked with this addon blamed after you used the voice panel's book button on a quest line.
+- No more "bad argument #2 to 'SetFont' ... Secret values" Lua errors in a busy trade channel: a line whose font size the game keeps secret now stays in English.
+
 ## 0.11.0 - 2026-11-08
 
 ### Fixed

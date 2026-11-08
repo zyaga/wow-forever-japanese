@@ -792,6 +792,11 @@ The quest NPC the addon saw show a quest line (creature id, sex, name, title), s
 _Avoid_: speaker table, cached NPC, quest giver record
 → [Voice over](systems/voice.md) · [Data model](architecture/data-model.md)
 
+**Heard record**:
+The lines already read aloud, as pack key → [[Japanese hash]], saved account-wide in `WFJ_DB.voiceHeard` for the first time only settings (`voice.questOnce`, `voice.greetingOnce`). A line in it with the same hash is not read aloud again when its window shows; a click on the play button still reads it. Keys and hashes only, never text.
+_Avoid_: played list, history, seen lines
+→ [Voice over](systems/voice.md#when-a-line-starts) · [Data model](architecture/data-model.md)
+
 ## Client
 
 **Game type**:
