@@ -621,6 +621,31 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       WFJ.Modifier.refresh()
     end)
 
+    it("a flyout Dialogue UI made and wrote before it was found is written again in Japanese and laid out", function()
+      load({ loaded = false })
+      ship({ ["quest.title"] = { [2] = "Sharptalonの鉤爪" },
+        ["quest.completion"] = { [2] = "よくやった。\n\nこれで安心だ。" } })
+      game(WORDS)
+      local fly, hidden = DUI.makeFlyout(), DUI.makeFlyout()
+      local laidOut = 0
+      function fly:Layout() laidOut = laidOut + 1 end
+      for _, f in ipairs({ fly, hidden }) do
+        f.questData = { questID = 2, rawText = "Well done, $N.$B$BNow we are safe.", title = "Sharptalon's Claw",
+          paragraphs = { "Well done, Reyn.", "Now we are safe." } }
+        f:SetQuestText(f.questData.title, f.questData.paragraphs)
+      end
+      fly:Show()
+      hidden:Hide()
+      Stub.loadedAddons.DialogueUI = true
+      WFJ.LoadOnDemand.loaded("DialogueUI")
+      DUI.flush()
+      assert.are.equal("Sharptalonの鉤爪", fly.Title:GetText())
+      assert.are.same({ "よくやった。", "これで安心だ。" }, fly:paragraphs())
+      assert.are.equal(1, laidOut)
+      -- one not on screen is left as it is: it is written again when it next shows
+      assert.are.equal("Sharptalon's Claw", hidden.Title:GetText())
+    end)
+
     it("the chat panel shows an NPC's line in the chat window's Japanese, English while the key is held", function()
       load({ loaded = false })
       local panel = DUI.installChatPanel()

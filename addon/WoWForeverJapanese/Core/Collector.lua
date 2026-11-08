@@ -462,7 +462,7 @@ local function evaluate(kind, id, field, raw, key, npc)
   end
   -- Only quest and gossip text carry $N/$C/$R, so only they trade the class and race for tokens. That is right for
   -- the common $C/$R lines; a literal class/race word is the known, audit-visible exception.
-  local player = TOKEN_KINDS[kind] and { name = name, class = p.class, race = p.race } or nil
+  local player = TOKEN_KINDS[kind] and { name = name, class = p.class, race = p.race, raceWord = p.raceWord } or nil
 
   local e = Collector.text(raw, player)
   if e == "" then return "refused", "empty" end

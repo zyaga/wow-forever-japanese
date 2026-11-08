@@ -271,6 +271,20 @@ local function wrapFlyout(fly)
     end
     return done(setText(self, jaTitle or title, jaParas or paragraphs, ...))
   end
+  -- Dialogue UI makes its flyout and writes it in the same call, so the first one of a session is on screen before a
+  -- scan finds it: write it again through the wrapper and let Dialogue UI lay it out [read: Dialogue UI 1.0.7 b,
+  -- QuestFlyout.lua SetQuestData: SetQuestText then Layout]
+  -- (on the next frame: the first scan runs while the window support is still being installed)
+  local function rewrite()
+    local data = fly.questData
+    if type(data) == "table" and not data.isError and type(data.paragraphs) == "table"
+        and type(fly.IsShown) == "function" and fly:IsShown() then
+      guarded(fly.SetQuestText, fly, data.title, data.paragraphs)
+      if type(fly.Layout) == "function" then guarded(fly.Layout, fly) end
+    end
+  end
+  local timer = Compat.resolve("C_Timer")
+  if type(timer) == "table" and type(timer.After) == "function" then timer.After(0, rewrite) else rewrite() end
 end
 
 -- Dialogue UI's frames this module works on but cannot reach by name, told apart by their own members.

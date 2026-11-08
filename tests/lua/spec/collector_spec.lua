@@ -653,6 +653,19 @@ describe("Core/Collector gossip kind", function()
     assert.is_nil(next(db.entries))
   end)
 
+  it("a Skyborne character records the race word as the race: known when the $R line ships, stored as $R otherwise", function()
+    local db = C.load(nil, deps())
+    player = { name = "Reyn", class = "Warrior", race = "High Order Skyborne", raceWord = "Skyborne" }
+    shipped.gossip = { [WFJ.Hash.key(WFJ.Normalize.v1("Nice work, $R."))] = { ja = "よくやった、{race}。", status = "." } }
+    assert.are.equal("known", C.recordGossip("Nice work, skyborne.", INN))
+    assert.is_nil(next(db.entries))
+    assert.are.equal("recorded", C.recordGossip("Well met, skyborne.", INN))
+    local _, e = next(db.entries)
+    assert.are.equal("Well met, $R.", e.e)
+    assert.are.equal("recorded", C.record("quest", 9, "description", "Go well, skyborne."))
+    assert.are.equal("Go well, $R.", db.entries["quest:9:description"].e)
+  end)
+
   it("another NPC with the same line joins n: sorted, unique, capped; a non-creature adds nothing", function()
     local db = C.load(nil, deps())
     local raw = "Goodbye."

@@ -65,7 +65,7 @@ local function player()
   if name ~= nil and name == _G.UNKNOWNOBJECT then name = nil end
   return {
     name = name, className = className, classFile = classFile,
-    raceName = raceName, raceFile = raceFile, raceWord = WFJ.Collector.raceWord(raceName, raceFile),
+    raceName = raceName, raceFile = raceFile, raceWord = WFJ.Collector and WFJ.Collector.raceWord(raceName, raceFile) or nil,
     sex = call(UnitSex, "player"),
   }
 end

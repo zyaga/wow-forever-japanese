@@ -671,8 +671,8 @@ def generate(  # noqa: C901, PLR0913, PLR0915 - engine, encoder and log injected
                 made += 1
                 chars_made += len(text)
                 seconds_made += secs
-                # a run stopped at any moment keeps all but its last second's files; written once a second, not
-                # per file: the record is the whole game's and a full run makes thousands of files
+                # a stopped run keeps all but its last second's files; written once a second, not per file:
+                # the record is the whole game's and a full run makes thousands of files
                 if time.time() - saved_at[0] >= SAVE_SECONDS:
                     save()
                 if made % RECORD_EVERY == 0:
