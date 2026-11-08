@@ -9,6 +9,8 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+## 0.12.0 - 2026-11-08
+
 ### Added
 - Read NPC greetings aloud only the first time: a vendor or trainer greets you the same way at every visit, so a greeting you have heard stays quiet when its window opens. This is on by default (*NPC greetings: only the first time* on the Voice page). *Quest lines: only the first time* does the same for quest offers, progress and turn-ins, and is off by default. The window's play button still reads the line, and a line whose Japanese changed counts as new.
 - Japanese for what Forever 1.60.1.70862 added: about 240 quests (titles, offers and objectives, with word cards), 287 item tooltips, new spell tooltips, 24 NPC lines, objective and area names.
