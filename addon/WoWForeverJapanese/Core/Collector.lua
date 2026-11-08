@@ -131,9 +131,9 @@ end
 local function replaceLower(text, player)
   -- a race the client names longer than the word it prints for $R / $r ("High Order Skyborne", printed "Skyborne")
   -- has that word replaced in both casings; normalize_v1 already took the long name
-  local word = player.raceWord
-  if type(word) == "string" and word ~= "" then text = Normalize.replaceWord(text, word, "{race}") end
-  for _, pair in ipairs({ { player.class, "{class}" }, { player.race, "{race}" }, { word, "{race}" } }) do
+  local raceWord = player.raceWord
+  if type(raceWord) == "string" and raceWord ~= "" then text = Normalize.replaceWord(text, raceWord, "{race}") end
+  for _, pair in ipairs({ { player.class, "{class}" }, { player.race, "{race}" }, { raceWord, "{race}" } }) do
     local word = pair[1]
     if type(word) == "string" and word ~= "" then
       if player.plural then text = Normalize.replaceWord(text, word .. "s", pair[2] .. "s") end

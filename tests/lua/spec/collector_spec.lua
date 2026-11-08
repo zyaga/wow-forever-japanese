@@ -271,7 +271,8 @@ describe("Core/Collector", function()
     it("a race whose name is longer than the word $r prints: that word is the race too", function()
       -- Forever's Skyborne: UnitRace says "High Order Skyborne", the client prints $r as "skyborne"
       local SKY = { name = "Reyn", class = "Warrior", race = "High Order Skyborne", raceWord = "Skyborne" }
-      assert.are.equal("Nice work, $R. Please accept one of these.", C.text("Nice work, skyborne. Please accept one of these.", SKY))
+      assert.are.equal("Nice work, $R. Please accept one of these.",
+        C.text("Nice work, skyborne. Please accept one of these.", SKY))
       assert.are.equal("Greetings, $R.", C.text("Greetings, Skyborne.", SKY))
       assert.are.equal("I am a $R of the High Order.", C.text("I am a High Order Skyborne of the High Order.", SKY))
       local keys = C.keys("Nice work, skyborne.", SKY)
@@ -653,7 +654,7 @@ describe("Core/Collector gossip kind", function()
     assert.is_nil(next(db.entries))
   end)
 
-  it("a Skyborne character records the race word as the race: known when the $R line ships, stored as $R otherwise", function()
+  it("a Skyborne character records the race word as the race: known when the $R line ships, $R otherwise", function()
     local db = C.load(nil, deps())
     player = { name = "Reyn", class = "Warrior", race = "High Order Skyborne", raceWord = "Skyborne" }
     shipped.gossip = { [WFJ.Hash.key(WFJ.Normalize.v1("Nice work, $R."))] = { ja = "よくやった、{race}。", status = "." } }

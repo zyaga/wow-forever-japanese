@@ -522,21 +522,21 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       local tip = DUI.installTooltip()
       -- Dialogue UI's own reader of the client's tooltip data: one line per data line [read: Tooltip_Private.lua,
       -- ProcessTooltipDataLines]
-      function tip:ProcessTooltipData(data)
-        self.numLines, self.grid, self.tooltipData = 0, {}, data
-        for _, line in ipairs(data.lines) do self:AddLeftLine(line.leftText) end
+      function tip:ProcessTooltipData(tipData)
+        self.numLines, self.grid, self.tooltipData = 0, {}, tipData
+        for _, line in ipairs(tipData.lines) do self:AddLeftLine(line.leftText) end
         return true
       end
       Stub.loadedAddons.DialogueUI = true
       WFJ.LoadOnDemand.loaded("DialogueUI")
-      local data = { isItem = true, id = 6948, lines = { { leftText = "Hearthstone" },
+      local item = { isItem = true, id = 6948, lines = { { leftText = "Hearthstone" },
         { leftText = "Use: Returns you to Darnassus. Speak to an Innkeeper in a different place to change your home"
           .. " location." }, { leftText = "Quest Item" } } }
-      tip:ProcessTooltipData(data)
+      tip:ProcessTooltipData(item)
       assert.are.same({ "Hearthstone", "使用：Hearthstoneの場所に戻ります。", "クエストアイテム" }, tip:texts())
       -- Dialogue UI's data is never changed: it reads it again on its own updates
       assert.are.equal("Use: Returns you to Darnassus. Speak to an Innkeeper in a different place to change your"
-        .. " home location.", data.lines[2].leftText)
+        .. " home location.", item.lines[2].leftText)
       -- a run of two effect lines: the Japanese on the first, the second gone, as on the game's tooltip
       tip:ProcessTooltipData({ isItem = true, id = 7000, lines = { { leftText = "Belt of Haste" },
         { leftText = "Equip: +5 Stamina." }, { leftText = "Use: Increases run speed for 10 sec." } } })
@@ -628,7 +628,7 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       game(WORDS)
       local fly, hidden = DUI.makeFlyout(), DUI.makeFlyout()
       local laidOut = 0
-      function fly:Layout() laidOut = laidOut + 1 end
+      fly.Layout = function() laidOut = laidOut + 1 end
       for _, f in ipairs({ fly, hidden }) do
         f.questData = { questID = 2, rawText = "Well done, $N.$B$BNow we are safe.", title = "Sharptalon's Claw",
           paragraphs = { "Well done, Reyn.", "Now we are safe." } }

@@ -345,7 +345,7 @@ function DUI.makeFlyout()
       self.measuredIn[#self.measuredIn + 1] = fs.font and fs.font.path or "client" -- the face it is measured in
     end
   end
-  function f:SetQuestRewards() end
+  f.SetQuestRewards = function() end
   function f:paragraphs()
     local out = {}
     for i, fs in ipairs(self.texts) do out[i] = fs:GetText() end

@@ -96,7 +96,9 @@ end
 local function itemRunData(data)
   if type(data) ~= "table" or not data.isItem or type(data.lines) ~= "table" then return nil end
   local id = data.id
-  if type(id) ~= "number" and type(data.hyperlink) == "string" then id = tonumber(data.hyperlink:match("item:(%d+)")) end
+  if type(id) ~= "number" and type(data.hyperlink) == "string" then
+    id = tonumber(data.hyperlink:match("item:(%d+)"))
+  end
   local T = WFJ.Tooltip
   if type(id) ~= "number" or not T or type(T.itemRun) ~= "function" then return nil end
   local texts = {}
