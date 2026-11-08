@@ -41,6 +41,7 @@
 {"id": "2fd7b4b0f9ffa335", "field": "text", "en": "So what's this new plague all about?", "hash": "2fd7b4b0f9ffa335", "src": "vmangos@13b49dc"}
 {"id": "2fdaef1af3235983", "field": "text", "en": "Thrall instructed me to speak with you.", "hash": "2fdaef1af3235983", "src": "collector@1.60.1.70790", "npcs": [3230]}
 {"id": "2fdde45f9b73019a", "field": "text", "en": "Greetings.  I'm a female mage trainer, and you're a mage.", "hash": "2fdde45f9b73019a", "src": "vmangos@13b49dc"}
+{"id": "2fdfa34ca6d425bd", "field": "text", "en": "Deliver Marshal Ryan's Crest to Terry Lawrence in the Cathedral Square of Stormwind City.", "hash": "2fdfa34ca6d425bd", "src": "wdb@1.60.1.70862"}
 {"id": "2fe09d8d6a2be1a3", "field": "text", "en": "You are in need of a servant of the light?", "hash": "2fe09d8d6a2be1a3", "src": "collector@1.60.1.70862", "npcs": [221827]}
 {"id": "2fe22e083f9b20d1", "field": "text", "en": "Ah yes, Skinning.  There is no one finer in wielding a skinning knife than Yonn Deepcut.  You can find him in the great tent at the northwest corner of the village.", "hash": "2fe22e083f9b20d1", "src": "vmangos@13b49dc"}
 {"id": "2ffaa63d361ca82c", "field": "text", "en": "Something needs to be done about the Blackwood tribe.", "hash": "2ffaa63d361ca82c", "src": "vmangos@13b49dc"}

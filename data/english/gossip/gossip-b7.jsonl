@@ -25,6 +25,7 @@
 {"id": "b7912278b19219a6", "field": "text", "en": "How can you be so sure? If we've never dealt with the windlord directly, surely it's worth a try?", "hash": "b7912278b19219a6", "src": "collector@1.60.1.70205", "npcs": [251902]}
 {"id": "b79549fec67f9808", "field": "text", "en": "I no longer have my Zandalar Demoniac's Robe. Can you provide a replacement?", "hash": "b79549fec67f9808", "src": "vmangos@13b49dc"}
 {"id": "b79af7960d76fdce", "field": "text", "en": "Yeah, you're a real brainiac.  Just how smart do you think you are, Slip'kik?", "hash": "b79af7960d76fdce", "src": "vmangos@13b49dc"}
+{"id": "b79b1a6d2d49f6cc", "field": "text", "en": "Speak with Wharfmaster Steamfizzle at Steamwheedle Port in Tanaris", "hash": "b79b1a6d2d49f6cc", "src": "wdb@1.60.1.70862"}
 {"id": "b7a3793ac3b44a79", "field": "text", "en": "What do you seek, $c?", "hash": "b7a3793ac3b44a79", "src": "vmangos@13b49dc"}
 {"id": "b7a39a327223751e", "field": "text", "en": "Truly, I envy you: To battle in the name of the Horde, at the forefront of conflict. Mine is a job of command.$B$BCertainly, in my youth, I lived out the dreams that make my old age bearable. I now revel in the glory of victory, the bitter taste of defeat - all through the soldiers I command.\n", "hash": "b7a39a327223751e", "src": "vmangos@13b49dc"}
 {"id": "b7a6ebd0dd7b04c0", "field": "text", "en": "Check out Dawnstrider Enchanters on the middle rise then.  Teg will be more than happy to help you in whatever way he can.", "hash": "b7a6ebd0dd7b04c0", "src": "vmangos@13b49dc"}

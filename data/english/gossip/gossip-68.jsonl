@@ -16,6 +16,7 @@
 {"id": "685dfa7adf1c1c59", "field": "text", "en": "The Crystal Pylons of Un'Goro are a mystery to all. To the few inhabitants here, they are a source of legend, with much speculation as to their purpose.", "hash": "685dfa7adf1c1c59", "src": "vmangos@13b49dc"}
 {"id": "686668c3a66fe805", "field": "text", "en": "%s self destructs!", "hash": "686668c3a66fe805", "src": "vmangos@13b49dc"}
 {"id": "6866f9a2454fd0f1", "field": "text", "en": "Oy!  You here for a game of knuckles?", "hash": "6866f9a2454fd0f1", "src": "vmangos@13b49dc"}
+{"id": "686e2bc635af2da4", "field": "text", "en": "Return to Knight Commander Demar Brant in Farholde Keep.", "hash": "686e2bc635af2da4", "src": "wdb@1.60.1.70862"}
 {"id": "68731898241737de", "field": "text", "en": "%s cooks up a batch of spicy hot buzzard wings for $n.", "hash": "68731898241737de", "src": "vmangos@13b49dc"}
 {"id": "687b29c1a1f9b682", "field": "text", "en": "|cffffff00Northpass Tower has been taken by the Horde!|r", "hash": "687b29c1a1f9b682", "src": "vmangos@13b49dc"}
 {"id": "687c3574bac76b4d", "field": "text", "en": "It's a rescue attempt!  Slay them all!", "hash": "687c3574bac76b4d", "src": "vmangos@13b49dc"}

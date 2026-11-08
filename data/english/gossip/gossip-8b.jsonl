@@ -34,6 +34,7 @@
 {"id": "8bbe20644ee7ea4b", "field": "text", "en": "If Hydraxis recruits more in his war, then it might shift the balance of power...", "hash": "8bbe20644ee7ea4b", "src": "vmangos@13b49dc"}
 {"id": "8bc4c2df69ba8d9b", "field": "text", "en": "Help help!  I'm being repressed!", "hash": "8bc4c2df69ba8d9b", "src": "vmangos@13b49dc"}
 {"id": "8bc637a19b4a8146", "field": "text", "en": "H-Hello. You'll have to excuse me, I'm used to your kind running from me.", "hash": "8bc637a19b4a8146", "src": "collector@1.60.1.70790", "npcs": [251684]}
+{"id": "8bc782e7aa8054d5", "field": "text", "en": "Find Sergeant Riftan near the Twilight's Shroud to the west.", "hash": "8bc782e7aa8054d5", "src": "wdb@1.60.1.70862"}
 {"id": "8bd1ac2684de6f31", "field": "text", "en": "Your victory shall be short lived. The days of both the Alliance and Horde are coming to an end! The next time we meet shall be the last.", "hash": "8bd1ac2684de6f31", "src": "vmangos@13b49dc"}
 {"id": "8bd3e0ddaa413561", "field": "text", "en": "Lyria's the one you should talk to if you need some training.  She can usually be found out behind the smithy waiting for some armor or weapon to be finished.", "hash": "8bd3e0ddaa413561", "src": "vmangos@13b49dc"}
 {"id": "8bd3ef5fb87dbb0d", "field": "text", "en": "Well, that should do it.  Come now, back to the shop to finish our business!", "hash": "8bd3ef5fb87dbb0d", "src": "vmangos@13b49dc"}

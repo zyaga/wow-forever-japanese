@@ -1,9 +1,17 @@
-{"id": 94013, "field": "text", "en": "Tame a Vuldren Alpha", "hash": "f68000a2523ceef7", "src": "wdb@1.60.1.70790"}
-{"id": 94436, "field": "text", "en": "Speak with Deathguard Billmuth at Tyr's Watch.", "hash": "0b39a5af29d18de5", "src": "wdb@1.60.1.70790"}
-{"id": 94438, "field": "text", "en": "Take the Symbol of Life and use it to resurrect Deathguard Falgan at Venomweb Vale.", "hash": "1b676ced5da7944a", "src": "wdb@1.60.1.70790"}
-{"id": 94568, "field": "text", "en": "Observe the conversation", "hash": "c57efd0a96d2f204", "src": "wdb@1.60.1.70790"}
-{"id": 94792, "field": "text", "en": "Tame a Rockhide Boar", "hash": "ace1ef75ea65809c", "src": "wdb@1.60.1.70790"}
-{"id": 94863, "field": "text", "en": "Tame a Gray Forest Wolf", "hash": "d616abc67155416f", "src": "wdb@1.60.1.70790"}
-{"id": 94864, "field": "text", "en": "Tame a Young Forest Bear", "hash": "1940044d0bae772c", "src": "wdb@1.60.1.70790"}
-{"id": 94978, "field": "text", "en": "Tame a Windsong Crawler", "hash": "bed558cc7b4c0425", "src": "wdb@1.60.1.70790"}
-{"id": 94979, "field": "text", "en": "Tame an Ornery Galestrider", "hash": "71cb4c75705d885f", "src": "wdb@1.60.1.70790"}
+{"id": 94013, "field": "text", "en": "Tame a Vuldren Alpha", "hash": "f68000a2523ceef7", "src": "wdb@1.60.1.70862"}
+{"id": 94436, "field": "text", "en": "Speak with Deathguard Billmuth at Tyr's Watch.", "hash": "0b39a5af29d18de5", "src": "wdb@1.60.1.70862"}
+{"id": 94438, "field": "text", "en": "Take the Symbol of Life and use it to resurrect Deathguard Falgan at Venomweb Vale.", "hash": "1b676ced5da7944a", "src": "wdb@1.60.1.70862"}
+{"id": 94556, "field": "text", "en": "Help Jom-jom reach Bolder'ok", "hash": "4a78b0b5e0fb0684", "src": "wdb@1.60.1.70862"}
+{"id": 94568, "field": "text", "en": "Observe the conversation", "hash": "c57efd0a96d2f204", "src": "wdb@1.60.1.70862"}
+{"id": 94670, "field": "text", "en": "Buzzbeak defeated", "hash": "30dcb3edf5a3c931", "src": "wdb@1.60.1.70862"}
+{"id": 94739, "field": "text", "en": "Kronk defeated", "hash": "85a9a976adb77710", "src": "wdb@1.60.1.70862"}
+{"id": 94792, "field": "text", "en": "Tame a Rockhide Boar", "hash": "ace1ef75ea65809c", "src": "wdb@1.60.1.70862"}
+{"id": 94861, "field": "text", "en": "Go with Hurley to save Curly.", "hash": "f6bff5523bc515e4", "src": "wdb@1.60.1.70862"}
+{"id": 94863, "field": "text", "en": "Tame a Gray Forest Wolf", "hash": "d616abc67155416f", "src": "wdb@1.60.1.70862"}
+{"id": 94864, "field": "text", "en": "Tame a Young Forest Bear", "hash": "1940044d0bae772c", "src": "wdb@1.60.1.70862"}
+{"id": 94927, "field": "text", "en": "Help Dunston break out of Bolder'ok", "hash": "39c6a1371a747e75", "src": "wdb@1.60.1.70862"}
+{"id": 94962, "field": "text", "en": "Bonegnaw defeated", "hash": "61a8de705d064d08", "src": "wdb@1.60.1.70862"}
+{"id": 94963, "field": "text", "en": "Help Fuzzle escape Sunnyglade.", "hash": "c5f0a40148e8cf02", "src": "wdb@1.60.1.70862"}
+{"id": 94978, "field": "text", "en": "Tame a Windsong Crawler", "hash": "bed558cc7b4c0425", "src": "wdb@1.60.1.70862"}
+{"id": 94979, "field": "text", "en": "Tame an Ornery Galestrider", "hash": "71cb4c75705d885f", "src": "wdb@1.60.1.70862"}
+{"id": 94992, "field": "text", "en": "Escort the lost horse to Wheeler's Grange.", "hash": "f6c1ea8e34708421", "src": "wdb@1.60.1.70862"}

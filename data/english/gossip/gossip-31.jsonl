@@ -2,6 +2,7 @@
 {"id": "31045ed168214e40", "field": "text", "en": "Interesting... I hadn't noticed this earlier...", "hash": "31045ed168214e40", "src": "vmangos@13b49dc"}
 {"id": "311b84425729a830", "field": "text", "en": "Take the base. We'll be sieging it from the ground.", "hash": "311b84425729a830", "src": "vmangos@13b49dc"}
 {"id": "311b89d072329065", "field": "text", "en": "I will only slow you down, but no pink-skinned humans will keep me from freedom!", "hash": "311b89d072329065", "src": "vmangos@13b49dc"}
+{"id": "311bf7c61113a8a7", "field": "text", "en": "The Hall of Thanes is sealed off. Those without audience to King Magni Bronzebeard must earn his trust and approval to venture into the depths of old Ironforge.", "hash": "311bf7c61113a8a7", "src": "collector@1.60.1.70862", "npcs": [6740]}
 {"id": "311c2ba10a02d357", "field": "text", "en": "Liladris has been waiting for me at Maestra's Post, so we should make haste, $n.", "hash": "311c2ba10a02d357", "src": "vmangos@13b49dc"}
 {"id": "311fd46ea2263353", "field": "text", "en": "I have given you all the knowledge I have, $n. May luck be with you.", "hash": "311fd46ea2263353", "src": "vmangos@13b49dc"}
 {"id": "3121a4c3d26a0e1a", "field": "text", "en": "With pleasure. These things stink!", "hash": "3121a4c3d26a0e1a", "src": "vmangos@13b49dc"}
