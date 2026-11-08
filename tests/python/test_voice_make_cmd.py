@@ -158,6 +158,39 @@ def test_generate_saves_its_record_as_it_goes(world, monkeypatch):
     assert len(engine.calls) == 3
 
 
+def test_every_made_file_is_on_the_record_before_the_next_one_is_made(world, monkeypatch):
+    # a run stopped at any moment keeps the files it finished: the record is written as they are made (at most once
+    # every SAVE_SECONDS), not every RECORD_EVERY files, so nothing finished is read again
+    monkeypatch.setattr(voice_make, "SAVE_SECONDS", 0.0)
+    seen = []
+
+    def encode(wav, out):
+        seen.append(set(voice_make.audio_record(world.data)))
+        _fake_encode(wav, out)
+
+    voice_make.generate(world.data, "all", CFG, world.store, FakeEngine(), encode, log=lambda *_: None)
+    assert voice_make.RECORD_EVERY > 1
+    assert [len(s) for s in seen] == [0, 1, 2]
+
+
+def test_the_record_is_written_at_most_once_a_second_while_files_are_made(world, monkeypatch):
+    real = voice_make._write
+
+    def writes_with(seconds: float) -> int:
+        made = []
+        monkeypatch.setattr(voice_make, "_write", lambda path, rows: (made.append(path.name), real(path, rows)))
+        monkeypatch.setattr(voice_make, "SAVE_SECONDS", seconds)
+        for f in (world.data / "voice" / voice_make.AUDIO,):
+            f.unlink(missing_ok=True)
+        r = voice_make.generate(world.data, "all", CFG, world.store, FakeEngine(), _fake_encode, log=lambda *_: None)
+        assert r["made"] == 3
+        return made.count(voice_make.AUDIO)
+
+    # per file when every write is due, only the run's own start and end writes inside one interval
+    assert writes_with(3600.0) == writes_with(0.0) - 3
+    assert {e["key"] for e in voice_make.audio_record(world.data).values()} >= {"456-description", "456-completion"}
+
+
 def test_a_file_gone_from_the_store_is_made_again(world):
     voice_make.generate(world.data, "all", CFG, world.store, FakeEngine(), _fake_encode, log=lambda *_: None)
     voice_make.audio_file(world.store, "456-completion").unlink()

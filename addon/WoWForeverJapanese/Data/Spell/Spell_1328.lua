@@ -17,6 +17,7 @@ WFJ.Data.add("spell", {
   [1328127] = { "$D1の間、獲得する経験値が$N1%増加します。", "獲得経験値が$N1%増加しています。", 0xaf415585, 0x802e6f41, "uu" },
   [1328198] = { nil, "Seal of Lightが有効でない次の近接攻撃を、$N1回分のSeal of Lightで強化します。", nil, 0x98b2a73b, "mu" },
   [1328206] = { nil, "Seal of Wisdomが有効でない次の近接攻撃を、$N1回分のSeal of Wisdomで強化します。", nil, 0x2cb16303, "mu" },
+  [1328261] = { "羊がプレイヤーに呪文をかけ、クエストの達成を与えます。", "Escaped Sheepがあなたについてきています。", 0x8abb825a, 0x6a41c655, "uu" },
   [1328348] = { "一握りを焚き火に投げ入れ、その炎を変化させます。\n|cFFffffff必要：WoW: Forever Launch Celebration|r", nil, 0xbd934ce5, nil, "um" },
   [1328370] = { "Turn Undeadの詠唱時間を$D1、クールダウンを$D2短縮し、Demonにも効くようにします。", nil, 0x7753f89c, nil, "um" },
   [1328372] = { "対象のUndeadまたはDemonの敵は、最大$D1の間逃げ出します。ダメージを与えると効果が解けることがあります。同時に効果を与えられる対象は一体だけです。", "逃げ出しています。", 0x6bbfd10d, 0x7a42271d, "uu" },

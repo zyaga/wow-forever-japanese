@@ -35,6 +35,26 @@
 467962  # Raani's Favorite Feather
 467963  # Shadowsong Family Signet
 468817  # Pristine Shriekling Feathers
+474645  # Grey Riding Kodo
+474646  # Brown Riding Kodo
+474647  # White Riding Kodo
+474683  # Empyrean Galestrider
+474684  # Stormy Galestrider
+474685  # Umber Galestrider
+474689  # Red Skeletal Horse
+474690  # Brown Skeletal Horse
+474691  # Blue Skeletal Horse
+474740  # Black Skeletal Horse
+474758  # White Ram
+474759  # Brown Ram
+474760  # Gray Ram
+474885  # Pinto Horse
+474886  # Brown Horse
+474887  # Chestnut Mare
+474891  # Unpainted Mechanostrider
+474892  # Green Mechanostrider
+474893  # Blue Mechanostrider
+474896  # Red Mechanostrider
 476834  # Cenarion Hold depths entrance
 476835  # Darnassus Bank
 476836  # Craftsman's Terrace Inn

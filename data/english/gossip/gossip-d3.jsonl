@@ -1,6 +1,7 @@
 {"id": "d3003d4971647f57", "field": "text", "en": "Mister body guard, are you going to earn your money or what?", "hash": "d3003d4971647f57", "src": "vmangos@13b49dc"}
 {"id": "d30101b4c2dde063", "field": "text", "en": "Great sorrow eminates from this crystal.", "hash": "d30101b4c2dde063", "src": "vmangos@13b49dc"}
 {"id": "d301d88dfea47d05", "field": "text", "en": "You'll find Innkeeper Renee inside the Gallows' End Tavern at the southeast end of the street running through town.", "hash": "d301d88dfea47d05", "src": "vmangos@13b49dc"}
+{"id": "d3035a55ddb2100f", "field": "text", "en": "Yes. I would like to unlearn my legacy talents.", "hash": "d3035a55ddb2100f", "src": "collector@1.60.1.70790", "npcs": [4090, 4091, 4092, 4582, 5116]}
 {"id": "d30e95ee592ec6f4", "field": "text", "en": "Well, I've seen better. But, you have potential, I won't deny it. Pay attention and you just might learn something!", "hash": "d30e95ee592ec6f4", "src": "vmangos@13b49dc"}
 {"id": "d31022aaaaefe073", "field": "text", "en": "Bow to the might of the Highlord!", "hash": "d31022aaaaefe073", "src": "vmangos@13b49dc"}
 {"id": "d31e499099cf57f4", "field": "text", "en": "Primary interaction complete.  Image dissipation in ten minutes.", "hash": "d31e499099cf57f4", "src": "vmangos@13b49dc"}
@@ -8,6 +9,7 @@
 {"id": "d32321bce940099d", "field": "text", "en": "The offering is accepted. Hold the torch to the flame now, $N!", "hash": "d32321bce940099d", "src": "collector@1.60.1.70790"}
 {"id": "d32f32f73fa53716", "field": "text", "en": "Question for you, Alvarion. In your experience, what is flutterfly dust used for?", "hash": "d32f32f73fa53716", "src": "collector@1.60.1.70790", "npcs": [252448]}
 {"id": "d32ffbd8bf834cea", "field": "text", "en": "Who dares disturb our master?", "hash": "d32ffbd8bf834cea", "src": "vmangos@13b49dc"}
+{"id": "d331373c99fd985d", "field": "text", "en": "I thought you were dead, Terry.", "hash": "d331373c99fd985d", "src": "collector@1.60.1.70862"}
 {"id": "d331b7b60a211340", "field": "text", "en": "Relara is saved, $n.  Thank you.", "hash": "d331b7b60a211340", "src": "vmangos@13b49dc"}
 {"id": "d33403e0703c0946", "field": "text", "en": "What brings you to the Tower?", "hash": "d33403e0703c0946", "src": "vmangos@13b49dc"}
 {"id": "d33b57a5a3287049", "field": "text", "en": "%s groans.", "hash": "d33b57a5a3287049", "src": "vmangos@13b49dc"}
@@ -32,6 +34,7 @@
 {"id": "d3cbf7702babc5c8", "field": "text", "en": "%s spits on the corpse of the fallen zealot.", "hash": "d3cbf7702babc5c8", "src": "vmangos@13b49dc"}
 {"id": "d3cccba5dd162ef7", "field": "text", "en": "I'm finished.  The parchment is made.  Now, return to Gorzeeki...", "hash": "d3cccba5dd162ef7", "src": "vmangos@13b49dc"}
 {"id": "d3cf21e9bb9205c1", "field": "text", "en": "Cherry pie is my favoritist food in all of Azeroth.", "hash": "d3cf21e9bb9205c1", "src": "vmangos@13b49dc"}
+{"id": "d3d12fb49e441b5c", "field": "text", "en": "Pirates. I hate them. I don't just hate them; I despise them with every fiber of my being. What with all the 'ARRRRR!' and 'YARRR!' and those awful birds they keep as pets - how could anyone stand pirates, let alone be a pirate?", "hash": "d3d12fb49e441b5c", "src": "collector@1.60.1.70790", "npcs": [7161]}
 {"id": "d3d36a257e3d841d", "field": "text", "en": "Shrieklings tend to hoard shiny things in their lairs, so it's possible some construct parts may have ended up in the shriekling cave just west of Valanaar.", "hash": "d3d36a257e3d841d", "src": "collector@1.60.1.70790"}
 {"id": "d3d6202ada6b18df", "field": "text", "en": "The Wind Spirits have left us.$B$BNow, only mindless echoes remain. Be wary, however. These winds are neither kind, nor gentle.", "hash": "d3d6202ada6b18df", "src": "collector@1.60.1.70205", "npcs": [249363]}
 {"id": "d3dcfef744adb4db", "field": "text", "en": "This forest can be confusing! Be careful out there.", "hash": "d3dcfef744adb4db", "src": "vmangos@13b49dc"}

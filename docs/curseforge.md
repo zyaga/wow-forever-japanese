@@ -30,7 +30,7 @@ prefers it as text only.
 - **Item and spell tooltips**, and buff and debuff text, with the game's live numbers filled in.
 - **The interface:** windows, labels, menus, popups and messages.
 
-In numbers: **4,805** quests, **11,214** NPC dialogue lines, **923** book pages, **209** letter pages, **9,282** item tooltips, **20,340** spell tooltips, **16,115** UI.
+In numbers: **5,068** quests, **11,382** NPC dialogue lines, **923** book pages, **209** letter pages, **10,916** item tooltips, **20,346** spell tooltips, **16,115** UI.
 
 Names of people, places, creatures, items and spells stay in <span style="color:#8CB8E8;">English</span> everywhere, so you can still talk with other players, read guides and search by name.
 
@@ -121,7 +121,7 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 - **アイテムと呪文のツールチップ**、バフ・デバフの説明（数値はゲームの実際の値が入ります）
 - **インターフェース:** ウィンドウ、ラベル、メニュー、ポップアップ、メッセージ
 
-数で見ると: クエスト **4,805**、NPC の会話 **11,214** 行、本 **923** ページ、手紙 **209** ページ、アイテムのツールチップ **9,282**、呪文のツールチップ **20,340**、UI **16,115**。
+数で見ると: クエスト **5,068**、NPC の会話 **11,382** 行、本 **923** ページ、手紙 **209** ページ、アイテムのツールチップ **10,916**、呪文のツールチップ **20,346**、UI **16,115**。
 
 人物・地名・モンスター・アイテム・呪文の名前はすべて<span style="color:#8CB8E8;">英語</span>のままです。ほかのプレイヤーとの会話や、攻略情報の検索にそのまま使えます。
 

@@ -76,22 +76,30 @@ _SPOKEN_RACE = {"scourge": "undead"}
 
 def spoken_sets(corpus: dict[str, Any]) -> dict[int, dict[str, str]]:
     """creature → {gender: set} from Spoken's corpus: each line names its NPC and a voice
-    `<race>-<gender>-<flavour>`; an NPC takes the voice most of its lines use, per gender. Voices that are no
-    game set (its narrator, a voice per model) are left out."""
-    counts: dict[int, dict[str, dict[str, int]]] = {}
-    for line in corpus.get("lines", []):
-        npc = line.get("npcId")
-        parts = str(line.get("voice", "")).split("-")
-        if line.get("npcType") != "creature" or not isinstance(npc, int) or len(parts) != 3:
-            continue
+    `<race>-<gender>-<flavour>`; an NPC takes the voice most of its lines use, per gender. An NPC Spoken has
+    no lines for takes the voice its NPC list gives it. Voices that are no game set (its narrator, a voice
+    per model) are left out."""
+
+    def game_set(row: dict[str, Any]) -> tuple[int, str, str] | None:
+        npc = row.get("npcId")
+        parts = str(row.get("voice", "")).split("-")
+        if row.get("npcType") != "creature" or not isinstance(npc, int) or len(parts) != 3:
+            return None
         name = f"{_SPOKEN_RACE.get(parts[0], parts[0])}{parts[1]}{parts[2]}npc"
         parsed = voice_sets.parse(name)
-        if not parsed:
-            continue
-        by = counts.setdefault(npc, {}).setdefault(parsed[1], {})
-        by[name] = by.get(name, 0) + 1
-    return {c: {g: max(n.items(), key=lambda kv: (kv[1], kv[0]))[0] for g, n in by.items()}
+        return (npc, parsed[1], name) if parsed else None
+
+    counts: dict[int, dict[str, dict[str, int]]] = {}
+    for line in corpus.get("lines", []):
+        if got := game_set(line):
+            by = counts.setdefault(got[0], {}).setdefault(got[1], {})
+            by[got[2]] = by.get(got[2], 0) + 1
+    sets = {c: {g: max(n.items(), key=lambda kv: (kv[1], kv[0]))[0] for g, n in by.items()}
             for c, by in counts.items()}
+    for row in corpus.get("npcs", []):
+        if (got := game_set(row)) and got[0] not in counts:
+            sets.setdefault(got[0], {}).setdefault(got[1], got[2])
+    return sets
 
 
 def creature_rows(who: set[int], sets: dict[int, dict[str, str]], source: str, old: list[dict[str, Any]],

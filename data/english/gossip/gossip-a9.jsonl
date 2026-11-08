@@ -21,6 +21,7 @@
 {"id": "a98fe305aadb8e66", "field": "text", "en": "The machine adjusts to face you.$B$BOn the back of the machine is an empty, oddly misshapen slot with an engraving that reads: \"Propirtee o' Cap'n Gelkak Gyromast\"", "hash": "a98fe305aadb8e66", "src": "vmangos@13b49dc"}
 {"id": "a997ae284b0ec8ec", "field": "text", "en": "You need to be stronger, $c before you can help us in Alterac Valley.", "hash": "a997ae284b0ec8ec", "src": "vmangos@13b49dc"}
 {"id": "a99c6a0c4ea282b9", "field": "text", "en": "Alterac Valley", "hash": "a99c6a0c4ea282b9", "src": "vmangos@13b49dc"}
+{"id": "a99ce2c7f878bb6a", "field": "text", "en": "Slay your enemies and swoon your paramours with this one weird trick.$B$BIf you follow the path of the rogue, I can teach you... for a cost, of course.", "hash": "a99ce2c7f878bb6a", "src": "collector@1.60.1.70790", "npcs": [252379]}
 {"id": "a99daa3cca98ad8a", "field": "text", "en": "Yeah yeah, I know Dadanga dislikes smoke.  From the smell of it though, seems like Dadanga also dislikes bathing.", "hash": "a99daa3cca98ad8a", "src": "vmangos@13b49dc"}
 {"id": "a99e092c8fcc9626", "field": "text", "en": "Either that's a prime kodo bone or it's time I got my goggles!", "hash": "a99e092c8fcc9626", "src": "vmangos@13b49dc"}
 {"id": "a9a31527f6860c7a", "field": "text", "en": "I believe I misplaced that banner you enchanted for me, Falrin.", "hash": "a9a31527f6860c7a", "src": "vmangos@13b49dc"}

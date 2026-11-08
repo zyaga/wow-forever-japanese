@@ -342,6 +342,120 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
 
+### 1.60.1.70790 → 1.60.1.70862 (2026-11-08)
+
+The build the WFJScan sweep and its slow recheck ran on, read from the caches the client saved at its last exit
+(2026-11-07). One pin, `forever_BUILD`, covers the tables and the quest cache. Quest cache: 3,527 records, read with
+the 69913 payload layout, pinned again for 70862; 1,395 quest ids it holds that 70790's cache did not, and 10 that
+70790's held and this one does not answer (not answered on this build, their English and Japanese kept,
+[ADR-050](../adr/050-english-is-additive.md)). Client tables: 62, with the hotfix cache of that exit. The wago.tools
+cross-check (product `wowf`): no value differs; the rows wago has and ours lacks are in sections the client cannot
+decrypt yet (ItemSparse 26, Spell and SpellName 359, ItemEffect 24, QuestV2 12, GlobalStrings 1, SpellItemEnchantment
+1); QuestV2's highest id 99,670. The UI extract (fresh community listfile, every `interface/addons` path): 4,494 files,
+8 changed from 70790 (gamepad navigation and login-screen handling in the barber shop, the subscription panel, the
+social toast and the character select screen), none renamed a frame the addon uses; two modules' source line
+citations follow the moved lines. The served-text inventory: no column added or gone, row counts only. `make
+family-rows`: 58 new BroadcastText rows, all NPC lines, given `gossip`.
+
+The English came from Forever's own import (`make import-client CLIENT=forever`, then `make import-served`): the full
+`make import-english` put Classic Era's English back on 1,130 lines whose Forever text an earlier hotfix cache
+carried. The English Collector file: 11 gossip lines, quest 92753's progress and the game's newer wording of quest
+141's turn-in; its three lines recorded with "skyborne" written out before the race-word fix were dropped again.
+
+| Type | Reworded (shipped line now stale) | English the build no longer serves (stays stale, listed) | Drafted |
+|---|---|---|---|
+| quest | 4 machine lines (1425 title; 17, 2202, 6134 descriptions) redrafted; 6134's old accepted variant ruled `reject` (the game now speaks of centaur ghosts); 1425's description and 7724's description and objectives, whose old Japanese stopped passing the name check (the game now names the Lost Ones and Searing Lava Spiders), edited to the new names and shipping again; 141 turn-in (hand-written) kept | 18: the turn-ins and progress texts of quests Forever now serves under these ids whose turn-in the cache has not seen (8384, 8386, 8389, 8390, 8431, 8432, 1191, 1878, 841, 2882, and the Darkmoon Faire turn-ins 7882, 7890, 7895, 7899, 7900) | 240 quests' descriptions, 240 objectives, 226 titles, 1 progress; word lists for all, and for 25 lines of those quests that started shipping |
+| gossip | 0 | none | 24, with word lists; 2 place names kept as written (ruled accept) |
+| item | 4 machine items redrafted; 15 hand-written items reviewed (`apply_review`): 1 kept, 14 corrected (four describe a different effect now: 13213, 13966, 1490, 13243) | 8 hand-written items | 287 descriptions |
+| spell | 14 machine lines redrafted; 7 re-verified unchanged (only a number placeholder changed: 467, 782, 1075, 5487, 8914, 9756, 9910) | none | 6 descriptions, 14 auras |
+| ui | 1: the group invitation (`INVITATION`) gained a second line with an alert icon; the Japanese follows it | none | none |
+| objective, area, book | 1 objective redrafted | none | 40 objectives (20 mount names listed in `pipeline/objective_names.txt`), 10 areas; the 11 book pages are images or a name and dates, nothing to translate |
+
+Voice: `make voice-speakers` (speakers for the new quests), `wfj voice profiles build` on the 70862 tables, `make
+voice-sets` and `wfj voice cast`, then 279 new or changed lines (52,122 characters) read on rented GPUs and the rest on
+the maintainer's Mac. 269 of the new quest lines are read by the narrator: VMaNGOS has no quest giver for quests new to
+Forever, and the quest cache does not name one.
+
+### 1.60.1.70425 to 1.60.1.70862, a player's send (2026-11-08)
+
+Not a re-pull: one player's collector send, issue #86 (36 entries from builds 1.60.1.70425, 1.60.1.70450 and 1.60.1.70862,
+`collector-ok`), read with `make collector-intake ISSUE=86`. Nothing was rejected. 3 gossip lines added (drafted, with word
+lists), 13 NPC names (names stay English), 1 gossip line gained an NPC ("The transmogrifier", NPC 1423, so it gets that
+NPC's voice too). Quest 1638's turn-in: the game says "lad" where the old English had `$N`; the machine Japanese now says
+お前さん instead of the name and was re-verified.
+
+### 1.60.1.70790 to 1.60.1.70862, six players' sends (2026-11-08)
+
+Not a re-pull: six players' collector sends, issues #78, #80, #81, #82, #83 and #84, all checked `collector-ok` and
+read with `make collector-intake ISSUE=N`. The English comes from builds 1.60.1.70790, 1.60.1.70840 and 1.60.1.70862.
+Nothing was rejected. Issue #74 still cannot be read.
+
+Drafted:
+
+| What | Result |
+|---|---|
+| gossip | 42 lines, with word lists; 1 line in a made-up language with a name ("Lok-tar, Walton.") kept as written (ruled accept) |
+| quest progress and turn-in | 9 new texts, with word lists |
+| machine quest lines whose English the game replaced | 7 redrafted from the game's wording and re-verified; 486's Japanese kept and re-verified (only capitals and a comma changed) |
+| hand-written 429 and 430 turn-ins | corrected as little as the new English needs (`apply_review`): 429 lost its recipe sentence, 430's second half is now a narrated pause; new word lists |
+
+"the Lord Admiral" (Daelin Proudmoore's title, without his name) stays in English letters, as the one shipped line
+about him already has it.
+
+Voice: the new speakers were cast after `make voice-speakers`, `wfj voice profiles build` and `make voice-sets` (each
+NPC takes the game voice set Spoken gives it; 13 new creatures). The same round remakes the voice lines that ran on
+(75), see [Voice](voice.md). 747 lines remade the same day because their takes ended before the last syllable faded
+were put back to their earlier takes: the remakes ended the same way (a known Qwen3-TTS fault, see [Voice](voice.md)).
+
+### 1.60.1.70790 and 1.60.1.70862, the maintainer's collector file and three players' sends (2026-11-07)
+
+Not a re-pull: the maintainer's own collector file and three players' collector sends, issues #73, #75 and #76, the
+sends read with `make collector-intake ISSUE=N`. The English comes from builds 1.60.1.70790 and
+1.60.1.70862. Issue #74 could not be read: its send string is incomplete, and the player is sending it again.
+
+| Source | gossip added | quest added | quest replaced | unit (NPC names) added |
+|---|---|---|---|---|
+| the maintainer's file | 54 | 12 | 11 | 12 |
+| #73 | 10 | 1 | 2 (5622, 937) | 16 |
+| #75 | 9 | 1 | 2 (311, 98326) | 17 |
+| #76 | 5 | 2 | 1 (91904) | 4 |
+
+Drafted:
+
+| What | Result |
+|---|---|
+| gossip | 76 lines, with word lists; 1 line in a made-up language kept as written (ruled accept) |
+| quest progress and turn-in | 16 new texts, with word lists |
+| machine quest lines whose English the game replaced | 12 redrafted from the game's wording and re-verified: 9 kept as they were, 3 changed |
+| quest 937 turn-in | redrafted: the game's text is about the harpy belts the quest collects; the old accepted Japanese followed another quest's English and was ruled reject, the redraft ruled accept |
+| hand-written 5622 and 311 | kept; only wording details in the game's English changed |
+| unit (NPC names) | none (names stay English) |
+
+Race word: a Skyborne character's collector had stored four lines with "skyborne" written out where the game printed
+`$R` (the client names the race "High Order Skyborne" but prints "Skyborne"; the collector now treats that word as the
+race, see [Collector](../systems/collector.md)). They were put back to the token: the turn-ins of quests 153 and
+94947 now carry `$R`; "Greetings, $R." and "You're just the $R I'm looking for!" already shipped, so their literal
+copies were dropped; "I am an orc of medicine, $R." already existed too.
+
+Voice: made with the next round's (2026-11-08): `make voice-speakers`, the creatures' game voice sets as Spoken gives them, then the new and changed lines read with Qwen3-TTS; every voiced line is in step.
+
+### 1.60.1.70790, a player's collector send (2026-11-06)
+
+Not a re-pull: one player's collector send, issue #70 (97 entries from build 1.60.1.70790, addon 0.9.0), with the
+Permission box ticked and checked `collector-ok` by the `collector-check` workflow, read with
+`make collector-intake ISSUE=70`. Nothing was rejected. A second intake run printed every line as unchanged. Item (8)
+and spell (1) lines that differ from the client's files kept the client's English.
+
+| Type | Added | Replaced | Unchanged | Drafted |
+|---|---|---|---|---|
+| gossip | 18 (the Durotar Supply and Logistics quartermaster on contracts, lost orders, Waylaid Supply Crates and Craftsman's Writs, 7 lines, 4 of them the player's choices; Cairne Bloodhoof welcoming the Windshapers to Mulgore, 2 lines, one the player's greeting; the transmogrifier's two choices; three Orgrimmar shopkeepers; a trainer; a short line with no NPC id) | 0 | 0 | 18, with word lists |
+| quest | 9 (79095 and 79096 progress and completion, with the same English as their sister library quests, so they take that Japanese; 97242 and 97275 progress and completion; 97907 completion) | 2 completion texts: forever-vo's wording replaced by the game's (96604, 97249) | 0 | 9 new, with word lists; the 2 machine lines redrafted and re-verified with `REVERIFY=1`: 97249 kept unchanged (only line breaks and a hyphen moved), 96604 rewritten ("why don't you go and learn" became "go learn") |
+| item | 1 (274021, a "Use:" line for an appearance) | 1 (20221: Classic Era's English replaced by the game's, which shows "Use:" alone) | 0 | 2, in the `使用：` form. The row for 274021 is on the not-names list for "Account" (the account collection, an interface word, not a name): `pipeline/translation_not_names.tsv` |
+| unit (NPC names) | 41 | 0 | 16 | none (names stay English) |
+
+Voice: made in the same pull request, with the 2026-11-08 rounds (speakers cast from Spoken's voice sets; every voiced
+line in step).
+
 ### 1.60.1.70790, two players' collector sends (2026-11-06)
 
 Not a re-pull: two players' collector sends, issues #63 (46 entries, addon 0.7.1) and #64 (87 entries, addon 0.8.0),

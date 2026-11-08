@@ -31,6 +31,7 @@
 {"id": "898004aebd77ec0f", "field": "text", "en": "Dun Baldar is the strongest point of Alliance power in Alterac Valley.  Nestled in the northern reaches of the valley, Dun Baldar is the staging ground  for all advances to the south.$B$BDun Baldar was razed and is under reconstruction.", "hash": "898004aebd77ec0f", "src": "vmangos@13b49dc"}
 {"id": "898460ace604834e", "field": "text", "en": "Natalia?", "hash": "898460ace604834e", "src": "vmangos@13b49dc"}
 {"id": "8986520d98b206e4", "field": "text", "en": "The ghostly figure looks at you with mistrust in her eyes and remains silent.", "hash": "8986520d98b206e4", "src": "vmangos@13b49dc"}
+{"id": "89869955f7b58a70", "field": "text", "en": "What do you need, $R?", "hash": "89869955f7b58a70", "src": "collector@1.60.1.70862", "npcs": [261366]}
 {"id": "8996f27637f56dfe", "field": "text", "en": "Why do we have to learn this stuff anyway?", "hash": "8996f27637f56dfe", "src": "vmangos@13b49dc"}
 {"id": "899d34cc20504cee", "field": "text", "en": "Kalaran, I have misplaced my torch. I require another.", "hash": "899d34cc20504cee", "src": "vmangos@13b49dc"}
 {"id": "89a1e1ebe49b1e3a", "field": "text", "en": "You certainly did not disappoint! Now that we've gotten that out of the way, your instruction may begin!", "hash": "89a1e1ebe49b1e3a", "src": "vmangos@13b49dc"}

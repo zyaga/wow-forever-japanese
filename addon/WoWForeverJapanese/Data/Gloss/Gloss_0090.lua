@@ -589,7 +589,6 @@ WFJ.Data.add("gloss", {
   [90591] = "果たす\tはたす\twill fulfill (make function)",
   [90592] = "果たす\tはたす\twill keep (for me)",
   [90593] = "果たす\tはたす\twill perform (for)",
-  [90594] = "果たす\tはたす\twishes completed",
   [90595] = "果たす\tはたす\twishes completed (wants fulfilled)",
   [90596] = "果たす\tはたす\twithout fulfilling (fail in)",
   [90597] = "果て\tはて\tand even (in the end)",

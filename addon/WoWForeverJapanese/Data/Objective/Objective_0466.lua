@@ -10,7 +10,9 @@ WFJ.Data.add("objective", {
   [466251] = { "Strange Hermitについてもっと調べる", 0xe0e5c185, "." },
   [466278] = { "Wind Hollowを解放する", 0x41ea73e1, "." },
   [466302] = { "Khan Jehnを蘇らせた", 0x131df9ab, "." },
+  [466465] = { "台座を調べる", 0x46ea9127, "." },
   [466600] = { "Mularaと話す", 0x8678b9fb, "." },
   [466633] = { "Rathiril Sunlanceと話す", 0xd567c2e0, "." },
   [466639] = { "Shen'dar Highlandsの人里離れた家を見つける", 0x9bd70556, "." },
+  [466929] = { "Woodwyrdの火を消す", 0x1fe192bb, "." },
 })

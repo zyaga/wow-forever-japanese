@@ -570,7 +570,6 @@ WFJ.Data.add("gloss", {
   [126568] = "距離\tきょり\tof a ways (distance)",
   [126569] = "距離\tきょり\trange",
   [126570] = "距離\tきょり\trange (distance)",
-  [126571] = "距離をとる\tきょりをとる\tdistance yourself",
   [126572] = "距離を置く\tきょりをおく\tkeep their distance",
   [126573] = "跡\tあと\timpressions",
   [126574] = "跡\tあと\tlines (marks)",

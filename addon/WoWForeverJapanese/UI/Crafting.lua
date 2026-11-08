@@ -63,8 +63,13 @@
 --     appended line is shown by HelpTooltip.appended (itemAppended), the item's lines left to UI/Tooltip;
 --   the output log: an enchant result's ItemContainer.Text = ENCHANTED_TOOLTIP_LINE with the item's name kept, written
 --     when the item loads (craftingoutputlog.lua:29–40); each pooled element's Text is followed (SetText post-hook).
--- Never touched: the EditBoxes (both search boxes, the create-count box), the recipe's name, sub text and
---   description (OutputText, OutputSubText, Description: item / spell data), the list's recipe names (client data:
+-- The recipe's description (Description, written by UpdateRecipeDescription from the recipe spell's description,
+--   schematicform.lua:1466–1490) shows that spell's description Japanese, as its tooltip does (kind
+--   spell.description, numbers from the live English); an embedded icon in the English is not carried over.
+-- The recipe list's Filter button (RecipeList.FilterDropdown, WowStyle1FilterDropdownTemplate, recipelist.xml:32)
+--   shows FILTER, re-shown after each UpdateText.
+-- Never touched: the EditBoxes (both search boxes, the create-count box), the recipe's name and sub text
+--   (OutputText, OutputSubText: item data), the list's recipe names (client data:
 --   blizzard_professionsrecipelist.lua:247) and any category name with no TradeSkillCategory row, the rank bar
 --   (joins the profession name). The window title is UI/Professions' (the same frame; a profession's name here).
 local _, WFJ = ...
@@ -80,15 +85,14 @@ local PAGE = "ProfessionsFrame.CraftingPage"
 local FORM = PAGE .. ".SchematicForm"
 
 Crafting.NEVER_TOUCH = { PAGE .. ".RecipeList.SearchBox", PAGE .. ".MinimizedSearchBox",
-  PAGE .. ".CreateMultipleInputBox", FORM .. ".OutputText", FORM .. ".OutputSubText", FORM .. ".Description",
-  FORM .. ".RecraftingOutputText" }
+  PAGE .. ".CreateMultipleInputBox", FORM .. ".OutputText", FORM .. ".OutputSubText", FORM .. ".RecraftingOutputText" }
 
 local CANDIDATES = {
   page = { PAGE }, form = { FORM }, outputLog = { PAGE .. ".CraftingOutputLog" },
   linkButton = { PAGE .. ".LinkButton" },
   createButton = { PAGE .. ".CreateButton" }, createAllButton = { PAGE .. ".CreateAllButton" },
   guildCrafters = { PAGE .. ".ViewGuildCraftersButton" }, guildTitle = { PAGE .. ".GuildFrame.Title" },
-  noResults = { PAGE .. ".RecipeList.NoResultsText" },
+  noResults = { PAGE .. ".RecipeList.NoResultsText" }, filter = { PAGE .. ".RecipeList.FilterDropdown" },
   searchHint = { PAGE .. ".RecipeList.SearchBox.Instructions" },
   reagents = { FORM .. ".Reagents.Label" }, optionalReagents = { FORM .. ".OptionalReagents.Label" },
   finishingReagents = { FORM .. ".FinishingReagents.Label" }, firstCraft = { FORM .. ".FirstCraftBonus.Text" },
@@ -170,6 +174,31 @@ function Crafting.showEnchantSlot()
   return n
 end
 
+-- The client sized the description to its English; this sizes it again to the text shown.
+local function fitDescription()
+  local form = get("form")
+  local fs = type(form) == "table" and form.Description or nil
+  if type(fs) ~= "table" or type(fs.GetStringHeight) ~= "function" or type(fs.SetHeight) ~= "function" then return end
+  fs:SetHeight(600)
+  fs:SetHeight(fs:GetStringHeight() + 1)
+end
+-- The form's recipe description (UpdateRecipeDescription, blizzard_professionsrecipeschematicform.lua:1466–1490):
+-- C_TradeSkillUI.GetRecipeDescription of the recipe's spell, so it shows that spell's description Japanese, as its
+-- tooltip does, the numbers taken from the live English. A description the form cleared (a recraft, the minimized
+-- window) is left alone. → true when shown
+function Crafting.onDescription()
+  local form = get("form")
+  local fs = type(form) == "table" and form.Description or nil
+  local info = type(form) == "table" and form.currentRecipeInfo or nil
+  local id = type(info) == "table" and info.recipeID or nil
+  if type(fs) ~= "table" or type(fs.GetText) ~= "function" or type(id) ~= "number" then return false end
+  local en = fs:GetText()
+  if type(en) ~= "string" or en == "" then return false end
+  local shown = WFJ.Render.show(SURFACE, "description", fs, en, "spells", "spell.description", id,
+    { lines = { en }, refit = fitDescription })
+  return shown
+end
+
 -- hooksecurefunc target (SchematicForm:Init): the words the form rewrites per recipe. → the number found.
 function Crafting.onFormInit() return showList(FORM_WRITTEN) + Crafting.showEnchantSlot() end
 
@@ -243,6 +272,8 @@ end
 -- The page's OnShow (and setup): the static words, then everything a writer may already have written.
 function Crafting.onShow()
   local n = showList(STATIC) + Crafting.onFormInit() + Crafting.onControls()
+    + WFJ.Labels.dropdown(SURFACE, "filter", get("filter"))
+  if Crafting.onDescription() then n = n + 1 end
   return n + WFJ.Labels.title(SURFACE, get("outputLog"), OUTPUT_TITLE, "outputLog.title")
 end
 
@@ -266,6 +297,9 @@ function Crafting.setup()
   end
   if type(form) == "table" and type(form.Update) == "function" then -- the required tools line
     hooksecurefunc(form, "Update", Crafting.onFormInit)
+  end
+  if type(form) == "table" and type(form.UpdateRecipeDescription) == "function" then
+    hooksecurefunc(form, "UpdateRecipeDescription", Crafting.onDescription)
   end
   for _, key in ipairs({ "createButton", "createAllButton" }) do
     local button = get(key)

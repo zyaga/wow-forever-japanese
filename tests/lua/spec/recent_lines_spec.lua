@@ -204,6 +204,7 @@ describe("every Render.show caller records a store line or nothing", function()
     ["UI/DialogueUI.lua"] = { "quest.title", "quest.objectives", "quest.description", "quest.progress",
       "quest.completion", "gossip" }, -- Dialogue UI's quest and gossip window: the client's quest window's kinds
     ["UI/DialogueUIBook.lua"] = { "book" },
+    ["UI/Crafting.lua"] = { "spell.description" }, -- the recipe's description: its spell's description
   }
 
   it("lists exactly the files that call Render.show (directly or passed on, as UI/Gossip does)", function()

@@ -414,7 +414,6 @@ WFJ.Data.add("gloss", {
   [16411] = "だらしない\tだらしない\tslack (sloppy)",
   [16412] = "だろ\tだろ\t(right)",
   [16413] = "だろ\tだろ\t(right?)",
-  [16414] = "だろ\tだろ\tdoesn't it",
   [16415] = "だろ\tだろ\teh (right?)",
   [16416] = "だろ\tだろ\teh?",
   [16417] = "だろ\tだろ\thuh (right)",

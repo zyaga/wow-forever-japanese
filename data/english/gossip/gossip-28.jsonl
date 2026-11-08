@@ -21,6 +21,7 @@
 {"id": "28a75f2116480794", "field": "text", "en": "NOW is the time of the Forsaken!  Power to the Forsaken - NOW AND FOREVER!!!", "hash": "28a75f2116480794", "src": "vmangos@13b49dc"}
 {"id": "28a7e5d5d24e3f07", "field": "text", "en": "Oh my! What's this? Help!", "hash": "28a7e5d5d24e3f07", "src": "vmangos@13b49dc"}
 {"id": "28afe4876c61f2f6", "field": "text", "en": "Make Way!  Make Way!", "hash": "28afe4876c61f2f6", "src": "vmangos@13b49dc"}
+{"id": "28b3ee3a7f3bbe0e", "field": "text", "en": "Ho, friend! I'd be happy to offer you a riding ram, but first you should train with Ultham over there. These stout beauties are not easily ridden, but once you know how to ride one you will not find a better companion.", "hash": "28b3ee3a7f3bbe0e", "src": "collector@1.60.1.70790", "npcs": [1261]}
 {"id": "28c3133154f25e30", "field": "text", "en": "I'm cursed!  First my ship sinks, and now...I'm out of mead!", "hash": "28c3133154f25e30", "src": "vmangos@13b49dc"}
 {"id": "28c65a87b5ba952f", "field": "text", "en": "So what do you think of my new toy?", "hash": "28c65a87b5ba952f", "src": "vmangos@13b49dc"}
 {"id": "28d190d65d563558", "field": "text", "en": "The Qiraji forces were commanded to fall back and hide the bulk of their numbers beneath the sands of the desert. A small attack was ordered upon Southwind Village while the front lines of Staghelm's army were kept occupied.", "hash": "28d190d65d563558", "src": "vmangos@13b49dc"}
@@ -28,6 +29,7 @@
 {"id": "28d7b0833113d524", "field": "text", "en": "Some topics I can help you with are: | drivers | commands | lag | bots....zzzzzzzzttt!!", "hash": "28d7b0833113d524", "src": "vmangos@13b49dc"}
 {"id": "28de61b30d49dee0", "field": "text", "en": "My bones are weak, my eyes see only darkness, and my body feels only pain; but these things are good because my will is my own.", "hash": "28de61b30d49dee0", "src": "vmangos@13b49dc"}
 {"id": "28e1c40960d1c573", "field": "text", "en": "Reckless mortal!", "hash": "28e1c40960d1c573", "src": "vmangos@13b49dc"}
+{"id": "28e5daf7fb0dca0f", "field": "text", "en": "<The tag on the mechanostrider reads:$B$BCrimson-Blastdasher XL 300. Now with extra terrain grips and a sleek new color!>", "hash": "28e5daf7fb0dca0f", "src": "collector@1.60.1.70790", "npcs": [267683]}
 {"id": "28f3f62a99478c78", "field": "text", "en": "Azure Templar!  I hold your crest of beckoning.  Heed my summons!", "hash": "28f3f62a99478c78", "src": "vmangos@13b49dc"}
 {"id": "28f4f57a46522564", "field": "text", "en": "Greetings, $n.  How goes your delvings into the demonic and arcane?  Have you uncovered any dark secrets of late?", "hash": "28f4f57a46522564", "src": "vmangos@13b49dc"}
 {"id": "28f65ef0f3de230e", "field": "text", "en": "Where's my spinner? I just had it here somewhere...", "hash": "28f65ef0f3de230e", "src": "vmangos@13b49dc"}

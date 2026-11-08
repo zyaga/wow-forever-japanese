@@ -6,7 +6,8 @@ local DUI = require("tests.lua.spec.stub_dialogueui")
 
 local FILES = {}
 for _, f in ipairs(H.UI_FILES) do FILES[#FILES + 1] = f end
-for _, f in ipairs({ "Core/Voice.lua", "Core/VoiceQueue.lua", "UI/VoicePlayer.lua", "UI/QuestFrame.lua",
+for _, f in ipairs({ "UI/TimeLine.lua", "UI/TooltipUnit.lua", "UI/Tooltip.lua",
+  "Core/Voice.lua", "Core/VoiceQueue.lua", "UI/VoicePlayer.lua", "UI/QuestFrame.lua",
   "UI/QuestMap.lua", "UI/ItemText.lua", "UI/DialogueUI.lua", "UI/DialogueUIFrames.lua", "UI/DialogueUIBook.lua" }) do
   FILES[#FILES + 1] = f
 end
@@ -483,6 +484,15 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       assert.are.equal("ダンジョン", frame.tag.ButtonText:GetText())
     end)
 
+    it("a tag Dialogue UI adds after the page drew (its quest data came late) shows its Japanese too", function()
+      open("QUEST_DETAIL", { questID = 2, title = QUEST.title, description = QUEST.description, objectives = "" })
+      assert.are.equal("", frame.tag.ButtonText:GetText())
+      frame.tag:SetQuestTagNameAndIcon("Dungeon")
+      assert.are.equal("ダンジョン", frame.tag.ButtonText:GetText())
+      frame.tag:SetQuestTagNameAndIcon("Something Else") -- not a game word: as written
+      assert.are.equal("Something Else", frame.tag.ButtonText:GetText())
+    end)
+
     it("tooltip lines: game strings and Dialogue UI's own words in Japanese; the item's name never", function()
       load({ loaded = false })
       ship(QUEST_JA)
@@ -502,6 +512,50 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
         "|cffffd100交換:|r |cff1eff00|Hitem:1|h[Cilice of Regret]|h|r",
         "Replace this belt when you find a better one.",
         "アイテムレベル |cff20ff20+3|r", "比較を隠す", "Something else" }, tip:texts())
+    end)
+
+    it("an item's effect lines show the item's Japanese as one run, as the game's tooltip shows them", function()
+      load({ loaded = false })
+      ship({ ["item.description"] = { [6948] = "使用：Hearthstoneの場所に戻ります。",
+        [7000] = "装備：Staminaが5上昇します。\n使用：10秒間、移動速度が上がります。" } })
+      game(WORDS)
+      local tip = DUI.installTooltip()
+      -- Dialogue UI's own reader of the client's tooltip data: one line per data line [read: Tooltip_Private.lua,
+      -- ProcessTooltipDataLines]
+      function tip:ProcessTooltipData(tipData)
+        self.numLines, self.grid, self.tooltipData = 0, {}, tipData
+        for _, line in ipairs(tipData.lines) do self:AddLeftLine(line.leftText) end
+        return true
+      end
+      Stub.loadedAddons.DialogueUI = true
+      WFJ.LoadOnDemand.loaded("DialogueUI")
+      local item = { isItem = true, id = 6948, lines = { { leftText = "Hearthstone" },
+        { leftText = "Use: Returns you to Darnassus. Speak to an Innkeeper in a different place to change your home"
+          .. " location." }, { leftText = "Quest Item" } } }
+      tip:ProcessTooltipData(item)
+      assert.are.same({ "Hearthstone", "使用：Hearthstoneの場所に戻ります。", "クエストアイテム" }, tip:texts())
+      -- Dialogue UI's data is never changed: it reads it again on its own updates
+      assert.are.equal("Use: Returns you to Darnassus. Speak to an Innkeeper in a different place to change your"
+        .. " home location.", item.lines[2].leftText)
+      -- a run of two effect lines: the Japanese on the first, the second gone, as on the game's tooltip
+      tip:ProcessTooltipData({ isItem = true, id = 7000, lines = { { leftText = "Belt of Haste" },
+        { leftText = "Equip: +5 Stamina." }, { leftText = "Use: Increases run speed for 10 sec." } } })
+      assert.are.same({ "Belt of Haste", "装備：Staminaが5上昇します。\n使用：10秒間、移動速度が上がります。" },
+        tip:texts())
+      -- no Japanese for the item, the reveal key held, or not an item: the lines as the client wrote them
+      tip:ProcessTooltipData({ isItem = true, id = 8000, lines = { { leftText = "Rock" },
+        { leftText = "Use: Throw it." } } })
+      assert.are.same({ "Rock", "Use: Throw it." }, tip:texts())
+      Stub.keys.alt = true
+      WFJ.Modifier.refresh()
+      tip:ProcessTooltipData(item)
+      assert.are.equal("Use: Returns you to Darnassus. Speak to an Innkeeper in a different place to change your"
+        .. " home location.", tip:texts()[2])
+      Stub.keys.alt = false
+      WFJ.Modifier.refresh()
+      tip:ProcessTooltipData({ isSpell = true, id = 6948, lines = { { leftText = "Hearth" },
+        { leftText = "Use: Returns you home." } } })
+      assert.are.equal("Use: Returns you home.", tip:texts()[2])
     end)
 
     it("an open tooltip is built again by its own update when the key is held, and a popup is retitled", function()
@@ -532,6 +586,64 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       Stub.keys.alt = false
       WFJ.Modifier.refresh()
       assert.are.equal("クエストアイテム", tip:texts()[2])
+    end)
+
+    it("the quest-complete flyout shows the quest's Japanese name and turn-in text, measured in the bundled face",
+      function()
+      load({ loaded = false })
+      ship({ ["quest.title"] = { [2] = "Sharptalonの鉤爪" },
+        ["quest.completion"] = { [2] = "よくやった。\n\nこれで安心だ。" } })
+      game(WORDS)
+      local fly = DUI.makeFlyout()
+      Stub.loadedAddons.DialogueUI = true
+      WFJ.LoadOnDemand.loaded("DialogueUI")
+      local en = "Well done, $N.$B$BNow we are safe."
+      fly.questData = { questID = 2, rawText = en }
+      fly:SetQuestText("Sharptalon's Claw", { "Well done, Reyn.", "Now we are safe." })
+      assert.are.equal("Sharptalonの鉤爪", fly.Title:GetText())
+      assert.are.same({ "よくやった。", "これで安心だ。" }, fly:paragraphs())
+      assert.are.same({ WFJ.Font.PATH, WFJ.Font.PATH }, fly.measuredIn)
+      -- an error alert, no Japanese, or the key held: the flyout's own text
+      fly.questData = { questID = 2, rawText = en, isError = true }
+      fly:SetQuestText("Sharptalon's Claw", { "Quest failed." })
+      assert.are.same({ "Quest failed." }, fly:paragraphs())
+      fly.questData = { questID = 9, rawText = "Thanks." }
+      fly:SetQuestText("Other Quest", { "Thanks." })
+      assert.are.equal("Other Quest", fly.Title:GetText())
+      assert.are.same({ "Thanks." }, fly:paragraphs())
+      Stub.keys.alt = true
+      WFJ.Modifier.refresh()
+      fly.questData = { questID = 2, rawText = en }
+      fly:SetQuestText("Sharptalon's Claw", { "Well done, Reyn.", "Now we are safe." })
+      assert.are.equal("Sharptalon's Claw", fly.Title:GetText())
+      assert.are.same({ "Well done, Reyn.", "Now we are safe." }, fly:paragraphs())
+      Stub.keys.alt = false
+      WFJ.Modifier.refresh()
+    end)
+
+    it("a flyout Dialogue UI made and wrote before it was found is written again in Japanese and laid out", function()
+      load({ loaded = false })
+      ship({ ["quest.title"] = { [2] = "Sharptalonの鉤爪" },
+        ["quest.completion"] = { [2] = "よくやった。\n\nこれで安心だ。" } })
+      game(WORDS)
+      local fly, hidden = DUI.makeFlyout(), DUI.makeFlyout()
+      local laidOut = 0
+      fly.Layout = function() laidOut = laidOut + 1 end
+      for _, f in ipairs({ fly, hidden }) do
+        f.questData = { questID = 2, rawText = "Well done, $N.$B$BNow we are safe.", title = "Sharptalon's Claw",
+          paragraphs = { "Well done, Reyn.", "Now we are safe." } }
+        f:SetQuestText(f.questData.title, f.questData.paragraphs)
+      end
+      fly:Show()
+      hidden:Hide()
+      Stub.loadedAddons.DialogueUI = true
+      WFJ.LoadOnDemand.loaded("DialogueUI")
+      DUI.flush()
+      assert.are.equal("Sharptalonの鉤爪", fly.Title:GetText())
+      assert.are.same({ "よくやった。", "これで安心だ。" }, fly:paragraphs())
+      assert.are.equal(1, laidOut)
+      -- one not on screen is left as it is: it is written again when it next shows
+      assert.are.equal("Sharptalon's Claw", hidden.Title:GetText())
     end)
 
     it("the chat panel shows an NPC's line in the chat window's Japanese, English while the key is held", function()

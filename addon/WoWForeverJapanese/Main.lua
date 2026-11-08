@@ -65,14 +65,17 @@ local function player()
   if name ~= nil and name == _G.UNKNOWNOBJECT then name = nil end
   return {
     name = name, className = className, classFile = classFile,
-    raceName = raceName, raceFile = raceFile, sex = call(UnitSex, "player"),
+    raceName = raceName, raceFile = raceFile,
+    raceWord = WFJ.Collector and WFJ.Collector.raceWord(raceName, raceFile) or nil,
+    sex = call(UnitSex, "player"),
   }
 end
 
--- The player as the Collector normalizes English with: the name and the localized class / race.
+-- The player as the Collector normalizes English with: the name and the localized class / race, and the shorter
+-- word the client prints for the race where it has one.
 local function collectorPlayer()
   local p = player()
-  return { name = p.name, class = p.className, race = p.raceName }
+  return { name = p.name, class = p.className, race = p.raceName, raceWord = p.raceWord }
 end
 
 -- The key of a live English text for a keyed type (gossip: ADR-005 / ADR-017; book pages: ADR-022): the

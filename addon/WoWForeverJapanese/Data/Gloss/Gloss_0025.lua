@@ -199,7 +199,6 @@ WFJ.Data.add("gloss", {
   [25196] = "ひと束\tひとたば\tone bundle",
   [25197] = "ひと瓶\tひとびん\ta batch (one bottle)",
   [25198] = "ひと瓶\tひとびん\ta bottle",
-  [25199] = "ひと瓶\tひとびん\ta bottle (batch)",
   [25200] = "ひと瓶\tひとびん\ta jar (one bottle)",
   [25201] = "ひと稼ぎする\tひとかせぎする\twant to make some money",
   [25202] = "ひと箱\tひとはこ\tone box",

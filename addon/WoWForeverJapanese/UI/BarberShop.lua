@@ -6,8 +6,8 @@
 -- barber exists on Forever is an in-game question; the module waits through WFJ.LoadOnDemand.when and does nothing
 -- until the client loads the addon.
 -- Static labels (XML text=), shown on the frame's OnShow:
---   BarberShopFrame.CancelButton CANCEL (mainline/blizzard_barbershopui.xml:46), .ResetButton RESET (:55),
---   .AcceptButton ACCEPT (:86).
+--   BarberShopFrame.CancelButton CANCEL (mainline/blizzard_barbershopui.xml:49), .ResetButton RESET (:58),
+--   .AcceptButton ACCEPT (:89).
 -- The customization text (ADR-042) from the client tables, each widget restricted to its family:
 --   an option's label (CustomizationOption: the check button's Label, blizzard_customizationoptiontemplates.lua:209;
 --     the dropdown's and the slider's label, :336, :111–118), a choice's SelectionName (CustomizationChoice, :654;
@@ -18,9 +18,9 @@
 --     choice's BARBERSHOP_CUSTOMIZATION_SOURCE_FORMAT "Source: %s" (:535–541), on CustomizationNoHeaderTooltip, with
 --     their customization argument kinds; a category name in that tooltip (the Customization* families).
 -- Never touched: druid form, demon and mount names (Blizzard_CharacterCustomize's altered-form dropdown),
--- the body-type buttons, and SDToggleButton.Text (xml:71): its global string is named "HIGH-DEFINITION_MODELS", and a
+-- the body-type buttons, and SDToggleButton.Text (xml:74): its global string is named "HIGH-DEFINITION_MODELS", and a
 -- hyphen is outside the key grammar of pipeline/ui_keys.txt, so it has no dictionary entry (the toggle is hidden
--- unless C_GameRules.IsSDHDToggleEnabled(), blizzard_barbershopui.lua:260–266).
+-- unless C_GameRules.IsSDHDToggleEnabled(), blizzard_barbershopui.lua:262–268).
 -- The camera buttons' tooltip (RESET_CAMERA, ZOOM_IN / ZOOM_OUT, ROTATE_LEFT / ROTATE_RIGHT,
 -- RANDOMIZE_APPEARANCE: simpleTooltipLine, blizzard_customizationui.xml:22–66) is CustomizationNoHeaderTooltip, a
 -- tooltip frame of its own (blizzard_customizationtemplates.lua:27–29): followed through TooltipLines.follow,

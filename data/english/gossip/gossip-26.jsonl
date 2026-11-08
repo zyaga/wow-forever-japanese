@@ -36,6 +36,7 @@
 {"id": "26a38eac52a323dd", "field": "text", "en": "The demon is loose!  Quickly we must restrain him!", "hash": "26a38eac52a323dd", "src": "vmangos@13b49dc"}
 {"id": "26a775cc0a226d03", "field": "text", "en": "In my previous life, I lived nearby here. I still wander the fields of my childhood farmstead occasionally. It fills me with sadness to see those I knew and loved, shambling around as mindless thralls. It pains me, but its that very pain that gives me strength and purpose.", "hash": "26a775cc0a226d03", "src": "forever-vo@025070f", "npcs": [246394]}
 {"id": "26a9fc9d19ac1a8c", "field": "text", "en": "A worthless $R such as you, $n, has no right to walk these lands!", "hash": "26a9fc9d19ac1a8c", "src": "vmangos@13b49dc"}
+{"id": "26b375c73b2c4d03", "field": "text", "en": "Greetings, Chieftain Bloodhoof. I am a member of the Windshapers and I've been sent by Thrall to speak with you.", "hash": "26b375c73b2c4d03", "src": "collector@1.60.1.70790", "npcs": [3057]}
 {"id": "26b972742aafa448", "field": "text", "en": "THIS CANNOT BE!!", "hash": "26b972742aafa448", "src": "vmangos@13b49dc"}
 {"id": "26ba31492039da7e", "field": "text", "en": "Watcher, inform Althea that a dire threat is marshalling against our town.  We must prepare!", "hash": "26ba31492039da7e", "src": "vmangos@13b49dc"}
 {"id": "26bda30ddc190222", "field": "text", "en": "Okay, let's get out of here quick quick! Try and keep up. I'm going to make a break for it.", "hash": "26bda30ddc190222", "src": "vmangos@13b49dc"}

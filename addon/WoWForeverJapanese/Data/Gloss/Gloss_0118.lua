@@ -42,7 +42,6 @@ WFJ.Data.add("gloss", {
   [118039] = "見つかる\tみつかる\tdidn't find",
   [118040] = "見つかる\tみつかる\tdiscover (be found)",
   [118041] = "見つかる\tみつかる\tdiscover (was found)",
-  [118042] = "見つかる\tみつかる\tdiscovered (found)",
   [118043] = "見つかる\tみつかる\tdiscovery (was found)",
   [118044] = "見つかる\tみつかる\tdiscovery (were discovered)",
   [118045] = "見つかる\tみつかる\tdoesn't want to be found",

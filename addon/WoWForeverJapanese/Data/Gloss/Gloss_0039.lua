@@ -995,7 +995,6 @@ WFJ.Data.add("gloss", {
   [39994] = "人々\tひとびと\tthey (people)",
   [39995] = "人々\tひとびと\tthose (people)",
   [39996] = "人々\tひとびと\ttownsfolk (people)",
-  [39997] = "人がかり\tにんがかり\tit took (people together)",
   [39998] = "人それぞれ\tひとそれぞれ\teach to their own (varies by person)",
   [39999] = "人だかり\tひとだかり\tcrowd",
   [40000] = "人でなし\tひとでなし\twretches",

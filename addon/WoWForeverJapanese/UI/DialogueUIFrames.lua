@@ -15,7 +15,9 @@ local function guarded(...) return WFJ.DialogueUI.guarded(...) end
 -- its members (its two line writers and its update) [read: Dialogue UI 1.0.7 b, Code/Tooltip/Tooltip_Base.lua]. A
 -- line after the first (the first is the item's name, which stays English) that is one of the client's interface
 -- strings ("Quest Item", "Item Level 14", "+3 Item Level") gets its Japanese in the bundled face. An item's effect
--- lines (Use:, Equip:) stay English here.
+-- lines (Use:, Equip:, Chance on hit: and the flavour quote, the run UI/Tooltip finds) show the item's Japanese, as
+-- the game's tooltip shows them: Dialogue UI reads the client's tooltip data line by line (ProcessTooltipData), so
+-- it is given a copy of that data with the run as one Japanese line; its own data is never changed.
 -- Dialogue UI's own tooltip words (its comparison toggle and the line naming the item a reward would replace), in the
 -- addon's own Japanese, as UI/DialogueUI gives the headings Dialogue UI writes itself.
 local OWN_TIP_WORDS = { ["Show Comparison"] = "比較を表示", ["Hide Comparison"] = "比較を隠す" }
@@ -89,6 +91,59 @@ local function wrapAdd(tip, method, translate)
   end
 end
 
+-- A copy of an item's tooltip data with its effect run in Japanese (the first line of the run carries it, the rest go,
+-- as UI/Tooltip shows it), or nil to leave the data as it is.
+local function itemRunData(data)
+  if type(data) ~= "table" or not data.isItem or type(data.lines) ~= "table" then return nil end
+  local id = data.id
+  if type(id) ~= "number" and type(data.hyperlink) == "string" then
+    id = tonumber(data.hyperlink:match("item:(%d+)"))
+  end
+  local T = WFJ.Tooltip
+  if type(id) ~= "number" or not T or type(T.itemRun) ~= "function" then return nil end
+  local texts = {}
+  for i, line in ipairs(data.lines) do
+    local t = type(line) == "table" and line.leftText or nil
+    if type(t) ~= "string" then return nil end -- a line the client may not let the addon read
+    texts[i] = t
+  end
+  local first, last = T.itemRun(texts)
+  if not first then return nil end
+  local run = {}
+  for i = first, last do run[#run + 1] = texts[i] end
+  local ja, _, action = WFJ.Render.preview("dialogueui.rows", texts[first], nil, "items", "item.description", id,
+    { lines = run })
+  if action ~= "apply" or type(ja) ~= "string" or ja == "" then return nil end
+  local lines = {}
+  for i, line in ipairs(data.lines) do
+    if i == first then
+      local copy = {}
+      for k, v in pairs(line) do copy[k] = v end
+      copy.leftText, copy.wrapText = ja, true
+      lines[#lines + 1] = copy
+    elseif i < first or i > last then
+      lines[#lines + 1] = line
+    end
+  end
+  local out = {}
+  for k, v in pairs(data) do out[k] = v end
+  out.lines = lines
+  return out
+end
+
+local function wrapProcess(tip)
+  local process = tip.ProcessTooltipData
+  if type(process) ~= "function" then return end
+  tip.ProcessTooltipData = function(self, data, ...)
+    local given = data
+    if WFJ.DialogueUI.active() then
+      local ok, copy = guarded(itemRunData, data)
+      if ok and copy then given = copy end
+    end
+    return process(self, given, ...)
+  end
+end
+
 local tips = setmetatable({}, { __mode = "k" }) -- Dialogue UI's tooltips found
 local popupTitle = setmetatable({}, { __mode = "k" }) -- popup → the English name it was last given
 
@@ -96,6 +151,7 @@ local function wrapTooltip(tip)
   tips[tip] = true
   wrapAdd(tip, "AddLeftLine", tooltipLine)
   wrapAdd(tip, "AddRightLine", function(_, text) return tipText(text) end) -- "Cloth", "Mail"
+  wrapProcess(tip)
 end
 
 -- ── Dialogue UI's chat panel ───────────────────────────────────────────────
@@ -161,6 +217,78 @@ local function wrapPopup(popup)
   end
 end
 
+-- ── Dialogue UI's quest-complete flyout ────────────────────────────────────
+-- A quest the game completes on its own may show a small flyout (off by default) with the quest's name and its turn-in
+-- text, split into paragraphs [read: Dialogue UI 1.0.7 b, Code/Dialogue/QuestFlyout.lua, SetQuestText]. It lays each
+-- paragraph out as it writes it, from a pool of texts, so the Japanese is passed in and every text the pool hands out
+-- takes the bundled face first: it is measured in the face it shows. An error alert, a quest with no Japanese or the
+-- reveal key held leaves the flyout's own English.
+local flyoutFace = setmetatable({}, { __mode = "k" }) -- flyout → true while it writes Japanese
+
+local function flyoutText(frame, title)
+  local data = frame.questData
+  local questID = type(data) == "table" and data.questID or nil
+  if type(questID) ~= "number" or data.isError then return nil end
+  local D = WFJ.DialogueUI
+  local jaTitle = type(title) == "string" and title ~= "" and D.preview(title, "quests", "quest.title", questID, title)
+    or nil
+  local en, Q, paras = data.rawText, WFJ.QuestFrame, nil
+  if type(en) == "string" and en ~= "" and Q and type(Q.fieldSource) == "function" then
+    local kind, id = Q.fieldSource(questID, "completion", en)
+    local ja = id ~= nil and D.preview(en, "quests", kind, id, en) or nil
+    if type(ja) == "string" then
+      paras = {}
+      for p in (ja:gsub("\r", "") .. "\n\n"):gmatch("(.-)\n\n+") do
+        p = p:gsub("^%s+", ""):gsub("%s+$", "")
+        if p ~= "" then paras[#paras + 1] = p end
+      end
+      if #paras == 0 then paras = nil end
+    end
+  end
+  return jaTitle, paras
+end
+
+local function wrapFlyout(fly)
+  local pool = fly.fontStringPool
+  if type(pool) == "table" and type(pool.Acquire) == "function" then
+    local acquire = pool.Acquire
+    pool.Acquire = function(...)
+      local fs = acquire(...)
+      if type(fs) == "table" then guarded(WFJ.DialogueUI.face, fs, nil, flyoutFace[fly] == true) end
+      return fs
+    end
+  end
+  local setText = fly.SetQuestText
+  fly.SetQuestText = function(self, title, paragraphs, ...)
+    local jaTitle, jaParas
+    if WFJ.DialogueUI.active() then
+      local ok, t, p = guarded(flyoutText, self, title)
+      if ok then jaTitle, jaParas = t, p end
+    end
+    flyoutFace[self] = jaParas ~= nil
+    if type(self.Title) == "table" then guarded(WFJ.DialogueUI.face, self.Title, nil, jaTitle ~= nil) end
+    local function done(...)
+      flyoutFace[self] = nil
+      return ...
+    end
+    return done(setText(self, jaTitle or title, jaParas or paragraphs, ...))
+  end
+  -- Dialogue UI makes its flyout and writes it in the same call, so the first one of a session is on screen before a
+  -- scan finds it: write it again through the wrapper and let Dialogue UI lay it out [read: Dialogue UI 1.0.7 b,
+  -- QuestFlyout.lua SetQuestData: SetQuestText then Layout]
+  -- (on the next frame: the first scan runs while the window support is still being installed)
+  local function rewrite()
+    local data = fly.questData
+    if type(data) == "table" and not data.isError and type(data.paragraphs) == "table"
+        and type(fly.IsShown) == "function" and fly:IsShown() then
+      guarded(fly.SetQuestText, fly, data.title, data.paragraphs)
+      if type(fly.Layout) == "function" then guarded(fly.Layout, fly) end
+    end
+  end
+  local timer = Compat.resolve("C_Timer")
+  if type(timer) == "table" and type(timer.After) == "function" then timer.After(0, rewrite) else rewrite() end
+end
+
 -- Dialogue UI's frames this module works on but cannot reach by name, told apart by their own members.
 local function classify(f)
   if type(f) ~= "table" or patched[f] then return end
@@ -175,6 +303,10 @@ local function classify(f)
   elseif type(f.SetQuestDataByID) == "function" and type(f.SetTitle) == "function" and type(f.Title) == "table" then
     patched[f] = true
     wrapPopup(f)
+  elseif type(f.SetQuestText) == "function" and type(f.SetQuestRewards) == "function"
+      and type(f.fontStringPool) == "table" then
+    patched[f] = true
+    wrapFlyout(f)
   end
 end
 

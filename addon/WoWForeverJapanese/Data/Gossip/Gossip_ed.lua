@@ -41,7 +41,9 @@ WFJ.Data.add("gossip", {
   ["edc9a19f8cef9d83"] = { "Dun Baldarについて教えてくれ。", "." },
   ["edd59effacc3deb8"] = { "中に何が入るかはまだわからないんだ。まずPat NagleとMichael Backusが話し合わないと……", "." },
   ["edd7e4bcf709b71f"] = { "失くした？どういうことだ？", "." },
+  ["ede734127152b0ab"] = { "mageweaveが不足していて、蓄えを補うためにあなたの力を借りたいのです! 地域全体の協力を当てにしているので、目標に届くにはあなたからmageweave cloth60枚を寄付していただくだけで十分です。そのような寛大さをGnomeregan Gnomesが見過ごすことはありません、お約束しますよ!\n\nmageweave cloth60枚をお持ちで寄付の準備ができているなら、今すぐお預かりできますよ。", "." },
   ["ede8bf1873c2c607"] = { "Elder Ragetotemはどこにいる？", "." },
   ["edf89ec406c054c7"] = { "AzerothへのHigh Orderの輸送船は、Valanaarの南東の端にある、いちばん奥の船着き場にある。", "." },
+  ["edf99242b542a69f"] = { "Rathirilと話し、彼に言われて私に会いに来たのなら、我々が置かれている危機のことはきっと承知しているだろう。", "." },
   ["edfd520624838b79"] = { "ごきげんよう、Loramus。Blasted Landsからの知らせを持ってきた。", "." },
 })

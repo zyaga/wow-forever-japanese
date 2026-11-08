@@ -28,6 +28,7 @@
 {"id": "ce737556caf9155c", "field": "text", "en": "The signal has been sent. He should be arriving shortly.", "hash": "ce737556caf9155c", "src": "vmangos@13b49dc"}
 {"id": "ce748cd0f987c338", "field": "text", "en": "%s presents the Mind's Eye and the Singing Crystals before him...", "hash": "ce748cd0f987c338", "src": "vmangos@13b49dc"}
 {"id": "ce7919957730ed0e", "field": "text", "en": "For the Dark Strand!", "hash": "ce7919957730ed0e", "src": "vmangos@13b49dc"}
+{"id": "ce883e4bc2bbd30e", "field": "text", "en": "If I am able, I will find the source of this evil. Goodbye.", "hash": "ce883e4bc2bbd30e", "src": "collector@1.60.1.70862", "npcs": [221827]}
 {"id": "ce89390ef9733ace", "field": "text", "en": "Your task is complete. Prepare to meet your doom.", "hash": "ce89390ef9733ace", "src": "vmangos@13b49dc"}
 {"id": "ce8a7e75b96209c6", "field": "text", "en": "It is the assistance of Bulrug that you need.  You will find him outside on the lower rise standing between the inn and the Thunder Bluff Bank.", "hash": "ce8a7e75b96209c6", "src": "vmangos@13b49dc"}
 {"id": "ce8c40016ee71bcd", "field": "text", "en": "A thousand? For one man?", "hash": "ce8c40016ee71bcd", "src": "vmangos@13b49dc"}

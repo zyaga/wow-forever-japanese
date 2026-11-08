@@ -2,6 +2,7 @@
 {"id": "ab0d1379d41e6dab", "field": "text", "en": "I am sorry $c, but you need to be more experienced before you can survive in Alterac Valley.", "hash": "ab0d1379d41e6dab", "src": "vmangos@13b49dc"}
 {"id": "ab0f5c52206084c5", "field": "text", "en": "%s lets out a battlecry!", "hash": "ab0f5c52206084c5", "src": "vmangos@13b49dc"}
 {"id": "ab12068eca1bdd4e", "field": "text", "en": "%s looks very sleepy...", "hash": "ab12068eca1bdd4e", "src": "vmangos@13b49dc"}
+{"id": "ab209f7c6cf31bfb", "field": "text", "en": "Return to Clugfist in Bolder'ok.", "hash": "ab209f7c6cf31bfb", "src": "wdb@1.60.1.70862"}
 {"id": "ab2207a02dc8591d", "field": "text", "en": "You are dutiful to inquire, $c, but all Horde collections have been completed. We now wait for the Alliance hegemony to finish theirs, and then all will be transported to Silithus in the vicinity of Cenarion Hold.", "hash": "ab2207a02dc8591d", "src": "vmangos@13b49dc"}
 {"id": "ab2805a4a48c139c", "field": "text", "en": "What do you ask of me?", "hash": "ab2805a4a48c139c", "src": "vmangos@13b49dc"}
 {"id": "ab3476c7ea4ad99a", "field": "text", "en": "No tampering with the mail!", "hash": "ab3476c7ea4ad99a", "src": "vmangos@13b49dc"}

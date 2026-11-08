@@ -55,7 +55,8 @@ ENGINE_HINT = (
     "start the AivisSpeech Engine, or unpack it into build/aivis/ (docs/operations/voice.md), and run again"
 )
 LAME = ("lame", "-m", "m", "--resample", "22.05", "-b", "32", "--cbr", "-t", "--quiet")
-RECORD_EVERY = 20  # files between two writes of the audio record and the status file
+RECORD_EVERY = 20  # files between two progress lines in the log
+SAVE_SECONDS = 1.0  # the audio record is written at most this often while a run makes files, and at its end
 AUDIO = "audio.jsonl"
 
 
@@ -626,8 +627,10 @@ def generate(  # noqa: C901, PLR0913, PLR0915 - engine, encoder and log injected
             made = chars_made = 0
             seconds_made = 0.0
             started = time.time()
+            saved_at = [0.0]
 
             def save(done: bool = False) -> None:
+                saved_at[0] = time.time()
                 _write(root / "voice" / AUDIO, [audio[k] for k in sorted(audio)])
                 elapsed = time.time() - started
                 rate = chars_made / elapsed if elapsed > 0 else 0.0
@@ -668,8 +671,11 @@ def generate(  # noqa: C901, PLR0913, PLR0915 - engine, encoder and log injected
                 made += 1
                 chars_made += len(text)
                 seconds_made += secs
-                if made % RECORD_EVERY == 0:
+                # a stopped run keeps all but its last second's files; written once a second, not per file:
+                # the record is the whole game's and a full run makes thousands of files
+                if time.time() - saved_at[0] >= SAVE_SECONDS:
                     save()
+                if made % RECORD_EVERY == 0:
                     log(f"voice generate: {made}/{len(work)}")
 
             def make(j: voice.Job, q: Any) -> tuple[voice.Job, str, bytes, str, Path] | None:

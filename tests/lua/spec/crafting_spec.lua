@@ -52,6 +52,7 @@ local UI = {
   PROFESSIONS_INSUFFICIENT_REAGENTS = { "You have insufficient reagents.", "材料が足りません。" },
   PROFESSIONS_REQUIRED_TOOLS = { "|cnNORMAL_FONT_COLOR:Requires:|r %s", "|cnNORMAL_FONT_COLOR:必要:|r %s" },
   PROFESSIONS_TRACK_RECIPE = { "Track Recipe", "レシピを追跡" },
+  FILTER = { "Filter", "フィルター" },
   ENCHANT_TARGET_TOOLTIP_CLICK_TO_REPLACE = { "|cnDISABLED_FONT_COLOR:Left Click to replace this item|r",
     "|cnDISABLED_FONT_COLOR:左クリックでこのアイテムを置き換え|r" },
   ENCHANTED_TOOLTIP_LINE = { "Enchanted: %s", "エンチャント済み: %s" },
@@ -60,6 +61,13 @@ local UI = {
   ["TradeSkillCategory:2"] = { "Bags", "鞄" },
   ["CurrencyCategory:9"] = { "Miscellaneous", "その他" }, -- another family: never a recipe-list header
 }
+
+-- a recipe's description is its spell's description (C_TradeSkillUI.GetRecipeDescription): the spell's Japanese
+local SPELLS = {
+  [2657] = { ja = "Copper Oreを製錬してCopper Barを作り出せます。製錬するには炉が必要です。", status = "u" },
+  [3275] = { ja = "包帯を巻いて$N2秒間でhealthを$N1回復します。", status = "u" },
+}
+local function spellLookup(kind, id) return kind == "spell.description" and SPELLS[id] or nil end
 
 local function en(key) return _G[key] end
 local function fs(text) return Stub.fontString(text or "") end
@@ -83,6 +91,9 @@ local function loadProfessions()
   page.RecipeList.SearchBox = CreateFrame("EditBox", nil, page.RecipeList)
   page.RecipeList.SearchBox.Instructions = fs(en("SEARCH"))
   page.RecipeList.ScrollBox = Stub.scrollBox()
+  page.RecipeList.FilterDropdown = CreateFrame("DropdownButton") -- WowStyle1FilterDropdownTemplate (recipelist.xml:32)
+  page.RecipeList.FilterDropdown.Text = fs(en("FILTER"))
+  function page.RecipeList.FilterDropdown.UpdateText(self) self.Text.text = en("FILTER") end
   page.LinkButton = CreateFrame("Button", nil, page)
   page.LinkButton:SetScript("OnEnter", function(self) -- ProfessionsLinkButtonMixin:OnEnter (:18–21)
     local tt = _G.GameTooltip
@@ -107,8 +118,14 @@ local function loadProfessions()
   form.RecipeSourceButton = { Text = fs("Recipe Unlearned") }
   form.OutputText, form.OutputSubText, form.Description = fs(""), fs(""), fs("")
   form.RecraftingOutputText, form.Cooldown = fs(""), fs("")
+  -- blizzard_professionsrecipeschematicform.lua:1466–1490: the recipe spell's description, or cleared
+  function form.UpdateRecipeDescription(self)
+    local r = C.recipe or {}
+    self.Description.text = r.description or ""
+  end
   function form.Init(self) -- blizzard_professionsrecipeschematicform.lua:353 (the writes this surface follows)
     local r = C.recipe or {}
+    self.currentRecipeInfo = { recipeID = r.id }
     self.OutputText.text = r.name or ""
     self.RecipeSourceButton.Text.text = r.nextRank and en("TRADESKILL_NEXT_RANK_HEADER")
       or en("TRADESKILL_UNLEARNED_RECIPE_HEADER")
@@ -126,6 +143,7 @@ local function loadProfessions()
       end
       self.enchantSlot:SetNameText(en("PROFESSIONS_ADD_ENCHANT"))
     end
+    self:UpdateRecipeDescription()
   end
   function page.ValidateControls(self) -- blizzard_professionscrafting.lua:764–794
     local r = C.recipe or {}
@@ -161,7 +179,7 @@ describe("the crafting page on the Forever client", function()
     -- The `words` argument kind PROFESSIONS_CREATE_ALL_FORMAT needs in Core/UIStrings.ARGS (harmless when it is
     -- already there). Without it the button keeps "Create All [5]" verbatim.
     WFJ.UIStrings.ARGS.PROFESSIONS_CREATE_ALL_FORMAT = { [1] = "words" }
-    H.uiSetup(WFJ, UI)
+    H.uiSetup(WFJ, UI, { lookup = spellLookup })
     C.recipe = nil
     if loadedFirst then
       local frame = loadProfessions()
@@ -232,6 +250,42 @@ describe("the crafting page on the Forever client", function()
         assert.are.equal("Smelt", page().CreateButton:GetText()) -- client data, a dictionary word here
         assert.are.equal("Smelt All [4]", page().CreateAllButton:GetText()) -- client data: kept as captured
         assert.are.equal("Cooldown remaining: 3 Hr", form().Cooldown:GetText()) -- joins a duration: English
+      end)
+
+      it("the recipe's description shows its spell's Japanese, numbers from the live English; Alt shows the"
+        .. " English; a recipe with no Japanese keeps its English under the missing marker", function()
+        page():Show()
+        page():SelectRecipe({ name = "Copper Bar", id = 2657, count = 1,
+          description = "Allows the miner to smelt a chunk of copper ore into a copper bar.  Smelting copper requires"
+            .. " a forge." })
+        assert.are.equal(SPELLS[2657].ja, form().Description:GetText())
+        alt(true)
+        assert.are.equal("Allows the miner to smelt a chunk of copper ore into a copper bar.  Smelting copper"
+          .. " requires a forge.", form().Description:GetText())
+        alt(false)
+        assert.are.equal(SPELLS[2657].ja, form().Description:GetText())
+        page():SelectRecipe({ name = "Linen Bandage", id = 3275, count = 1,
+          description = "Heals 66 damage over 6 sec." })
+        assert.are.equal("包帯を巻いて6秒間でhealthを66回復します。", form().Description:GetText())
+        page():SelectRecipe({ name = "Rough Copper Bomb", id = 3923, count = 1,
+          description = "Inflicts 22 to 38 Fire damage." })
+        -- no Japanese: the English with the missing marker above it, as a spell tooltip shows it
+        local shown = form().Description:GetText()
+        assert.truthy(shown:find("Inflicts 22 to 38 Fire damage.", 1, true))
+        assert.truthy(shown:find("未翻訳", 1, true))
+        page():SelectRecipe({ name = "Copper Bar", id = 2657, count = 1 }) -- a recraft: the form clears it
+        assert.are.equal("", form().Description:GetText())
+      end)
+
+      it("the recipe list's Filter button shows Japanese and keeps it after the menu rewrites it", function()
+        page():Show()
+        local filter = page().RecipeList.FilterDropdown
+        assert.are.equal("フィルター", filter.Text:GetText())
+        filter:UpdateText()
+        assert.are.equal("フィルター", filter.Text:GetText())
+        alt(true)
+        assert.are.equal("Filter", filter.Text:GetText())
+        alt(false)
       end)
 
       it("the link button's tooltip translates; the EditBoxes are never ours", function()

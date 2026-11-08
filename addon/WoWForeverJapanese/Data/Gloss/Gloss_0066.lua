@@ -624,7 +624,6 @@ WFJ.Data.add("gloss", {
   [66623] = "寄る\tよる\tstops (at)",
   [66624] = "寄る\tよる\ttend to err",
   [66625] = "寄る\tよる\tvisit (drop by)",
-  [66626] = "寄る\tよる\twill wander (come near)",
   [66627] = "寄る\tよる\tyou should drop by",
   [66628] = "寄付\tきふ\tdonation",
   [66629] = "寄付\tきふ\tdonation (give)",

@@ -32,6 +32,7 @@ WFJ.Data.add("gossip", {
   ["aa7ae11b5ec90944"] = { "腐敗が自然の木立に忍び寄っています。森は何としても守らなければなりません。", "." },
   ["aa7b0486a85c46c7"] = { "乗り物に戻らなきゃ。索敵殲滅の時は近い！援護しろ！6時の方向を頼む！行け行け行け！", "." },
   ["aa81707bc4102b7c"] = { "leatherworkingを学びたいのか？Simon Tannerが教えてくれるだろう。Old TownのProtective Hideにいる。", "." },
+  ["aa8418f61dd23ed2"] = { "Lok-tar, Walton.", "." },
   ["aa8943a47dd4fca3"] = { "技を磨け、{name}。成体のplainstriderを手なずけるのだ。", "." },
   ["aa89c2753fa95dbe"] = { "貴様の命はもらった！", "." },
   ["aa8a034cc8437e9d"] = { "Stonehearth GraveyardはAllianceに奪われた！", "." },

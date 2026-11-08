@@ -19,6 +19,7 @@
 {"id": "d14900cc98a23317", "field": "text", "en": "Metzen's eyes light up with reindeer joy as you sprinkle the dust on him.  He shakes his antlers at you and breathes out a heavy sigh of what sounds like relief.$B$BAround you, magical energy begins to swell.  It would seem that something's about to happen!", "hash": "d14900cc98a23317", "src": "vmangos@13b49dc"}
 {"id": "d14f2db9464e82e6", "field": "text", "en": "You have not yet learned the basics, wanderer. Have you spoken to my assistant, Lalina Summermoon? Perhaps you should.", "hash": "d14f2db9464e82e6", "src": "vmangos@13b49dc"}
 {"id": "d150dad95418fa96", "field": "text", "en": "Wha... what's happening?", "hash": "d150dad95418fa96", "src": "vmangos@13b49dc"}
+{"id": "d1567b2caa3a977f", "field": "text", "en": "What? Why?", "hash": "d1567b2caa3a977f", "src": "collector@1.60.1.70862"}
 {"id": "d172757d4ea2762d", "field": "text", "en": "Oh well... Maybe next time.", "hash": "d172757d4ea2762d", "src": "vmangos@13b49dc"}
 {"id": "d1732731ef893ccb", "field": "text", "en": "Gales greetings, friend. Is there something I can help you with?", "hash": "d1732731ef893ccb", "src": "forever-vo@025070f", "npcs": [252479, 253004, 257004, 257008, 257019, 257021]}
 {"id": "d1799ec788612e01", "field": "text", "en": "Niby, you are stupid.", "hash": "d1799ec788612e01", "src": "vmangos@13b49dc"}
@@ -40,6 +41,7 @@
 {"id": "d1d3fed4d2d5c738", "field": "text", "en": "That was not what I would call 'escort friendly'.  I will find a way to go around these things.  Let's move to the south, toward that rock.  Maybe we can wedge through it and still avoid the ogres.", "hash": "d1d3fed4d2d5c738", "src": "vmangos@13b49dc"}
 {"id": "d1d52e793fa1ae39", "field": "text", "en": "All they be doin' is a little huntin' and gatherin'. Where's the harm in that??", "hash": "d1d52e793fa1ae39", "src": "vmangos@13b49dc"}
 {"id": "d1d584f25f1a3a7a", "field": "text", "en": "Hunter", "hash": "d1d584f25f1a3a7a", "src": "vmangos@13b49dc"}
+{"id": "d1dd28cc2e5e3040", "field": "text", "en": "The tiny sprite squeaks fearfully and vanishes!", "hash": "d1dd28cc2e5e3040", "src": "collector@1.60.1.70790"}
 {"id": "d1dfe5265e0061fb", "field": "text", "en": "%s sniffs the air hungrily, smelling fresh lion meat...", "hash": "d1dfe5265e0061fb", "src": "vmangos@13b49dc"}
 {"id": "d1dfe6a3bed6c81c", "field": "text", "en": "Please, a moment, $n. Kindal is down below in the Grimtotem camp trying to free the faerie dragons from captivity. We were just lucky that help came along when it did. Who knows what those foul tauren would have done to them.", "hash": "d1dfe6a3bed6c81c", "src": "vmangos@13b49dc"}
 {"id": "d1ea232b1cf78c39", "field": "text", "en": "The orb's markings match the brand on your hand.", "hash": "d1ea232b1cf78c39", "src": "vmangos@13b49dc"}

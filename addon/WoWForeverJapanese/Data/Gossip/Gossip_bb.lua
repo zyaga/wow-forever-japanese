@@ -27,6 +27,7 @@ WFJ.Data.add("gossip", {
   ["bbbf58e50b6d2057"] = { "任務の報告に来たのか、{class}？HordeとAllianceの双方の軍需物資はすべて完成し、今まさにSilithusへ輸送されているところだ。すべて一日とかからずに到着するはずだ。誰かがScepter of the Shifting Sandsの各部分を見つけ出し、すべて繋ぎ合わせてくれていることを願う。", "." },
   ["bbc6bc0f21103b74"] = { "%sは幽霊磁石に引き寄せられた……", "." },
   ["bbc9a7a7f1219fe0"] = { "Dun Baldar South Bunkerは誰が支配している？", "." },
+  ["bbcefed8fa5e8bc6"] = { "トランスモグリファイア", "." },
   ["bbd6059af83f376d"] = { "厳しい時代には、ドルイドは周りの者にとって大切な友となりうる。Cenarion Enclaveのドルイドの誰にでも尋ねてみるといい。同じことを言うだろう。", "." },
   ["bbf52fbc4c8626fe"] = { "ちょっと手を貸してくれ。あの{name}に見られた。", "." },
   ["bbf8281a2bddfa7e"] = { "シュッシュッポッポ！Hallow's Endおめでとう、{name}！", "." },

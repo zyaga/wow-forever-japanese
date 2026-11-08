@@ -570,7 +570,6 @@ WFJ.Data.add("gloss", {
   [82568] = "捕まえる\tつかまえる\thave (you) captured",
   [82569] = "捕まえる\tつかまえる\thave captured",
   [82570] = "捕まえる\tつかまえる\tif I ever get my hands on",
-  [82571] = "捕まえる\tつかまえる\tif we captured",
   [82572] = "捕まえる\tつかまえる\tmake (him) catch (you)",
   [82573] = "捕まえる\tつかまえる\tonce (he) gets a hold of",
   [82574] = "捕まえる\tつかまえる\tplease gather (catch)",

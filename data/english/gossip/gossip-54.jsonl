@@ -35,6 +35,7 @@
 {"id": "54be767168906108", "field": "text", "en": "Teacher are there night elves in Stormwind? I've never seen a night elf before.", "hash": "54be767168906108", "src": "vmangos@13b49dc"}
 {"id": "54c7b13f8fef27db", "field": "text", "en": "%s yawns.", "hash": "54c7b13f8fef27db", "src": "vmangos@13b49dc"}
 {"id": "54cde6562e415ab2", "field": "text", "en": "Yes, young one, you need not convince me of such things, the Warchief and I have much history. Your dedication, however, is noted.$B$BAs I was saying, Rend had found a new home for his people, and I was among those who would wearily follow.$B$BFrom one conflict arose others... countless others. It was in those battles for Blackrock Spire between the Blackrock clan and the Dark Iron dwarves that my sons were both slain. It was then that I realized my time among the Blackrock clan had come to an end.", "hash": "54cde6562e415ab2", "src": "vmangos@13b49dc"}
+{"id": "54d1840b9e18829a", "field": "text", "en": "No! NO! Damn it all!", "hash": "54d1840b9e18829a", "src": "collector@1.60.1.70790"}
 {"id": "54d5dc9eb0d75a97", "field": "text", "en": "Make yourself useful and help me out here!", "hash": "54d5dc9eb0d75a97", "src": "vmangos@13b49dc"}
 {"id": "54d897bcfd74b026", "field": "text", "en": "Hm... if you're looking to adle wits, $n, then the secret behind Zanzil's zombies might just do the trick!", "hash": "54d897bcfd74b026", "src": "vmangos@13b49dc"}
 {"id": "54e373b88a8e9fc5", "field": "text", "en": "The Alliance has taken the mine!", "hash": "54e373b88a8e9fc5", "src": "vmangos@13b49dc"}

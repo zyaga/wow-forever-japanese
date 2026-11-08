@@ -12,6 +12,7 @@
 {"id": "5058a771a8a23fdf", "field": "text", "en": "What are you doing here? Quickly, leave this place now. You are going to ruin everything!", "hash": "5058a771a8a23fdf", "src": "collector@1.60.1.70790", "npcs": [256247]}
 {"id": "50590969e9be16e0", "field": "text", "en": "Now, let's see... If I am correct, then... Hmmm...", "hash": "50590969e9be16e0", "src": "vmangos@13b49dc"}
 {"id": "50624d20c9acc976", "field": "text", "en": "The heft of an axe, the battlecry of your allies, the spray of blood in your face. These are the things a warrior craves, $n. I will carve out The Barrens with my sword in the name of the Horde.", "hash": "50624d20c9acc976", "src": "vmangos@13b49dc"}
+{"id": "5067b283d56d6030", "field": "text", "en": "Welcome to Stormwind Keep, citizen.", "hash": "5067b283d56d6030", "src": "collector@1.60.1.70790", "npcs": [1748]}
 {"id": "506d41844d8c249e", "field": "text", "en": "Have you come seeking training in the ways of armed combat?", "hash": "506d41844d8c249e", "src": "vmangos@13b49dc"}
 {"id": "506f1064a78c71b9", "field": "text", "en": "Do we know why?", "hash": "506f1064a78c71b9", "src": "collector@1.60.1.70205", "npcs": [251902]}
 {"id": "507c889f221aa5ef", "field": "text", "en": "Jin'rokh, I need assistance in recovering a piece of my Vindicator's Battlegear.", "hash": "507c889f221aa5ef", "src": "vmangos@13b49dc"}

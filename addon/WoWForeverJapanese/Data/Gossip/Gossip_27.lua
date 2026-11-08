@@ -19,6 +19,7 @@ WFJ.Data.add("gossip", {
   ["2759ef37893bb6b8"] = { "覚悟を決めよ、{name}。このオーブの中の悪魔は、邪悪な獣なのだから。", "." },
   ["275bf9bd610f7e32"] = { "%sは不安そうにあたりを見回した。", "." },
   ["275fad45903ccc77"] = { "dragonscale leatherworkingは教えられないよ、{name}。Tanarisへ行って、Narain Soothfancyの家を探すんだ。そこに着いたら、\"Soothsaying for Dummies\"という本を調べてくれ。", "." },
+  ["2763999f69782726"] = { "ありがとう、Vrang。", "." },
   ["276f55e7fca0122d"] = { "品物を見せてくれ、Dirge。", "." },
   ["2775e759e862deaf"] = { "Frostwolf Keepが破壊された！修理と再建のために物資が必要だ！", "." },
   ["277d728e62f6ea6a"] = { "さあさあ寄っていきな！Ashenvaleのこっち側じゃ最高の武器の品揃えだよ！", "." },

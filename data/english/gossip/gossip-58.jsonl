@@ -2,6 +2,7 @@
 {"id": "58047f17b13694fa", "field": "text", "en": "Has the sun risen already?  There are just never enough hours in the night!  Well, Saelienne will take good care of you.  You can find her tending to her guests over in the Craftsmen's Terrace in northeastern Darnassus.", "hash": "58047f17b13694fa", "src": "vmangos@13b49dc"}
 {"id": "5806712a1f6bc925", "field": "text", "en": "Caught one! I'll see if any of the guards are hungry. Come on Fang!", "hash": "5806712a1f6bc925", "src": "vmangos@13b49dc"}
 {"id": "5807dccb1af5f3c5", "field": "text", "en": "No more tin bars! Even my arms hurt from stacking them. We have all that we need, so go ask one of the others if they need you to collect anything.", "hash": "5807dccb1af5f3c5", "src": "vmangos@13b49dc"}
+{"id": "58087a20a01cc36e", "field": "text", "en": "Watch yourself, $C. The Windshapers will not tolerate hostility from the High Order.", "hash": "58087a20a01cc36e", "src": "collector@1.60.1.70790"}
 {"id": "580a82b8dd93fc75", "field": "text", "en": "Let's go, goblin!", "hash": "580a82b8dd93fc75", "src": "vmangos@13b49dc"}
 {"id": "580f5a872dba16ec", "field": "text", "en": "That one's empty!!", "hash": "580f5a872dba16ec", "src": "vmangos@13b49dc"}
 {"id": "581aff3669ce4a83", "field": "text", "en": "%s places Marg's head in the cauldron.", "hash": "581aff3669ce4a83", "src": "vmangos@13b49dc"}

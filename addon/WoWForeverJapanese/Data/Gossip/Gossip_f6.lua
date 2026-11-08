@@ -9,6 +9,7 @@ WFJ.Data.add("gossip", {
   ["f61d2089c28bf25e"] = { "我々はWarsong Gulchからエルフどもと、その臆病なAllianceを一掃せねばならない。Hordeを助けるだけの力があるなら、Valley of HonorにあるHall of the Braveへ行き、Brakgul Deathbringerと話せ。", "." },
   ["f620831b08c56ce5"] = { "全力を尽くす、Vaelan。", "." },
   ["f62182ccd203035b"] = { "いいか、火事のことを話さないなら――", "." },
+  ["f623a1b0be197d23"] = { "あの方をとても慕っていたようですね。個人的にご存じだったのですか？", "." },
   ["f625eff5b518454d"] = { "Isha Awakの精霊があなたに力を与えますように、{name}。", "." },
   ["f63889c70ebd3c4b"] = { "Coldtooth MineはHordeの領土、Frostwolf Graveyardの北の山中にある。\n\n現在はAllianceが支配している。", "." },
   ["f639dacbbbd773cf"] = { "%sは石板を読み上げた。聞いたこともない未知の響きが意識の中を流れていく。", "." },

@@ -24,6 +24,7 @@
 {"id": "bbbf58e50b6d2057", "field": "text", "en": "Are you reporting for duty, $c? All of the war materiel for both the Horde and the Alliance is completed and being shipped to Silithus as we speak. It should all arrive in less than a day. I hope that someone has found the different pieces of the Scepter of the Shifting Sands and put them all together.", "hash": "bbbf58e50b6d2057", "src": "vmangos@13b49dc"}
 {"id": "bbc6bc0f21103b74", "field": "text", "en": "%s is drawn to the ghost magnet...", "hash": "bbc6bc0f21103b74", "src": "vmangos@13b49dc"}
 {"id": "bbc9a7a7f1219fe0", "field": "text", "en": "Who controls the Dun Baldar South Bunker?", "hash": "bbc9a7a7f1219fe0", "src": "vmangos@13b49dc"}
+{"id": "bbcefed8fa5e8bc6", "field": "text", "en": "The transmogrifier", "hash": "bbcefed8fa5e8bc6", "src": "collector@1.60.1.70862", "npcs": [1423, 3296]}
 {"id": "bbd6059af83f376d", "field": "text", "en": "In grizzly times a druid can be a dear friend to those around them.  Ask any of the druids in the Cenarion Enclave and they will tell you the same.", "hash": "bbd6059af83f376d", "src": "vmangos@13b49dc"}
 {"id": "bbf52fbc4c8626fe", "field": "text", "en": "Need a little help here.  That $n saw me.", "hash": "bbf52fbc4c8626fe", "src": "vmangos@13b49dc"}
 {"id": "bbf8281a2bddfa7e", "field": "text", "en": "Chugga-chugga, woo-woo!  Happy Hallow's End, $n!", "hash": "bbf8281a2bddfa7e", "src": "vmangos@13b49dc"}

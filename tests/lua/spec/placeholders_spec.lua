@@ -39,6 +39,12 @@ describe("Core/Placeholders.expand", function()
     assert.are.equal("{race}の者", (P.expand("{race}の者", {})))
   end)
 
+  it("an unlisted race whose name is longer than its printed word shows that word", function()
+    -- Forever's Skyborne: the English prints "skyborne", UnitRace says "High Order Skyborne"
+    local sky = { raceFile = "Skyborne", raceName = "High Order Skyborne", raceWord = "Skyborne" }
+    assert.are.equal("Skyborneさん", (P.expand("{race}さん", sky)))
+  end)
+
   it("an ASCII gender pair takes the female form only for UnitSex 3", function()
     assert.are.equal("やあ、lad。", (P.expand("やあ、<lad/lass>。", { sex = 2 })))
     assert.are.equal("やあ、lass。", (P.expand("やあ、<lad/lass>。", { sex = 3 })))

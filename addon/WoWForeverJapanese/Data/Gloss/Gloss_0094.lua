@@ -284,7 +284,6 @@ WFJ.Data.add("gloss", {
   [94283] = "気をつける\tきをつける\tbe sure (be careful)",
   [94284] = "気をつける\tきをつける\tbe warned",
   [94285] = "気をつける\tきをつける\tbe warned (be careful)",
-  [94286] = "気をつける\tきをつける\tbe warned (careful)",
   [94287] = "気をつける\tきをつける\tbe warned (please be careful)",
   [94288] = "気をつける\tきをつける\tbe warned (take care)",
   [94289] = "気をつける\tきをつける\tbe wary",

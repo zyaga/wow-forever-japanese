@@ -1,3 +1,4 @@
+{"id": "df08d0069840091f", "field": "text", "en": "Greetings and salutations to you, good $R. P'rhaps you'd like to share a drink with me, help fight off the chill of the wind? Come, I've more than enough to share.", "hash": "df08d0069840091f", "src": "collector@1.60.1.70790", "npcs": [1252]}
 {"id": "df1762477e86b027", "field": "text", "en": "That one, Malagan. I know $g him:her;. Dependable, brave, and trustworthy. $n is $g his:her; name.", "hash": "df1762477e86b027", "src": "vmangos@13b49dc"}
 {"id": "df1b995b3897fc34", "field": "text", "en": "Here's the path out of Un'Goro!  We made it!  All we have to worry about is the Tanaris desert now.", "hash": "df1b995b3897fc34", "src": "vmangos@13b49dc"}
 {"id": "df1bc32ada36838a", "field": "text", "en": "Huh?! Darn it, it's lunch time! I overslept!", "hash": "df1bc32ada36838a", "src": "vmangos@13b49dc"}
@@ -10,7 +11,9 @@
 {"id": "df6d0e3f3f539572", "field": "text", "en": "I must make the necessary preparations before the awakening ritual can begin. You must protect me!", "hash": "df6d0e3f3f539572", "src": "vmangos@13b49dc"}
 {"id": "df6d0fb13ec379a5", "field": "text", "en": "I don't approve of your experiments, Gerard, but I must admit the results are impressive. What exactly did you do to her?", "hash": "df6d0fb13ec379a5", "src": "vmangos@13b49dc"}
 {"id": "df7100a79d3a7843", "field": "text", "en": "*You are able to make out the words* Stay... watch... shadow...", "hash": "df7100a79d3a7843", "src": "vmangos@13b49dc"}
+{"id": "df75419bfceaafc6", "field": "text", "en": "Well, not much chance I'd miss at this range.", "hash": "df75419bfceaafc6", "src": "collector@1.60.1.70862"}
 {"id": "df758ff933c73ee2", "field": "text", "en": "You hasten our... destruction...", "hash": "df758ff933c73ee2", "src": "collector@1.60.1.70790"}
+{"id": "df79aad43dc3dcd2", "field": "text", "en": "For now, spread the word to our people. Be on your guard around Windshapers. We didn't start this fight, but once the cult is dealt with, we will be ready to end it.", "hash": "df79aad43dc3dcd2", "src": "collector@1.60.1.70790"}
 {"id": "df7a540e51403a43", "field": "text", "en": "Right away, Rokar.", "hash": "df7a540e51403a43", "src": "vmangos@13b49dc"}
 {"id": "df7eb4a37540795c", "field": "text", "en": "Ahh there it is.", "hash": "df7eb4a37540795c", "src": "vmangos@13b49dc"}
 {"id": "df91c63b1e34615a", "field": "text", "en": "Now, you try.", "hash": "df91c63b1e34615a", "src": "vmangos@13b49dc"}
@@ -27,9 +30,11 @@
 {"id": "dfc6798ef1bd5a65", "field": "text", "en": "%s pokes the skittish rabbit.", "hash": "dfc6798ef1bd5a65", "src": "vmangos@13b49dc"}
 {"id": "dfcf4499c00875fe", "field": "text", "en": "Shamans, show me what your totems can do!", "hash": "dfcf4499c00875fe", "src": "vmangos@13b49dc"}
 {"id": "dfd91062bb6846bf", "field": "text", "en": "Outsiders! Kill em all!", "hash": "dfd91062bb6846bf", "src": "vmangos@13b49dc"}
+{"id": "dfe16e9a5eb128e2", "field": "text", "en": "Mmrrhmm... what... what's happening? What is... this?", "hash": "dfe16e9a5eb128e2", "src": "collector@1.60.1.70790"}
 {"id": "dfe597b007d72880", "field": "text", "en": "Hi!  I'm Kwee Q. Peddlefeet!  I'm here to find out who is the most popular of all the heroes in Azeroth!$B$BIt sure warms my heart to see so many adoring fans greet their leaders, but... do you know what would warm me even more?$B$BA kiss!", "hash": "dfe597b007d72880", "src": "vmangos@13b49dc"}
 {"id": "dfefb31a7c434722", "field": "text", "en": "%s cries.", "hash": "dfefb31a7c434722", "src": "vmangos@13b49dc"}
 {"id": "dff28fd18440078e", "field": "text", "en": "The Horde wins!", "hash": "dff28fd18440078e", "src": "vmangos@13b49dc"}
+{"id": "dff34ef1d9c0be3c", "field": "text", "en": "Listen to me, Terry, just take these men and leave. Tell Benedict or whomever sent you that I'm dead. Walk away.", "hash": "dff34ef1d9c0be3c", "src": "collector@1.60.1.70862"}
 {"id": "dff92f81e70a838a", "field": "text", "en": "Greetings, young $c.", "hash": "dff92f81e70a838a", "src": "vmangos@13b49dc"}
 {"id": "dff95d62bc69e5d2", "field": "text", "en": "Your life is a fitting sacrifice for my master, $c.", "hash": "dff95d62bc69e5d2", "src": "vmangos@13b49dc"}
 {"id": "dffabc3924b2b31d", "field": "text", "en": "The Dun Baldar North Bunker is under attack!  If left unchecked, the Alliance will destroy it!", "hash": "dffabc3924b2b31d", "src": "vmangos@13b49dc"}

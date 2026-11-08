@@ -434,7 +434,6 @@ WFJ.Data.add("gloss", {
   [3431] = "いらっしゃる\tいらっしゃる\t(you have) come (honorific)",
   [3432] = "いらっしゃる\tいらっしゃる\t(you) have come",
   [3433] = "いらっしゃる\tいらっしゃる\tare (you) here (came)",
-  [3434] = "いらっしゃる\tいらっしゃる\tare here (came)",
   [3435] = "いらっしゃる\tいらっしゃる\tare you here (did you come)",
   [3436] = "いらっしゃる\tいらっしゃる\thave (you) come",
   [3437] = "いらっしゃる\tいらっしゃる\thave come",

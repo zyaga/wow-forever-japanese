@@ -316,7 +316,6 @@ WFJ.Data.add("gloss", {
   [76313] = "感謝する\tかんしゃする\twould be grateful",
   [76314] = "感謝する\tかんしゃする\twould be obliged",
   [76315] = "感謝する\tかんしゃする\twould like to thank",
-  [76316] = "感謝する\tかんしゃする\tyou have done me a great favor (thank you)",
   [76317] = "感謝する\tかんしゃする\tyou have my gratitude",
   [76318] = "感謝する\tかんしゃする\tyou have my gratitude (I thank)",
   [76319] = "感謝する\tかんしゃする\tyou have my gratitude (thank)",
