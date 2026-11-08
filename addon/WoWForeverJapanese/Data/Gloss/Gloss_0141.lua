@@ -76,6 +76,7 @@ WFJ.Data.add("gloss", {
   [141077] = "たまもの\tたまもの\tthe fruit (result) of",
   [141081] = "んです\tんです\t(explanatory) it's that",
   [141082] = "んですか\tんですか\tdid you? (asking)",
+  [141083] = "カーニバル\tカーニバル\tcarnival",
   [141084] = "作る\tつくる\tmaking (among other things)",
   [141085] = "光り物\tひかりもの\tshiny things",
   [141086] = "惹きつける\tひきつける\twill be drawn in (attracted)",
