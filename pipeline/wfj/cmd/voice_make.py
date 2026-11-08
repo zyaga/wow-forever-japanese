@@ -475,6 +475,23 @@ def to_levelled_mp3(wav: bytes, out: Path) -> None:
         part.unlink(missing_ok=True)
 
 
+# seconds of silence after every take: the model stops at its last sound, and a line that ends there sounds
+# cut off in the game
+END_PAUSE = 0.4
+
+
+def with_end_pause(wav: bytes) -> bytes:
+    """The take with END_PAUSE of silence after it, in its own format."""
+    with wave.open(BytesIO(wav)) as r:
+        params, frames = r.getparams(), r.readframes(r.getnframes())
+    buf = BytesIO()
+    with wave.open(buf, "wb") as w:
+        w.setparams(params)
+        pause = int(params.framerate * END_PAUSE) * params.sampwidth * params.nchannels
+        w.writeframes(frames + b"\x00" * pause)
+    return buf.getvalue()
+
+
 def wav_seconds(wav: bytes) -> float:
     with wave.open(BytesIO(wav)) as w:
         return w.getnframes() / w.getframerate()
@@ -683,6 +700,7 @@ def generate(  # noqa: C901, PLR0913, PLR0915 - engine, encoder and log injected
                     return None
                 file = audio_file(store, j.stem)
                 file.parent.mkdir(parents=True, exist_ok=True)
+                wav = with_end_pause(wav)
                 (encode or to_levelled_mp3)(wav, file)
                 return j, text, wav, source, file
 
@@ -842,7 +860,8 @@ def archive_run(run: Path, archive: Path) -> Path:
 
 def relevel(root: Path, cfg: dict[str, Any], store: Path, runs: Sequence[Path]) -> int:
     """Re-encodes the recorded cloned-voice files that the given remote runs made, from their kept WAVs,
-    at the common loudness; the record's bytes and hashes follow. → how many files were re-encoded."""
+    at the common loudness and with the end pause; the record's length, bytes and hashes follow. A take is
+    taken from the first run that has it, so the newest run goes first. → how many files were re-encoded."""
     lines, audio = shipped_lines(root), audio_record(root)
     values = line_values(root, lines)
     sets, clips = voice_sets_cmd.catalogue(root), voice_sets_cmd.clip_dir()
@@ -859,8 +878,9 @@ def relevel(root: Path, cfg: dict[str, Any], store: Path, runs: Sequence[Path]) 
         if wav is None:
             continue
         file = audio_file(store, stem)
-        to_levelled_mp3(wav.read_bytes(), file)
-        rec.update(bytes=file.stat().st_size, sha256=file_sha(file))
+        take = with_end_pause(wav.read_bytes())
+        to_levelled_mp3(take, file)
+        rec.update(seconds=round(wav_seconds(take), 2), bytes=file.stat().st_size, sha256=file_sha(file))
         done += 1
         if done % 200 == 0:
             print(f"voice relevel: {done}", flush=True)
