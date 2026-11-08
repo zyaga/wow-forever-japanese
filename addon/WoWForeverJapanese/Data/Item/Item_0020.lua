@@ -306,7 +306,7 @@ WFJ.Data.add("item", {
   [20531] = { "【使用】Dark Rune(1)とFirebloom(5)を合成して、Signet of Beckoning: Fireを作成します。", 0xae0da25f, "u" },
   [20532] = { "【使用】Dark Rune(1)とElemental Air(5)を合成して、Signet of Beckoning: Thunderを作成します。", 0x02656e5c, "u" },
   [20533] = { "【使用】Dark Rune(1)とDense Stone(5)を合成して、Signet of Beckoning: Stoneを作成します。", 0x273e1b15, "u" },
-  [20534] = { "マナコスト0でSummon Voidwalkerを\n詠唱します。(クールダウン30分)　", 0x8530f049, "u" },
+  [20534] = { "マナもSoul Shardも使わずにSummon Voidwalkerを唱えます。\n闇の儀式が闇の宝石に閉じ込められている。", 0x8530f049, "u" },
   [20535] = { "【使用】Dark Rune(1)とEnchanted Water(5)を合成して、Signet of Beckoning:Waterを作成します。", 0xeeef2189, "u" },
   [20537] = { "5秒ごとにマナを$N1回復します。", 0x9ac76902, "u" },
   [20538] = { "5秒ごとにマナを$N1回復します。", 0x9ac76902, "u" },

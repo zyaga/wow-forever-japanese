@@ -631,7 +631,6 @@ WFJ.Data.add("gloss", {
   [143628] = "凶悪\tきょうあく\tbadder",
   [143629] = "凶暴さ\tきょうぼうさ\tmean (meanness)",
   [143630] = "出かける\tでかける\tstepped out",
-  [143631] = "出かける\tでかける\tstepped out (went out)",
   [143632] = "出す\tだす\t(give)",
   [143633] = "出す\tだす\tcan make",
   [143634] = "出す\tだす\tgive (produce)",

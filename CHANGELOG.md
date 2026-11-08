@@ -34,7 +34,6 @@ an old setting stops working). A release moves those lines under its version num
 - Skyborne characters now see the Japanese of lines that name their race (they showed English before), and the race shows as "Skyborne".
 - About 75 voice lines that ran on into nonsense partway through (the Deviate Eradication quest's offer among them) are made again.
 
-
 ## 0.11.0 - 2026-11-08
 
 ### Fixed

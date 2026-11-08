@@ -68,7 +68,6 @@ WFJ.Data.add("gloss", {
   [142065] = "よい\tよい\tso be it",
   [142066] = "キーキー\tキーキー\tsqueak (sound)",
   [142067] = "タダ\tタダ\tnot free (for a cost)",
-  [142068] = "トランスモグリファイア\tトランスモグリファイア\tthe transmogrifier",
   [142069] = "ハーピー\tハーピー\tharpy",
   [142070] = "ペテン師\tペテンし\tcharlatans",
   [142071] = "リセットする\tリセットする\twould like to unlearn (reset)",

@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-08 at commit `dd382a7b`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-08 at commit `ca1c6be6`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -9,7 +9,7 @@
 
 | Surface | English lines | Ship Japanese | Nothing to translate | Done | Not yet |
 |---|---|---|---|---|---|
-| Quest text | 21,359 | 21,252 | 105 | 100.0% | 2 |
+| Quest text | 21,359 | 21,254 | 105 | 100.0% | 0 |
 | NPC dialogue (gossip, speech) | 11,380 | 11,380 | 0 | 100.0% | 0 |
 | Book / letter pages | 1,257 | 1,205 | 52 | 100.0% | 0 |
 | Quest objective lines | 507 | 449 | 58 | 100.0% | 0 |
@@ -17,10 +17,10 @@
 | Item descriptions | 10,381 | 10,380 | 0 | 100.0% | 1 |
 | Spell tooltips + auras | 25,928 | 25,880 | 1 | 99.8% | 47 |
 | Interface strings | 16,115 | 16,115 | 0 | 100.0% | 0 |
-| **All** | **87,160** | | | **99.9%** | **50** |
+| **All** | **87,160** | | | **99.9%** | **48** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
-professions, internal strings): quest 333, gossip 89, item 893, spell 293, ui 313.
+professions, internal strings): quest 333, gossip 89, item 903, spell 301, ui 313.
 
 ### Nothing to translate (counted as done)
 
@@ -39,8 +39,6 @@ professions, internal strings): quest 333, gossip 89, item 893, spell 293, ui 31
 
 | Surface | Why | Lines |
 |---|---|---|
-| Quest text | rejected: truncated:1/2 | 1 |
-| Quest text | rejected: truncated:1/8 | 1 |
 | Item descriptions | no Japanese yet: the template has too many optional parts for one translation | 1 |
 | Spell tooltips + auras | no Japanese yet: the template includes a spell the Forever tables do not hold | 34 |
 | Spell tooltips + auras | no Japanese yet: the template has too many optional parts for one translation | 8 |
@@ -361,7 +359,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 
 | Type | Lines that can carry a word list | With one | Done | Stale | Words | With a meaning |
 |---|---|---|---|---|---|---|
-| quest | 19,896 | 19,896 | 100.0% | 193 | 317,360 | 100.0% |
+| quest | 19,898 | 19,898 | 100.0% | 193 | 317,426 | 100.0% |
 | gossip | 11,246 | 11,246 | 100.0% | 0 | 109,388 | 100.0% |
 | ui | 15,297 | 15,297 | 100.0% | 1 | 47,662 | 100.0% |
 | book | 1,167 | 1,167 | 100.0% | 0 | 39,619 | 100.0% |
@@ -378,7 +376,7 @@ outnumber lines.
 
 | Kind | Lines | Files | In step | Stale | Not made | Read by the narrator |
 |---|---|---|---|---|---|---|
-| Quest offer | 4,573 | 4,647 | 4,647 | 0 | 0 | 1,145 |
+| Quest offer | 4,575 | 4,649 | 4,647 | 0 | 2 | 1,146 |
 | Quest progress | 2,964 | 2,988 | 2,988 | 0 | 0 | 105 |
 | Quest turn-in | 4,092 | 4,118 | 4,118 | 0 | 0 | 178 |
 | NPC talk (greetings, gossip, quest text keyed by its English) | 2,241 | 2,814 | 2,814 | 0 | 0 | 23 |

@@ -979,7 +979,6 @@ WFJ.Data.add("gloss", {
   [144976] = "脇に置く\tわきにおく\tset aside",
   [144977] = "脇の下\tわきのした\tunderarm",
   [144978] = "脱出する\tだっしゅつする\tbreak out (escape)",
-  [144979] = "脱帽\tだつぼう\thats off (taking off one's hat)",
   [144980] = "腐敗\tふはい\trot (decay)",
   [144981] = "腐食する\tふしょくする\tcorroded",
   [144982] = "腕っぷし\tうでっぷし\thandle yourself in a fight (strength)",
