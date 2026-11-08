@@ -548,7 +548,7 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       assert.are.same({ "Rock", "Use: Throw it." }, tip:texts())
       Stub.keys.alt = true
       WFJ.Modifier.refresh()
-      tip:ProcessTooltipData(data)
+      tip:ProcessTooltipData(item)
       assert.are.equal("Use: Returns you to Darnassus. Speak to an Innkeeper in a different place to change your"
         .. " home location.", tip:texts()[2])
       Stub.keys.alt = false
