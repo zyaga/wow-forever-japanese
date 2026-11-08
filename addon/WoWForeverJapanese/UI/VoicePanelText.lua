@@ -4,7 +4,7 @@
 --                                 back to their bytes in `ja`)
 --   Text.pageSpans(item, segs, page) → the page's words, located in the whole line
 --   Text.showPage(fs, item, page, spans) · Text.showEnglish(fs, item) · Text.detach()
---   Text.openWhole(anchor, item, look, toQuestLog, english) → true when shown · Text.refreshWhole(item, look, english)
+--   Text.openWhole(anchor, item, look, english) → true when shown · Text.refreshWhole(item, look, english)
 --   Text.hideWhole() · Text.wholeShown()
 -- Word cards come from UI/Readings like every other surface (surface "voicepanel"); a page passes its words in
 -- `rec.spans`, because a line's word list is in the order of the whole line and a sentence alone can match an
@@ -248,37 +248,15 @@ function Text.refreshWhole(item, L, english)
   attach(wholeRec)
 end
 
--- A quest line whose quest is in the player's log: the quest log opened at it (the world map's quest pane, which
--- shows it in Japanese). [verified: forever 1.60.1.70685 mainline/questmapframe.lua:1179–1183
--- (QuestMapFrame_OpenToQuestDetails); questlogdocumentation.lua:206 (GetLogIndexForQuestID)] → true when opened
-local function openQuest(item)
-  if type(item.kind) ~= "string" or not item.kind:match("^quest%.") or type(item.id) ~= "number" then
-    return false
-  end
-  local QL = Compat.resolve("C_QuestLog")
-  local open = Compat.resolve("QuestMapFrame_OpenToQuestDetails")
-  if type(QL) ~= "table" or type(QL.GetLogIndexForQuestID) ~= "function" or type(open) ~= "function" then
-    return false
-  end
-  if not QL.GetLogIndexForQuestID(item.id) then return false end -- an offer not taken yet is not in the log
-  -- Blizzard's quest log code runs from ours here, so what it writes can carry this addon's taint: the taint log's
-  -- ring notes it, so a later block shows whether this ran before it
-  if WFJ.TaintWatch then
-    WFJ.Perf.flush() -- the passes timed before this go in first
-    WFJ.TaintWatch.trail("voice.openQuestLog")
-  end
-  return pcall(open, item.id) and true or false
-end
-
--- The whole text of `item`: the quest in the quest log when `toQuestLog` and it is there, else the window above
--- `anchor` (a second call closes the window). → true when something opened
-function Text.openWhole(anchor, item, L, toQuestLog, english)
+-- The whole text of `item` in the window above `anchor` (a second call closes the window). Never the quest log:
+-- Blizzard's quest log opened from addon code taints the map's quest fields and the quest tracker until a reload,
+-- and the next world map open in combat is blocked. → true when something opened
+function Text.openWhole(anchor, item, L, english)
   if not item then return false end
   if whole and whole:IsShown() then
     whole:Hide()
     return false
   end
-  if toQuestLog and openQuest(item) then return true end
   if not whole then buildWhole() end
   whole:ClearAllPoints()
   whole:SetPoint("BOTTOM", anchor, "TOP", 0, 6)

@@ -420,6 +420,13 @@ local function hookWriters()
     -- a title click runs block:OnHeaderClick → module:OnBlockHeaderClick (blizzard_objectivetrackerblock.lua:284-286,
     -- 386-389; blizzard_questobjectivetracker.lua:53-68): a key of the block or its module written by tainted code
     -- (a block built or refilled while tainted) would taint the whole click
+    -- the rest of what the click reads before it opens the quest log (blizzard_objectivetrackerblock.xml:16-27, the
+    -- title button's OnClick method; blizzard_questobjectivetracker.lua:51-68; chatframeutil.lua:625-633;
+    -- objectcache.lua:5-20 and quest.lua:20-40, the quest's cache entry): any of them written by tainted code taints
+    -- the click, and the quest log it opens writes the map's quest fields as this addon's
+    local CLICK_GLOBALS = { "ChatFrameUtil", "IsModifiedClick", "GetQuestLink", "QuestUtil", "QuestCache", "C_QuestLog",
+      "QuestMapFrame_OpenToQuestDetails", "ShowQuestComplete" }
+    local QUEST_KEYS = { "isAutoComplete", "CheckRefresh", "IsComplete", "GetID", "questID", "hasQuestLogInfo" }
     for _, name in ipairs({ "QuestObjectiveTracker", "CampaignQuestObjectiveTracker" }) do
       hook(C.resolve(name), "OnBlockHeaderClick", function(module, block)
         for _, key in ipairs({ "OnBlockHeaderClick", "OnHeaderClick", "id", "parentModule" }) do
@@ -428,6 +435,33 @@ local function hookWriters()
           end
           if type(module) == "table" and module[key] ~= nil then
             TaintWatch.wrote(name .. "." .. key, module, key)
+          end
+        end
+        local button = type(block) == "table" and block.HeaderButton or nil
+        if type(button) == "table" and button.OnClick ~= nil then
+          TaintWatch.wrote(name .. " block.HeaderButton.OnClick", button, "OnClick")
+        end
+        for _, g in ipairs(CLICK_GLOBALS) do
+          if C.resolve(g) ~= nil then TaintWatch.wrote(g, nil, g) end
+        end
+        local chat = C.resolve("ChatFrameUtil")
+        if type(chat) == "table" then
+          for _, key in ipairs({ "TryInsertQuestLinkForQuestID", "TryInsertChatLink" }) do
+            if chat[key] ~= nil then TaintWatch.wrote("ChatFrameUtil." .. key, chat, key) end
+          end
+        end
+        local cache = C.resolve("QuestCache")
+        local id = type(block) == "table" and block.id or nil
+        if type(cache) == "table" and type(cache.objects) == "table" and id ~= nil then
+          if cache.Get ~= nil then TaintWatch.wrote("QuestCache.Get", cache, "Get") end
+          TaintWatch.wrote("QuestCache.objects[" .. tostring(id) .. "]", cache.objects, id)
+          local quest = cache.objects[id]
+          if type(quest) == "table" then
+            for _, key in ipairs(QUEST_KEYS) do
+              if quest[key] ~= nil then
+                TaintWatch.wrote("QuestCache.objects[" .. tostring(id) .. "]." .. key, quest, key)
+              end
+            end
           end
         end
       end)
@@ -443,11 +477,20 @@ local function hookWriters()
   end) then
     n = n + 1
   end
+  -- the map's quest pins compare the shown map id before their protected call (blizzard_mapcanvas.lua:60-65); set
+  -- by tainted code (the quest log opened from an addon), it blocks the pins on the next world map open in combat
+  local function hookMap()
+    hook(C.resolve("WorldMapFrame"), "SetMapID", function(self)
+      TaintWatch.wrote("WorldMapFrame.mapID", self, "mapID")
+    end)
+  end
   local LOD = WFJ.LoadOnDemand
   if type(LOD) == "table" and type(LOD.when) == "function" then
     LOD.when("Blizzard_ObjectiveTracker", hookTracker)
+    LOD.when("Blizzard_WorldMap", hookMap)
   else
     hookTracker()
+    hookMap()
   end
   for _, fn in ipairs({ "ClearOnBarHighlightMarks", "UpdateOnBarHighlightMarksBySpell",
     "UpdateOnBarHighlightMarksByFlyout", "UpdateOnBarHighlightMarksByPetAction" }) do

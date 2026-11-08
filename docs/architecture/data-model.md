@@ -128,10 +128,11 @@ The voice over keeps a few things in the addon's account-wide saved variables ([
 | Key | Holds | Written by |
 |---|---|---|
 | `WFJ_DB.voiceDialogMuted` | the addon turned `Sound_EnableDialog` off and must put it back | `UI/VoicePlayer` |
+| `WFJ_DB.voiceHeard["<pack key>"]` | the hash of the Japanese a line was read aloud with, for the first time only settings (`voice.questOnce`, `voice.greetingOnce`): a line with the same hash is not read aloud again when its window shows; keys and hashes only, never text; written only while the line's first time only setting is on | `Core/Voice.markHeard`, called by `UI/VoicePlayer` once a line has started |
 | `WFJ_DB.voiceErrorSpeechMuted` | the same for `Sound_EnableErrorSpeech` | `UI/VoiceErrors` |
 | `WFJ_DB.voiceSpeakers["<quest id>-<field>"]` | the remembered speaker of a quest line (`field`: `description`, `progress` or `completion`): `{ c = creature id, s = UnitSex, n = name, t = title }` as the client showed them when the quest window last showed that panel; read by the quest log's replays; kept only while a voice pack is installed (without one nothing is ever replayed); at most one entry per quest line the game has | `UI/VoiceQuestLog` on State `questShown` |
 | `WFJ_DB.voicePanel` | `point = { point, relativePoint, x, y }` once the panel was dragged (cleared by `/wfj panel reset`); created the first time it is set, so a player who never moved the panel has no `voicePanel` key | `Core/VoiceQueue` |
-| `WFJ_DB.settings["voice.panel.*"]` | the panel's settings: `size` (`off` / `full` / `strip`, default `full`), `style` (`dark` / `parchment`, default `parchment`), `keep`, `head`, `hoverButtons`, `fade`, `combatDim`, `questLog` (on by default), `lock` (off) | `Core/Settings` |
+| `WFJ_DB.settings["voice.panel.*"]` | the panel's settings: `size` (`off` / `full` / `strip`, default `full`), `style` (`dark` / `parchment`, default `parchment`), `keep`, `head`, `hoverButtons`, `fade`, `combatDim`, `lock` (off); a `questLog` value saved by an older version is ignored | `Core/Settings` |
 
 Settings and `voicePanel` keys from earlier panel builds (`voice.panel`, `voice.panel.strip`, `voice.panel.parchment`, `voice.panel.queueBox`, `voice.panel.ruby`, and tuning values such as `zoom` or `idleDelay`) are carried into Panel size and Panel style once by `VoiceQueue.init` and dropped. `WFJ_DB` stays schema 1. The English a queued line shows while the reveal key is held is kept in memory with that line only, never saved.
 

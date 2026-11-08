@@ -245,6 +245,8 @@ function WFJ.OnLoad()
   step("reports", function() WFJ.Reports.load(WFJ_DB) end) -- pending fixes live in WFJ_DB.reports
   step("forget", function() -- saved tables of mechanisms the addon no longer has
     if type(WFJ_DB) == "table" then WFJ_DB.buffIdentity, WFJ_DB.timeRule = nil, nil end
+    -- the tooltip trace a reload saved (/wfj debug tooltip on) was read from the file; it is off after a load
+    if type(WFJ_DB) == "table" then WFJ_DB.tooltipTrace = nil end
   end)
   WFJ_Collector = step("collector", function() return WFJ.Collector.load(WFJ_Collector, {
     enabled = function() return WFJ.Settings.get("collector.enabled") end,
@@ -304,6 +306,11 @@ function WFJ.OnLoad()
     setting = WFJ.Settings.get,
     revealed = WFJ.Modifier.isDown,
     enabled = function() return WFJ.State.enabled end,
+    heard = function() -- the lines already heard, for the first time only settings (keys and hashes, never text)
+      if type(WFJ_DB) ~= "table" then return nil end
+      if type(WFJ_DB.voiceHeard) ~= "table" then WFJ_DB.voiceHeard = {} end
+      return WFJ_DB.voiceHeard
+    end,
   }) end)
   step("voicequeue", function() WFJ.VoiceQueue.init(WFJ_DB) end)
   step("voiceplayer", function() WFJ.VoicePlayer.init(WFJ_DB) end)
@@ -497,6 +504,7 @@ local function onEvent(self, event, name, ...)
     WFJ.StudyWindow.setCombat(true)
   elseif event == "PLAYER_REGEN_ENABLED" then
     WFJ.RevealBinding.flush() -- a modifier change made in combat
+    WFJ.QuestMap.onCombatEnded() -- the map's quest list keeps the client's English in combat
     WFJ.Options.setCombat(false)
     WFJ.StudyWindow.setCombat(false)
   elseif event == "PLAYER_LOGOUT" then

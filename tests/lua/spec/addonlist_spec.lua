@@ -193,6 +193,32 @@ describe("the AddOn List on Forever", function()
     assert.are.equal("このアドオンは一部のキャラクターでのみ有効です。", _G.GameTooltipTextLeft1:GetText())
   end)
 
+  it("an addon title with Japanese in it keeps its text and gets a face with the letters until it hides", function()
+    local e = entry()
+    _G.AddonList_InitAddon(e, { GetData = function() return { title = "WoW Forever Japanese" } end })
+    local tt = _G.GameTooltip
+    tt:SetOwner(e)
+    tt:ClearLines()
+    tt:AddDoubleLine("WoW Forever Japanese (日本語化)", "1.0") -- the client's tooltip font has no kana: boxes
+    tt:AddLine(en("ADDON_LIST_PERFORMANCE_AVERAGE_CPU"):format("0.5%"))
+    local line1 = _G.GameTooltipTextLeft1
+    line1:SetFont("Fonts\\FRIZQT__.TTF", 14, "")
+    tt:Show()
+    assert.are.equal("WoW Forever Japanese (日本語化)", line1:GetText()) -- a name: never changed
+    assert.are.equal(WFJ.Font.PATH, (line1:GetFont()))
+    assert.are.equal(14, select(2, line1:GetFont())) -- at the line's own size
+    line1:SetFont("Fonts\\FRIZQT__.TTF", 14, "") -- the client rebuilds the tooltip while hovered
+    tt:Show()
+    assert.are.equal(WFJ.Font.PATH, (line1:GetFont()))
+    tt:Hide()
+    assert.are.equal("Fonts\\FRIZQT__.TTF", (line1:GetFont())) -- the next tooltip's title is the client's again
+    tt:SetOwner(e)
+    tt:ClearLines()
+    tt:AddDoubleLine("Questie", "1.0") -- no Japanese: left as it is
+    tt:Show()
+    assert.are.equal("Fonts\\FRIZQT__.TTF", (line1:GetFont()))
+  end)
+
   it("the dropdown shows ALL in Japanese, the player's name as written, even a player called All", function()
     local dropdown = _G.AddonList.Dropdown
     dropdown:UpdateText()

@@ -44,7 +44,7 @@ While the popup shows a word, **Ctrl+click** it to save it with its reading, mea
 
 ### <span style="color:#E8C77E;">Japanese voice</span>
 
-With **WoW Forever Japanese Voice** installed (a free, separate download), quest offers, progress and turn-ins, NPC greetings and talk, and book and letter pages are read aloud in Japanese: over 14,000 lines. Each NPC speaks in a voice modelled on its own voice in the game, so it sounds like the NPC you know, and your character says its own error lines, such as being out of range, in Japanese too, in a voice modelled on its race's own. Every line plays at the same loudness.
+With **WoW Forever Japanese Voice** installed (a free, separate download), quest offers, progress and turn-ins, NPC greetings and talk, and book and letter pages are read aloud in Japanese: over 14,000 lines. Each NPC speaks in a voice modelled on its own voice in the game, so it sounds like the NPC you know, and your character says its own error lines, such as being out of range, in Japanese too, in a voice modelled on its race's own. Every line plays at the same loudness. The NPC's English voice is silenced as the window opens, so it does not start under the Japanese. An NPC's greeting is read aloud only the first time you hear it, and a setting does the same for quest lines; the window's play button reads a line again.
 
 While a line plays, a **voice panel** at the bottom of the screen shows the speaker's face, their name and title, and the Japanese a sentence at a time, with the popup dictionary on every word. Close the window and the line keeps playing, so you can walk on while the NPC finishes; lines that start meanwhile wait their turn in a list above the panel. Hold <span style="color:#E0605A;">**Alt**</span> and the panel shows the line's English while the voice goes on. The quest log has a play button too. The panel can be moved, shrunk to a small strip, switched to a dark style or turned off.
 
@@ -135,7 +135,7 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 
 ### <span style="color:#E8C77E;">日本語音声</span>
 
-**WoW Forever Japanese Voice**（無料の別ダウンロード）を入れると、クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページを日本語で読み上げます。合わせて 14,000 行以上です。NPC はそれぞれ、ゲームでのその NPC 自身の声をもとにした声で話すので、英語で聞き慣れた NPC と同じように聞こえます。自分のキャラクターも、射程外などのエラーの一言を、その種族のエラーの声をもとにした声で日本語で話します。どの行も同じ音量で再生されます。
+**WoW Forever Japanese Voice**（無料の別ダウンロード）を入れると、クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページを日本語で読み上げます。合わせて 14,000 行以上です。NPC はそれぞれ、ゲームでのその NPC 自身の声をもとにした声で話すので、英語で聞き慣れた NPC と同じように聞こえます。自分のキャラクターも、射程外などのエラーの一言を、その種族のエラーの声をもとにした声で日本語で話します。どの行も同じ音量で再生されます。日本語で読み上げる行では、ウィンドウが開いた時点で NPC の英語の声を止めるので、日本語に英語が重なりません。NPC のあいさつは初めて聞くときだけ読み上げます。クエストの音声も設定で同じようにできます。ウィンドウの再生ボタンでもう一度聞けます。
 
 読み上げ中は、画面下の **音声パネル** に話している NPC の顔、名前と肩書き、読み上げ中の日本語が 1 文ずつ表示されます。どの単語にもポップアップ辞書が使えます。ウィンドウを閉じても読み上げは続くので、NPC の話を聞きながら先へ進めます。その間に始まった行はパネルの上の一覧で順番を待ちます。<span style="color:#E0605A;">**Alt**</span> を押している間は、声はそのままでパネルにその行の英語が表示されます。クエストログにも再生ボタンがあります。パネルは移動でき、小さな帯の表示、暗い背景、オフに切り替えられます。
 

@@ -39,7 +39,7 @@ Japanese voice over for the **WoW Forever Japanese** addon. The addon reads its 
 
 The Voice entry holds no audio itself; the app installs every voice pack with it (about 1.2 GB in all) and keeps them up to date. In the game, the packs show as extra rows under the addon in the AddOns list; leave them ticked. By hand: download the zip whose name ends in `-all-` and a date from the latest **Voice** release on the [GitHub releases page](https://github.com/zyaga/wow-forever-japanese/releases), and unzip it into your Forever client's `Interface/AddOns` folder.
 
-One setting on the addon's **Voice** page turns the voice off. Removing the voice addons removes it, and the addon keeps working. A line plays only when its audio was made from the Japanese the addon shows; a line whose Japanese changed stays silent until its audio is remade.
+One setting on the addon's **Voice** page turns the voice off. Others read NPC greetings (on by default) or quest lines only the first time you hear them; the window's play button reads them again. Removing the voice addons removes it, and the addon keeps working. A line plays only when its audio was made from the Japanese the addon shows; a line whose Japanese changed stays silent until its audio is remade.
 
 ### Credits
 
@@ -63,7 +63,7 @@ Every voice was made with **Qwen3-TTS** (https://github.com/QwenLM/Qwen3-TTS, Ap
 
 Voice 自体は音声を持たず、すべての音声パック（合計約 1.2 GB）をアプリが一緒にインストールし、更新します。ゲーム内の AddOns 一覧では、アドオンの下に音声パックの行が並びます。チェックは入れたままにしてください。手動の場合は、[GitHub のリリースページ](https://github.com/zyaga/wow-forever-japanese/releases)で最新の **Voice** リリースから、名前が `-all-` と日付で終わる zip をダウンロードし、Forever クライアントの `Interface/AddOns` フォルダに展開します。
 
-アドオンの **音声** ページの設定ひとつで音声をオフにできます。音声アドオンを削除すれば音声はなくなり、アドオンはそのまま動きます。音声は、アドオンが表示する日本語から作られたものだけが再生されます。日本語が変わった行は、音声が作り直されるまで再生されません。
+アドオンの **音声** ページの設定ひとつで音声をオフにできます。NPC のあいさつ（初期設定でオン）やクエストの音声を、初めて聞くときだけ読み上げる設定もあります。ウィンドウの再生ボタンでもう一度聞けます。音声アドオンを削除すれば音声はなくなり、アドオンはそのまま動きます。音声は、アドオンが表示する日本語から作られたものだけが再生されます。日本語が変わった行は、音声が作り直されるまで再生されません。
 
 ### クレジット
 

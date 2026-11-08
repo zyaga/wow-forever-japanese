@@ -329,6 +329,13 @@ local function show(surface, key, fs, en, area, kind, id, ctx)
   -- Main guards each init step, so surfaces install their hooks even when Render.init failed. Asserting here would
   -- turn one load failure into an error on every hover and window open; nothing to render against renders nothing.
   if not translator then return false end
+  -- a font the client keeps secret (seen on chat lines in a busy trade channel and on combat text): SetFont with it
+  -- raises from addon code, so the line keeps its English
+  local path, size, flags = fs:GetFont()
+  if SS.secret(path) or SS.secret(size) or SS.secret(flags) then
+    SS.drop(surface, key)
+    return false
+  end
   local rec = SS.capture(surface, key, fs, en, { area = area, kind = kind, id = id, ctx = ctx })
   if not rec then return false end
   local changed, action = sync(rec, true)

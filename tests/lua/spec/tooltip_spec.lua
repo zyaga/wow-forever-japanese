@@ -14,10 +14,14 @@ local DATA = {
     [2001] = { ja = "Herbalismのスキルを2上昇させます。\n野生のハーブを摘むための取扱説明書。", status = "u" },
     [724] = { ja = "21秒間でhealthを243回復。10秒以上食事に時間をかけると、15分間StaminaとSpiritを4上昇させます。", status = "u" },
     [6948] = { ja = "【使用】Hearthstoneの場所に戻ります。", status = "u" },
+    -- issue #87, Gnarled Necromancer's Staff: its description is the second of two Equip lines in a row
+    [251534] = { ja = "Silverpine ForestとHillsbrad Foothillsでの移動速度が$N1%上昇します。", status = "u" },
+    [900] = { ja = "移動速度が$N1%上昇します。", status = "u" }, -- names nothing: fits any line with a number
   },
   ["spell.description"] = {
     [17] = { ja = "味方にシールドを張り、$N1ダメージを吸収します。$N2秒間持続します。", status = "u" },
     [53] = { ja = "ターゲットを背後から攻撃し、$N1 ダメージを与えます。", status = "u" },
+    [1310316] = { ja = "盾を装備している間にDodgeまたはParryすると、$N1%の確率で怒りを$N2生み出します。", status = "u" },
   },
 }
 local JERKY = "|Hitem:117:0:0:0:0:0:0:0|h[Tough Jerky]|h"
@@ -76,6 +80,43 @@ describe("UI/Tooltip: item and spell tooltips", function()
     assert.are.equal("Sell Price: 5c", fs("GameTooltip", 6):GetText())
     assert.are.equal(3, SS.count("tooltip.GameTooltip"))
     assert.are.equal(2, tt.calls.Show) -- one refit (two Shows)
+  end)
+
+  describe("an item description that is one Equip line among several (issue #87)", function()
+    local POWER = "Equip: Increases damage and healing done by magical spells and effects by up to 26."
+    local SPEED = "Equip: Increases movement speed by 2% in Silverpine Forest and Hillsbrad Foothills."
+    before_each(function()
+      WFJ.Lookup = { get = function(kind, id) return DATA[kind] and DATA[kind][id] end }
+      WFJ.UIIndex = {
+        statLine = function(_, text) if text == POWER then return "SPELL_POWER", { "26" } end end,
+        duration = function() return nil end,
+        match = function() return nil end,
+        matchOnly = function() return nil end,
+        clientTail = function() return nil end,
+      }
+    end)
+    after_each(function() WFJ.Lookup, WFJ.UIIndex = nil, nil end)
+
+    it("the description takes its own line's number; the spell power line is matched as a stat line", function()
+      local shown = {}
+      local real = WFJ.Render.show
+      WFJ.Render.show = function(surface, key, w, en, area, kind, id, ctx)
+        if kind == "ui" then shown[#shown + 1] = { key = key, id = id, args = ctx and ctx.args } end
+        return real(surface, key, w, en, area, kind, id, ctx)
+      end
+      Stub.setItemTooltip(tt, "|Hitem:251534:0:0:0:0:0:0:0|h[Gnarled Necromancer's Staff]|h",
+        { "Gnarled Necromancer's Staff", "+10 Spirit", POWER, SPEED, "Sell Price: 36s" })
+      WFJ.Render.show = real
+      assert.are.equal("Silverpine ForestとHillsbrad Foothillsでの移動速度が2%上昇します。", fs("GameTooltip", 4):GetText())
+      assert.are.not_equal(WFJ.Render.BLANK, fs("GameTooltip", 3):GetText()) -- never folded into the description
+      assert.are.same({ { key = "ui.L3", id = "SPELL_POWER", args = { "26" } } }, shown)
+    end)
+
+    it("a description whose Japanese fits both lines on their own keeps the whole run, as before", function()
+      Stub.setItemTooltip(tt, "|Hitem:900:0:0:0:0:0:0:0|h[Two Speeds]|h",
+        { "Two Speeds", "Equip: Increases movement speed by 3%.", "Equip: Increases movement speed by 5%." })
+      assert.are.equal(WFJ.Render.BLANK, fs("GameTooltip", 3):GetText())
+    end)
   end)
 
   it("a flavour line in another colour keeps its colour in the Japanese; one colour adds nothing", function()
@@ -147,6 +188,35 @@ describe("UI/Tooltip: item and spell tooltips", function()
       "Backstab the target, causing 150% weapon damage plus 15 to the target.", "Left click to add a point" })
     assert.are.equal("ターゲットを背後から攻撃し、150 ダメージを与えます。", fs("GameTooltip", 3):GetText())
     assert.are.equal("Left click to add a point", fs("GameTooltip", 4):GetText())
+  end)
+
+  it("a talent's next rank, appended to the tooltip, is Japanese too; Alt shows both ranks' English", function()
+    _G.Enum.TooltipDataLineType = { SpellDescription = 99 }
+    local R1 = "Grants you a 50% chance to generate 5 Rage when you Dodge or Parry while a shield is equipped."
+    local R2 = "Grants you a 100% chance to generate 5 Rage when you Dodge or Parry while a shield is equipped."
+    Stub.spellDescriptions[1310316] = R1
+    Stub.setSpellTooltip(tt, 1310316, { "Master of Defense", "Rank 1/2", "Passive", R1 })
+    -- the talent tooltip appends the next rank (AppendInfo) and the client runs the post-call again with its data,
+    -- the current rank's line still showing the Japanese of the pass before
+    tt:AddLine(" "); tt:AddLine("Next Rank:"); tt:AddLine("Passive"); tt:AddLine(R2)
+    tt.processingInfo = { append = true }
+    for _, fn in ipairs(Stub.tooltipPostCalls[1]) do
+      fn(tt, { id = 1310316, lines = { { type = 99, leftText = R2 } } })
+    end
+    tt.processingInfo = nil
+    local JA1 = "盾を装備している間にDodgeまたはParryすると、50%の確率で怒りを5生み出します。"
+    local JA2 = "盾を装備している間にDodgeまたはParryすると、100%の確率で怒りを5生み出します。"
+    assert.are.equal(JA1, fs("GameTooltip", 4):GetText())
+    assert.are.equal(JA2, fs("GameTooltip", 8):GetText())
+    -- the current rank's record holds its real English, not the Japanese it was read with: Alt never shows boxes
+    Stub.keys.alt = true; WFJ.Modifier.refresh()
+    assert.are.equal(R1, fs("GameTooltip", 4):GetText())
+    assert.are.equal(R2, fs("GameTooltip", 8):GetText())
+    assert.are_not.equal(WFJ.Font.PATH, (fs("GameTooltip", 4):GetFont()))
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
+    assert.are.equal(JA1, fs("GameTooltip", 4):GetText())
+    assert.are.equal(JA2, fs("GameTooltip", 8):GetText())
+    _G.Enum.TooltipDataLineType = nil
   end)
 
   it("a blank line above Next rank: is never the description; an empty first line refuses the run", function()

@@ -10,19 +10,30 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Added
+- Read NPC greetings aloud only the first time: a vendor or trainer greets you the same way at every visit, so a greeting you have heard stays quiet when its window opens. This is on by default (*NPC greetings: only the first time* on the Voice page). *Quest lines: only the first time* does the same for quest offers, progress and turn-ins, and is off by default. The window's play button still reads the line, and a line whose Japanese changed counts as new.
 - Japanese for what Forever 1.60.1.70862 added: about 240 quests (titles, offers and objectives, with word cards), 287 item tooltips, new spell tooltips, 24 NPC lines, objective and area names.
 - More NPC lines and quest texts in Japanese, with word cards, from players' English Collector sends: eighteen NPC lines from the Durotar Supply and Logistics quartermaster in Orgrimmar, Cairne Bloodhoof welcoming the Windshapers to Mulgore, the transmogrifier, three Orgrimmar shopkeepers and a trainer, and nine quest progress and turn-in texts (two library book turn-ins, two Orgrimmar herb quests and a camping quest); then about 75 more NPC lines, many on Zephras Isle and in the High Order's story, and 16 more quest progress and turn-in texts; then 45 more NPC lines and 9 more quest progress and turn-in texts from seven more sends. Two item tooltips have Japanese too.
 
 ### Changed
+- When a window's line will be read aloud, the game's English voice is now silenced as the window opens, not when the Japanese starts. It comes back as soon as the line turns out not to play, or after a second and a half. An NPC that speaks the moment it turns to you can still be heard for a split second: the game starts that greeting before it opens the window.
 - Item and spell tooltips and quest texts the game reworded on 1.60.1.70862 follow the new wording.
 - Twelve quest progress and turn-in texts follow the game's current wording in Japanese and no longer show the stale marker.
 - The profession window's recipe description and its Filter button are in Japanese. Profession, recipe and item names stay English.
 - With Dialogue UI installed, an item's Use: and Equip: lines in its item tooltip, a quest tag that appears a moment after the page, and its quest-complete flyout are in Japanese.
 
+### Removed
+- The setting *The book button opens the quest in the quest log*. The voice panel's book button now always opens the small window with the line's whole Japanese.
+
 ### Fixed
+- Opening the world map in combat is no longer blocked with this addon blamed. The quest list beside the map shows the game's English while you are in combat and its Japanese again when the fight ends, and the voice panel's book button no longer opens the quest log.
+- No more "bad argument #2 to 'SetFont' ... Secret values" Lua errors in a busy trade channel: a line whose font size the game keeps secret now stays in English.
+- The AddOns list's tooltip shows the Japanese in this addon's name and the voice pack's name instead of empty boxes.
+- A talent's tooltip shows its next rank in Japanese too, and holding the English key no longer turns the current rank's text into empty boxes.
+- An item with several Equip lines in a row keeps each line's own number: Gnarled Necromancer's Staff showed its movement speed as 26% (its spell damage) and lost the spell damage line.
 - Right-clicking a quest in the quest log shows Track Quest, Share Quest and Abandon Quest in Japanese too (only Focus was before).
 - Skyborne characters now see the Japanese of lines that name their race (they showed English before), and the race shows as "Skyborne".
 - About 75 voice lines that ran on into nonsense partway through (the Deviate Eradication quest's offer among them) are made again.
+
 
 ## 0.11.0 - 2026-11-08
 

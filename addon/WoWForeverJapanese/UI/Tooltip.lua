@@ -127,6 +127,41 @@ function Tooltip.itemRun(texts)
   return first, last
 end
 
+-- The run is every Equip / Use line in a row, and an item's own description may be only one of them: a staff whose
+-- spell power line ("Equip: Increases damage and healing done by magical spells and effects by up to 26.") sits right
+-- above its description ("Equip: Increases movement speed by 2% in …") had the 26 filled into the description's one
+-- number and its spell power line folded away. When the description's Japanese fits exactly one line of the run on
+-- its own (every name and number of it found in that line, the Translator's own check), the run is that line; the
+-- run's other lines are then matched as stat lines, as on an item with no description. No line or more than one
+-- line fitting, or a Japanese of more than one paragraph, leaves the run as it was.
+-- → first, last, { [row] = { key, args } | false } for the other lines | nil
+function Tooltip.narrowRun(id, texts, first, last, nameScope)
+  if not first or not last or last == first then return first, last, nil end
+  local lookup = WFJ.Lookup and WFJ.Lookup.get
+  local entry = type(lookup) == "function" and lookup("item.description", id) or nil
+  local ja = type(entry) == "table" and entry.ja or nil
+  local align, index = WFJ.Align, WFJ.UIIndex
+  -- a Japanese of several paragraphs is written for several lines of the run (a use line and its flavour text)
+  if type(ja) ~= "string" or ja:find("\n") or type(align) ~= "table" or not index then return first, last, nil end
+  local function duration(text) return index:duration(text, true) end -- a spell's `$d` forms, as Main's gate reads
+  local fit
+  for row = first, last do
+    if texts[row] ~= "" and align.check(ja, { texts[row] }, nameScope, duration) then
+      if fit then return first, last, nil end
+      fit = row
+    end
+  end
+  if not fit then return first, last, nil end
+  local others = {}
+  for row = first, last do
+    if row ~= fit and texts[row] ~= "" then
+      local key, args = index:statLine(texts[row])
+      others[row] = key and { key = key, args = args } or false
+    end
+  end
+  return fit, fit, others
+end
+
 -- Spell: the description line. With the client's GetSpellDescription(id) [likely on Classic Era: a C API, not in
 -- the FrameXML dump; in-game check in docs/testing/strategy.md], the line is found by CONTENT: the first line
 -- (from 2) whose text equals the API's description, so a line another addon appended ("Spell ID: 53") or an
@@ -515,7 +550,7 @@ function Tooltip.installCallTrace()
 end
 Tooltip.traceNote = traceNote
 
--- `learn` = { row, id }: a recipe's own "Teaches you" line, a run of its own under the recipe's id.
+-- `learn` = { row, id }: a recipe's own "Teaches you" line, or a talent's next rank, a run of its own under that id.
 -- `peeled`: the run's line texts without the client's tail (peelTrailer), what the run is matched against.
 -- `sets`: the set bonus lines (setBonuses).
 local function show(frame, area, kind, id, lines, first, last, name, runArgs, learn, peeled, sets)
@@ -1112,6 +1147,8 @@ function Tooltip.onItem(frame)
   traceFrame(frame, "item as the client laid it out", id, lines, "")
   -- a recipe: the crafted item's run ends above the recipe's own line, which is a run of its own
   local first, last = Tooltip.itemRun(learnRow and { unpack(texts, 1, learnRow - 1) } or texts)
+  local others
+  first, last, others = Tooltip.narrowRun(id, texts, first, last, texts[1])
   local learn = learnRow and texts[learnRow] ~= "" and { row = learnRow, id = recipe } or nil
   local runArgs = first and peelTrailer(texts, first, last) or nil
   -- The run is read before we write (the client rewrote every line); the Collector refuses our own text anyway.
@@ -1125,6 +1162,10 @@ function Tooltip.onItem(frame)
     return (first ~= nil and i >= first and i <= last) or (learn ~= nil and i == learn.row)
   end)
   P.stop("tooltip.item.sets", t0, k0)
+  if others then -- the run's lines that are not the description: written as stat lines (narrowRun)
+    sets = sets or {}
+    for row, set in pairs(others) do if sets[row] == nil then sets[row] = set end end
+  end
   -- a set line no bonus spell's Japanese fits is that spell's English: known only when one line and one spell are left
   if setEnglish and #setEnglish == 1 and #setFree == 1 and type(setEnglish[1].text) == "string" then
     WFJ.Collector.record("spell", setFree[1], "description", setEnglish[1].text)
@@ -1147,7 +1188,32 @@ function Tooltip.onItem(frame)
 end
 
 -- The Spell post-call's target.
-function Tooltip.onSpell(frame)
+-- A talent's next rank: the talent tooltip appends the next rank's own data after "Next Rank:"
+-- (TalentDisplayMixin:AddTooltipDescription → AppendInfo("GetTraitEntry", …), blizzard_talentdisplay.lua:368-371),
+-- and the client runs the spell post-call again with that data, the tooltip's processingInfo marked `append`
+-- (tooltipdatahandler.lua:241-298, 434-438). Its description is that data's SpellDescription line: the frame row
+-- holding the same text, looked for from the bottom. → row, spell id | nil
+function Tooltip.appendedDescription(frame, data, texts)
+  local info = type(frame) == "table" and frame.processingInfo or nil
+  if type(info) ~= "table" or not info.append or type(data) ~= "table" or type(data.lines) ~= "table" then
+    return nil
+  end
+  local id = data.id
+  local lineTypes = Compat.resolve("Enum.TooltipDataLineType")
+  local want = type(lineTypes) == "table" and lineTypes.SpellDescription or nil
+  if type(id) ~= "number" or anySecretOf(id) or want == nil then return nil end
+  for _, line in ipairs(data.lines) do
+    local text = type(line) == "table" and line.type == want and line.leftText or nil
+    if type(text) == "string" and text ~= "" and not anySecretOf(text) then
+      for row = #texts, 2, -1 do
+        if texts[row] == text then return row, id end
+      end
+    end
+  end
+  return nil
+end
+
+function Tooltip.onSpell(frame, data)
   if inRefit[frame] then return 0 end
   local spellName, id = frame:GetSpell()
   local lines = Tooltip.lines(frame)
@@ -1162,6 +1228,16 @@ function Tooltip.onSpell(frame)
     return n
   end
   if type(id) ~= "number" or anySecretOf(id) or id <= 0 then WFJ.Render.forget(surfaceOf(frame)); return 0 end
+  -- the client runs this post-call again on the same tooltip while the pass before is still on its lines (a talent
+  -- adds its next rank as appended data, seen in game): those records are dropped first, which gives their lines the
+  -- client's English back, and the lines are read again. Read with our Japanese on them, a line's record took that
+  -- Japanese for its English, and the reveal key put it back in the client's font, as boxes.
+  if next(WFJ.SurfaceState.records(surfaceOf(frame))) ~= nil then
+    WFJ.Render.forget(surfaceOf(frame))
+    lines = Tooltip.lines(frame)
+    for i, l in ipairs(lines) do texts[i] = l.text end
+    for i = #lines + 1, #texts do texts[i] = nil end
+  end
   local description = Tooltip.spellDescription(id)
   if anySecretOf(description) then
     local n, why = showHidden(frame, "spell.description", id, lines)
@@ -1178,8 +1254,10 @@ function Tooltip.onSpell(frame)
     i = frameDescriptionRow(frame)
     how = (" (api description %q differs; typed row %s)"):format(plain(description), tostring(i))
   end
+  local nextRow, nextId = Tooltip.appendedDescription(frame, data, texts)
+  local nextRank = nextRow and nextRow ~= i and { row = nextRow, id = nextId } or nil
   -- "spell.description": a bare "spell" would not name one field (spells also have `aura`)
-  local n = show(frame, "spells", "spell.description", id, lines, i, i, spellName)
+  local n = show(frame, "spells", "spell.description", id, lines, i, i, spellName, nil, nextRank)
   traceFrame(frame, "readable spell", id, lines, ("-> rendered %d%s"):format(n, how))
   return n
 end
@@ -1565,9 +1643,9 @@ function Tooltip.init()
         or "GetItem")
       if frame then WFJ.Perf.call("tooltip.item", Tooltip.onItem, frame) end
     end)
-    processor.AddTooltipPostCall(types.Spell, function(tt)
+    processor.AddTooltipPostCall(types.Spell, function(tt, data)
       local frame = dataFrame(tt, types.Spell, "GetSpell")
-      if frame then WFJ.Perf.call("tooltip.spell", Tooltip.onSpell, frame) end
+      if frame then WFJ.Perf.call("tooltip.spell", Tooltip.onSpell, frame, data) end
     end)
   end
   -- the comparison pass, timed only when it runs (a SetShown(false) is no pass)

@@ -792,6 +792,11 @@ The quest NPC the addon saw show a quest line (creature id, sex, name, title), s
 _Avoid_: speaker table, cached NPC, quest giver record
 → [Voice over](systems/voice.md) · [Data model](architecture/data-model.md)
 
+**Heard record**:
+The lines already read aloud, as pack key → [[Japanese hash]], saved account-wide in `WFJ_DB.voiceHeard` for the first time only settings (`voice.questOnce`, `voice.greetingOnce`). A line in it with the same hash is not read aloud again when its window shows; a click on the play button still reads it. Keys and hashes only, never text.
+_Avoid_: played list, history, seen lines
+→ [Voice over](systems/voice.md#when-a-line-starts) · [Data model](architecture/data-model.md)
+
 ## Client
 
 **Game type**:
@@ -859,7 +864,7 @@ _Avoid_: known issue, bug, workaround
 → [Client limits](architecture/client-limits.md)
 
 **Tooltip trace**:
-The row-by-row record of every pass over a tooltip, kept in memory while `/wfj debug tooltip on` and shown by `/wfj debug tooltip` in a window whose text can be copied. Each entry names the pass's kind, the spell or item id, the owner, each row's kind, text and colour (a [[Secret value]] as `<secret>`), what was written and why; a hidden pass's entry adds every data row, the row map and the countdown's duration. It is the evidence a client-side fix is made from.
+The row-by-row record of every pass over a tooltip, kept while `/wfj debug tooltip on` and shown by `/wfj debug tooltip` in a window whose text can be copied. It is also kept in the saved settings (`WFJ_DB.tooltipTrace`), so a `/reload` writes it to the SavedVariables file to be read there; the next load and `/wfj debug tooltip off` remove it. Each entry names the pass's kind, the spell or item id, the owner, each row's kind, text and colour (a [[Secret value]] as `<secret>`), what was written and why; a hidden pass's entry adds every data row, the row map and the countdown's duration. It is the evidence a client-side fix is made from.
 _Avoid_: debug log, dump
 → [Testing strategy](testing/strategy.md)
 
