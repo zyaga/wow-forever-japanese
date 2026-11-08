@@ -701,7 +701,7 @@ _Avoid_: bug window, feedback window, fix window (that one reports a line as a [
 → [Fix reports](systems/fix-reports.md#bug-and-idea-reports) · [ADR-057](adr/057-catching-the-addons-own-lua-errors.md)
 
 **Problem log**:
-The addon's own record of problems seen in game, kept in the `WFJ_Log` SavedVariables table (`Core/Diag`): one entry per load, surfaces whose setup failed, protected actions the client blocked, hooks that stopped working and the Lua memory, plus, under `errors`, the addon's own Lua errors (`Core/ErrorLog`: only errors raised in a file under `WoWForeverJapanese/`, judged by the file the message names or else the top Lua frame of the stack, at most 30, the player's name written as `<name>`). `/wfj log` prints it. No game text, chat or location.
+The addon's own record of problems seen in game, kept in the `WFJ_Log` SavedVariables table (`Core/Diag`): one entry per load, surfaces whose setup failed, protected actions the client blocked, hooks that stopped working, the taint watch's findings, the addon's own slow passes and its session timing totals (`Core/Perf`, by label, never text) and the Lua memory, plus, under `errors`, the addon's own Lua errors (`Core/ErrorLog`: only errors raised in a file under `WoWForeverJapanese/`, judged by the file the message names or else the top Lua frame of the stack, at most 30, the player's name written as `<name>`). `/wfj log` prints it. No game text, chat or location.
 _Avoid_: error log, debug log, diagnostics file, BugSack
 → [Diagnostics log](systems/diagnostics.md) · [ADR-057](adr/057-catching-the-addons-own-lua-errors.md)
 
