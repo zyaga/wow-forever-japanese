@@ -119,8 +119,11 @@ def speak_many(model: Any, prompts: dict, lines: list[dict], batch: int,
                 errors[i] = f"{type(e).__name__}: {e}"
             continue
         for (i, k, p), w in zip(part, wavs, strict=True):
-            if ran_on(w, rate, cap):
-                errors[i] = f"ValueError: the reading ran on past {cap // TOKENS_PER_SECOND} s: {p[:30]}"
+            # each paragraph is held to its own length: the call's cap is the longest one's, so a short
+            # paragraph that babbles on can stay under it
+            own = min(cap, token_cap([p]))
+            if ran_on(w, rate, own):
+                errors[i] = f"ValueError: the reading ran on past {own // TOKENS_PER_SECOND} s: {p[:30]}"
             got.setdefault(i, {})[k] = w
     out: list[tuple[Any, int] | str] = []
     for i in range(len(lines)):
