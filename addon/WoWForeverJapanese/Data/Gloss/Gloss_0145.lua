@@ -582,4 +582,5 @@ WFJ.Data.add("gloss", {
   [145579] = "響き\tひびき\tring; resonance",
   [145580] = "食べ過ぎる\tたべすぎる\tnot eat too much",
   [145581] = "食らう\tくらう\teats up",
+  [145582] = "ヒック\tヒック\thic (a hiccup)",
 })
