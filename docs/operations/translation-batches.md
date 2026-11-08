@@ -370,6 +370,14 @@ carried. The English Collector file: 11 gossip lines, quest 92753's progress and
 | spell | 14 machine lines redrafted; 7 re-verified unchanged (only a number placeholder changed: 467, 782, 1075, 5487, 8914, 9756, 9910) | none | 6 descriptions, 14 auras |
 | objective, area, book | 1 objective redrafted | none | 40 objectives (20 mount names listed in `pipeline/objective_names.txt`), 10 areas; the 11 book pages are images or a name and dates, nothing to translate |
 
+### 1.60.1.70425 to 1.60.1.70862, a player's send (2026-11-08)
+
+Not a re-pull: one player's collector send, issue #86 (36 entries from builds 1.60.1.70425, 1.60.1.70450 and 1.60.1.70862,
+`collector-ok`), read with `make collector-intake ISSUE=86`. Nothing was rejected. 3 gossip lines added (drafted, with word
+lists), 13 NPC names (names stay English), 1 gossip line gained an NPC ("The transmogrifier", NPC 1423, so it gets that
+NPC's voice too). Quest 1638's turn-in: the game says "lad" where the old English had `$N`; the machine Japanese now says
+お前さん instead of the name and was re-verified.
+
 ### 1.60.1.70790 to 1.60.1.70862, six players' sends (2026-11-08)
 
 Not a re-pull: six players' collector sends, issues #78, #80, #81, #82, #83 and #84, all checked `collector-ok` and

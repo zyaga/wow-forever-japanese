@@ -34,6 +34,7 @@
 {"id": "afd035ed7f1342cf", "field": "text", "en": "Ye should check over at Steelgrill's Depot for Bronk.  When he's not tinkering with some odd device, he's usually chatting up the pilots about their steam tanks.", "hash": "afd035ed7f1342cf", "src": "vmangos@13b49dc"}
 {"id": "afd7f15dd04a64fe", "field": "text", "en": "You're sweet for asking, $c, but we have all of the light leather that we need. May be that one of the others in charge of collecting around here is in need of your assistance though?", "hash": "afd7f15dd04a64fe", "src": "vmangos@13b49dc"}
 {"id": "afe2a716f6f7f735", "field": "text", "en": "I would like to train.", "hash": "afe2a716f6f7f735", "src": "vmangos@13b49dc"}
+{"id": "afe88859d85d7bb3", "field": "text", "en": "Sorry, you don't look like you could fully draw a longbow, nor load a musket. I teach real hunters.", "hash": "afe88859d85d7bb3", "src": "collector@1.60.1.70450", "npcs": [251507]}
 {"id": "afea0e83ddbcf9f7", "field": "text", "en": "A defender has fallen!", "hash": "afea0e83ddbcf9f7", "src": "vmangos@13b49dc"}
 {"id": "aff21142e68ee17a", "field": "text", "en": "Look out! We're under attack!", "hash": "aff21142e68ee17a", "src": "vmangos@13b49dc"}
 {"id": "aff619fcbea50f3e", "field": "text", "en": "You should talk to Winstone. I hear he's looking for thieves with your skill.", "hash": "aff619fcbea50f3e", "src": "vmangos@13b49dc"}
