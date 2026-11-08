@@ -18,6 +18,7 @@ an old setting stops working). A release moves those lines under its version num
 - With Dialogue UI installed, an item's Use: and Equip: lines in its item tooltip, a quest tag that appears a moment after the page, and its quest-complete flyout are in Japanese.
 
 ### Fixed
+- Right-clicking a quest in the quest log shows Track Quest, Share Quest and Abandon Quest in Japanese too (only Focus was before).
 - Skyborne characters now see the Japanese of lines that name their race (they showed English before), and the race shows as "Skyborne".
 - Voice lines no longer stop abruptly: every line ends with a short pause, and the lines whose last sound was cut short are made again.
 - About 75 voice lines that ran on into nonsense partway through (the Deviate Eradication quest's offer among them) are made again.

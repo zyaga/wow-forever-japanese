@@ -103,16 +103,19 @@ Menus.TAGS = {
     keys = { "COMMUNITIES_INVITE_MANAGER_EXPIRES_NEVER" } },
   -- the character sheet's equipment set menu (camelot paperdollframe.lua:2618–2622)
   MENU_PAPERDOLL_FRAME = { source = "camelot paperdollframe.lua:2619", keys = { "EQUIPMENT_SET_EDIT" } },
-  -- quests: the tracker's block menu, the list's settings, a quest's and a header's context menus
-  -- (blizzard_questobjectivetracker.lua:72–131; mainline/questmapframe.lua:501–504, 2368–2397, 2463–2471)
+  -- quests: the tracker's block menu, the list's settings, a quest's and a header's context menus, and the quest
+  -- detail popup's options menu (gamepad UI mode only: its one opener is a gamepad prompt, questmapframe.lua:2550)
+  -- (blizzard_questobjectivetracker.lua:72–131; mainline/questmapframe.lua:501–504, 2367–2416, 2463–2471, 2642–2689)
   -- the tracker menu's title is the quest's name (blizzard_questobjectivetracker.lua:77)
   MENU_QUEST_OBJECTIVE_TRACKER = { source = "blizzard_questobjectivetracker.lua:72", titleIsName = true,
     keys = { "SUPER_TRACK_QUEST", "STOP_SUPER_TRACK_QUEST", "OBJECTIVES_VIEW_IN_QUESTLOG",
       "OBJECTIVES_HIDE_VIEW_IN_QUESTLOG", "OBJECTIVES_SHOW_QUEST_MAP", "OBJECTIVES_STOP_TRACKING", "SHARE_QUEST",
       "SHARE_IN_CHAT", "ABANDON_QUEST_ABBREV" } },
   MENU_QUEST_MAP_FRAME_SETTINGS = { source = "questmapframe.lua:501", keys = { "QUEST_LOG_SHOW_OBJECTIVES" } },
-  MENU_QUEST_MAP_LOG_TITLE = { source = "questmapframe.lua:2374", keys = { "SHARE_IN_CHAT", "SUPER_TRACK_QUEST",
-    "STOP_SUPER_TRACK_QUEST", "UNTRACK_QUEST" } },
+  MENU_QUEST_MAP_LOG_TITLE = { source = "questmapframe.lua:2374", keys = { "TRACK_QUEST", "UNTRACK_QUEST",
+    "SUPER_TRACK_QUEST", "STOP_SUPER_TRACK_QUEST", "SHARE_QUEST", "SHARE_IN_CHAT", "ABANDON_QUEST" } },
+  MENU_QUEST_LOG_POPUP_DETAIL_FRAME = { source = "questmapframe.lua:2644", keys = { "TRACK_QUEST", "UNTRACK_QUEST",
+    "SUPER_TRACK_QUEST", "STOP_SUPER_TRACK_QUEST", "SHOW_MAP", "SHARE_QUEST", "SHARE_IN_CHAT", "ABANDON_QUEST" } },
   MENU_QUEST_MAP_FRAME = { source = "questmapframe.lua:2471",
     keys = { "QUEST_LOG_TRACK_ALL", "QUEST_LOG_UNTRACK_ALL" } },
   -- the trainer's filter: colour-wrapped entries (the `wrapped` label form) (mainline/blizzard_trainerui.lua:249–255)

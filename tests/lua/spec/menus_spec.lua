@@ -60,6 +60,11 @@ local UI = {
   SHOW_DAMAGE_TEXT = { "Damage", "ダメージ" },
   -- the Text on Target menu's owned "Effects" (UIStrings.OWN); "Effects" elsewhere is the volume slider's 効果音
   SHOW_TARGET_EFFECTS = { "Effects", "効果" }, FX_VOLUME = { "Effects", "効果音" },
+  -- a quest's context menu in the quest log (mainline/questmapframe.lua:2367–2416) and the detail popup's options
+  -- menu (:2642–2689)
+  TRACK_QUEST = { "Track Quest", "追跡" }, UNTRACK_QUEST = { "Untrack Quest", "クエストの追跡を解除" },
+  SUPER_TRACK_QUEST = { "Focus", "フォーカス" }, SHARE_QUEST = { "Share Quest", "クエスト共有" },
+  ABANDON_QUEST = { "Abandon Quest", "クエスト放棄" }, SHOW_MAP = { "Show Map", "マップを表示" },
 }
 
 local function element(text)
@@ -358,6 +363,25 @@ describe("UI/Menus: menu entries", function()
     assert.are.equal("Show Quest Objectives", frames[e[3]].fontString:GetText())
     Stub.keys.alt = false; WFJ.Modifier.refresh()
   end)
+
+  it("a quest's menu in the quest log and the detail popup's options: every entry in Japanese; Alt shows English",
+    function()
+      WFJ.Menus.init()
+      local cases = {
+        { "MENU_QUEST_MAP_LOG_TITLE", { "TRACK_QUEST", "SUPER_TRACK_QUEST", "SHARE_QUEST", "ABANDON_QUEST" } },
+        { "MENU_QUEST_MAP_LOG_TITLE", { "UNTRACK_QUEST" } },
+        { "MENU_QUEST_LOG_POPUP_DETAIL_FRAME", { "TRACK_QUEST", "SUPER_TRACK_QUEST", "SHOW_MAP", "SHARE_QUEST",
+          "ABANDON_QUEST" } },
+      }
+      for _, c in ipairs(cases) do
+        local root, frames = generate(c[1], function(r) for _, k in ipairs(c[2]) do r:CreateButton(UI[k][1]) end end)
+        for i, k in ipairs(c[2]) do assert.are.equal(UI[k][2], frames[root.children[i]].fontString:GetText(), k) end
+        Stub.keys.alt = true; WFJ.Modifier.refresh()
+        for i, k in ipairs(c[2]) do assert.are.equal(UI[k][1], frames[root.children[i]].fontString:GetText(), k) end
+        Stub.keys.alt = false; WFJ.Modifier.refresh()
+        release(frames)
+      end
+    end)
 
   it("one entry per sweep tag in Japanese; names beside them stay as written", function()
     WFJ.Menus.init()
