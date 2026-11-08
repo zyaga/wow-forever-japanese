@@ -69,7 +69,6 @@ WFJ.Data.add("gloss", {
   [20066] = "ところ\tところ\twith (at his place)",
   [20067] = "ところ\tところ\twould (be about to)",
   [20068] = "ところ\tところ\twould (like to), but",
-  [20069] = "ところ\tところ\twould (the point where)",
   [20070] = "ところ\tところ\twould be (at the point)",
   [20071] = "ところ\tところ\twould have (on the point of)",
   [20072] = "ところが\tところが\tBut",

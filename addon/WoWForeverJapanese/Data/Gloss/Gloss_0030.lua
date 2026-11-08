@@ -108,7 +108,6 @@ WFJ.Data.add("gloss", {
   [30105] = "ような\tような\tseem (as if)",
   [30106] = "ような\tような\tseemingly (vaguely)",
   [30107] = "ような\tような\tseems",
-  [30108] = "ような\tような\tsomewhat of (like)",
   [30109] = "ような\tような\tsort of (like)",
   [30110] = "ような\tような\tsort of; such as",
   [30111] = "ような\tような\tsuch",

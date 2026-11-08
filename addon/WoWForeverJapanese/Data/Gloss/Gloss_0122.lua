@@ -346,7 +346,6 @@ WFJ.Data.add("gloss", {
   [122343] = "試す\tためす\texperimenting (was testing)",
   [122344] = "試す\tためす\texplore (try out)",
   [122345] = "試す\tためす\texplore (try)",
-  [122346] = "試す\tためす\tget to try",
   [122347] = "試す\tためす\tgive (it) a try",
   [122348] = "試す\tためす\tgive it a try",
   [122349] = "試す\tためす\tgoing to see (try)",

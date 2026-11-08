@@ -78,7 +78,6 @@ WFJ.Data.add("gloss", {
   [29075] = "やられる\tやられる\tdid me in",
   [29076] = "やられる\tやられる\tdidn't get the best of (not beaten)",
   [29077] = "やられる\tやられる\tdone in (got hit by)",
-  [29078] = "やられる\tやられる\tfelled (were taken down)",
   [29079] = "やられる\tやられる\tgets (you) (be done in)",
   [29080] = "やられる\tやられる\thas been lost (been done in)",
   [29081] = "やられる\tやられる\thave been poisoned (done in)",

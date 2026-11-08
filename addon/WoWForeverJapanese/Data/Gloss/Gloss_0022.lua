@@ -969,7 +969,6 @@ WFJ.Data.add("gloss", {
   [22966] = "なる\tなる\tcould (become)",
   [22967] = "なる\tなる\tcould be",
   [22968] = "なる\tなる\tcould be (become)",
-  [22969] = "なる\tなる\tcould be (might become)",
   [22970] = "なる\tなる\tcould become",
   [22971] = "なる\tなる\tcould end in",
   [22972] = "なる\tなる\tcould get (looks like it'll become)",

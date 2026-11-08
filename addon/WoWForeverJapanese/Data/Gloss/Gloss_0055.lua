@@ -55,7 +55,6 @@ WFJ.Data.add("gloss", {
   [55053] = "取り戻す\tとりもどす\twere you able to retrieve",
   [55054] = "取り戻す\tとりもどす\twhen you have recovered",
   [55055] = "取り戻す\tとりもどす\twhen you recover",
-  [55056] = "取り戻す\tとりもどす\twill (never) recover",
   [55057] = "取り戻す\tとりもどす\twill be able to take back",
   [55058] = "取り戻す\tとりもどす\twill give back",
   [55059] = "取り戻す\tとりもどす\twill have (him) back; take back",

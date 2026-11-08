@@ -661,7 +661,6 @@ WFJ.Data.add("gloss", {
   [49659] = "分かる\tわかる\talright (understood)",
   [49660] = "分かる\tわかる\talthough (we) know",
   [49661] = "分かる\tわかる\tam not certain",
-  [49662] = "分かる\tわかる\tam not sure",
   [49663] = "分かる\tわかる\tam not sure (don't know)",
   [49664] = "分かる\tわかる\tam unsure (don't know)",
   [49665] = "分かる\tわかる\tan idea of (know)",

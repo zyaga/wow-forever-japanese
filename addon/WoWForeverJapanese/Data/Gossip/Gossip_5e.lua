@@ -33,6 +33,7 @@ WFJ.Data.add("gossip", {
   ["5e8a911b2fc25773"] = { "これで知るべきことはすべて知ったな、定命の者よ……", "." },
   ["5e8d31de0cc97648"] = { "我らが親愛なる友、Apothecary Faustinの役に立ったのならよいが。", "." },
   ["5e8f87f8889d08e9"] = { "Captain GalvangarはDrek'Tharの信頼厚い補佐役だ。Field of Strifeの南部にあるIceblood Garrisonから、Hordeの軍勢を率いている。\n\nCaptain Galvangarは討ち取られた。", "." },
+  ["5e93d407a32faae9"] = { "ようこそ、{class}、Misty Pineへ。旅に疲れているなら、遠慮なく中で休んで温まっていってくれ。それと、もし時間に余裕があれば、いくつか仕事を手伝ってもらえるとありがたい。", "." },
   ["5e9e58d798f9d8aa"] = { "彼女は今、Emperor Thaurissanの傍らにいます。彼は何か強力な思考を歪める呪文で彼女を支配しているのです……そして私はここに座っているだけ、まったくの無力です。", "." },
   ["5ea8de58627aa9af"] = { "自然は我々に必要なものをすべて与えてくれる。中段の台地にあるHolistic HerbalismのKomin Winterhoofと話すといい。", "." },
   ["5eab45f079ccf746"] = { "誰かが砂の魔法の笏を組み上げたのなら、虫どもとの戦争はもうすぐだ。楽しみでならんぞ、{class}! 我々の最後の軍需品はSilithusへ向かっており、一日以内に到着するはずだ。行ってHordeに栄誉をもたらせ!", "." },

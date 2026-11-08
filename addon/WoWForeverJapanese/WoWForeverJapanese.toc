@@ -32,6 +32,7 @@ Data\Quest\Quest_0006.lua
 Data\Quest\Quest_0007.lua
 Data\Quest\Quest_0008.lua
 Data\Quest\Quest_0009.lua
+Data\Quest\Quest_0060.lua
 Data\Quest\Quest_0065.lua
 Data\Quest\Quest_0076.lua
 Data\Quest\Quest_0078.lua
@@ -1556,6 +1557,7 @@ Data\Reading\Reading_quest_0006.lua
 Data\Reading\Reading_quest_0007.lua
 Data\Reading\Reading_quest_0008.lua
 Data\Reading\Reading_quest_0009.lua
+Data\Reading\Reading_quest_0060.lua
 Data\Reading\Reading_quest_0065.lua
 Data\Reading\Reading_quest_0076.lua
 Data\Reading\Reading_quest_0078.lua

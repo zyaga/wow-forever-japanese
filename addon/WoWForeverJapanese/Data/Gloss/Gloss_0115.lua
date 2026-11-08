@@ -95,7 +95,6 @@ WFJ.Data.add("gloss", {
   [115092] = "落とす\tおとす\tI think (I) dropped (it)",
   [115093] = "落とす\tおとす\tare falling (being taken)",
   [115094] = "落とす\tおとす\tcasts (cast)",
-  [115095] = "落とす\tおとす\tcaused (her) descent",
   [115096] = "落とす\tおとす\tcaused (his) fall (dropped)",
   [115097] = "落とす\tおとす\tcut off (if you drop)",
   [115098] = "落とす\tおとす\tdon't drop",

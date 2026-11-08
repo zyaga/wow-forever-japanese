@@ -551,7 +551,6 @@ WFJ.Data.add("gloss", {
   [41549] = "件\tけん\tcounter for cases (quests)",
   [41550] = "件\tけん\tcounter for results",
   [41551] = "件\tけん\tfor (matter)",
-  [41552] = "件\tけん\tissue",
   [41553] = "件\tけん\titems (counter)",
   [41554] = "件\tけん\tmatter",
   [41555] = "件\tけん\tmatter (about)",
