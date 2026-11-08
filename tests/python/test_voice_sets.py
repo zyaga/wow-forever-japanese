@@ -61,6 +61,23 @@ def test_each_npc_takes_the_voice_most_of_its_spoken_lines_use_per_gender():
     }
 
 
+def test_an_npc_spoken_lists_with_a_set_but_no_lines_takes_that_set_and_lines_still_win():
+    corpus = {
+        "lines": [{"npcType": "creature", "npcId": 1, "voice": "human-male-standard"}],
+        "npcs": [
+            {"npcType": "creature", "npcId": 1, "voice": "human-male-warrior"},  # its lines win
+            {"npcType": "creature", "npcId": 5, "voice": "nightelf-female-standard"},
+            {"npcType": "creature", "npcId": 6, "voice": "narrator-male"},  # no game set
+            {"npcType": "creature", "npcId": 7, "voice": "model-32"},
+            {"npcType": "gameobject", "npcId": 8, "voice": "human-male-standard"},
+        ],
+    }
+    assert vs.spoken_sets(corpus) == {
+        1: {"male": "humanmalestandardnpc"},
+        5: {"female": "nightelffemalestandardnpc"},
+    }
+
+
 def test_creature_rows_keep_their_date_while_unchanged_and_skip_npcs_with_no_set():
     sets = {1: {"male": "humanmalestandardnpc"}}
     first = vs.creature_rows({1, 2}, sets, "spoken@3219d17", [], "2026-11-01")

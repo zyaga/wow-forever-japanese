@@ -1667,6 +1667,7 @@
 {"creature": 11943, "female": "orcfemalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 11944, "male": "taurenmaleshamannpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 11945, "female": "undeadfemalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
+{"creature": 12022, "female": "nightelffemalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-08"}}
 {"creature": 12031, "female": "trollfemalelaidbacknpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 12032, "female": "trollfemalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 12042, "male": "nightelfmaleofficialnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
@@ -1728,6 +1729,7 @@
 {"creature": 13000, "female": "gnomefemalenerdynpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 13018, "male": "gnomemaleyoungnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 13084, "female": "gnomefemalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
+{"creature": 13085, "male": "nightelfmalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-08"}}
 {"creature": 13153, "male": "taurenmalewarriornpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 13154, "male": "undeadmalewarriornpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 13176, "male": "orcmalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
@@ -1785,6 +1787,7 @@
 {"creature": 14381, "male": "nightelfmaleofficialnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 14382, "female": "nightelffemalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 14383, "male": "nightelfmaleofficialnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
+{"creature": 14387, "male": "nightelfmalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-08"}}
 {"creature": 14392, "male": "orcmaleguardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 14394, "male": "humanmaleofficialnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 14436, "male": "humanmaleofficialnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
@@ -2161,6 +2164,7 @@
 {"creature": 248755, "female": "skybourneelffemale3773npc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 248840, "male": "undeadmalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 249363, "female": "skybourneelffemale3773npc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
+{"creature": 249713, "female": "humanfemalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-08"}}
 {"creature": 250686, "female": "undeadfemalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 251001, "male": "undeadmalewarriornpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 251361, "male": "skybourneelfmale3776npc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
@@ -2196,6 +2200,7 @@
 {"creature": 252377, "female": "skybourneelffemale3773npc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 252378, "female": "skybourneelffemale3773npc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 252379, "female": "skybourneelffemale3773npc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-08"}}
+{"creature": 252380, "female": "skybourneelffemale3773npc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-08"}}
 {"creature": 252382, "female": "skybourneelffemale3773npc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 252383, "female": "skybourneelffemale3773npc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 252388, "male": "skybourneelfmale3776npc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
@@ -2293,6 +2298,7 @@
 {"creature": 263349, "male": "humanmaleofficialnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 263399, "male": "humanmalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 263643, "male": "humanmalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-08"}}
+{"creature": 263644, "male": "humanmaleofficialnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-08"}}
 {"creature": 263664, "male": "skybourneelfmale3775npc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 264078, "female": "taurenfemalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 264936, "male": "dwarfmaleguardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
@@ -2317,6 +2323,7 @@
 {"creature": 267310, "male": "orcmalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 267323, "male": "undeadmalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 267325, "male": "undeadmalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
+{"creature": 267328, "male": "orcmalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-08"}}
 {"creature": 267331, "female": "taurenfemalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 267333, "male": "nightelfmalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 267334, "male": "nightelfmalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
@@ -2324,6 +2331,8 @@
 {"creature": 268511, "male": "humanmalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 268568, "male": "humanmalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 268592, "male": "skybourneelfmale3776npc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
+{"creature": 268682, "male": "orcmalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-08"}}
+{"creature": 268684, "female": "orcfemalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-08"}}
 {"creature": 268701, "male": "orcmaleguardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 269068, "female": "taurenfemalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 269153, "female": "dwarffemaleguardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
