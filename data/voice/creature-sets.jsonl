@@ -890,6 +890,7 @@
 {"creature": 4631, "male": "goblinmalegruffnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 4706, "male": "goblinmalezanynpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 4708, "male": "goblinmalegruffnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
+{"creature": 4709, "male": "goblinmalegruffnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-08"}}
 {"creature": 4721, "male": "taurenmaleshamannpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 4722, "male": "taurenmaleshamannpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}
 {"creature": 4730, "female": "nightelffemalestandardnpc", "provenance": {"source": "spoken@3219d17", "imported": "2026-11-06"}}

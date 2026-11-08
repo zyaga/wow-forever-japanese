@@ -923,6 +923,7 @@
 {"creature": 4702, "voice": "qtaurenmaleshaman", "row": "set taurenmaleshamannpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
 {"creature": 4706, "voice": "qgoblinmalezany", "row": "set goblinmalezanynpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
 {"creature": 4708, "voice": "qgoblinmalegruff", "row": "set goblinmalegruffnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
+{"creature": 4709, "voice": "qgoblinmalegruff", "row": "set goblinmalegruffnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-08"}}
 {"creature": 4721, "voice": "qtaurenmaleshaman", "row": "set taurenmaleshamannpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
 {"creature": 4722, "voice": "qtaurenmaleshaman", "row": "set taurenmaleshamannpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
 {"creature": 4730, "voice": "qnightelffemalestandard", "row": "set nightelffemalestandardnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
@@ -2476,6 +2477,7 @@
 {"creature": 264936, "voice": "qdwarfmaleguard", "row": "set dwarfmaleguardnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
 {"creature": 264943, "voice": "qdwarffemaleyoung", "row": "set dwarffemaleyoungnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
 {"creature": 265003, "voice": "qgnomemalestandard", "row": "set gnomemalestandardnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
+{"creature": 265701, "voice": "qhumanmalestandard", "row": "set humanmalestandardnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-08"}}
 {"creature": 265756, "voice": "qskybourneelfmale3775", "row": "set skybourneelfmale3775npc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
 {"creature": 265809, "voice": "qorcmalestandard", "row": "set orcmalestandardnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
 {"creature": 265810, "voice": "qtaurenfemalestandard", "row": "set taurenfemalestandardnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
