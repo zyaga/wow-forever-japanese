@@ -12,6 +12,7 @@
 {"id": "53371757c5c8b517", "field": "text", "en": "I don't agree with your turning to alchemy to fix some of the problems, but I do agree with the results. Very well done.", "hash": "53371757c5c8b517", "src": "vmangos@13b49dc"}
 {"id": "53421fa25cad893e", "field": "text", "en": "To reach the Rut'theran Ferry, you will need to travel to Darnassus and take the portal to Rut'theran Village at the base of Teldrassil.", "hash": "53421fa25cad893e", "src": "vmangos@13b49dc"}
 {"id": "5348e4d1faf5bb06", "field": "text", "en": "I live only to serve, Warchief! My life is empty and meaningless without your guidance.", "hash": "5348e4d1faf5bb06", "src": "vmangos@13b49dc"}
+{"id": "534962e8a189e9cd", "field": "text", "en": "I see. I can respect a man who values his honor and does not compromise his convictions.", "hash": "534962e8a189e9cd", "src": "collector@1.60.1.70862"}
 {"id": "534d4d999983d8a6", "field": "text", "en": "%s writhes in agony. The Disciple seems to be breaking through.", "hash": "534d4d999983d8a6", "src": "vmangos@13b49dc"}
 {"id": "5358d7d322332ff8", "field": "text", "en": "Go to the Hall of the Brave.  You will find The Defiler, Deze Snowbane there to assist you in getting to Arathi Basin.", "hash": "5358d7d322332ff8", "src": "vmangos@13b49dc"}
 {"id": "535933a1c59debbb", "field": "text", "en": "I dunno, Jill. If Klaven comes down while we're slacking, we may end up as one of those things!", "hash": "535933a1c59debbb", "src": "vmangos@13b49dc"}
@@ -42,3 +43,4 @@
 {"id": "53eb8fa92fedb60a", "field": "text", "en": "|cffffff00The Plaguewood Tower has been taken by the Alliance!|r", "hash": "53eb8fa92fedb60a", "src": "vmangos@13b49dc"}
 {"id": "53fd4406ce21c39e", "field": "text", "en": "The secret to the knife is to keep it hidden until the moment you strike.", "hash": "53fd4406ce21c39e", "src": "vmangos@13b49dc"}
 {"id": "53fd9387c8440137", "field": "text", "en": "Ah, smell the fine salt air!  'Tis always nice to return to our home port of Booty Bay.", "hash": "53fd9387c8440137", "src": "vmangos@13b49dc"}
+{"id": "53fe199b44f747b3", "field": "text", "en": "That is why it is so important that we stay.", "hash": "53fe199b44f747b3", "src": "collector@1.60.1.70862"}

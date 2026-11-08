@@ -25,6 +25,7 @@
 {"id": "cd8f255bac4e680b", "field": "text", "en": "TEST - death after attack $n", "hash": "cd8f255bac4e680b", "src": "vmangos@13b49dc"}
 {"id": "cd951b539585180c", "field": "text", "en": "What followed were a series of tragic events, leading to the death of every Kirin Tor mage that came into contact with Atiesh.$B$BYou see, it was an artifact with sentience. A sentience granted to it by Sargeras...", "hash": "cd951b539585180c", "src": "vmangos@13b49dc"}
 {"id": "cd959e19166337ad", "field": "text", "en": "Come. We must continue. There is much to be done before we can pull Naralex from his nightmare.", "hash": "cd959e19166337ad", "src": "vmangos@13b49dc"}
+{"id": "cdb10c9006d2d06d", "field": "text", "en": "<The body looks incomplete and appears to be awaiting a head.>", "hash": "cdb10c9006d2d06d", "src": "collector@1.60.1.70862", "npcs": [271613]}
 {"id": "cdbb99b39d980e5b", "field": "text", "en": "It's GO TIME! Come get sum! <replace this>", "hash": "cdbb99b39d980e5b", "src": "vmangos@13b49dc"}
 {"id": "cdbd32f8b0e6e40d", "field": "text", "en": "He cannot be defeated. <The relic burns to nothing. The memories it held are now your own. This city was destroyed by a being not of this world.>", "hash": "cdbd32f8b0e6e40d", "src": "vmangos@13b49dc"}
 {"id": "cdcb588860b67600", "field": "text", "en": "Trick or Treat!", "hash": "cdcb588860b67600", "src": "vmangos@13b49dc"}

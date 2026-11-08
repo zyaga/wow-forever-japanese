@@ -101,6 +101,7 @@
 {"id": 96390, "field": "title", "en": "Nip 'Em in the Bud", "hash": "5f38218b9c486a3d", "src": "wdb@1.60.1.70790"}
 {"id": 96390, "field": "objectives", "en": "Slay $1oa Dark Iron Spies in Dun Morogh.", "hash": "331e4b322f954daa", "src": "wdb@1.60.1.70790"}
 {"id": 96390, "field": "description", "en": "Dark Iron spies have infiltrated Dun Morogh. To what end I canna' be sure, but this is a problem we need to nip in the bud before it is allowed to grow.\r\n\r\nHead eastward to Ironband's Compound and kill the Dark Iron spies that you find there.", "hash": "9db0e0efa7c4767e", "src": "wdb@1.60.1.70790"}
+{"id": 96390, "field": "progress", "en": "How'd it go? Did ye give 'em what-for?", "hash": "68b3128a273e9ac8", "src": "collector@1.60.1.70790"}
 {"id": 96390, "field": "completion", "en": "These Dark Irons may be our cousins but they ain't family, that's for sure. I shed no tears for any misfortune that befalls them that stray too far from that accursed mountain o' theirs.\r\n\r\nHopefully this is enough to put 'em off of further incursions into these lands.", "hash": "d5731f3eab3bebdf", "src": "forever-vo@025070f"}
 {"id": 96391, "field": "title", "en": "Underground Map", "hash": "9d9cce92c7edff66", "src": "wdb@1.60.1.70790"}
 {"id": 96391, "field": "objectives", "en": "Deliver the Dark Iron Map to Earthseer Farsen in Dun Morogh.", "hash": "0559f95b708bfd47", "src": "wdb@1.60.1.70790"}
@@ -110,6 +111,7 @@
 {"id": 96392, "field": "title", "en": "Farsen's Watch", "hash": "9243cd157bc2270d", "src": "wdb@1.60.1.70790"}
 {"id": 96392, "field": "objectives", "en": "Speak with Earthseer Farsen and ask him to lend you his far sight to observe the Dark Iron threat.", "hash": "987a40898e46e06d", "src": "wdb@1.60.1.70790"}
 {"id": 96392, "field": "description", "en": "Greetings to ye, friend. My name is Earthseer Farsen and I'm visiting Dun Morogh from Aerie Peak. As I was travelin', I couldn't help but notice that we have, well... a bit o' a Dark Iron Dwarf problem.\r\n\r\nIf ye have a moment, I can show ye what I mean. I've got a bit o' magic that should do the trick.", "hash": "ce20450cf63ac16a", "src": "wdb@1.60.1.70790"}
+{"id": 96392, "field": "progress", "en": "Far sight can show ye a great many things, even things ye'd rather not see.", "hash": "19a9ef2c31c21f67", "src": "collector@1.60.1.70790"}
 {"id": 96392, "field": "completion", "en": "So ye see now, $C? Thick as cockroaches they are, and that's just the ones we can see from the sky.$B$BYe look like a sturdy enough sort. How's about a bit o' violence?", "hash": "478676d1b0b290fb", "src": "collector@1.60.1.70862"}
 {"id": 96393, "field": "title", "en": "Old Ironforge Incursion", "hash": "48866402f423571e", "src": "wdb@1.60.1.70790"}
 {"id": 96393, "field": "objectives", "en": "Enter the Hall of Thanes beneath Old Ironforge and claim the Head of Durgen Dirgehammer.", "hash": "e0bec5946006d523", "src": "wdb@1.60.1.70790"}
@@ -119,6 +121,7 @@
 {"id": 96394, "field": "title", "en": "The Restless Dead", "hash": "69066003a038d3f3", "src": "wdb@1.60.1.70790"}
 {"id": 96394, "field": "objectives", "en": "Kill $1oa Enraged Apparitions, $2oa Tormented Souls and put the spirit of Anvilmar to rest.", "hash": "f63f19dc82d15ee1", "src": "wdb@1.60.1.70790"}
 {"id": 96394, "field": "description", "en": "Something has disturbed the tombs down in the Hall of Thanes, and strange noises have been heard coming from deep within the vaults. The spirits of the dead are light sleepers, and whatever is going on down there seems to have startled them.\r\n\r\nHead down there and see what you can do about that for us. If any of the dead are awake--well, put them back down!", "hash": "d9e1bd9c0f6b8ae3", "src": "wdb@1.60.1.70790"}
+{"id": 96394, "field": "progress", "en": "I don't have time for ghouls and ghosts. I have a job to do down here.", "hash": "225e19e2ee0a1525", "src": "collector@1.60.1.70862"}
 {"id": 96394, "field": "completion", "en": "Ah good, it's done then. I can't have the other keepers refusing to enter the hall to do their duties on account of \"ghosts\" and \"angry dead\", can I?", "hash": "1d4545a7a1d1d4d5", "src": "collector@1.60.1.70862"}
 {"id": 96395, "field": "title", "en": "An Ancient Grudge", "hash": "372fadb2cf62f2a2", "src": "wdb@1.60.1.70790"}
 {"id": 96395, "field": "objectives", "en": "Put the spirit of Faldrim Anvilmar to rest and then return to the Ghostly Attendant in the Hall of Thanes.", "hash": "f47ad9351199a9e0", "src": "wdb@1.60.1.70790"}

@@ -23,6 +23,7 @@
 {"id": "344dd3614d79d586", "field": "text", "en": "Isillien!", "hash": "344dd3614d79d586", "src": "vmangos@13b49dc"}
 {"id": "344f58a29e31d1ea", "field": "text", "en": "Remember when Danath gathered all the mercenaries of Stormwind together and we marched to fight at Nethergarde?", "hash": "344f58a29e31d1ea", "src": "vmangos@13b49dc"}
 {"id": "34511cbb35947a7f", "field": "text", "en": "If you think you have the strength to pound good metal into weapons and armor for the Horde look for Dwukk next to the heated forge in the northwest corner of Razor Hill.", "hash": "34511cbb35947a7f", "src": "vmangos@13b49dc"}
+{"id": "34525da9f8237cf9", "field": "text", "en": "My oath binds me to this place. What brings you here, to this light-forsaken place?", "hash": "34525da9f8237cf9", "src": "collector@1.60.1.70862", "npcs": [276110]}
 {"id": "3453250b67e1fb6f", "field": "text", "en": "Lookin' to fish? Then you'll need the proper tools.", "hash": "3453250b67e1fb6f", "src": "forever-vo@025070f", "npcs": [8508]}
 {"id": "345a0be31d7728f7", "field": "text", "en": "My strength wanes, mortal. I have done as promised, the way is clear. I now return to whence I came.", "hash": "345a0be31d7728f7", "src": "vmangos@13b49dc"}
 {"id": "346a238eddc1a559", "field": "text", "en": "Need some supplies?", "hash": "346a238eddc1a559", "src": "vmangos@13b49dc"}

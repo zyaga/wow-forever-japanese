@@ -16,6 +16,7 @@
 {"id": "a43924262498f0f1", "field": "text", "en": "I never feel warm anymore...", "hash": "a43924262498f0f1", "src": "vmangos@13b49dc"}
 {"id": "a43a62e6d413335e", "field": "text", "en": "Nope, don't think there are any Enchanters here in Elwynn Forest.  There's a guy named Lucan who runs a shop up in Stormwind though.  You could check with him and see if he will train you.", "hash": "a43a62e6d413335e", "src": "vmangos@13b49dc"}
 {"id": "a44412dcfa5710e2", "field": "text", "en": "How many more supplies do we need?", "hash": "a44412dcfa5710e2", "src": "vmangos@13b49dc"}
+{"id": "a44ba0d9285cefee", "field": "text", "en": "It's not about loyalty. It's about honor. That orc knows more about honor than the Lord Admiral ever did. That's why I left.", "hash": "a44ba0d9285cefee", "src": "collector@1.60.1.70862"}
 {"id": "a455bcbc8fe523a8", "field": "text", "en": "The journal of Jandice Barov is filled with rantings and ravings about the undead. Towards the end of the book is what appears to be a tailoring pattern for the creation of a felcloth bag. This bag is used by warlocks to store soul shards. You already know how to create this bag.", "hash": "a455bcbc8fe523a8", "src": "vmangos@13b49dc"}
 {"id": "a45a668e88df4127", "field": "text", "en": "I almost have enough supplies to upgrade to veteran units.", "hash": "a45a668e88df4127", "src": "vmangos@13b49dc"}
 {"id": "a4626e486328dba4", "field": "text", "en": "Help me! Save me!", "hash": "a4626e486328dba4", "src": "vmangos@13b49dc"}
@@ -35,6 +36,7 @@
 {"id": "a4904eb18c5bd00f", "field": "text", "en": "If you're trying to be friendly, save your breath.  Better yet, just stop breathing all together.", "hash": "a4904eb18c5bd00f", "src": "vmangos@13b49dc"}
 {"id": "a4a5680b352c5bc3", "field": "text", "en": "Not one word....", "hash": "a4a5680b352c5bc3", "src": "vmangos@13b49dc"}
 {"id": "a4a7dc5fc1f51173", "field": "text", "en": "My lady, I am unworthy of your prayer. Truly, you are an angel of light. Please, assist me in returning to the barrow den so that I may return to the Dream. I, like Malfurion, also have a love awaiting me... I must return to her... to protect her...", "hash": "a4a7dc5fc1f51173", "src": "vmangos@13b49dc"}
+{"id": "a4ab681fd14d5d73", "field": "text", "en": "No, Walt, I'm still alive. That shot you took at me back in Ratchet only missed my heart by an inch.", "hash": "a4ab681fd14d5d73", "src": "collector@1.60.1.70862"}
 {"id": "a4afa885ddfb6779", "field": "text", "en": "You have made our enemies your own.  I will gladly share waters with you.", "hash": "a4afa885ddfb6779", "src": "vmangos@13b49dc"}
 {"id": "a4b2b07cded87133", "field": "text", "en": "Go to the Valley of Honor and seek out Xon'cha near the stables.", "hash": "a4b2b07cded87133", "src": "vmangos@13b49dc"}
 {"id": "a4b96a71bec35493", "field": "text", "en": "%s pours the corrupted water onto the cat.", "hash": "a4b96a71bec35493", "src": "vmangos@13b49dc"}

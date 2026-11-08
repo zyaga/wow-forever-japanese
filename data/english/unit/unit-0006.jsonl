@@ -1,8 +1,16 @@
 {"id": 6031, "field": "name", "en": "Tormus Deepforge", "hash": "9d447a97ef89128b", "src": "collector@1.60.1.70862"}
 {"id": 6094, "field": "name", "en": "Byancie", "hash": "2d2369675d78467e", "src": "collector@1.60.1.70790"}
+{"id": 6175, "field": "name", "en": "John Turner", "hash": "0a50bb445cba268b", "src": "collector@1.60.1.70862"}
+{"id": 6177, "field": "name", "en": "Narm Faulk", "hash": "f2da758431b238a2", "src": "collector@1.60.1.70862"}
+{"id": 6178, "field": "name", "en": "Muiredon Battleforge", "hash": "5ee65bd1fd1ad478", "src": "collector@1.60.1.70862"}
+{"id": 6179, "field": "name", "en": "Tiza Battleforge", "hash": "1b8577f59f6af821", "src": "collector@1.60.1.70862"}
 {"id": 6286, "field": "name", "en": "Zarrin", "hash": "22994a3bde26025a", "src": "collector@1.60.1.70205"}
+{"id": 6289, "field": "name", "en": "Rand Rhobart", "hash": "50377bb271493b2e", "src": "collector@1.60.1.70862"}
+{"id": 6301, "field": "name", "en": "Gorbold Steelhand", "hash": "1bfe4a51666a9949", "src": "collector@1.60.1.70840"}
+{"id": 6389, "field": "name", "en": "Deathguard Podrig", "hash": "545bb28a60ab5b97", "src": "collector@1.60.1.70790"}
 {"id": 6467, "field": "name", "en": "Mennet Carkad", "hash": "e1e85fb2d4112e4e", "src": "collector@1.60.1.70790"}
 {"id": 6522, "field": "name", "en": "Andron Gant", "hash": "86b11dc9cdd37115", "src": "collector@1.60.1.70790"}
+{"id": 6569, "field": "name", "en": "Gnoarn", "hash": "5b8e97ae37239f37", "src": "collector@1.60.1.70790"}
 {"id": 6736, "field": "name", "en": "Innkeeper Keldamyr", "hash": "d2f085e2081c294c", "src": "collector@1.60.1.70205"}
 {"id": 6747, "field": "name", "en": "Innkeeper Kauth", "hash": "2fef436b0de40bf7", "src": "collector@1.60.1.70790"}
 {"id": 6774, "field": "name", "en": "Falkhaan Isenstrider", "hash": "3bd144167735b8c6", "src": "collector@1.60.1.70205"}

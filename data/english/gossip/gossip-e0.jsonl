@@ -34,13 +34,14 @@
 {"id": "e0a7303cc7bab5d9", "field": "text", "en": "Ah, good ol' Brandur Ironhammer.  There's no doubt he'll provide ye with the guidance ye seek, $glad : lass;.  Ye'll find him in the Hall of Mysteries north of the gates of Ironforge.", "hash": "e0a7303cc7bab5d9", "src": "vmangos@13b49dc"}
 {"id": "e0b1bd53532c6082", "field": "text", "en": "Elder Shadowsong asked me to report to you for next steps.", "hash": "e0b1bd53532c6082", "src": "collector@1.60.1.70790", "npcs": [252383]}
 {"id": "e0c00f9b8ed128c4", "field": "text", "en": "Captain Galvangar is the trusted aid to Drek'Thar.  He leads the Horde forces from the Iceblood Garrison, in the southern section of the the Field of Strife.$B$BCaptain Galvangar is currently in the Iceblood Garrison.", "hash": "e0c00f9b8ed128c4", "src": "vmangos@13b49dc"}
-{"id": "e0c6d07c8cec4315", "field": "text", "en": "I'd like to see your wares.", "hash": "e0c6d07c8cec4315", "src": "collector@1.60.1.70790", "npcs": [271465]}
+{"id": "e0c6d07c8cec4315", "field": "text", "en": "I'd like to see your wares.", "hash": "e0c6d07c8cec4315", "src": "collector@1.60.1.70790", "npcs": [271465, 276067]}
 {"id": "e0c8c93db2793f92", "field": "text", "en": "Curse you, mortal.", "hash": "e0c8c93db2793f92", "src": "vmangos@13b49dc"}
 {"id": "e0c93b079c13fd4d", "field": "text", "en": "I'll get that beacon to the crater safely, Guse. You can count on me!", "hash": "e0c93b079c13fd4d", "src": "vmangos@13b49dc"}
 {"id": "e0cfad60591d42e1", "field": "text", "en": "Attack!!", "hash": "e0cfad60591d42e1", "src": "vmangos@13b49dc"}
 {"id": "e0d10f8d98aa651e", "field": "text", "en": "Start running!", "hash": "e0d10f8d98aa651e", "src": "vmangos@13b49dc"}
 {"id": "e0d648c0864c6a9d", "field": "text", "en": "The ebb and flow of magic has been disrupted, of late. I hear that even the mages of Dalaran are perplexed. Is this disturbance arcane in nature, or are the elements themselves in unrest?", "hash": "e0d648c0864c6a9d", "src": "forever-vo@025070f", "npcs": [272633]}
 {"id": "e0dafdaacb97c2f0", "field": "text", "en": "Flowers and seeds and such?  That would be Reyna Stonebranch's area of expertise.  Ye can find her tending to her plants over at the Ironforge Physician on the southern side of The Great Forge.", "hash": "e0dafdaacb97c2f0", "src": "vmangos@13b49dc"}
+{"id": "e0dea739929d8d5d", "field": "text", "en": "At ease, $R. This is no time for formalities. With the Alliance forces under attack, the protection of the Dwarven territories becomes even more critical. The recent Trogg uprising poses a dreadful threat to the King's land.", "hash": "e0dea739929d8d5d", "src": "collector@1.60.1.70862", "npcs": [1092]}
 {"id": "e0e528fb821d09a9", "field": "text", "en": "Sure, Paige. Just be gentle.", "hash": "e0e528fb821d09a9", "src": "vmangos@13b49dc"}
 {"id": "e0ee4195f9e25ebe", "field": "text", "en": "Pleased to make you acquaintance. May I help you?", "hash": "e0ee4195f9e25ebe", "src": "vmangos@13b49dc"}
 {"id": "e0f784d50a83186d", "field": "text", "en": "The what-bringer? Oh, ASHbringer? Never heard of it... What? Stop bothering me!", "hash": "e0f784d50a83186d", "src": "vmangos@13b49dc"}

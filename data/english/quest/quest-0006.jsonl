@@ -101,7 +101,7 @@
 {"id": 6064, "field": "title", "en": "Taming the Beast", "hash": "ecd97a9a991f0cd8", "src": "wdb@1.60.1.70790"}
 {"id": 6064, "field": "objectives", "en": "Use the Taming Rod to tame a Large Crag Boar. Practice your skills, then return the Taming Rod to Grif Wildheart in Kharanos.", "hash": "19250c0400f64a79", "src": "wdb@1.60.1.70790"}
 {"id": 6064, "field": "description", "en": "Hi there, $Glad:lass;! So, you'd be wanting to know how you can gain a pet of your own?$B$BWell, let's get started. There's nothing more important than yer equipment when it comes to hunting, but we can chat about my new Shrapnel Blaster some other time. Fer now, let's focus on something I'm sure you're quite interested in: a pet!$B$BThe best way to learn is for you to try out several creatures as companions and see what ya like. So, find a large crag boar, then use the taming rod to tame it.", "hash": "4bb3619f712a321f", "src": "wdb@1.60.1.70790"}
-{"id": 6064, "field": "progress", "en": "Don't worry, lass! You'll get ta try a few before you'll need to decide on just one.", "hash": "2a062314e45ce659", "src": "vmangos@13b49dc"}
+{"id": 6064, "field": "progress", "en": "Don't worry, lad! You'll get ta try a few before you'll need to decide on just one.", "hash": "0eed165b5188148b", "src": "collector@1.60.1.70790"}
 {"id": 6064, "field": "completion", "en": "I know, I know; you're wondering what's next, aren't ya?!", "hash": "7fe27a35cb48f16c", "src": "vmangos@13b49dc"}
 {"id": 6065, "field": "title", "en": "The Hunter's Path", "hash": "e59cef474fca5f3e", "src": "wdb@1.60.1.70790"}
 {"id": 6065, "field": "objectives", "en": "Speak with Yaw Sharpmane in Bloodhoof Village.", "hash": "44416cc13fda5956", "src": "wdb@1.60.1.70790"}
