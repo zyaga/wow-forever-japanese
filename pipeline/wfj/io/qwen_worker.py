@@ -40,29 +40,6 @@ def ran_on(samples: Any, rate: int, cap: int) -> bool:
     return len(samples) / rate >= 0.97 * cap / TOKENS_PER_SECOND
 
 
-TAIL = 0.02  # seconds: the end of a take that must have faded out
-CUT_DB = 25.0  # a tail within this much of the loudest tenth of a second is still sounding
-QUIET_DB = 60.0  # a take whose loudest part is this far under full scale is silence, never cut
-
-
-def cut_off(samples: Any, rate: int) -> bool:
-    """A take whose last moment is still sounding stopped in the middle of a sound: the model ended it there.
-    It is not kept, like a run-on, and is read again."""
-    import numpy as np
-
-    x = np.asarray(samples, dtype=np.float64)
-    if x.size == 0:
-        return False
-    full = 32768.0 if np.issubdtype(np.asarray(samples).dtype, np.integer) else 1.0
-    block = max(1, rate // 10)
-    usable = x[: x.size - x.size % block] if x.size >= block else x
-    peak = float(np.sqrt((usable.reshape(-1, min(block, usable.size)) ** 2).mean(axis=1)).max())
-    if peak <= full * 10 ** (-QUIET_DB / 20):
-        return False
-    tail = x[-max(1, int(rate * TAIL)):]
-    return float(np.sqrt((tail ** 2).mean())) >= peak * 10 ** (-CUT_DB / 20)
-
-
 def load(device: str) -> Any:
     """The model on `device` (mps, cuda or cpu), in bfloat16."""
     import torch
@@ -86,8 +63,6 @@ def speak(model: Any, prompts: dict, text: str, ref_wav: str, ref_text: str | No
                                                 voice_clone_prompt=prompt, max_new_tokens=cap)
         if ran_on(wavs[0], rate, cap):
             raise ValueError(f"the reading ran on past {cap // TOKENS_PER_SECOND} s: {para[:30]}")
-        if cut_off(wavs[0], rate):
-            raise ValueError(f"the reading stopped mid-sound: {para[:30]}")
         parts += [wavs[0], np.zeros(int(rate * PARAGRAPH_GAP), dtype=wavs[0].dtype)]
     if not parts:
         raise ValueError("no text to read")
@@ -149,8 +124,6 @@ def speak_many(model: Any, prompts: dict, lines: list[dict], batch: int,
             own = min(cap, token_cap([p]))
             if ran_on(w, rate, own):
                 errors[i] = f"ValueError: the reading ran on past {own // TOKENS_PER_SECOND} s: {p[:30]}"
-            elif cut_off(w, rate):
-                errors[i] = f"ValueError: the reading stopped mid-sound: {p[:30]}"
             got.setdefault(i, {})[k] = w
     out: list[tuple[Any, int] | str] = []
     for i in range(len(lines)):

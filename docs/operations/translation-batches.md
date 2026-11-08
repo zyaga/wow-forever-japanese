@@ -390,7 +390,8 @@ about him already has it.
 
 Voice: the new speakers were cast after `make voice-speakers`, `wfj voice profiles build` and `make voice-sets` (each
 NPC takes the game voice set Spoken gives it; 13 new creatures). The same round remakes the voice lines that ran on
-(75) and the ones that stopped mid-sound (747), see [Voice](voice.md).
+(75), see [Voice](voice.md). 747 lines remade the same day because their takes ended before the last syllable faded
+were put back to their earlier takes: the remakes ended the same way (a known Qwen3-TTS fault, see [Voice](voice.md)).
 
 ### 1.60.1.70790 and 1.60.1.70862, the maintainer's collector file and three players' sends (2026-11-07)
 

@@ -244,9 +244,6 @@ def test_ja_hash_is_over_the_japanese_generate_ships(planned):
 # ---- generation, against a stub engine -------------------------------------------------------------------
 
 
-SECS = round(0.5 + voice_make.END_PAUSE, 2)  # a 0.5 s take and the pause after it
-
-
 def _wav(seconds=0.5, rate=24000):
     buf = BytesIO()
     with wave.open(buf, "wb") as w:
@@ -353,19 +350,6 @@ def _fake_encode(wav, out):
     out.write_bytes(b"MP3" + wav[:16])
 
 
-def test_every_take_ends_with_a_short_pause_of_silence():
-    took = _wav(0.5)
-    padded = voice_make.with_end_pause(took)
-    assert voice_make.wav_seconds(padded) == pytest.approx(0.5 + voice_make.END_PAUSE, abs=0.001)
-    assert 0.3 <= voice_make.END_PAUSE <= 0.6
-    with wave.open(BytesIO(padded)) as w:
-        tail = w.readframes(w.getnframes())[-int(voice_make.END_PAUSE * 24000) * 2:]
-    assert set(tail) == {0}
-    with wave.open(BytesIO(padded)) as w, wave.open(BytesIO(took)) as t:
-        assert (w.getnchannels(), w.getsampwidth(), w.getframerate()) == \
-            (t.getnchannels(), t.getsampwidth(), t.getframerate())
-
-
 def _gen(data, store, engine, cfg=CFG):
     return voice_make.generate(data, "all", cfg, store, Engine(engine.url), _fake_encode, log=lambda *_: None)
 
@@ -385,9 +369,7 @@ def test_generate_reads_each_line_in_its_voice_at_the_set_pace(tmp_path, engine)
     assert {c[2:] for c in engine.calls if c[0] == "synthesis"} == {(0.9, 0.0, 1.0)}
     e = _audio(data)["456-description"]
     assert e["ja_hash"] == hash_key("御機嫌よう、{name}。")
-    # the recorded length counts the pause every file ends with
-    assert (e["key"], e["voice"], e["seconds"], e["provenance"]["source"]) == \
-        ("456-description", "m", SECS, "aivis@1.2.0")
+    assert (e["key"], e["voice"], e["seconds"], e["provenance"]["source"]) == ("456-description", "m", 0.5, "aivis@1.2.0")
     assert e["fingerprint"] == voice.fingerprint(e["ja_hash"], "m", CFG["roster"]["m"])
     assert (tmp_path / "voice" / "audio" / "456-description.mp3").is_file()  # the store keeps its MP3s in audio/
     status = json.loads((tmp_path / "voice" / "status.json").read_text())
@@ -419,8 +401,8 @@ def test_a_line_several_differently_cast_creatures_say_gets_a_file_per_voice(tmp
     assert sorted(_audio(data)) == ["456-description", "456-description_f", "456-description_old"]
     assert {c[2:] for c in engine.calls if c[0] == "synthesis"} == {(0.9, 0.0, 1.0), (0.85, -0.05, 1.0)}
     lines, creatures, left_out = voice_make.pack_tables(data, CFG, "all")
-    assert lines["456-description"]["variants"] == {"f": ("456-description_f.mp3", SECS),
-                                                    "old": ("456-description_old.mp3", SECS)}
+    assert lines["456-description"]["variants"] == {"f": ("456-description_f.mp3", 0.5),
+                                                    "old": ("456-description_old.mp3", 0.5)}
     assert creatures == {1992: "f", 2079: "m", 3000: "old"} and left_out == []
 
 
@@ -468,7 +450,7 @@ def test_pack_holds_only_lines_whose_japanese_still_matches(tmp_path, engine):
     _store(tmp_path, ja456="変わった、{name}。")
     lines, _, left_out = voice_make.pack_tables(data, CFG, "all")
     assert left_out == ["456-description"] and "456-description" not in lines
-    assert lines["456-completion"] == {"file": "456-completion.mp3", "hash": hash_key("よくやった。"), "seconds": SECS,
+    assert lines["456-completion"] == {"file": "456-completion.mp3", "hash": hash_key("よくやった。"), "seconds": 0.5,
                                        "variants": {}}
 
 

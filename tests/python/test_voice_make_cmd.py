@@ -68,9 +68,6 @@ class FakeEngine:
         return _wav()
 
 
-SECS = round(0.5 + voice_make.END_PAUSE, 2)  # a 0.5 s take and the pause after it
-
-
 def _errors(data):
     """Two spoken error lines: one that speaks an on-screen message, one with Japanese of its own."""
     Store(data).save("ui", [
@@ -141,9 +138,9 @@ def test_the_error_table_holds_files_in_step_per_race_and_sex(world):
     assert voice_make.error_table(world.data, cfg, players) == {
         "kinds": {1: "outofrange", 2: "nomana"},
         "voices": {"tauren-f": {
-            "ERR_OUT_OF_RANGE": ("e-ERR_OUT_OF_RANGE-tauren-f.mp3", SECS),
-            "nomana": ("e-nomana-tauren-f.mp3", SECS),
-            "outofrange": ("e-ERR_OUT_OF_RANGE-tauren-f.mp3", SECS),  # the kind speaks its message's file
+            "ERR_OUT_OF_RANGE": ("e-ERR_OUT_OF_RANGE-tauren-f.mp3", 0.5),
+            "nomana": ("e-nomana-tauren-f.mp3", 0.5),
+            "outofrange": ("e-ERR_OUT_OF_RANGE-tauren-f.mp3", 0.5),  # the kind speaks its message's file
         }},
     }
 
@@ -156,7 +153,7 @@ def test_generate_saves_its_record_as_it_goes(world, monkeypatch):
     logged = []
     engine = FakeEngine()
     r = voice_make.generate(world.data, "all", CFG, world.store, engine, _fake_encode, log=logged.append)
-    assert r["made"] == 3 and r["files"] == 3 and r["seconds_made"] == pytest.approx(3 * SECS)
+    assert r["made"] == 3 and r["files"] == 3 and r["seconds_made"] == pytest.approx(1.5)
     assert logged == ["voice generate: 1/3", "voice generate: 2/3", "voice generate: 3/3"]
     assert len(engine.calls) == 3
 

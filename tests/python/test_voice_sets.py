@@ -694,31 +694,6 @@ def test_a_short_paragraph_that_runs_on_beside_a_long_one_is_reported():
     assert isinstance(got[1], str) and "ran on" in got[1]
 
 
-def test_a_take_that_stops_mid_sound_is_reported_and_one_that_fades_out_is_kept():
-    pytest.importorskip("numpy")
-    import numpy as np
-
-    from wfj.io import qwen_worker
-
-    rate = 1000
-    loud = (np.sin(np.arange(2 * rate) / 3) * 12000).astype(np.int16)
-    faded = np.concatenate([loud, np.zeros(rate // 5, dtype=np.int16)])
-    assert qwen_worker.cut_off(loud, rate)
-    assert not qwen_worker.cut_off(faded, rate)
-    assert not qwen_worker.cut_off(np.zeros(rate, dtype=np.int16), rate)  # silence is no cut
-
-    class Clipped(_FakeModel):
-        def generate_voice_clone(self, text, language, voice_clone_prompt, max_new_tokens=2048):
-            texts = text if isinstance(text, list) else [text]
-            return [loud if "cut" in t else faded for t in texts], rate
-
-    lines = [{"text": "fine", "ref_wav": "/r/1.wav", "mode": "voice"},
-             {"text": "cut here", "ref_wav": "/r/1.wav", "mode": "voice"}]
-    got = qwen_worker.speak_many(Clipped(), {}, lines, batch=24)
-    assert not isinstance(got[0], str)
-    assert isinstance(got[1], str) and "mid-sound" in got[1]
-
-
 def test_levelling_brings_every_take_to_one_loudness_without_changing_its_length():
     import shutil
 
