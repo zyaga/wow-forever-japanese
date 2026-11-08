@@ -776,7 +776,6 @@ WFJ.Data.add("gloss", {
   [101775] = "用意する\tよういする\tI will prepare",
   [101776] = "用意する\tよういする\tI'll get (prepare)",
   [101777] = "用意する\tよういする\tI'll get you (prepare)",
-  [101778] = "用意する\tよういする\tI'll give you (prepare)",
   [101779] = "用意する\tよういする\tI'll have ready (prepare)",
   [101780] = "用意する\tよういする\tI'll provide",
   [101781] = "用意する\tよういする\tI'll supply (prepare)",

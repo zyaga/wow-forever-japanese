@@ -605,7 +605,6 @@ WFJ.Data.add("gloss", {
   [78603] = "手に取る\tてにとる\ttake",
   [78604] = "手に取る\tてにとる\ttake it",
   [78605] = "手に取る\tてにとる\ttake up",
-  [78606] = "手に取る\tてにとる\ttakes",
   [78607] = "手に取る\tてにとる\ttangible (can hold)",
   [78608] = "手に取る\tてにとる\ttook up",
   [78609] = "手に取る\tてにとる\twish to retake (take in hand)",

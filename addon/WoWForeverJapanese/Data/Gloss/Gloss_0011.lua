@@ -136,7 +136,6 @@ WFJ.Data.add("gloss", {
   [11133] = "すぐ\tすぐ\timmediate(ly)",
   [11134] = "すぐ\tすぐ\timmediately",
   [11135] = "すぐ\tすぐ\timmediately (easily)",
-  [11136] = "すぐ\tすぐ\tin a moment",
   [11137] = "すぐ\tすぐ\tin a moment; soon",
   [11138] = "すぐ\tすぐ\tin a second (soon)",
   [11139] = "すぐ\tすぐ\tinstantly (right away)",

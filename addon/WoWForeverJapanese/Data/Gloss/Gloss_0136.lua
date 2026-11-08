@@ -239,7 +239,6 @@ WFJ.Data.add("gloss", {
   [136236] = "頭が下がる思い\tあたまがさがるおもい\thumbled (deep respect)",
   [136237] = "頭が冴える\tあたまがさえる\tsharpen my wits",
   [136238] = "頭が切れる\tあたまがきれる\tclever",
-  [136239] = "頭が痛い\tあたまがいたい\ttroubling (a headache)",
   [136240] = "頭が良い\tあたまがよい\tclever",
   [136241] = "頭が良い\tあたまがよい\tso brilliant (too smart)",
   [136242] = "頭にくる\tあたまにくる\tam pissed (got mad)",

@@ -336,7 +336,6 @@ WFJ.Data.add("gloss", {
   [30336] = "ようになる\tようになる\twill come to",
   [30337] = "ようになる\tようになる\twill come to (be able)",
   [30338] = "ようになる\tようになる\twill learn to (come to)",
-  [30339] = "ようになる\tようになる\twill soon be",
   [30340] = "ようにね\tようにね\tlike",
   [30341] = "ように見える\tようにみえる\tappears to be",
   [30342] = "ように見える\tようにみえる\tdoes it look like",

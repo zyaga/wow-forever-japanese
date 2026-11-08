@@ -231,7 +231,6 @@ WFJ.Data.add("gloss", {
   [73230] = "必要とする\tひつようとする\tcould use; need",
   [73231] = "必要とする\tひつようとする\tdoes not need",
   [73232] = "必要とする\tひつようとする\tfeels is necessary (needs)",
-  [73233] = "必要とする\tひつようとする\tfind themselves in need of",
   [73234] = "必要とする\tひつようとする\thas a need (needs)",
   [73235] = "必要とする\tひつようとする\thas need of",
   [73236] = "必要とする\tひつようとする\thave a need",
