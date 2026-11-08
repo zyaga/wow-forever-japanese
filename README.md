@@ -25,12 +25,12 @@ or Japanese)
 
 | | In Japanese |
 |---|---|
-| Quests | 4,806 |
-| NPC dialogue lines | 11,351 |
+| Quests | 5,068 |
+| NPC dialogue lines | 11,380 |
 | Book pages | 923 |
 | Letter pages | 209 |
-| Item tooltips | 9,284 |
-| Spell tooltips | 20,340 |
+| Item tooltips | 10,915 |
+| Spell tooltips | 20,346 |
 | UI | 16,115 |
 
 ## Install
@@ -265,12 +265,12 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 
 | | 日本語化済み |
 |---|---|
-| クエスト | 4,806 |
-| NPC の会話 | 11,351 行 |
+| クエスト | 5,068 |
+| NPC の会話 | 11,380 行 |
 | 本 | 923 ページ |
 | 手紙 | 209 ページ |
-| アイテムのツールチップ | 9,284 |
-| 呪文のツールチップ | 20,340 |
+| アイテムのツールチップ | 10,915 |
+| 呪文のツールチップ | 20,346 |
 | UI | 16,115 |
 
 ### インストール
