@@ -3,7 +3,7 @@
 -- (its TOC: LoadOnDemand 1); `camelot` loads it for trial and veteran-trial accounts when the player enters the
 -- world (blizzard_game/mainline/eventimplementation.lua:838–840 → SubscriptionInterstitial_LoadUI,
 -- blizzard_subscriptioninterstitialui_bootstrap.lua:1–3), and the frame shows itself on the
--- SHOW_SUBSCRIPTION_INTERSTITIAL event (blizzard_subscriptioninterstitialui.lua:91, 151–156). Set up through
+-- SHOW_SUBSCRIPTION_INTERSTITIAL event (blizzard_subscriptioninterstitialui.lua:91, 174–179). Set up through
 -- WFJ.LoadOnDemand.when.
 -- camelot also loads its own camelot/blizzard_subscriptioninterstitialui.lua after the shared file (toc: [Game]): it
 -- hides ClosePanelButton (:28), sets UpgradeButton.ButtonText to GameFontNormalHuge at a 270 width (:51–53), and
