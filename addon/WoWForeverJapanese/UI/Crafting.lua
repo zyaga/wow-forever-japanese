@@ -174,11 +174,7 @@ function Crafting.showEnchantSlot()
   return n
 end
 
--- The form's recipe description (UpdateRecipeDescription, blizzard_professionsrecipeschematicform.lua:1466–1490):
--- C_TradeSkillUI.GetRecipeDescription of the recipe's spell, so it shows that spell's description Japanese, as its
--- tooltip does, the numbers taken from the live English. The client sized the string to its English; it is sized
--- again to the text shown. A description the form cleared (a recraft, the minimized window) is left alone. → true
--- when shown
+-- The client sized the description to its English; this sizes it again to the text shown.
 local function fitDescription()
   local form = get("form")
   local fs = type(form) == "table" and form.Description or nil
@@ -186,6 +182,10 @@ local function fitDescription()
   fs:SetHeight(600)
   fs:SetHeight(fs:GetStringHeight() + 1)
 end
+-- The form's recipe description (UpdateRecipeDescription, blizzard_professionsrecipeschematicform.lua:1466–1490):
+-- C_TradeSkillUI.GetRecipeDescription of the recipe's spell, so it shows that spell's description Japanese, as its
+-- tooltip does, the numbers taken from the live English. A description the form cleared (a recraft, the minimized
+-- window) is left alone. → true when shown
 function Crafting.onDescription()
   local form = get("form")
   local fs = type(form) == "table" and form.Description or nil

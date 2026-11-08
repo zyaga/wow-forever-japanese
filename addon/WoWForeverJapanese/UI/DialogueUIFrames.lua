@@ -215,7 +215,6 @@ local function wrapPopup(popup)
   end
 end
 
--- Dialogue UI's frames this module works on but cannot reach by name, told apart by their own members.
 -- ── Dialogue UI's quest-complete flyout ────────────────────────────────────
 -- A quest the game completes on its own may show a small flyout (off by default) with the quest's name and its turn-in
 -- text, split into paragraphs [read: Dialogue UI 1.0.7 b, Code/Dialogue/QuestFlyout.lua, SetQuestText]. It lays each
@@ -274,6 +273,7 @@ local function wrapFlyout(fly)
   end
 end
 
+-- Dialogue UI's frames this module works on but cannot reach by name, told apart by their own members.
 local function classify(f)
   if type(f) ~= "table" or patched[f] then return end
   -- its line grid is made on first use, so the tooltip is told apart by its methods only

@@ -364,11 +364,17 @@ carried. The English Collector file: 11 gossip lines, quest 92753's progress and
 
 | Type | Reworded (shipped line now stale) | English the build no longer serves (stays stale, listed) | Drafted |
 |---|---|---|---|
-| quest | 4 machine lines (1425 title; 17, 2202, 6134 descriptions) redrafted; 6134's old accepted variant ruled `reject` (the game now speaks of centaur ghosts); 141 turn-in (hand-written) kept | 18: the turn-ins and progress texts of quests Forever now serves under these ids whose turn-in the cache has not seen (8384, 8386, 8389, 8390, 8431, 8432, 1191, 1878, 841, 2882, and the Darkmoon Faire turn-ins 7882, 7890, 7895, 7899, 7900) | 240 quests' descriptions, 240 objectives, 226 titles, 1 progress; word lists for all, and for 25 lines of those quests that started shipping |
+| quest | 4 machine lines (1425 title; 17, 2202, 6134 descriptions) redrafted; 6134's old accepted variant ruled `reject` (the game now speaks of centaur ghosts); 1425's description and 7724's description and objectives, whose old Japanese stopped passing the name check (the game now names the Lost Ones and Searing Lava Spiders), edited to the new names and shipping again; 141 turn-in (hand-written) kept | 18: the turn-ins and progress texts of quests Forever now serves under these ids whose turn-in the cache has not seen (8384, 8386, 8389, 8390, 8431, 8432, 1191, 1878, 841, 2882, and the Darkmoon Faire turn-ins 7882, 7890, 7895, 7899, 7900) | 240 quests' descriptions, 240 objectives, 226 titles, 1 progress; word lists for all, and for 25 lines of those quests that started shipping |
 | gossip | 0 | none | 24, with word lists; 2 place names kept as written (ruled accept) |
 | item | 4 machine items redrafted; 15 hand-written items reviewed (`apply_review`): 1 kept, 14 corrected (four describe a different effect now: 13213, 13966, 1490, 13243) | 8 hand-written items | 287 descriptions |
 | spell | 14 machine lines redrafted; 7 re-verified unchanged (only a number placeholder changed: 467, 782, 1075, 5487, 8914, 9756, 9910) | none | 6 descriptions, 14 auras |
+| ui | 1: the group invitation (`INVITATION`) gained a second line with an alert icon; the Japanese follows it | none | none |
 | objective, area, book | 1 objective redrafted | none | 40 objectives (20 mount names listed in `pipeline/objective_names.txt`), 10 areas; the 11 book pages are images or a name and dates, nothing to translate |
+
+Voice: `make voice-speakers` (speakers for the new quests), `wfj voice profiles build` on the 70862 tables, `make
+voice-sets` and `wfj voice cast`, then 279 new or changed lines (52,122 characters) read on rented GPUs and the rest on
+the maintainer's Mac. 269 of the new quest lines are read by the narrator: VMaNGOS has no quest giver for quests new to
+Forever, and the quest cache does not name one.
 
 ### 1.60.1.70425 to 1.60.1.70862, a player's send (2026-11-08)
 
@@ -431,7 +437,7 @@ race, see [Collector](../systems/collector.md)). They were put back to the token
 94947 now carry `$R`; "Greetings, $R." and "You're just the $R I'm looking for!" already shipped, so their literal
 copies were dropped; "I am an orc of medicine, $R." already existed too.
 
-Voice: held by the maintainer for this round, not made yet.
+Voice: made with the next round's (2026-11-08): `make voice-speakers`, the creatures' game voice sets as Spoken gives them, then the new and changed lines read with Qwen3-TTS; every voiced line is in step.
 
 ### 1.60.1.70790, a player's collector send (2026-11-06)
 
@@ -447,8 +453,8 @@ and spell (1) lines that differ from the client's files kept the client's Englis
 | item | 1 (274021, a "Use:" line for an appearance) | 1 (20221: Classic Era's English replaced by the game's, which shows "Use:" alone) | 0 | 2, in the `使用：` form. The row for 274021 is on the not-names list for "Account" (the account collection, an interface word, not a name): `pipeline/translation_not_names.tsv` |
 | unit (NPC names) | 41 | 0 | 16 | none (names stay English) |
 
-Voice: not made yet in this round; the maintainer holds audio until he asks for it. The speakers report and the voice
-files follow in the same pull request.
+Voice: made in the same pull request, with the 2026-11-08 rounds (speakers cast from Spoken's voice sets; every voiced
+line in step).
 
 ### 1.60.1.70790, two players' collector sends (2026-11-06)
 

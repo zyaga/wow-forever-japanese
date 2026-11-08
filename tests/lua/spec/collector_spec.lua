@@ -276,8 +276,12 @@ describe("Core/Collector", function()
       assert.are.equal("I am a $R of the High Order.", C.text("I am a High Order Skyborne of the High Order.", SKY))
       local keys = C.keys("Nice work, skyborne.", SKY)
       assert.are.equal(WFJ.Hash.key(WFJ.Normalize.v1("Nice work, $R.")), keys[1])
-      -- the race-only candidate carries the word too
-      assert.is_true(#keys >= 2)
+      -- the name-and-race candidate (a class word left as written) carries the race word too
+      local both = C.keys("Reyn the warrior, a skyborne.", SKY)
+      local raceOnly = WFJ.Hash.key(WFJ.Normalize.v1("$N the warrior, a $R."))
+      local found = false
+      for _, k in ipairs(both) do if k == raceOnly then found = true end end
+      assert.is_true(found)
       -- whole word only, and only for that player
       assert.are.equal("The Skybornes fly.", C.text("The Skybornes fly.", SKY))
       assert.are.equal("Nice work, skyborne.", C.text("Nice work, skyborne.", PLAYER))
