@@ -267,11 +267,14 @@ local function debugTooltip(arg)
   arg = arg and arg:lower()
   if arg == "on" then
     WFJ.Tooltip.trace = {}
+    -- kept in the saved settings too, so a /reload writes it to the SavedVariables file to be read there
+    if type(WFJ_DB) == "table" then WFJ_DB.tooltipTrace = WFJ.Tooltip.trace end
     WFJ.Tooltip.installCallTrace()
     return say("tooltip trace: on (every spell / item tooltip pass is recorded; /wfj debug tooltip to see it)")
   end
   if arg == "off" then
     WFJ.Tooltip.trace = nil
+    if type(WFJ_DB) == "table" then WFJ_DB.tooltipTrace = nil end
     return say("tooltip trace: off")
   end
   if arg == "chat" then return traceToChat() end

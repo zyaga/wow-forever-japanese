@@ -864,7 +864,7 @@ _Avoid_: known issue, bug, workaround
 → [Client limits](architecture/client-limits.md)
 
 **Tooltip trace**:
-The row-by-row record of every pass over a tooltip, kept in memory while `/wfj debug tooltip on` and shown by `/wfj debug tooltip` in a window whose text can be copied. Each entry names the pass's kind, the spell or item id, the owner, each row's kind, text and colour (a [[Secret value]] as `<secret>`), what was written and why; a hidden pass's entry adds every data row, the row map and the countdown's duration. It is the evidence a client-side fix is made from.
+The row-by-row record of every pass over a tooltip, kept while `/wfj debug tooltip on` and shown by `/wfj debug tooltip` in a window whose text can be copied. It is also kept in the saved settings (`WFJ_DB.tooltipTrace`), so a `/reload` writes it to the SavedVariables file to be read there; the next load and `/wfj debug tooltip off` remove it. Each entry names the pass's kind, the spell or item id, the owner, each row's kind, text and colour (a [[Secret value]] as `<secret>`), what was written and why; a hidden pass's entry adds every data row, the row map and the countdown's duration. It is the evidence a client-side fix is made from.
 _Avoid_: debug log, dump
 → [Testing strategy](testing/strategy.md)
 

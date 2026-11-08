@@ -243,6 +243,8 @@ function WFJ.OnLoad()
   step("reports", function() WFJ.Reports.load(WFJ_DB) end) -- pending fixes live in WFJ_DB.reports
   step("forget", function() -- saved tables of mechanisms the addon no longer has
     if type(WFJ_DB) == "table" then WFJ_DB.buffIdentity, WFJ_DB.timeRule = nil, nil end
+    -- the tooltip trace a reload saved (/wfj debug tooltip on) was read from the file; it is off after a load
+    if type(WFJ_DB) == "table" then WFJ_DB.tooltipTrace = nil end
   end)
   WFJ_Collector = step("collector", function() return WFJ.Collector.load(WFJ_Collector, {
     enabled = function() return WFJ.Settings.get("collector.enabled") end,

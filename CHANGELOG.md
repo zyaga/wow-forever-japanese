@@ -22,6 +22,8 @@ an old setting stops working). A release moves those lines under its version num
 - Opening the world map in combat is no longer blocked with this addon blamed. The quest list beside the map shows the game's English while you are in combat and its Japanese again when the fight ends, and the voice panel's book button no longer opens the quest log.
 - No more "bad argument #2 to 'SetFont' ... Secret values" Lua errors in a busy trade channel: a line whose font size the game keeps secret now stays in English.
 - The AddOns list's tooltip shows the Japanese in this addon's name and the voice pack's name instead of empty boxes.
+- A talent's tooltip shows its next rank in Japanese too, and holding the English key no longer turns the current rank's text into empty boxes.
+- An item with several Equip lines in a row keeps each line's own number: Gnarled Necromancer's Staff showed its movement speed as 26% (its spell damage) and lost the spell damage line.
 
 ## 0.11.0 - 2026-11-08
 
