@@ -9,6 +9,8 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+## 0.11.0 - 2026-11-08
+
 ### Fixed
 - Hovering items no longer stalls the game, most of all with comparison tooltips open: an item's tooltip took up to a tenth of a second each time it refreshed. Many windows' text is matched faster for the same reason.
 - Menus that redraw when you click in them (the auction house filter menu, for one) keep their Japanese readable. Before, a checkbox click could turn a heading into empty boxes.
