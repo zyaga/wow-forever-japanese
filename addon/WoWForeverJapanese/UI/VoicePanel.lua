@@ -495,7 +495,7 @@ local function build()
   -- the book sits inside the replay button's gold frame (the frame's dark inside hides the icon's own black square
   -- and its centre dot), so it matches the other controls
   f.textButton = control(ICON.replay, function() return word("whole") end, function()
-    Text.openWhole(f, displayed, look(), Q.opt.textOpens == "quest", revealed())
+    Text.openWhole(f, displayed, look(), revealed())
   end)
   local book = f.textButton:CreateTexture(nil, "OVERLAY")
   book:SetTexture(ICON.book)

@@ -24,6 +24,12 @@
 --     between would otherwise leave the player's NPC voices off for good. It is put back when the line ends (the
 --     pack's length plus a margin; PlaySoundFile reports no end), on stop, on logout and on the next load. A player
 --     who had the dialog channel off keeps it off.
+--   * Ahead of the line: the client starts the NPC's English greeting as the window opens, before the window's text is
+--     written, so a mute taken only when our line starts cuts the greeting mid-word. The events that open an NPC
+--     window turn the dialog channel off at once when that window's line will be read aloud (never for a line with
+--     no file, a kind switched off or a line heard before), give it back as soon as the line turns out not to play,
+--     and after AHEAD_SECONDS when no line started. The timing follows the Spoken addon's (github.com/rusty-key/
+--     spoken-wow, MIT): its greeting mute is taken in the window's event, before the text is read.
 --   The dialog-sound handling is adapted from forever-vo's ForeverVO/Core/Audio.lua (MIT License; see ATTRIBUTION.md).
 local _, WFJ = ...
 local VoicePlayer = {}
@@ -34,6 +40,7 @@ local Q = WFJ.VoiceQueue
 local CHANNEL = "Master"
 local DIALOG = "Sound_EnableDialog"
 local END_MARGIN = 0.5 -- seconds after the pack's length before the dialog channel comes back
+local AHEAD_SECONDS = 1.5 -- a mute taken as a window opens is given back after this when no line started
 local UNKNOWN_LENGTH = 30 -- a pack entry without a length: the longest scoped line is well under this
 local BUTTON_SIZE = 28 -- the stopwatch textures have wide transparent margins: smaller reads as a dot
 local BUTTON_X, BUTTON_Y = -8, -31 -- from the window's top right: centred in the band, below the close button
@@ -157,19 +164,34 @@ end
 -- → the window name a surface's lines belong to (for /wfj debug and the specs)
 function VoicePlayer.windowOf(surface) return windowOf(surface) end
 
+local ahead -- the token of a mute taken as a window opened, while its line has not started
+local aheadTokens = 0
+local aheadWindow -- the window that mute was taken for: only its own line not playing gives it back
+
 -- Puts the dialog channel back if this addon turned it off. → true when it did
 function VoicePlayer.restoreDialog()
+  ahead = nil
   if not (db and db.voiceDialogMuted) then return false end
   db.voiceDialogMuted = nil
   setCVar(DIALOG, "1")
   return true
 end
 
+-- → true when the dialog channel is off by this addon's hand
 local function muteDialog()
-  if not WFJ.Settings.get("voice.muteDialog") or not db or db.voiceDialogMuted then return end
-  if tostring(getCVar(DIALOG)) ~= "1" then return end -- off already: the player's choice, left alone
+  if not WFJ.Settings.get("voice.muteDialog") or not db then return false end
+  if db.voiceDialogMuted then return true end
+  if tostring(getCVar(DIALOG)) ~= "1" then return false end -- off already: the player's choice, left alone
   db.voiceDialogMuted = true
   setCVar(DIALOG, "0")
+  return true
+end
+
+-- The mute taken ahead goes back, unless a line is playing (that line holds it until it ends).
+local function giveBack()
+  if not ahead then return end
+  ahead, aheadWindow = nil, nil
+  if not playing then VoicePlayer.restoreDialog() end
 end
 
 local function showButton(window, isPlaying)
@@ -258,6 +280,7 @@ local function play(path, seconds, key, window, again)
     return false
   end
   muteDialog()
+  ahead = nil -- the line holds the mute now
   local willPlay, handle = playSoundFile(path, CHANNEL)
   if not willPlay then
     VoicePlayer.counts.refused = VoicePlayer.counts.refused + 1
@@ -289,6 +312,7 @@ startHead = function()
   Q.paused = false
   local started = play(item.path, item.seconds, item.key, item.window, true)
   if started and last[item.window] then last[item.window].shown = item.shown end
+  if started and item.shown then WFJ.Voice.markHeard(unpack(item.shown)) end
   if not started then -- the client refused the file: drop it and go on
     Q.pop()
     if Q.current() then return startHead() end
@@ -311,6 +335,19 @@ end
 function VoicePlayer.onShown(surface, recKey, kind, id)
   local window = windowOf(surface)
   local path, detail = WFJ.Voice.decide(surface, recKey, kind, id, speaker(window)) -- detail: length, or why not
+  if not path and detail == "heard" then
+    -- heard before (first time only): it stays quiet, and the window's button reads this line on a click. The same
+    -- line laid out again while it plays (the gossip window lays its first window out twice) goes on.
+    local key = WFJ.Voice.packKey(kind, id)
+    if playing and playing.key == key then return false end
+    if ahead and window == aheadWindow then giveBack() end
+    if not queueOn() and playing and playing.window == window then VoicePlayer.stop() end
+    last[window] = { key = key, shown = { surface, recKey, kind, id } }
+    showButton(window, false)
+    return false
+  end
+  -- the window's voiced line will not play; another translated line (a tooltip, the window's title) changes nothing
+  if not path and ahead and detail ~= "kind" and window == aheadWindow then giveBack() end
   if not path then
     -- a new voiced line of this window that will not play (no file, its kind switched off, English showing): the
     -- button must not replay the previous line over it. An unvoiced line of the window ("kind": a title) leaves it.
@@ -341,7 +378,10 @@ function VoicePlayer.onShown(surface, recKey, kind, id)
     return false
   end
   local started = play(path, detail, key, window)
-  if started then last[window].shown = { surface, recKey, kind, id } end -- re-asked before a replay
+  if started then
+    last[window].shown = { surface, recKey, kind, id } -- re-asked before a replay
+    WFJ.Voice.markHeard(surface, recKey, kind, id)
+  end
   return started
 end
 
@@ -523,6 +563,78 @@ function VoicePlayer.addWindow(window, surfaces, unit)
   return true
 end
 
+-- The quest windows' events: their surface, record key and the client getter of their English.
+local QUEST_EVENTS = {
+  QUEST_DETAIL = { "questframe.detail", "description", "GetQuestText" },
+  QUEST_PROGRESS = { "questframe.progress", "progress", "GetProgressText" },
+  QUEST_COMPLETE = { "questframe.reward", "completion", "GetRewardText" },
+}
+
+local function readable(v)
+  local isSecret = Compat.resolve("issecretvalue")
+  return type(v) == "string" and v ~= "" and not (type(isSecret) == "function" and isSecret(v))
+end
+
+-- The line the window an event opens will show → surface, record key, kind, id and its area; or nil and why not
+local function opening(event)
+  if event == "GOSSIP_SHOW" or event == "QUEST_GREETING" then
+    local text
+    if event == "GOSSIP_SHOW" then
+      local api = Compat.resolve("C_GossipInfo")
+      text = type(api) == "table" and type(api.GetText) == "function" and api.GetText() or nil
+    else
+      local get = Compat.resolve("GetGreetingText")
+      text = type(get) == "function" and get() or nil
+    end
+    if not readable(text) then return nil, "no text yet" end -- a first talk: the text may arrive after the event
+    local key = type(WFJ.ShippedGossipKey) == "function" and WFJ.ShippedGossipKey(text) or nil
+    if not key then return nil, "no Japanese" end
+    return event == "GOSSIP_SHOW" and "gossip" or "questframe.greeting", "greeting", "gossip", key, "gossip"
+  end
+  local q = QUEST_EVENTS[event]
+  if not q then return nil, "not a window" end
+  local getID, getText = Compat.resolve("GetQuestID"), Compat.resolve(q[3])
+  local id = type(getID) == "function" and getID() or nil
+  if type(id) ~= "number" or id == 0 then return nil, "no quest" end
+  local en = type(getText) == "function" and getText() or nil
+  local kind, keyId = "quest." .. q[2], id
+  if readable(en) and WFJ.QuestFrame and type(WFJ.QuestFrame.fieldSource) == "function" then
+    kind, keyId = WFJ.QuestFrame.fieldSource(id, q[2], en)
+  end
+  return q[1], q[2], kind, keyId, "quests"
+end
+
+-- An NPC window is opening: the English greeting has just started. When the window's line will be read aloud, the
+-- dialog channel goes off now and comes back when the line ends, when it turns out not to play, or after
+-- AHEAD_SECONDS when no line started.
+-- Each window event leaves one "window" line in the log saying what the mute decided and why, so a greeting heard in
+-- English can be traced to its cause (a first talk whose text came after the event, a line with no file, …).
+local function noteWindow(event, why, key)
+  trace("window", { key = key or "-", token = 0 }, { event = event, why = why })
+  return false
+end
+
+function VoicePlayer.onWindowEvent(event)
+  if not ready then return false end
+  if playing then return noteWindow(event, "a line is playing", playing.key) end
+  local surface, recKey, kind, id, area = opening(event)
+  if not surface then return noteWindow(event, recKey) end
+  local key = WFJ.Voice.packKey(kind, id)
+  if not WFJ.State.areaEnabled(area) then return noteWindow(event, "area off", key) end -- renders no Japanese
+  local path, detail = WFJ.Voice.decide(surface, recKey, kind, id, speaker(windowOf(surface)), "ahead")
+  if not path then return noteWindow(event, detail, key) end
+  if not muteDialog() then return noteWindow(event, "dialog left as it is", key) end
+  aheadTokens = aheadTokens + 1
+  local token = aheadTokens
+  ahead, aheadWindow = token, windowOf(surface)
+  trace("ahead", { key = WFJ.Voice.packKey(kind, id), token = token }, { event = event })
+  local timer = Compat.resolve("C_Timer")
+  if type(timer) == "table" and type(timer.After) == "function" then
+    timer.After(AHEAD_SECONDS, function() if ahead == token then giveBack() end end)
+  end
+  return true
+end
+
 -- Called by Main after Settings and Voice are loaded. `savedDb` is WFJ_DB. Safe without a pack: nothing ever plays.
 function VoicePlayer.init(savedDb)
   db = savedDb
@@ -557,9 +669,13 @@ function VoicePlayer.init(savedDb)
   if type(createFrame) == "function" then -- a loading screen ends every line and the queue
     local ev = createFrame("Frame")
     ev:RegisterEvent("PLAYER_ENTERING_WORLD")
-    -- like the panel's close: the line, the queue and the panel's last line all go
-    -- with the panel only: with it off a line goes on through a loading screen, as it always did
-    ev:SetScript("OnEvent", WFJ.Perf.wrap("idle.voiceplayer.event", function()
+    for _, e in ipairs({ "GOSSIP_SHOW", "QUEST_GREETING", "QUEST_DETAIL", "QUEST_PROGRESS", "QUEST_COMPLETE" }) do
+      ev:RegisterEvent(e)
+    end
+    ev:SetScript("OnEvent", WFJ.Perf.wrap("idle.voiceplayer.event", function(_, event)
+      if event ~= "PLAYER_ENTERING_WORLD" then return VoicePlayer.onWindowEvent(event) end
+      -- like the panel's close: the line, the queue and the panel's last line all go
+      -- with the panel only: with it off a line goes on through a loading screen, as it always did
       if queueOn() and (Q.size() > 0 or playing or lastItem) then VoicePlayer.clear() end
     end))
   end

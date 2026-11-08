@@ -28,6 +28,18 @@ local adopted = nil
 local held = nil
 local busy = false
 local recorded = 0 -- the highest line number recorded on the last pass
+-- Lines left in the client's text that hold Japanese (an addon's title such as this addon's own "(日本語化)"):
+-- the tooltip's font has no kana or kanji, so they wear the bundled face, their text untouched, until the tooltip
+-- hides or shows something else. fs → true
+local dressedLines = {}
+local JAPANESE = "[\227-\233][\128-\191][\128-\191]" -- a UTF-8 kana or kanji (U+3000-U+9FFF)
+
+local function undress()
+  for fs in pairs(dressedLines) do
+    WFJ.Font.restore(fs)
+    dressedLines[fs] = nil
+  end
+end
 
 function HelpTooltip.register(owner, opts)
   if type(owner) == "table" then owners[owner] = opts or true end
@@ -90,6 +102,7 @@ local function walkImpl(tt)
       recorded = 0
       WFJ.Render.forget(SURFACE)
     end
+    undress()
     return 0
   end
   local labelOpts = type(opts) == "table" and opts or nil
@@ -128,6 +141,15 @@ local function walkImpl(tt)
             local before = fs:GetText()
             n = n + WFJ.Labels.show(SURFACE, recKey, fs, refit, labelOpts)
             if fs:GetText() ~= before then changed = true end
+            local kept = WFJ.SurfaceState.get(SURFACE, recKey)
+            if not (kept and kept.applied ~= nil) and fs:GetText():find(JAPANESE) then
+              -- the client may set the line's font again on a rebuild (the AddOn list's every frame while hovered)
+              local wearing = fs:GetFont() == WFJ.Font.PATH
+              if WFJ.Font.bundle(fs) then
+                dressedLines[fs] = true
+                if not wearing then changed = true end
+              end
+            end
           end
         else
           WFJ.SurfaceState.drop(SURFACE, recKey)
@@ -241,6 +263,7 @@ function HelpTooltip.release()
   recorded = 0
   adopted = nil
   held = nil
+  undress()
   return WFJ.Render.release(SURFACE)
 end
 

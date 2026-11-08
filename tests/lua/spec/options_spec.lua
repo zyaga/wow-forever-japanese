@@ -151,7 +151,7 @@ describe("Settings pages from the registry and PAGES", function()
     assert.are.same({ "Dark", "Parchment" }, { styles[1].text, styles[2].text })
     assert.is_true(styles[2].isSelected()) -- Parchment by default
     for _, id in ipairs({ "voice.panel.keep", "voice.panel.head", "voice.panel.hoverButtons", "voice.panel.fade",
-      "voice.panel.combatDim", "voice.panel.questLog", "voice.panel.lock" }) do
+      "voice.panel.combatDim", "voice.panel.lock" }) do
       assert.are.equal("boolean", control(id).kind, id)
     end
     assert.is_nil(control("voice.panel.queueBox"))

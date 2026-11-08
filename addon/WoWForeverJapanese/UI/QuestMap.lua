@@ -98,6 +98,7 @@ local CANDIDATES = {
   selectedQuest   = { "C_QuestLog.GetSelectedQuest" },
   titleFor        = { "C_QuestLog.GetTitleForQuestID" },
   questText       = { "GetQuestLogQuestText" },
+  inCombat        = { "InCombatLockdown" },
   -- the shared QuestInfo fields [verified: mainline/questinfo.xml:728, 734, 749]
   title           = { "QuestInfoTitleHeader" },
   objectives      = { "QuestInfoObjectivesText" },
@@ -617,8 +618,22 @@ function QuestMap.onStoryTooltip()
     + WFJ.Labels.show(STORY_TIP, "story.tipCount", tip.ProgressCount, nil, STORY_TIP_COUNT)
 end
 
+-- In combat the list keeps the client's English. Every map update runs QuestLogQuests_Update, which measures the
+-- rows' text, and in the same pass places the map's quest pins, a call the client protects in combat: measuring text
+-- this addon wrote taints the rest of that pass, and the pins are blocked under this addon's name (ADR-058).
+-- Seen in game: the map blocked at every opening in combat with the list translated, never with it left
+-- alone. The list gets its Japanese back when combat ends (QuestMap.onCombatEnded).
+local function inCombat()
+  local f = get("inCombat")
+  return type(f) == "function" and f() and true or false
+end
+
 function QuestMap.onListUpdate()
   WFJ.Render.forget(LIST)
+  if inCombat() then
+    WFJ.Render.updateBanner(LIST)
+    return 0
+  end
   local n = 0
   local story = get("storyHeader") -- the story header's progress line; its Text is the story's name
   if type(story) == "table" then
@@ -672,6 +687,13 @@ function QuestMap.onListUpdate()
   WFJ.Render.updateBanner(LIST)
   QuestMap.showListLabels()
   return n
+end
+
+-- PLAYER_REGEN_ENABLED: a map left open through combat shows the list's Japanese again. → titles shown
+function QuestMap.onCombatEnded()
+  local map = get("worldMap")
+  if type(map) ~= "table" or type(map.IsShown) ~= "function" or not map:IsShown() then return 0 end
+  return QuestMap.onListUpdate()
 end
 
 function QuestMap.showListLabels()

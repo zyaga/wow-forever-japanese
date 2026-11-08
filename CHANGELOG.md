@@ -9,6 +9,22 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Added
+- Read NPC greetings aloud only the first time: a vendor or trainer greets you the same way at every visit, so a greeting you have heard stays quiet when its window opens. This is on by default (*NPC greetings: only the first time* on the Voice page). *Quest lines: only the first time* does the same for quest offers, progress and turn-ins, and is off by default. The window's play button still reads the line, and a line whose Japanese changed counts as new.
+
+### Changed
+- When a window's line will be read aloud, the game's English voice is now silenced as the window opens, not when the Japanese starts. It comes back as soon as the line turns out not to play, or after a second and a half. An NPC that speaks the moment it turns to you can still be heard for a split second: the game starts that greeting before it opens the window.
+
+### Removed
+- The setting *The book button opens the quest in the quest log*. The voice panel's book button now always opens the small window with the line's whole Japanese.
+
+### Fixed
+- Opening the world map in combat is no longer blocked with this addon blamed. The quest list beside the map shows the game's English while you are in combat and its Japanese again when the fight ends, and the voice panel's book button no longer opens the quest log.
+- No more "bad argument #2 to 'SetFont' ... Secret values" Lua errors in a busy trade channel: a line whose font size the game keeps secret now stays in English.
+- The AddOns list's tooltip shows the Japanese in this addon's name and the voice pack's name instead of empty boxes.
+- A talent's tooltip shows its next rank in Japanese too, and holding the English key no longer turns the current rank's text into empty boxes.
+- An item with several Equip lines in a row keeps each line's own number: Gnarled Necromancer's Staff showed its movement speed as 26% (its spell damage) and lost the spell damage line.
+
 ## 0.11.0 - 2026-11-08
 
 ### Fixed
