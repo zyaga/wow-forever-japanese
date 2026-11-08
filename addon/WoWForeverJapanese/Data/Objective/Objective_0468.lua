@@ -8,6 +8,7 @@ WFJ.Data.add("objective", {
   [468519] = { "High Order Apprenticeを倒す", 0x4a0b9854, "." },
   [468521] = { "Windshaper Novice Seerを倒す", 0xa29a5781, "." },
   [468541] = { "Anchor Pylonを見る", 0xc9fec2d6, "." },
+  [468777] = { "Rog'mar Traineeに食べ物を与える", 0xd8ce2487, "." },
   [468803] = { "Jorel Windsingerを見つける", 0x5c123983, "." },
   [468865] = { "Al'Aketh Turncoatを見つける", 0xc1352e97, "." },
   [468886] = { "Injured Druidsを癒す", 0x5a91fc67, "." },

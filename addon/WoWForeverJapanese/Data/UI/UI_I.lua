@@ -69,7 +69,6 @@ WFJ.Data.add("ui", {
   ["INVERT_GAMEPAD_PITCH"] = { "縦軸を反転", 0xb92e6498, "." },
   ["INVERT_GAMEPAD_YAW"] = { "横軸を反転", 0x44b7cba7, "." },
   ["INVERT_MOUSE"] = { "マウスを反転", 0x823191c7, "." },
-  ["INVITATION"] = { "%sがあなたをグループに招待しています。", 0xe38d7130, "." },
   ["INVITATION_XREALM"] = { "%sがあなたをグループに招待しています。\n\nこの招待を承諾すると、別のレルムに移動することがあります。", 0x8b81470e, "." },
   ["INVITE"] = { "招待", 0x53896770, "." },
   ["INVITE_COMMUNITY_MEMBER_POPUP_INVITE_EDITBOX_INSTRUCTIONS"] = { "Real IDまたはBattleTag", 0x07be35b1, "." },

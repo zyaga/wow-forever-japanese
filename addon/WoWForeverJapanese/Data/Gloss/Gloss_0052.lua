@@ -726,8 +726,6 @@ WFJ.Data.add("gloss", {
   [52727] = "勘\tかん\thunch",
   [52728] = "勘\tかん\tinstincts",
   [52729] = "勘定\tかんじょう\tbill",
-  [52730] = "勘弁\tかんべん\tcome (give me a break)",
-  [52731] = "勘弁する\tかんべんする\tcome on (give me a break)",
   [52732] = "勘違い\tかんちがい\tmistaken",
   [52733] = "勘違い\tかんちがい\tmy bad (misunderstanding)",
   [52734] = "勘違いする\tかんちがいする\tdo not (mistakenly) take",

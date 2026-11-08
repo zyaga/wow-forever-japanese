@@ -115,7 +115,6 @@ WFJ.Data.add("gloss", {
   [49112] = "出る\tでる\thas (come) out",
   [49113] = "出る\tでる\thas been done",
   [49114] = "出る\tでる\thas left",
-  [49115] = "出る\tでる\thaunted by (appear)",
   [49116] = "出る\tでる\thaunts (appears)",
   [49117] = "出る\tでる\thave (arise)",
   [49118] = "出る\tでる\thave acted (resorted to)",

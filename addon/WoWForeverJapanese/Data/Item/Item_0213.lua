@@ -78,6 +78,8 @@ WFJ.Data.add("item", {
   [213632] = { "集めたPartial Spell Notesを一つの巻物にまとめ、新しいEngravingの呪文を習得できるようにします。\nEngravingのアビリティを習得できる巻物に似た、不完全なページ。三分の二が欠けている。", 0x44e70def, "u" },
   [213633] = { "集めたPartial Spell Notesを一つの巻物にまとめ、新しいEngravingの呪文を習得できるようにします。\nEngravingのアビリティを習得できる巻物に似た、不完全なページ。三分の二が欠けている。", 0x44e70def, "u" },
   [213634] = { "集めたPartial Spell Notesを一つの巻物にまとめ、新しいEngravingの呪文を習得できるようにします。\nEngravingのアビリティを習得できる巻物に似た、不完全なページ。三分の二が欠けている。", 0x44e70def, "u" },
+  [213701] = { "Strong Harpy Feathers 10個とCloud Serpent Fangs 3個をSilken Thread 1個と組み合わせて、Offering to the Wind Spiritを作ります。", 0xf5d79734, "u" },
+  [213709] = { "Strong Harpy Feathers 10個とCloud Serpent Fangs 3個をSilken Thread 1個と組み合わせて、Offering to the Wind Spiritを作ります。", 0xf5d79734, "u" },
   [213735] = { "こいつは低分散の関係性コードバーストを$N1百万ギガフロップス以上もプリレンダリングできる。すごい！", 0xb431cb1e, "u" },
   [213736] = { "このプロセッサコアは腐食と黒くべたつく物質で覆われているが、汚れの隙間から型番といくつかの判読できない単語がかろうじて読み取れる。修復には専門家の助けが必要かもしれない。", 0x71fa5f27, "u" },
   [213737] = { "Wind SpiritにOfferingを捧げ、信仰を示します。", 0x69dd8697, "u" },

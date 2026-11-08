@@ -64,7 +64,6 @@ WFJ.Data.add("gloss", {
   [138061] = "高い\tたかい\tis too high",
   [138062] = "高い\tたかい\tlikely (high)",
   [138063] = "高い\tたかい\tlofty (tall)",
-  [138064] = "高い\tたかい\tplenty (high price)",
   [138065] = "高い\tたかい\tpricey",
   [138066] = "高い\tたかい\tproud (鼻が高い: be proud)",
   [138067] = "高い\tたかい\tsoaring (high)",

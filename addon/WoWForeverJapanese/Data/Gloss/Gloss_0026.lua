@@ -819,7 +819,6 @@ WFJ.Data.add("gloss", {
   [26817] = "まったく\tまったく\twholly (not at all)",
   [26818] = "まったく\tまったく\twhy (honestly)",
   [26819] = "まったく\tまったく\twhy (really)",
-  [26820] = "まったく\tまったく\twouldn't ye know it (really)",
   [26821] = "まったく\tまったく\tzero (at all)",
   [26822] = "まったくだ\tまったくだ\tyou're telling me (quite so)",
   [26823] = "まったくもって\tまったくもって\tutterly",

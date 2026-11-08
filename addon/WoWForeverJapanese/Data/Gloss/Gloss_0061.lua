@@ -443,7 +443,6 @@ WFJ.Data.add("gloss", {
   [61441] = "売る\tうる\twon't be sellin'",
   [61442] = "売る\tうる\twon't let me purchase (won't sell)",
   [61443] = "売る\tうる\twould not sell",
-  [61444] = "売れる\tうれる\tbe worth (sell)",
   [61445] = "売れる\tうれる\tcan sell (get)",
   [61446] = "売れる\tうれる\tcould sell",
   [61447] = "売れる\tうれる\tfetch (sell)",

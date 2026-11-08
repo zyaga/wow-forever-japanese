@@ -440,7 +440,6 @@ WFJ.Data.add("gloss", {
   [119439] = "見張る\tみはる\tkeep watch",
   [119440] = "見張る\tみはる\tkeeping an eye on",
   [119441] = "見張る\tみはる\tkeeping tabs on (watch)",
-  [119442] = "見張る\tみはる\tkeeping watch over",
   [119443] = "見張る\tみはる\tkeeps an eye on",
   [119444] = "見張る\tみはる\tkept watch",
   [119445] = "見張る\tみはる\tmay be watching",

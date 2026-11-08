@@ -4,4 +4,5 @@ WFJ.Data.add("objective", {
   [474392] = { "水晶から学べることを学ぶ", 0x5e46ff49, "." },
   [474454] = { "Aamelia Windfieldと話す", 0x6a994c17, "." },
   [474501] = { "起爆装置を使う", 0x125a5bb1, "." },
+  [474788] = { "習得：Apprentice Riding", 0x90bd4f18, "." },
 })

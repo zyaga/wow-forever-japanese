@@ -885,7 +885,6 @@ WFJ.Data.add("gloss", {
   [131886] = "配達\tはいたつ\tDeliver (delivery)",
   [131887] = "配達\tはいたつ\tDeliveries",
   [131888] = "配達\tはいたつ\tDelivery",
-  [131889] = "配達\tはいたつ\tdeliver (delivery)",
   [131890] = "配達\tはいたつ\tdelivered (delivery)",
   [131891] = "配達\tはいたつ\tdeliveries",
   [131892] = "配達\tはいたつ\tdelivering",

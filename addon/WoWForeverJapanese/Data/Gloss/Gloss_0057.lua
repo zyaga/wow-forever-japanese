@@ -841,8 +841,6 @@ WFJ.Data.add("gloss", {
   [57842] = "吹き出し\tふきだし\tbubbles (speech bubbles)",
   [57843] = "吹き出し\tふきだし\tchat bubbles (speech bubbles)",
   [57844] = "吹き出す\tふきだす\tblow off (spout)",
-  [57845] = "吹き出す\tふきだす\tmay blow out",
-  [57846] = "吹き出す\tふきだす\tspew out",
   [57847] = "吹き口\tふきぐち\tmouthpiece",
   [57848] = "吹き寄せる\tふきよせる\trush (blow toward)",
   [57849] = "吹き払う\tふきはらう\tblows off",

@@ -58,7 +58,6 @@ WFJ.Data.add("gloss", {
   [50055] = "分かれる\tわかれる\tfork (branched)",
   [50056] = "分かれる\tわかれる\tforks",
   [50057] = "分かれる\tわかれる\tsplit",
-  [50058] = "分かれる\tわかれる\twhen it branches",
   [50059] = "分かれる\tわかれる\tyields (divides into)",
   [50060] = "分かれる\tわかれる\tyields (splits into)",
   [50061] = "分かれ道\tわかれみち\tcrossroads",

@@ -214,7 +214,6 @@ WFJ.Data.add("gloss", {
   [84212] = "揺らぐ\tゆらぐ\twill not (falter)",
   [84213] = "揺らぐ\tゆらぐ\twill not waver",
   [84214] = "揺らす\tゆらす\thave jostled, and",
-  [84215] = "揺らす\tゆらす\tjostle (shake)",
   [84216] = "揺らす\tゆらす\trocked (me)",
   [84217] = "揺らす\tゆらす\tshake",
   [84218] = "揺らす\tゆらす\tshakes",

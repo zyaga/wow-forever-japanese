@@ -112,7 +112,6 @@ WFJ.Data.add("gloss", {
   [43109] = "何やら\tなにやら\tall that",
   [43110] = "何やら\tなにやら\tand whatnot",
   [43111] = "何やら\tなにやら\tsome",
-  [43112] = "何やら\tなにやら\tsome sort",
   [43113] = "何やら\tなにやら\tsomehow (something)",
   [43114] = "何やら\tなにやら\tsomething",
   [43115] = "何やら\tなにやら\twhat not",

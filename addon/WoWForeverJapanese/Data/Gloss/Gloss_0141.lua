@@ -80,6 +80,7 @@ WFJ.Data.add("gloss", {
   [141085] = "光り物\tひかりもの\tshiny things",
   [141086] = "惹きつける\tひきつける\twill be drawn in (attracted)",
   [141087] = "手に入る\tてにはいる\tgot (obtained)",
+  [141089] = "毛\tけ\tfur",
   [141093] = "あざだらけ\tあざだらけ\tbruised",
   [141094] = "あざだらけ\tあざだらけ\tbruised (covered in bruises)",
   [141095] = "あっさり\tあっさり\tsimply (quickly)",

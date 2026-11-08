@@ -791,7 +791,6 @@ WFJ.Data.add("gloss", {
   [64792] = "子供\tこども\tcub (child)",
   [64793] = "子供\tこども\tkid (child)",
   [64794] = "子供\tこども\tkids",
-  [64795] = "子供\tこども\tkids (children)",
   [64796] = "子供\tこども\tkids'",
   [64797] = "子供\tこども\tour young (children)",
   [64798] = "子供\tこども\tpup (child)",

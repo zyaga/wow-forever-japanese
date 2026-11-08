@@ -257,7 +257,6 @@ WFJ.Data.add("gloss", {
   [255] = "あそこ\tあそこ\tthat",
   [256] = "あそこ\tあそこ\tthat (place)",
   [257] = "あそこ\tあそこ\tthat place",
-  [258] = "あそこ\tあそこ\tthat place (there)",
   [259] = "あそこ\tあそこ\tthere",
   [260] = "あそこ\tあそこ\tthere (it)",
   [261] = "あそこ\tあそこ\tthere (over there)",

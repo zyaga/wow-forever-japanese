@@ -160,7 +160,6 @@ WFJ.Data.add("gloss", {
   [36158] = "一応\tいちおう\tsort of (in a way)",
   [36159] = "一息\tひといき\tbreath",
   [36160] = "一息つく\tひといきつく\tcan breathe easy",
-  [36161] = "一息つく\tひといきつく\ttake a moment (to relax)",
   [36162] = "一息つく\tひといきつく\twill want to take a breather",
   [36163] = "一息入れる\tひといきいれる\trest (take a breather)",
   [36164] = "一悶着\tひともんちゃく\ta run-in",
