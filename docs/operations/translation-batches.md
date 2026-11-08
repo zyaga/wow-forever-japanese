@@ -342,6 +342,28 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
 
+### 1.60.1.70790 to 1.60.1.70862, six players' sends (2026-11-08)
+
+Not a re-pull: six players' collector sends, issues #78, #80, #81, #82, #83 and #84, all checked `collector-ok` and
+read with `make collector-intake ISSUE=N`. The English comes from builds 1.60.1.70790, 1.60.1.70840 and 1.60.1.70862.
+Nothing was rejected. Issue #74 still cannot be read.
+
+Drafted:
+
+| What | Result |
+|---|---|
+| gossip | 42 lines, with word lists; 1 line in a made-up language with a name ("Lok-tar, Walton.") kept as written (ruled accept) |
+| quest progress and turn-in | 9 new texts, with word lists |
+| machine quest lines whose English the game replaced | 7 redrafted from the game's wording and re-verified; 486's Japanese kept and re-verified (only capitals and a comma changed) |
+| hand-written 429 and 430 turn-ins | corrected as little as the new English needs (`apply_review`): 429 lost its recipe sentence, 430's second half is now a narrated pause; new word lists |
+
+"the Lord Admiral" (Daelin Proudmoore's title, without his name) stays in English letters, as the one shipped line
+about him already has it.
+
+Voice: the new speakers were cast after `make voice-speakers`, `wfj voice profiles build` and `make voice-sets` (each
+NPC takes the game voice set Spoken gives it; 13 new creatures). The same round remakes the voice lines that ran on
+(75) and the ones that stopped mid-sound (747), see [Voice](voice.md).
+
 ### 1.60.1.70790 and 1.60.1.70862, the maintainer's collector file and three players' sends (2026-11-07)
 
 Not a re-pull: the maintainer's own collector file and three players' collector sends, issues #73, #75 and #76, the
