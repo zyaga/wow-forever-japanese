@@ -762,9 +762,9 @@ function Index.formatArgs(_, key, en, ...) -- called as index:formatArgs; the in
   return args
 end
 
--- A list-shaped `only` as a set, built once per list table: the lists are module constants (filled at file load,
--- never changed after their first use), and matchOnly runs per tooltip line, every frame on the clock and the unit
--- frames.
+-- A key list's set, kept per list table as a shortcut to the one set with its contents (below): matchOnly runs per
+-- tooltip line, every frame on the clock and the unit frames. A list is read once, at its first use, so a caller
+-- never changes it after.
 local onlySets = setmetatable({}, { __mode = "k" })
 local setNames = setmetatable({}, { __mode = "k" }) -- a key set → does it name a restricted / numbered key
 -- Lines matchOnly found no key for, per `only` set: the per-frame tooltips repeat the same unmatched lines (a time,

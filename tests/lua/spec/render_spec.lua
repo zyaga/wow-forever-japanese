@@ -58,7 +58,7 @@ describe("Render: refresh on state, per-FontString font", function()
     assert.is_false(showQuest(q)) -- already shown: nothing changed
     local quest
     for _, row in ipairs(WFJ.Perf.report(30)) do if row.label == "quest" then quest = row end end
-    assert.are.equal(2, quest.calls)
+    assert.are.same({ 2, 4, 2 }, { quest.calls, quest.ms, quest.max }) -- two shows, the clock 2 ms on per read
   end)
 
   it("modifier, master, and area changes restore / reapply the open records", function()

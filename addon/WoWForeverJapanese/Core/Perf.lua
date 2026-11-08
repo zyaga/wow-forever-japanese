@@ -42,15 +42,27 @@ local function mem()
 end
 
 -- The frame's line for the trail: its labels in order, the same string again for a frame that ran the same labels
--- (a hovered item refreshing), so the taint watch counts it in place instead of filling its ring.
+-- (a hovered item refreshing), so the taint watch counts it in place instead of filling its ring. The idle.*
+-- labels (the work that runs with no window: every event, every frame) stay out of it: they would put a line after
+-- nearly every event and halve the ring's history. They stay in the totals and the slow log. → line | nil
+local shown = {}
 local function trailLine()
-  local same = #ran == #last
+  local n = 0
   for i = 1, #ran do
-    if ran[i] ~= last[i] then same = false end
-    last[i] = ran[i]
+    if ran[i]:sub(1, 5) ~= "idle." then
+      n = n + 1
+      shown[n] = ran[i]
+    end
   end
-  for i = #last, #ran + 1, -1 do last[i] = nil end
-  if not same or not lastLine then lastLine = table.concat(ran, " ") end
+  for i = #shown, n + 1, -1 do shown[i] = nil end
+  if n == 0 then return nil end
+  local same = n == #last
+  for i = 1, n do
+    if shown[i] ~= last[i] then same = false end
+    last[i] = shown[i]
+  end
+  for i = #last, n + 1, -1 do last[i] = nil end
+  if not same or not lastLine then lastLine = table.concat(shown, " ") end
   return lastLine
 end
 
@@ -76,7 +88,7 @@ function Perf.flush()
     row.ms, row.kb, row.calls = 0, 0, 0
     ran[i] = nil
   end
-  if deps.trail then pcall(deps.trail, line) end
+  if line and deps.trail then pcall(deps.trail, line) end
 end
 
 -- A frame that has ended goes to the trail now, before anything else is written to the ring after it (the taint

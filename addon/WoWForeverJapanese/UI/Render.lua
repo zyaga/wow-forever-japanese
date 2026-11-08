@@ -263,9 +263,11 @@ local function noteRecent(rec, text, fromShow)
     texts, ats = {}, {}
     notedText[rec.surface], notedAt[rec.surface] = texts, ats
   end
-  if now ~= nil and texts[rec.key] == text and ats[rec.key] and now - ats[rec.key] < NOTE_AGAIN then return end
-  texts[rec.key], ats[rec.key] = text, now
   local m = rec.meta or {}
+  -- the same line of the same entry: an equal Japanese of another item on the same row is a line of its own
+  local noted = tostring(m.id) .. "\0" .. text
+  if now ~= nil and texts[rec.key] == noted and ats[rec.key] and now - ats[rec.key] < NOTE_AGAIN then return end
+  texts[rec.key], ats[rec.key] = noted, now
   local ok = pcall(R.note, m.kind, m.id, rec.surface, text, now)
   if not ok then Render.recentErrors = Render.recentErrors + 1 end
 end

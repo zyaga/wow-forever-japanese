@@ -23,7 +23,8 @@
 --   /wfj bug                  the report window (a bug, with the addon's own Lua errors, or an idea)
 --   /wfj log [<n>]            the problem log's last n entries, then how many Lua errors it holds
 --   /wfj taint                the taint scan into the problem log (UI/TaintWatch)
---   /wfj perf [n|reset]       the n (10) slowest timed passes and counts this session (Core/Perf), or clear them
+--   /wfj perf [n|reset|off|on]  the n (10) slowest timed passes and counts this session (Core/Perf), clear them,
+--                             or switch the timing off and on for the session
 --   /wfj collector [on|off|status|path|clear|send [all]]   the English collector; other words fall through to
 --                             settings; clear asks for the same command again within 5 s (like the page's two
 --                             clicks); send opens the send window (all: every line again)

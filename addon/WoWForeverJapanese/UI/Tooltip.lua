@@ -1051,11 +1051,18 @@ local function sameAsLast(frame, link)
     local r = seen.rightFs[i]
     if r and textOf(r) ~= seen.right[i] then return false end
   end
+  -- the records the full pass left must still be the live ones: another pass on the same tooltip without a hide (a
+  -- spell link in the chat link tooltip, itemref.lua:20-25) replaces them, and there is nothing to put back then
+  local SS = WFJ.SurfaceState
+  for _, rec in ipairs(seen.recs) do
+    if SS.get(rec.surface, rec.key) ~= rec then return false end
+  end
   return true
 end
 
 local function remember(frame, link, lines, right)
-  local seen = { n = #lines, leftFs = {}, left = {}, colour = {}, rightFs = {}, right = {} }
+  local seen = { n = #lines, leftFs = {}, left = {}, colour = {}, rightFs = {}, right = {}, recs = {} }
+  for _, rec in pairs(WFJ.SurfaceState.records(surfaceOf(frame))) do seen.recs[#seen.recs + 1] = rec end
   for i = 1, #lines do
     seen.leftFs[i], seen.left[i], seen.colour[i] = lines[i].fs, lines[i].text, colourOf(lines[i].fs)
   end
@@ -1260,9 +1267,17 @@ Tooltip.COMPARE_HEADER_KEYS = COMPARE_HEADER_KEYS
 -- kept state made each show undo the other's.
 local afterCompare = setmetatable({}, { __mode = "k" }) -- tooltip → { [line count] = { fs = { … }, text = { … } } }
 
+local function headerOf(frame)
+  local header = type(frame.CompareHeader) == "table" and frame.CompareHeader.Label or nil
+  return type(header) == "table" and type(header.GetText) == "function" and header or nil
+end
+
 local function snapshot(frame)
   local seen = { fs = {}, text = {} }
   for i, l in ipairs(Tooltip.lines(frame)) do seen.fs[i], seen.text[i] = l.fs, l.text end
+  -- the "Equipped" tab too: the client writes it again on every rebuild, also on one with no stat changes
+  local header = headerOf(frame)
+  seen.header = header and header:GetText() or nil
   local byCount = afterCompare[frame] or {}
   byCount[#seen.fs] = seen
   afterCompare[frame] = byCount
@@ -1272,6 +1287,9 @@ local function unchanged(frame)
   local byCount = afterCompare[frame]
   local seen = byCount and type(frame.NumLines) == "function" and byCount[frame:NumLines()]
   if not seen then return false end
+  local header = headerOf(frame)
+  local htext = header and header:GetText() or nil
+  if anySecretOf(htext) or htext ~= seen.header then return false end
   for i = 1, #seen.fs do
     local text = seen.fs[i]:GetText() or ""
     if anySecretOf(text) or text ~= seen.text[i] then return false end
@@ -1316,8 +1334,10 @@ function Tooltip.onCompareShow(frame)
     for i, l in ipairs(Tooltip.lines(frame)) do
       local key, args, runs
       local en = l.text
-      local rec = WFJ.SurfaceState.get(surface, "ui.L" .. i)
+      local held = WFJ.Modifier and WFJ.Modifier.isDown()
+      local rec = not anySecretOf(en) and not held and WFJ.SurfaceState.get(surface, "ui.L" .. i)
       if rec and rec.fs == l.fs and rec.applied ~= nil and rec.applied == en then en = rec.en end
+      if anySecretOf(en) then en = "" end -- a line the client hides is never read
       if en ~= "" then
         key, args = index:matchOnly(en, COMPARE_KEYS)
         if key == "ITEM_DELTA_DESCRIPTION" or key == "ITEM_DELTA_MULTIPLE_COMPARISON_DESCRIPTION" then

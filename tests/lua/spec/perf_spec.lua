@@ -109,6 +109,31 @@ describe("Core/Perf", function()
     assert.are.equal("b 1 5.0 5.0 30 | a 1 1.0 1.0 0", P.summary(10))
   end)
 
+  it("keeps the idle.* labels out of the trail, in the totals; a frame of idle work alone adds no line", function()
+    local P, _, w = fresh()
+    call(P, w, "idle.watch.event", 1)
+    call(P, w, "items", 1)
+    w.frame = 2
+    call(P, w, "idle.textwatch", 1)
+    w.frame = 3
+    call(P, w, "items", 1)
+    P.flush()
+    assert.are.same({ "items", "items" }, w.trail)
+    local labels = {}
+    for _, r in ipairs(P.report(10)) do labels[r.label] = r.calls end
+    assert.are.same({ 1, 1 }, { labels["idle.watch.event"], labels["idle.textwatch"] })
+  end)
+
+  it("switched off, nothing is timed or kept; switched on again, it times again", function()
+    local P, _, w = fresh()
+    P.setEnabled(false)
+    call(P, w, "items", 3)
+    assert.are.same({}, P.report(10))
+    P.setEnabled(true)
+    call(P, w, "items", 3)
+    assert.are.equal(1, P.report(10)[1].calls)
+  end)
+
   it("does nothing without its clock, and a stop with no start is ignored", function()
     local ns = {}
     H.loadPure("Core/Perf.lua", "WoWForeverJapanese", ns)

@@ -16,6 +16,7 @@ local UI = {
   INVTYPE_WEAPONMAINHAND = { "Main Hand", "メインハンド" },
   ARMOR_TEMPLATE = { "%s Armor", "アーマー %s" },
   ITEM_MOD_DAMAGE_PER_SECOND_SHORT = { "damage per second", "秒間ダメージ" },
+  EQUIPPED = { "Equipped", "装備中" },
   ["SpellItemEnchantment:387"] = { "+17 Armor", "アーマー +17" }, -- an enchantment's whole text
 }
 local DATA = {
@@ -228,6 +229,57 @@ describe("UI/Tooltip comparison lines and the max-usable-level trailer", functio
       Stub.keys.alt = false; WFJ.Modifier.refresh()
       assert.are.equal("秒間ダメージ " .. GREEN .. "+7.5|r", left(6))
       assert.are.equal("メインハンド", left(3))
+    end)
+
+    -- the "Equipped" tab: SetItemTooltip writes it before ProcessInfo (tooltipcomparisonmanager.lua:241-247)
+    local function withHeader(over)
+      if not tt.CompareHeader then tt.CompareHeader = { Label = Stub.fontString("") } end
+      tt.CompareHeader.Label:SetText("Equipped")
+      rebuild(over)
+    end
+
+    it("the Equipped tab stays Japanese when a full item pass runs on lines whose left side did not change",
+      function()
+        withHeader()
+        withHeader()
+        assert.are.equal("装備中", tt.CompareHeader.Label:GetText())
+        withHeader({ [3] = { "Main Hand", "One-Hand" } }) -- only the right-hand text: a full item pass
+        assert.are.equal(2, full)
+        assert.are.equal("装備中", tt.CompareHeader.Label:GetText())
+      end)
+
+    it("the Equipped tab stays Japanese on a comparison with no stat changes", function()
+      tt.CompareHeader = { Label = Stub.fontString("") }
+      local function plain(right)
+        tt.CompareHeader.Label:SetText("Equipped")
+        Stub.setItemTooltip(tt, LINK, { "Currently Equipped", "Axe", { "Main Hand", right } })
+        tt:SetShown(true)
+        tt:SetShown(true)
+      end
+      plain("Two-Hand")
+      plain("Two-Hand")
+      plain("One-Hand")
+      assert.are.equal(2, full)
+      assert.are.equal("装備中", tt.CompareHeader.Label:GetText())
+    end)
+
+    it("a show with the reveal key down before its refresh reaches this tooltip: English, in the client's face",
+      function()
+        rebuild()
+        Stub.keys.alt = true -- down; the modifier refresh has not walked this tooltip yet
+        tt:SetShown(true) -- the main tooltip's redraw in that refresh shows the comparison again
+        WFJ.Modifier.refresh()
+        assert.are.equal(GREEN .. "+7.5|r damage per second", left(6))
+        assert.are_not.equal(WFJ.Font.PATH, (_G.ShoppingTooltip1TextLeft6:GetFont()))
+      end)
+
+    it("an item, then a spell on the same tooltip without a hide, then the item again: Japanese again", function()
+      local ref = _G.ItemRefTooltip -- a chat link reuses it without hiding (itemref.lua:20-25)
+      Stub.setItemTooltip(ref, LINK, { "Axe", "Main Hand" })
+      assert.are.equal("メインハンド", _G.ItemRefTooltipTextLeft2:GetText())
+      Stub.setSpellTooltip(ref, 133, { "Fireball", "Hurls a fiery ball." })
+      Stub.setItemTooltip(ref, LINK, { "Axe", "Main Hand" })
+      assert.are.equal("メインハンド", _G.ItemRefTooltipTextLeft2:GetText())
     end)
 
     it("hidden in between: the next show is a full pass", function()

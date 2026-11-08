@@ -34,7 +34,8 @@ describe("Core/Diag", function()
     local D = fresh()
     local db = D.load(nil)
     D.log("blocked", "UseContainerItem()")
-    for i = 1, D.MAX_ENTRIES do D.log("slow", "surface" .. i) end
+    for i = 1, D.MAX_ENTRIES / 2 do D.log("slow", "surface" .. i) end
+    for i = 1, D.MAX_ENTRIES / 2 do D.log("perf", "session " .. i) end
     assert.are.equal("blocked", db.entries[1].kind)
     assert.are.equal(D.MAX_ENTRIES, #db.entries)
   end)

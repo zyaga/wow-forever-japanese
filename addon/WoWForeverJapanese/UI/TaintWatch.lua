@@ -477,8 +477,11 @@ function TaintWatch.init()
     local f = create("Frame")
     if type(f.RegisterAllEvents) == "function" then
       f:RegisterAllEvents()
-      f:SetScript("OnEvent",
-        WFJ.Perf.wrap("idle.watch.event", function(_, event, a1) TaintWatch.onEvent(event, a1) end))
+      -- the noisy events (combat log, power, every frame's kind) are turned away before any timing
+      f:SetScript("OnEvent", function(_, event, a1)
+        if TaintWatch.NOISY[event] or event:find("^CHAT_MSG_") then return end
+        WFJ.Perf.call("idle.watch.event", TaintWatch.onEvent, event, a1)
+      end)
     end
   end
   for _, fn in ipairs({ "ShowUIPanel", "HideUIPanel" }) do

@@ -10,7 +10,7 @@ local records = {} -- [surface] = { [key] = rec }
 -- widget → the record that last captured it. A widget belongs to at most one record (capture below), so this finds the
 -- record to take over without walking every surface's records on every write (in game that walk was the largest part
 -- of a tooltip line's write). Checked on use: a record dropped or released since no longer counts.
-local owners = setmetatable({}, { __mode = "k" })
+local owners = setmetatable({}, { __mode = "kv" }) -- weak both ways: `records` holds the live ones
 
 local function live(rec)
   local b = rec and records[rec.surface]
@@ -64,7 +64,7 @@ function SurfaceState.capture(surface, key, fs, en, meta)
   local now = readFont(fs)
   if carriedFont and now.path ~= carriedFont.path then -- the face only: a fit may have changed the size
     carriedFont = nil
-    origFont = now or origFont
+    if now.path ~= nil then origFont = now end -- a widget with no face yet keeps the one on record
   end
   rec = {
     surface = surface, key = key, fs = fs, en = en,
@@ -146,7 +146,6 @@ function SurfaceState.reapply(surface, key)
   return (SurfaceState.apply(surface, key, rec.last.text, rec.last.font))
 end
 
--- Restores every record of the surface that has text or a carried font applied, then drops them all.
 -- The client wrote the English again on a widget that showed our Japanese (a tooltip rebuilt with the same lines): the
 -- Japanese goes back as written last time, the font too when the client put its own back. → true when written
 function SurfaceState.rewrite(rec)
@@ -159,6 +158,7 @@ function SurfaceState.rewrite(rec)
   return true
 end
 
+-- Restores every record of the surface that has text or a carried font applied, then drops them all.
 -- Returns the number of records that needed a write.
 function SurfaceState.release(surface)
   local b = bucket(surface)

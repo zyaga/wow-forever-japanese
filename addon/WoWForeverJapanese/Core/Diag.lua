@@ -66,9 +66,10 @@ local function trim(list)
   local speech = 0
   for _, e in ipairs(list) do if e.kind == "speechline" then speech = speech + 1 end end
   while #list > Diag.MAX_ENTRIES do
-    -- timing samples go before blocks and taint: a session adds one per slow label, and the blocks are rarer
+    -- timing samples go before blocks and taint: a session adds one per slow label and one set of totals, and the
+    -- blocks are rarer
     local drop = oldest(list, function(e) return e.kind == "memory" end)
-      or oldest(list, function(e) return e.kind == "slow" end)
+      or oldest(list, function(e) return e.kind == "slow" or e.kind == "perf" end)
       or (speech > Diag.SPEECH_SHARE and oldest(list, function(e) return e.kind == "speechline" end))
       or oldest(list, function(e) return e.kind ~= "session" and e.kind ~= "speechline" end)
       or oldest(list, function(e) return e.kind ~= "session" end) or 1
