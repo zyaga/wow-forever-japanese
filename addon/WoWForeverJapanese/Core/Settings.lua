@@ -258,6 +258,13 @@ Settings.define{ id = "voice.books", kind = "boolean", default = true, hidden = 
 Settings.define{ id = "voice.errors", kind = "boolean", default = true, hidden = voiceHidden,
   label = "Your character's error lines (\"out of range\")", ja = "自分のキャラクターのエラー音声（「遠すぎる」など）",
   apply = voiceChanged }
+-- First time only (Core/Voice): a line already heard is not read aloud again when its window shows; its play button
+-- still reads it. Greetings repeat at every vendor and trainer visit, so they are heard once by default; quest lines
+-- play every time unless the player asks otherwise.
+Settings.define{ id = "voice.questOnce", kind = "boolean", default = false, hidden = voiceHidden,
+  label = "Quest lines: only the first time", ja = "クエストの音声は初回だけ", apply = voiceChanged }
+Settings.define{ id = "voice.greetingOnce", kind = "boolean", default = true, hidden = voiceHidden,
+  label = "NPC greetings: only the first time", ja = "NPCのあいさつは初回だけ", apply = voiceChanged }
 -- While a line plays the game's own English voice is turned off, and put back afterwards (UI/VoicePlayer).
 Settings.define{ id = "voice.muteDialog", kind = "boolean", default = true, hidden = voiceHidden,
   label = "Silence the game's English voices while a line plays",

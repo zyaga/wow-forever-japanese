@@ -302,6 +302,11 @@ function WFJ.OnLoad()
     setting = WFJ.Settings.get,
     revealed = WFJ.Modifier.isDown,
     enabled = function() return WFJ.State.enabled end,
+    heard = function() -- the lines already heard, for the first time only settings (keys and hashes, never text)
+      if type(WFJ_DB) ~= "table" then return nil end
+      if type(WFJ_DB.voiceHeard) ~= "table" then WFJ_DB.voiceHeard = {} end
+      return WFJ_DB.voiceHeard
+    end,
   }) end)
   step("voicequeue", function() WFJ.VoiceQueue.init(WFJ_DB) end)
   step("voiceplayer", function() WFJ.VoicePlayer.init(WFJ_DB) end)

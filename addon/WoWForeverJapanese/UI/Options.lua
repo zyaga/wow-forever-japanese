@@ -57,7 +57,8 @@ Options.PAGES = {
     sections = {
     { title = "section.voice", rows = { "voice.enabled", "voice.muteDialog", "voice.button" } },
     { title = "section.voiceKinds", columns = 2,
-      rows = { "voice.offer", "voice.progress", "voice.turnin", "voice.greeting", "voice.books", "voice.errors" } },
+      rows = { "voice.offer", "voice.progress", "voice.turnin", "voice.greeting", "voice.books", "voice.errors",
+        "voice.questOnce", "voice.greetingOnce" } },
   } },
   -- The voice panel's choices: a page of their own (a page does not scroll, and the Voice page is full).
   { id = "voicepanel", title = "page.voicePanel",

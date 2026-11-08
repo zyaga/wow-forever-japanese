@@ -9,6 +9,13 @@ local _, WFJ = ...
 local Voice = {}
 WFJ.Voice = Voice
 
+-- The kinds a "first time only" setting covers: the kind's own setting → the setting that keeps it to its first
+-- showing. Books are read once anyway.
+Voice.ONCE = {
+  ["voice.offer"] = "voice.questOnce", ["voice.progress"] = "voice.questOnce", ["voice.turnin"] = "voice.questOnce",
+  ["voice.greeting"] = "voice.greetingOnce",
+}
+
 -- every pack's addon folder starts with this; its files are read from its Sound folder
 Voice.FOLDER = "WoWForeverJapanese_Voice"
 Voice.FORMATS = { [1] = true, [2] = true } -- the Register.lua table shapes this file reads (ADR-061, ADR-062)
@@ -48,6 +55,8 @@ Voice.counts = zero()
 
 -- deps: lookup(kind, id) → { ja } | nil (the shipped Japanese, tokens unfilled), hash(text) → 16 hex,
 -- setting(id) → value, revealed() → bool (English showing: the reveal key held), enabled() → bool (translation on)
+-- heard() → the account's record of lines already heard, pack key → the Japanese hash they were heard with (saved
+-- variables; keys and hashes only), or nil
 function Voice.init(d)
   deps = d or {}
 end
@@ -187,7 +196,8 @@ end
 
 -- A line just shown in Japanese on `surface` under record key `recKey`, rendered as (kind, id), said by `who`.
 -- → the file's path and its length in seconds, or nil and why ("kind" · "off" · "english" · "nopack" · "missing" ·
--- "stale" · "notext"). `peek`: only asking (the replay button), so /wfj debug's counts are left as they are.
+-- "stale" · "notext" · "heard"). `peek`: only asking (the replay button), so /wfj debug's counts are left as they are;
+-- "ahead": only asking whether the line will play when its window opens (a line heard before will not).
 function Voice.decide(surface, recKey, kind, id, who, peek)
   local byKey = Voice.KINDS[surface]
   local kindSetting = byKey and (byKey[recKey] or (type(recKey) == "string" and byKey[(recKey:gsub("%d+$", ""))]))
@@ -209,6 +219,14 @@ function Voice.decide(surface, recKey, kind, id, who, peek)
   if type(deps.hash) ~= "function" or deps.hash(shipped.ja) ~= entry.jaHash then
     if not peek then Voice.counts.stale = Voice.counts.stale + 1 end
     return nil, "stale"
+  end
+  -- first time only: a line heard with this Japanese stays quiet; one rewritten since counts as new. Only asking (the
+  -- play button, the queue's re-check) is never stopped and never records.
+  local once = Voice.ONCE[kindSetting]
+  local seen = once and setting(once) and type(deps.heard) == "function" and deps.heard() or nil
+  if type(seen) == "table" and peek ~= true then
+    if seen[key] == entry.jaHash then return nil, "heard" end
+    if not peek then seen[key] = entry.jaHash end
   end
   if not peek then Voice.counts.matched = Voice.counts.matched + 1 end
   local file, seconds = fileFor(entry, who)
