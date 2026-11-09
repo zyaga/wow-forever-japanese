@@ -329,10 +329,8 @@ function Achievement.onComparisonRow(a, b)
   WFJ.Render.updateBanner(SURFACE)
 end
 
--- One pooled achievement row. Returns nothing.
-function Achievement.onAchievement(a, b)
-  local row = rowOf(a, b)
-  if not row then return end
+-- An achievement row's Track label, tooltips, title, description and reward. Returns nothing.
+local function showRow(row)
   local tracked = row.Tracked
   if type(tracked) == "table" then
     local label = WFJ.Labels.region(tracked, TRACK_KEY)
@@ -342,6 +340,23 @@ function Achievement.onAchievement(a, b)
   if type(row.Shield) == "table" then WFJ.HelpTooltip.register(row.Shield, SHIELD_TOOLTIP) end
   showText(rowKey(row), row)
   WFJ.Render.updateBanner(SURFACE)
+end
+
+-- The window also calls a row's own Init directly, with no ScrollBox callback: selecting or deselecting it
+-- (AchievementTemplateMixin:SetSelected, lua:1225–1226) and a criteria update on the selected row
+-- (AchievementFrameAchievements_OnCriteriaUpdate, lua:970–979). Init rewrites the English, so the first time a row
+-- is seen its own Init is post-hooked too (once per pooled row).
+local rowHooked = setmetatable({}, { __mode = "k" })
+
+-- One pooled achievement row. Returns nothing.
+function Achievement.onAchievement(a, b)
+  local row = rowOf(a, b)
+  if not row then return end
+  if not rowHooked[row] and type(row.Init) == "function" then
+    rowHooked[row] = true
+    hooksecurefunc(row, "Init", showRow)
+  end
+  showRow(row)
 end
 
 local hooked = false

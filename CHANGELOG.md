@@ -9,6 +9,9 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Fixed
+- Clicking a challenge on the Legacy board, or an achievement in the Achievement window, no longer turns its title and description English. They stay Japanese when the entry opens or closes, and when its progress updates.
+
 ## 0.12.0 - 2026-11-08
 
 ### Added
