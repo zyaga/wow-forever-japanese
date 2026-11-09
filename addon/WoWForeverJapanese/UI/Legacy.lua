@@ -28,7 +28,8 @@
 --     (blizzard_legacychallenges.lua:359–366);
 --   the challenge cards (ChallengesPage.DetailPane.ScrollBox, pooled LegacyChallengeTemplate): Tracked.Text
 --     TRACK_ACHIEVEMENT (blizzard_legacysystemtemplates.xml:76, 281), walked from the ScrollBox's initialized-frame
---     callback, keyed by widget. ADR-042: a card is an achievement row (LegacyChallengeTemplate inherits
+--     callback and from each card's own Init (post-hooked once: a click and a progress update re-init a card
+--     directly), keyed by widget. ADR-042: a card is an achievement row (LegacyChallengeTemplate inherits
 --     AchievementTemplateMixin:Init, blizzard_legacychallengebutton.lua:202; blizzard_achievementui.lua:1352, 1373):
 --     its Label and Description are the Achievement table's text, restricted to the achievement families
 --     (UI/Achievement.TEXT_FIELDS, textOnly); its Shield owns the reward tooltip, one line added by
@@ -198,6 +199,13 @@ end
 -- English, so the first time a card is seen its own Init is post-hooked too (once per pooled card).
 local cardHooked = setmetatable({}, { __mode = "k" })
 
+-- Runs inside the client's own Init (a click, a progress update): a failure here must not break the list, so it
+-- is caught and recorded instead of reaching the caller.
+local function showCardAfterInit(card)
+  local ok, err = pcall(showCard, card)
+  if not ok and WFJ.ErrorLog then WFJ.ErrorLog.recordCaught(err) end
+end
+
 -- One pooled challenge card after its initializer ran (ScrollUtil's initialized-frame callback: (owner, frame,
 -- elementData) for a new card, (frame, elementData) for the iterateExisting pass). Returns nothing: ForEachFrame
 -- stops at the first truthy return (see UI/Raid.onRow).
@@ -207,7 +215,7 @@ function Legacy.onCard(a, b)
   if type(card) ~= "table" then return end
   if not cardHooked[card] and type(card.Init) == "function" then
     cardHooked[card] = true
-    hooksecurefunc(card, "Init", showCard)
+    hooksecurefunc(card, "Init", showCardAfterInit)
   end
   showCard(card)
 end

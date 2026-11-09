@@ -448,13 +448,20 @@ describe("the achievement window's client-table text on Forever", function()
   it("a row the window re-inits directly (a click, a criteria update) stays Japanese", function()
     local row = CreateFrame("Button", "WFJTestAchievementRow")
     row.Label, row.Description, row.Reward = fs(), fs(), fs()
-    function row.Init(self, d) self.Label.text, self.Description.text, self.Reward.text = d.name, d.description, "" end
-    local data = { name = "Level 10", description = "Reach level 10." }
+    row.Tracked = CreateFrame("CheckButton")
+    row.Tracked:addRegion(fs())
+    function row.Init(self, d)
+      self.Label.text, self.Description.text, self.Reward.text = d.name, d.description, d.reward
+      self.Tracked:GetRegions().text = en("TRACK_ACHIEVEMENT")
+    end
+    local data = { name = "Level 10", description = "Reach level 10.", reward = "Reward: Tabard of the Explorer" }
     for _ = 1, 3 do _G.AchievementFrameAchievements.ScrollBox:initFrame(row, data, function(r, d) r:Init(d) end) end
     -- SetSelected and OnCriteriaUpdate call the row's own Init, no ScrollBox callback (lua:976, 1225–1226)
     row:Init(data)
     assert.are.equal("レベル10", row.Label:GetText())
     assert.are.equal("レベル10に到達する。", row.Description:GetText())
+    assert.are.equal("報酬: 探検家のタバード", row.Reward:GetText())
+    assert.are.equal("追跡", row.Tracked:GetRegions():GetText())
     assert.are.equal(1, #Stub.hooks["WFJTestAchievementRow:Init"]) -- one hook however often the row is seen
   end)
 

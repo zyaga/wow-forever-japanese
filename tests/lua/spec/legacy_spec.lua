@@ -288,7 +288,10 @@ describe("the Legacy window's client-table text", function()
     assert.are.equal("モルテンコアでラグナロスを倒す。", c.Description:GetText())
     alt(true)
     assert.are.equal("Slay Ragnaros", c.Label:GetText())
+    c:Init(data) -- re-inited while the reveal key is held: English stays until the key is released
+    assert.are.equal("Slay Ragnaros", c.Label:GetText())
     alt(false)
+    assert.are.equal("ラグナロスを倒す", c.Label:GetText())
     assert.are.equal(1, #Stub.hooks["WFJTestCard:Init"]) -- one hook however often the card is seen
   end)
 

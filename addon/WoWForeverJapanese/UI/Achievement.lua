@@ -57,7 +57,8 @@
 -- The achievement text itself (ADR-042), from the client tables, each widget restricted to its families
 -- (AchievementTitle / AchievementDescription / AchievementReward; AchievementCategory):
 --   an achievement row's Label, Description and Reward (AchievementTemplateMixin:Init, lua:1352, 1373, 1764; the
---     HiddenDescription the client only measures is left as written);
+--     HiddenDescription the client only measures is left as written), after the ScrollBox's callback and after
+--     each direct Init (the row's own Init post-hooked once);
 --   a category row's Button.Label (lua:596; ACHIEVEMENT_SUMMARY_CATEGORY as before);
 --   the Statistics rows (AchievementStatTemplateMixin:Init, lua:2339–2400): a header's Title (a category name) and a
 --     statistic's own text (an achievement title, self:SetText), AchievementFrameStats.ScrollBox;
@@ -348,13 +349,20 @@ end
 -- is seen its own Init is post-hooked too (once per pooled row).
 local rowHooked = setmetatable({}, { __mode = "k" })
 
+-- Runs inside the client's own Init (a click, a progress update): a failure here must not break the list, so it
+-- is caught and recorded instead of reaching the caller.
+local function showRowAfterInit(row)
+  local ok, err = pcall(showRow, row)
+  if not ok and WFJ.ErrorLog then WFJ.ErrorLog.recordCaught(err) end
+end
+
 -- One pooled achievement row. Returns nothing.
 function Achievement.onAchievement(a, b)
   local row = rowOf(a, b)
   if not row then return end
   if not rowHooked[row] and type(row.Init) == "function" then
     rowHooked[row] = true
-    hooksecurefunc(row, "Init", showRow)
+    hooksecurefunc(row, "Init", showRowAfterInit)
   end
   showRow(row)
 end
