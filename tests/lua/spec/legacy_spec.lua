@@ -272,6 +272,29 @@ describe("the Legacy window's client-table text", function()
     assert.are.equal("Close", other.Description:GetText())
   end)
 
+  it("a challenge card the board re-inits directly (a click, a progress update) stays Japanese", function()
+    local box = _G.LegacySystemFrame.ChallengesPage.DetailPane.ScrollBox
+    local c = CreateFrame("Button", "WFJTestCard")
+    c.Label, c.Description = fs(), fs()
+    -- LegacyChallengeTemplateMixin:Init → AchievementTemplateMixin:Init writes the English (lua:1352, 1373)
+    function c.Init(self, d) self.Label.text, self.Description.text = d.name, d.description end
+    local data = { name = "Slay Ragnaros", description = "Defeat Ragnaros in Molten Core." }
+    for _ = 1, 3 do box:initFrame(c, data, function(x, d) x:Init(d) end) end
+    assert.are.equal("ラグナロスを倒す", c.Label:GetText())
+    -- SetSelected and UpdateChallenge call the card's own Init, no ScrollBox callback (lua:1225–1226;
+    -- blizzard_legacychallengedetailpane.lua:66–70)
+    c:Init(data)
+    assert.are.equal("ラグナロスを倒す", c.Label:GetText())
+    assert.are.equal("モルテンコアでラグナロスを倒す。", c.Description:GetText())
+    alt(true)
+    assert.are.equal("Slay Ragnaros", c.Label:GetText())
+    c:Init(data) -- re-inited while the reveal key is held: English stays until the key is released
+    assert.are.equal("Slay Ragnaros", c.Label:GetText())
+    alt(false)
+    assert.are.equal("ラグナロスを倒す", c.Label:GetText())
+    assert.are.equal(1, #Stub.hooks["WFJTestCard:Init"]) -- one hook however often the card is seen
+  end)
+
   it("a card's shield tooltip shows the reward line in Japanese", function()
     local c = card({ name = "Slay Ragnaros", description = "" })
     local tt = _G.GameTooltip

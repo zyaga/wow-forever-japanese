@@ -28,7 +28,8 @@
 --     (blizzard_legacychallenges.lua:359–366);
 --   the challenge cards (ChallengesPage.DetailPane.ScrollBox, pooled LegacyChallengeTemplate): Tracked.Text
 --     TRACK_ACHIEVEMENT (blizzard_legacysystemtemplates.xml:76, 281), walked from the ScrollBox's initialized-frame
---     callback, keyed by widget. ADR-042: a card is an achievement row (LegacyChallengeTemplate inherits
+--     callback and from each card's own Init (post-hooked once: a click and a progress update re-init a card
+--     directly), keyed by widget. ADR-042: a card is an achievement row (LegacyChallengeTemplate inherits
 --     AchievementTemplateMixin:Init, blizzard_legacychallengebutton.lua:202; blizzard_achievementui.lua:1352, 1373):
 --     its Label and Description are the Achievement table's text, restricted to the achievement families
 --     (UI/Achievement.TEXT_FIELDS, textOnly); its Shield owns the reward tooltip, one line added by
@@ -177,13 +178,8 @@ function Legacy.onPointsBar()
   return WFJ.Labels.show(SURFACE, "pointsBar", type(bar) == "table" and bar.Text or nil, nil, POINTS_BAR)
 end
 
--- One pooled challenge card after its initializer ran (ScrollUtil's initialized-frame callback: (owner, frame,
--- elementData) for a new card, (frame, elementData) for the iterateExisting pass). Returns nothing: ForEachFrame
--- stops at the first truthy return (see UI/Raid.onRow).
-function Legacy.onCard(a, b)
-  local card = a
-  if a == Legacy then card = b end
-  if type(card) ~= "table" then return end
+-- A challenge card's Track label, title, description and reward tooltip. Returns nothing.
+local function showCard(card)
   local text = type(card.Tracked) == "table" and card.Tracked.Text or nil
   if type(text) == "table" then WFJ.Labels.show(SURFACE, cardKey(text), text, nil, TRACKED) end
   local only = WFJ.Achievement.textOnly() -- the challenge's title and description
@@ -194,6 +190,34 @@ function Legacy.onCard(a, b)
     WFJ.HelpTooltip.register(card.Shield, WFJ.Labels.families("AchievementReward"))
   end
   WFJ.Render.updateBanner(SURFACE)
+end
+
+-- The board also calls a card's own Init directly, with no ScrollBox callback: selecting or deselecting it
+-- (AchievementTemplateMixin:SetSelected, blizzard_achievementui/mainline/blizzard_achievementui.lua:1225–1226,
+-- through the selection behavior AchievementFrameAchievements_OnLoad gives the detail pane,
+-- blizzard_legacychallengedetailpane.lua:6) and on a progress update (UpdateChallenge, :66–70). Init rewrites the
+-- English, so the first time a card is seen its own Init is post-hooked too (once per pooled card).
+local cardHooked = setmetatable({}, { __mode = "k" })
+
+-- Runs inside the client's own Init (a click, a progress update): a failure here must not break the list, so it
+-- is caught and recorded instead of reaching the caller.
+local function showCardAfterInit(card)
+  local ok, err = pcall(showCard, card)
+  if not ok and WFJ.ErrorLog then WFJ.ErrorLog.recordCaught(err) end
+end
+
+-- One pooled challenge card after its initializer ran (ScrollUtil's initialized-frame callback: (owner, frame,
+-- elementData) for a new card, (frame, elementData) for the iterateExisting pass). Returns nothing: ForEachFrame
+-- stops at the first truthy return (see UI/Raid.onRow).
+function Legacy.onCard(a, b)
+  local card = a
+  if a == Legacy then card = b end
+  if type(card) ~= "table" then return end
+  if not cardHooked[card] and type(card.Init) == "function" then
+    cardHooked[card] = true
+    hooksecurefunc(card, "Init", showCardAfterInit)
+  end
+  showCard(card)
 end
 
 -- One pooled category row: its header text is a category name. Returns nothing.
