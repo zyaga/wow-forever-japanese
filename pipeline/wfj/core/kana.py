@@ -287,8 +287,10 @@ def apply_readings(ja: str, words: Sequence[Sequence[str]]) -> str | None:
 
 
 def name_kana(line: Mapping[str, Any]) -> str:
-    """A name as the voice reads it: its katakana when the Japanese is all katakana, else its reading."""
-    return line["ja"] if names.KATAKANA.match(line["ja"]) else line["reading"]
+    """A name as the voice reads it: katakana kept as written, the rest from its reading."""
+    if names.KATAKANA.match(line["ja"]):
+        return line["ja"]
+    return names.spoken(line["ja"], line["reading"]) or line["reading"]
 
 
 def replace_names(text: str, lookup: Callable[[str], str | None]) -> tuple[str, list[str]]:
@@ -342,6 +344,8 @@ def build(
     # names first: a name can hold digits ("NG-5"), and its Japanese reading has none left to spell
     text, missing = replace_names(text, lookup)
     text = spell_numbers(text)
+    # a comma between English names ("Arcanology, Alchemy") or one left in the prose: a Japanese pause
+    text = re.sub(r"[,，] ?", "、", text)
     problems = [f"no Japanese name for {m!r}" for m in missing]
     left = sorted(set(_LEFTOVER.findall(text)) - set("".join(missing)))
     if left:

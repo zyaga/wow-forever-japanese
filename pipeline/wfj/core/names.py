@@ -17,7 +17,8 @@ Pure: no disk.
 from __future__ import annotations
 
 import re
-from collections.abc import Iterable, Mapping
+from collections.abc import Callable, Iterable, Mapping
+from itertools import groupby
 from typing import Any
 
 from wfj.core import model
@@ -32,6 +33,13 @@ _ASCII_LETTER = re.compile(r"[A-Za-z]")
 _READING = re.compile(r"^[ぁ-ゖー・]+$")
 KATAKANA = re.compile(r"^[ァ-ヺー・]+$")
 _WORD_SPLIT = re.compile(r"[ \-]+")
+# How a name's Japanese is read against its reading: kana is read as written (katakana as its hiragana),
+# punctuation may be read or left out, and a run of anything else (kanji, digits) takes the reading between.
+_PUNCT = " ・、。,.:：;；（）()…「」『』！？!?〜～-‐'’\"／/＆&＋+"
+_KANJI_WORD = re.compile(r"^[㐀-䶿一-鿿々〆ヶ]{2,}$")
+_PARTICLE = "のをにがはへとでやも"
+_VOICED = str.maketrans("かきくけこさしすせそたちつてとはひふへほ", "がぎぐげござじずぜぞだぢづでどばびぶべぼ")
+_HALF_VOICED = str.maketrans("はひふへほ", "ぱぴぷぺぽ")
 
 # Markup a shipped line can hold, removed before its Latin runs are read: player tokens, server codes,
 # colour and link escapes, texture escapes, format placeholders (%s, %d).
@@ -59,6 +67,93 @@ def name_id(en: str) -> str:
 def hiragana(text: str) -> str:
     """Katakana to hiragana; the long-vowel mark, the middle dot and everything else unchanged."""
     return "".join(chr(ord(c) - 0x60) if "ァ" <= c <= "ヶ" else c for c in text)
+
+
+def _part_kind(c: str) -> str:
+    if c == "ー" or ("ァ" <= c <= "ヴ" and c not in "ヵヶ"):
+        return "katakana"
+    if "ぁ" <= c <= "ゖ":
+        return "hiragana"
+    return "punct" if c in _PUNCT else "other"
+
+
+def _parts(ja: str) -> list[tuple[str, str]]:
+    return [(kind, "".join(g)) for kind, g in groupby(ja, _part_kind)]
+
+
+def _part_pattern(kind: str, text: str) -> str:
+    if kind in ("katakana", "hiragana"):
+        return re.escape(hiragana(text))
+    return f"(?:[{re.escape(_PUNCT)}]|ぷらす)*" if kind == "punct" else ".+?"  # "+" may be read aloud
+
+
+def align(ja: str, reading: str) -> list[tuple[str, str]] | None:
+    """[(part of the Japanese, its reading)], or None when the reading does not fit the name: every kana part
+    must be read as written (a typo such as ノスリ read すのり does not fit)."""
+    parts = _parts(ja)
+    m = re.fullmatch("".join(f"({_part_pattern(k, t)})" for k, t in parts), reading)
+    return [(t, r) for (_, t), r in zip(parts, m.groups(), strict=True)] if m else None
+
+
+def spoken(ja: str, reading: str) -> str | None:
+    """The name as the voice reads it: its katakana kept as written, the rest from its reading (マスター整備士
+    キャストパイプ → マスターせいびしキャストパイプ), so a word is spelled one way wherever it is said."""
+    parts = align(ja, reading)
+    if parts is None:
+        return None
+    return "".join(t if _part_kind(t[0]) == "katakana" else r for t, r in parts)
+
+
+def _sound_forms(reading: str) -> set[str]:
+    """A word's reading as it can sound inside a longer name: its first sound voiced (つめ → かぎづめ), its
+    last つ, く or ち doubled (いつ → いっ)."""
+    out = {reading}
+    first, rest = reading[:1], reading[1:]
+    for table in (_VOICED, _HALF_VOICED):
+        out.add(first.translate(table) + rest)
+    out |= {r[:-1] + "っ" for r in list(out) if r.endswith(("つ", "く", "ち"))}
+    return out
+
+
+def _kanji_words(ja: str, known: Callable[[str], Iterable[str] | None]) -> list[tuple[str, str | None]]:
+    """[(text, word)] over the name's parts: `word` is set where the text is a word of two or more kanji (with
+    its okurigana) that `known` reads. A word right after katakana is left alone (ライ麦酒 is ライ麦 + 酒)."""
+    parts, out, i = _parts(ja), [], 0
+    while i < len(parts):
+        kind, text = parts[i]
+        after = parts[i + 1] if i + 1 < len(parts) else ("", "")
+        word = None
+        if kind == "other" and _KANJI_WORD.match(text) and (not i or parts[i - 1][0] != "katakana"):
+            if after[0] == "hiragana" and known(text + after[1]):
+                word = text + after[1]
+            elif known(text) and (after[0] != "hiragana" or after[1][0] in _PARTICLE):
+                word = text
+        out.append((word or text, word))
+        i += 2 if word and word != text else 1
+    return out
+
+
+def kanji_word_problem(ja: str, reading: str, known: Callable[[str], Iterable[str] | None]) -> str | None:
+    """A problem naming each word of two or more kanji that `known` reads in the prose and this name reads
+    some other way. A name whose reading does not fit it at all is left to `line_problems`."""
+    if align(ja, reading) is None:
+        return None
+    pieces = _kanji_words(ja, known)
+
+    def fits(word_at: int) -> bool:
+        pattern = ""
+        for n, (text, word) in enumerate(pieces):
+            if n == word_at and word:
+                forms = set().union(*(_sound_forms(r) for r in known(word) or ()))
+                pattern += "(?:" + "|".join(map(re.escape, sorted(forms, key=len, reverse=True))) + ")"
+            else:
+                pattern += "".join(_part_pattern(k, t) for k, t in _parts(text))
+        return re.fullmatch(pattern, reading) is not None
+
+    wrong = [word for n, (_, word) in enumerate(pieces) if word and not fits(n)]
+    if not wrong:
+        return None
+    return "reads " + ", ".join(f"{w} unlike the quest text ({'/'.join(sorted(known(w) or ()))})" for w in wrong)
 
 
 def has_latin(text: str) -> bool:
@@ -193,6 +288,8 @@ def line_problems(line: Any) -> list[str]:
             out.append(f"reading {reading!r} is not hiragana")
         elif isinstance(ja, str) and KATAKANA.match(ja) and reading != hiragana(ja):
             out.append(f"reading {reading!r} is not the hiragana of {ja!r}")
+        elif isinstance(ja, str) and align(ja, reading) is None:
+            out.append(f"reading {reading!r} does not fit {ja!r} (its kana is read as written)")
     return out + _provenance_problems(line["provenance"])
 
 
@@ -248,6 +345,19 @@ def case_problems(lines: Iterable[Mapping[str, Any]]) -> list[str]:
         " / ".join(f"{ln['en']!r} {ln['ja']!r}" for ln in g) + ": one name, read one way"
         for g in case_groups(lines)
     ]
+
+
+def reading_problems(
+    lines: Iterable[Mapping[str, Any]], known: Callable[[str], Iterable[str] | None]
+) -> list[str]:
+    """Names that read a kanji word otherwise than the quest and NPC text does: a word reads one way."""
+    out = []
+    for ln in lines:
+        if ln["status"] == "trusted":
+            p = kanji_word_problem(ln["ja"], ln["reading"], known)
+            if p:
+                out.append(f"{ln['en']!r} → {ln['ja']!r} {ln['reading']!r}: {p}")
+    return out
 
 
 def spelling_problems(lines: Iterable[Mapping[str, Any]], words: Iterable[Mapping[str, Any]]) -> list[str]:

@@ -374,6 +374,20 @@ def import_words(
     return written, rejected
 
 
+def prose_readings(root: Path) -> dict[str, set[str]]:
+    """{word with kanji: its readings} from every reading record (quest, NPC, interface and book text), as
+    written and in its dictionary form. Names are held to them: a word reads one way."""
+    out: dict[str, set[str]] = defaultdict(set)
+    rstore = Store(root / "reading")
+    for type_ in ("quest", "gossip", "ui", "book"):
+        for rec in rstore.load(type_):
+            for w in rec.get("words") or ():
+                for word, reading in zip(w[0:4:2], w[1:4:2], strict=False):
+                    if word != reading:
+                        out[word].add(reading)
+    return out
+
+
 def problems(root: Path) -> list[str]:
     lines, words = load_lines(root), load_words(root)
     out = [f"name {ln.get('en')!r}: {p}" for ln in lines for p in names.line_problems(ln)]
@@ -395,6 +409,7 @@ def problems(root: Path) -> list[str]:
     if not out:
         out.extend(f"name spelling: {p}" for p in names.spelling_problems(lines, words))
         out.extend(f"name case: {p}" for p in names.case_problems(lines))
+        out.extend(f"name reading: {p}" for p in names.reading_problems(lines, prose_readings(root).get))
     return out
 
 
