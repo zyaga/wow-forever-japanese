@@ -169,7 +169,7 @@ WFJ.Data.add("name", {
   ["097ada8c2b8cd8dc"] = { "運命", "うんめい", "Fate" },
   ["097adc1e2b8d3888"] = { "子鹿", "こじか", "Fawn" },
   ["097b3034d31b82d9"] = { "歩みなき道", "あゆみなきみち", "Path of no Steps" },
-  ["097bdd043b6b8a3a"] = { "臓腑裂く恐怖", "ぞうふさくきょうふ", "Fear" },
+  ["097bdd043b6b8a3a"] = { "恐怖", "きょうふ", "Fear" },
   ["097bdf023b6c09b0"] = { "給餌", "きゅうじ", "Feed" },
   ["097be2943b6ce8d4"] = { "フェラ", "ふぇら", "Fela" },
   ["097c3d13fc1b46f0"] = { "型紙：獣癒しの適応の手首鎖", "かたがみけものいやしのてきおうのてくびぐさり", "Pattern: Beastmender's Adaptive Wristlinks" },

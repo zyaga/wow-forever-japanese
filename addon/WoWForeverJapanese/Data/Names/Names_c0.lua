@@ -152,7 +152,7 @@ WFJ.Data.add("name", {
   ["c09aefced21113f8"] = { "サンダーエールの樽", "さんだーえーるのたる", "barrel of Thunder Ale" },
   ["c09b59d41dbde702"] = { "ストローム", "すとろーむ", "Strom" },
   ["c09bdfe6f836548c"] = { "処刑人の鍵", "しょけいにんのかぎ", "Executioner's Key" },
-  ["c09c1cc929a533b7"] = { "足が！", "あしが", "Stuck" },
+  ["c09c1cc929a533b7"] = { "足止め", "あしどめ", "Stuck" },
   ["c09c1d5a29a553a6"] = { "研究", "けんきゅう", "Study" },
   ["c09e2983a7eba057"] = { "スターグレイド長老", "すたーぐれいどちょうろう", "Elder Starglade" },
   ["c09ee833388b8a55"] = { "サスラの霊", "さすらのれい", "Spirit of Sathrah" },

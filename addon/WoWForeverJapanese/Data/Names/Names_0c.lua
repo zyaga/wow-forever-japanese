@@ -117,7 +117,7 @@ WFJ.Data.add("name", {
   ["0c75c1556df5d5d9"] = { "番人スティルギス", "ばんにんすてぃるぎす", "Warder Stilgiss" },
   ["0c79970eee8803e9"] = { "スピリットチェイサーの杖", "すぴりっとちぇいさーのつえ", "Spiritchaser Staff" },
   ["0c79e3eef9d3ddbe"] = { "変身：悪魔の咆哮", "へんしんあくまのほうこう", "Metamorphosis : Demonic Howl" },
-  ["0c79ea959a21b0b2"] = { "消耗戦", "しょうもうせん", "Exhaustion" },
+  ["0c79ea959a21b0b2"] = { "疲労困憊", "ひろうこんぱい", "Exhaustion" },
   ["0c7cf8b7a67f694e"] = { "野生の力", "やせいのちから", "Power of the Wild" },
   ["0c81a021af26575d"] = { "マーガルフ・ブラゴン", "まーがるふ・ぶらごん", "Margulf Blaggon" },
   ["0c8299d4dd8e70cd"] = { "求む：ドワーフ！", "もとむどわーふ", "Wanted: DWARVES!" },

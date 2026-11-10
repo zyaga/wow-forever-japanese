@@ -142,12 +142,17 @@ def check_paths(repo: Path) -> list[str]:
     return problems
 
 
+def _is_data(f: str) -> bool:
+    """Game text: data/ and the name tables generated from it, which carry the game's names verbatim."""
+    return f.startswith(("data/", "addon/WoWForeverJapanese/Data/Names/"))
+
+
 def _content_of(repo: Path, f: str, rules: pt.PrivateRules) -> list[str]:
     problems = [f"{f}: file name: {rule}" for rule in pt.path_hits(f, rules=rules)]
     text = None if f in CONTENT_EXEMPT else _read_text(repo / f)
     if text is not None:
         hits = pt.content_hits(
-            text, in_data=f.startswith("data/"), first_name=f not in FIRST_NAME_EXEMPT, rules=rules
+            text, in_data=_is_data(f), first_name=f not in FIRST_NAME_EXEMPT, rules=rules
         )
         problems += [f"{f}:{h.line}: {h.rule}: {h.text}" for h in hits]
     return problems

@@ -99,7 +99,7 @@ WFJ.Data.add("name", {
   ["d770118fed644958"] = { "不屈の者の牙", "ふくつのもののきば", "Tusks of the Unbroken" },
   ["d771927841078c7c"] = { "種の包みの栽培", "たねのつつみのさいばい", "Cultivate Packet of Seeds" },
   ["d772013edce65ff9"] = { "ファラン・サイレントブレード", "ふぁらん・さいれんとぶれーど", "Fahran Silentblade" },
-  ["d772a77c2ef4082e"] = { "虎気功", "こきこう", "Charging" },
+  ["d772a77c2ef4082e"] = { "突進", "とっしん", "Charging" },
   ["d773a7fdcfae2637"] = { "ブラッドフェン・ラプター", "ぶらっどふぇん・らぷたー", "Bloodfen Raptor" },
   ["d773be4978a2e14b"] = { "スカイボーン", "すかいぼーん", "skyborne" },
   ["d77572936f016cb8"] = { "冬の鎧", "ふゆのよろい", "Hibernal Armor" },

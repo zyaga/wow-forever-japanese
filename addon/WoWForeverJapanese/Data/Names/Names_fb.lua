@@ -8,7 +8,7 @@ WFJ.Data.add("name", {
   ["fb046730df89678e"] = { "焼夷の激突", "しょういのげきとつ", "Incendiary Crash" },
   ["fb04b52240ee097d"] = { "テンプラーの防壁", "てんぷらーのぼうへき", "Templar's Bulwark" },
   ["fb08e297ffc57a8c"] = { "エメリスのオーラ", "えめりすのおーら", "Emeriss Aura" },
-  ["fb09538dd1d7f1fc"] = { "憤怒のセルドリン", "ふんぬのせるどりん", "Theldurin the Lost" },
+  ["fb09538dd1d7f1fc"] = { "迷えるセルドリン", "まよえるせるどりん", "Theldurin the Lost" },
   ["fb0b07a03bb39ffd"] = { "ビーストマスターの腕帯", "びーすとますたーのうでおび", "Beastmaster's Bindings" },
   ["fb0c25627d0681ae"] = { "リブラム：知恵の印", "りぶらむちえのしるし", "Libram: Seal of Wisdom" },
   ["fb0c4ad7dfa5bf53"] = { "水晶の注がれし肉切り包丁", "すいしょうのそそがれしにくきりぼうちょう", "Crystal-Infused Cleaver" },

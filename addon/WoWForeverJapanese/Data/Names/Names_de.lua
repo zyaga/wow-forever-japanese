@@ -51,7 +51,7 @@ WFJ.Data.add("name", {
   ["de3779e5fc8a897a"] = { "ジェイーヴィーの物体召喚", "じぇいーゔぃーのぶったいしょうかん", "J'eevee summons object" },
   ["de37a278d7417592"] = { "ブラッドメイジ・ドラジアル", "ぶらっどめいじ・どらじある", "Bloodmage Drazial" },
   ["de386c62c4c27e73"] = { "家禽の精密（弓）：自動射撃", "かきんのせいみつゆみじどうしゃげき", "Poultry Precision (Bows) - Auto Shot" },
-  ["de3af863e636b70a"] = { "珍重安康", "ちんちょうあんこう", "Precious" },
+  ["de3af863e636b70a"] = { "プレシャス", "ぷれしゃす", "Precious" },
   ["de3f6fd9781842ba"] = { "轟く声", "とどろくこえ", "Booming Voice" },
   ["de439b8b2a04354f"] = { "霊体の暗殺者召喚", "れいたいのあんさつしゃしょうかん", "Summon Spectral Assassin" },
   ["de4417c6e3b7d4e1"] = { "まだらのスクリーチャー", "まだらのすくりーちゃー", "Mottled Screechers" },

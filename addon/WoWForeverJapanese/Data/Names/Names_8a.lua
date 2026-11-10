@@ -175,7 +175,7 @@ WFJ.Data.add("name", {
   ["8ac7d21a998fc275"] = { "フィズボルトのおしゃれな中折れ帽", "ふぃずぼるとのおしゃれななかおれぼう", "Fizzbolt's Fashionable Fedora" },
   ["8ac93aa466427dd5"] = { "くしゃくしゃの地図", "くしゃくしゃのちず", "Crumpled Map" },
   ["8ac9e099da4061f1"] = { "レドン", "れどん", "Reddon" },
-  ["8acb1b7708dec772"] = { "元帥の勝鬨", "げんすいのかちどき", "Rallying Cry" },
+  ["8acb1b7708dec772"] = { "鼓舞の雄叫び", "こぶのおたけび", "Rallying Cry" },
   ["8acc283e8273b9a5"] = { "春夏の朝", "はるなつのあさ", "Spring/Summer Morning" },
   ["8acd5193f5deca22"] = { "鎖帷子の戦闘用肩鎧", "くさりかたびらのせんとうようかたよろい", "Mail Combat Spaulders" },
   ["8ace72cada8f98a1"] = { "アーケイナイトのブイ召喚", "あーけいないとのぶいしょうかん", "Summon Arcanite Buoy DND" },

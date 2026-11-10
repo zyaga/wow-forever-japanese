@@ -267,7 +267,7 @@ WFJ.Data.add("name", {
   ["02eb0e0f15eaf18b"] = { "ギザギザのラプトルの鉤爪", "ぎざぎざのらぷとるのかぎづめ", "Serrated Raptor Claw" },
   ["02ec5dcafed19486"] = { "ナサノス", "なさのす", "Nathanos" },
   ["02ecf4e4e8a92052"] = { "大いなるフィヨルデューン", "おおいなるふぃよるでゅーん", "Fjordune the Greater" },
-  ["02ed46afe25c5013"] = { "はじける腐汁", "はじけるふじゅう", "Living Rot" },
+  ["02ed46afe25c5013"] = { "生ける腐敗", "いけるふはい", "Living Rot" },
   ["02ee68c79c99ee50"] = { "カーゼンの拠点", "かーぜんのきょてん", "Kurzen Compound" },
   ["02f16acd9daed915"] = { "盗まれたフリーウィンドの物資", "ぬすまれたふりーうぃんどのぶっし", "Stolen Freewind Supplies" },
   ["02f19ccfbc6d3648"] = { "ヴァラダー・スターソング", "ゔぁらだー・すたーそんぐ", "Valadar Starsong" },

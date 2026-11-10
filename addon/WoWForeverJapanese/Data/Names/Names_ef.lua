@@ -150,7 +150,7 @@ WFJ.Data.add("name", {
   ["efa27d6d6e4ff8db"] = { "干し首", "ほしくび", "shrunken head" },
   ["efa2c66262409108"] = { "トーテム強化", "とーてむきょうか", "Enhancing Totems" },
   ["efa2fcf49ae2a437"] = { "アキールの祠", "あきーるのほこら", "Shrine of Akir" },
-  ["efa3066a3bca3952"] = { "押忍！海の男飯", "おすうみのおとこめし", "Savory Deviate Delight" },
+  ["efa3066a3bca3952"] = { "変異魚の絶品料理", "へんいぎょのぜっぴんりょうり", "Savory Deviate Delight" },
   ["efa3ac474414d19c"] = { "ナイトの雷光の革のチュニック", "ないとのらいこうのかわのちゅにっく", "Knight's Crackling Leather Tunic" },
   ["efa6b3126eeb0ec9"] = { "炸裂弾", "さくれつだん", "Explosive Shells" },
   ["efa6b5ab3beb4b4e"] = { "チャンピオンのドレッドウィーヴの頭巾", "ちゃんぴおんのどれっどうぃーゔのずきん", "Champion's Dreadweave Cowl" },

@@ -64,7 +64,7 @@ WFJ.Data.add("name", {
   ["e046755bd7bbecc9"] = { "悪夢の侵攻：ヒンターランドの任務15", "あくむのしんこうひんたーらんどのにんむじゅうご", "Nightmare Incursions: Hinterlands Mission XV" },
   ["e046df8b7d872f95"] = { "盗まれたゴブリンのシュレッダー", "ぬすまれたごぶりんのしゅれっだー", "stolen goblin shredder" },
   ["e047ed402d84e825"] = { "パンテオン", "ぱんておん", "Pantheon" },
-  ["e04bf6ef763c01ce"] = { "活発", "かっぱつ", "Resilient" },
+  ["e04bf6ef763c01ce"] = { "打たれ強さ", "うたれづよさ", "Resilient" },
   ["e04e0bb7a827e3c3"] = { "満杯の青い水袋", "まんぱいのあおいみずぶくろ", "Full Blue Waterskin" },
   ["e04e269456536486"] = { "語られざる名の指輪", "かたられざるなのゆびわ", "Ring of Unspoken Names" },
   ["e04eced1d0d1a73a"] = { "ダイアの水の小瓶", "だいあのみずのこびん", "Vial of Dire Water" },

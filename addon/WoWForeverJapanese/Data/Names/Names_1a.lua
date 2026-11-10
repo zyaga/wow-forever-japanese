@@ -153,7 +153,7 @@ WFJ.Data.add("name", {
   ["1a9db6b455edc5a5"] = { "カメリックのジョングルール", "かめりっくのじょんぐるーる", "Camerick Jongleur" },
   ["1a9e759777bdd4e2"] = { "ウィンターフォールの儀式のトーテム", "うぃんたーふぉーるのぎしきのとーてむ", "Winterfall Ritual Totem" },
   ["1a9fa71c5f3749a7"] = { "茨草の脚衣", "いばらぐさのきゃくい", "Brambleweed Leggings" },
-  ["1aa0b409e7853559"] = { "サブジュゲられた", "さぶじゅげられた", "Subjugated" },
+  ["1aa0b409e7853559"] = { "隷属", "れいぞく", "Subjugated" },
   ["1aa10942729a4d58"] = { "レイザーフェンのアースブレイカー", "れいざーふぇんのあーすぶれいかー", "Razorfen Earthbreaker" },
   ["1aa2af2cdc342dc5"] = { "顧問ベルグラム", "こもんべるぐらむ", "Advisor Belgrum" },
   ["1aa3081537e9263d"] = { "ヨー・シャープメイン", "よー・しゃーぷめいん", "Yaw Sharpmane" },

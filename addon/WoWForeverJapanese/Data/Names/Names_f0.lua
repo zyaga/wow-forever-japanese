@@ -46,7 +46,7 @@ WFJ.Data.add("name", {
   ["f02e03d179680487"] = { "原住民の腰布", "げんじゅうみんのこしぬの", "Aboriginal Loincloth" },
   ["f02ec2ea985d40fb"] = { "テスト用アンキラージ資源：羊毛の包帯", "てすとようあんきらーじしげんようもうのほうたい", "Test AQ Resource - Wool Bandages" },
   ["f02f62c5baa2859e"] = { "ワイルドウィスパーの水薬", "わいるどうぃすぱーのすいやく", "Wildwhisper Draught" },
-  ["f030e7b8acb5204d"] = { "街を焦がす炎", "まちをこがすほのお", "Incinerate" },
+  ["f030e7b8acb5204d"] = { "焼却", "しょうきゃく", "Incinerate" },
   ["f031217f10e41de5"] = { "ベラム・スカイチェイサー", "べらむ・すかいちぇいさー", "Beram Skychaser" },
   ["f03152cf665fc0e8"] = { "ボーンフレイヤーのグール", "ぼーんふれいやーのぐーる", "Boneflayer Ghoul" },
   ["f035c568a61ab970"] = { "密輸品", "みつゆひん", "Smuggled Goods" },

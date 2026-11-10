@@ -245,7 +245,7 @@ WFJ.Data.add("name", {
   ["95ec589a7a6a96c8"] = { "旧・チャターの岩", "きゅう・ちゃたーのいわ", "Deprecated Chatter's Rock" },
   ["95ecd3f729713e19"] = { "ブロック", "ぶろっく", "Brock" },
   ["95ecd99829729cc4"] = { "ブロンク", "ぶろんく", "Bronk" },
-  ["95ecda142972bc9e"] = { "堂々巡り", "どうどうめぐり", "Brood" },
+  ["95ecda142972bc9e"] = { "眷属", "けんぞく", "Brood" },
   ["95ed08e4a82838b0"] = { "上位大元帥の杖", "じょういだいげんすいのつえ", "Premier Grand Marshal's Stave" },
   ["95ed2c35076ad010"] = { "シルヴァンナ・フォレストムーン", "しるゔぁんな・ふぉれすとむーん", "Sylvanna Forestmoon" },
   ["95eddbb0201fde3c"] = { "家禽の精密（銃）：マルチショット", "かきんのせいみつじゅうまるちしょっと", "Poultry Precision (Guns) - Multi-Shot" },

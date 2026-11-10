@@ -126,7 +126,7 @@ WFJ.Data.add("name", {
   ["8f7410268705e10e"] = { "兵士ベクラー", "へいしべくらー", "Grunt Bek'rah" },
   ["8f75599d81fac0e7"] = { "稲妻の槍", "いなずまのやり", "Lightning Spear" },
   ["8f76b00f5a642885"] = { "エヌジー5爆薬（青）", "えぬじーごばくやくあお", "NG-5 Explosives (Blue)" },
-  ["8f76f8e0f481f954"] = { "酒血肉林", "しゅけつにくりん", "Bloodthirst" },
+  ["8f76f8e0f481f954"] = { "血への渇望", "ちへのかつぼう", "Bloodthirst" },
   ["8f7893c95d163044"] = { "フォールブラッシュの籠手", "ふぉーるぶらっしゅのこて", "Fallbrush Handgrips" },
   ["8f78e1e2281417e2"] = { "マノロスの微粒子", "まのろすのびりゅうし", "Motes of Mannoroth" },
   ["8f7994fff33ab54d"] = { "ブラックウィングの衛兵", "ぶらっくうぃんぐのえいへい", "Blackwing Guardsman" },

@@ -153,7 +153,7 @@ WFJ.Data.add("name", {
   ["df99ed79392a49ad"] = { "補助対改ざん掴み具の起動", "ほじょたいかいざんつかみぐのきどう", "Activate Auxiliary Anti-Tamper Grapplers" },
   ["df99fa84dd4e213c"] = { "型紙：徘徊者の革の籠手", "かたがみはいかいしゃのかわのこて", "Pattern: Prowler's Leather Gloves" },
   ["df9a056b92436360"] = { "自然の恩寵", "しぜんのおんちょう", "Nature's Grace" },
-  ["df9a0da69245617b"] = { "自然の援兵", "しぜんのえんぺい", "Nature's Grasp" },
+  ["df9a0da69245617b"] = { "自然の掌握", "しぜんのしょうあく", "Nature's Grasp" },
   ["df9a0fabfe8e6adf"] = { "アラチアの角", "あらちあのつの", "Horn of Arra'chea" },
   ["df9b30b68dc9f9be"] = { "嘆きの霊の憑依", "なげきのれいのひょうい", "Wailing Spirit Haunting" },
   ["df9b5095babebf95"] = { "野生のドルイド", "やせいのどるいど", "Druid of the Wild" },

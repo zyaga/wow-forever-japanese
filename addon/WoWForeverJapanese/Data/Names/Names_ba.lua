@@ -42,7 +42,7 @@ WFJ.Data.add("name", {
   ["ba3397a6f7bf4128"] = { "剣客の籠手", "けんかくのこて", "Swashbuckler's Gloves" },
   ["ba34fa4f64cba6cc"] = { "エンバーストーンの杖", "えんばーすとーんのつえ", "Emberstone Staff" },
   ["ba3844e845ccdde1"] = { "骨のスカラベ", "ほねのすからべ", "Bone Scarab" },
-  ["ba3887334928867c"] = { "積雪", "せきせつ", "Chilled" },
+  ["ba3887334928867c"] = { "凍え", "こごえ", "Chilled" },
   ["ba392f705bfccd12"] = { "鶏の卵召喚", "にわとりのたまごしょうかん", "Summon Chicken Egg" },
   ["ba396c4f8028545a"] = { "羊毛の布", "ようもうのぬの", "wool cloth" },
   ["ba3aa4a368ebe358"] = { "チルトン", "ちるとん", "Chilton" },

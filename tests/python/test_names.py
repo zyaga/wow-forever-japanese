@@ -10,16 +10,26 @@ import pytest
 
 from wfj.cmd import names as cmd
 from wfj.core import names
-from wfj.io.names_store import load_lines, load_words, save_lines, save_words
+from wfj.io.names_store import load_lines, load_words, save_lines
 
 TODAY = "2026-11-10"
 
 
 def trusted(en: str, ja: str, reading: str, **kw) -> dict:
     ln = names.new_line(en, TODAY)
-    ln.update(ids={"unit": [1]}, ja=ja, reading=reading, status="trusted",
-              provenance={"class": "machine", "model": "m", "source": "draft-names-test1@2026-11-10",
-                          "imported": TODAY}, **kw)
+    ln.update(
+        ids={"unit": [1]},
+        ja=ja,
+        reading=reading,
+        status="trusted",
+        provenance={
+            "class": "machine",
+            "model": "m",
+            "source": "draft-names-test1@2026-11-10",
+            "imported": TODAY,
+        },
+        **kw,
+    )
     return names.ordered(ln)
 
 
@@ -35,7 +45,9 @@ def test_latin_runs_skip_markup_and_trailing_counts():
 
 def test_merge_adds_ids_never_removes_or_rewrites():
     old = [trusted("Thrall", "スロール", "すろーる")]
-    lines, added = names.merge(old, {"Thrall": {"unit": [4949]}, "Orgrimmar": {"area": [1637]}}, ["Kalimdor"], TODAY)
+    lines, added = names.merge(
+        old, {"Thrall": {"unit": [4949]}, "Orgrimmar": {"area": [1637]}}, ["Kalimdor"], TODAY
+    )
     by_en = {ln["en"]: ln for ln in lines}
     assert added == 2
     assert by_en["Thrall"]["ids"] == {"unit": [1, 4949]} and by_en["Thrall"]["ja"] == "スロール"
@@ -70,8 +82,14 @@ def test_a_good_line_and_a_missing_line_pass():
 
 
 def test_spelling_check_holds_names_to_checked_words():
-    words = [{"en": "Stormwind", "ja": "ストームウィンド", "check": True,
-              "provenance": {"class": "human", "source": "hearthstone@256589", "imported": TODAY}}]
+    words = [
+        {
+            "en": "Stormwind",
+            "ja": "ストームウィンド",
+            "check": True,
+            "provenance": {"class": "human", "source": "hearthstone@256589", "imported": TODAY},
+        }
+    ]
     good = trusted("Stormwind Guard", "ストームウィンドの衛兵", "すとーむうぃんどのえいへい")
     bad = trusted("Stormwind City", "ストームウインド市", "すとーむういんどし")
     free = trusted("Stormwind Keep", "王城", "おうじょう", free=True)
@@ -95,18 +113,35 @@ def _store(tmp: Path, lines: list[dict]) -> Path:
 
 
 def test_hearthstone_fills_exact_katakana_names_and_words(tmp_path):
-    root = _store(tmp_path, [names.ordered(dict(names.new_line(e, TODAY), ids={"unit": [1]}))
-                             for e in ("Thrall", "Polymorph", "Defias Bandit")])
+    root = _store(
+        tmp_path,
+        [
+            names.ordered(dict(names.new_line(e, TODAY), ids={"unit": [1]}))
+            for e in ("Thrall", "Polymorph", "Defias Bandit")
+        ],
+    )
     human = trusted("Ragnaros", "ラグナロス", "らぐなろす")
     human["provenance"] = {"class": "human", "source": "correction@2026-11-01", "imported": TODAY}
     save_lines(root, [*load_lines(root), human])
-    ja, en = _cards(tmp_path, [(1, "Thrall", "スロール"), (2, "Polymorph", "動物変身"),
-                               (3, "Defias Ringleader", "デファイアス・リングリーダー"),
-                               (4, "Defias Cannon", "デファイアス・キャノン"), (5, "Ragnaros", "ラグナ")])
+    ja, en = _cards(
+        tmp_path,
+        [
+            (1, "Thrall", "スロール"),
+            (2, "Polymorph", "動物変身"),
+            (3, "Defias Ringleader", "デファイアス・リングリーダー"),
+            (4, "Defias Cannon", "デファイアス・キャノン"),
+            (5, "Ragnaros", "ラグナ"),
+        ],
+    )
     counts = cmd.apply_hearthstone(root, cmd.hearthstone_pairs(ja, en), "256589", TODAY)
     by_en = {ln["en"]: ln for ln in load_lines(root)}
-    assert by_en["Thrall"]["ja"] == "スロール" and by_en["Thrall"]["provenance"]["source"] == "hearthstone@256589"
-    assert by_en["Polymorph"]["status"] == "missing"  # kanji: no reading from Hearthstone, drafted with a hint
+    assert (
+        by_en["Thrall"]["ja"] == "スロール"
+        and by_en["Thrall"]["provenance"]["source"] == "hearthstone@256589"
+    )
+    assert (
+        by_en["Polymorph"]["status"] == "missing"
+    )  # kanji: no reading from Hearthstone, drafted with a hint
     assert by_en["Ragnaros"]["ja"] == "ラグナロス"  # a human line is never touched
     words = {w["en"]: w for w in load_words(root)}
     assert words["Defias"]["ja"] == "デファイアス" and words["Defias"]["check"] is True
@@ -114,16 +149,33 @@ def test_hearthstone_fills_exact_katakana_names_and_words(tmp_path):
 
 
 def test_import_fills_rejects_and_adds_words(tmp_path):
-    root = _store(tmp_path, [names.ordered(dict(names.new_line(e, TODAY), ids={"unit": [1]}))
-                             for e in ("Ashenvale Hunter", "Thrall")])
+    root = _store(
+        tmp_path,
+        [
+            names.ordered(dict(names.new_line(e, TODAY), ids={"unit": [1]}))
+            for e in ("Ashenvale Hunter", "Thrall")
+        ],
+    )
     ids = {ln["en"]: ln["id"] for ln in load_lines(root)}
     batch = tmp_path / "b.jsonl"
-    batch.write_text("\n".join(json.dumps(r, ensure_ascii=False) for r in [
-        {"id": ids["Ashenvale Hunter"], "ja": "アッシェンヴェイルの狩人", "reading": "あっしぇんゔぇいるのかりゅうど",
-         "free": False, "words": [["Ashenvale", "アッシェンヴェイル"]]},
-        {"id": ids["Thrall"], "ja": "Thrall", "reading": "すろーる", "free": False},
-        {"id": "ffffffffffffffff", "ja": "x", "reading": "x", "free": False},
-    ]) + "\n", encoding="utf-8")
+    batch.write_text(
+        "\n".join(
+            json.dumps(r, ensure_ascii=False)
+            for r in [
+                {
+                    "id": ids["Ashenvale Hunter"],
+                    "ja": "アッシェンヴェイルの狩人",
+                    "reading": "あっしぇんゔぇいるのかりゅうど",
+                    "free": False,
+                    "words": [["Ashenvale", "アッシェンヴェイル"]],
+                },
+                {"id": ids["Thrall"], "ja": "Thrall", "reading": "すろーる", "free": False},
+                {"id": "ffffffffffffffff", "ja": "x", "reading": "x", "free": False},
+            ]
+        )
+        + "\n",
+        encoding="utf-8",
+    )
     n, rejected = cmd.import_batch(root, batch, "test-model", "test1", TODAY, dry_run=False)
     assert n == 1 and len(rejected) == 2
     by_en = {ln["en"]: ln for ln in load_lines(root)}
@@ -133,6 +185,7 @@ def test_import_fills_rejects_and_adds_words(tmp_path):
 
 
 # The committed store: complete, valid, and current with every English name the game shows.
+
 
 def test_committed_names_are_valid(root):
     assert cmd.problems(root / "data") == []

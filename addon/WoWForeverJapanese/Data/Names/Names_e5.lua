@@ -141,7 +141,7 @@ WFJ.Data.add("name", {
   ["e5c246ce2f422ea8"] = { "戦鍛えの胸鎧", "いくさぎたえのむねよろい", "Warforged Chestplate" },
   ["e5c2548a696cf3ac"] = { "騎士中尉の雷光の革の肩鎧", "きしちゅういのらいこうのかわのかたよろい", "Knight-Lieutenant's Crackling Leather Spaulders" },
   ["e5c29ff662bc8b59"] = { "黒い魔織りのベスト", "くろいまおりのべすと", "Black Mageweave Vest" },
-  ["e5c57e46b79ee4ce"] = { "嵐死を呼ぶ男", "あらししをよぶおとこ", "Gathering Storm" },
+  ["e5c57e46b79ee4ce"] = { "迫り来る嵐", "せまりくるあらし", "Gathering Storm" },
   ["e5c63003bdcdc473"] = { "カーンの肩衣", "かーんのかたぎぬ", "Khan's Mantle" },
   ["e5c88e9b6b9bc653"] = { "ブランブルスカー", "ぶらんぶるすかー", "Bramblescar" },
   ["e5cba2b19ad9e6ab"] = { "ゴトリの旅装備", "ごとりのたびそうび", "Gotri's Travelling Gear" },

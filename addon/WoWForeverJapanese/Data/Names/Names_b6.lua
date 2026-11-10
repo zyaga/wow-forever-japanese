@@ -181,7 +181,7 @@ WFJ.Data.add("name", {
   ["b6c3211b089f65ec"] = { "出現時に自己負傷", "しゅつげんじにじこふしょう", "Injure Self on Spawn" },
   ["b6c3c6d76be457e9"] = { "シルバーパインの精鋭", "しるばーぱいんのせいえい", "Silverpine Elite" },
   ["b6c3e92bdb0da2b6"] = { "槍で魚突き", "やりでうおつき", "Spear Fish" },
-  ["b6c3fbb0af0a317c"] = { "弱り消耗", "よわりしょうもう", "Dazed" },
+  ["b6c3fbb0af0a317c"] = { "朦朧", "もうろう", "Dazed" },
   ["b6c44b92d8878f47"] = { "ブラックウィングの大将軍", "ぶらっくうぃんぐのだいしょうぐん", "[NOT USED] Blackwing Warlord" },
   ["b6c7635cef69bd44"] = { "ワイバーンの衛兵詰所", "わいばーんのえいへいつめしょ", "Wyvern Guard Post" },
   ["b6c94388f5818b79"] = { "戦利品の袋", "せんりひんのふくろ", "Sack of Spoils" },

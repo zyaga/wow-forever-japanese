@@ -160,7 +160,7 @@ WFJ.Data.add("name", {
   ["f27845129c1bc630"] = { "大使インファーナス", "たいしいんふぁーなす", "Ambassador Infernus" },
   ["f27864b340771b2c"] = { "氷の鱗の籠手", "こおりのうろこのこて", "Icy Scale Gauntlets" },
   ["f279d6520ea7aecc"] = { "テンケリス", "てんけりす", "Tenkeris" },
-  ["f279f2ddeec8b3c5"] = { "焚きつけの炎", "たきつけのほのお", "Convection" },
+  ["f279f2ddeec8b3c5"] = { "対流熱", "たいりゅうねつ", "Convection" },
   ["f27a6dc9e2fb7708"] = { "イベント用の罠・ティランダ", "いべんとようのわな・てぃらんだ", "Event Trap, Tyrande" },
   ["f27c1b3edb663a38"] = { "霊体の幻影", "れいたいのげんえい", "Spectral Apparition" },
   ["f27c7f1b40c0219e"] = { "有毒なシュレッダー", "ゆうどくなしゅれっだー", "Noxious Shredder" },

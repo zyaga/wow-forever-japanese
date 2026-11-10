@@ -125,7 +125,7 @@ WFJ.Data.add("name", {
   ["ea739550a806fd68"] = { "コールドブリンガー・アムネナー", "こーるどぶりんがー・あむねなー", "Amnennar the Coldbringer" },
   ["ea73b3f876d1f635"] = { "血の注入", "ちのちゅうにゅう", "Blood Infusion" },
   ["ea776f02913b8e63"] = { "上等な曲刀", "じょうとうなきょくとう", "Fine Scimitar" },
-  ["ea78539bf5f4e9ca"] = { "粉砕されしものの眼球", "ふんさいされしもののがんきゅう", "Eye of C'Thun" },
+  ["ea78539bf5f4e9ca"] = { "クトゥーンの眼球", "くとぅーんのがんきゅう", "Eye of C'Thun" },
   ["ea78a308a085721f"] = { "復活のアンク", "ふっかつのあんく", "Ankh of Resurrection" },
   ["ea78e59e27356f58"] = { "ジャスティサーの魂", "じゃすてぃさーのたましい", "Soul of the Justicar" },
   ["ea7adfbef76943fe"] = { "イルクルードの守護者", "いるくるーどのしゅごしゃ", "Ilkrud's Guardians" },

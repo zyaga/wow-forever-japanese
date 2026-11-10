@@ -60,7 +60,7 @@ WFJ.Data.add("name", {
   ["8e4895d2d84ee6c2"] = { "型破りな呪術の棒", "かたやぶりなじゅじゅつのぼう", "Unorthodox Hex Stick" },
   ["8e498978030e46d8"] = { "陽動移動", "ようどういどう", "Distract Move" },
   ["8e49f030006c6ef5"] = { "騎馬斥候の高等救援小包", "きばせっこうのこうとうきゅうえんこづつみ", "Outrider Advanced Care Package" },
-  ["8e49fb5d26416e60"] = { "ひっくり返るほどの悪臭", "ひっくりかえるほどのあくしゅう", "Stinky" },
+  ["8e49fb5d26416e60"] = { "スティンキー", "すてぃんきー", "Stinky" },
   ["8e4a9618cd5da456"] = { "士官のブーツ", "しかんのぶーつ", "Officer's Boots" },
   ["8e4ba78cad3f1012"] = { "騎士中尉の板金のブーツ", "きしちゅういのばんきんのぶーつ", "Knight-Lieutenant's Plate Boots" },
   ["8e4cbea8f64e53c1"] = { "旗の捕獲カウンター・ホード", "はたのほかくかうんたー・ほーど", "ToWoW - Flag Cap Counter, Horde" },

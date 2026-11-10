@@ -664,8 +664,8 @@ def test_every_translation_round_ends_by_remaking_its_voice():
     """A batch import and a fix report remake the voice of the lines they changed, after `check` decided what
     ships; the voice step pushes and pins only when it made audio."""
     makefile = (ROOT / "Makefile").read_text(encoding="utf-8")
-    assert "$(MAKE) -s check voice-generate" in _recipe(makefile, "import-draft")
-    assert "$(MAKE) -s check generate voice-generate validate coverage" in _recipe(makefile, "report-apply")
+    assert "$(MAKE) -s check names voice-generate" in _recipe(makefile, "import-draft")
+    assert "$(MAKE) -s check names generate voice-generate validate coverage" in _recipe(makefile, "report-apply")
     generate = _recipe(makefile, "voice-generate")
     assert "wfj voice generate --scope all --players all" in generate
     assert "store-sync --if-changed" in generate

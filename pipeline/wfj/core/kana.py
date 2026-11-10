@@ -22,29 +22,110 @@ _KATAKANA = re.compile(r"^[ァ-ヺー・]+$")
 # 1 / 6 / 8 / 10 / 100 (p, with a small tsu); "k" and "s" counters take a small tsu after 1 / 8 / 10 / 100
 # (and 6 for "k").
 _H = {"匹": "ひき", "本": "ほん", "杯": "はい", "分": "ふん", "発": "はつ", "歩": "ほ", "泊": "はく"}
-_K = {"個": "こ", "回": "かい", "階": "かい", "ヶ月": "かげつ", "か月": "かげつ", "ヵ月": "かげつ", "缶": "かん",
-      "件": "けん", "軒": "けん", "曲": "きょく"}
-_S = {"冊": "さつ", "着": "ちゃく", "週": "しゅう", "隻": "せき", "通": "つう", "頭": "とう", "点": "てん",
-      "等": "とう", "足": "そく"}
-_PLAIN = {"体": "たい", "羽": "わ", "枚": "まい", "名": "めい", "秒": "びょう", "粒": "つぶ", "束": "たば",
-          "箱": "はこ", "袋": "ふくろ", "度": "ど", "番": "ばん", "倍": "ばい", "割": "わり", "時間": "じかん",
-          "年": "ねん", "日": "にち", "人": "にん", "つ": "つ", "ゴールド": "ゴールド", "シルバー": "シルバー",
-          "カッパー": "カッパー", "%": "パーセント", "％": "パーセント", "レベル": "レベル", "ヤード": "ヤード",
-          "時": "じ", "円": "えん", "万": "まん"}
+_K = {
+    "個": "こ",
+    "回": "かい",
+    "階": "かい",
+    "ヶ月": "かげつ",
+    "か月": "かげつ",
+    "ヵ月": "かげつ",
+    "缶": "かん",
+    "件": "けん",
+    "軒": "けん",
+    "曲": "きょく",
+}
+_S = {
+    "冊": "さつ",
+    "着": "ちゃく",
+    "週": "しゅう",
+    "隻": "せき",
+    "通": "つう",
+    "頭": "とう",
+    "点": "てん",
+    "等": "とう",
+    "足": "そく",
+}
+_PLAIN = {
+    "体": "たい",
+    "羽": "わ",
+    "枚": "まい",
+    "名": "めい",
+    "秒": "びょう",
+    "粒": "つぶ",
+    "束": "たば",
+    "箱": "はこ",
+    "袋": "ふくろ",
+    "度": "ど",
+    "番": "ばん",
+    "倍": "ばい",
+    "割": "わり",
+    "時間": "じかん",
+    "年": "ねん",
+    "日": "にち",
+    "人": "にん",
+    "つ": "つ",
+    "ゴールド": "ゴールド",
+    "シルバー": "シルバー",
+    "カッパー": "カッパー",
+    "%": "パーセント",
+    "％": "パーセント",
+    "レベル": "レベル",
+    "ヤード": "ヤード",
+    "時": "じ",
+    "円": "えん",
+    "万": "まん",
+}
 COUNTERS = sorted({**_H, **_K, **_S, **_PLAIN}, key=len, reverse=True)
-_DIGITS = "いち に さん よん ご ろく なな はち きゅう".split()
+_DIGITS = ["いち", "に", "さん", "よん", "ご", "ろく", "なな", "はち", "きゅう"]
 _TSUMARU = {"いち": "いっ", "ろく": "ろっ", "はち": "はっ", "じゅう": "じゅっ", "ひゃく": "ひゃっ"}
 _PEOPLE = {1: "ひとり", 2: "ふたり", 4: "よにん"}
-_DAYS = {1: "いちにち", 2: "ふつか", 3: "みっか", 4: "よっか", 5: "いつか", 6: "むいか", 7: "なのか",
-         8: "ようか", 9: "ここのか", 10: "とおか", 14: "じゅうよっか", 20: "はつか", 24: "にじゅうよっか"}
-_THINGS = {1: "ひとつ", 2: "ふたつ", 3: "みっつ", 4: "よっつ", 5: "いつつ", 6: "むっつ", 7: "ななつ",
-           8: "やっつ", 9: "ここのつ", 10: "とお"}
-# what follows a number and its counter: 1つ目 ひとつめ, 2週間 にしゅうかん, 2年前 にねんまえ, 20回分 にじゅっかいぶん
-_AFTER = {"目": "め", "間": "かん", "前": "まえ", "後": "ご", "分": "ぶん", "以上": "いじょう", "以内": "いない",
-          "以下": "いか", "ぶり": "ぶり", "おき": "おき"}
+_DAYS = {
+    1: "いちにち",
+    2: "ふつか",
+    3: "みっか",
+    4: "よっか",
+    5: "いつか",
+    6: "むいか",
+    7: "なのか",
+    8: "ようか",
+    9: "ここのか",
+    10: "とおか",
+    14: "じゅうよっか",
+    20: "はつか",
+    24: "にじゅうよっか",
+}
+_THINGS = {
+    1: "ひとつ",
+    2: "ふたつ",
+    3: "みっつ",
+    4: "よっつ",
+    5: "いつつ",
+    6: "むっつ",
+    7: "ななつ",
+    8: "やっつ",
+    9: "ここのつ",
+    10: "とお",
+}
+# what follows a number and its counter: 1つ目 ひとつめ, 2週間 にしゅうかん, 2年前 にねんまえ,
+# 20回分 にじゅっかいぶん
+_AFTER = {
+    "目": "め",
+    "間": "かん",
+    "前": "まえ",
+    "後": "ご",
+    "分": "ぶん",
+    "以上": "いじょう",
+    "以内": "いない",
+    "以下": "いか",
+    "ぶり": "ぶり",
+    "おき": "おき",
+}
 _NUMBER = re.compile(
-    r"(\d[\d,]*(?:\.\d+)?)(\s*)(" + "|".join(map(re.escape, COUNTERS)) + r")?((?:"
-    + "|".join(map(re.escape, sorted(_AFTER, key=len, reverse=True))) + r")*)"
+    r"(\d[\d,]*(?:\.\d+)?)(\s*)("
+    + "|".join(map(re.escape, COUNTERS))
+    + r")?((?:"
+    + "|".join(map(re.escape, sorted(_AFTER, key=len, reverse=True)))
+    + r")*)"
 )
 _AFTER_ONE = re.compile("|".join(map(re.escape, sorted(_AFTER, key=len, reverse=True))))
 _HOW_MANY = re.compile(r"何(" + "|".join(map(re.escape, COUNTERS)) + r")")
@@ -99,37 +180,51 @@ def with_counter(text: str, counter: str) -> str:
     if "." in text:
         return read_number(text) + (_H.get(counter) or _K.get(counter) or _S.get(counter) or _PLAIN[counter])
     n = int(text.replace(",", ""))
-    if counter == "人" and n in _PEOPLE:
-        return _PEOPLE[n]
-    if counter == "日" and n in _DAYS:
-        return _DAYS[n]
+    special = {"人": _PEOPLE, "日": _DAYS, "つ": _THINGS}.get(counter, {})
+    if n in special:
+        return special[n]
     if counter == "つ":
-        return _THINGS.get(n, read_number(text))
+        return read_number(text)
     parts = number_parts(n)
     head, last = "".join(parts[:-1]), parts[-1]
     tail = _last_digit_word(parts)
     stem = last[: len(last) - len(tail)] if last.endswith(tail) and tail != last else ""
     if counter in _H:
-        base = _H[counter]
-        if tail in _TSUMARU and tail != "せん":
-            return head + stem + _TSUMARU[tail] + _p(base)
-        if tail in ("さん", "せん", "まん") or (counter == "分" and tail == "よん"):
-            return head + last + (_p(base) if counter == "分" else _b(base))
-        return head + last + base
+        return head + _h_counter(counter, last, tail, stem)
     if counter in _K or counter in _S:
-        base = _K.get(counter) or _S[counter]
-        small = {"いち", "はち", "じゅう", "ひゃく"} | ({"ろく"} if counter in _K else set())
-        if tail in small:
-            return head + stem + _TSUMARU[tail] + base
-        if counter == "階" and tail == "さん":
-            return head + last + "がい"
-        return head + last + base
+        return head + _k_counter(counter, last, tail, stem)
+    return head + _plain_counter(counter, last, tail, stem)
+
+
+def _h_counter(counter: str, last: str, tail: str, stem: str) -> str:
+    """匹 本 杯 分 …: hard (p, small tsu) after 1 / 6 / 8 / 10 / 100, soft (b) after 3 / 1000 / 万."""
+    base = _H[counter]
+    if tail in _TSUMARU:
+        return stem + _TSUMARU[tail] + _p(base)
+    if tail in ("さん", "せん", "まん") or (counter == "分" and tail == "よん"):
+        return last + (_p(base) if counter == "分" else _b(base))
+    return last + base
+
+
+def _k_counter(counter: str, last: str, tail: str, stem: str) -> str:
+    """個 回 冊 …: a small tsu after 1 / 8 / 10 / 100 (and 6 for the k sounds); 3階 さんがい."""
+    base = _K.get(counter) or _S[counter]
+    small = {"いち", "はち", "じゅう", "ひゃく"} | ({"ろく"} if counter in _K else set())
+    if tail in small:
+        return stem + _TSUMARU[tail] + base
+    if counter == "階" and tail == "さん":
+        return last + "がい"
+    return last + base
+
+
+def _plain_counter(counter: str, last: str, tail: str, stem: str) -> str:
+    """The counters with no sound change, but 4 and 7 / 9 before 年 and 時(間) (よねん, しちじ, くじ)."""
     reading = _PLAIN[counter]
     if counter in ("年", "時間", "時") and tail == "よん":
-        return head + stem + "よ" + reading
+        return stem + "よ" + reading
     if counter in ("時間", "時") and tail in ("なな", "きゅう"):
-        return head + stem + ("しち" if tail == "なな" else "く") + reading
-    return head + last + reading
+        return stem + ("しち" if tail == "なな" else "く") + reading
+    return last + reading
 
 
 def _b(h: str) -> str:
@@ -152,7 +247,7 @@ def _counter_word(surface: str) -> bool:
     A word that only starts with one (本部) is an ordinary word."""
     for c in COUNTERS:
         if surface.startswith(c):
-            rest = surface[len(c):]
+            rest = surface[len(c) :]
             if not rest or _AFTER_ONE.fullmatch(rest) or re.fullmatch(f"(?:{_AFTER_ONE.pattern})+", rest):
                 return True
     return False
@@ -199,7 +294,7 @@ def replace_names(text: str, lookup: Callable[[str], str | None]) -> tuple[str, 
         if kana is None:
             missing.append(run or raw)
             return raw
-        return kana + raw[raw.index(run) + len(run):] if run in raw else kana
+        return kana + raw[raw.index(run) + len(run) :] if run in raw else kana
 
     return names._LATIN_RUN.sub(one, text), missing
 

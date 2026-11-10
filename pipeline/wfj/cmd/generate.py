@@ -287,7 +287,9 @@ def _plan_names(root: Path) -> dict[str, str]:
     for ln in load_name_lines(root):
         if ln["status"] == "trusted":
             by_shard.setdefault(ln["id"][:2], []).append(ln)
-    return {f"{NAMES_DIR}/Names_{nn}.lua": lua_writer.names_text(nn, ls) for nn, ls in sorted(by_shard.items())}
+    return {
+        f"{NAMES_DIR}/Names_{nn}.lua": lua_writer.names_text(nn, ls) for nn, ls in sorted(by_shard.items())
+    }
 
 
 def _check_store(store: Store) -> None:

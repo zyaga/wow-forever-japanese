@@ -195,7 +195,7 @@ WFJ.Data.add("name", {
   ["3dbd1d73b4e01183"] = { "重射撃", "じゅうしゃげき", "Heavy Shot" },
   ["3dbd5527a3112319"] = { "焚き火の近く", "たきびのちかく", "[DNT] Near Bonfire" },
   ["3dbdfa228c0c82a6"] = { "ふわふわ", "ふわふわ", "Fluffy" },
-  ["3dc124b2bbb12e3e"] = { "氷風", "ひょうふう", "Flurry" },
+  ["3dc124b2bbb12e3e"] = { "乱れ打ち", "みだれうち", "Flurry" },
   ["3dc30b4eb77c6574"] = { "サモフランジの手引き作成", "さもふらんじのてびきさくせい", "Create Samophlange Manual" },
   ["3dc4273d851d6647"] = { "賢者の外套", "けんじゃのがいとう", "Sage's Cloak" },
   ["3dc430f3851fc3f7"] = { "賢者の布", "けんじゃのぬの", "Sage's Cloth" },

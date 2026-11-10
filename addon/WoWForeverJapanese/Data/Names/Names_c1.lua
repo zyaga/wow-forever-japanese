@@ -124,7 +124,7 @@ WFJ.Data.add("name", {
   ["c195455524eff2d8"] = { "バジル・フライ", "ばじる・ふらい", "Basil Frye" },
   ["c195ee7bf0d1a854"] = { "ファウルベリー", "ふぁうるべりー", "Foulbelly" },
   ["c1965fcf697b86a2"] = { "アイアンビークのハンター", "あいあんびーくのはんたー", "Ironbeak Hunter" },
-  ["c19692ee32fb360f"] = { "火の鳥", "ひのとり", "Fired Up" },
+  ["c19692ee32fb360f"] = { "闘志全開", "とうしぜんかい", "Fired Up" },
   ["c196bf89801790ac"] = { "帝国の板金の兜", "ていこくのばんきんのかぶと", "Imperial Plate Helm" },
   ["c199072c5d0acef4"] = { "箱の破壊", "はこのはかい", "Destroy The Box" },
   ["c199d9a26e493e5a"] = { "よどんだオアシス", "よどんだおあしす", "The Stagnant Oasis" },

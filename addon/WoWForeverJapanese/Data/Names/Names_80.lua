@@ -192,7 +192,7 @@ WFJ.Data.add("name", {
   ["80d29e4f0bf6153f"] = { "死を欺く", "しをあざむく", "Cheating Death" },
   ["80d2e6fbca394414"] = { "サゴーン・クレストストライダー", "さごーん・くれすとすとらいだー", "Sagorne Creststrider" },
   ["80d3a4e9e8320e0c"] = { "短剣専門化", "たんけんせんもんか", "Dagger Specialization" },
-  ["80d6ef565b6dacc1"] = { "月輝", "げっき", "Moonshine" },
+  ["80d6ef565b6dacc1"] = { "密造酒", "みつぞうしゅ", "Moonshine" },
   ["80d7e82d5d5679e4"] = { "モンスター用：重い棘付き鎚矛", "もんすたーようおもいとげつきつちほこ", "Monster - Mace, Spiked Heavy" },
   ["80d903eef37e50ad"] = { "軍のウォード", "ぐんのうぉーど", "Military Ward" },
   ["80d95bb98b37bddb"] = { "ウォーブリンガーのルーン", "うぉーぶりんがーのるーん", "Rune of the Warbringer" },

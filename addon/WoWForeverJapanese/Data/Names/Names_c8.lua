@@ -154,7 +154,7 @@ WFJ.Data.add("name", {
   ["c898e6141b0e8074"] = { "サイキックの力のノーム製ターバン", "さいきっくのちからののーむせいたーばん", "Gnomish Turban of Psychic Might" },
   ["c89a31f736bbc87d"] = { "無垢のフェルスライム水晶", "むくのふぇるすらいむすいしょう", "Pristine Fel-Slime Crystal" },
   ["c89d460fe9a634a5"] = { "ベールガーの落とし子", "べーるがーのおとしご", "Spawn of Bael'Gar" },
-  ["c89e275a22de61f5"] = { "戦う死体", "たたかうしたい", "Raise Dead" },
+  ["c89e275a22de61f5"] = { "死者蘇生", "ししゃそせい", "Raise Dead" },
   ["c8a032aa07a03d9e"] = { "アストラルの信号灯", "あすとらるのしんごうとう", "Astral Beacon" },
   ["c8a0775e4bf90d5b"] = { "縫われた吐き出し屋", "ぬわれたはきだしや", "Stitched Spewer" },
   ["c8a2aec2ed853acb"] = { "テスト競売人", "てすときょうばいにん", "Test Auctioneer" },

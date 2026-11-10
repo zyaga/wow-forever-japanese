@@ -47,7 +47,7 @@ WFJ.Data.add("name", {
   ["6e398224b1739507"] = { "職人の依頼書：ルーン革の脚衣", "しょくにんのいらいしょるーんかわのきゃくい", "Craftsman's Writ - Runic Leather Pants" },
   ["6e3aba674cc59adb"] = { "囮", "おとり", "Drawing Fire" },
   ["6e3af4643f710d87"] = { "氷刃宿し", "ひょうじんやどし", "Imbue Iceknife" },
-  ["6e3b84ac178733c1"] = { "最後の生き残り", "さいごのいきのこり", "Survivalist" },
+  ["6e3b84ac178733c1"] = { "生存術の達人", "せいぞんじゅつのたつじん", "Survivalist" },
   ["6e3bb7264cbab983"] = { "ウィンキー隊長", "うぃんきーたいちょう", "Captain Winky" },
   ["6e3d3a895e83ea31"] = { "ウォーソングの名誉の印", "うぉーそんぐのめいよのしるし", "Warsong Marks of Honor" },
   ["6e3d661e64f5ada4"] = { "水の生成の書", "みずのせいせいのしょ", "Tome of Conjure Water" },

@@ -62,7 +62,7 @@ WFJ.Data.add("name", {
   ["e14b7408db6437d0"] = { "支配のオーブ", "しはいのおーぶ", "Orb of Domination" },
   ["e14ca19a3cff3be2"] = { "黒焦げのレイザーメインのワンド", "くろこげのれいざーめいんのわんど", "Charred Razormane Wand" },
   ["e14da7d80c7cc9f3"] = { "大石工メイブルステン", "だいいしくめいぶるすてん", "Grand Mason Mablesten" },
-  ["e14e91fc6a2fd78b"] = { "爆裂流星弾", "ばくれつりゅうせいだん", "Flame Crash" },
+  ["e14e91fc6a2fd78b"] = { "炎の激突", "ほのおのげきとつ", "Flame Crash" },
   ["e14eba243017663f"] = { "ダークシャー", "だーくしゃー", "DARKSHIRE" },
   ["e14f017dec366f3d"] = { "ヴァイルブランチの硬貨", "ゔぁいるぶらんちのこうか", "Vilebranch Coin" },
   ["e14f9e2c7a10e69b"] = { "炎の紋章", "ほのおのもんしょう", "Flame Crest" },

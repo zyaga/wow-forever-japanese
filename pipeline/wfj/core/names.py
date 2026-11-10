@@ -75,7 +75,7 @@ def words_of(en: str) -> list[str]:
     "'s" and edge punctuation dropped."""
     out = []
     for raw in re.split(r"[ \-]+", en):
-        w = raw.strip(",:;!?()\"").rstrip(".")
+        w = raw.strip(',:;!?()"').rstrip(".")
         if w.endswith(("'s", "’s")):
             w = w[:-2]
         if w:

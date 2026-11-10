@@ -197,7 +197,7 @@ WFJ.Data.add("name", {
   ["5ec6f7a2ce22c209"] = { "フェルストーン農場", "ふぇるすとーんのうじょう", "Felstone Farm" },
   ["5ec71fef735f65c4"] = { "キリン・トーの大魔術師カドガー", "きりん・とーのだいまじゅつしかどがー", "Archmage Khadgar of the Kirin Tor" },
   ["5ec964a1641534a1"] = { "トワイライトの前哨地", "とわいらいとのぜんしょうち", "Twilight Outpost" },
-  ["5ecb3dfa0f62ed97"] = { "原始の芸術", "げんしのげいじゅつ", "Primitive" },
+  ["5ecb3dfa0f62ed97"] = { "原始的", "げんしてき", "Primitive" },
   ["5ecc2144abbdc545"] = { "エトゥ・レイジトーテム", "えとぅ・れいじとーてむ", "Etu Ragetotem" },
   ["5ecd33188ed64485"] = { "兵站任務指令書8", "へいたんにんむしれいしょはち", "Logistics Task Briefing VIII" },
   ["5ece9f46b9e24235"] = { "レイザーメインの術者", "れいざーめいんのじゅつしゃ", "Razormane spellcasters" },

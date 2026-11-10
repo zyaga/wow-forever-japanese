@@ -3,7 +3,8 @@
 The kana line of every voiced line (core/kana.py, ADR-077) in `data/voice/kana.jsonl`:
 `{"key", "ja_hash", "kana", "provenance"}`, `ja_hash` being what the line's words were made from (the shipped
 Japanese and the numbers filled into it, `voice.text_hash`). A line the builder can read is rebuilt every run;
-one it cannot (a kanji with no reading, a name with no Japanese) keeps a model-written kana line written for the
+one it cannot (a kanji with no reading, a name with no Japanese) keeps a model-written kana line written for
+the
 same `ja_hash`, else it is listed (and, with --export, written to FILE as {"key", "ja", "problems"} for a
 drafting round). `kana-import` takes rows {"key", "ja_hash", "kana"} for those lines.
 """
@@ -33,11 +34,14 @@ def kana_path(root: Path) -> Path:
 
 
 def voiced_lines(root: Path) -> dict[str, str]:
-    """{voice key: shipped Japanese} for exactly the lines the voice reads: every line a voice file is made for
+    """{voice key: shipped Japanese} for exactly the lines the voice reads: every line a voice file is made
+    for
     (the speakers table's lines that ship, read by whoever the cast gives them) and the character's error
     lines."""
     lines = shipped_lines(root)
-    keys = {j.key for j in voice.jobs(scoped_rows(root, "all"), read_cast(root), "narrator", "narrator", lines)}
+    keys = {
+        j.key for j in voice.jobs(scoped_rows(root, "all"), read_cast(root), "narrator", "narrator", lines)
+    }
     keys |= set(error_lines(root))
     return {k: lines[k] for k in sorted(keys) if k in lines}
 
@@ -86,11 +90,20 @@ def build_all(root: Path, today: str) -> tuple[list[dict[str, Any]], dict[str, t
         text, problems = kana.build(ja, key, vals, words.get(key), lookup)
         if text is not None:
             keep = old.get(key)
-            same = keep and keep["ja_hash"] == h and keep["kana"] == text and keep["provenance"]["source"].startswith("kana-build@")
+            same = (
+                keep
+                and keep["ja_hash"] == h
+                and keep["kana"] == text
+                and keep["provenance"]["source"].startswith("kana-build@")
+            )
             rows.append(keep if same else {"key": key, "ja_hash": h, "kana": text, "provenance": dict(prov)})
             continue
         drafted = old.get(key)
-        if drafted and drafted["ja_hash"] == h and not drafted["provenance"]["source"].startswith("kana-build@"):
+        if (
+            drafted
+            and drafted["ja_hash"] == h
+            and not drafted["provenance"]["source"].startswith("kana-build@")
+        ):
             rows.append(drafted)
             continue
         try:
@@ -121,7 +134,12 @@ def import_rows(root: Path, path: Path, model_id: str, batch: str, today: str) -
             elif kana.kana_problems(r.get("kana")):
                 rejected.append(f"{key}: {'; '.join(kana.kana_problems(r.get('kana')))}")
             else:
-                rows[key] = {"key": key, "ja_hash": current[key], "kana": r["kana"].strip(), "provenance": prov}
+                rows[key] = {
+                    "key": key,
+                    "ja_hash": current[key],
+                    "kana": r["kana"].strip(),
+                    "provenance": prov,
+                }
                 written += 1
     write_rows(kana_path(root), [rows[k] for k in sorted(rows)])
     return written, rejected
@@ -175,8 +193,20 @@ def run(argv: Sequence[str]) -> int:
         out.parent.mkdir(parents=True, exist_ok=True)
         lines = voiced_lines(root)
         values = line_values(root, lines)
-        out.write_text("".join(
-            json.dumps({"key": k, "ja_hash": voice.text_hash(lines[k], values.get(k, [])), "ja": t,
-                        "problems": p}, ensure_ascii=False) + "\n"
-            for k, (t, p) in left.items()), encoding="utf-8")
+        out.write_text(
+            "".join(
+                json.dumps(
+                    {
+                        "key": k,
+                        "ja_hash": voice.text_hash(lines[k], values.get(k, [])),
+                        "ja": t,
+                        "problems": p,
+                    },
+                    ensure_ascii=False,
+                )
+                + "\n"
+                for k, (t, p) in left.items()
+            ),
+            encoding="utf-8",
+        )
     return 0

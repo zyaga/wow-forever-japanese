@@ -1,34 +1,35 @@
-"""wfj names collect|hearthstone|export|import|check: Japanese names (ADR-077; docs/architecture/data-model.md).
+"""wfj names collect|hearthstone|export|import|check: Japanese names
+(ADR-077; docs/architecture/data-model.md).
 
-  collect [--vmangos DB] [--date YYYY-MM-DD]
-      Every English name the game shows gets a `data/name` line: item, spell and unit names from
-      `data/english`, creature, object, area, faction and map names from the VMaNGOS database when given, and
-      every run of Latin letters in shipped quest, gossip, book, objective and area Japanese and the voiced
-      error lines. New names come in `missing`; ids are only added; nothing is removed or rewritten.
-  hearthstone JAJP.json ENUS.json --build BUILD [--date YYYY-MM-DD]
-      Hearthstone's official Japanese (HearthstoneJSON card files, a build-time input): a missing name whose
-      English is a card's name and whose Japanese is katakana takes that Japanese (class human, source
-      hearthstone@BUILD); word pairs from card names that split into the same number of words go into the
-      glossary. A `human` or `correction` name is never touched.
-  export --out DIR [--size N] [--hearthstone DIR]
-      The missing names as batch files of N rows: {"id", "en", "kinds", "prose", "hints", "hearthstone"};
-      a hint is [word, Japanese, "name" (keep it) | "word" (the usual Japanese of an ordinary word)].
-      --skip FILE leaves out the ids of a batch still being drafted. --redo [--redo-ids FILE]: a fix round
-      instead, the drafted machine names that spell a checked glossary word another way and the ids in FILE,
-      each with its "current" [Japanese, reading] and the "problem".
-  import BATCH.jsonl --model MODEL --batch NAME [--date YYYY-MM-DD] [--dry-run]
-      Rows {"id", "ja", "reading", "free", "words"} fill missing or machine names; `words` ([[English,
-      Japanese]]) adds glossary words. A row with a problem is rejected with its reason.
-  export-words --out DIR [--size N]
-      The capitalised words of missing names that are neither in the glossary nor ordinary English (the game's
-      prose never writes them in lower case), each with up to three names that carry it: {"en", "count",
-      "examples"}. Drafting them first keeps one spelling per word across every name batch.
-  import-words BATCH.jsonl --model MODEL --batch NAME [--date YYYY-MM-DD] [--dry-run]
-      Rows {"en", "ja"} (a row whose "ja" is empty is a word that is not a name: a tag or a numeral, skipped)
-      add checked glossary words; a word already in the glossary is kept and reported. --hint-only adds them
-      unchecked: ordinary words with more than one sense (Chest, Iron) are offered as hints, not enforced.
-  check
-      Every name and word line's shape, and the one-spelling check. `validate` runs the same.
+collect [--vmangos DB] [--date YYYY-MM-DD]
+    Every English name the game shows gets a `data/name` line: item, spell and unit names from
+    `data/english`, creature, object, area, faction and map names from the VMaNGOS database when given, and
+    every run of Latin letters in shipped quest, gossip, book, objective and area Japanese and the voiced
+    error lines. New names come in `missing`; ids are only added; nothing is removed or rewritten.
+hearthstone JAJP.json ENUS.json --build BUILD [--date YYYY-MM-DD]
+    Hearthstone's official Japanese (HearthstoneJSON card files, a build-time input): a missing name whose
+    English is a card's name and whose Japanese is katakana takes that Japanese (class human, source
+    hearthstone@BUILD); word pairs from card names that split into the same number of words go into the
+    glossary. A `human` or `correction` name is never touched.
+export --out DIR [--size N] [--hearthstone DIR]
+    The missing names as batch files of N rows: {"id", "en", "kinds", "prose", "hints", "hearthstone"};
+    a hint is [word, Japanese, "name" (keep it) | "word" (the usual Japanese of an ordinary word)].
+    --skip FILE leaves out the ids of a batch still being drafted. --redo [--redo-ids FILE]: a fix round
+    instead, the drafted machine names that spell a checked glossary word another way and the ids in FILE,
+    each with its "current" [Japanese, reading] and the "problem".
+import BATCH.jsonl --model MODEL --batch NAME [--date YYYY-MM-DD] [--dry-run]
+    Rows {"id", "ja", "reading", "free", "words"} fill missing or machine names; `words` ([[English,
+    Japanese]]) adds glossary words. A row with a problem is rejected with its reason.
+export-words --out DIR [--size N]
+    The capitalised words of missing names that are neither in the glossary nor ordinary English (the game's
+    prose never writes them in lower case), each with up to three names that carry it: {"en", "count",
+    "examples"}. Drafting them first keeps one spelling per word across every name batch.
+import-words BATCH.jsonl --model MODEL --batch NAME [--date YYYY-MM-DD] [--dry-run]
+    Rows {"en", "ja"} (a row whose "ja" is empty is a word that is not a name: a tag or a numeral, skipped)
+    add checked glossary words; a word already in the glossary is kept and reported. --hint-only adds them
+    unchecked: ordinary words with more than one sense (Chest, Iron) are offered as hints, not enforced.
+check
+    Every name and word line's shape, and the one-spelling check. `validate` runs the same.
 """
 
 from __future__ import annotations
@@ -126,11 +127,12 @@ def hearthstone_words(pairs: Sequence[tuple[str, str]]) -> tuple[dict[str, Count
         parts = [p.strip(_JA_EDGE) for p in _JA_SPLIT.split(ja) if p.strip(_JA_EDGE)]
         if len(ws) != len(parts) or len(ws) < 1:
             continue
-        for w, p in zip(ws, parts):
+        for w, p in zip(ws, parts, strict=True):
             if w[:1].isupper() and not _JA_ODD.search(p):
                 forms[w][p] += 1
     conflicts = [
-        f"{w}: {', '.join(f'{p} ×{n}' for p, n in c.most_common())}" for w, c in sorted(forms.items())
+        f"{w}: {', '.join(f'{p} ×{n}' for p, n in c.most_common())}"
+        for w, c in sorted(forms.items())
         if len(c) > 1
     ]
     return forms, conflicts
@@ -193,15 +195,24 @@ def redo_rows(root: Path, ids: set[str]) -> dict[str, str]:
         if ln["status"] != "trusted" or ln["free"] or ln["provenance"]["class"] != "machine":
             continue
         have = names.hiragana(ln["ja"]) + "\x00" + ln["reading"]
-        bad = [f"{w} is {glossary[w]}" for w in names.words_of(ln["en"])
-               if w in glossary and names.hiragana(glossary[w]) not in have]
+        bad = [
+            f"{w} is {glossary[w]}"
+            for w in names.words_of(ln["en"])
+            if w in glossary and names.hiragana(glossary[w]) not in have
+        ]
         if bad:
             out[ln["id"]] = "; ".join(bad)
     return out
 
 
-def export(root: Path, out: Path, size: int, hs: Path | None, skip: set[str] = frozenset(),
-           redo: dict[str, str] | None = None) -> int:
+def export(
+    root: Path,
+    out: Path,
+    size: int,
+    hs: Path | None,
+    skip: set[str] = frozenset(),
+    redo: dict[str, str] | None = None,
+) -> int:
     whole: dict[str, str] = {}
     if hs is not None:
         for en, ja in hearthstone_pairs(hs / "jaJP.json", hs / "enUS.json"):
@@ -219,8 +230,11 @@ def export(root: Path, out: Path, size: int, hs: Path | None, skip: set[str] = f
             "prose": ln["prose"],
             # [word, Japanese, "name"] must be kept; [word, Japanese, "word"] is the usual Japanese of an
             # ordinary word, to change when its sense here differs
-            "hints": [[w, words[w]["ja"], "name" if words[w]["check"] else "word"]
-                      for w in dict.fromkeys(names.words_of(ln["en"])) if w in words],
+            "hints": [
+                [w, words[w]["ja"], "name" if words[w]["check"] else "word"]
+                for w in dict.fromkeys(names.words_of(ln["en"]))
+                if w in words
+            ],
         }
         if ln["en"] in whole:
             row["hearthstone"] = whole[ln["en"]]
@@ -241,7 +255,12 @@ def import_batch(
 ) -> tuple[int, list[str]]:
     if not _BATCH_RE.match(batch):
         raise ValueError(f"--batch {batch!r}: 4 to 64 of letters, digits, . _ -")
-    prov = {"class": "machine", "model": model_id, "source": f"draft-names-{batch}@{today}", "imported": today}
+    prov = {
+        "class": "machine",
+        "model": model_id,
+        "source": f"draft-names-{batch}@{today}",
+        "imported": today,
+    }
     lines = {ln["id"]: ln for ln in load_lines(root)}
     words = {w["en"]: w for w in load_words(root)}
     rejected: list[str] = []
@@ -256,8 +275,14 @@ def import_batch(
         if ln["provenance"]["class"] in ("human", "correction"):
             rejected.append(f"{ln['en']!r}: has a {ln['provenance']['class']} Japanese, kept")
             continue
-        new = dict(ln, ja=row.get("ja", ""), reading=row.get("reading", ""), free=bool(row.get("free", False)),
-                   status="trusted", provenance=dict(prov))
+        new = dict(
+            ln,
+            ja=row.get("ja", ""),
+            reading=row.get("reading", ""),
+            free=bool(row.get("free", False)),
+            status="trusted",
+            provenance=dict(prov),
+        )
         bad = names.line_problems(new)
         if bad:
             rejected.append(f"{ln['en']!r}: {'; '.join(bad)}")
@@ -274,7 +299,9 @@ def import_batch(
             elif pair[0] in words and words[pair[0]]["check"] and words[pair[0]]["ja"] != pair[1]:
                 rejected.append(f"word {pair[0]!r}: already {words[pair[0]]['ja']!r}, not {pair[1]!r}")
             elif pair[0] not in words or not words[pair[0]]["check"]:
-                words[pair[0]] = w  # an unchecked Hearthstone pair is only a guess; the drafted word replaces it
+                words[pair[0]] = (
+                    w  # an unchecked Hearthstone pair is only a guess; the drafted word replaces it
+                )
     if not dry_run:
         save_lines(root, lines.values())
         save_words(root, words.values())
@@ -292,8 +319,15 @@ def glossary_candidates(root: Path, *, vocabulary: int = 0) -> dict[str, list[st
         if ln["status"] != "missing" and not vocabulary:
             continue
         for w in dict.fromkeys(names.words_of(ln["en"])):
-            if (w[:1].isalpha() and w.isascii() and (vocabulary or w[:1].isupper()) and w.lower() not in common
-                    and w not in have and not names.stopword(w) and " " not in w):
+            if (
+                w[:1].isalpha()
+                and w.isascii()
+                and (vocabulary or w[:1].isupper())
+                and w.lower() not in common
+                and w not in have
+                and not names.stopword(w)
+                and " " not in w
+            ):
                 out[w].append(ln["en"])
     if vocabulary:
         out = defaultdict(list, {w: ns for w, ns in out.items() if len(ns) >= vocabulary})
@@ -316,7 +350,12 @@ def import_words(
 ) -> tuple[int, list[str]]:
     if not _BATCH_RE.match(batch):
         raise ValueError(f"--batch {batch!r}: 4 to 64 of letters, digits, . _ -")
-    prov = {"class": "machine", "model": model_id, "source": f"draft-names-{batch}@{today}", "imported": today}
+    prov = {
+        "class": "machine",
+        "model": model_id,
+        "source": f"draft-names-{batch}@{today}",
+        "imported": today,
+    }
     words = {w["en"]: w for w in load_words(root)}
     rejected: list[str] = []
     written = 0
@@ -355,10 +394,9 @@ def problems(root: Path) -> list[str]:
     return out
 
 
-def run(argv: Sequence[str]) -> int:
+def _parser(today: str) -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="wfj names")
     sub = p.add_subparsers(dest="cmd", required=True)
-    today = dt.date.today().isoformat()
     c = sub.add_parser("collect")
     c.add_argument("--vmangos")
     c.add_argument("--date", default=today)
@@ -372,8 +410,11 @@ def run(argv: Sequence[str]) -> int:
     e.add_argument("--size", type=int, default=1000)
     e.add_argument("--hearthstone")
     e.add_argument("--skip", action="append", default=[], help="a batch file whose ids are being drafted")
-    e.add_argument("--redo", action="store_true",
-                   help="a fix round: drafted names that spell a checked word another way, and --redo-ids")
+    e.add_argument(
+        "--redo",
+        action="store_true",
+        help="a fix round: drafted names that spell a checked word another way, and --redo-ids",
+    )
     e.add_argument("--redo-ids", help="a file of name ids (one per line) to draft again")
     i = sub.add_parser("import")
     i.add_argument("batch_file")
@@ -384,17 +425,27 @@ def run(argv: Sequence[str]) -> int:
     ew = sub.add_parser("export-words")
     ew.add_argument("--out", required=True)
     ew.add_argument("--size", type=int, default=1000)
-    ew.add_argument("--vocabulary", type=int, default=0, help="every word N or more names carry, ordinary words too")
+    ew.add_argument(
+        "--vocabulary", type=int, default=0, help="every word N or more names carry, ordinary words too"
+    )
     iw = sub.add_parser("import-words")
     iw.add_argument("batch_file")
     iw.add_argument("--model", required=True)
     iw.add_argument("--batch", required=True)
     iw.add_argument("--date", default=today)
     iw.add_argument("--dry-run", action="store_true")
-    iw.add_argument("--hint-only", action="store_true",
-                    help="ordinary words with several senses: a hint for drafting, not held to every name")
+    iw.add_argument(
+        "--hint-only",
+        action="store_true",
+        help="ordinary words with several senses: a hint for drafting, not held to every name",
+    )
     sub.add_parser("check")
-    a = p.parse_args(list(argv))
+    return p
+
+
+def run(argv: Sequence[str]) -> int:
+    today = dt.date.today().isoformat()
+    a = _parser(today).parse_args(list(argv))
     root = data_root()
     try:
         if a.cmd == "collect":
@@ -406,7 +457,12 @@ def run(argv: Sequence[str]) -> int:
             counts = apply_hearthstone(root, hearthstone_pairs(Path(a.ja), Path(a.en)), a.build, a.date)
             print("names hearthstone: " + ", ".join(f"{k} {v}" for k, v in counts.items()))
         elif a.cmd == "export":
-            skip = {json.loads(r)["id"] for f in a.skip for r in Path(f).read_text(encoding="utf-8").splitlines() if r}
+            skip = {
+                json.loads(r)["id"]
+                for f in a.skip
+                for r in Path(f).read_text(encoding="utf-8").splitlines()
+                if r
+            }
             redo = None
             if a.redo:
                 asked = set(Path(a.redo_ids).read_text(encoding="utf-8").split()) if a.redo_ids else set()
@@ -417,16 +473,23 @@ def run(argv: Sequence[str]) -> int:
             n = export_words(root, Path(a.out), a.size, a.vocabulary)
             print(f"names export-words: {n} words → {a.out}")
         elif a.cmd == "import-words":
-            n, rejected = import_words(root, Path(a.batch_file), a.model, a.batch, a.date, a.dry_run, a.hint_only)
+            n, rejected = import_words(
+                root, Path(a.batch_file), a.model, a.batch, a.date, a.dry_run, a.hint_only
+            )
             for r in rejected:
                 print(f"names import-words: {r}", file=sys.stderr)
-            print(f"names import-words: {n} words written, {len(rejected)} kept or rejected"
-                  + (" (dry run)" if a.dry_run else ""))
+            print(
+                f"names import-words: {n} words written, {len(rejected)} kept or rejected"
+                + (" (dry run)" if a.dry_run else "")
+            )
         elif a.cmd == "import":
             n, rejected = import_batch(root, Path(a.batch_file), a.model, a.batch, a.date, a.dry_run)
             for r in rejected:
                 print(f"names import: rejected {r}", file=sys.stderr)
-            print(f"names import: {n} names written, {len(rejected)} rejected" + (" (dry run)" if a.dry_run else ""))
+            print(
+                f"names import: {n} names written, {len(rejected)} rejected"
+                + (" (dry run)" if a.dry_run else "")
+            )
             return 1 if rejected else 0
         else:
             bad = problems(root)
