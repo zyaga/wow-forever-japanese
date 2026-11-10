@@ -154,7 +154,7 @@ end
 -- QuestMapFrame_ShowQuestDetails reads them in ScrollBar:ScrollToBegin (:1055; scrollbar.lua:143–145, 219–220) and
 -- sets the map and the quest id tainted, which the tracker and the map's quest pins then read in combat (ADR-077).
 -- The client keeps the range current itself: the details pane re-measures in SetRewardsHeight after its
--- QuestInfo_Display calls (:1051–1073, 1011), and the popup never calls it at all (:2696).
+-- QuestInfo_Display calls (:1050–1075, 1011), and the popup never calls it at all (:2696).
 
 -- ── labels ───────────────────────────────────────────────────────────────────────────────────────────────────────
 
