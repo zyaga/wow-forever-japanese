@@ -10,6 +10,7 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Fixed
+- With Dialogue UI, a quest's tag over its title (Dungeon, Raid) no longer shows empty boxes: when its Japanese loses the addon's font, the font goes back on the next moment.
 - The Legacy trees' talent tooltips show their Japanese lines (Click to learn, Requires all preceding talents, Spend 10 more points in the Professions Legacy Tree) even when the talent window has not been opened yet. The trees' names stay English.
 - Sharing a quest from the quest tracker's right-click menu, and the world map's quest markers in combat, no longer give an "action blocked" message naming this addon. The quest log, the quest popup and the quest window had their scroll area re-measured by the addon after their text turned Japanese, and that carried the addon's taint into the quest map and the tracker. The game keeps that scroll area right on its own. Sharing a quest in combat is still something the game itself does not allow.
 - Clicking a challenge on the Legacy board, or an achievement in the Achievement window, no longer turns its title and description English. They stay Japanese when the entry opens or closes, and when its progress updates.

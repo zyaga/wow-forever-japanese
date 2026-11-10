@@ -689,6 +689,22 @@ end
 -- drew (its quest data came late) is written by the button's own SetQuestTagNameAndIcon [read: Dialogue UI 1.0.7 b,
 -- QuestHeaderWidget.lua]: each tag button found is followed there too, once.
 local tagFollowed = setmetatable({}, { __mode = "k" })
+
+-- A tag's Japanese can end up in Dialogue UI's own face, which has no Japanese letters (empty boxes), by a path its
+-- code does not show [unverified: seen in game, cause not traced]. So the tag is checked again the next frame: a face
+-- that is not ours is logged with what it was, the bundled face goes back on and the tag is laid out again.
+local function tagFaceAgain(child, fs, ja)
+  if type(fs.GetFont) ~= "function" or fs:GetText() ~= ja then return end
+  local path, size, flags = fs:GetFont()
+  if path == WFJ.Font.PATH then return end
+  local obj = type(fs.GetFontObject) == "function" and fs:GetFontObject() or nil
+  local objName = type(obj) == "table" and type(obj.GetName) == "function" and obj:GetName() or nil
+  WFJ.Diag.log("font", "dialogueui tag face", { path = tostring(path), size = tostring(size),
+    flags = tostring(flags), object = tostring(objName or (type(obj) == "table" and obj.name) or "none") })
+  face(fs, nil, true)
+  if type(child.Layout) == "function" then child:Layout() end
+end
+
 local function tagJapanese(child)
   local fs = type(child) == "table" and child.ButtonText or nil
   if type(fs) ~= "table" or type(fs.GetText) ~= "function" or type(child.SetText) ~= "function" then return end
@@ -698,6 +714,10 @@ local function tagJapanese(child)
     child:SetText(ja)
     -- its own Layout sizes the tag to its text [read: Dialogue UI 1.0.7 b, QuestHeaderWidget.lua]
     if type(child.Layout) == "function" then child:Layout() end
+    local timer = Compat.resolve("C_Timer")
+    if type(timer) == "table" and type(timer.After) == "function" then
+      timer.After(0, function() guarded(tagFaceAgain, child, fs, ja) end)
+    end
   end
 end
 headerTags = function(self)
