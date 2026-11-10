@@ -13,7 +13,9 @@
   export --out DIR [--size N] [--hearthstone DIR]
       The missing names as batch files of N rows: {"id", "en", "kinds", "prose", "hints", "hearthstone"};
       a hint is [word, Japanese, "name" (keep it) | "word" (the usual Japanese of an ordinary word)].
-      --skip FILE leaves out the ids of a batch still being drafted.
+      --skip FILE leaves out the ids of a batch still being drafted. --redo [--redo-ids FILE]: a fix round
+      instead, the drafted machine names that spell a checked glossary word another way and the ids in FILE,
+      each with its "current" [Japanese, reading] and the "problem".
   import BATCH.jsonl --model MODEL --batch NAME [--date YYYY-MM-DD] [--dry-run]
       Rows {"id", "ja", "reading", "free", "words"} fill missing or machine names; `words` ([[English,
       Japanese]]) adds glossary words. A row with a problem is rejected with its reason.
@@ -181,7 +183,25 @@ def apply_hearthstone(root: Path, pairs: Sequence[tuple[str, str]], build: str, 
     return {"names filled": filled, "words added": added, "word conflicts": len(conflicts)}
 
 
-def export(root: Path, out: Path, size: int, hs: Path | None, skip: set[str] = frozenset()) -> int:
+def redo_rows(root: Path, ids: set[str]) -> dict[str, str]:
+    """{name id: why it is drafted again} for the machine names a fix round redoes: every one that spells a
+    checked glossary word another way, and the ids asked for."""
+    lines, words = load_lines(root), load_words(root)
+    glossary = {w["en"]: w["ja"] for w in words if w["check"]}
+    out = {i: "asked to align with the rest" for i in ids}
+    for ln in lines:
+        if ln["status"] != "trusted" or ln["free"] or ln["provenance"]["class"] != "machine":
+            continue
+        have = names.hiragana(ln["ja"]) + "\x00" + ln["reading"]
+        bad = [f"{w} is {glossary[w]}" for w in names.words_of(ln["en"])
+               if w in glossary and names.hiragana(glossary[w]) not in have]
+        if bad:
+            out[ln["id"]] = "; ".join(bad)
+    return out
+
+
+def export(root: Path, out: Path, size: int, hs: Path | None, skip: set[str] = frozenset(),
+           redo: dict[str, str] | None = None) -> int:
     whole: dict[str, str] = {}
     if hs is not None:
         for en, ja in hearthstone_pairs(hs / "jaJP.json", hs / "enUS.json"):
@@ -190,7 +210,7 @@ def export(root: Path, out: Path, size: int, hs: Path | None, skip: set[str] = f
     words = {w["en"]: w for w in load_words(root)}
     rows = []
     for ln in load_lines(root):
-        if ln["status"] != "missing" or ln["id"] in skip:
+        if ln["id"] in skip or (ln["id"] not in redo if redo is not None else ln["status"] != "missing"):
             continue
         row: dict[str, Any] = {
             "id": ln["id"],
@@ -204,6 +224,9 @@ def export(root: Path, out: Path, size: int, hs: Path | None, skip: set[str] = f
         }
         if ln["en"] in whole:
             row["hearthstone"] = whole[ln["en"]]
+        if redo is not None:
+            row["current"] = [ln["ja"], ln["reading"]]
+            row["problem"] = redo[ln["id"]]
         rows.append(row)
     out.mkdir(parents=True, exist_ok=True)
     for n, start in enumerate(range(0, len(rows), size)):
@@ -349,6 +372,9 @@ def run(argv: Sequence[str]) -> int:
     e.add_argument("--size", type=int, default=1000)
     e.add_argument("--hearthstone")
     e.add_argument("--skip", action="append", default=[], help="a batch file whose ids are being drafted")
+    e.add_argument("--redo", action="store_true",
+                   help="a fix round: drafted names that spell a checked word another way, and --redo-ids")
+    e.add_argument("--redo-ids", help="a file of name ids (one per line) to draft again")
     i = sub.add_parser("import")
     i.add_argument("batch_file")
     i.add_argument("--model", required=True)
@@ -381,7 +407,11 @@ def run(argv: Sequence[str]) -> int:
             print("names hearthstone: " + ", ".join(f"{k} {v}" for k, v in counts.items()))
         elif a.cmd == "export":
             skip = {json.loads(r)["id"] for f in a.skip for r in Path(f).read_text(encoding="utf-8").splitlines() if r}
-            n = export(root, Path(a.out), a.size, Path(a.hearthstone) if a.hearthstone else None, skip)
+            redo = None
+            if a.redo:
+                asked = set(Path(a.redo_ids).read_text(encoding="utf-8").split()) if a.redo_ids else set()
+                redo = redo_rows(root, asked)
+            n = export(root, Path(a.out), a.size, Path(a.hearthstone) if a.hearthstone else None, skip, redo)
             print(f"names export: {n} missing names → {a.out}")
         elif a.cmd == "export-words":
             n = export_words(root, Path(a.out), a.size, a.vocabulary)
