@@ -68,12 +68,10 @@ local CANDIDATES = {
   details         = { "QuestMapFrame.QuestsFrame.DetailsFrame", "QuestMapFrame.DetailsFrame" },
   detailsContents = { "QuestMapDetailsScrollFrame.Contents",
                       "QuestMapFrame.QuestsFrame.DetailsFrame.ScrollFrame.Contents" },
-  detailsScroll   = { "QuestMapDetailsScrollFrame" },                                  -- .xml:788
   mapRewardsParent = { "QuestMapFrame.QuestsFrame.DetailsFrame.RewardsFrameContainer.RewardsFrame" }, -- .xml:743–749
   popup           = { "QuestLogPopupDetailFrame" },                                     -- .xml:308
   popupChild      = { "QuestLogPopupDetailFrameScrollFrame.ScrollChild",
                       "QuestLogPopupDetailFrame.ScrollFrame.ScrollChild" },
-  popupScroll     = { "QuestLogPopupDetailFrameScrollFrame" },                          -- .xml:321
   listScroll      = { "QuestScrollFrame" },                                             -- .xml:490
   -- writers
   detailsButtons  = { "QuestMapFrame_UpdateQuestDetailsButtons" }, -- rewrites Track on both panes (:1142–1158)
@@ -151,25 +149,12 @@ local function hookScript(key, script, fn)
   return false
 end
 
--- The details scroll frame's range callback lays out the rewards from QuestInfoFrame.rewardsFrame.numRows
--- (QuestLogQuestDetailsMixin:AdjustRewardsFrameContainer → QuestInfo_GetNumRewardRows, questinfo.lua:1065–1068,
--- questmapframe.lua:1015–1026), which is nil until QuestInfo_ShowRewards has run: a refit before then raised in
--- Blizzard's code. The client runs that layout itself once the rewards are shown, so the refit waits for them, and
--- an error in the client's callback is caught rather than shown.
-local function rewardsReady()
-  local info = Compat.resolve("QuestInfoFrame")
-  local rewards = type(info) == "table" and info.rewardsFrame or nil
-  return type(rewards) ~= "table" or type(rewards.numRows) == "number"
-end
-
-local function refitFor(scrollKey)
-  return function()
-    local scroll = get(scrollKey)
-    if type(scroll) == "table" and type(scroll.UpdateScrollChildRect) == "function" and rewardsReady() then
-      pcall(scroll.UpdateScrollChildRect, scroll)
-    end
-  end
-end
+-- The panes have no refit. UpdateScrollChildRect called from addon code runs the scroll frame's range scripts under
+-- this addon's taint, and they write the scroll bar's fields (questmapframe.lua:466–468, 965–968, 1015–1040). The next
+-- QuestMapFrame_ShowQuestDetails reads them in ScrollBar:ScrollToBegin (:1055; scrollbar.lua:143–145, 219–220) and
+-- sets the map and the quest id tainted, which the tracker and the map's quest pins then read in combat (ADR-077).
+-- The client keeps the range current itself: the details pane re-measures in SetRewardsHeight after its
+-- QuestInfo_Display calls (:1051–1073, 1011), and the popup never calls it at all (:2696).
 
 -- ── labels ───────────────────────────────────────────────────────────────────────────────────────────────────────
 
@@ -217,21 +202,21 @@ local LIST_LABEL_ITEMS = {
   { "ui.searchHint", named("searchHint") }, { "ui.questCount", named("questCount") },
 }
 
-local function showLabels(surface, lists, refit)
+local function showLabels(surface, lists)
   local items = {}
   for _, list in ipairs(lists) do
     for _, l in ipairs(list) do items[#items + 1] = { l[1], l[2](), l[3] } end
   end
-  return WFJ.Labels.showAll(surface, items, refit)
+  return WFJ.Labels.showAll(surface, items)
 end
 
 -- ── the two QuestInfo panes ──────────────────────────────────────────────────────────────────────────────────────
 
 local PANES = {
-  map   = { surface = SURFACE, info = INFO, refit = refitFor("detailsScroll"), infoLabels = { QUESTINFO_LABELS },
-            labels = { MAP_LABELS }, track = "trackButton" },
-  popup = { surface = POPUP, info = POPUP_INFO, refit = refitFor("popupScroll"),
-            infoLabels = { QUESTINFO_LABELS, POPUP_INFO_LABELS }, labels = { POPUP_LABELS }, track = "popupTrack" },
+  map   = { surface = SURFACE, info = INFO, infoLabels = { QUESTINFO_LABELS }, labels = { MAP_LABELS },
+            track = "trackButton" },
+  popup = { surface = POPUP, info = POPUP_INFO, infoLabels = { QUESTINFO_LABELS, POPUP_INFO_LABELS },
+            labels = { POPUP_LABELS }, track = "popupTrack" },
 }
 
 -- Before a pane shows on the shared QuestInfo widgets: forget the other pane's shared records and the quest window's
@@ -252,14 +237,14 @@ local function showField(pane, field, en, id)
       and WFJ.ShippedGossipKey(en)
   if variant and isText(fs) and fs:GetText() == en then
     -- a conditional description (another wording for this character), keyed by its English
-    WFJ.Render.show(pane.info, field, fs, en, "quests", "gossip", variant, { refit = pane.refit, compact = true })
+    WFJ.Render.show(pane.info, field, fs, en, "quests", "gossip", variant, { compact = true })
     return 1
   end
   if isText(fs) and type(en) == "string" and en ~= "" and fs:GetText() == en then
     -- live: the API English, for the stale marker's live check (ADR-019); compact below the title, so a quest
     -- gets one missing marker, on its title
     WFJ.Render.show(pane.info, field, fs, en, "quests", "quest." .. field, id,
-      { refit = pane.refit, live = en, compact = field ~= "title" })
+      { live = en, compact = field ~= "title" })
     return 1
   end
   WFJ.SurfaceState.drop(pane.info, field)
@@ -276,7 +261,7 @@ function QuestMap.showDetailObjectives(pane)
   local n = 0
   for _, fs in ipairs(list) do
     if type(fs) == "table" and (type(fs.IsShown) ~= "function" or fs:IsShown()) then
-      n = n + QuestMap.showObjective(pane.info, detailObjectiveKey(fs), fs, pane.refit)
+      n = n + QuestMap.showObjective(pane.info, detailObjectiveKey(fs), fs)
     end
   end
   return n
@@ -302,8 +287,8 @@ function QuestMap.showPane(paneName)
   local n = showField(pane, "title", title, id) + showField(pane, "objectives", objectives, id)
     + showField(pane, "description", description, id)
   QuestMap.showDetailObjectives(pane)
-  showLabels(pane.info, pane.infoLabels, pane.refit)
-  showLabels(pane.surface, pane.labels, pane.refit)
+  showLabels(pane.info, pane.infoLabels)
+  showLabels(pane.surface, pane.labels)
   return n
 end
 
@@ -316,7 +301,7 @@ function QuestMap.onDisplay(_, parentFrame)
   if parentFrame == get("popupChild") then return QuestMap.showPane("popup") end
   if parentFrame == get("mapRewardsParent") then
     if WFJ.SurfaceState.count(SURFACE) == 0 then return 0 end -- the details write came first and found nothing
-    return showLabels(SURFACE, { MAP_LABELS }, PANES.map.refit)
+    return showLabels(SURFACE, { MAP_LABELS })
   end
   return 0
 end
@@ -328,7 +313,7 @@ function QuestMap.onButtons()
   local n = 0
   for _, pane in pairs(PANES) do
     if WFJ.SurfaceState.count(pane.surface) > 0 then
-      n = n + WFJ.Labels.show(pane.surface, "ui.track", get(pane.track), pane.refit)
+      n = n + WFJ.Labels.show(pane.surface, "ui.track", get(pane.track))
       WFJ.Render.updateBanner(pane.surface)
     end
   end
