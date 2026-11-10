@@ -147,6 +147,17 @@ def how_many(counter: str) -> str:
     return "なん" + (_K.get(counter) or _S.get(counter) or _PLAIN[counter])
 
 
+def _counter_word(surface: str) -> bool:
+    """A counter, alone or with what follows a count (匹, 週間, 本目): read with its number, not as written.
+    A word that only starts with one (本部) is an ordinary word."""
+    for c in COUNTERS:
+        if surface.startswith(c):
+            rest = surface[len(c):]
+            if not rest or _AFTER_ONE.fullmatch(rest) or re.fullmatch(f"(?:{_AFTER_ONE.pattern})+", rest):
+                return True
+    return False
+
+
 def apply_readings(ja: str, words: Sequence[Sequence[str]]) -> str | None:
     """`ja` with each reading word replaced by its reading, in order (each found after the previous one). A
     counter right after a number or a `$N<k>` keeps its kanji: the number reader reads them together. None
@@ -159,7 +170,7 @@ def apply_readings(ja: str, words: Sequence[Sequence[str]]) -> str | None:
             return None
         before = ja[:i]
         out.append(ja[at:i])
-        if re.search(r"(\d|\$N\d+)$", before) and any(surface.startswith(c) for c in COUNTERS):
+        if re.search(r"(\d|\$N\d+)$", before) and _counter_word(surface):
             out.append(surface)
         else:
             out.append(reading)
