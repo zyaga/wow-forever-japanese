@@ -65,7 +65,7 @@ def test_merge_adds_ids_never_removes_or_rewrites():
         ({"reading": "すろる"}, "not the hiragana of"),
         ({"ids": {}, "prose": False}, "no game id"),
         ({"ids": {"npc": [1]}}, "kinds of"),
-        ({"provenance": {"class": "machine"}}, "provenance source"),
+        ({"provenance": {"class": "machine"}}, "source must look like"),
     ],
 )
 def test_line_problems(change, problem):

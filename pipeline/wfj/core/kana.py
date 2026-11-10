@@ -14,9 +14,7 @@ from typing import Any
 
 from wfj.core import names, voice
 
-_KANJI = re.compile(r"[㐀-䶿一-鿿々〆]")
 _LEFTOVER = re.compile(r"[㐀-䶿一-鿿々〆A-Za-z0-9０-９]")
-_KATAKANA = re.compile(r"^[ァ-ヺー・]+$")
 
 # Counters with the reading a number takes before them. "h" counters soften after 3 (b) and harden after
 # 1 / 6 / 8 / 10 / 100 (p, with a small tsu); "k" and "s" counters take a small tsu after 1 / 8 / 10 / 100
@@ -75,7 +73,8 @@ _PLAIN = {
     "円": "えん",
     "万": "まん",
 }
-COUNTERS = sorted({**_H, **_K, **_S, **_PLAIN}, key=len, reverse=True)
+COUNTER_READING = {**_H, **_K, **_S, **_PLAIN}
+COUNTERS = sorted(COUNTER_READING, key=len, reverse=True)
 _DIGITS = ["いち", "に", "さん", "よん", "ご", "ろく", "なな", "はち", "きゅう"]
 _TSUMARU = {"いち": "いっ", "ろく": "ろっ", "はち": "はっ", "じゅう": "じゅっ", "ひゃく": "ひゃっ"}
 _PEOPLE = {1: "ひとり", 2: "ふたり", 4: "よにん"}
@@ -128,6 +127,7 @@ _NUMBER = re.compile(
     + r")*)"
 )
 _AFTER_ONE = re.compile("|".join(map(re.escape, sorted(_AFTER, key=len, reverse=True))))
+_AFTER_RUN = re.compile(f"(?:{_AFTER_ONE.pattern})+")
 _HOW_MANY = re.compile(r"何(" + "|".join(map(re.escape, COUNTERS)) + r")")
 
 
@@ -178,7 +178,7 @@ def _last_digit_word(parts: list[str]) -> str:
 def with_counter(text: str, counter: str) -> str:
     """A number and its counter, read together with the sound changes (3匹 さんびき, 10本 じゅっぽん)."""
     if "." in text:
-        return read_number(text) + (_H.get(counter) or _K.get(counter) or _S.get(counter) or _PLAIN[counter])
+        return read_number(text) + COUNTER_READING[counter]
     n = int(text.replace(",", ""))
     special = {"人": _PEOPLE, "日": _DAYS, "つ": _THINGS}.get(counter, {})
     if n in special:
@@ -239,7 +239,7 @@ def how_many(counter: str) -> str:
     """何 with a counter (何匹か なんびきか)."""
     if counter in _H:
         return "なん" + _b(_H[counter])
-    return "なん" + (_K.get(counter) or _S.get(counter) or _PLAIN[counter])
+    return "なん" + COUNTER_READING[counter]
 
 
 def _counter_word(surface: str) -> bool:
@@ -248,7 +248,7 @@ def _counter_word(surface: str) -> bool:
     for c in COUNTERS:
         if surface.startswith(c):
             rest = surface[len(c) :]
-            if not rest or _AFTER_ONE.fullmatch(rest) or re.fullmatch(f"(?:{_AFTER_ONE.pattern})+", rest):
+            if not rest or _AFTER_RUN.fullmatch(rest):
                 return True
     return False
 
@@ -263,9 +263,8 @@ def apply_readings(ja: str, words: Sequence[Sequence[str]]) -> str | None:
         i = ja.find(surface, at)
         if i < 0:
             return None
-        before = ja[:i]
         out.append(ja[at:i])
-        if re.search(r"(\d|\$N\d+)$", before) and _counter_word(surface):
+        if i > 0 and ja[i - 1].isdigit() and _counter_word(surface):  # "3匹", "$N1匹"
             out.append(surface)
         else:
             out.append(reading)
@@ -276,7 +275,7 @@ def apply_readings(ja: str, words: Sequence[Sequence[str]]) -> str | None:
 
 def name_kana(line: Mapping[str, Any]) -> str:
     """A name as the voice reads it: its katakana when the Japanese is all katakana, else its reading."""
-    return line["ja"] if _KATAKANA.match(line["ja"]) else line["reading"]
+    return line["ja"] if names.KATAKANA.match(line["ja"]) else line["reading"]
 
 
 def replace_names(text: str, lookup: Callable[[str], str | None]) -> tuple[str, list[str]]:
@@ -285,28 +284,25 @@ def replace_names(text: str, lookup: Callable[[str], str | None]) -> tuple[str, 
 
     def one(m: re.Match[str]) -> str:
         raw = m.group(0)
-        run = names._TRAILING_NUMBER.sub("", raw).rstrip(names._TRAILING).strip()
-        # a count written straight after a name ("cloth60枚", a filled "$N1個") belongs to its counter
-        glued = re.match(r"(.*?[A-Za-z'’.])(\d[\d,.]*)$", run)
-        if glued and lookup(glued.group(1)) is not None:
-            run = glued.group(1)
+        run = names.trim_run(raw)  # the collector's rule: what it stored is what is looked up here
         kana = lookup(run) if run else None
         if kana is None:
             missing.append(run or raw)
             return raw
-        return kana + raw[raw.index(run) + len(run) :] if run in raw else kana
+        return kana + raw[len(run) :]  # a trimmed count stays for its counter ("cloth60枚")
 
-    return names._LATIN_RUN.sub(one, text), missing
+    return names.LATIN_RUN.sub(one, text), missing
 
 
 def spell_numbers(text: str) -> str:
     text = _HOW_MANY.sub(lambda m: how_many(m.group(1)), text)
-    text = text.replace("冒険者", "ぼうけんしゃ").replace("数", "すう")  # both put in by speech_text
+    # the words speech_text puts in: the player, and a count only the server knows
+    text = text.replace(voice.PLAYER_WORD, "ぼうけんしゃ").replace("数", "すう")
 
     def one(m: re.Match[str]) -> str:
         num, space, counter, after = m.group(1), m.group(2), m.group(3), m.group(4)
         if not counter:
-            return read_number(num) + space + (m.group(4) or "")
+            return read_number(num) + space + (after or "")
         return with_counter(num, counter) + _AFTER_ONE.sub(lambda a: _AFTER[a.group(0)], after or "")
 
     return _NUMBER.sub(one, text.replace("～", "から"))

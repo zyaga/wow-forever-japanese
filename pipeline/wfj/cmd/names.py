@@ -44,6 +44,7 @@ from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
 
+from wfj.cmd.readings import read_batch
 from wfj.core import names
 from wfj.emit.lua_writer import shipped
 from wfj.io import vmangos
@@ -52,10 +53,9 @@ from wfj.io.names_store import load_lines, load_words, save_lines, save_words
 from wfj.paths import data_root
 
 PROSE_TYPES = ("quest", "gossip", "book", "objective", "area")
-ENGLISH_NAMES = {"item": "item", "spell": "spell", "unit": "unit"}
+ENGLISH_NAMES = ("item", "spell", "unit")  # data/english types whose `name` field is a name kind too
 _BATCH_RE = re.compile(r"^[0-9A-Za-z._-]{4,64}$")
 _JA_SPLIT = re.compile(r"[・　 ]+")
-_KATAKANA = re.compile(r"^[ァ-ヺー・]+$")
 _JA_EDGE = "！？!?。、「」『』（）()…"
 # a part that is a phrase or holds markup rather than a word's Japanese
 _JA_ODD = re.compile(r"[\x00-\x7f！？。、「」『』（）：]")
@@ -65,8 +65,8 @@ def english_names(root: Path) -> dict[str, dict[str, set[int]]]:
     """{English name: {kind: ids}} from data/english item, spell and unit names."""
     out: dict[str, dict[str, set[int]]] = defaultdict(lambda: defaultdict(set))
     english = Store(root, english=True)
-    for type_, kind in ENGLISH_NAMES.items():
-        for ln in english.load(type_):
+    for kind in ENGLISH_NAMES:
+        for ln in english.load(kind):
             if ln["field"] == "name" and ln["en"].strip():
                 out[ln["en"]][kind].add(int(ln["id"]))
     return out
@@ -90,7 +90,7 @@ def prose_names(root: Path) -> set[str]:
 
 def collect(root: Path, db: Path | None, today: str) -> dict[str, int]:
     seen = english_names(root)
-    counts = {f"english {k}": sum(1 for v in seen.values() if k in v) for k in ENGLISH_NAMES.values()}
+    counts = {f"english {k}": sum(1 for v in seen.values() if k in v) for k in ENGLISH_NAMES}
     if db is not None:
         for kind, rows in vmangos.read_names(db).items():
             for i, en in rows.items():
@@ -162,7 +162,7 @@ def apply_hearthstone(root: Path, pairs: Sequence[tuple[str, str]], build: str, 
         if ln["status"] != "missing" or not c:
             continue
         ja = c.most_common(1)[0][0]
-        if _KATAKANA.match(ja):
+        if names.KATAKANA.match(ja):
             ln.update(ja=ja, reading=names.hiragana(ja), status="trusted", provenance=dict(prov))
             filled += 1
     save_lines(root, lines)
@@ -174,7 +174,7 @@ def apply_hearthstone(root: Path, pairs: Sequence[tuple[str, str]], build: str, 
             continue
         ja, n = c.most_common(1)[0]
         steady = n >= 2 and n / sum(c.values()) >= 0.8
-        if steady and w.lower() not in common and _KATAKANA.match(ja):
+        if steady and w.lower() not in common and names.KATAKANA.match(ja):
             # only a name Hearthstone spells the same way again and again; a one-off pair is too often a
             # card's own phrase ("アライアンスのために") to hold every name to it
             words[w] = {"en": w, "ja": ja, "check": True, "provenance": dict(prov)}
@@ -188,21 +188,34 @@ def apply_hearthstone(root: Path, pairs: Sequence[tuple[str, str]], build: str, 
 def redo_rows(root: Path, ids: set[str]) -> dict[str, str]:
     """{name id: why it is drafted again} for the machine names a fix round redoes: every one that spells a
     checked glossary word another way, and the ids asked for."""
-    lines, words = load_lines(root), load_words(root)
-    glossary = {w["en"]: w["ja"] for w in words if w["check"]}
+    glossary = names.checked_glossary(load_words(root))
     out = {i: "asked to align with the rest" for i in ids}
-    for ln in lines:
-        if ln["status"] != "trusted" or ln["free"] or ln["provenance"]["class"] != "machine":
-            continue
-        have = names.hiragana(ln["ja"]) + "\x00" + ln["reading"]
-        bad = [
-            f"{w} is {glossary[w]}"
-            for w in names.words_of(ln["en"])
-            if w in glossary and names.hiragana(glossary[w]) not in have
-        ]
+    for ln in load_lines(root):
+        bad = names.misspelled(ln, glossary) if ln["provenance"]["class"] == "machine" else []
         if bad:
-            out[ln["id"]] = "; ".join(bad)
+            out[ln["id"]] = "; ".join(f"{w} is {ja}" for w, ja in bad)
     return out
+
+
+def draft_provenance(model_id: str, kind: str, batch: str, today: str) -> dict[str, str]:
+    """The provenance of a model-drafted batch row (`draft-<kind>-<batch>@<date>`, ADR-014)."""
+    if not _BATCH_RE.match(batch):
+        raise ValueError(f"--batch {batch!r}: 4 to 64 of letters, digits, . _ -")
+    return {
+        "class": "machine",
+        "model": model_id,
+        "source": f"draft-{kind}-{batch}@{today}",
+        "imported": today,
+    }
+
+
+def write_batches(out: Path, rows: Sequence[dict[str, Any]], size: int, stem: str) -> int:
+    """`<stem>-NNN.jsonl` files of `size` rows each."""
+    out.mkdir(parents=True, exist_ok=True)
+    for n, start in enumerate(range(0, len(rows), size)):
+        text = "".join(dumps(r) + "\n" for r in rows[start : start + size])
+        (out / f"{stem}-{n:03d}.jsonl").write_text(text, encoding="utf-8")
+    return len(rows)
 
 
 def export(
@@ -216,7 +229,7 @@ def export(
     whole: dict[str, str] = {}
     if hs is not None:
         for en, ja in hearthstone_pairs(hs / "jaJP.json", hs / "enUS.json"):
-            if not names._ASCII_LETTER.search(ja):  # a card Hearthstone left in English is no Japanese
+            if not names.has_latin(ja):  # a card Hearthstone left in English is no Japanese
                 whole.setdefault(names.norm(en), ja)
     words = {w["en"]: w for w in load_words(root)}
     rows = []
@@ -242,32 +255,18 @@ def export(
             row["current"] = [ln["ja"], ln["reading"]]
             row["problem"] = redo[ln["id"]]
         rows.append(row)
-    out.mkdir(parents=True, exist_ok=True)
-    for n, start in enumerate(range(0, len(rows), size)):
-        (out / f"batch-{n:03d}.jsonl").write_text(
-            "".join(dumps(r) + "\n" for r in rows[start : start + size]), encoding="utf-8"
-        )
-    return len(rows)
+    return write_batches(out, rows, size, "batch")
 
 
 def import_batch(
     root: Path, path: Path, model_id: str, batch: str, today: str, dry_run: bool
 ) -> tuple[int, list[str]]:
-    if not _BATCH_RE.match(batch):
-        raise ValueError(f"--batch {batch!r}: 4 to 64 of letters, digits, . _ -")
-    prov = {
-        "class": "machine",
-        "model": model_id,
-        "source": f"draft-names-{batch}@{today}",
-        "imported": today,
-    }
+    prov = draft_provenance(model_id, "names", batch, today)
     lines = {ln["id"]: ln for ln in load_lines(root)}
     words = {w["en"]: w for w in load_words(root)}
     rejected: list[str] = []
     written = 0
-    with path.open(encoding="utf-8") as f:
-        rows = [json.loads(raw) for raw in f if raw.strip()]
-    for row in rows:
+    for row in read_batch(path):
         ln = lines.get(row.get("id"))
         if ln is None:
             rejected.append(f"{row.get('id')}: no such name")
@@ -294,14 +293,14 @@ def import_batch(
                 rejected.append(f"{ln['en']!r}: word {pair!r} is not [English, Japanese]")
                 continue
             w = {"en": pair[0], "ja": pair[1], "check": True, "provenance": dict(prov)}
-            if names.word_problems(w):
-                rejected.append(f"{ln['en']!r}: word {pair!r}: {'; '.join(names.word_problems(w))}")
+            wrong = names.word_problems(w)
+            if wrong:
+                rejected.append(f"{ln['en']!r}: word {pair!r}: {'; '.join(wrong)}")
             elif pair[0] in words and words[pair[0]]["check"] and words[pair[0]]["ja"] != pair[1]:
                 rejected.append(f"word {pair[0]!r}: already {words[pair[0]]['ja']!r}, not {pair[1]!r}")
             elif pair[0] not in words or not words[pair[0]]["check"]:
-                words[pair[0]] = (
-                    w  # an unchecked Hearthstone pair is only a guess; the drafted word replaces it
-                )
+                # an unchecked Hearthstone pair is only a guess; the drafted word replaces it
+                words[pair[0]] = w
     if not dry_run:
         save_lines(root, lines.values())
         save_words(root, words.values())
@@ -337,31 +336,17 @@ def glossary_candidates(root: Path, *, vocabulary: int = 0) -> dict[str, list[st
 def export_words(root: Path, out: Path, size: int, vocabulary: int = 0) -> int:
     cands = glossary_candidates(root, vocabulary=vocabulary)
     rows = [{"en": w, "count": len(ns), "examples": ns[:5]} for w, ns in sorted(cands.items())]
-    out.mkdir(parents=True, exist_ok=True)
-    for n, start in enumerate(range(0, len(rows), size)):
-        (out / f"words-{n:03d}.jsonl").write_text(
-            "".join(dumps(r) + "\n" for r in rows[start : start + size]), encoding="utf-8"
-        )
-    return len(rows)
+    return write_batches(out, rows, size, "words")
 
 
 def import_words(
     root: Path, path: Path, model_id: str, batch: str, today: str, dry_run: bool, hint_only: bool = False
 ) -> tuple[int, list[str]]:
-    if not _BATCH_RE.match(batch):
-        raise ValueError(f"--batch {batch!r}: 4 to 64 of letters, digits, . _ -")
-    prov = {
-        "class": "machine",
-        "model": model_id,
-        "source": f"draft-names-{batch}@{today}",
-        "imported": today,
-    }
+    prov = draft_provenance(model_id, "names", batch, today)
     words = {w["en"]: w for w in load_words(root)}
     rejected: list[str] = []
     written = 0
-    with path.open(encoding="utf-8") as f:
-        rows = [json.loads(raw) for raw in f if raw.strip()]
-    for row in rows:
+    for row in read_batch(path):
         en, ja = row.get("en"), row.get("ja", "")
         if not ja:
             continue

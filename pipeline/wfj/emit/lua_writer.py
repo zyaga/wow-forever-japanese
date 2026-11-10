@@ -256,11 +256,11 @@ def keyed_text(type_: str, nn: str, shard_rows: dict[str, list[str]]) -> str:
 
 def names_text(nn: str, lines: Iterable[dict[str, Any]]) -> str:
     """One shard of the Japanese names (ADR-077): `[English hash] = { Japanese, reading, English }` for the
-    names with Japanese. Generated beside the addon but not in the TOC: the names setting loads them."""
+    names it is given (the ones with Japanese). Generated beside the addon but not in the TOC: the names
+    setting loads them."""
     entries = (
         (lua_string(ln["id"]), [lua_string(ln["ja"]), lua_string(ln["reading"]), lua_string(ln["en"])])
         for ln in sorted(lines, key=lambda ln: ln["id"])
-        if ln["status"] == "trusted"
     )
     return _add_text("name", f"data/name/name-{nn}.jsonl", entries)
 

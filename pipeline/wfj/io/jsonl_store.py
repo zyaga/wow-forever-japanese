@@ -37,6 +37,14 @@ def _sort_key(type_: str, english: bool):
     return key
 
 
+def read_jsonl(path: Path) -> list[dict[str, Any]]:
+    """Every object of a JSONL file (blank lines skipped); a missing file is empty."""
+    if not path.is_file():
+        return []
+    with path.open(encoding="utf-8") as f:
+        return [json.loads(raw) for raw in f if raw.strip()]
+
+
 def dumps(line: dict[str, Any]) -> str:
     return json.dumps(line, ensure_ascii=False, separators=(", ", ": "))
 

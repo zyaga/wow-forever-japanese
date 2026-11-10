@@ -588,7 +588,7 @@ def generated_on_disk(addon_dir: Path) -> set[str]:
     for name in ("Meta.lua", "Vectors.lua"):
         if (data / name).is_file():
             found.add(f"Data/{name}")
-    for prefix in (*schema.FILE_PREFIX.values(), "Names"):
+    for prefix in (*schema.FILE_PREFIX.values(), NAMES_DIR.removeprefix("Data/")):
         for p in (data / prefix).glob(f"{prefix}_*.lua"):
             if p.is_file():
                 found.add(p.relative_to(addon_dir).as_posix())

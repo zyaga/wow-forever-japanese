@@ -26,10 +26,10 @@ KINDS = ("unit", "item", "spell", "object", "area", "faction", "map")
 STATUSES = ("missing", "trusted")
 KEYS = ("id", "en", "ids", "prose", "ja", "reading", "free", "status", "provenance")
 WORD_KEYS = ("en", "ja", "check", "provenance")
-_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 _ASCII_LETTER = re.compile(r"[A-Za-z]")
 _READING = re.compile(r"^[ぁ-ゖー・]+$")
-_KATAKANA = re.compile(r"^[ァ-ヺー・]+$")
+KATAKANA = re.compile(r"^[ァ-ヺー・]+$")
+_WORD_SPLIT = re.compile(r"[ \-]+")
 
 # Markup a shipped line can hold, removed before its Latin runs are read: player tokens, server codes,
 # colour and link escapes, texture escapes.
@@ -38,7 +38,7 @@ _MARKUP = re.compile(
 )
 # A name in prose: Latin letters, digits and the punctuation names carry (Zul'Gurub, Un'Goro, C.O.R.E.),
 # words joined by single spaces.
-_LATIN_RUN = re.compile(r"[A-Za-z][A-Za-z0-9'’.&-]*(?: [A-Za-z0-9][A-Za-z0-9'’.&-]*)*")
+LATIN_RUN = re.compile(r"[A-Za-z][A-Za-z0-9'’.&-]*(?: [A-Za-z0-9][A-Za-z0-9'’.&-]*)*")
 _TRAILING = ".'’-&"
 _TRAILING_NUMBER = re.compile(r"(?: [0-9][0-9.,]*)+$")  # a count after a name ("Stranglethorn raptor 10")
 _GLUED_NUMBER = re.compile(r"(?<=[a-z'’.])[0-9][0-9.,]*$")  # a count written onto it ("mageweave cloth60枚")
@@ -59,13 +59,23 @@ def hiragana(text: str) -> str:
     return "".join(chr(ord(c) - 0x60) if "ァ" <= c <= "ヶ" else c for c in text)
 
 
+def has_latin(text: str) -> bool:
+    return bool(_ASCII_LETTER.search(text))
+
+
+def trim_run(raw: str) -> str:
+    """The name in a run of Latin letters: a count after it (" 10", "60" written onto it) and edge
+    punctuation left out. The collector and the kana builder read names this one way."""
+    run = _TRAILING_NUMBER.sub("", raw).rstrip(_TRAILING).strip()
+    return _GLUED_NUMBER.sub("", run)
+
+
 def latin_runs(ja: str) -> list[str]:
     """The English names inside a shipped Japanese line, in order (repeats kept)."""
     out = []
-    for m in _LATIN_RUN.finditer(_MARKUP.sub(" ", ja)):
-        run = _TRAILING_NUMBER.sub("", m.group(0)).rstrip(_TRAILING).strip()
-        run = _GLUED_NUMBER.sub("", run)
-        if run and _ASCII_LETTER.search(run):
+    for m in LATIN_RUN.finditer(_MARKUP.sub(" ", ja)):
+        run = trim_run(m.group(0))
+        if run and has_latin(run):
             out.append(run)
     return out
 
@@ -74,7 +84,7 @@ def words_of(en: str) -> list[str]:
     """The words of an English name the glossary is matched on: split on spaces and hyphens, a possessive
     "'s" and edge punctuation dropped."""
     out = []
-    for raw in re.split(r"[ \-]+", en):
+    for raw in _WORD_SPLIT.split(en):
         w = raw.strip(',:;!?()"').rstrip(".")
         if w.endswith(("'s", "’s")):
             w = w[:-2]
@@ -144,14 +154,7 @@ def merge(
 def _provenance_problems(prov: Any) -> list[str]:
     if not isinstance(prov, dict):
         return ["provenance missing"]
-    out = []
-    if prov.get("class") not in model.PROVENANCE_CLASSES:
-        out.append(f"provenance class {prov.get('class')!r}")
-    if not isinstance(prov.get("source"), str) or not model._SOURCE_RE.match(prov["source"]):
-        out.append(f"provenance source {prov.get('source')!r}")
-    if not isinstance(prov.get("imported"), str) or not _DATE_RE.match(prov["imported"]):
-        out.append(f"provenance imported {prov.get('imported')!r}")
-    return out
+    return model.base_provenance_problems(prov, "provenance")
 
 
 def line_problems(line: Any) -> list[str]:
@@ -186,7 +189,7 @@ def line_problems(line: Any) -> list[str]:
             out.append(f"Japanese {ja!r} holds Latin letters")
         if not isinstance(reading, str) or not _READING.match(reading):
             out.append(f"reading {reading!r} is not hiragana")
-        elif isinstance(ja, str) and _KATAKANA.match(ja) and reading != hiragana(ja):
+        elif isinstance(ja, str) and KATAKANA.match(ja) and reading != hiragana(ja):
             out.append(f"reading {reading!r} is not the hiragana of {ja!r}")
     return out + _provenance_problems(line["provenance"])
 
@@ -204,20 +207,28 @@ def word_problems(word: Any) -> list[str]:
     return out + _provenance_problems(word["provenance"])
 
 
+def checked_glossary(words: Iterable[Mapping[str, Any]]) -> dict[str, tuple[str, str]]:
+    """{word: (its Japanese, that Japanese in hiragana)} for the glossary words every name is held to."""
+    return {w["en"]: (w["ja"], hiragana(w["ja"])) for w in words if w["check"]}
+
+
+def misspelled(line: Mapping[str, Any], glossary: Mapping[str, tuple[str, str]]) -> list[tuple[str, str]]:
+    """[(word, its Japanese)] for each checked word of a drafted name whose Japanese is in neither the name's
+    Japanese nor its reading. Hearthstone's own whole names and `free` names are held to nothing."""
+    if line["status"] != "trusted" or line["free"] or line["provenance"]["source"].startswith("hearthstone@"):
+        return []
+    have = hiragana(line["ja"]) + "\x00" + line["reading"]
+    return [(w, glossary[w][0]) for w in words_of(line["en"]) if w in glossary and glossary[w][1] not in have]
+
+
 def spelling_problems(lines: Iterable[Mapping[str, Any]], words: Iterable[Mapping[str, Any]]) -> list[str]:
-    """Names that spell a checked glossary word some other way: the word's Japanese is in neither the name's
-    Japanese nor its reading. Hearthstone's own whole names and `free` names are skipped."""
-    glossary = {w["en"]: w["ja"] for w in words if w["check"]}
-    out = []
-    for ln in lines:
-        if ln["status"] != "trusted" or ln["free"] or ln["provenance"]["source"].startswith("hearthstone@"):
-            continue
-        have = hiragana(ln["ja"]) + "\x00" + ln["reading"]
-        for w in words_of(ln["en"]):
-            ja = glossary.get(w)
-            if ja and hiragana(ja) not in have:
-                out.append(f"{ln['en']!r} → {ln['ja']!r}: {w!r} is {ja!r} everywhere else")
-    return out
+    """Names that spell a checked glossary word some other way."""
+    glossary = checked_glossary(words)
+    return [
+        f"{ln['en']!r} → {ln['ja']!r}: {w!r} is {ja!r} everywhere else"
+        for ln in lines
+        for w, ja in misspelled(ln, glossary)
+    ]
 
 
 def stopword(word: str) -> bool:
