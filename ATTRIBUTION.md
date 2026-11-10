@@ -247,6 +247,17 @@ repository or the voice addons. No voice actor is named. The audio files are not
   with (`data/voice/creature-sets.jsonl`, provenance `spoken@<commit>`) follows Spoken's assignment, taken from its
   committed line corpus at a pinned commit. No code of Spoken was copied.
 
+## Japanese names
+
+On screen every name stays in English. The project also keeps a Japanese form of each name in `data/name/`, for
+the voice and for a later names setting. Those Japanese names follow Blizzard Entertainment's official Japanese for
+Hearthstone where Hearthstone has the name or its words: a name that is exactly a Hearthstone card's name takes that
+card's Japanese (provenance `hearthstone@<build>`), and the name glossary (`data/name/words.jsonl`) is seeded from the
+card names, so a word is spelled the way Hearthstone spells it. The card names were read from HearthstoneJSON's card
+files (https://hearthstonejson.com) at a pinned build, on the maintainer's machine only; those files are not part of
+this repository or the addon. Hearthstone's text is Blizzard Entertainment's. The other names were machine-drafted
+to match (`provenance.model` on each line).
+
 ## This project
 
 WoW Forever Japanese ships its own code and translations under GPL-2.0-or-later (see `LICENSE`); every

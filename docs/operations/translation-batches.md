@@ -312,6 +312,39 @@ Two branches that both import readings conflict only in generated or reading fil
 
 Every batch that changes shipped Japanese the voice reads (quest offers, progress and turn-ins, greetings, gossip, plain-text book pages) also remakes that audio, the way it writes readings ([Voice over](voice.md), ADR-062). `make import-draft` ends with `make check` and `make voice-generate`: it makes exactly the files whose Japanese changed or that are missing, then, when it made any, commits and pushes them to the audio repository and writes the audio pin. Commit `data/voice/audio.jsonl` and `pipeline/voice-audio-commit.txt` with the batch. With nothing voiced in the batch (items, spells, interface text) the step makes nothing and needs neither the engine nor the audio store, and the pin stays as it is. With voiced lines it needs both: the AivisSpeech Engine unpacked in `build/aivis/` (it is started for the step and stopped after), and the audio store (`build/voice`, a checkout of the voice audio repository) on its `main` branch. Without either it stops and says what is missing. Then run `make voice-generate`. `test_audio_in_step` fails a pull request whose voiced lines have no audio, or audio made from other Japanese.
 
+## Names for a batch
+
+Every name the game shows has a line in `data/name/` with its Japanese and reading ([Data model](../architecture/data-model.md), [ADR-077](../adr/077-japanese-names-keyed-by-english-and-kana-voice-lines.md)). On screen names stay English; the Japanese is for the voice's [kana lines](voice.md#kana-lines) and a later names setting. A batch never puts a Japanese name into prose: names in translated text stay in English letters, as the style guide says.
+
+**`make names` after every data flow.** `make names` runs `wfj names collect` (every English name from `data/english`, the VMaNGOS database when `VMANGOS_DB` is there, and the Latin runs in shipped quest, gossip, book, objective and area Japanese and the voiced error lines) and then `wfj voice kana`. `make import-english`, `make import-collector`, `make collector-intake`, `make import-draft` (before `voice-generate`) and `make report-apply` run it. A new English name comes in `missing`, and `tests/python/test_names.py` fails until it has Japanese; a translation that adds an English name to prose brings a new name too. So a flow that prints `new lines` above 0 in `names collect` ends with a names round.
+
+**Hearthstone first.** `make hearthstone` fetches HearthstoneJSON's Japanese and English card files at the build pinned in the Makefile (`HEARTHSTONE_BUILD`) into `build/hearthstone/` (ignored by git, never committed) and runs `wfj names hearthstone`: a `missing` name whose English is exactly a card's name, with katakana Japanese, takes it (class `human`, source `hearthstone@<build>`), and card names that split into as many Japanese parts as English words (on `・` or a space) give glossary words. A word seen with several forms keeps the most frequent and the others are printed. Hearthstone never touches a `human` or `correction` name. Run it again only when the pinned build changes.
+
+**The round: words first, then names.** Drafting the words first keeps one spelling per word across every names batch. From `pipeline/`:
+
+1. **Words.**
+   ```bash
+   python3 -m wfj names export-words --out batches/names-words --size 1000
+   ```
+   Rows `{"en", "count", "examples"}`: the capitalised words of missing names that are not in the glossary and that the game's English prose never writes in lower case, each with up to three names that carry it. The model writes `ja` on each row (an empty `ja` marks a word that is not a name, such as a tag or a numeral: skipped). Then:
+   ```bash
+   python3 -m wfj names import-words batches/names-words/words-000.jsonl --model <model id> --batch <name>
+   ```
+   Each word becomes a checked glossary word with source `draft-names-<name>@<date>`. A word already in the glossary keeps its Japanese, and a different one is reported.
+2. **Names.**
+   ```bash
+   python3 -m wfj names export --out batches/names --size 1000 --hearthstone ../build/hearthstone
+   ```
+   Rows `{"id", "en", "kinds", "prose", "hints", "hearthstone"}`: how many ids of each kind carry the name, whether it is seen in prose, the checked glossary words it contains (`hints`), and, with `--hearthstone`, Hearthstone's Japanese for the same English when a card has it (a card name Hearthstone translates rather than writes in katakana is not taken by `names hearthstone`, so it reaches the model here as a hint). The model writes `{"id", "ja", "reading", "free", "words"}`: the Japanese, its reading in hiragana, `free: true` for a name translated rather than spelled word by word (疫病地帯東部), and `words`, any new `[English, Japanese]` glossary pairs. Then:
+   ```bash
+   python3 -m wfj names import batches/names/batch-000.jsonl --model <model id> --batch <name>
+   ```
+   A row is rejected with its reason (exit 1) when its `id` names no line, its `ja` holds a Latin letter, its `reading` is not hiragana, an all-katakana `ja` has a reading that is not its own hiragana, or the name is `human` or `correction` (kept). A word pair that is not `[English, Japanese]` or that disagrees with the glossary is rejected on its own; the name is still written. `--dry-run` writes nothing.
+3. **Check.** `python3 -m wfj names check` prints every shape problem and every name that spells a checked glossary word another way (its Japanese form is in neither the name's `ja` nor its `reading`, a `free` name and a Hearthstone whole name excepted). It must print 0 problems.
+4. **Finish.** `make names` (the kana lines pick up the new names), then `make generate` (it writes `Data/Names/`, which the TOC does not list) and `make validate`. Commit `data/name/`, `data/voice/kana.jsonl` and the generated files with the batch.
+
+**Drafting style.** Follow Hearthstone: translate a descriptive name where Hearthstone translates such names (mark it `free`), write a proper name in katakana with `・` between its words, and use each glossary word exactly as the glossary spells it.
+
 ## Fix-report batches
 
 A player's fix report is a small batch of its own: `make report-intake ISSUE=N` writes the triage, a drafting model writes the decisions (the style guide and the readings rules above apply to every line it writes), and `make report-apply ISSUE=N MODEL=…` imports them. Apply runs the status rules (`check_type`: Japanese, names, numbers, tokens) on each changed line and refuses one that would not ship; `translate_lint` is not run. Runbook: [Fix reports](fix-reports.md).
@@ -938,6 +971,6 @@ holiday and reputation quest lines that started shipping on this build.
 
 ## Related
 
-- [Pipeline → Translation batches](../systems/pipeline.md#translation-batches) · [Translation style guide](../content/translation-style-guide.md) · [Readings](../systems/readings.md) · [Fix reports](fix-reports.md) · [Coverage](coverage.md)
+- [Pipeline → Translation batches](../systems/pipeline.md#translation-batches) · [Translation style guide](../content/translation-style-guide.md) · [Readings](../systems/readings.md) · [Fix reports](fix-reports.md) · [Coverage](coverage.md) · [Voice: kana lines](voice.md#kana-lines)
 - [Local setup → Machine drafts](local-setup.md#machine-drafts) · [Testing strategy](../testing/strategy.md) · [Release](release.md) · [Glossary](../glossary.md)
-- [ADR-014](../adr/014-machine-drafted-text-and-ui-dictionary.md) · [ADR-023](../adr/023-server-only-text-drafted-in-measured-batches.md) · [ADR-028](../adr/028-a-duration-is-copied-not-named.md) · [ADR-043](../adr/043-included-text-icons-and-branch-variants.md) · [ADR-048](../adr/048-stat-words-in-tooltips.md)
+- [ADR-014](../adr/014-machine-drafted-text-and-ui-dictionary.md) · [ADR-023](../adr/023-server-only-text-drafted-in-measured-batches.md) · [ADR-028](../adr/028-a-duration-is-copied-not-named.md) · [ADR-043](../adr/043-included-text-icons-and-branch-variants.md) · [ADR-048](../adr/048-stat-words-in-tooltips.md) · [ADR-077](../adr/077-japanese-names-keyed-by-english-and-kana-voice-lines.md)

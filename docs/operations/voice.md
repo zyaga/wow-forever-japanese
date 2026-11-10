@@ -151,6 +151,31 @@ If the game's English NPC voices stay silent after a test (the dialog channel le
 
 `make voice-run` and `make voice-generate` end with `store-sync --if-changed`: when the run made files, or an earlier sync committed but could not push, it commits them to the audio repository, pushes them, and writes that commit to the pin; when there is nothing new, nothing moves. Commit the pin with the audio record in the same pull request. A release builds the packs from exactly the pinned commit, so a line never plays audio made from other words. `make voice-sync` alone does the same after a run that was stopped.
 
+## Kana lines
+
+Every voiced line (each line a voice file is made for, and the character's error lines) has a **kana line** in `data/voice/kana.jsonl`: the line as the voice should read it, written in kana only ([ADR-077](../adr/077-japanese-names-keyed-by-english-and-kana-voice-lines.md)). It is built from the text the engine reads today (`voice.speech_text`: player tokens as 冒険者, `$N<k>` numbers filled) with:
+
+- every kanji word replaced by its reading from `data/reading/` (the line's current reading record),
+- every English name replaced by its Japanese from `data/name/` (the katakana when the name is all katakana, else its reading),
+- every number spelled out with its counter and sound change (3匹 さんびき, 1本 いっぽん, 2週間 にしゅうかん).
+
+Each row is `{"key", "ja_hash", "kana", "provenance"}`. `ja_hash` is `voice.text_hash` of the shipped Japanese and its filled numbers, the same hash an audio file's fingerprint starts with, so a kana line and a file made from it always describe the same words.
+
+**Keeping them current.** `make names` ends with `wfj voice kana`, and every flow that brings English or changes shipped Japanese runs `make names`: `make import-english`, `make import-collector`, `make collector-intake`, `make import-draft` (before `voice-generate`) and `make report-apply`. A line the builder can read is rebuilt on every run. A line it cannot finish (a kanji word with no reading, an English name with no Japanese yet, a number it cannot read) is listed with its key and why. Fix the cause (a readings round, a names round) or draft the line by hand:
+
+```bash
+cd pipeline
+python3 -m wfj voice kana --export batches/kana-<round>.jsonl   # {"key", "ja_hash", "ja", "problems"} per unfinished line
+# the model writes "kana" onto each row (kana only: no kanji, Latin letter or digit)
+python3 -m wfj voice kana-import batches/kana-<round>.jsonl --model <model id> --batch <name>
+```
+
+The batch files are working files in `pipeline/batches/`, as for every [translation batch](translation-batches.md); what is kept is `data/voice/kana.jsonl`.
+
+`kana-import` refuses a row for a key that is not voiced, a row written for other Japanese (its `ja_hash` is not the current one) and a row that is not all kana. A drafted row is kept while its `ja_hash` matches; when the line's Japanese changes it has to be drafted again. `tests/python/test_kana.py` fails while any voiced line has no kana line made from its current Japanese.
+
+**How a remake uses them.** Nothing reads the kana lines yet: `make voice-generate` still reads `speech_text`, and no audio file, pack key, Japanese hash or fingerprint changed when they were added. A later remake of the audio reads each file's `kana` instead, for the row whose `ja_hash` equals the line's, so the engine no longer guesses at kanji or spells English names out letter by letter.
+
 ## Releasing the voice
 
 The voice is released by the main [Release](release.md) workflow, one run for everything: the addon when `## Unreleased` has lines, then the voice packs whose audio changed, built from the pinned audio commit. A voice-only change (a recast) releases only its packs; nothing is released for voice when no pack changed. `make voice-release` stays for dry runs and rehearsals from the maintainer's computer.
@@ -210,8 +235,9 @@ Levels 51-60 is past the 315 MB mark: when it grows near the cap, split its band
 
 ## Open work
 
+- The kana lines are not read by `voice generate` yet; the remake that reads them is still to come ([Kana lines](#kana-lines)).
 - Not voiced: quest objectives, audio per class or race (the player's name, class and race are spoken as 冒険者), the trainer window's text.
 
 ## Related
 
-- [Voice over](../systems/voice.md) · [ADR-061](../adr/061-voice-over-from-a-separate-pack.md) · [ADR-074](../adr/074-voices-cloned-from-the-games-npc-voice-sets.md) · [Local setup](local-setup.md) · [Testing strategy](../testing/strategy.md#voice-over-checklist) · [Research](../research/2026-10-04-japanese-voice-over.md)
+- [Voice over](../systems/voice.md) · [ADR-061](../adr/061-voice-over-from-a-separate-pack.md) · [ADR-074](../adr/074-voices-cloned-from-the-games-npc-voice-sets.md) · [ADR-077](../adr/077-japanese-names-keyed-by-english-and-kana-voice-lines.md) · [Local setup](local-setup.md) · [Testing strategy](../testing/strategy.md#voice-over-checklist) · [Research](../research/2026-10-04-japanese-voice-over.md)

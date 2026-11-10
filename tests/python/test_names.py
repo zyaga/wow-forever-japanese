@@ -124,7 +124,7 @@ def test_import_fills_rejects_and_adds_words(tmp_path):
         {"id": ids["Thrall"], "ja": "Thrall", "reading": "すろーる", "free": False},
         {"id": "ffffffffffffffff", "ja": "x", "reading": "x", "free": False},
     ]) + "\n", encoding="utf-8")
-    n, rejected = cmd.import_batch(root, batch, "claude-opus-5-5", "test1", TODAY, dry_run=False)
+    n, rejected = cmd.import_batch(root, batch, "test-model", "test1", TODAY, dry_run=False)
     assert n == 1 and len(rejected) == 2
     by_en = {ln["en"]: ln for ln in load_lines(root)}
     assert by_en["Ashenvale Hunter"]["provenance"]["source"] == "draft-names-test1@2026-11-10"
