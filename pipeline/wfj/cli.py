@@ -16,6 +16,7 @@ from wfj.cmd import (
     generate,
     glosses,
     import_,
+    names,
     package_check,
     public_check,
     readings,
@@ -41,6 +42,7 @@ VERBS: dict[str, tuple[str, Callable[[Sequence[str]], int]]] = {
     "package-check": ("the release zip holds exactly the shipped files", package_check.run),
     "announce": ("a release's Discord post from its notes and media; --preview, --dry-run", announce.run),
     "public-check": ("keep private material out of the public repository", public_check.run),
+    "names": ("Japanese names: collect / hearthstone / export / import / check", names.run),
     "voice": ("voice over: speakers / generate / pack, from the local engine", voice.run),
 }
 
