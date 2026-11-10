@@ -27,7 +27,7 @@
 | forever-vo | When its line starts: `Audio.Play` turns the channel off after `PlaySoundFile` says it will play. | The first line of an open dialog waits a lead-in of 1.2 s (`BARK_DELAY`, "the game's own greeting bark ... is usually under a second"), once per speaker while a quest or gossip window stays open, so the greeting finishes before the mute. |
 
 ### Giving the channel back
-| Addon | When | Robustness |
+| Addon | When | What can go wrong |
 |---|---|---|
 | Spoken | When its queue empties. A mute taken ahead goes back after 1.5 s (`MUTE_AHEAD_SECONDS`) when no line is speaking, and at once when the read finds text but no line (`EndMuteGameDialogueAhead`). | Does not mute a channel the player had off (`SoundUtils:MuteChannel`), so lifting it never turns their NPC voices on. Restores on `PLAYER_LOGOUT`, which also fires on `/reload`. The record of the mute is not saved, so a crash mid-line leaves the channel off. |
 | VoiceOver | When its queue empties: `SetCVar("Sound_EnableDialog", 1)`. | Sets it to 1 whatever it was before the mute, so a player who had NPC voices off gets them back. No saved record of the mute in these files. |

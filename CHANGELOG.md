@@ -10,6 +10,7 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Fixed
+- Sharing a quest from the quest tracker's right-click menu, and the world map's quest markers in combat, no longer give an "action blocked" message naming this addon. The quest log, the quest popup and the quest window had their scroll area re-measured by the addon after their text turned Japanese, and that carried the addon's taint into the quest map and the tracker. The game keeps that scroll area right on its own. Sharing a quest in combat is still something the game itself does not allow.
 - Clicking a challenge on the Legacy board, or an achievement in the Achievement window, no longer turns its title and description English. They stay Japanese when the entry opens or closes, and when its progress updates.
 
 ## 0.12.0 - 2026-11-08
