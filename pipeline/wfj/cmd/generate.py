@@ -22,6 +22,7 @@ from wfj.core.model import SCHEMA, validate_line
 from wfj.core.normalize import female_variant, mask_values, normalize_for, normalize_v1
 from wfj.emit import lua_writer, schema
 from wfj.io.jsonl_store import Store
+from wfj.io.names_store import load_lines as load_name_lines
 from wfj.paths import allowlist_path, data_root
 
 TOC_NAME = "WoWForeverJapanese.toc"
@@ -272,7 +273,21 @@ def plan(store: Store, vectors: list[dict], report: dict[str, Any] | None = None
     )
     head, _, body = lua_writer.vectors_text(vectors, head=VECTORS_HEAD).partition("\n")
     out["Data/Vectors.lua"] = head + "\nlocal _, WFJ = ...\n" + body
+    out.update(_plan_names(store.root))
     return out
+
+
+NAMES_DIR = "Data/Names"
+
+
+def _plan_names(root: Path) -> dict[str, str]:
+    """`Data/Names/Names_<nn>.lua` per `data/name` shard that holds a name with Japanese. They are left out of
+    the TOC: nothing loads them until the names setting does (ADR-077)."""
+    by_shard: dict[str, list[dict[str, Any]]] = {}
+    for ln in load_name_lines(root):
+        if ln["status"] == "trusted":
+            by_shard.setdefault(ln["id"][:2], []).append(ln)
+    return {f"{NAMES_DIR}/Names_{nn}.lua": lua_writer.names_text(nn, ls) for nn, ls in sorted(by_shard.items())}
 
 
 def _check_store(store: Store) -> None:
@@ -538,7 +553,8 @@ def load_numbers(store: Store) -> tuple[dict[glosses.Meaning, int], list[str]]:
 
 def toc_files(planned: dict[str, str]) -> list[str]:
     """Load order inside the generated block: Meta, Vectors, then shards by type then range."""
-    shards = [p for p in planned if p not in ("Data/Meta.lua", "Data/Vectors.lua")]
+    shards = [p for p in planned if p not in ("Data/Meta.lua", "Data/Vectors.lua")
+              and not p.startswith(f"{NAMES_DIR}/")]
     order = {t: i for i, t in enumerate(schema.TOC_ORDER)}
 
     def type_of(rel: str) -> str:
@@ -570,7 +586,7 @@ def generated_on_disk(addon_dir: Path) -> set[str]:
     for name in ("Meta.lua", "Vectors.lua"):
         if (data / name).is_file():
             found.add(f"Data/{name}")
-    for prefix in schema.FILE_PREFIX.values():
+    for prefix in (*schema.FILE_PREFIX.values(), "Names"):
         for p in (data / prefix).glob(f"{prefix}_*.lua"):
             if p.is_file():
                 found.add(p.relative_to(addon_dir).as_posix())

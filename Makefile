@@ -15,7 +15,7 @@ VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
 
-.PHONY: voice-qwen-setup voice-modal-setup voice-cast voice-speed voice-spoken-fetch voice-sets-page voice-sets-apply voice-sets voice-sets-clips voice-sets-catalogue voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
+.PHONY: names hearthstone voice-qwen-setup voice-modal-setup voice-cast voice-speed voice-spoken-fetch voice-sets-page voice-sets-apply voice-sets voice-sets-clips voice-sets-catalogue voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
 
 help:
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | sed 's/:.*## /: /'
@@ -210,6 +210,7 @@ import-english: ## refresh only data/english/ (keeps data/ lines, rulings and pr
 	@$(MAKE) -s import-shared-english
 	@for c in $(CLIENTS); do $(MAKE) -s import-client CLIENT=$$c || exit 1; done
 	@$(MAKE) -s import-served
+	@$(MAKE) -s names
 
 # Forever is the only target (ADR-034); the other clients are inputs. After every client is merged, drop
 # the English for ids Forever's own tables and quest cache do not list (quest + objective: QuestV2 and the cached ids;
@@ -371,13 +372,14 @@ import-collector: ## add one collector dump to data/english/ (replaces stand-in 
 	@test -n "$(DUMP)" || { echo "usage: make import-collector DUMP=<path to WoWForeverJapanese.lua>"; exit 2; }
 	@D="$(DUMP)"; case "$$D" in /*) ;; *) D="$$PWD/$$D";; esac; \
 		cd pipeline && $(PY) -m wfj import english collector "$$D"
+	@$(MAKE) -s names
 
 # A machine draft (ADR-014): DRAFT=<file.jsonl> TYPE=<type> NAME=<draft name> MODEL=<model id> [CRITIC=<id>] DATE=<YYYY-MM-DD>
 # [REVERIFY=1] (ui, quest, objective, item, spell): every named line records the current English, so a stale line is judged fresh.
 import-draft: ## merge machine-drafted text into data/ as `machine` variants (never edits hand-written text), then check and remake the voice of changed lines
 	@test -n "$(DRAFT)" -a -n "$(TYPE)" -a -n "$(NAME)" -a -n "$(MODEL)" -a -n "$(DATE)" || { echo "usage: make import-draft DRAFT=<file> TYPE=<type> NAME=<name> MODEL=<id> [CRITIC=<id>] DATE=<YYYY-MM-DD> [REVERIFY=1]"; exit 2; }
 	cd pipeline && $(PY) -m wfj import draft $(TYPE) $(abspath $(DRAFT)) --model $(MODEL) $(if $(CRITIC),--critic $(CRITIC)) --date $(DATE) --name $(NAME) $(if $(REVERIFY),--reverify)
-	$(MAKE) -s check voice-generate
+	$(MAKE) -s check names voice-generate
 
 check: ## assign statuses to every data/ line (pure rules); --report prints the yield
 	cd pipeline && $(PY) -m wfj check --report
@@ -391,6 +393,7 @@ coverage: ## how much of the game ships in Japanese → docs/operations/coverage
 collector-intake: ## a player's collector send (GitHub issue ISSUE=N, or a saved body BODY=<file> ISSUE=N) → data/english/
 	@test -n "$(ISSUE)" || { echo "usage: make collector-intake ISSUE=<n> [BODY=<saved issue body>]"; exit 2; }
 	cd pipeline && $(PY) -m wfj collector intake $(if $(BODY),--file $(abspath $(BODY)) --number $(ISSUE),--issue $(ISSUE))
+	@$(MAKE) -s names
 
 report-intake: ## a player's fix report (GitHub issue ISSUE=N, or a saved body REPORT=<file> ISSUE=N) → batches/reports/issue-N/triage.jsonl
 	@test -n "$(ISSUE)" || { echo "usage: make report-intake ISSUE=<n> [REPORT=<saved issue body>] [CREDIT=<name>] [FORCE=1]"; exit 2; }
@@ -399,7 +402,7 @@ report-intake: ## a player's fix report (GitHub issue ISSUE=N, or a saved body R
 report-apply: ## batches/reports/issue-N/decisions.jsonl → data/ + readings + ATTRIBUTION.md + reply.md, then check / generate / voice / validate / coverage
 	@test -n "$(ISSUE)" -a -n "$(MODEL)" || { echo "usage: make report-apply ISSUE=<n> MODEL=<id> [DATE=YYYY-MM-DD]"; exit 2; }
 	cd pipeline && $(PY) -m wfj report apply --issue $(ISSUE) --model $(MODEL) $(if $(DATE),--date $(DATE))
-	$(MAKE) -s check generate voice-generate validate coverage
+	$(MAKE) -s check names generate voice-generate validate coverage
 
 # Voice over (ADR-061; runbook docs/operations/voice.md). Generation needs the local AivisSpeech Engine unpacked in
 # build/aivis/ (started and stopped by voice generate) and `lame`; the audio and the pack are build output under build/, never committed.
@@ -497,6 +500,22 @@ voice-status: ## how far the background voice run is, and the time left
 
 voice-stop: ## stop the background voice run (make voice-run resumes it)
 	@pkill -f "wfj voice generate" && echo "voice-stop: stopped; make voice-run resumes" || echo "voice-stop: no run going"
+
+# Japanese names and kana lines (ADR-077). Every flow that brings English or changes shipped Japanese ends here:
+# a new English name gets a `missing` data/name line (drafted with `wfj names export` / `import`; a test fails
+# until it is), and every voiced line gets its kana line from the readings and names.
+names: ## every English name gets a data/name line, then every voiced line its kana line
+	cd pipeline && $(PY) -m wfj names collect $(if $(wildcard $(VMANGOS_DB)),--vmangos $(VMANGOS_DB))
+	cd pipeline && $(PY) -m wfj voice kana
+
+# Hearthstone's official Japanese (HearthstoneJSON's card files), a build-time reference only: kept under build/,
+# never committed; only the names derived from it are (ADR-077).
+HEARTHSTONE_BUILD ?= 256589
+HEARTHSTONE_DIR   ?= $(REPO_ROOT)/build/hearthstone
+hearthstone: ## fetch the pinned HearthstoneJSON jaJP + enUS card files and take Hearthstone's names and words
+	@mkdir -p "$(HEARTHSTONE_DIR)"
+	@for l in jaJP enUS; do test -s "$(HEARTHSTONE_DIR)/$$l.json" || curl -sfo "$(HEARTHSTONE_DIR)/$$l.json" "https://api.hearthstonejson.com/v1/$(HEARTHSTONE_BUILD)/$$l/cards.json" || exit 1; done
+	cd pipeline && $(PY) -m wfj names hearthstone "$(HEARTHSTONE_DIR)/jaJP.json" "$(HEARTHSTONE_DIR)/enUS.json" --build $(HEARTHSTONE_BUILD)
 
 generate: ## data/ → addon Data/*.lua + the TOC's generated block (deterministic; validate diffs it)
 	cd pipeline && $(PY) -m wfj generate
