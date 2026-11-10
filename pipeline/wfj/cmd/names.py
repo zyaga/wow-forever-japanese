@@ -182,7 +182,7 @@ def export(root: Path, out: Path, size: int, hs: Path | None) -> int:
     if hs is not None:
         for en, ja in hearthstone_pairs(hs / "jaJP.json", hs / "enUS.json"):
             whole.setdefault(names.norm(en), ja)
-    words = {w["en"]: w["ja"] for w in load_words(root)}
+    words = {w["en"]: w["ja"] for w in load_words(root) if w["check"]}  # unchecked pairs are noise as hints
     rows = []
     for ln in load_lines(root):
         if ln["status"] != "missing":
