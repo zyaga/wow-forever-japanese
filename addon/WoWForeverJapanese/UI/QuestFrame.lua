@@ -133,8 +133,8 @@ end
 -- keeps the range current itself: its own quest window never calls it after QuestInfo_Display (questframe.lua:132,
 -- 581), and a long English text still scrolls.
 
--- Per panel: its surface id and
--- { field, widget key, English getter } rows. Getters are called at hook time, never cached.
+-- Per panel: its surface id and { field, widget key, English getter } rows. Getters are called at hook time, never
+-- cached.
 local KEYED_FIELDS = { description = true, progress = true, completion = true }
 local function title() return call("getTitle") end
 local PANELS = {

@@ -82,8 +82,6 @@ describe("UI/QuestMap: the camelot quest log", function()
     -- and the quest id tainted for the tracker and the map's quest pins (ADR-077). The client keeps the range itself.
     it("never re-measures the details pane's or the popup's scroll frame, on show or on the reveal key", function()
       local details, popup = _G.QuestMapDetailsScrollFrame, _G.QuestLogPopupDetailFrameScrollFrame
-      _G.QuestInfoFrame = _G.QuestInfoFrame or CreateFrame("Frame", "QuestInfoFrame")
-      _G.QuestInfoFrame.rewardsFrame = { numRows = 1 }
       Q.showDetails(5)
       assert.are.equal("狼の毛皮", QuestInfoTitleHeader:GetText())
       Stub.keys.alt = true; WFJ.Modifier.refresh()
@@ -94,7 +92,6 @@ describe("UI/QuestMap: the camelot quest log", function()
       Stub.keys.alt = false; WFJ.Modifier.refresh()
       assert.are.equal(0, details.calls.UpdateScrollChildRect)
       assert.are.equal(0, popup.calls.UpdateScrollChildRect)
-      _G.QuestInfoFrame.rewardsFrame = nil
     end)
 
     it("shows the details pane's markers right of its back button, not inline; hiding the pane hides them", function()
