@@ -82,3 +82,22 @@ def test_a_name_with_digits_and_a_count_glued_to_a_name():
     names = {"NG-5": "エヌジーご", "mageweave cloth": "まおりのぬの"}
     text, problems = kana.build("NG-5とmageweave cloth60枚。", "g-0000000000000002", [], [], names.get)
     assert problems == [] and text == "エヌジーごとまおりのぬのろくじゅうまい。"
+
+
+def test_a_name_keeps_its_katakana_and_commas_become_pauses():
+    lines = {
+        "Master Mechanic Castpipe": {
+            "ja": "マスター整備士キャストパイプ",
+            "reading": "ますたーせいびしきゃすとぱいぷ",
+        },
+        "Arcanology": {"ja": "秘術学", "reading": "ひじゅつがく"},
+        "Alchemy": {"ja": "錬金術", "reading": "れんきんじゅつ"},
+    }
+
+    def lookup(en):
+        return kana.name_kana(lines[en]) if en in lines else None
+
+    text, problems = kana.build(
+        "Master Mechanic CastpipeとArcanology, Alchemy。", "g-0000000000000003", [], [], lookup
+    )
+    assert problems == [] and text == "マスターせいびしキャストパイプとひじゅつがく、れんきんじゅつ。"

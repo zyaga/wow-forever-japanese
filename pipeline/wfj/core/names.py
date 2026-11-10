@@ -38,7 +38,9 @@ _WORD_SPLIT = re.compile(r"[ \-]+")
 _PUNCT = " ・、。,.:：;；（）()…「」『』！？!?〜～-‐'’\"／/＆&＋+"
 _KANJI_WORD = re.compile(r"^[㐀-䶿一-鿿々〆ヶ]{2,}$")
 _PARTICLE = "のをにがはへとでやも"
-_VOICED = str.maketrans("かきくけこさしすせそたちつてとはひふへほ", "がぎぐげござじずぜぞだぢづでどばびぶべぼ")
+_VOICED = str.maketrans(
+    "かきくけこさしすせそたちつてとはひふへほ", "がぎぐげござじずぜぞだぢづでどばびぶべぼ"
+)
 _HALF_VOICED = str.maketrans("はひふへほ", "ぱぴぷぺぽ")
 
 # Markup a shipped line can hold, removed before its Latin runs are read: player tokens, server codes,
@@ -153,7 +155,9 @@ def kanji_word_problem(ja: str, reading: str, known: Callable[[str], Iterable[st
     wrong = [word for n, (_, word) in enumerate(pieces) if word and not fits(n)]
     if not wrong:
         return None
-    return "reads " + ", ".join(f"{w} unlike the quest text ({'/'.join(sorted(known(w) or ()))})" for w in wrong)
+    return "reads " + ", ".join(
+        f"{w} unlike the quest text ({'/'.join(sorted(known(w) or ()))})" for w in wrong
+    )
 
 
 def has_latin(text: str) -> bool:

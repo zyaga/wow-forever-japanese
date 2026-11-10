@@ -63,6 +63,8 @@ def test_merge_adds_ids_never_removes_or_rewrites():
         ({"ja": "Thrall"}, "Latin letters"),
         ({"reading": "スロール"}, "not hiragana"),
         ({"reading": "すろる"}, "not the hiragana of"),
+        ({"ja": "山のノスリ", "reading": "やまのすのり"}, "does not fit"),
+        ({"ja": "粗い研ぎ石", "reading": "あらいといし"}, "does not fit"),
         ({"ids": {}, "prose": False}, "no game id"),
         ({"ids": {"npc": [1]}}, "kinds of"),
         ({"provenance": {"class": "machine"}}, "source must look like"),
@@ -294,3 +296,33 @@ def test_a_glossary_word_listed_twice_is_reported(tmp_path):
         "".join(json.dumps(word, ensure_ascii=False) + "\n" for _ in range(2)), encoding="utf-8"
     )
     assert any("listed 2 times" in p for p in cmd.problems(root))
+
+
+@pytest.mark.parametrize(
+    "ja, reading",
+    [
+        ("マスター整備士キャストパイプ", "ますたーせいびしきゃすとぱいぷ"),
+        ("釣り技能＋15", "つりぎのうぷらすじゅうご"),
+        ("テスト：ハイバーグの宝箱", "てすと・はいばーぐのたからばこ"),
+        ("エス・エイチ・イー（非クエスト）", "えす・えいち・いーひくえすと"),
+    ],
+)
+def test_a_reading_that_reads_the_kana_as_written_fits(ja, reading):
+    assert names.align(ja, reading) is not None
+
+
+def test_spoken_keeps_the_katakana_as_written():
+    assert (
+        names.spoken("マスター整備士キャストパイプ", "ますたーせいびしきゃすとぱいぷ")
+        == "マスターせいびしキャストパイプ"
+    )
+    assert names.spoken("山のノスリ", "やまのすのり") is None
+
+
+def test_a_kanji_word_reads_as_the_quest_text_reads_it():
+    known = {"乗組員": {"のりくみいん"}, "大杖": {"つえ"}, "麦酒": {"ばくしゅ"}, "手甲": {"てっこう"}}.get
+    assert "乗組員" in names.kanji_word_problem("乙女号の乗組員", "おとめごうのじょうくみいん", known)
+    assert names.kanji_word_problem("乙女号の乗組員", "おとめごうののりくみいん", known) is None
+    assert names.kanji_word_problem("大杖", "つえ", known) is None
+    assert names.kanji_word_problem("ライ麦酒", "らいむぎしゅ", known) is None  # ライ麦 + 酒, not 麦酒
+    assert "手甲" in names.kanji_word_problem("勇猛の手甲", "ゆうもうのてこう", known)

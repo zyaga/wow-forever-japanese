@@ -156,7 +156,8 @@ If the game's English NPC voices stay silent after a test (the dialog channel le
 Every voiced line (each line a voice file is made for, and the character's error lines) has a **kana line** in `data/voice/kana.jsonl`: the line as the voice should read it, written in kana only ([ADR-077](../adr/077-japanese-names-keyed-by-english-and-kana-voice-lines.md)). It is built from the text the engine reads today (`voice.speech_text`: player tokens as 冒険者, `$N<k>` numbers filled) with:
 
 - every kanji word replaced by its reading from `data/reading/` (the line's current reading record),
-- every English name replaced by its Japanese from `data/name/` (the katakana when the name is all katakana, else its reading),
+- every English name replaced by its Japanese from `data/name/` (its katakana kept as written and the rest from its reading: マスター整備士キャストパイプ is said マスターせいびしキャストパイプ),
+- every comma written as 、 (an English comma left between names or in the prose),
 - every number spelled out with its counter and sound change (3匹 さんびき, 1本 いっぽん, 2週間 にしゅうかん).
 
 Each row is `{"key", "ja_hash", "kana", "provenance"}`. `ja_hash` is `voice.text_hash` of the shipped Japanese and its filled numbers, the same hash an audio file's fingerprint starts with, so a kana line and a file made from it always describe the same words.
