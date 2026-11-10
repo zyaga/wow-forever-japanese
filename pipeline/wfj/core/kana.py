@@ -180,6 +180,10 @@ def replace_names(text: str, lookup: Callable[[str], str | None]) -> tuple[str, 
     def one(m: re.Match[str]) -> str:
         raw = m.group(0)
         run = names._TRAILING_NUMBER.sub("", raw).rstrip(names._TRAILING).strip()
+        # a count written straight after a name ("cloth60枚", a filled "$N1個") belongs to its counter
+        glued = re.match(r"(.*?[A-Za-z'’.])(\d[\d,.]*)$", run)
+        if glued and lookup(glued.group(1)) is not None:
+            run = glued.group(1)
         kana = lookup(run) if run else None
         if kana is None:
             missing.append(run or raw)
@@ -218,8 +222,9 @@ def build(
         text = voice.speech_text(text, key, values)
     except voice.VoiceError as e:
         return None, [str(e)]
-    text = spell_numbers(text)
+    # names first: a name can hold digits ("NG-5"), and its Japanese reading has none left to spell
     text, missing = replace_names(text, lookup)
+    text = spell_numbers(text)
     problems = [f"no Japanese name for {m!r}" for m in missing]
     left = sorted(set(_LEFTOVER.findall(text)) - set("".join(missing)))
     if left:

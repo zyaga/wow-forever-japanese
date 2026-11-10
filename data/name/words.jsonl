@@ -181,6 +181,7 @@
 {"en": "Alabaster", "ja": "雪花石膏", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-000@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Alacritous", "ja": "俊敏", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-000@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Alacrity", "ja": "俊敏", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-000@2026-11-10", "imported": "2026-11-10"}}
+{"en": "Alah", "ja": "アラー", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-names2-048@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Alaindia", "ja": "アラインディア", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-000@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Alamar", "ja": "アラマー", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-000@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Alanna", "ja": "アランナ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-names2-003@2026-11-10", "imported": "2026-11-10"}}
@@ -11392,6 +11393,7 @@
 {"en": "Razal'blade", "ja": "ラザルブレード", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-009@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Razarch", "ja": "ラザーク", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-009@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Razdunk", "ja": "ラズダンク", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-009@2026-11-10", "imported": "2026-11-10"}}
+{"en": "Raze", "ja": "レイズ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-names2-048@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Razelikh", "ja": "ラゼリク", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-009@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Razings", "ja": "焼き討ち", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-009@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Razok", "ja": "ラゾク", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-009@2026-11-10", "imported": "2026-11-10"}}
@@ -12346,7 +12348,7 @@
 {"en": "Scorpion", "ja": "サソリ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-009@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Scorpok", "ja": "スコーポック", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-names-001@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Scott", "ja": "スコット", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-009@2026-11-10", "imported": "2026-11-10"}}
-{"en": "Scourge", "ja": "スカージ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-names-008@2026-11-10", "imported": "2026-11-10"}}
+{"en": "Scourge", "ja": "スコージ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-names-008@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Scourgebane", "ja": "スカージベイン", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-009@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Scourgehold", "ja": "スカージホールド", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-009@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Scourgestone", "ja": "スコージストーン", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-names-000@2026-11-10", "imported": "2026-11-10"}}
@@ -12606,6 +12608,7 @@
 {"en": "Shadows", "ja": "影", "check": false, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-vocabulary-002@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Shadowscythe", "ja": "シャドウサイズ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-010@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Shadowshard", "ja": "シャドウシャード", "check": false, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-vocabulary-002@2026-11-10", "imported": "2026-11-10"}}
+{"en": "Shadowsilk", "ja": "シャドウシルク", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-names2-047@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Shadowskin", "ja": "シャドウスキン", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-010@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Shadowsleep", "ja": "シャドウスリープ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-010@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Shadowsong", "ja": "シャドウソング", "check": true, "provenance": {"class": "human", "source": "hearthstone@256589", "imported": "2026-11-10"}}

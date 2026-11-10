@@ -41,6 +41,7 @@ _MARKUP = re.compile(
 _LATIN_RUN = re.compile(r"[A-Za-z][A-Za-z0-9'’.&-]*(?: [A-Za-z0-9][A-Za-z0-9'’.&-]*)*")
 _TRAILING = ".'’-&"
 _TRAILING_NUMBER = re.compile(r"(?: [0-9][0-9.,]*)+$")  # a count after a name ("Stranglethorn raptor 10")
+_GLUED_NUMBER = re.compile(r"(?<=[a-z'’.])[0-9][0-9.,]*$")  # a count written onto it ("mageweave cloth60枚")
 _STOPWORDS = frozenset({"of", "the", "a", "an", "and", "to", "in", "on", "for", "at", "from", "with"})
 
 
@@ -63,6 +64,7 @@ def latin_runs(ja: str) -> list[str]:
     out = []
     for m in _LATIN_RUN.finditer(_MARKUP.sub(" ", ja)):
         run = _TRAILING_NUMBER.sub("", m.group(0)).rstrip(_TRAILING).strip()
+        run = _GLUED_NUMBER.sub("", run)
         if run and _ASCII_LETTER.search(run):
             out.append(run)
     return out

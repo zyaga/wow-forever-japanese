@@ -155,3 +155,7 @@ def test_every_english_name_has_a_line(root):
         want.setdefault(names.name_id(en), set()).add("prose")
     absent = sorted(i for i in want if i not in have)
     assert absent == [], f"{len(absent)} English names with no data/name line (wfj names collect)"
+
+
+def test_latin_runs_leave_a_glued_count_to_its_counter():
+    assert names.latin_runs("mageweave cloth60枚とNG-5") == ["mageweave cloth", "NG-5"]

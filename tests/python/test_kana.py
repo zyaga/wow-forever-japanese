@@ -53,3 +53,9 @@ def test_name_tables_are_generated_but_not_loaded(root):
     assert any((addon / "Data" / "Names").glob("Names_*.lua"))
     toc = (addon / "WoWForeverJapanese.toc").read_text(encoding="utf-8")
     assert "Names" not in toc
+
+
+def test_a_name_with_digits_and_a_count_glued_to_a_name():
+    names = {"NG-5": "エヌジーご", "mageweave cloth": "まおりのぬの"}
+    text, problems = kana.build("NG-5とmageweave cloth60枚。", "g-0000000000000002", [], [], names.get)
+    assert problems == [] and text == "エヌジーごとまおりのぬのろくじゅうまい。"
