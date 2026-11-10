@@ -295,6 +295,25 @@ describe("the Legacy window's client-table text", function()
     assert.are.equal(1, #Stub.hooks["WFJTestCard:Init"]) -- one hook however often the card is seen
   end)
 
+  -- A selected card is expanded: AchievementTemplateMixin:Init writes the description into HiddenDescription too, and
+  -- Expand shows that one instead of Description (blizzard_achievementui.lua:1373-1374, 1441, 1477)
+  it("a clicked (expanded) card's description is Japanese too", function()
+    local box = _G.LegacySystemFrame.ChallengesPage.DetailPane.ScrollBox
+    local c = CreateFrame("Button", "WFJTestExpanded")
+    c.Label, c.Description, c.HiddenDescription = fs(), fs(), fs()
+    function c.Init(self, d)
+      self.Label.text, self.Description.text, self.HiddenDescription.text = d.name, d.description, d.description
+    end
+    local data = { name = "Slay Ragnaros", description = "Defeat Ragnaros in Molten Core." }
+    box:initFrame(c, data, function(x, d) x:Init(d) end)
+    c:Init(data) -- the click
+    assert.are.equal("モルテンコアでラグナロスを倒す。", c.HiddenDescription:GetText())
+    alt(true)
+    assert.are.equal("Defeat Ragnaros in Molten Core.", c.HiddenDescription:GetText())
+    alt(false)
+    assert.are.equal("モルテンコアでラグナロスを倒す。", c.HiddenDescription:GetText())
+  end)
+
   it("a card's shield tooltip shows the reward line in Japanese", function()
     local c = card({ name = "Slay Ragnaros", description = "" })
     local tt = _G.GameTooltip

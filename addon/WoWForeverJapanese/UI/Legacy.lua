@@ -31,9 +31,10 @@
 --     callback and from each card's own Init (post-hooked once: a click and a progress update re-init a card
 --     directly), keyed by widget. ADR-042: a card is an achievement row (LegacyChallengeTemplate inherits
 --     AchievementTemplateMixin:Init, blizzard_legacychallengebutton.lua:202; blizzard_achievementui.lua:1352, 1373):
---     its Label and Description are the Achievement table's text, restricted to the achievement families
---     (UI/Achievement.TEXT_FIELDS, textOnly); its Shield owns the reward tooltip, one line added by
---     AchievementShield_OnEnter (blizzard_legacyachievementoverrides.lua:39–48): the AchievementReward family only.
+--     its Label, Description and HiddenDescription (shown instead of Description while the card is expanded) are the
+--     Achievement table's text, restricted to the achievement families (UI/Achievement.TEXT_FIELDS, textOnly); its
+--     Shield owns the reward tooltip, one line added by AchievementShield_OnEnter
+--     (blizzard_legacyachievementoverrides.lua:39–48): the AchievementReward family only.
 --     Its text criteria are the CriteriaText family (CriteriaTree.Description_lang, GetAchievementCriteriaInfo):
 --     AchievementTemplateMixin:DisplayObjectives hands the one shared LegacyChallengeObjectives frame to the card
 --     (blizzard_legacychallengebutton.lua:256-279), whose Display acquires a pooled criterion per row and calls
