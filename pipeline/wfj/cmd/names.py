@@ -15,6 +15,13 @@
   import BATCH.jsonl --model MODEL --batch NAME [--date YYYY-MM-DD] [--dry-run]
       Rows {"id", "ja", "reading", "free", "words"} fill missing or machine names; `words` ([[English,
       Japanese]]) adds glossary words. A row with a problem is rejected with its reason.
+  export-words --out DIR [--size N]
+      The capitalised words of missing names that are neither in the glossary nor ordinary English (the game's
+      prose never writes them in lower case), each with up to three names that carry it: {"en", "count",
+      "examples"}. Drafting them first keeps one spelling per word across every name batch.
+  import-words BATCH.jsonl --model MODEL --batch NAME [--date YYYY-MM-DD] [--dry-run]
+      Rows {"en", "ja"} (a row whose "ja" is empty is a word that is not a name: a tag or a numeral, skipped)
+      add checked glossary words; a word already in the glossary is kept and reported.
   check
       Every name and word line's shape, and the one-spelling check. `validate` runs the same.
 """
@@ -243,6 +250,63 @@ def import_batch(
     return written, rejected
 
 
+def glossary_candidates(root: Path) -> dict[str, list[str]]:
+    """{word: names that carry it} for the capitalised words of missing names with no glossary entry that the
+    game's prose never writes in lower case."""
+    common = common_words(root)
+    have = {w["en"] for w in load_words(root)}
+    out: dict[str, list[str]] = defaultdict(list)
+    for ln in load_lines(root):
+        if ln["status"] != "missing":
+            continue
+        for w in dict.fromkeys(names.words_of(ln["en"])):
+            if (w[:1].isupper() and w.isascii() and w.lower() not in common and w not in have
+                    and not names.stopword(w) and " " not in w):
+                out[w].append(ln["en"])
+    return out
+
+
+def export_words(root: Path, out: Path, size: int) -> int:
+    cands = glossary_candidates(root)
+    rows = [{"en": w, "count": len(ns), "examples": ns[:3]} for w, ns in sorted(cands.items())]
+    out.mkdir(parents=True, exist_ok=True)
+    for n, start in enumerate(range(0, len(rows), size)):
+        (out / f"words-{n:03d}.jsonl").write_text(
+            "".join(dumps(r) + "\n" for r in rows[start : start + size]), encoding="utf-8"
+        )
+    return len(rows)
+
+
+def import_words(
+    root: Path, path: Path, model_id: str, batch: str, today: str, dry_run: bool
+) -> tuple[int, list[str]]:
+    if not _BATCH_RE.match(batch):
+        raise ValueError(f"--batch {batch!r}: 4 to 64 of letters, digits, . _ -")
+    prov = {"class": "machine", "model": model_id, "source": f"draft-names-{batch}@{today}", "imported": today}
+    words = {w["en"]: w for w in load_words(root)}
+    rejected: list[str] = []
+    written = 0
+    with path.open(encoding="utf-8") as f:
+        rows = [json.loads(raw) for raw in f if raw.strip()]
+    for row in rows:
+        en, ja = row.get("en"), row.get("ja", "")
+        if not ja:
+            continue
+        w = {"en": en, "ja": ja, "check": True, "provenance": dict(prov)}
+        bad = names.word_problems(w)
+        if bad:
+            rejected.append(f"word {en!r}: {'; '.join(bad)}")
+        elif en in words:
+            if words[en]["ja"] != ja:
+                rejected.append(f"word {en!r}: already {words[en]['ja']!r}, kept")
+        else:
+            words[en] = w
+            written += 1
+    if not dry_run:
+        save_words(root, words.values())
+    return written, rejected
+
+
 def problems(root: Path) -> list[str]:
     lines, words = load_lines(root), load_words(root)
     out = [f"name {ln.get('en')!r}: {p}" for ln in lines for p in names.line_problems(ln)]
@@ -279,6 +343,15 @@ def run(argv: Sequence[str]) -> int:
     i.add_argument("--batch", required=True)
     i.add_argument("--date", default=today)
     i.add_argument("--dry-run", action="store_true")
+    ew = sub.add_parser("export-words")
+    ew.add_argument("--out", required=True)
+    ew.add_argument("--size", type=int, default=1000)
+    iw = sub.add_parser("import-words")
+    iw.add_argument("batch_file")
+    iw.add_argument("--model", required=True)
+    iw.add_argument("--batch", required=True)
+    iw.add_argument("--date", default=today)
+    iw.add_argument("--dry-run", action="store_true")
     sub.add_parser("check")
     a = p.parse_args(list(argv))
     root = data_root()
@@ -294,6 +367,15 @@ def run(argv: Sequence[str]) -> int:
         elif a.cmd == "export":
             n = export(root, Path(a.out), a.size, Path(a.hearthstone) if a.hearthstone else None)
             print(f"names export: {n} missing names → {a.out}")
+        elif a.cmd == "export-words":
+            n = export_words(root, Path(a.out), a.size)
+            print(f"names export-words: {n} words → {a.out}")
+        elif a.cmd == "import-words":
+            n, rejected = import_words(root, Path(a.batch_file), a.model, a.batch, a.date, a.dry_run)
+            for r in rejected:
+                print(f"names import-words: {r}", file=sys.stderr)
+            print(f"names import-words: {n} words written, {len(rejected)} kept or rejected"
+                  + (" (dry run)" if a.dry_run else ""))
         elif a.cmd == "import":
             n, rejected = import_batch(root, Path(a.batch_file), a.model, a.batch, a.date, a.dry_run)
             for r in rejected:
