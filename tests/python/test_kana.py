@@ -28,6 +28,15 @@ from wfj.core import kana
         ("1.5倍", "いちてんごばい"),
         ("1,000", "せん"),
         ("２年前", "にねんまえ"),
+        ("3発", "さんぱつ"),
+        ("3歩", "さんぽ"),
+        ("3足", "さんぞく"),
+        ("300匹", "さんびゃっぴき"),
+        ("14人", "じゅうよにん"),
+        ("3分の1", "さんぶんのいち"),
+        ("何つか", "いくつか"),
+        ("1～2分", "いちからにふん"),
+        ("んん～。", "んんー。"),
     ],
 )
 def test_numbers_are_read_with_their_counters(text, spoken):
@@ -64,7 +73,7 @@ def test_name_tables_are_generated_but_not_loaded(root):
     addon = root / "addon" / "WoWForeverJapanese"
     assert any((addon / "Data" / "Names").glob("Names_*.lua"))
     toc = (addon / "WoWForeverJapanese.toc").read_text(encoding="utf-8")
-    assert "Names" not in toc
+    assert "Data\\Names" not in toc
 
 
 def test_a_name_with_digits_and_a_count_glued_to_a_name():

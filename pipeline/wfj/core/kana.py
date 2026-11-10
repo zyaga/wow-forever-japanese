@@ -120,7 +120,8 @@ _AFTER = {
     "おき": "おき",
 }
 _NUMBER = re.compile(
-    r"(\d[\d,]*(?:\.\d+)?)(\s*)("
+    # a number ("1,000" with its thousands commas, "2.5"), spaces on its own line, a counter, what follows it
+    r"(\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:\.\d+)?)([ \t]*)("
     + "|".join(map(re.escape, COUNTERS))
     + r")?((?:"
     + "|".join(map(re.escape, sorted(_AFTER, key=len, reverse=True)))
@@ -128,6 +129,8 @@ _NUMBER = re.compile(
 )
 _AFTER_ONE = re.compile("|".join(map(re.escape, sorted(_AFTER, key=len, reverse=True))))
 _AFTER_RUN = re.compile(f"(?:{_AFTER_ONE.pattern})+")
+_FRACTION = re.compile(r"(\d+)分の")
+_RANGE = re.compile(r"～(?=[0-9０-９])")  # a range ends in a number: 1～2分, 6時～11時
 _HOW_MANY = re.compile(r"何(" + "|".join(map(re.escape, COUNTERS)) + r")")
 
 
@@ -196,14 +199,22 @@ def with_counter(text: str, counter: str) -> str:
     return head + _plain_counter(counter, last, tail, stem)
 
 
+_P_AFTER_3 = frozenset({"分", "発", "歩", "泊"})  # さんぷん, さんぱつ, さんぽ, さんぱく (not b)
+
+
 def _h_counter(counter: str, last: str, tail: str, stem: str) -> str:
     """匹 本 杯 分 …: hard (p, small tsu) after 1 / 6 / 8 / 10 / 100, soft (b) after 3 / 1000 / 万."""
     base = _H[counter]
     if tail in _TSUMARU:
         return stem + _TSUMARU[tail] + _p(base)
+    if last.endswith("ゃく"):  # 300 / 600 / 800 匹: さんびゃっぴき
+        return last[:-1] + "っ" + _p(base)
     if tail in ("さん", "せん", "まん") or (counter == "分" and tail == "よん"):
-        return last + (_p(base) if counter == "分" else _b(base))
+        return last + (_p(base) if counter in _P_AFTER_3 else _b(base))
     return last + base
+
+
+_VOICED_AFTER_3 = {"階": "がい", "足": "ぞく", "軒": "げん"}  # さんがい, さんぞく, さんげん
 
 
 def _k_counter(counter: str, last: str, tail: str, stem: str) -> str:
@@ -212,15 +223,15 @@ def _k_counter(counter: str, last: str, tail: str, stem: str) -> str:
     small = {"いち", "はち", "じゅう", "ひゃく"} | ({"ろく"} if counter in _K else set())
     if tail in small:
         return stem + _TSUMARU[tail] + base
-    if counter == "階" and tail == "さん":
-        return last + "がい"
+    if tail == "さん" and counter in _VOICED_AFTER_3:
+        return last + _VOICED_AFTER_3[counter]
     return last + base
 
 
 def _plain_counter(counter: str, last: str, tail: str, stem: str) -> str:
     """The counters with no sound change, but 4 and 7 / 9 before 年 and 時(間) (よねん, しちじ, くじ)."""
     reading = _PLAIN[counter]
-    if counter in ("年", "時間", "時") and tail == "よん":
+    if counter in ("年", "時間", "時", "人") and tail == "よん":  # よねん, よじかん, じゅうよにん
         return stem + "よ" + reading
     if counter in ("時間", "時") and tail in ("なな", "きゅう"):
         return stem + ("しち" if tail == "なな" else "く") + reading
@@ -236,7 +247,9 @@ def _p(h: str) -> str:
 
 
 def how_many(counter: str) -> str:
-    """何 with a counter (何匹か なんびきか)."""
+    """何 with a counter (何匹か なんびきか; 何つか いくつか)."""
+    if counter == "つ":
+        return "いくつ"
     if counter in _H:
         return "なん" + _b(_H[counter])
     return "なん" + COUNTER_READING[counter]
@@ -296,6 +309,7 @@ def replace_names(text: str, lookup: Callable[[str], str | None]) -> tuple[str, 
 
 def spell_numbers(text: str) -> str:
     text = _HOW_MANY.sub(lambda m: how_many(m.group(1)), text)
+    text = _FRACTION.sub(lambda m: read_number(m.group(1)) + "ぶんの", text)  # 3分の1 さんぶんのいち
     # the words speech_text puts in: the player, and a count only the server knows
     text = text.replace(voice.PLAYER_WORD, "ぼうけんしゃ").replace("数", "すう")
 
@@ -305,7 +319,8 @@ def spell_numbers(text: str) -> str:
             return read_number(num) + space + (after or "")
         return with_counter(num, counter) + _AFTER_ONE.sub(lambda a: _AFTER[a.group(0)], after or "")
 
-    return _NUMBER.sub(one, text.replace("～", "から"))
+    # ～ before a count is a range (1～2分: いちからにふん); anywhere else a drawn-out sound (んん～)
+    return _NUMBER.sub(one, _RANGE.sub("から", text).replace("～", "ー"))
 
 
 def build(

@@ -212,3 +212,71 @@ def test_every_english_name_has_a_line(root):
 
 def test_latin_runs_leave_a_glued_count_to_its_counter():
     assert names.latin_runs("mageweave cloth60枚とNG-5") == ["mageweave cloth", "NG-5"]
+
+
+def test_names_that_differ_only_in_case_read_one_way():
+    a = trusted("Aerie Peak", "エアリー峰", "えありーほう")
+    b = trusted("Aerie peak", "エアリー・ピーク", "えありー・ぴーく")
+    assert len(names.case_problems([a, b])) == 1
+    b.update(ja="エアリー峰", reading="えありーほう")
+    assert names.case_problems([a, b]) == []
+    sap = trusted("sap", "樹液", "じゅえき", free=True)
+    assert names.case_problems([trusted("Sap", "昏倒", "こんとう"), sap]) == []
+
+
+def test_glossary_words_match_whatever_their_case():
+    words = [
+        {
+            "en": "Kil'Jaeden",
+            "ja": "キルジェイデン",
+            "check": True,
+            "provenance": {"class": "human", "source": "hearthstone@256589", "imported": TODAY},
+        }
+    ]
+    line = trusted("KIL'JAEDEN's Fury", "キルジェデンの怒り", "きるじぇでんのいかり")
+    assert len(names.spelling_problems([line], words)) == 1
+
+
+def test_duplicate_ids_are_reported(tmp_path):
+    line = trusted("Thrall", "スロール", "すろーる")
+    root = tmp_path / "data"
+    (root / "name").mkdir(parents=True)
+    (root / "name" / f"name-{line['id'][:2]}.jsonl").write_text(
+        "".join(json.dumps(line, ensure_ascii=False) + "\n" for _ in range(2)), encoding="utf-8"
+    )
+    assert any("lines with one id" in p for p in cmd.problems(root))
+
+
+def test_a_names_row_never_turns_a_hint_into_a_checked_word(tmp_path):
+    root = _store(tmp_path, [names.ordered(dict(names.new_line("Iron Helm", TODAY), ids={"item": [1]}))])
+    hint = {
+        "en": "Iron",
+        "ja": "鉄",
+        "check": False,
+        "provenance": {
+            "class": "machine",
+            "model": "m",
+            "source": "draft-names-vocab1@2026-11-10",
+            "imported": TODAY,
+        },
+    }
+    from wfj.io.names_store import save_words
+
+    save_words(root, [hint])
+    batch = tmp_path / "b.jsonl"
+    batch.write_text(
+        json.dumps(
+            {
+                "id": names.name_id("Iron Helm"),
+                "ja": "鉄の兜",
+                "reading": "てつのかぶと",
+                "free": False,
+                "words": [["Iron", "アイアン"]],
+            },
+            ensure_ascii=False,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    cmd.import_batch(root, batch, "test-model", "test1", TODAY, dry_run=False)
+    assert load_words(root) == [hint]

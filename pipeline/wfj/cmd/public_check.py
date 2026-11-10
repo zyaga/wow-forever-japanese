@@ -143,9 +143,8 @@ def check_paths(repo: Path) -> list[str]:
 
 
 def _is_data(f: str) -> bool:
-    """Game text: data/ and every file generate writes from it under the addon's Data/ (the name tables carry
-    the game's names verbatim)."""
-    return f.startswith(("data/", "addon/WoWForeverJapanese/Data/"))
+    """Game text: data/, and the name tables generated from it, which carry the game's names verbatim."""
+    return f.startswith(("data/", "addon/WoWForeverJapanese/Data/Names/"))
 
 
 def _content_of(repo: Path, f: str, rules: pt.PrivateRules) -> list[str]:

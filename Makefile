@@ -511,7 +511,7 @@ names: ## every English name gets a data/name line, then every voiced line its k
 # Hearthstone's official Japanese (HearthstoneJSON's card files), a build-time reference only: kept under build/,
 # never committed; only the names derived from it are (ADR-077).
 HEARTHSTONE_BUILD ?= 256589
-HEARTHSTONE_DIR   ?= $(REPO_ROOT)/build/hearthstone
+HEARTHSTONE_DIR   ?= $(REPO_ROOT)/build/hearthstone/$(HEARTHSTONE_BUILD)
 hearthstone: ## fetch the pinned HearthstoneJSON jaJP + enUS card files and take Hearthstone's names and words
 	@mkdir -p "$(HEARTHSTONE_DIR)"
 	@for l in jaJP enUS; do test -s "$(HEARTHSTONE_DIR)/$$l.json" || curl -sfo "$(HEARTHSTONE_DIR)/$$l.json" "https://api.hearthstonejson.com/v1/$(HEARTHSTONE_BUILD)/$$l/cards.json" || exit 1; done

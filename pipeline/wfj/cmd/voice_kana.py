@@ -4,9 +4,9 @@ The kana line of every voiced line (core/kana.py, ADR-077) in `data/voice/kana.j
 `{"key", "ja_hash", "kana", "provenance"}`, `ja_hash` being what the line's words were made from (the shipped
 Japanese and the numbers filled into it, `voice.text_hash`). A line the builder can read is rebuilt every run;
 one it cannot (a kanji with no reading, a name with no Japanese) keeps a model-written kana line written for
-the
-same `ja_hash`, else it is listed (and, with --export, written to FILE as {"key", "ja", "problems"} for a
-drafting round). `kana-import` takes rows {"key", "ja_hash", "kana"} for those lines.
+the same `ja_hash`, else it is listed (and, with --export, written to FILE as {"key", "ja_hash", "ja",
+"problems"} for a drafting round). `kana-import` takes rows {"key", "ja_hash", "kana"} for those lines. Run
+it after every import that changes shipped Japanese, readings or names (`make names`).
 """
 
 from __future__ import annotations
@@ -15,6 +15,7 @@ import argparse
 import datetime as dt
 import json
 import sys
+from collections import Counter
 from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
@@ -115,7 +116,7 @@ def import_rows(root: Path, path: Path, model_id: str, batch: str, today: str) -
     rows = {r["key"]: r for r in read_rows(kana_path(root))}
     rejected, written = [], 0
     for r in read_batch(path):
-        key = r.get("key")
+        key = r.get("key") if isinstance(r.get("key"), str) else None
         bad = kana.kana_problems(r.get("kana"))
         if current.get(key) is None:
             rejected.append(f"{key}: not a voiced line")
@@ -134,21 +135,27 @@ def problems(root: Path) -> list[str]:
     """The stored kana lines against a fresh build: every voiced line has one, made from its current Japanese,
     readings and names (a reading or name that changed makes a built line out of date even when the Japanese
     did not), and a model-written one is kana."""
-    stored = {r["key"]: r for r in read_rows(kana_path(root))}
+    rows = read_rows(kana_path(root))
+    keys = [r.get("key") for r in rows]
+    out = [f"kana {k}: {n} lines with one key" for k, n in sorted(Counter(keys).items()) if n > 1]
+    if keys != sorted(keys, key=str):
+        out.append("kana: lines out of key order (wfj voice kana)")
+    stored = {r.get("key"): r for r in rows}
     rebuilt, left = build_all(root, "0000-00-00")
-    out = [
-        f"kana {k}: no kana line, and the builder cannot make one: {'; '.join(p)}"
-        for k, (_, _, p) in left.items()
-    ]
+    for k, (_, _, p) in left.items():
+        stored.pop(k, None)
+        out.append(f"kana {k}: no kana line, and the builder cannot make one: {'; '.join(p)}")
     for r in rebuilt:
         have = stored.pop(r["key"], None)
         if have is None:
             out.append(f"kana {r['key']}: no kana line (wfj voice kana)")
-        elif (have["ja_hash"], have["kana"]) != (r["ja_hash"], r["kana"]):
-            out.append(f"kana {r['key']}: out of date (wfj voice kana)")
         elif tuple(have) != KEYS:
             out.append(f"kana {r['key']}: keys must be {KEYS}")
-    out += [f"kana {k}: not a voiced line any more (wfj voice kana)" for k in sorted(stored)]
+        elif (have["ja_hash"], have["kana"]) != (r["ja_hash"], r["kana"]):
+            out.append(f"kana {r['key']}: out of date (wfj voice kana)")
+        else:
+            out += [f"kana {r['key']}: {p}" for p in kana.kana_problems(have["kana"])]  # a model-written one
+    out += [f"kana {k}: not a voiced line any more (wfj voice kana)" for k in sorted(stored, key=str)]
     return out
 
 

@@ -558,10 +558,12 @@ def rule_names(root: Path) -> list[str]:
     from wfj.cmd import names, voice_kana
     from wfj.io.names_store import load_lines
 
-    missing = sum(1 for ln in load_lines(root) if ln["status"] == "missing")
-    print(f"validate: names: {missing} without Japanese; kana: {len(voice_kana.problems(root))} voiced lines "
-          "without a current kana line")
-    return names.problems(root)
+    bad = names.problems(root)
+    if not bad:  # the counts read every line, so only once the shapes are sound
+        missing = sum(1 for ln in load_lines(root) if ln.get("status") == "missing")
+        print(f"validate: names: {missing} without Japanese; kana: {len(voice_kana.problems(root))} voiced "
+              "lines without a current kana line")
+    return bad
 
 
 def rule_voice(root: Path, config: Path | None = None) -> list[str]:

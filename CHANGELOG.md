@@ -10,6 +10,7 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Fixed
+- Word cards now cover words that were missing on about 60 quest, NPC and book lines, so pointing at any word in those lines shows its reading.
 - Clicking a challenge on the Legacy board, or an achievement in the Achievement window, no longer turns its title and description English. They stay Japanese when the entry opens or closes, and when its progress updates.
 
 ## 0.12.0 - 2026-11-08

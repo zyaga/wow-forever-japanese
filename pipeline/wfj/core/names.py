@@ -2,13 +2,15 @@
 
     {"id": "<16 hex>", "en": "Orgrimmar", "ids": {"area": [1637]}, "prose": true, "ja": "オーグリマー",
      "reading": "おーぐりまー", "free": false, "status": "trusted",
-     "provenance": {"class": "machine", "source": "hearthstone@256589", "imported": "YYYY-MM-DD"}}
+     "provenance": {"class": "human", "source": "hearthstone@256589", "imported": "YYYY-MM-DD"}}
 
 `ids` lists the game ids that carry the name, per kind; `prose` says the name was seen inside shipped
 Japanese prose (a run of Latin letters). One line per English name makes one Japanese per name everywhere.
 `free` marks a name translated rather than spelled out word by word, which the one-spelling check skips.
-The word glossary (`words.jsonl`) holds English proper-noun words with their Japanese; a word whose `check`
-is true must appear, in its Japanese form, in every name that contains it.
+The word glossary (`words.jsonl`) holds English words with their Japanese; a word whose `check` is true (a
+proper noun) must appear, in its Japanese form, in every name that contains it, whatever the word's case; an
+unchecked one is a drafting hint (an ordinary word with more than one sense). Names that differ only in case
+are read one way. A line with no game id is a name seen only in prose.
 Pure: no disk.
 """
 
@@ -32,9 +34,9 @@ KATAKANA = re.compile(r"^[ァ-ヺー・]+$")
 _WORD_SPLIT = re.compile(r"[ \-]+")
 
 # Markup a shipped line can hold, removed before its Latin runs are read: player tokens, server codes,
-# colour and link escapes, texture escapes.
+# colour and link escapes, texture escapes, format placeholders (%s, %d).
 _MARKUP = re.compile(
-    r"\{[a-z]+\}|\$[0-9]*[A-Za-z][0-9]*|\|c[0-9A-Fa-f]{8}|\|r|\|H[^|]*\|h|\|h|\|T[^|]*\|t|\|n"
+    r"\{[a-z]+\}|\$[0-9]*[A-Za-z][0-9]*|\|c[0-9A-Fa-f]{8}|\|r|\|H[^|]*\|h|\|h|\|T[^|]*\|t|\|n|%[0-9$]*[sd]"
 )
 # A name in prose: Latin letters, digits and the punctuation names carry (Zul'Gurub, Un'Goro, C.O.R.E.),
 # words joined by single spaces.
@@ -208,8 +210,9 @@ def word_problems(word: Any) -> list[str]:
 
 
 def checked_glossary(words: Iterable[Mapping[str, Any]]) -> dict[str, tuple[str, str]]:
-    """{word: (its Japanese, that Japanese in hiragana)} for the glossary words every name is held to."""
-    return {w["en"]: (w["ja"], hiragana(w["ja"])) for w in words if w["check"]}
+    """{casefolded word: (its Japanese, that Japanese in hiragana)} for the glossary words every name is held
+    to. A word is one word whatever its case ("Kil'Jaeden", "KIL'JAEDEN")."""
+    return {w["en"].casefold(): (w["ja"], hiragana(w["ja"])) for w in words if w["check"]}
 
 
 def misspelled(line: Mapping[str, Any], glossary: Mapping[str, tuple[str, str]]) -> list[tuple[str, str]]:
@@ -218,7 +221,33 @@ def misspelled(line: Mapping[str, Any], glossary: Mapping[str, tuple[str, str]])
     if line["status"] != "trusted" or line["free"] or line["provenance"]["source"].startswith("hearthstone@"):
         return []
     have = hiragana(line["ja"]) + "\x00" + line["reading"]
-    return [(w, glossary[w][0]) for w in words_of(line["en"]) if w in glossary and glossary[w][1] not in have]
+    return [
+        (w, glossary[w.casefold()][0])
+        for w in words_of(line["en"])
+        if w.casefold() in glossary and glossary[w.casefold()][1] not in have
+    ]
+
+
+def case_groups(lines: Iterable[Mapping[str, Any]]) -> list[list[Mapping[str, Any]]]:
+    """The drafted names that differ only in case ("Aerie Peak", "Aerie peak") yet are read differently. A
+    `free` name (an ordinary word that shares a name's letters, "sap" beside the spell "Sap") is exempt."""
+    groups: dict[str, list[Mapping[str, Any]]] = {}
+    for ln in lines:
+        if ln["status"] == "trusted":
+            groups.setdefault(ln["en"].casefold(), []).append(ln)
+    return [
+        g
+        for g in groups.values()
+        if len(g) > 1 and not any(ln["free"] for ln in g) and len({ln["reading"] for ln in g}) > 1
+    ]
+
+
+def case_problems(lines: Iterable[Mapping[str, Any]]) -> list[str]:
+    """One name, read one way, whatever its case."""
+    return [
+        " / ".join(f"{ln['en']!r} {ln['ja']!r}" for ln in g) + ": one name, read one way"
+        for g in case_groups(lines)
+    ]
 
 
 def spelling_problems(lines: Iterable[Mapping[str, Any]], words: Iterable[Mapping[str, Any]]) -> list[str]:

@@ -189,11 +189,19 @@ def redo_rows(root: Path, ids: set[str]) -> dict[str, str]:
     """{name id: why it is drafted again} for the machine names a fix round redoes: every one that spells a
     checked glossary word another way, and the ids asked for."""
     glossary = names.checked_glossary(load_words(root))
+    lines = load_lines(root)
     out = {i: "asked to align with the rest" for i in ids}
-    for ln in load_lines(root):
+    for ln in lines:
         bad = names.misspelled(ln, glossary) if ln["provenance"]["class"] == "machine" else []
         if bad:
             out[ln["id"]] = "; ".join(f"{w} is {ja}" for w, ja in bad)
+    for group in names.case_groups(lines):
+        same = " / ".join(f"{ln['en']} {ln['ja']}" for ln in group)
+        for ln in group:
+            if ln["provenance"]["class"] == "machine":
+                out[ln["id"]] = (out.get(ln["id"], "") + "; " if ln["id"] in out else "") + (
+                    f"one name in other case, read one way: {same} (or free if this one is an ordinary word)"
+                )
     return out
 
 
@@ -267,7 +275,7 @@ def import_batch(
     rejected: list[str] = []
     written = 0
     for row in read_batch(path):
-        ln = lines.get(row.get("id"))
+        ln = lines.get(row.get("id")) if isinstance(row.get("id"), str) else None
         if ln is None:
             rejected.append(f"{row.get('id')}: no such name")
             continue
@@ -278,7 +286,7 @@ def import_batch(
             ln,
             ja=row.get("ja", ""),
             reading=row.get("reading", ""),
-            free=bool(row.get("free", False)),
+            free=row.get("free", False),
             status="trusted",
             provenance=dict(prov),
         )
@@ -296,10 +304,11 @@ def import_batch(
             wrong = names.word_problems(w)
             if wrong:
                 rejected.append(f"{ln['en']!r}: word {pair!r}: {'; '.join(wrong)}")
-            elif pair[0] in words and words[pair[0]]["check"] and words[pair[0]]["ja"] != pair[1]:
-                rejected.append(f"word {pair[0]!r}: already {words[pair[0]]['ja']!r}, not {pair[1]!r}")
-            elif pair[0] not in words or not words[pair[0]]["check"]:
-                # an unchecked Hearthstone pair is only a guess; the drafted word replaces it
+            elif pair[0] in words:
+                # a glossary word stays as it is: a hint-only word must not turn into a checked one
+                if words[pair[0]]["ja"] != pair[1]:
+                    rejected.append(f"word {pair[0]!r}: already {words[pair[0]]['ja']!r}, not {pair[1]!r}")
+            else:
                 words[pair[0]] = w
     if not dry_run:
         save_lines(root, lines.values())
@@ -354,7 +363,7 @@ def import_words(
         bad = names.word_problems(w)
         if bad:
             rejected.append(f"word {en!r}: {'; '.join(bad)}")
-        elif en in words and words[en]["check"]:
+        elif en in words:  # kept as it is, checked or a hint
             if words[en]["ja"] != ja:
                 rejected.append(f"word {en!r}: already {words[en]['ja']!r}, kept")
         else:
@@ -368,14 +377,22 @@ def import_words(
 def problems(root: Path) -> list[str]:
     lines, words = load_lines(root), load_words(root)
     out = [f"name {ln.get('en')!r}: {p}" for ln in lines for p in names.line_problems(ln)]
-    seen: set[str] = set()
+    # duplicates are reported, never resolved silently (a merge that kept both sides of a shard)
+    ids = Counter(ln.get("id") for ln in lines)
+    out += [f"name {i}: {n} lines with one id" for i, n in sorted(ids.items()) if n > 1]
+    seen: dict[str, str] = {}
     for w in words:
         out.extend(f"name word: {p}" for p in names.word_problems(w))
-        if w.get("en") in seen:
-            out.append(f"name word {w['en']!r} twice")
-        seen.add(w.get("en"))
+        folded = str(w.get("en")).casefold()
+        if w.get("check") and folded in seen and seen[folded] != w.get("ja"):
+            out.append(
+                f"name word {w['en']!r}: written twice (case aside), as {seen[folded]!r} and {w.get('ja')!r}"
+            )
+        if w.get("check"):
+            seen.setdefault(folded, w.get("ja"))
     if not out:
         out.extend(f"name spelling: {p}" for p in names.spelling_problems(lines, words))
+        out.extend(f"name case: {p}" for p in names.case_problems(lines))
     return out
 
 
