@@ -129,8 +129,8 @@ _NUMBER = re.compile(
 )
 _AFTER_ONE = re.compile("|".join(map(re.escape, sorted(_AFTER, key=len, reverse=True))))
 _AFTER_RUN = re.compile(f"(?:{_AFTER_ONE.pattern})+")
-_FRACTION = re.compile(r"(\d+)分の")
-_RANGE = re.compile(r"～(?=[0-9０-９])")  # a range ends in a number: 1～2分, 6時～11時
+_FRACTION = re.compile(r"(\d+)分の(?=[0-9０-９一二三四五六七八九十])")  # 3分の1, not 5分の休憩
+_RANGE = re.compile(r"[～〜](?=[0-9０-９])")  # a range ends in a number: 1～2分, 6時～11時
 _HOW_MANY = re.compile(r"何(" + "|".join(map(re.escape, COUNTERS)) + r")")
 
 
@@ -320,7 +320,7 @@ def spell_numbers(text: str) -> str:
         return with_counter(num, counter) + _AFTER_ONE.sub(lambda a: _AFTER[a.group(0)], after or "")
 
     # ～ before a count is a range (1～2分: いちからにふん); anywhere else a drawn-out sound (んん～)
-    return _NUMBER.sub(one, _RANGE.sub("から", text).replace("～", "ー"))
+    return _NUMBER.sub(one, _RANGE.sub("から", text).replace("～", "ー").replace("〜", "ー"))
 
 
 def build(

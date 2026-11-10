@@ -17,7 +17,7 @@ def name_dir(root: Path) -> Path:
 
 def load_lines(root: Path) -> list[dict[str, Any]]:
     out = [ln for path in sorted(name_dir(root).glob("name-*.jsonl")) for ln in read_jsonl(path)]
-    return sorted(out, key=lambda ln: ln["id"])
+    return sorted(out, key=lambda ln: str(ln.get("id")) if isinstance(ln, dict) else "")
 
 
 def _write_if_changed(path: Path, text: str) -> None:

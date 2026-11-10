@@ -37,6 +37,8 @@ from wfj.core import kana
         ("何つか", "いくつか"),
         ("1～2分", "いちからにふん"),
         ("んん～。", "んんー。"),
+        ("ふ〜ん", "ふーん"),
+        ("5分の休憩", "ごふんの休憩"),
     ],
 )
 def test_numbers_are_read_with_their_counters(text, spoken):

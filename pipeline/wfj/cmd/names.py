@@ -380,6 +380,8 @@ def problems(root: Path) -> list[str]:
     # duplicates are reported, never resolved silently (a merge that kept both sides of a shard)
     ids = Counter(ln.get("id") for ln in lines)
     out += [f"name {i}: {n} lines with one id" for i, n in sorted(ids.items()) if n > 1]
+    twice = Counter(w.get("en") for w in words)
+    out += [f"name word {en!r}: listed {n} times" for en, n in sorted(twice.items(), key=str) if n > 1]
     seen: dict[str, str] = {}
     for w in words:
         out.extend(f"name word: {p}" for p in names.word_problems(w))

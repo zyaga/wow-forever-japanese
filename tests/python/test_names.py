@@ -280,3 +280,17 @@ def test_a_names_row_never_turns_a_hint_into_a_checked_word(tmp_path):
     )
     cmd.import_batch(root, batch, "test-model", "test1", TODAY, dry_run=False)
     assert load_words(root) == [hint]
+
+
+def test_a_glossary_word_listed_twice_is_reported(tmp_path):
+    root = _store(tmp_path, [names.ordered(dict(names.new_line("Thrall", TODAY), ids={"unit": [1]}))])
+    word = {
+        "en": "Thrall",
+        "ja": "スロール",
+        "check": True,
+        "provenance": {"class": "human", "source": "hearthstone@256589", "imported": TODAY},
+    }
+    (root / "name" / "words.jsonl").write_text(
+        "".join(json.dumps(word, ensure_ascii=False) + "\n" for _ in range(2)), encoding="utf-8"
+    )
+    assert any("listed 2 times" in p for p in cmd.problems(root))
