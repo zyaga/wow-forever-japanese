@@ -40,7 +40,7 @@ WFJ.Data.add("name", {
   ["533180d9b4eea2a9"] = { "ノーススプリングのハーピー", "のーすすぷりんぐのはーぴー", "Northspring Harpies" },
   ["53323c79ca464fa7"] = { "悪夢の侵攻：ヒンターランドの任務17", "あくむのしんこうひんたーらんどのにんむじゅうなな", "Nightmare Incursions: Hinterlands Mission XVII" },
   ["533397534e80dabc"] = { "武器エンチャント：下級エレメンタル殺し", "ぶきえんちゃんとかきゅうえれめんたるごろし", "Enchant Weapon - Lesser Elemental Slayer" },
-  ["53345fc479d4cbed"] = { "風の騎手使い", "かぜのきしゅつかい", "wind rider master" },
+  ["53345fc479d4cbed"] = { "ウィンドライダー使い", "うぃんどらいだーつかい", "wind rider master" },
   ["5334fa823103b3e7"] = { "炎宿し", "ほのおやどし", "Imbue Flame" },
   ["53377d5e36a228b3"] = { "低放射線のトゥルーシルバー板", "ていほうしゃせんのとぅるーしるばーいた", "Low-Background Truesilver Plates" },
   ["5339194e99432ad2"] = { "腐敗者のスコージストーン", "ふはいしゃのすこーじすとーん", "Corruptor's Scourgestone" },

@@ -97,7 +97,7 @@ WFJ.Data.add("name", {
   ["a47f72652d051611"] = { "浮遊する残骸", "ふゆうするざんがい", "Floating Debris" },
   ["a481ce552868d154"] = { "テレポート：潮の祭壇", "てれぽーとしおのさいだん", "Teleport Altar of the Tides" },
   ["a481e499ee0fed18"] = { "変色したウォーグの心臓", "へんしょくしたうぉーぐのしんぞう", "Discolored Worg Heart" },
-  ["a4822a170ee14d9c"] = { "輝けるクロマティックの鱗", "かがやけるくろまてぃっくのうろこ", "Brilliant chromatic scale" },
+  ["a4822a170ee14d9c"] = { "輝ける万色の鱗", "かがやけるばんしょくのうろこ", "Brilliant chromatic scale" },
   ["a482fca8c4f066b9"] = { "モンスター用：杖：木製の柄・螺旋の頭・白", "もんすたーようつえもくせいのえ・らせんのあたま・しろ", "Monster - Staff, Wooden Handle Spiral Head White" },
   ["a4833993fd4332c9"] = { "63・緑の冷気の籠手", "ろくじゅうさん・みどりのれいきのこて", "63 Green Frost Gloves" },
   ["a48476b2d9ae370f"] = { "製法：首飾りエンチャント：敏捷", "せいほうくびかざりえんちゃんとびんしょう", "Formula: Enchant Necklace - Agility" },

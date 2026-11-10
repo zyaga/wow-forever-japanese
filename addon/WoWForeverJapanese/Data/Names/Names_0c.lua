@@ -193,7 +193,7 @@ WFJ.Data.add("name", {
   ["0cc5e678ec8951fd"] = { "アクマイ", "あくまい", "Aku'mai" },
   ["0cc608fe4f8518ff"] = { "実験：ドカーン！！！", "じっけんどかーん", "EXPERIMENT-8OOM!!!" },
   ["0cc643972be143fa"] = { "トロールのかがり火", "とろーるのかがりび", "Troll Bonfire" },
-  ["0cc7cdd4eb38c891"] = { "海水のスナップジョー", "かいすいのすなっぷじょー", "Saltwater Snapjaw" },
+  ["0cc7cdd4eb38c891"] = { "海水のオオアゴガメ", "かいすいのおおあごがめ", "Saltwater Snapjaw" },
   ["0cc874d4fac027a7"] = { "トワイライトの籠手", "とわいらいとのこて", "Twilight Gloves" },
   ["0cc981c46a3f246e"] = { "インセンディアの粉", "いんせんでぃあのこな", "Incendia powder" },
   ["0cca70ce7956c775"] = { "谷のスクリーチャー", "たにのすくりーちゃー", "vale screechers" },
@@ -239,6 +239,6 @@ WFJ.Data.add("name", {
   ["0cfb0066d1fff3f2"] = { "アイテム：ティア1・ハンター・遠距離4点ボーナス", "あいてむてぃあいち・はんたー・えんきょりよんてんぼーなす", "S03 - Item - T1 - Hunter - Ranged 4P Bonus" },
   ["0cfe1ca3b5589712"] = { "刃への付与", "やいばへのふよ", "Imbue Blade" },
   ["0cff9c11bbd9a487"] = { "空の小瓶", "からのこびん", "Empty Phial" },
-  ["0cffb6ce0561f46c"] = { "ゾンビ・ジュース", "ぞんび・じゅーす", "zombie juice" },
+  ["0cffb6ce0561f46c"] = { "ゾンビジュース", "ぞんびじゅーす", "zombie juice" },
   ["0cffda187f390b5c"] = { "決定打", "けっていだ", "Decisive Strike" },
 })

@@ -242,7 +242,7 @@ WFJ.Data.add("name", {
   ["bced973673377b00"] = { "地下墓所の衛兵召喚", "ちかぼしょのえいへいしょうかん", "Summon Crypt Guard" },
   ["bced9a0fe5f24fdc"] = { "シャドウフォージ", "しゃどうふぉーじ", "Shadowforge" },
   ["bcee7c5382fed413"] = { "帯電した鼓舞", "たいでんしたこぶ", "Charged Inspiration" },
-  ["bcef805973c91c16"] = { "アカウミガメのスナップジョー召喚", "あかうみがめのすなっぷじょーしょうかん", "Summon Loggerhead Snapjaw" },
+  ["bcef805973c91c16"] = { "アカウミガメのオオアゴガメ召喚", "あかうみがめのおおあごがめしょうかん", "Summon Loggerhead Snapjaw" },
   ["bcf14b73b5e4fefb"] = { "ナレット・シャドウグローヴ", "なれっと・しゃどうぐろーゔ", "Narret Shadowgrove" },
   ["bcf16ed22ed50834"] = { "女狩人リーフランナー", "おんなかりゅうどりーふらんなー", "Huntress Leafrunner" },
   ["bcf3599726a3df56"] = { "モスフーフの雄鹿", "もすふーふのおじか", "Mosshoof Stag" },

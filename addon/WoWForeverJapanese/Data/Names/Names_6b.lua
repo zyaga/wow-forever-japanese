@@ -158,7 +158,7 @@ WFJ.Data.add("name", {
   ["6bb444f2223f4277"] = { "大呪文強化のポーション", "だいじゅもんきょうかのぽーしょん", "Major Spellblasting Potion" },
   ["6bb481e382da918c"] = { "ニレン・アンデマー", "にれん・あんでまー", "Nillen Andemar" },
   ["6bb682f6bc1bd706"] = { "命中を宿す", "めいちゅうをやどす", "Imbue Accuracy" },
-  ["6bba109ab8a93c78"] = { "古代樹", "こだいじゅ", "ancients" },
+  ["6bba109ab8a93c78"] = { "古木", "こぼく", "ancients" },
   ["6bba90d75b94b159"] = { "デファイアスの脱獄者", "でふぁいあすのだつごくしゃ", "Defias Jailbreakers" },
   ["6bbfa8ca68bc6ad7"] = { "デッドマンの交差路", "でっどまんのこうさろ", "Deadman's Crossing" },
   ["6bc4336fa23666a5"] = { "アストラル呼び戻しの石板", "あすとらるよびもどしのせきばん", "Tablet of Astral Recall" },

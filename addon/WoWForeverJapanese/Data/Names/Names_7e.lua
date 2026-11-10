@@ -78,7 +78,7 @@ WFJ.Data.add("name", {
   ["7e4fcc0ca33f3b79"] = { "アントン修道士の表彰の手紙", "あんとんしゅうどうしのひょうしょうのてがみ", "Brother Anton's Letter of Commendation" },
   ["7e50289544474699"] = { "急降下の薙ぎ払い", "きゅうこうかのなぎはらい", "Diving Sweep" },
   ["7e524370fb843671"] = { "モンスター用：盾：パラディン", "もんすたーようたてぱらでぃん", "Monster - Shield, Paladin" },
-  ["7e52dadf3f684959"] = { "アウルビースト", "あうるびーすと", "owlbeasts" },
+  ["7e52dadf3f684959"] = { "オウルビースト", "おうるびーすと", "owlbeasts" },
   ["7e5337c92a58ae8a"] = { "元帥の革の脚衣", "げんすいのかわのきゃくい", "Marshal's Leather Leggings" },
   ["7e53492f8020519e"] = { "アーチボルド・カヴァ", "あーちぼるど・かゔぁ", "Archibald Kava" },
   ["7e552731f475a2a7"] = { "ムーンキンの石", "むーんきんのいし", "Moonkin Stone" },

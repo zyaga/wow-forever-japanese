@@ -60,7 +60,7 @@ WFJ.Data.add("name", {
   ["a94af8b131344649"] = { "シャズラーの手", "しゃずらーのて", "Hand of Shazzrah" },
   ["a94b5b688619e23e"] = { "レシピ：小不屈のエリクサー", "れしぴしょうふくつのえりくさー", "Recipe: Elixir of Minor Fortitude" },
   ["a94d21a650823fcc"] = { "ブライトウォーター湖", "ぶらいとうぉーたーこ", "Brightwater Lake" },
-  ["a9515a322e3e9dd9"] = { "竜軍団", "りゅうぐんだん", "dragonflight" },
+  ["a9515a322e3e9dd9"] = { "ドラゴンフライト", "どらごんふらいと", "dragonflight" },
   ["a955089bc833afa1"] = { "影ダメージ増加10", "かげだめーじぞうかじゅう", "Increase Shadow Dam 10" },
   ["a955089cc833afa2"] = { "影ダメージ増加11", "かげだめーじぞうかじゅういち", "Increase Shadow Dam 11" },
   ["a955089ec833afa4"] = { "影ダメージ増加13", "かげだめーじぞうかじゅうさん", "Increase Shadow Dam 13" },

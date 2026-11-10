@@ -125,7 +125,7 @@ WFJ.Data.add("name", {
   ["af85bac04b55c8a6"] = { "疾病の瓶を飲む", "しっぺいのびんをのむ", "Drink Disease Bottle" },
   ["af8a8ebd587fd9e3"] = { "素早い横跳び", "すばやいよことび", "Quick Sidestep" },
   ["af8abb1c26a41f32"] = { "跳ねる影", "はねるかげ", "Bounding Shadow" },
-  ["af8b6fcefb0105c4"] = { "狂乱したプテロダックス", "きょうらんしたぷてろだっくす", "frenzied pterrordax" },
+  ["af8b6fcefb0105c4"] = { "狂乱のプテロダックス", "きょうらんのぷてろだっくす", "frenzied pterrordax" },
   ["af8c51dfd39588c2"] = { "ウォーソング渓谷の慰めのリボン作成", "うぉーそんぐけいこくのなぐさめのりぼんさくせい", "Create Warsong Gulch Consolation Ribbon" },
   ["af8d9715281be388"] = { "サンダーストンプのステゴドンの角", "さんだーすとんぷのすてごどんのつの", "Thunderstomp Stegodon Horn" },
   ["af8dcc506397ccd9"] = { "ラコタ・ウィンドソング", "らこた・うぃんどそんぐ", "Lakota Windsong" },

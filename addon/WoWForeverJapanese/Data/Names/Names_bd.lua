@@ -121,7 +121,7 @@ WFJ.Data.add("name", {
   ["bd8018d058aded18"] = { "倉庫の鍵", "そうこのかぎ", "Storehouse Key" },
   ["bd8755b38af81c35"] = { "収穫者の脚衣", "しゅうかくしゃのきゃくい", "Harvester's Pants" },
   ["bd8817b308a13f47"] = { "魔法使い", "まほうつかい", "Wizard" },
-  ["bd8817d27e4dd139"] = { "募集の手紙", "ぼしゅうのてがみ", "Recruitment letter" },
+  ["bd8817d27e4dd139"] = { "勧誘の手紙", "かんゆうのてがみ", "Recruitment letter" },
   ["bd8a950e5750383f"] = { "銘入りの革の胸当て", "めいいりのかわのむねあて", "Inscribed Leather Breastplate" },
   ["bd8afaf6a479b862"] = { "レヴィルガズ", "れゔぃるがず", "Revilgaz" },
   ["bd8ba6545df8b309"] = { "誓いの石", "ちかいのいし", "oathstone" },

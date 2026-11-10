@@ -181,7 +181,7 @@ WFJ.Data.add("name", {
   ["c6c8e9f7fb2bf0af"] = { "星の炎", "ほしのほのお", "Starfire" },
   ["c6c9be9d3115a40d"] = { "クロナリス", "くろなりす", "Chronalis" },
   ["c6ca8327178a673e"] = { "外套彫刻：連結回復", "がいとうちょうこくれんけつかいふく", "Engrave Cloak - Binding Heal" },
-  ["c6cd0930544abcf0"] = { "ダーナサスの銀行", "だーなさすのぎんこう", "bank of Darnassus" },
+  ["c6cd0930544abcf0"] = { "ダーナサス銀行", "だーなさすぎんこう", "bank of Darnassus" },
   ["c6cd86702b2daaf7"] = { "静寂のイェティ", "せいじゃくのいぇてぃ", "Tranquil Yeti" },
   ["c6cdc8e20f47b58b"] = { "デンマル・ファーマウンテン", "でんまる・ふぁーまうんてん", "Denmul Farmountain" },
   ["c6ced534ee010ff1"] = { "委任：フェララス任務8", "いにんふぇららすにんむはち", "Deputize: Feralas Mission VIII" },

@@ -208,7 +208,7 @@ WFJ.Data.add("name", {
   ["c8d1232e0041e81f"] = { "魔術師の王冠", "まじゅつしのおうかん", "Sorcerer's Crown" },
   ["c8d25bdffbb5f6e8"] = { "ウィンドブレイク峡谷", "うぃんどぶれいくきょうこく", "Windbreak Canyon" },
   ["c8d403667190905f"] = { "騎乗用コドー（青緑）", "きじょうようこどーあおみどり", "Riding Kodo (Teal)" },
-  ["c8d56a8dc2d62091"] = { "怪しげなポーション", "あやしげなぽーしょん", "shadowy potions" },
+  ["c8d56a8dc2d62091"] = { "影めいたポーション", "かげめいたぽーしょん", "shadowy potions" },
   ["c8d814dbe5cc294e"] = { "マナの宝石", "まなのほうせき", "Mana Gems" },
   ["c8d8debf244cedc3"] = { "結社員の外套", "けっしゃいんのがいとう", "Cabalist Cloak" },
   ["c8da9a5fc6535675"] = { "毒", "どく", "Poisons" },

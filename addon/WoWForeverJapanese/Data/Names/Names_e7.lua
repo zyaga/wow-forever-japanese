@@ -154,7 +154,7 @@ WFJ.Data.add("name", {
   ["e7bdc1adda724b25"] = { "フェルクロス", "ふぇるくろす", "Felcloth" },
   ["e7be82bc1eac2dc5"] = { "知恵の革のブーツ", "ちえのかわのぶーつ", "Wisdom's Leather Boots" },
   ["e7c05e9498faf4df"] = { "意地悪なカポ", "いじわるなかぽ", "Capo the Mean" },
-  ["e7c1aa40ac57e0ef"] = { "ラプターの心臓", "らぷたーのしんぞう", "raptor hearts" },
+  ["e7c1aa40ac57e0ef"] = { "ラプトルの心臓", "らぷとるのしんぞう", "raptor hearts" },
   ["e7c260aa42c3b9b5"] = { "悲痛の涙", "ひつうのなみだ", "Tears of Anguish" },
   ["e7c398ac64df6440"] = { "アリデン・ペレノルド卿", "ありでん・ぺれのるどきょう", "Lord Aliden Perenolde" },
   ["e7c53bfbec1ff546"] = { "元帥の絹の籠手", "げんすいのきぬのこて", "Marshal's Silk Gauntlets" },

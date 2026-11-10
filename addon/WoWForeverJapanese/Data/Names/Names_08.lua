@@ -185,7 +185,7 @@ WFJ.Data.add("name", {
   ["08c47322d9bdff61"] = { "アズシャラの鍵", "あずしゃらのかぎ", "Azsharan Key" },
   ["08c5a7aaf626873b"] = { "陶器の壺", "とうきのつぼ", "Ceramic Jar" },
   ["08c78eccfbe36b13"] = { "レースマスター・クロンクライダー", "れーすますたー・くろんくらいだー", "race master Kronkrider" },
-  ["08c7c58da5d82c63"] = { "骨鋲の革", "こつびょうのかわ", "Bone-studded Leather" },
+  ["08c7c58da5d82c63"] = { "骨の鋲打ちの革", "ほねのびょううちのかわ", "Bone-studded Leather" },
   ["08c7e8e1f957b139"] = { "エー・イー・ディー・エム", "えー・いー・でぃー・えむ", "AEDM" },
   ["08ca9cbcaf3527c2"] = { "貝殻の腕当て", "かいがらのうであて", "Clamshell Bracers" },
   ["08cb32189c7b7547"] = { "アイテム：スカーレット・エンクレイヴ・ローグ・ダメージ2点ボーナス", "あいてむすかーれっと・えんくれいゔ・ろーぐ・だめーじにてんぼーなす", "S03 - Item - Scarlet Enclave - Rogue - Damage 2P Bonus" },

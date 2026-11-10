@@ -150,7 +150,7 @@ WFJ.Data.add("name", {
   ["35b61bedf871a809"] = { "生のレッドギル", "なまのれっどぎる", "Raw Redgill" },
   ["35b6402af1de92bf"] = { "ジラス：怪しい物資の受け渡し", "じらすあやしいぶっしのうけわたし", "Xirath - Give Suspicious Supplies" },
   ["35b6b131cb399587"] = { "顕現の詠唱", "けんげんのえいしょう", "cantation of manifestation" },
-  ["35b778f3dde8b26c"] = { "環状列石", "かんじょうれっせき", "stone circle" },
+  ["35b778f3dde8b26c"] = { "石の輪", "いしのわ", "stone circle" },
   ["35ba33a033872336"] = { "ハッカーの威力", "はっかーのいりょく", "Power of Hakkar" },
   ["35ba876527d42dff"] = { "ホエルプファイアのワンド", "ほえるぷふぁいあのわんど", "Whelpfire Wand" },
   ["35bbd20bfbaa40af"] = { "ホードの斥候", "ほーどのせっこう", "Horde Scout" },

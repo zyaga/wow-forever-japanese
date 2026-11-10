@@ -12,7 +12,7 @@ WFJ.Data.add("name", {
   ["4109dcc6f97325b4"] = { "糖蜜の火酒", "とうみつのかしゅ", "Molasses Firewater" },
   ["410b2ced36992d22"] = { "ドラゴンスレイヤーの鎧を装備", "どらごんすれいやーのよろいをそうび", "Equip Dragonslayer Armor" },
   ["410cc067c81ac240"] = { "疫病猟犬の仔", "えきびょうりょうけんのこ", "Plaguehound Runt" },
-  ["410f362a697bd22d"] = { "ミスリルの頭巾", "みすりるのずきん", "mithril coif" },
+  ["410f362a697bd22d"] = { "ミスリルのコイフ", "みすりるのこいふ", "mithril coif" },
   ["41101f3dd656a91d"] = { "ダメージ吸収", "だめーじきゅうしゅう", "Damage Absorb" },
   ["4110524169e81fac"] = { "封鎖", "ふうさ", "Lock Down" },
   ["41121bc72ba9d3e0"] = { "スカーレット入門者のローブ", "すかーれっとにゅうもんしゃのろーぶ", "Scarlet Initiate Robes" },

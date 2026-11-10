@@ -33,7 +33,7 @@ WFJ.Data.add("name", {
   ["c91e20baa62a68f4"] = { "召喚師の腕当て", "しょうかんしのうであて", "Conjurer's Bracers" },
   ["c91e3b78a2d61e79"] = { "胸部付与：下級精神", "きょうぶふよかきゅうせいしん", "Imbue Chest - Lesser Spirit" },
   ["c91f41f6909ad484"] = { "再誕の器召喚", "さいたんのうつわしょうかん", "Summon Vessel of Rebirth" },
-  ["c92098be7e5de713"] = { "水のエレメンタル", "みずのえれめんたる", "water elemental" },
+  ["c92098be7e5de713"] = { "ウォーター・エレメンタル", "うぉーたー・えれめんたる", "water elemental" },
   ["c922e8d8bfe26731"] = { "先鋒の腕甲", "せんぽうのわんこう", "Vanguard Vambraces" },
   ["c923ed088d9a55cf"] = { "秘術射撃強化", "ひじゅつしゃげききょうか", "Improved Arcane Shot" },
   ["c925e0237b30aab3"] = { "ウェルドン・バロフの従者", "うぇるどん・ばろふのじゅうしゃ", "Servant of Weldon Barov" },

@@ -173,7 +173,7 @@ WFJ.Data.add("name", {
   ["bbb9bdfe4d148a82"] = { "ベラムーアの研究日誌", "べらむーあのけんきゅうにっし", "Belamoore's Research Journal" },
   ["bbbb65824747ecb8"] = { "チャンピオンの鎖の大兜", "ちゃんぴおんのくさりのおおかぶと", "Champion's Chain Greathelm" },
   ["bbbb8795c837038e"] = { "夢遊", "むゆう", "Sleepwalk" },
-  ["bbbc9b81a137910f"] = { "致命的なラッパ銃", "ちめいてきならっぱじゅう", "deadly blunderbuss" },
+  ["bbbc9b81a137910f"] = { "致命のブランダーバス", "ちめいのぶらんだーばす", "deadly blunderbuss" },
   ["bbbd996028572990"] = { "アンジェリスタの手", "あんじぇりすたのて", "Angelista's Touch" },
   ["bbbea910b3942000"] = { "みすぼらしいシルバーメイン", "みすぼらしいしるばーめいん", "Mangy Silvermane" },
   ["bbbef4e4a9206d50"] = { "ナイトスレイヤーのブレスレット", "ないとすれいやーのぶれすれっと", "Nightslayer Bracelets" },

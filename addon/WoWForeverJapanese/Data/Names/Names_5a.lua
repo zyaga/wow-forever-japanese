@@ -33,7 +33,7 @@ WFJ.Data.add("name", {
   ["5a1fd041f7a6dfc3"] = { "利他者のウォード", "りたしゃのうぉーど", "Altruist Ward" },
   ["5a2251ec969b6bb9"] = { "怯え", "おびえ", "Fearful" },
   ["5a228ddab4a8787b"] = { "仕立て", "したて", "Tailoring" },
-  ["5a25362fc395ad4e"] = { "銀で縁取られたベルト", "ぎんでふちどられたべると", "Silver-lined Belt" },
+  ["5a25362fc395ad4e"] = { "銀の裏地付きのベルト", "ぎんのうらじつきのべると", "Silver-lined Belt" },
   ["5a25d5b1e5b2eec6"] = { "埃っぽい採掘用の籠手", "ほこりっぽいさいくつようのこて", "Dusty Mining Gloves" },
   ["5a27f1661b0d1f2f"] = { "密言・痛の法典", "みつごん・つうのほうてん", "Codex of Shadow Word: Pain" },
   ["5a28bb6118839cbd"] = { "奪われた物資：小さな青銅の爆弾", "うばわれたぶっしちいさなせいどうのばくだん", "Waylaid Supplies: Small Bronze Bombs" },

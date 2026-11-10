@@ -109,7 +109,7 @@ WFJ.Data.add("name", {
   ["6c7cb2f5a3fc4c2c"] = { "イェルマク", "いぇるまく", "Yelmak" },
   ["6c7cd39a130814dc"] = { "上位の将軍のリングメイルの脚衣", "じょういのしょうぐんのりんぐめいるのきゃくい", "Premier General's Ringmail Leggings" },
   ["6c7cf68cad4b3bcf"] = { "血まみれのラプトル", "ちまみれのらぷとる", "Blood-Caked Raptor" },
-  ["6c7f4fa27f9013f3"] = { "笑う姉妹", "わらうしまい", "laughing sister" },
+  ["6c7f4fa27f9013f3"] = { "笑い声の乙女", "わらいごえのおとめ", "laughing sister" },
   ["6c800af288f56563"] = { "型紙：迅速なブーツ", "かたがみじんそくなぶーつ", "Pattern: Swift Boots" },
   ["6c814df326a339a5"] = { "地震", "じしん", "Earthquake" },
   ["6c81a73dc4a73015"] = { "回復のポーション", "かいふくのぽーしょん", "Restorative Potion" },

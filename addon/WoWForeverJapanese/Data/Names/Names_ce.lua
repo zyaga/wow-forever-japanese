@@ -52,7 +52,7 @@ WFJ.Data.add("name", {
   ["ce2f79d6c674b3f0"] = { "戦闘の構え・パッシブ", "せんとうのかまえ・ぱっしぶ", "Battle Stance Passive" },
   ["ce2ff26d2d16c0b8"] = { "ハイヴザラの収集家", "はいゔざらのしゅうしゅうか", "Hive'Zara Collector" },
   ["ce32da4878b198ed"] = { "追跡術", "ついせきじゅつ", "Tracking" },
-  ["ce32ee720cdd899d"] = { "クエルリシエンの山荘", "くえるりしえんのさんそう", "Quel'Lithien lodge" },
+  ["ce32ee720cdd899d"] = { "クエルリシエン・ロッジ", "くえるりしえん・ろっじ", "Quel'Lithien lodge" },
   ["ce338265d57490ac"] = { "自然の迅速のフラスク", "しぜんのじんそくのふらすく", "Flask of Natural Swiftness" },
   ["ce370e67f6aa0e6a"] = { "紋章入りの外套", "もんしょういりのがいとう", "Emblazoned Cloak" },
   ["ce38680a9b61bce6"] = { "顕現の詠唱", "けんげんのえいしょう", "Cantation of Manifestation" },

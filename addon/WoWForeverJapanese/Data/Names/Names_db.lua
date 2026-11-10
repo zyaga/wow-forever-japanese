@@ -127,7 +127,7 @@ WFJ.Data.add("name", {
   ["db749aea4aaf0dfe"] = { "荒野のデッキ", "こうやのでっき", "Wilds Deck" },
   ["db74ada7a986cbc9"] = { "硬化革の兜", "こうかかわのかぶと", "Hardened Leather Helm" },
   ["db77e63d08c8a0de"] = { "エルナリアンのサロン", "えるなりあんのさろん", "Elunarian Sarong" },
-  ["db78a83367e2a2fd"] = { "オルトエヌ・アライアンス", "おるとえぬ・あらいあんす", "ALT -N Alliance" },
+  ["db78a83367e2a2fd"] = { "別型：アライアンス", "べつがたあらいあんす", "ALT -N Alliance" },
   ["db7af1a24fe0eaee"] = { "ウィングクレストの籠手", "うぃんぐくれすとのこて", "Wingcrest Gloves" },
   ["db7ccb1a732b147e"] = { "浄化の調合薬強化", "じょうかのちょうごうやくきょうか", "Improved Concoction of Cleansing" },
   ["db7cd3a7d7066992"] = { "秘術の怪異", "ひじゅつのかいい", "Arcane Horror" },

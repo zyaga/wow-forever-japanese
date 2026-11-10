@@ -126,7 +126,7 @@ WFJ.Data.add("name", {
   ["7983afa7bfbfd137"] = { "戦争屋", "せんそうや", "Warmongers" },
   ["798466b2458775bd"] = { "ネザーガードの現場監督", "ねざーがーどのげんばかんとく", "Nethergarde Foreman" },
   ["79846b92a849463e"] = { "家禽の精密（弓）：陽動の射撃", "かきんのせいみつゆみようどうのしゃげき", "Poultry Precision (Bows) - Distracting Shot" },
-  ["798520b0a0e30763"] = { "ひらひら蝶", "ひらひらちょう", "flutterflies" },
+  ["798520b0a0e30763"] = { "フラッターフライ", "ふらったーふらい", "flutterflies" },
   ["7986bf5a6260803b"] = { "聖戦士の鎖のベルト", "せいせんしのくさりのべると", "Crusader's Chain Belt" },
   ["79898d014332c56f"] = { "ジャゲロ島", "じゃげろとう", "Jaguero Isle" },
   ["798b2f9dcb7e6b57"] = { "サルファラス", "さるふぁらす", "Sulfuras" },

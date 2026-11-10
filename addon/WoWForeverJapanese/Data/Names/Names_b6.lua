@@ -33,7 +33,7 @@ WFJ.Data.add("name", {
   ["b61b3631bbd7e88a"] = { "レンナズ", "れんなず", "Renn'az" },
   ["b61c0801c775e4f3"] = { "夜明けの指輪", "よあけのゆびわ", "Ring of the Dawn" },
   ["b61c0cfe822b783a"] = { "奪われた物資：致命の照準器", "うばわれたぶっしちめいのしょうじゅんき", "Waylaid Supplies: Deadly Scopes" },
-  ["b61da4f167e14e14"] = { "詠唱の書", "えいしょうのしょ", "book of incantations" },
+  ["b61da4f167e14e14"] = { "呪文詠唱の書", "じゅもんえいしょうのしょ", "book of incantations" },
   ["b61e89e5e9c15047"] = { "炎耐性", "ほのおたいせい", "Fire Resistance" },
   ["b61ebf1d601cb3ac"] = { "鷹の目のハラーン", "たかのめのはらーん", "Halaan Hawk-Eye" },
   ["b62123b7a33d6164"] = { "ビジューの持ち物", "びじゅーのもちもの", "Bijou's Belongings" },

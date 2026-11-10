@@ -271,7 +271,7 @@ WFJ.Data.add("name", {
   ["f2f2d34c3a823f32"] = { "破裂したイノシシの肺", "はれつしたいのししのはい", "Blasted Boar Lung" },
   ["f2f5384e7cfefc30"] = { "アンダーシティの火食い", "あんだーしてぃのひくい", "Undercity Fireeater" },
   ["f2f69b01ba06195c"] = { "エレノーラ・マーシュウォーカー", "えれのーら・まーしゅうぉーかー", "Elenora Marshwalker" },
-  ["f2f7b882de83e7e9"] = { "スコージの侵略の手下・出現装置・ゴースト／スケルトン", "すこーじのしんりゃくのてした・しゅつげんそうち・ごーすとすけるとん", "Scourge Invasion Minion, spawner, Ghost/Skeleton" },
+  ["f2f7b882de83e7e9"] = { "スコージの侵略の手下・発生装置・ゴースト／スケルトン", "すこーじのしんりゃくのてした・はっせいそうち・ごーすとすけるとん", "Scourge Invasion Minion, spawner, Ghost/Skeleton" },
   ["f2f8d2adaf8f9476"] = { "革細工の認定証", "かわざいくのにんていしょう", "Leatherworking Certification" },
   ["f2f9554429cc6a46"] = { "アンキラージ・テストアイテム・ディー・板金のブーツ", "あんきらーじ・てすとあいてむ・でぃー・ばんきんのぶーつ", "AHNQIRAJ TEST ITEM D PLATE BOOTS" },
   ["f2f9d9df44761a7c"] = { "戦慄のスウープ", "せんりつのすうーぷ", "Dread Swoop" },

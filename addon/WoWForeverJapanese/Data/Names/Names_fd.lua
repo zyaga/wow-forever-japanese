@@ -47,7 +47,7 @@ WFJ.Data.add("name", {
   ["fd36822640ea156d"] = { "モンスター用：盾・ビー01・木と鋼の縁", "もんすたーようたて・びーぜろいち・きとはがねのふち", "Monster - Shield, B01 WoodSteelCap" },
   ["fd37007adc5f69bd"] = { "モンスター用：ホードの棘付き斧04", "もんすたーようほーどのとげつきおのぜろよん", "Monster - Axe, Horde Spiked A04" },
   ["fd3917e9b87c43b3"] = { "祭りの炎の番人の衣装：トロール", "まつりのほのおのばんにんのいしょうとろーる", "Festival Flamekeeper Costume: Troll" },
-  ["fd3b1b9d99da36c3"] = { "アクマイ・スナップジョー", "あくまい・すなっぷじょー", "Aku'mai Snapjaw" },
+  ["fd3b1b9d99da36c3"] = { "アクマイ・オオアゴガメ", "あくまい・おおあごがめ", "Aku'mai Snapjaw" },
   ["fd3d64b45f38835b"] = { "神聖な大火", "しんせいなたいか", "Divine Conflagration" },
   ["fd3e0b293be0bfb1"] = { "センチネル・ケルダラ・サンブレード", "せんちねる・けるだら・さんぶれーど", "Sentinel Keldara Sunblade" },
   ["fd3f906742cdd1af"] = { "紫のラプトル", "むらさきのらぷとる", "Violet Raptor" },

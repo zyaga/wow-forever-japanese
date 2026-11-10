@@ -149,7 +149,7 @@ WFJ.Data.add("name", {
   ["bab472f7f91e2ce2"] = { "奇襲", "きしゅう", "Surprise Attack" },
   ["bab478af7ffbe846"] = { "ウォーソング材木野営地の諜報報告書の作成", "うぉーそんぐざいもくやえいちのちょうほうほうこくしょのさくせい", "Create Warsong Lumber Camp Intelligence Report" },
   ["bab53ddef48ce24b"] = { "祝福された板金のベルト", "しゅくふくされたばんきんのべると", "Blessed Plate Belt" },
-  ["bab5d53e061019f7"] = { "対人戦・記録標識", "たいじんせん・きろくひょうしき", "PvP ALT-S Credit Marker" },
+  ["bab5d53e061019f7"] = { "対人戦・別型・記録標識", "たいじんせん・べつがた・きろくひょうしき", "PvP ALT-S Credit Marker" },
   ["bab68fd9148f97d7"] = { "エルドレス", "えるどれす", "Eldreth" },
   ["bab832b811a8b9b5"] = { "ストーンヴォールトの斥候", "すとーんゔぉーるとのせっこう", "Stonevault Scout" },
   ["bab83bf13a59b52b"] = { "アゼロス", "あぜろす", "Azeroth" },

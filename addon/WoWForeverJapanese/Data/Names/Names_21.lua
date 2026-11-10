@@ -185,7 +185,7 @@ WFJ.Data.add("name", {
   ["21e17fe1dfc4d615"] = { "寂れた洞窟", "さびれたどうくつ", "The Forlorn Caverns" },
   ["21e1dbd35bc648ef"] = { "ケナ・ホークスアイ", "けな・ほーくすあい", "Kennah Hawkseye" },
   ["21e1ded1e1351e1b"] = { "獰猛な打撃", "どうもうなだげき", "Savage Strikes" },
-  ["21e639eb0286fa0f"] = { "制御盤", "せいぎょばん", "control console" },
+  ["21e639eb0286fa0f"] = { "制御コンソール", "せいぎょこんそーる", "control console" },
   ["21e74b8771f27a45"] = { "ダークスピアの評判", "だーくすぴあのひょうばん", "Darkspear Reputation" },
   ["21e83c27d5eb23c3"] = { "ワイルドポーの洞窟", "わいるどぽーのどうくつ", "Wildpaw cavern" },
   ["21e9508dd7a13ed5"] = { "ザマエル", "ざまえる", "Zamael" },

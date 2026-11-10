@@ -332,7 +332,7 @@ WFJ.Data.add("name", {
   ["0af0d7d536388579"] = { "ビジューを破壊", "びじゅーをはかい", "Destroy Bijou" },
   ["0af19c20e486ecdd"] = { "タロンカイの宝石", "たろんかいのほうせき", "Tallonkai's Jewel" },
   ["0af2a75ddc092391"] = { "ブラッドガードの雷光の革の肩鎧", "ぶらっどがーどのらいこうのかわのかたよろい", "Blood Guard's Crackling Leather Spaulders" },
-  ["0af2fa4f8659ab2c"] = { "芋", "いも", "tubers" },
+  ["0af2fa4f8659ab2c"] = { "塊茎", "かいけい", "tubers" },
   ["0af48c59f95efad0"] = { "ゲルキスの捕虜", "げるきすのほりょ", "Gelkis Captive" },
   ["0af568fd121cbe00"] = { "アライアンスのウォーソング旗取り用の旗", "あらいあんすのうぉーそんぐはたとりようのはた", "Alliance Warsong CTF Flag" },
   ["0af59d078c92337f"] = { "呪文の覚え書き：生ける炎", "じゅもんのおぼえがきいけるほのお", "Spell Notes: Living Flame" },

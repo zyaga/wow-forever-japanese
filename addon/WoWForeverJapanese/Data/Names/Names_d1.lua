@@ -256,7 +256,7 @@ WFJ.Data.add("name", {
   ["d1dc4561cd3f4c83"] = { "必死の障壁", "ひっしのしょうへき", "Desperate Barrier" },
   ["d1df0d4e99ddaca9"] = { "炎の王冠", "ほのおのおうかん", "Fire Crown" },
   ["d1e10657ae3b4f49"] = { "おやつ", "おやつ", "Treat" },
-  ["d1e12d182437a64d"] = { "クロマティック竜の一族", "くろまてぃっくりゅうのいちぞく", "chromatic dragonflight" },
+  ["d1e12d182437a64d"] = { "クロマティックのドラゴンフライト", "くろまてぃっくのどらごんふらいと", "chromatic dragonflight" },
   ["d1e2127abe1c5e4c"] = { "トライアス", "とらいあす", "Trias" },
   ["d1e21378be1c9e06"] = { "いたずら", "いたずら", "Trick" },
   ["d1e3a7b6d5eeb40c"] = { "トログ", "とろぐ", "Trogg" },

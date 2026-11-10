@@ -152,7 +152,7 @@ WFJ.Data.add("name", {
   ["f9b3136c4ec9d7e7"] = { "ろうそく", "ろうそく", "candle" },
   ["f9b35b95634b5e04"] = { "上位軍団兵の鎖の手首当て", "じょういぐんだんへいのくさりのてくびあて", "Premier Legionnaire's Chain Wristguards" },
   ["f9b39e921b6b9be8"] = { "ナイトテラーの子竜", "ないとてらーのこりゅう", "Nightterror Whelps" },
-  ["f9b77c2f921a23ba"] = { "ネザーガード砦", "ねざーがーどとりで", "Nethergarde keep" },
+  ["f9b77c2f921a23ba"] = { "ネザーガード城塞", "ねざーがーどじょうさい", "Nethergarde keep" },
   ["f9b7ca86e0722cf3"] = { "ドルイドの首飾り", "どるいどのくびかざり", "Druidic Amulet" },
   ["f9b872064f7864c0"] = { "腐りかけのスライム", "くさりかけのすらいむ", "Rotting Slime" },
   ["f9b9ea4b4203ac1d"] = { "ピースブルーム", "ぴーすぶるーむ", "Peacebloom" },

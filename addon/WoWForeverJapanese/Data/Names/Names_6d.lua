@@ -58,7 +58,7 @@ WFJ.Data.add("name", {
   ["6d47ea12606e8610"] = { "ザンカジャ", "ざんかじゃ", "Zankaja" },
   ["6d4b95905ce467ea"] = { "浄化", "じょうか", "Purification" },
   ["6d4be1509e886db0"] = { "シュリーカー・スカラベ", "しゅりーかー・すからべ", "Shrieker Scarab" },
-  ["6d4d8fdf3b2185d6"] = { "銀行の引換券", "ぎんこうのひきかえけん", "bank voucher" },
+  ["6d4d8fdf3b2185d6"] = { "銀行の引換証", "ぎんこうのひきかえしょう", "bank voucher" },
   ["6d5577bc481f39b5"] = { "イージースプロード発破薬", "いーじーすぷろーどはっぱやく", "EZ-Splode Blasting Charge" },
   ["6d55814ec7413502"] = { "トゥルーシルバー軸の矢", "とぅるーしるばーじくのや", "Truesilver Shafted Arrow" },
   ["6d55bfb35ac4e6b7"] = { "シェンドレイのマジスターのベスト", "しぇんどれいのまじすたーのべすと", "Shen'dorei Magister's Vest" },

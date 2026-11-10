@@ -190,7 +190,7 @@ WFJ.Data.add("name", {
   ["eeae2415ed9722be"] = { "高位執行者ダーサリア", "こういしっこうしゃだーさりあ", "High Executor Darthalia" },
   ["eeae28db8083bd64"] = { "騎乗用メカストライダー（青）", "きじょうようめかすとらいだーあお", "Riding MechaStrider (Blue)" },
   ["eeae48fe86b130bd"] = { "テレナスの知恵", "てれなすのちえ", "Terenas' Wisdom" },
-  ["eeaf0769a468b09b"] = { "完璧なドラエネシストの球", "かんぺきなどらえねしすとのたま", "flawless sphere of draenethyst" },
+  ["eeaf0769a468b09b"] = { "完璧なドレネシストの球", "かんぺきなどれねしすとのたま", "flawless sphere of draenethyst" },
   ["eeaf50656dab039d"] = { "霊体の投影召喚", "れいたいのとうえいしょうかん", "Summon Spectral Projections" },
   ["eeb4fdc36cbcfd93"] = { "拾い集めたマグラムの武装", "ひろいあつめたまぐらむのぶそう", "Scavenged Magram Armament" },
   ["eeb51c9a441b2a90"] = { "水の生成の書3", "みずのせいせいのしょさん", "Tome of Conjure Water III" },

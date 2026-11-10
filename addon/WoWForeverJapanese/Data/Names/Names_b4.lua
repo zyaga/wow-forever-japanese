@@ -19,7 +19,7 @@ WFJ.Data.add("name", {
   ["b4131dd28842fa37"] = { "執行者ハドレク", "しっこうしゃはどれく", "Executor Hadrec" },
   ["b4134eebe4585f74"] = { "凶悪なグレル", "きょうあくなぐれる", "Vicious Grell" },
   ["b413777eee727d3a"] = { "空の魔術の器", "からのまじゅつのうつわ", "Empty Thaumaturgy Vessel" },
-  ["b41463decc51dfdf"] = { "岩礁を這うもの", "がんしょうをはうもの", "reef crawler" },
+  ["b41463decc51dfdf"] = { "岩礁のクローラー", "がんしょうのくろーらー", "reef crawler" },
   ["b416c68141eddb5d"] = { "かび臭い書き付け", "かびくさいかきつけ", "Musty Note" },
   ["b41815e71f8b5f50"] = { "錆びた工学部品", "さびたこうがくぶひん", "Rusted Engineering Parts" },
   ["b419800455bec99b"] = { "象徴の脚甲", "しょうちょうのきゃっこう", "Symbolic Legplates" },

@@ -258,7 +258,7 @@ WFJ.Data.add("name", {
   ["0ffa3c5bd7ef7f4a"] = { "キリス副官", "きりすふくかん", "Lieutenant Kirith" },
   ["0ffa437cdfd15a8d"] = { "製法：注入のリブラム", "せいほうちゅうにゅうのりぶらむ", "Formula: Libram of Infusion" },
   ["0ffad741a879a712"] = { "ドラッグ", "どらっぐ", "The Drag" },
-  ["0ffbcaaba90d0520"] = { "亜麻布の包帯", "あまぬののほうたい", "linen bandage" },
+  ["0ffbcaaba90d0520"] = { "リネンの包帯", "りねんのほうたい", "linen bandage" },
   ["0ffc527f584b2db5"] = { "アッシェンヴェイルのムーンウェル", "あっしぇんゔぇいるのむーんうぇる", "Ashenvale Moonwell" },
   ["0ffd5bb6910fd71b"] = { "エルスウェンの松明（点灯中）", "えるすうぇんのたいまつてんとうちゅう", "[DNT] Elsewhen Torch Active" },
   ["0ffe5ff0f2d3802f"] = { "ジェナ・レムケニリ", "じぇな・れむけにり", "Jenna Lemkenilli" },

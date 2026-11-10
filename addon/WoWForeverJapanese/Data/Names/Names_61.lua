@@ -242,7 +242,7 @@ WFJ.Data.add("name", {
   ["61e9adeaf86bd228"] = { "アイテム・スカーレット・エンクレイヴ・シャーマン・エレメンタル2部位ボーナス", "あいてむ・すかーれっと・えんくれいゔ・しゃーまん・えれめんたるにぶいぼーなす", "S03 - Item - Scarlet Enclave - Shaman - Elemental 2P Bonus" },
   ["61e9d60bac5b8f05"] = { "フェルダー・ストーヴァー", "ふぇるだー・すとーゔぁー", "Felder Stover" },
   ["61ea0d5cb7405882"] = { "サウスショアの触れ役", "さうすしょあのふれやく", "Southshore Crier" },
-  ["61ed1ea844b727cc"] = { "バーベキューしたハゲワシの手羽", "ばーべきゅーしたはげわしのてば", "barbecued buzzard wings" },
+  ["61ed1ea844b727cc"] = { "バーベキューしたハゲタカの手羽", "ばーべきゅーしたはげたかのてば", "barbecued buzzard wings" },
   ["61ed2fe00dc268b6"] = { "農民の光の罠", "のうみんのひかりのわな", "Peasant Light Trap" },
   ["61ef0d87b94afb21"] = { "バッカニーアの籠手", "ばっかにーあのこて", "Buccaneer's Gloves" },
   ["61ef5e343e1ff296"] = { "真紅の谷", "しんくのたに", "Crimson Vale" },

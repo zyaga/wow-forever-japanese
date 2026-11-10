@@ -278,7 +278,7 @@ WFJ.Data.add("name", {
   ["d8f5a74821dab768"] = { "粗いトカゲの皮", "あらいとかげのかわ", "Rough Lizard Hide" },
   ["d8f5e111fa73241d"] = { "ライドルの幸運のつるはし", "らいどるのこううんのつるはし", "Ryedol's Lucky Pick" },
   ["d8f5e13bf002894f"] = { "アイテム：スカーレット・エンクレイヴ・プリースト・癒し手2点ボーナス", "あいてむすかーれっと・えんくれいゔ・ぷりーすと・いやしてにてんぼーなす", "S03 - Item - Scarlet Enclave - Priest - Healer 2P Bonus" },
-  ["d8f717610326078e"] = { "水中形態", "すいちゅうけいたい", "aquatic form" },
+  ["d8f717610326078e"] = { "海獣化", "かいじゅうか", "aquatic form" },
   ["d8f7685799bd47a4"] = { "下級秘術融合体", "かきゅうひじゅつゆうごうたい", "Lesser Arcane Amalgamation" },
   ["d8f7866ba3f867c1"] = { "旧・型紙：二重縫いの革の籠手", "きゅう・かたがみにじゅうぬいのかわのこて", "Pattern: Double-stitched Leather Gloves OLD" },
   ["d8f84562e8194878"] = { "免疫：冷気", "めんえきれいき", "Immunity: Frost" },

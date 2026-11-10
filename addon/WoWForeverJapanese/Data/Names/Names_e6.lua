@@ -167,7 +167,7 @@ WFJ.Data.add("name", {
   ["e6c24817b687f451"] = { "ブラッドセイルの海図", "ぶらっどせいるのかいず", "Bloodsail Charts" },
   ["e6c26f513d35bb48"] = { "衛兵隊長のルーン", "えいへいたいちょうのるーん", "Rune of the Guard Captain" },
   ["e6c2e78951d65241"] = { "黒曜石の精髄", "こくようせきのせいずい", "Obsidian Essence" },
-  ["e6c49687cc2cef6d"] = { "ドラネシスト", "どらねしすと", "draenethyst" },
+  ["e6c49687cc2cef6d"] = { "ドレネシスト", "どれねしすと", "draenethyst" },
   ["e6c575d536279171"] = { "宿屋の主人アデグワ", "やどやのしゅじんあでぐわ", "Innkeeper Adegwa" },
   ["e6c5ad055ef82cb8"] = { "アタライの戦士", "あたらいのせんし", "Atal'ai Warrior" },
   ["e6ca56ad98eb87b0"] = { "重いミスリルのブーツ", "おもいみすりるのぶーつ", "Heavy Mithril Boots" },

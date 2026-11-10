@@ -31,7 +31,7 @@ WFJ.Data.add("name", {
   ["5b28168a1ee4b546"] = { "委任：アッシェンヴェイル任務18", "いにんあっしぇんゔぇいるにんむじゅうはち", "Deputize: Ashenvale Mission XVIII" },
   ["5b2896279fec8234"] = { "小動物殺し", "しょうどうぶつごろし", "Critter-Killer" },
   ["5b291bf22922eea5"] = { "青いヴードゥーの羽根", "あおいゔーどぅーのはね", "Blue Voodoo Feather" },
-  ["5b2971e62e71f30c"] = { "アボミネーション", "あぼみねーしょん", "abomination" },
+  ["5b2971e62e71f30c"] = { "涜れしもの", "けがれしもの", "abomination" },
   ["5b2b408a6f150ee9"] = { "ジュジュの威力", "じゅじゅのいりょく", "Juju Power" },
   ["5b2bac3c4d1f0a01"] = { "槍騎士の紋章", "そうきしのもんしょう", "Jouster's Crest" },
   ["5b2c45500ea6548b"] = { "大鴉の丘の紋章", "おおがらすのおかのもんしょう", "Raven Hill Crest" },

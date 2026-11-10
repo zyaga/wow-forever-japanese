@@ -140,7 +140,7 @@ WFJ.Data.add("name", {
   ["63a92c88e18ca1a9"] = { "旧・まっすぐな銅の解錠具", "きゅう・まっすぐなどうのかいじょうぐ", "Deprecated Straight Copper Lockpick" },
   ["63a9beece1ace85d"] = { "型紙：帯電したスコーピッドの兜", "かたがみたいでんしたすこーぴっどのかぶと", "Pattern: Charged Scorpid Helm" },
   ["63aba8fbc65475a5"] = { "置き忘れたシューター", "おきわすれたしゅーたー", "Misplaced Shooter" },
-  ["63abdd3a17f36b34"] = { "ハゲワシの砂肝", "はげわしのすなぎも", "buzzard gizzards" },
+  ["63abdd3a17f36b34"] = { "ハゲタカの砂肝", "はげたかのすなぎも", "buzzard gizzards" },
   ["63ac2ce6d8756923"] = { "シャタースピアのトロール", "しゃたーすぴあのとろーる", "Shatterspear Trolls" },
   ["63aeafe382c2a7df"] = { "ジュリーの祝福", "じゅりーのしゅくふく", "Julie's Blessing" },
   ["63af0e3027bdb5e8"] = { "デスガード・モリス", "ですがーど・もりす", "Deathguard Morris" },

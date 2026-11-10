@@ -225,7 +225,7 @@ WFJ.Data.add("name", {
   ["87ebfe3530760ee7"] = { "瓦礫と化す", "がれきとかす", "Reduced to Rubble" },
   ["87eeb349bc8afdbc"] = { "毛深いコドー", "けぶかいこどー", "Wooly Kodo" },
   ["87f1281bcc7ba776"] = { "ブラックジャック", "ぶらっくじゃっく", "Blackjack" },
-  ["87f43ca09d20f4cf"] = { "ファイアランズ", "ふぁいあらんず", "firelands" },
+  ["87f43ca09d20f4cf"] = { "ファイアランド", "ふぁいあらんど", "firelands" },
   ["87f5daced6bbd0a0"] = { "リリン・ダークリヴァー", "りりん・だーくりゔぁー", "Lilyn Darkriver" },
   ["87f622e8b8912637"] = { "少佐の革の兜", "しょうさのかわのかぶと", "Lieutenant Commander's Leather Helm" },
   ["87f703ea44b0bde3"] = { "ケイリブ", "けいりぶ", "Caelyb" },

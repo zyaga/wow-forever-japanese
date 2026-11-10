@@ -73,7 +73,7 @@ WFJ.Data.add("name", {
   ["324e42ceb011b0af"] = { "フロストウルフのランク4徽章を生成", "ふろすとうるふのらんくよんきしょうをせいせい", "Conjure Frostwolf Rank 4 Insignia DND" },
   ["324f40bcde9bad3b"] = { "嘘の網", "うそのあみ", "A Web of Lies" },
   ["324f8399248a3ea7"] = { "レシピ：調理したつややかなマイトフィッシュ", "れしぴちょうりしたつややかなまいとふぃっしゅ", "Recipe: Cooked Glossy Mightfish" },
-  ["3251d07eb609bb97"] = { "警報ボット召喚", "けいほうぼっとしょうかん", "Summon Alarm-o-Bot" },
+  ["3251d07eb609bb97"] = { "警報オーボット召喚", "けいほうおーぼっとしょうかん", "Summon Alarm-o-Bot" },
   ["325222307cae37a0"] = { "チャクヤクの毛皮", "ちゃくやくのけがわ", "Chakuyak's Pelt" },
   ["325258b18c657c88"] = { "ルゲルファス隊長", "るげるふぁすたいちょう", "Captain Rugelfuss" },
   ["32533dc81adfc135"] = { "悔悛者の腹帯", "かいしゅんしゃのはらおび", "Penitent's Cinch" },

@@ -8,7 +8,7 @@ WFJ.Data.add("name", {
   ["ad082ee0ca0f7363"] = { "リーガル", "りーがる", "Regal" },
   ["ad088c606a9b0b72"] = { "番人のブローチ", "ばんにんのぶろーち", "Brooch of the Wardens" },
   ["ad09c324e1e1896f"] = { "レメン", "れめん", "Remen" },
-  ["ad0a02681fecae95"] = { "アカウミガメのスナップジョー", "あかうみがめのすなっぷじょー", "Loggerhead Snapjaw" },
+  ["ad0a02681fecae95"] = { "アカウミガメのオオアゴガメ", "あかうみがめのおおあごがめ", "Loggerhead Snapjaw" },
   ["ad0a0624e5d9cd27"] = { "ルネ", "るね", "Renee" },
   ["ad0a0636e5d9cd39"] = { "再起", "さいき", "Renew" },
   ["ad0b1fe954892802"] = { "ロイの読書会", "ろいのどくしょかい", "Roy's Book Club" },

@@ -146,7 +146,7 @@ WFJ.Data.add("name", {
   ["d39f0349d6691e73"] = { "小秘術のエリクサー", "しょうひじゅつのえりくさー", "Minor Arcane Elixir" },
   ["d3a073af08003389"] = { "片手剣", "かたてけん", "One-Handed Swords" },
   ["d3a0f8134e17244d"] = { "野生の岸辺", "やせいのきしべ", "Wild Shore" },
-  ["d3a157c961801a18"] = { "上質な金糸", "じょうしつなきんし", "fine gold thread" },
+  ["d3a157c961801a18"] = { "上等な金の糸", "じょうとうなきんのいと", "fine gold thread" },
   ["d3a1b2a978be8471"] = { "奪われた物資：守護者の籠手", "うばわれたぶっししゅごしゃのこて", "Waylaid Supplies: Guardian Gloves" },
   ["d3a1ef97163a6355"] = { "加熱", "かねつ", "(DNT) Heating Up" },
   ["d3a2790f3fa9c768"] = { "鋭い目", "するどいめ", "Keen Eyes" },

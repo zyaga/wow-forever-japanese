@@ -136,7 +136,7 @@ WFJ.Data.add("name", {
   ["7bb0251f085bb7c0"] = { "ウィズバズ", "うぃずばず", "Whizzbuzz" },
   ["7bb4926f6184ff86"] = { "エリゴールの椅子", "えりごーるのいす", "Eligor's Chair" },
   ["7bb5d82c2a914a25"] = { "旧・ティラニスのペンダント", "きゅう・てぃらにすのぺんだんと", "Tyranis' Pendant (old)" },
-  ["7bb5ef240c2e37c6"] = { "焚き火", "たきび", "campfire" },
+  ["7bb5ef240c2e37c6"] = { "キャンプファイヤー", "きゃんぷふぁいやー", "campfire" },
   ["7bb6089f438a5971"] = { "黒い書", "くろいしょ", "Black Tome" },
   ["7bb699e5822b8b92"] = { "激流のコスト軽減", "げきりゅうのこすとけいげん", "Reduced Riptide Cost" },
   ["7bb6eb7ea24bc100"] = { "アラソール同盟の使者", "あらそーるどうめいのししゃ", "League of Arathor Emissary" },

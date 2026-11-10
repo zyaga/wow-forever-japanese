@@ -143,7 +143,7 @@ WFJ.Data.add("name", {
   ["4698c3e56bb2a1d6"] = { "骸骨の籠手", "がいこつのこて", "Skeletal Gauntlets" },
   ["469907ca561640a0"] = { "騎乗用の馬", "きじょうようのうま", "Riding Horse" },
   ["469a56dcb476f2ef"] = { "トムの贈り物", "とむのおくりもの", "Tom's Gift" },
-  ["469aa60e401b6f23"] = { "緑のスラッジ", "みどりのすらっじ", "green sludges" },
+  ["469aa60e401b6f23"] = { "緑のヘドロ", "みどりのへどろ", "green sludges" },
   ["469b47a6d5e5ee04"] = { "アクマイの漁師", "あくまいのりょうし", "Aku'mai Fisher" },
   ["469d0054566553f1"] = { "クモの巣のローブ", "くものすのろーぶ", "Spider Web Robe" },
   ["469dfa3366efb7f5"] = { "上位将軍の連結の肩鎧", "じょういしょうぐんのれんけつのかたよろい", "Premier General's Linked Spaulders" },

@@ -74,7 +74,7 @@ WFJ.Data.add("name", {
   ["9146b954eeb23ded"] = { "浅い墓の罠", "あさいはかのわな", "Shallow Grave TRAP" },
   ["91473b2700477c4b"] = { "原始の豹", "げんしのひょう", "Primal Leopard" },
   ["914776f028314801"] = { "テレポート：セラモア", "てれぽーとせらもあ", "Theramore Teleport" },
-  ["91489fd0f7fd1d8c"] = { "熱した古代の刃", "ねっしたこだいのやいば", "heated ancient blade" },
+  ["91489fd0f7fd1d8c"] = { "熱された古代の刃", "ねっされたこだいのやいば", "heated ancient blade" },
   ["91490c301dc09fc6"] = { "ゴーダニのオーブ", "ごーだにのおーぶ", "Gordunni Orb" },
   ["9149be4584530d3f"] = { "ベイン・ブラッドフーフ", "べいん・ぶらっどふーふ", "Baine Bloodhoof" },
   ["914a34f76e30ea90"] = { "黒曜石のペンダント", "こくようせきのぺんだんと", "Obsidian Pendant" },

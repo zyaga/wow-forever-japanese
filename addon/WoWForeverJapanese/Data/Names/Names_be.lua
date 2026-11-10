@@ -7,7 +7,7 @@ WFJ.Data.add("name", {
   ["be0443f267745fec"] = { "アリゴス", "ありごす", "Arygos" },
   ["be06160d833d7adb"] = { "アリニア", "ありにあ", "Arynia" },
   ["be06d78f3e63c57d"] = { "製法：迅速の偶像", "せいほうじんそくのぐうぞう", "Formula: Idol of Swiftness" },
-  ["be0847e15ca667b0"] = { "風使い", "かぜつかい", "windshapers" },
+  ["be0847e15ca667b0"] = { "ウィンドシェイパー", "うぃんどしぇいぱー", "windshapers" },
   ["be0983d1efd5263f"] = { "死体収穫者", "したいしゅうかくしゃ", "Corpse Harvester" },
   ["be0abff326a6d13e"] = { "永続的な死んだふり（スカーレットの取り巻き）", "えいぞくてきなしんだふりすかーれっとのとりまき", "Permanent Feign Death (Scarlet Adds)" },
   ["be0b61aa5f814f85"] = { "セイバー", "せいばー", "Saber" },

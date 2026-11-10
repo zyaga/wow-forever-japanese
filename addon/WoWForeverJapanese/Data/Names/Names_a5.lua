@@ -58,7 +58,7 @@ WFJ.Data.add("name", {
   ["a53bbc4884f15db2"] = { "スリと陽動強化04", "すりとようどうきょうかぜろよん", "Improved Pick Pocket and Distract 04" },
   ["a53bbc4984f15db3"] = { "スリと陽動強化05", "すりとようどうきょうかぜろご", "Improved Pick Pocket and Distract 05" },
   ["a53c35c08d0dd029"] = { "モシュオッグの呪文職人", "もしゅおっぐのじゅもんしょくにん", "Mosh'Ogg Spellcrafter" },
-  ["a53e75226f04c2db"] = { "深淵の核", "しんえんのかく", "fathom core" },
+  ["a53e75226f04c2db"] = { "ファゾムの核", "ふぁぞむのかく", "fathom core" },
   ["a5402abc69467b5b"] = { "兵士ドグラン", "へいしどぐらん", "Grunt Dogran" },
   ["a541ca0ade9130d6"] = { "職人の騎乗術", "しょくにんのきじょうじゅつ", "Journeyman Riding" },
   ["a544125968bf01ea"] = { "素朴なベルト", "そぼくなべると", "Rustic Belt" },

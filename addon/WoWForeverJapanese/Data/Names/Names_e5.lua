@@ -84,7 +84,7 @@ WFJ.Data.add("name", {
   ["e569bb0bed1b1b2b"] = { "グラシル", "ぐらしる", "Gla'sir" },
   ["e56cee6a89e9aaea"] = { "邪悪な双子", "じゃあくなふたご", "Evil Twin" },
   ["e56d12afffabf1ce"] = { "レッドギルの切り身", "れっどぎるのきりみ", "Filet of Redgill" },
-  ["e56ebe7a708492ef"] = { "溶岩の核の円陣・ガー", "ようがんのかくのえんじん・がー", "Molten Core Circle GARR" },
+  ["e56ebe7a708492ef"] = { "モルテン・コアの魔法陣：ガァア", "もるてん・こあのまほうじんがぁあ", "Molten Core Circle GARR" },
   ["e57018274ea2ea5a"] = { "影の評議会の大君主", "かげのひょうぎかいのだいくんしゅ", "Shadow Council Highlord" },
   ["e570285c54b1da15"] = { "軍団兵の鎖の腕当て", "ぐんだんへいのくさりのうであて", "Legionnaire's Chain Bracers" },
   ["e573e53e62704430"] = { "高潔な脚衣", "こうけつなきゃくい", "Virtuous Leggings" },

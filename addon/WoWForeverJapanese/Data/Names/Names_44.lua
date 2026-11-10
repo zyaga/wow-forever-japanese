@@ -118,7 +118,7 @@ WFJ.Data.add("name", {
   ["44833ed8f8c207b8"] = { "パイアル・サイレントストライド", "ぱいある・さいれんとすとらいど", "Pyall Silentstride" },
   ["44837ee92487f05d"] = { "コナー・マッコイ", "こなー・まっこい", "Connor McCoy" },
   ["4483a43c6e36005d"] = { "黒の行進の祝福", "くろのこうしんのしゅくふく", "Black March Blessing" },
-  ["4484d718c151774c"] = { "岩縛りの腕当て", "いわしばりのうであて", "bracers of rock binding" },
+  ["4484d718c151774c"] = { "岩の束縛の腕当て", "いわのそくばくのうであて", "bracers of rock binding" },
   ["4484e1e000f64e09"] = { "導師の頭", "どうしのあたま", "Channeler's Head" },
   ["44858d7c14e6d681"] = { "宿りし板金の籠手", "やどりしばんきんのこて", "Imbued Plate Gauntlets" },
   ["44866c819e382823"] = { "均整の戦斧", "きんせいのせんぷ", "Balanced War Axe" },

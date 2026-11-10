@@ -115,7 +115,7 @@ WFJ.Data.add("name", {
   ["289723cc68c07460"] = { "アイテム：ズルグラブ・プリースト・修練3点ボーナス", "あいてむずるぐらぶ・ぷりーすと・しゅうれんさんてんぼーなす", "S03 - Item - ZG - Priest - Discipline 3P Bonus" },
   ["289773fdf9090c1c"] = { "水上歩行の石板", "すいじょうほこうのせきばん", "Tablet of Water Walking" },
   ["289890fcc7ed88be"] = { "緑のスナグルフィン・マーロックのロンパース", "みどりのすなぐるふぃん・まーろっくのろんぱーす", "Green Snugglefin Murloc Romper" },
-  ["28994ad3e01fd961"] = { "金の鱗の腕当て", "きんのうろこのうであて", "golden scale bracers" },
+  ["28994ad3e01fd961"] = { "黄金の鱗の腕当て", "おうごんのうろこのうであて", "golden scale bracers" },
   ["289a8fc9fe4a41f3"] = { "燃え盛るかがり火", "もえさかるかがりび", "Roaring Bonfire" },
   ["289b9db6f782e02f"] = { "狂乱の急降下", "きょうらんのきゅうこうか", "Frenzied Dive" },
   ["289c90ebb4bfb363"] = { "銀メッキのショットガン", "ぎんめっきのしょっとがん", "Silver-plated Shotgun" },

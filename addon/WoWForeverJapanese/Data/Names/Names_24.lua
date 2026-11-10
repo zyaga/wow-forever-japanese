@@ -60,7 +60,7 @@ WFJ.Data.add("name", {
   ["2437c86146b94e7f"] = { "旧・不屈の祈りの法典", "きゅう・ふくつのいのりのほうてん", "zzOLDCodex of Prayer of Fortitude" },
   ["243854269de0fd84"] = { "ソーセン", "そーせん", "Thorsen" },
   ["2439273e4e74d2a7"] = { "鉄の樹皮の守り手", "てつのじゅひのまもりて", "Ironbark Protector" },
-  ["243b1c8d415643a1"] = { "金属の破片", "きんぞくのはへん", "metallic fragments" },
+  ["243b1c8d415643a1"] = { "金属の欠片", "きんぞくのかけら", "metallic fragments" },
   ["243bb3383bda0cc7"] = { "職人の依頼書：分厚い革の弾薬ポーチ", "しょくにんのいらいしょぶあついかわのだんやくぽーち", "Craftsman's Writ: Thick Leather Ammo Pouch" },
   ["243e41fe4b95e7b6"] = { "惨めな迷い人", "みじめなまよいびと", "Wretched Lost One" },
   ["243f5fec6fc6bac2"] = { "高位評議員の王笏", "こういひょうぎいんのおうしゃく", "High Councillor's Scepter" },

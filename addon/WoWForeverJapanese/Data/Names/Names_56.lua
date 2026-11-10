@@ -184,7 +184,7 @@ WFJ.Data.add("name", {
   ["56dd0411fae79a7d"] = { "裁き", "さばき", "Judgement" },
   ["56dd187115965b5b"] = { "ウィリアム・ペッスル", "うぃりあむ・ぺっする", "William Pestle" },
   ["56dd6b5b653e3d8d"] = { "騎乗用コドー（オリーブ）", "きじょうようこどーおりーぶ", "Riding Kodo (Olive)" },
-  ["56e02afa06514545"] = { "オリーブ・スナップジョー召喚", "おりーぶ・すなっぷじょーしょうかん", "Summon Olive Snapjaw" },
+  ["56e02afa06514545"] = { "オリーブ・オオアゴガメ召喚", "おりーぶ・おおあごがめしょうかん", "Summon Olive Snapjaw" },
   ["56e0d7c7bdedaec8"] = { "ドゥームコーラーの焼却ボーナス", "どぅーむこーらーのしょうきゃくぼーなす", "Doomcaller Immolate Bonus" },
   ["56e2303515872bdf"] = { "狂信のルーン", "きょうしんのるーん", "Rune of Fanaticism" },
   ["56e2d551eff569b4"] = { "消化酸", "しょうかさん", "Digestive Acid" },

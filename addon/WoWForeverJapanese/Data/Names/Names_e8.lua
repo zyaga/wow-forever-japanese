@@ -122,7 +122,7 @@ WFJ.Data.add("name", {
   ["e884b528b465dcd9"] = { "毛織りの止血帯", "けおりのしけつたい", "Woolen Tourniquet" },
   ["e885b2e0598dffc5"] = { "ラグナロスのイージス", "らぐなろすのいーじす", "Aegis of Ragnaros" },
   ["e888ba5de7cac8b0"] = { "共鳴する頭蓋骨", "きょうめいするずがいこつ", "Resonating Skulls" },
-  ["e88b0e6e060d9567"] = { "水晶の守り", "すいしょうのまもり", "CRYSTAL WARD" },
+  ["e88b0e6e060d9567"] = { "水晶のウォード", "すいしょうのうぉーど", "CRYSTAL WARD" },
   ["e88cfe2a4007f1c1"] = { "モンスター用：腰", "もんすたーようこし", "Monster Waist (DNT)" },
   ["e88d2db22caa6c53"] = { "トリウムの錠前箱", "とりうむのじょうまえばこ", "Thorium Lockbox" },
   ["e88da2e4adc079bf"] = { "カージ・スターンホーン", "かーじ・すたーんほーん", "Kirge Sternhorn" },

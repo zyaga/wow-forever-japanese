@@ -65,7 +65,7 @@ WFJ.Data.add("name", {
   ["2b4763b1add1cc11"] = { "カナガ・アースコーラー", "かなが・あーすこーらー", "Canaga Earthcaller" },
   ["2b4789e3fd808a66"] = { "上位の魔導師のベルト", "じょういのまどうしのべると", "Premier Magus Belt" },
   ["2b487c22b365ac8b"] = { "ゴーストポーの走者", "ごーすとぽーのそうしゃ", "Ghostpaw Runner" },
-  ["2b48abfb60ffc70c"] = { "ムイセク", "むいせく", "muisek" },
+  ["2b48abfb60ffc70c"] = { "ミューセク", "みゅーせく", "muisek" },
   ["2b48e96438b87ca7"] = { "無意味な虐殺の刃", "むいみなぎゃくさつのやいば", "Blade of Senseless Slaughter" },
   ["2b498426fc13c61e"] = { "黄色のハッカリのビジュー", "きいろのはっかりのびじゅー", "Yellow Hakkari Bijou" },
   ["2b4a1f27ecb354ac"] = { "ナラレックスの弟子", "なられっくすのでし", "Disciples of Naralex" },

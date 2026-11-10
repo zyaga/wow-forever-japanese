@@ -81,7 +81,7 @@ WFJ.Data.add("name", {
   ["865d50188a868a80"] = { "解除用の調合薬", "かいじょようのちょうごうやく", "Disarming Mixture" },
   ["865dfeada140f4ff"] = { "型紙：亜麻布の秘薬袋", "かたがみあまぬののひやくぶくろ", "Pattern: Linen Reagent Bag" },
   ["865e627687e7918a"] = { "森のクリーパー", "もりのくりーぱー", "Forest Creeper" },
-  ["865eab5ea5b8b9e7"] = { "集束ランチャー", "しゅうそくらんちゃー", "cluster launcher" },
+  ["865eab5ea5b8b9e7"] = { "連発発射機", "れんぱつはっしゃき", "cluster launcher" },
   ["865fcf8b831ca9f3"] = { "ナイトスカルカー", "ないとすかるかー", "Nightskulker" },
   ["86605345e3de865d"] = { "マニ・ウィンターフーフ", "まに・うぃんたーふーふ", "Mani Winterhoof" },
   ["8660c8430cc15f30"] = { "エウレーカ！", "えうれーか", "Eureka!" },

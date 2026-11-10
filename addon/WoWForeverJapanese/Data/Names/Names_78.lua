@@ -127,7 +127,7 @@ WFJ.Data.add("name", {
   ["7880a43f854bc5ec"] = { "騎士大尉の鎖の脚甲", "きしたいいのくさりのきゃっこう", "Knight-Captain's Chain Legplates" },
   ["7880c7597e6a7d03"] = { "軍団兵の絹の脚衣", "ぐんだんへいのきぬのきゃくい", "Legionnaire's Silk Pants" },
   ["788163ccbaba669e"] = { "オフガット", "おふがっと", "Ofgut" },
-  ["7885050af67bbc62"] = { "素朴な野の花", "そぼくなののはな", "simple wildflowers" },
+  ["7885050af67bbc62"] = { "簡素な野の花", "かんそなののはな", "simple wildflowers" },
   ["788799ea78b5be63"] = { "リンゴを食べる", "りんごをたべる", "Eat Apple" },
   ["7888dd0b2a6b92d4"] = { "鈍器強化2", "どんききょうかに", "Enhance Blunt Weapon II" },
   ["7888dd182a6b92e1"] = { "鈍器強化4", "どんききょうかよん", "Enhance Blunt Weapon IV" },

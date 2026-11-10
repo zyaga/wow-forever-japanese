@@ -60,7 +60,7 @@ WFJ.Data.add("name", {
   ["3740697152036620"] = { "曇った風織りの腕当て", "くもったかぜおりのうであて", "Cloudy Gustwoven Bracers" },
   ["374190fd3942b900"] = { "製法：武器エンチャント：力", "せいほうぶきえんちゃんとちから", "Formula: Enchant Weapon - Strength" },
   ["374292d722835c8e"] = { "ズレム隊長", "ずれむたいちょう", "Captain Xurrem" },
-  ["374309660dfe53bc"] = { "地位の勲章", "ちいのくんしょう", "medallion of station" },
+  ["374309660dfe53bc"] = { "地位のメダリオン", "ちいのめだりおん", "medallion of station" },
   ["3743bcb754d15e4d"] = { "秘術防護：冷気", "ひじゅつぼうごれいき", "Arcane Protection - Frost" },
   ["3743ed7a5c60d2b7"] = { "ギャラン・ヴァイムズ隊長", "ぎゃらん・ゔぁいむずたいちょう", "Captain Garran Vimes" },
   ["3745e334acef681b"] = { "ウェストブルック駐屯地", "うぇすとぶるっくちゅうとんち", "Westbrook Garrison" },

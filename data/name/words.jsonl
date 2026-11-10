@@ -6597,7 +6597,7 @@
 {"en": "Hekkru", "ja": "ヘックル", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-005@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Hel'nurath", "ja": "ヘルヌラス", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-005@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Helaina", "ja": "ヘレイナ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-005@2026-11-10", "imported": "2026-11-10"}}
-{"en": "Helboar", "ja": "ヘルボア", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-names-006@2026-11-10", "imported": "2026-11-10"}}
+{"en": "Helboar", "ja": "ヘルボア", "check": false, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-names-006@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Helbrek", "ja": "ヘルブレク", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-005@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Helbrim", "ja": "ヘルブリム", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-005@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Helcular", "ja": "ヘルキュラー", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-005@2026-11-10", "imported": "2026-11-10"}}
@@ -7848,8 +7848,8 @@
 {"en": "Kiknikle", "ja": "キクニクル", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-006@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Kil'hala", "ja": "キルハラ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-006@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Kil'Hiwana", "ja": "キルヒワナ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-006@2026-11-10", "imported": "2026-11-10"}}
-{"en": "Kil'Jaeden", "ja": "キルジェデン", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-006@2026-11-10", "imported": "2026-11-10"}}
-{"en": "Kil'jaeden", "ja": "キルジェデン", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-names2-034@2026-11-10", "imported": "2026-11-10"}}
+{"en": "Kil'Jaeden", "ja": "キルジェイデン", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-006@2026-11-10", "imported": "2026-11-10"}}
+{"en": "Kil'jaeden", "ja": "キルジェイデン", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-names2-034@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Kildar", "ja": "キルダー", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-006@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Kildrath", "ja": "キルドラス", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-006@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Kilgar", "ja": "キルガー", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-006@2026-11-10", "imported": "2026-11-10"}}
@@ -13249,7 +13249,7 @@
 {"en": "Snang", "ja": "スナング", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-010@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Snapbrook", "ja": "スナップブルック", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-010@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Snapclaw", "ja": "スナップクロウ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-010@2026-11-10", "imported": "2026-11-10"}}
-{"en": "Snapjaw", "ja": "スナップジョー", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-names-008@2026-11-10", "imported": "2026-11-10"}}
+{"en": "Snapjaw", "ja": "オオアゴガメ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-names-008@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Snapjaws", "ja": "スナップジョー", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-names2-009@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Snapper", "ja": "スナッパー", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-010@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Snapvine", "ja": "スナップヴァイン", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-010@2026-11-10", "imported": "2026-11-10"}}

@@ -188,7 +188,7 @@ WFJ.Data.add("name", {
   ["7cc43fc5be6cfa40"] = { "委任：ダスクウッド任務10", "いにんだすくうっどにんむじゅう", "Deputize: Duskwood Mission X" },
   ["7cc59e115f19baca"] = { "アガマンド一家の地下墓所", "あがまんどいっかのちかぼしょ", "Agamand Family Crypt" },
   ["7cc6cfcf3057cf0b"] = { "赤い亜麻布のシャツ", "あかいあまぬののしゃつ", "Red Linen Shirt" },
-  ["7cc84b2b77969d68"] = { "オ・エアルドル・ヴェルドバラド・ボル・ヌド・フェアガス・メ・ソー・セ・オ・ダエギル・アルドノス", "お・えあるどる・ゔぇるどばらど・ぼる・ぬど・ふぇあがす・め・そー・せ・お・だえぎる・あるどのす", "o ealdor Veldbarad. Bor nud faergas me thor se o daegil aldonoth" },
+  ["7cc84b2b77969d68"] = { "オー・エアルドル・ヴェルドバラド・ボル・ヌド・フェアガス・メ・ソー・セ・オー・ダエギル・アルドノス", "おー・えあるどる・ゔぇるどばらど・ぼる・ぬど・ふぇあがす・め・そー・せ・おー・だえぎる・あるどのす", "o ealdor Veldbarad. Bor nud faergas me thor se o daegil aldonoth" },
   ["7ccaa46e5ddce850"] = { "豪華な宝石飾りの指輪", "ごうかなほうせきかざりのゆびわ", "Lavishly Jeweled Ring" },
   ["7ccc96e0cbe3f151"] = { "堕落したレッドパス", "だらくしたれっどぱす", "Corrupt Redpath" },
   ["7cccac53eda82cca"] = { "設計図：スカーレットの兵士の脚甲", "せっけいずすかーれっとのへいしのきゃっこう", "Plans: Scarlet Soldier's Legplates" },

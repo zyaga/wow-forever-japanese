@@ -160,7 +160,7 @@ WFJ.Data.add("name", {
   ["58b80e77133be101"] = { "ダリア・ウィンドブリーズ", "だりあ・うぃんどぶりーず", "Dalia Windbreeze" },
   ["58ba589d4e332be0"] = { "ハッカー召喚", "はっかーしょうかん", "Summon Hakkar" },
   ["58bd4da9634b6234"] = { "グレッチェン・フォーゲル", "ぐれっちぇん・ふぉーげる", "Gretchen Vogel" },
-  ["58bd6ddb826d2336"] = { "スコージの侵略の手下・出現装置・グール／スケルトン", "すこーじのしんりゃくのてした・しゅつげんそうち・ぐーるすけるとん", "Scourge Invasion Minion, spawner, Ghoul/Skeleton" },
+  ["58bd6ddb826d2336"] = { "スコージの侵略の手下・発生装置・グール／スケルトン", "すこーじのしんりゃくのてした・はっせいそうち・ぐーるすけるとん", "Scourge Invasion Minion, spawner, Ghoul/Skeleton" },
   ["58bd6f693f700ded"] = { "鮮やかな鎧", "あざやかなよろい", "Bright Armor" },
   ["58bf71adb02c519e"] = { "コルカー村", "こるかーむら", "Kolkar Village" },
   ["58c47249fc903d7f"] = { "忍び寄る疫病の解除", "しのびよるえきびょうのかいじょ", "Cancel Creeping Plague" },

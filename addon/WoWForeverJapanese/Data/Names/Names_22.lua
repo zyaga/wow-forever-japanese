@@ -123,7 +123,7 @@ WFJ.Data.add("name", {
   ["2284e721da3a8d25"] = { "外套彫刻：秘術の弾幕", "がいとうちょうこくひじゅつのだんまく", "Engrave Cloak - Arcane Barrage" },
   ["22856c9419626723"] = { "フェラルハートのベスト", "ふぇらるはーとのべすと", "Feralheart Vest" },
   ["2285f8d2ff2d55b3"] = { "デスガード・バージェス", "ですがーど・ばーじぇす", "Deathguard Burgess" },
-  ["2286cee75d8d2094"] = { "ブードゥーの羽根", "ぶーどぅーのはね", "voodoo feather" },
+  ["2286cee75d8d2094"] = { "ヴードゥーの羽根", "ゔーどぅーのはね", "voodoo feather" },
   ["2286e33b0462ea00"] = { "魔導師の長杖", "まどうしのちょうじょう", "Magus Long Staff" },
   ["228805cf4c5cc3a8"] = { "軽い板金の兜", "かるいばんきんのかぶと", "Light Plate Helmet" },
   ["228840826c03a125"] = { "火炎砲", "かえんほう", "Flame Cannon" },

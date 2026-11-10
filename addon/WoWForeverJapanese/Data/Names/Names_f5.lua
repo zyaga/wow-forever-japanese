@@ -188,7 +188,7 @@ WFJ.Data.add("name", {
   ["f5cd627bf4b474d1"] = { "深き統治のロッド", "ふかきとうちのろっど", "Rod of Deep Dominion" },
   ["f5d422e2b1b575b9"] = { "ラトロニクス", "らとろにくす", "Latronicus" },
   ["f5d53b4a0db87149"] = { "ストームパイクの諜報", "すとーむぱいくのちょうほう", "Stormpike Intelligence" },
-  ["f5d9d587cfd026c8"] = { "パンサー", "ぱんさー", "panther" },
+  ["f5d9d587cfd026c8"] = { "ヒョウ", "ひょう", "panther" },
   ["f5dd4bdda5baf365"] = { "大将軍の竜革のホーバーク", "だいしょうぐんのりゅうがわのほーばーく", "Warlord's Dragonhide Hauberk" },
   ["f5e16e63b5d7519e"] = { "トワイライト卿の腰帯", "とわいらいときょうのこしおび", "Twilight Lord Girdle" },
   ["f5e1de3fd7eeaa31"] = { "モンスター用：両手斧・戦斧03（白）", "もんすたーようりょうておの・せんぷぜろさんしろ", "Monster - Axe, 2H War A03 White" },

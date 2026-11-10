@@ -90,7 +90,7 @@ WFJ.Data.add("name", {
   ["ff49ca2b9bc883c3"] = { "獣の制御", "けもののせいぎょ", "The Control of the Beast" },
   ["ff4a488e8ae62504"] = { "先任軍曹の脈打つ籠手", "せんにんぐんそうのみゃくうつこて", "First Sergeant's Pulsing Gauntlets" },
   ["ff4b07d3101c91f9"] = { "型紙：しなやかなスコーピッドのベルト", "かたがみしなやかなすこーぴっどのべると", "Pattern: Supple Scorpid Belt" },
-  ["ff4ca7390d418adc"] = { "金切り声の霊", "かなきりごえのれい", "screecher spirits" },
+  ["ff4ca7390d418adc"] = { "叫び手の霊", "さけびてのれい", "screecher spirits" },
   ["ff4d56c345c8c076"] = { "シェンドララーの補給係", "しぇんどららーのほきゅうがかり", "Shen'dralar Provisioner" },
   ["ff4ea3584583c815"] = { "殴打者ロカリム", "おうだしゃろかりむ", "Rok'Alim the Pounder" },
   ["ff4edef82ec7af70"] = { "腐りかけのワーム召喚", "くさりかけのわーむしょうかん", "Summon Rotting Worms" },

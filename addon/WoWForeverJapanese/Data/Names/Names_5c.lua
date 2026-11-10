@@ -154,7 +154,7 @@ WFJ.Data.add("name", {
   ["5ca7455386a9666f"] = { "斧の専門化", "おののせんもんか", "Axe Specialization" },
   ["5ca769a9683e80a8"] = { "月の導き", "つきのみちびき", "Lunar Guidance" },
   ["5ca7d9eba4e45e3d"] = { "安全の鐘", "あんぜんのかね", "SAF-T Bell" },
-  ["5ca81894fafb3c25"] = { "ゴーダニ・オーガ", "ごーだに・おーが", "Gordunni ogre" },
+  ["5ca81894fafb3c25"] = { "ゴーダニのオーガ", "ごーだにのおーが", "Gordunni ogre" },
   ["5ca8eaed8f6e8131"] = { "コジッシュ", "こじっしゅ", "Kozish" },
   ["5ca96b7a2dd7baa1"] = { "マークシャロウの柔殻", "まーくしゃろうのじゅうかく", "Murkshallow Softshell" },
   ["5ca9a00bca1b12c6"] = { "玉ねぎの皮むき", "たまねぎのかわむき", "Peeling the Onion" },

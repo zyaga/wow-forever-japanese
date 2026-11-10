@@ -156,7 +156,7 @@ WFJ.Data.add("name", {
   ["c1b90c5a2c568b9b"] = { "シルクサンドの巻き布", "しるくさんどのまきぬの", "Silksand Wraps" },
   ["c1ba95ed41e5b74d"] = { "黒蓮", "こくれん", "Black Lotus" },
   ["c1bbd8284db9c05d"] = { "ゴーレムの心臓の杖", "ごーれむのしんぞうのつえ", "Golemheart Stave" },
-  ["c1bc0c1647dbb3b2"] = { "腐敗の皮", "ふはいのかわ", "rot hide" },
+  ["c1bc0c1647dbb3b2"] = { "腐敗皮", "ふはいがわ", "rot hide" },
   ["c1bc643d5882ddf6"] = { "自然との調和", "しぜんとのちょうわ", "Aligned with Nature" },
   ["c1bcbe95cd2338b6"] = { "ポータル効果：デスナイトの翼", "ぽーたるこうかですないとのつばさ", "Portal Effect: Deathknight Wing" },
   ["c1bd045cda1d2f4f"] = { "モンスター用：杖・聖なる杖", "もんすたーようつえ・せいなるつえ", "Monster - Staff, Holy Staff" },

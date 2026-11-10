@@ -224,7 +224,7 @@ WFJ.Data.add("name", {
   ["45ead364f08d78de"] = { "レンジャー", "れんじゃー", "Ranger" },
   ["45eb475aba5c223d"] = { "セラモアの防衛者の籠手", "せらもあのぼうえいしゃのこて", "Theramore Defender's Gauntlets" },
   ["45ec600c88080e5b"] = { "氷の鱗の腕当て", "こおりのうろこのうであて", "Icy Scale Bracers" },
-  ["45ed2b536f90d31f"] = { "斑点のあるサンフィッシュ", "はんてんのあるさんふぃっしゅ", "spotted sunfish" },
+  ["45ed2b536f90d31f"] = { "斑点のサンフィッシュ", "はんてんのさんふぃっしゅ", "spotted sunfish" },
   ["45ee499b18505ee7"] = { "泥沼の主", "どろぬまのぬし", "Mire Lord" },
   ["45ef325696721969"] = { "アブラ・カダブラ", "あぶら・かだぶら", "Abra Cadabra" },
   ["45ef919d953f9e56"] = { "蛇の拡散", "へびのかくさん", "Serpent Spread" },

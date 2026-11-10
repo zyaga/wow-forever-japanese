@@ -171,7 +171,7 @@ WFJ.Data.add("name", {
   ["dddcc95f88fe4d44"] = { "カエルの使い魔", "かえるのつかいま", "Frog Familiar" },
   ["dddcf10befb91c5f"] = { "頑丈なドラゴンマウのすね骨", "がんじょうなどらごんまうのすねぼね", "Sturdy Dragonmaw Shinbone" },
   ["ddddebd703936dea"] = { "クリスマス・ダークマスター・ガンドリング", "くりすます・だーくますたー・がんどりんぐ", "Christmas Darkmaster Gandling" },
-  ["ddde2d9f36ce15bb"] = { "ヘルムズ・ベッド湖", "へるむず・べっどこ", "Helm's Bed lake" },
+  ["ddde2d9f36ce15bb"] = { "ヘルムズベッド湖", "へるむずべっどこ", "Helm's Bed lake" },
   ["dde248c9a1daa263"] = { "ダヴィル・ライトファイア", "だゔぃる・らいとふぁいあ", "Davil Lightfire" },
   ["dde63968a3b5a5e6"] = { "ライフル兵ミドルキャンプ", "らいふるへいみどるきゃんぷ", "Rifleman Middlecamp" },
   ["dde964b3fe57fa30"] = { "設計図：イージー・スローダイナマイト", "せっけいずいーじー・すろーだいなまいと", "Schematic: EZ-Thro Dynamite" },

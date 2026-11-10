@@ -57,7 +57,7 @@ WFJ.Data.add("name", {
   ["744c7c86d4faddd0"] = { "呪術医ウゼリ", "じゅじゅついうぜり", "Witch Doctor Uzer'i" },
   ["744dacc1377da0ab"] = { "ストームパイクの賢者の外套", "すとーむぱいくのけんじゃのがいとう", "Stormpike Sage's Cloak" },
   ["744e283729dbe848"] = { "アイテムのスクリプトテスト", "あいてむのすくりぷとてすと", "Item Script Test [DNT]" },
-  ["744e91e2052727b9"] = { "完璧なドラエネシストの球体", "かんぺきなどらえねしすとのきゅうたい", "flawless draenethyst sphere" },
+  ["744e91e2052727b9"] = { "完璧なドレネシストの球体", "かんぺきなどれねしすとのきゅうたい", "flawless draenethyst sphere" },
   ["74522a3a3233ae40"] = { "ブラフウォッチャー", "ぶらふうぉっちゃー", "Bluffwatchers" },
   ["74548f4c348fadce"] = { "雪のブーツ", "ゆきのぶーつ", "Snow Boots" },
   ["74550cf3df2056e3"] = { "脛骨", "けいこつ", "shinbones" },

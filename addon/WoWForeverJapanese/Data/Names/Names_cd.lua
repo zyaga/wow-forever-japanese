@@ -90,7 +90,7 @@ WFJ.Data.add("name", {
   ["cd66abfac7252659"] = { "緑の絹の肩当て", "みどりのきぬのかたあて", "Green Silken Shoulders" },
   ["cd67791c73c87619"] = { "元帥のサテンの足甲", "げんすいのさてんのそっこう", "Marshal's Satin Treads" },
   ["cd68b19442ea9888"] = { "風のテンプラー召喚・トリガー", "かぜのてんぷらーしょうかん・とりがー", "Summon Templar Air, Trigger" },
-  ["cd690fcfcf9347dd"] = { "目印", "めじるし", "marker" },
+  ["cd690fcfcf9347dd"] = { "標識", "ひょうしき", "marker" },
   ["cd69ed5f22ae1611"] = { "フィンクル・アインホーン", "ふぃんくる・あいんほーん", "Finkle Einhorn" },
   ["cd6a85118ca9486d"] = { "イェブ・ネブルギア", "いぇぶ・ねぶるぎあ", "Yebb Neblegear" },
   ["cd6b87d8d192e01c"] = { "分厚いイェティの皮", "ぶあついいぇてぃのかわ", "Thick Yeti Hides" },

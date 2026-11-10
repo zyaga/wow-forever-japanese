@@ -69,7 +69,7 @@ WFJ.Data.add("name", {
   ["1452704a525c8a34"] = { "ズリアンの泥スカンク", "ずりあんのどろすかんく", "Zulian Mudskunks" },
   ["1452bc02dd9e7a30"] = { "レスバン鉱石", "れすばんこうせき", "Rethban Ore" },
   ["145414113154e2b7"] = { "導師テルミウス・ドリームシーカー", "どうしてるみうす・どりーむしーかー", "Master Telmius Dreamseeker" },
-  ["1456ddbd50801210"] = { "薪の束", "まきのたば", "bundles of wood" },
+  ["1456ddbd50801210"] = { "木の束", "きのたば", "bundles of wood" },
   ["1457dc2deb415616"] = { "型紙：光るニューロ接続の頭巾", "かたがみひかるにゅーろせつぞくのずきん", "Pattern: Glowing Gneuro-Linked Cowl" },
   ["1458c83119cfadd3"] = { "製法：武器エンチャント：悪魔退治", "せいほうぶきえんちゃんとあくまたいじ", "Formula: Enchant Weapon - Demonslaying" },
   ["1459e2bb4edcfc21"] = { "ビーズ飾りのオーブ", "びーずかざりのおーぶ", "Beaded Orb" },
@@ -228,5 +228,5 @@ WFJ.Data.add("name", {
   ["14fca8e160dadd22"] = { "隠密10", "おんみつじゅう", "Stealth 10" },
   ["14fca8e660dadd27"] = { "隠密15", "おんみつじゅうご", "Stealth 15" },
   ["14fdb8c3d05980a6"] = { "帯電した秘術の矢", "たいでんしたひじゅつのや", "Charged Arcane Bolt" },
-  ["14fde634022f0377"] = { "荒々しい葉", "あらあらしいは", "savage fronds" },
+  ["14fde634022f0377"] = { "獰猛な葉", "どうもうなは", "savage fronds" },
 })

@@ -189,7 +189,7 @@ WFJ.Data.add("name", {
   ["25cdac98248a151e"] = { "レベル38布物資", "れべるさんじゅうはちぬのぶっし", "Level 38 Cloth Supplies" },
   ["25d1d641b4641d78"] = { "術者の消滅", "じゅつしゃのしょうめつ", "Despawn Caster" },
   ["25d28f75d636acd9"] = { "指なしの籠手", "ゆびなしのこて", "Fingerless Gloves" },
-  ["25d2c92f8f395de0"] = { "鍛造前のルーンに覆われた胸当て", "たんぞうまえのるーんにおおわれたむねあて", "unforged rune covered breastplate" },
+  ["25d2c92f8f395de0"] = { "未鍛造のルーンに覆われた胸当て", "みたんぞうのるーんにおおわれたむねあて", "unforged rune covered breastplate" },
   ["25d3d3eba844225a"] = { "闇の守り手ヴォルファルク", "やみのまもりてゔぉるふぁるく", "Dark Keeper Vorfalk" },
   ["25d3db7d493bbe68"] = { "推薦状", "すいせんじょう", "Letter of Commendation" },
   ["25d3eb412baf8972"] = { "将軍のドレッドウィーヴのベルト", "しょうぐんのどれっどうぃーゔのべると", "General's Dreadweave Belt" },

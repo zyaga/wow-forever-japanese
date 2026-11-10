@@ -114,7 +114,7 @@ WFJ.Data.add("name", {
   ["3d7553d406dd0f9c"] = { "継ぎはぎの革の腕当て", "つぎはぎのかわのうであて", "Patched Leather Bracers" },
   ["3d76aff794ba1b59"] = { "印章", "いんしょう", "sigils" },
   ["3d77a5b6d1174548"] = { "戦士の鎧治癒トリガー：武勇の戦装", "せんしのよろいちゆとりがーぶゆうのせんそう", "S03 - Warrior Armor Heal Trigger - Battlegear of Valor" },
-  ["3d77fb90a8928ef8"] = { "印章指輪", "いんしょうゆびわ", "signet" },
+  ["3d77fb90a8928ef8"] = { "印章", "いんしょう", "signet" },
   ["3d7811c309372aaf"] = { "冷気術師の魂", "れいきじゅつしのたましい", "Soul of the Cryomancer" },
   ["3d788d9510a3a9de"] = { "侵略者の鎚矛", "しんりゃくしゃのつちほこ", "Invader's Mace" },
   ["3d7a1b1a57bf566d"] = { "群れ使いストーンブルーザー", "むれつかいすとーんぶるーざー", "Packmaster Stonebruiser" },
