@@ -178,7 +178,7 @@ WFJ.Data.add("name", {
   ["9db1b7215d37a5a5"] = { "焼き印の革の腕当て", "やきいんのかわのうであて", "Branded Leather Bracers" },
   ["9db2105ea04f3810"] = { "アライアンスの旗の基地からの奪取（イベント）", "あらいあんすのはたのきちからのだっしゅいべんと", "Alliance Flag Taken From Base (Event)" },
   ["9db21e730b628476"] = { "青いオーラ・柱", "あおいおーら・はしら", "Blue Aura, column" },
-  ["9db23557fec63601"] = { "上位のフェルウィーヴのローブ", "のふぇるうぃーゔのろーぶ", "Premier Felweave Robe" },
+  ["9db23557fec63601"] = { "上位のフェルウィーヴのローブ", "じょういのふぇるうぃーゔのろーぶ", "Premier Felweave Robe" },
   ["9db2d11eca9556b1"] = { "青い宝石の袋", "あおいほうせきのふくろ", "Blue Sack of Gems" },
   ["9db2ed6aa6358776"] = { "リンジの秘密", "りんじのひみつ", "Rin'ji's Secret" },
   ["9db2ed906135ab57"] = { "パワーストーンの木箱", "ぱわーすとーんのきばこ", "Crate of Powerstones" },

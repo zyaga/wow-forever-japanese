@@ -207,7 +207,7 @@ WFJ.Data.add("name", {
   ["5ed188c367eccd72"] = { "致命の投げ斧", "ちめいのなげおの", "Deadly Throwing Axe" },
   ["5ed2a1174299b8df"] = { "記念品のオーガの歯", "きねんひんのおーがのは", "Souvenir Ogre Tooth" },
   ["5ed4c933921bdb52"] = { "ダークコア長老", "だーくこあちょうろう", "Darkcore the Elder" },
-  ["5ed59a03cfe75e84"] = { "月石の追跡者のオーラ", "げっせきのついせきしゃのおーら", "[DNT] Lunar Stone Stalker Aura" },
+  ["5ed59a03cfe75e84"] = { "月の石のストーカーのオーラ", "つきのいしのすとーかーのおーら", "[DNT] Lunar Stone Stalker Aura" },
   ["5ed5e1fb393a28c7"] = { "啓示の杖", "けいじのつえ", "Staff of Revelations" },
   ["5ed6a36dc40d187a"] = { "力の脚甲", "ちからのきゃっこう", "Legplates of Might" },
   ["5ed72bae30be1814"] = { "ウッドワード消火", "うっどわーどしょうか", "Extinguish Woodwyrd" },

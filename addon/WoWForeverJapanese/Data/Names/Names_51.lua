@@ -211,7 +211,7 @@ WFJ.Data.add("name", {
   ["51d1c0997ec0c69a"] = { "モルカー", "もるかー", "Molkar" },
   ["51d4450832030420"] = { "ムーンフレアのトーテム", "むーんふれあのとーてむ", "Moonflare Totem" },
   ["51d6469d13c0f0e4"] = { "レベル20テスト装備・鎖帷子・パラディンとウォリアー", "れべるにじゅうてすとそうび・くさりかたびら・ぱらでぃんとうぉりあー", "Level 20 Test Gear Mail - Paladin/Warrior" },
-  ["51d649138abadce6"] = { "霊のハンターの頭飾り", "れいのはんたーのかみかざり", "Spirit Hunter Headdress" },
+  ["51d649138abadce6"] = { "霊のハンターの頭飾り", "れいのはんたーのあたまかざり", "Spirit Hunter Headdress" },
   ["51d8c85dbc4f9518"] = { "元帥のサテンのサンダル", "げんすいのさてんのさんだる", "Marshal's Satin Sandals" },
   ["51d901c85ad5877a"] = { "回復中", "かいふくちゅう", "Recuperating" },
   ["51db77c2504534a8"] = { "グレゴリー・ヴィクター", "ぐれごりー・ゔぃくたー", "Gregory Victor" },

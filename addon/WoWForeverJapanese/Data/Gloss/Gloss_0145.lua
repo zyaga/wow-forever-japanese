@@ -650,4 +650,6 @@ WFJ.Data.add("gloss", {
   [145648] = "見つける\tみつける\t(that you) found (me)",
   [145649] = "隠れる\tかくれる\tnot hiding",
   [145650] = "食らいつく\tくらいつく\tgoing at (biting into)",
+  [145651] = "大将軍\tたいしょうぐん\tWarlord (great general)",
+  [145652] = "大将軍\tたいしょうぐん\tthe Warlord (great general)",
 })

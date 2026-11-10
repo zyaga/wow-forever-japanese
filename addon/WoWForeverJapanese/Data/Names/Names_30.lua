@@ -217,7 +217,7 @@ WFJ.Data.add("name", {
   ["30f381fac0acdfaf"] = { "型紙：緑の冬服", "かたがみみどりのふゆふく", "Pattern: Green Winter Clothes" },
   ["30f4d681b3fb7dcb"] = { "テレポート：ズルグラブ", "てれぽーとずるぐらぶ", "[DNT] Teleport to Zul'Gurub" },
   ["30f56f771793611e"] = { "グラントの鎚矛", "ぐらんとのつちほこ", "Grant's Mace" },
-  ["30f7028de85b933a"] = { "潜む者", "ひそむもの", "lurker" },
+  ["30f7028de85b933a"] = { "潜伏者", "せんぷくしゃ", "lurker" },
   ["30f76f8f3f423455"] = { "夢からの退出", "ゆめからのたいしゅつ", "Exit Dream" },
   ["30f83bc287919926"] = { "ゼンジラ", "ぜんじら", "Xen'zilla" },
   ["30f86aea73d2cbb6"] = { "周期的な弾き飛ばし", "しゅうきてきなはじきとばし", "Periodic Knock Away" },

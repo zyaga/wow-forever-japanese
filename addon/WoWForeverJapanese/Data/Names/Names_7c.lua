@@ -138,7 +138,7 @@ WFJ.Data.add("name", {
   ["7c8fde9efd9cf2fd"] = { "岩のエレメンタルの欠片", "いわのえれめんたるのかけら", "Rock Elemental Shards" },
   ["7c915428ccd0bf73"] = { "型紙：炎のガウン", "かたがみほのおのがうん", "Pattern: Flame Gown" },
   ["7c92ca7639f6b253"] = { "起動した硫黄の彫り物", "きどうしたいおうのほりもの", "Activated Brimstone Carving" },
-  ["7c92e68905def767"] = { "追跡者の革のベルト", "ついせきしゃのかわのべると", "Stalker's Leather Belt" },
+  ["7c92e68905def767"] = { "ストーカーの革のベルト", "すとーかーのかわのべると", "Stalker's Leather Belt" },
   ["7c9ae2d8d82fd8a9"] = { "指南書：蛇の毒針9", "しなんしょへびのどくばりきゅう", "Guide: Serpent Sting IX" },
   ["7c9b2408e1a4a292"] = { "神話と伝説の論破", "しんわとでんせつのろんぱ", "Debunking Myths and Legends" },
   ["7c9be9e9a53ec8b0"] = { "ストームウィンドの祝う者", "すとーむうぃんどのいわうもの", "Stormwind Celebrant" },

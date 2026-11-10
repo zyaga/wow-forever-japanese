@@ -50,7 +50,7 @@ WFJ.Data.add("name", {
   ["6a2d22448c293bc0"] = { "生皮の脚衣", "なまかわのきゃくい", "Rawhide Pants" },
   ["6a2de306fb9f209c"] = { "泳ぐ者たち", "およぐものたち", "Swimmers" },
   ["6a2e750bca11f1c2"] = { "皮剥ぎの蔓", "かわはぎのつる", "Flaying Vine" },
-  ["6a2e9b5034624b2d"] = { "ラプトルの皮のハーネス", "らぷとるのかわのはーねす", "Raptor Hide Harness" },
+  ["6a2e9b5034624b2d"] = { "ラプターの皮のハーネス", "らぷたーのかわのはーねす", "Raptor Hide Harness" },
   ["6a2eed120b7fb021"] = { "水泳", "すいえい", "Swimming" },
   ["6a312bea81bca962"] = { "古きアイアンフォージ", "ふるきあいあんふぉーじ", "Old Ironforge" },
   ["6a32e3c4d5a362e5"] = { "激怒したフェルガード", "げきどしたふぇるがーど", "Enraged Felguard" },

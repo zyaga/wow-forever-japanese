@@ -79,7 +79,7 @@ WFJ.Data.add("name", {
   ["c3648e9661be003d"] = { "予言の呪い", "よげんののろい", "Prophetic Curse" },
   ["c365421e547d238a"] = { "熱狂の輝ける剣", "ねっきょうのかがやけるけん", "Brilliant Sword of Zealotry" },
   ["c365dffa5150be03"] = { "セオドラス・フロストビアード", "せおどらす・ふろすとびあーど", "Theodrus Frostbeard" },
-  ["c366641ed6b1f04d"] = { "上位の総大将の肉切り包丁", "じょういのそうだいしょうのにくきりぼうちょう", "Premier High Warlord's Cleaver" },
+  ["c366641ed6b1f04d"] = { "上位総大将の肉切り包丁", "じょういそうだいしょうのにくきりぼうちょう", "Premier High Warlord's Cleaver" },
   ["c367449ec8815f7a"] = { "スチームホイードル港", "すちーむほいーどるこう", "Steamwheedle port" },
   ["c3679990b4d0e210"] = { "輝ける夜明けのミトン", "かがやけるよあけのみとん", "[PH] Brilliant Dawn Mitts" },
   ["c36b8a64f8cd5ed3"] = { "ウィザーバークの牙", "うぃざーばーくのきば", "Witherbark Tusk" },

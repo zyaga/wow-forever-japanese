@@ -122,7 +122,7 @@ WFJ.Data.add("name", {
   ["956dac8ea6d64677"] = { "薬草発見", "やくそうはっけん", "Find Herbs" },
   ["957003c90b96be7b"] = { "邪悪なスカラベ", "じゃあくなすからべ", "Vile Scarab" },
   ["957031d466a906a0"] = { "アイアンフォージの祝い客", "あいあんふぉーじのいわいきゃく", "Ironforge Reveler" },
-  ["957164acb19914f6"] = { "故障したサイクロン構造体", "こしょうしたさいくろんこうぞうたい", "Malfunctioning Cyclone Construct" },
+  ["957164acb19914f6"] = { "故障したサイクロン・コンストラクト", "こしょうしたさいくろん・こんすとらくと", "Malfunctioning Cyclone Construct" },
   ["9574aa881ca83ed5"] = { "モードレッシュの光る目", "もーどれっしゅのひかるめ", "Glowing Eye of Mordresh" },
   ["957752284bc159a0"] = { "技量増加1", "ぎりょうぞうかいち", "Increased Expertise 1" },
   ["957752294bc159a1"] = { "技量増加2", "ぎりょうぞうかに", "Increased Expertise 2" },

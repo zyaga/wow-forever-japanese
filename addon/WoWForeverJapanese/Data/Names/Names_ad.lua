@@ -109,7 +109,7 @@ WFJ.Data.add("name", {
   ["ad76a76ff341893c"] = { "最高司令部の広間", "さいこうしれいぶのひろま", "Hall of the High Command" },
   ["ad7a3fc3cd9dd1cb"] = { "少佐の板金の兜", "しょうさのばんきんのかぶと", "Lieutenant Commander's Plate Helm" },
   ["ad7a54b6bf7cae62"] = { "収穫の監視者", "しゅうかくのかんししゃ", "Harvest Watcher" },
-  ["ad7b8541cdd25cb1"] = { "ヒッポグリフの皮のブーツ", "ひっぽぐりふのかわのぶーつ", "Hippogryph Hide Boots" },
+  ["ad7b8541cdd25cb1"] = { "ヒポグリフの皮のブーツ", "ひぽぐりふのかわのぶーつ", "Hippogryph Hide Boots" },
   ["ad7e71969220030f"] = { "監視者モカルスキー", "かんししゃもかるすきー", "Watcher Mocarski" },
   ["ad80c8a2fc3a122a"] = { "花火ロケット・タイプ1・白", "はなびろけっと・たいぷいち・しろ", "Firework Rocket, Type 1 White" },
   ["ad81cff72c47060b"] = { "自然クリティカル増加", "しぜんくりてぃかるぞうか", "Increased Nature Criticals" },

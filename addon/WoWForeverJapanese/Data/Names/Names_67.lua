@@ -42,7 +42,7 @@ WFJ.Data.add("name", {
   ["6729c11682c4bd4c"] = { "叩きつけられた", "たたきつけられた", "Slammed" },
   ["672c9c6da163f67d"] = { "山の獅子", "やまのしし", "Mountain Lion" },
   ["672cd3d2709773dc"] = { "熱情のポーション作成（新）", "ねつじょうのぽーしょんさくせいしん", "Create Fervor Potion (New)" },
-  ["672db0ef1eeb3279"] = { "巨大ザメのステーキ", "きょだいざめのすてーき", "Mammoth Shark Steak" },
+  ["672db0ef1eeb3279"] = { "巨大サメのステーキ", "きょだいさめのすてーき", "Mammoth Shark Steak" },
   ["672df7488f5c1633"] = { "雪玉の雲", "ゆきだまのくも", "Snowball Cloud" },
   ["672e00a6faabd666"] = { "ドリームウォーカーの肩鎧", "どりーむうぉーかーのかたよろい", "Dreamwalker Spaulders" },
   ["67311b5f84210197"] = { "ストラングルソーンの緑の丘陵：1ページ", "すとらんぐるそーんのみどりのきゅうりょういちぺーじ", "Green Hills of Stranglethorn - Page 1" },

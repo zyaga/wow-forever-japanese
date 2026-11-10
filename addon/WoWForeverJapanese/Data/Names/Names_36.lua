@@ -136,7 +136,7 @@ WFJ.Data.add("name", {
   ["369f04affa14277b"] = { "強打の一撃4", "きょうだのいちげきよん", "Smashing Blow IV" },
   ["369f906c68117f61"] = { "オンゲク", "おんげく", "Ongeku" },
   ["36a235e67f0694d3"] = { "エイドリアン・バートレット", "えいどりあん・ばーとれっと", "Adrian Bartlett" },
-  ["36a5ff22c8d77037"] = { "子サメ召喚", "こざめしょうかん", "Summon Baby Shark" },
+  ["36a5ff22c8d77037"] = { "サメの子の召喚", "さめのこのしょうかん", "Summon Baby Shark" },
   ["36a71e5cc2776742"] = { "くすんだ祈りの数珠玉3", "くすんだいのりのじゅずだまさん", "[DNT] Tarnished Prayer Bead III" },
   ["36a83bff9d8bab5b"] = { "ネズミ爆弾の罠", "ねずみばくだんのわな", "Rat Bomb Trap" },
   ["36aa5cbe0698f858"] = { "罠付きの宝箱", "わなつきのたからばこ", "Trapped Chest" },

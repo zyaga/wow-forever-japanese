@@ -104,7 +104,7 @@ WFJ.Data.add("name", {
   ["4568677ecddcbad6"] = { "型紙：紺碧の絹の外套", "かたがみこんぺきのきぬのがいとう", "Pattern: Azure Silk Cloak" },
   ["456880ebe753a142"] = { "宝物庫の番人", "ほうもつこのばんにん", "Vault Warder" },
   ["456a13107415b74e"] = { "スモルダーソーンの予言者", "すもるだーそーんのよげんしゃ", "Smolderthorn Seer" },
-  ["456bba6e492b9d5c"] = { "岩山の追跡者", "いわやまのついせきしゃ", "Crag Stalker" },
+  ["456bba6e492b9d5c"] = { "岩山のストーカー", "いわやまのすとーかー", "Crag Stalker" },
   ["456cef5b6b195a90"] = { "上位陸軍元帥の月光革の胸当て", "じょういりくぐんげんすいのげっこうがわのむねあて", "Premier Field Marshal's Lunarhide Breastplate" },
   ["456e805ac0c3a1e0"] = { "ズルクンダ", "ずるくんだ", "Zul'Kunda" },
   ["4570579622ef77b3"] = { "ペットを帰す", "ぺっとをかえす", "(DNT) Dismiss Pet" },

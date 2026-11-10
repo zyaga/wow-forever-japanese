@@ -124,7 +124,7 @@ WFJ.Data.add("name", {
   ["538d1bb62c0edb94"] = { "首席考古学者グレイウィスカー", "しゅせきこうこがくしゃぐれいうぃすかー", "Chief Archaeologist Greywhisker" },
   ["538e63c659148753"] = { "男爵の最後通牒", "だんしゃくのさいごつうちょう", "The Baron's Ultimatum" },
   ["538f6a606afc3456"] = { "ストラングルヴァインのワイン", "すとらんぐるゔぁいんのわいん", "Stranglevine Wine" },
-  ["538ff1741c8bc857"] = { "コボルドのトンネル掘り", "こぼるどのとんねるほり", "Kobold Tunneler" },
+  ["538ff1741c8bc857"] = { "コボルドのトンネラー", "こぼるどのとんねらー", "Kobold Tunneler" },
   ["53906a21dc14ebe0"] = { "マグマ・トーテムの石板3", "まぐま・とーてむのせきばんさん", "Tablet of Magma Totem III" },
   ["53913213f7fea740"] = { "ナッシュジョー召喚", "なっしゅじょーしょうかん", "Summon Gnashjaw" },
   ["5392b5c3d685de0b"] = { "ヴァーダンタインのオラクル", "ゔぁーだんたいんのおらくる", "Verdantine Oracle" },

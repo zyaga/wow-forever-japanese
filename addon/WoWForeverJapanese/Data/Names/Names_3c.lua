@@ -16,7 +16,7 @@ WFJ.Data.add("name", {
   ["3c0a6bf1bc97c983"] = { "色テスト", "いろてすと", "Color Test" },
   ["3c0bd1effe2d0083"] = { "ウィスプの衣装", "うぃすぷのいしょう", "Wisp Costume" },
   ["3c0c43ba85dbc092"] = { "軽やかなウィンドシーカーのシャツ", "かろやかなうぃんどしーかーのしゃつ", "Airy Windseeker's Shirt" },
-  ["3c0e441db99394b5"] = { "ヒッポグリフの女族長", "ひっぽぐりふのおんなぞくちょう", "Hippogryph Matriarch" },
+  ["3c0e441db99394b5"] = { "ヒポグリフの女族長", "ひぽぐりふのじょぞくちょう", "Hippogryph Matriarch" },
   ["3c11aabc3424c9e7"] = { "ズレイダス", "ずれいだす", "Zraedus" },
   ["3c14e95b3862ffc6"] = { "ホグラル・バッカン", "ほぐらる・ばっかん", "Hogral Bakkan" },
   ["3c18d048832d307d"] = { "設計図：衛兵の鎖の脚衣", "せっけいずえいへいのくさりのきゃくい", "Plans: Guard's Chain Leggings" },

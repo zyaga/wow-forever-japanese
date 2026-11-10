@@ -159,7 +159,7 @@ WFJ.Data.add("name", {
   ["8bacd6a75a46b446"] = { "忍び寄り", "しのびより", "Prowl" },
   ["8badc88f3503d1ad"] = { "砂嵐の杖", "すなあらしのつえ", "Sandstorm Staff" },
   ["8bae2fa7c0307c00"] = { "瞬間回復の詠唱押し戻し軽減", "しゅんかんかいふくのえいしょうおしもどしけいげん", "Flash Heal Cast Pushback Reduction" },
-  ["8bae97ed149c8ac1"] = { "錯乱したレパー", "さくらんしたれぱー", "Addled Leper" },
+  ["8bae97ed149c8ac1"] = { "錯乱したレプラ", "さくらんしたれぷら", "Addled Leper" },
   ["8bb02f323313b0ff"] = { "上位元帥のドレッドウィーヴの肩当て", "じょういげんすいのどれっどうぃーゔのかたあて", "Premier Marshal's Dreadweave Shoulders" },
   ["8bb39feca1bb97ce"] = { "負傷", "ふしょう", "Wounded" },
   ["8bb3c86b22a9d846"] = { "ウィッカーマン", "うぃっかーまん", "Wickerman" },

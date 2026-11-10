@@ -107,7 +107,7 @@ WFJ.Data.add("name", {
   ["488094837bbeb59a"] = { "戦利品の設置", "せんりひんのせっち", "Place Loot" },
   ["4880f161da0e41f9"] = { "ナイトベインの邪悪な牙", "ないとべいんのじゃあくなきば", "Nightbane Vile Fang" },
   ["4881190caa81826e"] = { "質素な手巻き", "しっそなてまき", "Plain Handwraps" },
-  ["4881aaf982bf85b0"] = { "万色の防護：炎", "まんしょくのぼうごほのお", "Chromatic Protection: Fire" },
+  ["4881aaf982bf85b0"] = { "万色の防護：炎", "ばんしょくのぼうごほのお", "Chromatic Protection: Fire" },
   ["48835e020a46e599"] = { "永遠の種", "えいえんのたね", "Seed of Eternity" },
   ["48837f2b0274f111"] = { "ティンバーモウ", "てぃんばーもう", "timbermaw" },
   ["48838143b57dee9c"] = { "ノーボーン", "のーぼーん", "Gnawbone" },

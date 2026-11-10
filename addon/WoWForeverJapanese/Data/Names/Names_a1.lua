@@ -153,7 +153,7 @@ WFJ.Data.add("name", {
   ["a1ba7baa8e061121"] = { "こびりついた鉱物", "こびりついたこうぶつ", "Encrusted Mineral" },
   ["a1bb113824a1aeea"] = { "通信：ネクロポリスから代理人へ", "つうしんねくろぽりすからだいりにんへ", "Communique, Necropolis-to-Proxies" },
   ["a1bb2b544411a08b"] = { "先任軍曹のドレッドウィーヴのブーツ", "せんにんぐんそうのどれっどうぃーゔのぶーつ", "First Sergeant's Dreadweave Boots" },
-  ["a1bf77bdb6020425"] = { "ハザリのスズメバチ", "はざりのすずめばち", "Hazzali Wasp" },
+  ["a1bf77bdb6020425"] = { "ハザリのワスプ", "はざりのわすぷ", "Hazzali Wasp" },
   ["a1bfefad34c6de4b"] = { "闇の水", "やみのみず", "Dark Water" },
   ["a1c1384af319a42a"] = { "ストームウィンドの鎧の標識", "すとーむうぃんどのよろいのひょうしき", "Stormwind Armor Marker" },
   ["a1c18bf8ed5353cd"] = { "紫の骸骨軍馬", "むらさきのがいこつぐんば", "Purple Skeletal Warhorse" },

@@ -28,7 +28,7 @@ WFJ.Data.add("name", {
   ["2f1e4f8563903731"] = { "冷気が宿りし精髄", "れいきがやどりしせいずい", "Imbued Essence of Frost" },
   ["2f1ea4f4b30c16c9"] = { "ハーネス：青い雄羊", "はーねすあおいおひつじ", "Harness: Blue Ram" },
   ["2f1f560201b420a5"] = { "歩哨地点の衛兵", "ほしょうちてんのえいへい", "Sentry Point Guard" },
-  ["2f1f7ff1e32b9007"] = { "ラプトルの卵", "らぷとるのたまご", "Raptor Egg" },
+  ["2f1f7ff1e32b9007"] = { "ラプターの卵", "らぷたーのたまご", "Raptor Egg" },
   ["2f20ab225cf3302c"] = { "悪臭のゾンビ", "あくしゅうのぞんび", "Fetid Zombie" },
   ["2f20eb4d184da635"] = { "技師の外套", "ぎしのがいとう", "Engineer's Cloak" },
   ["2f21ce2fa197c3b6"] = { "テレポート：紫の城塞", "てれぽーとむらさきのじょうさい", "Teleport to Violet Citadel" },

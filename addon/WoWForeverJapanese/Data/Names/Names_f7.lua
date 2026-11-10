@@ -184,7 +184,7 @@ WFJ.Data.add("name", {
   ["f7cd4313aa73f5b4"] = { "光る（緑）", "ひかるみどり", "Glowy (Green)" },
   ["f7ce50d260ac8a9c"] = { "チャンピオンの兜", "ちゃんぴおんのかぶと", "Champion's Helmet" },
   ["f7d0dec3fa1de661"] = { "15ポンドのロブスター", "じゅうごぽんどのろぶすたー", "15 Pound Lobster" },
-  ["f7d33f20d79748c9"] = { "森の追跡者の腕当て", "もりのついせきしゃのうであて", "Forest Stalker's Bracers" },
+  ["f7d33f20d79748c9"] = { "森のストーカーの腕当て", "もりのすとーかーのうであて", "Forest Stalker's Bracers" },
   ["f7d61c2ae2ee03fe"] = { "ファイアベルチャー", "ふぁいあべるちゃー", "Firebelcher" },
   ["f7d90536804dcd21"] = { "ダン・モローの宝の地図", "だん・もろーのたからのちず", "Dun Morogh Treasure Map" },
   ["f7d950a85ec344d9"] = { "古代の腱で包まれた薄板", "こだいのけんでつつまれたうすいた", "Ancient Sinew Wrapped Lamina" },
@@ -227,7 +227,7 @@ WFJ.Data.add("name", {
   ["f7f77f57c7d1eef1"] = { "秘密の書き付け", "ひみつのかきつけ", "Secret Note" },
   ["f7f8767d1c61a196"] = { "静電気の蓄積", "せいでんきのちくせき", "Static Buildup" },
   ["f7f8b2248c5faeb8"] = { "モンスター用：道具・小さなレンチ", "もんすたーようどうぐ・ちいさなれんち", "Monster - Tool, Wrench Small" },
-  ["f7febe5b71dcc2ad"] = { "茂みのラプトルの皮", "しげみのらぷとるのかわ", "Thicket Raptor Hide" },
+  ["f7febe5b71dcc2ad"] = { "茂みのラプターの皮", "しげみのらぷたーのかわ", "Thicket Raptor Hide" },
   ["f7ffe5e4850c5d66"] = { "クモの体液", "くものたいえき", "Spider Ichor" },
   ["f7ffed59a1a1a3e4"] = { "製法：武器エンチャント：強力な霊", "せいほうぶきえんちゃんときょうりょくなれい", "Formula: Enchant Weapon - Mighty Spirit" },
 })

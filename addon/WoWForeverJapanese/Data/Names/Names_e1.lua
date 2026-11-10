@@ -78,7 +78,7 @@ WFJ.Data.add("name", {
   ["e1543f76e851fcee"] = { "ダン・モローの山岳兵", "だん・もろーのさんがくへい", "Dun Morogh Mountaineer" },
   ["e1564d0f4a27e906"] = { "守護聖人のローブ", "しゅごせいじんのろーぶ", "Robes of the Guardian Saint" },
   ["e157c4391a3b1222"] = { "テレポート：最後の間", "てれぽーとさいごのま", "Teleport to Final Chamber" },
-  ["e1591aa441c40967"] = { "高位の女司祭ハイワトナ", "こういのおんなしさいはいわとな", "High Priestess Hai'watna" },
+  ["e1591aa441c40967"] = { "高位プリーステス・ハイワトナ", "こういぷりーすてす・はいわとな", "High Priestess Hai'watna" },
   ["e159d11af5d12439"] = { "ネザーの翼", "ねざーのつばさ", "nether wings" },
   ["e15a0818444c5d9c"] = { "奪われた物資：厚手の絹の包帯", "うばわれたぶっしあつでのきぬのほうたい", "Waylaid Supplies: Heavy Silk Bandages" },
   ["e15ab4ead236f5b1"] = { "ダイノデストロイヤーの適応の手首当て", "だいのですとろいやーのてきおうのてくびあて", "Dinodestroyer's Adaptive Wrists" },

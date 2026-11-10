@@ -83,7 +83,7 @@ WFJ.Data.add("name", {
   ["dc5f506346e960fa"] = { "長老の老婆", "ちょうろうのろうば", "Elder Crone" },
   ["dc5f9cc2670b0974"] = { "旧・エルウィンのマス", "きゅう・えるうぃんのます", "Deprecated Elwynn Trout" },
   ["dc610e5da394693c"] = { "コボルド追跡キット", "こぼるどついせききっと", "kobold tracking kit" },
-  ["dc62007ad5615b3e"] = { "追跡者の鎖帷子のベルト", "ついせきしゃのくさりかたびらのべると", "Stalker's Mail Belt" },
+  ["dc62007ad5615b3e"] = { "ストーカーの鎖帷子のベルト", "すとーかーのくさりかたびらのべると", "Stalker's Mail Belt" },
   ["dc657c68c6b0fe22"] = { "型紙：キメラの籠手", "かたがみきめらのこて", "Pattern: Chimeric Gloves" },
   ["dc677b48fde3ed48"] = { "通信タイマー・ネクロポリス", "つうしんたいまー・ねくろぽりす", "Communique Timer, Necropolis" },
   ["dc68d163ddbdf17b"] = { "影への脆弱性", "かげへのぜいじゃくせい", "Shadow Vulnerability" },

@@ -11,6 +11,7 @@ an old setting stops working). A release moves those lines under its version num
 
 ### Fixed
 - Word cards now cover words that were missing on about 60 quest, NPC and book lines, so pointing at any word in those lines shows its reading.
+- The word card for 大将軍 (warlord) now gives its reading as たいしょうぐん in the three quests that use it.
 - Clicking a challenge on the Legacy board, or an achievement in the Achievement window, no longer turns its title and description English. They stay Japanese when the entry opens or closes, and when its progress updates.
 
 ## 0.12.0 - 2026-11-08

@@ -130,7 +130,7 @@ WFJ.Data.add("name", {
   ["648b03a6fab6faff"] = { "フレイムショッカーの復讐", "ふれいむしょっかーのふくしゅう", "Flameshocker's Revenge" },
   ["648b1dbae58fe84f"] = { "シスルファーの復讐者", "しするふぁーのふくしゅうしゃ", "Thistlefur Avengers" },
   ["648c37878c764d3f"] = { "熟練のアイアンディープの衛兵", "じゅくれんのあいあんでぃーぷのえいへい", "Seasoned Irondeep Guard" },
-  ["648dd806e4e36b41"] = { "卵泥棒", "たまごどろぼう", "Egg Thief" },
+  ["648dd806e4e36b41"] = { "卵の盗賊", "たまごのとうぞく", "Egg Thief" },
   ["648f6a0e58f3527e"] = { "ハウルハイドのベスト", "はうるはいどのべすと", "Howlhide Vest" },
   ["648f6ec17940ae48"] = { "虐殺広場の門", "ぎゃくさつひろばのもん", "Slaughter Square Gate" },
   ["64924a0284f01361"] = { "ゴーゴノック", "ごーごのっく", "Gorgon'och" },

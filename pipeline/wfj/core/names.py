@@ -318,14 +318,15 @@ def checked_glossary(words: Iterable[Mapping[str, Any]]) -> dict[str, tuple[str,
 
 def misspelled(line: Mapping[str, Any], glossary: Mapping[str, tuple[str, str]]) -> list[tuple[str, str]]:
     """[(word, its Japanese)] for each checked word of a drafted name whose Japanese is in neither the name's
-    Japanese nor its reading. Hearthstone's own whole names and `free` names are held to nothing."""
+    Japanese nor its reading (its first sound may be voiced: クモ in 毒グモ). Hearthstone's own whole names
+    and `free` names are held to nothing."""
     if line["status"] != "trusted" or line["free"] or line["provenance"]["source"].startswith("hearthstone@"):
         return []
     have = hiragana(line["ja"]) + "\x00" + line["reading"]
     return [
         (w, glossary[w.casefold()][0])
         for w in words_of(line["en"])
-        if w.casefold() in glossary and glossary[w.casefold()][1] not in have
+        if w.casefold() in glossary and not any(f in have for f in _sound_forms(glossary[w.casefold()][1]))
     ]
 
 

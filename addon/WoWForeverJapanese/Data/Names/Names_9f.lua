@@ -74,7 +74,7 @@ WFJ.Data.add("name", {
   ["9f3f6258a2c9b002"] = { "商人の寵愛", "しょうにんのちょうあい", "Merchant's Favor" },
   ["9f402164613817f9"] = { "ジェゼル・プルーイット", "じぇぜる・ぷるーいっと", "Jezelle Pruitt" },
   ["9f40b2c494e3608a"] = { "伝説の秘術融合体（術者）", "でんせつのひじゅつゆうごうたいじゅつしゃ", "[PH] Legendary Arcane Amalgamation (Caster)" },
-  ["9f420c7f4e3dc05d"] = { "部族のラプトルの羽根", "ぶぞくのらぷとるのはね", "Tribal Raptor Feathers" },
+  ["9f420c7f4e3dc05d"] = { "部族のラプターの羽根", "ぶぞくのらぷたーのはね", "Tribal Raptor Feathers" },
   ["9f4594fd300e1417"] = { "型紙：スカーレットの狩人の頭巾", "かたがみすかーれっとのかりゅうどのずきん", "Pattern: Scarlet Huntsman's Coif" },
   ["9f46fd9f3309af58"] = { "総大将の右の鉤爪", "そうだいしょうのみぎのかぎづめ", "High Warlord's Right Claw" },
   ["9f4aeeb80e42c98a"] = { "マレムのペンダント", "まれむのぺんだんと", "Malem Pendant" },

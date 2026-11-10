@@ -208,7 +208,7 @@ WFJ.Data.add("name", {
   ["6ff42a80daaca7b3"] = { "老朽化したパイロンの護り手", "ろうきゅうかしたぱいろんのまもりて", "Decrepit Pylon Protector" },
   ["6ff65dbafdc45a1c"] = { "大元帥の力の書", "だいげんすいのちからのしょ", "Grand Marshal's Tome of Power" },
   ["6ff87889cfc6ee70"] = { "スカーレットの占い師の革帯", "すかーれっとのうらないしのかわおび", "Scarlet Augur's Strap" },
-  ["6ff9aeb0663937b9"] = { "ウィンターフーフの井戸", "うぃんたーふーふのいど", "Winterhoof Water Well" },
+  ["6ff9aeb0663937b9"] = { "ウィンターフーフの水の井戸", "うぃんたーふーふのみずのいど", "Winterhoof Water Well" },
   ["6ffadefd721c981a"] = { "取り憑く霊", "とりつくれい", "Haunting Spirit" },
   ["6ffaec5536f11b2e"] = { "魔織りの布60", "まおりのぬのろくじゅう", "mageweave cloth60" },
   ["6ffb2e02f496aab3"] = { "自己治癒", "じこちゆ", "Self Healing" },

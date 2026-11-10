@@ -104,7 +104,7 @@ WFJ.Data.add("name", {
   ["4c75706d65d233e1"] = { "呪文石", "じゅもんせき", "Spellstone" },
   ["4c793efede0d501c"] = { "シェンドレイの印章", "しぇんどれいのいんしょう", "Shen'dorei Signet" },
   ["4c7a27b3b3287b14"] = { "スコーピッド・デューンバロワー", "すこーぴっど・でゅーんばろわー", "Scorpid Duneburrower" },
-  ["4c7cf2610873df51"] = { "影の女司祭シャイ", "かげのじょしさいしゃい", "Shadow Priestess Shai" },
+  ["4c7cf2610873df51"] = { "影のプリーステス・シャイ", "かげのぷりーすてす・しゃい", "Shadow Priestess Shai" },
   ["4c7d26b7d9f13c56"] = { "土の塚の破裂", "つちのつかのはれつ", "Pop Dirt Mounds" },
   ["4c7d7db965a5dee7"] = { "ネズミ布のベルト", "ねずみぬののべると", "Rat Cloth Belt" },
   ["4c7fe77146539128"] = { "フェルスレイヤー", "ふぇるすれいやー", "Felslayer" },

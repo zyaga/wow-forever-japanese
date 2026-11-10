@@ -203,7 +203,7 @@ WFJ.Data.add("name", {
   ["33d657daa46b49e0"] = { "衝撃の射撃のクールダウン軽減", "しょうげきのしゃげきのくーるだうんけいげん", "Concussive Shot Cooldown Reduction" },
   ["33d89d82087f3ece"] = { "トワイライト・ハンマーの処刑人", "とわいらいと・はんまーのしょけいにん", "Twilight's Hammer Executioner" },
   ["33d9ad124a150602"] = { "石のノールのハンマー", "いしののーるのはんまー", "Stone Gnoll Hammer" },
-  ["33db442ff851f3c0"] = { "ゴーストウルフ", "ごーすとうるふ", "Ghost Wolf" },
+  ["33db442ff851f3c0"] = { "幽霊狼", "ゆうれいおおかみ", "Ghost Wolf" },
   ["33dc50f36cd63802"] = { "グリズリーのチュニック", "ぐりずりーのちゅにっく", "Grizzly Tunic" },
   ["33df1b99ff430e05"] = { "王家のサテュロスの切り裂き", "おうけのさてゅろすのきりさき", "Royal Satyr Slicer" },
   ["33dfb6f7fd7618eb"] = { "シェリ・ジップスティッチ", "しぇり・じっぷすてぃっち", "Sheri Zipstitch" },

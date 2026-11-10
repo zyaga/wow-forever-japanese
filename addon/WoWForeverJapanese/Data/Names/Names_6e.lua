@@ -16,7 +16,7 @@ WFJ.Data.add("name", {
   ["6e118e59a4950a16"] = { "忍び寄るカビ", "しのびよるかび", "Creeping Mold" },
   ["6e15ac7007a86738"] = { "大元帥", "だいげんすい", "Grand Marshal" },
   ["6e15c54aa36af94c"] = { "ソウルフォージの脚衣", "そうるふぉーじのきゃくい", "Soulforge Leggings" },
-  ["6e164ffade0474fe"] = { "風の構造体の核", "かぜのこうぞうたいのかく", "Air Construct Core" },
+  ["6e164ffade0474fe"] = { "風のコンストラクトの核", "かぜのこんすとらくとのかく", "Air Construct Core" },
   ["6e182f49318fbf0f"] = { "残忍な戦斧", "ざんにんなせんぷ", "Brutal War Axe" },
   ["6e193828ccde8782"] = { "エヴァ・サーコフの遺骸", "えゔぁ・さーこふのいがい", "Remains of Eva Sarkhoff" },
   ["6e19939343db6486"] = { "叩き切りの肉切り包丁", "たたききりのにくきりぼうちょう", "Hacking Cleaver" },

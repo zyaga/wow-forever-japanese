@@ -108,7 +108,7 @@ WFJ.Data.add("name", {
   ["e68459a8afc5e8ae"] = { "剃刀の刃", "かみそりのは", "Razor Blade" },
   ["e684aabed5961430"] = { "走り書きの手紙", "はしりがきのてがみ", "Scribbled Letter" },
   ["e6876a6facf89019"] = { "ジッグラト", "じっぐらと", "Ziggurats" },
-  ["e68d61d420c383fc"] = { "高地ラプトルの目", "こうちらぷとるのめ", "Highland Raptor Eyes" },
+  ["e68d61d420c383fc"] = { "高地のラプターの目", "こうちのらぷたーのめ", "Highland Raptor Eyes" },
   ["e68e196f10c47599"] = { "グラスウェブのクモ", "ぐらすうぇぶのくも", "Glassweb spider" },
   ["e68e4a0a7012db28"] = { "モシュアルの石板", "もしゅあるのせきばん", "Mosh'aru Tablets" },
   ["e68e4b54dbbe4442"] = { "修行僧の腕当て", "しゅぎょうそうのうであて", "Dervish Bracers" },
@@ -205,6 +205,6 @@ WFJ.Data.add("name", {
   ["e6f9846e12a214f0"] = { "ブラックソーンの文書", "ぶらっくそーんのぶんしょ", "Blackthorne Documents" },
   ["e6fba50dc2e75c01"] = { "レイジファイア", "れいじふぁいあ", "Ragefire" },
   ["e6fbd89ef21c75b6"] = { "アージェントの乗り手", "あーじぇんとののりて", "Argent Rider" },
-  ["e6fd3b15bd587deb"] = { "型紙：追跡者の鎖帷子の腕当て", "かたがみついせきしゃのくさりかたびらのうであて", "Pattern: Stalker's Mail Bracers" },
+  ["e6fd3b15bd587deb"] = { "型紙：ストーカーの鎖帷子の腕当て", "かたがみすとーかーのくさりかたびらのうであて", "Pattern: Stalker's Mail Bracers" },
   ["e6fdd01402147483"] = { "メネシル行きのボート", "めねしるゆきのぼーと", "Boat to Menethil" },
 })

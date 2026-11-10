@@ -67,7 +67,7 @@ WFJ.Data.add("name", {
   ["58529625ab0ef21e"] = { "アリスタージの首飾り", "ありすたーじのくびかざり", "Amulet of Allistarj" },
   ["5853b6d23ab86268"] = { "エメラルドの脚甲", "えめらるどのきゃっこう", "Emerald Legplates" },
   ["58544e0e317359aa"] = { "黒いドラゴンの卵", "くろいどらごんのたまご", "Black Dragon Egg" },
-  ["585555cf17e7c434"] = { "斑点のラプトルの鱗", "はんてんのらぷとるのうろこ", "Flecked Raptor Scale" },
+  ["585555cf17e7c434"] = { "斑点のラプターの鱗", "はんてんのらぷたーのうろこ", "Flecked Raptor Scale" },
   ["58560ceb1dc0ae13"] = { "ダメージの盾", "だめーじのたて", "Damage Shield" },
   ["585674e42af9db10"] = { "尽きぬ生命の外套", "つきぬせいめいのがいとう", "Cloak of Unending Life" },
   ["5856e2126e9b7339"] = { "無効効果：挑発", "むこうこうかちょうはつ", "Immune Effect: Taunt" },

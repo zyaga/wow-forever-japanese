@@ -214,7 +214,7 @@ WFJ.Data.add("name", {
   ["a8ea7c2efea89080"] = { "下級不可視探知の魔導書", "かきゅうふかしたんちのまどうしょ", "Grimoire of Detect Lesser Invisibility" },
   ["a8eb055e2ee36f24"] = { "対人戦ルーンの速度演出", "たいじんせんるーんのそくどえんしゅつ", "PvP Rune Speed Visual" },
   ["a8eb945eb307d539"] = { "血塗られた死", "ちぬられたし", "Bloody Death" },
-  ["a8eb9c0db4afcdc4"] = { "旧・ジャングルの追跡者の毛皮", "きゅうじゃんぐるのついせきしゃのけがわ", "Deprecated Jungle Stalker Pelt" },
+  ["a8eb9c0db4afcdc4"] = { "旧・ジャングルのストーカーの毛皮", "きゅうじゃんぐるのすとーかーのけがわ", "Deprecated Jungle Stalker Pelt" },
   ["a8eba809ca831f13"] = { "小集中の指輪", "しょうしゅうちゅうのゆびわ", "Minor Channeling Ring" },
   ["a8ebc04389b9bc82"] = { "霊の広間", "れいのひろま", "Hall of Spirits" },
   ["a8ec0e8b18694771"] = { "軽やかなスカイシーアのシャツ", "かろやかなすかいしーあのしゃつ", "Airy Skyseer's Shirt" },

@@ -186,7 +186,7 @@ WFJ.Data.add("name", {
   ["f6e76ee2fc2279e7"] = { "踏みとどまれ", "ふみとどまれ", "Make Your Stand" },
   ["f6e9f4ac3d3342e3"] = { "特大のインファーナル", "とくだいのいんふぁーなる", "Massive Infernal" },
   ["f6ea846782739d09"] = { "粗い重り石", "あらいおもりいし", "Coarse Weightstone" },
-  ["f6eb6d411200073b"] = { "変身・ナーガ", "へんしん・なーが", "Naga Form" },
+  ["f6eb6d411200073b"] = { "ナーガ形態", "なーがけいたい", "Naga Form" },
   ["f6ed3f9c6af5920a"] = { "サキュバス", "さきゅばす", "succubi" },
   ["f6ee11c27f09928f"] = { "装飾物：ダイア・モールの魔法の渦01", "そうしょくぶつだいあ・もーるのまほうのうずぜろいち", "Doodad_DiremaulMagicVortex01" },
   ["f6ee1f8007f18c6b"] = { "大将軍のカード", "だいしょうぐんのかーど", "warlords cards" },

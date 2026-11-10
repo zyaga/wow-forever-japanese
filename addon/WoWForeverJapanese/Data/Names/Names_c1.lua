@@ -36,7 +36,7 @@ WFJ.Data.add("name", {
   ["c130426dedcf55a9"] = { "使い古した釣り帽子", "つかいふるしたつりぼうし", "Worn Fishing Hat" },
   ["c13278ab5994d05f"] = { "カロンの布告", "かろんのふこく", "Kharon's Decree" },
   ["c13365c318d4b864"] = { "魔織り", "まおり", "Mageweave" },
-  ["c1369be9f504fd1b"] = { "レシピ：ラプトルのロースト", "れしぴらぷとるのろーすと", "Recipe: Roast Raptor" },
+  ["c1369be9f504fd1b"] = { "レシピ：ラプターのロースト", "れしぴらぷたーのろーすと", "Recipe: Roast Raptor" },
   ["c136da2d010168e1"] = { "上位の鎖帷子の兜", "じょういのくさりかたびらのかぶと", "Premier Linkmail Helm" },
   ["c138a6bef180bb88"] = { "アイテム：聖戦士の怒り発動：ライトフォージの鎧", "あいてむせいせんしのいかりはつどうらいとふぉーじのよろい", "Item - Crusader's Wrath Proc - Lightforge Armor" },
   ["c139be3136333b2e"] = { "ヴェイリック・サンダーヴェイン", "ゔぇいりっく・さんだーゔぇいん", "Veyric Thundervein" },

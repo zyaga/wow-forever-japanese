@@ -43,7 +43,7 @@ WFJ.Data.add("name", {
   ["fb2e1a1888ef3ba1"] = { "アルアケスの脚当て", "あるあけすのあしあて", "Al'Aketh Legguards" },
   ["fb2e7eff7c2f6d39"] = { "皮なめし革工房", "かわなめしかわこうぼう", "Tan-Your-Hide Leatherworks" },
   ["fb2f1d1e355eabac"] = { "ナール・ミストランナー", "なーる・みすとらんなー", "Naal Mistrunner" },
-  ["fb2fc71ee1d5d308"] = { "呪文ダメージ上昇23・敬虔", "じゅもんだめーじじょうしょうにじゅうさん・けいけん", "Increase Spell Dam 23 - Devout" },
+  ["fb2fc71ee1d5d308"] = { "呪文ダメージ増加23・敬虔な", "じゅもんだめーじぞうかにじゅうさん・けいけんな", "Increase Spell Dam 23 - Devout" },
   ["fb30a5c38dc6121b"] = { "将軍の鎖帷子の脚衣", "しょうぐんのくさりかたびらのきゃくい", "General's Mail Leggings" },
   ["fb30be62d61e8673"] = { "アイテム：スカーレット・エンクレイヴ・ドルイド・バランス4点ボーナス", "あいてむすかーれっと・えんくれいゔ・どるいど・ばらんすよんてんぼーなす", "S03 - Item - Scarlet Enclave - Druid - Balance 4P Bonus" },
   ["fb3256a091e722b9"] = { "レシピ", "れしぴ", "recipe" },

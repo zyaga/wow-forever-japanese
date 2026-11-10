@@ -241,7 +241,7 @@ WFJ.Data.add("name", {
   ["eddff7d33fbaa613"] = { "アーキモンドの呪いの魔導書", "あーきもんどののろいのまどうしょ", "Grimoire of Curse of Archimonde" },
   ["ede0cd291083c3bf"] = { "リヴァーポーの死", "りゔぁーぽーのし", "Riverpaw Death" },
   ["ede1588a5b0f738a"] = { "オービーの鱗", "おーびーのうろこ", "Awbee's scale" },
-  ["ede26c6d631b57ba"] = { "贖罪の手甲", "しょくざいのてこう", "Redemption Handguards" },
+  ["ede26c6d631b57ba"] = { "贖罪の手甲", "しょくざいのてっこう", "Redemption Handguards" },
   ["ede2c46a84b11b3a"] = { "コヨーテの毛皮", "こよーてのけがわ", "Coyote Pelt" },
   ["ede376729a330886"] = { "安物のブランダーバス", "やすもののぶらんだーばす", "Cheap Blunderbuss" },
   ["ede5853d130803e4"] = { "デスガードのクリストフ", "ですがーどのくりすとふ", "Deathguard Kristof" },

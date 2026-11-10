@@ -43,7 +43,7 @@ WFJ.Data.add("name", {
   ["2e26f6026994518a"] = { "ダイア熊の熟達", "だいあぐまのじゅくたつ", "Dire Bear Mastery" },
   ["2e2a9f6706b91fab"] = { "悪魔退治", "あくまたいじ", "Demon Slaying" },
   ["2e2c255e25a24f7e"] = { "ブライアーソーン", "ぶらいあーそーん", "Briarthorn" },
-  ["2e2e6ab8b7f77f02"] = { "乙女の美徳号の乗組員", "おとめのびとくごうのじょうくみいん", "Maiden's Virtue Crewman" },
+  ["2e2e6ab8b7f77f02"] = { "乙女の美徳号の乗組員", "おとめのびとくごうののりくみいん", "Maiden's Virtue Crewman" },
   ["2e317e8953aad4bc"] = { "ウルモート・ジングルポケット", "うるもーと・じんぐるぽけっと", "Wulmort Jinglepocket" },
   ["2e31b2ba2da5b537"] = { "ぼろぼろジョンの尽きぬ杯", "ぼろぼろじょんのつきぬさかずき", "Ragged John's Neverending Cup" },
   ["2e329699d0de9f4a"] = { "燃焼", "ねんしょう", "Combustion" },

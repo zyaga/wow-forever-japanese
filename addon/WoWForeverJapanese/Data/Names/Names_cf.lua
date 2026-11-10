@@ -206,7 +206,7 @@ WFJ.Data.add("name", {
   ["cfc6483e34e03431"] = { "疾風の尾根", "しっぷうのおね", "Windfury Ridge" },
   ["cfc9904c81881dc9"] = { "分厚い布の靴", "ぶあついぬののくつ", "Thick Cloth Shoes" },
   ["cfc9eecd69bbe574"] = { "正義の鉄靴", "せいぎのてっか", "Justice Sabatons" },
-  ["cfcaa0e72f7e95eb"] = { "女司祭カラヴァン", "おんなしさいからゔぁん", "Priestess Kara'van" },
+  ["cfcaa0e72f7e95eb"] = { "プリーステス・カラヴァン", "ぷりーすてす・からゔぁん", "Priestess Kara'van" },
   ["cfcb1c59cc20eca7"] = { "追跡者消滅", "ついせきしゃしょうめつ", "Despawn Tracker" },
   ["cfcb6e1aa8666314"] = { "エルーンへの瞑想", "えるーんへのめいそう", "Meditation on Elune" },
   ["cfccf4648e50bf7f"] = { "大鴉の丘", "おおがらすのおか", "Raven Hill" },
@@ -253,5 +253,5 @@ WFJ.Data.add("name", {
   ["cffca3b576c09e82"] = { "啓示", "けいじ", "Revelation" },
   ["cffca93f2497185c"] = { "竜鱗", "りゅうりん", "dragonscales" },
   ["cffd462365e15661"] = { "野戦用板金の腰帯", "やせんようばんきんのこしおび", "Field Plate Girdle" },
-  ["cfff981a0ee26a2b"] = { "ヒッポグリフのミューセクの器", "ひっぽぐりふのみゅーせくのうつわ", "Hippogryph Muisek Vessel" },
+  ["cfff981a0ee26a2b"] = { "ヒポグリフのミューセクの器", "ひぽぐりふのみゅーせくのうつわ", "Hippogryph Muisek Vessel" },
 })

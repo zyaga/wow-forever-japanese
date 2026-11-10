@@ -26,7 +26,7 @@ WFJ.Data.add("name", {
   ["e51dfcb3d2eeb81e"] = { "ウォーター・エレメンタル", "うぉーたー・えれめんたる", "Water Elemental" },
   ["e51e8e915bec9362"] = { "ディメトラドンの肉", "でぃめとらどんのにく", "Diemetradon Meat" },
   ["e51fbc129cd1060d"] = { "老いたティンバーリング", "おいたてぃんばーりんぐ", "Elder Timberling" },
-  ["e5206fa30c5adec4"] = { "ラプトルの終わり", "らぷとるのおわり", "Raptor's End" },
+  ["e5206fa30c5adec4"] = { "ラプターの終わり", "らぷたーのおわり", "Raptor's End" },
   ["e521cd7f81e3a56f"] = { "デファイラーの鎖帷子の肩当て", "でふぁいらーのくさりかたびらのかたあて", "Defiler's Mail Pauldrons" },
   ["e522538a208d95b3"] = { "上位の輝く胸当て", "じょういのかがやくむねあて", "Premier Luminous Breastplate" },
   ["e522964a67e50999"] = { "テスト用の錠前オブジェクト", "てすとようのじょうまえおぶじぇくと", "test lock object" },

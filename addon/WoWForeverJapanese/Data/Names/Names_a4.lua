@@ -13,7 +13,7 @@ WFJ.Data.add("name", {
   ["a4145d29af52bd56"] = { "セナリウスの斥候ジャリア", "せなりうすのせっこうじゃりあ", "Cenarion Scout Jalia" },
   ["a416674cfa073a09"] = { "ポータルの4", "ぽーたるのよん", "Four of Portals" },
   ["a416e7330165b232"] = { "小さな緑のロケット", "ちいさなみどりのろけっと", "Small Green Rocket" },
-  ["a418b052e1559b30"] = { "子竜", "こりゅう", "dragon whelp" },
+  ["a418b052e1559b30"] = { "ドラゴンの子", "どらごんのこ", "dragon whelp" },
   ["a41a9321175a6371"] = { "設計図：ダークルーンの籠手", "せっけいずだーくるーんのこて", "Plans: Darkrune Gauntlets" },
   ["a41b57a854e1791d"] = { "氷原", "ひょうげん", "Ice Field" },
   ["a41d7028bc10ea57"] = { "狂ったエンシェント", "くるったえんしぇんと", "Crazed Ancient" },

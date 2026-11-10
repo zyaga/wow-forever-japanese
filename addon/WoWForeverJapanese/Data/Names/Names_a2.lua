@@ -86,7 +86,7 @@ WFJ.Data.add("name", {
   ["a2598133e6cc74fc"] = { "ダークアイアンの脚衣", "だーくあいあんのきゃくい", "Dark Iron Leggings" },
   ["a25cb5d27b8d409d"] = { "砕けた世界の記憶", "くだけたせかいのきおく", "Memory of a Shattered World" },
   ["a26132076cd0f321"] = { "フェーズアウト", "ふぇーずあうと", "Phase Out" },
-  ["a2615590949ed1c1"] = { "炎のノヴァ・トーテム3", "ほのおのゔぁ・とーてむさん", "Fire Nova Totem III" },
+  ["a2615590949ed1c1"] = { "炎のノヴァ・トーテム3", "ほのおののゔぁ・とーてむさん", "Fire Nova Totem III" },
   ["a26344557cfef491"] = { "老グリズルガット", "ろうぐりずるがっと", "Old Grizzlegut" },
   ["a26357366171e225"] = { "長い杖", "ながいつえ", "Long Staff" },
   ["a264d0dc4df003bf"] = { "本質の人造物", "ほんしつのじんぞうぶつ", "essential artificial" },

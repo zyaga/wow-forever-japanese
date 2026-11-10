@@ -148,7 +148,7 @@ WFJ.Data.add("name", {
   ["3acbf013bfe56fc7"] = { "緩い鎖の外套", "ゆるいくさりのがいとう", "Loose Chain Cloak" },
   ["3acec7ecd196ba1f"] = { "メイジの塔", "めいじのとう", "Mage Tower" },
   ["3acfcadf731de0d2"] = { "ゾラム", "ぞらむ", "Zoram" },
-  ["3ad023f9b0b7c9c1"] = { "ラプトルの羽根", "らぷとるのはね", "Raptor Feather" },
+  ["3ad023f9b0b7c9c1"] = { "ラプターの羽根", "らぷたーのはね", "Raptor Feather" },
   ["3ad0e608781b21e6"] = { "ウジ目の前足", "うじめのまえあし", "Maggot Eye's Paw" },
   ["3ad2478975c75aa2"] = { "包み込むクモの巣", "つつみこむくものす", "Encasing Webs" },
   ["3ad7d4697cff0200"] = { "森歩き", "もりあるき", "Foreststrider" },

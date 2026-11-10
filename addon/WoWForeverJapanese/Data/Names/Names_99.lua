@@ -168,7 +168,7 @@ WFJ.Data.add("name", {
   ["9998f52a2e52f74e"] = { "製法：オフハンドエンチャント：知恵", "せいほうおふはんどえんちゃんとちえ", "Formula: Enchant Off Hand - Wisdom" },
   ["99999e9f4461305f"] = { "素手の木こり", "すでのきこり", "Unarmed Woodcutter" },
   ["999a234f126d6fb5"] = { "設計図：戦利品ブーメラン", "せっけいずせんりひんぶーめらん", "Schematic: Loot-A-Rang" },
-  ["999a69ad52306f5e"] = { "夢に触れた竜鱗", "ゆめにふれたりゅううろこ", "Dream-Touched Dragonscale" },
+  ["999a69ad52306f5e"] = { "夢に触れた竜鱗", "ゆめにふれたりゅうりん", "Dream-Touched Dragonscale" },
   ["999b8f2796c86c32"] = { "旧・チェンのストームスタウトの樽", "きゅう・ちぇんのすとーむすたうとのたる", "Deprecated Keg of Chen's Stormstout" },
   ["999c10b96b8daca0"] = { "黒いドレイクの心臓", "くろいどれいくのしんぞう", "Black Drake's Heart" },
   ["999cecdc52a4d7c5"] = { "温度測定", "おんどそくてい", "Temperature Reading" },

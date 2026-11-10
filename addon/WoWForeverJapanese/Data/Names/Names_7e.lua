@@ -179,7 +179,7 @@ WFJ.Data.add("name", {
   ["7ece2440d892f047"] = { "巨大な爆弾", "きょだいなばくだん", "Huge Bomb" },
   ["7ece3255ef028d1f"] = { "ホワイトウィスカーの監督官", "ほわいとうぃすかーのかんとくかん", "Whitewhisker Overseer" },
   ["7ecf953929a953a2"] = { "テスト用グーバーの松明01", "てすとようぐーばーのたいまつぜろいち", "Test Goober Torch01" },
-  ["7ed13745d2d8741a"] = { "エンチャント用品", "えんちゃんとようひん", "enchanting supplies" },
+  ["7ed13745d2d8741a"] = { "エンチャント用の物資", "えんちゃんとようのぶっし", "enchanting supplies" },
   ["7ed3d710280fbde3"] = { "酒場の扉", "さかばのとびら", "Bar Door" },
   ["7ed8a5070b992bb5"] = { "高潔な手", "こうけつなて", "Virtuous Hands" },
   ["7ed97dea9e2196c2"] = { "フォーセイクンの技能：両手鎚矛", "ふぉーせいくんのぎのうりょうてつちほこ", "Forsaken Skill: 2H Maces" },

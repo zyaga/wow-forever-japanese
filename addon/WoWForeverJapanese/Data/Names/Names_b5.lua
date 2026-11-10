@@ -152,7 +152,7 @@ WFJ.Data.add("name", {
   ["b5a3561a30cdddea"] = { "黒曜石のショットガン", "こくようせきのしょっとがん", "Obsidian Shotgun" },
   ["b5a35d382c2a569d"] = { "委任：ヒンターランド任務17", "いにんひんたーらんどにんむじゅうなな", "Deputize: Hinterlands Mission XVII" },
   ["b5a4fc0dff2bfe5f"] = { "キラジの皇帝", "きらじのこうてい", "[UNUSED] Qiraji Imperator" },
-  ["b5a53a3be19b6767"] = { "腐りかけの果樹園", "くさりかけのかじゅえん", "Rotting Orchard" },
+  ["b5a53a3be19b6767"] = { "腐りかけた果樹園", "くさりかけたかじゅえん", "Rotting Orchard" },
   ["b5a5b4135c96a519"] = { "淡水スナッパーの餌", "たんすいすなっぱーのえさ", "Freshwater Snapper Bait" },
   ["b5a5cc03c1452c12"] = { "エドナ・マルビー", "えどな・まるびー", "Edna Mullby" },
   ["b5a5d6370929829a"] = { "搾りたてのレモネード", "しぼりたてのれもねーど", "Freshly-Squeezed Lemonade" },

@@ -26,7 +26,7 @@ WFJ.Data.add("name", {
   ["3b1a8655e0adfa29"] = { "大枝の影", "おおえだのかげ", "Bough Shadow" },
   ["3b1b809cbac8f363"] = { "荒野のエース", "こうやのえーす", "Ace of Wilds" },
   ["3b1bf3ba0c841241"] = { "緑のキラジ戦車", "みどりのきらじせんしゃ", "Green Qiraji Battle Tank" },
-  ["3b1c0992bbdc7000"] = { "打ち上げられたウミガメ", "うちあげられたうみがめ", "Beached Sea Turtle" },
+  ["3b1c0992bbdc7000"] = { "打ち上げられた海亀", "うちあげられたうみがめ", "Beached Sea Turtle" },
   ["3b1d2aeedd0216fb"] = { "テレポート：ブラックファゾム深淵のローガス・ジェット", "てれぽーとぶらっくふぁぞむしんえんのろーがす・じぇっと", "[DNT] Teleport to Lorgus Jett in Blackfathom Deeps" },
   ["3b1f6cc8f59f5eeb"] = { "祝祭の緑のドレス", "しゅくさいのみどりのどれす", "Festive Green Dress" },
   ["3b2099ab05e77cd0"] = { "校長の突撃", "こうちょうのとつげき", "Headmaster's Charge" },

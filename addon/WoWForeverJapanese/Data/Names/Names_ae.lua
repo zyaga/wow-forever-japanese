@@ -185,7 +185,7 @@ WFJ.Data.add("name", {
   ["aed0d3a19c897757"] = { "タラ・セニシル", "たら・せにしる", "Tara Thenysil" },
   ["aed1c7dc8f10608b"] = { "静穏の岸辺", "せいおんのきしべ", "Serenity's Shore" },
   ["aed1cc45ef621ec9"] = { "ピースキーパーの鎖帷子", "ぴーすきーぱーのくさりかたびら", "Peacekeeper's Mail" },
-  ["aed4fbf1753d410c"] = { "紫のラプトルの笛", "むらさきのらぷとるのふえ", "Whistle of the Violet Raptor" },
+  ["aed4fbf1753d410c"] = { "紫のラプターの笛", "むらさきのらぷたーのふえ", "Whistle of the Violet Raptor" },
   ["aeda37c57e39c75b"] = { "お守り（テスト）", "おまもりてすと", "Charm (TEST)" },
   ["aedc66d8e5c15fb7"] = { "光輝の脚衣", "こうきのきゃくい", "Radiant Leggings" },
   ["aede248e6595dff8"] = { "ズルダザールの目", "ずるだざーるのめ", "The Eye of Zuldazar" },

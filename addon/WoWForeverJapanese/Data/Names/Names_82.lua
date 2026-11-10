@@ -147,7 +147,7 @@ WFJ.Data.add("name", {
   ["828dbf81b1212fa4"] = { "ホードの塔エイチ2・旗掲揚前・大型", "ほーどのとうえいちに・はたけいようまえ・おおがた", "[PH] Horde H2 Tower Pre-Banner BIG" },
   ["828fb54ca19b9995"] = { "サラ・グッド", "さら・ぐっど", "Sarah Goode" },
   ["829134770e1485fa"] = { "ダーゲン・ダージハンマーの頭", "だーげん・だーじはんまーのあたま", "Head of Durgen Dirgehammer" },
-  ["8292f01c84d31be8"] = { "ラプトルのトレーナー", "らぷとるのとれーなー", "[PH] Raptor Trainer" },
+  ["8292f01c84d31be8"] = { "ラプターのトレーナー", "らぷたーのとれーなー", "[PH] Raptor Trainer" },
   ["8293b31d0da4e7c4"] = { "騎馬斥候の弓", "きばせっこうのゆみ", "Outrider's Bow" },
   ["8294e8b4a686cbf5"] = { "旗追跡クエスト：パラディン50クエスト：フェルウッドのエオナスと会話済み", "はたついせきくえすとぱらでぃんごじゅうくえすとふぇるうっどのえおなすとかいわずみ", "S03 - Flag Tracking Quest - Paladin 50 Quest - Spoken to Aeonas in Felwood (DNT" },
   ["82959d0791e9b16b"] = { "宿屋の主人セリエンヌ", "やどやのしゅじんせりえんぬ", "Innkeeper Saelienne" },

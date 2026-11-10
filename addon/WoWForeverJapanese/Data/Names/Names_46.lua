@@ -96,7 +96,7 @@ WFJ.Data.add("name", {
   ["466eb16628c5acfc"] = { "ナイトスケープのブーツ", "ないとすけーぷのぶーつ", "Nightscape Boots" },
   ["466f7329399d21c9"] = { "キュービック・ジルコニアの指輪", "きゅーびっく・じるこにあのゆびわ", "Cubic Zirconia Ring" },
   ["466ff2963cf618be"] = { "ダークアイアンの地質学者たち", "だーくあいあんのちしつがくしゃたち", "Dark Iron Geologists" },
-  ["466ff2cb9077f3e1"] = { "腐りかけのコンドル", "くさりかけのこんどる", "Rotting Condor" },
+  ["466ff2cb9077f3e1"] = { "腐りかけたコンドル", "くさりかけたこんどる", "Rotting Condor" },
   ["4670c0c9bcb0468c"] = { "氷の鎖", "こおりのくさり", "Chains of Ice" },
   ["46711af818375665"] = { "動物の血の小瓶", "どうぶつのちのこびん", "Vial of Animal Blood" },
   ["4673543084afb762"] = { "腕当て彫刻：絶望", "うであてちょうこくぜつぼう", "Engrave Bracers - Despair" },

@@ -23,7 +23,7 @@ WFJ.Data.add("name", {
   ["4b1070116f4eaa5c"] = { "メイルストロム準備完了！", "めいるすとろむじゅんびかんりょう", "Maelstrom Ready!" },
   ["4b112a4dc7e026c0"] = { "テレストリス", "てれすとりす", "Terrestris" },
   ["4b129da0738af6ff"] = { "再加圧", "さいかあつ", "Repressurization" },
-  ["4b1376bdeecf41a1"] = { "高位女司祭からの命令書", "こういじょしさいからのめいれいしょ", "Orders from the High Priestess" },
+  ["4b1376bdeecf41a1"] = { "高位プリーステスからの命令書", "こういぷりーすてすからのめいれいしょ", "Orders from the High Priestess" },
   ["4b14a49ed0140e2a"] = { "核の革", "かくのかわ", "Core Leather" },
   ["4b17938347abb59c"] = { "簡素な湿布", "かんそなしっぷ", "Simple Poultice" },
   ["4b1996ee9d448bb6"] = { "ドラゴンドッグの息吹選択（左1）", "どらごんどっぐのいぶきせんたくひだりいち", "Dragondog Breath Selection (L1)" },

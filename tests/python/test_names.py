@@ -326,3 +326,10 @@ def test_a_kanji_word_reads_as_the_quest_text_reads_it():
     assert names.kanji_word_problem("大杖", "つえ", known) is None
     assert names.kanji_word_problem("ライ麦酒", "らいむぎしゅ", known) is None  # ライ麦 + 酒, not 麦酒
     assert "手甲" in names.kanji_word_problem("勇猛の手甲", "ゆうもうのてこう", known)
+
+
+def test_a_checked_word_may_take_a_voiced_first_sound():
+    glossary = names.checked_glossary([{"en": "Spider", "ja": "クモ", "check": True}])
+    assert names.misspelled(trusted("Venom Spider", "毒グモ", "どくぐも"), glossary) == []
+    assert names.misspelled(trusted("Venom Spider", "毒蜘蛛", "どくぐも"), glossary) == []
+    assert names.misspelled(trusted("Venom Spider", "毒蛇", "どくへび"), glossary) == [("Spider", "クモ")]

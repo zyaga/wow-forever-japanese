@@ -61,7 +61,7 @@ WFJ.Data.add("name", {
   ["6112c2696152d052"] = { "強力な兜", "きょうりょくなかぶと", "Mighty Helmet" },
   ["611586ad88d819b3"] = { "キルログの目の魔導書", "きるろぐのめのまどうしょ", "Grimoire of Eye of Kilrogg" },
   ["61186f358516e2dd"] = { "ウィンドフィールド果樹園", "うぃんどふぃーるどかじゅえん", "Windfield Orchard" },
-  ["6118eb2e6127ebcf"] = { "ブラッドフェザーの女族長", "ぶらっどふぇざーのおんなぞくちょう", "Bloodfeather Matriarch" },
+  ["6118eb2e6127ebcf"] = { "ブラッドフェザーの女族長", "ぶらっどふぇざーのじょぞくちょう", "Bloodfeather Matriarch" },
   ["611a03e9215e2380"] = { "闇の修復", "やみのしゅうふく", "Dark Mending" },
   ["611aeeff65c235b9"] = { "兵士の肩当て", "へいしのかたあて", "Grunt's Pauldrons" },
   ["611c3ab8a90b054e"] = { "フェリシア・マリーン", "ふぇりしあ・まりーん", "Felicia Maline" },

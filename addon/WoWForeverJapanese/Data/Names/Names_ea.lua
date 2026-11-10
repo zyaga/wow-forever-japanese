@@ -75,7 +75,7 @@ WFJ.Data.add("name", {
   ["ea40942fb21b4623"] = { "設計図：ジャスティサーの肩当て", "せっけいずじゃすてぃさーのかたあて", "Plans: Justicar's Pauldrons" },
   ["ea42521c7b683309"] = { "生成されたライ麦", "せいせいされたらいむぎ", "Conjured Rye" },
   ["ea431166da89ea4a"] = { "耕作", "こうさく", "Tilling" },
-  ["ea4468ba99e64685"] = { "ディープモスの女族長", "でぃーぷもすのおんなぞくちょう", "Deepmoss Matriarch" },
+  ["ea4468ba99e64685"] = { "ディープモスの女族長", "でぃーぷもすのじょぞくちょう", "Deepmoss Matriarch" },
   ["ea449c6b14c39cf8"] = { "負傷射撃5", "ふしょうしゃげきご", "Wounding Shot V" },
   ["ea44bda9b00b0dac"] = { "ヒロイック・ストライク", "ひろいっく・すとらいく", "Heroic Strike" },
   ["ea46ba9623603d15"] = { "マスターの外套", "ますたーのがいとう", "Master's Cloak" },

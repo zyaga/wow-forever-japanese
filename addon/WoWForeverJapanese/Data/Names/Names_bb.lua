@@ -178,7 +178,7 @@ WFJ.Data.add("name", {
   ["bbbea910b3942000"] = { "みすぼらしいシルバーメイン", "みすぼらしいしるばーめいん", "Mangy Silvermane" },
   ["bbbef4e4a9206d50"] = { "ナイトスレイヤーのブレスレット", "ないとすれいやーのぶれすれっと", "Nightslayer Bracelets" },
   ["bbc0360933de5c60"] = { "キラジのジョー・レル副官", "きらじのじょー・れるふくかん", "Qiraji Lieutenant Jo-rel" },
-  ["bbc06acbf53d57db"] = { "血の王のラプトル召喚", "ちのおうのらぷとるしょうかん", "Summon Bloodlord's Raptor" },
+  ["bbc06acbf53d57db"] = { "血の王のラプター召喚", "ちのおうのらぷたーしょうかん", "Summon Bloodlord's Raptor" },
   ["bbc353c43260a19f"] = { "ズルグラブの護符の作成", "ずるぐらぶのごふのさくせい", "Create Zul'Gurub Talisman WLK R4 DND" },
   ["bbc4b39cd9ac48a1"] = { "アイテム：ティア2・パラディン・防護6点ボーナス", "あいてむてぃあに・ぱらでぃん・ぼうごろくてんぼーなす", "S03 - Item - T2 - Paladin - Protection 6P Bonus" },
   ["bbc4c1e405802932"] = { "首長マーガット", "しゅちょうまーがっと", "Chief Murgut" },
