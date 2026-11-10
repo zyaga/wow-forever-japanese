@@ -43,6 +43,9 @@ ENGLISH_NAMES = {"item": "item", "spell": "spell", "unit": "unit"}
 _BATCH_RE = re.compile(r"^[0-9A-Za-z._-]{4,64}$")
 _JA_SPLIT = re.compile(r"[・　 ]+")
 _KATAKANA = re.compile(r"^[ァ-ヺー・]+$")
+_JA_EDGE = "！？!?。、「」『』（）()…"
+# a part that is a phrase or holds markup rather than a word's Japanese
+_JA_ODD = re.compile(r"[\x00-\x7f！？。、「」『』（）：]")
 
 
 def english_names(root: Path) -> dict[str, dict[str, set[int]]]:
@@ -108,11 +111,11 @@ def hearthstone_words(pairs: Sequence[tuple[str, str]]) -> tuple[dict[str, Count
     forms: dict[str, Counter[str]] = defaultdict(Counter)
     for en, ja in pairs:
         ws = [w for w in names.words_of(en) if not names.stopword(w)]
-        parts = [p for p in _JA_SPLIT.split(ja) if p]
+        parts = [p.strip(_JA_EDGE) for p in _JA_SPLIT.split(ja) if p.strip(_JA_EDGE)]
         if len(ws) != len(parts) or len(ws) < 1:
             continue
         for w, p in zip(ws, parts):
-            if w[:1].isupper() and not names._ASCII_LETTER.search(p):
+            if w[:1].isupper() and not _JA_ODD.search(p):
                 forms[w][p] += 1
     conflicts = [
         f"{w}: {', '.join(f'{p} ×{n}' for p, n in c.most_common())}" for w, c in sorted(forms.items())
@@ -121,7 +124,19 @@ def hearthstone_words(pairs: Sequence[tuple[str, str]]) -> tuple[dict[str, Count
     return forms, conflicts
 
 
+def common_words(root: Path) -> set[str]:
+    """Every word the game's English prose writes in lower case: an ordinary English word, not a name, so the
+    glossary does not hold its spelling to every name ("Green", "Deep")."""
+    english = Store(root, english=True)
+    out: set[str] = set()
+    for type_ in ("quest", "gossip", "book"):
+        for ln in english.load(type_):
+            out.update(re.findall(r"\b[a-z][a-z']+\b", ln["en"]))
+    return out
+
+
 def apply_hearthstone(root: Path, pairs: Sequence[tuple[str, str]], build: str, today: str) -> dict[str, int]:
+    common = common_words(root)
     prov = {"class": "human", "source": f"hearthstone@{build}", "imported": today}
     whole: dict[str, Counter[str]] = defaultdict(Counter)
     for en, ja in pairs:
@@ -145,7 +160,9 @@ def apply_hearthstone(root: Path, pairs: Sequence[tuple[str, str]], build: str, 
             continue
         ja, n = c.most_common(1)[0]
         steady = n >= 2 and n / sum(c.values()) >= 0.8
-        words[w] = {"en": w, "ja": ja, "check": bool(steady and _KATAKANA.match(ja)), "provenance": dict(prov)}
+        proper = w.lower() not in common
+        words[w] = {"en": w, "ja": ja, "check": bool(steady and proper and _KATAKANA.match(ja)),
+                    "provenance": dict(prov)}
         added += 1
     save_words(root, words.values())
     for line in conflicts:
