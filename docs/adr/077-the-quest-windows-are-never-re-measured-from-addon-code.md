@@ -28,7 +28,7 @@ From there the client's own code would carry it:
 
 - Calling a Blizzard frame's method that fires its scripts runs Blizzard's code under this addon's taint, the same way calling `QuestMapFrame_OpenToQuestDetails` did ([client limits](../architecture/client-limits.md)). The fields those scripts write keep the taint for the next pass that reads them, which can be minutes later and in combat.
 - Removing the call removes the one place this addon runs the quest map's scroll code itself, and the first write in the inferred chain; everything after it in the log is the client's own code. Nothing on the tracker, the quest list or the menus changes [likely: confirmed by the in-game pass below].
-- The book window and the tutorial popup keep their call: each sizes its own scroll child from the range in the same step (the book window's `SetHeight(range + 30)`, the client's own pattern; the tutorial's fixed 1×1 child), and neither scroll frame feeds the quest map, the tracker or a protected call.
+- The book window and the tutorial popup keep their call: each sizes its own scroll child from the range in the same step (the book window's `SetHeight(range + 30)`, the client's own pattern; the tutorial's fixed 1×1 child), and neither scroll frame feeds the quest map or the tracker. The book window's own pass can still run tainted after a refit whose range comes out unchanged (its `ScrollToBegin`, `itemtextframe.lua:134`); nothing protected is known on that pass, and the taint watch would show it.
 
 ## Consequences
 
@@ -36,6 +36,7 @@ From there the client's own code would carry it:
 - **In-game pass:** after a reload, open a quest's details in the quest log out of combat, then play on; the taint watch (`/wfj taint` or the next block scan) shows `QuestMapFrame.DetailsFrame.ScrollFrame.ScrollBar.scrollPercentage`, `.visibleExtentPercentage`, `.panExtentPercentage`, `RewardsFrameContainer.isFixedHeight` and `QuestScrollFrame.Contents.poiSelectedButton` clean, no `write` entry for `ObjectiveTrackerFrame.topModulePadding`, `WorldMapFrame.mapID` or `QuestMapFrame.DetailsFrame.questID`, and no `SetPassThroughButtons` or `QuestLogPushQuest` block in combat. If any of them turns tainted again, one of the open explanations below holds.
 - Holding the reveal key over a long quest text changes its length; the scroll range follows on the client's next layout pass instead of at once [likely: the client's own quest window relies on the same upkeep for English; a long Japanese quest text scrolling to its end in game confirms it].
 - A session that already ran tainted stays tainted until a reload: the fix stops new taint, it does not clean old.
+- The block-time taint scan walks the quest popup's and the quest window's scroll frames too (`UI/TaintWatch` `SCAN_ROOTS`): their scroll bars were reached before only through the lookups this change removed.
 - The taint watch keeps the writer checks that traced this (`QuestMapFrame.DetailsFrame.questID`, `WorldMapFrame.mapID`, `ObjectiveTrackerFrame.topModulePadding`, the clicked tracker block). A normal solo session shows any of them turning tainted again, with no group needed.
 
 ## Open explanations

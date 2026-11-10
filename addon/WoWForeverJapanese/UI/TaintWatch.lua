@@ -43,6 +43,12 @@ TaintWatch.SCAN_ROOTS = { "StanceBar", "PetActionBar", "MainActionBar", "MultiBa
 -- mainline/containerframe.lua:1845-1847) before it uses the item, so a tainted button field makes the use a forbidden
 -- call
 for i = 1, 13 do TaintWatch.SCAN_ROOTS[#TaintWatch.SCAN_ROOTS + 1] = "ContainerFrame" .. i end
+-- the quest popup's and the quest window's scroll frames: a tainted scroll bar field there is read by the client's next
+-- ScrollToBegin on that window (ADR-077); the details pane's is reached through QuestMapFrame
+for _, name in ipairs({ "QuestLogPopupDetailFrameScrollFrame", "QuestDetailScrollFrame", "QuestProgressScrollFrame",
+  "QuestRewardScrollFrame", "QuestGreetingScrollFrame" }) do
+  TaintWatch.SCAN_ROOTS[#TaintWatch.SCAN_ROOTS + 1] = name
+end
 TaintWatch.COMPAT_DEPTH = 1 -- the frames the addon's declarations resolved to: their own fields and one level down
 -- roots walked deeper than SCAN_DEPTH: a tracker quest block is ObjectiveTrackerFrame.modules[i].usedBlocks[t][id], and
 -- clicking its title opens the quest log through the block's fields (blizzard_questobjectivetracker.lua:60-68); the
