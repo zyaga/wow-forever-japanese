@@ -25,7 +25,8 @@ Options.inCombat = false -- set by Main's PLAYER_REGEN_* (the lockdown query may
 Options.PAGES = {
   { id = "main", title = "page.main", tagline = true, sections = {
     { rows = { "mainWelcome" } }, -- the way back to the welcome window's question
-    { title = "section.translation", columns = 2, rows = { "enabled", "minimapButton" } },
+    { title = "section.translation", columns = 2, rows = { "enabled", "minimapButton" }, gap = 4 },
+    { rows = { "direction" } }, -- which language shows first: its dropdown takes the row
     { title = "section.keys", rows = { "modifier", "toggleKey" } },
     { title = "section.areas", columns = 3,
       rows = { "area.quests", "area.gossip", "area.books", "area.itemTooltips", "area.spellTooltips",
@@ -753,7 +754,7 @@ function Options.setCombat(flag)
   refreshIfVisible()
 end
 
--- "modifier": the pages read in one language, and holding the reveal key re-labels them in English
-for _, event in ipairs({ "enabled", "area", "markers", "readings", "revealKey", "modifier" }) do
+-- "language": the pages read in one language, and re-label when it flips (the reveal key, or the direction)
+for _, event in ipairs({ "enabled", "area", "markers", "readings", "revealKey", "language" }) do
   WFJ.State.on(event, refreshIfVisible)
 end

@@ -144,7 +144,7 @@ end
 ChatSystem.on = on
 
 local function wanted(area)
-  return on(area) and not WFJ.Modifier.isDown()
+  return on(area) and not WFJ.Modifier.english()
 end
 ChatSystem.wanted = wanted
 
@@ -585,4 +585,4 @@ end
 
 WFJ.State.on("enabled", ChatSystem.refresh)
 WFJ.State.on("area", ChatSystem.refresh)
-WFJ.State.on("modifier", ChatSystem.refresh)
+WFJ.State.on("language", ChatSystem.refresh)

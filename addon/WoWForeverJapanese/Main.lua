@@ -303,7 +303,7 @@ function WFJ.OnLoad()
     lookup = WFJ.Lookup.get,
     hash = WFJ.Hash.key,
     setting = WFJ.Settings.get,
-    revealed = WFJ.Modifier.isDown,
+    revealed = WFJ.Modifier.english,
     enabled = function() return WFJ.State.enabled end,
     heard = function() -- the lines already heard, for the first time only settings (keys and hashes, never text)
       if type(WFJ_DB) ~= "table" then return nil end
@@ -320,7 +320,7 @@ function WFJ.OnLoad()
   step("render", function() WFJ.Render.init(WFJ.Translator.new({
     enabled = function() return WFJ.State.enabled end,
     areaEnabled = WFJ.State.areaEnabled,
-    modifierHeld = WFJ.Modifier.isDown,
+    showsEnglish = WFJ.Modifier.english,
     lookup = WFJ.Lookup.get,
     marker = function(name) return WFJ.Settings.get("marker." .. name) end,
     -- the runtime gate for unaligned entries (ADR-007). The duration renderer is UIStrings',

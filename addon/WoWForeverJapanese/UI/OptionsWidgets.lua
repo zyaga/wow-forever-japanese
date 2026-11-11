@@ -20,12 +20,12 @@ W.ROW = 30 -- a label row (one language)
 
 -- The addon's own copy reads in ONE language: Japanese, or English while the reveal key is held or translation is
 -- off (the same rule as the game text). A widget given both texts shows the current one and
--- re-shows it on the State "modifier" / "enabled" events (W.relabel); given one text (the other nil or ""), it shows
+-- re-shows it on the State "language" / "enabled" events (W.relabel); given one text (the other nil or ""), it shows
 -- that. Consumers: UI/Options (every page), UI/FixWindow (passes one text), UI/KeyCapture, UI/AddonListButton,
 -- UI/MinimapButton (W.setText / W.pick for its tooltip and menu).
 function W.english()
   if WFJ.State ~= nil and WFJ.State.enabled == false then return true end
-  return WFJ.Modifier ~= nil and WFJ.Modifier.isDown() == true
+  return WFJ.Modifier ~= nil and WFJ.Modifier.english() == true
 end
 
 function W.pick(en, ja)
@@ -62,7 +62,7 @@ function W.relabelIfStale()
 end
 if WFJ.State then
   -- wrapped: the events pass their new value, which must not reach W.relabel as `force`
-  WFJ.State.on("modifier", function() W.relabel() end)
+  WFJ.State.on("language", function() W.relabel() end)
   WFJ.State.on("enabled", function() W.relabel() end)
 end
 

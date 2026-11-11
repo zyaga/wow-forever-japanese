@@ -73,7 +73,7 @@ local function hidden()
 end
 
 local function revealed()
-  return WFJ.State.modifierHeld and true or false
+  return WFJ.State.showsEnglish() and true or false
 end
 
 local function word(key, ...)
@@ -543,7 +543,7 @@ function WFJ_VoiceReplay() WFJ.VoicePlayer.replay() end
 
 local function update() pcall(Panel.update) end -- a panel error never stops the other listeners of an event
 
--- Called by Main after VoicePlayer. Every listener is guarded: they share events ("enabled", "modifier", "voice")
+-- Called by Main after VoicePlayer. Every listener is guarded: they share events ("enabled", "language", "voice")
 -- with UI/Render, which must run whatever happens here.
 function Panel.init()
   local wasOn = Q.opt.on
@@ -553,7 +553,7 @@ function Panel.init()
     update()
   end)
   WFJ.State.on("enabled", update)
-  WFJ.State.on("modifier", update)
+  WFJ.State.on("language", update)
   WFJ.State.on("voice", update)
   -- a choice on the settings page (voice.panel.*): redraw; switching Panel size to Off ends the line and hides the
   -- panel (only that change: other settings changed while it is Off leave a line playing alone)

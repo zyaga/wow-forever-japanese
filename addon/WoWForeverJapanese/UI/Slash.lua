@@ -302,7 +302,8 @@ function Slash.debug(sub, arg)
   say("surface errors: %s", #failed == 0 and "none" or table.concat(failed, " · "))
   local areas = {}
   for _, a in ipairs(WFJ.AREAS) do areas[#areas + 1] = a .. "=" .. fmt(WFJ.State.areaEnabled(a)) end
-  say("enabled=%s held=%s %s", fmt(WFJ.State.enabled), fmt(WFJ.State.modifierHeld), table.concat(areas, " "))
+  say("enabled=%s held=%s direction=%s english=%s %s", fmt(WFJ.State.enabled), fmt(WFJ.State.modifierHeld),
+    WFJ.State.direction, fmt(WFJ.State.showsEnglish()), table.concat(areas, " "))
   -- the voice pack (ADR-061): lines registered, then since registration: voiced, no file, Japanese changed since the
   -- file was made, and what the player could not play
   local V, P = WFJ.Voice, WFJ.VoicePlayer

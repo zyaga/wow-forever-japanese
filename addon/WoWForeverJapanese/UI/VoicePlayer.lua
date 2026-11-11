@@ -68,7 +68,7 @@ local function queueOn() return Q.opt.on and true or false end
 
 -- a line may start: translation and voice on, and the reveal key up (no voice starts while English shows)
 local function voiceAllowed()
-  return WFJ.State.enabled and not WFJ.State.modifierHeld and WFJ.Settings.get("voice.enabled") and true or false
+  return WFJ.State.enabled and not WFJ.State.showsEnglish() and WFJ.Settings.get("voice.enabled") and true or false
 end
 
 local function notify()
@@ -407,7 +407,7 @@ function VoicePlayer.toggle(window)
   local head = Q.current()
   if queueOn() and Q.paused and head and head.window == window then return VoicePlayer.resume() end
   local line = last[window]
-  if not line or not WFJ.State.enabled or WFJ.State.modifierHeld or not WFJ.Settings.get("voice.enabled") then
+  if not line or not WFJ.State.enabled or WFJ.State.showsEnglish() or not WFJ.Settings.get("voice.enabled") then
     return false
   end
   local path, seconds = replayable(window)
@@ -643,13 +643,13 @@ function VoicePlayer.init(savedDb)
   WFJ.State.on("lineShown", VoicePlayer.onShown)
   -- With the voice panel the reveal key only switches the panel's text to English: the Japanese voice goes on, so a
   -- player can glance at the English without losing the line. Without the panel it stops the line, as before.
-  WFJ.State.on("modifier", function(held)
+  WFJ.State.on("language", function(english)
     if not queueOn() then
-      if held then VoicePlayer.stop() end
+      if english then VoicePlayer.stop() end
       return
     end
-    -- the reveal key let go: a line that came up while English showed starts now
-    if not held and Q.current() and not playing and not Q.paused and voiceAllowed() then return startHead() end
+    -- back to Japanese: a line that came up while English showed starts now
+    if not english and Q.current() and not playing and not Q.paused and voiceAllowed() then return startHead() end
     notify()
   end)
   WFJ.State.on("enabled", stopUnless)

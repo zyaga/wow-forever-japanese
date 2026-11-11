@@ -14,7 +14,7 @@ describe("Translator.resolve: the action table, and it stays pure", function()
     deps = {
       enabled = function() return flags.enabled end,
       areaEnabled = function(a) assert.are.equal("quests", a); return flags.area end,
-      modifierHeld = function() return flags.held end,
+      showsEnglish = function() return flags.held end,
       lookup = function(kind, id) assert.are.equal("quest", kind); assert.are.equal(2, id); return flags.entry end,
       marker = function(n) if n == "stale" then return flags.markerStale end return flags.markerMissing end,
     }
@@ -35,10 +35,10 @@ describe("Translator.resolve: the action table, and it stays pure", function()
     assert.are.equal("leave", a); assert.is_nil(p)
   end)
 
-  it("row 3: modifier held → leave, even with a trusted entry", function()
+  it("row 3: English is showing → leave, even with a trusted entry, and the payload says it is by the language", function()
     flags.held = true; flags.entry = entry(".")
     local a, p = resolve()
-    assert.are.equal("leave", a); assert.is_nil(p)
+    assert.are.equal("leave", a); assert.are.same({ english = true }, p)
   end)
 
   it("row 4: no entry → none, missing marker only when enabled", function()
@@ -115,7 +115,7 @@ describe("Translator.resolve: player tokens expanded on apply only", function()
   local function build(withExpand)
     local deps = {
       enabled = function() return true end, areaEnabled = function() return true end,
-      modifierHeld = function() return flags.held end,
+      showsEnglish = function() return flags.held end,
       lookup = function() return flags.entry end,
       marker = function(n) return n == "stale" end,
       align = function(ja) flags.alignSaw = ja; return flags.alignOk, flags.alignText end,
@@ -178,7 +178,7 @@ describe("Translator.resolve: align returns the filled text", function()
     flags = { result = nil, text = nil }
     deps = {
       enabled = function() return true end, areaEnabled = function() return true end,
-      modifierHeld = function() return false end,
+      showsEnglish = function() return false end,
       lookup = function() return { ja = "$N1ダメージ", status = "u" } end,
       marker = function() return false end,
       align = function(_, _, nameScope) flags.nameScope = nameScope; return flags.result, flags.text end,
@@ -208,7 +208,7 @@ describe("Translator.resolve: UI templates get the live values", function()
     seen = {}
     T = WFJ.Translator.new({
       enabled = function() return true end, areaEnabled = function() return true end,
-      modifierHeld = function() return false end,
+      showsEnglish = function() return false end,
       lookup = function(_, key) return ({ MIN = { ja = "必要レベル %d", status = "." },
         STALE = { ja = "耐久度 %d / %d", status = "s" } })[key] end,
       marker = function(n) return n == "stale" end,
@@ -244,7 +244,7 @@ describe("Translator.resolve: quest live check", function()
     local deps = {
       enabled = function() return true end,
       areaEnabled = function() return true end,
-      modifierHeld = function() return false end,
+      showsEnglish = function() return false end,
       lookup = function() return flags.entry end,
       marker = function(n) return n == "stale" and flags.markerStale end,
     }
@@ -317,7 +317,7 @@ describe("Translator.resolve: quest live check", function()
     local maskedAsked
     local T2 = WFJ.Translator.new({
       enabled = function() return true end, areaEnabled = function() return true end,
-      modifierHeld = function() return false end, lookup = function() return flags.entry end,
+      showsEnglish = function() return false end, lookup = function() return flags.entry end,
       marker = function(n) return n == "stale" end,
       fingerprints = function(_, masked) maskedAsked = masked; return flags.fps end,
     })
@@ -375,7 +375,7 @@ describe("Translator.resolve: gated item / spell entries", function()
     T = WFJ.Translator.new({
       enabled = function() return true end,
       areaEnabled = function() return true end,
-      modifierHeld = function() return false end,
+      showsEnglish = function() return false end,
       lookup = function() return flags.entry end,
       marker = function(n) return n == "stale" and flags.markerStale end,
       align = function(ja, lines)
@@ -431,7 +431,7 @@ describe("Translator: branch lines (ADR-043)", function()
     T = WFJ.Translator.new({
       enabled = function() return true end,
       areaEnabled = function() return true end,
-      modifierHeld = function() return false end,
+      showsEnglish = function() return false end,
       lookup = function() return flags.entry end,
       marker = function(n) return n == "stale" and flags.markerStale end,
       alignVariants = function(variants, shapes, lines, nameScope)
@@ -468,7 +468,7 @@ describe("Translator: branch lines (ADR-043)", function()
     a, p = T.resolve("items", "spell.description", 1, { lines = { "L" } })
     assert.are.equal("none", a); assert.are.equal("not_shipped", p.reason)
     local T2 = WFJ.Translator.new({ enabled = function() return true end, areaEnabled = function() return true end,
-      modifierHeld = function() return false end, lookup = function() return entry("u") end,
+      showsEnglish = function() return false end, lookup = function() return entry("u") end,
       marker = function() return false end })
     a, p = T2.resolve("items", "spell.description", 1, { lines = { "L" } })
     assert.are.equal("none", a); assert.are.equal("unaligned_ungated", p.reason)
@@ -476,7 +476,7 @@ describe("Translator: branch lines (ADR-043)", function()
 
   it("modifier held or master off still leaves the frame alone", function()
     local T3 = WFJ.Translator.new({ enabled = function() return true end, areaEnabled = function() return true end,
-      modifierHeld = function() return true end, lookup = function() return entry("u") end,
+      showsEnglish = function() return true end, lookup = function() return entry("u") end,
       marker = function() return false end })
     assert.are.equal("leave", (T3.resolve("items", "spell.description", 1, {})))
   end)

@@ -7,6 +7,10 @@
 --                                      a word the text lacks is skipped; a match on part of a guard span is passed over
 --   Readings.lookup(kind, id, text) → locate(words(kind, id), text, tokenSpans(text)) | nil
 --   Readings.tokenSpans(text)       → { { first, last }, … }: every class / race word standing alone in `text`
+--   Readings.englishLookup(kind, id, text)
+--                                   → { { first, last, word, reading, card }, … }: the English words of `text` that
+--                                      have a Japanese word, for the English word card (English first); nil for a
+--                                      kind that takes no cards or without text
 -- Rows (Data/Reading/*.lua): ["<type>:<id>"] = { <field> = "word=reading word=reading=n …" }; "=n" is the word's
 -- meaning in Data/Gloss. The pipeline guarantees no " " or "=" inside a word or a reading.
 local _, WFJ = ...
@@ -74,6 +78,54 @@ function Readings.lookup(kind, id, text)
   local words = Readings.words(kind, id)
   if not words or type(text) ~= "string" then return nil end
   return Readings.locate(words, text, Readings.tokenSpans(text))
+end
+
+-- ── English word cards ─────────────────────────────────────────────────────
+-- Rows (Data/English/*.lua): ["<type>:<id>"] = { <field> = "word=n word=n …" }: the line's English words that have a
+-- Japanese word, lower-cased and sorted (never the sentence), n the place of that Japanese word in the same line's
+-- reading row. Data.pron: word → how it is said. Data.common: word → "Japanese=reading", for the everyday words a
+-- line's own row leaves out.
+
+local englishRows = setmetatable({}, { __mode = "v" })
+local function englishMap(packed)
+  local map = englishRows[packed]
+  if map then return map end
+  map = {}
+  for word, n in packed:gmatch("([^ =]+)=(%d+)") do map[word] = tonumber(n) end
+  englishRows[packed] = map
+  return map
+end
+
+local function englishCard(ja, jaReading, gloss, ipa)
+  return { english = true, ja = ja, jaReading = jaReading, gloss = gloss or nil, ipa = ipa }
+end
+
+-- A word is a run of ASCII letters and apostrophes, so both ends of a span are always character boundaries.
+function Readings.englishLookup(kind, id, text)
+  local type_, field = split(kind)
+  if not type_ or type(text) ~= "string" then return nil end
+  local row = id ~= nil and WFJ.Data.english[type_ .. ":" .. tostring(id)]
+  local packed = row and row[field]
+  local map = type(packed) == "string" and englishMap(packed) or nil
+  local words = map and Readings.words(kind, id)
+  local out = {}
+  for first, token, after in text:gmatch("()([%a']+)()") do
+    local lower = token:lower()
+    local n = map and words and map[lower]
+    local ja, jaReading, gloss
+    if n and words[3 * n - 2] then
+      ja, jaReading, gloss = words[3 * n - 2], words[3 * n - 1], words[3 * n]
+    elseif not n then
+      local common = WFJ.Data.common[lower]
+      if type(common) == "string" then ja, jaReading = common:match("^([^=]+)=([^=]+)$") end
+    end
+    if ja then
+      out[#out + 1] = { first = first, last = after - 1, word = token,
+        reading = ja == jaReading and ja or (ja .. "（" .. jaReading .. "）"),
+        card = englishCard(ja, jaReading, gloss, WFJ.Data.pron[lower]) }
+    end
+  end
+  return out
 end
 
 -- The class and race words filled in for {class} / {race} are not in the stored Japanese, so no reading row lists

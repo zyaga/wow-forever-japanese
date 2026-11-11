@@ -71,7 +71,7 @@ end
 -- English when translation is off (the master switch) or the reveal key is held, the game text's own rule.
 local function revealHeld()
   if WFJ.State ~= nil and WFJ.State.enabled == false then return true end
-  return WFJ.Modifier ~= nil and WFJ.Modifier.isDown() == true
+  return WFJ.Modifier ~= nil and WFJ.Modifier.english() == true
 end
 FixWindow.revealHeld = revealHeld
 
@@ -369,7 +369,7 @@ WFJ.RecentLines.onChange = redrawSoon
 local function relabelIfShown()
   if FixWindow.frame and FixWindow.frame:IsShown() then FixWindow.relabel() end
 end
-WFJ.State.on("modifier", relabelIfShown)
+WFJ.State.on("language", relabelIfShown)
 WFJ.State.on("enabled", relabelIfShown)
 
 -- Shows one page (and the window). id: "recent" | "pending" | "copy" | "edit".

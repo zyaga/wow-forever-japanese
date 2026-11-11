@@ -570,7 +570,7 @@ function StudyWindow.init(saved)
   WFJ.State.on("study", refresh)
   WFJ.State.on("words", refresh)
   WFJ.State.on("enabled", function() pcall(relabel) end)
-  WFJ.State.on("modifier", function() pcall(relabel) end)
+  WFJ.State.on("language", function() pcall(relabel) end)
   apply(scan())
   return true
 end

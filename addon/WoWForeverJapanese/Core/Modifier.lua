@@ -98,6 +98,13 @@ function Modifier.isDown()
   return false
 end
 
+-- Whether the screen shows English now, from the polled key: English first shows it while the key is up, Japanese
+-- first while it is held. Everything that picks a language asks this (or State.showsEnglish, its mirror), never
+-- the key itself.
+function Modifier.english()
+  return (WFJ.State.direction == "en") ~= Modifier.isDown()
+end
+
 -- Re-poll and mirror into State; fires "modifier" only on change. Returns whether it changed.
 function Modifier.refresh()
   return WFJ.State.setModifierHeld(Modifier.isDown())

@@ -330,7 +330,7 @@ describe("UI/VoicePlayer: playing the pack's line in the quest window (voice pan
     WFJ.Render.init(WFJ.Translator.new({
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,
-      modifierHeld = WFJ.Modifier.isDown,
+      showsEnglish = WFJ.Modifier.english,
       lookup = function(kind, id) return DATA[kind] and DATA[kind][id] end,
       marker = function(n) return S.get("marker." .. n) end,
     }))

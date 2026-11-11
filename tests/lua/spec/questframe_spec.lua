@@ -56,7 +56,7 @@ describe("UI/QuestFrame: accept / progress / turn-in windows", function()
     WFJ.Render.init(WFJ.Translator.new({
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,
-      modifierHeld = WFJ.Modifier.isDown,
+      showsEnglish = WFJ.Modifier.english,
       lookup = function(kind, id)
         lookups[#lookups + 1] = { kind, id }
         return DATA[kind] and DATA[kind][id]
@@ -201,7 +201,7 @@ describe("UI/QuestFrame: accept / progress / turn-in windows", function()
     WFJ.Render.init(WFJ.Translator.new({
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,
-      modifierHeld = WFJ.Modifier.isDown,
+      showsEnglish = WFJ.Modifier.english,
       lookup = function(kind, id) return kind == "quest.completion" and id == 2 and entry or nil end,
       marker = function(n) return S.get("marker." .. n) end,
       fingerprints = function(t) return { h1(t) } end,
@@ -301,7 +301,7 @@ describe("UI/QuestFrame: accept / progress / turn-in windows", function()
     W.Settings.load(nil, 1, {})
     W.Render.init(W.Translator.new({
       enabled = function() return true end, areaEnabled = function() return true end,
-      modifierHeld = function() return false end, lookup = function() return nil end,
+      showsEnglish = function() return false end, lookup = function() return nil end,
       marker = function() return false end,
     }))
     assert.is_true(W.QuestFrame.init())
@@ -492,7 +492,7 @@ describe("UI/QuestFrame: player tokens in the quest window", function()
     WFJ.Render.init(WFJ.Translator.new({
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,
-      modifierHeld = WFJ.Modifier.isDown,
+      showsEnglish = WFJ.Modifier.english,
       lookup = function(kind, id) return TOKENS[kind] and TOKENS[kind][id] end,
       marker = function(n) return WFJ.Settings.get("marker." .. n) end,
       expand = function(ja) -- as Main.lua injects it, over the stub's UnitName / UnitClass / UnitRace / UnitSex
@@ -551,7 +551,7 @@ describe("UI/QuestFrame: the greeting panel's NPC text is gossip", function()
     WFJ.Render.init(WFJ.Translator.new({
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,
-      modifierHeld = WFJ.Modifier.isDown,
+      showsEnglish = WFJ.Modifier.english,
       lookup = function(kind, id) return data[kind] and data[kind][id] end,
       marker = function(n) return WFJ.Settings.get("marker." .. n) end,
     }))

@@ -204,8 +204,14 @@ WFJ.State.on("revealKey", function(revealKey)
   if not Settings.loading then WFJ.State.fire("saveClickMoved", nxt) end
 end)
 
-Settings.define{ id = "modifier", kind = "key", default = "alt", label = "Hold to show English",
-  ja = "押している間は英語で表示", normalize = function(v) return WFJ.Modifier.normalize(v) end,
+-- Which language the screen shows first. English first leaves the client's English untouched and shows the Japanese
+-- while the reveal key is held: the mirror of Japanese first, on every surface.
+Settings.define{ id = "direction", kind = "choice", choices = { "ja", "en" }, default = "ja",
+  label = "Game text", ja = "ゲームの文字",
+  choiceText = { ja = "Japanese first", en = "English first" },
+  apply = function(v) WFJ.State.setDirection(v) end }
+Settings.define{ id = "modifier", kind = "key", default = "alt", label = "Hold to show the other language",
+  ja = "押している間はもう一方の言語を表示", normalize = function(v) return WFJ.Modifier.normalize(v) end,
   check = notToggleKey, apply = function(v) WFJ.Modifier.setKey(v) end } -- ADR-018
 Settings.define{ id = "area.quests", kind = "boolean", default = true, group = "areas",
   label = "Quest windows & log", ja = "クエストウィンドウとログ", apply = area("quests") }

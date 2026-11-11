@@ -1,5 +1,7 @@
 -- Core/State.lua: the addon's runtime state and the one channel back to UI (pub/sub). No frame access.
 -- Events: "enabled"(bool) · "area"(id, bool) · "modifier"(bool) · "markers"() (each fired only on change);
+-- "language"(english), fired when what the screen shows flips between Japanese and English, by the reveal key or by
+-- the direction (everything that follows the language listens to this one; "modifier" is the key alone);
 -- "readings"(bool), fired by the `readings.enabled` setting's apply (UI/Readings shows / hides its covers);
 -- and "revealKey"(key), fired by Modifier.setKey on every apply so UI/RevealBinding re-applies.
 -- "lineShown"(surface, recordKey, kind, id), fired by UI/Render's show when the client wrote a line and it now shows in
@@ -7,7 +9,7 @@
 -- the word list changes (a save, Remove last, Clear all): Core/Study, UI/WordsWindow, UI/StudyWindow and UI/Options
 -- follow it.
 local _, WFJ = ...
-local State = { enabled = true, modifierHeld = false, areas = {} }
+local State = { enabled = true, modifierHeld = false, areas = {}, direction = "ja" }
 WFJ.State = State
 
 local handlers = {}
@@ -45,10 +47,26 @@ function State.areaEnabled(id)
   return State.areas[id] == true
 end
 
+-- Whether the screen shows English now. The direction says which language is first ("ja": Japanese, with English
+-- while the reveal key is held; "en": English, with Japanese while it is held).
+function State.showsEnglish()
+  return (State.direction == "en") ~= State.modifierHeld
+end
+
 function State.setModifierHeld(v)
   v = v and true or false
   if State.modifierHeld == v then return false end
   State.modifierHeld = v
   State.fire("modifier", v)
+  State.fire("language", State.showsEnglish())
+  return true
+end
+
+-- "ja" | "en"; anything else is ignored. → whether it changed
+function State.setDirection(v)
+  if (v ~= "ja" and v ~= "en") or State.direction == v then return false end
+  State.direction = v
+  State.fire("direction", v)
+  State.fire("language", State.showsEnglish())
   return true
 end

@@ -74,7 +74,7 @@ end
 local function tx(key)
   local en, ja = Text.get(key)
   if WFJ.State ~= nil and WFJ.State.enabled == false then return en end -- translation off: English, like the game
-  if WFJ.Modifier ~= nil and WFJ.Modifier.isDown() == true then return en end
+  if WFJ.Modifier ~= nil and WFJ.Modifier.english() == true then return en end
   return ja
 end
 

@@ -91,7 +91,7 @@ describe("Glosses", function()
     R.init(WFJ.Translator.new({
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,
-      modifierHeld = WFJ.Modifier.isDown,
+      showsEnglish = WFJ.Modifier.english,
       lookup = function(kind, id) return DATA[kind] and DATA[kind][id] end,
       marker = function() return false end,
     }))

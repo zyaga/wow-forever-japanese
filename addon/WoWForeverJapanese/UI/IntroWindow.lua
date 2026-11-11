@@ -25,7 +25,6 @@ IntroWindow.closedByPlayer = false -- Close, Esc or any hide outside a cinematic
 IntroWindow.waiting = false -- a cinematic is playing: open when it ends
 local watcher -- the frame that hears the cinematic events, made by the first request
 
-IntroWindow.purpose = nil -- "ja" | "en" | "play" once the player picks one
 IntroWindow.step = "pick" -- "pick": the question and its three cards; "info": what the choice means
 local PURPOSES = { "ja", "en", "play" }
 -- The client's own icons, one per choice: a scroll, a book, a sword.
@@ -37,10 +36,23 @@ local PAIR, POINT = 3, 12 -- between a point's Japanese and its English; between
 local CHANGE = 110 -- the Change button's room at the right of the hold-key point
 local BORDER, BORDER_ON = { 0.45, 0.38, 0.25 }, W.GOLD
 
--- The choice the window shows as picked: the player's, else the one the settings already match.
+-- What each choice writes: which language shows first, whether pointing at a word shows its card, and whether the
+-- study tab comes up when saved words are due (playing only wants neither). Nothing else.
+local WRITES = {
+  ja = { direction = "ja", cards = true, tab = true },
+  en = { direction = "en", cards = true, tab = true },
+  play = { direction = "ja", cards = false, tab = false },
+}
+
+-- The choice the settings match now, or nil when they match none (English first with the cards off). The study tab
+-- is not part of the match: a learner who hid it is still a learner.
 local function shownPurpose()
-  if IntroWindow.purpose then return IntroWindow.purpose end
-  return WFJ.Settings.get("readings.enabled") == true and "ja" or "play"
+  local S = WFJ.Settings
+  for _, purpose in ipairs(PURPOSES) do
+    local w = WRITES[purpose]
+    if S.get("direction") == w.direction and S.get("readings.enabled") == w.cards then return purpose end
+  end
+  return nil
 end
 
 -- Two font strings per point, not W.label: a W.label re-shows one language whenever the reveal key flips. The
@@ -306,11 +318,12 @@ function IntroWindow.show(step)
   IntroWindow.refill()
 end
 
--- The player's answer, then the second page. Playing only turns the word cards off and the other two turn them on;
--- English first has no setting to write yet, so the window only shows its wording.
+-- The player's answer: its two settings, then the second page.
 function IntroWindow.pick(purpose)
-  IntroWindow.purpose = purpose
-  WFJ.Settings.set("readings.enabled", purpose ~= "play")
+  local w = WRITES[purpose]
+  WFJ.Settings.set("direction", w.direction)
+  WFJ.Settings.set("readings.enabled", w.cards)
+  WFJ.Settings.set("study.tab", w.tab)
   IntroWindow.show("info")
 end
 

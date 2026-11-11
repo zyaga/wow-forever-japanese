@@ -156,7 +156,7 @@ local function setup(withPack)
   WFJ.Render.init(WFJ.Translator.new({
     enabled = function() return WFJ.State.enabled end,
     areaEnabled = WFJ.State.areaEnabled,
-    modifierHeld = WFJ.Modifier.isDown,
+    showsEnglish = WFJ.Modifier.english,
     lookup = function(kind, id) return DATA[kind] and DATA[kind][id] end,
     marker = function(n) return S.get("marker." .. n) end,
     expand = function(ja) return (ja:gsub("{name}", "Reyn")) end, -- Main's player tokens (Placeholders.expand)

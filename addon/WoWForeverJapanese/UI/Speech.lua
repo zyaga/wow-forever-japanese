@@ -430,4 +430,4 @@ end
 
 WFJ.State.on("enabled", Speech.refresh)
 WFJ.State.on("area", Speech.refresh)
-WFJ.State.on("modifier", Speech.refresh)
+WFJ.State.on("language", Speech.refresh)

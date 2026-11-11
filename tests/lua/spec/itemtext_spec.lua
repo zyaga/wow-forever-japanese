@@ -46,7 +46,7 @@ describe("UI/ItemText: the book window", function()
     WFJ.Render.init(WFJ.Translator.new({
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,
-      modifierHeld = WFJ.Modifier.isDown,
+      showsEnglish = WFJ.Modifier.english,
       lookup = WFJ.Lookup.get,
       marker = function(n) return S.get("marker." .. n) end,
     }))
