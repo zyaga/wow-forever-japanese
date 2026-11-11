@@ -35,6 +35,7 @@ Ellesmere UI lets the player choose the font it uses, from the fonts registered 
 - The player has to pick the font once. Until then the empty boxes stay. The README and the CurseForge page say what to pick.
 - Any other addon that reads the same registry lists the font too, and a player may pick it there.
 - Ellesmere UI's own windows and options stay English. Translating them is out of scope.
+- Ellesmere UI's chat window is not supported. Its Chat module hides the game's chat text and shows its own window, fed with the game's English lines, so the Japanese this addon writes into the game's chat frames is not seen while that module is on. Global Font also applies to that chat window. A player who wants Japanese chat turns the Chat module off in the addon list.
 - The no-dependencies principle has a second written exception. It is narrower than the first: one call into a library that is already loaded, and nothing read back.
 - If the registry's `Register` changes its arguments, the call is refused or raises inside the guard, the font is not listed, and nothing else breaks.
 
