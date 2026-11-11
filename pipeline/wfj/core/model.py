@@ -152,7 +152,9 @@ def _valid_ruling(r: Any) -> bool:
     )
 
 
-def _provenance_problems(prov: dict[str, Any], label: str) -> list[str]:
+def base_provenance_problems(prov: dict[str, Any], label: str) -> list[str]:
+    """Class, source and date: what every provenance carries, a generated row's too (a name line made by
+    `names collect`, a kana line the builder made), which has no translator or model behind it."""
     p: list[str] = []
     if prov.get("class") not in PROVENANCE_CLASSES:
         p.append(f"{label}.class {prov.get('class')!r} not in {PROVENANCE_CLASSES}")
@@ -160,6 +162,11 @@ def _provenance_problems(prov: dict[str, Any], label: str) -> list[str]:
         p.append(f"{label}.source must look like name@ref")
     if not isinstance(prov.get("imported"), str) or not _DATE_RE.match(prov["imported"]):
         p.append(f"{label}.imported must be YYYY-MM-DD")
+    return p
+
+
+def _provenance_problems(prov: dict[str, Any], label: str) -> list[str]:
+    p = base_provenance_problems(prov, label)
     if prov.get("class") in ("human", "correction") and not prov.get("translator"):
         p.append(f"{prov.get('class')} provenance needs a translator")
     if prov.get("class") == "machine" and not (isinstance(prov.get("model"), str) and prov["model"].strip()):

@@ -26,6 +26,10 @@ Rules, each a function returning problems:
      still owed one (a kanji or kana, no `|`) and the words without a meaning.
   9. voice (ADR-061): data/voice/speakers.jsonl and voices.jsonl are well formed, carry provenance, hold no
      duplicate key or creature, and every creature that speaks has a voice.
+  10. names (ADR-078): every `data/name/` line and glossary word is well formed with provenance, and no name
+     spells a checked glossary word another way. How many names still lack Japanese and how many voiced lines
+     lack a current kana line are printed, not returned: tests/python/test_names.py and test_kana.py own those
+     gates.
 `luac -p` over the generated files is `make luac` (part of `make validate`); the pipeline runs no Lua.
 """
 
@@ -546,7 +550,20 @@ def validate(
     problems += rule_objective(store)
     problems += rule_voice(root)
     problems += rule_readings(store)
+    problems += rule_names(root)
     return problems
+
+
+def rule_names(root: Path) -> list[str]:
+    from wfj.cmd import names, voice_kana
+    from wfj.io.names_store import load_lines
+
+    bad = names.problems(root)
+    if not bad:  # the counts read every line, so only once the shapes are sound
+        missing = sum(1 for ln in load_lines(root) if ln.get("status") == "missing")
+        print(f"validate: names: {missing} without Japanese; kana: {len(voice_kana.problems(root))} voiced "
+              "lines without a current kana line")
+    return bad
 
 
 def rule_voice(root: Path, config: Path | None = None) -> list[str]:

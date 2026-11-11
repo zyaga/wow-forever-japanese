@@ -244,6 +244,7 @@ def run(argv: Sequence[str]) -> int:
            **{v: ("voice_make", "run", 0)
               for v in ("cast", "plan", "generate", "status", "record-hashes", "export", "relevel")},
            "speed": ("voice_make", "run_speed", 1),
+           **{v: ("voice_kana", "run", 0) for v in ("kana", "kana-import")},
            **{v: ("voice_store", "run", 0) for v in ("levels", "store-sync")},
            **{v: ("voice_ship", "run", 0) for v in ("pack", "release", "inputs")}}
     if verb and verb[0] in own:

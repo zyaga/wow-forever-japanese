@@ -619,6 +619,11 @@ TABLES: dict[str, Table] = {
             (_c("ID", ID), Column("ClientFileString", 1, text=True)),
             frozenset({0, *range(2, 15)}),
         ),
+        # Flight point names ("Sentinel Hill, Westfall"), for the Japanese names (ADR-078); never a ui
+        # family. Name_lang is the only field the bytes alone show as text (db2.text_fields), and on
+        # 1.60.1.70888 each of the 84 node ids the VMaNGOS world database also has carries the same name
+        # there; the other 17 are Forever's own nodes.
+        _forever_text("TaxiNodes", 1068100, 0xE7B597F0, 15, (_c("ID", ID), _c("Name_lang", 0))),
         # the client-table text families (ADR-042). Every written column is the row id or a leading
         # string field, so each table is text-only and a hotfix is read as its leading strings (no `record`).
         # Names stay English: a name column is declared unwritten so the string layout reads, and is

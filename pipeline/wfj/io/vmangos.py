@@ -293,3 +293,41 @@ def read_all_quest_speakers(path: Path) -> tuple[dict[int, list[int]], set[int],
     finally:
         db.close()
     return read_quest_speakers(path, quests)
+
+
+# The names the game shows, per name kind (ADR-078): each table's highest-patch row. A faction the
+# reputation panel never lists (no reputation slot: the server's own "PLAYER, Human" kind) is not read.
+_NAME_SQL = {
+    "unit": "SELECT t.entry, t.name FROM creature_template t JOIN (SELECT entry, MAX(patch) AS patch"
+    " FROM creature_template GROUP BY entry) m ON t.entry = m.entry AND t.patch = m.patch",
+    "object": "SELECT t.entry, t.name FROM gameobject_template t JOIN (SELECT entry, MAX(patch) AS patch"
+    " FROM gameobject_template GROUP BY entry) m ON t.entry = m.entry AND t.patch = m.patch",
+    "area": "SELECT entry, name FROM area_template",
+    "faction": "SELECT t.id, t.name FROM faction t JOIN (SELECT id, MAX(build) AS build FROM faction"
+    " GROUP BY id) m ON t.id = m.id AND t.build = m.build WHERE t.reputation_list_id >= 0",
+    "map": "SELECT t.entry, t.map_name FROM map_template t JOIN (SELECT entry, MAX(patch) AS patch"
+    " FROM map_template GROUP BY entry) m ON t.entry = m.entry AND t.patch = m.patch",
+    "title": "SELECT t.entry, t.subname FROM creature_template t JOIN (SELECT entry, MAX(patch) AS patch"
+    " FROM creature_template GROUP BY entry) m ON t.entry = m.entry AND t.patch = m.patch",
+}
+_NAME_NEEDS = {
+    "creature_template": ("entry", "patch", "name", "subname"),
+    "gameobject_template": ("entry", "patch", "name"),
+    "area_template": ("entry", "name"),
+    "faction": ("id", "build", "name", "reputation_list_id"),
+    "map_template": ("entry", "patch", "map_name"),
+}
+
+
+def read_names(path: Path) -> dict[str, dict[int, str]]:
+    """{name kind: {id: English name}} for creatures (`unit`), game objects, areas, factions, maps and
+    creature titles (`title`, the line under an NPC's name: "Innkeeper").
+    Empty names are left out."""
+    db = _connect(path, _NAME_NEEDS)
+    try:
+        return {
+            kind: {int(i): name for i, name in _query(db, path, sql) if name and name.strip()}
+            for kind, sql in _NAME_SQL.items()
+        }
+    finally:
+        db.close()
