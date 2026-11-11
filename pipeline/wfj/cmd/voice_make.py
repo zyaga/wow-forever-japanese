@@ -1030,7 +1030,9 @@ def error_table(root: Path, cfg: dict[str, Any], players: Sequence[tuple[str, st
     lines = shipped_lines(root)
     audio = audio_record(root)
     jobs = error_jobs(root, cfg, list(players))
-    state = voice.in_step(jobs, lines, cfg["roster"], audio)
+    values = line_values(root, lines)
+    said = said_hashes(lines, values, voice_texts(root, cfg, lines, values))
+    state = voice.in_step(jobs, lines, cfg["roster"], audio, values, said)
     bad = set(state["missing"]) | set(state["stale"])
     files: dict[str, dict[str, tuple[str, float]]] = {}
     for j in jobs:
