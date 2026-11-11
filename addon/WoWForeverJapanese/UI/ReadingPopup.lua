@@ -99,6 +99,8 @@ function Popup.show(anchor, x, y, word, gloss, size, hint)
   local height = PAD + wordFs:GetStringHeight()
   local below = wordFs
   if lemma then
+    -- an English word's second line is its Japanese word: the thing looked for, so a size up
+    WFJ.Font.set(lemmaFs, WFJ.Font.PATH, gloss.english and 14 or 12, "")
     lemmaFs:SetText(lemma)
     lemmaFs:ClearAllPoints()
     lemmaFs:SetPoint("TOPLEFT", below, "BOTTOMLEFT", 0, -GAP)

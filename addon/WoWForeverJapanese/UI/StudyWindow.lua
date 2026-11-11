@@ -1,7 +1,9 @@
 -- UI/StudyWindow.lua: studying the saved word list in game (ADR-071, docs/systems/study.md). Two small frames of
 -- the addon's own: a TAB at the screen edge saying how many words wait, and the CARD it opens: the word, the
 -- sentence it was saved from (the word under a gold mark; the sentence's other words take word cards through
--- UI/Readings, surface "study"), then the answer and the two grades, Again and Good. Core/Study decides what comes
+-- UI/Readings, surface "study"), then the answer and the two grades, Again and Good. An English word
+-- (English first) shows its English sentence, then how it is said, its Japanese word and that word's
+-- Japanese sentence. Core/Study decides what comes
 -- next and when; this file only shows it. Both frames are movable and share one saved spot (WFJ_DB.study.point);
 -- the card collapses to the tab, either close button hides both for the session, and /wfj study, the minimap
 -- menu, the key binding and the Words page open the card again whatever the tab setting says. In combat both hide
@@ -319,6 +321,15 @@ function StudyWindow.showAnswer()
   sound(REVEAL_SOUND)
   local en, ja = {}, {}
   local function both(a, b) en[#en + 1] = a; ja[#ja + 1] = b end
+  if e.lang == "en" then
+    -- an English word: how it is said, then the Japanese word of its line and the Japanese sentence that holds it
+    if e.reading ~= nil and e.reading ~= "" then both("/" .. e.reading .. "/", "/" .. e.reading .. "/") end
+    W.setPair(card.answer, table.concat(en, "\n"), table.concat(ja, "\n"))
+    local meaning = e.meaning or ""
+    if type(e.jaSentence) == "string" and e.jaSentence ~= "" then meaning = meaning .. "\n" .. e.jaSentence end
+    W.put(card.meaning, meaning, 14)
+    return showState()
+  end
   if e.reading ~= nil and e.reading ~= "" and e.reading ~= e.word then both(e.reading, e.reading) end
   local lemma = e.lemma
   if lemma ~= nil and lemma ~= "" and (lemma ~= e.word or (e.lemmaReading ~= "" and e.lemmaReading ~= e.reading)) then

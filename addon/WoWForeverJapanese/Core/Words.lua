@@ -4,6 +4,9 @@
 --   Words.add(input, now) → "added" | "exists" | "refused", entry
 --   Words.export(opts, fmt) → tab-separated text with Anki's file headers; fmt(pattern, t) is the client's date()
 --   Words.matches / hidden / nextFree: the save-click choices
+-- An English word (English first) is an entry too: `lang = "en"`, the English word and the English sentence the
+-- client showed, its pronunciation under `reading`, the Japanese word of the line under `meaning`, and that word's
+-- Japanese sentence under `jaSentence`. An entry without `lang` is a Japanese word.
 -- An entry is keyed by its source (the reading row's kind and id) and the word's dictionary form, never by its text,
 -- so a reworded translation never adds the same word twice. The key index is rebuilt on load and never saved.
 local _, WFJ = ...
@@ -95,16 +98,20 @@ local function charEnd(text, i)
 end
 
 local ENDS = { ["。"] = true, ["！"] = true, ["？"] = true, ["!"] = true, ["?"] = true }
+-- English also ends a sentence at a full stop; Japanese text holds them inside names ("Dr. Reyn") and never ends on one
+local ENDS_ENGLISH = { ["."] = true }
 
--- The sentence holding bytes first..last of text, and the word's place inside it. → sentence, wordFirst, wordLast
-function Words.sentence(text, first, last)
+-- The sentence holding bytes first..last of text, and the word's place inside it. `english`: the text is English.
+-- → sentence, wordFirst, wordLast
+function Words.sentence(text, first, last, english)
   local s, e = 1, #text
   local i = 1
   while i <= #text do
     local j = charEnd(text, i)
     local ch = text:sub(i, j)
-    if j < first and (ENDS[ch] or ch == "\n") then s = j + 1 end
-    if i > last and (ENDS[ch] or ch == "\n") then
+    local ends = ENDS[ch] or ch == "\n" or (english and ENDS_ENGLISH[ch]) or false
+    if j < first and ends then s = j + 1 end
+    if i > last and ends then
       e = ch == "\n" and i - 1 or j
       break
     end
@@ -120,23 +127,36 @@ function Words.sentence(text, first, last)
       e = k - 1
     end
   end
+  -- an English sentence starts after the space that follows the one before it
+  while english and s < first and text:sub(s, s) == " " do s = s + 1 end
   return text:sub(s, e), first - s + 1, last - s + 1
 end
 
 -- input: { kind, id, surface, text, first, last, word, reading, lemma, lemmaReading, meaning, questTitle }
+-- An English word adds `english = { jaSentence }`: `reading` is then its pronunciation, `meaning` the Japanese word,
+-- and it has no dictionary form.
 function Words.add(input, now)
   if frozen or not list then return "refused" end
   if type(input) ~= "table" or type(input.text) ~= "string" or type(input.word) ~= "string"
       or type(input.first) ~= "number" or type(input.last) ~= "number" or input.kind == nil or input.id == nil then
     return "refused"
   end
-  local key = Words.key(input.kind, input.id, input.lemma, input.word)
+  local english = type(input.english) == "table" and input.english or nil
+  local lemma, lemmaReading = input.lemma, input.lemmaReading
+  local key
+  if english then
+    lemma, lemmaReading = nil, nil
+    key = Words.key(input.kind, input.id, nil, "en:" .. input.word:lower())
+  else
+    key = Words.key(input.kind, input.id, lemma, input.word)
+  end
   if index[key] then return "exists", index[key] end
-  local sentence, wf, wl = Words.sentence(input.text, input.first, input.last)
+  local sentence, wf, wl = Words.sentence(input.text, input.first, input.last, english ~= nil)
   local isQuest = Words.isQuestKind(input.kind)
   local e = {
-    key = clean(key), word = clean(input.word), reading = clean(input.reading), lemma = clean(input.lemma),
-    lemmaReading = clean(input.lemmaReading), meaning = clean(input.meaning), sentence = clean(sentence),
+    key = clean(key), word = clean(input.word), reading = clean(input.reading), lemma = clean(lemma),
+    lemmaReading = clean(lemmaReading), meaning = clean(input.meaning), sentence = clean(sentence),
+    lang = english and "en" or nil, jaSentence = english and clean(english.jaSentence) or nil,
     wf = wf, wl = wl, kind = input.kind, id = input.id, source = Words.source(input.surface, input.kind),
     questId = isQuest and input.id or nil, questTitle = isQuest and input.questTitle and clean(input.questTitle) or nil,
     saved = now,
@@ -259,17 +279,22 @@ function Words.lineSpans(e)
     and { first = wf, last = wl } or nil
   local others = {}
   local R = WFJ.Readings
-  local lineWords = R and e.kind ~= nil and e.id ~= nil and s ~= "" and R.words(e.kind, e.id)
-  if lineWords then
-    for _, sp in ipairs(R.locate(lineWords, s)) do
-      if not (own and sp.first <= own.last and sp.last >= own.first) then others[#others + 1] = sp end
-    end
+  local found
+  if e.lang == "en" then
+    found = R and e.kind ~= nil and e.id ~= nil and s ~= "" and R.englishLookup and R.englishLookup(e.kind, e.id, s)
+  else
+    local lineWords = R and e.kind ~= nil and e.id ~= nil and s ~= "" and R.words(e.kind, e.id)
+    found = lineWords and R.locate(lineWords, s)
+  end
+  for _, sp in ipairs(found or {}) do
+    if not (own and sp.first <= own.last and sp.last >= own.first) then others[#others + 1] = sp end
   end
   return others, own
 end
 
 -- The entry's sentence with a reading on every word the line's reading list holds, and the saved word in bold.
 function Words.sentenceFurigana(e)
+  if e.lang == "en" then return Words.bold(e) end -- an English sentence takes no readings
   local s = type(e.sentence) == "string" and e.sentence or ""
   local spans, own = Words.lineSpans(e)
   if own then
@@ -294,7 +319,7 @@ function Words.sentenceFurigana(e)
   return out .. s:sub(pos)
 end
 
-local function bold(e)
+function Words.bold(e)
   local s = type(e.sentence) == "string" and e.sentence or ""
   local wf, wl = e.wf, e.wl
   if type(wf) ~= "number" or type(wl) ~= "number" or wf < 1 or wl > #s or wl < wf then return s end
@@ -309,10 +334,14 @@ function Words.export(opts, fmt)
   local out = { "#separator:Tab", "#html:true", "#columns:" .. table.concat(cols, "\t") }
   for _, e in ipairs(Words.entries()) do
     -- every field through clean(): a list a newer version wrote may lack any of them
+    local en = e.lang == "en"
+    local meaning = clean(e.meaning)
+    -- an English word's Japanese sentence goes under its Japanese word, in the same column
+    if en and clean(e.jaSentence) ~= "" then meaning = meaning .. "<br>" .. clean(e.jaSentence) end
     local row = { clean(e.key), clean(e.word), clean(e.reading), clean(e.lemma), clean(e.lemmaReading),
-      clean(e.meaning), clean(bold(e)), clean(e.source), clean(e.questId), clean(e.questTitle),
+      meaning, clean(Words.bold(e)), clean(e.source), clean(e.questId), clean(e.questTitle),
       type(e.saved) == "number" and fmt("%Y-%m-%d %H:%M", e.saved) or "",
-      clean(Words.furigana(e.word, e.reading)), clean(Words.sentenceFurigana(e)) }
+      en and clean(e.word) or clean(Words.furigana(e.word, e.reading)), clean(Words.sentenceFurigana(e)) }
     if opts.images then row[#row + 1] = type(e.shot) == "string" and clean('<img src="' .. e.shot .. '">') or "" end
     out[#out + 1] = table.concat(row, "\t")
   end

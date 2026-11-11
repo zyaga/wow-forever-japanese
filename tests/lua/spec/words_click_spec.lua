@@ -155,6 +155,34 @@ describe("Saving a word", function()
     assert.is_truthy(Stub.prints[#Stub.prints]:find("1", 1, true))
   end)
 
+  it("English first: the card shows the English word's lines, and Ctrl+click saves it as an English entry",
+  function()
+    WFJ.Data.add("english", { ["quest:456"] = { description = "number=4 reduce=3" } })
+    WFJ.Data.add("pron", { reduce = "riˈdjuːs" })
+    WFJ.Lookup.get = function(kind, id)
+      if kind == "quest.title" and id == 456 then return { ja = "生き物を減らせ" } end
+      if kind == "quest.description" and id == 456 then return { ja = "まず休め。" .. JA } end
+    end
+    S.set("direction", "en")
+    assert.are.equal("Reduce their number.", fs:GetText())
+    cover.scripts.OnEnter(cover)
+    pointAt("Reduce"); frame()
+    local head, said, japanese, dictionary = WFJ.ReadingPopup.lines(cover.hovered, cover.hovered.card)
+    assert.are.same({ "Reduce", "/riˈdjuːs/", "辞書形：狩る（かる）" }, { head, said, dictionary })
+    assert.is_truthy(japanese:find("狩り", 1, true) and japanese:find("かり", 1, true))
+    click("Reduce", { ctrl = true })
+    local e = WFJ.Words.entries()[1]
+    assert.are.same({ "quest.description:456:en:reduce", "en", "Reduce", "riˈdjuːs", "狩り（かり）" },
+      { e.key, e.lang, e.word, e.reading, e.meaning })
+    assert.are.equal("Reduce their number.", e.sentence)
+    assert.are.equal(JA, e.jaSentence) -- the Japanese sentence that holds 狩り, not the whole line
+    assert.are.equal(456, e.questId)
+    -- a word with no dictionary form of its own, and one the table cannot say
+    pointAt("number"); frame()
+    local _, noSaid, _, noDictionary = WFJ.ReadingPopup.lines(cover.hovered, cover.hovered.card)
+    assert.are.same({ "", "" }, { noSaid, noDictionary })
+  end)
+
   it("a word whose dictionary form differs keys on the dictionary form", function()
     click("狩り", { ctrl = true })
     local e = WFJ.Words.entries()[1]

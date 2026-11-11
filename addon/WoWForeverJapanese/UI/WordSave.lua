@@ -86,6 +86,18 @@ end
 
 -- ── Save ────────────────────────────────────────────────────────────────────
 
+-- The sentence of the line's shipped Japanese that holds `ja` (a word of it), with the player's name and class
+-- filled in as the game shows it; "" when the line or the word is not found.
+function WordSave.japaneseSentence(kind, id, ja)
+  local line = WFJ.Lookup and WFJ.Lookup.get(kind, id)
+  local text = line and type(line.ja) == "string" and line.ja or nil
+  if not text or type(ja) ~= "string" or ja == "" then return "" end
+  if type(WFJ.expandTokens) == "function" then text = WFJ.expandTokens(text) end
+  local first, last = text:find(ja, 1, true)
+  if not first then return "" end
+  return (WFJ.Words.sentence(text, first, last))
+end
+
 -- `cover`: a UI/Readings cover (its text, the record's kind, id and surface); `word`: its hovered word.
 function WordSave.save(cover, word)
   local Words = WFJ.Words
@@ -95,11 +107,20 @@ function WordSave.save(cover, word)
     local t = WFJ.Lookup.get("quest.title", cover.id)
     title = t and type(t.ja) == "string" and t.ja or nil
   end
-  local status, entry = Words.add({
+  local input = {
     kind = cover.kind, id = cover.id, surface = cover.surface, text = cover.text, first = word.first,
     last = word.last, word = word.word, reading = word.reading, lemma = g and g.lemma,
     lemmaReading = g and g.lemmaReading, meaning = g and g.meaning, questTitle = title,
-  }, Compat.call("time"))
+  }
+  local card = word.card
+  if card and card.english then
+    -- an English word (English first): its pronunciation, the Japanese word of the line as its meaning, and the
+    -- Japanese sentence that word stands in, for the back of its study card
+    input.reading, input.meaning = card.ipa or "", word.reading
+    input.lemma, input.lemmaReading = nil, nil
+    input.english = { jaSentence = WordSave.japaneseSentence(cover.kind, cover.id, card.ja) }
+  end
+  local status, entry = Words.add(input, Compat.call("time"))
   if status == "added" then
     WFJ.ReadingView.flash(cover) -- the windows and the study queue follow the list's own change event
     if not (WFJ.Settings.get("words.screenshot") and screenshot(cover, entry)) then

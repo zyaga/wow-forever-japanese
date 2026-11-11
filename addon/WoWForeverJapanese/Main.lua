@@ -130,6 +130,7 @@ local function expand(ja)
   if not WFJ.Placeholders.mayHaveTokens(ja) then return ja end -- token-free text never touches the client
   return (WFJ.Placeholders.expand(ja, player()))
 end
+WFJ.expandTokens = expand -- UI/WordSave: a saved English word's Japanese sentence, as the game shows it
 
 -- The client's live English for a UI string key (ADR-015): its global string. An item subclass has none the
 -- tooltip uses (C_Item.GetItemSubClassInfo returns the long name "Staves" where the tooltip shows "Staff"),

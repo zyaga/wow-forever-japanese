@@ -114,6 +114,52 @@ describe("Words", function()
       assert.are.equal(1, W.count())
     end)
 
+    -- ── an English word (English first) ──────────────────────────────
+    local EN = "Greetings. Hunt a few creatures, and thin their numbers. I am well."
+    local function english(o)
+      local first = EN:find("creatures", 1, true)
+      local i = input({ text = EN, first = first, last = first + #"creatures" - 1, word = "creatures",
+        reading = "kríːtʃərz", lemma = nil, lemmaReading = nil, meaning = "生き物（いきもの）",
+        english = { jaSentence = "少しの生き物たちを狩り、数を減らしてほしい。" } })
+      for k, v in pairs(o or {}) do i[k] = v end
+      return i
+    end
+
+    it("an English word keeps its own sentence, cut at a full stop, its pronunciation and the Japanese", function()
+      local status, e = W.add(english(), T)
+      assert.are.equal("added", status)
+      assert.are.equal("quest.description:456:en:creatures", e.key)
+      assert.are.equal("en", e.lang)
+      assert.are.same({ "creatures", "kríːtʃərz", "", "生き物（いきもの）" }, { e.word, e.reading, e.lemma, e.meaning })
+      assert.are.equal("Hunt a few creatures, and thin their numbers.", e.sentence)
+      assert.are.equal("creatures", e.sentence:sub(e.wf, e.wl))
+      assert.are.equal("少しの生き物たちを狩り、数を減らしてほしい。", e.jaSentence)
+    end)
+
+    it("the same English word in another case is the same entry; the Japanese word of the line is another", function()
+      W.add(english(), T)
+      assert.are.equal("exists", (W.add(english({ word = "Creatures" }), T)))
+      assert.are.equal("added", (W.add(input({}), T))) -- 生き物 of the same line
+      assert.are.equal(2, W.count())
+    end)
+
+    it("exports an English entry on the same columns: the Japanese under Meaning, no furigana brackets", function()
+      W.add(english(), T)
+      local out = W.export({}, fmt)
+      local last = out:match("([^\n]*)$")
+      local row = {}
+      for c in (last .. "\t"):gmatch("([^\t]*)\t") do row[#row + 1] = c end
+      assert.are.same({ "quest.description:456:en:creatures", "creatures", "kríːtʃərz", "", "",
+        "生き物（いきもの）<br>少しの生き物たちを狩り、数を減らしてほしい。",
+        "Hunt a few <b>creatures</b>, and thin their numbers.", "quest", "456", "生き物を減らせ",
+        fmt("%Y-%m-%d %H:%M", T), "creatures", "Hunt a few <b>creatures</b>, and thin their numbers." }, row)
+    end)
+
+    it("a Japanese sentence is still cut only at its own marks, never at a full stop inside it", function()
+      local _, e = W.add(input({ text = "Dr. Reynの生き物だ。次。" }), T)
+      assert.are.equal("Dr. Reynの生き物だ。", e.sentence)
+    end)
+
     it("a quest-window line keyed by its English has no quest id or title", function()
       local _, e = W.add(input({ kind = "gossip", id = "0123456789abcdef", surface = "questframe.progress" }), T)
       assert.are.equal("quest", e.source)
