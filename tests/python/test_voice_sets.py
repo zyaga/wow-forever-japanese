@@ -605,6 +605,22 @@ def test_a_cloned_voice_carries_its_temperature_and_seed_into_its_fingerprint_an
     assert line_key("あ", ref, "full", settings["seed"], 0.5) != line_key("あ", ref, "full", settings["seed"], 0.9)
 
 
+def test_lines_are_handed_out_voice_by_voice_so_calls_stay_full():
+    from wfj.io import qwen_worker
+
+    jobs = [{"key": f"k{n}", "text": "あ" * (50 + n % 7), "ref": f"r{n % 12}.wav", "seed": n % 12, "temperature": 0.5}
+            for n in range(360)]
+    longest_first = sorted(jobs, key=lambda j: (-len(j["text"]), j["key"]))
+
+    def calls(order):
+        return sum(len(qwen_worker.plan_calls(order[n : n + 15], 24)) for n in range(0, len(order), 15))
+
+    sent = qwen_worker.send_order(jobs)
+    assert [j["seed"] for j in sent] == sorted(j["seed"] for j in jobs)
+    assert calls(sent) == 24  # every group of 15 lines is one voice: one call each
+    assert calls(longest_first) > 5 * calls(sent)  # mixed voices would be read a line or two at a time
+
+
 def test_a_call_that_runs_out_of_memory_is_split_until_it_fits():
     pytest.importorskip("numpy")
     from wfj.io import qwen_worker

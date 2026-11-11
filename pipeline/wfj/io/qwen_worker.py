@@ -93,6 +93,34 @@ def _prompt(model: Any, prompts: dict, ref_wav: str, ref_text: str | None, mode:
     return prompts[key]
 
 
+def send_order(jobs: list[dict]) -> list[dict]:
+    """The order lines are handed out in: one voice's lines together, the longest first. A call holds one
+    seed's paragraphs only, so a handful of lines from many voices would be read a paragraph or two at a
+    time."""
+    return sorted(jobs, key=lambda j: (j.get("seed") or 0, str(j.get("ref", "")), -len(j["text"]), j["key"]))
+
+
+def plan_calls(lines: list[dict], batch: int, chars: int = 3000) -> list[list[tuple[int, int, str]]]:
+    """The model calls for `lines`: each a list of (line index, paragraph index, paragraph). A call holds one
+    seed's paragraphs, at most `batch` of them and at most `chars` padded characters (count times the
+    longest)."""
+    paras = [(i, k, p) for i, ln in enumerate(lines)
+             for k, p in enumerate(x for x in ln["text"].split("\n\n") if x.strip())]
+
+    def drawn(i: int) -> tuple[int, float]:
+        return (lines[i].get("seed") or 0, lines[i].get("temperature") or 0.0)
+
+    paras.sort(key=lambda t: (drawn(t[0]), len(t[2])))  # one seed together, like lengths together
+    calls: list[list[tuple[int, int, str]]] = [[]]
+    for t in paras:
+        cur = calls[-1]
+        if cur and (drawn(cur[0][0]) != drawn(t[0]) or len(cur) >= batch
+                    or (len(cur) + 1) * len(t[2]) > chars):  # sorted: t is the longest of its seed
+            calls.append([])
+        calls[-1].append(t)
+    return [c for c in calls if c]
+
+
 def speak_many(model: Any, prompts: dict, lines: list[dict], batch: int,
                chars: int = 3000) -> list[tuple[Any, int] | str]:
     """Each line's (samples, rate), or its error, read several paragraphs per model call: the GPU reads a
@@ -105,23 +133,10 @@ def speak_many(model: Any, prompts: dict, lines: list[dict], batch: int,
     from that seed."""
     import numpy as np
 
-    paras = [(i, k, p) for i, ln in enumerate(lines)
-             for k, p in enumerate(x for x in ln["text"].split("\n\n") if x.strip())]
-    def drawn(i: int) -> tuple[int, float]:
-        return (lines[i].get("seed") or 0, lines[i].get("temperature") or 0.0)
-
-    paras.sort(key=lambda t: (drawn(t[0]), len(t[2])))  # one seed together, like lengths together
-    calls: list[list[tuple[int, int, str]]] = [[]]
-    for t in paras:
-        cur = calls[-1]
-        if cur and (drawn(cur[0][0]) != drawn(t[0]) or len(cur) >= batch
-                    or (len(cur) + 1) * len(t[2]) > chars):  # sorted: t is the longest of its seed
-            calls.append([])
-        calls[-1].append(t)
     got: dict[int, dict[int, Any]] = {}
     errors: dict[int, str] = {}
     rate = 24000
-    todo = [c for c in calls if c]
+    todo = plan_calls(lines, batch, chars)
     while todo:
         part = todo.pop(0)
         try:
