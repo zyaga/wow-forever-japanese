@@ -245,8 +245,8 @@ Text.T = {
     ja = "%s 件を送信済みにしました。次回は新しいエラーだけを送ります。",
   },
   ["about.bug"] = {
-    en = "Something not working, or an idea? Send it from here.",
-    ja = "不具合や提案は、ここから送れます。",
+    en = "Something broken, or an idea?",
+    ja = "不具合や提案はこちらから。",
   },
   ["button.reportBug"] = { en = "Report a bug or idea", ja = "不具合・提案を報告" },
   ["collector.clear"] = { en = "Clear collected English", ja = "記録した英語を消去" },
@@ -285,8 +285,8 @@ Text.T = {
 
   -- the fix window (UI/FixWindow) and the About page's way into it
   ["about.fix"] = {
-    en = "Spotted a wrong or awkward line? Pick it from the lines you just saw.",
-    ja = "翻訳の間違いや不自然な文を見つけたら、表示された行から選んで報告できます。",
+    en = "A wrong or awkward translation?",
+    ja = "翻訳の間違いや不自然な文はこちらから。",
   },
   ["button.reportLine"] = { en = "Report a line", ja = "翻訳を報告" },
   ["fix.title"] = { en = "Report a translation", ja = "翻訳の報告" },

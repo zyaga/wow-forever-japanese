@@ -365,18 +365,31 @@ end
 local function voiceLoaded()
   local packs = WFJ.Voice and WFJ.Voice.hasPack() and WFJ.Voice.packs()
   if not packs then return nil end
-  local rows = {}
+  local bands, rest = {}, {}
   for folder in pairs(packs) do
-    local en, ja, lo = Options.voicePackName(folder)
-    rows[#rows + 1] = { en = en, ja = ja, lo = lo or math.huge, folder = folder }
+    local lo, hi = folder:match("Levels(%d+)to(%d+)$")
+    if lo then
+      bands[#bands + 1] = { lo = tonumber(lo), hi = tonumber(hi) }
+    else
+      local en, ja = Options.voicePackName(folder)
+      rest[#rest + 1] = { en = en, ja = ja, folder = folder }
+    end
   end
-  if #rows == 0 then return nil end
-  table.sort(rows, function(a, b)
-    if a.lo ~= b.lo then return a.lo < b.lo end
-    return a.folder < b.folder
-  end)
-  local en, ja = {}, {}
-  for i, r in ipairs(rows) do en[i], ja[i] = r.en, r.ja end
+  if #bands == 0 and #rest == 0 then return nil end
+  table.sort(bands, function(a, b) return a.lo < b.lo end)
+  table.sort(rest, function(a, b) return a.folder < b.folder end)
+  -- bands that follow on from each other read as one range (1-10 … 51-60 → "Levels 1-60"), so the line stays short
+  local en, ja, i = {}, {}, 1
+  while i <= #bands do
+    local lo, hi = bands[i].lo, bands[i].hi
+    while bands[i + 1] and bands[i + 1].lo == hi + 1 do
+      i = i + 1
+      hi = bands[i].hi
+    end
+    en[#en + 1], ja[#ja + 1] = ("Levels %d-%d"):format(lo, hi), ("レベル%d-%d"):format(lo, hi)
+    i = i + 1
+  end
+  for _, r in ipairs(rest) do en[#en + 1], ja[#ja + 1] = r.en, r.ja end
   return table.concat(en, ", "), table.concat(ja, "、")
 end
 
