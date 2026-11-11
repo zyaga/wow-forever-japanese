@@ -39,6 +39,7 @@ export-respell --out DIR [--size N]
 import-respell BATCH.jsonl --model MODEL --batch NAME [--date YYYY-MM-DD] [--dry-run]
     Rows {"en", "ja"}: a word's translated Japanese is replaced by its katakana and a word with no line gets
     one. A spelling that is not katakana, or that differs from the katakana a word already has, is refused.
+    --replace (a fix round) lets a row change the katakana a word has; a word a person wrote is kept.
 respell [--date YYYY-MM-DD] [--dry-run]
     Every translated name is written again from the spellings of its words, its reading with it
     (`wfj.core.respell`). A name already in katakana, a name a person wrote and a name with nothing to spell
@@ -488,12 +489,13 @@ def export_respell(root: Path, out: Path, size: int) -> int:
     return write_batches(out, rows, size, "respell")
 
 
-def import_respell(
-    root: Path, path: Path, model_id: str, batch: str, today: str, dry_run: bool
+def import_respell(  # noqa: PLR0913 - one batch file, its provenance, and the two ways to run it
+    root: Path, path: Path, model_id: str, batch: str, today: str, dry_run: bool, replace: bool = False
 ) -> tuple[int, list[str]]:
     """Takes drafted spellings ({"en", "ja"}): a word's translated Japanese is replaced by its katakana and a
     word with no line gets one. A spelling that is not katakana, or that differs from the katakana a word
-    already has, is refused: a word is spelled one way."""
+    already has, is refused: a word is spelled one way. `replace` (a fix round) lets a row change the
+    katakana a word has, never a word a person wrote."""
     prov = draft_provenance(model_id, "names", batch, today)
     words = {w["en"]: w for w in load_words(root)}
     known = _spellings(list(words.values()))
@@ -505,10 +507,13 @@ def import_respell(
             rejected.append(f"word {en!r}: not one English word")
         elif not isinstance(ja, str) or not names.KATAKANA.match(ja):
             rejected.append(f"word {en!r}: {ja!r} is not katakana")
-        elif known.get(en.casefold(), ja) != ja:
+        elif known.get(en.casefold(), ja) != ja and not replace:
             rejected.append(f"word {en!r}: already {known[en.casefold()]!r}, not {ja!r}")
-        elif en.casefold() not in known:
+        elif known.get(en.casefold()) != ja:
             same = [k for k in words if k.casefold() == en.casefold()]
+            if any(words[k]["provenance"]["class"] in ("human", "correction") for k in same):
+                rejected.append(f"word {en!r}: written by a person, kept")
+                continue
             for k in same or [en]:
                 words[k] = {"en": k, "ja": ja, "check": True, "provenance": dict(prov)}
             known[en.casefold()] = ja
@@ -603,6 +608,7 @@ def _parser(today: str) -> argparse.ArgumentParser:
     ir.add_argument("--batch", required=True)
     ir.add_argument("--date", default=today)
     ir.add_argument("--dry-run", action="store_true")
+    ir.add_argument("--replace", action="store_true", help="a fix round: may change a katakana spelling")
     rs = sub.add_parser("respell")
     rs.add_argument("--date", default=today)
     rs.add_argument("--dry-run", action="store_true")
@@ -617,7 +623,9 @@ def _run_respell(a: argparse.Namespace, root: Path) -> int:
         print(f"names export-respell: {n} words with no katakana spelling → {a.out}")
         return 0
     if a.cmd == "import-respell":
-        n, rejected = import_respell(root, Path(a.batch_file), a.model, a.batch, a.date, a.dry_run)
+        n, rejected = import_respell(
+            root, Path(a.batch_file), a.model, a.batch, a.date, a.dry_run, a.replace
+        )
         for r in rejected:
             print(f"names import-respell: rejected {r}", file=sys.stderr)
         print(f"names import-respell: {n} words spelled, {len(rejected)} rejected{dry}")

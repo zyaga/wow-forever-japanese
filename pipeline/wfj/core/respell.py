@@ -30,7 +30,7 @@ _LETTER_NAMES = (
 _LETTER = dict(zip("abcdefghijklmnopqrstuvwxyz", _LETTER_NAMES.split(), strict=True))
 _WORD_FOR = {"&": "アンド", "%": "パーセント"}
 _KEPT = {":": "：", "(": "（", ")": "）", "!": "！", "?": "？", ",": "、"}
-_OPENS = "：（"  # no dot is written after these, nor before a closing bracket
+_OPENS = "：（、"  # no dot is written after these, nor before a closing bracket
 
 
 def _roman(piece: str) -> int | None:

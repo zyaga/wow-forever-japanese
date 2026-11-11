@@ -65,6 +65,11 @@ def test_a_name_is_spelled_from_its_words(en, ja, reading):
     assert respell.assemble(en, SPELL.get) == (ja, reading, [])
 
 
+def test_a_comma_inside_a_name_is_kept_with_no_dot_after_it():
+    spell = {"black": "ブラック", "dawn": "ドーン", "and": "アンド", "end": "エンド"}
+    assert respell.assemble("Black, Dawn and End", spell.get)[0] == "ブラック、ドーン・アンド・エンド"
+
+
 def test_a_leading_the_stays_when_it_is_the_whole_name():
     assert respell.assemble("The", SPELL.get) == ("ザ", "ざ", [])
 
@@ -186,3 +191,16 @@ def test_respell_stops_at_a_word_with_no_spelling(store):
     counts = cmd.respell(store, TODAY, False)
     assert counts["word with no spelling"] == 2 and counts["respelled"] == 0
     assert {ln["en"]: ln["ja"] for ln in load_lines(store)}["Black Dragonflight"] == "黒いドラゴンフライト"
+
+
+def test_a_fix_round_may_replace_a_katakana_spelling_but_never_a_persons(store, tmp_path):
+    words = {w["en"]: w for w in load_words(store)}
+    words["Tiger"] = _word("Tiger", "トラ")
+    words["Orgrimmar"] = {"en": "Orgrimmar", "ja": "オーグリマー", "check": True, "provenance": dict(HUMAN)}
+    save_words(store, words.values())
+    batch = _batch(tmp_path, [{"en": "tiger", "ja": "タイガー"}, {"en": "orgrimmar", "ja": "オルグリマー"}])
+    assert cmd.import_respell(store, batch, "m2", "respell-fix", TODAY, False)[0] == 0  # refused without it
+    n, rejected = cmd.import_respell(store, batch, "m2", "respell-fix", TODAY, False, replace=True)
+    after = {w["en"]: w["ja"] for w in load_words(store)}
+    assert (n, after["Tiger"], after["Orgrimmar"]) == (1, "タイガー", "オーグリマー")
+    assert len(rejected) == 1 and "person" in rejected[0]
