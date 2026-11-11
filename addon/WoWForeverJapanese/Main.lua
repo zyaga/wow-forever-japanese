@@ -295,6 +295,7 @@ function WFJ.OnLoad()
     end,
   }) end)
 
+  step("fontshare", WFJ.Font.share) -- the bundled face into the shared font registry, when one is loaded
   step("uiindex", WFJ.BuildUIIndex)
   -- lines a newer addon covers leave the collector file; the tooltip gate needs the UI index's duration strings
   step("collectorprune", function() WFJ.Collector.prune() end)

@@ -103,12 +103,13 @@ def test_real_toc_fields_and_load_order(root):
     ]
     assert files[: len(head)] == head and files[-len(tail) :] == tail
     generated = files[len(head) : -len(tail)]
-    assert generated[:2] == ["Data/Meta.lua", "Data/Vectors.lua"]
+    assert generated[:3] == ["Data/Meta.lua", "Data/Vectors.lua", "Data/ErrorSounds.lua"]
     assert all(f.startswith("Data/") and (root / "addon/WoWForeverJapanese" / f).is_file() for f in generated)
     assert generated == sorted(
         generated,
         key=lambda f: (
-            ["Meta", "Vectors", "Quest", "Item", "Spell", "Objective", "Area", "Gossip", "Book", "UI", "English", "Reading", "Gloss"].index(
+            ["Meta", "Vectors", "ErrorSounds", "Quest", "Item", "Spell", "Objective", "Area", "Gossip", "Book", "UI",
+             "English", "Reading", "Gloss"].index(
                 f.split("/")[1].split("_")[0].replace(".lua", "")
             ),
             f,

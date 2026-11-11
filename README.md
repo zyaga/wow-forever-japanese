@@ -239,6 +239,14 @@ use the game's Japanese words; a few words of its own stay English. Dialogue UI 
 
 ![A Dialogue UI quest window in Japanese, with the quest's names such as Defias Pillager left in English](docs/images/dialogue-ui.jpg)
 
+**Does it work with Ellesmere UI?** Partly. Ellesmere UI draws much of the game's interface itself, and this addon
+does not translate Ellesmere UI: its bars, frames, options and chat window stay English. What the addon does is
+keep its Japanese readable in the game windows Ellesmere UI restyles (the character window, settings, the mailbox,
+NPC and quest windows). Ellesmere UI's fonts have no Japanese letters, so in its options (`/eui`), on the Fonts
+page, set Global Font to "WoW Forever Japanese". English text in those windows then uses the same font. For
+Japanese chat, turn Ellesmere UI's Chat module (EllesmereUI Chat) off in the addon list. Ellesmere UI is not
+needed and not included.
+
 ## Credits
 
 The hand-written translations are the work of the Japanese translators of **WoWJapanizer**, **QuestJapanizer** and
@@ -410,6 +418,8 @@ GitHub アカウントがなければ、[Discord](https://foreverjapanese.com/di
 **Dialogue UI と一緒に使える？** 使えます。Dialogue UI を入れている場合、そのクエスト、NPCとの会話、本のウィンドウにも日本語が表示され、英語を見るキー、単語カード、音声もそのまま使えます。ボタン、見出し、アイテムのツールチップにはゲームの日本語が使われます。Dialogue UI 独自の言葉の一部は英語のままです。Dialogue UI は必須ではなく、このアドオンには含まれていません。
 
 ![日本語で表示された Dialogue UI のクエストウィンドウ。Defias Pillager などの名前は英語のまま](docs/images/dialogue-ui.jpg)
+
+**Ellesmere UI と一緒に使える？** 一部だけです。Ellesmere UI はゲームのインターフェースの多くを自分で描きますが、このアドオンは Ellesmere UI 自体を翻訳しません。Ellesmere UI のバー、フレーム、設定、チャットウィンドウは英語のままです。このアドオンの日本語が表示されるのは、Ellesmere UI が描き直すゲームのウィンドウ（キャラクター、設定、メールボックス、NPC やクエストのウィンドウ）です。Ellesmere UI のフォントには日本語の文字がないため、設定（`/eui`）の Fonts ページで Global Font を「WoW Forever Japanese」にしてください。そのウィンドウの英語も同じフォントで表示されます。チャットを日本語にするには、アドオン一覧で Ellesmere UI の Chat モジュール（EllesmereUI Chat）をオフにしてください。Ellesmere UI は必須ではなく、このアドオンには含まれていません。
 
 ### クレジット
 
