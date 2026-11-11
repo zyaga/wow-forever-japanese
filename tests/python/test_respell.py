@@ -105,6 +105,8 @@ def test_an_assembled_name_is_a_valid_name_line():
 TODAY = "2026-11-11"
 DRAFT = {"class": "machine", "model": "m", "source": "draft-names-test1@2026-11-10", "imported": "2026-11-10"}
 HUMAN = {"class": "human", "source": "hearthstone@256589", "imported": "2026-11-10"}
+FIXED = {"class": "correction", "translator": "a player", "source": "report@12345", "corrects": "hearthstone@256589",
+         "imported": "2026-11-10"}
 
 
 def _line(en: str, ja: str, reading: str, prov: dict = DRAFT, free: bool = False) -> dict:
@@ -126,6 +128,7 @@ def store(tmp_path):
             _line("Black Gloves", "黒い手袋", "くろいてぶくろ", free=True),
             _line("Zin-Malor", "ジン・マロール", "じん・まろーる"),
             _line("Orgrimmar", "オーグリマー", "おーぐりまー", prov=HUMAN),
+            _line("Stormwind", "嵐風", "らんぷう", prov=FIXED),
             _line("[DNT]", "開発用", "かいはつよう"),
         ],
     )
@@ -136,6 +139,7 @@ def store(tmp_path):
             _word("Dragonflight", "ドラゴンフライト"),
             _word("Zin", "ジン"),
             _word("Malor", "マロール"),
+            _word("Orgrimmar", "オーグリマー"),
         ],
     )
     return tmp_path
@@ -179,7 +183,7 @@ def test_respell_rewrites_every_translated_name_and_leaves_the_rest(store, tmp_p
     batch = _batch(tmp_path, [{"en": "black", "ja": "ブラック"}, {"en": "gloves", "ja": "グローブ"}])
     cmd.import_respell(store, batch, "m2", "respell-1", TODAY, False)
     counts = cmd.respell(store, TODAY, False)
-    assert counts == {"respelled": 2, "kept": 2, "nothing to spell": 1, "word with no spelling": 0}
+    assert counts == {"respelled": 2, "kept": 3, "nothing to spell": 1, "word with no spelling": 0}
     after = {ln["en"]: ln for ln in load_lines(store)}
     assert (after["Black Dragonflight"]["ja"], after["Black Dragonflight"]["reading"]) == (
         "ブラック・ドラゴンフライト",
@@ -191,7 +195,7 @@ def test_respell_rewrites_every_translated_name_and_leaves_the_rest(store, tmp_p
         "source": "respell@2026-11-11",
         "imported": "2026-11-11",
     }
-    for en in ("Zin-Malor", "Orgrimmar", "[DNT]"):  # katakana already, Hearthstone's own, nothing to spell
+    for en in ("Zin-Malor", "Orgrimmar", "Stormwind", "[DNT]"):  # equal already (two), a player's fix, no words
         assert after[en] == before[en]
 
 
@@ -201,17 +205,24 @@ def test_respell_stops_at_a_word_with_no_spelling(store):
     assert {ln["en"]: ln["ja"] for ln in load_lines(store)}["Black Dragonflight"] == "黒いドラゴンフライト"
 
 
-def test_a_fix_round_may_replace_a_katakana_spelling_but_never_a_persons(store, tmp_path):
+def test_a_fix_round_may_replace_a_katakana_spelling_but_never_a_players_fix(store, tmp_path):
     words = {w["en"]: w for w in load_words(store)}
-    words["Tiger"] = _word("Tiger", "トラ")
-    words["Orgrimmar"] = {"en": "Orgrimmar", "ja": "オーグリマー", "check": True, "provenance": dict(HUMAN)}
+    words["Tiger"] = {"en": "Tiger", "ja": "トラ", "check": True, "provenance": dict(HUMAN)}  # from a card
+    words["Stormwind"] = {"en": "Stormwind", "ja": "ストームウィンド", "check": True, "provenance": dict(FIXED)}
     save_words(store, words.values())
-    batch = _batch(tmp_path, [{"en": "tiger", "ja": "タイガー"}, {"en": "orgrimmar", "ja": "オルグリマー"}])
+    batch = _batch(tmp_path, [{"en": "tiger", "ja": "タイガー"}, {"en": "stormwind", "ja": "ストームウインド"}])
     assert cmd.import_respell(store, batch, "m2", "respell-fix", TODAY, False)[0] == 0  # refused without it
     n, rejected = cmd.import_respell(store, batch, "m2", "respell-fix", TODAY, False, replace=True)
     after = {w["en"]: w["ja"] for w in load_words(store)}
-    assert (n, after["Tiger"], after["Orgrimmar"]) == (1, "タイガー", "オーグリマー")
+    assert (n, after["Tiger"], after["Stormwind"]) == (1, "タイガー", "ストームウィンド")
     assert len(rejected) == 1 and "person" in rejected[0]
+
+
+def test_a_name_from_a_card_is_spelled_from_the_english_like_the_rest(store):
+    save_lines(store, [*load_lines(store), _line("Tiger", "トラ", "とら", prov=HUMAN)])
+    save_words(store, [*load_words(store), _word("black", "ブラック"), _word("gloves", "グローブ"), _word("tiger", "タイガー")])
+    cmd.respell(store, TODAY, False)
+    assert {ln["en"]: ln["ja"] for ln in load_lines(store)}["Tiger"] == "タイガー"
 
 
 def test_a_katakana_name_that_is_a_translation_is_spelled_again(store):
@@ -226,14 +237,14 @@ def test_words_learn_their_spelling_from_a_name_already_spelled_out(store):
     save_lines(store, load_lines(store) + [_line("Xandar Goodbeard", "ザンダー・グッドビアード", "ざんだー・ぐっどびあーど")])
     n, differ = cmd.learn_spellings(store, False)
     words = {w["en"]: w["ja"] for w in load_words(store)}
-    assert (n, differ) == (3, [])  # the two words of the new name, and the one of the name a person wrote
-    assert (words["Xandar"], words["Goodbeard"], words["Orgrimmar"]) == ("ザンダー", "グッドビアード", "オーグリマー")
+    assert (n, differ) == (2, [])
+    assert (words["Xandar"], words["Goodbeard"]) == ("ザンダー", "グッドビアード")
 
 
 def test_a_name_that_spells_a_word_another_way_is_reported_not_learned(store):
     save_lines(store, load_lines(store) + [_line("Zin Hold", "ジーン・ホールド", "じーん・ほーるど")])
     n, differ = cmd.learn_spellings(store, False)
-    assert n == 2 and len(differ) == 1 and "Zin" in differ[0]  # Hold and Orgrimmar are learned, Zin is not
+    assert n == 1 and len(differ) == 1 and "Zin" in differ[0]  # Hold is learned, Zin keeps its spelling
     assert {w["en"]: w["ja"] for w in load_words(store)}["Zin"] == "ジン"
 
 

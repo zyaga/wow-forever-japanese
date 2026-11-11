@@ -476,10 +476,18 @@ def _spellings(words: Sequence[dict[str, Any]]) -> dict[str, str]:
     return out
 
 
+def _kept(prov: dict[str, Any]) -> bool:
+    """Wording that is never spelled again: a person's own, from a fix report. A name or word taken from
+    Hearthstone's cards is spelled from the English like the rest: the voice says what the screen shows."""
+    return prov["class"] == "correction" or (
+        prov["class"] == "human" and not prov["source"].startswith("hearthstone@")
+    )
+
+
 def _respelled(line: dict[str, Any]) -> bool:
     """A name that is left as it is: one a person wrote. A name already in katakana is still put together
     again: Japanese writes some of its own words in katakana (サソリ), and those are translations too."""
-    return line["provenance"]["class"] in ("human", "correction")
+    return _kept(line["provenance"])
 
 
 def learn_spellings(root: Path, dry_run: bool) -> tuple[int, list[str]]:
@@ -548,7 +556,7 @@ def import_respell(  # noqa: PLR0913 - one batch file, its provenance, and the t
             rejected.append(f"word {en!r}: already {known[en.casefold()]!r}, not {ja!r}")
         elif known.get(en.casefold()) != ja:
             same = [k for k in words if k.casefold() == en.casefold()]
-            if any(words[k]["provenance"]["class"] in ("human", "correction") for k in same):
+            if any(_kept(words[k]["provenance"]) for k in same):
                 rejected.append(f"word {en!r}: written by a person, kept")
                 continue
             for k in same or [en]:
