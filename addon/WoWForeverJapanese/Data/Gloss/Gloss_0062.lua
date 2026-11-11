@@ -694,8 +694,6 @@ WFJ.Data.add("gloss", {
   [62694] = "大安売り\tおおやすうり\tgreat bargains (big sale)",
   [62695] = "大家\tおおや\tlandlord",
   [62696] = "大将\tたいしょう\tWarlord (general)",
-  [62697] = "大将軍\tだいしょうぐん\tWarlord (great general)",
-  [62698] = "大将軍\tだいしょうぐん\tthe Warlord (great general)",
   [62699] = "大層\tたいそう\tso (very)",
   [62700] = "大嵐\tおおあらし\tgreat storm",
   [62701] = "大巫女\tおおみこ\thigh priestess",

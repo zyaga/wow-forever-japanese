@@ -966,7 +966,7 @@ Dialogue UI's windows ([App capabilities → Dialogue UI windows](../app-capabil
 - Re-sizing a heading's band to the Japanese matches Dialogue UI's own padding (step 12).
 
 ### Ellesmere UI checklist
-The bundled font in the shared font registry ([App capabilities → Ellesmere UI](../app-capabilities.md#ellesmere-ui), [ADR-078](../adr/078-our-font-in-the-shared-font-registry.md)). Install Ellesmere UI in the Forever AddOns folder next to this addon (nothing of it is in this repo), enable both at character select, and log in a fresh level-1 character with an empty quest log.
+The bundled font in the shared font registry ([App capabilities → Ellesmere UI](../app-capabilities.md#ellesmere-ui), [ADR-080](../adr/080-our-font-in-the-shared-font-registry.md)). Install Ellesmere UI in the Forever AddOns folder next to this addon (nothing of it is in this repo), enable both at character select, and log in a fresh level-1 character with an empty quest log.
 
 1. **It loads.** `/wfj debug` lists no failed step named `fontshare`. **Fail:** a failed step, or a Lua error at login.
 2. **Before the font is picked.** Open the character window (C) and the game's settings (Esc → Options): headers, tabs and the title that show Japanese may be empty boxes. This is the fault the next step fixes; note which windows show it.

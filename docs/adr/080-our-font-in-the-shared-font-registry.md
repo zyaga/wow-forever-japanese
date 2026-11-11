@@ -1,4 +1,4 @@
-# ADR-078: Our font in the shared font registry
+# ADR-080: Our font in the shared font registry
 
 - **Status:** Accepted
 - **Date:** 2026-11-11

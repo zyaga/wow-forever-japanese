@@ -254,6 +254,17 @@ def keyed_text(type_: str, nn: str, shard_rows: dict[str, list[str]]) -> str:
     return _add_text(type_, src, ((lua_string(k), slots) for k, slots in sorted(shard_rows.items())))
 
 
+def names_text(nn: str, lines: Iterable[dict[str, Any]]) -> str:
+    """One shard of the Japanese names (ADR-078): `[English hash] = { Japanese, reading, English }` for the
+    names it is given (the ones with Japanese). Generated beside the addon but not in the TOC: the names
+    setting loads them."""
+    entries = (
+        (lua_string(ln["id"]), [lua_string(ln["ja"]), lua_string(ln["reading"]), lua_string(ln["en"])])
+        for ln in sorted(lines, key=lambda ln: ln["id"])
+    )
+    return _add_text("name", f"data/name/name-{nn}.jsonl", entries)
+
+
 def _packed_word(entry: list[str], meanings: dict[tuple[str, str, str], int]) -> str:
     if len(entry) == 5:
         return f"{entry[0]}={entry[1]}={meanings[(entry[2], entry[3], entry[4])]}"

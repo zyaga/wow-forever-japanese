@@ -22,6 +22,7 @@ from wfj.core.model import SCHEMA, validate_line
 from wfj.core.normalize import female_variant, mask_values, normalize_for, normalize_v1
 from wfj.emit import lua_writer, schema
 from wfj.io.jsonl_store import Store
+from wfj.io.names_store import load_lines as load_name_lines
 from wfj.paths import allowlist_path, data_root
 
 TOC_NAME = "WoWForeverJapanese.toc"
@@ -280,6 +281,7 @@ def plan(store: Store, vectors: list[dict], report: dict[str, Any] | None = None
         rows = [json.loads(ln) for ln in sounds.read_text(encoding="utf-8").splitlines() if ln.strip()]
         _check_error_sounds(rows)
         out["Data/ErrorSounds.lua"] = lua_writer.error_sounds_text(rows)
+    out.update(_plan_names(store.root))
     return out
 
 
@@ -296,6 +298,21 @@ def _check_error_sounds(rows: list[dict]) -> None:
         if (race, sex) in seen:
             raise ValueError(f"{ERROR_SOUNDS} row {n}: a second row for race {race} sex {sex}")
         seen.add((race, sex))
+
+
+NAMES_DIR = "Data/Names"
+
+
+def _plan_names(root: Path) -> dict[str, str]:
+    """`Data/Names/Names_<nn>.lua` per `data/name` shard that holds a name with Japanese. They are left out of
+    the TOC: nothing loads them until the names setting does (ADR-078)."""
+    by_shard: dict[str, list[dict[str, Any]]] = {}
+    for ln in load_name_lines(root):
+        if ln["status"] == "trusted":
+            by_shard.setdefault(ln["id"][:2], []).append(ln)
+    return {
+        f"{NAMES_DIR}/Names_{nn}.lua": lua_writer.names_text(nn, ls) for nn, ls in sorted(by_shard.items())
+    }
 
 
 def _check_store(store: Store) -> None:
@@ -562,7 +579,7 @@ def load_numbers(store: Store) -> tuple[dict[glosses.Meaning, int], list[str]]:
 def toc_files(planned: dict[str, str]) -> list[str]:
     """Load order inside the generated block: Meta, Vectors, the error recordings, then shards by type
     then range."""
-    shards = [p for p in planned if p not in FIXED]
+    shards = [p for p in planned if p not in FIXED and not p.startswith(f"{NAMES_DIR}/")]
     order = {t: i for i, t in enumerate(schema.TOC_ORDER)}
 
     def type_of(rel: str) -> str:
@@ -594,7 +611,7 @@ def generated_on_disk(addon_dir: Path) -> set[str]:
     for rel in FIXED:
         if (addon_dir / rel).is_file():
             found.add(rel)
-    for prefix in schema.FILE_PREFIX.values():
+    for prefix in (*schema.FILE_PREFIX.values(), NAMES_DIR.removeprefix("Data/")):
         for p in (data / prefix).glob(f"{prefix}_*.lua"):
             if p.is_file():
                 found.add(p.relative_to(addon_dir).as_posix())
