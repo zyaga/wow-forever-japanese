@@ -399,20 +399,19 @@ Text.T = {
   ["intro.pick.play"] = { en = "Just play", ja = "日本語で遊ぶ" },
   ["intro.back"] = { en = "Back", ja = "戻る" },
   ["intro.confirm"] = { en = "Confirm", ja = "決定" },
-  -- under the three choices: what the one selected does, before it is confirmed
+  -- under the three choices: what the one selected does, before it is confirmed. One point per line ("\n"): the
+  -- window shows them as two lists side by side, Japanese and English
   ["intro.about.ja"] = {
-    en = "The game shows in Japanese; hold the key for English. Point at a word for its reading and meaning, "
-      .. "and save words to study.",
-    ja = "ゲームを日本語で表示し、キーを押している間は英語になります。単語にカーソルを合わせると読み方と意味が出て、保存して学習できます。",
+    en = "Game text in Japanese\nHold the key for English\nWord cards and study: on",
+    ja = "ゲームを日本語で表示\nキーを押している間は英語\n単語カードと学習：あり",
   },
   ["intro.about.en"] = {
-    en = "The game stays in English; hold the key for Japanese. Point at an English word for its Japanese word "
-      .. "and how to say it, and save words to study.",
-    ja = "ゲームは英語のままで、キーを押している間は日本語になります。英語の単語にカーソルを合わせると日本語の意味と発音が出て、保存して学習できます。",
+    en = "Game text stays in English\nHold the key for Japanese\nEnglish word cards and study: on",
+    ja = "ゲームは英語のまま\nキーを押している間は日本語\n英単語のカードと学習：あり",
   },
   ["intro.about.play"] = {
-    en = "The game shows in Japanese; hold the key for English. No word cards and no study tab: just the game.",
-    ja = "ゲームを日本語で表示し、キーを押している間は英語になります。単語カードと学習タブは出ません。",
+    en = "Game text in Japanese\nHold the key for English\nWord cards and study: off",
+    ja = "ゲームを日本語で表示\nキーを押している間は英語\n単語カードと学習：なし",
   },
   ["intro.later"] = { en = "You can change this later in the settings.", ja = "あとで設定から変更できます。" },
   ["intro.key"] = { en = "Hold key", ja = "押すキー" },

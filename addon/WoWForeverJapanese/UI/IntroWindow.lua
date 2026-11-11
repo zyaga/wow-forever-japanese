@@ -27,7 +27,8 @@ local watcher -- the frame that hears the cinematic events, made by the first re
 
 IntroWindow.step = "pick" -- "pick": the question and its three cards; "info": what the choice means
 IntroWindow.selected = nil -- the card clicked on the first page; nothing is written until Confirm
-local ABOUT = 62 -- room under the cards for what the selected one does: two lines in each language
+local ABOUT = 62 -- room under the cards for what the selected one does: three points
+local BULLET = { ja = "・", en = "•  " }
 local PURPOSES = { "ja", "en", "play" }
 -- The client's own icons, one per choice: a scroll, a book, a sword.
 local ICONS = { ja = "Interface\\Icons\\INV_Scroll_03", en = "Interface\\Icons\\INV_Misc_Book_09",
@@ -155,7 +156,7 @@ local function build()
   for _, fs in ipairs({ f.ask.ja, f.ask.en }) do fs:SetJustifyH("CENTER") end
   f.cards = {}
   for _, purpose in ipairs(PURPOSES) do f.cards[purpose] = card(a, purpose) end
-  f.about = line(a)
+  f.about = line(a, math.floor(TEXT_WIDTH / 2) - 6) -- two lists side by side: Japanese, then English
   en, ja = Text.get("intro.confirm")
   f.confirm = W.button(a, ja .. " / " .. en, nil, 150, function() IntroWindow.pick(IntroWindow.selected) end)
   f.later = a:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
@@ -221,7 +222,7 @@ local function layoutPick(f)
   f.about.ja:ClearAllPoints()
   f.about.ja:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT, -(used + 16))
   f.about.en:ClearAllPoints()
-  f.about.en:SetPoint("TOPLEFT", f.about.ja, "BOTTOMLEFT", 0, -5)
+  f.about.en:SetPoint("TOPLEFT", f.about.ja, "TOPLEFT", math.floor(TEXT_WIDTH / 2) + 6, 0)
   used = used + 16 + ABOUT
   f.confirm:ClearAllPoints()
   f.confirm:SetPoint("TOPRIGHT", a, "TOPLEFT", LEFT + TEXT_WIDTH, -(used + 16))
@@ -314,7 +315,9 @@ function IntroWindow.refill()
     c.picked = IntroWindow.selected == purpose
     edge(c, c.picked)
   end
-  fill(f.about, Text.get("intro.about." .. (IntroWindow.selected or "ja")))
+  local aboutEn, aboutJa = Text.get("intro.about." .. (IntroWindow.selected or "ja"))
+  W.put(f.about.ja, BULLET.ja .. aboutJa:gsub("\n", "\n" .. BULLET.ja), 13)
+  W.put(f.about.en, BULLET.en .. aboutEn:gsub("\n", "\n" .. BULLET.en), 12)
   W.setShown(f.pickPage, IntroWindow.step ~= "info")
   W.setShown(f.infoPage, IntroWindow.step == "info")
   for _, region in ipairs({ f.voiceRule, f.voiceTitle, f.voice.ja, f.voice.en, f.box }) do
