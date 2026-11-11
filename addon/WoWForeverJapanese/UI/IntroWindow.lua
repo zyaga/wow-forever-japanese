@@ -26,6 +26,8 @@ IntroWindow.waiting = false -- a cinematic is playing: open when it ends
 local watcher -- the frame that hears the cinematic events, made by the first request
 
 IntroWindow.step = "pick" -- "pick": the question and its three cards; "info": what the choice means
+IntroWindow.selected = nil -- the card clicked on the first page; nothing is written until Confirm
+local ABOUT = 62 -- room under the cards for what the selected one does: two lines in each language
 local PURPOSES = { "ja", "en", "play" }
 -- The client's own icons, one per choice: a scroll, a book, a sword.
 local ICONS = { ja = "Interface\\Icons\\INV_Scroll_03", en = "Interface\\Icons\\INV_Misc_Book_09",
@@ -96,7 +98,7 @@ local function edge(card, on)
 end
 
 -- A choice card: an icon, the English under it and the Japanese under that. It lights up under the mouse and stays
--- lit while it is the one picked; a click picks it and goes on to the second page.
+-- lit while it is the one selected; a click selects it and shows what it does under the cards.
 local function card(p, purpose)
   local c = CreateFrame("Button", nil, p, "BackdropTemplate")
   c:SetSize(CARD_W, CARD_H)
@@ -118,7 +120,7 @@ local function card(p, purpose)
   c.ja:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3])
   c:SetScript("OnEnter", function(self) edge(self, true) end)
   c:SetScript("OnLeave", function(self) edge(self, self.picked) end)
-  c:SetScript("OnClick", function() IntroWindow.pick(purpose) end)
+  c:SetScript("OnClick", function() IntroWindow.select(purpose) end)
   edge(c, false)
   return c
 end
@@ -153,9 +155,12 @@ local function build()
   for _, fs in ipairs({ f.ask.ja, f.ask.en }) do fs:SetJustifyH("CENTER") end
   f.cards = {}
   for _, purpose in ipairs(PURPOSES) do f.cards[purpose] = card(a, purpose) end
+  f.about = line(a)
+  en, ja = Text.get("intro.confirm")
+  f.confirm = W.button(a, ja .. " / " .. en, nil, 150, function() IntroWindow.pick(IntroWindow.selected) end)
   f.later = a:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
-  f.later:SetWidth(TEXT_WIDTH)
-  f.later:SetJustifyH("CENTER")
+  f.later:SetWidth(TEXT_WIDTH - 170) -- beside the Confirm button
+  f.later:SetJustifyH("LEFT")
   en, ja = Text.get("intro.later")
   W.put(f.later, ja .. "　" .. en, 11)
   f.later:SetTextColor(W.JA_COLOR[1], W.JA_COLOR[2], W.JA_COLOR[3])
@@ -212,10 +217,18 @@ local function layoutPick(f)
     c:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT + (i - 1) * (CARD_W + CARD_GAP), -(used + 18))
   end
   used = used + 18 + CARD_H
+  -- what the selected card does, in a fixed space so the window keeps its size from one card to the next
+  f.about.ja:ClearAllPoints()
+  f.about.ja:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT, -(used + 16))
+  f.about.en:ClearAllPoints()
+  f.about.en:SetPoint("TOPLEFT", f.about.ja, "BOTTOMLEFT", 0, -5)
+  used = used + 16 + ABOUT
+  f.confirm:ClearAllPoints()
+  f.confirm:SetPoint("TOPRIGHT", a, "TOPLEFT", LEFT + TEXT_WIDTH, -(used + 16))
   f.later:ClearAllPoints()
-  f.later:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT, -(used + 14))
-  used = used + 14 + height(f.later)
-  f:SetHeight(TOP + used + PAD + 6 + BOTTOM)
+  f.later:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT, -(used + 21))
+  used = used + 16 + BUTTON
+  f:SetHeight(TOP + used + PAD + 4 + BOTTOM)
 end
 
 -- The second page: the opening line, a rule, the points; while no voice pack has loaded, a rule and the voice
@@ -298,9 +311,10 @@ function IntroWindow.refill()
   W.setShown(f.readings.ja, shown ~= "play")
   W.setShown(f.readings.en, shown ~= "play")
   for purpose, c in pairs(f.cards) do
-    c.picked = shown == purpose -- the player's pick, else the one the settings already match
+    c.picked = IntroWindow.selected == purpose
     edge(c, c.picked)
   end
+  fill(f.about, Text.get("intro.about." .. (IntroWindow.selected or "ja")))
   W.setShown(f.pickPage, IntroWindow.step ~= "info")
   W.setShown(f.infoPage, IntroWindow.step == "info")
   for _, region in ipairs({ f.voiceRule, f.voiceTitle, f.voice.ja, f.voice.en, f.box }) do
@@ -318,7 +332,13 @@ function IntroWindow.show(step)
   IntroWindow.refill()
 end
 
--- The player's answer: its two settings, then the second page.
+-- A card clicked on the first page: it lights up and the lines under the cards say what it does. Nothing is written.
+function IntroWindow.select(purpose)
+  IntroWindow.selected = purpose
+  IntroWindow.refill()
+end
+
+-- Confirm: the selected choice's settings, then the second page.
 function IntroWindow.pick(purpose)
   local w = WRITES[purpose]
   WFJ.Settings.set("direction", w.direction)
@@ -332,6 +352,7 @@ end
 function IntroWindow.open(noVoice)
   local f = IntroWindow.frame or build()
   f.voiceShown = noVoice == true or not (WFJ.Voice and WFJ.Voice.hasPack())
+  IntroWindow.selected = shownPurpose() or "ja" -- the choice the settings match, lit and described to start with
   IntroWindow.show("pick")
   relayoutWhenFonts(f)
   f:Show()
