@@ -9,6 +9,9 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Changed
+- A new icon: the 字 is now a bold brush-style character in gold on a brighter red disc. The minimap button shows the red disc and the 字 without a second gold rim, and sits centred in its ring.
+
 ### Fixed
 - With Dialogue UI, a quest's tag over its title (Dungeon, Raid) no longer shows empty boxes: when its Japanese loses the addon's font, the font goes back on the next moment.
 - The Legacy trees' talent tooltips show their Japanese lines (Click to learn, Requires all preceding talents, Spend 10 more points in the Professions Legacy Tree) even when the talent window has not been opened yet. The trees' names stay English.

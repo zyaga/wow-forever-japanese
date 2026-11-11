@@ -25,8 +25,9 @@ MinimapButton.DEFAULT_ANGLE = 225 -- lower left of the rim, clear of the zoom bu
 MinimapButton.SIZE = 31
 MinimapButton.DRAG_GRACE = 0.25 -- seconds after a drag in which a click is the drag's own mouse-up
 MinimapButton.RIM = 10 -- beyond the minimap's radius
--- the TOC's IconTexture: the addon's own 字 medallion (Media/icon.tga)
-MinimapButton.ICON = "Interface\\AddOns\\WoWForeverJapanese\\Media\\icon"
+-- the 字 medallion without its own gold rim (Media/minimap.tga): the ring drawn around the button is the rim here.
+-- The TOC's IconTexture is the whole medallion, Media/icon.tga.
+MinimapButton.ICON = "Interface\\AddOns\\WoWForeverJapanese\\Media\\minimap"
 MinimapButton.button = nil
 MinimapButton.db = nil
 
@@ -285,11 +286,11 @@ local function build()
   -- round art icon.
   local icon = b:CreateTexture("WFJMinimapButtonIcon", "ARTWORK") -- the template's press offset moves `<name>Icon`
   icon:SetTexture(MinimapButton.ICON)
-  -- in MiniMap-TrackingBorder's hole, which sits toward the texture's top-left: Blizzard's tracking button draws the
-  -- border 64×64 at TOPLEFT and its icon 24×24 at CENTER +2, -2 of a 33×33 frame [verified: wow-ui-source
-  -- Blizzard_Minimap/Classic/MinimapTracking_Simple.xml]; scaled to our 52 px border (×0.8125): 20×20 at 5, -5
-  icon:SetSize(20, 20)
-  icon:SetPoint("TOPLEFT", 5, -5)
+  -- MiniMap-TrackingBorder's hole sits toward the texture's top-left. The icon is a plain red disc drawn wider than
+  -- the hole, so its edge is under the ring all the way round: an icon the hole's own size shows a sliver of its
+  -- edge on whichever side it leans to. Its centre is the hole's centre as seen in game [in-game check].
+  icon:SetSize(24, 24)
+  icon:SetPoint("TOPLEFT", 4.5, -4)
   b.icon = icon
   local border = b:CreateTexture(nil, "OVERLAY")
   border:SetTexture("Interface\\Minimap\\MiniMap-TrackingBorder")
