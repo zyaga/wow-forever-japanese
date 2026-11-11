@@ -91,6 +91,8 @@ Both can be turned off in the settings.
 
 **Does it work with Dialogue UI?** Yes. When you have Dialogue UI installed, its quest, NPC talk and book windows show the Japanese, with the same key to see the English, word cards and voice. Its buttons, headings and item tooltips use the game's Japanese words; a few words of its own stay English. Dialogue UI is not needed and not included.
 
+**Does it work with Ellesmere UI?** Yes. Ellesmere UI draws the game's windows in a font you choose, and its own fonts have no Japanese letters. In Ellesmere UI's options (**/eui**), on the Fonts page, set Global Font to "WoW Forever Japanese", and the windows it restyles show the Japanese. English text in those windows then uses the same font. Ellesmere UI is not needed and not included, and its own windows stay English.
+
 ### <span style="color:#E8C77E;">Credits</span>
 
 The hand-written translations are the work of the Japanese translators of WoWJapanizer, QuestJapanizer and CraftJapanizer_Quest, listed by name in `ATTRIBUTION.md`, which ships inside the addon. Lines those projects did not cover are machine-drafted and marked as such in the project's data. The Japanese voice was made with Qwen3-TTS, each voice modelled on one of the game's own NPC voices, with which NPC has which voice following the Spoken addon; credits are in `ATTRIBUTION.md`.
@@ -181,6 +183,8 @@ GitHub アカウントがなければ、Discord の **#translation-fixes** に�
 **どのゲームで使える？** World of Warcraft: Forever 専用です。
 
 **Dialogue UI と一緒に使える？** 使えます。Dialogue UI を入れている場合、そのクエスト、NPCとの会話、本のウィンドウにも日本語が表示され、英語を見るキー、単語カード、音声もそのまま使えます。ボタン、見出し、アイテムのツールチップにはゲームの日本語が使われます。Dialogue UI 独自の言葉の一部は英語のままです。Dialogue UI は必須ではなく、このアドオンには含まれていません。
+
+**Ellesmere UI と一緒に使える？** 使えます。Ellesmere UI はゲームのウィンドウを自分で選んだフォントで描きますが、付属のフォントには日本語の文字がありません。Ellesmere UI の設定（**/eui**）の Fonts ページで Global Font を「WoW Forever Japanese」にすると、Ellesmere UI が描き直すウィンドウにも日本語が表示されます。そのウィンドウの英語も同じフォントで表示されます。Ellesmere UI は必須ではなく、このアドオンには含まれていません。Ellesmere UI 独自のウィンドウは英語のままです。
 
 ### <span style="color:#E8C77E;">クレジット</span>
 
