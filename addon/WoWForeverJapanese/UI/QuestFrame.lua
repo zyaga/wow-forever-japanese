@@ -70,9 +70,6 @@ local CANDIDATES = {
   progressPanel = { "QuestFrameProgressPanel" },
   detailChild   = { "QuestDetailScrollChildFrame" },
   rewardChild   = { "QuestRewardScrollChildFrame" },
-  detailScroll  = { "QuestDetailScrollFrame" },
-  rewardScroll  = { "QuestRewardScrollFrame" },
-  progressScroll = { "QuestProgressScrollFrame" },
   -- field widgets
   title         = { "QuestInfoTitleHeader" },
   description   = { "QuestInfoDescriptionText" },
@@ -100,7 +97,6 @@ local CANDIDATES = {
   greetingGoodbye   = { "QuestFrameGreetingGoodbyeButton" },
   -- greeting prose
   greetingText      = { "GreetingText" },
-  greetingScroll    = { "QuestGreetingScrollFrame" },
   greetingWriter    = { "QuestFrameGreetingPanel_OnShow" },
   greetingGetter    = { "GetGreetingText" },
   -- the quest window's readers: the client's C API, present on both clients
@@ -132,34 +128,29 @@ local function isText(w)
   return type(w) == "table" and type(w.GetText) == "function" and type(w.SetText) == "function"
 end
 
-local function refitFor(scrollKey)
-  return function()
-    local scroll = Compat.get(DECLARE, scrollKey)
-    if type(scroll) == "table" and type(scroll.UpdateScrollChildRect) == "function" then
-      scroll:UpdateScrollChildRect()
-    end
-  end
-end
+-- The panels have no refit: UpdateScrollChildRect called from addon code runs the scroll frame's range scripts under
+-- this addon's taint, and the scroll bar fields they write keep it for the client's next pass (ADR-077). The client
+-- keeps the range current itself: its own quest window never calls it after QuestInfo_Display (questframe.lua:132,
+-- 581), and a long English text still scrolls.
 
--- Per panel: its surface id, its refit (one closure each, so Render.refresh dedupes it), and
--- { field, widget key, English getter } rows. Getters are called at hook time, never cached.
+-- Per panel: its surface id and { field, widget key, English getter } rows. Getters are called at hook time, never
+-- cached.
 local KEYED_FIELDS = { description = true, progress = true, completion = true }
 local function title() return call("getTitle") end
 local PANELS = {
-  detail   = { surface = "questframe.detail", refit = refitFor("detailScroll"),
+  detail   = { surface = "questframe.detail",
                { "title", "title", title },
                { "description", "description", function() return call("getDescription") end },
                { "objectives", "objectives", function() return call("getObjectives") end } },
-  reward   = { surface = "questframe.reward", refit = refitFor("rewardScroll"),
+  reward   = { surface = "questframe.reward",
                { "title", "title", title },
                { "completion", "completion", function() return call("getCompletion") end } },
-  progress = { surface = "questframe.progress", refit = refitFor("progressScroll"),
+  progress = { surface = "questframe.progress",
                { "title", "progressTitle", title },
                { "progress", "progress", function() return call("getProgress") end } },
 }
 QuestFrame.SURFACES = { PANELS.detail.surface, PANELS.progress.surface, PANELS.reward.surface }
 QuestFrame.GREETING = "questframe.greeting"
-local greetingRefit = refitFor("greetingScroll")
 local deps = {} -- { key(text) → gossip key | nil } from Main
 
 -- Label widgets per panel: { record key, widget getter }. Getters resolve at hook time.
@@ -198,10 +189,10 @@ for _, l in ipairs(REWARD_LABELS) do
   table.insert(LABELS.reward, l)
 end
 
-local function showLabels(surface, list, refit)
+local function showLabels(surface, list)
   local items = {}
   for i, l in ipairs(list) do items[i] = { l[1], l[2]() } end
-  return WFJ.Labels.showAll(surface, items, refit)
+  return WFJ.Labels.showAll(surface, items)
 end
 
 -- The kind and id a quest field's Japanese is looked up by: the quest's own field, or the text keyed by its English
@@ -249,17 +240,17 @@ function QuestFrame.showPanel(panelName)
       n = n + 1
     elseif isText(fs) and en ~= nil and en ~= "" and fs:GetText() == en and variant then
       -- live: the values a quest line fills in (`$N1`) come from this text
-      WFJ.Render.show(panel.surface, field, fs, en, "quests", "gossip", variant, { refit = panel.refit, live = en })
+      WFJ.Render.show(panel.surface, field, fs, en, "quests", "gossip", variant, { live = en })
       n = n + 1
     elseif isText(fs) and en ~= nil and en ~= "" and fs:GetText() == en then
       -- live: the API English, for the stale marker's live check (ADR-019)
-      WFJ.Render.show(panel.surface, field, fs, en, "quests", "quest." .. field, id, { refit = panel.refit, live = en })
+      WFJ.Render.show(panel.surface, field, fs, en, "quests", "quest." .. field, id, { live = en })
       n = n + 1
     else
       WFJ.SurfaceState.drop(panel.surface, field)
     end
   end
-  showLabels(panel.surface, LABELS[panelName], panel.refit) -- headers and buttons
+  showLabels(panel.surface, LABELS[panelName]) -- headers and buttons
   WFJ.Render.updateBanner(panel.surface) -- dropped fields no longer count
   -- The quest giver, as the window names it: UnitName("questnpc") [verified: classic_era Classic/QuestFrame.lua:118];
   -- UnitGUID accepts the same token [likely].
@@ -385,7 +376,7 @@ local function showGreetingText()
   end
   local key = type(en) == "string" and en ~= "" and type(deps.key) == "function" and deps.key(en) or nil
   if key and fs:GetText() == en then
-    WFJ.Render.show(surface, "greeting", fs, en, "gossip", "gossip", key, { refit = greetingRefit })
+    WFJ.Render.show(surface, "greeting", fs, en, "gossip", "gossip", key)
     return 1
   end
   WFJ.SurfaceState.drop(surface, "greeting")

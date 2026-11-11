@@ -165,8 +165,10 @@ local function declare()
   end
 end
 
--- The fields of an achievement row that hold its own text (UI/Legacy's challenge cards are the same template)
-Achievement.TEXT_FIELDS = { "Label", "Description", "Reward" }
+-- The fields of an achievement row that hold its own text (UI/Legacy's challenge cards are the same template). An
+-- expanded (selected) row shows HiddenDescription instead of Description; Init writes both
+-- (blizzard_achievementui.lua:1373-1374, 1441, 1477).
+Achievement.TEXT_FIELDS = { "Label", "Description", "HiddenDescription", "Reward" }
 
 -- An achievement's title, description and reward on one row (`prefix` its record key). → words shown
 local function showText(prefix, row)

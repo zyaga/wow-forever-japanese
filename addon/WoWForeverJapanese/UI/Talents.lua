@@ -20,7 +20,8 @@
 --   blizzard_talentbuttonspend.lua:84–137]. The talent buttons are pooled, so they are not registered help-tooltip
 --   owners; the callback walks lines 2.. of that tooltip restricted to TOOLTIP_KEYS (surface "talents.tooltip").
 --   Line 1 is never read or written. One Show() refit per pass that changed a line; forgotten on the tooltip's OnHide
---   and before each pass (the client rebuilt the lines).
+--   and before each pass (the client rebuilt the lines). The same event carries the Legacy trees' talent tooltips, so
+--   the callback is registered at load, not with the talent window (Talents.listenForTooltips).
 -- - Talent requirement lines ("Spend 5 more points in Arms Talents"): the talent frame's AddConditionsToTooltip adds
 --   each shown condition's tooltipText as a highlight line, red when unmet [verified:
 --   blizzard_sharedtalentui/blizzard_sharedtalentframe.lua:1914-1972]. That text is the condition's tooltipFormat (a
@@ -250,18 +251,30 @@ function Talents.setupCamelot()
     end
   end
   WFJ.HelpTooltip.register(Compat.get(SURFACE, "undo"), { only = UNDO_TOOLTIP_KEYS })
-  local registry = Compat.get(SURFACE, "eventRegistry")
-  if type(registry) == "table" and type(registry.RegisterCallback) == "function" then
-    registry:RegisterCallback(TOOLTIP_EVENT, Talents.onTooltip, Talents)
-  end
   Talents.showTabs()
   return true
 end
 
--- Called by Main after Compat.init, HelpTooltip.init, ButtonText.init and LoadOnDemand.init. The window waits on
--- Blizzard_PlayerSpells. → true when it was set up now (the addon was already loaded), false otherwise
+local tooltipListening = false
+
+-- Every talent tooltip, the Legacy trees' included, comes through Blizzard_SharedTalentUI's event, which loads at login
+-- (blizzard_talentdisplay.lua:124; blizzard_sharedtalentui.toc:2). The Legacy trees never load Blizzard_PlayerSpells
+-- (blizzard_legacysystem.toc:4), so the listener cannot wait for the talent window. → true when it is listening
+function Talents.listenForTooltips()
+  if tooltipListening then return true end
+  local registry = Compat.get(SURFACE, "eventRegistry")
+  if type(registry) ~= "table" or type(registry.RegisterCallback) ~= "function" then return false end
+  registry:RegisterCallback(TOOLTIP_EVENT, Talents.onTooltip, Talents)
+  tooltipListening = true
+  return true
+end
+
+-- Called by Main after Compat.init, HelpTooltip.init, ButtonText.init and LoadOnDemand.init. The talent tooltips are
+-- followed at once; the window waits on Blizzard_PlayerSpells. → true when the window was set up now (the addon was
+-- already loaded), false otherwise
 function Talents.init()
   declareCamelot()
+  Talents.listenForTooltips()
   if camelotWaiting then return false end
   camelotWaiting = true
   return WFJ.LoadOnDemand.when(PLAYER_SPELLS, Talents.setupCamelot)

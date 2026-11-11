@@ -38,3 +38,15 @@ def test_no_source_touches_edit_mode(root):
 def test_no_source_registers_a_unit_menu(root):
     assert not _hits(root, UNIT_MENU)
     assert not (root / "addon/WoWForeverJapanese/UI/MenusUnit.lua").exists()
+
+
+# UpdateScrollChildRect called from addon code runs the scroll frame's range scripts under this addon's taint. On the
+# quest log's details pane that is the likely start of the taint that reached QuestMapFrame_ShowQuestDetails, the map
+# and the tracker, where Share and the map's quest pins were refused in combat (ADR-077). The book window and the tutorial popup size
+# their own scroll child from the range, and neither scroll frame feeds the quest map or the tracker.
+SCROLL_REFIT = re.compile(r"UpdateScrollChildRect")
+SCROLL_REFIT_ALLOWED = {"UI/ItemText.lua", "UI/Tutorial.lua"}
+
+
+def test_no_source_runs_a_scroll_frames_scripts(root):
+    assert sorted(set(_hits(root, SCROLL_REFIT)) - SCROLL_REFIT_ALLOWED) == []
