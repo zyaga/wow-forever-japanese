@@ -62,7 +62,7 @@ FILE_PREFIX = {
     "ui": "UI",
     "reading": "Reading",  # whole-word readings, Reading_<type>_<shard>.lua (not a translation type)
     "gloss": "Gloss",  # the word popup's meanings, Gloss_<NNNN>.lua (not a translation type)
-    # English word cards: English_<type>_<shard>.lua beside each reading shard, Pron.lua, Common.lua
+    # English word cards: English_<type>_<shard>.lua beside each reading shard, English_Pron.lua, English_Common.lua
     "english": "English",
 }
 # Generated types in TOC load order: numeric-id shards, the keyed types, then the UI strings.
@@ -108,8 +108,8 @@ def english_relpath(type_: str, shard: int | str) -> str:
     return f"Data/English/English_{name}.lua"
 
 
-ENGLISH_PRON = "Data/English/Pron.lua"  # how each English word on a card is said
-ENGLISH_COMMON = "Data/English/Common.lua"  # everyday English words with a Japanese word each
+ENGLISH_PRON = "Data/English/English_Pron.lua"  # how each English word on a card is said
+ENGLISH_COMMON = "Data/English/English_Common.lua"  # everyday English words with a Japanese word each
 
 
 def gloss_relpath(shard: int) -> str:

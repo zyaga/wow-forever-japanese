@@ -73,7 +73,7 @@ def test_the_row_is_sorted_and_never_the_lines_order():
 
 
 def test_tokens_are_what_the_addon_matches_runs_of_ascii_letters_and_apostrophes():
-    assert ec.tokens("“Hunt” — don't, Reyn-san! 8 x") == ["Hunt", "don't", "Reyn", "san", "x"]
+    assert ec.tokens("“Hunt”・don't, Reyn-san! 8 x") == ["Hunt", "don't", "Reyn", "san", "x"]
 
 
 def test_a_contractions_first_word_and_the_words_that_take_no_card():
@@ -100,6 +100,8 @@ def _rows(root):
     import re
 
     for path in sorted((root / "addon" / "WoWForeverJapanese" / "Data" / "English").glob("English_*.lua")):
+        if path.name in ("English_Pron.lua", "English_Common.lua"):  # the two word tables, not line rows
+            continue
         for packed in re.findall(r' = "([^"]*)"', path.read_text(encoding="utf-8")):
             yield path.name, packed
 

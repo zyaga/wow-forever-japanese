@@ -53,7 +53,7 @@ describe("Readings.englishLookup", function()
   it("keeps every span on character boundaries beside multi-byte text, and reads a contraction as one word", function()
     WFJ.Data.add("english", { ["gossip:k"] = { text = "don't=1 hunt=2" } })
     WFJ.Data.add("reading", { ["gossip:k"] = { text = "しない=しない 狩り=かり" } })
-    local text = "“Hunt” — don't."
+    local text = "“Hunt”・don't。"
     local spans = R.englishLookup("gossip", "k", text)
     assert.are.same({ "Hunt", "don't" }, { text:sub(spans[1].first, spans[1].last), text:sub(spans[2].first, spans[2].last) })
     for _, s in ipairs(spans) do

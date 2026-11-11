@@ -1037,7 +1037,8 @@ Data\UI\UI_W.lua
 Data\UI\UI_X.lua
 Data\UI\UI_Y.lua
 Data\UI\UI_Z.lua
-Data\English\Common.lua
+Data\English\English_Common.lua
+Data\English\English_Pron.lua
 Data\English\English_book_01.lua
 Data\English\English_book_02.lua
 Data\English\English_book_03.lua
@@ -1607,7 +1608,6 @@ Data\English\English_ui_W.lua
 Data\English\English_ui_X.lua
 Data\English\English_ui_Y.lua
 Data\English\English_ui_Z.lua
-Data\English\Pron.lua
 Data\Reading\Reading_book_01.lua
 Data\Reading\Reading_book_02.lua
 Data\Reading\Reading_book_03.lua
