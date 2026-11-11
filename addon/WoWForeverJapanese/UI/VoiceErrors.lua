@@ -6,11 +6,16 @@
 --     (GetGameMessageInfo, its global string name) and plays that message's recording, so the voice says the words
 --     on screen; a call from anywhere else plays the voice id's line on the next frame. Both are only followed,
 --     never replaced, so the error frame's own code runs as it always does.
---   * The English line: while this is on and a pack carries lines for the character, the client's error speech
---     setting (Sound_EnableErrorSpeech) is turned off, so the English line does not play under the Japanese one
---     [unverified: whether the setting silences the call on Forever; in-game check in docs/testing/strategy.md].
---     The client saves the setting, so the change is kept in WFJ_DB.voiceErrorSpeechMuted and undone when the
---     feature is switched off, at logout and on the next load. A player who had it off keeps it off.
+--   * The player's setting: the error frame calls PlayVocalErrorSound whatever the client's error speech setting
+--     (Sound_EnableErrorSpeech) says, and the client checks the setting inside that call. So a line plays here only
+--     while that setting is on, and the setting is never written: on means the Japanese line, off means silence.
+--   * The English line: while this is on and a pack carries lines for the character, the English recordings for
+--     the character's race and sex (Data/ErrorSounds.lua, the client's own sound table) are muted with
+--     MuteSoundFile, so the English line does not play under the Japanese one
+--     [unverified: whether a muted file silences the call on Forever; in-game check in docs/testing/strategy.md].
+--     A mute lasts until the client closes and is saved nowhere; it is taken off when the feature is switched off
+--     and at logout. An earlier version turned the setting itself off and noted it in
+--     WFJ_DB.voiceErrorSpeechMuted: that note is still honoured once, to give the setting back.
 --   * Repeats: the same line is not started again within REPEAT seconds (an ability spammed out of range).
 local _, WFJ = ...
 local VoiceErrors = {}
@@ -46,11 +51,40 @@ local function setCVar(name, value)
   return nil
 end
 
--- The character's race (the client's file name, "Tauren") and sex (UnitSex: 2 male, 3 female)
+-- The character's race (the client's file name, "Tauren"), sex (UnitSex: 2 male, 3 female) and race id
 local function character()
   local unitRace, unitSex = Compat.resolve("UnitRace"), Compat.resolve("UnitSex")
-  local race = type(unitRace) == "function" and select(2, unitRace("player")) or nil
-  return race, type(unitSex) == "function" and unitSex("player") or nil
+  local race, raceID
+  if type(unitRace) == "function" then race, raceID = select(2, unitRace("player")) end
+  return race, type(unitSex) == "function" and unitSex("player") or nil, raceID
+end
+
+-- Whether the player has the client's error speech on. Unknown reads as on.
+local function speechOn()
+  local value = getCVar(SPEECH)
+  return value == nil or tostring(value) ~= "0"
+end
+
+-- The English error recordings of the character's race and sex (file ids), or nil.
+local function englishFiles()
+  local _, sex, raceID = character()
+  local all = WFJ.Data and WFJ.Data.errorSounds
+  local byRace = type(all) == "table" and all[raceID] or nil
+  return type(byRace) == "table" and byRace[sex == 3 and "f" or "m"] or nil
+end
+
+local mutedNow -- true once the files were muted this session, false once unmuted, nil before either
+
+-- Mutes or unmutes the character's English recordings. → the number of files touched
+local function setMuted(on)
+  if mutedNow == on then return 0 end
+  local fn = Compat.resolve(on and "MuteSoundFile" or "UnmuteSoundFile")
+  local files = englishFiles()
+  if type(fn) ~= "function" or type(files) ~= "table" then return 0 end
+  for _, id in ipairs(files) do fn(id) end
+  mutedNow = on
+  VoiceErrors.muted = on and #files or 0
+  return #files
 end
 
 local function wanted()
@@ -61,25 +95,20 @@ local function wanted()
   return WFJ.Voice.hasErrors(race, sex)
 end
 
--- Puts the client's error speech back if this addon turned it off. → true when it did
+-- Takes the mute off the English recordings, and gives the client's error speech setting back if an earlier
+-- version of this addon turned it off. → true when it gave the setting back
 function VoiceErrors.restore()
+  setMuted(false)
   if not (db and db.voiceErrorSpeechMuted) then return false end
   db.voiceErrorSpeechMuted = nil
   setCVar(SPEECH, "1")
   return true
 end
 
--- Turns the English error speech off while Japanese lines can play, back on otherwise.
+-- Mutes the English recordings while Japanese lines can play, unmutes them otherwise.
 function VoiceErrors.refresh()
   if not db then return end
-  if wanted() then
-    if not db.voiceErrorSpeechMuted and tostring(getCVar(SPEECH)) == "1" then
-      db.voiceErrorSpeechMuted = true
-      setCVar(SPEECH, "0")
-    end
-  else
-    VoiceErrors.restore()
-  end
+  setMuted(wanted())
 end
 
 local pending -- the voice id the game just asked to speak, until its message is known
@@ -87,6 +116,10 @@ local pending -- the voice id the game just asked to speak, until its message is
 -- Plays the character's line for a voice id, as the message on screen when known. → true when a line started
 function VoiceErrors.play(voiceID, message)
   local race, sex = character()
+  if not speechOn() then
+    VoiceErrors.last = { voiceID = voiceID, message = message, race = race, sex = sex, why = "setting" }
+    return false
+  end
   local path, seconds = WFJ.Voice.errorFile(voiceID, race, sex, message)
   VoiceErrors.last = { voiceID = voiceID, message = message, race = race, sex = sex, why = seconds }
   if not path then return false end
