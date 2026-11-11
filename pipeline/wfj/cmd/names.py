@@ -45,9 +45,9 @@ learn-spellings [--dry-run]
     as many parts as words. Run before export-respell, so only the words no name spells are drafted.
 respell [--date YYYY-MM-DD] [--dry-run]
     Every name a person did not write is written again from the spellings of its words, its reading with it
-    (`wfj.core.respell`); a name that already equals its spelling does not change. A name a person wrote and
-    a name with nothing to spell stay as they are. Nothing is written while any name has a word with no
-    spelling.
+    (`wfj.core.respell`), a new name with no Japanese yet among them; a name that already equals its
+    spelling does not change. A player's own fix and a name with nothing to spell stay as they are. A name
+    with a word nobody has spelled is left and counted: export-respell lists those words.
 """
 
 from __future__ import annotations
@@ -585,8 +585,9 @@ def respell_problems(lines: Sequence[dict[str, Any]], words: Sequence[dict[str, 
 
 
 def respell(root: Path, today: str, dry_run: bool) -> dict[str, int]:
-    """Every translated name is written again from the spellings of its words (its reading with it). Nothing
-    is written while any name has a word with no spelling."""
+    """Every name a person did not write is written from the spellings of its words (its reading with it):
+    a new name with no Japanese yet, and a name that is not that spelling. A name with a word nobody has
+    spelled is left as it is and counted; the check reports it until the word is spelled."""
     known = _spellings(load_words(root))
     lines = load_lines(root)
     counts = {"respelled": 0, "kept": 0, "nothing to spell": 0, "word with no spelling": 0}
@@ -610,9 +611,7 @@ def respell(root: Path, today: str, dry_run: bool) -> dict[str, int]:
             counts["respelled"] += 1
             prov = {"class": "machine", "source": f"respell@{today}", "imported": today}
             out.append(dict(ln, ja=ja, reading=reading, free=False, status="trusted", provenance=prov))
-    if counts["word with no spelling"]:
-        counts["respelled"] = 0
-    elif not dry_run:
+    if not dry_run:
         save_lines(root, out)
     return counts
 
@@ -702,7 +701,9 @@ def _run_respell(a: argparse.Namespace, root: Path) -> int:
         return 0
     counts = respell(root, a.date, a.dry_run)
     print("names respell: " + ", ".join(f"{k} {v}" for k, v in counts.items()) + dry)
-    return 1 if counts["word with no spelling"] else 0
+    if counts["word with no spelling"]:
+        print("names respell: spell the new words with `wfj names export-respell`, then import-respell")
+    return 0
 
 
 def run(argv: Sequence[str]) -> int:

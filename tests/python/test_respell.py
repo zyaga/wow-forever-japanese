@@ -199,10 +199,13 @@ def test_respell_rewrites_every_translated_name_and_leaves_the_rest(store, tmp_p
         assert after[en] == before[en]
 
 
-def test_respell_stops_at_a_word_with_no_spelling(store):
+def test_a_name_with_a_word_nobody_has_spelled_is_left_and_the_rest_are_written(store, tmp_path):
+    cmd.import_respell(store, _batch(tmp_path, [{"en": "black", "ja": "ブラック"}]), "m2", "respell-1", TODAY, False)
     counts = cmd.respell(store, TODAY, False)
-    assert counts["word with no spelling"] == 2 and counts["respelled"] == 0
-    assert {ln["en"]: ln["ja"] for ln in load_lines(store)}["Black Dragonflight"] == "黒いドラゴンフライト"
+    assert (counts["word with no spelling"], counts["respelled"]) == (1, 1)
+    after = {ln["en"]: ln["ja"] for ln in load_lines(store)}
+    assert (after["Black Dragonflight"], after["Black Gloves"]) == ("ブラック・ドラゴンフライト", "黒い手袋")
+    assert any("Gloves" in p for p in cmd.respell_problems(load_lines(store), load_words(store)))
 
 
 def test_a_fix_round_may_replace_a_katakana_spelling_but_never_a_players_fix(store, tmp_path):
