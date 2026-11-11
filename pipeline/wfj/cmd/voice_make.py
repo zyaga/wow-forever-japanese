@@ -90,7 +90,7 @@ def load_config(path: Path) -> dict[str, Any]:
         v.setdefault("pitch", 0.0)
         v.setdefault("intonation", 1.0)
     cfg["roster"], cfg["cast"] = roster, cfg.get("cast", [])
-    roster.update(set_voices(cfg.get("sets", {}), voice_sets_cmd.catalogue(data_root())))
+    roster.update(set_voices(cfg.get("sets", {}), voice_sets_cmd.catalogue(data_root()), cfg.get("clone")))
     cfg["cloned_packs"] = list(cfg.get("cloned_packs", []))
     cfg["kana_words"] = frozenset((w, r) for w, r in cfg.get("text", {}).get("kana_words", []))
     cfg["set_cast"] = list(cfg.get("set_cast", []))
@@ -107,11 +107,16 @@ def load_config(path: Path) -> dict[str, Any]:
     return cfg
 
 
-def set_voices(sets: dict[str, Any], catalogue: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
+def set_voices(sets: dict[str, Any], catalogue: dict[str, dict[str, Any]],
+               clone: dict[str, Any] | None = None) -> dict[str, dict[str, Any]]:
     """Roster entries for the game voice sets picked as a voice-only or a full copy (voice.toml [sets]); a set
     kept on its AivisSpeech cast has none. `ref` is the hash of the set's reference, so new clips or fixed
-    transcripts make its files again."""
+    transcripts make its files again. `clone` (voice.toml [clone]) gives every set its temperature and, with
+    `seed` on, the number its readings start from."""
     out: dict[str, dict[str, Any]] = {}
+    drawn: dict[str, Any] = {}
+    if clone and clone.get("temperature") is not None:
+        drawn["temperature"] = float(clone["temperature"])
     for s, entry in sorted(sets.items()):
         mode = entry.get("pick")
         if mode not in ("voice", "full"):
@@ -120,6 +125,7 @@ def set_voices(sets: dict[str, Any], catalogue: dict[str, dict[str, Any]]) -> di
         out[voice_sets.voice_id(s)] = {
             "engine": "qwen", "set": s, "mode": mode, "licence": "Apache-2.0",
             "fits": f"the game's {s} voice set", "ref": voice_sets_cmd.ref_hash(row, mode) if row else "",
+            **drawn, **({"seed": voice.clone_seed(s)} if clone and clone.get("seed") else {}),
         }
     return out
 
@@ -576,7 +582,8 @@ def _synth(text: str, settings: dict[str, Any], engine: Engine, version: str, q:
     if settings.get("engine") == "qwen":
         ref_wav, ref_text = voice_sets_cmd.reference(sets[settings["set"]], settings["mode"], clips,
                                                      clips / REFS_DIR)
-        return q.synthesize(text, ref_wav, ref_text, settings["mode"]), f"qwen3-tts@{q.version}"
+        return (q.synthesize(text, ref_wav, ref_text, settings["mode"], settings.get("seed"),
+                             settings.get("temperature")), f"qwen3-tts@{q.version}")
     wav = engine.synthesize(text, int(settings["style"]), float(settings["speed"]), float(settings["pitch"]),
                             float(settings["intonation"]))
     return wav, f"aivis@{version}"
@@ -846,7 +853,7 @@ def export_remote(root: Path, cfg: dict[str, Any], scope: str, store: Path, out:
             and (j.stem in todo or (have_store and not audio_file(store, j.stem).is_file()))]
     sets, clips = voice_sets_cmd.catalogue(root), voice_sets_cmd.clip_dir()
     (out / "refs").mkdir(parents=True, exist_ok=True)
-    rows: dict[str, dict[str, str]] = {}
+    rows: dict[str, dict[str, Any]] = {}
     texts: dict[str, str | None] = {}
     for j in work:
         settings = cfg["roster"][j.voice]
@@ -856,8 +863,11 @@ def export_remote(root: Path, cfg: dict[str, Any], scope: str, store: Path, out:
         if not (out / "refs" / ref.name).is_file():
             shutil.copyfile(ref, out / "refs" / ref.name)
         texts[ref.name] = ref_text
-        key = line_key(text, ref, settings["mode"])
-        rows[key] = {"key": key, "text": text, "ref": ref.name, "mode": settings["mode"]}
+        seed, temperature = settings.get("seed"), settings.get("temperature")
+        key = line_key(text, ref, settings["mode"], seed, temperature)
+        rows[key] = {"key": key, "text": text, "ref": ref.name, "mode": settings["mode"],
+                     **({"seed": seed} if seed is not None else {}),
+                     **({"temperature": temperature} if temperature is not None else {})}
     (out / "jobs.jsonl").write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows.values()),
                                     encoding="utf-8")
     (out / "refs.json").write_text(json.dumps(texts, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
@@ -936,7 +946,8 @@ def relevel(root: Path, cfg: dict[str, Any], store: Path, runs: Sequence[Path]) 
         ref, _ = voice_sets_cmd.reference(sets[settings["set"]], settings["mode"], clips, clips / REFS_DIR)
         # a kept WAV is named by the text it was read from: the engine text, or the spoken line of older runs
         read = dict.fromkeys((spoken.get(rec["key"], plain), plain))
-        named = [line_key(t, ref, settings["mode"]) for t in read]
+        named = [line_key(t, ref, settings["mode"], settings.get("seed"), settings.get("temperature"))
+                 for t in read]
         wav = next((r / sub / f"{key}.wav" for key in named for r in runs for sub in ("wav", "local")
                     if (r / sub / f"{key}.wav").is_file()), None)
         if wav is None:

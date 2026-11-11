@@ -25,6 +25,14 @@ cloned_packs = [
 narrator_set = "taurenmaleeldernpc"
 book_narrator_set = "taurenmaleeldernpc"
 
+# How a cloned voice is read. `temperature` is how far a reading may stray from the likeliest one (the
+# engine's own value is 0.9); lower keeps a voice steadier from line to line. With `seed` on, every reading
+# of a voice starts its random draws from one number made from the voice set's name. Both are part of a
+# file's fingerprint: changing them remakes every cloned file.
+[clone]
+temperature = 0.5
+seed = true
+
 # What the engine reads is the spoken line with a few changes that keep a word from coming out wrong
 # (wfj/core/voice_text.py). A single kanji that is read one way alone and another way inside compounds is
 # written in kana where it stands alone as a word: the engine reaches for the compound's reading (金 as きん,

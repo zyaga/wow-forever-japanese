@@ -16,7 +16,7 @@ from test_voice import CFG, SRC, _fake_encode, _store, _wav
 from wfj.cmd import voice_make, voice_sets_page
 from wfj.cmd import voice_sets as vs
 from wfj.core import casting, voice, voice_sets
-from wfj.io.qwen import LineFailed, Qwen, QwenBusy, QwenError
+from wfj.io.qwen import LineFailed, Qwen, QwenBusy, QwenError, line_key
 
 ROOT = Path(__file__).resolve().parents[2]
 FAKE_WORKER = Path(__file__).with_name("fake_qwen.py")
@@ -541,9 +541,10 @@ class _FakeModel:
     def create_voice_clone_prompt(self, ref_audio, ref_text, x_vector_only_mode):
         return [{"voice": int(Path(ref_audio).stem), "x": x_vector_only_mode}]
 
-    def generate_voice_clone(self, text, language, voice_clone_prompt, max_new_tokens=2048):
+    def generate_voice_clone(self, text, language, voice_clone_prompt, max_new_tokens=2048, **drawn):
         import numpy as np
 
+        self.drawn = getattr(self, "drawn", []) + [drawn]
         texts = text if isinstance(text, list) else [text]
         prompts = voice_clone_prompt if isinstance(voice_clone_prompt, list) else voice_clone_prompt
         self.calls.append(len(texts))
@@ -568,6 +569,40 @@ def test_a_batch_reads_each_paragraph_in_its_lines_voice_and_keeps_each_lines_or
     assert list(got[1][0]) == [2]
     # the same as reading each line alone
     assert list(qwen_worker.speak(_FakeModel(), {}, lines[0]["text"], "/r/1.wav", None, "voice")[0]) == list(first)
+
+
+def test_a_seeded_call_holds_one_voices_paragraphs_and_is_read_at_its_temperature():
+    pytest.importorskip("numpy")
+    pytest.importorskip("torch")
+    from wfj.io import qwen_worker
+
+    lines = [{"text": "aaaa", "ref_wav": "/r/1.wav", "mode": "voice", "seed": 7, "temperature": 0.5},
+             {"text": "bb", "ref_wav": "/r/2.wav", "mode": "voice", "seed": 9, "temperature": 0.5},
+             {"text": "c\n\ndd", "ref_wav": "/r/1.wav", "mode": "voice", "seed": 7, "temperature": 0.5}]
+    model = _FakeModel()
+    got = qwen_worker.speak_many(model, {}, lines, batch=24)
+    assert model.calls == [3, 1]  # the three paragraphs of seed 7 in one call, seed 9 alone
+    assert all(d == {"temperature": 0.5, "subtalker_temperature": 0.5} for d in model.drawn)
+    assert [list(g[0])[:1] for g in got] == [[1], [2], [1]]
+    plain = _FakeModel()
+    qwen_worker.speak_many(plain, {}, [{"text": "a", "ref_wav": "/r/1.wav", "mode": "voice"}], batch=24)
+    assert plain.drawn == [{}]  # a line with neither is read as before
+
+
+def test_a_cloned_voice_carries_its_temperature_and_seed_into_its_fingerprint_and_its_wav_name(tmp_path):
+    got = voice_make.set_voices({"orcfemalestandardnpc": {"pick": "full"}}, {}, {"temperature": 0.5, "seed": True})
+    settings = got[voice_sets.voice_id("orcfemalestandardnpc")]
+    assert settings["temperature"] == 0.5
+    assert settings["seed"] == voice.clone_seed("orcfemalestandardnpc") == voice.clone_seed("orcfemalestandardnpc")
+    assert voice.clone_seed("orcfemalestandardnpc") != voice.clone_seed("orcmalestandardnpc")
+    before = voice_make.set_voices({"orcfemalestandardnpc": {"pick": "full"}}, {})
+    old = before[voice_sets.voice_id("orcfemalestandardnpc")]
+    assert "seed" not in old and "temperature" not in old
+    assert voice.fingerprint("h", "v", settings, "x") != voice.fingerprint("h", "v", old, "x")
+    assert voice.fingerprint("h", "v", settings, "x").endswith(f"|t0.5s{settings['seed']}|x")
+    ref = tmp_path / "ref.wav"
+    assert line_key("あ", ref, "full", settings["seed"], 0.5) != line_key("あ", ref, "full")
+    assert line_key("あ", ref, "full", settings["seed"], 0.5) != line_key("あ", ref, "full", settings["seed"], 0.9)
 
 
 def test_a_call_that_runs_out_of_memory_is_split_until_it_fits():
@@ -655,7 +690,7 @@ def test_a_line_the_model_does_not_end_is_cut_at_its_cap_and_reported():
     from wfj.io import qwen_worker
 
     class RunOn(_FakeModel):
-        def generate_voice_clone(self, text, language, voice_clone_prompt, max_new_tokens=2048):
+        def generate_voice_clone(self, text, language, voice_clone_prompt, max_new_tokens=2048, **_drawn):
             self.caps = getattr(self, "caps", []) + [max_new_tokens]
             texts = text if isinstance(text, list) else [text]
             # the second line never ends: it fills the whole cap
@@ -683,7 +718,7 @@ def test_a_short_paragraph_that_runs_on_beside_a_long_one_is_reported():
     short_text = "短い一文です。" * 10
 
     class Babble(_FakeModel):
-        def generate_voice_clone(self, text, language, voice_clone_prompt, max_new_tokens=2048):
+        def generate_voice_clone(self, text, language, voice_clone_prompt, max_new_tokens=2048, **_drawn):
             texts = text if isinstance(text, list) else [text]
             # the short paragraph goes on for 60 s: past its own length, still under the long one's cap
             secs = [len(t) / qwen_worker.CHARS_PER_SECOND if t == long_text else 60 for t in texts]
