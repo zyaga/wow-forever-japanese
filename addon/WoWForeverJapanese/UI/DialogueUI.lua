@@ -690,9 +690,10 @@ end
 -- QuestHeaderWidget.lua]: each tag button found is followed there too, once.
 local tagFollowed = setmetatable({}, { __mode = "k" })
 
--- A tag's Japanese can end up in Dialogue UI's own face, which has no Japanese letters (empty boxes), by a path its
--- code does not show [unverified: seen in game, cause not traced]. So the tag is checked again the next frame: a face
--- that is not ours is logged with what it was, the bundled face goes back on and the tag is laid out again.
+-- A tag's Japanese can end up in Dialogue UI's own face, which has no Japanese letters (empty boxes). The one known
+-- path, a later pass over a tag that already shows the Japanese, is handled in tagJapanese. This check is the
+-- backstop for any other: the tag is looked at again the next frame, a face that is not ours is logged with what it
+-- was, the bundled face goes back on and the tag is laid out again.
 local function tagFaceAgain(child, fs, ja)
   if type(fs.GetFont) ~= "function" or fs:GetText() ~= ja then return end
   local path, size, flags = fs:GetFont()

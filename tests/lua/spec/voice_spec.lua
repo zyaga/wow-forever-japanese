@@ -922,8 +922,13 @@ describe("UI/VoiceErrors: the character's own error lines in Japanese", function
     assert.are.same({ 901, 902, 901, 902 }, unmuted)
     WFJ.State.enabled = true
     WFJ.VoiceErrors.refresh()
-    WFJ.VoiceErrors.restore() -- the logout path
+    WFJ.Settings.set("voice.enabled", false) -- the whole voice off
+    WFJ.VoiceErrors.refresh()
     assert.are.same({ 901, 902, 901, 902, 901, 902 }, unmuted)
+    WFJ.Settings.set("voice.enabled", true)
+    WFJ.VoiceErrors.refresh()
+    WFJ.VoiceErrors.restore() -- the logout path
+    assert.are.same({ 901, 902, 901, 902, 901, 902, 901, 902 }, unmuted)
     assert.are.equal(0, writes)
   end)
 

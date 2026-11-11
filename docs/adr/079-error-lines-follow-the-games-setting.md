@@ -24,12 +24,12 @@ Two things were wrong with that. A player who turned Error Speech off still hear
 ## Rationale
 
 - The setting is the player's. Reading it gives the player one switch that means the same thing with or without the addon: error lines are spoken, or they are not.
-- Muting the recordings by file silences only the English line, only for the character's race and sex, and only while a Japanese line can take its place. Nothing the player owns is changed, so nothing has to be recorded and put back after a crash.
+- Muting the recordings by file silences only the English line, only for the character's race and sex, and only while Japanese error lines can play for that character. An error kind the voice pack has no Japanese line for stays silent, as it did when the setting was turned off. Nothing the player owns is changed, so nothing has to be recorded and put back after a crash.
 - The list comes from the client's own tables, so it holds exactly the recordings the client can play for an error, and it holds file ids only, no text.
 
 ## Consequences
 
-- The addon writes one fewer client setting. The dialog channel is now the only client sound setting it turns off and puts back ([ADR-075](075-mute-the-english-voice-as-the-window-opens.md)).
+- The addon writes one fewer client setting. The error speech setting is no longer one of the client settings it changes; the dialog channel still is ([ADR-075](075-mute-the-english-voice-as-the-window-opens.md)).
 - A player with Error Speech off hears no error line in either language. A player with it on hears the Japanese line only.
 - The addon ships a new generated file, and the list needs a refresh when a client build adds recordings: a new recording would play in English, under the Japanese line, until `wfj.dev.vocal_errors` is run again with `--sounds-out` and `make generate` rebuilds the file.
 - A player coming from an earlier version, whose setting that version had turned off, gets it back once at the first load.
