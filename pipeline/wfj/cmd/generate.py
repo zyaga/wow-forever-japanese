@@ -278,8 +278,24 @@ def plan(store: Store, vectors: list[dict], report: dict[str, Any] | None = None
     sounds = store.root / ERROR_SOUNDS
     if sounds.is_file():
         rows = [json.loads(ln) for ln in sounds.read_text(encoding="utf-8").splitlines() if ln.strip()]
+        _check_error_sounds(rows)
         out["Data/ErrorSounds.lua"] = lua_writer.error_sounds_text(rows)
     return out
+
+
+def _check_error_sounds(rows: list[dict]) -> None:
+    """Raise ValueError on a row that must not become Lua: a race that is not an id, a sex other than m or f,
+    file ids that are not numbers, or a second row for the same race and sex (never resolved silently)."""
+    seen: set[tuple[int, str]] = set()
+    for n, r in enumerate(rows, 1):
+        race, sex, files = r.get("race"), r.get("sex"), r.get("files")
+        ok = (type(race) is int and sex in ("m", "f") and isinstance(files, list)
+              and all(type(f) is int for f in files))
+        if not ok:
+            raise ValueError(f"{ERROR_SOUNDS} row {n}: needs an integer race, sex m or f, integer files")
+        if (race, sex) in seen:
+            raise ValueError(f"{ERROR_SOUNDS} row {n}: a second row for race {race} sex {sex}")
+        seen.add((race, sex))
 
 
 def _check_store(store: Store) -> None:

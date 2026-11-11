@@ -274,3 +274,14 @@ def test_a_store_without_error_recordings_plans_no_file_for_them(root, tmp_path,
     planned = generate.plan(Store(data), vectors)
     assert "Data/ErrorSounds.lua" not in planned
     assert generate.toc_files(planned)[:2] == ["Data/Meta.lua", "Data/Vectors.lua"]
+
+
+@pytest.mark.parametrize("row, why", [
+    ({"race": "Human", "sex": "m", "files": [1]}, "needs an integer race"),
+    ({"race": 1, "sex": "x", "files": [1]}, "needs an integer race"),
+    ({"race": 1, "sex": "m", "files": ["1"]}, "needs an integer race"),
+    ({"race": 1, "sex": "m", "files": [2]}, "a second row for race 1 sex m"),
+])
+def test_a_bad_or_repeated_error_recordings_row_is_refused(row, why):
+    with pytest.raises(ValueError, match=why):
+        generate._check_error_sounds([{"race": 1, "sex": "m", "files": [1]}, row])

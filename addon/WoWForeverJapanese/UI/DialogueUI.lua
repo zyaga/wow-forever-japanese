@@ -718,6 +718,8 @@ local function tagJapanese(child)
   local mine = tagOurs[fs]
   if mine and text == mine then
     face(fs, nil, true)
+    -- sized to its text in the face it has now, as after the write below
+    if type(child.Layout) == "function" then child:Layout() end
     return
   end
   local ja = gameWord(text)

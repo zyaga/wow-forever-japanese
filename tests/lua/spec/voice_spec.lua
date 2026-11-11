@@ -941,6 +941,50 @@ describe("UI/VoiceErrors: the character's own error lines in Japanese", function
     assert.are.equal(0, #sounds)
   end)
 
+  it("plays no Japanese line when the English one could not be muted: the game's line plays alone", function()
+    WFJ.Data.errorSounds = nil -- the data file not loaded (the addon updated while the game ran)
+    WFJ.VoiceErrors.init(db)
+    _G.UIErrorsFrame:TryDisplayMessage(51, "You are too far away.")
+    frames()
+    assert.are.equal(0, #sounds)
+    assert.are.equal("nomute", WFJ.VoiceErrors.last.why)
+    assert.are.same({}, muted)
+  end)
+
+  it("follows the character's sex when it changes: the list muted before is the one unmuted", function()
+    -- a second pack, with a line for the tauren man too
+    WFJ.Voice.register({ format = 2, folder = "WoWForeverJapanese_VoiceOther", lines = {}, errors = { kinds = {},
+      voices = { ["tauren-m"] = { ERR_USE_TOO_FAR = { "e-ERR_USE_TOO_FAR-tauren-m.mp3", 0.8 } } } } })
+    WFJ.VoiceErrors.init(db)
+    assert.are.same({ 901, 902 }, muted)
+    _G.UnitSex = function() return 2 end -- the barber: now a tauren man
+    _G.UIErrorsFrame:TryDisplayMessage(51, "You are too far away.")
+    frames()
+    assert.are.same({ 901, 902 }, unmuted)
+    assert.are.same({ 901, 902, 801 }, muted)
+    assert.are.equal("Interface\\AddOns\\WoWForeverJapanese_VoiceOther\\Sound\\e-ERR_USE_TOO_FAR-tauren-m.mp3",
+      sounds[1].path)
+    WFJ.VoiceErrors.restore()
+    assert.are.same({ 901, 902, 801 }, unmuted)
+  end)
+
+  it("lifts a mute left over from before a reload, and touches no sound when it left none", function()
+    WFJ.Settings.set("voice.errors", false)
+    WFJ.VoiceErrors.init(db)
+    assert.are.same({}, unmuted) -- nothing of ours was muted: another addon's mute of these files is left alone
+    db.voiceErrorFilesMuted = { 6, "f" }
+    WFJ.VoiceErrors.init(db)
+    assert.are.same({ 901, 902 }, unmuted)
+    assert.is_nil(db.voiceErrorFilesMuted)
+  end)
+
+  it("notes the mute in the saved table while it holds, and clears the note when it is lifted", function()
+    WFJ.VoiceErrors.init(db)
+    assert.are.same({ 6, "f" }, db.voiceErrorFilesMuted)
+    WFJ.VoiceErrors.restore()
+    assert.is_nil(db.voiceErrorFilesMuted)
+  end)
+
   it("gives back, once, a setting an earlier version of the addon turned off", function()
     cvars.Sound_EnableErrorSpeech = "0"
     db.voiceErrorSpeechMuted = true
