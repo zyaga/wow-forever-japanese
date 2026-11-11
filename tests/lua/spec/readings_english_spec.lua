@@ -73,6 +73,28 @@ describe("Readings.englishLookup", function()
     assert.are.same({ "You're>あなた", "let's>させる", "hunt>狩り" }, got)
   end)
 
+  it("a capitalised word inside a sentence is a name and takes no card; a sentence's first word does", function()
+    WFJ.Data.add("common", { great = "素晴らしい=すばらしい", will = "だろう=だろう" })
+    local text = "Hunt with Will the Great. Great hunters hunt: Hunt “Great” ones! I hunt."
+    local got = {}
+    for _, s in ipairs(R.englishLookup("quest.description", 1, text)) do got[#got + 1] = text:sub(s.first, s.last) end
+    -- Will and the first Great are names; the Great after the full stop, the Hunt after the colon and the quoted
+    -- Great after it start their sentences
+    assert.are.same({ "Hunt", "Great", "hunt", "Hunt", "hunt" }, got)
+  end)
+
+  it("a negative never takes its first word's card, and a quote mark before a word is not part of it", function()
+    WFJ.Data.add("common", { can = "できる=できる", you = "あなた=あなた" })
+    WFJ.Data.add("pron", { ["you're"] = "jur", you = "juː" })
+    local text = "You can't hunt. 'Hunt' if you're able."
+    local got = {}
+    for _, s in ipairs(R.englishLookup("quest.description", 1, text)) do
+      got[#got + 1] = text:sub(s.first, s.last) .. ">" .. s.card.ja .. ">" .. tostring(s.card.ipa)
+    end
+    -- can't has no card; 'Hunt' is found without its quote; you're takes you's card and its own pronunciation
+    assert.are.same({ "You>あなた>juː", "hunt>狩り>hʌnt", "Hunt>狩り>hʌnt", "you're>あなた>jur" }, got)
+  end)
+
   it("an index past the reading row's end is dropped, never read", function()
     WFJ.Data.add("english", { ["quest:2"] = { description = "hunt=9" } })
     WFJ.Data.add("reading", { ["quest:2"] = { description = "狩り=かり" } })

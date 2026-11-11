@@ -347,8 +347,10 @@ describe("UI/ItemText: the book window", function()
     assert.are.equal(PAGE_JA, drawn())
     assert.is_true(IT.page.fs.nonSpaceWrap)
     assert.is_nil(IT.page:englishRegion()) -- Japanese is showing
+    assert.are.equal(WFJ.Font.PATH, (IT.page.fs:GetFont())) -- the Japanese page, in the bundled face
     Stub.keys.alt = false; WFJ.Modifier.refresh()
     assert.are.equal(PAGE_LIVE, drawn()) -- the restore drew the English where the cards will look
+    assert.are.equal(Client.FONTS.default.P.path, (IT.page.fs:GetFont())) -- and in the page's own face again
     assert.are.equal(IT.page.fs, IT.page:englishRegion())
   end)
 

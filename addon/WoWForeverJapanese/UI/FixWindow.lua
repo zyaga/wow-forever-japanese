@@ -67,8 +67,8 @@ local function preview(s)
   return s:sub(1, cut) .. "…"
 end
 
--- The window's language: Japanese, or English while the reveal key is held.
--- English when translation is off (the master switch) or the reveal key is held, the game text's own rule.
+-- The window's language, by the game text's own rule: English when translation is off (the master switch) or
+-- while English is what shows (the direction and the reveal key), Japanese otherwise.
 local function revealHeld()
   if WFJ.State ~= nil and WFJ.State.enabled == false then return true end
   return WFJ.Modifier ~= nil and WFJ.Modifier.english() == true

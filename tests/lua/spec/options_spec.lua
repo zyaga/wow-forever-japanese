@@ -256,7 +256,7 @@ describe("Settings pages from the registry and PAGES", function()
         end
       end
     end
-    assert.is_true(O.pages.about.bottom > 560) -- no longer packed onto one screen
+    assert.is_true(O.pages.about.bottom > 560) -- taller than the panel: it scrolls
   end)
 
   it("the side-by-side sections are still side by side", function()
@@ -294,6 +294,15 @@ describe("Settings pages from the registry and PAGES", function()
     now = now + 6
     b.scripts.OnClick(b, "LeftButton")
     assert.is_false(S.get("marker.missing"))
+    -- leaving the page disarms it, and so do five seconds on the page
+    b.scripts.OnClick(b, "LeftButton")
+    O.pages.main:Show()
+    O.pages.main:Hide()
+    assert.are.equal(ja("button.defaults"), b.caption:GetText())
+    b.scripts.OnClick(b, "LeftButton")
+    now = now + 6
+    O.refresh()
+    assert.are.equal(ja("button.defaults"), b.caption:GetText())
     assert.is_nil(O.pages.about.defaults) -- About has no setting to reset
   end)
 

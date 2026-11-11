@@ -100,6 +100,25 @@ local function englishCard(ja, jaReading, gloss, ipa)
   return { english = true, ja = ja, jaReading = jaReading, gloss = gloss or nil, ipa = ipa }
 end
 
+-- A capitalised word inside a sentence is a name, and names take no card (the pipeline leaves them out of the rows
+-- the same way): true when the word at `first` starts its sentence or its line.
+local OPENERS = { [" "] = true, ['"'] = true, ["'"] = true, ["("] = true }
+local ENDERS = { ["."] = true, ["!"] = true, ["?"] = true, [":"] = true, ["\n"] = true }
+local function startsSentence(text, first)
+  local i = first - 1
+  while i >= 1 do
+    local c = text:sub(i, i)
+    if OPENERS[c] then
+      i = i - 1
+    elseif i >= 3 and (text:sub(i - 2, i) == "\226\128\156" or text:sub(i - 2, i) == "\226\128\152") then
+      i = i - 3 -- a curly opening quote
+    else
+      return ENDERS[c] == true
+    end
+  end
+  return true
+end
+
 -- A word is a run of ASCII letters and apostrophes, so both ends of a span are always character boundaries.
 function Readings.englishLookup(kind, id, text)
   local type_, field = split(kind)
@@ -120,21 +139,35 @@ function Readings.englishLookup(kind, id, text)
     if type(common) == "string" then return common:match("^([^=]+)=([^=]+)$") end
     return nil
   end
-  for first, token, after in text:gmatch("()([%a']+)()") do
+  for start, raw in text:gmatch("()([%a']+)") do
+    -- a quote mark before the word ('Hello) is not part of it
+    local token = raw:gsub("^'+", "")
+    local first = start + #raw - #token
     local lower = token:lower()
-    local ja, jaReading, gloss = find(lower)
-    if not ja then
-      -- a contraction with no card of its own takes its first word's (you're → you, let's → let)
-      local head = lower:match("^(%a+)'")
+    local isName = token:find("^%u") ~= nil and token ~= "I" and not startsSentence(text, first)
+    local ja, jaReading, gloss, said
+    if token ~= "" and not isName then
+      ja, jaReading, gloss = find(lower)
+      if not ja and lower:find("'$") then
+        -- a closing quote mark after the word ('Hunt') is not part of it either; a word that ends in one of its
+        -- own (givin') was found above
+        token = token:gsub("'+$", "")
+        lower = token:lower()
+        ja, jaReading, gloss = find(lower)
+      end
+      said = WFJ.Data.pron[lower]
+      -- a contraction with no card of its own takes its first word's (you're → you, let's → let); never a
+      -- negative (can't is not can)
+      local head = not ja and not lower:find("n't$") and lower:match("^(%a+)'") or nil
       if head then
         ja, jaReading, gloss = find(head)
-        lower = ja and head or lower
+        said = said or WFJ.Data.pron[head]
       end
     end
     if ja then
-      out[#out + 1] = { first = first, last = after - 1, word = token,
+      out[#out + 1] = { first = first, last = first + #token - 1, word = token,
         reading = ja == jaReading and ja or (ja .. "（" .. jaReading .. "）"),
-        card = englishCard(ja, jaReading, gloss, WFJ.Data.pron[lower]) }
+        card = englishCard(ja, jaReading, gloss, said) }
     end
   end
   return out

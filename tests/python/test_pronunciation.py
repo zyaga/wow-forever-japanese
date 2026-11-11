@@ -34,6 +34,9 @@ def test_one_syllable_takes_no_stress_mark_and_longer_words_mark_the_stressed_sy
     assert spell("AH0 S T R EY1") == "əˈstrei"  # str opens the syllable
     assert spell("AE1 D V ER0 B") == "ˈædvərb"  # dv cannot open one: the mark falls between
     assert spell("IH2 N F ER0 M EY1 SH AH0 N") == "ˌinfərˈmeiʃən"
+    # a cluster that opens the word belongs to its first syllable even when no other syllable could open with it
+    assert spell("TH W AO1 R T IH0 D") == "ˈθwɔːrtid"
+    assert spell("S F EH1 R IH0 K AH0 L") == "ˈsferikəl"
 
 
 def test_every_letter_used_is_one_the_bundled_font_draws():

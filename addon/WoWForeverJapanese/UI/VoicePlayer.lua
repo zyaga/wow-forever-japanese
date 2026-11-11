@@ -66,7 +66,7 @@ local lastItem -- the panel's last line once nothing is queued (its replay)
 
 local function queueOn() return Q.opt.on and true or false end
 
--- a line may start: translation and voice on, and the reveal key up (no voice starts while English shows)
+-- a line may start: translation and voice on, and Japanese showing (no voice starts while English shows)
 local function voiceAllowed()
   return WFJ.State.enabled and not WFJ.State.showsEnglish() and WFJ.Settings.get("voice.enabled") and true or false
 end

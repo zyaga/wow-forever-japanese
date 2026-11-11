@@ -414,7 +414,6 @@ Text.T = {
     ja = "ゲームを日本語で表示\nキーを押している間は英語\n単語カードと学習：なし",
   },
   ["intro.later"] = { en = "You can change this later in the settings.", ja = "あとで設定から変更できます。" },
-  ["intro.key"] = { en = "Hold key", ja = "押すキー" },
   ["intro.lead.en"] = { en = "The game stays in English, with Japanese one key away.",
     ja = "ゲームは英語のまま、キーひとつで日本語を表示します。" },
   ["intro.hold.en"] = { en = "Hold %s to see the Japanese.", ja = "%sを押している間は、日本語を表示します。" },

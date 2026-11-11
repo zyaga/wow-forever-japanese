@@ -170,5 +170,9 @@ def test_a_common_list_line_without_provenance_or_with_two_words_stops_generate(
         (tmp_path / generate.COMMON_WORDS).write_text(line + "\n", encoding="utf-8")
         with pytest.raises(ValueError):
             generate.load_common_words(tmp_path)
+    for line in ("{not json", '["you"]'):  # a file-and-line message, not a parser's traceback
+        (tmp_path / generate.COMMON_WORDS).write_text(line + "\n", encoding="utf-8")
+        with pytest.raises(ValueError, match="common-words.jsonl:1"):
+            generate.load_common_words(tmp_path)
     (tmp_path / generate.COMMON_WORDS).write_text(cases[0][:-1] + ", " + prov + "}\n", encoding="utf-8")
     assert generate.load_common_words(tmp_path) == {"you": ("あなた", "あなた")}

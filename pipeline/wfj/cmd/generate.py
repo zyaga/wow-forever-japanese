@@ -616,7 +616,12 @@ def load_common_words(english_root: Path) -> dict[str, tuple[str, str]]:
     for n, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
         if not line.strip():
             continue
-        rec = json.loads(line)
+        try:
+            rec = json.loads(line)
+        except json.JSONDecodeError as e:
+            raise ValueError(f"{COMMON_WORDS}:{n}: not JSON ({e.msg})") from e
+        if not isinstance(rec, dict):
+            raise ValueError(f"{COMMON_WORDS}:{n}: a line is one JSON object")
         word, ja, reading = rec.get("word"), rec.get("ja"), rec.get("reading")
         strings = isinstance(word, str) and isinstance(ja, str) and isinstance(reading, str)
         if not strings or not rec.get("provenance"):

@@ -558,8 +558,8 @@ local function pageSettings(spec)
 end
 
 -- The page's Defaults button, at the right of its title: the first click arms it, the second within five seconds
--- puts every setting of this page back to its default. The reveal key is skipped in combat (Settings refuses it).
-local function defaultsButton(page, body, spec)
+-- puts every setting of this page back to its default (a value a setting's own check refuses is left as it is).
+local function defaultsButton(body, spec)
   local armedAt
   local en, ja = Text.get("button.defaults")
   local b = W.button(body, en, ja, 110, function(self)
@@ -578,7 +578,16 @@ local function defaultsButton(page, body, spec)
     end
   end)
   b:SetPoint("TOPRIGHT", body, "TOPLEFT", LEFT + WIDTH, -14)
-  page:HookScript("OnHide", function() armedAt = nil; b:setLabel(Text.get("button.defaults")) end)
+  -- leaving the page, or five seconds, disarms it (buildPage's OnHide calls disarm)
+  function b.disarm()
+    if armedAt then
+      armedAt = nil
+      b:setLabel(Text.get("button.defaults"))
+    end
+  end
+  Options.refreshers[#Options.refreshers + 1] = function()
+    if armedAt and GetTime() - armedAt > 5 then b.disarm() end
+  end
   return b
 end
 
@@ -602,7 +611,7 @@ local function buildPage(spec)
   local function titleSize() W.put(page.title.en, page.title.en:GetText(), 18) end
   titleSize()
   Options.refreshers[#Options.refreshers + 1] = titleSize
-  if not spec.noDefaults then page.defaults = defaultsButton(page, body, spec) end
+  if not spec.noDefaults then page.defaults = defaultsButton(body, spec) end
   -- No links to the other pages: the Settings panel's own category list on the left already switches between them.
   -- The addon never writes Blizzard's category tables itself.
   local y = -44
@@ -639,7 +648,10 @@ local function buildPage(spec)
     W.relabelIfStale() -- the language flipped while no page was on screen (OptionsWidgets)
     Options.refresh()
   end)
-  page:SetScript("OnHide", function() Options.forgetPending() end)
+  page:SetScript("OnHide", function()
+    Options.forgetPending()
+    if page.defaults then page.defaults.disarm() end
+  end)
   -- Built hidden: a parentless frame is visible, and the Settings panel shows a canvas itself when its category is
   -- selected (and hides it on leaving) [verified: Blizzard_SettingsPanel.lua:866–909].
   page:Hide()

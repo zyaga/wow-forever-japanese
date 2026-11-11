@@ -61,7 +61,8 @@ def test_only_the_key_itself_is_read_as_a_key(root):
         "UI/Slash.lua",  # /wfj prints the key's state
         "Main.lua",  # the binding's handler
     }
-    pattern = re.compile(r'Modifier\.isDown\(\)|State\.modifierHeld|S_\.modifierHeld|State\.on\("modifier"')
+    # the function by name (called or handed on), the mirror behind any alias, and the key's own event
+    pattern = re.compile(r'Modifier\.isDown\b|\.modifierHeld\b|\.on\("modifier"')
     listed = re.compile(r'ipairs\(\{[^}\n]*"modifier"')
     offenders = []
     for path in sorted([*addon.glob("Core/*.lua"), *addon.glob("UI/*.lua"), addon / "Main.lua"]):

@@ -266,6 +266,19 @@ describe("UI/IntroWindow, the window", function()
     assertBoth(f, false)
   end)
 
+  it("confirming the choice the settings already match keeps a study tab the player hid", function()
+    WFJ.Settings.set("study.tab", false)
+    local f = IW.open()
+    assert.are.equal("ja", IW.selected)
+    f.confirm.scripts.OnClick(f.confirm)
+    assert.are.same({ "ja", true, false }, settings())
+    -- a real change of choice writes the tab with the rest
+    f.back.scripts.OnClick(f.back)
+    f.cards.en.scripts.OnClick(f.cards.en)
+    f.confirm.scripts.OnClick(f.confirm)
+    assert.are.same({ "en", true, true }, settings())
+  end)
+
   it("closing without Confirm changes nothing, and it opens again on the cards with the settings' choice lit",
   function()
     WFJ.Settings.set("readings.enabled", false)

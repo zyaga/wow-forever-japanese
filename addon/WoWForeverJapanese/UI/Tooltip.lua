@@ -1074,7 +1074,7 @@ local function textOf(fs)
 end
 
 local function sameAsLast(frame, link)
-  -- while the reveal key is held a rebuild takes the full pass, as before: the English is what shows
+  -- while English is what shows a rebuild takes the full pass: there is no Japanese on the lines to keep
   if WFJ.Modifier and WFJ.Modifier.english() then return false end
   local seen = lastLines[frame]
   if not seen or lastLink[frame] ~= link or type(frame.NumLines) ~= "function" or frame:NumLines() ~= seen.n then

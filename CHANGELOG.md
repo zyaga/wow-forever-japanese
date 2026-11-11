@@ -16,7 +16,7 @@ an old setting stops working). A release moves those lines under its version num
 - A welcome window that asks what you are here for: Study Japanese, Study English or Just play. Pick one and press Confirm, and it sets the game text, the word cards and the study tab to match; then it shows what to know to get started. Everyone sees it once, players who already have the addon too, and nothing changes until you press Confirm. Open it again any time from the top of the settings page, the About page or with `/wfj intro`.
 
 ### Changed
-- The settings pages have more room: each page scrolls when it needs to, sections are spaced apart, and the explanations are shorter. Every page has a Defaults button (click it, then click again within five seconds) that resets that page's settings only. The version, memory and data counts moved to the About page.
+- The settings pages have more room: each page scrolls when it needs to, sections are spaced apart, and the explanations are shorter. Every page but About has a Defaults button (click it, then click again within five seconds) that resets that page's settings only. The version, memory and data counts moved to the About page.
 - The voice settings and the voice panel's settings are on one page, *Voice*. There is no separate *Voice panel* page any more.
 - The key setting is now called *Hold to show the other language*, since it shows English or Japanese depending on *Game text*.
 - The English Collector page tells you how to send in one line; the send window shows the steps.

@@ -239,6 +239,8 @@ function page:SetFont(path, size, flags)
   local orig = tags and tags.P.font
   if orig and path == orig[1] and size == orig[2] and flags == orig[3] then
     restoreTags(html, tags)
+    -- our FontString may hold the client's English page (English first), written before this font came back
+    if self.fs and self.drawn then layout(self.fs, html) end
     return true
   end
   local refused = false

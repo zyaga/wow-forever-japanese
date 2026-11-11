@@ -89,8 +89,10 @@ def spell(phones: list[str]) -> str | None:
                 return None
             vowels += 1
             if digit in _STRESS:
-                run = [p for p in phones[run_start : len(parts)]]
-                marks[len(parts) - _onset_length([r.rstrip("012") for r in run])] = _STRESS[digit]
+                run = [p.rstrip("012") for p in phones[run_start : len(parts)]]
+                # the consonants that open the word all belong to its first syllable, whatever they are
+                onset = len(run) if run_start == 0 else _onset_length(run)
+                marks[len(parts) - onset] = _STRESS[digit]
             parts.append((VOWELS_STRESSED if digit != "0" else VOWELS_UNSTRESSED)[base])
             run_start = len(parts)
         else:

@@ -151,7 +151,7 @@ translates them.
 translation on or off, choose Japanese first or English first, turn each area on or off (quests, NPC talk, tooltips,
 the interface, books), change the key you hold for the other language, set a key that switches translation on and
 off, and turn the markers, the popup dictionary and the minimap button on or off. With the voice installed, the
-**Voice** page sets what is read aloud and how the voice panel looks. Each page has a **Defaults** button that resets
+**Voice** page sets what is read aloud and how the voice panel looks. Each page but About has a **Defaults** button that resets
 that page only.
 
 ![The addon's settings page](docs/images/settings.jpg)

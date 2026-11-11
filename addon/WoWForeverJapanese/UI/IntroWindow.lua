@@ -1,10 +1,12 @@
--- UI/IntroWindow.lua: the window a first install shows once, at its first login (docs/systems/settings.md).
--- Core/Intro decides when; Main hands it IntroWindow.request, which opens it. It is the one addon window that shows
--- both languages at once, a Japanese block above an English one: the player has not learned the reveal key yet, so
--- a one-language window could be unreadable to them. The reveal key and the translation switch change nothing here.
--- Lines: what the addon does,
--- the reveal key (named as set), the word readings, the minimap button and, while no voice pack has loaded, the
--- voice download with its address to copy. Only the addon's own copy (UI/OptionsText), never game text.
+-- UI/IntroWindow.lua: the welcome window (docs/systems/settings.md). Core/Intro decides when it is owed (once to
+-- every player); Main hands it IntroWindow.request, which opens it. It can be opened again from the settings pages
+-- and /wfj intro. Two pages. The first asks what the player is here for: three cards (study Japanese, study English,
+-- just play), the selected one described under them, and Confirm, which writes that choice's ordinary settings.
+-- The second says what to know to start: the reveal key (named as set, with its Change button), the word cards, the
+-- minimap button and, while no voice pack has loaded, the voice download with its address to copy.
+-- It is the one addon window that shows both languages at once: the player has not learned the reveal key yet, so
+-- a one-language window could be unreadable to them. The reveal key and the translation switch change nothing
+-- here. Only the addon's own copy (UI/OptionsText), never game text.
 local _, WFJ = ...
 local IntroWindow = {}
 WFJ.IntroWindow = IntroWindow
@@ -346,9 +348,11 @@ end
 -- Confirm: the selected choice's settings, then the second page.
 function IntroWindow.pick(purpose)
   local w = WRITES[purpose]
+  -- confirming the choice the settings already match must not undo a study tab the player hid
+  local changed = shownPurpose() ~= purpose
   WFJ.Settings.set("direction", w.direction)
   WFJ.Settings.set("readings.enabled", w.cards)
-  WFJ.Settings.set("study.tab", w.tab)
+  if changed then WFJ.Settings.set("study.tab", w.tab) end
   IntroWindow.show("info")
 end
 
@@ -359,8 +363,9 @@ function IntroWindow.open(noVoice)
   f.voiceShown = noVoice == true or not (WFJ.Voice and WFJ.Voice.hasPack())
   -- The one time the question is put to the player it starts on studying Japanese, what the addon is first for;
   -- opened again by hand it starts on the choice the settings match.
-  IntroWindow.selected = IntroWindow.asking and "ja" or shownPurpose() or "ja"
+  local asking = IntroWindow.asking
   IntroWindow.asking = false
+  IntroWindow.selected = asking and "ja" or shownPurpose() or "ja"
   IntroWindow.show("pick")
   relayoutWhenFonts(f)
   f:Show()
