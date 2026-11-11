@@ -1,0 +1,188 @@
+"""A name's Japanese spelled from its English: the assembly rules, and the result being a valid name line."""
+
+from __future__ import annotations
+
+import json
+
+import pytest
+from wfj.cmd import names as cmd
+from wfj.core import names, respell
+from wfj.io.names_store import load_lines, load_words, save_lines, save_words
+
+SPELL = {
+    "black": "ブラック",
+    "dragonflight": "ドラゴンフライト",
+    "argent": "アージェント",
+    "dawn": "ドーン",
+    "might": "マイト",
+    "of": "オブ",
+    "the": "ザ",
+    "menethil": "メネシル",
+    "hallow": "ハロウ",
+    "end": "エンド",
+    "head": "ヘッド",
+    "shot": "ショット",
+    "safe": "セーフ",
+    "zone": "ゾーン",
+    "plans": "プラン",
+    "fiery": "ファイアリー",
+    "plate": "プレート",
+    "gauntlets": "ガントレット",
+    "death": "デス",
+    "decay": "ディケイ",
+    "tier": "ティア",
+    "zin": "ジン",
+    "malor": "マロール",
+    "hand": "ハンド",
+    "level": "レベル",
+    "epic": "エピック",
+    "bonus": "ボーナス",
+    "druid": "ドルイド",
+    "shaman": "シャーマン",
+}
+
+
+@pytest.mark.parametrize(
+    ("en", "ja", "reading"),
+    [
+        ("Black Dragonflight", "ブラック・ドラゴンフライト", "ぶらっく・どらごんふらいと"),
+        ("BLACK dragonflight", "ブラック・ドラゴンフライト", "ぶらっく・どらごんふらいと"),
+        ("The Argent Dawn", "アージェント・ドーン", "あーじぇんと・どーん"),
+        ("Might of Menethil", "マイト・オブ・メネシル", "まいと・おぶ・めねしる"),
+        ("Hand of the Dawn", "ハンド・オブ・ザ・ドーン", "はんど・おぶ・ざ・どーん"),
+        ("Hallow's End", "ハロウズ・エンド", "はろうず・えんど"),
+        ("Zin-Malor", "ジン・マロール", "じん・まろーる"),
+        ("Head Shot II", "ヘッド・ショット2", "へっど・しょっとに"),
+        ("Level 80 Epic", "レベル80・エピック", "れべるはちじゅう・えぴっく"),
+        ("[DNT] Safe zone", "セーフ・ゾーン", "せーふ・ぞーん"),
+        ("Plans: Fiery Plate Gauntlets", "プラン：ファイアリー・プレート・ガントレット", "ぷらん・ふぁいありー・ぷれーと・がんとれっと"),
+        ("Death & Decay", "デス・アンド・ディケイ", "です・あんど・でぃけい"),
+        ("Druid/Shaman", "ドルイド・シャーマン", "どるいど・しゃーまん"),
+        ("Tier 2 - 6P Bonus", "ティア2・6ピー・ボーナス", "てぃあに・ろくぴー・ぼーなす"),
+    ],
+)
+def test_a_name_is_spelled_from_its_words(en, ja, reading):
+    assert respell.assemble(en, SPELL.get) == (ja, reading, [])
+
+
+def test_a_leading_the_stays_when_it_is_the_whole_name():
+    assert respell.assemble("The", SPELL.get) == ("ザ", "ざ", [])
+
+
+def test_a_word_with_no_spelling_is_reported_and_nothing_is_spelled():
+    assert respell.assemble("Black Unknownword Dawn", SPELL.get) == (None, None, ["Unknownword"])
+
+
+def test_a_name_that_is_only_a_tag_has_nothing_to_spell():
+    assert respell.assemble("[UNUSED]", SPELL.get) == (None, None, [])
+
+
+def test_the_words_of_a_name_are_what_the_assembly_looks_up():
+    assert respell.words("The Hallow's End II [DNT] 2P") == ["The", "Hallow", "End"]
+
+
+def test_an_assembled_name_is_a_valid_name_line():
+    for en in ("Black Dragonflight", "Head Shot II", "Plans: Fiery Plate Gauntlets", "Tier 2 - 6P Bonus"):
+        ja, reading, _ = respell.assemble(en, SPELL.get)
+        line = names.new_line(en, "2026-11-11")
+        line.update(
+            ids={"item": [1]},
+            ja=ja,
+            reading=reading,
+            status="trusted",
+            provenance={"class": "machine", "model": "m", "source": "respell@2026-11-11", "imported": "2026-11-11"},
+        )
+        assert names.line_problems(names.ordered(line)) == []
+
+
+# ── the commands: export the words with no katakana spelling, import the spellings, respell the names ──
+
+TODAY = "2026-11-11"
+DRAFT = {"class": "machine", "model": "m", "source": "draft-names-test1@2026-11-10", "imported": "2026-11-10"}
+HUMAN = {"class": "human", "source": "hearthstone@256589", "imported": "2026-11-10"}
+
+
+def _line(en: str, ja: str, reading: str, prov: dict = DRAFT, free: bool = False) -> dict:
+    ln = names.new_line(en, TODAY)
+    ln.update(ids={"item": [1]}, ja=ja, reading=reading, free=free, status="trusted", provenance=dict(prov))
+    return names.ordered(ln)
+
+
+def _word(en: str, ja: str, check: bool = True) -> dict:
+    return {"en": en, "ja": ja, "check": check, "provenance": dict(DRAFT)}
+
+
+@pytest.fixture
+def store(tmp_path):
+    save_lines(
+        tmp_path,
+        [
+            _line("Black Dragonflight", "黒いドラゴンフライト", "くろいどらごんふらいと"),
+            _line("Black Gloves", "黒い手袋", "くろいてぶくろ", free=True),
+            _line("Zin-Malor", "ジン・マロール", "じん・まろーる"),
+            _line("Orgrimmar", "オーグリマー", "おーぐりまー", prov=HUMAN),
+            _line("[DNT]", "開発用", "かいはつよう"),
+        ],
+    )
+    save_words(tmp_path, [_word("Black", "黒い", check=False), _word("Dragonflight", "ドラゴンフライト")])
+    return tmp_path
+
+
+def test_export_lists_each_word_with_no_katakana_spelling_once(store, tmp_path):
+    out = tmp_path / "out"
+    assert cmd.export_respell(store, out, 100) == 2
+    rows = [json.loads(r) for r in (out / "respell-000.jsonl").read_text(encoding="utf-8").splitlines()]
+    assert [(r["en"], r["count"]) for r in rows] == [("black", 2), ("gloves", 1)]
+    assert rows[0]["examples"] == ["Black Dragonflight", "Black Gloves"]
+
+
+def _batch(tmp_path, rows) -> object:
+    p = tmp_path / "batch.jsonl"
+    p.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows), encoding="utf-8")
+    return p
+
+
+def test_import_replaces_a_translated_spelling_and_adds_a_new_word(store, tmp_path):
+    batch = _batch(tmp_path, [{"en": "black", "ja": "ブラック"}, {"en": "gloves", "ja": "グローブ"}])
+    n, rejected = cmd.import_respell(store, batch, "m2", "respell-1", TODAY, False)
+    assert (n, rejected) == (2, [])
+    words = {w["en"]: w for w in load_words(store)}
+    assert (words["Black"]["ja"], words["Black"]["check"]) == ("ブラック", True)
+    assert words["Black"]["provenance"]["source"] == "draft-names-respell-1@2026-11-11"
+    assert words["gloves"]["ja"] == "グローブ"
+    assert words["Dragonflight"]["provenance"] == DRAFT  # a word that was katakana is not touched
+
+
+def test_import_refuses_a_spelling_that_is_not_katakana_or_fights_one_that_exists(store, tmp_path):
+    batch = _batch(tmp_path, [{"en": "black", "ja": "黒"}, {"en": "dragonflight", "ja": "ドラゴンフライツ"}])
+    n, rejected = cmd.import_respell(store, batch, "m2", "respell-1", TODAY, False)
+    assert n == 0
+    assert len(rejected) == 2 and "katakana" in rejected[0] and "already" in rejected[1]
+    assert {w["en"]: w["ja"] for w in load_words(store)}["Black"] == "黒い"
+
+
+def test_respell_rewrites_every_translated_name_and_leaves_the_rest(store, tmp_path):
+    before = {ln["en"]: ln for ln in load_lines(store)}
+    batch = _batch(tmp_path, [{"en": "black", "ja": "ブラック"}, {"en": "gloves", "ja": "グローブ"}])
+    cmd.import_respell(store, batch, "m2", "respell-1", TODAY, False)
+    counts = cmd.respell(store, TODAY, False)
+    assert counts == {"respelled": 2, "kept": 2, "nothing to spell": 1, "word with no spelling": 0}
+    after = {ln["en"]: ln for ln in load_lines(store)}
+    assert (after["Black Dragonflight"]["ja"], after["Black Dragonflight"]["reading"]) == (
+        "ブラック・ドラゴンフライト",
+        "ぶらっく・どらごんふらいと",
+    )
+    assert (after["Black Gloves"]["ja"], after["Black Gloves"]["free"]) == ("ブラック・グローブ", False)
+    assert after["Black Gloves"]["provenance"] == {
+        "class": "machine",
+        "source": "respell@2026-11-11",
+        "imported": "2026-11-11",
+    }
+    for en in ("Zin-Malor", "Orgrimmar", "[DNT]"):  # katakana already, Hearthstone's own, nothing to spell
+        assert after[en] == before[en]
+
+
+def test_respell_stops_at_a_word_with_no_spelling(store):
+    counts = cmd.respell(store, TODAY, False)
+    assert counts["word with no spelling"] == 2 and counts["respelled"] == 0
+    assert {ln["en"]: ln["ja"] for ln in load_lines(store)}["Black Dragonflight"] == "黒いドラゴンフライト"
