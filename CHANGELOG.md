@@ -10,6 +10,9 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Fixed
+- The character's spoken error lines (out of range, not enough mana) now follow the game's own Error Speech setting. With it on you hear the Japanese line, with it off you hear nothing. The addon no longer switches that setting off itself; if an earlier version had switched yours off, it is switched back on once.
+- With Ellesmere UI, the game's windows it restyles no longer have to show empty boxes where the Japanese should be: choose **WoW Forever Japanese** as the Global Font in Ellesmere UI's font settings (`/eui`, Fonts). English text in those windows is then drawn in the same font. Ellesmere UI's own windows stay English.
+- With Dialogue UI, a quest's tag that already shows its Japanese keeps the addon's font when the page is gone over again, with no moment of empty boxes.
 - With Dialogue UI, a quest's tag over its title (Dungeon, Raid) no longer shows empty boxes: when its Japanese loses the addon's font, the font goes back on the next moment.
 - The Legacy trees' talent tooltips show their Japanese lines (Click to learn, Requires all preceding talents, Spend 10 more points in the Professions Legacy Tree) even when the talent window has not been opened yet. The trees' names stay English.
 - Sharing a quest from the quest tracker's right-click menu, and the world map's quest markers in combat, no longer give an "action blocked" message naming this addon. The quest log, the quest popup and the quest window had their scroll area re-measured by the addon after their text turned Japanese, and that carried the addon's taint into the quest map and the tracker. The game keeps that scroll area right on its own. Sharing a quest in combat is still something the game itself does not allow.
