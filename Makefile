@@ -524,8 +524,8 @@ validate: ## the CI gate: schema, provenance rule, key collisions, referential i
 	cd pipeline && $(PY) -m wfj validate $(VALIDATE_FLAGS)
 	$(MAKE) -s luac
 
-# The BigWigsMods packager, pinned to the commit the Release workflow uses (v2.6.1). It needs bash 4 or newer.
-PACKAGER_SHA  := e50a250f8705041e40f2fa1ddcb280a686d65aa0
+# The BigWigsMods packager, pinned to the commit the Release workflow uses (v2.7.0). It needs bash 4 or newer.
+PACKAGER_SHA  := 01e8631a69c69d7654c788d152630d5fed9e3812
 PACKAGER      := build/packager-$(PACKAGER_SHA)/release.sh
 PACKAGER_BASH ?= $(if $(wildcard /opt/homebrew/bin/bash),/opt/homebrew/bin/bash,bash)
 
