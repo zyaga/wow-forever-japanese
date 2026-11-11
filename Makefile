@@ -505,7 +505,8 @@ voice-stop: ## stop the background voice run (make voice-run resumes it)
 # a new English name gets a `missing` data/name line (drafted with `wfj names export` / `import`; a test fails
 # until it is), and every voiced line gets its kana line from the readings and names.
 names: ## every English name gets a data/name line, then every voiced line its kana line
-	cd pipeline && $(PY) -m wfj names collect $(if $(wildcard $(VMANGOS_DB)),--vmangos $(VMANGOS_DB))
+	cd pipeline && $(PY) -m wfj names collect $(if $(wildcard $(VMANGOS_DB)),--vmangos $(VMANGOS_DB)) \
+		$(if $(wildcard $(call client_dir,forever)),--tables "$(call client_dir,forever)")
 	cd pipeline && $(PY) -m wfj voice kana
 
 # Hearthstone's official Japanese (HearthstoneJSON's card files), a build-time reference only: kept under build/,

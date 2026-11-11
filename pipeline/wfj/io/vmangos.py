@@ -307,9 +307,11 @@ _NAME_SQL = {
     " GROUP BY id) m ON t.id = m.id AND t.build = m.build WHERE t.reputation_list_id >= 0",
     "map": "SELECT t.entry, t.map_name FROM map_template t JOIN (SELECT entry, MAX(patch) AS patch"
     " FROM map_template GROUP BY entry) m ON t.entry = m.entry AND t.patch = m.patch",
+    "title": "SELECT t.entry, t.subname FROM creature_template t JOIN (SELECT entry, MAX(patch) AS patch"
+    " FROM creature_template GROUP BY entry) m ON t.entry = m.entry AND t.patch = m.patch",
 }
 _NAME_NEEDS = {
-    "creature_template": ("entry", "patch", "name"),
+    "creature_template": ("entry", "patch", "name", "subname"),
     "gameobject_template": ("entry", "patch", "name"),
     "area_template": ("entry", "name"),
     "faction": ("id", "build", "name", "reputation_list_id"),
@@ -318,7 +320,8 @@ _NAME_NEEDS = {
 
 
 def read_names(path: Path) -> dict[str, dict[int, str]]:
-    """{name kind: {id: English name}} for creatures (`unit`), game objects, areas, factions and maps.
+    """{name kind: {id: English name}} for creatures (`unit`), game objects, areas, factions, maps and
+    creature titles (`title`, the line under an NPC's name: "Innkeeper").
     Empty names are left out."""
     db = _connect(path, _NAME_NEEDS)
     try:

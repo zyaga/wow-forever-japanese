@@ -333,3 +333,32 @@ def test_a_checked_word_may_take_a_voiced_first_sound():
     assert names.misspelled(trusted("Venom Spider", "毒グモ", "どくぐも"), glossary) == []
     assert names.misspelled(trusted("Venom Spider", "毒蜘蛛", "どくぐも"), glossary) == []
     assert names.misspelled(trusted("Venom Spider", "毒蛇", "どくへび"), glossary) == [("Spider", "クモ")]
+
+
+def test_latin_runs_skip_tooltip_markup():
+    ja = (
+        "$?a5487|a9634[|CFFFFFFFF必要：Cat Form|R][|CFFFF2020必要：Cat Form|R]、|cnIQ1:Peacebloom|r、"
+        "%S1のShadowダメージ。$?pc142418[さらに][]"
+    )
+    assert names.latin_runs(ja) == ["Cat Form", "Cat Form", "Peacebloom", "Shadow"]
+
+
+def test_table_names_read_item_suffixes_and_flight_points(tmp_path):
+    (tmp_path / "ItemNameDescription.csv").write_text(
+        "ID,Description_lang\n14231,Sanctified\n14455,of the Monkey\n", encoding="utf-8"
+    )
+    (tmp_path / "TaxiNodes.csv").write_text(
+        'ID,Name_lang\n4,"Sentinel Hill, Westfall"\n2913,Quest Path 9571: 1.60.0 - Shaman\n', encoding="utf-8"
+    )
+    assert cmd.table_names(tmp_path) == {"suffix": {14455: "of the Monkey"}, "taxi": {4: "Sentinel Hill, Westfall"}}
+    assert cmd.table_names(tmp_path / "absent") == {"suffix": {}, "taxi": {}}
+
+
+def test_a_flight_point_is_exported_with_its_parts(tmp_path):
+    hill = trusted("Sentinel Hill", "センチネル・ヒル", "せんちねる・ひる")
+    point = names.ordered(dict(names.new_line("Sentinel Hill, Westfall", TODAY), ids={"taxi": [4]}))
+    root = _store(tmp_path, [hill, point])
+    cmd.export(root, tmp_path / "out", 10, None)
+    (row,) = [json.loads(r) for r in (tmp_path / "out" / "batch-000.jsonl").read_text().splitlines()]
+    assert row["kinds"] == {"taxi": 1}
+    assert row["parts"] == [["Sentinel Hill", "センチネル・ヒル", "せんちねる・ひる"], None]

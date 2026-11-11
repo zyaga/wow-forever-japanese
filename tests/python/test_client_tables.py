@@ -46,6 +46,7 @@ HEADERS = {
     "GroupFinderActivity": ["ID", "FullName_lang", "ShortName_lang"],
     "UiWidgetStringSource": ["ID", "Value_lang"],
     "ItemNameDescription": ["ID", "Description_lang"],
+    "TaxiNodes": ["ID", "Name_lang"],
     "CriteriaTree": ["ID", "Description_lang"],
     "RenownRewards": ["ID", "Name_lang", "Description_lang", "ToastDescription_lang"],
     "SharedString": ["ID", "String_lang"],

@@ -1,18 +1,21 @@
 """wfj names collect|hearthstone|export|import|check: Japanese names
 (ADR-078; docs/architecture/data-model.md).
 
-collect [--vmangos DB] [--date YYYY-MM-DD]
+collect [--vmangos DB] [--tables DIR] [--date YYYY-MM-DD]
     Every English name the game shows gets a `data/name` line: item, spell and unit names from
-    `data/english`, creature, object, area, faction and map names from the VMaNGOS database when given, and
-    every run of Latin letters in shipped quest, gossip, book, objective and area Japanese and the voiced
-    error lines. New names come in `missing`; ids are only added; nothing is removed or rewritten.
+    `data/english`, creature, object, area, faction and map names and creature titles from the VMaNGOS
+    database when given, item name suffixes ("of the Monkey") and flight point names from the client tables
+    in DIR (ItemNameDescription.csv, TaxiNodes.csv) when given, and every run of Latin letters in shipped
+    quest, gossip, book, objective, area, item and spell Japanese and the voiced error lines. New names
+    come in `missing`; ids are only added; nothing is removed or rewritten.
 hearthstone JAJP.json ENUS.json --build BUILD [--date YYYY-MM-DD]
     Hearthstone's official Japanese (HearthstoneJSON card files, a build-time input): a missing name whose
     English is a card's name and whose Japanese is katakana takes that Japanese (class human, source
     hearthstone@BUILD); word pairs from card names that split into the same number of words go into the
     glossary. A `human` or `correction` name is never touched.
 export --out DIR [--size N] [--hearthstone DIR]
-    The missing names as batch files of N rows: {"id", "en", "kinds", "prose", "hints", "hearthstone"};
+    The missing names as batch files of N rows: {"id", "en", "kinds", "prose", "hints", "hearthstone",
+    "parts"} (parts: a flight point's places, each [English, Japanese, reading] or null);
     a hint is [word, Japanese, "name" (keep it) | "word" (the usual Japanese of an ordinary word)].
     --skip FILE leaves out the ids of a batch still being drafted. --redo [--redo-ids FILE]: a fix round
     instead, the drafted machine names that spell a checked glossary word another way and the ids in FILE,
@@ -35,6 +38,7 @@ check
 from __future__ import annotations
 
 import argparse
+import csv
 import datetime as dt
 import json
 import re
@@ -52,7 +56,7 @@ from wfj.io.jsonl_store import Store, dumps
 from wfj.io.names_store import load_lines, load_words, save_lines, save_words
 from wfj.paths import data_root
 
-PROSE_TYPES = ("quest", "gossip", "book", "objective", "area")
+PROSE_TYPES = ("quest", "gossip", "book", "objective", "area", "item", "spell")
 ENGLISH_NAMES = ("item", "spell", "unit")  # data/english types whose `name` field is a name kind too
 _BATCH_RE = re.compile(r"^[0-9A-Za-z._-]{4,64}$")
 _JA_SPLIT = re.compile(r"[・　 ]+")
@@ -73,7 +77,8 @@ def english_names(root: Path) -> dict[str, dict[str, set[int]]]:
 
 
 def prose_lines(root: Path) -> dict[str, str]:
-    """{line key: shipped Japanese} for the prose names are read from, and the voiced error lines."""
+    """{line key: shipped Japanese} for the text names are read from (prose and tooltips), and the voiced
+    error lines."""
     from wfj.cmd.voice_make import error_lines
 
     store = Store(root)
@@ -88,14 +93,38 @@ def prose_names(root: Path) -> set[str]:
     return {run for ja in prose_lines(root).values() for run in names.latin_runs(ja)}
 
 
-def collect(root: Path, db: Path | None, today: str) -> dict[str, int]:
+def table_names(folder: Path) -> dict[str, dict[int, str]]:
+    """{kind: {id: English}} from a client's table folder: the item name suffixes (ItemNameDescription rows
+    the client writes after an item's name, "of the Monkey") and the flight point names (TaxiNodes, without
+    the "Quest Path" rows a flight master never lists). A table the folder lacks gives nothing."""
+    out: dict[str, dict[int, str]] = {"suffix": {}, "taxi": {}}
+    for kind, table, column, keep in (
+        ("suffix", "ItemNameDescription", "Description_lang", lambda en: en.startswith("of ")),
+        ("taxi", "TaxiNodes", "Name_lang", lambda en: not en.startswith("Quest Path")),
+    ):
+        path = folder / f"{table}.csv"
+        if path.is_file():
+            with path.open(encoding="utf-8", newline="") as f:
+                for row in csv.DictReader(f):
+                    en = row[column].strip()
+                    if en and keep(en):
+                        out[kind][int(row["ID"])] = en
+    return out
+
+
+def collect(root: Path, db: Path | None, today: str, tables: Path | None = None) -> dict[str, int]:
     seen = english_names(root)
     counts = {f"english {k}": sum(1 for v in seen.values() if k in v) for k in ENGLISH_NAMES}
+    sources = []
     if db is not None:
-        for kind, rows in vmangos.read_names(db).items():
+        sources.append(("vmangos", vmangos.read_names(db)))
+    if tables is not None:
+        sources.append(("tables", table_names(tables)))
+    for source, by_kind in sources:
+        for kind, rows in by_kind.items():
             for i, en in rows.items():
                 seen.setdefault(en, defaultdict(set))[kind].add(i)
-            counts[f"vmangos {kind}"] = len(set(rows.values()))
+            counts[f"{source} {kind}"] = len(set(rows.values()))
     prose = prose_names(root)
     counts["prose"] = len(prose)
     lines, added = names.merge(load_lines(root), seen, prose, today)
@@ -240,8 +269,10 @@ def export(
             if not names.has_latin(ja):  # a card Hearthstone left in English is no Japanese
                 whole.setdefault(names.norm(en), ja)
     words = {w["en"]: w for w in load_words(root)}
+    lines = load_lines(root)
+    by_id = {ln["id"]: ln for ln in lines}
     rows = []
-    for ln in load_lines(root):
+    for ln in lines:
         if ln["id"] in skip or (ln["id"] not in redo if redo is not None else ln["status"] != "missing"):
             continue
         row: dict[str, Any] = {
@@ -259,6 +290,10 @@ def export(
         }
         if ln["en"] in whole:
             row["hearthstone"] = whole[ln["en"]]
+        if "taxi" in ln["ids"]:
+            # a flight point is places joined by ", ": each part's own line, so it reads as the part alone
+            parts = [by_id.get(names.name_id(p)) for p in ln["en"].split(", ")]
+            row["parts"] = [[p["en"], p["ja"], p["reading"]] if p else None for p in parts]
         if redo is not None:
             row["current"] = [ln["ja"], ln["reading"]]
             row["problem"] = redo[ln["id"]]
@@ -418,6 +453,7 @@ def _parser(today: str) -> argparse.ArgumentParser:
     sub = p.add_subparsers(dest="cmd", required=True)
     c = sub.add_parser("collect")
     c.add_argument("--vmangos")
+    c.add_argument("--tables", help="a client's table folder (ItemNameDescription.csv, TaxiNodes.csv)")
     c.add_argument("--date", default=today)
     h = sub.add_parser("hearthstone")
     h.add_argument("ja")
@@ -468,7 +504,9 @@ def run(argv: Sequence[str]) -> int:
     root = data_root()
     try:
         if a.cmd == "collect":
-            counts = collect(root, Path(a.vmangos) if a.vmangos else None, a.date)
+            counts = collect(
+                root, Path(a.vmangos) if a.vmangos else None, a.date, Path(a.tables) if a.tables else None
+            )
             print("names collect: " + ", ".join(f"{k} {v}" for k, v in counts.items()))
         elif a.cmd == "hearthstone":
             if not re.match(r"^\d{4,}$", a.build):

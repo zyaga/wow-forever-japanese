@@ -25,7 +25,7 @@ from wfj.core import model
 from wfj.core.hashing import key as hash_key
 from wfj.core.normalize import normalize_for
 
-KINDS = ("unit", "item", "spell", "object", "area", "faction", "map")
+KINDS = ("unit", "item", "spell", "object", "area", "faction", "map", "suffix", "taxi", "title")
 STATUSES = ("missing", "trusted")
 KEYS = ("id", "en", "ids", "prose", "ja", "reading", "free", "status", "provenance")
 WORD_KEYS = ("en", "ja", "check", "provenance")
@@ -44,9 +44,11 @@ _VOICED = str.maketrans(
 _HALF_VOICED = str.maketrans("はひふへほ", "ぱぴぷぺぽ")
 
 # Markup a shipped line can hold, removed before its Latin runs are read: player tokens, server codes,
-# colour and link escapes, texture escapes, format placeholders (%s, %d).
+# a tooltip's condition tests ($?a5487|a9634 up to its [), colour escapes by code or by name (|cnIQ1:),
+# link and texture escapes, format placeholders (%s, %d, %S1).
 _MARKUP = re.compile(
-    r"\{[a-z]+\}|\$[0-9]*[A-Za-z][0-9]*|\|c[0-9A-Fa-f]{8}|\|r|\|H[^|]*\|h|\|h|\|T[^|]*\|t|\|n|%[0-9$]*[sd]"
+    r"\{[a-z]+\}|\$\?[^\[]*|\$[0-9]*[A-Za-z][0-9]*|\|[cC][0-9A-Fa-f]{8}|\|cn[A-Z0-9_]+:|\|[rR]|\|H[^|]*\|h|\|h"
+    r"|\|T[^|]*\|t|\|n|%[0-9$]*[sd]|%[A-Z][0-9]+"
 )
 # A name in prose: Latin letters, digits and the punctuation names carry (Zul'Gurub, Un'Goro, C.O.R.E.),
 # words joined by single spaces.
