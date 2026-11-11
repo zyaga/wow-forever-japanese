@@ -62,7 +62,7 @@ FILE_PREFIX = {
     "ui": "UI",
     "reading": "Reading",  # whole-word readings, Reading_<type>_<shard>.lua (not a translation type)
     "gloss": "Gloss",  # the word popup's meanings, Gloss_<NNNN>.lua (not a translation type)
-    # English word cards: English_<type>_<shard>.lua beside each reading shard, English_Pron.lua, English_Common.lua
+    # English word cards: English_<type>_<shard>.lua beside each reading shard, and the two word tables
     "english": "English",
 }
 # Generated types in TOC load order: numeric-id shards, the keyed types, then the UI strings.

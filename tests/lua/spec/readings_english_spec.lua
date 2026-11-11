@@ -20,7 +20,9 @@ describe("Readings.englishLookup", function()
   it("finds each English word the row lists, where it stands, with its Japanese word and reading", function()
     local spans = R.englishLookup("quest.description", 1, EN)
     local got = {}
-    for _, s in ipairs(spans) do got[#got + 1] = { EN:sub(s.first, s.last), s.card.ja, s.card.jaReading, s.card.ipa } end
+    for _, s in ipairs(spans) do
+      got[#got + 1] = { EN:sub(s.first, s.last), s.card.ja, s.card.jaReading, s.card.ipa }
+    end
     assert.are.same({
       { "Hunt", "狩り", "かり", "hʌnt" }, { "few", "少し", "すこし", "fjuː" },
       { "creatures", "生き物", "いきもの", "kríːtʃərz" }, { "thin", "減らして", "へらして" },
@@ -55,7 +57,8 @@ describe("Readings.englishLookup", function()
     WFJ.Data.add("reading", { ["gossip:k"] = { text = "しない=しない 狩り=かり" } })
     local text = "“Hunt”・don't。"
     local spans = R.englishLookup("gossip", "k", text)
-    assert.are.same({ "Hunt", "don't" }, { text:sub(spans[1].first, spans[1].last), text:sub(spans[2].first, spans[2].last) })
+    local found = { text:sub(spans[1].first, spans[1].last), text:sub(spans[2].first, spans[2].last) }
+    assert.are.same({ "Hunt", "don't" }, found)
     for _, s in ipairs(spans) do
       assert.is_true(text:byte(s.first) < 0x80 and text:byte(s.last) < 0x80)
     end

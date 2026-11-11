@@ -22,19 +22,25 @@ CODE = re.compile(r"\$[A-Za-z]\w*(?::[^;]*)?;?|%\d*\$?[a-z]|\|c[0-9a-fA-F]{8}|\|
 # Words that carry no meaning of their own in a phrase: a phrase is matched by the words left over. A meaning
 # that is only one of these ("you", "more") still matches that word itself.
 FUNCTION_WORDS = frozenset(
-    """a an the and or but of to in on at for with from by as is are was were be been being am do does did
-    have has had will would shall should can could may might must not no it its this that these those there here
-    i you he she we they me him her us them my your his our their what which who whom whose when where why how
-    all any some many much more most few less so than too very just only also then now if into onto out up down
-    over under again off about above below between through during before after while because until unless back
-    away around along across toward towards one's oneself something someone""".split()
+    """
+    a an the and or but of to in on at for with from by as is are was were be been being am do does did
+    have has had will would shall should can could may might must not no it its this that these those
+    there here i you he she we they me him her us them my your his our their what which who whom whose
+    when where why how all any some many much more most few less so than too very just only also then
+    now if into onto out up down over under again off about above below between through during before
+    after while because until unless back away around along across toward towards one's oneself
+    something someone
+    """.split()  # noqa: SIM905
 )
 
-# Words that take no card by design: Japanese has no word for an article, and the bare forms of be, have and do
-# and the commonest prepositions only mean something with the words around them. Coverage is counted without them.
+# Words that take no card by design: Japanese has no word for an article, and the bare forms of be, have and
+# do and the commonest prepositions only mean something with the words around them. Coverage is counted
+# without them.
 NO_CARD = frozenset(
-    """a an the to of in on at for as by than off upon is are was were be been being am 's
-    have has had having do does did doing""".split()
+    """
+    a an the to of in on at for as by than off upon is are was were be been being am 's have has had
+    having do does did doing
+    """.split()  # noqa: SIM905
 )
 
 _SUFFIXES = ("ing", "ies", "ed", "es", "s", "ly", "d")
@@ -93,7 +99,7 @@ def _senses(meaning: str) -> list[tuple[str, bool]]:
     mark words the sentence leaves unsaid ("if (you) can"): the phrase is read whole, without them."""
     m = _BRACKETED.fullmatch(meaning)
     if not m:
-        # a meaning wholly in brackets ("(that)") is a word the Japanese leaves unsaid: a hint, like any bracket
+        # a meaning wholly in brackets ("(that)") is a word the Japanese leaves unsaid: a hint, like any other
         whole = meaning.strip().startswith("(") and meaning.strip().endswith(")")
         return [(re.sub(r"[()]", " ", meaning).strip(), not whole)]
     return [(m.group(1), True), (m.group(2).strip(), False)]

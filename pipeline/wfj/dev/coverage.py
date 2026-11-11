@@ -292,7 +292,9 @@ def measure(root: Path) -> dict[str, Any]:
         words[type_] = {"lines": len(can), "with_words": len(can & covered), "stale": len(result["stale"]),
                         "words": n_words, "with_meaning": meant}
     by_reason, uncategorized = ui_exclusions_by_reason(repo)
-    from wfj.cmd import english_cards  # here: the command module imports generate, which this file never needs
+    from wfj.cmd import (
+        english_cards,  # here: the command module imports generate, which this file never needs
+    )
 
     return {"types": types, "readings": words, "served": served(repo), "voice": voice_coverage(root),
             "english_cards": english_cards.coverage(Store(root))["surfaces"],
@@ -508,12 +510,14 @@ def _render_english_cards(e: dict[str, Any]) -> list[str]:
     words = carded = 0
     for type_, r in e.items():
         words, carded = words + r["words"], carded + r["carded"]
-        out.append(f"| {type_} | {r['lines']:,} | {r['words']:,} | {r['carded']:,} | {_pct(r['carded'], r['words'])} |")
+        done = _pct(r["carded"], r["words"])
+        out.append(f"| {type_} | {r['lines']:,} | {r['words']:,} | {r['carded']:,} | {done} |")
     out.append(f"| **All** | | **{words:,}** | **{carded:,}** | **{_pct(carded, words)}** |")
-    out += ["", "A word is counted each time it occurs. Names (a capitalised word inside a sentence) and codes the",
-            "client fills in are not counted, and neither are the words that take no card by design: the",
-            "articles, the bare forms of be, have and do, and to, of, in, on, at, for, as, by, than, off, upon.",
-            "A contraction counts as carded through its first word (you're: you). A book page the client marks",
+    out += ["",
+            "A word is counted each time it occurs. Names (a capitalised word inside a sentence) and codes",
+            "the client fills in are not counted, and neither are the words that take no card by design: the",
+            "articles, the bare forms of be, have and do, and to, of, in, on, at, for, as, by, than, off,",
+            "upon. A contraction counts as carded through its first word (you're: you). A book page marked",
             "up as HTML shows no cards in game, in either language, though its words are counted here."]
     return out
 

@@ -35,7 +35,8 @@ describe("Translator.resolve: the action table, and it stays pure", function()
     assert.are.equal("leave", a); assert.is_nil(p)
   end)
 
-  it("row 3: English is showing → leave, even with a trusted entry, and the payload says it is by the language", function()
+  it("row 3: English is showing → leave, even with a trusted entry; the payload says it is by the language",
+  function()
     flags.held = true; flags.entry = entry(".")
     local a, p = resolve()
     assert.are.equal("leave", a); assert.are.same({ english = true }, p)

@@ -481,7 +481,8 @@ def _plan_readings(
     english_store: Store | None = None,
 ) -> None:
     """The readings shards and the meanings table they point into, and, with `english_store`, the English
-    word card rows beside them (each line's English words matched to its Japanese words). `numbers`, when given, receives `text`:
+    word card rows beside them (each line's English words matched to its Japanese words).
+    `numbers`, when given, receives `text`:
     the numbers file as it must be on disk. A gender alias key (the female variant of
     a line, repeated under its own English hash) gets its line's reading too: the addon finds a female
     character's line under the alias, and without the copy its words would have no reading."""
@@ -497,7 +498,7 @@ def _plan_readings(
             raise ValueError(f"invalid data/reading/ records (first shown): {first}")
         current[type_] = readings.addon_keyed(type_, result["current"], store.load(type_))
         if english_store is not None:
-            # before the alias copies below, so a copy carries its line's row: an alias has no English of its own
+            # before the alias copies below, so a copy carries its line's row: an alias has none of its own
             current[type_] = _with_english(type_, current[type_], english_store.load(type_))
         aliases = (alias_of or {}).get(type_, {})
         if aliases:
@@ -523,17 +524,8 @@ def _plan_readings(
     if numbers is not None:
         numbers["text"] = glosses.numbers_text(every)
     for type_, recs_of_type in current.items():
-        by_rs: dict[int | str, list[dict[str, Any]]] = {}
-        for rec in recs_of_type:
-            if type_ == "ui":  # the UI dictionary's shards (the key's first character)
-                shard: int | str = lua_writer.ui_shard(rec["id"])
-            else:
-                shard = rec["id"][:2] if isinstance(rec["id"], str) else schema.shard_of(rec["id"])
-            by_rs.setdefault(shard, []).append(rec)
-        for shard, recs in sorted(by_rs.items(), key=lambda kv: str(kv[0])):
+        for shard, recs in _by_shard(type_, recs_of_type):
             out[schema.reading_relpath(type_, shard)] = lua_writer.reading_text(type_, shard, recs, meanings)
-            if any(rec.get("english") for rec in recs):
-                out[schema.english_relpath(type_, shard)] = lua_writer.english_text(type_, recs)
         counts["reading"] += len(recs_of_type)  # lines with readings
     by_gs: dict[int, dict[int, glosses.Meaning]] = {}
     for m, n in meanings.items():
@@ -542,8 +534,32 @@ def _plan_readings(
         out[schema.gloss_relpath(gshard)] = lua_writer.gloss_text(gshard, rows)
     counts["gloss"] = len(meanings)
     if english_store is not None:
-        counts["english"] = sum(1 for recs in current.values() for rec in recs if rec.get("english"))
-        _plan_english_words(english_store.root, current, out)
+        _plan_english(english_store.root, current, out, counts)
+
+
+def _by_shard(type_: str, records: list[dict[str, Any]]) -> list[tuple[int | str, list[dict[str, Any]]]]:
+    """A type's reading records by the shard they ship in: the UI dictionary's by the key's first character,
+    a keyed type's by its key's first two, a numbered one's by id range."""
+    by: dict[int | str, list[dict[str, Any]]] = {}
+    for rec in records:
+        if type_ == "ui":
+            shard: int | str = lua_writer.ui_shard(rec["id"])
+        else:
+            shard = rec["id"][:2] if isinstance(rec["id"], str) else schema.shard_of(rec["id"])
+        by.setdefault(shard, []).append(rec)
+    return sorted(by.items(), key=lambda kv: str(kv[0]))
+
+
+def _plan_english(
+    english_root: Path, current: dict[str, list[dict[str, Any]]], out: dict[str, str], counts: dict[str, int]
+) -> None:
+    """The English word card rows, one file beside each reading shard that has any, then the word tables."""
+    for type_, recs_of_type in current.items():
+        for shard, recs in _by_shard(type_, recs_of_type):
+            if any(rec.get("english") for rec in recs):
+                out[schema.english_relpath(type_, shard)] = lua_writer.english_text(type_, recs)
+    counts["english"] = sum(1 for recs in current.values() for rec in recs if rec.get("english"))
+    _plan_english_words(english_root, current, out)
 
 
 def _with_english(
@@ -569,7 +585,7 @@ PRONUNCIATION = "pronunciation.tsv"
 
 
 def load_common_words(english_root: Path) -> dict[str, tuple[str, str]]:
-    """{English word: (Japanese word, its reading)} from `data/english/common-words.jsonl`; none without it."""
+    """{English word: (Japanese word, its reading)} from the common word list; none without the file."""
     path = english_root / COMMON_WORDS
     if not path.is_file():
         return {}
@@ -579,12 +595,14 @@ def load_common_words(english_root: Path) -> dict[str, tuple[str, str]]:
             continue
         rec = json.loads(line)
         word, ja, reading = rec.get("word"), rec.get("ja"), rec.get("reading")
-        if not (isinstance(word, str) and isinstance(ja, str) and isinstance(reading, str)) or not rec.get(
-            "provenance"
-        ):
+        strings = isinstance(word, str) and isinstance(ja, str) and isinstance(reading, str)
+        if not strings or not rec.get("provenance"):
             raise ValueError(f"{COMMON_WORDS}:{n}: word, ja, reading and provenance are required")
-        if word != word.lower() or english_cards.tokens(word) != [word] or "=" in ja + reading or " " in ja + reading:
-            raise ValueError(f"{COMMON_WORDS}:{n}: {word!r} is not one lower-case word with a plain Japanese word")
+        plain = "=" not in ja + reading and " " not in ja + reading
+        if word != word.lower() or english_cards.tokens(word) != [word] or not plain:
+            raise ValueError(
+                f"{COMMON_WORDS}:{n}: {word!r} is not one lower-case word with a plain Japanese word"
+            )
         if word in out:
             raise ValueError(f"{COMMON_WORDS}:{n}: {word!r} is listed twice")
         out[word] = (ja, reading)
@@ -612,7 +630,9 @@ def _plan_english_words(
                 used.add(pair.rpartition("=")[0])
     rows = {w: said[w] for w in used if w in said}
     if rows:
-        out[schema.ENGLISH_PRON] = lua_writer.word_table_text("pron", rows, "how each English word on a card is said")
+        out[schema.ENGLISH_PRON] = lua_writer.word_table_text(
+            "pron", rows, "how each English word on a card is said"
+        )
 
 
 def reading_store_of(store: Store) -> Store:

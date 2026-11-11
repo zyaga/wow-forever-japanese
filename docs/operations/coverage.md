@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-11 at commit `18427bee`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-11 at commit `ff7ad0e3`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -380,10 +380,10 @@ translation uses for it. The pairs are read off the meanings the readings alread
 | book | 1,102 | 44,735 | 40,920 | 91.5% |
 | **All** | | **644,987** | **588,214** | **91.2%** |
 
-A word is counted each time it occurs. Names (a capitalised word inside a sentence) and codes the
-client fills in are not counted, and neither are the words that take no card by design: the
-articles, the bare forms of be, have and do, and to, of, in, on, at, for, as, by, than, off, upon.
-A contraction counts as carded through its first word (you're: you). A book page the client marks
+A word is counted each time it occurs. Names (a capitalised word inside a sentence) and codes
+the client fills in are not counted, and neither are the words that take no card by design: the
+articles, the bare forms of be, have and do, and to, of, in, on, at, for, as, by, than, off,
+upon. A contraction counts as carded through its first word (you're: you). A book page marked
 up as HTML shows no cards in game, in either language, though its words are counted here.
 
 ## Voice

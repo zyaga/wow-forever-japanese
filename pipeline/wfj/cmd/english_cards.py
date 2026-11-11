@@ -29,7 +29,9 @@ def card_records(store: Store) -> dict[str, list[dict[str, Any]]]:
     out: dict[str, list[dict[str, Any]]] = {}
     for type_ in readings.TYPES:
         lines = store.load(type_)
-        result = readings.check(type_, generate.reading_store_of(store).load(type_), readings.shipped_japanese(lines))
+        result = readings.check(
+            type_, generate.reading_store_of(store).load(type_), readings.shipped_japanese(lines)
+        )
         current = readings.addon_keyed(type_, result["current"], lines)
         en: dict[tuple[Any, str], str] = {}
         for ln in english_store.load(type_):
@@ -100,7 +102,10 @@ def run(argv: Sequence[str]) -> int:
         result = coverage(store)
         for type_, c in result["surfaces"].items():
             share = c["carded"] / c["words"] if c["words"] else 0.0
-            print(f"english-cards: {type_}: {c['lines']} lines, {c['carded']} of {c['words']} words carded ({share:.1%})")
+            print(
+                f"english-cards: {type_}: {c['lines']} lines, "
+                f"{c['carded']} of {c['words']} words carded ({share:.1%})"
+            )
         total = sum(result["missed"].values())
         print(f"english-cards: {total} word occurrences with no card; most frequent:")
         for w, n in result["missed"].most_common(args.top):

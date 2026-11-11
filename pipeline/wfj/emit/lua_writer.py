@@ -315,9 +315,9 @@ ENGLISH_HEADER = (
 def english_text(type_: str, records: Iterable[dict[str, Any]]) -> str:
     """One shard of English word card rows for `type_`:
     `WFJ.Data.add("english", { ["<type>:<id>"] = { <field> = "word=n word=n …", … } })`: the line's English
-    words that have a Japanese word, lower-cased and by word (never the sentence, never its order), n the place
-    of that Japanese word in the same line's reading row. `records` carry the packed row as `english`; one
-    without it has no row."""
+    words that have a Japanese word, lower-cased and by word (never the sentence, never its order), n
+    the place of that Japanese word in the same line's reading row. `records` carry the packed row as
+    `english`; one without it has no row."""
     from wfj.core.model import FIELDS  # the translation type's field order
 
     by_id: dict[int | str, dict[str, str]] = {}

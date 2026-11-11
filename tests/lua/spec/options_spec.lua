@@ -263,7 +263,9 @@ describe("Settings pages from the registry and PAGES", function()
     local columns = {}
     for _, page in ipairs(O.PAGES) do
       for _, section in ipairs(page.sections) do
-        if section.columns then columns[#columns + 1] = page.id .. ":" .. tostring(section.title) .. "=" .. section.columns end
+        if section.columns then
+          columns[#columns + 1] = page.id .. ":" .. tostring(section.title) .. "=" .. section.columns
+        end
       end
     end
     assert.are.same({ "main:section.translation=2", "main:section.areas=3", "main:section.cards=2",

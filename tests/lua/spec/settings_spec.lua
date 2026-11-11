@@ -3,7 +3,8 @@ local Stub = require("tests.lua.spec.wow_stub")
 
 local CORE = { "Core/Const.lua", "Core/Compat.lua", "Core/State.lua", "Core/Settings.lua", "Core/Modifier.lua",
   "Core/Words.lua" }
-local IDS = { "enabled", "direction", "modifier", "area.quests", "area.gossip", "area.itemTooltips", "area.spellTooltips",
+local IDS = { "enabled", "direction",
+  "modifier", "area.quests", "area.gossip", "area.itemTooltips", "area.spellTooltips",
   "area.interface", "area.books", "marker.stale", "marker.missing", "readings.enabled", "readings.glosses",
   "minimapButton", "voice.enabled", "voice.offer", "voice.progress", "voice.turnin", "voice.greeting", "voice.books",
   "voice.errors", "voice.questOnce", "voice.greetingOnce",

@@ -156,6 +156,7 @@ def test_the_common_list_is_valid_and_every_line_has_provenance(root):
 
 def test_a_common_list_line_without_provenance_or_with_two_words_stops_generate(tmp_path):
     import pytest
+
     from wfj.cmd import generate
 
     prov = '"provenance": {"class": "machine"}'
