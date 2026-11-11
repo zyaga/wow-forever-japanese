@@ -220,13 +220,17 @@ def gossip_speakers(
     return out, report
 
 
-def fingerprint(ja_h: str, voice: str, settings: Mapping[str, Any]) -> str:
+def fingerprint(ja_h: str, voice: str, settings: Mapping[str, Any], said: str | None = None) -> str:
     """What a file was made from: the Japanese hash, the roster voice and that voice's engine settings. A
     file is made again when any of them changes, so recasting one kind of speaker remakes only its lines.
     The engine version is recorded beside it, not in it: an engine upgrade does not remake the game. A cloned
-    game voice set (`engine = "qwen"`) is made from its set, its copy mode and its reference instead."""
+    game voice set (`engine = "qwen"`) is made from its set, its copy mode and its reference instead, and
+    from `said`: the hash of the text the engine reads when that is not the spoken line as it stands (a name
+    in kana, a space taken out). A respelled name remakes the lines that say it; a line the fixes leave
+    alone keeps the fingerprint it had."""
     if settings.get("engine") == "qwen":
-        return f"{ja_h}|{voice}|qwen|{settings['set']}|{settings['mode']}|{settings.get('ref', '')}"
+        base = f"{ja_h}|{voice}|qwen|{settings['set']}|{settings['mode']}|{settings.get('ref', '')}"
+        return f"{base}|{said}" if said else base
     return (
         f"{ja_h}|{voice}|{int(settings['style'])}|{float(settings['speed']):g}"
         f"|{float(settings.get('pitch', 0.0)):g}|{float(settings.get('intonation', 1.0)):g}"
@@ -331,16 +335,19 @@ def jobs(rows: Iterable[Mapping[str, Any]], cast: Mapping[int, Mapping[str, str]
 def in_step(
     file_jobs: Iterable[Job], lines: Mapping[str, str], roster: Mapping[str, Mapping[str, Any]],
     audio: Mapping[str, Mapping[str, Any]], values: Mapping[str, Sequence[str]] | None = None,
+    said: Mapping[str, str] | None = None,
 ) -> dict[str, list[str]]:
     """The audio record against what the files must be now: `missing` (no record), `stale` (made from other
-    Japanese, another voice or other settings). Empty lists: voice is in step with the translation."""
+    Japanese, another voice, other settings, or another text for the engine: `said`, by line key). Empty
+    lists: voice is in step with the translation."""
     out: dict[str, list[str]] = {"missing": [], "stale": []}
     for j in file_jobs:
         rec = audio.get(j.stem)
         if rec is None:
             out["missing"].append(j.stem)
         elif rec.get("fingerprint") != fingerprint(
-            text_hash(lines[j.key], (values or {}).get(j.key, ())), j.voice, roster[j.voice]
+            text_hash(lines[j.key], (values or {}).get(j.key, ())), j.voice, roster[j.voice],
+            (said or {}).get(j.key),
         ):
             out["stale"].append(j.stem)
     return out

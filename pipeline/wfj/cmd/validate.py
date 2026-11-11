@@ -601,7 +601,8 @@ def rule_voice(root: Path, config: Path | None = None) -> list[str]:
     problems += voice_sets.gender_problems(cast, profiles, genders, cfg["roster"], spoken)
     jobs = voice.jobs(speakers, cast, cfg["narrator"], cfg["book_narrator"], lines)
     values = voice_make.line_values(root, lines)
-    state = voice.in_step(jobs, lines, cfg["roster"], voice_make.audio_record(root), values)
+    said = voice_make.said_hashes(lines, values, voice_make.voice_texts(root, cfg, lines, values))
+    state = voice.in_step(jobs, lines, cfg["roster"], voice_make.audio_record(root), values, said)
     stale, missing = len(state["stale"]), len(state["missing"])
     print(f"validate: voice: {len(jobs)} files; {len(jobs) - stale - missing} in step, {stale} stale,"
           f" {missing} not made")

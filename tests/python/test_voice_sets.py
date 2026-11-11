@@ -332,8 +332,11 @@ def test_generate_makes_cloned_voices_through_qwen_without_starting_aivisspeech(
     assert r["made"] == 3
     rec = voice_make.audio_record(data)["456-description"]
     assert rec["provenance"]["source"] == "qwen3-tts@0.0.test"
-    assert rec["fingerprint"] == voice.fingerprint(rec["fingerprint"].split("|")[0], "qnightelfmalestandard",
-                                                   cfg["roster"]["qnightelfmalestandard"])
+    # the line says the player's stand-in, so the engine's text is not the spoken line: its hash is recorded
+    ja_h, said = rec["fingerprint"].split("|")[0], rec["fingerprint"].split("|")[-1]
+    assert len(rec["fingerprint"].split("|")) == 7
+    assert rec["fingerprint"] == voice.fingerprint(ja_h, "qnightelfmalestandard",
+                                                   cfg["roster"]["qnightelfmalestandard"], said)
     assert voice_make.audio_record(data)["456-completion"]["provenance"]["source"] == "aivis@9.9"
     assert json.loads(log.read_text())["mode"] == "voice"
     assert (clips / voice_make.REFS_DIR).is_dir()  # references stay beside the clips, never in the store

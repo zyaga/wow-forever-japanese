@@ -25,6 +25,16 @@ cloned_packs = [
 narrator_set = "taurenmaleeldernpc"
 book_narrator_set = "taurenmaleeldernpc"
 
+# What the engine reads is the spoken line with a few changes that keep a word from coming out wrong
+# (wfj/core/voice_text.py). A single kanji that is read one way alone and another way inside compounds is
+# written in kana where it stands alone as a word: the engine reaches for the compound's reading (金 as きん,
+# 獣 as じゅう). Each pair is [the kanji, its reading as a word]. A word that sounds worse in kana comes off.
+[text]
+kana_words = [
+  ["金", "かね"], ["獣", "けもの"], ["証", "あかし"], ["心", "こころ"], ["民", "たみ"],
+  ["間", "あいだ"], ["魂", "たましい"], ["友", "とも"], ["人", "ひと"],
+]
+
 # One table per voice: model (its name on AivisHub), style (the engine's style id), licence (ACML 1.0 or
 # CC0 only), fits (what it reads), and optionally pitch (default 0.0), intonation (default 1.0) and speed
 # (default speed_scale).
