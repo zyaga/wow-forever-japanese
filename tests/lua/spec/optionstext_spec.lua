@@ -40,9 +40,10 @@ end)
 describe("UI/OptionsText.SLASH names every command", function()
   it("lists every top-level verb and every debug sub-verb", function()
     local Text = H.loadChunks({ "UI/OptionsText.lua" }).OptionsText
-    local all = table.concat(Text.SLASH, "\n")
+    -- the About page shows the player's verbs; the diagnostic ones are kept beside them
+    local all = table.concat(Text.SLASH, "\n") .. "\n" .. table.concat(Text.SLASH_DEBUG, "\n")
     for _, verb in ipairs({ "on", "off", "toggle", "config", "debug", "glosses", "readings", "togglekey", "collector",
-        "version", "modifier", "area", "marker", "fix" }) do
+        "version", "modifier", "area", "marker", "fix", "intro" }) do
       assert.is_truthy(all:find("/wfj " .. verb, 1, true) or all:find("| " .. verb, 1, true), verb)
     end
     local debug = {}

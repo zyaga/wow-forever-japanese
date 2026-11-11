@@ -494,7 +494,6 @@ function Slash.handle(msg)
     if not ok then say("the welcome window is not available on this client") end
     return
   end
-  if lower == "preview" and WFJ.Preview then return WFJ.Preview.open(words[2] and words[2]:lower(), say) end
   if lower == "fix" then -- the fix window (report a line)
     local ok = WFJ.FixWindow and pcall(WFJ.FixWindow.open)
     if not ok then say("the fix window is not available on this client") end

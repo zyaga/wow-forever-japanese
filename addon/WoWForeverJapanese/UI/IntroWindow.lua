@@ -159,12 +159,12 @@ local function build()
   f.about = line(a, math.floor(TEXT_WIDTH / 2) - 6) -- two lists side by side: Japanese, then English
   en, ja = Text.get("intro.confirm")
   f.confirm = W.button(a, ja .. " / " .. en, nil, 150, function() IntroWindow.pick(IntroWindow.selected) end)
-  f.later = a:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
-  f.later:SetWidth(TEXT_WIDTH - 170) -- beside the Confirm button
-  f.later:SetJustifyH("LEFT")
+  -- beside the Confirm button: the Japanese, with its English under it
+  f.later = line(a, TEXT_WIDTH - 170)
   en, ja = Text.get("intro.later")
-  W.put(f.later, ja .. "　" .. en, 11)
-  f.later:SetTextColor(W.JA_COLOR[1], W.JA_COLOR[2], W.JA_COLOR[3])
+  W.put(f.later.ja, ja, 11)
+  W.put(f.later.en, en, 11)
+  f.later.ja:SetTextColor(W.JA_COLOR[1], W.JA_COLOR[2], W.JA_COLOR[3])
 
   -- the second page: what a new player must know, each point in Japanese with its English under it. The hold-key
   -- point leaves room for the settings page's own Change button at its right.
@@ -226,9 +226,11 @@ local function layoutPick(f)
   used = used + 16 + ABOUT
   f.confirm:ClearAllPoints()
   f.confirm:SetPoint("TOPRIGHT", a, "TOPLEFT", LEFT + TEXT_WIDTH, -(used + 16))
-  f.later:ClearAllPoints()
-  f.later:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT, -(used + 21))
-  used = used + 16 + BUTTON
+  f.later.ja:ClearAllPoints()
+  f.later.ja:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT, -(used + 13)) -- the two lines centred on the button
+  f.later.en:ClearAllPoints()
+  f.later.en:SetPoint("TOPLEFT", f.later.ja, "BOTTOMLEFT", 0, -3)
+  used = used + 16 + BUTTON + 4
   f:SetHeight(TOP + used + PAD + 4 + BOTTOM)
 end
 
@@ -355,7 +357,10 @@ end
 function IntroWindow.open(noVoice)
   local f = IntroWindow.frame or build()
   f.voiceShown = noVoice == true or not (WFJ.Voice and WFJ.Voice.hasPack())
-  IntroWindow.selected = shownPurpose() or "ja" -- the choice the settings match, lit and described to start with
+  -- The one time the question is put to the player it starts on studying Japanese, what the addon is first for;
+  -- opened again by hand it starts on the choice the settings match.
+  IntroWindow.selected = IntroWindow.asking and "ja" or shownPurpose() or "ja"
+  IntroWindow.asking = false
   IntroWindow.show("pick")
   relayoutWhenFonts(f)
   f:Show()
@@ -404,6 +409,7 @@ end
 
 -- Core/Intro's show: opens it a moment later, through any cinematic.
 function IntroWindow.request()
+  IntroWindow.asking = true
   if not watcher then
     watcher = CreateFrame("Frame")
     watcher:RegisterEvent("CINEMATIC_START")

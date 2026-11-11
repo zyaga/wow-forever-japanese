@@ -391,7 +391,7 @@ Text.T = {
   ["intro.voiceTitle"] = { en = "Japanese voice", ja = "日本語音声" },
   ["intro.voice"] = { en = "Get WoW Forever Japanese Voice free to hear the Japanese read aloud.",
     ja = "無料の「WoW Forever Japanese Voice」で、日本語を読み上げます。" },
-  ["intro.close"] = { en = "Close", ja = "閉じる" },
+  ["intro.close"] = { en = "Start", ja = "始める" },
   -- the purpose question the intro opens with, and the lines that change with the answer
   ["intro.ask"] = { en = "What are you here for?", ja = "どのように使いますか？" },
   ["intro.pick.ja"] = { en = "Study Japanese", ja = "日本語を学ぶ" },
