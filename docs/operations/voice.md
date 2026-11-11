@@ -20,7 +20,7 @@ Make the Japanese voice from the Japanese the addon ships, copy it into the Fore
    ```
    This runs the three steps below in order. Each can be run alone.
    - `make voice-speakers`: writes `data/voice/speakers.jsonl` (who says each voiced line) from VMaNGOS, the quest cache's conditional descriptions, forever-vo's player captures and the collector's NPC ids; a signed book page is read by its writer. It runs `make voice-levels` first (the committed quest level table). Read its report: narrator lines, conflicts (two creatures for one line), lines with no Japanese. A gossip line that ships as the English it is (a made-up language, a name alone) gets no speaker and is never voiced: the engine reads Japanese. The report lists such a line under missing. Who each creature is (`data/voice/profiles.jsonl`) and the voice it is cast in (`data/voice/voices.jsonl`, written by `wfj voice cast` from `pipeline/voice.toml`) are separate steps (`wfj voice profiles`, `wfj voice cast`). The files are data: commit them with the ticket, after `make validate` passes.
-   - `make voice-generate`: makes the missing and changed files in the audio store (`build/voice/audio/<key>.mp3`, `<key>_<voice>.mp3` for a variant; the store keeps its README and license at the top) and records each in `data/voice/audio.jsonl`. A file is made again only when its fingerprint changed: the hash of its Japanese, its roster voice, and its set, mode (voice-only or full copy) and reference hash. With nothing to make it needs no engine. A line the engine cannot read is logged and left for the next run; the run goes on. Because it runs over the whole game (`--scope all --players all`), it also drops the record rows of files no line uses any more, so `data/voice/audio.jsonl` lists exactly the shipped files (`test_audio_in_step` fails on an unused row). When it made files it then commits and pushes the store and writes the audio pin (`store-sync --if-changed`); when it made nothing, the store, the remote and the pin are left alone. `wfj voice plan` shows what it would make, without making anything.
+   - `make voice-generate`: makes the missing and changed files in the audio store (`build/voice/audio/<key>.mp3`, `<key>_<voice>.mp3` for a variant; the store keeps its README and license at the top) and records each in `data/voice/audio.jsonl`. A file is made again only when its fingerprint changed: the hash of its Japanese, its roster voice, its set, mode (voice-only or full copy) and reference hash, the `[clone]` temperature and seed, and the hash of its [engine text](#what-the-engine-reads) when that differs from the spoken line. With nothing to make it needs no engine. A line the engine cannot read is logged and left for the next run; the run goes on. Because it runs over the whole game (`--scope all --players all`), it also drops the record rows of files no line uses any more, so `data/voice/audio.jsonl` lists exactly the shipped files (`test_audio_in_step` fails on an unused row). When it made files it then commits and pushes the store and writes the audio pin (`store-sync --if-changed`); when it made nothing, the store, the remote and the pin are left alone. `wfj voice plan` shows what it would make, without making anything.
    - `make voice-pack`: writes the entry and every pack under `build/voice-pack/`, split by `pipeline/voice-packs.toml` (below), and prints each pack's lines, files, size and room left under the 420 MB cap. Lines whose Japanese changed since their file was made are left out and counted. A pack past 315 MB is marked; a pack past 420 MB stops the build and nothing is written, as does a missing audio store or a store file that is not the recorded take (its SHA-256 differs from the audio record's). `wfj voice record-hashes` fills the SHA-256 of rows made before the field existed, reading the store only.
 2. **Validate** the voice tables with the rest: `make validate`.
 
@@ -29,6 +29,31 @@ There is no engine to start by hand. `make voice-generate` (also behind `make im
 ## Configuration
 
 `pipeline/voice.toml`: the engine's address (`http://127.0.0.1:10101`), the pace (`speed_scale = 0.9`), the `narrator` and `book_narrator` voices, the **roster** (one table per usable voice: its model on AivisHub, the engine's style id from `GET /speakers`, its licence, what it fits, and optional pitch, intonation and speed) and the **cast rows** (which roster voices read each kind of speaker: race or creature family, gender, age, archetype), plus the engine names credited in the packs' READMEs (`engine` for AivisSpeech, `clone_engine` for Qwen3-TTS). The roster and cast rows are the AivisSpeech cast; they still run first, but every speaker then moves to a game voice set, and `test_no_committed_speaker_is_cast_to_anything_but_a_game_voice_set` fails if a committed speaker is left on an AivisSpeech voice. For the cloned voices it also holds `qwen` (the Qwen3-TTS environment's Python, relative to the main checkout), `cloned_packs` (the pack folders whose NPCs speak in their game voice set: every pack), `narrator_set` and `book_narrator_set`, one `[sets.<set>]` table per game voice set with `pick` (`voice` or `full`) and `decided`, and the `[[set_cast]]` rules that give a set to every speaker Spoken gives none. `data/voice/overrides.jsonl` pins a voice for a single creature. The pace is fixed when a file is made: the client has no playback rate, so changing it means making every file again. Recasting one cast row remakes only the lines of the creatures it casts.
+
+Two more tables shape how a cloned voice reads ([ADR-082](../adr/082-names-spelled-from-the-english-and-the-voice-reads-its-own-text.md)):
+
+| Table | Setting | What it does | Changing it remakes |
+|---|---|---|---|
+| `[clone]` | `temperature = 0.5` | How far a reading may stray from the likeliest one. The engine's own value is 0.9; lower keeps a voice steadier from line to line. | Every cloned file |
+| `[clone]` | `seed = true` | Every reading of a voice set starts its random draws from one number made from the set's name (its crc32), the same on every machine. | Every cloned file |
+| `[text]` | `kana_words` | Pairs of [kanji, its reading as a word]: 金 かね, 獣 けもの, 証 あかし, 心 こころ, 民 たみ, 間 あいだ, 魂 たましい, 友 とも, 人 ひと. Each is written in kana in the [engine text](#what-the-engine-reads) where it stands alone as a word. A word that sounds worse in kana comes off the list. | The lines that hold the word alone |
+
+## What the engine reads
+
+The engine does not read the shipped Japanese as it stands. `wfj.core.voice_text` builds its text from the spoken line (`voice.speech_text`: player tokens filled, numbers filled, stage directions dropped) with four changes, each one for a misread found by listening:
+
+| Change | Why |
+|---|---|
+| Every English name is replaced by its katakana from `data/name/` | The engine guesses at Latin letters. |
+| A half-width or full-width space right before a kanji is removed | The engine's text splitter breaks a kanji after a space into pieces it has no sound for, and the word comes out wrong. |
+| The player stand-in is written ぼうけんしゃ | The kanji 冒険者 was sometimes misread. |
+| A `[text] kana_words` kanji is written in kana where the line's reading record lists it as a word on its own with that reading | Alone it is read one way (金 かね), inside a compound another (金貨 きんか), and the engine reached for the compound's reading. 金貨 and 大金 stay kanji. |
+
+The rest of the line stays in kanji. Nothing the player sees changes: the on-screen Japanese, the keys and the Japanese hashes the addon checks stay as they are.
+
+The engine text goes into the fingerprint only when it differs from the spoken line, so a respelled name remakes exactly the lines that say it, and a line none of the changes touch keeps the fingerprint it had. `tests/python/test_voice.py::test_no_voiced_line_hands_the_engine_latin_letters` fails while any voiced line would hand the engine Latin letters: a new English name whose words have no spelling yet. Run `make names` and spell the new words ([Names for a batch](translation-batches.md#names-for-a-batch)). `voice plan` and `voice generate` stop as well, naming the lines and the names they lack.
+
+**A remake is not byte for byte the same take.** On Modal a call reads several paragraphs of one voice set together, started from that set's seed, so a paragraph's draws depend on the other paragraphs in its batch: a line read again on Modal is a new take of the same voice. Read one paragraph at a time on this machine (`VOICE_LOCAL=1`), the same text, voice, temperature and seed give the same take.
 
 The audio format is fixed in `wfj voice generate`: MP3, mono, 22.05 kHz, 32 kbps constant bitrate, with no Xing / Info header (`lame -t`).
 
@@ -89,8 +114,8 @@ The setting is a file, `build/voice-speed` in the main checkout. The run reads i
 
 `make voice-generate` reads every line on rented GPUs (Modal, L40S). One command does the whole round:
 
-1. `wfj voice export` writes the cloned lines still to make to `build/voice-remote/<time>/`: `jobs.jsonl` (one line per file: its key, text, reference and mode), `refs/` (the joined set references) and `refs.json` (their transcripts). The references are game audio: they are sent to the Modal containers for this run only, each container writes them to its `/tmp`, and nothing is kept there.
-2. `pipeline/wfj/io/qwen_modal.py` reads them on Modal with the same model, the same pinned `qwen-tts` and the same worker code (`qwen_worker.load` and `speak_many`) as the local engine, on one card per 60 lines (at most 10), 24 paragraphs per model call. The WAVs come back to the run's `wav/` folder; a line that failed is read again once.
+1. `wfj voice export` writes the cloned lines still to make to `build/voice-remote/<time>/`: `jobs.jsonl` (one line per file: its key, its engine text, reference and mode, and the `[clone]` seed and temperature), `refs/` (the joined set references) and `refs.json` (their transcripts). The references are game audio: they are sent to the Modal containers for this run only, each container writes them to its `/tmp`, and nothing is kept there.
+2. `pipeline/wfj/io/qwen_modal.py` reads them on Modal with the same model, the same pinned `qwen-tts` and the same worker code (`qwen_worker.load` and `speak_many`) as the local engine, on one card per 60 lines (at most 10), 24 paragraphs per model call. A call holds the paragraphs of one voice set only and starts from that set's seed. The WAVs come back to the run's `wav/` folder; a line that failed is read again once.
 3. The run's WAVs, jobs, reference transcripts and manifest are copied to `VOICE_WAV_ARCHIVE` (set privately in `local.mk`) and checked against a `SHA256SUMS` written there. These are the uncompressed masters: they are never deleted, here or there. The references (`refs/`) and the game's clips are not copied. If archiving fails, the run still imports and says so; archive it later with `cd pipeline && ../.venv/bin/python -m wfj voice generate --prepared <run folder> --archive <archive folder>`.
 4. `voice generate --prepared` encodes and records them like any other take.
 
@@ -153,10 +178,10 @@ If the game's English NPC voices stay silent after a test (the dialog channel le
 
 ## Kana lines
 
-Every voiced line (each line a voice file is made for, and the character's error lines) has a **kana line** in `data/voice/kana.jsonl`: the line as the voice should read it, written in kana only ([ADR-078](../adr/078-japanese-names-keyed-by-english-and-kana-voice-lines.md)). It is built from the text the engine reads today (`voice.speech_text`: player tokens as 冒険者, `$N<k>` numbers filled) with:
+Every voiced line (each line a voice file is made for, and the character's error lines) has a **kana line** in `data/voice/kana.jsonl`: the line written in kana only ([ADR-078](../adr/078-japanese-names-keyed-by-english-and-kana-voice-lines.md)). It is built from the spoken line (`voice.speech_text`: player tokens as 冒険者, `$N<k>` numbers filled) with:
 
 - every kanji word replaced by its reading from `data/reading/` (the line's current reading record),
-- every English name replaced by its Japanese from `data/name/` (its katakana kept as written and the rest from its reading: マスター整備士キャストパイプ is said マスターせいびしキャストパイプ),
+- every English name replaced by its katakana from `data/name/` (Black Dragonflight is ブラック・ドラゴンフライト),
 - every comma written as 、 (an English comma left between names or in the prose),
 - every number spelled out with its counter and sound change (3匹 さんびき, 1本 いっぽん, 2週間 にしゅうかん).
 
@@ -175,7 +200,7 @@ The batch files are working files in `pipeline/batches/`, as for every [translat
 
 `kana-import` refuses a row for a key that is not voiced, a row written for other Japanese (its `ja_hash` is not the current one) and a row that is not all kana. A drafted row is kept while its `ja_hash` matches; when the line's Japanese changes it has to be drafted again. `tests/python/test_kana.py` fails while any voiced line has no kana line made from its current Japanese.
 
-**How a remake uses them.** Nothing reads the kana lines yet: `make voice-generate` still reads `speech_text`, and no audio file, pack key, Japanese hash or fingerprint changed when they were added. A later remake of the audio reads each file's `kana` instead, for the row whose `ja_hash` equals the line's, so the engine no longer guesses at kanji or spells English names out letter by letter.
+**The audio is not made from them.** `make voice-generate` reads the [engine text](#what-the-engine-reads), which keeps kanji and fixes only the words proved to come out wrong ([ADR-082](../adr/082-names-spelled-from-the-english-and-the-voice-reads-its-own-text.md)). The kana lines are kept and rebuilt by every `make names`, and their test still holds.
 
 ## Releasing the voice
 
@@ -236,9 +261,8 @@ Levels 51-60 is past the 315 MB mark: when it grows near the cap, split its band
 
 ## Open work
 
-- The kana lines are not read by `voice generate` yet; the remake that reads them is still to come ([Kana lines](#kana-lines)).
 - Not voiced: quest objectives, audio per class or race (the player's name, class and race are spoken as 冒険者), the trainer window's text.
 
 ## Related
 
-- [Voice over](../systems/voice.md) · [ADR-061](../adr/061-voice-over-from-a-separate-pack.md) · [ADR-074](../adr/074-voices-cloned-from-the-games-npc-voice-sets.md) · [ADR-078](../adr/078-japanese-names-keyed-by-english-and-kana-voice-lines.md) · [Local setup](local-setup.md) · [Testing strategy](../testing/strategy.md#voice-over-checklist) · [Research](../research/2026-10-04-japanese-voice-over.md)
+- [Voice over](../systems/voice.md) · [ADR-061](../adr/061-voice-over-from-a-separate-pack.md) · [ADR-074](../adr/074-voices-cloned-from-the-games-npc-voice-sets.md) · [ADR-078](../adr/078-japanese-names-keyed-by-english-and-kana-voice-lines.md) · [ADR-082](../adr/082-names-spelled-from-the-english-and-the-voice-reads-its-own-text.md) · [Local setup](local-setup.md) · [Testing strategy](../testing/strategy.md#voice-over-checklist) · [Research](../research/2026-10-04-japanese-voice-over.md)

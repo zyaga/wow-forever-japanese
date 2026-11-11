@@ -9,6 +9,10 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Changed
+- The voice now says every English name in Japanese sounds that match what you read on screen: Black Dragonflight is spoken ブラック・ドラゴンフライト, not translated, and Tiger is タイガー. Names on screen stay English, as before.
+- Every voice line has been made again. Each NPC voice now sounds steadier from one line to the next, and words the voice often said wrong come out right: 冒険者, a few single-kanji words such as 金 (かね) and 獣 (けもの), and words that came right after a space.
+
 ### Fixed
 - With Dialogue UI, a quest's tag over its title (Dungeon, Raid) no longer shows empty boxes: when its Japanese loses the addon's font, the font goes back on the next moment.
 - The Legacy trees' talent tooltips show their Japanese lines (Click to learn, Requires all preceding talents, Spend 10 more points in the Professions Legacy Tree) even when the talent window has not been opened yet. The trees' names stay English.

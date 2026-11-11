@@ -27,7 +27,7 @@ The voices were made with Qwen3-TTS (Apache-2.0), each modelled on one of the ga
 
 This is only its Japanese voice and needs the addon to work. The CurseForge app installs the addon with it if you do not have it yet, and the voice never loads in the game without the addon.
 
-Japanese voice over for the **WoW Forever Japanese** addon. The addon reads its Japanese aloud: quest offers, progress and turn-ins, NPC greetings and talk, book and letter pages, and your character's own spoken error lines. Each NPC speaks in a voice modelled on its own voice in the game, and every line plays at the same loudness.
+Japanese voice over for the **WoW Forever Japanese** addon. The addon reads its Japanese aloud: quest offers, progress and turn-ins, NPC greetings and talk, book and letter pages, and your character's own spoken error lines. Each NPC speaks in a voice modelled on its own voice in the game, and every line plays at the same loudness. Names stay English on screen, and the voice says them in Japanese sounds that match the English you read.
 
 **Website:** https://foreverjapanese.com (screenshots and a short guide to how the addon works).
 
@@ -51,7 +51,7 @@ Every voice was made with **Qwen3-TTS** (https://github.com/QwenLM/Qwen3-TTS, Ap
 
 これは本体用の日本語音声だけで、本体がないと動きません。本体がまだなければ、CurseForge アプリが一緒にインストールします。ゲーム内でも、本体なしで音声が読み込まれることはありません。
 
-**WoW Forever Japanese** アドオン用の日本語音声です。クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページ、自分のキャラクターが話すエラーの一言を、アドオンの日本語で読み上げます。NPC はそれぞれ、ゲームでのその NPC 自身の声をもとにした声で話し、どの行も同じ音量で再生されます。
+**WoW Forever Japanese** アドオン用の日本語音声です。クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページ、自分のキャラクターが話すエラーの一言を、アドオンの日本語で読み上げます。NPC はそれぞれ、ゲームでのその NPC 自身の声をもとにした声で話し、どの行も同じ音量で再生されます。名前は画面では英語のままで、音声では読んでいる英語に合わせたカタカナの音で読み上げます。
 
 **ウェブサイト:** https://foreverjapanese.com （スクリーンショットと、アドオンのしくみの簡単な説明）
 
