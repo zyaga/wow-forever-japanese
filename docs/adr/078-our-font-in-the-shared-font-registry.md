@@ -34,6 +34,7 @@ Ellesmere UI lets the player choose the font it uses, from the fonts registered 
 - English text in those windows is then drawn in this font's Latin letters, since Ellesmere UI uses one font for the whole window.
 - The player has to pick the font once. Until then the empty boxes stay. The README and the CurseForge page say what to pick.
 - Any other addon that reads the same registry lists the font too, and a player may pick it there.
+- The font is offered once, at this addon's load, with the registry's western flag. A registry brought only by an addon that loads after this one is not offered it, and the registry itself turns the font down on a Korean, Chinese or Russian client. Ellesmere UI loads first, and Forever's client is English, so neither case arises there.
 - Ellesmere UI's own windows and options stay English. Translating them is out of scope.
 - Ellesmere UI's chat window is not supported. Its Chat module hides the game's chat text and shows its own window, fed with the game's English lines, so the Japanese this addon writes into the game's chat frames is not seen while that module is on. Global Font also applies to that chat window. A player who wants Japanese chat turns the Chat module off in the addon list.
 - The no-dependencies principle has a second written exception. It is narrower than the first: one call into a library that is already loaded, and nothing read back.
