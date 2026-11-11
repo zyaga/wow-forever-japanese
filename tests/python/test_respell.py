@@ -235,3 +235,22 @@ def test_a_name_that_spells_a_word_another_way_is_reported_not_learned(store):
     n, differ = cmd.learn_spellings(store, False)
     assert n == 2 and len(differ) == 1 and "Zin" in differ[0]  # Hold and Orgrimmar are learned, Zin is not
     assert {w["en"]: w["ja"] for w in load_words(store)}["Zin"] == "ジン"
+
+
+def test_a_new_name_is_spelled_from_its_words_with_no_naming_round(store):
+    new = names.new_line("Black Zin", TODAY)
+    new["ids"] = {"unit": [7]}
+    save_lines(store, [*load_lines(store), names.ordered(new)])
+    save_words(store, [*load_words(store), _word("black", "ブラック"), _word("gloves", "グローブ")])
+    cmd.respell(store, TODAY, False)
+    line = {ln["en"]: ln for ln in load_lines(store)}["Black Zin"]
+    assert (line["status"], line["ja"], line["reading"]) == ("trusted", "ブラック・ジン", "ぶらっく・じん")
+
+
+def test_the_check_holds_a_name_to_the_spelling_of_its_words(store):
+    lines, words = load_lines(store), [*load_words(store), _word("black", "ブラック"), _word("gloves", "グローブ")]
+    bad = cmd.respell_problems(lines, words)
+    assert len(bad) == 2 and "ブラック・ドラゴンフライト" in "".join(bad)
+    save_words(store, words)
+    cmd.respell(store, TODAY, False)
+    assert cmd.respell_problems(load_lines(store), load_words(store)) == []

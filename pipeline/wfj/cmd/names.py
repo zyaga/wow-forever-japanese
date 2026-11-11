@@ -458,7 +458,9 @@ def problems(root: Path) -> list[str]:
         if w.get("check"):
             seen.setdefault(folded, w.get("ja"))
     if not out:
-        out.extend(f"name spelling: {p}" for p in names.spelling_problems(lines, words))
+        out.extend(f"name word {w['en']!r}: {w['ja']!r} is not a katakana spelling"
+                   for w in words if not names.KATAKANA.match(w["ja"]))
+        out.extend(f"name spelling: {p}" for p in respell_problems(lines, words))
         out.extend(f"name case: {p}" for p in names.case_problems(lines))
         out.extend(f"name reading: {p}" for p in names.reading_problems(lines, prose_readings(root).get))
     return out
@@ -511,12 +513,12 @@ def learn_spellings(root: Path, dry_run: bool) -> tuple[int, list[str]]:
 
 
 def export_respell(root: Path, out: Path, size: int) -> int:
-    """The words with no katakana spelling that a translated name is built from, each once (lower case), with
-    how many names carry it and a few of them."""
+    """The words with no katakana spelling that a name is built from (a new name's among them), each once
+    in lower case, with how many names carry it and a few of them."""
     known = _spellings(load_words(root))
     carried: dict[str, list[str]] = defaultdict(list)
     for ln in load_lines(root):
-        if ln["status"] != "trusted" or _respelled(ln):
+        if ln["status"] == "trusted" and _respelled(ln):
             continue
         for w in spell.assemble(ln["en"], known.get)[2]:
             carried[w.casefold()].append(ln["en"])
@@ -558,6 +560,22 @@ def import_respell(  # noqa: PLR0913 - one batch file, its provenance, and the t
     return written, rejected
 
 
+def respell_problems(lines: Sequence[dict[str, Any]], words: Sequence[dict[str, Any]]) -> list[str]:
+    """A name a person did not write is the spelling of its words, and its reading the reading of that: the
+    check that keeps a translated name from coming back."""
+    known = _spellings(words)
+    out = []
+    for ln in lines:
+        if ln["status"] != "trusted" or _respelled(ln):
+            continue
+        ja, reading, missing = spell.assemble(ln["en"], known.get)
+        if missing:
+            out.append(f"{ln['en']!r}: no spelling for {', '.join(repr(w) for w in missing)}")
+        elif ja is not None and (ja, reading) != (ln["ja"], ln["reading"]):
+            out.append(f"{ln['en']!r} is {ln['ja']!r}, its words spell {ja!r}")
+    return out
+
+
 def respell(root: Path, today: str, dry_run: bool) -> dict[str, int]:
     """Every translated name is written again from the spellings of its words (its reading with it). Nothing
     is written while any name has a word with no spelling."""
@@ -566,7 +584,7 @@ def respell(root: Path, today: str, dry_run: bool) -> dict[str, int]:
     counts = {"respelled": 0, "kept": 0, "nothing to spell": 0, "word with no spelling": 0}
     out = []
     for ln in lines:
-        if ln["status"] != "trusted" or _respelled(ln):
+        if ln["status"] == "trusted" and _respelled(ln):
             counts["kept"] += 1
             out.append(ln)
             continue
@@ -583,7 +601,7 @@ def respell(root: Path, today: str, dry_run: bool) -> dict[str, int]:
         else:
             counts["respelled"] += 1
             prov = {"class": "machine", "source": f"respell@{today}", "imported": today}
-            out.append(dict(ln, ja=ja, reading=reading, free=False, provenance=prov))
+            out.append(dict(ln, ja=ja, reading=reading, free=False, status="trusted", provenance=prov))
     if counts["word with no spelling"]:
         counts["respelled"] = 0
     elif not dry_run:
