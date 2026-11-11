@@ -24,8 +24,7 @@ Options.inCombat = false -- set by Main's PLAYER_REGEN_* (the lockdown query may
 
 Options.PAGES = {
   { id = "main", title = "page.main", tagline = true, sections = {
-    { title = "section.purpose", columns = 3, rows = { "purposeExplain", "purpose.ja", "purpose.en", "purpose.play" },
-      lead = 1 }, -- the first row spans the page, the three choices sit side by side under it
+    { rows = { "mainWelcome" } }, -- the way back to the welcome window's question
     { title = "section.translation", columns = 2, rows = { "enabled", "minimapButton" } },
     { title = "section.keys", rows = { "modifier", "toggleKey" } },
     { title = "section.areas", columns = 3,
@@ -505,40 +504,16 @@ function A.aboutHold(page, x, y, width)
   return W.labelHeight(l, 24)
 end
 
--- The purpose choices (what the player is here for). Each is a box that reads checked while the settings match it;
--- picking one writes those settings. English first has no setting to write yet, so that box only remembers the pick.
-local PURPOSES = {
-  ["purpose.ja"] = { readings = true },
-  ["purpose.en"] = { readings = true, english = true },
-  ["purpose.play"] = { readings = false },
-}
-Options.purposePick = nil -- the box picked on this page, until a setting it wrote is changed by hand
-
-local function purposeNow()
-  local readings = S.get("readings.enabled") == true
-  local pick = Options.purposePick
-  if pick and PURPOSES[pick].readings == readings then return pick end
-  return readings and "purpose.ja" or "purpose.play"
+-- The main page's way back to the welcome window, where the player says what they are here for: one line and the
+-- button beside it.
+function A.mainWelcome(page, x, y, width)
+  local en, ja = Text.get("main.welcome")
+  local l = W.label(page, en, ja, x, y, width - 240)
+  en, ja = Text.get("about.intro")
+  local b = W.button(page, en, ja, 220, function() WFJ.IntroWindow.open() end)
+  b:SetPoint("TOPRIGHT", page, "TOPLEFT", x + width, y + 4)
+  return W.labelHeight(l, 30)
 end
-
-function A.purposeExplain(page, x, y, width)
-  local en, ja = Text.get("purpose.explain")
-  return W.labelHeight(W.label(page, en, ja, x, y, width), 30)
-end
-
-local function purposeRow(key)
-  return function(page, x, y, width)
-    local en, ja = Text.get(key)
-    local cb = W.checkbox(page, en, ja, x, y, width, function()
-      Options.purposePick = key
-      S.set("readings.enabled", PURPOSES[key].readings)
-      Options.refresh()
-    end)
-    Options.refreshers[#Options.refreshers + 1] = function() cb:SetChecked(purposeNow() == key) end
-    return W.labelHeight(cb.label, W.ROW)
-  end
-end
-for key in pairs(PURPOSES) do A[key] = purposeRow(key) end
 
 -- Opens the welcome window again (UI/IntroWindow), for a player who closed it or never saw it.
 function A.aboutIntro(page, x, y)
@@ -594,7 +569,6 @@ local function defaultsButton(page, body, spec)
         local d = definition(id)
         if d and not S.isHidden(d) then S.set(id, d.default) end
       end
-      Options.purposePick = nil
       self:setLabel(Text.get("button.defaults"))
       Options.refresh()
     else
@@ -640,9 +614,6 @@ local function buildPage(spec)
     local title = section.title and Text.T[section.title]
     if title then y = y - W.section(body, title.en, title.ja, LEFT, y, WIDTH).height - 6 end
     local rows, i = section.rows, 1
-    for _ = 1, section.lead or 0 do -- rows that span the page above a section's columns
-      y, i = y - row(body, rows[i], LEFT, y, WIDTH), i + 1
-    end
     while i <= #rows do
       if section.columns == 2 and i < #rows then
         local left = row(body, rows[i], LEFT, y, COL2 - LEFT - 10)

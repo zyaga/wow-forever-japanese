@@ -49,14 +49,8 @@ Text.T = {
   ["words.ankiPath"] = { en = "Copy them into Anki's media folder (Mac, then Windows; User 1 is Anki's first profile):",
     ja = "Ankiのメディアフォルダにコピーしてください（上がMac、下がWindows。User 1はAnkiの最初のプロフィール）：" },
 
-  -- what the player is here for: three choices that only write ordinary settings (the main page and the intro)
-  ["section.purpose"] = { en = "What are you here for?", ja = "このアドオンの使い方" },
-  ["purpose.explain"] = { en = "Pick one to set the addon up for you. Every setting below can still be changed.",
-    ja = "ひとつ選ぶと、それに合わせて設定します。下の設定はあとから変えられます。" },
-  ["purpose.ja"] = { en = "Studying Japanese", ja = "日本語を勉強中" },
-  ["purpose.en"] = { en = "Studying English", ja = "英語を勉強中" },
-  ["purpose.play"] = { en = "Just playing in Japanese", ja = "日本語でプレイ" },
-  ["purpose.custom"] = { en = "Your settings match none of the three.", ja = "現在の設定は、どれにも当てはまりません。" },
+  ["main.welcome"] = { en = "Studying Japanese, studying English or just playing? Choose again any time.",
+    ja = "日本語の勉強、英語の勉強、ただ遊ぶ。使い方はいつでも選び直せます。" },
   ["section.keys"] = { en = "Keys", ja = "キー" },
   ["section.cards"] = { en = "Word cards", ja = "単語カード" },
   ["button.defaults"] = { en = "Defaults", ja = "初期設定に戻す" },
