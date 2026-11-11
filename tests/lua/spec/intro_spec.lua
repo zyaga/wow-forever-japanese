@@ -1,5 +1,5 @@
--- Core/Intro + UI/IntroWindow: the window a first install shows once, at its first login, and never to a player who
--- already had the addon.
+-- Core/Intro + UI/IntroWindow: the welcome window, shown once to a first install at its first login and once to a
+-- player who already had the addon, the first time a version that asks its question loads.
 local H = require("tests.lua.spec.helpers")
 local Stub = require("tests.lua.spec.wow_stub")
 local Loader = require("tests.lua.spec.loader")
@@ -62,6 +62,29 @@ describe("Core/Intro", function()
     assert.are.equal(0, shown)
   end)
 
+  it("owes the question once to a player who already had the addon, and never again", function()
+    local db, shown = { settings = {} }, 0
+    local function show() shown = shown + 1 end
+    I.prepare(db, false)
+    assert.is_true(db.intro)
+    assert.is_false(db.asked)
+    assert.is_true(I.run(db, show))
+    assert.is_true(db.asked)
+    I.prepare(db, false) -- the next login
+    assert.is_false(I.run(db, show))
+    assert.are.equal(1, shown)
+  end)
+
+  it("asks a fresh install once, not twice, for the window and the question", function()
+    local db, shown = {}, 0
+    I.prepare(db, true)
+    assert.is_true(I.run(db, function() shown = shown + 1 end))
+    assert.is_true(db.intro)
+    assert.is_true(db.asked)
+    assert.is_false(I.run(db, function() shown = shown + 1 end))
+    assert.are.equal(1, shown)
+  end)
+
   it("marks it seen before showing, so a window that fails never comes back at every login", function()
     local db = { intro = false }
     local ok = pcall(I.run, db, function() error("broken window") end)
@@ -108,18 +131,27 @@ describe("the intro at ADDON_LOADED and PLAYER_ENTERING_WORLD", function()
     assert.are.equal(1, opened)
   end)
 
-  it("a player who already had the addon never sees it after updating", function()
-    start({ schema = 1, settings = {} })
+  it("a player who already had the addon is asked once after updating, with every setting kept", function()
+    start({ schema = 1, settings = { ["readings.enabled"] = false, modifier = "ctrl" } })
     assert.is_true(_G.WFJ_DB.intro)
+    assert.is_false(_G.WFJ_DB.asked)
+    Stub.fireAll("PLAYER_ENTERING_WORLD", true, false)
+    assert.are.equal(1, opened)
+    assert.is_true(_G.WFJ_DB.asked)
+    assert.is_false(_G.WFJ_DB.settings["readings.enabled"]) -- showing the question changes nothing
+    assert.are.equal("ctrl", _G.WFJ_DB.settings.modifier)
+    local saved = _G.WFJ_DB
+    F.clear()
+    start(saved) -- the next session
     Stub.fireAll("PLAYER_ENTERING_WORLD", true, false)
     assert.are.equal(0, opened)
   end)
 
-  it("settings reset by a downgrade never count as a fresh install", function()
+  it("settings reset by a downgrade are asked once, like any table that was never asked", function()
     start({ schema = 999, settings = {} })
     assert.is_true(_G.WFJ_DB.intro)
     Stub.fireAll("PLAYER_ENTERING_WORLD", true, false)
-    assert.are.equal(0, opened)
+    assert.are.equal(1, opened)
   end)
 
   it("a window that fails to open is caught, marked seen, and the reminder still runs", function()

@@ -286,7 +286,7 @@ function IntroWindow.refill()
   W.setShown(f.readings.ja, shown ~= "play")
   W.setShown(f.readings.en, shown ~= "play")
   for purpose, c in pairs(f.cards) do
-    c.picked = IntroWindow.purpose == purpose
+    c.picked = shown == purpose -- the player's pick, else the one the settings already match
     edge(c, c.picked)
   end
   W.setShown(f.pickPage, IntroWindow.step ~= "info")
