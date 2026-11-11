@@ -513,8 +513,8 @@ def _render_english_cards(e: dict[str, Any]) -> list[str]:
     out += ["", "A word is counted each time it occurs. Names (a capitalised word inside a sentence) and codes the",
             "client fills in are not counted, and neither are the words that take no card by design: the",
             "articles, the bare forms of be, have and do, and to, of, in, on, at, for, as, by, than, off, upon.",
-            "A contraction counts as carded through its first word (you're: you). Book pages the client draws",
-            "itself show no English cards in game, though their words are counted here."]
+            "A contraction counts as carded through its first word (you're: you). A book page the client marks",
+            "up as HTML shows no cards in game, in either language, though its words are counted here."]
     return out
 
 
