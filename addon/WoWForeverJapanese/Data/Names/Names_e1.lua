@@ -2,6 +2,7 @@
 local _, WFJ = ...
 WFJ.Data.add("name", {
   ["e1026716bfc98691"] = { "バトルフォージの外套", "ばとるふぉーじのがいとう", "Battleforge Cloak" },
+  ["e103aca577351363"] = { "暗殺者同盟の首領", "あんさつしゃどうめいのしゅりょう", "Lord of the Assassin's League" },
   ["e1052945a965325b"] = { "フェルガードの精鋭", "ふぇるがーどのせいえい", "Felguard Elite" },
   ["e1058bc7296f4a7f"] = { "タルヴァッシュ・デル・キッセル", "たるゔぁっしゅ・でる・きっせる", "Talvash del Kissel" },
   ["e106178a1e7a01c6"] = { "エイトリッグ", "えいとりっぐ", "Eitrigg" },
@@ -76,6 +77,7 @@ WFJ.Data.add("name", {
   ["e153656adfa666ba"] = { "ダーククローのロブスター", "だーくくろーのろぶすたー", "Darkclaw Lobster" },
   ["e154196b75760fea"] = { "サンダーブラフの花の籠作成", "さんだーぶらふのはなのかごさくせい", "Create Thunder Bluff Basket of Flowers" },
   ["e1543f76e851fcee"] = { "ダン・モローの山岳兵", "だん・もろーのさんがくへい", "Dun Morogh Mountaineer" },
+  ["e1559b628ca573c5"] = { "重いトリウム", "おもいとりうむ", "Heavy Thorium" },
   ["e1564d0f4a27e906"] = { "守護聖人のローブ", "しゅごせいじんのろーぶ", "Robes of the Guardian Saint" },
   ["e157c4391a3b1222"] = { "テレポート：最後の間", "てれぽーとさいごのま", "Teleport to Final Chamber" },
   ["e1591aa441c40967"] = { "高位プリーステス・ハイワトナ", "こういぷりーすてす・はいわとな", "High Priestess Hai'watna" },
@@ -244,5 +246,6 @@ WFJ.Data.add("name", {
   ["e1f92b10ba18594b"] = { "ザヴィアン近くの遺跡", "ざゔぃあんちかくのいせき", "Ruins Near Xavian" },
   ["e1fe0fcddd246b2a"] = { "崩しの打撃", "くずしのだげき", "Unbalancing Strike" },
   ["e1fee0db5296318f"] = { "ザーグの肉屋", "ざーぐのにくや", "Zargh's Meats" },
+  ["e1ff2f4f2bffac93"] = { "アンデッドの馬商人", "あんでっどのうましょうにん", "Undead Horse Merchant" },
   ["e1ff37beb06f2e3f"] = { "熟練闘士の外套", "じゅくれんとうしのがいとう", "Seasoned Fighter's Cloak" },
 })
