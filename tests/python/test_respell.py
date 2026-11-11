@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 
 import pytest
+
 from wfj.cmd import names as cmd
 from wfj.core import names, respell
 from wfj.io.names_store import load_lines, load_words, save_lines, save_words

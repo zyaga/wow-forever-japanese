@@ -16,6 +16,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 import pytest
+
 from wfj.cmd import package_check, voice_make
 from wfj.cmd import voice as cmd
 from wfj.cmd.validate import rule_voice
