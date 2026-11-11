@@ -705,10 +705,21 @@ local function tagFaceAgain(child, fs, ja)
   if type(child.Layout) == "function" then child:Layout() end
 end
 
+-- A tag button keeps its text after Dialogue UI is done with it, and every page's pass walks all of them. A tag
+-- still showing the Japanese written here is no game word, so the lookup finds nothing: without this record the
+-- pass would take that for a tag that was never ours and hand Dialogue UI's face back under the Japanese.
+local tagOurs = setmetatable({}, { __mode = "k" }) -- the tag's text widget → the Japanese written on it
+
 local function tagJapanese(child)
   local fs = type(child) == "table" and child.ButtonText or nil
   if type(fs) ~= "table" or type(fs.GetText) ~= "function" or type(child.SetText) ~= "function" then return end
-  local ja = gameWord(fs:GetText())
+  local text = fs:GetText()
+  if tagOurs[fs] ~= nil and text == tagOurs[fs] then
+    face(fs, nil, true)
+    return
+  end
+  local ja = gameWord(text)
+  tagOurs[fs] = ja
   face(fs, nil, ja ~= nil)
   if ja then
     child:SetText(ja)

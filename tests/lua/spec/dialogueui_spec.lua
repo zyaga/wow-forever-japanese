@@ -518,6 +518,20 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
         assert.is_true(found)
       end)
 
+    -- A tag button keeps its text when Dialogue UI is done with it, and every later page's pass walks it again: the
+    -- text is then our Japanese, which is no game word, and the pass must not hand Dialogue UI's face back.
+    it("a tag already showing our Japanese keeps the bundled face when a later pass walks it, before any timer runs",
+      function()
+        open("QUEST_DETAIL", { questID = 2, title = QUEST.title, description = QUEST.description, objectives = "" })
+        frame.tag:SetQuestTagNameAndIcon("Dungeon")
+        local fs = frame.tag.ButtonText
+        assert.are.equal("ダンジョン", fs:GetText())
+        DUI.timers = {} -- the next-frame check never runs: the pass itself has to leave the face alone
+        open("GOSSIP_SHOW", { gossip = "Hello." })
+        assert.are.equal("ダンジョン", fs:GetText())
+        assert.are.equal(WFJ.Font.PATH, (fs:GetFont()))
+      end)
+
     it("tooltip lines: game strings and Dialogue UI's own words in Japanese; the item's name never", function()
       load({ loaded = false })
       ship(QUEST_JA)
