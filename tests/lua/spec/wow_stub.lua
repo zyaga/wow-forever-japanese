@@ -83,6 +83,7 @@ function Stub.fontString(text, path, size, flags)
   function fs:SetSize(w, h) self.width, self.height = w, h end
   function fs:SetJustifyH(j) self.justifyH = j end
   function fs:SetJustifyV(j) self.justifyV = j end
+  function fs:SetNonSpaceWrap(v) self.nonSpaceWrap = v and true or false end
   function fs:SetWordWrap(w) self.wordWrap = w end
   function fs:ClearAllPoints() self.point = nil end
   function fs:SetTextColor(r, g, b, a) self.color = { r, g, b, a } end

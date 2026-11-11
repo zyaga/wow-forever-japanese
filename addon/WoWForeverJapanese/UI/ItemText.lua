@@ -28,6 +28,9 @@
 -- shows, and the scroll child is sized from the FontString. The client's own text (English: Alt, off, missing,
 -- release) and every HTML page go back through the SimpleHTML exactly as before. UI/Readings covers that FontString
 -- (page:spanRegion).
+-- English first: the same FontString draws the client's own plain-text page, word for word, in the P text type's
+-- own font and colour, so its English words can take cards too (page:englishRegion). With translation or the
+-- books area off, and for every HTML page, the SimpleHTML keeps the page as the client wrote it.
 local _, WFJ = ...
 local ItemText = {}
 WFJ.ItemText = ItemText
@@ -125,15 +128,26 @@ local function clientEnglish(self, text)
   return #text > #c + #mark and text:sub(1, #mark) == mark and text:sub(-(#c + 1)) == "\n" .. c
 end
 
+-- English first, with translation and the books area on and English showing: the client's own plain-text page is
+-- drawn in our FontString, so UI/Readings can lay English word cards on it.
+local function drawsEnglish(self, text)
+  local S_ = WFJ.State
+  return text == self.client and not htmlPage(text) and S_.direction == "en" and S_.enabled == true
+    and S_.areaEnabled(AREA) and S_.showsEnglish()
+end
+
 -- The client's text is written back as is; any other text is written the way the client writes a page (as is; Forever
 -- adds no leading newline), with an inline marker moved inside an HTML page's body. Japanese on a plain-text
 -- page is drawn in our FontString, the SimpleHTML left empty; the client's English (with or without the missing
 -- marker) stays in the SimpleHTML.
 function page:SetText(text)
-  local fs = not clientEnglish(self, text) and not htmlPage(text) and self:fontString() or nil
+  local english = drawsEnglish(self, text)
+  local fs = (english or (not clientEnglish(self, text) and not htmlPage(text))) and self:fontString() or nil
   if fs then
     writeHtml(self, "")
     layout(fs, self.html)
+    -- Japanese has no spaces to break a line on; English breaks only at its spaces, as the client's page does
+    if type(fs.SetNonSpaceWrap) == "function" then fs:SetNonSpaceWrap(not english) end
     fs:SetText(text)
     fs:Show()
     self.drawn = true
@@ -151,6 +165,19 @@ end
 -- The FontString UI/Readings covers: ours, whether or not it shows this page (UI/Readings checks it holds
 -- the text the record applied, so a page drawn by the SimpleHTML takes no cover).
 function page:spanRegion()
+  return self.fs
+end
+
+-- The FontString holding the client's own English page, for UI/Readings' English word cards: drawn now if the page
+-- is still in the SimpleHTML; nil when the page takes none (an HTML page, translation or the area off, Japanese
+-- showing).
+function page:englishRegion()
+  if self.client == nil or self.logical ~= self.client or not drawsEnglish(self, self.client) then return nil end
+  if not (self.drawn and self.fs and self.fs:GetText() == self.client) then
+    self:SetText(self.client)
+    if not self.drawn then return nil end
+    if ItemText.refit then ItemText.refit() end
+  end
   return self.fs
 end
 

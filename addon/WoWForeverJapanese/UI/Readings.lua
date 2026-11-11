@@ -408,14 +408,17 @@ function View.attach(rec)
   return lay(rec, region(rec), rec.applied, spans)
 end
 
--- English first: the line is the client's own English, untouched, and its English words take the cards. Only a
--- FontString the client draws the text in itself (a book page it draws as HTML takes none), holding no escape
--- sequence. → true when the record's FontString now takes English cards
+-- English first: the line is the client's own English, untouched, and its English words take the cards. A
+-- FontString the client draws the text in itself, or a book page's own (its plain-text English, drawn there for
+-- this), holding no escape sequence. → true when the record's FontString now takes English cards
 function View.attachEnglish(rec)
   local fs = rec and rec.fs
-  -- an adapter's own FontString holds our Japanese, never the client's English
-  if type(fs) ~= "table" or type(fs.spanRegion) == "function" or type(fs.GetText) ~= "function"
-      or not takesCards(rec, fs) then
+  -- an adapter's own FontString holds our Japanese; one that can also draw the client's English there says so
+  -- (a book page: UI/ItemText's page:englishRegion)
+  if type(fs) == "table" and type(fs.spanRegion) == "function" then
+    fs = type(fs.englishRegion) == "function" and fs:englishRegion() or nil
+  end
+  if type(fs) ~= "table" or type(fs.GetText) ~= "function" or not takesCards(rec, fs) then
     View.detach(rec)
     return false
   end

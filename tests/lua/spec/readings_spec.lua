@@ -381,6 +381,32 @@ describe("Readings", function()
       return page, fs
     end
 
+    it("English first: a page adapter that draws the client's English in its FontString takes English cards there",
+      function()
+        WFJ.Data.add("english", { ["book:bk1"] = { text = "armor=2 demon=1" } })
+        local en = "This demon armor is old."
+        local page, fs = pageAdapter(en)
+        function page:englishRegion() -- as UI/ItemText's: draws the page there when it shows the client's English
+          if self.logical ~= en then return nil end
+          fs:SetText(en); self.html = ""
+          return fs
+        end
+        S.set("direction", "en")
+        R.show("itemtext", "page", page, page:GetText(), "books", "book", "bk1")
+        local cover = coverOf(fs)
+        assert.is_true(cover:IsShown())
+        assert.are.same({ en, "demon", "armor" }, { cover.text, cover.spans[1].word, cover.spans[2].word })
+        assert.are.equal("悪魔（あくま）", cover.spans[1].reading)
+        Stub.keys.alt = true; WFJ.Modifier.refresh() -- the Japanese page, with its own cards
+        assert.are.equal("悪魔", cover.spans[1].word)
+        Stub.keys.alt = false; WFJ.Modifier.refresh()
+        assert.are.equal("demon", cover.spans[1].word)
+        -- an adapter with no way to draw the English there takes none
+        local other, otherFs = pageAdapter(en)
+        R.show("itemtext", "other", other, other:GetText(), "books", "book", "bk1")
+        assert.is_nil(coverOf(otherFs))
+      end)
+
     it("a plain-text Japanese book page takes a cover on the adapter's FontString; English detaches it",
       function()
         local page, fs = pageAdapter("These demon plates are old.")
