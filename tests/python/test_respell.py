@@ -129,7 +129,15 @@ def store(tmp_path):
             _line("[DNT]", "開発用", "かいはつよう"),
         ],
     )
-    save_words(tmp_path, [_word("Black", "黒い", check=False), _word("Dragonflight", "ドラゴンフライト")])
+    save_words(
+        tmp_path,
+        [
+            _word("Black", "黒い", check=False),
+            _word("Dragonflight", "ドラゴンフライト"),
+            _word("Zin", "ジン"),
+            _word("Malor", "マロール"),
+        ],
+    )
     return tmp_path
 
 
@@ -204,3 +212,26 @@ def test_a_fix_round_may_replace_a_katakana_spelling_but_never_a_persons(store, 
     after = {w["en"]: w["ja"] for w in load_words(store)}
     assert (n, after["Tiger"], after["Orgrimmar"]) == (1, "タイガー", "オーグリマー")
     assert len(rejected) == 1 and "person" in rejected[0]
+
+
+def test_a_katakana_name_that_is_a_translation_is_spelled_again(store):
+    lines = load_lines(store) + [_line("Scorpion", "サソリ", "さそり")]
+    save_lines(store, lines)
+    save_words(store, [*load_words(store), _word("black", "ブラック"), _word("gloves", "グローブ"), _word("scorpion", "スコーピオン")])
+    cmd.respell(store, TODAY, False)
+    assert {ln["en"]: ln["ja"] for ln in load_lines(store)}["Scorpion"] == "スコーピオン"
+
+
+def test_words_learn_their_spelling_from_a_name_already_spelled_out(store):
+    save_lines(store, load_lines(store) + [_line("Xandar Goodbeard", "ザンダー・グッドビアード", "ざんだー・ぐっどびあーど")])
+    n, differ = cmd.learn_spellings(store, False)
+    words = {w["en"]: w["ja"] for w in load_words(store)}
+    assert (n, differ) == (3, [])  # the two words of the new name, and the one of the name a person wrote
+    assert (words["Xandar"], words["Goodbeard"], words["Orgrimmar"]) == ("ザンダー", "グッドビアード", "オーグリマー")
+
+
+def test_a_name_that_spells_a_word_another_way_is_reported_not_learned(store):
+    save_lines(store, load_lines(store) + [_line("Zin Hold", "ジーン・ホールド", "じーん・ほーるど")])
+    n, differ = cmd.learn_spellings(store, False)
+    assert n == 2 and len(differ) == 1 and "Zin" in differ[0]  # Hold and Orgrimmar are learned, Zin is not
+    assert {w["en"]: w["ja"] for w in load_words(store)}["Zin"] == "ジン"
