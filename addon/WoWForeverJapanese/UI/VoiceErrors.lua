@@ -14,8 +14,8 @@
 --     MuteSoundFile, so the English line does not play under the Japanese one
 --     [unverified: whether a muted file silences the call on Forever; in-game check in docs/testing/strategy.md].
 --     A mute lasts until the client closes and is saved nowhere; it is taken off when the feature is switched off
---     and at logout. An earlier version turned the setting itself off and noted it in
---     WFJ_DB.voiceErrorSpeechMuted: that note is still honoured once, to give the setting back.
+--     and at logout. A saved WFJ_DB.voiceErrorSpeechMuted means the setting was turned off by this addon, not
+--     by the player: it is turned back on once and the note cleared.
 --   * Repeats: the same line is not started again within REPEAT seconds (an ability spammed out of range).
 local _, WFJ = ...
 local VoiceErrors = {}
@@ -95,8 +95,8 @@ local function wanted()
   return WFJ.Voice.hasErrors(race, sex)
 end
 
--- Gives the client's error speech setting back if an earlier version of this addon turned it off.
--- → true when it did
+-- A saved voiceErrorSpeechMuted means this addon, not the player, turned the client's error speech off: the
+-- setting goes back on and the note is cleared. → true when it did
 local function giveBack()
   if not (db and db.voiceErrorSpeechMuted) then return false end
   db.voiceErrorSpeechMuted = nil

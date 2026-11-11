@@ -714,7 +714,8 @@ local function tagJapanese(child)
   local fs = type(child) == "table" and child.ButtonText or nil
   if type(fs) ~= "table" or type(fs.GetText) ~= "function" or type(child.SetText) ~= "function" then return end
   local text = fs:GetText()
-  if tagOurs[fs] ~= nil and text == tagOurs[fs] then
+  local mine = tagOurs[fs]
+  if mine and text == mine then
     face(fs, nil, true)
     return
   end
