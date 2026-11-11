@@ -690,9 +690,10 @@ end
 -- QuestHeaderWidget.lua]: each tag button found is followed there too, once.
 local tagFollowed = setmetatable({}, { __mode = "k" })
 
--- A tag's Japanese can end up in Dialogue UI's own face, which has no Japanese letters (empty boxes), by a path its
--- code does not show [unverified: seen in game, cause not traced]. So the tag is checked again the next frame: a face
--- that is not ours is logged with what it was, the bundled face goes back on and the tag is laid out again.
+-- A tag's Japanese can end up in Dialogue UI's own face, which has no Japanese letters (empty boxes). The one known
+-- path, a later pass over a tag that already shows the Japanese, is handled in tagJapanese. This check is the
+-- backstop for any other: the tag is looked at again the next frame, a face that is not ours is logged with what it
+-- was, the bundled face goes back on and the tag is laid out again.
 local function tagFaceAgain(child, fs, ja)
   if type(fs.GetFont) ~= "function" or fs:GetText() ~= ja then return end
   local path, size, flags = fs:GetFont()
@@ -705,10 +706,24 @@ local function tagFaceAgain(child, fs, ja)
   if type(child.Layout) == "function" then child:Layout() end
 end
 
+-- A tag button keeps its text after Dialogue UI is done with it, and every page's pass walks all of them. A tag
+-- still showing the Japanese written here is no game word, so the lookup finds nothing: without this record the
+-- pass would take that for a tag that was never ours and hand Dialogue UI's face back under the Japanese.
+local tagOurs = setmetatable({}, { __mode = "k" }) -- the tag's text widget → the Japanese written on it
+
 local function tagJapanese(child)
   local fs = type(child) == "table" and child.ButtonText or nil
   if type(fs) ~= "table" or type(fs.GetText) ~= "function" or type(child.SetText) ~= "function" then return end
-  local ja = gameWord(fs:GetText())
+  local text = fs:GetText()
+  local mine = tagOurs[fs]
+  if mine and text == mine then
+    face(fs, nil, true)
+    -- sized to its text in the face it has now, as after the write below
+    if type(child.Layout) == "function" then child:Layout() end
+    return
+  end
+  local ja = gameWord(text)
+  tagOurs[fs] = ja
   face(fs, nil, ja ~= nil)
   if ja then
     child:SetText(ja)

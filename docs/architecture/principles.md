@@ -9,7 +9,10 @@ The addon depends on no other addon and embeds no library (no Ace3, LibStub, Lib
 needs a helper, it has its own. The pipeline uses the Python standard library; a new dependency needs an ADR.
 See [ADR-004](../adr/004-zero-runtime-dependencies.md). One addon's windows get the Japanese when the player
 already has that addon: Dialogue UI's ([ADR-073](../adr/073-dialogue-ui-windows-get-our-japanese.md)). Nothing of it
-is shipped or required, and without it that code does nothing.
+is shipped or required, and without it that code does nothing. And when another addon has loaded the shared font
+registry (LibSharedMedia-3.0), the addon offers its Japanese font to it, so a player can pick that font in an addon
+that restyles the game's windows ([ADR-080](../adr/080-our-font-in-the-shared-font-registry.md)). Nothing of the
+registry is shipped or required either, and nothing is read back from it.
 
 ## 2. Names stay in English
 

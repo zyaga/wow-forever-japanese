@@ -135,6 +135,28 @@ function Font.stopProbe()
   return true
 end
 
+-- The bundled face offered to the shared font registry (LibSharedMedia-3.0), when another addon has loaded it. An
+-- addon that restyles the game's windows in a font of the player's choice sets that font on text this addon has
+-- already put into Japanese; its own fonts have no Japanese letters, so the text shows as empty boxes. With the
+-- bundled face in the registry the player can pick it there. The registry is only looked up, never shipped: without
+-- it nothing happens. Register checks that the file exists (C_UIFileAsset.IsKnownFile), not that the client has
+-- loaded it, so this is safe at load [read: LibSharedMedia-3.0 r12000005, Register].
+Font.SHARED_NAME = "WoW Forever Japanese"
+local shared = false
+
+-- → true when the face was registered now; false when there is no registry, it was already offered this session, or
+-- the registry turned it down
+function Font.share()
+  if shared then return false end
+  local libStub = WFJ.Compat.resolve("LibStub")
+  if libStub == nil then return false end
+  local found, lib = pcall(libStub, "LibSharedMedia-3.0", true) -- true: no error when it is not there
+  if not found or type(lib) ~= "table" or type(lib.Register) ~= "function" then return false end
+  shared = true
+  local ok, registered = pcall(lib.Register, lib, "font", Font.SHARED_NAME, Font.PATH, lib.LOCALE_BIT_western)
+  return ok and registered == true
+end
+
 -- The bundled font at an element's original size and flags ({path,size,flags} as captured by SurfaceState).
 function Font.bundled(orig)
   return {

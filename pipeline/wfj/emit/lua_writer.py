@@ -352,6 +352,22 @@ def meta_text(schema_version: int, english: dict[str, list[str]], counts: dict[s
     )
 
 
+def error_sounds_text(rows: Iterable[dict]) -> str:
+    """`WFJ.Data.errorSounds`: [race id] = { m = { file ids }, f = { file ids } }, the English error
+    recordings the game plays for a character of that race and sex."""
+    by: dict[int, dict[str, list[int]]] = {}
+    for r in rows:
+        by.setdefault(r["race"], {})[r["sex"]] = r["files"]
+    lines = [HEADER.format(src="data/"), "local _, WFJ = ...", "WFJ.Data.errorSounds = {"]
+    for race in sorted(by):
+        sexes = ", ".join(
+            f"{sex} = {{ {', '.join(str(i) for i in by[race][sex])} }}" for sex in "mf" if sex in by[race]
+        )
+        lines.append(f"  [{race}] = {{ {sexes} }},")
+    lines.append("}")
+    return "\n".join(lines) + "\n"
+
+
 def toc_block(relpaths: Iterable[str]) -> list[str]:
     """The TOC lines between the markers (backslash paths, as the client wants them)."""
     return [schema.TOC_BEGIN, *(p.replace("/", "\\") for p in relpaths), schema.TOC_END]
