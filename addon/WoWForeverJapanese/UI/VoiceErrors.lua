@@ -95,14 +95,19 @@ local function wanted()
   return WFJ.Voice.hasErrors(race, sex)
 end
 
--- Takes the mute off the English recordings, and gives the client's error speech setting back if an earlier
--- version of this addon turned it off. → true when it gave the setting back
-function VoiceErrors.restore()
-  setMuted(false)
+-- Gives the client's error speech setting back if an earlier version of this addon turned it off.
+-- → true when it did
+local function giveBack()
   if not (db and db.voiceErrorSpeechMuted) then return false end
   db.voiceErrorSpeechMuted = nil
   setCVar(SPEECH, "1")
   return true
+end
+
+-- Takes the mute off the English recordings, and gives the setting back as above. → true when it gave it back
+function VoiceErrors.restore()
+  setMuted(false)
+  return giveBack()
 end
 
 -- Mutes the English recordings while Japanese lines can play, unmutes them otherwise.
@@ -170,7 +175,7 @@ end
 -- Called by Main after Voice and Settings. `savedDb` is WFJ_DB. Safe without a pack: nothing changes.
 function VoiceErrors.init(savedDb)
   db = savedDb
-  VoiceErrors.restore() -- a crash or a removed pack must never leave the player's error speech off
+  giveBack() -- the refresh below settles the mute: on when lines can play, off otherwise (a mute outlives a reload)
   local C = Compat.resolve("C_Sound")
   if not hooked and type(C) == "table" and type(C.PlayVocalErrorSound) == "function" then
     hooksecurefunc(C, "PlayVocalErrorSound", VoiceErrors.onVocalError)

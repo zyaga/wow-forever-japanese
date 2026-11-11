@@ -790,7 +790,7 @@ describe("voice settings: shown only with a pack", function()
 end)
 
 describe("UI/VoiceErrors: the character's own error lines in Japanese", function()
-  local WFJ, db, sounds, cvars, timers
+  local WFJ, db, sounds, cvars, timers, writes, muted, unmuted
 
   local function frames() -- the next frame: run what C_Timer.After(0) queued
     local due = timers
@@ -801,6 +801,9 @@ describe("UI/VoiceErrors: the character's own error lines in Japanese", function
   before_each(function()
     Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
     sounds, cvars, timers = {}, { Sound_EnableErrorSpeech = "1" }, {}
+    writes, muted, unmuted = 0, {}, {}
+    _G.MuteSoundFile = function(id) muted[#muted + 1] = id end
+    _G.UnmuteSoundFile = function(id) unmuted[#unmuted + 1] = id end
     _G.C_Timer = { After = function(_, f) timers[#timers + 1] = f end }
     _G.GetGameMessageInfo = function(t) if t == 51 then return "ERR_USE_TOO_FAR", nil, 10 end end
     _G.UIErrorsFrame = { TryDisplayMessage = function(_, t)
@@ -813,7 +816,10 @@ describe("UI/VoiceErrors: the character's own error lines in Japanese", function
     end
     _G.C_CVar = {
       GetCVar = function(n) return cvars[n] end,
-      SetCVar = function(n, v) cvars[n] = v end,
+      SetCVar = function(n, v)
+        cvars[n] = v
+        writes = writes + 1
+      end,
     }
     _G.C_Sound = { PlayVocalErrorSound = function() end }
     _G.UnitRace = function() return "Tauren", "Tauren", 6 end
@@ -822,6 +828,9 @@ describe("UI/VoiceErrors: the character's own error lines in Japanese", function
     WFJ = H.loadChunks({ "Core/Const.lua", "Core/Compat.lua", "Core/State.lua", "Core/Settings.lua", "Core/Voice.lua",
       "Core/Modifier.lua", "Core/Hash.lua", "UI/VoiceErrors.lua" })
     WFJ.Compat.init(function(name) return _G[name] end)
+    -- the English recordings the game plays for a tauren (race id 6), as the generated data file gives them
+    WFJ.Data = WFJ.Data or {}
+    WFJ.Data.errorSounds = { [6] = { m = { 801 }, f = { 901, 902 } } }
     db = WFJ.Settings.load(nil, 1, {})
     WFJ.State.enabled = true
     WFJ.Voice.init({ setting = WFJ.Settings.get, revealed = function() return false end,
@@ -835,12 +844,11 @@ describe("UI/VoiceErrors: the character's own error lines in Japanese", function
   after_each(function()
     _G.PlaySoundFile, _G.C_CVar, _G.C_Sound, _G.GetTime, _G.C_Timer = nil, nil, nil, nil, nil
     _G.GetGameMessageInfo, _G.UIErrorsFrame = nil, nil
+    _G.MuteSoundFile, _G.UnmuteSoundFile = nil, nil
   end)
 
-  it("turns the English error speech off, plays the Japanese line after the game's call, and puts it back", function()
+  it("plays the Japanese line after the game's call and never writes the game's error speech setting", function()
     assert.is_true(WFJ.VoiceErrors.init(db))
-    assert.are.equal("0", cvars.Sound_EnableErrorSpeech)
-    assert.is_true(db.voiceErrorSpeechMuted)
     _G.C_Sound.PlayVocalErrorSound(10) -- from outside the error frame: the kind's line, on the next frame
     assert.are.equal(0, #sounds)
     frames()
@@ -852,8 +860,25 @@ describe("UI/VoiceErrors: the character's own error lines in Japanese", function
     _G.C_Sound.PlayVocalErrorSound(15) -- a kind the pack has no line for stays silent
     frames()
     assert.are.equal(1, #sounds)
-    WFJ.VoiceErrors.restore()
+    WFJ.VoiceErrors.refresh()
+    WFJ.VoiceErrors.restore() -- the logout path
     assert.are.equal("1", cvars.Sound_EnableErrorSpeech)
+    assert.are.equal(0, writes)
+    assert.is_nil(db.voiceErrorSpeechMuted)
+  end)
+
+  it("stays silent while the game's error speech setting is off, and leaves the setting off", function()
+    cvars.Sound_EnableErrorSpeech = "0"
+    WFJ.VoiceErrors.init(db)
+    _G.UIErrorsFrame:TryDisplayMessage(51, "You are too far away.")
+    frames()
+    assert.are.equal(0, #sounds)
+    assert.are.equal("setting", WFJ.VoiceErrors.last.why)
+    WFJ.Settings.set("voice.errors", false)
+    WFJ.VoiceErrors.refresh()
+    WFJ.VoiceErrors.restore()
+    assert.are.equal("0", cvars.Sound_EnableErrorSpeech)
+    assert.are.equal(0, writes)
   end)
 
   it("hooks the error frame once, however often it starts", function()
@@ -881,27 +906,45 @@ describe("UI/VoiceErrors: the character's own error lines in Japanese", function
       sounds[1].path)
   end)
 
-  it("leaves the setting alone for a character the pack has no lines for, or when switched off", function()
+  it("mutes the English recordings of the character's race and sex while Japanese lines can play", function()
+    WFJ.VoiceErrors.init(db)
+    assert.are.same({ 901, 902 }, muted)
+    WFJ.VoiceErrors.refresh() -- already muted: not walked again
+    assert.are.same({ 901, 902 }, muted)
+    WFJ.Settings.set("voice.errors", false)
+    WFJ.VoiceErrors.refresh()
+    assert.are.same({ 901, 902 }, unmuted)
+    WFJ.Settings.set("voice.errors", true)
+    WFJ.VoiceErrors.refresh()
+    assert.are.same({ 901, 902, 901, 902 }, muted)
+    WFJ.State.enabled = false -- translation off
+    WFJ.VoiceErrors.refresh()
+    assert.are.same({ 901, 902, 901, 902 }, unmuted)
+    WFJ.State.enabled = true
+    WFJ.VoiceErrors.refresh()
+    WFJ.VoiceErrors.restore() -- the logout path
+    assert.are.same({ 901, 902, 901, 902, 901, 902 }, unmuted)
+    assert.are.equal(0, writes)
+  end)
+
+  it("mutes nothing for a character the pack has no lines for", function()
     _G.UnitSex = function() return 2 end -- a tauren man: no lines in this pack
     WFJ.VoiceErrors.init(db)
-    assert.are.equal("1", cvars.Sound_EnableErrorSpeech)
+    assert.are.same({}, muted)
     _G.C_Sound.PlayVocalErrorSound(10)
     frames()
     assert.are.equal(0, #sounds)
-    _G.UnitSex = function() return 3 end
-    WFJ.VoiceErrors.refresh()
-    assert.are.equal("0", cvars.Sound_EnableErrorSpeech)
-    WFJ.Settings.set("voice.errors", false)
-    WFJ.VoiceErrors.refresh()
-    assert.are.equal("1", cvars.Sound_EnableErrorSpeech)
   end)
 
-  it("never turns error speech on for a player who had it off", function()
+  it("gives back, once, a setting an earlier version of the addon turned off", function()
     cvars.Sound_EnableErrorSpeech = "0"
+    db.voiceErrorSpeechMuted = true
     WFJ.VoiceErrors.init(db)
+    assert.are.equal("1", cvars.Sound_EnableErrorSpeech)
     assert.is_nil(db.voiceErrorSpeechMuted)
-    WFJ.Settings.set("voice.errors", false)
+    assert.are.equal(1, writes)
     WFJ.VoiceErrors.refresh()
-    assert.are.equal("0", cvars.Sound_EnableErrorSpeech)
+    WFJ.VoiceErrors.restore()
+    assert.are.equal(1, writes)
   end)
 end)
