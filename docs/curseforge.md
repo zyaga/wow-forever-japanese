@@ -42,6 +42,12 @@ Point at a Japanese word in quest text, NPC dialogue, a book page or a window la
 
 While the popup shows a word, **Ctrl+click** it to save it with its reading, meaning and the sentence it came from. The list stays from one session to the next and is shared by your characters. Type `/wfj words` to copy the whole list as text for Anki, a spreadsheet or a text file: the word and its sentence come with furigana for your cards, and a screenshot taken when you saved the word can come along. Choose the click on the **Words** settings page.
 
+### <span style="color:#E8C77E;">Study whichever you want</span>
+
+The first time you log in, a welcome window asks what you are here for: **Study Japanese**, **Study English** or **Just play**. Pick one and press **Confirm**; you can change it later in the settings or with `/wfj intro`.
+
+**Study English** turns the addon around for Japanese players learning English. The game stays in its own <span style="color:#8CB8E8;">English</span>, and holding <span style="color:#E0605A;">**Alt**</span> shows the Japanese. Point at an English word in quest text, NPC dialogue, a book page or a window label, and a popup shows how it is said, the Japanese word the translation uses for it there with its reading, and that word's dictionary form. **Ctrl+click** saves the English word with its sentence and the Japanese sentence, and the study card asks it English first. Names and small words such as *the*, *is* and *of* have no popup. The Japanese voice plays only while the key is held.
+
 ### <span style="color:#E8C77E;">Japanese voice</span>
 
 With **WoW Forever Japanese Voice** installed (a free, separate download), quest offers, progress and turn-ins, NPC greetings and talk, and book and letter pages are read aloud in Japanese: over 14,000 lines. Each NPC speaks in a voice modelled on its own voice in the game, so it sounds like the NPC you know, and your character says its own error lines, such as being out of range, in Japanese too, in a voice modelled on its race's own. Every line plays at the same loudness. The NPC's English voice is silenced as the window opens, so it does not start under the Japanese. An NPC's greeting is read aloud only the first time you hear it, and a setting does the same for quest lines; the window's play button reads a line again.
@@ -50,7 +56,7 @@ While a line plays, a **voice panel** at the bottom of the screen shows the spea
 
 ### <span style="color:#E8C77E;">Settings</span>
 
-**Esc > Options > AddOns**, or type **/wfj config**. Turn translation on or off, for everything or per area; change the key you hold for English; set a key that switches translation on and off; turn the markers (<span style="color:#FFD100;">**[未翻訳 / Not Translated]**</span>, <span style="color:#FFD100;">**[要更新 / English Changed]**</span>), the popup dictionary and the minimap button on or off. With the voice installed, the **Voice** page sets what is read aloud and how the voice panel looks.
+**Esc > Options > AddOns**, or type **/wfj config**. Turn translation on or off, for everything or per area; choose Japanese first or English first; change the key you hold for the other language; set a key that switches translation on and off; turn the markers (<span style="color:#FFD100;">**[未翻訳 / Not Translated]**</span>, <span style="color:#FFD100;">**[要更新 / English Changed]**</span>), the popup dictionary and the minimap button on or off. With the voice installed, the **Voice** page sets what is read aloud and how the voice panel looks.
 
 ### <span style="color:#E8C77E;">What the addon records</span>
 
@@ -133,6 +139,12 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 
 ポップアップが出ている単語を **Ctrl+クリック** すると、読み方・意味・その文と一緒に保存されます。単語帳は次回以降も残り、すべてのキャラクターで共通です。`/wfj words` で単語帳全体を Anki・表計算ソフト・テキストファイル用のテキストとしてコピーできます。単語と文にはカード用のふりがなが付き、保存したときのスクリーンショットも添えられます。保存の操作は設定の **単語帳** ページで選べます。
 
+### <span style="color:#E8C77E;">学びたい言語を選べます</span>
+
+初めてログインすると、ようこそ画面が開き、使い方を選べます。**日本語を学ぶ**、**英語を学ぶ**、**日本語で遊ぶ** の3つです。1つ選んで **決定** を押します。あとで設定か `/wfj intro` で変えられます。
+
+**英語を学ぶ** を選ぶと、英語を勉強中の方のために向きが逆になります。ゲームは本来の<span style="color:#8CB8E8;">英語</span>のまま表示され、<span style="color:#E0605A;">**Alt**</span> を押している間だけ日本語が表示されます。クエスト本文、NPC の会話、本のページ、ウィンドウのラベルで英語の単語にマウスを合わせると、発音、その行の翻訳で使われている日本語の単語と読み方、その辞書形がポップアップに表示されます。**Ctrl+クリック** で英語の単語を英語の文と日本語の文と一緒に保存でき、学習カードは英語から出題します。名前や *the*、*is*、*of* のような短い語にはポップアップは出ません。日本語音声は、キーを押している間だけ再生されます。
+
 ### <span style="color:#E8C77E;">日本語音声</span>
 
 **WoW Forever Japanese Voice**（無料の別ダウンロード）を入れると、クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページを日本語で読み上げます。合わせて 14,000 行以上です。NPC はそれぞれ、ゲームでのその NPC 自身の声をもとにした声で話すので、英語で聞き慣れた NPC と同じように聞こえます。自分のキャラクターも、射程外などのエラーの一言を、その種族のエラーの声をもとにした声で日本語で話します。どの行も同じ音量で再生されます。日本語で読み上げる行では、ウィンドウが開いた時点で NPC の英語の声を止めるので、日本語に英語が重なりません。NPC のあいさつは初めて聞くときだけ読み上げます。クエストの音声も設定で同じようにできます。ウィンドウの再生ボタンでもう一度聞けます。
@@ -141,7 +153,7 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 
 ### <span style="color:#E8C77E;">設定</span>
 
-**Esc > オプション > AddOns**、または **/wfj config** で開きます。翻訳のオン・オフ（全体または項目ごと）、英語を表示するキーの変更、翻訳を切り替えるキーの設定、マーカー（<span style="color:#FFD100;">**[未翻訳 / Not Translated]**</span>、<span style="color:#FFD100;">**[要更新 / English Changed]**</span>）・ポップアップ辞書・ミニマップボタンの表示を切り替えられます。音声を入れている場合は、**音声** ページで読み上げる内容と音声パネルの見た目を設定できます。
+**Esc > オプション > AddOns**、または **/wfj config** で開きます。翻訳のオン・オフ（全体または項目ごと）、日本語優先と英語優先の切り替え、もう一方の言語を表示するキーの変更、翻訳を切り替えるキーの設定、マーカー（<span style="color:#FFD100;">**[未翻訳 / Not Translated]**</span>、<span style="color:#FFD100;">**[要更新 / English Changed]**</span>）・ポップアップ辞書・ミニマップボタンの表示を切り替えられます。音声を入れている場合は、**音声** ページで読み上げる内容と音声パネルの見た目を設定できます。
 
 ### <span style="color:#E8C77E;">アドオンが記録するもの</span>
 

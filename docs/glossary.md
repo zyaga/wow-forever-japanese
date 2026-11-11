@@ -594,12 +594,37 @@ The contiguous tooltip lines that one Japanese block replaces. For an item: the 
 _Avoid_: effect lines, tooltip body, block (the *Japanese* is the block; the run is the English it replaces)
 → [Addon modules](architecture/addon-modules.md) · [ADR-010](adr/010-tooltip-in-place-run-replacement.md)
 
+**Common word list**:
+`data/english/common-words.jsonl`: everyday English words (you, after, again), each with one Japanese word and its reading, machine-drafted with [[Provenance]] on every line. The [[English word card]] falls back to it for a word the line's own pairs do not cover. Shipped as `Data/English/English_Common.lua`.
+_Avoid_: [[Word list]] (the player's saved words), stop words, dictionary
+→ [Data model](architecture/data-model.md) · [ADR-081](adr/081-english-first-and-english-word-cards.md)
+
+**Pronunciation table**:
+`data/english/pronunciation.tsv`: how each English word an [[English word card]] can show is said, derived from the CMU Pronouncing Dictionary at a pinned commit and respelled the way Japanese-English dictionaries write it (i for the vowel of "sit", e for "bed", əːr for "bird"), in letters the bundled font has. Written by `make pronunciation`; the dictionary file itself is never committed. Shipped as `Data/English/English_Pron.lua`.
+_Avoid_: IPA table (the spelling is not the international one), phonetics, [[Reading]] (that is a Japanese word's kana)
+→ [Data model](architecture/data-model.md) · [ADR-081](adr/081-english-first-and-english-word-cards.md)
+
+**Direction**:
+The setting that says which language the screen shows first (`direction`, *Game text* on the settings page): [[Japanese first]] or [[English first]]. Crossed with the [[Modifier]] it gives the one answer every surface asks for, whether English is what shows now (`State.showsEnglish()`).
+_Avoid_: mode, language setting (the addon's own windows follow it too, but it is about game text), locale
+→ [Settings](systems/settings.md#the-direction-and-the-language-on-screen) · [ADR-081](adr/081-english-first-and-english-word-cards.md)
+
+**Japanese first**:
+The default [[Direction]] (`ja`): translated text shows in Japanese, and holding the [[Modifier]] shows the [[Live English]]. The addon as a player studying Japanese, or just playing in Japanese, uses it.
+_Avoid_: Japanese mode, normal mode
+→ [Settings](systems/settings.md#the-direction-and-the-language-on-screen)
+
+**English first**:
+The other [[Direction]] (`en`), for a Japanese player studying English: the [[Live English]] stays untouched on every surface the addon translates, and holding the [[Modifier]] shows the Japanese. The exact mirror of [[Japanese first]]. Pointing at an English word shows its [[English word card]]. The Japanese voice is heard only while the key is held, since it never starts while English shows.
+_Avoid_: English mode, reverse mode, translation off (the addon is on; the key still shows the Japanese)
+→ [Settings](systems/settings.md#the-direction-and-the-language-on-screen) · [ADR-081](adr/081-english-first-and-english-word-cards.md)
+
 **Live English**:
 The English text the game client is displaying right now. The addon never ships or shows stored English: holding the modifier reveals live English, and a missing or rejected entry simply leaves the frame untouched. One mechanism serves both.
 _Avoid_: original text, our English, fallback text (there is no separate fallback text)
 
 **Modifier**:
-The key the player holds to see the [[Live English]]; releasing it returns the Japanese. Alt by default. It is one of three classes: **either** (`alt` / `ctrl` / `shift`: either side of the key), **side** (`lalt` … `rshift`: one side only), or **bound** (any other single key or mouse button 3–5, taken over by an [[Override binding]] while the addon is loaded). Set by pressing it on the settings page or with `/wfj modifier <key>`. Never the same key as the toggle binding. Key names stay English.
+The key the player holds to see the other language: the [[Live English]] in [[Japanese first]], the Japanese in [[English first]]; releasing it returns the first one. Alt by default. It is one of three classes: **either** (`alt` / `ctrl` / `shift`: either side of the key), **side** (`lalt` … `rshift`: one side only), or **bound** (any other single key or mouse button 3–5, taken over by an [[Override binding]] while the addon is loaded). Set by pressing it on the settings page or with `/wfj modifier <key>`. Never the same key as the toggle binding. Key names stay English.
 _Avoid_: reveal key, hotkey, hold key
 → [Settings](systems/settings.md) · [ADR-018](adr/018-reveal-key-override-binding.md)
 
@@ -609,7 +634,7 @@ _Avoid_: rebind, keybind override
 → [Settings](systems/settings.md) · [ADR-018](adr/018-reveal-key-override-binding.md)
 
 **Action**:
-The Translator's verdict for one element: `apply` (write the Japanese), `leave` (the frame stays untouched, no marker: master or area off, or the modifier held), or `none` (no usable translation; the missing marker may be added to the [[Live English]]). The only three outcomes a surface can receive.
+The Translator's verdict for one element: `apply` (write the Japanese), `leave` (the frame stays untouched, no marker: master or area off, or English is what shows, by the modifier or the [[Direction]]), or `none` (no usable translation; the missing marker may be added to the [[Live English]]). The only three outcomes a surface can receive.
 _Avoid_: mode, decision, result
 → [Addon modules](architecture/addon-modules.md)
 
@@ -626,6 +651,11 @@ The [[Word-reading box]]'s larger form (`UI/ReadingPopup`): for a [[Word]] that 
 Player-facing text (the README, the listing) calls it the popup dictionary.
 _Avoid_: gloss box, dictionary popup, tooltip (it is not a GameTooltip)
 → [Readings](systems/readings.md) · [ADR-039](adr/039-word-meanings-written-in-context.md)
+
+**English word card**:
+The [[Word card]]'s mirror in [[English first]]: pointing at an English word of quest or NPC prose, of a plain-text [[Book page]] or of a [[Window label]], shows the word, how it is said (from the [[Pronunciation table]]), the Japanese [[Word]] the shipped translation uses for it in that line with its [[Reading]], and that word's [[Dictionary form]] when it differs. The pairs are read off the [[Meaning]]s the readings already hold; a word with no pair may come from the [[Common word list]]. Names, codes, articles and a few bare function words get none. An HTML book page and a letter a player wrote show none.
+_Avoid_: English popup, reverse card, translation tooltip
+→ [Readings → English word cards](systems/readings.md#english-word-cards) · [ADR-081](adr/081-english-first-and-english-word-cards.md)
 
 **Word list**:
 The player's own list of saved [[Word]]s, kept account-wide in the SavedVariables table `WFJ_Words` across sessions. Each entry holds the word, its [[Reading]], its [[Dictionary form]] and that form's reading, its [[Meaning]], the Japanese sentence it was shown in, where it was shown and when it was saved; one entry per source text and dictionary form. Filled by the [[Save click]], studied in game on the [[Study card]], and exported from the word list window as tab-separated text for a text file, a spreadsheet or Anki. In Japanese: 単語帳.
@@ -695,10 +725,10 @@ One fix the player saved in the fix window and has not sent yet, listed on its *
 _Avoid_: draft, queued report, saved report (the report is the copied text of all pending fixes)
 → [Fix reports](systems/fix-reports.md)
 
-**Intro window**:
-The window a first install shows once, at its first login or reload (`Core/Intro` decides, `UI/IntroWindow` draws it, the flag is `WFJ_DB.intro`). It says what the addon does, that holding the reveal key shows the game's English, that pointing at a word shows its reading, what the [[Minimap button]] does and, while no voice pack is installed, where to get the free voice. It is the one addon window that shows both languages at once, a Japanese block above an English one, because the player has not learned the reveal key yet. A player who already had the addon never sees it. One of the on-screen additions [Principles §3](architecture/principles.md#3-japanese-by-default-english-one-key-away) allows.
-_Avoid_: welcome screen, splash, onboarding popup, what's new (it never shows after an update)
-→ [Settings → Intro window](systems/settings.md#intro-window)
+**Welcome window**:
+The window every player is shown once (`Core/Intro` decides, `UI/IntroWindow` draws it; the flags are `WFJ_DB.intro` and `WFJ_DB.asked`): a first install at its first login or reload, a player who already had the addon the first time a version that asks the question loads. Page one asks what the player is here for, with three cards: Study Japanese, Study English, Just play. Confirm writes three ordinary settings (the [[Direction]], the word cards, the study tab) and nothing is written before it. Page two says what a new player must know: the reveal key, the word cards, the [[Minimap button]] and, while no voice pack is installed, where to get the free voice. It is the one addon window that shows both languages at once, because the player has not learned the reveal key yet. The settings pages and `/wfj intro` open it again. One of the on-screen additions [Principles §3](architecture/principles.md#3-japanese-by-default-english-one-key-away) allows.
+_Avoid_: intro window (in prose; the code's file and function names keep it), splash, onboarding popup, what's new (it never shows after a later update)
+→ [Settings → Welcome window](systems/settings.md#welcome-window) · [ADR-081](adr/081-english-first-and-english-word-cards.md)
 
 **Minimap button**:
 The addon's small button on the minimap edge (`UI/MinimapButton`): left-click opens the fix window, right-click opens a menu (Translation on / off, Report a line, Report a bug or idea, Settings, Hide this button); drag moves it around the rim. On by default, hidden by the `minimapButton` setting; the same two clicks are also on the addon's entry in Blizzard's addon dropdown on the minimap. One of the on-screen additions [Principles §3](architecture/principles.md#3-japanese-by-default-english-one-key-away) allows.

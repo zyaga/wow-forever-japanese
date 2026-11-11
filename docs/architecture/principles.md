@@ -25,7 +25,14 @@ they are ordinary words in the sentence. On interface labels they stay English.
 
 A translated line shows in Japanese. Holding the reveal key (Alt by default, any key can be set) shows the game's
 English instead. One switch turns the whole addon off. There is no "show both" mode for game text; the one window
-that shows both languages is the intro window below, which holds only the addon's own words.
+that shows both languages is the welcome window below, which holds only the addon's own words.
+
+The contract has a **direction**, one setting ([ADR-081](../adr/081-english-first-and-english-word-cards.md)).
+**Japanese first** is the default and is the paragraph above. **English first** is its exact mirror, for a Japanese
+player studying English: the client's English stays untouched on every surface the addon translates, and holding
+the reveal key shows the Japanese. It is still one language at a time and the same key. One predicate decides which
+language shows (the direction crossed with the held key), and every surface asks it; no code but the key's own
+modules reads the key.
 
 The only other things the addon adds to the screen, each of which a player can turn off or which shows only once:
 
@@ -34,12 +41,16 @@ The only other things the addon adds to the screen, each of which a player can t
   tracker);
 - the **word card**: pointing at a Japanese word in quest or NPC prose, a plain-text window label or a plain-text
   book page shows its reading and, where there is one, its dictionary form and a short English meaning. Nothing is
-  drawn until the pointer is on a word, and never while English is showing;
+  drawn until the pointer is on a word, and never while English is showing. In English first its mirror is the
+  **English word card**: pointing at an English word in the same places shows how it is said and the Japanese word
+  the translation uses for it in that line, with its reading;
 - the **minimap button** that opens the fix-report window;
-- the **intro window**, shown once at a first install's first login and never again: the reveal key, the word
-  readings, the minimap button and, while the voice is not installed, where to get it. It is the one window in both
-  languages, a Japanese block above an English one, since the player has not learned the reveal key yet. It has no setting, since it
-  never shows twice.
+- the **welcome window**, shown once to every player (a first install at its first login, a player who already had
+  the addon the first time a version with the question loads): it asks what the player is here for (study Japanese,
+  study English or just play), writes three ordinary settings on Confirm and nothing before, and then names the
+  reveal key, the word cards, the minimap button and, while the voice is not installed, where to get it. It is the
+  one window in both languages, each Japanese line with its English, since the player has not learned the reveal
+  key yet. It never shows by itself twice; the settings pages and `/wfj intro` open it again.
 
 A line without a translation shows the untouched English the client wrote.
 
@@ -50,6 +61,12 @@ English it was translated from, never the English text itself. The exceptions ar
 of a single word, which may use the game's own word where it matches, but never a whole line of the game's text,
 and a link's label inside a Japanese interface line ("[Loot]", "[Click To Upgrade]"), kept byte for byte as part of
 the link the client draws and the player clicks ([ADR-067](../adr/067-ui-lines-with-links-colour-wrapped-names-and-plural-groups.md)).
+The English word card adds one more, with the same limit
+([ADR-081](../adr/081-english-first-and-english-word-cards.md)): per line, the single English words that found a
+Japanese word, lower-cased and sorted by word, each with the place of its Japanese word; a list of everyday words;
+and how each such word is said. Never a sentence, never the words in their order, so the game's text cannot be read
+back from the addon's files. An English word a player saves in English first is kept with the English sentence the
+client showed them, in their own saved word list on their machine, which is never shipped.
 `lint-no-english-in-addon` and a data test check this. See [ADR-002](../adr/002-live-english-only.md).
 
 ## 5. Every translation is keyed by the game

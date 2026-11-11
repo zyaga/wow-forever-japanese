@@ -258,6 +258,52 @@ files (https://hearthstonejson.com) at a pinned build, on the maintainer's machi
 this repository or the addon. Hearthstone's text is Blizzard Entertainment's. The other names were machine-drafted
 to match (`provenance.model` on each line).
 
+## English pronunciations
+
+In English first, the card of an English word shows how the word is said. Those pronunciations come from the
+CMU Pronouncing Dictionary (https://github.com/cmusphinx/cmudict, commit
+`74790861f652b15e4ac49015a90074ad62a27690`), copyright Carnegie Mellon University. What is used: the dictionary's
+pronunciation of each English word a card can show, respelled the way Japanese-English dictionaries write it
+(`data/english/pronunciation.tsv`, whose first line names the source and the commit, and the generated
+`Data/English/English_Pron.lua`). The dictionary file itself was read at that commit on the maintainer's machine
+only and is not part of this repository or the addon. Its notice:
+
+```text
+Copyright (C) 1993-2015 Carnegie Mellon University. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+   The contents of this file are deemed to be source code.
+
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in
+   the documentation and/or other materials provided with the
+   distribution.
+
+This work was supported in part by funding from the Defense Advanced
+Research Projects Agency, the Office of Naval Research and the National
+Science Foundation of the United States of America, and by member
+companies of the Carnegie Mellon Sphinx Speech Consortium. We acknowledge
+the contributions of many volunteers to the expansion and improvement of
+this dictionary.
+
+THIS SOFTWARE IS PROVIDED BY CARNEGIE MELLON UNIVERSITY ``AS IS'' AND
+ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL CARNEGIE MELLON UNIVERSITY
+NOR ITS EMPLOYEES BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+```
+
 ## This project
 
 WoW Forever Japanese ships its own code and translations under GPL-2.0-or-later (see `LICENSE`); every

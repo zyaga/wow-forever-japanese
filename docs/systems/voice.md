@@ -230,7 +230,7 @@ flowchart LR
 - A reload or crash while a line plays: the next load turns the dialog channel back on.
 - A greeting heard before, with *NPC greetings: only the first time* on: silent, the English greeting plays as the client has it, and the window's button reads the Japanese on a click. A greeting whose Japanese changed since is read once more.
 - Two NPC windows opened within 1.5 s: the second window's event takes its own mute; the first one's timer finds a newer token and does nothing.
-- The pack loads before the settings pages exist: the *Voice* and *Voice panel* pages are built with the others (`requires`).
+- The pack loads before the settings pages exist: the *Voice* page (which also holds the voice panel's settings) is built with the others (`requires`).
 - Two NPCs talked to in a row: the second line waits in the list and plays when the first ends; a click on its row plays it now and drops the first.
 - A quest replayed from the log that the addon never saw handed out: the quest's title stands in for the name, no head. After a new client build, heads come back as the NPCs are seen again; names and titles stay.
 - The panel faded on a paused line: it stays away until something plays or the queue changes; the window button is back meanwhile.
