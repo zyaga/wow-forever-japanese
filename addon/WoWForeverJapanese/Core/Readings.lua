@@ -109,15 +109,27 @@ function Readings.englishLookup(kind, id, text)
   local map = type(packed) == "string" and englishMap(packed) or nil
   local words = map and Readings.words(kind, id)
   local out = {}
+  -- → ja, jaReading, gloss for one lower-cased word: from the line's own row, else the common list
+  local function find(lower)
+    local n = map and words and map[lower]
+    if n then
+      if words[3 * n - 2] then return words[3 * n - 2], words[3 * n - 1], words[3 * n] end
+      return nil -- a place past the reading row's end: dropped, never read
+    end
+    local common = WFJ.Data.common[lower]
+    if type(common) == "string" then return common:match("^([^=]+)=([^=]+)$") end
+    return nil
+  end
   for first, token, after in text:gmatch("()([%a']+)()") do
     local lower = token:lower()
-    local n = map and words and map[lower]
-    local ja, jaReading, gloss
-    if n and words[3 * n - 2] then
-      ja, jaReading, gloss = words[3 * n - 2], words[3 * n - 1], words[3 * n]
-    elseif not n then
-      local common = WFJ.Data.common[lower]
-      if type(common) == "string" then ja, jaReading = common:match("^([^=]+)=([^=]+)$") end
+    local ja, jaReading, gloss = find(lower)
+    if not ja then
+      -- a contraction with no card of its own takes its first word's (you're → you, let's → let)
+      local head = lower:match("^(%a+)'")
+      if head then
+        ja, jaReading, gloss = find(head)
+        lower = ja and head or lower
+      end
     end
     if ja then
       out[#out + 1] = { first = first, last = after - 1, word = token,

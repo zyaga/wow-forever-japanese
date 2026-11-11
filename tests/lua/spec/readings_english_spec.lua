@@ -61,6 +61,15 @@ describe("Readings.englishLookup", function()
     end
   end)
 
+  it("a contraction with no card of its own takes its first word's, over the whole contraction", function()
+    WFJ.Data.add("common", { you = "あなた=あなた", let = "させる=させる" })
+    local text = "You're late; let's hunt. Isn't it?"
+    local spans = R.englishLookup("quest.description", 1, text)
+    local got = {}
+    for _, s in ipairs(spans) do got[#got + 1] = text:sub(s.first, s.last) .. ">" .. s.card.ja end
+    assert.are.same({ "You're>あなた", "let's>させる", "hunt>狩り" }, got)
+  end)
+
   it("an index past the reading row's end is dropped, never read", function()
     WFJ.Data.add("english", { ["quest:2"] = { description = "hunt=9" } })
     WFJ.Data.add("reading", { ["quest:2"] = { description = "狩り=かり" } })

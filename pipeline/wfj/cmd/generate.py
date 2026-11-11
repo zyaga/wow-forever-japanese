@@ -14,7 +14,7 @@ from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
 
-from wfj.core import align, glosses, numbered, readings, tooltip_text
+from wfj.core import align, english_cards, glosses, numbered, pronunciation, readings, tooltip_text
 from wfj.core.align import load_allowlist
 from wfj.core.english_text import model_english
 from wfj.core.hashing import key as hash_key
@@ -252,7 +252,7 @@ def plan(store: Store, vectors: list[dict], report: dict[str, Any] | None = None
     _plan_keyed_types(store, english_store, out, counts, english, report, alias_of, quest_keyed)
     _plan_ui(store, english_store, out, counts, english)
     numbers: dict[str, str] | None = {} if report is not None else None
-    _plan_readings(store, out, counts, alias_of, quest_keyed, numbers)
+    _plan_readings(store, out, counts, alias_of, quest_keyed, numbers, english_store)
     if report is not None and numbers and numbers["text"]:  # nothing to number: the report is unchanged
         report["meaning_numbers"] = numbers["text"]
     # One version per source is still the rule, and a mixed store is still a data error, except for the
@@ -478,8 +478,10 @@ def _plan_readings(
     alias_of: dict[str, dict[str, str]] | None = None,
     quest_keyed: dict[str, tuple[int, str]] | None = None,
     numbers: dict[str, str] | None = None,
+    english_store: Store | None = None,
 ) -> None:
-    """The readings shards and the meanings table they point into. `numbers`, when given, receives `text`:
+    """The readings shards and the meanings table they point into, and, with `english_store`, the English
+    word card rows beside them (each line's English words matched to its Japanese words). `numbers`, when given, receives `text`:
     the numbers file as it must be on disk. A gender alias key (the female variant of
     a line, repeated under its own English hash) gets its line's reading too: the addon finds a female
     character's line under the alias, and without the copy its words would have no reading."""
@@ -494,6 +496,9 @@ def _plan_readings(
             first = "; ".join(result["problems"][:5])
             raise ValueError(f"invalid data/reading/ records (first shown): {first}")
         current[type_] = readings.addon_keyed(type_, result["current"], store.load(type_))
+        if english_store is not None:
+            # before the alias copies below, so a copy carries its line's row: an alias has no English of its own
+            current[type_] = _with_english(type_, current[type_], english_store.load(type_))
         aliases = (alias_of or {}).get(type_, {})
         if aliases:
             by_key = {rec["id"]: rec for rec in current[type_]}
@@ -527,6 +532,8 @@ def _plan_readings(
             by_rs.setdefault(shard, []).append(rec)
         for shard, recs in sorted(by_rs.items(), key=lambda kv: str(kv[0])):
             out[schema.reading_relpath(type_, shard)] = lua_writer.reading_text(type_, shard, recs, meanings)
+            if any(rec.get("english") for rec in recs):
+                out[schema.english_relpath(type_, shard)] = lua_writer.english_text(type_, recs)
         counts["reading"] += len(recs_of_type)  # lines with readings
     by_gs: dict[int, dict[int, glosses.Meaning]] = {}
     for m, n in meanings.items():
@@ -534,6 +541,78 @@ def _plan_readings(
     for gshard, rows in sorted(by_gs.items()):
         out[schema.gloss_relpath(gshard)] = lua_writer.gloss_text(gshard, rows)
     counts["gloss"] = len(meanings)
+    if english_store is not None:
+        counts["english"] = sum(1 for recs in current.values() for rec in recs if rec.get("english"))
+        _plan_english_words(english_store.root, current, out)
+
+
+def _with_english(
+    type_: str, records: list[dict[str, Any]], english_lines: list[dict[str, Any]]
+) -> list[dict[str, Any]]:
+    """The reading records, each with its English word card row (`english`) when its line has English and a
+    word of it found a Japanese word. A book page's reading is keyed by its English hash by now."""
+    en: dict[tuple[Any, str], str] = {}
+    for ln in english_lines:
+        key = ln.get("hash") if type_ == "book" else ln["id"]
+        if key is not None and isinstance(ln.get("en"), str):
+            en.setdefault((key, ln["field"]), ln["en"])
+    out = []
+    for rec in records:
+        text = en.get((rec["id"], rec["field"]))
+        row = english_cards.pack(english_cards.invert(text, rec["words"])) if text else ""
+        out.append(rec | {"english": row} if row else rec)
+    return out
+
+
+COMMON_WORDS = "common-words.jsonl"  # beside the English types in data/english/
+PRONUNCIATION = "pronunciation.tsv"
+
+
+def load_common_words(english_root: Path) -> dict[str, tuple[str, str]]:
+    """{English word: (Japanese word, its reading)} from `data/english/common-words.jsonl`; none without it."""
+    path = english_root / COMMON_WORDS
+    if not path.is_file():
+        return {}
+    out: dict[str, tuple[str, str]] = {}
+    for n, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
+        if not line.strip():
+            continue
+        rec = json.loads(line)
+        word, ja, reading = rec.get("word"), rec.get("ja"), rec.get("reading")
+        if not (isinstance(word, str) and isinstance(ja, str) and isinstance(reading, str)) or not rec.get(
+            "provenance"
+        ):
+            raise ValueError(f"{COMMON_WORDS}:{n}: word, ja, reading and provenance are required")
+        if word != word.lower() or english_cards.tokens(word) != [word] or "=" in ja + reading or " " in ja + reading:
+            raise ValueError(f"{COMMON_WORDS}:{n}: {word!r} is not one lower-case word with a plain Japanese word")
+        if word in out:
+            raise ValueError(f"{COMMON_WORDS}:{n}: {word!r} is listed twice")
+        out[word] = (ja, reading)
+    return out
+
+
+def _plan_english_words(
+    english_root: Path, current: dict[str, list[dict[str, Any]]], out: dict[str, str]
+) -> None:
+    """The common word list and the pronunciation table, the latter cut down to the words a card can show."""
+    common = load_common_words(english_root)
+    if common:
+        out[schema.ENGLISH_COMMON] = lua_writer.word_table_text(
+            "common", {w: f"{ja}={reading}" for w, (ja, reading) in common.items()},
+            "everyday English words with a Japanese word and its reading",
+        )
+    path = english_root / PRONUNCIATION
+    if not path.is_file():
+        return
+    said, _ = pronunciation.parse_table(path.read_text(encoding="utf-8"))
+    used = set(common)
+    for recs in current.values():
+        for rec in recs:
+            for pair in (rec.get("english") or "").split():
+                used.add(pair.rpartition("=")[0])
+    rows = {w: said[w] for w in used if w in said}
+    if rows:
+        out[schema.ENGLISH_PRON] = lua_writer.word_table_text("pron", rows, "how each English word on a card is said")
 
 
 def reading_store_of(store: Store) -> Store:
