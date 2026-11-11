@@ -1,19 +1,21 @@
 -- UI/Preview.lua: look-only samples of screens that are not built yet, opened with /wfj preview <name>, so their
 -- look can be judged in the game before the real ones are written. Temporary: this file and its slash entry are
 -- removed once the real screens exist. Every text here is a made-up sample or the addon's own copy, never game text.
---   /wfj preview card    an English word card over a sample sentence (the pronunciation in the client's font)
---   /wfj preview card2   the same, the pronunciation in the bundled font
+--   /wfj preview card    an English word card over a sample sentence
 --   /wfj preview study   an English study card, its front beside its back
 local _, WFJ = ...
 local Preview = {}
 WFJ.Preview = Preview
 
 local W = WFJ.OptionsWidgets
-local CLIENT_FONT = "Fonts\\ARIALN.TTF" -- the client's narrow face: the bundled one lacks some pronunciation letters
+local CLIENT_FONT = "Fonts\\ARIALN.TTF" -- the face the client draws its own English in
+-- The pronunciation is written the way Japanese-English dictionaries write it (i for the vowel of "sit", e for the
+-- vowel of "bed"): every letter of that spelling is in the bundled font, and neither the client's faces nor the
+-- bundled one have the three letters the international spelling adds.
 
 local SAMPLE = {
   sentence = "Defeat the wolves near the river and bring back their pelts.",
-  word = "defeat", ipa = "/dɪˈfiːt/", ja = "倒して", reading = "たおして", lemma = "倒す", lemmaReading = "たおす",
+  word = "defeat", ipa = "/diˈfiːt/", ja = "倒して", reading = "たおして", lemma = "倒す", lemmaReading = "たおす",
   jaSentence = "川の近くにいる狼を倒して、毛皮を持ち帰ってくれ。",
 }
 
@@ -37,10 +39,15 @@ end
 
 local cardWindow
 local function buildCard()
-  local f = W.toolWindow("WFJPreviewCard", 520, 250)
+  local f = W.toolWindow("WFJPreviewCard", 520, 210)
+  if f.Inset then
+    f.Inset:ClearAllPoints()
+    f.Inset:SetPoint("TOPLEFT", 4, -24)
+    f.Inset:SetPoint("BOTTOMRIGHT", -6, 4)
+  end
   W.put(f.title, "Preview: English word card", 13)
   f.sentence = text(f, 15, 1, 1, 1, CLIENT_FONT)
-  f.sentence:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", 26, 46)
+  f.sentence:SetPoint("BOTTOMLEFT", f, "BOTTOMLEFT", 26, 28)
   f.sentence:SetText(SAMPLE.sentence)
   -- the tint a highlighted word gets, over the sample's first word
   f.tint = f:CreateTexture(nil, "ARTWORK")
@@ -53,7 +60,7 @@ local function buildCard()
   c.word = text(c, 16, 1, 1, 1)
   c.word:SetPoint("TOPLEFT", 10, -10)
   c.word:SetText(SAMPLE.word)
-  c.ipa = text(c, 13, 1, 0.82, 0, CLIENT_FONT)
+  c.ipa = text(c, 13, 1, 0.82, 0)
   c.ipa:SetPoint("LEFT", c.word, "RIGHT", 8, 0)
   c.ja = text(c, 15, 0.75, 0.83, 0.95)
   c.ja:SetPoint("TOPLEFT", c.word, "BOTTOMLEFT", 0, -6)
@@ -64,15 +71,14 @@ local function buildCard()
   c.hint = text(c, 11, 0.6, 0.6, 0.6)
   c.hint:SetPoint("TOPLEFT", c.lemma, "BOTTOMLEFT", 0, -6)
   c.hint:SetText("Ctrl+clickで単語を保存")
-  c:SetSize(280, 108)
+  c:SetSize(280, 96)
   f.card = c
   cardWindow = f
   return f
 end
 
-local function openCard(bundled)
+local function openCard()
   local f = cardWindow or buildCard()
-  if bundled then WFJ.Font.set(f.card.ipa, WFJ.Font.PATH, 13, "") else f.card.ipa:SetFont(CLIENT_FONT, 13, "") end
   f.card.ipa:SetText(SAMPLE.ipa)
   f:Show()
 end
@@ -99,7 +105,7 @@ local function side(parent, answered)
     rule:SetColorTexture(1, 0.82, 0, 0.45)
     rule:SetPoint("TOPLEFT", sentence, "BOTTOMLEFT", 0, -9)
     rule:SetSize(inner, 1)
-    local ipa = text(f, 14, 1, 0.82, 0, CLIENT_FONT)
+    local ipa = text(f, 14, 1, 0.82, 0)
     ipa:SetPoint("TOPLEFT", rule, "BOTTOMLEFT", 0, -9)
     ipa:SetText(SAMPLE.ipa)
     local ja = text(f, 16, 1, 1, 1)
@@ -130,10 +136,15 @@ local function side(parent, answered)
 end
 
 local function buildStudy()
-  local f = W.toolWindow("WFJPreviewStudy", 700, 330)
+  local f = W.toolWindow("WFJPreviewStudy", 700, 310)
+  if f.Inset then
+    f.Inset:ClearAllPoints()
+    f.Inset:SetPoint("TOPLEFT", 4, -24)
+    f.Inset:SetPoint("BOTTOMRIGHT", -6, 4)
+  end
   W.put(f.title, "Preview: English study card (front, then back)", 13)
   local front = side(f, false)
-  front:SetPoint("TOPLEFT", 20, -44)
+  front:SetPoint("TOPLEFT", 20, -40)
   local back = side(f, true)
   back:SetPoint("TOPLEFT", front, "TOPRIGHT", 16, 0)
   studyWindow = f
@@ -143,7 +154,7 @@ end
 -- ── Entry point ─────────────────────────────────────────────────────────────
 
 function Preview.open(name, say)
-  if name == "card" or name == "card2" then return openCard(name == "card2") end
+  if name == "card" then return openCard() end
   if name == "study" then return (studyWindow or buildStudy()):Show() end
-  say("preview: card | card2 | study")
+  say("preview: card | study")
 end
