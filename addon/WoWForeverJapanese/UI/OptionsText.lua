@@ -400,9 +400,10 @@ Text.T = {
   ["intro.close"] = { en = "Close", ja = "閉じる" },
   -- the purpose question the intro opens with, and the lines that change with the answer
   ["intro.ask"] = { en = "What are you here for?", ja = "どのように使いますか？" },
-  ["intro.pick.ja"] = { en = "I'm studying Japanese", ja = "日本語を勉強しています" },
-  ["intro.pick.en"] = { en = "I'm studying English", ja = "英語を勉強しています" },
-  ["intro.pick.play"] = { en = "I just want the game in Japanese", ja = "日本語でプレイしたいだけ" },
+  ["intro.pick.ja"] = { en = "Study Japanese", ja = "日本語を学ぶ" },
+  ["intro.pick.en"] = { en = "Study English", ja = "英語を学ぶ" },
+  ["intro.pick.play"] = { en = "Just play", ja = "日本語で遊ぶ" },
+  ["intro.back"] = { en = "Back", ja = "戻る" },
   ["intro.later"] = { en = "You can change this later in the settings.", ja = "あとで設定から変更できます。" },
   ["intro.key"] = { en = "Hold key", ja = "押すキー" },
   ["intro.lead.en"] = { en = "The game stays in English, with Japanese one key away.",

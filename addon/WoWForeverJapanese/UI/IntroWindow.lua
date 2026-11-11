@@ -18,7 +18,6 @@ local TOP, BOTTOM, PAD = INSET_TOP + 4, INSET_BOTTOM + 4, 12
 local LINE, BLOCK = 7, 14 -- between lines in a block; above and below the rule between the two blocks
 local HEAD = 10 -- under a block's opening line
 local KEY = "|cffffd200%s|r" -- the reveal key's name, in the gold the client uses for key names
-local BULLETS = { ja = "・", en = "• " }
 local BOX, BUTTON = 20, 22
 
 IntroWindow.frame = nil
@@ -26,32 +25,42 @@ IntroWindow.closedByPlayer = false -- Close, Esc or any hide outside a cinematic
 IntroWindow.waiting = false -- a cinematic is playing: open when it ends
 local watcher -- the frame that hears the cinematic events, made by the first request
 
-IntroWindow.purpose = nil -- "ja" | "en" | "play" once the player picks one; nil reads as "ja" (today's defaults)
+IntroWindow.purpose = nil -- "ja" | "en" | "play" once the player picks one
+IntroWindow.step = "pick" -- "pick": the question and its three cards; "info": what the choice means
 local PURPOSES = { "ja", "en", "play" }
-local CHOICE = 28 -- a purpose button's height
+-- The client's own icons, one per choice: a scroll, a book, a sword.
+local ICONS = { ja = "Interface\\Icons\\INV_Scroll_03", en = "Interface\\Icons\\INV_Misc_Book_09",
+  play = "Interface\\Icons\\INV_Sword_27" }
+local CARD_GAP = 12
+local CARD_W, CARD_H = math.floor((TEXT_WIDTH - 2 * CARD_GAP) / 3), 150
+local PAIR, POINT = 3, 12 -- between a point's Japanese and its English; between two points
+local CHANGE = 110 -- the Change button's room at the right of the hold-key point
+local BORDER, BORDER_ON = { 0.45, 0.38, 0.25 }, W.GOLD
 
--- Two font strings per line, not W.label: a W.label re-shows one language whenever the reveal key flips.
-local function line(p)
+-- The choice the window shows as picked: the player's, else the one the settings already match.
+local function shownPurpose()
+  if IntroWindow.purpose then return IntroWindow.purpose end
+  return WFJ.Settings.get("readings.enabled") == true and "ja" or "play"
+end
+
+-- Two font strings per point, not W.label: a W.label re-shows one language whenever the reveal key flips. The
+-- Japanese line sits above its English, so each point reads as one thing in both languages.
+local function line(p, width)
   local r = {}
   r.ja = p:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
   r.en = p:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
   for _, fs in ipairs({ r.ja, r.en }) do
-    fs:SetWidth(TEXT_WIDTH)
+    fs:SetWidth(width or TEXT_WIDTH)
     fs:SetJustifyH("LEFT")
   end
   r.en:SetTextColor(W.JA_COLOR[1], W.JA_COLOR[2], W.JA_COLOR[3])
   return r
 end
 
--- A point's two texts, each with its block's bullet; the opening line has none and is a size up.
+-- A point's two texts; the opening line is a size up.
 local function fill(r, en, ja, lead)
-  if lead then
-    W.put(r.ja, ja, 13)
-    W.put(r.en, en, 12)
-  else
-    W.put(r.ja, BULLETS.ja .. ja, 12)
-    W.put(r.en, BULLETS.en .. en, 11)
-  end
+  W.put(r.ja, ja, lead and 14 or 13)
+  W.put(r.en, en, lead and 12 or 11)
 end
 
 -- The wrapped height of a line [likely: FontString:GetStringHeight with a set width; in-game check: the intro window
@@ -62,23 +71,44 @@ end
 
 local function rule(p)
   local t = p:CreateTexture(nil, "ARTWORK")
-  t:SetColorTexture(W.GOLD[1], W.GOLD[2], W.GOLD[3], 0.45)
+  t:SetColorTexture(W.GOLD[1], W.GOLD[2], W.GOLD[3], 0.35)
   t:SetSize(TEXT_WIDTH, 1)
   return t
 end
 
--- A purpose button: one caption with both languages (so W.pick has nothing to switch) and a tick while it is the
--- one picked.
-local function choice(p, purpose)
+local function edge(card, on)
+  local c = on and BORDER_ON or BORDER
+  if card.SetBackdropBorderColor then card:SetBackdropBorderColor(c[1], c[2], c[3], 1) end
+  if not card.SetBackdropColor then return end
+  if on then card:SetBackdropColor(0.16, 0.13, 0.07, 0.95) else card:SetBackdropColor(0.07, 0.06, 0.05, 0.95) end
+end
+
+-- A choice card: an icon, the English under it and the Japanese under that. It lights up under the mouse and stays
+-- lit while it is the one picked; a click picks it and goes on to the second page.
+local function card(p, purpose)
+  local c = CreateFrame("Button", nil, p, "BackdropTemplate")
+  c:SetSize(CARD_W, CARD_H)
+  if c.SetBackdrop then
+    c:SetBackdrop({ bgFile = "Interface\\Buttons\\WHITE8x8", edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
+      edgeSize = 14, insets = { left = 3, right = 3, top = 3, bottom = 3 } })
+  end
+  c.icon = c:CreateTexture(nil, "ARTWORK")
+  c.icon:SetTexture(ICONS[purpose])
+  c.icon:SetSize(56, 56)
+  c.icon:SetPoint("TOP", 0, -20)
   local en, ja = Text.get("intro.pick." .. purpose)
-  local b = W.button(p, ja .. "　/　" .. en, nil, TEXT_WIDTH, function() IntroWindow.pick(purpose) end)
-  b:SetHeight(CHOICE)
-  b.tick = b:CreateTexture(nil, "OVERLAY")
-  b.tick:SetTexture("Interface\\Buttons\\UI-CheckBox-Check")
-  b.tick:SetSize(22, 22)
-  b.tick:SetPoint("LEFT", 8, 0)
-  b.tick:Hide()
-  return b
+  c.en = c:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
+  c.en:SetPoint("TOP", c.icon, "BOTTOM", 0, -14)
+  W.put(c.en, en, 14)
+  c.ja = c:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+  c.ja:SetPoint("TOP", c.en, "BOTTOM", 0, -6)
+  W.put(c.ja, ja, 13)
+  c.ja:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3])
+  c:SetScript("OnEnter", function(self) edge(self, true) end)
+  c:SetScript("OnLeave", function(self) edge(self, self.picked) end)
+  c:SetScript("OnClick", function() IntroWindow.pick(purpose) end)
+  edge(c, false)
+  return c
 end
 
 local function build()
@@ -86,50 +116,60 @@ local function build()
   -- where the client opens its own popups, clear of the character [verified: forever-ui-1.60.1.70425
   -- blizzard_staticpopup_game/gamedialog.xml:350, TOP 0,-135]; it grows down, so the voice section moves nothing
   f:ClearAllPoints()
-  f:SetPoint("TOP", 0, -110)
+  f:SetPoint("TOP", 0, -135)
   if f.Inset then
     f.Inset:ClearAllPoints()
     f.Inset:SetPoint("TOPLEFT", 4, -INSET_TOP)
     f.Inset:SetPoint("BOTTOMRIGHT", -6, INSET_BOTTOM)
   end
-  local p = CreateFrame("Frame", nil, f)
-  p:SetPoint("TOPLEFT", 0, -TOP)
-  p:SetPoint("TOPRIGHT", 0, -TOP)
-  p:SetHeight(1)
-  f.page = p
   W.put(f.title, WFJ.Options.TITLE, 13)
-  -- the question and its three answers
-  f.ask = line(p)
+  local function page()
+    local p = CreateFrame("Frame", nil, f)
+    p:SetPoint("TOPLEFT", 0, -TOP)
+    p:SetPoint("BOTTOMRIGHT", 0, BOTTOM)
+    return p
+  end
+
+  -- the first page: the question and its three answers
+  local a = page()
+  f.pickPage = a
+  f.ask = line(a)
   local en, ja = Text.get("intro.ask")
-  W.put(f.ask.ja, ja, 15)
+  W.put(f.ask.ja, ja, 17)
   W.put(f.ask.en, en, 12)
   f.ask.ja:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3])
-  f.choices = {}
-  for _, purpose in ipairs(PURPOSES) do f.choices[purpose] = choice(p, purpose) end
-  f.later = p:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+  for _, fs in ipairs({ f.ask.ja, f.ask.en }) do fs:SetJustifyH("CENTER") end
+  f.cards = {}
+  for _, purpose in ipairs(PURPOSES) do f.cards[purpose] = card(a, purpose) end
+  f.later = a:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+  f.later:SetWidth(TEXT_WIDTH)
+  f.later:SetJustifyH("CENTER")
   en, ja = Text.get("intro.later")
   W.put(f.later, ja .. "　" .. en, 11)
   f.later:SetTextColor(W.JA_COLOR[1], W.JA_COLOR[2], W.JA_COLOR[3])
-  -- the reveal key by name, with the settings page's own Change button beside it
-  f.key = p:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
-  f.capture = WFJ.KeyCapture.new(p, { mode = "reveal", width = 105, onKey = function(v)
+
+  -- the second page: what a new player must know, each point in Japanese with its English under it. The hold-key
+  -- point leaves room for the settings page's own Change button at its right.
+  local b = page()
+  f.infoPage = b
+  f.lead, f.hold, f.readings, f.minimap, f.voice = line(b), line(b, TEXT_WIDTH - CHANGE - 10), line(b), line(b), line(b)
+  f.lead.ja:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3])
+  f.capture = WFJ.KeyCapture.new(b, { mode = "reveal", width = CHANGE, onKey = function(v)
     WFJ.Options.setModifier(v)
     IntroWindow.refill()
   end, onRefused = function() IntroWindow.refill() end })
-  -- what a new player must know: a Japanese block above an English one
-  f.lead, f.hold, f.readings, f.minimap, f.voice = line(p), line(p), line(p), line(p), line(p)
-  for _, fs in ipairs({ f.lead.ja, f.lead.en }) do fs:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3]) end
-  f.box = W.copyBox(p, LEFT, 0, TEXT_WIDTH - 12, WFJ.Options.VOICE_URL)
-  en, ja = Text.get("intro.voice")
-  W.put(f.voice.ja, ja, 12)
-  W.put(f.voice.en, en, 11)
-  f.voiceTitle = p:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
+  f.box = W.copyBox(b, LEFT, 0, TEXT_WIDTH - 12, WFJ.Options.VOICE_URL)
+  fill(f.voice, Text.get("intro.voice"))
+  f.voiceTitle = b:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
   en, ja = Text.get("intro.voiceTitle")
-  W.put(f.voiceTitle, ja .. " / " .. en, 13)
+  W.put(f.voiceTitle, ja .. " / " .. en, 14)
   f.voiceTitle:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3])
-  f.askRule, f.rule, f.voiceRule = rule(p), rule(p), rule(p)
+  f.leadRule, f.voiceRule = rule(b), rule(b)
+  -- the foot: Back at the left, Close at the right, each caption in both languages (nothing for W.pick to switch)
+  en, ja = Text.get("intro.back")
+  f.back = W.button(b, ja .. " / " .. en, nil, 130, function() IntroWindow.show("pick") end)
   en, ja = Text.get("intro.close")
-  f.close = W.button(p, ja .. " / " .. en, nil, 140, function() IntroWindow.close() end)
+  f.close = W.button(b, ja .. " / " .. en, nil, 130, function() IntroWindow.close() end)
   f:HookScript("OnHide", function() IntroWindow.hidden() end)
   IntroWindow.frame = f
   return f
@@ -140,17 +180,36 @@ local function later(fn, seconds)
   if type(C_Timer) == "table" and type(C_Timer.After) == "function" then C_Timer.After(seconds or 1, fn) else fn() end
 end
 
--- The lines the blocks show for the purpose picked: playing only has no word cards to mention.
-local function rows(f)
-  if IntroWindow.purpose == "play" then return { f.lead, f.hold, f.minimap } end
-  return { f.lead, f.hold, f.readings, f.minimap }
+-- The points for the choice shown: playing only has no word cards to mention.
+local function points(f)
+  if shownPurpose() == "play" then return { f.hold, f.minimap } end
+  return { f.hold, f.readings, f.minimap }
 end
 
--- The question, its three answers and the reveal key; a gold rule; the Japanese lines as one block, a rule, their
--- English as another; while no voice pack has loaded, another rule and the voice section; then the button.
--- Each piece hangs from the one above it, so the gaps never depend on a measured height; only the window's does.
-local function layout(f, voice)
-  local list = rows(f)
+-- The first page: the question centred, the three cards side by side, the note under them.
+local function layoutPick(f)
+  local a = f.pickPage
+  f.ask.ja:ClearAllPoints()
+  f.ask.ja:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT, -PAD - 4)
+  f.ask.en:ClearAllPoints()
+  f.ask.en:SetPoint("TOPLEFT", f.ask.ja, "BOTTOMLEFT", 0, -4)
+  local used = PAD + 4 + height(f.ask.ja) + 4 + height(f.ask.en)
+  for i, purpose in ipairs(PURPOSES) do
+    local c = f.cards[purpose]
+    c:ClearAllPoints()
+    c:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT + (i - 1) * (CARD_W + CARD_GAP), -(used + 18))
+  end
+  used = used + 18 + CARD_H
+  f.later:ClearAllPoints()
+  f.later:SetPoint("TOPLEFT", a, "TOPLEFT", LEFT, -(used + 14))
+  used = used + 14 + height(f.later)
+  f:SetHeight(TOP + used + PAD + 6 + BOTTOM)
+end
+
+-- The second page: the opening line, a rule, the points; while no voice pack has loaded, a rule and the voice
+-- section; then the two buttons. Each piece hangs from the one above it, so the gaps never depend on a measured
+-- height; only the window's does.
+local function layoutInfo(f, voice)
   local prev, used
   local function chain(region, gap, x, h)
     region:ClearAllPoints()
@@ -158,32 +217,33 @@ local function layout(f, voice)
     used = used + gap + (h or (region.GetObjectType and region:GetObjectType() == "FontString" and height(region) or 0))
     prev = region
   end
-  f.ask.ja:ClearAllPoints()
-  f.ask.ja:SetPoint("TOPLEFT", f.page, "TOPLEFT", LEFT, -PAD)
-  prev, used = f.ask.ja, height(f.ask.ja)
-  chain(f.ask.en, 3)
-  for i, purpose in ipairs(PURPOSES) do chain(f.choices[purpose], i == 1 and HEAD + 2 or 6, 0, CHOICE) end
-  chain(f.later, 8)
-  chain(f.key, BLOCK)
-  f.capture.button:ClearAllPoints()
-  f.capture.button:SetPoint("LEFT", f.key, "LEFT", 200, 0)
-  chain(f.askRule, BLOCK)
-  chain(list[1].ja, BLOCK)
-  for i = 2, #list do chain(list[i].ja, i == 2 and HEAD or LINE) end
-  chain(f.rule, BLOCK)
-  chain(list[1].en, BLOCK)
-  for i = 2, #list do chain(list[i].en, i == 2 and HEAD or LINE) end
-  if voice then
-    chain(f.voiceRule, BLOCK)
-    chain(f.voiceTitle, BLOCK)
-    chain(f.voice.ja, HEAD)
-    chain(f.voice.en, LINE)
-    chain(f.box, LINE + 2, 6) -- InputBoxTemplate's left cap sits outside the frame
-    used = used + BOX
+  local function pair(r, gap)
+    chain(r.ja, gap)
+    chain(r.en, PAIR)
   end
+  f.lead.ja:ClearAllPoints()
+  f.lead.ja:SetPoint("TOPLEFT", f.infoPage, "TOPLEFT", LEFT, -PAD - 2)
+  prev, used = f.lead.ja, PAD + 2 + height(f.lead.ja)
+  chain(f.lead.en, PAIR)
+  chain(f.leadRule, BLOCK, 0, 1)
+  for i, r in ipairs(points(f)) do pair(r, i == 1 and BLOCK or POINT) end
+  f.capture.button:ClearAllPoints()
+  f.capture.button:SetPoint("TOPRIGHT", f.hold.ja, "TOPLEFT", TEXT_WIDTH, 3)
+  if voice then
+    chain(f.voiceRule, BLOCK + 2, 0, 1)
+    chain(f.voiceTitle, BLOCK)
+    pair(f.voice, HEAD)
+    chain(f.box, LINE + 2, 6, BOX) -- InputBoxTemplate's left cap sits outside the frame
+  end
+  f.back:ClearAllPoints()
+  f.back:SetPoint("BOTTOMLEFT", f.infoPage, "BOTTOMLEFT", LEFT, PAD)
   f.close:ClearAllPoints()
-  f.close:SetPoint("BOTTOM", f, "BOTTOM", 0, BOTTOM + PAD)
-  f:SetHeight(TOP + PAD + used + BLOCK + BUTTON + PAD + BOTTOM)
+  f.close:SetPoint("BOTTOMRIGHT", f.infoPage, "BOTTOMRIGHT", -LEFT, PAD)
+  f:SetHeight(TOP + used + BLOCK + 6 + BUTTON + PAD + BOTTOM)
+end
+
+local function layout(f)
+  if IntroWindow.step == "info" then layoutInfo(f, f.voiceShown) else layoutPick(f) end
 end
 
 local function refused(f)
@@ -196,13 +256,13 @@ end
 -- A first install's first login is a fresh launch, when the client refuses the bundled face until its file loads
 -- (UI/Font, Main's font retry): the lines were measured in another face and wrap differently once it lands. Checks
 -- once a second and lays the window out again when Font's retry has applied it, for as long as Main keeps retrying.
-local function relayoutWhenFonts(f, voice)
+local function relayoutWhenFonts(f)
   if f.fontTicker or not refused(f) or type(C_Timer) ~= "table" then return end
   local tries = 0
   f.fontTicker = C_Timer.NewTicker(1, function(ticker)
     tries = tries + 1
     local waiting = refused(f)
-    if not waiting and f:IsShown() then layout(f, voice) end
+    if not waiting and f:IsShown() then layout(f) end
     if not waiting or tries >= 600 then
       ticker:Cancel()
       f.fontTicker = nil
@@ -210,50 +270,57 @@ local function relayoutWhenFonts(f, voice)
   end)
 end
 
--- Writes the lines for the purpose picked and the reveal key as it is set now, and lays the window out.
+-- Writes the lines for the choice shown and the reveal key as it is set now, marks the picked card, and lays the
+-- page on screen out.
 function IntroWindow.refill()
   local f = IntroWindow.frame
   if not f then return end
-  local english = IntroWindow.purpose == "en"
+  local shown = shownPurpose()
+  local english = shown == "en"
   local key = KEY:format(WFJ.Options.keyName())
   local leadEn, leadJa = Text.get(english and "intro.lead.en" or "intro.lead")
   fill(f.lead, leadEn, leadJa, true)
   fill(f.hold, Text.get(english and "intro.hold.en" or "intro.hold", key))
   fill(f.readings, Text.get(english and "intro.readings.en" or "intro.readings"))
   fill(f.minimap, Text.get("intro.minimap"))
-  local en, ja = Text.get("intro.key")
-  W.put(f.key, ("%s / %s：%s"):format(ja, en, key), 12)
-  for _, r in ipairs({ f.readings }) do
-    W.setShown(r.ja, IntroWindow.purpose ~= "play")
-    W.setShown(r.en, IntroWindow.purpose ~= "play")
+  W.setShown(f.readings.ja, shown ~= "play")
+  W.setShown(f.readings.en, shown ~= "play")
+  for purpose, c in pairs(f.cards) do
+    c.picked = IntroWindow.purpose == purpose
+    edge(c, c.picked)
   end
-  for purpose, b in pairs(f.choices) do
-    W.setShown(b.tick, IntroWindow.purpose == purpose)
-    if IntroWindow.purpose == purpose then b:LockHighlight() else b:UnlockHighlight() end
+  W.setShown(f.pickPage, IntroWindow.step ~= "info")
+  W.setShown(f.infoPage, IntroWindow.step == "info")
+  for _, region in ipairs({ f.voiceRule, f.voiceTitle, f.voice.ja, f.voice.en, f.box }) do
+    W.setShown(region, f.voiceShown)
   end
-  layout(f, f.voiceShown)
+  layout(f)
   -- a FontString given new text may report its old height until the client has drawn it once [likely; in-game
   -- check: the intro window checklist in docs/testing/strategy.md]: the height is taken again on the next frame
-  later(function() if f:IsShown() then layout(f, f.voiceShown) end end, 0)
+  later(function() if f:IsShown() then layout(f) end end, 0)
 end
 
--- The player's answer. Playing only turns the word cards off and the other two turn them on; English first has no
--- setting to write yet, so the window only shows its wording.
+-- Shows one of the two pages.
+function IntroWindow.show(step)
+  IntroWindow.step = step
+  IntroWindow.refill()
+end
+
+-- The player's answer, then the second page. Playing only turns the word cards off and the other two turn them on;
+-- English first has no setting to write yet, so the window only shows its wording.
 function IntroWindow.pick(purpose)
   IntroWindow.purpose = purpose
   WFJ.Settings.set("readings.enabled", purpose ~= "play")
-  IntroWindow.refill()
+  IntroWindow.show("info")
 end
 
--- Shows the voice section only without a pack, and shows the window. → the frame
+-- Opens on the question, with the voice section on the second page only without a pack. → the frame
 -- noVoice: draws the voice section as if no pack had loaded (`/wfj debug intro novoice`).
 function IntroWindow.open(noVoice)
   local f = IntroWindow.frame or build()
-  local voice = noVoice == true or not (WFJ.Voice and WFJ.Voice.hasPack())
-  f.voiceShown = voice
-  for _, region in ipairs({ f.voiceRule, f.voiceTitle, f.voice.ja, f.voice.en, f.box }) do W.setShown(region, voice) end
-  IntroWindow.refill()
-  relayoutWhenFonts(f, voice)
+  f.voiceShown = noVoice == true or not (WFJ.Voice and WFJ.Voice.hasPack())
+  IntroWindow.show("pick")
+  relayoutWhenFonts(f)
   f:Show()
   return f
 end
