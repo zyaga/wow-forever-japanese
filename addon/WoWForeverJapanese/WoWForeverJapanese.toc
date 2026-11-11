@@ -1969,5 +1969,6 @@ UI\MinimapButton.lua
 UI\RevealBinding.lua
 UI\AddonListButton.lua
 UI\Options.lua
+UI\Preview.lua
 UI\Slash.lua
 Main.lua

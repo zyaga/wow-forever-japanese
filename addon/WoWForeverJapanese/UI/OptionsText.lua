@@ -49,6 +49,21 @@ Text.T = {
   ["words.ankiPath"] = { en = "Copy them into Anki's media folder (Mac, then Windows; User 1 is Anki's first profile):",
     ja = "Ankiのメディアフォルダにコピーしてください（上がMac、下がWindows。User 1はAnkiの最初のプロフィール）：" },
 
+  -- what the player is here for: three choices that only write ordinary settings (the main page and the intro)
+  ["section.purpose"] = { en = "What are you here for?", ja = "このアドオンの使い方" },
+  ["purpose.explain"] = { en = "Pick one to set the addon up for you. Every setting below can still be changed.",
+    ja = "ひとつ選ぶと、それに合わせて設定します。下の設定はあとから変えられます。" },
+  ["purpose.ja"] = { en = "Studying Japanese", ja = "日本語を勉強中" },
+  ["purpose.en"] = { en = "Studying English", ja = "英語を勉強中" },
+  ["purpose.play"] = { en = "Just playing in Japanese", ja = "日本語でプレイ" },
+  ["purpose.custom"] = { en = "Your settings match none of the three.", ja = "現在の設定は、どれにも当てはまりません。" },
+  ["section.keys"] = { en = "Keys", ja = "キー" },
+  ["section.cards"] = { en = "Word cards", ja = "単語カード" },
+  ["button.defaults"] = { en = "Defaults", ja = "初期設定に戻す" },
+  ["defaults.confirm"] = { en = "Click again to reset this page", ja = "もう一度クリックでこのページを初期化" },
+  ["about.intro"] = { en = "Show the welcome window again", ja = "ようこそ画面をもう一度表示" },
+  ["section.about"] = { en = "This version", ja = "このバージョン" },
+  ["section.report"] = { en = "Report something", ja = "報告する" },
   ["section.translation"] = { en = "Translation", ja = "翻訳" },
   ["section.areas"] = { en = "What to translate", ja = "翻訳する範囲" },
   ["section.markers"] = { en = "Markers", ja = "マーカー" },
@@ -61,19 +76,16 @@ Text.T = {
   ["section.help"] = { en = "How it works", ja = "使い方" },
   ["section.words"] = { en = "Word list", ja = "単語帳" },
   ["words.explain"] = {
-    en = "Point at a Japanese word and use the save click to keep it, with its reading, meaning and sentence.\n"
-      .. "The list stays across sessions; export it any time to a text file, a spreadsheet or Anki.",
-    ja = "日本語の単語にカーソルを合わせ、保存の操作で読み方・意味・文と一緒に保存します。\n単語帳は次回以降も残り、いつでもテキストファイル、表計算ソフト、Ankiに書き出せます。",
+    en = "Point at a word and use the save click to keep it with its reading, meaning and sentence.",
+    ja = "単語にカーソルを合わせ、保存の操作で読み方・意味・文と一緒に保存します。",
   },
   ["words.status"] = { en = "%s words saved", ja = "保存した単語：%s語" },
   ["words.export"] = { en = "Export the word list", ja = "単語帳を書き出す" },
   -- studying the word list (UI/StudyWindow): the settings section, the tab, the card
   ["section.study"] = { en = "Study", ja = "学習" },
   ["study.explain"] = {
-    en = "Study your saved words in game, one card at a time: the word and its sentence, then the answer.\n"
-      .. "Again or Good decides when the word comes back; when nothing is due, you are done for now.",
-    ja = "保存した単語をゲーム内で1枚ずつ学習します。単語と文を見てから答えを確認します。\n"
-      .. "「もう一度」か「正解」で次に出る時期が決まり、復習する単語がなくなれば今日はおしまいです。",
+    en = "Study your saved words in game, one card at a time. Again or Good decides when a word comes back.",
+    ja = "保存した単語をゲーム内で1枚ずつ学習します。「もう一度」か「正解」で次に出る時期が決まります。",
   },
   ["study.status"] = { en = "%s due, %s new words left today", ja = "復習：%s語、今日の新しい単語：あと%s語" },
   ["study.open"] = { en = "Open the study card", ja = "学習カードを開く" },
@@ -127,10 +139,8 @@ Text.T = {
   },
 
   ["collector.explain"] = {
-    en = "The addon notes English it has no translation for.\n"
-      .. "Nothing is sent anywhere unless you send it yourself with the steps below.",
-    ja = "翻訳がない英語テキストを記録します。\n"
-      .. "下の手順で自分で送らない限り、どこにも送信されることはありません。",
+    en = "The addon notes English it has no translation for. Nothing leaves your computer unless you send it.",
+    ja = "翻訳がない英語テキストを記録します。自分で送らない限り、どこにも送信されません。",
   },
   ["collector.status"] = { en = "Status", ja = "状態" },
   -- the status line in the page's language (the slash command keeps Collector.describe's English)
@@ -145,14 +155,8 @@ Text.T = {
     ja = "貼り付けられない長さなら、このファイルを zip にして同じ Issue に添付：",
   },
   ["collector.steps"] = {
-    en = "1. Click Send English.\n"
-      .. "2. Copy the link in the window (click it, then Ctrl+C) and open it in your web browser.\n"
-      .. "3. If the window shows a second box, copy that text into the form's box too.\n"
-      .. "4. Submit the issue on GitHub, then click I sent it.",
-    ja = "1.「英語を送る」をクリックします。\n"
-      .. "2. ウィンドウのリンクをコピーして（クリックして Ctrl+C）、ブラウザで開きます。\n"
-      .. "3. ウィンドウに2つ目の欄があれば、その文字列もフォームの欄に貼り付けます。\n"
-      .. "4. GitHub で Issue を送信してから「送信しました」をクリックします。",
+    en = "Click Send English. The window that opens walks you through it.",
+    ja = "「英語を送る」をクリックすると、開いたウィンドウに手順が出ます。",
   },
   ["collector.send"] = { en = "Send English", ja = "英語を送る" },
   ["send.title"] = { en = "Send collected English", ja = "記録した英語を送る" },
@@ -250,8 +254,8 @@ Text.T = {
   ["collector.cleared"] = { en = "Cleared %s entries", ja = "%s件を消去しました" },
 
   ["about.open"] = {
-    en = "Open settings: Esc > Options > AddOns  /  the AddOn List's \"Settings\"  /  /wfj config",
-    ja = "設定の開き方：Esc → オプション → アドオン　／　アドオン一覧の「設定」　／　/wfj config",
+    en = "Open these settings any time with /wfj config.",
+    ja = "この設定は /wfj config でいつでも開けます。",
   },
   -- %s: the reveal key's name ("Alt", "Mouse Button 4")
   ["about.hold"] = {
@@ -259,15 +263,13 @@ Text.T = {
     ja = "%sを押している間はゲーム本来の英語を表示し、離すと日本語に戻ります。",
   },
   ["about.readings"] = {
-    en = "Point at a Japanese word in a quest or NPC window to see its reading. "
-      .. "Save it to your word list with %s; /wfj words shows the list and /wfj study quizzes you on it.",
-    ja = "クエストやNPCの画面で日本語の単語にカーソルを合わせると、読み方が表示されます。"
-      .. "%sで単語帳に保存でき、/wfj words で一覧を表示、/wfj study で学習します。",
+    en = "Point at a word in a quest or NPC window to see its card. Save it with %s.",
+    ja = "クエストやNPCの画面で単語にカーソルを合わせるとカードが出ます。%sで保存できます。",
   },
   -- the About page's voice line (UI/Options aboutVoice); %s: the packs that loaded, in the line's language
   ["about.voice.none"] = {
-    en = "Japanese voice: not installed. Add \"WoW Forever Japanese Voice\" in the CurseForge app, or copy its page:",
-    ja = "日本語音声：未インストール。CurseForge アプリで「WoW Forever Japanese Voice」を追加するか、ページをコピー：",
+    en = "Japanese voice: not installed. It is a free separate download:",
+    ja = "日本語音声：未インストール。無料で別にダウンロードできます：",
   },
   ["about.voice.loaded"] = { en = "Japanese voice: %s", ja = "日本語音声：%s" },
   -- %s, %s: the two markers as they show (WFJ.MARKER.stale, .missing)
@@ -396,6 +398,18 @@ Text.T = {
   ["intro.voice"] = { en = "Get WoW Forever Japanese Voice free to hear the Japanese read aloud.",
     ja = "無料の「WoW Forever Japanese Voice」で、日本語を読み上げます。" },
   ["intro.close"] = { en = "Close", ja = "閉じる" },
+  -- the purpose question the intro opens with, and the lines that change with the answer
+  ["intro.ask"] = { en = "What are you here for?", ja = "どのように使いますか？" },
+  ["intro.pick.ja"] = { en = "I'm studying Japanese", ja = "日本語を勉強しています" },
+  ["intro.pick.en"] = { en = "I'm studying English", ja = "英語を勉強しています" },
+  ["intro.pick.play"] = { en = "I just want the game in Japanese", ja = "日本語でプレイしたいだけ" },
+  ["intro.later"] = { en = "You can change this later in the settings.", ja = "あとで設定から変更できます。" },
+  ["intro.key"] = { en = "Hold key", ja = "押すキー" },
+  ["intro.lead.en"] = { en = "The game stays in English, with Japanese one key away.",
+    ja = "ゲームは英語のまま、キーひとつで日本語を表示します。" },
+  ["intro.hold.en"] = { en = "Hold %s to see the Japanese.", ja = "%sを押している間は、日本語を表示します。" },
+  ["intro.readings.en"] = { en = "Point at an English word to see its Japanese word and how to say it.",
+    ja = "英語の単語にカーソルを合わせると、日本語の意味と発音が出ます。" },
   ["minimap.words"] = { en = "Export words (%s)", ja = "単語帳を書き出す（%s）" },
   ["minimap.sendEnglish"] = { en = "Send collected English (%s)", ja = "集めた英語を送る（%s）" },
   ["minimap.version"] = { en = "Version %s", ja = "バージョン %s" },
@@ -415,6 +429,10 @@ Text.SLASH = {
   "/wfj bug  (report a bug or an idea)  ·  /wfj words  (the saved word list)",
   "/wfj study [reset]  (study your saved words; reset puts the card back)",
   "/wfj collector [on | off | status | path | clear | send [all]]",
+  "/wfj intro  (the welcome window)",
+}
+-- The diagnostic verbs: part of the grammar, left off the About page.
+Text.SLASH_DEBUG = {
   "/wfj log [<n>]  (the problem log)  ·  /wfj taint  (action-bar taint scan)",
   "/wfj debug [hash | quest <id> | item <id> | spell <id>]",
   "/wfj debug [gossip | book | objective | fonts | ui [scan]]",

@@ -303,6 +303,9 @@ function Stub.install(tocPath)
     -- the unit filter is recorded but not applied: a spec fires the event with the unit it means
     function frame:RegisterUnitEvent(e, ...) self.events[e] = { ... } end
     function frame:SetScript(k, fn) self.scripts[k] = fn end
+    function frame:SetScrollChild(child) self.scrollChild = child end
+    function frame:LockHighlight() self.highlightLocked = true end
+    function frame:UnlockHighlight() self.highlightLocked = false end
     function frame:GetScript(k) return self.scripts[k] end
     function frame:HookScript(k, fn)
       local prev = self.scripts[k]
