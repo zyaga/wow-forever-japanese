@@ -11,7 +11,7 @@
 - **A public repo.** The repo is public and takes pull requests from forks. The release path must not give untrusted code a write token or the CurseForge token, and third-party actions must not change under it.
 - **Notes drift.** Notes typed at tag time are written from memory after the fact. Players read them on CurseForge.
 - **The alternatives cost a second step.** A release pull request (a bot keeps a "release X.Y.Z" pull request open and merging it releases) makes every release two merges and needs a bot with write access to pull requests.
-- **Verified facts about the tooling** (BigWigsMods packager v2.6.1, pinned at commit `e50a250f`): it builds from `.pkgmeta` and the TOC, turns `## Version: @project-version@` into the tag name, maps a TOC `## Interface` of 16xxx to the Forever game type on its own, and copies the working tree (dotfiles pruned). Run a second time with `-c -o` (skip the copy, keep the package folder), it zips the folder the first pass made and uploads it; the second zip has the same entries and CRCs as the first.
+- **Verified facts about the tooling** (BigWigsMods packager, checked at v2.6.1; the pin in the workflow and the Makefile moves with its updates): it builds from `.pkgmeta` and the TOC, turns `## Version: @project-version@` into the tag name, maps a TOC `## Interface` of 16xxx to the Forever game type on its own, and copies the working tree (dotfiles pruned). Run a second time with `-c -o` (skip the copy, keep the package folder), it zips the folder the first pass made and uploads it; the second zip has the same entries and CRCs as the first.
 
 ## Decision
 

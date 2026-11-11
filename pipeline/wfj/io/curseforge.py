@@ -1,5 +1,5 @@
 """CurseForge's upload API, the two calls a voice release makes. Modelled on the BigWigsMods packager the
-main addon releases with (release.sh v2.6.1, `upload_curseforge`): the game versions from
+main addon releases with (release.sh v2.7.0, `upload_curseforge`): the game versions from
 `/api/game/wow/versions`, the file from `/api/projects/<project id>/upload-file` as multipart form data
 (`metadata` JSON and `file`), the token in the `x-api-token` header. The token comes from the caller (read
 from the environment at run time) and is never printed, logged or written anywhere.
