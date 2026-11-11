@@ -1,4 +1,4 @@
-"""Japanese names (ADR-077): the name store, the glossary, Hearthstone, drafting import, the one-spelling
+"""Japanese names (ADR-078): the name store, the glossary, Hearthstone, drafting import, the one-spelling
 check, and the committed store being complete and current."""
 
 from __future__ import annotations

@@ -282,7 +282,7 @@ NAMES_DIR = "Data/Names"
 
 def _plan_names(root: Path) -> dict[str, str]:
     """`Data/Names/Names_<nn>.lua` per `data/name` shard that holds a name with Japanese. They are left out of
-    the TOC: nothing loads them until the names setting does (ADR-077)."""
+    the TOC: nothing loads them until the names setting does (ADR-078)."""
     by_shard: dict[str, list[dict[str, Any]]] = {}
     for ln in load_name_lines(root):
         if ln["status"] == "trusted":

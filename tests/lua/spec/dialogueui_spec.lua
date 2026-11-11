@@ -493,6 +493,31 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       assert.are.equal("Something Else", frame.tag.ButtonText:GetText())
     end)
 
+    -- In game the tag's Japanese showed as empty boxes: drawn in Dialogue UI's own face, which has no Japanese letters
+    it("the tag's Japanese wears the bundled face, also when Dialogue UI applies its font object after the text",
+      function()
+        open("QUEST_DETAIL", { questID = 2, title = QUEST.title, description = QUEST.description, objectives = "",
+          tag = "Dungeon" })
+        assert.are.equal(WFJ.Font.PATH, (frame.tag.ButtonText:GetFont()))
+        frame.tag:SetQuestTagNameAndIcon("Dungeon")
+        assert.are.equal("ダンジョン", frame.tag.ButtonText:GetText())
+        assert.are.equal(WFJ.Font.PATH, (frame.tag.ButtonText:GetFont()))
+      end)
+
+    it("a tag whose face Dialogue UI puts back after it was laid out gets the bundled face again the next frame, " ..
+      "and the log says what face it had", function()
+        open("QUEST_DETAIL", { questID = 2, title = QUEST.title, description = QUEST.description, objectives = "",
+          tag = "Dungeon" })
+        local fs = frame.tag.ButtonText
+        fs.font = { path = _G.DUIFont_Item.font.path, size = 10, flags = "" } -- the face lost after our pass
+        DUI.flush()
+        assert.are.equal("ダンジョン", fs:GetText())
+        assert.are.equal(WFJ.Font.PATH, (fs:GetFont()))
+        local found = false
+        for _, l in ipairs(logs) do if l:find("dialogueui tag face", 1, true) then found = true end end
+        assert.is_true(found)
+      end)
+
     it("tooltip lines: game strings and Dialogue UI's own words in Japanese; the item's name never", function()
       load({ loaded = false })
       ship(QUEST_JA)

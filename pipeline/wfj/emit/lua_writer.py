@@ -255,7 +255,7 @@ def keyed_text(type_: str, nn: str, shard_rows: dict[str, list[str]]) -> str:
 
 
 def names_text(nn: str, lines: Iterable[dict[str, Any]]) -> str:
-    """One shard of the Japanese names (ADR-077): `[English hash] = { Japanese, reading, English }` for the
+    """One shard of the Japanese names (ADR-078): `[English hash] = { Japanese, reading, English }` for the
     names it is given (the ones with Japanese). Generated beside the addon but not in the TOC: the names
     setting loads them."""
     entries = (

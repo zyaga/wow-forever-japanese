@@ -153,7 +153,7 @@ If the game's English NPC voices stay silent after a test (the dialog channel le
 
 ## Kana lines
 
-Every voiced line (each line a voice file is made for, and the character's error lines) has a **kana line** in `data/voice/kana.jsonl`: the line as the voice should read it, written in kana only ([ADR-077](../adr/077-japanese-names-keyed-by-english-and-kana-voice-lines.md)). It is built from the text the engine reads today (`voice.speech_text`: player tokens as 冒険者, `$N<k>` numbers filled) with:
+Every voiced line (each line a voice file is made for, and the character's error lines) has a **kana line** in `data/voice/kana.jsonl`: the line as the voice should read it, written in kana only ([ADR-078](../adr/078-japanese-names-keyed-by-english-and-kana-voice-lines.md)). It is built from the text the engine reads today (`voice.speech_text`: player tokens as 冒険者, `$N<k>` numbers filled) with:
 
 - every kanji word replaced by its reading from `data/reading/` (the line's current reading record),
 - every English name replaced by its Japanese from `data/name/` (its katakana kept as written and the rest from its reading: マスター整備士キャストパイプ is said マスターせいびしキャストパイプ),
@@ -241,4 +241,4 @@ Levels 51-60 is past the 315 MB mark: when it grows near the cap, split its band
 
 ## Related
 
-- [Voice over](../systems/voice.md) · [ADR-061](../adr/061-voice-over-from-a-separate-pack.md) · [ADR-074](../adr/074-voices-cloned-from-the-games-npc-voice-sets.md) · [ADR-077](../adr/077-japanese-names-keyed-by-english-and-kana-voice-lines.md) · [Local setup](local-setup.md) · [Testing strategy](../testing/strategy.md#voice-over-checklist) · [Research](../research/2026-10-04-japanese-voice-over.md)
+- [Voice over](../systems/voice.md) · [ADR-061](../adr/061-voice-over-from-a-separate-pack.md) · [ADR-074](../adr/074-voices-cloned-from-the-games-npc-voice-sets.md) · [ADR-078](../adr/078-japanese-names-keyed-by-english-and-kana-voice-lines.md) · [Local setup](local-setup.md) · [Testing strategy](../testing/strategy.md#voice-over-checklist) · [Research](../research/2026-10-04-japanese-voice-over.md)

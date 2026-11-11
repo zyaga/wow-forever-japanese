@@ -87,3 +87,43 @@ describe("talent requirement lines", function()
     assert.are.same({}, WFJ.Talents.conditionFormats(nil))
   end)
 end)
+
+-- The talent tooltip's event comes from Blizzard_SharedTalentUI, which loads at login; the Legacy trees
+-- (Blizzard_LegacySystem) use it without the talent window's Blizzard_PlayerSpells ever loading
+-- (blizzard_talentdisplay.lua:124; blizzard_legacysystem.toc:2-4; blizzard_playerspells.toc:2).
+describe("a Legacy tree's talent tooltip, the talent window never opened", function()
+  local WFJ
+  local LEGACY = "Spend %d more |4point:points; in the %s Legacy Tree"
+  local UI_LEGACY = {
+    TALENT_BUTTON_TOOLTIP_RANK_FORMAT = { "Rank %s/%s", "ランク %s/%s" },
+    TALENT_BUTTON_TOOLTIP_PURCHASE_INSTRUCTIONS = { "Click to learn", "クリックで習得" },
+    GENERIC_TRAIT_FRAME_EDGE_REQUIREMENTS_BUTTON_TOOLTIP = { "Requires all preceding talents",
+      "前のタレントがすべて必要です" },
+    ["SharedString:1318"] = { LEGACY, "あと%dポイントを%sのレガシーツリーに割り振る必要があります" },
+  }
+  local function line(i) return _G["GameTooltipTextLeft" .. i]:GetText() end
+
+  before_each(function()
+    Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
+    Stub.installTooltipAPI()
+    PS.install()
+    WFJ = H.loadChunks(FILES)
+    H.uiSetup(WFJ, UI_LEGACY)
+    assert.is_false(WFJ.Talents.init()) -- still waiting for the talent window's addon
+  end)
+  after_each(function() H.uiTeardown() end)
+
+  it("its rank, instruction, requirement and edge lines are Japanese; the tree's name stays English", function()
+    local display = CreateFrame("Button")
+    display.talentFrame = { condInfoCache = { [4] = { tooltipFormat = LEGACY, spentAmountRequired = 10 } } }
+    display.nodeInfo = { conditionIDs = { 4 } }
+    local red = "|cffff2020Spend 10 more points in the Professions Legacy Tree|r"
+    PS.hoverTalent(display, { "Dedicated Study", "Rank 0/1", "", red, "Requires all preceding talents",
+      "Click to learn" })
+    assert.are.equal("Dedicated Study", line(1))
+    assert.are.equal("ランク 0/1", line(2))
+    assert.are.equal("|cffff2020あと10ポイントをProfessionsのレガシーツリーに割り振る必要があります|r", line(4))
+    assert.are.equal("前のタレントがすべて必要です", line(5))
+    assert.are.equal("クリックで習得", line(6))
+  end)
+end)

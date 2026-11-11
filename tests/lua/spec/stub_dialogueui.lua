@@ -117,16 +117,22 @@ function DUI.installQuestFrame(opts)
   fontObject("DUIFont_Quest_Gossip", "Interface\\AddOns\\DialogueUI\\Fonts\\frizqt__.ttf", 13)
   fontObject("DUIFont_Quest_Title_18", "Interface\\AddOns\\DialogueUI\\Fonts\\frizqt__.ttf", 18)
   fontObject("DUIFont_Quest_SubHeader", "Interface\\AddOns\\DialogueUI\\Fonts\\frizqt__.ttf", 14)
+  fontObject("DUIFont_Item", "Interface\\AddOns\\DialogueUI\\Fonts\\frizqt__.ttf", 10)
   local f = CreateFrame("Frame", "DUIQuestFrame")
   f.fontStringPool = pool(f)
   f.buttons = {}
   f.redraws = 0
   f.FrontFrame = { Header = { Title = Stub.fontString("") } }
-  -- the tag over the title ("Dungeon"): a button with its own SetText
+  -- the tag over the title ("Dungeon"): a button with its own SetText, in Dialogue UI's DUIFont_Item
   local tag = { ButtonText = Stub.fontString("") }
+  tag.ButtonText:SetFontObject(_G.DUIFont_Item)
   function tag:SetText(t) self.ButtonText:SetText(t) end
-  -- QuestHeaderWidget.lua ButtonMixin: a tag Dialogue UI fills in later, when its quest data comes
-  function tag:SetQuestTagNameAndIcon(name) self:SetText(name) end
+  -- QuestHeaderWidget.lua ButtonMixin: a tag Dialogue UI fills in later, when its quest data comes; its
+  -- SetClickable(false) applies DUIFont_Item after the text
+  function tag:SetQuestTagNameAndIcon(name)
+    self:SetText(name)
+    self.ButtonText:SetFontObject(_G.DUIFont_Item)
+  end
   f.tag = tag
   f.FrontFrame.Header.GetChildren = function() return tag end
   f.headings = {}

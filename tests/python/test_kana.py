@@ -1,4 +1,4 @@
-"""Kana lines (ADR-077): readings, names and numbers turned into kana; every voiced line has a current one;
+"""Kana lines (ADR-078): readings, names and numbers turned into kana; every voiced line has a current one;
 the name tables are generated but never loaded by the TOC."""
 
 from __future__ import annotations

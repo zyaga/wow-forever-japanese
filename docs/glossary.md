@@ -297,12 +297,12 @@ _Avoid_: outdated reading, [[Stale]] (that's the English side of a translation)
 **Name store**:
 `data/name/`: one line per distinct English name the game shows (a creature, item, spell, game object, zone, faction or map, or an English name inside shipped Japanese prose), keyed by the hash of the normalized English, with its Japanese, that Japanese's reading in hiragana, the game ids that carry the name per kind, and [[Provenance]]. One line per English name gives one Japanese per name everywhere. Hearthstone's official Japanese fills a name it has exactly; a model drafts the rest. On screen names stay English under the [[Name policy]]; the store feeds the [[Kana line]] and a later names setting, off by default.
 _Avoid_: name translations, localized names, name table (that is the generated `Data/Names/` output), [[Translation glossary]]
-→ [Data model](architecture/data-model.md) · [ADR-077](adr/077-japanese-names-keyed-by-english-and-kana-voice-lines.md)
+→ [Data model](architecture/data-model.md) · [ADR-078](adr/078-japanese-names-keyed-by-english-and-kana-voice-lines.md)
 
 **Name glossary**:
 `data/name/words.jsonl`: English proper-noun words with the one Japanese spelling every name that contains them uses (`Ashenvale` → アッシェンヴェイル). Seeded from Hearthstone's card names, the rest drafted before the names. A word marked `check` must appear in that form in every name that holds it, unless the name is translated rather than spelled word by word (`free`) or is a Hearthstone whole name; `wfj names check` reports the rest.
 _Avoid_: [[Word list]] (the player's saved words), dictionary, [[Translation glossary]] (prose words a drafter translates)
-→ [Data model](architecture/data-model.md) · [Translation batches](operations/translation-batches.md) · [ADR-077](adr/077-japanese-names-keyed-by-english-and-kana-voice-lines.md)
+→ [Data model](architecture/data-model.md) · [Translation batches](operations/translation-batches.md) · [ADR-078](adr/078-japanese-names-keyed-by-english-and-kana-voice-lines.md)
 
 ## Addon
 
@@ -810,7 +810,7 @@ _Avoid_: played list, history, seen lines
 **Kana line**:
 A voiced line written in kana only, as the voice should read it: the line the voice reads today with every kanji word replaced by its [[Reading]], every English name by its Japanese from the [[Name store]], and every number spelled out with its counter (3匹 さんびき). One per voiced line in `data/voice/kana.jsonl`, pinned to the hash of the Japanese it was made from. Pipeline input for a later remake of the audio; never shown, and no audio is made from it yet.
 _Avoid_: furigana line, phonetic text, script, [[Reading]] (one word's kana)
-→ [Voice over runbook](operations/voice.md) · [Data model](architecture/data-model.md) · [ADR-077](adr/077-japanese-names-keyed-by-english-and-kana-voice-lines.md)
+→ [Voice over runbook](operations/voice.md) · [Data model](architecture/data-model.md) · [ADR-078](adr/078-japanese-names-keyed-by-english-and-kana-voice-lines.md)
 
 ## Client
 

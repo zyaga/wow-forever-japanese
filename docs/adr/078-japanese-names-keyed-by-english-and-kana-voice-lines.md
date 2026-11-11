@@ -1,4 +1,4 @@
-# ADR-077: Japanese names keyed by their English, and kana lines for the voice
+# ADR-078: Japanese names keyed by their English, and kana lines for the voice
 
 - **Status:** Accepted
 - **Date:** 2026-11-10

@@ -1,6 +1,6 @@
 """wfj voice kana [--export FILE] [--date YYYY-MM-DD] | wfj voice kana-import BATCH --model M --batch NAME
 
-The kana line of every voiced line (core/kana.py, ADR-077) in `data/voice/kana.jsonl`:
+The kana line of every voiced line (core/kana.py, ADR-078) in `data/voice/kana.jsonl`:
 `{"key", "ja_hash", "kana", "provenance"}`, `ja_hash` being what the line's words were made from (the shipped
 Japanese and the numbers filled into it, `voice.text_hash`). A line the builder can read is rebuilt every run;
 one it cannot (a kanji with no reading, a name with no Japanese) keeps a model-written kana line written for

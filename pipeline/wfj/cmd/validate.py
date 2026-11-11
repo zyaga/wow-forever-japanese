@@ -26,7 +26,7 @@ Rules, each a function returning problems:
      still owed one (a kanji or kana, no `|`) and the words without a meaning.
   9. voice (ADR-061): data/voice/speakers.jsonl and voices.jsonl are well formed, carry provenance, hold no
      duplicate key or creature, and every creature that speaks has a voice.
-  10. names (ADR-077): every `data/name/` line and glossary word is well formed with provenance, and no name
+  10. names (ADR-078): every `data/name/` line and glossary word is well formed with provenance, and no name
      spells a checked glossary word another way. How many names still lack Japanese and how many voiced lines
      lack a current kana line are printed, not returned: tests/python/test_names.py and test_kana.py own those
      gates.

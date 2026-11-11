@@ -47,3 +47,7 @@ ADR-005 fixed the gossip key (normalize_v1 + Hash32x2 of the live English) and p
 ## Related
 - [ADR-005: Gossip key fingerprint](005-gossip-key-fingerprint.md) · [ADR-009: Surfaces post-hook the writer](009-surfaces-post-hook-the-writer.md) · [ADR-013: Collector English](013-collector-english.md) · [ADR-015: UI text surfaces](015-ui-text-surfaces.md) · [ADR-002: Live English only](002-live-english-only.md) · [ADR-003: Ship stale with a marker](003-ship-stale-with-marker.md)
 - [Addon modules](../architecture/addon-modules.md): Surfaces table · [Collector](../systems/collector.md) · [Pipeline](../systems/pipeline.md) · [Testing](../testing/strategy.md): checklists 3, 10, 11
+
+## Update: no scroll refit on the greeting
+
+The greeting prose no longer refits with `QuestGreetingScrollFrame:UpdateScrollChildRect()`: called from addon code, it runs the scroll frame's scripts under this addon's taint. The client keeps the range itself ([ADR-077](077-the-quest-windows-are-never-re-measured-from-addon-code.md)).

@@ -1,4 +1,4 @@
-"""Japanese names (ADR-077): one line per distinct English name, keyed by the hash of the normalized English.
+"""Japanese names (ADR-078): one line per distinct English name, keyed by the hash of the normalized English.
 
     {"id": "<16 hex>", "en": "Orgrimmar", "ids": {"area": [1637]}, "prose": true, "ja": "オーグリマー",
      "reading": "おーぐりまー", "free": false, "status": "trusted",

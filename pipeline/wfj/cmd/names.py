@@ -1,5 +1,5 @@
 """wfj names collect|hearthstone|export|import|check: Japanese names
-(ADR-077; docs/architecture/data-model.md).
+(ADR-078; docs/architecture/data-model.md).
 
 collect [--vmangos DB] [--date YYYY-MM-DD]
     Every English name the game shows gets a `data/name` line: item, spell and unit names from

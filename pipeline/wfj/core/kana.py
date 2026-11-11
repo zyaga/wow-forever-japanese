@@ -1,4 +1,4 @@
-"""Kana lines (ADR-077): each voiced line as the voice should read it, in kana only.
+"""Kana lines (ADR-078): each voiced line as the voice should read it, in kana only.
 
 The line the voice reads today (`voice.speech_text` of the shipped Japanese) with every word of its reading
 record replaced by that reading, every English name by its Japanese name, and every number spelled out with

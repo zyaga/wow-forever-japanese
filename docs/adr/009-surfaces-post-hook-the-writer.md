@@ -36,3 +36,7 @@ Reading the Classic Era FrameXML (`Blizzard_UIPanels_Game/{Vanilla,Classic}/`) s
 - [ADR-017: The gossip surface](017-gossip-surface.md). Gossip rows use the ScrollBox subscriber API (`ScrollUtil.AddInitializedFrameCallback` / `AddReleasedFrameCallback`) as the post-write callback this ADR anticipated, with the same equality guard and drop rule.
 - [Addon Modules](../architecture/addon-modules.md): Surfaces table and render mechanism
 - Implementation: `addon/WoWForeverJapanese/UI/QuestFrame.lua`, `addon/WoWForeverJapanese/UI/QuestLog.lua`
+
+## Update: no scroll refit on the quest surfaces
+
+The `UpdateScrollChildRect()` refit chosen above is gone from the quest surfaces on Forever. Called from addon code it runs the scroll frame's range scripts under this addon's taint, and on the quest log's details pane that taint reached the quest map, the world map's quest pins and the tracker, where protected calls were refused in combat. The client keeps the scroll range of these frames itself ([ADR-077](077-the-quest-windows-are-never-re-measured-from-addon-code.md)).

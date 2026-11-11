@@ -295,7 +295,7 @@ def read_all_quest_speakers(path: Path) -> tuple[dict[int, list[int]], set[int],
     return read_quest_speakers(path, quests)
 
 
-# The names the game shows, per name kind (ADR-077): each table's highest-patch row. A faction the
+# The names the game shows, per name kind (ADR-078): each table's highest-patch row. A faction the
 # reputation panel never lists (no reputation slot: the server's own "PLAYER, Human" kind) is not read.
 _NAME_SQL = {
     "unit": "SELECT t.entry, t.name FROM creature_template t JOIN (SELECT entry, MAX(patch) AS patch"

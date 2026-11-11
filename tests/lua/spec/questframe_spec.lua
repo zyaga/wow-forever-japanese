@@ -111,7 +111,8 @@ describe("UI/QuestFrame: accept / progress / turn-in windows", function()
     WFJ.Collector.record = record
   end)
 
-  it("detail window translates title / description / objectives by field with the API id; refit runs",
+  it("detail window translates title / description / objectives by field with the API id; its scroll " ..
+    "frame is never re-measured",
   function()
     Stub.showDetail()
     assert.are.equal("Sharptalonの鉤爪", QuestInfoTitleHeader:GetText())
@@ -128,7 +129,10 @@ describe("UI/QuestFrame: accept / progress / turn-in windows", function()
       assert.are.equal(2, rec.meta.id)
     end
     assert.are.equal(0, SS.count(REWARD) + SS.count(PROGRESS))
-    assert.is_true(QuestDetailScrollFrame.calls.UpdateScrollChildRect >= 1)
+    Stub.keys.alt = true; WFJ.Modifier.refresh()
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
+    assert.are.equal("Sharptalonの鉤爪", QuestInfoTitleHeader:GetText())
+    assert.are.equal(0, QuestDetailScrollFrame.calls.UpdateScrollChildRect) -- never from addon code (ADR-077)
     assert.are.equal(0, QuestRewardScrollFrame.calls.UpdateScrollChildRect)
     assert.are.same({ "quest.title", 2 }, lookups[1])
   end)
@@ -167,7 +171,7 @@ describe("UI/QuestFrame: accept / progress / turn-in windows", function()
     assert.are.equal("まだか？", QuestProgressText:GetText())
     assert.are.equal(WFJ.Font.PATH, (QuestProgressTitleText:GetFont()))
     assert.are.equal(2, SS.count(PROGRESS))
-    assert.is_true(QuestProgressScrollFrame.calls.UpdateScrollChildRect >= 1)
+    assert.are.equal(0, QuestProgressScrollFrame.calls.UpdateScrollChildRect)
     assert.is_nil(Stub.hooks.QuestFrameProgressPanel_OnShow) -- never hooked as a global (XML-bound)
 
     Stub.showReward()
@@ -175,7 +179,7 @@ describe("UI/QuestFrame: accept / progress / turn-in windows", function()
     assert.are.equal("よくやった", QuestInfoRewardText:GetText())
     assert.are.equal(WFJ.Font.PATH, (QuestInfoTitleHeader:GetFont()))
     assert.are.equal(2, SS.count(REWARD))
-    assert.is_true(QuestRewardScrollFrame.calls.UpdateScrollChildRect >= 1)
+    assert.are.equal(0, QuestRewardScrollFrame.calls.UpdateScrollChildRect)
   end)
 
   -- ADR-019: every quest field record carries the API English as ctx.live for the live check.
@@ -564,7 +568,7 @@ describe("UI/QuestFrame: the greeting panel's NPC text is gossip", function()
     local rec = SS.get(QF.GREETING, "greeting")
     assert.are.equal("gossip", rec.meta.kind)
     assert.are.equal(key(GREETING), rec.meta.id)
-    assert.is_true(QuestGreetingScrollFrame.calls.UpdateScrollChildRect >= 1)
+    assert.are.equal(0, QuestGreetingScrollFrame.calls.UpdateScrollChildRect)
     assert.are.equal(WFJ.MARKER.stale, QF.banner:GetText())
     assert.is_true(QF.banner:IsShown())
     -- the handler reached a second time with no client write in between: no second write
