@@ -91,3 +91,81 @@ def test_a_bracketed_hint_is_never_a_function_words_meaning_and_inner_brackets_a
     assert ec.invert("He is at the inn that is near.", at) == {}
     unsaid = [["こと", "こと", "こと", "こと", "(that)"], ["こと", "こと", "こと", "こと", "(thing)"]]
     assert ec.invert("The thing that matters.", unsaid) == {"thing": 2}
+
+
+# ── the generated files ────────────────────────────────────────────────────
+
+
+def _rows(root):
+    import re
+
+    for path in sorted((root / "addon" / "WoWForeverJapanese" / "Data" / "English").glob("English_*.lua")):
+        for packed in re.findall(r' = "([^"]*)"', path.read_text(encoding="utf-8")):
+            yield path.name, packed
+
+
+def test_every_shipped_row_is_a_sorted_set_of_single_lower_case_words(root):
+    seen = 0
+    for name, packed in _rows(root):
+        words = [pair.rpartition("=")[0] for pair in packed.split()]
+        assert words == sorted(set(words)), name  # by word, each once: never the sentence's order
+        assert all(w == w.lower() and ec.tokens(w) == [w] for w in words), name
+        assert all(pair.rpartition("=")[2].isdigit() for pair in packed.split()), name
+        seen += 1
+    assert seen > 40000
+
+
+def test_no_shipped_file_holds_a_line_of_the_games_english(root):
+    """A sample of real lines: none of them, nor any run of six of its words, is in the shipped rows."""
+    import json
+
+    text = " ".join(packed for _, packed in _rows(root))
+    plain = " ".join(pair.rpartition("=")[0] for pair in text.split())
+    lines = [json.loads(ln) for ln in (root / "data/english/quest/quest-0000.jsonl").read_text().splitlines()[:400]]
+    checked = 0
+    for ln in lines:
+        words = [w.lower() for w in ec.tokens(ln["en"])]
+        if len(set(words)) < 8 or words == sorted(words):
+            continue
+        for i in range(0, len(words) - 5, 3):
+            assert " ".join(words[i : i + 6]) not in plain, ln["en"][:60]
+        checked += 1
+    assert checked > 100
+
+
+def test_the_pronunciation_table_names_its_source_and_generate_reads_no_network(root):
+    from wfj.core import pronunciation as pr
+
+    said, version = pr.parse_table((root / "data/english/pronunciation.tsv").read_text(encoding="utf-8"))
+    assert len(version) == 40 and len(said) > 10000
+    assert all(set(spelled) <= pr.FONT_SAFE for spelled in said.values())
+    for module in ("core/english_cards.py", "core/pronunciation.py", "cmd/generate.py", "cmd/english_cards.py"):
+        source = (root / "pipeline/wfj" / module).read_text(encoding="utf-8")
+        assert not any(name in source for name in ("urllib", "requests", "socket", "http.client")), module
+
+
+def test_the_common_list_is_valid_and_every_line_has_provenance(root):
+    from wfj.cmd import generate
+
+    words = generate.load_common_words(root / "data" / "english")
+    assert 100 < len(words) < 500
+    assert not set(words) & ec.NO_CARD
+
+
+def test_a_common_list_line_without_provenance_or_with_two_words_stops_generate(tmp_path):
+    import pytest
+    from wfj.cmd import generate
+
+    prov = '"provenance": {"class": "machine"}'
+    cases = [
+        '{"word": "you", "ja": "あなた", "reading": "あなた"}',
+        '{"word": "of course", "ja": "もちろん", "reading": "もちろん", ' + prov + "}",
+        '{"word": "You", "ja": "あなた", "reading": "あなた", ' + prov + "}",
+        '{"word": "you", "ja": "あ なた", "reading": "あなた", ' + prov + "}",
+    ]
+    for line in cases:
+        (tmp_path / generate.COMMON_WORDS).write_text(line + "\n", encoding="utf-8")
+        with pytest.raises(ValueError):
+            generate.load_common_words(tmp_path)
+    (tmp_path / generate.COMMON_WORDS).write_text(cases[0][:-1] + ", " + prov + "}\n", encoding="utf-8")
+    assert generate.load_common_words(tmp_path) == {"you": ("あなた", "あなた")}

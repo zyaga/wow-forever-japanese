@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-11 at commit `58f0d6c1`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-11 at commit `eb279564`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -366,6 +366,25 @@ Lines are non-empty values; a server cache counts the records this install holds
 
 Item, spell, objective and area text take no word cards; HTML book pages
 and lines holding a `|` escape are not counted.
+
+## English word cards (English first)
+
+With the game text set to English first, pointing at an English word shows the Japanese word the
+translation uses for it. The pairs are read off the meanings the readings already hold.
+
+| Type | Lines with English and a word list | Words that can take a card | With one | Done |
+|---|---|---|---|---|
+| quest | 19,872 | 407,365 | 371,190 | 91.1% |
+| gossip | 11,240 | 144,292 | 132,391 | 91.8% |
+| ui | 14,309 | 48,595 | 43,713 | 90.0% |
+| book | 1,102 | 44,735 | 40,920 | 91.5% |
+| **All** | | **644,987** | **588,214** | **91.2%** |
+
+A word is counted each time it occurs. Names (a capitalised word inside a sentence) and codes the
+client fills in are not counted, and neither are the words that take no card by design: the
+articles, the bare forms of be, have and do, and to, of, in, on, at, for, as, by, than, off, upon.
+A contraction counts as carded through its first word (you're: you). Book pages the client draws
+itself show no English cards in game, though their words are counted here.
 
 ## Voice
 

@@ -37,6 +37,22 @@ describe("UI/OptionsText: every page string in both languages", function()
   end)
 end)
 
+describe("UI/OptionsText: the pages' explanations are short", function()
+  it("each is one sentence or two, never a paragraph, in both languages", function()
+    local Text = H.loadChunks({ "UI/OptionsText.lua" }).OptionsText
+    -- at the page's width a line holds about 95 Latin letters or 48 Japanese characters: two lines at most
+    for _, key in ipairs({ "main.welcome", "tagline", "collector.explain", "collector.steps", "words.explain",
+        "study.explain", "about.open", "about.hold", "about.readings", "about.fix", "about.bug",
+        "about.voice.none" }) do
+      local t = Text.T[key]
+      assert.is_true(#t.en <= 190, key .. " en " .. #t.en)
+      local chars = select(2, t.ja:gsub("[^\128-\191]", ""))
+      assert.is_true(chars <= 96, key .. " ja " .. chars)
+      assert.is_nil(t.en:find("\n", 1, true), key) -- one block, not a list of steps
+    end
+  end)
+end)
+
 describe("UI/OptionsText.SLASH names every command", function()
   it("lists every top-level verb and every debug sub-verb", function()
     local Text = H.loadChunks({ "UI/OptionsText.lua" }).OptionsText
