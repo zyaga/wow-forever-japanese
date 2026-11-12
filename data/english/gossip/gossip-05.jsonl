@@ -26,6 +26,7 @@
 {"id": "058847dfa3bd67cf", "field": "text", "en": "You wish to learn the old craft?  You wish to smelt dark iron?$B$BAppease me, $r.  Show me a sacrifice and I will consider it!", "hash": "058847dfa3bd67cf", "src": "vmangos@13b49dc"}
 {"id": "058ac63036845401", "field": "text", "en": "Our forces in Alterac Valley need wisdom to achieve victory $c.  You look like the one to lead them.", "hash": "058ac63036845401", "src": "vmangos@13b49dc"}
 {"id": "058db46af9f3c19e", "field": "text", "en": "My weapon be thirsty!", "hash": "058db46af9f3c19e", "src": "vmangos@13b49dc"}
+{"id": "058ddfe7d8da643a", "field": "text", "en": "What sort of dangers do the brothers and sisters of Bandarion Keep face out here, Ander?", "hash": "058ddfe7d8da643a", "src": "collector@1.60.1.70862", "npcs": [246394]}
 {"id": "059016173c5e548a", "field": "text", "en": "Your base is forfeit, puny mortals!", "hash": "059016173c5e548a", "src": "vmangos@13b49dc"}
 {"id": "059880d0c7a604bc", "field": "text", "en": "The Stormpike clan bows to no one, especially the horde!", "hash": "059880d0c7a604bc", "src": "vmangos@13b49dc"}
 {"id": "059d1ee446e3bef0", "field": "text", "en": "Because the blade can never be too sharp nor the armor too tough a talented enchanter will always be needed.  Such an enchanter is Taladan, who can show you how to properly weave enchantments to improve your weapons and armor.  Seek him out in the Craftsmen's Terrace.", "hash": "059d1ee446e3bef0", "src": "vmangos@13b49dc"}

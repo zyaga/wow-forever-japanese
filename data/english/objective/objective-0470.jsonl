@@ -1,14 +1,24 @@
-{"id": 470096, "field": "text", "en": "Young Paletusk returned", "hash": "d1b885c1793a3f40", "src": "wdb@1.60.1.70862"}
-{"id": 470100, "field": "text", "en": "First Ship Charge planted", "hash": "6cb255417911da2d", "src": "wdb@1.60.1.70862"}
-{"id": 470101, "field": "text", "en": "Second Ship Charge planted", "hash": "3051ab0bb64c49ca", "src": "wdb@1.60.1.70862"}
-{"id": 470102, "field": "text", "en": "Third Ship Charge planted", "hash": "43af763298c1eb29", "src": "wdb@1.60.1.70862"}
-{"id": 470203, "field": "text", "en": "Twilight Thrall captured", "hash": "e3162edb06dc1645", "src": "wdb@1.60.1.70862"}
-{"id": 470255, "field": "text", "en": "Tazzik confronted", "hash": "2b47028971cbae67", "src": "wdb@1.60.1.70862"}
-{"id": 470256, "field": "text", "en": "Bloodsail Trunk examined", "hash": "672056a49f3bd193", "src": "wdb@1.60.1.70862"}
-{"id": 470286, "field": "text", "en": "Friz's Package delivered", "hash": "e2d59273d2577432", "src": "wdb@1.60.1.70862"}
-{"id": 470488, "field": "text", "en": "Customs cleared", "hash": "9f9fd88194e3a921", "src": "wdb@1.60.1.70862"}
-{"id": 470749, "field": "text", "en": "Assist Walton", "hash": "133467a35ea7e930", "src": "wdb@1.60.1.70862"}
-{"id": 470820, "field": "text", "en": "Inspect the Striped Frostsaber", "hash": "14edf478f7e49d13", "src": "wdb@1.60.1.70862"}
-{"id": 470842, "field": "text", "en": "Inspect the Striped Nightsaber", "hash": "bfa08fb15094c4a7", "src": "wdb@1.60.1.70862"}
-{"id": 470844, "field": "text", "en": "Inspect the Spotted Frostsaber", "hash": "da0b1c8e21dccbc8", "src": "wdb@1.60.1.70862"}
-{"id": 470850, "field": "text", "en": "Discover the fiery mystery of Strahnbrad", "hash": "8a1f3491f9c1688c", "src": "wdb@1.60.1.70862"}
+{"id": 470096, "field": "text", "en": "Young Paletusk returned", "hash": "d1b885c1793a3f40", "src": "wdb@1.60.1.70888"}
+{"id": 470100, "field": "text", "en": "First Ship Charge planted", "hash": "6cb255417911da2d", "src": "wdb@1.60.1.70888"}
+{"id": 470101, "field": "text", "en": "Second Ship Charge planted", "hash": "3051ab0bb64c49ca", "src": "wdb@1.60.1.70888"}
+{"id": 470102, "field": "text", "en": "Third Ship Charge planted", "hash": "43af763298c1eb29", "src": "wdb@1.60.1.70888"}
+{"id": 470203, "field": "text", "en": "Twilight Thrall captured", "hash": "e3162edb06dc1645", "src": "wdb@1.60.1.70888"}
+{"id": 470209, "field": "text", "en": "Speak with Sully", "hash": "faf56a46bcc562d4", "src": "wdb@1.60.1.70888"}
+{"id": 470212, "field": "text", "en": "Explore Alcaz Prison", "hash": "2511464c0a6d8bb2", "src": "wdb@1.60.1.70888"}
+{"id": 470213, "field": "text", "en": "Learn what became of Varian Wrynn", "hash": "3f3cee1f024b4deb", "src": "wdb@1.60.1.70888"}
+{"id": 470217, "field": "text", "en": "Secrets of the depths discovered", "hash": "6c19bff13c4b50a5", "src": "wdb@1.60.1.70888"}
+{"id": 470229, "field": "text", "en": "Second Cauldron Destroyed", "hash": "ab1211682bf36569", "src": "wdb@1.60.1.70888"}
+{"id": 470230, "field": "text", "en": "First Cauldron Destroyed", "hash": "efedad15431feeb9", "src": "wdb@1.60.1.70888"}
+{"id": 470255, "field": "text", "en": "Tazzik confronted", "hash": "2b47028971cbae67", "src": "wdb@1.60.1.70888"}
+{"id": 470256, "field": "text", "en": "Bloodsail Trunk examined", "hash": "672056a49f3bd193", "src": "wdb@1.60.1.70888"}
+{"id": 470286, "field": "text", "en": "Friz's Package delivered", "hash": "e2d59273d2577432", "src": "wdb@1.60.1.70888"}
+{"id": 470295, "field": "text", "en": "Elder Mistpaw met", "hash": "5ccd8b6a04bc1ed9", "src": "wdb@1.60.1.70888"}
+{"id": 470472, "field": "text", "en": "Find Shaw's Agent in Theramore", "hash": "5cf44af46ccd4947", "src": "wdb@1.60.1.70888"}
+{"id": 470485, "field": "text", "en": "Relieve Jaina's guard and eavesdrop", "hash": "1542fc11b28d3c08", "src": "wdb@1.60.1.70888"}
+{"id": 470488, "field": "text", "en": "Customs cleared", "hash": "9f9fd88194e3a921", "src": "wdb@1.60.1.70888"}
+{"id": 470581, "field": "text", "en": "Ogre Miners recruited", "hash": "00d01d7a95279498", "src": "wdb@1.60.1.70888"}
+{"id": 470749, "field": "text", "en": "Assist Walton", "hash": "133467a35ea7e930", "src": "wdb@1.60.1.70888"}
+{"id": 470820, "field": "text", "en": "Inspect the Striped Frostsaber", "hash": "14edf478f7e49d13", "src": "wdb@1.60.1.70888"}
+{"id": 470842, "field": "text", "en": "Inspect the Striped Nightsaber", "hash": "bfa08fb15094c4a7", "src": "wdb@1.60.1.70888"}
+{"id": 470844, "field": "text", "en": "Inspect the Spotted Frostsaber", "hash": "da0b1c8e21dccbc8", "src": "wdb@1.60.1.70888"}
+{"id": 470850, "field": "text", "en": "Discover the fiery mystery of Strahnbrad", "hash": "8a1f3491f9c1688c", "src": "wdb@1.60.1.70888"}

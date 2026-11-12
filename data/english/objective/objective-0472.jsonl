@@ -1,5 +1,26 @@
-{"id": 472119, "field": "text", "en": "Wounded Soldier treated", "hash": "138cd076622f55ed", "src": "wdb@1.60.1.70862"}
-{"id": 472122, "field": "text", "en": "Contaminant eliminated", "hash": "5091aa981befa78d", "src": "wdb@1.60.1.70862"}
-{"id": 472272, "field": "text", "en": "Sit near the campfire", "hash": "d2953d4747208297", "src": "wdb@1.60.1.70862"}
-{"id": 472273, "field": "text", "en": "Gain the Boosted Rest buff", "hash": "801ef2f5803d205e", "src": "wdb@1.60.1.70862"}
-{"id": 472284, "field": "text", "en": "Raise your tailoring skill to 20", "hash": "f38e72c6170a545b", "src": "wdb@1.60.1.70862"}
+{"id": 472119, "field": "text", "en": "Wounded Soldier treated", "hash": "138cd076622f55ed", "src": "wdb@1.60.1.70888"}
+{"id": 472122, "field": "text", "en": "Contaminant eliminated", "hash": "5091aa981befa78d", "src": "wdb@1.60.1.70888"}
+{"id": 472272, "field": "text", "en": "Sit near the campfire", "hash": "d2953d4747208297", "src": "wdb@1.60.1.70888"}
+{"id": 472273, "field": "text", "en": "Gain the Boosted Rest buff", "hash": "801ef2f5803d205e", "src": "wdb@1.60.1.70888"}
+{"id": 472284, "field": "text", "en": "Raise your tailoring skill to 20", "hash": "f38e72c6170a545b", "src": "wdb@1.60.1.70888"}
+{"id": 472684, "field": "text", "en": "Vessel Workstation disrupted", "hash": "c24eb6e62cc5df97", "src": "wdb@1.60.1.70888"}
+{"id": 472685, "field": "text", "en": "Disease Workstation disrupted", "hash": "584f73ac51db0dbc", "src": "wdb@1.60.1.70888"}
+{"id": 472686, "field": "text", "en": "Alchemy Workstation disrupted", "hash": "458349233b49a98c", "src": "wdb@1.60.1.70888"}
+{"id": 472687, "field": "text", "en": "Slime Workstation disrupted", "hash": "07f8ce865a6ecc7a", "src": "wdb@1.60.1.70888"}
+{"id": 472705, "field": "text", "en": "Object recovered", "hash": "fb0a500a7fef3e18", "src": "wdb@1.60.1.70888"}
+{"id": 472769, "field": "text", "en": "Northern Sentinel Stone empowered", "hash": "b41dea33b9945555", "src": "wdb@1.60.1.70888"}
+{"id": 472770, "field": "text", "en": "Western Sentinel Stone empowered", "hash": "c6694dbe98fa22a5", "src": "wdb@1.60.1.70888"}
+{"id": 472771, "field": "text", "en": "Southern Sentinel Stone empowered", "hash": "8adf2c7bf37d2152", "src": "wdb@1.60.1.70888"}
+{"id": 472779, "field": "text", "en": "Speak with the worker", "hash": "3e279e7c3b47ed50", "src": "wdb@1.60.1.70888"}
+{"id": 472782, "field": "text", "en": "Warding Ritual performed", "hash": "a3de99e7bc732b38", "src": "wdb@1.60.1.70888"}
+{"id": 472838, "field": "text", "en": "Decide What to do with Felflick", "hash": "f44686d3fffa2952", "src": "wdb@1.60.1.70888"}
+{"id": 472842, "field": "text", "en": "Wisp released", "hash": "ae50356fd03715dc", "src": "wdb@1.60.1.70888"}
+{"id": 472859, "field": "text", "en": "Speak with Sergeant Ulka", "hash": "0de2765f3531c5d3", "src": "wdb@1.60.1.70888"}
+{"id": 472860, "field": "text", "en": "Find Commander Folkar", "hash": "02abc2a2f4a8f8e9", "src": "wdb@1.60.1.70888"}
+{"id": 472910, "field": "text", "en": "Find Mason Connery's Treasure", "hash": "81f8c97166f75d23", "src": "wdb@1.60.1.70888"}
+{"id": 472986, "field": "text", "en": "Find Varian Wrynn", "hash": "d68a9c063320f877", "src": "wdb@1.60.1.70888"}
+{"id": 472989, "field": "text", "en": "Ghansurok baited with Nightsaber meat", "hash": "1115aeec2195a22b", "src": "wdb@1.60.1.70888"}
+{"id": 472990, "field": "text", "en": "Read the note on the ground", "hash": "ce08dc301abc7175", "src": "wdb@1.60.1.70888"}
+{"id": 472995, "field": "text", "en": "Find Mason Connery's Treasure", "hash": "81f8c97166f75d23", "src": "wdb@1.60.1.70888"}
+{"id": 472997, "field": "text", "en": "Find Mason Connery's Treasure", "hash": "81f8c97166f75d23", "src": "wdb@1.60.1.70888"}
+{"id": 472999, "field": "text", "en": "Find Mason Connery's Treasure", "hash": "81f8c97166f75d23", "src": "wdb@1.60.1.70888"}

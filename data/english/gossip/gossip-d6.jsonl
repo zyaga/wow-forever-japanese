@@ -6,6 +6,7 @@
 {"id": "d639929036e4c8cc", "field": "text", "en": "%s begins chanting...", "hash": "d639929036e4c8cc", "src": "vmangos@13b49dc"}
 {"id": "d63b8c0183bfce20", "field": "text", "en": "I would never turn away someone who's ready to train with me. Unfortunately, you're not! You've still got a ways to go kid!", "hash": "d63b8c0183bfce20", "src": "vmangos@13b49dc"}
 {"id": "d64372e461bf2653", "field": "text", "en": "To get down safely, I provide wings to those in need. ", "hash": "d64372e461bf2653", "src": "vmangos@13b49dc"}
+{"id": "d6490603252c0e94", "field": "text", "en": "One of our argent scouts, Hailen, is assigned to the outskirts and highlands. She tends to come back to camp every fortnight.\r\n\r\nJudging by your description, it's possible it was her body you found. But you're one of the few Skyborne that have been through here other than Hailen. If anything, I should be interrogatin' you!\r\n\r\nBut I hear the serious concern in your voice. We have another field camp, northwest of Blackwood Lake. Check with the medic there. Quite a bit more to see and hear on the front lines.", "hash": "d6490603252c0e94", "src": "wdb@1.60.1.70888"}
 {"id": "d64995ac009e84e7", "field": "text", "en": "Leave me.  My wounds are great and I fear they will overtake me.  Thank you, $n.  I will die here, but because of you... I'll die in peace.", "hash": "d64995ac009e84e7", "src": "vmangos@13b49dc"}
 {"id": "d652536497a59e93", "field": "text", "en": "It is good to see the Burning Blade is taking over where the Shadow Council once failed.", "hash": "d652536497a59e93", "src": "vmangos@13b49dc"}
 {"id": "d658acd381aaaa1d", "field": "text", "en": "%s quickly shoots the orc dummy...", "hash": "d658acd381aaaa1d", "src": "vmangos@13b49dc"}
@@ -31,4 +32,5 @@
 {"id": "d6f0d5b10d8341a3", "field": "text", "en": "You're good for nothing, Ribbly.  It's time to pay for your wickedness!", "hash": "d6f0d5b10d8341a3", "src": "vmangos@13b49dc"}
 {"id": "d6f339b4bd3ea03d", "field": "text", "en": "Warlocks, you shouldn't be playing with magic you don't understand. See what happens?", "hash": "d6f339b4bd3ea03d", "src": "vmangos@13b49dc"}
 {"id": "d6f6ac3bcfb964ec", "field": "text", "en": "Now if you turn to page 34 in your text, you see an illustration of a dwarf undergoing dissection...", "hash": "d6f6ac3bcfb964ec", "src": "vmangos@13b49dc"}
+{"id": "d6fb7765f4b79c97", "field": "text", "en": "Parcel of Mail delivered to Innkeeper Vizzie in Winterspring", "hash": "d6fb7765f4b79c97", "src": "wdb@1.60.1.70888"}
 {"id": "d6fd797a96d3fb66", "field": "text", "en": "Opus wants some Cuergo's Gold... with worm.", "hash": "d6fd797a96d3fb66", "src": "vmangos@13b49dc"}

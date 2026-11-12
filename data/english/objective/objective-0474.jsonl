@@ -1,24 +1,41 @@
-{"id": 474392, "field": "text", "en": "Learn what you can from the crystal", "hash": "5e46ff498b77430a", "src": "wdb@1.60.1.70862"}
-{"id": 474454, "field": "text", "en": "Speak with Aamelia Windfield", "hash": "6a994c17ffcfc11e", "src": "wdb@1.60.1.70862"}
-{"id": 474501, "field": "text", "en": "Detonator used", "hash": "125a5bb12ea1eb1d", "src": "wdb@1.60.1.70862"}
-{"id": 474645, "field": "text", "en": "Grey Riding Kodo", "hash": "9a42a012e3ac9f99", "src": "wdb@1.60.1.70862"}
-{"id": 474646, "field": "text", "en": "Brown Riding Kodo", "hash": "f760c57799952a6d", "src": "wdb@1.60.1.70862"}
-{"id": 474647, "field": "text", "en": "White Riding Kodo", "hash": "71db666ebffbbe34", "src": "wdb@1.60.1.70862"}
-{"id": 474683, "field": "text", "en": "Empyrean Galestrider", "hash": "5ff1ed00cc160f8b", "src": "wdb@1.60.1.70862"}
-{"id": 474684, "field": "text", "en": "Stormy Galestrider", "hash": "3b15a9ee1797e4d4", "src": "wdb@1.60.1.70862"}
-{"id": 474685, "field": "text", "en": "Umber Galestrider", "hash": "413e1c1d9ecdae5e", "src": "wdb@1.60.1.70862"}
-{"id": 474689, "field": "text", "en": "Red Skeletal Horse", "hash": "8c7fb5c503a0d832", "src": "wdb@1.60.1.70862"}
-{"id": 474690, "field": "text", "en": "Brown Skeletal Horse", "hash": "d6fd7eb07e685724", "src": "wdb@1.60.1.70862"}
-{"id": 474691, "field": "text", "en": "Blue Skeletal Horse", "hash": "9675b392fb9c26f2", "src": "wdb@1.60.1.70862"}
-{"id": 474740, "field": "text", "en": "Black Skeletal Horse", "hash": "aa878919b2629377", "src": "wdb@1.60.1.70862"}
-{"id": 474758, "field": "text", "en": "White Ram", "hash": "1d1531acd623fbc5", "src": "wdb@1.60.1.70862"}
-{"id": 474759, "field": "text", "en": "Brown Ram", "hash": "0770ae5e1b15f8b3", "src": "wdb@1.60.1.70862"}
-{"id": 474760, "field": "text", "en": "Gray Ram", "hash": "358a189ee1bf0cba", "src": "wdb@1.60.1.70862"}
-{"id": 474788, "field": "text", "en": "Learn: Apprentice Riding", "hash": "90bd4f1872f708fe", "src": "wdb@1.60.1.70862"}
-{"id": 474885, "field": "text", "en": "Pinto Horse", "hash": "ac94d86c8f0bb57a", "src": "wdb@1.60.1.70862"}
-{"id": 474886, "field": "text", "en": "Brown Horse", "hash": "12f16ec353a1472b", "src": "wdb@1.60.1.70862"}
-{"id": 474887, "field": "text", "en": "Chestnut Mare", "hash": "2f021f15596cd92d", "src": "wdb@1.60.1.70862"}
-{"id": 474891, "field": "text", "en": "Unpainted Mechanostrider", "hash": "17dccf17a0b0a6bf", "src": "wdb@1.60.1.70862"}
-{"id": 474892, "field": "text", "en": "Green Mechanostrider", "hash": "5c76dd6b06f67eff", "src": "wdb@1.60.1.70862"}
-{"id": 474893, "field": "text", "en": "Blue Mechanostrider", "hash": "09d50846fbfd6327", "src": "wdb@1.60.1.70862"}
-{"id": 474896, "field": "text", "en": "Red Mechanostrider", "hash": "ffdf0a7404021467", "src": "wdb@1.60.1.70862"}
+{"id": 474262, "field": "text", "en": "Warlock Bones Thrown on Slime Altar", "hash": "5d9c4c77714f7f91", "src": "wdb@1.60.1.70888"}
+{"id": 474290, "field": "text", "en": "Speak with Sergeant Danneth", "hash": "a6542e1829e06eeb", "src": "wdb@1.60.1.70888"}
+{"id": 474392, "field": "text", "en": "Learn what you can from the crystal", "hash": "5e46ff498b77430a", "src": "wdb@1.60.1.70888"}
+{"id": 474450, "field": "text", "en": "Ruined Ballista reclaimed", "hash": "7561e2d606312e91", "src": "wdb@1.60.1.70888"}
+{"id": 474451, "field": "text", "en": "Ruined Flying Machine reclaimed", "hash": "36463ea70bcf4f7f", "src": "wdb@1.60.1.70888"}
+{"id": 474452, "field": "text", "en": "Ruined Catapult reclaimed", "hash": "5fec14ce2ca4fa00", "src": "wdb@1.60.1.70888"}
+{"id": 474454, "field": "text", "en": "Speak with Aamelia Windfield", "hash": "6a994c17ffcfc11e", "src": "wdb@1.60.1.70888"}
+{"id": 474501, "field": "text", "en": "Detonator used", "hash": "125a5bb12ea1eb1d", "src": "wdb@1.60.1.70888"}
+{"id": 474519, "field": "text", "en": "Win 10 duels", "hash": "dc678d65a4e5de96", "src": "wdb@1.60.1.70888"}
+{"id": 474601, "field": "text", "en": "South Bonfire lit", "hash": "91d9ed7814f86a45", "src": "wdb@1.60.1.70888"}
+{"id": 474629, "field": "text", "en": "Galvinquam's Drinking Gourd refilled", "hash": "da1e84eafd686a7c", "src": "wdb@1.60.1.70888"}
+{"id": 474645, "field": "text", "en": "Grey Riding Kodo", "hash": "9a42a012e3ac9f99", "src": "wdb@1.60.1.70888"}
+{"id": 474646, "field": "text", "en": "Brown Riding Kodo", "hash": "f760c57799952a6d", "src": "wdb@1.60.1.70888"}
+{"id": 474647, "field": "text", "en": "White Riding Kodo", "hash": "71db666ebffbbe34", "src": "wdb@1.60.1.70888"}
+{"id": 474648, "field": "text", "en": "Southeast Bonfire lit", "hash": "e3a72b4b4ff05daf", "src": "wdb@1.60.1.70888"}
+{"id": 474663, "field": "text", "en": "Emerald Riding Raptor", "hash": "fffb89a081c2cc39", "src": "wdb@1.60.1.70888"}
+{"id": 474664, "field": "text", "en": "Turquoise Riding Raptor", "hash": "da4e7f680b8f0334", "src": "wdb@1.60.1.70888"}
+{"id": 474665, "field": "text", "en": "Violet Riding Raptor", "hash": "a39aac401cc2db09", "src": "wdb@1.60.1.70888"}
+{"id": 474675, "field": "text", "en": "Brown Riding Wolf", "hash": "f8fc6cca3a7599d7", "src": "wdb@1.60.1.70888"}
+{"id": 474676, "field": "text", "en": "Dire Riding Wolf", "hash": "20854a961dddb6c8", "src": "wdb@1.60.1.70888"}
+{"id": 474677, "field": "text", "en": "Timber Riding Wolf", "hash": "9b8b70030959b0b2", "src": "wdb@1.60.1.70888"}
+{"id": 474678, "field": "text", "en": "Black Riding Wolf", "hash": "56bea652c3f0f320", "src": "wdb@1.60.1.70888"}
+{"id": 474683, "field": "text", "en": "Empyrean Galestrider", "hash": "5ff1ed00cc160f8b", "src": "wdb@1.60.1.70888"}
+{"id": 474684, "field": "text", "en": "Stormy Galestrider", "hash": "3b15a9ee1797e4d4", "src": "wdb@1.60.1.70888"}
+{"id": 474685, "field": "text", "en": "Umber Galestrider", "hash": "413e1c1d9ecdae5e", "src": "wdb@1.60.1.70888"}
+{"id": 474689, "field": "text", "en": "Red Skeletal Horse", "hash": "8c7fb5c503a0d832", "src": "wdb@1.60.1.70888"}
+{"id": 474690, "field": "text", "en": "Brown Skeletal Horse", "hash": "d6fd7eb07e685724", "src": "wdb@1.60.1.70888"}
+{"id": 474691, "field": "text", "en": "Blue Skeletal Horse", "hash": "9675b392fb9c26f2", "src": "wdb@1.60.1.70888"}
+{"id": 474740, "field": "text", "en": "Black Skeletal Horse", "hash": "aa878919b2629377", "src": "wdb@1.60.1.70888"}
+{"id": 474758, "field": "text", "en": "White Ram", "hash": "1d1531acd623fbc5", "src": "wdb@1.60.1.70888"}
+{"id": 474759, "field": "text", "en": "Brown Ram", "hash": "0770ae5e1b15f8b3", "src": "wdb@1.60.1.70888"}
+{"id": 474760, "field": "text", "en": "Gray Ram", "hash": "358a189ee1bf0cba", "src": "wdb@1.60.1.70888"}
+{"id": 474771, "field": "text", "en": "Explosive Runeshards detonated", "hash": "150c2a60777e9dd0", "src": "wdb@1.60.1.70888"}
+{"id": 474788, "field": "text", "en": "Learn: Apprentice Riding", "hash": "90bd4f1872f708fe", "src": "wdb@1.60.1.70888"}
+{"id": 474885, "field": "text", "en": "Pinto Horse", "hash": "ac94d86c8f0bb57a", "src": "wdb@1.60.1.70888"}
+{"id": 474886, "field": "text", "en": "Brown Horse", "hash": "12f16ec353a1472b", "src": "wdb@1.60.1.70888"}
+{"id": 474887, "field": "text", "en": "Chestnut Mare", "hash": "2f021f15596cd92d", "src": "wdb@1.60.1.70888"}
+{"id": 474891, "field": "text", "en": "Unpainted Mechanostrider", "hash": "17dccf17a0b0a6bf", "src": "wdb@1.60.1.70888"}
+{"id": 474892, "field": "text", "en": "Green Mechanostrider", "hash": "5c76dd6b06f67eff", "src": "wdb@1.60.1.70888"}
+{"id": 474893, "field": "text", "en": "Blue Mechanostrider", "hash": "09d50846fbfd6327", "src": "wdb@1.60.1.70888"}
+{"id": 474896, "field": "text", "en": "Red Mechanostrider", "hash": "ffdf0a7404021467", "src": "wdb@1.60.1.70888"}

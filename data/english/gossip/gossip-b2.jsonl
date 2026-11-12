@@ -19,7 +19,7 @@
 {"id": "b2513485456e30dd", "field": "text", "en": "More Grimtotems are coming this way!", "hash": "b2513485456e30dd", "src": "vmangos@13b49dc"}
 {"id": "b25becdacf7f221d", "field": "text", "en": "Champion units are entering the battle!", "hash": "b25becdacf7f221d", "src": "vmangos@13b49dc"}
 {"id": "b2616af3e0df71f3", "field": "text", "en": "Orcs? Badlands? I'm invulnerable!", "hash": "b2616af3e0df71f3", "src": "vmangos@13b49dc"}
-{"id": "b262f2c1fa397ad8", "field": "text", "en": "What are Waylaid Supply Crates?", "hash": "b262f2c1fa397ad8", "src": "collector@1.60.1.70790", "npcs": [256388]}
+{"id": "b262f2c1fa397ad8", "field": "text", "en": "What are Waylaid Supply Crates?", "hash": "b262f2c1fa397ad8", "src": "collector@1.60.1.70790", "npcs": [256388, 256391]}
 {"id": "b264f7c0d259f69b", "field": "text", "en": "You dare defile Frostmane Hold, $R. Prepare to die!", "hash": "b264f7c0d259f69b", "src": "vmangos@13b49dc"}
 {"id": "b265b6ae9e9dadff", "field": "text", "en": "$n!  You're back!  And not a moment too soon!", "hash": "b265b6ae9e9dadff", "src": "vmangos@13b49dc"}
 {"id": "b26678fe3a7a13c3", "field": "text", "en": "Skinning?  The only thing ye look like ye could skin is yer own knee!  Ha!  Now why don't you go see Balthus Stoneflayer so he can teach you how to properly skin some animals.  You'll find him in Finespindle's Leather Goods on the northern side of The Great Forge.", "hash": "b26678fe3a7a13c3", "src": "vmangos@13b49dc"}

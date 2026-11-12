@@ -1,3 +1,4 @@
+{"id": 3024, "field": "name", "en": "Tah Winterhoof", "hash": "b79f77c420106993", "src": "collector@1.60.1.70862"}
 {"id": 3050, "field": "name", "en": "Veren Tallstrider", "hash": "e9a1c0d586ddd12e", "src": "collector@1.60.1.70790"}
 {"id": 3054, "field": "name", "en": "Zarlman Two-Moons", "hash": "7b975a661c91148e", "src": "collector@1.60.1.70790"}
 {"id": 3055, "field": "name", "en": "Maur Raincaller", "hash": "50648dcc132ad44f", "src": "collector@1.60.1.70790"}
@@ -24,16 +25,22 @@
 {"id": 3347, "field": "name", "en": "Yelmak", "hash": "6c7cb2f5a3fc4c2c", "src": "collector@1.60.1.70790"}
 {"id": 3348, "field": "name", "en": "Kor'geld", "hash": "13252ff73ce9efda", "src": "collector@1.60.1.70790"}
 {"id": 3368, "field": "name", "en": "Borstan", "hash": "8511841e022d5ddc", "src": "collector@1.60.1.70790"}
+{"id": 3387, "field": "name", "en": "Jorn Skyseer", "hash": "4d1b9bdc7c17663f", "src": "collector@1.60.1.70862"}
 {"id": 3389, "field": "name", "en": "Regthar Deathgate", "hash": "1e8becbf71c91343", "src": "collector@1.60.1.70862"}
 {"id": 3390, "field": "name", "en": "Apothecary Helbrim", "hash": "df47147ec061a198", "src": "collector@1.60.1.70790"}
 {"id": 3391, "field": "name", "en": "Gazlowe", "hash": "d6cf2ede3e3cb4c2", "src": "collector@1.60.1.70790"}
 {"id": 3401, "field": "name", "en": "Shenthul", "hash": "f822da3b7a511190", "src": "collector@1.60.1.70790"}
 {"id": 3402, "field": "name", "en": "Zando'zan", "hash": "b5f8d527207a3b52", "src": "collector@1.60.1.70790"}
 {"id": 3419, "field": "name", "en": "Apothecary Zamah", "hash": "e9931e98c780b807", "src": "collector@1.60.1.70790"}
+{"id": 3428, "field": "name", "en": "Korran", "hash": "5b98d03647e704f2", "src": "collector@1.60.1.70862"}
 {"id": 3429, "field": "name", "en": "Thork", "hash": "d08ca54d4fe08a70", "src": "collector@1.60.1.70790"}
+{"id": 3430, "field": "name", "en": "Mangletooth", "hash": "8fd7919ea9e5db81", "src": "collector@1.60.1.70862"}
 {"id": 3432, "field": "name", "en": "Mankrik", "hash": "403948684b4552ff", "src": "collector@1.60.1.70790"}
+{"id": 3433, "field": "name", "en": "Tatternack Steelforge", "hash": "3f6f14f73b3329ea", "src": "collector@1.60.1.70862"}
 {"id": 3439, "field": "name", "en": "Wizzlecrank's Shredder", "hash": "e52d6b3e452c22c2", "src": "collector@1.60.1.70862"}
+{"id": 3441, "field": "name", "en": "Melor Stonehoof", "hash": "28dbf0864d66ee40", "src": "collector@1.60.1.70862"}
 {"id": 3442, "field": "name", "en": "Sputtervalve", "hash": "44821c88345dbb93", "src": "collector@1.60.1.70790"}
+{"id": 3443, "field": "name", "en": "Grub", "hash": "09a19c40fc716c8a", "src": "collector@1.60.1.70862"}
 {"id": 3446, "field": "name", "en": "Mebok Mizzyrix", "hash": "6f3c58474090da0d", "src": "collector@1.60.1.70790"}
 {"id": 3448, "field": "name", "en": "Tonga Runetotem", "hash": "95a86db102e98d77", "src": "collector@1.60.1.70790"}
 {"id": 3449, "field": "name", "en": "Darsok Swiftdagger", "hash": "fca6087de306229a", "src": "collector@1.60.1.70790"}
@@ -46,6 +53,7 @@
 {"id": 3519, "field": "name", "en": "Sentinel Arynia Cloudsbreak", "hash": "f82d76b7af85b64a", "src": "collector@1.60.1.70790"}
 {"id": 3549, "field": "name", "en": "Shelene Rhobart", "hash": "8192a76fd4c72b1d", "src": "collector@1.60.1.70790"}
 {"id": 3567, "field": "name", "en": "Tallonkai Swiftroot", "hash": "a3f3a242aed72140", "src": "collector@1.60.1.70205"}
+{"id": 3568, "field": "name", "en": "Mist", "hash": "0a6d119d2926834f", "src": "collector@1.60.1.70862"}
 {"id": 3583, "field": "name", "en": "Barithras Moonshade", "hash": "82d2ed38af401d15", "src": "collector@1.60.1.70840"}
 {"id": 3595, "field": "name", "en": "Shanda", "hash": "ba92ff074802f532", "src": "collector@1.60.1.70170"}
 {"id": 3597, "field": "name", "en": "Mardant Strongoak", "hash": "db4a20c0457c8efd", "src": "collector@1.60.1.70170"}
@@ -62,8 +70,10 @@
 {"id": 3665, "field": "name", "en": "Crane Operator Bigglefuzz", "hash": "53ead96fdd7e0284", "src": "collector@1.60.1.70790"}
 {"id": 3666, "field": "name", "en": "Wizbang Cranktoggle", "hash": "028d60bd8106e88a", "src": "collector@1.60.1.70840"}
 {"id": 3682, "field": "name", "en": "Vrang Wildgore", "hash": "d531cbca1daeeed9", "src": "collector@1.60.1.70862"}
+{"id": 3692, "field": "name", "en": "Volcor", "hash": "2976581b3cd7617f", "src": "collector@1.60.1.70888"}
 {"id": 3693, "field": "name", "en": "Terenthis", "hash": "a049705089c0adbb", "src": "collector@1.60.1.70862"}
 {"id": 3694, "field": "name", "en": "Sentinel Selarin", "hash": "a69e2fbc863c3e8a", "src": "collector@1.60.1.70862"}
 {"id": 3701, "field": "name", "en": "Tharnariun Treetender", "hash": "02fb38ebfea0dd16", "src": "collector@1.60.1.70840"}
 {"id": 3702, "field": "name", "en": "Alanndarian Nightsong", "hash": "7a8aa096c34d5525", "src": "collector@1.60.1.70862"}
 {"id": 3838, "field": "name", "en": "Vesprystus", "hash": "5872073aa2cdce90", "src": "collector@1.60.1.70840"}
+{"id": 3980, "field": "name", "en": "Raleigh the Devout", "hash": "cfa7a632868eb299", "src": "collector@1.60.1.70862"}

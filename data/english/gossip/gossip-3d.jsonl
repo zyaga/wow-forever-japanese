@@ -1,5 +1,6 @@
 {"id": "3d0643141edfff99", "field": "text", "en": "Your next choice awaits.$B$BYou are on a diplomatic mission for your liege to a cruel country that is currently at war with yours.  The war has been costly on both sides.  Your mission is to secure a peace that is honorable to both peoples.$B$BAt a diplomatic dinner, you overhear the ruler of the opposing land viciously insult your benevolent liege.  You are fairly certain the ruler meant to say it out of your earshot, but nonetheless he has besmirched your liege's honor.$B$BMake your choice.\n\n\n", "hash": "3d0643141edfff99", "src": "vmangos@13b49dc"}
 {"id": "3d0a2355190bb927", "field": "text", "en": "Your attacks are slowed by the cold, I think!", "hash": "3d0a2355190bb927", "src": "vmangos@13b49dc"}
+{"id": "3d1a53167b10e6e9", "field": "text", "en": "Why did you do it?", "hash": "3d1a53167b10e6e9", "src": "collector@1.60.1.70862", "npcs": [256930]}
 {"id": "3d1c65a2c89be78b", "field": "text", "en": "No rest... for the angry dead!", "hash": "3d1c65a2c89be78b", "src": "vmangos@13b49dc"}
 {"id": "3d2167141510a515", "field": "text", "en": "Watch where you're stepping, $c, because I have a polymorph spell with your name on it...", "hash": "3d2167141510a515", "src": "vmangos@13b49dc"}
 {"id": "3d2197755c18b93a", "field": "text", "en": "I have fashioned Yenniku's Soul Gem, $n...", "hash": "3d2197755c18b93a", "src": "vmangos@13b49dc"}
@@ -23,6 +24,7 @@
 {"id": "3d80cd06edff8416", "field": "text", "en": "The Icewing Bunker is under attack!  If left unchecked, the Alliance will destroy it!", "hash": "3d80cd06edff8416", "src": "vmangos@13b49dc"}
 {"id": "3d8157ca5b51bb01", "field": "text", "en": "Brave $c, thank you for rescuing me! I am sure Marshal Marris will reward your kind deed, $N.", "hash": "3d8157ca5b51bb01", "src": "vmangos@13b49dc"}
 {"id": "3d81a117a1e8fcda", "field": "text", "en": "AAAAAAAAAAAAAAAARGH!", "hash": "3d81a117a1e8fcda", "src": "vmangos@13b49dc"}
+{"id": "3d854bf79b30be68", "field": "text", "en": "You cannot stop Lorthuna's great work! The windlord's will has been done!", "hash": "3d854bf79b30be68", "src": "collector@1.60.1.70862"}
 {"id": "3d85980627f78b42", "field": "text", "en": "It would appear as if the influence of the Black Dragonflight had extended beyond the borders of the Burning Steppes and into the kingdom of Stormwind itself! The usurper has since been unmasked and ousted.", "hash": "3d85980627f78b42", "src": "vmangos@13b49dc"}
 {"id": "3d8aaec7e8ebb391", "field": "text", "en": "Earthen Templar!  I hold your crest of beckoning.  Heed my summons!", "hash": "3d8aaec7e8ebb391", "src": "vmangos@13b49dc"}
 {"id": "3d96988b3a0f12b9", "field": "text", "en": "Confess and we shall set you free.", "hash": "3d96988b3a0f12b9", "src": "vmangos@13b49dc"}

@@ -1,13 +1,24 @@
-{"id": 471034, "field": "text", "en": "Twilight Ritual Circle destroyed", "hash": "d34d6d5daf91d32a", "src": "wdb@1.60.1.70862"}
-{"id": 471055, "field": "text", "en": "Candles replaced", "hash": "764c2f7a46736c0a", "src": "wdb@1.60.1.70862"}
-{"id": 471121, "field": "text", "en": "Learn why the Kul Tirans are here", "hash": "399b695727b3cd28", "src": "wdb@1.60.1.70862"}
-{"id": 471122, "field": "text", "en": "Crystal Catalyst filled", "hash": "424e11ad31fca81a", "src": "wdb@1.60.1.70862"}
-{"id": 471235, "field": "text", "en": "Find the Drowned City Entrance", "hash": "bb71eeb1060a49ee", "src": "wdb@1.60.1.70862"}
-{"id": 471636, "field": "text", "en": "Willingly offer blood", "hash": "9fb50498f36e844e", "src": "wdb@1.60.1.70862"}
-{"id": 471637, "field": "text", "en": "Release Tortured Soul", "hash": "9cef74cc2f9acd5a", "src": "wdb@1.60.1.70862"}
-{"id": 471712, "field": "text", "en": "Learn what happened to Ardin Grassman", "hash": "83a0a47e82aa7dad", "src": "wdb@1.60.1.70862"}
-{"id": 471841, "field": "text", "en": "Sit near the campfire", "hash": "d2953d4747208297", "src": "wdb@1.60.1.70862"}
-{"id": 471842, "field": "text", "en": "Western pylon repaired", "hash": "2028d660b5adb6d0", "src": "wdb@1.60.1.70862"}
-{"id": 471843, "field": "text", "en": "Eastern pylon repaired", "hash": "4a5706d92bd6544d", "src": "wdb@1.60.1.70862"}
-{"id": 471923, "field": "text", "en": "Raise your tailoring skill to 20", "hash": "f38e72c6170a545b", "src": "wdb@1.60.1.70862"}
-{"id": 471934, "field": "text", "en": "Gain the Boosted Rest buff", "hash": "801ef2f5803d205e", "src": "wdb@1.60.1.70862"}
+{"id": 471034, "field": "text", "en": "Twilight Ritual Circle destroyed", "hash": "d34d6d5daf91d32a", "src": "wdb@1.60.1.70888"}
+{"id": 471046, "field": "text", "en": "Remains buried", "hash": "13d99f28843ee01a", "src": "wdb@1.60.1.70888"}
+{"id": 471055, "field": "text", "en": "Candles replaced", "hash": "764c2f7a46736c0a", "src": "wdb@1.60.1.70888"}
+{"id": 471121, "field": "text", "en": "Learn why the Kul Tirans are here", "hash": "399b695727b3cd28", "src": "wdb@1.60.1.70888"}
+{"id": 471122, "field": "text", "en": "Crystal Catalyst filled", "hash": "424e11ad31fca81a", "src": "wdb@1.60.1.70888"}
+{"id": 471216, "field": "text", "en": "Reach Old Totem", "hash": "96288e38f29d5a71", "src": "wdb@1.60.1.70888"}
+{"id": 471235, "field": "text", "en": "Find the Drowned City Entrance", "hash": "bb71eeb1060a49ee", "src": "wdb@1.60.1.70888"}
+{"id": 471636, "field": "text", "en": "Willingly offer blood", "hash": "9fb50498f36e844e", "src": "wdb@1.60.1.70888"}
+{"id": 471637, "field": "text", "en": "Release Tortured Soul", "hash": "9cef74cc2f9acd5a", "src": "wdb@1.60.1.70888"}
+{"id": 471711, "field": "text", "en": "Freshwater Crocolisk impaled", "hash": "d2bd728a681f6457", "src": "wdb@1.60.1.70888"}
+{"id": 471712, "field": "text", "en": "Learn what happened to Ardin Grassman", "hash": "83a0a47e82aa7dad", "src": "wdb@1.60.1.70888"}
+{"id": 471744, "field": "text", "en": "Pillar of Assimilation", "hash": "fbd32eccff9e5d6d", "src": "wdb@1.60.1.70888"}
+{"id": 471746, "field": "text", "en": "The Achromatic Crystal", "hash": "50fc05674af33b4a", "src": "wdb@1.60.1.70888"}
+{"id": 471800, "field": "text", "en": "Bethra'zel slain", "hash": "47d9c042543bee30", "src": "wdb@1.60.1.70888"}
+{"id": 471805, "field": "text", "en": "Mazzogore slain", "hash": "327cd497149420ba", "src": "wdb@1.60.1.70888"}
+{"id": 471841, "field": "text", "en": "Sit near the campfire", "hash": "d2953d4747208297", "src": "wdb@1.60.1.70888"}
+{"id": 471842, "field": "text", "en": "Western pylon repaired", "hash": "2028d660b5adb6d0", "src": "wdb@1.60.1.70888"}
+{"id": 471843, "field": "text", "en": "Eastern pylon repaired", "hash": "4a5706d92bd6544d", "src": "wdb@1.60.1.70888"}
+{"id": 471870, "field": "text", "en": "The Western Gates", "hash": "ffab3941939419e5", "src": "wdb@1.60.1.70888"}
+{"id": 471871, "field": "text", "en": "The Regrowth Vestibule", "hash": "895c4a6f6ee9d4d3", "src": "wdb@1.60.1.70888"}
+{"id": 471872, "field": "text", "en": "The Unearthed Stone Watcher", "hash": "f6e418d3f5bdfdf1", "src": "wdb@1.60.1.70888"}
+{"id": 471880, "field": "text", "en": "Shen'dralas wildlife slain with the blade", "hash": "bd4939a14d54fc6b", "src": "wdb@1.60.1.70888"}
+{"id": 471923, "field": "text", "en": "Raise your tailoring skill to 20", "hash": "f38e72c6170a545b", "src": "wdb@1.60.1.70888"}
+{"id": 471934, "field": "text", "en": "Gain the Boosted Rest buff", "hash": "801ef2f5803d205e", "src": "wdb@1.60.1.70888"}

@@ -2,7 +2,13 @@
 {"id": 7232, "field": "name", "en": "Borgus Steelhand", "hash": "cb8c2e29275b9f11", "src": "collector@1.60.1.70862"}
 {"id": 7233, "field": "name", "en": "Taskmaster Fizzule", "hash": "d406ce64e25a4a3e", "src": "collector@1.60.1.70862"}
 {"id": 7313, "field": "name", "en": "Priestess A'moora", "hash": "6824818298a800dd", "src": "collector@1.60.1.70790"}
+{"id": 7315, "field": "name", "en": "Darnath Bladesinger", "hash": "30f115a8681d080c", "src": "collector@1.60.1.70888"}
 {"id": 7316, "field": "name", "en": "Sister Aquinne", "hash": "89304be291e67d32", "src": "collector@1.60.1.70790"}
 {"id": 7317, "field": "name", "en": "Oben Rageclaw", "hash": "c60232e65cc5956a", "src": "collector@1.60.1.70790"}
 {"id": 7683, "field": "name", "en": "Alessandro Luca", "hash": "906ea0490e602b9d", "src": "collector@1.60.1.70790"}
+{"id": 7825, "field": "name", "en": "Oran Snakewrithe", "hash": "b5fb53c68af73749", "src": "collector@1.60.1.70862"}
+{"id": 7917, "field": "name", "en": "Brother Sarno", "hash": "7ddb50d14a3e7f22", "src": "collector@1.60.1.70888"}
+{"id": 7937, "field": "name", "en": "High Tinker Mekkatorque", "hash": "6ce2297ad1b39aa6", "src": "collector@1.60.1.70862"}
+{"id": 7944, "field": "name", "en": "Tinkmaster Overspark", "hash": "50a40f08f8d87974", "src": "collector@1.60.1.70862"}
+{"id": 7950, "field": "name", "en": "Master Mechanic Castpipe", "hash": "684b411fb91b02ad", "src": "collector@1.60.1.70862"}
 {"id": 7999, "field": "name", "en": "Tyrande Whisperwind", "hash": "4f502e6f4c8ef4f2", "src": "collector@1.60.1.70790"}

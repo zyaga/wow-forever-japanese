@@ -1,81 +1,111 @@
-{"id": 287000, "field": "name", "en": "Skin-Flayed Footguards", "hash": "257006697e2211ca", "src": "db2@1.60.1.70862"}
-{"id": 287001, "field": "name", "en": "Waterlogged Shoulderpads", "hash": "4e71736030aa857a", "src": "db2@1.60.1.70862"}
-{"id": 287002, "field": "name", "en": "Risen Sentry's Links", "hash": "fd79300da33c89c7", "src": "db2@1.60.1.70862"}
-{"id": 287003, "field": "name", "en": "Corroded Handguards", "hash": "339015b87910cd50", "src": "db2@1.60.1.70862"}
-{"id": 287004, "field": "name", "en": "Touch of the Depths", "hash": "85c9e0330f24d77a", "src": "db2@1.60.1.70862"}
-{"id": 287005, "field": "name", "en": "Sword of Dismemberment", "hash": "5e1266bfd96d24c3", "src": "db2@1.60.1.70862"}
-{"id": 287005, "field": "description", "en": "Dismember the target, inflicting $s1 Physical damage.", "hash": "5aeb8ddae4e8ac9d", "src": "db2@1.60.1.70862"}
-{"id": 287006, "field": "name", "en": "Resurged Axe", "hash": "9129ef382a0a0287", "src": "db2@1.60.1.70862"}
-{"id": 287007, "field": "name", "en": "Stretched Footpads", "hash": "1af5bbed02a59c68", "src": "db2@1.60.1.70862"}
-{"id": 287008, "field": "name", "en": "Ogre Magi's Mantle", "hash": "dc1052498e03104a", "src": "db2@1.60.1.70862"}
-{"id": 287009, "field": "name", "en": "Twilight Enforcer's Legs", "hash": "222361c55b1dd415", "src": "db2@1.60.1.70862"}
-{"id": 287010, "field": "name", "en": "Outrider's Gloves", "hash": "fa77ac26376a294e", "src": "db2@1.60.1.70862"}
-{"id": 287010, "field": "description", "en": "Increases movement speed while mounted by $s1%. This effect does not stack with similar effects.", "hash": "aacb8fe4003528df", "src": "db2@1.60.1.70862"}
-{"id": 287011, "field": "name", "en": "Guise of Battle", "hash": "5ef2d39662759c84", "src": "db2@1.60.1.70862"}
-{"id": 287012, "field": "name", "en": "Krol'dok Warplate Gauntlets", "hash": "ba4bf7ce6eaaa219", "src": "db2@1.60.1.70862"}
-{"id": 287013, "field": "name", "en": "Krol'dok Warplate Legplates", "hash": "badf3cc3f705ad40", "src": "db2@1.60.1.70862"}
-{"id": 287014, "field": "name", "en": "Krol'dok Warplate Pauldrons", "hash": "c2fd98c6864c9ebd", "src": "db2@1.60.1.70862"}
-{"id": 287015, "field": "name", "en": "Supreme Smasher", "hash": "3a690d03177003d1", "src": "db2@1.60.1.70862"}
-{"id": 287016, "field": "name", "en": "Shadow-Seer Orb", "hash": "94e741a901d4d55f", "src": "db2@1.60.1.70862"}
-{"id": 287019, "field": "name", "en": "Defias Enforcer's Mask", "hash": "b9fa04799a9347a0", "src": "db2@1.60.1.70862"}
-{"id": 287020, "field": "name", "en": "Defias Enforcer's Chest", "hash": "7c53a5e2a23b973d", "src": "db2@1.60.1.70862"}
-{"id": 287021, "field": "name", "en": "Defias Enforcer's Prowlers", "hash": "b00a63f2aee07f8b", "src": "db2@1.60.1.70862"}
-{"id": 287059, "field": "name", "en": "Footman's Pocketknife", "hash": "3d60c407573f280a", "src": "db2@1.60.1.70862"}
-{"id": 287060, "field": "name", "en": "Rezlak's Spare Knife", "hash": "32461223023397da", "src": "db2@1.60.1.70862"}
-{"id": 287061, "field": "name", "en": "Cheese Knife", "hash": "c7cfe40d86b87fd9", "src": "db2@1.60.1.70862"}
-{"id": 287062, "field": "name", "en": "Darnassian Knife", "hash": "632c3dd5dd4c961e", "src": "db2@1.60.1.70862"}
-{"id": 287063, "field": "name", "en": "Serrated Knife", "hash": "6183c9bb5f6fab01", "src": "db2@1.60.1.70862"}
-{"id": 287064, "field": "name", "en": "Beastculler's Knife", "hash": "1f6c6200622afc46", "src": "db2@1.60.1.70862"}
-{"id": 287066, "field": "name", "en": "Wizlo's Tuning Wrench", "hash": "60733157efb3ef69", "src": "db2@1.60.1.70862"}
-{"id": 287067, "field": "name", "en": "Dragonmaw Skinflayer", "hash": "1f10ed5e0c37f0e2", "src": "db2@1.60.1.70862"}
-{"id": 287068, "field": "name", "en": "Excavated Dagger", "hash": "d6849fec286408b5", "src": "db2@1.60.1.70862"}
-{"id": 287069, "field": "name", "en": "Yeti Skinner", "hash": "5a84317688893cec", "src": "db2@1.60.1.70862"}
-{"id": 287069, "field": "description", "en": "Serves as a Skinning Knife.", "hash": "0f5d1ea533951e05", "src": "db2@1.60.1.70862"}
-{"id": 287070, "field": "name", "en": "Skypierce Javelin", "hash": "cb00381fab03cf61", "src": "db2@1.60.1.70862"}
-{"id": 287071, "field": "name", "en": "Goblin Switchblade", "hash": "64687e5de2b81bb7", "src": "db2@1.60.1.70862"}
-{"id": 287072, "field": "name", "en": "Bladewhisper's Namesake", "hash": "207897d04720f450", "src": "db2@1.60.1.70862"}
-{"id": 287073, "field": "name", "en": "Orwin's Axe", "hash": "0cbbc38e617315c8", "src": "db2@1.60.1.70862"}
-{"id": 287074, "field": "name", "en": "Lard's Lunch Slicer", "hash": "e950fb178cb59b60", "src": "db2@1.60.1.70862"}
-{"id": 287075, "field": "name", "en": "Belgrom's Revenge", "hash": "aa666eb1d6025c98", "src": "db2@1.60.1.70862"}
-{"id": 287090, "field": "name", "en": "Letter Opener", "hash": "9d2e361da67c23c0", "src": "db2@1.60.1.70862"}
-{"id": 287416, "field": "name", "en": "Truskis' Cheesecake Slice", "hash": "f30c50f4a16d79c7", "src": "db2@1.60.1.70862"}
-{"id": 287416, "field": "description", "en": "Cheesecake makes you happy.", "hash": "81d403b473235fb8", "src": "db2@1.60.1.70862"}
-{"id": 287505, "field": "name", "en": "Tender Strider Meat", "hash": "7e48989fc150c7a4", "src": "db2@1.60.1.70862"}
-{"id": 287505, "field": "description", "en": "Serves Kyle his lunch!\nKyle would delight in taking a bite out of this succulent treat!", "hash": "5e17d5fa76ceb2f4", "src": "db2@1.60.1.70862"}
-{"id": 287958, "field": "name", "en": "Titan Relic", "hash": "d217f2e31d435cfb", "src": "db2@1.60.1.70862"}
-{"id": 287958, "field": "description", "en": "Fragmented remnants of the construct, refracting light like a kaleidoscope.", "hash": "7b1cbbffd1478610", "src": "db2@1.60.1.70862"}
-{"id": 287959, "field": "name", "en": "Titan Relic", "hash": "d217f2e31d435cfb", "src": "db2@1.60.1.70862"}
-{"id": 287959, "field": "description", "en": "Fragmented remnants of the construct, refracting light like a kaleidoscope.", "hash": "7b1cbbffd1478610", "src": "db2@1.60.1.70862"}
-{"id": 287963, "field": "name", "en": "Roasted Quail", "hash": "3d87aa25317926d5", "src": "db2@1.60.1.70862"}
-{"id": 287963, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70862"}
-{"id": 287964, "field": "name", "en": "Morning Glory Dew", "hash": "868e26446c2be2bc", "src": "db2@1.60.1.70862"}
-{"id": 287964, "field": "description", "en": "Restores $o1 mana over $d.  Must remain seated while drinking.", "hash": "792a9d04713a780c", "src": "db2@1.60.1.70862"}
-{"id": 287966, "field": "name", "en": "Minor Healing Potion", "hash": "0908d26848b51315", "src": "db2@1.60.1.70862"}
-{"id": 287966, "field": "description", "en": "Restores $s1 health.\nThis potion cannot be used in profession recipes or quest turn-ins.", "hash": "52c31d97d08d587c", "src": "db2@1.60.1.70862"}
-{"id": 287967, "field": "name", "en": "Lesser Healing Potion", "hash": "ae62462ad4c3e38d", "src": "db2@1.60.1.70862"}
-{"id": 287967, "field": "description", "en": "Restores $s1 health.\nThis potion cannot be used in profession recipes or quest turn-ins.", "hash": "52c31d97d08d587c", "src": "db2@1.60.1.70862"}
-{"id": 287968, "field": "name", "en": "Minor Mana Potion", "hash": "3a6b2be7a4263adf", "src": "db2@1.60.1.70862"}
-{"id": 287968, "field": "description", "en": "Restores $s1 mana.\nThis potion cannot be used in profession recipes or quest turn-ins.", "hash": "9c56a27c751d6c2d", "src": "db2@1.60.1.70862"}
-{"id": 287969, "field": "name", "en": "Lesser Mana Potion", "hash": "fe6850551cc0793f", "src": "db2@1.60.1.70862"}
-{"id": 287969, "field": "description", "en": "Restores $s1 mana.\nThis potion cannot be used in profession recipes or quest turn-ins.", "hash": "9c56a27c751d6c2d", "src": "db2@1.60.1.70862"}
-{"id": 287971, "field": "name", "en": "Woolen Bag", "hash": "34f78466d6224520", "src": "db2@1.60.1.70862"}
-{"id": 287972, "field": "name", "en": "Rumsey Rum Dark", "hash": "edd12df0f4a5d49c", "src": "db2@1.60.1.70862"}
-{"id": 287972, "field": "description", "en": "Increases Stamina by $s1 for $d and gets you drunk to boot!", "hash": "faf19c38b8f31965", "src": "db2@1.60.1.70862"}
-{"id": 287973, "field": "name", "en": "Tender Wolf Steak", "hash": "bca2b603e7c690a6", "src": "db2@1.60.1.70862"}
-{"id": 287973, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 sec eating, you will become well fed and gain $s2 Agility for $1248420d. $@spelldesc1243969", "hash": "0a4ae27daa4521cf", "src": "db2@1.60.1.70862"}
-{"id": 287974, "field": "name", "en": "Grilled Squid", "hash": "a4da8049edd1d451", "src": "db2@1.60.1.70862"}
-{"id": 287974, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2% Critical Strike chance for $1249523d. $@spelldesc1243969", "hash": "1c7e23db01557d49", "src": "db2@1.60.1.70862"}
-{"id": 287975, "field": "name", "en": "Swiftness Potion", "hash": "a32c27ad41c2a98f", "src": "db2@1.60.1.70862"}
-{"id": 287975, "field": "description", "en": "Increases run speed by $s1% for $d1.\nThis potion cannot be used in profession recipes or quest turn-ins.", "hash": "6589b28eab87f18e", "src": "db2@1.60.1.70862"}
-{"id": 287976, "field": "name", "en": "Free Action Potion", "hash": "dad6363ae618b254", "src": "db2@1.60.1.70862"}
-{"id": 287976, "field": "description", "en": "Makes you immune to Stun and Movement Impairing effects for the next $d.   Does not remove effects already on the imbiber.\nThis potion cannot be used in profession recipes or quest turn-ins.", "hash": "83e60d3154577a81", "src": "db2@1.60.1.70862"}
-{"id": 287977, "field": "name", "en": "Greater Healing Potion", "hash": "9dd18a948e91f0a1", "src": "db2@1.60.1.70862"}
-{"id": 287977, "field": "description", "en": "Restores $s1 health.\nThis potion cannot be used in profession recipes or quest turn-ins.", "hash": "52c31d97d08d587c", "src": "db2@1.60.1.70862"}
-{"id": 287978, "field": "name", "en": "Rough Sharpening Stone", "hash": "b9bad02223f566b2", "src": "db2@1.60.1.70862"}
-{"id": 287978, "field": "description", "en": "Increase sharp weapon damage by 2 for 30 minutes.", "hash": "2a8c6b23c1c33ff0", "src": "db2@1.60.1.70862"}
-{"id": 287979, "field": "name", "en": "Lesser Wizard Oil", "hash": "bfa6c71075427265", "src": "db2@1.60.1.70862"}
-{"id": 287979, "field": "description", "en": "While applied to target weapon it increases spell damage and healing by up to $25110s1. Lasts for 30 minutes.", "hash": "143db2f8fd8b1ac3", "src": "db2@1.60.1.70862"}
-{"id": 287980, "field": "name", "en": "Elemental Sharpening Stone", "hash": "651e222310602f2d", "src": "db2@1.60.1.70862"}
-{"id": 287980, "field": "description", "en": "Increase critical chance on a melee weapon by 2% for 30 minutes.", "hash": "052517c48526aad7", "src": "db2@1.60.1.70862"}
-{"id": 287992, "field": "name", "en": "Old Key", "hash": "beadd9fab9ec80f4", "src": "db2@1.60.1.70862"}
-{"id": 287992, "field": "description", "en": "An old key.", "hash": "f21ba4b04a31ef35", "src": "db2@1.60.1.70862"}
+{"id": 287000, "field": "name", "en": "Skin-Flayed Footguards", "hash": "257006697e2211ca", "src": "db2@1.60.1.70888"}
+{"id": 287001, "field": "name", "en": "Waterlogged Shoulderpads", "hash": "4e71736030aa857a", "src": "db2@1.60.1.70888"}
+{"id": 287002, "field": "name", "en": "Risen Sentry's Links", "hash": "fd79300da33c89c7", "src": "db2@1.60.1.70888"}
+{"id": 287003, "field": "name", "en": "Corroded Handguards", "hash": "339015b87910cd50", "src": "db2@1.60.1.70888"}
+{"id": 287004, "field": "name", "en": "Touch of the Depths", "hash": "85c9e0330f24d77a", "src": "db2@1.60.1.70888"}
+{"id": 287005, "field": "name", "en": "Sword of Dismemberment", "hash": "5e1266bfd96d24c3", "src": "db2@1.60.1.70888"}
+{"id": 287005, "field": "description", "en": "Dismember the target, inflicting $s1 Physical damage.", "hash": "5aeb8ddae4e8ac9d", "src": "db2@1.60.1.70888"}
+{"id": 287006, "field": "name", "en": "Resurged Axe", "hash": "9129ef382a0a0287", "src": "db2@1.60.1.70888"}
+{"id": 287007, "field": "name", "en": "Stretched Footpads", "hash": "1af5bbed02a59c68", "src": "db2@1.60.1.70888"}
+{"id": 287008, "field": "name", "en": "Ogre Magi's Mantle", "hash": "dc1052498e03104a", "src": "db2@1.60.1.70888"}
+{"id": 287009, "field": "name", "en": "Twilight Enforcer's Legs", "hash": "222361c55b1dd415", "src": "db2@1.60.1.70888"}
+{"id": 287010, "field": "name", "en": "Outrider's Gloves", "hash": "fa77ac26376a294e", "src": "db2@1.60.1.70888"}
+{"id": 287010, "field": "description", "en": "Increases movement speed while mounted by $s1%. This effect does not stack with similar effects.", "hash": "aacb8fe4003528df", "src": "db2@1.60.1.70888"}
+{"id": 287011, "field": "name", "en": "Guise of Battle", "hash": "5ef2d39662759c84", "src": "db2@1.60.1.70888"}
+{"id": 287012, "field": "name", "en": "Krol'dok Warplate Gauntlets", "hash": "ba4bf7ce6eaaa219", "src": "db2@1.60.1.70888"}
+{"id": 287013, "field": "name", "en": "Krol'dok Warplate Legplates", "hash": "badf3cc3f705ad40", "src": "db2@1.60.1.70888"}
+{"id": 287014, "field": "name", "en": "Krol'dok Warplate Pauldrons", "hash": "c2fd98c6864c9ebd", "src": "db2@1.60.1.70888"}
+{"id": 287015, "field": "name", "en": "Supreme Smasher", "hash": "3a690d03177003d1", "src": "db2@1.60.1.70888"}
+{"id": 287016, "field": "name", "en": "Shadow-Seer Orb", "hash": "94e741a901d4d55f", "src": "db2@1.60.1.70888"}
+{"id": 287017, "field": "name", "en": "Chaplain's Mitre", "hash": "f27cc29da0b045e8", "src": "db2@1.60.1.70888"}
+{"id": 287018, "field": "name", "en": "Compound Gloves", "hash": "629a1d9ecd0d1289", "src": "db2@1.60.1.70888"}
+{"id": 287019, "field": "name", "en": "Defias Enforcer's Mask", "hash": "b9fa04799a9347a0", "src": "db2@1.60.1.70888"}
+{"id": 287020, "field": "name", "en": "Defias Enforcer's Chest", "hash": "7c53a5e2a23b973d", "src": "db2@1.60.1.70888"}
+{"id": 287021, "field": "name", "en": "Defias Enforcer's Prowlers", "hash": "b00a63f2aee07f8b", "src": "db2@1.60.1.70888"}
+{"id": 287022, "field": "name", "en": "Spaulders of Containment", "hash": "db0dda0b54490ecb", "src": "db2@1.60.1.70888"}
+{"id": 287023, "field": "name", "en": "Iron-Wrought Cuffs", "hash": "533941624578061d", "src": "db2@1.60.1.70888"}
+{"id": 287024, "field": "name", "en": "Mark of Captivity", "hash": "295e37d267d56b5d", "src": "db2@1.60.1.70888"}
+{"id": 287025, "field": "name", "en": "Enchantresses' Spire", "hash": "50cc9ce726635772", "src": "db2@1.60.1.70888"}
+{"id": 287025, "field": "description", "en": "Reduces the cast time of Disenchant by $s1%.", "hash": "81de7c979fe6d7d4", "src": "db2@1.60.1.70888"}
+{"id": 287026, "field": "name", "en": "Escape Plan", "hash": "2f52ac28cfbaf0a8", "src": "db2@1.60.1.70888"}
+{"id": 287026, "field": "description", "en": "Disarm target's weapon for $d.", "hash": "fbbf66ad70cd6ab3", "src": "db2@1.60.1.70888"}
+{"id": 287028, "field": "name", "en": "Tormented Cuffs", "hash": "65256e5da55a10f6", "src": "db2@1.60.1.70888"}
+{"id": 287029, "field": "name", "en": "Nature Guardian's Legguards", "hash": "00c63db259a15a6e", "src": "db2@1.60.1.70888"}
+{"id": 287030, "field": "name", "en": "Blackmaw Bindings", "hash": "c91b8f3de321b7a4", "src": "db2@1.60.1.70888"}
+{"id": 287031, "field": "name", "en": "Spearfisher's Waders", "hash": "d554943889ce74de", "src": "db2@1.60.1.70888"}
+{"id": 287032, "field": "name", "en": "Den Champion's Binding", "hash": "82babc6cbb3db57c", "src": "db2@1.60.1.70888"}
+{"id": 287033, "field": "name", "en": "Furbolg Berserker's Boots", "hash": "27652051d47ce200", "src": "db2@1.60.1.70888"}
+{"id": 287034, "field": "name", "en": "Grove Subjugator's Blade", "hash": "9234eede97e778a9", "src": "db2@1.60.1.70888"}
+{"id": 287034, "field": "description", "en": "To subjugate a soul takes a toll on one's own.", "hash": "d318b87329206771", "src": "db2@1.60.1.70888"}
+{"id": 287035, "field": "name", "en": "Demon Worshipper's Necklace", "hash": "ba1ec7c4ca260f71", "src": "db2@1.60.1.70888"}
+{"id": 287036, "field": "name", "en": "Satyr's Touch", "hash": "b37178a01ce2331e", "src": "db2@1.60.1.70888"}
+{"id": 287038, "field": "name", "en": "Naturopathy Footpads", "hash": "27e4fcf914e20018", "src": "db2@1.60.1.70888"}
+{"id": 287040, "field": "name", "en": "Dinosaur Hide Belt", "hash": "0036be83430a4c80", "src": "db2@1.60.1.70888"}
+{"id": 287041, "field": "name", "en": "Time-Forgotten Bindings", "hash": "b7f7063fb45652e6", "src": "db2@1.60.1.70888"}
+{"id": 287043, "field": "name", "en": "Predaceous Band", "hash": "457edc237f92f221", "src": "db2@1.60.1.70888"}
+{"id": 287043, "field": "description", "en": "Movement speed increased by $s1% in Forest and Grassland areas.", "hash": "ace399bb0519f0fb", "src": "db2@1.60.1.70888"}
+{"id": 287044, "field": "name", "en": "Predator's Shroud", "hash": "42de217609da43ea", "src": "db2@1.60.1.70888"}
+{"id": 287045, "field": "name", "en": "Ancient Mattock", "hash": "b13779eeec5df9e3", "src": "db2@1.60.1.70888"}
+{"id": 287045, "field": "description", "en": "Sift through an Un'Goro Dirt Pile.", "hash": "645bcd54dde33089", "src": "db2@1.60.1.70888"}
+{"id": 287046, "field": "name", "en": "Pylon Poker", "hash": "744dbdbcbd3bf712", "src": "db2@1.60.1.70888"}
+{"id": 287059, "field": "name", "en": "Footman's Pocketknife", "hash": "3d60c407573f280a", "src": "db2@1.60.1.70888"}
+{"id": 287060, "field": "name", "en": "Rezlak's Spare Knife", "hash": "32461223023397da", "src": "db2@1.60.1.70888"}
+{"id": 287061, "field": "name", "en": "Cheese Knife", "hash": "c7cfe40d86b87fd9", "src": "db2@1.60.1.70888"}
+{"id": 287062, "field": "name", "en": "Darnassian Knife", "hash": "632c3dd5dd4c961e", "src": "db2@1.60.1.70888"}
+{"id": 287063, "field": "name", "en": "Serrated Knife", "hash": "6183c9bb5f6fab01", "src": "db2@1.60.1.70888"}
+{"id": 287064, "field": "name", "en": "Beastculler's Knife", "hash": "1f6c6200622afc46", "src": "db2@1.60.1.70888"}
+{"id": 287066, "field": "name", "en": "Wizlo's Tuning Wrench", "hash": "60733157efb3ef69", "src": "db2@1.60.1.70888"}
+{"id": 287067, "field": "name", "en": "Dragonmaw Skinflayer", "hash": "1f10ed5e0c37f0e2", "src": "db2@1.60.1.70888"}
+{"id": 287068, "field": "name", "en": "Excavated Dagger", "hash": "d6849fec286408b5", "src": "db2@1.60.1.70888"}
+{"id": 287069, "field": "name", "en": "Yeti Skinner", "hash": "5a84317688893cec", "src": "db2@1.60.1.70888"}
+{"id": 287069, "field": "description", "en": "Serves as a Skinning Knife.", "hash": "0f5d1ea533951e05", "src": "db2@1.60.1.70888"}
+{"id": 287070, "field": "name", "en": "Skypierce Javelin", "hash": "cb00381fab03cf61", "src": "db2@1.60.1.70888"}
+{"id": 287071, "field": "name", "en": "Goblin Switchblade", "hash": "64687e5de2b81bb7", "src": "db2@1.60.1.70888"}
+{"id": 287072, "field": "name", "en": "Bladewhisper's Namesake", "hash": "207897d04720f450", "src": "db2@1.60.1.70888"}
+{"id": 287073, "field": "name", "en": "Orwin's Axe", "hash": "0cbbc38e617315c8", "src": "db2@1.60.1.70888"}
+{"id": 287074, "field": "name", "en": "Lard's Lunch Slicer", "hash": "e950fb178cb59b60", "src": "db2@1.60.1.70888"}
+{"id": 287075, "field": "name", "en": "Belgrom's Revenge", "hash": "aa666eb1d6025c98", "src": "db2@1.60.1.70888"}
+{"id": 287076, "field": "name", "en": "Noggle's Razorblade", "hash": "48c2c70bdad4e2f0", "src": "db2@1.60.1.70888"}
+{"id": 287077, "field": "name", "en": "Demonbane Knife", "hash": "9a78570d12861cb8", "src": "db2@1.60.1.70888"}
+{"id": 287090, "field": "name", "en": "Letter Opener", "hash": "9d2e361da67c23c0", "src": "db2@1.60.1.70888"}
+{"id": 287416, "field": "name", "en": "Truskis' Cheesecake Slice", "hash": "f30c50f4a16d79c7", "src": "db2@1.60.1.70888"}
+{"id": 287416, "field": "description", "en": "Cheesecake makes you happy.", "hash": "81d403b473235fb8", "src": "db2@1.60.1.70888"}
+{"id": 287505, "field": "name", "en": "Tender Strider Meat", "hash": "7e48989fc150c7a4", "src": "db2@1.60.1.70888"}
+{"id": 287505, "field": "description", "en": "Serves Kyle his lunch!\nKyle would delight in taking a bite out of this succulent treat!", "hash": "5e17d5fa76ceb2f4", "src": "db2@1.60.1.70888"}
+{"id": 287958, "field": "name", "en": "Titan Relic", "hash": "d217f2e31d435cfb", "src": "db2@1.60.1.70888"}
+{"id": 287958, "field": "description", "en": "Fragmented remnants of the construct, refracting light like a kaleidoscope.", "hash": "7b1cbbffd1478610", "src": "db2@1.60.1.70888"}
+{"id": 287959, "field": "name", "en": "Titan Relic", "hash": "d217f2e31d435cfb", "src": "db2@1.60.1.70888"}
+{"id": 287959, "field": "description", "en": "Fragmented remnants of the construct, refracting light like a kaleidoscope.", "hash": "7b1cbbffd1478610", "src": "db2@1.60.1.70888"}
+{"id": 287963, "field": "name", "en": "Roasted Quail", "hash": "3d87aa25317926d5", "src": "db2@1.60.1.70888"}
+{"id": 287963, "field": "description", "en": "Restores $o1 health over $d.  Must remain seated while eating.", "hash": "e5e04206bc5e70df", "src": "db2@1.60.1.70888"}
+{"id": 287964, "field": "name", "en": "Morning Glory Dew", "hash": "868e26446c2be2bc", "src": "db2@1.60.1.70888"}
+{"id": 287964, "field": "description", "en": "Restores $o1 mana over $d.  Must remain seated while drinking.", "hash": "792a9d04713a780c", "src": "db2@1.60.1.70888"}
+{"id": 287966, "field": "name", "en": "Minor Healing Potion", "hash": "0908d26848b51315", "src": "db2@1.60.1.70888"}
+{"id": 287966, "field": "description", "en": "Restores $s1 health.\nThis potion cannot be used in profession recipes or quest turn-ins.", "hash": "52c31d97d08d587c", "src": "db2@1.60.1.70888"}
+{"id": 287967, "field": "name", "en": "Lesser Healing Potion", "hash": "ae62462ad4c3e38d", "src": "db2@1.60.1.70888"}
+{"id": 287967, "field": "description", "en": "Restores $s1 health.\nThis potion cannot be used in profession recipes or quest turn-ins.", "hash": "52c31d97d08d587c", "src": "db2@1.60.1.70888"}
+{"id": 287968, "field": "name", "en": "Minor Mana Potion", "hash": "3a6b2be7a4263adf", "src": "db2@1.60.1.70888"}
+{"id": 287968, "field": "description", "en": "Restores $s1 mana.\nThis potion cannot be used in profession recipes or quest turn-ins.", "hash": "9c56a27c751d6c2d", "src": "db2@1.60.1.70888"}
+{"id": 287969, "field": "name", "en": "Lesser Mana Potion", "hash": "fe6850551cc0793f", "src": "db2@1.60.1.70888"}
+{"id": 287969, "field": "description", "en": "Restores $s1 mana.\nThis potion cannot be used in profession recipes or quest turn-ins.", "hash": "9c56a27c751d6c2d", "src": "db2@1.60.1.70888"}
+{"id": 287971, "field": "name", "en": "Woolen Bag", "hash": "34f78466d6224520", "src": "db2@1.60.1.70888"}
+{"id": 287972, "field": "name", "en": "Rumsey Rum Dark", "hash": "edd12df0f4a5d49c", "src": "db2@1.60.1.70888"}
+{"id": 287972, "field": "description", "en": "Increases Stamina by $s1 for $d and gets you drunk to boot!", "hash": "faf19c38b8f31965", "src": "db2@1.60.1.70888"}
+{"id": 287973, "field": "name", "en": "Tender Wolf Steak", "hash": "bca2b603e7c690a6", "src": "db2@1.60.1.70888"}
+{"id": 287973, "field": "description", "en": "$@spelldesc1129 If you spend at least 10 sec eating, you will become well fed and gain $s2 Agility for $1248420d. $@spelldesc1243969", "hash": "0a4ae27daa4521cf", "src": "db2@1.60.1.70888"}
+{"id": 287974, "field": "name", "en": "Grilled Squid", "hash": "a4da8049edd1d451", "src": "db2@1.60.1.70888"}
+{"id": 287974, "field": "description", "en": "$@spelldesc1131 If you spend at least 10 sec eating, you will become well fed and gain $s2% Critical Strike chance for $1249523d. $@spelldesc1243969", "hash": "1c7e23db01557d49", "src": "db2@1.60.1.70888"}
+{"id": 287975, "field": "name", "en": "Swiftness Potion", "hash": "a32c27ad41c2a98f", "src": "db2@1.60.1.70888"}
+{"id": 287975, "field": "description", "en": "Increases run speed by $s1% for $d1.\nThis potion cannot be used in profession recipes or quest turn-ins.", "hash": "6589b28eab87f18e", "src": "db2@1.60.1.70888"}
+{"id": 287976, "field": "name", "en": "Free Action Potion", "hash": "dad6363ae618b254", "src": "db2@1.60.1.70888"}
+{"id": 287976, "field": "description", "en": "Makes you immune to Stun and Movement Impairing effects for the next $d.   Does not remove effects already on the imbiber.\nThis potion cannot be used in profession recipes or quest turn-ins.", "hash": "83e60d3154577a81", "src": "db2@1.60.1.70888"}
+{"id": 287977, "field": "name", "en": "Greater Healing Potion", "hash": "9dd18a948e91f0a1", "src": "db2@1.60.1.70888"}
+{"id": 287977, "field": "description", "en": "Restores $s1 health.\nThis potion cannot be used in profession recipes or quest turn-ins.", "hash": "52c31d97d08d587c", "src": "db2@1.60.1.70888"}
+{"id": 287978, "field": "name", "en": "Rough Sharpening Stone", "hash": "b9bad02223f566b2", "src": "db2@1.60.1.70888"}
+{"id": 287978, "field": "description", "en": "Increase sharp weapon damage by 2 for 30 minutes.", "hash": "2a8c6b23c1c33ff0", "src": "db2@1.60.1.70888"}
+{"id": 287979, "field": "name", "en": "Lesser Wizard Oil", "hash": "bfa6c71075427265", "src": "db2@1.60.1.70888"}
+{"id": 287979, "field": "description", "en": "While applied to target weapon it increases spell damage and healing by up to $25110s1. Lasts for 30 minutes.", "hash": "143db2f8fd8b1ac3", "src": "db2@1.60.1.70888"}
+{"id": 287980, "field": "name", "en": "Elemental Sharpening Stone", "hash": "651e222310602f2d", "src": "db2@1.60.1.70888"}
+{"id": 287980, "field": "description", "en": "Increase critical chance on a melee weapon by 2% for 30 minutes.", "hash": "052517c48526aad7", "src": "db2@1.60.1.70888"}
+{"id": 287992, "field": "name", "en": "Old Key", "hash": "beadd9fab9ec80f4", "src": "db2@1.60.1.70888"}
+{"id": 287992, "field": "description", "en": "An old key.", "hash": "f21ba4b04a31ef35", "src": "db2@1.60.1.70888"}

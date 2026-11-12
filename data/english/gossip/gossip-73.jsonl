@@ -52,4 +52,5 @@
 {"id": "73e2820e1b504703", "field": "text", "en": "The Lion's Pride Inn in Goldshire is as good as any inn you will find around these parts.  Drop in and let Innkeeper Farley make you feel at home.", "hash": "73e2820e1b504703", "src": "vmangos@13b49dc"}
 {"id": "73e4dfcfd8a81ae9", "field": "text", "en": "Time to brew up a Kalimdor Kocktail! Hiccup!", "hash": "73e4dfcfd8a81ae9", "src": "vmangos@13b49dc"}
 {"id": "73ed4b629197038b", "field": "text", "en": "Where is Elder Highpeak?", "hash": "73ed4b629197038b", "src": "vmangos@13b49dc"}
+{"id": "73efe44d44c81485", "field": "text", "en": "Chol'aruk!", "hash": "73efe44d44c81485", "src": "collector@1.60.1.70862"}
 {"id": "73fe130f1e4ce4b0", "field": "text", "en": "<Touch the unstable rift crystal.>", "hash": "73fe130f1e4ce4b0", "src": "vmangos@13b49dc"}

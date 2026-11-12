@@ -1,9 +1,21 @@
-{"id": 1330181, "field": "name", "en": "Portal to Dalaran", "hash": "66b818d51e8c4d0e", "src": "db2@1.60.1.70862"}
-{"id": 1330423, "field": "name", "en": "Portal to Auberdine", "hash": "a211a5cb8b5ff9a9", "src": "db2@1.60.1.70862"}
-{"id": 1330425, "field": "name", "en": "Portal to Stormwind", "hash": "f7bca2a219341cac", "src": "db2@1.60.1.70862"}
-{"id": 1330426, "field": "name", "en": "Portal to Southshore", "hash": "3039ce7fb8002334", "src": "db2@1.60.1.70862"}
-{"id": 1330427, "field": "name", "en": "Portal to Theramore", "hash": "9a8b6e9a483136d8", "src": "db2@1.60.1.70862"}
-{"id": 1330428, "field": "name", "en": "Portal to Menethil", "hash": "d382f8f7a306ab81", "src": "db2@1.60.1.70862"}
-{"id": 1330429, "field": "name", "en": "Portal to Undercity", "hash": "34f0605ca7cb5b90", "src": "db2@1.60.1.70862"}
-{"id": 1330430, "field": "name", "en": "Portal to Orgrimmar", "hash": "9f5f86faebb8cd80", "src": "db2@1.60.1.70862"}
-{"id": 1330431, "field": "name", "en": "Portal to Grom'gol", "hash": "b18d63cff7d7d5b2", "src": "db2@1.60.1.70862"}
+{"id": 1330181, "field": "name", "en": "Portal to Dalaran", "hash": "66b818d51e8c4d0e", "src": "db2@1.60.1.70888"}
+{"id": 1330423, "field": "name", "en": "Portal to Auberdine", "hash": "a211a5cb8b5ff9a9", "src": "db2@1.60.1.70888"}
+{"id": 1330425, "field": "name", "en": "Portal to Stormwind", "hash": "f7bca2a219341cac", "src": "db2@1.60.1.70888"}
+{"id": 1330426, "field": "name", "en": "Portal to Southshore", "hash": "3039ce7fb8002334", "src": "db2@1.60.1.70888"}
+{"id": 1330427, "field": "name", "en": "Portal to Theramore", "hash": "9a8b6e9a483136d8", "src": "db2@1.60.1.70888"}
+{"id": 1330428, "field": "name", "en": "Portal to Menethil", "hash": "d382f8f7a306ab81", "src": "db2@1.60.1.70888"}
+{"id": 1330429, "field": "name", "en": "Portal to Undercity", "hash": "34f0605ca7cb5b90", "src": "db2@1.60.1.70888"}
+{"id": 1330430, "field": "name", "en": "Portal to Orgrimmar", "hash": "9f5f86faebb8cd80", "src": "db2@1.60.1.70888"}
+{"id": 1330431, "field": "name", "en": "Portal to Grom'gol", "hash": "b18d63cff7d7d5b2", "src": "db2@1.60.1.70888"}
+{"id": 1330734, "field": "name", "en": "Drink", "hash": "b906b404cf760523", "src": "db2@1.60.1.70888"}
+{"id": 1330734, "field": "description", "en": "Restores $o1 mana over $d.  Must remain seated while drinking.", "hash": "792a9d04713a780c", "src": "db2@1.60.1.70888"}
+{"id": 1330734, "field": "aura", "en": "Restores $/5;s1 mana per second.", "hash": "338019ff98d99081", "src": "db2@1.60.1.70888"}
+{"id": 1330741, "field": "name", "en": "Poised", "hash": "43f9d4eeeae8862e", "src": "db2@1.60.1.70888"}
+{"id": 1330746, "field": "name", "en": "Poised", "hash": "43f9d4eeeae8862e", "src": "db2@1.60.1.70888"}
+{"id": 1330763, "field": "name", "en": "Poised", "hash": "43f9d4eeeae8862e", "src": "db2@1.60.1.70888"}
+{"id": 1330765, "field": "name", "en": "Poised", "hash": "43f9d4eeeae8862e", "src": "db2@1.60.1.70888"}
+{"id": 1330836, "field": "name", "en": "Dummy", "hash": "b96ea884878ed073", "src": "db2@1.60.1.70888"}
+{"id": 1330841, "field": "name", "en": "Summon Flare Gun DND", "hash": "626008d0f9cbb829", "src": "db2@1.60.1.70888"}
+{"id": 1330842, "field": "name", "en": "Dummy", "hash": "b96ea884878ed073", "src": "db2@1.60.1.70888"}
+{"id": 1330855, "field": "name", "en": "Gloves of Holy Might", "hash": "52369f130ff1d320", "src": "db2@1.60.1.70888"}
+{"id": 1330855, "field": "description", "en": "Smite your target for $s1 Holy damage. Damage is tripled against Undead.", "hash": "98c8d89a4e129ea8", "src": "db2@1.60.1.70888"}

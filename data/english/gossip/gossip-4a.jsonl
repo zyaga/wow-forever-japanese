@@ -1,6 +1,7 @@
 {"id": "4a0e6222d889dfb6", "field": "text", "en": "The blade itself had to be crafted in ceremony with the children of the Aspects. A rare occurrence indeed... For not only would a dragon have to willingly heat and mold the enchanted metal with their breath, they would also need to contain the fury of their own enchantment by using their blood as temper.\n", "hash": "4a0e6222d889dfb6", "src": "vmangos@13b49dc"}
 {"id": "4a0fa18c1e282e3f", "field": "text", "en": "Take heart, Alliance!  Throw these villains from Alterac Valley!", "hash": "4a0fa18c1e282e3f", "src": "vmangos@13b49dc"}
 {"id": "4a11528a28f5d2e2", "field": "text", "en": "Hey, look out with that kodo! You had better inspect that beast before I give you credit!", "hash": "4a11528a28f5d2e2", "src": "vmangos@13b49dc"}
+{"id": "4a156fbebf2f09f8", "field": "text", "en": "Watch your back while roaming the Desolace.", "hash": "4a156fbebf2f09f8", "src": "collector@1.60.1.70862", "npcs": [5642]}
 {"id": "4a1623d4cb9f29d6", "field": "text", "en": "The war against the Horde has reached full tilt, $N.  This is a time of great need for the Alliance and it's quite necessary that all of us do our part to help.", "hash": "4a1623d4cb9f29d6", "src": "vmangos@13b49dc"}
 {"id": "4a174beb1671ba3f", "field": "text", "en": "%s is pulled back to Xoroth!", "hash": "4a174beb1671ba3f", "src": "vmangos@13b49dc"}
 {"id": "4a1a6abe24e25cb9", "field": "text", "en": "You have worked your way up... time to see the boss. Go to Josef and tell him you are ready.", "hash": "4a1a6abe24e25cb9", "src": "vmangos@13b49dc"}
@@ -30,6 +31,7 @@
 {"id": "4abb2ac4dcbe3070", "field": "text", "en": "The statues all move back into their original positions.$B$BThe sequence must be started again now, from the beginning.\n", "hash": "4abb2ac4dcbe3070", "src": "vmangos@13b49dc"}
 {"id": "4ac13ce7d65afb82", "field": "text", "en": "I must build a beacon for this marvelous device!", "hash": "4ac13ce7d65afb82", "src": "vmangos@13b49dc"}
 {"id": "4ac89a0e0aed36d0", "field": "text", "en": "Elortha no Shadra$BGod of Spiders, Mother of Venom, Silk Dancer, Death's Love.", "hash": "4ac89a0e0aed36d0", "src": "vmangos@13b49dc"}
+{"id": "4ad73dc27f118feb", "field": "text", "en": "There are many things lurking out there in the dark and the light is needed now more than ever. If only these poor souls could see that just because our world has changed doesn't mean we have to be the monsters that the living think we are.", "hash": "4ad73dc27f118feb", "src": "collector@1.60.1.70862", "npcs": [246393]}
 {"id": "4ae8cf4db434637f", "field": "text", "en": "Times like these get me all sentimental...", "hash": "4ae8cf4db434637f", "src": "vmangos@13b49dc"}
 {"id": "4af1b1c86d32f8ac", "field": "text", "en": "The Scourge infestation grows in Azshara. Every able bodied warrior is needed to stem the tide of their invasion.$B$BNumber of Necropolises remaining: $2279W", "hash": "4af1b1c86d32f8ac", "src": "vmangos@13b49dc"}
 {"id": "4af80ea11d463fa7", "field": "text", "en": "My dearest Torta, I have been gone for so long. Finally we are reunited. At long last our love can blossom again.", "hash": "4af80ea11d463fa7", "src": "vmangos@13b49dc"}

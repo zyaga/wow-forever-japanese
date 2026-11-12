@@ -21,6 +21,7 @@
 {"id": "7664152bfd02b784", "field": "text", "en": "It is done...", "hash": "7664152bfd02b784", "src": "vmangos@13b49dc"}
 {"id": "76699afbd14e4e74", "field": "text", "en": "%s stretches and lets loose with a large yawn.", "hash": "76699afbd14e4e74", "src": "vmangos@13b49dc"}
 {"id": "766c2a406794cd51", "field": "text", "en": "Yah, I know, it be lookin' like we already have all of the mithril bars we be needin' for the war. But ya know, there still be plenty of folk 'round here that can probably be usin' your help right about now.  Thanks mon.", "hash": "766c2a406794cd51", "src": "vmangos@13b49dc"}
+{"id": "766c40b283b84b76", "field": "text", "en": "What do you need, skyborne?", "hash": "766c40b283b84b76", "src": "collector@1.60.1.70862", "npcs": [261366]}
 {"id": "7672666598ae19db", "field": "text", "en": "You mean you can't smell the smoke of the Dwarven forges from here?  Well, you will be looking for Therum Deepforge if you want to learn blacksmithing.  He's over in the Dwarven District which is just north of the Cathedral Square.", "hash": "7672666598ae19db", "src": "vmangos@13b49dc"}
 {"id": "767e24f8cbdb6116", "field": "text", "en": "Rivendare!  I come for you!", "hash": "767e24f8cbdb6116", "src": "vmangos@13b49dc"}
 {"id": "768fc89186c7ad10", "field": "text", "en": "Good, good. Keep it up and this bridge'll be done in no time.", "hash": "768fc89186c7ad10", "src": "vmangos@13b49dc"}

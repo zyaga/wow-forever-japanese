@@ -6,6 +6,7 @@
 {"id": "fc161c5e11c25dab", "field": "text", "en": "Whoa, whoa there, my friend. One moment...", "hash": "fc161c5e11c25dab", "src": "vmangos@13b49dc"}
 {"id": "fc174ec3c811a525", "field": "text", "en": "I wonder if my lord will enslave your people... or merely consume them for sport? I.... wait, what is this?", "hash": "fc174ec3c811a525", "src": "collector@1.60.1.70790"}
 {"id": "fc1eab167c5d60f9", "field": "text", "en": "If ye're looking to learn the profession of leatherworking, ye're gonna need to travel to Ironforge.  I hear there's a nice shop near the Great Forge where ye can learn the profession.", "hash": "fc1eab167c5d60f9", "src": "vmangos@13b49dc"}
+{"id": "fc2f28169d74a71e", "field": "text", "en": "<Othmar's head looks at you from nearby.>$B$BWhat... You... Want...$B$BFilthy... skyborne...", "hash": "fc2f28169d74a71e", "src": "collector@1.60.1.70862", "npcs": [271613]}
 {"id": "fc3548dc2524d9dc", "field": "text", "en": "SMOTTS, I HAVE YOUR LITTLE BELT...COME GET IT.", "hash": "fc3548dc2524d9dc", "src": "vmangos@13b49dc"}
 {"id": "fc35dbd2eba05a2c", "field": "text", "en": "The Hall of Spirits is where our shamans call home.  You can find it on the Spirit Rise.  May your ancestors watch over you.", "hash": "fc35dbd2eba05a2c", "src": "vmangos@13b49dc"}
 {"id": "fc3a602c449b2f49", "field": "text", "en": "I hear that the trolls in Sen'jin Village have a potion maker named Miao'zan.  Look there.", "hash": "fc3a602c449b2f49", "src": "vmangos@13b49dc"}

@@ -1,127 +1,127 @@
-{"id": "HANDSSLOT", "field": "text", "en": "Hands", "hash": "fcf7b014fb10e279", "src": "db2@1.60.1.70862"}
-{"id": "HARDCORE_DEATH", "field": "text", "en": "You have died. Your deeds of heroism will be remembered.", "hash": "7f07e0bbc6509d9e", "src": "db2@1.60.1.70862"}
-{"id": "HARDCORE_GO_AGAIN", "field": "text", "en": "Try again!", "hash": "7ec773bb0d44365f", "src": "db2@1.60.1.70862"}
-{"id": "HARDCORE_GUILDLEADER_DEATH", "field": "text", "en": "You have died. You must hand the mantle of leadership of %s to another. Type the player's name below.", "hash": "468bd140c7c8a1b1", "src": "db2@1.60.1.70862"}
-{"id": "HARDCORE_RECOVER_CORPSE", "field": "text", "en": "Death is permanent and you cannot be resurrected.", "hash": "455e271ec5992a40", "src": "db2@1.60.1.70862"}
-{"id": "HARMFUL_AURA_COMBATLOG_TOOLTIP", "field": "text", "en": "Show when you gain or lose a harmful aura.", "hash": "c3614134e0619bf4", "src": "db2@1.60.1.70862"}
-{"id": "HARMFUL_TO_MINORS_DISABLED_TOOLTIP", "field": "text", "en": "Must select one or more of the available Name options", "hash": "654ea8ef9fd615d0", "src": "db2@1.60.1.70862"}
-{"id": "HAVE_MAIL", "field": "text", "en": "You have unread mail", "hash": "542a3a3eea6cf7c8", "src": "db2@1.60.1.70862"}
-{"id": "HAVE_MAIL_FROM", "field": "text", "en": "Unread mail from:", "hash": "f1aac7a84b2d3f66", "src": "db2@1.60.1.70862"}
-{"id": "HD_TEXTURES_BUTTON", "field": "text", "en": "Get HD Textures", "hash": "a2f6713c3ff667fb", "src": "db2@1.60.1.70862"}
-{"id": "HD_TEXTURES_DLG_ACCEPT", "field": "text", "en": "Download", "hash": "979bc41a5c7d7e18", "src": "db2@1.60.1.70862"}
-{"id": "HD_TEXTURES_DLG_ACCEPT_MAC", "field": "text", "en": "Exit Game", "hash": "aeae9f4b7b6c4fce", "src": "db2@1.60.1.70862"}
-{"id": "HD_TEXTURES_DLG_TEXT", "field": "text", "en": "Clicking the Download button will exit the game and open the Battle.net desktop app where you can download the textures.", "hash": "291e47a638079a2a", "src": "db2@1.60.1.70862"}
-{"id": "HD_TEXTURES_DLG_TEXT_MAC", "field": "text", "en": "Clicking the Exit Game button will exit the game and open a webpage with instructions on how to download the textures through the Battle.net desktop app.", "hash": "beeae5c7ddcd8ed1", "src": "db2@1.60.1.70862"}
-{"id": "HEADSLOT", "field": "text", "en": "Head", "hash": "09c0782c563b723b", "src": "db2@1.60.1.70862"}
-{"id": "HEAD_BOB", "field": "text", "en": "Head Bob", "hash": "0f44687875c38ce9", "src": "db2@1.60.1.70862"}
-{"id": "HEALER", "field": "text", "en": "Healer", "hash": "b73a16b62268c07a", "src": "db2@1.60.1.70862"}
-{"id": "HEALING_DONE_TOOLTIP", "field": "text", "en": "The total amount of healing done", "hash": "6450914647249eb5", "src": "db2@1.60.1.70862"}
-{"id": "HEALING_DONE_TOOLTIP_TITLE", "field": "text", "en": "Healing Done", "hash": "bb912c4d2cb3b2ba", "src": "db2@1.60.1.70862"}
-{"id": "HEALS", "field": "text", "en": "Heals", "hash": "fd7d8323fd1640d2", "src": "db2@1.60.1.70862"}
-{"id": "HEALTH", "field": "text", "en": "Health", "hash": "b73a1e59226a9e9f", "src": "db2@1.60.1.70862"}
-{"id": "HEALTH_COST", "field": "text", "en": "%s Health", "hash": "73b8e0414160384e", "src": "db2@1.60.1.70862"}
-{"id": "HEALTH_COST_PCT", "field": "text", "en": "%s%% of Maximum Health", "hash": "fc37c06c21b02984", "src": "db2@1.60.1.70862"}
-{"id": "HEALTH_COST_PER_TIME", "field": "text", "en": "%s Health, plus %s per sec", "hash": "ba5b7c821818f1a0", "src": "db2@1.60.1.70862"}
-{"id": "HEALTH_COST_PER_TIME_NO_BASE", "field": "text", "en": "%s Health per sec", "hash": "b8c679721795f978", "src": "db2@1.60.1.70862"}
-{"id": "HEALTH_LOW", "field": "text", "en": "Health Low", "hash": "2e2b230ddc64bec0", "src": "db2@1.60.1.70862"}
-{"id": "HEIRLOOMS", "field": "text", "en": "Heirlooms", "hash": "72ecf9695a111bbe", "src": "db2@1.60.1.70862"}
-{"id": "HEIRLOOMS_CATEGORY_BACK", "field": "text", "en": "Back", "hash": "08f19b73f5eaeac2", "src": "db2@1.60.1.70862"}
-{"id": "HEIRLOOMS_CATEGORY_CHEST", "field": "text", "en": "Chest", "hash": "a620ec195a9b8dc7", "src": "db2@1.60.1.70862"}
-{"id": "HEIRLOOMS_CATEGORY_HEAD", "field": "text", "en": "Head", "hash": "09c0782c563b723b", "src": "db2@1.60.1.70862"}
-{"id": "HEIRLOOMS_CATEGORY_LEGS", "field": "text", "en": "Legs", "hash": "0a49b1b98bdc01ae", "src": "db2@1.60.1.70862"}
-{"id": "HEIRLOOMS_CATEGORY_SHOULDER", "field": "text", "en": "Shoulder", "hash": "451a499146f8853d", "src": "db2@1.60.1.70862"}
-{"id": "HEIRLOOMS_CATEGORY_TRINKETS_RINGS_AND_NECKLACES", "field": "text", "en": "Trinkets, Rings & Necklaces", "hash": "22e6fd2a19327955", "src": "db2@1.60.1.70862"}
-{"id": "HEIRLOOMS_CATEGORY_WEAPON", "field": "text", "en": "Weapons", "hash": "59bdee964e84ee0c", "src": "db2@1.60.1.70862"}
-{"id": "HEIRLOOMS_JOURNAL_TUTORIAL_UPGRADE", "field": "text", "en": "This is the max level of the heirloom. You can raise this level by using special upgrade tokens.", "hash": "74013e35b9dfb14a", "src": "db2@1.60.1.70862"}
-{"id": "HEIRLOOMS_MICRO_BUTTON_SPEC_TUTORIAL", "field": "text", "en": "Visit the Heirlooms pane to view your heirloom collection.", "hash": "4af9dfb8fc717142", "src": "db2@1.60.1.70862"}
-{"id": "HEIRLOOMS_PVP", "field": "text", "en": "PvP", "hash": "00152f823da3de67", "src": "db2@1.60.1.70862"}
-{"id": "HELPFRAME_REPORTLAG_TEXT1", "field": "text", "en": "Your lag report has been successfully submitted.", "hash": "b70ff6d79832a917", "src": "db2@1.60.1.70862"}
-{"id": "HELPFRAME_TICKET_CLICK_HELP", "field": "text", "en": "Click here to open your ticket.", "hash": "38feb5bdfd074bab", "src": "db2@1.60.1.70862"}
-{"id": "HELP_BUTTON", "field": "text", "en": "Customer Support", "hash": "c8016ecaa41136db", "src": "db2@1.60.1.70862"}
-{"id": "HELP_FRAME_TITLE", "field": "text", "en": "Customer Support", "hash": "c8016ecaa41136db", "src": "db2@1.60.1.70862"}
-{"id": "HELP_TEXT_SIMPLE", "field": "text", "en": "Type '/help' for a listing of a few commands.", "hash": "a6867b5068b51bc8", "src": "db2@1.60.1.70862"}
-{"id": "HELP_TICKET_QUEUE_DISABLED", "field": "text", "en": "GM Help Tickets are currently unavailable.", "hash": "9ed29200d0ad4b67", "src": "db2@1.60.1.70862"}
-{"id": "HELP_TIP_BUTTON_GOT_IT", "field": "text", "en": "Got It", "hash": "6db6b7c8d70793ba", "src": "db2@1.60.1.70862"}
-{"id": "HELP_TIP_EXIT", "field": "text", "en": "Exit", "hash": "095e8d2ef9719c87", "src": "db2@1.60.1.70862"}
-{"id": "HIDE", "field": "text", "en": "Hide", "hash": "09c185da661ce0e3", "src": "db2@1.60.1.70862"}
-{"id": "HIGH", "field": "text", "en": "High", "hash": "09c18766661d4089", "src": "db2@1.60.1.70862"}
-{"id": "HIGHLIGHTING", "field": "text", "en": "Highlighting:", "hash": "c3ec4f34da49429b", "src": "db2@1.60.1.70862"}
-{"id": "HIGHLIGHT_ABILITY_COMBATLOG_TOOLTIP", "field": "text", "en": "Highlight ability names in combat messages.", "hash": "398b70c3895379f2", "src": "db2@1.60.1.70862"}
-{"id": "HIGHLIGHT_DAMAGE_COMBATLOG_TOOLTIP", "field": "text", "en": "Highlight damage numbers in combat messages.", "hash": "606a7fe904b70477", "src": "db2@1.60.1.70862"}
-{"id": "HIGHLIGHT_KILL_COMBATLOG_TOOLTIP", "field": "text", "en": "Highlights the entire line when you or a party member makes a kill.", "hash": "e8387b3d527315ed", "src": "db2@1.60.1.70862"}
-{"id": "HIGHLIGHT_SCHOOL_COMBATLOG_TOOLTIP", "field": "text", "en": "Highlight the school of a spell in combat messages.", "hash": "547dd2cd09211417", "src": "db2@1.60.1.70862"}
+{"id": "HANDSSLOT", "field": "text", "en": "Hands", "hash": "fcf7b014fb10e279", "src": "db2@1.60.1.70888"}
+{"id": "HARDCORE_DEATH", "field": "text", "en": "You have died. Your deeds of heroism will be remembered.", "hash": "7f07e0bbc6509d9e", "src": "db2@1.60.1.70888"}
+{"id": "HARDCORE_GO_AGAIN", "field": "text", "en": "Try again!", "hash": "7ec773bb0d44365f", "src": "db2@1.60.1.70888"}
+{"id": "HARDCORE_GUILDLEADER_DEATH", "field": "text", "en": "You have died. You must hand the mantle of leadership of %s to another. Type the player's name below.", "hash": "468bd140c7c8a1b1", "src": "db2@1.60.1.70888"}
+{"id": "HARDCORE_RECOVER_CORPSE", "field": "text", "en": "Death is permanent and you cannot be resurrected.", "hash": "455e271ec5992a40", "src": "db2@1.60.1.70888"}
+{"id": "HARMFUL_AURA_COMBATLOG_TOOLTIP", "field": "text", "en": "Show when you gain or lose a harmful aura.", "hash": "c3614134e0619bf4", "src": "db2@1.60.1.70888"}
+{"id": "HARMFUL_TO_MINORS_DISABLED_TOOLTIP", "field": "text", "en": "Must select one or more of the available Name options", "hash": "654ea8ef9fd615d0", "src": "db2@1.60.1.70888"}
+{"id": "HAVE_MAIL", "field": "text", "en": "You have unread mail", "hash": "542a3a3eea6cf7c8", "src": "db2@1.60.1.70888"}
+{"id": "HAVE_MAIL_FROM", "field": "text", "en": "Unread mail from:", "hash": "f1aac7a84b2d3f66", "src": "db2@1.60.1.70888"}
+{"id": "HD_TEXTURES_BUTTON", "field": "text", "en": "Get HD Textures", "hash": "a2f6713c3ff667fb", "src": "db2@1.60.1.70888"}
+{"id": "HD_TEXTURES_DLG_ACCEPT", "field": "text", "en": "Download", "hash": "979bc41a5c7d7e18", "src": "db2@1.60.1.70888"}
+{"id": "HD_TEXTURES_DLG_ACCEPT_MAC", "field": "text", "en": "Exit Game", "hash": "aeae9f4b7b6c4fce", "src": "db2@1.60.1.70888"}
+{"id": "HD_TEXTURES_DLG_TEXT", "field": "text", "en": "Clicking the Download button will exit the game and open the Battle.net desktop app where you can download the textures.", "hash": "291e47a638079a2a", "src": "db2@1.60.1.70888"}
+{"id": "HD_TEXTURES_DLG_TEXT_MAC", "field": "text", "en": "Clicking the Exit Game button will exit the game and open a webpage with instructions on how to download the textures through the Battle.net desktop app.", "hash": "beeae5c7ddcd8ed1", "src": "db2@1.60.1.70888"}
+{"id": "HEADSLOT", "field": "text", "en": "Head", "hash": "09c0782c563b723b", "src": "db2@1.60.1.70888"}
+{"id": "HEAD_BOB", "field": "text", "en": "Head Bob", "hash": "0f44687875c38ce9", "src": "db2@1.60.1.70888"}
+{"id": "HEALER", "field": "text", "en": "Healer", "hash": "b73a16b62268c07a", "src": "db2@1.60.1.70888"}
+{"id": "HEALING_DONE_TOOLTIP", "field": "text", "en": "The total amount of healing done", "hash": "6450914647249eb5", "src": "db2@1.60.1.70888"}
+{"id": "HEALING_DONE_TOOLTIP_TITLE", "field": "text", "en": "Healing Done", "hash": "bb912c4d2cb3b2ba", "src": "db2@1.60.1.70888"}
+{"id": "HEALS", "field": "text", "en": "Heals", "hash": "fd7d8323fd1640d2", "src": "db2@1.60.1.70888"}
+{"id": "HEALTH", "field": "text", "en": "Health", "hash": "b73a1e59226a9e9f", "src": "db2@1.60.1.70888"}
+{"id": "HEALTH_COST", "field": "text", "en": "%s Health", "hash": "73b8e0414160384e", "src": "db2@1.60.1.70888"}
+{"id": "HEALTH_COST_PCT", "field": "text", "en": "%s%% of Maximum Health", "hash": "fc37c06c21b02984", "src": "db2@1.60.1.70888"}
+{"id": "HEALTH_COST_PER_TIME", "field": "text", "en": "%s Health, plus %s per sec", "hash": "ba5b7c821818f1a0", "src": "db2@1.60.1.70888"}
+{"id": "HEALTH_COST_PER_TIME_NO_BASE", "field": "text", "en": "%s Health per sec", "hash": "b8c679721795f978", "src": "db2@1.60.1.70888"}
+{"id": "HEALTH_LOW", "field": "text", "en": "Health Low", "hash": "2e2b230ddc64bec0", "src": "db2@1.60.1.70888"}
+{"id": "HEIRLOOMS", "field": "text", "en": "Heirlooms", "hash": "72ecf9695a111bbe", "src": "db2@1.60.1.70888"}
+{"id": "HEIRLOOMS_CATEGORY_BACK", "field": "text", "en": "Back", "hash": "08f19b73f5eaeac2", "src": "db2@1.60.1.70888"}
+{"id": "HEIRLOOMS_CATEGORY_CHEST", "field": "text", "en": "Chest", "hash": "a620ec195a9b8dc7", "src": "db2@1.60.1.70888"}
+{"id": "HEIRLOOMS_CATEGORY_HEAD", "field": "text", "en": "Head", "hash": "09c0782c563b723b", "src": "db2@1.60.1.70888"}
+{"id": "HEIRLOOMS_CATEGORY_LEGS", "field": "text", "en": "Legs", "hash": "0a49b1b98bdc01ae", "src": "db2@1.60.1.70888"}
+{"id": "HEIRLOOMS_CATEGORY_SHOULDER", "field": "text", "en": "Shoulder", "hash": "451a499146f8853d", "src": "db2@1.60.1.70888"}
+{"id": "HEIRLOOMS_CATEGORY_TRINKETS_RINGS_AND_NECKLACES", "field": "text", "en": "Trinkets, Rings & Necklaces", "hash": "22e6fd2a19327955", "src": "db2@1.60.1.70888"}
+{"id": "HEIRLOOMS_CATEGORY_WEAPON", "field": "text", "en": "Weapons", "hash": "59bdee964e84ee0c", "src": "db2@1.60.1.70888"}
+{"id": "HEIRLOOMS_JOURNAL_TUTORIAL_UPGRADE", "field": "text", "en": "This is the max level of the heirloom. You can raise this level by using special upgrade tokens.", "hash": "74013e35b9dfb14a", "src": "db2@1.60.1.70888"}
+{"id": "HEIRLOOMS_MICRO_BUTTON_SPEC_TUTORIAL", "field": "text", "en": "Visit the Heirlooms pane to view your heirloom collection.", "hash": "4af9dfb8fc717142", "src": "db2@1.60.1.70888"}
+{"id": "HEIRLOOMS_PVP", "field": "text", "en": "PvP", "hash": "00152f823da3de67", "src": "db2@1.60.1.70888"}
+{"id": "HELPFRAME_REPORTLAG_TEXT1", "field": "text", "en": "Your lag report has been successfully submitted.", "hash": "b70ff6d79832a917", "src": "db2@1.60.1.70888"}
+{"id": "HELPFRAME_TICKET_CLICK_HELP", "field": "text", "en": "Click here to open your ticket.", "hash": "38feb5bdfd074bab", "src": "db2@1.60.1.70888"}
+{"id": "HELP_BUTTON", "field": "text", "en": "Customer Support", "hash": "c8016ecaa41136db", "src": "db2@1.60.1.70888"}
+{"id": "HELP_FRAME_TITLE", "field": "text", "en": "Customer Support", "hash": "c8016ecaa41136db", "src": "db2@1.60.1.70888"}
+{"id": "HELP_TEXT_SIMPLE", "field": "text", "en": "Type '/help' for a listing of a few commands.", "hash": "a6867b5068b51bc8", "src": "db2@1.60.1.70888"}
+{"id": "HELP_TICKET_QUEUE_DISABLED", "field": "text", "en": "GM Help Tickets are currently unavailable.", "hash": "9ed29200d0ad4b67", "src": "db2@1.60.1.70888"}
+{"id": "HELP_TIP_BUTTON_GOT_IT", "field": "text", "en": "Got It", "hash": "6db6b7c8d70793ba", "src": "db2@1.60.1.70888"}
+{"id": "HELP_TIP_EXIT", "field": "text", "en": "Exit", "hash": "095e8d2ef9719c87", "src": "db2@1.60.1.70888"}
+{"id": "HIDE", "field": "text", "en": "Hide", "hash": "09c185da661ce0e3", "src": "db2@1.60.1.70888"}
+{"id": "HIGH", "field": "text", "en": "High", "hash": "09c18766661d4089", "src": "db2@1.60.1.70888"}
+{"id": "HIGHLIGHTING", "field": "text", "en": "Highlighting:", "hash": "c3ec4f34da49429b", "src": "db2@1.60.1.70888"}
+{"id": "HIGHLIGHT_ABILITY_COMBATLOG_TOOLTIP", "field": "text", "en": "Highlight ability names in combat messages.", "hash": "398b70c3895379f2", "src": "db2@1.60.1.70888"}
+{"id": "HIGHLIGHT_DAMAGE_COMBATLOG_TOOLTIP", "field": "text", "en": "Highlight damage numbers in combat messages.", "hash": "606a7fe904b70477", "src": "db2@1.60.1.70888"}
+{"id": "HIGHLIGHT_KILL_COMBATLOG_TOOLTIP", "field": "text", "en": "Highlights the entire line when you or a party member makes a kill.", "hash": "e8387b3d527315ed", "src": "db2@1.60.1.70888"}
+{"id": "HIGHLIGHT_SCHOOL_COMBATLOG_TOOLTIP", "field": "text", "en": "Highlight the school of a spell in combat messages.", "hash": "547dd2cd09211417", "src": "db2@1.60.1.70888"}
 {"id": "HIGH_BIDDER", "field": "text", "en": "High Bidder", "hash": "8200952d7098808d", "src": "db2@1.60.1.69913"}
-{"id": "HIGH_DEFINITION", "field": "text", "en": "High Definition", "hash": "f35f9b557776fb7e", "src": "db2@1.60.1.70862"}
-{"id": "HIGH_DEFINITION_TOOLTIP", "field": "text", "en": "Higher-detail character model fidelity.", "hash": "fc7aa305c6db4afe", "src": "db2@1.60.1.70862"}
-{"id": "HOME", "field": "text", "en": "Home", "hash": "09c31cab7def9652", "src": "db2@1.60.1.70862"}
-{"id": "HONOR", "field": "text", "en": "Honor", "hash": "fed7f42eb6c1999d", "src": "db2@1.60.1.70862"}
-{"id": "HONORABLE_KILLS", "field": "text", "en": "Honorable Kills", "hash": "0b78aa59ca38af14", "src": "db2@1.60.1.70862"}
-{"id": "HONORABLE_KILLS_TOOLTIP", "field": "text", "en": "Enemy players that you or the group you are in did damage to before they died", "hash": "e4ccc64988ba59a6", "src": "db2@1.60.1.70862"}
-{"id": "HONORABLE_KILLS_TOOLTIP_TITLE", "field": "text", "en": "Honorable Kills", "hash": "0b78aa59ca38af14", "src": "db2@1.60.1.70862"}
-{"id": "HONOR_BAR", "field": "text", "en": "Honor %d / %d", "hash": "5a4bbb00f13fa639", "src": "db2@1.60.1.70862"}
+{"id": "HIGH_DEFINITION", "field": "text", "en": "High Definition", "hash": "f35f9b557776fb7e", "src": "db2@1.60.1.70888"}
+{"id": "HIGH_DEFINITION_TOOLTIP", "field": "text", "en": "Higher-detail character model fidelity.", "hash": "fc7aa305c6db4afe", "src": "db2@1.60.1.70888"}
+{"id": "HOME", "field": "text", "en": "Home", "hash": "09c31cab7def9652", "src": "db2@1.60.1.70888"}
+{"id": "HONOR", "field": "text", "en": "Honor", "hash": "fed7f42eb6c1999d", "src": "db2@1.60.1.70888"}
+{"id": "HONORABLE_KILLS", "field": "text", "en": "Honorable Kills", "hash": "0b78aa59ca38af14", "src": "db2@1.60.1.70888"}
+{"id": "HONORABLE_KILLS_TOOLTIP", "field": "text", "en": "Enemy players that you or the group you are in did damage to before they died", "hash": "e4ccc64988ba59a6", "src": "db2@1.60.1.70888"}
+{"id": "HONORABLE_KILLS_TOOLTIP_TITLE", "field": "text", "en": "Honorable Kills", "hash": "0b78aa59ca38af14", "src": "db2@1.60.1.70888"}
+{"id": "HONOR_BAR", "field": "text", "en": "Honor %d / %d", "hash": "5a4bbb00f13fa639", "src": "db2@1.60.1.70888"}
 {"id": "HONOR_CONTRIBUTION_POINTS", "field": "text", "en": "Honor", "hash": "fed7f42eb6c1999d", "src": "db2@1.60.1.69913"}
 {"id": "HONOR_HIGHEST_RANK", "field": "text", "en": "Highest Rank", "hash": "70b91fb4be2be06b", "src": "db2@1.60.1.69913"}
 {"id": "HONOR_LASTWEEK", "field": "text", "en": "Last Week", "hash": "de361c818c6c52c8", "src": "db2@1.60.1.69913"}
-{"id": "HONOR_LEVEL_LABEL", "field": "text", "en": "Honor Level %d", "hash": "5841c80d475bc802", "src": "db2@1.60.1.70862"}
-{"id": "HONOR_LEVEL_TOOLTIP", "field": "text", "en": "Honor Level %d", "hash": "5841c80d475bc802", "src": "db2@1.60.1.70862"}
-{"id": "HONOR_LIFETIME", "field": "text", "en": "Lifetime", "hash": "c6441b75194af0a0", "src": "db2@1.60.1.70862"}
-{"id": "HONOR_REWARD_ARTIFACT_POWER", "field": "text", "en": "Artifact Power Reward", "hash": "7d0256b6fcc810b2", "src": "db2@1.60.1.70862"}
-{"id": "HONOR_REWARD_MONEY", "field": "text", "en": "Money Reward", "hash": "37f25d297fc7944e", "src": "db2@1.60.1.70862"}
-{"id": "HONOR_REWARD_TITLE_TOOLTIP", "field": "text", "en": "Title", "hash": "d0b03efdf12111e8", "src": "db2@1.60.1.70862"}
+{"id": "HONOR_LEVEL_LABEL", "field": "text", "en": "Honor Level %d", "hash": "5841c80d475bc802", "src": "db2@1.60.1.70888"}
+{"id": "HONOR_LEVEL_TOOLTIP", "field": "text", "en": "Honor Level %d", "hash": "5841c80d475bc802", "src": "db2@1.60.1.70888"}
+{"id": "HONOR_LIFETIME", "field": "text", "en": "Lifetime", "hash": "c6441b75194af0a0", "src": "db2@1.60.1.70888"}
+{"id": "HONOR_REWARD_ARTIFACT_POWER", "field": "text", "en": "Artifact Power Reward", "hash": "7d0256b6fcc810b2", "src": "db2@1.60.1.70888"}
+{"id": "HONOR_REWARD_MONEY", "field": "text", "en": "Money Reward", "hash": "37f25d297fc7944e", "src": "db2@1.60.1.70888"}
+{"id": "HONOR_REWARD_TITLE_TOOLTIP", "field": "text", "en": "Title", "hash": "d0b03efdf12111e8", "src": "db2@1.60.1.70888"}
 {"id": "HONOR_THIS_SESSION", "field": "text", "en": "Today", "hash": "d179da82020b2f7f", "src": "db2@1.60.1.69913"}
-{"id": "HONOR_TODAY", "field": "text", "en": "Today", "hash": "d179da82020b2f7f", "src": "db2@1.60.1.70862"}
+{"id": "HONOR_TODAY", "field": "text", "en": "Today", "hash": "d179da82020b2f7f", "src": "db2@1.60.1.70888"}
 {"id": "HONOR_YESTERDAY", "field": "text", "en": "Yesterday", "hash": "0ee909e73298ee12", "src": "db2@1.60.1.69913"}
-{"id": "HONOR_YOUVE_REACHED", "field": "text", "en": "You've Reached", "hash": "4a4a8f2204265ced", "src": "db2@1.60.1.70862"}
-{"id": "HORDE_CHEER", "field": "text", "en": "For the Horde!", "hash": "d2b403e1d9b2559e", "src": "db2@1.60.1.70862"}
-{"id": "HOSTILE", "field": "text", "en": "Hostile", "hash": "d2eedd39445dc5a1", "src": "db2@1.60.1.70862"}
-{"id": "HOT_ITEM", "field": "text", "en": "Hot Item!", "hash": "eaf28319a0d0f728", "src": "db2@1.60.1.70862"}
-{"id": "HOT_ITEM_SELLER", "field": "text", "en": "Seller:", "hash": "477e25d02eec1d39", "src": "db2@1.60.1.70862"}
-{"id": "HOURS_ABBR", "field": "text", "en": "%d |4Hr:Hr;", "hash": "5778098008180a93", "src": "db2@1.60.1.70862"}
-{"id": "HOUR_ONELETTER_ABBR", "field": "text", "en": "%d h", "hash": "050f77b3fd04b92c", "src": "db2@1.60.1.70862"}
-{"id": "HOUSING_DASHBOARD_NEIGHBORHOOD_FAVOR", "field": "text", "en": "%s/%s House XP|n|n|cff20ff20House XP is earned by completing Endeavors, Endeavor tasks, and collecting Decor of Uncommon or better rarity for the first time|r", "hash": "1b17230c00f19b4b", "src": "db2@1.60.1.70862"}
-{"id": "HOUSING_DASHBOARD_REWARD_ESTATE_XP", "field": "text", "en": "Neighborhood Favor", "hash": "e4f1cc520b61f2ba", "src": "db2@1.60.1.70862"}
-{"id": "HOUSING_MICROBUTTON_NPE_RESTRICTED_TOOLTIP", "field": "text", "en": "This feature becomes available after completing Exile's Reach.", "hash": "264a4a5a1af54d2c", "src": "db2@1.60.1.70862"}
-{"id": "HOUSING_MICRO_BUTTON", "field": "text", "en": "Housing Dashboard", "hash": "3369c1b0e77dffde", "src": "db2@1.60.1.70862"}
-{"id": "HOUSING_SETTINGS_LABEL", "field": "text", "en": "Housing", "hash": "f5e7fd4874cb104b", "src": "db2@1.60.1.70862"}
-{"id": "HUD_EDIT_MODE_BUFF_FRAME_LABEL", "field": "text", "en": "Buff Frame", "hash": "f613352a4eabddc3", "src": "db2@1.60.1.70862"}
-{"id": "HUD_EDIT_MODE_CHARACTER_LAYOUTS_HEADER", "field": "text", "en": "%s Specific", "hash": "a85bea400c9bbdcc", "src": "db2@1.60.1.70862"}
-{"id": "HUD_EDIT_MODE_COLLAPSE_OPTIONS", "field": "text", "en": "Collapse options |A:editmode-up-arrow:16:11:0:3|a", "hash": "3d36d35bf1195a07", "src": "db2@1.60.1.70862"}
-{"id": "HUD_EDIT_MODE_COOLDOWN_VIEWER_SETTINGS", "field": "text", "en": "Advanced Cooldown Settings", "hash": "344239e092fd8479", "src": "db2@1.60.1.70862"}
-{"id": "HUD_EDIT_MODE_COPY_LAYOUT", "field": "text", "en": "Copy Layout", "hash": "207afaad4499574b", "src": "db2@1.60.1.70862"}
-{"id": "HUD_EDIT_MODE_COPY_TO_CLIPBOARD", "field": "text", "en": "Copy To Clipboard |cffffd100(to share online)|r", "hash": "180343dab49674ff", "src": "db2@1.60.1.70862"}
-{"id": "HUD_EDIT_MODE_COPY_TO_CLIPBOARD_NOTICE", "field": "text", "en": "Edit Mode layout \"%s\" copied to clipboard.", "hash": "fc57a037fcc7641d", "src": "db2@1.60.1.70862"}
-{"id": "HUD_EDIT_MODE_DEBUFF_FRAME_LABEL", "field": "text", "en": "Debuff Frame", "hash": "2b0f0664c70d6f4b", "src": "db2@1.60.1.70862"}
-{"id": "HUD_EDIT_MODE_DELETE_LAYOUT", "field": "text", "en": "Delete Layout", "hash": "c44b3c8b1d2aa676", "src": "db2@1.60.1.70862"}
-{"id": "HUD_EDIT_MODE_ERROR_COPY", "field": "text", "en": "|cnNORMAL_FONT_COLOR:Copy Layout|r|nActive changes must be saved or reverted", "hash": "9b49bbe64c78d5bf", "src": "db2@1.60.1.70862"}
-{"id": "HUD_EDIT_MODE_ERROR_COPY_MAX_LAYOUTS", "field": "text", "en": "|cnNORMAL_FONT_COLOR:Copy Layout|r|nA max of %d character layouts and %d account layouts are allowed", "hash": "ce291c56af980d96", "src": "db2@1.60.1.70862"}
-{"id": "HUD_EDIT_MODE_EXPAND_OPTIONS", "field": "text", "en": "Expand options |A:editmode-down-arrow:16:11:0:-7|a", "hash": "ebb5c25a228f24b0", "src": "db2@1.60.1.70862"}
-{"id": "HUD_EDIT_MODE_EXTERNAL_DEFENSIVES_FRAME_LABEL", "field": "text", "en": "External Defensives Frame", "hash": "84df4924a370707b", "src": "db2@1.60.1.70862"}
-{"id": "HUD_EDIT_MODE_LAYOUT_APPLIED", "field": "text", "en": "Edit Mode layout '%s' applied", "hash": "69018202a2b658eb", "src": "db2@1.60.1.70862"}
-{"id": "HUD_EDIT_MODE_MENU", "field": "text", "en": "Edit Mode", "hash": "5aa1dfb7d73a26ab", "src": "db2@1.60.1.70862"}
-{"id": "HUD_EDIT_MODE_NEW_LAYOUT", "field": "text", "en": "%s |cnPURE_GREEN_COLOR:New Layout|r", "hash": "8dc02a29072fb136", "src": "db2@1.60.1.70862"}
-{"id": "HUD_EDIT_MODE_NEW_LAYOUT_DISABLED", "field": "text", "en": "%s New Layout", "hash": "6228599fc21250fb", "src": "db2@1.60.1.70862"}
-{"id": "HUD_EDIT_MODE_RENAME_LAYOUT", "field": "text", "en": "Change Name", "hash": "058f50eb6cfbb425", "src": "db2@1.60.1.70862"}
-{"id": "HUD_EDIT_MODE_RENAME_OR_COPY_LAYOUT", "field": "text", "en": "Rename/Copy Layout", "hash": "1dff980d245cfbb1", "src": "db2@1.60.1.70862"}
+{"id": "HONOR_YOUVE_REACHED", "field": "text", "en": "You've Reached", "hash": "4a4a8f2204265ced", "src": "db2@1.60.1.70888"}
+{"id": "HORDE_CHEER", "field": "text", "en": "For the Horde!", "hash": "d2b403e1d9b2559e", "src": "db2@1.60.1.70888"}
+{"id": "HOSTILE", "field": "text", "en": "Hostile", "hash": "d2eedd39445dc5a1", "src": "db2@1.60.1.70888"}
+{"id": "HOT_ITEM", "field": "text", "en": "Hot Item!", "hash": "eaf28319a0d0f728", "src": "db2@1.60.1.70888"}
+{"id": "HOT_ITEM_SELLER", "field": "text", "en": "Seller:", "hash": "477e25d02eec1d39", "src": "db2@1.60.1.70888"}
+{"id": "HOURS_ABBR", "field": "text", "en": "%d |4Hr:Hr;", "hash": "5778098008180a93", "src": "db2@1.60.1.70888"}
+{"id": "HOUR_ONELETTER_ABBR", "field": "text", "en": "%d h", "hash": "050f77b3fd04b92c", "src": "db2@1.60.1.70888"}
+{"id": "HOUSING_DASHBOARD_NEIGHBORHOOD_FAVOR", "field": "text", "en": "%s/%s House XP|n|n|cff20ff20House XP is earned by completing Endeavors, Endeavor tasks, and collecting Decor of Uncommon or better rarity for the first time|r", "hash": "1b17230c00f19b4b", "src": "db2@1.60.1.70888"}
+{"id": "HOUSING_DASHBOARD_REWARD_ESTATE_XP", "field": "text", "en": "Neighborhood Favor", "hash": "e4f1cc520b61f2ba", "src": "db2@1.60.1.70888"}
+{"id": "HOUSING_MICROBUTTON_NPE_RESTRICTED_TOOLTIP", "field": "text", "en": "This feature becomes available after completing Exile's Reach.", "hash": "264a4a5a1af54d2c", "src": "db2@1.60.1.70888"}
+{"id": "HOUSING_MICRO_BUTTON", "field": "text", "en": "Housing Dashboard", "hash": "3369c1b0e77dffde", "src": "db2@1.60.1.70888"}
+{"id": "HOUSING_SETTINGS_LABEL", "field": "text", "en": "Housing", "hash": "f5e7fd4874cb104b", "src": "db2@1.60.1.70888"}
+{"id": "HUD_EDIT_MODE_BUFF_FRAME_LABEL", "field": "text", "en": "Buff Frame", "hash": "f613352a4eabddc3", "src": "db2@1.60.1.70888"}
+{"id": "HUD_EDIT_MODE_CHARACTER_LAYOUTS_HEADER", "field": "text", "en": "%s Specific", "hash": "a85bea400c9bbdcc", "src": "db2@1.60.1.70888"}
+{"id": "HUD_EDIT_MODE_COLLAPSE_OPTIONS", "field": "text", "en": "Collapse options |A:editmode-up-arrow:16:11:0:3|a", "hash": "3d36d35bf1195a07", "src": "db2@1.60.1.70888"}
+{"id": "HUD_EDIT_MODE_COOLDOWN_VIEWER_SETTINGS", "field": "text", "en": "Advanced Cooldown Settings", "hash": "344239e092fd8479", "src": "db2@1.60.1.70888"}
+{"id": "HUD_EDIT_MODE_COPY_LAYOUT", "field": "text", "en": "Copy Layout", "hash": "207afaad4499574b", "src": "db2@1.60.1.70888"}
+{"id": "HUD_EDIT_MODE_COPY_TO_CLIPBOARD", "field": "text", "en": "Copy To Clipboard |cffffd100(to share online)|r", "hash": "180343dab49674ff", "src": "db2@1.60.1.70888"}
+{"id": "HUD_EDIT_MODE_COPY_TO_CLIPBOARD_NOTICE", "field": "text", "en": "Edit Mode layout \"%s\" copied to clipboard.", "hash": "fc57a037fcc7641d", "src": "db2@1.60.1.70888"}
+{"id": "HUD_EDIT_MODE_DEBUFF_FRAME_LABEL", "field": "text", "en": "Debuff Frame", "hash": "2b0f0664c70d6f4b", "src": "db2@1.60.1.70888"}
+{"id": "HUD_EDIT_MODE_DELETE_LAYOUT", "field": "text", "en": "Delete Layout", "hash": "c44b3c8b1d2aa676", "src": "db2@1.60.1.70888"}
+{"id": "HUD_EDIT_MODE_ERROR_COPY", "field": "text", "en": "|cnNORMAL_FONT_COLOR:Copy Layout|r|nActive changes must be saved or reverted", "hash": "9b49bbe64c78d5bf", "src": "db2@1.60.1.70888"}
+{"id": "HUD_EDIT_MODE_ERROR_COPY_MAX_LAYOUTS", "field": "text", "en": "|cnNORMAL_FONT_COLOR:Copy Layout|r|nA max of %d character layouts and %d account layouts are allowed", "hash": "ce291c56af980d96", "src": "db2@1.60.1.70888"}
+{"id": "HUD_EDIT_MODE_EXPAND_OPTIONS", "field": "text", "en": "Expand options |A:editmode-down-arrow:16:11:0:-7|a", "hash": "ebb5c25a228f24b0", "src": "db2@1.60.1.70888"}
+{"id": "HUD_EDIT_MODE_EXTERNAL_DEFENSIVES_FRAME_LABEL", "field": "text", "en": "External Defensives Frame", "hash": "84df4924a370707b", "src": "db2@1.60.1.70888"}
+{"id": "HUD_EDIT_MODE_LAYOUT_APPLIED", "field": "text", "en": "Edit Mode layout '%s' applied", "hash": "69018202a2b658eb", "src": "db2@1.60.1.70888"}
+{"id": "HUD_EDIT_MODE_MENU", "field": "text", "en": "Edit Mode", "hash": "5aa1dfb7d73a26ab", "src": "db2@1.60.1.70888"}
+{"id": "HUD_EDIT_MODE_NEW_LAYOUT", "field": "text", "en": "%s |cnPURE_GREEN_COLOR:New Layout|r", "hash": "8dc02a29072fb136", "src": "db2@1.60.1.70888"}
+{"id": "HUD_EDIT_MODE_NEW_LAYOUT_DISABLED", "field": "text", "en": "%s New Layout", "hash": "6228599fc21250fb", "src": "db2@1.60.1.70888"}
+{"id": "HUD_EDIT_MODE_RENAME_LAYOUT", "field": "text", "en": "Change Name", "hash": "058f50eb6cfbb425", "src": "db2@1.60.1.70888"}
+{"id": "HUD_EDIT_MODE_RENAME_OR_COPY_LAYOUT", "field": "text", "en": "Rename/Copy Layout", "hash": "1dff980d245cfbb1", "src": "db2@1.60.1.70888"}
 {"id": "HUD_EDIT_MODE_SETTING_UNIT_FRAME_SHOW_CAST_TIME", "field": "text", "en": "Show Cast Time", "hash": "81d0beb5a9990fd1", "src": "db2@1.60.1.70790"}
-{"id": "HUD_EDIT_MODE_TITLE", "field": "text", "en": "HUD Edit Mode", "hash": "e978e25c342b0242", "src": "db2@1.60.1.70862"}
-{"id": "HUD_EDIT_MODE_UNSAVED_CHANGES", "field": "text", "en": "You have unsaved changes", "hash": "75e4d32c623558f8", "src": "db2@1.60.1.70862"}
-{"id": "HUNTER_AGILITY_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFCritical Strike|r chance by %.1f%%\nIncreases |cFFFFFFFFAttack Power|r by %d\nIncreases |cFFFFFFFFRanged Attack Power|r by %d\nIncreases |cFFFFFFFFArmor|r by %d\nIncreases |cFFFFFFFFDodge|r chance by %.1f%%", "hash": "1b87af750624ca4d", "src": "db2@1.60.1.70862"}
-{"id": "HUNTER_MELEE_ATTACK_POWER_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee Weapon|r damage per second by %s\n\nIncreased by |cFFFFFFFFStrength|r and |cFFFFFFFFAgility|r\n\n|cffBCBCBCEvery 14 Attack Power adds 1 damage per second|r", "hash": "118d6e69333c5868", "src": "db2@1.60.1.70862"}
-{"id": "HUNTER_TRACKING_TEXT", "field": "text", "en": "Hunter Tracking", "hash": "ae24c2e46129361a", "src": "db2@1.60.1.70862"}
-{"id": "HolidayDescription:1", "field": "text", "en": "The Darkmoon Faire is here, this time in idyllic Elwynn Forest.\r\n\r\nMeet Silas Darkmoon and his troupe, play games that test mind and nerve, and behold exotic sights from the four corners of Azeroth... and beyond!", "hash": "c5ca34980376ea48", "src": "db2@1.60.1.70862"}
-{"id": "HolidayDescription:10", "field": "text", "en": "A time of merriment and celebration, dedicated to the hottest season of the year.", "hash": "aa87d20db46141ce", "src": "db2@1.60.1.70862"}
-{"id": "HolidayDescription:11", "field": "text", "en": "After the sun sets, the end of Midsummer is celebrated, with an hourly firework extravaganza.\r\n\r\nTo watch the show, visit any capital city or Booty Bay.", "hash": "81ab5c5b71138d57", "src": "db2@1.60.1.70862"}
-{"id": "HolidayDescription:12", "field": "text", "en": "Show an orphan what the hero's life is like! Visit Orphan Matron Nightingale in Stormwind or Orphan Matron Battlewail in Orgrimmar and make a child's dream come true.", "hash": "3c539eb5c18edadf", "src": "db2@1.60.1.70862"}
-{"id": "HolidayDescription:13", "field": "text", "en": "Greatfather Winter is visiting the cities of Ironforge and Orgrimmar, courtesy of Smokywood Pastures. And throughout Azeroth, it is the season to be jolly!", "hash": "e3e2b1748f0f1c7d", "src": "db2@1.60.1.70862"}
-{"id": "HolidayDescription:14", "field": "text", "en": "The feast of Noblegarden has arrived. The proving grounds of each race, the place where young heroes first test their strength, each holds cleverly hidden treasure eggs. How many can you find?", "hash": "96ddb8676d51db43", "src": "db2@1.60.1.70862"}
-{"id": "HolidayDescription:15", "field": "text", "en": "Hallow's End celebrates the break of the Forsaken from the Scourge.\r\n\r\nFun and mischief reign as the Innkeepers of Azeroth give treats, and tricks, to whomever asks.", "hash": "f53627625d2beec5", "src": "db2@1.60.1.70862"}
-{"id": "HolidayDescription:16", "field": "text", "en": "The Harvest Festival is a time to commemorate those who have sacrificed their lives to help friends and allies. Feasts are held outside Orgrimmar and Ironforge in honor of these fallen heroes.", "hash": "1ff1f393c709a7df", "src": "db2@1.60.1.70862"}
-{"id": "HolidayDescription:17", "field": "text", "en": "Every year the druids of Moonglade hold a celebration of their city's great triumph over an ancient evil. During the Lunar Festival, citizens of Azeroth have the opportunity to honor their elders by celebrating their sage wisdom, sharing in magnificent feasts, and of course... shooting lots of fireworks!", "hash": "16d5ac807f2a9724", "src": "db2@1.60.1.70862"}
-{"id": "HolidayDescription:2", "field": "text", "en": "Azeroth celebrates! Each racial capital holds fireworks shows every hour, all night long!", "hash": "cf7074ee636d7770", "src": "db2@1.60.1.70862"}
-{"id": "HolidayDescription:22", "field": "text", "en": "The battle for Alterac Valley grows intense. Greater honor is given to those who pledge sword to their liege and battle in Alterac.", "hash": "4849131d9c0fc871", "src": "db2@1.60.1.70862"}
-{"id": "HolidayDescription:23", "field": "text", "en": "The battle for Arathi Basin grows intense. Greater honor is given to those who pledge sword to their liege and battle in Arathi.", "hash": "48c2c5d440047e5a", "src": "db2@1.60.1.70862"}
-{"id": "HolidayDescription:25", "field": "text", "en": "The battle for Warsong Gulch grows intense. Greater honor is given to those who pledge sword to their liege and battle in the Gulch.", "hash": "32d254a48d8bd9eb", "src": "db2@1.60.1.70862"}
-{"id": "HolidayDescription:26", "field": "text", "en": "The Darkmoon Faire is here, this time at the foot of Thunder Bluff.\r\n\r\nMeet Silas Darkmoon and his troupe, play games that test mind and nerve, and behold exotic sights from the four corners of Azeroth... and beyond!", "hash": "f0bd31ce32488ba1", "src": "db2@1.60.1.70862"}
-{"id": "HolidayDescription:4", "field": "text", "en": "A fishing tournament, held along the coasts of Stranglethorn Vale. Catch as many tastyfish as you can!\r\n\r\nWill you be the master fisherman who catches forty fish first and wins the grand prize?", "hash": "1e39549d2f83551b", "src": "db2@1.60.1.70862"}
-{"id": "HolidayDescription:512", "field": "text", "en": "The battle at Darkspear Islands is heating up. Join up and prove your might!", "hash": "602d549d7ab5c6fd", "src": "db2@1.60.1.70862"}
-{"id": "HolidayDescription:9", "field": "text", "en": "Something is in the air in the major cities of Azeroth. Many guards and townsfolk spend their days giving and receiving gifts to other amorous citizens.", "hash": "c46498f4b89ecd7d", "src": "db2@1.60.1.70862"}
+{"id": "HUD_EDIT_MODE_TITLE", "field": "text", "en": "HUD Edit Mode", "hash": "e978e25c342b0242", "src": "db2@1.60.1.70888"}
+{"id": "HUD_EDIT_MODE_UNSAVED_CHANGES", "field": "text", "en": "You have unsaved changes", "hash": "75e4d32c623558f8", "src": "db2@1.60.1.70888"}
+{"id": "HUNTER_AGILITY_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFCritical Strike|r chance by %.1f%%\nIncreases |cFFFFFFFFAttack Power|r by %d\nIncreases |cFFFFFFFFRanged Attack Power|r by %d\nIncreases |cFFFFFFFFArmor|r by %d\nIncreases |cFFFFFFFFDodge|r chance by %.1f%%", "hash": "1b87af750624ca4d", "src": "db2@1.60.1.70888"}
+{"id": "HUNTER_MELEE_ATTACK_POWER_TOOLTIP", "field": "text", "en": "Increases |cFFFFFFFFMelee Weapon|r damage per second by %s\n\nIncreased by |cFFFFFFFFStrength|r and |cFFFFFFFFAgility|r\n\n|cffBCBCBCEvery 14 Attack Power adds 1 damage per second|r", "hash": "118d6e69333c5868", "src": "db2@1.60.1.70888"}
+{"id": "HUNTER_TRACKING_TEXT", "field": "text", "en": "Hunter Tracking", "hash": "ae24c2e46129361a", "src": "db2@1.60.1.70888"}
+{"id": "HolidayDescription:1", "field": "text", "en": "The Darkmoon Faire is here, this time in idyllic Elwynn Forest.\r\n\r\nMeet Silas Darkmoon and his troupe, play games that test mind and nerve, and behold exotic sights from the four corners of Azeroth... and beyond!", "hash": "c5ca34980376ea48", "src": "db2@1.60.1.70888"}
+{"id": "HolidayDescription:10", "field": "text", "en": "A time of merriment and celebration, dedicated to the hottest season of the year.", "hash": "aa87d20db46141ce", "src": "db2@1.60.1.70888"}
+{"id": "HolidayDescription:11", "field": "text", "en": "After the sun sets, the end of Midsummer is celebrated, with an hourly firework extravaganza.\r\n\r\nTo watch the show, visit any capital city or Booty Bay.", "hash": "81ab5c5b71138d57", "src": "db2@1.60.1.70888"}
+{"id": "HolidayDescription:12", "field": "text", "en": "Show an orphan what the hero's life is like! Visit Orphan Matron Nightingale in Stormwind or Orphan Matron Battlewail in Orgrimmar and make a child's dream come true.", "hash": "3c539eb5c18edadf", "src": "db2@1.60.1.70888"}
+{"id": "HolidayDescription:13", "field": "text", "en": "Greatfather Winter is visiting the cities of Ironforge and Orgrimmar, courtesy of Smokywood Pastures. And throughout Azeroth, it is the season to be jolly!", "hash": "e3e2b1748f0f1c7d", "src": "db2@1.60.1.70888"}
+{"id": "HolidayDescription:14", "field": "text", "en": "The feast of Noblegarden has arrived. The proving grounds of each race, the place where young heroes first test their strength, each holds cleverly hidden treasure eggs. How many can you find?", "hash": "96ddb8676d51db43", "src": "db2@1.60.1.70888"}
+{"id": "HolidayDescription:15", "field": "text", "en": "Hallow's End celebrates the break of the Forsaken from the Scourge.\r\n\r\nFun and mischief reign as the Innkeepers of Azeroth give treats, and tricks, to whomever asks.", "hash": "f53627625d2beec5", "src": "db2@1.60.1.70888"}
+{"id": "HolidayDescription:16", "field": "text", "en": "The Harvest Festival is a time to commemorate those who have sacrificed their lives to help friends and allies. Feasts are held outside Orgrimmar and Ironforge in honor of these fallen heroes.", "hash": "1ff1f393c709a7df", "src": "db2@1.60.1.70888"}
+{"id": "HolidayDescription:17", "field": "text", "en": "Every year the druids of Moonglade hold a celebration of their city's great triumph over an ancient evil. During the Lunar Festival, citizens of Azeroth have the opportunity to honor their elders by celebrating their sage wisdom, sharing in magnificent feasts, and of course... shooting lots of fireworks!", "hash": "16d5ac807f2a9724", "src": "db2@1.60.1.70888"}
+{"id": "HolidayDescription:2", "field": "text", "en": "Azeroth celebrates! Each racial capital holds fireworks shows every hour, all night long!", "hash": "cf7074ee636d7770", "src": "db2@1.60.1.70888"}
+{"id": "HolidayDescription:22", "field": "text", "en": "The battle for Alterac Valley grows intense. Greater honor is given to those who pledge sword to their liege and battle in Alterac.", "hash": "4849131d9c0fc871", "src": "db2@1.60.1.70888"}
+{"id": "HolidayDescription:23", "field": "text", "en": "The battle for Arathi Basin grows intense. Greater honor is given to those who pledge sword to their liege and battle in Arathi.", "hash": "48c2c5d440047e5a", "src": "db2@1.60.1.70888"}
+{"id": "HolidayDescription:25", "field": "text", "en": "The battle for Warsong Gulch grows intense. Greater honor is given to those who pledge sword to their liege and battle in the Gulch.", "hash": "32d254a48d8bd9eb", "src": "db2@1.60.1.70888"}
+{"id": "HolidayDescription:26", "field": "text", "en": "The Darkmoon Faire is here, this time at the foot of Thunder Bluff.\r\n\r\nMeet Silas Darkmoon and his troupe, play games that test mind and nerve, and behold exotic sights from the four corners of Azeroth... and beyond!", "hash": "f0bd31ce32488ba1", "src": "db2@1.60.1.70888"}
+{"id": "HolidayDescription:4", "field": "text", "en": "A fishing tournament, held along the coasts of Stranglethorn Vale. Catch as many tastyfish as you can!\r\n\r\nWill you be the master fisherman who catches forty fish first and wins the grand prize?", "hash": "1e39549d2f83551b", "src": "db2@1.60.1.70888"}
+{"id": "HolidayDescription:512", "field": "text", "en": "The battle at Darkspear Islands is heating up. Join up and prove your might!", "hash": "602d549d7ab5c6fd", "src": "db2@1.60.1.70888"}
+{"id": "HolidayDescription:9", "field": "text", "en": "Something is in the air in the major cities of Azeroth. Many guards and townsfolk spend their days giving and receiving gifts to other amorous citizens.", "hash": "c46498f4b89ecd7d", "src": "db2@1.60.1.70888"}

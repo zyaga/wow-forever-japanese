@@ -26,6 +26,7 @@
 {"id": "ca856c88f471610b", "field": "text", "en": "What's happening?", "hash": "ca856c88f471610b", "src": "vmangos@13b49dc"}
 {"id": "ca85db72b95da49f", "field": "text", "en": "Your skills are truly becoming extraordinary. Now, let us continue your training...", "hash": "ca85db72b95da49f", "src": "vmangos@13b49dc"}
 {"id": "ca8a0d423ba2b333", "field": "text", "en": "Praise Elune! I don't know if I could have survived the day without you, friend.", "hash": "ca8a0d423ba2b333", "src": "vmangos@13b49dc"}
+{"id": "ca92a331b593145c", "field": "text", "en": "Make it quick, outsider.", "hash": "ca92a331b593145c", "src": "collector@1.60.1.70862", "npcs": [253139]}
 {"id": "ca93a585590a00d3", "field": "text", "en": "Get it over with you filthy $r.$B$B<Kharan lowers his head, exposing his stubby neck.>", "hash": "ca93a585590a00d3", "src": "vmangos@13b49dc"}
 {"id": "ca9ab18f1492f88b", "field": "text", "en": "You seek to harm me, $r?", "hash": "ca9ab18f1492f88b", "src": "vmangos@13b49dc"}
 {"id": "ca9e5f3843c55267", "field": "text", "en": "Tower Point East holds the pass between the Field of Strife and Horde territories to the south.$B$BIt is controlled by the Horde.The East Frostwolf Tower protects the gate between Frostwolf Village and Frostwolf Keep.$B$BIt is controlled by the Horde.", "hash": "ca9e5f3843c55267", "src": "vmangos@13b49dc"}
@@ -37,7 +38,7 @@
 {"id": "cabe4634ab543a45", "field": "text", "en": "%s arrives!", "hash": "cabe4634ab543a45", "src": "vmangos@13b49dc"}
 {"id": "cabf7d5cea318e1a", "field": "text", "en": "By Orgrim!  This indurium can withstand massive heat!", "hash": "cabf7d5cea318e1a", "src": "vmangos@13b49dc"}
 {"id": "cac0ba34d8e16695", "field": "text", "en": "You are ready for greater things! See Franklin Lloyd, to my right. He will guide you from now on.", "hash": "cac0ba34d8e16695", "src": "vmangos@13b49dc"}
-{"id": "cac5092afe6d9bca", "field": "text", "en": "I'd like to disable transmogrification.", "hash": "cac5092afe6d9bca", "src": "collector@1.60.1.70790", "npcs": [270582]}
+{"id": "cac5092afe6d9bca", "field": "text", "en": "I'd like to disable transmogrification.", "hash": "cac5092afe6d9bca", "src": "collector@1.60.1.70790", "npcs": [270581, 270582]}
 {"id": "cac9143ba7d1e81d", "field": "text", "en": "Welcome to Revantusk Village, stranger. I am Primal Torntusk, leader of the Revantusk trolls.", "hash": "cac9143ba7d1e81d", "src": "vmangos@13b49dc"}
 {"id": "cacae57f231b9068", "field": "text", "en": "Then, all you need to do is have a seat near the fire and soak it all in. After a few minutes of resting, you'll gain various boons that will help you in your travels.", "hash": "cacae57f231b9068", "src": "collector@1.60.1.70374"}
 {"id": "cacdba3723384300", "field": "text", "en": "Come back Fluffy!", "hash": "cacdba3723384300", "src": "vmangos@13b49dc"}

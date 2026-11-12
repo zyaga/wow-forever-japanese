@@ -1,5 +1,6 @@
 {"id": "6606245ecb6f4220", "field": "text", "en": "Mathias found me left for dead by the Venture Co. in the Barrens. Had it not been for him, I'd have been prowler fodder. ", "hash": "6606245ecb6f4220", "src": "vmangos@13b49dc"}
 {"id": "6607c10dbe4631a9", "field": "text", "en": "Yes, I will deliver the orders to Warmaster Garrick!", "hash": "6607c10dbe4631a9", "src": "vmangos@13b49dc"}
+{"id": "660ab6a20ff691fd", "field": "text", "en": "Bask in the glory of your King, and carry his blessing forth to all who threaten the shining city of Stormwind!", "hash": "660ab6a20ff691fd", "src": "collector@1.60.1.70888"}
 {"id": "660fac026228275f", "field": "text", "en": "What do you have for sale?", "hash": "660fac026228275f", "src": "vmangos@13b49dc"}
 {"id": "660ffc78fa691b37", "field": "text", "en": "<Place my hand on the orb.>", "hash": "660ffc78fa691b37", "src": "vmangos@13b49dc"}
 {"id": "6616e74c187a7166", "field": "text", "en": "I see potential in you $n. Now grab a hammer and some of those scraps, you need a lot of practice.", "hash": "6616e74c187a7166", "src": "vmangos@13b49dc"}
@@ -42,6 +43,7 @@
 {"id": "66cce9c8f7aecb1d", "field": "text", "en": "We showed that one!", "hash": "66cce9c8f7aecb1d", "src": "vmangos@13b49dc"}
 {"id": "66cd13d8c4539d2d", "field": "text", "en": "I require training, Grimnur.", "hash": "66cd13d8c4539d2d", "src": "vmangos@13b49dc"}
 {"id": "66d09dd52c23e2ff", "field": "text", "en": "Elder Ironband lives in Blackchar Cave in Searing Gorge.", "hash": "66d09dd52c23e2ff", "src": "vmangos@13b49dc"}
+{"id": "66d2ef706d53e824", "field": "text", "en": "Greetings, $C. I can teach you skills and techniques.", "hash": "66d2ef706d53e824", "src": "collector@1.60.1.70862", "npcs": [251507]}
 {"id": "66d878ae46c38c8f", "field": "text", "en": "Hey there, $c! Looks like the Horde collected the last of their stuff, and now theirs and ours is being shipped over to Silithus as we speak. I'm told it'll be there in less than $2113w days, and then someone can ring that big gong near the Ahn'Qiraj gates to start the war.", "hash": "66d878ae46c38c8f", "src": "vmangos@13b49dc"}
 {"id": "66e4713bbf324396", "field": "text", "en": "Do not turn your back on the Light, $c, it may be the one thing that saves you some day.", "hash": "66e4713bbf324396", "src": "vmangos@13b49dc"}
 {"id": "66ea9434c533f35f", "field": "text", "en": "What's this? A chip in the shard? Finally, a weakness exposed... It won't be long now.", "hash": "66ea9434c533f35f", "src": "vmangos@13b49dc"}
