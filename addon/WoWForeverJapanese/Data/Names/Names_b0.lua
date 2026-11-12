@@ -95,6 +95,7 @@ WFJ.Data.add("name", {
   ["b05b0cbc32f6fc11"] = { "ストーン・クロウ・タバーン", "すとーん・くろう・たばーん", "The Stone Crow Tavern" },
   ["b05bf0b2eeb95f96"] = { "ヘヴィー・ウィーブ・ベルト", "へゔぃー・うぃーぶ・べると", "Heavy Weave Belt" },
   ["b05bfdafe69410b2"] = { "ウェストフォール・シチュー", "うぇすとふぉーる・しちゅー", "Westfall Stew" },
+  ["b05c7051ca7e0ba6"] = { "セイバー", "せいばー", "sabers" },
   ["b05d15da192d8f26"] = { "ブーツ・オブ・ズアテック", "ぶーつ・おぶ・ずあてっく", "Boots of Zua'tec" },
   ["b05d88559bab6e3d"] = { "デルグレン", "でるぐれん", "Delgren" },
   ["b05e15a6df3c1efb"] = { "コデックス・オブ・マナ・バーン3", "こでっくす・おぶ・まな・ばーんさん", "Codex of Mana Burn III" },

@@ -513,6 +513,7 @@ WFJ.Data.add("gloss", {
   [20515] = "ともに\tともに\tboth",
   [20516] = "ともに\tともに\tboth (together)",
   [20517] = "ともに\tともに\tover (along with)",
+  [20518] = "ともに\tともに\ttogether",
   [20519] = "ともに\tともに\ttogether with",
   [20520] = "ともに\tともに\twith",
   [20521] = "ともに\tともに\twith (over time)",

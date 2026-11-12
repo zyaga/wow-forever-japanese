@@ -716,6 +716,7 @@ WFJ.Data.add("gloss", {
   [46713] = "優先\tゆうせん\tpriority (before greed)",
   [46714] = "優先\tゆうせん\tpriority (for)",
   [46715] = "優先すべきこと\tゆうせんすべきこと\tpriorities (what should come first)",
+  [46716] = "優先する\tゆうせんする\ttake precedence",
   [46717] = "優先する\tゆうせんする\ttranscends (takes priority)",
   [46718] = "優先度\tゆうせんど\tlevel of importance (priority)",
   [46719] = "優先度\tゆうせんど\tpriority",

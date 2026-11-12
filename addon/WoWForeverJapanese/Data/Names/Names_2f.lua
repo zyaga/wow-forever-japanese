@@ -190,6 +190,7 @@ WFJ.Data.add("name", {
   ["2fbe49441bedec39"] = { "ハイド", "はいど", "hides" },
   ["2fbf1c3754350bf7"] = { "プレミア・ヴォイドクロス・レギンス", "ぷれみあ・ゔぉいどくろす・れぎんす", "Premier Voidcloth Leggings" },
   ["2fbff7ef22302f55"] = { "ウォーターログド・ツールボックス", "うぉーたーろぐど・つーるぼっくす", "Waterlogged Toolbox" },
+  ["2fc0ef14ef10a855"] = { "エルダー・ミストポー", "えるだー・みすとぽー", "Elder Mistpaw" },
   ["2fc1734d4b9277ec"] = { "カバ", "かば", "hippo" },
   ["2fc1eedabc1d0a49"] = { "ゲン・フェアウェザー", "げん・ふぇあうぇざー", "Genn Fairweather" },
   ["2fc524321c53ded3"] = { "タナリス", "たなりす", "Tanaris" },

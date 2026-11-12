@@ -36,6 +36,7 @@ WFJ.Data.add("english", {
   ["gossip:ff9bdec4fdeec5ee"] = { text = "what=1" },
   ["gossip:ffa223922dcb99eb"] = { text = "adventurer=2 greetings=1" },
   ["gossip:ffa48fb8ad4bc95f"] = { text = "see=4 sparkly=2 teacher=1 when=3" },
+  ["gossip:ffadda706c875aa2"] = { text = "adventure=1 boat=16 distant=8 dock=6 elven=9 further=4 lands=10 leaving=13 look=2 looking=2 one=15 stateroom=11 take=14 well=3" },
   ["gossip:ffb0656c8dac3f04"] = { text = "balls=38 booth=13 drink=9 excellent=1 exotic=19 faire=4 favorite=17 food=8 frogs=42 grab=34 head=14 if=12 interested=10 just=23 keep=41 many=5 may=26 more=18 my=16 pets=39 purchase=21 question=2 rarities=29 running=33 sale=7 sells=43 she=27 something=20 somewhere=32 specializes=30 thing=6 things=6 throwing=36 world=28" },
   ["gossip:ffb578400787fbef"] = { text = "blacksmith=1 claims=2 control=6 minute=4 unchallenged=3" },
   ["gossip:ffb849b10e3be4fe"] = { text = "daffodils=5 enjoy=7 jawed=4 killin'=6 slack=2 these=1" },

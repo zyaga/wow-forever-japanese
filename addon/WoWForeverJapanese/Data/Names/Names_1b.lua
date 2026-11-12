@@ -116,6 +116,7 @@ WFJ.Data.add("name", {
   ["1b6c082a01aa7fd4"] = { "マインドタップ", "まいんどたっぷ", "Mindtap" },
   ["1b6c52a2b12bda02"] = { "ウィンターフォール・トーテミック", "うぃんたーふぉーる・とーてみっく", "Winterfall Totemic" },
   ["1b6cdff79eb943ab"] = { "グリマリング・メイル・ポールドロン", "ぐりまりんぐ・めいる・ぽーるどろん", "Glimmering Mail Pauldrons" },
+  ["1b6e270d550c58d0"] = { "ナイトセイバー・ガーディアン", "ないとせいばー・がーでぃあん", "Nightsaber Guardian" },
   ["1b6f90e52bd1de89"] = { "ライト・アーマー・マーチャント", "らいと・あーまー・まーちゃんと", "Light Armor Merchant" },
   ["1b6fad5387fd8e71"] = { "ダンシング・フレイム", "だんしんぐ・ふれいむ", "Dancing Flame" },
   ["1b6fe32392a104cb"] = { "ファイアワーク、ショー、タイプ2・レッド", "ふぁいあわーくしょーたいぷに・れっど", "Firework, Show, Type 2 Red" },

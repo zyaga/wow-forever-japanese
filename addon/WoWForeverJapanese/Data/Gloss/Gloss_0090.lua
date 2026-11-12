@@ -916,7 +916,6 @@ WFJ.Data.add("gloss", {
   [90922] = "案内する\tあんないする\tare helping (guiding)",
   [90923] = "案内する\tあんないする\tcan I point you (shall I guide)?",
   [90924] = "案内する\tあんないする\tcan get guidance (be shown the way)",
-  [90925] = "案内する\tあんないする\tfor showing (guiding)",
   [90926] = "案内する\tあんないする\tguide (me), please",
   [90927] = "案内する\tあんないする\thelp (guide) you",
   [90928] = "案内する\tあんないする\tlead (guide)",

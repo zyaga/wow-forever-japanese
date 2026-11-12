@@ -77,6 +77,7 @@ WFJ.Data.add("name", {
   ["9f40b2c494e3608a"] = { "レジェンダリー・アーケイン・アマルガメーション（キャスター）", "れじぇんだりー・あーけいん・あまるがめーしょんきゃすたー", "[PH] Legendary Arcane Amalgamation (Caster)" },
   ["9f420c7f4e3dc05d"] = { "トライバル・ラプター・フェザー", "とらいばる・らぷたー・ふぇざー", "Tribal Raptor Feathers" },
   ["9f4594fd300e1417"] = { "パターン：スカーレット・ハンツマンズ・コイフ", "ぱたーん・すかーれっと・はんつまんず・こいふ", "Pattern: Scarlet Huntsman's Coif" },
+  ["9f46c8c1368979d3"] = { "ニューマン", "にゅーまん", "Newman" },
   ["9f46fd9f3309af58"] = { "ハイ・ウォーロードズ・ライト・クロー", "はい・うぉーろーどず・らいと・くろー", "High Warlord's Right Claw" },
   ["9f4aeeb80e42c98a"] = { "マレム・ペンダント", "まれむ・ぺんだんと", "Malem Pendant" },
   ["9f4dd5adceabe3ad"] = { "リブラム：シール・オブ・ウィズダム2", "りぶらむ・しーる・おぶ・うぃずだむに", "Libram: Seal of Wisdom II" },

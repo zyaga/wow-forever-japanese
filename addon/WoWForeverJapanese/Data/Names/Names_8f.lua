@@ -181,6 +181,7 @@ WFJ.Data.add("name", {
   ["8fa0142aef635323"] = { "プレミア・ジェネラルズ・シルケン・マントル", "ぷれみあ・じぇねらるず・しるけん・まんとる", "Premier General's Silken Mantle" },
   ["8fa01dce90d1d812"] = { "リチュアル・バーン", "りちゅある・ばーん", "Ritual burn" },
   ["8fa0c35f05fc5bf1"] = { "サージェント・メジャーズ・クラックリング・レザー・ガントレット", "さーじぇんと・めじゃーず・くらっくりんぐ・れざー・がんとれっと", "Sergeant Major's Crackling Leather Gauntlets" },
+  ["8fa2adcd3c45cda9"] = { "コイン・オブ・ザ・トライブ", "こいん・おぶ・ざ・とらいぶ", "Coins of the Tribes" },
   ["8fa34ffb6748b464"] = { "ドラゴンマウ・ウォー・バナー", "どらごんまう・うぉー・ばなー", "Dragonmaw War Banner" },
   ["8fa5bd5bd411c865"] = { "シャドウファング・ウルフガード", "しゃどうふぁんぐ・うるふがーど", "Shadowfang Wolfguard" },
   ["8fa64192596d66d6"] = { "トーチャード", "とーちゃーど", "Tortured" },

@@ -33,6 +33,7 @@ WFJ.Data.add("english", {
   ["gossip:4ab7366eb0cb81fe"] = { text = "blessing=2 energy=3 form=7 magic=5 pulse=6 redirects=8 siphons=4" },
   ["gossip:4abb2ac4dcbe3070"] = { text = "all=2 beginning=7 move=5 original=3 positions=4 sequence=6 started=8 statues=1" },
   ["gossip:4ac13ce7d65afb82"] = { text = "beacon=5 build=6 device=3 marvelous=2 this=1" },
+  ["gossip:4ac5b61caad86452"] = { text = "but=8 danger=16 forests=1 hidden=14 know=7 learned=10 much=13 part=4 still=12" },
   ["gossip:4ad2b929bb0b8fd9"] = { text = "behold=1 feast=4 holds=5" },
   ["gossip:4ad73dc27f118feb"] = { text = "changed=17 dark=2 ever=7 light=9 living=19 lurking=5 many=3 mean=25 monsters=22 needed=10 now=6 poor=12 see=14 souls=13 these=11 things=4 think=20 we=23 world=16" },
   ["gossip:4add2c8a91ea1ed9"] = { text = "but=14 care=8 careful=23 creatures=11 elves=16 enemies=17 large=9 myths=20 nature=10 protected=12 ruins=6 say=13 scare=18 tales=4 those=15 visitors=7 water=1 yet=2" },

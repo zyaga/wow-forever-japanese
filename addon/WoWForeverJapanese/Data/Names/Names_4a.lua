@@ -37,6 +37,7 @@ WFJ.Data.add("name", {
   ["4a2a4e1672b87c74"] = { "ナイトセイバー・レギンス", "ないとせいばー・れぎんす", "Nightsaber Leggings" },
   ["4a2c780baef00137"] = { "サモンド・インキュバス", "さもんど・いんきゅばす", "Summoned Incubus" },
   ["4a2cd65509f4fb35"] = { "ハウリング・ヴェイル", "はうりんぐ・ゔぇいる", "The Howling Vale" },
+  ["4a2d8e0f03535aef"] = { "アーマー・キット", "あーまー・きっと", "armor kits" },
   ["4a2e03aa287bafa6"] = { "エアルーム・ハンマー", "えあるーむ・はんまー", "Heirloom Hammer" },
   ["4a2ed28929df248d"] = { "ブラッド・ガードズ・メイル・グローブ", "ぶらっど・がーどず・めいる・ぐろーぶ", "Blood Guard's Mail Gloves" },
   ["4a2eec4e52954a1a"] = { "フック・ショーブ", "ふっく・しょーぶ", "Hook Shove" },

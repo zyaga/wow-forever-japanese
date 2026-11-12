@@ -9,6 +9,7 @@ WFJ.Data.add("name", {
   ["1e04103f7af0ce76"] = { "プラン：ジェムド・カッパー・ブーツ", "ぷらん・じぇむど・かっぱー・ぶーつ", "Plans: Gemmed Copper Boots" },
   ["1e0513baff076dfe"] = { "グリーティング・バーク", "ぐりーてぃんぐ・ばーく", "Greeting Bark" },
   ["1e0696767eff46e5"] = { "シャハ・ローマ", "しゃは・ろーま", "Shaha lor'ma" },
+  ["1e07a8f3a4110000"] = { "ナイト・オブ・モーニング", "ないと・おぶ・もーにんぐ", "Knight of Mourning" },
   ["1e07f1c209a3719f"] = { "ギブ・キー", "ぎぶ・きー", "Give Key" },
   ["1e07febaf8bceb06"] = { "キャロライ・アニス", "きゃろらい・あにす", "Carolai Anise" },
   ["1e084e8c3ec3dfee"] = { "ゴリシ・ワスプ", "ごりし・わすぷ", "Gorishi Wasp" },

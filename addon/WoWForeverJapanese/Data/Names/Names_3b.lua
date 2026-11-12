@@ -77,6 +77,7 @@ WFJ.Data.add("name", {
   ["3b51a80b772884aa"] = { "ウォーターロード・ハイドラクシス", "うぉーたーろーど・はいどらくしす", "Waterlord Hydraxis" },
   ["3b55e6cba453a988"] = { "カバリスト・レギンス", "かばりすと・れぎんす", "Cabalist Leggings" },
   ["3b5879b109c16c62"] = { "ベンチャー・コー・エージェント", "べんちゃー・こー・えーじぇんと", "Venture Co. Agent" },
+  ["3b58b20e3cfabb20"] = { "オーガ・マイナー", "おーが・まいなー", "Ogre Miners" },
   ["3b59168f069aaf74"] = { "タブレット", "たぶれっと", "Tablet" },
   ["3b5b4e6be50df0ab"] = { "ニュートラル・バナー・オーラ、ラージ", "にゅーとらる・ばなー・おーららーじ", "Neutral Banner Aura, Large" },
   ["3b5bceab68aba7b2"] = { "マカスガー", "まかすがー", "Makasgar" },

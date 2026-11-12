@@ -207,6 +207,7 @@ WFJ.Data.add("name", {
   ["59debc83aee0d3d8"] = { "ラージ・ウドゥン・シールド", "らーじ・うどぅん・しーるど", "Large Wooden Shield" },
   ["59df57ad1efbac1a"] = { "レシピ：スモークト・レッドギル", "れしぴ・すもーくと・れっどぎる", "Recipe: Smoked Redgill" },
   ["59e2dbf7e888453f"] = { "ブリリアント・クロマティック・クローク", "ぶりりあんと・くろまてぃっく・くろーく", "Brilliant Chromatic Cloak" },
+  ["59e39609543df6a0"] = { "スナッフルスナウト", "すなっふるすなうと", "Snufflesnout" },
   ["59e4e3b58d5c296c"] = { "ファー・ウォッチ・アウトポスト", "ふぁー・うぉっち・あうとぽすと", "Far Watch Outpost" },
   ["59e5452fdb16137b"] = { "アズシャラ・センチネル", "あずしゃら・せんちねる", "Azshara Sentinel" },
   ["59e5e8968579ea0e"] = { "ウォータースプリング・フィールド", "うぉーたーすぷりんぐ・ふぃーるど", "Waterspring Field" },

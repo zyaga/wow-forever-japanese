@@ -159,6 +159,7 @@ WFJ.Data.add("name", {
   ["fc9dd61606f23973"] = { "マウンテニア・フリント", "まうんてにあ・ふりんと", "Mountaineer Flint" },
   ["fca008cede5d6826"] = { "インクリース・ストレングス20・ブレスト・プレート・セット", "いんくりーす・すとれんぐすにじゅう・ぶれすと・ぷれーと・せっと", "Increase Strength 20 - Blessed Plate Set" },
   ["fca0172f87d1f9e6"] = { "ダスクレイス・ガントレット", "だすくれいす・がんとれっと", "Duskwraith Gauntlets" },
+  ["fca05a0199efb82e"] = { "ウィッチ・ドクター・ティイク", "うぃっち・どくたー・てぃいく", "Witch Doctor Ti'ik" },
   ["fca1245b2135e994"] = { "イリュージョニスツ・ローブ", "いりゅーじょにすつ・ろーぶ", "illusionist's robe" },
   ["fca2007c7e184e34"] = { "シャドウ・リチュアル・オブ・サクリファイス", "しゃどう・りちゅある・おぶ・さくりふぁいす", "Shadow Ritual of Sacrifice" },
   ["fca2cc1a6bee8456"] = { "スゼッタ・ガリーナ", "すぜった・がりーな", "Suzetta Gallina" },

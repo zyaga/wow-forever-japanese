@@ -10,6 +10,7 @@ WFJ.Data.add("english", {
   ["gossip:ea1c60052cc54717"] = { text = "comes=7 end=4 suffer=5 unmerciful=3 world=2 you=6 your=1" },
   ["gossip:ea1ceaa381fb2be4"] = { text = "coded=10 collection=3 contains=12 correspondences=11 information=8 logistic=5 scrolls=2 strategic=6 this=1 various=4 well=9" },
   ["gossip:ea23a72f908da431"] = { text = "report=3 something=2 yes=1" },
+  ["gossip:ea27804c6ad7a62e"] = { text = "adventure=23 beauty=8 dock=7 elven=1 even=11 glory=9 journey=20 luck=26 mist=4 mysterious=3 port=2 same=13 see=5 take=16 there=15 weak=17" },
   ["gossip:ea28f8d0ddc27675"] = { text = "earned=8 goods=5 i=3 purchase=6 right=7 use=1 what=4" },
   ["gossip:ea2dd2e8cbdcd1e4"] = { text = "bug=35 business=2 certainly=16 chatter=7 course=22 don't=29 forward=39 frontier=24 help=13 if=15 incidents=31 infestations=36 joke=41 like=23 lot=9 major=30 manage=27 oh=19 outages=34 pertaining=1 place=38 power=33 stand=21 themselves=26 this=37 though=11 time=8 town=12 towns=12 unless=4 unplanned=32 want=14 what=20 won't=10 work=17" },
   ["gossip:ea30e585795a0029"] = { text = "who=1" },

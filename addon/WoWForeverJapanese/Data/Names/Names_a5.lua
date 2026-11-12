@@ -63,6 +63,7 @@ WFJ.Data.add("name", {
   ["a53bbc4984f15db3"] = { "インプルーブド・ピック・ポケット・アンド・ディストラクト05", "いんぷるーぶど・ぴっく・ぽけっと・あんど・でぃすとらくとご", "Improved Pick Pocket and Distract 05" },
   ["a53c35c08d0dd029"] = { "モシュオッグ・スペルクラフター", "もしゅおっぐ・すぺるくらふたー", "Mosh'Ogg Spellcrafter" },
   ["a53e75226f04c2db"] = { "ファゾム・コア", "ふぁぞむ・こあ", "fathom core" },
+  ["a53eaefe7572e73d"] = { "セフィラ・エバーブライト", "せふぃら・えばーぶらいと", "Sefira Everbright" },
   ["a5402abc69467b5b"] = { "グラント・ドグラン", "ぐらんと・どぐらん", "Grunt Dogran" },
   ["a541ca0ade9130d6"] = { "ジャーニーマン・ライディング", "じゃーにーまん・らいでぃんぐ", "Journeyman Riding" },
   ["a542a04ba33203c7"] = { "ウーズ・カバード・ソーリウム・ヴェイン", "うーず・かばーど・そーりうむ・ゔぇいん", "Ooze Covered Thorium Veins" },

@@ -301,7 +301,6 @@ WFJ.Data.add("gloss", {
   [300] = "あたり\tあたり\taround (you)",
   [301] = "あたり\tあたり\taround here",
   [302] = "あたり\tあたり\taround here (area)",
-  [303] = "あたり\tあたり\taround here (vicinity)",
   [304] = "あたり\tあたり\taround where",
   [305] = "あたり\tあたり\tlocal (area)",
   [306] = "あたり\tあたり\tnear (area)",

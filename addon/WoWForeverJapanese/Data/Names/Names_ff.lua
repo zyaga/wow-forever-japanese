@@ -189,6 +189,7 @@ WFJ.Data.add("name", {
   ["ffbbc1bc398da775"] = { "ハーゼク", "はーぜく", "Hirzek" },
   ["ffbbe616f20c2cfd"] = { "リネゴシエイテッド・リング", "りねごしえいてっど・りんぐ", "Renegotiated Ring" },
   ["ffbbfad015c92aef"] = { "パターン：ムーンクロス・バッグ", "ぱたーん・むーんくろす・ばっぐ", "Pattern: Mooncloth Bag" },
+  ["ffbd3a7a0051210a"] = { "ワーリング・ブロンズ・ギズモ", "わーりんぐ・ぶろんず・ぎずも", "whirring bronze gizmos" },
   ["ffbdf531d4eee314"] = { "ガズバン・ウォーター・フォーム", "がずばん・うぉーたー・ふぉーむ", "Gazban Water Form" },
   ["ffbef945be92705b"] = { "コンセクレイテッド・ウェポン", "こんせくれいてっど・うぇぽん", "Consecrated Weapon" },
   ["ffc0e28c8a76d992"] = { "スカルダガリー・ベルト", "すかるだがりー・べると", "Skullduggery Belt" },

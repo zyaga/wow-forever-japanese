@@ -47,6 +47,7 @@ WFJ.Data.add("name", {
   ["e22898a473091ade"] = { "レリック・オブ・ザ・ライト", "れりっく・おぶ・ざ・らいと", "Relic of the Light" },
   ["e228f54f263f77b5"] = { "レイジクロー・ブレイサー", "れいじくろー・ぶれいさー", "Rageclaw Bracers" },
   ["e22ae7bd1404cb24"] = { "ウルフランナー・シューズ", "うるふらんなー・しゅーず", "Wolfrunner Shoes" },
+  ["e22b3a9c6fef684a"] = { "メリオン・サエレマケス", "めりおん・さえれまけす", "Maerion Thaelemaches" },
   ["e22b73affe6187ca"] = { "プレミア・フィールド・マーシャルズ・ビーストハイド・ヘルメット", "ぷれみあ・ふぃーるど・まーしゃるず・びーすとはいど・へるめっと", "Premier Field Marshal's Beasthide Helmet" },
   ["e22c737031b45836"] = { "エングレイブ・ブレイサー・リップタイド", "えんぐれいぶ・ぶれいさー・りっぷたいど", "Engrave Bracers - Riptide" },
   ["e22de7c712e0ec1e"] = { "ログインエフェクト", "ろぐいんえふぇくと", "LOGINEFFECT" },
@@ -226,6 +227,7 @@ WFJ.Data.add("name", {
   ["e2d110b70b783966"] = { "ドゥーガル", "どぅーがる", "Dughal" },
   ["e2d110b90b783968"] = { "ドゥーガン", "どぅーがん", "Dughan" },
   ["e2d2b3f3015369eb"] = { "ルーン・オブ・タイダル・ウェーブ", "るーん・おぶ・たいだる・うぇーぶ", "Rune of Tidal Waves" },
+  ["e2d5bd5d2b54d531"] = { "トワイライト・コラプター", "とわいらいと・こらぷたー", "Twilight Corrupters" },
   ["e2d60155ae16efe1"] = { "アンダーグラウンド", "あんだーぐらうんど", "Underground" },
   ["e2d96b2192b37dbf"] = { "サモン・アクエメンタス", "さもん・あくえめんたす", "Summon Aquementas" },
   ["e2d9acbe3a1e2811"] = { "ボルツ・チャージド・アイボール", "ぼるつ・ちゃーじど・あいぼーる", "Bolt's Charged Eyeball" },
@@ -257,4 +259,5 @@ WFJ.Data.add("name", {
   ["e2fc12cf363a3309"] = { "グリーン・ウーレン・ローブ", "ぐりーん・うーれん・ろーぶ", "Green Woolen Robe" },
   ["e2fd7526aa98b961"] = { "プレイグド・コックローチ", "ぷれいぐど・こっくろーち", "Plagued Cockroach" },
   ["e2fdc6ab6333a5c2"] = { "グリモア・オブ・シナジー", "ぐりもあ・おぶ・しなじー", "Grimoire of Synergy" },
+  ["e2fe18394746b7ce"] = { "モスフーフ・コーサー", "もすふーふ・こーさー", "Mosshoof Coursers" },
 })

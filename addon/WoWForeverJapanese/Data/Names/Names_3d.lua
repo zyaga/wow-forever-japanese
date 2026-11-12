@@ -264,6 +264,7 @@ WFJ.Data.add("name", {
   ["3df81f0382f6acd2"] = { "アークメイジ・アンジェラ・ドサントス", "あーくめいじ・あんじぇら・どさんとす", "Archmage Angela Dosantos" },
   ["3df96d1c46125796"] = { "マントル・オブ・ザ・グランド・クルセイダー", "まんとる・おぶ・ざ・ぐらんど・くるせいだー", "Mantle of the Grand Crusader" },
   ["3df97f310e819912"] = { "カース・オブ・ブラッド", "かーす・おぶ・ぶらっど", "Curse of Blood" },
+  ["3df9b029bd9ba0e8"] = { "フェル・モート", "ふぇる・もーと", "fel mote" },
   ["3dfa5dcef623983f"] = { "スキーマティック：キャッツアイ・ウルトラ・ゴーグル", "すきーまてぃっく・きゃっつあい・うるとら・ごーぐる", "Schematic: Catseye Ultra Goggles" },
   ["3dfb195d27c5b110"] = { "グランドマスター・オブ・ザ・グルバシ・アリーナ", "ぐらんどますたー・おぶ・ざ・ぐるばし・ありーな", "Grandmaster of the Gurubashi Arena" },
   ["3dfc40d189ec8512"] = { "ウォーター・ウォーキング", "うぉーたー・うぉーきんぐ", "Water Walking" },

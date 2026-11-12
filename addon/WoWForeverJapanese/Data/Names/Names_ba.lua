@@ -189,6 +189,7 @@ WFJ.Data.add("name", {
   ["bad4bd8ecd2c0543"] = { "ネザーガード・マイナー", "ねざーがーど・まいなー", "Nethergarde Miner" },
   ["bad551ec61a76188"] = { "フロスト・プロテクション", "ふろすと・ぷろてくしょん", "Frost Protection" },
   ["bad63f97bb22b74c"] = { "ポート・トゥ・アンダーシティ・トラップ", "ぽーと・とぅ・あんだーしてぃ・とらっぷ", "Port to Undercity TRAP" },
+  ["bad92eb26c658d85"] = { "ディファイリング・ハウンド", "でぃふぁいりんぐ・はうんど", "Defiling Hounds" },
   ["bad974d209fa8a6b"] = { "ギフト・オブ・アドレーション：オーグリマー", "ぎふと・おぶ・あどれーしょん・おーぐりまー", "Gift of Adoration: Orgrimmar" },
   ["bada3ec1fc34caf0"] = { "シャドウモー・クロー", "しゃどうもー・くろー", "Shadowmaw Claw" },
   ["bada8499a8005cd6"] = { "ノースリッジ・ランバー・ミル", "のーすりっじ・らんばー・みる", "Northridge Lumber Mill" },

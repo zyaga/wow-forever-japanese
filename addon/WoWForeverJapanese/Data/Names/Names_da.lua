@@ -106,6 +106,8 @@ WFJ.Data.add("name", {
   ["da7316f5d015b77d"] = { "ブリッスルバーク・グローブ", "ぶりっするばーく・ぐろーぶ", "Bristlebark Gloves" },
   ["da754ef50b9f2089"] = { "ウォーソング・アウトライダー", "うぉーそんぐ・あうとらいだー", "Warsong Outrider" },
   ["da77f3324abc7de9"] = { "ツイン・テレポート・ビジュアル", "ついん・てれぽーと・びじゅある", "Twin Teleport Visual" },
+  ["da794a97f58cc25c"] = { "クリーグ・ボサンク", "くりーぐ・ぼさんく", "Creeg Bothunk" },
+  ["da7950de9abc46a7"] = { "ディー・イー・エル・ティー・エー", "でぃー・いー・える・てぃー・えー", "D.E.L.T.A" },
   ["da7a748de421f2e7"] = { "ブレストプレート・オブ・ザ・チョーズン", "ぶれすとぷれーと・おぶ・ざ・ちょーずん", "Breastplate of the Chosen" },
   ["da7a8979c37b954f"] = { "プレミア・ラメラー・サバトン", "ぷれみあ・らめらー・さばとん", "Premier Lamellar Sabatons" },
   ["da80b7db93c9871d"] = { "フォーミュラ：エンチャント・ブレイサー・グレーター・スタミナ", "ふぉーみゅら・えんちゃんと・ぶれいさー・ぐれーたー・すたみな", "Formula: Enchant Bracer - Greater Stamina" },

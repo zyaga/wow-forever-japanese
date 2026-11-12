@@ -47,6 +47,7 @@ WFJ.Data.add("name", {
   ["e13194c2610aabb5"] = { "ロング・テイル・ヘア", "ろんぐ・ている・へあ", "Long Tail Hair" },
   ["e1344efa37b6b328"] = { "ラフ・ウルフ・ペルト", "らふ・うるふ・ぺると", "Rough Wolf Pelts" },
   ["e1352c5a1b809230"] = { "マジストレート・ヘンリー・マレブ", "まじすとれーと・へんりー・まれぶ", "Magistrate Henry Maleb" },
+  ["e1354733d38b8bac"] = { "コラプテッド・ノット", "こらぷてっど・のっと", "Corrupted Knots" },
   ["e138db801abb6f59"] = { "エクスパンデッド・インテレクト", "えくすぱんでっど・いんてれくと", "Expanded Intellect" },
   ["e139df8aafd8eb77"] = { "アノインテッド・バイ・ライト", "あのいんてっど・ばい・らいと", "Anointed By Light" },
   ["e13b5cc71fcb09e2"] = { "ナイツ・インビュード・アーマー", "ないつ・いんびゅーど・あーまー", "Knight's Imbued Armor" },

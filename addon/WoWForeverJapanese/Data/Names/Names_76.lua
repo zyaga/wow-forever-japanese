@@ -240,6 +240,7 @@ WFJ.Data.add("name", {
   ["76f0cd42ab1ff2d5"] = { "ボアトン・シェイドトーテム", "ぼあとん・しぇいどとーてむ", "Boarton Shadetotem" },
   ["76f1f24f82ec98dd"] = { "シンダースケイル・ウェルプ", "しんだーすけいる・うぇるぷ", "Cinderscale Whelp" },
   ["76f313faa856394c"] = { "ネザーガード・キープ", "ねざーがーど・きーぷ", "NETHERGARDE KEEP" },
+  ["76f39c9991dabc07"] = { "エルダーワイルド", "えるだーわいるど", "Elderwild" },
   ["76f3acfd78642f9b"] = { "パターン：スカーレット・ハンツマンズ・リストガード", "ぱたーん・すかーれっと・はんつまんず・りすとがーど", "Pattern: Scarlet Huntsman's Wristguards" },
   ["76f3b90160299acf"] = { "フル・ムーンシャイン", "ふる・むーんしゃいん", "Full Moonshine" },
   ["76f3bb5f17e85180"] = { "ステージ・スポーン", "すてーじ・すぽーん", "[DNT] Stage Spawn" },

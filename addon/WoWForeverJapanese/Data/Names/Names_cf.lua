@@ -21,6 +21,7 @@ WFJ.Data.add("name", {
   ["cf11bf3477290ff8"] = { "ミステリアス・サイズ", "みすてりあす・さいず", "Mysterious Scythe" },
   ["cf16652fd9271cd3"] = { "カズ・モダン", "かず・もだん", "Khaz Modan" },
   ["cf166a929481936c"] = { "ブレスト・ウォーター", "ぶれすと・うぉーたー", "blessed water" },
+  ["cf16de3034c87a83"] = { "ドライド・ハンギング・ハーブ", "どらいど・はんぎんぐ・はーぶ", "Dried Hanging Herbs" },
   ["cf1732fc3ab26ef2"] = { "フリムジー・メール・ドワーフ・マスク", "ふりむじー・めーる・どわーふ・ますく", "Flimsy Male Dwarf Mask" },
   ["cf1a7ef80683cb70"] = { "ディバイニング・スクロール・スペル", "でぃばいにんぐ・すくろーる・すぺる", "Divining Scroll Spell" },
   ["cf1ab325cf31601a"] = { "リチュアル・グローブ", "りちゅある・ぐろーぶ", "Ritual Gloves" },

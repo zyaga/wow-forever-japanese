@@ -92,6 +92,7 @@ WFJ.Data.add("name", {
   ["cc60ca93938ecd32"] = { "ディープモス・エッグ15", "でぃーぷもす・えっぐじゅうご", "Deepmoss Egg15" },
   ["cc61389550c30f59"] = { "（ディーエヌディー）・サモン・クリスタル・ミニオン、スケルトン", "でぃーえぬでぃー・さもん・くりすたる・みにおんすけるとん", "(DND) Summon Crystal Minion, Skeleton" },
   ["cc616595d33e0f57"] = { "ソウル・オブ・ザ・フェンサー", "そうる・おぶ・ざ・ふぇんさー", "Soul of the Fencer" },
+  ["cc61cd018e365131"] = { "ケイレイナ", "けいれいな", "Kaylaena" },
   ["cc632d03285ffe70"] = { "カーゼン・コマンドー", "かーぜん・こまんどー", "Kurzen Commando" },
   ["cc637eabde62d642"] = { "プラン：エンリッチド・ソーリウム・ブレストプレート", "ぷらん・えんりっちど・そーりうむ・ぶれすとぷれーと", "Plans: Enriched Thorium Breastplate" },
   ["cc645ff36f6dcd69"] = { "ケリック・ファイアビアード", "けりっく・ふぁいあびあーど", "[UNUSED] Kerrik Firebeard" },

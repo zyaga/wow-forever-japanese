@@ -219,6 +219,7 @@ WFJ.Data.add("name", {
   ["f0daf2254f4b946d"] = { "キュアード・ディア", "きゅあーど・でぃあ", "Cured Deer" },
   ["f0dcf7c5d30ae87c"] = { "サディウス・ライトニング・ビジュアル", "さでぃうす・らいとにんぐ・びじゅある", "Thadius Lightning Visual" },
   ["f0dd60e8346edfaf"] = { "ブリッスルバーク・ブラウス", "ぶりっするばーく・ぶらうす", "Bristlebark Blouse" },
+  ["f0dde2ee8804f63f"] = { "アージェント・ドーン・ヴァラー・トークン", "あーじぇんと・どーん・ゔぁらー・とーくん", "Argent Dawn valor token" },
   ["f0dde37d209425a8"] = { "オーベルダイン・ムーンウェル", "おーべるだいん・むーんうぇる", "Auberdine Moonwell" },
   ["f0df05ec54e93f59"] = { "ブルーギル・パドルジャンパー", "ぶるーぎる・ぱどるじゃんぱー", "Bluegill Puddlejumper" },
   ["f0e0d1bf45539af8"] = { "クローラー・ミート", "くろーらー・みーと", "Crawler Meat" },

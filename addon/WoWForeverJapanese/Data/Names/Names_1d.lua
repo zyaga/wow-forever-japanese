@@ -36,6 +36,7 @@ WFJ.Data.add("name", {
   ["1d26abae24d4969e"] = { "キルボア・ウォータリング・ホール", "きるぼあ・うぉーたりんぐ・ほーる", "Quilboar Watering Hole" },
   ["1d26dd2e0f18b620"] = { "クラフツマンズ・リット：エリクサー・オブ・ディフェンス", "くらふつまんず・りっと・えりくさー・おぶ・でぃふぇんす", "Craftsman's Writ: Elixir of Defense" },
   ["1d2775bd9d45a6ac"] = { "スポットライト", "すぽっとらいと", "Spotlight" },
+  ["1d28b9a1e9f5d7ea"] = { "デイガン・ホード・タワー", "でいがん・ほーど・たわー", "Dae'gun Horde Tower" },
   ["1d2990fc8342aaee"] = { "ヘルム・ルーン・アビリティ", "へるむ・るーん・あびりてぃ", "Helm Rune Ability" },
   ["1d29dcde23844467"] = { "スピリット・オブ・ラス", "すぴりっと・おぶ・らす", "Spirit of Wrath" },
   ["1d29f9caa5e23922"] = { "テラス・オブ・リポーズ", "てらす・おぶ・りぽーず", "Terrace of Repose" },

@@ -12,6 +12,7 @@ WFJ.Data.add("english", {
   ["gossip:ee33877d6ee64b58"] = { text = "sir=2 thank=3 yes=1" },
   ["gossip:ee3530f6e3b117c3"] = { text = "ah=1 fine=2 get=13 here=14 i=6 join=7 me=10 memories=3 same=9 speak=16 there=12" },
   ["gossip:ee433e2435c16f9f"] = { text = "else=21 everything=22 fickle=8 important=19 lasting=14 live=2 preserve=18 remember=16 shifting=5 that=17 this=3 times=4 true=13 waste=23 we=1 what=12 winds=6 world=10" },
+  ["gossip:ee47d8bfd5659d62"] = { text = "additional=6 again=1 always=3 behalf=14 continuing=16 efforts=17 hand=23 once=2 part=5 ready=24 recognized=19 resources=7 stack=11 sure=21 your=15" },
   ["gossip:ee4a596ce4831051"] = { text = "all=5 breath=11 bubbles=14 can=12 close=22 deep=8 enough=13 fissures=16 get=3 help=4 hunt=1 need=6 produce=15 swim=23 underwater=10 use=20 water=7" },
   ["gossip:ee4cc5e81b9daf15"] = { text = "bill=2 break=5 face=4 says=1" },
   ["gossip:ee518672dd5eadc8"] = { text = "longer=1 sleep=2" },

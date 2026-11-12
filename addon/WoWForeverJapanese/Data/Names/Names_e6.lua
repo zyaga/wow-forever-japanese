@@ -170,6 +170,7 @@ WFJ.Data.add("name", {
   ["e6be0c332edc0e64"] = { "ナミング・ストライク2", "なみんぐ・すとらいくに", "Numbing Strike II" },
   ["e6be0c402edc0e71"] = { "ナミング・ストライク4", "なみんぐ・すとらいくよん", "Numbing Strike IV" },
   ["e6bed11c4a40a27e"] = { "パターン：ギルデッド・グローブ", "ぱたーん・ぎるでっど・ぐろーぶ", "Pattern: Gilded Gloves" },
+  ["e6bee5467c2b1761"] = { "レガシ・エンキャンプメント", "れがし・えんきゃんぷめんと", "Legashi Encampment" },
   ["e6c02403bef38eca"] = { "ズリアン・マッドスカンク", "ずりあん・まっどすかんく", "Zulian Mudskunk" },
   ["e6c06aca70d77dd0"] = { "サモン・ゴーダニ・チェスト（コバルト）", "さもん・ごーだに・ちぇすとこばると", "Summon Gordunni chest (COBALT)" },
   ["e6c0c7b47d2043e1"] = { "ルナー・ベンティング", "るなー・べんてぃんぐ", "Lunar Venting" },

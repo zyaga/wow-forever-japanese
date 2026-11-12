@@ -122,6 +122,7 @@ WFJ.Data.add("name", {
   ["bc771e75fb9cced0"] = { "カーブ・ブレーデッド・リッパー", "かーぶ・ぶれーでっど・りっぱー", "Curve-bladed Ripper" },
   ["bc774a5dc0a871a8"] = { "オーグリマー・ヌガー", "おーぐりまー・ぬがー", "Orgrimmar Nougat" },
   ["bc7baee39a1951e1"] = { "ゼスティ・クラム・ミート", "ぜすてぃ・くらむ・みーと", "Zesty Clam Meat" },
+  ["bc804519a5bd7b27"] = { "グレゴリーズ・ノート", "ぐれごりーず・のーと", "Gregory's Note" },
   ["bc809e128fff4ef3"] = { "ナリシャ", "なりしゃ", "Narrisha" },
   ["bc80b467d5ccdb49"] = { "（ディーエヌティー）・コグ", "でぃーえぬてぃー・こぐ", "(DNT) Cogs" },
   ["bc8240b7fa3eb332"] = { "シャドウフレイム", "しゃどうふれいむ", "Shadowflame" },

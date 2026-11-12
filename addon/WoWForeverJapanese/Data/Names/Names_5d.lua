@@ -79,6 +79,7 @@ WFJ.Data.add("name", {
   ["5d52dea4092f7762"] = { "マスター・アングラー", "ますたー・あんぐらー", "the Master Angler" },
   ["5d54419fdfc239ba"] = { "クロス・ブーツ・オブ・ザ・ライジング・ドーン", "くろす・ぶーつ・おぶ・ざ・らいじんぐ・どーん", "[PH] Cloth Boots of the Rising Dawn" },
   ["5d5497b6d9904659"] = { "インスクライブド・レザー・スポールダー", "いんすくらいぶど・れざー・すぽーるだー", "Inscribed Leather Spaulders" },
+  ["5d59c59436b091c9"] = { "ボルト・オブ・ルーンクロス", "ぼると・おぶ・るーんくろす", "Bolts of Runecloth" },
   ["5d5dba92e9312975"] = { "チーフ・ブリガディア・ブーツ", "ちーふ・ぶりがでぃあ・ぶーつ", "Chief Brigadier Boots" },
   ["5d5df7621bafd2e0"] = { "タイガ・ワイズメイン", "たいが・わいずめいん", "Taiga Wisemane" },
   ["5d678e02a3a7304a"] = { "アダルト・プレインストライダー", "あだると・ぷれいんすとらいだー", "adult plainstrider" },

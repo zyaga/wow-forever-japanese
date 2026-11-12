@@ -37,6 +37,7 @@ WFJ.Data.add("name", {
   ["011d0be352fb32bc"] = { "レンジャー・レギンス", "れんじゃー・れぎんす", "Ranger Leggings" },
   ["011d68f70776b086"] = { "パターン：ブルー・スエード・シューズ", "ぱたーん・ぶるー・すえーど・しゅーず", "Pattern: Blue Suede Shoes" },
   ["011dd5b848fdc011"] = { "ベテランズ・シルバード・チェーン・ヘルム", "べてらんず・しるばーど・ちぇーん・へるむ", "Veteran's Silvered Chain Helm" },
+  ["011e09ef0a9dbf2f"] = { "パーソナル・サバイバル・パック", "ぱーそなる・さばいばる・ぱっく", "Personal Survival Pack" },
   ["011e7aeda7b00f30"] = { "スモークト・ベア・ミート", "すもーくと・べあ・みーと", "Smoked Bear Meat" },
   ["011eaabf29a59d05"] = { "ストーン・ハンマー", "すとーん・はんまー", "Stone Hammer" },
   ["011eb11111017ee2"] = { "パーリー・ブーツ", "ぱーりー・ぶーつ", "Pearly Boots" },
