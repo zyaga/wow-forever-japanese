@@ -26,6 +26,9 @@ from wfj.io.names_store import load_lines as load_name_lines
 from wfj.paths import allowlist_path, data_root
 
 TOC_NAME = "WoWForeverJapanese.toc"
+# the generated files that are not shards, in load order; the last ships only when the store has its data
+FIXED = ("Data/Meta.lua", "Data/Vectors.lua", "Data/ErrorSounds.lua")
+ERROR_SOUNDS = Path("voice") / "error-sounds.jsonl"
 VECTORS_HEAD = "WFJ.Data.vectors ="
 
 
@@ -273,8 +276,28 @@ def plan(store: Store, vectors: list[dict], report: dict[str, Any] | None = None
     )
     head, _, body = lua_writer.vectors_text(vectors, head=VECTORS_HEAD).partition("\n")
     out["Data/Vectors.lua"] = head + "\nlocal _, WFJ = ...\n" + body
+    sounds = store.root / ERROR_SOUNDS
+    if sounds.is_file():
+        rows = [json.loads(ln) for ln in sounds.read_text(encoding="utf-8").splitlines() if ln.strip()]
+        _check_error_sounds(rows)
+        out["Data/ErrorSounds.lua"] = lua_writer.error_sounds_text(rows)
     out.update(_plan_names(store.root))
     return out
+
+
+def _check_error_sounds(rows: list[dict]) -> None:
+    """Raise ValueError on a row that must not become Lua: a race that is not an id, a sex other than m or f,
+    file ids that are not numbers, or a second row for the same race and sex (never resolved silently)."""
+    seen: set[tuple[int, str]] = set()
+    for n, r in enumerate(rows, 1):
+        race, sex, files = r.get("race"), r.get("sex"), r.get("files")
+        ok = (type(race) is int and sex in ("m", "f") and isinstance(files, list)
+              and all(type(f) is int for f in files))
+        if not ok:
+            raise ValueError(f"{ERROR_SOUNDS} row {n}: needs an integer race, sex m or f, integer files")
+        if (race, sex) in seen:
+            raise ValueError(f"{ERROR_SOUNDS} row {n}: a second row for race {race} sex {sex}")
+        seen.add((race, sex))
 
 
 NAMES_DIR = "Data/Names"
@@ -554,16 +577,16 @@ def load_numbers(store: Store) -> tuple[dict[glosses.Meaning, int], list[str]]:
 
 
 def toc_files(planned: dict[str, str]) -> list[str]:
-    """Load order inside the generated block: Meta, Vectors, then shards by type then range."""
-    shards = [p for p in planned if p not in ("Data/Meta.lua", "Data/Vectors.lua")
-              and not p.startswith(f"{NAMES_DIR}/")]
+    """Load order inside the generated block: Meta, Vectors, the error recordings, then shards by type
+    then range."""
+    shards = [p for p in planned if p not in FIXED and not p.startswith(f"{NAMES_DIR}/")]
     order = {t: i for i, t in enumerate(schema.TOC_ORDER)}
 
     def type_of(rel: str) -> str:
         return next(t for t, pre in schema.FILE_PREFIX.items() if rel.startswith(f"Data/{pre}/"))
 
     shards.sort(key=lambda p: (order[type_of(p)], p))
-    return ["Data/Meta.lua", "Data/Vectors.lua", *shards]
+    return [*(p for p in FIXED if p in planned), *shards]
 
 
 def toc_with_block(toc_text: str, files: list[str]) -> str:
@@ -581,13 +604,13 @@ def toc_with_block(toc_text: str, files: list[str]) -> str:
 
 
 def generated_on_disk(addon_dir: Path) -> set[str]:
-    """The files under Data/ that generate owns: `<Type>/<Type>_*.lua`, Meta.lua, Vectors.lua. Nothing else
+    """The files under Data/ that generate owns: `<Type>/<Type>_*.lua` and the `FIXED` files. Nothing else
     under Data/ is ever deleted or diffed (a README or a stray note is left alone)."""
     found: set[str] = set()
     data = addon_dir / "Data"
-    for name in ("Meta.lua", "Vectors.lua"):
-        if (data / name).is_file():
-            found.add(f"Data/{name}")
+    for rel in FIXED:
+        if (addon_dir / rel).is_file():
+            found.add(rel)
     for prefix in (*schema.FILE_PREFIX.values(), NAMES_DIR.removeprefix("Data/")):
         for p in (data / prefix).glob(f"{prefix}_*.lua"):
             if p.is_file():

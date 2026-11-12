@@ -6,11 +6,18 @@
 --     (GetGameMessageInfo, its global string name) and plays that message's recording, so the voice says the words
 --     on screen; a call from anywhere else plays the voice id's line on the next frame. Both are only followed,
 --     never replaced, so the error frame's own code runs as it always does.
---   * The English line: while this is on and a pack carries lines for the character, the client's error speech
---     setting (Sound_EnableErrorSpeech) is turned off, so the English line does not play under the Japanese one
---     [unverified: whether the setting silences the call on Forever; in-game check in docs/testing/strategy.md].
---     The client saves the setting, so the change is kept in WFJ_DB.voiceErrorSpeechMuted and undone when the
---     feature is switched off, at logout and on the next load. A player who had it off keeps it off.
+--   * The player's setting: the error frame calls PlayVocalErrorSound whatever the client's error speech setting
+--     (Sound_EnableErrorSpeech) says, and the client checks the setting inside that call. So a line plays here only
+--     while that setting is on, and the setting is never written: on means the Japanese line, off means silence.
+--   * The English line: while this is on and a pack carries lines for the character, the English recordings for
+--     the character's race and sex (Data/ErrorSounds.lua, the client's own sound table) are muted with
+--     MuteSoundFile, so the English line does not play under the Japanese one
+--     [unverified: whether a muted file silences the call on Forever; in-game check in docs/testing/strategy.md].
+--     A mute lasts until the client closes, through a reload too; it is taken off when the feature is switched
+--     off and at logout, and noted in WFJ_DB.voiceErrorFilesMuted while it holds so the next load can lift one a
+--     failed logout left. A Japanese line plays only while the mute holds. A saved
+--     WFJ_DB.voiceErrorSpeechMuted means the setting was turned off by this addon, not by the player: it is
+--     turned back on once and the note cleared.
 --   * Repeats: the same line is not started again within REPEAT seconds (an ability spammed out of range).
 local _, WFJ = ...
 local VoiceErrors = {}
@@ -46,11 +53,62 @@ local function setCVar(name, value)
   return nil
 end
 
--- The character's race (the client's file name, "Tauren") and sex (UnitSex: 2 male, 3 female)
+-- The character's race (the client's file name, "Tauren"), sex (UnitSex: 2 male, 3 female) and race id
 local function character()
   local unitRace, unitSex = Compat.resolve("UnitRace"), Compat.resolve("UnitSex")
-  local race = type(unitRace) == "function" and select(2, unitRace("player")) or nil
-  return race, type(unitSex) == "function" and unitSex("player") or nil
+  local race, raceID
+  if type(unitRace) == "function" then race, raceID = select(2, unitRace("player")) end
+  return race, type(unitSex) == "function" and unitSex("player") or nil, raceID
+end
+
+-- Whether the player has the client's error speech on. Unknown reads as on.
+local function speechOn()
+  local value = getCVar(SPEECH)
+  return value == nil or tostring(value) ~= "0"
+end
+
+-- The English error recordings of a race id and sex ("m" | "f"): file ids, or nil.
+local function filesOf(raceID, sexKey)
+  local all = WFJ.Data and WFJ.Data.errorSounds
+  local byRace = type(all) == "table" and all[raceID] or nil
+  return type(byRace) == "table" and byRace[sexKey] or nil
+end
+
+-- Calls the client's MuteSoundFile / UnmuteSoundFile for each file. → false when the client lacks the function
+local function each(name, files)
+  local fn = Compat.resolve(name)
+  if type(fn) ~= "function" or type(files) ~= "table" then return false end
+  for _, id in ipairs(files) do fn(id) end
+  return true
+end
+
+local mutedList -- the list muted now (one of the data file's tables), or nil
+
+-- Mutes the English recordings of the character's race and sex (`on`), or lifts the mute. The list muted is the one
+-- unmuted later, so a character whose sex changes in the session (the barber) gets the old list back and the new
+-- one muted. A mute outlives a reload, so it is noted in the saved table while it holds (liftLeftover).
+local function setMuted(on)
+  local _, sex, raceID = character()
+  local sexKey = sex == 3 and "f" or "m"
+  local target = on and filesOf(raceID, sexKey) or nil
+  if target == mutedList then return end
+  if mutedList then each("UnmuteSoundFile", mutedList) end
+  mutedList = nil
+  if db then db.voiceErrorFilesMuted = nil end
+  if target and each("MuteSoundFile", target) then
+    mutedList = target
+    if db then db.voiceErrorFilesMuted = { raceID, sexKey } end
+  end
+  VoiceErrors.muted = mutedList and #mutedList or 0
+end
+
+-- A note with nothing muted this session is a mute from before a reload that the logout never lifted: that list is
+-- unmuted. With no note nothing is touched, so another addon's own mute of these files is left alone.
+local function liftLeftover()
+  local note = db and db.voiceErrorFilesMuted
+  if type(note) ~= "table" or mutedList then return end
+  db.voiceErrorFilesMuted = nil
+  each("UnmuteSoundFile", filesOf(note[1], note[2]))
 end
 
 local function wanted()
@@ -61,25 +119,25 @@ local function wanted()
   return WFJ.Voice.hasErrors(race, sex)
 end
 
--- Puts the client's error speech back if this addon turned it off. → true when it did
-function VoiceErrors.restore()
+-- A saved voiceErrorSpeechMuted means this addon, not the player, turned the client's error speech off: the
+-- setting goes back on and the note is cleared. → true when it did
+local function giveBack()
   if not (db and db.voiceErrorSpeechMuted) then return false end
   db.voiceErrorSpeechMuted = nil
   setCVar(SPEECH, "1")
   return true
 end
 
--- Turns the English error speech off while Japanese lines can play, back on otherwise.
+-- Takes the mute off the English recordings, and gives the setting back as above. → true when it gave it back
+function VoiceErrors.restore()
+  setMuted(false)
+  return giveBack()
+end
+
+-- Mutes the English recordings while Japanese lines can play, unmutes them otherwise.
 function VoiceErrors.refresh()
   if not db then return end
-  if wanted() then
-    if not db.voiceErrorSpeechMuted and tostring(getCVar(SPEECH)) == "1" then
-      db.voiceErrorSpeechMuted = true
-      setCVar(SPEECH, "0")
-    end
-  else
-    VoiceErrors.restore()
-  end
+  setMuted(wanted())
 end
 
 local pending -- the voice id the game just asked to speak, until its message is known
@@ -87,9 +145,20 @@ local pending -- the voice id the game just asked to speak, until its message is
 -- Plays the character's line for a voice id, as the message on screen when known. → true when a line started
 function VoiceErrors.play(voiceID, message)
   local race, sex = character()
+  if not speechOn() then
+    VoiceErrors.last = { voiceID = voiceID, message = message, race = race, sex = sex, why = "setting" }
+    return false
+  end
   local path, seconds = WFJ.Voice.errorFile(voiceID, race, sex, message)
   VoiceErrors.last = { voiceID = voiceID, message = message, race = race, sex = sex, why = seconds }
   if not path then return false end
+  -- the Japanese line only over a muted English one: when the mute could not be taken (no list for the character,
+  -- the data file not loaded yet) the game's own line plays alone
+  setMuted(wanted())
+  if not mutedList then
+    VoiceErrors.last.why = "nomute"
+    return false
+  end
   local now = (Compat.resolve("GetTime") or function() return 0 end)()
   if path == lastKey and now - lastAt < REPEAT then
     VoiceErrors.counts.skipped = VoiceErrors.counts.skipped + 1
@@ -137,7 +206,8 @@ end
 -- Called by Main after Voice and Settings. `savedDb` is WFJ_DB. Safe without a pack: nothing changes.
 function VoiceErrors.init(savedDb)
   db = savedDb
-  VoiceErrors.restore() -- a crash or a removed pack must never leave the player's error speech off
+  liftLeftover()
+  giveBack() -- the refresh below takes the mute when lines can play
   local C = Compat.resolve("C_Sound")
   if not hooked and type(C) == "table" and type(C.PlayVocalErrorSound) == "function" then
     hooksecurefunc(C, "PlayVocalErrorSound", VoiceErrors.onVocalError)

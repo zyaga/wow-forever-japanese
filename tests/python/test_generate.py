@@ -238,3 +238,50 @@ def test_the_committed_store_is_planned_once_per_session(root):
     committed_plan = "generate.plan(" + 'Store(root / "data")'  # joined so this file does not match itself
     for path in sorted((root / "tests/python").glob("test_*.py")):
         assert committed_plan not in path.read_text(encoding="utf-8"), path.name
+
+
+def test_the_error_recordings_are_one_table_by_race_id_and_sex():
+    from wfj.emit import lua_writer
+
+    rows = [{"race": 2, "sex": "m", "files": [7, 9]}, {"race": 1, "sex": "f", "files": [3]},
+            {"race": 1, "sex": "m", "files": [1, 2]}]
+    assert lua_writer.error_sounds_text(rows) == "\n".join([
+        lua_writer.HEADER.format(src="data/"),
+        "local _, WFJ = ...",
+        "WFJ.Data.errorSounds = {",
+        "  [1] = { m = { 1, 2 }, f = { 3 } },",
+        "  [2] = { m = { 7, 9 } },",
+        "}",
+    ]) + "\n"
+
+
+def test_the_committed_error_recordings_ship_after_vectors(root, planned):
+    import json
+
+    rows = [json.loads(ln) for ln in (root / "data/voice/error-sounds.jsonl").read_text("utf-8").splitlines()]
+    text = planned["Data/ErrorSounds.lua"]
+    for r in rows:
+        assert f"  [{r['race']}] = " in text
+        assert ", ".join(str(i) for i in r["files"]) in text
+    assert generate.toc_files(planned)[:3] == ["Data/Meta.lua", "Data/Vectors.lua", "Data/ErrorSounds.lua"]
+
+
+def test_a_store_without_error_recordings_plans_no_file_for_them(root, tmp_path, vectors):
+    data = tmp_path / "data"
+    shutil.copytree(root / "data", data, ignore=shutil.ignore_patterns("error-sounds.jsonl"))
+    (tmp_path / "pipeline").mkdir()
+    shutil.copy(root / "pipeline" / "allowlist.txt", tmp_path / "pipeline" / "allowlist.txt")
+    planned = generate.plan(Store(data), vectors)
+    assert "Data/ErrorSounds.lua" not in planned
+    assert generate.toc_files(planned)[:2] == ["Data/Meta.lua", "Data/Vectors.lua"]
+
+
+@pytest.mark.parametrize("row, why", [
+    ({"race": "Human", "sex": "m", "files": [1]}, "needs an integer race"),
+    ({"race": 1, "sex": "x", "files": [1]}, "needs an integer race"),
+    ({"race": 1, "sex": "m", "files": ["1"]}, "needs an integer race"),
+    ({"race": 1, "sex": "m", "files": [2]}, "a second row for race 1 sex m"),
+])
+def test_a_bad_or_repeated_error_recordings_row_is_refused(row, why):
+    with pytest.raises(ValueError, match=why):
+        generate._check_error_sounds([{"race": 1, "sex": "m", "files": [1]}, row])

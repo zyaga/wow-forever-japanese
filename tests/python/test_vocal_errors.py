@@ -69,3 +69,24 @@ def test_main_writes_one_row_per_voice_id_with_its_source(tables, tmp_path, monk
     io = capsys.readouterr()
     assert io.out == f"vocal errors: 2 voice ids, 2 kinds → {out}\n"
     assert io.err == "vocal errors: left out voice id 3: no file\n"
+
+
+def test_each_race_and_sex_gets_the_files_its_kits_play(tables):
+    # every file of every kit the table gives that race and sex, error-named or not: it is what the game plays
+    assert ve.sounds(FakeArchive()) == {(1, "m"): [5001, 5004, 5006], (1, "f"): [5002, 5005], (2, "m"): [5003]}
+
+
+def test_main_writes_the_recordings_per_race_and_sex_when_asked(tables, tmp_path, monkeypatch, capsys):
+    listfile = tmp_path / "listfile.csv"
+    listfile.write_text(LISTFILE, encoding="utf-8")
+    monkeypatch.setattr(ve.casc, "LocalArchive", FakeArchive)
+    monkeypatch.setattr(ve.casc, "read_build_info", lambda wow, product: SimpleNamespace(version="1.60.1.70888"))
+    out, sounds = tmp_path / "error-kinds.jsonl", tmp_path / "error-sounds.jsonl"
+    argv = ["--wow", str(tmp_path / "wow"), "--listfile", str(listfile), "--out", str(out),
+            "--sounds-out", str(sounds)]
+    assert ve.main(argv) == 0
+    rows = [json.loads(ln) for ln in sounds.read_text(encoding="utf-8").splitlines()]
+    assert [(r["race"], r["sex"], r["files"]) for r in rows] == [
+        (1, "f", [5002, 5005]), (1, "m", [5001, 5004, 5006]), (2, "m", [5003])]
+    assert {r["provenance"]["source"] for r in rows} == {"client@1.60.1.70888"}
+    assert f"vocal errors: 6 recordings for 3 race and sex pairs → {sounds}\n" in capsys.readouterr().out

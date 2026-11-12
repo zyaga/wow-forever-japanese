@@ -283,3 +283,20 @@ def test_validate_still_refuses_the_change_when_a_hand_written_variant_is_unrule
     assert validate.rule_provenance(repo / "data", Store(repo / "data"), "HEAD") == [
         "provenance: quest 1/completion was human at HEAD, now machine"
     ]
+
+
+def test_validate_reads_a_base_that_holds_name_lines(tmp_path):
+    # a name line has no field: the provenance rule only compares the translation types
+    repo = tmp_path / "gitrepo"
+    repo.mkdir()
+    _save(repo, [_ja(1, "completion", "trusted", MACHINE, reasons=())])
+    (repo / "data" / "name").mkdir()
+    (repo / "data" / "name" / "name-00.jsonl").write_text(
+        '{"id": "0000004100000041", "en": "A", "ja": "エー", "provenance": {"class": "machine"}}\n',
+        encoding="utf-8",
+    )
+    subprocess.run(["git", "init", "-q", "-b", "main"], cwd=repo, check=True)
+    subprocess.run(["git", "add", "-A"], cwd=repo, check=True)
+    subprocess.run(["git", "-c", "user.email=t@t", "-c", "user.name=t", "commit", "-q", "-m", "base"],
+                   cwd=repo, check=True)
+    assert validate.rule_provenance(repo / "data", Store(repo / "data"), "HEAD") == []
