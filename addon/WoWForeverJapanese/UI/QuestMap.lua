@@ -24,10 +24,11 @@
 -- the other two and a release never restores one surface's English over another's text (ADR-029).
 -- The English comes from the quest API (C_QuestLog.GetSelectedQuest, GetTitleForQuestID, GetQuestLogQuestText,
 -- as the client's own QuestInfo reads it). A widget that does not show exactly that English is left alone (ADR-009).
--- List and tracker titles also accept camelot's "[<level>(+)] " prefix and the tracker's difficulty colour, both
--- kept verbatim, and the tracker's quest tag after the title (" (Elite)", " (Dungeon)", " (PvP)", " (Raid)"), shown
--- in Japanese around a Japanese title; any other decoration leaves the row English. Rows are keyed by quest ID,
--- never position.
+-- List and tracker titles also accept what the client writes in front of a title (the party members on the quest,
+-- camelot's "[<level>(+)] " prefix, the quest's id while displayQuestID is on: splitPrefix) and the tracker's
+-- difficulty colour, all kept verbatim, and the tracker's quest tag after the title (" (Elite)", " (Dungeon)",
+-- " (PvP)", " (Raid)"), shown in Japanese around a Japanese title; the details title also accepts the failed
+-- wording around it; any other decoration leaves the title English. Rows are keyed by quest ID, never position.
 -- Everything is used by type: a name bound to a table degrades to untouched English.
 local _, WFJ = ...
 local QuestMap = {}
@@ -230,6 +231,8 @@ local function forgetOthers(info)
   if type(QF) == "table" and type(QF.forgetQuestInfo) == "function" then QF.forgetQuestInfo() end
 end
 
+local failedTitle -- defined with the title decorations below
+
 local function showField(pane, field, en, id)
   local fs = get(field)
   local variant = field == "description" and type(WFJ.ShippedGossipKey) == "function"
@@ -240,10 +243,12 @@ local function showField(pane, field, en, id)
     WFJ.Render.show(pane.info, field, fs, en, "quests", "gossip", variant, { compact = true })
     return 1
   end
-  if isText(fs) and type(en) == "string" and en ~= "" and fs:GetText() == en then
+  local shown = isText(fs) and type(en) == "string" and en ~= ""
+    and (fs:GetText() == en and fs or field == "title" and failedTitle(fs, en)) or nil
+  if shown then
     -- live: the API English, for the stale marker's live check (ADR-019); compact below the title, so a quest
     -- gets one missing marker, on its title
-    WFJ.Render.show(pane.info, field, fs, en, "quests", "quest." .. field, id,
+    WFJ.Render.show(pane.info, field, shown, en, "quests", "quest." .. field, id,
       { live = en, compact = field ~= "title" })
     return 1
   end
@@ -450,14 +455,25 @@ local function decorated(fs, prefix, suffix, jaSuffix, en)
   return a
 end
 
--- camelot's level prefix, "[" .. level .. ("+" for elite) .. "] ", on list and tracker titles alike
--- (QuestUtilsOverrides.GetQuestTitlePrefix, blizzard_framexmlutil/camelot/questutilsoverrides.lua:6–9). → the prefix
--- and the rest, or nil
-local function splitPrefix(text)
+-- What the client writes in front of a title, in its order, each piece optional: the party members on the quest
+-- "[n] ", camelot's level prefix "[" .. level .. ("+" for elite) .. "] " (on tracker titles too:
+-- QuestUtilsOverrides.GetQuestTitlePrefix, blizzard_framexmlutil/camelot/questutilsoverrides.lua:6–9), the two
+-- markers of the client's internal builds, and the quest's id while the displayQuestID setting is on
+-- (QuestLogQuests_GetTitle, blizzard_uipanels_game/mainline/questmapframe.lua:1610–1639). With `en` the read stops
+-- where the rest starts with it, so a title that itself starts like a piece is kept whole. → the prefix and the
+-- rest, or nil
+local PREFIX_PIECES = { "^%[%d+%] ", "^%[%d+%+?%] ", "^<Not Ready for Translation> ", "^%(Internal only%) ",
+  "^%d+ %- " }
+local function splitPrefix(text, en)
   if type(text) ~= "string" then return nil end
-  local p = text:match("^%[%d+%+?%] ")
-  if not p then return nil end
-  return p, text:sub(#p + 1)
+  local at = 1
+  for _, piece in ipairs(PREFIX_PIECES) do
+    if en and text:sub(at, at + #en - 1) == en then break end
+    local _, stop = text:find(piece, at)
+    if stop then at = stop + 1 end
+  end
+  if at == 1 then return nil end
+  return text:sub(1, at - 1), text:sub(at)
 end
 QuestMap.splitPrefix = splitPrefix
 
@@ -494,13 +510,13 @@ end
 -- The quest-row wrappers with words of their own (the talk and quest windows, gossipframeshared.lua:27–39,
 -- questframe.lua): split around their "%s", with the dictionary's Japanese suffix. → prefix, suffix, jaSuffix | nil
 local WRAPPERS = { "TRIVIAL_QUEST_DISPLAY", "IGNORED_QUEST_DISPLAY" }
-local function wrapper(text, en)
-  for _, key in ipairs(WRAPPERS) do
+local function wrapper(text, en, keys)
+  for _, key in ipairs(keys or WRAPPERS) do
     local template = Compat.resolve(key)
     local head, tail
     if type(template) == "string" then head, tail = template:match("^(.-)%%s(.*)$") end
     if head and text == head .. en .. tail then
-      local entry = WFJ.Lookup.get("ui", key)
+      local entry = WFJ.Lookup and WFJ.Lookup.get("ui", key)
       local jaHead, jaTail
       if type(entry) == "table" and type(entry.ja) == "string" then jaHead, jaTail = entry.ja:match("^(.-)%%s(.*)$") end
       return head, tail, (jaHead == head and jaTail) or nil
@@ -517,7 +533,7 @@ local function decoration(text, en)
   local color, inner = text:match("^(|c%x%x%x%x%x%x%x%x)(.*)|r$")
   local head, suffix = color or "", color and "|r" or ""
   inner = inner or text
-  local p, rest = splitPrefix(inner)
+  local p, rest = splitPrefix(inner, en)
   local body = p and rest or inner
   head = head .. (p or "")
   if body == en then return head, suffix end
@@ -526,6 +542,16 @@ local function decoration(text, en)
   return nil
 end
 QuestMap.decoration = decoration
+
+-- The details title of a failed quest: the client writes QUEST_TITLE_FORMAT_FAILED around the title in the quest
+-- log's details only (QuestInfo_ShowTitle, blizzard_uipanels_game/mainline/questinfo.lua:152–157). → the title
+-- widget seen through that wording, or nil when the text is not the wording around `en`
+local FAILED_WRAPPER = { "QUEST_TITLE_FORMAT_FAILED" }
+failedTitle = function(fs, en)
+  local head, tail, jaTail = wrapper(fs:GetText(), en, FAILED_WRAPPER)
+  if not head then return nil end
+  return decorated(fs, head, tail, jaTail, en)
+end
 
 -- Drops `key` and any other record on this widget's adapter: a reused block or row that no longer shows its old quest
 -- must not keep that quest's record (and its font) for the rest of the session.

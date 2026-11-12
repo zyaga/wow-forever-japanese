@@ -573,6 +573,14 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
           .. " location." }, { leftText = "Quest Item" } } }
       tip:ProcessTooltipData(item)
       assert.are.same({ "Hearthstone", "使用：Hearthstoneの場所に戻ります。", "クエストアイテム" }, tip:texts())
+      -- the Japanese lines wear the bundled face (Dialogue UI's own has no Japanese letters); the name keeps its own
+      local function ours(t)
+        local out = {}
+        for i = 1, t.numLines do out[i] = (t.grid[i][1]:GetFont()) == WFJ.Font.PATH end
+        return out
+      end
+      assert.are.same({ false, true, true }, ours(tip))
+      assert.is_true(tip.fontChanged)
       -- Dialogue UI's data is never changed: it reads it again on its own updates
       assert.are.equal("Use: Returns you to Darnassus. Speak to an Innkeeper in a different place to change your"
         .. " home location.", item.lines[2].leftText)
@@ -585,6 +593,7 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       tip:ProcessTooltipData({ isItem = true, id = 8000, lines = { { leftText = "Rock" },
         { leftText = "Use: Throw it." } } })
       assert.are.same({ "Rock", "Use: Throw it." }, tip:texts())
+      assert.are.same({ false, false }, ours(tip))
       Stub.keys.alt = true
       WFJ.Modifier.refresh()
       tip:ProcessTooltipData(item)
@@ -595,6 +604,43 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       tip:ProcessTooltipData({ isSpell = true, id = 6948, lines = { { leftText = "Hearth" },
         { leftText = "Use: Returns you home." } } })
       assert.are.equal("Use: Returns you home.", tip:texts()[2])
+    end)
+
+    it("the effect line's face: Dialogue UI's again on a reused line, and ours only inside the data pass", function()
+      load({ loaded = false })
+      ship({ ["item.description"] = { [6948] = "使用：Hearthstoneの場所に戻ります。" } })
+      game(WORDS)
+      local tip = DUI.installTooltip()
+      local pool = {}
+      -- Dialogue UI keeps its lines and uses them again [read: Tooltip_Base.lua, AcquireFontString]
+      function tip:AddLeftLine(text)
+        self.numLines = self.numLines + 1
+        local fs = pool[self.numLines] or Stub.fontString("")
+        pool[self.numLines] = fs
+        fs:SetText(text)
+        self.grid = self.grid or {}
+        self.grid[self.numLines] = { fs }
+        return fs
+      end
+      function tip:ProcessTooltipData(tipData)
+        self.numLines, self.grid, self.tooltipData = 0, {}, tipData
+        for _, line in ipairs(tipData.lines) do self:AddLeftLine(line.leftText) end
+        return true
+      end
+      Stub.loadedAddons.DialogueUI = true
+      WFJ.LoadOnDemand.loaded("DialogueUI")
+      tip:ProcessTooltipData({ isItem = true, id = 6948, lines = { { leftText = "Hearthstone" },
+        { leftText = "Use: Returns you home." } } })
+      assert.are.equal("使用：Hearthstoneの場所に戻ります。", pool[2]:GetText())
+      assert.are.equal(WFJ.Font.PATH, (pool[2]:GetFont()))
+      -- the same line, next for an item with no Japanese: Dialogue UI's face again
+      tip:ProcessTooltipData({ isItem = true, id = 8000, lines = { { leftText = "Rock" },
+        { leftText = "Use: Throw it." } } })
+      assert.are.equal("Use: Throw it.", pool[2]:GetText())
+      assert.are_not.equal(WFJ.Font.PATH, (pool[2]:GetFont()))
+      -- the Japanese of a data pass is ours only during that pass
+      tip:AddLeftLine("使用：Hearthstoneの場所に戻ります。")
+      assert.are_not.equal(WFJ.Font.PATH, (pool[3]:GetFont()))
     end)
 
     it("an open tooltip is built again by its own update when the key is held, and a popup is retitled", function()
