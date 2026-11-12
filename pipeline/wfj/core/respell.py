@@ -20,7 +20,7 @@ from collections.abc import Callable
 from wfj.core import kana, names
 
 _TAG = re.compile(r"\[[^\]]*\]|<[^>]*>")
-_PIECE = re.compile(r"[A-Za-z][A-Za-z'’]*|[0-9]+(?:[.,][0-9]+)*|\S")
+_PIECE = re.compile(r"[^\W\d_](?:[^\W\d_]|['’])*|[0-9]+(?:[.,][0-9]+)*|\S")  # a word: letters of any script
 _ROMAN = re.compile(r"^(?=[IVX])X{0,3}(IX|IV|V?I{0,3})$")
 _ROMAN_VALUE = {"I": 1, "V": 5, "X": 10}
 _LETTER_NAMES = (
@@ -55,8 +55,11 @@ def _pieces(en: str) -> list[tuple[str, str]]:
     """[(kind, text)] of a name, tags left out: `word` (its possessive split off as the next `poss` piece),
     `letter`, `number`, `plus`, `kept` punctuation. Everything else only separates."""
     out: list[tuple[str, str]] = []
-    found = _PIECE.findall(_TAG.sub(" ", en))
-    for i, p in enumerate(found):
+    text = _TAG.sub(" ", en)
+    for i, m in enumerate(_PIECE.finditer(text)):
+        p = m.group()
+        # a letter with a full stop on either side is one letter of an abbreviation (I.O.U.), never a numeral
+        dotted = text[m.end() : m.end() + 1] == "." or text[max(m.start() - 1, 0) : m.start()] == "."
         if p[0].isdigit():
             out.append(("number", p))
         elif p[0].isalpha():
@@ -64,10 +67,10 @@ def _pieces(en: str) -> list[tuple[str, str]]:
             poss = word.endswith(("'s", "’s"))
             if poss:
                 word = word[:-2]
-            roman = _roman(word) if i else None  # the first word of a name is never a numeral
+            roman = _roman(word) if i and not dotted else None  # the first word of a name is never a numeral
             if roman is not None and not poss:
                 out.append(("number", str(roman)))
-            elif len(word) == 1 and word.lower() != "a":
+            elif len(word) == 1 and word.lower() in _LETTER and (dotted or word.lower() != "a"):
                 out.append(("letter", word))
             elif word:
                 out.append(("word", word))

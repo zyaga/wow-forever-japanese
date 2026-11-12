@@ -623,6 +623,14 @@ def test_a_reading_starts_from_its_seed_and_a_line_with_neither_is_read_as_befor
     assert seeds == [7, 0]
 
 
+def test_a_seed_of_zero_never_shares_a_call_with_a_line_that_has_none():
+    from wfj.io import qwen_worker
+
+    lines = [{"text": "aa", "seed": 0, "temperature": 0.5}, {"text": "bb"}, {"text": "cc", "seed": 0, "temperature": 0.5}]
+    calls = qwen_worker.plan_calls(lines, 24)
+    assert sorted(sorted(i for i, _, _ in c) for c in calls) == [[0, 2], [1]]
+
+
 def test_lines_are_handed_out_voice_by_voice_so_calls_stay_full():
     from wfj.io import qwen_worker
 

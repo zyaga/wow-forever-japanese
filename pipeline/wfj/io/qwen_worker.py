@@ -93,11 +93,18 @@ def _prompt(model: Any, prompts: dict, ref_wav: str, ref_text: str | None, mode:
     return prompts[key]
 
 
+def _unset_first(value: float | None) -> float:
+    """A sort key that keeps "not set" apart from zero: a seed of 0 is a seed, and never shares a call with
+    a line that has none."""
+    return -1.0 if value is None else float(value)
+
+
 def send_order(jobs: list[dict]) -> list[dict]:
     """The order lines are handed out in: one voice's lines together, the longest first. A call holds one
     seed's paragraphs only, so a handful of lines from many voices would be read a paragraph or two at a
     time."""
-    return sorted(jobs, key=lambda j: (j.get("seed") or 0, str(j.get("ref", "")), -len(j["text"]), j["key"]))
+    return sorted(jobs, key=lambda j: (_unset_first(j.get("seed")), str(j.get("ref", "")), -len(j["text"]),
+                                       j["key"]))
 
 
 def plan_calls(lines: list[dict], batch: int, chars: int = 3000) -> list[list[tuple[int, int, str]]]:
@@ -107,8 +114,8 @@ def plan_calls(lines: list[dict], batch: int, chars: int = 3000) -> list[list[tu
     paras = [(i, k, p) for i, ln in enumerate(lines)
              for k, p in enumerate(x for x in ln["text"].split("\n\n") if x.strip())]
 
-    def drawn(i: int) -> tuple[int, float]:
-        return (lines[i].get("seed") or 0, lines[i].get("temperature") or 0.0)
+    def drawn(i: int) -> tuple[float, float]:
+        return (_unset_first(lines[i].get("seed")), _unset_first(lines[i].get("temperature")))
 
     paras.sort(key=lambda t: (drawn(t[0]), len(t[2])))  # one seed together, like lengths together
     calls: list[list[tuple[int, int, str]]] = [[]]

@@ -7095,7 +7095,7 @@
 {"en": "Gallina", "ja": "ガリーナ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-004@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Gallop", "ja": "ギャロップ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-003@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Galloping", "ja": "ギャロッピング", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-003@2026-11-11", "imported": "2026-11-11"}}
-{"en": "Gallow", "ja": "ギャロウズ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-review@2026-11-11", "imported": "2026-11-11"}}
+{"en": "Gallow", "ja": "ギャロウ", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "names-respell-fix@2026-11-11", "imported": "2026-11-11"}}
 {"en": "gallows", "ja": "ギャロウズ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-003@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Gallows'", "ja": "ギャロウズ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-004@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Gallywix", "ja": "ギャリーウィックス", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-004@2026-11-10", "imported": "2026-11-10"}}

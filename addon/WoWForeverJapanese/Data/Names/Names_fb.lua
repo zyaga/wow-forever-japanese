@@ -13,7 +13,7 @@ WFJ.Data.add("name", {
   ["fb0c25627d0681ae"] = { "リブラム：シール・オブ・ウィズダム", "りぶらむ・しーる・おぶ・うぃずだむ", "Libram: Seal of Wisdom" },
   ["fb0c4ad7dfa5bf53"] = { "クリスタル・インフューズド・クリーヴァー", "くりすたる・いんふゅーずど・くりーゔぁー", "Crystal-Infused Cleaver" },
   ["fb0d3dc2b75872e7"] = { "スライドアズ・グリフォン", "すらいどあず・ぐりふぉん", "Slidore's Gryphon" },
-  ["fb0f8c8d2c7299c8"] = { "コンジュア・イー・シー・ア・シー", "こんじゅあ・いー・しー・あ・しー", "Conjure E.C.A.C" },
+  ["fb0f8c8d2c7299c8"] = { "コンジュア・イー・シー・エー・シー", "こんじゅあ・いー・しー・えー・しー", "Conjure E.C.A.C" },
   ["fb0fec0668d352aa"] = { "フロストウルフ・ブラッドハウンド", "ふろすとうるふ・ぶらっどはうんど", "Frostwolf Bloodhound" },
   ["fb0ff4ae4f8f14c2"] = { "プレミア・ナイト・チャンピオンズ・ドレッドウィーヴ・ブーツ", "ぷれみあ・ないと・ちゃんぴおんず・どれっどうぃーゔ・ぶーつ", "Premier Knight-Champion's Dreadweave Boots" },
   ["fb1037ea071adb2f"] = { "パターン：フィリグリード・シルキー・ガウン", "ぱたーん・ふぃりぐりーど・しるきー・がうん", "Pattern: Filigreed Silky Gown" },

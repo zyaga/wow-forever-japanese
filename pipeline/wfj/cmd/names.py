@@ -503,7 +503,8 @@ def learn_spellings(root: Path, dry_run: bool) -> tuple[int, list[str]]:
         if ln["status"] != "trusted" or not names.KATAKANA.match(ln["ja"]):
             continue
         ws, parts = spell.words(ln["en"]), ln["ja"].split("・")
-        if len(ws) != len(parts) or " " in "".join(ws):
+        # a possessive's part ends in its ズ, which is not part of the word's spelling: nothing is learned
+        if len(ws) != len(parts) or " " in "".join(ws) or re.search(r"['’]s\b", ln["en"]):
             continue
         for w, part in zip(ws, parts, strict=True):
             have = known.get(w.casefold())

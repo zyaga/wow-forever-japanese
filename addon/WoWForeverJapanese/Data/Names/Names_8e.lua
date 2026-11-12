@@ -211,7 +211,7 @@ WFJ.Data.add("name", {
   ["8ee46bd9930c81d8"] = { "エンシェント・インスクリプション", "えんしぇんと・いんすくりぷしょん", "Ancient Inscription" },
   ["8ee4b50d461abb57"] = { "ファイト・インポスター", "ふぁいと・いんぽすたー", "Fight Impostors" },
   ["8ee57829dbc9d874"] = { "ファンタスティック・インベンション", "ふぁんたすてぃっく・いんべんしょん", "Fantastic Inventions" },
-  ["8ee76b4cbb82897b"] = { "ディー・イー・エル・ティー・ア・ディープシー・エクスプロレーション・アンド・リクファクション・テクノロジー・アライアンス", "でぃー・いー・える・てぃー・あ・でぃーぷしー・えくすぷろれーしょん・あんど・りくふぁくしょん・てくのろじー・あらいあんす", "D.E.L.T.A Deepsea Exploration and Liquefaction Technologies Alliance" },
+  ["8ee76b4cbb82897b"] = { "ディー・イー・エル・ティー・エー・ディープシー・エクスプロレーション・アンド・リクファクション・テクノロジー・アライアンス", "でぃー・いー・える・てぃー・えー・でぃーぷしー・えくすぷろれーしょん・あんど・りくふぁくしょん・てくのろじー・あらいあんす", "D.E.L.T.A Deepsea Exploration and Liquefaction Technologies Alliance" },
   ["8eeb0c865ef5e96a"] = { "シー・ウルフ", "しー・うるふ", "Sea Wolf" },
   ["8eec87bf5625388e"] = { "ギフト・オブ・アーサス", "ぎふと・おぶ・あーさす", "Gift of Arthas" },
   ["8eee779575dce1e3"] = { "タブレット・オブ・シアリング・トーテム5", "たぶれっと・おぶ・しありんぐ・とーてむご", "Tablet of Searing Totem V" },

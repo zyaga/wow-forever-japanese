@@ -66,6 +66,28 @@ def test_a_name_is_spelled_from_its_words(en, ja, reading):
     assert respell.assemble(en, SPELL.get) == (ja, reading, [])
 
 
+def test_a_letter_of_an_abbreviation_is_read_by_its_name_never_as_a_numeral():
+    spell = {"scribbled": "スクリブルド", "broken": "ブロークン", "button": "バトン", "mark": "マーク"}
+    assert respell.assemble("Scribbled I.O.U.", spell.get)[0] == "スクリブルド・アイ・オー・ユー"
+    assert respell.assemble("I.O.U", spell.get)[0] == "アイ・オー・ユー"
+    assert respell.assemble("Broken I.W.I.N. Button", spell.get)[0] == "ブロークン・アイ・ダブリュー・アイ・エヌ・バトン"
+    assert respell.assemble("F.I.C.A", spell.get)[0] == "エフ・アイ・シー・エー"
+    assert respell.assemble("Mark IV", spell.get)[0] == "マーク4"  # a numeral with no full stop is still a number
+
+
+def test_a_possessive_keeps_its_sound_with_either_apostrophe_and_an_inner_apostrophe_stays_in_the_word():
+    spell = {"gallow": "ギャロウ", "end": "エンド", "tavern": "タバーン", "ahn'qiraj": "アンキラージ"}
+    assert respell.assemble("Gallow's End Tavern", spell.get)[0] == "ギャロウズ・エンド・タバーン"
+    assert respell.assemble("Gallow’s End", spell.get)[0] == "ギャロウズ・エンド"
+    assert respell.assemble("Ahn'Qiraj", spell.get)[0] == "アンキラージ"
+
+
+def test_a_letter_outside_ascii_is_part_of_its_word_and_a_word_nobody_spelled_is_reported():
+    assert respell.assemble("Café", {"café": "カフェ"}.get) == ("カフェ", "かふぇ", [])
+    assert respell.assemble("Jörmungandr", {}.get) == (None, None, ["Jörmungandr"])
+    assert respell.assemble("黒 Dragon", {}.get) == (None, None, ["黒", "Dragon"])
+
+
 def test_a_comma_inside_a_name_is_kept_with_no_dot_after_it():
     spell = {"black": "ブラック", "dawn": "ドーン", "and": "アンド", "end": "エンド"}
     assert respell.assemble("Black, Dawn and End", spell.get)[0] == "ブラック、ドーン・アンド・エンド"
@@ -243,6 +265,14 @@ def test_words_learn_their_spelling_from_a_name_already_spelled_out(store):
     words = {w["en"]: w["ja"] for w in load_words(store)}
     assert (n, differ) == (2, [])
     assert (words["Xandar"], words["Goodbeard"]) == ("ザンダー", "グッドビアード")
+
+
+def test_a_possessive_name_teaches_no_spelling(store):
+    """Its part ends in the possessive's own sound, which is not part of the word."""
+    save_lines(store, load_lines(store) + [_line("Wendle's Rest", "ウェンドルズ・レスト", "うぇんどるず・れすと")])
+    n, _ = cmd.learn_spellings(store, False)
+    words = {w["en"] for w in load_words(store)}
+    assert n == 0 and "Wendle" not in words and "Rest" not in words
 
 
 def test_a_name_that_spells_a_word_another_way_is_reported_not_learned(store):

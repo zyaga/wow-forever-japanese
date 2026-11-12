@@ -403,7 +403,8 @@ def voice_texts(
     root: Path, cfg: dict[str, Any], lines: dict[str, str], values: dict[str, list[str]]
 ) -> dict[str, str]:
     """{key: the text the engine reads} for every line the engine can read (`wfj.core.voice_text`). Raises
-    ValueError naming the lines that say an English name with no Japanese: run `make names`."""
+    ValueError naming the lines that say an English name with no Japanese: a word of it has no spelling yet
+    (`wfj names export-respell`, draft, `wfj names import-respell`, then `make names`)."""
     words, lookup = reading_words(root), name_lookup(root)
     out: dict[str, str] = {}
     unnamed: list[str] = []
@@ -420,7 +421,8 @@ def voice_texts(
     if unnamed:
         raise ValueError(
             f"{len(unnamed)} voiced line(s) say an English name with no Japanese, e.g. "
-            f"{'; '.join(unnamed[:5])}: run make names"
+            f"{'; '.join(unnamed[:5])}: spell the new words (wfj names export-respell / import-respell), "
+            "then make names"
         )
     return out
 
