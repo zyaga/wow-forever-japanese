@@ -331,7 +331,7 @@ Every batch that changes shipped Japanese the voice reads (quest offers, progres
 
 Every name the game shows has a line in `data/name/` with its Japanese and reading ([Data model](../architecture/data-model.md), [ADR-078](../adr/078-japanese-names-keyed-by-english-and-kana-voice-lines.md), [ADR-082](../adr/082-names-spelled-from-the-english-and-the-voice-reads-its-own-text.md)). On screen names stay English; the Japanese is for the voice (its [engine text](voice.md#what-the-engine-reads) and [kana lines](voice.md#kana-lines)) and a later names setting. A batch never puts a Japanese name into prose: names in translated text stay in English letters, as the style guide says.
 
-A name's Japanese is never drafted or translated. It is the katakana spelling of its English, put together in code (`wfj.core.respell`) from the one spelling each English word has in `data/name/words.jsonl`: Black Dragonflight is ブラック・ドラゴンフライト, Hallow's End is ハロウズ・エンド, The Argent Dawn is アージェント・ドーン. A leading "The" is left out, a possessive keeps its sound (ズ), words are joined with `・`, a tag in brackets is left out, a roman numeral after the first word becomes a digit, a single letter is read by its letter name (2P is 2ピー), digits stay digits and `&` is アンド. Only a word is ever drafted, and only once.
+A name's Japanese is never drafted or translated. It is the katakana spelling of its English, put together in code (`wfj.core.respell`) from the one spelling each English word has in `data/name/words.jsonl`: Black Dragonflight is ブラック・ドラゴンフライト, Hallow's End is ハロウズ・エンド, The Argent Dawn is アージェント・ドーン. A leading "The" is left out, a possessive follows the sound its word ends in (Light's is ライツ, Marduk's is マルドゥクス, Bingles's is ビングルゼズ, the rest take ズ; a word ending in ス has its own possessive on its line in `words.jsonl`), words are joined with `・`, a tag in brackets is left out, a roman numeral after the first word becomes a digit, a single letter is read by its letter name (2P is 2ピー), digits stay digits and `&` is アンド. Only a word is ever drafted, and only once.
 
 **`make names` after every data flow.** `make names` runs, in order:
 
@@ -352,7 +352,7 @@ A name's Japanese is never drafted or translated. It is the katakana spelling of
    ```bash
    python3 -m wfj names export-respell --out batches/names-respell --size 1000
    ```
-   Rows `{"en", "count", "examples"}`: each word with no katakana spelling that a name is built from, once, in lower case, with how many names carry it and up to five of them.
+   Rows `{"en", "count", "examples"}`: each word with no katakana spelling that a name is built from, once, in lower case, with how many names carry it and up to five of them. A row whose `en` ends in `'s` (`death's`) is a word ending in ス that a name uses as a possessive: its `ja` is the whole possessive as it is said (デスズ for a th, ノービセズ for an s, x or ce), and the import keeps it on the word's line.
 2. **Draft.** The model writes `ja` on each row: the word's katakana, spelled from how the English sounds, never a translation (Tiger is タイガー, not トラ), and the singular for a plural (Raptors is ラプター). Small words are spelled too (of is オブ, and is アンド).
 3. **Import.**
    ```bash

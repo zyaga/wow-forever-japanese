@@ -305,7 +305,7 @@ _Avoid_: [[Word list]] (the player's saved words), dictionary, [[Translation glo
 → [Data model](architecture/data-model.md) · [Translation batches](operations/translation-batches.md#names-for-a-batch) · [ADR-082](adr/082-names-spelled-from-the-english-and-the-voice-reads-its-own-text.md)
 
 **Respelling**:
-Writing a name's Japanese as the katakana of its English, word by word from the [[Name glossary]], by code (`wfj names respell`): a leading "The" left out, a possessive kept as ズ, words joined with ・, a tag in brackets left out, a roman numeral after the first word as a digit, a single letter by its letter name. Black Dragonflight is ブラック・ドラゴンフライト, never 黒いドラゴンフライト, so the voice says the name the player reads. Every name is respelled except a player's own correction; Hearthstone's translated names were respelled too.
+Writing a name's Japanese as the katakana of its English, word by word from the [[Name glossary]], by code (`wfj names respell`): a leading "The" left out, a possessive written by the sound its word ends in (ズ, or ツ, クス, フス, プス, ゼズ; a word ending in ス has its own), words joined with ・, a tag in brackets left out, a roman numeral after the first word as a digit, a single letter by its letter name. Black Dragonflight is ブラック・ドラゴンフライト, never 黒いドラゴンフライト, so the voice says the name the player reads. Every name is respelled except a player's own correction; Hearthstone's translated names were respelled too.
 _Avoid_: name translation, transliteration (it is spelled from how the English sounds, not letter by letter), Hearthstone names
 → [Translation batches](operations/translation-batches.md#names-for-a-batch) · [ADR-082](adr/082-names-spelled-from-the-english-and-the-voice-reads-its-own-text.md)
 
