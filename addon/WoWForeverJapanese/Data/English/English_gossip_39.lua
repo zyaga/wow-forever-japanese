@@ -23,6 +23,7 @@ WFJ.Data.add("english", {
   ["gossip:395015aa3a257b9c"] = { text = "come=1" },
   ["gossip:39501d3095720bd8"] = { text = "all=4 how=1 know=5" },
   ["gossip:3954c6570b408f76"] = { text = "cannot=5 such=2 train=3 yourself=1" },
+  ["gossip:39569a50f15446fb"] = { text = "admit=4 approach=1 befriending=25 beyond=47 bond=36 chosen=38 come=17 different=32 each=44 examining=59 eyes=2 forms=50 here=9 however=20 if=16 kinship=62 know=33 looking=15 me=64 mere=45 no=41 one=8 orc=34 place=18 purchase=46 return=66 riding=13 right=19 see=10 sense=63 special=48 suggest=60 summoning=27 surprised=12 talents=7 vanity=37 very=31 warlock=3 wolf=14 you=26 your=5" },
   ["gossip:395717e5dc379a81"] = { text = "docks=15 enjoy=6 here=1 listening=4 oh=7 ship=11 sitting=2 sounds=3 take=10 time=13 what=8 yes=9" },
   ["gossip:39642dd3a5b0ba9d"] = { text = "done=1 weapon=3 your=2" },
   ["gossip:39663a88c21400bd"] = { text = "and=20 blood=17 first=1 horror=8 i=5 loneliness=9 me=13 my=16 sang=19 saw=3 she=15 spoke=14 their=7 them=23 then=12 told=22 undead=2 wept=6 when=4" },

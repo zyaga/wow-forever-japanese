@@ -232,7 +232,7 @@ WFJ.Data.add("spell", {
   [27848] = { "Seal呪文の効果時間を$N1秒延長します。", nil, 0x9d288bb1, nil, "um" },
   [27849] = { "Necropolis Crystalを爆破しましょう！", nil, 0x17c09541, nil, "um" },
   [27850] = { "PurifyとCleanseのマナコストを$N1%軽減します。", nil, 0x60856267, nil, "um" },
-  [27851] = { "Claw、Rake、Mangleのエネルギーコストを$N1減少させます。", nil, 0xb3e13197, nil, "um" },
+  [27851] = { "ClawとRakeのエネルギーコストを$N1減少させます。", nil, 0x8c1fca52, nil, "um" },
   [27852] = { nil, "こいつを殴るな！", nil, 0x0cd960b9, "mu" },
   [27853] = { "自分のRejuvenationがかかっている対象にRegrowthを唱えると、最初の回復量が$N1%増加します。", nil, 0x0e299bc7, nil, "um" },
   [27855] = { "Lesser Healing Waveの回復量を最大$N1増加させます。", nil, 0x0f673ce5, nil, "um" },

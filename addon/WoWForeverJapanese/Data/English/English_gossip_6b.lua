@@ -35,6 +35,7 @@ WFJ.Data.add("english", {
   ["gossip:6bae7d6b4b1206f4"] = { text = "almost=1" },
   ["gossip:6bc1442f8a81ef18"] = { text = "ally=6 dwarves=4 fast=2 friendly=14 gladly=16 i=17 i'll=13 lady=3 mighty=9 proven=5 ram=10 rams=10 recognized=7 sale=18 show=20 so=1 someone=8" },
   ["gossip:6bd449449492abcd"] = { text = "ancestors=3 find=7 honor=4 house=2 inside=6 your=1" },
+  ["gossip:6be066e4fc5750c2"] = { text = "admit=3 beasts=30 better=38 bonded=37 choice=49 come=10 companion=42 ey=1 faster=40 how=31 if=14 intelligent=32 interest=45 lethal=41 look=13 looking=13 me=50 most=28 mount=12 once=35 one=7 our=26 place=16 return=52 right=17 same=23 savage=33 see=48 stables=9 summoning=20 surprised=11 talents=6 though=18 warlock=2 way=24 you=19 your=4" },
   ["gossip:6be23911b2ba6cbc"] = { text = "follow=4 okay=1 think=3" },
   ["gossip:6be805af38b0c954"] = { text = "course=1 lessons=5 other=4 ready=2" },
   ["gossip:6be87f89184fa502"] = { text = "died=2 said=8 saying=4 who=5 why=1" },

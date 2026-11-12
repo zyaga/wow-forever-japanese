@@ -2,4 +2,5 @@
 local _, WFJ = ...
 WFJ.Data.add("objective", {
   [447296] = { "謎を解く", 0x96bbc2f4, "." },
+  [447347] = { "Mannoroc Covenの手がかり", 0xbc1abd43, "." },
 })

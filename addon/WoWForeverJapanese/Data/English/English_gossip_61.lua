@@ -23,6 +23,7 @@ WFJ.Data.add("english", {
   ["gossip:6173f2ea69723317"] = { text = "assaulted=2 farm=1" },
   ["gossip:6174f7f842c89f01"] = { text = "sickens=5 straight=2 weakness=4 your=3" },
   ["gossip:617c25ac3609a944"] = { text = "barred=2 before=17 behind=6 denied=12 doors=3 dragons=14 longer=1 our=10 stone=4 tremble=18 vengeance=11 wait=7 walls=5 will=19 wrath=16" },
+  ["gossip:618026951d4ab4d2"] = { text = "agreement=2 awaits=9 cursed=14 fate=15 free=16 great=19 items=22 our=1 place=4 power=20 remains=5 remember=6 reward=24 this=7 truly=18 you=8" },
   ["gossip:6181b150085dea6b"] = { text = "all=11 already=7 get=18 haha=1 havin'=12 just=22 know=5 leg=3 mon=4 now=15 startin'=21 stuff=10 theirs=17 waitin'=19 war=9 we=6 you=13" },
   ["gossip:6194b17a05733da3"] = { text = "hey=1 talk=3" },
   ["gossip:61955939760ceb0e"] = { text = "access=12 designated=4 function=3 information=11 insight=17 leisure=21 my=2 offer=13 permissible=14 ready=27 regarding=10 salutations=1 share=26 synthesis=9 this=23 when=15 world=5 you=25" },

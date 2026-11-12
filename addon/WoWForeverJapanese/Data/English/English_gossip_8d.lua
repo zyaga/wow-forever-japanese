@@ -25,6 +25,7 @@ WFJ.Data.add("english", {
   ["gossip:8d6adab82d8fca12"] = { text = "authorized=9 deal=7 hammer=18 i=10 idiot=15 impossible=1 legendary=17 make=8 secrets=12 you=14" },
   ["gossip:8d70e317eb545ca9"] = { text = "look=1 practice=3" },
   ["gossip:8d75d4c30b9c0c88"] = { text = "city=26 create=32 dare=37 fool=11 he=1 his=25 however=9 i=10 item=31 know=40 knowledge=15 making=2 material=29 payment=5 piece=14 ran=7 recipe=20 safely=27 said=16 sit=28 took=4 unforged=13 used=3 useless=22 without=21 wonder=33" },
+  ["gossip:8d791321514fe5f3"] = { text = "beyond=3 borders=2 bring=5 hear=1 news=4" },
   ["gossip:8d7afbc21c9e43dc"] = { text = "missing=1" },
   ["gossip:8d7f630facc2eee6"] = { text = "but=3 deal=7 good=1 learn=5 start=2 still=4" },
   ["gossip:8d8086eeb6584322"] = { text = "hmm=1 however=8 impress=20 job=17 little=5 me=19 my=9 potions=3 see=2 skill=4 student=10 whether=12 worthy=11 you=16" },

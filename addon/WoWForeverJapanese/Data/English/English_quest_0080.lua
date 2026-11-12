@@ -2,4 +2,7 @@
 local _, WFJ = ...
 WFJ.Data.add("english", {
   ["quest:80241"] = { objectives = "bring=3 six=1", description = "about=3 advance=19 age=4 all=24 and=42 armorsmith=12 before=16 blacksmithing=17 comes=45 craft=18 desire=20 determination=21 dwarf=8 here=29 i=1 learn=38 left=15 little=37 make=41 me=9 name=7 now=34 promise=26 smithing=43 so=27 those=23 time=39 took=11 train=25 trained=25 ways=13 when=5 where=44 with=22 years=32 you=2" },
+  ["quest:80325"] = { description = "any=15 anyone=18 build=19 clear=25 creations=14 cursory=10 dirty=1 even=12 ever=20 find=5 foolish=17 full=9 glance=11 havoc=22 notebook=4 notes=8 schematics=7 scribbled=6 should=16 tattered=2 terrible=21 these=13 wreak=23" },
+  ["quest:80411"] = { objectives = "alone=7 complete=8 inside=1 job=6 then=3", description = "alone=24 appears=9 arouse=16 artifact=8 asked=33 before=30 bring=32 complete=21 deliver=29 desires=6 final=7 giving=37 go=25 here=31 however=28 instructions=18 intercepted=2 job=20 letter=4 means=22 per=19 recent=3 somewhere=12 states=11 suspicion=15 usual=23 we=1" },
+  ["quest:80526"] = { title = "fool=2", objectives = "hear=2 plan=1 ready=3", description = "and=35 artifacts=21 believe=40 character=8 dealing=6 devised=44 discover=30 fortunately=41 gathering=22 he=17 i=39 identity=10 magic=13 manor=4 moment=2 name=45 only=31 onus=36 plan=43 powerful=12 providing=26 purpose=18 ready=46 recently=32 say=7 soon=1 sources=15 speak=48 stopped=34 tabs=9 them=24 unknown=19 user=14 we=29 working=11 you=5" },
 })

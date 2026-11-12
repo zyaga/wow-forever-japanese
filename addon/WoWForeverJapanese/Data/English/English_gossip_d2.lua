@@ -5,6 +5,7 @@ WFJ.Data.add("english", {
   ["gossip:d212b24c1b705b87"] = { text = "always=3 blood=2 creed=9 done=22 feeds=18 final=10 flames=17 forget=1 heart=20 however=15 other=21 our=8 paid=5 painful=11 pleases=14 reminder=12 task=23 this=6 today=16 traitor=7" },
   ["gossip:d21e71a3e7744c69"] = { text = "discuss=3 move=2 nothing=4" },
   ["gossip:d22da951ba64e345"] = { text = "foolish=1 match=7 might=6 my=5 you=3" },
+  ["gossip:d23aff04bc0ec4e6"] = { text = "admit=3 bear=43 choice=51 come=11 comparison=22 encourage=27 examine=46 faithfully=41 finest=35 greetings=1 have=7 here=16 horses=45 if=15 infernal=38 land=34 liking=5 looking=14 may=24 me=52 mount=13 my=9 one=8 our=28 ours=31 pale=23 peruse=30 place=17 regardless=25 return=54 see=50 should=44 stables=10 steeds=21 summoned=19 summoning=19 surprised=12 talents=6 though=18 warlock=2 you=42 your=4" },
   ["gossip:d2456803cc3849c5"] = { text = "cannot=24 care=11 consider=21 elders=18 friend=20 given=15 known=4 love=10 mighty=5 my=2 not=17 offer=22 people=3 product=12 steed=6 strangers=13 you=1" },
   ["gossip:d2512d20b6d23ca5"] = { text = "this=1 you=2" },
   ["gossip:d252158535c128e0"] = { text = "edge=9 inside=3 look=4 room=2 southeast=8 tavern=7" },

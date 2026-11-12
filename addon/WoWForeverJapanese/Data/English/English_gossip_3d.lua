@@ -3,6 +3,7 @@ local _, WFJ = ...
 WFJ.Data.add("english", {
   ["gossip:3d0643141edfff99"] = { text = "awaits=3 benevolent=32 besmirched=48 both=21 certain=44 choice=2 costly=17 country=10 cruel=9 dinner=28 diplomatic=27 fairly=43 honor=47 honorable=23 insult=35 land=30 liege=5 liege's=46 meant=42 mission=11 next=1 nonetheless=45 overhear=36 peace=24 peoples=22 ruler=31 say=41 secure=25 sides=15 viciously=34 war=8 you=4 your=7 yours=7" },
   ["gossip:3d0a2355190bb927"] = { text = "attacks=3 cold=1 slowed=4 think=5 your=2" },
+  ["gossip:3d1a53167b10e6e9"] = { text = "why=1" },
   ["gossip:3d1c65a2c89be78b"] = { text = "angry=4 dead=5 rest=1" },
   ["gossip:3d2167141510a515"] = { text = "name=3 spell=4 watch=2" },
   ["gossip:3d2197755c18b93a"] = { text = "fashioned=1" },
@@ -25,6 +26,7 @@ WFJ.Data.add("english", {
   ["gossip:3d7e4e7b2e35e130"] = { text = "abrupt=5 deep=2 digging=3 end=6 future=4 past=1" },
   ["gossip:3d80cd06edff8416"] = { text = "attack=1 destroy=4 unchecked=3" },
   ["gossip:3d8157ca5b51bb01"] = { text = "brave=1 deed=6 rescuing=2 reward=7 sure=4 thank=3 your=5" },
+  ["gossip:3d854bf79b30be68"] = { text = "done=7 great=1 stop=3 will=6 work=2" },
   ["gossip:3d85980627f78b42"] = { text = "appear=7 beyond=3 borders=2 extended=6 influence=1 itself=5 kingdom=4 ousted=12 since=10 unmasked=11 usurper=9" },
   ["gossip:3d8aaec7e8ebb391"] = { text = "heed=6 hold=3 my=4 summons=5 your=1" },
   ["gossip:3d96988b3a0f12b9"] = { text = "confess=1 free=2" },

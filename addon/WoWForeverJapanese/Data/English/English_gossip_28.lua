@@ -21,6 +21,7 @@ WFJ.Data.add("english", {
   ["gossip:287f1b3c3c42fa79"] = { text = "create=6 day=3 design=5 fine=2 new=4 what=1" },
   ["gossip:2886b5292add5ad5"] = { text = "feel=3 fury=2 sands=1" },
   ["gossip:28a6c6bfe0c56b13"] = { text = "aid=2 cases=30 common=20 compared=13 composition=42 compounds=40 core=39 desired=14 dwarf=22 elements=15 exceeds=34 however=35 inherent=26 initiating=5 many=16 matrix=6 nomenclature=21 none=43 number=4 physical=41 powers=33 representation=3 resultant=8 retains=17 second=7 stamina=28 standard=10 stone=38 strength=27 subterranean=11 this=18 variance=9 variant=19 various=37 visual=1" },
+  ["gossip:28a711d5c98be072"] = { text = "better=2 much=1 thank=3" },
   ["gossip:28a75f2116480794"] = { text = "now=1 power=3 time=2" },
   ["gossip:28a7e5d5d24e3f07"] = { text = "help=4 oh=1 this=2" },
   ["gossip:28b3ee3a7f3bbe0e"] = { text = "beauties=16 better=22 companion=23 easily=17 first=8 friend=2 happy=5 once=19 ram=4 ride=3 riding=3 these=13 train=11" },

@@ -31,6 +31,7 @@ WFJ.Data.add("english", {
   ["gossip:317d71a214ca81f7"] = { text = "level=1 maybe=8 really=3 repeat=4 well=7" },
   ["gossip:318fd1ff545da903"] = { text = "lost=1" },
   ["gossip:31911266e9ba7570"] = { text = "aid=29 ask=30 breaths=27 help=2 i=4 know=14 knows=14 last=26 pass=7 please=1 release=23 sister=3 soon=5 suffer=8 suffers=8 though=15 wildlife=17 world=6 your=28" },
+  ["gossip:3191159fe00319f6"] = { text = "act=23 answer=45 bet=49 both=47 brings=30 concern=39 deepest=14 feeling=6 justify=24 know=5 live=17 lowly=31 no=12 own=22 part=15 protection=11 question=29 real=28 reasons=25 speak=41 that=44 threat=8 we=46 well=20 what=3 why=13 woman=40 would=18 yes=1" },
   ["gossip:31972d22271f37b1"] = { text = "masters=3 other=1 teach=5 weapon=2 what=4" },
   ["gossip:319b0eeaf2135cea"] = { text = "brzt=1 click=2 whir=3" },
   ["gossip:31a12e86f3b52449"] = { text = "death=5 enemy=2 fear=1" },

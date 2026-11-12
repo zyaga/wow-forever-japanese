@@ -8,6 +8,7 @@ WFJ.Data.add("english", {
   ["gossip:d639929036e4c8cc"] = { text = "begins=2 chanting=1" },
   ["gossip:d63b8c0183bfce20"] = { text = "kid=15 me=1 never=7 ready=3 someone=5 still=12 train=2 turn=6 unfortunately=9 ways=13" },
   ["gossip:d64372e461bf2653"] = { text = "get=2 need=3 provide=6 safely=1 those=4 wings=5" },
+  ["gossip:d6490603252c0e94"] = { text = "another=42 anything=29 assigned=6 bit=53 body=20 but=22 camp=12 check=47 come=13 concern=38 description=15 every=11 few=27 fortnight=10 found=18 hear=40 her=19 here=25 highlands=5 i=30 judging=16 lines=48 medic=46 more=54 northwest=41 one=3 other=24 our=1 outskirts=4 possible=21 scouts=2 see=49 serious=37 she=8 tends=9 there=45 voice=36 you=17 your=14" },
   ["gossip:d64995ac009e84e7"] = { text = "die=9 great=3 here=8 i=7 leave=1 peace=12 thank=6 wounds=2 you=10" },
   ["gossip:d652536497a59e93"] = { text = "failed=2 good=5 once=1 taking=4" },
   ["gossip:d658acd381aaaa1d"] = { text = "dummy=3 orc=2 quickly=1 shoots=4" },
@@ -32,5 +33,6 @@ WFJ.Data.add("english", {
   ["gossip:d6f0d5b10d8341a3"] = { text = "nothing=2 pay=5 time=6 wickedness=3" },
   ["gossip:d6f339b4bd3ea03d"] = { text = "happens=7 magic=3 playing=4 see=6 shouldn't=5 understand=2 warlocks=1" },
   ["gossip:d6f6ac3bcfb964ec"] = { text = "dissection=6 dwarf=5 illustration=7 now=1 page=3 see=8 text=2 turn=4" },
+  ["gossip:d6fb7765f4b79c97"] = { text = "delivered=1" },
   ["gossip:d6fd797a96d3fb66"] = { text = "wants=1 worm=2" },
 })

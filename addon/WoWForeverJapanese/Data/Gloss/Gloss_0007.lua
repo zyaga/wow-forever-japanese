@@ -518,7 +518,6 @@ WFJ.Data.add("gloss", {
   [7515] = "けれど\tけれど\tthough",
   [7516] = "けれど\tけれど\twhile (but)",
   [7517] = "けれど\tけれど\tyet",
-  [7518] = "けれども\tけれども\talthough",
   [7519] = "けれども\tけれども\tbut",
   [7520] = "けれども\tけれども\tbut nonetheless",
   [7521] = "けれども\tけれども\thowever",

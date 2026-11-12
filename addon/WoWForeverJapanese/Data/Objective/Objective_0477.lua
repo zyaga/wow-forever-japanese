@@ -17,4 +17,7 @@ WFJ.Data.add("objective", {
   [477594] = { "Kurothelの持ち物を発見した", 0x27b25393, "." },
   [477632] = { "Doctor Martin Felbenと話す", 0x35c836fd, "." },
   [477671] = { "Raven Hillを調査する", 0x6e4a2ba7, "." },
+  [477682] = { "Mount Hyjalで第三次大戦の古参兵に会う", 0xcf09b1d8, "." },
+  [477683] = { "Lake EverstillのTobinの場所を訪れる", 0xeedba4af, "." },
+  [477684] = { "Mount Hyjalで第三次大戦の古参兵に会う", 0xcf09b1d8, "." },
 })

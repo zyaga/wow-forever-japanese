@@ -336,7 +336,6 @@ WFJ.Data.add("gloss", {
   [132334] = "金床\tかなとこ\tanvils",
   [132335] = "金庫\tきんこ\tcash box",
   [132336] = "金庫\tきんこ\tcoffers",
-  [132337] = "金庫\tきんこ\tlockbox",
   [132338] = "金庫\tきんこ\tlockboxes",
   [132339] = "金庫\tきんこ\tsafe",
   [132340] = "金庫\tきんこ\tstrongbox",

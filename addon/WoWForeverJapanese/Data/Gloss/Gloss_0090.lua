@@ -507,7 +507,6 @@ WFJ.Data.add("gloss", {
   [90509] = "果たす\tはたす\theld (fulfilled)",
   [90510] = "果たす\tはたす\tif (we) do",
   [90511] = "果たす\tはたす\tif (we) do (fulfill)",
-  [90512] = "果たす\tはたす\tif (you) do (fulfill)",
   [90513] = "果たす\tはたす\tif he accomplished",
   [90514] = "果たす\tはたす\tif not accomplished",
   [90515] = "果たす\tはたす\tif you accomplish",

@@ -43,4 +43,5 @@ WFJ.Data.add("english", {
   ["gossip:32e43d2def01efa7"] = { text = "beast=7 blow=3 killing=2 look=9 see=13 struck=4 wish=14 you=1" },
   ["gossip:32eeca77d1727f7c"] = { text = "air=4 dream=12 everything=11 foreboding=21 fresh=5 full=8 grass=1 heart=19 light=6 lush=3 my=18 seen=10 soft=2 song=7 suggests=15 then=16 true=13 why=17" },
   ["gossip:32f3f833710ee8d6"] = { text = "it=6 language=3 me=4 only=8 speak=5 stand=7 vulgar=2 your=1" },
+  ["gossip:32fab2cae6e6b445"] = { text = "even=17 fighters=11 fit=25 hardened=10 if=27 lot=1 mistrust=19 mostly=4 once=9 own=29 people=16 reliant=31 reshape=12 rest=21 soft=5 things=2 this=24 tough=15 us=18 we=20 weak=7 with=23 world=14" },
 })

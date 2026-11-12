@@ -11,6 +11,7 @@ WFJ.Data.add("english", {
   ["gossip:a33d853d93b8596b"] = { text = "able=10 defeat=7 efforts=2 fools=5 me=6 never=9 pointless=4 utterly=3 your=1" },
   ["gossip:a341782f6123be92"] = { text = "after=4 controversial=2 death=3 end=24 fall=27 fallen=8 fashioned=12 felt=25 great=17 hero=9 his=1 honor=10 knights=6 many=29 martyrdom=21 one=26 resulting=20 rise=31 similarly=11 suits=13 that=19 victory=18 war=23 warriors=7 wear=14" },
   ["gossip:a34b289b546b3bd3"] = { text = "behalf=8 complete=10 craft=3 demonstrated=6 learning=4 mission=9 my=7 our=2 possess=12 resolve=11 skill=5 you=1" },
+  ["gossip:a34f86f825c68fbc"] = { text = "good=1" },
   ["gossip:a35a6151fc576b05"] = { text = "again=1 here=5 safe=3 thank=2 wait=6" },
   ["gossip:a35edc42a45d678b"] = { text = "abdicated=47 after=49 against=19 ago=16 allowed=43 ancient=24 ascend=41 best=12 briefly=1 brokered=39 direction=6 enemies=25 escape=28 ever=50 friendship=37 he=23 hesitantly=4 leader=53 led=31 looking=3 looks=3 madness=17 murderous=26 nearly=15 oppression=18 pact=38 people=21 position=46 power=45 retired=48 sea=33 spirits=36 stood=22 survive=42 uncharted=32 us=9 vengeance=27 wind=35 years=14" },
   ["gossip:a362b1a03c3a4544"] = { text = "ask=13 coward=1 hand=2 hope=8 mightiest=3 slay=6" },

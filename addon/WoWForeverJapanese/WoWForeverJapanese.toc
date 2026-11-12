@@ -41,6 +41,7 @@ Data\Quest\Quest_0079.lua
 Data\Quest\Quest_0080.lua
 Data\Quest\Quest_0081.lua
 Data\Quest\Quest_0082.lua
+Data\Quest\Quest_0083.lua
 Data\Quest\Quest_0084.lua
 Data\Quest\Quest_0086.lua
 Data\Quest\Quest_0087.lua
@@ -453,6 +454,7 @@ Data\Spell\Spell_1326.lua
 Data\Spell\Spell_1327.lua
 Data\Spell\Spell_1328.lua
 Data\Spell\Spell_1329.lua
+Data\Spell\Spell_1330.lua
 Data\Objective\Objective_0380.lua
 Data\Objective\Objective_0381.lua
 Data\Objective\Objective_0382.lua
@@ -463,6 +465,10 @@ Data\Objective\Objective_0445.lua
 Data\Objective\Objective_0446.lua
 Data\Objective\Objective_0447.lua
 Data\Objective\Objective_0448.lua
+Data\Objective\Objective_0449.lua
+Data\Objective\Objective_0452.lua
+Data\Objective\Objective_0457.lua
+Data\Objective\Objective_0459.lua
 Data\Objective\Objective_0461.lua
 Data\Objective\Objective_0462.lua
 Data\Objective\Objective_0463.lua
@@ -493,7 +499,10 @@ Data\Area\Area_0006.lua
 Data\Area\Area_0007.lua
 Data\Area\Area_0008.lua
 Data\Area\Area_0009.lua
+Data\Area\Area_0086.lua
 Data\Area\Area_0087.lua
+Data\Area\Area_0088.lua
+Data\Area\Area_0091.lua
 Data\Area\Area_0092.lua
 Data\Area\Area_0093.lua
 Data\Area\Area_0094.lua
@@ -1568,6 +1577,7 @@ Data\English\English_quest_0079.lua
 Data\English\English_quest_0080.lua
 Data\English\English_quest_0081.lua
 Data\English\English_quest_0082.lua
+Data\English\English_quest_0083.lua
 Data\English\English_quest_0084.lua
 Data\English\English_quest_0086.lua
 Data\English\English_quest_0087.lua
@@ -2137,6 +2147,7 @@ Data\Reading\Reading_quest_0079.lua
 Data\Reading\Reading_quest_0080.lua
 Data\Reading\Reading_quest_0081.lua
 Data\Reading\Reading_quest_0082.lua
+Data\Reading\Reading_quest_0083.lua
 Data\Reading\Reading_quest_0084.lua
 Data\Reading\Reading_quest_0086.lua
 Data\Reading\Reading_quest_0087.lua
@@ -2324,6 +2335,11 @@ Data\Gloss\Gloss_0142.lua
 Data\Gloss\Gloss_0143.lua
 Data\Gloss\Gloss_0144.lua
 Data\Gloss\Gloss_0145.lua
+Data\Gloss\Gloss_0146.lua
+Data\Gloss\Gloss_0147.lua
+Data\Gloss\Gloss_0148.lua
+Data\Gloss\Gloss_0149.lua
+Data\Gloss\Gloss_0150.lua
 # >>>
 Core\Lookup.lua
 Core\Readings.lua

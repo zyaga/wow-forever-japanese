@@ -33,7 +33,6 @@ WFJ.Data.add("english", {
   ["gossip:fa927e8dd793b11d"] = { text = "meanie=2 put=4 who=3 you=1" },
   ["gossip:fa9452f5b9603d29"] = { text = "claw=3 dead=1 smashes=4 twisted=2" },
   ["gossip:fa9dfb70db881b31"] = { text = "hanging=6 pack=5 points=7 there=1 what=3 your=4" },
-  ["gossip:fab4a730c53dcca7"] = { text = "act=21 all=19 answer=43 ask=5 both=44 brings=39 concern=31 deepest=9 feeling=7 going=6 justify=22 know=45 live=17 lowly=37 no=13 obviously=30 own=20 protection=14 question=27 reaches=38 real=26 reasons=23 speak=33 that=42 threat=11 well=18 what=4 why=8 woman=32 yes=1" },
   ["gossip:fab53a0e24d9a723"] = { text = "advanced=9 advances=9 again=1 all=23 bandaging=10 following=6 good=3 i=21 know=22 learned=12 me=18 more=8 progress=5 say=14 see=2 skill=15 teach=24 techniques=11 time=13 your=4" },
   ["gossip:faba5c25e517b848"] = { text = "buy=2 your=1" },
   ["gossip:fac9c38c1f8c1b69"] = { text = "die=7 flight=1 intruders=4 now=5 protect=2 these=3" },

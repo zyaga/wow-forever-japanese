@@ -2,7 +2,7 @@
 local _, WFJ = ...
 WFJ.Data.add("name", {
   ["3b00864a3372faba"] = { "モンスター・シールド、ロイヤル・ドレッドガード", "もんすたー・しーるどろいやる・どれっどがーど", "Monster - Shield, Royal Dreadguard" },
-  ["3b0187e20e4ab64a"] = { "ジョセフズ・ウェディング・リング", "じょせふず・うぇでぃんぐ・りんぐ", "Joseph's Wedding Ring" },
+  ["3b0187e20e4ab64a"] = { "ジョセフス・ウェディング・リング", "じょせふす・うぇでぃんぐ・りんぐ", "Joseph's Wedding Ring" },
   ["3b029f5ca9d8b6f7"] = { "ゲルキス・バナー", "げるきす・ばなー", "Gelkis Banner" },
   ["3b0534ce6f9bf04e"] = { "ピット・ファイターズ・シールド", "ぴっと・ふぁいたーず・しーるど", "Pit Fighter's Shield" },
   ["3b05b10fb0f9548e"] = { "オールド・セラキス", "おーるど・せらきす", "Old Serra'kis" },
@@ -207,7 +207,7 @@ WFJ.Data.add("name", {
   ["3be695a0d3dd7f10"] = { "レゾネイティング・クリスタル・フォーメーション・グロー", "れぞねいてぃんぐ・くりすたる・ふぉーめーしょん・ぐろー", "Resonating Crystal Formation Glow" },
   ["3be6d7c74ebc80c1"] = { "アレイ・トランスフォームド", "あれい・とらんすふぉーむど", "Arei Transformed" },
   ["3be768333a4d833a"] = { "アークメイジ・アテリック", "あーくめいじ・あてりっく", "Archmage Ataeric" },
-  ["3be7c23f511c65ba"] = { "サモン・マッドキャップズ・ブレイサー・ディーエヌディー", "さもん・まっどきゃっぷず・ぶれいさー・でぃーえぬでぃー", "Summon Madcap's Bracers DND" },
+  ["3be7c23f511c65ba"] = { "サモン・マッドキャップス・ブレイサー・ディーエヌディー", "さもん・まっどきゃっぷす・ぶれいさー・でぃーえぬでぃー", "Summon Madcap's Bracers DND" },
   ["3be847da97dffa61"] = { "バサルト・リング", "ばさると・りんぐ", "Basalt Ring" },
   ["3be85e336757fc28"] = { "ストーンクロス・エポレット", "すとーんくろす・えぽれっと", "Stonecloth Epaulets" },
   ["3be8b24e065dc097"] = { "ブレッド・マーチャント", "ぶれっど・まーちゃんと", "Bread Merchant" },
@@ -221,6 +221,7 @@ WFJ.Data.add("name", {
   ["3bf1546bb395d979"] = { "ウーンド・ポイズン2", "うーんど・ぽいずんに", "Wound Poison II" },
   ["3bf15478b395d986"] = { "ウーンド・ポイズン4", "うーんど・ぽいずんよん", "Wound Poison IV" },
   ["3bf170055ac0a537"] = { "ブレイジャー・オブ・ザ・ドーマント・フレイム", "ぶれいじゃー・おぶ・ざ・どーまんと・ふれいむ", "Brazier of the Dormant Flame" },
+  ["3bf22338dc19874a"] = { "メイルストロム・レギンス", "めいるすとろむ・れぎんす", "Maelstrom Leggings" },
   ["3bf2928a323dd3d9"] = { "フロストウルフ・シャーマン", "ふろすとうるふ・しゃーまん", "Frostwolf Shaman" },
   ["3bf4194b7f44dcdb"] = { "シール・デストロイド・フレイム", "しーる・ですとろいど・ふれいむ", "Seal Destroyed Flame" },
   ["3bf57aad60df6b29"] = { "メイル・アンド・プレート・マーチャント", "めいる・あんど・ぷれーと・まーちゃんと", "Mail & Plate Merchant" },

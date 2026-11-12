@@ -711,7 +711,6 @@ WFJ.Data.add("gloss", {
   [136711] = "願う\tねがう\tin the hopes of",
   [136712] = "願う\tねがう\tit is our hope (wish)",
   [136713] = "願う\tねがう\tlet us hope",
-  [136714] = "願う\tねがう\tlet us hope (I hope with all my heart)",
   [136715] = "願う\tねがう\tlet's hope",
   [136716] = "願う\tねがう\tlonged",
   [136717] = "願う\tねがう\tlongs",

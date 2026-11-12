@@ -28,6 +28,7 @@ WFJ.Data.add("english", {
   ["gossip:678ab7908a16aa8f"] = { text = "arrive=7 ask=9 directions=8 get=3 head=6 north=4 road=5 there's=2" },
   ["gossip:678e15d12b4055f5"] = { text = "help=1 need=4 remind=6 what=3" },
   ["gossip:6791d3a354d7dc3a"] = { text = "dwarves=2 heading=9 long=5 stay=4 those=1 trouble=6 we'll=7 where=8" },
+  ["gossip:67930d5d1279c016"] = { text = "killed=3 some=6 stole=7" },
   ["gossip:6796e8b44869700c"] = { text = "owned=1" },
   ["gossip:67991ba376a17be7"] = { text = "fellow=3 greetings=1 initiate=2" },
   ["gossip:67a5cc2d744c669d"] = { text = "all=40 anymore=11 creepy=16 elf=17 here=55 him=20 how=50 learn=45 left=12 like=13 look=22 magic=31 mark=25 maybe=14 old=26 older=33 one=41 power=48 ruin=18 rule=58 say=21 see=8 take=56 that=9 they=34 thing=42 think=10 this=5 timey=30 true=3 we=39 well=19 wow=1 you=2" },

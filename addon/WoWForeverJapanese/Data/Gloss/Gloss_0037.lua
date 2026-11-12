@@ -298,7 +298,6 @@ WFJ.Data.add("gloss", {
   [37295] = "上空\tじょうくう\tsky above",
   [37296] = "上空\tじょうくう\tup in the sky",
   [37297] = "上等\tじょうとう\tbest (fine quality)",
-  [37298] = "上等\tじょうとう\tbetter (fine)",
   [37299] = "上等\tじょうとう\tbetter (superior)",
   [37300] = "上等\tじょうとう\texcellent",
   [37301] = "上等\tじょうとう\tfancy (fine quality)",

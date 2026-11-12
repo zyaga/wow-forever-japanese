@@ -60,6 +60,7 @@ WFJ.Data.add("english", {
   ["ui:INVERT_GAMEPAD_PITCH"] = { text = "invert=2" },
   ["ui:INVERT_GAMEPAD_YAW"] = { text = "invert=2" },
   ["ui:INVERT_MOUSE"] = { text = "invert=2" },
+  ["ui:INVITATION"] = { text = "group=2 invites=3 you=1" },
   ["ui:INVITATION_XREALM"] = { text = "accepting=5 another=6 group=2 invitation=4 invites=3 realm=7 transfer=8 you=1" },
   ["ui:INVITE"] = { text = "invite=1" },
   ["ui:INVITE_COMMUNITY_MEMBER_POPUP_INVITE_EDITBOX_INSTRUCTIONS"] = { text = "or=1" },

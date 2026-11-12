@@ -401,7 +401,6 @@ WFJ.Data.add("gloss", {
   [130398] = "運ぶ\tはこぶ\tcan carry",
   [130399] = "運ぶ\tはこぶ\tcan run (事を運ぶ: call the shots)",
   [130400] = "運ぶ\tはこぶ\tcan take (carry) you",
-  [130401] = "運ぶ\tはこぶ\tcan turn (steer)",
   [130402] = "運ぶ\tはこぶ\tcan you carry",
   [130403] = "運ぶ\tはこぶ\tcan't carry",
   [130404] = "運ぶ\tはこぶ\tcannot carry",

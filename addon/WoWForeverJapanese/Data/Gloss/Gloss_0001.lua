@@ -663,7 +663,6 @@ WFJ.Data.add("gloss", {
   [1660] = "ある\tある\tis (である)",
   [1661] = "ある\tある\tis (必要がある: must)",
   [1662] = "ある\tある\tis (必要がある: needs to)",
-  [1663] = "ある\tある\tis all it takes (if there is)",
   [1664] = "ある\tある\tis found",
   [1665] = "ある\tある\tis found (is)",
   [1666] = "ある\tある\tis found (there is)",

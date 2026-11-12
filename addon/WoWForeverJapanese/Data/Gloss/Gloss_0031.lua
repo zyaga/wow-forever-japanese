@@ -43,7 +43,6 @@ WFJ.Data.add("gloss", {
   [31040] = "ろくでもない\tろくでもない\tlousy",
   [31041] = "ろくでもない\tろくでもない\tno good",
   [31042] = "ろくでもない\tろくでもない\tno-good",
-  [31043] = "ろくな\tろくな\tdecent (with no: poor)",
   [31044] = "ろくな\tろくな\tgood (decent)",
   [31045] = "ろくな\tろくな\tproper (decent)",
   [31046] = "ろくなこと\tろくなこと\tno good (nothing decent)",

@@ -92,7 +92,6 @@ WFJ.Data.add("gloss", {
   [121089] = "言う\tいう\ttells me (was saying)",
   [121090] = "言う\tいう\tthey said",
   [121091] = "言う\tいう\tthey say",
-  [121092] = "言う\tいう\tthey say (it is said)",
   [121093] = "言う\tいう\tthey tell me (it is said)",
   [121094] = "言う\tいう\tthink (say)",
   [121095] = "言う\tいう\tthough I was told",

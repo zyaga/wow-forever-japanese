@@ -16,6 +16,7 @@ WFJ.Data.add("english", {
   ["gossip:804037ca74ceba91"] = { text = "glares=2 you=1" },
   ["gossip:8048fc36bd40bef0"] = { text = "all=4 appreciate=6 completed=2 done=5 mission=1" },
   ["gossip:804b9a4563a86be1"] = { text = "fried=2" },
+  ["gossip:804c61798fa2cf21"] = { text = "bit=4 but=6 days=3 enemies=7 ever=10 mountaineers=1 new=8 peace=5 thanks=2 threats=9 watchful=11" },
   ["gossip:80544dd82574afd5"] = { text = "mailbox=1" },
   ["gossip:805b501ade850228"] = { text = "and=4 friend=6 give=3 good=5 hey=1 mug=2 one=7" },
   ["gossip:805fe3b2b39ca71a"] = { text = "all=4 before=10 but=8 check=14 collected=5 collectors=13 errand=16 girl=11 go=9 house=6 necessary=2 other=12 sell=7 unfortunate=1" },

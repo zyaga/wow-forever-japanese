@@ -5,6 +5,7 @@ WFJ.Data.add("english", {
   ["gossip:0404584a81de0dcd"] = { text = "forgot=8 love=4 make=7 this=1 time=6 war=2 wrapped=3" },
   ["gossip:0404b267f15a2630"] = { text = "all=15 and=12 around=52 banality=26 better=16 clearly=19 diggers=40 dirt=50 ditch=38 doing=2 dream=18 dreamer=9 future=17 good=10 help=55 however=24 i=8 keep=28 lack=7 lady=11 mired=27 needs=41 piles=51 replied=35 ripped=45 shackles=43 shuffling=53 such=46 these=49 those=29 time=47 told=33 us=14 vision=6 visionary=23 what=1 world=37 you=3" },
   ["gossip:040c4dbbdc792b0c"] = { text = "force=3 leave=2 own=1" },
+  ["gossip:040dffc1c06d36d8"] = { text = "arrives=11 attacks=17 bandits=15 beasts=14 compensation=48 complete=44 contents=34 course=36 crates=49 deal=39 delivery=8 each=7 efficiently=10 even=16 every=1 expected=33 feeling=29 find=26 from=54 goes=4 goods=21 handle=52 helpful=28 identify=35 intact=9 kind=45 label=31 logistics=55 look=32 loss=22 lost=24 near=50 order=2 our=37 particularly=27 plan=3 recent=13 responsibility=41 rise=18 shipment=25 shipments=25 shortcomings=38 strive=12 there=53 unavoidable=20 unfortunately=19 we=6 your=40" },
   ["gossip:040fe4e10482bdcd"] = { text = "competent=3 liking=8 my=7 perform=10 see=4 spend=12 task=6 this=5 time=11" },
   ["gossip:04114865d44e004e"] = { text = "all=11 asked=13 cooked=8 counted=23 doesn't=16 doom=4 fun=15 gathering=7 guess=14 here=10 hi=2 impending=3 know=20 last=22 meat=9 needed=25 oh=1 people=6 suppose=21 time=24 track=12" },
   ["gossip:041596f9266a2929"] = { text = "women=1" },

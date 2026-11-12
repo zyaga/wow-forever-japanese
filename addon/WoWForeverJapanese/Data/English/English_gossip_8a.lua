@@ -38,6 +38,7 @@ WFJ.Data.add("english", {
   ["gossip:8ac6ded5b124ceb7"] = { text = "see=2 something=1 think=3" },
   ["gossip:8acd9973891e3199"] = { text = "rogue=1 smell=2" },
   ["gossip:8add11d98b1b84e2"] = { text = "duty=1 ensure=6 hands=14 homeland=9 our=13 plains=2 punishment=15 safety=5 tauren=8 those=4 threaten=11 travel=3" },
+  ["gossip:8ade345aeb816eb8"] = { text = "adequate=10 boxes=32 bring=24 coins=37 finest=28 hone=5 knives=29 known=27 least=36 leave=39 lockpicking=3 locks=12 lowliest=18 makes=14 motivation=42 my=1 need=6 needs=44 neophytes=16 rifle=35 rogue=2 rogues=2 skills=4 some=30 stuff=15 training=40 unfit=20 unlock=33" },
   ["gossip:8ae2436743eec2c5"] = { text = "care=24 chitchat=11 creepy=21 face=2 friendly=1 grave=12 hear=20 i=18 like=19 long=15 maybe=22 nice=4 see=3 someday=17 something=5 unless=9 wants=7" },
   ["gossip:8aea483c819fc34c"] = { text = "building=5 city=1 outer=2 ring=3" },
   ["gossip:8af53e6d95121543"] = { text = "cheers=1 land=2 once=3 ours=4" },

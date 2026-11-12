@@ -41,6 +41,7 @@ WFJ.Data.add("english", {
   ["gossip:f1b3ae718a3b8755"] = { text = "free=1 now=3 save=6 together=4" },
   ["gossip:f1b59d1c04023848"] = { text = "aid=12 count=16 dangerous=3 demand=9 extreme=2 fight=14 inform=17 risks=6 see=1 seems=4 situation=5 taken=7 this=13 us=15 well=11" },
   ["gossip:f1bff04f1da10f46"] = { text = "fight=2 ninny=4" },
+  ["gossip:f1cec9dc096fa99a"] = { text = "decision=2 generosity=5 outsider=3 unnoticed=6 wise=1 your=4" },
   ["gossip:f1d1bbe13e9b9733"] = { text = "come=13 me=11 merely=6 no=1 passing=7 this=5 understand=4 with=12 you=3" },
   ["gossip:f1da185098ddccf5"] = { text = "accept=10 acting=23 adventurers=6 assist=7 behalf=3 beneficial=17 deeds=27 duty=9 earn=39 enter=30 greetings=1 hand=22 i=2 most=16 my=8 once=21 our=28 quantities=11 received=5 recognition=38 records=29 result=32 service=36 set=20 will=40 you=14 your=26" },
   ["gossip:f1db0a7e71c437eb"] = { text = "almost=13 attack=4 came=27 come=6 cultists=1 easy=12 expected=10 find=25 finish=29 her=24 here=26 inside=22 made=15 most=2 our=3 push=14 respond=5 seem=7 should=20 so=8 stay=32 them=17 think=16 too=11 watch=33 well=9 with=18 you=21" },

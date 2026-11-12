@@ -334,7 +334,7 @@ WFJ.Data.add("spell", {
   [17788] = { "Shadow Bolt、Immolate、Incinerateの詠唱時間を$N1秒、Soul Fireの詠唱時間を$N2秒短縮します。", nil, 0xf8b65742, nil, "um" },
   [17793] = { "Shadow Boltのクリティカルは、$D1の間、あなたの攻撃から対象が受けるShadowダメージを$N1%増加させます。", nil, 0x66f9789c, nil, "um" },
   [17794] = { nil, "ウォーロックから受けるShadowダメージが$N1%増加しています。", nil, 0xeebd5b60, "mu" },
-  [17804] = { "Drain Life、Drain Soul、Wrackで与えるダメージまたは吸収する体力を、対象にかかっているあなたの他のAffliction効果ごとに$N1%、最大$N2%まで増加させます。", nil, 0xc0ffdd63, nil, "um" },
+  [17804] = { "対象にかかっている自分のCorruption、Siphon Life、Bane of Agonyの効果ひとつにつき、Drain Life、Drain Soul、Wrackの呪文によるダメージまたは体力吸収量が$N1%増加します。増加量は最大$N2%です。", nil, 0x04c9b3d8, nil, "um" },
   [17809] = { "Fireダメージの発動効果。", nil, 0x0756b0cc, nil, "um" },
   [17810] = { "Corruptionの詠唱時間を$N1秒短縮し、与えるダメージを$N2%増加させます。", nil, 0x88b11be3, nil, "um" },
   [17815] = { "Immolateの初期ダメージを$N1%増加させます。", nil, 0x0c511bde, nil, "um" },

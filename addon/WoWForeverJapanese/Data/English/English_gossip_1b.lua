@@ -16,6 +16,7 @@ WFJ.Data.add("english", {
   ["gossip:1b32b4bd69271044"] = { text = "command=9 scepter=2 this=6 world=7 your=1" },
   ["gossip:1b335a0c1d935927"] = { text = "regards=1" },
   ["gossip:1b3d62880bece4ba"] = { text = "ally=16 and=9 battle=1 cannot=4 fight=12 honor=7 land=10 lose=3 misguided=15 orc=13 them=17 we=2" },
+  ["gossip:1b5148382757359d"] = { text = "beings=14 charger=21 come=11 depths=12 face=32 final=5 fine=2 hollowed=25 its=40 judgment=36 last=8 many=13 noble=20 now=27 once=19 only=47 pass=37 pieces=6 place=7 redeem=42 remains=15 serves=30 servitude=43 soul=26 specimens=3 steed=28 that=33 them=17 these=1 this=23 time=10 you=9" },
   ["gossip:1b5261271e50a5c0"] = { text = "grab=4 needle=2 thread=3" },
   ["gossip:1b5513f7c6d8ce32"] = { text = "appears=3 contemplation=1" },
   ["gossip:1b561d1b378f313b"] = { text = "gestures=4 his=1 nothing=8 smile=5 wares=2 you=6" },

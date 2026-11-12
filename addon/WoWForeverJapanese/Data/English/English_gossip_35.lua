@@ -13,6 +13,7 @@ WFJ.Data.add("english", {
   ["gossip:35388492d066caa3"] = { text = "attack=7 bridge=6 give=3 let=1 mount=4 their=5 word=2" },
   ["gossip:353f1731d2e1a7d2"] = { text = "days=6 destroy=3 end=7 fool=5 hunt=9 image=2 merely=4 you=1" },
   ["gossip:354e013dd79ba637"] = { text = "defenses=8 invaluable=10 journal=2 my=1 notes=3 overcoming=9 read=6 sure=4" },
+  ["gossip:354f5d339d04dc8b"] = { text = "ash=16 awfully=7 bring=41 camp=33 carrying=56 caster=2 demon=14 egos=44 experimenting=19 fellows=37 foul=13 investigate=25 just=4 land=21 large=45 like=12 listen=1 magic=15 mean=31 mountain=3 noisy=8 notes=40 perhaps=54 person=55 piles=17 poke=34 see=42 something=49 surely=48 taint=22 that=43 their=32 time=23 up=5 utilize=50 visitors=9 we=24 what=38 with=18 written=52 you=11 your=36" },
   ["gossip:35552006c72f4807"] = { text = "keyhole=3 learned=15 like=9 magical=10 members=12 much=8 order=11 own=7 peered=4 someone=5 that=2 them=13 we=1" },
   ["gossip:3558b060cfb6fb9a"] = { text = "binding=1 stones=2 what=3" },
   ["gossip:356b7de4f3fd9ecd"] = { text = "cry=2 loose=3 shrill=1" },

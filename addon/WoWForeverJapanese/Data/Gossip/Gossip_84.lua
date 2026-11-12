@@ -10,6 +10,7 @@ WFJ.Data.add("gossip", {
   ["841ed6ea87bb2571"] = { "定命の者どもがみなこれほど臆病なら、思ったより容易いな！", "." },
   ["84293ee46c69773f"] = { "鍵がかかってる！そんな！！", "." },
   ["8437cdc2cc0f6f48"] = { "RedridgeのLake Everstillには、オークが沈めた鍵のかかった補給箱がたくさんある。", "." },
+  ["843bb2aa487bd0e7"] = { "景品だって？乗った！", "." },
   ["844069f66fb91892"] = { "お前たちにこれほどの組織力があるとは意外だった。AllianceもHordeも、Ahn'Qiraj Warの準備を終えた。今この瞬間にも物資はSilithusへ運ばれており、$2113w日以内にすべて届くはずだ。あとは、Scepter of the Shifting Sandsを組み直す者がScarab Daisの銅鑼を打ち鳴らし、Ahn'Qirajの門を開くのを待つだけだ。そのとき、戦争は真に始まるのだ!", "." },
   ["8440b9bac1aac74f"] = { "{name}の顔を手の甲で思い切り張り飛ばした。", "." },
   ["8440eca9843d5a88"] = { "West Frostwolf Towerは、Frostwolf VillageとFrostwolf Keepの間の門を守っている。\n\nHordeが支配している。", "." },

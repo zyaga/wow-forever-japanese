@@ -12,6 +12,7 @@ WFJ.Data.add("english", {
   ["gossip:ba18a1303a33f13d"] = { text = "anything=5 come=3 dungeon=2 get=7 just=1" },
   ["gossip:ba2510b4ee376701"] = { text = "aye=10 blood=13 bones=8 come=20 grab=25 hammer=24 lad=23 learn=17 look=3 looking=3 me=18 means=15 nails=5 see=28 soot=7 steel=9 teach=27 two=16 under=6 veins=14 well=22 what=26 ye=1" },
   ["gossip:ba27c2d78b4a03c5"] = { text = "beast=2 great=1 near=3 sense=4" },
+  ["gossip:ba2a39c6ef6a0325"] = { text = "alone=11 better=19 elf=3 fetch=13 friend=9 him=17 know=8 leave=12 like=2 make=16 may=20 never=4 oh=6 poultices=15 seen=5 sick=10 you=1" },
   ["gossip:ba2b6f5757d9b396"] = { text = "beacon=1 give=5 plant=2 ready=3" },
   ["gossip:ba38ad3a55201654"] = { text = "beacon=6 berries=12 darkness=3 hang=13 juicy=10 light=5 picking=14 plant=2 plump=9 stands=8 this=1" },
   ["gossip:ba3db556cf459bbd"] = { text = "believe=6 built=21 destroy=23 estimated=11 first=10 he=19 i=9 infiltration=16 information=28 much=17 or=7 our=4 plenty=29 ploy=5 that=2 things=8 those=25 use=27 valuable=13 we=20 well=1 worse=12" },

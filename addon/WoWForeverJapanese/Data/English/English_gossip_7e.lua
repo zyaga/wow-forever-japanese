@@ -38,6 +38,7 @@ WFJ.Data.add("english", {
   ["gossip:7e922fd81ce5c670"] = { text = "all=7 consume=8 leave=3 lest=12 place=2 stranger=4 this=1 touched=6 you=10" },
   ["gossip:7e9b1f33e5a4f1a4"] = { text = "allowed=28 armed=19 autograph=38 barbershop=47 children=8 corpses=22 course=41 diversification=53 diversified=56 during=5 fed=11 fee=43 genius=34 handedly=16 here=46 i=2 magnanimously=9 mean=25 nation=23 our=20 recent=3 renowned=12 resistance=17 running=48 sign=40 small=42 smelly=21 starving=7 streams=54 trader=13 uh=6 um=24 war=4 well=49 word=50 yep=35 yes=1 you=52" },
   ["gossip:7e9cab3adc4390c3"] = { text = "acquire=4 and=25 assure=8 but=7 craft=12 date=20 difficult=5 done=27 effort=15 finest=21 i=9 items=3 only=32 payment=31 seeking=2 service=28 small=30 weapon=13 will=6 work=22 worth=16 you=1" },
+  ["gossip:7ea339f7074a1802"] = { text = "fisherman=1 gained=5 skill=4 teach=6" },
   ["gossip:7ea5a820f8cf88de"] = { text = "friend=2 greetings=1 these=3 times=5 troubled=4 you=6" },
   ["gossip:7ea5b785bafc0d9a"] = { text = "challenger=1" },
   ["gossip:7ea94400b07477eb"] = { text = "any=14 beast=15 better=29 brother=10 but=25 companion=30 difficult=22 far=16 find=31 first=6 friend=2 how=27 know=28 my=9 pilot=21 reliable=17 rider=20 salutations=1 time=18 train=12" },

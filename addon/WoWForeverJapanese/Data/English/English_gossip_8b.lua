@@ -5,6 +5,7 @@ WFJ.Data.add("english", {
   ["gossip:8b08facbd5b421b4"] = { text = "all=3 come=9 once=5 time=8 travel=2" },
   ["gossip:8b0f0d5ba83cd210"] = { text = "lost=1" },
   ["gossip:8b13bc4aaedfd395"] = { text = "and=8 come=10 delay=1 forces=3 immediately=2 key=7 muster=4 pylons=6 this=11 wards=9" },
+  ["gossip:8b208d2202b53d5e"] = { text = "death=1 even=2 i=3 persist=4" },
   ["gossip:8b20f109b420eb0e"] = { text = "priestess=2" },
   ["gossip:8b24ae18e68ebd33"] = { text = "welcome=1" },
   ["gossip:8b24c8fec5658257"] = { text = "ally=2 nearby=1 resurrected=3" },

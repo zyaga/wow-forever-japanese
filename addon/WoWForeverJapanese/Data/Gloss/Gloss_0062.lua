@@ -534,7 +534,6 @@ WFJ.Data.add("gloss", {
   [62534] = "大勢\tおおぜい\ta large group of (many)",
   [62535] = "大勢\tおおぜい\ta large number",
   [62536] = "大勢\tおおぜい\ta lot",
-  [62537] = "大勢\tおおぜい\ta lot (many people)",
   [62538] = "大勢\tおおぜい\ta lot of (many people)",
   [62539] = "大勢\tおおぜい\ta multitude",
   [62540] = "大勢\tおおぜい\ta score (many)",

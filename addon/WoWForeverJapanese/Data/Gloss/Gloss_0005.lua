@@ -978,7 +978,6 @@ WFJ.Data.add("gloss", {
   [5976] = "お願いする\tおねがいする\trequire (would like to ask for)",
   [5977] = "お願いする\tおねがいする\tto ask (a favor)",
   [5978] = "お願いする\tおねがいする\twe ask",
-  [5979] = "お願いする\tおねがいする\twould ask (of you)",
   [5980] = "お願いする\tおねがいする\twould ask for",
   [5981] = "お願いする\tおねがいする\twould like (to ask)",
   [5982] = "お願いする\tおねがいする\twould like to ask",

@@ -20,7 +20,7 @@ WFJ.Data.add("english", {
   ["gossip:014573843b7a6aa7"] = { text = "enough=6 please=7 time=4 way=8" },
   ["gossip:014a131845a36b73"] = { text = "follow=1 friends=2" },
   ["gossip:014ea8506ecfba38"] = { text = "breath=4 minute=3 quit=2 smoking=1" },
-  ["gossip:01530ff61a3b291e"] = { text = "and=19 arts=38 basics=43 before=28 camp=23 campfire=21 care=9 center=6 check=42 complete=24 cooks=32 culinary=37 fire=33 folk=10 head=15 learn=44 make=34 most=31 need=16 oh=18 own=3 remember=20 set=8 someone=40 start=27 teach=35 tent=4 tents=4 test=13 town=5 train=39 want=45 wilderness=14 without=22" },
+  ["gossip:01530ff61a3b291e"] = { text = "arts=44 basics=49 before=31 camp=5 campfire=24 care=11 center=8 check=48 complete=27 cooks=36 culinary=43 fire=38 folk=12 head=18 if=16 learn=50 make=39 most=35 need=19 one=33 own=4 remember=23 set=10 someone=46 start=30 teach=40 tent=6 tents=6 test=15 town=7 train=45 want=51 wilderness=17 without=25 your=3" },
   ["gossip:01531197b9f4a36e"] = { text = "strange=1 very=2" },
   ["gossip:0159c2043d8a2169"] = { text = "defeated=1 saved=2" },
   ["gossip:0159d6ad19a29743"] = { text = "heard=4 that=2 yeah=1" },

@@ -124,7 +124,6 @@ WFJ.Data.add("gloss", {
   [27121] = "まるで\tまるで\tnothing (entirely)",
   [27122] = "まるで\tまるで\tpractically (as if)",
   [27123] = "まるで\tまるで\treally (at all)",
-  [27124] = "まるで\tまるで\tvery (completely)",
   [27125] = "まるまる\tまるまる\tentire",
   [27126] = "まれ\tまれ\trare",
   [27127] = "まれ\tまれ\trare(ly)",

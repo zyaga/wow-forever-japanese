@@ -875,7 +875,6 @@ WFJ.Data.add("gloss", {
   [874] = "ありがたい\tありがたい\tthanks (grateful)",
   [875] = "ありがたい\tありがたい\twelcome (a blessing)",
   [876] = "ありがたい\tありがたい\twelcome (grateful)",
-  [877] = "ありがたい\tありがたい\twelcome (to be grateful for)",
   [878] = "ありがたい\tありがたい\twonderful (grateful)",
   [879] = "ありがたい\tありがたい\twould appreciate (grateful)",
   [880] = "ありがたいことに\tありがたいことに\tgraciously (thankfully)",

@@ -70,6 +70,7 @@ WFJ.Data.add("name", {
   ["a844a26561e950d3"] = { "プランジャー", "ぷらんじゃー", "Plunger" },
   ["a844d2daa5b324e2"] = { "ファイアメイン・アッシュ・テイル", "ふぁいあめいん・あっしゅ・ている", "Firemane Ash Tails" },
   ["a8461a46379ef0d7"] = { "グラナイト・リング", "ぐらないと・りんぐ", "Granite Ring" },
+  ["a846ab246de1227f"] = { "スコールディング・スタッフ", "すこーるでぃんぐ・すたっふ", "Scalding Staff" },
   ["a8486982c0260225"] = { "デプリケイテッド・ウォー・ハーネス", "でぷりけいてっど・うぉー・はーねす", "Deprecated War Harness" },
   ["a84a2718cf56c142"] = { "ミスティカル・ローブ", "みすてぃかる・ろーぶ", "Mystical Robe" },
   ["a84aaedbca2f2969"] = { "エンド・ミッション", "えんど・みっしょん", "[DNT] End Mission" },
@@ -234,7 +235,7 @@ WFJ.Data.add("name", {
   ["a8f7e3e43c5957ca"] = { "コーズピッカー", "こーずぴっかー", "Corsepickers" },
   ["a8f7ff6049a9bf6a"] = { "フォーマル・ダンギ", "ふぉーまる・だんぎ", "Formal Dangui" },
   ["a8f840d25f11c696"] = { "フリーシンカーズ・アームガード", "ふりーしんかーず・あーむがーど", "Freethinker's Armguards" },
-  ["a8faa6f29a5aed7b"] = { "モンスター・メイス2エイチ、スマイトズ・マイティ・ハンマー", "もんすたー・めいすにえいちすまいとず・まいてぃ・はんまー", "Monster - Mace2H, Smite's Mighty Hammer" },
+  ["a8faa6f29a5aed7b"] = { "モンスター・メイス2エイチ、スマイツ・マイティ・ハンマー", "もんすたー・めいすにえいちすまいつ・まいてぃ・はんまー", "Monster - Mace2H, Smite's Mighty Hammer" },
   ["a8fd7c6319676500"] = { "トーテミック・レザー・パンツ", "とーてみっく・れざー・ぱんつ", "Totemic Leather Pants" },
   ["a8fea2b5ae6bddd6"] = { "エッセンス・オブ・ファイア", "えっせんす・おぶ・ふぁいあ", "[DNT] Essence of Fire" },
 })

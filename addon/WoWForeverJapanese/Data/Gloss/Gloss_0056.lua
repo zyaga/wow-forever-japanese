@@ -273,7 +273,6 @@ WFJ.Data.add("gloss", {
   [56271] = "叫び声を上げる\tさけびごえをあげる\tscreamed (shouting)",
   [56272] = "叫び始める\tさけびはじめる\tbegins to bellow",
   [56273] = "叫び求める\tさけびもとめる\tcries out for",
-  [56274] = "叫ぶ\tさけぶ\tare crying (shouting)",
   [56275] = "叫ぶ\tさけぶ\tcalled (shouted)",
   [56276] = "叫ぶ\tさけぶ\tcalled out",
   [56277] = "叫ぶ\tさけぶ\tcried out",

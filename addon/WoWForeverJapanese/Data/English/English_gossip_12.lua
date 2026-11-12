@@ -22,6 +22,7 @@ WFJ.Data.add("english", {
   ["gossip:125eb83e9ebbcd52"] = { text = "exposed=5 forces=3 my=6 our=2 quickly=1 ritual=7 with=4" },
   ["gossip:1262cd1cbbe26ef4"] = { text = "cloudy=3 find=10 future=2 happiness=9 relationship=4 sure=7 two=1 work=6" },
   ["gossip:126c2ca45e70eefb"] = { text = "blade=6 corruption=1 my=5 remove=7 runs=4 veins=3 your=2" },
+  ["gossip:126d8d5739df9240"] = { text = "blood=1 bones=2" },
   ["gossip:127302883aa319ca"] = { text = "agreed=3 alone=1 ambush=12 here=7 intended=13 me=11 meet=2 my=8 shadow=10 shrine=9 think=14 thought=4" },
   ["gossip:127ada4cd3aa3ff6"] = { text = "all=2 always=5 everything=8 melt=3 robe=6 snow=1 wet=7" },
   ["gossip:127b9c587536c55f"] = { text = "laugh=3 least=5 loose=4 reptilian=1 think=7" },

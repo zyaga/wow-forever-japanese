@@ -272,7 +272,6 @@ WFJ.Data.add("gloss", {
   [67269] = "導く\tみちびく\tcan channel",
   [67270] = "導く\tみちびく\tcan guide",
   [67271] = "導く\tみちびく\tcan guide (you)",
-  [67272] = "導く\tみちびく\tcan lead",
   [67273] = "導く\tみちびく\tcan put (guide) you",
   [67274] = "導く\tみちびく\tcan take (lead)",
   [67275] = "導く\tみちびく\tchannel",

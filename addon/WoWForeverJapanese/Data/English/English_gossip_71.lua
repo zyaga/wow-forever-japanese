@@ -27,6 +27,7 @@ WFJ.Data.add("english", {
   ["gossip:719fcc8c5211564c"] = { text = "check=5 gun=1 said=4 should=6 sights=2" },
   ["gossip:71a5c7bcc28b338d"] = { text = "blood=3 freeze=4 veins=2 your=1" },
   ["gossip:71abc13cb8502d5e"] = { text = "affect=13 all=11 amplify=30 battles=8 beneath=20 collapse=23 confines=15 enemies=32 glorious=7 good=4 health=1 his=17 hunger=19 immense=18 its=28 leave=16 life=12 never=14 our=31 planet=10 punish=33 see=3 strength=29 surely=22 talisman=26 this=9 undertaken=6 will=24 world=21 you=5 your=25" },
+  ["gossip:71ae797677172f16"] = { text = "dedicated=4 i=1 life=3 lifetime=5 search=2" },
   ["gossip:71b17c15c95edf55"] = { text = "beast=6 cleanse=13 dreadful=5 foul=9 his=8 me=1 slay=7 taint=10 this=4 world=12 worry=3" },
   ["gossip:71b8faa8fe9ce3ae"] = { text = "attention=24 before=14 don't=10 farmer=6 fire=12 forget=11 give=17 handed=5 i=18 ladle=16 like=1 no=7 now=22 potion=2 salvage=19 start=13 stir=3 stirring=3 stop=9 that=15 you=4" },
   ["gossip:71bdbaf0ded81376"] = { text = "need=8 quest=7 stone=2 table=1 take=4 will=9 your=6" },

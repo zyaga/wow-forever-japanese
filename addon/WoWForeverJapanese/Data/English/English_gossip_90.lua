@@ -11,6 +11,7 @@ WFJ.Data.add("english", {
   ["gossip:901fcd8587c0e272"] = { text = "amuse=8 clown=12 don't=25 either=5 here=10 huh=20 kidding=1 think=13 you=7" },
   ["gossip:902909341515db4b"] = { text = "best=1 here=3 weapons=2" },
   ["gossip:902c128ce3997242"] = { text = "finished=2 guards=1" },
+  ["gossip:902cbc7eafb96eaa"] = { text = "again=1 done=5 good=3 see=2 work=4" },
   ["gossip:9033afd99f77cbf0"] = { text = "approach=39 believe=15 cycle=30 dependence=29 direct=38 disagree=6 hand=35 hands=7 hoping=11 however=17 many=4 merely=10 more=37 path=24 point=2 power=20 putting=32 relies=34 return=9 spirits'=8 sufficient=13 their=18 this=1 us=25 waned=21 we=36 you=14" },
   ["gossip:9035a4e021e3fe7c"] = { text = "almost=9 busy=6 never=7 speak=2 stranger=1" },
   ["gossip:903a41037df347e6"] = { text = "air=31 but=14 change=35 dislikes=13 done=15 easier=21 far=28 he=9 hearted=19 hope=3 huge=34 kids=4 knows=17 leaves=6 luck=2 me=5 my=1 others=24 rougher=29 signaling=37 so=12 something=33 there=10 though=30 trips=11 who=40 years=22" },

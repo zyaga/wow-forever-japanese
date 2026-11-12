@@ -59,6 +59,7 @@ WFJ.Data.add("english", {
   ["gossip:98e07503f9c8ca10"] = { text = "cavalry=5 indigenous=2 our=4 rams=3 vital=8" },
   ["gossip:98e2452083bf8c94"] = { text = "don't=2 interrupt=1" },
   ["gossip:98e3d2c218fea9b9"] = { text = "but=12 don't=11 foundation=10 fret=13 help=18 i=5 lad=2 learn=8 my=14 sorry=1 speak=16 student=15 teach=6 what=7" },
+  ["gossip:98e54ef8f408c555"] = { text = "i=1 powerless=4" },
   ["gossip:98ed4bc9dc09155e"] = { text = "busy=10 fast=6 i=8 make=7 new=1 suppose=5 trained=4 use=3 very=9 weapon=2" },
   ["gossip:98ef179cac98cf7e"] = { text = "inn=3 ring=2 upper=1" },
   ["gossip:98efb7d722a0e13c"] = { text = "all=4 days=10 desert=5 fish=7 gates=24 gong=22 left=11 like=12 materiel=3 mon=13 more=9 open=25 ready=16 ring=23 shipped=6 someone=18 south=19 that=21 then=14 this=1 war=2" },

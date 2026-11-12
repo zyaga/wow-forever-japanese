@@ -61,6 +61,7 @@ WFJ.Data.add("name", {
   ["de463c58efeb33f4"] = { "サモン・バーニング・インプ", "さもん・ばーにんぐ・いんぷ", "Summon Burning Imp" },
   ["de47e64ba5344428"] = { "ハイヴリーガル・ハンター・キラー", "はいゔりーがる・はんたー・きらー", "Hive'Regal Hunter-Killer" },
   ["de494a8343b82ac3"] = { "レシーブ・リワード・アンド・クエスト・オブジェクト、コモン、アンダーシティ", "れしーぶ・りわーど・あんど・くえすと・おぶじぇくとこもんあんだーしてぃ", "Receive Reward AND Quest Object, Common, Undercity" },
+  ["de4a0da435953ac9"] = { "クレスト・オブ・スプレマシー", "くれすと・おぶ・すぷれましー", "Crest of Supremacy" },
   ["de4b1fa0b1358e90"] = { "グール・リブ", "ぐーる・りぶ", "Ghoul Rib" },
   ["de4b22c4b1364de8"] = { "グール・ロット", "ぐーる・ろっと", "Ghoul Rot" },
   ["de50879614d6ff97"] = { "レシピ：ポーション・オブ・ヴェノマス・ブラッド", "れしぴ・ぽーしょん・おぶ・ゔぇのます・ぶらっど", "Recipe: Potion of Venomous Blood" },

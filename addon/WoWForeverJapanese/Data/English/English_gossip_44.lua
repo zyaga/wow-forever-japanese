@@ -38,6 +38,7 @@ WFJ.Data.add("english", {
   ["gossip:44d10beb566ee504"] = { text = "busy=7 front=2 inn=1 move=5 now=4" },
   ["gossip:44dd592db0a2c898"] = { text = "easy=1 prey=2" },
   ["gossip:44e1a1f0aebff2f3"] = { text = "come=9 dominion=12 ethereal=7 form=8 help=4 helped=4 i=1 my=10 people=3 soul=11 this=6 those=18" },
+  ["gossip:44e1ce141fb630ec"] = { text = "accept=41 acting=28 anchor=7 asked=17 compensation=13 demise=4 enough=31 fetters=9 fragile=8 friend=24 gift=40 know=34 notion=14 please=35 preserve=26 realm=6 restore=10 reward=12 savor=2 should=11 simple=39 thanks=32 this=1 truly=22 victory=3 with=37 worth=23 you=16" },
   ["gossip:44e750ffe06de021"] = { text = "casts=5 its=1 massive=2 shadow=3 whole=4" },
   ["gossip:44e85beb778d8492"] = { text = "corruption=2 from=3 mad=5 this=1" },
   ["gossip:44eecdac834fd9e4"] = { text = "around=4 bask=8 champion=3 cry=10 glory=7 rally=5 revel=11 rise=2 slayer=9 spirits=1" },

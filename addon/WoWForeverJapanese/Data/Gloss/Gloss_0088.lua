@@ -601,7 +601,6 @@ WFJ.Data.add("gloss", {
   [88599] = "最後に\tさいごに\tlast",
   [88600] = "最後に\tさいごに\tlastly",
   [88601] = "最後に\tさいごに\tultimately (finally)",
-  [88602] = "最後に笑う\tさいごにわらう\thave the last laugh",
   [88603] = "最後まで\tさいごまで\tfinish (to the end)",
   [88604] = "最後まで\tさいごまで\tthrough (to the end)",
   [88605] = "最悪\tさいあく\tawful (the worst)",

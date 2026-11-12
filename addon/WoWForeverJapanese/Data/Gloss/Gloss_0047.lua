@@ -342,8 +342,6 @@ WFJ.Data.add("gloss", {
   [47340] = "入る\tはいる\tcontaining (holding)",
   [47341] = "入る\tはいる\tcontaining (with inside)",
   [47342] = "入る\tはいる\tcontains",
-  [47343] = "入る\tはいる\tcontains (are in)",
-  [47344] = "入る\tはいる\tcontains (are inside)",
   [47345] = "入る\tはいる\tcontains (is in)",
   [47346] = "入る\tはいる\tcould access (can enter)",
   [47347] = "入る\tはいる\tcould be in",
