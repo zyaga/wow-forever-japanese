@@ -179,7 +179,7 @@ WFJ.Data.add("name", {
   ["b2e3728d8cc505b0"] = { "ウォッチャーズ・シグネット・オブ・フェロシティ", "うぉっちゃーず・しぐねっと・おぶ・ふぇろしてぃ", "Watcher's Signet of Ferocity" },
   ["b2e723b51a371bd0"] = { "エサラス・サール・ノダラドール", "えさらす・さーる・のだらどーる", "Esarus thar no'Darador" },
   ["b2e7ab25f1a82559"] = { "ラスリング・ウィンド", "らすりんぐ・うぃんど", "Rustling Winds" },
-  ["b2e802676b2996a1"] = { "ディノフリル・カスク", "でぃのふりる・かすく", "Dinofrill Casque" },
+  ["b2e802676b2996a1"] = { "ダイノフリル・カスク", "だいのふりる・かすく", "Dinofrill Casque" },
   ["b2e833ab3594f922"] = { "ボビング・アップル", "ぼびんぐ・あっぷる", "Bobbing Apple" },
   ["b2e83ba635a0b221"] = { "ラヴァサウルス・マトリアーク", "らゔぁさうるす・まとりあーく", "Ravasaur Matriarchs" },
   ["b2e8ab6dbd87c0a4"] = { "スカラマンス・ドア", "すからまんす・どあ", "Scholomance Door" },

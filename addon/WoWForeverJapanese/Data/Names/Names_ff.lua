@@ -209,6 +209,7 @@ WFJ.Data.add("name", {
   ["ffdd03d61bfd24ce"] = { "トログ・ストーン・トゥース", "とろぐ・すとーん・とぅーす", "Trogg Stone Tooth" },
   ["ffdf0a7404021467"] = { "レッド・メカノストライダー", "れっど・めかのすとらいだー", "Red Mechanostrider" },
   ["ffdfa100122e19de"] = { "ラビッド・グランパ・ウィップル", "らびっど・ぐらんぱ・うぃっぷる", "[UNUSED] Rabid Grandpa Whipple" },
+  ["ffe1f1c870c2f45f"] = { "エンチャンテッド・ブランチ", "えんちゃんてっど・ぶらんち", "enchanted branch" },
   ["ffe297c0ddd7a01d"] = { "ブロークン・ツール", "ぶろーくん・つーる", "Broken Tool" },
   ["ffe359b5e9bead16"] = { "ブロークン・トラップ", "ぶろーくん・とらっぷ", "Broken Trap" },
   ["ffe3bfda29a92f91"] = { "ブック・スースセイイング・フォー・ダミー", "ぶっく・すーすせいいんぐ・ふぉー・だみー", "Book \"Soothsaying for Dummies\"" },

@@ -3,6 +3,7 @@ local _, WFJ = ...
 WFJ.Data.add("name", {
   ["7000190b6c7678ad"] = { "プレミア・ジェネラルズ・コドーハイド・エポレット", "ぷれみあ・じぇねらるず・こどーはいど・えぽれっと", "Premier General's Kodohide Epaulets" },
   ["70035fd511beadc6"] = { "プレミア・リングメイル・ヘルム", "ぷれみあ・りんぐめいる・へるむ", "Premier Ringmail Helm" },
+  ["7004662df71ea6a2"] = { "マスター・ドリームシーカー", "ますたー・どりーむしーかー", "Master Dreamseeker" },
   ["7006df44aee26638"] = { "ジョン・ルクラフト", "じょん・るくらふと", "[PH] Jon LeCraft" },
   ["700a206bd41b84c4"] = { "サモン・スポーン・オブ・マーリ", "さもん・すぽーん・おぶ・まーり", "Summon Spawn of Mar'li" },
   ["700a222322923880"] = { "ヴォサー・ブラクセル", "ゔぉさー・ぶらくせる", "Vosur Brakthel" },

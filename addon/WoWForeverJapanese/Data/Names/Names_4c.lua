@@ -144,6 +144,7 @@ WFJ.Data.add("name", {
   ["4c9c4253dc5faad3"] = { "ウーサーズ・ドワーフ・トリビュート", "うーさーず・どわーふ・とりびゅーと", "Uther's Dwarf Tribute" },
   ["4c9cc4b3940db641"] = { "リファインド・コンコクション・オブ・クレンジング", "りふぁいんど・こんこくしょん・おぶ・くれんじんぐ", "Refined Concoction of Cleansing" },
   ["4c9d14487bb0e9ba"] = { "ダークムーン・フェア・フード・ベンダー", "だーくむーん・ふぇあ・ふーど・べんだー", "Darkmoon Faire Food Vendor" },
+  ["4c9de212a3f94a55"] = { "マジスカル", "まじすかる", "magiskull" },
   ["4c9df33ad9ac0e9e"] = { "バンディッツ・ジャーキン", "ばんでぃっつ・じゃーきん", "Bandit's Jerkin" },
   ["4c9e6e76464225ff"] = { "インセンディサイト・ミネラル・ヴェイン", "いんせんでぃさいと・みねらる・ゔぇいん", "Incendicite Mineral Vein" },
   ["4c9eb88fb4a5808c"] = { "ジャイアント・モス・クリーパー", "じゃいあんと・もす・くりーぱー", "Giant Moss Creeper" },

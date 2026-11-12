@@ -3804,8 +3804,8 @@
 {"en": "craftsmen", "ja": "クラフツメン", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-001@2026-11-11", "imported": "2026-11-11"}}
 {"en": "crafty", "ja": "クラフティ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-001@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Crag", "ja": "クラッグ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-001@2026-11-11", "imported": "2026-11-11"}}
-{"en": "crag'og", "ja": "クラゴグ", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-70888@2026-11-12", "imported": "2026-11-12"}}
-{"en": "crag'rog", "ja": "クラグロッグ", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-70888@2026-11-12", "imported": "2026-11-12"}}
+{"en": "crag'og", "ja": "クラッグオグ", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-70888@2026-11-12", "imported": "2026-11-12"}}
+{"en": "crag'rog", "ja": "クラッグロッグ", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-70888@2026-11-12", "imported": "2026-11-12"}}
 {"en": "Cragfists", "ja": "クラッグフィスト", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-002@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Cragg", "ja": "クラッグ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-002@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Craghelm", "ja": "クラッグヘルム", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-002@2026-11-10", "imported": "2026-11-10"}}
@@ -4779,7 +4779,7 @@
 {"en": "dinner", "ja": "ディナー", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-002@2026-11-11", "imported": "2026-11-11"}}
 {"en": "Dinnis", "ja": "ディニス", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-002@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Dinodestroyer", "ja": "ダイノデストロイヤー", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-002@2026-11-10", "imported": "2026-11-10"}}
-{"en": "dinofrill", "ja": "ディノフリル", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-70888@2026-11-12", "imported": "2026-11-12"}}
+{"en": "dinofrill", "ja": "ダイノフリル", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-70888@2026-11-12", "imported": "2026-11-12"}}
 {"en": "Dinoloc", "ja": "ディノロック", "check": true, "provenance": {"class": "human", "source": "hearthstone@256589", "imported": "2026-11-10"}}
 {"en": "Dinomender", "ja": "ダイノメンダー", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-002@2026-11-10", "imported": "2026-11-10"}}
 {"en": "dinosaur", "ja": "ダイナソー", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-respell-002@2026-11-11", "imported": "2026-11-11"}}
@@ -14694,7 +14694,7 @@
 {"en": "Quel'danil", "ja": "クエルダニル", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-008@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Quel'Delar", "ja": "ケルデラー", "check": true, "provenance": {"class": "human", "source": "hearthstone@256589", "imported": "2026-11-10"}}
 {"en": "Quel'dora", "ja": "クエルドーラ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-008@2026-11-10", "imported": "2026-11-10"}}
-{"en": "quel'dorai", "ja": "クェルドライ", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-70888@2026-11-12", "imported": "2026-11-12"}}
+{"en": "quel'dorai", "ja": "クエルドライ", "check": true, "provenance": {"class": "machine", "model": "claude-fable-5-2", "source": "draft-names-names-respell-70888@2026-11-12", "imported": "2026-11-12"}}
 {"en": "Quel'dorei", "ja": "クエルドレイ", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-names2-005@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Quel'Lithien", "ja": "クエルリシエン", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-008@2026-11-10", "imported": "2026-11-10"}}
 {"en": "Quel'Serrar", "ja": "クエルセラー", "check": true, "provenance": {"class": "machine", "model": "claude-opus-5-5", "source": "draft-names-glossary-008@2026-11-10", "imported": "2026-11-10"}}

@@ -33,7 +33,7 @@ or Japanese)
 | NPC dialogue lines | 11,478 |
 | Book pages | 923 |
 | Letter pages | 209 |
-| Item tooltips | 11,182 |
+| Item tooltips | 11,183 |
 | Spell tooltips | 20,349 |
 | UI | 16,116 |
 
@@ -297,7 +297,7 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 | NPC の会話 | 11,478 行 |
 | 本 | 923 ページ |
 | 手紙 | 209 ページ |
-| アイテムのツールチップ | 11,182 |
+| アイテムのツールチップ | 11,183 |
 | 呪文のツールチップ | 20,349 |
 | UI | 16,116 |
 

@@ -2337,7 +2337,7 @@
 {"creature": 248265, "voice": "qhumanmaleofficial", "row": "set humanmaleofficialnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
 {"creature": 248266, "voice": "qhumanmaleofficial", "row": "set humanmaleofficialnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
 {"creature": 248277, "voice": "qhumanfemalestandard", "row": "set humanfemalestandardnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
-{"creature": 248367, "voice": "qhumanmalestandard", "row": "set humanmalestandardnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-12"}}
+{"creature": 248367, "voice": "qhumanfemalestandard", "row": "set humanfemalestandardnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-12"}}
 {"creature": 248415, "voice": "qdwarfmalestandard", "row": "set dwarfmalestandardnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
 {"creature": 248755, "voice": "qskybourneelffemale3773", "row": "set skybourneelffemale3773npc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
 {"creature": 248840, "voice": "qundeadmalestandard", "row": "set undeadmalestandardnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
@@ -2396,10 +2396,10 @@
 {"creature": 252800, "voice": "qskybourneelffemale3773", "row": "set skybourneelffemale3773npc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
 {"creature": 253002, "voice": "qskybourneelfmale3776", "row": "set skybourneelfmale3776npc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
 {"creature": 253004, "voice": "qskybourneelffemale3773", "row": "set skybourneelffemale3773npc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
-{"creature": 253066, "voice": "qhumanmalestandard", "row": "set humanmalestandardnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-12"}}
+{"creature": 253066, "voice": "qtaurenmalewarrior", "row": "set taurenmalewarriornpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-12"}}
 {"creature": 253092, "voice": "qnightelffemalesentinel", "row": "set nightelffemalesentinelnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
-{"creature": 253139, "voice": "qhumanmalestandard", "row": "set humanmalestandardnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-12"}}
-{"creature": 253140, "voice": "qhumanmalestandard", "row": "set humanmalestandardnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-12"}}
+{"creature": 253139, "voice": "qtaurenmalewarrior", "row": "set taurenmalewarriornpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-12"}}
+{"creature": 253140, "voice": "qtaurenmalewarrior", "row": "set taurenmalewarriornpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-12"}}
 {"creature": 253204, "voice": "qskybourneelfmale3776", "row": "set skybourneelfmale3776npc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
 {"creature": 253279, "voice": "qnightelffemalestandard", "row": "set nightelffemalestandardnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
 {"creature": 253284, "voice": "qskybourneelfmale3776", "row": "set skybourneelfmale3776npc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
@@ -2551,7 +2551,7 @@
 {"creature": 272526, "voice": "qgoblinmalezany", "row": "set goblinmalezanynpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
 {"creature": 272633, "voice": "qtaurenfemalestandard", "row": "set taurenfemalestandardnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
 {"creature": 273017, "voice": "qskybourneelfmale3775", "row": "set skybourneelfmale3775npc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
-{"creature": 274757, "voice": "qhumanmalestandard", "row": "set humanmalestandardnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-12"}}
+{"creature": 274757, "voice": "qhumanfemalestandard", "row": "set humanfemalestandardnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-12"}}
 {"creature": 275269, "voice": "qskybourneelfmale3776", "row": "set skybourneelfmale3776npc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
 {"creature": 275270, "voice": "qskybourneelfmale3776", "row": "set skybourneelfmale3776npc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
 {"creature": 275491, "voice": "qhumanmalestandard", "row": "set humanmalestandardnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
@@ -2567,6 +2567,6 @@
 {"creature": 276171, "voice": "qskybourneelffemale3773", "row": "set skybourneelffemale3773npc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
 {"creature": 276318, "voice": "qnightelfmalestandard", "row": "set nightelfmalestandardnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}
 {"creature": 276783, "voice": "qhumanmalestandard", "row": "set humanmalestandardnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-08"}}
-{"creature": 276786, "voice": "qhumanmalestandard", "row": "set humanmalestandardnpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-12"}}
+{"creature": 276786, "voice": "qtaurenmaleshaman", "row": "set taurenmaleshamannpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-12"}}
 {"creature": 277037, "voice": "qgoblinfemalezany", "row": "set goblinfemalezanynpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-12"}}
 {"creature": 277182, "voice": "qtaurenmalewarrior", "row": "set taurenmalewarriornpc", "provenance": {"source": "cast@voice.toml", "imported": "2026-11-06"}}

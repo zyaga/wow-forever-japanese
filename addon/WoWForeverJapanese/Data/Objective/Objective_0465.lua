@@ -10,7 +10,7 @@ WFJ.Data.add("objective", {
   [465403] = { "Alvarion Windfieldの話を聞く", 0xc892d279, "." },
   [465404] = { "Aamelia Windfieldを見つける", 0xd8af91b6, "." },
   [465421] = { "Aameliaについて行き、最後の戦いに挑む", 0xff716600, "." },
-  [465428] = { "つかみかかる枝を回収する", 0x011dd0cc, "." },
+  [465428] = { "つかむための枝を回収する", 0x011dd0cc, "." },
   [465667] = { "Elemental Currentsのデータを集める", 0x94cdad6f, "." },
   [465686] = { "Fillion Flamebreezeを見つける", 0xfae43c43, "." },
   [465687] = { "敵を避けながらFillion Flamebreezeを安全な場所まで運ぶ", 0x082264eb, "." },

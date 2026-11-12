@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-12 at commit `3b5a80f91`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-12 at commit `701c3057a`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -9,18 +9,18 @@
 
 | Surface | English lines | Ship Japanese | Nothing to translate | Done | Not yet |
 |---|---|---|---|---|---|
-| Quest text | 23,289 | 23,199 | 76 | 99.9% | 14 |
+| Quest text | 23,289 | 23,208 | 76 | 100.0% | 5 |
 | NPC dialogue (gossip, speech) | 11,476 | 11,476 | 0 | 100.0% | 0 |
 | Book / letter pages | 1,257 | 1,205 | 52 | 100.0% | 0 |
 | Quest objective lines | 685 | 584 | 101 | 100.0% | 0 |
 | Exploration / event objectives | 245 | 243 | 2 | 100.0% | 0 |
-| Item descriptions | 10,583 | 10,581 | 0 | 100.0% | 2 |
+| Item descriptions | 10,583 | 10,582 | 0 | 100.0% | 1 |
 | Spell tooltips + auras | 25,933 | 25,885 | 1 | 99.8% | 47 |
 | Interface strings | 16,116 | 16,116 | 0 | 100.0% | 0 |
-| **All** | **89,584** | | | **99.9%** | **63** |
+| **All** | **89,584** | | | **99.9%** | **53** |
 
 Lines shipped as their English under a maintainer ruling (`ruling: accept`, for names, classes,
-professions, internal strings): quest 335, gossip 89, item 895, spell 301, ui 313.
+professions, internal strings): quest 335, gossip 89, item 907, spell 301, ui 313.
 
 ### Nothing to translate (counted as done)
 
@@ -40,17 +40,9 @@ professions, internal strings): quest 335, gossip 89, item 895, spell 301, ui 31
 | Surface | Why | Lines |
 |---|---|---|
 | Quest text | rejected: alignment_failed:Orgrimmar | 2 |
-| Quest text | rejected: truncated:1/3 | 2 |
-| Quest text | rejected: truncated:1/2 | 2 |
 | Quest text | rejected: alignment_failed:Felicia | 1 |
-| Quest text | rejected: alignment_failed:Horde Quartermaster | 1 |
-| Quest text | rejected: numbers_changed:1 | 1 |
-| Quest text | rejected: alignment_failed:Winthalus | 1 |
-| Quest text | rejected: truncated:1/4 | 1 |
-| Quest text | rejected: numbers_changed:8 | 1 |
 | Quest text | rejected: alignment_failed:Tyr's Watch | 1 |
 | Quest text | rejected: alignment_failed:skyborne | 1 |
-| Item descriptions | no Japanese yet | 1 |
 | Item descriptions | no Japanese yet: the template has too many optional parts for one translation | 1 |
 | Spell tooltips + auras | no Japanese yet: the template includes a spell the Forever tables do not hold | 34 |
 | Spell tooltips + auras | no Japanese yet: the template has too many optional parts for one translation | 8 |
@@ -371,7 +363,7 @@ Lines are non-empty values; a server cache counts the records this install holds
 
 | Type | Lines that can carry a word list | With one | Done | Stale | Words | With a meaning |
 |---|---|---|---|---|---|---|
-| quest | 21,731 | 21,731 | 100.0% | 197 | 344,687 | 100.0% |
+| quest | 21,740 | 21,737 | 100.0% | 197 | 344,920 | 100.0% |
 | gossip | 11,341 | 11,341 | 100.0% | 0 | 110,937 | 100.0% |
 | ui | 15,298 | 15,298 | 100.0% | 0 | 47,665 | 100.0% |
 | book | 1,167 | 1,167 | 100.0% | 0 | 39,629 | 100.0% |
@@ -386,11 +378,11 @@ translation uses for it. The pairs are read off the meanings the readings alread
 
 | Type | Lines with English and a word list | Words that can take a card | With one | Done |
 |---|---|---|---|---|
-| quest | 21,723 | 444,449 | 404,733 | 91.1% |
-| gossip | 11,335 | 146,311 | 134,266 | 91.8% |
+| quest | 21,729 | 444,774 | 404,994 | 91.1% |
+| gossip | 11,335 | 146,311 | 134,265 | 91.8% |
 | ui | 14,310 | 48,598 | 43,716 | 90.0% |
 | book | 1,102 | 44,735 | 40,920 | 91.5% |
-| **All** | | **684,093** | **623,635** | **91.2%** |
+| **All** | | **684,418** | **623,895** | **91.2%** |
 
 A word is counted each time it occurs. Names (a capitalised word inside a sentence) and codes
 the client fills in are not counted, and neither are the words that take no card by design: the
@@ -426,5 +418,5 @@ Shipped Japanese the voice does not read, by reason.
 | Collected in game with no known speaker | 302 |
 | HTML book page (keeps the client's layout) | 38 |
 | A quest log line (the completion text the tracker shows) | 20 |
+| No speaker found for the quest | 8 |
 | NPC text with no known speaker | 2 |
-| No speaker found for the quest | 2 |
