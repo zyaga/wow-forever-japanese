@@ -156,6 +156,7 @@ end
 -- A quest title inside a system line, as its Japanese when exactly one translation answers it (UIStrings
 -- questTitle arguments). → Japanese | nil
 function TooltipUnit.titleJapanese(title)
+  if not WFJ.QUEST_TITLES_JAPANESE then return nil end -- the title is a name: it stays as the client wrote it
   local id = TooltipUnit.questFor(title)
   local entry = id and WFJ.Lookup.get("quest.title", id)
   return entry and type(entry.ja) == "string" and entry.ja ~= "" and entry.ja or nil

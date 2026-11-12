@@ -67,6 +67,38 @@ describe("UI/QuestMap: the camelot quest log", function()
 
   after_each(function() H.uiTeardown() end)
 
+  describe("titles left to the client (the shipped default)", function()
+    before_each(function()
+      H.uiTeardown()
+      H.uiSetup(WFJ, UI, { titlesOff = true, lookup = function(kind, id) return DATA[kind] and DATA[kind][id] end })
+      Q.log = { 5, 6, 7 }
+    end)
+
+    it("the list rows, the tracker headers and the details title keep the client's English; the text is Japanese",
+    function()
+      Q.party[5] = 1
+      Q.updateList()
+      local rows = Q.rows()
+      assert.are.equal("[1] [10] Wolf Pelts", rows[5].Text:GetText())
+      assert.is_truthy(rows[6].Text:GetText():find("The Lost Tome", 1, true))
+      Q.watched = { [5] = true }
+      Q.updateTracker()
+      assert.is_truthy(_G.QuestObjectiveTracker.usedBlocks[5].HeaderText:GetText():find("Wolf Pelts", 1, true))
+      Q.showDetails(5)
+      assert.are.equal("Wolf Pelts", QuestInfoTitleHeader:GetText())
+      assert.are.equal("森の狼が増えている。", QuestInfoDescriptionText:GetText())
+      Q.showPopup(6)
+      assert.are.equal("The Lost Tome", QuestInfoTitleHeader:GetText())
+    end)
+
+    it("a quest with no Japanese is marked once, on its description, never on its title", function()
+      Q.showDetails(7)
+      assert.are.equal("Untranslated Errand", QuestInfoTitleHeader:GetText())
+      assert.is_truthy(QuestInfoDescriptionText:GetText():find(WFJ.MARKER.missing, 1, true))
+      assert.is_truthy(QuestInfoDescriptionText:GetText():find("Nobody wrote this.", 1, true))
+    end)
+  end)
+
   describe("the details pane and the popup", function()
     it("renders the selected quest's title, objectives and description on the map's details pane", function()
       Q.showDetails(5)

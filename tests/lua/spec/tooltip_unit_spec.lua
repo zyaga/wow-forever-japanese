@@ -48,6 +48,21 @@ describe("UI/TooltipUnit: unit mouseover lines", function()
 
   after_each(function() H.uiTeardown(); Stub.noTooltipDataProcessor = false end)
 
+  it("a quest title inside a system line stays the client's English unless titles are switched on", function()
+    WFJ.Data = WFJ.Data or {}
+    local lookup = WFJ.Lookup
+    WFJ.Lookup = { get = function(kind, id)
+      if kind == "quest.title" and id == 5 then return { ja = "狼の毛皮", h1 = 1 } end
+    end }
+    local questFor = WFJ.TooltipUnit.questFor
+    WFJ.TooltipUnit.questFor = function(title) return title == "Wolf Pelts" and 5 or nil end
+    finally(function() WFJ.Lookup, WFJ.TooltipUnit.questFor = lookup, questFor end)
+    WFJ.QUEST_TITLES_JAPANESE = false
+    assert.is_nil(WFJ.UIStrings.questTitle("Wolf Pelts"))
+    WFJ.QUEST_TITLES_JAPANESE = true
+    assert.are.equal("狼の毛皮", WFJ.UIStrings.questTitle("Wolf Pelts"))
+  end)
+
   it("the level and skinning lines are Japanese; the creature type is kept; the name line is never read", function()
     hover({ "Skinnable", "Level 11 Elite Humanoid", "Skinnable", "<Raid>", "Raid" })
     assert.are.equal("Skinnable", left(1)) -- a unit named like a key: line 1 is its name

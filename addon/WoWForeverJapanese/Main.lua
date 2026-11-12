@@ -324,6 +324,7 @@ function WFJ.OnLoad()
     enabled = function() return WFJ.State.enabled end,
     areaEnabled = WFJ.State.areaEnabled,
     modifierHeld = WFJ.Modifier.isDown,
+    kindOff = function(kind) return kind == "quest.title" and not WFJ.QUEST_TITLES_JAPANESE end,
     lookup = WFJ.Lookup.get,
     marker = function(name) return WFJ.Settings.get("marker." .. name) end,
     -- the runtime gate for unaligned entries (ADR-007). The duration renderer is UIStrings',

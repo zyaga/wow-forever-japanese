@@ -52,6 +52,7 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,
       modifierHeld = WFJ.Modifier.isDown,
+      kindOff = opts.titlesOff and function(kind) return kind == "quest.title" end or nil,
       lookup = function(kind, id)
         if opts.lookup then return opts.lookup(kind, id) end
         return data[kind] and data[kind][id]
@@ -180,6 +181,17 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       open("QUEST_DETAIL", QUEST)
       assert.are.equal("Sharptalonの鉤爪", frame.FrontFrame.Header.Title:GetText())
       assert.are.equal(WFJ.Font.PATH, (frame.FrontFrame.Header.Title:GetFont()))
+    end)
+
+    it("with titles left to the client, the page header keeps the English title and the text is still Japanese",
+    function()
+      load({ titlesOff = true })
+      ship(QUEST_JA)
+      open("QUEST_DETAIL", QUEST)
+      assert.are.equal(QUEST.title, frame.FrontFrame.Header.Title:GetText())
+      assert.are_not.equal(WFJ.Font.PATH, (frame.FrontFrame.Header.Title:GetFont()))
+      assert.is_truthy(#DUI.paragraphs() > 0)
+      assert.are_not.equal(QUEST.description, DUI.paragraphs()[1])
     end)
 
     it("a description that is not the quest's own is looked up by its English", function()

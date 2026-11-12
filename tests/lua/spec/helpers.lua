@@ -95,6 +95,8 @@ function H.uiSetup(WFJ, ui, opts)
   opts = opts or {}
   WFJ.Compat.init(function(name) return _G[name] end)
   WFJ.Settings.load(nil, 1, {})
+  -- the specs cover the Japanese titles (the switch on) unless one asks for the shipped default, `titlesOff`
+  WFJ.QUEST_TITLES_JAPANESE = not opts.titlesOff
   local function h1(text) return (WFJ.Hash.h32x2(WFJ.Normalize.v1(text))) end
   local rows = {}
   H._uiGlobals = {}
@@ -110,6 +112,7 @@ function H.uiSetup(WFJ, ui, opts)
     enabled = function() return WFJ.State.enabled end,
     areaEnabled = WFJ.State.areaEnabled,
     modifierHeld = WFJ.Modifier.isDown,
+    kindOff = opts.titlesOff and function(kind) return kind == "quest.title" end or nil,
     lookup = function(kind, id)
       if kind == "ui" then local r = rows[id]; return r and { ja = r[1], status = r[3] } end
       return opts.lookup and opts.lookup(kind, id) or nil
