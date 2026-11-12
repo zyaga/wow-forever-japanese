@@ -78,6 +78,7 @@ class Layout:
     objectives_at: int
     bits_at: int | None
     pad_bits: int
+    pad_bits_also: tuple[int, ...] = ()  # other values a record of this build carries there
     zero_u32_at: tuple[int, ...] = ()
     pre_list_count_at: int | None = None
     post_list_count_at: int | None = None
@@ -149,6 +150,14 @@ LAYOUTS = (
     replace(_FOREVER_69913, build=70532, evidence="Forever 1.60.1.70532, 3,081 of 3,081 records"),
     replace(_FOREVER_69913, build=70790, evidence="Forever 1.60.1.70790, 2,142 of 2,142 records"),
     replace(_FOREVER_69913, build=70862, evidence="Forever 1.60.1.70862, 3,527 of 3,527 records"),
+    # One record (quest 96076) carries 96 after its string lengths where every other carries 32; its nine
+    # strings still end on the payload's last byte. What the bit means is not known.
+    replace(
+        _FOREVER_69913,
+        build=70888,
+        pad_bits_also=(96,),
+        evidence="Forever 1.60.1.70888, 5,239 of 5,239 records (1 with 96 after the string lengths)",
+    ),
 )
 
 
@@ -193,7 +202,7 @@ def _i32(buf: bytes, at: int | None) -> int | None:
     return None if at is None else struct.unpack_from("<i", buf, at)[0]
 
 
-def _string_lengths(block: bytes, pad_bits: int) -> list[int]:
+def _string_lengths(block: bytes, pad_bits: int, also: tuple[int, ...] = ()) -> list[int]:
     bits = int.from_bytes(block, "big")
     total = BITS_BYTES * 8
     out, used = [], 0
@@ -201,7 +210,7 @@ def _string_lengths(block: bytes, pad_bits: int) -> list[int]:
         used += width
         out.append((bits >> (total - used)) & ((1 << width) - 1))
     tail = bits & ((1 << (total - used)) - 1)
-    if tail != pad_bits:
+    if tail != pad_bits and tail not in also:
         raise ValueError(f"the bits after the string lengths are {tail}, this build's are {pad_bits}")
     return out
 
@@ -295,7 +304,7 @@ def decode_payload(qid: int, payload: bytes, lay: Layout) -> WdbQuest:
     bits_at = off if lay.bits_at is None else lay.bits_at
     if bits_at + BITS_BYTES > len(payload):
         raise ValueError(f"the string-length block at {bits_at} runs past the payload")
-    lengths = _string_lengths(payload[bits_at : bits_at + BITS_BYTES], lay.pad_bits)
+    lengths = _string_lengths(payload[bits_at : bits_at + BITS_BYTES], lay.pad_bits, lay.pad_bits_also)
     at = off + BITS_BYTES if lay.bits_at is None else off
     if at + sum(lengths) != len(payload):
         raise ValueError(f"strings end at {at + sum(lengths)}, payload has {len(payload)} bytes")

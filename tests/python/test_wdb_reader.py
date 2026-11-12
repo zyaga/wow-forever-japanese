@@ -119,7 +119,7 @@ def test_an_unpinned_build_is_refused(tmp_path, real):
     """ADR-020: a build with no verified layout stops the import rather than guessing one."""
     path = tmp_path / "questcache.wdb"
     path.write_bytes(real[:4] + struct.pack("<I", 99999) + real[8:])
-    pinned = ", ".join(map(str, (69722, 69913, *FOREVER_PINS)))
+    pinned = ", ".join(map(str, (69722, 69913, *FOREVER_PINS, 70888)))
     with pytest.raises(wdb.WdbError, match=rf"build 99999 has no pinned payload layout \(pinned: {pinned}\)"):
         wdb.read_quests(path)
     assert "wdb_layout" in str(pytest.raises(wdb.WdbError, wdb.read_quests, path).value)
@@ -200,3 +200,43 @@ def test_import_of_a_malformed_file_writes_nothing(tmp_path, monkeypatch, capsys
     err = capsys.readouterr().err.strip().splitlines()
     assert len(err) == 1 and err[0].startswith("wfj import: questcache.wdb:")
     assert not (data / "english").exists()
+
+
+def _with_tail_bit(payload: bytes, lay: wdb.Layout, bit: int) -> bytes:
+    """The record with one more bit set after its nine string lengths (the block follows the variable parts)."""
+    at = len(payload) - sum(len(s.encode()) for s in _strings(payload, lay)) - 1
+    return _patch(payload, at, bytes([payload[at] | bit]))
+
+
+def _strings(payload: bytes, lay: wdb.Layout) -> list[str]:
+    q = wdb.decode_payload(wdb._u32(payload, wdb.QUEST_ID_AT), payload, lay)
+    return [q.title, q.objectives, q.description, q.area, q.portrait_giver_text, q.portrait_giver_name,
+            q.portrait_turnin_text, q.portrait_turnin_name, q.completion_log]
+
+
+def test_70888_reads_the_69913_offsets_and_one_more_bit_after_the_string_lengths(tmp_path):
+    """Build 70888's cache holds a record whose bits after the string lengths are 96, not 32, and whose
+    strings still end on the payload's last byte. Its layout takes both values; an earlier build's takes one."""
+    from dataclasses import replace
+
+    lay = wdb.layout_for(70888)
+    assert lay.pad_bits_also == (96,)
+    assert replace(lay, build=69913, evidence="", pad_bits_also=()) == replace(wdb.layout_for(69913), evidence="")
+    real = (FOREVER / "questcache.wdb").read_bytes()
+    recs = _records(real)
+    q, p = next((q, p) for q, p in recs if q == 84399)
+    marked = [(q, _with_tail_bit(p, wdb.layout_for(69913), 0x40)) if r == q else (r, rp) for r, rp in recs]
+    path = tmp_path / "questcache.wdb"
+    path.write_bytes(_build(real[:4] + struct.pack("<I", 70888) + real[8 : wdb.HEADER_SIZE], marked))
+    cache = wdb.read_quests(path)
+    assert cache.build == 70888 and cache.layout is not None and cache.layout.build == 70888
+    assert _as_json(cache.quests) == _as_json(wdb.read_quests(FOREVER / "questcache.wdb").quests)
+    # the same record under a build that never showed the bit is refused
+    path.write_bytes(_build(real[:4] + struct.pack("<I", 70862) + real[8 : wdb.HEADER_SIZE], marked))
+    with pytest.raises(wdb.WdbError, match="the bits after the string lengths are 96"):
+        wdb.read_quests(path)
+    # and a value 70888 never showed is refused there too
+    other = [(q, _with_tail_bit(p, wdb.layout_for(69913), 0x01)) if r == q else (r, rp) for r, rp in recs]
+    path.write_bytes(_build(real[:4] + struct.pack("<I", 70888) + real[8 : wdb.HEADER_SIZE], other))
+    with pytest.raises(wdb.WdbError, match="the bits after the string lengths are 33"):
+        wdb.read_quests(path)
