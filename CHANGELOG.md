@@ -19,6 +19,7 @@ an old setting stops working). A release moves those lines under its version num
 
 ### Changed
 - Quest texts, item and spell tooltips the game reworded on 1.60.1.70888 follow the new wording. 43 hand-written lines were corrected against the new English, most of them item effects the game changed, and six hand-written quest descriptions that were cut off after their first paragraph are now whole.
+- A quest line is read in the voice of the NPC the Spoken addon uses for it, so with both addons you hear the same character in Japanese and in English. About 100 quest lines the narrator used to read are now read by their NPC.
 - The voice says a name that owns something the way it sounds: Light's Hope is ライツ・ホープ and Marduk's is マルドゥクス, where every such name used to end in ズ. The lines that say those names have been made again.
 - The settings pages have more room: each page scrolls when it needs to, sections are spaced apart, and the explanations are shorter. Every page but About has a Defaults button (click it, then click again within five seconds) that resets that page's settings only. The version, memory and data counts moved to the About page.
 - The voice settings and the voice panel's settings are on one page, *Voice*. There is no separate *Voice panel* page any more.
