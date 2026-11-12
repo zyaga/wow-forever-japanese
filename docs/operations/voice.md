@@ -59,7 +59,7 @@ The audio format is fixed in `wfj voice generate`: MP3, mono, 22.05 kHz, 32 kbps
 
 ## Cloned game voice sets
 
-Every voice line, in every pack, is read in a voice cloned with Qwen3-TTS 1.7B Base from one of the game's own voice sets ([Voice over → Cloned game voice sets](../systems/voice.md#cloned-game-voice-sets)): 16,180 files. The set clips are cut and kept on the maintainer's machine, under `build/` of the main checkout. The game's audio leaves that machine only during a remote run: the joined set references are sent to the rented GPU containers for that run, sit in each container's `/tmp`, and are not kept there. They are never archived, committed or packed.
+Every voice line, in every pack, is read in a voice cloned with Qwen3-TTS 1.7B Base from one of the game's own voice sets ([Voice over → Cloned game voice sets](../systems/voice.md#cloned-game-voice-sets)): 16,571 files. The set clips are cut and kept on the maintainer's machine, under `build/` of the main checkout. The game's audio leaves that machine only during a remote run: the joined set references are sent to the rented GPU containers for that run, sit in each container's `/tmp`, and are not kept there. They are never archived, committed or packed.
 
 ### One-time setup
 
@@ -245,17 +245,17 @@ When a pack nears the cap (the build marks it past 315 MB), split its band: a ne
 
 ## Numbers
 
-The cloned voices, as `make voice-pack` printed them for the current audio: 16,180 files, about 1.24 GB.
+The cloned voices, as `make voice-pack` printed them for the current audio: 16,571 files, about 1.32 GB.
 
 | Pack | Size | Room under 420 MB |
 |---|---|---|
-| Levels 1-10 | 240.3 MB | 179.7 MB |
-| Levels 11-20 | 156.8 MB | 263.2 MB |
-| Levels 21-30 | 126.3 MB | 293.7 MB |
-| Levels 31-40 | 122.8 MB | 297.2 MB |
-| Levels 41-50 | 120.2 MB | 299.8 MB |
-| Levels 51-60 | 327.3 MB | 92.7 MB |
-| Other | 150.6 MB | 269.4 MB |
+| Levels 1-10 | 247.3 MB | 172.7 MB |
+| Levels 11-20 | 161.3 MB | 258.7 MB |
+| Levels 21-30 | 130.9 MB | 289.1 MB |
+| Levels 31-40 | 146.0 MB | 274.0 MB |
+| Levels 41-50 | 138.9 MB | 281.1 MB |
+| Levels 51-60 | 337.6 MB | 82.4 MB |
+| Other | 154.0 MB | 266.0 MB |
 
 Levels 51-60 is past the 315 MB mark: when it grows near the cap, split its band (see "Adding a pack"). Every take is levelled to -20 LUFS (one gain measured with ffmpeg's `ebur128`, peaks limited to -2 dBFS); a silent take or one shorter than 400 ms is left as it is. Time and money for a run: "Estimating time and money" above.
 
