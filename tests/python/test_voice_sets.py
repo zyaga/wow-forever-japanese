@@ -7,6 +7,7 @@ import gzip
 import json
 import subprocess
 import sys
+import types
 import wave
 from pathlib import Path
 
@@ -603,6 +604,23 @@ def test_a_cloned_voice_carries_its_temperature_and_seed_into_its_fingerprint_an
     ref = tmp_path / "ref.wav"
     assert line_key("あ", ref, "full", settings["seed"], 0.5) != line_key("あ", ref, "full")
     assert line_key("あ", ref, "full", settings["seed"], 0.5) != line_key("あ", ref, "full", settings["seed"], 0.9)
+
+
+def test_a_reading_starts_from_its_seed_and_a_line_with_neither_is_read_as_before(monkeypatch):
+    from wfj.io import qwen_worker
+
+    seeds = []
+    stub = types.SimpleNamespace(
+        manual_seed=seeds.append,
+        cuda=types.SimpleNamespace(is_available=lambda: False),
+        backends=types.SimpleNamespace(mps=types.SimpleNamespace(is_available=lambda: False)),
+    )
+    monkeypatch.setitem(sys.modules, "torch", stub)
+    assert qwen_worker.sampling(None, None) == {}  # the engine's own draws and temperature, as before
+    assert seeds == []
+    assert qwen_worker.sampling(7, 0.5) == {"temperature": 0.5, "subtalker_temperature": 0.5}
+    assert qwen_worker.sampling(0, None) == {}  # a seed of 0 is still a seed
+    assert seeds == [7, 0]
 
 
 def test_lines_are_handed_out_voice_by_voice_so_calls_stay_full():

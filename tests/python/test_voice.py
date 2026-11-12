@@ -565,9 +565,7 @@ def test_audio_in_step():
     lines = voice_make.shipped_lines(data)
     jobs = voice_make.file_jobs(data, cfg, "all", lines, voice_make.players_of("all"))
     assert len(jobs) > 10_000  # the whole game, not an empty scope
-    values = voice_make.line_values(data, lines)
-    said = voice_make.said_hashes(lines, values, voice_make.voice_texts(data, cfg, lines, values))
-    state = voice.in_step(jobs, lines, cfg["roster"], voice_make.audio_record(data), values, said)
+    state, _, _ = voice_make.step_state(data, cfg, jobs, lines, voice_make.audio_record(data))
     missing, stale = state["missing"], state["stale"]
     assert not missing, f"{len(missing)} voiced line(s) have no audio, e.g. {missing[:5]}: run make voice-generate"
     assert not stale, (f"{len(stale)} audio file(s) were made from other Japanese or another voice, "

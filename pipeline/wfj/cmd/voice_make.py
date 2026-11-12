@@ -435,6 +435,16 @@ def said_hashes(lines: dict[str, str], values: dict[str, list[str]], texts: dict
     return out
 
 
+def step_state(root: Path, cfg: dict[str, Any], jobs: Sequence[voice.Job], lines: dict[str, str],
+               audio: dict[str, Any]) -> tuple[dict[str, Any], dict[str, list[str]], dict[str, str]]:
+    """(which files are in step, missing or stale; the lines' numbers; the lines' engine text). The one place
+    a recording is compared with what would be made now, so every command and report judges a file alike."""
+    values = line_values(root, lines)
+    texts = voice_texts(root, cfg, lines, values)
+    state = voice.in_step(jobs, lines, cfg["roster"], audio, values, said_hashes(lines, values, texts))
+    return state, values, texts
+
+
 def plan(
     root: Path, cfg: dict[str, Any], scope: str, players: Sequence[tuple[str, str]] = ()
 ) -> dict[str, Any]:
@@ -442,9 +452,7 @@ def plan(
     lines = shipped_lines(root)
     jobs = file_jobs(root, cfg, scope, lines, players)
     audio = audio_record(root)
-    values = line_values(root, lines)
-    said = said_hashes(lines, values, voice_texts(root, cfg, lines, values))
-    state = voice.in_step(jobs, lines, cfg["roster"], audio, values, said)
+    state, values, _ = step_state(root, cfg, jobs, lines, audio)
     todo = set(state["missing"]) | set(state["stale"])
     rows = {c: r for c, r in read_cast(root).items()}
     speaker = {r["key"]: r["speaker"] for r in scoped_rows(root, scope)}
@@ -672,10 +680,8 @@ def generate(  # noqa: C901, PLR0913, PLR0915 - engine, encoder and log injected
     lines = shipped_lines(root)
     jobs = file_jobs(root, cfg, scope, lines, players)
     audio = audio_record(root)
-    values = line_values(root, lines)
-    texts = voice_texts(root, cfg, lines, values)
+    state, values, texts = step_state(root, cfg, jobs, lines, audio)
     said = said_hashes(lines, values, texts)
-    state = voice.in_step(jobs, lines, cfg["roster"], audio, values, said)
     todo = set(state["missing"]) | set(state["stale"])
     # what to make comes from the record; a recorded file gone from a store is made again only where the store
     # is, so a machine without the store and a round without voiced lines needs neither store nor engine
@@ -844,9 +850,7 @@ def export_remote(root: Path, cfg: dict[str, Any], scope: str, store: Path, out:
     lines = shipped_lines(root)
     jobs = file_jobs(root, cfg, scope, lines, players)
     audio = audio_record(root)
-    values = line_values(root, lines)
-    spoken = voice_texts(root, cfg, lines, values)
-    state = voice.in_step(jobs, lines, cfg["roster"], audio, values, said_hashes(lines, values, spoken))
+    state, values, spoken = step_state(root, cfg, jobs, lines, audio)
     todo = set(state["missing"]) | set(state["stale"])
     have_store = store.is_dir()
     work = [j for j in jobs if cfg["roster"][j.voice].get("engine") == "qwen"
@@ -1030,9 +1034,7 @@ def error_table(root: Path, cfg: dict[str, Any], players: Sequence[tuple[str, st
     lines = shipped_lines(root)
     audio = audio_record(root)
     jobs = error_jobs(root, cfg, list(players))
-    values = line_values(root, lines)
-    said = said_hashes(lines, values, voice_texts(root, cfg, lines, values))
-    state = voice.in_step(jobs, lines, cfg["roster"], audio, values, said)
+    state, _, _ = step_state(root, cfg, jobs, lines, audio)
     bad = set(state["missing"]) | set(state["stale"])
     files: dict[str, dict[str, tuple[str, float]]] = {}
     for j in jobs:
@@ -1061,9 +1063,7 @@ def pack_tables(
     cast = read_cast(root)
     audio = audio_record(root)
     jobs = voice.jobs(rows, cast, cfg["narrator"], cfg["book_narrator"], lines)
-    values = line_values(root, lines)
-    said = said_hashes(lines, values, voice_texts(root, cfg, lines, values))
-    state = voice.in_step(jobs, lines, cfg["roster"], audio, values, said)
+    state, values, _ = step_state(root, cfg, jobs, lines, audio)
     bad = set(state["missing"]) | set(state["stale"])
     out: dict[str, Any] = {}
     for j in jobs:

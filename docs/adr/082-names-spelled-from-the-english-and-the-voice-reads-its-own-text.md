@@ -40,7 +40,7 @@ Each reading also started from fresh random draws at the engine's default temper
 - Nothing on screen changes. Names stay English; the names setting, when it is built, will show these spellings.
 - Some names that read naturally in Japanese as a translation are now in katakana (タイガー). That is the intent.
 - Every cloned voice file was remade once, for the respelling, the engine text fixes and the new clone settings.
-- A remade line on Modal is not byte for byte the same as an earlier take of it, because a paragraph's random draws depend on the other paragraphs in its batch. Read one paragraph at a time on the maintainer's machine, it is.
+- A remade line on Modal is not byte for byte the same as an earlier take of it, because a paragraph's random draws depend on the other paragraphs in its batch. Read one paragraph at a time on the maintainer's machine, a line read twice came out identical in the one check made; that is not tested beyond it.
 - Changing `[clone]` remakes every cloned file. Changing `[text] kana_words` remakes the lines that hold the word.
 - `data/voice/kana.jsonl` stays and is rebuilt from the respelled names, but the audio is not made from it.
 - Every names round now has one more drafting step for new words, and a new word fails the data tests until it has a spelling.

@@ -53,7 +53,7 @@ The rest of the line stays in kanji. Nothing the player sees changes: the on-scr
 
 The engine text goes into the fingerprint only when it differs from the spoken line, so a respelled name remakes exactly the lines that say it, and a line none of the changes touch keeps the fingerprint it had. `tests/python/test_voice.py::test_no_voiced_line_hands_the_engine_latin_letters` fails while any voiced line would hand the engine Latin letters: a new English name whose words have no spelling yet. Run `make names` and spell the new words ([Names for a batch](translation-batches.md#names-for-a-batch)). `voice plan` and `voice generate` stop as well, naming the lines and the names they lack.
 
-**A remake is not byte for byte the same take.** On Modal a call reads several paragraphs of one voice set together, started from that set's seed, so a paragraph's draws depend on the other paragraphs in its batch: a line read again on Modal is a new take of the same voice. Read one paragraph at a time on this machine (`VOICE_LOCAL=1`), the same text, voice, temperature and seed give the same take.
+**A remake is not byte for byte the same take.** On Modal a call reads several paragraphs of one voice set together, started from that set's seed, so a paragraph's draws depend on the other paragraphs in its batch: a line read again on Modal is a new take of the same voice. Read one paragraph at a time on this machine (`VOICE_LOCAL=1`), the same text, voice, temperature and seed gave the same take in the one check made (one line, read twice); nothing tests it beyond that.
 
 The audio format is fixed in `wfj voice generate`: MP3, mono, 22.05 kHz, 32 kbps constant bitrate, with no Xing / Info header (`lame -t`).
 
