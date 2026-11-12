@@ -411,7 +411,20 @@ describe("addon loads in TOC order and answers /wfj version", function()
     assert.is_false(WFJ.State.modifierHeld)
   end)
 
+  it("ships with quest titles left to the client, wired into the policy layer as one switch", function()
+    assert.is_false(WFJ.QUEST_TITLES_JAPANESE)
+    local en = "Kobold Camp Cleanup"
+    local _, _, action = WFJ.Render.preview("spec", en, nil, "quests", "quest.title", 7, { live = en })
+    assert.are.equal("leave", action)
+    WFJ.QUEST_TITLES_JAPANESE = true
+    finally(function() WFJ.QUEST_TITLES_JAPANESE = false end)
+    _, _, action = WFJ.Render.preview("spec", en, nil, "quests", "quest.title", 7, { live = en })
+    assert.are_not.equal("leave", action)
+  end)
+
   it("wires Lookup into the Translator: a trusted quest title renders through Render.show", function()
+    WFJ.QUEST_TITLES_JAPANESE = true -- the sample here is a title
+    finally(function() WFJ.QUEST_TITLES_JAPANESE = false end)
     -- quest 7 (quest 2's title is the item name "Sharptalon's Claw", English letters by rule)
     local fs = Stub.fontString("Kobold Camp Cleanup", "Fonts\\FRIZQT__.TTF", 12, "")
     WFJ.Render.show("quest", "title", fs, "Kobold Camp Cleanup", "quests", "quest.title", 7)
@@ -441,6 +454,8 @@ describe("addon loads in TOC order and answers /wfj version", function()
   function()
     local sex, class = _G.UnitSex, _G.UnitClass
     _G.UnitSex, _G.UnitClass = nil, nil
+    WFJ.QUEST_TITLES_JAPANESE = true -- the sample here is a title
+    finally(function() WFJ.QUEST_TITLES_JAPANESE = false end)
     local title = Stub.fontString("Kobold Camp Cleanup", "Fonts\\FRIZQT__.TTF", 12, "")
     assert.has_no.errors(function()
       WFJ.Render.show("quest", "title", title, "Kobold Camp Cleanup", "quests", "quest.title", 7)

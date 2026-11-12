@@ -312,7 +312,7 @@ _Avoid_: name translation, transliteration (it is spelled from how the English s
 ## Addon
 
 **Name policy**:
-Names of people, places, mobs, items, spells, and zones stay in English on screen; Japanese is for prose. Every name also has Japanese data in the [[Name store]] (its [[Respelling]]), which the voice says in place of the English and a later names setting, off by default, will show. Race and class words are katakana, following the human corpus, including the reader's own, filled from a [[Player placeholder]]; the reader's character name is shown as the client returns it.
+Names of people, places, mobs, items, spells, and zones stay in English on screen; Japanese is for prose. A quest's title is a name too and stays English, while the quest's text is Japanese ([ADR-083](adr/083-quest-titles-are-names.md)). Every name also has Japanese data in the [[Name store]] (its [[Respelling]]), which the voice says in place of the English and a later names setting, off by default, will show. Race and class words are katakana, following the human corpus, including the reader's own, filled from a [[Player placeholder]]; the reader's character name is shown as the client returns it.
 _Avoid_: localized names, transliteration
 
 **UI string**:

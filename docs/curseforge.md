@@ -32,7 +32,7 @@ prefers it as text only.
 
 In numbers: **5,068** quests, **11,382** NPC dialogue lines, **923** book pages, **209** letter pages, **10,916** item tooltips, **20,346** spell tooltips, **16,115** UI.
 
-Names of people, places, creatures, items and spells stay in <span style="color:#8CB8E8;">English</span> everywhere, so you can still talk with other players, read guides and search by name.
+Names of people, places, creatures, items and spells stay in <span style="color:#8CB8E8;">English</span> everywhere, and so do quest titles, so you can still talk with other players, read guides and search by name.
 
 ### <span style="color:#E8C77E;">Popup dictionary</span>
 
@@ -81,7 +81,7 @@ No GitHub account? Post the line in **#translation-fixes** on the Discord: https
 
 Your own buffs under the minimap and those on party frames are Japanese out of combat. Spell tooltips on your action bar stay Japanese in combat, the cooldown countdown too.
 
-**Why are names still in English?** On purpose, so what you read matches what other players say and what guides call things.
+**Why are names still in English?** On purpose, so what you read matches what other players say and what guides call things. A quest's title stays English for the same reason; the text under it is Japanese.
 
 **What do the markers mean?** <span style="color:#E8C77E;">[未翻訳 / Not Translated]</span> means the line has no translation yet and is shown in the game's English. <span style="color:#E8C77E;">[要更新 / English Changed]</span> means the English changed after the line was translated.
 
@@ -125,7 +125,7 @@ This addon is made by fans. It is not affiliated with or endorsed by Blizzard En
 
 数で見ると: クエスト **5,068**、NPC の会話 **11,382** 行、本 **923** ページ、手紙 **209** ページ、アイテムのツールチップ **10,916**、呪文のツールチップ **20,346**、UI **16,115**。
 
-人物・地名・モンスター・アイテム・呪文の名前はすべて<span style="color:#8CB8E8;">英語</span>のままです。ほかのプレイヤーとの会話や、攻略情報の検索にそのまま使えます。
+人物・地名・モンスター・アイテム・呪文の名前はすべて<span style="color:#8CB8E8;">英語</span>のままです。クエストのタイトルも英語のままです。ほかのプレイヤーとの会話や、攻略情報の検索にそのまま使えます。
 
 ### <span style="color:#E8C77E;">ポップアップ辞書</span>
 
@@ -174,7 +174,7 @@ GitHub アカウントがなければ、Discord の **#translation-fixes** に�
 
 ミニマップの下の自分のバフとパーティーフレームのバフは、戦闘外なら日本語で表示されます。アクションバーの呪文のツールチップは戦闘中も日本語で、クールダウンの残り時間も表示されます。
 
-**名前が英語のままなのはなぜ？** 意図した仕様です。ほかのプレイヤーの会話や攻略情報と同じ名前のまま読めます。
+**名前が英語のままなのはなぜ？** 意図した仕様です。ほかのプレイヤーの会話や攻略情報と同じ名前のまま読めます。クエストのタイトルも同じ理由で英語のままです（タイトルの下の本文は日本語です）。
 
 **マーカーは何を表している？** <span style="color:#E8C77E;">[未翻訳 / Not Translated]</span> はまだ翻訳がなく、ゲームの英語のまま表示されている行です。<span style="color:#E8C77E;">[要更新 / English Changed]</span> は翻訳のあとで英語の原文が変わった行です。
 

@@ -72,27 +72,41 @@ local function tooltipLine(self, text)
   return tipText(text)
 end
 
+-- The Japanese line the data pass under way put in its copy (wrapProcess). Dialogue UI writes it through
+-- AddLeftLine like any other line, where it has no translation of its own, so it is known by being this very line
+-- and gets the bundled face: Dialogue UI's own has no Japanese letters.
+local passLine
+
 local function wrapAdd(tip, method, translate)
   local add = tip[method]
   if type(add) ~= "function" then return end
   tip[method] = function(self, text, ...)
-    local ja
+    local ja, ours = nil, false
     if WFJ.DialogueUI.active() then
       local ok, t = guarded(translate, self, text)
       ja = ok and t or nil
+      ours = ja ~= nil or (passLine ~= nil and text == passLine)
     end
     local fs = add(self, ja or text, ...)
     if type(fs) == "table" then
-      guarded(WFJ.DialogueUI.face, fs, nil, ja ~= nil)
+      -- a line Dialogue UI uses again keeps the face it was last given (its own font object is set again only when
+      -- the line's size changes [read: Tooltip_Base.lua, SetLineFont]), so taking ours off changes its face too
+      local was = WFJ.Font.dressed(fs)
+      guarded(WFJ.DialogueUI.face, fs, nil, ours)
       -- the tooltip sizes itself again a frame later when told a line's face changed [read: Tooltip_Base.lua, Show]
-      if ja then self.fontChanged = true end
+      if ours or was then self.fontChanged = true end
     end
     return fs
   end
 end
 
+-- Dialogue UI keeps the data it was given and hands it back on its own redraws (its comparison toggle) [read:
+-- Tooltip_Private.lua, ProcessTooltipData, ReprocessInfo]: a copy leads back to the client's data it was made from,
+-- so a redraw is read like the first pass.
+local sourceOf = setmetatable({}, { __mode = "k" })
+
 -- A copy of an item's tooltip data with its effect run in Japanese (the first line of the run carries it, the rest go,
--- as UI/Tooltip shows it), or nil to leave the data as it is.
+-- as UI/Tooltip shows it) and that Japanese line, or nil to leave the data as it is.
 local function itemRunData(data)
   if type(data) ~= "table" or not data.isItem or type(data.lines) ~= "table" then return nil end
   local id = data.id
@@ -128,19 +142,28 @@ local function itemRunData(data)
   local out = {}
   for k, v in pairs(data) do out[k] = v end
   out.lines = lines
-  return out
+  sourceOf[out] = data
+  return out, ja
+end
+
+local function endPass(before, ok, ...)
+  passLine = before
+  if not ok then error((...), 0) end
+  return ...
 end
 
 local function wrapProcess(tip)
   local process = tip.ProcessTooltipData
   if type(process) ~= "function" then return end
   tip.ProcessTooltipData = function(self, data, ...)
-    local given = data
+    local given, line = sourceOf[data] or data, nil
     if WFJ.DialogueUI.active() then
-      local ok, copy = guarded(itemRunData, data)
-      if ok and copy then given = copy end
+      local ok, copy, ja = guarded(itemRunData, given)
+      if ok and copy then given, line = copy, ja end
     end
-    return process(self, given, ...)
+    local before = passLine
+    passLine = line
+    return endPass(before, pcall(process, self, given, ...))
   end
 end
 
@@ -194,7 +217,8 @@ end
 
 -- ── Dialogue UI's quest popups ─────────────────────────────────────────────
 -- A quest the game starts or finishes on its own gets a small popup with its name, made when first needed [read:
--- Dialogue UI 1.0.7 b, Code/Widget/Widget_QuestPopup.lua]. Its name is the quest's Japanese title.
+-- Dialogue UI 1.0.7 b, Code/Widget/Widget_QuestPopup.lua]. Its name is the quest's Japanese title while titles are
+-- switched on.
 local function wrapPopup(popup)
   local setTitle = popup.SetTitle
   popup.SetTitle = function(self, title, ...)

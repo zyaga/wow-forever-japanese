@@ -83,6 +83,8 @@ function Translator.new(deps)
   function T.resolve(area, kind, id, ctx)
     if not deps.enabled() then return "leave" end
     if not deps.areaEnabled(area) then return "leave" end
+    -- a kind switched off as a whole is not ours to show: the live English stays and nothing is marked missing
+    if deps.kindOff ~= nil and deps.kindOff(kind) then return "leave" end
     if deps.modifierHeld() then return "leave" end
 
     local entry = deps.lookup(kind, id)
