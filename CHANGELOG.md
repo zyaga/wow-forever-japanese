@@ -9,6 +9,8 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+## 0.13.0 - 2026-11-12
+
 ### Added
 - Japanese for what Forever 1.60.1.70888 added and for what twenty players sent with the English Collector: about 570 quest titles, 440 quest objectives and 450 quest descriptions (with word cards), 96 NPC lines, 59 quest progress and turn-in texts, 152 item tooltips, new spell tooltips, and objective and area texts. About 170 more progress and turn-in texts of quests the game serves again show in Japanese too.
 - The group invite for a player on another shard shows in Japanese, like the cross-realm one.
