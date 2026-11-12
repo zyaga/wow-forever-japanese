@@ -56,9 +56,12 @@ def test_build_shapes_the_post(tmp_path):
     folder = media(tmp_path, {"b-clip.mp4": 10, "a-card.jpg": 5, "c-card.png": 3}, ja=JA)
     files = announce.media_files(folder)
     assert [f.name for f in files] == ["a-card.jpg", "b-clip.mp4", "c-card.png"]  # name order, ja.md is not media
-    payload = announce.build(VERSION, section(), files, announce.japanese(folder))
+    payload, second = announce.build(VERSION, section(), files, announce.japanese(folder))
     assert payload["content"] == "WoW Forever Japanese 0.9.0 is out."
-    english, japanese = payload["embeds"]
+    (english,) = payload["embeds"]
+    # the Japanese card is a message of its own: Discord allows 6000 characters of cards in one message
+    assert set(second) == {"embeds"}
+    (japanese,) = second["embeds"]
     assert english["title"] == "WoW Forever Japanese 0.9.0"
     assert english["url"] == "https://www.curseforge.com/wow/addons/wow-forever-japanese/files"
     assert english["color"] == 0xE8C77E == 15255422
@@ -73,12 +76,21 @@ def test_build_shapes_the_post(tmp_path):
     ]
     assert [f.name for f in announce.attached(files)] == ["b-clip.mp4", "a-card.jpg", "c-card.png"]
     # nothing but the notes: one card, no attachments
-    only = announce.build(VERSION, section(), [], None)
+    (only,) = announce.build(VERSION, section(), [], None)
     assert "attachments" not in only and len(only["embeds"]) == 1
 
 
+def test_two_full_cards_each_fit_a_message():
+    long_notes = "## 0.9.0 - 2026-10-21\n\n### Added\n" + "".join(f"- Entry {i} " + "x" * 90 + "\n" for i in range(80))
+    messages = announce.build(VERSION, section(long_notes), [], "あ" * announce.MAX_DESCRIPTION)
+    assert len(messages) == 2
+    for message in messages:
+        size = sum(len(e["title"]) + len(e["description"]) for e in message["embeds"])
+        assert size <= announce.MAX_MESSAGE_CARDS
+
+
 def test_preview_prefix():
-    payload = announce.build("next", section(), [], None, preview=True)
+    (payload,) = announce.build("next", section(), [], None, preview=True)
     assert payload["content"].startswith("Preview of the next release post.")
     assert payload["embeds"][0]["title"] == "WoW Forever Japanese next"
 
@@ -256,11 +268,12 @@ def test_command_posts_with_the_url_from_the_environment(repo, monkeypatch, caps
 
     monkeypatch.setattr(discord, "post", fake_post)
     assert announce.run(["--version", VERSION, "--notes", "notes.md", "--media", str(folder)]) == 0
-    ((url, payload, files),) = sent
-    assert url == "https://discord.example/api/webhooks/1/secret"
+    (url, payload, files), (url2, second, files2) = sent
+    assert url == url2 == "https://discord.example/api/webhooks/1/secret"
     assert files == [("clip.mp4", b"xxxxxx"), ("card.jpg", b"xxxx")]  # the clip first, the way the tiles show
     assert payload["attachments"] == [{"id": 0, "filename": "clip.mp4"}, {"id": 1, "filename": "card.jpg"}]
-    assert payload["embeds"][1]["description"] == JA
+    assert len(payload["embeds"]) == 1
+    assert files2 == [] and second["embeds"][0]["description"] == JA  # the Japanese card follows, with no files
     out = capsys.readouterr().out
     assert "secret" not in out and "card.jpg" in out and "2 file(s)" in out
 
