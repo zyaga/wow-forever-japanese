@@ -43,11 +43,12 @@ from typing import Any
 
 from wfj.cmd import voice_sets as voice_sets_cmd
 from wfj.cmd.generate import female_index, quest_text_aliases
-from wfj.core import casting, readings, voice, voice_sets
+from wfj.core import casting, kana, names, readings, voice, voice_sets, voice_text
 from wfj.core import voice_packs as vp
 from wfj.emit.lua_writer import shipped
 from wfj.io.aivis import Engine, EngineDown, EngineError, running
 from wfj.io.jsonl_store import Store, dumps
+from wfj.io.names_store import load_lines
 from wfj.io.qwen import LOCK, VERSION, LineFailed, NotRead, Prepared, Qwen, QwenBusy, QwenError, line_key
 from wfj.paths import data_root
 
@@ -89,8 +90,9 @@ def load_config(path: Path) -> dict[str, Any]:
         v.setdefault("pitch", 0.0)
         v.setdefault("intonation", 1.0)
     cfg["roster"], cfg["cast"] = roster, cfg.get("cast", [])
-    roster.update(set_voices(cfg.get("sets", {}), voice_sets_cmd.catalogue(data_root())))
+    roster.update(set_voices(cfg.get("sets", {}), voice_sets_cmd.catalogue(data_root()), cfg.get("clone")))
     cfg["cloned_packs"] = list(cfg.get("cloned_packs", []))
+    cfg["kana_words"] = frozenset((w, r) for w, r in cfg.get("text", {}).get("kana_words", []))
     cfg["set_cast"] = list(cfg.get("set_cast", []))
     # the narrator and the book reader speak with a game voice set once one is named and picked
     for key in ("narrator", "book_narrator"):
@@ -105,11 +107,16 @@ def load_config(path: Path) -> dict[str, Any]:
     return cfg
 
 
-def set_voices(sets: dict[str, Any], catalogue: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
+def set_voices(sets: dict[str, Any], catalogue: dict[str, dict[str, Any]],
+               clone: dict[str, Any] | None = None) -> dict[str, dict[str, Any]]:
     """Roster entries for the game voice sets picked as a voice-only or a full copy (voice.toml [sets]); a set
     kept on its AivisSpeech cast has none. `ref` is the hash of the set's reference, so new clips or fixed
-    transcripts make its files again."""
+    transcripts make its files again. `clone` (voice.toml [clone]) gives every set its temperature and, with
+    `seed` on, the number its readings start from."""
     out: dict[str, dict[str, Any]] = {}
+    drawn: dict[str, Any] = {}
+    if clone and clone.get("temperature") is not None:
+        drawn["temperature"] = float(clone["temperature"])
     for s, entry in sorted(sets.items()):
         mode = entry.get("pick")
         if mode not in ("voice", "full"):
@@ -118,6 +125,7 @@ def set_voices(sets: dict[str, Any], catalogue: dict[str, dict[str, Any]]) -> di
         out[voice_sets.voice_id(s)] = {
             "engine": "qwen", "set": s, "mode": mode, "licence": "Apache-2.0",
             "fits": f"the game's {s} voice set", "ref": voice_sets_cmd.ref_hash(row, mode) if row else "",
+            **drawn, **({"seed": voice.clone_seed(s)} if clone and clone.get("seed") else {}),
         }
     return out
 
@@ -361,6 +369,84 @@ def run_cast(cfg: dict[str, Any], root: Path) -> int:
 # ---- plan ------------------------------------------------------------------------------------------------
 
 
+def reading_words(root: Path) -> dict[str, list[list[str]]]:
+    """{voice key: the words of its current reading record}."""
+    store, rstore = Store(root), Store(root / "reading")
+    out: dict[str, list[list[str]]] = {}
+    for type_ in ("quest", "gossip", "ui", "book"):
+        lines = store.load(type_)
+        result = readings.check(type_, rstore.load(type_), readings.shipped_japanese(lines))
+        for rec in readings.addon_keyed(type_, result["current"], lines):
+            if type_ == "quest":
+                out[voice.quest_key(rec["id"], rec["field"])] = rec["words"]
+            elif type_ == "gossip":
+                out[voice.gossip_key(rec["id"])] = rec["words"]
+            elif type_ == "book":
+                out[voice.book_key(str(rec["id"]))] = rec["words"]
+            else:
+                out[f"e-{rec['id']}"] = rec["words"]
+    return out
+
+
+def name_lookup(root: Path) -> Callable[[str], str | None]:
+    """An English name's Japanese as the voice says it, or None when the name has none."""
+    by_id = {ln["id"]: ln for ln in load_lines(root) if ln["status"] == "trusted"}
+
+    def lookup(run: str) -> str | None:
+        ln = by_id.get(names.name_id(run))
+        return kana.name_kana(ln) if ln else None
+
+    return lookup
+
+
+def voice_texts(
+    root: Path, cfg: dict[str, Any], lines: dict[str, str], values: dict[str, list[str]]
+) -> dict[str, str]:
+    """{key: the text the engine reads} for every line the engine can read (`wfj.core.voice_text`). Raises
+    ValueError naming the lines that say an English name with no Japanese: a word of it has no spelling yet
+    (`wfj names export-respell`, draft, `wfj names import-respell`, then `make names`)."""
+    words, lookup = reading_words(root), name_lookup(root)
+    out: dict[str, str] = {}
+    unnamed: list[str] = []
+    for key, ja in lines.items():
+        try:
+            text, missing = voice_text.voice_text(
+                ja, key, values.get(key, ()), words.get(key, ()), lookup, cfg.get("kana_words", frozenset())
+            )
+        except voice.VoiceError:
+            continue  # a line the engine must not read is refused where it is read
+        if missing:
+            unnamed.append(f"{key} ({', '.join(missing)})")
+        out[key] = text
+    if unnamed:
+        raise ValueError(
+            f"{len(unnamed)} voiced line(s) say an English name with no Japanese, e.g. "
+            f"{'; '.join(unnamed[:5])}: spell the new words (wfj names export-respell / import-respell), "
+            "then make names"
+        )
+    return out
+
+
+def said_hashes(lines: dict[str, str], values: dict[str, list[str]], texts: dict[str, str]) -> dict[str, str]:
+    """{key: the hash of its engine text} for the lines whose engine text is not the spoken line as it
+    stands. A line the fixes leave alone has no entry, so its file keeps the fingerprint it had."""
+    out = {}
+    for key, text in texts.items():
+        if text != voice.speech_text(lines[key], key, values.get(key, ())):
+            out[key] = voice.ja_hash(text)
+    return out
+
+
+def step_state(root: Path, cfg: dict[str, Any], jobs: Sequence[voice.Job], lines: dict[str, str],
+               audio: dict[str, Any]) -> tuple[dict[str, Any], dict[str, list[str]], dict[str, str]]:
+    """(which files are in step, missing or stale; the lines' numbers; the lines' engine text). The one place
+    a recording is compared with what would be made now, so every command and report judges a file alike."""
+    values = line_values(root, lines)
+    texts = voice_texts(root, cfg, lines, values)
+    state = voice.in_step(jobs, lines, cfg["roster"], audio, values, said_hashes(lines, values, texts))
+    return state, values, texts
+
+
 def plan(
     root: Path, cfg: dict[str, Any], scope: str, players: Sequence[tuple[str, str]] = ()
 ) -> dict[str, Any]:
@@ -368,7 +454,7 @@ def plan(
     lines = shipped_lines(root)
     jobs = file_jobs(root, cfg, scope, lines, players)
     audio = audio_record(root)
-    state = voice.in_step(jobs, lines, cfg["roster"], audio, line_values(root, lines))
+    state, values, _ = step_state(root, cfg, jobs, lines, audio)
     todo = set(state["missing"]) | set(state["stale"])
     rows = {c: r for c, r in read_cast(root).items()}
     speaker = {r["key"]: r["speaker"] for r in scoped_rows(root, scope)}
@@ -506,7 +592,8 @@ def _synth(text: str, settings: dict[str, Any], engine: Engine, version: str, q:
     if settings.get("engine") == "qwen":
         ref_wav, ref_text = voice_sets_cmd.reference(sets[settings["set"]], settings["mode"], clips,
                                                      clips / REFS_DIR)
-        return q.synthesize(text, ref_wav, ref_text, settings["mode"]), f"qwen3-tts@{q.version}"
+        return (q.synthesize(text, ref_wav, ref_text, settings["mode"], settings.get("seed"),
+                             settings.get("temperature")), f"qwen3-tts@{q.version}")
     wav = engine.synthesize(text, int(settings["style"]), float(settings["speed"]), float(settings["pitch"]),
                             float(settings["intonation"]))
     return wav, f"aivis@{version}"
@@ -595,8 +682,8 @@ def generate(  # noqa: C901, PLR0913, PLR0915 - engine, encoder and log injected
     lines = shipped_lines(root)
     jobs = file_jobs(root, cfg, scope, lines, players)
     audio = audio_record(root)
-    values = line_values(root, lines)
-    state = voice.in_step(jobs, lines, cfg["roster"], audio, values)
+    state, values, texts = step_state(root, cfg, jobs, lines, audio)
+    said = said_hashes(lines, values, texts)
     todo = set(state["missing"]) | set(state["stale"])
     # what to make comes from the record; a recorded file gone from a store is made again only where the store
     # is, so a machine without the store and a round without voiced lines needs neither store nor engine
@@ -660,7 +747,8 @@ def generate(  # noqa: C901, PLR0913, PLR0915 - engine, encoder and log injected
                     "voice": j.voice,
                     "ja_hash": voice.ja_hash(ja),
                     "fingerprint": voice.fingerprint(
-                        voice.text_hash(ja, values.get(j.key, ())), j.voice, cfg["roster"][j.voice]
+                        voice.text_hash(ja, values.get(j.key, ())), j.voice, cfg["roster"][j.voice],
+                        said.get(j.key),
                     ),
                     "seconds": round(secs, 2),
                     "bytes": file.stat().st_size,
@@ -679,7 +767,7 @@ def generate(  # noqa: C901, PLR0913, PLR0915 - engine, encoder and log injected
                     log(f"voice generate: {made}/{len(work)}")
 
             def make(j: voice.Job, q: Any) -> tuple[voice.Job, str, bytes, str, Path] | None:
-                text = voice.speech_text(lines[j.key], j.key, values.get(j.key, ()))
+                text = texts.get(j.key) or voice.speech_text(lines[j.key], j.key, values.get(j.key, ()))
                 try:
                     wav, source = _synth(text, cfg["roster"][j.voice], engine, version, q, sets, clip_root)
                 except NotRead:
@@ -764,26 +852,28 @@ def export_remote(root: Path, cfg: dict[str, Any], scope: str, store: Path, out:
     lines = shipped_lines(root)
     jobs = file_jobs(root, cfg, scope, lines, players)
     audio = audio_record(root)
-    values = line_values(root, lines)
-    state = voice.in_step(jobs, lines, cfg["roster"], audio, values)
+    state, values, spoken = step_state(root, cfg, jobs, lines, audio)
     todo = set(state["missing"]) | set(state["stale"])
     have_store = store.is_dir()
     work = [j for j in jobs if cfg["roster"][j.voice].get("engine") == "qwen"
             and (j.stem in todo or (have_store and not audio_file(store, j.stem).is_file()))]
     sets, clips = voice_sets_cmd.catalogue(root), voice_sets_cmd.clip_dir()
     (out / "refs").mkdir(parents=True, exist_ok=True)
-    rows: dict[str, dict[str, str]] = {}
+    rows: dict[str, dict[str, Any]] = {}
     texts: dict[str, str | None] = {}
     for j in work:
         settings = cfg["roster"][j.voice]
-        text = voice.speech_text(lines[j.key], j.key, values.get(j.key, ()))
+        text = spoken.get(j.key) or voice.speech_text(lines[j.key], j.key, values.get(j.key, ()))
         ref, ref_text = voice_sets_cmd.reference(sets[settings["set"]], settings["mode"], clips,
                                                  clips / REFS_DIR)
         if not (out / "refs" / ref.name).is_file():
             shutil.copyfile(ref, out / "refs" / ref.name)
         texts[ref.name] = ref_text
-        key = line_key(text, ref, settings["mode"])
-        rows[key] = {"key": key, "text": text, "ref": ref.name, "mode": settings["mode"]}
+        seed, temperature = settings.get("seed"), settings.get("temperature")
+        key = line_key(text, ref, settings["mode"], seed, temperature)
+        rows[key] = {"key": key, "text": text, "ref": ref.name, "mode": settings["mode"],
+                     **({"seed": seed} if seed is not None else {}),
+                     **({"temperature": temperature} if temperature is not None else {})}
     (out / "jobs.jsonl").write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in rows.values()),
                                     encoding="utf-8")
     (out / "refs.json").write_text(json.dumps(texts, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
@@ -851,16 +941,20 @@ def relevel(root: Path, cfg: dict[str, Any], store: Path, runs: Sequence[Path]) 
     at the common loudness; the record's bytes and hashes follow. → how many files were re-encoded."""
     lines, audio = shipped_lines(root), audio_record(root)
     values = line_values(root, lines)
+    spoken = voice_texts(root, cfg, lines, values)
     sets, clips = voice_sets_cmd.catalogue(root), voice_sets_cmd.clip_dir()
     done = 0
     for stem, rec in sorted(audio.items()):
         settings = cfg["roster"].get(rec["voice"], {})
         if settings.get("engine") != "qwen" or rec["key"] not in lines:
             continue
-        text = voice.speech_text(lines[rec["key"]], rec["key"], values.get(rec["key"], ()))
+        plain = voice.speech_text(lines[rec["key"]], rec["key"], values.get(rec["key"], ()))
         ref, _ = voice_sets_cmd.reference(sets[settings["set"]], settings["mode"], clips, clips / REFS_DIR)
-        key = line_key(text, ref, settings["mode"])
-        wav = next((r / sub / f"{key}.wav" for r in runs for sub in ("wav", "local")
+        # a kept WAV is named by the text it was read from: the engine text, or the spoken line of older runs
+        read = dict.fromkeys((spoken.get(rec["key"], plain), plain))
+        named = [line_key(t, ref, settings["mode"], settings.get("seed"), settings.get("temperature"))
+                 for t in read]
+        wav = next((r / sub / f"{key}.wav" for key in named for r in runs for sub in ("wav", "local")
                     if (r / sub / f"{key}.wav").is_file()), None)
         if wav is None:
             continue
@@ -942,7 +1036,7 @@ def error_table(root: Path, cfg: dict[str, Any], players: Sequence[tuple[str, st
     lines = shipped_lines(root)
     audio = audio_record(root)
     jobs = error_jobs(root, cfg, list(players))
-    state = voice.in_step(jobs, lines, cfg["roster"], audio)
+    state, _, _ = step_state(root, cfg, jobs, lines, audio)
     bad = set(state["missing"]) | set(state["stale"])
     files: dict[str, dict[str, tuple[str, float]]] = {}
     for j in jobs:
@@ -971,7 +1065,7 @@ def pack_tables(
     cast = read_cast(root)
     audio = audio_record(root)
     jobs = voice.jobs(rows, cast, cfg["narrator"], cfg["book_narrator"], lines)
-    state = voice.in_step(jobs, lines, cfg["roster"], audio, line_values(root, lines))
+    state, values, _ = step_state(root, cfg, jobs, lines, audio)
     bad = set(state["missing"]) | set(state["stale"])
     out: dict[str, Any] = {}
     for j in jobs:

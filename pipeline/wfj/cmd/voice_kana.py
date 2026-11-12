@@ -23,10 +23,8 @@ from typing import Any
 from wfj.cmd.names import draft_provenance
 from wfj.cmd.readings import read_batch
 from wfj.cmd.voice import read_rows, write_rows
-from wfj.cmd.voice_make import line_values, scoped_rows, shipped_lines
-from wfj.core import kana, names, readings, voice
-from wfj.io.jsonl_store import Store
-from wfj.io.names_store import load_lines
+from wfj.cmd.voice_make import line_values, name_lookup, reading_words, scoped_rows, shipped_lines
+from wfj.core import kana, voice
 from wfj.paths import data_root
 
 KEYS = ("key", "ja_hash", "kana", "provenance")
@@ -45,35 +43,6 @@ def voiced_lines(root: Path) -> dict[str, str]:
     lines = shipped_lines(root)
     keys = {r["key"] for r in scoped_rows(root, "all")} | {k for k in lines if k.startswith("e-")}
     return {k: lines[k] for k in sorted(keys) if k in lines}
-
-
-def reading_words(root: Path) -> dict[str, list[list[str]]]:
-    """{voice key: the words of its current reading record}."""
-    store, rstore = Store(root), Store(root / "reading")
-    out: dict[str, list[list[str]]] = {}
-    for type_ in ("quest", "gossip", "ui", "book"):
-        lines = store.load(type_)
-        result = readings.check(type_, rstore.load(type_), readings.shipped_japanese(lines))
-        for rec in readings.addon_keyed(type_, result["current"], lines):
-            if type_ == "quest":
-                out[voice.quest_key(rec["id"], rec["field"])] = rec["words"]
-            elif type_ == "gossip":
-                out[voice.gossip_key(rec["id"])] = rec["words"]
-            elif type_ == "book":
-                out[voice.book_key(str(rec["id"]))] = rec["words"]
-            else:
-                out[f"e-{rec['id']}"] = rec["words"]
-    return out
-
-
-def name_lookup(root: Path):
-    by_id = {ln["id"]: ln for ln in load_lines(root) if ln["status"] == "trusted"}
-
-    def lookup(run: str) -> str | None:
-        ln = by_id.get(names.name_id(run))
-        return kana.name_kana(ln) if ln else None
-
-    return lookup
 
 
 def build_all(root: Path, today: str) -> tuple[list[dict[str, Any]], dict[str, tuple[str, str, list[str]]]]:
