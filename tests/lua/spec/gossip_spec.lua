@@ -46,7 +46,7 @@ describe("UI/Gossip: the NPC talk window", function()
     WFJ.Render.init(WFJ.Translator.new({
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,
-      modifierHeld = WFJ.Modifier.isDown,
+      showsEnglish = WFJ.Modifier.english,
       lookup = function(kind, id) if kind == "gossip" then return data[id] end end,
       marker = function(n) return S.get("marker." .. n) end,
     }))
@@ -363,7 +363,7 @@ describe("UI/Gossip: the NPC talk window", function()
     S.load(nil, 1, {})
     WFJ.Render.init(WFJ.Translator.new({
       enabled = function() return WFJ.State.enabled end, areaEnabled = WFJ.State.areaEnabled,
-      modifierHeld = WFJ.Modifier.isDown, lookup = function(_, id) return data[id] end,
+      showsEnglish = WFJ.Modifier.english, lookup = function(_, id) return data[id] end,
       marker = function(n) return S.get("marker." .. n) end,
     }))
     assert.is_true(G.init({ key = pick }))

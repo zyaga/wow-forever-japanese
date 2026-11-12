@@ -340,16 +340,42 @@ local function coverOf(rec)
   return fs and covers[fs]
 end
 
-local function eligible(rec)
-  local m, fs = rec.meta, region(rec)
-  if not m or type(fs) ~= "table" or type(fs.CalculateScreenAreaFromCharacterSpan) ~= "function"
-      or type(rec.applied) ~= "string" then
-    return false
-  end
+-- Whether the record's surface takes word cards at all, in `fs`.
+local function takesCards(rec, fs)
+  local m = rec.meta
+  if not m or type(fs) ~= "table" or type(fs.CalculateScreenAreaFromCharacterSpan) ~= "function" then return false end
   -- a label in a window (a Button's text or a menu entry is an adapter without the span call: refused above)
   if m.kind == "ui" then return not View.nonWindow(rec.surface) and inWindow(fs) end
   if not View.SURFACES[rec.surface] then return false end
   return rec.surface ~= "gossip" or rec.key == "greeting" -- gossip option rows are buttons
+end
+
+local function eligible(rec)
+  return type(rec.applied) == "string" and takesCards(rec, region(rec))
+end
+
+-- Lays the record's cover over `fs` for `text` and its word spans. → true, or false in combat with no cover yet
+local function lay(rec, fs, text, spans)
+  local cover = coverFor(fs)
+  if not cover then return false end
+  -- QuestInfo_Display moves its FontStrings between the quest window's panels, the quest map details pane and
+  -- its popup (UI/QuestMap.lua: re-parented [verified: mainline/questinfo.lua:99–110]); the cover follows, or it
+  -- would stay under a hidden parent and never see the mouse.
+  local parent = fs:GetParent()
+  if cover:GetParent() ~= parent then
+    cover:SetParent(parent)
+    cover:ClearAllPoints()
+    cover:SetAllPoints(fs)
+  end
+  onLeave(cover)
+  cover.text, cover.spans = text, spans
+  cover.where = tostring(rec.meta.kind) .. " " .. tostring(rec.meta.id)
+  cover.kind, cover.id, cover.surface = rec.meta.kind, rec.meta.id, rec.surface
+  cover:SetShown(View.enabled)
+  View.attached = View.attached + 1
+  -- a re-attach under a resting mouse (the pane redisplayed on QUEST_LOG_UPDATE) gets no new OnEnter: start again
+  if View.enabled and cover.IsMouseOver and cover:IsMouseOver() then onEnter(cover) end
+  return true
 end
 
 function View.detach(rec)
@@ -379,27 +405,34 @@ function View.attach(rec)
     View.detach(rec)
     return false
   end
-  local fs = region(rec)
-  local cover = coverFor(fs)
-  if not cover then return false end
-  -- QuestInfo_Display moves its FontStrings between the quest window's panels, the quest map details pane and
-  -- its popup (UI/QuestMap.lua: re-parented [verified: mainline/questinfo.lua:99–110]); the cover follows, or it
-  -- would stay under a hidden parent and never see the mouse.
-  local parent = fs:GetParent()
-  if cover:GetParent() ~= parent then
-    cover:SetParent(parent)
-    cover:ClearAllPoints()
-    cover:SetAllPoints(fs)
+  return lay(rec, region(rec), rec.applied, spans)
+end
+
+-- English first: the line is the client's own English, untouched, and its English words take the cards. A
+-- FontString the client draws the text in itself, or a book page's own (its plain-text English, drawn there for
+-- this), holding no escape sequence. → true when the record's FontString now takes English cards
+function View.attachEnglish(rec)
+  local fs = rec and rec.fs
+  -- an adapter's own FontString holds our Japanese; one that can also draw the client's English there says so
+  -- (a book page: UI/ItemText's page:englishRegion)
+  if type(fs) == "table" and type(fs.spanRegion) == "function" then
+    fs = type(fs.englishRegion) == "function" and fs:englishRegion() or nil
   end
-  onLeave(cover)
-  cover.text, cover.spans = rec.applied, spans
-  cover.where = tostring(rec.meta.kind) .. " " .. tostring(rec.meta.id)
-  cover.kind, cover.id, cover.surface = rec.meta.kind, rec.meta.id, rec.surface
-  cover:SetShown(View.enabled)
-  View.attached = View.attached + 1
-  -- a re-attach under a resting mouse (the pane redisplayed on QUEST_LOG_UPDATE) gets no new OnEnter: start again
-  if View.enabled and cover.IsMouseOver and cover:IsMouseOver() then onEnter(cover) end
-  return true
+  if type(fs) ~= "table" or type(fs.GetText) ~= "function" or not takesCards(rec, fs) then
+    View.detach(rec)
+    return false
+  end
+  local text = fs:GetText()
+  if type(text) ~= "string" or text == "" or text:find("|", 1, true) then
+    View.detach(rec)
+    return false
+  end
+  local spans = WFJ.Readings.englishLookup(rec.meta.kind, rec.meta.id, text)
+  if not spans or not spans[1] then
+    View.detach(rec)
+    return false
+  end
+  return lay(rec, fs, text, spans)
 end
 
 -- ── The save click (UI/WordSave, ADR-069) ────────────────────────────────

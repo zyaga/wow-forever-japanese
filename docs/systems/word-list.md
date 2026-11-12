@@ -1,6 +1,6 @@
 # Word list
 
-> The player's saved words: the save click on a highlighted word keeps it, with its reading, meaning and sentence, in an account-wide list that an export window turns into tab-separated text for a text file, a spreadsheet or Anki. Code: `Core/Words.lua`, `UI/Readings.lua` (reads the save click), `UI/WordSave.lua` (saves), `UI/ReadingPopup.lua` (the card's hint), `UI/WordsWindow.lua`, the Words page in `UI/Options.lua`, `UI/OptionsText.lua`, `UI/MinimapButton.lua`, `UI/Slash.lua`, the `words.saveClick` and `words.screenshot` settings in `Core/Settings.lua`, the `words` load step in `Main.lua`. Decision: [ADR-069](../adr/069-saved-word-list.md).
+> The player's saved words: the save click on a highlighted word keeps it, with its reading, meaning and sentence, in an account-wide list that an export window turns into tab-separated text for a text file, a spreadsheet or Anki. Code: `Core/Words.lua`, `UI/Readings.lua` (reads the save click), `UI/WordSave.lua` (saves), `UI/ReadingPopup.lua` (the card's hint), `UI/WordsWindow.lua`, the Words page in `UI/Options.lua`, `UI/OptionsText.lua`, `UI/MinimapButton.lua`, `UI/Slash.lua`, the `words.saveClick` and `words.screenshot` settings in `Core/Settings.lua`, the `words` load step in `Main.lua`. Decisions: [ADR-069](../adr/069-saved-word-list.md), [ADR-081](../adr/081-english-first-and-english-word-cards.md) (English entries).
 
 ## Purpose
 A learner who meets a word worth keeping can save it without leaving the game, and later study it elsewhere. The list holds what the [word card](readings.md) already shows (the word, its reading, its dictionary form and meaning) plus the sentence it came from, so a card made from it has context. The addon only keeps the list and shows it as text: it never writes a file of its own and never talks to another program.
@@ -62,6 +62,24 @@ The key index is rebuilt from the entries on load and kept in memory only; it is
 - **The source** comes from the surface the word was shown on: `questframe.*` and `questmap.*` are `quest` (a quest-window line keyed by its English, such as a conditional description, is still quest text, with no quest id); `gossip` is `gossip`; `itemtext` is `book`; on the voice panel a `quest.*` kind is `quest`, `book` is `book` and anything else `gossip`; every other surface is `window`.
 - Tabs and line breaks inside any field become spaces, so a field never breaks the export's columns.
 
+### English entries
+In English first the save click on an English word saves that word ([Readings → English word cards](readings.md#english-word-cards), [ADR-081](../adr/081-english-first-and-english-word-cards.md)). It is an entry like any other, with `lang = "en"`; an entry without `lang` is a Japanese word and behaves as before.
+
+| field | holds, for an English entry |
+|---|---|
+| `key` | `<kind>:<id>:en:<word lower-cased>` |
+| `lang` | `"en"` |
+| `word` | the English word as the line wrote it |
+| `reading` | how it is said (its pronunciation), or empty when the table has none |
+| `lemma`, `lemmaReading` | empty: an English entry has no dictionary form |
+| `meaning` | the Japanese word the shipped translation uses for it in that line, with its reading in brackets when the reading differs |
+| `sentence`, `wf`, `wl` | the English sentence the client showed, cut at . ! ? and line breaks, and the word's place in it |
+| `jaSentence` | the sentence of the line's shipped Japanese that holds the Japanese word (`WordSave.japaneseSentence`), with the player's name and class filled in as the game shows them; empty when the line or the word is not found |
+
+The other fields (`kind`, `id`, `source`, `questId`, `questTitle`, `saved`, `shot`) are as above. The same English word saved again from the same text is not added twice, whatever its capitals; the same word from another line is a new entry. The English sentence is what the client showed this player, kept in the player's own `WFJ_Words` on their machine and never shipped, like the names and lines the voice panel keeps.
+
+In the export an English entry fills the same columns. **Meaning** holds the Japanese word, then `<br>` and the Japanese sentence. **Word (furigana)** is the English word as it is and **Sentence (furigana)** is the English sentence with the word in bold: English takes no furigana brackets. **Dictionary form** and **Its reading** are empty.
+
 ### Persistence
 The list is the SavedVariables table `WFJ_Words`, account-wide (every character shares one list):
 
@@ -105,14 +123,14 @@ quest.description:456:少し	少し	すこし	少し	すこし	a little	…<b>�
 - **Remove last** removes the newest entry. **Clear all** clears only on a second click within 5 seconds (as the collector's Clear does). Both are refused for a list from a newer version.
 - With no words, the window says how to save one. A word saved while the window is open shows in the text at once.
 
-The export holds the addon's own Japanese, readings and meanings, and the player's own data (sentences, dates, file names). It holds no English game text.
+The export holds the addon's own Japanese, readings and meanings, and the player's own data (sentences, dates, file names). For a Japanese word it holds no English game text. An [English entry](#english-entries) holds the English word and the English sentence the client showed the player.
 
 ### Studying it
 The list can also be studied in game, one card at a time, on an FSRS-6 schedule ([Study](study.md), [ADR-071](../adr/071-study-the-word-list-in-game.md)). The study state lives beside the list in its own SavedVariables table, `WFJ_Study`, keyed by the same key and holding numbers only; it is pruned to the list at load and after **Remove last** and **Clear all**, so a word removed and saved again starts as new. The export is unchanged by it: no study column, no change to any line. Studying in game and importing into Anki keep separate schedules; the addon never reads or writes Anki's.
 
 ### Where to find it
 - **The word card** shows a grey hint, `Ctrl+click: save word ・ Ctrl+clickで単語を保存` (naming the chosen click), until the first save ever; nothing while the save click is `off`.
-- **The intro window** has a line: save a highlighted word to your word list with the save click, and `/wfj study` quizzes you on it (it names the click as set, as do the About page line and the word list window's empty state).
+- **The About page line and the word list window's empty state** say how to save a word, naming the save click as set.
 - **The About page**'s readings line and `/wfj help` name the save click and `/wfj words`.
 - **The Words settings page** (単語帳): what the list is, the save click, the screenshot setting, how many words are saved, and the export button ([Settings → Settings pages](settings.md#settings-pages)).
 - **The minimap button**'s right-click menu: **Export words (N)**.
@@ -131,7 +149,7 @@ The list can also be studied in game, one card at a time, on an FSRS-6 schedule 
 - `tests/lua/spec/words_spec.lua`, `tests/lua/spec/words_window_spec.lua`, `tests/lua/spec/words_click_spec.lua`, `tests/lua/spec/settings_spec.lua`
 
 ## Invariants
-- No English game text is stored or shown: the list holds the shipped Japanese, readings, meanings (a class or race card's English name is the meaning its card already shows), Japanese quest titles and source keys (a gossip or book key is a hash, not text). [Principle 3](../architecture/principles.md#3-japanese-by-default-english-one-key-away).
+- For a Japanese word, no English game text is stored or shown. An English entry keeps the English word and sentence the client showed this player, in the player's own saved variables, never shipped. Otherwise the list holds the shipped Japanese, readings, meanings (a class or race card's English name is the meaning its card already shows), Japanese quest titles and source keys (a gossip or book key is a hash, not text). [Principle 3](../architecture/principles.md#3-japanese-by-default-english-one-key-away).
 - Entries are keyed by source and dictionary form, never by position. [Principle 5](../architecture/principles.md#5-every-translation-is-keyed-by-the-game).
 - The cover never takes clicks (its clicks are off and passed on to its parent, the frame the text sits in): the save click is read by polling, so every click, drag and wheel scroll reaches the frame it reached before. A press that ends after the cover moved (a window dragged by its text, the voice panel) is a drag, not a save.
 - One screenshot at a time: a save while one is still waiting for the client's answer takes none and prints at once. The file is named after the time of the capture, not of the answer. A wait the client never answers ends after 5 seconds: the card comes back, the line prints, and the next save can take a screenshot again.

@@ -292,7 +292,12 @@ def measure(root: Path) -> dict[str, Any]:
         words[type_] = {"lines": len(can), "with_words": len(can & covered), "stale": len(result["stale"]),
                         "words": n_words, "with_meaning": meant}
     by_reason, uncategorized = ui_exclusions_by_reason(repo)
+    from wfj.cmd import (
+        english_cards,  # here: the command module imports generate, which this file never needs
+    )
+
     return {"types": types, "readings": words, "served": served(repo), "voice": voice_coverage(root),
+            "english_cards": english_cards.coverage(Store(root))["surfaces"],
             "ui_left_english": {"by_reason": by_reason, "uncategorized": uncategorized}}
 
 
@@ -487,9 +492,33 @@ def render(m: dict[str, Any], stamp: str) -> str:
                    f"{r['stale']:,} | {r['words']:,} | {_pct(r['with_meaning'], r['words'])} |")
     out += ["", "Item, spell, objective and area text take no word cards; HTML book pages",
             "and lines holding a `|` escape are not counted."]
+    out += _render_english_cards(m.get("english_cards") or {})
     out += _render_voice(m.get("voice") or {})
     out.append("")
     return "\n".join(out)
+
+
+def _render_english_cards(e: dict[str, Any]) -> list[str]:
+    if not e:
+        return []
+    out = ["", "## English word cards (English first)", "",
+           "With the game text set to English first, pointing at an English word shows the Japanese word the",
+           "translation uses for it. The pairs are read off the meanings the readings already hold.", "",
+           "| Type | Lines with English and a word list | Words that can take a card | With one | Done |",
+           "|---|---|---|---|---|"]
+    words = carded = 0
+    for type_, r in e.items():
+        words, carded = words + r["words"], carded + r["carded"]
+        done = _pct(r["carded"], r["words"])
+        out.append(f"| {type_} | {r['lines']:,} | {r['words']:,} | {r['carded']:,} | {done} |")
+    out.append(f"| **All** | | **{words:,}** | **{carded:,}** | **{_pct(carded, words)}** |")
+    out += ["",
+            "A word is counted each time it occurs. Names (a capitalised word inside a sentence) and codes",
+            "the client fills in are not counted, and neither are the words that take no card by design: the",
+            "articles, the bare forms of be, have and do, and to, of, in, on, at, for, as, by, than, off,",
+            "upon. A contraction counts as carded through its first word (you're: you). A book page marked",
+            "up as HTML shows no cards in game, in either language, though its words are counted here."]
+    return out
 
 
 def _render_ui_left_english(u: dict[str, Any]) -> list[str]:

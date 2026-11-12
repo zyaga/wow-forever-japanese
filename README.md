@@ -7,6 +7,10 @@ and the game's interface. Hold **Alt** and the game's own English comes back; le
 is only the default: any key can be chosen. Names of people, places, creatures, items and spells stay in English
 everywhere, and so do quest titles.
 
+It works the other way round too, for Japanese players studying English: choose **English first** and the game
+stays in English, with the Japanese one key away and a popup that shows how each English word is said and its
+Japanese word.
+
 With the free voice download it also reads its Japanese aloud: over 14,000 quest texts, NPC lines and book pages,
 each NPC in a voice modelled on its own voice in the game, with a panel that shows who is speaking and what they say.
 
@@ -58,6 +62,10 @@ or Japanese)
 
 At the character select screen, click **AddOns**, make sure **WoW Forever Japanese** is ticked, and log in.
 
+The first time you log in, a welcome window asks what you are here for: **Study Japanese**, **Study English** or
+**Just play**. Pick one and press **Confirm**; nothing changes before that. You can open it again from the settings
+or with `/wfj intro`.
+
 ![The AddOns list at character select with WoW Forever Japanese ticked](docs/images/addon-list.jpg)
 
 ### Add the Japanese voice
@@ -108,6 +116,14 @@ how it went; the same FSRS schedule Anki uses decides when the word comes back, 
 The card collapses to the tab, moves anywhere, hides in combat, and comes back with `/wfj study`, from the minimap
 button's menu or from the **Words** settings page, where you also choose how many new words to start per day.
 
+**Study English instead.** Set **Game text** to **English first** on the settings page, or choose **Study English**
+in the welcome window. The game then stays in its own English, and holding Alt shows the Japanese: the same key,
+turned around. Point at an English word in quest text, NPC dialogue, a book page or a window label, and a popup shows
+how it is said, the Japanese word the translation uses for it there with its reading, and that word's dictionary
+form. Names and small words such as *the*, *is* and *of* have no popup. Ctrl+click saves the English word with its
+sentence and the Japanese sentence, and the study card then asks it English first. The Japanese voice plays only
+while the key is held.
+
 **Japanese voice.** With the voice installed ([see below](#add-the-japanese-voice)), quest offers, progress and
 turn-ins, NPC greetings and talk, and book and letter pages are read aloud in Japanese: over 14,000 lines. Each NPC
 speaks in a voice modelled on its own voice in the game, so it sounds like the NPC you know. Your character says its
@@ -132,10 +148,11 @@ marker. The addon notes such lines as you play (see below), and once someone sen
 translates them.
 
 **Settings.** Open **Esc > Options > AddOns > WoW Forever Japanese**, or type `/wfj config`. You can turn the whole
-translation on or off, turn each area on or off (quests, NPC talk, tooltips, the interface, books), change the key
-you hold for English, set a key that switches translation on and off, and turn the markers, the popup dictionary and
-the minimap button on or off. With the voice installed, the **Voice** page sets what is read aloud and how the voice
-panel looks.
+translation on or off, choose Japanese first or English first, turn each area on or off (quests, NPC talk, tooltips,
+the interface, books), change the key you hold for the other language, set a key that switches translation on and
+off, and turn the markers, the popup dictionary and the minimap button on or off. With the voice installed, the
+**Voice** page sets what is read aloud and how the voice panel looks. Each page but About has a **Defaults** button that resets
+that page only.
 
 ![The addon's settings page](docs/images/settings.jpg)
 
@@ -260,6 +277,8 @@ and why: [docs](docs/overview.md). What changed in each release: [`CHANGELOG.md`
 
 World of Warcraft: Forever を日本語で遊べるようにするアドオンです。クエスト、NPC の会話、本、アイテムと呪文のツールチップ、ゲームのインターフェースを日本語で表示します。**Alt** キーを押している間はゲーム本来の英語が表示され、離すと日本語に戻ります。Alt は初期設定のキーで、好きなキーに変更できます。人物・地名・モンスター・アイテム・呪文の名前はすべて英語のままです。クエストのタイトルも英語のままです。
 
+逆向きにも使えます。英語を学びたい方は **英語優先**（English first）を選ぶと、ゲームは英語のまま、キーひとつで日本語を表示でき、英語の単語にマウスを合わせると発音と日本語の単語が表示されます。
+
 無料の音声を追加すると、日本語を読み上げることもできます。クエスト、NPC の会話、本のページなど 14,000 行以上を、NPC ごとにゲームでのその NPC 自身の声をもとにした声で読み上げ、誰が何を話しているかをパネルに表示します。
 
 対応しているのは **World of Warcraft: Forever** のみです。WoW Classic や現行の World of Warcraft 用ではありません。
@@ -303,6 +322,8 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 
 キャラクター選択画面で **AddOns** を押し、**WoW Forever Japanese** にチェックが入っていることを確認してからログインします。
 
+初めてログインすると、ようこそ画面が開き、使い方を選べます。**日本語を学ぶ**（Study Japanese）、**英語を学ぶ**（Study English）、**日本語で遊ぶ**（Just play）の3つです。1つ選んで **決定** を押すまで、設定は何も変わりません。設定画面か `/wfj intro` でいつでも開き直せます。
+
 ![キャラクター選択画面の AddOns 一覧で WoW Forever Japanese にチェックが入っている画面](docs/images/addon-list.jpg)
 
 #### 日本語音声を追加する
@@ -334,6 +355,8 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 
 **ゲーム内で学習。** 画面右端の小さなタブに、復習する単語の数が表示されます。クリックすると単語が1枚ずつカードで出ます。保存したときの文の中に単語が示され、答えを見ると読み方と意味が表示されるので、「もう一度」か「正解」で答えます。次に出る時期は Anki と同じ FSRS の方式で決まり、復習する単語がなくなればその日はおしまいです。カードはタブにたたんだり好きな場所に動かしたりでき、戦闘中は隠れます。`/wfj study`、ミニマップボタンのメニュー、設定の **単語帳** ページからいつでも開き直せ、1日に始める新しい単語の数もそこで決められます。
 
+**英語を学ぶ場合。** 設定ページの **ゲームの文字**（Game text）を **English first** にするか、ようこそ画面で **英語を学ぶ** を選びます。ゲームは本来の英語のまま表示され、Alt を押している間だけ日本語が表示されます。同じキーで、向きが逆になります。クエスト本文、NPC の会話、本のページ、ウィンドウのラベルで英語の単語にマウスを合わせると、発音、その行の翻訳で使われている日本語の単語と読み方、その辞書形が表示されます。名前や *the*、*is*、*of* のような短い語には表示されません。Ctrl+クリックで英語の単語を英語の文と日本語の文と一緒に保存でき、学習カードは英語から出題します。日本語音声は、キーを押している間だけ再生されます。
+
 **日本語音声。** 音声を入れると（[下記](#日本語音声を追加する)）、クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページを日本語で読み上げます。合わせて 14,000 行以上です。NPC はそれぞれ、ゲームでのその NPC 自身の声をもとにした声で話すので、英語で聞き慣れた NPC と同じように聞こえます。自分のキャラクターも、射程外などのエラーの一言を、その種族のエラーの声をもとにした声で日本語で話します。それ以外はナレーターが読み、どの行も同じ音量で再生されます。
 
 **音声パネル。** 読み上げ中は、画面下のパネルに話している NPC の顔、名前と肩書き、読み上げ中の日本語が 1 文ずつ表示されます。どの単語にもポップアップ辞書が使えます。ウィンドウを閉じても読み上げは続くので、NPC の話を聞きながら先へ進めます。その間に始まった行はパネルの上の一覧で順番を待ち、クリックするとすぐに再生できます。Alt を押している間は、声はそのままでパネルにその行の英語が表示されます。パネルにマウスを合わせると、一時停止・もう一度再生・全文表示・閉じるのボタンが出ます。クエストログにも再生ボタンがあり、受けたあとのクエストの文も聞けます。パネルは移動でき、小さな帯の表示、暗い背景、オフに切り替えられます。
@@ -342,7 +365,7 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 
 **英語のまま残るテキスト。** NPC の会話、クエストの進行中や報告時の文章、チャットに出る NPC のセリフなど、一部の英語はゲームのファイルに入っておらず、プレイヤーが目にしたときにだけサーバーから届きます。まだ誰も記録していない行には日本語訳がないため、**[未翻訳 / Not Translated]** マーカー付きの英語のまま表示されます。アドオンはこうした行をプレイ中に記録します（下記）。誰かが送ってくれれば、以降の更新で翻訳されます。
 
-**設定。** **Esc > オプション > AddOns > WoW Forever Japanese**、または `/wfj config` で開きます。翻訳全体や項目ごとのオン・オフ、英語表示キーの変更、翻訳を切り替えるキーの設定、マーカー・ポップアップ辞書・ミニマップボタンの表示を切り替えられます。音声を入れている場合は、**音声** ページで読み上げる内容と音声パネルの見た目を設定できます。
+**設定。** **Esc > オプション > AddOns > WoW Forever Japanese**、または `/wfj config` で開きます。翻訳全体や項目ごとのオン・オフ、日本語優先と英語優先の切り替え、もう一方の言語を表示するキーの変更、翻訳を切り替えるキーの設定、マーカー・ポップアップ辞書・ミニマップボタンの表示を切り替えられます。音声を入れている場合は、**音声** ページで読み上げる内容と音声パネルの見た目を設定できます。各ページの **初期設定に戻す** ボタンは、そのページの設定だけを元に戻します。
 
 ![アドオンの設定画面](docs/images/settings.jpg)
 

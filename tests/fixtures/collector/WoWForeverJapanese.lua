@@ -1,4 +1,5 @@
 WFJ_DB = {
+	["asked"] = false,
 	["build"] = {
 		["addon"] = "@project-version@",
 	},

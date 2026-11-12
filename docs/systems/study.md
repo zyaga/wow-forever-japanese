@@ -81,6 +81,8 @@ The sentence is a word-card surface, `study`: the card attaches a reading record
 
 **The back** (Show answer): a faint gold rule under the sentence, then the reading, when it differs from the word; `Dictionary form: X（reading）`, when the dictionary form differs from the word or its reading differs from the word's; and, on its own line a half line lower, the meaning, when the word has one. The cover stays, so the sentence's readings stay hoverable. Then the **Again** (red) and **Good** (green) buttons. A grade asks `Study.answer`, then the next card shows, or the done state. Each step has one of the client's own short interface sounds: Show answer the options checkbox click (sound kit 856), Good the loot window's coin jingle (120), Again the quest log's abandon sound (846); all three are off with `study.sound` off, which the card's own speaker button toggles. A grade also blinks the whole card for a fifth of a second while the next one comes, green for Good and red for Again, the grade buttons' own colours. The card's height follows its text: it measures the title, the sentence and the answer once laid out (and once more a frame later) and grows past its 244 px minimum when a two-line title, a four-line sentence and a long answer need it, so the grades stay under the last line. A refused grade (a read-only table, a word no longer listed) prints the word list's chat line and leaves the card.
 
+**An English word** ([Word list → English entries](word-list.md#english-entries); an entry with `lang = "en"`, saved in English first). The front shows the English word and the English sentence it was saved from, with the word marked. The sentence's other English words take their English word cards (`Words.lineSpans` asks `Readings.englishLookup` for an English entry), never the tested word. The back shows how the word is said, between slashes, when the entry has a pronunciation; then, a half line lower, the Japanese word with its reading and, on the next line, the Japanese sentence that holds it (`jaSentence`). There is no dictionary form line. The scheduler, the queue, the grades and the sounds are the same: an English entry is a card like any other, and Japanese and English words share one queue and one daily cap.
+
 **The done state**: the title **Study** in place of the word, and two lines: `Nothing due.` and one of, in this order:
 
 | when | the second line |
@@ -91,7 +93,7 @@ The sentence is a word-card surface, `study`: the card attaches a reading record
 | the next due word is later today | `The next word comes at HH:MM.` |
 | otherwise | `The next word comes on YYYY-MM-DD.` |
 
-Every string is in English and Japanese, in the language the addon's windows use. No English game text appears on the card: the meaning is the model-written one the word card already shows, and the sentence is the Japanese the player saw ([Word list → An entry](word-list.md#an-entry)).
+Every string is in English and Japanese, in the language the addon's windows use. For a Japanese word no English game text appears on the card: the meaning is the model-written one the word card already shows, and the sentence is the Japanese the player saw ([Word list → An entry](word-list.md#an-entry)). An English word's card shows the English sentence the client showed the player when they saved it, kept in their own word list.
 
 ### The tab and where it lives
 **The tab** (`WFJStudyTab`, 84 × 24, with its own close button) reads `N due` / `N語`, the count of due words plus new words under the cap. It shows only while that count is above zero, the setting `study.tab` is on (the default), the card is not open and nothing hides it; with nothing to study the player sees nothing, and the tab's frame is not even built until it is first needed. Clicking it opens the card at the same spot.
@@ -130,7 +132,7 @@ The card's header carries three buttons of one size, 24 px, the client's own: th
 - `tests/lua/spec/fsrs_spec.lua`, `tests/lua/spec/study_spec.lua`, `tests/lua/spec/study_window_spec.lua`, `tests/lua/spec/readings_spec.lua`, `tests/lua/spec/words_spec.lua`, `tests/lua/spec/words_window_spec.lua`
 
 ## Invariants
-- No English game text is stored or shown: the card shows the saved Japanese, the reading and the model-written meaning; `WFJ_Study` holds keys and numbers only. [Principle 3](../architecture/principles.md#3-japanese-by-default-english-one-key-away).
+- For a Japanese word no English game text is stored or shown: the card shows the saved Japanese, the reading and the model-written meaning. An English entry shows the English word and sentence the player saved, from their own word list. `WFJ_Study` holds keys and numbers only. [Principle 3](../architecture/principles.md#3-japanese-by-default-english-one-key-away).
 - Study state is keyed by the word list key, never by position, and exists only for a listed word. [Principle 5](../architecture/principles.md#5-every-translation-is-keyed-by-the-game).
 - The scheduler is the published FSRS-6, unchanged: `Fsrs.W()` hands out a copy, so nothing can change the model every player uses.
 - The window never computes a schedule and the queue never reads a global: `now`, `today` and the cap are passed in.
@@ -142,6 +144,7 @@ The card's header carries three buttons of one size, 24 px, the client's own: th
 - **A word removed while on the card.** The list's change event moves on at once to the next word; its state is gone, so saving it again starts as new.
 - **An empty or missing sentence** (an old or garbled entry): the word alone, with nothing to mark or hover.
 - **A word with no meaning**: the back shows the reading only (and the dictionary form when it differs).
+- **An English word with no pronunciation or no Japanese sentence**: the back leaves that line out and shows the rest.
 - **A reading equal to the word** (a kana word): the back skips the reading line.
 - **A line no longer shipped**: the sentence keeps its mark, but no other word is hoverable, because the line has no reading list.
 - **Opened in combat with the combat setting off**: the sentence shows with its mark but no hover readings, because no cover can be made in combat; the readings come when the card next shows out of combat (the card attaches again whenever it comes back on screen with a word waiting).
@@ -151,4 +154,4 @@ The card's header carries three buttons of one size, 24 px, the client's own: th
 - **`/wfj study <setting> <value>`** falls through to the settings grammar (only `reset` is the window's own word), so `/wfj study tab off` and `/wfj study newPerDay 10` set the settings.
 
 ## Related
-- [Word list](word-list.md) · [Readings](readings.md) · [Settings](settings.md) · [ADR-071](../adr/071-study-the-word-list-in-game.md) · [ADR-069](../adr/069-saved-word-list.md) · [Testing → Study checklist](../testing/strategy.md#study-checklist) · [App capabilities → Study](../app-capabilities.md#study) · [Glossary](../glossary.md)
+- [Word list](word-list.md) · [Readings](readings.md) · [Settings](settings.md) · [ADR-071](../adr/071-study-the-word-list-in-game.md) · [ADR-069](../adr/069-saved-word-list.md) · [ADR-081](../adr/081-english-first-and-english-word-cards.md) · [Testing → Study checklist](../testing/strategy.md#study-checklist) · [App capabilities → Study](../app-capabilities.md#study) · [Glossary](../glossary.md)

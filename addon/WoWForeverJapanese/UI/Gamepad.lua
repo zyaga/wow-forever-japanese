@@ -271,7 +271,7 @@ local function onSkipUpdate(button)
   local fs = type(button) == "table" and button.text or nil
   if type(fs) ~= "table" or type(fs.GetText) ~= "function" then return end
   local en = fs:GetText()
-  local alt = WFJ.Modifier.isDown() and true or false
+  local alt = WFJ.Modifier.english() and true or false
   local on = (WFJ.State.enabled and WFJ.State.areaEnabled("ui")) and true or false
   local last = lastSkip[button]
   if last and last.en == en and last.alt == alt and last.on == on then

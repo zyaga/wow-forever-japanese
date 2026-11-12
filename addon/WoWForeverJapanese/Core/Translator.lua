@@ -1,9 +1,9 @@
 -- Core/Translator.lua: the policy "what should this element show now". Pure: every dependency is injected,
 -- no global is read (tests load it under an empty environment). Returns action, payload:
---   "leave"  frame untouched, no marker (master/area off, or modifier held)
+--   "leave"  frame untouched, no marker (master/area off, or English is showing: then payload { english = true })
 --   "none"   no usable translation: payload { reason?, marker="missing"? }
 --   "apply"  payload { ja, marker="stale"? }
--- deps = { enabled(), areaEnabled(area), modifierHeld(), lookup(kind, id) → {ja, status}|nil,
+-- deps = { enabled(), areaEnabled(area), showsEnglish(), lookup(kind, id) → {ja, status}|nil,
 --          marker(name) → bool, align(ja, lines) → ok[, text] [optional; absent = unaligned entries fail closed],
 --          alignVariants(variants, shapes, lines, nameScope) → ok[, text] [optional; an entry with
 --            `variants` (a branch line, ADR-043) goes through it on the gated path; absent → fails closed],
@@ -85,7 +85,7 @@ function Translator.new(deps)
     if not deps.areaEnabled(area) then return "leave" end
     -- a kind switched off as a whole is not ours to show: the live English stays and nothing is marked missing
     if deps.kindOff ~= nil and deps.kindOff(kind) then return "leave" end
-    if deps.modifierHeld() then return "leave" end
+    if deps.showsEnglish() then return "leave", { english = true } end
 
     local entry = deps.lookup(kind, id)
     if entry ~= nil and entry.sections ~= nil then return T.sections(entry, ctx) end

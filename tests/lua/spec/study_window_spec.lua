@@ -248,6 +248,26 @@ describe("the study window", function()
     assert.is_true(f.marks[1].shown)
   end)
 
+  it("an English word shows its English sentence, then how it is said, its Japanese word and Japanese sentence",
+  function()
+    local text = "Hunt a few creatures. Rest."
+    local first = text:find("creatures", 1, true)
+    WFJ.Words.add({ kind = "quest.description", id = 456, surface = "questframe.detail", text = text, first = first,
+      last = first + 8, word = "creatures", reading = "ˈkriːtʃərz", meaning = "生き物（いきもの）", questTitle = "題",
+      english = { jaSentence = "生き物を狩れ。" } }, NOW)
+    SW.open()
+    local f = card()
+    assert.are.equal("creatures", f.word.text)
+    assert.are.equal("Hunt a few creatures.", f.sentence.text)
+    assert.is_false(f.meaning:IsShown())
+    SW.showAnswer()
+    assert.are.equal("/ˈkriːtʃərz/", f.answer.en.text)
+    assert.are.equal("生き物（いきもの）\n生き物を狩れ。", f.meaning.text)
+    assert.is_true(f.good:IsShown())
+    SW.grade(WFJ.Study.GOOD)
+    assert.are.equal(clock + 2 * DAY, WFJ.Study.card("quest.description:456:en:creatures").due)
+  end)
+
   it("Good schedules the word and shows the next; Again brings it back after ten minutes", function()
     save("生き物")
     save("数")

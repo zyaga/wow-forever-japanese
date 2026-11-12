@@ -52,7 +52,7 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
     WFJ.Render.init(WFJ.Translator.new({
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,
-      modifierHeld = WFJ.Modifier.isDown,
+      showsEnglish = WFJ.Modifier.english,
       kindOff = opts.titlesOff and function(kind) return kind == "quest.title" end or nil,
       lookup = function(kind, id)
         if opts.lookup then return opts.lookup(kind, id) end

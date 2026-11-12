@@ -116,7 +116,7 @@ def test_meta_text_is_content_only():
     assert 'english = { pfquest = "7786596", wago = "1.15.9.69722" }' in text
     # the objective type joins the numeric-id types (counted after spell), then area
     assert ("counts = { quest = 2468, item = 2664, spell = 1009, objective = 0, area = 0, gossip = 0, book = 0,"
-            " ui = 0, reading = 0, gloss = 0 }") in text  # lines with readings, then glosses, last
+            " ui = 0, english = 0, reading = 0, gloss = 0 }") in text  # English card rows, readings, then glosses
     assert 'objective = { "text" }, area = { "text" }' in text
     assert 'quest = { "title", "objectives", "description", "progress", "completion" }' in text
     assert not re.search(r"\d{4}-\d{2}-\d{2}|\d{2}:\d{2}|/Users|/home|C:\\\\", text)

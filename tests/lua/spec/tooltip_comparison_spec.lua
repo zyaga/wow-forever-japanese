@@ -49,7 +49,7 @@ describe("UI/Tooltip comparison lines and the max-usable-level trailer", functio
     local translator = WFJ.Translator.new({
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,
-      modifierHeld = WFJ.Modifier.isDown,
+      showsEnglish = WFJ.Modifier.english,
       lookup = function(kind, id)
         if kind == "item.description" then return DATA[id] end
         if kind == "ui" and WFJ.UIIndex.rows[id] then return { ja = WFJ.UIIndex.rows[id][1], status = "." } end

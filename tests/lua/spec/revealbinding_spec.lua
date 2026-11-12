@@ -53,7 +53,7 @@ describe("UI/RevealBinding: a bound modifier is taken over by an override bindin
     WFJ.Render.init(WFJ.Translator.new({ -- Main's deps, with a one-row fixture instead of the shipped data
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,
-      modifierHeld = WFJ.Modifier.isDown,
+      showsEnglish = WFJ.Modifier.english,
       lookup = function(kind, id)
         if kind == "quest.title" and id == 2 then return { ja = "Sharptalonの鉤爪", status = "." } end
         return nil

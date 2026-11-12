@@ -113,7 +113,7 @@ end
 local function retitleIfShown()
   if WordsWindow.frame and WordsWindow.frame:IsShown() then WordsWindow.retitle() end
 end
-WFJ.State.on("modifier", retitleIfShown)
+WFJ.State.on("language", retitleIfShown)
 WFJ.State.on("enabled", retitleIfShown)
 
 function WordsWindow.open()

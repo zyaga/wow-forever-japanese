@@ -29,7 +29,7 @@ local function tipText(text)
   local index, T = WFJ.UIIndex, WFJ.Tooltip
   if not index or type(text) ~= "string" or text == "" then return nil end
   local S_ = WFJ.State
-  local own = S_ and S_.enabled and not S_.modifierHeld and S_.areaEnabled("ui")
+  local own = S_ and S_.enabled and not S_.showsEnglish() and S_.areaEnabled("ui")
   if OWN_TIP_WORDS[text] then return own and OWN_TIP_WORDS[text] or nil end
   -- "Replace <item link>", the word possibly in its own colour
   local at, stop = text:find(REPLACE, 1, true)
@@ -193,7 +193,7 @@ end
 
 local function chatLine(text)
   local S_, Sp = WFJ.State, WFJ.Speech
-  if not (S_ and S_.enabled and not S_.modifierHeld and S_.areaEnabled("gossip")) then return nil end
+  if not (S_ and S_.enabled and not S_.showsEnglish() and S_.areaEnabled("gossip")) then return nil end
   if not (Sp and type(Sp.translate) == "function") then return nil end
   local ja = Sp.translate(text)
   -- Dialogue UI fills an emote's speaker with format(): a `%` in the Japanese other than that `%s` would break it
@@ -397,7 +397,7 @@ function Frames.install(window)
   if type(window) == "table" and type(window.HookScript) == "function" then
     window:HookScript("OnShow", function() guarded(scanSoon) end)
   end
-  for _, event in ipairs({ "modifier", "enabled", "area" }) do
+  for _, event in ipairs({ "language", "enabled", "area" }) do
     WFJ.State.on(event, function() guarded(refresh) end)
   end
 end

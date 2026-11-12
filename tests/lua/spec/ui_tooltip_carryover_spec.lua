@@ -39,7 +39,7 @@ describe("item tooltip carry-overs", function()
     WFJ.Render.init(WFJ.Translator.new({ -- as uiSetup, plus one translated item for the applied-run case
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,
-      modifierHeld = WFJ.Modifier.isDown,
+      showsEnglish = WFJ.Modifier.english,
       lookup = function(kind, id)
         if kind == "ui" then local r = rows[id]; return r and { ja = r[1], status = r[3] } end
         if kind == "item.description" and id == 7000 then return { ja = RUN_JA, status = "." } end

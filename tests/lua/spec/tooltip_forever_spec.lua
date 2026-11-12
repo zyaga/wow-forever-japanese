@@ -36,7 +36,7 @@ local function setup()
   WFJ.Render.init(WFJ.Translator.new({
     enabled = function() return WFJ.State.enabled end,
     areaEnabled = WFJ.State.areaEnabled,
-    modifierHeld = WFJ.Modifier.isDown,
+    showsEnglish = WFJ.Modifier.english,
     lookup = function(kind, id) return DATA[kind] and DATA[kind][id] end,
     marker = function(n) return WFJ.Settings.get("marker." .. n) end,
     align = WFJ.Align.check,

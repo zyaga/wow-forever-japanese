@@ -168,7 +168,7 @@ function GuildBank.showLog(frame)
   frame = frame or get("log")
   local lines = type(frame) == "table" and type(frame.visibleLines) == "table" and frame.visibleLines or {}
   local fontObject = type(frame) == "table" and type(frame.GetFontObject) == "function" and frame:GetFontObject() or nil
-  local wanted, n = on() and not WFJ.Modifier.isDown(), 0
+  local wanted, n = on() and not WFJ.Modifier.english(), 0
   for _, line in ipairs(lines) do
     local info = type(line) == "table" and line.messageInfo or nil
     local ja = type(info) == "table" and info.message or nil
@@ -193,7 +193,7 @@ local function hookLog()
   hooksecurefunc(log, "AddMessage", GuildBank.onLogMessage)
   if type(log.Clear) == "function" then hooksecurefunc(log, "Clear", function() logJa = {} end) end
   if type(log.AddOnDisplayRefreshedCallback) == "function" then log:AddOnDisplayRefreshedCallback(GuildBank.showLog) end
-  for _, change in ipairs({ "enabled", "area", "modifier" }) do
+  for _, change in ipairs({ "enabled", "area", "language" }) do
     WFJ.State.on(change, function() GuildBank.showLog() end)
   end
   return true

@@ -173,7 +173,8 @@ local function desiredOf(rec)
     if not inline then return nil, nil, action, payload.marker end
     return inlineMarker(rec, payload.marker) .. (rec.en or ""), WFJ.Font.bundled(rec.font), action, payload.marker
   end
-  return nil, nil, action, nil
+  -- "leave" because English is what shows now (not because translation or the area is off): the fifth value
+  return nil, nil, action, nil, action == "leave" and payload ~= nil and payload.english == true
 end
 
 -- → text, font, and the record's own action: "apply" only for a primary record that shows its Japanese
@@ -189,8 +190,8 @@ desired = function(rec)
     end
     return nil
   end
-  local text, font, action = desiredOf(rec)
-  return text, font, action
+  local text, font, action, _, english = desiredOf(rec)
+  return text, font, action, english
 end
 
 -- The text and font the policy would show for an element that has no record: a widget the client only measures
@@ -274,11 +275,14 @@ end
 
 -- Brings one record in line with the policy. → whether a write happened, and the record's action when it did
 local function sync(rec, fromShow)
-  local text, font, action = desired(rec)
+  local text, font, action, english = desired(rec)
   if text == nil then
     pendingFonts[rec] = nil
     readings("detach", rec)
-    return SS.restore(rec.surface, rec.key)
+    local restored = SS.restore(rec.surface, rec.key)
+    -- English first: the client's own line takes the English word cards (the Japanese ones come with the key)
+    if english and WFJ.State.direction == "en" then readings("attachEnglish", rec) end
+    return restored
   end
   if rec.applied == text and sameFont(rec.appliedFont, font) then
     pendingFonts[rec] = nil
@@ -480,5 +484,5 @@ end
 
 WFJ.State.on("enabled", function() Render.refresh() end)
 WFJ.State.on("area", function() Render.refresh() end)
-WFJ.State.on("modifier", function() Render.refresh() end)
+WFJ.State.on("language", function() Render.refresh() end)
 WFJ.State.on("markers", function() Render.refresh() end)

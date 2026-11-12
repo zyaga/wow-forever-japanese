@@ -42,8 +42,6 @@ function WoWForeverJapanese_RegisterVoice(tbl)
   if WFJ.loaded and WFJ.Options and WFJ.Voice.hasPack() then
     local ok, err = pcall(WFJ.Options.addPage, "voice")
     if not ok then WFJ.initErrors[#WFJ.initErrors + 1] = { surface = "options.voice", err = tostring(err) } end
-    ok, err = pcall(WFJ.Options.addPage, "voicepanel")
-    if not ok then WFJ.initErrors[#WFJ.initErrors + 1] = { surface = "options.voicepanel", err = tostring(err) } end
   end
   return n, invalid
 end
@@ -132,6 +130,7 @@ local function expand(ja)
   if not WFJ.Placeholders.mayHaveTokens(ja) then return ja end -- token-free text never touches the client
   return (WFJ.Placeholders.expand(ja, player()))
 end
+WFJ.expandTokens = expand -- UI/WordSave: a saved English word's Japanese sentence, as the game shows it
 
 -- The client's live English for a UI string key (ADR-015): its global string. An item subclass has none the
 -- tooltip uses (C_Item.GetItemSubClassInfo returns the long name "Staves" where the tooltip shows "Staff"),
@@ -306,7 +305,7 @@ function WFJ.OnLoad()
     lookup = WFJ.Lookup.get,
     hash = WFJ.Hash.key,
     setting = WFJ.Settings.get,
-    revealed = WFJ.Modifier.isDown,
+    revealed = WFJ.Modifier.english,
     enabled = function() return WFJ.State.enabled end,
     heard = function() -- the lines already heard, for the first time only settings (keys and hashes, never text)
       if type(WFJ_DB) ~= "table" then return nil end
@@ -323,7 +322,7 @@ function WFJ.OnLoad()
   step("render", function() WFJ.Render.init(WFJ.Translator.new({
     enabled = function() return WFJ.State.enabled end,
     areaEnabled = WFJ.State.areaEnabled,
-    modifierHeld = WFJ.Modifier.isDown,
+    showsEnglish = WFJ.Modifier.english,
     kindOff = function(kind) return kind == "quest.title" and not WFJ.QUEST_TITLES_JAPANESE end,
     lookup = WFJ.Lookup.get,
     marker = function(name) return WFJ.Settings.get("marker." .. name) end,

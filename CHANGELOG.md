@@ -9,7 +9,17 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Added
+- English first, for players studying English: set *Game text* to *English first* on the main settings page (or type `/wfj direction en`) and the game stays in its own English everywhere the addon translates. Hold the key and the Japanese shows instead; let go and the English is back. It is the same key and the exact mirror of how the addon worked before, which is still the default. The Japanese voice is heard only while the key is held.
+- English word cards: in English first, point at an English word in quest text, NPC talk, a book or letter page or a window label to see how it is said, the Japanese word the translation uses for it in that line with its reading, and that word's dictionary form. About nine in ten words that can have a card do. Names, *a*, *the*, and bare words such as *is*, *have*, *of* and *to* have none, and neither do pages the game lays out with pictures or headings.
+- Save and study English words: in English first the save click keeps the English word with how it is said, its Japanese word, the English sentence and the Japanese sentence. The study card then shows the English word and sentence first, and the Japanese on the back. The exported list holds them too.
+- A welcome window that asks what you are here for: Study Japanese, Study English or Just play. Pick one and press Confirm, and it sets the game text, the word cards and the study tab to match; then it shows what to know to get started. Everyone sees it once, players who already have the addon too, and nothing changes until you press Confirm. Open it again any time from the top of the settings page, the About page or with `/wfj intro`.
+
 ### Changed
+- The settings pages have more room: each page scrolls when it needs to, sections are spaced apart, and the explanations are shorter. Every page but About has a Defaults button (click it, then click again within five seconds) that resets that page's settings only. The version, memory and data counts moved to the About page.
+- The voice settings and the voice panel's settings are on one page, *Voice*. There is no separate *Voice panel* page any more.
+- The key setting is now called *Hold to show the other language*, since it shows English or Japanese depending on *Game text*.
+- The English Collector page tells you how to send in one line; the send window shows the steps.
 - Quest titles now stay in the game's English everywhere: the quest list, the tracker, the quest log, the quest window, the quest rows in an NPC's talk window, Dialogue UI's windows, tooltips and system messages. A title is a name, like a person's or a place's: it is what you search a guide for, link in chat and say to a party member. The quest's text, objectives and descriptions are Japanese as before.
 - The voice now says every English name in Japanese sounds that match what you read on screen: Black Dragonflight is spoken ブラック・ドラゴンフライト, not translated, and Tiger is タイガー. Names on screen stay English, as before.
 - Every voice line has been made again. Each NPC voice now sounds steadier from one line to the next, and words the voice often said wrong come out right: 冒険者, a few single-kanji words such as 金 (かね) and 獣 (けもの), and words that came right after a space.

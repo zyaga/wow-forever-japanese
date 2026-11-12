@@ -96,7 +96,7 @@ describe("Readings", function()
     R.init(WFJ.Translator.new({
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,
-      modifierHeld = WFJ.Modifier.isDown,
+      showsEnglish = WFJ.Modifier.english,
       lookup = function(kind, id) return DATA[kind] and DATA[kind][id] end,
       marker = function() return false end,
     }))
@@ -250,6 +250,92 @@ describe("Readings", function()
       assert.is_true(cover:IsShown())
     end)
 
+    -- ── English first ──────────────────────────────────────────────
+    local function englishFirst()
+      WFJ.Data.add("english", { ["quest:456"] = { description = "greetings=1" } })
+      S.set("direction", "en")
+    end
+
+    it("English first leaves the client's line alone and lays English cards on it", function()
+      englishFirst()
+      local fs = questFs()
+      R.show("questframe.detail", "description", fs, fs:GetText(), "quests", "quest.description", 456)
+      assert.are.equal("Greetings, Reyn.", fs:GetText())
+      local cover = coverOf(fs)
+      assert.is_true(cover:IsShown())
+      assert.are.equal("Greetings, Reyn.", cover.text)
+      Stub.cursor = { 100 + 3, 205 } -- over "Greetings"
+      cover.scripts.OnEnter(cover)
+      cover.scripts.OnUpdate(cover, 0.01)
+      local box
+      for _, f in ipairs(Stub.frames) do if f.strata == "TOOLTIP" then box = f end end
+      local label
+      for _, c in ipairs(box.children) do if c.GetText then label = c end end
+      assert.are.equal("御機嫌よう（ごきげんよう）", label:GetText())
+      Stub.cursor = { 100 + 13, 205 } -- over "Reyn": a name gets no card
+      cover.scripts.OnUpdate(cover, 0.01)
+      assert.is_false(box:IsShown())
+    end)
+
+    it("the key swaps the English cards for the Japanese ones and back, twenty times, on one cover", function()
+      englishFirst()
+      local fs = questFs()
+      R.show("questframe.detail", "description", fs, fs:GetText(), "quests", "quest.description", 456)
+      local cover = coverOf(fs)
+      local ja = JA:gsub("{name}", "Reyn")
+      for _ = 1, 20 do
+        Stub.keys.alt = true; WFJ.Modifier.refresh()
+        assert.are.equal(ja, fs:GetText())
+        assert.are.same({ ja, "御機嫌よう", true }, { cover.text, cover.spans[1].word, cover:IsShown() })
+        Stub.keys.alt = false; WFJ.Modifier.refresh()
+        assert.are.equal("Greetings, Reyn.", fs:GetText())
+        assert.are.same({ "Greetings, Reyn.", "Greetings", true }, { cover.text, cover.spans[1].word, cover:IsShown() })
+      end
+      local covers = 0
+      for _, f in ipairs(Stub.frames) do if f.allPoints == fs then covers = covers + 1 end end
+      assert.are.equal(1, covers)
+    end)
+
+    it("changing the direction re-renders a line that is on screen, both ways", function()
+      WFJ.Data.add("english", { ["quest:456"] = { description = "greetings=1" } })
+      local fs = questFs()
+      R.show("questframe.detail", "description", fs, fs:GetText(), "quests", "quest.description", 456)
+      local ja = JA:gsub("{name}", "Reyn")
+      assert.are.equal(ja, fs:GetText())
+      S.set("direction", "en")
+      assert.are.equal("Greetings, Reyn.", fs:GetText())
+      assert.are.equal("Greetings", coverOf(fs).spans[1].word)
+      S.set("direction", "ja")
+      assert.are.equal(ja, fs:GetText())
+      assert.are.equal("御機嫌よう", coverOf(fs).spans[1].word)
+    end)
+
+    it("English first lays no cover on a line with an escape sequence, a line with no listed word, or with cards off",
+    function()
+      englishFirst()
+      local fs = questFs()
+      fs:SetText("|cffffd100Greetings|r, Reyn.")
+      R.show("questframe.detail", "description", fs, fs:GetText(), "quests", "quest.description", 456)
+      assert.is_nil(coverOf(fs))
+      assert.are.equal(0, fs.spanCalls)
+      local other = questFs()
+      other:SetText("Reyn, hello.")
+      R.show("questframe.reward", "description", other, other:GetText(), "quests", "quest.description", 456)
+      assert.is_nil(coverOf(other))
+      S.set("readings.enabled", false)
+      local third = questFs()
+      R.show("questframe.progress", "description", third, third:GetText(), "quests", "quest.description", 456)
+      assert.is_false(coverOf(third):IsShown())
+    end)
+
+    it("Japanese first with translation off lays no English cards", function()
+      WFJ.Data.add("english", { ["quest:456"] = { description = "greetings=1" } })
+      S.set("enabled", false)
+      local fs = questFs()
+      R.show("questframe.detail", "description", fs, fs:GetText(), "quests", "quest.description", 456)
+      assert.is_nil(coverOf(fs))
+    end)
+
     it("release and forget detach", function()
       local fs = questFs()
       R.show("questframe.detail", "description", fs, fs:GetText(), "quests", "quest.description", 456)
@@ -294,6 +380,32 @@ describe("Readings", function()
       function page:spanRegion() return self.fs end
       return page, fs
     end
+
+    it("English first: a page adapter that draws the client's English in its FontString takes English cards there",
+      function()
+        WFJ.Data.add("english", { ["book:bk1"] = { text = "armor=2 demon=1" } })
+        local en = "This demon armor is old."
+        local page, fs = pageAdapter(en)
+        function page:englishRegion() -- as UI/ItemText's: draws the page there when it shows the client's English
+          if self.logical ~= en then return nil end
+          fs:SetText(en); self.html = ""
+          return fs
+        end
+        S.set("direction", "en")
+        R.show("itemtext", "page", page, page:GetText(), "books", "book", "bk1")
+        local cover = coverOf(fs)
+        assert.is_true(cover:IsShown())
+        assert.are.same({ en, "demon", "armor" }, { cover.text, cover.spans[1].word, cover.spans[2].word })
+        assert.are.equal("悪魔（あくま）", cover.spans[1].reading)
+        Stub.keys.alt = true; WFJ.Modifier.refresh() -- the Japanese page, with its own cards
+        assert.are.equal("悪魔", cover.spans[1].word)
+        Stub.keys.alt = false; WFJ.Modifier.refresh()
+        assert.are.equal("demon", cover.spans[1].word)
+        -- an adapter with no way to draw the English there takes none
+        local other, otherFs = pageAdapter(en)
+        R.show("itemtext", "other", other, other:GetText(), "books", "book", "bk1")
+        assert.is_nil(coverOf(otherFs))
+      end)
 
     it("a plain-text Japanese book page takes a cover on the adapter's FontString; English detaches it",
       function()

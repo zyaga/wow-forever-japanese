@@ -70,7 +70,7 @@ describe("the ui area on its surfaces", function()
     WFJ.Render.init(WFJ.Translator.new({
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,
-      modifierHeld = WFJ.Modifier.isDown,
+      showsEnglish = WFJ.Modifier.english,
       lookup = function(kind, id)
         if kind == "ui" then local r = rows[id]; return r and { ja = r[1], status = r[3] } end
         if kind == "item.description" and id == 6948 then return { ja = ITEM_JA, status = "u" } end

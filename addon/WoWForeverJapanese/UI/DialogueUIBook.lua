@@ -335,7 +335,7 @@ function Book.install()
     ev:SetScript("OnEvent", onEvent)
   end
   WFJ.DialogueUI.onClose(f, forget)
-  for _, event in ipairs({ "modifier", "enabled", "area", "markers" }) do
+  for _, event in ipairs({ "language", "enabled", "area", "markers" }) do
     WFJ.State.on(event, function()
       if book and active() then guarded(write) end
     end)

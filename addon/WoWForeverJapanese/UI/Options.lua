@@ -8,7 +8,9 @@ local Options = {}
 WFJ.Options = Options
 
 local S, M, W, Text, KC = WFJ.Settings, WFJ.Modifier, WFJ.OptionsWidgets, WFJ.OptionsText, WFJ.KeyCapture
-local LEFT, WIDTH, COL2 = 16, 620, 330
+-- the row width leaves room for the page's scroll bar
+local LEFT, WIDTH, COL2 = 16, 596, 318
+local SECTION_GAP = 26 -- between sections: a page scrolls, so it need not be packed onto one screen
 local COL3 = math.floor(WIDTH / 3) -- a three-column section's column width
 
 Options.TITLE = "WoW Forever Japanese"
@@ -21,21 +23,16 @@ Options.refreshers = {} -- per-action refresh functions
 Options.inCombat = false -- set by Main's PLAYER_REGEN_* (the lockdown query may still read false inside the event)
 
 Options.PAGES = {
-  { id = "main", title = "page.main", header = true, tagline = true, sections = {
-    -- Two columns: readings beside "Enable translation", then meanings and the minimap button on a second row. With
-    -- the areas in three columns below, the page fits 640 × 560.
-    { title = "section.translation", columns = 2,
-      rows = { "enabled", "readings.enabled", "readings.glosses", "minimapButton" }, gap = 0 },
-    { rows = { "modifier", "toggleKey" } },
+  { id = "main", title = "page.main", tagline = true, sections = {
+    { rows = { "mainWelcome" } }, -- the way back to the welcome window's question
+    { title = "section.translation", columns = 2, rows = { "enabled", "minimapButton" }, gap = 4 },
+    { rows = { "direction" } }, -- which language shows first: its dropdown takes the row
+    { title = "section.keys", rows = { "modifier", "toggleKey" } },
     { title = "section.areas", columns = 3,
       rows = { "area.quests", "area.gossip", "area.books", "area.itemTooltips", "area.spellTooltips",
         "area.interface" } },
+    { title = "section.cards", columns = 2, rows = { "readings.enabled", "readings.glosses" } },
     { title = "section.markers", rows = { "marker.stale", "marker.missing" } },
-  } },
-  { id = "collector", title = "page.collector", sections = {
-    { title = "section.collector",
-      rows = { "collectorExplain", "collector.enabled", "collector.remind", "collectorStatus", "collectorClear" } },
-    { title = "section.files", rows = { "collectorSteps", "collectorSend", "collectorPath" } },
   } },
   -- the saved word list (Core/Words): how to save, the count and the export window. Remove last and Clear all live in
   -- that window only.
@@ -46,28 +43,31 @@ Options.PAGES = {
     { title = "section.study", rows = { "studyExplain", "study.tab", "study.newPerDay", "study.combatHide",
       "study.sound", "studyStatus", "studyOpen" } },
   } },
-  { id = "about", title = "page.about", header = true, sections = {
-    { title = "section.help", rows = { "aboutHold", "aboutReadings", "aboutMarkers", "aboutOpen", "aboutVoice" } },
-    { title = "section.slash", rows = { "slashHelp" } },
-    { columns = 2, rows = { "aboutFix", "aboutBug" } }, -- the fix window beside the bug and idea window
-  } },
   -- Only when the voice pack has registered (Core/Voice): built with the others when the pack is already there, else
-  -- added by Options.addPage when it registers.
+  -- added by Options.addPage when it registers. The voice panel's choices are on the same page: a page scrolls.
   { id = "voice", title = "page.voice", requires = function() return WFJ.Voice ~= nil and WFJ.Voice.hasPack() end,
     sections = {
     { title = "section.voice", rows = { "voice.enabled", "voice.muteDialog", "voice.button" } },
     { title = "section.voiceKinds", columns = 2,
       rows = { "voice.offer", "voice.progress", "voice.turnin", "voice.greeting", "voice.books", "voice.errors",
         "voice.questOnce", "voice.greetingOnce" } },
-  } },
-  -- The voice panel's choices: a page of their own (a page does not scroll, and the Voice page is full).
-  { id = "voicepanel", title = "page.voicePanel",
-    requires = function() return WFJ.Voice ~= nil and WFJ.Voice.hasPack() end, sections = {
     { title = "section.voicePanel",
       rows = { "voice.panel.size", "voice.panel.style", "voice.panel.keep", "voice.panel.head" } },
     { title = "section.voicePanelMore", -- one column: the labels are long, and two columns wrapped into each other
       rows = { "voice.panel.hoverButtons", "voice.panel.fade", "voice.panel.combatDim",
         "voice.panel.lock" } },
+  } },
+  { id = "collector", title = "page.collector", sections = {
+    { title = "section.collector",
+      rows = { "collectorExplain", "collector.enabled", "collector.remind", "collectorStatus", "collectorClear" } },
+    { title = "section.files", rows = { "collectorSteps", "collectorSend", "collectorPath" } },
+  } },
+  { id = "about", title = "page.about", noDefaults = true, sections = {
+    { title = "section.help", rows = { "aboutHold", "aboutReadings", "aboutMarkers", "aboutOpen", "aboutIntro" } },
+    { title = "section.voice", rows = { "aboutVoice" } },
+    { title = "section.report", columns = 2, rows = { "aboutFix", "aboutBug" } }, -- the two report windows
+    { title = "section.slash", rows = { "slashHelp" } },
+    { title = "section.about", rows = { "aboutVersion" } },
   } },
 }
 
@@ -133,7 +133,7 @@ end
 local function keyRow(page, d, x, y, width)
   W.label(page, d.label, d.ja, x, y, 220)
   local ctl = { id = d.id, kind = "key" }
-  ctl.dropdown = W.dropdown(page, x + 230, y, 150, function(_, root)
+  ctl.dropdown = W.dropdown(page, x + 230, y, 130, function(_, root)
     for _, k in ipairs(M.PRESETS) do
       root:CreateRadio(M.display(k), function() return S.get(d.id) == k end, function() Options.setModifier(k) end, k)
     end
@@ -144,7 +144,7 @@ local function keyRow(page, d, x, y, width)
   end)
   ctl.capture = KC.new(page, { mode = "reveal", width = 105, onKey = Options.setModifier,
     onRefused = function() Options.refresh() end })
-  ctl.capture.button:SetPoint("TOPLEFT", x + 395, y + 2)
+  ctl.capture.button:SetPoint("TOPLEFT", x + 370, y + 2)
   ctl.warning = W.label(page, "", "", x, y - 26, width)
   ctl.warning.en:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3])
   Options.controls[#Options.controls + 1] = ctl
@@ -236,10 +236,10 @@ end
 function A.toggleKey(page, x, y)
   W.label(page, Text.T.toggleKey.en, Text.T.toggleKey.ja, x, y, 220)
   local t = {}
-  t.keyText = W.fontString(page, "GameFontHighlight", "", x + 230, y, 155, 12)
+  t.keyText = W.fontString(page, "GameFontHighlight", "", x + 230, y, 135, 12)
   t.capture = KC.new(page, { mode = "toggle", width = 105, onKey = Options.proposeToggle,
     onRefused = function() Options.refresh() end })
-  t.capture.button:SetPoint("TOPLEFT", x + 395, y + 2)
+  t.capture.button:SetPoint("TOPLEFT", x + 370, y + 2)
   local en, ja = Text.get("button.unbind")
   -- beside Set key, on the same line
   t.unbind = W.button(page, en, ja, 95, function() Options.unbindOrReplace() end)
@@ -253,7 +253,7 @@ end
 
 function A.collectorExplain(page, x, y, width)
   local en, ja = Text.get("collector.explain")
-  return W.labelHeight(W.label(page, en, ja, x, y, width), 64) -- wraps: the Japanese follows the English's bottom
+  return W.labelHeight(W.label(page, en, ja, x, y, width), 30)
 end
 
 function A.collectorStatus(page, x, y, width)
@@ -312,7 +312,7 @@ A.collectorPath = copyRow("collector.path", function() return WFJ.Collector.path
 
 function A.collectorSteps(page, x, y, width)
   local en, ja = Text.get("collector.steps")
-  return W.labelHeight(W.label(page, en, ja, x, y, width), 72)
+  return W.labelHeight(W.label(page, en, ja, x, y, width), 30)
 end
 
 -- Opens the send window (UI/CollectorSendWindow) with the lines not sent yet.
@@ -365,18 +365,31 @@ end
 local function voiceLoaded()
   local packs = WFJ.Voice and WFJ.Voice.hasPack() and WFJ.Voice.packs()
   if not packs then return nil end
-  local rows = {}
+  local bands, rest = {}, {}
   for folder in pairs(packs) do
-    local en, ja, lo = Options.voicePackName(folder)
-    rows[#rows + 1] = { en = en, ja = ja, lo = lo or math.huge, folder = folder }
+    local lo, hi = folder:match("Levels(%d+)to(%d+)$")
+    if lo then
+      bands[#bands + 1] = { lo = tonumber(lo), hi = tonumber(hi) }
+    else
+      local en, ja = Options.voicePackName(folder)
+      rest[#rest + 1] = { en = en, ja = ja, folder = folder }
+    end
   end
-  if #rows == 0 then return nil end
-  table.sort(rows, function(a, b)
-    if a.lo ~= b.lo then return a.lo < b.lo end
-    return a.folder < b.folder
-  end)
-  local en, ja = {}, {}
-  for i, r in ipairs(rows) do en[i], ja[i] = r.en, r.ja end
+  if #bands == 0 and #rest == 0 then return nil end
+  table.sort(bands, function(a, b) return a.lo < b.lo end)
+  table.sort(rest, function(a, b) return a.folder < b.folder end)
+  -- bands that follow on from each other read as one range (1-10 … 51-60 → "Levels 1-60"), so the line stays short
+  local en, ja, i = {}, {}, 1
+  while i <= #bands do
+    local lo, hi = bands[i].lo, bands[i].hi
+    while bands[i + 1] and bands[i + 1].lo == hi + 1 do
+      i = i + 1
+      hi = bands[i].hi
+    end
+    en[#en + 1], ja[#ja + 1] = ("Levels %d-%d"):format(lo, hi), ("レベル%d-%d"):format(lo, hi)
+    i = i + 1
+  end
+  for _, r in ipairs(rest) do en[#en + 1], ja[#ja + 1] = r.en, r.ja end
   return table.concat(en, ", "), table.concat(ja, "、")
 end
 
@@ -423,7 +436,7 @@ end
 
 function A.wordsExplain(page, x, y, width)
   local en, ja = Text.get("words.explain")
-  return W.labelHeight(W.label(page, en, ja, x, y, width), 48)
+  return W.labelHeight(W.label(page, en, ja, x, y, width), 30)
 end
 
 function A.wordsStatus(page, x, y, width)
@@ -446,7 +459,7 @@ end
 
 function A.studyExplain(page, x, y, width)
   local en, ja = Text.get("study.explain")
-  return W.labelHeight(W.label(page, en, ja, x, y, width), 48)
+  return W.labelHeight(W.label(page, en, ja, x, y, width), 30)
 end
 
 function A.studyStatus(page, x, y, width)
@@ -492,6 +505,33 @@ function A.aboutHold(page, x, y, width)
   return W.labelHeight(l, 24)
 end
 
+-- The main page's way back to the welcome window, where the player says what they are here for: one line and the
+-- button beside it.
+function A.mainWelcome(page, x, y, width)
+  local en, ja = Text.get("main.welcome")
+  local l = W.label(page, en, ja, x, y, width - 240)
+  en, ja = Text.get("about.intro")
+  local b = W.button(page, en, ja, 220, function() WFJ.IntroWindow.open() end)
+  b:SetPoint("TOPRIGHT", page, "TOPLEFT", x + width, y + 4)
+  return W.labelHeight(l, 30)
+end
+
+-- Opens the welcome window again (UI/IntroWindow), for a player who closed it or never saw it.
+function A.aboutIntro(page, x, y)
+  local en, ja = Text.get("about.intro")
+  local b = W.button(page, en, ja, 220, function() WFJ.IntroWindow.open() end)
+  b:SetPoint("TOPLEFT", x, y - 4)
+  return 36
+end
+
+-- The version, the memory the addon holds and how much data ships: filled when the page shows (reading the memory
+-- is an expensive call).
+function A.aboutVersion(page, x, y, width)
+  local l = W.label(page, "", "", x, y, width)
+  Options.versionLine = l
+  return 24
+end
+
 function A.slashHelp(page, x, y, width)
   for i, line in ipairs(Text.SLASH) do
     W.fontString(page, "GameFontHighlightSmall", line, x, y - (i - 1) * 14, width)
@@ -506,55 +546,112 @@ local function row(page, id, x, y, width)
   return settingRow(page, id, x, y, width)
 end
 
+-- The settings of a page, in page order (its Defaults button resets exactly these).
+local function pageSettings(spec)
+  local ids = {}
+  for _, section in ipairs(spec.sections) do
+    for _, id in ipairs(section.rows) do
+      if not A[id] then ids[#ids + 1] = id end
+    end
+  end
+  return ids
+end
+
+-- The page's Defaults button, at the right of its title: the first click arms it, the second within five seconds
+-- puts every setting of this page back to its default (a value a setting's own check refuses is left as it is).
+local function defaultsButton(body, spec)
+  local armedAt
+  local en, ja = Text.get("button.defaults")
+  local b = W.button(body, en, ja, 110, function(self)
+    local now = GetTime()
+    if armedAt and now - armedAt <= 5 then
+      armedAt = nil
+      for _, id in ipairs(pageSettings(spec)) do
+        local d = definition(id)
+        if d and not S.isHidden(d) then S.set(id, d.default) end
+      end
+      self:setLabel(Text.get("button.defaults"))
+      Options.refresh()
+    else
+      armedAt = now
+      self:setLabel(Text.get("defaults.confirm"))
+    end
+  end)
+  b:SetPoint("TOPRIGHT", body, "TOPLEFT", LEFT + WIDTH, -14)
+  -- leaving the page, or five seconds, disarms it (buildPage's OnHide calls disarm)
+  function b.disarm()
+    if armedAt then
+      armedAt = nil
+      b:setLabel(Text.get("button.defaults"))
+    end
+  end
+  Options.refreshers[#Options.refreshers + 1] = function()
+    if armedAt and GetTime() - armedAt > 5 then b.disarm() end
+  end
+  return b
+end
+
 local function buildPage(spec)
   local page = CreateFrame("Frame")
+  -- The rows sit on a body inside the client's scroll frame, so a page is as tall as its rows need [verified:
+  -- ScrollFrameTemplate, blizzard_sharedxml/secureuipaneltemplates.xml:24; ScrollFrame_OnLoad makes its ScrollBar,
+  -- secureuipaneltemplates.lua:1–34]. The bar hides while the page fits.
+  local scroll = CreateFrame("ScrollFrame", nil, page, "ScrollFrameTemplate")
+  scroll:SetPoint("TOPLEFT", 0, -2)
+  scroll:SetPoint("BOTTOMRIGHT", -26, 2)
+  if scroll.ScrollBar and scroll.ScrollBar.SetHideIfUnscrollable then scroll.ScrollBar:SetHideIfUnscrollable(true) end
+  local body = CreateFrame("Frame", nil, scroll)
+  body:SetSize(WIDTH + 2 * LEFT, 10)
+  scroll:SetScrollChild(body)
+  page.scroll, page.body = scroll, body
   -- the page title in the current language, gold like the client's own page titles
-  page.title = W.label(page, "", "", LEFT, -16, WIDTH) -- the whole page width: the full name at 18 must not wrap
+  page.title = W.label(body, "", "", LEFT, -16, WIDTH - 130) -- up to the Defaults button
   page.title.en:SetTextColor(W.GOLD[1], W.GOLD[2], W.GOLD[3])
   W.setPair(page.title, Text.get(spec.title))
   local function titleSize() W.put(page.title.en, page.title.en:GetText(), 18) end
   titleSize()
   Options.refreshers[#Options.refreshers + 1] = titleSize
+  if not spec.noDefaults then page.defaults = defaultsButton(body, spec) end
   -- No links to the other pages: the Settings panel's own category list on the left already switches between them.
   -- The addon never writes Blizzard's category tables itself.
-  local y = -40
-  if spec.header then
-    page.subtitle = W.label(page, "", "", LEFT, y, WIDTH) -- filled on show
-    y = y - 18
-  end
+  local y = -44
   if spec.tagline then
-    stackedText(W.label(page, "", "", LEFT, y, WIDTH), Text.get("tagline"))
-    y = y - 34
+    stackedText(W.label(body, "", "", LEFT, y, WIDTH), Text.get("tagline"))
+    y = y - 22
   end
-  y = y - 8
+  y = y - 14
   for _, section in ipairs(spec.sections) do
     local title = section.title and Text.T[section.title]
-    if title then y = y - W.section(page, title.en, title.ja, LEFT, y, WIDTH).height end
+    if title then y = y - W.section(body, title.en, title.ja, LEFT, y, WIDTH).height - 6 end
     local rows, i = section.rows, 1
     while i <= #rows do
       if section.columns == 2 and i < #rows then
-        local left = row(page, rows[i], LEFT, y, COL2 - LEFT - 10)
-        local h = math.max(left, row(page, rows[i + 1], COL2, y, WIDTH + LEFT - COL2))
+        local left = row(body, rows[i], LEFT, y, COL2 - LEFT - 10)
+        local h = math.max(left, row(body, rows[i + 1], COL2, y, WIDTH + LEFT - COL2))
         y, i = y - h, i + 2
-      elseif section.columns == 3 then -- three columns of COL3 (the areas: short labels)
+      elseif section.columns == 3 then -- three columns of COL3 (short labels)
         local h = 0
         for c = 0, 2 do
-          if rows[i + c] then h = math.max(h, row(page, rows[i + c], LEFT + c * COL3, y, COL3 - 10)) end
+          if rows[i + c] then h = math.max(h, row(body, rows[i + c], LEFT + c * COL3, y, COL3 - 10)) end
         end
         y, i = y - h, i + 3
       else
-        y, i = y - row(page, rows[i], LEFT, y, WIDTH), i + 1
+        y, i = y - row(body, rows[i], LEFT, y, WIDTH), i + 1
       end
     end
-    y = y - (section.gap or 10) -- gap 0: a section that continues the one above
+    y = y - (section.gap or SECTION_GAP)
   end
   page.bottom = -y
+  body:SetSize(WIDTH + 2 * LEFT, -y + 8)
   page:SetScript("OnShow", function()
-    if page.subtitle then W.setPair(page.subtitle, headerText()) end -- memory is read on show only (an expensive call)
+    if Options.versionLine and spec.id == "about" then W.setPair(Options.versionLine, headerText()) end
     W.relabelIfStale() -- the language flipped while no page was on screen (OptionsWidgets)
     Options.refresh()
   end)
-  page:SetScript("OnHide", function() Options.forgetPending() end)
+  page:SetScript("OnHide", function()
+    Options.forgetPending()
+    if page.defaults then page.defaults.disarm() end
+  end)
   -- Built hidden: a parentless frame is visible, and the Settings panel shows a canvas itself when its category is
   -- selected (and hides it on leaving) [verified: Blizzard_SettingsPanel.lua:866–909].
   page:Hide()
@@ -669,7 +766,7 @@ function Options.setCombat(flag)
   refreshIfVisible()
 end
 
--- "modifier": the pages read in one language, and holding the reveal key re-labels them in English
-for _, event in ipairs({ "enabled", "area", "markers", "readings", "revealKey", "modifier" }) do
+-- "language": the pages read in one language, and re-label when it flips (the reveal key, or the direction)
+for _, event in ipairs({ "enabled", "area", "markers", "readings", "revealKey", "language" }) do
   WFJ.State.on(event, refreshIfVisible)
 end

@@ -83,6 +83,7 @@ function Stub.fontString(text, path, size, flags)
   function fs:SetSize(w, h) self.width, self.height = w, h end
   function fs:SetJustifyH(j) self.justifyH = j end
   function fs:SetJustifyV(j) self.justifyV = j end
+  function fs:SetNonSpaceWrap(v) self.nonSpaceWrap = v and true or false end
   function fs:SetWordWrap(w) self.wordWrap = w end
   function fs:ClearAllPoints() self.point = nil end
   function fs:SetTextColor(r, g, b, a) self.color = { r, g, b, a } end
@@ -303,6 +304,9 @@ function Stub.install(tocPath)
     -- the unit filter is recorded but not applied: a spec fires the event with the unit it means
     function frame:RegisterUnitEvent(e, ...) self.events[e] = { ... } end
     function frame:SetScript(k, fn) self.scripts[k] = fn end
+    function frame:SetScrollChild(child) self.scrollChild = child end
+    function frame:LockHighlight() self.highlightLocked = true end
+    function frame:UnlockHighlight() self.highlightLocked = false end
     function frame:GetScript(k) return self.scripts[k] end
     function frame:HookScript(k, fn)
       local prev = self.scripts[k]

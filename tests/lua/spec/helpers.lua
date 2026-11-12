@@ -115,7 +115,7 @@ function H.uiSetup(WFJ, ui, opts)
   WFJ.Render.init(WFJ.Translator.new({
     enabled = function() return WFJ.State.enabled end,
     areaEnabled = WFJ.State.areaEnabled,
-    modifierHeld = WFJ.Modifier.isDown,
+    showsEnglish = WFJ.Modifier.english,
     kindOff = opts.titlesOff and function(kind) return kind == "quest.title" end or nil,
     lookup = function(kind, id)
       if kind == "ui" then local r = rows[id]; return r and { ja = r[1], status = r[3] } end

@@ -15,7 +15,7 @@ VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
 
-.PHONY: names hearthstone voice-qwen-setup voice-modal-setup voice-cast voice-speed voice-spoken-fetch voice-sets-page voice-sets-apply voice-sets voice-sets-clips voice-sets-catalogue voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
+.PHONY: names hearthstone pronunciation english-cards voice-qwen-setup voice-modal-setup voice-cast voice-speed voice-spoken-fetch voice-sets-page voice-sets-apply voice-sets voice-sets-clips voice-sets-catalogue voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
 
 help:
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | sed 's/:.*## /: /'
@@ -520,6 +520,18 @@ hearthstone: ## fetch the pinned HearthstoneJSON jaJP + enUS card files and take
 	@mkdir -p "$(HEARTHSTONE_DIR)"
 	@for l in jaJP enUS; do test -s "$(HEARTHSTONE_DIR)/$$l.json" || curl -sfo "$(HEARTHSTONE_DIR)/$$l.json" "https://api.hearthstonejson.com/v1/$(HEARTHSTONE_BUILD)/$$l/cards.json" || exit 1; done
 	cd pipeline && $(PY) -m wfj names hearthstone "$(HEARTHSTONE_DIR)/jaJP.json" "$(HEARTHSTONE_DIR)/enUS.json" --build $(HEARTHSTONE_BUILD)
+
+# The English word cards' pronunciation table comes from the CMU Pronouncing Dictionary at one pinned commit, read on
+# this machine only: the dictionary file stays in build/, and only the words a card can show go to data/english/.
+CMUDICT_COMMIT ?= 74790861f652b15e4ac49015a90074ad62a27690
+CMUDICT_DIR ?= build/cmudict
+pronunciation: ## fetch the pinned CMU Pronouncing Dictionary and write data/english/pronunciation.tsv (after new English or readings)
+	@mkdir -p "$(CMUDICT_DIR)"
+	@test -s "$(CMUDICT_DIR)/cmudict.dict" || curl -sfo "$(CMUDICT_DIR)/cmudict.dict" "https://raw.githubusercontent.com/cmusphinx/cmudict/$(CMUDICT_COMMIT)/cmudict.dict"
+	cd pipeline && $(PY) -m wfj english-cards pron "../$(CMUDICT_DIR)/cmudict.dict" --version $(CMUDICT_COMMIT)
+
+english-cards: ## how many English words get a card per surface, and the words that most often get none
+	cd pipeline && $(PY) -m wfj english-cards report
 
 generate: ## data/ → addon Data/*.lua + the TOC's generated block (deterministic; validate diffs it)
 	cd pipeline && $(PY) -m wfj generate

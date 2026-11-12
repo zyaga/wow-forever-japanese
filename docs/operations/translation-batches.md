@@ -308,6 +308,21 @@ Two branches that both import readings conflict only in generated or reading fil
 2. Re-run `wfj readings import` on this branch's `.words.jsonl` files. A row written for Japanese that has since changed, or for a variant that does not ship, is rejected: export that line again and write its words anew.
 3. `make generate`, then `make validate`. `generate` numbers this branch's new meanings after main's, so they take new numbers.
 
+## English word cards for a batch
+
+The English word cards ([Readings → English word cards](../systems/readings.md#english-word-cards), [ADR-081](../adr/081-english-first-and-english-word-cards.md)) are generated from the readings and each line's English, so a batch needs no drafting for them. One table does not follow by itself: the pronunciation table holds only the words a card can show, and new English or new readings bring new words.
+
+After a batch or a re-pull that changes English or readings, once the readings are imported:
+
+```
+make pronunciation
+make generate
+```
+
+`make pronunciation` fetches the CMU Pronouncing Dictionary at its pinned commit into `build/cmudict/` (once; the file is not committed) and rewrites `data/english/pronunciation.tsv`. It prints how many card words have a pronunciation. `make generate` then writes the `Data/English/` files. Commit `data/english/pronunciation.tsv` and the generated `Data/English/` files with the change. A word the dictionary does not have shows its card without the pronunciation part; nothing fails for it.
+
+`make english-cards` prints, per surface, how many of the words that can take a card get one, and the words that most often get none. `make coverage` writes the same numbers into [Coverage](coverage.md). A common word that shows up high in that list and has one plain Japanese word can be added to `data/english/common-words.jsonl`, one line with `word`, `ja`, `reading` and `provenance`.
+
 ## Voice for a batch
 
 Every batch that changes shipped Japanese the voice reads (quest offers, progress and turn-ins, greetings, gossip, plain-text book pages) also remakes that audio, the way it writes readings ([Voice over](voice.md), ADR-062). `make import-draft` ends with `make check` and `make voice-generate`: it makes exactly the files whose Japanese changed or that are missing, then, when it made any, commits and pushes them to the audio repository and writes the audio pin. Commit `data/voice/audio.jsonl` and `pipeline/voice-audio-commit.txt` with the batch. With nothing voiced in the batch (items, spells, interface text) the step makes nothing and needs neither the engine nor the audio store, and the pin stays as it is. With voiced lines it needs both: a way to read the cloned voices (the Modal client and login set up by `make voice-modal-setup`, or `VOICE_LOCAL=1` with the engine environment from `make voice-qwen-setup` to read them on this machine), and the audio store (`build/voice`, a checkout of the voice audio repository) on its `main` branch. Without either it stops and says what is missing. Then run `make voice-generate`. `test_audio_in_step` fails a pull request whose voiced lines have no audio, or audio made from other Japanese.
@@ -360,6 +375,7 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 - `make import-draft` prints `added` + `appended` equal to the expanded line count (`replaced` when re-importing lines under the same name).
 - `make check`, `make generate` and `make validate` pass; `make stats` shows `shipped by provenance: … machine N` higher by the lines that passed `check`.
 - `make validate` lists no line owed a reading from this batch.
+- After `make pronunciation` and `make generate`, `git status` shows no further change under `data/english/pronunciation.tsv` or `Data/English/` on a second run.
 
 ## Rollback / troubleshooting
 

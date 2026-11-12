@@ -19,7 +19,7 @@ describe("Render: refresh on state, per-FontString font", function()
     R.init(WFJ.Translator.new({
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,
-      modifierHeld = WFJ.Modifier.isDown,
+      showsEnglish = WFJ.Modifier.english,
       lookup = function(kind, id) return DATA[kind] and DATA[kind][id] end,
       marker = function(n) return S.get("marker." .. n) end,
     }))
@@ -316,7 +316,7 @@ describe("Render: companion records follow their primary", function()
     R.init(WFJ.Translator.new({
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,
-      modifierHeld = WFJ.Modifier.isDown,
+      showsEnglish = WFJ.Modifier.english,
       lookup = function(kind, id) return DATA[kind] and DATA[kind][id] end,
       marker = function(n) return S.get("marker." .. n) end,
       align = function(ja, lines) return lines ~= nil and #lines == 2, ja end,
@@ -390,7 +390,7 @@ describe("Render: a companion never blanks when the primary shows English + miss
     R.init(WFJ.Translator.new({
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,
-      modifierHeld = WFJ.Modifier.isDown,
+      showsEnglish = WFJ.Modifier.english,
       lookup = function() return { ja = "18秒間でhealthを61回復。", status = "u" } end,
       marker = function(n) return S.get("marker." .. n) end,
       align = function() return false end, -- the gate fails

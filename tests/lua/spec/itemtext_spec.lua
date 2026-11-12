@@ -46,7 +46,7 @@ describe("UI/ItemText: the book window", function()
     WFJ.Render.init(WFJ.Translator.new({
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,
-      modifierHeld = WFJ.Modifier.isDown,
+      showsEnglish = WFJ.Modifier.english,
       lookup = WFJ.Lookup.get,
       marker = function(n) return S.get("marker." .. n) end,
     }))
@@ -316,6 +316,74 @@ describe("UI/ItemText: the book window", function()
     Stub.fontSetFails = false
     assert.are.equal(0, WFJ.Render.retryFonts())
     assert.are.equal(15 + 600 + 30, child.height)
+  end)
+
+  -- ── English first ────────────────────────────────────────────────
+  it("English first: the client's plain-text page is drawn word for word in our FontString, in the page's own font",
+  function()
+    ship({ [PAGE_DATA] = PAGE_JA })
+    S.set("direction", "en")
+    Stub.openItemText({ PAGE_LIVE })
+    assert.is_nil(drawn()) -- still the client's page until the cards ask for it
+    local fs = IT.page:englishRegion()
+    assert.are.equal(IT.page.fs, fs)
+    assert.are.equal(PAGE_LIVE, drawn())
+    assert.are.equal("", html.text) -- the SimpleHTML is emptied, as for a Japanese page
+    assert.are.equal(PAGE_LIVE, IT.page:GetText()) -- and the page still reads as the client's text
+    assert.are.equal(Client.FONTS.default.P.path, (fs:GetFont())) -- the client's own face, not the bundled one
+    assert.are.same({ Client.PARCHMENT[1], Client.PARCHMENT[2], Client.PARCHMENT[3], 1 }, fs.color)
+    assert.is_false(fs.nonSpaceWrap) -- English breaks at its spaces only
+    assert.are.equal(fs, IT.page:englishRegion()) -- asked again: nothing is written twice
+    assert.are.equal(2, #html.writes)
+  end)
+
+  it("English first: the key shows the Japanese in the same FontString and letting go brings the English back",
+  function()
+    ship({ [PAGE_DATA] = PAGE_JA })
+    S.set("direction", "en")
+    Stub.openItemText({ PAGE_LIVE })
+    IT.page:englishRegion()
+    Stub.keys.alt = true; WFJ.Modifier.refresh()
+    assert.are.equal(PAGE_JA, drawn())
+    assert.is_true(IT.page.fs.nonSpaceWrap)
+    assert.is_nil(IT.page:englishRegion()) -- Japanese is showing
+    assert.are.equal(WFJ.Font.PATH, (IT.page.fs:GetFont())) -- the Japanese page, in the bundled face
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
+    assert.are.equal(PAGE_LIVE, drawn()) -- the restore drew the English where the cards will look
+    assert.are.equal(Client.FONTS.default.P.path, (IT.page.fs:GetFont())) -- and in the page's own face again
+    assert.are.equal(IT.page.fs, IT.page:englishRegion())
+  end)
+
+  it("English first: an HTML page, a page with translation off, and Japanese first all stay the client's own page",
+  function()
+    ship({ [PAGE_DATA] = PAGE_JA, [HTML_LIVE] = HTML_JA })
+    S.set("direction", "en")
+    Stub.openItemText({ HTML_LIVE })
+    assert.is_nil(IT.page:englishRegion())
+    assert.are.equal(HTML_LIVE, html.text)
+    S.set("enabled", false)
+    Stub.openItemText({ PAGE_LIVE })
+    assert.is_nil(IT.page:englishRegion())
+    assert.are.equal(PAGE_LIVE, html.text)
+    S.set("enabled", true)
+    S.set("area.books", false)
+    assert.is_nil(IT.page:englishRegion())
+    S.set("area.books", true)
+    S.set("direction", "ja")
+    Stub.openItemText({ PAGE_LIVE })
+    assert.is_nil(IT.page:englishRegion())
+    assert.are.equal(PAGE_JA, drawn())
+  end)
+
+  it("English first: turning the page takes it back from our FontString until the next page is asked for", function()
+    S.set("direction", "en")
+    Stub.openItemText({ PAGE_LIVE, PAGE2 })
+    IT.page:englishRegion()
+    Stub.itemTextPage(2)
+    assert.is_nil(drawn())
+    assert.are.equal(PAGE2, html.text)
+    IT.page:englishRegion()
+    assert.are.equal(PAGE2, drawn())
   end)
 
   it("closing the window releases the surface", function()

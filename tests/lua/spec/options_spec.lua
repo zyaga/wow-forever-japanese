@@ -44,9 +44,9 @@ describe("Settings pages from the registry and PAGES", function()
     for _, c in ipairs(O.controls) do if c.id == id then return c end end
   end
 
-  it("registers main, collector, words, about as one category and three subcategories; opens a page by id",
+  it("registers main, words, collector, about as one category and three subcategories; opens a page by id",
   function()
-    assert.are.same({ "main", "collector", "words", "about" }, { list[1].id, list[2].id, list[3].id, list[4].id })
+    assert.are.same({ "main", "words", "collector", "about" }, { list[1].id, list[2].id, list[3].id, list[4].id })
     assert.are.equal(42, WFJ.Compat.registerOptions(list))
     local names = {}
     for _, c in ipairs(Stub.settingsCalls) do names[#names + 1] = c[1] end
@@ -55,10 +55,10 @@ describe("Settings pages from the registry and PAGES", function()
     -- the AddOns category last (the guide)
     assert.are.equal(O.pages.main, Stub.settingsCalls[1][2])
     assert.are.equal("WoW Forever Japanese", Stub.settingsCalls[1][3])
-    assert.are.equal(O.pages.collector, Stub.settingsCalls[2][3])
-    assert.are.equal("English Collector", Stub.settingsCalls[2][4])
+    assert.are.equal(O.pages.collector, Stub.settingsCalls[3][3])
+    assert.are.equal("English Collector", Stub.settingsCalls[3][4])
     assert.is_true(WFJ.Compat.openOptions("collector"))
-    assert.are.same({ "OpenToCategory", 43 }, Stub.settingsCalls[#Stub.settingsCalls])
+    assert.are.same({ "OpenToCategory", 44 }, Stub.settingsCalls[#Stub.settingsCalls])
     -- no links on the pages: the category list switches pages
     for id, page in pairs(O.pages) do assert.is_nil(page.links, id) end -- no link buttons on any page
     assert.is_nil(WFJ.OptionsText.T["nav.main"]) -- and no copy left for them
@@ -79,11 +79,12 @@ describe("Settings pages from the registry and PAGES", function()
     assert.is_truthy(control("voice.greeting"))
     assert.is_truthy(control("voice.books"))
     assert.is_false(O.addPage("voice")) -- once
-    assert.is_true(O.addPage("voicepanel"))
-    assert.are.equal("Voice panel", Stub.settingsCalls[#Stub.settingsCalls][4])
-    local again = O.build() -- a pack present at build time: the pages are built with the others, after About
-    assert.are.same({ "main", "collector", "words", "about", "voice", "voicepanel" },
-      { again[1].id, again[2].id, again[3].id, again[4].id, again[5].id, again[6].id })
+    -- the voice panel's choices are on the same page: there is no second voice page
+    assert.is_truthy(control("voice.panel.size"))
+    assert.is_false(O.addPage("voicepanel"))
+    local again = O.build() -- a pack present at build time: the page is built with the others, after Words
+    assert.are.same({ "main", "words", "voice", "collector", "about" },
+      { again[1].id, again[2].id, again[3].id, again[4].id, again[5].id })
   end)
 
   it("the words page: the save click as a dropdown without the reveal key's modifier, the count, Export", function()
@@ -132,8 +133,8 @@ describe("Settings pages from the registry and PAGES", function()
     WFJ.StudyWindow.open = function() opened = opened + 1 end
     O.studyOpen.scripts.OnClick(O.studyOpen, "LeftButton")
     assert.are.equal(1, opened)
-    -- the About page names /wfj study
-    assert.is_truthy(O.aboutReadings.en:GetText():find("/wfj study", 1, true))
+    -- the About page's command list names /wfj study
+    assert.is_truthy(table.concat(WFJ.OptionsText.SLASH, "\n"):find("/wfj study", 1, true))
   end)
 
   it("the voice panel page: Panel size and Panel style as dropdowns, then its switches", function()
@@ -234,25 +235,85 @@ describe("Settings pages from the registry and PAGES", function()
     assert.is_true(checked > 30)
   end)
 
-  it("every page fits 640 × 560 without scrolling", function()
+  it("every page scrolls: its rows sit on a body inside the scroll frame, inside the width the bar leaves",
+  function()
     for id, page in pairs(O.pages) do
-      assert.is_true(page.bottom <= 560, id .. " bottom " .. page.bottom)
-      for _, f in ipairs(pageFrames(page)) do
+      assert.are.equal(page.body, page.scroll.scrollChild, id)
+      assert.are.equal(page.scroll, page.body.parent, id)
+      -- the body is as tall as its rows, however tall that is (About is taller than the panel)
+      assert.is_true(page.body.size[2] >= page.bottom, id)
+      for _, f in ipairs(pageFrames(page.body)) do
         local p = f.point
         if p and p[1] == "TOPLEFT" and type(p[2]) == "number" then
-          local w, h = f.size and f.size[1] or 0, f.size and f.size[2] or 0
-          assert.is_true(-p[3] + h <= 560, id .. " frame bottom")
-          assert.is_true(p[2] + w <= 640, id .. " frame right " .. (p[2] + w))
+          local w = f.size and f.size[1] or 0
+          assert.is_true(p[2] + w <= 612, id .. " frame right " .. (p[2] + w))
         end
       end
-      for _, fs in ipairs(page.children) do
+      for _, fs in ipairs(page.body.children) do
         local p = fs.point
         if p and p[1] == "TOPLEFT" and type(p[2]) == "number" then
-          assert.is_true(-p[3] <= 546, id .. " text top")
-          assert.is_true(p[2] + (fs.width or 0) <= 640, id .. " text right " .. (p[2] + (fs.width or 0)))
+          assert.is_true(p[2] + (fs.width or 0) <= 612, id .. " text right " .. (p[2] + (fs.width or 0)))
         end
       end
     end
+    assert.is_true(O.pages.about.bottom > 560) -- taller than the panel: it scrolls
+  end)
+
+  it("the side-by-side sections are still side by side", function()
+    local columns = {}
+    for _, page in ipairs(O.PAGES) do
+      for _, section in ipairs(page.sections) do
+        if section.columns then
+          columns[#columns + 1] = page.id .. ":" .. tostring(section.title) .. "=" .. section.columns
+        end
+      end
+    end
+    assert.are.same({ "main:section.translation=2", "main:section.areas=3", "main:section.cards=2",
+      "voice:section.voiceKinds=2", "about:section.report=2" }, columns)
+  end)
+
+  it("Defaults puts a page's own settings back, on the second click, and no other page's", function()
+    local now = 100
+    _G.GetTime = function() return now end
+    S.set("marker.missing", false)
+    S.set("area.gossip", false)
+    S.set("direction", "en")
+    S.set("study.tab", false) -- on the Words page
+    local b = O.pages.main.defaults
+    b.scripts.OnClick(b, "LeftButton")
+    assert.are.equal((WFJ.OptionsText.get("defaults.confirm")), b.caption:GetText()) -- English first: in English
+    assert.is_false(S.get("marker.missing")) -- armed only
+    now = now + 2
+    b.scripts.OnClick(b, "LeftButton")
+    assert.are.same({ true, true, "ja" }, { S.get("marker.missing"), S.get("area.gossip"), S.get("direction") })
+    assert.is_false(S.get("study.tab"))
+    assert.are.equal(ja("button.defaults"), b.caption:GetText())
+    -- a second click that comes too late arms it again and resets nothing
+    S.set("marker.missing", false)
+    b.scripts.OnClick(b, "LeftButton")
+    now = now + 6
+    b.scripts.OnClick(b, "LeftButton")
+    assert.is_false(S.get("marker.missing"))
+    -- leaving the page disarms it, and so do five seconds on the page
+    b.scripts.OnClick(b, "LeftButton")
+    O.pages.main:Show()
+    O.pages.main:Hide()
+    assert.are.equal(ja("button.defaults"), b.caption:GetText())
+    b.scripts.OnClick(b, "LeftButton")
+    now = now + 6
+    O.refresh()
+    assert.are.equal(ja("button.defaults"), b.caption:GetText())
+    assert.is_nil(O.pages.about.defaults) -- About has no setting to reset
+  end)
+
+  it("the main page opens with the way back to the welcome window, then the language that shows first", function()
+    assert.are.same({ "mainWelcome" }, O.PAGES[1].sections[1].rows)
+    local items = control("direction").dropdown:menuItems()
+    assert.are.same({ "Japanese first", "English first" }, { items[1].text, items[2].text })
+    assert.is_true(items[1].isSelected())
+    items[2].setSelected()
+    assert.are.equal("en", S.get("direction"))
+    assert.is_true(WFJ.State.showsEnglish())
   end)
 
   it("reflects values, a click sets the setting, and OnShow re-reads a slash-side change", function()
@@ -266,9 +327,11 @@ describe("Settings pages from the registry and PAGES", function()
     assert.is_true(control("area.gossip").widget:GetChecked()) -- stale until shown
     O.pages.main:Show()
     assert.is_false(control("area.gossip").widget:GetChecked())
-    assert.is_truthy(O.frame.subtitle.en:GetText():find("1.2 MB", 1, true))
-    -- translation is off here: English
-    assert.is_truthy(O.frame.subtitle.en:GetText():find(shippedQuests(WFJ) .. " quests", 1, true))
+    -- the version, size and counts are on the About page now; translation is off here: English
+    assert.is_nil(O.frame.subtitle)
+    O.pages.about:Show()
+    assert.is_truthy(O.versionLine.en:GetText():find("1.2 MB", 1, true))
+    assert.is_truthy(O.versionLine.en:GetText():find(shippedQuests(WFJ) .. " quests", 1, true))
   end)
 
   it("the page title is the addon's name, the same in both languages", function()
@@ -279,18 +342,16 @@ describe("Settings pages from the registry and PAGES", function()
 
   it("the header shows the TOC version as written (a release version already starts with v)", function()
     WFJ.VERSION = "v0.1.0-alpha.1"
-    O.pages.main:Show()
-    local text = O.frame.subtitle.en:GetText()
+    O.pages.about:Show()
+    local text = O.versionLine.en:GetText()
     assert.are.equal(1, text:find("v0.1.0-alpha.1 · ", 1, true))
     assert.is_nil(text:find("vv", 1, true))
   end)
 
-  it("the meanings checkbox sits in the translation section and turns the meanings off and on", function()
-    local rows = O.PAGES[1].sections[1].rows
-    assert.are.same({ "enabled", "readings.enabled", "readings.glosses", "minimapButton" }, rows)
-    -- the areas moved to three columns to make room (the markers keep one column and their samples)
-    assert.are.equal(3, O.PAGES[1].sections[3].columns)
-    assert.is_nil(O.PAGES[1].sections[4].columns)
+  it("the meanings checkbox sits in the word cards section and turns the meanings off and on", function()
+    local cards
+    for _, section in ipairs(O.PAGES[1].sections) do if section.title == "section.cards" then cards = section end end
+    assert.are.same({ "readings.enabled", "readings.glosses" }, cards.rows)
     local fired = {}
     WFJ.State.on("glosses", function(v) fired[#fired + 1] = v end)
     local c = control("readings.glosses")
@@ -351,6 +412,9 @@ describe("Settings pages from the registry and PAGES", function()
     assert.are.equal(0, refreshes)
     assert.are.equal(before, Stub.memoryUpdates)
     O.pages.main:Show()
+    assert.are.equal(before, Stub.memoryUpdates) -- only the About page shows the size
+    O.pages.main:Hide()
+    O.pages.about:Show()
     assert.are.equal(before + 1, Stub.memoryUpdates)
     S.set("enabled", true)
     assert.are.equal(before + 1, Stub.memoryUpdates) -- refreshes while shown never read memory
@@ -453,14 +517,16 @@ describe("Settings pages from the registry and PAGES", function()
     assert.are.equal(ja("collector.clear"), O.collectorClear.caption:GetText())
   end)
 
-  it("the send section: numbered steps, Send English opens the send window, the file's path", function()
+  it("the send section: one line pointing at the send window, Send English opens it, the file's path", function()
     local opened = {}
     WFJ.CollectorSendWindow = { open = function(all) opened[#opened + 1] = all end }
     assert.are.equal(ja("collector.send"), O.collectorSend.caption:GetText())
     O.collectorSend.scripts.OnClick(O.collectorSend, "LeftButton")
     assert.are.same({ false }, opened)
-    local steps = select(2, WFJ.OptionsText.get("collector.steps"))
-    for n = 1, 4 do assert.is_truthy(steps:find(n .. ".", 1, true), n) end
+    -- the steps themselves are in the send window; the page says so in one line
+    local en, steps = WFJ.OptionsText.get("collector.steps")
+    assert.is_nil(steps:find("\n", 1, true))
+    assert.is_truthy(en:find("Send English", 1, true))
     assert.are.equal(WFJ.Collector.path(), O.copyBoxes["collector.path"]:GetText())
     assert.is_nil(O.copyBoxes["collector.issue"])
   end)
@@ -469,9 +535,9 @@ describe("Settings pages from the registry and PAGES", function()
     local about = O.pages.about
     about:Show()
     -- the shipped quest count
-    assert.is_truthy(about.subtitle.en:GetText():find("クエスト " .. shippedQuests(WFJ), 1, true))
+    assert.is_truthy(O.versionLine.en:GetText():find("クエスト " .. shippedQuests(WFJ), 1, true))
     local texts = {}
-    for _, fs in ipairs(about.children) do if fs.GetText then texts[#texts + 1] = fs:GetText() end end
+    for _, fs in ipairs(about.body.children) do if fs.GetText then texts[#texts + 1] = fs:GetText() end end
     local all = table.concat(texts, "\n")
     assert.is_truthy(all:find(WFJ.OptionsText.T["about.open"].ja, 1, true))
     -- the reveal key by name, and both markers as they show
@@ -509,8 +575,12 @@ describe("Settings pages from the registry and PAGES", function()
       WFJ.Voice.register({ format = 2, folder = folder, lines = {} })
     end
     O.refresh()
-    assert.are.equal("日本語音声：レベル1-10、レベル11-20、その他", O.aboutVoice.en:GetText())
-    assert.are.equal("Japanese voice: Levels 1-10, Levels 11-20, Other", O.aboutVoice.pair[1])
+    -- level packs that follow on read as one range
+    assert.are.equal("日本語音声：レベル1-20、その他", O.aboutVoice.en:GetText())
+    assert.are.equal("Japanese voice: Levels 1-20, Other", O.aboutVoice.pair[1])
+    WFJ.Voice.register({ format = 2, folder = "WoWForeverJapanese_VoiceLevels41to50", lines = {} })
+    O.refresh()
+    assert.are.equal("Japanese voice: Levels 1-20, Levels 41-50, Other", O.aboutVoice.pair[1])
     assert.is_false(box:IsShown())
     -- no voice setting on the About page: those stay on the voice page
     for _, c in ipairs(O.controls) do assert.is_nil(c.id:match("^voice%."), c.id) end

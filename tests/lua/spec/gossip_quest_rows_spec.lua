@@ -47,7 +47,7 @@ describe("UI/Gossip: quest rows", function()
     WFJ.Render.init(WFJ.Translator.new({
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,
-      modifierHeld = WFJ.Modifier.isDown,
+      showsEnglish = WFJ.Modifier.english,
       lookup = lookup,
       marker = function(n) return WFJ.Settings.get("marker." .. n) end,
     }))

@@ -44,3 +44,32 @@ def test_no_english_gate(root, tmp_path: Path):
     assert r.returncode != 0
     ok = subprocess.run(["make", "-s", "lint-no-english-in-addon"], cwd=root, capture_output=True, check=False)
     assert ok.returncode == 0
+
+
+def test_only_the_key_itself_is_read_as_a_key(root):
+    """Which language shows is the direction crossed with the reveal key, asked through `Modifier.english()`
+    or `State.showsEnglish()`. A file that reads the held key to pick a language shows the wrong one in English
+    first, so only the files that are about the key itself may read it."""
+    import re
+
+    addon = root / "addon" / "WoWForeverJapanese"
+    allowed = {
+        "Core/Modifier.lua",  # the key
+        "Core/State.lua",  # its mirror
+        "UI/RevealBinding.lua",  # the binding that follows the key while it is held
+        "UI/KeyCapture.lua",  # capturing a key on the settings page
+        "UI/Slash.lua",  # /wfj prints the key's state
+        "Main.lua",  # the binding's handler
+    }
+    # the function by name (called or handed on), the mirror behind any alias, and the key's own event
+    pattern = re.compile(r'Modifier\.isDown\b|\.modifierHeld\b|\.on\("modifier"')
+    listed = re.compile(r'ipairs\(\{[^}\n]*"modifier"')
+    offenders = []
+    for path in sorted([*addon.glob("Core/*.lua"), *addon.glob("UI/*.lua"), addon / "Main.lua"]):
+        rel = path.relative_to(addon).as_posix()
+        if rel in allowed:
+            continue
+        code = re.sub(r"--[^\n]*", "", path.read_text(encoding="utf-8"))
+        if pattern.search(code) or listed.search(code):
+            offenders.append(rel)
+    assert offenders == []

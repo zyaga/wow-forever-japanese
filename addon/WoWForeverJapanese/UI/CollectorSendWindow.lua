@@ -111,7 +111,7 @@ end
 local function retitleIfShown()
   if SendWindow.frame and SendWindow.frame:IsShown() then SendWindow.retitle() end
 end
-WFJ.State.on("modifier", retitleIfShown)
+WFJ.State.on("language", retitleIfShown)
 WFJ.State.on("enabled", retitleIfShown)
 
 -- Packs and shows. all: every entry again (a send that was copied but never submitted).

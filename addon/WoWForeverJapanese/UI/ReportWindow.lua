@@ -156,7 +156,7 @@ end
 local function retitleIfShown()
   if ReportWindow.frame and ReportWindow.frame:IsShown() then ReportWindow.retitle() end
 end
-WFJ.State.on("modifier", retitleIfShown)
+WFJ.State.on("language", retitleIfShown)
 WFJ.State.on("enabled", retitleIfShown)
 
 -- Switches between Bug and Idea and redraws.

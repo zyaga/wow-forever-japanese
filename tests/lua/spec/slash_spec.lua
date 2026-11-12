@@ -62,8 +62,8 @@ describe("/wfj covers every setting", function()
     end
     -- the original eight + collector.enabled + area.interface + area.books + readings.enabled + readings.glosses
     -- + minimapButton + collector.remind + the word list's save click and screenshot + the study tab, cap, combat,
-    -- sound
-    assert.are.equal(21, n)
+    -- sound + the direction
+    assert.are.equal(22, n)
   end)
 
   it("/wfj bug opens the report window on Bug; /wfj log ends with the Lua error count", function()
@@ -285,9 +285,9 @@ describe("/wfj covers every setting", function()
     assert.are.same({ "OpenToCategory", 42 }, Stub.settingsCalls[#Stub.settingsCalls])
     -- the subpages by name; an unknown page opens the main one
     wfj("config collector")
-    assert.are.same({ "OpenToCategory", 43 }, Stub.settingsCalls[#Stub.settingsCalls])
-    wfj("config words")
     assert.are.same({ "OpenToCategory", 44 }, Stub.settingsCalls[#Stub.settingsCalls])
+    wfj("config words")
+    assert.are.same({ "OpenToCategory", 43 }, Stub.settingsCalls[#Stub.settingsCalls])
     wfj("config ABOUT")
     assert.are.same({ "OpenToCategory", 45 }, Stub.settingsCalls[#Stub.settingsCalls])
     wfj("config nope")

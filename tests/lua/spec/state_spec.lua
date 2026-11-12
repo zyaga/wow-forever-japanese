@@ -40,6 +40,32 @@ describe("State: pub/sub fires in order, setters fire only on change", function(
     assert.is_true(WFJ.State.areaEnabled("gossip"))
   end)
 
+  it("showsEnglish is the direction crossed with the key: Japanese first shows English while it is held", function()
+    local S = WFJ.State
+    assert.are.equal("ja", S.direction)
+    assert.is_false(S.showsEnglish())
+    S.setModifierHeld(true)
+    assert.is_true(S.showsEnglish())
+    S.setDirection("en")
+    assert.is_false(S.showsEnglish()) -- English first, key held: the Japanese
+    S.setModifierHeld(false)
+    assert.is_true(S.showsEnglish()) -- English first, key up: the English
+  end)
+
+  it("fires language with the new value whenever what shows flips, by key or by direction, and only then", function()
+    local S, log = WFJ.State, {}
+    S.on("language", function(english) log[#log + 1] = english end)
+    assert.is_false(S.setDirection("ja")) -- unchanged
+    S.setModifierHeld(true)
+    S.setModifierHeld(true)
+    S.setDirection("en")
+    S.setModifierHeld(false)
+    S.setDirection("ja")
+    assert.are.same({ true, false, true, false }, log)
+    assert.is_false(S.setDirection("fr")) -- not a direction: ignored
+    assert.are.equal("ja", S.direction)
+  end)
+
   it("setModifierHeld fires only on change", function()
     local n = 0
     WFJ.State.on("modifier", function(v) n = n + 1; assert.is_boolean(v) end)

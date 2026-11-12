@@ -43,7 +43,7 @@ describe("UI/Tooltip: item and spell tooltips", function()
     WFJ.Render.init(WFJ.Translator.new({
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,
-      modifierHeld = WFJ.Modifier.isDown,
+      showsEnglish = WFJ.Modifier.english,
       lookup = function(kind, id) return DATA[kind] and DATA[kind][id] end,
       marker = function(n) return S.get("marker." .. n) end,
       align = WFJ.Align.check,
@@ -265,7 +265,7 @@ describe("UI/Tooltip: item and spell tooltips", function()
     ns.Settings.load(nil, 1, {})
     ns.Render.init(ns.Translator.new({
       enabled = function() return true end, areaEnabled = function() return true end,
-      modifierHeld = function() return false end,
+      showsEnglish = function() return false end,
       lookup = function(kind, id) return DATA[kind] and DATA[kind][id] end,
       marker = function() return false end, align = ns.Align.check,
     }))
@@ -410,7 +410,7 @@ describe("UI/Tooltip: item and spell tooltips", function()
       ns.Settings.load(nil, 1, {})
       ns.Render.init(ns.Translator.new({
         enabled = function() return true end, areaEnabled = function() return true end,
-        modifierHeld = function() return false end, lookup = function() return nil end,
+        showsEnglish = function() return false end, lookup = function() return nil end,
         marker = function() return false end, align = ns.Align.check,
       }))
       ns.Tooltip.init()

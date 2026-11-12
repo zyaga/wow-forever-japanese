@@ -226,7 +226,7 @@ function TooltipUnit.onUnit(tt, data)
     local fs = Compat.resolve(name .. "TextLeft1")
     local single = minimapType ~= nil and type(data) == "table" and data.type == minimapType
     local ja, why = TooltipUnit.minimapBlock(type(fs) == "table" and fs:GetText() or nil, single)
-    if ja and WFJ.State.enabled ~= false and not WFJ.Modifier.isDown() and WFJ.State.areaEnabled("quests") then
+    if ja and WFJ.State.enabled ~= false and not WFJ.Modifier.english() and WFJ.State.areaEnabled("quests") then
       fs:SetText(ja)
       WFJ.Font.bundle(fs) -- written outside a record, so the face is set here and given back on the tooltip's OnHide
       blockWidget = fs

@@ -90,7 +90,7 @@ end
 local function retitleIfShown()
   if CollectorReminder.frame and CollectorReminder.frame:IsShown() then CollectorReminder.retitle() end
 end
-WFJ.State.on("modifier", retitleIfShown)
+WFJ.State.on("language", retitleIfShown)
 WFJ.State.on("enabled", retitleIfShown)
 
 -- Shows the popup for `count` unsent lines. → the frame

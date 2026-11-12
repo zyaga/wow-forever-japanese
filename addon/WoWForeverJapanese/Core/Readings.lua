@@ -7,6 +7,10 @@
 --                                      a word the text lacks is skipped; a match on part of a guard span is passed over
 --   Readings.lookup(kind, id, text) → locate(words(kind, id), text, tokenSpans(text)) | nil
 --   Readings.tokenSpans(text)       → { { first, last }, … }: every class / race word standing alone in `text`
+--   Readings.englishLookup(kind, id, text)
+--                                   → { { first, last, word, reading, card }, … }: the English words of `text` that
+--                                      have a Japanese word, for the English word card (English first); nil for a
+--                                      kind that takes no cards or without text
 -- Rows (Data/Reading/*.lua): ["<type>:<id>"] = { <field> = "word=reading word=reading=n …" }; "=n" is the word's
 -- meaning in Data/Gloss. The pipeline guarantees no " " or "=" inside a word or a reading.
 local _, WFJ = ...
@@ -74,6 +78,99 @@ function Readings.lookup(kind, id, text)
   local words = Readings.words(kind, id)
   if not words or type(text) ~= "string" then return nil end
   return Readings.locate(words, text, Readings.tokenSpans(text))
+end
+
+-- ── English word cards ─────────────────────────────────────────────────────
+-- Rows (Data/English/*.lua): ["<type>:<id>"] = { <field> = "word=n word=n …" }: the line's English words that have a
+-- Japanese word, lower-cased and sorted (never the sentence), n the place of that Japanese word in the same line's
+-- reading row. Data.pron: word → how it is said. Data.common: word → "Japanese=reading", for the everyday words a
+-- line's own row leaves out.
+
+local englishRows = setmetatable({}, { __mode = "v" })
+local function englishMap(packed)
+  local map = englishRows[packed]
+  if map then return map end
+  map = {}
+  for word, n in packed:gmatch("([^ =]+)=(%d+)") do map[word] = tonumber(n) end
+  englishRows[packed] = map
+  return map
+end
+
+local function englishCard(ja, jaReading, gloss, ipa)
+  return { english = true, ja = ja, jaReading = jaReading, gloss = gloss or nil, ipa = ipa }
+end
+
+-- A capitalised word inside a sentence is a name, and names take no card (the pipeline leaves them out of the rows
+-- the same way): true when the word at `first` starts its sentence or its line.
+local OPENERS = { [" "] = true, ['"'] = true, ["'"] = true, ["("] = true }
+local ENDERS = { ["."] = true, ["!"] = true, ["?"] = true, [":"] = true, ["\n"] = true }
+local function startsSentence(text, first)
+  local i = first - 1
+  while i >= 1 do
+    local c = text:sub(i, i)
+    if OPENERS[c] then
+      i = i - 1
+    elseif i >= 3 and (text:sub(i - 2, i) == "\226\128\156" or text:sub(i - 2, i) == "\226\128\152") then
+      i = i - 3 -- a curly opening quote
+    else
+      return ENDERS[c] == true
+    end
+  end
+  return true
+end
+
+-- A word is a run of ASCII letters and apostrophes, so both ends of a span are always character boundaries.
+function Readings.englishLookup(kind, id, text)
+  local type_, field = split(kind)
+  if not type_ or type(text) ~= "string" then return nil end
+  local row = id ~= nil and WFJ.Data.english[type_ .. ":" .. tostring(id)]
+  local packed = row and row[field]
+  local map = type(packed) == "string" and englishMap(packed) or nil
+  local words = map and Readings.words(kind, id)
+  local out = {}
+  -- → ja, jaReading, gloss for one lower-cased word: from the line's own row, else the common list
+  local function find(lower)
+    local n = map and words and map[lower]
+    if n then
+      if words[3 * n - 2] then return words[3 * n - 2], words[3 * n - 1], words[3 * n] end
+      return nil -- a place past the reading row's end: dropped, never read
+    end
+    local common = WFJ.Data.common[lower]
+    if type(common) == "string" then return common:match("^([^=]+)=([^=]+)$") end
+    return nil
+  end
+  for start, raw in text:gmatch("()([%a']+)") do
+    -- a quote mark before the word ('Hello) is not part of it
+    local token = raw:gsub("^'+", "")
+    local first = start + #raw - #token
+    local lower = token:lower()
+    local isName = token:find("^%u") ~= nil and token ~= "I" and not startsSentence(text, first)
+    local ja, jaReading, gloss, said
+    if token ~= "" and not isName then
+      ja, jaReading, gloss = find(lower)
+      if not ja and lower:find("'$") then
+        -- a closing quote mark after the word ('Hunt') is not part of it either; a word that ends in one of its
+        -- own (givin') was found above
+        token = token:gsub("'+$", "")
+        lower = token:lower()
+        ja, jaReading, gloss = find(lower)
+      end
+      said = WFJ.Data.pron[lower]
+      -- a contraction with no card of its own takes its first word's (you're → you, let's → let); never a
+      -- negative (can't is not can)
+      local head = not ja and not lower:find("n't$") and lower:match("^(%a+)'") or nil
+      if head then
+        ja, jaReading, gloss = find(head)
+        said = said or WFJ.Data.pron[head]
+      end
+    end
+    if ja then
+      out[#out + 1] = { first = first, last = first + #token - 1, word = token,
+        reading = ja == jaReading and ja or (ja .. "（" .. jaReading .. "）"),
+        card = englishCard(ja, jaReading, gloss, said) }
+    end
+  end
+  return out
 end
 
 -- The class and race words filled in for {class} / {race} are not in the stored Japanese, so no reading row lists

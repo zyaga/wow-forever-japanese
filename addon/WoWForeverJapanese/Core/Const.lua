@@ -56,4 +56,4 @@ BINDING_NAME_WFJ_VOICE_PAUSE = "Voice: pause / resume"
 BINDING_NAME_WFJ_VOICE_REPLAY = "Voice: play the line again"
 BINDING_NAME_WFJ_STUDY = "Study words: open / collapse the card"
 -- Hidden (Bindings.xml hidden="true"); the name explains itself if a client lists it anyway (ADR-018).
-BINDING_NAME_WFJ_REVEAL = "Hold to show English (set in WoW Forever Japanese settings)"
+BINDING_NAME_WFJ_REVEAL = "Hold to show the other language (set in WoW Forever Japanese settings)"

@@ -797,7 +797,7 @@ local function showHidden(frame, kind, id, lines)
   local surface = surfaceOf(frame)
   -- the records of the last readable pass hold text the client has since rewritten; dropping them would read it
   WFJ.Render.discard(surface)
-  if WFJ.State.enabled == false or WFJ.Modifier.isDown() or not WFJ.State.areaEnabled(area) then
+  if WFJ.State.enabled == false or WFJ.Modifier.english() or not WFJ.State.areaEnabled(area) then
     undressHidden(frame, true)
     return hiddenDone(0, "English wanted")
   end
@@ -1074,8 +1074,8 @@ local function textOf(fs)
 end
 
 local function sameAsLast(frame, link)
-  -- while the reveal key is held a rebuild takes the full pass, as before: the English is what shows
-  if WFJ.Modifier and WFJ.Modifier.isDown() then return false end
+  -- while English is what shows a rebuild takes the full pass: there is no Japanese on the lines to keep
+  if WFJ.Modifier and WFJ.Modifier.english() then return false end
   local seen = lastLines[frame]
   if not seen or lastLink[frame] ~= link or type(frame.NumLines) ~= "function" or frame:NumLines() ~= seen.n then
     return false
@@ -1377,7 +1377,7 @@ end
 
 function Tooltip.onCompareShow(frame)
   if inRefit[frame] then return 0 end
-  if not (WFJ.Modifier and WFJ.Modifier.isDown()) then
+  if not (WFJ.Modifier and WFJ.Modifier.english()) then
     if reapplied[frame] or not unchanged(frame) then
       -- the client wrote the same English back: the Japanese goes back as written, then the lines are as we left them
       local n = WFJ.Render.reapply(surfaceOf(frame))
@@ -1412,7 +1412,7 @@ function Tooltip.onCompareShow(frame)
     for i, l in ipairs(Tooltip.lines(frame)) do
       local key, args, runs
       local en = l.text
-      local held = WFJ.Modifier and WFJ.Modifier.isDown()
+      local held = WFJ.Modifier and WFJ.Modifier.english()
       local rec = not anySecretOf(en) and not held and WFJ.SurfaceState.get(surface, "ui.L" .. i)
       if rec and rec.fs == l.fs and rec.applied ~= nil and rec.applied == en then en = rec.en end
       if anySecretOf(en) then en = "" end -- a line the client hides is never read
@@ -1696,7 +1696,7 @@ function Tooltip.init()
       end
     end
   end
-  for _, event in ipairs({ "enabled", "area", "modifier" }) do
+  for _, event in ipairs({ "enabled", "area", "language" }) do
     WFJ.State.on(event, function() pcall(Tooltip.restoreHidden) end)
   end
   -- Latched last, not first: if a registration or a hook raises, Main's guard records the failure and the

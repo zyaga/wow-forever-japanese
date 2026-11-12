@@ -45,7 +45,7 @@ describe("UI/DialogueUIBook: Dialogue UI's book window", function()
     WFJ.Render.init(WFJ.Translator.new({
       enabled = function() return WFJ.State.enabled end,
       areaEnabled = WFJ.State.areaEnabled,
-      modifierHeld = WFJ.Modifier.isDown,
+      showsEnglish = WFJ.Modifier.english,
       lookup = function(kind, id) if kind == "book" then return data[id] end end,
       marker = function(n) return WFJ.Settings.get("marker." .. n) end,
     }))

@@ -434,7 +434,7 @@ describe("addon loads in TOC order and answers /wfj version", function()
     local itemId = next(WFJ.Data.item)
     local action, payload = WFJ.Translator.new({
       enabled = function() return true end, areaEnabled = function() return true end,
-      modifierHeld = function() return false end, lookup = WFJ.Lookup.get, marker = function() return false end,
+      showsEnglish = function() return false end, lookup = WFJ.Lookup.get, marker = function() return false end,
     }).resolve("items", "item", itemId)
     assert.are.equal("none", action)
     assert.are.equal("unaligned_ungated", payload.reason)

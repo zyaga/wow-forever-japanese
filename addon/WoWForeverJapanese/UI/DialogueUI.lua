@@ -379,7 +379,7 @@ local function headingWord(en)
   if ja or OWN_WORDS[en] == nil then return ja end
   touched = true
   local S_ = WFJ.State
-  if S_ and S_.enabled and not S_.modifierHeld and S_.areaEnabled("ui") then return OWN_WORDS[en] end
+  if S_ and S_.enabled and not S_.showsEnglish() and S_.areaEnabled("ui") then return OWN_WORDS[en] end
   return nil
 end
 
@@ -799,7 +799,7 @@ install = function()
     hook(f, handler, function(self) guarded(restoreScroll, self) end)
   end
   DialogueUI.onClose(f, release)
-  for _, event in ipairs({ "modifier", "enabled", "area", "markers" }) do
+  for _, event in ipairs({ "language", "enabled", "area", "markers" }) do
     WFJ.State.on(event, function() guarded(redraw) end)
   end
   if WFJ.VoicePlayer and type(WFJ.VoicePlayer.addWindow) == "function" then

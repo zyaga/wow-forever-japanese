@@ -5,6 +5,12 @@
 --   ← 倒す（たおす）              the dictionary form, only when it differs from the word
 --   defeat (and then)            the word's meaning in this sentence, wrapped inside a fixed width
 --
+-- An English word's card (English first; Core/Readings.englishLookup makes its `card`):
+--
+--   defeat  /diˈfiːt/             the word and how it is said (left out when the table has no entry)
+--   倒して　たおして              the Japanese word the line uses for it, and its reading
+--   辞書形：倒す（たおす）        its dictionary form, only when it differs
+--
 -- Same strata and anchor as the reading box: bottom-centre above the word, clamped to the screen. It owns no data and
 -- no hit testing: UI/Readings decides when it shows and hides.
 local _, WFJ = ...
@@ -51,6 +57,7 @@ end
 -- The lines the card shows for `word` (a Core/Readings span: { word, reading }) and its gloss → head, reading,
 -- dictionary form (nil when it is the word itself), meaning. Pure layout text, tested on its own.
 function Popup.lines(word, gloss)
+  if gloss.english then return Popup.englishLines(word, gloss) end
   local lemma
   -- the dictionary form laid out like the head line (word, then its reading) in softer colours of its own (pale
   -- blue word, muted gold reading), so it reads as the entry behind the word above (a bare
@@ -60,6 +67,20 @@ function Popup.lines(word, gloss)
   end
   -- a kana word is its own reading: shown once
   return word.word, word.reading ~= word.word and word.reading or "", lemma, gloss.meaning
+end
+
+-- The same four slots for an English word: the word, how it is said, the Japanese word with its reading, and the
+-- dictionary form when the meaning row has one that differs ("" → the line is left out).
+function Popup.englishLines(word, card)
+  local ja = "|cffbfd4f2" .. card.ja .. "|r"
+  if card.jaReading ~= card.ja then ja = ja .. "　|cffc9a65a" .. card.jaReading .. "|r" end
+  local dictionary = ""
+  local g = card.gloss and WFJ.Glosses and WFJ.Glosses.get(card.gloss)
+  if g and g.lemma ~= card.ja then
+    dictionary = "辞書形：" .. g.lemma
+    if g.lemmaReading ~= g.lemma then dictionary = dictionary .. "（" .. g.lemmaReading .. "）" end
+  end
+  return word.word, card.ipa and ("/" .. card.ipa .. "/") or "", ja, dictionary
 end
 
 -- Shows the card for `word` above the point (x, y) of `anchor` (the cover frame, its BOTTOMLEFT origin). `hint`: an
@@ -78,6 +99,8 @@ function Popup.show(anchor, x, y, word, gloss, size, hint)
   local height = PAD + wordFs:GetStringHeight()
   local below = wordFs
   if lemma then
+    -- an English word's second line is its Japanese word: the thing looked for, so a size up
+    WFJ.Font.set(lemmaFs, WFJ.Font.PATH, gloss.english and 14 or 12, "")
     lemmaFs:SetText(lemma)
     lemmaFs:ClearAllPoints()
     lemmaFs:SetPoint("TOPLEFT", below, "BOTTOMLEFT", 0, -GAP)
@@ -94,7 +117,13 @@ function Popup.show(anchor, x, y, word, gloss, size, hint)
   meaningFs:SetText(meaning)
   meaningFs:ClearAllPoints()
   meaningFs:SetPoint("TOPLEFT", below, "BOTTOMLEFT", 0, -GAP - 2)
-  height = height + GAP + 2 + meaningFs:GetStringHeight() + PAD
+  if meaning ~= "" then
+    meaningFs:Show()
+    height = height + GAP + 2 + meaningFs:GetStringHeight()
+  else
+    meaningFs:Hide() -- an English word whose Japanese word is already its dictionary form
+  end
+  height = height + PAD
   if hint then
     hintFs:SetWidth(width - 2 * PAD)
     hintFs:SetText(hint)
