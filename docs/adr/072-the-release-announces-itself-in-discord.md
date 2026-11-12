@@ -3,7 +3,7 @@
 - **Status:** Accepted
 - **Date:** 2026-11-06
 - **Deciders:** the maintainer
-- **Related:** [ADR-046](046-one-action-release.md) (one-action release) · [Release](../operations/release.md) (the runbook) · [Release media](../releases/README.md) (the media folder)
+- **Related:** [ADR-046](046-one-action-release.md) (one-action release) · [Release](../operations/release.md) (the runbook) · [Release media](../releases/README.md) (the media folder) · [ADR-084](084-every-changelog-line-carries-its-japanese.md) (`ja.md` written with each changelog line, and required by the release)
 
 ## Context
 
@@ -20,7 +20,7 @@ Release media lives in the public repo, in `docs/releases/next/` while a release
 - The media on the site and in the CurseForge gallery is already public; keeping copies in the repo costs nothing in secrecy and lets the workflow attach them without a host.
 - `next/` means nobody has to know the version number the release rule will pick; the rename rides in the commit the release already makes, so the history shows which media went with which release.
 - The maintainer chose the media on top, in one post, from two previews in the private channel: Discord's tiles above the text, the clip with its player, over the alternatives of a picture inside the card or a second message for the clip. The preview run is where the look is judged before anyone sees a real post.
-- The post is both languages, like every player-facing text of the project: the Japanese card's text is written by the maintainer with the release, in `ja.md`, since the changelog is English.
+- The post is both languages, like every player-facing text of the project: the Japanese card's text is in `ja.md`, since the changelog is English (written with each changelog line since [ADR-084](084-every-changelog-line-carries-its-japanese.md)).
 - The post is built from `.release-notes.md`, the same notes as the GitHub release and the CurseForge file, so the three never disagree.
 - The webhook URL is a secret: the command reads it from the environment only, never from an argument, and never prints it. Only the announce step sees it, and it checks for itself whether it is set.
 
