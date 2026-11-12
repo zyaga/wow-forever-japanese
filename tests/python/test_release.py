@@ -160,6 +160,7 @@ def test_render_round_trips_the_real_changelog(root):
 # ── the pull-request gate ─────────────────────────────────────────────────────
 
 BASE = HEAD + "## Unreleased\n\n### Fixed\n- Old line.\n\n" + OLD
+JA = release.NEXT_JA
 
 
 def test_gate_needs_a_line_when_addon_or_data_changes():
@@ -167,7 +168,7 @@ def test_gate_needs_a_line_when_addon_or_data_changes():
         problems = release.gate(BASE, BASE, [path])
         assert len(problems) == 1 and "add a line for players" in problems[0]
     added = BASE.replace("- Old line.\n", "- Old line.\n- New line.\n")
-    assert release.gate(BASE, added, ["addon/WoWForeverJapanese/Main.lua"]) == []
+    assert release.gate(BASE, added, ["addon/WoWForeverJapanese/Main.lua", JA]) == []
 
 
 def test_gate_exempts_changes_that_do_not_reach_the_game():
@@ -177,7 +178,7 @@ def test_gate_exempts_changes_that_do_not_reach_the_game():
 
 def test_gate_counts_a_repeated_line_as_added():
     added = BASE.replace("- Old line.\n", "- Old line.\n- Old line.\n")
-    assert release.gate(BASE, added, ["data/x"]) == []
+    assert release.gate(BASE, added, ["data/x", JA]) == []
 
 
 def test_gate_refuses_edits_to_released_sections():
@@ -191,14 +192,14 @@ def test_gate_refuses_edits_to_released_sections():
 @pytest.mark.parametrize("line", ["- See /" + "home/someone/notes.", "- See ~/notes.", "- See C:\\Games\\notes."])
 def test_gate_refuses_local_paths(line):
     added = BASE.replace("- Old line.\n", f"- Old line.\n{line}\n")
-    problems = release.gate(BASE, added, ["addon/x.lua"])
+    problems = release.gate(BASE, added, ["addon/x.lua", JA])
     assert problems == [f"changelog line names a local path or something private: {line}"]
 
 
 @pytest.mark.parametrize("line", ["- Fixed the gossip window (" + "WFJ" + "-12).", "- Fixed it (" + "wfj" + " 12)."])
 def test_gate_refuses_tracker_ids_without_any_rules_file(line):
     added = BASE.replace("- Old line.\n", f"- Old line.\n{line}\n")
-    assert release.gate(BASE, added, ["addon/x.lua"]) == [f"changelog line names a local path or something private: {line}"]
+    assert release.gate(BASE, added, ["addon/x.lua", JA]) == [f"changelog line names a local path or something private: {line}"]
 
 
 def test_gate_refuses_what_the_private_rules_name():
@@ -207,10 +208,25 @@ def test_gate_refuses_what_the_private_rules_name():
     rules = public_text.private_rules({"patterns": {"codename": r"(?i:\bzebra-\d+)"}, "words": ["quokka"]})
     for line in ("- Fixed the gossip window (Zebra-12).", "- Thanks to Quokka."):
         added = BASE.replace("- Old line.\n", f"- Old line.\n{line}\n")
-        assert release.gate(BASE, added, ["addon/x.lua"]) == []
-        assert release.gate(BASE, added, ["addon/x.lua"], rules) == [
+        assert release.gate(BASE, added, ["addon/x.lua", JA]) == []
+        assert release.gate(BASE, added, ["addon/x.lua", JA], rules) == [
             f"changelog line names a local path or something private: {line}"
         ]
+
+
+def test_gate_needs_the_japanese_of_an_added_or_reworded_line():
+    """Every changelog line has its Japanese in the next post's ja.md, written in the same pull request."""
+    want = ["this change adds or rewords a line under '## Unreleased': "
+            f"write its Japanese in {JA}, the release post's Japanese card"]
+    added = BASE.replace("- Old line.\n", "- Old line.\n- New line.\n")
+    assert release.gate(BASE, added, ["addon/x.lua"]) == want
+    assert release.gate(BASE, added, ["docs/x.md"]) == want  # a line added without a shipped change too
+    reworded = BASE.replace("- Old line.", "- Old line, reworded.")
+    assert release.gate(BASE, reworded, ["docs/x.md"]) == want
+    assert release.gate(BASE, reworded, ["docs/x.md", JA]) == []
+    removed = BASE.replace("### Fixed\n- Old line.\n\n", "")
+    assert release.gate(BASE, removed, ["docs/x.md"]) == []  # a line taken out needs no Japanese
+    assert release.gate(BASE, BASE, ["pipeline/x.py"]) == []  # no line, no Japanese
 
 
 def test_gate_first_changelog_and_missing_changelog():
@@ -226,7 +242,7 @@ def test_gate_first_changelog_and_missing_changelog():
 
 @pytest.fixture
 def repo(git_repo):
-    return git_repo({"CHANGELOG.md": HEAD + "## Unreleased\n\n" + FIXED})
+    return git_repo({"CHANGELOG.md": HEAD + "## Unreleased\n\n" + FIXED, JA: "**修正**\n- クエストの誤字。\n"})
 
 
 def test_cli_next_version_changelog_and_resume(repo, git, capsys):
@@ -262,6 +278,28 @@ def test_cli_allow_empty_means_no_addon_release(repo, git, capsys):
     git(repo, "commit", "-qam", "fix")
     assert release.run(["next-version", "--allow-empty"]) == 0
     assert capsys.readouterr().out == "version=0.1.0-alpha.2\nresume=false\naddon=true\n"
+
+
+def test_cli_next_version_needs_the_posts_japanese(repo, git, capsys):
+    """An addon release without the Japanese of its post stops before anything is published; a release of the
+    voice packs alone (nothing under Unreleased) and a resumed release do not need it."""
+    (repo / JA).write_text("  \n", encoding="utf-8")
+    assert release.run(["next-version"]) == 1
+    assert f"{JA} is missing or empty" in capsys.readouterr().err
+    (repo / JA).unlink()
+    assert release.run(["next-version"]) == 1
+    assert f"{JA} is missing or empty" in capsys.readouterr().err
+    (repo / JA).write_text("- 修正。\n", encoding="utf-8")
+    release.run(["changelog", "--version", "0.1.0-alpha.1", "--date", "2026-10-01", "--notes", "n.md",
+                 "--media", "docs/releases"])
+    git(repo, "add", "-A")
+    git(repo, "commit", "-qm", "Release 0.1.0-alpha.1")
+    git(repo, "tag", "-a", "v0.1.0-alpha.1", "-m", "r")
+    capsys.readouterr()
+    assert not (repo / JA).exists()  # moved to the version's folder with the media
+    assert release.run(["next-version", "--version", "0.1.0-alpha.1"]) == 0  # resumed
+    assert release.run(["next-version", "--allow-empty"]) == 0  # voice packs alone
+    assert capsys.readouterr().out.endswith("addon=false\n")
 
 
 def test_cli_empty_version_on_a_released_head_points_at_resume(repo, git, capsys):
@@ -303,6 +341,11 @@ def test_cli_changelog_gate(repo, git, capsys):
     text = (repo / "CHANGELOG.md").read_text(encoding="utf-8") + "- The x window in Japanese.\n"
     (repo / "CHANGELOG.md").write_text(text, encoding="utf-8")
     git(repo, "commit", "-qam", "changelog line")
+    assert release.run(["changelog-gate", "--base", "main"]) == 1
+    assert "write its Japanese in docs/releases/next/ja.md" in capsys.readouterr().err
+    with (repo / JA).open("a", encoding="utf-8") as f:
+        f.write("- x のウィンドウを日本語に。\n")
+    git(repo, "commit", "-qam", "its Japanese")
     assert release.run(["changelog-gate", "--base", "main"]) == 0
     assert "changelog-gate: ok" in capsys.readouterr().out
 
@@ -327,7 +370,6 @@ def test_cli_gate_counts_a_file_moved_out_of_addon(repo, git, capsys):
     git(repo, "add", ".")
     git(repo, "commit", "-qm", "addon file")
     git(repo, "checkout", "-qb", "move")
-    (repo / "docs").mkdir()
     git(repo, "mv", "addon/x.lua", "docs/x.lua")
     git(repo, "commit", "-qm", "move out of addon")
     capsys.readouterr()
@@ -354,7 +396,7 @@ def test_move_media_renames_next_under_the_version(tmp_path):
 
 
 def test_changelog_action_moves_media(repo, capsys):
-    (repo / "docs" / "releases" / "next").mkdir(parents=True)
+    (repo / "docs" / "releases" / "next").mkdir(parents=True, exist_ok=True)
     (repo / "docs" / "releases" / "next" / "clip.mp4").write_bytes(b"mp4")
     rc = release.run(["changelog", "--version", "0.1.0-alpha.1", "--date", "2026-10-01", "--notes", "notes.md",
                       "--media", "docs/releases"])
@@ -365,7 +407,7 @@ def test_changelog_action_moves_media(repo, capsys):
 
 
 def test_changelog_action_without_media_touches_no_folder(repo):
-    (repo / "docs" / "releases" / "next").mkdir(parents=True)
+    (repo / "docs" / "releases" / "next").mkdir(parents=True, exist_ok=True)
     assert release.run(["changelog", "--version", "0.1.0-alpha.1", "--date", "2026-10-01", "--notes", "notes.md"]) == 0
     assert (repo / "docs" / "releases" / "next").exists()
     assert not (repo / "docs" / "releases" / "0.1.0-alpha.1").exists()

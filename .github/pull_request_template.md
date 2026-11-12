@@ -22,4 +22,4 @@ No hand-written line is replaced by machine text without a ruling on that line.
 
 ## Changelog
 
-<The line added under `## Unreleased` in CHANGELOG.md, or "none" for changes that do not reach players.>
+<The line added under `## Unreleased` in CHANGELOG.md, or "none" for changes that do not reach players. Its Japanese goes in docs/releases/next/ja.md.>

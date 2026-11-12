@@ -936,7 +936,7 @@ _Avoid_: tag push, deploy, publish (publishing is its last step), release (alone
 → [Release](operations/release.md) · [ADR-046](adr/046-one-action-release.md)
 
 **Unreleased**:
-The `## Unreleased` section at the top of `CHANGELOG.md`: the player-facing lines of every merged change that reaches the game and has not shipped yet, under Added / Changed / Fixed / Removed / Breaking. A pull request that changes `addon/` or `data/` adds a line here; a [[Release run]] moves the section under the new version and leaves it empty. Empty means there is nothing to release.
+The `## Unreleased` section at the top of `CHANGELOG.md`: the player-facing lines of every merged change that reaches the game and has not shipped yet, under Added / Changed / Fixed / Removed / Breaking. A pull request that changes `addon/` or `data/` adds a line here, and its Japanese in `docs/releases/next/ja.md` for the release post; a [[Release run]] moves the section under the new version and leaves it empty. Empty means there is nothing to release.
 _Avoid_: next release notes, draft changelog
 → [Release → Writing changelog lines](operations/release.md#writing-changelog-lines)
 
