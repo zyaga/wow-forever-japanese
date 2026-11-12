@@ -444,7 +444,11 @@ local function decorated(fs, prefix, suffix, jaSuffix, en)
       return text
     end
     function a.SetText(_, text)
-      local x = (a.jaSuffix and text ~= a.en) and a.jaSuffix or a.suffix
+      -- the Japanese suffix goes around a Japanese title only: a text that ends with the English title (the title
+      -- alone, or the missing marker in front of it) keeps the client's own wording
+      local title = a.en
+      local english = type(title) == "string" and type(text) == "string" and text:sub(-#title) == title
+      local x = (a.jaSuffix and not english) and a.jaSuffix or a.suffix
       fs:SetText(a.prefix .. (text or "") .. x)
     end
     function a.GetFont() return fs:GetFont() end
@@ -556,9 +560,9 @@ failedTitle = function(fs, en)
   if not jaTail then
     local word, entry = Compat.resolve("FAILED"), WFJ.Lookup and WFJ.Lookup.get("ui", "FAILED")
     local at, stop
-    if type(word) == "string" and word ~= "" then at, stop = tail:find(word, 1, true) end
+    if type(word) == "string" and word ~= "" then at, stop = tail:find("(" .. word .. ")", 1, true) end
     if at and type(entry) == "table" and type(entry.ja) == "string" and entry.ja ~= "" then
-      jaTail = tail:sub(1, at - 1) .. entry.ja .. tail:sub(stop + 1)
+      jaTail = tail:sub(1, at) .. entry.ja .. tail:sub(stop)
     end
   end
   return decorated(fs, head, tail, jaTail, en)

@@ -89,13 +89,21 @@ local function wrapAdd(tip, method, translate)
     end
     local fs = add(self, ja or text, ...)
     if type(fs) == "table" then
+      -- a line Dialogue UI uses again keeps the face it was last given (its own font object is set again only when
+      -- the line's size changes [read: Tooltip_Base.lua, SetLineFont]), so taking ours off changes its face too
+      local was = WFJ.Font.dressed(fs)
       guarded(WFJ.DialogueUI.face, fs, nil, ours)
       -- the tooltip sizes itself again a frame later when told a line's face changed [read: Tooltip_Base.lua, Show]
-      if ours then self.fontChanged = true end
+      if ours or was then self.fontChanged = true end
     end
     return fs
   end
 end
+
+-- Dialogue UI keeps the data it was given and hands it back on its own redraws (its comparison toggle) [read:
+-- Tooltip_Private.lua, ProcessTooltipData, ReprocessInfo]: a copy leads back to the client's data it was made from,
+-- so a redraw is read like the first pass.
+local sourceOf = setmetatable({}, { __mode = "k" })
 
 -- A copy of an item's tooltip data with its effect run in Japanese (the first line of the run carries it, the rest go,
 -- as UI/Tooltip shows it) and that Japanese line, or nil to leave the data as it is.
@@ -134,6 +142,7 @@ local function itemRunData(data)
   local out = {}
   for k, v in pairs(data) do out[k] = v end
   out.lines = lines
+  sourceOf[out] = data
   return out, ja
 end
 
@@ -147,9 +156,9 @@ local function wrapProcess(tip)
   local process = tip.ProcessTooltipData
   if type(process) ~= "function" then return end
   tip.ProcessTooltipData = function(self, data, ...)
-    local given, line = data, nil
+    local given, line = sourceOf[data] or data, nil
     if WFJ.DialogueUI.active() then
-      local ok, copy, ja = guarded(itemRunData, data)
+      local ok, copy, ja = guarded(itemRunData, given)
       if ok and copy then given, line = copy, ja end
     end
     local before = passLine

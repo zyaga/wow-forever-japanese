@@ -138,6 +138,12 @@ describe("UI/QuestMap: the camelot quest log", function()
       Stub.keys.alt = false
       WFJ.Modifier.refresh()
       assert.are.equal("狼の毛皮 - (失敗)", QuestInfoTitleHeader:GetText())
+      -- a failed quest with no Japanese title keeps the client's whole text, the failed word included
+      Q.quests[7].failed = true
+      Q.showDetails(7)
+      local untranslated = QuestInfoTitleHeader:GetText()
+      assert.are.equal("Untranslated Errand - (Failed)", untranslated:sub(-#"Untranslated Errand - (Failed)"))
+      assert.is_nil(untranslated:find("失敗", 1, true))
       -- no Japanese for the word: the wording as the client wrote it around the Japanese title
       WFJ.Lookup = { get = function() return nil end }
       Q.showDetails(5)

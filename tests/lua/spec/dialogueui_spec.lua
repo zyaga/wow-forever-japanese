@@ -637,11 +637,27 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       -- the Japanese of a data pass is ours only during that pass: the same text written right after it is not
       tip:AddLeftLine("使用：Hearthstoneの場所に戻ります。")
       assert.are_not.equal(WFJ.Font.PATH, (pool[3]:GetFont()))
-      -- the same line, next for an item with no Japanese: Dialogue UI's face again
+      -- Dialogue UI redraws from the data it kept, which is the copy it was given (its comparison toggle): the
+      -- Japanese line and its face again, and the reveal key still reaches the client's English
+      local kept = tip.tooltipData
+      tip:ProcessTooltipData(kept)
+      assert.are.equal("使用：Hearthstoneの場所に戻ります。", pool[2]:GetText())
+      assert.are.equal(WFJ.Font.PATH, (pool[2]:GetFont()))
+      Stub.keys.alt = true
+      WFJ.Modifier.refresh()
+      tip:ProcessTooltipData(kept)
+      assert.are.equal("Use: Returns you home.", pool[2]:GetText())
+      Stub.keys.alt = false
+      WFJ.Modifier.refresh()
+      tip:ProcessTooltipData(kept)
+      assert.are.equal(WFJ.Font.PATH, (pool[2]:GetFont()))
+      -- the same line, next for an item with no Japanese: Dialogue UI's face again, and the tooltip is told
+      tip.fontChanged = false
       tip:ProcessTooltipData({ isItem = true, id = 8000, lines = { { leftText = "Rock" },
         { leftText = "Use: Throw it." } } })
       assert.are.equal("Use: Throw it.", pool[2]:GetText())
       assert.are_not.equal(WFJ.Font.PATH, (pool[2]:GetFont()))
+      assert.is_true(tip.fontChanged)
       -- Dialogue UI's own error inside a pass is raised again, and the pass's Japanese is forgotten all the same
       local fail = true
       local add = tip.AddLeftLine
