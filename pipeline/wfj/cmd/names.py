@@ -503,7 +503,7 @@ def learn_spellings(root: Path, dry_run: bool) -> tuple[int, list[str]]:
         if ln["status"] != "trusted" or not names.KATAKANA.match(ln["ja"]):
             continue
         ws, parts = spell.words(ln["en"]), ln["ja"].split("・")
-        # a possessive's part ends in its ズ, which is not part of the word's spelling: nothing is learned
+        # a possessive's part ends in the possessive's own sound, not the word's spelling: nothing is learned
         if len(ws) != len(parts) or " " in "".join(ws) or re.search(r"['’]s\b", ln["en"]):
             continue
         for w, part in zip(ws, parts, strict=True):
@@ -551,6 +551,8 @@ def import_respell(  # noqa: PLR0913 - one batch file, its provenance, and the t
     written = 0
     for row in read_batch(path):
         en, ja = row.get("en"), row.get("ja")
+        if isinstance(en, str):
+            en = en.replace("’", "'")  # the possessive lookup is built with a straight apostrophe
         if not isinstance(en, str) or not en or " " in en:
             rejected.append(f"word {en!r}: not one English word")
         elif not isinstance(ja, str) or not names.KATAKANA.match(ja):
@@ -576,6 +578,16 @@ def respell_problems(lines: Sequence[dict[str, Any]], words: Sequence[dict[str, 
     check that keeps a translated name from coming back."""
     known = _spellings(words)
     out = []
+    for en, ja in known.items():
+        if not en.endswith("'s"):
+            continue
+        base = known.get(en[:-2])
+        # a possessive has a row only where the rule cannot write it, and it is the word's spelling with the
+        # last ス changed: a word respelled later must not leave its old possessive behind
+        if base is None or not base.endswith("ス"):
+            out.append(f"possessive {en!r}: only a word spelled with a last ス has a possessive of its own")
+        elif not (ja.startswith(base[:-1]) and ja.endswith("ズ")):
+            out.append(f"possessive {en!r} is {ja!r}, which does not follow {base!r}")
     for ln in lines:
         if ln["status"] != "trusted" or _respelled(ln):
             continue

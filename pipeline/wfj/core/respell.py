@@ -69,7 +69,7 @@ def _pieces(en: str) -> list[tuple[str, str]]:
             out.append(("number", p))
         elif p[0].isalpha():
             word = p.rstrip("'’")
-            poss = word.endswith(("'s", "’s"))
+            poss = word.lower().endswith(("'s", "’s"))
             if poss:
                 word = word[:-2]
             roman = _roman(word) if i and not dotted else None  # the first word of a name is never a numeral

@@ -385,3 +385,24 @@ def test_the_check_reports_a_possessive_nobody_decided_and_the_round_stores_the_
 def test_a_possessive_spelling_that_is_not_katakana_is_refused(store, tmp_path):
     n, rejected = cmd.import_respell(store, _batch(tmp_path, [{"en": "zin's", "ja": "Zins"}]), "m2", "respell-1", TODAY, False)
     assert n == 0 and len(rejected) == 1
+
+
+def test_a_possessive_row_is_stored_with_a_straight_apostrophe(store, tmp_path):
+    save_words(store, [*load_words(store), _word("Death", "デス")])
+    n, rejected = cmd.import_respell(store, _batch(tmp_path, [{"en": "death’s", "ja": "デスズ"}]), "m2", "respell-1", TODAY, False)
+    assert (n, rejected) == (1, [])
+    assert "death's" in {w["en"] for w in load_words(store)}
+
+
+def test_the_check_reports_a_possessive_row_that_no_longer_fits_its_word(store):
+    """A word respelled after its possessive was decided leaves that possessive behind."""
+    base = [*load_words(store), _word("black", "ブラック"), _word("gloves", "グローブ")]
+    lines = load_lines(store)
+    fits = [*base, _word("death", "デス"), _word("death's", "デスズ"), _word("novice", "ノービス"), _word("novice's", "ノービセズ")]
+    assert [p for p in cmd.respell_problems(lines, fits) if "possessive" in p] == []
+    moved = [*base, _word("death", "デース"), _word("death's", "デスズ")]
+    stray = [*base, _word("light", "ライト"), _word("light's", "ライトス")]
+    orphan = [*base, _word("nobody's", "ノーバディズ")]
+    for words, name in ((moved, "death's"), (stray, "light's"), (orphan, "nobody's")):
+        found = [p for p in cmd.respell_problems(lines, words) if "possessive" in p]
+        assert len(found) == 1 and name in found[0], (name, found)

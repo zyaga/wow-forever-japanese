@@ -96,7 +96,7 @@ def test_every_area_text_is_drafted_or_listed_as_a_name(root):
     moved = {ln["hash"] for ln in Store(root / "data", english=True).load("objective")}
     drafted = {
         ln["id"] for ln in Store(root / "data").load("area")
-        if ln["id"] in english or ln["english"].get("hash") not in moved
+        if ln["id"] in english or (ln.get("english") or {}).get("hash") not in moved or ln["status"] != "rejected"
     }
     names = objective_names(root, AREA_NAMES)
     assert names, "pipeline/area_names.txt lists the name-only area texts"

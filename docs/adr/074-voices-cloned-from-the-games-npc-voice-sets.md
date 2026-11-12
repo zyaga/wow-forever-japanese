@@ -46,7 +46,7 @@ A male Skyborne elf on Zephras Isle was heard in a female voice. The cause was t
 - Each run costs money on the rented GPUs. On the maintainer's M1 Pro, the local fallback is about 2 to 3 times slower than real time, so a local run of a whole pack is a long background run.
 - An engine to keep working, with its own environments (local and remote) and model download.
 - The game's audio leaves the machine during a remote run: the joined references go to the rented GPU containers for that run.
-- The mapping follows Spoken's corpus: a new pin can move NPCs between sets, and their lines are remade.
+- The mapping follows Spoken's corpus: a newer corpus can move NPCs between sets or give a quest line another speaker, and those lines are remade in the next run.
 - The rights position rests on the publisher's tolerance, not a licence. On a takedown request the affected packs are withdrawn.
 
 ## Alternatives considered

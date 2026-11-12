@@ -447,11 +447,15 @@ SPOKEN_CORPUS = $(SPOKEN_DIR)/corpus-$(SPOKEN_COMMIT).json.gz
 
 voice-spoken-fetch: ## build/spoken: the Spoken addon's newest line corpus; its commit goes to pipeline/spoken-commit.txt
 	@new=$$(git ls-remote https://github.com/rusty-key/spoken-wow HEAD 2>/dev/null | cut -f1); \
-		if [ -z "$$new" ]; then echo "voice-spoken-fetch: Spoken could not be reached; using the commit in pipeline/spoken-commit.txt"; \
-		elif [ "$$new" != "$$(cat "$(SPOKEN_PIN)" 2>/dev/null)" ]; then echo "$$new" > "$(SPOKEN_PIN)"; fi; \
-		c=$$(cat "$(SPOKEN_PIN)"); test -n "$$c" || { echo "voice-spoken-fetch: no commit in pipeline/spoken-commit.txt"; exit 1; }; \
-		mkdir -p "$(SPOKEN_DIR)" && { test -f "$(SPOKEN_DIR)/corpus-$$c.json.gz" || curl -sfL -o "$(SPOKEN_DIR)/corpus-$$c.json.gz" "https://raw.githubusercontent.com/rusty-key/spoken-wow/$$c/pipelines/quests/corpus/corpus.json.gz"; } && \
-		echo "voice-spoken-fetch: Spoken at $$c"
+		if [ -z "$$new" ]; then echo "voice-spoken-fetch: Spoken could not be reached; using the commit in pipeline/spoken-commit.txt"; new=$$(cat "$(SPOKEN_PIN)" 2>/dev/null); fi; \
+		test -n "$$new" || { echo "voice-spoken-fetch: no commit in pipeline/spoken-commit.txt"; exit 1; }; \
+		f="$(SPOKEN_DIR)/corpus-$$new.json.gz"; mkdir -p "$(SPOKEN_DIR)"; \
+		if [ ! -f "$$f" ]; then \
+			curl -sfL -o "$$f.part" "https://raw.githubusercontent.com/rusty-key/spoken-wow/$$new/pipelines/quests/corpus/corpus.json.gz" && gzip -t "$$f.part" && mv "$$f.part" "$$f" \
+				|| { echo "voice-spoken-fetch: the corpus at $$new could not be downloaded whole; nothing changed"; exit 1; }; \
+		fi; \
+		if [ "$$new" != "$$(cat "$(SPOKEN_PIN)" 2>/dev/null)" ]; then echo "$$new" > "$(SPOKEN_PIN)"; fi; \
+		echo "voice-spoken-fetch: Spoken at $$new"
 
 voice-sets: voice-spoken-fetch ## data/voice/creature-sets.jsonl: each speaking NPC's game voice set, as Spoken assigns it (rerun after voice-speakers)
 	cd pipeline && $(PY) -m wfj voice sets creatures --spoken "$(SPOKEN_CORPUS)" --spoken-commit $(SPOKEN_COMMIT)
