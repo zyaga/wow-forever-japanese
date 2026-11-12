@@ -4,4 +4,5 @@ WFJ.Data.add("area", {
   [99053] = { "Lynessa DuskblossomをBan'ethilから護衛して連れ出す", 0x0ee311b4, "." },
   [99123] = { "Pal'juhをKolkar Cragから護衛して連れ出す。", 0x6a5300cf, "." },
   [99144] = { "Bareth DawnstoneをCrusader's Outpostから護衛して連れ出す", 0x3ba4dc76, "." },
+  [99435] = { "Reginaldの行進", 0xc7da5dcf, "." },
 })

@@ -177,7 +177,6 @@ WFJ.Data.add("gloss", {
   [69174] = "帯びる\tおびる\tenchanted (imbued with)",
   [69175] = "帯びる\tおびる\tenergized (charged with)",
   [69176] = "帯びる\tおびる\tinfused (carrying)",
-  [69177] = "帯びる\tおびる\tof (charged with)",
   [69178] = "帯びる\tおびる\ton (carrying) a mission",
   [69179] = "帯びる\tおびる\ttake on",
   [69180] = "帯びる\tおびる\ttakes on",

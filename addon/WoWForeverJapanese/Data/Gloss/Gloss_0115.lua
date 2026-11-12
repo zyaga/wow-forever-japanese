@@ -707,7 +707,6 @@ WFJ.Data.add("gloss", {
   [115708] = "行い\tおこない\tdeeds (what you have done)",
   [115709] = "行い\tおこない\tgesture (act)",
   [115710] = "行い\tおこない\theroics (deeds)",
-  [115711] = "行い\tおこない\tthe way we act",
   [115712] = "行い\tおこない\tyou've done (deeds)",
   [115713] = "行う\tおこなう\t(keep) (carry out)",
   [115714] = "行う\tおこなう\t(to carry out)",

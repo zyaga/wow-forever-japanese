@@ -55,4 +55,5 @@ WFJ.Data.add("english", {
   ["gossip:77e8c915ca25b77c"] = { text = "information=3 seek=2 you=1" },
   ["gossip:77effe627ae0f9ed"] = { text = "chapter=1" },
   ["gossip:77fcc04e2a64a90f"] = { text = "mean=2 what=1" },
+  ["gossip:77fdc05ec9456038"] = { text = "aren't=10 barding=14 exactly=3 finished=15 i=4 needed=5 quite=8 resourceful=9 right=11 then=12 this=1 well=2 you=7" },
 })

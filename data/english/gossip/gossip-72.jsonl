@@ -20,6 +20,7 @@
 {"id": "72579e89864ccc24", "field": "text", "en": "But it was not to be. As their foes pressed close, Anathera's armor was pierced by a demon's tainted blade. In the thick of battle, there would be nothing to save her.", "hash": "72579e89864ccc24", "src": "vmangos@13b49dc"}
 {"id": "725d2afba370359a", "field": "text", "en": "You are eager, that is good. However, you are not yet ready to train with the likes of me. ", "hash": "725d2afba370359a", "src": "vmangos@13b49dc"}
 {"id": "725ef9e38632337e", "field": "text", "en": "Kergul Bloodaxe on the Hunter Rise stands ready to help you get to Warsong Gulch.", "hash": "725ef9e38632337e", "src": "vmangos@13b49dc"}
+{"id": "726469bb22f4cebb", "field": "text", "en": "Well met, $C. My advice to you is this: as you travel the world, be wary of magic for it will burn the untrained.", "hash": "726469bb22f4cebb", "src": "collector@1.60.1.70862", "npcs": [328, 5497]}
 {"id": "7274e469ca97509f", "field": "text", "en": "Come, young one, sit with me.", "hash": "7274e469ca97509f", "src": "collector@1.60.1.70790"}
 {"id": "727ba1e2e501573d", "field": "text", "en": "This dock here?  Well you can catch the ship that goes to that Night Elf place.  What's it's name?  Uhh Auberdine I think.  I don't really know for sure, I just load and unload stuff.", "hash": "727ba1e2e501573d", "src": "vmangos@13b49dc"}
 {"id": "727d88788811ff38", "field": "text", "en": "%s is placed upon the Flame of Uzel.", "hash": "727d88788811ff38", "src": "vmangos@13b49dc"}

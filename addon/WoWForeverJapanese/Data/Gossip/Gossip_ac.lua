@@ -16,6 +16,7 @@ WFJ.Data.add("gossip", {
   ["ac42f9ab3d424042"] = { "Captain Balinda Stonehearthのことを教えてくれ。", "." },
   ["ac45802536c66428"] = { "誇りに思え、{class}。Allianceは課された収集任務をすべて成し遂げたのだ。完成品は保管・保存され、我々の職人たちがその原材料を軍需品に仕立てるべく懸命に働いている。Hordeが収集を終え次第、それはSilithusへ送られる。", "." },
   ["ac46be328eb0b910"] = { "あなたの才能は抜きん出ています！あなたは真に閃きを得ています。さらに知識を求め続けるのなら、StormwindのGeorgio Boleroと話しなさい。彼は高く評価されており、あなたの指導をさらに進めてくれるでしょう。", "." },
+  ["ac477fdb80e1b159"] = { "Valor家のことをもっと聞かせてくれ。", "." },
   ["ac4aea9e30a65df2"] = { "<雄羊はかいてもらおうと、あなたのほうへ首を伸ばしている。>", "." },
   ["ac4ba00ab0e6f25b"] = { "Elder GravebornはTirisfal GladesのBrill近くで過ごしている。", "." },
   ["ac51bc16096c47d1"] = { "行くべきはGodan's Runeworksだ。The Dragの西の端、Valley of Wisdomのすぐ隣にある。", "." },

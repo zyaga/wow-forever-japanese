@@ -31,6 +31,7 @@ WFJ.Data.add("gossip", {
   ["ca856c88f471610b"] = { "何が起こってるんだ？", "." },
   ["ca85db72b95da49f"] = { "あなたの技は本当に並外れたものになってきている。さあ、訓練を続けよう……", "." },
   ["ca8a0d423ba2b333"] = { "Eluneを讃えよ！あなたがいなかったら、今日を生き延びられたかどうかわかりません、友よ。", "." },
+  ["ca92a331b593145c"] = { "手短にしろ、よそ者。", "." },
   ["ca93a585590a00d3"] = { "さっさと終わらせろ、薄汚い{race}め。\n\n<Kharanは頭を垂れ、短い首をさらけ出した。>", "." },
   ["ca9ab18f1492f88b"] = { "私に危害を加えるつもりか、{race}?", "." },
   ["ca9e5f3843c55267"] = { "Tower Point Eastは、Field of Strifeと南のHorde領との間の道を押さえている。\n\nここはHordeが支配している。The East Frostwolf Towerは、Frostwolf VillageとFrostwolf Keepの間の門を守っている。\n\nここはHordeが支配している。", "." },

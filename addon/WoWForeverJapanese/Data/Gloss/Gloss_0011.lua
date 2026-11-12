@@ -815,7 +815,6 @@ WFJ.Data.add("gloss", {
   [11813] = "する\tする\tare fighting",
   [11814] = "する\tする\tare fighting (are doing)",
   [11815] = "する\tする\tare fighting (doing)",
-  [11816] = "する\tする\tare going to",
   [11817] = "する\tする\tare going to do",
   [11818] = "する\tする\tare holding",
   [11819] = "する\tする\tare holding (as)",

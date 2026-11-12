@@ -3,4 +3,5 @@ local _, WFJ = ...
 WFJ.Data.add("area", {
   [96067] = { "Sleeboのエンジンの負荷試験でG45-B4Gと戦う。", 0x42397466, "." },
   [96204] = { "Lumina Windsingerを安全な場所まで護衛する", 0x8a6fa6d1, "." },
+  [96811] = { "Sergeant Dannethを護衛する", 0x99dfae65, "." },
 })

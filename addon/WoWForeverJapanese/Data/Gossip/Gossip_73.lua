@@ -59,5 +59,6 @@ WFJ.Data.add("gossip", {
   ["73e2820e1b504703"] = { "GoldshireのLion's Pride Innは、このあたりのどの宿屋にも負けないくらい良い宿だよ。立ち寄って、Innkeeper Farleyにくつろがせてもらうといい。", "." },
   ["73e4dfcfd8a81ae9"] = { "Kalimdor Kocktailを作る時間だ！ヒック！", "." },
   ["73ed4b629197038b"] = { "Elder Highpeakはどこにいる？", "." },
+  ["73efe44d44c81485"] = { "Chol'arukだ！", "." },
   ["73fe130f1e4ce4b0"] = { "<不安定な裂け目のクリスタルに触れる。>", "." },
 })

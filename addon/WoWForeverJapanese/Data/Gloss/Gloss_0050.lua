@@ -435,7 +435,6 @@ WFJ.Data.add("gloss", {
   [50434] = "切望する\tせつぼうする\tyearning for",
   [50435] = "切符\tきっぷ\tpassage (ticket)",
   [50436] = "切符\tきっぷ\tticket",
-  [50437] = "切羽詰まる\tせっぱつまる\tdesperate",
   [50438] = "切羽詰まる\tせっぱつまる\tgrows more desperate",
   [50439] = "切迫\tせっぱく\turgency",
   [50440] = "切迫さ\tせっぱくさ\turgency",

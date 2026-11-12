@@ -23,6 +23,7 @@
 {"id": "5f697b036c119be2", "field": "text", "en": "You look like a well-preserved Forsaken, all things considered. I am looking for someone to travel to Sunnyglade, in the Riverglades just north of the Redridge Mountains.\r\n\r\nMy family owned an armory there, once. Now I imagine it is a burnt husk, but I would have you retrieve a tome containing my family's ancestral armor crafting techniques. It was originally in the basement, so hopefully it has not succumbed to the elements just yet.", "hash": "5f697b036c119be2", "src": "wdb@1.60.1.70862"}
 {"id": "5f6c2558b002a989", "field": "text", "en": "Hello, hello, Amy. It's good to be back in Lakeshire and to see you, milady.", "hash": "5f6c2558b002a989", "src": "vmangos@13b49dc"}
 {"id": "5f6d5d97b0b95882", "field": "text", "en": "I just saw a Scourge!  Kill it!", "hash": "5f6d5d97b0b95882", "src": "vmangos@13b49dc"}
+{"id": "5f6e80e59326133e", "field": "text", "en": "An outsider approaches me?$B$BI doubt we have much to discuss, unless you are here to aid an old Kolkar.", "hash": "5f6e80e59326133e", "src": "collector@1.60.1.70862", "npcs": [253066]}
 {"id": "5f769cf26b576bfd", "field": "text", "en": "Day's wasting. Let's get going.", "hash": "5f769cf26b576bfd", "src": "vmangos@13b49dc"}
 {"id": "5f7fb2de304ba300", "field": "text", "en": "%s roars a challenge to $N!", "hash": "5f7fb2de304ba300", "src": "vmangos@13b49dc"}
 {"id": "5f800a0154b19146", "field": "text", "en": "I feel sick.", "hash": "5f800a0154b19146", "src": "vmangos@13b49dc"}

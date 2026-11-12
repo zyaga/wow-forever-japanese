@@ -26,6 +26,7 @@ WFJ.Data.add("english", {
   ["gossip:ae924ce29bbfc50e"] = { text = "all=4 alone=6 another=10 area=2 cannot=9 care=7 fighting=11 hand=12 this=1 threats=3 use=13 we=5" },
   ["gossip:ae94e081ac11ecc0"] = { text = "anything=6 call=4 civilization=3 far=8 here=1 least=9 leather=15 like=5 more=10 pretty=7 really=14 reinforcements=11 send=12 working=16 you=13" },
   ["gossip:ae981e63948b1956"] = { text = "bellows=5 cultist=10 face=20 little=8 lords=18 or=16 run=14 scurrying=12 sense=13 stone=4 this=6 thunderous=2 vermin=15 voice=3 wrath=19" },
+  ["gossip:aea293cd1d28f785"] = { text = "calm=4 demeanor=5 evident=8 its=1 keeled=6 stance=2 temperament=7" },
   ["gossip:aea6fa8d9d756074"] = { text = "call=9 discover=3 find=13 need=10 spirits=6 stop=5 strength=11 us=7 we=4 what=1 wrong=2" },
   ["gossip:aeaf020f23181f41"] = { text = "reporting=2 yes=1" },
   ["gossip:aeb495a6b903187f"] = { text = "let=2 one=1" },

@@ -9,6 +9,7 @@ WFJ.Data.add("english", {
   ["gossip:9f13a3394193455a"] = { text = "and=13 before=5 diligent=12 give=15 hope=14 knowledge=2 learn=8 lessons=9 my=1 others=6 shared=4 still=10 you=3" },
   ["gossip:9f15e46b33caa79c"] = { text = "infidels=1 purified=2" },
   ["gossip:9f164781a35b4b43"] = { text = "stretch=2" },
+  ["gossip:9f17825a834182f5"] = { text = "all=2 beacon=5 light=1 shines=4" },
   ["gossip:9f1bc2de1b5bad92"] = { text = "before=3 further=1 go=2 perform=4 task=5" },
   ["gossip:9f1de517c89e1669"] = { text = "ancient=1 searches=3 statuette=2" },
   ["gossip:9f226fb4ea4e095d"] = { text = "lower=3 may=7 possessions=2 rise=4 shed=6 worldly=1" },

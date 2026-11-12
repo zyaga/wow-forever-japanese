@@ -1,5 +1,6 @@
 {"id": 2050, "field": "name", "en": "Raleigh Andrean", "hash": "03cf4ca084daeab6", "src": "collector@1.60.1.70862"}
 {"id": 2055, "field": "name", "en": "Master Apothecary Faranell", "hash": "d91e84af7521dd86", "src": "collector@1.60.1.70790"}
+{"id": 2057, "field": "name", "en": "Huldar", "hash": "d18cb72004c596d7", "src": "collector@1.60.1.70862"}
 {"id": 2077, "field": "name", "en": "Melithar Staghelm", "hash": "1d7ba1228ba3792c", "src": "collector@1.60.1.70009"}
 {"id": 2078, "field": "name", "en": "Athridas Bearmantle", "hash": "48801a9c7ec21084", "src": "collector@1.60.1.70205"}
 {"id": 2079, "field": "name", "en": "Conservator Ilthalaine", "hash": "633ff4a1d1eea98c", "src": "collector@1.60.1.70009"}
@@ -7,7 +8,15 @@
 {"id": 2081, "field": "name", "en": "Sentinel Kyra Starsong", "hash": "62d0a68c30d56c19", "src": "collector@1.60.1.70205"}
 {"id": 2082, "field": "name", "en": "Gilshalan Windwalker", "hash": "850bf5e5985fa1d7", "src": "collector@1.60.1.70170"}
 {"id": 2083, "field": "name", "en": "Syral Bladeleaf", "hash": "0e514e5071f87d78", "src": "collector@1.60.1.70205"}
+{"id": 2086, "field": "name", "en": "Valstag Ironjaw", "hash": "1f20d4ca880e890f", "src": "collector@1.60.1.70862"}
+{"id": 2092, "field": "name", "en": "Pilot Longbeard", "hash": "0af64adff1187a4f", "src": "collector@1.60.1.70862"}
+{"id": 2093, "field": "name", "en": "Einar Stonegrip", "hash": "d07135a2ada66705", "src": "collector@1.60.1.70862"}
+{"id": 2094, "field": "name", "en": "James Halloran", "hash": "75c5cb26441ab9e7", "src": "collector@1.60.1.70862"}
+{"id": 2096, "field": "name", "en": "Tarrel Rockweaver", "hash": "69bfc729fe776115", "src": "collector@1.60.1.70862"}
+{"id": 2097, "field": "name", "en": "Harlo Barnaby", "hash": "e2afc063860228f5", "src": "collector@1.60.1.70862"}
+{"id": 2104, "field": "name", "en": "Captain Stoutfist", "hash": "c43b9d9e8d0330c2", "src": "collector@1.60.1.70862"}
 {"id": 2107, "field": "name", "en": "Gaerolas Talvethren", "hash": "e42d7f5e6cbb5fe9", "src": "collector@1.60.1.70205"}
+{"id": 2111, "field": "name", "en": "Sida", "hash": "0b3adb7f79945d3a", "src": "collector@1.60.1.70862"}
 {"id": 2114, "field": "name", "en": "Faruza", "hash": "7c44337c8b4fa22b", "src": "collector@1.60.1.70790"}
 {"id": 2121, "field": "name", "en": "Shadow Priest Allister", "hash": "acec3eb21d60f422", "src": "collector@1.60.1.70790"}
 {"id": 2126, "field": "name", "en": "Maximillion", "hash": "cb8361ab93596205", "src": "collector@1.60.1.70862"}
@@ -17,14 +26,22 @@
 {"id": 2151, "field": "name", "en": "Moon Priestess Amara", "hash": "3fbc2f3d6b2b2b50", "src": "collector@1.60.1.70205"}
 {"id": 2155, "field": "name", "en": "Sentinel Shayla Nightbreeze", "hash": "76032caa144d8174", "src": "collector@1.60.1.70790"}
 {"id": 2211, "field": "name", "en": "Captured Mountaineer", "hash": "3dffa67114ea8a0f", "src": "collector@1.60.1.70790"}
+{"id": 2214, "field": "name", "en": "Deathstalker Lesh", "hash": "e432d4ee7647dde2", "src": "collector@1.60.1.70862"}
+{"id": 2215, "field": "name", "en": "High Executor Darthalia", "hash": "eeae2415ed9722be", "src": "collector@1.60.1.70862"}
 {"id": 2216, "field": "name", "en": "Apothecary Lydon", "hash": "f708188cb4b3fcbf", "src": "collector@1.60.1.70862"}
 {"id": 2226, "field": "name", "en": "Karos Razok", "hash": "efcef084a48c2b4e", "src": "collector@1.60.1.70790"}
 {"id": 2326, "field": "name", "en": "Thamner Pol", "hash": "27ac87c4019b780a", "src": "collector@1.60.1.70862"}
+{"id": 2329, "field": "name", "en": "Michelle Belle", "hash": "5a361ebc72d9fea1", "src": "collector@1.60.1.70862"}
 {"id": 2391, "field": "name", "en": "Serge Hinott", "hash": "04b9e26bbac3dcea", "src": "collector@1.60.1.70862"}
 {"id": 2425, "field": "name", "en": "Varimathras", "hash": "325d1afc53f2809b", "src": "collector@1.60.1.70790"}
+{"id": 2504, "field": "name", "en": "Donyal Tovald", "hash": "d11ce567acaa6fe1", "src": "collector@1.60.1.70862"}
 {"id": 2756, "field": "name", "en": "Grund Drokda", "hash": "63e1bab1feebc01f", "src": "collector@1.60.1.70205"}
 {"id": 2784, "field": "name", "en": "King Magni Bronzebeard", "hash": "b5b1f991588315d4", "src": "collector@1.60.1.70862"}
+{"id": 2786, "field": "name", "en": "Gerrig Bonegrip", "hash": "e3163cda2402d476", "src": "collector@1.60.1.70862"}
+{"id": 2911, "field": "name", "en": "Archaeologist Flagongut", "hash": "58d31b11d439fd5d", "src": "collector@1.60.1.70862"}
+{"id": 2912, "field": "name", "en": "Chief Archaeologist Greywhisker", "hash": "538d1bb62c0edb94", "src": "collector@1.60.1.70888"}
 {"id": 2913, "field": "name", "en": "Archaeologist Hollee", "hash": "f904166192e1b5ea", "src": "collector@1.60.1.70862"}
+{"id": 2917, "field": "name", "en": "Prospector Remtravel", "hash": "2f2eaa4323ff6f20", "src": "collector@1.60.1.70888"}
 {"id": 2930, "field": "name", "en": "Sentinel Glynda Nal'Shea", "hash": "550939abcd0cad62", "src": "collector@1.60.1.70840"}
 {"id": 2934, "field": "name", "en": "Keeper Bel'dugur", "hash": "0366f682a1326312", "src": "collector@1.60.1.70862"}
 {"id": 2947, "field": "name", "en": "Harken Windtotem", "hash": "12fe1053fe2c5c65", "src": "collector@1.60.1.70790"}

@@ -26,6 +26,7 @@
 {"id": "ae924ce29bbfc50e", "field": "text", "en": "We cannot take care of all the threats in this area alone. We could use another fighting hand, $n.", "hash": "ae924ce29bbfc50e", "src": "vmangos@13b49dc"}
 {"id": "ae94e081ac11ecc0", "field": "text", "en": "We're pretty far from anything I'd call civilization here, at least until the Horde can send us more reinforcements. You must really like working with leather.", "hash": "ae94e081ac11ecc0", "src": "vmangos@13b49dc"}
 {"id": "ae981e63948b1956", "field": "text", "en": "A thunderous voice bellows from the stone...$B$BWhat is this?  I sense a little cultist scurrying about!  Run along, vermin, or face the wrath of the lords of the Council!", "hash": "ae981e63948b1956", "src": "vmangos@13b49dc"}
+{"id": "aea293cd1d28f785", "field": "text", "en": "<The horse's calm demeanor and even-keeled temperament evident in its stance.>", "hash": "aea293cd1d28f785", "src": "collector@1.60.1.70862", "npcs": [276786]}
 {"id": "aea6fa8d9d756074", "field": "text", "en": "We will not stop until we are able to discover what went wrong. We will find the strength we need to call the spirits back to us.", "hash": "aea6fa8d9d756074", "src": "collector@1.60.1.70790"}
 {"id": "aeaf020f23181f41", "field": "text", "en": "Yes, $c? Are you reporting in?", "hash": "aeaf020f23181f41", "src": "vmangos@13b49dc"}
 {"id": "aeb495a6b903187f", "field": "text", "en": "Let me have another one, Langston.", "hash": "aeb495a6b903187f", "src": "vmangos@13b49dc"}

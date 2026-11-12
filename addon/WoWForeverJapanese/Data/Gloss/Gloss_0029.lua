@@ -199,7 +199,6 @@ WFJ.Data.add("gloss", {
   [29197] = "やり遂げる\tやりとげる\tif (we) see this through",
   [29198] = "やり遂げる\tやりとげる\tif (you) do (accomplish)",
   [29199] = "やり遂げる\tやりとげる\tif (you) meet (accomplish)",
-  [29200] = "やり遂げる\tやりとげる\tif you do (accomplish)",
   [29201] = "やり遂げる\tやりとげる\tmade it (accomplished)",
   [29202] = "やり遂げる\tやりとげる\tmust be done",
   [29203] = "やり遂げる\tやりとげる\tmust complete",

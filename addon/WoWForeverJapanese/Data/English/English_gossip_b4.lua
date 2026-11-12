@@ -49,6 +49,7 @@ WFJ.Data.add("english", {
   ["gossip:b4c2699886d14a9d"] = { text = "again=3 hey=1 make=2 teach=4" },
   ["gossip:b4cb149a91d09620"] = { text = "altar=2 life=4 my=1 siphon=5 you=3" },
   ["gossip:b4ccba7ca72795c1"] = { text = "all=40 any=21 but=24 corrupt=15 done=19 good=22 if=10 important=30 instrumental=43 its=16 journey=3 land=8 large=27 long=5 me=11 might=20 much=14 ones=28 overwhelms=23 purifying=36 returned=1 shamans=41 small=25 sometimes=32 splendid=2 stench=17 successes=26 successful=9 take=6 tell=12 that=7 water=35 you=18" },
+  ["gossip:b4ce0e54bb3a5b91"] = { text = "actually=12 called=17 charge=37 committed=21 even=24 fortune=44 fruitcake=16 give=6 giving=6 gold=5 i=27 job=15 keep=43 mad=9 me=8 misjudged=30 money=42 more=31 need=32 noble=40 sacrifice=25 see=36 should=33 still=18 thank=39 they=13 wait=4 weren't=11 who=3 will=26 willing=26 wrongs=22 yes=1 you=10" },
   ["gossip:b4d20a60c3b95163"] = { text = "happened=4 return=2 what=3" },
   ["gossip:b4d8c598021c4a02"] = { text = "extension=5 jawbone=4 like=1 look=6 seen=3" },
   ["gossip:b4da25df243d924e"] = { text = "hey=1 stop=2" },

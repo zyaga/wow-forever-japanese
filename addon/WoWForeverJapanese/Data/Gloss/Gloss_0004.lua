@@ -744,7 +744,6 @@ WFJ.Data.add("gloss", {
   [4744] = "うろつく\tうろつく\troaming",
   [4745] = "うろつく\tうろつく\troams",
   [4746] = "うろつく\tうろつく\troams over (and)",
-  [4747] = "うろつく\tうろつく\trunning about (prowling)",
   [4748] = "うろつく\tうろつく\trunning around (wandering)",
   [4749] = "うろつく\tうろつく\tscurrying around",
   [4750] = "うろつく\tうろつく\tskulking (loitering)",

@@ -1,6 +1,7 @@
 {"id": "7d141c14e2b715c7", "field": "text", "en": "If you're ready, then Dadanga and I are ready.  Let's go!", "hash": "7d141c14e2b715c7", "src": "vmangos@13b49dc"}
 {"id": "7d2ef3ba15ac8128", "field": "text", "en": "Conspiracies abound, I say.  There are those who lack vision in understanding what I do, and would seek to keep me shackled to obscurity!$B$BDon't step in the dirt.", "hash": "7d2ef3ba15ac8128", "src": "vmangos@13b49dc"}
 {"id": "7d3cc84dac1a4aa8", "field": "text", "en": "The blood samples must be protected!  Destroy the intruders!", "hash": "7d3cc84dac1a4aa8", "src": "vmangos@13b49dc"}
+{"id": "7d3d68c940b7b9a3", "field": "text", "en": "UUUUUuuuuurrrgh!!", "hash": "7d3d68c940b7b9a3", "src": "collector@1.60.1.70862"}
 {"id": "7d3e3c6bdfe04afc", "field": "text", "en": "Hahah!  Revenge is mine!", "hash": "7d3e3c6bdfe04afc", "src": "vmangos@13b49dc"}
 {"id": "7d3fd855375840e3", "field": "text", "en": "Gryphon Master", "hash": "7d3fd855375840e3", "src": "vmangos@13b49dc"}
 {"id": "7d4022ce24d4ef5e", "field": "text", "en": "I'm ready to fight, Aamelia.", "hash": "7d4022ce24d4ef5e", "src": "collector@1.60.1.70790", "npcs": [252800]}
@@ -20,6 +21,7 @@
 {"id": "7db727c6a198980e", "field": "text", "en": "<Eitrigg laughs.>$B$BYoung one, the world has not always been in such disarray. It was a time before the Scourge had sacked the land. Before those parts of Lordaeron were known as the Plaguelands.$B$BIt was there that Thrall rescued me from death and it was then that I joined the new Horde... but I digress. This is a story for another time. Yes, another time... Perhaps...", "hash": "7db727c6a198980e", "src": "vmangos@13b49dc"}
 {"id": "7dba0aed4f142dc1", "field": "text", "en": "Come one, come all!  Welcome to the Darkmoon Faire!  Do you crave adventure?  Do you seek exotic and mysterious treasures?  Then look no further!  You, my friend, have come to the right place!  Dive right in and take part in all that the Faire has to offer!  We'll be at this location all week, so be sure to tell your friends and loved ones!", "hash": "7dba0aed4f142dc1", "src": "vmangos@13b49dc"}
 {"id": "7dbcb450bdbd3a4d", "field": "text", "en": "Too bad we can't skin the humans and their allies. All that skin is just going to waste. Still, who'd want to wear the flimsy leather you could make out of it?", "hash": "7dbcb450bdbd3a4d", "src": "vmangos@13b49dc"}
+{"id": "7dc467cc277ce4a2", "field": "text", "en": "So many Wildhammer lives lost... whole families erased...", "hash": "7dc467cc277ce4a2", "src": "collector@1.60.1.70862", "npcs": [270637]}
 {"id": "7dc64c54962ce411", "field": "text", "en": "%s shakes his fist in frustration.", "hash": "7dc64c54962ce411", "src": "vmangos@13b49dc"}
 {"id": "7dd6621860f42ca4", "field": "text", "en": "%s hurries to his planter.", "hash": "7dd6621860f42ca4", "src": "vmangos@13b49dc"}
 {"id": "7dddcd481f39c46e", "field": "text", "en": "All hope is lost!", "hash": "7dddcd481f39c46e", "src": "vmangos@13b49dc"}

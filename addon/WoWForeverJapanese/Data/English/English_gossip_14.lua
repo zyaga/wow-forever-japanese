@@ -27,6 +27,7 @@ WFJ.Data.add("english", {
   ["gossip:14724c4354957f8a"] = { text = "dead=2 good=1" },
   ["gossip:1476692ed667b84c"] = { text = "prevail=2 take=1" },
   ["gossip:1478e1889c68a0b0"] = { text = "attacks=2 quickly=1" },
+  ["gossip:147ccedb9fe21a14"] = { text = "about=3 fact=5 matter=2 seem=7 that=1 very=4" },
   ["gossip:147d4137ca0b2477"] = { text = "brightly=3 spirit=2 your=1" },
   ["gossip:148d2d1534e7dabc"] = { text = "about=2 status=1 tell=4" },
   ["gossip:14a3bbb65795619a"] = { text = "brother=3 honor=17 i=4 land=12 protector=9 sacred=11 shrine=6 sworn=8 this=5 warden=13 watch=2 you=1" },

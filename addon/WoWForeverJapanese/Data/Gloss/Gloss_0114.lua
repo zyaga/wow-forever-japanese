@@ -129,7 +129,6 @@ WFJ.Data.add("gloss", {
   [114126] = "船倉\tせんそう\thold",
   [114127] = "船出する\tふなでする\tneed to ship out",
   [114128] = "船名\tせんめい\tship names",
-  [114129] = "船員\tせんいん\ta crew",
   [114130] = "船員\tせんいん\tcrew",
   [114131] = "船員\tせんいん\tcrew (sailors)",
   [114132] = "船員\tせんいん\tcrew members",

@@ -775,7 +775,6 @@ WFJ.Data.add("gloss", {
   [85773] = "教える\tおしえる\tyou will teach me (want to be taught)",
   [85774] = "教え合う\tおしえあう\tlet's teach",
   [85775] = "教え始める\tおしえはじめる\tbegan teaching",
-  [85776] = "教え子\tおしえご\tstudent",
   [85777] = "教え導く\tおしえみちびく\ttutor and mentor (teach and guide)",
   [85778] = "教え直す\tおしえなおす\thave taught again",
   [85779] = "教え込む\tおしえこむ\twere taught",

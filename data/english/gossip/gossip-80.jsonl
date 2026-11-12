@@ -13,6 +13,7 @@
 {"id": "804037ca74ceba91", "field": "text", "en": "<Lady Prestor glares at you.>", "hash": "804037ca74ceba91", "src": "vmangos@13b49dc"}
 {"id": "8048fc36bd40bef0", "field": "text", "en": "You have completed Teronis' mission, and I appreciate all you have done, $n.", "hash": "8048fc36bd40bef0", "src": "vmangos@13b49dc"}
 {"id": "804b9a4563a86be1", "field": "text", "en": "...pan fried, deep fried, and stir fried...", "hash": "804b9a4563a86be1", "src": "vmangos@13b49dc"}
+{"id": "804c61798fa2cf21", "field": "text", "en": "Menethil Harbor enjoys a bit of peace these days, thanks to the mountaineers. But we must be ever watchful of new threats from our enemies.", "hash": "804c61798fa2cf21", "src": "collector@1.60.1.70862", "npcs": [2104]}
 {"id": "80544dd82574afd5", "field": "text", "en": "The mailbox", "hash": "80544dd82574afd5", "src": "vmangos@13b49dc"}
 {"id": "805b501ade850228", "field": "text", "en": "Hey there, Belm!  Give me a mug of Thunder Ale, and one for my good friend $n.", "hash": "805b501ade850228", "src": "vmangos@13b49dc"}
 {"id": "805fe3b2b39ca71a", "field": "text", "en": "How unfortunate; it would appear that we have collected all of the mageweave bandages necessary. Perhaps you can go sell them on the auction house? But before you go, be a good $g boy : girl; and check with the other collectors present. They may have an errand to send you off on.", "hash": "805fe3b2b39ca71a", "src": "vmangos@13b49dc"}

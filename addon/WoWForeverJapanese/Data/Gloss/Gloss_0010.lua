@@ -468,7 +468,6 @@ WFJ.Data.add("gloss", {
   [10465] = "しかも\tしかも\talso (moreover)",
   [10466] = "しかも\tしかも\tand",
   [10467] = "しかも\tしかも\tand (moreover)",
-  [10468] = "しかも\tしかも\tand (no less)",
   [10469] = "しかも\tしかも\tand (on top of that)",
   [10470] = "しかも\tしかも\tand (what's more)",
   [10471] = "しかも\tしかも\tand ... as well",

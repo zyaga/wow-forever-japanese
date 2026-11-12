@@ -8,6 +8,7 @@ WFJ.Data.add("english", {
   ["gossip:bb182fcebccf1d56"] = { text = "forward=6 hoping=3 more=1 reinforcements=2 this=4" },
   ["gossip:bb1ae0812f6640ac"] = { text = "come=1 face=4 ones=2" },
   ["gossip:bb1ea928ca3e8ff2"] = { text = "again=2 cavalry=4 full=3 ride=6 soon=5 stables=1" },
+  ["gossip:bb2381b8567feef6"] = { text = "brought=3 requested=1 what=2" },
   ["gossip:bb349076981a8996"] = { text = "find=4 further=8 guidance=9 home=2 path=7 priests=1 provide=10 there=3 will=11" },
   ["gossip:bb40241706ec738f"] = { text = "gone=2 place=1" },
   ["gossip:bb5a08d1318dc40f"] = { text = "between=2 conveniently=3 mailbox=4 right=1" },

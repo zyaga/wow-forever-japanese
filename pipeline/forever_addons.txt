@@ -131,7 +131,7 @@ blizzard_framexmlbase login 14
 blizzard_framexmlutil login 47
 blizzard_friendsframe login 11
 blizzard_fullscreenbrowser login 0
-blizzard_game login 13
+blizzard_game login 14
 blizzard_gamemenu login 3
 blizzard_gamemenuesc login 1
 blizzard_gamemodeselect glue 0

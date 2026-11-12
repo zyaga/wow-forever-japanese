@@ -342,7 +342,6 @@ WFJ.Data.add("gloss", {
   [98340] = "灼熱\tしゃくねつ\tblistering (scorching)",
   [98341] = "灼熱\tしゃくねつ\tfiery (scorching)",
   [98342] = "灼熱\tしゃくねつ\thot fiery (scorching)",
-  [98343] = "灼熱\tしゃくねつ\tscorched (scorching heat)",
   [98344] = "灼熱\tしゃくねつ\tscorching",
   [98345] = "灼熱\tしゃくねつ\tsear (blazing heat)",
   [98346] = "灼熱\tしゃくねつ\tsearing",

@@ -37,6 +37,7 @@ WFJ.Data.add("english", {
   ["gossip:e4cdf7a0d15a9d87"] = { text = "crawling=3 incoming=6 things=4 what=1" },
   ["gossip:e4d3aa59a9d66f17"] = { text = "bandages=22 collected=1 come=15 days=6 gates=18 gong=16 goods=2 handy=23 last=3 like=9 next=5 open=19 our=21 outside=13 ring=17 shipping=8 someone=12 that's=20" },
   ["gossip:e4da5a4f70122547"] = { text = "about=3 asking=4 mistress=1 perhaps=8 time=6 you=2 your=5" },
+  ["gossip:e4e8aafeca49c8e6"] = { text = "again=27 approach=12 both=26 call=28 charger=33 darkness=2 done=1 dwell=3 fallen=32 judgment=6 judgments=6 just=19 known=29 next=22 now=30 reclaim=35 render=7 sacrifice=15 serves=31 spirit=16 spirits=16 steps=23 strive=36 task=13 that=20 those=4 vim=9 with=11 you=14 zeal=10" },
   ["gossip:e4ea055c699a1cab"] = { text = "'god=16 'take=10 army=2 believe=19 borders=5 desert=4 elf=1 land=9 mean=18 prevented=11 pushed=6 quite=14 something=7 stated=26 take=10 they=20 this=12 through=3 understand=15 word=13" },
   ["gossip:e4f4703685067cdf"] = { text = "perish=1 watch=2" },
   ["gossip:e4f56b429ab4759f"] = { text = "ancestors=3 meet=4 today=1 will=5 you=2" },

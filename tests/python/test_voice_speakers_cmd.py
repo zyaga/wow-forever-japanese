@@ -183,3 +183,59 @@ def test_each_verb_goes_to_its_module(monkeypatch, argv, module, attr, passed):
 def test_in_scope_all_keeps_every_row():
     rows = [{"key": "g-0123456789abcdef", "speaker": "narrator"}, {"key": "1-description", "speaker": 5}]
     assert cmd.in_scope(rows, "all") is rows
+
+
+def _spoken(folder: Path, *lines: dict) -> Path:
+    import gzip
+
+    folder.mkdir(parents=True, exist_ok=True)
+    path = folder / "corpus.json.gz"
+    with gzip.open(path, "wt", encoding="utf-8") as f:
+        json.dump({"schemaVersion": 1, "lines": list(lines), "npcs": []}, f)
+    return path
+
+
+def test_a_quest_line_is_spoken_by_the_creature_spoken_names_for_it(world, monkeypatch):
+    """Spoken's corpus names who says each quest line it voices. Where it names a creature, that creature
+    speaks the line here too, whatever the database or a capture says; an object, an item or no line at all
+    leaves the line to the other sources."""
+    _fake_cache(monkeypatch)
+    cap = _captures(world.tmp / "fvo", {"event": "accept", "questID": 459, "npc": 1992})
+    corpus = _spoken(
+        world.tmp / "spoken",
+        {"lineId": "q:457:accept", "source": "accept", "questId": 457, "npcId": 1992, "npcType": "creature"},
+        {"lineId": "q:457:accept:f", "source": "accept", "questId": 457, "npcId": 1992, "npcType": "creature"},
+        {"lineId": "q:457:complete", "source": "complete", "questId": 457, "npcId": 1992, "npcType": "creature"},
+        {"lineId": "q:456:accept", "source": "accept", "questId": 456, "npcId": 50, "npcType": "gameobject"},
+        {"lineId": "q:456:complete", "source": "complete", "questId": 456, "npcId": 60, "npcType": "item"},
+        {"lineId": "q:459:accept", "source": "accept", "questId": 459, "npcId": 2079, "npcType": "creature"},
+        {"lineId": "g:1", "source": "gossip", "questId": None, "npcId": 9000, "npcType": "creature"},
+    )
+    rows, _ = cmd.build_tables(
+        world.data, world.db, "sha", "all", TODAY, Path("cache.wdb"), (cap, "abc"), (corpus, "0123456789abcdef")
+    )
+    by = _by_key(rows)
+    assert by["457-description"] == (1992, "spoken@0123456")  # the database said 2079
+    assert by["457-completion"] == (1992, "vmangos@sha")  # the same creature: nothing to change
+    assert by["456-description"] == (2079, "vmangos@sha")  # Spoken names an object: the database's giver stays
+    assert by["456-completion"] == (2079, "vmangos@sha")  # Spoken names an item
+    assert by["459-description"] == (2079, "spoken@0123456")  # a capture said 1992; Spoken's creature wins
+    without, _ = cmd.build_tables(world.data, world.db, "sha", "all", TODAY, Path("cache.wdb"), (cap, "abc"))
+    assert _by_key(without)["457-description"] == (2079, "vmangos@sha")
+
+
+def test_spoken_names_one_creature_per_quest_line_or_none(tmp_path):
+    from wfj.io import spoken
+
+    corpus = _spoken(
+        tmp_path,
+        {"source": "accept", "questId": 1, "npcId": 10, "npcType": "creature"},
+        {"source": "progress", "questId": 1, "npcId": 11, "npcType": "creature"},
+        {"source": "complete", "questId": 1, "npcId": 12, "npcType": "creature"},
+        {"source": "followup", "questId": 1, "npcId": 13, "npcType": "creature"},
+        {"source": "accept", "questId": 2, "npcId": 20, "npcType": "creature"},
+        {"source": "accept", "questId": 2, "npcId": 21, "npcType": "creature"},  # two creatures: no answer
+        {"source": "accept", "questId": 3, "npcId": 30, "npcType": "gameobject"},
+        {"source": "gossip", "questId": None, "npcId": 40, "npcType": "creature"},
+    )
+    assert spoken.read_quest_speakers(corpus) == {(1, "description"): 10, (1, "progress"): 11, (1, "completion"): 12}

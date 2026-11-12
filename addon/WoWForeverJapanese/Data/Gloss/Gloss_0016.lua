@@ -514,7 +514,6 @@ WFJ.Data.add("gloss", {
   [16512] = "だろう\tだろう\tI bet",
   [16513] = "だろう\tだろう\tI bet (probably)",
   [16514] = "だろう\tだろう\tI bet (surely)",
-  [16515] = "だろう\tだろう\tI can only assume",
   [16516] = "だろう\tだろう\tI can only assume (probably)",
   [16517] = "だろう\tだろう\tI can tell (right?)",
   [16518] = "だろう\tだろう\tI deem (probably)",

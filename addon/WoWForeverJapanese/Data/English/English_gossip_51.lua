@@ -22,6 +22,7 @@ WFJ.Data.add("english", {
   ["gossip:517cd5f6f67c298e"] = { text = "me=3 speak=2 word=5" },
   ["gossip:517d485b26c10712"] = { text = "everybody=1" },
   ["gossip:517e5eee791ffd14"] = { text = "appear=11 assault=6 bird=9 blood=14 contents=2 droppings=10 enormous=8 foul=3 inside=7 lot=13 odor=4 opens=1 see=15 senses=5" },
+  ["gossip:5189b546770c3663"] = { text = "goods=11 greetings=1 i=3 improve=7 inside=8 item=13 main=4 need=15 provide=12 repair=14 services=18 standing=6 supplier=5 those=17 traveler=2 use=9 variety=10 yourself=16" },
   ["gossip:5197f79654486d36"] = { text = "bet=20 blades=7 but=18 find=6 fine=6 finest=27 her=2 i=11 left=3 met=25 more=14 much=15 seems=10 seen=8 show=22 since=4 teach=12 things=13 this=5 weaponsmith=28 well=1" },
   ["gossip:519fd7700cf36199"] = { text = "authorized=11 city=7 fellow=5 friend=3 greetings=2 leisure=14 offer=10 passage=9 please=13 portal=16 quick=8 this=15 utilize=17 wind's=1" },
   ["gossip:51a1dbef0b134bbb"] = { text = "live=4 person=1 surprising=7 what=3 you=6" },

@@ -24,6 +24,7 @@ WFJ.Data.add("english", {
   ["gossip:0b658b8e153ce9a2"] = { text = "beloved=3 freed=8 heart=1 love=12 me=6 slavery=7 you=5" },
   ["gossip:0b6e7bec570496bd"] = { text = "boss=1 lying=4 plans=7 steal=8 tell=3 there=5 what=2" },
   ["gossip:0b71157ddc9fcc66"] = { text = "call=6 cold=3 dark=4 minions=1 obey=7 servants=2 soldiers=5" },
+  ["gossip:0b714204b828df03"] = { text = "citizens=2 cruel=8 day=4 great=6 hear=1 heroes=7 remember=5 slain=10 this=3 warchief=9" },
   ["gossip:0b747af02ade31ab"] = { text = "where=1" },
   ["gossip:0b7a3a3465548d4f"] = { text = "amplify=20 blind=8 brand=16 faith=9 hasty=3 its=18 judgement=2 may=4 my=1 power=19 seems=14 some=11 this=5 value=12 your=7" },
   ["gossip:0b7c867f8e765823"] = { text = "corner=3 great=5 he=12 inside=7 know=10 northwest=2 resides=8 teach=13 tent=6 village=1 what=11 will=14" },

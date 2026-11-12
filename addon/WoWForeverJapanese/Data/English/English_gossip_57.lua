@@ -13,6 +13,7 @@ WFJ.Data.add("english", {
   ["gossip:571977d858ef4a8c"] = { text = "all=42 believe=8 corruption=40 finally=11 find=50 greatest=5 greed=21 hidden=38 home=14 how=27 i=7 infiltrating=10 insignia=1 intricate=28 it=4 learn=34 men=25 midst=48 new=13 orcs=26 our=12 peace=15 power=22 threat=6 tool=19 vital=18 war=47 weave=31 web=30 when=24 will=36 yet=2 you=33" },
   ["gossip:571a467ad5c75ff7"] = { text = "adventure=2 adventures=2 came=10 day=16 enough=14 here=9 look=5 now=15 time=11 train=22 trolls=8 we=7 you=1" },
   ["gossip:571a66c077e088d7"] = { text = "difference=1" },
+  ["gossip:572afdcfd1df41d5"] = { text = "about=12 all=32 before=30 blades=2 creations=10 cut=33 edge=28 epic=13 gleam=5 glisten=3 glitter=4 gone=7 honed=27 knights=31 losing=29 my=1 no=17 songs=14 sure=22 thing=11 though=19 weapons=26 will=18" },
   ["gossip:572c7c5bb738c35b"] = { text = "interested=3 training=2 welcome=1" },
   ["gossip:573012a1e882c69b"] = { text = "where=1" },
   ["gossip:5733f7fb709d6d2a"] = { text = "available=17 blessings=2 friend=5 goods=15 here=7 i=6 main=8 need=20 night=1 repair=19 that=21 use=14 you=3 your=4 yours=4" },

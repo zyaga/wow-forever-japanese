@@ -437,7 +437,6 @@ WFJ.Data.add("gloss", {
   [6435] = "かそこら\tかそこら\tor so",
   [6436] = "かたくな\tかたくな\tstubborn",
   [6437] = "かたじけない\tかたじけない\tmany thanks",
-  [6438] = "かたちづくる\tかたちづくる\tform (shape)",
   [6439] = "かたどる\tかたどる\tdepicts (is modeled on)",
   [6440] = "かたわら\tかたわら\tside",
   [6441] = "かちりと\tかちりと\twith a click",

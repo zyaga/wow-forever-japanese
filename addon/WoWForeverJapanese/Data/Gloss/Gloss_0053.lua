@@ -622,7 +622,6 @@ WFJ.Data.add("gloss", {
   [53620] = "協議する\tきょうぎする\thold counsel",
   [53621] = "協議する\tきょうぎする\tmust confer",
   [53622] = "南\tみなみ\tSouth",
-  [53623] = "南\tみなみ\tdown there (south)",
   [53624] = "南\tみなみ\tsouth",
   [53625] = "南\tみなみ\tsouth (down)",
   [53626] = "南\tみなみ\tsouth (southern)",

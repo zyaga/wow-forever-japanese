@@ -41,6 +41,7 @@ WFJ.Data.add("english", {
   ["gossip:a1787ec11c883951"] = { text = "and=39 brother=24 came=38 certain=1 city=30 conflict=27 constant=26 day=4 death=40 deliver=9 displace=33 dragons=37 dwarves=25 friend=7 he=11 head=20 hear=16 his=23 managed=35 message=8 moment=19 old=6 perhaps=10 portion=31 prayer=17 ruled=28 still=12 they=29 those=13 wanders=15 will=2 woods=14 yes=21" },
   ["gossip:a17b4604700a6422"] = { text = "cause=11 deceive=4 enough=13 eyes=2 find=18 further=12 great=6 me=17 my=1 never=3 our=10 perhaps=9 power=7 see=8 top=16 tower=15 you=5" },
   ["gossip:a17b9980742d7908"] = { text = "doom=5 hasten=6 meddling=3 order=2 our=4 your=1" },
+  ["gossip:a17e3062c99964f0"] = { text = "childhood=8 farmstead=10 fields=11 fills=24 gives=32 here=3 knew=13 life=2 lived=5 loved=15 me=29 nearby=4 occasionally=7 pain=25 pains=25 previous=1 purpose=31 sadness=23 see=22 shambling=21 still=6 strength=30 those=14 thralls=19 very=28 wander=12" },
   ["gossip:a18ca7127b56190a"] = { text = "always=30 and=27 assist=5 blood=24 clemency=20 collect=31 cooperation=18 count=10 debts=29 fight=7 hmm=1 inform=11 lowers=15 mistake=22 our=16 owe=25 see=2 then=3 this=6 us=9 voice=14 we=28 well=4 will=17 willing=17 you=23" },
   ["gossip:a19009254ba94e94"] = { text = "frantically=2 something=1 whispers=3" },
   ["gossip:a1929c2e7630e1a3"] = { text = "act=14 all=8 bah=1 change=20 free=15 get=4 if=26 junk=5 just=27 lately=3 looking=25 mail=7 mailbox=2 mailboxes=2 month=17 now=13 number=19 outside=28 say=23 that=9 this=11 warn=22 well=21" },

@@ -704,7 +704,6 @@ WFJ.Data.add("gloss", {
   [77704] = "戻る\tもどる\tback to",
   [77705] = "戻る\tもどる\tback to (return)",
   [77706] = "戻る\tもどる\tback to (return), I guess",
-  [77707] = "戻る\tもどる\tback to being (return)",
   [77708] = "戻る\tもどる\tback?",
   [77709] = "戻る\tもどる\tbe able to get back",
   [77710] = "戻る\tもどる\tbe back",

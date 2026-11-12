@@ -503,7 +503,7 @@ def learn_spellings(root: Path, dry_run: bool) -> tuple[int, list[str]]:
         if ln["status"] != "trusted" or not names.KATAKANA.match(ln["ja"]):
             continue
         ws, parts = spell.words(ln["en"]), ln["ja"].split("・")
-        # a possessive's part ends in its ズ, which is not part of the word's spelling: nothing is learned
+        # a possessive's part ends in the possessive's own sound, not the word's spelling: nothing is learned
         if len(ws) != len(parts) or " " in "".join(ws) or re.search(r"['’]s\b", ln["en"]):
             continue
         for w, part in zip(ws, parts, strict=True):
@@ -523,7 +523,8 @@ def learn_spellings(root: Path, dry_run: bool) -> tuple[int, list[str]]:
 
 def export_respell(root: Path, out: Path, size: int) -> int:
     """The words with no katakana spelling that a name is built from (a new name's among them), each once
-    in lower case, with how many names carry it and a few of them."""
+    in lower case, with how many names carry it and a few of them. A word ending in ス that a name uses as a
+    possessive is listed with its 's too (death's) until that has a spelling: the whole possessive."""
     known = _spellings(load_words(root))
     carried: dict[str, list[str]] = defaultdict(list)
     for ln in load_lines(root):
@@ -541,7 +542,8 @@ def import_respell(  # noqa: PLR0913 - one batch file, its provenance, and the t
     """Takes drafted spellings ({"en", "ja"}): a word's translated Japanese is replaced by its katakana and a
     word with no line gets one. A spelling that is not katakana, or that differs from the katakana a word
     already has, is refused: a word is spelled one way. `replace` (a fix round) lets a row change the
-    katakana a word has, never a word a person wrote."""
+    katakana a word has, never a word a person wrote. A row whose English ends in 's (death's: デスズ) is
+    the possessive of a word ending in ス, a line of its own like any word."""
     prov = draft_provenance(model_id, "names", batch, today)
     words = {w["en"]: w for w in load_words(root)}
     known = _spellings(list(words.values()))
@@ -549,6 +551,8 @@ def import_respell(  # noqa: PLR0913 - one batch file, its provenance, and the t
     written = 0
     for row in read_batch(path):
         en, ja = row.get("en"), row.get("ja")
+        if isinstance(en, str):
+            en = en.replace("’", "'")  # the possessive lookup is built with a straight apostrophe
         if not isinstance(en, str) or not en or " " in en:
             rejected.append(f"word {en!r}: not one English word")
         elif not isinstance(ja, str) or not names.KATAKANA.match(ja):
@@ -574,6 +578,16 @@ def respell_problems(lines: Sequence[dict[str, Any]], words: Sequence[dict[str, 
     check that keeps a translated name from coming back."""
     known = _spellings(words)
     out = []
+    for en, ja in known.items():
+        if not en.endswith("'s"):
+            continue
+        base = known.get(en[:-2])
+        # a possessive has a row only where the rule cannot write it, and it is the word's spelling with the
+        # last ス changed: a word respelled later must not leave its old possessive behind
+        if base is None or not base.endswith("ス"):
+            out.append(f"possessive {en!r}: only a word spelled with a last ス has a possessive of its own")
+        elif not (ja.startswith(base[:-1]) and ja.endswith("ズ")):
+            out.append(f"possessive {en!r} is {ja!r}, which does not follow {base!r}")
     for ln in lines:
         if ln["status"] != "trusted" or _respelled(ln):
             continue

@@ -28,6 +28,7 @@ WFJ.Data.add("english", {
   ["gossip:756b717639c72a0d"] = { text = "access=2 show=3 what=1" },
   ["gossip:7577c31e4de605b1"] = { text = "earth=4 my=5 now=1 place=7 planter=6 rare=3 this=2" },
   ["gossip:7577e9e6d5992cda"] = { text = "cave=4 creepy=3 glad=5 phew=1 that=2" },
+  ["gossip:757a1cb333d67e60"] = { text = "consume=2 world=1" },
   ["gossip:757ce5b8c4bd3fec"] = { text = "cover=6 got=8 keep=5 lot=7 ready=2 then=4 training=1" },
   ["gossip:758455eec8d122b1"] = { text = "anyway=13 but=9 collecting=23 cream=1 enough=4 fun=32 help=24 here=17 like=28 need=25 needs=3 not=37 others=19 possibly=36 seem=10 some=26 that's=15 understandable=30 whatever=22 years=6" },
   ["gossip:7589319e65aae0e2"] = { text = "bow=3 chicken=9" },

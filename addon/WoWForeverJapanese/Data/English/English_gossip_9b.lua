@@ -12,6 +12,7 @@ WFJ.Data.add("english", {
   ["gossip:9b2c7cf59a53ebf6"] = { text = "ready=1" },
   ["gossip:9b2c7d029a53ec03"] = { text = "ready=1" },
   ["gossip:9b2eb221b266e8f8"] = { text = "master=1 save=2" },
+  ["gossip:9b3492ba87ce9590"] = { text = "ages=8 ah=1 compilations=5 missing=9 one=6 our=2 this=7" },
   ["gossip:9b36804a0807cff0"] = { text = "cover=2 enough=3 finer=7 gold=4 lesson=1 points=8 provided=5 teach=9" },
   ["gossip:9b37430726b68206"] = { text = "came=5 happening=2 here=8 serve=6 soon=4 told=3 what=1" },
   ["gossip:9b39bc50d9e2d5a6"] = { text = "area=5 gathering=2 herbs=1 him=7 knowledge=3 specialty=4" },

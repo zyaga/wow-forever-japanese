@@ -613,7 +613,6 @@ WFJ.Data.add("gloss", {
   [17612] = "つける\tつける\ton (attached)",
   [17613] = "つける\tつける\tplaced (put)",
   [17614] = "つける\tつける\tplease be (on your guard)",
-  [17615] = "つける\tつける\tplease be careful (気をつける)",
   [17616] = "つける\tつける\tplease take (気をつける: be careful)",
   [17617] = "つける\tつける\tproduces (bear)",
   [17618] = "つける\tつける\tput (a price) on",

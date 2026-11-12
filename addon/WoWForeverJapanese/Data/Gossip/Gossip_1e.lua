@@ -15,6 +15,7 @@ WFJ.Data.add("gossip", {
   ["1e51730bcf206c45"] = { "Arathi Basinでは、人間たちは間違いなく我々のあらゆる助けを必要としている。あなたが話すべき相手はKeras Wolfheartという。彼はWarrior's Terraceで、あなたを手助けする準備を整えて待っている。", "." },
   ["1e583a623ec5fc47"] = { "浄化されよ！", "." },
   ["1e5acf5624868202"] = { "Hordeは資源を$1777W集め、勝利が近い！", "." },
+  ["1e5ba702d9816e4c"] = { "Darkspear Islandsで使う品で、私が買えるようになったものは何だ？", "." },
   ["1e5da87e9e3ca51e"] = { "Scourge、Magic Quarter攻撃する！", "." },
   ["1e67ba772d9d01f1"] = { "ああ、Bonescytheだ。実はな、この件を始めるきっかけをくれたのは、我々のテノール歌手、Don Julioという気難しい男だった。Lordaeron中を旅するうちに、Don Julioは多くの興味深い技を身につけた。そのひとつが、倒れたScourgeの骨を使って、恐るべき革鎧一式に仕立てる技だ。暗殺者にうってつけのな。", "." },
   ["1e68edb69bc614f5"] = { "お邪魔して申し訳ありません、Lady Prestor。Highlord Bolvarから、あなたの助言を仰ぐよう勧められまして。", "." },

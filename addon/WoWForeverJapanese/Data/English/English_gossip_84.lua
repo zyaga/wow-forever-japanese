@@ -10,6 +10,7 @@ WFJ.Data.add("english", {
   ["gossip:841ed6ea87bb2571"] = { text = "all=2 craven=4 easier=8 if=5 mortals=1 so=3 thought=6" },
   ["gossip:84293ee46c69773f"] = { text = "locked=1 no=2" },
   ["gossip:8437cdc2cc0f6f48"] = { text = "locked=3 many=5 orcs=1 sunk=2 supplies=4" },
+  ["gossip:843bb2aa487bd0e7"] = { text = "count=3 prizes=1 say=2" },
   ["gossip:844069f66fb91892"] = { text = "all=13 arrive=14 beat=19 begin=27 capable=4 completed=7 days=11 gates=20 gong=18 materiel=9 one=17 open=21 organization=3 preparations=6 reassemble=16 shipped=10 speak=8 such=2 then=15 truly=26 unexpected=5 war=25 within=12 you=1" },
   ["gossip:8440b9bac1aac74f"] = { text = "backhands=4 face=1 solidly=3" },
   ["gossip:8440eca9843d5a88"] = { text = "between=1 controlled=4 gate=2 protects=3" },

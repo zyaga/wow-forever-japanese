@@ -73,7 +73,7 @@ It also had to be confirmed that the secure-environment windows stay English.
        caller formats `INVITATION` with the inviter's name and may append `ACCEPTING_INVITE_WILL_REMOVE_QUEUE` after
        `"\n\n"` (`blizzard_game/mainline/eventimplementation.lua:757–779`, the camelot family's file): the line is matched against those keys only
        (`PASS_THROUGH`), the name taken as the template's `verbatim` argument, as a label surface does. A cross-realm invite
-       is `INVITATION_XREALM`, whose own English holds a `"\n\n"`: the whole line is matched before the last paragraph is
+       is `INVITATION_XREALM` or, for a cross-shard invite, `INVITATION_XSHARD`, whose own English holds a `"\n\n"`: the whole line is matched before the last paragraph is
        split off. The talent wipe's caller line (`CONFIRM_TALENT_WIPE_<n>`) is an exact key's English.
      - The `SubText`, the buttons and the extra button each take the one key whose English is the definition's
        string.

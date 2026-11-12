@@ -112,7 +112,6 @@ WFJ.Data.add("gloss", {
   [20110] = "とさ\tとさ\t(he said)",
   [20111] = "とさか\tとさか\tcrest",
   [20112] = "とさか\tとさか\tcrested (a crest)",
-  [20113] = "とされる\tとされる\tit is believed",
   [20114] = "とされる\tとされる\tknown to be (said to be)",
   [20115] = "とされる\tとされる\tsupposed (said to be)",
   [20116] = "としたら\tとしたら\tif",

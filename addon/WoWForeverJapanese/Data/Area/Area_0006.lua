@@ -28,5 +28,6 @@ WFJ.Data.add("area", {
   [6627] = { "Braug Dimspiritの質問に正しく答える", 0x4e1990ef, "." },
   [6628] = { "Parqual Fintallasの質問に正しく答える", 0xbb2c5720, "." },
   [6641] = { "Vorsha the Lasherを倒す", 0x98ecf40b, "." },
+  [6847] = { "Master Ryson's All Seeing Eyeを回収する", 0x192fc782, "." },
   [6981] = { "Glowing ShardについてRatchetの誰かと話す", 0x5ffef92e, "." },
 })

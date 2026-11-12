@@ -430,6 +430,7 @@ UIStrings.ARGS = {
   -- the battle popups (blizzard_lfgutil/mainline/pvphelper.lua): a battle's name and a group's leader are
   -- copied as written; the closing countdown is a duration
   QUEUED_FOR = { [1] = "verbatim" }, INVITATION = { [1] = "verbatim" }, INVITATION_XREALM = { [1] = "verbatim" },
+  INVITATION_XSHARD = { [1] = "verbatim" },
   WARGAME_CHALLENGED = { [1] = "verbatim", [2] = "verbatim" }, ARENA_COMPLETE_MESSAGE = { [1] = "time" },
   BATTLEGROUND_COMPLETE_MESSAGE = { [1] = "time" }, INSTANCE_SHUTDOWN_MESSAGE = { [1] = "time" },
   -- the recruitment dialog: a faction and a realm name, a date the client formats
@@ -809,7 +810,8 @@ UIStrings.ONLY = { COOLDOWN_VIEWER_SETTINGS_ACTION_ADD_ALERT = true,
   GROUP_FINDER_DELIST_WARNING_SUBTEXT = true, GROUP_FINDER_DELIST_WARNING_TITLE = true,
   GUILD_RENAME_DIALOG_TEXT = true, GUILD_RENAME_REFUND_DIALOG_SUBTEXT = true, GUILD_RENAME_REFUND_DIALOG_TEXT = true,
   HARDCORE_GUILDLEADER_DEATH = true, INSTANCE_BOOT_TIMER = true, INSTANCE_LOCK_TIMER = true,
-  INSTANCE_SHUTDOWN_MESSAGE = true, INVITATION = true, INVITATION_XREALM = true, LFG_OFFER_CONTINUE = true,
+  INSTANCE_SHUTDOWN_MESSAGE = true, INVITATION = true, INVITATION_XREALM = true, INVITATION_XSHARD = true,
+  LFG_OFFER_CONTINUE = true,
   LIMITED_CURRENCY_PURCHASE = true,
   LIMITED_CURRENCY_PURCHASE_FINAL = true, LOOT_NO_DROP = true, MAC_INPUT_MONITORING1014 = true,
   MAC_INPUT_MONITORING1015 = true, MAC_OPEN_UNIVERSAL_ACCESS1090 = true, PET_BATTLE_FORFEIT_CONFIRMATION = true,

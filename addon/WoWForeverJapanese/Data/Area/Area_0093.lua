@@ -2,5 +2,8 @@
 local _, WFJ = ...
 WFJ.Data.add("area", {
   [93125] = { "Rokrenを護衛してOutcast Hideawayから脱出させる", 0x249272b7, "." },
+  [93383] = { "警備のカウントダウンが終了する", 0xc1b055d6, "." },
+  [93572] = { "draeneiの難民がKum'ishaの裂け目を通り抜ける間、彼らを守る", 0xbf2e038e, "." },
   [93585] = { "Father TuttleをThe Harborageまで護衛する", 0xbc6fc9f5, "." },
+  [93679] = { "Magtoorと共にOnkuの幻視を見る", 0xfa8df860, "." },
 })

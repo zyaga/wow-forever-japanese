@@ -148,6 +148,7 @@ WFJ.Data.add("item", {
   [5578] = { "Silvered Bronze Breastplateの作り方を習得します。", 0x6bb0482a, "u" },
   [5594] = { "読むには右クリックして下さい。", 0x0a260107, "u" },
   [5613] = { "味方の対象を浄化し、病気効果を$N1個と毒効果を$N2個取り除きます。", 0x824049de, "u" },
+  [5616] = { "対象を傷つけて出血させ、$D1かけて$N1のダメージを与えます。", 0x47f171f5, "u" },
   [5619] = { "【使用】Starbreeze moonwellで水を汲みます。", 0x8b1fe99c, "u" },
   [5621] = { "【使用】Pools of Arlithrien moonwellで水を汲みます。", 0xacbbf482, "u" },
   [5623] = { "【使用】Oracle Glade moonwellで水を汲みます。", 0xe09fe7fb, "u" },

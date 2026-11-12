@@ -39,5 +39,6 @@
 {"id": "65ebe1dcc258ce8b", "field": "text", "en": "I desire this Eternal Quintessence, Duke Hydraxis", "hash": "65ebe1dcc258ce8b", "src": "vmangos@13b49dc"}
 {"id": "65eea82a01ff00ad", "field": "text", "en": "Die, non-believer!", "hash": "65eea82a01ff00ad", "src": "collector@1.60.1.70790"}
 {"id": "65f1b69b261e6f07", "field": "text", "en": "How are the gift standings?  Who's the most popular?", "hash": "65f1b69b261e6f07", "src": "vmangos@13b49dc"}
+{"id": "65f1d19a994958b3", "field": "text", "en": "If you are here to fight, then good! You will see that the Magram are the strongest!", "hash": "65f1d19a994958b3", "src": "collector@1.60.1.70862", "npcs": [5398]}
 {"id": "65f7310425381421", "field": "text", "en": "The Frostwolf Relief Hut is under attack!  If left unchecked, the Alliance will capture it!", "hash": "65f7310425381421", "src": "vmangos@13b49dc"}
 {"id": "65fb9e12815e2353", "field": "text", "en": "Watch as the blood seeps into the snow, children. The elemental will be bound to us!", "hash": "65fb9e12815e2353", "src": "vmangos@13b49dc"}

@@ -20,6 +20,7 @@ WFJ.Data.add("english", {
   ["gossip:9670097c1261702a"] = { text = "bits=10 but=2 cannon=9 exactly=13 head=6 hit=7 if=3 it=4 know=14 maybe=1 which=8" },
   ["gossip:9673b2b515f97b57"] = { text = "riders=1" },
   ["gossip:967905be5995b405"] = { text = "among=14 bandit=5 camps=6 common=2 construct=15 found=17 highwaymen=4 hoard=9 junk=8 known=11 lastly=1 likely=19 loot=13 parts=16 such=12 variety=7" },
+  ["gossip:968417d585898f6c"] = { text = "take=2" },
   ["gossip:9685684bc768cf7c"] = { text = "and=7 embrace=6 harm=9 if=3 its=4 land=8 nature=1 protect=2 show=13 strength=5 this=11 those=10" },
   ["gossip:96881cc4edba4838"] = { text = "angry=29 appear=43 area=38 become=14 but=10 come=39 corrupted=20 defend=32 fronts=8 happen=4 happened=4 many=7 me=15 most=35 now=30 once=22 or=21 peaceful=23 people=25 plague=19 same=18 seen=5 simply=28 terrible=2 themselves=31 they=6 things=3 this=11 those=40 touched=17 tribe=12 unclear=16 victims=9 way=34 years=1" },
   ["gossip:968b687d92d2c2cd"] = { text = "comes=4 learning=1 mastery=3 with=2" },

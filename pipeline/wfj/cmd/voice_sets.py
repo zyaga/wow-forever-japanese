@@ -19,7 +19,6 @@ from __future__ import annotations
 
 import argparse
 import datetime
-import gzip
 import hashlib
 import json
 import os
@@ -35,7 +34,7 @@ from typing import Any
 
 from wfj.core import voice_packs as vp
 from wfj.core import voice_sets
-from wfj.io import casc
+from wfj.io import casc, spoken
 from wfj.io.jsonl_store import dumps
 from wfj.paths import data_root
 
@@ -125,9 +124,8 @@ def run_creatures(root: Path, corpus: Path, commit: str, today: str) -> int:
     from wfj.cmd import voice_cast
 
     who = voice_cast.speaking(root)
-    with gzip.open(corpus, "rt", encoding="utf-8") as f:
-        sets = spoken_sets(json.load(f))
-    rows = creature_rows(who, sets, f"spoken@{commit[:7]}", _rows(root / "voice" / CREATURE_SETS), today)
+    sets = spoken_sets(spoken.load(corpus))
+    rows = creature_rows(who, sets, spoken.source(commit), _rows(root / "voice" / CREATURE_SETS), today)
     _write(root / "voice" / CREATURE_SETS, rows)
     print(f"voice sets: {len(rows)} of {len(who)} speakers speak with a game voice set → "
           f"data/voice/{CREATURE_SETS}")

@@ -27,6 +27,7 @@ WFJ.Data.add("english", {
   ["gossip:25bef0361211c41e"] = { text = "amazing=7 and=28 angles=31 blew=15 devices=9 discuss=24 gnomish=8 hello=1 i=11 if=16 it=20 made=12 marching=36 may=14 me=17 nothing=41 one=13 possess=6 rich=21 royalties=23 say=39 take=33 though=19 together=34 wasn't=18 you=5" },
   ["gossip:25c5fd0dcb51cf79"] = { text = "closer=3 hear=1 think=4" },
   ["gossip:25c6074721dc9f82"] = { text = "all=8 come=7 crafted=4 haste=12 items=5 lasting=2 near=1 sale=6 short=11 time=10 well=3" },
+  ["gossip:25d62fa5ae546237"] = { text = "afraid=2 ah=1 authority=11 business=8 contracts=12 discuss=18 fulfilling=14 i=6 later=17 perhaps=21 some=13 something=19 then=16 time=3 you=5" },
   ["gossip:25e2f74e36acd2ba"] = { text = "fresh=1 good=7 pie=2 so=6 tear=4" },
   ["gossip:25e57987ae3bf6bb"] = { text = "admirable=13 drive=11 even=3 knowledge=8 learning=6 seek=7 wilds=2 you=5" },
   ["gossip:25f42761ba1ee8e7"] = { text = "more=1" },

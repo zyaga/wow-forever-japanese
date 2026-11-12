@@ -26,6 +26,7 @@ WFJ.Data.add("gossip", {
   ["8d6adab82d8fca12"] = { "Sulfuron ingotだと？！？！ありえん！手に入れねば！何としても！何としてもだ！\n\n{race}よ、そのingotと引き換えに大きな取引をする権限が私にはある。Hand of Ragnarosの秘密を知りたくはないか？Sulfurasだ、この間抜けめ！Firelordの伝説の鉄槌だ。", "." },
   ["8d70e317eb545ca9"] = { "The Apothecariumで探す。そこでDoctor Herbert HalseyとDoctor Marshが仕事してる。", "." },
   ["8d75d4c30b9c0c88"] = { "奴はdemon forged breastplateを作るのに使うunforged rune covered breastplateを持ち去り、代金も払わずに逃げたのだ。だが私は愚か者ではない……未鍛造の胸当ては、知識か、その知識を活かすためのレシピがなければ役に立たん。\n\nさて……奴はBlackrock Spireの自分の街で安全に座り込み、原料からその品を作ろうとしているのだろうか？奴が外に出る勇気などないのは分かっている！", "." },
+  ["8d791321514fe5f3"] = { "聞け！国境の向こうからの知らせを持ってきたぞ！", "." },
   ["8d7afbc21c9e43dc"] = { "Al'tabim、Zandalar Confessor's Wrapsがなくなってしまった。代わりを用意してもらえるか？", "." },
   ["8d7f4d80e9a2dcf9"] = { "Mograineのことか？", "." },
   ["8d7f630facc2eee6"] = { "良い出だしだが、まだまだ学ぶことはたくさんあるぞ、{name}。", "." },

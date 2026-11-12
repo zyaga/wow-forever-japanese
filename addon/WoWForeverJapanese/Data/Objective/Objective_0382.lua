@@ -13,6 +13,7 @@ WFJ.Data.add("objective", {
   [382263] = { "Southern Towerに火を放つ", 0x24fe3c34, "." },
   [382264] = { "Eastern Towerに火を放つ", 0x2f086c21, "." },
   [382265] = { "Northern Towerに火を放つ", 0xcd4a93b9, "." },
+  [382333] = { "Writ of Safe Passageに署名をもらう", 0xcba91114, "." },
   [382468] = { "Screecher Spiritsを集める", 0x5b719c9a, "." },
   [382531] = { "Highvale Recordsを焼き払う", 0xc4907fd5, "." },
   [382532] = { "Highvale Notesを焼き払う", 0x85b4752a, "." },

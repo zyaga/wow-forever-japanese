@@ -274,7 +274,6 @@ WFJ.Data.add("gloss", {
   [123271] = "話をする\tはなしをする\tto speak with (have you talk)",
   [123272] = "話をする\tはなしをする\twanted to talk",
   [123273] = "話をする\tはなしをする\twants to talk",
-  [123274] = "話をする\tはなしをする\twe'll talk",
   [123275] = "話をする\tはなしをする\twere talking",
   [123276] = "話をする\tはなしをする\twill speak",
   [123277] = "話をする\tはなしをする\twill talk (to you)",

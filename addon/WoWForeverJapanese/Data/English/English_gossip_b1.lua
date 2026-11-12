@@ -35,7 +35,6 @@ WFJ.Data.add("english", {
   ["gossip:b1d5cb94117a669f"] = { text = "babes=4 cradle=2 fact=17 fresh=3 here=7 i=1 near=15 require=13 sad=19 skill=10 stand=22 students=12 teach=5 there=21 ye=9" },
   ["gossip:b1d72bf46d17dfdf"] = { text = "okay=1" },
   ["gossip:b1d89e3f2e8cc144"] = { text = "succumbed=2 wounds=1" },
-  ["gossip:b1dc9ed25b8e4d25"] = { text = "important=3 resources=1 securing=2 task=4 well=5" },
   ["gossip:b1e0e1a6cb7cc7ce"] = { text = "get=2 help=3 no=1" },
   ["gossip:b1e239feb6d1bafd"] = { text = "fallen=1 focus=5 priest=4" },
   ["gossip:b1e28e10f0881e99"] = { text = "cruelties=6 immeasurable=5 my=1 reign=2 suffer=7 under=3 will=8 world=4" },

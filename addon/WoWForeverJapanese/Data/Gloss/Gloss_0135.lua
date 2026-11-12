@@ -245,7 +245,6 @@ WFJ.Data.add("gloss", {
   [135242] = "離れる\tはなれる\taway from",
   [135243] = "離れる\tはなれる\tbe away",
   [135244] = "離れる\tはなれる\tbegan to move apart",
-  [135245] = "離れる\tはなれる\tbeing (this) far from",
   [135246] = "離れる\tはなれる\tbroke from",
   [135247] = "離れる\tはなれる\tcan get away",
   [135248] = "離れる\tはなれる\tcan leave",

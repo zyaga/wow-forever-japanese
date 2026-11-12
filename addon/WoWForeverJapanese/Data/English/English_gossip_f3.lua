@@ -38,4 +38,5 @@ WFJ.Data.add("english", {
   ["gossip:f3d465de6ab4b307"] = { text = "all=26 better=15 blades=3 enough=11 go=22 good=4 he=23 learn=27 make=2 makes=2 named=19 orc=20 seen=18 slit=10 still=8 stone=6 teach=24 though=14 throat=9 you=1" },
   ["gossip:f3d95346a38763af"] = { text = "busy=12 fret=14 hello=1 hungry=7 i=10 listening=16 meal=8 needlework=11 seat=5" },
   ["gossip:f3e4fe170d9e7496"] = { text = "anymore=2 found=9 made=1 slow=3 socks=7 surprised=4 what=10 your=6" },
+  ["gossip:f3fd8f8c0b42e66f"] = { text = "burn=3 flame=2 monster=5 righteous=1 vile=4" },
 })

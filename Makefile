@@ -15,7 +15,7 @@ VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
 
-.PHONY: names hearthstone pronunciation english-cards voice-qwen-setup voice-modal-setup voice-cast voice-speed voice-spoken-fetch voice-sets-page voice-sets-apply voice-sets voice-sets-clips voice-sets-catalogue voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
+.PHONY: names hearthstone pronunciation english-cards voice-qwen-setup voice-modal-setup voice-cast voice-speed voice-spoken-fetch voice-match voice-sets-page voice-sets-apply voice-sets voice-sets-clips voice-sets-catalogue voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
 
 help:
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | sed 's/:.*## /: /'
@@ -95,7 +95,7 @@ CLIENTS := classic-era forever
 classic-era_BUILD   := 1.15.9.69722
 classic-era_SRC     := wago
 classic-era_PRODUCT := wow_classic_era
-forever_BUILD       := 1.60.1.70862
+forever_BUILD       := 1.60.1.70888
 forever_SRC         := db2
 forever_PRODUCT     := wowf
 # Set only while the quest cache data/ holds is older than the tables: a quest cache needs the scan in game, the
@@ -406,11 +406,16 @@ report-apply: ## batches/reports/issue-N/decisions.jsonl → data/ + readings + 
 
 # Voice over (ADR-061; runbook docs/operations/voice.md). Generation needs the local AivisSpeech Engine unpacked in
 # build/aivis/ (started and stopped by voice generate) and `lame`; the audio and the pack are build output under build/, never committed.
-voice-speakers: voice-levels ## data/voice/ speakers + voices for the voice scope, from the pinned VMaNGOS database and the collector's NPC ids
+voice-speakers: voice-levels voice-spoken-fetch ## data/voice/ speakers for the voice scope: the creature Spoken gives a quest line, else the pinned VMaNGOS database, captures and the collector's NPC ids
 	cd pipeline && $(PY) -m wfj voice speakers --vmangos $(VMANGOS_DB) --commit $(VMANGOS_SHA) \
-		--wdb "$(call quest_dir,forever)/questcache.wdb" --forever-vo "$(FOREVER_VO)" --forever-vo-commit $(FOREVER_VO_SHA)
+		--wdb "$(call quest_dir,forever)/questcache.wdb" --forever-vo "$(FOREVER_VO)" --forever-vo-commit $(FOREVER_VO_SHA) \
+		--spoken "$(SPOKEN_CORPUS)" --spoken-commit $(SPOKEN_COMMIT)
 
-voice-generate: ## the missing and changed voice files from the shipped Japanese (cloned voices on Modal; VOICE_LOCAL=1 on this machine), then voice-sync
+voice-match: voice-speakers ## who speaks each line and with which voice, matched to the newest Spoken: speakers, then sets, then the cast, on one fetch (runs before any audio is made; run it before counting a run)
+	cd pipeline && $(PY) -m wfj voice sets creatures --spoken "$(SPOKEN_CORPUS)" --spoken-commit $(SPOKEN_COMMIT)
+	cd pipeline && $(PY) -m wfj voice cast
+
+voice-generate: voice-match ## the missing and changed voice files from the shipped Japanese (cloned voices on Modal; VOICE_LOCAL=1 on this machine), then voice-sync
 	cd pipeline && $(PY) -m wfj voice generate --scope all --players all --store "$(VOICE_STORE)" $(if $(VOICE_LOCAL),,--remote $(if $(VOICE_WAV_ARCHIVE),--archive "$(VOICE_WAV_ARCHIVE)")) && $(PY) -m wfj voice store-sync --if-changed --store "$(VOICE_STORE)"
 
 # The audio store: a checkout of the voice audio repository (zyaga/wow-forever-japanese-voice), inside the main checkout.
@@ -430,12 +435,27 @@ LISTFILE_VOICE ?= $(INPUTS)/community-listfile.csv
 voice-qwen-setup: ## build/qwen/venv: the Qwen3-TTS environment the cloned voices are made with (installs qwen-tts and PyTorch there)
 	uv venv --python 3.12 "$(QWEN_VENV)" && VIRTUAL_ENV="$(QWEN_VENV)" uv pip install "qwen-tts==$(QWEN_TTS_VERSION)"
 
-# Which game voice set each NPC speaks with is the Spoken voice addon's own assignment (its line corpus, pinned).
-SPOKEN_COMMIT = 3219d17badfe8ab1a0c57973dd32cdaad9ae7c90
-SPOKEN_CORPUS ?= $(REPO_ROOT)/build/spoken/corpus-$(SPOKEN_COMMIT).json.gz
+# Who speaks each quest line, and which game voice set each NPC speaks with, is the Spoken voice addon's own
+# assignment (its line corpus). Every run takes Spoken's newest corpus and records its commit in
+# pipeline/spoken-commit.txt, committed with the voice tables. When Spoken cannot be reached the recorded commit is
+# used again and the run says so.
+SPOKEN_PIN = $(CURDIR)/pipeline/spoken-commit.txt
+SPOKEN_DIR = $(REPO_ROOT)/build/spoken
+# Read when a recipe runs, so a target that follows voice-spoken-fetch sees the commit it just recorded.
+SPOKEN_COMMIT = $(shell cat "$(SPOKEN_PIN)" 2>/dev/null)
+SPOKEN_CORPUS = $(SPOKEN_DIR)/corpus-$(SPOKEN_COMMIT).json.gz
 
-voice-spoken-fetch: ## build/spoken: the Spoken addon's line corpus at the pinned commit (which voice set each NPC speaks with)
-	@mkdir -p "$(dir $(SPOKEN_CORPUS))" && test -f "$(SPOKEN_CORPUS)" || curl -sfL -o "$(SPOKEN_CORPUS)" "https://raw.githubusercontent.com/rusty-key/spoken-wow/$(SPOKEN_COMMIT)/pipelines/quests/corpus/corpus.json.gz"
+voice-spoken-fetch: ## build/spoken: the Spoken addon's newest line corpus; its commit goes to pipeline/spoken-commit.txt
+	@new=$$(git ls-remote https://github.com/rusty-key/spoken-wow HEAD 2>/dev/null | cut -f1); \
+		if [ -z "$$new" ]; then echo "voice-spoken-fetch: Spoken could not be reached; using the commit in pipeline/spoken-commit.txt"; new=$$(cat "$(SPOKEN_PIN)" 2>/dev/null); fi; \
+		test -n "$$new" || { echo "voice-spoken-fetch: no commit in pipeline/spoken-commit.txt"; exit 1; }; \
+		f="$(SPOKEN_DIR)/corpus-$$new.json.gz"; mkdir -p "$(SPOKEN_DIR)"; \
+		if [ ! -f "$$f" ]; then \
+			curl -sfL -o "$$f.part" "https://raw.githubusercontent.com/rusty-key/spoken-wow/$$new/pipelines/quests/corpus/corpus.json.gz" && gzip -t "$$f.part" && mv "$$f.part" "$$f" \
+				|| { echo "voice-spoken-fetch: the corpus at $$new could not be downloaded whole; nothing changed"; exit 1; }; \
+		fi; \
+		if [ "$$new" != "$$(cat "$(SPOKEN_PIN)" 2>/dev/null)" ]; then echo "$$new" > "$(SPOKEN_PIN)"; fi; \
+		echo "voice-spoken-fetch: Spoken at $$new"
 
 voice-sets: voice-spoken-fetch ## data/voice/creature-sets.jsonl: each speaking NPC's game voice set, as Spoken assigns it (rerun after voice-speakers)
 	cd pipeline && $(PY) -m wfj voice sets creatures --spoken "$(SPOKEN_CORPUS)" --spoken-commit $(SPOKEN_COMMIT)
@@ -472,7 +492,7 @@ voice-sync: ## commit and push the audio store's new files, and pin that audio c
 voice-pack: ## build/voice-pack/: the Voice entry and every voice pack from the audio record, with each pack's size and room under the cap
 	cd pipeline && $(PY) -m wfj voice pack --store "$(VOICE_STORE)"
 
-voice: voice-speakers voice-generate voice-pack ## speakers → generate → pack
+voice: voice-generate voice-pack ## match (speakers, sets, cast) → generate → pack
 
 # The upload token is CF_API_KEY, else what $(VOICE_TOKEN_CMD) prints (a local, untracked setting). It is read for the
 # one run and never written anywhere. DRY=1 builds, checks the zips and prints what would go up. CF_ONLY=1 skips the

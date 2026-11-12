@@ -20,7 +20,6 @@ WFJ.Data.add("english", {
   ["gossip:434764915c4df11a"] = { text = "dwarves=1 fast=2 heat=6 might=5 stand=7 steeds=3 think=8" },
   ["gossip:4350ef28e07b5d4a"] = { text = "energy=3 hand=12 imbue=14 next=6 priest=2 pulses=4 ready=9 step=7 take=8 talisman=11 welcome=1 you=5" },
   ["gossip:4352061725627201"] = { text = "rage=3 spirits=1 still=2" },
-  ["gossip:43526442757873bc"] = { text = "running=6 soldier=2 way=4 work=1" },
   ["gossip:43542d62edf59c2d"] = { text = "aid=4 gateway=10 granted=8 now=9 opened=11 protect=5 protection=7 soldiers=1 us=2" },
   ["gossip:4356812cacf5af2a"] = { text = "cuddles=4 snores=2" },
   ["gossip:4357101097d98707"] = { text = "'guess=3 business=8 busy=7 get=12 playing=5 sight=11 smell'=2 state=9 you=1" },

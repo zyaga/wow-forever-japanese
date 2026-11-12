@@ -31,6 +31,7 @@ WFJ.Data.add("english", {
   ["gossip:fb8cbcc075e2402f"] = { text = "die=1 paladin=3 prepare=2 scum=4" },
   ["gossip:fb92a3c78b695dc0"] = { text = "can't=3 careful=7 feel=2 fingers=1 fireworks=5 lighting=6 when=4" },
   ["gossip:fb9339964c7d0716"] = { text = "annihilate=7 finish=2 job=1 laughs=4 returned=3 rise=5 them=6" },
+  ["gossip:fb971f3517fbfda6"] = { text = "anything=18 barbershop=2 colorings=5 cuts=4 elf=13 groom=10 hair=9 ink=15 more=6 my=1 need=16 offer=8 perform=12 piercings=11 seat=20 tattoos=14 welcome=3 work=22" },
   ["gossip:fba9094af6a975cf"] = { text = "compatriots=1 glances=2" },
   ["gossip:fba95ffc7072f9f9"] = { text = "made=1" },
   ["gossip:fbb042cca711eb1f"] = { text = "before=27 beyond=37 but=25 cell=4 courtyard=28 defeated=35 door=29 finally=2 free=5 here=6 investigate=10 know=20 last=1 leave=26 lies=38 lock=32 lost=18 magical=31 me=12 mess=22 once=23 perhaps=40 progress=9 report=24 sanity=17 sent=13 survive=41 that=36 this=3 undead=7 undo=33 we=19 what=39 with=8 wizard=16 you=34" },

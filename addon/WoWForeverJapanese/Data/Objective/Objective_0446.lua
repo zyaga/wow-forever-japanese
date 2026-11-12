@@ -3,6 +3,10 @@ local _, WFJ = ...
 WFJ.Data.add("objective", {
   [446335] = { "Metzen the Reindeerを見つけて救出する", 0xa60c43d1, "." },
   [446337] = { "Metzen the Reindeerを見つけて救出する", 0xa60c43d1, "." },
+  [446830] = { "Katherine the Pureのもとへ戻る", 0x8f387dd9, "." },
+  [446848] = { "Katherineと話して詳しく聞く", 0xecdd7040, "." },
+  [446867] = { "Katherine the Pureに報告する", 0x25a79fba, "." },
   [446870] = { "Scarlet MonasteryでAeonasを見つける", 0x1ce66fcf, "." },
+  [446941] = { "StormwindのCathedral of LightでAeonasと会う", 0x9bfb9295, "." },
   [446962] = { "KatherineからAeonasについてさらに聞く", 0xd0000aeb, "." },
 })

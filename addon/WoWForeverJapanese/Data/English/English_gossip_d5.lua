@@ -2,6 +2,9 @@
 local _, WFJ = ...
 WFJ.Data.add("english", {
   ["gossip:d5030037f69922c5"] = { text = "aid=5 happy=4 journey=3 look=2" },
+  ["gossip:d503a30f75bbdc47"] = { text = "cage=3 this=2 why=1" },
+  ["gossip:d50652079328615e"] = { text = "ah=1 armor=10 assistance=15 consider=21 further=13 happy=5 interested=16 larger=9 part=12 parting=12 quite=4 rest=18 set=11 this=3 yes=2" },
+  ["gossip:d511ff5173709b3a"] = { text = "got=3 if=4 skill=2 teach=6 two=5" },
   ["gossip:d5130d846bf309f1"] = { text = "ahead=5 dark=3 days=4 sensed=2" },
   ["gossip:d513681e1d5a49f2"] = { text = "eye=3 know=9 look=8 map=6 newt=2 perhaps=7 treasure=5 week=1 what=10" },
   ["gossip:d516fb6e20155982"] = { text = "dispelled=6 evil=4 stones=2 strong=5 these=1" },

@@ -795,7 +795,6 @@ WFJ.Data.add("gloss", {
   [83793] = "控える\tひかえる\twill spare (hold back)",
   [83794] = "推し進める\tおしすすめる\tfurther",
   [83795] = "推し進める\tおしすすめる\tfurther (push forward)",
-  [83796] = "推し進める\tおしすすめる\tproponents (pushing forward)",
   [83797] = "推し量る\tおしはかる\tfathom",
   [83798] = "推し量る\tおしはかる\tguess",
   [83799] = "推し量る\tおしはかる\tguess (gauge)",

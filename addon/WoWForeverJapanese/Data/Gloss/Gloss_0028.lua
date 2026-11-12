@@ -553,7 +553,6 @@ WFJ.Data.add("gloss", {
   [28552] = "もので\tもので\tsince (as it's so)",
   [28553] = "もので\tもので\tsince (you see)",
   [28554] = "もので\tもので\tsince; because",
-  [28555] = "ものです\tものです\t(naturally)",
   [28556] = "ものです\tものです\t(used to)",
   [28557] = "ものではない\tものではない\twere not (something that was)",
   [28558] = "ものといえば\tものといえば\tall (he had)",

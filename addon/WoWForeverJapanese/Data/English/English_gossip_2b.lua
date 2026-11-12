@@ -41,6 +41,7 @@ WFJ.Data.add("english", {
   ["gossip:2bd0c2d5e1ca8676"] = { text = "barrier=12 behind=13 falter=18 fates=11 hands=17 our=10 push=3 seal=14 task=8 them=2 this=4 uphold=9 vow=5 we=1 you=6" },
   ["gossip:2bde102e33bd6dad"] = { text = "after=26 another=32 apologize=18 ask=3 available=14 currently=9 cycling=13 data=12 information=8 located=31 noticeable=4 omission=16 pause=5 performed=25 question=2 repository=11 request=37 sincerely=17 this=1 update=24" },
   ["gossip:2be0c251745720da"] = { text = "picked=1" },
+  ["gossip:2be5dda22290adfa"] = { text = "already=4 bother=2 constable=3 denying=1 judgement=5 passed=6 point=8" },
   ["gossip:2be722a5494c4945"] = { text = "currently=4 east=2 side=1" },
   ["gossip:2bed231a8c8a1ca9"] = { text = "oh=1 there=2" },
   ["gossip:2bee2e3cafd6773a"] = { text = "stay=1" },

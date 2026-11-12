@@ -440,7 +440,6 @@ WFJ.Data.add("gloss", {
   [76438] = "慰めにする\tなぐさめにする\tcan take solace in",
   [76439] = "慰める\tなぐさめる\tcomforted",
   [76440] = "慰める\tなぐさめる\thave been soothed",
-  [76441] = "慰霊碑\tいれいひ\tmemorial",
   [76442] = "憂い\tうれい\tcare (worry)",
   [76443] = "憂い\tうれい\tdepression (melancholy)",
   [76444] = "憂う\tうれう\tto worry about",

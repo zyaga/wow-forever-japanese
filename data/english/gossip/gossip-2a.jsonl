@@ -1,5 +1,5 @@
 {"id": "2a192cae2a48f5f0", "field": "text", "en": "Aye, ye will be fine, once we get ya warm!", "hash": "2a192cae2a48f5f0", "src": "collector@1.60.1.70790"}
-{"id": "2a20483171a8907c", "field": "text", "en": "I'd like to change the appearance of my equipment.", "hash": "2a20483171a8907c", "src": "collector@1.60.1.70790", "npcs": [270582]}
+{"id": "2a20483171a8907c", "field": "text", "en": "I'd like to change the appearance of my equipment.", "hash": "2a20483171a8907c", "src": "collector@1.60.1.70790", "npcs": [270581, 270582]}
 {"id": "2a231c2886453838", "field": "text", "en": "Welcome to the Grim Guzzler!", "hash": "2a231c2886453838", "src": "vmangos@13b49dc"}
 {"id": "2a2639f04f58896a", "field": "text", "en": "Ms. Pomeroy gathers herbs for an Alchemist who lives up in the hills between Northshire and Stormwind.  Check for her at his cottage and see if she'll show you the profession.", "hash": "2a2639f04f58896a", "src": "vmangos@13b49dc"}
 {"id": "2a266cf6a0c2cde6", "field": "text", "en": "So you see fit to toy with the Lich King's creations? Ramstein, be sure to give the intruders a proper greeting.", "hash": "2a266cf6a0c2cde6", "src": "vmangos@13b49dc"}

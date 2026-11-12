@@ -860,7 +860,6 @@ WFJ.Data.add("gloss", {
   [18860] = "でしょう\tでしょう\tI trust (surely)",
   [18861] = "でしょう\tでしょう\tI wonder",
   [18862] = "でしょう\tでしょう\tI'm sure (probably)",
-  [18863] = "でしょう\tでしょう\tI'm sure, won't I",
   [18864] = "でしょう\tでしょう\tare you (polite question)",
   [18865] = "でしょう\tでしょう\taren't they",
   [18866] = "でしょう\tでしょう\tcan (probably)",

@@ -6,6 +6,7 @@ WFJ.Data.add("english", {
   ["gossip:b80615f607ef7379"] = { text = "alarmed=1 cause=25 death=16 harm=10 help=26 i=3 intend=11 kind=9 land=6 much=15 my=24 now=18 only=20 passed=7 peace=21 perhaps=27 since=4 this=5 time=13 too=14 wish=19 witnessed=17 you=23" },
   ["gossip:b8077771bcff4d4f"] = { text = "failed=5 happened=2 spell=4 what=1 why=3" },
   ["gossip:b80c1bf4960c4e54"] = { text = "again=1 attempt=3 later=2 speak=7 wish=4" },
+  ["gossip:b81a4ec932914f21"] = { text = "accustom=17 admit=3 both=40 chargers=18 choice=54 come=9 companion=43 comparison=19 descendants=41 encourage=24 examine=49 find=47 finest=32 greetings=1 have=35 here=14 historical=34 horses=39 if=13 journeys=42 land=31 liking=50 local=38 looking=12 may=21 me=55 more=44 mount=11 my=7 one=6 order=5 our=25 ours=28 own=37 paladin=2 pale=20 peruse=27 place=15 regardless=22 return=57 see=53 stables=8 steadfast=45 steeds=26 stock=36 surprised=10 though=16 your=4" },
   ["gossip:b81c9e7ab6a5cd34"] = { text = "i=1 risen=2" },
   ["gossip:b82617deedf17b47"] = { text = "more=1 prisoners=2" },
   ["gossip:b827703d22c0a3e9"] = { text = "adventures=28 always=14 bright=11 doubt=25 dusty=19 duty=8 elder=5 eyed=10 free=35 good=15 hello=1 here=4 homeland=6 however=17 i=3 later=34 mage=21 many=29 more=32 old=20 ready=9 see=13 service=7 speak=33 stop=36 this=18 you=26 young=2" },

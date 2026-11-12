@@ -2,5 +2,9 @@
 local _, WFJ = ...
 WFJ.Data.add("objective", {
   [480147] = { "Kyleに餌をあげた", 0x73cce68d, "." },
+  [480182] = { "Reginaldの行進", 0xc7da5dcf, "." },
   [480284] = { "Neeru Firebladeの反応を確かめる", 0xd3fe7bc4, "." },
+  [480572] = { "出来事を見届ける", 0x669061c9, "." },
+  [480575] = { "Blackthorne Pactの構成員を倒す", 0x03f4a4b0, "." },
+  [480576] = { "Staff of the Mountainを試す", 0x04972f0f, "." },
 })

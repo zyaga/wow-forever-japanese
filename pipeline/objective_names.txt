@@ -60,3 +60,46 @@
 476836  # Craftsman's Terrace Inn
 476837  # City Gate
 477503  # Stolen Supplies
+446927  # Orders from the Grand Crusader
+448826  # Infernal Core
+459134  # Eldarath Relic
+471744  # Pillar of Assimilation
+471746  # The Achromatic Crystal
+471871  # The Regrowth Vestibule
+474663  # Emerald Riding Raptor
+474664  # Turquoise Riding Raptor
+474665  # Violet Riding Raptor
+474675  # Brown Riding Wolf
+474676  # Dire Riding Wolf
+474677  # Timber Riding Wolf
+474678  # Black Riding Wolf
+475271  # Pinto Horse
+475272  # Brown Horse
+475273  # Chestnut Mare
+475274  # Black Stallion
+475896  # Grey Riding Kodo
+475897  # Brown Riding Kodo
+475898  # White Riding Kodo
+475899  # Lavender Riding Kodo
+476909  # Pinto Horse
+476910  # Brown Horse
+476911  # Chestnut Mare
+476999  # Witch Doctor Ti'ik's Head
+479625  # Swift Gray Ram
+479626  # Swift Brown Ram
+479627  # Swift White Ram
+479635  # Swift White Mechanostrider
+479636  # Swift Yellow Mechanostrider
+479637  # Swift Green Mechanostrider
+479638  # Swift Brown Steed
+479639  # Swift Palomino
+479640  # Swift White Steed
+479641  # Swift Stormsaber
+479642  # Swift Mistsaber
+479643  # Swift Frostsaber
+479653  # Swift Blue Raptor
+479654  # Swift Olive Raptor
+479655  # Swift Orange Raptor
+479980  # Pinto Horse
+479981  # Brown Horse
+479982  # Chestnut Mare

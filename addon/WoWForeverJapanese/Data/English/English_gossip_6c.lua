@@ -3,6 +3,7 @@ local _, WFJ = ...
 WFJ.Data.add("english", {
   ["gossip:6c001dd2403c29d6"] = { text = "appear=21 beasts=18 catastrophic=26 creatures=1 damage=25 defeat=3 fell=15 fighters=6 greater=19 inflict=24 land=23 put=11 skilled=4 still=10 strength=8 these=17 took=9 us=12" },
   ["gossip:6c0d7199efc8fb26"] = { text = "armorsmith=3 i=1 instead=4 learn=7 once=2 teach=8 way=6 weaponsmith=5" },
+  ["gossip:6c0def5f6aaa97b8"] = { text = "again=5 gained=4 profession=1 skill=2 talk=6" },
   ["gossip:6c0e50032849c1d3"] = { text = "anyway=6 more=1 need=14 somebody=10 talk=13 teach=2 types=12 you=7" },
   ["gossip:6c1285a421d5735e"] = { text = "another=3 chalk=5 owned=1 victory=2" },
   ["gossip:6c154e0fabd15b30"] = { text = "charge=3 clan=5 earned=21 field=20 frigid=19 i=1 me=10 rank=7 recruitment=2 respect=17 rises=8 soldier=4 this=18 your=14" },

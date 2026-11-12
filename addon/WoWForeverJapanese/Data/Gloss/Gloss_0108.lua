@@ -245,7 +245,6 @@ WFJ.Data.add("gloss", {
   [108243] = "筋\tすじ\tbeams (streaks)",
   [108244] = "筋\tすじ\tcircles",
   [108245] = "筋\tすじ\tgristle (sinew)",
-  [108246] = "筋\tすじ\tonly right (proper)",
   [108247] = "筋\tすじ\tsense (logic)",
   [108248] = "筋\tすじ\tsense (筋の通った: logical)",
   [108249] = "筋\tすじ\tstrands",

@@ -39,7 +39,6 @@ WFJ.Data.add("english", {
   ["gossip:83b7b9da5d6d810e"] = { text = "fear=2 senses=3 your=1" },
   ["gossip:83beb7b4e9b26858"] = { text = "abstracts=22 assist=67 between=25 cannot=33 commerce=56 common=46 crafts=47 crates=61 currency=8 day=41 earn=69 engaging=38 ensures=29 ensuring=29 equitable=27 ever=17 fair=26 fluctuating=18 gold=5 internal=55 kind=57 known=16 liquidated=31 materials=49 members=24 needed=43 needs=43 organization=23 otherwise=54 ourselves=10 own=12 plenty=68 recovering=62 rely=58 shady=36 silver=20 some=35 sort=4 still=51 such=45 suppose=40 swift=65 system=13 trade=11 true=6 universal=7 use=53 value=21 waylaid=60 we=9 well=2 writs=64 yes=1" },
   ["gossip:83bf808ed9ac2f31"] = { text = "bit=7 but=4 left=8 maybe=9 nice=1 not=6 perfect=5 shot=2" },
-  ["gossip:83c232b55ef24dd6"] = { text = "day=6 defenses=5 intact=7 natural=4 thanks=3 will=8 work=1 you=2" },
   ["gossip:83c32533fd1131c2"] = { text = "grumble=1" },
   ["gossip:83c9defa51d85432"] = { text = "days=11 father=1 killing=7 myself=9 restrain=10 stranger=3 talk=5 told=2" },
   ["gossip:83cae88f61b8c3d1"] = { text = "days=11 father=1 killing=7 myself=9 restrain=10 stranger=3 talk=5 told=2" },

@@ -28,6 +28,7 @@
 {"id": "fb8cbcc075e2402f", "field": "text", "en": "Prepare to die, paladin scum!", "hash": "fb8cbcc075e2402f", "src": "vmangos@13b49dc"}
 {"id": "fb92a3c78b695dc0", "field": "text", "en": "You have to be careful lighting fireworks when you can't feel your fingers...", "hash": "fb92a3c78b695dc0", "src": "vmangos@13b49dc"}
 {"id": "fb9339964c7d0716", "field": "text", "en": "You have returned to finish the job? <Lathoric laughs.> Obsidion rise and annihilate them!", "hash": "fb9339964c7d0716", "src": "vmangos@13b49dc"}
+{"id": "fb971f3517fbfda6", "field": "text", "en": "Welcome to my barbershop! We offer cuts, colorings, and more.$B$BWe can groom facial hair, perform piercings, ink night elf tattoos, anything you might need.$B$BHave a seat and we'll get to work.", "hash": "fb971f3517fbfda6", "src": "collector@1.60.1.70862", "npcs": [277037]}
 {"id": "fba22d76e48a3352", "field": "text", "en": "FOR THE HORDE!", "hash": "fba22d76e48a3352", "src": "vmangos@13b49dc"}
 {"id": "fba9094af6a975cf", "field": "text", "en": "%s glances at her compatriots.", "hash": "fba9094af6a975cf", "src": "vmangos@13b49dc"}
 {"id": "fba95ffc7072f9f9", "field": "text", "en": "We made it to Nethergarde!", "hash": "fba95ffc7072f9f9", "src": "vmangos@13b49dc"}

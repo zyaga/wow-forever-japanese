@@ -416,7 +416,6 @@ WFJ.Data.add("gloss", {
   [138414] = "魔術\tまじゅつ\tmagics (sorcery)",
   [138415] = "魔術\tまじゅつ\tsorcerous (sorcery)",
   [138416] = "魔術\tまじゅつ\tsorcery",
-  [138417] = "魔術\tまじゅつ\tthaumaturgy (magic)",
   [138418] = "魔術師\tまじゅつし\tmages (magicians)",
   [138419] = "魔術師\tまじゅつし\tmagi",
   [138420] = "魔術師\tまじゅつし\tmagician",

@@ -832,6 +832,7 @@ WFJ.Data.add("gloss", {
   [72833] = "心配\tしんぱい\tI fear greatly (can't stop worrying)",
   [72834] = "心配\tしんぱい\tI'm worried",
   [72835] = "心配\tしんぱい\tafraid (worried)",
+  [72836] = "心配\tしんぱい\tconcern",
   [72837] = "心配\tしんぱい\tconcerned",
   [72838] = "心配\tしんぱい\tconcerned (worry)",
   [72839] = "心配\tしんぱい\tconcerns",

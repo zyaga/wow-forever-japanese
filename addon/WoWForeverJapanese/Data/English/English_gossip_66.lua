@@ -3,6 +3,8 @@ local _, WFJ = ...
 WFJ.Data.add("english", {
   ["gossip:6606245ecb6f4220"] = { text = "dead=2 fodder=8 found=4 him=5 left=1 me=3" },
   ["gossip:6607c10dbe4631a9"] = { text = "deliver=3 orders=2 yes=1" },
+  ["gossip:6608fbe7a3784aee"] = { text = "perform=2 ready=3 trade=1" },
+  ["gossip:660ab6a20ff691fd"] = { text = "all=8 bask=4 blessing=11 city=6 forth=12 glory=3 his=10 shining=5 threaten=7 who=9 your=1" },
   ["gossip:660fac026228275f"] = { text = "sale=2 what=1" },
   ["gossip:660ffc78fa691b37"] = { text = "hand=2 orb=1" },
   ["gossip:661333292f23f150"] = { text = "before=2 haven't=6 hi=1 seen=3" },
@@ -46,6 +48,7 @@ WFJ.Data.add("english", {
   ["gossip:66c41a9024ec67ff"] = { text = "die=1 time=2" },
   ["gossip:66cd13d8c4539d2d"] = { text = "require=2 training=1" },
   ["gossip:66d09dd52c23e2ff"] = { text = "lives=1" },
+  ["gossip:66d2ef706d53e824"] = { text = "greetings=1 skills=2 teach=4 techniques=3" },
   ["gossip:66d878ae46c38c8f"] = { text = "big=22 collected=4 days=13 gates=19 gong=23 hey=1 it'll=15 last=2 like=5 near=20 ours=9 ring=24 shipped=11 someone=18 speak=6 start=26 stuff=3 their=7 theirs=7 told=16 war=25" },
   ["gossip:66e4713bbf324396"] = { text = "day=3 may=9 one=6 saves=5 thing=7 turn=2 you=4" },
   ["gossip:66ea9434c533f35f"] = { text = "chip=4 exposed=7 finally=5 long=8 shard=3 this=2 weakness=6" },

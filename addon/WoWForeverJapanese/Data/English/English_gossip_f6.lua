@@ -5,6 +5,7 @@ WFJ.Data.add("english", {
   ["gossip:f60d0f3d24ab7934"] = { text = "bones=4 payment=3 plans=2 those=1" },
   ["gossip:f612be82cb7bbf66"] = { text = "access=8 adventurers=4 certainly=1 combined=10 even=13 favored=24 friendly=2 high=30 items=7 power=14 price=28 quite=29 required=20 submit=12 superior=6 total=17 views=3" },
   ["gossip:f618fd5e9d49fd2b"] = { text = "all=4 arrive=13 day=11 equipment=15 final=5 forces=18 gates=27 gong=22 last=9 materiel=3 open=28 our=17 preparation=6 readied=16 ring=23 sent=8 should=14 someone=21 start=30 waiting=24 war=1 which=26" },
+  ["gossip:f61b8d7d89ed0a81"] = { text = "anything=5 day=7 destroy=2 doing=6 me=1 other=4 see=8 thought=9 trying=3" },
   ["gossip:f61c02cfa670c6c5"] = { text = "accepts=2 relics=1" },
   ["gossip:f61d2089c28bf25e"] = { text = "aid=6 cowardly=4 eliminate=5 elves=2 go=10 speak=11 takes=7 their=3 we=1" },
   ["gossip:f620831b08c56ce5"] = { text = "best=2" },

@@ -44,6 +44,7 @@
 {"id": "aad78abfa10ba7f6", "field": "text", "en": "Ok, let's get to work!", "hash": "aad78abfa10ba7f6", "src": "vmangos@13b49dc"}
 {"id": "aae0a55d50c2df33", "field": "text", "en": "Insects!", "hash": "aae0a55d50c2df33", "src": "vmangos@13b49dc"}
 {"id": "aaea8bacc79d2178", "field": "text", "en": "Question 2, Chain 1?", "hash": "aaea8bacc79d2178", "src": "vmangos@13b49dc"}
+{"id": "aaed106a987cd142", "field": "text", "en": "If you come bearing totems of the Desolace clans, then I am willing to trade.", "hash": "aaed106a987cd142", "src": "collector@1.60.1.70862", "npcs": [253140]}
 {"id": "aaee419f5e05271f", "field": "text", "en": "You do not belong in these gardens.  Your body shall nourish our lovely creations!", "hash": "aaee419f5e05271f", "src": "vmangos@13b49dc"}
 {"id": "aaef6d2634402175", "field": "text", "en": "FIRE IN THE HOLE!", "hash": "aaef6d2634402175", "src": "vmangos@13b49dc"}
 {"id": "aaf2340134449868", "field": "text", "en": "Some people wonder what we're doing out here in the desert.  Well... if I told you, then you'd stay and try to make our profits!", "hash": "aaf2340134449868", "src": "vmangos@13b49dc"}

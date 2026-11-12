@@ -3,6 +3,7 @@ local _, WFJ = ...
 WFJ.Data.add("english", {
   ["gossip:bc0339ae60dc9eff"] = { text = "again=2 grow=5 helping=1 hero=8 like=7 mister=4 thank=3 wanna=9 you=6" },
   ["gossip:bc04a7db1defe34e"] = { text = "aglow=14 attacked=4 black=40 crazy=20 damned=45 directions=24 done=49 evil=12 eyes=10 flayin'=29 frothing=17 genuinely=15 head=30 hearin'=35 her=9 listen=1 madness=42 minds=28 missy=2 monkey=46 mouth=16 one=27 priestess=6 runnin'=25 scream=21 something=11 that=44 then=26 us=3 we=48 whatever=5 words=34" },
+  ["gossip:bc0d5a3dcda5476c"] = { text = "'friend'=36 ahhhh=29 anticipation=57 bad=23 beautiful=27 bloody=20 but=30 carnage=25 cripple=46 deal=33 demonic=24 dismantle=41 earned=51 easily=6 even=18 eye=13 eyes=13 follow=8 freedom=49 glimmer=58 helped=47 here=44 how=5 i=37 imagine=26 killed=15 know=1 leaders=42 mortal=2 now=31 operations=45 orders=7 people=14 take=43 think=55 those=39 time=35 wake=21 warlock=17 warlocks=17 went=12 you=38 your=19" },
   ["gossip:bc165b3ed2d0e172"] = { text = "against=6 belong=3 here=2 intruders=5 these=4 you=1" },
   ["gossip:bc1a6fd81248ccf0"] = { text = "know=5 one=3 seek=7 speak=2 you=1" },
   ["gossip:bc208cc1cecd88a5"] = { text = "stops=1" },

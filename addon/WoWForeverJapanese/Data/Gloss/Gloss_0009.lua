@@ -413,7 +413,6 @@ WFJ.Data.add("gloss", {
   [9410] = "これら\tこれら\tthese (items)",
   [9411] = "これら\tこれら\tthese items",
   [9412] = "これら\tこれら\tthese things",
-  [9413] = "これら\tこれら\tthey (these)",
   [9414] = "これ以上\tこれいじょう\t(any) longer",
   [9415] = "これ以上\tこれいじょう\t(any) more than this",
   [9416] = "これ以上\tこれいじょう\t(no) longer",

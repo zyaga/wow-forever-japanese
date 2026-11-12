@@ -2,6 +2,7 @@
 local _, WFJ = ...
 WFJ.Data.add("english", {
   ["gossip:54007d6ba58358fa"] = { text = "better=2 little=1 thank=3" },
+  ["gossip:5400bb60382c061f"] = { text = "find=6 heart=4 knives=2 place=5 these=1" },
   ["gossip:5401958112324f1c"] = { text = "covered=1 move=3" },
   ["gossip:540ce9b083c69734"] = { text = "bandages=1 collection=2 gathered=6 needed=8 proceeding=4 schedule=3" },
   ["gossip:540d6737042b45a7"] = { text = "apprentice=9 beady=2 beard=5 bushy=4 crick=16 even=17 eyes=3 fool=6 friend=11 good=10 neck=15 talented=8 talk=13" },
@@ -12,6 +13,7 @@ WFJ.Data.add("english", {
   ["gossip:541c9674c1dd2d6b"] = { text = "happened=3 here=1 spirit=5 what=2" },
   ["gossip:541cd8988547c16f"] = { text = "cleansed=5 made=2 now=3 totem=1 well=4" },
   ["gossip:541ff4b950a83bae"] = { text = "animals=1 care=2 hangs=13 hunters=11 if=9 look=8 pet=5 usually=10 with=12" },
+  ["gossip:5422bfc31e1ab5d0"] = { text = "finished=1 instruments=4 know=2" },
   ["gossip:5423314c870a53b7"] = { text = "ace=18 all=17 bring=29 charge=36 connoisseur=19 currently=42 eatin'=8 edible=14 effort=26 especially=20 expert=28 fish=21 here=34 i=13 large=35 looming=23 mmm=1 need=40 pile=44 smell=5 so=32 spot=12 that's=37 things=7 thought=31 time=10 war=25 wise=30 with=24" },
   ["gossip:5428173d5c3f29e8"] = { text = "acknowledgement=2 roars=3" },
   ["gossip:54302a90e5862f38"] = { text = "attack=9 challenges=2 chickens=7 even=8 nomads=1 one=3 robotic=6" },
@@ -33,6 +35,7 @@ WFJ.Data.add("english", {
   ["gossip:549a9eac32159f92"] = { text = "parts=2 ship=3 those=1" },
   ["gossip:549eafc05f511874"] = { text = "challenge=4" },
   ["gossip:54a9727e39d5b13e"] = { text = "dedicated=6 head=8 heroes=5 monument=7 well=2 yes=1" },
+  ["gossip:54afbe9e0505efe2"] = { text = "measures=3 reactivated=4 resolved=2 stabilization=1" },
   ["gossip:54afeb0b128ae3fb"] = { text = "chop=5 foes=4 forest=1 like=3 saplings=2 teach=7" },
   ["gossip:54b25c84541eef52"] = { text = "scrutinizes=4 visitor=2" },
   ["gossip:54bdbc2a595505f7"] = { text = "call=9 carcass=2 new=4 round=3" },

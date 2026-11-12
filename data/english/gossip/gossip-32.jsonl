@@ -1,4 +1,4 @@
-{"id": "32049c1f3ef87141", "field": "text", "en": "Stormwind Harbor", "hash": "32049c1f3ef87141", "src": "collector@1.60.1.70790", "npcs": [68, 267007]}
+{"id": "32049c1f3ef87141", "field": "text", "en": "Stormwind Harbor", "hash": "32049c1f3ef87141", "src": "collector@1.60.1.70790", "npcs": [68, 1976, 267007]}
 {"id": "3207a0185ac4f321", "field": "text", "en": "You have come to learn in the art of warfare, $r? You have come to the wrong place.", "hash": "3207a0185ac4f321", "src": "vmangos@13b49dc"}
 {"id": "320f97b67cb435d3", "field": "text", "en": "My money's on the goblins!  And if you have any sense then yours is too!", "hash": "320f97b67cb435d3", "src": "vmangos@13b49dc"}
 {"id": "32142b6c2ed2b0e3", "field": "text", "en": "$n claims the blacksmith!  If left unchallenged, the Alliance will control it in 1 minute!", "hash": "32142b6c2ed2b0e3", "src": "vmangos@13b49dc"}
@@ -38,3 +38,4 @@
 {"id": "32e1cc574f00cc48", "field": "text", "en": "We will drive our foes from Silverpine, then bring the tides of war to their very capital!", "hash": "32e1cc574f00cc48", "src": "vmangos@13b49dc"}
 {"id": "32eeca77d1727f7c", "field": "text", "en": "The grass is soft and lush. The air is fresh, full of light and song. Everything I've seen suggests that Teldrassil is a dream come true. Why, then, is my heart full of foreboding?", "hash": "32eeca77d1727f7c", "src": "vmangos@13b49dc"}
 {"id": "32f3f833710ee8d6", "field": "text", "en": "Speak not your vulgar language to me!  Only Hydraxis can stand it.", "hash": "32f3f833710ee8d6", "src": "vmangos@13b49dc"}
+{"id": "32fab2cae6e6b445", "field": "text", "en": "A little bit of a lot of things. Mostly I take the soft and weak and reshape them into hardened fighters once again.$B$BIt's a tough world out there, and even our own people mistrust us. We need to be tough and self-reliant if we are to fit into this \"Horde\" with the rest of our people.", "hash": "32fab2cae6e6b445", "src": "collector@1.60.1.70862", "npcs": [246389]}

@@ -208,7 +208,6 @@ WFJ.Data.add("gloss", {
   [118208] = "見つける\tみつける\tI want you to find",
   [118209] = "見つける\tみつける\tI'll find",
   [118210] = "見つける\tみつける\tI'll find (for you)",
-  [118211] = "見つける\tみつける\tafter finding",
   [118212] = "見つける\tみつける\tafter you've found",
   [118213] = "見つける\tみつける\tare going to need to find",
   [118214] = "見つける\tみつける\tas I find",

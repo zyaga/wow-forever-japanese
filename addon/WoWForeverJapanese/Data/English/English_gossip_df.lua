@@ -40,7 +40,9 @@ WFJ.Data.add("english", {
   ["gossip:dfefb31a7c434722"] = { text = "cries=1" },
   ["gossip:dff28fd18440078e"] = { text = "wins=1" },
   ["gossip:dff34ef1d9c0be3c"] = { text = "dead=10 just=12 leave=4 listen=1 men=2 sent=7 take=3 tell=11 walk=13 whomever=5 you=6" },
+  ["gossip:dff68b8a2714b8b4"] = { text = "and=9 assure=27 disaster=32 fashion=13 finish=8 further=10 generosity=2 helping=18 important=23 interested=20 its=15 kindness=5 me=17 more=12 most=22 need=11 now=7 realm=30 should=14 spell=33 spirit=29 task=24 thank=6 that=26 unchecked=28 unmitigated=31 unrivaled=3 use=16 your=1" },
   ["gossip:dff92f81e70a838a"] = { text = "greetings=1 young=2" },
   ["gossip:dff95d62bc69e5d2"] = { text = "fitting=6 life=2 master=4 my=3 sacrifice=5 your=1" },
   ["gossip:dffabc3924b2b31d"] = { text = "attack=1 destroy=4 unchecked=3" },
+  ["gossip:dffc89ab72c3c546"] = { text = "returned=2 totems=1" },
 })

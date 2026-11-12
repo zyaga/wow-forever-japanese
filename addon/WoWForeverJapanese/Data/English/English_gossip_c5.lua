@@ -5,6 +5,7 @@ WFJ.Data.add("english", {
   ["gossip:c507d7bd39cafa50"] = { text = "arcane=5 inviolate=8 my=3 mysteries=6 place=2 this=1" },
   ["gossip:c509979143fdd777"] = { text = "aid=8 here=10 instead=9 lady=3 learn=7 leather=4 more=6 regret=1 require=13 skill=14 teach=15 working=5" },
   ["gossip:c50b4ecf28834662"] = { text = "i=1 master=3 unworthy=2" },
+  ["gossip:c513241d9a379f29"] = { text = "critical=2 stopping=4 succeeded=6 threat=3" },
   ["gossip:c51699f55b81a0e3"] = { text = "bring=6 more=4 progress=1 repair=2 supplies=5" },
   ["gossip:c516c193a3322d0a"] = { text = "clutching=1 grasp=3 journal=2 loosens=4" },
   ["gossip:c5176ede163455b9"] = { text = "energy=2 jump=4 kids=1" },

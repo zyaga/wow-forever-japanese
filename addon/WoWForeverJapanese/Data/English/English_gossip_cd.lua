@@ -32,6 +32,7 @@ WFJ.Data.add("english", {
   ["gossip:cdb10c9006d2d06d"] = { text = "appears=8 awaiting=7 body=2 head=5 incomplete=3 looks=4" },
   ["gossip:cdbb99b39d980e5b"] = { text = "get=3 replace=5 this=4" },
   ["gossip:cdbd32f8b0e6e40d"] = { text = "city=12 defeated=2 destroyed=16 he=1 held=6 it=5 memories=7 nothing=4 now=8 own=10 relic=3 this=11 world=13 your=9" },
+  ["gossip:cdce97091fee0906"] = { text = "back=10 bag=36 bundle=3 but=7 care=47 carved=1 cause=21 claims=39 clan=29 donation=20 eyes=5 flick=13 fool=17 furrows=15 hand=34 i=16 know=32 me=27 motive=44 offer=4 our=28 outsider=18 own=37 quartermaster=33 something=25 swipe=35 this=19 today=41 totems=2 toward=12 want=26 what=31 widen=6 you=11 your=43" },
   ["gossip:cdd0bb3ffd6b2a39"] = { text = "ale=2 give=3 more=1" },
   ["gossip:cdd2d3f9e410fe05"] = { text = "that's=1 worked=2" },
   ["gossip:cdd2db0d7e9804b6"] = { text = "begin=5 burning=1 celebrate=12 come=10 festival=9 just=6 liberation=11 located=8 minutes=3 west=7" },

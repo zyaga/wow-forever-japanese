@@ -32,7 +32,7 @@
 {"id": "b5b33c9992d1fe0b", "field": "text", "en": "Oh, darn...", "hash": "b5b33c9992d1fe0b", "src": "vmangos@13b49dc"}
 {"id": "b5bde38c28ccefcb", "field": "text", "en": "I'll finish you off for good this time!", "hash": "b5bde38c28ccefcb", "src": "vmangos@13b49dc"}
 {"id": "b5cc0825ce0a4622", "field": "text", "en": "This songflower plant stands out as a rock in the sea of corruption that is Felwood. Its petals have a powerful fragrance that bolsters your spirits and strengthens your resolve.", "hash": "b5cc0825ce0a4622", "src": "vmangos@13b49dc"}
-{"id": "b5cf805bfdedd91a", "field": "text", "en": "The barbershop", "hash": "b5cf805bfdedd91a", "src": "collector@1.60.1.70790", "npcs": [5624]}
+{"id": "b5cf805bfdedd91a", "field": "text", "en": "The barbershop", "hash": "b5cf805bfdedd91a", "src": "collector@1.60.1.70790", "npcs": [3296, 5624]}
 {"id": "b5d8597e3072d3d7", "field": "text", "en": "It's good to have veterans like you in Alterac Valley, $n.  Our supplies are too low to launch a ground assault through Alterac Valley... speak with our quartermaster - he'll tell you how to increase our supply base.", "hash": "b5d8597e3072d3d7", "src": "vmangos@13b49dc"}
 {"id": "b5db1d1f420a9c65", "field": "text", "en": "Soldiers of Kalimdor, defend the base!", "hash": "b5db1d1f420a9c65", "src": "vmangos@13b49dc"}
 {"id": "b5dde458d715df07", "field": "text", "en": "The Ruins of Eldarath.", "hash": "b5dde458d715df07", "src": "vmangos@13b49dc"}

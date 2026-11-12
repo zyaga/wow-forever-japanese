@@ -485,7 +485,6 @@ WFJ.Data.add("gloss", {
   [65482] = "守護\tしゅご\tprotecting",
   [65483] = "守護\tしゅご\tprotection",
   [65484] = "守護\tしゅご\twarding",
-  [65485] = "守護竜\tしゅごりゅう\tguardian dragon",
   [65486] = "守護者\tしゅごしゃ\tDefender (guardian)",
   [65487] = "守護者\tしゅごしゃ\tGuardian",
   [65488] = "守護者\tしゅごしゃ\tGuardians",

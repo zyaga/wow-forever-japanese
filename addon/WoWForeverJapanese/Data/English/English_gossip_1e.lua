@@ -14,6 +14,7 @@ WFJ.Data.add("english", {
   ["gossip:1e5063265ce02ed3"] = { text = "sifts=2 trash=1" },
   ["gossip:1e51730bcf206c45"] = { text = "all=4 assist=14 definitely=2 he=12 help=5 humans=1 named=11 need=6 one=10 our=3 ready=15 speak=8 stands=17 you=7" },
   ["gossip:1e5acf5624868202"] = { text = "gathered=2 near=4 resources=1 victory=3" },
+  ["gossip:1e5ba702d9816e4c"] = { text = "goods=2 i=3 purchase=4 use=1 what=6" },
   ["gossip:1e5da87e9e3ca51e"] = { text = "attack=1" },
   ["gossip:1e67ba772d9d01f1"] = { text = "ability=30 armor=27 assassin=31 bones=24 fallen=23 fashion=29 fellow=13 interesting=18 known=11 lethal=26 many=17 one=22 ornery=12 our=8 picked=20 see=2 set=28 skills=19 started=5 suited=32 take=25 tenor=9 thing=4 throughout=14 travels=15 yes=1" },
   ["gossip:1e68edb69bc614f5"] = { text = "advice=4 intrusion=1 pardon=2 seek=5 suggested=7 your=3" },

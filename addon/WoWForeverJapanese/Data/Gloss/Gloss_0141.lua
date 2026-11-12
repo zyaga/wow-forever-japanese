@@ -74,6 +74,7 @@ WFJ.Data.add("gloss", {
   [141073] = "さあ\tさあ\there (you go)",
   [141074] = "さん\tさん\t(polite suffix for a name)",
   [141077] = "たまもの\tたまもの\tthe fruit (result) of",
+  [141079] = "ふわふわ\tふわふわ\tfluffy",
   [141081] = "んです\tんです\t(explanatory) it's that",
   [141082] = "んですか\tんですか\tdid you? (asking)",
   [141083] = "カーニバル\tカーニバル\tcarnival",

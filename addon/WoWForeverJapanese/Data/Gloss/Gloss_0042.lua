@@ -92,7 +92,6 @@ WFJ.Data.add("gloss", {
   [42090] = "会える\tあえる\tto see (you) (can meet)",
   [42091] = "会える\tあえる\twould never see",
   [42092] = "会える\tあえる\tyou will find (can meet)",
-  [42093] = "会ってくる\tあってくる\thave been to see",
   [42094] = "会合\tかいごう\tconference (meeting)",
   [42095] = "会合\tかいごう\tmeeting",
   [42096] = "会合\tかいごう\tmeetings",

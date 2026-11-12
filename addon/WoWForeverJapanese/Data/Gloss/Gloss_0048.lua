@@ -857,7 +857,6 @@ WFJ.Data.add("gloss", {
   [48856] = "出す\tだす\tfed (served)",
   [48857] = "出す\tだす\tfree (let out) me",
   [48858] = "出す\tだす\tget (me) out",
-  [48859] = "出す\tだす\tget (put) out",
   [48860] = "出す\tだす\tget (us) out (if you)",
   [48861] = "出す\tだす\tget me out",
   [48862] = "出す\tだす\tget out",

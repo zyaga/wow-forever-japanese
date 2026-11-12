@@ -16,6 +16,7 @@ WFJ.Data.add("english", {
   ["gossip:ac42f9ab3d424042"] = { text = "tell=2" },
   ["gossip:ac45802536c66428"] = { text = "all=5 collections=19 completed=6 finished=20 finishes=20 gathering=3 hard=17 it=22 materials=13 materiel=14 molding=15 our=10 preserved=9 pride=1 products=7 professionals=11 shipped=23 soon=21 stored=8 tasks=4 those=12 work=18" },
   ["gossip:ac46be328eb0b910"] = { text = "excel=3 further=8 he=12 high=13 inspired=6 instruction=16 knowledge=9 regard=14 speak=11 talents=2 truly=5 you=4 your=1" },
+  ["gossip:ac477fdb80e1b159"] = { text = "about=2 family=1 more=3 tell=4" },
   ["gossip:ac4aea9e30a65df2"] = { text = "elongates=6 neck=5 ram=1 towards=4 you=3" },
   ["gossip:ac4ba00ab0e6f25b"] = { text = "near=1 time=2" },
   ["gossip:ac51bc16096c47d1"] = { text = "end=3 go=1 next=4 west=2" },
