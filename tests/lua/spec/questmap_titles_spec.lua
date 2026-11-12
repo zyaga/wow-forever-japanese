@@ -20,7 +20,8 @@ local WRAPPERS = {
   IGNORED_QUEST_DISPLAY = { "|cff000000%s (ignored)|r", "|cff000000%s (無視)|r" },
 }
 
-local TITLES = { [5] = { ja = "狼の毛皮", status = "." }, [9] = { ja = "失われた書物", status = "." } }
+local TITLES = { [5] = { ja = "狼の毛皮", status = "." }, [9] = { ja = "失われた書物", status = "." },
+  [11] = { ja = "巨鳥Mazzranache", status = "." } }
 local SURFACE = "gossip"
 
 describe("UI/QuestMap: quest-row titles and objective lines", function()
@@ -89,6 +90,16 @@ describe("UI/QuestMap: quest-row titles and objective lines", function()
       local writes = fs.calls.addonSetText
       assert.are.equal(1, QM.showTitle(SURFACE, 5, fs, nil, "Wolf Pelts"))
       assert.are.equal(writes, fs.calls.addonSetText)
+    end)
+
+    it("a Japanese title that ends with its English name still gets the Japanese words", function()
+      local fs = Stub.fontString(trivial("Mazzranache"))
+      assert.are.equal(1, QM.showTitle(SURFACE, 11, fs, nil, "Mazzranache"))
+      assert.are.equal("|cff000000巨鳥Mazzranache (低レベル)|r", fs:GetText())
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      assert.are.equal(trivial("Mazzranache"), fs:GetText())
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      assert.are.equal("|cff000000巨鳥Mazzranache (低レベル)|r", fs:GetText())
     end)
 
     it("an ignored row the same way; a wrapper with no Japanese keeps its English words", function()

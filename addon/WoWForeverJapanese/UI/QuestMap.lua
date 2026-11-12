@@ -444,10 +444,12 @@ local function decorated(fs, prefix, suffix, jaSuffix, en)
       return text
     end
     function a.SetText(_, text)
-      -- the Japanese suffix goes around a Japanese title only: a text that ends with the English title (the title
-      -- alone, or the missing marker in front of it) keeps the client's own wording
+      -- the Japanese suffix goes around a Japanese title only: the English title, alone or after the missing
+      -- marker (which ends "|r " before a title: UI/Render inlineMarker), keeps the client's own wording. A Japanese
+      -- title may itself end with the English name, so the end of the text alone does not tell
       local title = a.en
-      local english = type(title) == "string" and type(text) == "string" and text:sub(-#title) == title
+      local english = type(title) == "string" and type(text) == "string"
+        and (text == title or text:sub(-(#title + 3)) == "|r " .. title)
       local x = (a.jaSuffix and not english) and a.jaSuffix or a.suffix
       fs:SetText(a.prefix .. (text or "") .. x)
     end
