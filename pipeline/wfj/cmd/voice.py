@@ -3,7 +3,7 @@ docs/operations/voice.md). This module builds who speaks each line; the casting 
 the file verbs (cast, plan, generate, status) in `voice_make`, the shipping verbs (pack, release) in
 `voice_ship`.
 
-  speakers --vmangos FILE --commit SHA [--scope all] [--wdb questcache.wdb]
+  speakers --vmangos FILE --commit SHA [--scope all] [--wdb questcache.wdb] [--spoken corpus.json.gz]
       Writes data/voice/speakers.jsonl (pack key → its main speaker, a creature id or narrator, and the
       `others` who say it too) for the scope, from the VMaNGOS world database, the creature ids the collector
       recorded with gossip English (data/english/gossip `npcs`, which win) and, with --wdb, the quest cache's
@@ -23,7 +23,7 @@ from typing import Any
 
 from wfj.core import voice
 from wfj.emit.lua_writer import shipped
-from wfj.io import forever_vo, vmangos, wdb
+from wfj.io import forever_vo, spoken, vmangos, wdb
 from wfj.io.jsonl_store import Store, dumps
 from wfj.paths import data_root
 
@@ -70,14 +70,33 @@ def _keep_date(rows: list[dict[str, Any]], old: list[dict[str, Any]], id_field: 
     return out
 
 
+def _follow_spoken(
+    speakers: dict[str, int | str], others: dict[str, list[int]], sources: dict[str, str], corpus: Path,
+    commit: str,
+) -> None:
+    """Gives each quest line the creature Spoken names for it, where that is another speaker than the one
+    it has, and records Spoken as the line's source."""
+    named = spoken.read_quest_speakers(corpus)
+    for key, sp in speakers.items():
+        q, f = key.split("-", 1)
+        who = named.get((int(q), f))
+        if who is not None and sp != who:
+            speakers[key] = who
+            sources[key] = f"spoken@{commit[:7]}"
+            if who in others.get(key, ()):
+                others[key] = [c for c in others[key] if c != who]
+
+
 def build_tables(
     root: Path, db: Path, commit: str, scope: str, today: str, wdb_path: Path | None = None,
-    captures: tuple[Path, str] | None = None,
+    captures: tuple[Path, str] | None = None, spoken_corpus: tuple[Path, str] | None = None,
 ) -> tuple[list[dict[str, Any]], dict[str, list[str]]]:
     """(speakers rows, report) for the scope. A speakers row names the line's main speaker and,
     when several creatures say it, the `others` (each may be cast to a voice of its own). With `wdb_path`
     (the pinned quest cache) a quest's conditional descriptions, keyed by their English (ADR-054), are read
-    by the giver the cache names, else by the quest's starter."""
+    by the giver the cache names, else by the quest's starter. With `spoken_corpus` (Spoken's line corpus and
+    its commit) a quest line Spoken gives to one creature is spoken by that creature, whatever the other
+    sources say: the two voices of a line a player hears with both addons are then the same NPC's."""
     cfg = voice.SCOPES[scope]
     whole = cfg["quests"] is None
     src = f"vmangos@{commit}"
@@ -103,6 +122,9 @@ def build_tables(
             if sp == voice.NARRATOR and who is not None:
                 q_speakers[key] = who
                 captured_src[key] = f"forever-vo@{captures[1]}"
+        q_problems = [p for p in q_problems if p.split(":", 1)[0] not in captured_src]
+    if spoken_corpus is not None:
+        _follow_spoken(q_speakers, others, captured_src, *spoken_corpus)
         q_problems = [p for p in q_problems if p.split(":", 1)[0] not in captured_src]
     creatures = {c for q in quests for c in (*starters.get(q, ()), *enders.get(q, ()))}
     creatures |= {s for s in q_speakers.values() if isinstance(s, int)}
@@ -201,6 +223,7 @@ def run_speakers(a: argparse.Namespace) -> int:
     speakers, report = build_tables(
         root, Path(a.vmangos), a.commit, a.scope, today, Path(a.wdb) if a.wdb else None,
         (Path(a.forever_vo), a.forever_vo_commit) if a.forever_vo else None,
+        (Path(a.spoken), a.spoken_commit) if a.spoken else None,
     )
     d = voice_dir(root)
     speakers = _keep_date(speakers, read_rows(d / "speakers.jsonl"), "key")
@@ -261,6 +284,8 @@ def run(argv: Sequence[str]) -> int:
     sp.add_argument("--wdb", help="the pinned quest cache, for conditional descriptions")
     sp.add_argument("--forever-vo", help="forever-vo, pinned: who speaks quests the database lacks")
     sp.add_argument("--forever-vo-commit", default="")
+    sp.add_argument("--spoken", help="Spoken's corpus.json.gz: the creature it gives a quest line speaks it")
+    sp.add_argument("--spoken-commit", default="")
     a = p.parse_args(list(argv))
     try:
         return run_speakers(a)

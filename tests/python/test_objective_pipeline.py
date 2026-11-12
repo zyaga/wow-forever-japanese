@@ -91,7 +91,12 @@ def test_an_area_line_is_checked_as_prose_against_its_own_english(tmp_path):
 def test_every_area_text_is_drafted_or_listed_as_a_name(root):
     # the area twin of the objective partition: a name-only area text is listed, never drafted
     english = {ln["id"]: ln["en"] for ln in Store(root / "data", english=True).load("area")}
-    drafted = {ln["id"] for ln in Store(root / "data").load("area")}
+    # an area line whose English a later build serves as objective text instead keeps its Japanese in data/ and
+    # ships nothing (`no_english_id`); it is not part of the partition
+    drafted = {
+        ln["id"] for ln in Store(root / "data").load("area")
+        if ln["id"] in english or "no_english_id" not in ln["reasons"]
+    }
     names = objective_names(root, AREA_NAMES)
     assert names, "pipeline/area_names.txt lists the name-only area texts"
     assert not drafted & set(names), "an area text is either drafted or a name, never both"
