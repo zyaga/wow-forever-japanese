@@ -299,3 +299,89 @@ def test_the_check_holds_a_name_to_the_spelling_of_its_words(store):
     save_words(store, words)
     cmd.respell(store, TODAY, False)
     assert cmd.respell_problems(load_lines(store), load_words(store)) == []
+
+
+POSS = {
+    "light": "ライト",
+    "hope": "ホープ",
+    "marduk": "マルドゥク",
+    "joseph": "ジョセフ",
+    "bishop": "ビショップ",
+    "bingles": "ビングルズ",
+    "marshal": "マーシャル",
+    "sage": "セージ",
+    "witch": "ウィッチ",
+    "fish": "フィッシュ",
+    "death": "デス",
+    "novice": "ノービス",
+    "door": "ドア",
+    "blade": "ブレード",
+}
+
+
+@pytest.mark.parametrize(
+    ("en", "ja", "reading"),
+    [
+        ("Light's Hope", "ライツ・ホープ", "らいつ・ほーぷ"),
+        ("Light’s Hope", "ライツ・ホープ", "らいつ・ほーぷ"),
+        ("Marduk's Blade", "マルドゥクス・ブレード", "まるどぅくす・ぶれーど"),
+        ("Joseph's Door", "ジョセフス・ドア", "じょせふす・どあ"),
+        ("Bishop's Blade", "ビショップス・ブレード", "びしょっぷす・ぶれーど"),
+        ("Bingles's Blade", "ビングルゼズ・ブレード", "びんぐるぜず・ぶれーど"),
+        ("Marshal's Blade", "マーシャルズ・ブレード", "まーしゃるず・ぶれーど"),
+        ("Sage's Blade", "セージズ・ブレード", "せーじず・ぶれーど"),
+        ("Witch's Blade", "ウィッチズ・ブレード", "うぃっちず・ぶれーど"),
+        ("Fish's Blade", "フィッシュズ・ブレード", "ふぃっしゅず・ぶれーど"),
+        ("Blade of Marduk's", "ブレード・オブ・マルドゥクス", "ぶれーど・おぶ・まるどぅくす"),
+    ],
+)
+def test_a_possessive_is_written_by_the_sound_the_word_ends_in(en, ja, reading):
+    assert respell.assemble(en, {**SPELL, **POSS}.get) == (ja, reading, [])
+
+
+def test_a_word_ending_in_su_takes_its_possessive_from_its_own_decision():
+    decided = {"death": "デスズ", "novice": "ノービシズ"}
+    assert respell.assemble("Death's Door", POSS.get, decided.get) == ("デスズ・ドア", "ですず・どあ", [])
+    assert respell.assemble("Novice's Blade", POSS.get, decided.get)[0] == "ノービシズ・ブレード"
+    assert respell.assemble("DEATH’s Door", POSS.get, decided.get)[0] == "デスズ・ドア"
+
+
+def test_a_word_ending_in_su_with_no_decision_is_reported_and_nothing_is_spelled():
+    assert respell.assemble("Death's Door", POSS.get) == (None, None, ["Death's"])
+    assert respell.assemble("Death's Door", POSS.get, {}.get) == (None, None, ["Death's"])
+    assert respell.assemble("Death Door", POSS.get) == ("デス・ドア", "です・どあ", [])  # no possessive: nothing owed
+
+
+def test_a_decision_stands_for_any_word_whatever_it_ends_in():
+    assert respell.assemble("Light's Hope", POSS.get, {"light": "ライトス"}.get)[0] == "ライトス・ホープ"
+
+
+def test_the_check_reports_a_possessive_nobody_decided_and_the_round_stores_the_decision(store, tmp_path):
+    new = names.new_line("Death's Door", TODAY)
+    new["ids"] = {"item": [9]}
+    save_lines(store, [*load_lines(store), names.ordered(new)])
+    save_words(
+        store,
+        [*load_words(store), _word("black", "ブラック"), _word("gloves", "グローブ"), _word("Death", "デス"), _word("door", "ドア")],
+    )
+    cmd.respell(store, TODAY, False)
+    assert {ln["en"]: ln["status"] for ln in load_lines(store)}["Death's Door"] == "missing"
+    out = tmp_path / "out"
+    assert cmd.export_respell(store, out, 100) == 1
+    rows = [json.loads(r) for r in (out / "respell-000.jsonl").read_text(encoding="utf-8").splitlines()]
+    assert [(r["en"], r["count"]) for r in rows] == [("death's", 1)]
+    n, rejected = cmd.import_respell(store, _batch(tmp_path, [{"en": "death's", "ja": "デスズ"}]), "m2", "respell-1", TODAY, False)
+    assert (n, rejected) == (1, [])
+    word = {w["en"]: w for w in load_words(store)}["Death"]
+    assert (word["ja"], word["possessive"]) == ("デス", "デスズ")
+    assert names.word_problems(word) == []
+    cmd.respell(store, TODAY, False)
+    line = {ln["en"]: ln for ln in load_lines(store)}["Death's Door"]
+    assert (line["status"], line["ja"], line["reading"]) == ("trusted", "デスズ・ドア", "ですず・どあ")
+    assert cmd.respell_problems(load_lines(store), load_words(store)) == []
+
+
+def test_a_possessive_decision_for_a_word_nobody_spelled_or_not_in_katakana_is_refused(store, tmp_path):
+    rows = [{"en": "nobody's", "ja": "ノーバディズ"}, {"en": "zin's", "ja": "Zins"}]
+    n, rejected = cmd.import_respell(store, _batch(tmp_path, rows), "m2", "respell-1", TODAY, False)
+    assert n == 0 and len(rejected) == 2

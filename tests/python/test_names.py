@@ -4,6 +4,7 @@ check, and the committed store being complete and current."""
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 import pytest
@@ -204,6 +205,32 @@ def test_every_name_is_the_spelling_of_its_english_words(root):
     data = root / "data"
     problems = cmd.respell_problems(load_lines(data), load_words(data))
     assert problems == [], f"{len(problems)} names are not spelled from their English, e.g. {problems[:5]}"
+
+
+def test_no_possessive_is_a_bare_zu_after_a_sound_that_changes_it(root):
+    """The whole table, read without the assembly: where a name's parts line up with its words, the part of
+    a possessive word is never its spelling with ズ put on when that spelling ends in ト, ク, フ, プ or ズ, and
+    a word ending in ス has a decision of its own."""
+    from wfj.core import respell
+
+    data = root / "data"
+    words = load_words(data)
+    spelled = {w["en"].casefold(): w["ja"] for w in words}
+    decided = {w["en"].casefold() for w in words if "possessive" in w}
+    bad, owed = [], set()
+    for ln in load_lines(data):
+        if ln["status"] != "trusted" or ln["provenance"]["class"] != "machine" or "ズ" not in ln["ja"]:
+            continue
+        owners = {m.casefold() for m in re.findall(r"([^\W\d_](?:[^\W\d_]|['’])*?)['’]s\b", ln["en"])}
+        ws = [w.casefold() for w in respell.words(ln["en"])]
+        parts = [p for p in re.split("[・：（）、！？＋]", ln["ja"]) if p]
+        for w, part in zip(ws, parts, strict=False) if len(ws) == len(parts) else ():
+            ja = spelled.get(w, "")
+            if w in owners and ja and ja[-1] in "トクフプズ" and part == ja + "ズ":
+                bad.append(f"{ln['en']} = {ln['ja']}")
+        owed |= {w for w in owners if spelled.get(w, "").endswith("ス") and w not in decided}
+    assert bad == [], f"{len(bad)} names put a bare ズ on a possessive, e.g. {bad[:5]}"
+    assert owed == set(), f"{len(owed)} words ending in ス have no possessive decision, e.g. {sorted(owed)[:5]}"
 
 
 def test_every_word_has_one_katakana_spelling(root):

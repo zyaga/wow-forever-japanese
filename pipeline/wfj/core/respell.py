@@ -5,11 +5,14 @@ way everywhere.
     "Black Dragonflight" → ブラック・ドラゴンフライト      "Hallow's End" → ハロウズ・エンド
     "The Argent Dawn"    → アージェント・ドーン            "Head Shot II" → ヘッド・ショット2
 
-A leading "The" is left out. A possessive keeps its sound (ズ). A digit run stays as digits and a roman
-numeral becomes one; both are read as Japanese numbers. A single letter is read by its name (2P → 2ピー). A
-tag in brackets is a note to the game's makers and is left out. `&` is アンド, `%` パーセント, `+` is read
-ぷらす; a colon and brackets are kept in their full-width form; a slash and a hyphen only separate words.
-Pure: no disk.
+A leading "The" is left out. A possessive is written by the sound its word ends in: ズ after a vowel or
+a voiced sound, ト becomes ツ (Light's → ライツ), ク, フ and プ take ス (Marduk's → マルドゥクス), ズ becomes
+ゼズ. A word ending in ス is said two ways in English (Death's, Novice's), so it has a possessive of its
+own, decided once for the word; until it has one the name is not spelled. A digit run stays as digits and a
+roman numeral becomes one; both are read as Japanese numbers. A single letter is read by its name (2P →
+2ピー). A tag in brackets is a note to the game's makers and is left out. `&` is アンド, `%` パーセント, `+`
+is read ぷらす; a colon and brackets are kept in their full-width form; a slash and a hyphen only separate
+words. Pure: no disk.
 """
 
 from __future__ import annotations
@@ -31,6 +34,8 @@ _LETTER = dict(zip("abcdefghijklmnopqrstuvwxyz", _LETTER_NAMES.split(), strict=T
 _WORD_FOR = {"&": "アンド", "%": "パーセント"}
 _KEPT = {":": "：", "(": "（", ")": "）", "!": "！", "?": "？", ",": "、"}
 _OPENS = "：（、"  # no dot is written after these, nor before a closing bracket
+_POSSESSIVE = {"ト": "ツ", "ク": "クス", "フ": "フス", "プ": "プス", "ズ": "ゼズ"}  # by the word's last kana
+_OWES_A_DECISION = "ス"
 
 
 def _roman(piece: str) -> int | None:
@@ -90,19 +95,47 @@ def words(en: str) -> list[str]:
     return [t for kind, t in _pieces(en) if kind == "word"]
 
 
-def assemble(en: str, spelling: Callable[[str], str | None]) -> tuple[str | None, str | None, list[str]]:
-    """(Japanese, reading, words with no spelling). `spelling` gives a casefolded word's katakana, or None.
-    The Japanese and the reading are None when a word has no spelling or the name has nothing to spell."""
+def _owned(written: str) -> str:
+    """A spelled word with its possessive on, by the sound it ends in."""
+    return written[:-1] + _POSSESSIVE[written[-1]] if written[-1] in _POSSESSIVE else written + "ズ"
+
+
+def _unspelled(
+    pieces: list[tuple[str, str]], spelling: Callable[[str], str | None], decided: Callable[[str], str | None]
+) -> list[str]:
+    """The words with no spelling, and (with their 's) the possessive words ending in ス nobody decided."""
+    missing = []
+    for i, (kind, text) in enumerate(pieces):
+        if kind != "word":
+            continue
+        written = spelling(text.casefold())
+        owns = pieces[i + 1 : i + 2] == [("poss", "")]
+        if not written:
+            missing.append(text)
+        elif owns and written.endswith(_OWES_A_DECISION) and not decided(text.casefold()):
+            missing.append(text + "'s")
+    return missing
+
+
+def assemble(
+    en: str, spelling: Callable[[str], str | None], possessive: Callable[[str], str | None] | None = None
+) -> tuple[str | None, str | None, list[str]]:
+    """(Japanese, reading, what has no spelling). `spelling` gives a casefolded word's katakana, or None;
+    `possessive` the whole katakana a word was given for its possessive, or None. The Japanese and the
+    reading are None when a word has no spelling, when a possessive word ending in ス has no decision (it is
+    returned with its 's), or when the name has nothing to spell."""
     pieces = _pieces(en)
     several = len([k for k, _ in pieces if k == "word"]) > 1
     if several and pieces[0][0] == "word" and pieces[0][1].casefold() == "the":
         pieces = pieces[1:]
-    missing = [t for kind, t in pieces if kind == "word" and not spelling(t.casefold())]
+    decided = possessive or (lambda _word: None)
+    missing = _unspelled(pieces, spelling, decided)
     if missing:
         return None, None, list(dict.fromkeys(missing))
     ja: list[str] = []
     reading: list[str] = []
     last = ""  # the kind of the piece written before this one
+    owner = ("", "", "")  # the word or letter a possessive follows: its dot, how it is written, its own form
     for kind, text in pieces:
         if kind in ("word", "letter", "spelled"):
             if kind == "word":
@@ -115,9 +148,12 @@ def assemble(en: str, spelling: Callable[[str], str | None]) -> tuple[str | None
                 dot = ""
             ja.append(dot + written)
             reading.append(dot + names.hiragana(written))
+            owner = (dot, written, (decided(text.casefold()) or "") if kind == "word" else written + "ズ")
         elif kind == "poss":
-            ja.append("ズ")
-            reading.append("ず")
+            dot, written, own = owner
+            owned = own or _owned(written)
+            ja[-1] = dot + owned
+            reading[-1] = dot + names.hiragana(owned)
         elif kind == "number":
             dot = "・" if last == "number" else ""  # two numbers side by side are two numbers, not one
             ja.append(dot + text)
