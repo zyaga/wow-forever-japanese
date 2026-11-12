@@ -599,6 +599,7 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       tip:ProcessTooltipData(item)
       assert.are.equal("Use: Returns you to Darnassus. Speak to an Innkeeper in a different place to change your"
         .. " home location.", tip:texts()[2])
+      assert.are.same({ false, false, false }, ours(tip))
       Stub.keys.alt = false
       WFJ.Modifier.refresh()
       tip:ProcessTooltipData({ isSpell = true, id = 6948, lines = { { leftText = "Hearth" },
@@ -633,12 +634,27 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
         { leftText = "Use: Returns you home." } } })
       assert.are.equal("使用：Hearthstoneの場所に戻ります。", pool[2]:GetText())
       assert.are.equal(WFJ.Font.PATH, (pool[2]:GetFont()))
+      -- the Japanese of a data pass is ours only during that pass: the same text written right after it is not
+      tip:AddLeftLine("使用：Hearthstoneの場所に戻ります。")
+      assert.are_not.equal(WFJ.Font.PATH, (pool[3]:GetFont()))
       -- the same line, next for an item with no Japanese: Dialogue UI's face again
       tip:ProcessTooltipData({ isItem = true, id = 8000, lines = { { leftText = "Rock" },
         { leftText = "Use: Throw it." } } })
       assert.are.equal("Use: Throw it.", pool[2]:GetText())
       assert.are_not.equal(WFJ.Font.PATH, (pool[2]:GetFont()))
-      -- the Japanese of a data pass is ours only during that pass
+      -- Dialogue UI's own error inside a pass is raised again, and the pass's Japanese is forgotten all the same
+      local fail = true
+      local add = tip.AddLeftLine
+      function tip:AddLeftLine(text, ...)
+        local fs = add(self, text, ...)
+        if fail and self.numLines == 2 then error("Dialogue UI's own error") end
+        return fs
+      end
+      assert.has_error(function()
+        tip:ProcessTooltipData({ isItem = true, id = 6948, lines = { { leftText = "Hearthstone" },
+          { leftText = "Use: Returns you home." } } })
+      end)
+      fail = false
       tip:AddLeftLine("使用：Hearthstoneの場所に戻ります。")
       assert.are_not.equal(WFJ.Font.PATH, (pool[3]:GetFont()))
     end)

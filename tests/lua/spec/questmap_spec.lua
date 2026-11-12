@@ -120,19 +120,28 @@ describe("UI/QuestMap: the camelot quest log", function()
 
     it("a failed quest keeps its Japanese title inside the failed wording; any other decoration stays English",
     function()
-      _G.QUEST_TITLE_FORMAT_FAILED = "%s - |cffff2020(Failed)|r" -- the client's global, as the stub writes it
-      finally(function() _G.QUEST_TITLE_FORMAT_FAILED = nil end)
+      -- the client's two strings (GlobalStrings: QUEST_TITLE_FORMAT_FAILED, FAILED) and the dictionary's FAILED
+      local lookup = WFJ.Lookup
+      _G.QUEST_TITLE_FORMAT_FAILED, _G.FAILED = "%s - (Failed)", "Failed"
+      WFJ.Lookup = { get = function(area, key)
+        if area == "ui" and key == "FAILED" then return { ja = "失敗" } end
+      end }
+      finally(function() _G.QUEST_TITLE_FORMAT_FAILED, _G.FAILED, WFJ.Lookup = nil, nil, lookup end)
       Q.quests[5].failed = true
       Q.showDetails(5)
-      assert.are.equal("狼の毛皮 - |cffff2020(Failed)|r", QuestInfoTitleHeader:GetText())
+      assert.are.equal("狼の毛皮 - (失敗)", QuestInfoTitleHeader:GetText())
       assert.is_table(SS.get(QM.INFO, "title"))
       assert.are.equal("森の狼が増えている。", QuestInfoDescriptionText:GetText())
       Stub.keys.alt = true
       WFJ.Modifier.refresh()
-      assert.are.equal("Wolf Pelts - |cffff2020(Failed)|r", QuestInfoTitleHeader:GetText())
+      assert.are.equal("Wolf Pelts - (Failed)", QuestInfoTitleHeader:GetText())
       Stub.keys.alt = false
       WFJ.Modifier.refresh()
-      assert.are.equal("狼の毛皮 - |cffff2020(Failed)|r", QuestInfoTitleHeader:GetText())
+      assert.are.equal("狼の毛皮 - (失敗)", QuestInfoTitleHeader:GetText())
+      -- no Japanese for the word: the wording as the client wrote it around the Japanese title
+      WFJ.Lookup = { get = function() return nil end }
+      Q.showDetails(5)
+      assert.are.equal("狼の毛皮 - (Failed)", QuestInfoTitleHeader:GetText())
       Q.quests[5].failed, Q.quests[5].decorated = nil, true
       Q.showDetails(5)
       assert.is_truthy(QuestInfoTitleHeader:GetText():find("Wolf Pelts", 1, true))
@@ -474,7 +483,7 @@ describe("UI/QuestMap: the camelot quest log", function()
       assert.are.equal(0, QM.hookTrackers())
     end)
 
-    it("the level prefix reader takes only [n] or [n+] followed by a space", function()
+    it("the prefix reader takes the client's pieces in its order, each one optional", function()
       assert.are.same({ "[60+] ", "Title" }, { QM.splitPrefix("[60+] Title") })
       assert.are.same({ "[10] ", "Title" }, { QM.splitPrefix("[10] Title") })
       assert.are.same({ "[2] [60+] ", "Title" }, { QM.splitPrefix("[2] [60+] Title") })

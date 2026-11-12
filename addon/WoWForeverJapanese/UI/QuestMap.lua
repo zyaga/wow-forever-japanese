@@ -458,8 +458,9 @@ end
 -- What the client writes in front of a title, in its order, each piece optional: the party members on the quest
 -- "[n] ", camelot's level prefix "[" .. level .. ("+" for elite) .. "] " (on tracker titles too:
 -- QuestUtilsOverrides.GetQuestTitlePrefix, blizzard_framexmlutil/camelot/questutilsoverrides.lua:6–9), the two
--- markers of the client's internal builds, and the quest's id while the displayQuestID setting is on
--- (QuestLogQuests_GetTitle, blizzard_uipanels_game/mainline/questmapframe.lua:1610–1639). With `en` the read stops
+-- markers it writes only while its displayInternalOnlyStatus / showReadyToRecord settings are on, and the quest's
+-- id while displayQuestID is on (QuestLogQuests_GetTitle, blizzard_uipanels_game/mainline/questmapframe.lua:1610–1639,
+-- the settings read at :2082–2084). With `en` the read stops
 -- where the rest starts with it, so a title that itself starts like a piece is kept whole. → the prefix and the
 -- rest, or nil
 local PREFIX_PIECES = { "^%[%d+%] ", "^%[%d+%+?%] ", "^<Not Ready for Translation> ", "^%(Internal only%) ",
@@ -544,12 +545,22 @@ end
 QuestMap.decoration = decoration
 
 -- The details title of a failed quest: the client writes QUEST_TITLE_FORMAT_FAILED around the title in the quest
--- log's details only (QuestInfo_ShowTitle, blizzard_uipanels_game/mainline/questinfo.lua:152–157). → the title
--- widget seen through that wording, or nil when the text is not the wording around `en`
+-- log's details only (QuestInfo_ShowTitle, blizzard_uipanels_game/mainline/questinfo.lua:152–157). The wording has
+-- one word, the client's FAILED string, so around a Japanese title that word is the dictionary's Japanese for
+-- FAILED, as a tracker title's tag is built from its word (questTag). → the title widget seen through that
+-- wording, or nil when the text is not the wording around `en`
 local FAILED_WRAPPER = { "QUEST_TITLE_FORMAT_FAILED" }
 failedTitle = function(fs, en)
   local head, tail, jaTail = wrapper(fs:GetText(), en, FAILED_WRAPPER)
   if not head then return nil end
+  if not jaTail then
+    local word, entry = Compat.resolve("FAILED"), WFJ.Lookup and WFJ.Lookup.get("ui", "FAILED")
+    local at, stop
+    if type(word) == "string" and word ~= "" then at, stop = tail:find(word, 1, true) end
+    if at and type(entry) == "table" and type(entry.ja) == "string" and entry.ja ~= "" then
+      jaTail = tail:sub(1, at - 1) .. entry.ja .. tail:sub(stop + 1)
+    end
+  end
   return decorated(fs, head, tail, jaTail, en)
 end
 
