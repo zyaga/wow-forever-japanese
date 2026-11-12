@@ -396,6 +396,51 @@ A player's fix report is a small batch of its own: `make report-intake ISSUE=N` 
 What each Forever build changed in the shipped text, measured by `make import-english` and `make check` against the
 previous build, with what was drafted for it. The round's batches follow the steps above.
 
+### 1.60.1.70862 → 1.60.1.70888, with twenty players' sends (2026-11-12)
+
+Read from the caches the client saved at its exit on 2026-11-12, after the WFJScan sweep and its slow recheck and a
+play session. Quest cache: 5,239 records; 1,712 quest ids it holds that 70862's cache did not, and none that 70862's
+held and this one does not answer. One record (quest 96076) carries 96 after its string lengths where every other
+carries 32; its strings still end on the payload's last byte, so the layout pinned for 70888 takes both values and
+refuses any other. Client tables: 63, with the hotfix cache of that exit. The wago.tools cross-check (product
+`wowf`): no value differs; the rows wago has and ours lacks are in sections the client cannot decrypt yet (ItemSparse
+26, Spell and SpellName 357, ItemEffect 24, QuestV2 12, GlobalStrings 1, SpellItemEnchantment 1); QuestV2's highest id
+99,670. The UI extract (fresh community listfile, every `interface/addons` path): 4,496 files, 14 differ from 70862.
+The group invite now picks its line with `GetPartyInviteString` and has a string of its own for a cross-shard
+invite, `INVITATION_XSHARD`; the popup takes it like the cross-realm one, and `INVITATION` is the one-line text
+again. The other changes (the legacy tree's reset button, nameplate crowd-control anchors, the target frame's battle
+pet check, the emptied new-settings list, character select) touch nothing the addon reads. The served-text
+inventory: no column added or gone, row counts only. `make family-rows`: 32 new BroadcastText rows, all NPC lines,
+given `gossip`.
+
+**The import order.** The full `make import-english` put Classic Era's English back on 1,086 lines whose Forever
+text an earlier hotfix cache carried. Forever's own import alone (`make import-client CLIENT=forever`, then `make
+import-served`) leaves the quests the new build serves again without their progress and turn-in English, because the
+shared sources are not read. The order that gives both is `make import-shared-english` (pfQuest, VMaNGOS,
+forever-vo), then `make import-client CLIENT=forever`, then `make import-served`: no line fell back to Classic Era,
+and 173 progress and turn-in lines that had been checked against their quest's description are checked against
+their own English again. Their Japanese was drafted from that same English, so they were re-verified unchanged.
+
+The English Collector: the maintainer's file (14 gossip lines, 14 quest texts, 1 item) and twenty players' sends,
+issues #88, #90, #92 to #100, #102 to #105, #108, #113, #118, #119 and #120, read with `make collector-intake
+ISSUE=N`: 72 gossip lines, 45 quest texts and 3 items added, 15 quest texts replaced, nothing rejected. Six quest
+texts and four gossip lines that a send had recorded with the player's race, class or name written out ("skyborne"
+for `$r`, a name inside `$nama`) keep the token wording; the four gossip lines have their `$R` form in the store
+already and were dropped.
+
+| Type | Reworded (shipped line now stale) | English the build no longer serves (stays stale, listed) | Drafted |
+|---|---|---|---|
+| quest | 30 machine lines redrafted (3 titles, 8 objectives, 11 descriptions, 2 progress, 6 turn-ins); 173 re-verified unchanged (above); 27 hand-written lines reviewed (`apply_review`): 24 turn-ins and 1 title kept, 3 turn-ins corrected (6395, 7898, 7939); quest 4970's hand-written description, which started shipping and was garbled, ruled for a redraft | none | 573 titles, 442 objectives, 446 descriptions, 28 progress, 31 turn-ins; word lists for all, and for 414 lines of quests that started shipping |
+| gossip | 0 | none | 96, with word lists |
+| item | 9 machine lines redrafted (the pet items' tooltip is now one line; the old accepted wording ruled `reject`); 37 hand-written items reviewed: 3 kept, 34 corrected | 36 hand-written items whose description text the build no longer has | 152 descriptions |
+| spell | 12 machine lines redrafted (11 descriptions, 1 aura); 1 corrected line kept | none | 3 descriptions, 2 auras |
+| ui | `INVITATION` re-verified as the one-line text (the two-paragraph variant ruled `reject`) | none | `INVITATION_XSHARD` |
+| objective, area, book | 3 objectives redrafted | none | 134 objectives (43 that are only a name listed in `pipeline/objective_names.txt`), 14 areas; the 11 book pages are images, nothing to translate |
+
+Names: 493 new words spelled in two rounds, and the possessive rule of this round (a possessive follows the sound its
+word ends in; 76 words ending in ス carry their own). Eleven word lists missed a word and were completed so every
+voiced line has its kana line.
+
 ### 1.60.1.70790 → 1.60.1.70862 (2026-11-08)
 
 The build the WFJScan sweep and its slow recheck ran on, read from the caches the client saved at its last exit
