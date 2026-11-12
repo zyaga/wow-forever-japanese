@@ -3,19 +3,21 @@
   wfj announce --version X.Y.Z --notes PATH [--media DIR] [--dry-run]
       Post version X.Y.Z: one message with one line of content, the folder's clips and pictures as
       attachments (Discord shows them as tiles at the top of the post) and the English card in the
-      addon's gold with the version, the notes at PATH as Discord markdown and the CurseForge link; then,
-      when DIR holds `ja.md`, a second message with the Japanese card and that text. No DIR, or an empty
-      one: the cards alone.
+      addon's gold with the version, the short summary in DIR's `en.md` and a link to the full notes
+      (without `en.md`: the notes at PATH as Discord markdown); then, when DIR holds `ja.md`, a second
+      message with the Japanese card, that summary and the same link. No DIR, or an empty one: the cards
+      alone.
   wfj announce --preview [--media DIR] [--dry-run]
       The post the next release would make: the version by the release rule (`next` while `## Unreleased`
-      is empty), the notes from `## Unreleased`, the media and `ja.md` from DIR; its content starts with a
-      line saying it is a preview.
+      is empty), the notes from `## Unreleased`, the media, `en.md` and `ja.md` from DIR; its content
+      starts with a line saying it is a preview, and its link goes to the changelog.
 
 The webhook URL is read from DISCORD_WEBHOOK_URL and nowhere else; it is never printed. --dry-run prints
-the message and the file list and sends nothing. Limits are Discord's: at most 10 files of 20 MiB and
-25 MiB together, each a type Discord shows inline, a card of at most 4096
-characters (longer notes are cut at an entry and end with a link to the full notes; a longer `ja.md` is
-refused), and at most 6000 characters of cards in one message, which is why each card has its own.
+the messages and the file list and sends nothing. Limits are Discord's: at most 10 files of 20 MiB and
+25 MiB together, each a type Discord shows inline, a card of at most 4096 characters (longer notes are
+cut at an entry and end with a link to the full notes), and at most 6000 characters of cards in one
+message, which is why each card has its own. A summary is at most 1500 characters (a longer `en.md` or
+`ja.md` is refused: the post is the highlights).
 """
 
 from __future__ import annotations
@@ -35,12 +37,15 @@ from wfj.io import discord
 NAME = "WoW Forever Japanese"
 CURSEFORGE_FILES = "https://www.curseforge.com/wow/addons/wow-forever-japanese/files"
 RELEASE_URL = "https://github.com/zyaga/wow-forever-japanese/releases/tag/v{version}"
+CHANGELOG_URL = "https://github.com/zyaga/wow-forever-japanese/blob/main/CHANGELOG.md"
 GOLD = 0xE8C77E  # the gold of the CurseForge text and the gallery cards
-JA_FILE = "ja.md"  # the Japanese card's text, beside the media
+EN_FILE = "en.md"  # the English card's summary, beside the media
+JA_FILE = "ja.md"  # the Japanese card's summary, beside the media
 MAX_FILES = 10
 MAX_FILE_BYTES = 20 * 1024 * 1024
 MAX_TOTAL_BYTES = 25 * 1024 * 1024  # Discord's limit on one request
 MAX_DESCRIPTION = 4096
+MAX_SUMMARY = 1500  # the post is the highlights; the full notes are a link away
 MAX_MESSAGE_CARDS = 6000  # the titles and texts of every card in one message, together
 FILE_NAME = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*$")  # a name that goes into a multipart header as is
 
@@ -51,14 +56,14 @@ class AnnounceError(RuntimeError):
 
 def media_files(folder: Path | None) -> list[Path]:
     """The files of the media folder in name order, checked against Discord's limits: a missing folder is no
-    media; dotfiles and `ja.md` are not media; anything else must be a file (no subfolders) with a plain
-    name, an image or video type Discord shows inline, not empty, at most 20 MiB, at most 10 in all, under
-    25 MiB together."""
+    media; dotfiles and the summaries (`en.md`, `ja.md`) are not media; anything else must be a file (no
+    subfolders) with a plain name, an image or video type Discord shows inline, not empty, at most 20 MiB,
+    at most 10 in all, under 25 MiB together."""
     if folder is None or not folder.is_dir():
         return []
     out: list[Path] = []
     for path in sorted(folder.iterdir(), key=lambda p: p.name):
-        if path.name.startswith(".") or path.name == JA_FILE:
+        if path.name.startswith(".") or path.name in (EN_FILE, JA_FILE):
             continue
         if not path.is_file():
             raise AnnounceError(f"{path.name}: only files go in the media folder, not folders")
@@ -82,17 +87,29 @@ def media_files(folder: Path | None) -> list[Path]:
     return out
 
 
-def japanese(folder: Path | None) -> str | None:
-    """The Japanese card's text, `ja.md` in the media folder: Discord markdown as written, within the card's
-    limit. None when the folder or the file is absent."""
-    if folder is None or not (folder / JA_FILE).is_file():
+def _summary(folder: Path | None, name: str) -> str | None:
+    """A card's summary from the media folder: Discord markdown as written, short. None when the folder or
+    the file is absent."""
+    if folder is None or not (folder / name).is_file():
         return None
-    text = (folder / JA_FILE).read_text(encoding="utf-8").strip()
+    text = (folder / name).read_text(encoding="utf-8").strip()
     if not text:
-        raise AnnounceError(f"{JA_FILE} is empty")
-    if len(text) > MAX_DESCRIPTION:
-        raise AnnounceError(f"{JA_FILE} is {len(text)} characters, over a card's {MAX_DESCRIPTION}")
+        raise AnnounceError(f"{name} is empty")
+    if len(text) > MAX_SUMMARY:
+        raise AnnounceError(
+            f"{name} is {len(text)} characters: the post is a short summary, at most {MAX_SUMMARY}"
+        )
     return text
+
+
+def english(folder: Path | None) -> str | None:
+    """The English card's summary, `en.md` in the media folder."""
+    return _summary(folder, EN_FILE)
+
+
+def japanese(folder: Path | None) -> str | None:
+    """The Japanese card's summary, `ja.md` in the media folder."""
+    return _summary(folder, JA_FILE)
 
 
 def notes_section(text: str) -> Section:
@@ -140,11 +157,17 @@ def description(version: str, section: Section) -> str:
 
 
 def build(
-    version: str, section: Section, files: Sequence[Path], ja: str | None = None, preview: bool = False
+    version: str,
+    section: Section,
+    files: Sequence[Path],
+    ja: str | None = None,
+    preview: bool = False,
+    en: str | None = None,
 ) -> list[dict]:
     """The webhook messages, in order: the content line, the files as attachments (Discord shows them as
     tiles at the top of the post, clips first) and the English card; then, with `ja`, the Japanese card in a
-    message of its own, since two full cards are more than one message may hold."""
+    message of its own, since two full cards are more than one message may hold. A card is its summary and
+    a link to the full notes; with no English summary the English card is the notes themselves."""
     clips = [f for f in files if (discord.content_type(f.name) or "").startswith("video/")]
     pictures = [f for f in files if f not in clips]
     ordered = [*clips, *pictures]
@@ -152,7 +175,9 @@ def build(
     content = f"{title} is out."
     if preview:
         content = "Preview of the next release post. " + content
-    text = description(version, section)
+    # a preview's version has no release page yet
+    notes = CHANGELOG_URL if preview else RELEASE_URL.format(version=version)
+    text = f"{en}\n\nFull notes: {notes}" if en else description(version, section)
     payload: dict = {
         "content": content,
         "embeds": [{"title": title, "url": CURSEFORGE_FILES, "color": GOLD, "description": text}],
@@ -161,7 +186,8 @@ def build(
         payload["attachments"] = [{"id": i, "filename": f.name} for i, f in enumerate(ordered)]
     if not ja:
         return [payload]
-    return [payload, {"embeds": [{"title": f"{title}（日本語）", "color": GOLD, "description": ja}]}]
+    card = {"title": f"{title}（日本語）", "color": GOLD, "description": f"{ja}\n\n全文: {notes}"}
+    return [payload, {"embeds": [card]}]
 
 
 def attached(files: Sequence[Path]) -> list[Path]:
@@ -181,7 +207,7 @@ def run(argv: Sequence[str]) -> int:
     p = argparse.ArgumentParser(prog="wfj announce")
     p.add_argument("--version", help="the released version")
     p.add_argument("--notes", type=Path, help="the version's notes, as wfj release changelog writes them")
-    p.add_argument("--media", type=Path, help="the folder of pictures, clips and ja.md")
+    p.add_argument("--media", type=Path, help="the folder of pictures, clips, en.md and ja.md")
     p.add_argument("--preview", action="store_true", help="the next release's post, from Unreleased")
     p.add_argument("--dry-run", action="store_true", help="print the messages and the files; send nothing")
     a = p.parse_args(argv)
@@ -198,9 +224,12 @@ def run(argv: Sequence[str]) -> int:
             print(f"no media folder at {a.media}: the English card alone")
         files = media_files(a.media)
         ja = japanese(a.media)
+        en = english(a.media)
+        if a.media and a.media.is_dir() and en is None:
+            print(f"no {EN_FILE} in {a.media}: the English card shows the changelog lines")
         if a.media and a.media.is_dir() and ja is None:
             print(f"no {JA_FILE} in {a.media}: the English card alone")
-        messages = build(version, section, files, ja, preview=a.preview)
+        messages = build(version, section, files, ja, preview=a.preview, en=en)
         order = attached(files)
         for f in order:
             print(f"file: {f.name} ({f.stat().st_size} bytes)")

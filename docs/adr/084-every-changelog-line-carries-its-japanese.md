@@ -1,6 +1,6 @@
 # ADR-084: Every changelog line carries its Japanese, and pictures only for features worth showing
 
-- **Status:** Accepted
+- **Status:** Superseded in part by [ADR-085](085-the-release-post-is-a-short-summary.md): the post is a short summary written for the release, so a changelog line no longer carries its Japanese. The picture rule stands.
 - **Date:** 2026-11-12
 - **Deciders:** the maintainer
 - **Related:** [ADR-046](046-one-action-release.md) (one-action release, the changelog gate) · [ADR-072](072-the-release-announces-itself-in-discord.md) (the Discord post and its media folder) · [Release](../operations/release.md) · [Release media](../releases/README.md)
