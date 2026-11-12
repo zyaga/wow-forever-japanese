@@ -81,7 +81,7 @@ local function wrapAdd(tip, method, translate)
   local add = tip[method]
   if type(add) ~= "function" then return end
   tip[method] = function(self, text, ...)
-    local ja, ours
+    local ja, ours = nil, false
     if WFJ.DialogueUI.active() then
       local ok, t = guarded(translate, self, text)
       ja = ok and t or nil
@@ -89,7 +89,7 @@ local function wrapAdd(tip, method, translate)
     end
     local fs = add(self, ja or text, ...)
     if type(fs) == "table" then
-      guarded(WFJ.DialogueUI.face, fs, nil, ours == true)
+      guarded(WFJ.DialogueUI.face, fs, nil, ours)
       -- the tooltip sizes itself again a frame later when told a line's face changed [read: Tooltip_Base.lua, Show]
       if ours then self.fontChanged = true end
     end
