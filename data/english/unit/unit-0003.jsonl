@@ -67,13 +67,21 @@
 {"id": 3650, "field": "name", "en": "Asterion", "hash": "7456020dc061276b", "src": "collector@1.60.1.70862"}
 {"id": 3657, "field": "name", "en": "Sentinel Elissa Starbreeze", "hash": "334a73a5bb7f3b2d", "src": "collector@1.60.1.70862"}
 {"id": 3661, "field": "name", "en": "Balthule Shadowstrike", "hash": "47fdee38a0a0567b", "src": "collector@1.60.1.70862"}
+{"id": 3663, "field": "name", "en": "Delgren the Purifier", "hash": "f210d2f3fe102e5a", "src": "collector@1.60.1.70862"}
 {"id": 3665, "field": "name", "en": "Crane Operator Bigglefuzz", "hash": "53ead96fdd7e0284", "src": "collector@1.60.1.70790"}
 {"id": 3666, "field": "name", "en": "Wizbang Cranktoggle", "hash": "028d60bd8106e88a", "src": "collector@1.60.1.70840"}
 {"id": 3682, "field": "name", "en": "Vrang Wildgore", "hash": "d531cbca1daeeed9", "src": "collector@1.60.1.70862"}
+{"id": 3691, "field": "name", "en": "Raene Wolfrunner", "hash": "4ead0d8a6a58f19a", "src": "collector@1.60.1.70862"}
 {"id": 3692, "field": "name", "en": "Volcor", "hash": "2976581b3cd7617f", "src": "collector@1.60.1.70888"}
 {"id": 3693, "field": "name", "en": "Terenthis", "hash": "a049705089c0adbb", "src": "collector@1.60.1.70862"}
 {"id": 3694, "field": "name", "en": "Sentinel Selarin", "hash": "a69e2fbc863c3e8a", "src": "collector@1.60.1.70862"}
 {"id": 3701, "field": "name", "en": "Tharnariun Treetender", "hash": "02fb38ebfea0dd16", "src": "collector@1.60.1.70840"}
 {"id": 3702, "field": "name", "en": "Alanndarian Nightsong", "hash": "7a8aa096c34d5525", "src": "collector@1.60.1.70862"}
 {"id": 3838, "field": "name", "en": "Vesprystus", "hash": "5872073aa2cdce90", "src": "collector@1.60.1.70840"}
+{"id": 3845, "field": "name", "en": "Shindrell Swiftfire", "hash": "e9bc64e640586125", "src": "collector@1.60.1.70862"}
+{"id": 3847, "field": "name", "en": "Orendil Broadleaf", "hash": "739e143e1cc3dc0f", "src": "collector@1.60.1.70862"}
+{"id": 3891, "field": "name", "en": "Teronis' Corpse", "hash": "6d6981bbf0dd5436", "src": "collector@1.60.1.70862"}
+{"id": 3916, "field": "name", "en": "Shael'dryn", "hash": "4ce70f12f8a810c0", "src": "collector@1.60.1.70862"}
 {"id": 3980, "field": "name", "en": "Raleigh the Devout", "hash": "cfa7a632868eb299", "src": "collector@1.60.1.70862"}
+{"id": 3994, "field": "name", "en": "Keeper Albagorm", "hash": "6a160ba242a4ca3a", "src": "collector@1.60.1.70888"}
+{"id": 3996, "field": "name", "en": "Faldreas Goeth'Shael", "hash": "8ef7ab65c362f76a", "src": "collector@1.60.1.70862"}

@@ -30,6 +30,7 @@
 {"id": "4ab7366eb0cb81fe", "field": "text", "en": "%s siphons the blessing of wisdom's energy and redirects it in the form of an anti-magic pulse.", "hash": "4ab7366eb0cb81fe", "src": "vmangos@13b49dc"}
 {"id": "4abb2ac4dcbe3070", "field": "text", "en": "The statues all move back into their original positions.$B$BThe sequence must be started again now, from the beginning.\n", "hash": "4abb2ac4dcbe3070", "src": "vmangos@13b49dc"}
 {"id": "4ac13ce7d65afb82", "field": "text", "en": "I must build a beacon for this marvelous device!", "hash": "4ac13ce7d65afb82", "src": "vmangos@13b49dc"}
+{"id": "4ac5b61caad86452", "field": "text", "en": "I know these forests as if they were a part of me... But know that there is still much to be learned from them, and much danger still hidden.", "hash": "4ac5b61caad86452", "src": "collector@1.60.1.70862", "npcs": [3691]}
 {"id": "4ac89a0e0aed36d0", "field": "text", "en": "Elortha no Shadra$BGod of Spiders, Mother of Venom, Silk Dancer, Death's Love.", "hash": "4ac89a0e0aed36d0", "src": "vmangos@13b49dc"}
 {"id": "4ad73dc27f118feb", "field": "text", "en": "There are many things lurking out there in the dark and the light is needed now more than ever. If only these poor souls could see that just because our world has changed doesn't mean we have to be the monsters that the living think we are.", "hash": "4ad73dc27f118feb", "src": "collector@1.60.1.70862", "npcs": [246393]}
 {"id": "4ae8cf4db434637f", "field": "text", "en": "Times like these get me all sentimental...", "hash": "4ae8cf4db434637f", "src": "vmangos@13b49dc"}

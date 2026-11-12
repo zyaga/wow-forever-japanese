@@ -10,6 +10,7 @@
 {"id": "b161eae0b34681f5", "field": "text", "en": "This isn't a game you toy with youngling! Go, speak with Snarl outside. He may be a serpent in my lair but he does know his way around an anvil.", "hash": "b161eae0b34681f5", "src": "vmangos@13b49dc"}
 {"id": "b163b1d073cdd328", "field": "text", "en": "Wow! We did it... not sure why we thought we needed the likes of you. Nevertheless, speak with Smeed Scrablescrew; he will give you your earnings!\n", "hash": "b163b1d073cdd328", "src": "vmangos@13b49dc"}
 {"id": "b16f03407e984eca", "field": "text", "en": "This is quite an adventure!", "hash": "b16f03407e984eca", "src": "vmangos@13b49dc"}
+{"id": "b16f70722c782340", "field": "text", "en": "Good day, $C.", "hash": "b16f70722c782340", "src": "collector@1.60.1.70862", "npcs": [3663]}
 {"id": "b176e8000defed10", "field": "text", "en": "Our units are upgraded to Seasoned, but I don't have enough supplies to upgrade them to Veteran.", "hash": "b176e8000defed10", "src": "vmangos@13b49dc"}
 {"id": "b17da34ef901b5a6", "field": "text", "en": "So... you want to be a tailor? Very well, we'll see if you have what it takes.", "hash": "b17da34ef901b5a6", "src": "vmangos@13b49dc"}
 {"id": "b17df2bb69231cd9", "field": "text", "en": "%s devours all nearby zombies!", "hash": "b17df2bb69231cd9", "src": "vmangos@13b49dc"}
