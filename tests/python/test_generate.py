@@ -212,14 +212,14 @@ def test_area_rows_ship_as_text_h1_status_in_their_own_shards_and_toc_slot(root,
 
 
 def test_the_committed_area_english_is_the_former_quest_area(root):
-    """The 233 quest-cache area lines live under data/english/area (field text, keyed by quest id);
+    """The 245 quest-cache area lines live under data/english/area (field text, keyed by quest id);
     no quest `area` line remains."""
     from wfj.core.hashing import key
     from wfj.core.normalize import normalize_v1
 
     english = Store(root / "data", english=True)
     area = english.load("area")
-    assert len(area) == 233 and len({ln["hash"] for ln in area}) == 218
+    assert len(area) == 245 and len({ln["hash"] for ln in area}) == 229
     assert {ln["field"] for ln in area} == {"text"}
     # a quest the latest scan did not answer keeps the English of the Forever build that last served it (English is
     # additive, ADR-050), so older Forever quest builds may stay next to the current one

@@ -883,4 +883,7 @@ WFJ.Data.add("gloss", {
   [151880] = "買い求める\tかいもとめる\tis in the market for",
   [151881] = "閉じ込める\tとじこめる\tbeing shut in",
   [151882] = "間違う\tまちがう\tam wrong",
+  [151883] = "すぐ\tすぐ\tright; just",
+  [151884] = "一ガロン\tいちがろん\tone gallon",
+  [151885] = "渡す\tわたす\tplease hand over",
 })
