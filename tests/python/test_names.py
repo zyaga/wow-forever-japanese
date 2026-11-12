@@ -209,15 +209,13 @@ def test_every_name_is_the_spelling_of_its_english_words(root):
 
 def test_no_possessive_is_a_bare_zu_after_a_sound_that_changes_it(root):
     """The whole table, read without the assembly: where a name's parts line up with its words, the part of
-    a possessive word is never its spelling with ズ put on when that spelling ends in ト, ク, フ, プ or ズ, and
-    a word ending in ス has a decision of its own."""
+    a possessive word is never its spelling with ズ put on when that spelling ends in ト, ク, フ, プ or ズ. (A
+    word ending in ス with no possessive of its own is a name with no spelling, which the test above reports.)"""
     from wfj.core import respell
 
     data = root / "data"
-    words = load_words(data)
-    spelled = {w["en"].casefold(): w["ja"] for w in words}
-    decided = {w["en"].casefold() for w in words if "possessive" in w}
-    bad, owed = [], set()
+    spelled = {w["en"].casefold(): w["ja"] for w in load_words(data)}
+    bad = []
     for ln in load_lines(data):
         if ln["status"] != "trusted" or ln["provenance"]["class"] != "machine" or "ズ" not in ln["ja"]:
             continue
@@ -228,9 +226,7 @@ def test_no_possessive_is_a_bare_zu_after_a_sound_that_changes_it(root):
             ja = spelled.get(w, "")
             if w in owners and ja and ja[-1] in "トクフプズ" and part == ja + "ズ":
                 bad.append(f"{ln['en']} = {ln['ja']}")
-        owed |= {w for w in owners if spelled.get(w, "").endswith("ス") and w not in decided}
     assert bad == [], f"{len(bad)} names put a bare ズ on a possessive, e.g. {bad[:5]}"
-    assert owed == set(), f"{len(owed)} words ending in ス have no possessive decision, e.g. {sorted(owed)[:5]}"
 
 
 def test_every_word_has_one_katakana_spelling(root):

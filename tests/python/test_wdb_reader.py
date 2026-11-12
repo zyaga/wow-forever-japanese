@@ -220,8 +220,8 @@ def test_70888_reads_the_69913_offsets_and_one_more_bit_after_the_string_lengths
     from dataclasses import replace
 
     lay = wdb.layout_for(70888)
-    assert lay.pad_bits_also == (96,)
-    assert replace(lay, build=69913, evidence="", pad_bits_also=()) == replace(wdb.layout_for(69913), evidence="")
+    assert lay.pad_bits == (32, 96) and wdb.FOREVER_LATEST is lay
+    assert replace(lay, build=69913, evidence="", pad_bits=(32,)) == replace(wdb.layout_for(69913), evidence="")
     real = (FOREVER / "questcache.wdb").read_bytes()
     recs = _records(real)
     q, p = next((q, p) for q, p in recs if q == 84399)

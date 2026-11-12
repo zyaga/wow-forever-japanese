@@ -476,12 +476,6 @@ def _spellings(words: Sequence[dict[str, Any]]) -> dict[str, str]:
     return out
 
 
-def _possessives(words: Sequence[dict[str, Any]]) -> dict[str, str]:
-    """{casefolded word: the katakana it was given for its possessive}: the words ending in ス, which English
-    says two ways."""
-    return {w["en"].casefold(): w["possessive"] for w in words if "possessive" in w}
-
-
 def _kept(prov: dict[str, Any]) -> bool:
     """Wording that is never spelled again: a person's own, from a fix report. A name or word taken from
     Hearthstone's cards is spelled from the English like the rest: the voice says what the screen shows."""
@@ -530,14 +524,13 @@ def learn_spellings(root: Path, dry_run: bool) -> tuple[int, list[str]]:
 def export_respell(root: Path, out: Path, size: int) -> int:
     """The words with no katakana spelling that a name is built from (a new name's among them), each once
     in lower case, with how many names carry it and a few of them. A word ending in ス that a name uses as a
-    possessive and nobody decided is listed with its 's (death's): its row is the whole possessive."""
-    words = load_words(root)
-    known, owned = _spellings(words), _possessives(words)
+    possessive is listed with its 's too (death's) until that has a spelling: the whole possessive."""
+    known = _spellings(load_words(root))
     carried: dict[str, list[str]] = defaultdict(list)
     for ln in load_lines(root):
         if ln["status"] == "trusted" and _respelled(ln):
             continue
-        for w in spell.assemble(ln["en"], known.get, owned.get)[2]:
+        for w in spell.assemble(ln["en"], known.get)[2]:
             carried[w.casefold()].append(ln["en"])
     rows = [{"en": w, "count": len(ns), "examples": sorted(ns)[:5]} for w, ns in sorted(carried.items())]
     return write_batches(out, rows, size, "respell")
@@ -549,8 +542,8 @@ def import_respell(  # noqa: PLR0913 - one batch file, its provenance, and the t
     """Takes drafted spellings ({"en", "ja"}): a word's translated Japanese is replaced by its katakana and a
     word with no line gets one. A spelling that is not katakana, or that differs from the katakana a word
     already has, is refused: a word is spelled one way. `replace` (a fix round) lets a row change the
-    katakana a word has, never a word a person wrote. A row whose English ends in 's gives its word the
-    possessive it is said with (death's: デスズ), kept on the word's line."""
+    katakana a word has, never a word a person wrote. A row whose English ends in 's (death's: デスズ) is
+    the possessive of a word ending in ス, a line of its own like any word."""
     prov = draft_provenance(model_id, "names", batch, today)
     words = {w["en"]: w for w in load_words(root)}
     known = _spellings(list(words.values()))
@@ -558,21 +551,7 @@ def import_respell(  # noqa: PLR0913 - one batch file, its provenance, and the t
     written = 0
     for row in read_batch(path):
         en, ja = row.get("en"), row.get("ja")
-        if isinstance(en, str) and en.endswith(("'s", "’s")):  # a word's possessive, not a word
-            same = [k for k in words if k.casefold() == en[:-2].casefold()]
-            if not same or en[:-2].casefold() not in known:
-                rejected.append(f"possessive {en!r}: its word has no spelling yet")
-            elif not isinstance(ja, str) or not names.KATAKANA.match(ja):
-                rejected.append(f"possessive {en!r}: {ja!r} is not katakana")
-            elif any(_kept(words[k]["provenance"]) for k in same):
-                rejected.append(f"possessive {en!r}: its word was written by a person, kept")
-            elif any(words[k].get("possessive") != ja for k in same):
-                for k in same:
-                    w = words[k]
-                    words[k] = {"en": k, "ja": w["ja"], "possessive": ja, "check": w["check"],
-                                "provenance": w["provenance"]}
-                written += 1
-        elif not isinstance(en, str) or not en or " " in en:
+        if not isinstance(en, str) or not en or " " in en:
             rejected.append(f"word {en!r}: not one English word")
         elif not isinstance(ja, str) or not names.KATAKANA.match(ja):
             rejected.append(f"word {en!r}: {ja!r} is not katakana")
@@ -595,12 +574,12 @@ def import_respell(  # noqa: PLR0913 - one batch file, its provenance, and the t
 def respell_problems(lines: Sequence[dict[str, Any]], words: Sequence[dict[str, Any]]) -> list[str]:
     """A name a person did not write is the spelling of its words, and its reading the reading of that: the
     check that keeps a translated name from coming back."""
-    known, owned = _spellings(words), _possessives(words)
+    known = _spellings(words)
     out = []
     for ln in lines:
         if ln["status"] != "trusted" or _respelled(ln):
             continue
-        ja, reading, missing = spell.assemble(ln["en"], known.get, owned.get)
+        ja, reading, missing = spell.assemble(ln["en"], known.get)
         if missing:
             out.append(f"{ln['en']!r}: no spelling for {', '.join(repr(w) for w in missing)}")
         elif ja is not None and (ja, reading) != (ln["ja"], ln["reading"]):
@@ -612,8 +591,7 @@ def respell(root: Path, today: str, dry_run: bool) -> dict[str, int]:
     """Every name a person did not write is written from the spellings of its words (its reading with it):
     a new name with no Japanese yet, and a name that is not that spelling. A name with a word nobody has
     spelled is left as it is and counted; the check reports it until the word is spelled."""
-    words = load_words(root)
-    known, owned = _spellings(words), _possessives(words)
+    known = _spellings(load_words(root))
     lines = load_lines(root)
     counts = {"respelled": 0, "kept": 0, "nothing to spell": 0, "word with no spelling": 0}
     out = []
@@ -622,7 +600,7 @@ def respell(root: Path, today: str, dry_run: bool) -> dict[str, int]:
             counts["kept"] += 1
             out.append(ln)
             continue
-        ja, reading, missing = spell.assemble(ln["en"], known.get, owned.get)
+        ja, reading, missing = spell.assemble(ln["en"], known.get)
         if missing:
             counts["word with no spelling"] += 1
             out.append(ln)

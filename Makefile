@@ -407,13 +407,12 @@ report-apply: ## batches/reports/issue-N/decisions.jsonl → data/ + readings + 
 # Voice over (ADR-061; runbook docs/operations/voice.md). Generation needs the local AivisSpeech Engine unpacked in
 # build/aivis/ (started and stopped by voice generate) and `lame`; the audio and the pack are build output under build/, never committed.
 voice-speakers: voice-levels voice-spoken-fetch ## data/voice/ speakers for the voice scope: the creature Spoken gives a quest line, else the pinned VMaNGOS database, captures and the collector's NPC ids
-	c=$$(cat "$(SPOKEN_PIN)") && cd pipeline && $(PY) -m wfj voice speakers --vmangos $(VMANGOS_DB) --commit $(VMANGOS_SHA) \
+	cd pipeline && $(PY) -m wfj voice speakers --vmangos $(VMANGOS_DB) --commit $(VMANGOS_SHA) \
 		--wdb "$(call quest_dir,forever)/questcache.wdb" --forever-vo "$(FOREVER_VO)" --forever-vo-commit $(FOREVER_VO_SHA) \
-		--spoken "$(SPOKEN_DIR)/corpus-$$c.json.gz" --spoken-commit $$c
+		--spoken "$(SPOKEN_CORPUS)" --spoken-commit $(SPOKEN_COMMIT)
 
-voice-match: ## who speaks each line and with which voice, matched to the newest Spoken: speakers, then sets, then the cast (runs before any audio is made)
-	@$(MAKE) -s voice-speakers
-	@$(MAKE) -s voice-sets
+voice-match: voice-speakers ## who speaks each line and with which voice, matched to the newest Spoken: speakers, then sets, then the cast, on one fetch (runs before any audio is made; run it before counting a run)
+	cd pipeline && $(PY) -m wfj voice sets creatures --spoken "$(SPOKEN_CORPUS)" --spoken-commit $(SPOKEN_COMMIT)
 	cd pipeline && $(PY) -m wfj voice cast
 
 voice-generate: voice-match ## the missing and changed voice files from the shipped Japanese (cloned voices on Modal; VOICE_LOCAL=1 on this machine), then voice-sync
@@ -442,16 +441,20 @@ voice-qwen-setup: ## build/qwen/venv: the Qwen3-TTS environment the cloned voice
 # used again and the run says so.
 SPOKEN_PIN = $(CURDIR)/pipeline/spoken-commit.txt
 SPOKEN_DIR = $(REPO_ROOT)/build/spoken
+# Read when a recipe runs, so a target that follows voice-spoken-fetch sees the commit it just recorded.
+SPOKEN_COMMIT = $(shell cat "$(SPOKEN_PIN)" 2>/dev/null)
+SPOKEN_CORPUS = $(SPOKEN_DIR)/corpus-$(SPOKEN_COMMIT).json.gz
 
 voice-spoken-fetch: ## build/spoken: the Spoken addon's newest line corpus; its commit goes to pipeline/spoken-commit.txt
 	@new=$$(git ls-remote https://github.com/rusty-key/spoken-wow HEAD 2>/dev/null | cut -f1); \
-		if [ -n "$$new" ]; then echo "$$new" > "$(SPOKEN_PIN)"; else echo "voice-spoken-fetch: Spoken could not be reached; using the commit in pipeline/spoken-commit.txt"; fi; \
+		if [ -z "$$new" ]; then echo "voice-spoken-fetch: Spoken could not be reached; using the commit in pipeline/spoken-commit.txt"; \
+		elif [ "$$new" != "$$(cat "$(SPOKEN_PIN)" 2>/dev/null)" ]; then echo "$$new" > "$(SPOKEN_PIN)"; fi; \
 		c=$$(cat "$(SPOKEN_PIN)"); test -n "$$c" || { echo "voice-spoken-fetch: no commit in pipeline/spoken-commit.txt"; exit 1; }; \
 		mkdir -p "$(SPOKEN_DIR)" && { test -f "$(SPOKEN_DIR)/corpus-$$c.json.gz" || curl -sfL -o "$(SPOKEN_DIR)/corpus-$$c.json.gz" "https://raw.githubusercontent.com/rusty-key/spoken-wow/$$c/pipelines/quests/corpus/corpus.json.gz"; } && \
 		echo "voice-spoken-fetch: Spoken at $$c"
 
 voice-sets: voice-spoken-fetch ## data/voice/creature-sets.jsonl: each speaking NPC's game voice set, as Spoken assigns it (rerun after voice-speakers)
-	c=$$(cat "$(SPOKEN_PIN)") && cd pipeline && $(PY) -m wfj voice sets creatures --spoken "$(SPOKEN_DIR)/corpus-$$c.json.gz" --spoken-commit $$c
+	cd pipeline && $(PY) -m wfj voice sets creatures --spoken "$(SPOKEN_CORPUS)" --spoken-commit $(SPOKEN_COMMIT)
 
 voice-sets-clips: ## build/voice-sets/: every set's barks cut from the installed client, the cloning references: WOW_DIR=<install root>
 	@test -n "$(WOW_DIR)" || { echo "usage: make voice-sets-clips WOW_DIR=<the World of Warcraft folder>"; exit 2; }
@@ -485,7 +488,7 @@ voice-sync: ## commit and push the audio store's new files, and pin that audio c
 voice-pack: ## build/voice-pack/: the Voice entry and every voice pack from the audio record, with each pack's size and room under the cap
 	cd pipeline && $(PY) -m wfj voice pack --store "$(VOICE_STORE)"
 
-voice: voice-speakers voice-generate voice-pack ## speakers → generate → pack
+voice: voice-generate voice-pack ## match (speakers, sets, cast) → generate → pack
 
 # The upload token is CF_API_KEY, else what $(VOICE_TOKEN_CMD) prints (a local, untracked setting). It is read for the
 # one run and never written anywhere. DRY=1 builds, checks the zips and prints what would go up. CF_ONLY=1 skips the

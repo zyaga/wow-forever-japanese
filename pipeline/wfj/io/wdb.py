@@ -77,8 +77,7 @@ class Layout:
     objective_count_at: int
     objectives_at: int
     bits_at: int | None
-    pad_bits: int
-    pad_bits_also: tuple[int, ...] = ()  # other values a record of this build carries there
+    pad_bits: tuple[int, ...]  # every value a record of this build carries after its string lengths
     zero_u32_at: tuple[int, ...] = ()
     pre_list_count_at: int | None = None
     post_list_count_at: int | None = None
@@ -112,7 +111,7 @@ LAYOUTS: tuple[Layout, ...] = (
         objective_count_at=448,
         objectives_at=504,
         bits_at=492,
-        pad_bits=0,
+        pad_bits=(0,),
         zero_u32_at=(480, 484, 488),
     ),
     Layout(
@@ -121,7 +120,7 @@ LAYOUTS: tuple[Layout, ...] = (
         objective_count_at=436,
         objectives_at=488,
         bits_at=None,
-        pad_bits=32,
+        pad_bits=(32,),
         zero_u32_at=(480, 484),
         pre_list_count_at=64,
         post_list_count_at=448,
@@ -155,10 +154,13 @@ LAYOUTS = (
     replace(
         _FOREVER_69913,
         build=70888,
-        pad_bits_also=(96,),
+        pad_bits=(32, 96),
         evidence="Forever 1.60.1.70888, 5,239 of 5,239 records (1 with 96 after the string lengths)",
     ),
 )
+# The layout a new Forever pin starts from: the newest one, so a value a later build's records carry stays
+# allowed.
+FOREVER_LATEST = LAYOUTS[-1]
 
 
 @dataclass(frozen=True)
@@ -202,7 +204,7 @@ def _i32(buf: bytes, at: int | None) -> int | None:
     return None if at is None else struct.unpack_from("<i", buf, at)[0]
 
 
-def _string_lengths(block: bytes, pad_bits: int, also: tuple[int, ...] = ()) -> list[int]:
+def _string_lengths(block: bytes, pad_bits: tuple[int, ...]) -> list[int]:
     bits = int.from_bytes(block, "big")
     total = BITS_BYTES * 8
     out, used = [], 0
@@ -210,8 +212,9 @@ def _string_lengths(block: bytes, pad_bits: int, also: tuple[int, ...] = ()) -> 
         used += width
         out.append((bits >> (total - used)) & ((1 << width) - 1))
     tail = bits & ((1 << (total - used)) - 1)
-    if tail != pad_bits and tail not in also:
-        raise ValueError(f"the bits after the string lengths are {tail}, this build's are {pad_bits}")
+    if tail not in pad_bits:
+        allowed = " or ".join(map(str, pad_bits))
+        raise ValueError(f"the bits after the string lengths are {tail}, this build's are {allowed}")
     return out
 
 
@@ -304,7 +307,7 @@ def decode_payload(qid: int, payload: bytes, lay: Layout) -> WdbQuest:
     bits_at = off if lay.bits_at is None else lay.bits_at
     if bits_at + BITS_BYTES > len(payload):
         raise ValueError(f"the string-length block at {bits_at} runs past the payload")
-    lengths = _string_lengths(payload[bits_at : bits_at + BITS_BYTES], lay.pad_bits, lay.pad_bits_also)
+    lengths = _string_lengths(payload[bits_at : bits_at + BITS_BYTES], lay.pad_bits)
     at = off + BITS_BYTES if lay.bits_at is None else off
     if at + sum(lengths) != len(payload):
         raise ValueError(f"strings end at {at + sum(lengths)}, payload has {len(payload)} bytes")

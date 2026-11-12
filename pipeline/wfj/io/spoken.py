@@ -7,16 +7,27 @@ import gzip
 import json
 from collections import defaultdict
 from pathlib import Path
+from typing import Any
 
-# Spoken's name for the moment a quest line is said, and the quest field that holds the line here
-FIELD = {"accept": "description", "progress": "progress", "complete": "completion"}
+from wfj.io.forever_vo import SPEAKER_EVENTS as FIELD  # Spoken names the quest window's moments the same way
+
+
+def load(path: Path) -> dict[str, Any]:
+    """The corpus as Spoken commits it (`lines`, `npcs`, ...)."""
+    with gzip.open(path, "rt", encoding="utf-8") as f:
+        corpus: dict[str, Any] = json.load(f)
+    return corpus
+
+
+def source(commit: str) -> str:
+    """The provenance source of a fact taken from the corpus at `commit`."""
+    return f"spoken@{commit[:7]}"
 
 
 def read_quest_speakers(path: Path) -> dict[tuple[int, str], int]:
     """{(quest id, field): creature id} for the quest lines the corpus gives to one creature. A line it
     gives to an object or an item, or to two creatures, has no entry: the other sources decide it."""
-    with gzip.open(path, "rt", encoding="utf-8") as f:
-        corpus = json.load(f)
+    corpus = load(path)
     seen: dict[tuple[int, str], set[int]] = defaultdict(set)
     other: set[tuple[int, str]] = set()
     for line in corpus.get("lines", ()):

@@ -95,65 +95,65 @@ def words(en: str) -> list[str]:
     return [t for kind, t in _pieces(en) if kind == "word"]
 
 
-def _owned(written: str) -> str:
-    """A spelled word with its possessive on, by the sound it ends in."""
+def _owned(word: str, written: str, spelling: Callable[[str], str | None]) -> str | None:
+    """A spelled word with its possessive on, by the sound it ends in. A word ending in ス takes the
+    spelling its possessive was given (the word with 's, a line of its own in the word list), or None when
+    it has none yet."""
+    if written.endswith(_OWES_A_DECISION):
+        return spelling(word.casefold() + "'s")
     return written[:-1] + _POSSESSIVE[written[-1]] if written[-1] in _POSSESSIVE else written + "ズ"
 
 
-def _unspelled(
-    pieces: list[tuple[str, str]], spelling: Callable[[str], str | None], decided: Callable[[str], str | None]
-) -> list[str]:
-    """The words with no spelling, and (with their 's) the possessive words ending in ス nobody decided."""
+def _owns(pieces: list[tuple[str, str]], i: int) -> bool:
+    return pieces[i + 1 : i + 2] == [("poss", "")]
+
+
+def _unspelled(pieces: list[tuple[str, str]], spelling: Callable[[str], str | None]) -> list[str]:
+    """What has no spelling yet: a word, or the possessive (the word with 's) of a word ending in ス."""
     missing = []
     for i, (kind, text) in enumerate(pieces):
         if kind != "word":
             continue
         written = spelling(text.casefold())
-        owns = pieces[i + 1 : i + 2] == [("poss", "")]
         if not written:
             missing.append(text)
-        elif owns and written.endswith(_OWES_A_DECISION) and not decided(text.casefold()):
+        elif _owns(pieces, i) and _owned(text, written, spelling) is None:
             missing.append(text + "'s")
     return missing
 
 
-def assemble(
-    en: str, spelling: Callable[[str], str | None], possessive: Callable[[str], str | None] | None = None
-) -> tuple[str | None, str | None, list[str]]:
-    """(Japanese, reading, what has no spelling). `spelling` gives a casefolded word's katakana, or None;
-    `possessive` the whole katakana a word was given for its possessive, or None. The Japanese and the
-    reading are None when a word has no spelling, when a possessive word ending in ス has no decision (it is
-    returned with its 's), or when the name has nothing to spell."""
+def assemble(en: str, spelling: Callable[[str], str | None]) -> tuple[str | None, str | None, list[str]]:
+    """(Japanese, reading, what has no spelling). `spelling` gives the katakana of a casefolded word, or of
+    a word ending in ス with its 's (death's), or None. The Japanese and the reading are None when anything
+    has no spelling or the name has nothing to spell."""
     pieces = _pieces(en)
     several = len([k for k, _ in pieces if k == "word"]) > 1
     if several and pieces[0][0] == "word" and pieces[0][1].casefold() == "the":
         pieces = pieces[1:]
-    decided = possessive or (lambda _word: None)
-    missing = _unspelled(pieces, spelling, decided)
+    missing = _unspelled(pieces, spelling)
     if missing:
         return None, None, list(dict.fromkeys(missing))
     ja: list[str] = []
     reading: list[str] = []
     last = ""  # the kind of the piece written before this one
-    owner = ("", "", "")  # the word or letter a possessive follows: its dot, how it is written, its own form
-    for kind, text in pieces:
+    for i, (kind, text) in enumerate(pieces):
         if kind in ("word", "letter", "spelled"):
             if kind == "word":
                 written = spelling(text.casefold()) or ""
+                if _owns(pieces, i):
+                    written = _owned(text, written, spelling) or ""
             else:
                 written = text if kind == "spelled" else _LETTER[text.lower()]
+                if _owns(pieces, i):  # a letter's possessive (A's) keeps ズ
+                    written += "ズ"
             dot = "・" if last in ("word", "letter", "spelled", "number", "poss", "closed") else ""
             # a letter written onto a number is one code (2P, 6P): no dot between them
             if kind == "letter" and last == "number":
                 dot = ""
             ja.append(dot + written)
             reading.append(dot + names.hiragana(written))
-            owner = (dot, written, (decided(text.casefold()) or "") if kind == "word" else written + "ズ")
         elif kind == "poss":
-            dot, written, own = owner
-            owned = own or _owned(written)
-            ja[-1] = dot + owned
-            reading[-1] = dot + names.hiragana(owned)
+            pass  # written with its word, above
         elif kind == "number":
             dot = "・" if last == "number" else ""  # two numbers side by side are two numbers, not one
             ja.append(dot + text)

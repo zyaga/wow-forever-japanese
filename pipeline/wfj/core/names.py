@@ -29,7 +29,6 @@ KINDS = ("unit", "item", "spell", "object", "area", "faction", "map", "suffix", 
 STATUSES = ("missing", "trusted")
 KEYS = ("id", "en", "ids", "prose", "ja", "reading", "free", "status", "provenance")
 WORD_KEYS = ("en", "ja", "check", "provenance")
-POSSESSIVE_WORD_KEYS = ("en", "ja", "possessive", "check", "provenance")  # a word with its own possessive
 _ASCII_LETTER = re.compile(r"[A-Za-z]")
 _READING = re.compile(r"^[ぁ-ゖー・]+$")
 KATAKANA = re.compile(r"^[ァ-ヺー・]+$")
@@ -301,12 +300,9 @@ def line_problems(line: Any) -> list[str]:
 
 
 def word_problems(word: Any) -> list[str]:
-    if not isinstance(word, dict) or tuple(word) not in (WORD_KEYS, POSSESSIVE_WORD_KEYS):
-        return [f"keys must be {WORD_KEYS}, with possessive after ja when the word has one"]
+    if not isinstance(word, dict) or tuple(word) != WORD_KEYS:
+        return [f"keys must be {WORD_KEYS}"]
     out = []
-    own = word.get("possessive")
-    if "possessive" in word and not (isinstance(own, str) and KATAKANA.match(own)):
-        out.append(f"word {word['en']!r}: possessive {own!r} is not katakana")
     if not isinstance(word["en"], str) or not word["en"] or " " in word["en"]:
         out.append(f"word {word['en']!r} is not one English word")
     if not isinstance(word["ja"], str) or not word["ja"] or _ASCII_LETTER.search(word["ja"]):

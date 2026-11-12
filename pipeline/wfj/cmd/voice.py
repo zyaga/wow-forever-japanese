@@ -82,7 +82,7 @@ def _follow_spoken(
         who = named.get((int(q), f))
         if who is not None and sp != who:
             speakers[key] = who
-            sources[key] = f"spoken@{commit[:7]}"
+            sources[key] = spoken.source(commit)
             if who in others.get(key, ()):
                 others[key] = [c for c in others[key] if c != who]
 
@@ -122,10 +122,9 @@ def build_tables(
             if sp == voice.NARRATOR and who is not None:
                 q_speakers[key] = who
                 captured_src[key] = f"forever-vo@{captures[1]}"
-        q_problems = [p for p in q_problems if p.split(":", 1)[0] not in captured_src]
     if spoken_corpus is not None:
         _follow_spoken(q_speakers, others, captured_src, *spoken_corpus)
-        q_problems = [p for p in q_problems if p.split(":", 1)[0] not in captured_src]
+    q_problems = [p for p in q_problems if p.split(":", 1)[0] not in captured_src]
     creatures = {c for q in quests for c in (*starters.get(q, ()), *enders.get(q, ()))}
     creatures |= {s for s in q_speakers.values() if isinstance(s, int)}
     creatures |= vmangos.read_gossip_creatures(db) if whole else set(cfg["creatures"])

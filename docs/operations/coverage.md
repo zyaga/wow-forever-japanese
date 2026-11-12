@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-12 at commit `216295326`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-12 at commit `27b28fd37`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -399,11 +399,11 @@ outnumber lines.
 
 | Kind | Lines | Files | In step | Stale | Not made | Read by the narrator |
 |---|---|---|---|---|---|---|
-| Quest offer | 5,025 | 5,099 | 4,549 | 99 | 451 | 1,583 |
-| Quest progress | 3,164 | 3,188 | 2,973 | 13 | 202 | 172 |
-| Quest turn-in | 4,291 | 4,317 | 4,086 | 31 | 200 | 246 |
-| NPC talk (greetings, gossip, quest text keyed by its English) | 2,298 | 2,883 | 2,803 | 11 | 69 | 34 |
-| Book and letter pages | 1,102 | 1,102 | 1,090 | 12 | 0 | 1,039 |
+| Quest offer | 5,031 | 5,105 | 5,105 | 0 | 0 | 1,512 |
+| Quest progress | 3,165 | 3,189 | 3,189 | 0 | 0 | 155 |
+| Quest turn-in | 4,292 | 4,318 | 4,318 | 0 | 0 | 233 |
+| NPC talk (greetings, gossip, quest text keyed by its English) | 2,303 | 2,888 | 2,888 | 0 | 0 | 34 |
+| Book and letter pages | 1,102 | 1,102 | 1,102 | 0 | 0 | 1,039 |
 | The character's error lines (one file per race and sex) | 50 | 900 | 900 | 0 | 0 | 0 |
 
 Lines that play another line's file (a female wording of a gossip line, or a quest's text Forever repeats under another id): 1.
@@ -415,8 +415,7 @@ Shipped Japanese the voice does not read, by reason.
 | Why | Lines |
 |---|---|
 | NPC speech in chat, or other NPC text no voiced window shows (from VMaNGOS) | 8,855 |
-| Collected in game with no known speaker | 302 |
+| Collected in game with no known speaker | 297 |
 | HTML book page (keeps the client's layout) | 38 |
 | A quest log line (the completion text the tracker shows) | 20 |
-| No speaker found for the quest | 8 |
 | NPC text with no known speaker | 2 |
