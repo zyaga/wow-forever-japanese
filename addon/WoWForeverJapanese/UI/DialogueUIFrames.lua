@@ -217,7 +217,8 @@ end
 
 -- ── Dialogue UI's quest popups ─────────────────────────────────────────────
 -- A quest the game starts or finishes on its own gets a small popup with its name, made when first needed [read:
--- Dialogue UI 1.0.7 b, Code/Widget/Widget_QuestPopup.lua]. Its name is the quest's Japanese title.
+-- Dialogue UI 1.0.7 b, Code/Widget/Widget_QuestPopup.lua]. Its name is the quest's Japanese title while titles are
+-- switched on.
 local function wrapPopup(popup)
   local setTitle = popup.SetTitle
   popup.SetTitle = function(self, title, ...)

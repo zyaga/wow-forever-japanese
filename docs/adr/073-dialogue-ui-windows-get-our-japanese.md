@@ -4,6 +4,7 @@
 - **Date:** 2026-11-06
 - **Deciders:** the maintainer
 - **Related:** [ADR-004](004-zero-runtime-dependencies.md) (zero runtime dependencies, narrowed here) · [ADR-009](009-surfaces-post-hook-the-writer.md) (post-hook the writer) · [ADR-054](054-quest-text-keyed-by-its-english.md) (quest text keyed by its English) · [Addon modules](../architecture/addon-modules.md)
+- **Amended by:** [ADR-083](083-quest-titles-are-names.md): quest titles stay the game's English in Dialogue UI's windows, popups and flyout as shipped; the Japanese titles show only with the titles switch on.
 
 ## Context
 

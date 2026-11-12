@@ -717,6 +717,20 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       assert.are.equal("クエストアイテム", tip:texts()[2])
     end)
 
+    it("with titles left to the client, the flyout keeps the English title over the Japanese turn-in text", function()
+      load({ loaded = false, titlesOff = true })
+      ship({ ["quest.title"] = { [2] = "Sharptalonの鉤爪" },
+        ["quest.completion"] = { [2] = "よくやった。\n\nこれで安心だ。" } })
+      game(WORDS)
+      local fly = DUI.makeFlyout()
+      Stub.loadedAddons.DialogueUI = true
+      WFJ.LoadOnDemand.loaded("DialogueUI")
+      fly.questData = { questID = 2, rawText = "Well done, $N.$B$BNow we are safe." }
+      fly:SetQuestText("Sharptalon's Claw", { "Well done, Reyn.", "Now we are safe." })
+      assert.are.equal("Sharptalon's Claw", fly.Title:GetText())
+      assert.are.same({ "よくやった。", "これで安心だ。" }, fly:paragraphs())
+    end)
+
     it("the quest-complete flyout shows the quest's Japanese name and turn-in text, measured in the bundled face",
       function()
       load({ loaded = false })
@@ -790,6 +804,17 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       assert.are.equal("Stay alert!", panel.lines[2][1])
       panel:AddMessage("Unknown words.", "Guard", "CHAT_MSG_MONSTER_SAY")
       assert.are.equal("Unknown words.", panel.lines[3][1])
+    end)
+
+    it("with titles left to the client, a quest popup keeps the English title", function()
+      load({ titlesOff = true })
+      ship({ ["quest.title"] = { [2] = "Sharptalonの鉤爪" } })
+      DUI.questNames[2] = "Sharptalon's Claw"
+      local popup = DUI.makePopup()
+      Stub.fireAll("QUEST_ACCEPTED", 2)
+      DUI.flush()
+      popup:SetQuestDataByID(2)
+      assert.are.equal("Sharptalon's Claw", popup.Title:GetText())
     end)
 
     it("a quest popup made after install is found after a quest event and shows the Japanese title", function()
