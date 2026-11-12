@@ -437,7 +437,7 @@
 {"id": 92706, "field": "title", "en": "WANTED: Bruuz", "hash": "63f4d98544a8f8a7", "src": "wdb@1.60.1.70888"}
 {"id": 92706, "field": "objectives", "en": "Bring Bruuz's Dorsal Fin to Gazlowe in Ratchet.", "hash": "f267f6625e824037", "src": "wdb@1.60.1.70888"}
 {"id": 92706, "field": "description", "en": "Calling all anglers!\r\n\r\nA giant shark has been circling the waters near the shipping dock, attacking sailors and small boats. Dockworkers have given it the nickname \"Bruuz\". A hefty reward will be given to whoever brings me its fin!\r\n\r\n-- Gazlowe", "hash": "c0d6b34cf080aa3a", "src": "wdb@1.60.1.70888"}
-{"id": 92706, "field": "progress", "en": "What can I do for ya, skyborne?", "hash": "e9daa61245b6c1da", "src": "collector@1.60.1.70862"}
+{"id": 92706, "field": "progress", "en": "What can I do for ya, $r?", "hash": "98361c3db666d9f9", "src": "forever-vo@025070f"}
 {"id": 92706, "field": "completion", "en": "Finally, somebody killed that thing! Do you know how hard it is to get a crew in the water when everyone in town's crying \"Shark!\" all the time?$B$BI might just put that monster's fin into a soup for dinner tonight, just to have the last laugh.", "hash": "67d0abe89e0ae649", "src": "collector@1.60.1.70862"}
 {"id": 92707, "field": "title", "en": "The Giant in the Den", "hash": "97265d43ef879e2f", "src": "wdb@1.60.1.70888"}
 {"id": 92707, "field": "objectives", "en": "Bring the Goliath's Wristguards to Drum Fel in Hammerfall.", "hash": "8a910368c9a07748", "src": "wdb@1.60.1.70888"}
