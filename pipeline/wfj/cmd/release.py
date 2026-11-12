@@ -11,11 +11,14 @@
       Move `## Unreleased` under `## X.Y.Z - date`, leave an empty `## Unreleased` above it, and write that
       version's notes to PATH (the packager's changelog). With --media, rename DIR/next (the release's
       pictures and clip, waiting for the Discord post) to DIR/X.Y.Z; nothing when there is no DIR/next.
+      next-version refuses an addon release while docs/releases/next/ja.md (the post's Japanese) is
+      missing or empty.
   wfj release notes --version X.Y.Z --notes PATH
       Write an already-released version's notes to PATH (for a resumed release).
   wfj release changelog-gate --base REF
-      The pull-request gate: a change to addon/ or data/ adds a line under `## Unreleased`; released sections
-      are never edited; added lines name no local path and nothing the private rules name.
+      The pull-request gate: a change to addon/ or data/ adds a line under `## Unreleased`; a change that adds
+      or rewords a line there also writes its Japanese in docs/releases/next/ja.md; released sections are
+      never edited; added lines name no local path and nothing the private rules name.
 
 The changelog is CHANGELOG.md at the repo root, in the Keep a Changelog shape plus a `### Breaking` group.
 """
@@ -38,6 +41,9 @@ CHANGELOG = "CHANGELOG.md"
 UNRELEASED = "Unreleased"
 FIRST_VERSION = "0.1.0-alpha.1"
 SHIPPED_PATHS = ("addon/", "data/")
+# The Japanese of the next release's post (docs/operations/release.md): every changelog line has its Japanese
+# there, written in the same pull request, so the post never goes out in English alone.
+NEXT_JA = "docs/releases/next/ja.md"
 
 _NUM = r"(0|[1-9]\d*)"  # SemVer: no leading zeros
 VERSION_RE = re.compile(rf"^{_NUM}\.{_NUM}\.{_NUM}(?:-(alpha|beta)\.{_NUM})?$")
@@ -293,6 +299,11 @@ def gate(
             "this change touches addon/ or data/: "
             f"add a line for players under '## {UNRELEASED}' in {CHANGELOG}"
         )
+    if added and base_text is not None and NEXT_JA not in changed:
+        problems.append(
+            f"this change adds or rewords a line under '## {UNRELEASED}': "
+            f"write its Japanese in {NEXT_JA}, the release post's Japanese card"
+        )
     if base_text is not None and [(s.title, s.date, _trim(s.lines)) for s in base.released()] != [
         (s.title, s.date, _trim(s.lines)) for s in head.released()
     ]:
@@ -362,6 +373,17 @@ def plan_release(
     return next_version(log, released, override), False, True
 
 
+def check_japanese(root: Path) -> None:
+    """An addon release waits for the Japanese of its post: the Discord preview may show a post without it,
+    the release may not."""
+    japanese = root / NEXT_JA
+    if not japanese.is_file() or not japanese.read_text(encoding="utf-8").strip():
+        raise ReleaseError(
+            f"{NEXT_JA} is missing or empty: the release post needs the Japanese of the lines under "
+            f"'## {UNRELEASED}' (docs/operations/release.md)"
+        )
+
+
 def _changelog(root: Path, version: str, date: str, notes_path: Path, media: Path | None) -> None:
     """The `changelog` action: cut the changelog, give the waiting media its version, then write. Every
     refusal (a version already in the changelog, a media folder already in place) comes before a write."""
@@ -398,6 +420,8 @@ def run(argv: Sequence[str]) -> int:
     try:
         if a.action == "next-version":
             version, resume, addon = plan_release(root, a.version, a.allow_empty)
+            if addon and not resume:
+                check_japanese(root)
             print(f"version={version}\nresume={str(resume).lower()}\naddon={str(addon).lower()}")
         elif a.action == "changelog":
             _changelog(root, a.version, a.date, a.notes, a.media)
