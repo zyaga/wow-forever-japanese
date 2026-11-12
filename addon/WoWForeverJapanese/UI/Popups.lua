@@ -85,14 +85,16 @@ local SPECIAL_ONLY = { only = {
 
 -- The "%s" dialogs whose caller formats a template: the keys the line may be, and the paragraphs it may gain.
 -- PARTY_INVITE: INVITATION with the inviter's name, plus ACCEPTING_INVITE_WILL_REMOVE_QUEUE after "\n\n" while the
--- player is queued; INVITATION_XREALM for a cross-realm invite, whose own English holds a "\n\n"
--- [verified: blizzard_game/mainline/eventimplementation.lua:757-779, the camelot family's file].
+-- player is queued; INVITATION_XREALM for a cross-realm invite and INVITATION_XSHARD for a cross-shard one, whose
+-- own English holds a "\n\n" [verified: blizzard_game/mainline/eventimplementation.lua:757-779, the camelot
+-- family's file; the line is chosen by GetPartyInviteString, blizzard_game/camelot/eventimplementationutils.lua:1-9].
 -- VOICE_CHAT_JOIN_GROUP: text "", its OnShow writes VOICE_CHAT_JOIN_GROUP_TEXT, plus the Discord speech-features
 -- paragraph after "\n\n" when the group's voice runs on Discord and text-to-speech or speech-to-text is on
 -- [verified: blizzard_staticpopup_game/mainline/gamedialogdefs.lua:1567–1578, shown from
 -- blizzard_channels/mainline/channelframe.lua:917–918].
 local PASS_THROUGH = {
-  PARTY_INVITE = { line = { "INVITATION", "INVITATION_XREALM" }, after = { "ACCEPTING_INVITE_WILL_REMOVE_QUEUE" } },
+  PARTY_INVITE = { line = { "INVITATION", "INVITATION_XREALM", "INVITATION_XSHARD" },
+    after = { "ACCEPTING_INVITE_WILL_REMOVE_QUEUE" } },
   VOICE_CHAT_JOIN_GROUP = { line = { "VOICE_CHAT_JOIN_GROUP_TEXT" }, after = { "VOICE_CHAT_JOIN_GROUP_DISCORD_TEXT" } },
   -- the remove-friend confirmation: the caller formats one of three lines around the friend's name
   -- (blizzard_unitpopupshared/unitpopupsharedbuttonmixins.lua:661–675)

@@ -26,6 +26,10 @@ local UI = {
     "このグループに参加すると、現在のキューからすべて外れます。" },
   INVITATION_XREALM = { "%s invites you to a group.\n\nAccepting this invitation may transfer you to another realm.",
     "%sがあなたをグループに招待しています。\n\nこの招待を承諾すると、別のレルムに移動することがあります。" },
+  INVITATION_XSHARD = { "%s invites you to a group.\n\n|TInterface\\DialogFrame\\UI-Dialog-Icon-AlertNew:0:0:0:-1|t "
+    .. "Accepting this invitation may cause the world to refresh around you.",
+    "%sがあなたをグループに招待しています。\n\n|TInterface\\DialogFrame\\UI-Dialog-Icon-AlertNew:0:0:0:-1|t "
+    .. "この招待を受けると、周囲の世界が再読み込みされることがあります。" },
   CONFIRM_TALENT_WIPE_1 = { "Do you want to unlearn all of your talents?", "すべてのタレントを忘れますか？" },
   CANCEL = { "Cancel", "キャンセル" },
   ACCEPT = { "Accept", "承諾" }, DECLINE = { "Decline", "辞退" },
@@ -454,6 +458,20 @@ describe("the StaticPopup dialogs on Forever", function()
       e.Text:GetText())
     X.alt(WFJ, true)
     local en = string.format(_G.INVITATION_XREALM, "Wind Mami") .. "\n\n" .. _G.ACCEPTING_INVITE_WILL_REMOVE_QUEUE
+    assert.are.equal(en, e.Text:GetText())
+    X.alt(WFJ, false)
+  end)
+
+  it("the cross-shard invite, alone and with the queue paragraph", function()
+    local d = _G.StaticPopup_Show("PARTY_INVITE", string.format(_G.INVITATION_XSHARD, "Wind Mami"))
+    assert.are.equal(UI.INVITATION_XSHARD[2]:format("Wind Mami"), d.Text:GetText())
+    _G.StaticPopup1.shown = false
+    local e = _G.StaticPopup_Show("PARTY_INVITE",
+      string.format(_G.INVITATION_XSHARD, "Wind Mami") .. "\n\n" .. _G.ACCEPTING_INVITE_WILL_REMOVE_QUEUE)
+    assert.are.equal(UI.INVITATION_XSHARD[2]:format("Wind Mami") .. "\n\n" .. UI.ACCEPTING_INVITE_WILL_REMOVE_QUEUE[2],
+      e.Text:GetText())
+    X.alt(WFJ, true)
+    local en = string.format(_G.INVITATION_XSHARD, "Wind Mami") .. "\n\n" .. _G.ACCEPTING_INVITE_WILL_REMOVE_QUEUE
     assert.are.equal(en, e.Text:GetText())
     X.alt(WFJ, false)
   end)
