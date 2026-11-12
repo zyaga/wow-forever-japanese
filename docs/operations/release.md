@@ -89,7 +89,7 @@ A pull request that branched before a release can still merge its line into the 
 
 ## Dry run
 
-`make package` rehearses the next release on your machine. It clones the committed `HEAD` into `build/package-src`, cuts the changelog and tags there, runs the same pinned packager (downloaded once into `build/`), runs the package check, and copies the zip to `build/`. Nothing is pushed or uploaded. Uncommitted changes are not included. It needs bash 4 or later (macOS: `brew install bash`) and takes a few minutes. It stops with "nothing to release" when `## Unreleased` is empty, and at the package check while the TOC has no CurseForge project id. Details: [Local setup](local-setup.md).
+`make package` rehearses the next release on your machine. It clones the committed `HEAD` into `build/package-src`, cuts the changelog and tags there, runs the same pinned packager (downloaded once into `build/`), runs the package check, and copies the zip to `build/`. Nothing is pushed or uploaded. Uncommitted changes are not included. It needs bash 4 or later (macOS: `brew install bash`) and takes a few minutes. It stops with "nothing to release" when `## Unreleased` is empty, when `docs/releases/next/ja.md` is missing, and at the package check while the TOC has no CurseForge project id. Details: [Local setup](local-setup.md).
 
 ## Release media and the Discord post
 
@@ -145,6 +145,8 @@ Create a new token on the CurseForge author site, replace the value of the `CF_A
 | `release: released sections of CHANGELOG.md differ from vX …` | A change merged across a release put its line inside a released section. Move it back under `## Unreleased` in a pull request, then release. |
 | `release: … needs exactly one '## Unreleased' section`, `… is not '## Unreleased' or '## X.Y.Z - YYYY-MM-DD'`, `… is not a changelog group`, `… not a '- ' entry` | `CHANGELOG.md` is out of shape ([Writing changelog lines](#writing-changelog-lines)). Fix it in a pull request. |
 | `release: nothing to release: '## Unreleased' in CHANGELOG.md has no entries` | No change since the last release added a changelog line. Nothing to do, or merge the pending changes first. |
+| `release: docs/releases/next/ja.md is missing or empty …` | The Japanese of the release post is not written. Write it for every line under `## Unreleased` in a pull request ([Release media](#release-media-and-the-discord-post)), then release. |
+| `changelog-gate: this change adds or rewords a line under '## Unreleased': write its Japanese in docs/releases/next/ja.md …` | The pull request's changelog line has no Japanese. Add it under the matching group (`**追加**`, `**変更**`, `**修正**`) in `docs/releases/next/ja.md`. |
 | `release: version X is not higher than the latest release Y` | A typed version is at or below the latest tag. Type a higher one, or leave the field empty. |
 | `release: 'X' is not a version …` | Use `X.Y.Z`, `X.Y.Z-alpha.N` or `X.Y.Z-beta.N`, with no leading `v`. |
 | `The CF_API_KEY repository secret is not set` | Add it ([One-time setup](#one-time-setup), step 3). |
