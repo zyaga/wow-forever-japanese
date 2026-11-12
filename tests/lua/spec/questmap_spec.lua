@@ -67,6 +67,38 @@ describe("UI/QuestMap: the camelot quest log", function()
 
   after_each(function() H.uiTeardown() end)
 
+  describe("titles left to the client (the shipped default)", function()
+    before_each(function()
+      H.uiTeardown()
+      H.uiSetup(WFJ, UI, { titlesOff = true, lookup = function(kind, id) return DATA[kind] and DATA[kind][id] end })
+      Q.log = { 5, 6, 7 }
+    end)
+
+    it("the list rows, the tracker headers and the details title keep the client's English; the text is Japanese",
+    function()
+      Q.party[5] = 1
+      Q.updateList()
+      local rows = Q.rows()
+      assert.are.equal("[1] [10] Wolf Pelts", rows[5].Text:GetText())
+      assert.is_truthy(rows[6].Text:GetText():find("The Lost Tome", 1, true))
+      Q.watched = { [5] = true }
+      Q.updateTracker()
+      assert.is_truthy(_G.QuestObjectiveTracker.usedBlocks[5].HeaderText:GetText():find("Wolf Pelts", 1, true))
+      Q.showDetails(5)
+      assert.are.equal("Wolf Pelts", QuestInfoTitleHeader:GetText())
+      assert.are.equal("森の狼が増えている。", QuestInfoDescriptionText:GetText())
+      Q.showPopup(6)
+      assert.are.equal("The Lost Tome", QuestInfoTitleHeader:GetText())
+    end)
+
+    it("a quest with no Japanese is marked once, on its description, never on its title", function()
+      Q.showDetails(7)
+      assert.are.equal("Untranslated Errand", QuestInfoTitleHeader:GetText())
+      assert.is_truthy(QuestInfoDescriptionText:GetText():find(WFJ.MARKER.missing, 1, true))
+      assert.is_truthy(QuestInfoDescriptionText:GetText():find("Nobody wrote this.", 1, true))
+    end)
+  end)
+
   describe("the details pane and the popup", function()
     it("renders the selected quest's title, objectives and description on the map's details pane", function()
       Q.showDetails(5)
@@ -118,12 +150,36 @@ describe("UI/QuestMap: the camelot quest log", function()
       assert.are.equal(0, SS.count(QM.INFO))
     end)
 
-    it("leaves a decorated or failed title English; the other fields still translate", function()
+    it("a failed quest keeps its Japanese title inside the failed wording; any other decoration stays English",
+    function()
+      -- the client's two strings (GlobalStrings: QUEST_TITLE_FORMAT_FAILED, FAILED) and the dictionary's FAILED
+      local lookup = WFJ.Lookup
+      _G.QUEST_TITLE_FORMAT_FAILED, _G.FAILED = "%s - (Failed)", "Failed"
+      WFJ.Lookup = { get = function(area, key)
+        if area == "ui" and key == "FAILED" then return { ja = "失敗" } end
+      end }
+      finally(function() _G.QUEST_TITLE_FORMAT_FAILED, _G.FAILED, WFJ.Lookup = nil, nil, lookup end)
       Q.quests[5].failed = true
       Q.showDetails(5)
-      assert.are.equal("Wolf Pelts - |cffff2020(Failed)|r", QuestInfoTitleHeader:GetText())
-      assert.is_nil(SS.get(QM.INFO, "title"))
+      assert.are.equal("狼の毛皮 - (失敗)", QuestInfoTitleHeader:GetText())
+      assert.is_table(SS.get(QM.INFO, "title"))
       assert.are.equal("森の狼が増えている。", QuestInfoDescriptionText:GetText())
+      Stub.keys.alt = true
+      WFJ.Modifier.refresh()
+      assert.are.equal("Wolf Pelts - (Failed)", QuestInfoTitleHeader:GetText())
+      Stub.keys.alt = false
+      WFJ.Modifier.refresh()
+      assert.are.equal("狼の毛皮 - (失敗)", QuestInfoTitleHeader:GetText())
+      -- a failed quest with no Japanese title keeps the client's whole text, the failed word included
+      Q.quests[7].failed = true
+      Q.showDetails(7)
+      local untranslated = QuestInfoTitleHeader:GetText()
+      assert.are.equal("Untranslated Errand - (Failed)", untranslated:sub(-#"Untranslated Errand - (Failed)"))
+      assert.is_nil(untranslated:find("失敗", 1, true))
+      -- no Japanese for the word: the wording as the client wrote it around the Japanese title
+      WFJ.Lookup = { get = function() return nil end }
+      Q.showDetails(5)
+      assert.are.equal("狼の毛皮 - (Failed)", QuestInfoTitleHeader:GetText())
       Q.quests[5].failed, Q.quests[5].decorated = nil, true
       Q.showDetails(5)
       assert.is_truthy(QuestInfoTitleHeader:GetText():find("Wolf Pelts", 1, true))
@@ -262,14 +318,20 @@ describe("UI/QuestMap: the camelot quest log", function()
       assert.are.equal("[10] 狼の毛皮", rows[5].Text:GetText())
     end)
 
-    it("any other decoration leaves the row English (party count, atlas link)", function()
+    it("a quest a party member is on keeps its Japanese title after the party count; an atlas link stays English",
+    function()
       Q.party[5] = 2
       Q.quests[6].decorated = true
       Q.updateList()
       local rows = Q.rows()
+      assert.are.equal("[2] [10] 狼の毛皮", rows[5].Text:GetText())
+      assert.is_table(SS.get(QM.LIST, "title.5"))
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
       assert.are.equal("[2] [10] Wolf Pelts", rows[5].Text:GetText())
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      assert.are.equal("[2] [10] 狼の毛皮", rows[5].Text:GetText())
       assert.is_truthy(rows[6].Text:GetText():find("The Lost Tome", 1, true))
-      assert.is_nil(SS.get(QM.LIST, "title.5"))
+      assert.is_nil(SS.get(QM.LIST, "title.6"))
     end)
 
     it("rows are keyed by questID: pooled rows that change quest show their own quest's title", function()
@@ -363,7 +425,21 @@ describe("UI/QuestMap: the camelot quest log", function()
       assert.are.same({ "[10] ", "" }, { QM.decoration("[10] Wolf Pelts", "Wolf Pelts") })
       assert.are.same({ "|cff40c040", "|r" }, { QM.decoration("|cff40c040Wolf Pelts|r", "Wolf Pelts") })
       assert.are.same({ "|cff40c040[10] ", "|r" }, { QM.decoration("|cff40c040[10] Wolf Pelts|r", "Wolf Pelts") })
-      assert.is_nil(QM.decoration("[2] [10] Wolf Pelts", "Wolf Pelts"))
+      -- what the quest list's title builder writes in front, in its order, each piece optional: the party members
+      -- on the quest, the level, two internal markers, the quest's id (mainline/questmapframe.lua:1610–1639)
+      assert.are.same({ "[2] [10] ", "" }, { QM.decoration("[2] [10] Wolf Pelts", "Wolf Pelts") })
+      assert.are.same({ "|cff40c040[2] [10+] ", "|r" },
+        { QM.decoration("|cff40c040[2] [10+] Wolf Pelts|r", "Wolf Pelts") })
+      assert.are.same({ "[10] 5 - ", "" }, { QM.decoration("[10] 5 - Wolf Pelts", "Wolf Pelts") })
+      assert.are.same({ "[10] (Internal only) ", "" },
+        { QM.decoration("[10] (Internal only) Wolf Pelts", "Wolf Pelts") })
+      assert.are.same({ "[10] <Not Ready for Translation> ", "" },
+        { QM.decoration("[10] <Not Ready for Translation> Wolf Pelts", "Wolf Pelts") })
+      assert.are.same({ "[2] [10] <Not Ready for Translation> (Internal only) 5 - ", "" },
+        { QM.decoration("[2] [10] <Not Ready for Translation> (Internal only) 5 - Wolf Pelts", "Wolf Pelts") })
+      -- a title that starts with digits and a dash is the title, not an id
+      assert.are.same({ "[10] ", "" }, { QM.decoration("[10] 1000 - Needles", "1000 - Needles") })
+      assert.is_nil(QM.decoration("[2] [10] Other Quest", "Wolf Pelts"))
       assert.is_nil(QM.decoration("|cff40c040Wolf Pelts", "Wolf Pelts")) -- no closing |r
       assert.is_nil(QM.decoration("Wolf Pelts - (Failed)", "Wolf Pelts"))
       -- the tracker's quest tag after the title, its Japanese for a Japanese title
@@ -445,8 +521,11 @@ describe("UI/QuestMap: the camelot quest log", function()
       assert.are.equal(0, QM.hookTrackers())
     end)
 
-    it("the level prefix reader takes only [n] or [n+] followed by a space", function()
+    it("the prefix reader takes the client's pieces in its order, each one optional", function()
       assert.are.same({ "[60+] ", "Title" }, { QM.splitPrefix("[60+] Title") })
+      assert.are.same({ "[10] ", "Title" }, { QM.splitPrefix("[10] Title") })
+      assert.are.same({ "[2] [60+] ", "Title" }, { QM.splitPrefix("[2] [60+] Title") })
+      assert.are.same({ "[1] [40] 339 - ", "Chapter I" }, { QM.splitPrefix("[1] [40] 339 - Chapter I", "Chapter I") })
       assert.is_nil(QM.splitPrefix("[x] Title"))
       assert.is_nil(QM.splitPrefix("Title"))
     end)

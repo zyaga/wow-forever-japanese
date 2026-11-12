@@ -5,7 +5,7 @@
 An addon that shows World of Warcraft: Forever in Japanese: quests, NPC dialogue, books, item and spell tooltips,
 and the game's interface. Hold **Alt** and the game's own English comes back; let go and the Japanese returns. Alt
 is only the default: any key can be chosen. Names of people, places, creatures, items and spells stay in English
-everywhere.
+everywhere, and so do quest titles.
 
 It works the other way round too, for Japanese players studying English: choose **English first** and the game
 stays in English, with the Japanese one key away and a popup that shows how each English word is said and its
@@ -224,7 +224,8 @@ Your own buffs under the minimap and those on party frames are Japanese out of c
 bar stay Japanese in combat, the cooldown countdown too.
 
 **Why are names still in English?** On purpose. Names of people, places, creatures, items and spells are never
-changed, so what you read matches what other players say and what guides call things.
+changed, and neither is a quest's title, so what you read matches what other players say and what guides call
+things. The quest's text under the title is Japanese.
 
 **What do the markers mean?** **[未翻訳 / Not Translated]** means the line has no translation yet and is shown in
 the game's English. **[要更新 / English Changed]** means the English changed after the line was translated.
@@ -274,7 +275,7 @@ and why: [docs](docs/overview.md). What changed in each release: [`CHANGELOG.md`
 
 ## 日本語
 
-World of Warcraft: Forever を日本語で遊べるようにするアドオンです。クエスト、NPC の会話、本、アイテムと呪文のツールチップ、ゲームのインターフェースを日本語で表示します。**Alt** キーを押している間はゲーム本来の英語が表示され、離すと日本語に戻ります。Alt は初期設定のキーで、好きなキーに変更できます。人物・地名・モンスター・アイテム・呪文の名前はすべて英語のままです。
+World of Warcraft: Forever を日本語で遊べるようにするアドオンです。クエスト、NPC の会話、本、アイテムと呪文のツールチップ、ゲームのインターフェースを日本語で表示します。**Alt** キーを押している間はゲーム本来の英語が表示され、離すと日本語に戻ります。Alt は初期設定のキーで、好きなキーに変更できます。人物・地名・モンスター・アイテム・呪文の名前はすべて英語のままです。クエストのタイトルも英語のままです。
 
 逆向きにも使えます。英語を学びたい方は **英語優先**（English first）を選ぶと、ゲームは英語のまま、キーひとつで日本語を表示でき、英語の単語にマウスを合わせると発音と日本語の単語が表示されます。
 
@@ -407,7 +408,7 @@ GitHub アカウントがなければ、[Discord](https://foreverjapanese.com/di
 
 ミニマップの下の自分のバフとパーティーフレームのバフは、戦闘外なら日本語で表示されます。アクションバーの呪文のツールチップは戦闘中も日本語で、クールダウンの残り時間も表示されます。
 
-**名前が英語のままなのはなぜ？** 意図した仕様です。人物・地名・モンスター・アイテム・呪文の名前は変えません。ほかのプレイヤーの会話や攻略情報と同じ名前のまま読めます。
+**名前が英語のままなのはなぜ？** 意図した仕様です。人物・地名・モンスター・アイテム・呪文の名前は変えません。クエストのタイトルも英語のままです（タイトルの下の本文は日本語です）。ほかのプレイヤーの会話や攻略情報と同じ名前のまま読めます。
 
 **マーカーは何を表している？** **[未翻訳 / Not Translated]** はまだ翻訳がなく、ゲームの英語のまま表示されている行です。**[要更新 / English Changed]** は翻訳のあとで英語の原文が変わった行です。
 

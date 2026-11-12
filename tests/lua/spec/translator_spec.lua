@@ -35,6 +35,20 @@ describe("Translator.resolve: the action table, and it stays pure", function()
     assert.are.equal("leave", a); assert.is_nil(p)
   end)
 
+  it("a kind switched off as a whole → leave, even with a trusted entry or none, and nothing is marked", function()
+    deps.kindOff = function(kind) return kind == "quest" end
+    flags.entry = entry(".")
+    local a, p = resolve()
+    assert.are.equal("leave", a); assert.is_nil(p)
+    flags.entry, flags.markerMissing = nil, true
+    a, p = resolve()
+    assert.are.equal("leave", a); assert.is_nil(p)
+    -- another kind is not touched by the switch
+    deps.kindOff = function(kind) return kind == "quest.title" end
+    flags.entry = entry(".")
+    assert.are.equal("apply", (resolve()))
+  end)
+
   it("row 3: English is showing → leave, even with a trusted entry; the payload says it is by the language",
   function()
     flags.held = true; flags.entry = entry(".")

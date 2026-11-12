@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import shutil
 import sqlite3
 import subprocess
@@ -363,7 +364,7 @@ def test_generate_reads_each_line_in_its_voice_at_the_set_pace(tmp_path, engine)
     r = _gen(data, tmp_path / "voice", engine)
     assert r["made"] == 3
     queries = [c for c in engine.calls if c[0] == "query"]
-    assert ("query", "御機嫌よう、冒険者。", 11) in queries
+    assert ("query", "御機嫌よう、ぼうけんしゃ。", 11) in queries  # the engine reads the stand-in in kana
     assert ("query", "よくやった。", 22) in queries
     assert ("query", "ようこそ。", 11) in queries
     assert {c[2:] for c in engine.calls if c[0] == "synthesis"} == {(0.9, 0.0, 1.0)}
@@ -414,6 +415,29 @@ def test_plan_counts_what_generate_would_make(tmp_path, engine):
     _store(tmp_path, ja456="変わった、{name}。")
     p = voice_make.plan(data, CFG, "all")
     assert (p["missing"], p["stale"], dict(p["by_voice"])) == (0, 1, {"m": 1})
+
+
+CLONED = {"engine": "qwen", "set": "gnomemalezanynpc", "mode": "full", "ref": "abc123"}
+
+
+def test_a_cloned_file_is_made_again_when_what_the_engine_reads_changes():
+    plain = voice.fingerprint(hash_key("あ"), "q", CLONED)
+    assert voice.fingerprint(hash_key("あ"), "q", CLONED, None) == plain  # a line the fixes leave alone
+    said = voice.fingerprint(hash_key("あ"), "q", CLONED, "0123456789abcdef")
+    assert said != plain and said.startswith(plain)
+    assert voice.fingerprint(hash_key("あ"), "q", CLONED, "fedcba9876543210") != said
+
+
+def test_in_step_is_stale_when_the_engine_text_changed_and_the_shipped_line_did_not():
+    lines = {"1-description": "あ"}
+    jobs = [voice.Job("1-description", "1-description", "q")]
+    roster = {"q": CLONED}
+    audio = {"1-description": {"fingerprint": voice.fingerprint(hash_key("あ"), "q", CLONED)}}
+    assert voice.in_step(jobs, lines, roster, audio) == {"missing": [], "stale": []}
+    said = {"1-description": "0123456789abcdef"}
+    assert voice.in_step(jobs, lines, roster, audio, None, said) == {"missing": [], "stale": ["1-description"]}
+    audio["1-description"]["fingerprint"] = voice.fingerprint(hash_key("あ"), "q", CLONED, said["1-description"])
+    assert voice.in_step(jobs, lines, roster, audio, None, said) == {"missing": [], "stale": []}
 
 
 def test_in_step_reports_missing_and_stale_files():
@@ -513,6 +537,24 @@ def test_a_scope_holds_its_quests_and_its_npcs_talk_only():
 
 
 
+def test_no_voiced_line_hands_the_engine_latin_letters():
+    """Every English name a voiced line says has a Japanese spelling, so the engine never guesses at Latin
+    letters. A new name with a word nobody has spelled fails here until `make names` has spelled it."""
+    data = ROOT / "data"
+    cfg = voice_make.load_config(ROOT / "pipeline" / "voice.toml")
+    lines = voice_make.shipped_lines(data)
+    texts = voice_make.voice_texts(data, cfg, lines, voice_make.line_values(data, lines))
+    voiced = {r["key"] for r in voice_make.scoped_rows(data, "all")} & set(texts)
+    assert len(voiced) > 10_000
+    latin = sorted(k for k in voiced if re.search("[A-Za-z]", texts[k]))
+    assert not latin, f"{len(latin)} voiced line(s) still hold Latin letters, e.g. {latin[:5]}"
+
+
+def test_the_listed_words_are_read_in_kana_only_where_they_stand_alone():
+    cfg = voice_make.load_config(ROOT / "pipeline" / "voice.toml")
+    assert ("金", "かね") in cfg["kana_words"] and len(cfg["kana_words"]) == 9
+
+
 def test_audio_in_step():
     """The gate: every voiced line of the committed data has a recorded audio file made from the Japanese it
     ships, in the voice its speaker is cast in, with the roster's current settings (data/voice/audio.jsonl).
@@ -523,8 +565,7 @@ def test_audio_in_step():
     lines = voice_make.shipped_lines(data)
     jobs = voice_make.file_jobs(data, cfg, "all", lines, voice_make.players_of("all"))
     assert len(jobs) > 10_000  # the whole game, not an empty scope
-    state = voice.in_step(jobs, lines, cfg["roster"], voice_make.audio_record(data),
-                          voice_make.line_values(data, lines))
+    state, _, _ = voice_make.step_state(data, cfg, jobs, lines, voice_make.audio_record(data))
     missing, stale = state["missing"], state["stale"]
     assert not missing, f"{len(missing)} voiced line(s) have no audio, e.g. {missing[:5]}: run make voice-generate"
     assert not stale, (f"{len(stale)} audio file(s) were made from other Japanese or another voice, "

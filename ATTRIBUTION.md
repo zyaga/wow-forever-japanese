@@ -250,13 +250,13 @@ repository or the voice addons. No voice actor is named. The audio files are not
 ## Japanese names
 
 On screen every name stays in English. The project also keeps a Japanese form of each name in `data/name/`, for
-the voice and for a later names setting. Those Japanese names follow Blizzard Entertainment's official Japanese for
-Hearthstone where Hearthstone has the name or its words: a name that is exactly a Hearthstone card's name takes that
-card's Japanese (provenance `hearthstone@<build>`), and the name glossary (`data/name/words.jsonl`) is seeded from the
-card names, so a word is spelled the way Hearthstone spells it. The card names were read from HearthstoneJSON's card
-files (https://hearthstonejson.com) at a pinned build, on the maintainer's machine only; those files are not part of
-this repository or the addon. Hearthstone's text is Blizzard Entertainment's. The other names were machine-drafted
-to match (`provenance.model` on each line).
+the voice and for a later names setting. Each name is spelled in katakana from its English, word by word, with one
+spelling per word, so the voice says what the screen shows. Some of those spellings were first taken from Blizzard
+Entertainment's official Japanese for Hearthstone, where its katakana already matched the English: the lines in
+`data/name/` with provenance `hearthstone@<build>`. The card names were read from HearthstoneJSON's card files
+(https://hearthstonejson.com) at a pinned build, on the maintainer's machine only; those files are not part of
+this repository or the addon. Hearthstone's text is Blizzard Entertainment's. The other spellings were
+machine-drafted (`provenance.model` on each line).
 
 ## English pronunciations
 

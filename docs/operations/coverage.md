@@ -1,6 +1,6 @@
 # Coverage: how much of the game ships in Japanese
 
-> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-11 at commit `ff7ad0e3`.
+> **Generated** by `make coverage` (`pipeline/wfj/dev/coverage.py`) on 2026-11-12 at commit `59302cf6`.
 > Do not edit by hand: every pull request that changes `data/` re-runs it. Measured from
 > the English the Forever client serves, every line of it; a line that is only a
 > name, a placeholder quest or a picture-only page counts as done (nothing to translate).
@@ -60,8 +60,8 @@ never shows, or the key that already shows the same English.
 | A slash command word or its argument | 122 |
 | Shown through another key with the same English | 13 |
 | A link label, or a line that is only a link | 20 |
-| No words of its own (markup, numbers, punctuation, an abbreviation) | 231 |
-| A name, or text the player types or edits | 162 |
+| No words of its own (markup, numbers, punctuation, an abbreviation) | 232 |
+| A name, or text the player types or edits | 161 |
 | No Forever file writes it (a C-side line of other content) | 9 |
 | A chat, error or system line another surface owns | 20 |
 | Regex noise: a string no screen shows | 43 |

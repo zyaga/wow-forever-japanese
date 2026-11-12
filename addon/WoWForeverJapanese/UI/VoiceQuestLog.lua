@@ -63,7 +63,9 @@ local function logLine()
   local path, detail = WFJ.Voice.decide("questframe.detail", "description", m.kind, m.id, who, true)
   if not path then return nil end
   local questTitle = WFJ.SurfaceState.get(LOG_SURFACE, "title")
-  local name = saw and saw.n or (questTitle and type(questTitle.applied) == "string" and questTitle.applied or nil)
+  -- nobody remembered: the quest's title as the pane shows it (its Japanese, or the client's English it was left as)
+  local shownTitle = questTitle and (questTitle.applied or questTitle.en)
+  local name = saw and saw.n or (type(shownTitle) == "string" and shownTitle or nil)
   return path, detail, { key = WFJ.Voice.packKey(m.kind, m.id), path = path, seconds = detail, window = LOG,
     surface = "questframe.detail", kind = m.kind, id = m.id,
     shown = { "questframe.detail", "description", m.kind, m.id },

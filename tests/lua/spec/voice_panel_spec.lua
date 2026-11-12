@@ -434,6 +434,11 @@ describe("the voice player with the voice panel on", function()
     b.scripts.OnClick(b)
     assert.are.equal("Sharptalonの鉤爪", panel().name:GetText())
     assert.is_false(panel().head.shown)
+    -- a title left as the client's English is the name then
+    WFJ.SurfaceState.get("questmap.info", "title").applied = nil
+    P.clear()
+    b.scripts.OnClick(b)
+    assert.are.equal("Sharptalon's Claw", panel().name:GetText())
   end)
 
   it("the whole-text button opens the addon's own window, never Blizzard's quest log, and prints nothing", function()

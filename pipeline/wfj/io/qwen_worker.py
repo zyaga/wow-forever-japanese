@@ -49,10 +49,25 @@ def load(device: str) -> Any:
                                          attn_implementation="sdpa")
 
 
+def sampling(seed: int | None, temperature: float | None) -> dict[str, float]:
+    """The model's extra arguments for one call. `seed` puts the random draws back at the same starting point
+    first, so a voice's readings all begin from one place; `temperature` is how far a reading may stray (the
+    library's own value when None)."""
+    if seed is not None:
+        import torch
+
+        torch.manual_seed(seed)
+        if torch.cuda.is_available():
+            torch.cuda.manual_seed_all(seed)
+        elif torch.backends.mps.is_available():
+            torch.mps.manual_seed(seed)
+    return {} if temperature is None else {"temperature": temperature, "subtalker_temperature": temperature}
+
+
 def speak(model: Any, prompts: dict, text: str, ref_wav: str, ref_text: str | None,
-          mode: str) -> tuple[Any, int]:
+          mode: str, seed: int | None = None, temperature: float | None = None) -> tuple[Any, int]:
     """(samples, sample rate) of one line read in a reference's voice; `prompts` caches each reference's
-    clone prompt between lines."""
+    clone prompt between lines. With a `seed`, every paragraph starts from it."""
     import numpy as np
 
     prompt = _prompt(model, prompts, ref_wav, ref_text, mode)
@@ -60,7 +75,8 @@ def speak(model: Any, prompts: dict, text: str, ref_wav: str, ref_text: str | No
     for para in (p for p in text.split("\n\n") if p.strip()):
         cap = token_cap([para])
         wavs, rate = model.generate_voice_clone(text=para, language="Japanese",
-                                                voice_clone_prompt=prompt, max_new_tokens=cap)
+                                                voice_clone_prompt=prompt, max_new_tokens=cap,
+                                                **sampling(seed, temperature))
         if ran_on(wavs[0], rate, cap):
             raise ValueError(f"the reading ran on past {cap // TOKENS_PER_SECOND} s: {para[:30]}")
         parts += [wavs[0], np.zeros(int(rate * PARAGRAPH_GAP), dtype=wavs[0].dtype)]
@@ -77,6 +93,41 @@ def _prompt(model: Any, prompts: dict, ref_wav: str, ref_text: str | None, mode:
     return prompts[key]
 
 
+def _unset_first(value: float | None) -> float:
+    """A sort key that keeps "not set" apart from zero: a seed of 0 is a seed, and never shares a call with
+    a line that has none."""
+    return -1.0 if value is None else float(value)
+
+
+def send_order(jobs: list[dict]) -> list[dict]:
+    """The order lines are handed out in: one voice's lines together, the longest first. A call holds one
+    seed's paragraphs only, so a handful of lines from many voices would be read a paragraph or two at a
+    time."""
+    return sorted(jobs, key=lambda j: (_unset_first(j.get("seed")), str(j.get("ref", "")), -len(j["text"]),
+                                       j["key"]))
+
+
+def plan_calls(lines: list[dict], batch: int, chars: int = 3000) -> list[list[tuple[int, int, str]]]:
+    """The model calls for `lines`: each a list of (line index, paragraph index, paragraph). A call holds one
+    seed's paragraphs, at most `batch` of them and at most `chars` padded characters (count times the
+    longest)."""
+    paras = [(i, k, p) for i, ln in enumerate(lines)
+             for k, p in enumerate(x for x in ln["text"].split("\n\n") if x.strip())]
+
+    def drawn(i: int) -> tuple[float, float]:
+        return (_unset_first(lines[i].get("seed")), _unset_first(lines[i].get("temperature")))
+
+    paras.sort(key=lambda t: (drawn(t[0]), len(t[2])))  # one seed together, like lengths together
+    calls: list[list[tuple[int, int, str]]] = [[]]
+    for t in paras:
+        cur = calls[-1]
+        if cur and (drawn(cur[0][0]) != drawn(t[0]) or len(cur) >= batch
+                    or (len(cur) + 1) * len(t[2]) > chars):  # sorted: t is the longest of its seed
+            calls.append([])
+        calls[-1].append(t)
+    return [c for c in calls if c]
+
+
 def speak_many(model: Any, prompts: dict, lines: list[dict], batch: int,
                chars: int = 3000) -> list[tuple[Any, int] | str]:
     """Each line's (samples, rate), or its error, read several paragraphs per model call: the GPU reads a
@@ -84,31 +135,26 @@ def speak_many(model: Any, prompts: dict, lines: list[dict], batch: int,
     call holds at most `batch` paragraphs and at most `chars` padded characters (count times the longest):
     long quest texts go in small calls and short lines in large ones.
     A call that runs out of memory is freed and split in half until it fits. Each paragraph is read in its
-    own line's voice, and a line's paragraphs are joined in order as `speak` joins them."""
+    own line's voice, and a line's paragraphs are joined in order as `speak` joins them.
+    A line may carry a `seed` and a `temperature`: a call then holds one seed's paragraphs only and starts
+    from that seed."""
     import numpy as np
 
-    paras = [(i, k, p) for i, ln in enumerate(lines)
-             for k, p in enumerate(x for x in ln["text"].split("\n\n") if x.strip())]
-    paras.sort(key=lambda t: len(t[2]))  # like lengths together: less padding
-    calls: list[list[tuple[int, int, str]]] = [[]]
-    for t in paras:
-        cur = calls[-1]
-        if cur and (len(cur) >= batch or (len(cur) + 1) * len(t[2]) > chars):  # sorted: t is the longest
-            calls.append([])
-        calls[-1].append(t)
     got: dict[int, dict[int, Any]] = {}
     errors: dict[int, str] = {}
     rate = 24000
-    todo = [c for c in calls if c]
+    todo = plan_calls(lines, batch, chars)
     while todo:
         part = todo.pop(0)
         try:
             items = [_prompt(model, prompts, lines[i]["ref_wav"], lines[i].get("ref_text"),
                              lines[i]["mode"])[0] for i, _, _ in part]
             cap = token_cap([p for _, _, p in part])
+            first = lines[part[0][0]]
             wavs, rate = model.generate_voice_clone(text=[p for _, _, p in part],
                                                     language=["Japanese"] * len(part),
-                                                    voice_clone_prompt=items, max_new_tokens=cap)
+                                                    voice_clone_prompt=items, max_new_tokens=cap,
+                                                    **sampling(first.get("seed"), first.get("temperature")))
         except Exception as e:  # noqa: BLE001 - out of memory: free it and read the call in halves
             free_all()
             if len(part) > 1 and "out of memory" in str(e).lower():
@@ -192,7 +238,8 @@ def main() -> int:
             continue
         try:
             req = json.loads(raw)
-            audio, rate = speak(model, prompts, req["text"], req["ref_wav"], req.get("ref_text"), req["mode"])
+            audio, rate = speak(model, prompts, req["text"], req["ref_wav"], req.get("ref_text"), req["mode"],
+                                req.get("seed"), req.get("temperature"))
             sf.write(req["out"], audio, rate, subtype="PCM_16")
             say({"ok": True})
         except Exception as e:  # noqa: BLE001 - every failure is answered, the worker keeps serving

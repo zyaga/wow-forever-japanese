@@ -20,6 +20,10 @@ The English names of people, places, creatures, items, spells, zones and faction
 transliterated: not in quest text, tooltips, nameplates or titles. Japanese is for prose. A Japanese name could
 only ever be an extra line that the player turns on, never a replacement and never on by default.
 
+A quest's title is a name too: it is what a player searches a guide for, links in chat and says to a party
+member, so it stays the client's English on every surface while the quest's text is Japanese
+([ADR-083](../adr/083-quest-titles-are-names.md)).
+
 Race and class words are the one exception, and only inside translated prose: there they are written in katakana
 (`Druid` → ドルイド, `Night Elf` → ナイトエルフ), as the [translation style guide](../content/translation-style-guide.md) describes, because
 they are ordinary words in the sentence. On interface labels they stay English.

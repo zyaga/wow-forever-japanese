@@ -295,19 +295,24 @@ _Avoid_: outdated reading, [[Stale]] (that's the English side of a translation)
 → [Readings](systems/readings.md)
 
 **Name store**:
-`data/name/`: one line per distinct English name the game shows (a creature, item, spell, game object, zone, faction or map, or an English name inside shipped Japanese prose), keyed by the hash of the normalized English, with its Japanese, that Japanese's reading in hiragana, the game ids that carry the name per kind, and [[Provenance]]. One line per English name gives one Japanese per name everywhere. Hearthstone's official Japanese fills a name it has exactly; a model drafts the rest. On screen names stay English under the [[Name policy]]; the store feeds the [[Kana line]] and a later names setting, off by default.
+`data/name/`: one line per distinct English name the game shows (a creature, item, spell, game object, zone, faction or map, or an English name inside shipped Japanese prose), keyed by the hash of the normalized English, with its Japanese, that Japanese's reading in hiragana, the game ids that carry the name per kind, and [[Provenance]]. One line per English name gives one Japanese per name everywhere. Each name's Japanese is its [[Respelling]]: the katakana of its English, put together from the [[Name glossary]], never a translation. On screen names stay English under the [[Name policy]]; the store feeds the [[Engine text]], the [[Kana line]] and a later names setting, off by default.
 _Avoid_: name translations, localized names, name table (that is the generated `Data/Names/` output), [[Translation glossary]]
-→ [Data model](architecture/data-model.md) · [ADR-078](adr/078-japanese-names-keyed-by-english-and-kana-voice-lines.md)
+→ [Data model](architecture/data-model.md) · [ADR-078](adr/078-japanese-names-keyed-by-english-and-kana-voice-lines.md) · [ADR-082](adr/082-names-spelled-from-the-english-and-the-voice-reads-its-own-text.md)
 
 **Name glossary**:
-`data/name/words.jsonl`: English proper-noun words with the one Japanese spelling every name that contains them uses (`Ashenvale` → アッシェンヴェイル). Seeded from Hearthstone's card names, the rest drafted before the names. A word marked `check` must appear in that form in every name that holds it, unless the name is translated rather than spelled word by word (`free`) or is a Hearthstone whole name; `wfj names check` reports the rest.
+`data/name/words.jsonl`: every English word a name is made of, each with its one katakana spelling (`Ashenvale` → アッシェンヴェイル, `Tiger` → タイガー). Every name a person did not write is put together from these spellings. A word nobody has spelled yet is drafted once, in a respell round (`wfj names export-respell` / `import-respell`), and until then the names that hold it are unfinished; `wfj names check` reports them.
 _Avoid_: [[Word list]] (the player's saved words), dictionary, [[Translation glossary]] (prose words a drafter translates)
-→ [Data model](architecture/data-model.md) · [Translation batches](operations/translation-batches.md) · [ADR-078](adr/078-japanese-names-keyed-by-english-and-kana-voice-lines.md)
+→ [Data model](architecture/data-model.md) · [Translation batches](operations/translation-batches.md#names-for-a-batch) · [ADR-082](adr/082-names-spelled-from-the-english-and-the-voice-reads-its-own-text.md)
+
+**Respelling**:
+Writing a name's Japanese as the katakana of its English, word by word from the [[Name glossary]], by code (`wfj names respell`): a leading "The" left out, a possessive kept as ズ, words joined with ・, a tag in brackets left out, a roman numeral after the first word as a digit, a single letter by its letter name. Black Dragonflight is ブラック・ドラゴンフライト, never 黒いドラゴンフライト, so the voice says the name the player reads. Every name is respelled except a player's own correction; Hearthstone's translated names were respelled too.
+_Avoid_: name translation, transliteration (it is spelled from how the English sounds, not letter by letter), Hearthstone names
+→ [Translation batches](operations/translation-batches.md#names-for-a-batch) · [ADR-082](adr/082-names-spelled-from-the-english-and-the-voice-reads-its-own-text.md)
 
 ## Addon
 
 **Name policy**:
-Names of people, places, mobs, items, spells, and zones stay in English on screen; Japanese is for prose. Every name also has Japanese data in the [[Name store]], used by the voice's [[Kana line]] and by a later names setting, off by default. Race and class words are katakana, following the human corpus, including the reader's own, filled from a [[Player placeholder]]; the reader's character name is shown as the client returns it.
+Names of people, places, mobs, items, spells, and zones stay in English on screen; Japanese is for prose. A quest's title is a name too and stays English, while the quest's text is Japanese ([ADR-083](adr/083-quest-titles-are-names.md)). Every name also has Japanese data in the [[Name store]] (its [[Respelling]]), which the voice says in place of the English and a later names setting, off by default, will show. Race and class words are katakana, following the human corpus, including the reader's own, filled from a [[Player placeholder]]; the reader's character name is shown as the client returns it.
 _Avoid_: localized names, transliteration
 
 **UI string**:
@@ -837,8 +842,18 @@ The lines already read aloud, as pack key → [[Japanese hash]], saved account-w
 _Avoid_: played list, history, seen lines
 → [Voice over](systems/voice.md#when-a-line-starts) · [Data model](architecture/data-model.md)
 
+**Engine text**:
+What the voice engine reads for a voiced line, built from the spoken line by `wfj.core.voice_text`: each English name replaced by its katakana from the [[Name store]], a space right before a kanji removed, the player stand-in written ぼうけんしゃ, and a few single kanji (`voice.toml` `[text] kana_words`: 金 かね, 獣 けもの, …) written in kana where they stand alone as a word. The rest stays in kanji. Never shown; the on-screen Japanese is untouched. Its hash is part of a [[Cloned voice]] file's fingerprint when it differs from the spoken line, so changing it remakes the lines it touches.
+_Avoid_: speech text (the spoken line before these changes), [[Kana line]], TTS input
+→ [Voice over runbook](operations/voice.md#what-the-engine-reads) · [ADR-082](adr/082-names-spelled-from-the-english-and-the-voice-reads-its-own-text.md)
+
+**Clone seed**:
+The number every reading of one [[Voice set]] starts its random draws from, made from the set's name (its crc32), so a set sounds like one speaker from line to line. On with `seed = true` in `voice.toml` `[clone]`, beside the reading `temperature` (0.5). Both are part of a [[Cloned voice]] file's fingerprint: changing either remakes every cloned file. A line read again on rented GPUs is a new take, not the same bytes, because its draws depend on the other lines in its batch.
+_Avoid_: random seed per line, voice seed
+→ [Voice over runbook](operations/voice.md#configuration) · [ADR-082](adr/082-names-spelled-from-the-english-and-the-voice-reads-its-own-text.md)
+
 **Kana line**:
-A voiced line written in kana only, as the voice should read it: the line the voice reads today with every kanji word replaced by its [[Reading]], every English name by its Japanese from the [[Name store]], and every number spelled out with its counter (3匹 さんびき). One per voiced line in `data/voice/kana.jsonl`, pinned to the hash of the Japanese it was made from. Pipeline input for a later remake of the audio; never shown, and no audio is made from it yet.
+A voiced line written in kana only: the spoken line with every kanji word replaced by its [[Reading]], every English name by its katakana from the [[Name store]], and every number spelled out with its counter (3匹 さんびき). One per voiced line in `data/voice/kana.jsonl`, pinned to the hash of the Japanese it was made from, and rebuilt by every `make names`. Pipeline data only: never shown, and the audio is made from the [[Engine text]], not from it.
 _Avoid_: furigana line, phonetic text, script, [[Reading]] (one word's kana)
 → [Voice over runbook](operations/voice.md) · [Data model](architecture/data-model.md) · [ADR-078](adr/078-japanese-names-keyed-by-english-and-kana-voice-lines.md)
 

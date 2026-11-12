@@ -9,6 +9,11 @@ WFJ.SCHEMA = 1
 -- "ui": Blizzard's own interface words; "books": the book / letter / plaque window.
 WFJ.AREAS = { "quests", "gossip", "items", "spells", "ui", "books" }
 
+-- A quest's title is a name: what a player searches a guide for, links in chat and says to a party member. It
+-- stays the client's English, like every other name. The Japanese titles still ship and every surface still knows
+-- how to show one: true brings them back (Main hands this to the policy layer as the switch of kind "quest.title").
+WFJ.QUEST_TITLES_JAPANESE = false
+
 -- Marker messages: a short bilingual message, never a glyph, so it reads at a glance. A surface with a banner
 -- FontString (the quest window: the stone band under the NPC name) shows them there in MARKER_COLOR; a surface
 -- without one gets them inline, on their own line above prose or before a single-line title (UI/Render.lua).
