@@ -10,11 +10,11 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Changed
+- Quest titles now stay in the game's English everywhere: the quest list, the tracker, the quest log, the quest window, the quest rows in an NPC's talk window, Dialogue UI's windows, tooltips and system messages. A title is a name, like a person's or a place's: it is what you search a guide for, link in chat and say to a party member. The quest's text, objectives and descriptions are Japanese as before.
 - A new icon: the 字 is now a bold brush-style character in gold on a brighter red disc. The minimap button shows the red disc and the 字 without a second gold rim, and sits centred in its ring.
 
 ### Fixed
 - With Dialogue UI, an item's Japanese effect line in its tooltip (Use, Equip, Chance on hit, the flavour quote) no longer shows as a row of empty boxes.
-- In the quest list, a quest that someone in your party is also on now shows its Japanese title. The game writes the number of party members on the quest in front of the title ("[1] [40] ..."), and that number kept the title in English. The same goes for a title with the quest's id in front (the game's `displayQuestID` setting), and for a failed quest's title in the quest log's details.
 - The character's spoken error lines (out of range, not enough mana) now follow the game's own Error Speech setting. With it on you hear the Japanese line, with it off you hear nothing. The addon no longer switches that setting off itself; if an earlier version had switched yours off, it is switched back on once.
 - With Ellesmere UI, the game's windows it restyles no longer have to show empty boxes where the Japanese should be: choose **WoW Forever Japanese** as the Global Font in Ellesmere UI's font settings (`/eui`, Fonts). English text in those windows is then drawn in the same font. Ellesmere UI's own windows stay English, and its chat window is not supported: turn its Chat module off in the addon list for Japanese chat.
 - With Dialogue UI, a quest's tag over its title (Dungeon, Raid) no longer shows empty boxes: it keeps the addon's font when the page is gone over again, and if its Japanese ever loses that font, the font goes back on the next moment.
