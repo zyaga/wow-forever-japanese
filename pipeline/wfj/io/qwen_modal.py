@@ -87,9 +87,10 @@ def batches(run: Path, limit: int | None) -> list[tuple[dict[str, bytes], list[d
             if not (wav / f"{j['key']}.wav").is_file()]
     if limit:
         todo = todo[:limit]
-    # longest lines first: they start on the first free cards instead of piling up at the end, and the short
-    # ones fill the gaps while the long ones finish
-    todo.sort(key=lambda j: (-len(j["text"]), j["key"]))
+    # one voice's lines together, so a card's calls stay full; within a voice the longest first
+    from qwen_worker import send_order
+
+    todo = send_order(todo)
     out = []
     for n in range(0, len(todo), BATCH):
         part = [{**j, "ref_text": texts.get(j["ref"])} for j in todo[n : n + BATCH]]

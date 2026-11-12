@@ -331,8 +331,7 @@ def voice_coverage(root: Path) -> dict[str, Any]:
     cfg = voice_make.load_config(cfg_path)
     lines = voice_make.shipped_lines(root)
     jobs = voice_make.file_jobs(root, cfg, "all", lines, voice_make.players_of("all"))
-    state = voice_make.voice.in_step(jobs, lines, cfg["roster"], voice_make.audio_record(root),
-                                     voice_make.line_values(root, lines))
+    state, _, _ = voice_make.step_state(root, cfg, jobs, lines, voice_make.audio_record(root))
     stale, missing = set(state["stale"]), set(state["missing"])
     kinds: dict[str, Counter[str]] = {k: Counter() for k in VOICE_KINDS}
     # keys that play another line's file (a female wording, a repeated quest's text): voiced, not silent,

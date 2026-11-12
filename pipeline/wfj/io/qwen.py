@@ -94,12 +94,14 @@ class Qwen:
             raise QwenError(f"the Qwen3-TTS worker stopped (exit {self._proc.poll()}); see {self.log}")
         return json.loads(line)
 
-    def synthesize(self, text: str, ref_wav: Path, ref_text: str | None, mode: str) -> bytes:
-        """One line's WAV in a set's voice."""
+    def synthesize(self, text: str, ref_wav: Path, ref_text: str | None, mode: str,
+                   seed: int | None = None, temperature: float | None = None) -> bytes:
+        """One line's WAV in a set's voice, each paragraph started from `seed` when one is given."""
         assert self._proc and self._proc.stdin
         with tempfile.TemporaryDirectory() as tmp:
             out = Path(tmp) / "line.wav"
-            req = {"text": text, "ref_wav": str(ref_wav), "ref_text": ref_text, "mode": mode, "out": str(out)}
+            req = {"text": text, "ref_wav": str(ref_wav), "ref_text": ref_text, "mode": mode, "out": str(out),
+                   "seed": seed, "temperature": temperature}
             self._proc.stdin.write(json.dumps(req, ensure_ascii=False) + "\n")
             self._proc.stdin.flush()
             reply = self._read()
@@ -128,11 +130,14 @@ class Qwen:
             self._lock = None
 
 
-def line_key(text: str, ref_wav: Path, mode: str) -> str:
-    """The name a line's WAV has in a remote run: what was read, from which reference, in which mode."""
+def line_key(text: str, ref_wav: Path, mode: str, seed: int | None = None,
+             temperature: float | None = None) -> str:
+    """The name a line's WAV has in a remote run: what was read, from which reference, in which mode, and at
+    which temperature and seed when they are set."""
     import hashlib
 
-    return hashlib.sha256(f"{ref_wav.name}|{mode}|{text}".encode()).hexdigest()[:24]
+    drawn = "" if seed is None and temperature is None else f"|{seed}|{temperature}"
+    return hashlib.sha256(f"{ref_wav.name}|{mode}{drawn}|{text}".encode()).hexdigest()[:24]
 
 
 class Prepared:
@@ -155,8 +160,9 @@ class Prepared:
     def background(self, on: bool) -> None:  # noqa: ARG002 - the same call as Qwen's; nothing runs here
         return None
 
-    def synthesize(self, text: str, ref_wav: Path, ref_text: str | None, mode: str) -> bytes:  # noqa: ARG002
-        path = self.run / "wav" / f"{line_key(text, ref_wav, mode)}.wav"
+    def synthesize(self, text: str, ref_wav: Path, ref_text: str | None, mode: str,  # noqa: ARG002
+                   seed: int | None = None, temperature: float | None = None) -> bytes:
+        path = self.run / "wav" / f"{line_key(text, ref_wav, mode, seed, temperature)}.wav"
         if not path.is_file():
             raise NotRead(f"{path.name}: not read in the remote run {self.run} (run qwen_modal.py again)")
         return path.read_bytes()

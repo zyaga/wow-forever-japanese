@@ -1,4 +1,4 @@
-"""wfj names collect|hearthstone|export|import|check: Japanese names
+"""wfj names collect|hearthstone|export|import|respell|check: Japanese names
 (ADR-078; docs/architecture/data-model.md).
 
 collect [--vmangos DB] [--tables DIR] [--date YYYY-MM-DD]
@@ -33,6 +33,21 @@ import-words BATCH.jsonl --model MODEL --batch NAME [--date YYYY-MM-DD] [--dry-r
     unchecked: ordinary words with more than one sense (Chest, Iron) are offered as hints, not enforced.
 check
     Every name and word line's shape, and the one-spelling check. `validate` runs the same.
+export-respell --out DIR [--size N]
+    The words with no katakana spelling that a translated name is built from, each once in lower case:
+    {"en", "count", "examples"}. The round that spells every name from its English starts here.
+import-respell BATCH.jsonl --model MODEL --batch NAME [--date YYYY-MM-DD] [--dry-run]
+    Rows {"en", "ja"}: a word's translated Japanese is replaced by its katakana and a word with no line gets
+    one. A spelling that is not katakana, or that differs from the katakana a word already has, is refused.
+    --replace (a fix round) lets a row change the katakana a word has; a word a person wrote is kept.
+learn-spellings [--dry-run]
+    A word with no katakana spelling takes it from a name that is already spelled out, when that name has
+    as many parts as words. Run before export-respell, so only the words no name spells are drafted.
+respell [--date YYYY-MM-DD] [--dry-run]
+    Every name a person did not write is written again from the spellings of its words, its reading with it
+    (`wfj.core.respell`), a new name with no Japanese yet among them; a name that already equals its
+    spelling does not change. A player's own fix and a name with nothing to spell stay as they are. A name
+    with a word nobody has spelled is left and counted: export-respell lists those words.
 """
 
 from __future__ import annotations
@@ -50,6 +65,7 @@ from typing import Any
 
 from wfj.cmd.readings import read_batch
 from wfj.core import names
+from wfj.core import respell as spell
 from wfj.emit.lua_writer import shipped
 from wfj.io import vmangos
 from wfj.io.jsonl_store import Store, dumps
@@ -442,10 +458,163 @@ def problems(root: Path) -> list[str]:
         if w.get("check"):
             seen.setdefault(folded, w.get("ja"))
     if not out:
-        out.extend(f"name spelling: {p}" for p in names.spelling_problems(lines, words))
+        out.extend(f"name word {w['en']!r}: {w['ja']!r} is not a katakana spelling"
+                   for w in words if not names.KATAKANA.match(w["ja"]))
+        out.extend(f"name spelling: {p}" for p in respell_problems(lines, words))
         out.extend(f"name case: {p}" for p in names.case_problems(lines))
         out.extend(f"name reading: {p}" for p in names.reading_problems(lines, prose_readings(root).get))
     return out
+
+
+def _spellings(words: Sequence[dict[str, Any]]) -> dict[str, str]:
+    """{casefolded word: its katakana} for every word that is spelled out. A word is one word whatever its
+    case."""
+    out: dict[str, str] = {}
+    for w in words:
+        if names.KATAKANA.match(w["ja"]):
+            out.setdefault(w["en"].casefold(), w["ja"])
+    return out
+
+
+def _kept(prov: dict[str, Any]) -> bool:
+    """Wording that is never spelled again: a person's own, from a fix report. A name or word taken from
+    Hearthstone's cards is spelled from the English like the rest: the voice says what the screen shows."""
+    return prov["class"] == "correction" or (
+        prov["class"] == "human" and not prov["source"].startswith("hearthstone@")
+    )
+
+
+def _respelled(line: dict[str, Any]) -> bool:
+    """A name that is left as it is: one a person wrote. A name already in katakana is still put together
+    again: Japanese writes some of its own words in katakana (サソリ), and those are translations too."""
+    return _kept(line["provenance"])
+
+
+def learn_spellings(root: Path, dry_run: bool) -> tuple[int, list[str]]:
+    """Words take their spelling from the names that are already spelled out: a katakana name with as many
+    parts as words gives each of its words a spelling (ザンダー・グッドビアード: Xandar, Goodbeard). Only a
+    word with no katakana spelling takes one. A name whose part differs from the spelling its word already
+    has is returned: that name will be written again from the word's spelling."""
+    words = {w["en"]: w for w in load_words(root)}
+    known = _spellings(list(words.values()))
+    learned = 0
+    differ: list[str] = []
+    for ln in load_lines(root):
+        if ln["status"] != "trusted" or not names.KATAKANA.match(ln["ja"]):
+            continue
+        ws, parts = spell.words(ln["en"]), ln["ja"].split("・")
+        # a possessive's part ends in its ズ, which is not part of the word's spelling: nothing is learned
+        if len(ws) != len(parts) or " " in "".join(ws) or re.search(r"['’]s\b", ln["en"]):
+            continue
+        for w, part in zip(ws, parts, strict=True):
+            have = known.get(w.casefold())
+            if have is None:
+                same = [k for k in words if k.casefold() == w.casefold()]
+                for k in same or [w]:
+                    words[k] = {"en": k, "ja": part, "check": True, "provenance": dict(ln["provenance"])}
+                known[w.casefold()] = part
+                learned += 1
+            elif have != part:
+                differ.append(f"{ln['en']!r}: {w!r} is {part!r} here, {have!r} as a word")
+    if not dry_run:
+        save_words(root, words.values())
+    return learned, differ
+
+
+def export_respell(root: Path, out: Path, size: int) -> int:
+    """The words with no katakana spelling that a name is built from (a new name's among them), each once
+    in lower case, with how many names carry it and a few of them."""
+    known = _spellings(load_words(root))
+    carried: dict[str, list[str]] = defaultdict(list)
+    for ln in load_lines(root):
+        if ln["status"] == "trusted" and _respelled(ln):
+            continue
+        for w in spell.assemble(ln["en"], known.get)[2]:
+            carried[w.casefold()].append(ln["en"])
+    rows = [{"en": w, "count": len(ns), "examples": sorted(ns)[:5]} for w, ns in sorted(carried.items())]
+    return write_batches(out, rows, size, "respell")
+
+
+def import_respell(  # noqa: PLR0913 - one batch file, its provenance, and the two ways to run it
+    root: Path, path: Path, model_id: str, batch: str, today: str, dry_run: bool, replace: bool = False
+) -> tuple[int, list[str]]:
+    """Takes drafted spellings ({"en", "ja"}): a word's translated Japanese is replaced by its katakana and a
+    word with no line gets one. A spelling that is not katakana, or that differs from the katakana a word
+    already has, is refused: a word is spelled one way. `replace` (a fix round) lets a row change the
+    katakana a word has, never a word a person wrote."""
+    prov = draft_provenance(model_id, "names", batch, today)
+    words = {w["en"]: w for w in load_words(root)}
+    known = _spellings(list(words.values()))
+    rejected: list[str] = []
+    written = 0
+    for row in read_batch(path):
+        en, ja = row.get("en"), row.get("ja")
+        if not isinstance(en, str) or not en or " " in en:
+            rejected.append(f"word {en!r}: not one English word")
+        elif not isinstance(ja, str) or not names.KATAKANA.match(ja):
+            rejected.append(f"word {en!r}: {ja!r} is not katakana")
+        elif known.get(en.casefold(), ja) != ja and not replace:
+            rejected.append(f"word {en!r}: already {known[en.casefold()]!r}, not {ja!r}")
+        elif known.get(en.casefold()) != ja:
+            same = [k for k in words if k.casefold() == en.casefold()]
+            if any(_kept(words[k]["provenance"]) for k in same):
+                rejected.append(f"word {en!r}: written by a person, kept")
+                continue
+            for k in same or [en]:
+                words[k] = {"en": k, "ja": ja, "check": True, "provenance": dict(prov)}
+            known[en.casefold()] = ja
+            written += 1
+    if not dry_run:
+        save_words(root, words.values())
+    return written, rejected
+
+
+def respell_problems(lines: Sequence[dict[str, Any]], words: Sequence[dict[str, Any]]) -> list[str]:
+    """A name a person did not write is the spelling of its words, and its reading the reading of that: the
+    check that keeps a translated name from coming back."""
+    known = _spellings(words)
+    out = []
+    for ln in lines:
+        if ln["status"] != "trusted" or _respelled(ln):
+            continue
+        ja, reading, missing = spell.assemble(ln["en"], known.get)
+        if missing:
+            out.append(f"{ln['en']!r}: no spelling for {', '.join(repr(w) for w in missing)}")
+        elif ja is not None and (ja, reading) != (ln["ja"], ln["reading"]):
+            out.append(f"{ln['en']!r} is {ln['ja']!r}, its words spell {ja!r}")
+    return out
+
+
+def respell(root: Path, today: str, dry_run: bool) -> dict[str, int]:
+    """Every name a person did not write is written from the spellings of its words (its reading with it):
+    a new name with no Japanese yet, and a name that is not that spelling. A name with a word nobody has
+    spelled is left as it is and counted; the check reports it until the word is spelled."""
+    known = _spellings(load_words(root))
+    lines = load_lines(root)
+    counts = {"respelled": 0, "kept": 0, "nothing to spell": 0, "word with no spelling": 0}
+    out = []
+    for ln in lines:
+        if ln["status"] == "trusted" and _respelled(ln):
+            counts["kept"] += 1
+            out.append(ln)
+            continue
+        ja, reading, missing = spell.assemble(ln["en"], known.get)
+        if missing:
+            counts["word with no spelling"] += 1
+            out.append(ln)
+        elif ja is None:
+            counts["nothing to spell"] += 1
+            out.append(ln)
+        elif (ja, reading) == (ln["ja"], ln["reading"]) and not ln["free"]:
+            counts["kept"] += 1
+            out.append(ln)
+        else:
+            counts["respelled"] += 1
+            prov = {"class": "machine", "source": f"respell@{today}", "imported": today}
+            out.append(dict(ln, ja=ja, reading=reading, free=False, status="trusted", provenance=prov))
+    if not dry_run:
+        save_lines(root, out)
+    return counts
 
 
 def _parser(today: str) -> argparse.ArgumentParser:
@@ -494,8 +663,48 @@ def _parser(today: str) -> argparse.ArgumentParser:
         action="store_true",
         help="ordinary words with several senses: a hint for drafting, not held to every name",
     )
+    er = sub.add_parser("export-respell")
+    er.add_argument("--out", required=True)
+    er.add_argument("--size", type=int, default=1000)
+    ir = sub.add_parser("import-respell")
+    ir.add_argument("batch_file")
+    ir.add_argument("--model", required=True)
+    ir.add_argument("--batch", required=True)
+    ir.add_argument("--date", default=today)
+    ir.add_argument("--dry-run", action="store_true")
+    ir.add_argument("--replace", action="store_true", help="a fix round: may change a katakana spelling")
+    rs = sub.add_parser("respell")
+    rs.add_argument("--date", default=today)
+    rs.add_argument("--dry-run", action="store_true")
+    ls = sub.add_parser("learn-spellings")
+    ls.add_argument("--dry-run", action="store_true")
     sub.add_parser("check")
     return p
+
+
+def _run_respell(a: argparse.Namespace, root: Path) -> int:
+    dry = " (dry run)" if getattr(a, "dry_run", False) else ""
+    if a.cmd == "export-respell":
+        n = export_respell(root, Path(a.out), a.size)
+        print(f"names export-respell: {n} words with no katakana spelling → {a.out}")
+        return 0
+    if a.cmd == "import-respell":
+        n, rejected = import_respell(
+            root, Path(a.batch_file), a.model, a.batch, a.date, a.dry_run, a.replace
+        )
+        for r in rejected:
+            print(f"names import-respell: rejected {r}", file=sys.stderr)
+        print(f"names import-respell: {n} words spelled, {len(rejected)} rejected{dry}")
+        return 1 if rejected else 0
+    if a.cmd == "learn-spellings":
+        n, differ = learn_spellings(root, a.dry_run)
+        print(f"names learn-spellings: {n} words spelled from names, {len(differ)} names differ{dry}")
+        return 0
+    counts = respell(root, a.date, a.dry_run)
+    print("names respell: " + ", ".join(f"{k} {v}" for k, v in counts.items()) + dry)
+    if counts["word with no spelling"]:
+        print("names respell: spell the new words with `wfj names export-respell`, then import-respell")
+    return 0
 
 
 def run(argv: Sequence[str]) -> int:
@@ -539,6 +748,8 @@ def run(argv: Sequence[str]) -> int:
                 f"names import-words: {n} words written, {len(rejected)} kept or rejected"
                 + (" (dry run)" if a.dry_run else "")
             )
+        elif a.cmd in ("export-respell", "import-respell", "respell", "learn-spellings"):
+            return _run_respell(a, root)
         elif a.cmd == "import":
             n, rejected = import_batch(root, Path(a.batch_file), a.model, a.batch, a.date, a.dry_run)
             for r in rejected:

@@ -198,6 +198,25 @@ def test_every_name_has_japanese(root):
     assert left == [], f"{len(left)} names with no Japanese (wfj names export / import), e.g. {left[:10]}"
 
 
+def test_every_name_is_the_spelling_of_its_english_words(root):
+    """The whole table: a name nobody corrected by hand is its words' katakana, put together by the rules, so
+    a translated name cannot come back with a re-pull or a drafting round."""
+    data = root / "data"
+    problems = cmd.respell_problems(load_lines(data), load_words(data))
+    assert problems == [], f"{len(problems)} names are not spelled from their English, e.g. {problems[:5]}"
+
+
+def test_every_word_has_one_katakana_spelling(root):
+    words = load_words(root / "data")
+    seen: dict[str, set[str]] = {}
+    for w in words:  # a word may be listed in two capitalisations; it is still spelled one way
+        seen.setdefault(w["en"].casefold(), set()).add(w["ja"])
+    twice = sorted(k for k, ja in seen.items() if len(ja) > 1)
+    assert twice == [], f"{len(twice)} words are spelled more than one way, e.g. {twice[:5]}"
+    other = sorted(w["en"] for w in words if not names.KATAKANA.match(w["ja"]))
+    assert other == [], f"{len(other)} words are not spelled in katakana, e.g. {other[:5]}"
+
+
 def test_every_english_name_has_a_line(root):
     """A re-pull, a collector send or a translation that brings a new name fails here until `wfj names
     collect` and a drafting round give it a line."""

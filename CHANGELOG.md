@@ -11,6 +11,8 @@ an old setting stops working). A release moves those lines under its version num
 
 ### Changed
 - Quest titles now stay in the game's English everywhere: the quest list, the tracker, the quest log, the quest window, the quest rows in an NPC's talk window, Dialogue UI's windows, tooltips and system messages. A title is a name, like a person's or a place's: it is what you search a guide for, link in chat and say to a party member. The quest's text, objectives and descriptions are Japanese as before.
+- The voice now says every English name in Japanese sounds that match what you read on screen: Black Dragonflight is spoken ブラック・ドラゴンフライト, not translated, and Tiger is タイガー. Names on screen stay English, as before.
+- Every voice line has been made again. Each NPC voice now sounds steadier from one line to the next, and words the voice often said wrong come out right: 冒険者, a few single-kanji words such as 金 (かね) and 獣 (けもの), and words that came right after a space.
 - A new icon: the 字 is now a bold brush-style character in gold on a brighter red disc. The minimap button shows the red disc and the 字 without a second gold rim, and sits centred in its ring.
 
 ### Fixed

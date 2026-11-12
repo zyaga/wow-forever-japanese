@@ -501,12 +501,15 @@ voice-status: ## how far the background voice run is, and the time left
 voice-stop: ## stop the background voice run (make voice-run resumes it)
 	@pkill -f "wfj voice generate" && echo "voice-stop: stopped; make voice-run resumes" || echo "voice-stop: no run going"
 
-# Japanese names and kana lines (ADR-078). Every flow that brings English or changes shipped Japanese ends here:
-# a new English name gets a `missing` data/name line (drafted with `wfj names export` / `import`; a test fails
-# until it is), and every voiced line gets its kana line from the readings and names.
-names: ## every English name gets a data/name line, then every voiced line its kana line
+# Japanese names and kana lines. Every flow that brings English or changes shipped Japanese ends here: a new
+# English name gets a data/name line and is spelled in katakana from the spellings of its words; a word nobody
+# has spelled yet is listed by `wfj names export-respell` and taken by `import-respell` (a test fails until it
+# is); and every voiced line gets its kana line from the readings and names.
+names: ## every English name gets a data/name line spelled from its words, then every voiced line its kana line
 	cd pipeline && $(PY) -m wfj names collect $(if $(wildcard $(VMANGOS_DB)),--vmangos $(VMANGOS_DB)) \
 		$(if $(wildcard $(call client_dir,forever)),--tables "$(call client_dir,forever)")
+	cd pipeline && $(PY) -m wfj names learn-spellings
+	cd pipeline && $(PY) -m wfj names respell
 	cd pipeline && $(PY) -m wfj voice kana
 
 # Hearthstone's official Japanese (HearthstoneJSON's card files), a build-time reference only: kept under build/,
