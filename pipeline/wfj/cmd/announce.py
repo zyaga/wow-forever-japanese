@@ -1,10 +1,11 @@
 """wfj announce: a release's Discord post (docs/operations/release.md, ADR-072).
 
   wfj announce --version X.Y.Z --notes PATH [--media DIR] [--dry-run]
-      Post version X.Y.Z as one message: one line of content, the folder's clips and pictures as
-      attachments (Discord shows them as tiles at the top of the post), then the English card in the
-      addon's gold with the version, the notes at PATH as Discord markdown and the CurseForge link, and,
-      when DIR holds `ja.md`, the Japanese card with that text. No DIR, or an empty one: the cards alone.
+      Post version X.Y.Z: one message with one line of content, the folder's clips and pictures as
+      attachments (Discord shows them as tiles at the top of the post) and the English card in the
+      addon's gold with the version, the notes at PATH as Discord markdown and the CurseForge link; then,
+      when DIR holds `ja.md`, a second message with the Japanese card and that text. No DIR, or an empty
+      one: the cards alone.
   wfj announce --preview [--media DIR] [--dry-run]
       The post the next release would make: the version by the release rule (`next` while `## Unreleased`
       is empty), the notes from `## Unreleased`, the media and `ja.md` from DIR; its content starts with a
@@ -14,7 +15,7 @@ The webhook URL is read from DISCORD_WEBHOOK_URL and nowhere else; it is never p
 the message and the file list and sends nothing. Limits are Discord's: at most 10 files of 20 MiB and
 25 MiB together, each a type Discord shows inline, a card of at most 4096
 characters (longer notes are cut at an entry and end with a link to the full notes; a longer `ja.md` is
-refused).
+refused), and at most 6000 characters of cards in one message, which is why each card has its own.
 """
 
 from __future__ import annotations
@@ -40,6 +41,7 @@ MAX_FILES = 10
 MAX_FILE_BYTES = 20 * 1024 * 1024
 MAX_TOTAL_BYTES = 25 * 1024 * 1024  # Discord's limit on one request
 MAX_DESCRIPTION = 4096
+MAX_MESSAGE_CARDS = 6000  # the titles and texts of every card in one message, together
 FILE_NAME = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*$")  # a name that goes into a multipart header as is
 
 
@@ -139,9 +141,10 @@ def description(version: str, section: Section) -> str:
 
 def build(
     version: str, section: Section, files: Sequence[Path], ja: str | None = None, preview: bool = False
-) -> dict:
-    """The one webhook message: the content line, the files as attachments (Discord shows them as tiles at the
-    top of the post, clips first), then the English card and, with `ja`, the Japanese card."""
+) -> list[dict]:
+    """The webhook messages, in order: the content line, the files as attachments (Discord shows them as
+    tiles at the top of the post, clips first) and the English card; then, with `ja`, the Japanese card in a
+    message of its own, since two full cards are more than one message may hold."""
     clips = [f for f in files if (discord.content_type(f.name) or "").startswith("video/")]
     pictures = [f for f in files if f not in clips]
     ordered = [*clips, *pictures]
@@ -150,13 +153,15 @@ def build(
     if preview:
         content = "Preview of the next release post. " + content
     text = description(version, section)
-    embeds = [{"title": title, "url": CURSEFORGE_FILES, "color": GOLD, "description": text}]
-    if ja:
-        embeds.append({"title": f"{title}（日本語）", "color": GOLD, "description": ja})
-    payload: dict = {"content": content, "embeds": embeds}
+    payload: dict = {
+        "content": content,
+        "embeds": [{"title": title, "url": CURSEFORGE_FILES, "color": GOLD, "description": text}],
+    }
     if ordered:
         payload["attachments"] = [{"id": i, "filename": f.name} for i, f in enumerate(ordered)]
-    return payload
+    if not ja:
+        return [payload]
+    return [payload, {"embeds": [{"title": f"{title}（日本語）", "color": GOLD, "description": ja}]}]
 
 
 def attached(files: Sequence[Path]) -> list[Path]:
@@ -195,20 +200,25 @@ def run(argv: Sequence[str]) -> int:
         ja = japanese(a.media)
         if a.media and a.media.is_dir() and ja is None:
             print(f"no {JA_FILE} in {a.media}: the English card alone")
-        payload = build(version, section, files, ja, preview=a.preview)
+        messages = build(version, section, files, ja, preview=a.preview)
         order = attached(files)
         for f in order:
             print(f"file: {f.name} ({f.stat().st_size} bytes)")
         if a.dry_run:
-            print(json.dumps(payload, indent=2, ensure_ascii=False))
+            for message in messages:
+                print(json.dumps(message, indent=2, ensure_ascii=False))
             print("dry run: nothing sent")
             return 0
         url = os.environ.get("DISCORD_WEBHOOK_URL")
         if not url:
             print("DISCORD_WEBHOOK_URL is not set", file=sys.stderr)
             return 1
-        answer = discord.post(url, payload, [(f.name, f.read_bytes()) for f in order])
+        first, *rest = messages
+        answer = discord.post(url, first, [(f.name, f.read_bytes()) for f in order])
         print(f"posted {version} to Discord: {len(order)} file(s), message {answer.get('id', '?')}")
+        for message in rest:
+            answer = discord.post(url, message, [])
+            print(f"posted the Japanese card: message {(answer or {}).get('id', '?')}")
         return 0
     except (AnnounceError, discord.DiscordError, release.ReleaseError, OSError) as e:
         print(f"announce: {e}", file=sys.stderr)

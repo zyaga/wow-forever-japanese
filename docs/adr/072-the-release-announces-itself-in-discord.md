@@ -13,7 +13,7 @@ Two things needed deciding: where the media lives so a GitHub run can attach it,
 
 ## Decision
 
-Release media lives in the public repo, in `docs/releases/next/` while a release is being prepared; the release commit renames it to `docs/releases/<version>/`. An announce step at the end of the release run posts one webhook message: the clips and pictures as attachments, which Discord shows as tiles at the top of the post, then the English card with the release's own changelog lines and a Japanese card with the text of `ja.md` from the same folder. The step runs after the zip is live and a failure in it is a warning, never a failed release. A separate preview workflow posts the same shape to a private test channel, from `## Unreleased` and `next/`, without releasing anything.
+Release media lives in the public repo, in `docs/releases/next/` while a release is being prepared; the release commit renames it to `docs/releases/<version>/`. An announce step at the end of the release run posts the clips and pictures as attachments, which Discord shows as tiles at the top of the post, with the English card and the release's own changelog lines, and then a second message with a Japanese card holding the text of `ja.md` from the same folder. The Japanese card has its own message because Discord allows 6000 characters of cards in one message and each card may hold 4096; one message with both was refused once the notes grew long. The step runs after the zip is live and a failure in it is a warning, never a failed release. A separate preview workflow posts the same shape to a private test channel, from `## Unreleased` and `next/`, without releasing anything.
 
 ## Rationale
 
