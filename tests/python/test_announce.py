@@ -21,16 +21,20 @@ NOTES = (
 )
 VERSION = "0.9.0"
 JA = "**追加**\n- ゲーム内で単語を学習できます。\n\n**修正**\n- 競売場の検索。"
+EN = "- Study saved words in game.\n- The auction house search is fixed."
+NOTES_URL = "https://github.com/zyaga/wow-forever-japanese/releases/tag/v0.9.0"
 _folders = itertools.count()
 
 
-def media(tmp_path: Path, names: dict[str, int], ja: str | None = None) -> Path:
+def media(tmp_path: Path, names: dict[str, int], ja: str | None = None, en: str | None = None) -> Path:
     folder = tmp_path / f"media{next(_folders)}"
     folder.mkdir()
     for name, size in names.items():
         (folder / name).write_bytes(b"x" * size)
     if ja is not None:
         (folder / "ja.md").write_text(ja, encoding="utf-8")
+    if en is not None:
+        (folder / "en.md").write_text(en, encoding="utf-8")
     return folder
 
 
@@ -67,7 +71,11 @@ def test_build_shapes_the_post(tmp_path):
     assert english["color"] == 0xE8C77E == 15255422
     assert english["description"] == announce.markdown(section())
     assert "image" not in english and "thumbnail" not in english  # the files are tiles above the cards, not in them
-    assert japanese == {"title": "WoW Forever Japanese 0.9.0（日本語）", "color": 0xE8C77E, "description": JA}
+    assert japanese == {
+        "title": "WoW Forever Japanese 0.9.0（日本語）",
+        "color": 0xE8C77E,
+        "description": f"{JA}\n\n全文: {NOTES_URL}",
+    }
     # clips first, then pictures: the tiles at the top of the post
     assert payload["attachments"] == [
         {"id": 0, "filename": "b-clip.mp4"},
@@ -82,7 +90,7 @@ def test_build_shapes_the_post(tmp_path):
 
 def test_two_full_cards_each_fit_a_message():
     long_notes = "## 0.9.0 - 2026-10-21\n\n### Added\n" + "".join(f"- Entry {i} " + "x" * 90 + "\n" for i in range(80))
-    messages = announce.build(VERSION, section(long_notes), [], "あ" * announce.MAX_DESCRIPTION)
+    messages = announce.build(VERSION, section(long_notes), [], "あ" * announce.MAX_SUMMARY)
     assert len(messages) == 2
     for message in messages:
         size = sum(len(e["title"]) + len(e["description"]) for e in message["embeds"])
@@ -128,8 +136,31 @@ def test_japanese_card_text(tmp_path):
     assert announce.japanese(media(tmp_path, {}, ja=" " + JA + "\n")) == JA
     with pytest.raises(AnnounceError, match=r"ja\.md is empty"):
         announce.japanese(media(tmp_path, {}, ja="\n"))
-    with pytest.raises(AnnounceError, match=r"over a card's 4096"):
-        announce.japanese(media(tmp_path, {}, ja="あ" * 4097))
+    with pytest.raises(AnnounceError, match=r"ja\.md is 1501 characters: the post is a short summary, at most 1500"):
+        announce.japanese(media(tmp_path, {}, ja="あ" * 1501))
+    assert announce.english(None) is None
+    assert announce.english(media(tmp_path, {})) is None
+    assert announce.english(media(tmp_path, {}, en=EN + "\n")) == EN
+    with pytest.raises(AnnounceError, match=r"en\.md is empty"):
+        announce.english(media(tmp_path, {}, en=" "))
+    with pytest.raises(AnnounceError, match=r"en\.md is 1501 characters"):
+        announce.english(media(tmp_path, {}, en="x" * 1501))
+
+
+def test_the_post_is_the_summary_with_a_link_to_the_full_notes(tmp_path):
+    folder = media(tmp_path, {"card.jpg": 1}, ja=JA, en=EN)
+    assert [f.name for f in announce.media_files(folder)] == ["card.jpg"]  # neither summary is media
+    first, second = announce.build(VERSION, section(), [], announce.japanese(folder), en=announce.english(folder))
+    assert first["embeds"][0]["description"] == f"{EN}\n\nFull notes: {NOTES_URL}"
+    assert second["embeds"][0]["description"] == f"{JA}\n\n全文: {NOTES_URL}"
+    # a preview has no release page yet: the link goes to the changelog
+    first, second = announce.build("0.9.1", section(), [], JA, preview=True, en=EN)
+    changelog = "https://github.com/zyaga/wow-forever-japanese/blob/main/CHANGELOG.md"
+    assert first["embeds"][0]["description"].endswith(f"Full notes: {changelog}")
+    assert second["embeds"][0]["description"].endswith(f"全文: {changelog}")
+    # no English summary: the card falls back to the changelog lines
+    (only,) = announce.build(VERSION, section(), [], None)
+    assert only["embeds"][0]["description"] == announce.markdown(section())
 
 
 def test_long_notes_are_cut_with_a_link():
@@ -273,7 +304,7 @@ def test_command_posts_with_the_url_from_the_environment(repo, monkeypatch, caps
     assert files == [("clip.mp4", b"xxxxxx"), ("card.jpg", b"xxxx")]  # the clip first, the way the tiles show
     assert payload["attachments"] == [{"id": 0, "filename": "clip.mp4"}, {"id": 1, "filename": "card.jpg"}]
     assert len(payload["embeds"]) == 1
-    assert files2 == [] and second["embeds"][0]["description"] == JA  # the Japanese card follows, with no files
+    assert files2 == [] and second["embeds"][0]["description"].startswith(JA)  # the Japanese card follows, no files
     out = capsys.readouterr().out
     assert "secret" not in out and "card.jpg" in out and "2 file(s)" in out
 

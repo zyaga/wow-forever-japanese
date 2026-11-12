@@ -93,8 +93,7 @@ remakes the audio on your branch before it merges.
 
 - One topic per pull request, with a short title that says what changes.
 - A change that players will notice adds a line under `## Unreleased` in `CHANGELOG.md` (CI checks this for
-  changes to `addon/` or `data/`), and its Japanese in `docs/releases/next/ja.md` for the release post (CI checks
-  this too; if you cannot write it, say so in the pull request and the maintainer will).
+  changes to `addon/` or `data/`).
 - Comments explain why the code is the way it is. They do not record history such as issue numbers, dates or who
   asked for something; that belongs in the pull request. `make lint` checks this.
 - Screenshots help for anything you can see in the game.

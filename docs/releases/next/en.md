@@ -1,0 +1,7 @@
+- **English first.** A new mode for players studying English: the game stays in English, and holding the key shows the Japanese. English word cards and saving and studying English words come with it.
+- **A welcome window** asks what you are here for (Study Japanese, Study English or Just play) and sets the addon up to match.
+- **Build 1.60.1.70888 in Japanese**: about 570 new quests, 150 items and 96 NPC lines.
+- **Thank you to the twenty players who sent text with the English Collector.** Every line you sent is in Japanese in this release.
+- **Voice remade.** Names are said in Japanese sounds that match the English on screen, each NPC sounds steadier, and with Spoken installed the same NPC reads a quest line in both languages.
+- **Quest titles stay in English** everywhere, like other names.
+- **Fixes** for Dialogue UI, Ellesmere UI, the Error Speech setting, and the "action blocked" message when sharing a quest.

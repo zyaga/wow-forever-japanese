@@ -161,6 +161,7 @@ def test_render_round_trips_the_real_changelog(root):
 
 BASE = HEAD + "## Unreleased\n\n### Fixed\n- Old line.\n\n" + OLD
 JA = release.NEXT_JA
+EN = release.NEXT_EN
 
 
 def test_gate_needs_a_line_when_addon_or_data_changes():
@@ -214,19 +215,16 @@ def test_gate_refuses_what_the_private_rules_name():
         ]
 
 
-def test_gate_needs_the_japanese_of_an_added_or_reworded_line():
-    """Every changelog line has its Japanese in the next post's ja.md, written in the same pull request."""
-    want = ["this change adds or rewords a line under '## Unreleased': "
-            f"write its Japanese in {JA}, the release post's Japanese card"]
+def test_gate_asks_nothing_of_the_post_for_a_changelog_line():
+    """The post's summaries are written for the release, not line by line with each pull request."""
     added = BASE.replace("- Old line.\n", "- Old line.\n- New line.\n")
-    assert release.gate(BASE, added, ["addon/x.lua"]) == want
-    assert release.gate(BASE, added, ["docs/x.md"]) == want  # a line added without a shipped change too
+    assert release.gate(BASE, added, ["addon/x.lua"]) == []
+    assert release.gate(BASE, added, ["docs/x.md"]) == []
     reworded = BASE.replace("- Old line.", "- Old line, reworded.")
-    assert release.gate(BASE, reworded, ["docs/x.md"]) == want
-    assert release.gate(BASE, reworded, ["docs/x.md", JA]) == []
+    assert release.gate(BASE, reworded, ["docs/x.md"]) == []
     removed = BASE.replace("### Fixed\n- Old line.\n\n", "")
-    assert release.gate(BASE, removed, ["docs/x.md"]) == []  # a line taken out needs no Japanese
-    assert release.gate(BASE, BASE, ["pipeline/x.py"]) == []  # no line, no Japanese
+    assert release.gate(BASE, removed, ["docs/x.md"]) == []
+    assert release.gate(BASE, BASE, ["pipeline/x.py"]) == []
 
 
 def test_gate_first_changelog_and_missing_changelog():
@@ -242,7 +240,7 @@ def test_gate_first_changelog_and_missing_changelog():
 
 @pytest.fixture
 def repo(git_repo):
-    return git_repo({"CHANGELOG.md": HEAD + "## Unreleased\n\n" + FIXED, JA: "**修正**\n- クエストの誤字。\n"})
+    return git_repo({"CHANGELOG.md": HEAD + "## Unreleased\n\n" + FIXED, JA: "- クエストの誤字。\n", EN: "- A quest typo.\n"})
 
 
 def test_cli_next_version_changelog_and_resume(repo, git, capsys):
@@ -280,23 +278,25 @@ def test_cli_allow_empty_means_no_addon_release(repo, git, capsys):
     assert capsys.readouterr().out == "version=0.1.0-alpha.2\nresume=false\naddon=true\n"
 
 
-def test_cli_next_version_needs_the_posts_japanese(repo, git, capsys):
-    """An addon release without the Japanese of its post stops before anything is published; a release of the
-    voice packs alone (nothing under Unreleased) and a resumed release do not need it."""
-    (repo / JA).write_text("  \n", encoding="utf-8")
-    assert release.run(["next-version"]) == 1
-    assert f"{JA} is missing or empty" in capsys.readouterr().err
-    (repo / JA).unlink()
-    assert release.run(["next-version"]) == 1
-    assert f"{JA} is missing or empty" in capsys.readouterr().err
-    (repo / JA).write_text("- 修正。\n", encoding="utf-8")
+def test_cli_next_version_needs_the_posts_summaries(repo, git, capsys):
+    """An addon release without its post's summary in both languages stops before anything is published; a
+    release of the voice packs alone (nothing under Unreleased) and a resumed release do not need them."""
+    for path in (JA, EN):
+        kept = (repo / path).read_text(encoding="utf-8")
+        (repo / path).write_text("  \n", encoding="utf-8")
+        assert release.run(["next-version"]) == 1
+        assert f"{path} is missing or empty" in capsys.readouterr().err
+        (repo / path).unlink()
+        assert release.run(["next-version"]) == 1
+        assert f"{path} is missing or empty" in capsys.readouterr().err
+        (repo / path).write_text(kept, encoding="utf-8")
     release.run(["changelog", "--version", "0.1.0-alpha.1", "--date", "2026-10-01", "--notes", "n.md",
                  "--media", "docs/releases"])
     git(repo, "add", "-A")
     git(repo, "commit", "-qm", "Release 0.1.0-alpha.1")
     git(repo, "tag", "-a", "v0.1.0-alpha.1", "-m", "r")
     capsys.readouterr()
-    assert not (repo / JA).exists()  # moved to the version's folder with the media
+    assert not (repo / JA).exists() and not (repo / EN).exists()  # moved to the version's folder with the media
     assert release.run(["next-version", "--version", "0.1.0-alpha.1"]) == 0  # resumed
     assert release.run(["next-version", "--allow-empty"]) == 0  # voice packs alone
     assert capsys.readouterr().out.endswith("addon=false\n")
@@ -341,11 +341,6 @@ def test_cli_changelog_gate(repo, git, capsys):
     text = (repo / "CHANGELOG.md").read_text(encoding="utf-8") + "- The x window in Japanese.\n"
     (repo / "CHANGELOG.md").write_text(text, encoding="utf-8")
     git(repo, "commit", "-qam", "changelog line")
-    assert release.run(["changelog-gate", "--base", "main"]) == 1
-    assert "write its Japanese in docs/releases/next/ja.md" in capsys.readouterr().err
-    with (repo / JA).open("a", encoding="utf-8") as f:
-        f.write("- x のウィンドウを日本語に。\n")
-    git(repo, "commit", "-qam", "its Japanese")
     assert release.run(["changelog-gate", "--base", "main"]) == 0
     assert "changelog-gate: ok" in capsys.readouterr().out
 
