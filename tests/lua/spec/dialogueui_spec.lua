@@ -44,6 +44,7 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       Stub.loadedAddons.DialogueUI = opts.loaded ~= false
     end
     WFJ = H.loadChunks(FILES)
+    WFJ.QUEST_TITLES_JAPANESE = not opts.titlesOff
     WFJ.Compat.init(function(name) return _G[name] end)
     WFJ.Settings.load(nil, 1, {})
     collected = WFJ.Collector.load(nil, H.collectorDeps())

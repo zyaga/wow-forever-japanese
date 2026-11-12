@@ -189,7 +189,8 @@ function TooltipUnit.minimapBlock(text, single)
       local o = WFJ.QuestMap.objectiveJapanese(objective, SURFACE)
       if o and o ~= objective then ja = dash .. o end
     else
-      local id = TooltipUnit.questFor(core)
+      -- a title left to the client needs no quest looked up for it
+      local id = WFJ.QUEST_TITLES_JAPANESE and TooltipUnit.questFor(core)
       if id then
         local t = WFJ.Render.preview(SURFACE, core, nil, "quests", "quest.title", id, { live = core, compact = true })
         if t and t ~= core then ja = t; notes[#notes + 1] = "title quest " .. id end
@@ -244,7 +245,8 @@ function TooltipUnit.onUnit(tt, data)
     if type(fs) == "table" then
       if kinds[i] == "QuestTitle" then
         local title = fs:GetText()
-        local id, why = TooltipUnit.questFor(title)
+        local id, why = nil, "titles are left to the client"
+        if WFJ.QUEST_TITLES_JAPANESE then id, why = TooltipUnit.questFor(title) end
         if id and WFJ.Render.show(SURFACE, "L" .. i, fs, title, "quests", "quest.title", id, { refit = refit }) then
           n = n + 1
         elseif not id then

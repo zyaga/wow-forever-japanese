@@ -31,6 +31,10 @@ function H.loadChunks(relpaths, ns, addonName)
   for _, rel in ipairs(relpaths) do if rel == "Core/Perf.lua" then hasPerf = true end end
   if not hasPerf and not ns.Perf then H.loadChunk("Core/Perf.lua", addonName, ns) end
   for _, rel in ipairs(relpaths) do H.loadChunk(rel, addonName, ns) end
+  -- a spec that loads its own files covers the Japanese quest titles: the switch on, as its own Translator (built
+  -- with no `kindOff`) has it. The shipped default is covered by `uiSetup`'s `titlesOff` and by addon_load_spec,
+  -- which loads the whole addon through its own loader.
+  ns.QUEST_TITLES_JAPANESE = true
   return ns
 end
 
