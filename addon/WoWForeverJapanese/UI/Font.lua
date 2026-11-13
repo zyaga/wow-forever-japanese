@@ -157,11 +157,14 @@ function Font.share()
   return ok and registered == true
 end
 
--- The bundled font at an element's original size and flags ({path,size,flags} as captured by SurfaceState).
+-- The bundled font at an element's original size and flags ({path,size,flags} as captured by SurfaceState). A size
+-- that is not a number above 0 gives the default: the client raises on SetFont with it.
 function Font.bundled(orig)
+  local size = orig and orig.size
+  if type(size) ~= "number" or size ~= size or size <= 0 then size = Font.DEFAULT_SIZE end
   return {
     path = Font.PATH,
-    size = (orig and orig.size) or Font.DEFAULT_SIZE,
+    size = size,
     flags = (orig and orig.flags) or "",
   }
 end
