@@ -9,6 +9,9 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Fixed
+- Opening some quest windows no longer throws a Lua error (BugSack showed it as `Collector.lua:220 ... a secret string value`). When the game keeps a quest giver's identity hidden from addons, the addon now skips it quietly; the quest text, its Japanese and its voice work as before.
+
 ## 0.13.0 - 2026-11-12
 
 ### Added

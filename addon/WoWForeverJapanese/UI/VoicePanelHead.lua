@@ -90,8 +90,11 @@ function Head.load(h, item, wanted, onShown)
     return
   end
   local unit = who.unit
-  local guid = Compat.resolve("UnitGUID")
-  if unit and (type(guid) ~= "function" or guid(unit) ~= who.guid) then unit = nil end
+  -- the live unit only while it is still this speaker; a secret GUID cannot be compared, so the creature id stands in
+  local guid, isSecret = Compat.resolve("UnitGUID"), Compat.resolve("issecretvalue")
+  local now = unit and type(guid) == "function" and guid(unit) or nil
+  if now ~= nil and type(isSecret) == "function" and isSecret(now) then now = nil end
+  if unit and (now == nil or now ~= who.guid) then unit = nil end
   local want = unit and who.guid or who.creature
   if h.loaded == want and hasModel(h.model) then
     Head.setShown(h, true)
