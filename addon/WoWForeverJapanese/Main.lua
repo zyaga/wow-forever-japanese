@@ -439,7 +439,7 @@ function WFJ.OnLoad()
   for _, name in ipairs(forever) do step(name:lower(), function() return WFJ[name].init() end) end
   -- NPC speech, after ChatSystem (in the list above): it rewrites lines through the chat side's Alt / switch
   step("speech", function() WFJ.Speech.init({ key = gossipKey, expand = expand }) end) -- NPC speech
-  -- menu entries (Menu.ModifyMenu per tag) and HelpTip callouts, for every window above
+  -- menu entries (written once each menu is shown) and HelpTip callouts, for every window above
   step("menus", WFJ.Menus.init)
   step("menus.untagged", WFJ.MenusUntagged.init) -- the Options dropdowns and untagged context menus
   step("helptips", WFJ.HelpTips.init)

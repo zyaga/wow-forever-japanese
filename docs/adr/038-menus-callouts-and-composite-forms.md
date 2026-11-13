@@ -226,3 +226,7 @@ What the existing mechanisms could not reach:
   [ADR-035: game-message lines](035-ui-errors-frame-surface.md)
 - [Research](../research/2026-09-25-menus-callouts-and-composites.md) · [Addon modules](../architecture/addon-modules.md) ·
   [Pipeline](../systems/pipeline.md) · [Translation batches](../operations/translation-batches.md)
+
+## Update (2026-11-13): every menu is written after it opens
+
+Menus no longer get initializers, and `Menus.UNTAGGED` and the walk through `Menus.onMenu` are gone: every menu, the untagged ones included, is written once the client has shown it, and the untagged menus' specs are in `Menus.TAGS` under tags the client never fires ([ADR-088](088-every-menu-is-written-after-it-opens.md)). A tag's `show(surface, recKey, fs)` line form is unchanged.

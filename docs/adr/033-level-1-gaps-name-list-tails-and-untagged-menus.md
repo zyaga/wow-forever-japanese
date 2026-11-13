@@ -122,3 +122,7 @@ as the Japanese head has. A one-line head behaves as written here.
 - [ADR-032: spellbook subtexts and name titles](032-level-1-gaps-subtexts-and-name-titles.md)
 - [Data model](../architecture/data-model.md) ·
   [Addon modules](../architecture/addon-modules.md) · [Pipeline](../systems/pipeline.md)
+
+## Update (2026-11-13): untagged menus are written after they open
+
+The untagged menus no longer get initializers. Their pre-open hooks (an Options dropdown set up through `Settings.InitDropdown`, the `Menu.PopulateDescription` post-hook for the two context menus) only record the menu's owner region and its tag, and `UI/Menus` writes the menu on `MenuProxy.OnShow` when the shown frame's `GetOwnerRegion()` is a recorded owner. `Menus.UNTAGGED` is gone: the untagged menus' specs are in `Menus.TAGS` under tags of their own, which the client never fires. The cost this ADR turned that event down for, a menu laid out in English, is met by widening the menu with `SetWidth` alone ([ADR-088](088-every-menu-is-written-after-it-opens.md)).

@@ -92,3 +92,7 @@ recorded the tainted fields and writers around them.
   the quest log and its list (its pooled rows too, through the pools' `EnumerateActive`), the map and the quest cache.
 - The Edit Mode keys are excluded in `pipeline/ui_exclusions.txt` with this ADR as the reason, and their English and
   Japanese rows are gone from `data/`, so the shipped interface count no longer counts them.
+
+## Update (2026-11-13): the unit menus are Japanese again
+
+The unit right-click menus show their entries in Japanese again, the unit's name in English. `UI/MenusUnit` is back with its key lists, and a unit menu is written once the client has shown it, after the pass that runs each entry's `IsEnabled` and `CheckInteractDistance`, so nothing of this addon runs in that pass ([ADR-088](088-every-menu-is-written-after-it-opens.md)). The static test now fails on any menu initializer or `Menu.ModifyMenu` callback instead of on a unit menu tag. `blizzard_unitpopup` and `blizzard_unitpopupshared` are now `library` in `pipeline/forever_addon_dispositions.txt`; `blizzard_editmode` stays `protected`. Decision 1, the unit menu part of decision 4 and the unit menu part of decision 5 are replaced; Edit Mode (decision 2) and the quest list (decision 3) are unchanged.

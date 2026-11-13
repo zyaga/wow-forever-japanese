@@ -24,3 +24,7 @@ All three are one mechanism. Once addon code runs inside a Blizzard pass, the re
 - **Never lay out a Blizzard list or window yourself.** Writing text into a row is one thing; resizing the row or calling the container's `Layout` puts the addon inside the next layout.
 - **Probe every candidate at once.** Each in-game test costs the maintainer a session; one build that logs every writer on the path beats one probe per retest.
 - `tests/python/test_protected_paths.py` keeps any Edit Mode frame, Edit Mode callout and unit menu tag out of the addon's code.
+
+## Update (2026-11-13)
+
+The unit menus are in Japanese again: no menu gets an initializer, and every menu is written once the client has shown it, after the pass that asks `IsEnabled` ([ADR-088](../adr/088-every-menu-is-written-after-it-opens.md)). `tests/python/test_protected_paths.py` now keeps any menu initializer out of the addon's code instead of the unit menu tags. The Prevention line about menus stands: no addon code runs in that pass.
