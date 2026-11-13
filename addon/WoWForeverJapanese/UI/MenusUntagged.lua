@@ -63,8 +63,10 @@ local UNTAGGED = {
 }
 for tag, spec in pairs(UNTAGGED) do WFJ.Menus.TAGS[tag] = spec end
 
--- owner region → tag: the Options dropdowns once set up, a context menu's owner each time it is populated
+-- owner region → tag: the Options dropdowns once set up (for good); a context menu's owner each time it is populated,
+-- taken back when that menu shows (an owner frame is pooled and may open another, unrecognised menu next)
 local owners = setmetatable({}, { __mode = "k" })
+local contexts = setmetatable({}, { __mode = "k" })
 
 -- Records one dropdown for `tag` (a Menus.TAGS key of an untagged menu). → true when newly recorded
 function MenusUntagged.hookDropdown(dropdown, tag)
@@ -75,19 +77,26 @@ end
 
 -- The tag recorded for a menu frame's owner region. → tag | nil
 function MenusUntagged.specFor(owner)
-  return owner ~= nil and owners[owner] or nil
+  if owner == nil then return nil end
+  local context = contexts[owner]
+  if context then
+    contexts[owner] = nil
+    return context
+  end
+  return owners[owner]
 end
 
 local function secret(value) return WFJ.SurfaceState.secret(value) end
 
 -- The recognition behind onPopulate. → the pseudo-tag recorded, or nil
 local function populate(generator, owner, desc)
+  if owner ~= nil then contexts[owner] = nil end -- a record from a populate whose menu never opened
   if owner == nil or type(desc) ~= "table" or type(desc.GetTag) ~= "function" or desc:GetTag() ~= nil then
     return nil
   end
   if type(desc.EnumerateElementDescriptions) ~= "function" then return nil end
   if type(owner) == "table" and generator ~= nil and owner.contextMenuGenerator == generator then
-    owners[owner] = "CONTEXT_CUSTOMER_ORDER_RECIPE"
+    contexts[owner] = "CONTEXT_CUSTOMER_ORDER_RECIPE"
     return "CONTEXT_CUSTOMER_ORDER_RECIPE"
   end
   local report, advert = Compat.get(DECLARE, "reportGroup"), Compat.get(DECLARE, "reportAdvert") -- the client's English
@@ -98,7 +107,7 @@ local function populate(generator, owner, desc)
   for _, child in desc:EnumerateElementDescriptions() do
     local text = textOf(child)
     if not secret(text) and type(text) == "string" and (text == report or text == advert) then
-      owners[owner] = "CONTEXT_LFG_SEARCH_ENTRY"
+      contexts[owner] = "CONTEXT_LFG_SEARCH_ENTRY"
       return "CONTEXT_LFG_SEARCH_ENTRY"
     end
   end

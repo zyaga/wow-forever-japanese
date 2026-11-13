@@ -59,7 +59,7 @@ WFJ.MenusUnit = {
   -- the `which`s outside level 1, each with its own list: its effective entries (shared ←
   -- mainline/unitpopupmenus.lua ← camelot/unitpopupmenus.lua overrides) mapped through each button mixin's GetText
   -- (unitpopupsharedbuttonmixins.lua; mainline/unitpopupbuttons.lua). The title is the unit's, the friend's or the
-  -- club's name (contextData.name, communitieslist.lua:790–805): UI/Menus registers every one with `titleIsName`.
+  -- club's name (communitieslist.lua:790–805): each tag below sets `titleIsName`, so that title is never written.
   -- RAID's main tank / assist and focus entries sit beside protected actions: text-only writes, like every entry.
   WHICH = {
     BN_FRIEND = { "MOVE_TO_WHISPER_WINDOW", "TARGET", "SOCIAL_UI_BATTLE_NET_TITLE_FRIEND_EDIT_NAME_BUTTON_LABEL",

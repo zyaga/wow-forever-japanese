@@ -45,7 +45,8 @@ function TextWatch.tick()
   return n
 end
 
--- Follows `fs`: `fn()` runs on the next frame it is visible with a text or font it has not been seen with.
+-- Follows `fs` (a FontString, or anything with GetText and IsVisible): `fn()` runs on the next frame it is visible
+-- with a text or font it has not been seen with.
 -- A FontString is watched once; a second add replaces its callback. → true when added now
 function TextWatch.add(fs, fn)
   if type(fs) ~= "table" or type(fs.GetText) ~= "function" or type(fn) ~= "function" then return false end

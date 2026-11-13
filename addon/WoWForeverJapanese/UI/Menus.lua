@@ -11,8 +11,9 @@
 --   submenu) is written with its keys. An untagged menu (UI/MenusUntagged) is recognised on "MenuProxy.OnShow" by
 --   the owner region its opener recorded.
 -- - A pick that keeps the menu open (a checkbox) has the client run its own initializers again, which write the
---   English back (menu.lua:2353-2367, 1682-1700). One written text widget per menu frame is followed by UI/TextWatch,
---   which reads it from this addon's own frame once a frame and writes the menu again after the client's pass.
+--   English back, often into other text widgets from the pool, and lays the menu out again (menu.lua:2353-2367,
+--   1682-1701). UI/TextWatch follows each written menu frame's entries (their widgets and text) from this addon's own
+--   frame once a frame and writes the menu again, and fits it again, after the client's pass.
 -- - The client laid the menu out for the English. A label whose Japanese is wider is widened, and the entries and the
 --   menu frame with it (Menus.fit), with SetWidth alone: running the client's layout here would run it tainted.
 -- - On "MenuProxy.OnHide", before the client hands the text widgets back to the pool every menu shares
@@ -46,14 +47,15 @@ local WORLD_MAP_FILTERS = { "SHOW_QUEST_OBJECTIVES_ON_MAP_TEXT", "SHOW_QUEST_LEV
 --         UI/Friends add to it.
 Menus.TAGS = {
   -- the bag portrait menus (blizzard_uipanels_game/mainline/containerframe.lua:643–730, 766–775, 2830–2850): the
-  -- bag submenus, filters and cleanup; BAG_NAME_BACKPACK shares its English with BACKPACK_TOOLTIP (excluded). In
+  -- bag submenus, filters and cleanup; the backpack's entry is BAG_NAME_BACKPACK, whose English is BACKPACK_TOOLTIP's
+  -- ("Backpack"; the first is excluded as a duplicate), so the combined menu lists BACKPACK_TOOLTIP. In
   -- gamepad UI mode the combined bag's menu also lists the reagent bag, BAG_NAME_BAG_REAGENT (:35–43, 14–19)
   MENU_CONTAINER_FRAME = { source = "containerframe.lua:766", keys = { "BAG_FILTER_ASSIGN_TO", "BAG_FILTER_IGNORE",
     "BAG_FILTER_CLEANUP", "BAG_FILTER_EQUIPMENT", "BAG_FILTER_CONSUMABLES", "BAG_FILTER_PROFESSION_GOODS",
     "BAG_FILTER_JUNK", "BAG_FILTER_QUEST_ITEMS", "BAG_FILTER_REAGENTS", "SELL_ALL_JUNK_ITEMS_EXCLUDE_FLAG",
     "BAG_COMMAND_CONVERT_TO_COMBINED", "BAG_COMMAND_CONVERT_TO_INDIVIDUAL" } },
   MENU_CONTAINER_FRAME_COMBINED = { source = "containerframe.lua:2830", keys = { "BAG_FILTER_TITLE_SORTING",
-    "BAG_NAME_BAG_1", "BAG_NAME_BAG_2", "BAG_NAME_BAG_3", "BAG_NAME_BAG_4", "BAG_NAME_BAG_REAGENT",
+    "BACKPACK_TOOLTIP", "BAG_NAME_BAG_1", "BAG_NAME_BAG_2", "BAG_NAME_BAG_3", "BAG_NAME_BAG_4", "BAG_NAME_BAG_REAGENT",
     "BAG_FILTER_ASSIGN_TO", "BAG_FILTER_IGNORE", "BAG_FILTER_CLEANUP", "BAG_FILTER_EQUIPMENT", "BAG_FILTER_CONSUMABLES",
     "BAG_FILTER_PROFESSION_GOODS", "BAG_FILTER_JUNK", "BAG_FILTER_QUEST_ITEMS", "BAG_FILTER_REAGENTS",
     "SELL_ALL_JUNK_ITEMS_EXCLUDE_FLAG", "BAG_COMMAND_CONVERT_TO_COMBINED", "BAG_COMMAND_CONVERT_TO_INDIVIDUAL" } },
@@ -212,12 +214,21 @@ Menus.TAGS = {
 
 local function secret(value) return WFJ.SurfaceState.secret(value) end
 
--- The element frame's text widget: frame.fontString for a button, checkbox, radio or title.
--- (through Labels.menuText: the compositor forbids SetFont on it)
-local function textOf(frame)
-  local fs = type(frame) == "table" and frame.fontString or nil
-  if type(fs) == "table" and type(fs.GetText) == "function" then return WFJ.Labels.menuText(fs) end
+-- The element frame's own text widget: frame.fontString for a button, checkbox, radio or title
+-- (menutemplates.lua:296–324), frame.Text for a highlight button or radio, the Options window's dropdown entries
+-- (menutemplates.lua:398–406, 483; blizzard_settings.lua:498–501). → FontString | nil
+local function widgetOf(frame)
+  if type(frame) ~= "table" then return nil end
+  local fs = frame.fontString
+  if type(fs) ~= "table" then fs = frame.Text end
+  if type(fs) == "table" and type(fs.GetText) == "function" then return fs end
   return nil
+end
+
+-- The element frame's text widget, through Labels.menuText: the compositor forbids SetFont on it.
+local function textOf(frame)
+  local fs = widgetOf(frame)
+  return fs and WFJ.Labels.menuText(fs) or nil
 end
 
 local menuKey = WFJ.Labels.keyer("menu.") -- a pooled frame's text widget, never its English or position
@@ -247,9 +258,9 @@ end
 -- when none of ours is open.
 local open
 local lastShown -- the menu frame "MenuProxy.OnShow" reported last: the root when "Menu.OpenMenuTag" follows
--- menu frame → { raw = { FontString → true } written, watched = the one FontString UI/TextWatch follows }. A widget
--- belongs to the pool every menu shares; the widgets are kept, not their element frames: a rebuild of the open menu
--- hands the same widgets to other frames.
+-- menu frame → { raw = { FontString → true } its entries had at the last write, probe = what UI/TextWatch follows }.
+-- A widget belongs to the pool every menu shares; the widgets are kept, not their element frames: a rebuild of the
+-- open menu hands the same widgets to other frames.
 local written = setmetatable({}, { __mode = "k" })
 
 local function shownFrame(frame)
@@ -264,7 +275,7 @@ local function entriesOf(menuFrame)
   local function walk(frame, depth)
     for _, child in ipairs(WFJ.Frames.children(frame)) do
       if type(child) == "table" then
-        if type(child.fontString) == "table" then
+        if widgetOf(child) then
           out[#out + 1] = child
         elseif depth < 4 then
           walk(child, depth + 1)
@@ -285,19 +296,29 @@ end
 -- Widens what the Japanese needs, with SetWidth alone (no client layout runs). A label's widget is set to its whole
 -- width (the client sized it to the English, one line, menutemplates.lua:298; compositor.lua:71–72); when a label
 -- then passes its entry's right edge less the margin the client left after the widest English label, every entry and
--- the menu frame widen by the largest overflow (the entries share one width, menu.lua:1430–1480). A scrolling menu
--- keeps its fixed size (menu.lua:1860–1874). → the width added to the menu frame
-function Menus.fit(menuFrame, frames)
+-- the menu frame widen by the largest overflow (the entries share one width, menu.lua:1430–1480). Only the labels in
+-- `wrote` (FontString → true) are widened: an English label keeps the size the client gave it. A scrolling menu keeps
+-- its fixed size (menu.lua:1860–1874), and a menu laid out in columns (a grid, menu.lua:1246–1260; anchorutil.lua:
+-- 122–146) is left as it is: its columns sit at fixed offsets, so a wider entry would reach into the next column.
+-- → the width added to the menu frame
+function Menus.fit(menuFrame, frames, wrote)
   if type(menuFrame) ~= "table" or type(menuFrame.SetWidth) ~= "function" then return 0 end
   if shownFrame(menuFrame.ScrollBox) then return 0 end
-  local margin, rows = nil, {}
+  local margin, rows, column = nil, {}, nil
   for _, frame in ipairs(frames) do
-    local fs = frame.fontString
+    local x = call(frame, "GetLeft")
+    if x then
+      x = math.floor(x + 0.5)
+      if column == nil then column = x elseif column ~= x then return 0 end
+    end
+    local fs = widgetOf(frame)
     local left, width, right = call(fs, "GetLeft"), call(fs, "GetWidth"), call(frame, "GetRight")
     if left and width and right then
       local m = right - (left + width)
       if margin == nil or m < margin then margin = m end
-      rows[#rows + 1] = { fs = fs, left = left, width = width, right = right }
+      if type(wrote) ~= "table" or wrote[fs] then
+        rows[#rows + 1] = { fs = fs, left = left, width = width, right = right }
+      end
     end
   end
   local over = 0
@@ -331,55 +352,6 @@ local function titleOf(frames)
   return best
 end
 
-local write
-
--- The client writes the English again on a pick that keeps the menu open (a checkbox's Refresh reruns every entry's
--- initializers at once, menu.lua:2353–2367, 1682–1700): one watched widget per menu frame is enough to see it.
-local function watch(menuFrame, rec, raw)
-  if rec.watched then return end
-  rec.watched = raw
-  WFJ.TextWatch.add(raw, function()
-    if open and written[menuFrame] == rec then write(menuFrame) end
-  end)
-end
-
--- Writes every entry of `menuFrame` with the open menu's keys, watches it, fits. The root of a name-titled menu
--- leaves its title alone and takes its text as the menu's name. → count shown
-function write(menuFrame)
-  if not open or type(menuFrame) ~= "table" then return 0 end
-  local rec = written[menuFrame] or { raw = {} }
-  written[menuFrame] = rec
-  local spec = Menus.TAGS[open.tag]
-  local entries = entriesOf(menuFrame)
-  local title = spec and spec.titleIsName and menuFrame == open.root and titleOf(entries) or nil
-  if title then
-    local text = title.fontString:GetText()
-    open.name = not secret(text) and type(text) == "string" and text ~= "" and text or nil
-  end
-  local n, frames = 0, {}
-  for _, frame in ipairs(entries) do
-    if frame ~= title then
-      frames[#frames + 1] = frame
-      rec.raw[frame.fontString] = true
-      watch(menuFrame, rec, frame.fontString)
-      n = n + Menus.showElement(open.tag, frame, open.name)
-    end
-  end
-  Menus.fit(menuFrame, frames)
-  return n
-end
-
--- The records and the watch on `rec`'s widgets, dropped (the client's text and font go back on a widget still
--- showing ours). → records dropped
-local function letGo(rec)
-  if rec.watched then WFJ.TextWatch.remove(rec.watched) end
-  local n = 0
-  for raw in pairs(rec.raw) do
-    if WFJ.SurfaceState.drop(SURFACE, menuKey(WFJ.Labels.menuText(raw))) then n = n + 1 end
-  end
-  return n
-end
-
 local reported = {} -- error text → true: each distinct error is recorded once, not on every menu opened
 
 -- The callbacks run inside the client's own menu code for every menu it opens or hides, so they never raise: an
@@ -394,6 +366,90 @@ local function guarded(fn, ...)
     WFJ.initErrors[#WFJ.initErrors + 1] = { surface = "menus.afteropen", err = err }
   end
   return 0
+end
+
+local write
+
+-- One menu frame's entries as a line: each text widget and its text. A pick that keeps the menu open (a checkbox's
+-- Refresh) has the client clear every entry, hand its text widgets back to the pool, attach widgets again, write the
+-- English and lay the menu out again (menu.lua:2353–2367, 1682–1701; compositor.lua:409–425): the widgets, their
+-- text or both change, and so does this line. → string
+local function signature(menuFrame)
+  local parts = {}
+  for _, frame in ipairs(entriesOf(menuFrame)) do
+    local fs = widgetOf(frame)
+    local text = fs:GetText()
+    parts[#parts + 1] = tostring(fs) .. "=" .. (secret(text) and "?" or tostring(text))
+  end
+  return table.concat(parts, "\1")
+end
+
+-- UI/TextWatch follows the menu frame through a stand-in whose text is the signature: read from this addon's own
+-- frame once a frame while the menu shows, and the menu written again after the client's pass has ended.
+local function watch(menuFrame, rec)
+  if rec.probe then return end
+  rec.probe = {
+    -- read from the addon's own frame every frame: an error is recorded once, never raised again and again
+    GetText = function()
+      local ok, line = pcall(signature, menuFrame)
+      if ok then return line end
+      guarded(error, line)
+      return ""
+    end,
+    IsVisible = function() return shownFrame(menuFrame) end,
+  }
+  WFJ.TextWatch.add(rec.probe, function()
+    if open and written[menuFrame] == rec then guarded(write, menuFrame) end
+  end)
+end
+
+local function drop(raw)
+  return WFJ.SurfaceState.drop(SURFACE, menuKey(WFJ.Labels.menuText(raw)))
+end
+
+-- Writes every entry of `menuFrame` with the open menu's keys, watches it, fits. The root of a name-titled menu
+-- leaves its title alone and takes its text as the menu's name. A widget the client handed back since the last
+-- write loses its record, so the Japanese never follows it into another menu. → count shown
+function write(menuFrame)
+  if not open or type(menuFrame) ~= "table" then return 0 end
+  local rec = written[menuFrame] or { raw = {} }
+  written[menuFrame] = rec
+  local spec = Menus.TAGS[open.tag]
+  local entries = entriesOf(menuFrame)
+  local title = spec and spec.titleIsName and menuFrame == open.root and titleOf(entries) or nil
+  if title then
+    local text = widgetOf(title):GetText()
+    open.name = not secret(text) and type(text) == "string" and text ~= "" and text or nil
+  end
+  local current, wrote, n, frames = {}, {}, 0, {}
+  for _, frame in ipairs(entries) do
+    if frame ~= title then
+      frames[#frames + 1] = frame
+      local fs = widgetOf(frame)
+      current[fs] = true
+      local shown = Menus.showElement(open.tag, frame, open.name)
+      if shown > 0 then wrote[fs] = true end
+      n = n + shown
+    end
+  end
+  for raw in pairs(rec.raw) do
+    if not current[raw] then drop(raw) end
+  end
+  rec.raw = current
+  Menus.fit(menuFrame, frames, wrote)
+  watch(menuFrame, rec)
+  return n
+end
+
+-- The records and the watch on `rec`'s widgets, dropped (the client's text and font go back on a widget still
+-- showing ours). → records dropped
+local function letGo(rec)
+  if rec.probe then WFJ.TextWatch.remove(rec.probe) end
+  local n = 0
+  for raw in pairs(rec.raw) do
+    if drop(raw) then n = n + 1 end
+  end
+  return n
 end
 
 local function shown(menuFrame)

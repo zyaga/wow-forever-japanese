@@ -91,6 +91,7 @@ describe("UI/MenusUntagged: untagged context menus", function()
       r:CreateButton(UI.LFG_LIST_REPORT_GROUP_FOR[1])
     end, owner, root)
     assert.are.equal("CONTEXT_LFG_SEARCH_ENTRY", (WFJ.MenusUntagged.specFor(owner)))
+    assert.is_nil(WFJ.MenusUntagged.specFor(owner)) -- taken back once read
   end)
 
   it("the crafting-orders recipe menu: recognised by its owner's contextMenuGenerator", function()
@@ -102,6 +103,20 @@ describe("UI/MenusUntagged: untagged context menus", function()
     local root, frames = _G.MenuUtil.CreateContextMenu(element, element.contextMenuGenerator, 2259)
     assert.are.equal("お気に入りから外す", frames[root.children[1]].fontString:GetText())
   end)
+
+  it("a context menu's owner is recognised for that menu only: the next menu it opens unrecognised is left alone",
+    function()
+      local owner = {}
+      local root, frames = _G.MenuUtil.CreateContextMenu(owner, function(_, r)
+        r:CreateButton("Jaina")
+        r:CreateButton(UI.LFG_LIST_REPORT_GROUP_FOR[1])
+      end)
+      assert.are.equal("グループを報告", frames[root.children[2]].fontString:GetText())
+      local again, againFrames = _G.MenuUtil.CreateContextMenu(owner, function(_, r)
+        r:CreateButton(UI.SEND_MESSAGE[1])
+      end)
+      assert.are.equal("Send Message", againFrames[again.children[1]].fontString:GetText())
+    end)
 
   it("any other untagged context menu is left alone", function()
     local root, frames = _G.MenuUtil.CreateContextMenu({}, function(_, r)

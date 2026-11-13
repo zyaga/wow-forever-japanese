@@ -12,6 +12,7 @@ FILES[#FILES + 1] = "UI/MenusUntagged.lua"
 
 local UI = {
   BAG_FILTER_TITLE_SORTING = { "Bag Settings", "バッグの設定" }, BAG_NAME_BAG_1 = { "Bag 1", "バッグ1" },
+  BACKPACK_TOOLTIP = { "Backpack", "バックパック" }, -- the combined menu's backpack entry (BAG_NAME_BACKPACK's English)
   BAG_FILTER_ASSIGN_TO = { "Assign To:", "割り当て先:" }, BAG_FILTER_CLEANUP = { "Ignore This Bag", "このバッグを無視" },
   BAG_FILTER_EQUIPMENT = { "Equipment", "装備品" },
   BAG_NAME_BAG_REAGENT = { "Reagent Bag", "素材バッグ" }, -- gamepad UI mode's combined bag (containerframe.lua:42)
@@ -102,6 +103,7 @@ describe("UI/Menus: menu entries", function()
     local root, frames, menus = generate("MENU_CONTAINER_FRAME_COMBINED", function(r)
       r:CreateButton(UI.BAG_FILTER_TITLE_SORTING[1])
       sub = r:CreateButton(UI.BAG_NAME_BAG_1[1])
+      r:CreateButton(UI.BACKPACK_TOOLTIP[1])
       sub:CreateButton(UI.BAG_FILTER_ASSIGN_TO[1])
       sub:CreateButton(UI.BAG_FILTER_EQUIPMENT[1])
     end)
@@ -110,6 +112,7 @@ describe("UI/Menus: menu entries", function()
     assert.are.equal("バッグ1", text(frames, e[2]))
     -- the client's own SetFont, never the compositor's wrapped one
     assert.are.equal(WFJ.Font.PATH, frames[e[2]].fontString.font.path)
+    assert.are.equal("バックパック", text(frames, e[3]))
     assert.are.equal("割り当て先:", text(frames, sub.children[1]))
     assert.are.equal("装備品", text(frames, sub.children[2]))
     Stub.keys.alt = true; WFJ.Modifier.refresh()
@@ -117,7 +120,7 @@ describe("UI/Menus: menu entries", function()
     Stub.keys.alt = false; WFJ.Modifier.refresh()
     M.close(registry, menus)
     assert.are.equal(0, WFJ.SurfaceState.count(WFJ.Menus.SURFACE))
-    for _, f in pairs(frames) do assert.is_false(WFJ.TextWatch.watching(f.fontString)) end
+    assert.are.equal(0, WFJ.TextWatch.count()) -- nothing followed once the menu is closed
   end)
 
   it("no menu description is touched: nothing adds an initializer or a resetter", function()
@@ -149,6 +152,39 @@ describe("UI/Menus: menu entries", function()
     assert.are.equal(WFJ.Font.PATH, fs.font.path)
     assert.are.equal(M.width(UI.BAG_FILTER_EQUIPMENT[1]), fs:GetWidth()) -- narrower Japanese keeps the width
   end)
+
+  it("a refresh that hands every entry a new text widget: the menu is written again, the old widgets let go",
+    function()
+      -- Refresh clears each entry's compositor, which hands its text widget back to the pool, then the client's
+      -- initializer attaches one again and writes the English (compositor.lua:409–425; menu.lua:1682–1701). The
+      -- first entry is a tracking spell, never written.
+      WFJ.Menus.init()
+      local root, frames = generate("MENU_MINIMAP_TRACKING", function(r)
+        r:CreateButton("Find Herbs")
+        r:CreateButton(UI.MINIMAP_TRACKING_BANKER[1])
+      end)
+      local banker = frames[root.children[2]]
+      local old = banker.fontString
+      assert.are.equal("銀行員", old:GetText())
+      for _, e in ipairs(root.children) do
+        local fresh = Stub.fontString(e.text)
+        fresh.SetFont = old.SetFont
+        fresh.GetWidth, fresh.GetLeft, fresh.GetUnboundedStringWidth = old.GetWidth, old.GetLeft,
+          old.GetUnboundedStringWidth
+        fresh.width = M.width(e.text)
+        frames[e].fontString = fresh
+      end
+      old:Hide() -- released to the pool (compositor.lua:7–9)
+      old:SetText("Some Other Menu Entry") -- then given to another menu
+      WFJ.TextWatch.tick() -- the watch's next frame, after the client's pass
+      assert.are.equal("銀行員", banker.fontString:GetText())
+      assert.are.equal("Find Herbs", frames[root.children[1]].fontString:GetText())
+      local widget = WFJ.Labels.menuText(old)
+      for _, rec in pairs(WFJ.SurfaceState.records(WFJ.Menus.SURFACE)) do assert.are_not.equal(widget, rec.fs) end
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      assert.are.equal("Some Other Menu Entry", old:GetText())
+    end)
 
   it("gamepad UI mode's reagent bag entry in the combined bag menu; Alt shows English", function()
     WFJ.Menus.init()
@@ -433,6 +469,36 @@ describe("UI/Menus: menu entries", function()
     assert.are.equal(entryBefore + 2 * M.PAD + over, menus[1]:GetWidth())
   end)
 
+  it("a menu in columns (a grid) is not widened; an English label wider than its widget is left as it is", function()
+    WFJ.Menus.init()
+    WFJ.Menus.TAGS.MENU_TEST_FIT = { source = "test.lua:1", keys = { "FIT_LONG" } }
+    local root = element(nil)
+    root:CreateButton(UI.FIT_LONG[1])
+    root:CreateButton("A very long English name of a thing")
+    local frames = {}
+    local grid = M.menuFrame(root, frames)
+    local second = frames[root.children[2]]
+    second.GetLeft = function() return 200 end -- the second column (anchorutil.lua:122–146)
+    local width = grid:GetWidth()
+    registry:TriggerEvent("MenuProxy.OnShow", grid)
+    registry:TriggerEvent("Menu.OpenMenuTag", "MENU_TEST_FIT")
+    assert.are.equal(UI.FIT_LONG[2], text(frames, root.children[1]))
+    assert.are.equal(width, grid:GetWidth())
+    -- one column: only the label the addon wrote is widened, never an English one the client sized
+    local root2 = element(nil)
+    root2:CreateButton("Ok") -- the English stays (unlisted in this tag after the swap below)
+    local frames2 = {}
+    local menu = M.menuFrame(root2, frames2)
+    local fs = frames2[root2.children[1]].fontString
+    fs.GetUnboundedStringWidth = function() return 500 end
+    WFJ.Menus.TAGS.MENU_TEST_FIT = { source = "test.lua:1", keys = { "TANK" } }
+    local before = menu:GetWidth()
+    registry:TriggerEvent("MenuProxy.OnShow", menu)
+    registry:TriggerEvent("Menu.OpenMenuTag", "MENU_TEST_FIT")
+    assert.are.equal("Ok", fs:GetText())
+    assert.are.equal(before, menu:GetWidth())
+  end)
+
   it("a scrolling menu: the entries in the scroll box's rows are written; its fixed size is kept", function()
     WFJ.Menus.init()
     WFJ.Menus.TAGS.MENU_TEST_FIT = { source = "test.lua:1", keys = { "FIT_LONG" } }
@@ -561,6 +627,27 @@ describe("UI/Menus: menu entries", function()
     -- recorded once per dropdown, however often the client sets it up
     assert.is_false(WFJ.MenusUntagged.hookDropdown(options, "SETTINGS_DROPDOWN"))
     _G.Settings, _G.EditModeSettingDropdownMixin = nil, nil
+  end)
+
+  it("an Options dropdown's highlight radios keep their text in .Text: written like any entry", function()
+    -- Settings.CreateDropdownButton → CreateHighlightRadio: the text widget is button.Text (menutemplates.lua:398–406)
+    local settings = { InitDropdown = function() end }
+    _G.Settings = settings
+    WFJ.Compat.init(function(name) return _G[name] end)
+    WFJ.Menus.init()
+    WFJ.MenusUntagged.init()
+    local dropdown = {}
+    settings.InitDropdown(dropdown)
+    local root = element(nil)
+    root:CreateButton(UI.ANTIALIASING_FXAA_LOW[1])
+    root:CreateButton("Friz Quadrata TT")
+    local frames = {}
+    local menu = M.menuFrame(root, frames, dropdown)
+    for _, e in ipairs(root.children) do frames[e].Text, frames[e].fontString = frames[e].fontString, nil end
+    registry:TriggerEvent("MenuProxy.OnShow", menu)
+    assert.are.equal("FXAA 低", frames[root.children[1]].Text:GetText())
+    assert.are.equal("Friz Quadrata TT", frames[root.children[2]].Text:GetText())
+    _G.Settings = nil
   end)
 
   it("the combat text dropdowns: a Text on Me checkbox and its hover (title = label, line = tooltip), a Text on"
