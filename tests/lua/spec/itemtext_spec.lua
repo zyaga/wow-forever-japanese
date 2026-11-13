@@ -108,8 +108,25 @@ describe("UI/ItemText: the book window", function()
       assert.are.same({ WFJ.Font.PATH, WFJ.Font.DEFAULT_SIZE }, { path, size })
       Stub.keys.alt = true; WFJ.Modifier.refresh()
       assert.are.equal(PAGE_LIVE, html.text)
+      assertClientStyle(nil) -- the client's font objects and colours back on every text type
       Stub.keys.alt = false; WFJ.Modifier.refresh()
     end)
+
+  it("a heading font reporting a size not above 0 is scaled from nothing and never written back", function()
+    local get = html.GetFont
+    function html:GetFont(t)
+      local p, s, f = get(self, t)
+      if t == "H1" then s = 0 end
+      return p, s, f
+    end
+    ship({ [PAGE_DATA] = PAGE_JA })
+    Stub.openItemText({ PAGE_LIVE })
+    assert.are.equal(PAGE_JA, drawn())
+    Stub.keys.alt = true; WFJ.Modifier.refresh()
+    assert.are.equal(PAGE_LIVE, html.text)
+    assertClientStyle(nil)
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
+  end)
 
   it("an HTML page's Japanese is written as HTML (never in our FontString)", function()
     ship({ [HTML_LIVE] = HTML_JA })

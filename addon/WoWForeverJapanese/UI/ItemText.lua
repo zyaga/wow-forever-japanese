@@ -212,8 +212,9 @@ end
 local function restoreTags(html, tags)
   for _, tag in ipairs(TAGS) do
     local t = tags[tag]
-    -- the captured font first, then the font object: right whether or not re-assigning the same object re-applies it
-    if t.font[1] ~= nil then html:SetFont(tag, t.font[1], t.font[2], t.font[3]) end
+    -- the captured font first, then the font object: right whether or not re-assigning the same object re-applies it;
+    -- a captured size the client would refuse is not written back (the font object still is)
+    if t.font[1] ~= nil and WFJ.Font.size(t.font[2]) then html:SetFont(tag, t.font[1], t.font[2], t.font[3]) end
     if t.object ~= nil and type(html.SetFontObject) == "function" then
       pcall(html.SetFontObject, html, tag, t.object)
     end
@@ -237,7 +238,8 @@ end
 function page:SetFont(path, size, flags)
   local html, tags = self.html, self.tags
   local orig = tags and tags.P.font
-  if orig and path == orig[1] and size == orig[2] and flags == orig[3] then
+  -- the P font as captured; with no usable captured size, SurfaceState puts the face back at the size it applied
+  if orig and path == orig[1] and flags == orig[3] and (size == orig[2] or not WFJ.Font.size(orig[2])) then
     restoreTags(html, tags)
     -- our FontString may hold the client's English page (English first), written before this font came back
     if self.fs and self.drawn then layout(self.fs, html) end
