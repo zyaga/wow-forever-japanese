@@ -771,9 +771,27 @@ describe("the head of a speaker who is not on screen", function()
   it("the NPC on screen: once its model loads, its display id is remembered for that creature", function()
     Stub.units.questnpc = { name = "Senani Thunderheart", guid = "Creature-0-1-0-1-1992-0000ABCD" }
     Stub.showDetail()
-    settle()
-    assert.are.equal("questnpc", panel().head.model.unit)
+    local m = panel().head.model
+    assert.are.equal("questnpc", m.unit)
+    m.scripts.OnModelLoaded(m)
     assert.are.same({ [1992] = 4864 }, db.voiceDisplays)
+  end)
+
+  it("never reads the display before the unit's model has loaded: the frame still answers the one before", function()
+    WFJ.Data.displays = { [6119] = 4864 }
+    load({ creature = 6119 }) -- the previous speaker, drawn from its display
+    Stub.displayInfo = 4864 -- what the frame answers until the new model has loaded
+    Stub.units.questnpc = { name = "Senani Thunderheart", guid = "Creature-0-1-0-1-1992-0000ABCD" }
+    load({ creature = 1992, unit = "questnpc", guid = "Creature-0-1-0-1-1992-0000ABCD" })
+    assert.are.equal("questnpc", h.model.unit)
+    settle()
+    assert.is_nil(db.voiceDisplays)
+    Stub.displayInfo = 0 -- a load event that has no display yet is asked again on the next one
+    h.model.scripts.OnModelLoaded(h.model)
+    assert.is_nil(db.voiceDisplays)
+    Stub.displayInfo = 5000
+    h.model.scripts.OnModelLoaded(h.model)
+    assert.are.same({ [1992] = 5000 }, db.voiceDisplays)
   end)
 
   it("a secret, missing or zero display id is never remembered", function()
@@ -781,7 +799,8 @@ describe("the head of a speaker who is not on screen", function()
     local secret = 4864
     _G.issecretvalue = function(v) return v == secret end
     Stub.showDetail()
-    settle()
+    local m = panel().head.model
+    m.scripts.OnModelLoaded(m)
     assert.is_nil(db.voiceDisplays)
     _G.issecretvalue = nil
     for _, d in ipairs({ 0, false }) do
@@ -789,7 +808,7 @@ describe("the head of a speaker who is not on screen", function()
       local fresh = Head.build(CreateFrame("Frame"))
       Head.load(fresh, { speaker = { creature = 1992, unit = "questnpc", guid = "Creature-0-1-0-1-1992-0000ABCD" } },
         true, function() end)
-      settle()
+      fresh.model.scripts.OnModelLoaded(fresh.model)
       assert.are.equal("questnpc", fresh.model.unit)
       assert.is_nil(db.voiceDisplays)
     end
@@ -831,6 +850,19 @@ describe("the head of a speaker who is not on screen", function()
     assert.are.equal(1, h.model.alpha)
   end)
 
+  it("a late model is shown for the speaker the head is on now, not one it moved on from", function()
+    Stub.modelFile = 0
+    load({ creature = 7 })
+    settle()
+    WFJ.Data.displays = { [6119] = 4864 }
+    Stub.modelFile = 118355
+    load({ creature = 6119 }) -- moved on: shown at once, the earlier wait is gone
+    shown = nil
+    h.model.scripts.OnModelLoaded(h.model)
+    assert.is_nil(shown)
+    assert.are.equal(4864, h.model.display)
+  end)
+
   it("a late model shows nothing once the head is turned off", function()
     Stub.modelFile = 0
     load({ creature = 7 })
@@ -856,11 +888,12 @@ describe("the head of a speaker who is not on screen", function()
     Stub.modelFile = 118355
     h.model.scripts.OnModelLoaded(h.model)
     local got = {}
-    for _, e in ipairs(headEntries()) do got[#got + 1] = { e.msg, e.display, e.model, e.late } end
+    for _, e in ipairs(headEntries()) do got[#got + 1] = { e.msg, e.display } end
     assert.are.same({
-      { "saved 1992", 555, true, nil },
-      { "shipped 6119", 4864, true, nil },
-      { "creature 7", nil, false, true },
+      { "saved 1992 model", 555 },
+      { "shipped 6119 model", 4864 },
+      { "creature 7 no model" },
+      { "late creature 7" },
     }, got)
   end)
 end)

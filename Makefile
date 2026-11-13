@@ -85,6 +85,7 @@ override INPUTS := $(abspath $(INPUTS))
 PRED_QUEST   ?= $(INPUTS)/classic-wow-quest-japanese-translator
 # Forever creature caches, one per client build (<build>.wdb), for the voice panel's display ids (ADR-088)
 CREATURES    ?= $(INPUTS)/creatures
+override CREATURES := $(abspath $(CREATURES))
 PRED_TOOLTIP ?= $(INPUTS)/classic-wow-tooltips-japanese-translator
 PFQUEST      ?= $(INPUTS)/pfquest-quests.lua
 PFQUEST_SHA  ?= 7786596
@@ -302,7 +303,8 @@ wdb-copy: ## copy the client's quest cache into WDB_QUEST, its client folder (re
 	@mkdir -p "$$(dirname "$(WDB_QUEST)")"
 	@if [ -f "$(WDB_QUEST)" ]; then cp "$(WDB_QUEST)" "$(WDB_QUEST).prev"; echo "wdb-copy: previous copy kept as $(WDB_QUEST).prev"; fi
 	cp "$(WOW_DIR)/Cache/WDB/enUS/questcache.wdb" "$(WDB_QUEST)"
-	@if [ "$(CLIENT)" = forever ]; then $(MAKE) --no-print-directory creature-copy WOW_DIR="$(WOW_DIR)"; fi
+	@if [ "$(CLIENT)" = forever ]; then $(MAKE) --no-print-directory creature-copy WOW_DIR="$(WOW_DIR)" || \
+		echo "wdb-copy: the quest cache is copied; the creature cache was not (see above)"; fi
 
 creature-copy: ## copy the Forever client's creature cache to CREATURES/<build>.wdb, named by the build in its header (read-only on the game folder): WOW_DIR=<client folder>
 	@test -n "$(WOW_DIR)" || { echo "usage: make creature-copy WOW_DIR=<client folder holding Cache/, e.g. .../World of Warcraft/_forever_>"; exit 2; }
@@ -310,6 +312,7 @@ creature-copy: ## copy the Forever client's creature cache to CREATURES/<build>.
 	@mkdir -p "$(CREATURES)"
 	@W="$$(cd "$(WOW_DIR)" && pwd)/Cache/WDB/enUS/creaturecache.wdb" && \
 		B="$$(cd pipeline && $(PY) -c 'import sys; from pathlib import Path; from wfj.io.creature_cache import read_build; print(read_build(Path(sys.argv[1])))' "$$W")" && \
+		{ [ ! -f "$(CREATURES)/$$B.wdb" ] || cp "$(CREATURES)/$$B.wdb" "$(CREATURES)/$$B.wdb.prev"; } && \
 		cp "$$W" "$(CREATURES)/$$B.wdb" && echo "creature-copy: $(CREATURES)/$$B.wdb (then: make voice-displays)"
 
 level1-spells: ## regenerate pipeline/level1_spells.txt (the spells a fresh level-1 character has) from the installed Forever client: WOW_DIR=<client folder> [PRODUCT=wowf]

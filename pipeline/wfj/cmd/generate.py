@@ -27,7 +27,7 @@ from wfj.io.names_store import load_lines as load_name_lines
 from wfj.paths import allowlist_path, data_root
 
 TOC_NAME = "WoWForeverJapanese.toc"
-# the generated files that are not shards, in load order; the last ships only when the store has its data
+# the generated files that are not shards, in load order; the last two ship only when the store has their data
 FIXED = ("Data/Meta.lua", "Data/Vectors.lua", "Data/ErrorSounds.lua", "Data/Displays.lua")
 ERROR_SOUNDS = Path("voice") / "error-sounds.jsonl"
 VECTORS_HEAD = "WFJ.Data.vectors ="

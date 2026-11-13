@@ -52,6 +52,38 @@ def test_a_row_no_source_holds_any_more_is_kept():
     assert got == old
 
 
+def test_a_row_a_creature_cache_gave_is_never_replaced_by_vmangos():
+    old = [{"creature": 5, "display": 51, "provenance": {"source": "creaturecache@70888", "imported": "2026-11-01"}}]
+    assert rows({5}, [], {5: [50]}, old) == old
+
+
+def test_a_cache_whose_build_is_not_pinned_is_left_out_and_the_rest_still_builds(root, tmp_path, monkeypatch, capsys):
+    import struct
+
+    data = tmp_path / "data"
+    (data / "voice").mkdir(parents=True)
+    (data / "voice" / "speakers.jsonl").write_text(json.dumps({"key": "1-description", "speaker": 6119}) + "\n",
+                                                   encoding="utf-8")
+    caches = tmp_path / "creatures"
+    caches.mkdir()
+    good = (root / "tests/fixtures/wdb-creature/creaturecache-70938.wdb").read_bytes()
+    (caches / "70938.wdb").write_bytes(good)
+    unpinned = bytearray(good)
+    struct.pack_into("<I", unpinned, 4, 99999)
+    (caches / "99999.wdb").write_bytes(bytes(unpinned))
+    monkeypatch.setattr(voice_displays, "data_root", lambda: data)
+    monkeypatch.setattr(voice_displays.vmangos, "read_creatures", lambda db, who: {})
+    assert voice_displays.run(["--creatures", str(caches), "--vmangos", "db", "--commit", "13b49dc"]) == 0
+    assert "99999.wdb left out" in capsys.readouterr().err
+    written = [json.loads(ln) for ln in (data / "voice" / "displays.jsonl").read_text("utf-8").splitlines()]
+    assert [(r["creature"], r["provenance"]["source"]) for r in written] == [(6119, "creaturecache@70938")]
+
+
+def test_a_missing_cache_folder_is_refused(tmp_path, monkeypatch):
+    monkeypatch.setattr(voice_displays, "data_root", lambda: tmp_path)
+    assert voice_displays.run(["--creatures", str(tmp_path / "nope"), "--vmangos", "db", "--commit", "x"]) == 1
+
+
 def test_the_rows_are_sorted_by_creature():
     got = rows({30, 4, 200}, [], {30: [1], 4: [2], 200: [3]})
     assert [r["creature"] for r in got] == [4, 30, 200]

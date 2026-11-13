@@ -57,6 +57,17 @@ def test_a_display_list_that_does_not_add_up_is_an_error(fixture, tmp_path):
         read_displays(path)
 
 
+def test_a_display_list_with_a_nan_total_is_an_error(fixture, tmp_path):
+    buf = bytearray(fixture.read_bytes())
+    first_len = struct.unpack_from("<I", buf, 28)[0]
+    payload = bytes(buf[32 : 32 + first_len])
+    struct.pack_into("<f", buf, 32 + _display_list_at(payload) + 4, float("nan"))
+    path = tmp_path / "creaturecache.wdb"
+    path.write_bytes(bytes(buf))
+    with pytest.raises(CreatureCacheError, match="creature 6119: display list"):
+        read_displays(path)
+
+
 def test_a_creature_cached_twice_is_reported(fixture, tmp_path):
     buf = fixture.read_bytes()
     first_len = struct.unpack_from("<I", buf, 28)[0]

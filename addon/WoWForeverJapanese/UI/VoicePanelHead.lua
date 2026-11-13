@@ -5,8 +5,9 @@
 -- The model comes from the unit on screen while that unit is still the speaker (the client is drawing it). Otherwise
 -- it comes from a display id, which addresses the client's own model data and needs no creature cache (ADR-088): the
 -- one this player's client drew for that NPC, else the one shipped for it (`VoiceQuestLog.displayFor`). Only with
--- neither is it asked for by creature id, which needs the creature cache
--- every client build empties. A unit's model, once loaded, reports its display id (State "speakerDisplay"). A speaker
+-- neither is it asked for by creature id, which needs the creature cache every client build empties. A unit's model
+-- reports its display id when OnModelLoaded says it has loaded (State "speakerDisplay"), never earlier: until then the
+-- frame answers with the model it held before (the Spoken addon's note on this client). A speaker
 -- with no model (a book, the narrator, an unknown creature) gets no head after the settle and onShown(false) lets the
 -- panel move the text left; a model that arrives later still shows. The model frame is never hidden before its load
 -- had its chance: a hidden PlayerModel does not keep the model it loads.
@@ -30,15 +31,22 @@ local function animate(h)
   pcall(h.model.SetAnimation, h.model, h.talking and TALK_ANIMATION or 0)
 end
 
--- A unit's model has loaded: its display id goes to whoever remembers it. A secret, missing or zero id is dropped.
+-- A unit's model has loaded: its display id goes to whoever remembers it. A secret, missing or zero id is dropped and
+-- the next load event of the same unit is asked again.
 local function report(h)
   local who = h.fromUnit
-  h.fromUnit = nil
   if not who then return end
   local ok, display = pcall(h.model.GetDisplayInfo, h.model)
   local isSecret = Compat.resolve("issecretvalue")
   if not ok or (type(isSecret) == "function" and isSecret(display)) then return end
-  if type(display) == "number" and display > 0 then pcall(WFJ.State.fire, "speakerDisplay", who.creature, display) end
+  if type(display) == "number" and display > 0 then
+    h.fromUnit = nil
+    pcall(WFJ.State.fire, "speakerDisplay", who.creature, display)
+  end
+end
+
+local function log(message, fields)
+  if WFJ.Diag then pcall(WFJ.Diag.log, "voicehead", message, fields) end
 end
 
 -- A model that arrived after the settle hid the head: show it now.
@@ -47,7 +55,7 @@ local function arrived(h)
   local w = h.waiting
   if not w or not hasModel(h.model) then return end
   h.waiting = nil
-  if w.entry then w.entry.late = true end
+  log("late " .. w.what, { display = w.display })
   Head.setShown(h, true)
   w.onShown(true)
 end
@@ -139,28 +147,25 @@ function Head.load(h, item, wanted, onShown)
   h.loaded = want
   Head.setShown(h, true)
   onShown(true)
+  h.model:ClearModel()
   if unit then
     h.fromUnit = who
     h.model:SetUnit(unit)
+  elseif display then
+    h.model:SetDisplayInfo(display)
   else
-    h.model:ClearModel()
-    if display then h.model:SetDisplayInfo(display) else h.model:SetCreature(who.creature) end
+    h.model:SetCreature(who.creature)
   end
   local timer = Compat.resolve("C_Timer")
   if type(timer) == "table" and type(timer.NewTimer) == "function" then
     h.settleTimer = timer.NewTimer(MODEL_SETTLE, function()
       h.settleTimer = nil
       local loaded = hasModel(h.model)
-      local entry
-      if not unit then
-        local ok, e = pcall(WFJ.Diag.log, "voicehead", source .. " " .. who.creature,
-          { display = display, model = loaded })
-        entry = ok and e or nil
-      end
-      if loaded then
-        report(h)
-      else
-        h.waiting = { onShown = onShown, entry = entry } -- shown by OnModelLoaded if the model still comes
+      local what = (source or "unit") .. " " .. who.creature
+      -- one entry per outcome, so a repeat in the same session counts on the entry that says what happened
+      if not unit then log(what .. (loaded and " model" or " no model"), { display = display }) end
+      if not loaded then
+        h.waiting = { onShown = onShown, what = what, display = display } -- shown by OnModelLoaded if it comes
       end
       Head.setShown(h, loaded)
       onShown(loaded)

@@ -25,6 +25,7 @@ Forever replaced).
 
 from __future__ import annotations
 
+import math
 import struct
 from collections.abc import Iterator
 from dataclasses import dataclass
@@ -96,8 +97,8 @@ def decode_displays(payload: bytes, lay: Layout) -> list[int]:
     if count > MAX_DISPLAYS or at + 8 + count * DISPLAY.size > len(payload):
         raise ValueError(f"display list of {count} entries does not fit the record")
     entries = [DISPLAY.unpack_from(payload, at + 8 + k * DISPLAY.size) for k in range(count)]
-    if abs(sum(e[2] for e in entries) - total) > 1e-3:
-        got = sum(e[2] for e in entries)
+    got = sum(e[2] for e in entries)
+    if not math.isfinite(got) or not math.isfinite(total) or abs(got - total) > 1e-3:
         raise ValueError(f"display list probabilities sum to {got}, not its total {total}")
     return [int(e[0]) for e in entries if e[0]]
 
