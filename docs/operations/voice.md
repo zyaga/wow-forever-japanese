@@ -28,7 +28,7 @@ There is no engine to start by hand. `make voice-generate` (also behind `make im
 
 ## Display ids for the panel's head
 
-The voice panel draws a speaker who is not on screen (a quest played from the quest log) from a display id, the number of the model the client draws that NPC with ([ADR-088](../adr/088-the-head-is-drawn-from-a-display-id.md)). The addon ships one per speaking creature: `data/voice/displays.jsonl`, generated into `Data/Displays.lua`. After every re-pull, and whenever `make voice-speakers` adds speakers:
+The voice panel draws a speaker who is not on screen (a quest played from the quest log) from a display id, the number of the model the client draws that NPC with ([ADR-089](../adr/089-the-head-is-drawn-from-a-display-id.md)). The addon ships one per speaking creature: `data/voice/displays.jsonl`, generated into `Data/Displays.lua`. After every re-pull, and whenever `make voice-speakers` adds speakers:
 
 ```bash
 make creature-copy WOW_DIR="<Forever client folder>"   # make wdb-copy runs it when CLIENT=forever

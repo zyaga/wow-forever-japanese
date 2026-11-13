@@ -15,7 +15,7 @@
 --   * The display id of every NPC whose head the panel drew from the unit on screen (State "speakerDisplay", from
 --     UI/VoicePanelHead), while a voice pack is installed: WFJ_DB.voiceDisplays[creature id] = display id, refreshed
 --     every time. `displayFor` answers it, else the shipped one, for every head drawn without the NPC on screen, so
---     none needs the creature cache every client build empties (ADR-088). Bounded by the NPCs the player has met.
+--     none needs the creature cache every client build empties (ADR-089). Bounded by the NPCs the player has met.
 -- The button follows forever-vo's ForeverVO/UI/QuestLog.lua (MIT License; see ATTRIBUTION.md).
 local _, WFJ = ...
 local QuestLog = {}

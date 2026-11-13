@@ -3,7 +3,7 @@
 --   Head.build(parent) → head · Head.applyLook(head, look, parent) · Head.load(head, item, wanted, onShown)
 --   Head.setShown(head, shown) · Head.setTalking(head, talking) · Head.reset(head)
 -- The model comes from the unit on screen while that unit is still the speaker (the client is drawing it). Otherwise
--- it comes from a display id, which addresses the client's own model data and needs no creature cache (ADR-088): the
+-- it comes from a display id, which addresses the client's own model data and needs no creature cache (ADR-089): the
 -- one this player's client drew for that NPC, else the one shipped for it (`VoiceQuestLog.displayFor`). Only with
 -- neither is it asked for by creature id, which needs the creature cache every client build empties. A unit's model
 -- reports its display id when OnModelLoaded says it has loaded (State "speakerDisplay"), never earlier: until then the

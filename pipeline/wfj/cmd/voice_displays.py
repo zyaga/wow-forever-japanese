@@ -1,4 +1,4 @@
-"""`wfj voice displays`: each speaking creature's display id → data/voice/displays.jsonl (ADR-088).
+"""`wfj voice displays`: each speaking creature's display id → data/voice/displays.jsonl (ADR-089).
 
 The voice panel draws a speaker who is not on screen (a quest replayed from the quest log) from a display id,
 which addresses the client's own model data, instead of from the creature cache every client build empties.

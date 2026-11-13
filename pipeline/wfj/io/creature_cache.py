@@ -1,4 +1,4 @@
-"""The client's creature cache, `Cache/WDB/enUS/creaturecache.wdb` → each creature's display ids (ADR-088).
+"""The client's creature cache, `Cache/WDB/enUS/creaturecache.wdb` → each creature's display ids (ADR-089).
 
 The client writes the cache on a full exit with what the server answered about every creature it asked about,
 and empties it on every new client build. The voice panel's head needs only the display ids (the models the

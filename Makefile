@@ -83,7 +83,7 @@ INPUTS       ?= $(or $(wildcard $(CURDIR)/predecessors),$(REPO_ROOT)/predecessor
 # Absolute even when given relative, so a recipe's `cd pipeline` reads the same files the checks did
 override INPUTS := $(abspath $(INPUTS))
 PRED_QUEST   ?= $(INPUTS)/classic-wow-quest-japanese-translator
-# Forever creature caches, one per client build (<build>.wdb), for the voice panel's display ids (ADR-088)
+# Forever creature caches, one per client build (<build>.wdb), for the voice panel's display ids (ADR-089)
 CREATURES    ?= $(INPUTS)/creatures
 override CREATURES := $(abspath $(CREATURES))
 PRED_TOOLTIP ?= $(INPUTS)/classic-wow-tooltips-japanese-translator

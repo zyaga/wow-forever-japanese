@@ -1,4 +1,4 @@
-# ADR-088: The voice panel's head is drawn from a display id
+# ADR-089: The voice panel's head is drawn from a display id
 
 - **Status:** Accepted
 - **Date:** 2026-11-13
