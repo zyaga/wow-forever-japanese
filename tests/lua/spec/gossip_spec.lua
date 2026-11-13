@@ -136,7 +136,12 @@ describe("UI/Gossip: the NPC talk window", function()
         end
       end
       for _, rec in pairs(SS.records("gossip")) do
-        local row = rec.meta.ctx.row
+        local row = rec.fs.button -- an option's record is on its button's text, the greeting's on the row's text
+        if not row then
+          for _, f in pairs(sb.frames) do if f.GreetingText == rec.fs then row = f end end
+          for f in pairs(sb.released) do if f.GreetingText == rec.fs then row = f end end
+        end
+        assert.is_truthy(row, rec.key)
         assert.is_true(row.shown, rec.key)
         assert.is_nil(sb.released[row], rec.key .. " is on a released frame")
       end
@@ -157,13 +162,13 @@ describe("UI/Gossip: the NPC talk window", function()
     check(false)
   end)
 
-  it("row heights follow the shown text: first window of the session, scroll, Alt and release", function()
+  it("a row is always as tall as the place the client measured; the list is never laid out again", function()
     setup(5)
     local names = options(12)
     ship({ ["Welcome."] = LONG_JA .. LONG_JA, [names[1]] = LONG_JA, [names[3]] = LONG_JA, [names[12]] = LONG_JA })
     Stub.showGossip({ text = "Welcome.", options = names, npc = NPC })
-    -- measured in English before the measure widgets were hooked: laid out once more after Update
-    assert.are.equal(1, sb.calls.FullUpdate)
+    -- measured in English before the measure widgets were hooked: the rows keep the places and the heights the
+    -- client gave them, so a taller Japanese line never lies over the next row
     assert.is_true(isJapanese(sb.frames[4]:GetText()))
     assertLayout()
     local greetingMeasure, optionMeasure = G.measureWidgets()
@@ -176,6 +181,7 @@ describe("UI/Gossip: the NPC talk window", function()
 
     sb:scrollTo(10)
     assertLayout()
+    -- the reveal key changes a row's text, never its height or where the client put it
     Stub.keys.alt = true; WFJ.Modifier.refresh()
     assert.are.equal(names[12], sb.frames[15]:GetText())
     assertLayout()
@@ -183,12 +189,44 @@ describe("UI/Gossip: the NPC talk window", function()
     assert.are.equal(LONG_JA, sb.frames[15]:GetText())
     assertLayout()
 
-    -- the next window: the hooks exist, so the client's own layout is already right
-    local before = sb.calls.FullUpdate
+    -- the next window: the hooks exist, so the client's own layout is already right, scrolled or not
     Stub.closeGossip()
     Stub.showGossip({ text = "Welcome.", options = names, npc = NPC })
-    assert.are.equal(before, sb.calls.FullUpdate)
     assertLayout()
+    sb:scrollTo(0)
+    assert.is_true(isJapanese(sb.frames[4]:GetText()))
+    assertLayout()
+    sb:scrollTo(10)
+    assert.are.equal(LONG_JA, sb.frames[15]:GetText())
+    assertLayout()
+    Stub.keys.alt = true; WFJ.Modifier.refresh()
+    assertLayout()
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
+    assertLayout()
+    assert.are.equal(0, sb.calls.FullUpdate)
+  end)
+
+  it("each measure widget is hooked by the first window that shows its kind of row", function()
+    setup(5)
+    local names = options(3)
+    ship({ ["Welcome."] = LONG_JA .. LONG_JA, [names[1]] = LONG_JA })
+    -- a first window with a greeting and no option: only the greeting's measure widget can be found
+    Stub.showGossip({ text = "Welcome.", options = {}, npc = NPC })
+    local greetingMeasure, optionMeasure = G.measureWidgets()
+    assert.is_truthy(greetingMeasure)
+    assert.is_nil(optionMeasure)
+    assertLayout()
+    -- the next window: the greeting is measured as shown, the options still from the English, and nothing overlaps
+    Stub.closeGossip()
+    Stub.showGossip({ text = "Welcome.", options = names, npc = NPC })
+    assert.are.equal(LONG_JA, sb.frames[4]:GetText())
+    assertLayout()
+    assert.is_truthy(select(2, G.measureWidgets()))
+    -- from here on both are measured as shown
+    Stub.closeGossip()
+    Stub.showGossip({ text = "Welcome.", options = names, npc = NPC })
+    assertLayout()
+    assert.are.equal(0, sb.calls.FullUpdate)
   end)
 
   it("greeting widgets whose reported size is below 0 show and measure the Japanese at the default size", function()
@@ -202,10 +240,12 @@ describe("UI/Gossip: the NPC talk window", function()
       ship({ ["Welcome."] = "ようこそ。" })
       Stub.showGossip({ text = "Welcome.", options = options(2), npc = NPC })
       local greetingMeasure = G.measureWidgets()
-      assert.are.same({ WFJ.Font.PATH, WFJ.Font.DEFAULT_SIZE, "" }, { greetingMeasure:GetFont() })
       assert.are.equal("ようこそ。", textOf(sb.frames[1]))
       Stub.closeGossip()
-      Stub.showGossip({ text = "Welcome.", options = options(2), npc = NPC }) -- the measure widget's font put back
+      -- the measure widget is hooked after the first window, so the client first measures through it here: its font
+      -- is put back, then the Japanese one goes on at the default size
+      Stub.showGossip({ text = "Welcome.", options = options(2), npc = NPC })
+      assert.are.same({ WFJ.Font.PATH, WFJ.Font.DEFAULT_SIZE, "" }, { greetingMeasure:GetFont() })
       assert.are.equal("ようこそ。", textOf(sb.frames[1]))
       assertLayout()
     end)
@@ -346,9 +386,7 @@ describe("UI/Gossip: the NPC talk window", function()
     assert.is_true(G.banner:IsShown())
     assertLayout()
 
-    local updates = sb.calls.FullUpdate
     assert.are.equal(0, WFJ.Render.refresh("gossip"))
-    assert.are.equal(updates, sb.calls.FullUpdate)
 
     for _, flip in ipairs({ { "enabled", false, true }, { "area.gossip", false, true } }) do
       S.set(flip[1], flip[2])
@@ -364,7 +402,9 @@ describe("UI/Gossip: the NPC talk window", function()
     assert.are.equal("Old option.", stale:GetText())
     Stub.keys.alt = false; WFJ.Modifier.refresh()
     assert.are.equal(marker .. "古い選択肢。", stale:GetText())
+    -- a refresh changes a row's text, never its height or the list's layout
     assertLayout()
+    assert.are.equal(0, sb.calls.FullUpdate)
   end)
   it("QA: a line shipped under its literal key renders for a player whose class it names (candidate keys)", function()
     -- the translation was keyed from a non-mage's dump: "mage" stayed literal; a Mage player's full key differs

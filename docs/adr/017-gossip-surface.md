@@ -51,3 +51,7 @@ ADR-005 fixed the gossip key (normalize_v1 + Hash32x2 of the live English) and p
 ## Update: no scroll refit on the greeting
 
 The greeting prose no longer refits with `QuestGreetingScrollFrame:UpdateScrollChildRect()`: called from addon code, it runs the scroll frame's scripts under this addon's taint. The client keeps the range itself ([ADR-077](077-the-quest-windows-are-never-re-measured-from-addon-code.md)).
+
+## Update: the list is never laid out again
+
+`UI/Gossip.lua` no longer calls `ScrollBox:FullUpdate(true)`, and the surface has no refit: called from addon code, the call runs the list's code under this addon's taint, and gamepad navigation then refuses to move between the rows. That answers the [likely] item in Consequences: the call did taint the list. A window measured before a measure widget was hooked keeps the row places and heights the client measured from the English, and a row is resized only once the client has measured its kind through the hook; the measure-widget hooks of Decision 2 stay ([ADR-086](086-the-talk-window-list-is-never-laid-out-again-from-addon-code.md)).

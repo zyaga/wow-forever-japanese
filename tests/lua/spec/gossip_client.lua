@@ -5,7 +5,8 @@
 --   every row → extents from the calculator → acquire rows from per-template pools (LIFO), each sized to its extent →
 --   layout by the rows' current heights from the offset the extents give the first visible row
 --   (ScrollBoxLinearView.lua:12–33, 93–96; ScrollBoxViewUtil.lua:33–49) → initializer → OnInitializedFrame; scrolling
---   releases / acquires and lays out again; FullUpdate re-measures and lays out without re-initializing).
+--   releases / acquires and lays out again; FullUpdate re-measures and lays out without re-initializing: the addon
+--   never calls it, and the counter below proves it).
 -- Kept in its own file so the stub's write counters can tell the client's writes from the addon's: a write whose first
 -- caller outside wow_stub.lua is under addon/ is the addon's; one from here or from a spec is the client's.
 local Client = {}
