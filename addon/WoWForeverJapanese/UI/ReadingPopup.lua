@@ -88,7 +88,7 @@ end
 function Popup.show(anchor, x, y, word, gloss, size, hint)
   local f = ensure()
   local head, reading, lemma, meaning = Popup.lines(word, gloss)
-  local headSize = math.max((size or 12) + 2, 14)
+  local headSize = math.max((WFJ.Font.size(size) or 12) + 2, 14)
   WFJ.Font.set(wordFs, WFJ.Font.PATH, headSize, "")
   wordFs:SetText(head)
   readingFs:SetText(reading)

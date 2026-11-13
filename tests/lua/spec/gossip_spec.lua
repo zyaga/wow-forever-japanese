@@ -229,6 +229,30 @@ describe("UI/Gossip: the NPC talk window", function()
     assert.are.equal(0, sb.calls.FullUpdate)
   end)
 
+  it("greeting widgets whose reported size is below 0 show and measure the Japanese at the default size", function()
+    local make = Stub.fontString
+    -- every greeting FontString (the rows and the measure widget) reports a size the client would refuse back
+    Stub.fontString = function(text, path, size, flags)
+      return make(text, path, size == 13 and -1566.511841 or size, flags)
+    end
+    local ok, err = pcall(function()
+      setup(5)
+      ship({ ["Welcome."] = "ようこそ。" })
+      Stub.showGossip({ text = "Welcome.", options = options(2), npc = NPC })
+      local greetingMeasure = G.measureWidgets()
+      assert.are.equal("ようこそ。", textOf(sb.frames[1]))
+      Stub.closeGossip()
+      -- the measure widget is hooked after the first window, so the client first measures through it here: its font
+      -- is put back, then the Japanese one goes on at the default size
+      Stub.showGossip({ text = "Welcome.", options = options(2), npc = NPC })
+      assert.are.same({ WFJ.Font.PATH, WFJ.Font.DEFAULT_SIZE, "" }, { greetingMeasure:GetFont() })
+      assert.are.equal("ようこそ。", textOf(sb.frames[1]))
+      assertLayout()
+    end)
+    Stub.fontString = make
+    assert(ok, err)
+  end)
+
   it("quest rows and a prepend-decorated option are never written and never recorded", function()
     setup(10)
     ship({ ["Tell me about the Scourge."] = "スカージについて教えて。", ["A Quest"] = "クエスト" })

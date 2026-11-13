@@ -10,6 +10,8 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Fixed
+- Opening some quest windows no longer throws a Lua error (BugSack showed it as `Collector.lua:220 ... a secret string value`). When the game keeps a quest giver's identity hidden from addons, the addon now skips it quietly; the quest text, its Japanese and its voice work as before.
+- A Lua error ("Invalid font height") that could repeat each time a window such as the mailbox refreshed, when the game gave a line of text a size of 0 or below. That text now shows its Japanese at the standard size.
 - With a controller, the cursor moves between the options in an NPC talk window again. It used to stay on the top option with an "interface action failed" message. In the first talk window after login or a reload, and while you hold the key to see the English, a line can now run into the one below it or leave a gap; talking to the NPC again puts it right.
 
 ## 0.13.0 - 2026-11-12

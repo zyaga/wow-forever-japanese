@@ -99,7 +99,7 @@ end
 
 local function readFont(fs)
   local path, size, flags = fs:GetFont()
-  return { path = path, size = size, flags = flags }
+  return { path = path, size = WFJ.Font.size(size), flags = flags }
 end
 
 -- Calls fn with `measuring` set, resetting it even when fn raises.
@@ -218,7 +218,7 @@ end
 local function measureGreetingBody(fs, text)
   if measure.greetingApplied then
     local f = measure.greetingFont
-    fs:SetFont(f.path, f.size, f.flags)
+    fs:SetFont(f.path, f.size or WFJ.Font.DEFAULT_SIZE, f.flags) -- no size: the one Font.bundled gave the Japanese
     measure.greetingApplied = false
   end
   local en = apiText()
@@ -248,7 +248,7 @@ local function measureOptionBody(button, opt)
   local changed = false
   if measure.optionApplied then
     local f = measure.optionFont
-    fs:SetFont(f.path, f.size, f.flags)
+    fs:SetFont(f.path, f.size or WFJ.Font.DEFAULT_SIZE, f.flags) -- no size: the one Font.bundled gave the Japanese
     measure.optionApplied, changed = false, true
   end
   local en = type(opt) == "table" and opt.name or nil

@@ -9,6 +9,14 @@ Font.DEFAULT_SIZE = 12
 -- the client's standard UI face: under the font-load probe, and Dialogue UI's fallback face
 Font.CLIENT = "Fonts\\FRIZQT__.TTF"
 
+-- `size` when it is a number above 0, else nil. The client has reported such a size for a widget (-1566.5 on a mail
+-- row's expiry text) and raises when SetFont is given it back; every size read from the client is passed through
+-- this before it goes back to SetFont.
+function Font.size(size)
+  if type(size) ~= "number" or size ~= size or size <= 0 then return nil end
+  return size
+end
+
 -- Font changes the client refused: on a fresh launch the bundled font file is not loaded yet when the
 -- addon builds its own widgets at load, and SetFont returns false. fs → { path, size, flags } (weak keys).
 local pending = setmetatable({}, { __mode = "k" })
@@ -44,9 +52,9 @@ function Font.bundle(fs, fontObject)
   local curSize, curFlags = size, flags or ""
   if type(fontObject) == "table" and type(fontObject.GetFont) == "function" then
     local _, objSize, objFlags = fontObject:GetFont()
-    size, flags = objSize or size, objFlags or flags
+    size, flags = Font.size(objSize) or size, objFlags or flags
   end
-  size, flags = size or Font.DEFAULT_SIZE, flags or ""
+  size, flags = Font.size(size) or Font.DEFAULT_SIZE, flags or ""
   -- already wearing exactly this: chat dresses every visible row on every refresh, so most calls change nothing
   if dressed[fs] and path == Font.PATH and curSize == size and curFlags == flags then return size end
   if fs:SetFont(Font.PATH, size, flags) == false then return nil end
@@ -66,6 +74,7 @@ function Font.restore(fs, fontObject)
     path, size, flags = fontObject:GetFont()
   end
   if type(path) ~= "string" then path, size, flags = dressed[fs][1], dressed[fs][2], dressed[fs][3] end
+  size = Font.size(size) or dressed[fs][2] -- the size the bundled face was set at
   if type(path) ~= "string" or fs:SetFont(path, size, flags or "") == false then return false end
   dressed[fs] = nil
   restored[fs] = true
@@ -79,7 +88,8 @@ function Font.follow(fs, fontObject)
   if type(fs) ~= "table" or not restored[fs] or dressed[fs] then return false end
   if type(fontObject) ~= "table" or type(fontObject.GetFont) ~= "function" then return false end
   local path, size, flags = fontObject:GetFont()
-  if type(path) ~= "string" then return false end
+  size = Font.size(size)
+  if type(path) ~= "string" or not size then return false end
   local hasPath, hasSize = fs:GetFont()
   if hasPath == path and hasSize == size then return false end
   return fs:SetFont(path, size, flags or "") ~= false
@@ -157,11 +167,12 @@ function Font.share()
   return ok and registered == true
 end
 
--- The bundled font at an element's original size and flags ({path,size,flags} as captured by SurfaceState).
+-- The bundled font at an element's original size and flags ({path,size,flags} as captured by SurfaceState, or read
+-- by a measure widget); the default size when it has none above 0.
 function Font.bundled(orig)
   return {
     path = Font.PATH,
-    size = (orig and orig.size) or Font.DEFAULT_SIZE,
+    size = Font.size(orig and orig.size) or Font.DEFAULT_SIZE,
     flags = (orig and orig.flags) or "",
   }
 end

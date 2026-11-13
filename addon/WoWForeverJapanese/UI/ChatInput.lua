@@ -21,7 +21,7 @@ local function dressOne(widget)
   if type(widget) ~= "table" or type(widget.GetFont) ~= "function" then return false end
   local path, size, flags = widget:GetFont()
   if path == WFJ.Font.PATH then return true end
-  return widget:SetFont(WFJ.Font.PATH, size or WFJ.Font.DEFAULT_SIZE, flags or "") ~= false
+  return widget:SetFont(WFJ.Font.PATH, WFJ.Font.size(size) or WFJ.Font.DEFAULT_SIZE, flags or "") ~= false
 end
 
 -- The box, its header and the header's suffix. → true when the box wears the bundled face

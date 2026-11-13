@@ -60,6 +60,10 @@ function Stub.fontString(text, path, size, flags)
   function fs:SetFont(p, s, f)
     self.calls.SetFont = self.calls.SetFont + 1
     if byAddon() then self.calls.addonSetFont = self.calls.addonSetFont + 1 end
+    -- the client raises on a height that is not above 0, it does not return false (NaN is refused here too)
+    if type(s) == "number" and (s ~= s or s <= 0) then
+      error(("FontString:SetFont(): Invalid font height (%f): height must be > 0"):format(s), 2)
+    end
     if Stub.fontSetFails then return false end
     self.font = { path = p, size = s, flags = f }
     return true
