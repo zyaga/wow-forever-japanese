@@ -408,6 +408,15 @@ def error_sounds_text(rows: Iterable[dict]) -> str:
     return "\n".join(lines) + "\n"
 
 
+def displays_text(rows: Iterable[dict]) -> str:
+    """`WFJ.Data.displays`: [creature id] = display id, the model the voice panel draws a speaker with when
+    the speaker is not on screen."""
+    lines = [HEADER.format(src="data/"), "local _, WFJ = ...", "WFJ.Data.displays = {"]
+    lines += [f"  [{r['creature']}] = {r['display']}," for r in sorted(rows, key=lambda r: r["creature"])]
+    lines.append("}")
+    return "\n".join(lines) + "\n"
+
+
 def toc_block(relpaths: Iterable[str]) -> list[str]:
     """The TOC lines between the markers (backslash paths, as the client wants them)."""
     return [schema.TOC_BEGIN, *(p.replace("/", "\\") for p in relpaths), schema.TOC_END]

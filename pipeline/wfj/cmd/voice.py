@@ -262,7 +262,8 @@ def run(argv: Sequence[str]) -> int:
     verb = list(argv[:1])
     # the other verbs live in their own modules, each with its own `run`; some take the verb, some not
     own = {"profiles": ("voice_cast", "run_profiles", 1), "sets-page": ("voice_sets_page", "run", 1),
-           "sets": ("voice_sets", "run", 1), "audition": ("voice_audition", "run", 1),
+           "sets": ("voice_sets", "run", 1), "displays": ("voice_displays", "run", 1),
+           "audition": ("voice_audition", "run", 1),
            **{v: ("voice_make", "run", 0)
               for v in ("cast", "plan", "generate", "status", "record-hashes", "export", "relevel")},
            "speed": ("voice_make", "run_speed", 1),

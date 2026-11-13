@@ -23,6 +23,7 @@ Core\Data.lua
 Data\Meta.lua
 Data\Vectors.lua
 Data\ErrorSounds.lua
+Data\Displays.lua
 Data\Quest\Quest_0000.lua
 Data\Quest\Quest_0001.lua
 Data\Quest\Quest_0002.lua
