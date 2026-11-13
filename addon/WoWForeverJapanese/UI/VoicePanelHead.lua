@@ -2,11 +2,14 @@
 -- loading it, and its talk animation. UI/VoicePanel owns the panel and calls these with the head it built.
 --   Head.build(parent) → head · Head.applyLook(head, look, parent) · Head.load(head, item, wanted, onShown)
 --   Head.setShown(head, shown) · Head.setTalking(head, talking) · Head.reset(head)
--- The model comes from the unit on screen while that unit is still the speaker (the client is drawing it), else from
--- the creature id (the client's creature cache: loads after /reload and a restart, checked in game with creature 837;
--- a new client build empties the cache, so an NPC not seen since has no head). A speaker with no model (a book, the
--- narrator, an uncached creature) gets no head and onShown(false) lets the panel move the text left. The model frame
--- is never hidden before its load had its chance: a hidden PlayerModel does not keep the model it loads.
+-- The model comes from the unit on screen while that unit is still the speaker (the client is drawing it). Otherwise
+-- it comes from a display id, which addresses the client's own model data and needs no creature cache (ADR-088): the
+-- one this player's client drew for that NPC (the speaker's `display`, remembered by UI/VoiceQuestLog), else the one
+-- shipped for it (WFJ.Data.displays). Only with neither is it asked for by creature id, which needs the creature cache
+-- every client build empties. A unit's model, once loaded, reports its display id (State "speakerDisplay"). A speaker
+-- with no model (a book, the narrator, an unknown creature) gets no head after the settle and onShown(false) lets the
+-- panel move the text left; a model that arrives later still shows. The model frame is never hidden before its load
+-- had its chance: a hidden PlayerModel does not keep the model it loads.
 -- Adapted from forever-vo's ForeverVO/UI/TalkingHead.lua (MIT License; see ATTRIBUTION.md).
 local _, WFJ = ...
 local Head = {}
@@ -27,6 +30,28 @@ local function animate(h)
   pcall(h.model.SetAnimation, h.model, h.talking and TALK_ANIMATION or 0)
 end
 
+-- A unit's model has loaded: its display id goes to whoever remembers it. A secret, missing or zero id is dropped.
+local function report(h)
+  local who = h.fromUnit
+  h.fromUnit = nil
+  if not who then return end
+  local ok, display = pcall(h.model.GetDisplayInfo, h.model)
+  local isSecret = Compat.resolve("issecretvalue")
+  if not ok or (type(isSecret) == "function" and isSecret(display)) then return end
+  if type(display) == "number" and display > 0 then pcall(WFJ.State.fire, "speakerDisplay", who.creature, display) end
+end
+
+-- A model that arrived after the settle hid the head: show it now.
+local function arrived(h)
+  report(h)
+  local w = h.waiting
+  if not w or w.key ~= h.loaded or not w.settled or not hasModel(h.model) then return end
+  h.waiting = nil
+  if w.entry then w.entry.late = true end
+  Head.setShown(h, true)
+  w.onShown(true)
+end
+
 -- → the head: { model, ring, portraitBg, frame } on `parent`
 function Head.build(parent)
   local h = {}
@@ -37,6 +62,7 @@ function Head.build(parent)
     pcall(m.SetCamDistanceScale, m, CAMERA)
     pcall(m.SetFacing, m, 0)
     animate(h)
+    arrived(h)
   end)
   h.model:SetScript("OnAnimFinished", function() animate(h) end)
   h.ring = parent:CreateTexture(nil, "OVERLAY")
@@ -79,10 +105,12 @@ function Head.setShown(h, shown)
   h.frame:SetShown(shown and L.headFrame and true or false)
 end
 
--- Loads `item`'s speaker. `wanted`: the head setting. `onShown(shown)` runs when it is known whether a head shows.
+-- Loads `item`'s speaker. `wanted`: the head setting. `onShown(shown)` runs when it is known whether a head shows,
+-- and again with true when a model arrives after the settle.
 function Head.load(h, item, wanted, onShown)
   local who = item and item.speaker
   if h.settleTimer then h.settleTimer:Cancel(); h.settleTimer = nil end
+  h.waiting, h.fromUnit = nil, nil
   if not wanted or not who or not who.creature then
     h.loaded = nil
     Head.setShown(h, false)
@@ -95,7 +123,17 @@ function Head.load(h, item, wanted, onShown)
   local now = unit and type(guid) == "function" and guid(unit) or nil
   if now ~= nil and type(isSecret) == "function" and isSecret(now) then now = nil end
   if unit and (now == nil or now ~= who.guid) then unit = nil end
-  local want = unit and who.guid or who.creature
+  local display, source = nil, "unit"
+  if not unit then
+    local shipped = WFJ.Data and WFJ.Data.displays
+    display, source = who.display, who.displaySource or "saved"
+    if not display then
+      display = type(shipped) == "table" and shipped[who.creature] or nil
+      source = display and "shipped" or "creature"
+    end
+  end
+  local want = unit and ("unit " .. tostring(who.guid)) or display and ("display " .. display)
+    or ("creature " .. who.creature)
   if h.loaded == want and hasModel(h.model) then
     Head.setShown(h, true)
     onShown(true)
@@ -104,19 +142,32 @@ function Head.load(h, item, wanted, onShown)
   h.loaded = want
   Head.setShown(h, true)
   onShown(true)
+  local w = { key = want, onShown = onShown }
+  h.waiting = w
   if unit then
+    h.fromUnit = who
     h.model:SetUnit(unit)
   else
     h.model:ClearModel()
-    h.model:SetCreature(who.creature)
+    if display then h.model:SetDisplayInfo(display) else h.model:SetCreature(who.creature) end
   end
   local timer = Compat.resolve("C_Timer")
   if type(timer) == "table" and type(timer.NewTimer) == "function" then
     h.settleTimer = timer.NewTimer(MODEL_SETTLE, function()
       h.settleTimer = nil
-      local shown = hasModel(h.model)
-      Head.setShown(h, shown)
-      onShown(shown)
+      local loaded = hasModel(h.model)
+      w.settled = true
+      if not unit then
+        local ok, entry = pcall(WFJ.Diag.log, "voicehead", source .. " " .. who.creature,
+          { display = display, model = loaded })
+        w.entry = ok and entry or nil
+      end
+      if loaded then
+        h.waiting = nil
+        report(h)
+      end
+      Head.setShown(h, loaded)
+      onShown(loaded)
     end)
   end
 end

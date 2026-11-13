@@ -6,7 +6,7 @@ local Stub = require("tests.lua.spec.wow_stub")
 local FILES = { "Core/Const.lua", "Core/Compat.lua", "Core/Data.lua", "Core/State.lua", "Core/Settings.lua",
   "Core/Voice.lua", "Core/Modifier.lua", "Core/Translator.lua", "Core/SurfaceState.lua", "Core/Normalize.lua",
   "Core/Hash.lua", "Core/Collector.lua", "Core/UIStringKeys.lua", "Core/UIStrings.lua", "Core/Readings.lua",
-  "Core/VoiceQueue.lua", "UI/Font.lua", "UI/Frames.lua",
+  "Core/VoiceQueue.lua", "Core/Diag.lua", "UI/Font.lua", "UI/Frames.lua",
   "UI/Render.lua", "UI/VoicePlayer.lua", "UI/VoicePanelLooks.lua",
   "UI/VoicePanelHead.lua", "UI/VoicePanelText.lua", "UI/VoicePanel.lua", "UI/VoiceQuestLog.lua", "UI/ButtonText.lua",
   "UI/Labels.lua", "UI/QuestFrame.lua" }
@@ -41,10 +41,12 @@ local function extendFrames()
     function f.GetPoint() return "BOTTOM", nil, "BOTTOM", 10, 20 end
     function f:SetMouseClickEnabled(v) self.clicks = v end
     if kind == "PlayerModel" then
-      function f:SetUnit(u) self.unit, self.creature = u, nil end
-      function f:SetCreature(id) self.creature, self.unit = id, nil end
-      function f:ClearModel() self.unit, self.creature = nil, nil end
-      function f:GetModelFileID() return (self.unit or self.creature) and Stub.modelFile or 0 end
+      function f:SetUnit(u) self.unit, self.creature, self.display = u, nil, nil end
+      function f:SetCreature(id) self.creature, self.unit, self.display = id, nil, nil end
+      function f:SetDisplayInfo(id) self.display, self.unit, self.creature = id, nil, nil end
+      function f:ClearModel() self.unit, self.creature, self.display = nil, nil, nil end
+      function f:GetModelFileID() return (self.unit or self.creature or self.display) and Stub.modelFile or 0 end
+      function f.GetDisplayInfo() return Stub.displayInfo end
     end
     local createTexture = f.CreateTexture
     function f:CreateTexture(...)
@@ -64,7 +66,7 @@ local function extendFrames()
   end
 end
 
-local WFJ, S, db, sounds, stopped, timers, newTimers, cvars, clock
+local WFJ, S, db, diag, sounds, stopped, timers, newTimers, cvars, clock
 
 local function pack(lines)
   WFJ.Voice.register({ format = 1, folder = "WoWForeverJapanese_Voice", lines = lines })
@@ -114,7 +116,7 @@ local function setup(withPack)
   Stub.installQuestAPI(); Stub.installTooltipAPI()
   _G.UIParent = CreateFrame("Frame", "UIParent")
   sounds, stopped, timers, newTimers, cvars, clock = {}, {}, {}, {}, { Sound_EnableDialog = "1" }, 0
-  Stub.mouseOn, Stub.modelFile = nil, 118355
+  Stub.mouseOn, Stub.modelFile, Stub.displayInfo = nil, 118355, 4864
   _G.PlaySoundFile = function(path, channel)
     sounds[#sounds + 1] = { path = path, channel = channel }
     return true, #sounds
@@ -152,6 +154,7 @@ local function setup(withPack)
   S = WFJ.Settings
   WFJ.Compat.init(function(name) return _G[name] end)
   db = S.load(nil, 1, {})
+  diag = WFJ.Diag.load(nil)
   WFJ.VoiceQueue.init(db)
   WFJ.Render.init(WFJ.Translator.new({
     enabled = function() return WFJ.State.enabled end,
@@ -741,5 +744,121 @@ describe("UI/VoicePanelText: pages and their words", function()
       assert.are.equal(sp.word, pages[1]:sub(sp.first, sp.last)) -- each word where the page has it
     end
     assert.are.same({ "来た", "今日", "天気" }, words)
+  end)
+end)
+
+describe("the head of a speaker who is not on screen", function()
+  local Head, h, shown
+  before_each(function()
+    setup(true)
+    Head = WFJ.VoicePanelHead
+    h = Head.build(CreateFrame("Frame"))
+    shown = nil
+  end)
+  after_each(function()
+    WFJ.Data.displays = nil
+    teardown()
+  end)
+  local function load(speaker, wanted)
+    Head.load(h, { speaker = speaker }, wanted ~= false, function(s) shown = s end)
+  end
+  local function headEntries()
+    local out = {}
+    for _, e in ipairs(diag.entries) do if e.kind == "voicehead" then out[#out + 1] = e end end
+    return out
+  end
+
+  it("the NPC on screen: once its model loads, its display id is remembered for that creature", function()
+    Stub.units.questnpc = { name = "Senani Thunderheart", guid = "Creature-0-1-0-1-1992-0000ABCD" }
+    Stub.showDetail()
+    settle()
+    assert.are.equal("questnpc", panel().head.model.unit)
+    assert.are.same({ [1992] = 4864 }, db.voiceDisplays)
+  end)
+
+  it("a secret, missing or zero display id is never remembered", function()
+    Stub.units.questnpc = { name = "Senani Thunderheart", guid = "Creature-0-1-0-1-1992-0000ABCD" }
+    local secret = 4864
+    _G.issecretvalue = function(v) return v == secret end
+    Stub.showDetail()
+    settle()
+    assert.is_nil(db.voiceDisplays)
+    _G.issecretvalue = nil
+    for _, d in ipairs({ 0, false }) do
+      Stub.displayInfo = d or nil
+      local fresh = Head.build(CreateFrame("Frame"))
+      Head.load(fresh, { speaker = { creature = 1992, unit = "questnpc", guid = "Creature-0-1-0-1-1992-0000ABCD" } },
+        true, function() end)
+      settle()
+      assert.are.equal("questnpc", fresh.model.unit)
+      assert.is_nil(db.voiceDisplays)
+    end
+  end)
+
+  it("draws the remembered display, else the shipped one, else asks by creature id", function()
+    WFJ.Data.displays = { [6119] = 4864 }
+    load({ creature = 1992, display = 555 })
+    assert.are.equal(555, h.model.display)
+    load({ creature = 6119 })
+    assert.are.equal(4864, h.model.display)
+    load({ creature = 7 })
+    assert.are.equal(7, h.model.creature)
+    assert.is_nil(h.model.display)
+    assert.is_true(shown)
+  end)
+
+  it("the quest log's replay carries the display remembered for the NPC who offered the quest", function()
+    local fs = Stub.fontString(EN)
+    WFJ.Render.show("questmap.info", "description", fs, EN, "quests", "quest.description", 2, { live = EN })
+    db.voiceSpeakers = { ["2-description"] = { c = 1992, s = 2, n = "Senani Thunderheart", t = "Trainer" } }
+    db.voiceDisplays = { [1992] = 555 }
+    _G.QuestMapFrame_ShowQuestDetails(2)
+    local b = WFJ.VoiceQuestLog.button()
+    b.scripts.OnClick(b)
+    assert.are.equal(555, panel().head.model.display)
+  end)
+
+  it("a model that loads after the settle is shown when it loads", function()
+    Stub.modelFile = 0
+    load({ creature = 7 })
+    settle()
+    assert.is_false(shown)
+    assert.are.equal(0, h.model.alpha)
+    Stub.modelFile = 118355
+    h.model.scripts.OnModelLoaded(h.model)
+    assert.is_true(shown)
+    assert.are.equal(1, h.model.alpha)
+  end)
+
+  it("a late model shows nothing once the head is turned off", function()
+    Stub.modelFile = 0
+    load({ creature = 7 })
+    settle()
+    load({ creature = 7 }, false)
+    shown = nil
+    Stub.modelFile = 118355
+    h.model.scripts.OnModelLoaded(h.model)
+    assert.is_nil(shown)
+    assert.are.equal(0, h.model.alpha)
+  end)
+
+  it("each head drawn without the NPC on screen leaves one log entry naming its source", function()
+    WFJ.Data.displays = { [6119] = 4864 }
+    load({ creature = 1992, display = 555, displaySource = "saved" })
+    settle()
+    load({ creature = 6119 })
+    settle()
+    Stub.modelFile = 0
+    load({ creature = 7 })
+    settle()
+    Stub.modelFile = 118355
+    h.model.scripts.OnModelLoaded(h.model)
+    local got = {}
+    for _, e in ipairs(headEntries()) do got[#got + 1] = { e.msg, e.display, e.model, e.late } end
+    assert.are.same({
+      { "saved 1992", 555, true, nil },
+      { "shipped 6119", 4864, true, nil },
+      { "creature 7", nil, false, true },
+    }, got)
   end)
 end)

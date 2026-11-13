@@ -12,6 +12,10 @@
 --     by the game's quests. The quest log's replays take their head (by creature id), name, title and voice variant
 --     from it. A quest taken before this existed, or from a player, an item or an object, has none: the quest's title
 --     stands in, with no head.
+--   * The display id of every NPC whose head the panel drew from the unit on screen (State "speakerDisplay", from
+--     UI/VoicePanelHead), while a voice pack is installed: WFJ_DB.voiceDisplays[creature id] = display id, refreshed
+--     every time. A replay draws the head from it, so it needs no creature cache, which every client build empties
+--     (ADR-088). Bounded by the NPCs the player has met.
 -- The button follows forever-vo's ForeverVO/UI/QuestLog.lua (MIT License; see ATTRIBUTION.md).
 local _, WFJ = ...
 local QuestLog = {}
@@ -43,6 +47,14 @@ local function rememberSpeaker(questID, panelName)
     n = type(unitName) == "function" and unitName("questnpc") or nil, t = P.titleOf("questnpc") }
 end
 
+local function rememberDisplay(creature, display)
+  if type(creature) ~= "number" or type(display) ~= "number" or type(db) ~= "table" or not WFJ.Voice.hasPack() then
+    return
+  end
+  if type(db.voiceDisplays) ~= "table" then db.voiceDisplays = {} end
+  db.voiceDisplays[creature] = display
+end
+
 -- → the remembered speaker of a quest line, or nil
 function QuestLog.rememberedSpeaker(questID, field)
   local all = type(db) == "table" and db.voiceSpeakers
@@ -59,7 +71,8 @@ local function logLine()
   local qid = type(frame) == "table" and frame.DetailsFrame and frame.DetailsFrame.questID
   if type(qid) ~= "number" then qid = type(m.id) == "number" and m.id or nil end
   local saw = QuestLog.rememberedSpeaker(qid, "description")
-  local who = saw and { creature = saw.c, sex = saw.s } or nil
+  local displays = type(db) == "table" and type(db.voiceDisplays) == "table" and db.voiceDisplays or {}
+  local who = saw and { creature = saw.c, sex = saw.s, display = displays[saw.c] } or nil
   local path, detail = WFJ.Voice.decide("questframe.detail", "description", m.kind, m.id, who, true)
   if not path then return nil end
   local questTitle = WFJ.SurfaceState.get(LOG_SURFACE, "title")
@@ -132,5 +145,6 @@ function QuestLog.init(savedDb)
     WFJ.State.on(event, function() pcall(QuestLog.refresh) end)
   end
   WFJ.State.on("questShown", function(questID, panelName) pcall(rememberSpeaker, questID, panelName) end)
+  WFJ.State.on("speakerDisplay", function(creature, display) pcall(rememberDisplay, creature, display) end)
   return true
 end
