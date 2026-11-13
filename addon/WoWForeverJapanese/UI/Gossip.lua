@@ -15,7 +15,8 @@
 --     layout pass [verified: Blizzard_SharedXML/Shared/Scroll/ScrollBoxLinearView.lua:12–33, 93–96;
 --     ScrollBoxViewUtil.lua:33–49; ScrollBoxListView.lua:360–397]. So every row's height must equal its extent: the
 --     measure widgets are post-hooked once they are first seen (from the data provider after Update) to measure the
---     text the policy will show (Render.preview), and the session's first window is laid out again once.
+--     text the policy will show (Render.preview). The session's first window was measured before the hooks existed
+--     and keeps the row places the client gave it.
 --   * [unverified; in-game check in docs/testing/strategy.md] both row initializers call
 --     self:RegisterFontString(<row text>) before Setup and Update ends with self:UpdateTheme()
 --     (GossipFrameShared.lua:143, 148, 294) on a UIThemeContainerFrame, a native type with no FrameXML source: if the
@@ -101,15 +102,13 @@ local function readFont(fs)
   return { path = path, size = size, flags = flags }
 end
 
--- Calls fn with `flag` set, resetting it even when fn raises.
-local function flagged(set, fn, ...)
-  set(true)
+-- Calls fn with `measuring` set, resetting it even when fn raises.
+local function whileMeasuring(fn, ...)
+  measuring = true
   local ok, err = pcall(fn, ...)
-  set(false)
+  measuring = false
   if not ok then error(err, 0) end
 end
-
-local function setMeasuring(v) measuring = v end
 
 -- The row's height follows its text, the way the client's own Setup does it.
 local function resize(row)
@@ -234,7 +233,7 @@ end
 local function measureGreeting(fs, text)
   if measuring then return end
   syncBanner()
-  flagged(setMeasuring, measureGreetingBody, fs, text)
+  whileMeasuring(measureGreetingBody, fs, text)
 end
 
 -- button:Setup(optionInfo) on the option measure widget, inside the client's extent calculator.
@@ -265,12 +264,12 @@ end
 local function measureOption(button, opt)
   if measuring then return end
   syncBanner()
-  flagged(setMeasuring, measureOptionBody, button, opt)
+  whileMeasuring(measureOptionBody, button, opt)
 end
 
--- Hooks the measure widgets the data provider names, each once per session. → whether a hook was installed now
+-- Hooks the measure widgets the data provider names, each once per session.
 local function hookMeasureWidgets(sb)
-  if type(sb.ForEachElementData) ~= "function" then return false end
+  if type(sb.ForEachElementData) ~= "function" then return end
   local greeting, option
   sb:ForEachElementData(function(elementData)
     if type(elementData) ~= "table" then return end
@@ -278,19 +277,15 @@ local function hookMeasureWidgets(sb)
     if type(g) == "table" and g.GreetingText then greeting = g.GreetingText end
     if type(elementData.titleOptionButton) == "table" then option = elementData.titleOptionButton end
   end)
-  local installed = false
   if greeting and not measure.greeting then
     measure.greeting, measure.greetingFont = greeting, readFont(greeting)
     hooksecurefunc(greeting, "SetText", measureGreeting)
-    installed = true
   end
   if option and not measure.option and type(option.Setup) == "function" and type(option.GetFontString) == "function"
     and option:GetFontString() then
     measure.option, measure.optionFont = option, readFont(option:GetFontString())
     hooksecurefunc(option, "Setup", measureOption)
-    installed = true
   end
-  return installed
 end
 
 -- Post-hook on GossipFrame:Update, the client has built and initialized the list. → greeting + options recorded
