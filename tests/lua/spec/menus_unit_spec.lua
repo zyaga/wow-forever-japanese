@@ -31,7 +31,7 @@ describe("UI/MenusUnit: the unit right-click menus", function()
   end)
 
   after_each(function()
-    H.uiTeardown(); _G.EventRegistry = nil; _G.UnitName = nil; _G.issecretvalue = nil
+    H.uiTeardown(); _G.EventRegistry = nil; _G.issecretvalue = nil
   end)
 
   local function text(frames, e) return frames[e].fontString:GetText() end
@@ -49,10 +49,8 @@ describe("UI/MenusUnit: the unit right-click menus", function()
 
   it("a target menu: entries and a submenu in Japanese; the unit's name stays even when it is a dictionary word",
     function()
-      _G.UnitName = function(unit) return unit == "target" and "Trade" or nil end -- a player named "Trade"
-      WFJ.Compat.init(function(name) return _G[name] end)
       local root = M.element(nil)
-      root:CreateButton("Trade") -- the title: the unit's name
+      root:CreateButton("Trade") -- the title: the unit's name, a player named "Trade"
       local marker = root:CreateButton(UI.RAID_TARGET_ICON[1])
       marker:CreateButton(UI.RAID_TARGET_1[1])
       root:CreateButton(UI.SET_FOCUS[1])
@@ -75,7 +73,6 @@ describe("UI/MenusUnit: the unit right-click menus", function()
 
   it("a unit whose name the client keeps secret: the title is still never written, nothing raises", function()
     local SECRET = "Jaina" -- stands for a secret string value
-    _G.UnitName = function() return SECRET end
     _G.issecretvalue = function(v) return v == SECRET end
     WFJ.Compat.init(function(name) return _G[name] end)
     WFJ.initErrors = nil

@@ -23,14 +23,11 @@
 -- - Settings menu: the "show all spell ranks" checkbox and its siblings are a Menu element under the tag
 --   "MENU_SPELL_BOOK_SETTINGS" (spellbook/blizzard_spellbookframe.lua:191, 205–226; camelot/spellbook/
 --   blizzard_spellbookframe.lua:79–113; not for Rogue / Warrior). UI/Menus writes it once the client has shown it, like
---   every menu (ADR-088), with CAMELOT_KEYS.menu and CAMELOT_KEYS.menuTooltip (UI/MenusTags reads them).
+--   every menu (ADR-088); its keys are in UI/MenusTags.
 -- - The search box's placeholder, SearchBox.Instructions, is written once by SearchBoxTemplate_OnLoad from the
 --   KeyValue instructionText = COOLDOWN_VIEWER_SETTINGS_SEARCH_INSTRUCTIONS ("Enter search text", the cooldown
 --   settings' own placeholder; spellbookframe.xml:103–107; blizzard_sharedxml/shared/inputbox/inputboxtemplates.lua:
 --   175–178) and only shown / hidden after that (:131–133): a static label (never the EditBox's own text).
--- - The "Hide Passives" entry's tooltip while searching (SPELLBOOK_SEARCH_HIDE_PASSIVES_DISABLED,
---   spellbookframe.lua:192–197) is built by MenuUtil.ShowTooltipEx on GameTooltip with the menu button as owner, then
---   Show() (blizzard_menu/menuutil.lua:98–106, 293–298): the menu's tooltip key.
 local _, WFJ = ...
 local SpellBook = {}
 WFJ.SpellBook = SpellBook
@@ -50,11 +47,7 @@ local PLAYER_SPELLS = "Blizzard_PlayerSpells"
 local HOST_TITLE_KEYS = { SPELLBOOK = true, TALENTS = true, SPECIALIZATION = true, TALENTS_INSPECT_FORMAT = true,
   TALENTS_LINK_FORMAT = true }
 local SEARCH_KEYS = { COOLDOWN_VIEWER_SETTINGS_SEARCH_INSTRUCTIONS = true }
-local MENU_TOOLTIP_KEYS = { SPELLBOOK_SEARCH_HIDE_PASSIVES_DISABLED = true }
-local MENU_KEYS = { SHOW_ALL_SPELL_RANKS = true, SPELLBOOK_FILTER_PASSIVES = true, SPELLBOOK_USE_FLYOUTS = true,
-  SPELLBOOK_COMPACT_VIEW = true }
-SpellBook.CAMELOT_KEYS = { title = HOST_TITLE_KEYS, menu = MENU_KEYS, search = SEARCH_KEYS,
-  menuTooltip = MENU_TOOLTIP_KEYS }
+SpellBook.CAMELOT_KEYS = { title = HOST_TITLE_KEYS, search = SEARCH_KEYS }
 
 -- Widgets this module must never record: none by name (no spell item is read or written).
 SpellBook.NEVER_TOUCH = {}

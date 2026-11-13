@@ -195,13 +195,20 @@ describe("UI/MenusTags: every other Forever window's menus", function()
   end)
 
   it("a tracker block menu keeps its title (the achievement's name) even when it is a dictionary word", function()
-    -- its tag carries the block, not a name (blizzard_achievementobjectivetracker.lua:75): the title is the top entry
+    -- its tag carries the block, not a name (blizzard_achievementobjectivetracker.lua:75): the title is the top entry,
+    -- and an entry with the title's English is a name too (names stay English)
     local root, frames = generate("MENU_ACHIEVEMENT_TRACKER", function(r)
       r:CreateButton(UI.OBJECTIVES_VIEW_ACHIEVEMENT[1]) -- an achievement named like the entry
       r:CreateButton(UI.OBJECTIVES_VIEW_ACHIEVEMENT[1])
     end)
     assert.are.equal("Open Achievement", frames[root.children[1]].fontString:GetText())
-    assert.are.equal("アチーブメントを開く", frames[root.children[2]].fontString:GetText())
+    assert.are.equal("Open Achievement", frames[root.children[2]].fontString:GetText())
+    local other, otherFrames = generate("MENU_ACHIEVEMENT_TRACKER", function(r)
+      r:CreateButton("Leeroy!")
+      r:CreateButton(UI.OBJECTIVES_VIEW_ACHIEVEMENT[1])
+    end)
+    assert.are.equal("Leeroy!", otherFrames[other.children[1]].fontString:GetText())
+    assert.are.equal("アチーブメントを開く", otherFrames[other.children[2]].fontString:GetText())
   end)
 
   it("element tooltips: the achievement filter's hover and a disabled crafting-order entry's reason", function()

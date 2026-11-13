@@ -200,11 +200,10 @@ end
 -- The filter dropdown, through the untagged-menu mechanism (UI/MenusUntagged). → true when recorded now
 local function hookWhoFilter()
   local menus, untagged = WFJ.Menus, WFJ.MenusUntagged
-  if type(menus) ~= "table" or type(menus.UNTAGGED) ~= "table" or type(untagged) ~= "table"
-      or type(untagged.hookDropdown) ~= "function" then
+  if type(menus) ~= "table" or type(untagged) ~= "table" or type(untagged.hookDropdown) ~= "function" then
     return false
   end
-  menus.UNTAGGED[WHO_FILTER_TAG] = menus.UNTAGGED[WHO_FILTER_TAG] or WHO_FILTER
+  menus.TAGS[WHO_FILTER_TAG] = menus.TAGS[WHO_FILTER_TAG] or WHO_FILTER
   return untagged.hookDropdown(get("whoFilter"), WHO_FILTER_TAG)
 end
 

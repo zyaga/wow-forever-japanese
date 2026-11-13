@@ -65,6 +65,8 @@ local UI = {
   TRACK_QUEST = { "Track Quest", "追跡" }, UNTRACK_QUEST = { "Untrack Quest", "クエストの追跡を解除" },
   SUPER_TRACK_QUEST = { "Focus", "フォーカス" }, SHARE_QUEST = { "Share Quest", "クエスト共有" },
   ABANDON_QUEST = { "Abandon Quest", "クエスト放棄" }, SHOW_MAP = { "Show Map", "マップを表示" },
+  -- a label whose Japanese is wider than its English (the fit)
+  FIT_LONG = { "Ok", "とても長い日本語の項目です" },
 }
 
 local element = M.element
@@ -81,7 +83,7 @@ describe("UI/Menus: menu entries", function()
   end)
 
   after_each(function()
-    H.uiTeardown(); _G.Menu = nil; _G.EventRegistry = nil; _G.issecretvalue = nil; _G.UnitName = nil
+    H.uiTeardown(); _G.Menu = nil; _G.EventRegistry = nil; _G.issecretvalue = nil
   end)
 
   -- A menu the client has built and shown with `tag`. → root, { [element] = frame }, menu frames
@@ -115,8 +117,7 @@ describe("UI/Menus: menu entries", function()
     Stub.keys.alt = false; WFJ.Modifier.refresh()
     M.close(registry, menus)
     assert.are.equal(0, WFJ.SurfaceState.count(WFJ.Menus.SURFACE))
-    assert.is_false(WFJ.TextWatch.watching(frames[e[2]].fontString))
-    assert.is_nil(WFJ.Menus.openTag())
+    for _, f in pairs(frames) do assert.is_false(WFJ.TextWatch.watching(f.fontString)) end
   end)
 
   it("no menu description is touched: nothing adds an initializer or a resetter", function()
@@ -254,20 +255,19 @@ describe("UI/Menus: menu entries", function()
     assert.are.equal("新しいウィンドウに移動", text(frames, root.children[2]))
   end)
 
-  it("a menu's name the client keeps secret counts as no name and raises nothing", function()
+  it("a title the client keeps secret is left alone; the other entries are written; nothing raises", function()
     local SECRET = "Trade" -- stands for a secret string value
     _G.issecretvalue = function(v) return v == SECRET end
     WFJ.Compat.init(function(name) return _G[name] end)
     WFJ.Menus.init()
     WFJ.initErrors = nil
     local root, frames = generate("MENU_CHAT_FRAME_CHANNEL", function(r)
-      r:CreateButton("General") -- the title
+      r:CreateButton(SECRET) -- the title
       r:CreateButton(UI.MOVE_TO_NEW_WINDOW[1])
-    end, { name = SECRET })
+    end)
+    assert.are.equal(SECRET, text(frames, root.children[1]))
     assert.are.equal("新しいウィンドウに移動", text(frames, root.children[2]))
     assert.is_nil(WFJ.initErrors)
-    assert.is_nil(WFJ.Menus.nameOf(WFJ.Menus.TAGS.MENU_CHAT_FRAME_CHANNEL, { name = SECRET }))
-    assert.are.equal("General", WFJ.Menus.nameOf(WFJ.Menus.TAGS.MENU_CHAT_FRAME_CHANNEL, { name = "General" }))
   end)
 
   it("the minimap tracking menu: townsfolk entries in Japanese, a tracking spell stays its name", function()
@@ -408,43 +408,43 @@ describe("UI/Menus: menu entries", function()
     assert.are.equal(1, #registry.calls["MenuProxy.OnHide"])
   end)
 
+  it("a menu whose Japanese labels all fit keeps the client's widths", function()
+    WFJ.Menus.init()
+    local root, frames, menus = generate("MENU_LFG_LISTING_ROLE", function(r) r:CreateButton(UI.TANK[1]) end)
+    local entryWidth = M.INSET + M.width(UI.TANK[1]) + M.MARGIN
+    assert.are.equal(entryWidth, frames[root.children[1]]:GetWidth())
+    assert.are.equal(entryWidth + 2 * M.PAD, menus[1]:GetWidth())
+  end)
+
   it("a Japanese label wider than the English widens its widget, the entries and the menu frame", function()
     WFJ.Menus.init()
-    -- "Ignore Suggested Level" is 22 characters, 推奨レベルを無視 8; "Tank" 4 → タンク 3: none wider
-    local root, frames, menus = generate("MENU_LFG_LISTING_ROLE", function(r) r:CreateButton(UI.TANK[1]) end)
-    assert.are.equal(M.INSET + M.width("Tank") + M.MARGIN, frames[root.children[1]]:GetWidth())
-    M.close(registry, menus)
-    -- 割り当て先: (6) against "Assign To:" (10): narrower; 装備品 (3) against "Equipment" (9): narrower. A label
-    -- whose Japanese is longer: SET_ROLE "Set Role" (8) → 役割を設定 (5) is narrower too, so use a long one
-    local LONG = { "Ok", "とても長い日本語の項目です" }
-    UI.FX_LONG = LONG
-    H.uiSetup(WFJ, UI)
-    WFJ.Menus.TAGS.MENU_TEST_FIT = { keys = { "FX_LONG", "TANK" } }
-    local root2, frames2, menus2 = generate("MENU_TEST_FIT", function(r)
-      r:CreateButton(LONG[1])
+    WFJ.Menus.TAGS.MENU_TEST_FIT = { source = "test.lua:1", keys = { "FIT_LONG", "TANK" } }
+    local root, frames, menus = generate("MENU_TEST_FIT", function(r)
+      r:CreateButton(UI.FIT_LONG[1])
       r:CreateButton(UI.TANK[1])
     end)
-    local entryBefore = M.INSET + M.width("Tank") + M.MARGIN -- the widest English
-    local over = M.INSET + M.width(LONG[2]) + M.MARGIN - entryBefore
-    local fs = frames2[root2.children[1]].fontString
-    assert.are.equal(LONG[2], fs:GetText())
-    assert.are.equal(M.width(LONG[2]), fs:GetWidth())
-    assert.are.equal(entryBefore + over, frames2[root2.children[1]]:GetWidth())
-    assert.are.equal(entryBefore + over, frames2[root2.children[2]]:GetWidth())
-    assert.are.equal(entryBefore + 2 * M.PAD + over, menus2[1]:GetWidth())
-    -- a scrolling menu keeps its fixed size
-    M.close(registry, menus2)
-    local root3 = element(nil)
-    root3:CreateButton(LONG[1])
-    local frames3 = {}
-    local scrolling = M.menuFrame(root3, frames3)
-    scrolling.ScrollBox = { IsShown = function() return true end }
+    local entryBefore = M.INSET + M.width(UI.TANK[1]) + M.MARGIN -- the widest English
+    local over = M.INSET + M.width(UI.FIT_LONG[2]) + M.MARGIN - entryBefore
+    local fs = frames[root.children[1]].fontString
+    assert.are.equal(UI.FIT_LONG[2], fs:GetText())
+    assert.are.equal(M.width(UI.FIT_LONG[2]), fs:GetWidth())
+    assert.are.equal(entryBefore + over, frames[root.children[1]]:GetWidth())
+    assert.are.equal(entryBefore + over, frames[root.children[2]]:GetWidth())
+    assert.are.equal(entryBefore + 2 * M.PAD + over, menus[1]:GetWidth())
+  end)
+
+  it("a scrolling menu: the entries in the scroll box's rows are written; its fixed size is kept", function()
+    WFJ.Menus.init()
+    WFJ.Menus.TAGS.MENU_TEST_FIT = { source = "test.lua:1", keys = { "FIT_LONG" } }
+    local root = element(nil)
+    root:CreateButton(UI.FIT_LONG[1])
+    local frames = {}
+    local scrolling = M.scrollingMenuFrame(root, frames)
     local width = scrolling:GetWidth()
     registry:TriggerEvent("MenuProxy.OnShow", scrolling)
     registry:TriggerEvent("Menu.OpenMenuTag", "MENU_TEST_FIT")
-    assert.are.equal(LONG[2], text(frames3, root3.children[1]))
+    assert.are.equal(UI.FIT_LONG[2], text(frames, root.children[1]))
     assert.are.equal(width, scrolling:GetWidth())
-    WFJ.Menus.TAGS.MENU_TEST_FIT, UI.FX_LONG = nil, nil
   end)
 
   it("the world map filter: title and entries in Japanese; each entry owns its description tooltip", function()

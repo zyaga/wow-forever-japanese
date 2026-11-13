@@ -86,11 +86,7 @@ end
 -- The menu hides (MenuProxy.OnHide), then the compositor resets each fontString with SetFontObject as the frames
 -- return to the pool (compositor.lua:66–74, 388), modelled here as the menu font written straight into the widget.
 function PS.closeMenu()
-  local registry = _G.EventRegistry
-  for i = #(PS.openMenus or {}), 1, -1 do
-    PS.openMenus[i].shown = false
-    registry:TriggerEvent("MenuProxy.OnHide", PS.openMenus[i])
-  end
+  MenuStub.close(_G.EventRegistry, PS.openMenus or {})
   for _, button in ipairs(PS.openButtons or {}) do
     if button.fontString then button.fontString.font = { path = "Fonts\\FRIZQT__.TTF", size = 12, flags = "" } end
   end

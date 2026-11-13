@@ -236,16 +236,12 @@ for _, key in ipairs(WFJ.Gamepad and WFJ.Gamepad.MENU_KEYS or {}) do
   table.insert(TAGS.MORE_CONTEXT_ACTIONS.keys, key)
 end
 
--- the spellbook's settings menu: UI/SpellBook's key sets (spellbook/blizzard_spellbookframe.lua:191, 205–226)
-local function sorted(set)
-  local out = {}
-  for key in pairs(set or {}) do out[#out + 1] = key end
-  table.sort(out)
-  return out
-end
-local spellBookKeys = WFJ.SpellBook and WFJ.SpellBook.CAMELOT_KEYS or {}
-TAGS.MENU_SPELL_BOOK_SETTINGS = { source = "blizzard_spellbookframe.lua:205", keys = sorted(spellBookKeys.menu),
-  tooltips = sorted(spellBookKeys.menuTooltip) }
+-- the spellbook's settings menu (spellbook/blizzard_spellbookframe.lua:191, 205–226; camelot/spellbook/
+-- blizzard_spellbookframe.lua:79–113); the Hide Passives entry's tooltip while searching is built on GameTooltip with
+-- the menu button as owner (spellbookframe.lua:192–197; blizzard_menu/menuutil.lua:98–106, 293–298)
+TAGS.MENU_SPELL_BOOK_SETTINGS = { source = "blizzard_spellbookframe.lua:205", keys = { "SHOW_ALL_SPELL_RANKS",
+  "SPELLBOOK_FILTER_PASSIVES", "SPELLBOOK_USE_FLYOUTS", "SPELLBOOK_COMPACT_VIEW" },
+  tooltips = { "SPELLBOOK_SEARCH_HIDE_PASSIVES_DISABLED" } }
 
 -- Keys added to tags UI/Menus already declares (appended below)
 local EXTRA = {

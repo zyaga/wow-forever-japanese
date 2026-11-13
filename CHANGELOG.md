@@ -9,7 +9,11 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Changed
+- The right-click menus on the target, party and raid frames, and on a player's name or a friend, are in Japanese. Names stay in English.
+
 ### Fixed
+- Picking from a menu the addon translates, such as Share Quest in the quest tracker's menu or an entry in an Options dropdown, no longer risks the game refusing the action with the addon named. The menus look the same as before.
 - Opening some quest windows no longer throws a Lua error (BugSack showed it as `Collector.lua:220 ... a secret string value`). When the game keeps a quest giver's identity hidden from addons, the addon now skips it quietly; the quest text, its Japanese and its voice work as before.
 - A Lua error ("Invalid font height") that could repeat each time a window such as the mailbox refreshed, when the game gave a line of text a size of 0 or below. That text now shows its Japanese at the standard size.
 - Chat messages are no longer refused ("interface action failed", with the addon named) after you change your chat language from the chat bubble menu. The menu looks the same as before.

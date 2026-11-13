@@ -97,6 +97,23 @@ function M.menuFrame(desc, frames, owner)
   return menu
 end
 
+-- A scrolling menu frame: its scroll box shown, each entry moved into one of the box's rows (menu.lua:1813–1818).
+-- → menu frame
+function M.scrollingMenuFrame(desc, frames)
+  local menu = M.menuFrame(desc, frames)
+  local rows = {}
+  for _, e in desc:EnumerateElementDescriptions() do
+    local entry = frames[e]
+    rows[#rows + 1] = { GetNumChildren = function() return 1 end, GetChildren = function() return entry end }
+  end
+  local target = { GetNumChildren = function() return #rows end, GetChildren = function() return unpack(rows) end }
+  menu.ScrollBox = { IsShown = function() return true end, ScrollTarget = target,
+    GetNumChildren = function() return 1 end, GetChildren = function() return target end }
+  menu.GetNumChildren = function() return 1 end
+  menu.GetChildren = function() return menu.ScrollBox end
+  return menu
+end
+
 -- Opens `root` as the client does: its menu frame shown, then "Menu.OpenMenuTag" when `tag` is given, then each
 -- submenu's frame shown (its entry hovered). → { [element] = frame }, { menu frames, root first }
 function M.open(registry, tag, root, contextData, owner)

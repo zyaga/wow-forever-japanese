@@ -91,3 +91,7 @@ Two more level-1 gaps are decided in [ADR-033](033-level-1-gaps-name-list-tails-
 - [ADR-031: objective lines, menus and HelpTips](031-objective-lines-menus-and-helptips.md): `Menus.TAGS`
 - [Data model](../architecture/data-model.md) ·
   [Addon modules](../architecture/addon-modules.md) · [Pipeline](../systems/pipeline.md)
+
+## Update (2026-11-13): the title is found on screen
+
+Menus are now written once the client has shown them, with no initializer ([ADR-088](088-every-menu-is-written-after-it-opens.md)). For a `titleIsName` tag the title is the root menu's top entry on screen (the generator still creates it first, so it is laid out at the top). It is never written, its text is the menu's name, and no other entry with that same English is written. `contextData.name` is no longer read. The eight level-1 unit tags set `titleIsName` again, through `UI/MenusUnit`.

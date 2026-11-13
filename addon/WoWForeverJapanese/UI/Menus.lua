@@ -11,8 +11,8 @@
 --   submenu) is written with its keys. An untagged menu (UI/MenusUntagged) is recognised on "MenuProxy.OnShow" by
 --   the owner region its opener recorded.
 -- - A pick that keeps the menu open (a checkbox) has the client run its own initializers again, which write the
---   English back (menu.lua:2353-2367, 1682-1700). Each written text widget is followed by UI/TextWatch, which reads it
---   from this addon's own frame once a frame and writes the Japanese again after the client's pass has ended.
+--   English back (menu.lua:2353-2367, 1682-1700). One written text widget per menu frame is followed by UI/TextWatch,
+--   which reads it from this addon's own frame once a frame and writes the menu again after the client's pass.
 -- - The client laid the menu out for the English. A label whose Japanese is wider is widened, and the entries and the
 --   menu frame with it (Menus.fit), with SetWidth alone: running the client's layout here would run it tainted.
 -- - On "MenuProxy.OnHide", before the client hands the text widgets back to the pool every menu shares
@@ -21,8 +21,9 @@
 -- the player named or a quest title in a menu is never read as a dictionary word (names stay in English). Tooltip
 -- keys are shown through UI/HelpTooltip on the element's own owner (a disabled radio's reason, GUILD_RANK_UNAVAILABLE).
 -- A tag whose menu title is a name (a channel's, a unit's, a tracked block's) sets `titleIsName`: the root menu's
--- title (its top entry) is never written, nor any entry whose text is the menu's name (contextData.name, or the unit's
--- name), so a channel named "Trade" stays "Trade". Edit Mode stays as the client writes it (ADR-069).
+-- title (its top entry) is never written, nor any entry whose text is that title's, so a channel named "Trade" stays
+-- "Trade". UI/MenusUntagged adds the untagged menus to Menus.TAGS under tags of its own, which the client never
+-- fires. Edit Mode stays as the client writes it (ADR-069).
 local _, WFJ = ...
 local Menus = {}
 WFJ.Menus = Menus
@@ -41,7 +42,8 @@ local WORLD_MAP_FILTERS = { "SHOW_QUEST_OBJECTIVES_ON_MAP_TEXT", "SHOW_QUEST_LEV
   "SHOW_INSTANCE_ENTRANCES_ON_MAP_TEXT", "CONTENT_TRACKING_MAP_TOGGLE", "MINIMAP_TRACKING_TRIVIAL_QUESTS" }
 
 -- tag → { keys = entries it may show, tooltips = tooltip keys (optional), source = where the generator is,
---         titleIsName = the menu's title is a name (optional) }. UI/MenusTags, UI/MenusUnit and UI/Gamepad add to it.
+--         titleIsName = the menu's title is a name (optional) }. UI/MenusTags, UI/MenusUnit, UI/MenusUntagged and
+--         UI/Friends add to it.
 Menus.TAGS = {
   -- the bag portrait menus (blizzard_uipanels_game/mainline/containerframe.lua:643–730, 766–775, 2830–2850): the
   -- bag submenus, filters and cleanup; BAG_NAME_BACKPACK shares its English with BACKPACK_TOOLTIP (excluded). In
@@ -208,10 +210,6 @@ Menus.TAGS = {
   MENU_CHAT_SHORTCUTS = { source = "mainline/chatframemenubutton.lua:56", keys = CHAT_SHORTCUT_KEYS },
 }
 
--- The untagged menus are UI/MenusUntagged's: Menus.UNTAGGED is set there (loaded next).
-Menus.UNTAGGED = {}
-local function specOf(tag) return Menus.TAGS[tag] or Menus.UNTAGGED[tag] end
-
 local function secret(value) return WFJ.SurfaceState.secret(value) end
 
 -- The element frame's text widget: frame.fontString for a button, checkbox, radio or title.
@@ -226,7 +224,7 @@ local menuKey = WFJ.Labels.keyer("menu.") -- a pooled frame's text widget, never
 
 -- One element, the client's English in it. `name` (optional): the menu's name (a unit's), never matched. → 1 | 0
 function Menus.showElement(tag, frame, name)
-  local spec = specOf(tag)
+  local spec = Menus.TAGS[tag]
   if not spec then return 0 end
   if spec.tooltips and #spec.tooltips > 0 then
     local opts = { only = spec.tooltips }
@@ -245,38 +243,36 @@ function Menus.showElement(tag, frame, name)
   return n
 end
 
--- The menu's name for a tag whose title is a name: contextData.name, or the name of contextData.unit (a target,
--- focus or pet menu carries only the unit, unitpopupshared.lua:110–116). A name the client keeps secret is no name.
--- → string | nil
-function Menus.nameOf(spec, contextData)
-  if not (spec and spec.titleIsName) or type(contextData) ~= "table" then return nil end
-  local name = contextData.name
-  if name == nil and contextData.unit ~= nil and not secret(contextData.unit) then
-    local unitName = Compat.get(SURFACE, "unitName")
-    if type(unitName) == "function" then name = unitName(contextData.unit) end
-  end
-  if secret(name) or type(name) ~= "string" or name == "" then return nil end
-  return name
-end
-
--- The menu being shown: { tag, name, root = its first menu frame }; nil when none of ours is open.
+-- The menu being shown: { tag, name = the title's text for a name-titled menu, root = its first menu frame }; nil
+-- when none of ours is open.
 local open
 local lastShown -- the menu frame "MenuProxy.OnShow" reported last: the root when "Menu.OpenMenuTag" follows
--- menu frame → { widgets = the text widgets written (Labels adapters), raw = their FontStrings, frames = element
--- frames }. A widget belongs to the pool every menu shares; the widgets are kept, not their element frames: a rebuild
--- of the open menu hands the same widgets to other frames.
+-- menu frame → { raw = { FontString → true } written, watched = the one FontString UI/TextWatch follows }. A widget
+-- belongs to the pool every menu shares; the widgets are kept, not their element frames: a rebuild of the open menu
+-- hands the same widgets to other frames.
 local written = setmetatable({}, { __mode = "k" })
 
 local function shownFrame(frame)
   return type(frame) == "table" and type(frame.IsShown) == "function" and frame:IsShown() and true or false
 end
 
--- The element frames directly under a menu frame (each holds a text widget). → list
+-- The element frames under a menu frame (each holds a text widget): its own children, and in a scrolling menu the
+-- ones the scroll box moved into its rows (MenuProxyMixin's element initializer, menu.lua:1813–1818). An element
+-- frame is not searched further: its attached buttons are its own. → list
 local function entriesOf(menuFrame)
   local out = {}
-  for _, child in ipairs(WFJ.Frames.children(menuFrame)) do
-    if type(child) == "table" and type(child.fontString) == "table" then out[#out + 1] = child end
+  local function walk(frame, depth)
+    for _, child in ipairs(WFJ.Frames.children(frame)) do
+      if type(child) == "table" then
+        if type(child.fontString) == "table" then
+          out[#out + 1] = child
+        elseif depth < 4 then
+          walk(child, depth + 1)
+        end
+      end
+    end
   end
+  walk(menuFrame, 1)
   return out
 end
 
@@ -324,8 +320,8 @@ function Menus.fit(menuFrame, frames)
   return over
 end
 
--- The title of a root menu whose title is a name: the generator creates it first, so it is laid out at the top
--- (the entries stack downwards, menu.lua:1500–1540). → element frame | nil
+-- The title of a root menu whose title is a name (a unit's, a channel's, a tracked block's): the generator creates
+-- it first, so it is laid out at the top (the entries stack downwards, menu.lua:1500–1540). → element frame | nil
 local function titleOf(frames)
   local top, best
   for _, frame in ipairs(frames) do
@@ -335,49 +331,53 @@ local function titleOf(frames)
   return best
 end
 
--- Writes every entry of `menuFrame` with the open menu's keys, watches each written widget, fits. → count shown
-local function write(menuFrame)
+local write
+
+-- The client writes the English again on a pick that keeps the menu open (a checkbox's Refresh reruns every entry's
+-- initializers at once, menu.lua:2353–2367, 1682–1700): one watched widget per menu frame is enough to see it.
+local function watch(menuFrame, rec, raw)
+  if rec.watched then return end
+  rec.watched = raw
+  WFJ.TextWatch.add(raw, function()
+    if open and written[menuFrame] == rec then write(menuFrame) end
+  end)
+end
+
+-- Writes every entry of `menuFrame` with the open menu's keys, watches it, fits. The root of a name-titled menu
+-- leaves its title alone and takes its text as the menu's name. → count shown
+function write(menuFrame)
   if not open or type(menuFrame) ~= "table" then return 0 end
-  local rec = written[menuFrame] or { widgets = {}, raw = {}, frames = {} }
+  local rec = written[menuFrame] or { raw = {} }
   written[menuFrame] = rec
-  local tag, name = open.tag, open.name
-  local n = 0
-  local frames = entriesOf(menuFrame)
-  local spec = specOf(tag)
-  local title = spec and spec.titleIsName and menuFrame == open.root and titleOf(frames) or nil
+  local spec = Menus.TAGS[open.tag]
+  local entries = entriesOf(menuFrame)
+  local title = spec and spec.titleIsName and menuFrame == open.root and titleOf(entries) or nil
   if title then
-    local kept = {}
-    for _, frame in ipairs(frames) do if frame ~= title then kept[#kept + 1] = frame end end
-    frames = kept
+    local text = title.fontString:GetText()
+    open.name = not secret(text) and type(text) == "string" and text ~= "" and text or nil
   end
-  for _, frame in ipairs(frames) do
-    local raw = frame.fontString
-    if not rec.raw[raw] then
-      rec.raw[raw] = true
-      rec.widgets[#rec.widgets + 1] = textOf(frame)
-      -- the client writes the English again on a pick that keeps the menu open: shown again once its pass is over
-      WFJ.TextWatch.add(raw, function()
-        if Menus.showElement(tag, frame, name) > 0 then Menus.fit(menuFrame, entriesOf(menuFrame)) end
-      end)
+  local n, frames = 0, {}
+  for _, frame in ipairs(entries) do
+    if frame ~= title then
+      frames[#frames + 1] = frame
+      rec.raw[frame.fontString] = true
+      watch(menuFrame, rec, frame.fontString)
+      n = n + Menus.showElement(open.tag, frame, open.name)
     end
-    n = n + Menus.showElement(tag, frame, name)
   end
-  rec.frames = frames
   Menus.fit(menuFrame, frames)
   return n
 end
 
--- The records and watches on `rec`'s widgets, dropped (the client's text and font go back on a widget still showing
--- ours). → records dropped
+-- The records and the watch on `rec`'s widgets, dropped (the client's text and font go back on a widget still
+-- showing ours). → records dropped
 local function letGo(rec)
-  local mine, gone = {}, {}
-  for _, fs in ipairs(rec.widgets) do mine[fs] = true end
-  for raw in pairs(rec.raw) do WFJ.TextWatch.remove(raw) end
-  for key, r in pairs(WFJ.SurfaceState.records(SURFACE)) do
-    if mine[r.fs] then gone[#gone + 1] = key end
+  if rec.watched then WFJ.TextWatch.remove(rec.watched) end
+  local n = 0
+  for raw in pairs(rec.raw) do
+    if WFJ.SurfaceState.drop(SURFACE, menuKey(WFJ.Labels.menuText(raw))) then n = n + 1 end
   end
-  for _, key in ipairs(gone) do WFJ.SurfaceState.drop(SURFACE, key) end
-  return #gone
+  return n
 end
 
 local reported = {} -- error text → true: each distinct error is recorded once, not on every menu opened
@@ -399,12 +399,11 @@ end
 local function shown(menuFrame)
   lastShown = menuFrame
   if open and open.root ~= menuFrame and shownFrame(open.root) then return write(menuFrame) end -- a submenu
-  local untagged = WFJ.MenusUntagged and WFJ.MenusUntagged.specFor
+  local specFor = WFJ.MenusUntagged and WFJ.MenusUntagged.specFor
   local owner = type(menuFrame.GetOwnerRegion) == "function" and menuFrame:GetOwnerRegion() or nil
-  local tag, name
-  if type(untagged) == "function" and owner ~= nil then tag, name = untagged(owner) end
+  local tag = type(specFor) == "function" and owner ~= nil and specFor(owner) or nil
   if not tag then return 0 end
-  open = { tag = tag, name = name, root = menuFrame }
+  open = { tag = tag, root = menuFrame }
   return write(menuFrame)
 end
 
@@ -415,17 +414,16 @@ function Menus.onMenuShown(_, menuFrame)
   return guarded(shown, menuFrame)
 end
 
-local function opened(tag, contextData)
-  local spec = Menus.TAGS[tag]
-  if not spec or not shownFrame(lastShown) then return 0 end
-  open = { tag = tag, name = Menus.nameOf(spec, contextData), root = lastShown }
+local function opened(tag)
+  if not shownFrame(lastShown) then return 0 end
+  open = { tag = tag, root = lastShown }
   return write(lastShown)
 end
 
 -- "Menu.OpenMenuTag" (owner, tag, contextData): the client has built a tagged menu and shown it. → count shown
-function Menus.onMenuOpened(_, tag, contextData)
+function Menus.onMenuOpened(_, tag)
   if not Menus.TAGS[tag] then return 0 end
-  return guarded(opened, tag, contextData)
+  return guarded(opened, tag)
 end
 
 local function hidden(menuFrame)
@@ -443,15 +441,11 @@ function Menus.onMenuHidden(_, menuFrame)
   return guarded(hidden, menuFrame)
 end
 
--- The open menu's tag, for the specs and /wfj debug. → tag | nil
-function Menus.openTag() return open and open.tag or nil end
-
 local hooked = false
 
 -- Called by Main after Compat.init. Registers the three registry callbacks once. → true when EventRegistry was found
 function Menus.init()
   Compat.declare(SURFACE, "eventRegistry", { "EventRegistry" })
-  Compat.declare(SURFACE, "unitName", { "UnitName" })
   local registry = Compat.get(SURFACE, "eventRegistry")
   if type(registry) ~= "table" or type(registry.RegisterCallback) ~= "function" then return false end
   if not hooked then

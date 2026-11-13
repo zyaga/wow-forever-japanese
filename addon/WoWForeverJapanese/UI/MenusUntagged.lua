@@ -8,7 +8,7 @@
 -- writes to a menu description.
 -- - The Options dropdowns are recorded as the client sets them up: Settings.InitDropdown is called through the
 --   Settings table (blizzard_settingcontrols.lua:903, 1621; blizzard_settingsdefinitions_shared/graphics.lua:315), so
---   a post-hook on it sees every one. Each menu matches only its window's keys (Menus.UNTAGGED): a font or a locale
+--   a post-hook on it sees every one. Each menu matches only its window's keys (its spec below): a font or a locale
 --   name is no key and stays English (names stay in English).
 -- - Untagged *context* menus: MenuUtil.CreateContextMenu builds the root description and calls
 --   Menu.PopulateDescription (the generator, then SecureModifyMenu, which returns at once on no tag) before it opens
@@ -17,7 +17,7 @@
 --     the Group Finder's search-entry menu (LFGBrowseMixin:CreateSearchEntryMenu, blizzard_groupfinder_vanillastyle/
 --     blizzard_lfgvanilla_browse.lua:975–1007): its owner is an unnamed frame and its generator an anonymous closure,
 --     so it is recognised by an entry whose text is LFG_LIST_REPORT_GROUP_FOR or REPORT_GROUP_FINDER_ADVERTISEMENT
---     (both have a space: never a character name); its first element, the leader's name, is the menu's name;
+--     (both have a space: never a character name); its first element, the leader's name, is its title;
 --     the crafting-orders recipe list's (…customerordersrecipelist.lua:96–97, 115–117): the owner is the list element
 --     and the generator its own contextMenuGenerator (…customerordersbrowseorders.lua:139–155).
 local _, WFJ = ...
@@ -29,7 +29,7 @@ local DECLARE = "help.menus.untagged"
 
 -- Menus whose generator sets no tag. Each matches only its window's keys (UI/SettingsKeys); the LFG search entry's
 -- first element is the leader's name (blizzard_lfgvanilla_browse.lua:1430–1446 for GROUP_INVITE). UI/Menus reads
--- these specs like its own tags (Menus.showElement).
+-- these specs like its own tags.
 local SETTINGS_KEYS = WFJ.SettingsKeys or {}
 -- The Options window's dropdown entries: the window's keys plus the Text on Target menu's "Effects" (an owned key,
 -- combatoverrides.lua:213), which the window's own labels must not take: there "Effects" is the volume slider.
@@ -52,7 +52,8 @@ local TEXT_ON_ME_TOOLTIPS = {
   "COMBAT_TEXT_SHOW_PERIODIC_ENERGIZE_TEXT", "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_PERIODIC_ENERGIZE",
   "COMBAT_TEXT_SHOW_HONOR_GAINED_TEXT", "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_HONOR_GAINED",
   "COMBAT_TEXT_SHOW_AURAS_TEXT", "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_AURAS" }
-WFJ.Menus.UNTAGGED = {
+-- Under tags of this module's own: the client never fires "Menu.OpenMenuTag" with one, so only specFor reaches them.
+local UNTAGGED = {
   SETTINGS_DROPDOWN = { source = "blizzard_settings.lua:563", keys = SETTINGS_MENU_KEYS,
     tooltips = TEXT_ON_ME_TOOLTIPS },
   CONTEXT_LFG_SEARCH_ENTRY = { source = "blizzard_lfgvanilla_browse.lua:1014", titleIsName = true,
@@ -60,29 +61,21 @@ WFJ.Menus.UNTAGGED = {
   CONTEXT_CUSTOMER_ORDER_RECIPE = { source = "blizzard_professionscustomerordersbrowseorders.lua:142",
     keys = { "BATTLE_PET_FAVORITE", "BATTLE_PET_UNFAVORITE" } },
 }
+for tag, spec in pairs(UNTAGGED) do WFJ.Menus.TAGS[tag] = spec end
 
--- owner region → { tag, name }: the Options dropdowns once set up, a context menu's owner each time it is populated
+-- owner region → tag: the Options dropdowns once set up, a context menu's owner each time it is populated
 local owners = setmetatable({}, { __mode = "k" })
 
--- Records one Options dropdown for `tag` (a Menus.UNTAGGED key). → true when newly recorded
+-- Records one dropdown for `tag` (a Menus.TAGS key of an untagged menu). → true when newly recorded
 function MenusUntagged.hookDropdown(dropdown, tag)
   if type(dropdown) ~= "table" or owners[dropdown] then return false end
-  owners[dropdown] = { tag = tag }
+  owners[dropdown] = tag
   return true
 end
 
--- The pseudo-tag and the menu's name of a menu frame's owner region, if recorded. → tag, name | nil
+-- The tag recorded for a menu frame's owner region. → tag | nil
 function MenusUntagged.specFor(owner)
-  local rec = owner ~= nil and owners[owner] or nil
-  if not rec then return nil end
-  return rec.tag, rec.name
-end
-
--- An element description's text: MenuUtil.GetElementText (menuutil.lua:176–178) when the client has it.
-local function elementText(desc)
-  local util = Compat.get(DECLARE, "menuUtil")
-  if type(util) == "table" and type(util.GetElementText) == "function" then return util.GetElementText(desc) end
-  return type(desc) == "table" and desc.text or nil
+  return owner ~= nil and owners[owner] or nil
 end
 
 local function secret(value) return WFJ.SurfaceState.secret(value) end
@@ -94,20 +87,22 @@ local function populate(generator, owner, desc)
   end
   if type(desc.EnumerateElementDescriptions) ~= "function" then return nil end
   if type(owner) == "table" and generator ~= nil and owner.contextMenuGenerator == generator then
-    owners[owner] = { tag = "CONTEXT_CUSTOMER_ORDER_RECIPE" }
+    owners[owner] = "CONTEXT_CUSTOMER_ORDER_RECIPE"
     return "CONTEXT_CUSTOMER_ORDER_RECIPE"
   end
   local report, advert = Compat.get(DECLARE, "reportGroup"), Compat.get(DECLARE, "reportAdvert") -- the client's English
-  local title, found, first = nil, false, true
+  -- an element description's text: MenuUtil.GetElementText (menuutil.lua:176–178) when the client has it
+  local util = Compat.get(DECLARE, "menuUtil")
+  local textOf = type(util) == "table" and type(util.GetElementText) == "function" and util.GetElementText
+    or function(d) return type(d) == "table" and d.text or nil end
   for _, child in desc:EnumerateElementDescriptions() do
-    local text = elementText(child)
-    if secret(text) then text = nil end
-    if first then title, first = text, false end
-    if type(text) == "string" and (text == report or text == advert) then found = true end
+    local text = textOf(child)
+    if not secret(text) and type(text) == "string" and (text == report or text == advert) then
+      owners[owner] = "CONTEXT_LFG_SEARCH_ENTRY"
+      return "CONTEXT_LFG_SEARCH_ENTRY"
+    end
   end
-  if not found then return nil end
-  owners[owner] = { tag = "CONTEXT_LFG_SEARCH_ENTRY", name = type(title) == "string" and title or nil }
-  return "CONTEXT_LFG_SEARCH_ENTRY"
+  return nil
 end
 
 local reported = {} -- error text → true: each distinct error is recorded once, not on every menu opened

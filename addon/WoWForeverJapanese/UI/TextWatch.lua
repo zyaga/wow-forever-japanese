@@ -64,6 +64,7 @@ function TextWatch.add(fs, fn)
       driver:SetScript("OnUpdate", WFJ.Perf.wrap("idle.textwatch", TextWatch.tick))
     end
   end
+  if driver and type(driver.Show) == "function" then driver:Show() end
   return true
 end
 
@@ -73,8 +74,13 @@ function TextWatch.remove(fs)
   if not e then return false end
   byFs[fs] = nil
   for i = #entries, 1, -1 do
-    if entries[i] == e then table.remove(entries, i) end
+    if entries[i] == e then
+      table.remove(entries, i)
+      break
+    end
   end
+  -- a hidden frame runs no OnUpdate: nothing is read once nothing is followed
+  if #entries == 0 and driver and type(driver.Hide) == "function" then driver:Hide() end
   return true
 end
 

@@ -61,3 +61,7 @@ What is inferred [likely]: that the tainted scripts are the path (the source rea
 - **Skip only the submenus.** Tried in game: the language fields were still tainted, because the Language entry itself, whose hover opens the submenu, still carried the initializer.
 - **Leave the menu in English.** Clean, but not a fix.
 - **Return a size from the initializer** so the client skips its measure (`menu.lua:1031–1040`). The size would be a value the addon produced, read by the same step.
+
+## Update (2026-11-13): every menu takes this path
+
+Decision 6 is replaced: every menu the addon translates is now written after it opens, tagged and untagged, submenus and the unit right-click menus included, and `Menus.AFTER_OPEN` is merged into `Menus.TAGS`. A label wider than the English widens the menu with `SetWidth` alone, and a pick that keeps the menu open gets its Japanese back through `UI/TextWatch` ([ADR-088](088-every-menu-is-written-after-it-opens.md)). The chat menu itself works as described above.
