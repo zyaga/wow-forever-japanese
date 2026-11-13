@@ -289,17 +289,18 @@ local hooked = {} -- tag → true, once its ModifyMenu callback is registered
 local afterOpenHooked = false
 
 local shownMenus = setmetatable({}, { __mode = "k" }) -- menu frame → true, from "MenuProxy.OnShow"
--- menu frame → the element frames written on it. A menu's text widgets come from one pool every menu shares
+-- menu frame → the text widgets written on it. A menu's text widgets come from one pool every menu shares
 -- (blizzard_menu/compositor.lua:367-390), so a record left on one would be written onto whichever menu takes it next.
+-- The widgets are kept, not their element frames: a rebuild of the open menu hands the same widgets to other frames.
 local written = setmetatable({}, { __mode = "k" })
 
--- Every element frame under `frame` that has a text widget, collected in `into`. → count shown
+-- Every element frame under `frame` that has a text widget, its widget collected in `into`. → count shown
 local function showUnder(tag, frame, depth, into)
   local n = 0
   for _, child in ipairs(WFJ.Frames.children(frame)) do
     if type(child) == "table" then
       if type(child.fontString) == "table" then
-        into[#into + 1] = child
+        into[#into + 1] = textOf(child)
         n = n + Menus.showElement(tag, child, nil)
       end
       if depth < 3 then n = n + showUnder(tag, child, depth + 1, into) end
@@ -317,22 +318,31 @@ local function opened(tag)
   local n = 0
   for menuFrame in pairs(shownMenus) do
     if type(menuFrame.IsShown) == "function" and menuFrame:IsShown() then
-      local frames = written[menuFrame] or {}
-      written[menuFrame] = frames
-      n = n + showUnder(tag, menuFrame, 0, frames)
+      local widgets = written[menuFrame] or {}
+      written[menuFrame] = widgets
+      n = n + showUnder(tag, menuFrame, 0, widgets)
     end
   end
   return n
 end
 
+-- The records on `widgets`, dropped (the client's text and font go back on a widget still showing ours). → count
+local function letGo(widgets)
+  local mine, gone = {}, {}
+  for _, fs in ipairs(widgets) do mine[fs] = true end
+  for key, rec in pairs(WFJ.SurfaceState.records(SURFACE)) do
+    if mine[rec.fs] then gone[#gone + 1] = key end
+  end
+  for _, key in ipairs(gone) do WFJ.SurfaceState.drop(SURFACE, key) end
+  return #gone
+end
+
 local reported = {} -- error text → true: each distinct error is recorded once, not on every menu opened
 
--- "Menu.OpenMenuTag" (owner, tag): the client has built the menu and set its scripts. It runs for every tagged menu
--- the client opens, so it never raises: an error is recorded where the load errors are (WFJ.initErrors, surface
--- "menus.afteropen", printed by /wfj debug) and the menu stays English. → count shown
-function Menus.onMenuOpened(_, tag)
-  if not Menus.AFTER_OPEN[tag] then return 0 end
-  local ok, n = pcall(opened, tag)
+-- Both callbacks run inside the client's own menu code for every menu it opens or hides, so they never raise: an
+-- error is recorded where the load errors are (WFJ.initErrors, surface "menus.afteropen", printed by /wfj debug).
+local function guarded(fn, ...)
+  local ok, n = pcall(fn, ...)
   if ok then return n end
   local err = tostring(n)
   if not reported[err] then
@@ -343,15 +353,19 @@ function Menus.onMenuOpened(_, tag)
   return 0
 end
 
+-- "Menu.OpenMenuTag" (owner, tag): the client has built the menu and set its scripts. → count shown
+function Menus.onMenuOpened(_, tag)
+  if not Menus.AFTER_OPEN[tag] then return 0 end
+  return guarded(opened, tag)
+end
+
 -- "MenuProxy.OnHide" (owner, menuFrame): fired as the menu hides, before the client hands its text widgets back to
 -- the pool (menu.lua:1751-1764, 1851-1853). What the initializer path's resetter does. → records dropped
 function Menus.onMenuHidden(_, menuFrame)
-  local frames = type(menuFrame) == "table" and written[menuFrame] or nil
-  if not frames then return 0 end
+  local widgets = type(menuFrame) == "table" and written[menuFrame] or nil
+  if not widgets then return 0 end
   written[menuFrame] = nil
-  local n = 0
-  for _, frame in ipairs(frames) do n = n + Menus.resetElement(frame) end
-  return n
+  return guarded(letGo, widgets)
 end
 
 -- Called by Main after Compat.init. Registers one ModifyMenu callback per tag; Menu is loaded at login (Blizzard_Menu

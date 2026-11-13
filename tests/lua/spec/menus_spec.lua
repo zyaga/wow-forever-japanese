@@ -380,6 +380,7 @@ describe("UI/Menus: menu entries", function()
     assert.are.equal("発言", pooled:GetText())
 
     registry:TriggerEvent("MenuProxy.OnHide", menu) -- before the client hands the widgets back to the shared pool
+    assert.are.equal(UI.SAY_MESSAGE[1], pooled:GetText()) -- the client's text is back on it
     local widget = WFJ.Labels.menuText(pooled) -- the adapter a menu record sits on
     for _, rec in pairs(WFJ.SurfaceState.records(WFJ.Menus.SURFACE)) do assert.are_not.equal(widget, rec.fs) end
 
@@ -393,9 +394,24 @@ describe("UI/Menus: menu entries", function()
       assert.are.equal(text, pooled:GetText())
       assert.are.equal(before, writes(pooled), text)
     end
-    -- hiding a menu the addon never wrote does nothing
+    -- hiding it again, or a menu the addon never wrote, does nothing
+    assert.are.equal(0, WFJ.Menus.onMenuHidden(nil, menu))
+    assert.are.equal(0, WFJ.Menus.onMenuHidden(nil, (builtMenu({ "Trade" }))))
+  end)
+
+  it("a rebuild of the open chat menu moves its widgets to other frames: they are still let go", function()
+    local registry = installRegistry()
+    WFJ.Menus.init()
+    local menu, entry = builtMenu({ UI.SAY_MESSAGE[1], "/s" })
+    local say, slash = entry[UI.SAY_MESSAGE[1]], entry["/s"]
+    local pooled = say.fontString
+    registry:TriggerEvent("MenuProxy.OnShow", menu)
+    registry:TriggerEvent("Menu.OpenMenuTag", "MENU_CHAT_SHORTCUTS")
+    assert.are.equal("発言", pooled:GetText())
+    say.fontString, slash.fontString = slash.fontString, say.fontString -- the pool hands them back in another order
     registry:TriggerEvent("MenuProxy.OnHide", menu)
-    registry:TriggerEvent("MenuProxy.OnHide", (builtMenu({ "Trade" })))
+    local widget = WFJ.Labels.menuText(pooled)
+    for _, rec in pairs(WFJ.SurfaceState.records(WFJ.Menus.SURFACE)) do assert.are_not.equal(widget, rec.fs) end
   end)
 
   it("an error while writing an opened menu is recorded once and never raised", function()
@@ -403,7 +419,6 @@ describe("UI/Menus: menu entries", function()
     WFJ.Menus.init()
     WFJ.initErrors = nil
     local menu = builtMenu({ UI.SAY_MESSAGE[1] })
-    menu.GetChildren = function() error("boom") end
     menu.IsShown = function() error("boom") end
     registry:TriggerEvent("MenuProxy.OnShow", menu)
     registry:TriggerEvent("Menu.OpenMenuTag", "MENU_CHAT_SHORTCUTS")
