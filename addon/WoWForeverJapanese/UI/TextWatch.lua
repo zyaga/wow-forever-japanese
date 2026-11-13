@@ -45,7 +45,8 @@ function TextWatch.tick()
   return n
 end
 
--- Follows `fs`: `fn()` runs on the next frame it is visible with a text or font it has not been seen with.
+-- Follows `fs` (a FontString, or anything with GetText and IsVisible): `fn()` runs on the next frame it is visible
+-- with a text or font it has not been seen with.
 -- A FontString is watched once; a second add replaces its callback. → true when added now
 function TextWatch.add(fs, fn)
   if type(fs) ~= "table" or type(fs.GetText) ~= "function" or type(fn) ~= "function" then return false end
@@ -64,6 +65,23 @@ function TextWatch.add(fs, fn)
       driver:SetScript("OnUpdate", WFJ.Perf.wrap("idle.textwatch", TextWatch.tick))
     end
   end
+  if driver and type(driver.Show) == "function" then driver:Show() end
+  return true
+end
+
+-- Stops following `fs` (a pooled widget handed back to its pool). → true when it was followed
+function TextWatch.remove(fs)
+  local e = byFs[fs]
+  if not e then return false end
+  byFs[fs] = nil
+  for i = #entries, 1, -1 do
+    if entries[i] == e then
+      table.remove(entries, i)
+      break
+    end
+  end
+  -- a hidden frame runs no OnUpdate: nothing is read once nothing is followed
+  if #entries == 0 and driver and type(driver.Hide) == "function" then driver:Hide() end
   return true
 end
 

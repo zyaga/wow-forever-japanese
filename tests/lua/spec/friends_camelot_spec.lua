@@ -277,13 +277,15 @@ describe("the social window on Forever's camelot FriendsFrame", function()
   describe("the who list's invite button and filter menu", function()
     local M = require("tests.lua.spec.menu_stub")
 
+    local registry
+
     before_each(function()
-      _G.Menu = { ModifyMenu = function() end }
+      registry = M.registry()
       setup(true, MENU_FILES)
       WFJ.Menus.init()
     end)
 
-    after_each(function() _G.Menu = nil end)
+    after_each(function() _G.EventRegistry = nil end)
 
     it("the invite button's tooltip translates; Alt shows English", function()
       Social.who = { total = 1, rows = { { name = "Thrall", level = 60, class = "Shaman", zone = "Orgrimmar" } } }
@@ -309,8 +311,8 @@ describe("the social window on Forever's camelot FriendsFrame", function()
       sort:CreateButton("Name")
       sort:CreateButton("Ascending")
       sort:CreateButton("Descending")
-      _G.LFGWhoListFrame.FilterDropdown:RegisterMenu(root)
-      local frames = M.open(root)
+      -- the dropdown opens its untagged menu on itself (dropdownbutton.lua:124)
+      local frames = M.open(registry, nil, root, nil, _G.LFGWhoListFrame.FilterDropdown)
       local function text(e) return frames[e].fontString:GetText() end
       assert.are.equal("クラス", text(class))
       assert.are.equal("すべてチェック", text(class.children[1]))

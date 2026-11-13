@@ -127,36 +127,40 @@ local CASES = {
 }
 
 describe("UI/MenusTags: every other Forever window's menus", function()
-  local WFJ, callbacks
+  local WFJ, registry
+  local open = {} -- the menus opened by the current test, closed after it
 
   before_each(function()
     Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
     Stub.installTooltipAPI()
-    callbacks = {}
-    _G.Menu = { ModifyMenu = function(tag, fn) callbacks[tag] = fn end }
+    registry = M.registry()
     WFJ = H.loadChunks(FILES)
     H.uiSetup(WFJ, UI)
     assert.is_true(WFJ.Menus.init())
   end)
 
-  after_each(function() H.uiTeardown(); _G.Menu = nil end)
+  after_each(function() H.uiTeardown(); _G.EventRegistry = nil end)
 
+  -- A menu the client has built and shown with `tag`; the menu opened before it is closed first, as the client
+  -- keeps one menu open. → root, { [element] = frame }
   local function generate(tag, build, contextData)
+    M.close(registry, open)
     local root = M.element(nil)
     build(root)
-    callbacks[tag](nil, root, contextData) -- Menu.PopulateDescription → SecureModifyMenu
-    return root, M.open(root)
+    local frames
+    frames, open = M.open(registry, tag, root, contextData)
+    return root, frames
   end
+  local function release() M.close(registry, open); open = {} end
 
-  it("each new tag names its source file:line and is registered with Menu.ModifyMenu", function()
+  it("each tag names its source file:line", function()
     local n = 0
     for tag, spec in pairs(WFJ.Menus.TAGS) do
       assert.is_string(spec.source, tag)
       assert.truthy(spec.source:match("%.lua:%d+"), tag)
-      assert.is_function(callbacks[tag], tag)
       n = n + 1
     end
-    assert.is_true(n >= 48) -- the Menus tags and MenusTags' (no unit menu: ADR-069)
+    assert.is_true(n >= 49) -- the Menus tags and MenusTags'
   end)
 
   it("one entry per new tag renders Japanese; a name and an unlisted word beside it stay byte-identical", function()
@@ -171,7 +175,7 @@ describe("UI/MenusTags: every other Forever window's menus", function()
       assert.are.equal("Thrall", frames[e[1]].fontString:GetText(), tag)
       assert.are.equal(UI[key][2], frames[e[2]].fontString:GetText(), tag)
       assert.are.equal("Raid", frames[e[3]].fontString:GetText(), tag)
-      M.release(frames)
+      release()
     end
     assert.are.equal(0, WFJ.SurfaceState.count(WFJ.Menus.SURFACE))
   end)
@@ -191,12 +195,20 @@ describe("UI/MenusTags: every other Forever window's menus", function()
   end)
 
   it("a tracker block menu keeps its title (the achievement's name) even when it is a dictionary word", function()
+    -- its tag carries the block, not a name (blizzard_achievementobjectivetracker.lua:75): the title is the top entry,
+    -- and an entry with the title's English is a name too (names stay English)
     local root, frames = generate("MENU_ACHIEVEMENT_TRACKER", function(r)
       r:CreateButton(UI.OBJECTIVES_VIEW_ACHIEVEMENT[1]) -- an achievement named like the entry
       r:CreateButton(UI.OBJECTIVES_VIEW_ACHIEVEMENT[1])
     end)
     assert.are.equal("Open Achievement", frames[root.children[1]].fontString:GetText())
-    assert.are.equal("アチーブメントを開く", frames[root.children[2]].fontString:GetText())
+    assert.are.equal("Open Achievement", frames[root.children[2]].fontString:GetText())
+    local other, otherFrames = generate("MENU_ACHIEVEMENT_TRACKER", function(r)
+      r:CreateButton("Leeroy!")
+      r:CreateButton(UI.OBJECTIVES_VIEW_ACHIEVEMENT[1])
+    end)
+    assert.are.equal("Leeroy!", otherFrames[other.children[1]].fontString:GetText())
+    assert.are.equal("アチーブメントを開く", otherFrames[other.children[2]].fontString:GetText())
   end)
 
   it("element tooltips: the achievement filter's hover and a disabled crafting-order entry's reason", function()
@@ -260,7 +272,7 @@ describe("UI/MenusTags: every other Forever window's menus", function()
       assert.are.equal("Combat 3 [01:23]", frames[e[1]].fontString:GetText())
       Stub.keys.alt = false; WFJ.Modifier.refresh()
       assert.are.equal("戦闘3 [01:23]", frames[e[1]].fontString:GetText())
-      M.release(frames)
+      release()
       assert.are.equal(0, WFJ.SurfaceState.count(WFJ.Menus.SURFACE))
     end)
 

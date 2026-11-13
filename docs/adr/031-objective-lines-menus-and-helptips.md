@@ -140,3 +140,7 @@ characters with a |T…AvailableQuestIcon:16:16|t above their head.") were kept 
 ## Update: the chat menu is written after it opens
 
 The chat menu (`MENU_CHAT_SHORTCUTS`) no longer gets a `Menu.ModifyMenu` initializer. With one, a language picked from that menu was stored tainted on the chat box and chat messages were refused, most likely because the client sets an element's click and hover scripts after measuring text the initializer wrote. Its entries are written when the client reports the menu open ([ADR-087](087-the-chat-menu-is-written-after-it-opens.md)). The other tagged menus are unchanged.
+
+## Update (2026-11-13): every menu is written after it opens
+
+No menu gets an initializer any more, and nothing registers a `Menu.ModifyMenu` callback. The client sets an entry's click and hover scripts in the same function that runs its initializers, so with one every pick from the menu could run tainted. Every tagged menu is now written once the client reports it open (`Menu.OpenMenuTag`), its submenus when they are shown (`MenuProxy.OnShow`), and the menu is widened to the Japanese with `SetWidth` alone ([ADR-088](088-every-menu-is-written-after-it-opens.md)). The tags, their keys and the tooltip keys work as described above; a `titleIsName` menu's name is now the text of its root's top entry.

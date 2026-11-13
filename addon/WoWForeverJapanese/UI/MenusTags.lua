@@ -1,5 +1,5 @@
 -- UI/MenusTags.lua: the menu tags of every other Forever window (data; loaded after UI/Menus, it adds them to
--- Menus.TAGS before Menus.init registers one Menu.ModifyMenu callback per tag, so Menus.lua stays one mechanism).
+-- Menus.TAGS, which UI/Menus writes once each menu is shown, so Menus.lua stays one mechanism).
 -- Paths under the Forever UI extract's interface/addons. Each tag lists the keys its entries may show (`only`: a
 -- player's layout, a creature's, an item's or a channel's name in the same menu is never read as a dictionary word,
 -- names stay in English); `tooltips` are the keys an element's own hover may show: a disabled entry's reason (its
@@ -235,6 +235,13 @@ local TAGS = {
 for _, key in ipairs(WFJ.Gamepad and WFJ.Gamepad.MENU_KEYS or {}) do
   table.insert(TAGS.MORE_CONTEXT_ACTIONS.keys, key)
 end
+
+-- the spellbook's settings menu (spellbook/blizzard_spellbookframe.lua:191, 205–226; camelot/spellbook/
+-- blizzard_spellbookframe.lua:79–113); the Hide Passives entry's tooltip while searching is built on GameTooltip with
+-- the menu button as owner (spellbookframe.lua:192–197; blizzard_menu/menuutil.lua:98–106, 293–298)
+TAGS.MENU_SPELL_BOOK_SETTINGS = { source = "blizzard_spellbookframe.lua:205", keys = { "SHOW_ALL_SPELL_RANKS",
+  "SPELLBOOK_FILTER_PASSIVES", "SPELLBOOK_USE_FLYOUTS", "SPELLBOOK_COMPACT_VIEW" },
+  tooltips = { "SPELLBOOK_SEARCH_HIDE_PASSIVES_DISABLED" } }
 
 -- Keys added to tags UI/Menus already declares (appended below)
 local EXTRA = {

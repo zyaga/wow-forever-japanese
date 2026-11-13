@@ -1,32 +1,25 @@
--- UI/MenusUntagged.lua: the dropdown menus whose generator sets no tag (ADR-033): the Options window's
--- dropdowns (Settings.InitDropdown, blizzard_settings_shared/blizzard_settings.lua:563–581). Edit Mode's setting
--- dropdowns are never reached: Edit Mode stays as the client writes it (ADR-069).
--- Menu.ModifyMenu only reaches a tagged description (SecureModifyMenu returns on no tag, blizzard_menu/menu.lua:
--- 2751–2760), so these are reached through the dropdown button itself: OpenMenu always regenerates (GenerateMenu
--- populates a new root description, then RegisterMenu(rootDescription) stores it), and only then asks the manager to
--- open it (blizzard_menu/dropdownbutton.lua:108–131, 178–207, 255–264). A post-hook on that dropdown's RegisterMenu
--- therefore holds the populated description at the point a ModifyMenu callback would, before any element frame
--- exists, and UI/Menus' walk adds the same initializers (so the menu is laid out with the Japanese).
--- The other candidate, the "MenuProxy.OnShow" registry event (menu.lua:1845–1849), fires after the menu is laid out
--- in English, which would need a second layout pass: not used.
--- The dropdowns are found as the client sets them up: Settings.InitDropdown is called through the Settings table
--- (blizzard_settingcontrols.lua:903, 1621; blizzard_settingsdefinitions_shared/graphics.lua:315), so a post-hook on
--- it sees every one. Each menu matches only its window's keys (Menus.UNTAGGED): a font or a locale name is no key and
--- stays English (names stay in English).
--- Untagged *context* menus: MenuUtil.CreateContextMenu builds the root description, calls
--- Menu.PopulateDescription (the generator, then SecureModifyMenu, which returns at once on no tag) and only then
--- opens the menu (blizzard_menu/menuutil.lua:151–161; menu.lua:2751–2765); it looks the field up at call time, so a
--- post-hook on Menu.PopulateDescription holds the populated, untagged description before any element frame exists:
--- the point a ModifyMenu callback runs at, so the menu is laid out with the Japanese. The hook also runs for every
--- tagged menu and DropdownButton: it acts only on an untagged description one of two openers made:
---   the Group Finder's search-entry menu (LFGBrowseMixin:CreateSearchEntryMenu, blizzard_groupfinder_vanillastyle/
---   blizzard_lfgvanilla_browse.lua:975–1007): its owner is an undefined frame and its generator an anonymous closure,
---   so it is recognised by an entry whose text is LFG_LIST_REPORT_GROUP_FOR or REPORT_GROUP_FINDER_ADVERTISEMENT
---   (both have a space: never a character name); its first element, the leader's name, is the title (titleIsName);
---   the crafting-orders recipe list's (…customerordersrecipelist.lua:96–97, 115–117): the owner is the list element
---   and the generator its own contextMenuGenerator (…customerordersbrowseorders.lua:139–155).
--- Rejected: a post-hook on LFGBrowseFrame.CreateSearchEntryMenu (after layout, needs a relayout);
--- replacing the method (taints the invite path); the "MenuProxy.OnShow" event (after layout).
+-- UI/MenusUntagged.lua: the dropdown menus whose generator sets no tag (ADR-033, ADR-088): the Options window's
+-- dropdowns (Settings.InitDropdown, blizzard_settings_shared/blizzard_settings.lua:563–581) and two context menus.
+-- Edit Mode's setting dropdowns are never reached: Edit Mode stays as the client writes it (ADR-069).
+-- Like every menu (UI/Menus), these are written once the client has shown them, never while it builds them. The
+-- client fires no "Menu.OpenMenuTag" for a menu without a tag (blizzard_menu/menu.lua:2453-2459), so this module only
+-- recognises a menu before it opens and records its owner region; UI/Menus asks for it (MenusUntagged.specFor) on
+-- "MenuProxy.OnShow", where the menu frame reports that owner (GetOwnerRegion, menu.lua:1906–1908). Nothing here
+-- writes to a menu description.
+-- - The Options dropdowns are recorded as the client sets them up: Settings.InitDropdown is called through the
+--   Settings table (blizzard_settingcontrols.lua:903, 1621; blizzard_settingsdefinitions_shared/graphics.lua:315), so
+--   a post-hook on it sees every one. Each menu matches only its window's keys (its spec below): a font or a locale
+--   name is no key and stays English (names stay in English).
+-- - Untagged *context* menus: MenuUtil.CreateContextMenu builds the root description and calls
+--   Menu.PopulateDescription (the generator, then SecureModifyMenu, which returns at once on no tag) before it opens
+--   the menu (blizzard_menu/menuutil.lua:151–161; menu.lua:2751–2765). A post-hook on Menu.PopulateDescription reads
+--   the populated, untagged description and records its owner when one of two openers made it:
+--     the Group Finder's search-entry menu (LFGBrowseMixin:CreateSearchEntryMenu, blizzard_groupfinder_vanillastyle/
+--     blizzard_lfgvanilla_browse.lua:975–1007): its owner is an unnamed frame and its generator an anonymous closure,
+--     so it is recognised by an entry whose text is LFG_LIST_REPORT_GROUP_FOR or REPORT_GROUP_FINDER_ADVERTISEMENT
+--     (both have a space: never a character name); its first element, the leader's name, is its title;
+--     the crafting-orders recipe list's (…customerordersrecipelist.lua:96–97, 115–117): the owner is the list element
+--     and the generator its own contextMenuGenerator (…customerordersbrowseorders.lua:139–155).
 local _, WFJ = ...
 local MenusUntagged = {}
 WFJ.MenusUntagged = MenusUntagged
@@ -34,11 +27,9 @@ WFJ.MenusUntagged = MenusUntagged
 local Compat = WFJ.Compat
 local DECLARE = "help.menus.untagged"
 
--- Menus whose generator sets no tag, walked through the dropdown's own RegisterMenu; never registered
--- with Menu.ModifyMenu. Each matches only its window's keys (UI/SettingsKeys).
--- Two untagged context menus, walked from the Menu.PopulateDescription post-hook (the LFG search
--- entry's title is the leader's name; blizzard_lfgvanilla_browse.lua:1430–1446 for GROUP_INVITE). UI/Menus reads
--- these specs like its own tags (Menus.showElement / onMenu).
+-- Menus whose generator sets no tag. Each matches only its window's keys (UI/SettingsKeys); the LFG search entry's
+-- first element is the leader's name (blizzard_lfgvanilla_browse.lua:1430–1446 for GROUP_INVITE). UI/Menus reads
+-- these specs like its own tags.
 local SETTINGS_KEYS = WFJ.SettingsKeys or {}
 -- The Options window's dropdown entries: the window's keys plus the Text on Target menu's "Effects" (an owned key,
 -- combatoverrides.lua:213), which the window's own labels must not take: there "Effects" is the volume slider.
@@ -61,7 +52,8 @@ local TEXT_ON_ME_TOOLTIPS = {
   "COMBAT_TEXT_SHOW_PERIODIC_ENERGIZE_TEXT", "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_PERIODIC_ENERGIZE",
   "COMBAT_TEXT_SHOW_HONOR_GAINED_TEXT", "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_HONOR_GAINED",
   "COMBAT_TEXT_SHOW_AURAS_TEXT", "OPTION_TOOLTIP_COMBAT_TEXT_SHOW_AURAS" }
-WFJ.Menus.UNTAGGED = {
+-- Under tags of this module's own: the client never fires "Menu.OpenMenuTag" with one, so only specFor reaches them.
+local UNTAGGED = {
   SETTINGS_DROPDOWN = { source = "blizzard_settings.lua:563", keys = SETTINGS_MENU_KEYS,
     tooltips = TEXT_ON_ME_TOOLTIPS },
   CONTEXT_LFG_SEARCH_ENTRY = { source = "blizzard_lfgvanilla_browse.lua:1014", titleIsName = true,
@@ -69,57 +61,74 @@ WFJ.Menus.UNTAGGED = {
   CONTEXT_CUSTOMER_ORDER_RECIPE = { source = "blizzard_professionscustomerordersbrowseorders.lua:142",
     keys = { "BATTLE_PET_FAVORITE", "BATTLE_PET_UNFAVORITE" } },
 }
+for tag, spec in pairs(UNTAGGED) do WFJ.Menus.TAGS[tag] = spec end
 
-local owners = setmetatable({}, { __mode = "k" }) -- dropdown → its pseudo-tag, once hooked
+-- owner region → tag: the Options dropdowns once set up (for good); a context menu's owner each time it is populated,
+-- taken back when that menu shows (an owner frame is pooled and may open another, unrecognised menu next)
+local owners = setmetatable({}, { __mode = "k" })
+local contexts = setmetatable({}, { __mode = "k" })
 
--- Hooks one dropdown's RegisterMenu for `tag` (a Menus.UNTAGGED key). → true when newly hooked
+-- Records one dropdown for `tag` (a Menus.TAGS key of an untagged menu). → true when newly recorded
 function MenusUntagged.hookDropdown(dropdown, tag)
-  if type(dropdown) ~= "table" or owners[dropdown] or type(dropdown.RegisterMenu) ~= "function" then return false end
+  if type(dropdown) ~= "table" or owners[dropdown] then return false end
   owners[dropdown] = tag
-  hooksecurefunc(dropdown, "RegisterMenu", function(self, root) WFJ.Menus.onMenu(owners[self], root, nil) end)
   return true
 end
 
--- An element description's text: MenuUtil.GetElementText (menuutil.lua:176–178) when the client has it.
-local function elementText(desc)
-  local util = Compat.get(DECLARE, "menuUtil")
-  if type(util) == "table" and type(util.GetElementText) == "function" then return util.GetElementText(desc) end
-  return type(desc) == "table" and desc.text or nil
+-- The tag recorded for a menu frame's owner region. → tag | nil
+function MenusUntagged.specFor(owner)
+  if owner == nil then return nil end
+  local context = contexts[owner]
+  if context then
+    contexts[owner] = nil
+    return context
+  end
+  return owners[owner]
 end
 
--- The walk behind onPopulate. → the number of elements given ours
+local function secret(value) return WFJ.SurfaceState.secret(value) end
+
+-- The recognition behind onPopulate. → the pseudo-tag recorded, or nil
 local function populate(generator, owner, desc)
-  if type(desc) ~= "table" or type(desc.GetTag) ~= "function" or desc:GetTag() ~= nil then return 0 end
-  if type(desc.EnumerateElementDescriptions) ~= "function" then return 0 end
+  if owner ~= nil then contexts[owner] = nil end -- a record from a populate whose menu never opened
+  if owner == nil or type(desc) ~= "table" or type(desc.GetTag) ~= "function" or desc:GetTag() ~= nil then
+    return nil
+  end
+  if type(desc.EnumerateElementDescriptions) ~= "function" then return nil end
   if type(owner) == "table" and generator ~= nil and owner.contextMenuGenerator == generator then
-    return WFJ.Menus.onMenu("CONTEXT_CUSTOMER_ORDER_RECIPE", desc, nil)
+    contexts[owner] = "CONTEXT_CUSTOMER_ORDER_RECIPE"
+    return "CONTEXT_CUSTOMER_ORDER_RECIPE"
   end
   local report, advert = Compat.get(DECLARE, "reportGroup"), Compat.get(DECLARE, "reportAdvert") -- the client's English
-  local title, found, first = nil, false, true
+  -- an element description's text: MenuUtil.GetElementText (menuutil.lua:176–178) when the client has it
+  local util = Compat.get(DECLARE, "menuUtil")
+  local textOf = type(util) == "table" and type(util.GetElementText) == "function" and util.GetElementText
+    or function(d) return type(d) == "table" and d.text or nil end
   for _, child in desc:EnumerateElementDescriptions() do
-    local text = elementText(child)
-    if first then title, first = text, false end
-    if type(text) == "string" and (text == report or text == advert) then found = true end
+    local text = textOf(child)
+    if not secret(text) and type(text) == "string" and (text == report or text == advert) then
+      contexts[owner] = "CONTEXT_LFG_SEARCH_ENTRY"
+      return "CONTEXT_LFG_SEARCH_ENTRY"
+    end
   end
-  if not found then return 0 end
-  return WFJ.Menus.onMenu("CONTEXT_LFG_SEARCH_ENTRY", desc, { name = type(title) == "string" and title or nil })
+  return nil
 end
 
 local reported = {} -- error text → true: each distinct error is recorded once, not on every menu opened
 
 -- The Menu.PopulateDescription post-hook (generator, ownerRegion, description, …). It runs for every menu the client
 -- opens, so it never raises: an error is recorded where the load errors are (WFJ.initErrors, surface
--- "menus.untagged", printed by /wfj debug) and the menu opens in English. → the number of elements given ours
+-- "menus.untagged", printed by /wfj debug) and the menu opens in English. → the pseudo-tag recorded, or nil
 function MenusUntagged.onPopulate(generator, owner, desc)
-  local ok, n = pcall(populate, generator, owner, desc)
-  if ok then return n end
-  local err = tostring(n)
+  local ok, tag = pcall(populate, generator, owner, desc)
+  if ok then return tag end
+  local err = tostring(tag)
   if not reported[err] then
     reported[err] = true
     WFJ.initErrors = WFJ.initErrors or {}
     WFJ.initErrors[#WFJ.initErrors + 1] = { surface = "menus.untagged", err = err }
   end
-  return 0
+  return nil
 end
 
 local hooked = false

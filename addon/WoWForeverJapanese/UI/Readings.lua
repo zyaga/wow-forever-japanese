@@ -84,7 +84,7 @@ View.NON_WINDOW = {
   ghostframe = true, help = true, hudlabels = true, lossofcontrol = true, majorfactiontoast = true,
   npe = true, -- the new player tutorial's on-screen prompts
   ["questmap.trackerlabels"] = true, ["questmap.trackerobjectives"] = true, questtimer = true, queuestatus = true,
-  ["quickjoin.tip"] = true, ["spellbook.menu"] = true, statusnotices = true, tracker = true, unitframes = true,
+  ["quickjoin.tip"] = true, statusnotices = true, tracker = true, unitframes = true,
   widgets = true, -- the UI widgets' HUD lines
   zonetext = true,
 }
