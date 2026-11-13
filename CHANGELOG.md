@@ -10,7 +10,7 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Fixed
-- A Lua error ("Invalid font height") that could repeat each time the mailbox refreshed, when the game gave a line of text a size of 0 or below. That text now shows its Japanese at the standard size.
+- A Lua error ("Invalid font height") that could repeat each time a window such as the mailbox refreshed, when the game gave a line of text a size of 0 or below. That text now shows its Japanese at the standard size.
 
 ## 0.13.0 - 2026-11-12
 
