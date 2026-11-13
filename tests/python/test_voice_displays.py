@@ -4,6 +4,7 @@ cache (data/voice/displays.jsonl → Data/Displays.lua)."""
 import json
 
 import pytest
+
 from wfj.cmd import generate, voice_displays
 from wfj.emit import lua_writer
 

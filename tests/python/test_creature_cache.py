@@ -3,6 +3,7 @@
 import struct
 
 import pytest
+
 from wfj.io import creature_cache
 from wfj.io.creature_cache import CreatureCacheError, read_displays
 
