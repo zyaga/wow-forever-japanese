@@ -50,7 +50,7 @@ local SS = WFJ.SurfaceState
 local PREPEND = { only = { "GOSSIP_OPTION_PREPEND" } } -- an option's quest prepend
 
 local deps = {}
-local inCallback, inRefit, measuring = false, false, false
+local measuring = false
 -- the hooked measure widgets: { greeting = FontString, greetingFont, greetingApplied, option = Button, optionFont,
 -- optionApplied }
 local measure = {}
@@ -109,15 +109,7 @@ local function flagged(set, fn, ...)
   if not ok then error(err, 0) end
 end
 
-local function setInCallback(v) inCallback = v end
-local function setInRefit(v) inRefit = v end
 local function setMeasuring(v) measuring = v end
-
-local function fullUpdate()
-  local sb = scrollBox()
-  if not sb or type(sb.FullUpdate) ~= "function" then return end
-  flagged(setInRefit, sb.FullUpdate, sb, true)
-end
 
 -- The row's height follows its text, the way the client's own Setup does it.
 local function resize(row)
@@ -129,15 +121,16 @@ local function resize(row)
   end
 end
 
--- One refit for every record (Render.refresh dedupes it): resize the recorded rows, then, unless the client is in
--- the middle of its own update or we already are, re-measure and lay the list out again.
+-- One refit for every record (Render.refresh dedupes it): resize the recorded rows. The list itself is never laid out
+-- again from here: ScrollBox:FullUpdate called from addon code runs the client's list code under the addon's taint, and
+-- gamepad navigation then refuses to move between the rows (it reads the list's extents before it selects a row
+-- [verified: forever blizzard_gamepadsmartnavigation/smartnavigation.lua:74-88, 1087-1180;
+-- blizzard_sharedxml/shared/scroll/scrollbox.lua:154-193]). The rows keep the places the client measured for them.
 local function refit()
   for _, rec in pairs(SS.records(SURFACE)) do
     local ctx = rec.meta and rec.meta.ctx
     if ctx and ctx.row then resize(ctx.row) end
   end
-  if inCallback or inRefit then return end
-  fullUpdate()
 end
 
 -- → widget, English, record key for a greeting or option row; nil for any other row.
@@ -177,9 +170,7 @@ function Gossip.onInitialized(_, row, elementData)
   if type(row) == "table" and type(elementData) == "table" and isQuestRow(elementData) then
     if closed then return 0 end
     syncBanner()
-    local n = 0
-    flagged(setInCallback, function() n = questRow(row, elementData) or 0 end)
-    return n
+    return questRow(row, elementData) or 0
   end
   local widget, en, recKey = rowOf(row, elementData)
   if not widget then return 0 end
@@ -194,13 +185,11 @@ function Gossip.onInitialized(_, row, elementData)
   end
   local key = keyOf(en)
   if key and widget:GetText() == en then
-    flagged(setInCallback, WFJ.Render.show, SURFACE, recKey, widget, en, AREA, KIND, key, { refit = refit, row = row })
+    WFJ.Render.show(SURFACE, recKey, widget, en, AREA, KIND, key, { refit = refit, row = row })
     return 1
   end
   if widget:GetText() ~= en and recKey ~= "greeting" then -- "(Quest) <option>"
-    local n = 0
-    flagged(setInCallback, function() n = WFJ.Labels.show(SURFACE, recKey, widget, refit, PREPEND) end)
-    return n
+    return WFJ.Labels.show(SURFACE, recKey, widget, refit, PREPEND)
   end
   SS.drop(SURFACE, recKey)
   return 0
@@ -304,13 +293,6 @@ local function hookMeasureWidgets(sb)
   return installed
 end
 
-local function anyApplied()
-  for _, rec in pairs(SS.records(SURFACE)) do
-    if rec.applied ~= nil or rec.appliedFont then return true end
-  end
-  return false
-end
-
 -- Post-hook on GossipFrame:Update, the client has built and initialized the list. → greeting + options recorded
 function Gossip.onUpdate()
   local f = frame()
@@ -326,8 +308,8 @@ function Gossip.onUpdate()
     end
   end
   local sb = scrollBox()
-  -- The first window of the session was measured before the hooks existed: lay it out again if it shows ours.
-  if sb and hookMeasureWidgets(sb) and anyApplied() then fullUpdate() end
+  -- The first window of the session was measured before the hooks existed and keeps the client's English heights.
+  if sb then hookMeasureWidgets(sb) end
   WFJ.Render.updateBanner(SURFACE)
   return n
 end
