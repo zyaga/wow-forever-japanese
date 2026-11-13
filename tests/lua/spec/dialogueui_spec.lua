@@ -807,6 +807,17 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       assert.are.equal("Unknown words.", panel.lines[3][1])
     end)
 
+    it("the chat panel's font reporting a size not above 0 takes the bundled face at the default size", function()
+      load({ loaded = false })
+      local panel = DUI.installChatPanel()
+      _G.DUIFont_ChatFont.font.size = 0
+      Stub.loadedAddons.DialogueUI = true
+      WFJ.LoadOnDemand.loaded("DialogueUI")
+      WFJ.Speech = { translate = function(en) return en == "Stay alert!" and "油断するな！" or nil end }
+      panel:AddMessage("Stay alert!", "Guard", "CHAT_MSG_MONSTER_SAY")
+      assert.are.same({ WFJ.Font.PATH, WFJ.Font.DEFAULT_SIZE, "" }, { _G.DUIFont_ChatFont:GetFont() })
+    end)
+
     it("with titles left to the client, a quest popup keeps the English title", function()
       load({ titlesOff = true })
       ship({ ["quest.title"] = { [2] = "Sharptalonの鉤爪" } })

@@ -93,6 +93,24 @@ describe("UI/ItemText: the book window", function()
     assert.are.same({ "TOPLEFT", html, "TOPLEFT", 0, 0 }, fs.point)
   end)
 
+  it("a page whose P font reports a size not above 0 shows its Japanese at the default size, and its English back",
+    function()
+      local get = html.GetFont
+      function html:GetFont(t)
+        local p, s, f = get(self, t)
+        if t == "P" then s = -1566.511841 end
+        return p, s, f
+      end
+      ship({ [PAGE_DATA] = PAGE_JA })
+      Stub.openItemText({ PAGE_LIVE })
+      assert.are.equal(PAGE_JA, drawn())
+      local path, size = IT.page.fs:GetFont()
+      assert.are.same({ WFJ.Font.PATH, WFJ.Font.DEFAULT_SIZE }, { path, size })
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      assert.are.equal(PAGE_LIVE, html.text)
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+    end)
+
   it("an HTML page's Japanese is written as HTML (never in our FontString)", function()
     ship({ [HTML_LIVE] = HTML_JA })
     Stub.openItemText({ HTML_LIVE })

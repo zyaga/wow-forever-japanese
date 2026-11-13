@@ -9,8 +9,9 @@ Font.DEFAULT_SIZE = 12
 -- the client's standard UI face: under the font-load probe, and Dialogue UI's fallback face
 Font.CLIENT = "Fonts\\FRIZQT__.TTF"
 
--- `size` when it is a number above 0, else nil. The client can report such a size for a widget or a font object
--- (-1566.5 on a mail row's expiry text) and raises when SetFont is given it back.
+-- `size` when it is a number above 0, else nil. The client has reported such a size for a widget (-1566.5 on a mail
+-- row's expiry text) and raises when SetFont is given it back; every size read from the client is passed through
+-- this before it goes back to SetFont.
 function Font.size(size)
   if type(size) ~= "number" or size ~= size or size <= 0 then return nil end
   return size

@@ -131,3 +131,18 @@ describe("UI/Font and the label path with a reported size that is not above 0", 
       end)
   end
 end)
+
+describe("OptionsWidgets.setText with a FontString reporting a size not above 0", function()
+  it("shows Japanese in the bundled face at the default size and puts the own face back at it", function()
+    Stub.install(H.ADDON_DIR .. "/WoWForeverJapanese.toc")
+    local WFJ = H.loadChunks({ "Core/Const.lua", "Core/Compat.lua", "Core/State.lua", "Core/Settings.lua",
+      "Core/Modifier.lua", "UI/Font.lua", "UI/OptionsText.lua", "UI/OptionsWidgets.lua" })
+    for _, size in ipairs(BAD) do
+      local fs = Stub.fontString("", CLIENT, size, "")
+      WFJ.OptionsWidgets.setText(fs, "未設定")
+      assert.are.same({ WFJ.Font.PATH, WFJ.Font.DEFAULT_SIZE, "" }, { fs:GetFont() })
+      WFJ.OptionsWidgets.setText(fs, "CTRL-J")
+      assert.are.same({ CLIENT, WFJ.Font.DEFAULT_SIZE, "" }, { fs:GetFont() })
+    end
+  end)
+end)

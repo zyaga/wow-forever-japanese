@@ -106,7 +106,7 @@ local function layout(fs, html)
   fs:SetPoint("TOPLEFT", html, "TOPLEFT", 0, 0)
   fs:SetWidth(html:GetWidth())
   local path, size, flags = html:GetFont("P")
-  if path then fs:SetFont(path, size, flags) end
+  if path then fs:SetFont(path, WFJ.Font.size(size) or WFJ.Font.DEFAULT_SIZE, flags) end
   local r, g, b, a = html:GetTextColor("P")
   if r then fs:SetTextColor(r, g, b, a) end
 end
@@ -228,9 +228,9 @@ end
 -- the text types that took the face are put back too, and → false (Render retries it like a FontString's refused
 -- font).
 local function tagSize(tags, tag, size)
-  local base = tags and tags.P.font[2]
-  local own = tags and tags[tag].font[2]
-  if type(base) ~= "number" or base <= 0 or type(own) ~= "number" or type(size) ~= "number" then return size end
+  local base = WFJ.Font.size(tags and tags.P.font[2])
+  local own = WFJ.Font.size(tags and tags[tag].font[2])
+  if not base or not own or type(size) ~= "number" then return size end
   return size * own / base
 end
 
