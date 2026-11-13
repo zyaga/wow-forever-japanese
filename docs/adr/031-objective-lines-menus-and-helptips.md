@@ -136,3 +136,7 @@ characters with a |T…AvailableQuestIcon:16:16|t above their head.") were kept 
 - [ADR-029: camelot targets the mainline family](029-camelot-targets-the-mainline-family.md)
 - [Data model](../architecture/data-model.md) · [Addon modules](../architecture/addon-modules.md) ·
   [Pipeline](../systems/pipeline.md)
+
+## Update: the chat menu is written after it opens
+
+The chat menu (`MENU_CHAT_SHORTCUTS`) no longer gets a `Menu.ModifyMenu` initializer. With one, a language picked from that menu was stored tainted on the chat box and chat messages were refused, most likely because the client sets an element's click and hover scripts after measuring text the initializer wrote. Its entries are written when the client reports the menu open ([ADR-087](087-the-chat-menu-is-written-after-it-opens.md)). The other tagged menus are unchanged.

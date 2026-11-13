@@ -113,7 +113,38 @@ describe("UI/Menus: menu entries", function()
     H.uiSetup(WFJ, UI)
   end)
 
-  after_each(function() H.uiTeardown(); _G.Menu = nil end)
+  after_each(function() H.uiTeardown(); _G.Menu = nil; _G.EventRegistry = nil end)
+
+  -- EventRegistry: RegisterCallback(event, fn, owner) → fn(owner, ...) on TriggerEvent. → the registry
+  local function installRegistry()
+    local registry = { calls = {} }
+    function registry:RegisterCallback(event, fn, owner)
+      self.calls[event] = self.calls[event] or {}
+      table.insert(self.calls[event], { fn, owner })
+    end
+    function registry:TriggerEvent(event, ...)
+      for _, c in ipairs(self.calls[event] or {}) do c[1](c[2], ...) end
+    end
+    _G.EventRegistry = registry
+    return registry
+  end
+
+  -- A menu the client has built with no initializer of ours: its frame holds one element frame per entry, each with
+  -- the client's English. → the menu frame, { [text] = element frame }
+  local function builtMenu(texts)
+    local kids, byText = {}, {}
+    for i, text in ipairs(texts) do
+      local frame = CreateFrame("Button")
+      frame.fontString = Stub.fontString(text)
+      frame.fontString.SetFont = function() error("Use of function 'SetFont' is disallowed. (Index)") end
+      kids[i], byText[text] = frame, frame
+    end
+    local menu = { shown = true }
+    function menu:IsShown() return self.shown end
+    menu.GetNumChildren = function() return #kids end
+    menu.GetChildren = function() return unpack(kids) end
+    return menu, byText
+  end
 
   local function generate(tag, build, contextData)
     local root = element(nil)
@@ -308,7 +339,7 @@ describe("UI/Menus: menu entries", function()
     assert.are.equal("Find Herbs", frames[root.children[3]].fontString:GetText())
   end)
 
-  it("the chat tab menu: Font Size's radios keep their number; the shortcuts menu in Japanese", function()
+  it("the chat tab menu: Font Size's radios keep their number", function()
     WFJ.Menus.init()
     local size
     local root, frames = generate("MENU_FCF_TAB", function(r)
@@ -317,14 +348,111 @@ describe("UI/Menus: menu entries", function()
     end)
     assert.are.equal("文字サイズ", frames[root.children[1]].fontString:GetText())
     assert.are.equal("12ポイント", frames[size.children[1]].fontString:GetText())
-    local lang
-    local s, sf = generate("MENU_CHAT_SHORTCUTS", function(r)
-      r:CreateButton(UI.SAY_MESSAGE[1])
-      lang = r:CreateButton("Language")
-      lang:CreateButton("Common") -- a language name (GetLanguageByIndex): never listed
-    end)
-    assert.are.equal("発言", sf[s.children[1]].fontString:GetText())
-    assert.are.equal("Common", sf[lang.children[1]].fontString:GetText())
+  end)
+
+  it("the chat menu gets no initializer: its entries are written once the client reports it open", function()
+    local registry = installRegistry()
+    assert.is_true(WFJ.Menus.init())
+    -- an initializer on this menu makes its picks run tainted, and a language picked from it then blocks chat
+    assert.is_nil(WFJ.Menus.TAGS.MENU_CHAT_SHORTCUTS)
+    assert.is_nil(callbacks.MENU_CHAT_SHORTCUTS)
+    assert.is_table(WFJ.Menus.AFTER_OPEN.MENU_CHAT_SHORTCUTS)
+
+    local menu, entry = builtMenu({ UI.SAY_MESSAGE[1], "/s", "Common" })
+    registry:TriggerEvent("MenuProxy.OnShow", menu)
+    assert.are.equal(UI.SAY_MESSAGE[1], entry[UI.SAY_MESSAGE[1]].fontString:GetText()) -- nothing until it is open
+    registry:TriggerEvent("Menu.OpenMenuTag", "MENU_CHAT_SHORTCUTS")
+    assert.are.equal("発言", entry[UI.SAY_MESSAGE[1]].fontString:GetText())
+    assert.are.equal("/s", entry["/s"].fontString:GetText()) -- the slash command beside an entry
+    assert.are.equal("Common", entry["Common"].fontString:GetText()) -- a language name: never listed
+  end)
+
+  -- The addon's writes on a text widget so far (the stub counts them).
+  local function writes(fs) return fs.calls.addonSetText + fs.calls.addonSetFont end
+
+  it("a closed chat menu lets go of its text widgets: the next menu to take one is never written", function()
+    local registry = installRegistry()
+    WFJ.Menus.init()
+    local menu, entry = builtMenu({ UI.SAY_MESSAGE[1] })
+    local pooled = entry[UI.SAY_MESSAGE[1]].fontString
+    registry:TriggerEvent("MenuProxy.OnShow", menu)
+    registry:TriggerEvent("Menu.OpenMenuTag", "MENU_CHAT_SHORTCUTS")
+    assert.are.equal("発言", pooled:GetText())
+
+    registry:TriggerEvent("MenuProxy.OnHide", menu) -- before the client hands the widgets back to the shared pool
+    assert.are.equal(UI.SAY_MESSAGE[1], pooled:GetText()) -- the client's text is back on it
+    local widget = WFJ.Labels.menuText(pooled) -- the adapter a menu record sits on
+    for _, rec in pairs(WFJ.SurfaceState.records(WFJ.Menus.SURFACE)) do assert.are_not.equal(widget, rec.fs) end
+
+    -- another menu takes the widget; its entry may even show the same English (a unit menu is never translated)
+    for _, text in ipairs({ "Trade", UI.SAY_MESSAGE[1] }) do
+      pooled:SetText(text)
+      local before = writes(pooled)
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      WFJ.Render.refresh(WFJ.Menus.SURFACE)
+      assert.are.equal(text, pooled:GetText())
+      assert.are.equal(before, writes(pooled), text)
+    end
+    -- hiding it again, or a menu the addon never wrote, does nothing
+    assert.are.equal(0, WFJ.Menus.onMenuHidden(nil, menu))
+    assert.are.equal(0, WFJ.Menus.onMenuHidden(nil, (builtMenu({ "Trade" }))))
+  end)
+
+  it("a rebuild of the open chat menu moves its widgets to other frames: they are still let go", function()
+    local registry = installRegistry()
+    WFJ.Menus.init()
+    local menu, entry = builtMenu({ UI.SAY_MESSAGE[1], "/s" })
+    local say, slash = entry[UI.SAY_MESSAGE[1]], entry["/s"]
+    local pooled = say.fontString
+    registry:TriggerEvent("MenuProxy.OnShow", menu)
+    registry:TriggerEvent("Menu.OpenMenuTag", "MENU_CHAT_SHORTCUTS")
+    assert.are.equal("発言", pooled:GetText())
+    say.fontString, slash.fontString = slash.fontString, say.fontString -- the pool hands them back in another order
+    registry:TriggerEvent("MenuProxy.OnHide", menu)
+    local widget = WFJ.Labels.menuText(pooled)
+    for _, rec in pairs(WFJ.SurfaceState.records(WFJ.Menus.SURFACE)) do assert.are_not.equal(widget, rec.fs) end
+  end)
+
+  it("an error while writing an opened menu is recorded once and never raised", function()
+    local registry = installRegistry()
+    WFJ.Menus.init()
+    WFJ.initErrors = nil
+    local menu = builtMenu({ UI.SAY_MESSAGE[1] })
+    menu.IsShown = function() error("boom") end
+    registry:TriggerEvent("MenuProxy.OnShow", menu)
+    registry:TriggerEvent("Menu.OpenMenuTag", "MENU_CHAT_SHORTCUTS")
+    registry:TriggerEvent("Menu.OpenMenuTag", "MENU_CHAT_SHORTCUTS")
+    assert.are.equal(1, #WFJ.initErrors)
+    assert.are.equal("menus.afteropen", WFJ.initErrors[1].surface)
+  end)
+
+  it("the after-open path leaves other tags and hidden menus alone", function()
+    local registry = installRegistry()
+    WFJ.Menus.init()
+    local menu, entry = builtMenu({ UI.SAY_MESSAGE[1] })
+    registry:TriggerEvent("MenuProxy.OnShow", menu)
+    registry:TriggerEvent("Menu.OpenMenuTag", "MENU_FCF_TAB") -- a tag translated by its initializers
+    registry:TriggerEvent("Menu.OpenMenuTag", "MENU_UNIT_SELF") -- a tag the addon never touches
+    assert.are.equal(UI.SAY_MESSAGE[1], entry[UI.SAY_MESSAGE[1]].fontString:GetText())
+    menu.shown = false -- a menu shown earlier and since closed
+    registry:TriggerEvent("Menu.OpenMenuTag", "MENU_CHAT_SHORTCUTS")
+    assert.are.equal(UI.SAY_MESSAGE[1], entry[UI.SAY_MESSAGE[1]].fontString:GetText())
+  end)
+
+  it("the registry callbacks are placed once however often init runs", function()
+    local registry = installRegistry()
+    assert.is_true(WFJ.Menus.init())
+    assert.is_true(WFJ.Menus.init())
+    assert.are.equal(1, #registry.calls["MenuProxy.OnShow"])
+    assert.are.equal(1, #registry.calls["Menu.OpenMenuTag"])
+    assert.are.equal(1, #registry.calls["MenuProxy.OnHide"])
+  end)
+
+  it("with no event registry the tagged menus are still registered", function()
+    assert.is_nil(_G.EventRegistry)
+    assert.is_true(WFJ.Menus.init())
+    assert.is_function(callbacks.MENU_FCF_TAB)
   end)
 
   it("the world map filter: title and entries in Japanese; each entry owns its description tooltip", function()
