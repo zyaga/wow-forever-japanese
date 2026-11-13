@@ -365,15 +365,51 @@ describe("UI/Menus: menu entries", function()
     assert.are.equal("発言", entry[UI.SAY_MESSAGE[1]].fontString:GetText())
     assert.are.equal("/s", entry["/s"].fontString:GetText()) -- the slash command beside an entry
     assert.are.equal("Common", entry["Common"].fontString:GetText()) -- a language name: never listed
+  end)
 
-    -- no resetter runs on this path: when the client hands the pooled frame to another menu and writes its own
-    -- text, a refresh drops our record and leaves that text alone
-    local reused = entry[UI.SAY_MESSAGE[1]].fontString
-    reused:SetText("Trade")
-    WFJ.Render.refresh(WFJ.Menus.SURFACE)
-    assert.are.equal("Trade", reused:GetText())
-    local widget = WFJ.Labels.menuText(reused) -- the adapter a menu record sits on
+  -- The addon's writes on a text widget so far (the stub counts them).
+  local function writes(fs) return fs.calls.addonSetText + fs.calls.addonSetFont end
+
+  it("a closed chat menu lets go of its text widgets: the next menu to take one is never written", function()
+    local registry = installRegistry()
+    WFJ.Menus.init()
+    local menu, entry = builtMenu({ UI.SAY_MESSAGE[1] })
+    local pooled = entry[UI.SAY_MESSAGE[1]].fontString
+    registry:TriggerEvent("MenuProxy.OnShow", menu)
+    registry:TriggerEvent("Menu.OpenMenuTag", "MENU_CHAT_SHORTCUTS")
+    assert.are.equal("発言", pooled:GetText())
+
+    registry:TriggerEvent("MenuProxy.OnHide", menu) -- before the client hands the widgets back to the shared pool
+    local widget = WFJ.Labels.menuText(pooled) -- the adapter a menu record sits on
     for _, rec in pairs(WFJ.SurfaceState.records(WFJ.Menus.SURFACE)) do assert.are_not.equal(widget, rec.fs) end
+
+    -- another menu takes the widget; its entry may even show the same English (a unit menu is never translated)
+    for _, text in ipairs({ "Trade", UI.SAY_MESSAGE[1] }) do
+      pooled:SetText(text)
+      local before = writes(pooled)
+      Stub.keys.alt = true; WFJ.Modifier.refresh()
+      Stub.keys.alt = false; WFJ.Modifier.refresh()
+      WFJ.Render.refresh(WFJ.Menus.SURFACE)
+      assert.are.equal(text, pooled:GetText())
+      assert.are.equal(before, writes(pooled), text)
+    end
+    -- hiding a menu the addon never wrote does nothing
+    registry:TriggerEvent("MenuProxy.OnHide", menu)
+    registry:TriggerEvent("MenuProxy.OnHide", (builtMenu({ "Trade" })))
+  end)
+
+  it("an error while writing an opened menu is recorded once and never raised", function()
+    local registry = installRegistry()
+    WFJ.Menus.init()
+    WFJ.initErrors = nil
+    local menu = builtMenu({ UI.SAY_MESSAGE[1] })
+    menu.GetChildren = function() error("boom") end
+    menu.IsShown = function() error("boom") end
+    registry:TriggerEvent("MenuProxy.OnShow", menu)
+    registry:TriggerEvent("Menu.OpenMenuTag", "MENU_CHAT_SHORTCUTS")
+    registry:TriggerEvent("Menu.OpenMenuTag", "MENU_CHAT_SHORTCUTS")
+    assert.are.equal(1, #WFJ.initErrors)
+    assert.are.equal("menus.afteropen", WFJ.initErrors[1].surface)
   end)
 
   it("the after-open path leaves other tags and hidden menus alone", function()
@@ -395,6 +431,7 @@ describe("UI/Menus: menu entries", function()
     assert.is_true(WFJ.Menus.init())
     assert.are.equal(1, #registry.calls["MenuProxy.OnShow"])
     assert.are.equal(1, #registry.calls["Menu.OpenMenuTag"])
+    assert.are.equal(1, #registry.calls["MenuProxy.OnHide"])
   end)
 
   it("with no event registry the tagged menus are still registered", function()

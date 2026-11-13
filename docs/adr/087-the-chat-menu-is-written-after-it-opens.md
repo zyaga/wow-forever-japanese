@@ -33,7 +33,9 @@ What is inferred [likely]: that the tainted scripts are the path (the source rea
 1. **The chat menu gets no initializer.** `MENU_CHAT_SHORTCUTS` is not in `Menus.TAGS`, so no `Menu.ModifyMenu` callback is registered for it.
 2. **Its entries are written once the client reports the menu open.** The client triggers `Menu.OpenMenuTag` after it has built a tagged menu and set its elements' scripts (`menu.lua:2453–2459`), and `MenuProxy.OnShow` for each menu frame it shows (`menu.lua:1845–1849`). `UI/Menus.lua` remembers the shown menu frames and, on `Menu.OpenMenuTag` for a tag in `Menus.AFTER_OPEN`, shows every element frame under them through the same `Menus.showElement` the initializers use.
 3. **The menu keeps the client's layout.** It is not laid out again for the Japanese.
-4. **Only this menu.** Every other tagged menu keeps its initializers.
+4. **Its text widgets are let go when the menu hides.** A menu's text widgets come from one pool that every menu shares (`blizzard_menu/compositor.lua:367–390`), and the initializer path drops its records in a resetter. This path has no resetter, so on `MenuProxy.OnHide`, which fires before the client hands the widgets back (`menu.lua:1751–1764, 1851–1853`), the addon drops the records of the element frames it wrote. Without that, a later refresh would write this addon's font or text onto whichever menu took the widget next, a unit right-click menu included.
+5. **An error on this path is recorded, never raised.** `Menu.OpenMenuTag` fires for every tagged menu the client opens; the callback's body runs under `pcall` and records a distinct error once, as the untagged menus' hook does.
+6. **Only this menu.** Every other tagged menu keeps its initializers.
 
 ## Rationale
 
@@ -45,7 +47,7 @@ What is inferred [likely]: that the tainted scripts are the path (the source rea
 
 - A language picked from the chat menu is stored untainted, and the chat box reads it clean when a message is sent.
 - The chat menu looks as before: its top-level entries in Japanese, slash commands and language names as the client writes them.
-- If the client rebuilds the open menu's entries, they show English until the menu is opened again. This was not seen in game with a submenu open.
+- If the client rebuilds the open menu's entries, they show English until the menu is opened again. No pick does that: a pick closes the menu, and an open submenu never rebuilds the root. The chat menu button rebuilds its menu on `LANGUAGE_LIST_CHANGED`, `CAN_PLAYER_SPEAK_LANGUAGE_CHANGED` and `NEUTRAL_FACTION_SELECT_RESULT` (`chatframemenubutton.lua`, `OnEvent`), which is the one way to see it.
 - A label much longer than its English would be cut off, since the width is the client's. A new label on this menu is checked in game.
 - `docs/testing/strategy.md` has a step for the language pick.
 

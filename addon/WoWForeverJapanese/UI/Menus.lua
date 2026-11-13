@@ -289,14 +289,20 @@ local hooked = {} -- tag → true, once its ModifyMenu callback is registered
 local afterOpenHooked = false
 
 local shownMenus = setmetatable({}, { __mode = "k" }) -- menu frame → true, from "MenuProxy.OnShow"
+-- menu frame → the element frames written on it. A menu's text widgets come from one pool every menu shares
+-- (blizzard_menu/compositor.lua:367-390), so a record left on one would be written onto whichever menu takes it next.
+local written = setmetatable({}, { __mode = "k" })
 
--- Every element frame under `frame` that has a text widget. → count shown
-local function showUnder(tag, frame, depth)
+-- Every element frame under `frame` that has a text widget, collected in `into`. → count shown
+local function showUnder(tag, frame, depth, into)
   local n = 0
   for _, child in ipairs(WFJ.Frames.children(frame)) do
     if type(child) == "table" then
-      if type(child.fontString) == "table" then n = n + Menus.showElement(tag, child, nil) end
-      if depth < 3 then n = n + showUnder(tag, child, depth + 1) end
+      if type(child.fontString) == "table" then
+        into[#into + 1] = child
+        n = n + Menus.showElement(tag, child, nil)
+      end
+      if depth < 3 then n = n + showUnder(tag, child, depth + 1, into) end
     end
   end
   return n
@@ -307,13 +313,44 @@ function Menus.onMenuShown(_, menuFrame)
   if type(menuFrame) == "table" then shownMenus[menuFrame] = true end
 end
 
--- "Menu.OpenMenuTag" (owner, tag): the client has built the menu and set its scripts. → count shown
-function Menus.onMenuOpened(_, tag)
-  if not Menus.AFTER_OPEN[tag] then return 0 end
+local function opened(tag)
   local n = 0
   for menuFrame in pairs(shownMenus) do
-    if type(menuFrame.IsShown) == "function" and menuFrame:IsShown() then n = n + showUnder(tag, menuFrame, 0) end
+    if type(menuFrame.IsShown) == "function" and menuFrame:IsShown() then
+      local frames = written[menuFrame] or {}
+      written[menuFrame] = frames
+      n = n + showUnder(tag, menuFrame, 0, frames)
+    end
   end
+  return n
+end
+
+local reported = {} -- error text → true: each distinct error is recorded once, not on every menu opened
+
+-- "Menu.OpenMenuTag" (owner, tag): the client has built the menu and set its scripts. It runs for every tagged menu
+-- the client opens, so it never raises: an error is recorded where the load errors are (WFJ.initErrors, surface
+-- "menus.afteropen", printed by /wfj debug) and the menu stays English. → count shown
+function Menus.onMenuOpened(_, tag)
+  if not Menus.AFTER_OPEN[tag] then return 0 end
+  local ok, n = pcall(opened, tag)
+  if ok then return n end
+  local err = tostring(n)
+  if not reported[err] then
+    reported[err] = true
+    WFJ.initErrors = WFJ.initErrors or {}
+    WFJ.initErrors[#WFJ.initErrors + 1] = { surface = "menus.afteropen", err = err }
+  end
+  return 0
+end
+
+-- "MenuProxy.OnHide" (owner, menuFrame): fired as the menu hides, before the client hands its text widgets back to
+-- the pool (menu.lua:1751-1764, 1851-1853). What the initializer path's resetter does. → records dropped
+function Menus.onMenuHidden(_, menuFrame)
+  local frames = type(menuFrame) == "table" and written[menuFrame] or nil
+  if not frames then return 0 end
+  written[menuFrame] = nil
+  local n = 0
+  for _, frame in ipairs(frames) do n = n + Menus.resetElement(frame) end
   return n
 end
 
@@ -336,6 +373,7 @@ function Menus.init()
     afterOpenHooked = true
     registry:RegisterCallback("MenuProxy.OnShow", Menus.onMenuShown, Menus)
     registry:RegisterCallback("Menu.OpenMenuTag", Menus.onMenuOpened, Menus)
+    registry:RegisterCallback("MenuProxy.OnHide", Menus.onMenuHidden, Menus)
   end
   return true
 end
