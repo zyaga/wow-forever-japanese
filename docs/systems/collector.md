@@ -69,7 +69,7 @@ One line of NPC dialogue: a gossip greeting or option, or the quest window's gre
 
 - No unit-tooltip hook. NPC chat speech is recorded through `UI/Speech` (the table above), except a line the NPC says to another player, which may carry that player's name; speech bubbles are not read separately: a bubble repeats a chat line.
 - Recording is independent of the master switch, areas and the modifier: it reads the API, not what we show.
-- **NPC id:** `Collector.creatureId(guid)` → integer for `Creature-…`/`Vehicle-…` via `guid:match("-(%d+)-%x+$")` [verified: classic_era `Blizzard_PTRFeedback_Tooltips.lua:89–91`]; `Player`/`Pet`/`GameObject`/other → `nil` (`recordNpc` → `"refused", "no_creature"`; `recordGossip` records without an id). The GUID is never stored.
+- **NPC id:** `Collector.creatureId(guid)` → integer for `Creature-…`/`Vehicle-…` via `guid:match("-(%d+)-%x+$")` [verified: classic_era `Blizzard_PTRFeedback_Tooltips.lua:89–91`]; `Player`/`Pet`/`GameObject`/other → `nil`, and so does a GUID the client hands over as a secret value (`issecretvalue`; addon code may not index or compare it) (`recordNpc` → `"refused", "no_creature"`; `recordGossip` records without an id; the voice speaker lookup gets no creature). The GUID is never stored.
 
 ### Dump shape: `WFJ_Collector`
 ```lua

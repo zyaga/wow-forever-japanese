@@ -8,8 +8,8 @@ local PLAYER = { name = "Reyn", class = "Hunter", race = "Night Elf" }
 -- Core/Collector under the std-lib-only environment, on top of the (pure) modules it reads.
 local function loadCollector()
   H.coreStub()
-  local ns = H.loadChunks({ "Core/Const.lua", "Core/Normalize.lua", "Core/Hash.lua", "Core/State.lua",
-    "Core/Settings.lua" })
+  local ns = H.loadChunks({ "Core/Const.lua", "Core/Compat.lua", "Core/Normalize.lua", "Core/Hash.lua",
+    "Core/State.lua", "Core/Settings.lua" })
   H.loadPure("Core/Collector.lua", nil, ns)
   return ns
 end
@@ -388,6 +388,34 @@ describe("Core/Collector", function()
       assert.are.equal("Senani Thunderheart", db.entries["npc:3100:name"].e)
       assert.are.same({ "refused", "own_name" }, { C.recordNpc("Creature-0-4372-0-17-99-0000A1B2C3", "Reyn") })
       assert.are.same({ "refused", "no_creature" }, { C.recordNpc("Player-4372-0ABCDEF1", "Someone") })
+    end)
+
+    describe("a GUID the client keeps secret", function()
+      local SECRET = "Creature-0-4372-0-17-3100-0000A1B2C3"
+      before_each(function()
+        local client = { issecretvalue = function(v) return v == SECRET end }
+        WFJ.Compat.init(function(name) return client[name] end)
+      end)
+
+      it("gives no creature id, and other GUIDs still give theirs", function()
+        assert.is_nil(C.creatureId(SECRET))
+        assert.are.equal(28670, C.creatureId("Vehicle-0-4372-571-2-28670-00002B4A1D"))
+        assert.is_nil(C.creatureId("Player-4372-0ABCDEF1"))
+      end)
+
+      it("refuses the quest giver's name and records nothing", function()
+        local db = C.load(nil, deps())
+        assert.are.same({ "refused", "no_creature" }, { C.recordNpc(SECRET, "Senani Thunderheart") })
+        assert.is_nil(db.entries["npc:3100:name"])
+      end)
+
+      it("records a gossip line without an NPC id and counts no error", function()
+        local db = C.load(nil, deps())
+        assert.are.equal("recorded", (C.recordGossip("Greetings, traveler.", SECRET)))
+        local _, e = next(db.entries)
+        assert.is_nil(e.n)
+        assert.are.equal(0, C.status().errors)
+      end)
     end)
   end)
 
