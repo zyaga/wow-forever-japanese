@@ -157,15 +157,14 @@ describe("UI/Gossip: the NPC talk window", function()
     check(false)
   end)
 
-  it("row heights follow the shown text: first window of the session, scroll, Alt and release", function()
+  it("the list is never laid out again by the addon; from the second window the client measures the shown text", function()
     setup(5)
     local names = options(12)
     ship({ ["Welcome."] = LONG_JA .. LONG_JA, [names[1]] = LONG_JA, [names[3]] = LONG_JA, [names[12]] = LONG_JA })
     Stub.showGossip({ text = "Welcome.", options = names, npc = NPC })
-    -- measured in English before the measure widgets were hooked: laid out once more after Update
-    assert.are.equal(1, sb.calls.FullUpdate)
+    -- measured in English before the measure widgets were hooked: the rows keep the places the client gave them
+    assert.are.equal(0, sb.calls.FullUpdate)
     assert.is_true(isJapanese(sb.frames[4]:GetText()))
-    assertLayout()
     local greetingMeasure, optionMeasure = G.measureWidgets()
     assert.are.equal(Stub.gossipMeasure.greeting.GreetingText, greetingMeasure)
     assert.are.equal(Stub.gossipMeasure.option, optionMeasure)
@@ -175,20 +174,23 @@ describe("UI/Gossip: the NPC talk window", function()
     end
 
     sb:scrollTo(10)
-    assertLayout()
     Stub.keys.alt = true; WFJ.Modifier.refresh()
     assert.are.equal(names[12], sb.frames[15]:GetText())
-    assertLayout()
     Stub.keys.alt = false; WFJ.Modifier.refresh()
     assert.are.equal(LONG_JA, sb.frames[15]:GetText())
-    assertLayout()
+    assert.are.equal(0, sb.calls.FullUpdate)
 
-    -- the next window: the hooks exist, so the client's own layout is already right
-    local before = sb.calls.FullUpdate
+    -- the next window: the hooks exist, so the client's own layout is already right, scrolled or not
     Stub.closeGossip()
     Stub.showGossip({ text = "Welcome.", options = names, npc = NPC })
-    assert.are.equal(before, sb.calls.FullUpdate)
     assertLayout()
+    sb:scrollTo(0)
+    assert.is_true(isJapanese(sb.frames[4]:GetText()))
+    assertLayout()
+    sb:scrollTo(10)
+    assert.are.equal(LONG_JA, sb.frames[15]:GetText())
+    assertLayout()
+    assert.are.equal(0, sb.calls.FullUpdate)
   end)
 
   it("quest rows and a prepend-decorated option are never written and never recorded", function()
@@ -322,27 +324,23 @@ describe("UI/Gossip: the NPC talk window", function()
     assert.are.equal("古い選択肢。", stale:GetText())
     assert.are.equal(WFJ.MARKER.stale, G.banner:GetText())
     assert.is_true(G.banner:IsShown())
-    assertLayout()
 
-    local updates = sb.calls.FullUpdate
     assert.are.equal(0, WFJ.Render.refresh("gossip"))
-    assert.are.equal(updates, sb.calls.FullUpdate)
 
     for _, flip in ipairs({ { "enabled", false, true }, { "area.gossip", false, true } }) do
       S.set(flip[1], flip[2])
       assert.are.equal("Hello.", greeting.GreetingText:GetText(), flip[1])
       assert.are.equal("Old option.", stale:GetText(), flip[1])
       assert.are.same({ "Fonts\\FRIZQT__.TTF", 13, "" }, fontOf(greeting))
-      assertLayout()
       S.set(flip[1], flip[3])
       assert.are.equal("こんにちは。", greeting.GreetingText:GetText(), flip[1])
-      assertLayout()
     end
     Stub.keys.alt = true; WFJ.Modifier.refresh()
     assert.are.equal("Old option.", stale:GetText())
     Stub.keys.alt = false; WFJ.Modifier.refresh()
     assert.are.equal(marker .. "古い選択肢。", stale:GetText())
-    assertLayout()
+    -- a refresh changes a row's text, never the list's layout
+    assert.are.equal(0, sb.calls.FullUpdate)
   end)
   it("QA: a line shipped under its literal key renders for a player whose class it names (candidate keys)", function()
     -- the translation was keyed from a non-mage's dump: "mage" stayed literal; a Mage player's full key differs
