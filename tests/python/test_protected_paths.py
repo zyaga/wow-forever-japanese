@@ -52,10 +52,10 @@ def test_no_source_runs_a_scroll_frames_scripts(root):
     assert sorted(set(_hits(root, SCROLL_REFIT)) - SCROLL_REFIT_ALLOWED) == []
 
 
-# ScrollBox:FullUpdate called from addon code runs the client's list code under this addon's taint: the list's extents
-# and its size-change script come out tainted. Gamepad navigation reads those extents before it selects the next row
-# of a scroll list and refuses to move once they are tainted, so a controller could not move between an NPC talk
-# window's options (ADR-086). The description boxes that UI/Labels re-fits hold text only, with no row to move to.
+# ScrollBox:FullUpdate called from addon code runs the client's list code under this addon's taint. Gamepad navigation
+# reads the list's extents before it selects the next row of a scroll list and refuses to act when it does not run
+# secure; with the call in place a controller could not move between an NPC talk window's options, and without it it
+# can (ADR-086). The description boxes that UI/Labels re-fits hold text only, with no row to move to.
 # Only this one method is checked.
 LIST_RELAYOUT = re.compile(r"\bFullUpdate\b")
 LIST_RELAYOUT_ALLOWED = {"UI/Labels.lua"}

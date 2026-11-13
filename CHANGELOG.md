@@ -10,7 +10,7 @@ an old setting stops working). A release moves those lines under its version num
 ## Unreleased
 
 ### Fixed
-- With a controller, the cursor moves between the options in an NPC talk window again. It used to stay on the top option with an "interface action failed" message. In the first talk window after login or a reload, the greeting and the first option can now sit a little too close or too far apart; talking to the NPC again puts them right.
+- With a controller, the cursor moves between the options in an NPC talk window again. It used to stay on the top option with an "interface action failed" message. In the first talk window after login or a reload, and while you hold the key to see the English, a line can now run into the one below it or leave a gap; talking to the NPC again puts it right.
 
 ## 0.13.0 - 2026-11-12
 
