@@ -87,8 +87,9 @@ function W.setText(fs, text, size)
   fs:SetText(text or "")
   if hasJapanese(text) then
     local path, current, flags = fs:GetFont()
+    current = WFJ.Font.size(current) or WFJ.Font.DEFAULT_SIZE
     if not fs.wfjOwnFont and path ~= WFJ.Font.PATH then fs.wfjOwnFont = { path, current, flags } end
-    WFJ.Font.set(fs, WFJ.Font.PATH, size or current or WFJ.Font.DEFAULT_SIZE, flags or "")
+    WFJ.Font.set(fs, WFJ.Font.PATH, size or current, flags or "")
   elseif fs.wfjOwnFont then
     WFJ.Font.set(fs, fs.wfjOwnFont[1], fs.wfjOwnFont[2], fs.wfjOwnFont[3])
   end

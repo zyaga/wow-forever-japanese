@@ -188,7 +188,7 @@ local function chatFont()
   if type(obj) ~= "table" or type(obj.GetFont) ~= "function" or type(obj.SetFont) ~= "function" then return end
   local path, size, flags = obj:GetFont()
   if path == WFJ.Font.PATH then return end
-  obj:SetFont(WFJ.Font.PATH, size, flags or "")
+  obj:SetFont(WFJ.Font.PATH, WFJ.Font.size(size) or WFJ.Font.DEFAULT_SIZE, flags or "")
 end
 
 local function chatLine(text)

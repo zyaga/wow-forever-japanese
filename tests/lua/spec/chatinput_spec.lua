@@ -36,4 +36,13 @@ describe("UI/ChatInput", function()
     assert.are.same({ WFJ.Font.PATH, 12, "" }, box.font)
     assert.are.equal(0, WFJ.ChatInput.hookAll()) -- hooked once
   end)
+
+  it("a widget whose reported size is not above 0 gets the bundled face at the default size", function()
+    for _, size in ipairs({ -1566.511841, 0, 0 / 0 }) do
+      box.font = { "Fonts\\ARIALN.TTF", size, "" }
+      WFJ.ChatInput.init()
+      box.scripts.OnShow(box)
+      assert.are.same({ WFJ.Font.PATH, WFJ.Font.DEFAULT_SIZE, "" }, box.font)
+    end
+  end)
 end)

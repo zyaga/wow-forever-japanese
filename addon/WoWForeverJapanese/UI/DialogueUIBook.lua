@@ -157,7 +157,9 @@ local function fonts(bundled)
     if type(obj) == "table" and type(obj.GetFont) == "function" and type(obj.SetFont) == "function" then
       if bundled then
         local path, size, flags = obj:GetFont()
-        if path ~= WFJ.Font.PATH then saved[name] = { path, size, flags or "" } end
+        if path ~= WFJ.Font.PATH then
+          saved[name] = { path, WFJ.Font.size(size) or WFJ.Font.DEFAULT_SIZE, flags or "" }
+        end
         local s = saved[name]
         if s then obj:SetFont(WFJ.Font.PATH, s[2], s[3]) end
       elseif saved[name] then
