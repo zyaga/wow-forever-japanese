@@ -162,7 +162,6 @@ Menus.TAGS = {
     "LOCK_WINDOW", "UNDOCK_WINDOW", "MAKE_INTERACTABLE", "MAKE_UNINTERACTABLE", "RENAME_CHAT_WINDOW",
     "NEW_CHAT_WINDOW", "CLOSE_CHAT_WINDOW", "CLOSE_CHAT_WHISPER_WINDOW", "DISPLAY", "FONT_SIZE", "FONT_SIZE_TEMPLATE",
     "BACKGROUND", "FILTERS", "CHAT_CONFIGURATION" } },
-  MENU_CHAT_SHORTCUTS = { source = "mainline/chatframemenubutton.lua:56", keys = CHAT_SHORTCUT_KEYS },
   MENU_CHAT_FRAME_CHANNEL = { source = "shared/chatframeutil.lua:712", titleIsName = true,
     keys = { "CHAT_CHANNEL_DROP_DOWN_OPEN_COMMUNITIES_FRAME", "MOVE_TO_NEW_WINDOW" } },
   -- the AddOn list: the character filter, and an entry's context menu whose title is the addon's title
@@ -197,9 +196,20 @@ Menus.TAGS = {
   MENU_TIME_MANAGER_AMPM = { source = "blizzard_timemanager.lua:216", keys = { "TIMEMANAGER_AM", "TIMEMANAGER_PM" } },
 }
 
+-- Menus shown in Japanese only after the client has built them. A menu element's initializers run, the client
+-- measures the element, and then sets its click and hover scripts, all in one step (blizzard_menu/menu.lua:1016-1066,
+-- 1117-1131). Text this addon wrote is measured tainted, so those scripts are set tainted and whatever a pick then
+-- writes is tainted too. The chat menu's picks write the chat box's language and chat type, which the client reads
+-- as it sends a chat message (shared/chatframeeditbox.lua:296-319, 835-839): the send was refused. So this menu gets
+-- no initializer; its entries are written once the menu is open ("Menu.OpenMenuTag", menu.lua:2453-2459), and keep
+-- the width the client laid out for the English. Its submenus hold slash commands and language names: never touched.
+Menus.AFTER_OPEN = {
+  MENU_CHAT_SHORTCUTS = { source = "mainline/chatframemenubutton.lua:56", keys = CHAT_SHORTCUT_KEYS },
+}
+
 -- The untagged menus are UI/MenusUntagged's: Menus.UNTAGGED is set there (loaded next).
 Menus.UNTAGGED = {}
-local function specOf(tag) return Menus.TAGS[tag] or Menus.UNTAGGED[tag] end
+local function specOf(tag) return Menus.TAGS[tag] or Menus.UNTAGGED[tag] or Menus.AFTER_OPEN[tag] end
 
 -- The element frame's text widget: frame.fontString for a button, checkbox, radio or title.
 -- (through Labels.menuText: the compositor forbids SetFont on it)
@@ -274,6 +284,35 @@ end
 
 local hooked = {}
 
+local shownMenus = setmetatable({}, { __mode = "k" }) -- menu frame → true, from "MenuProxy.OnShow"
+
+-- Every element frame under `frame` that has a text widget. → count shown
+local function showUnder(tag, frame, depth)
+  local n = 0
+  for _, child in ipairs(WFJ.Frames.children(frame)) do
+    if type(child) == "table" then
+      if type(child.fontString) == "table" then n = n + Menus.showElement(tag, child, nil) end
+      if depth < 3 then n = n + showUnder(tag, child, depth + 1) end
+    end
+  end
+  return n
+end
+
+-- "MenuProxy.OnShow" (owner, menuFrame): remembered so an opened tag's frames can be found.
+function Menus.onMenuShown(_, menuFrame)
+  if type(menuFrame) == "table" then shownMenus[menuFrame] = true end
+end
+
+-- "Menu.OpenMenuTag" (owner, tag): the client has built the menu and set its scripts. → count shown
+function Menus.onMenuOpened(_, tag)
+  if not Menus.AFTER_OPEN[tag] then return 0 end
+  local n = 0
+  for menuFrame in pairs(shownMenus) do
+    if type(menuFrame.IsShown) == "function" and menuFrame:IsShown() then n = n + showUnder(tag, menuFrame, 0) end
+  end
+  return n
+end
+
 -- Called by Main after Compat.init. Registers one ModifyMenu callback per tag; Menu is loaded at login (Blizzard_Menu
 -- is not load-on-demand), and a tag whose generator never runs on this client simply never fires. → true when the
 -- Menu API was found
@@ -286,6 +325,13 @@ function Menus.init()
       hooked[tag] = true
       modify(tag, function(_, root, contextData) Menus.onMenu(tag, root, contextData) end)
     end
+  end
+  Compat.declare(SURFACE, "eventRegistry", { "EventRegistry" })
+  local registry = Compat.get(SURFACE, "eventRegistry")
+  if not hooked.afterOpen and type(registry) == "table" and type(registry.RegisterCallback) == "function" then
+    hooked.afterOpen = true
+    registry:RegisterCallback("MenuProxy.OnShow", Menus.onMenuShown, Menus)
+    registry:RegisterCallback("Menu.OpenMenuTag", Menus.onMenuOpened, Menus)
   end
   return true
 end
