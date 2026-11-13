@@ -157,7 +157,7 @@ describe("UI/Gossip: the NPC talk window", function()
     check(false)
   end)
 
-  it("the list is never laid out again by the addon; from the second window the client measures the shown text", function()
+  it("the addon never lays the list out again; from the second window the client measures it", function()
     setup(5)
     local names = options(12)
     ship({ ["Welcome."] = LONG_JA .. LONG_JA, [names[1]] = LONG_JA, [names[3]] = LONG_JA, [names[12]] = LONG_JA })

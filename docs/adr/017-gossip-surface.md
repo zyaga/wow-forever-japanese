@@ -51,3 +51,7 @@ ADR-005 fixed the gossip key (normalize_v1 + Hash32x2 of the live English) and p
 ## Update: no scroll refit on the greeting
 
 The greeting prose no longer refits with `QuestGreetingScrollFrame:UpdateScrollChildRect()`: called from addon code, it runs the scroll frame's scripts under this addon's taint. The client keeps the range itself ([ADR-077](077-the-quest-windows-are-never-re-measured-from-addon-code.md)).
+
+## Update: the list is never laid out again
+
+`UI/Gossip.lua` no longer calls `ScrollBox:FullUpdate(true)`, neither after the session's first window nor from the refit: called from addon code, it runs the list's code under this addon's taint, and gamepad navigation then refuses to move between the rows. The first window of a session keeps the row places the client measured from the English; the measure-widget hooks of Decision 2 stay ([ADR-086](086-the-talk-window-list-is-never-laid-out-again-from-addon-code.md)).
