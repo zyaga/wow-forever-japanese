@@ -15,7 +15,8 @@
 --     layout pass [verified: Blizzard_SharedXML/Shared/Scroll/ScrollBoxLinearView.lua:12–33, 93–96;
 --     ScrollBoxViewUtil.lua:33–49; ScrollBoxListView.lua:360–397]. So every row's height must equal its extent: the
 --     measure widgets are post-hooked once they are first seen (from the data provider after Update) to measure the
---     text the policy will show (Render.preview), and the session's first window is laid out again once.
+--     text the policy will show (Render.preview). A window measured before a widget was hooked (the session's first
+--     with a greeting, its first with an option) keeps the row places and heights the client gave it.
 --   * [unverified; in-game check in docs/testing/strategy.md] both row initializers call
 --     self:RegisterFontString(<row text>) before Setup and Update ends with self:UpdateTheme()
 --     (GossipFrameShared.lua:143, 148, 294) on a UIThemeContainerFrame, a native type with no FrameXML source: if the
@@ -50,7 +51,7 @@ local SS = WFJ.SurfaceState
 local PREPEND = { only = { "GOSSIP_OPTION_PREPEND" } } -- an option's quest prepend
 
 local deps = {}
-local inCallback, inRefit, measuring = false, false, false
+local measuring = false
 -- the hooked measure widgets: { greeting = FontString, greetingFont, greetingApplied, option = Button, optionFont,
 -- optionApplied }
 local measure = {}
@@ -101,22 +102,12 @@ local function readFont(fs)
   return { path = path, size = WFJ.Font.size(size), flags = flags }
 end
 
--- Calls fn with `flag` set, resetting it even when fn raises.
-local function flagged(set, fn, ...)
-  set(true)
+-- Calls fn with `measuring` set, resetting it even when fn raises.
+local function whileMeasuring(fn, ...)
+  measuring = true
   local ok, err = pcall(fn, ...)
-  set(false)
+  measuring = false
   if not ok then error(err, 0) end
-end
-
-local function setInCallback(v) inCallback = v end
-local function setInRefit(v) inRefit = v end
-local function setMeasuring(v) measuring = v end
-
-local function fullUpdate()
-  local sb = scrollBox()
-  if not sb or type(sb.FullUpdate) ~= "function" then return end
-  flagged(setInRefit, sb.FullUpdate, sb, true)
 end
 
 -- The row's height follows its text, the way the client's own Setup does it.
@@ -129,15 +120,19 @@ local function resize(row)
   end
 end
 
--- One refit for every record (Render.refresh dedupes it): resize the recorded rows, then, unless the client is in
--- the middle of its own update or we already are, re-measure and lay the list out again.
-local function refit()
-  for _, rec in pairs(SS.records(SURFACE)) do
-    local ctx = rec.meta and rec.meta.ctx
-    if ctx and ctx.row then resize(ctx.row) end
-  end
-  if inCallback or inRefit then return end
-  fullUpdate()
+-- There is no refit on this surface. The list is never laid out again from addon code: ScrollBox:FullUpdate called from
+-- here runs the client's list code under the addon's taint, and gamepad navigation then refuses to move between the
+-- rows [verified: forever blizzard_gamepadsmartnavigation/smartnavigation.lua:74-88, 649, 1087-1180 (the check, and
+-- the list reads before a row is selected); blizzard_sharedxml/shared/scroll/scrollbox.lua:133-193 (what FullUpdate
+-- writes)] [likely: that those list fields were the tainted ones; a controller moves again without the call]. So a
+-- row must stay as tall as the place the client measured for it: a row grown past it would lie over the next row and
+-- take its clicks. A row is resized once, as it is written, and only once the client has measured that kind of row
+-- through our hook (its extent is then the height of the text shown); a refresh changes the text only. A hook is
+-- placed after the window that first shows its kind, so it first runs when the next window is measured.
+local measured = { greeting = false, option = false }
+local function fitsMeasure(recKey)
+  if recKey == "greeting" then return measured.greeting end
+  return measured.option
 end
 
 -- → widget, English, record key for a greeting or option row; nil for any other row.
@@ -167,7 +162,7 @@ local function questRow(row, elementData)
   local info = elementData.info
   local fs = WFJ.ButtonText.of(row)
   if type(info) ~= "table" or type(fs) ~= "table" then return 0 end
-  return WFJ.QuestMap.showTitle(SURFACE, info.questID, fs, refit, info.title, row)
+  return WFJ.QuestMap.showTitle(SURFACE, info.questID, fs, nil, info.title, row)
 end
 
 -- OnInitializedFrame subscriber: the client has just written `row`. → 1 when the row is ours to show, else 0.
@@ -177,9 +172,7 @@ function Gossip.onInitialized(_, row, elementData)
   if type(row) == "table" and type(elementData) == "table" and isQuestRow(elementData) then
     if closed then return 0 end
     syncBanner()
-    local n = 0
-    flagged(setInCallback, function() n = questRow(row, elementData) or 0 end)
-    return n
+    return questRow(row, elementData) or 0
   end
   local widget, en, recKey = rowOf(row, elementData)
   if not widget then return 0 end
@@ -194,13 +187,12 @@ function Gossip.onInitialized(_, row, elementData)
   end
   local key = keyOf(en)
   if key and widget:GetText() == en then
-    flagged(setInCallback, WFJ.Render.show, SURFACE, recKey, widget, en, AREA, KIND, key, { refit = refit, row = row })
+    WFJ.Render.show(SURFACE, recKey, widget, en, AREA, KIND, key)
+    if fitsMeasure(recKey) then resize(row) end
     return 1
   end
   if widget:GetText() ~= en and recKey ~= "greeting" then -- "(Quest) <option>"
-    local n = 0
-    flagged(setInCallback, function() n = WFJ.Labels.show(SURFACE, recKey, widget, refit, PREPEND) end)
-    return n
+    return WFJ.Labels.show(SURFACE, recKey, widget, nil, PREPEND)
   end
   SS.drop(SURFACE, recKey)
   return 0
@@ -243,9 +235,10 @@ local function measureGreetingBody(fs, text)
 end
 
 local function measureGreeting(fs, text)
+  measured.greeting = true
   if measuring then return end
   syncBanner()
-  flagged(setMeasuring, measureGreetingBody, fs, text)
+  whileMeasuring(measureGreetingBody, fs, text)
 end
 
 -- button:Setup(optionInfo) on the option measure widget, inside the client's extent calculator.
@@ -274,14 +267,15 @@ local function measureOptionBody(button, opt)
 end
 
 local function measureOption(button, opt)
+  measured.option = true
   if measuring then return end
   syncBanner()
-  flagged(setMeasuring, measureOptionBody, button, opt)
+  whileMeasuring(measureOptionBody, button, opt)
 end
 
--- Hooks the measure widgets the data provider names, each once per session. → whether a hook was installed now
+-- Hooks the measure widgets the data provider names, each once per session.
 local function hookMeasureWidgets(sb)
-  if type(sb.ForEachElementData) ~= "function" then return false end
+  if type(sb.ForEachElementData) ~= "function" then return end
   local greeting, option
   sb:ForEachElementData(function(elementData)
     if type(elementData) ~= "table" then return end
@@ -289,26 +283,15 @@ local function hookMeasureWidgets(sb)
     if type(g) == "table" and g.GreetingText then greeting = g.GreetingText end
     if type(elementData.titleOptionButton) == "table" then option = elementData.titleOptionButton end
   end)
-  local installed = false
   if greeting and not measure.greeting then
     measure.greeting, measure.greetingFont = greeting, readFont(greeting)
     hooksecurefunc(greeting, "SetText", measureGreeting)
-    installed = true
   end
   if option and not measure.option and type(option.Setup) == "function" and type(option.GetFontString) == "function"
     and option:GetFontString() then
     measure.option, measure.optionFont = option, readFont(option:GetFontString())
     hooksecurefunc(option, "Setup", measureOption)
-    installed = true
   end
-  return installed
-end
-
-local function anyApplied()
-  for _, rec in pairs(SS.records(SURFACE)) do
-    if rec.applied ~= nil or rec.appliedFont then return true end
-  end
-  return false
 end
 
 -- Post-hook on GossipFrame:Update, the client has built and initialized the list. → greeting + options recorded
@@ -326,8 +309,8 @@ function Gossip.onUpdate()
     end
   end
   local sb = scrollBox()
-  -- The first window of the session was measured before the hooks existed: lay it out again if it shows ours.
-  if sb and hookMeasureWidgets(sb) and anyApplied() then fullUpdate() end
+  -- A window measured before a hook existed keeps the row places and heights the client measured from the English.
+  if sb then hookMeasureWidgets(sb) end
   WFJ.Render.updateBanner(SURFACE)
   return n
 end
