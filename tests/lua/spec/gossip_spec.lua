@@ -136,7 +136,12 @@ describe("UI/Gossip: the NPC talk window", function()
         end
       end
       for _, rec in pairs(SS.records("gossip")) do
-        local row = rec.meta.ctx.row
+        local row = rec.fs.button -- an option's record is on its button's text, the greeting's on the row's text
+        if not row then
+          for _, f in pairs(sb.frames) do if f.GreetingText == rec.fs then row = f end end
+          for f in pairs(sb.released) do if f.GreetingText == rec.fs then row = f end end
+        end
+        assert.is_truthy(row, rec.key)
         assert.is_true(row.shown, rec.key)
         assert.is_nil(sb.released[row], rec.key .. " is on a released frame")
       end
@@ -157,13 +162,15 @@ describe("UI/Gossip: the NPC talk window", function()
     check(false)
   end)
 
-  it("the addon never lays the list out again; from the second window the client measures it", function()
+  it("a row is always as tall as the place the client measured; the list is never laid out again", function()
     setup(5)
     local names = options(12)
     ship({ ["Welcome."] = LONG_JA .. LONG_JA, [names[1]] = LONG_JA, [names[3]] = LONG_JA, [names[12]] = LONG_JA })
     Stub.showGossip({ text = "Welcome.", options = names, npc = NPC })
-    -- measured in English before the measure widgets were hooked: the rows keep the places the client gave them
+    -- measured in English before the measure widgets were hooked: the rows keep the places and the heights the
+    -- client gave them, so a taller Japanese line never lies over the next row
     assert.is_true(isJapanese(sb.frames[4]:GetText()))
+    assertLayout()
     local greetingMeasure, optionMeasure = G.measureWidgets()
     assert.are.equal(Stub.gossipMeasure.greeting.GreetingText, greetingMeasure)
     assert.are.equal(Stub.gossipMeasure.option, optionMeasure)
@@ -173,18 +180,14 @@ describe("UI/Gossip: the NPC talk window", function()
     end
 
     sb:scrollTo(10)
-    -- the reveal key changes a row's text and height, never where the client put the rows
-    local tops = {}
-    for _, i in ipairs(sb:visibleIndices()) do tops[i] = sb.frames[i].top end
-    local function assertTops()
-      for i, top in pairs(tops) do assert.are.equal(top, sb.frames[i].top, "row " .. i .. " moved") end
-    end
+    assertLayout()
+    -- the reveal key changes a row's text, never its height or where the client put it
     Stub.keys.alt = true; WFJ.Modifier.refresh()
     assert.are.equal(names[12], sb.frames[15]:GetText())
-    assertTops()
+    assertLayout()
     Stub.keys.alt = false; WFJ.Modifier.refresh()
     assert.are.equal(LONG_JA, sb.frames[15]:GetText())
-    assertTops()
+    assertLayout()
 
     -- the next window: the hooks exist, so the client's own layout is already right, scrolled or not
     Stub.closeGossip()
@@ -195,6 +198,33 @@ describe("UI/Gossip: the NPC talk window", function()
     assertLayout()
     sb:scrollTo(10)
     assert.are.equal(LONG_JA, sb.frames[15]:GetText())
+    assertLayout()
+    Stub.keys.alt = true; WFJ.Modifier.refresh()
+    assertLayout()
+    Stub.keys.alt = false; WFJ.Modifier.refresh()
+    assertLayout()
+    assert.are.equal(0, sb.calls.FullUpdate)
+  end)
+
+  it("each measure widget is hooked by the first window that shows its kind of row", function()
+    setup(5)
+    local names = options(3)
+    ship({ ["Welcome."] = LONG_JA .. LONG_JA, [names[1]] = LONG_JA })
+    -- a first window with a greeting and no option: only the greeting's measure widget can be found
+    Stub.showGossip({ text = "Welcome.", options = {}, npc = NPC })
+    local greetingMeasure, optionMeasure = G.measureWidgets()
+    assert.is_truthy(greetingMeasure)
+    assert.is_nil(optionMeasure)
+    assertLayout()
+    -- the next window: the greeting is measured as shown, the options still from the English, and nothing overlaps
+    Stub.closeGossip()
+    Stub.showGossip({ text = "Welcome.", options = names, npc = NPC })
+    assert.are.equal(LONG_JA, sb.frames[4]:GetText())
+    assertLayout()
+    assert.is_truthy(select(2, G.measureWidgets()))
+    -- from here on both are measured as shown
+    Stub.closeGossip()
+    Stub.showGossip({ text = "Welcome.", options = names, npc = NPC })
     assertLayout()
     assert.are.equal(0, sb.calls.FullUpdate)
   end)
@@ -330,6 +360,7 @@ describe("UI/Gossip: the NPC talk window", function()
     assert.are.equal("古い選択肢。", stale:GetText())
     assert.are.equal(WFJ.MARKER.stale, G.banner:GetText())
     assert.is_true(G.banner:IsShown())
+    assertLayout()
 
     assert.are.equal(0, WFJ.Render.refresh("gossip"))
 
@@ -338,14 +369,17 @@ describe("UI/Gossip: the NPC talk window", function()
       assert.are.equal("Hello.", greeting.GreetingText:GetText(), flip[1])
       assert.are.equal("Old option.", stale:GetText(), flip[1])
       assert.are.same({ "Fonts\\FRIZQT__.TTF", 13, "" }, fontOf(greeting))
+      assertLayout()
       S.set(flip[1], flip[3])
       assert.are.equal("こんにちは。", greeting.GreetingText:GetText(), flip[1])
+      assertLayout()
     end
     Stub.keys.alt = true; WFJ.Modifier.refresh()
     assert.are.equal("Old option.", stale:GetText())
     Stub.keys.alt = false; WFJ.Modifier.refresh()
     assert.are.equal(marker .. "古い選択肢。", stale:GetText())
-    -- a refresh changes a row's text, never the list's layout
+    -- a refresh changes a row's text, never its height or the list's layout
+    assertLayout()
     assert.are.equal(0, sb.calls.FullUpdate)
   end)
   it("QA: a line shipped under its literal key renders for a player whose class it names (candidate keys)", function()
