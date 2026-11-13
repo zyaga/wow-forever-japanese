@@ -837,6 +837,11 @@ The quest NPC the addon saw show a quest line (creature id, sex, name, title), s
 _Avoid_: speaker table, cached NPC, quest giver record
 → [Voice over](systems/voice.md) · [Data model](architecture/data-model.md)
 
+**Display id**:
+The number of the model the client draws a creature with, from the client's own model data that ships with each patch. The [[Voice panel]] draws a speaker who is not on screen from it (`SetDisplayInfo`): the one this player's client drew for that NPC (`WFJ_DB.voiceDisplays`, kept on the player's machine), else the one shipped in `data/voice/displays.jsonl` (from the client's creature cache, else VMaNGOS). Unlike a creature id, it needs no creature cache, which every client build empties.
+_Avoid_: model number, model id, creature display
+→ [Voice over](systems/voice.md) · [ADR-089](adr/089-the-head-is-drawn-from-a-display-id.md)
+
 **Heard record**:
 The lines already read aloud, as pack key → [[Japanese hash]], saved account-wide in `WFJ_DB.voiceHeard` for the first time only settings (`voice.questOnce`, `voice.greetingOnce`). A line in it with the same hash is not read aloud again when its window shows; a click on the play button still reads it. Keys and hashes only, never text.
 _Avoid_: played list, history, seen lines

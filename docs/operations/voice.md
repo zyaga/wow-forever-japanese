@@ -26,6 +26,22 @@ Make the Japanese voice from the Japanese the addon ships, copy it into the Fore
 
 There is no engine to start by hand. `make voice-generate` (also behind `make import-draft` and `make report-apply`) sends the lines to Modal ([Reading the cloned voices on Modal](#reading-the-cloned-voices-on-modal-the-default)); with `VOICE_LOCAL=1` it starts the local Qwen3-TTS worker for the run instead ([Timing and load](#timing-and-load)). `make voice-run` always reads locally: the whole game in the background, the Mac kept awake. A file a stopped run was encoding is never left half written, and the files a run finishes are written to the audio record as it goes (at most once a second, and when it ends), so a run stopped at any point (`make voice-stop`, Ctrl-C) keeps all but its last second's finished work and the next run reads only what is left. The code that starts the AivisSpeech Engine (`build/aivis/`, `--engine-run`) is still in the pipeline, but no speaker is cast to an AivisSpeech voice, so no run starts it.
 
+## Display ids for the panel's head
+
+The voice panel draws a speaker who is not on screen (a quest played from the quest log) from a display id, the number of the model the client draws that NPC with ([ADR-089](../adr/089-the-head-is-drawn-from-a-display-id.md)). The addon ships one per speaking creature: `data/voice/displays.jsonl`, generated into `Data/Displays.lua`. After every re-pull, and whenever `make voice-speakers` adds speakers:
+
+```bash
+make creature-copy WOW_DIR="<Forever client folder>"   # make wdb-copy runs it when CLIENT=forever
+make voice-displays
+make generate
+```
+
+- `make creature-copy` copies the client's creature cache (`Cache/WDB/enUS/creaturecache.wdb`, read only on the game folder) to `$(INPUTS)/creatures/<build>.wdb`, named by the build in the cache's header. The client writes the cache on a full Exit Game, not on a logout. The copy reads only the header, so a new build is always copied before the next build empties it. `make voice-displays` leaves out, with a message, a cache whose build has no pinned creature layout: check that every record of the new cache reads with a pinned layout and that its displays agree with VMaNGOS, then pin it in `io/creature_cache.LAYOUTS` (a code change and a PR).
+- `make voice-displays` takes each speaker's display from the newest copied cache that holds it, else from VMaNGOS. Rows are additive: a creature only an older cache held keeps its row. Its last line says how many speakers have a display id and how many came from a cache.
+- Commit `data/voice/displays.jsonl` with the generated `Data/Displays.lua` (and the TOC when it changed).
+- The creature caches are not backed up, unlike the quest caches: playing the client fills them again.
+- A Forever NPC that no copied cache holds and VMaNGOS does not know has no row. A quest from them shows no head after a client patch until the player meets them again, or until a later re-pull copies a cache that holds them.
+
 ## Configuration
 
 `pipeline/voice.toml`: the engine's address (`http://127.0.0.1:10101`), the pace (`speed_scale = 0.9`), the `narrator` and `book_narrator` voices, the **roster** (one table per usable voice: its model on AivisHub, the engine's style id from `GET /speakers`, its licence, what it fits, and optional pitch, intonation and speed) and the **cast rows** (which roster voices read each kind of speaker: race or creature family, gender, age, archetype), plus the engine names credited in the packs' READMEs (`engine` for AivisSpeech, `clone_engine` for Qwen3-TTS). The roster and cast rows are the AivisSpeech cast; they still run first, but every speaker then moves to a game voice set, and `test_no_committed_speaker_is_cast_to_anything_but_a_game_voice_set` fails if a committed speaker is left on an AivisSpeech voice. For the cloned voices it also holds `qwen` (the Qwen3-TTS environment's Python, relative to the main checkout), `cloned_packs` (the pack folders whose NPCs speak in their game voice set: every pack), `narrator_set` and `book_narrator_set`, one `[sets.<set>]` table per game voice set with `pick` (`voice` or `full`) and `decided`, and the `[[set_cast]]` rules that give a set to every speaker Spoken gives none. `data/voice/overrides.jsonl` pins a voice for a single creature. The pace is fixed when a file is made: the client has no playback rate, so changing it means making every file again. Recasting one cast row remakes only the lines of the creatures it casts.

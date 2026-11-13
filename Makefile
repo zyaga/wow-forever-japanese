@@ -15,7 +15,7 @@ VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
 
-.PHONY: names hearthstone pronunciation english-cards voice-qwen-setup voice-modal-setup voice-cast voice-speed voice-spoken-fetch voice-match voice-sets-page voice-sets-apply voice-sets voice-sets-clips voice-sets-catalogue voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
+.PHONY: creature-copy voice-displays names hearthstone pronunciation english-cards voice-qwen-setup voice-modal-setup voice-cast voice-speed voice-spoken-fetch voice-match voice-sets-page voice-sets-apply voice-sets voice-sets-clips voice-sets-catalogue voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
 
 help:
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | sed 's/:.*## /: /'
@@ -83,6 +83,9 @@ INPUTS       ?= $(or $(wildcard $(CURDIR)/predecessors),$(REPO_ROOT)/predecessor
 # Absolute even when given relative, so a recipe's `cd pipeline` reads the same files the checks did
 override INPUTS := $(abspath $(INPUTS))
 PRED_QUEST   ?= $(INPUTS)/classic-wow-quest-japanese-translator
+# Forever creature caches, one per client build (<build>.wdb), for the voice panel's display ids (ADR-089)
+CREATURES    ?= $(INPUTS)/creatures
+override CREATURES := $(abspath $(CREATURES))
 PRED_TOOLTIP ?= $(INPUTS)/classic-wow-tooltips-japanese-translator
 PFQUEST      ?= $(INPUTS)/pfquest-quests.lua
 PFQUEST_SHA  ?= 7786596
@@ -300,6 +303,17 @@ wdb-copy: ## copy the client's quest cache into WDB_QUEST, its client folder (re
 	@mkdir -p "$$(dirname "$(WDB_QUEST)")"
 	@if [ -f "$(WDB_QUEST)" ]; then cp "$(WDB_QUEST)" "$(WDB_QUEST).prev"; echo "wdb-copy: previous copy kept as $(WDB_QUEST).prev"; fi
 	cp "$(WOW_DIR)/Cache/WDB/enUS/questcache.wdb" "$(WDB_QUEST)"
+	@if [ "$(CLIENT)" = forever ]; then $(MAKE) --no-print-directory creature-copy WOW_DIR="$(WOW_DIR)" || \
+		echo "wdb-copy: the quest cache is copied; the creature cache was not (see above)"; fi
+
+creature-copy: ## copy the Forever client's creature cache to CREATURES/<build>.wdb, named by the build in its header (read-only on the game folder): WOW_DIR=<client folder>
+	@test -n "$(WOW_DIR)" || { echo "usage: make creature-copy WOW_DIR=<client folder holding Cache/, e.g. .../World of Warcraft/_forever_>"; exit 2; }
+	@test -f "$(WOW_DIR)/Cache/WDB/enUS/creaturecache.wdb" || { echo "creature-copy: no Cache/WDB/enUS/creaturecache.wdb under $(WOW_DIR) (did the client Exit Game?)"; exit 1; }
+	@mkdir -p "$(CREATURES)"
+	@W="$$(cd "$(WOW_DIR)" && pwd)/Cache/WDB/enUS/creaturecache.wdb" && \
+		B="$$(cd pipeline && $(PY) -c 'import sys; from pathlib import Path; from wfj.io.creature_cache import read_build; print(read_build(Path(sys.argv[1])))' "$$W")" && \
+		{ [ ! -f "$(CREATURES)/$$B.wdb" ] || cp "$(CREATURES)/$$B.wdb" "$(CREATURES)/$$B.wdb.prev"; } && \
+		cp "$$W" "$(CREATURES)/$$B.wdb" && echo "creature-copy: $(CREATURES)/$$B.wdb (then: make voice-displays)"
 
 level1-spells: ## regenerate pipeline/level1_spells.txt (the spells a fresh level-1 character has) from the installed Forever client: WOW_DIR=<client folder> [PRODUCT=wowf]
 	@test -n "$(WOW_DIR)" || { echo "usage: make level1-spells WOW_DIR=<client folder, e.g. .../World of Warcraft/_forever_> [PRODUCT=wowf]"; exit 2; }
@@ -456,6 +470,9 @@ voice-spoken-fetch: ## build/spoken: the Spoken addon's newest line corpus; its 
 		fi; \
 		if [ "$$new" != "$$(cat "$(SPOKEN_PIN)" 2>/dev/null)" ]; then echo "$$new" > "$(SPOKEN_PIN)"; fi; \
 		echo "voice-spoken-fetch: Spoken at $$new"
+
+voice-displays: ## data/voice/displays.jsonl: each speaking creature's display id, from the copied creature caches, else VMaNGOS (rerun after creature-copy or voice-speakers)
+	cd pipeline && $(PY) -m wfj voice displays --creatures "$(CREATURES)" --vmangos $(VMANGOS_DB) --commit $(VMANGOS_SHA)
 
 voice-sets: voice-spoken-fetch ## data/voice/creature-sets.jsonl: each speaking NPC's game voice set, as Spoken assigns it (rerun after voice-speakers)
 	cd pipeline && $(PY) -m wfj voice sets creatures --spoken "$(SPOKEN_CORPUS)" --spoken-commit $(SPOKEN_COMMIT)

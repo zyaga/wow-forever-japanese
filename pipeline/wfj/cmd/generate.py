@@ -14,6 +14,7 @@ from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
 
+from wfj.cmd.voice_displays import DISPLAYS
 from wfj.core import align, english_cards, glosses, numbered, pronunciation, readings, tooltip_text
 from wfj.core.align import load_allowlist
 from wfj.core.english_text import model_english
@@ -21,13 +22,13 @@ from wfj.core.hashing import key as hash_key
 from wfj.core.model import SCHEMA, validate_line
 from wfj.core.normalize import female_variant, mask_values, normalize_for, normalize_v1
 from wfj.emit import lua_writer, schema
-from wfj.io.jsonl_store import Store
+from wfj.io.jsonl_store import Store, read_jsonl
 from wfj.io.names_store import load_lines as load_name_lines
 from wfj.paths import allowlist_path, data_root
 
 TOC_NAME = "WoWForeverJapanese.toc"
-# the generated files that are not shards, in load order; the last ships only when the store has its data
-FIXED = ("Data/Meta.lua", "Data/Vectors.lua", "Data/ErrorSounds.lua")
+# the generated files that are not shards, in load order; the last two ship only when the store has their data
+FIXED = ("Data/Meta.lua", "Data/Vectors.lua", "Data/ErrorSounds.lua", "Data/Displays.lua")
 ERROR_SOUNDS = Path("voice") / "error-sounds.jsonl"
 VECTORS_HEAD = "WFJ.Data.vectors ="
 
@@ -281,6 +282,10 @@ def plan(store: Store, vectors: list[dict], report: dict[str, Any] | None = None
         rows = [json.loads(ln) for ln in sounds.read_text(encoding="utf-8").splitlines() if ln.strip()]
         _check_error_sounds(rows)
         out["Data/ErrorSounds.lua"] = lua_writer.error_sounds_text(rows)
+    displays = read_jsonl(store.root / DISPLAYS)
+    if displays:
+        _check_displays(displays)
+        out["Data/Displays.lua"] = lua_writer.displays_text(displays)
     out.update(_plan_names(store.root))
     return out
 
@@ -298,6 +303,19 @@ def _check_error_sounds(rows: list[dict]) -> None:
         if (race, sex) in seen:
             raise ValueError(f"{ERROR_SOUNDS} row {n}: a second row for race {race} sex {sex}")
         seen.add((race, sex))
+
+
+def _check_displays(rows: list[dict]) -> None:
+    """Raise ValueError on a row that must not become Lua: a creature or display that is not a positive
+    integer, or a second row for the same creature (never resolved silently)."""
+    seen: set[int] = set()
+    for n, r in enumerate(rows, 1):
+        creature, display = r.get("creature"), r.get("display")
+        if not (type(creature) is int and type(display) is int and creature > 0 and display > 0):
+            raise ValueError(f"{DISPLAYS} row {n}: needs an integer creature and display")
+        if creature in seen:
+            raise ValueError(f"{DISPLAYS} row {n}: a second row for creature {creature}")
+        seen.add(creature)
 
 
 NAMES_DIR = "Data/Names"
@@ -681,8 +699,8 @@ def load_numbers(store: Store) -> tuple[dict[glosses.Meaning, int], list[str]]:
 
 
 def toc_files(planned: dict[str, str]) -> list[str]:
-    """Load order inside the generated block: Meta, Vectors, the error recordings, then shards by type
-    then range."""
+    """Load order inside the generated block: Meta, Vectors, the error recordings, the displays, then shards
+    by type then range."""
     shards = [p for p in planned if p not in FIXED and not p.startswith(f"{NAMES_DIR}/")]
     order = {t: i for i, t in enumerate(schema.TOC_ORDER)}
 

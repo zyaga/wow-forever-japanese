@@ -2,11 +2,15 @@
 -- loading it, and its talk animation. UI/VoicePanel owns the panel and calls these with the head it built.
 --   Head.build(parent) → head · Head.applyLook(head, look, parent) · Head.load(head, item, wanted, onShown)
 --   Head.setShown(head, shown) · Head.setTalking(head, talking) · Head.reset(head)
--- The model comes from the unit on screen while that unit is still the speaker (the client is drawing it), else from
--- the creature id (the client's creature cache: loads after /reload and a restart, checked in game with creature 837;
--- a new client build empties the cache, so an NPC not seen since has no head). A speaker with no model (a book, the
--- narrator, an uncached creature) gets no head and onShown(false) lets the panel move the text left. The model frame
--- is never hidden before its load had its chance: a hidden PlayerModel does not keep the model it loads.
+-- The model comes from the unit on screen while that unit is still the speaker (the client is drawing it). Otherwise
+-- it comes from a display id, which addresses the client's own model data and needs no creature cache (ADR-089): the
+-- one this player's client drew for that NPC, else the one shipped for it (`VoiceQuestLog.displayFor`). Only with
+-- neither is it asked for by creature id, which needs the creature cache every client build empties. A unit's model
+-- reports its display id when OnModelLoaded says it has loaded (State "speakerDisplay"), never earlier: until then the
+-- frame answers with the model it held before (the Spoken addon's note on this client). A speaker
+-- with no model (a book, the narrator, an unknown creature) gets no head after the settle and onShown(false) lets the
+-- panel move the text left; a model that arrives later still shows. The model frame is never hidden before its load
+-- had its chance: a hidden PlayerModel does not keep the model it loads.
 -- Adapted from forever-vo's ForeverVO/UI/TalkingHead.lua (MIT License; see ATTRIBUTION.md).
 local _, WFJ = ...
 local Head = {}
@@ -27,6 +31,35 @@ local function animate(h)
   pcall(h.model.SetAnimation, h.model, h.talking and TALK_ANIMATION or 0)
 end
 
+-- A unit's model has loaded: its display id goes to whoever remembers it. A secret, missing or zero id is dropped and
+-- the next load event of the same unit is asked again.
+local function report(h)
+  local who = h.fromUnit
+  if not who then return end
+  local ok, display = pcall(h.model.GetDisplayInfo, h.model)
+  local isSecret = Compat.resolve("issecretvalue")
+  if not ok or (type(isSecret) == "function" and isSecret(display)) then return end
+  if type(display) == "number" and display > 0 then
+    h.fromUnit = nil
+    pcall(WFJ.State.fire, "speakerDisplay", who.creature, display)
+  end
+end
+
+local function log(message, fields)
+  if WFJ.Diag then pcall(WFJ.Diag.log, "voicehead", message, fields) end
+end
+
+-- A model that arrived after the settle hid the head: show it now.
+local function arrived(h)
+  report(h)
+  local w = h.waiting
+  if not w or not hasModel(h.model) then return end
+  h.waiting = nil
+  log("late " .. w.what, { display = w.display })
+  Head.setShown(h, true)
+  w.onShown(true)
+end
+
 -- → the head: { model, ring, portraitBg, frame } on `parent`
 function Head.build(parent)
   local h = {}
@@ -37,6 +70,7 @@ function Head.build(parent)
     pcall(m.SetCamDistanceScale, m, CAMERA)
     pcall(m.SetFacing, m, 0)
     animate(h)
+    arrived(h)
   end)
   h.model:SetScript("OnAnimFinished", function() animate(h) end)
   h.ring = parent:CreateTexture(nil, "OVERLAY")
@@ -79,10 +113,12 @@ function Head.setShown(h, shown)
   h.frame:SetShown(shown and L.headFrame and true or false)
 end
 
--- Loads `item`'s speaker. `wanted`: the head setting. `onShown(shown)` runs when it is known whether a head shows.
+-- Loads `item`'s speaker. `wanted`: the head setting. `onShown(shown)` runs when it is known whether a head shows,
+-- and again with true when a model arrives after the settle.
 function Head.load(h, item, wanted, onShown)
   local who = item and item.speaker
   if h.settleTimer then h.settleTimer:Cancel(); h.settleTimer = nil end
+  h.waiting, h.fromUnit = nil, nil
   if not wanted or not who or not who.creature then
     h.loaded = nil
     Head.setShown(h, false)
@@ -95,7 +131,14 @@ function Head.load(h, item, wanted, onShown)
   local now = unit and type(guid) == "function" and guid(unit) or nil
   if now ~= nil and type(isSecret) == "function" and isSecret(now) then now = nil end
   if unit and (now == nil or now ~= who.guid) then unit = nil end
-  local want = unit and who.guid or who.creature
+  local display, source
+  if not unit then
+    local displayFor = WFJ.VoiceQuestLog and WFJ.VoiceQuestLog.displayFor
+    if displayFor then display, source = displayFor(who.creature) end
+    source = source or "creature"
+  end
+  local want = unit and ("unit " .. tostring(who.guid)) or display and ("display " .. display)
+    or ("creature " .. who.creature)
   if h.loaded == want and hasModel(h.model) then
     Head.setShown(h, true)
     onShown(true)
@@ -104,19 +147,28 @@ function Head.load(h, item, wanted, onShown)
   h.loaded = want
   Head.setShown(h, true)
   onShown(true)
+  h.model:ClearModel()
   if unit then
+    h.fromUnit = who
     h.model:SetUnit(unit)
+  elseif display then
+    h.model:SetDisplayInfo(display)
   else
-    h.model:ClearModel()
     h.model:SetCreature(who.creature)
   end
   local timer = Compat.resolve("C_Timer")
   if type(timer) == "table" and type(timer.NewTimer) == "function" then
     h.settleTimer = timer.NewTimer(MODEL_SETTLE, function()
       h.settleTimer = nil
-      local shown = hasModel(h.model)
-      Head.setShown(h, shown)
-      onShown(shown)
+      local loaded = hasModel(h.model)
+      local what = (source or "unit") .. " " .. who.creature
+      -- one entry per outcome, so a repeat in the same session counts on the entry that says what happened
+      if not unit then log(what .. (loaded and " model" or " no model"), { display = display }) end
+      if not loaded then
+        h.waiting = { onShown = onShown, what = what, display = display } -- shown by OnModelLoaded if it comes
+      end
+      Head.setShown(h, loaded)
+      onShown(loaded)
     end)
   end
 end
@@ -129,5 +181,5 @@ end
 
 -- Forgets the loaded model, so the next load starts again (a look change).
 function Head.reset(h)
-  h.loaded = nil
+  h.loaded, h.waiting = nil, nil
 end

@@ -12,6 +12,10 @@
 --     by the game's quests. The quest log's replays take their head (by creature id), name, title and voice variant
 --     from it. A quest taken before this existed, or from a player, an item or an object, has none: the quest's title
 --     stands in, with no head.
+--   * The display id of every NPC whose head the panel drew from the unit on screen (State "speakerDisplay", from
+--     UI/VoicePanelHead), while a voice pack is installed: WFJ_DB.voiceDisplays[creature id] = display id, refreshed
+--     every time. `displayFor` answers it, else the shipped one, for every head drawn without the NPC on screen, so
+--     none needs the creature cache every client build empties (ADR-089). Bounded by the NPCs the player has met.
 -- The button follows forever-vo's ForeverVO/UI/QuestLog.lua (MIT License; see ATTRIBUTION.md).
 local _, WFJ = ...
 local QuestLog = {}
@@ -41,6 +45,26 @@ local function rememberSpeaker(questID, panelName)
   if type(db.voiceSpeakers) ~= "table" then db.voiceSpeakers = {} end
   db.voiceSpeakers[questID .. "-" .. field] = { c = who.creature, s = who.sex,
     n = type(unitName) == "function" and unitName("questnpc") or nil, t = P.titleOf("questnpc") }
+end
+
+local function rememberDisplay(creature, display)
+  if type(creature) ~= "number" or type(display) ~= "number" or type(db) ~= "table" or not WFJ.Voice.hasPack() then
+    return
+  end
+  if type(db.voiceDisplays) ~= "table" then db.voiceDisplays = {} end
+  db.voiceDisplays[creature] = display
+end
+
+-- → the display id to draw a creature with and where it came from ("saved": this player's client drew it,
+-- "shipped": WFJ.Data.displays), or nil
+function QuestLog.displayFor(creature)
+  local saved = type(db) == "table" and db.voiceDisplays
+  local d = type(saved) == "table" and saved[creature] or nil
+  if d then return d, "saved" end
+  local shipped = WFJ.Data and WFJ.Data.displays
+  d = type(shipped) == "table" and shipped[creature] or nil
+  if d then return d, "shipped" end
+  return nil
 end
 
 -- → the remembered speaker of a quest line, or nil
@@ -132,5 +156,6 @@ function QuestLog.init(savedDb)
     WFJ.State.on(event, function() pcall(QuestLog.refresh) end)
   end
   WFJ.State.on("questShown", function(questID, panelName) pcall(rememberSpeaker, questID, panelName) end)
+  WFJ.State.on("speakerDisplay", function(creature, display) pcall(rememberDisplay, creature, display) end)
   return true
 end
