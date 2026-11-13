@@ -365,6 +365,15 @@ describe("UI/Menus: menu entries", function()
     assert.are.equal("発言", entry[UI.SAY_MESSAGE[1]].fontString:GetText())
     assert.are.equal("/s", entry["/s"].fontString:GetText()) -- the slash command beside an entry
     assert.are.equal("Common", entry["Common"].fontString:GetText()) -- a language name: never listed
+
+    -- no resetter runs on this path: when the client hands the pooled frame to another menu and writes its own
+    -- text, a refresh drops our record and leaves that text alone
+    local reused = entry[UI.SAY_MESSAGE[1]].fontString
+    reused:SetText("Trade")
+    WFJ.Render.refresh(WFJ.Menus.SURFACE)
+    assert.are.equal("Trade", reused:GetText())
+    local widget = WFJ.Labels.menuText(reused) -- the adapter a menu record sits on
+    for _, rec in pairs(WFJ.SurfaceState.records(WFJ.Menus.SURFACE)) do assert.are_not.equal(widget, rec.fs) end
   end)
 
   it("the after-open path leaves other tags and hidden menus alone", function()
@@ -380,7 +389,7 @@ describe("UI/Menus: menu entries", function()
     assert.are.equal(UI.SAY_MESSAGE[1], entry[UI.SAY_MESSAGE[1]].fontString:GetText())
   end)
 
-  it("the registry callbacks are placed once, and a client without the registry keeps the tagged menus", function()
+  it("the registry callbacks are placed once however often init runs", function()
     local registry = installRegistry()
     assert.is_true(WFJ.Menus.init())
     assert.is_true(WFJ.Menus.init())

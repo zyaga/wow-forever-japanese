@@ -282,7 +282,8 @@ function Menus.onMenu(tag, root, contextData)
   return walk(tag, root, 0, name, titleIsName)
 end
 
-local hooked = {}
+local hooked = {} -- tag → true, once its ModifyMenu callback is registered
+local afterOpenHooked = false
 
 local shownMenus = setmetatable({}, { __mode = "k" }) -- menu frame → true, from "MenuProxy.OnShow"
 
@@ -328,8 +329,8 @@ function Menus.init()
   end
   Compat.declare(SURFACE, "eventRegistry", { "EventRegistry" })
   local registry = Compat.get(SURFACE, "eventRegistry")
-  if not hooked.afterOpen and type(registry) == "table" and type(registry.RegisterCallback) == "function" then
-    hooked.afterOpen = true
+  if not afterOpenHooked and type(registry) == "table" and type(registry.RegisterCallback) == "function" then
+    afterOpenHooked = true
     registry:RegisterCallback("MenuProxy.OnShow", Menus.onMenuShown, Menus)
     registry:RegisterCallback("Menu.OpenMenuTag", Menus.onMenuOpened, Menus)
   end
