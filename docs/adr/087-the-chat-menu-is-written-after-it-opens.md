@@ -17,7 +17,7 @@ What the client source shows (build 1.60.1.70888):
 
 `UI/Menus.lua` translated the chat menu (tag `MENU_CHAT_SHORTCUTS`) like every tagged menu: a `Menu.ModifyMenu` callback that adds an initializer to each element ([ADR-031](031-objective-lines-menus-and-helptips.md)).
 
-What is traced in game (the maintainer, `issecurevariable` over the chat box's fields):
+What is traced in game (the maintainer, client build 1.60.1.70938, `issecurevariable` over the chat box's fields):
 
 | Build | After login | After picking a language |
 |---|---|---|
@@ -26,7 +26,7 @@ What is traced in game (the maintainer, `issecurevariable` over the chat box's f
 | No callback for this menu (menu in English) | clean | clean |
 | Entries written after the menu opens (this decision) | clean | clean, menu in Japanese |
 
-What is inferred [likely]: that the tainted scripts are the path (the source reading above). The scans show the fields, not the step that tainted them. That the refusal only happens while a restriction such as combat is active is also [likely], from the API's flags; it was not tried.
+What is inferred [likely]: that the tainted scripts are the path (the source reading above). The scans show the fields, not the step that tainted them. That the refusal only happens while a restriction such as combat is active is also [likely], from the call's `HasRestrictions` flag; it was not tried.
 
 ## Decision
 

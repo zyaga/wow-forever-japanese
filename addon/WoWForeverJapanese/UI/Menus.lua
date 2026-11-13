@@ -13,7 +13,8 @@
 -- A tag whose menu title is a name (a channel's, a tracked block's) sets `titleIsName`: its first root element (the
 -- title the generator creates first) never gets our initializer, and no element whose text is the menu's name
 -- (contextData.name) is ever matched, so a channel named "Trade" stays "Trade". The unit right-click menus get no
--- callback at all (ADR-069).
+-- callback at all (ADR-069). The chat menu gets none either: it is written once the client reports it open
+-- (Menus.AFTER_OPEN, ADR-087).
 local _, WFJ = ...
 local Menus = {}
 WFJ.Menus = Menus
@@ -199,10 +200,12 @@ Menus.TAGS = {
 -- Menus shown in Japanese only after the client has built them. A menu element's initializers run, the client
 -- measures the element, and then sets its click and hover scripts, all in one step (blizzard_menu/menu.lua:1016-1066,
 -- 1117-1131). Text this addon wrote is measured tainted, so those scripts are set tainted and whatever a pick then
--- writes is tainted too. The chat menu's picks write the chat box's language and chat type, which the client reads
--- as it sends a chat message (shared/chatframeeditbox.lua:296-319, 835-839): the send was refused. So this menu gets
--- no initializer; its entries are written once the menu is open ("Menu.OpenMenuTag", menu.lua:2453-2459), and keep
--- the width the client laid out for the English. Its submenus hold slash commands and language names: never touched.
+-- writes is tainted too [likely: ADR-087; in game the fields a pick writes read tainted with an initializer on the
+-- menu and clean without]. The chat menu's picks write the chat box's language and chat type, which the client reads
+-- as it sends a chat message (shared/chatframeeditbox.lua:296-319, 835-839), and a send that reads them tainted is
+-- refused. So this menu gets no initializer; its entries are written once the menu is open ("Menu.OpenMenuTag",
+-- menu.lua:2453-2459), and keep the width the client laid out for the English. Its submenus hold slash commands and
+-- language names: never touched.
 Menus.AFTER_OPEN = {
   MENU_CHAT_SHORTCUTS = { source = "mainline/chatframemenubutton.lua:56", keys = CHAT_SHORTCUT_KEYS },
 }
@@ -315,8 +318,8 @@ function Menus.onMenuOpened(_, tag)
 end
 
 -- Called by Main after Compat.init. Registers one ModifyMenu callback per tag; Menu is loaded at login (Blizzard_Menu
--- is not load-on-demand), and a tag whose generator never runs on this client simply never fires. → true when the
--- Menu API was found
+-- is not load-on-demand), and a tag whose generator never runs on this client simply never fires. Also registers the
+-- two registry callbacks of the after-open menus, once. → true when the Menu API was found
 function Menus.init()
   Compat.declare(SURFACE, "modifyMenu", { "Menu.ModifyMenu" })
   local modify = Compat.get(SURFACE, "modifyMenu")

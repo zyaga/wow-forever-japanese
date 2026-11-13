@@ -139,4 +139,4 @@ characters with a |T…AvailableQuestIcon:16:16|t above their head.") were kept 
 
 ## Update: the chat menu is written after it opens
 
-The chat menu (`MENU_CHAT_SHORTCUTS`) no longer gets a `Menu.ModifyMenu` initializer: the client sets an element's click and hover scripts after measuring text the initializer wrote, so a language picked from that menu was stored tainted on the chat box and chat messages were refused. Its entries are written when the client reports the menu open ([ADR-087](087-the-chat-menu-is-written-after-it-opens.md)). The other tagged menus are unchanged.
+The chat menu (`MENU_CHAT_SHORTCUTS`) no longer gets a `Menu.ModifyMenu` initializer. With one, a language picked from that menu was stored tainted on the chat box and chat messages were refused, most likely because the client sets an element's click and hover scripts after measuring text the initializer wrote. Its entries are written when the client reports the menu open ([ADR-087](087-the-chat-menu-is-written-after-it-opens.md)). The other tagged menus are unchanged.
