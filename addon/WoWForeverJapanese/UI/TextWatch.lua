@@ -67,6 +67,17 @@ function TextWatch.add(fs, fn)
   return true
 end
 
+-- Stops following `fs` (a pooled widget handed back to its pool). → true when it was followed
+function TextWatch.remove(fs)
+  local e = byFs[fs]
+  if not e then return false end
+  byFs[fs] = nil
+  for i = #entries, 1, -1 do
+    if entries[i] == e then table.remove(entries, i) end
+  end
+  return true
+end
+
 function TextWatch.watching(fs)
   return byFs[fs] ~= nil
 end

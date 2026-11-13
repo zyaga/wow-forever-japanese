@@ -55,7 +55,7 @@ def test_real_toc_fields_and_load_order(root):
         "UI/CommunitiesKit.lua", "UI/CommunitiesFrame.lua", "UI/CommunitiesGuild.lua", "UI/ClubFinder.lua",
         "UI/ClubFinderApplicants.lua", "UI/CommunitiesDialogs.lua", "UI/Raid.lua",
         "UI/MicroMenu.lua",
-        "UI/Gamepad.lua", "UI/Menus.lua", "UI/MenusTags.lua", "UI/MenusUntagged.lua",  # menu entries; Gamepad loads before MenusUntagged
+        "UI/Gamepad.lua", "UI/Menus.lua", "UI/MenusTags.lua", "UI/MenusUnit.lua", "UI/MenusUntagged.lua",  # menu entries; Gamepad loads before MenusUntagged
         "UI/HelpTips.lua",  # HelpTip callouts
         "UI/QuestFrame.lua", "UI/QuestMap.lua",
         "UI/TimeLine.lua",  # the cooldown countdown, before the tooltips that write it

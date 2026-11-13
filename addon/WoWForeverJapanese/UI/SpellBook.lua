@@ -20,25 +20,17 @@
 --   ADR-058], so the refill runs tainted: it writes the item's actionBarStatus (:312–325) and, on a hover, the action
 --   bars' highlight marks and layout (:509–566), and the bars are then blocked in combat
 --   (docs/architecture/client-limits.md).
--- - Settings menu: the "show all spell ranks" checkbox is a Menu element under the tag "MENU_SPELL_BOOK_SETTINGS"
---   (spellbook/blizzard_spellbookframe.lua:191, 205–226; camelot/spellbook/blizzard_spellbookframe.lua:79–113; not for
---   Rogue / Warrior). The checkbox initializer closes over the English (blizzard_menu/menutemplates.lua:341–354,
---   mainline/menuvariants.lua:9–22), so rewriting the description's text would not show; Menu.ModifyMenu (menu.lua:
---   2767) adds an initializer of our own to each element, which runs after the client's and shows button.fontString
---   restricted to MENU_KEYS (surface "spellbook.menu"). Menu buttons are pooled and their compositor resets the
---   fontString with SetFontObject on reuse (blizzard_menu/compositor.lua:66–74, 388), so a record must not outlive
---   its button: a resetter of our own (menu.lua:455–457), which MenuMixin:DiscardChildFrames runs on every element
---   frame before the compositor detaches and the frame is released (menu.lua:1704–1739), drops that button's record.
---   The surface is also forgotten when the book hides.
+-- - Settings menu: the "show all spell ranks" checkbox and its siblings are a Menu element under the tag
+--   "MENU_SPELL_BOOK_SETTINGS" (spellbook/blizzard_spellbookframe.lua:191, 205–226; camelot/spellbook/
+--   blizzard_spellbookframe.lua:79–113; not for Rogue / Warrior). UI/Menus writes it once the client has shown it, like
+--   every menu (ADR-088), with CAMELOT_KEYS.menu and CAMELOT_KEYS.menuTooltip (UI/MenusTags reads them).
 -- - The search box's placeholder, SearchBox.Instructions, is written once by SearchBoxTemplate_OnLoad from the
 --   KeyValue instructionText = COOLDOWN_VIEWER_SETTINGS_SEARCH_INSTRUCTIONS ("Enter search text", the cooldown
 --   settings' own placeholder; spellbookframe.xml:103–107; blizzard_sharedxml/shared/inputbox/inputboxtemplates.lua:
 --   175–178) and only shown / hidden after that (:131–133): a static label (never the EditBox's own text).
 -- - The "Hide Passives" entry's tooltip while searching (SPELLBOOK_SEARCH_HIDE_PASSIVES_DISABLED,
 --   spellbookframe.lua:192–197) is built by MenuUtil.ShowTooltipEx on GameTooltip with the menu button as owner, then
---   Show() (blizzard_menu/menuutil.lua:98–106, 293–298): each settings-menu button is a help-tooltip owner restricted
---   to that key.
--- Release the menu on the book's OnHide.
+--   Show() (blizzard_menu/menuutil.lua:98–106, 293–298): the menu's tooltip key.
 local _, WFJ = ...
 local SpellBook = {}
 WFJ.SpellBook = SpellBook
@@ -49,10 +41,8 @@ SpellBook.SURFACE = SURFACE
 local Compat = WFJ.Compat
 
 local HOST = "playerspells" -- the PlayerSpellsFrame title (spellbook and talents tabs)
-local MENU = "spellbook.menu"
-SpellBook.HOST, SpellBook.MENU = HOST, MENU
+SpellBook.HOST = HOST
 local PLAYER_SPELLS = "Blizzard_PlayerSpells"
-local MENU_TAG = "MENU_SPELL_BOOK_SETTINGS"
 
 -- Keys each widget may show (a widget restricted to them never takes another dictionary word).
 -- A linked build's title, TALENTS_LINK_FORMAT:format(spec, class) (blizzard_playerspellsframe.lua:162): both
@@ -80,46 +70,7 @@ function SpellBook.showSearchStatic()
     { only = SEARCH_KEYS } } })
 end
 
--- One settings-menu button, after the client's initializer wrote its English into button.fontString (keyed by that
--- label: menu buttons are pooled). → 1 | 0
-function SpellBook.showMenuButton(button)
-  local fs = type(button) == "table" and button.fontString or nil
-  local en = type(fs) == "table" and type(fs.GetText) == "function" and fs:GetText() or nil
-  WFJ.HelpTooltip.register(button, { only = MENU_TOOLTIP_KEYS }) -- the entry's own tooltip (Hide Passives)
-  if type(en) ~= "string" or en == "" then return 0 end
-  -- through Labels.menuText: the Menu compositor forbids SetFont on its FontStrings
-  return WFJ.Labels.show(MENU, "menu." .. en, WFJ.Labels.menuText(fs), nil, { only = MENU_KEYS })
-end
-
--- The resetter: the menu is discarding this button (closing, or regenerating). → the number of records dropped
-function SpellBook.resetMenuButton(button)
-  local fs = type(button) == "table" and WFJ.Labels.menuText(button.fontString) or nil
-  if fs == nil then return 0 end
-  local gone = {}
-  for key, rec in pairs(WFJ.SurfaceState.records(MENU)) do
-    if rec.fs == fs then gone[#gone + 1] = key end
-  end
-  for _, key in ipairs(gone) do WFJ.SurfaceState.drop(MENU, key) end
-  WFJ.Render.updateBanner(MENU)
-  return #gone
-end
-
--- Menu.ModifyMenu callback (owner, rootDescription, contextData). → the number of elements given our initializer
-function SpellBook.onSettingsMenu(_, root)
-  if type(root) ~= "table" or type(root.EnumerateElementDescriptions) ~= "function" then return 0 end
-  local n = 0
-  for _, desc in root:EnumerateElementDescriptions() do
-    if type(desc) == "table" and type(desc.AddInitializer) == "function" then
-      desc:AddInitializer(SpellBook.showMenuButton)
-      if type(desc.AddResetter) == "function" then desc:AddResetter(SpellBook.resetMenuButton) end
-      n = n + 1
-    end
-  end
-  return n
-end
-
 function SpellBook.releaseBook()
-  WFJ.Render.forget(MENU)
   return WFJ.Render.release(SURFACE)
 end
 
@@ -130,7 +81,6 @@ end
 local function declareCamelot()
   Compat.declare(SURFACE, "host", { "PlayerSpellsFrame" })
   Compat.declare(SURFACE, "book", { "PlayerSpellsFrame.SpellBookFrame" })
-  Compat.declare(SURFACE, "modifyMenu", { "Menu.ModifyMenu" })
   Compat.declare(SURFACE, "searchInstructions", { "PlayerSpellsFrame.SpellBookFrame.SearchBox.Instructions" })
   Compat.declare(SURFACE, "title", { "PlayerSpellsFrame.TitleContainer.TitleText" })
   -- the assisted combat button's label (blizzard_spellbookframe.xml:79–81, a UIPanelSpellButtonFrameTemplate
@@ -158,8 +108,6 @@ function SpellBook.setupCamelot()
   if type(host.HookScript) == "function" then host:HookScript("OnHide", SpellBook.releaseHost) end
   if type(book.HookScript) == "function" then book:HookScript("OnHide", SpellBook.releaseBook) end
   WFJ.TextWatch.add(Compat.get(SURFACE, "title"), SpellBook.showTitle)
-  local modifyMenu = Compat.get(SURFACE, "modifyMenu")
-  if type(modifyMenu) == "function" then modifyMenu(MENU_TAG, SpellBook.onSettingsMenu) end
   -- what the client already wrote before this ran (the addon may load after the frame was shown)
   SpellBook.showTitle()
   SpellBook.showAssistedLabel()

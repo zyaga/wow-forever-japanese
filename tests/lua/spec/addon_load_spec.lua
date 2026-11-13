@@ -34,7 +34,7 @@ local TAIL = {
   "UI/CommunitiesKit.lua", "UI/CommunitiesFrame.lua", "UI/CommunitiesGuild.lua", "UI/ClubFinder.lua",
   "UI/ClubFinderApplicants.lua", "UI/CommunitiesDialogs.lua",
   "UI/Raid.lua", "UI/MicroMenu.lua", "UI/Gamepad.lua", "UI/Menus.lua",
-  "UI/MenusTags.lua", "UI/MenusUntagged.lua", "UI/HelpTips.lua",
+  "UI/MenusTags.lua", "UI/MenusUnit.lua", "UI/MenusUntagged.lua", "UI/HelpTips.lua",
   -- Gamepad loads before MenusUntagged, which reads its menu keys at load
   "UI/QuestFrame.lua", "UI/QuestMap.lua", "UI/TimeLine.lua", "UI/Tooltip.lua",
   "UI/TooltipUnit.lua", "UI/GameMenu.lua",

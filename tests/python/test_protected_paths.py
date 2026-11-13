@@ -1,8 +1,9 @@
-"""Surfaces the addon leaves as the client writes them because its text or initializer would land on a path that ends
-in a protected call (ADR-058, ADR-069). Edit Mode lays out its windows by measuring their text and then moves the
-action bars; a unit right-click menu checks each entry's IsEnabled (CheckInteractDistance, protected in combat) in the
-same pass as the element initializers. No addon source may reach either. UI/TaintWatch only reads (issecurevariable),
-so its scan roots may name Edit Mode."""
+"""Surfaces the addon leaves as the client writes them, and paths it never runs code in, because its text or its code
+would land on a path that ends in a protected call (ADR-058, ADR-069, ADR-088). Edit Mode lays out its windows by
+measuring their text and then moves the action bars: no addon source may reach it. A menu sets each entry's click and
+hover scripts in the same function that runs the entry's initializers, so an initializer of the addon leaves every
+pick from that menu tainted: no addon source adds one, or registers a Menu.ModifyMenu callback (menus are written once
+shown, UI/Menus). UI/TaintWatch only reads (issecurevariable), so its scan roots may name Edit Mode."""
 
 import re
 from pathlib import Path
@@ -14,7 +15,7 @@ EDIT_MODE = re.compile(
     r"EditModeManagerFrame|EditModeSystemSettingsDialog|EditModeSettingDropdownMixin|EditModeLayoutDialog"
     r"|EditModeImportLayout|EditModeUnsavedChangesDialog|MENU_EDIT_MODE_|EDIT_MODE_HELPTIPS_|\.Selection\b"
 )
-UNIT_MENU = re.compile(r"MENU_UNIT_|WFJ\.MenusUnit")
+MENU_INITIALIZER = re.compile(r"[:.]AddInitializer\b|[:.]AddResetter\b|\bModifyMenu\b")
 
 
 def _code(text: str) -> str:
@@ -35,9 +36,15 @@ def test_no_source_touches_edit_mode(root):
     assert not (root / "addon/WoWForeverJapanese/UI/EditMode.lua").exists()
 
 
-def test_no_source_registers_a_unit_menu(root):
-    assert not _hits(root, UNIT_MENU)
-    assert not (root / "addon/WoWForeverJapanese/UI/MenusUnit.lua").exists()
+def test_no_source_adds_a_menu_initializer(root):
+    assert not _hits(root, MENU_INITIALIZER)
+
+
+def test_the_menu_initializer_pattern_catches_each_form():
+    for sample in ("desc:AddInitializer(fn)", "d.AddResetter(d, fn)", "Menu.ModifyMenu(tag, fn)",
+                   'Compat.declare(S, "m", { "Menu.ModifyMenu" })'):
+        assert MENU_INITIALIZER.search(_code(sample)), sample
+    assert not MENU_INITIALIZER.search(_code("-- the client runs desc:AddInitializer"))
 
 
 # UpdateScrollChildRect called from addon code runs the scroll frame's range scripts under this addon's taint. On the

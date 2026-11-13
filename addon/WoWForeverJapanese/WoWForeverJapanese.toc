@@ -2420,6 +2420,7 @@ UI\MicroMenu.lua
 UI\Gamepad.lua
 UI\Menus.lua
 UI\MenusTags.lua
+UI\MenusUnit.lua
 UI\MenusUntagged.lua
 UI\HelpTips.lua
 UI\QuestFrame.lua

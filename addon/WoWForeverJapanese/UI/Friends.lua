@@ -36,8 +36,9 @@
 --     Since 1.60.1.70009 a row's InviteButton is a help-tooltip owner restricted to WHO_PARTY_BUTTON_TOOLTIP
 --     (WhoInviteButtonMixin:ShowTooltip, wholist.lua:119–123). The filter dropdown (FilterDropdown, wholist.xml:184)
 --     is an untagged DropdownButton (LFGWhoListFilterUtil.SetupFilterMenu, wholist.lua:278–321, 336–387, 474–540):
---     hooked through UI/MenusUntagged.hookDropdown as the WHO_FILTER spec, its entries restricted to the section
---     words and the sort entries; the class, race and zone entries under them are names and never match.
+--     recorded through UI/MenusUntagged.hookDropdown as the WHO_FILTER spec (written once its menu is shown, like
+--     every menu, ADR-088), its entries restricted to the section words and the sort entries; the class, race and
+--     zone entries under them are names and never match.
 --   the contacts header's TabSystem tabs (FriendsTabHeaderMixin:GenerateHeaderTabs, camelot friendsframe.lua:
 --     612–616: FRIENDS / CONTACTS_RECENT_ALLIES_TAB_NAME / RECRUIT_A_FRIEND; TabSystemButtonMixin:UpdateTabText
 --     rewrites a tab's text on SetTabEnabled, tabsystemtemplates.lua:192–207, so each tab's own method is hooked; a
@@ -196,7 +197,7 @@ function Friends.onWhoRow(a, b)
   if type(invite) == "table" then WFJ.HelpTooltip.register(invite, WHO_INVITE_TIP) end
 end
 
--- The filter dropdown, through the untagged-menu mechanism (UI/MenusUntagged). → true when hooked
+-- The filter dropdown, through the untagged-menu mechanism (UI/MenusUntagged). → true when recorded now
 local function hookWhoFilter()
   local menus, untagged = WFJ.Menus, WFJ.MenusUntagged
   if type(menus) ~= "table" or type(menus.UNTAGGED) ~= "table" or type(untagged) ~= "table"

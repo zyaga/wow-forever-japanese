@@ -1,20 +1,28 @@
--- UI/Menus.lua: dropdown and context-menu entries of the hooked windows (ADR-031).
--- The Menu system builds a menu from a generator, then runs every callback registered with Menu.ModifyMenu for the
--- description's tag (Menu.PopulateDescription → SecureModifyMenu; ModifyMenu also replays on a description already
--- generated) [verified: blizzard_menu/menu.lua:2751–2788]. The callback adds an initializer to each element
--- description, recursively into submenus [menu.lua:418–423, 443]; the compositor runs it on the element's frame after
--- the client's own initializers wrote the text into frame.fontString [menuvariants.lua:9–22; menuutil.lua:198–204 for
--- a title], and before the menu is laid out, so the menu is measured with the Japanese. A resetter drops the record
--- when the frame goes back to the pool [menu.lua:455]. UI/SpellBook keeps its own settings-menu hook (the second copy
--- of this pattern; a third would be extracted).
+-- UI/Menus.lua: dropdown and context-menu entries of the hooked windows (ADR-031, ADR-088).
+-- Every menu is written once the client has built it, never while it builds it. The client runs an element's
+-- initializers and then sets the element's click and hover scripts in the same function (InitializeFrame,
+-- blizzard_menu/menu.lua:1117-1131); code of this addon run there leaves those scripts set tainted, and every pick
+-- from the menu then runs tainted [traced in game for the chat menu, ADR-087]. So no menu gets an initializer.
+-- The client fires "MenuProxy.OnShow" as it shows each menu frame, after the frame's scripts are set
+-- (menu.lua:2506, 2531, 1845-1849), and "Menu.OpenMenuTag" after that for a menu whose description has a tag
+-- (:2453-2459, 2566); a submenu gets the first only. Registry callbacks run under securecallfunction
+-- (blizzard_sharedxmlbase/callbackregistry.lua:198-214), so nothing written here reaches the client's code after them.
+-- - A tagged menu is written on "Menu.OpenMenuTag" and becomes the open menu; a menu frame shown while it is open (a
+--   submenu) is written with its keys. An untagged menu (UI/MenusUntagged) is recognised on "MenuProxy.OnShow" by
+--   the owner region its opener recorded.
+-- - A pick that keeps the menu open (a checkbox) has the client run its own initializers again, which write the
+--   English back (menu.lua:2353-2367, 1682-1700). Each written text widget is followed by UI/TextWatch, which reads it
+--   from this addon's own frame once a frame and writes the Japanese again after the client's pass has ended.
+-- - The client laid the menu out for the English. A label whose Japanese is wider is widened, and the entries and the
+--   menu frame with it (Menus.fit), with SetWidth alone: running the client's layout here would run it tainted.
+-- - On "MenuProxy.OnHide", before the client hands the text widgets back to the pool every menu shares
+--   (compositor.lua:367-390; menu.lua:1751-1764, 1851-1853), the records and watches on them are dropped.
 -- Each tag lists the keys its entries may show: a widget only ever takes one of them (`only`), so a rank name, a bag
 -- the player named or a quest title in a menu is never read as a dictionary word (names stay in English). Tooltip
 -- keys are shown through UI/HelpTooltip on the element's own owner (a disabled radio's reason, GUILD_RANK_UNAVAILABLE).
--- A tag whose menu title is a name (a channel's, a tracked block's) sets `titleIsName`: its first root element (the
--- title the generator creates first) never gets our initializer, and no element whose text is the menu's name
--- (contextData.name) is ever matched, so a channel named "Trade" stays "Trade". The unit right-click menus get no
--- callback at all (ADR-069). The chat menu gets none either: it is written once the client reports it open
--- (Menus.AFTER_OPEN, ADR-087).
+-- A tag whose menu title is a name (a channel's, a unit's, a tracked block's) sets `titleIsName`: the root menu's
+-- title (its top entry) is never written, nor any entry whose text is the menu's name (contextData.name, or the unit's
+-- name), so a channel named "Trade" stays "Trade". Edit Mode stays as the client writes it (ADR-069).
 local _, WFJ = ...
 local Menus = {}
 WFJ.Menus = Menus
@@ -33,7 +41,7 @@ local WORLD_MAP_FILTERS = { "SHOW_QUEST_OBJECTIVES_ON_MAP_TEXT", "SHOW_QUEST_LEV
   "SHOW_INSTANCE_ENTRANCES_ON_MAP_TEXT", "CONTENT_TRACKING_MAP_TOGGLE", "MINIMAP_TRACKING_TRIVIAL_QUESTS" }
 
 -- tag → { keys = entries it may show, tooltips = tooltip keys (optional), source = where the generator is,
---         titleIsName = the menu's title is a name (optional) }
+--         titleIsName = the menu's title is a name (optional) }. UI/MenusTags, UI/MenusUnit and UI/Gamepad add to it.
 Menus.TAGS = {
   -- the bag portrait menus (blizzard_uipanels_game/mainline/containerframe.lua:643–730, 766–775, 2830–2850): the
   -- bag submenus, filters and cleanup; BAG_NAME_BACKPACK shares its English with BACKPACK_TOOLTIP (excluded). In
@@ -195,24 +203,16 @@ Menus.TAGS = {
   MENU_MERCHANT_FRAME = { source = "merchantframe.lua:44", keys = { "ALL_SPECS", "ITEM_BIND_ON_EQUIP", "ALL" } },
   -- the clock's alarm AM / PM (mainline/blizzard_timemanager.lua:216–220)
   MENU_TIME_MANAGER_AMPM = { source = "blizzard_timemanager.lua:216", keys = { "TIMEMANAGER_AM", "TIMEMANAGER_PM" } },
-}
-
--- Menus shown in Japanese only after the client has built them. A menu element's initializers run, the client
--- measures the element, and then sets its click and hover scripts, all in one step (blizzard_menu/menu.lua:1016-1066,
--- 1117-1131). Text this addon wrote is measured tainted, so those scripts are set tainted and whatever a pick then
--- writes is tainted too [likely: ADR-087; in game the fields a pick writes read tainted with an initializer on the
--- menu and clean without]. The chat menu's picks write the chat box's language and chat type, which the client reads
--- as it sends a chat message (shared/chatframeeditbox.lua:296-319, 835-839), and a send that reads them tainted is
--- refused. So this menu gets no initializer; its entries are written once the menu is open ("Menu.OpenMenuTag",
--- menu.lua:2453-2459), and keep the width the client laid out for the English. Its submenus hold slash commands and
--- language names: never touched.
-Menus.AFTER_OPEN = {
+  -- the chat menu button's shortcuts; its submenus hold slash commands and language names, never listed
+  -- (mainline/chatframemenubutton.lua:56–126)
   MENU_CHAT_SHORTCUTS = { source = "mainline/chatframemenubutton.lua:56", keys = CHAT_SHORTCUT_KEYS },
 }
 
 -- The untagged menus are UI/MenusUntagged's: Menus.UNTAGGED is set there (loaded next).
 Menus.UNTAGGED = {}
-local function specOf(tag) return Menus.TAGS[tag] or Menus.UNTAGGED[tag] or Menus.AFTER_OPEN[tag] end
+local function specOf(tag) return Menus.TAGS[tag] or Menus.UNTAGGED[tag] end
+
+local function secret(value) return WFJ.SurfaceState.secret(value) end
 
 -- The element frame's text widget: frame.fontString for a button, checkbox, radio or title.
 -- (through Labels.menuText: the compositor forbids SetFont on it)
@@ -224,21 +224,20 @@ end
 
 local menuKey = WFJ.Labels.keyer("menu.") -- a pooled frame's text widget, never its English or position
 
--- One element, after the client's initializer wrote its English. `name` (optional): the menu's name (a unit's), never
--- matched. → 1 | 0
+-- One element, the client's English in it. `name` (optional): the menu's name (a unit's), never matched. → 1 | 0
 function Menus.showElement(tag, frame, name)
   local spec = specOf(tag)
   if not spec then return 0 end
   if spec.tooltips and #spec.tooltips > 0 then
     local opts = { only = spec.tooltips }
     WFJ.HelpTooltip.register(frame, opts)
-    -- the utility buttons (gear, cancel, play-sample) the client's earlier initializers attached (parented to
-    -- the element, compositor.lua:34–46) own their hovers (SetUtilityButtonTooltipText, menutemplates.lua:645–649)
+    -- the utility buttons (gear, cancel, play-sample) the client's initializers attached (parented to the element,
+    -- compositor.lua:34–46) own their hovers (SetUtilityButtonTooltipText, menutemplates.lua:645–649)
     for _, child in ipairs(WFJ.Frames.children(frame)) do WFJ.HelpTooltip.register(child, opts) end
   end
   local fs = textOf(frame)
   local en = fs and fs:GetText() or nil
-  if #spec.keys == 0 or type(en) ~= "string" or en == "" then return 0 end
+  if #spec.keys == 0 or secret(en) or type(en) ~= "string" or en == "" then return 0 end
   if name ~= nil and en == name then return 0 end
   -- one record per text widget: frames are pooled, and two entries may share one English
   local n = WFJ.Labels.show(SURFACE, menuKey(fs), fs, nil, { only = spec.keys })
@@ -246,92 +245,136 @@ function Menus.showElement(tag, frame, name)
   return n
 end
 
--- The resetter: the frame is going back to the pool. → the number of records dropped
-function Menus.resetElement(frame)
-  local fs = textOf(frame)
-  if fs == nil then return 0 end
-  local gone = {}
-  for key, rec in pairs(WFJ.SurfaceState.records(SURFACE)) do
-    if rec.fs == fs then gone[#gone + 1] = key end
+-- The menu's name for a tag whose title is a name: contextData.name, or the name of contextData.unit (a target,
+-- focus or pet menu carries only the unit, unitpopupshared.lua:110–116). A name the client keeps secret is no name.
+-- → string | nil
+function Menus.nameOf(spec, contextData)
+  if not (spec and spec.titleIsName) or type(contextData) ~= "table" then return nil end
+  local name = contextData.name
+  if name == nil and contextData.unit ~= nil and not secret(contextData.unit) then
+    local unitName = Compat.get(SURFACE, "unitName")
+    if type(unitName) == "function" then name = unitName(contextData.unit) end
   end
-  for _, key in ipairs(gone) do WFJ.SurfaceState.drop(SURFACE, key) end
-  return #gone
+  if secret(name) or type(name) ~= "string" or name == "" then return nil end
+  return name
 end
 
--- Adds the initializer and the resetter to every element description under `desc`, submenus included; with
--- `skipTitle`, the first element of `desc` (a name title) is left alone. → count
-local function walk(tag, desc, depth, name, skipTitle)
-  if depth > 8 or type(desc) ~= "table" or type(desc.EnumerateElementDescriptions) ~= "function" then return 0 end
-  local n, first = 0, true
-  for _, child in desc:EnumerateElementDescriptions() do
-    if type(child) == "table" and type(child.AddInitializer) == "function" and not (skipTitle and first) then
-      child:AddInitializer(function(frame) Menus.showElement(tag, frame, name) end)
-      if type(child.AddResetter) == "function" then child:AddResetter(Menus.resetElement) end
-      n = n + 1 + walk(tag, child, depth + 1, name, false)
-    end
-    first = false
-  end
-  return n
-end
-
--- The Menu.ModifyMenu callback for `tag` (owner, rootDescription, contextData). → the number of elements given ours
-function Menus.onMenu(tag, root, contextData)
-  local spec = specOf(tag)
-  local titleIsName = spec and spec.titleIsName or false
-  local name
-  if titleIsName and type(contextData) == "table" and type(contextData.name) == "string" then
-    name = contextData.name
-  end
-  return walk(tag, root, 0, name, titleIsName)
-end
-
-local hooked = {} -- tag → true, once its ModifyMenu callback is registered
-local afterOpenHooked = false
-
-local shownMenus = setmetatable({}, { __mode = "k" }) -- menu frame → true, from "MenuProxy.OnShow"
--- menu frame → the text widgets written on it. A menu's text widgets come from one pool every menu shares
--- (blizzard_menu/compositor.lua:367-390), so a record left on one would be written onto whichever menu takes it next.
--- The widgets are kept, not their element frames: a rebuild of the open menu hands the same widgets to other frames.
+-- The menu being shown: { tag, name, root = its first menu frame }; nil when none of ours is open.
+local open
+local lastShown -- the menu frame "MenuProxy.OnShow" reported last: the root when "Menu.OpenMenuTag" follows
+-- menu frame → { widgets = the text widgets written (Labels adapters), raw = their FontStrings, frames = element
+-- frames }. A widget belongs to the pool every menu shares; the widgets are kept, not their element frames: a rebuild
+-- of the open menu hands the same widgets to other frames.
 local written = setmetatable({}, { __mode = "k" })
 
--- Every element frame under `frame` that has a text widget, its widget collected in `into`. → count shown
-local function showUnder(tag, frame, depth, into)
-  local n = 0
-  for _, child in ipairs(WFJ.Frames.children(frame)) do
-    if type(child) == "table" then
-      if type(child.fontString) == "table" then
-        into[#into + 1] = textOf(child)
-        n = n + Menus.showElement(tag, child, nil)
-      end
-      if depth < 3 then n = n + showUnder(tag, child, depth + 1, into) end
+local function shownFrame(frame)
+  return type(frame) == "table" and type(frame.IsShown) == "function" and frame:IsShown() and true or false
+end
+
+-- The element frames directly under a menu frame (each holds a text widget). → list
+local function entriesOf(menuFrame)
+  local out = {}
+  for _, child in ipairs(WFJ.Frames.children(menuFrame)) do
+    if type(child) == "table" and type(child.fontString) == "table" then out[#out + 1] = child end
+  end
+  return out
+end
+
+local function num(v) return type(v) == "number" and not secret(v) and v or nil end
+local function call(obj, method)
+  if type(obj) ~= "table" or type(obj[method]) ~= "function" then return nil end
+  return num(obj[method](obj))
+end
+
+-- Widens what the Japanese needs, with SetWidth alone (no client layout runs). A label's widget is set to its whole
+-- width (the client sized it to the English, one line, menutemplates.lua:298; compositor.lua:71–72); when a label
+-- then passes its entry's right edge less the margin the client left after the widest English label, every entry and
+-- the menu frame widen by the largest overflow (the entries share one width, menu.lua:1430–1480). A scrolling menu
+-- keeps its fixed size (menu.lua:1860–1874). → the width added to the menu frame
+function Menus.fit(menuFrame, frames)
+  if type(menuFrame) ~= "table" or type(menuFrame.SetWidth) ~= "function" then return 0 end
+  if shownFrame(menuFrame.ScrollBox) then return 0 end
+  local margin, rows = nil, {}
+  for _, frame in ipairs(frames) do
+    local fs = frame.fontString
+    local left, width, right = call(fs, "GetLeft"), call(fs, "GetWidth"), call(frame, "GetRight")
+    if left and width and right then
+      local m = right - (left + width)
+      if margin == nil or m < margin then margin = m end
+      rows[#rows + 1] = { fs = fs, left = left, width = width, right = right }
     end
   end
+  local over = 0
+  for _, r in ipairs(rows) do
+    local need = call(r.fs, "GetUnboundedStringWidth")
+    if need and need > r.width then
+      r.fs:SetWidth(need)
+      over = math.max(over, r.left + need + math.max(margin or 0, 0) - r.right)
+    end
+  end
+  if over <= 0 then return 0 end
+  over = math.ceil(over)
+  for _, frame in ipairs(frames) do
+    local w = call(frame, "GetWidth")
+    if w and type(frame.SetWidth) == "function" then frame:SetWidth(w + over) end
+  end
+  local w = call(menuFrame, "GetWidth")
+  if not w then return 0 end
+  menuFrame:SetWidth(w + over)
+  return over
+end
+
+-- The title of a root menu whose title is a name: the generator creates it first, so it is laid out at the top
+-- (the entries stack downwards, menu.lua:1500–1540). → element frame | nil
+local function titleOf(frames)
+  local top, best
+  for _, frame in ipairs(frames) do
+    local t = call(frame, "GetTop")
+    if t and (top == nil or t > top) then top, best = t, frame end
+  end
+  return best
+end
+
+-- Writes every entry of `menuFrame` with the open menu's keys, watches each written widget, fits. → count shown
+local function write(menuFrame)
+  if not open or type(menuFrame) ~= "table" then return 0 end
+  local rec = written[menuFrame] or { widgets = {}, raw = {}, frames = {} }
+  written[menuFrame] = rec
+  local tag, name = open.tag, open.name
+  local n = 0
+  local frames = entriesOf(menuFrame)
+  local spec = specOf(tag)
+  local title = spec and spec.titleIsName and menuFrame == open.root and titleOf(frames) or nil
+  if title then
+    local kept = {}
+    for _, frame in ipairs(frames) do if frame ~= title then kept[#kept + 1] = frame end end
+    frames = kept
+  end
+  for _, frame in ipairs(frames) do
+    local raw = frame.fontString
+    if not rec.raw[raw] then
+      rec.raw[raw] = true
+      rec.widgets[#rec.widgets + 1] = textOf(frame)
+      -- the client writes the English again on a pick that keeps the menu open: shown again once its pass is over
+      WFJ.TextWatch.add(raw, function()
+        if Menus.showElement(tag, frame, name) > 0 then Menus.fit(menuFrame, entriesOf(menuFrame)) end
+      end)
+    end
+    n = n + Menus.showElement(tag, frame, name)
+  end
+  rec.frames = frames
+  Menus.fit(menuFrame, frames)
   return n
 end
 
--- "MenuProxy.OnShow" (owner, menuFrame): remembered so an opened tag's frames can be found.
-function Menus.onMenuShown(_, menuFrame)
-  if type(menuFrame) == "table" then shownMenus[menuFrame] = true end
-end
-
-local function opened(tag)
-  local n = 0
-  for menuFrame in pairs(shownMenus) do
-    if type(menuFrame.IsShown) == "function" and menuFrame:IsShown() then
-      local widgets = written[menuFrame] or {}
-      written[menuFrame] = widgets
-      n = n + showUnder(tag, menuFrame, 0, widgets)
-    end
-  end
-  return n
-end
-
--- The records on `widgets`, dropped (the client's text and font go back on a widget still showing ours). → count
-local function letGo(widgets)
+-- The records and watches on `rec`'s widgets, dropped (the client's text and font go back on a widget still showing
+-- ours). → records dropped
+local function letGo(rec)
   local mine, gone = {}, {}
-  for _, fs in ipairs(widgets) do mine[fs] = true end
-  for key, rec in pairs(WFJ.SurfaceState.records(SURFACE)) do
-    if mine[rec.fs] then gone[#gone + 1] = key end
+  for _, fs in ipairs(rec.widgets) do mine[fs] = true end
+  for raw in pairs(rec.raw) do WFJ.TextWatch.remove(raw) end
+  for key, r in pairs(WFJ.SurfaceState.records(SURFACE)) do
+    if mine[r.fs] then gone[#gone + 1] = key end
   end
   for _, key in ipairs(gone) do WFJ.SurfaceState.drop(SURFACE, key) end
   return #gone
@@ -339,7 +382,7 @@ end
 
 local reported = {} -- error text → true: each distinct error is recorded once, not on every menu opened
 
--- Both callbacks run inside the client's own menu code for every menu it opens or hides, so they never raise: an
+-- The callbacks run inside the client's own menu code for every menu it opens or hides, so they never raise: an
 -- error is recorded where the load errors are (WFJ.initErrors, surface "menus.afteropen", printed by /wfj debug).
 local function guarded(fn, ...)
   local ok, n = pcall(fn, ...)
@@ -353,38 +396,66 @@ local function guarded(fn, ...)
   return 0
 end
 
--- "Menu.OpenMenuTag" (owner, tag): the client has built the menu and set its scripts. → count shown
-function Menus.onMenuOpened(_, tag)
-  if not Menus.AFTER_OPEN[tag] then return 0 end
-  return guarded(opened, tag)
+local function shown(menuFrame)
+  lastShown = menuFrame
+  if open and open.root ~= menuFrame and shownFrame(open.root) then return write(menuFrame) end -- a submenu
+  local untagged = WFJ.MenusUntagged and WFJ.MenusUntagged.specFor
+  local owner = type(menuFrame.GetOwnerRegion) == "function" and menuFrame:GetOwnerRegion() or nil
+  local tag, name
+  if type(untagged) == "function" and owner ~= nil then tag, name = untagged(owner) end
+  if not tag then return 0 end
+  open = { tag = tag, name = name, root = menuFrame }
+  return write(menuFrame)
+end
+
+-- "MenuProxy.OnShow" (owner, menuFrame): a submenu of the open menu, or an untagged menu its opener recorded, is
+-- written now; a tagged menu waits for "Menu.OpenMenuTag". → count shown
+function Menus.onMenuShown(_, menuFrame)
+  if type(menuFrame) ~= "table" then return 0 end
+  return guarded(shown, menuFrame)
+end
+
+local function opened(tag, contextData)
+  local spec = Menus.TAGS[tag]
+  if not spec or not shownFrame(lastShown) then return 0 end
+  open = { tag = tag, name = Menus.nameOf(spec, contextData), root = lastShown }
+  return write(lastShown)
+end
+
+-- "Menu.OpenMenuTag" (owner, tag, contextData): the client has built a tagged menu and shown it. → count shown
+function Menus.onMenuOpened(_, tag, contextData)
+  if not Menus.TAGS[tag] then return 0 end
+  return guarded(opened, tag, contextData)
+end
+
+local function hidden(menuFrame)
+  if open and open.root == menuFrame then open = nil end
+  local rec = written[menuFrame]
+  if not rec then return 0 end
+  written[menuFrame] = nil
+  return letGo(rec)
 end
 
 -- "MenuProxy.OnHide" (owner, menuFrame): fired as the menu hides, before the client hands its text widgets back to
--- the pool (menu.lua:1751-1764, 1851-1853). What the initializer path's resetter does. → records dropped
+-- the pool. → records dropped
 function Menus.onMenuHidden(_, menuFrame)
-  local widgets = type(menuFrame) == "table" and written[menuFrame] or nil
-  if not widgets then return 0 end
-  written[menuFrame] = nil
-  return guarded(letGo, widgets)
+  if type(menuFrame) ~= "table" then return 0 end
+  return guarded(hidden, menuFrame)
 end
 
--- Called by Main after Compat.init. Registers one ModifyMenu callback per tag; Menu is loaded at login (Blizzard_Menu
--- is not load-on-demand), and a tag whose generator never runs on this client simply never fires. Also registers the
--- two registry callbacks of the after-open menus, once. → true when the Menu API was found
+-- The open menu's tag, for the specs and /wfj debug. → tag | nil
+function Menus.openTag() return open and open.tag or nil end
+
+local hooked = false
+
+-- Called by Main after Compat.init. Registers the three registry callbacks once. → true when EventRegistry was found
 function Menus.init()
-  Compat.declare(SURFACE, "modifyMenu", { "Menu.ModifyMenu" })
-  local modify = Compat.get(SURFACE, "modifyMenu")
-  if type(modify) ~= "function" then return false end
-  for tag in pairs(Menus.TAGS) do
-    if not hooked[tag] then
-      hooked[tag] = true
-      modify(tag, function(_, root, contextData) Menus.onMenu(tag, root, contextData) end)
-    end
-  end
   Compat.declare(SURFACE, "eventRegistry", { "EventRegistry" })
+  Compat.declare(SURFACE, "unitName", { "UnitName" })
   local registry = Compat.get(SURFACE, "eventRegistry")
-  if not afterOpenHooked and type(registry) == "table" and type(registry.RegisterCallback) == "function" then
-    afterOpenHooked = true
+  if type(registry) ~= "table" or type(registry.RegisterCallback) ~= "function" then return false end
+  if not hooked then
+    hooked = true
     registry:RegisterCallback("MenuProxy.OnShow", Menus.onMenuShown, Menus)
     registry:RegisterCallback("Menu.OpenMenuTag", Menus.onMenuOpened, Menus)
     registry:RegisterCallback("MenuProxy.OnHide", Menus.onMenuHidden, Menus)

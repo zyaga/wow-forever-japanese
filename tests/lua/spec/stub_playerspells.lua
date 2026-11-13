@@ -1,5 +1,5 @@
 -- The Forever (camelot) client's Blizzard_PlayerSpells: PlayerSpellsFrame with its SpellBookFrame and
--- TalentsFrame children (parentKey only, no globals), plus EventRegistry, Menu.ModifyMenu and the camelot skills pane
+-- TalentsFrame children (parentKey only, no globals), plus EventRegistry, a built menu and the camelot skills pane
 -- (SkillsFrame.SkillDetailFrame), replaying the writes of the extracted 1.60.1 source:
 --   blizzard_playerspells/blizzard_playerspellsframe.lua:155–171 (UpdateFrameTitle → SetTitle),
 --   blizzard_sharedxml/portraitframe.lua:4–14 (SetTitle → TitleContainer.TitleText),
@@ -61,54 +61,40 @@ local function installEventRegistry()
   _G.EventRegistry = reg
 end
 
--- ───────────────────────────────────── Menu (ModifyMenu and a generated menu) ─────────────────────────────────────
--- PS.openMenu(tag, labels): the client generates the root description (one checkbox per label, its initializer
--- closing over the English), runs every ModifyMenu callback for the tag, then initialises pooled buttons in order.
+-- ───────────────────────────────────── Menu (a built and shown menu) ─────────────────────────────────────
+-- PS.openMenu(tag, labels): the client builds the menu (one checkbox per label, its English in the button's
+-- fontString, SetTextToFit), shows it and reports the tag open (tests/lua/spec/menu_stub.lua; blizzard_menu/
+-- menu.lua:2453–2459, 2506–2566). → the element frames in order
+local MenuStub = require("tests.lua.spec.menu_stub")
 local function installMenu()
-  PS.menuMods = {}
-  PS.menuButtons = {}
-  _G.Menu = { ModifyMenu = function(tag, cb)
-    assert(type(tag) == "string")
-    PS.menuMods[tag] = PS.menuMods[tag] or {}
-    table.insert(PS.menuMods[tag], cb)
-  end }
+  PS.openMenus = {}
+  _G.Menu = nil
 end
 
 function PS.openMenu(tag, labels)
-  local root = { elements = {} }
-  function root.EnumerateElementDescriptions(self) return ipairs(self.elements) end
-  for _, text in ipairs(labels) do
-    local desc = { text = text, initializers = {}, resetters = {} }
-    function desc.AddInitializer(self, fn) self.initializers[#self.initializers + 1] = fn end
-    function desc.AddResetter(self, fn) self.resetters[#self.resetters + 1] = fn end
-    desc:AddInitializer(function(button) -- MenuVariants.CreateCheckbox: fontString:SetTextToFit(text)
-      button.fontString = button.fontString or Stub.fontString("")
-      button.fontString.text = text
-    end)
-    root.elements[#root.elements + 1] = desc
-  end
-  for _, cb in ipairs(PS.menuMods[tag] or {}) do cb({}, root, nil) end
+  PS.closeMenu()
+  local root = MenuStub.element(nil)
+  for _, text in ipairs(labels) do root:CreateButton(text) end
+  local frames, menus = MenuStub.open(_G.EventRegistry, tag, root)
+  PS.openMenus = menus
   local shown = {}
-  for i, desc in ipairs(root.elements) do
-    local button = PS.menuButtons[i] or {}
-    PS.menuButtons[i] = button
-    for _, init in ipairs(desc.initializers) do init(button, desc, {}) end
-    button.desc = desc
-    shown[i] = button
-  end
+  for i, e in ipairs(root.children) do shown[i] = frames[e] end
   PS.openButtons = shown
   return shown
 end
 
--- MenuMixin:DiscardChildFrames (menu.lua:1704–1739): every element frame's resetters, then the compositor detaches
--- and the frame returns to the pool; on reuse the compositor resets the fontString with SetFontObject
--- (compositor.lua:66–74, 388), modelled here as the menu font written straight into the widget.
+-- The menu hides (MenuProxy.OnHide), then the compositor resets each fontString with SetFontObject as the frames
+-- return to the pool (compositor.lua:66–74, 388), modelled here as the menu font written straight into the widget.
 function PS.closeMenu()
+  local registry = _G.EventRegistry
+  for i = #(PS.openMenus or {}), 1, -1 do
+    PS.openMenus[i].shown = false
+    registry:TriggerEvent("MenuProxy.OnHide", PS.openMenus[i])
+  end
   for _, button in ipairs(PS.openButtons or {}) do
-    for _, reset in ipairs(button.desc.resetters) do reset(button) end
     if button.fontString then button.fontString.font = { path = "Fonts\\FRIZQT__.TTF", size = 12, flags = "" } end
   end
-  PS.openButtons = {}
+  PS.openMenus, PS.openButtons = {}, {}
 end
 
 -- ───────────────────────────────────────── PlayerSpellsFrame ─────────────────────────────────────────

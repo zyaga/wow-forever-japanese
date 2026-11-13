@@ -7,7 +7,10 @@ local PS = require("tests.lua.spec.stub_playerspells")
 
 local FILES = {}
 for i, f in ipairs(H.UI_FILES) do FILES[i] = f end
-for _, f in ipairs({ "UI/SpellBook.lua", "UI/Talents.lua" }) do FILES[#FILES + 1] = f end
+-- the settings menu goes through UI/Menus like every menu (MENU_SPELL_BOOK_SETTINGS, from UI/MenusTags)
+for _, f in ipairs({ "UI/SpellBook.lua", "UI/Talents.lua", "UI/Menus.lua", "UI/MenusTags.lua" }) do
+  FILES[#FILES + 1] = f
+end
 
 local UI = {
   SPELLBOOK = { "Spellbook", "呪文書" }, TALENTS = { "Talents", "タレント" },
@@ -53,6 +56,7 @@ describe("spellbook on the Forever client", function()
     WFJ = H.loadChunks(FILES)
     S, SS = WFJ.Settings, WFJ.SurfaceState
     H.uiSetup(WFJ, UI)
+    WFJ.Menus.init()
   end)
 
   after_each(function() H.uiTeardown() end)
@@ -216,8 +220,8 @@ describe("spellbook on the Forever client", function()
       assert.are.equal("Passive", item.SubName:GetText())
     end)
 
-    it("the settings menu's checkbox labels translate through Menu.ModifyMenu; other entries stay; the book's hide"
-      .. " forgets them", function()
+    it("the settings menu's checkbox labels translate once the menu is shown; other entries stay; closing it lets"
+      .. " them go", function()
       PS.openSpellBook()
       WFJ.TextWatch.tick() -- the watcher's next frame
       local buttons = PS.openMenu("MENU_SPELL_BOOK_SETTINGS", { "Hide Passives", "Group Similar Spells on Flyouts",
@@ -233,14 +237,13 @@ describe("spellbook on the Forever client", function()
       buttons = PS.openMenu("MENU_SPELL_BOOK_SETTINGS", { "Group Similar Spells on Flyouts", "Hide Passives" })
       assert.are.equal("Group Similar Spells on Flyouts", buttons[1].fontString:GetText())
       assert.are.equal("パッシブを隠す", buttons[2].fontString:GetText())
-      assert.is_nil(PS.menuMods.OTHER_MENU)
-      _G.PlayerSpellsFrame.SpellBookFrame:Hide()
-      assert.are.equal(0, SS.count(WFJ.SpellBook.MENU))
+      PS.closeMenu()
+      assert.are.equal(0, SS.count(WFJ.Menus.SURFACE))
     end)
   end)
 
-  it("a menu button's record is dropped by the menu's own resetter when the menu discards its frames; a pooled"
-    .. " fontString reused by another menu is never written by a later refresh", function()
+  it("a menu button's record is dropped when the menu hides; a pooled fontString reused by another menu is never"
+    .. " written by a later refresh", function()
     PS.loadPlayerSpells(); book()
     WFJ.SpellBook.init()
     PS.openSpellBook()
@@ -249,9 +252,9 @@ describe("spellbook on the Forever client", function()
     local fs = buttons[1].fontString
     assert.are.equal("すべての呪文ランクを表示", fs:GetText())
     PS.closeMenu()
-    assert.are.equal(0, SS.count(WFJ.SpellBook.MENU))
+    assert.are.equal(0, SS.count(WFJ.Menus.SURFACE))
     assert.are.equal("Show all spell ranks", fs:GetText()) -- dropped while still ours: the English is back
-    fs.text = "Some Other Menu Entry" -- the pool hands the button to another menu (no ModifyMenu for it)
+    fs.text = "Some Other Menu Entry" -- the pool hands the button to another menu (none of ours)
     local writes, fonts = fs.calls.addonSetText, fs.calls.addonSetFont
     alt(true); alt(false)
     S.set("area.interface", false); S.set("area.interface", true)
@@ -312,9 +315,7 @@ describe("spellbook on the Forever client", function()
     _G.PlayerSpellsFrame.SpellBookFrame.ForEachDisplayedSpell = nil
     _G.PlayerSpellsFrame.SpellBookFrame.PagedSpellsFrame.PagingControls.UpdateControls = "moved"
     _G.EventRegistry = { RegisterCallback = true }
-    _G.Menu = { ModifyMenu = {} }
     assert.has_no.errors(function() WFJ.SpellBook.init() end)
-    assert.are.equal(0, WFJ.SpellBook.onSettingsMenu(nil, { EnumerateElementDescriptions = "x" }))
     assert.are.equal(0, SS.count("spellbook"))
   end)
 end)
