@@ -214,9 +214,12 @@ function Collector.size(key, e, n, who)
 end
 
 -- GUID → creature id for Creature / Vehicle units, the pattern Blizzard uses [verified: classic_era
--- Blizzard_PTRFeedback/Blizzard_PTRFeedback_Tooltips.lua:89–91]; players, pets and objects → nil.
+-- Blizzard_PTRFeedback/Blizzard_PTRFeedback_Tooltips.lua:89–91]; players, pets and objects → nil. The client may hand
+-- over a unit's GUID as a secret value, which addon code may not index or compare: no id then.
 function Collector.creatureId(guid)
   if type(guid) ~= "string" then return nil end
+  local isSecret = WFJ.Compat and WFJ.Compat.resolve("issecretvalue")
+  if type(isSecret) == "function" and isSecret(guid) then return nil end
   local unitType = guid:match("^(%a+)%-")
   if unitType ~= "Creature" and unitType ~= "Vehicle" then return nil end
   return tonumber(guid:match("%-(%d+)%-%x+$"))

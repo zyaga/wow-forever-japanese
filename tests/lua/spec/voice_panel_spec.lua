@@ -186,6 +186,7 @@ local function teardown()
   _G.InCombatLockdown, _G.WFJVoicePanelTip = nil, nil
   _G.WFJVoicePanelText, _G.C_QuestLog, _G.QuestMapFrame_OpenToQuestDetails = nil, nil, nil
   Stub.units.questnpc = nil
+  _G.issecretvalue = nil
 end
 
 describe("the voice panel without a voice pack", function()
@@ -399,6 +400,31 @@ describe("the voice player with the voice panel on", function()
     S.set("enabled", false) -- remembered with translation off too
     Stub.showProgress()
     assert.are.equal(1992, db.voiceSpeakers["2-progress"].c)
+  end)
+
+  it("a quest NPC whose GUID the client keeps secret: the line plays with no head and is not remembered", function()
+    local secret = "Creature-0-1-0-1-1992-0000ABCD"
+    Stub.units.questnpc = { name = "Senani Thunderheart", guid = secret }
+    _G.issecretvalue = function(v) return v == secret end
+    Stub.showDetail()
+    settle()
+    assert.are.equal(SOUND:format("2-description"), sounds[1].path)
+    assert.is_nil(db.voiceSpeakers)
+    assert.is_nil(panel().head.model.unit)
+    assert.is_false(panel().head.shown)
+  end)
+
+  it("a speaker whose unit GUID turns secret loads by creature id, never comparing the secret", function()
+    local guid = "Creature-0-1-0-1-1992-0000ABCD"
+    Stub.units.questnpc = { name = "Senani Thunderheart", guid = guid }
+    _G.issecretvalue = function(v) return v == guid end
+    local Head = WFJ.VoicePanelHead
+    local h = Head.build(CreateFrame("Frame"))
+    local shown
+    Head.load(h, { speaker = { creature = 1992, unit = "questnpc", guid = guid } }, true, function(s) shown = s end)
+    assert.is_true(shown)
+    assert.is_nil(h.model.unit)
+    assert.are.equal(1992, h.model.creature)
   end)
 
   it("a quest offered by a player is not remembered", function()
