@@ -132,6 +132,15 @@ def _records(name: str, buf: bytes) -> Iterator[tuple[int, bytes]]:
         seen.add(cid)
         yield cid, buf[off : off + length]
         off += length
+    if off != len(buf):
+        raise CreatureCacheError(f"{name}: {len(buf) - off} bytes after the zero terminator")
+
+
+def read_build(path: Path) -> int:
+    """The client build in the cache's header. Reads no record, so a build whose layout is not pinned yet can
+    still be copied before the next client build empties the cache."""
+    _, buf = _open(path)
+    return struct.unpack_from("<I", buf, 4)[0]
 
 
 def read_displays(path: Path) -> tuple[int, dict[int, list[int]]]:

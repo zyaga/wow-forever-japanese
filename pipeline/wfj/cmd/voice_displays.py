@@ -12,14 +12,13 @@ from __future__ import annotations
 
 import argparse
 import datetime
-import json
 import sys
 from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
 
 from wfj.io import creature_cache, vmangos
-from wfj.io.jsonl_store import dumps
+from wfj.io.jsonl_store import dumps, read_jsonl
 from wfj.paths import data_root
 
 DISPLAYS = Path("voice") / "displays.jsonl"
@@ -51,12 +50,6 @@ def display_rows(who: set[int], caches: Sequence[tuple[int, dict[int, list[int]]
     return rows
 
 
-def _read_rows(path: Path) -> list[dict[str, Any]]:
-    if not path.is_file():
-        return []
-    return [json.loads(ln) for ln in path.read_text(encoding="utf-8").splitlines() if ln.strip()]
-
-
 def run(argv: Sequence[str]) -> int:
     from wfj.cmd import voice_cast
 
@@ -70,7 +63,7 @@ def run(argv: Sequence[str]) -> int:
         caches = [creature_cache.read_displays(f) for f in sorted(Path(a.creatures).glob("*.wdb"))]
         who = voice_cast.speaking(root)
         vm = {c: info["displays"] for c, info in vmangos.read_creatures(Path(a.vmangos), who).items()}
-        rows = display_rows(who, caches, vm, f"vmangos@{a.commit}", _read_rows(root / DISPLAYS),
+        rows = display_rows(who, caches, vm, f"vmangos@{a.commit}", read_jsonl(root / DISPLAYS),
                             datetime.date.today().isoformat())
     except (creature_cache.CreatureCacheError, vmangos.VmangosError) as e:
         print(f"voice displays: {e}", file=sys.stderr)

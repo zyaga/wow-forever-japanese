@@ -796,8 +796,9 @@ describe("the head of a speaker who is not on screen", function()
   end)
 
   it("draws the remembered display, else the shipped one, else asks by creature id", function()
-    WFJ.Data.displays = { [6119] = 4864 }
-    load({ creature = 1992, display = 555 })
+    WFJ.Data.displays = { [6119] = 4864, [1992] = 111 }
+    db.voiceDisplays = { [1992] = 555 }
+    load({ creature = 1992 })
     assert.are.equal(555, h.model.display)
     load({ creature = 6119 })
     assert.are.equal(4864, h.model.display)
@@ -807,7 +808,7 @@ describe("the head of a speaker who is not on screen", function()
     assert.is_true(shown)
   end)
 
-  it("the quest log's replay carries the display remembered for the NPC who offered the quest", function()
+  it("the quest log's replay draws the display remembered for the NPC who offered the quest", function()
     local fs = Stub.fontString(EN)
     WFJ.Render.show("questmap.info", "description", fs, EN, "quests", "quest.description", 2, { live = EN })
     db.voiceSpeakers = { ["2-description"] = { c = 1992, s = 2, n = "Senani Thunderheart", t = "Trainer" } }
@@ -844,7 +845,8 @@ describe("the head of a speaker who is not on screen", function()
 
   it("each head drawn without the NPC on screen leaves one log entry naming its source", function()
     WFJ.Data.displays = { [6119] = 4864 }
-    load({ creature = 1992, display = 555, displaySource = "saved" })
+    db.voiceDisplays = { [1992] = 555 }
+    load({ creature = 1992 })
     settle()
     load({ creature = 6119 })
     settle()

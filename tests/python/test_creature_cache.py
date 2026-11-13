@@ -30,6 +30,8 @@ def test_a_build_with_no_pinned_layout_is_refused(fixture, tmp_path):
     path.write_bytes(bytes(buf))
     with pytest.raises(CreatureCacheError, match="build 99999 has no pinned"):
         read_displays(path)
+    # the copy reads only the header, so a new build's cache is saved before the client empties it
+    assert creature_cache.read_build(path) == 99999
 
 
 def test_a_file_that_is_not_a_creature_cache_is_refused(root):

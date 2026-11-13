@@ -4,8 +4,8 @@
 --   Head.setShown(head, shown) · Head.setTalking(head, talking) · Head.reset(head)
 -- The model comes from the unit on screen while that unit is still the speaker (the client is drawing it). Otherwise
 -- it comes from a display id, which addresses the client's own model data and needs no creature cache (ADR-088): the
--- one this player's client drew for that NPC (the speaker's `display`, remembered by UI/VoiceQuestLog), else the one
--- shipped for it (WFJ.Data.displays). Only with neither is it asked for by creature id, which needs the creature cache
+-- one this player's client drew for that NPC, else the one shipped for it (`VoiceQuestLog.displayFor`). Only with
+-- neither is it asked for by creature id, which needs the creature cache
 -- every client build empties. A unit's model, once loaded, reports its display id (State "speakerDisplay"). A speaker
 -- with no model (a book, the narrator, an unknown creature) gets no head after the settle and onShown(false) lets the
 -- panel move the text left; a model that arrives later still shows. The model frame is never hidden before its load
@@ -45,7 +45,7 @@ end
 local function arrived(h)
   report(h)
   local w = h.waiting
-  if not w or w.key ~= h.loaded or not w.settled or not hasModel(h.model) then return end
+  if not w or not hasModel(h.model) then return end
   h.waiting = nil
   if w.entry then w.entry.late = true end
   Head.setShown(h, true)
@@ -123,14 +123,11 @@ function Head.load(h, item, wanted, onShown)
   local now = unit and type(guid) == "function" and guid(unit) or nil
   if now ~= nil and type(isSecret) == "function" and isSecret(now) then now = nil end
   if unit and (now == nil or now ~= who.guid) then unit = nil end
-  local display, source = nil, "unit"
+  local display, source
   if not unit then
-    local shipped = WFJ.Data and WFJ.Data.displays
-    display, source = who.display, who.displaySource or "saved"
-    if not display then
-      display = type(shipped) == "table" and shipped[who.creature] or nil
-      source = display and "shipped" or "creature"
-    end
+    local displayFor = WFJ.VoiceQuestLog and WFJ.VoiceQuestLog.displayFor
+    if displayFor then display, source = displayFor(who.creature) end
+    source = source or "creature"
   end
   local want = unit and ("unit " .. tostring(who.guid)) or display and ("display " .. display)
     or ("creature " .. who.creature)
@@ -142,8 +139,6 @@ function Head.load(h, item, wanted, onShown)
   h.loaded = want
   Head.setShown(h, true)
   onShown(true)
-  local w = { key = want, onShown = onShown }
-  h.waiting = w
   if unit then
     h.fromUnit = who
     h.model:SetUnit(unit)
@@ -156,15 +151,16 @@ function Head.load(h, item, wanted, onShown)
     h.settleTimer = timer.NewTimer(MODEL_SETTLE, function()
       h.settleTimer = nil
       local loaded = hasModel(h.model)
-      w.settled = true
+      local entry
       if not unit then
-        local ok, entry = pcall(WFJ.Diag.log, "voicehead", source .. " " .. who.creature,
+        local ok, e = pcall(WFJ.Diag.log, "voicehead", source .. " " .. who.creature,
           { display = display, model = loaded })
-        w.entry = ok and entry or nil
+        entry = ok and e or nil
       end
       if loaded then
-        h.waiting = nil
         report(h)
+      else
+        h.waiting = { onShown = onShown, entry = entry } -- shown by OnModelLoaded if the model still comes
       end
       Head.setShown(h, loaded)
       onShown(loaded)
@@ -180,5 +176,5 @@ end
 
 -- Forgets the loaded model, so the next load starts again (a look change).
 function Head.reset(h)
-  h.loaded = nil
+  h.loaded, h.waiting = nil, nil
 end

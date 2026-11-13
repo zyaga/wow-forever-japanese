@@ -14,6 +14,7 @@ from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
 
+from wfj.cmd.voice_displays import DISPLAYS
 from wfj.core import align, english_cards, glosses, numbered, pronunciation, readings, tooltip_text
 from wfj.core.align import load_allowlist
 from wfj.core.english_text import model_english
@@ -21,7 +22,7 @@ from wfj.core.hashing import key as hash_key
 from wfj.core.model import SCHEMA, validate_line
 from wfj.core.normalize import female_variant, mask_values, normalize_for, normalize_v1
 from wfj.emit import lua_writer, schema
-from wfj.io.jsonl_store import Store
+from wfj.io.jsonl_store import Store, read_jsonl
 from wfj.io.names_store import load_lines as load_name_lines
 from wfj.paths import allowlist_path, data_root
 
@@ -29,7 +30,6 @@ TOC_NAME = "WoWForeverJapanese.toc"
 # the generated files that are not shards, in load order; the last ships only when the store has its data
 FIXED = ("Data/Meta.lua", "Data/Vectors.lua", "Data/ErrorSounds.lua", "Data/Displays.lua")
 ERROR_SOUNDS = Path("voice") / "error-sounds.jsonl"
-DISPLAYS = Path("voice") / "displays.jsonl"
 VECTORS_HEAD = "WFJ.Data.vectors ="
 
 
@@ -282,11 +282,10 @@ def plan(store: Store, vectors: list[dict], report: dict[str, Any] | None = None
         rows = [json.loads(ln) for ln in sounds.read_text(encoding="utf-8").splitlines() if ln.strip()]
         _check_error_sounds(rows)
         out["Data/ErrorSounds.lua"] = lua_writer.error_sounds_text(rows)
-    displays = store.root / DISPLAYS
-    if displays.is_file():
-        rows = [json.loads(ln) for ln in displays.read_text(encoding="utf-8").splitlines() if ln.strip()]
-        _check_displays(rows)
-        out["Data/Displays.lua"] = lua_writer.displays_text(rows)
+    displays = read_jsonl(store.root / DISPLAYS)
+    if displays:
+        _check_displays(displays)
+        out["Data/Displays.lua"] = lua_writer.displays_text(displays)
     out.update(_plan_names(store.root))
     return out
 

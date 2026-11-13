@@ -14,8 +14,8 @@
 --     stands in, with no head.
 --   * The display id of every NPC whose head the panel drew from the unit on screen (State "speakerDisplay", from
 --     UI/VoicePanelHead), while a voice pack is installed: WFJ_DB.voiceDisplays[creature id] = display id, refreshed
---     every time. A replay draws the head from it, so it needs no creature cache, which every client build empties
---     (ADR-088). Bounded by the NPCs the player has met.
+--     every time. `displayFor` answers it, else the shipped one, for every head drawn without the NPC on screen, so
+--     none needs the creature cache every client build empties (ADR-088). Bounded by the NPCs the player has met.
 -- The button follows forever-vo's ForeverVO/UI/QuestLog.lua (MIT License; see ATTRIBUTION.md).
 local _, WFJ = ...
 local QuestLog = {}
@@ -55,6 +55,18 @@ local function rememberDisplay(creature, display)
   db.voiceDisplays[creature] = display
 end
 
+-- → the display id to draw a creature with and where it came from ("saved": this player's client drew it,
+-- "shipped": WFJ.Data.displays), or nil
+function QuestLog.displayFor(creature)
+  local saved = type(db) == "table" and db.voiceDisplays
+  local d = type(saved) == "table" and saved[creature] or nil
+  if d then return d, "saved" end
+  local shipped = WFJ.Data and WFJ.Data.displays
+  d = type(shipped) == "table" and shipped[creature] or nil
+  if d then return d, "shipped" end
+  return nil
+end
+
 -- → the remembered speaker of a quest line, or nil
 function QuestLog.rememberedSpeaker(questID, field)
   local all = type(db) == "table" and db.voiceSpeakers
@@ -71,8 +83,7 @@ local function logLine()
   local qid = type(frame) == "table" and frame.DetailsFrame and frame.DetailsFrame.questID
   if type(qid) ~= "number" then qid = type(m.id) == "number" and m.id or nil end
   local saw = QuestLog.rememberedSpeaker(qid, "description")
-  local displays = type(db) == "table" and type(db.voiceDisplays) == "table" and db.voiceDisplays or {}
-  local who = saw and { creature = saw.c, sex = saw.s, display = displays[saw.c] } or nil
+  local who = saw and { creature = saw.c, sex = saw.s } or nil
   local path, detail = WFJ.Voice.decide("questframe.detail", "description", m.kind, m.id, who, true)
   if not path then return nil end
   local questTitle = WFJ.SurfaceState.get(LOG_SURFACE, "title")

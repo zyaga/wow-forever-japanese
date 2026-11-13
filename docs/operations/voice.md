@@ -36,7 +36,7 @@ make voice-displays
 make generate
 ```
 
-- `make creature-copy` copies the client's creature cache (`Cache/WDB/enUS/creaturecache.wdb`, read only on the game folder) to `$(INPUTS)/creatures/<build>.wdb`, named by the build in the cache's header. The client writes the cache on a full Exit Game, not on a logout. A build with no pinned creature layout stops here: check that every record of the new cache reads with a pinned layout and that its displays agree with VMaNGOS, then pin it in `io/creature_cache.LAYOUTS` (a code change and a PR).
+- `make creature-copy` copies the client's creature cache (`Cache/WDB/enUS/creaturecache.wdb`, read only on the game folder) to `$(INPUTS)/creatures/<build>.wdb`, named by the build in the cache's header. The client writes the cache on a full Exit Game, not on a logout. The copy reads only the header, so a new build is always copied before the next build empties it. `make voice-displays` refuses a build with no pinned creature layout: check that every record of the new cache reads with a pinned layout and that its displays agree with VMaNGOS, then pin it in `io/creature_cache.LAYOUTS` (a code change and a PR).
 - `make voice-displays` takes each speaker's display from the newest copied cache that holds it, else from VMaNGOS. Rows are additive: a creature only an older cache held keeps its row. Its last line says how many speakers have a display id and how many came from a cache.
 - Commit `data/voice/displays.jsonl` with the generated `Data/Displays.lua` (and the TOC when it changed).
 - The creature caches are not backed up, unlike the quest caches: playing the client fills them again.

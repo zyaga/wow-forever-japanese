@@ -309,7 +309,7 @@ creature-copy: ## copy the Forever client's creature cache to CREATURES/<build>.
 	@test -f "$(WOW_DIR)/Cache/WDB/enUS/creaturecache.wdb" || { echo "creature-copy: no Cache/WDB/enUS/creaturecache.wdb under $(WOW_DIR) (did the client Exit Game?)"; exit 1; }
 	@mkdir -p "$(CREATURES)"
 	@W="$$(cd "$(WOW_DIR)" && pwd)/Cache/WDB/enUS/creaturecache.wdb" && \
-		B="$$(cd pipeline && $(PY) -c 'import sys; from pathlib import Path; from wfj.io.creature_cache import read_displays; print(read_displays(Path(sys.argv[1]))[0])' "$$W")" && \
+		B="$$(cd pipeline && $(PY) -c 'import sys; from pathlib import Path; from wfj.io.creature_cache import read_build; print(read_build(Path(sys.argv[1])))' "$$W")" && \
 		cp "$$W" "$(CREATURES)/$$B.wdb" && echo "creature-copy: $(CREATURES)/$$B.wdb (then: make voice-displays)"
 
 level1-spells: ## regenerate pipeline/level1_spells.txt (the spells a fresh level-1 character has) from the installed Forever client: WOW_DIR=<client folder> [PRODUCT=wowf]
