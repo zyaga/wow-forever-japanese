@@ -23,9 +23,18 @@ local function bucket(surface, create)
   return b
 end
 
+-- A size that is not a number above 0 is recorded as none: the client has reported such a size for a widget
+-- (-1566.5 on a mail row's expiry text) and raises when SetFont is given it back.
 local function readFont(fs)
   local path, size, flags = fs:GetFont()
+  if type(size) ~= "number" or size ~= size or size <= 0 then size = nil end
   return { path = path, size = size, flags = flags }
+end
+
+-- The original font back on a record's widget; an original with no size takes the size that was applied.
+-- Called only while a font is applied.
+local function putBack(rec)
+  rec.fs:SetFont(rec.font.path, rec.font.size or rec.appliedFont.size, rec.font.flags)
 end
 
 local function sameFont(a, b)
@@ -48,7 +57,7 @@ function SurfaceState.capture(surface, key, fs, en, meta)
     if rec.fs == fs then
       origFont, carriedFont = rec.font, rec.appliedFont
     elseif rec.appliedFont then
-      rec.fs:SetFont(rec.font.path, rec.font.size, rec.font.flags)
+      putBack(rec)
     end
   end
   local other = owners[fs]
@@ -97,7 +106,7 @@ function SurfaceState.apply(surface, key, text, font)
       if fontOk ~= false then rec.appliedFont = font end
     end
   elseif rec.appliedFont then
-    rec.fs:SetFont(rec.font.path, rec.font.size, rec.font.flags)
+    putBack(rec)
     rec.appliedFont = nil
   end
   rec.fs:SetText(text)
@@ -131,7 +140,7 @@ function SurfaceState.restore(surface, key)
     wrote = true
   end
   if rec.appliedFont then
-    rec.fs:SetFont(rec.font.path, rec.font.size, rec.font.flags)
+    putBack(rec)
     rec.appliedFont = nil
     wrote = true
   end
@@ -184,7 +193,7 @@ function SurfaceState.drop(surface, key)
     wrote = true
   end
   if rec.appliedFont then
-    rec.fs:SetFont(rec.font.path, rec.font.size, rec.font.flags)
+    putBack(rec)
     wrote = true
   end
   records[surface][key] = nil
@@ -211,7 +220,7 @@ function SurfaceState.discard(surface)
   local n = 0
   for _, rec in pairs(b) do
     n = n + 1
-    if rec.appliedFont then rec.fs:SetFont(rec.font.path, rec.font.size, rec.font.flags) end -- no text is read
+    if rec.appliedFont then putBack(rec) end -- no text is read
   end
   records[surface] = nil
   return n

@@ -198,7 +198,7 @@ local function showHover(cover, word)
     return
   end
   local b = ensureBox()
-  WFJ.Font.set(boxText, WFJ.Font.PATH, math.max(size or 12, 12), "")
+  WFJ.Font.set(boxText, WFJ.Font.PATH, math.max(WFJ.Font.size(size) or 12, 12), "")
   boxText:SetTextColor(1, 1, 1)
   boxText:SetText(word.reading)
   b:SetSize(boxText:GetStringWidth() + 18, boxText:GetStringHeight() + 12) -- room for the tooltip border

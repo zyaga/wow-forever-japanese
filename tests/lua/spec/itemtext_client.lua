@@ -31,6 +31,9 @@ function M.simpleHTML(Stub, name)
   end
   function html:SetFont(tag, path, size, flags)
     self.calls.SetFont = self.calls.SetFont + 1
+    if type(size) == "number" and (size ~= size or size <= 0) then -- as a FontString's SetFont
+      error(("SimpleHTML:SetFont(): Invalid font height (%f): height must be > 0"):format(size), 2)
+    end
     if Stub.fontSetFails then return end -- SimpleHTML SetFont returns nothing; a refusal leaves the font as it was
     local t = self.tags[tag]
     t.font, t.color = { path = path, size = size, flags = flags }, { 1, 1, 1, 1 }

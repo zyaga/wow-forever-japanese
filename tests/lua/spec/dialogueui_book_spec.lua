@@ -215,6 +215,18 @@ describe("UI/DialogueUIBook: Dialogue UI's book window", function()
       { _G.DUIFont_Book_Paragraph:GetFont() })
   end)
 
+  it("a book font reporting a size not above 0 takes the bundled face at the default size and gets it back", function()
+    load()
+    _G.DUIFont_Book_Paragraph.font.size = -1566.511841
+    ship({ [PLAIN] = PLAIN_JA })
+    DUI.openBook({ PLAIN })
+    DUI.flush()
+    assert.are.same({ WFJ.Font.PATH, WFJ.Font.DEFAULT_SIZE, "" }, { _G.DUIFont_Book_Paragraph:GetFont() })
+    book:Hide()
+    assert.are.same({ "Interface\\AddOns\\DialogueUI\\Fonts\\frizqt__.ttf", WFJ.Font.DEFAULT_SIZE, "" },
+      { _G.DUIFont_Book_Paragraph:GetFont() })
+  end)
+
   it("the book fonts get Dialogue UI's own face back when the book closes", function()
     load()
     local orig = { _G.DUIFont_Book_Paragraph:GetFont() }
