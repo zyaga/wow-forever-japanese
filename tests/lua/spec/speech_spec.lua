@@ -15,6 +15,9 @@ local GOSSIP = {
   ["%s goes into a frenzy!"] = { "%sは狂乱状態になった！", "." },
   ["The rest is stale."] = { "古い訳。", "s" },
   ["%s laughs."] = { "笑った。", "." }, -- a draft that lost the speaker's %s: never shown
+  ["I can make it from here.  Thanks, {name}!"] = { "ここからは一人で行ける。ありがとう、{name}！", "." },
+  ["Hail, {name}!"] = { "{class}の{name}よ！", "." }, -- a token another player's name cannot fill
+  ["Good work, {name}."] = { "<sir/madam>、{name}。", "." }, -- a pair that follows the named player's sex
 }
 -- The gossip key stands in for Main's hash: an opaque string, never the English itself.
 local KEY, keys = {}, 0
@@ -25,6 +28,14 @@ end
 local function keyOf(text)
   local t = text:gsub("Testplayer", "{name}")
   return KEY[t] or ("%016x"):format(#t)
+end
+-- Main's keyAs / expandAs: the line keyed, and its Japanese filled, with another player's name
+local function keyAs(text, name)
+  return KEY[(text:gsub(name:gsub("%p", "%%%0"), "{name}"))]
+end
+local function expandAs(ja, other)
+  ja = ja:gsub("{name}", other.name)
+  return (ja:gsub("<(%a+)/(%a+)>", function(m, f) return other.sex == 3 and f or m end))
 end
 local function format(...) return string.format(...) end
 local NAMES = { "CHAT_FRAMES", "ChatTypeInfo", "ChatFrame1", "FCF_OpenTemporaryWindow", "issecretvalue",
@@ -129,7 +140,7 @@ describe("NPC speech", function()
     WFJ.State.setArea("gossip", true) -- the NPC talk setting (Settings' area.gossip, on by default)
     assert.is_true(WFJ.ChatSystem.init())
     local expand = function(ja) return (ja:gsub("{name}", "Testplayer")) end
-    assert.is_true(WFJ.Speech.init({ key = keyOf, expand = expand }))
+    assert.is_true(WFJ.Speech.init({ key = keyOf, expand = expand, keyAs = keyAs, expandAs = expandAs }))
   end)
   after_each(function()
     H.uiTeardown()
@@ -487,6 +498,172 @@ describe("NPC speech", function()
       npc(f, SAY, "%s says: ", SHIPPED, "Ralph")
       assert.are.equal("Ralphの発言: 離れるな、Testplayer！", f:Last())
       assert.are.same({}, speechLog())
+    end)
+  end)
+
+  describe("a line that names another player", function()
+    local f, recorded, unitName, unitSex
+    local THANKS = "I can make it from here.  Thanks, Sky!"
+    local THANKS_JA = "\"Stinky\" Ignatzの発言: ここからは一人で行ける。ありがとう、Sky！"
+    local SPEAKER, GUID = "\"Stinky\" Ignatz", "Creature-0-1-2-3-1270-00001"
+    local party, db
+    before_each(function()
+      db = WFJ.Diag.load(nil)
+      f = _G.ChatFrame1
+      f.GetName = function() return "ChatFrame1" end
+      recorded, party = {}, {}
+      WFJ.Collector = { recordGossip = function(text) recorded[#recorded + 1] = text; return "recorded" end }
+      unitName, unitSex = _G.UnitName, _G.UnitSex
+      _G.UnitName = function(unit)
+        if unit == "player" then return "Testplayer", "Oh" end
+        local p = party[unit]
+        if p then return p.name, p.surname end
+      end
+      _G.UnitSex = function(unit) return party[unit] and party[unit].sex or nil end
+    end)
+    after_each(function()
+      WFJ.Collector, _G.UnitName, _G.UnitSex = nil, unitName, unitSex
+    end)
+    local function traced()
+      local out = {}
+      for _, e in ipairs(db.entries) do
+        if e.kind == "speechline" then out[#out + 1] = e end
+      end
+      return out[#out]
+    end
+
+    it("aimed at another player: the Japanese, with their first name; never collected", function()
+      npc(f, SAY, "%s says: ", THANKS, SPEAKER, GUID, "Sky Zero")
+      assert.are.equal(THANKS_JA, f:Last())
+      assert.are.same({}, recorded)
+      local e = traced()
+      assert.are.equal("target", e.other)
+      for _, v in pairs(e) do assert.is_falsy(type(v) == "string" and v:find("Sky", 1, true)) end
+    end)
+
+    it("a target written with a dash, a first name alone, or the whole target as the name", function()
+      npc(f, SAY, "%s says: ", THANKS, SPEAKER, GUID, "Sky-Zero")
+      assert.are.equal(THANKS_JA, f:Last())
+      npc(f, SAY, "%s says: ", THANKS, SPEAKER, GUID, "Sky")
+      assert.are.equal(THANKS_JA, f:Last())
+      npc(f, SAY, "%s says: ", "I can make it from here.  Thanks, Sky Zero!", SPEAKER, GUID, "Sky Zero")
+      assert.are.equal("\"Stinky\" Ignatzの発言: ここからは一人で行ける。ありがとう、Sky Zero！", f:Last())
+    end)
+
+    it("no target: a party member named in the line gives the name; not collected", function()
+      party.party1 = { name = "Sky", surname = "Zero", sex = 2 }
+      npc(f, SAY, "%s says: ", THANKS, SPEAKER, GUID)
+      assert.are.equal(THANKS_JA, f:Last())
+      assert.are.same({}, recorded)
+      assert.are.equal("party", traced().other)
+    end)
+
+    it("no target and no party member named: English, and collected as before", function()
+      party.party1 = { name = "Skyler", sex = 2 }
+      npc(f, SAY, "%s says: ", THANKS, SPEAKER, GUID)
+      assert.are.equal("\"Stinky\" Ignatzの発言: " .. THANKS, f:Last())
+      assert.are.same({ THANKS }, recorded)
+      assert.is_nil(traced().other)
+    end)
+
+    it("a party member's name inside another word is not theirs: the line is collected", function()
+      party.party1 = { name = "Sky", sex = 2 }
+      npc(f, SAY, "%s says: ", "Skyward we go!", SPEAKER, GUID)
+      npc(f, SAY, "%s says: ", "Thank you, Sky!", SPEAKER, GUID) -- no Japanese, but it names Sky
+      assert.are.same({ "Skyward we go!" }, recorded)
+    end)
+
+    it("the speech bubble gets the Japanese with the other player's name", function()
+      local string = Stub.fontString("")
+      local child = { String = string }
+      bubbles[1] = { GetChildren = function() return child end, IsForbidden = function() return false end }
+      npc(f, SAY, "%s says: ", THANKS, SPEAKER, GUID, "Sky Zero")
+      string:SetText(THANKS)
+      assert.are.equal(1, WFJ.Speech.scanBubbles())
+      assert.are.equal("ここからは一人で行ける。ありがとう、Sky！", string:GetText())
+    end)
+
+    it("a token their name cannot fill, or a pair with their sex unknown, stays English", function()
+      npc(f, SAY, "%s says: ", "Hail, Sky!", SPEAKER, GUID, "Sky Zero")
+      assert.are.equal("\"Stinky\" Ignatzの発言: Hail, Sky!", f:Last())
+      npc(f, SAY, "%s says: ", "Good work, Sky.", SPEAKER, GUID, "Sky Zero")
+      assert.are.equal("\"Stinky\" Ignatzの発言: Good work, Sky.", f:Last())
+      party.party2 = { name = "Sky", surname = "Zero", sex = 3 }
+      npc(f, SAY, "%s says: ", "Good work, Sky.", SPEAKER, GUID, "Sky Zero")
+      assert.are.equal("\"Stinky\" Ignatzの発言: madam、Sky。", f:Last())
+    end)
+
+    it("with no target known (Dialogue UI's chat panel): own name first, then the party's names", function()
+      assert.are.equal("離れるな、Testplayer！", WFJ.Speech.translateNamed("Stay close, Testplayer!"))
+      assert.is_nil(WFJ.Speech.translateNamed(THANKS))
+      party.party1 = { name = "Sky", surname = "Zero", sex = 2 }
+      assert.are.equal("ここからは一人で行ける。ありがとう、Sky！", WFJ.Speech.translateNamed(THANKS))
+      assert.is_nil(WFJ.Speech.translateNamed("The rest is stale."))
+    end)
+
+    it("a target whose surname is joined by an unknown mark is still found by the party's names", function()
+      party.party1 = { name = "Sky", surname = "Zero", sex = 2 }
+      npc(f, SAY, "%s says: ", THANKS, SPEAKER, GUID, "Sky\194\160Zero")
+      assert.are.equal(THANKS_JA, f:Last())
+      assert.are.equal("party", traced().other)
+    end)
+
+    it("a party member whose name cannot be read, or a name in capitals: no line to no one is collected", function()
+      _G.UNKNOWNOBJECT = "Unknown"
+      finally(function() _G.UNKNOWNOBJECT = nil end)
+      party.party1 = { name = "Unknown", sex = 2 }
+      npc(f, SAY, "%s says: ", "Something no one translated!", SPEAKER, GUID)
+      npc(f, SAY, "%s says: ", "Unknown lands lie ahead.", SPEAKER, GUID)
+      assert.are.equal("\"Stinky\" Ignatzの発言: Unknown lands lie ahead.", f:Last())
+      party.party1 = { name = "Sky", sex = 2 }
+      secrets.Sky = true
+      npc(f, SAY, "%s says: ", "Something no one translated!", SPEAKER, GUID)
+      assert.is_nil(traced().other)
+      secrets.Sky = nil
+      npc(f, YELL, "%s yells: ", "RUN, SKY!", SPEAKER, GUID)
+      assert.are.same({}, recorded)
+    end)
+
+    it("the log names the row's key, never the line's own (which holds the name)", function()
+      local ROW = keyOf("I can make it from here.  Thanks, Testplayer!") -- the row stored with {name}
+      npc(f, SAY, "%s says: ", THANKS, SPEAKER, GUID, "Sky Zero")
+      assert.are.equal(ROW, traced().key)
+      npc(f, SAY, "%s says: ", "Hail, Sky!", SPEAKER, GUID, "Sky Zero") -- shipped, refused: {class}
+      local refused
+      for _, e in ipairs(db.entries) do
+        if e.kind == "speech" and e.msg == "translation refused" then refused = e end
+      end
+      assert.are.equal(keyOf("Hail, Testplayer!"), refused.key)
+      assert.are.equal(keyOf("Hail, Testplayer!"), traced().key)
+    end)
+
+    it("a yell in capitals naming a party member is tried with that name", function()
+      party.party1 = { name = "Sky", sex = 2 }
+      local tried, translateAs = {}, WFJ.Speech.translateAs
+      finally(function() WFJ.Speech.translateAs = translateAs end)
+      WFJ.Speech.translateAs = function(en, other)
+        tried[#tried + 1] = other.name
+        return translateAs(en, other)
+      end
+      npc(f, YELL, "%s yells: ", "RUN, SKY!", SPEAKER, GUID)
+      assert.are.same({ "Sky" }, tried)
+    end)
+
+    it("a line naming another player that no row resolves leaves its own key out of the trace", function()
+      npc(f, SAY, "%s says: ", "Thank you, Sky!", SPEAKER, GUID, "Sky Zero")
+      local e = traced()
+      assert.are.equal("no Japanese -", e.msg)
+      assert.is_nil(e.key)
+      assert.is_nil(e.speakerKey)
+      party.party1 = { name = "Sky", sex = 2 }
+      npc(f, SAY, "%s says: ", "Sky, the gate!", SPEAKER, GUID)
+      assert.is_nil(traced().key)
+    end)
+
+    it("a line in this character's own name keeps the own path", function()
+      npc(f, SAY, "%s says: ", "I can make it from here.  Thanks, Testplayer!", SPEAKER, GUID, "Testplayer")
+      assert.are.equal("\"Stinky\" Ignatzの発言: ここからは一人で行ける。ありがとう、Testplayer！", f:Last())
+      assert.is_nil(traced().other)
     end)
   end)
 end)

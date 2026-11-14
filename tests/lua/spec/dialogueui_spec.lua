@@ -807,6 +807,17 @@ describe("UI/DialogueUI: Dialogue UI's quest and gossip window", function()
       assert.are.equal("Unknown words.", panel.lines[3][1])
     end)
 
+    it("the chat panel asks for the Japanese with the party's names when Speech offers it", function()
+      load({ loaded = false })
+      local panel = DUI.installChatPanel()
+      Stub.loadedAddons.DialogueUI = true
+      WFJ.LoadOnDemand.loaded("DialogueUI")
+      WFJ.Speech = { translate = function() return nil end,
+        translateNamed = function(en) return en == "Thanks, Sky!" and "ありがとう、Sky！" or nil end }
+      panel:AddMessage("Thanks, Sky!", "Ignatz", "CHAT_MSG_MONSTER_SAY")
+      assert.are.equal("ありがとう、Sky！", panel.lines[1][1])
+    end)
+
     it("the chat panel's font reporting a size not above 0 takes the bundled face at the default size", function()
       load({ loaded = false })
       local panel = DUI.installChatPanel()

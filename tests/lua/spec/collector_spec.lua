@@ -52,6 +52,18 @@ describe("Core/Collector", function()
     assert.are.equal(4 * 1024 * 1024, C.CAP_BYTES)
   end)
 
+  it("keys for another player's name alone: the line's key under any first name is the same", function()
+    -- UI/Speech keys an NPC line said to a party member with that member's name (Main's keyAs)
+    local mine = C.keys("I can make it from here.  Thanks, Reyn!", PLAYER)
+    local theirs = C.keys("I can make it from here.  Thanks, Sky!", { name = "Sky" })
+    assert.is_true(#theirs > 0)
+    local found = false
+    for _, k in ipairs(mine) do
+      if k == theirs[1] then found = true end
+    end
+    assert.is_true(found)
+  end)
+
   -- the quest live check's fingerprints are the h1 of the Collector.keys candidates.
   describe("fingerprints", function()
     local function h1OfKey(k) return tonumber(k:sub(1, 8), 16) end

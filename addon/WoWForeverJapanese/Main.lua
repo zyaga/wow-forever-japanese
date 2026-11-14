@@ -90,6 +90,15 @@ local function keyOf(type_)
 end
 local gossipKey = keyOf("gossip")
 
+-- The shipped gossip key of an NPC line said to another player, keyed with that player's first name in place of
+-- this character's (UI/Speech). → key | nil
+local function gossipKeyAs(text, name)
+  for _, k in ipairs(WFJ.Collector.keys(text, { name = name })) do
+    if WFJ.Lookup.keyed("gossip", k) then return k end
+  end
+  return nil
+end
+
 -- Whether `text` is the English quest `id`'s `field` ships under: one of its fingerprints (as the live check reads
 -- them) is the entry's h1 or female-variant h1. → boolean
 function WFJ.IsQuestFieldEnglish(id, field, text)
@@ -131,6 +140,12 @@ local function expand(ja)
   return (WFJ.Placeholders.expand(ja, player()))
 end
 WFJ.expandTokens = expand -- UI/WordSave: a saved English word's Japanese sentence, as the game shows it
+
+-- Japanese filled for another player (UI/Speech): their name and sex only; a {class} or {race} stays literal.
+local function expandAs(ja, other)
+  if not WFJ.Placeholders.mayHaveTokens(ja) then return ja end
+  return (WFJ.Placeholders.expand(ja, { name = other.name, sex = other.sex }))
+end
 
 -- The client's live English for a UI string key (ADR-015): its global string. An item subclass has none the
 -- tooltip uses (C_Item.GetItemSubClassInfo returns the long name "Staves" where the tooltip shows "Staff"),
@@ -438,7 +453,9 @@ function WFJ.OnLoad()
   step("micromenu", WFJ.MicroMenu.init)
   for _, name in ipairs(forever) do step(name:lower(), function() return WFJ[name].init() end) end
   -- NPC speech, after ChatSystem (in the list above): it rewrites lines through the chat side's Alt / switch
-  step("speech", function() WFJ.Speech.init({ key = gossipKey, expand = expand }) end) -- NPC speech
+  step("speech", function() -- NPC speech
+    WFJ.Speech.init({ key = gossipKey, expand = expand, keyAs = gossipKeyAs, expandAs = expandAs })
+  end)
   -- menu entries (written once each menu is shown) and HelpTip callouts, for every window above
   step("menus", WFJ.Menus.init)
   step("menus.untagged", WFJ.MenusUntagged.init) -- the Options dropdowns and untagged context menus

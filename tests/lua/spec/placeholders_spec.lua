@@ -18,6 +18,11 @@ describe("Core/Placeholders.expand", function()
     assert.are.equal("{name}", (P.expand("{name}", nil)))
   end)
 
+  it("another player's name and sex alone (Main's expandAs): {class} and {race} stay literal", function()
+    assert.are.equal("{class}のSky", (P.expand("{class}の{name}", { name = "Sky" })))
+    assert.are.equal("Sky、{race}の madam", (P.expand("{name}、{race}の <sir/madam>", { name = "Sky", sex = 3 })))
+  end)
+
   it("every class file and race file has its katakana form", function()
     local classes = { WARRIOR = "ウォリアー", PALADIN = "パラディン", HUNTER = "ハンター", ROGUE = "ローグ",
       PRIEST = "プリースト", SHAMAN = "シャーマン", MAGE = "メイジ", WARLOCK = "ウォーロック", DRUID = "ドルイド" }
