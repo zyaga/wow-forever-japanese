@@ -1,6 +1,6 @@
 # ADR-085: The release post is a short summary
 
-- **Status:** Accepted
+- **Status:** Accepted (amended 2026-11-14: every pull request keeps the summaries current)
 - **Date:** 2026-11-12
 - **Deciders:** the maintainer
 - **Related:** [ADR-072](072-the-release-announces-itself-in-discord.md) (the Discord post) · [ADR-084](084-every-changelog-line-carries-its-japanese.md) (superseded in part) · [Release](../operations/release.md) · [Release media](../releases/README.md)
@@ -14,18 +14,19 @@ The Discord post printed every changelog line of the release, in English and in 
 - The post's text is a short summary of the release in each language: `docs/releases/next/en.md` and `docs/releases/next/ja.md`, four to six lines, the most important first. Each card ends with a link to the full notes.
 - A summary is at most 1500 characters; the announce command refuses a longer one.
 - The release's plan step refuses an addon release while either file is missing or empty. The preview still runs without them: with no `en.md` the English card shows the changelog lines, with no `ja.md` there is no Japanese card.
+- Every pull request that adds a changelog line updates both summaries, re-ranking the highlights; the pull-request Changelog check fails one that adds a line without changing both files. (Amended: leaving the summaries to the release meant no pull request owned them, and a release found them missing at its first step.)
 - The pull-request Changelog check no longer asks for Japanese with each changelog line. The changelog stays English, written for players, and is what CurseForge and GitHub show in full.
 - Pictures follow [ADR-084](084-every-changelog-line-carries-its-japanese.md) as before.
 
 ## Rationale
 
 - An announcement is read in a chat channel: a few lines say what is new, and a link serves whoever wants the rest.
-- Choosing the highlights and their order is a judgment about the whole release, which no single pull request can make.
+- Choosing the highlights and their order is a judgment about the whole release; each pull request makes it again with what is already there.
 - A limit in code keeps the summary short without anyone having to remember it.
 
 ## Consequences
 
-- The summaries are written once per release, before it starts. Forgetting them stops the release at its first step, before anything is built or published.
+- The summaries grow with each pull request, so they are ready when the release starts. A release still refuses to start without them.
 - The Japanese of each changelog line is no longer written. The post is still both languages.
 - The folder for a released version keeps its two summaries beside its media.
 
