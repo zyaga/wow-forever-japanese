@@ -243,7 +243,7 @@ def time_records(root: Path, cfg: dict[str, Any], *, source: Source, align: Alig
 
 
 def report_text(r: dict[str, Any]) -> str:
-    """The run report, for the maintainer and the ticket."""
+    """The run report, in Markdown: the counts, then the lines to listen to, the failures and the MP3s."""
     lines = [
         f"# Voice timing run, {datetime.date.today().isoformat()}",
         "",
