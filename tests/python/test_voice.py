@@ -590,6 +590,15 @@ def test_every_voiced_line_is_timed_from_its_own_recording():
     assert not found, "; ".join(f"{len(v)} {k}, e.g. {v[:3]}" for k, v in found.items()) + ": run make voice-time"
 
 
+def test_every_voice_file_is_in_the_current_encode():
+    """The gate for the 64 kbps voice (ADR-091): every recorded file was made with the current encode. A file
+    in an older one fails here: run make voice-reencode (a remade line is made in the current one)."""
+    from wfj.cmd import voice_reencode
+
+    old = voice_reencode.old_encodes(ROOT / "data")
+    assert not old, f"{len(old)} file(s) in an older encode, e.g. {old[:3]}: run make voice-reencode"
+
+
 def test_a_round_with_nothing_to_voice_needs_no_engine_and_work_without_one_refuses(tmp_path, engine):
     """The voice step at the end of a batch import or a fix report: in step, it never calls the engine; with
     lines to remake and no engine answering, it refuses with how to start it."""
