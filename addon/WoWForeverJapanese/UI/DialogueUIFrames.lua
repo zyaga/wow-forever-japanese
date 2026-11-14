@@ -180,9 +180,10 @@ end
 -- ── Dialogue UI's chat panel ───────────────────────────────────────────────
 -- While its window is open Dialogue UI repeats what NPCs say, yell and emote in a chat panel of its own (an unnamed
 -- frame [read: Dialogue UI 1.0.7 b, Code/Dialogue/ChatFrame.lua]). A line gets the Japanese the chat window shows
--- (UI/Speech), in the bundled face set on the panel's font object (the panel measures its lines through it). Lines
--- already in its history keep what they showed when they came in: the panel keeps them in a list of its own. The face
--- goes on when the panel is found, before it holds any line, so every line it measures is measured in it.
+-- (UI/Speech; the panel has no target, so a line naming a party member is found by the party's names), in the
+-- bundled face set on the panel's font object (the panel measures its lines through it). Lines already in its history
+-- keep what they showed when they came in: the panel keeps them in a list of its own. The face goes on when the panel
+-- is found, before it holds any line, so every line it measures is measured in it.
 local function chatFont()
   local obj = Compat.resolve("DUIFont_ChatFont")
   if type(obj) ~= "table" or type(obj.GetFont) ~= "function" or type(obj.SetFont) ~= "function" then return end
@@ -194,8 +195,9 @@ end
 local function chatLine(text)
   local S_, Sp = WFJ.State, WFJ.Speech
   if not (S_ and S_.enabled and not S_.showsEnglish() and S_.areaEnabled("gossip")) then return nil end
-  if not (Sp and type(Sp.translate) == "function") then return nil end
-  local ja = Sp.translate(text)
+  local translate = Sp and (Sp.translateNamed or Sp.translate)
+  if type(translate) ~= "function" then return nil end
+  local ja = translate(text)
   -- Dialogue UI fills an emote's speaker with format(): a `%` in the Japanese other than that `%s` would break it
   if type(ja) == "string" and ja:gsub("%%s", ""):find("%", 1, true) then return nil end
   return ja

@@ -162,6 +162,15 @@ local function otherNames(en, target, me)
   return out, "party"
 end
 
+-- The first of `others` whose name gives the line shipped Japanese. → ja | nil
+local function translateOthers(en, others)
+  for _, other in ipairs(others) do
+    local ja = Speech.translateAs(en, other)
+    if ja then return ja end
+  end
+  return nil
+end
+
 -- The Japanese as a format() string: every `%` but the speaker's `%s` escaped.
 local function escaped(ja)
   return (ja:gsub("%%", "%%%%"):gsub("%%%%s", "%%s"))
@@ -347,13 +356,8 @@ local function handle(frame, line, typeId, event, eventArgs, formatter)
   if not WFJ.ChatSystem.on(AREA) then return why("NPC talk off", frame, event, en, key) end
   local ja = Speech.translate(en, key)
   if not ja and not (key ~= nil and shipped(key)) then
-    for _, other in ipairs(others) do
-      ja = Speech.translateAs(en, other)
-      if ja then
-        lastOther = via
-        break
-      end
-    end
+    ja = translateOthers(en, others)
+    if ja then lastOther = via end
   end
   local jaLine = line
   if ja then
@@ -389,6 +393,18 @@ local function handle(frame, line, typeId, event, eventArgs, formatter)
     Speech.scheduleScan()
   end
   return 1
+end
+
+-- Speech.translate for a line whose target is not known (Dialogue UI's chat panel repeats the line without it):
+-- when nothing ships under this character's name, each party member named in the line is tried. → ja | nil
+function Speech.translateNamed(en)
+  local ja = Speech.translate(en)
+  if ja or not readable(en) or not deps.key then return ja end
+  local key = deps.key(en)
+  if key ~= nil and shipped(key) then return nil end
+  local unitName = Compat.resolve("UnitName")
+  local me = type(unitName) == "function" and unitName("player") or nil
+  return translateOthers(en, (otherNames(en, nil, me)))
 end
 
 -- Every NPC line is traced, translated or not, so one sighting in play names why a line stayed English without a

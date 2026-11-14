@@ -593,6 +593,14 @@ describe("NPC speech", function()
       assert.are.equal("\"Stinky\" Ignatzの発言: madam、Sky。", f:Last())
     end)
 
+    it("with no target known (Dialogue UI's chat panel): own name first, then the party's names", function()
+      assert.are.equal("離れるな、Testplayer！", WFJ.Speech.translateNamed("Stay close, Testplayer!"))
+      assert.is_nil(WFJ.Speech.translateNamed(THANKS))
+      party.party1 = { name = "Sky", surname = "Zero", sex = 2 }
+      assert.are.equal("ここからは一人で行ける。ありがとう、Sky！", WFJ.Speech.translateNamed(THANKS))
+      assert.is_nil(WFJ.Speech.translateNamed("The rest is stale."))
+    end)
+
     it("a line in this character's own name keeps the own path", function()
       npc(f, SAY, "%s says: ", "I can make it from here.  Thanks, Testplayer!", SPEAKER, GUID, "Testplayer")
       assert.are.equal("\"Stinky\" Ignatzの発言: ここからは一人で行ける。ありがとう、Testplayer！", f:Last())
