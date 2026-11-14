@@ -157,3 +157,19 @@ def test_answers_kept_beside_an_archived_wav_are_used_and_never_made_twice(tmp_p
     # with every answer beside its WAV, timing runs no model at all
     got = voice_time.model_align(tmp_path / "work")(jobs[:1])
     assert got == (rz, qw)
+
+
+def test_answers_made_from_another_recording_of_a_line_are_dropped(tmp_path):
+    from wfj.io.jsonl_store import dumps
+
+    work = tmp_path / "work"
+    work.mkdir()
+    (work / "jobs.jsonl").write_text(
+        dumps({"stem": "a", "wav": "/old/a.wav", "text": JA}) + "\n" + dumps({"stem": "b", "wav": "/b.wav", "text": JA})
+        + "\n", encoding="utf-8")
+    for name, key in (("reazon.jsonl", "chars"), ("qwen.jsonl", "words")):
+        (work / name).write_text("".join(dumps({"stem": s, key: {}}) + "\n" for s in "ab"), encoding="utf-8")
+    jobs = [{"stem": "a", "wav": Path("/new/a.wav"), "text": JA}, {"stem": "b", "wav": Path("/b.wav"), "text": JA}]
+    assert voice_time.drop_other_recordings(work, jobs) == ["a"]
+    assert [r["stem"] for r in voice_time.read_jsonl(work / "reazon.jsonl")] == ["b"]
+    assert [r["stem"] for r in voice_time.read_jsonl(work / "qwen.jsonl")] == ["b"]

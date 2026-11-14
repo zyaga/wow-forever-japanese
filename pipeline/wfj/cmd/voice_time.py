@@ -164,6 +164,7 @@ def model_align(work: Path, log: Callable[[str], None] = print, *, modal: bool =
                 raise ValueError(f"{python}: no aligner interpreter (docs/operations/voice.md, 'Timing')")
         work.mkdir(parents=True, exist_ok=True)
         listed = work / "jobs.jsonl"
+        drop_other_recordings(work, jobs)
         listed.write_text("".join(dumps({"stem": j["stem"], "wav": str(j["wav"]), "text": j["text"]}) + "\n"
                                   for j in jobs), encoding="utf-8")
         if modal:
@@ -231,6 +232,20 @@ def keep_beside(jobs: Sequence[Job], rz: Mapping[str, Mapping[int, float]],
             for key, j in items:
                 a.write(dumps({"key": key, "chars": {str(k): v for k, v in rz[j["stem"]].items()}}) + "\n")
                 b.write(dumps({"key": key, "words": [list(w) for w in qw[j["stem"]]]}) + "\n")
+
+
+def drop_other_recordings(work: Path, jobs: Sequence[Job]) -> list[str]:
+    """Drops from the work folder's answers every line whose source changed since they were made (a line
+    voiced again since): they belong to another recording, and the models answer it afresh. → the stems."""
+    listed = work / "jobs.jsonl"
+    before = {r["stem"]: r["wav"] for r in read_jsonl(listed)} if listed.is_file() else {}
+    changed = {j["stem"] for j in jobs if j["stem"] in before and before[j["stem"]] != str(j["wav"])}
+    for name in ("reazon.jsonl", "qwen.jsonl"):
+        path = work / name
+        if changed and path.is_file():
+            kept = [r for r in read_jsonl(path) if r["stem"] not in changed]
+            path.write_text("".join(dumps(r) + "\n" for r in kept), encoding="utf-8")
+    return sorted(changed)
 
 
 def read_answers(work: Path) -> tuple[dict[str, dict[int, float]], dict[str, list[voice_timing.Word]]]:
