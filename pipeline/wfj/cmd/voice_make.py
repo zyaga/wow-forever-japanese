@@ -1056,8 +1056,8 @@ def pack_tables(
     root: Path, cfg: dict[str, Any], scope: str
 ) -> tuple[dict[str, Any], dict[int, Any], list[str]]:
     """(lines, creatures, left out) for Register.lua. A line: {file, hash, seconds, cuts, timing, variants:
-    {voice: (file, seconds)}, variant_timing: {voice: (cuts, timing)}}: the cuts and timing are the files'
-    own (`wfj voice time`, ADR-090); only files whose record is in step with the shipped Japanese are
+    {voice: (file, seconds, cuts, timing)}}: the cuts and timing are the files' own (`wfj voice time`,
+    ADR-090); only files whose record is in step with the shipped Japanese are
     packed. A key that shows another key's Japanese (a gendered gossip line's female wording, a repeated
     quest's text keyed by its English) points at that key's files. `creatures`: creature → its voice (or
     (male, female)) for the speakers of lines that have variants."""
@@ -1075,13 +1075,12 @@ def pack_tables(
         rec = audio[j.stem]
         timed = rec.get("timing_of") == rec["fingerprint"]
         cuts, timing = (list(rec.get("cuts") or []), rec.get("timing")) if timed else ([], None)
-        entry = out.setdefault(j.key, {"variants": {}, "variant_timing": {}})
+        entry = out.setdefault(j.key, {"variants": {}})
         if j.stem == j.key:
             entry.update(file=f"{j.stem}.mp3", hash=rec["ja_hash"], seconds=float(rec["seconds"]), cuts=cuts,
                          timing=timing)
         else:
-            entry["variants"][j.voice] = (f"{j.stem}.mp3", float(rec["seconds"]))
-            entry["variant_timing"][j.voice] = (cuts, timing)
+            entry["variants"][j.voice] = (f"{j.stem}.mp3", float(rec["seconds"]), cuts, timing)
     out = {k: e for k, e in out.items() if "file" in e}
     creatures: dict[int, Any] = {}
     for r in rows:
@@ -1096,7 +1095,7 @@ def pack_tables(
             # the timing follows the source's Japanese: another wording plays the same files untimed
             out[alias] = out[src] if same else {
                 **out[src], "timing": None,
-                "variant_timing": {v: (c, None) for v, (c, _) in out[src]["variant_timing"].items()}}
+                "variants": {v: (f, sec, c, None) for v, (f, sec, c, _) in out[src]["variants"].items()}}
     return out, creatures, sorted(bad)
 
 

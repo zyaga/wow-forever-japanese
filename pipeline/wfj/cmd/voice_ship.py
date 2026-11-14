@@ -35,7 +35,7 @@ from pathlib import Path
 from typing import Any
 
 from wfj.cmd import voice_make, voice_store
-from wfj.core import mp3_frames
+from wfj.core import mp3_frames, voice_timing
 from wfj.core import voice_packs as vp
 from wfj.core.voice_packs import Project, Table
 from wfj.emit import voice_pack
@@ -135,7 +135,7 @@ def split(
                     pack.creatures[c] = creatures[c]
         pack.files = sorted(
             {e["file"] for e in pack.lines.values()}
-            | {f for e in pack.lines.values() for f, _ in e["variants"].values()}
+            | {v[0] for e in pack.lines.values() for v in e["variants"].values()}
             | {f for v in pack.errors.get("voices", {}).values() for f, _ in v.values()}
         )
         unrecorded = [f for f in pack.files if f.removesuffix(".mp3") not in audio]
@@ -143,14 +143,16 @@ def split(
             raise ValueError(f"{pack.project.folder}: {len(unrecorded)} file(s) not in the audio record, "
                              f"e.g. {unrecorded[:3]}: run `wfj voice plan`, then make voice-generate")
         for entry in pack.lines.values():
-            for f, cuts, seconds in [(entry["file"], entry["cuts"], entry["seconds"]),
-                                     *[(f, entry["variant_timing"][v][0], sec)
-                                       for v, (f, sec) in entry["variants"].items()]]:
+            files = [(entry["file"], entry["seconds"], entry["cuts"]),
+                     *[(f, sec, cuts) for f, sec, cuts, _ in entry["variants"].values()]]
+            for f, seconds, cuts in files:
                 if f not in pack.pieces:
                     pack.pieces[f], pack.cuts[f] = pieces_of(store, f, cuts, seconds), list(cuts)
+            # the timing is measured on the recording; the shipped files run the MP3s' lead behind it
             entry["s"] = pack.pieces[entry["file"]]
-            entry["vs"] = {v: (pack.pieces[f], entry["variant_timing"][v][1])
-                           for v, (f, _) in entry["variants"].items()}
+            entry["m"] = voice_timing.delay(entry["timing"], mp3_frames.LEAD)
+            entry["vs"] = {v: (pack.pieces[f], voice_timing.delay(t, mp3_frames.LEAD))
+                           for v, (f, _, _, t) in entry["variants"].items()}
         pack.size = sum(int(audio[f.removesuffix(".mp3")]["bytes"]) for f in pack.files)
         pack.register = voice_pack.register_text(
             pack.lines, pack.creatures, pack.errors, pack.project.folder

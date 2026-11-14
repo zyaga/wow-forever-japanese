@@ -104,22 +104,10 @@ local function validEntry(e)
   return true
 end
 
--- A file and its sentences as one record: { file, seconds, folder, clips = { { file, seconds } }, clipFolder, marks }
-local function part(f, folder)
-  return { file = f[1] or nil, seconds = f[1] and f[2] or nil, folder = f[1] and folder or nil,
-    clips = f.s, clipFolder = f.s and folder or nil, marks = f.m }
-end
-
--- Two packs may carry one line: one its whole file, another its sentences. The record keeps both, from the pack
--- that has each.
-local function merge(old, new)
-  if not old then return new end
-  local out = {}
-  for k, v in pairs(old) do out[k] = v end
-  if new.file then out.file, out.folder = new.file, new.folder end
-  if new.seconds then out.seconds = new.seconds end
-  if new.clips then out.clips, out.clipFolder, out.marks = new.clips, new.clipFolder, new.marks end
-  return out
+-- An entry (or a voice variant) as the addon keeps it: its files in order, each { file, seconds }, and its timing.
+-- A whole file is a line of one file (formats 1 and 2).
+local function clipsOf(f)
+  return f[1] and { { f[1], f[2] } } or f.s, f.m
 end
 
 local function validVoice(v)
@@ -134,8 +122,10 @@ local function recount()
 end
 
 -- A pack's table → registered, invalid. Packs merge: each line remembers the folder it came from, and a pack that
--- registers again replaces only its own lines. Entries that do not match the shape are dropped and counted, never
--- guessed at: a file name outside the pack's Sound folder would play another addon's file.
+-- registers again replaces only its own lines. Where two packs carry one line, the one in the newer format keeps it
+-- (a pack in sentences over an older whole-file one), else the last to register. Entries that do not match the
+-- shape are dropped and counted, never guessed at: a file name outside the pack's Sound folder would play another
+-- addon's file.
 function Voice.register(tbl)
   if type(tbl) ~= "table" or not Voice.FORMATS[tbl.format] or type(tbl.folder) ~= "string"
     or tbl.folder:sub(1, #Voice.FOLDER) ~= Voice.FOLDER or not tbl.folder:match("^[%w_]+$")
@@ -145,15 +135,7 @@ function Voice.register(tbl)
   end
   lines = lines or {}
   for key, e in pairs(lines) do
-    if e.folder == tbl.folder and e.clipFolder == tbl.folder then
-      lines[key] = nil
-    elseif e.folder == tbl.folder then
-      e.file, e.folder = nil, nil
-      if not e.clips then lines[key] = nil end
-    elseif e.clipFolder == tbl.folder then
-      e.clips, e.clipFolder, e.marks = nil, nil, nil
-      if not e.file then lines[key] = nil end
-    end
+    if e.folder == tbl.folder then lines[key] = nil end
   end
   for c, by in pairs(creatureBy) do -- a pack registering again replaces all it brought, not only lines
     if by[tbl.folder] ~= nil then
@@ -171,24 +153,20 @@ function Voice.register(tbl)
   local n, bad = 0, 0
   for key, e in pairs(tbl.lines) do
     if type(key) == "string" and validEntry(e) then
-      local jaHash = e[2]:lower()
       local old = lines[key]
-      if old and old.jaHash ~= jaHash then
-        -- another pack's line for other Japanese: a whole file replaces it; sentences alone never join it
-        if e[1] then old = nil else old = false end
-      end
-      if old ~= false then
-        local rec = merge(old, part({ e[1], e[3], s = e.s, m = e.m }, tbl.folder))
-        rec.jaHash = jaHash
+      if not (old and old.format > tbl.format) then
+        local clips, marks = clipsOf({ e[1], e[3], s = e.s, m = e.m })
+        local rec = { jaHash = e[2]:lower(), folder = tbl.folder, format = tbl.format, clips = clips, marks = marks }
         if e.v then
-          rec.v = rec.v or {}
-          for vid, f in pairs(e.v) do rec.v[vid] = merge(rec.v[vid], part(f, tbl.folder)) end
+          rec.v = {}
+          for vid, f in pairs(e.v) do
+            local vc, vm = clipsOf(f)
+            rec.v[vid] = { clips = vc, marks = vm }
+          end
         end
         lines[key] = rec
-        n = n + 1
-      else
-        bad = bad + 1
       end
+      n = n + 1
     else
       bad = bad + 1
     end
@@ -286,21 +264,22 @@ end
 local function fileFor(entry, who)
   local voice = who and creatures[who.creature]
   if type(voice) == "table" then voice = who.sex == 3 and voice[2] or voice[1] end
-  local own = voice and entry.v and entry.v[voice]
-  if own and (own.file or own.clips) then return own end
-  return entry
+  return voice and entry.v and entry.v[voice] or entry
 end
 
 local function pathOf(folder, file)
   return "Interface\\AddOns\\" .. folder .. "\\Sound\\" .. file
 end
 
--- The sentences of a file record for the player: { { path, seconds }, ..., marks = { ms } } or nil
-local function sentencesOf(f)
-  if not f.clips then return nil end
+-- A record's files for the player → path of the first, the line's length (nil when a file has none), and the
+-- sentences { { path, seconds }, ..., marks } when there are several files or a timing, else nil (one whole file)
+local function playable(f, folder)
+  local seconds = 0
+  for _, c in ipairs(f.clips) do seconds = c[2] and seconds and seconds + c[2] or nil end
+  if #f.clips == 1 and not f.marks then return pathOf(folder, f.clips[1][1]), seconds, nil end
   local out = { marks = f.marks }
-  for i, c in ipairs(f.clips) do out[i] = { path = pathOf(f.clipFolder, c[1]), seconds = c[2] } end
-  return out
+  for i, c in ipairs(f.clips) do out[i] = { path = pathOf(folder, c[1]), seconds = c[2] or 0 } end
+  return out[1].path, seconds, out
 end
 
 -- → the setting that turns a surface's record key off (a record key's trailing page number is its kind's), or nil
@@ -340,7 +319,7 @@ function Voice.decide(surface, recKey, kind, id, who, peek)
   if type(shipped) ~= "table" or type(shipped.ja) ~= "string" then return nil, "notext" end
   if type(deps.hash) ~= "function" or deps.hash(shipped.ja) ~= entry.jaHash then
     if not peek then Voice.counts.stale = Voice.counts.stale + 1 end
-    return nil, "stale", entry.clipFolder or entry.folder
+    return nil, "stale", entry.folder
   end
   -- first time only: a line heard with this Japanese stays quiet; one rewritten since counts as new. The play button
   -- and the queue's re-check (peek true) are never stopped by it. The record is written by markHeard, once the line
@@ -348,16 +327,8 @@ function Voice.decide(surface, recKey, kind, id, who, peek)
   local seen = peek ~= true and heardRecord(kindSetting) or nil
   if seen and seen[key] == entry.jaHash then return nil, "heard" end
   if not peek then Voice.counts.matched = Voice.counts.matched + 1 end
-  local f = fileFor(entry, who)
-  local sentences = sentencesOf(f)
-  local seconds = f.seconds
-  if not seconds and sentences then
-    seconds = 0
-    for _, c in ipairs(sentences) do seconds = seconds + c.seconds end
-  end
-  return f.file and pathOf(f.folder, f.file) or sentences[1].path, seconds, sentences
+  return playable(fileFor(entry, who), entry.folder)
 end
-
 
 -- A line has started playing: when its kind is kept to its first hearing, it is recorded as heard with the hash of
 -- the Japanese it was made from. → true when recorded

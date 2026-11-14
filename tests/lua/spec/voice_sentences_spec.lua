@@ -47,7 +47,7 @@ describe("Core/Voice: format 3 packs", function()
     assert.are.equal(TIMING, sentences.marks)
   end)
 
-  it("a whole file from one pack and sentences from another merge, in either load order", function()
+  it("where two packs carry a line, the one in the newer format keeps it, in either load order", function()
     for _, order in ipairs({ { 1, 2 }, { 2, 1 } }) do
       V.init({ lookup = function(kind, id) return DATA[kind] and DATA[kind][id] end, hash = WFJ.Hash.key,
         setting = function(id) return settings[id] end })
@@ -58,23 +58,24 @@ describe("Core/Voice: format 3 packs", function()
       }
       for _, i in ipairs(order) do V.register(packs[i]) end
       local path, _, sentences = V.decide("questframe.detail", "description", "quest.description", 2, nil)
-      assert.are.equal("Interface\\AddOns\\WoWForeverJapanese_VoiceOld\\Sound\\2-description.mp3", path)
+      assert.are.equal("Interface\\AddOns\\" .. FOLDER .. "\\Sound\\2-description-1.mp3", path)
       assert.are.equal(3, #sentences)
     end
   end)
 
-  it("sentences for other Japanese never join a line, and malformed sentences or timing are refused", function()
+  it("a whole-file line plays as one file with no sentences, and malformed sentences or timing are refused", function()
     V.register({ format = 2, folder = "WoWForeverJapanese_VoiceOld",
       lines = { ["2-description"] = { "2-description.mp3", WFJ.Hash.key(JA), 3.0 } } })
+    local path, seconds, sentences = V.decide("questframe.detail", "description", "quest.description", 2, nil)
+    assert.are.same({ "Interface\\AddOns\\WoWForeverJapanese_VoiceOld\\Sound\\2-description.mp3", 3.0 },
+      { path, seconds })
+    assert.is_nil(sentences)
     local _, bad = V.register({ format = 3, folder = FOLDER, lines = {
-      ["2-description"] = line("別の日本語"),
       ["3-description"] = { false, WFJ.Hash.key("二つ目の依頼"), s = { { "../x.mp3", 1 } } },
       ["3-progress"] = { false, WFJ.Hash.key("x"), s = SENTENCES, m = "two words" },
       ["3-completion"] = { false, WFJ.Hash.key("x") }, -- no file and no sentences
     } })
-    assert.are.equal(4, bad)
-    local _, _, sentences = V.decide("questframe.detail", "description", "quest.description", 2, nil)
-    assert.is_nil(sentences)
+    assert.are.equal(3, bad)
   end)
 
   it("a line whose audio is older than its Japanese names its pack", function()
@@ -164,18 +165,18 @@ describe("UI/VoicePlayer: a line in sentences", function()
     assert.are.equal(3, #sounds)
   end)
 
-  it("the panel's clock is the time into the recording, from the start of the file playing", function()
+  it("the panel's clock is the time into the line, from the start of the file playing", function()
     setup("off")
     Stub.showDetail()
     now = 100.5
     local t, marks = WFJ.VoicePlayer.timing()
     assert.are.equal(TIMING, marks)
-    assert.is_true(math.abs(t - (0.5 - 0.055)) < 1e-9)
+    assert.is_true(math.abs(t - 0.5) < 1e-9)
     now = 101.0
     fire(1.0)
     now = 101.25
     t = WFJ.VoicePlayer.timing()
-    assert.is_true(math.abs(t - (1.0 + 0.25 - 0.055)) < 1e-9)
+    assert.is_true(math.abs(t - 1.25) < 1e-9)
   end)
 
   it("a stop silences the file playing and the files not started never play", function()
@@ -197,7 +198,7 @@ describe("UI/VoicePlayer: a line in sentences", function()
     assert.are.equal(base .. "2-description-2.mp3", sounds[#sounds].path)
     -- the line's clock counts the sentences before it
     local t = WFJ.VoicePlayer.timing()
-    assert.is_true(math.abs(t - (1.0 - 0.055)) < 1e-9)
+    assert.is_true(math.abs(t - 1.0) < 1e-9)
   end)
 
   it("a line whose pack audio is older than its Japanese says so once, naming the pack", function()

@@ -65,7 +65,7 @@ def _sentences(pieces: Sequence[tuple[str, float]], timing: str | None) -> str:
 
 
 def _line(key: str, e: Mapping[str, Any]) -> str:
-    head = f"false, {lua_string(e['hash'])}, {_sentences(e['s'], e.get('timing'))}"
+    head = f"false, {lua_string(e['hash'])}, {_sentences(e['s'], e.get('m'))}"
     if not e.get("vs"):
         return f"    [{lua_string(key)}] = {{ {head} }},"
     v = ", ".join(
@@ -102,8 +102,8 @@ def register_text(
     errors: Mapping[str, Any] | None = None,
     folder: str = FOLDER,
 ) -> str:
-    """`lines`: {pack key: {hash, s: [(file, seconds)], timing, vs: {voice id: ([(file, seconds)], timing)}}};
-    `creatures`:
+    """`lines`: {pack key: {hash, s: [(file, seconds)], m: timing, vs: {voice id: ([(file, seconds)],
+    timing)}}}; `creatures`:
     {creature id: voice id or (male, female)}; `errors`: {kinds: {game voice id: kind}, voices:
     {"<race>-<f|m>": {kind: (file, seconds)}}}, the character's own spoken error lines. Written sorted."""
     body = [_line(key, e) for key, e in sorted(lines.items())]

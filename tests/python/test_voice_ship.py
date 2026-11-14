@@ -952,7 +952,8 @@ def test_a_line_cut_into_sentences_ships_its_pieces_and_its_timing(tmp_path, eng
     reg = (a / "Register.lua").read_text()
     assert "format = 3," in reg
     line = next(ln for ln in reg.splitlines() if '["456-description"]' in ln)
-    assert line.startswith('    ["456-description"] = { false, "') and 'm = "2:10 3:-"' in line
+    # the timing moves onto the MP3s' clock: they run 55 ms behind the recording it was measured on
+    assert line.startswith('    ["456-description"] = { false, "') and 'm = "2:16 3:-"' in line
     assert '{ "456-description-1.mp3", 1.' in line
     other = next(ln for ln in reg.splitlines() if '["456-completion"]' in ln)
     assert '{ "456-completion.mp3", ' in other and "m =" not in other  # no cuts, no timing: whole and estimated

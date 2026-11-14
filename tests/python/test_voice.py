@@ -402,8 +402,9 @@ def test_a_line_several_differently_cast_creatures_say_gets_a_file_per_voice(tmp
     assert sorted(_audio(data)) == ["456-description", "456-description_f", "456-description_old"]
     assert {c[2:] for c in engine.calls if c[0] == "synthesis"} == {(0.9, 0.0, 1.0), (0.85, -0.05, 1.0)}
     lines, creatures, left_out = voice_make.pack_tables(data, CFG, "all")
-    assert lines["456-description"]["variants"] == {"f": ("456-description_f.mp3", 0.5),
-                                                    "old": ("456-description_old.mp3", 0.5)}
+    # each voice's file, its length, and its cuts and timing (none yet: `wfj voice time` has not run)
+    assert lines["456-description"]["variants"] == {"f": ("456-description_f.mp3", 0.5, [], None),
+                                                    "old": ("456-description_old.mp3", 0.5, [], None)}
     assert creatures == {1992: "f", 2079: "m", 3000: "old"} and left_out == []
 
 
@@ -475,15 +476,15 @@ def test_pack_holds_only_lines_whose_japanese_still_matches(tmp_path, engine):
     lines, _, left_out = voice_make.pack_tables(data, CFG, "all")
     assert left_out == ["456-description"] and "456-description" not in lines
     assert lines["456-completion"] == {"file": "456-completion.mp3", "hash": hash_key("よくやった。"), "seconds": 0.5,
-                                       "variants": {}, "cuts": [], "timing": None, "variant_timing": {}}
+                                       "variants": {}, "cuts": [], "timing": None}
 
 
 def test_register_and_toc_text():
     reg = voice_pack.register_text(
-        {"g-0a": {"hash": "fedcba9876543210", "s": [("g-0a.mp3", 3.25)], "timing": None, "vs": {}},
+        {"g-0a": {"hash": "fedcba9876543210", "s": [("g-0a.mp3", 3.25)], "m": None, "vs": {}},
          "456-description": {"hash": "0123456789abcdef", "s": [("456-description-1.mp3", 10.4),
                                                                ("456-description-2.mp3", 11.0)],
-                             "timing": "3:10 2:-", "vs": {"old": ([("456-description_old.mp3", 20.0)], None)}}},
+                             "m": "3:10 2:-", "vs": {"old": ([("456-description_old.mp3", 20.0)], None)}}},
         {3000: "old", 11: ("m", "f")},
     )
     head, notice = reg.split("})\n", 1)

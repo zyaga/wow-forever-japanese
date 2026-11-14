@@ -118,24 +118,30 @@ local function pageOf(pos)
   return nil
 end
 
--- → the line's timed words and its clock, when the displayed line is the one playing and has times
-local function lineClock(st)
-  if not (displayed and st.playing and st.item == displayed) then return nil end
+-- → the line's timed parts and how far into it the voice is, when the displayed line is the one playing and has
+-- timing
+local function lineClock()
+  if not (displayed and WFJ.VoicePlayer.playing() == displayed.key and Q.current() == displayed) then return nil end
   local t, marks = WFJ.VoicePlayer.timing()
   local words = t and timedWords(displayed, marks)
   if not words then return nil end
   return words, t
 end
 
+local markPart -- the part the mark was last drawn for: a frame where it has not changed draws nothing
+
 local function hideMark()
+  if markOn == nil and markPart == nil then return end
   for _, t in ipairs(markTex) do t:Hide() end
-  markOn = nil
+  markOn, markPart = nil, nil
 end
 
-local function drawMark(st)
-  local words, t = lineClock(st)
+local function drawMark()
+  local words, t = lineClock()
   local w = words and not english and Text.spokenAt(words, t)
   if not w then return hideMark() end
+  if w == markPart and markOn and markOn:match("^(%d+):") == tostring(pageShown) then return end
+  markPart = w
   local uFirst, uLast = Text.unitOf(w, cards)
   local page, first = pageOf(uFirst)
   local lastPage, last = pageOf(uLast)
@@ -175,7 +181,7 @@ end
 
 -- the page the audio is on now: the page of the word spoken last when the line has times, else the estimate
 local function audioPage(st)
-  local words, t = lineClock(st)
+  local words, t = lineClock()
   if words then
     local w = Text.spokenAt(words, t)
     return w and pageOf(w.first) or 1
@@ -395,10 +401,7 @@ local function hidePanel()
 end
 
 local function onTick(self, elapsed)
-  if displayed then
-    local playingKey = WFJ.VoicePlayer.playing()
-    pcall(drawMark, { playing = playingKey ~= nil and playingKey == displayed.key, item = Q.current() })
-  end
+  if displayed then pcall(drawMark) end
   self.since = (self.since or 0) + elapsed
   if self.since < TICK then return end
   self.since = 0

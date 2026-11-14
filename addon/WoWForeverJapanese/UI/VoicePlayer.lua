@@ -275,10 +275,8 @@ end
 -- A line a pack ships in sentences (Core/Voice format 3, ADR-090) plays as a chain: each file starts when the one
 -- before it ends, every timer measured from the line's start so the chain never drifts. The files are the line's
 -- recording snipped between two MP3 frames in the middle of a pause, so they join back exactly, and a timer that
--- fires a little late or early only stretches that pause.
--- The MP3s run this far behind the recording the timing was measured on (LAME's encoder delay, measured on the
--- packs' files; pipeline wfj/core/mp3_frames.LEAD): a part is heard this long after its time.
-local MP3_LEAD = 0.055
+-- fires a little late or early only stretches that pause. The timing is on the files' own clock (the pack build
+-- adds the MP3s' lead), so a part is heard at its time into the line.
 
 -- the line's time at which each sentence starts, and the line's length
 local function timeline(sentences)
@@ -299,12 +297,11 @@ local function play(path, seconds, key, window, again, sentences, from)
     return false
   end
   local at, total
-  if sentences and #sentences > 0 then
+  if sentences and #sentences == 0 then sentences = nil end
+  if sentences then
     at, total = timeline(sentences)
     from = (from and sentences[from]) and from or 1
     seconds = total
-  else
-    sentences, from = nil, nil
   end
   muteDialog()
   ahead = nil -- the line holds the mute now
@@ -320,8 +317,8 @@ local function play(path, seconds, key, window, again, sentences, from)
   local t0 = type(getTime) == "function" and getTime() or 0
   local offset = sentences and at[from] or 0
   playing = { handle = handle, key = key, token = token, window = window, startedAt = t0 - offset,
-    seconds = seconds or UNKNOWN_LENGTH, sentences = sentences, sentence = from, marks = sentences and sentences.marks,
-    sentenceAt = t0 }
+    seconds = seconds or UNKNOWN_LENGTH, sentences = sentences, at = at, sentence = from,
+    marks = sentences and sentences.marks, sentenceAt = t0 }
   last[window] = { path = path, seconds = seconds, key = key, sentences = sentences }
   trace("start", playing, { path = path, from = from })
   showButton(window, true)
@@ -588,16 +585,14 @@ function VoicePlayer.playNow(item, window)
   return play(item.path, item.seconds, item.key, window, true, item.sentences)
 end
 
--- Where the voice is in the recording, in seconds, and the line's word marks, for the panel. Measured from the moment
--- the sentence playing started, plus where that sentence starts in the recording (the files are cut end to end), so
--- a timer that started a file late never carries into the next. → seconds, marks, or nil
+-- Where the voice is in the line, in seconds, and the line's timing, for the panel. Measured from the moment the
+-- sentence playing started, plus where that sentence starts in the line (the files are cut end to end), so a timer
+-- that started a file late never carries into the next. → seconds, timing, or nil
 function VoicePlayer.timing()
   if not (playing and playing.sentences and playing.marks) then return nil end
   local getTime = Compat.resolve("GetTime")
   if type(getTime) ~= "function" then return nil end
-  local cut = 0
-  for i = 1, playing.sentence - 1 do cut = cut + playing.sentences[i].seconds end
-  return cut + (getTime() - playing.sentenceAt) - MP3_LEAD, playing.marks
+  return playing.at[playing.sentence] + (getTime() - playing.sentenceAt), playing.marks
 end
 
 -- A voiced quest or gossip line by its pack key ("4641-description", "g-<hash>"), played through the queue with no

@@ -25,6 +25,9 @@ local wholeRec = { surface = "voicepanel", key = "full" } -- the whole-text wind
 local lineSpans, lineSpansFor -- the displayed line's words in the whole line, and the item they are for
 local whole -- the whole-text window, built on first use
 
+-- the bytes of the UTF-8 character whose first byte is c
+local function charLen(c) return c >= 0xF0 and 4 or c >= 0xE0 and 3 or c >= 0xC0 and 2 or 1 end
+
 local function chars(s)
   return (s:gsub("[\128-\191]", "")):len()
 end
@@ -111,7 +114,7 @@ local function fit(piece, budget)
   local lastComma -- the byte after the last 、 seen in the current piece
   while at <= #text do
     local c = text:byte(at)
-    local len = c >= 0xF0 and 4 or c >= 0xE0 and 3 or c >= 0xC0 and 2 or 1
+    local len = charLen(c)
     if text:sub(at, at + len - 1) == "、" then lastComma = at + len end
     if chars(text:sub(from, at + len - 1)) > budget then
       local stop = (lastComma and lastComma > from) and lastComma - 1 or at - 1
@@ -186,8 +189,6 @@ local CLOSING = { ["。"] = true, ["、"] = true, ["！"] = true, ["？"] = true
   ["」"] = true, ["』"] = true, ["）"] = true, ["　"] = true }
 local NEAR = 96 -- bytes: how far past the last part the next one may be found
 
-local function charLen(c) return c < 0x80 and 1 or c >= 0xF0 and 4 or c >= 0xE0 and 3 or 2 end
-
 local function trimmed(text, first, last)
   local i, ends = first, {}
   while i <= last do
@@ -214,15 +215,14 @@ function Text.timedParts(shown, raw, timing, fill)
     end
     local piece = raw:sub(pos, e - 1):match("^%s*(.-)%s*$")
     pos = e
-    if dt ~= "-" then
-      clock = clock + tonumber(dt) / 100
-      if piece:find("[{<]") and fill then piece = fill(piece) end
-      if piece ~= "" and not piece:find("[{$]") then
-        local s, f = shown:find(piece, cursor, true)
-        if s and s - cursor <= NEAR then
-          out[#out + 1] = { first = s, last = trimmed(shown, s, f), t = clock }
-          cursor = f + 1
-        end
+    if dt ~= "-" then clock = clock + tonumber(dt) / 100 end
+    if piece:find("[{<]") and fill then piece = fill(piece) end
+    -- an unsaid part (a stage direction) is looked for too, so the search moves past it
+    if piece ~= "" and not piece:find("[{$]") then
+      local s, f = shown:find(piece, cursor, true)
+      if s and s - cursor <= NEAR then
+        if dt ~= "-" then out[#out + 1] = { first = s, last = trimmed(shown, s, f), t = clock } end
+        cursor = f + 1
       end
     end
   end

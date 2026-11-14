@@ -12,18 +12,19 @@ nobody says (a stage direction the voice skips, a blank line)."""
 
 from __future__ import annotations
 
+import bisect
 import difflib
 import math
 import re
 from collections.abc import Mapping, Sequence
+
+from wfj.core.voice import TOKENS
 
 # a sentence ends at a run of full stops, question or exclamation marks (and the closing brackets
 # after them), or at a line break
 _END = re.compile(r"[。！？!?]+[」』）)]*|\n+")
 # what a sentence cannot start with: spaces, punctuation, opening brackets, the long-vowel mark
 _NOT_START = re.compile(r"[\s。！？!?」』）)、・「『（(…ー〜~.,]")
-# a player token the addon fills in: never split across two parts
-_TOKEN = re.compile(r"\{[A-Za-z]+\}|<[A-Za-z]+/[A-Za-z]+>|\$N\d+|\$\d+w|\$[bB]")
 
 PAUSE_FLOOR = 0.05  # a 10 ms frame is quiet under this share of the line's loud frames
 MIN_PAUSE = 0.10  # seconds: a shorter quiet stretch is a consonant, not a pause
@@ -55,7 +56,7 @@ def pauses(samples: Sequence[int], rate: int) -> list[tuple[float, float]]:
     frames = []
     for i in range(0, len(samples) - hop + 1, hop):
         chunk = samples[i:i + hop]
-        frames.append(math.sqrt(sum(v * v for v in chunk) / len(chunk)))
+        frames.append(math.sqrt(math.sumprod(chunk, chunk) / hop))
     if not frames:
         return []
     loud = sorted(frames)[int(len(frames) * 0.95)] or 1.0
@@ -138,7 +139,7 @@ def _card_starts(ja: str, cards: Sequence[str]) -> set[int]:
 def _bounds(ja: str, engine: Mapping[int, int | None], kind: Mapping[int, str], starts: Mapping[int, float],
             cards: Sequence[str]) -> list[int]:
     inside_token, token_start = set(), set()
-    for m in _TOKEN.finditer(ja):
+    for m in TOKENS.finditer(ja):
         token_start.add(m.start())
         inside_token.update(range(m.start() + 1, m.end()))
     card_start = _card_starts(ja, cards)
@@ -170,11 +171,8 @@ def timing(ja: str, text: str, rz: Mapping[int, float], qwen: Sequence[Word], ca
             return None
         if j in starts:
             return starts[j]
-        held = None
-        for b in begins:
-            if b > j:
-                break
-            held = starts[b]
+        k = bisect.bisect_right(begins, j)
+        held = starts[begins[k - 1]] if k else None
         heard = _first_at(rz, j, len(text))
         if held is not None and heard is not None:
             return max(held, heard)
@@ -190,4 +188,17 @@ def timing(ja: str, text: str, rz: Mapping[int, float], qwen: Sequence[Word], ca
         cs = max(clock, round(t * 100))
         parts.append(f"{b - a}:{cs - clock}")
         clock = cs
+    return " ".join(parts)
+
+
+def delay(m: str | None, seconds: float) -> str | None:
+    """A timing string moved `seconds` later: the first said part starts that much later, the rest follow."""
+    if not m:
+        return m
+    parts = m.split()
+    for k, p in enumerate(parts):
+        n, dt = p.split(":")
+        if dt != "-":
+            parts[k] = f"{n}:{int(dt) + round(seconds * 100)}"
+            break
     return " ".join(parts)

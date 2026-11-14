@@ -18,7 +18,6 @@ from __future__ import annotations
 
 import argparse
 import datetime
-import json
 import os
 import subprocess
 import sys
@@ -29,6 +28,7 @@ from typing import Any
 
 from wfj.cmd import voice_make
 from wfj.core import mp3_frames, voice, voice_timing
+from wfj.io.jsonl_store import dumps, read_jsonl
 from wfj.io.qwen import line_key
 from wfj.paths import data_root
 
@@ -37,6 +37,7 @@ REAZON_PYTHON = "build/tts-venv/bin/python"
 QWEN_PYTHON = "build/aligner-venv/bin/python"
 DISAGREE = 0.30  # seconds: a word the two models place this far apart is in doubt
 DISAGREE_WORDS = 2  # a line with more such words is listed for a listen
+SAVE_EVERY = 2000  # lines between two writes of the audio record (the models' answers are on disk already)
 
 Job = dict[str, Any]  # stem, key, text (the engine read), ja (shipped), fingerprint, wav, lead
 Source = Callable[[dict[str, Any], str], tuple[Path, float] | None]
@@ -135,8 +136,8 @@ def model_align(work: Path, log: Callable[[str], None] = print) -> Align:
                 raise ValueError(f"{python}: no aligner interpreter (docs/operations/voice.md, 'Timing')")
         work.mkdir(parents=True, exist_ok=True)
         listed = work / "jobs.jsonl"
-        listed.write_text("".join(json.dumps({"stem": j["stem"], "wav": str(j["wav"]), "text": j["text"]},
-                                             ensure_ascii=False) + "\n" for j in jobs), encoding="utf-8")
+        listed.write_text("".join(dumps({"stem": j["stem"], "wav": str(j["wav"]), "text": j["text"]}) + "\n"
+                                  for j in jobs), encoding="utf-8")
         for python, script, out in ((reazon, "align_reazon.py", "reazon.jsonl"),
                                     (qwen, "align_qwen.py", "qwen.jsonl")):
             log(f"voice time: {script} over {len(jobs)} line(s)")
@@ -150,20 +151,14 @@ def model_align(work: Path, log: Callable[[str], None] = print) -> Align:
 def read_answers(work: Path) -> tuple[dict[str, dict[int, float]], dict[str, list[voice_timing.Word]]]:
     rz: dict[str, dict[int, float]] = {}
     qw: dict[str, list[voice_timing.Word]] = {}
-    for line in _lines(work / "reazon.jsonl"):
+    for line in read_jsonl(work / "reazon.jsonl") if (work / "reazon.jsonl").is_file() else []:
         rz[line["stem"]] = {int(k): float(v) for k, v in line["chars"].items()}
-    for line in _lines(work / "qwen.jsonl"):
+    for line in read_jsonl(work / "qwen.jsonl") if (work / "qwen.jsonl").is_file() else []:
         qw[line["stem"]] = [(int(a), int(b), float(s), float(e)) for a, b, s, e in line["words"]]
     return rz, qw
 
 
-def _lines(path: Path) -> list[dict[str, Any]]:
-    if not path.is_file():
-        return []
-    return [json.loads(x) for x in path.read_text(encoding="utf-8").splitlines() if x.strip()]
-
-
-def samples(path: Path) -> tuple[list[int], int]:
+def samples(path: Path) -> tuple[Sequence[int], int]:
     """A 16-bit WAV's samples (mono: the first channel) and its rate."""
     import array
 
@@ -171,7 +166,7 @@ def samples(path: Path) -> tuple[list[int], int]:
         if w.getsampwidth() != 2:
             raise ValueError(f"{path}: not a 16-bit WAV")
         data = array.array("h", w.readframes(w.getnframes()))
-        return list(data[:: w.getnchannels()]), w.getframerate()
+        return data[:: w.getnchannels()], w.getframerate()
 
 
 def disagreements(rz: Mapping[int, float], qw: Sequence[voice_timing.Word]) -> int:
@@ -235,7 +230,7 @@ def time_records(root: Path, cfg: dict[str, Any], *, source: Source, align: Alig
         report["unconfirmed"] += got["sentences"] - 1 - len(got["cuts"])
         if got["disagree"] > DISAGREE_WORDS:
             report["doubt"].append((stem, got["disagree"]))
-        if report["timed"] % 200 == 0:
+        if report["timed"] % SAVE_EVERY == 0:
             voice_make._write(root / "voice" / voice_make.AUDIO, [audio[k] for k in sorted(audio)])  # noqa: SLF001
             log(f"voice time: {report['timed']}/{len(ready)} timed")
     voice_make._write(root / "voice" / voice_make.AUDIO, [audio[k] for k in sorted(audio)])  # noqa: SLF001

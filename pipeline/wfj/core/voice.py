@@ -69,6 +69,10 @@ def ja_hash(ja: str) -> str:
 _VALUE = re.compile(r"\$N(\d+)(個|体|頭|匹|羽|本|枚|つ|人|名|回|分|秒|時間|日|年|冊|粒|束|杯|箱|袋|着)?")
 _WORLD_STATE = re.compile(r"\$\d+w")  # a number the server fills in ("$2113w日以内"): read as 数
 _BREAK = re.compile(r"\$[bB]")
+# every player token or number a line's Japanese holds that the addon or the client fills in: a timing part
+# never splits one (core/voice_timing); `<lad/lass>` is a word pair the addon picks one side of
+TOKENS = re.compile("|".join(p.pattern for p in (_TOKEN, _VALUE, _WORLD_STATE, _BREAK))
+                    + r"|<[A-Za-z]+/[A-Za-z]+>")
 _LIVE_NUMBER = re.compile(r"[\d.,]+")
 
 
