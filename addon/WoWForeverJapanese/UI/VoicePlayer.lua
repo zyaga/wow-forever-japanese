@@ -272,28 +272,23 @@ local function finished(window)
 end
 
 -- ── Sentences ─────────────────────────────────────────────────────────────
--- A line a pack cut into sentences (Core/Voice format 3) plays as a chain: each file starts when the one before it
--- ends, every timer measured from the line's start so the chain never drifts. The cuts sit in the middle of the
--- pause between two sentences, so a timer that fires a little late or early only stretches a pause. An MP3 opens on
--- about 50 ms of encoder silence, so each file after the first starts that much early. The line's clock (startedAt)
--- is the clock of its words' marks: a line started from its third sentence counts as started that much earlier.
-local LEAD = 0.05
--- the encoder silence an MP3 opens on (LAME's 1105 samples at the packs' 22.05 kHz): a word's time in the recording
--- is heard this much after its file starts
-local DECODER_DELAY = 0.05
+-- A line a pack ships in sentences (Core/Voice format 3, ADR-090) plays as a chain: each file starts when the one
+-- before it ends, every timer measured from the line's start so the chain never drifts. The files are the line's
+-- recording snipped between two MP3 frames in the middle of a pause, so they join back exactly, and a timer that
+-- fires a little late or early only stretches that pause.
+-- The MP3s run this far behind the recording the timing was measured on (LAME's encoder delay, measured on the
+-- packs' files; pipeline wfj/core/mp3_frames.LEAD): a part is heard this long after its time.
+local MP3_LEAD = 0.055
 
 -- the line's time at which each sentence starts, and the line's length
 local function timeline(sentences)
   local at, t = {}, 0
   for i, c in ipairs(sentences) do
     at[i] = t
-    t = t + c.seconds - (i < #sentences and LEAD or 0)
+    t = t + c.seconds
   end
   return at, t
 end
-
--- Test builds: /run WFJ_VoiceTest.whole = true plays the whole file instead of the sentences.
-WFJ_VoiceTest = WFJ_VoiceTest or {}
 
 local function play(path, seconds, key, window, again, sentences, from)
   if playing and playing.key == key and not again then return false end
@@ -302,12 +297,6 @@ local function play(path, seconds, key, window, again, sentences, from)
   if type(playSoundFile) ~= "function" then
     VoicePlayer.counts.refused = VoicePlayer.counts.refused + 1
     return false
-  end
-  if WFJ_VoiceTest.whole then
-    local whole, wholeSeconds = nil, nil
-    local item = Q.current()
-    if item and item.key == key and item.kind then whole, wholeSeconds = WFJ.Voice.wholeFile(item.kind, item.id) end
-    if whole then path, seconds, sentences = whole, wholeSeconds, nil end
   end
   local at, total
   if sentences and #sentences > 0 then
@@ -395,6 +384,7 @@ function VoicePlayer.onShown(surface, recKey, kind, id)
   local window = windowOf(surface)
   -- detail: length, or why not
   local path, detail, sentences = WFJ.Voice.decide(surface, recKey, kind, id, speaker(window))
+  if not path and detail == "stale" then VoicePlayer.staleNotice(sentences) end
   if not path and detail == "heard" then
     -- heard before (first time only): it stays quiet, and the window's button reads this line on a click. The same
     -- line laid out again while it plays (the gossip window lays its first window out twice) goes on.
@@ -607,28 +597,57 @@ function VoicePlayer.timing()
   if type(getTime) ~= "function" then return nil end
   local cut = 0
   for i = 1, playing.sentence - 1 do cut = cut + playing.sentences[i].seconds end
-  return cut + (getTime() - playing.sentenceAt) - DECODER_DELAY, playing.marks
+  return cut + (getTime() - playing.sentenceAt) - MP3_LEAD, playing.marks
 end
 
--- Test builds: /run WFJ_VoiceTest.play("4641-description") plays a voiced line by its pack key with no window open,
--- through the queue so the panel shows it.
-function WFJ_VoiceTest.play(key)
-  local qid, field = key:match("^(%d+)%-(%a+)$")
-  local kind, id
-  if qid then kind, id = "quest." .. field, tonumber(qid) else kind, id = "gossip", key:match("^g%-(.+)$") end
-  local surface = qid and ({ description = "questframe.detail", progress = "questframe.progress",
-    completion = "questframe.reward" })[field] or "gossip"
+-- A voiced quest or gossip line by its pack key ("4641-description", "g-<hash>"), played through the queue with no
+-- window open, so the panel shows it (/wfj debug voice). → whether it started, and what was played or why not
+local QUEST_SURFACE = { description = "questframe.detail", progress = "questframe.progress",
+  completion = "questframe.reward" }
+function VoicePlayer.playKey(key)
+  local qid, field = tostring(key):match("^(%d+)%-(%a+)$")
+  local kind, id = "gossip", tostring(key):match("^g%-(%x+)$")
+  if qid then kind, id = "quest." .. field, tonumber(qid) end
+  local surface = qid and QUEST_SURFACE[field] or "gossip"
+  if not id or not surface then return false, "not a quest or gossip key" end
   local recKey = qid and field or "greeting"
   local path, seconds, sentences = WFJ.Voice.decide(surface, recKey, kind, id, nil, true)
-  if not path then print("WFJ test: no voice for " .. key .. " (" .. tostring(seconds) .. ")") return false end
+  if not path then return false, tostring(seconds) end
   local shipped = WFJ.Lookup.get(kind, id)
-  local ja = (WFJ.Placeholders.expand(shipped and shipped.ja or "", WFJ.player and WFJ.player() or {}))
-  local titleRow = qid and WFJ.Lookup.get("quest.title", id)
+  local ja = WFJ.Placeholders.expand(shipped and shipped.ja or "", WFJ.player and WFJ.player() or {})
+  local title = qid and WFJ.Lookup.get("quest.title", id)
   local item = { key = key, path = path, seconds = seconds, sentences = sentences, window = "QuestFrame",
-    surface = surface, kind = kind, id = id, ja = ja, name = titleRow and titleRow.ja or key,
+    surface = surface, kind = kind, id = id, ja = ja, name = title and title.ja or key,
     shown = { surface, recKey, kind, id } }
-  print(("WFJ test %s: %s"):format(key, sentences and (#sentences .. " sentences") or "whole file"))
-  return VoicePlayer.playNow(item, "QuestFrame")
+  return VoicePlayer.playNow(item, "QuestFrame"), sentences and (#sentences .. " sentence files") or "whole file"
+end
+
+-- ── Notices ──────────────────────────────────────────────────────────────
+-- Once per session each: the packs built in an older format than this addon reads best, named with their versions
+-- (at login), and a pack whose audio is older than a line's Japanese (the first time one of its lines stays quiet).
+-- Every pack and version also goes to the addon's log, which a bug report carries.
+local noticed = {}
+local function notice(text)
+  if noticed[text] then return end
+  noticed[text] = true
+  local say = Compat.resolve("print")
+  if type(say) == "function" then say(text) end
+end
+
+function VoicePlayer.announcePacks()
+  local list = WFJ.Voice.packList()
+  if #list > 0 and WFJ.Diag then pcall(WFJ.Diag.log, "voicepacks", table.concat(list, " · ")) end
+  local old = WFJ.Voice.outdated()
+  if #old > 0 then
+    notice(("WFJ: these voice packs are out of date: %s. Update all in the CurseForge app."):format(
+      table.concat(old, ", ")))
+  end
+end
+
+function VoicePlayer.staleNotice(folder)
+  if type(folder) ~= "string" then return end
+  notice(("WFJ: the voice pack %s is older than this line's Japanese, so the line stays quiet."
+    .. " Update all in the CurseForge app."):format(WFJ.Voice.packName(folder)))
 end
 
 -- → the window's button, or nil (for /wfj debug and the specs)
