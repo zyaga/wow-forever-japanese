@@ -70,17 +70,21 @@ or with `/wfj intro`.
 
 ### Add the Japanese voice
 
-The voice is a separate, free download of about 1.2 GB, so installing the addon never pulls it in. It needs the
+The voice is a separate, free download of about 2.8 GB, so installing the addon never pulls it in. It needs the
 addon: installing it from the CurseForge app brings the addon too, and the game never loads the voice without it.
+It comes as ten voice packs: Levels 1-10 and Levels 1-10 (part 2), Levels 11-20, 21-30, 31-40 and 41-50, Levels
+51-60 with (part 2) and (part 3), and Other (books, letters and your character's own lines). The files are MP3 at
+64 kbps, which keeps the voices clear.
 
 - **With the CurseForge app:** install the addon first, then search for **WoW Forever Japanese Voice** and click
   **Install**. The app installs every voice pack with it and keeps them up to date. In the game, the packs show as
   extra rows under the addon in the AddOns list; leave them ticked. The voice packs update separately from the
   addon: use **Update All** in the app so they all stay current together. The addon names a pack at login when it
-  is out of date.
+  is out of date, or when it did not load (not installed, or turned off in the AddOns list).
 - **By hand:** on the [releases page](https://github.com/zyaga/wow-forever-japanese/releases), open the latest
-  release whose name starts with **Voice**, download the zip whose name ends in `-all-` and a date, and unzip it into
-  the same `AddOns` folder. It holds `WoWForeverJapanese_Voice` and one folder per voice pack.
+  release whose name starts with **Voice**, download every zip whose name has `-all-` and a date in it (one, or
+  several numbered parts), and unzip each into the same `AddOns` folder. Together they hold `WoWForeverJapanese_Voice`
+  and one folder per voice pack.
 
 The addon's **About & Help** page says whether the voice is installed and which packs loaded. One setting on its
 **Voice** page turns the voice off; removing the voice folders removes it, and the addon keeps working. The voices
@@ -331,10 +335,10 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 
 #### 日本語音声を追加する
 
-音声は約 1.2 GB の無料の別ダウンロードで、アドオンをインストールしても音声は入りません。音声にはアドオンが必要です。CurseForge アプリで音声を入れるとアドオンも一緒に入り、ゲームもアドオンなしで音声を読み込むことはありません。
+音声は約 2.8 GB の無料の別ダウンロードで、アドオンをインストールしても音声は入りません。音声にはアドオンが必要です。CurseForge アプリで音声を入れるとアドオンも一緒に入り、ゲームもアドオンなしで音声を読み込むことはありません。音声は 10 個の音声パックに分かれています：Levels 1-10 と Levels 1-10 (part 2)、Levels 11-20、21-30、31-40、41-50、Levels 51-60 と (part 2)、(part 3)、Other（本、手紙、自分のキャラクターのセリフ）。ファイルは 64 kbps の MP3 で、声がはっきり聞こえます。
 
-- **CurseForge アプリで:** 先にアドオンを入れてから、**WoW Forever Japanese Voice** を検索して **Install** を押します。すべての音声パックが一緒に入り、更新もアプリが行います。ゲーム内の AddOns 一覧では、アドオンの下に音声パックの行が並びます。チェックは入れたままにしてください。音声パックはアドオンとは別に更新されます。アプリの **Update All** で、すべてまとめて最新にしてください。古いパックがあると、ログイン時にアドオンがそのパック名を表示します。
-- **手動で:** [リリースページ](https://github.com/zyaga/wow-forever-japanese/releases)で名前が **Voice** で始まる最新のリリースを開き、名前が `-all-` と日付で終わる zip をダウンロードして、同じ `AddOns` フォルダに展開します。中身は `WoWForeverJapanese_Voice` と音声パックごとのフォルダです。
+- **CurseForge アプリで:** 先にアドオンを入れてから、**WoW Forever Japanese Voice** を検索して **Install** を押します。すべての音声パックが一緒に入り、更新もアプリが行います。ゲーム内の AddOns 一覧では、アドオンの下に音声パックの行が並びます。チェックは入れたままにしてください。音声パックはアドオンとは別に更新されます。アプリの **Update All** で、すべてまとめて最新にしてください。古いパックや、読み込まれなかったパック（未インストール、または AddOns 一覧でオフ）があると、ログイン時にアドオンがそのパック名を表示します。
+- **手動で:** [リリースページ](https://github.com/zyaga/wow-forever-japanese/releases)で名前が **Voice** で始まる最新のリリースを開き、名前に `-all-` と日付が入った zip をすべてダウンロードし（1 つ、または番号付きの複数のパート）、それぞれを同じ `AddOns` フォルダに展開します。全部で `WoWForeverJapanese_Voice` と音声パックごとのフォルダになります。
 
 アドオンの **情報とヘルプ** ページに、音声が入っているか、どのパックが読み込まれたかが表示されます。**音声** ページの設定ひとつで音声をオフにできます。音声のフォルダを削除すれば音声はなくなり、アドオンはそのまま動きます。音声は Qwen3-TTS で作り、それぞれゲームの NPC の声をもとにしています。どの NPC がどの声かは Spoken アドオンに合わせています。クレジットは [`ATTRIBUTION.md`](ATTRIBUTION.md) にあります。
 

@@ -141,3 +141,19 @@ def test_the_gate_finds_untimed_retimed_short_and_badly_cut_lines(made, tmp_path
     assert got["other recording"] == ["456-description"]
     assert got["short timing"] == ["456-completion"]
     assert got["bad cuts"] == ["g-0123456789abcdef"]
+
+
+def test_answers_kept_beside_an_archived_wav_are_used_and_never_made_twice(tmp_path):
+    run = tmp_path / "archive" / "2026-11-14-120000"
+    (run / "wav").mkdir(parents=True)
+    wav = recording(run / "wav" / "abc.wav")
+    jobs = [{"stem": "456-description", "wav": wav, "text": JA},
+            {"stem": "decoded", "wav": tmp_path / "work" / "decoded" / "x.wav", "text": JA}]
+    assert voice_time.beside(jobs) == ({}, {})
+    voice_time.keep_beside(jobs, {"456-description": RZ, "decoded": RZ}, {"456-description": QW, "decoded": QW})
+    assert sorted(p.name for p in run.iterdir()) == ["align-qwen.jsonl", "align-reazon.jsonl", "wav"]
+    rz, qw = voice_time.beside(jobs)
+    assert rz == {"456-description": RZ} and qw == {"456-description": [tuple(w) for w in QW]}
+    # with every answer beside its WAV, timing runs no model at all
+    got = voice_time.model_align(tmp_path / "work")(jobs[:1])
+    assert got == (rz, qw)

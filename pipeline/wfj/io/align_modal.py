@@ -18,9 +18,9 @@ Cost guard: after the first batches the run projects its cost from the card time
 time doubled for start-up and idle) and stops before it would pass --max-dollars, as it stops at any point
 the spend so far passes it; --max-minutes stops it outright. Stopping ends the app, so every card stops.
 
-A cloned-voice run (`qwen_modal.py`) includes this app and times each line on the cards right after reading it
-(`answers`), while its WAV is still there. Run with the Modal client's own environment (`build/modal/venv`),
-never imported by the pipeline."""
+A cloned-voice run (`qwen_modal.py`) includes this app and times each line on the cards right after
+reading it, from the WAV its reader card kept on the volume. Run with the Modal client's own environment
+(`build/modal/venv`), never imported by the pipeline."""
 
 from __future__ import annotations
 
@@ -99,6 +99,8 @@ class Reazon:
     def align(self, items: list[Item]) -> tuple[list[tuple[str, dict | None, str]], float]:
         """([(key, {character index: seconds} or None, error)], the card seconds it took)"""
         started = time.time()
+        if any(isinstance(d, str) for _, d, _ in items):
+            volume.reload()  # files a reader card wrote after this card started
         out = []
         for key, data, text in items:
             try:
@@ -125,6 +127,8 @@ class Qwen:
         """([(key, ReazonSpeech's characters or None, Qwen's words or None, error)], card seconds): the batch
         goes on to a ReazonSpeech card inside Modal while this card times the words."""
         started = time.time()
+        if any(isinstance(d, str) for _, d, _ in items):
+            volume.reload()
         rz = Reazon().align.spawn(items)
         words: dict[str, tuple[list | None, str]] = {}
         for key, data, text in items:
@@ -139,11 +143,6 @@ class Qwen:
             w, werr = words[key]
             out.append((key, c, w, "; ".join(x for x in (error, werr) if x)))
         return out, time.time() - started + rz_seconds
-
-
-def answers(items: list[Item]) -> list[tuple[str, dict | None, list | None, str]]:
-    """Both models' answers for a batch, from inside another function of an app that includes this one."""
-    return Qwen().both.remote(items)[0]
 
 
 def flac(wav: Path, out: Path) -> None:

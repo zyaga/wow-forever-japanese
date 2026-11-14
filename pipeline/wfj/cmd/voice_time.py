@@ -149,6 +149,16 @@ def model_align(work: Path, log: Callable[[str], None] = print, *, modal: bool =
     scripts = Path(__file__).resolve().parents[1] / "dev"
 
     def align(jobs: Sequence[Job]) -> tuple[dict[str, dict[int, float]], dict[str, list[voice_timing.Word]]]:
+        kept_rz, kept_qw = beside(jobs)
+        jobs = [j for j in jobs if j["stem"] not in kept_rz or j["stem"] not in kept_qw]
+        if not jobs:
+            return kept_rz, kept_qw
+        rz, qw = run_models(jobs)
+        keep_beside(jobs, rz, qw)
+        return {**rz, **kept_rz}, {**qw, **kept_qw}
+
+    def run_models(jobs: Sequence[Job]) -> tuple[dict[str, dict[int, float]],
+                                                  dict[str, list[voice_timing.Word]]]:
         for python in () if modal else (reazon, qwen):
             if not python.is_file():
                 raise ValueError(f"{python}: no aligner interpreter (docs/operations/voice.md, 'Timing')")
@@ -170,6 +180,57 @@ def model_align(work: Path, log: Callable[[str], None] = print, *, modal: bool =
         return read_answers(work)
 
     return align
+
+
+BESIDE = ("align-reazon.jsonl", "align-qwen.jsonl")  # the models' answers kept in a WAV's run folder
+
+
+def _run_of(job: Job) -> tuple[Path, str] | None:
+    """The archived run folder a job's WAV sits in, and the WAV's name without .wav; None for another source
+    (a decoded MP3)."""
+    wav = Path(job["wav"])
+    return (wav.parent.parent, wav.stem) if wav.parent.name == "wav" else None
+
+
+def beside(jobs: Sequence[Job]) -> tuple[dict[str, dict[int, float]], dict[str, list[voice_timing.Word]]]:
+    """The answers already kept beside the jobs' WAVs (a cloned-voice run times its lines on the cards as it
+    reads them; a timing run keeps what it made), by stem: a WAV is never timed twice."""
+    rz: dict[str, dict[int, float]] = {}
+    qw: dict[str, list[voice_timing.Word]] = {}
+    read: dict[Path, tuple[dict, dict]] = {}
+    for j in jobs:
+        where = _run_of(j)
+        if where is None:
+            continue
+        run, key = where
+        if run not in read:
+            got: list[dict] = [{}, {}]
+            for n, name in enumerate(BESIDE):
+                path = run / name
+                for row in read_jsonl(path) if path.is_file() else []:
+                    got[n][row["key"]] = row.get("chars", row.get("words"))
+            read[run] = (got[0], got[1])
+        chars, words = read[run][0].get(key), read[run][1].get(key)
+        if chars and words:
+            rz[j["stem"]] = {int(k): float(v) for k, v in chars.items()}
+            qw[j["stem"]] = [(int(a), int(b), float(s), float(e)) for a, b, s, e in words]
+    return rz, qw
+
+
+def keep_beside(jobs: Sequence[Job], rz: Mapping[str, Mapping[int, float]],
+                qw: Mapping[str, Sequence[voice_timing.Word]]) -> None:
+    """Appends the answers just made beside each archived WAV they were made from."""
+    by_run: dict[Path, list[tuple[str, Job]]] = {}
+    for j in jobs:
+        where = _run_of(j)
+        if where and j["stem"] in rz and j["stem"] in qw:
+            by_run.setdefault(where[0], []).append((where[1], j))
+    for run, items in by_run.items():
+        with (run / BESIDE[0]).open("a", encoding="utf-8") as a, \
+                (run / BESIDE[1]).open("a", encoding="utf-8") as b:
+            for key, j in items:
+                a.write(dumps({"key": key, "chars": {str(k): v for k, v in rz[j["stem"]].items()}}) + "\n")
+                b.write(dumps({"key": key, "words": [list(w) for w in qw[j["stem"]]]}) + "\n")
 
 
 def read_answers(work: Path) -> tuple[dict[str, dict[int, float]], dict[str, list[voice_timing.Word]]]:

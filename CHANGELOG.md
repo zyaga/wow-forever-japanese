@@ -15,7 +15,8 @@ an old setting stops working). A release moves those lines under its version num
 - When a voice pack is out of date, a chat line at login names it and its version. A line that stays quiet because its voice pack is older than its Japanese names that pack too, and a voice pack too new for your addon says so at login.
 
 ### Changed
-- The voice packs now hold each line as one file per sentence, timed to the words. Update all the voice packs once in the CurseForge app (Update All updates them together); the download is the same size. Older voice packs still play, without the word marks.
+- The voice packs now hold each line as one file per sentence, timed to the words. Update all the voice packs once in the CurseForge app (Update All updates them together). Older voice packs still play, without the word marks.
+- The voice is clearer: the packs now keep the voices' high end, which makes the download about twice as big (about 2.8 GB). Three new packs split the largest level bands (Levels 1-10 (part 2), Levels 51-60 (part 2) and (part 3)); the CurseForge app installs them with the next Update All, and a chat line at login names any voice pack that did not load.
 - The voice panel no longer shows a stage direction, such as an emote in angle brackets, that the voice does not read. A line made only of such directions is still shown.
 - A bug report now lists your voice packs with their versions.
 - The right-click menus on the target, party and raid frames, and on a player's name or a friend, are in Japanese. Names stay in English.
