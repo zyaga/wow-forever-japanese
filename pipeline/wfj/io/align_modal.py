@@ -40,6 +40,7 @@ GPU = os.environ.get("WFJ_MODAL_GPU", "L40S")
 CARDS = int(os.environ.get("WFJ_MODAL_CONTAINERS", "10"))  # the account's limit: half for each model
 BATCH = 100  # lines per call: about 1,000 seconds of speech
 PRICE = 1.95 / 3600  # dollars per L40S card-second (Modal, measured on the voice runs' bill)
+UPLOAD_BATCH, UPLOAD_TRIES = 200, 5  # files per upload commit; tries for one that a dropped connection ends
 VOLUME = "wfj-align-audio"  # the uploaded FLAC, read by the cards at /audio
 volume = modal.Volume.from_name(VOLUME, create_if_missing=True)
 # the weights the Mac's runs read, by revision
@@ -219,11 +220,19 @@ def upload(jobs: list[dict], packed: Path) -> None:
     todo = [j for j in jobs if f"{j['stem']}.flac" not in there]
     size = sum((packed / f"{j['stem']}.flac").stat().st_size for j in todo)
     print(f"align_modal: uploading {len(todo)} files, {size / 1e9:.1f} GB", flush=True)
-    for n in range(0, len(todo), 500):
-        with volume.batch_upload(force=True) as b:
-            for j in todo[n:n + 500]:
-                b.put_file(str(packed / f"{j['stem']}.flac"), f"/flac/{j['stem']}.flac")
-        print(f"align_modal: uploaded {min(n + 500, len(todo))}/{len(todo)}", flush=True)
+    for n in range(0, len(todo), UPLOAD_BATCH):
+        for attempt in range(1, UPLOAD_TRIES + 1):
+            try:
+                with volume.batch_upload(force=True) as b:
+                    for j in todo[n:n + UPLOAD_BATCH]:
+                        b.put_file(str(packed / f"{j['stem']}.flac"), f"/flac/{j['stem']}.flac")
+                break
+            except Exception as e:  # noqa: BLE001 - a dropped connection: send the batch again
+                if attempt == UPLOAD_TRIES:
+                    raise
+                print(f"align_modal: upload batch failed ({type(e).__name__}); trying again", flush=True)
+                time.sleep(10 * attempt)
+        print(f"align_modal: uploaded {min(n + UPLOAD_BATCH, len(todo))}/{len(todo)}", flush=True)
 
 
 def main() -> int:
