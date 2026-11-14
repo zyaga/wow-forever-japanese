@@ -9,6 +9,11 @@ batch's words and hands the batch to a ReazonSpeech card inside Modal. The answe
 OUT_DIR/reazon.jsonl and OUT_DIR/qwen.jsonl in the format `dev/align_reazon.py` and `dev/align_qwen.py` write,
 so `wfj voice time` reads them as if the Mac had run them; a rerun sends only the lines missing from either.
 
+Fail early: every FLAC is checked to decode to exactly its WAV's samples before anything is uploaded; the
+lines the Mac already answered go first, and every batch is checked as it comes back (core/align_checks.py:
+the cards agree with the Mac, the two models agree with each other, times in order and inside the recording).
+A batch that fails stops the run, and nothing of it is written.
+
 Cost guard: after the first batches the run projects its cost from the card time it measured (each card's
 time doubled for start-up and idle) and stops before it would pass --max-dollars, as it stops at any point
 the spend so far passes it; --max-minutes stops it outright. Stopping ends the app, so every card stops.
@@ -150,6 +155,41 @@ def flac(wav: Path, out: Path) -> None:
     part.replace(out)
 
 
+def _pcm_md5(path: Path) -> str:
+    return subprocess.run(["ffmpeg", "-v", "error", "-i", str(path), "-c:a", "pcm_s16le", "-f", "md5", "-"],
+                          capture_output=True, check=True, text=True).stdout.strip()
+
+
+def same_audio(wav: Path, packed: Path) -> bool:
+    """Whether the FLAC decodes to exactly the WAV's samples."""
+    return _pcm_md5(wav) == _pcm_md5(packed)
+
+
+def mac_answers(out: Path, jobs: list[dict], trial: Path | None) -> tuple[dict, dict]:
+    """Answers the Mac already made for some of the lines: ReazonSpeech's from OUT_DIR/reazon.jsonl, Qwen's
+    from a trial's qwen_words.json (keyed by the WAV's name), to check the cards against."""
+    rz: dict[str, dict] = {}
+    path = out / "reazon.jsonl"
+    for x in path.read_text(encoding="utf-8").splitlines() if path.is_file() else []:
+        row = json.loads(x)
+        rz[row["stem"]] = row["chars"]
+    qw: dict[str, list] = {}
+    if trial and trial.is_file():
+        by_wav = json.loads(trial.read_text(encoding="utf-8"))
+        for j in jobs:
+            words = by_wav.get(Path(j["wav"]).stem)
+            if words:
+                qw[j["stem"]] = words
+    return rz, qw
+
+
+def recording_seconds(wav: Path) -> float:
+    import wave
+
+    with wave.open(str(wav)) as w:
+        return w.getnframes() / w.getframerate()
+
+
 def done_in(out: Path) -> set[str]:
     both = []
     for name in ("reazon.jsonl", "qwen.jsonl"):
@@ -166,6 +206,12 @@ def upload(jobs: list[dict], packed: Path) -> None:
     packed.mkdir(parents=True, exist_ok=True)
     with ThreadPoolExecutor(max_workers=4) as pool:
         list(pool.map(lambda j: flac(Path(j["wav"]), packed / f"{j['stem']}.flac"), jobs))
+        bad = [j["stem"] for j, ok in zip(jobs, pool.map(
+            lambda j: same_audio(Path(j["wav"]), packed / f"{j['stem']}.flac"), jobs), strict=True) if not ok]
+    if bad:
+        raise SystemExit(f"align_modal: {len(bad)} FLAC files differ from their WAVs, e.g. {bad[:3]}; "
+                         "nothing uploaded")
+    print(f"align_modal: {len(jobs)} FLAC files decode to exactly their WAVs' samples", flush=True)
     try:
         there = {Path(e.path).name for e in volume.listdir("/flac")}
     except Exception:  # noqa: BLE001 - a new volume has no /flac yet
@@ -187,14 +233,25 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=None, help="only this many lines (a trial)")
     ap.add_argument("--max-dollars", type=float, default=15.0, help="stop before the cards cost more")
     ap.add_argument("--max-minutes", type=float, default=45.0, help="stop the cards after this long")
+    ap.add_argument("--trial", type=Path, default=None,
+                    help="a Mac trial's qwen_words.json, to check against")
     a = ap.parse_args()
+    sys.path.insert(0, str(HERE.parents[1]))  # the pipeline, for the checks (never needed on the cards)
+    from wfj.core import align_checks
+
     done = done_in(a.out)
-    jobs = [j for j in map(json.loads, a.jobs.read_text(encoding="utf-8").splitlines())
-            if j["stem"] not in done][: a.limit]
-    print(f"align_modal: {len(jobs)} lines on {GPU}", flush=True)
+    listed = [j for j in map(json.loads, a.jobs.read_text(encoding="utf-8").splitlines())
+              if j["stem"] not in done]
+    mac_rz, mac_qw = mac_answers(a.out, listed, a.trial)
+    # the lines the Mac already answered go first, so a card that answers differently stops the run at once
+    jobs = sorted(listed, key=lambda j: j["stem"] not in mac_rz and j["stem"] not in mac_qw)[: a.limit]
+    n_rz, n_qw = sum(j["stem"] in mac_rz for j in jobs), sum(j["stem"] in mac_qw for j in jobs)
+    print(f"align_modal: {len(jobs)} lines on {GPU}; checked against the Mac's answers for {n_rz} "
+          f"(ReazonSpeech) and {n_qw} (Qwen)", flush=True)
     if not jobs:
         return 0
     a.out.mkdir(parents=True, exist_ok=True)
+    seconds = {j["stem"]: recording_seconds(Path(j["wav"])) for j in jobs}
     upload(jobs, a.out / "flac")
     batches = [([(j["stem"], f"/audio/flac/{j['stem']}.flac", j["text"]) for j in jobs[n:n + BATCH]],)
                for n in range(0, len(jobs), BATCH)]
@@ -209,8 +266,12 @@ def main() -> int:
                 failed += BATCH
                 print(f"align_modal: a batch failed: {result}", file=sys.stderr, flush=True)
             else:
-                rows, seconds = result
-                card_seconds += seconds
+                rows, took = result
+                card_seconds += took
+                why = align_checks.check(rows, seconds, mac_rz, mac_qw)
+                if why:
+                    stop = f"a batch failed its check: {why}"
+                    break
                 for stem, chars, words, error in rows:
                     if chars is None or words is None:
                         failed += 1

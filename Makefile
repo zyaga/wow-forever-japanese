@@ -495,8 +495,8 @@ VOICE_WAV_ARCHIVE ?=
 # The timing step (ADR-090): both speech models over every voice file not timed yet; ALIGN_DEVICE=cpu keeps the GPU free.
 VOICE_TIME_ARGS = --store "$(VOICE_STORE)" $(if $(VOICE_WAV_ARCHIVE),--archive "$(VOICE_WAV_ARCHIVE)")
 
-voice-time: ## when each voice line's sentences and words are spoken, and where to cut it: every file not timed yet (resumes; LIMIT=n for a trial)
-	cd pipeline && caffeinate -i $(PY) -m wfj voice time $(VOICE_TIME_ARGS) $(if $(LIMIT),--limit $(LIMIT))
+voice-time: ## when each voice line's sentences and words are spoken, and where to cut it: every file not timed yet (resumes; LIMIT=n for a trial; MODAL=1 on Modal's cards, MAX_DOLLARS=d)
+	cd pipeline && caffeinate -i $(PY) -m wfj voice time $(VOICE_TIME_ARGS) $(if $(LIMIT),--limit $(LIMIT)) $(if $(MODAL),--modal $(if $(MAX_DOLLARS),--max-dollars $(MAX_DOLLARS)))
 
 voice-reencode: ## every voice file not in the current encode made again from its archived WAV (CPU only, resumes; LIMIT=n for a trial)
 	cd pipeline && caffeinate -i $(PY) -m wfj voice reencode $(VOICE_TIME_ARGS) $(if $(LIMIT),--limit $(LIMIT))

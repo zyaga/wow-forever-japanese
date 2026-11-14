@@ -1,6 +1,6 @@
 """wfj voice time: when each voice line's sentences and words are spoken, and where to cut it (ADR-090).
 
-  wfj voice time [--store DIR] [--archive DIR] [--work DIR] [--limit N]
+  wfj voice time [--store DIR] [--archive DIR] [--work DIR] [--limit N] [--modal [--max-dollars D]]
 
 For every recorded voice file that has no timing yet, or was timed from another recording (its fingerprint
 changed), two speech models listen to it: ReazonSpeech for every character, Qwen's aligner for every word
@@ -136,21 +136,32 @@ def archive_source(archive: Path | None, store: Path, work: Path) -> Source:
     return source
 
 
-def model_align(work: Path, log: Callable[[str], None] = print) -> Align:
-    """Both models over the jobs, each with its own interpreter; their answers are kept in the work folder."""
+MODAL_PYTHON = "build/modal/venv/bin/python"
+
+
+def model_align(work: Path, log: Callable[[str], None] = print, *, modal: bool = False,
+                max_dollars: float | None = None) -> Align:
+    """Both models over the jobs, each with its own interpreter, or on Modal's cards (`io/align_modal.py`);
+    their answers are kept in the work folder."""
     main = voice_make._main_checkout()  # noqa: SLF001 - the venvs live in the main checkout, like the Qwen engine's
     reazon = Path(os.environ.get("ALIGN_REAZON_PY") or main / REAZON_PYTHON)
     qwen = Path(os.environ.get("ALIGN_QWEN_PY") or main / QWEN_PYTHON)
     scripts = Path(__file__).resolve().parents[1] / "dev"
 
     def align(jobs: Sequence[Job]) -> tuple[dict[str, dict[int, float]], dict[str, list[voice_timing.Word]]]:
-        for python in (reazon, qwen):
+        for python in () if modal else (reazon, qwen):
             if not python.is_file():
                 raise ValueError(f"{python}: no aligner interpreter (docs/operations/voice.md, 'Timing')")
         work.mkdir(parents=True, exist_ok=True)
         listed = work / "jobs.jsonl"
         listed.write_text("".join(dumps({"stem": j["stem"], "wav": str(j["wav"]), "text": j["text"]}) + "\n"
                                   for j in jobs), encoding="utf-8")
+        if modal:
+            script = Path(__file__).resolve().parents[1] / "io" / "align_modal.py"
+            cmd = [str(main / MODAL_PYTHON), str(script), str(listed), str(work)]
+            log(f"voice time: align_modal.py over {len(jobs)} line(s)")
+            subprocess.run([*cmd, *(["--max-dollars", str(max_dollars)] if max_dollars else [])], check=True)
+            return read_answers(work)
         for python, script, out in ((reazon, "align_reazon.py", "reazon.jsonl"),
                                     (qwen, "align_qwen.py", "qwen.jsonl")):
             log(f"voice time: {script} over {len(jobs)} line(s)")
@@ -279,6 +290,8 @@ def run(argv: Sequence[str]) -> int:
     p.add_argument("--archive", default=os.environ.get("VOICE_WAV_ARCHIVE"), help="the WAV archive")
     p.add_argument("--work", default=None, help=f"the models' answers (default: <main checkout>/{WORK_DIR})")
     p.add_argument("--limit", type=int, default=None, help="time only the first N lines (a trial)")
+    p.add_argument("--modal", action="store_true", help="run both models on Modal's cards (align_modal.py)")
+    p.add_argument("--max-dollars", type=float, default=None, help="with --modal: stop before passing this")
     a = p.parse_args(list(argv))
     root = data_root()
     store = voice_make.store_dir(a.store)
@@ -287,7 +300,8 @@ def run(argv: Sequence[str]) -> int:
         cfg = voice_make.load_config(Path(a.config))
         with voice_make.run_lock():
             archive = Path(a.archive) if a.archive else None
-            r = time_records(root, cfg, source=archive_source(archive, store, work), align=model_align(work),
+            align = model_align(work, modal=a.modal, max_dollars=a.max_dollars)
+            r = time_records(root, cfg, source=archive_source(archive, store, work), align=align,
                              limit=a.limit)
     except (ValueError, KeyError, OSError, subprocess.CalledProcessError) as e:
         print(f"voice time: {e}", file=sys.stderr)
