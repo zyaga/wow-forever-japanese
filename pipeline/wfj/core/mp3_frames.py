@@ -15,6 +15,9 @@ _BITRATES = {1: 8, 2: 16, 3: 24, 4: 32, 5: 40, 6: 48, 7: 56, 8: 64, 9: 80, 10: 9
              14: 160}
 _RATES = {0: 22050, 1: 24000, 2: 16000}
 SAMPLES_PER_FRAME = 576  # MPEG-2 layer III
+# seconds a decoded voice MP3 runs behind the WAV it was made from (LAME's encoder delay, measured on the
+# packs' files): a cut on the recording's clock is snipped this much later in the MP3
+LEAD = 0.055
 
 
 class Mp3Error(ValueError):
@@ -52,10 +55,11 @@ def frames(data: bytes) -> tuple[list[int], int, int]:
 
 
 def split(data: bytes, cuts: Sequence[float]) -> list[tuple[bytes, float]]:
-    """The file snipped at the frame nearest each cut (seconds) → [(piece, seconds)]. A cut that would make
-    an empty piece (at an edge, or on the same frame as another) is skipped."""
+    """The file snipped at the frame nearest each cut (seconds on the recording's clock, LEAD later in the
+    MP3) → [(piece, seconds)]. A cut that would make an empty piece (at an edge, or on the same frame as
+    another) is skipped."""
     offsets, rate, per = frames(data)
-    at = sorted({round(c * rate / per) for c in cuts})
+    at = sorted({round((c + LEAD) * rate / per) for c in cuts})
     at = [k for k in at if 0 < k < len(offsets)]
     bounds = [0, *at, len(offsets)]
     out = []

@@ -15,7 +15,7 @@ VENV_PY  := $(REPO_ROOT)/.venv/bin/python
 PY       ?= $(if $(wildcard $(VENV_PY)),$(VENV_PY),python3)
 ADDON    := addon/WoWForeverJapanese
 
-.PHONY: creature-copy voice-displays names hearthstone pronunciation english-cards voice-qwen-setup voice-modal-setup voice-cast voice-speed voice-spoken-fetch voice-match voice-sets-page voice-sets-apply voice-sets voice-sets-clips voice-sets-catalogue voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
+.PHONY: creature-copy voice-time voice-displays names hearthstone pronunciation english-cards voice-qwen-setup voice-modal-setup voice-cast voice-speed voice-spoken-fetch voice-match voice-sets-page voice-sets-apply voice-sets voice-sets-clips voice-sets-catalogue voice-levels voice-sync voice voice-run voice-status voice-stop voice-speakers voice-generate voice-pack voice-release letter-pages coverage-py coverage-lua lint-public report-intake report-apply collector-intake coverage forever-table-counts ui-inventory tooltip-line-kinds served-columns level1-spells import-draft wago-fetch tables-extract wdb-copy wdb-preflight client-preflight import-shared-english import-client import-tables import-served rebuild-check help test test-py test-lua lint lint-py lint-lua lint-core-gate lint-no-english-in-addon lint-no-private-paths luac vectors toc-check import import-english import-collector check stats generate data validate package release forever-addons forever-titles
 
 help:
 	@grep -E '^[a-z-]+:.*## ' $(MAKEFILE_LIST) | sed 's/:.*## /: /'
@@ -430,7 +430,7 @@ voice-match: voice-speakers ## who speaks each line and with which voice, matche
 	cd pipeline && $(PY) -m wfj voice cast
 
 voice-generate: voice-match ## the missing and changed voice files from the shipped Japanese (cloned voices on Modal; VOICE_LOCAL=1 on this machine), then voice-sync
-	cd pipeline && $(PY) -m wfj voice generate --scope all --players all --store "$(VOICE_STORE)" $(if $(VOICE_LOCAL),,--remote $(if $(VOICE_WAV_ARCHIVE),--archive "$(VOICE_WAV_ARCHIVE)")) && $(PY) -m wfj voice store-sync --if-changed --store "$(VOICE_STORE)"
+	cd pipeline && $(PY) -m wfj voice generate --scope all --players all --store "$(VOICE_STORE)" $(if $(VOICE_LOCAL),,--remote $(if $(VOICE_WAV_ARCHIVE),--archive "$(VOICE_WAV_ARCHIVE)")) && $(PY) -m wfj voice time $(VOICE_TIME_ARGS) && $(PY) -m wfj voice store-sync --if-changed --store "$(VOICE_STORE)"
 
 # The audio store: a checkout of the voice audio repository (zyaga/wow-forever-japanese-voice), inside the main checkout.
 VOICE_STORE ?= $(REPO_ROOT)/build/voice
@@ -492,6 +492,11 @@ voice-sets-apply: ## the picks saved on the listening page → pipeline/voice.to
 
 # Where each remote run's uncompressed WAVs are kept (set in local.mk; empty: not archived).
 VOICE_WAV_ARCHIVE ?=
+# The timing step (ADR-090): both speech models over every voice file not timed yet; ALIGN_DEVICE=cpu keeps the GPU free.
+VOICE_TIME_ARGS = --store "$(VOICE_STORE)" $(if $(VOICE_WAV_ARCHIVE),--archive "$(VOICE_WAV_ARCHIVE)")
+
+voice-time: ## when each voice line's sentences and words are spoken, and where to cut it: every file not timed yet (resumes; LIMIT=n for a trial)
+	cd pipeline && caffeinate -i $(PY) -m wfj voice time $(VOICE_TIME_ARGS) $(if $(LIMIT),--limit $(LIMIT))
 
 voice-modal-setup: ## build/modal/venv: the Modal client the cloned voices are read with on rented GPUs; then log in once (modal token new)
 	uv venv --python 3.12 "$(REPO_ROOT)/build/modal/venv" && VIRTUAL_ENV="$(REPO_ROOT)/build/modal/venv" uv pip install "modal==1.6.3"
@@ -529,7 +534,7 @@ voice-release: ## the voice packs whose audio changed to CurseForge and every zi
 voice-run: ## the whole game's voice, in the background, the Mac kept awake; resumes where it stopped (make voice-status, make voice-stop)
 	@mkdir -p "$(VOICE_STORE)"
 	@if pgrep -f "wfj voice generate" >/dev/null; then echo "voice-run: a run is already going (make voice-status)"; exit 1; fi
-	cd pipeline && nohup caffeinate -i sh -c '$(PY) -m wfj voice generate --scope all --players all --store "$(VOICE_STORE)" && $(PY) -m wfj voice store-sync --if-changed --store "$(VOICE_STORE)"' > "$(VOICE_STORE)/run.log" 2>&1 &
+	cd pipeline && nohup caffeinate -i sh -c '$(PY) -m wfj voice generate --scope all --players all --store "$(VOICE_STORE)" && $(PY) -m wfj voice time $(VOICE_TIME_ARGS) && $(PY) -m wfj voice store-sync --if-changed --store "$(VOICE_STORE)"' > "$(VOICE_STORE)/run.log" 2>&1 &
 	@echo "voice-run: started; make voice-status shows progress, make voice-stop stops it"
 
 voice-status: ## how far the background voice run is, and the time left

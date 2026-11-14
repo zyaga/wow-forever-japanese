@@ -40,7 +40,7 @@ def test_each_piece_has_its_exact_length_and_they_add_up():
     data = mp3(200)
     pieces = mp3_frames.split(data, [1.0, 3.5])
     assert sum(s for _, s in pieces) == pytest.approx(200 * 576 / RATE)
-    assert pieces[0][1] == pytest.approx(round(1.0 * RATE / 576) * 576 / RATE)
+    assert pieces[0][1] == pytest.approx(round((1.0 + mp3_frames.LEAD) * RATE / 576) * 576 / RATE)
 
 
 def test_no_cuts_is_one_piece_the_whole_file():
