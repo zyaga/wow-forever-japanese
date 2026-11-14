@@ -22,6 +22,7 @@ PREFIX = "WoWForeverJapanese_Voice"  # Core/Voice accepts a pack only in a folde
 MB = 1_000_000  # decimal: the stricter reading of the 500 MB upload limit
 _FOLDER = re.compile(r"^WoWForeverJapanese_Voice[A-Za-z0-9_]*$")
 _SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+QUEST_LAST = 99999  # the highest quest id a band's parts must reach
 _QUEST = re.compile(r"^(\d+)-(description|progress|completion)$")
 
 
@@ -33,6 +34,7 @@ class Project:
     project_id: int
     holds: str
     levels: tuple[int, int] | None = None  # None: the entry, or the pack that takes what has no band
+    quests: tuple[int, int] | None = None  # a part of its band: the quest ids it takes, first to last
 
 
 @dataclass(frozen=True)
@@ -74,7 +76,15 @@ def _project(row: Mapping[str, Any], where: str) -> Project:
         if not 1 <= levels[0] <= levels[1]:
             raise ValueError(f"{where}: levels {levels} are not a band")
         levels = (levels[0], levels[1])
-    return Project(row["folder"], row["title"], row["slug"], pid, row["holds"], levels)
+    quests = row.get("quests")
+    if quests is not None:
+        if levels is None:
+            raise ValueError(f"{where}: quests split a band; this pack has none")
+        if not (isinstance(quests, list) and len(quests) == 2 and all(isinstance(n, int) for n in quests)
+                and 1 <= quests[0] <= quests[1] <= QUEST_LAST):
+            raise ValueError(f"{where}: quests must be [first, last] quest ids, 1 to {QUEST_LAST}")
+        quests = (quests[0], quests[1])
+    return Project(row["folder"], row["title"], row["slug"], pid, row["holds"], levels, quests)
 
 
 def parse(raw: Mapping[str, Any]) -> Table:
@@ -90,10 +100,18 @@ def parse(raw: Mapping[str, Any]) -> Table:
         raise ValueError("every pack but the last has a band; the last, with no band, takes the rest")
     for a, b in zip(packs[:-2], packs[1:-1], strict=True):
         assert a.levels and b.levels
+        if a.levels == b.levels and a.quests and b.quests:
+            if b.quests[0] != a.quests[1] + 1:
+                raise ValueError(f"{b.folder}: its quests must start at {a.quests[1] + 1}, right after "
+                                 f"{a.folder}'s")
+            continue
         if b.levels[0] != a.levels[1] + 1:
             raise ValueError(
                 f"{b.folder}: its band must start at {a.levels[1] + 1}, right after {a.folder}'s"
             )
+        if a.quests and a.quests[1] != QUEST_LAST or b.quests and b.quests[0] != 1:
+            raise ValueError(f"{a.folder}, {b.folder}: the parts of a band take every quest, 1 to "
+                             f"{QUEST_LAST}")
     for what in ("folder", "slug"):
         seen = [getattr(p, what) for p in (entry, *packs)]
         dup = sorted({v for v in seen if seen.count(v) > 1})
@@ -113,13 +131,14 @@ def load(path: Path) -> Table:
         return parse(tomllib.load(f))
 
 
-def band(table: Table, level: int | None) -> Project:
-    """The pack whose band holds `level`; no level, a level under 1 (the cache's 0) or past the last band: the
-    pack with no band."""
+def band(table: Table, level: int | None, quest: int | None = None) -> Project:
+    """The pack whose band holds `level` (and, for a band in parts, `quest`; with no quest, its first part);
+    no level, a level under 1 (the cache's 0) or past the last band: the pack with no band."""
     if level is not None:
         for p in table.packs[:-1]:
             assert p.levels
-            if p.levels[0] <= level <= p.levels[1]:
+            if p.levels[0] <= level <= p.levels[1] and (
+                    p.quests is None or quest is None or p.quests[0] <= quest <= p.quests[1]):
                 return p
     return table.other
 
@@ -147,17 +166,18 @@ def assign(
     """The pack of one line key (an error line's key starts with `e-`)."""
     m = _QUEST.match(key)
     if m:
-        return band(table, quest_level.get(int(m.group(1))))
+        q = int(m.group(1))
+        return band(table, quest_level.get(q), q)
     if key.startswith("g-"):
         row = speakers.get(key) or {}
         who = [c for c in (row.get("speaker"), *row.get("others", ())) if isinstance(c, int)]
         levels = [
-            lv
+            (lv, q)
             for c in who
             for q in quests_of.get(c, ())
             if (lv := quest_level.get(q)) is not None and lv >= 1
         ]
-        found = [band(table, lv) for lv in sorted(levels)]
+        found = [band(table, lv, q) for lv, q in sorted(levels)]
         return next((p for p in found if p is not table.other), table.packs[0])
     return table.other  # books and letters, error lines
 

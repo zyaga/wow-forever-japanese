@@ -46,13 +46,18 @@ def _raw(**over):
 # ---- the table -------------------------------------------------------------------------------------------
 
 
-def test_the_committed_table_is_the_entry_and_seven_packs():
+def test_the_committed_table_is_the_entry_and_ten_packs():
     t = vp.load(TABLE)
     assert t.entry.folder == voice_pack.FOLDER == "WoWForeverJapanese_Voice"
-    assert [p.levels for p in t.packs] == [(1, 10), (11, 20), (21, 30), (31, 40), (41, 50), (51, 60), None]
+    assert [p.levels for p in t.packs] == [(1, 5), (6, 10), (11, 20), (21, 30), (31, 40), (41, 50), (51, 59),
+                                           (60, 60), (60, 60), None]
     assert [p.folder.removeprefix(vp.PREFIX) for p in t.packs] == [
-        "Levels1to10", "Levels11to20", "Levels21to30", "Levels31to40", "Levels41to50", "Levels51to60", "Other"]
-    assert all("part" not in p.title.lower() for p in (t.entry, *t.packs))  # named for what they hold
+        "Levels1to10", "Levels1to10Part2", "Levels11to20", "Levels21to30", "Levels31to40", "Levels41to50",
+        "Levels51to60", "Levels51to60Part2", "Levels51to60Part3", "Other"]
+    # the packs players already have keep their names; a part is named after the pack it continues
+    assert [p.title.removeprefix("WoW Forever Japanese Voice: ") for p in t.packs if "part" in p.title] == [
+        "Levels 1-10 (part 2)", "Levels 51-60 (part 2)", "Levels 51-60 (part 3)"]
+    assert [p.quests for p in t.packs if p.quests] == [(1, 8509), (8510, vp.QUEST_LAST)]
     assert (t.cap_mb, t.warn_mb) == (420, 315)
     assert t.addon_slug == "wow-forever-japanese"  # the entry requires the main addon
 
@@ -70,6 +75,9 @@ def test_the_committed_table_is_the_entry_and_seven_packs():
         (lambda r: r["pack"][0].update(project_id=-1), "project_id"),
         (lambda r: r.pop("addon_slug"), "addon_slug"),
         (lambda r: r.update(addon_slug="a"), "addon_slug"),
+        (lambda r: r["pack"][0].update(quests=[1, 5]), "every quest"),
+        (lambda r: r["pack"][-1].update(quests=[1, 5]), "this pack has none"),
+        (lambda r: r["pack"][0].update(quests=[5, 1]), "first, last"),
     ],
 )
 def test_a_broken_table_is_refused(change, message):
@@ -81,9 +89,20 @@ def test_a_broken_table_is_refused(change, message):
 
 def test_a_level_finds_its_band_and_anything_else_goes_to_the_last_pack():
     t = vp.load(TABLE)
-    name = {lv: vp.band(t, lv).folder.removeprefix(vp.PREFIX) for lv in (None, 0, -1, 1, 10, 11, 55, 60, 61, 70)}
-    assert name == {None: "Other", 0: "Other", -1: "Other", 1: "Levels1to10", 10: "Levels1to10",
-                    11: "Levels11to20", 55: "Levels51to60", 60: "Levels51to60", 61: "Other", 70: "Other"}
+    name = {lv: vp.band(t, lv).folder.removeprefix(vp.PREFIX) for lv in (None, 0, -1, 1, 6, 10, 11, 55, 61, 70)}
+    assert name == {None: "Other", 0: "Other", -1: "Other", 1: "Levels1to10", 6: "Levels1to10Part2",
+                    10: "Levels1to10Part2", 11: "Levels11to20", 55: "Levels51to60", 61: "Other", 70: "Other"}
+
+
+def test_a_band_in_parts_goes_by_quest_id():
+    t = vp.load(TABLE)
+    part = {q: vp.band(t, 60, q).folder.removeprefix(vp.PREFIX) for q in (1, 8509, 8510, 99999, None)}
+    assert part == {1: "Levels51to60Part2", 8509: "Levels51to60Part2", 8510: "Levels51to60Part3",
+                    99999: "Levels51to60Part3", None: "Levels51to60Part2"}
+    assert vp.assign(t, "8510-description", {8510: 60}, {}, {}).folder.endswith("Part3")
+    # an NPC's talk goes with its lowest quest: by level, then by quest id
+    who = {"g-aaaaaaaaaaaaaaaa": {"speaker": 7}}
+    assert vp.assign(t, "g-aaaaaaaaaaaaaaaa", {9000: 60, 8000: 60}, who, {7: {9000, 8000}}).folder.endswith("Part2")
 
 
 # ---- the split -------------------------------------------------------------------------------------------
@@ -109,9 +128,9 @@ def _assign(key, speakers=SPEAKERS, levels=LEVELS):
 
 def test_each_kind_of_line_goes_to_its_pack():
     assert _assign("100-description") == "Levels21to30"
-    assert _assign("200-completion") == "Levels1to10"
+    assert _assign("200-completion") == "Levels1to10Part2"  # level 8: the band's second part
     assert _assign("300-progress") == "Other"  # no known level
-    assert _assign("g-aaaaaaaaaaaaaaaa") == "Levels1to10"  # the lowest band of its NPC's quests
+    assert _assign("g-aaaaaaaaaaaaaaaa") == "Levels1to10Part2"  # the lowest band of its NPC's quests (8)
     assert _assign("g-bbbbbbbbbbbbbbbb") == "Levels1to10"  # an NPC with no quests: the first band
     assert _assign("g-cccccccccccccccc") == "Levels1to10"
     assert _assign("g-dddddddddddddddd") == "Levels1to10"

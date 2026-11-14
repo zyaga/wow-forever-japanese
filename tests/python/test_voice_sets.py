@@ -248,7 +248,8 @@ def test_home_pack_is_the_lowest_band_of_an_npcs_quests(tmp_path):
     homes = vs.home_packs(data, table, {10: 15, 20: 3})
     assert homes[1] == homes[2] == table.packs[0].folder
     assert homes[3] == table.packs[0].folder  # talk only: the first band
-    assert vs.home_packs(data, table, {10: 15, 20: 35})[1] == table.packs[1].folder
+    assert vs.home_packs(data, table, {10: 15, 20: 35})[1] == table.by_folder(
+        "WoWForeverJapanese_VoiceLevels11to20").folder
 
 
 # ---- gender ----------------------------------------------------------------------------------------------

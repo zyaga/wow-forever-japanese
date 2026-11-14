@@ -17,9 +17,11 @@ book_narrator = "v1628969216"
 # checkout, and the packs whose NPCs speak with their game voice set.
 qwen = "build/qwen/venv/bin/python"
 cloned_packs = [
-  "WoWForeverJapanese_VoiceLevels1to10", "WoWForeverJapanese_VoiceLevels11to20",
-  "WoWForeverJapanese_VoiceLevels21to30", "WoWForeverJapanese_VoiceLevels31to40",
-  "WoWForeverJapanese_VoiceLevels41to50", "WoWForeverJapanese_VoiceLevels51to60", "WoWForeverJapanese_VoiceOther",
+  "WoWForeverJapanese_VoiceLevels1to10", "WoWForeverJapanese_VoiceLevels1to10Part2",
+  "WoWForeverJapanese_VoiceLevels11to20", "WoWForeverJapanese_VoiceLevels21to30",
+  "WoWForeverJapanese_VoiceLevels31to40", "WoWForeverJapanese_VoiceLevels41to50",
+  "WoWForeverJapanese_VoiceLevels51to60", "WoWForeverJapanese_VoiceLevels51to60Part2",
+  "WoWForeverJapanese_VoiceLevels51to60Part3", "WoWForeverJapanese_VoiceOther",
 ]
 # the narrator (quests an item or object starts) and the book reader speak with a game voice set too
 narrator_set = "taurenmaleeldernpc"
