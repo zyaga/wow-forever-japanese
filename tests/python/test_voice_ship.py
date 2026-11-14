@@ -744,6 +744,26 @@ def test_the_inputs_fingerprint_follows_the_committed_tree(tmp_path):
     assert vs.inputs_fingerprint(repo) != first
 
 
+def test_a_large_sync_goes_up_in_several_pushes_under_the_limit(tmp_path, monkeypatch):
+    from wfj.cmd import voice_store
+
+    remote, store, pin = tmp_path / "remote.git", tmp_path / "store", tmp_path / "pin.txt"
+    _git(tmp_path, "init", "-q", "--bare", str(remote))
+    _git(tmp_path, "init", "-q", "-b", "main", str(store))
+    _git(store, "config", "user.name", "Zyaga")
+    _git(store, "config", "user.email", "zyaga@users.noreply.github.com")
+    _git(store, "remote", "add", "origin", str(remote))
+    (store / "audio").mkdir()
+    for n in range(5):
+        (store / "audio" / f"{n}-description.mp3").write_bytes(bytes(40))
+    monkeypatch.setattr(voice_store, "PUSH_BYTES", 100)
+    assert [len(g) for g in voice_store.push_groups(store)] == [2, 2, 1]
+    sha = voice_store.sync(store, pin, "Voice audio")
+    subjects = _git(remote, "log", "--format=%s", "main").split("\n")[:3]
+    assert subjects == ["Voice audio (part 3 of 3)", "Voice audio (part 2 of 3)", "Voice audio (part 1 of 3)"]
+    assert voice_store.read_pin(pin) == sha and not _git(store, "status", "--porcelain")
+
+
 def test_store_sync_refuses_a_store_off_its_branch(tmp_path):
     from wfj.cmd import voice_store
 
