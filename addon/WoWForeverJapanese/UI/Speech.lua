@@ -162,7 +162,7 @@ local function otherNames(en, target, me)
   local party, unreadable = partyMembers(me)
   local out, seen = {}, {}
   local function add(name, sex, via)
-    if name and name ~= me and not seen[name] and wholeWord(en, name) then
+    if name and name ~= me and not seen[name] and named(en, name) then
       seen[name] = true
       out[#out + 1] = { name = name, sex = sex, via = via }
     end
@@ -307,7 +307,9 @@ end
 local lastReason, lastJa, lastKey
 -- What handle() saw of the line's target and what the Collector answered, for the trace (flags only, no names), and
 -- how another player's name was found when the line's Japanese is in their name ("target" | "party")
-local lastTarget, lastCollect, lastOther
+-- lastNamed: the line names another player and no row resolved it, so its own key, a hash of English holding their
+-- name, is left out of the trace
+local lastTarget, lastCollect, lastOther, lastNamed
 
 local function why(reason, frame, event, en, key) -- → 0
   lastReason = lastReason or reason
@@ -371,6 +373,7 @@ local function handle(frame, line, typeId, event, eventArgs, formatter)
   if toOther or (not secret(target) and (target == nil or target == "")) then
     others, namesParty = otherNames(en, toOther and target or nil, me)
   end
+  lastNamed = toOther or namesParty
   if WFJ.Collector and not secret(guid) and not secret(target) and not toOther and not namesParty
       and Speech.knownLanguage(language) then
     local result, reason = WFJ.Collector.recordGossip(en, guid)
@@ -385,7 +388,7 @@ local function handle(frame, line, typeId, event, eventArgs, formatter)
     local otherKey, via
     ja, otherKey, via = translateOthers(en, others)
     if otherKey then -- the row's key holds no name; the line's own key would
-      key, lastKey = otherKey, otherKey
+      key, lastKey, lastNamed = otherKey, otherKey, false
     end
     lastOther = ja and via or nil
   end
@@ -451,13 +454,13 @@ function Speech.trace(frame, event, eventArgs, outcome)
   for k, v in pairs(lastTarget or {}) do fields[k] = v end
   local key
   if readable(en) then
-    key = lastKey or (deps.key and deps.key(en)) or nil
+    key = not lastNamed and (lastKey or (deps.key and deps.key(en))) or nil
     fields.key, fields.shipped, fields.hasToken = key, keyShipped(key), en:find("%s", 1, true) ~= nil
     local speaker = eventArgs[2]
     if type(speaker) == "string" and not secret(speaker) and speaker ~= "" then
       local at = en:find(speaker, 1, true)
       fields.speakerInText = at ~= nil
-      if at then
+      if at and not lastNamed then
         local parts, from = {}, 1
         while at do
           parts[#parts + 1] = en:sub(from, at - 1)
@@ -482,12 +485,12 @@ end
 function Speech.onAddMessage(frame, line, _, _, _, typeId, _, _, event, eventArgs, formatter)
   local outerReason, outerJa, outerKey = lastReason, lastJa, lastKey
   lastReason, lastJa, lastKey = nil, nil, nil
-  local outerTarget, outerCollect, outerOther = lastTarget, lastCollect, lastOther
-  lastTarget, lastCollect, lastOther = nil, nil, nil
+  local outerTarget, outerCollect, outerOther, outerNamed = lastTarget, lastCollect, lastOther, lastNamed
+  lastTarget, lastCollect, lastOther, lastNamed = nil, nil, nil, nil
   local result = handle(frame, line, typeId, event, eventArgs, formatter)
   pcall(Speech.trace, frame, event, eventArgs, lastReason or "translated")
   lastReason, lastJa, lastKey = outerReason, outerJa, outerKey
-  lastTarget, lastCollect, lastOther = outerTarget, outerCollect, outerOther
+  lastTarget, lastCollect, lastOther, lastNamed = outerTarget, outerCollect, outerOther, outerNamed
   return result
 end
 

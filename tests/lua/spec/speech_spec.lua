@@ -637,6 +637,29 @@ describe("NPC speech", function()
       assert.are.equal(keyOf("Hail, Testplayer!"), traced().key)
     end)
 
+    it("a yell in capitals naming a party member is tried with that name", function()
+      party.party1 = { name = "Sky", sex = 2 }
+      local tried, translateAs = {}, WFJ.Speech.translateAs
+      finally(function() WFJ.Speech.translateAs = translateAs end)
+      WFJ.Speech.translateAs = function(en, other)
+        tried[#tried + 1] = other.name
+        return translateAs(en, other)
+      end
+      npc(f, YELL, "%s yells: ", "RUN, SKY!", SPEAKER, GUID)
+      assert.are.same({ "Sky" }, tried)
+    end)
+
+    it("a line naming another player that no row resolves leaves its own key out of the trace", function()
+      npc(f, SAY, "%s says: ", "Thank you, Sky!", SPEAKER, GUID, "Sky Zero")
+      local e = traced()
+      assert.are.equal("no Japanese -", e.msg)
+      assert.is_nil(e.key)
+      assert.is_nil(e.speakerKey)
+      party.party1 = { name = "Sky", sex = 2 }
+      npc(f, SAY, "%s says: ", "Sky, the gate!", SPEAKER, GUID)
+      assert.is_nil(traced().key)
+    end)
+
     it("a line in this character's own name keeps the own path", function()
       npc(f, SAY, "%s says: ", "I can make it from here.  Thanks, Testplayer!", SPEAKER, GUID, "Testplayer")
       assert.are.equal("\"Stinky\" Ignatzの発言: ここからは一人で行ける。ありがとう、Testplayer！", f:Last())
