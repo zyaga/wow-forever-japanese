@@ -13,7 +13,8 @@ Fail early: every FLAC is checked to decode to exactly its WAV's samples before 
 images load their models on CPU cards before any GPU starts; the
 lines the Mac already answered go first, and every batch is checked as it comes back (core/align_checks.py:
 the cards agree with the Mac, the two models agree with each other, times in order and inside the recording).
-A batch that fails stops the run, and nothing of it is written.
+A batch that fails stops the run, and nothing of it is written. A line whose times run backwards or past its
+recording (a take cut short, most often) is kept and listed in OUT_DIR/listen.txt.
 
 Cost guard: after the first batches the run projects its cost from the card time it measured (each card's
 time doubled for start-up and idle) and stops before it would pass --max-dollars, as it stops at any point
@@ -170,6 +171,15 @@ def load_qwen() -> str:
     return "ok"
 
 
+def list_to_listen(out: Path, stems: list[str], seconds: dict[str, float]) -> None:
+    """Lines kept but worth a listen (times out of order or past the recording) → OUT_DIR/listen.txt."""
+    if not stems:
+        return
+    with (out / "listen.txt").open("a", encoding="utf-8") as f:
+        f.writelines(f"{s}\t{seconds[s]:.2f} s\ttimes out of order or past the recording\n" for s in stems)
+    print(f"align_modal: to listen to (kept): {', '.join(stems)}", flush=True)
+
+
 def models_load() -> bool:
     """Both images load their models on CPU cards, so a broken image stops the run before any GPU starts."""
     try:
@@ -320,6 +330,7 @@ def main() -> int:
                 if why:
                     stop = f"a batch failed its check: {why}"
                     break
+                list_to_listen(a.out, align_checks.suspects(rows, seconds), seconds)
                 for stem, chars, words, error in rows:
                     if chars is None or words is None:
                         failed += 1

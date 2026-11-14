@@ -29,10 +29,13 @@ def test_an_answer_unlike_the_macs_stops_the_run():
     assert "Qwen differs" in align_checks.check([("a", CHARS, missing, "")], SECONDS, {}, {"a": WORDS})
 
 
-def test_times_out_of_order_or_past_the_recording_stop_the_run():
+def test_a_take_with_times_past_its_recording_is_listed_and_many_stop_the_run():
     back = {**CHARS, "5": 0.50}
-    assert "out of order" in align_checks.check([("a", back, WORDS, "")], SECONDS, {}, {})
-    assert "out of order" in align_checks.check([ROW], {"a": 1.0}, {}, {})
+    assert align_checks.check([("a", back, WORDS, "")], SECONDS, {}, {}) == ""
+    assert align_checks.suspects([("a", back, WORDS, ""), ROW], SECONDS) == ["a"]
+    assert align_checks.suspects([ROW], {"a": 1.0}) == ["a"]  # a word past the end of a 1 s recording
+    many = [(f"s{n}", back, WORDS, "") for n in range(align_checks.SUSPECT + 1)]
+    assert "out of order" in align_checks.check(many, {s: 1.5 for s, *_ in many}, {}, {})
 
 
 def test_a_few_empty_lines_pass_and_more_stop_the_run():

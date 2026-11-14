@@ -2,8 +2,9 @@
 at the first batch that fails one, before it costs more. Pure.
 
 A batch fails when the two models disagree on where words start more than the 1,000-line trial ever did,
-when a line whose answer the Mac already made comes back different, when a line's times run backwards or
-past its recording, or when more than a couple of lines come back with no answer."""
+when a line whose answer the Mac already made comes back different, when more than a few lines' times run
+backwards or past their recording, or when more than a couple of lines come back with no answer. A line or
+two of the third kind is a take to listen to (often one cut short), listed, not a failed batch."""
 
 from __future__ import annotations
 
@@ -16,6 +17,7 @@ SAME = 0.02  # seconds: median gap to the Mac's answer for the same line and mod
 SAME_P95 = 0.09  # ... and its 95th percentile (Qwen times in steps of 80 ms: one step apart passes)
 EMPTY = 2  # lines a batch may bring back with no answer
 SLACK = 0.10  # seconds a time may sit past the end of its recording (the models' frames)
+SUSPECT = 5  # lines a batch may bring back with times out of order or past their recording (a take cut short)
 
 Chars = Mapping[str, float]  # ReazonSpeech: character index (as text) → seconds
 Words = Sequence[Sequence[float]]  # Qwen: [first, end, start, end]
@@ -55,20 +57,28 @@ def in_order(chars: Chars, words: Words, seconds: float) -> bool:
             and all(a <= b for a, b in zip(qw, qw[1:], strict=False)))
 
 
+def suspects(rows: Sequence[Row], seconds: Mapping[str, float]) -> list[str]:
+    """The lines whose times run backwards or past their recording: a take to listen to (often cut short),
+    not a sign the cards are wrong. Their answers are kept."""
+    return [s for s, c, w, _ in rows if c and w and not in_order(c, w, seconds[s])]
+
+
 def check(rows: Sequence[Row], seconds: Mapping[str, float], mac_rz: Mapping[str, Chars],
           mac_qw: Mapping[str, Words]) -> str:
-    """Why a batch fails, or "" when it passes. `seconds`: each line's recording length; `mac_rz`, `mac_qw`:
-    answers the Mac made for some of the lines."""
+    """Why a batch fails, or "" when it passes. `seconds`: each line's recording length; `mac_rz`,
+    `mac_qw`: answers the Mac made for some of the lines. A few suspect lines (suspects) pass; more than
+    SUSPECT fail."""
     empty = [s for s, c, w, _ in rows if not c or not w]
     if len(empty) > EMPTY:
         return f"{len(empty)} lines with no answer, e.g. {empty[:3]}"
+    odd = suspects(rows, seconds)
+    if len(odd) > SUSPECT:
+        return f"{len(odd)} lines with times out of order or past their recording, e.g. {odd[:3]}"
     near = both = 0
     same: dict[str, list[float]] = {"ReazonSpeech": [], "Qwen": []}
     for stem, chars, words, _ in rows:
         if not chars or not words:
             continue
-        if not in_order(chars, words, seconds[stem]):
-            return f"{stem}: times out of order or past its recording ({seconds[stem]:.2f} s)"
         n, b = agreement(chars, words)
         near, both = near + n, both + b
         if stem in mac_rz:
