@@ -268,6 +268,7 @@ def run(argv: Sequence[str]) -> int:
               for v in ("cast", "plan", "generate", "status", "record-hashes", "export", "relevel")},
            "speed": ("voice_make", "run_speed", 1),
            "time": ("voice_time", "run", 1),
+           "reencode": ("voice_reencode", "run", 1),
            **{v: ("voice_kana", "run", 0) for v in ("kana", "kana-import")},
            **{v: ("voice_store", "run", 0) for v in ("levels", "store-sync")},
            **{v: ("voice_ship", "run", 0) for v in ("pack", "release", "inputs")}}

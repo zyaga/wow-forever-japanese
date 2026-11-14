@@ -86,7 +86,7 @@ def test_a_line_with_no_source_or_no_answer_fails_and_keeps_its_record(made, tmp
 
 
 def test_a_line_timed_from_its_mp3_is_moved_back_onto_the_recordings_clock(made, tmp_path):
-    lead = mp3_frames.LEAD
+    lead = mp3_frames.LEAD[22050]
     shifted = {k: v + lead for k, v in RZ.items()}
     words = [(a, b, s + lead, e + lead) for a, b, s, e in QW]
     r = voice_time.time_records(made, CFG, source=sources(tmp_path, lead=lead),

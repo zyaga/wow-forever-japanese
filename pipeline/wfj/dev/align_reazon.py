@@ -56,6 +56,40 @@ def targets(text: str, vocab: dict[str, int], kks: pykakasi.kakasi) -> tuple[lis
     return ids, owner
 
 
+def load(device: str) -> tuple:
+    """The model, its feature extractor, vocabulary and kana speller, on `device`."""
+    model = Wav2Vec2ForCTC.from_pretrained(MODEL).to(device).eval()
+    fe = Wav2Vec2FeatureExtractor.from_pretrained(MODEL)
+    vocab = json.loads((Path(snapshot_download(MODEL)) / "vocab.json").read_text(encoding="utf-8"))
+    return model, fe, vocab, pykakasi.kakasi(), device
+
+
+def align(state: tuple, a, sr: int, text: str) -> dict[str, float]:
+    """When each character of `text` starts in the mono samples `a` (rate `sr`): {index: seconds}."""
+    model, fe, vocab, kks, device = state
+    seconds = len(a) / sr
+    a16 = F.resample(torch.from_numpy(a), sr, RATE)
+    padded = torch.nn.functional.pad(a16, (int(LEAD_IN * RATE), 0))
+    iv = fe(padded.numpy(), sampling_rate=RATE, return_tensors="pt").input_values.to(device)
+    with torch.inference_mode():
+        lp = torch.log_softmax(model(iv).logits.float().cpu(), -1)
+    ids, owner = targets(text, vocab, kks)
+    chars: dict[str, float] = {}
+    if ids:
+        step = (len(padded) / RATE) / lp.shape[1]
+        ali, scores = F.forced_align(lp, torch.tensor([ids], dtype=torch.int32), blank=0)
+        for k, span in enumerate(F.merge_tokens(ali[0], scores[0].exp())):
+            t = min(seconds, max(0.0, span.start * step - LEAD_IN - LATE))
+            chars.setdefault(str(owner[k]), round(t, 3))
+    return chars
+
+
+def read(path: str):
+    """A file's samples as mono float32, and its rate."""
+    a, sr = soundfile.read(path, dtype="float32")
+    return (a.mean(1) if a.ndim > 1 else a), sr
+
+
 def main(jobs_path: str, out_path: str) -> int:
     device = os.environ.get("ALIGN_DEVICE") or ("mps" if torch.backends.mps.is_available() else "cpu")
     done = set()
@@ -67,32 +101,13 @@ def main(jobs_path: str, out_path: str) -> int:
     jobs = [j for j in jobs if j["stem"] not in done]
     if not jobs:
         return 0
-    model = Wav2Vec2ForCTC.from_pretrained(MODEL).to(device).eval()
-    fe = Wav2Vec2FeatureExtractor.from_pretrained(MODEL)
-    vocab = json.loads((Path(snapshot_download(MODEL)) / "vocab.json").read_text(encoding="utf-8"))
-    kks = pykakasi.kakasi()
+    state = load(device)
     started, heard = time.time(), 0.0
     with Path(out_path).open("a", encoding="utf-8") as out:
         for n, job in enumerate(jobs, 1):
-            a, sr = soundfile.read(job["wav"], dtype="float32")
-            if a.ndim > 1:
-                a = a.mean(1)
-            seconds = len(a) / sr
-            heard += seconds
-            a16 = F.resample(torch.from_numpy(a), sr, RATE)
-            padded = torch.nn.functional.pad(a16, (int(LEAD_IN * RATE), 0))
-            iv = fe(padded.numpy(), sampling_rate=RATE, return_tensors="pt").input_values.to(device)
-            with torch.inference_mode():
-                lp = torch.log_softmax(model(iv).logits.float().cpu(), -1)
-            ids, owner = targets(job["text"], vocab, kks)
-            chars: dict[str, float] = {}
-            if ids:
-                step = (len(padded) / RATE) / lp.shape[1]
-                ali, scores = F.forced_align(lp, torch.tensor([ids], dtype=torch.int32), blank=0)
-                for k, span in enumerate(F.merge_tokens(ali[0], scores[0].exp())):
-                    t = min(seconds, max(0.0, span.start * step - LEAD_IN - LATE))
-                    chars.setdefault(str(owner[k]), round(t, 3))
-            out.write(json.dumps({"stem": job["stem"], "chars": chars}) + "\n")
+            a, sr = read(job["wav"])
+            heard += len(a) / sr
+            out.write(json.dumps({"stem": job["stem"], "chars": align(state, a, sr, job["text"])}) + "\n")
             out.flush()
             if n % 100 == 0 or n == len(jobs):
                 rate = heard / max(1e-6, time.time() - started)

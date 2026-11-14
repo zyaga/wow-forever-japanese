@@ -15,9 +15,10 @@ _BITRATES = {1: 8, 2: 16, 3: 24, 4: 32, 5: 40, 6: 48, 7: 56, 8: 64, 9: 80, 10: 9
              14: 160}
 _RATES = {0: 22050, 1: 24000, 2: 16000}
 SAMPLES_PER_FRAME = 576  # MPEG-2 layer III
-# seconds a decoded voice MP3 runs behind the WAV it was made from (LAME's encoder delay, measured on the
-# packs' files): a cut on the recording's clock is snipped this much later in the MP3
-LEAD = 0.055
+# seconds a decoded voice MP3 runs behind the WAV it was made from, by sample rate: LAME's encoder and
+# decoder delay (1,105 samples) plus the levelling limiter's 5 ms look-ahead, measured on files made by
+# voice_make.to_levelled_mp3. A cut on the recording's clock is snipped this much later in the MP3.
+LEAD = {22050: 0.055, 24000: 0.051}
 
 
 class Mp3Error(ValueError):
@@ -54,12 +55,27 @@ def frames(data: bytes) -> tuple[list[int], int, int]:
     return offsets, rate, SAMPLES_PER_FRAME
 
 
+def header(data: bytes) -> tuple[int, int]:
+    """→ the sample rate and bit rate (kbps) the first frame names. Raises Mp3Error when there is none."""
+    if len(data) < 4 or data[0] != 0xFF or (data[1] & 0xE0) != 0xE0 or ((data[1] >> 3) & 3) != 2:
+        raise Mp3Error("no MPEG-2 frame at the start")
+    rate, kbps = _RATES.get((data[2] >> 2) & 3), _BITRATES.get(data[2] >> 4)
+    if rate is None or kbps is None:
+        raise Mp3Error("the first frame has no bit rate or sample rate")
+    return rate, kbps
+
+
+def lead(data: bytes) -> float:
+    """The seconds a file runs behind its recording (LEAD at the file's sample rate)."""
+    return LEAD[header(data)[0]]
+
+
 def split(data: bytes, cuts: Sequence[float]) -> list[tuple[bytes, float]]:
-    """The file snipped at the frame nearest each cut (seconds on the recording's clock, LEAD later in the
-    MP3) → [(piece, seconds)]. A cut that would make an empty piece (at an edge, or on the same frame as
-    another) is skipped."""
+    """The file snipped at the frame nearest each cut (seconds on the recording's clock, the file's LEAD
+    later in the MP3) → [(piece, seconds)]. A cut that would make an empty piece (at an edge, or on the same
+    frame as another) is skipped."""
     offsets, rate, per = frames(data)
-    at = sorted({round((c + LEAD) * rate / per) for c in cuts})
+    at = sorted({round((c + LEAD[rate]) * rate / per) for c in cuts})
     at = [k for k in at if 0 < k < len(offsets)]
     bounds = [0, *at, len(offsets)]
     out = []

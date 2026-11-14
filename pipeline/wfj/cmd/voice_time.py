@@ -44,8 +44,9 @@ Source = Callable[[dict[str, Any], str], tuple[Path, float] | None]
 Align = Callable[[Sequence[Job]], tuple[dict[str, dict[int, float]], dict[str, list[voice_timing.Word]]]]
 
 
-def to_time(root: Path, cfg: dict[str, Any]) -> list[Job]:
-    """The recorded files in step with their line whose timing is missing or from another recording."""
+def in_step(root: Path, cfg: dict[str, Any]) -> list[Job]:
+    """Every recorded file in step with its line: its stem, key, the text the engine read, the shipped
+    Japanese and the fingerprint."""
     lines = voice_make.shipped_lines(root)
     jobs = voice_make.file_jobs(root, cfg, "all", lines, voice_make.players_of("all"))
     audio = voice_make.audio_record(root)
@@ -54,12 +55,17 @@ def to_time(root: Path, cfg: dict[str, Any]) -> list[Job]:
     out = []
     for j in jobs:
         rec = audio.get(j.stem)
-        if rec is None or j.stem in off or rec.get("timing_of") == rec["fingerprint"]:
+        if rec is None or j.stem in off:
             continue
         text = texts.get(j.key) or voice.speech_text(lines[j.key], j.key, values.get(j.key, ()))
         out.append({"stem": j.stem, "key": j.key, "text": text, "ja": lines[j.key],
-                    "fingerprint": rec["fingerprint"]})
+                    "fingerprint": rec["fingerprint"], "timing_of": rec.get("timing_of")})
     return out
+
+
+def to_time(root: Path, cfg: dict[str, Any]) -> list[Job]:
+    """The recorded files in step with their line whose timing is missing or from another recording."""
+    return [j for j in in_step(root, cfg) if j.pop("timing_of") != j["fingerprint"]]
 
 
 def problems(root: Path, cfg: dict[str, Any]) -> dict[str, list[str]]:
@@ -99,12 +105,18 @@ def wav_name(fingerprint: str, text: str) -> str | None:
                     float(temperature) if temperature else None) + ".wav"
 
 
-def archive_source(archive: Path | None, store: Path, work: Path) -> Source:
-    """The archived WAV when there is one, else the stored MP3 decoded to a WAV in the work folder."""
+def archive_index(archive: Path | None) -> dict[str, Path]:
+    """Every WAV in the archive by its file name (the name its remote run gave it)."""
     index: dict[str, Path] = {}
     if archive is not None and archive.is_dir():
         for p in archive.glob("*/wav/*.wav"):
             index.setdefault(p.name, p)
+    return index
+
+
+def archive_source(archive: Path | None, store: Path, work: Path) -> Source:
+    """The archived WAV when there is one, else the stored MP3 decoded to a WAV in the work folder."""
+    index = archive_index(archive)
 
     def source(rec: dict[str, Any], text: str) -> tuple[Path, float] | None:
         name = wav_name(rec["fingerprint"], text)
@@ -118,7 +130,8 @@ def archive_source(archive: Path | None, store: Path, work: Path) -> Source:
             out.parent.mkdir(parents=True, exist_ok=True)
             subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(mp3), "-ac", "1", "-c:a", "pcm_s16le",
                             str(out)], check=True)
-        return out, mp3_frames.LEAD
+        with mp3.open("rb") as f:
+            return out, mp3_frames.lead(f.read(4))
 
     return source
 

@@ -10,7 +10,7 @@ docs/systems/voice.md, runbook docs/operations/voice.md).
       or settings changed, by cast row and voice, with characters and hours.
   generate [--config voice.toml] [--store DIR] [--scope S]
       Makes the files plan lists through the local AivisSpeech Engine into DIR (the audio store: mono MP3,
-      22.05 kHz, 32 kbps, no Xing / Info frame) and records each in data/voice/audio.jsonl, every few files,
+      24 kHz, 64 kbps, no Xing / Info frame) and records each in data/voice/audio.jsonl, every few files,
       so a stopped run resumes where it stopped. Writes DIR/status.json as it goes.
   status [--store DIR]
       The running or last generation: done / total, rate, time left, and whether its process is alive.
@@ -55,7 +55,9 @@ from wfj.paths import data_root
 ENGINE_HINT = (
     "start the AivisSpeech Engine, or unpack it into build/aivis/ (docs/operations/voice.md), and run again"
 )
-LAME = ("lame", "-m", "m", "--resample", "22.05", "-b", "32", "--cbr", "-t", "--quiet")
+RATE, KBPS = 24000, 64  # the voice files' encode: the engine's own rate, at a bit rate that keeps its top end
+LAME = ("lame", "-m", "m", "--resample", f"{RATE / 1000:g}", "-b", str(KBPS), "--cbr", "-t", "--quiet")
+ENCODE = f"mp3 {RATE} {KBPS}"  # a record's `encode`: what its file was made with (wfj voice reencode)
 RECORD_EVERY = 20  # files between two progress lines in the log
 SAVE_SECONDS = 1.0  # the audio record is written at most this often while a run makes files, and at its end
 AUDIO = "audio.jsonl"
@@ -753,6 +755,7 @@ def generate(  # noqa: C901, PLR0913, PLR0915 - engine, encoder and log injected
                     "seconds": round(secs, 2),
                     "bytes": file.stat().st_size,
                     "sha256": file_sha(file),
+                    "encode": ENCODE,
                     "chars": len(text),
                     "provenance": {"source": source, "imported": today},
                 }
@@ -960,7 +963,7 @@ def relevel(root: Path, cfg: dict[str, Any], store: Path, runs: Sequence[Path]) 
             continue
         file = audio_file(store, stem)
         to_levelled_mp3(wav.read_bytes(), file)
-        rec.update(bytes=file.stat().st_size, sha256=file_sha(file))
+        rec.update(bytes=file.stat().st_size, sha256=file_sha(file), encode=ENCODE)
         done += 1
         if done % 200 == 0:
             print(f"voice relevel: {done}", flush=True)

@@ -26,6 +26,30 @@ from qwen_asr.inference.qwen3_forced_aligner import Qwen3ForcedAligner
 MODEL = "Qwen/Qwen3-ForcedAligner-0.6B"
 
 
+def load(device: str) -> Qwen3ForcedAligner:
+    return Qwen3ForcedAligner.from_pretrained(MODEL, dtype=torch.float32, device_map=device)
+
+
+def align(aligner: Qwen3ForcedAligner, a, sr: int, text: str) -> list[list[float]]:
+    """Every word of `text` the model times in the mono samples `a` (rate `sr`): [first, end, start, end]."""
+    words: list[list[float]] = []
+    items = aligner.align(audio=(a, sr), text=text, language="Japanese")[0]
+    pos = 0
+    for it in items:
+        i = text.find(it.text, pos) if it.text else -1
+        if i < 0:
+            continue
+        pos = i + len(it.text)
+        words.append([i, pos, round(float(it.start_time), 3), round(float(it.end_time), 3)])
+    return words
+
+
+def read(path: str):
+    """A file's samples as mono float32, and its rate."""
+    a, sr = soundfile.read(path, dtype="float32")
+    return (a.mean(1) if a.ndim > 1 else a), sr
+
+
 def main(jobs_path: str, out_path: str) -> int:
     device = os.environ.get("ALIGN_DEVICE") or ("mps" if torch.backends.mps.is_available() else "cpu")
     done = set()
@@ -37,28 +61,17 @@ def main(jobs_path: str, out_path: str) -> int:
     jobs = [j for j in jobs if j["stem"] not in done]
     if not jobs:
         return 0
-    aligner = Qwen3ForcedAligner.from_pretrained(MODEL, dtype=torch.float32, device_map=device)
+    aligner = load(device)
     started, heard = time.time(), 0.0
     with Path(out_path).open("a", encoding="utf-8") as out:
         for n, job in enumerate(jobs, 1):
-            a, sr = soundfile.read(job["wav"], dtype="float32")
-            if a.ndim > 1:
-                a = a.mean(1)
+            a, sr = read(job["wav"])
             heard += len(a) / sr
-            text = job["text"]
-            words: list[list[float]] = []
             try:
-                items = aligner.align(audio=(a, sr), text=text, language="Japanese")[0]
+                words = align(aligner, a, sr, job["text"])
             except Exception as e:  # noqa: BLE001 - one line the model cannot take is reported, the run goes on
                 print(f"align qwen: {job['stem']}: {e}", flush=True)
-                items = []
-            pos = 0
-            for it in items:
-                i = text.find(it.text, pos) if it.text else -1
-                if i < 0:
-                    continue
-                pos = i + len(it.text)
-                words.append([i, pos, round(float(it.start_time), 3), round(float(it.end_time), 3)])
+                words = []
             out.write(json.dumps({"stem": job["stem"], "words": words}) + "\n")
             out.flush()
             if n % 100 == 0 or n == len(jobs):

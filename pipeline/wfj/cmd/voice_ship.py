@@ -96,6 +96,15 @@ def pieces_of(store: Path | None, file: str, cuts: Sequence[float],
     return [(f"{stem}-{n}.mp3", round(s, 3)) for n, (_, s) in enumerate(got, 1)]
 
 
+def lead_of(store: Path | None, file: str) -> float:
+    """The seconds a recorded file runs behind its recording, read from its first frame; without a store,
+    the lead of the current encode."""
+    if store is None:
+        return mp3_frames.LEAD[voice_make.RATE]
+    with voice_make.audio_file(store, file.removesuffix(".mp3")).open("rb") as f:
+        return mp3_frames.lead(f.read(4))
+
+
 def ship_of(pack: Pack) -> list[str]:
     """The Sound files a pack ships: its lines' pieces and the character's error lines."""
     return sorted({f for ps in pack.pieces.values() for f, _ in ps}
@@ -150,8 +159,9 @@ def split(
                     pack.pieces[f], pack.cuts[f] = pieces_of(store, f, cuts, seconds), list(cuts)
             # the timing is measured on the recording; the shipped files run the MP3s' lead behind it
             entry["s"] = pack.pieces[entry["file"]]
-            entry["m"] = voice_timing.delay(entry["timing"], mp3_frames.LEAD)
-            entry["vs"] = {v: (pack.pieces[f], voice_timing.delay(t, mp3_frames.LEAD))
+            t0 = entry["timing"]
+            entry["m"] = t0 and voice_timing.delay(t0, lead_of(store, entry["file"]))
+            entry["vs"] = {v: (pack.pieces[f], t and voice_timing.delay(t, lead_of(store, f)))
                            for v, (f, _, _, t) in entry["variants"].items()}
         pack.size = sum(int(audio[f.removesuffix(".mp3")]["bytes"]) for f in pack.files)
         pack.register = voice_pack.register_text(
