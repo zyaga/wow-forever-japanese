@@ -216,7 +216,9 @@ def test_pack_tables_name_a_mixed_creatures_two_voices_and_play_a_female_wording
     assert creatures == {2079: "m", 1992: ("f", "old")}
     assert sorted(lines["456-description"]["variants"]) == ["f", "old"]
     fkey = voice.gossip_key(hash_key(normalize_v1("Welcome, madam.")))
-    assert lines[fkey] is lines["g-0123456789abcdef"] and left_out == []
+    # the female wording plays the male wording's file; its Japanese differs, so it carries no timing of its own
+    assert lines[fkey]["file"] == lines["g-0123456789abcdef"]["file"] and left_out == []
+    assert lines[fkey]["timing"] is None
 
 
 # ---- the commands ----------------------------------------------------------------------------------------
