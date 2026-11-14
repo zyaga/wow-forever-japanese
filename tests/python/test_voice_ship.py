@@ -990,3 +990,25 @@ def test_a_pack_tells_an_addon_too_old_for_it_to_update_and_an_empty_pack_says_n
     assert "if (taken or 0) == 0 then" in reg and 'RegisterEvent("PLAYER_LOGIN")' in reg
     assert "needs a newer WoW Forever Japanese" in reg
     assert "needs a newer" not in (out / "WoWForeverJapanese_VoiceB" / "Register.lua").read_text()
+
+
+def test_the_all_in_one_download_comes_in_parts_of_whole_folders_under_the_limit(tmp_path, monkeypatch):
+    out, dist = tmp_path / "out", tmp_path / "dist"
+    dist.mkdir()
+    zips = {}
+    for name, size in (("E", 10), ("A", 600), ("B", 500), ("C", 700)):
+        (out / name).mkdir(parents=True)
+        (out / name / "x.mp3").write_bytes(b"0" * size)
+        zips[name] = dist / f"{name}.zip"
+        zips[name].write_bytes(b"0" * size)
+    monkeypatch.setattr(vs, "BUNDLE_LIMIT", 1200)
+    day = datetime.date(2026, 11, 14)
+    parts = vs.bundle_parts(out, dist, ["E", "A", "B", "C"], zips, "E", day)
+    assert [p.name for p in parts] == ["E-all-2026.11.14-part1.zip", "E-all-2026.11.14-part2.zip"]
+    import zipfile
+
+    held = [sorted({n.split("/")[0] for n in zipfile.ZipFile(p).namelist()}) for p in parts]
+    assert held == [["A", "B", "E"], ["C"]]  # whole folders, in order, each part under the limit
+    monkeypatch.setattr(vs, "BUNDLE_LIMIT", 10_000)
+    assert [p.name for p in vs.bundle_parts(out, dist, ["E", "A"], zips, "E", day)] == [
+        "E-all-2026.11.14.zip"]

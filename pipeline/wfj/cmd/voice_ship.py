@@ -510,8 +510,9 @@ def zip_release(
     packs: Sequence[Pack],
     versions: Mapping[str, str],
     day: datetime.date,
-) -> tuple[dict[str, Path], Path] | None:
-    """Every folder's zip, checked, and the zip of everything. None (problems printed) when a zip fails."""
+) -> tuple[dict[str, Path], list[Path]] | None:
+    """Every folder's zip, checked, and the zips of everything (bundle_parts). None (problems printed) when a
+    zip fails."""
     if dist.exists():
         shutil.rmtree(dist)
     dist.mkdir(parents=True)
@@ -529,9 +530,28 @@ def zip_release(
     if problems:
         print("\n".join(f"voice release: {x}" for x in problems), file=sys.stderr)
         return None
-    bundle = dist / f"{e.folder}-all-{day:%Y.%m.%d}.zip"
-    zip_folders(out, [e.folder, *(p.project.folder for p in packs)], bundle)
-    return zips, bundle
+    return zips, bundle_parts(out, dist, [e.folder, *(p.project.folder for p in packs)], zips, e.folder, day)
+
+
+def bundle_parts(out: Path, dist: Path, folders: Sequence[str], zips: Mapping[str, Path], entry: str,
+                 day: datetime.date) -> list[Path]:
+    """Every folder in zips of whole folders, each under BUNDLE_LIMIT (GitHub refuses an asset of 2 GiB):
+    `<entry>-all-<date>.zip` when one holds them all, else numbered `-part1.zip`, `-part2.zip` ..."""
+    groups: list[list[str]] = [[]]
+    size = 0
+    for f in folders:
+        n = zips[f].stat().st_size
+        if groups[-1] and size + n > BUNDLE_LIMIT:
+            groups.append([])
+            size = 0
+        groups[-1].append(f)
+        size += n
+    stem = f"{entry}-all-{day:%Y.%m.%d}"
+    parts = [dist / (f"{stem}.zip" if len(groups) == 1 else f"{stem}-part{k}.zip")
+             for k in range(1, len(groups) + 1)]
+    for group, dest in zip(groups, parts, strict=True):
+        zip_folders(out, group, dest)
+    return parts
 
 
 def _only(plan: Plan, table: Table, only: str | None) -> None:
@@ -625,6 +645,7 @@ def check_pin(store: Path, pin: Path) -> None:
 
 
 GH_ASSET_LIMIT = 2 * 1024**3  # bytes: GitHub refuses a release asset of 2 GiB or more
+BUNDLE_LIMIT = 1_900_000_000  # bytes in one part of the all-in-one download, well under GH_ASSET_LIMIT
 
 
 @dataclass
@@ -637,7 +658,7 @@ class Release:
     plan: Plan
     versions: dict[str, str]
     zips: dict[str, Path]
-    bundle: Path
+    bundles: list[Path]
     out: Path
     dist: Path
     day: datetime.date
@@ -676,7 +697,7 @@ def run_release(a: argparse.Namespace, run: Run = _gh) -> int:
     zipped = zip_release(out, dist, table, packs, versions, day)
     if zipped is None:
         return 1
-    zips, bundle = zipped
+    zips, bundles = zipped
     _only(plan, table, a.only)
     entry_partial = _entry_on_draft(plan, table, state, versions, zips, dist)
     if state.draft and not plan.upload and not plan.no_project and _draft_holds_nothing_new(state):
@@ -690,17 +711,18 @@ def run_release(a: argparse.Namespace, run: Run = _gh) -> int:
     print(f"voice release: last voice release {state.published or 'none'}; this one {tag} ({rtype})"
           + (" (resuming its draft)" if state.draft else ""))
     _print_plan(plan, zips, versions)
-    r = Release(a, run, table, plan, versions, zips, bundle, out, dist, day, rtype, state, tag,
+    r = Release(a, run, table, plan, versions, zips, bundles, out, dist, day, rtype, state, tag,
                 inputs_fingerprint(data_root().parent))
     if not plan.upload and not plan.no_project and not state.draft:
         return _nothing_changed(r)
     if a.curseforge_only:
         print("voice release: CurseForge only; no GitHub release")
     else:
-        big = [z.name for z in (*zips.values(), bundle) if z.stat().st_size >= GH_ASSET_LIMIT]
+        big = [z.name for z in (*zips.values(), *bundles) if z.stat().st_size >= GH_ASSET_LIMIT]
         if big:
             raise ValueError(f"{', '.join(big)} reach GitHub's 2 GiB asset limit; nothing uploaded")
-        print(f"voice release: GitHub release {tag}: {len(zips)} zips and {bundle.name}")
+        names = ", ".join(b.name for b in bundles)
+        print(f"voice release: GitHub release {tag}: {len(zips)} zips and {names}")
     if a.dry_run:
         print("voice release: dry run; nothing uploaded")
         return 0
@@ -792,10 +814,10 @@ def _upload_changed(r: Release, notes: Path) -> bool | None:
 
 
 def _publish(r: Release, notes: Path, partial: bool) -> None:
-    """Every zip and the bundle onto the draft, stale draft assets removed, the draft published. The inputs
-    are recorded only when the entry went up whole, so a partial one is tried again by the next release (a
-    pack with no project yet needs no such help: giving it one edits voice-packs.toml, a voice input)."""
-    final = [*r.zips.values(), r.bundle]
+    """Every zip and the all-in-one parts onto the draft, stale draft assets removed, the draft published. The
+    inputs are recorded only when the entry went up whole, so a partial one is tried again by the next release
+    (a pack with no project yet needs no such help: giving it one edits voice-packs.toml, a voice input)."""
+    final = [*r.zips.values(), *r.bundles]
     if partial:
         print("voice release: the entry went up without some packs; the next release tries them again")
     else:
@@ -880,7 +902,8 @@ def _notes(table: Table, versions: Mapping[str, str], plan: Plan) -> str:
     return "\n".join([
         "Japanese voice for WoW Forever Japanese. Install the addon first.",
         "",
-        "By hand: download the zip whose name ends in -all-, and unzip it into Interface/AddOns.",
+        "By hand: download every zip whose name has -all- in it (one, or several parts), and unzip each into "
+        "Interface/AddOns.",
         "",
         *rows,
         "",
