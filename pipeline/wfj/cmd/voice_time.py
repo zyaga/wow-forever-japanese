@@ -61,6 +61,31 @@ def to_time(root: Path, cfg: dict[str, Any]) -> list[Job]:
     return out
 
 
+def problems(root: Path, cfg: dict[str, Any]) -> dict[str, list[str]]:
+    """What keeps the voice from shipping in sentences: files in step with their line but not timed, timed
+    from another recording, whose timing does not cover the shipped Japanese, or whose cuts are out of
+    order or outside the recording. Empty lists when every file is ready."""
+    lines = voice_make.shipped_lines(root)
+    jobs = voice_make.file_jobs(root, cfg, "all", lines, voice_make.players_of("all"))
+    audio = voice_make.audio_record(root)
+    out: dict[str, list[str]] = {"untimed": [], "other recording": [], "short timing": [], "bad cuts": []}
+    for j in jobs:
+        rec = audio.get(j.stem)
+        if rec is None:
+            continue  # no audio at all: test_audio_in_step reports it
+        if "timing" not in rec:
+            out["untimed"].append(j.stem)
+            continue
+        if rec.get("timing_of") != rec["fingerprint"]:
+            out["other recording"].append(j.stem)
+        if sum(int(p.split(":")[0]) for p in rec["timing"].split()) != len(lines[j.key]):
+            out["short timing"].append(j.stem)
+        cuts = rec.get("cuts") or []
+        if cuts != sorted(set(cuts)) or any(not 0 < c < float(rec["seconds"]) for c in cuts):
+            out["bad cuts"].append(j.stem)
+    return out
+
+
 def wav_name(fingerprint: str, text: str) -> str | None:
     """The name a remote run gave this recording's WAV, from what its fingerprint says it was made from
     (set, copy mode, reference, temperature and seed): see io/qwen.line_key."""

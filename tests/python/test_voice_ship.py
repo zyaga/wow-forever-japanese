@@ -14,6 +14,7 @@ from pathlib import Path
 import pytest
 from test_voice import CFG, _gen, _store, engine  # noqa: F401 (engine is a fixture)
 
+from wfj.cmd import voice_make
 from wfj.cmd import voice_ship as vs
 from wfj.core import voice_packs as vp
 from wfj.emit import voice_pack
@@ -921,3 +922,51 @@ def test_a_store_file_of_the_same_size_but_another_take_stops_the_pack(tmp_path,
     path.write_bytes(bytes(b ^ 0xFF for b in path.read_bytes()))  # same length, other bytes: another take
     assert vs.run_pack(_args(tmp_path, store, cfg, _table_file(tmp_path))) == 1
     assert "456-completion.mp3" in capsys.readouterr().err
+
+
+def _mp3(frames: int) -> bytes:
+    """A plain run of MPEG-2 layer III frames at 32 kbps, 22.05 kHz, as the packs' files are made."""
+    return b"".join(bytes([0xFF, 0xF3, 0x40 | (2 if i % 3 == 0 else 0), 0xC0])
+                    + bytes(72000 * 32 // 22050 + (i % 3 == 0) - 4) for i in range(frames))
+
+
+def test_a_line_cut_into_sentences_ships_its_pieces_and_its_timing(tmp_path, engine, monkeypatch):  # noqa: F811
+    data, store, cfg = _project(tmp_path, engine)
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(vs.voice_store, "read_levels", lambda *_: {456: 5})
+    whole = _mp3(200)  # 5.2 s
+    path = voice_make.audio_file(store, "456-description")
+    path.write_bytes(whole)
+    audio = voice_make.audio_record(data)
+    rec = audio["456-description"]
+    rec.update(bytes=len(whole), sha256=voice_make.file_sha(path), cuts=[1.5, 3.0], timing="2:10 3:-",
+               timing_of=rec["fingerprint"])
+    voice_make._write(data / "voice" / voice_make.AUDIO, [audio[k] for k in sorted(audio)])
+    assert vs.run_pack(_args(tmp_path, store, cfg, _table_file(tmp_path))) == 0
+    a = tmp_path / "out" / "WoWForeverJapanese_VoiceA"
+    names = sorted(p.name for p in (a / "Sound").iterdir())
+    assert names == ["456-completion.mp3", "456-description-1.mp3", "456-description-2.mp3",
+                     "456-description-3.mp3", "g-0123456789abcdef.mp3"]
+    joined = b"".join((a / "Sound" / f"456-description-{n}.mp3").read_bytes() for n in (1, 2, 3))
+    assert joined == whole  # the pieces are the recording's own bytes, in order
+    reg = (a / "Register.lua").read_text()
+    assert "format = 3," in reg
+    line = next(ln for ln in reg.splitlines() if '["456-description"]' in ln)
+    assert line.startswith('    ["456-description"] = { false, "') and 'm = "2:10 3:-"' in line
+    assert '{ "456-description-1.mp3", 1.' in line
+    other = next(ln for ln in reg.splitlines() if '["456-completion"]' in ln)
+    assert '{ "456-completion.mp3", ' in other and "m =" not in other  # no cuts, no timing: whole and estimated
+
+
+def test_a_pack_tells_an_addon_too_old_for_it_to_update_and_an_empty_pack_says_nothing(tmp_path, engine,  # noqa: F811
+                                                                                       monkeypatch):
+    data, store, cfg = _project(tmp_path, engine)
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(vs.voice_store, "read_levels", lambda *_: {456: 5})
+    assert vs.run_pack(_args(tmp_path, store, cfg, _table_file(tmp_path))) == 0
+    out = tmp_path / "out"
+    reg = (out / "WoWForeverJapanese_VoiceA" / "Register.lua").read_text()
+    assert "local taken = WoWForeverJapanese_RegisterVoice({" in reg
+    assert "if (taken or 0) == 0 then" in reg and 'RegisterEvent("PLAYER_LOGIN")' in reg
+    assert "needs a newer WoW Forever Japanese" in reg
+    assert "needs a newer" not in (out / "WoWForeverJapanese_VoiceB" / "Register.lua").read_text()

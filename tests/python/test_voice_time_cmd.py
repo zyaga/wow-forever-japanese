@@ -35,6 +35,10 @@ def recording(path: Path, rate: int = 8000) -> Path:
 def made(tmp_path, engine):  # noqa: F811
     data = _store(tmp_path, ja456=JA)
     _gen(data, tmp_path / "voice", engine)
+    audio = voice_make.audio_record(data)
+    for rec in audio.values():
+        rec["seconds"] = 2.2  # as long as the stand-in recording
+    voice_make._write(data / "voice" / voice_make.AUDIO, [audio[k] for k in sorted(audio)])
     return data
 
 
@@ -121,3 +125,19 @@ def test_the_voice_rounds_end_with_the_timing_step():
     for target in ("voice-generate:", "voice-run:"):
         recipe = make.split(target, 1)[1].split("\n\n", 1)[0]
         assert "voice time" in recipe, f"{target} does not time what it made"
+
+
+def test_the_gate_finds_untimed_retimed_short_and_badly_cut_lines(made, tmp_path):
+    assert set(voice_time.problems(made, CFG)["untimed"]) == all_stems(made)
+    voice_time.time_records(made, CFG, source=sources(tmp_path), align=answers(all_stems(made)),
+                            log=lambda *_: None)
+    assert not any(voice_time.problems(made, CFG).values())
+    audio = voice_make.audio_record(made)
+    audio["456-description"]["timing_of"] = "an older recording"
+    audio["456-completion"]["timing"] = "1:0"
+    audio["g-0123456789abcdef"]["cuts"] = [5.0, 2.0]
+    voice_make._write(made / "voice" / voice_make.AUDIO, [audio[k] for k in sorted(audio)])
+    got = voice_time.problems(made, CFG)
+    assert got["other recording"] == ["456-description"]
+    assert got["short timing"] == ["456-completion"]
+    assert got["bad cuts"] == ["g-0123456789abcdef"]

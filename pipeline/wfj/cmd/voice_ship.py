@@ -35,6 +35,7 @@ from pathlib import Path
 from typing import Any
 
 from wfj.cmd import voice_make, voice_store
+from wfj.core import mp3_frames
 from wfj.core import voice_packs as vp
 from wfj.core.voice_packs import Project, Table
 from wfj.emit import voice_pack
@@ -54,6 +55,9 @@ class Pack:
     creatures: dict[int, Any] = field(default_factory=dict)
     errors: dict[str, Any] = field(default_factory=dict)
     files: list[str] = field(default_factory=list)
+    # each recorded file → its pieces as shipped [(name, seconds)], and the cuts they were snipped at
+    pieces: dict[str, list[tuple[str, float]]] = field(default_factory=dict)
+    cuts: dict[str, list[float]] = field(default_factory=dict)
     size: int = 0
     register: str = ""
     digest: str = ""
@@ -77,6 +81,27 @@ def quest_levels(cache: Path | None, db: Path | None) -> dict[int, int]:
     return levels
 
 
+def pieces_of(store: Path | None, file: str, cuts: Sequence[float],
+              seconds: float) -> list[tuple[str, float]]:
+    """A recorded file as shipped: snipped at its cuts into `<stem>-<n>.mp3` (ADR-090), or whole when it has
+    no cut."""
+    if not cuts:
+        return [(file, seconds)]
+    stem = file.removesuffix(".mp3")
+    if store is None:
+        raise ValueError(f"{file}: cut into sentences, but no audio store to snip it from")
+    got = mp3_frames.split(voice_make.audio_file(store, stem).read_bytes(), cuts)
+    if len(got) == 1:
+        return [(file, round(got[0][1], 3))]
+    return [(f"{stem}-{n}.mp3", round(s, 3)) for n, (_, s) in enumerate(got, 1)]
+
+
+def ship_of(pack: Pack) -> list[str]:
+    """The Sound files a pack ships: its lines' pieces and the character's error lines."""
+    return sorted({f for ps in pack.pieces.values() for f, _ in ps}
+                  | {f for v in pack.errors.get("voices", {}).values() for f, _ in v.values()})
+
+
 def split(
     root: Path,
     cfg: Mapping[str, Any],
@@ -84,9 +109,11 @@ def split(
     levels: Mapping[int, int],
     interface: str,
     players: Sequence[tuple[str, str]] = (),
+    store: Path | None = None,
 ) -> tuple[list[Pack], list[str]]:
     """(every pack in table order, the files left out as not in step). A key that shows another line's audio
-    (a female wording, a repeated quest's text) goes where that line goes: its file is in that pack."""
+    (a female wording, a repeated quest's text) goes where that line goes: its file is in that pack. A file
+    cut into sentences is snipped from `store` to learn its pieces' lengths."""
     lines, creatures, left_out = voice_make.pack_tables(root, dict(cfg), "all")
     errors = voice_make.error_table(root, dict(cfg), players)
     speakers = {r["key"]: r for r in voice_make.scoped_rows(root, "all")}
@@ -115,6 +142,15 @@ def split(
         if unrecorded:
             raise ValueError(f"{pack.project.folder}: {len(unrecorded)} file(s) not in the audio record, "
                              f"e.g. {unrecorded[:3]}: run `wfj voice plan`, then make voice-generate")
+        for entry in pack.lines.values():
+            for f, cuts, seconds in [(entry["file"], entry["cuts"], entry["seconds"]),
+                                     *[(f, entry["variant_timing"][v][0], sec)
+                                       for v, (f, sec) in entry["variants"].items()]]:
+                if f not in pack.pieces:
+                    pack.pieces[f], pack.cuts[f] = pieces_of(store, f, cuts, seconds), list(cuts)
+            entry["s"] = pack.pieces[entry["file"]]
+            entry["vs"] = {v: (pack.pieces[f], entry["variant_timing"][v][1])
+                           for v, (f, _) in entry["variants"].items()}
         pack.size = sum(int(audio[f.removesuffix(".mp3")]["bytes"]) for f in pack.files)
         pack.register = voice_pack.register_text(
             pack.lines, pack.creatures, pack.errors, pack.project.folder
@@ -220,7 +256,14 @@ def write(
             voice_pack.readme_text(credits, len(p.lines), pr.title, pr.holds), encoding="utf-8"
         )
         for f in p.files:
-            _place(voice_make.audio_file(store, f.removesuffix(".mp3")), dest / "Sound" / f)
+            src = voice_make.audio_file(store, f.removesuffix(".mp3"))
+            pieces = p.pieces.get(f, [(f, 0.0)])
+            if [n for n, _ in pieces] == [f]:
+                _place(src, dest / "Sound" / f)
+                continue
+            snipped = mp3_frames.split(src.read_bytes(), p.cuts[f])
+            for (name, _), (data, _) in zip(pieces, snipped, strict=True):
+                (dest / "Sound" / name).write_bytes(data)
     e, dest = table.entry, out / table.entry.folder
     dest.mkdir()
     (dest / f"{e.folder}.toc").write_text(
@@ -393,7 +436,8 @@ def build(a: argparse.Namespace, day: datetime.date, previous: Mapping[str, str]
     today."""
     root, cfg, table, levels, interface = _inputs(a)
     players = voice_make.players_of(a.players)
-    packs, left_out = split(root, cfg, table, levels, interface, players)
+    store = voice_make.store_dir(a.store)
+    packs, left_out = split(root, cfg, table, levels, interface, players, store if store.is_dir() else None)
     rows, over = size_table(table, packs)
     print("\n".join(f"voice pack: {r}" for r in rows))
     if left_out:
@@ -406,7 +450,6 @@ def build(a: argparse.Namespace, day: datetime.date, previous: Mapping[str, str]
             file=sys.stderr,
         )
         return None
-    store = voice_make.store_dir(a.store)
     if not store.is_dir():
         print(f"voice pack: no audio store at {store} (docs/operations/voice.md); nothing written",
               file=sys.stderr)
@@ -465,7 +508,7 @@ def zip_release(
     for p in packs:
         z = dist / vp.asset_name(p.project.folder, versions[p.project.folder])
         zip_folders(out, [p.project.folder], z)
-        problems += check_zip(z, p.project.folder, p.files)
+        problems += check_zip(z, p.project.folder, ship_of(p))
         zips[p.project.folder] = z
     e = table.entry
     zips[e.folder] = dist / vp.asset_name(e.folder, versions[e.folder])

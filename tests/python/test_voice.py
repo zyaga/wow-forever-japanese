@@ -574,6 +574,18 @@ def test_audio_in_step():
     assert not unused, f"{len(unused)} recorded file(s) no line uses, e.g. {unused[:5]}: run make voice-generate"
 
 
+def test_every_voiced_line_is_timed_from_its_own_recording():
+    """The gate for the voice in sentences (ADR-090): every recorded file in step with its line carries its
+    cuts and timing, made from that recording, covering the Japanese it ships. A remade line without its
+    timing fails here: run make voice-time (make voice-generate ends with it)."""
+    from wfj.cmd import voice_time
+
+    data = ROOT / "data"
+    cfg = voice_make.load_config(ROOT / "pipeline" / "voice.toml")
+    found = {k: v for k, v in voice_time.problems(data, cfg).items() if v}
+    assert not found, "; ".join(f"{len(v)} {k}, e.g. {v[:3]}" for k, v in found.items()) + ": run make voice-time"
+
+
 def test_a_round_with_nothing_to_voice_needs_no_engine_and_work_without_one_refuses(tmp_path, engine):
     """The voice step at the end of a batch import or a fix report: in step, it never calls the engine; with
     lines to remake and no engine answering, it refuses with how to start it."""
