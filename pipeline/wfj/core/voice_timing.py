@@ -27,7 +27,7 @@ _TOKEN = re.compile(r"\{[A-Za-z]+\}|<[A-Za-z]+/[A-Za-z]+>|\$N\d+|\$\d+w|\$[bB]")
 
 PAUSE_FLOOR = 0.05  # a 10 ms frame is quiet under this share of the line's loud frames
 MIN_PAUSE = 0.10  # seconds: a shorter quiet stretch is a consonant, not a pause
-MIN_CUT_PAUSE = 0.12  # seconds: the shortest pause a file may be cut in
+MIN_CUT_PAUSE = 0.15  # seconds: the shortest pause a file may be cut in
 CONFIRM = 0.08  # seconds: Qwen's time step; a word may touch the cut by this much
 LOOK_BACK = 0.40  # seconds: a sentence's first sound may come this long after its pause ends
 
