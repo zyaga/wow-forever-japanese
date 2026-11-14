@@ -272,7 +272,7 @@ If the game's English NPC voices stay silent after a test (the dialog channel le
 | What | Where |
 |---|---|
 | The MP3s | `build/voice/` in the main checkout, a checkout of `zyaga/wow-forever-japanese-voice-2`. Set it up once on a new machine: `git clone git@github.com:zyaga/wow-forever-japanese-voice-2.git build/voice` from the main checkout. |
-| The old store | `zyaga/wow-forever-japanese-voice`: the 32 kbps files and their history (4.4 GB), kept read-only on GitHub. Older pins point to it. |
+| The old store | `zyaga/wow-forever-japanese-voice`: the 32 kbps files and their history (4.4 GB), left as it is on GitHub and no longer written to. Older pins point to it. |
 | Which audio goes with this text | `pipeline/voice-audio-commit.txt`: one commit of the audio repository |
 | Each quest's level, for the packs | `pipeline/voice_quest_levels.txt`, written by `make voice-levels` (the quest cache and VMaNGOS, which only the maintainer's computer has; a quest neither gives a level keeps the one the table had, so a quest the new cache does not answer stays in its pack). `make voice-speakers` runs it first; rerun both after a re-pull. |
 

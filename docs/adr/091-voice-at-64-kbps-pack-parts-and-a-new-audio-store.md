@@ -37,7 +37,7 @@ A better encode doubles the download, and that runs into three limits:
    The existing packs keep their folders, titles, slugs and projects. The entry requires the new packs, so the CurseForge app installs them with it.
 6. **The all-in-one download comes in parts.** The GitHub release's zip of everything is written as numbered parts of whole pack folders, each under 1.9 GB (`<entry>-all-<date>-part<N>.zip`), or as one `-all-<date>.zip` when everything fits. The release notes say to unzip every part.
 7. **The entry names its packs, and the addon names the ones missing.** The entry ships `Packs.lua`, which passes the list of its pack folders to the addon (`WoWForeverJapanese_ExpectVoicePacks`). Once per session at login, while voice is on and at least one pack loaded, the addon names in one chat line each listed pack that did not load (not installed, or turned off) and points to Update all in the CurseForge app or the AddOn List. An older entry with no list prints nothing.
-8. **A new audio store.** A new private repository, `zyaga/wow-forever-japanese-voice-2`, holds only the current files. Its first push went up in batches under GitHub's 2 GB push limit. The main checkout's `build/voice/` is its checkout, and `pipeline/voice-audio-commit.txt` pins its commit. The Release workflow checks it out with its own read-only deploy key, in the secret `VOICE_REPO_2_KEY` (GitHub refuses one deploy key on two repositories). The old repository stays as a read-only archive with its own key, `VOICE_REPO_KEY`.
+8. **A new audio store.** A new private repository, `zyaga/wow-forever-japanese-voice-2`, holds only the current files. Its first push went up in batches under GitHub's 2 GB push limit. The main checkout's `build/voice/` is its checkout, and `pipeline/voice-audio-commit.txt` pins its commit. The Release workflow checks it out with its own read-only deploy key, in the secret `VOICE_REPO_2_KEY` (GitHub refuses one deploy key on two repositories). The old repository is left as it is, with its own key, `VOICE_REPO_KEY`; nothing writes to it any more.
 9. **The rule for the store.** The store holds the current files and nothing else matters about its history. The record of the audio is the WAV masters (the archive) and the release zips. When the store's history grows too large again, a fresh repository starts the same way.
 
 ## Rationale
@@ -45,7 +45,7 @@ A better encode doubles the download, and that runs into three limits:
 - 64 kbps is the step that closes most of the gap: 10.5 dB closer to the master than 32 kbps, where 80 kbps adds only 4.5 dB more for 25% more download.
 - Re-encoding from the WAV masters keeps the audio one generation from the engine. Re-encoding the old MP3s would carry their lost top end into the new files.
 - Splitting by quest id inside a band keeps every quest in one place without moving a player's existing packs: the old folders stay, they just hold less.
-- A new store costs one clone and one secret. Rewriting the old repository's history would break every pin a past release points to; keeping it read-only keeps them valid and keeps a rollback simple.
+- A new store costs one clone and one secret. Rewriting the old repository's history would break every pin a past release points to; leaving it untouched keeps them valid and keeps a rollback simple.
 
 ## Consequences
 
