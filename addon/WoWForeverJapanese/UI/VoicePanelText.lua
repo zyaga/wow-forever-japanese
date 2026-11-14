@@ -5,6 +5,8 @@
 --   Text.pageSpans(item, segs, page) → the page's words, located in the whole line
 --   Text.showPage(fs, item, page, spans) · Text.showEnglish(fs, item) · Text.detach()
 --   Text.openWhole(anchor, item, look, english) → true when shown · Text.refreshWhole(item, look, english)
+--   Text.timedParts(shown, raw, timing, fill) · Text.spokenAt(parts, t) · Text.unitOf(part, cards): the line's
+--     timing (pure; see "Timing" below)
 --   Text.hideWhole() · Text.wholeShown()
 -- Word cards come from UI/Readings like every other surface (surface "voicepanel"); a page passes its words in
 -- `rec.spans`, because a line's word list is in the order of the whole line and a sentence alone can match an
@@ -65,9 +67,8 @@ local function sentences(ja)
     local text = raw:gsub("^%s+", ""):gsub("%s+$", "")
     local bare = text
     for _, m in ipairs(WIDE_MARKS) do bare = bare:gsub(m, "") end
-    if dropStages and isStage(text) then
+    if dropStages and isStage(text) then -- luacheck: ignore 542
       -- a stage direction (<Kaltunkは笑った>) is not read aloud: the quest window shows it, the panel does not
-      text = ""
     elseif text ~= "" and bare:match(MARKS_ONLY) and #out > 0 then
       -- a stray closing mark after a sentence's end (the 。 of an emote in <…>): the sentence keeps it
       local prev = out[#out]
@@ -173,6 +174,77 @@ function Text.pageSpans(item, segs, page)
     end
   end
   return out
+end
+
+-- ── Timing ───────────────────────────────────────────────────────────────
+-- A line's timing (Core/Voice format 3, ADR-090) is its shipped Japanese as parts of n characters, each with the
+-- hundredths of a second since the part before it started ("3:48 1:104 2:- ..."; "-": never said). Text.timedParts
+-- finds the said parts in the text as the window shows it, in order: a part holding a player token is looked for
+-- filled in (`fill`), one the client fills ($N, a number) is skipped, and a part not found near where the last one
+-- ended is left out. → { { first, last, t } } (bytes of `shown`, closing punctuation off the end), or nil
+local CLOSING = { ["。"] = true, ["、"] = true, ["！"] = true, ["？"] = true, ["…"] = true, ["・"] = true,
+  ["」"] = true, ["』"] = true, ["）"] = true, ["　"] = true }
+local NEAR = 96 -- bytes: how far past the last part the next one may be found
+
+local function charLen(c) return c < 0x80 and 1 or c >= 0xF0 and 4 or c >= 0xE0 and 3 or 2 end
+
+local function trimmed(text, first, last)
+  local i, ends = first, {}
+  while i <= last do
+    local n = charLen(text:byte(i))
+    ends[#ends + 1] = { i, i + n - 1 }
+    i = i + n
+  end
+  for k = #ends, 2, -1 do
+    local ch = text:sub(ends[k][1], ends[k][2])
+    if not (CLOSING[ch] or ch:match("^%s$") or ch:match("^%p$")) then return ends[k][2] end
+  end
+  return ends[1] and ends[1][2] or last
+end
+
+function Text.timedParts(shown, raw, timing, fill)
+  if type(shown) ~= "string" or type(raw) ~= "string" or type(timing) ~= "string" then return nil end
+  local out, pos, cursor, clock = {}, 1, 1, 0
+  for len, dt in timing:gmatch("(%d+):([%-%d]+)") do
+    local e = pos
+    for _ = 1, tonumber(len) do
+      local c = raw:byte(e)
+      if not c then break end
+      e = e + charLen(c)
+    end
+    local piece = raw:sub(pos, e - 1):match("^%s*(.-)%s*$")
+    pos = e
+    if dt ~= "-" then
+      clock = clock + tonumber(dt) / 100
+      if piece:find("[{<]") and fill then piece = fill(piece) end
+      if piece ~= "" and not piece:find("[{$]") then
+        local s, f = shown:find(piece, cursor, true)
+        if s and s - cursor <= NEAR then
+          out[#out + 1] = { first = s, last = trimmed(shown, s, f), t = clock }
+          cursor = f + 1
+        end
+      end
+    end
+  end
+  return #out > 0 and out or nil
+end
+
+-- The part said last by time t (seconds into the recording), or nil before the first.
+function Text.spokenAt(parts, t)
+  local found
+  for _, p in ipairs(parts or {}) do
+    if p.t <= t then found = p else break end
+  end
+  return found
+end
+
+-- What to mark for a part: the word card's whole word when the part starts inside one, so what lights up is what
+-- pointing at it shows; else the part. → first, last (bytes)
+function Text.unitOf(part, cards)
+  for _, sp in ipairs(cards or {}) do
+    if sp.first <= part.first and part.first <= sp.last then return sp.first, math.max(sp.last, part.last) end
+  end
+  return part.first, part.last
 end
 
 local function attach(r)

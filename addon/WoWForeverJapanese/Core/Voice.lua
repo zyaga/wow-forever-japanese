@@ -18,7 +18,8 @@ Voice.ONCE = {
 
 -- every pack's addon folder starts with this; its files are read from its Sound folder
 Voice.FOLDER = "WoWForeverJapanese_Voice"
-Voice.FORMATS = { [1] = true, [2] = true, [3] = true } -- the Register.lua table shapes this file reads (ADR-061, ADR-062)
+-- the Register.lua table shapes this file reads (ADR-061, ADR-062, ADR-090)
+Voice.FORMATS = { [1] = true, [2] = true, [3] = true }
 Voice.CURRENT = 3 -- the shape packs are built in now (ADR-090): a pack in an older one is out of date
 -- Format 3 adds, per line (and per voice variant), the line cut into one file per sentence and the start of each of
 -- its parts:  s = { { "<file>.mp3", seconds }, ... }  cut in the middle of the pause between two sentences, played

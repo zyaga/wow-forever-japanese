@@ -56,7 +56,7 @@ describe("Core/Voice: the pack registry and the decision", function()
   end)
 
   it("refuses a table of another format or folder as a whole", function()
-    assert.are.same({ 0, 1 }, { V.register({ format = 3, folder = "WoWForeverJapanese_Voice", lines = {} }) })
+    assert.are.same({ 0, 1 }, { V.register({ format = 4, folder = "WoWForeverJapanese_Voice", lines = {} }) })
     assert.are.same({ 0, 1 }, { V.register({ format = 2, folder = "WoWForeverJapanese_Voice/../X", lines = {} }) })
     assert.are.same({ 0, 1 }, { V.register(pack(nil)) })
     assert.are.same({ 0, 1 }, { V.register({ format = 1, folder = "SomeOtherAddon", lines = {} }) })
@@ -99,7 +99,8 @@ describe("Core/Voice: the pack registry and the decision", function()
 
   it("a line with no file, or whose Japanese changed since the file was made, plays nothing", function()
     V.register(pack({ ["2-description"] = entry("2-description.mp3", "an older Japanese", 4.2) }))
-    assert.are.same({ nil, "stale" }, { V.decide("questframe.detail", "description", "quest.description", 2) })
+    assert.are.same({ nil, "stale", "WoWForeverJapanese_Voice" }, -- the pack whose audio is older
+      { V.decide("questframe.detail", "description", "quest.description", 2) })
     assert.are.same({ nil, "missing" }, { V.decide("questframe.progress", "progress", "quest.progress", 2) })
     assert.are.equal(1, V.counts.stale)
     assert.are.equal(1, V.counts.missing)

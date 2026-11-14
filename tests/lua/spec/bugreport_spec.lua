@@ -24,6 +24,15 @@ local ERR = { msg = "Interface/AddOns/WoWForeverJapanese/UI/A.lua:1: x", stack =
   first = "2026-10-03 14:40:00", last = "2026-10-03 14:45:00" }
 
 describe("Core/BugReport", function()
+  it("carries every voice pack and its version in the version field", function()
+    local B = load()
+    local pk = B.pack({ build = "1.60.1.70938", version = "0.14.0", errors = {},
+      voice = { "Levels1to10 2026.11.14-bbbb (format 3, 3432 lines)", "Other 2026.10.11-aaaa (format 2, 9 lines)" } })
+    assert.are.equal("0.14.0; voice: Levels1to10 2026.11.14-bbbb (format 3, 3432 lines), "
+      .. "Other 2026.10.11-aaaa (format 2, 9 lines)", params(pk.url)["addon-version"])
+    assert.are.equal("0.14.0", params(B.pack({ version = "0.14.0", voice = {} }).url)["addon-version"])
+  end)
+
   it("opens the bug form with build, version and the errors as readable text", function()
     local B = load()
     local pk = B.pack({ build = "1.60.1.70170", version = "0.1.0-alpha.6", errors = { ERR }, ours = true })

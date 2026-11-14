@@ -746,3 +746,31 @@ def test_every_made_file_records_its_sha256_and_old_rows_are_filled_from_the_sto
                                                     for r in rows.values()])
     filled, odd = voice_make.record_hashes(data, store)
     assert filled == len(rows) - 1 and odd == ["456-completion"]
+
+
+def test_the_voice_panel_hides_only_stage_directions_the_voice_skips():
+    """UI/VoicePanelText leaves out a stage direction on a line of its own (Japanese inside angle brackets) unless
+    the line is nothing but directions, which the voice reads without the brackets. Mirrored here and checked on
+    every voiced line: no direction the voice reads is ever hidden from the panel."""
+
+    def is_stage(t):
+        return re.fullmatch(r"<[^<>]*>", t) is not None and re.search(r"[^\x00-\x7f]", t) is not None
+
+    def only_stages(ja):
+        return re.sub(r"<[^<>]*>", lambda m: "" if is_stage(m.group(0)) else m.group(0), ja).strip() == ""
+
+    data = ROOT / "data"
+    lines = voice_make.shipped_lines(data)
+    hidden_but_said = []
+    for key, ja in lines.items():
+        if only_stages(ja):
+            continue
+        try:
+            said = voice.speech_text(ja, key, [])
+        except voice.VoiceError:
+            continue
+        for piece in ja.split("\n"):
+            t = piece.strip()
+            if is_stage(t) and t[1:-1].strip() and t[1:-1].strip() in said:
+                hidden_but_said.append(key)
+    assert not hidden_but_said, f"the panel would hide spoken text: {hidden_but_said[:5]}"
