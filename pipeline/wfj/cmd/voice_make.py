@@ -811,6 +811,34 @@ def generate(  # noqa: C901, PLR0913, PLR0915 - engine, encoder and log injected
         raise EngineDown(msg) from e
 
 
+class KeepWavs:
+    """A local cloned-voice engine whose every WAV is also kept in the WAV archive, in a run folder of its own
+    (`<archive>/local-<time>/wav/<line_key>.wav`), named as a remote run names it: every take keeps its
+    uncompressed master, wherever it was read, so it can be encoded and timed again."""
+
+    def __init__(self, engine: Any, folder: Path) -> None:
+        self._engine, self._wav = engine, folder / "wav"
+
+    def __getattr__(self, name: str) -> Any:
+        return getattr(self._engine, name)
+
+    def __enter__(self) -> KeepWavs:
+        self._engine.__enter__()
+        return self
+
+    def __exit__(self, *exc: object) -> None:
+        self._engine.__exit__(*exc)
+
+    def synthesize(self, text: str, ref_wav: Path, ref_text: str | None, mode: str,
+                   seed: int | None = None, temperature: float | None = None) -> bytes:
+        wav = self._engine.synthesize(text, ref_wav, ref_text, mode, seed, temperature)
+        self._wav.mkdir(parents=True, exist_ok=True)
+        part = self._wav / f"{line_key(text, ref_wav, mode, seed, temperature)}.part"
+        part.write_bytes(wav)
+        part.replace(part.with_suffix(".wav"))
+        return wav
+
+
 def run_generate(
     cfg: dict[str, Any],
     root: Path,
@@ -819,7 +847,10 @@ def run_generate(
     players: Sequence[tuple[str, str]] = (),
     engine_run: Path | None = None,
     prepared: Path | None = None,
+    archive: Path | None = None,
 ) -> int:
+    """`archive`: with a local engine, where its WAVs are kept (KeepWavs)."""
+    kept = archive / f"local-{datetime.datetime.now():%Y-%m-%d-%H%M%S}" if archive is not None else None
     started: list[Qwen] = []
     if prepared is not None and (missing := prepared_missing(prepared)):
         print(f"voice generate: {missing} line(s) of {prepared} have no WAV yet; they stay to make",
@@ -831,7 +862,7 @@ def run_generate(
         q = Qwen(_main_checkout() / cfg.get("qwen", QWEN_PYTHON), log=store / "qwen.log",
                  lock=None if started else LOCK, nice=False)
         started.append(q)
-        return q
+        return KeepWavs(q, kept) if kept is not None else q
 
     try:
         engine = Engine(cfg["engine"])
@@ -1156,7 +1187,8 @@ def run(argv: Sequence[str]) -> int:
             sp.add_argument("--engine-run", help="the engine to start when none answers")
             sp.add_argument("--prepared", help="a remote run's folder: its WAVs stand in for cloned voices")
             sp.add_argument("--remote", action="store_true", help="read the cloned voices on Modal first")
-            sp.add_argument("--archive", help="where the remote run's WAVs are kept (copied and checked)")
+            sp.add_argument("--archive", help="where a run's WAVs are kept (a remote run's copied and "
+                                              "checked; a local run's written there as it reads)")
         if name == "export":
             sp.add_argument("--out", required=True, help="the remote run's folder")
         if name == "relevel":
@@ -1192,10 +1224,11 @@ def run(argv: Sequence[str]) -> int:
             prepared = Path(a.prepared) if a.prepared else None
             if prepared is not None and a.archive:
                 archive_run(prepared, Path(a.archive))
+            archive = Path(a.archive) if a.archive else None
             if a.remote and prepared is None:
-                archive = Path(a.archive) if a.archive else None
                 prepared = remote_round(root, cfg, a.scope, store, archive, players)
-            return run_generate(cfg, root, a.scope, store, players, engine_run_path(a.engine_run), prepared)
+            return run_generate(cfg, root, a.scope, store, players, engine_run_path(a.engine_run), prepared,
+                                archive if prepared is None else None)
     except (ValueError, KeyError, OSError, subprocess.CalledProcessError) as e:
         print(f"voice {a.cmd}: {e}", file=sys.stderr)
         return 1

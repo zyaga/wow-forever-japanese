@@ -430,7 +430,7 @@ voice-match: voice-speakers ## who speaks each line and with which voice, matche
 	cd pipeline && $(PY) -m wfj voice cast
 
 voice-generate: voice-match ## the missing and changed voice files from the shipped Japanese (cloned voices on Modal; VOICE_LOCAL=1 on this machine), then voice-sync
-	cd pipeline && $(PY) -m wfj voice generate --scope all --players all --store "$(VOICE_STORE)" $(if $(VOICE_LOCAL),,--remote $(if $(VOICE_WAV_ARCHIVE),--archive "$(VOICE_WAV_ARCHIVE)")) && $(PY) -m wfj voice time $(VOICE_TIME_ARGS) && $(PY) -m wfj voice store-sync --if-changed --store "$(VOICE_STORE)"
+	cd pipeline && $(PY) -m wfj voice generate --scope all --players all --store "$(VOICE_STORE)" $(if $(VOICE_LOCAL),,--remote) $(if $(VOICE_WAV_ARCHIVE),--archive "$(VOICE_WAV_ARCHIVE)") && $(PY) -m wfj voice time $(VOICE_TIME_ARGS) && $(PY) -m wfj voice store-sync --if-changed --store "$(VOICE_STORE)"
 
 # The audio store: a checkout of the voice audio repository (zyaga/wow-forever-japanese-voice-2), inside the main checkout.
 VOICE_STORE ?= $(REPO_ROOT)/build/voice

@@ -6,6 +6,7 @@ from __future__ import annotations
 import json
 import os
 import subprocess
+from pathlib import Path
 from types import SimpleNamespace
 
 import pytest
@@ -423,3 +424,28 @@ def test_the_coverage_page_counts_voiced_files_and_silent_lines_by_reason(world)
     page = "\n".join(coverage._render_voice({**got, "silent": {}}))
     assert "| Quest offer | 1 | 1 | 0 | 1 | 0 | 0 |" in page
     assert page.endswith("### Silent lines\n\nShipped Japanese the voice does not read, by reason.\n\nNone.")
+
+
+def test_a_local_engine_keeps_every_wav_in_the_archive_named_as_a_remote_run_names_it(tmp_path):
+    from wfj.io.qwen import line_key
+
+    class Engine:
+        entered = False
+
+        def __enter__(self):
+            self.entered = True
+            return self
+
+        def __exit__(self, *exc):
+            pass
+
+        def synthesize(self, text, ref_wav, ref_text, mode, seed=None, temperature=None):
+            return b"RIFF" + text.encode()
+
+    inner = Engine()
+    kept = voice_make.KeepWavs(inner, tmp_path / "local-2026-11-14-120000")
+    with kept as q:
+        wav = q.synthesize("よく来たな。", Path("set-copy-a.wav"), "ref", "copy", 7, 0.5)
+    name = line_key("よく来たな。", Path("set-copy-a.wav"), "copy", 7, 0.5) + ".wav"
+    assert (tmp_path / "local-2026-11-14-120000" / "wav" / name).read_bytes() == wav
+    assert inner.entered
