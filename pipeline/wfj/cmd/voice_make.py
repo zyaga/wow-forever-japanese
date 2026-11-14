@@ -697,7 +697,7 @@ def generate(  # noqa: C901, PLR0913, PLR0915 - engine, encoder and log injected
     if checkout and not (store / ".git").exists():
         raise ValueError(
             f"{len(work)} file(s) to make, but {store} is not a checkout of the voice audio repository: "
-            f"git clone https://github.com/zyaga/wow-forever-japanese-voice.git {store}"
+            f"git clone https://github.com/zyaga/wow-forever-japanese-voice-2.git {store}"
         )
     cloned = {j.voice for j in work if cfg["roster"][j.voice].get("engine") == "qwen"}
     if cloned and qwen is None:

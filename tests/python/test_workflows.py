@@ -225,15 +225,15 @@ def test_the_voice_job_builds_from_the_pinned_audio_with_a_read_only_key(root, r
     _, pin = _step_named(voice, "The audio commit the text pins")
     assert "pipeline/voice-audio-commit.txt" in pin
     i, audio = _step_named(voice, "Check out the pinned audio")
-    assert "repository: zyaga/wow-forever-japanese-voice" in audio and "ref: ${{ steps.pin.outputs.sha }}" in audio
+    assert "repository: zyaga/wow-forever-japanese-voice-2" in audio and "ref: ${{ steps.pin.outputs.sha }}" in audio
     assert "path: build/voice" in audio and "persist-credentials: false" in audio
     assert "persist-credentials: false" in _steps(voice)[0]
     # the deploy key reaches the audio checkout alone
-    assert re.findall(r"secrets\.VOICE_REPO_KEY[^}]*}}", release) == ["secrets.VOICE_REPO_KEY }}"]
-    assert "ssh-key: ${{ secrets.VOICE_REPO_KEY }}" in audio
+    assert re.findall(r"secrets\.VOICE_REPO\w*[^}]*}}", release) == ["secrets.VOICE_REPO_2_KEY }}"]
+    assert "ssh-key: ${{ secrets.VOICE_REPO_2_KEY }}" in audio
     for name, text in _workflows(root).items():
         if name != "release.yml":
-            assert "VOICE_REPO_KEY" not in text, name
+            assert "VOICE_REPO" not in text, name
     j, run = _step_named(voice, "Release the changed voice packs")
     assert j > i and "run: wfj voice release --store ../build/voice" in run
     assert "GH_TOKEN: ${{ github.token }}" in run

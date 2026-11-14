@@ -63,3 +63,15 @@ def test_a_cut_at_the_edges_or_twice_on_one_frame_makes_no_empty_piece():
 def test_a_file_it_cannot_read_frame_by_frame_is_refused(bad):
     with pytest.raises(mp3_frames.Mp3Error):
         mp3_frames.split(bad, [0.05])
+
+
+def test_a_24khz_64kbps_file_is_snipped_with_its_own_lead():
+    """The packs' encode since 64 kbps: 24 kHz frames of 192 bytes, no padding, and a 51 ms lead."""
+    one = bytes([0xFF, 0xF3, (8 << 4) | (1 << 2), 0xC0]) + bytes([0x11]) * 188
+    data = one * 200
+    offsets, rate, per = mp3_frames.frames(data)
+    assert (len(offsets), rate, per) == (200, 24000, 576)
+    assert mp3_frames.header(data) == (24000, 64) and mp3_frames.lead(data) == 0.051
+    pieces = mp3_frames.split(data, [1.0])
+    assert b"".join(p for p, _ in pieces) == data
+    assert pieces[0][1] == pytest.approx(round((1.0 + 0.051) * 24000 / 576) * 576 / 24000)

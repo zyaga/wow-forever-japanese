@@ -219,10 +219,10 @@ jobs:
         if: steps.inputs.outputs.changed == 'true'
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          repository: zyaga/wow-forever-japanese-voice
+          repository: zyaga/wow-forever-japanese-voice-2
           ref: ${{ steps.pin.outputs.sha }}
           path: build/voice
-          ssh-key: ${{ secrets.VOICE_REPO_KEY }}
+          ssh-key: ${{ secrets.VOICE_REPO_2_KEY }}
           persist-credentials: false
       - name: Release the changed voice packs
         if: steps.inputs.outputs.changed == 'true'
