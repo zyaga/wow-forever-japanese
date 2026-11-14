@@ -18,7 +18,13 @@ Voice.ONCE = {
 
 -- every pack's addon folder starts with this; its files are read from its Sound folder
 Voice.FOLDER = "WoWForeverJapanese_Voice"
-Voice.FORMATS = { [1] = true, [2] = true } -- the Register.lua table shapes this file reads (ADR-061, ADR-062)
+Voice.FORMATS = { [1] = true, [2] = true, [3] = true } -- the Register.lua table shapes this file reads (ADR-061, ADR-062)
+-- Format 3 adds, per line (and per voice variant), the line cut into one file per sentence and the start of each of
+-- its parts:  s = { { "<file>.mp3", seconds }, ... }  cut in the middle of the pause between two sentences, played
+-- one after another; m = "3:48 1:104 2:- ..."  the shipped Japanese in order as parts of n characters, each with the
+-- hundredths of a second since the part before it started ("-": never read aloud, a stage direction). A line's first
+-- field may be false when the pack ships only its sentences: the line then lives in another pack, matched by its
+-- Japanese hash.
 
 -- The lines a pack may voice: surface → record key → the setting that turns that kind off. Objectives, titles and
 -- option rows are never voiced.
@@ -65,17 +71,52 @@ local function validFile(f)
   return type(f) == "string" and f:match("^[%w%-_]+%.mp3$") ~= nil
 end
 
+local function validClips(s)
+  if s == nil then return true end
+  if type(s) ~= "table" or #s < 1 then return false end
+  for _, c in ipairs(s) do
+    if type(c) ~= "table" or not validFile(c[1]) or type(c[2]) ~= "number" or c[2] <= 0 then return false end
+  end
+  return true
+end
+
+local function validMarks(m)
+  return m == nil or (type(m) == "string" and m:match("^[%d:%- ]*$") ~= nil)
+end
+
 local function validEntry(e)
-  if not (type(e) == "table" and validFile(e[1]) and type(e[2]) == "string" and e[2]:match("^%x+$") ~= nil
-    and #e[2] == 16 and (e[3] == nil or type(e[3]) == "number")) then
+  if not (type(e) == "table" and (validFile(e[1]) or (e[1] == false and e.s ~= nil)) and type(e[2]) == "string"
+    and e[2]:match("^%x+$") ~= nil and #e[2] == 16 and (e[3] == nil or type(e[3]) == "number")
+    and validClips(e.s) and validMarks(e.m)) then
     return false
   end
   if e.v == nil then return true end
   if type(e.v) ~= "table" then return false end
   for vid, f in pairs(e.v) do
-    if type(vid) ~= "string" or type(f) ~= "table" or not validFile(f[1]) then return false end
+    if type(vid) ~= "string" or type(f) ~= "table" or not (validFile(f[1]) or (f[1] == false and f.s ~= nil))
+      or not validClips(f.s) or not validMarks(f.m) then
+      return false
+    end
   end
   return true
+end
+
+-- A file and its sentences as one record: { file, seconds, folder, clips = { { file, seconds } }, clipFolder, marks }
+local function part(f, folder)
+  return { file = f[1] or nil, seconds = f[1] and f[2] or nil, folder = f[1] and folder or nil,
+    clips = f.s, clipFolder = f.s and folder or nil, marks = f.m }
+end
+
+-- Two packs may carry one line: one its whole file, another its sentences. The record keeps both, from the pack
+-- that has each.
+local function merge(old, new)
+  if not old then return new end
+  local out = {}
+  for k, v in pairs(old) do out[k] = v end
+  if new.file then out.file, out.folder = new.file, new.folder end
+  if new.seconds then out.seconds = new.seconds end
+  if new.clips then out.clips, out.clipFolder, out.marks = new.clips, new.clipFolder, new.marks end
+  return out
 end
 
 local function validVoice(v)
@@ -101,7 +142,15 @@ function Voice.register(tbl)
   end
   lines = lines or {}
   for key, e in pairs(lines) do
-    if e.folder == tbl.folder then lines[key] = nil end
+    if e.folder == tbl.folder and e.clipFolder == tbl.folder then
+      lines[key] = nil
+    elseif e.folder == tbl.folder then
+      e.file, e.folder = nil, nil
+      if not e.clips then lines[key] = nil end
+    elseif e.clipFolder == tbl.folder then
+      e.clips, e.clipFolder, e.marks = nil, nil, nil
+      if not e.file then lines[key] = nil end
+    end
   end
   for c, by in pairs(creatureBy) do -- a pack registering again replaces all it brought, not only lines
     if by[tbl.folder] ~= nil then
@@ -119,13 +168,24 @@ function Voice.register(tbl)
   local n, bad = 0, 0
   for key, e in pairs(tbl.lines) do
     if type(key) == "string" and validEntry(e) then
-      local v
-      if e.v then
-        v = {}
-        for vid, f in pairs(e.v) do v[vid] = { file = f[1], seconds = f[2] } end
+      local jaHash = e[2]:lower()
+      local old = lines[key]
+      if old and old.jaHash ~= jaHash then
+        -- another pack's line for other Japanese: a whole file replaces it; sentences alone never join it
+        if e[1] then old = nil else old = false end
       end
-      lines[key] = { file = e[1], jaHash = e[2]:lower(), seconds = e[3], folder = tbl.folder, v = v }
-      n = n + 1
+      if old ~= false then
+        local rec = merge(old, part({ e[1], e[3], s = e.s, m = e.m }, tbl.folder))
+        rec.jaHash = jaHash
+        if e.v then
+          rec.v = rec.v or {}
+          for vid, f in pairs(e.v) do rec.v[vid] = merge(rec.v[vid], part(f, tbl.folder)) end
+        end
+        lines[key] = rec
+        n = n + 1
+      else
+        bad = bad + 1
+      end
     else
       bad = bad + 1
     end
@@ -190,8 +250,20 @@ local function fileFor(entry, who)
   local voice = who and creatures[who.creature]
   if type(voice) == "table" then voice = who.sex == 3 and voice[2] or voice[1] end
   local own = voice and entry.v and entry.v[voice]
-  if own then return own.file, own.seconds end
-  return entry.file, entry.seconds
+  if own and (own.file or own.clips) then return own end
+  return entry
+end
+
+local function pathOf(folder, file)
+  return "Interface\\AddOns\\" .. folder .. "\\Sound\\" .. file
+end
+
+-- The sentences of a file record for the player: { { path, seconds }, ..., marks = { ms } } or nil
+local function sentencesOf(f)
+  if not f.clips then return nil end
+  local out = { marks = f.marks }
+  for i, c in ipairs(f.clips) do out[i] = { path = pathOf(f.clipFolder, c[1]), seconds = c[2] } end
+  return out
 end
 
 -- → the setting that turns a surface's record key off (a record key's trailing page number is its kind's), or nil
@@ -208,7 +280,7 @@ local function heardRecord(kindSetting)
 end
 
 -- A line just shown in Japanese on `surface` under record key `recKey`, rendered as (kind, id), said by `who`.
--- → the file's path and its length in seconds, or nil and why ("kind" · "off" · "english" · "nopack" · "missing" ·
+-- → the file's path, its length in seconds and its sentences (or nil), or nil and why ("kind" · "off" · "english" · "nopack" · "missing" ·
 -- "stale" · "notext" · "heard"). `peek`: only asking (the replay button), so /wfj debug's counts are left as they are;
 -- "ahead": only asking whether the line will play when its window opens (a line heard before will not).
 function Voice.decide(surface, recKey, kind, id, who, peek)
@@ -238,8 +310,24 @@ function Voice.decide(surface, recKey, kind, id, who, peek)
   local seen = peek ~= true and heardRecord(kindSetting) or nil
   if seen and seen[key] == entry.jaHash then return nil, "heard" end
   if not peek then Voice.counts.matched = Voice.counts.matched + 1 end
-  local file, seconds = fileFor(entry, who)
-  return "Interface\\AddOns\\" .. entry.folder .. "\\Sound\\" .. file, seconds
+  local f = fileFor(entry, who)
+  local sentences = sentencesOf(f)
+  local seconds = f.seconds
+  if not seconds and sentences then
+    seconds = 0
+    for _, c in ipairs(sentences) do seconds = seconds + c.seconds end
+  end
+  return f.file and pathOf(f.folder, f.file) or sentences[1].path, seconds, sentences
+end
+
+-- The line's whole file when a pack has it, for the whole-file comparison (test builds): path, seconds or nil
+function Voice.wholeFile(kind, id, who)
+  local key = Voice.packKey(kind, id)
+  local entry = key and lines and lines[key]
+  if not entry then return nil end
+  local f = fileFor(entry, who)
+  if not f.file then return nil end
+  return pathOf(f.folder, f.file), f.seconds
 end
 
 -- A line has started playing: when its kind is kept to its first hearing, it is recorded as heard with the hash of

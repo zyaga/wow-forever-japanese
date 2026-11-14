@@ -85,9 +85,145 @@ end
 
 -- ── Text ─────────────────────────────────────────────────────────────────
 
+-- ── Word marks ─────────────────────────────────────────────────────────────
+-- A line whose pack carries its timing (Core/Voice format 3: every part of the shipped Japanese with the moment it is
+-- spoken) turns its pages when their first word is spoken and marks what is being said with a soft tint (not the
+-- gold of the word under the mouse). The mark takes a word card's whole word when what is said is part of one, so
+-- what lights up is what pointing at it shows; particles, endings and names light as the parts the recording has.
+-- The parts are found in the text as the window showed it, in order, so a filled-in name never shifts them.
+local MARK = { 0.45, 0.75, 1, 0.30 }
+local TRIM = { ["。"] = true, ["、"] = true, ["！"] = true, ["？"] = true, ["…"] = true, ["・"] = true, ["」"] = true,
+  ["』"] = true, ["）"] = true, ["　"] = true }
+local timed, cards, timedFor -- the displayed line's spoken parts { first, last, t } and its word-card words
+local markTex = {}
+local markOn -- the part marked now ("page:first:last"), so a frame with nothing new draws nothing
+
+local function charLen(c) return c < 0x80 and 1 or c >= 0xF0 and 4 or c >= 0xE0 and 3 or 2 end
+
+-- the last byte of `text` from `first` to `last` with closing punctuation and spaces taken off the end
+local function trimmed(text, first, last)
+  local i, ends = first, {}
+  while i <= last do
+    local n = charLen(text:byte(i))
+    ends[#ends + 1] = { i, i + n - 1 }
+    i = i + n
+  end
+  for k = #ends, 2, -1 do
+    local ch = text:sub(ends[k][1], ends[k][2])
+    if not (TRIM[ch] or ch:match("^%s$") or ch:match("^%p$")) then return ends[k][2] end
+  end
+  return ends[1] and ends[1][2] or last
+end
+
+local function timedWords(item, marks)
+  if timedFor == item then return timed end
+  timedFor, timed, cards = item, nil, nil
+  local shipped = type(marks) == "string" and type(item.ja) == "string" and WFJ.Lookup.get(item.kind, item.id)
+  local raw = shipped and shipped.ja
+  if type(raw) ~= "string" then return nil end
+  local player = WFJ.player and WFJ.player()
+  local out, pos, cursor, clock = {}, 1, 1, 0
+  for len, dt in marks:gmatch("(%d+):([%-%d]+)") do
+    local e = pos
+    for _ = 1, tonumber(len) do
+      local c = raw:byte(e)
+      if not c then break end
+      e = e + charLen(c)
+    end
+    local piece = raw:sub(pos, e - 1)
+    pos = e
+    local t
+    if dt ~= "-" then clock = clock + tonumber(dt) / 100; t = clock end
+    local bare = piece:match("^%s*(.-)%s*$")
+    -- a part with a token ({name}, {class}) is looked for filled in, as the window filled it; one the addon leaves
+    -- to the client ($N, a number) is not looked for, and the parts after it are found past it
+    if t and bare ~= "" and bare:find("[{<]") then
+      bare = WFJ.Placeholders.expand(bare, player or {})
+    end
+    if t and bare ~= "" and not bare:find("[{$]") then
+      local s, f = item.ja:find(bare, cursor, true)
+      if s and s - cursor <= 96 then
+        out[#out + 1] = { first = s, last = trimmed(item.ja, s, f), t = t }
+        cursor = f + 1
+      end
+    end
+  end
+  if #out == 0 then return nil end
+  timed, cards = out, WFJ.Readings.lookup(item.kind, item.id, item.ja) or {}
+  return out
+end
+
+-- the part spoken last by time t, or nil before the first
+local function wordAt(words, t)
+  local found
+  for _, w in ipairs(words) do
+    if w.t <= t then found = w else break end
+  end
+  return found
+end
+
+-- what to mark for a part: the word card's whole word when the part is in one, else the part
+local function unitOf(w)
+  for _, sp in ipairs(cards or {}) do
+    if sp.first <= w.first and w.first <= sp.last then return sp.first, math.max(sp.last, w.last) end
+  end
+  return w.first, w.last
+end
+
+local function pageOf(pos)
+  for i, seg in ipairs(segs) do
+    for _, sg in ipairs(seg) do
+      if pos >= sg.from and pos <= sg.from + sg.len - 1 then return i, pos + sg.at - sg.from end
+    end
+  end
+  return nil
+end
+
+-- → the line's timed words and its clock, when the displayed line is the one playing and has times
+local function lineClock(st)
+  if not (displayed and st.playing and st.item == displayed) then return nil end
+  local t, marks = WFJ.VoicePlayer.timing()
+  local words = t and timedWords(displayed, marks)
+  if not words then return nil end
+  return words, t
+end
+
+local function hideMark()
+  for _, t in ipairs(markTex) do t:Hide() end
+  markOn = nil
+end
+
+local function drawMark(st)
+  local words, t = lineClock(st)
+  local w = words and not english and wordAt(words, t)
+  if not w then return hideMark() end
+  local uFirst, uLast = unitOf(w)
+  local page, first = pageOf(uFirst)
+  local lastPage, last = pageOf(uLast)
+  if page ~= pageShown or lastPage ~= page or not first or not last then return hideMark() end
+  local key = page .. ":" .. first .. ":" .. last
+  if key == markOn then return end
+  hideMark()
+  markOn = key -- set before measuring: a span the guard refuses is not asked again every frame
+  local areas = WFJ.ReadingView.spanAreas(f.text, pages[page], first, last, "voicepanel mark")
+  for i, a in ipairs(areas or {}) do
+    local tex = markTex[i]
+    if not tex then
+      tex = f:CreateTexture(nil, "BORDER")
+      tex:SetColorTexture(MARK[1], MARK[2], MARK[3], MARK[4])
+      markTex[i] = tex
+    end
+    tex:ClearAllPoints()
+    tex:SetPoint("BOTTOMLEFT", f.text, "BOTTOMLEFT", a.left, a.bottom)
+    tex:SetSize(math.max(a.width, 1), math.max(a.height, 1))
+    tex:Show()
+  end
+end
+
 local function showPage(i)
   if not displayed then return end
   pageShown = i
+  hideMark()
   if revealed() then
     english = true
     return Text.showEnglish(f.text, displayed)
@@ -97,8 +233,13 @@ local function showPage(i)
   Text.showPage(f.text, displayed, page, Text.pageSpans(displayed, segs[i], page))
 end
 
--- the page the audio is on now
+-- the page the audio is on now: the page of the word spoken last when the line has times, else the estimate
 local function audioPage(st)
+  local words, t = lineClock(st)
+  if words then
+    local w = wordAt(words, t)
+    return w and pageOf(w.first) or 1
+  end
   if not (st.playing and st.startedAt and st.seconds and st.seconds > 0) then return nil end
   local share = (now() - st.startedAt) / st.seconds
   local want = 1
@@ -314,6 +455,10 @@ local function hidePanel()
 end
 
 local function onTick(self, elapsed)
+  if displayed then
+    local playingKey = WFJ.VoicePlayer.playing()
+    pcall(drawMark, { playing = playingKey ~= nil and playingKey == displayed.key, item = Q.current() })
+  end
   self.since = (self.since or 0) + elapsed
   if self.since < TICK then return end
   self.since = 0

@@ -68,6 +68,7 @@ local function player()
     sex = call(UnitSex, "player"),
   }
 end
+WFJ.player = player -- the voice panel fills a line's tokens part by part, as the window filled the whole line
 
 -- The player as the Collector normalizes English with: the name and the localized class / race, and the shorter
 -- word the client prints for the race where it has one.

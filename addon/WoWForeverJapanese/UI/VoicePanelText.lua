@@ -42,8 +42,22 @@ local function markAt(ja, i, set)
 end
 
 -- The line's sentences as { text, from }: `from` is the byte the trimmed text starts at in `ja`. A sentence ends after
--- a run of 。！？ and the closing brackets after it, or at a line break; spaces and breaks around it are trimmed.
+-- a run of 。！？ and the closing brackets after it, or at a line break; spaces and breaks around it are trimmed. A
+-- stage direction on a line of its own is left out when the voice skips it (isStage).
+-- A stage direction: angle brackets around Japanese ("<Iverronが解毒剤を飲む>"); an ASCII pair (<lad/lass>) is not.
+-- The voice skips them, except in a line that is nothing but directions, which it reads without the brackets
+-- (pipeline wfj/core/voice.py speech_text): the panel follows the same rule, so it hides only what is not said.
+local function isStage(t)
+  return t:match("^<[^<>]*>$") ~= nil and t:find("[\128-\255]") ~= nil
+end
+
+local function onlyStages(ja)
+  local rest = ja:gsub("<[^<>]*>", function(t) return isStage(t) and "" or nil end)
+  return rest:match("^%s*$") ~= nil
+end
+
 local function sentences(ja)
+  local dropStages = not onlyStages(ja)
   local out, start, i = {}, 1, 1
   local function cut(stop)
     local raw = ja:sub(start, stop)
@@ -51,7 +65,10 @@ local function sentences(ja)
     local text = raw:gsub("^%s+", ""):gsub("%s+$", "")
     local bare = text
     for _, m in ipairs(WIDE_MARKS) do bare = bare:gsub(m, "") end
-    if text ~= "" and bare:match(MARKS_ONLY) and #out > 0 then
+    if dropStages and isStage(text) then
+      -- a stage direction (<Kaltunkは笑った>) is not read aloud: the quest window shows it, the panel does not
+      text = ""
+    elseif text ~= "" and bare:match(MARKS_ONLY) and #out > 0 then
       -- a stray closing mark after a sentence's end (the 。 of an emote in <…>): the sentence keeps it
       local prev = out[#out]
       prev.text = (ja:sub(prev.from, stop):gsub("%s+$", ""))
