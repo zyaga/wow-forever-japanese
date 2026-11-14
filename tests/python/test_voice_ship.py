@@ -228,7 +228,7 @@ def test_pack_writes_the_entry_and_every_pack(tmp_path, engine, monkeypatch):  #
         "WoWForeverJapanese_VoiceOther"]
     # the entry: a TOC and a README, no audio, no Register.lua; its TOC carries its project id
     entry = out / "WoWForeverJapanese_Voice"
-    assert sorted(p.name for p in entry.iterdir()) == ["README.txt", "WoWForeverJapanese_Voice.toc"]
+    assert sorted(p.name for p in entry.iterdir()) == ["Packs.lua", "README.txt", "WoWForeverJapanese_Voice.toc"]
     toc = (entry / "WoWForeverJapanese_Voice.toc").read_text()
     assert "## Dependencies: WoWForeverJapanese\n" in toc and "## X-Curse-Project-ID: 1\n" in toc
     assert "Register.lua" not in toc
@@ -1012,3 +1012,17 @@ def test_the_all_in_one_download_comes_in_parts_of_whole_folders_under_the_limit
     monkeypatch.setattr(vs, "BUNDLE_LIMIT", 10_000)
     assert [p.name for p in vs.bundle_parts(out, dist, ["E", "A"], zips, "E", day)] == [
         "E-all-2026.11.14.zip"]
+
+
+def test_the_entry_lists_its_packs_for_the_addon():
+    from wfj.emit import voice_pack
+
+    text = voice_pack.entry_packs_text(["WoWForeverJapanese_VoiceLevels1to10", "WoWForeverJapanese_VoiceOther"])
+    assert text.splitlines()[1:] == [
+        "if not WoWForeverJapanese_ExpectVoicePacks then return end",
+        "WoWForeverJapanese_ExpectVoicePacks({",
+        '  "WoWForeverJapanese_VoiceLevels1to10",',
+        '  "WoWForeverJapanese_VoiceOther",',
+        "})",
+    ]
+    assert voice_pack.toc_text("11508", None).rstrip().endswith("Packs.lua")

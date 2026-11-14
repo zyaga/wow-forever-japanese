@@ -284,14 +284,19 @@ def write(
     (dest / "README.txt").write_text(
         voice_pack.entry_readme_text(e.title, [(p.title, p.holds) for p in table.packs]), encoding="utf-8"
     )
+    (dest / "Packs.lua").write_text(voice_pack.entry_packs_text([p.folder for p in table.packs]),
+                                    encoding="utf-8")
 
 
 def check_zip(path: Path, folder: str, files: Sequence[str] | None) -> list[str]:
     """What is wrong with one zip: anything but the folder's TOC, README and (for a pack) Register.lua and its
-    recorded Sound files; a recorded file missing. `files` None: the entry, which holds no audio."""
+    recorded Sound files; a recorded file missing. `files` None: the entry, which holds no audio and lists its
+    packs in Packs.lua."""
     want = {f"{folder}/{folder}.toc", f"{folder}/README.txt"}
     if files is not None:
         want |= {f"{folder}/Register.lua"} | {f"{folder}/Sound/{f}" for f in files}
+    else:
+        want.add(f"{folder}/Packs.lua")
     with zipfile.ZipFile(path) as z:
         have = {n for n in z.namelist() if not n.endswith("/")}
     problems = [f"{path.name}: holds {n}, which is not in the record" for n in sorted(have - want)]

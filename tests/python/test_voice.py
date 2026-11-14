@@ -449,7 +449,7 @@ def test_in_step_reports_missing_and_stale_files():
 
 
 @pytest.mark.skipif(shutil.which("lame") is None, reason="lame is not installed")
-def test_mp3_is_mono_22khz_32kbps_without_a_xing_frame(tmp_path):
+def test_mp3_is_mono_24khz_64kbps_without_a_xing_frame(tmp_path):
     out = tmp_path / "x.mp3"
     voice_make.to_mp3(_wav(1.0), out)
     b = out.read_bytes()
@@ -459,8 +459,8 @@ def test_mp3_is_mono_22khz_32kbps_without_a_xing_frame(tmp_path):
     h = int.from_bytes(b[i:i + 4], "big")
     version, layer = (h >> 19) & 3, (h >> 17) & 3
     assert (version, layer) == (2, 1)  # MPEG-2, Layer III
-    assert (h >> 12) & 0xF == 4  # 32 kbps in the MPEG-2 Layer III table
-    assert (h >> 10) & 3 == 0  # 22.05 kHz in MPEG-2
+    assert (h >> 12) & 0xF == 8  # 64 kbps in the MPEG-2 Layer III table
+    assert (h >> 10) & 3 == 1  # 24 kHz in MPEG-2
     assert (h >> 6) & 3 == 3  # mono
     assert b"Xing" not in b[:2048] and b"Info" not in b[:2048]
     assert not (tmp_path / "x.wav").exists()

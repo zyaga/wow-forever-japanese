@@ -53,6 +53,7 @@ local creatures = {} -- creature id → voice id, or { male voice, female voice 
 local creatureBy = {} -- creature id → { [pack folder] = its voice }: several packs may carry one creature
 local packs = {} -- pack folder → the number of its lines registered
 local formats = {} -- pack folder → the Register.lua format it was built in
+local expected = {} -- the pack folders the voice entry installs (its Packs.lua), in its order
 -- the character's own spoken error lines: the game's voice id → kind, and per "<race>-<f|m>" the kind's file
 local errorKinds, errorFiles = {}, {}
 local deps = {}
@@ -239,6 +240,25 @@ function Voice.outdated()
     end
   end
   table.sort(out)
+  return out
+end
+
+-- The voice entry names the packs it installs. Only well-formed pack folder names are kept.
+function Voice.expect(list)
+  expected = {}
+  for _, folder in ipairs(type(list) == "table" and list or {}) do
+    if type(folder) == "string" and folder:sub(1, #Voice.FOLDER) == Voice.FOLDER and folder:match("^[%w_]+$") then
+      expected[#expected + 1] = folder
+    end
+  end
+end
+
+-- → the packs the entry installs that did not register (not installed, or turned off), short names, in its order
+function Voice.missing()
+  local out = {}
+  for _, folder in ipairs(expected) do
+    if not packs[folder] then out[#out + 1] = (folder:gsub("^" .. Voice.FOLDER, "")) end
+  end
   return out
 end
 

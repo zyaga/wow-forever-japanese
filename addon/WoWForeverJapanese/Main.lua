@@ -46,6 +46,12 @@ function WoWForeverJapanese_RegisterVoice(tbl)
   return n, invalid
 end
 
+-- Global entry point for the voice entry addon: its Packs.lua names the packs it installs, so a pack that did not
+-- load can be named to the player.
+function WoWForeverJapanese_ExpectVoicePacks(list)
+  WFJ.Voice.expect(list)
+end
+
 -- The one reader of the player's own name / class / race / sex, shared by Core/Placeholders (the corpus tokens)
 -- and Core/Collector (English normalization). Read at call time rather than cached at load. Each API
 -- is guarded: a client without one leaves that token literal and makes the collector refuse (no_player) instead of

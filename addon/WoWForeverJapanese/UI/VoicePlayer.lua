@@ -618,8 +618,9 @@ function VoicePlayer.playKey(key)
 end
 
 -- ── Notices ──────────────────────────────────────────────────────────────
--- Once per session each: the packs built in an older format than this addon reads best, named with their versions
--- (at login), and a pack whose audio is older than a line's Japanese (the first time one of its lines stays quiet).
+-- Once per session each: the packs built in an older format than this addon reads best, named with their versions,
+-- and the packs the voice entry installs that did not load (at login), and a pack whose audio is older than a line's
+-- Japanese (the first time one of its lines stays quiet).
 -- Every pack and version also goes to the addon's log, which a bug report carries.
 local noticed = {}
 local function notice(text)
@@ -636,6 +637,11 @@ function VoicePlayer.announcePacks()
   if #old > 0 then
     notice(("WFJ: these voice packs are out of date: %s. Update all in the CurseForge app."):format(
       table.concat(old, ", ")))
+  end
+  local missing = WFJ.Voice.missing()
+  if #missing > 0 and WFJ.Voice.hasPack() and WFJ.Settings.get("voice.enabled") then
+    notice(("WFJ: these voice packs did not load: %s. Install them with Update all in the CurseForge app,"
+      .. " or turn them on in the AddOn List."):format(table.concat(missing, ", ")))
   end
 end
 
