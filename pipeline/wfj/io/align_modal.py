@@ -9,7 +9,8 @@ batch's words and hands the batch to a ReazonSpeech card inside Modal. The answe
 OUT_DIR/reazon.jsonl and OUT_DIR/qwen.jsonl in the format `dev/align_reazon.py` and `dev/align_qwen.py` write,
 so `wfj voice time` reads them as if the Mac had run them; a rerun sends only the lines missing from either.
 
-Fail early: every FLAC is checked to decode to exactly its WAV's samples before anything is uploaded; the
+Fail early: every FLAC is checked to decode to exactly its WAV's samples before anything is uploaded; both
+images load their models on CPU cards before any GPU starts; the
 lines the Mac already answered go first, and every batch is checked as it comes back (core/align_checks.py:
 the cards agree with the Mac, the two models agree with each other, times in order and inside the recording).
 A batch that fails stops the run, and nothing of it is written.
@@ -49,8 +50,12 @@ QWEN = ("Qwen/Qwen3-ForcedAligner-0.6B", "c7cbfc2048c462b0d63a45797104fc9db3ad62
 
 
 def _fetch(model: tuple[str, str]) -> str:
-    return (f"python -c \"from huggingface_hub import snapshot_download; "
-            f"snapshot_download('{model[0]}', revision='{model[1]}')\"")
+    """The weights at their revision, recorded as the cache's `main` too: the scripts load the model by name,
+    offline, as the Mac's cache does."""
+    return (f"python -c \"from pathlib import Path; from huggingface_hub import snapshot_download; "
+            f"p = Path(snapshot_download('{model[0]}', revision='{model[1]}')); "
+            f"(p.parent.parent / 'refs').mkdir(exist_ok=True); "
+            f"(p.parent.parent / 'refs' / 'main').write_text('{model[1]}')\"")
 
 
 # the package versions of build/tts-venv and build/aligner-venv
@@ -145,6 +150,37 @@ class Qwen:
         return out, time.time() - started + rz_seconds
 
 
+@app.function(image=reazon_image, timeout=600)
+def load_reazon() -> str:
+    """Loads ReazonSpeech on a CPU card: proves the image finds its model before any GPU starts."""
+    sys.path.insert(0, "/root")
+    import align_reazon
+
+    align_reazon.load("cpu")
+    return "ok"
+
+
+@app.function(image=qwen_image, timeout=600)
+def load_qwen() -> str:
+    """Loads Qwen's aligner on a CPU card, as load_reazon."""
+    sys.path.insert(0, "/root")
+    import align_qwen
+
+    align_qwen.load("cpu")
+    return "ok"
+
+
+def models_load() -> bool:
+    """Both images load their models on CPU cards, so a broken image stops the run before any GPU starts."""
+    try:
+        checks = [load_reazon.spawn(), load_qwen.spawn()]
+        print(f"align_modal: models load: {[c.get() for c in checks]}", flush=True)
+    except Exception as e:  # noqa: BLE001 - whatever stops a model loading stops the run
+        print(f"align_modal: stopped before any GPU: a model does not load ({e})", file=sys.stderr)
+        return False
+    return True
+
+
 def flac(wav: Path, out: Path) -> None:
     """The WAV packed losslessly (the same samples, about half the bytes)."""
     if out.is_file():
@@ -200,23 +236,25 @@ def done_in(out: Path) -> set[str]:
 
 
 def upload(jobs: list[dict], packed: Path) -> None:
-    """Packs every job's WAV as FLAC and uploads the ones the volume does not hold yet. No card runs."""
+    """Packs as FLAC the WAVs the volume does not hold yet, checks each against its WAV and uploads them. No
+    card runs. A file on the volume was checked before it went up."""
     from concurrent.futures import ThreadPoolExecutor
 
-    packed.mkdir(parents=True, exist_ok=True)
-    with ThreadPoolExecutor(max_workers=4) as pool:
-        list(pool.map(lambda j: flac(Path(j["wav"]), packed / f"{j['stem']}.flac"), jobs))
-        bad = [j["stem"] for j, ok in zip(jobs, pool.map(
-            lambda j: same_audio(Path(j["wav"]), packed / f"{j['stem']}.flac"), jobs), strict=True) if not ok]
-    if bad:
-        raise SystemExit(f"align_modal: {len(bad)} FLAC files differ from their WAVs, e.g. {bad[:3]}; "
-                         "nothing uploaded")
-    print(f"align_modal: {len(jobs)} FLAC files decode to exactly their WAVs' samples", flush=True)
     try:
         there = {Path(e.path).name for e in volume.listdir("/flac")}
     except Exception:  # noqa: BLE001 - a new volume has no /flac yet
         there = set()
     todo = [j for j in jobs if f"{j['stem']}.flac" not in there]
+    packed.mkdir(parents=True, exist_ok=True)
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        list(pool.map(lambda j: flac(Path(j["wav"]), packed / f"{j['stem']}.flac"), todo))
+        bad = [j["stem"] for j, ok in zip(todo, pool.map(
+            lambda j: same_audio(Path(j["wav"]), packed / f"{j['stem']}.flac"), todo), strict=True) if not ok]
+    if bad:
+        raise SystemExit(f"align_modal: {len(bad)} FLAC files differ from their WAVs, e.g. {bad[:3]}; "
+                         "nothing uploaded")
+    print(f"align_modal: {len(todo)} new FLAC files decode to exactly their WAVs' samples "
+          f"({len(jobs) - len(todo)} on the volume already)", flush=True)
     size = sum((packed / f"{j['stem']}.flac").stat().st_size for j in todo)
     print(f"align_modal: uploading {len(todo)} files, {size / 1e9:.1f} GB", flush=True)
     for n in range(0, len(todo), UPLOAD_BATCH):
@@ -268,6 +306,8 @@ def main() -> int:
     with (a.out / "reazon.jsonl").open("a", encoding="utf-8") as rz_out, \
             (a.out / "qwen.jsonl").open("a", encoding="utf-8") as qw_out, \
             modal.enable_output(), app.run():
+        if not models_load():
+            return 2
         for result in Qwen().both.starmap(batches, order_outputs=False, return_exceptions=True):
             seen += 1
             if isinstance(result, BaseException):
