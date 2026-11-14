@@ -9,7 +9,15 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Added
+- The voice panel follows the voice word by word: the page turns as the speaker starts each sentence, and a soft tint marks the words as they are spoken (warm white on the dark looks, brown on parchment).
+- Pausing a voiced line and playing it again picks up at the sentence you paused in, not from the start of the line.
+- When a voice pack is out of date, a chat line at login names it and its version. A line that stays quiet because its voice pack is older than its Japanese names that pack too, and a voice pack too new for your addon says so at login.
+
 ### Changed
+- The voice packs now hold each line as one file per sentence, timed to the words. Update all the voice packs once in the CurseForge app (Update All updates them together); the download is the same size. Older voice packs still play, without the word marks.
+- The voice panel no longer shows a stage direction, such as an emote in angle brackets, that the voice does not read. A line made only of such directions is still shown.
+- A bug report now lists your voice packs with their versions.
 - The right-click menus on the target, party and raid frames, and on a player's name or a friend, are in Japanese. Names stay in English.
 
 ### Fixed

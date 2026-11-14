@@ -75,7 +75,9 @@ addon: installing it from the CurseForge app brings the addon too, and the game 
 
 - **With the CurseForge app:** install the addon first, then search for **WoW Forever Japanese Voice** and click
   **Install**. The app installs every voice pack with it and keeps them up to date. In the game, the packs show as
-  extra rows under the addon in the AddOns list; leave them ticked.
+  extra rows under the addon in the AddOns list; leave them ticked. The voice packs update separately from the
+  addon: use **Update All** in the app so they all stay current together. The addon names a pack at login when it
+  is out of date.
 - **By hand:** on the [releases page](https://github.com/zyaga/wow-forever-japanese/releases), open the latest
   release whose name starts with **Voice**, download the zip whose name ends in `-all-` and a date, and unzip it into
   the same `AddOns` folder. It holds `WoWForeverJapanese_Voice` and one folder per voice pack.
@@ -131,7 +133,8 @@ own error lines, such as being out of range, in Japanese too, in a voice modelle
 narrator reads the rest, and every line plays at the same loudness.
 
 **Voice panel.** While a line plays, a panel at the bottom of the screen shows who is speaking: their face, their
-name and title, and the Japanese a sentence at a time, with the popup dictionary on every word. Close the window and
+name and title, and the Japanese a sentence at a time, with the popup dictionary on every word. The panel follows the
+voice word by word: the page turns as each sentence starts, and a soft tint marks the words as they are spoken. Close the window and
 the line keeps playing, so you can walk on while the NPC finishes. A line that starts meanwhile waits its turn in a
 list above the panel; click it to hear it now. Hold Alt and the panel shows the line's English while the voice goes
 on. Point at the panel for pause, play again, the whole text and close. The quest log has a play button too, for a
@@ -330,7 +333,7 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 
 音声は約 1.2 GB の無料の別ダウンロードで、アドオンをインストールしても音声は入りません。音声にはアドオンが必要です。CurseForge アプリで音声を入れるとアドオンも一緒に入り、ゲームもアドオンなしで音声を読み込むことはありません。
 
-- **CurseForge アプリで:** 先にアドオンを入れてから、**WoW Forever Japanese Voice** を検索して **Install** を押します。すべての音声パックが一緒に入り、更新もアプリが行います。ゲーム内の AddOns 一覧では、アドオンの下に音声パックの行が並びます。チェックは入れたままにしてください。
+- **CurseForge アプリで:** 先にアドオンを入れてから、**WoW Forever Japanese Voice** を検索して **Install** を押します。すべての音声パックが一緒に入り、更新もアプリが行います。ゲーム内の AddOns 一覧では、アドオンの下に音声パックの行が並びます。チェックは入れたままにしてください。音声パックはアドオンとは別に更新されます。アプリの **Update All** で、すべてまとめて最新にしてください。古いパックがあると、ログイン時にアドオンがそのパック名を表示します。
 - **手動で:** [リリースページ](https://github.com/zyaga/wow-forever-japanese/releases)で名前が **Voice** で始まる最新のリリースを開き、名前が `-all-` と日付で終わる zip をダウンロードして、同じ `AddOns` フォルダに展開します。中身は `WoWForeverJapanese_Voice` と音声パックごとのフォルダです。
 
 アドオンの **情報とヘルプ** ページに、音声が入っているか、どのパックが読み込まれたかが表示されます。**音声** ページの設定ひとつで音声をオフにできます。音声のフォルダを削除すれば音声はなくなり、アドオンはそのまま動きます。音声は Qwen3-TTS で作り、それぞれゲームの NPC の声をもとにしています。どの NPC がどの声かは Spoken アドオンに合わせています。クレジットは [`ATTRIBUTION.md`](ATTRIBUTION.md) にあります。
@@ -359,7 +362,7 @@ Discord: [foreverjapanese.com/discord](https://foreverjapanese.com/discord)（�
 
 **日本語音声。** 音声を入れると（[下記](#日本語音声を追加する)）、クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページを日本語で読み上げます。合わせて 14,000 行以上です。NPC はそれぞれ、ゲームでのその NPC 自身の声をもとにした声で話すので、英語で聞き慣れた NPC と同じように聞こえます。自分のキャラクターも、射程外などのエラーの一言を、その種族のエラーの声をもとにした声で日本語で話します。それ以外はナレーターが読み、どの行も同じ音量で再生されます。
 
-**音声パネル。** 読み上げ中は、画面下のパネルに話している NPC の顔、名前と肩書き、読み上げ中の日本語が 1 文ずつ表示されます。どの単語にもポップアップ辞書が使えます。ウィンドウを閉じても読み上げは続くので、NPC の話を聞きながら先へ進めます。その間に始まった行はパネルの上の一覧で順番を待ち、クリックするとすぐに再生できます。Alt を押している間は、声はそのままでパネルにその行の英語が表示されます。パネルにマウスを合わせると、一時停止・もう一度再生・全文表示・閉じるのボタンが出ます。クエストログにも再生ボタンがあり、受けたあとのクエストの文も聞けます。パネルは移動でき、小さな帯の表示、暗い背景、オフに切り替えられます。
+**音声パネル。** 読み上げ中は、画面下のパネルに話している NPC の顔、名前と肩書き、読み上げ中の日本語が 1 文ずつ表示されます。どの単語にもポップアップ辞書が使えます。パネルは声に合わせて単語ごとに進み、文が始まるとページが切り替わり、話している単語に淡い色が付きます。ウィンドウを閉じても読み上げは続くので、NPC の話を聞きながら先へ進めます。その間に始まった行はパネルの上の一覧で順番を待ち、クリックするとすぐに再生できます。Alt を押している間は、声はそのままでパネルにその行の英語が表示されます。パネルにマウスを合わせると、一時停止・もう一度再生・全文表示・閉じるのボタンが出ます。クエストログにも再生ボタンがあり、受けたあとのクエストの文も聞けます。パネルは移動でき、小さな帯の表示、暗い背景、オフに切り替えられます。
 
 **マーカー。** まだ翻訳のない行は **[未翻訳 / Not Translated]** と表示され、英語のままになります。翻訳後に英語が変わった行には **[要更新 / English Changed]** が付きます。どちらも非表示にできます。
 

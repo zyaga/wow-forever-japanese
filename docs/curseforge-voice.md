@@ -27,7 +27,7 @@ The voices were made with Qwen3-TTS (Apache-2.0), each modelled on one of the ga
 
 This is only its Japanese voice and needs the addon to work. The CurseForge app installs the addon with it if you do not have it yet, and the voice never loads in the game without the addon.
 
-Japanese voice over for the **WoW Forever Japanese** addon. The addon reads its Japanese aloud: quest offers, progress and turn-ins, NPC greetings and talk, book and letter pages, and your character's own spoken error lines. Each NPC speaks in a voice modelled on its own voice in the game, and every line plays at the same loudness. Names stay English on screen, and the voice says them in Japanese sounds that match the English you read.
+Japanese voice over for the **WoW Forever Japanese** addon. The addon reads its Japanese aloud: quest offers, progress and turn-ins, NPC greetings and talk, book and letter pages, and your character's own spoken error lines. Each NPC speaks in a voice modelled on its own voice in the game, and every line plays at the same loudness. Names stay English on screen, and the voice says them in Japanese sounds that match the English you read. Every line comes as one file per sentence, timed to its words, so the addon's voice panel follows the voice word by word: the page turns as each sentence starts, and the words light up as they are spoken.
 
 **Website:** https://foreverjapanese.com (screenshots and a short guide to how the addon works).
 
@@ -37,7 +37,7 @@ Japanese voice over for the **WoW Forever Japanese** addon. The addon reads its 
 
 **Step 2:** install **WoW Forever Japanese Voice** the same way.
 
-The Voice entry holds no audio itself; the app installs every voice pack with it (about 1.2 GB in all) and keeps them up to date. In the game, the packs show as extra rows under the addon in the AddOns list; leave them ticked. By hand: download the zip whose name ends in `-all-` and a date from the latest **Voice** release on the [GitHub releases page](https://github.com/zyaga/wow-forever-japanese/releases), and unzip it into your Forever client's `Interface/AddOns` folder.
+The Voice entry holds no audio itself; the app installs every voice pack with it (about 1.2 GB in all) and keeps them up to date. In the game, the packs show as extra rows under the addon in the AddOns list; leave them ticked. The voice packs update separately from the addon: use **Update All** in the app so the addon and every pack stay current together. The addon names a pack at login when it is out of date, and a pack too new for the addon says so. By hand: download the zip whose name ends in `-all-` and a date from the latest **Voice** release on the [GitHub releases page](https://github.com/zyaga/wow-forever-japanese/releases), and unzip it into your Forever client's `Interface/AddOns` folder.
 
 One setting on the addon's **Voice** page turns the voice off. Others read NPC greetings (on by default) or quest lines only the first time you hear them; the window's play button reads them again. Removing the voice addons removes it, and the addon keeps working. A line plays only when its audio was made from the Japanese the addon shows; a line whose Japanese changed stays silent until its audio is remade.
 
@@ -51,7 +51,7 @@ Every voice was made with **Qwen3-TTS** (https://github.com/QwenLM/Qwen3-TTS, Ap
 
 これは本体用の日本語音声だけで、本体がないと動きません。本体がまだなければ、CurseForge アプリが一緒にインストールします。ゲーム内でも、本体なしで音声が読み込まれることはありません。
 
-**WoW Forever Japanese** アドオン用の日本語音声です。クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページ、自分のキャラクターが話すエラーの一言を、アドオンの日本語で読み上げます。NPC はそれぞれ、ゲームでのその NPC 自身の声をもとにした声で話し、どの行も同じ音量で再生されます。名前は画面では英語のままで、音声では読んでいる英語に合わせたカタカナの音で読み上げます。
+**WoW Forever Japanese** アドオン用の日本語音声です。クエストの受注・進行・完了の文、NPC のあいさつや会話、本や手紙のページ、自分のキャラクターが話すエラーの一言を、アドオンの日本語で読み上げます。NPC はそれぞれ、ゲームでのその NPC 自身の声をもとにした声で話し、どの行も同じ音量で再生されます。名前は画面では英語のままで、音声では読んでいる英語に合わせたカタカナの音で読み上げます。どの行も 1 文ずつのファイルに分かれ、単語ごとのタイミングが付いているので、アドオンの音声パネルは声に合わせて単語ごとに進みます。文が始まるとページが切り替わり、話している単語に色が付きます。
 
 **ウェブサイト:** https://foreverjapanese.com （スクリーンショットと、アドオンのしくみの簡単な説明）
 
@@ -61,7 +61,7 @@ Every voice was made with **Qwen3-TTS** (https://github.com/QwenLM/Qwen3-TTS, Ap
 
 **手順 2:** 続けて **WoW Forever Japanese Voice** を同じようにインストールします。
 
-Voice 自体は音声を持たず、すべての音声パック（合計約 1.2 GB）をアプリが一緒にインストールし、更新します。ゲーム内の AddOns 一覧では、アドオンの下に音声パックの行が並びます。チェックは入れたままにしてください。手動の場合は、[GitHub のリリースページ](https://github.com/zyaga/wow-forever-japanese/releases)で最新の **Voice** リリースから、名前が `-all-` と日付で終わる zip をダウンロードし、Forever クライアントの `Interface/AddOns` フォルダに展開します。
+Voice 自体は音声を持たず、すべての音声パック（合計約 1.2 GB）をアプリが一緒にインストールし、更新します。ゲーム内の AddOns 一覧では、アドオンの下に音声パックの行が並びます。チェックは入れたままにしてください。音声パックはアドオンとは別に更新されます。アプリの **Update All** で、アドオンとすべてのパックをまとめて最新にしてください。古いパックがあるとログイン時にアドオンがそのパック名を表示し、アドオンが古すぎる場合はパック自身がそう表示します。手動の場合は、[GitHub のリリースページ](https://github.com/zyaga/wow-forever-japanese/releases)で最新の **Voice** リリースから、名前が `-all-` と日付で終わる zip をダウンロードし、Forever クライアントの `Interface/AddOns` フォルダに展開します。
 
 アドオンの **音声** ページの設定ひとつで音声をオフにできます。NPC のあいさつ（初期設定でオン）やクエストの音声を、初めて聞くときだけ読み上げる設定もあります。ウィンドウの再生ボタンでもう一度聞けます。音声アドオンを削除すれば音声はなくなり、アドオンはそのまま動きます。音声は、アドオンが表示する日本語から作られたものだけが再生されます。日本語が変わった行は、音声が作り直されるまで再生されません。
 

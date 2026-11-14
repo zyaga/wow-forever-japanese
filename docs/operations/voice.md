@@ -2,12 +2,13 @@
 
 ## Goal
 
-Make the Japanese voice from the Japanese the addon ships, copy it into the Forever client for a test, and release it. The voice ships as the **Voice entry**, `WoWForeverJapanese_Voice` (no audio; on CurseForge it requires every pack, so the app installs them all from one click), and seven **packs** named for what they hold: `WoWForeverJapanese_VoiceLevels1to10` through `…Levels51to60`, and `…Other`. How it works: [Voice over](../systems/voice.md); decisions: [ADR-061](../adr/061-voice-over-from-a-separate-pack.md), ADR-062, [ADR-074](../adr/074-voices-cloned-from-the-games-npc-voice-sets.md) (voices cloned from the game's NPC voice sets). The audio lives in its own repository, `zyaga/wow-forever-japanese-voice` (private for now), whose checkout is the audio store, `build/voice/` in the main checkout: every recording, with every older one in its history. This repository commits the audio record, `data/voice/audio.jsonl`, and the audio commit that goes with its text, `pipeline/voice-audio-commit.txt`. The packs are build output under `build/voice-pack/`.
+Make the Japanese voice from the Japanese the addon ships, copy it into the Forever client for a test, and release it. The voice ships as the **Voice entry**, `WoWForeverJapanese_Voice` (no audio; on CurseForge it requires every pack, so the app installs them all from one click), and seven **packs** named for what they hold: `WoWForeverJapanese_VoiceLevels1to10` through `…Levels51to60`, and `…Other`. How it works: [Voice over](../systems/voice.md); decisions: [ADR-061](../adr/061-voice-over-from-a-separate-pack.md), ADR-062, [ADR-074](../adr/074-voices-cloned-from-the-games-npc-voice-sets.md) (voices cloned from the game's NPC voice sets), [ADR-090](../adr/090-voice-in-sentences-with-real-timing.md) (every recording timed, and shipped as one file per sentence). The audio lives in its own repository, `zyaga/wow-forever-japanese-voice` (private for now), whose checkout is the audio store, `build/voice/` in the main checkout: every recording, whole, with every older one in its history. This repository commits the audio record, `data/voice/audio.jsonl` (with each recording's cuts and timing), and the audio commit that goes with its text, `pipeline/voice-audio-commit.txt`. The packs are build output under `build/voice-pack/`: each recording snipped at its cuts into one file per sentence.
 
 ## Prerequisites
 
 - **No AivisSpeech.** Every voice line is a cloned game voice (ADR-074); the AivisSpeech Engine in `build/aivis/` is no longer started by any voice run. The Modal client (`make voice-modal-setup`, then one `modal token new`) and, for local runs, the Qwen3-TTS environment (`make voice-qwen-setup`) are what a run needs.
-- **`lame`** on the `PATH` (WAV to MP3).
+- **`lame`** on the `PATH` (WAV to MP3), and **`ffmpeg`** (loudness, and decoding a stored MP3 for the timing step when its WAV is not archived).
+- For the timing step: the two aligner environments in the main checkout ([Timing](#timing)).
 - The pinned VMaNGOS database (`VMANGOS_DB`, commit `VMANGOS_SHA` in the Makefile), as for `make import-english`.
 - The repo venv (`.venv`); `make` uses it when it exists, or pass `PY=<repo>/.venv/bin/python`.
 - The set clips under `build/voice-sets/` ([Cloned game voice sets](#cloned-game-voice-sets)): every line is read from a reference joined from them.
@@ -20,11 +21,60 @@ Make the Japanese voice from the Japanese the addon ships, copy it into the Fore
    ```
    This runs the three steps below in order. Each can be run alone.
    - `make voice-speakers`: writes `data/voice/speakers.jsonl` (who says each voiced line): for a quest line, the creature Spoken's newest corpus names for it (`make voice-spoken-fetch` runs first); otherwise VMaNGOS, the quest cache's conditional descriptions, forever-vo's player captures and the collector's NPC ids; a signed book page is read by its writer. It runs `make voice-levels` first (the committed quest level table). Read its report: narrator lines, conflicts (two creatures for one line), lines with no Japanese. A gossip line that ships as the English it is (a made-up language, a name alone) gets no speaker and is never voiced: the engine reads Japanese. The report lists such a line under missing. Who each creature is (`data/voice/profiles.jsonl`) and the voice it is cast in (`data/voice/voices.jsonl`, written by `wfj voice cast` from `pipeline/voice.toml`) are separate steps (`wfj voice profiles`, `wfj voice cast`). The files are data: commit them with the ticket, after `make validate` passes.
-   - `make voice-generate`: first runs `make voice-match` (Spoken's newest corpus, then speakers, voice sets and the cast), so run `make voice-match` yourself before counting a run: the count then already follows the newest Spoken. Then it makes the missing and changed files in the audio store (`build/voice/audio/<key>.mp3`, `<key>_<voice>.mp3` for a variant; the store keeps its README and license at the top) and records each in `data/voice/audio.jsonl`. A file is made again only when its fingerprint changed: the hash of its Japanese, its roster voice, its set, mode (voice-only or full copy) and reference hash, the `[clone]` temperature and seed, and the hash of its [engine text](#what-the-engine-reads) when that differs from the spoken line. With nothing to make it needs no engine. A line the engine cannot read is logged and left for the next run; the run goes on. Because it runs over the whole game (`--scope all --players all`), it also drops the record rows of files no line uses any more, so `data/voice/audio.jsonl` lists exactly the shipped files (`test_audio_in_step` fails on an unused row). When it made files it then commits and pushes the store and writes the audio pin (`store-sync --if-changed`); when it made nothing, the store, the remote and the pin are left alone. `wfj voice plan` shows what it would make, without making anything.
-   - `make voice-pack`: writes the entry and every pack under `build/voice-pack/`, split by `pipeline/voice-packs.toml` (below), and prints each pack's lines, files, size and room left under the 420 MB cap. Lines whose Japanese changed since their file was made are left out and counted. A pack past 315 MB is marked; a pack past 420 MB stops the build and nothing is written, as does a missing audio store or a store file that is not the recorded take (its SHA-256 differs from the audio record's). `wfj voice record-hashes` fills the SHA-256 of rows made before the field existed, reading the store only.
+   - `make voice-generate`: first runs `make voice-match` (Spoken's newest corpus, then speakers, voice sets and the cast), so run `make voice-match` yourself before counting a run: the count then already follows the newest Spoken. Then it makes the missing and changed files in the audio store (`build/voice/audio/<key>.mp3`, `<key>_<voice>.mp3` for a variant; the store keeps its README and license at the top) and records each in `data/voice/audio.jsonl`. A file is made again only when its fingerprint changed: the hash of its Japanese, its roster voice, its set, mode (voice-only or full copy) and reference hash, the `[clone]` temperature and seed, and the hash of its [engine text](#what-the-engine-reads) when that differs from the spoken line. With nothing to make it needs no engine. A line the engine cannot read is logged and left for the next run; the run goes on. Because it runs over the whole game (`--scope all --players all`), it also drops the record rows of files no line uses any more, so `data/voice/audio.jsonl` lists exactly the shipped files (`test_audio_in_step` fails on an unused row). Then it times the files not timed yet (`wfj voice time`, [Timing](#timing)), so a remade line is timed in the same round. When it made files it then commits and pushes the store and writes the audio pin (`store-sync --if-changed`); when it made nothing, the store, the remote and the pin are left alone. `wfj voice plan` shows what it would make, without making anything.
+   - `make voice-pack`: writes the entry and every pack under `build/voice-pack/`, split by `pipeline/voice-packs.toml` (below), and prints each pack's lines, files, size and room left under the 420 MB cap. Each timed recording is snipped at its cuts into `<stem>-<n>.mp3`, between two MP3 frames, copying the bytes as they are (the pieces played back to back are the stored file); a recording with no cut ships whole. `Register.lua` is format 3. A stored file that is not a plain run of MPEG-2 layer III frames stops the build. Lines whose Japanese changed since their file was made are left out and counted. A pack past 315 MB is marked; a pack past 420 MB stops the build and nothing is written, as does a missing audio store or a store file that is not the recorded take (its SHA-256 differs from the audio record's). `wfj voice record-hashes` fills the SHA-256 of rows made before the field existed, reading the store only.
 2. **Validate** the voice tables with the rest: `make validate`.
 
-There is no engine to start by hand. `make voice-generate` (also behind `make import-draft` and `make report-apply`) sends the lines to Modal ([Reading the cloned voices on Modal](#reading-the-cloned-voices-on-modal-the-default)); with `VOICE_LOCAL=1` it starts the local Qwen3-TTS worker for the run instead ([Timing and load](#timing-and-load)). `make voice-run` always reads locally: the whole game in the background, the Mac kept awake. A file a stopped run was encoding is never left half written, and the files a run finishes are written to the audio record as it goes (at most once a second, and when it ends), so a run stopped at any point (`make voice-stop`, Ctrl-C) keeps all but its last second's finished work and the next run reads only what is left. The code that starts the AivisSpeech Engine (`build/aivis/`, `--engine-run`) is still in the pipeline, but no speaker is cast to an AivisSpeech voice, so no run starts it.
+There is no engine to start by hand. `make voice-generate` (also behind `make import-draft` and `make report-apply`) sends the lines to Modal ([Reading the cloned voices on Modal](#reading-the-cloned-voices-on-modal-the-default)); with `VOICE_LOCAL=1` it starts the local Qwen3-TTS worker for the run instead ([Timing and load](#timing-and-load)). `make voice-run` always reads locally: the whole game in the background, the Mac kept awake, then the timing step. A file a stopped run was encoding is never left half written, and the files a run finishes are written to the audio record as it goes (at most once a second, and when it ends), so a run stopped at any point (`make voice-stop`, Ctrl-C) keeps all but its last second's finished work and the next run reads only what is left. The code that starts the AivisSpeech Engine (`build/aivis/`, `--engine-run`) is still in the pipeline, but no speaker is cast to an AivisSpeech voice, so no run starts it.
+
+## Timing
+
+Every recording is timed by two speech models, so the packs can ship it as one file per sentence and the voice panel can turn its pages and mark the words as they are spoken ([ADR-090](../adr/090-voice-in-sentences-with-real-timing.md), [Voice over → The pipeline](../systems/voice.md#the-pipeline-wfj-voice)). `make voice-generate` and `make voice-run` end with this step; run it alone after a run that stopped, or to time the archive.
+
+### Setup
+
+The two models run in their own environments in the main checkout, never in the pipeline's venv. Both are set up on the maintainer's machine. To make them again:
+
+| Interpreter | Default (main checkout) | Override | Holds |
+|---|---|---|---|
+| ReazonSpeech (`japanese-wav2vec2-large-rs35kh`, Apache-2.0) | `build/tts-venv/bin/python` | `ALIGN_REAZON_PY` | torch, torchaudio, transformers, pykakasi, soundfile (already there) |
+| Qwen3-ForcedAligner-0.6B (Apache-2.0) | `build/aligner-venv/bin/python` | `ALIGN_QWEN_PY` | `qwen-asr`, soundfile |
+
+```bash
+uv venv --python 3.12 build/aligner-venv
+VIRTUAL_ENV=build/aligner-venv uv pip install qwen-asr soundfile
+```
+
+Both models download to the Hugging Face cache on their first run. `ALIGN_DEVICE=cpu` runs them on the CPU and keeps the GPU free, several times slower.
+
+### Running it
+
+```bash
+make voice-time LIMIT=50     # a trial: the first 50 lines not timed yet
+make voice-time              # every recording not timed yet (overnight for the whole archive)
+```
+
+It runs under `caffeinate`, so the Mac stays awake. Each line's source is its uncompressed WAV in `VOICE_WAV_ARCHIVE`, found by the name its remote run gave it; a line with no archived WAV is timed from its stored MP3, decoded with ffmpeg, with its times moved back by the MP3 lead (55 ms). ReazonSpeech runs over all the lines first, then Qwen's aligner. The models' answers are kept per line in `build/voice-time/` (`reazon.jsonl`, `qwen.jsonl`, the decoded WAVs), and the audio record is written every 2,000 lines and at the end, so a stopped run resumes where it was. It writes no audio: the store and the pin do not move. It holds the same run lock as `generate`, so it does not run beside a voice run.
+
+Each record gets `cuts` (seconds), `timing` (the timing string) and `timing_of` (the fingerprint it was timed from). A remade file has a new fingerprint, so it is timed again. A cut is made in the middle of the pause before a sentence only when the pause is at least 150 ms and both models agree the sentence before has ended and the next has not begun; otherwise those sentences share a file.
+
+Commit `data/voice/audio.jsonl` after the run. `tests/python/test_voice.py::test_every_voiced_line_is_timed_from_its_own_recording` fails while a voiced recording has no timing, was timed from another recording, has a timing that does not cover its Japanese, or has cuts out of order.
+
+### The report
+
+`build/voice-time/report.md`, printed at the end:
+
+| Line | Meaning |
+|---|---|
+| Lines timed | of the lines this run had to time |
+| Sentence breaks, cut, kept together | how many sentence starts there were, how many got a cut, how many share a file because no pause was confirmed |
+| Timed from a decoded MP3 | lines with no archived WAV |
+| Lines where the two models disagree | more than 2 words more than 300 ms apart: listed for a listen; their timing still ships |
+| Failed | no source, no answer from a model, an unreadable WAV; the command exits 1 |
+
+### Numbers
+
+Measured on a 1,000-line trial on the M1 Pro's GPU: each model runs at about 30 times real time, so the whole archive takes about 7 hours with both. The two models' word starts agree within 200 ms on 97.8% of words, and 99.6% of 3,008 cuts were confirmed. Pause detection alone, without the models, placed 32% of cuts right.
 
 ## Display ids for the panel's head
 
@@ -231,6 +281,10 @@ The voice is released by the main [Release](release.md) workflow, one run for ev
 | 3 | Give the Release workflow read access to the audio repository: a read-only deploy key on `zyaga/wow-forever-japanese-voice`, its private half as the repository secret **`VOICE_REPO_KEY`** of the addon repository. | The workflow's CurseForge token is the addon's `CF_API_KEY`, which already reaches the voice projects. |
 | 4 | For local dry runs and rehearsals: a CurseForge API token where `make voice-release` can read it. | `CF_API_KEY` in the environment for the one run, or a local, untracked `VOICE_TOKEN_CMD` setting that prints it. It is never written into the repository or to disk by the release. |
 
+### Sentence packs and players
+
+The packs ship format 3: each line in sentence files with its timing ([ADR-090](../adr/090-voice-in-sentences-with-real-timing.md)). The first release in format 3 changes every pack, so every player downloads the voice once more, at the same size. Players update the packs in the CurseForge app, separately from the addon (each pack is its own installed addon; Update All covers them). The addon still plays older packs whole and names them at login as out of date. An addon too old for format 3 takes none of a new pack's lines, and the pack says so at login. Release the addon first, as the Release workflow already does.
+
 ### Cutting a voice release
 
 Merge the pull request that carries the audio record and the pin, then start the Release workflow (**Actions → Release → Run workflow**, or `make release`). The addon goes first when it has changelog lines; a pack never reaches players before the text it was made from.
@@ -248,8 +302,8 @@ It refuses unless the audio store sits at the pinned commit with nothing uncommi
 | Step | What happens |
 |---|---|
 | Build | As `make voice-pack`: the split, the size table, the cap. |
-| Versions | Each pack's version is the date and the first eight characters of its content hash (the audio records of its files, its `Register.lua`, the client interface and its CurseForge project id, so a pack released before its project existed goes up once it has one). A pack whose hash equals the one in the latest `voice-v*` GitHub release's asset names is unchanged and keeps its released version. The entry changes only when the set of packs with a project changes. No release state is committed. |
-| Check | Every zip holds only its folder's TOC, README, `Register.lua` and the recorded Sound files, and every recorded file is there. |
+| Versions | Each pack's version is the date and the first eight characters of its content hash (the audio records of its files, its `Register.lua`, which carries the cuts' pieces and the timing, the client interface and its CurseForge project id, so a pack released before its project existed goes up once it has one). A pack whose hash equals the one in the latest `voice-v*` GitHub release's asset names is unchanged and keeps its released version. The entry changes only when the set of packs with a project changes. No release state is committed. |
+| Check | Every zip holds only its folder's TOC, README, `Register.lua` and the Sound files its pack ships (each recording's sentence pieces, the error lines), and every one of them is there. |
 | CurseForge | Each changed pack with a project id is uploaded to its project, then the entry if it changed, naming the main addon (`addon_slug`) and every pack as required dependencies, so the app never installs voice without the addon. The game version is chosen as the main addon's packager chooses it; the release type (alpha, beta or release) follows the main addon's latest release tag. |
 | GitHub | One release, `voice-vYYYY.MM.DD`, never marked latest (the main addon's release stays the latest). It starts as a draft before the first upload, and each zip is added to it the moment CurseForge accepts it, so a run that fails partway is resumed from its draft and uploads nothing twice. At the end it gets every zip, `WoWForeverJapanese_Voice-all-<date>.zip` holding the entry and every pack (for players who install by hand), and a small `voice-inputs-…txt` naming what the packs were built from (left off when the entry went up without some packs, so the next release runs the voice job and retries it), then it is published. A zip of 2 GiB or more (GitHub's limit) stops the run before any upload. |
 
@@ -261,7 +315,7 @@ When a pack nears the cap (the build marks it past 315 MB), split its band: a ne
 
 ## Numbers
 
-The cloned voices, as `make voice-pack` printed them for the current audio: 16,571 files, about 1.32 GB.
+The cloned voices, as `make voice-pack` printed them for the current audio: 16,571 recordings, about 1.32 GB. Shipped as sentence files the packs hold about four times as many files, but the pieces add up to the stored files byte for byte, so the sizes below do not change.
 
 | Pack | Size | Room under 420 MB |
 |---|---|---|
@@ -278,7 +332,8 @@ Levels 51-60 is past the 315 MB mark: when it grows near the cap, split its band
 ## Open work
 
 - Not voiced: quest objectives, audio per class or race (the player's name, class and race are spoken as 冒険者), the trainer window's text.
+- Not built: playing a saved word's sentence on the study card, and a sound column in the Anki export. Both can use the sentence files.
 
 ## Related
 
-- [Voice over](../systems/voice.md) · [ADR-061](../adr/061-voice-over-from-a-separate-pack.md) · [ADR-074](../adr/074-voices-cloned-from-the-games-npc-voice-sets.md) · [ADR-078](../adr/078-japanese-names-keyed-by-english-and-kana-voice-lines.md) · [ADR-082](../adr/082-names-spelled-from-the-english-and-the-voice-reads-its-own-text.md) · [Local setup](local-setup.md) · [Testing strategy](../testing/strategy.md#voice-over-checklist) · [Research](../research/2026-10-04-japanese-voice-over.md)
+- [Voice over](../systems/voice.md) · [ADR-061](../adr/061-voice-over-from-a-separate-pack.md) · [ADR-074](../adr/074-voices-cloned-from-the-games-npc-voice-sets.md) · [ADR-078](../adr/078-japanese-names-keyed-by-english-and-kana-voice-lines.md) · [ADR-082](../adr/082-names-spelled-from-the-english-and-the-voice-reads-its-own-text.md) · [ADR-090](../adr/090-voice-in-sentences-with-real-timing.md) · [Local setup](local-setup.md) · [Testing strategy](../testing/strategy.md#voice-over-checklist) · [Research](../research/2026-10-04-japanese-voice-over.md)

@@ -1,0 +1,6 @@
+- **The voice panel follows the voice.** The page turns as each sentence starts, and a soft tint marks the words as they are spoken. Pausing and playing again picks up at the sentence you paused in.
+- **Update all your voice packs once.** They now hold each line as one file per sentence. Use Update All in the CurseForge app; the download is the same size. At login the addon names any voice pack that is out of date.
+- **Right-click menus in Japanese** on the target, party and raid frames and on a player's name. Names stay in English.
+- **The quest log shows the quest giver's head** again after a reload, a restart or a game patch.
+- **NPC lines that name another player** are now in Japanese, with that player's name in them.
+- **Fixes** for the game blocking an action with the addon named (after picking from a menu, changing your chat language, or moving through an NPC talk window with a controller), and for two Lua errors.
