@@ -23,3 +23,5 @@ No hand-written line is replaced by machine text without a ruling on that line.
 ## Changelog
 
 <The line added under `## Unreleased` in CHANGELOG.md, or "none" for changes that do not reach players.>
+
+A new changelog line also updates `docs/releases/next/en.md` and `ja.md` (the release post's highlights).

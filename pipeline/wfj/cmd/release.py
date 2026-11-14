@@ -16,8 +16,9 @@
   wfj release notes --version X.Y.Z --notes PATH
       Write an already-released version's notes to PATH (for a resumed release).
   wfj release changelog-gate --base REF
-      The pull-request gate: a change to addon/ or data/ adds a line under `## Unreleased`; released sections
-      are never edited; added lines name no local path and nothing the private rules name.
+      The pull-request gate: a change to addon/ or data/ adds a line under `## Unreleased`; a pull request
+      that adds such a line updates the release post's summaries (docs/releases/next/en.md and ja.md) too;
+      released sections are never edited; added lines name no local path and nothing the private rules name.
 
 The changelog is CHANGELOG.md at the repo root, in the Keep a Changelog shape plus a `### Breaking` group.
 """
@@ -298,6 +299,11 @@ def gate(
         problems.append(
             "this change touches addon/ or data/: "
             f"add a line for players under '## {UNRELEASED}' in {CHANGELOG}"
+        )
+    if added and base_text is not None and not {NEXT_EN, NEXT_JA} <= set(changed):
+        problems.append(
+            f"a new line under '## {UNRELEASED}' goes in the release post too: update {NEXT_EN} and "
+            f"{NEXT_JA} (four to six highlights, the most important first, the same points in both)"
         )
     if base_text is not None and [(s.title, s.date, _trim(s.lines)) for s in base.released()] != [
         (s.title, s.date, _trim(s.lines)) for s in head.released()

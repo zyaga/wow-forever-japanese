@@ -169,7 +169,7 @@ def test_gate_needs_a_line_when_addon_or_data_changes():
         problems = release.gate(BASE, BASE, [path])
         assert len(problems) == 1 and "add a line for players" in problems[0]
     added = BASE.replace("- Old line.\n", "- Old line.\n- New line.\n")
-    assert release.gate(BASE, added, ["addon/WoWForeverJapanese/Main.lua", JA]) == []
+    assert release.gate(BASE, added, ["addon/WoWForeverJapanese/Main.lua", JA, EN]) == []
 
 
 def test_gate_exempts_changes_that_do_not_reach_the_game():
@@ -179,7 +179,7 @@ def test_gate_exempts_changes_that_do_not_reach_the_game():
 
 def test_gate_counts_a_repeated_line_as_added():
     added = BASE.replace("- Old line.\n", "- Old line.\n- Old line.\n")
-    assert release.gate(BASE, added, ["data/x", JA]) == []
+    assert release.gate(BASE, added, ["data/x", JA, EN]) == []
 
 
 def test_gate_refuses_edits_to_released_sections():
@@ -193,14 +193,14 @@ def test_gate_refuses_edits_to_released_sections():
 @pytest.mark.parametrize("line", ["- See /" + "home/someone/notes.", "- See ~/notes.", "- See C:\\Games\\notes."])
 def test_gate_refuses_local_paths(line):
     added = BASE.replace("- Old line.\n", f"- Old line.\n{line}\n")
-    problems = release.gate(BASE, added, ["addon/x.lua", JA])
+    problems = release.gate(BASE, added, ["addon/x.lua", JA, EN])
     assert problems == [f"changelog line names a local path or something private: {line}"]
 
 
 @pytest.mark.parametrize("line", ["- Fixed the gossip window (" + "WFJ" + "-12).", "- Fixed it (" + "wfj" + " 12)."])
 def test_gate_refuses_tracker_ids_without_any_rules_file(line):
     added = BASE.replace("- Old line.\n", f"- Old line.\n{line}\n")
-    assert release.gate(BASE, added, ["addon/x.lua", JA]) == [f"changelog line names a local path or something private: {line}"]
+    assert release.gate(BASE, added, ["addon/x.lua", JA, EN]) == [f"changelog line names a local path or something private: {line}"]
 
 
 def test_gate_refuses_what_the_private_rules_name():
@@ -209,19 +209,22 @@ def test_gate_refuses_what_the_private_rules_name():
     rules = public_text.private_rules({"patterns": {"codename": r"(?i:\bzebra-\d+)"}, "words": ["quokka"]})
     for line in ("- Fixed the gossip window (Zebra-12).", "- Thanks to Quokka."):
         added = BASE.replace("- Old line.\n", f"- Old line.\n{line}\n")
-        assert release.gate(BASE, added, ["addon/x.lua", JA]) == []
-        assert release.gate(BASE, added, ["addon/x.lua", JA], rules) == [
+        assert release.gate(BASE, added, ["addon/x.lua", JA, EN]) == []
+        assert release.gate(BASE, added, ["addon/x.lua", JA, EN], rules) == [
             f"changelog line names a local path or something private: {line}"
         ]
 
 
-def test_gate_asks_nothing_of_the_post_for_a_changelog_line():
-    """The post's summaries are written for the release, not line by line with each pull request."""
+def test_gate_needs_both_summaries_with_a_new_changelog_line():
+    """Each pull request keeps the release post current, so a release never waits on it."""
     added = BASE.replace("- Old line.\n", "- Old line.\n- New line.\n")
-    assert release.gate(BASE, added, ["addon/x.lua"]) == []
-    assert release.gate(BASE, added, ["docs/x.md"]) == []
-    reworded = BASE.replace("- Old line.", "- Old line, reworded.")
-    assert release.gate(BASE, reworded, ["docs/x.md"]) == []
+    for changed in (["addon/x.lua"], ["addon/x.lua", JA], ["docs/x.md", EN]):
+        problems = release.gate(BASE, added, changed)
+        assert len(problems) == 1 and "goes in the release post too" in problems[0]
+    assert release.gate(BASE, added, ["addon/x.lua", JA, EN]) == []
+
+
+def test_gate_asks_nothing_of_the_post_without_a_new_line():
     removed = BASE.replace("### Fixed\n- Old line.\n\n", "")
     assert release.gate(BASE, removed, ["docs/x.md"]) == []
     assert release.gate(BASE, BASE, ["pipeline/x.py"]) == []
@@ -341,6 +344,13 @@ def test_cli_changelog_gate(repo, git, capsys):
     text = (repo / "CHANGELOG.md").read_text(encoding="utf-8") + "- The x window in Japanese.\n"
     (repo / "CHANGELOG.md").write_text(text, encoding="utf-8")
     git(repo, "commit", "-qam", "changelog line")
+    assert release.run(["changelog-gate", "--base", "main"]) == 1
+    assert "goes in the release post too" in capsys.readouterr().err
+    (repo / "docs" / "releases" / "next").mkdir(parents=True, exist_ok=True)
+    (repo / release.NEXT_EN).write_text("- The x window in Japanese.\n", encoding="utf-8")
+    (repo / release.NEXT_JA).write_text("- x ウィンドウを日本語化。\n", encoding="utf-8")
+    git(repo, "add", ".")
+    git(repo, "commit", "-qm", "release post")
     assert release.run(["changelog-gate", "--base", "main"]) == 0
     assert "changelog-gate: ok" in capsys.readouterr().out
 
