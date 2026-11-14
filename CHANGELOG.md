@@ -9,6 +9,8 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+## 0.13.1 - 2026-11-14
+
 ### Changed
 - The right-click menus on the target, party and raid frames, and on a player's name or a friend, are in Japanese. Names stay in English.
 
