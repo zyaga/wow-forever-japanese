@@ -73,8 +73,6 @@ local function count(s, pattern)
   return n
 end
 
--- The Japanese for the server's English (with its `%s`, before the speaker is filled in). key: its gossip key when
--- the caller already has it. → ja | nil
 -- The shipped Japanese under `key`, its tokens not filled yet. → ja | nil
 local function shippedJa(key)
   if key == nil then return nil end
@@ -83,6 +81,8 @@ local function shippedJa(key)
   return entry.ja
 end
 
+-- The Japanese for the server's English (with its `%s`, before the speaker is filled in). key: its gossip key when
+-- the caller already has it. → ja | nil
 function Speech.translate(en, key)
   if type(en) ~= "string" or en == "" or not deps.key then return nil end
   local raw = shippedJa(key or deps.key(en))
@@ -94,14 +94,19 @@ end
 
 -- The Japanese for English that names another player (other = { name, sex }), filled with that name. A token
 -- their name cannot fill ({class}, {race}), or a male / female pair while their sex is unknown, leaves the English:
--- this character's own class, race or sex would be wrong for them. → ja | nil
+-- this character's own class, race or sex would be wrong for them. The key is the shipped row's (a hash of the
+-- English with `$n`, so it holds no name), also for a refused line. → ja | nil, key | nil
 function Speech.translateAs(en, other)
   if type(deps.keyAs) ~= "function" or type(deps.expandAs) ~= "function" then return nil end
-  local raw = shippedJa(deps.keyAs(en, other.name))
-  if not raw or (raw:find("<%a+/%a+>") and not other.sex) then return nil end
+  local key = deps.keyAs(en, other.name)
+  local raw = shippedJa(key)
+  if not raw then return nil end
+  if raw:find("<[A-Za-z]+/[A-Za-z]+>") and not other.sex then return nil, key end
   local ja = deps.expandAs(raw, other)
-  if type(ja) ~= "string" or ja == "" or ja:find("{%a+}") or count(ja, "%%s") ~= count(en, "%%s") then return nil end
-  return ja
+  if type(ja) ~= "string" or ja == "" or ja:find("{[A-Za-z]+}") or count(ja, "%%s") ~= count(en, "%%s") then
+    return nil, key
+  end
+  return ja, key
 end
 
 -- Whether `word` stands in `text` as a word of its own: no letter, digit or byte of a multi-byte letter beside it.
@@ -117,58 +122,80 @@ local function wholeWord(text, word)
   end
 end
 
+-- Whether a player's name stands in `text`, as written or in capitals (a yell).
+local function named(text, name)
+  return wholeWord(text, name) or wholeWord(text, name:upper())
+end
+
 -- A first name from a full one ("Sky Zero", "Sky-Zero"): the server writes only this into `$n`.
 local function firstName(name) return name:match("^[^%s%-]+") end
 
--- The party's first names and sexes (UnitSex: 2 male, 3 female, else unknown), this character left out.
+-- The party's first names and sexes (UnitSex: 2 male, 3 female, else unknown), this character left out, and whether
+-- a party member's name cannot be read (a secret, or the client's "Unknown" while it loads). → list, unreadable
 local function partyMembers(me)
-  local out = {}
+  local out, unreadable = {}, false
   local unitName, unitSex = Compat.resolve("UnitName"), Compat.resolve("UnitSex")
-  if type(unitName) ~= "function" then return out end
+  if type(unitName) ~= "function" then return out, false end
+  local unknown = Compat.resolve("UNKNOWNOBJECT")
   for i = 1, 4 do
     local unit = "party" .. i
     local name = unitName(unit)
-    name = type(name) == "string" and not secret(name) and firstName(name) or nil
+    if secret(name) or (name ~= nil and name == unknown) then
+      unreadable = true
+      name = nil
+    end
+    name = type(name) == "string" and firstName(name) or nil
     if name and name ~= me then
       local sex = type(unitSex) == "function" and unitSex(unit) or nil
       out[#out + 1] = { name = name, sex = not secret(sex) and (sex == 2 or sex == 3) and sex or nil }
     end
   end
-  return out
+  return out, unreadable
 end
 
--- The other players a line may name, in the order they are tried, and how they were found: for a line to another
--- player, the target's first name, then the whole target; for a line to no one, each party member whose first name
--- stands in it. Only names that stand in the line as words are tried. → { { name, sex }, … }, "target" | "party"
+-- The other players a line may name, in the order they are tried ({ name, sex, via }): for a line to another player,
+-- the target's first name, then the whole target (via "target"); then each party member whose first name stands in
+-- the line (via "party"), which also finds a target whose surname is joined in a way the split does not know. Only
+-- names that stand in the line as words are tried. namesParty: a party member's name stands in the line, or one
+-- cannot be read, so the line may hold it. → list, namesParty
 local function otherNames(en, target, me)
-  local party = partyMembers(me)
+  local party, unreadable = partyMembers(me)
+  local out, seen = {}, {}
+  local function add(name, sex, via)
+    if name and name ~= me and not seen[name] and wholeWord(en, name) then
+      seen[name] = true
+      out[#out + 1] = { name = name, sex = sex, via = via }
+    end
+  end
   if target then
-    local out, first = {}, firstName(target)
+    local first = firstName(target)
     local sex
     for _, p in ipairs(party) do
       if p.name == first then sex = p.sex end
     end
-    for _, name in ipairs({ first, target }) do
-      if name ~= me and name ~= (out[1] and out[1].name) and wholeWord(en, name) then
-        out[#out + 1] = { name = name, sex = sex }
-      end
-    end
-    return out, "target"
+    add(first, sex, "target")
+    add(target, sex, "target")
   end
-  local out = {}
+  local namesParty = unreadable
   for _, p in ipairs(party) do
-    if wholeWord(en, p.name) then out[#out + 1] = p end
+    if named(en, p.name) then
+      namesParty = true
+      add(p.name, p.sex, "party")
+    end
   end
-  return out, "party"
+  return out, namesParty
 end
 
--- The first of `others` whose name gives the line shipped Japanese. → ja | nil
+-- The first of `others` whose name gives the line shipped Japanese, with its key and how the name was found; with
+-- none, the key of a shipped line that was refused. → ja, key, via | nil, key | nil
 local function translateOthers(en, others)
+  local refused
   for _, other in ipairs(others) do
-    local ja = Speech.translateAs(en, other)
-    if ja then return ja end
+    local ja, key = Speech.translateAs(en, other)
+    if ja then return ja, key, other.via end
+    refused = refused or key
   end
-  return nil
+  return nil, refused
 end
 
 -- The Japanese as a format() string: every `%` but the speaker's `%s` escaped.
@@ -340,11 +367,10 @@ local function handle(frame, line, typeId, event, eventArgs, formatter)
   local toOther = type(target) == "string" and target ~= "" and not secret(target) and target ~= me
   lastTarget = Speech.targetShape(target, me)
   lastCollect = "not asked"
-  local others, via = {}, nil
+  local others, namesParty = {}, false
   if toOther or (not secret(target) and (target == nil or target == "")) then
-    others, via = otherNames(en, toOther and target or nil, me)
+    others, namesParty = otherNames(en, toOther and target or nil, me)
   end
-  local namesParty = via == "party" and #others > 0 -- a line to no one naming a party member holds their name too
   if WFJ.Collector and not secret(guid) and not secret(target) and not toOther and not namesParty
       and Speech.knownLanguage(language) then
     local result, reason = WFJ.Collector.recordGossip(en, guid)
@@ -356,8 +382,12 @@ local function handle(frame, line, typeId, event, eventArgs, formatter)
   if not WFJ.ChatSystem.on(AREA) then return why("NPC talk off", frame, event, en, key) end
   local ja = Speech.translate(en, key)
   if not ja and not (key ~= nil and shipped(key)) then
-    ja = translateOthers(en, others)
-    if ja then lastOther = via end
+    local otherKey, via
+    ja, otherKey, via = translateOthers(en, others)
+    if otherKey then -- the row's key holds no name; the line's own key would
+      key, lastKey = otherKey, otherKey
+    end
+    lastOther = ja and via or nil
   end
   local jaLine = line
   if ja then
@@ -365,7 +395,7 @@ local function handle(frame, line, typeId, event, eventArgs, formatter)
     if ok and type(formatted) == "string" then
       jaLine = formatted
     else
-      ja = nil
+      ja, lastOther = nil, nil
       why("formatter error", frame, event, en, key)
     end
   elseif key ~= nil and shipped(key) then
@@ -404,7 +434,7 @@ function Speech.translateNamed(en)
   if key ~= nil and shipped(key) then return nil end
   local unitName = Compat.resolve("UnitName")
   local me = type(unitName) == "function" and unitName("player") or nil
-  return translateOthers(en, (otherNames(en, nil, me)))
+  return (translateOthers(en, (otherNames(en, nil, me))))
 end
 
 -- Every NPC line is traced, translated or not, so one sighting in play names why a line stayed English without a

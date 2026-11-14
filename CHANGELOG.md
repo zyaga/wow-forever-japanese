@@ -19,7 +19,7 @@ an old setting stops working). A release moves those lines under its version num
 - Chat messages are no longer refused ("interface action failed", with the addon named) after you change your chat language from the chat bubble menu. The menu looks the same as before.
 - With a controller, the cursor moves between the options in an NPC talk window again. It used to stay on the top option with an "interface action failed" message. In the first talk window after login or a reload, and while you hold the key to see the English, a line can now run into the one below it or leave a gap; talking to the NPC again puts it right.
 - The quest log's play button shows the quest giver's head again after a reload, a restart or a game patch. It used to show no head until you met that NPC again. A head that takes a moment to load now appears instead of staying blank.
-- An NPC line in chat or a speech bubble that names another player in your party, such as an escort NPC thanking the party member who owns the quest, is now in Japanese with that player's name in it. It used to stay in English.
+- An NPC line in chat or a speech bubble that names another player, such as an escort NPC thanking the party member who owns the quest, is now in Japanese with that player's name in it. It used to stay in English.
 
 ## 0.13.0 - 2026-11-12
 

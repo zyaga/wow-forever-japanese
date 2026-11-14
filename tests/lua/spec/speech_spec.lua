@@ -601,6 +601,42 @@ describe("NPC speech", function()
       assert.is_nil(WFJ.Speech.translateNamed("The rest is stale."))
     end)
 
+    it("a target whose surname is joined by an unknown mark is still found by the party's names", function()
+      party.party1 = { name = "Sky", surname = "Zero", sex = 2 }
+      npc(f, SAY, "%s says: ", THANKS, SPEAKER, GUID, "Sky\194\160Zero")
+      assert.are.equal(THANKS_JA, f:Last())
+      assert.are.equal("party", traced().other)
+    end)
+
+    it("a party member whose name cannot be read, or a name in capitals: no line to no one is collected", function()
+      _G.UNKNOWNOBJECT = "Unknown"
+      finally(function() _G.UNKNOWNOBJECT = nil end)
+      party.party1 = { name = "Unknown", sex = 2 }
+      npc(f, SAY, "%s says: ", "Something no one translated!", SPEAKER, GUID)
+      npc(f, SAY, "%s says: ", "Unknown lands lie ahead.", SPEAKER, GUID)
+      assert.are.equal("\"Stinky\" Ignatzの発言: Unknown lands lie ahead.", f:Last())
+      party.party1 = { name = "Sky", sex = 2 }
+      secrets.Sky = true
+      npc(f, SAY, "%s says: ", "Something no one translated!", SPEAKER, GUID)
+      assert.is_nil(traced().other)
+      secrets.Sky = nil
+      npc(f, YELL, "%s yells: ", "RUN, SKY!", SPEAKER, GUID)
+      assert.are.same({}, recorded)
+    end)
+
+    it("the log names the row's key, never the line's own (which holds the name)", function()
+      local ROW = keyOf("I can make it from here.  Thanks, Testplayer!") -- the row stored with {name}
+      npc(f, SAY, "%s says: ", THANKS, SPEAKER, GUID, "Sky Zero")
+      assert.are.equal(ROW, traced().key)
+      npc(f, SAY, "%s says: ", "Hail, Sky!", SPEAKER, GUID, "Sky Zero") -- shipped, refused: {class}
+      local refused
+      for _, e in ipairs(db.entries) do
+        if e.kind == "speech" and e.msg == "translation refused" then refused = e end
+      end
+      assert.are.equal(keyOf("Hail, Testplayer!"), refused.key)
+      assert.are.equal(keyOf("Hail, Testplayer!"), traced().key)
+    end)
+
     it("a line in this character's own name keeps the own path", function()
       npc(f, SAY, "%s says: ", "I can make it from here.  Thanks, Testplayer!", SPEAKER, GUID, "Testplayer")
       assert.are.equal("\"Stinky\" Ignatzの発言: ここからは一人で行ける。ありがとう、Testplayer！", f:Last())
