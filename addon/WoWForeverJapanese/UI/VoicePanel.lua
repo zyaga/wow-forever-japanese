@@ -1,7 +1,7 @@
 -- UI/VoicePanel.lua: the voice panel (ADR-063). While a voiced line plays it shows the speaker's head
 -- (UI/VoicePanelHead), the NPC's name and title as the client showed them, and the line's Japanese a sentence at a
 -- time in step with the audio, with word cards (UI/VoicePanelText); the lines waiting their turn, each one clickable;
--- and pause / resume, play again, whole text and close.
+-- and previous / next sentence, pause / resume, play again, whole text and close.
 --   * It draws only: UI/VoicePlayer decides what plays and fires State "voiceQueue" on every change; the panel reads
 --     VoicePlayer.state().
 --   * Its look is one of four (UI/VoicePanelLooks) from the Panel size and Panel style settings; Off hides it.
@@ -34,6 +34,7 @@ local WORDS = {
   upNext = { "Up next (click to play)", "次に読む（クリックで再生）" },
   more = { "Up next (click to play), %d more", "次に読む（クリックで再生）ほか%d件" },
   pause = { "Pause", "一時停止" }, resume = { "Resume", "再開" },
+  back = { "Play the sentence before", "前の文を再生" }, on = { "Play the next sentence", "次の文を再生" },
   replay = { "Play again from the start", "最初から再生" }, whole = { "Show the whole text", "全文を表示" },
   ["questframe.detail"] = { "Quest", "クエスト" }, ["questframe.progress"] = { "Progress", "途中経過" },
   ["questframe.reward"] = { "Turn-in", "完了" }, ["questframe.greeting"] = { "Greeting", "あいさつ" },
@@ -46,6 +47,8 @@ local ICON = {
   pause = "Interface\\TimeManager\\PauseButton",
   play = "Interface\\Buttons\\UI-SpellbookIcon-NextPage-Up",
   replay = "Interface\\TimeManager\\ResetButton",
+  back = "Interface\\MoneyFrame\\Arrow-Left-Up", -- the client's small gold arrows (MoneyFrame); the page arrow is play
+  on = "Interface\\MoneyFrame\\Arrow-Right-Up",
   book = "Interface\\Spellbook\\Spellbook-Icon", -- the book icon of the client's book window (itemtextframe.xml)
   hilight = "Interface\\Buttons\\UI-Common-MouseHilight",
 }
@@ -503,6 +506,10 @@ function Panel.update()
   Head.setTalking(f.head, st.playing)
   updateQueue(st)
   f.pause:SetNormalTexture((st.paused or (st.item ~= nil and not st.playing)) and ICON.play or ICON.pause)
+  local shown = st.item or st.last -- the sentence arrows only for a line in sentences
+  local steps = shown and shown.sentences and #shown.sentences > 1 and true or false
+  f.back:SetShown(steps)
+  f.on:SetShown(steps)
   if not fadeFrom then f:SetAlpha(baseAlpha()) end -- mid-fade, the tick owns the alpha
   applyControls()
   local was = f:IsShown()
@@ -593,12 +600,16 @@ local function build()
   f.textButton:SetPoint("RIGHT", f.close, "LEFT", -2, 0)
   f.replay = control(ICON.replay, function() return word("replay") end, function() P.replay() end)
   f.replay:SetPoint("RIGHT", f.textButton, "LEFT", -2, 0)
+  f.on = control(ICON.on, function() return word("on") end, function() P.step(1) end)
+  f.on:SetPoint("RIGHT", f.replay, "LEFT", -2, 0)
   f.pause = control(ICON.pause, function()
     local st = P.state()
     return word((st.paused or not st.playing) and "resume" or "pause")
   end, function() P.togglePause() end)
-  f.pause:SetPoint("RIGHT", f.replay, "LEFT", -2, 0)
-  f.controls = { f.pause, f.replay, f.textButton, f.close }
+  f.pause:SetPoint("RIGHT", f.on, "LEFT", -2, 0)
+  f.back = control(ICON.back, function() return word("back") end, function() P.step(-1) end)
+  f.back:SetPoint("RIGHT", f.pause, "LEFT", -2, 0)
+  f.controls = { f.back, f.pause, f.on, f.replay, f.textButton, f.close }
 
   local lockdown = Compat.resolve("InCombatLockdown") -- built mid-combat: dimmed from the start
   inCombat = type(lockdown) == "function" and lockdown() and true or false

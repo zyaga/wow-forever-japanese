@@ -532,6 +532,29 @@ function VoicePlayer.replay()
   return startHead()
 end
 
+-- One sentence back or on (`delta` -1 or 1) in the panel's line when it plays in sentences: plays the line from that
+-- sentence, whether it was playing, paused or had ended (back from the end is its last sentence). At either end it
+-- plays that end's sentence again. → true when it started
+function VoicePlayer.step(delta)
+  if not queueOn() or not voiceAllowed() then return false end
+  local item = Q.current() or lastItem
+  if not item or not item.sentences or #item.sentences == 0 or not stillVoiced(item) then return false end
+  local n = #item.sentences
+  local now
+  if playing and playing.key == item.key then
+    now = playing.sentence
+  elseif item == Q.current() then
+    now = item.from or 1
+  else
+    now = n + 1 -- the line ended: back is its last sentence
+  end
+  local to = math.max(1, math.min(n, now + delta))
+  silence()
+  if item ~= Q.current() then Q.front(item) end
+  item.from = to
+  return startHead()
+end
+
 -- Empties the queue (the panel's close button).
 function VoicePlayer.clear()
   VoicePlayer.stop()

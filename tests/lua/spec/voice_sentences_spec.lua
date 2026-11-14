@@ -201,6 +201,35 @@ describe("UI/VoicePlayer: a line in sentences", function()
     assert.is_true(math.abs(t - 1.0) < 1e-9)
   end)
 
+  it("the sentence arrows play the line from the sentence before or after, at the ends that end's again", function()
+    setup("full")
+    Stub.showDetail()
+    fire(1.0) -- sentence 2 playing
+    assert.is_true(WFJ.VoicePlayer.step(-1))
+    assert.are.equal(base .. "2-description-1.mp3", sounds[#sounds].path)
+    assert.is_true(WFJ.VoicePlayer.step(-1)) -- already at the first: it plays again
+    assert.are.equal(base .. "2-description-1.mp3", sounds[#sounds].path)
+    assert.is_true(WFJ.VoicePlayer.step(1))
+    assert.are.equal(base .. "2-description-2.mp3", sounds[#sounds].path)
+    assert.is_true(WFJ.VoicePlayer.step(1))
+    assert.is_true(WFJ.VoicePlayer.step(1)) -- already at the last: it plays again
+    assert.are.equal(base .. "2-description-3.mp3", sounds[#sounds].path)
+    -- the line's clock follows: the third sentence starts 2.5 s into the line
+    assert.is_true(math.abs(WFJ.VoicePlayer.timing() - 2.5) < 1e-9)
+  end)
+
+  it("a step from a paused line starts next to where it paused, and from an ended line back is its last", function()
+    setup("full")
+    Stub.showDetail()
+    fire(1.0)
+    assert.is_true(WFJ.VoicePlayer.pause())
+    assert.is_true(WFJ.VoicePlayer.step(1))
+    assert.are.equal(base .. "2-description-3.mp3", sounds[#sounds].path)
+    WFJ.VoicePlayer.stop() -- the line is over: the panel keeps it as its last
+    assert.is_true(WFJ.VoicePlayer.step(-1))
+    assert.are.equal(base .. "2-description-3.mp3", sounds[#sounds].path)
+  end)
+
   it("a line whose pack audio is older than its Japanese says so once, naming the pack", function()
     setup("off")
     WFJ.Voice.register({ format = 3, folder = FOLDER, lines = {
