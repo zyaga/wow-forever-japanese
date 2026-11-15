@@ -217,9 +217,23 @@ def test_pack_tables_name_a_mixed_creatures_two_voices_and_play_a_female_wording
     assert creatures == {2079: "m", 1992: ("f", "old")}
     assert sorted(lines["456-description"]["variants"]) == ["f", "old"]
     fkey = voice.gossip_key(hash_key(normalize_v1("Welcome, madam.")))
-    # the female wording plays the male wording's file; its Japanese differs, so it carries no timing of its own
+    # the female wording plays the male wording's file; its Japanese differs, so its timing is the whole line
     assert lines[fkey]["file"] == lines["g-0123456789abcdef"]["file"] and left_out == []
-    assert lines[fkey]["timing"] is None
+    assert lines[fkey]["timing"] is None  # the male wording here is untimed: nothing to start from
+    assert voice_make.whole_line(6, "2:- 3:40 1:10") == "6:40"
+    assert voice_make.whole_line(6, None) is None
+
+
+def test_a_key_that_plays_another_lines_file_and_shows_its_japanese_keeps_the_timing(world, monkeypatch):
+    voice_make.generate(world.data, "all", CFG, world.store, FakeEngine(), _fake_encode, log=lambda *_: None)
+    audio = voice_make.audio_record(world.data)
+    rec = audio["456-description"]
+    rec.update(cuts=[], timing="3:10", timing_of=rec["fingerprint"])
+    voice_make._write(world.data / "voice" / voice_make.AUDIO, [audio[k] for k in sorted(audio)])
+    monkeypatch.setattr(voice_make, "aliases", lambda root: {"g-00000000000000aa": "456-description"})
+    lines, _, _ = voice_make.pack_tables(world.data, CFG, "all")
+    assert lines["g-00000000000000aa"]["file"] == lines["456-description"]["file"]
+    assert lines["g-00000000000000aa"]["timing"] == "3:10"  # no Japanese of its own: the source's is shown
 
 
 # ---- the commands ----------------------------------------------------------------------------------------

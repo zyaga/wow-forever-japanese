@@ -1125,12 +1125,24 @@ def pack_tables(
                     creatures[c] = (v["voice"], v["female"]) if v.get("female") else v["voice"]
     for alias, src in aliases(root).items():
         if src in out and alias not in out:
-            same = lines.get(alias) == lines.get(src)
-            # the timing follows the source's Japanese: another wording plays the same files untimed
+            # the timing follows the source's Japanese: another wording plays the same files untimed; a key
+            # with no Japanese of its own (a quest's text Forever repeats under another id) shows the source's
+            same = lines.get(alias, lines.get(src)) == lines.get(src)
+            n = len(lines.get(alias) or "")
             out[alias] = out[src] if same else {
-                **out[src], "timing": None,
-                "variants": {v: (f, sec, c, None) for v, (f, sec, c, _) in out[src]["variants"].items()}}
+                **out[src], "timing": whole_line(n, out[src]["timing"]),
+                "variants": {v: (f, sec, c, whole_line(n, t))
+                             for v, (f, sec, c, t) in out[src]["variants"].items()}}
     return out, creatures, sorted(bad)
+
+
+def whole_line(length: int, timing: str | None) -> str | None:
+    """The timing for a line shown in other words than the recording it plays: the whole line one part,
+    from when the recording's first part is said (its word times belong to the other wording)."""
+    if not timing or not length:
+        return None
+    first = next((p.split(":")[1] for p in timing.split() if not p.endswith(":-")), None)
+    return f"{length}:{first}" if first is not None else None
 
 
 def aliases(root: Path) -> dict[str, str]:

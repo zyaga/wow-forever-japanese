@@ -252,7 +252,7 @@ flowchart LR
 
 ## Edge cases
 - A line whose Japanese changed after the pack was made: `stale`, silent, counted. `make voice` remakes only the changed files.
-- A gendered gossip line: the female wording has its own key and plays the male wording's files (untimed when its Japanese differs, so its panel pages by the estimate).
+- A gendered gossip line: the female wording has its own key and plays the male wording's files. When its Japanese differs, its timing is the whole line as one part, from when the recording starts (its words are not the ones spoken). A key with no Japanese of its own, a quest's text the game repeats under another id, shows and times as the line it plays.
 - Packs in mixed formats: an older pack plays whole files as before and is named at login; a format 3 pack under an addon too old for it plays nothing and says so at login. A line in both a whole-file pack and a sentence pack with the same Japanese hash plays the sentences.
 - Two sentences with no confirmed pause between them: they share a file, and the page still turns when the second starts (the timing has its parts).
 - The models disagree on a line (a bad take): its timing still ships, its cuts are only where both agreed, and the run report lists it for a listen.
