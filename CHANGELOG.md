@@ -9,6 +9,9 @@ an old setting stops working). A release moves those lines under its version num
 
 ## Unreleased
 
+### Fixed
+- Battleground announcements in chat are in Japanese: bases taken and assaulted in Arathi Basin, flag captures in Warsong Gulch, and Alterac Valley's mines and towers. A player named in the line keeps their name as the game wrote it. The "[You died.]" link in chat is Japanese in battlegrounds too.
+
 ## 0.13.1 - 2026-11-14
 
 ### Changed

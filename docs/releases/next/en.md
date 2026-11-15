@@ -1,0 +1,2 @@
+- **Battleground announcements in Japanese**: bases taken and assaulted in Arathi Basin, flag captures in Warsong Gulch, and Alterac Valley's mines and towers. Player names stay as the game writes them.
+- **The "[You died.]" link** in chat is Japanese again in battlegrounds too.
