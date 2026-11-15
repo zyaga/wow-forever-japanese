@@ -69,6 +69,11 @@ ChatSystem.PLAIN_TYPES = { "SYSTEM", "SKILL", "CURRENCY", "MONEY", "OPENING", "T
   "TARGETICONS", "BN_WHISPER_PLAYER_OFFLINE", "COLLECTED_APPEARANCE", "LOOT", "COMBAT_XP_GAIN", "COMBAT_HONOR_GAIN",
   "COMBAT_FACTION_CHANGE", "COMBAT_MISC_INFO", "BG_SYSTEM_NEUTRAL", "BG_SYSTEM_ALLIANCE", "BG_SYSTEM_HORDE",
   "ACHIEVEMENT", "GUILD_ACHIEVEMENT" }
+-- The plain types whose lines may be an NPC line's text the server sent as system chat, and those of them (the
+-- battleground announcements) that may name any player in the match.
+ChatSystem.NPC_TEXT_TYPES = { SYSTEM = true, BG_SYSTEM_NEUTRAL = true, BG_SYSTEM_ALLIANCE = true,
+  BG_SYSTEM_HORDE = true }
+ChatSystem.NAMING_TYPES = { BG_SYSTEM_NEUTRAL = true, BG_SYSTEM_ALLIANCE = true, BG_SYSTEM_HORDE = true }
 -- System chat lines outside the UIStrings.CHAT_FAMILIES a SYSTEM line may be (Lua-built: chatframeutil.lua:251–263,
 -- the GMOTD, the community channel notices); key-only through UIStrings.ONLY.
 -- The voice channel's announce line (channelframe.lua:816–828, DisplaySystemMessageInPrimary): the
@@ -79,7 +84,7 @@ ChatSystem.EXTRA_TEMPLATES = { "GUILD_MOTD_TEMPLATE", "TIME_PLAYED_TOTAL", "TIME
   "COMMUNITIES_CHANNEL_ADDED_TO_CHAT_WINDOW", "COMMUNITIES_CHANNEL_REMOVED_FROM_CHAT_WINDOW",
   "VOICE_CHAT_CHANNEL_ANNOUNCE", "VOICE_CHAT_SERVICE_SWITCHING" }
 
--- → the set of plain chat type ids | nil (ChatTypeInfo[type].id is set at load, chattypeinfocolors.lua:12, 21)
+-- → { [plain chat type id] = type name } | nil (ChatTypeInfo[type].id is set at load, chattypeinfocolors.lua:12, 21)
 local plainIds
 local function plainTypeIds()
   if plainIds then return plainIds end
@@ -88,7 +93,7 @@ local function plainTypeIds()
   plainIds = {}
   for _, name in ipairs(ChatSystem.PLAIN_TYPES) do
     local t = info[name]
-    if type(t) == "table" and t.id ~= nil then plainIds[t.id] = true end
+    if type(t) == "table" and t.id ~= nil then plainIds[t.id] = name end
   end
   return plainIds
 end
@@ -221,8 +226,6 @@ end
 function ChatSystem.translate(en, exactOnly, faction)
   local index = WFJ.UIIndex
   if not index or type(en) ~= "string" or en == "" then return nil end
-  local death = ChatSystem.deathLink(en)
-  if death then return death end
   local key, args = index:exactKey(en), nil
   if not key and not exactOnly then
     key, args = index:matchOnly(en, faction and factionKeys(index) or chatKeys(index))
@@ -415,19 +418,16 @@ local function onEmoteLine(frame, message, typeId, eventArgs)
   return 1
 end
 
--- The battleground announcement chat types: their lines are the server's broadcast text, shipped with the NPC lines,
--- and may name any player in the match.
-local bgIds
-local function battlegroundTypeIds()
-  if bgIds then return bgIds end
-  local info = Compat.get(SURFACE, "typeInfo")
-  if type(info) ~= "table" then return nil end
-  bgIds = {}
-  for _, name in ipairs({ "BG_SYSTEM_NEUTRAL", "BG_SYSTEM_ALLIANCE", "BG_SYSTEM_HORDE" }) do
-    local t = info[name]
-    if type(t) == "table" and t.id ~= nil then bgIds[t.id] = true end
-  end
-  return bgIds
+-- A plain line's English replaced by `ja` in the frame's history, once the pair is remembered. No line id on a plain
+-- line: an identical English still in the history (it arrived while off) is rewritten too. → 1 | 0
+local function rewrite(frame, message, typeId, ja)
+  if not remember(ja, message) then return 0 end
+  frame:TransformMessages(function(text, _, _, _, lineType)
+    return lineType == typeId and not secret(text) and text == message
+  end, function(_, ...)
+    return ja, ...
+  end)
+  return 1
 end
 
 -- A line holding the death recap link, under whatever chat type the client posts it (or none): only its label
@@ -441,12 +441,7 @@ local function onDeathLine(frame, message, typeId)
   if not on() then return stays("off") end
   local ja = ChatSystem.deathLink(message)
   if not ja then return stays("not the checked English") end
-  if not remember(ja, message) then return stays("remember refused") end
-  frame:TransformMessages(function(text, _, _, _, lineType)
-    return lineType == typeId and not secret(text) and text == message
-  end, function(_, ...)
-    return ja, ...
-  end)
+  if rewrite(frame, message, typeId, ja) == 0 then return stays("remember refused") end
   return 1
 end
 
@@ -466,19 +461,13 @@ function ChatSystem.onAddMessage(frame, message, _, _, _, typeId, _, _, _, event
   if not on() then return 0 end
   local ja = ChatSystem.translate(message, untyped, not untyped and typeId == factionTypeId())
   -- no interface string: the line may be an NPC line's text the server sent as system chat (a battleground
-  -- announcement); the player it names is looked for on battleground lines only
-  if not ja and not untyped and WFJ.Speech and type(WFJ.Speech.translateLine) == "function" then
-    local bg = battlegroundTypeIds()
-    ja = WFJ.Speech.translateLine(message, bg ~= nil and bg[typeId] == true)
+  -- announcement). Only the types that carry such text pay for the lookup (loot, money and XP lines never do).
+  local typeName = not untyped and ids[typeId] or nil
+  if not ja and ChatSystem.NPC_TEXT_TYPES[typeName] and WFJ.Speech then -- Speech loads after this file
+    ja = WFJ.Speech.translateLine(message, ChatSystem.NAMING_TYPES[typeName])
   end
-  if not ja or not remember(ja, message) then return 0 end
-  -- no line id on a plain line: an identical English still in the history (it arrived while off) is rewritten too
-  frame:TransformMessages(function(text, _, _, _, lineType)
-    return lineType == typeId and not secret(text) and text == message
-  end, function(_, ...)
-    return ja, ...
-  end)
-  return 1
+  if not ja then return 0 end
+  return rewrite(frame, message, typeId, ja)
 end
 
 -- The bundled face on one chat line, at the line's size: smaller when the Japanese would not fit the height the

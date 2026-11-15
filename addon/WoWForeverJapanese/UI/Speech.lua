@@ -110,30 +110,6 @@ function Speech.translateAs(en, other)
   return ja, key
 end
 
--- The Japanese for a whole chat line the server wrote from an NPC line's text with no speaker of its own (a
--- battleground announcement, CHAT_MSG_BG_SYSTEM_*, UI/ChatSystem): the line as it stands, else, with `findName`,
--- each run of one to three capitalised words in it taken as the player the line names ("Velkian Freecss has
--- assaulted the mine!": the server writes the whole name and sends no target with the line). The first run a
--- shipped row resolves fills its Japanese. → ja | nil
-local NAME_WORD = "()[%u\192-\255][%w\128-\255'%-]*()"
-local MAX_NAME_WORDS = 3
-
-function Speech.translateLine(en, findName)
-  if type(en) ~= "string" or en == "" or secret(en) then return nil end
-  local ja = Speech.translate(en)
-  if ja or not findName then return ja end
-  local words = {}
-  for s, e in en:gmatch(NAME_WORD) do words[#words + 1] = { s, e - 1 } end
-  for i = 1, #words do
-    for j = i, math.min(i + MAX_NAME_WORDS - 1, #words) do
-      if j > i and en:sub(words[j - 1][2] + 1, words[j][1] - 1) ~= " " then break end
-      ja = Speech.translateAs(en, { name = en:sub(words[i][1], words[j][2]) })
-      if ja then return ja end
-    end
-  end
-  return nil
-end
-
 -- Whether `word` stands in `text` as a word of its own: no letter, digit or byte of a multi-byte letter beside it.
 local function wholeWord(text, word)
   local from = 1
@@ -326,6 +302,30 @@ local function readable(en) return type(en) == "string" and not secret(en) and e
 local function shipped(key)
   local entry = WFJ.Lookup.keyed("gossip", key)
   return type(entry) == "table" and entry.status == "." and type(entry.ja) == "string" and entry.ja ~= ""
+end
+
+-- The Japanese for a whole chat line the server wrote from an NPC line's text with no speaker of its own (a
+-- battleground announcement, CHAT_MSG_BG_SYSTEM_*, UI/ChatSystem): the line as it stands, else, with `findName`,
+-- each run of one to three capitalised words in it taken as the player the line names ("Velkian Freecss has
+-- assaulted the mine!": the server writes the whole name and sends no target with the line). The first run a
+-- shipped row resolves fills its Japanese. → ja | nil
+local NAME_WORD = "()[%u\192-\255][%w\128-\255'%-]*()"
+local MAX_NAME_WORDS = 3
+
+function Speech.translateLine(en, findName)
+  if not readable(en) or not deps.key then return nil end
+  local key = deps.key(en)
+  local ja = Speech.translate(en, key)
+  if ja or not findName or (key ~= nil and shipped(key)) then return ja end
+  local starts, ends, runs = {}, {}, {}
+  for s, e in en:gmatch(NAME_WORD) do starts[#starts + 1], ends[#ends + 1] = s, e - 1 end
+  for i = 1, #starts do
+    for j = i, math.min(i + MAX_NAME_WORDS - 1, #starts) do
+      if j > i and (starts[j] - ends[j - 1] ~= 2 or en:byte(ends[j - 1] + 1) ~= 32) then break end
+      runs[#runs + 1] = { name = en:sub(starts[i], ends[j]) }
+    end
+  end
+  return (translateOthers(en, runs))
 end
 
 -- the current line, for Speech.trace: its first exit reason, whether its own Japanese went in, its gossip key
