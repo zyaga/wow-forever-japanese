@@ -130,7 +130,7 @@ Two more tables shape how a cloned voice reads ([ADR-082](../adr/082-names-spell
 
 ## What the engine reads
 
-The engine does not read the shipped Japanese as it stands. `wfj.core.voice_text` builds its text from the spoken line (`voice.speech_text`: player tokens filled, numbers filled, stage directions dropped) with four changes, each one for a misread found by listening:
+The engine does not read the shipped Japanese as it stands. `wfj.core.voice_text` builds its text from the spoken line (`voice.speech_text`: player tokens filled, numbers filled, stage directions and runs of binary bytes dropped) with four changes, each one for a misread found by listening:
 
 | Change | Why |
 |---|---|

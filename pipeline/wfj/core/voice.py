@@ -120,7 +120,8 @@ def speech_text(ja: str, key: str, values: Sequence[str] = ()) -> str:
         return f"何{counter}か" if counter else "いくつか"
 
     filled = _WORLD_STATE.sub("数", _VALUE.sub(number, _BREAK.sub("\n", ja)))
-    spoken = _BINARY.sub("", _STAGE.sub("", filled))
+    filled = _BINARY.sub("", filled)
+    spoken = _STAGE.sub("", filled)
     if not _MARKUP.sub("", _TOKEN.sub("", spoken)).strip():
         spoken = re.sub(r"[<>]", "", filled)
     text = _TOKEN.sub(PLAYER_WORD, spoken)
