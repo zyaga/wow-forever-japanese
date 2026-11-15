@@ -297,6 +297,7 @@ def time_records(root: Path, cfg: dict[str, Any], *, source: Source, align: Alig
     jobs = to_time(root, cfg)[:limit]
     audio = voice_make.audio_record(root)
     report: dict[str, Any] = {"timed": 0, "failed": [], "decoded": [], "doubt": [], "unconfirmed": 0,
+                              "kept": [],
                               "cut": 0, "boundaries": 0, "todo": len(jobs)}
     ready = []
     for j in jobs:
@@ -327,7 +328,10 @@ def time_records(root: Path, cfg: dict[str, Any], *, source: Source, align: Alig
         report["timed"] += 1
         report["boundaries"] += got["sentences"] - 1
         report["cut"] += len(got["cuts"])
-        report["unconfirmed"] += got["sentences"] - 1 - len(got["cuts"])
+        kept = got["sentences"] - 1 - len(got["cuts"])
+        report["unconfirmed"] += kept
+        if kept:
+            report["kept"].append((stem, kept))
         if got["disagree"] > DISAGREE_WORDS:
             report["doubt"].append((stem, got["disagree"]))
         if report["timed"] % SAVE_EVERY == 0:
@@ -356,6 +360,9 @@ def report_text(r: dict[str, Any]) -> str:
         lines += ["", "## Failed", *[f"- {s}: {why}" for s, why in r["failed"]]]
     if r["decoded"]:
         lines += ["", "## Timed from the MP3", *[f"- {s}" for s in r["decoded"]]]
+    if r.get("kept"):
+        lines += ["", "## Sentences kept together (a break with no confirmed pause)",
+                  *[f"- {s}: {n}" for s, n in r["kept"]]]
     return "\n".join(lines) + "\n"
 
 

@@ -67,9 +67,7 @@ function Readings.locate(words, text, guards)
       s, e = text:find(words[i], s + 1, true)
     end
     if s then
-      -- index: the word's place in the line's list (a voice line's word marks are kept in that order)
-      out[#out + 1] = { first = s, last = e, word = words[i], reading = words[i + 1], gloss = words[i + 2] or nil,
-        index = (i + 2) / 3 }
+      out[#out + 1] = { first = s, last = e, word = words[i], reading = words[i + 1], gloss = words[i + 2] or nil }
       cursor = e + 1
     end
   end

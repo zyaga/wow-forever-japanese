@@ -15,6 +15,7 @@ from __future__ import annotations
 import bisect
 import difflib
 import math
+import operator
 import re
 from collections.abc import Mapping, Sequence
 
@@ -56,7 +57,7 @@ def pauses(samples: Sequence[int], rate: int) -> list[tuple[float, float]]:
     frames = []
     for i in range(0, len(samples) - hop + 1, hop):
         chunk = samples[i:i + hop]
-        frames.append(math.sqrt(math.sumprod(chunk, chunk) / hop))
+        frames.append(math.sqrt(sum(map(operator.mul, chunk, chunk)) / hop))
     if not frames:
         return []
     loud = sorted(frames)[int(len(frames) * 0.95)] or 1.0

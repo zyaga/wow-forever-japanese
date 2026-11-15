@@ -29,7 +29,6 @@ from wfj.paths import data_root
 
 # The research doc's character counts: the quest and gossip text forever-vo voices, and everything
 FULL_SCOPES = {"quest and gossip text": 3_880_000, "everything": 4_650_000}
-LAME = ("lame", "-m", "m", "--resample", "22.05", "-b", "32", "--cbr", "-t", "--quiet")
 
 
 def voice_dir(root: Path) -> Path:

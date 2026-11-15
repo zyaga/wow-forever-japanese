@@ -529,6 +529,7 @@ function VoicePlayer.replay()
   if not item or not item.path or not stillVoiced(item) then return false end
   silence()
   Q.front(item)
+  item.from = nil -- from the start, not from the sentence a pause kept
   return startHead()
 end
 

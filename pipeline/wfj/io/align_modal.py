@@ -63,7 +63,7 @@ def _fetch(model: tuple[str, str]) -> str:
 reazon_image = (
     modal.Image.debian_slim(python_version="3.12")
     .pip_install("torch==2.14.1", "torchaudio==2.11.0", "transformers==5.2.0", "huggingface_hub==1.33.0",
-                 "pykakasi==2.3.0", "soundfile==0.14.0", "numpy")
+                 "pykakasi==2.3.0", "soundfile==0.14.0", "numpy==2.5.3")
     .run_commands(_fetch(REAZON))
     .env({"HF_HUB_OFFLINE": "1", "TRANSFORMERS_VERBOSITY": "error"})
     .add_local_file(DEV / "align_reazon.py", "/root/align_reazon.py")
@@ -71,7 +71,7 @@ reazon_image = (
 qwen_image = (
     modal.Image.debian_slim(python_version="3.12")
     .pip_install("qwen-asr==0.0.6", "torch==2.15.0", "transformers==4.57.6", "accelerate==1.12.0",
-                 "nagisa==0.2.11", "soundfile==0.14.0", "librosa==1.0.1", "huggingface_hub")
+                 "nagisa==0.2.11", "soundfile==0.14.0", "librosa==1.0.1", "huggingface_hub==0.36.2")
     .run_commands(_fetch(QWEN))
     .env({"HF_HUB_OFFLINE": "1", "TRANSFORMERS_VERBOSITY": "error"})
     .add_local_file(DEV / "align_qwen.py", "/root/align_qwen.py")

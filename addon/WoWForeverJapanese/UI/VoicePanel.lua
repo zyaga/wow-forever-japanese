@@ -187,7 +187,8 @@ local function audioPage(st)
   local words, t = lineClock()
   if words then
     local w = Text.spokenAt(words, t)
-    return w and pageOf(w.first) or 1
+    if not w then return 1 end
+    return pageOf(w.first) or pageShown or 1 -- a part on no page keeps the page shown
   end
   if not (st.playing and st.startedAt and st.seconds and st.seconds > 0) then return nil end
   local share = (now() - st.startedAt) / st.seconds
