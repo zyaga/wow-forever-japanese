@@ -91,9 +91,9 @@ describe("the word list window", function()
     .. "gives the lines that copy them into Anki, for this system", function()
     local FOLDER = "WoWForeverJapanese_VoiceLevels1to10"
     local text = "生き物がある。"
-    WFJ.Lookup = { get = function(kind, id)
+    WFJ.Voice.init({ hash = WFJ.Hash.key, lookup = function(kind, id)
       if kind == "quest.description" and id == 456 then return { ja = text } end
-    end }
+    end })
     add(WFJ.Words, "生き物")
     add(WFJ.Words, "数") -- its sentence is not in the line: no audio
     local f = WW.open()
@@ -107,13 +107,14 @@ describe("the word list window", function()
     _G.IsMacClient = function() return true end
     f.audio:SetChecked(true)
     f.audio.scripts.OnClick(f.audio)
-    assert.are.equal(WFJ.Words.export({ audio = WFJ.StudyVoice.cell }, _G.date), f.text.value)
-    local cell = "[sound:" .. WFJ.StudyVoice.cell(WFJ.Words.entries()[1]):match("^%[sound:(.-)%]$") .. "]"
-    assert.is_truthy(f.text.value:find("\t" .. cell .. "\n", 1, true))
-    assert.is_truthy(cell:find("456-description-1.mp3]", 1, true))
+    local found = WFJ.StudyVoice.findAll(WFJ.Words.entries())
+    assert.are.equal(WFJ.Words.export({ audio = function(e) return WFJ.StudyVoice.cell(found[e]) end }, _G.date),
+      f.text.value)
+    assert.is_truthy(f.text.value:find("456-description-1.mp3]\n", 1, true))
     assert.is_true(shown(f.audioLines))
     assert.are.equal(ja("words.audioHint"), f.audioHint.en:GetText())
-    assert.are.equal(table.concat(WFJ.StudyVoice.copyLines(WFJ.Words.entries(), true), "\n"), f.audioLines.value)
+    assert.are.equal(table.concat(WFJ.StudyVoice.copyLines(WFJ.Words.entries(), found, true), "\n"),
+      f.audioLines.value)
     assert.is_truthy(f.audioLines.value:find("^cp "))
     assert.is_true(f.size[2] > height) -- taller, so the copy lines fit inside the frame
     _G.IsMacClient = function() return false end
@@ -127,7 +128,7 @@ describe("the word list window", function()
   end)
 
   it("Include audio says so when no saved word has a recording", function()
-    WFJ.Lookup = { get = function() return nil end }
+    WFJ.Voice.init({ hash = WFJ.Hash.key, lookup = function() return nil end })
     WFJ.Voice.register({ format = 3, folder = "WoWForeverJapanese_VoiceOther", lines = {} })
     add(WFJ.Words, "生き物")
     local f = WW.open()

@@ -489,9 +489,9 @@ describe("the study window", function()
       played, stopped = {}, {}
       _G.PlaySoundFile = function(path) played[#played + 1] = path; return true, #played end
       _G.StopSound = function(h) stopped[#stopped + 1] = h end
-      WFJ.Lookup = { get = function(kind, id)
+      WFJ.Voice.init({ hash = WFJ.Hash.key, lookup = function(kind, id)
         if kind == "quest.description" and id == 456 then return { ja = JA } end
-      end }
+      end })
       WFJ.VoicePlayer = { playing = function() return nil end, stop = function() end }
     end)
     after_each(function() _G.PlaySoundFile, _G.StopSound = nil, nil end)

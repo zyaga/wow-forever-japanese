@@ -85,7 +85,8 @@ describe("UI/StudyVoice", function()
       book = { bbbb = { ja = SPLIT_JA } },
       ui = { [3] = { ja = "閉じる" } },
     }
-    WFJ.Lookup = { get = function(kind, id) return shipped[kind] and shipped[kind][id] end }
+    WFJ.Voice.init({ lookup = function(kind, id) return shipped[kind] and shipped[kind][id] end,
+      hash = WFJ.Hash.key })
     WFJ.expandTokens = function(ja) return (WFJ.Placeholders.expand(ja, { name = "Reyn" })) end
     WFJ.VoicePlayer = { playing = function() return "g-zzzz" end, stop = function() voiceStops = voiceStops + 1 end }
     SV = WFJ.StudyVoice
@@ -192,8 +193,11 @@ describe("UI/StudyVoice", function()
   describe("the export", function()
     it("an entry's Anki sound cell names its files with the wfj- prefix, empty without audio", function()
       register()
-      assert.are.equal("[sound:wfj-b-bbbb-1.mp3][sound:wfj-b-bbbb-2.mp3]", SV.cell(entry("book", "bbbb", SPLIT_JA)))
-      assert.are.equal("", SV.cell(entry("ui", 3, "閉じる")))
+      local book, label = entry("book", "bbbb", SPLIT_JA), entry("ui", 3, "閉じる")
+      local found = SV.findAll({ book, label })
+      assert.are.equal("[sound:wfj-b-bbbb-1.mp3][sound:wfj-b-bbbb-2.mp3]", SV.cell(found[book]))
+      assert.is_nil(found[label])
+      assert.are.equal("", SV.cell(found[label]))
     end)
 
     it("the copy lines copy each file once, for the player's system", function()
@@ -207,9 +211,10 @@ describe("UI/StudyVoice", function()
           .. 'collection.media/wfj-b-bbbb-2.mp3"',
         'cp "Interface/AddOns/' .. FOLDER .. '/Sound/g-aaaa-2.mp3" ~/"Library/Application Support/Anki2/User 1/'
           .. 'collection.media/wfj-g-aaaa-2.mp3"',
-      }, SV.copyLines(list, true))
+      }, SV.copyLines(list, SV.findAll(list), true))
       assert.are.same('copy /Y "Interface\\AddOns\\' .. FOLDER .. '\\Sound\\b-bbbb-1.mp3" '
-        .. '"%APPDATA%\\Anki2\\User 1\\collection.media\\wfj-b-bbbb-1.mp3"', SV.copyLines(list, false)[1])
+        .. '"%APPDATA%\\Anki2\\User 1\\collection.media\\wfj-b-bbbb-1.mp3"',
+        SV.copyLines(list, SV.findAll(list), false)[1])
     end)
   end)
 

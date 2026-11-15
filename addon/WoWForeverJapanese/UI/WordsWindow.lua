@@ -32,33 +32,28 @@ local function say(key, ...)
   if key then W.setPair(f.message, Text.get(key, ...)) else W.setPair(f.message, "", "") end
 end
 
-local function at(frame, y)
+local SV = WFJ.StudyVoice
+
+local function at(frame, y, x)
   frame:ClearAllPoints()
-  frame:SetPoint("TOPLEFT", LEFT, y)
+  frame:SetPoint("TOPLEFT", x or LEFT, y)
 end
 
--- Include audio sits under the images rows when they show; ticked, its hint and copy lines under it.
--- → the frame's height
-local function layAudio(images, audio)
+-- Include audio sits under the images rows when they show; ticked, its hint and copy lines under it. `found`: the
+-- entries' files (StudyVoice.findAll), when Include audio is ticked. → the frame's height
+local function layAudio(images, offered, found)
   local f = WordsWindow.frame
-  local SV = WFJ.StudyVoice
-  local offered = SV ~= nil and WFJ.Voice ~= nil and WFJ.Voice.hasPack()
   local base = images and HEIGHT_IMAGES or HEIGHT
-  show(f.audio, offered)
-  show(f.audio.label.en, offered)
-  show(f.audio.label.ja, offered)
-  audio = offered and audio
-  for _, w in ipairs(f.audioRows) do show(w, audio) end
+  for _, w in ipairs({ f.audio, f.audio.label.en, f.audio.label.ja }) do show(w, offered) end
+  for _, w in ipairs(f.audioRows) do show(w, found ~= nil) end
   if not offered then return base end
   local y = images and -490 or -374
-  f.audio:ClearAllPoints()
-  f.audio:SetPoint("TOPLEFT", LEFT, y + 5)
-  at(f.audio.label.en, y)
-  f.audio.label.en:SetPoint("TOPLEFT", LEFT + 30, y)
-  if not audio then return base end
+  at(f.audio, y + 5)
+  at(f.audio.label.en, y, LEFT + 30)
+  if not found then return base end
   at(f.audioHint.en, y - ROW - 4)
   at(f.audioLines.frame, y - ROW - 64)
-  local lines = SV.copyLines(WFJ.Words.entries(), WFJ.Compat.call("IsMacClient") == true)
+  local lines = SV.copyLines(WFJ.Words.entries(), found, WFJ.Compat.call("IsMacClient") == true)
   f.audioLines:setText(#lines > 0 and table.concat(lines, "\n") or W.pick(Text.get("words.audioNone")))
   return math.max(base, -(y - ROW - 64 - AUDIO_LINES) + BOTTOM)
 end
@@ -69,10 +64,12 @@ local function fill()
   if n == 0 then W.setPair(f.summary, Text.withSaveClick("words.empty"))
   else W.setPair(f.summary, Text.get("words.summary", n)) end
   local images = f.images:GetChecked() and true or false
-  local audio = f.audio:GetChecked() and WFJ.StudyVoice ~= nil and WFJ.Voice.hasPack() or false
-  f.text:setText(WFJ.Words.export({ images = images, audio = audio and WFJ.StudyVoice.cell or nil }, date()))
+  local offered = WFJ.Voice.hasPack()
+  local found = offered and f.audio:GetChecked() and SV.findAll(WFJ.Words.entries()) or nil
+  local audio = found and function(e) return SV.cell(found[e]) end or nil
+  f.text:setText(WFJ.Words.export({ images = images, audio = audio }, date()))
   for _, w in ipairs(f.imageRows) do show(w, images) end
-  f:SetHeight(layAudio(images, audio))
+  f:SetHeight(layAudio(images, offered, found))
   -- new text drops the selection; the box keeps its focus, so select it again for Cmd+C
   local box = f.text.box
   if box.HasFocus and box:HasFocus() then box:HighlightText() end
@@ -138,10 +135,11 @@ local function build()
   -- shown only with Include images ticked
   f.imageRows = { f.shotsLabel.en, f.shotsLabel.ja, f.shotsPath, f.ankiLabel.en, f.ankiLabel.ja, f.ankiMac, f.ankiWin }
   en, ja = Text.get("words.audio")
-  f.audio = W.checkbox(p, en, ja, LEFT, -374, INNER, function() fill() end)
-  f.audioHint = W.label(p, "", "", LEFT, -406, INNER)
+  -- the audio rows are placed by layAudio, under whatever shows above them
+  f.audio = W.checkbox(p, en, ja, LEFT, 0, INNER, function() fill() end)
+  f.audioHint = W.label(p, "", "", LEFT, 0, INNER)
   W.setPair(f.audioHint, Text.get("words.audioHint"))
-  f.audioLines = W.scrollText(p, LEFT, -442, INNER, AUDIO_LINES)
+  f.audioLines = W.scrollText(p, LEFT, 0, INNER, AUDIO_LINES)
   -- shown only with Include audio ticked
   f.audioRows = { f.audioHint.en, f.audioHint.ja, f.audioLines }
   f.message = W.label(p, "", "", LEFT + 460, -316, INNER - 460)

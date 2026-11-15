@@ -24,8 +24,7 @@ Constraints:
 
 1. **Nothing about audio is stored with a word.** `WFJ_Words` keeps its fields and `schema = 1`. When the study card or the export asks, `UI/StudyVoice.find(entry)` works it out from the entry's `kind`, `id` and sentence (an English word's `jaSentence`):
    - only quest offer, progress and turn-in, gossip (greetings among them) and book pages are voiced; any other kind has no audio;
-   - `Voice.packKey(kind, id)` and `Voice.record(key)` give the line's main recording: its sentence files with their lengths, its timing, its Japanese hash and its pack folder (`Voice.record` is read only);
-   - the recording's hash must equal the shipped line's hash;
+   - `Voice.line(kind, id)` gives the line's main recording (its sentence files with their lengths, its timing and its pack folder) only for a voiced kind and only when its Japanese hash equals the shipped line's, the same rule the voice player keeps;
    - the saved sentence is found in the line as this character's window shows it, and `VoicePanelText.timedParts` maps the timing onto it;
    - the files played run from the one holding the sentence's first spoken part to the one holding its last, with a stop time when the next sentence starts inside that last file. A sentence that starts partway through a file plays that file from its start, since the client can start a sound only at its start. A pack with no timing plays a sentence only when it is the whole line.
 
