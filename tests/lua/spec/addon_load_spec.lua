@@ -17,6 +17,7 @@ local TAIL = {
   "Core/BugReport.lua",
   "UI/Font.lua", "UI/Frames.lua", "UI/ReadingPopup.lua", "UI/Readings.lua", "UI/WordSave.lua", "UI/Render.lua",
   "UI/VoicePlayer.lua", "UI/VoicePanelLooks.lua", "UI/VoicePanelHead.lua", "UI/VoicePanelText.lua",
+  "UI/StudyVoice.lua",
   "UI/VoicePanel.lua", "UI/VoiceQuestLog.lua",
   "UI/VoiceErrors.lua", "UI/ButtonText.lua", "UI/Labels.lua", "UI/TextWatch.lua",
   "UI/TaintWatch.lua",

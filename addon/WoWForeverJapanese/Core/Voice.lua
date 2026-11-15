@@ -290,6 +290,16 @@ end
 local function pathOf(folder, file)
   return "Interface\\AddOns\\" .. folder .. "\\Sound\\" .. file
 end
+Voice.soundPath = pathOf
+
+-- A line's main recording by its pack key, for the study card and the word list's export (UI/StudyVoice): its files
+-- in order, each { file, seconds }, its timing (or nil), the hash of the Japanese it was made from and its pack.
+-- → table or nil. Read only: the registry is not handed out.
+function Voice.record(key)
+  local e = lines and type(key) == "string" and lines[key] or nil
+  if not e then return nil end
+  return { clips = e.clips, marks = e.marks, jaHash = e.jaHash, folder = e.folder }
+end
 
 -- A record's files for the player → path of the first, the line's length (nil when a file has none), and the
 -- sentences { { path, seconds }, ..., marks } when there are several files or a timing, else nil (one whole file)
