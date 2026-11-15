@@ -5,13 +5,19 @@ name: Release
 # CHANGELOG.md has lines: it picks the next version, commits the changelog, tags, builds the zip, checks it, and only
 # then pushes and publishes to CurseForge and a GitHub release; nothing leaves the runner until the zip has passed
 # `wfj package-check`. Then the voice packs whose audio changed (`wfj voice release`, built from the audio commit
-# the text pins), after the addon so a pack never reaches players before the text it was made from.
+# the text pins), after the addon so a pack never reaches players before the text it was made from. With
+# `voice_packs` set, the run uploads only those packs to CurseForge (a new pack's first file, which CurseForge needs
+# before it reviews the project): no addon release, no GitHub release, nothing recorded.
 
 on:
   workflow_dispatch:
     inputs:
       version:
         description: "Version (optional). Empty: the next version by the rule in the release runbook."
+        required: false
+        default: ""
+      voice_packs:
+        description: "Voice packs only (optional): pack folders to upload to CurseForge, comma-separated. Skips the addon and the GitHub release."
         required: false
         default: ""
 
@@ -83,7 +89,7 @@ jobs:
 
   release:
     needs: [plan, validate]
-    if: needs.plan.outputs.addon == 'true'
+    if: needs.plan.outputs.addon == 'true' && inputs.voice_packs == ''
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
@@ -207,9 +213,11 @@ jobs:
       - name: Did the voice inputs change
         id: inputs
         working-directory: pipeline
-        run: wfj voice inputs | tee -a "$GITHUB_OUTPUT"
+        run: |
+          if [ -n "$PACKS" ]; then echo "changed=true" | tee -a "$GITHUB_OUTPUT"; else wfj voice inputs | tee -a "$GITHUB_OUTPUT"; fi
         env:
           GH_TOKEN: ${{ github.token }}
+          PACKS: ${{ inputs.voice_packs }}
       - name: The audio commit the text pins
         id: pin
         if: steps.inputs.outputs.changed == 'true'
@@ -227,7 +235,8 @@ jobs:
       - name: Release the changed voice packs
         if: steps.inputs.outputs.changed == 'true'
         working-directory: pipeline
-        run: wfj voice release --store ../build/voice
+        run: wfj voice release --store ../build/voice ${PACKS:+--curseforge-only --only "$PACKS"}
         env:
           CF_API_KEY: ${{ secrets.CF_API_KEY }}
           GH_TOKEN: ${{ github.token }}
+          PACKS: ${{ inputs.voice_packs }}

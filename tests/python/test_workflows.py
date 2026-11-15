@@ -192,12 +192,23 @@ def release(root) -> str:
     return _workflows(root)["release.yml"]
 
 
-def test_release_has_one_trigger_with_one_optional_input(release):
+def test_release_has_one_trigger_with_two_optional_inputs(release):
     on = _block(release, "on")
     assert _keys(on, 2) == ["workflow_dispatch"]
     inputs = _block(on, "inputs", 4)
-    assert _keys(inputs, 6) == ["version"]
-    assert "required: false" in inputs and 'default: ""' in inputs
+    assert _keys(inputs, 6) == ["version", "voice_packs"]
+    assert inputs.count("required: false") == 2 and inputs.count('default: ""') == 2
+
+
+def test_voice_packs_only_uploads_those_packs_to_curseforge_and_skips_the_addon(release):
+    """A new pack's first file: CurseForge reviews a project only once a file is up."""
+    addon = _block(release, "release", 2)
+    assert "if: needs.plan.outputs.addon == 'true' && inputs.voice_packs == ''\n" in addon
+    voice = _block(release, "voice", 2)
+    _, inputs = _step_named(voice, "Did the voice inputs change")
+    assert 'if [ -n "$PACKS" ]; then echo "changed=true"' in inputs and "PACKS: ${{ inputs.voice_packs }}" in inputs
+    _, run = _step_named(voice, "Release the changed voice packs")
+    assert '${PACKS:+--curseforge-only --only "$PACKS"}' in run and "PACKS: ${{ inputs.voice_packs }}" in run
 
 
 def test_release_runs_one_at_a_time(release):
@@ -211,7 +222,7 @@ def test_release_jobs_plan_then_validate_then_release_then_voice(release):
     assert "uses: ./.github/workflows/pr.yml\n" in validate and "needs: plan\n" in validate
     addon = _block(release, "release", 2)
     assert "needs: [plan, validate]\n" in addon
-    assert "if: needs.plan.outputs.addon == 'true'\n" in addon  # nothing under Unreleased: no addon release
+    assert "if: needs.plan.outputs.addon == 'true' && inputs.voice_packs == ''\n" in addon  # nothing under Unreleased
     assert "wfj release next-version --allow-empty" in _block(release, "plan", 2)
     voice = _block(release, "voice", 2)
     assert "needs: [plan, validate, release]\n" in voice
@@ -243,7 +254,7 @@ def test_the_voice_job_skips_when_no_voice_input_changed(release):
     """An addon-only release neither checks out the audio nor needs the deploy key."""
     voice = _block(release, "voice", 2)
     k, inputs = _step_named(voice, "Did the voice inputs change")
-    assert "run: wfj voice inputs" in inputs and "$GITHUB_OUTPUT" in inputs
+    assert "wfj voice inputs" in inputs and "$GITHUB_OUTPUT" in inputs
     assert "secrets." not in inputs
     for name in ("The audio commit the text pins", "Check out the pinned audio", "Release the changed voice packs"):
         i, step = _step_named(voice, name)

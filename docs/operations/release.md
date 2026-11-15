@@ -28,6 +28,7 @@ Done once by the maintainer, in this order.
 2. Start the run, either way:
    - GitHub: **Actions → Release → Run workflow**, branch `main`. Leave **Version** empty to use the [version rule](#versioning), or type one.
    - Terminal: `make release` (or `make release VERSION=x.y.z`). This needs the GitHub CLI (`gh`), signed in, with write access. It starts the same workflow on `main` and follows it until it ends.
+   - **Voice packs only:** fill **Voice packs** with pack folders, comma-separated (or `make release PACKS=WoWForeverJapanese_VoiceLevels1to10Part2`). The run uploads only those packs to CurseForge, from GitHub's fast connection: no addon release, no GitHub release, nothing recorded, so the next full release uploads them again. Use it for a new pack's first file: CurseForge reviews a new project only once a file is up, and a pack this size times out from a home connection.
 3. When it is green, the job summary shows the version, the zip's file count and SHA-256, the GitHub release link and the notes. The CurseForge file appears after CurseForge processes it.
 
 Only one Release run happens at a time: a second one waits until the first ends (if a third is started meanwhile, GitHub cancels the waiting one). A run that waited checks out `main` as it was when it was started; if the first release moved `main`, it fails at the push, before publishing. Start releases one by one.

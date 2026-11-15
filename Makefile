@@ -631,10 +631,10 @@ package: $(PACKAGER) ## rehearse the next release locally: build + check its zip
 # VERSION is taken from the command line only (`make release VERSION=1.0.0`), never from the environment.
 RELEASE_VERSION := $(if $(filter command line,$(origin VERSION)),$(VERSION))
 
-release: ## start the Release workflow on GitHub and follow it to the end: [VERSION=x.y.z] (needs the GitHub CLI)
+release: ## start the Release workflow on GitHub and follow it to the end: [VERSION=x.y.z] [PACKS=folder,folder: upload only those voice packs to CurseForge] (needs the GitHub CLI)
 	@command -v gh >/dev/null || { echo "release: needs the GitHub CLI (gh), signed in"; exit 1; }
 	@last=$$(gh run list --workflow release.yml --limit 1 --json databaseId --jq '.[0].databaseId // 0') || exit 1; \
-	out=$$(gh workflow run release.yml --ref main $(if $(RELEASE_VERSION),-f version=$(RELEASE_VERSION)) 2>&1) || { echo "$$out"; exit 1; }; \
+	out=$$(gh workflow run release.yml --ref main $(if $(RELEASE_VERSION),-f version=$(RELEASE_VERSION)) $(if $(PACKS),-f voice_packs=$(PACKS)) 2>&1) || { echo "$$out"; exit 1; }; \
 	id=$$(printf '%s\n' "$$out" | grep -o 'https://[^ ]*/actions/runs/[0-9]*' | head -1 | sed 's#.*/##'); \
 	for _ in $$(seq 30); do \
 	  [ -n "$$id" ] && break; sleep 2; \
