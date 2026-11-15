@@ -4,7 +4,8 @@
 -- from a query parameter named by the field's id, as the collector send's `dump` field does. When the errors make the
 -- link too long, the link fills build and version only and the window shows the error text to paste.
 -- Pure: the caller passes build, version and the errors.
---   BugReport.pack(info) · info = { build, version, errors = ErrorLog.unsent(), ours = ErrorLog.ours() }
+--   BugReport.pack(info) · info = { build, version, errors = ErrorLog.unsent(), ours = ErrorLog.ours(),
+--     voice = { "Levels1to10 2026.11.12-36d91beb (format 3, 3432 lines)", … } } (Core/Voice.packList)
 --     → { mode = "link" | "paste", url, text, count, ours, sent = { { msg, last, n }, … } }
 --   BugReport.text(errors) → the readable error text
 --   BugReport.IDEA_URL
@@ -42,8 +43,13 @@ end
 function BugReport.pack(info)
   info = info or {}
   local errors = info.errors or {}
+  -- the voice packs ride in the version field, so a report says which pack a player has without a new form field
+  local version = info.version or "?"
+  if type(info.voice) == "table" and #info.voice > 0 then
+    version = version .. "; voice: " .. table.concat(info.voice, ", ")
+  end
   local base = BugReport.URL .. param(BugReport.FIELDS.build, info.build or "?")
-    .. param(BugReport.FIELDS.version, info.version or "?")
+    .. param(BugReport.FIELDS.version, version)
   local result = { mode = "link", url = base, text = "", count = #errors, ours = info.ours ~= false, sent = {} }
   if #errors == 0 then return result end
   for i, e in ipairs(errors) do result.sent[i] = { msg = e.msg, last = e.last, n = e.n } end

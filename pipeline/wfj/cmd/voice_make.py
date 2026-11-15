@@ -10,7 +10,7 @@ docs/systems/voice.md, runbook docs/operations/voice.md).
       or settings changed, by cast row and voice, with characters and hours.
   generate [--config voice.toml] [--store DIR] [--scope S]
       Makes the files plan lists through the local AivisSpeech Engine into DIR (the audio store: mono MP3,
-      22.05 kHz, 32 kbps, no Xing / Info frame) and records each in data/voice/audio.jsonl, every few files,
+      24 kHz, 64 kbps, no Xing / Info frame) and records each in data/voice/audio.jsonl, every few files,
       so a stopped run resumes where it stopped. Writes DIR/status.json as it goes.
   status [--store DIR]
       The running or last generation: done / total, rate, time left, and whether its process is alive.
@@ -55,7 +55,9 @@ from wfj.paths import data_root
 ENGINE_HINT = (
     "start the AivisSpeech Engine, or unpack it into build/aivis/ (docs/operations/voice.md), and run again"
 )
-LAME = ("lame", "-m", "m", "--resample", "22.05", "-b", "32", "--cbr", "-t", "--quiet")
+RATE, KBPS = 24000, 64  # the voice files' encode: the engine's own rate, at a bit rate that keeps its top end
+LAME = ("lame", "-m", "m", "--resample", f"{RATE / 1000:g}", "-b", str(KBPS), "--cbr", "-t", "--quiet")
+ENCODE = f"mp3 {RATE} {KBPS}"  # a record's `encode`: what its file was made with (wfj voice reencode)
 RECORD_EVERY = 20  # files between two progress lines in the log
 SAVE_SECONDS = 1.0  # the audio record is written at most this often while a run makes files, and at its end
 AUDIO = "audio.jsonl"
@@ -695,7 +697,7 @@ def generate(  # noqa: C901, PLR0913, PLR0915 - engine, encoder and log injected
     if checkout and not (store / ".git").exists():
         raise ValueError(
             f"{len(work)} file(s) to make, but {store} is not a checkout of the voice audio repository: "
-            f"git clone https://github.com/zyaga/wow-forever-japanese-voice.git {store}"
+            f"git clone https://github.com/zyaga/wow-forever-japanese-voice-2.git {store}"
         )
     cloned = {j.voice for j in work if cfg["roster"][j.voice].get("engine") == "qwen"}
     if cloned and qwen is None:
@@ -753,6 +755,7 @@ def generate(  # noqa: C901, PLR0913, PLR0915 - engine, encoder and log injected
                     "seconds": round(secs, 2),
                     "bytes": file.stat().st_size,
                     "sha256": file_sha(file),
+                    "encode": ENCODE,
                     "chars": len(text),
                     "provenance": {"source": source, "imported": today},
                 }
@@ -808,6 +811,34 @@ def generate(  # noqa: C901, PLR0913, PLR0915 - engine, encoder and log injected
         raise EngineDown(msg) from e
 
 
+class KeepWavs:
+    """A local cloned-voice engine whose every WAV is also kept in the WAV archive, in a run folder of its own
+    (`<archive>/local-<time>/wav/<line_key>.wav`), named as a remote run names it: every take keeps its
+    uncompressed master, wherever it was read, so it can be encoded and timed again."""
+
+    def __init__(self, engine: Any, folder: Path) -> None:
+        self._engine, self._wav = engine, folder / "wav"
+
+    def __getattr__(self, name: str) -> Any:
+        return getattr(self._engine, name)
+
+    def __enter__(self) -> KeepWavs:
+        self._engine.__enter__()
+        return self
+
+    def __exit__(self, *exc: object) -> None:
+        self._engine.__exit__(*exc)
+
+    def synthesize(self, text: str, ref_wav: Path, ref_text: str | None, mode: str,
+                   seed: int | None = None, temperature: float | None = None) -> bytes:
+        wav = self._engine.synthesize(text, ref_wav, ref_text, mode, seed, temperature)
+        self._wav.mkdir(parents=True, exist_ok=True)
+        part = self._wav / f"{line_key(text, ref_wav, mode, seed, temperature)}.part"
+        part.write_bytes(wav)
+        part.replace(part.with_suffix(".wav"))
+        return wav
+
+
 def run_generate(
     cfg: dict[str, Any],
     root: Path,
@@ -816,7 +847,10 @@ def run_generate(
     players: Sequence[tuple[str, str]] = (),
     engine_run: Path | None = None,
     prepared: Path | None = None,
+    archive: Path | None = None,
 ) -> int:
+    """`archive`: with a local engine, where its WAVs are kept (KeepWavs)."""
+    kept = archive / f"local-{datetime.datetime.now():%Y-%m-%d-%H%M%S}" if archive is not None else None
     started: list[Qwen] = []
     if prepared is not None and (missing := prepared_missing(prepared)):
         print(f"voice generate: {missing} line(s) of {prepared} have no WAV yet; they stay to make",
@@ -828,7 +862,7 @@ def run_generate(
         q = Qwen(_main_checkout() / cfg.get("qwen", QWEN_PYTHON), log=store / "qwen.log",
                  lock=None if started else LOCK, nice=False)
         started.append(q)
-        return q
+        return KeepWavs(q, kept) if kept is not None else q
 
     try:
         engine = Engine(cfg["engine"])
@@ -960,7 +994,7 @@ def relevel(root: Path, cfg: dict[str, Any], store: Path, runs: Sequence[Path]) 
             continue
         file = audio_file(store, stem)
         to_levelled_mp3(wav.read_bytes(), file)
-        rec.update(bytes=file.stat().st_size, sha256=file_sha(file))
+        rec.update(bytes=file.stat().st_size, sha256=file_sha(file), encode=ENCODE)
         done += 1
         if done % 200 == 0:
             print(f"voice relevel: {done}", flush=True)
@@ -1055,11 +1089,12 @@ def error_table(root: Path, cfg: dict[str, Any], players: Sequence[tuple[str, st
 def pack_tables(
     root: Path, cfg: dict[str, Any], scope: str
 ) -> tuple[dict[str, Any], dict[int, Any], list[str]]:
-    """(lines, creatures, left out) for Register.lua format 2. A line: {file, hash, seconds, variants: {voice:
-    (file, seconds)}}; only files whose record is in step with the shipped Japanese are packed. A key that
-    shows another key's Japanese (a gendered gossip line's female wording, a repeated quest's text keyed by
-    its English) points at that key's files. `creatures`: creature → its voice (or (male, female)) for the
-    speakers of lines that have variants."""
+    """(lines, creatures, left out) for Register.lua. A line: {file, hash, seconds, cuts, timing, variants:
+    {voice: (file, seconds, cuts, timing)}}: the cuts and timing are the files' own (`wfj voice time`,
+    ADR-090); only files whose record is in step with the shipped Japanese are
+    packed. A key that shows another key's Japanese (a gendered gossip line's female wording, a repeated
+    quest's text keyed by its English) points at that key's files. `creatures`: creature → its voice (or
+    (male, female)) for the speakers of lines that have variants."""
     lines = shipped_lines(root)
     rows = scoped_rows(root, scope)
     cast = read_cast(root)
@@ -1072,14 +1107,14 @@ def pack_tables(
         if j.stem in bad:
             continue
         rec = audio[j.stem]
+        timed = rec.get("timing_of") == rec["fingerprint"]
+        cuts, timing = (list(rec.get("cuts") or []), rec.get("timing")) if timed else ([], None)
+        entry = out.setdefault(j.key, {"variants": {}})
         if j.stem == j.key:
-            entry = out.setdefault(j.key, {"variants": {}})
-            entry.update(file=f"{j.stem}.mp3", hash=rec["ja_hash"], seconds=float(rec["seconds"]))
+            entry.update(file=f"{j.stem}.mp3", hash=rec["ja_hash"], seconds=float(rec["seconds"]), cuts=cuts,
+                         timing=timing)
         else:
-            out.setdefault(j.key, {"variants": {}})["variants"][j.voice] = (
-                f"{j.stem}.mp3",
-                float(rec["seconds"]),
-            )
+            entry["variants"][j.voice] = (f"{j.stem}.mp3", float(rec["seconds"]), cuts, timing)
     out = {k: e for k, e in out.items() if "file" in e}
     creatures: dict[int, Any] = {}
     for r in rows:
@@ -1090,8 +1125,24 @@ def pack_tables(
                     creatures[c] = (v["voice"], v["female"]) if v.get("female") else v["voice"]
     for alias, src in aliases(root).items():
         if src in out and alias not in out:
-            out[alias] = out[src]
+            # the timing follows the source's Japanese: another wording plays the same files untimed; a key
+            # with no Japanese of its own (a quest's text Forever repeats under another id) shows the source's
+            same = lines.get(alias, lines.get(src)) == lines.get(src)
+            n = len(lines.get(alias) or "")
+            out[alias] = out[src] if same else {
+                **out[src], "timing": whole_line(n, out[src]["timing"]),
+                "variants": {v: (f, sec, c, whole_line(n, t))
+                             for v, (f, sec, c, t) in out[src]["variants"].items()}}
     return out, creatures, sorted(bad)
+
+
+def whole_line(length: int, timing: str | None) -> str | None:
+    """The timing for a line shown in other words than the recording it plays: the whole line one part,
+    from when the recording's first part is said (its word times belong to the other wording)."""
+    if not timing or not length:
+        return None
+    first = next((p.split(":")[1] for p in timing.split() if not p.endswith(":-")), None)
+    return f"{length}:{first}" if first is not None else None
 
 
 def aliases(root: Path) -> dict[str, str]:
@@ -1148,7 +1199,8 @@ def run(argv: Sequence[str]) -> int:
             sp.add_argument("--engine-run", help="the engine to start when none answers")
             sp.add_argument("--prepared", help="a remote run's folder: its WAVs stand in for cloned voices")
             sp.add_argument("--remote", action="store_true", help="read the cloned voices on Modal first")
-            sp.add_argument("--archive", help="where the remote run's WAVs are kept (copied and checked)")
+            sp.add_argument("--archive", help="where a run's WAVs are kept (a remote run's copied and "
+                                              "checked; a local run's written there as it reads)")
         if name == "export":
             sp.add_argument("--out", required=True, help="the remote run's folder")
         if name == "relevel":
@@ -1184,10 +1236,11 @@ def run(argv: Sequence[str]) -> int:
             prepared = Path(a.prepared) if a.prepared else None
             if prepared is not None and a.archive:
                 archive_run(prepared, Path(a.archive))
+            archive = Path(a.archive) if a.archive else None
             if a.remote and prepared is None:
-                archive = Path(a.archive) if a.archive else None
                 prepared = remote_round(root, cfg, a.scope, store, archive, players)
-            return run_generate(cfg, root, a.scope, store, players, engine_run_path(a.engine_run), prepared)
+            return run_generate(cfg, root, a.scope, store, players, engine_run_path(a.engine_run), prepared,
+                                archive if prepared is None else None)
     except (ValueError, KeyError, OSError, subprocess.CalledProcessError) as e:
         print(f"voice {a.cmd}: {e}", file=sys.stderr)
         return 1

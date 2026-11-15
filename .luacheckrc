@@ -46,6 +46,7 @@ globals = {
   -- The TOC's AddonCompartmentFunc handlers (Blizzard's addon dropdown calls them by name)
   "WFJ_OnAddonCompartmentClick", "WFJ_OnAddonCompartmentEnter", "WFJ_OnAddonCompartmentLeave",
   "WoWForeverJapanese_RegisterVoice", -- the voice pack calls it from its own chunk (ADR-061)
+  "WoWForeverJapanese_ExpectVoicePacks", -- the voice entry names its packs from its own chunk
 }
 
 files["addon/WoWForeverJapanese/Data/"] = { ignore = { ".*" } }

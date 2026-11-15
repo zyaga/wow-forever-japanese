@@ -11,6 +11,8 @@
 --   5  look 3's strip on look 4's faction parchment: only the parchment's plain middle (`crop`: left, right, top,
 --      bottom as shares of the atlas) so its decorated edges are not squashed, a larger name in the faction colour,
 --      and a thin dark frame round the head (`headFrame`)
+-- `markColor` tints the part of the line being spoken (UI/VoicePanel, ADR-090): softer than the gold of the word
+-- under the mouse, light on the dark looks and brown on the parchment ones.
 -- Offsets are from the panel's TOPLEFT. `textLeft` is where name and text start with the head shown, `textLeftNoHead`
 -- without it.
 -- Look 4's layout and title colour follow forever-vo's ForeverVO/UI/TalkingHead.lua (MIT License; see ATTRIBUTION.md).
@@ -26,6 +28,7 @@ WFJ.VoicePanelLooks = {
     textLeft = 152, textLeftNoHead = 28, nameTop = -25, textRight = -42,
     nameFont = "Fancy22Font", titleFont = "GameFontNormal",
     nameColor = { 1, 0.82, 0.02 }, titleColor = { 0.85, 0.85, 0.85 }, textColor = { 1, 1, 1 }, shadow = true,
+    markColor = { 1, 0.95, 0.8, 0.16 },
     textSize = 15, title = true, pageChars = 96, -- what four lines hold
   },
   [3] = {
@@ -35,6 +38,7 @@ WFJ.VoicePanelLooks = {
     textLeft = 66, textLeftNoHead = 12, nameTop = -6, textRight = -12,
     nameFont = "GameFontNormal", titleFont = "GameFontNormalSmall",
     nameColor = { 1, 0.82, 0.02 }, titleColor = { 0.85, 0.85, 0.85 }, textColor = { 1, 1, 1 }, shadow = true,
+    markColor = { 1, 0.95, 0.8, 0.16 },
     textSize = 13, title = false, maxLines = 2, pageChars = 64, -- what two lines hold
   },
   [4] = {
@@ -52,6 +56,7 @@ WFJ.VoicePanelLooks = {
       ["TalkingHeads-Neutral"] = { 0.33, 0.16, 0.02 },
     },
     nameColor = { 0.33, 0.16, 0.02 }, titleColor = { 0.25, 0.15, 0.05 }, textColor = { 0, 0, 0 }, shadow = false,
+    markColor = { 0.55, 0.35, 0.1, 0.16 },
     textSize = 15, title = true, pageChars = 96, -- what four lines hold
   },
   [5] = {
@@ -68,6 +73,7 @@ WFJ.VoicePanelLooks = {
       ["TalkingHeads-Neutral"] = { 0.33, 0.16, 0.02 },
     },
     nameColor = { 0.33, 0.16, 0.02 }, titleColor = { 0.25, 0.15, 0.05 }, textColor = { 0, 0, 0 }, shadow = false,
+    markColor = { 0.55, 0.35, 0.1, 0.16 },
     textSize = 13, title = false, maxLines = 2, pageChars = 64, -- what two lines hold
   },
 }

@@ -29,7 +29,6 @@ from wfj.paths import data_root
 
 # The research doc's character counts: the quest and gossip text forever-vo voices, and everything
 FULL_SCOPES = {"quest and gossip text": 3_880_000, "everything": 4_650_000}
-LAME = ("lame", "-m", "m", "--resample", "22.05", "-b", "32", "--cbr", "-t", "--quiet")
 
 
 def voice_dir(root: Path) -> Path:
@@ -267,6 +266,8 @@ def run(argv: Sequence[str]) -> int:
            **{v: ("voice_make", "run", 0)
               for v in ("cast", "plan", "generate", "status", "record-hashes", "export", "relevel")},
            "speed": ("voice_make", "run_speed", 1),
+           "time": ("voice_time", "run", 1),
+           "reencode": ("voice_reencode", "run", 1),
            **{v: ("voice_kana", "run", 0) for v in ("kana", "kana-import")},
            **{v: ("voice_store", "run", 0) for v in ("levels", "store-sync")},
            **{v: ("voice_ship", "run", 0) for v in ("pack", "release", "inputs")}}

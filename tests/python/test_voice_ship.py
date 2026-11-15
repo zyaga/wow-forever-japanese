@@ -14,6 +14,7 @@ from pathlib import Path
 import pytest
 from test_voice import CFG, _gen, _store, engine  # noqa: F401 (engine is a fixture)
 
+from wfj.cmd import voice_make
 from wfj.cmd import voice_ship as vs
 from wfj.core import voice_packs as vp
 from wfj.emit import voice_pack
@@ -45,13 +46,18 @@ def _raw(**over):
 # ---- the table -------------------------------------------------------------------------------------------
 
 
-def test_the_committed_table_is_the_entry_and_seven_packs():
+def test_the_committed_table_is_the_entry_and_ten_packs():
     t = vp.load(TABLE)
     assert t.entry.folder == voice_pack.FOLDER == "WoWForeverJapanese_Voice"
-    assert [p.levels for p in t.packs] == [(1, 10), (11, 20), (21, 30), (31, 40), (41, 50), (51, 60), None]
+    assert [p.levels for p in t.packs] == [(1, 5), (6, 10), (11, 20), (21, 30), (31, 40), (41, 50), (51, 59),
+                                           (60, 60), (60, 60), None]
     assert [p.folder.removeprefix(vp.PREFIX) for p in t.packs] == [
-        "Levels1to10", "Levels11to20", "Levels21to30", "Levels31to40", "Levels41to50", "Levels51to60", "Other"]
-    assert all("part" not in p.title.lower() for p in (t.entry, *t.packs))  # named for what they hold
+        "Levels1to10", "Levels1to10Part2", "Levels11to20", "Levels21to30", "Levels31to40", "Levels41to50",
+        "Levels51to60", "Levels51to60Part2", "Levels51to60Part3", "Other"]
+    # the packs players already have keep their names; a part is named after the pack it continues
+    assert [p.title.removeprefix("WoW Forever Japanese Voice: ") for p in t.packs if "part" in p.title] == [
+        "Levels 1-10 (part 2)", "Levels 51-60 (part 2)", "Levels 51-60 (part 3)"]
+    assert [p.quests for p in t.packs if p.quests] == [(1, 8509), (8510, vp.QUEST_LAST)]
     assert (t.cap_mb, t.warn_mb) == (420, 315)
     assert t.addon_slug == "wow-forever-japanese"  # the entry requires the main addon
 
@@ -69,6 +75,10 @@ def test_the_committed_table_is_the_entry_and_seven_packs():
         (lambda r: r["pack"][0].update(project_id=-1), "project_id"),
         (lambda r: r.pop("addon_slug"), "addon_slug"),
         (lambda r: r.update(addon_slug="a"), "addon_slug"),
+        (lambda r: r["pack"][0].update(quests=[1, 5]), "every quest"),
+        (lambda r: r["pack"][-1].update(quests=[1, 5]), "this pack has none"),
+        (lambda r: r["pack"][0].update(quests=[5, 1]), "first, last"),
+        (lambda r: r["pack"][0].update(levels=[1, 10], quests=[2, 99999]), "every quest"),
     ],
 )
 def test_a_broken_table_is_refused(change, message):
@@ -80,9 +90,20 @@ def test_a_broken_table_is_refused(change, message):
 
 def test_a_level_finds_its_band_and_anything_else_goes_to_the_last_pack():
     t = vp.load(TABLE)
-    name = {lv: vp.band(t, lv).folder.removeprefix(vp.PREFIX) for lv in (None, 0, -1, 1, 10, 11, 55, 60, 61, 70)}
-    assert name == {None: "Other", 0: "Other", -1: "Other", 1: "Levels1to10", 10: "Levels1to10",
-                    11: "Levels11to20", 55: "Levels51to60", 60: "Levels51to60", 61: "Other", 70: "Other"}
+    name = {lv: vp.band(t, lv).folder.removeprefix(vp.PREFIX) for lv in (None, 0, -1, 1, 6, 10, 11, 55, 61, 70)}
+    assert name == {None: "Other", 0: "Other", -1: "Other", 1: "Levels1to10", 6: "Levels1to10Part2",
+                    10: "Levels1to10Part2", 11: "Levels11to20", 55: "Levels51to60", 61: "Other", 70: "Other"}
+
+
+def test_a_band_in_parts_goes_by_quest_id():
+    t = vp.load(TABLE)
+    part = {q: vp.band(t, 60, q).folder.removeprefix(vp.PREFIX) for q in (1, 8509, 8510, 99999, None)}
+    assert part == {1: "Levels51to60Part2", 8509: "Levels51to60Part2", 8510: "Levels51to60Part3",
+                    99999: "Levels51to60Part3", None: "Levels51to60Part2"}
+    assert vp.assign(t, "8510-description", {8510: 60}, {}, {}).folder.endswith("Part3")
+    # an NPC's talk goes with its lowest quest: by level, then by quest id
+    who = {"g-aaaaaaaaaaaaaaaa": {"speaker": 7}}
+    assert vp.assign(t, "g-aaaaaaaaaaaaaaaa", {9000: 60, 8000: 60}, who, {7: {9000, 8000}}).folder.endswith("Part2")
 
 
 # ---- the split -------------------------------------------------------------------------------------------
@@ -108,9 +129,9 @@ def _assign(key, speakers=SPEAKERS, levels=LEVELS):
 
 def test_each_kind_of_line_goes_to_its_pack():
     assert _assign("100-description") == "Levels21to30"
-    assert _assign("200-completion") == "Levels1to10"
+    assert _assign("200-completion") == "Levels1to10Part2"  # level 8: the band's second part
     assert _assign("300-progress") == "Other"  # no known level
-    assert _assign("g-aaaaaaaaaaaaaaaa") == "Levels1to10"  # the lowest band of its NPC's quests
+    assert _assign("g-aaaaaaaaaaaaaaaa") == "Levels1to10Part2"  # the lowest band of its NPC's quests (8)
     assert _assign("g-bbbbbbbbbbbbbbbb") == "Levels1to10"  # an NPC with no quests: the first band
     assert _assign("g-cccccccccccccccc") == "Levels1to10"
     assert _assign("g-dddddddddddddddd") == "Levels1to10"
@@ -208,7 +229,7 @@ def test_pack_writes_the_entry_and_every_pack(tmp_path, engine, monkeypatch):  #
         "WoWForeverJapanese_VoiceOther"]
     # the entry: a TOC and a README, no audio, no Register.lua; its TOC carries its project id
     entry = out / "WoWForeverJapanese_Voice"
-    assert sorted(p.name for p in entry.iterdir()) == ["README.txt", "WoWForeverJapanese_Voice.toc"]
+    assert sorted(p.name for p in entry.iterdir()) == ["Packs.lua", "README.txt", "WoWForeverJapanese_Voice.toc"]
     toc = (entry / "WoWForeverJapanese_Voice.toc").read_text()
     assert "## Dependencies: WoWForeverJapanese\n" in toc and "## X-Curse-Project-ID: 1\n" in toc
     assert "Register.lua" not in toc
@@ -724,6 +745,26 @@ def test_the_inputs_fingerprint_follows_the_committed_tree(tmp_path):
     assert vs.inputs_fingerprint(repo) != first
 
 
+def test_a_large_sync_goes_up_in_several_pushes_under_the_limit(tmp_path, monkeypatch):
+    from wfj.cmd import voice_store
+
+    remote, store, pin = tmp_path / "remote.git", tmp_path / "store", tmp_path / "pin.txt"
+    _git(tmp_path, "init", "-q", "--bare", str(remote))
+    _git(tmp_path, "init", "-q", "-b", "main", str(store))
+    _git(store, "config", "user.name", "Zyaga")
+    _git(store, "config", "user.email", "zyaga@users.noreply.github.com")
+    _git(store, "remote", "add", "origin", str(remote))
+    (store / "audio").mkdir()
+    for n in range(5):
+        (store / "audio" / f"{n}-description.mp3").write_bytes(bytes(40))
+    monkeypatch.setattr(voice_store, "PUSH_BYTES", 100)
+    assert [len(g) for g in voice_store.push_groups(store)] == [2, 2, 1]
+    sha = voice_store.sync(store, pin, "Voice audio")
+    subjects = _git(remote, "log", "--format=%s", "main").split("\n")[:3]
+    assert subjects == ["Voice audio (part 3 of 3)", "Voice audio (part 2 of 3)", "Voice audio (part 1 of 3)"]
+    assert voice_store.read_pin(pin) == sha and not _git(store, "status", "--porcelain")
+
+
 def test_store_sync_refuses_a_store_off_its_branch(tmp_path):
     from wfj.cmd import voice_store
 
@@ -921,3 +962,88 @@ def test_a_store_file_of_the_same_size_but_another_take_stops_the_pack(tmp_path,
     path.write_bytes(bytes(b ^ 0xFF for b in path.read_bytes()))  # same length, other bytes: another take
     assert vs.run_pack(_args(tmp_path, store, cfg, _table_file(tmp_path))) == 1
     assert "456-completion.mp3" in capsys.readouterr().err
+
+
+def _mp3(frames: int) -> bytes:
+    """A plain run of MPEG-2 layer III frames at 32 kbps, 22.05 kHz, as the packs' files are made."""
+    return b"".join(bytes([0xFF, 0xF3, 0x40 | (2 if i % 3 == 0 else 0), 0xC0])
+                    + bytes(72000 * 32 // 22050 + (i % 3 == 0) - 4) for i in range(frames))
+
+
+def test_a_line_cut_into_sentences_ships_its_pieces_and_its_timing(tmp_path, engine, monkeypatch):  # noqa: F811
+    data, store, cfg = _project(tmp_path, engine)
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(vs.voice_store, "read_levels", lambda *_: {456: 5})
+    whole = _mp3(200)  # 5.2 s
+    path = voice_make.audio_file(store, "456-description")
+    path.write_bytes(whole)
+    audio = voice_make.audio_record(data)
+    rec = audio["456-description"]
+    rec.update(bytes=len(whole), sha256=voice_make.file_sha(path), cuts=[1.5, 3.0], timing="2:10 3:-",
+               timing_of=rec["fingerprint"])
+    voice_make._write(data / "voice" / voice_make.AUDIO, [audio[k] for k in sorted(audio)])
+    assert vs.run_pack(_args(tmp_path, store, cfg, _table_file(tmp_path))) == 0
+    a = tmp_path / "out" / "WoWForeverJapanese_VoiceA"
+    names = sorted(p.name for p in (a / "Sound").iterdir())
+    assert names == ["456-completion.mp3", "456-description-1.mp3", "456-description-2.mp3",
+                     "456-description-3.mp3", "g-0123456789abcdef.mp3"]
+    joined = b"".join((a / "Sound" / f"456-description-{n}.mp3").read_bytes() for n in (1, 2, 3))
+    assert joined == whole  # the pieces are the recording's own bytes, in order
+    reg = (a / "Register.lua").read_text()
+    assert "format = 3," in reg
+    line = next(ln for ln in reg.splitlines() if '["456-description"]' in ln)
+    # the timing moves onto the MP3s' clock: they run 55 ms behind the recording it was measured on
+    assert line.startswith('    ["456-description"] = { false, "') and 'm = "2:16 3:-"' in line
+    assert '{ "456-description-1.mp3", 1.' in line
+    other = next(ln for ln in reg.splitlines() if '["456-completion"]' in ln)
+    assert '{ "456-completion.mp3", ' in other and "m =" not in other  # no cuts, no timing: whole and estimated
+
+
+def test_a_pack_tells_an_addon_too_old_for_it_to_update_and_an_empty_pack_says_nothing(tmp_path, engine,  # noqa: F811
+                                                                                       monkeypatch):
+    data, store, cfg = _project(tmp_path, engine)
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(vs.voice_store, "read_levels", lambda *_: {456: 5})
+    assert vs.run_pack(_args(tmp_path, store, cfg, _table_file(tmp_path))) == 0
+    out = tmp_path / "out"
+    reg = (out / "WoWForeverJapanese_VoiceA" / "Register.lua").read_text()
+    assert "local taken = WoWForeverJapanese_RegisterVoice({" in reg
+    assert "if (taken or 0) == 0 then" in reg and 'RegisterEvent("PLAYER_LOGIN")' in reg
+    assert "needs a newer WoW Forever Japanese" in reg
+    assert "needs a newer" not in (out / "WoWForeverJapanese_VoiceB" / "Register.lua").read_text()
+
+
+def test_the_all_in_one_download_comes_in_parts_of_whole_folders_under_the_limit(tmp_path, monkeypatch):
+    out, dist = tmp_path / "out", tmp_path / "dist"
+    dist.mkdir()
+    zips = {}
+    for name, size in (("E", 10), ("A", 600), ("B", 500), ("C", 700)):
+        (out / name).mkdir(parents=True)
+        (out / name / "x.mp3").write_bytes(b"0" * size)
+        zips[name] = dist / f"{name}.zip"
+        zips[name].write_bytes(b"0" * size)
+    monkeypatch.setattr(vs, "BUNDLE_LIMIT", 1200)
+    day = datetime.date(2026, 11, 14)
+    parts = vs.bundle_parts(out, dist, ["E", "A", "B", "C"], zips, "E", day)
+    assert [p.name for p in parts] == ["E-all-2026.11.14-part1.zip", "E-all-2026.11.14-part2.zip"]
+    import zipfile
+
+    held = [sorted({n.split("/")[0] for n in zipfile.ZipFile(p).namelist()}) for p in parts]
+    assert held == [["A", "B", "E"], ["C"]]  # whole folders, in order, each part under the limit
+    monkeypatch.setattr(vs, "BUNDLE_LIMIT", 10_000)
+    assert [p.name for p in vs.bundle_parts(out, dist, ["E", "A"], zips, "E", day)] == [
+        "E-all-2026.11.14.zip"]
+
+
+def test_the_entry_lists_its_packs_for_the_addon():
+    from wfj.emit import voice_pack
+
+    text = voice_pack.entry_packs_text(["WoWForeverJapanese_VoiceLevels1to10", "WoWForeverJapanese_VoiceOther"])
+    assert text.splitlines()[1:] == [
+        "if not WoWForeverJapanese_ExpectVoicePacks then return end",
+        "WoWForeverJapanese_ExpectVoicePacks({",
+        '  "WoWForeverJapanese_VoiceLevels1to10",',
+        '  "WoWForeverJapanese_VoiceOther",',
+        "})",
+    ]
+    assert voice_pack.toc_text("11508", None).rstrip().endswith("Packs.lua")

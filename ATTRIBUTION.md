@@ -156,7 +156,8 @@ cache, the Classic Era quest cache, wago.tools DB2 exports (`ItemSparse`, `Spell
     (`UI/VoicePlayer.lua`);
   - from `ForeverVO/UI/QuestLog.lua`: the quest log's play button on the quest details' top bar, set up from
     the hook on `QuestMapFrame_ShowQuestDetails` (`UI/VoiceQuestLog.lua`);
-  - the audio format of the voice packs (mono MP3, 22.05 kHz, 32 kbps), the one forever-vo ships.
+  - the audio format the voice packs started with (mono MP3, 22.05 kHz, 32 kbps), the one forever-vo ships;
+    the packs now use mono MP3 at 24 kHz and 64 kbps.
 
 ## pfQuest license
 

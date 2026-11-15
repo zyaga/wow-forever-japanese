@@ -18,7 +18,15 @@ Voice.ONCE = {
 
 -- every pack's addon folder starts with this; its files are read from its Sound folder
 Voice.FOLDER = "WoWForeverJapanese_Voice"
-Voice.FORMATS = { [1] = true, [2] = true } -- the Register.lua table shapes this file reads (ADR-061, ADR-062)
+-- the Register.lua table shapes this file reads (ADR-061, ADR-062, ADR-090)
+Voice.FORMATS = { [1] = true, [2] = true, [3] = true }
+Voice.CURRENT = 3 -- the shape packs are built in now (ADR-090): a pack in an older one is out of date
+-- Format 3 adds, per line (and per voice variant), the line cut into one file per sentence and the start of each of
+-- its parts:  s = { { "<file>.mp3", seconds }, ... }  cut in the middle of the pause between two sentences, played
+-- one after another; m = "3:48 1:104 2:- ..."  the shipped Japanese in order as parts of n characters, each with the
+-- hundredths of a second since the part before it started ("-": never read aloud, a stage direction). A line's first
+-- field may be false when the pack ships only its sentences: the line then lives in another pack, matched by its
+-- Japanese hash.
 
 -- The lines a pack may voice: surface → record key → the setting that turns that kind off. Objectives, titles and
 -- option rows are never voiced.
@@ -44,6 +52,8 @@ local lines
 local creatures = {} -- creature id → voice id, or { male voice, female voice } (the speakers of lines with variants)
 local creatureBy = {} -- creature id → { [pack folder] = its voice }: several packs may carry one creature
 local packs = {} -- pack folder → the number of its lines registered
+local formats = {} -- pack folder → the Register.lua format it was built in
+local expected = {} -- the pack folders the voice entry installs (its Packs.lua), in its order
 -- the character's own spoken error lines: the game's voice id → kind, and per "<race>-<f|m>" the kind's file
 local errorKinds, errorFiles = {}, {}
 local deps = {}
@@ -56,7 +66,7 @@ Voice.counts = zero()
 -- deps: lookup(kind, id) → { ja } | nil (the shipped Japanese, tokens unfilled), hash(text) → 16 hex,
 -- setting(id) → value, revealed() → bool (English showing: the reveal key held), enabled() → bool (translation on)
 -- heard() → the account's record of lines already heard, pack key → the Japanese hash they were heard with (saved
--- variables; keys and hashes only), or nil
+-- variables; keys and hashes only), or nil; meta(folder, field) → an addon's TOC field (its Version), or nil
 function Voice.init(d)
   deps = d or {}
 end
@@ -65,17 +75,40 @@ local function validFile(f)
   return type(f) == "string" and f:match("^[%w%-_]+%.mp3$") ~= nil
 end
 
+local function validClips(s)
+  if s == nil then return true end
+  if type(s) ~= "table" or #s < 1 then return false end
+  for _, c in ipairs(s) do
+    if type(c) ~= "table" or not validFile(c[1]) or type(c[2]) ~= "number" or c[2] <= 0 then return false end
+  end
+  return true
+end
+
+local function validMarks(m)
+  return m == nil or (type(m) == "string" and m:match("^[%d:%- ]*$") ~= nil)
+end
+
 local function validEntry(e)
-  if not (type(e) == "table" and validFile(e[1]) and type(e[2]) == "string" and e[2]:match("^%x+$") ~= nil
-    and #e[2] == 16 and (e[3] == nil or type(e[3]) == "number")) then
+  if not (type(e) == "table" and (validFile(e[1]) or (e[1] == false and e.s ~= nil)) and type(e[2]) == "string"
+    and e[2]:match("^%x+$") ~= nil and #e[2] == 16 and (e[3] == nil or type(e[3]) == "number")
+    and validClips(e.s) and validMarks(e.m)) then
     return false
   end
   if e.v == nil then return true end
   if type(e.v) ~= "table" then return false end
   for vid, f in pairs(e.v) do
-    if type(vid) ~= "string" or type(f) ~= "table" or not validFile(f[1]) then return false end
+    if type(vid) ~= "string" or type(f) ~= "table" or not (validFile(f[1]) or (f[1] == false and f.s ~= nil))
+      or not validClips(f.s) or not validMarks(f.m) then
+      return false
+    end
   end
   return true
+end
+
+-- An entry (or a voice variant) as the addon keeps it: its files in order, each { file, seconds }, and its timing.
+-- A whole file is a line of one file (formats 1 and 2).
+local function clipsOf(f)
+  return f[1] and { { f[1], f[2] } } or f.s, f.m
 end
 
 local function validVoice(v)
@@ -90,8 +123,10 @@ local function recount()
 end
 
 -- A pack's table → registered, invalid. Packs merge: each line remembers the folder it came from, and a pack that
--- registers again replaces only its own lines. Entries that do not match the shape are dropped and counted, never
--- guessed at: a file name outside the pack's Sound folder would play another addon's file.
+-- registers again replaces only its own lines. Where two packs carry one line, the one in the newer format keeps it
+-- (a pack in sentences over an older whole-file one), else the last to register. Entries that do not match the
+-- shape are dropped and counted, never guessed at: a file name outside the pack's Sound folder would play another
+-- addon's file.
 function Voice.register(tbl)
   if type(tbl) ~= "table" or not Voice.FORMATS[tbl.format] or type(tbl.folder) ~= "string"
     or tbl.folder:sub(1, #Voice.FOLDER) ~= Voice.FOLDER or not tbl.folder:match("^[%w_]+$")
@@ -119,12 +154,19 @@ function Voice.register(tbl)
   local n, bad = 0, 0
   for key, e in pairs(tbl.lines) do
     if type(key) == "string" and validEntry(e) then
-      local v
-      if e.v then
-        v = {}
-        for vid, f in pairs(e.v) do v[vid] = { file = f[1], seconds = f[2] } end
+      local old = lines[key]
+      if not (old and old.format > tbl.format) then
+        local clips, marks = clipsOf({ e[1], e[3], s = e.s, m = e.m })
+        local rec = { jaHash = e[2]:lower(), folder = tbl.folder, format = tbl.format, clips = clips, marks = marks }
+        if e.v then
+          rec.v = {}
+          for vid, f in pairs(e.v) do
+            local vc, vm = clipsOf(f)
+            rec.v[vid] = { clips = vc, marks = vm }
+          end
+        end
+        lines[key] = rec
       end
-      lines[key] = { file = e[1], jaHash = e[2]:lower(), seconds = e[3], folder = tbl.folder, v = v }
       n = n + 1
     else
       bad = bad + 1
@@ -157,6 +199,7 @@ function Voice.register(tbl)
     end
   end
   packs[tbl.folder] = n
+  formats[tbl.folder] = tbl.format
   Voice.counts.invalid = Voice.counts.invalid + bad
   recount()
   return n, bad
@@ -165,6 +208,58 @@ end
 -- → { [folder] = lines } of every registered pack (for the settings page and /wfj debug)
 function Voice.packs()
   return packs
+end
+
+local function versionOf(folder)
+  local v = type(deps.meta) == "function" and deps.meta(folder, "Version") or nil
+  return type(v) == "string" and v ~= "" and v or "?"
+end
+
+-- A pack folder as a player reads it: its name after the common prefix, and its version.
+function Voice.packName(folder)
+  local short = type(folder) == "string" and folder:gsub("^" .. Voice.FOLDER, "") or "?"
+  return (short == "" and folder or short) .. " " .. versionOf(folder)
+end
+
+-- → every registered pack, sorted, as "Levels1to10 2026.11.12-36d91beb (format 3, 3432 lines)"
+function Voice.packList()
+  local out = {}
+  for folder, n in pairs(packs) do
+    out[#out + 1] = ("%s (format %s, %d lines)"):format(Voice.packName(folder), tostring(formats[folder]), n)
+  end
+  table.sort(out)
+  return out
+end
+
+-- → the registered packs built in an older format than this addon reads best, sorted ("Levels1to10 2026.10.11-…")
+function Voice.outdated()
+  local out = {}
+  for folder, n in pairs(packs) do
+    if n > 0 and type(formats[folder]) == "number" and formats[folder] < Voice.CURRENT then
+      out[#out + 1] = Voice.packName(folder)
+    end
+  end
+  table.sort(out)
+  return out
+end
+
+-- The voice entry names the packs it installs. Only well-formed pack folder names are kept.
+function Voice.expect(list)
+  expected = {}
+  for _, folder in ipairs(type(list) == "table" and list or {}) do
+    if type(folder) == "string" and folder:sub(1, #Voice.FOLDER) == Voice.FOLDER and folder:match("^[%w_]+$") then
+      expected[#expected + 1] = folder
+    end
+  end
+end
+
+-- → the packs the entry installs that did not register (not installed, or turned off), short names, in its order
+function Voice.missing()
+  local out = {}
+  for _, folder in ipairs(expected) do
+    if not packs[folder] then out[#out + 1] = (folder:gsub("^" .. Voice.FOLDER, "")) end
+  end
+  return out
 end
 
 function Voice.hasPack()
@@ -189,9 +284,22 @@ end
 local function fileFor(entry, who)
   local voice = who and creatures[who.creature]
   if type(voice) == "table" then voice = who.sex == 3 and voice[2] or voice[1] end
-  local own = voice and entry.v and entry.v[voice]
-  if own then return own.file, own.seconds end
-  return entry.file, entry.seconds
+  return voice and entry.v and entry.v[voice] or entry
+end
+
+local function pathOf(folder, file)
+  return "Interface\\AddOns\\" .. folder .. "\\Sound\\" .. file
+end
+
+-- A record's files for the player → path of the first, the line's length (nil when a file has none), and the
+-- sentences { { path, seconds }, ..., marks } when there are several files or a timing, else nil (one whole file)
+local function playable(f, folder)
+  local seconds = 0
+  for _, c in ipairs(f.clips) do seconds = c[2] and seconds and seconds + c[2] or nil end
+  if #f.clips == 1 and not f.marks then return pathOf(folder, f.clips[1][1]), seconds, nil end
+  local out = { marks = f.marks }
+  for i, c in ipairs(f.clips) do out[i] = { path = pathOf(folder, c[1]), seconds = c[2] or 0 } end
+  return out[1].path, seconds, out
 end
 
 -- → the setting that turns a surface's record key off (a record key's trailing page number is its kind's), or nil
@@ -208,8 +316,9 @@ local function heardRecord(kindSetting)
 end
 
 -- A line just shown in Japanese on `surface` under record key `recKey`, rendered as (kind, id), said by `who`.
--- → the file's path and its length in seconds, or nil and why ("kind" · "off" · "english" · "nopack" · "missing" ·
--- "stale" · "notext" · "heard"). `peek`: only asking (the replay button), so /wfj debug's counts are left as they are;
+-- → the file's path, its length in seconds and its sentences (or nil), or nil and why ("kind" · "off" · "english" ·
+-- "nopack" · "missing" · "stale" · "notext" · "heard"); for "stale", the folder of the pack whose audio is older.
+-- `peek`: only asking (the replay button), so /wfj debug's counts are left as they are;
 -- "ahead": only asking whether the line will play when its window opens (a line heard before will not).
 function Voice.decide(surface, recKey, kind, id, who, peek)
   local kindSetting = kindSettingOf(surface, recKey)
@@ -230,7 +339,7 @@ function Voice.decide(surface, recKey, kind, id, who, peek)
   if type(shipped) ~= "table" or type(shipped.ja) ~= "string" then return nil, "notext" end
   if type(deps.hash) ~= "function" or deps.hash(shipped.ja) ~= entry.jaHash then
     if not peek then Voice.counts.stale = Voice.counts.stale + 1 end
-    return nil, "stale"
+    return nil, "stale", entry.folder
   end
   -- first time only: a line heard with this Japanese stays quiet; one rewritten since counts as new. The play button
   -- and the queue's re-check (peek true) are never stopped by it. The record is written by markHeard, once the line
@@ -238,8 +347,7 @@ function Voice.decide(surface, recKey, kind, id, who, peek)
   local seen = peek ~= true and heardRecord(kindSetting) or nil
   if seen and seen[key] == entry.jaHash then return nil, "heard" end
   if not peek then Voice.counts.matched = Voice.counts.matched + 1 end
-  local file, seconds = fileFor(entry, who)
-  return "Interface\\AddOns\\" .. entry.folder .. "\\Sound\\" .. file, seconds
+  return playable(fileFor(entry, who), entry.folder)
 end
 
 -- A line has started playing: when its kind is kept to its first hearing, it is recorded as heard with the hash of
