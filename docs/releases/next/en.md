@@ -1,6 +1,5 @@
-- **The voice panel follows the voice.** The page turns as each sentence starts, and a soft tint marks the words as they are spoken. Pausing and playing again picks up at the sentence you paused in, and two small arrows beside pause play the sentence before or the next one.
-- **A clearer voice: update all your voice packs once.** The files now keep the voices' high end, and each line comes as one file per sentence. The download is about twice as big (about 2.8 GB), with three new packs. Use Update All in the CurseForge app. At login the addon names any voice pack that is out of date or did not load.
-- **Right-click menus in Japanese** on the target, party and raid frames and on a player's name. Names stay in English.
-- **The quest log shows the quest giver's head** again after a reload, a restart or a game patch.
-- **NPC lines that name another player** are now in Japanese, with that player's name in them.
-- **Fixes** for the game blocking an action with the addon named (after picking from a menu, changing your chat language, or moving through an NPC talk window with a controller), and for two Lua errors.
+- **The voice panel follows the voice.** The page turns as each sentence starts, and a soft tint marks the words as they are spoken. A name of several English words lights up whole.
+- **Go back and forth by sentence.** Pausing and playing again picks up at the sentence you paused in, and two small arrows beside pause play the sentence before or the next one.
+- **A clearer voice: update all your voice packs once.** The files now keep the voices' high end, and each line comes as one file per sentence. The download is about twice as big (about 2.8 GB), with three new packs. Use Update All in the CurseForge app.
+- **The addon tells you about your voice packs.** At login it names any voice pack that is out of date or did not load, and a bug report lists your packs with their versions.
+- **Stage directions the voice skips stay off the voice panel**, so what you read matches what you hear.

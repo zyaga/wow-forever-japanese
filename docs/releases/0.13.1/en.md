@@ -1,0 +1,6 @@
+- **Right-click menus in Japanese** on the target, party and raid frames, and on a player's name or a friend. Names stay in English.
+- **NPC lines that name another player**, such as an escort thanking the party member who owns the quest, are now in Japanese with that player's name in them.
+- **The quest log's play button shows the quest giver's head again** after a reload, a restart or a game patch.
+- **Controllers** can move between the options in an NPC talk window again.
+- **Fewer "interface action failed" messages**: picking from a translated menu, and sending chat after changing your chat language from the chat menu, no longer name the addon.
+- **Fixes** for two Lua errors: one when opening some quest windows, and an "Invalid font height" error in windows such as the mailbox.
