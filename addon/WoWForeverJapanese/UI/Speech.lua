@@ -22,6 +22,7 @@
 -- ships nothing under this character's name, the target's name, or with no target each party member's name that
 -- stands in the line, is put back instead, and the Japanese is filled with that name. Such a line is never given to
 -- the Collector.
+-- Speech.translateLine serves UI/ChatSystem's system lines that are an NPC line's text (battleground announcements).
 -- Secret text (chat messaging lockdown: dungeons, raids, encounters; chatinfodocumentation.lua) is never touched: the
 -- line stays English. A stale row, a missing one, or a `%s` count that differs leaves the English.
 local _, WFJ = ...

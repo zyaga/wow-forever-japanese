@@ -19,7 +19,9 @@
 -- English (one English is one Japanese; also the non-error lines Blizzard's Lua prints, e.g. the guild-rename
 -- refusal) or a chat key's template, matched by key only: a listed error key with text of its own (UI/Errors' wrapper
 -- set), a key of UIStrings.CHAT_FAMILIES, or EXTRA_TEMPLATES; never any other template. A stale row or a failed fill
--- leaves the English.
+-- leaves the English. A typed line no interface string answers may be an NPC line's text the server sent as system
+-- chat: UI/Speech's translateLine looks it up, and on a battleground announcement (BG_SYSTEM_*) also takes the player
+-- the line names. A line holding the death recap link has its label translated under any chat type, or none.
 -- Alt / the switch: the history is rewritten once, when the line arrives, and never again; a
 -- rewrite repackages the entry with a new timestamp (PackageEntry, scrollingmessageframe.lua:737–745), which would
 -- bring every faded line back. Holding the modifier, or switching the addon / its UI area off, instead puts the
